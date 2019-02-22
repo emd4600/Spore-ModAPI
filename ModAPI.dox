@@ -1,0 +1,61 @@
+///
+/// @page modapi ModAPI Utils and the main function
+///
+/// This page contains information about the utilities contained in the ModAPI and the main function required in the mod.
+///
+/// @section modapi_tutorial1 Initialization functions
+///
+/// The ModAPI namespace contains multiple classes and utilities, but most of them are deprecated and should not be used.
+/// The only one that can be used (and that can be very useful) are **initialization functions**. Those are functions that are 
+/// executed after the game starts, when most systems in the game have already been initialized (but the game hasn't opened yet).
+/// 
+/// Initialization functions take no arguments and must return a bool value (which is currently ignored; you can interpret it
+/// as whether the initialization was correct or not). This is an example:
+/// ~~~~~~~~~~~~~~~~~{.cpp}
+/// bool CheatInitialization()
+/// {
+///		App::ICheatManager::Get()->AddCheat("pCheat", new MyCheat());
+///		return true;
+/// }
+/// ~~~~~~~~~~~~~~~~~
+///
+/// Then you just need to add the initialization function in the DllMain method (more on this later), like this:
+/// ~~~~~~~~~~~~~~~~~{.cpp}
+/// ModAPI::ModAPIUtils::AddInitFunction(CheatInitialization);
+/// ~~~~~~~~~~~~~~~~~
+///
+/// @section modapi_tutorial2 The main function
+/// 
+/// When you create a new mod .dll you should have a dllmain.cpp file that contains the main function of the DLL.
+/// This method must contain the DllMain function, which looks something like this:
+/// ~~~~~~~~~~~~~~~~~{.cpp}
+/// BOOL APIENTRY DllMain( HMODULE hModule,
+///                        DWORD  ul_reason_for_call,
+///                        LPVOID lpReserved
+/// 					 )
+/// {
+/// 
+/// 	switch (ul_reason_for_call)
+/// 	{
+/// 	case DLL_PROCESS_ATTACH:
+/// 		// This line is always necessary
+/// 		ModAPI::ModAPIUtils::InitModAPI();
+///			// The rest of the code goes here
+/// 
+/// 	case DLL_THREAD_ATTACH:
+/// 	case DLL_THREAD_DETACH:
+/// 	case DLL_PROCESS_DETACH:
+/// 		break;
+/// 	}
+/// 	return TRUE;
+/// }
+/// ~~~~~~~~~~~~~~~~~
+///
+/// There's not much you can do in the DllMain function; you must keep in mind that this is executed when the DLL is loaded,
+/// and when that happens nothing in Spore has been executed. Therefore, you cannot use any function that uses anything in
+/// Spore here; instead, you must use an initialization function like it has been explained before.
+///
+/// You can only do two things in the DllMain function. You cannot do these things anywhere else:
+/// - Add initialization functions.
+/// - Detour methods.
+///

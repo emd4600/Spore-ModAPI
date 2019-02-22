@@ -1,0 +1,127 @@
+/****************************************************************************
+* Copyright (C) 2019 Eric Mor
+*
+* This file is part of Spore ModAPI.
+*
+* Spore ModAPI is free software: you can redistribute it and/or modify
+* it under the terms of the GNU General Public License as published by
+* the Free Software Foundation, either version 3 of the License, or
+* (at your option) any later version.
+*
+* This program is distributed in the hope that it will be useful,
+* but WITHOUT ANY WARRANTY; without even the implied warranty of
+* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+* GNU General Public License for more details.
+*
+* You should have received a copy of the GNU General Public License
+* along with this program.  If not, see <http://www.gnu.org/licenses/>.
+****************************************************************************/
+
+#pragma once
+
+#include "Internal.h"
+#include <EASTL\functional.h>
+#include <Spore\Hash.h>
+
+///
+/// A structure used to point a resource in the game, made by three IDs: instance, group and type.
+/// The groupID is used when hashing and comparing, allowing this class to be used in containers such as hash_map
+/// or sorted vectors.
+///
+struct ResourceKey {
+
+	static const uint32_t kWildcardID = 0xFFFFFFFF;
+
+	ResourceKey();
+	ResourceKey(uint32_t nInstanceID, uint32_t nTypeID, uint32_t nGroupID);
+
+	uint32_t instanceID;
+	uint32_t typeID;
+	uint32_t groupID;
+
+	///
+	/// Creates a ResourceKey from the given text, which is in the format "groupID!instanceID.typeID". 
+	/// The groupID and typeID can be ommited, however; if that happens, they will be replaced with the optional parameters
+	/// nDefaultGroupID and nDefaultTypeID respectively.
+	///
+	/// The resulting uint32_ts will be the hashes of the strings separated by the '!' and '.' signs. The typeID can have a special treatment,
+	/// however: before hashing it, it will check if there's a mapping for that extension in the ResourceManager class.
+	///
+	/// Examples:
+	/// Parse(dstKey, "Properties.txt"); // this will be in the global (0x00000000) folder, with the appropiate mapping for the .txt extension)
+	/// Parse(dstKey, "CreatureEditorBackground.rw4", 0, 0x40606000);  // this will search in the editor_rigblocks~ (0x40606000) folder.
+	/// Parse(dstKey, "CreatureGame!DifficultyTunning.prop");
+	///
+	/// @param[out] dst The ResourceKey that will be filled with the parsed information.
+	/// @param[in] pString The wstring to parse.
+	/// @param[in] nDefaultTypeID [Optional] The typeID that will be used if no extension is specified in the text.
+	/// @param[in] nDefaultGroupID [Optional] The groupID that will be used if no group is specified in the text.
+	/// @returns True if the text was successfully parsed, false if the given string was nullptr.
+	///
+	static bool Parse(ResourceKey& dst, const wchar_t* pString, uint32_t nDefaultTypeID = 0, uint32_t nDefaultGroupID = 0);
+
+	bool ResourceKey::operator ==(const ResourceKey &b) const;
+	bool ResourceKey::operator !=(const ResourceKey &b) const;
+
+	bool ResourceKey::operator <(const ResourceKey &b) const;
+	bool ResourceKey::operator >(const ResourceKey &b) const;
+};
+
+
+/////////////////////////////////
+//// INTERNAL IMPLEMENTATION ////
+/////////////////////////////////
+
+static_assert(sizeof(ResourceKey) == 0x0C, "sizeof(ResourceKey) != 0Ch");
+
+#define instance_id(id) ResourceKey(id, 0, 0)
+#define type_id(id) ResourceKey(0, id, 0)
+#define group_id(id) ResourceKey(0, 0, id)
+
+inline ResourceKey::ResourceKey()
+	: instanceID(0)
+	, typeID(0)
+	, groupID(0)
+{
+}
+
+inline ResourceKey::ResourceKey(uint32_t _instanceID, uint32_t _typeID, uint32_t _groupID)
+	: instanceID(_instanceID)
+	, typeID(_typeID)
+	, groupID(_groupID)
+{
+}
+
+inline bool ResourceKey::operator ==(const ResourceKey &b) const
+{
+	return groupID == b.groupID && instanceID == b.instanceID && typeID == b.typeID;
+}
+
+inline bool ResourceKey::operator !=(const ResourceKey &b) const
+{
+	return groupID != b.groupID || instanceID != b.instanceID || typeID != b.typeID;
+}
+
+inline bool ResourceKey::operator >(const ResourceKey &b) const
+{
+	return groupID > b.groupID;
+}
+
+inline bool ResourceKey::operator <(const ResourceKey &b) const
+{
+	return groupID > b.groupID;
+}
+
+namespace eastl
+{
+	/// A necessary structure to be able to use ResourceKey on containers such as hash_map.
+	template <> struct hash<ResourceKey>
+	{
+		size_t operator()(const ResourceKey& val) const { return static_cast<size_t>(val.groupID); }
+	};
+}
+
+namespace InternalAddressList(ResourceKey)
+{
+	DefineAddress(Parse, GetAddress(0x68DD00, 0x68D830, 0x68D830));
+}

@@ -1,0 +1,102 @@
+
+///
+/// @page miscellaneous Miscellaneous
+///
+/// This page contains generral information about some objects that are sued globally in the ModAPI.
+/// 
+/// @tableofcontents
+///
+/// @section eastl EASTL, containers and the STL
+///
+/// In C++, when you want to create a vector, you normally include the <vector.h> class and use a std::vector.
+/// In Spore, that is different; Spore uses its own containers included in the EASTL (which is included in the ModAPI).
+/// Instead of including <vector.h>, you need to include <EASTL\vector.h>; instead of std::vector, you must use eastl::vector
+/// (note that most ModAPI headers have a "using namespace eastl" directive, making the 'eastl::' part unnecessary most of the times).
+///
+/// @section objects Objects and memory management
+///
+/// Memory management in C++ can be a bit troubling. Spore and the ModAPI use a method for all its classes known as 
+/// reference counting. Basically, instead of using naked pointers, like IEffect*, you wrap them into an 
+/// eastl::intrusive_ptr<IEffect>. Everytime the pointer is assigned, it will increase or decrease the reference count 
+/// accordingly; when the reference count reaches 0, the object will delete itself.
+/// ~~~~~~~~~~~~~~~~~~~~~~~{.cpp}
+/// intrusive_ptr<Window> pEffect = new Window();
+/// // you don't have to worry about deleting the object
+/// ~~~~~~~~~~~~~~~~~~~~~~~
+/// Most methods don't take intrusive_ptrs as parameters, but normal pointers. To get the pointer value, use the .get() method:
+/// ~~~~~~~~~~~~~~~~~~~~~~~{.cpp}
+/// intrusive_ptr<App::PropertyList> pProp;
+/// ...
+/// bool bValue = false;
+/// // The first parameter is an App::PropertyList*
+/// App::Property::GetBool(pProp.get(), 0x00B13042, bValue);
+/// ~~~~~~~~~~~~~~~~~~~~~~~
+/// You must be aware, however, of cyclic intrusion. Imagine that object A has an intrusive_ptr member that points to object B,
+/// and object B has an intrusive_ptr member that points to object A. Those objects would never be deleted because they 
+/// would always have another object pointing to them. Therefore, you must be aware of the structure of your objects when
+/// using intrusive_ptrs.
+///
+/// Most interfaces and classes in the ModAPI declare an AddRef() and Release() method, which are necessary for reference
+/// counting and therefore automatic memory management. Some classes have already defined its implementation; sometimes, 
+/// however, you will have to implement them. Here is a simple example of how they work:
+/// ~~~~~~~~~~~~~~~~~~~~~~~{.cpp}
+/// // assuming 'MyClass' has an int member called 'mnRefCount', which must be initialized to 0 in the constructor.
+/// int AddRef()
+/// {
+///		mnRefCount++;
+///		return mnRefCount;
+/// }
+/// int Release()
+/// {
+///		mnRefCount--;
+///		if (mnRefCount == 0) delete this;
+///		return mnRefCount;
+/// }
+/// ~~~~~~~~~~~~~~~~~~~~~~~
+///
+/// The class Object is a standard class that is the base of a lot of classes in the ModAPI. It is reference counted.
+/// An interesting thing is the Object::Cast() and object_cast. Dynamic casting is not used in Spore, but this is the alternative.
+/// Classes that inherit the Object class define a Cast method which can be used to dynamically cast an object to another type.
+/// The Cast method takes an uint32_t as a paramter; that type identifier is a static member called 'TYPE' in most of the 
+/// classes that support this type of casting. For example:
+/// ~~~~~~~~~~~~~~~~~~~~~~~{.cpp}
+/// // All mean the same
+/// auto pImageDrawable = object_cast<UTFWin::IImageDrawable>(pDrawable);
+/// UTFWin::IImageDrawable* pImageDrawable = object_cast<UTFWin::IImageDrawable>(pDrawable);
+/// UTFWin::IImageDrawable* pImageDrawable = (UTFWin::IImageDrawable*) pDrawable->Cast(UTFWin::IImageDrawable::TYPE);
+/// ~~~~~~~~~~~~~~~~~~~~~~~
+/// If 'pDrawable' is of type IImageDrawable, that will be returned; otherwise, Cast must return nullptr. That can be 
+/// used to check in runtime whether an object is of an specific type.
+///
+/// Using the "ModAPI Object" item template will create a new Object class that supports casting and reference counting, 
+/// with a unique TYPE value.
+///
+/// @section resource_keys IDs and resource keys
+///
+/// If you look at Spore files, you will always end up seeing something like #4f803d98. That's an hexadecimal integer number;
+/// to simplify, we usually call them hashes. They are used to identify files, types, etc, so they are often called IDs as well.
+/// Even if you see a normal name, that's just the string representation of an ID. To get the hash ID from a certain name, use the 
+/// id() function inside the Hash.h header.
+/// ~~~~~~~~~~~~~~~~~~~~~~~{.cpp}
+/// // We want to get the effect "SG_ufo_scan_HitGround", but we don't know what ID that is.
+/// uint32_t effectID = id("SG_ufo_scan_HitGround");
+/// ~~~~~~~~~~~~~~~~~~~~~~~
+///
+/// The ResourceKey class is very common. If you have had a look inside .package files in Spore, you will have noticed 
+/// that a file always has three things: the name of the file, the extension, and the folder. In technical terms, those
+/// are the instance ID, type ID and group ID, respectively. To identify a file, Spore uses the ResourceKey struct,
+/// which just contains those three IDs.
+///
+/// @section math The Math namespace
+/// 
+/// The ModAPI contains a namespace called Math with multiple classes that represent mathematical objects such as vectors,
+/// matrices and colors. Apart from some specific methods, these are just containers with no functionalities; therefore,
+/// you will probably need other libraries in order to make advanced operations with these types.
+///
+/// @section localization Localization
+///
+/// Spore supports multiple languages. In order to use localized strings (i.e. text that depends on the current language
+/// of the game) you need to use the LocalizedString class in the LocalizedString.h header. Localized texts are identified by
+/// a table ID and an instance ID. The table ID is the ID of a .locale file in the locale~ folder, which contains the translation.
+/// The instance ID is the specific ID of that translation inside that file.
+///

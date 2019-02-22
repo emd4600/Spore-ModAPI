@@ -1,0 +1,51 @@
+///
+/// @mainpage 
+///
+/// With the Spore %ModAPI it is possible to inject code into Spore, therefore being able to use C++ programming in mods.
+/// The %ModAPI SDK documented in this website allows you to create .dll that use C++ to modify Spore.
+///
+/// @section about About the documentation
+///
+/// This documentation includes information about some classes, methods and namespaces. Many of these still lack documentation,
+/// although they might be updated in the future. 
+///
+/// The "Related Pages" section includse multiple pages that explain the various modules in the %ModAPI. Most of them include
+/// small examples and tutorials that will help you get started.
+/// 
+/// @section updates Updates
+/// 
+/// The current version of the %ModAPI SDK is 2.3.0. The version is not definitive and probably there will be minor updates. 
+/// Not all the classes and modules incldued in this update can be used; some of them, for example everything related with
+/// editors, are highly undocumented and deprecated. 
+///
+/// Future updates will be centered on one kind of things each one. For example: editors, gameplay, etc.
+///
+/// @section installation Download & Installation
+/// 
+/// The %ModAPI is meant to work with Visual Studio 2017. It has not been tested on lower versions.
+/// You can download the Spore %ModAPI SDK, as well as any other utilities included in the %ModAPI, in this website: https://sporemodder.wordpress.com/spore-modapi/
+///
+/// The SDK includes:
+/// - The EASTL library, which was downloaded from here: https://github.com/electronicarts/EASTL/
+/// It was slightly modified to adapt it to Spore.
+/// - The Detours library (https://www.microsoft.com/en-us/research/project/detours/), which allows to redirect Spore functions
+/// in order to modify them. Check the @ref detouring "Detouring page" for more information.
+/// - The %ModAPI static libraries, both debug and release versions.
+/// - The %ModAPI header files documented in this website that allow you to interact with the Spore environment.
+/// - Multiple templates for Visual Studio 2017 which can be used to create projects that have all the elements mentioned above configurated
+/// and ready to be compiled. It also has item templates that allow you to easily create objects ready to be programmed.
+///
+/// The %ModAPI SDK is meant to be used in Visual Studio, specially the latest versions. Probably it can be used in other IDEs, as long
+/// as you use a Visual C++ compiler and configure everything correctly.
+///
+/// For Visual Studio users, the template is installed as follows:
+/// 1. To install the template, just execute the "Spore ModAPI Templates.vsix" file.
+/// 2. To install the code snippets
+/// 
+/// To use the template, just select it when creating a new project, like this: http://i.imgur.com/KXZikko.png
+/// WARNING: You must change the "Location" field to the path where you have all the %ModAPI stuff. 
+/// 
+/// Once created, you must select the version you are going to compile the .dll for (Debug - Disk, Debug - Steam, etc). 
+/// You cannot use the "Debug" or "Release" modes, you must choose the Spore version. If you have Origin, you must use "Steam Patched".
+/// The files will be saved to the "Debug" and "Release" folders inside your project's folder. It is recommended to place the launcher files inside those folders so you can test your dlls directly.
+///

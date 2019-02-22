@@ -1,0 +1,56 @@
+/****************************************************************************
+* Copyright (C) 2019 Eric Mor
+*
+* This file is part of Spore ModAPI.
+*
+* Spore ModAPI is free software: you can redistribute it and/or modify
+* it under the terms of the GNU General Public License as published by
+* the Free Software Foundation, either version 3 of the License, or
+* (at your option) any later version.
+*
+* This program is distributed in the hope that it will be useful,
+* but WITHOUT ANY WARRANTY; without even the implied warranty of
+* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+* GNU General Public License for more details.
+*
+* You should have received a copy of the GNU General Public License
+* along with this program.  If not, see <http://www.gnu.org/licenses/>.
+****************************************************************************/
+
+#pragma once
+
+#include <Spore\UTFWin\Effect.h>
+
+namespace UTFWin
+{
+	class FadeEffect : public BiStateEffect
+	{
+	public:
+		FadeEffect() {}
+		virtual ~FadeEffect() {}
+
+		virtual int AddRef();
+		virtual int Release();
+		virtual void* Cast(uint32_t typeID) const override;
+
+		virtual void SetSerializer(Serializer& dst) override;
+		virtual uint32_t GetProxyID() const override;
+
+		virtual void func84h(int, float) override;
+
+	};
+
+	static_assert(sizeof(FadeEffect) == 0x60, "sizeof(FadeEffect) != 60h");
+
+	/////////////////////////////////
+	//// INTERNAL IMPLEMENTATION ////
+	/////////////////////////////////
+
+	namespace InternalAddressList(FadeEffect)
+	{
+		DefineAddress(SetSerializer, GetAddress(0x964000, 0x963CA0, 0x963CA0));
+		DefineAddress(GetProxyID, GetAddress(0x96F3C0, 0x96F020, 0x96F020));
+
+		DefineAddress(func84h, GetAddress(0x96F380, 0x96EFE0, 0x96EFE0));
+	}
+};
