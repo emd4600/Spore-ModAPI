@@ -63,7 +63,7 @@ namespace Swarm
 		/* 5Ch */	float field_5C;
 		/* 60h */	float field_60;
 		/* 64h */	float field_64;
-		/* 68h */	int field_68;
+		/* 68h */	int mAppFlags;
 		/* 6Ch */	int field_6C;
 		/* 70h */	int field_70;
 		/* 74h */	int8_t field_74[0x4C];

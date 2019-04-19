@@ -65,8 +65,8 @@ namespace App
 		virtual int func48h(int) override;
 		virtual bool SetActiveModeByName(const char* pName) override;
 		virtual ICameraManager* GetCameraManager() override;
-		virtual void SetViewer(Viewer* scene) override;
-		virtual Viewer* GetViewer() override;
+		virtual void SetViewer(cViewer* scene) override;
+		virtual cViewer* GetViewer() override;
 
 	protected:
 		struct ModeEntry
@@ -82,7 +82,7 @@ namespace App
 		/* 14h */	vector<ModeEntry> mEntries;
 		/* 28h */	int mnActiveIndex;
 		/* 2Ch */	intrusive_ptr<ICameraManager> mpCameraMgr;
-		/* 30h */	Viewer* mpViewer;
+		/* 30h */	cViewer* mpViewer;
 	};
 
 	/////////////////////////////////

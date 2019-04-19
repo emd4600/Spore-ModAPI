@@ -43,8 +43,8 @@ namespace App
 		virtual int Release() override;
 		virtual bool Initialize(const char* pCheatName) override;
 		virtual bool Dispose() override;
-		virtual void SetViewer(Viewer* pViewer) override;
-		virtual Viewer* GetViewer() override;
+		virtual void SetViewer(cViewer* pViewer) override;
+		virtual cViewer* GetViewer() override;
 		virtual void AddCameraType(uint32_t typeID, CameraFactoryFunction_t function) override;
 		virtual void PutCamera(uint32_t cameraID, ICamera* pCamera, const wchar_t* pName) override;
 		virtual void ParseCameras() override;
@@ -74,7 +74,7 @@ namespace App
 		/* 94h */	vector<wstring> mCameraNames;
 		/* A8h */	int mnActiveIndex;  // -1
 		/* ACh */	int field_AC;
-		/* B0h */	Viewer* mpViewer;
+		/* B0h */	cViewer* mpViewer;
 	};
 
 	/////////////////////////////////

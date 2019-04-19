@@ -23,6 +23,7 @@
 #include <Spore\Graphics\IRenderable.h>
 #include <Spore\Graphics\IModelWorld.h>
 #include <Spore\Object.h>
+#include <Spore\UI\cSPUILayeredObject.h>
 
 namespace UI 
 {
@@ -39,7 +40,7 @@ namespace UI
 		};
 	
 	public:
-		/* 0Ch */	vector<intrusive_ptr<DefaultRefCounted>> mLayeredObjects;  // cSPUILayeredObject
+		/* 0Ch */	vector<intrusive_ptr<cSPUILayeredObject>> mLayeredObjects;
 		/* 20h */	vector<intrusive_ptr<DefaultRefCounted>> field_20;
 		/* 34h */	bool field_34;
 		/* 38h */	int field_38;  // -1

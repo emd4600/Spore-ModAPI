@@ -40,25 +40,32 @@ namespace RenderWare
 		///
 		void ReleaseDirectX();
 
+		///
+		/// Creates the DirectX buffer. This will set the 'pDXBuffer' field.
+		void CreateDirectX();
+
+		/// Sends the buffer data into the DirectX object.
+		void LockDirectXData();
+
 		/// The VertexDescription that defines the data that each vertex has.
-		/* 00h */	void* mpVertexDescription;
+		/* 00h */	void* pVertexDescription;
 
 		/// The IDirect3DVertexBuffer9 that is operating behind this structure.
-		/* 04h */	IDirect3DVertexBuffer9* mpDXBuffer;
+		/* 04h */	IDirect3DVertexBuffer9* pDXBuffer;
 
 		/// Offset from the start of the vertex buffer to the first vertex.
-		/* 08h */	size_t mnBaseVertexIndex;
+		/* 08h */	size_t baseVertexIndex;
 
 		/// The amount of vertices contained in the buffer.
-		/* 0Ch */	size_t mnVertexCount;
+		/* 0Ch */	size_t vertexCount;
 
 		/* 10h */	int field_10;
 
 		/// The size in bytes of each vertex structure.
-		/* 14h */	size_t mnStride;
+		/* 14h */	size_t stride;
 
 		/// The raw data of the vertices. This is an array of vertices, but the data they contain depends on the VertexDescription.
-		/* 18h */	void* mpVertexData;
+		/* 18h */	void* pVertexData;
 
 		static const uint32_t TYPE = 0x20005;
 	};

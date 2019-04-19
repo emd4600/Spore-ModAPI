@@ -91,18 +91,37 @@ namespace Graphics
 		/* 44h */	virtual int func44h() = 0;
 		/* 48h */	virtual int func48h() = 0;
 		/* 4Ch */	virtual int func4Ch() = 0;
-		/* 50h */	virtual int func50h() = 0;
-		/* 54h */	virtual int func54h() = 0;
+		
+		///
+		/// Used to get the instance and group ID of the given model.
+		/// @param pModel The model.
+		/// @param pDstInstanceID [Optional] Reference to the destination variable for the instance ID.
+		/// @param pDstGroupID [Optional] Reference to the destination variable for the group ID.
+		/* 50h */	virtual void GetResourceIDs(const Model* pModel, uint32_t* pDstInstanceID, uint32_t* pDstGroupID) = 0;
+
+		/* 54h */	virtual void GetRegions(const Model* pModel, vector<uint32_t>& dst) = 0;
 
 		///
 		/// Although this function is not necessary and it's usage is not really known, it's recommended to use
 		/// it on every model loaded to avoid delays when those are displayed for the firt time
 		/// @param pModel
 		///
-		/* 58h */	virtual void ShowModel(Model* pModel) = 0;
+		/* 58h */	virtual void UpdateModel(const Model* pModel) = 0;  //PLACEHOLDER what really is this?
 
-		/* 5Ch */	virtual int func5Ch() = 0;
-		/* 60h */	virtual int func60h() = 0;
+		///
+		/// Returns the model bounding radius, calling UpdateModel() if the model
+		/// does not have the 'overrideBoundingRadius' property.
+		/// @param pModel
+		/// @returns The bounding radius.
+		/* 5Ch */	virtual float GetBoundingRadius(const Model* pModel) = 0;
+
+		///
+		/// Returns the model bounding box, calling UpdateModel() if the model
+		/// does not have the 'overrideBoundingBox' property.
+		/// @param pModel
+		/// @returns The bounding box.
+		/* 60h */	virtual const BoundingBox& GetBoundingBox(const Model* pModel) = 0;
+
 		/* 64h */	virtual int func64h() = 0;
 		/* 68h */	virtual int func68h() = 0;
 		/* 6Ch */	virtual int func6Ch() = 0;
@@ -158,9 +177,9 @@ namespace Graphics
 
 		///
 		/// Toggles the visibility of all the world, including the lighting and all the models contained.
-		/// @param bVisible Whether the world must be visible or not.
+		/// @param visible Whether the world must be visible or not.
 		///
-		/* 134h */	virtual void SetVisible(bool bVisible) = 0;
+		/* 134h */	virtual void SetVisible(bool visible) = 0;
 
 		/* 138h */	virtual int func138h() = 0;
 
@@ -186,26 +205,22 @@ namespace Graphics
 		///
 		/// Changes the visibility of a given model inside this world.
 		/// @param pModel The model to set visible/invisible, which must be included inside this world.
-		/// @param bVisible Whether the model must be visible or not.
+		/// @param visible Whether the model must be visible or not.
 		///
-		/* 16Ch */	virtual bool SetModelVisibility(Model* pModel, bool bVisible) = 0;
+		/* 16Ch */	virtual bool SetModelVisibile(Model* pModel, bool visible) = 0;
 
 		/* 170h */	virtual void DestroyModel(Model* pModel, bool) = 0;  // ?
 
 		/* 174h */	virtual bool Initialize() = 0;
 		/* 178h */	virtual bool Dispose() = 0;
 
-		///
-		/// Assigns the required flags to the given IModelWorld depending on the groupID specified.
-		/// @param pWorld The model world to modify.
-		/// @param groupID The ID of the model group, in the ModelGroups enum.
-		///
-		static void SetGroup(IModelWorld* pWorld, uint32_t groupID);
-
 	protected:
 		void LoadModelProperties(const App::PropertyList* pPropList, ModelAsset* pAsset, int nFlags, int arg_C);
 
 		// /* 19Ch */	intrusive_list<ModelAsset> ??
+
+		// 2ECh vector?
+		// 300h vector
 
 	};
 

@@ -21,7 +21,7 @@
 
 #include <d3d9.h>
 #include "Shader.h"
-#include "Material.h"
+#include <Spore\Graphics\MaterialShader.h>
 #include "..\Internal.h"
 
 namespace RenderWare
@@ -94,8 +94,8 @@ namespace RenderWare
 			return (void**)GetAddress(0x016FD8D8, 0x16F75A8, 0x16F65A8);
 		}
 
-		inline Material* GetMaterial() {
-			return *(Material**)GetAddress(0x016FD898, 0x16F7568, 0x16F6568);
+		inline Graphics::MaterialShader* GetMaterial() {
+			return *(Graphics::MaterialShader**)GetAddress(0x016FD898, 0x16F7568, 0x16F6568);
 		}
 
 		inline D3DMATRIX* GetModelMatrix() {

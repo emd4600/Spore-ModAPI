@@ -86,8 +86,8 @@ namespace App
 	auto_METHOD_VIRTUAL_(cCameraManager, ICameraManager, int, Release);
 	auto_METHOD_VIRTUAL(cCameraManager, ICameraManager, bool, Initialize, PARAMS(const char* pCheatName), PARAMS(pCheatName));
 	auto_METHOD_VIRTUAL_(cCameraManager, ICameraManager, bool, Dispose);
-	auto_METHOD_VIRTUAL_VOID(cCameraManager, ICameraManager, SetViewer, PARAMS(Viewer* pViewer), PARAMS(pViewer));
-	auto_METHOD_VIRTUAL_(cCameraManager, ICameraManager, Viewer*, GetViewer);
+	auto_METHOD_VIRTUAL_VOID(cCameraManager, ICameraManager, SetViewer, PARAMS(cViewer* pViewer), PARAMS(pViewer));
+	auto_METHOD_VIRTUAL_(cCameraManager, ICameraManager, cViewer*, GetViewer);
 	auto_METHOD_VIRTUAL_VOID(cCameraManager, ICameraManager, AddCameraType, PARAMS(uint32_t typeID, CameraFactoryFunction_t function), PARAMS(typeID, function));
 	auto_METHOD_VIRTUAL_VOID(cCameraManager, ICameraManager, PutCamera, PARAMS(uint32_t cameraID, ICamera* pCamera, const wchar_t* pName), PARAMS(cameraID, pCamera, pName));
 	auto_METHOD_VIRTUAL_VOID_(cCameraManager, ICameraManager, ParseCameras);

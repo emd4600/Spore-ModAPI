@@ -43,8 +43,10 @@ namespace Graphics
 	{
 		kModelFlagUseColor = 0x2,
 
+		kModelFlagVisible = 0x8000,
+
 		kModelFlagOverrideBoundingBox = 0x10000,
-		kModelFlagOverrideBoundingRadius = 0x20000,
+		kModelFlagOverrideBoundingRadius = 0x20000,  // 1 << 17
 		kModelFlagNeedsBake = 0x40000
 	};
 
@@ -57,20 +59,35 @@ namespace Graphics
 		Transform GetTransform() const;
 		void SetTransform(const Transform& transform);
 
+		IModelWorld* GetModelWorld() const;
+
+		App::PropertyList* GetPropList() const;
+
+		ColorRGBA GetColor() const;
+		void SetColor(const ColorRGBA& color);
+
+		///
+		/// Assigns the required flags to this model depending on the groupID specified.
+		/// @param groupID The ID of the model group, in the ModelGroups enum.
+		///
+		void AddGroup(uint32_t groupID);
+		void RemoveGroup(uint32_t groupID);
+
+		bool HasGroup(uint32_t groupID) const;
+
 	public:
 		/* 00h */	IModelWorld* mpWorld;
-		/* 04h */	int mnFlags;
+		/* 04h */	int mFlags;
 		/* 08h */	Transform mTransform;
 		/* 40h */	int mnRefCount;
-		/* 44h */	int field_44;
-		/* 48h */	int field_48;
+		/* 44h */	int mGroupFlags[2];
 		/* 4Ch */	Math::ColorRGBA mColor;
 		/* 5Ch */	bool field_5C;
 		/* 5Dh */	bool field_5D;
 		/* 60h */	int field_60;
 		/* 64h */	int field_64;
 		/* 68h */	int field_68;  // not initialized
-		/* 6Ch */	float mfDefaultBoundingRadius;  // 1.0f
+		/* 6Ch */	float mDefaultBoundingRadius;  // 1.0f
 		/* 70h */	Math::BoundingBox mDefaultBBox;
 		/* 88h */	float field_88;  // FLOAT_MAX
 		/* 8Ch */	float field_8C;  // FLOAT_MAX  // distance from camera?
@@ -82,9 +99,10 @@ namespace Graphics
 	public:
 
 	protected:
+		// The object, at 30h, has vector<Material*>
 		/* 9Ch */	vector<intrusive_ptr<void*>> field_9C;
 		/* B0h */	int field_B0;  // not initialized
-		/* B4h */	vector<intrusive_ptr<void*>> field_B4;
+		/* B4h */	vector<intrusive_ptr<void*>> field_B4;  // PLACEHOLDER not really a vector! related with animations
 		/* C8h */	int field_C8;  // not initialized
 		/* CCh */	int field_CC;  // -1
 		/* D0h */	short field_D0;
@@ -125,5 +143,21 @@ namespace Graphics
 	inline void Model::SetTransform(const Transform& transform)
 	{
 		mTransform = transform;
+	}
+
+	inline App::PropertyList* Model::GetPropList() const {
+		return mpPropList.get();
+	}
+
+	inline ColorRGBA Model::GetColor() const {
+		return mColor;
+	}
+
+	inline void Model::SetColor(const ColorRGBA& color) {
+		mColor = color;
+	}
+
+	inline IModelWorld* Model::GetModelWorld() const {
+		return mpWorld;
 	}
 }

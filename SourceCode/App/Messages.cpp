@@ -65,8 +65,8 @@ namespace App
 
 
 	StandardMessage::StandardMessage()
-		: mID(0)
-		, mObjectFlags(0)
+		: id(0)
+		, objectFlags(0)
 	{
 	}
 
@@ -74,9 +74,9 @@ namespace App
 	{
 		for (size_t i = 0; i < 32; i++)
 		{
-			if (mObjectFlags & (1 << i))
+			if (objectFlags & (1 << i))
 			{
-				mParams[i].mpObject->Release();
+				params[i].object->Release();
 			}
 		}
 	}

@@ -21,6 +21,7 @@
 
 #include <cstdint>
 #include <d3d9.h>
+#include <Spore\Internal.h>
 
 namespace RenderWare
 {
@@ -32,20 +33,47 @@ namespace RenderWare
 	///
 	struct Raster
 	{
+		enum : uint16_t {
+			kTypeTexture = 8,
+			kTypeCubeTextureRTT = 9,
+			kTypeTextureRTT = 10,
+
+			kFlagDynamicUsage = 0x10,
+			kFlagAutoGenMipap = 0x200,
+
+			kFlagCubeTexture = 0x1000
+		};
+
 		Raster();
 
-		/* 00h */	uint32_t mTextureFormat;
-		/* 04h */	uint16_t mnTextureFlags;
-		/* 06h */	uint16_t mnVolumeDepth;
-		/* 08h */	IDirect3DBaseTexture9* mpDXBaseTexture;
-		/* 0Ch */	uint16_t mnWidth;
-		/* 0Eh */	uint16_t mnHeight;
+		/// Creates the corresponding Direct3D object for this raster, depending on the format and flags.
+		void Create();
+
+		/* 00h */	D3DFORMAT format;
+		/* 04h */	uint16_t flags;  // the first byte chooses type
+		/* 06h */	uint16_t volumeDepth;
+		/* 08h */	union {
+			IDirect3DSurface9* pSurface;
+			IDirect3DTexture9* pTexture;
+			IDirect3DCubeTexture9* pCubeTexture;
+			IDirect3DVolumeTexture9* pVolumeTexture;
+		};
+		/* 0Ch */	uint16_t width;
+		/* 0Eh */	uint16_t height;
 		/* 10h */	char field_10;
-		/* 11h */	uint8_t mnMipmapLevels;
+		/* 11h */	uint8_t levels;
+		/* 12h */	uint16_t cubeFaces;
 		/* 14h */	int field_14;
 		/* 18h */	int field_18;
-		/* 1Ch */	void* mpTextureData;
+		/* 1Ch */	void* pTextureData;
 
 		static const uint32_t TYPE = 0x20003;
+	};
+
+	static_assert(sizeof(Raster) == 0x20, "sizeof(Raster) != 20h");
+
+	namespace InternalAddressList(Raster)
+	{
+		DefineAddress(Create, GetAddress(0x11F22E0, , PLACEHOLDER));
 	};
 }

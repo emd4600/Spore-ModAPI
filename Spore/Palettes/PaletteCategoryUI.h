@@ -27,6 +27,7 @@
 
 #include <Spore\Palettes\PaletteCategory.h>
 #include <Spore\Palettes\ColorPickerUI.h>
+#include <Spore\Palettes\PalettePageUI.h>
 
 namespace Palettes
 {
@@ -69,6 +70,13 @@ namespace Palettes
 		};
 
 	public:
+		struct PageUIContainer {
+			intrusive_ptr<PalettePageUI> page;
+			bool field_4;
+			bool field_5;
+			bool field_6;
+		};
+
 		PaletteCategoryUI();
 		virtual ~PaletteCategoryUI() {};
 
@@ -136,7 +144,7 @@ namespace Palettes
 		/// The class that manages the piece of UI that displays the page number and the turn page buttons.
 		/* 70h */	intrusive_ptr<PageArrowsUI> mpPageArrowsUI;
 		/* 74h */	vector<int> field_74;
-		/* 88h */	vector<int> field_88;
+		/* 88h */	vector<PageUIContainer> mPageUIs;
 		/* 9Ch */	int field_9C;
 		/* A0h */	int field_A0;
 		/* A4h */	int field_A4;

@@ -23,16 +23,29 @@
 
 namespace Graphics
 {
-	void IModelWorld::SetGroup(IModelWorld* pWorld, uint32_t groupID)
+	void Model::AddGroup(uint32_t groupID)
 	{
 		int flags = ModelManager()->GetGroupFlag(groupID);
 		if (flags < 64)
 		{
-			int index = 64 / 32;
-			int* pValue = (int*)(((int)pWorld) + 0x44 + index * 4);
-
-			*pValue |= 1 << (flags & 31);
+			mGroupFlags[flags/32] |= 1 << (flags & 31);
 		}
+	}
+
+	void Model::RemoveGroup(uint32_t groupID)
+	{
+		int flags = ModelManager()->GetGroupFlag(groupID);
+		if (flags < 64)
+		{
+			mGroupFlags[flags / 32] &= ~(1 << (flags & 31));
+		}
+	}
+
+	bool Model::HasGroup(uint32_t groupID) const
+	{
+		int flags = ModelManager()->GetGroupFlag(groupID);
+		if (flags < 64) return (mGroupFlags[flags / 32] & (1 << (flags & 31))) != 0;
+		return false;
 	}
 
 	auto_STATIC_METHOD_(IModelManager, IModelManager*, Get);

@@ -17,33 +17,35 @@
 * along with this program.  If not, see <http://www.gnu.org/licenses/>.
 ****************************************************************************/
 
-#include <Spore\App\Viewer.h>
+#include <Spore\App\cViewer.h>
 
 namespace App
 {
 
-	auto_METHOD(Viewer, bool, Initialize, PARAMS(bool arg_0), PARAMS(arg_0));
+	auto_METHOD(cViewer, bool, Initialize, PARAMS(bool arg_0), PARAMS(arg_0));
 
-	auto_METHOD_VOID(Viewer, ClearScene, PARAMS(int8_t flags), PARAMS(flags));
-	auto_METHOD_(Viewer, bool, LoadTransformations);
+	auto_METHOD(cViewer, bool, ClearScene, PARAMS(int8_t flags), PARAMS(flags));
+	auto_METHOD_(cViewer, bool, LoadTransformations);
 
-	auto_METHOD_VOID(Viewer, SetBackgroundColor, PARAMS(const Math::ColorRGBA& color), PARAMS(color));
+	auto_METHOD_VOID(cViewer, SetBackgroundColor, PARAMS(const Math::ColorRGBA& color), PARAMS(color));
 
-	auto_METHOD_const_(Viewer, float, GetNearPlane);
-	auto_METHOD_const_(Viewer, float, GetFarPlane);
+	auto_METHOD_const_(cViewer, float, GetNearPlane);
+	auto_METHOD_const_(cViewer, float, GetFarPlane);
 
-	auto_METHOD_VOID(Viewer, SetNearPlane, PARAMS(float value), PARAMS(value));
-	auto_METHOD_VOID(Viewer, SetFarPlane, PARAMS(float value), PARAMS(value));
+	auto_METHOD_VOID(cViewer, SetNearPlane, PARAMS(float value), PARAMS(value));
+	auto_METHOD_VOID(cViewer, SetFarPlane, PARAMS(float value), PARAMS(value));
 
-	auto_METHOD_VOID(Viewer, SetAspectRatio, PARAMS(float value), PARAMS(value));
+	auto_METHOD_VOID(cViewer, SetAspectRatio, PARAMS(float value), PARAMS(value));
 
-	auto_METHOD_VOID(Viewer, SetCameraMaterialLODs, PARAMS(const Math::Vector4& values), PARAMS(values));
+	auto_METHOD_VOID(cViewer, SetCameraMaterialLODs, PARAMS(const Vector4& values), PARAMS(values));
+	auto_METHOD_const_(cViewer, Vector4, GetCameraMaterialLODs);
 
-	auto_METHOD_VOID(Viewer, SetRenderType, PARAMS(int arg_0, bool arg_4), PARAMS(arg_0, arg_4));
+	auto_METHOD_VOID(cViewer, SetRenderType, PARAMS(int arg_0, bool arg_4), PARAMS(arg_0, arg_4));
 
-	auto_METHOD_VOID(Viewer, SetViewTransform, PARAMS(const Transform& transform), PARAMS(transform));
+	auto_METHOD_VOID(cViewer, SetViewTransform, PARAMS(const Transform& transform), PARAMS(transform));
+	auto_METHOD_const_(cViewer, Transform, GetViewTransform);
 
-	auto_METHOD(Viewer, bool, GetCameraToMouse, PARAMS(Vector3& dst1, Vector3& dst2), PARAMS(dst1, dst2));
+	auto_METHOD_const(cViewer, bool, GetCameraToMouse, PARAMS(Vector3& dst1, Vector3& dst2), PARAMS(dst1, dst2));
 
-	auto_METHOD(Viewer, bool, GetCameraToPoint, PARAMS(float x, float y, Vector3& dst1, Vector3& dst2), PARAMS(x, y, dst1, dst2));
+	auto_METHOD_const(cViewer, bool, GetCameraToPoint, PARAMS(float x, float y, Vector3& dst1, Vector3& dst2), PARAMS(x, y, dst1, dst2));
 }

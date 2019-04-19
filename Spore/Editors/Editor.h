@@ -23,7 +23,7 @@
 #include <Spore\MathUtils.h>
 
 #include <Spore\App\PropertyList.h>
-#include <Spore\App\Viewer.h>
+#include <Spore\App\cViewer.h>
 #include <Spore\App\IGameMode.h>
 #include <Spore\App\IGameModeManager.h>
 
@@ -70,11 +70,29 @@ namespace Editors
 	{
 	public:
 
+		enum class Mode : int
+		{
+			BuildMode = 0,
+			PaintMode = 1,
+			PlayMode = 2
+		};
+
 		//PLACEHOLDER virtual method 54h -> reads temporary database
 		//PLACEHOLDER virtual method 58h -> wrties temporary database
 
 		Editor();
 		virtual ~Editor();
+
+		///
+		/// Returns true if the editor is currently in the given mode.
+		/// @param mode Either build, paint or play mode.
+		bool IsMode(Mode mode) const;
+
+		///
+		/// Returns true if the editor is currently active.
+		bool IsActive() const;
+
+	public:
 
 		char _padding_8[0x18];
 
@@ -259,7 +277,7 @@ namespace Editors
 		/* 2A8h */	uint32_t mSaveExtension;
 		/// The save directory key.
 		/* 2ACh */	uint32_t mSaveDirectory;
-		/* 2B0h */	char field_2B0;
+		/* 2B0h */	bool mIsActive;
 		/* 2B1h */	char field_2B1;  // not initialized
 		/* 2B2h */	bool mbShowVertebrae;  // true
 		/* 2B3h */	char field_2B3;
@@ -316,7 +334,7 @@ namespace Editors
 		/* 310h */	bool mbPreserveLineage;  // true
 		/* 314h */	float field_314;  // 0.5
 		/* 318h */	uint32_t field_318;	// property 0x9036D280.instanceID
-		/* 31Ch */	int field_31C; // 1 -> paint mode, 2-> test drive mode
+		/* 31Ch */	Mode mMode;
 		/* 320h */	vector<uint32_t> mEnabledManipulators;
 		/// The list of model types that this editor supports, ie. VehicleMilitaryAir, VehicleEconomicLand, BuildingIndustry, BuildingHouse, etc
 		/* 334h */	vector<uint32_t> mModelTypes;
@@ -357,11 +375,11 @@ namespace Editors
 		/* 3C8h */	bool field_3C8;
 		/* 3C9h */	bool field_3C9;  // true
 
-		/* 3CCh */	App::Viewer* field_3CC;  // not initialized
-		/* 3D0h */	App::Viewer* field_3D0;  // not initialized
-		/* 3D4h */	App::Viewer* field_3D4;  // not initialized
-		/* 3D8h */	App::Viewer* field_3D8;  // not initialized
-		/* 3DCh */	App::Viewer* field_3DC;  // not initialized
+		/* 3CCh */	App::cViewer* field_3CC;  // not initialized
+		/* 3D0h */	App::cViewer* field_3D0;  // not initialized
+		/* 3D4h */	App::cViewer* field_3D4;  // not initialized
+		/* 3D8h */	App::cViewer* field_3D8;  // not initialized
+		/* 3DCh */	App::cViewer* field_3DC;  // not initialized
 
 		/* 3E0h */	bool field_3E0;
 		/* 3E1h */	bool field_3E1;
@@ -504,5 +522,13 @@ namespace Editors
 		{
 			return nullptr;
 		}
+	}
+
+	inline bool Editor::IsMode(Mode mode) const {
+		return mMode == mode;
+	}
+
+	inline bool Editor::IsActive() const {
+		return mIsActive;
 	}
 }

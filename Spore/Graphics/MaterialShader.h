@@ -22,34 +22,19 @@
 #include <Spore\Internal.h>
 #include <Spore\IO\IStream.h>
 #include <EASTL\intrusive_ptr.h>
-#include <D3D9.h>
 
 using namespace eastl;
 
 namespace Graphics
 {
+
 	class MaterialShader
 	{
 	public:
-		struct ShaderDataUniform
-		{
-			short field_0;
-			short field_2;
-			short field_4;
-			short field_8;
-			int flags;
-		};
 
 		typedef int(*LoadMaterialCallback)();
 
-		MaterialShader();
-
 		int AddRef();
-		int Release();
-
-		bool ReadStandard(IO::IStream* pStream, uint32_t shaderID, int version);
-
-		void Reset();
 
 	protected:
 		/* 00h */	int field_0;
@@ -72,10 +57,6 @@ namespace Graphics
 		/* 3Ch */	int mnRefCount;
 		/* 40h */	int field_40;  // intrusive_list_node?
 		/* 44h */	int field_44;
-		/* 48h */	intrusive_ptr<IDirect3DVertexShader9> mVertexShaders[16];
-		/* 88h */	intrusive_ptr<IDirect3DPixelShader9> mPixelShaders[16];
-		/* C8h */	vector<ShaderDataUniform> mVertexShaderData[16];
-		/* 208h */	vector<ShaderDataUniform> mPixelShaderData[16];
 
 
 	public:
@@ -86,12 +67,9 @@ namespace Graphics
 
 	};
 
-	static_assert(sizeof(MaterialShader) == 0x348, "sizeof(MaterialShader) != 0x348");
+	static_assert(sizeof(MaterialShader) == 0x48, "sizeof(MaterialShader) != 0x48");
 	
 	namespace InternalAddressList(MaterialShader) {
-		DefineAddress(ctor, GetAddress(0x6E5EF0,, 0x6E5840));
-		DefineAddress(Release, GetAddress(0x6E5EC0,, 0x6E5810));
-		DefineAddress(ReadStandard, GetAddress(0x6E6470,, 0x6E5DC0));
 		DefineAddress(Reset, GetAddress(0x6E62F0,, 0x6E5C40));
 		DefineAddress(Initialize, GetAddress(0x11F6B90, 0x11F4470, 0x11F4470));
 		DefineAddress(GetMaterialShader, GetAddress(0x11FC770, 0x11FA030, 0x11FA030));

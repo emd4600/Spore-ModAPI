@@ -21,12 +21,14 @@
 
 #include <Spore\RenderWare\RenderWareFile.h>
 #include <Spore\Graphics\IMaterialManager.h>
-#include <Spore\Graphics\MaterialShader.h>
+#include <Spore\Graphics\StandardShader.h>
+#include <Spore\Graphics\ShaderBuilder.h>
 #include <Spore\Object.h>
 #include <Spore\Clock.h>
 #include <Spore\Mutex.h>
 
 #include <EASTL\hash_map.h>
+#include <EASTL\fixed_vector.h>
 #include <EASTL\vector.h>
 #include <EASTL\string.h>
 
@@ -44,12 +46,13 @@ namespace Graphics
 		/* 28h */	hash_map<int, int> field_28;
 		/* 48h */	hash_map<int, int> field_48;
 		/* 68h */	hash_map<int, int> field_68;
-		/* 88h */	vector<intrusive_ptr<MaterialShader>> mStandardShaders;
+		/* 88h */	vector<intrusive_ptr<StandardShader>> mStandardShaders;
 		/* 9Ch */	hash_map<int, int> field_9C;
 		// They are only added here if they are outside the 0x70000000 - 0x80000000 range
-		/* BCh */	hash_map<uint32_t, intrusive_ptr<MaterialShader>> mStandardShadersMap;
-		/* DCh */	vector<int> field_DC;
-		/* F0h */	hash_map<int, int> field_F0;
+		/* BCh */	hash_map<uint32_t, intrusive_ptr<StandardShader>> mStandardShadersMap;
+		/* DCh */	vector<intrusive_ptr<ShaderBuilder>> mShaderBuilders;
+		// They are only added here if they are outside the 0x70000000 - 0x80000000 range
+		/* F0h */	hash_map<uint32_t, intrusive_ptr<ShaderBuilder>> mShaderBuildersMap;
 		/* 110h */	string field_110;
 		/* 120h */	char field_120[0x1C];  // not initialized
 		/* 13Ch */	hash_map<int, int> field_13C;
@@ -67,7 +70,7 @@ namespace Graphics
 		bool ReadCompiledShadersImpl(IO::IStream* pStream);
 		bool ReadMaterialsImpl(IO::IStream* pLinkStream, RenderWare::RenderWareFile* pRenderWare);
 
-	protected:
+	public:
 
 		/* 08h */	int mnRefCount;
 		/* 0Ch */	int field_0C;
@@ -77,8 +80,13 @@ namespace Graphics
 		/* 174h */	hash_map<uint32_t, Material> mMaterials;
 		/* 194h */	hash_map<CompiledState*, uint32_t> field_194;
 		/* 1B4h */	CompiledState* mpDefaultCompiledState;
-
-		// 200h graphics quality?
+		/* 1B8h */	bool field_1B8;
+		/* 1BCh */	int _padding_1BC[4];
+		/* 1CCh */	int field_1CC;  // 1
+		/* 1D0h */	int field_1D0;  // -1
+		/* 1D4h */	int field_1D4; 
+		/* 1D8h */	fixed_vector<int, 4> field_1D8;
+		/* 200h */	int mShaderPath;
 		/* 204h */	intrusive_ptr<RenderWare::RenderWareFile> mpCompiledStatesFile;
 		/* 208h */	Clock field_208;
 		/* 220h */	int field_220;
@@ -92,5 +100,10 @@ namespace Graphics
 		/* 240h */	int field_240;  // 0x200
 		/* 244h */	vector<intrusive_ptr<Material>> mTexturedMaterials;
 		/* 258h */	Mutex mMaterialsMutex;
+	};
+	
+	namespace InternalAddressList(cMaterialManager) 
+	{
+		DefineAddress(ReadShaderFragments, GetAddress(0x70F7E0, , 0x70F010));
 	};
 }

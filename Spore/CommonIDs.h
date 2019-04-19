@@ -108,7 +108,9 @@ namespace TypeIDs
 		/// Cells.
 		cll = 0x3D97A8E4,
 		/// Spaceships.
-		ufo = 0x476A98C7
+		ufo = 0x476A98C7,
+		/// Spore Materials
+		smt = 0x0469A3F7
 	};
 }
 

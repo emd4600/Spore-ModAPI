@@ -24,6 +24,7 @@
 #include <Spore\Palettes\PaletteUI.h>
 #include <Spore\Palettes\PaletteCategoryUI.h>
 #include <Spore\Palettes\PalettePageUI.h>
+#include <Spore\Palettes\ItemViewer.h>
 
 namespace Palettes
 {
@@ -336,7 +337,7 @@ namespace Palettes
 		, mpCategory(nullptr)
 		, mpPageArrowsUI(nullptr)
 		, field_74()
-		, field_88()
+		, mPageUIs()
 		, field_9C()
 		, field_A0()
 		, field_A4()
@@ -446,4 +447,8 @@ namespace Palettes
 	{
 		return true;
 	}
+
+
+
+	auto_METHOD_VOID_(ItemViewer, InitializeViewerCamera);
 }

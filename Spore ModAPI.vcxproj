@@ -430,6 +430,7 @@
     <ClInclude Include="EASTL\version.h" />
     <ClInclude Include="EASTL\weak_ptr.h" />
     <ClInclude Include="ModAPI\CompiledStateBuilder.h" />
+    <ClInclude Include="ModAPI\Detouring.h" />
     <ClInclude Include="ModAPI\MaterialConfig.h" />
     <ClInclude Include="ModAPI\MaterialParser.h" />
     <ClInclude Include="ModAPI\ShaderConstantsManager.h" />
@@ -448,6 +449,7 @@
     <ClInclude Include="Spore\App\IGameModeManager.h" />
     <ClInclude Include="Spore\App\IMessageListener.h" />
     <ClInclude Include="Spore\App\IMessageManager.h" />
+    <ClInclude Include="Spore\App\IStateManager.h" />
     <ClInclude Include="Spore\App\MessageListenerData.h" />
     <ClInclude Include="Spore\App\StandardMessage.h" />
     <ClInclude Include="Spore\ArgScript.h" />
@@ -469,9 +471,17 @@
     <ClInclude Include="Spore\Editors\cEditorResource.h" />
     <ClInclude Include="Spore\Editors\EditorPlayMode.h" />
     <ClInclude Include="Spore\Editors\SpeciesManager.h" />
+    <ClInclude Include="Spore\Graphics\Animations.h" />
+    <ClInclude Include="Spore\Graphics\CompiledShader.h" />
+    <ClInclude Include="Spore\Graphics\cRenderTargetManager.h" />
     <ClInclude Include="Spore\Graphics\LambdaRenderable.h" />
     <ClInclude Include="Spore\Graphics\LightingProperties.h" />
     <ClInclude Include="Spore\Graphics\MaterialShader.h" />
+    <ClInclude Include="Spore\Graphics\IRenderTargetManager.h" />
+    <ClInclude Include="Spore\Graphics\Renderer.h" />
+    <ClInclude Include="Spore\Graphics\ShaderBuilder.h" />
+    <ClInclude Include="Spore\Graphics\ShaderDataUniform.h" />
+    <ClInclude Include="Spore\Graphics\StandardShader.h" />
     <ClInclude Include="Spore\Palettes\ColorPickerUI.h" />
     <ClInclude Include="Spore\Palettes\ColorSwatchUI.h" />
     <ClInclude Include="Spore\Editors\EditorCamera.h" />
@@ -479,6 +489,9 @@
     <ClInclude Include="Spore\GameCiv\Messages.h" />
     <ClInclude Include="Spore\Input.h" />
     <ClInclude Include="Spore\Palettes\ItemViewer.h" />
+    <ClInclude Include="Spore\RenderWare\Animations.h" />
+    <ClInclude Include="Spore\RenderWare\SkeletonsInK.h" />
+    <ClInclude Include="Spore\RenderWare\MorphHandle.h" />
     <ClInclude Include="Spore\RenderWare\Renderer.h" />
     <ClInclude Include="Spore\RenderWare\RenderWareFile.h" />
     <ClInclude Include="Spore\App\ScenarioMode.h" />
@@ -604,7 +617,7 @@
     <ClInclude Include="Spore\Graphics\ITextureManager.h" />
     <ClInclude Include="Spore\Graphics\ModelAsset.h" />
     <ClInclude Include="Spore\Graphics\Texture.h" />
-    <ClInclude Include="Spore\App\Viewer.h" />
+    <ClInclude Include="Spore\App\cViewer.h" />
     <ClInclude Include="Spore\IO.h" />
     <ClInclude Include="Spore\IO\Allocator.h" />
     <ClInclude Include="Spore\IO\XmlWriter.h" />
@@ -733,6 +746,7 @@
     <ClInclude Include="Spore\Swarm\Components\TextureSlot.h" />
     <ClInclude Include="Spore\Terrain\Sphere\cTerrainSphere.h" />
     <ClInclude Include="Spore\Terrain\Sphere\cTerrainSphereQuad.h" />
+    <ClInclude Include="Spore\UI\cSPUILayeredObject.h" />
     <ClInclude Include="Spore\UI\GlobalUI.h" />
     <ClInclude Include="Spore\UI\ITokenTranslator.h" />
     <ClInclude Include="Spore\UI\LayerManager.h" />
@@ -803,6 +817,7 @@
   <ItemGroup>
     <ClCompile Include="ModAPI\ShaderConstantsManager.cpp" />
     <ClCompile Include="SourceCode\Allocator.cpp" />
+    <ClCompile Include="SourceCode\App\App.cpp" />
     <ClCompile Include="SourceCode\App\Cameras.cpp" />
     <ClCompile Include="SourceCode\App\CheatManager.cpp" />
     <ClCompile Include="SourceCode\App\GameModes.cpp" />
@@ -825,6 +840,7 @@
     <ClCompile Include="SourceCode\Editors\Colorpickers.cpp" />
     <ClCompile Include="SourceCode\Editors\EditorCamera.cpp" />
     <ClCompile Include="SourceCode\Editors\SpeciesManager.cpp" />
+    <ClCompile Include="SourceCode\Graphics\RenderTargets.cpp" />
     <ClCompile Include="SourceCode\RenderWare\RenderWare.cpp" />
     <ClCompile Include="SourceCode\App\ScenarioMode.cpp" />
     <ClCompile Include="SourceCode\Simulator\cCity.cpp" />

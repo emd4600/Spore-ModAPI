@@ -20,7 +20,7 @@
 #pragma once
 
 #include <Spore\App\ICamera.h>
-#include <Spore\App\Viewer.h>
+#include <Spore\App\cViewer.h>
 #include <Spore\App\PropertyList.h>
 #include <Spore\App\IMessageListener.h>
 #include <Spore\Input.h>
@@ -44,7 +44,7 @@ namespace Editors
 		virtual bool OnDeattach() override;
 		virtual void OnEnter() override;
 		virtual void OnExit() override;
-		virtual void Update(int nDeltaTime, App::Viewer* pViewer) override;
+		virtual void Update(int nDeltaTime, App::cViewer* pViewer) override;
 		virtual void func24h(bool) override;
 		virtual bool OnKeyDown(int virtualKey, int modifiers) override;
 		virtual bool OnKeyUp(int virtualKey, int modifiers) override;
@@ -94,7 +94,7 @@ namespace Editors
 		/* 98h */	float field_98;
 		/* 9Ch */	bool field_9C;
 		/* A0h */	GameInput mInput;
-		/* E8h */	App::Viewer* mpViewer;
+		/* E8h */	App::cViewer* mpViewer;
 	};
 
 

@@ -40,29 +40,36 @@ namespace RenderWare
 		///
 		void ReleaseDirectX();
 
+		///
+		/// Creates the DirectX buffer. This will set the 'pDXBuffer' field.
+		void CreateDirectX();
+
+		/// Sends the buffer data into the DirectX object.
+		void LockDirectXData();
+
 
 		/// Applications use the methods of the IDirect3DIndexBuffer9 interface to manipulate an index buffer resource.
-		/* 00h */	IDirect3DIndexBuffer9* mpDXBuffer;
+		/* 00h */	IDirect3DIndexBuffer9* pDXBuffer;
 
 		/// The first index (not triangle, index) that will be rendered.
-		/* 04h */	size_t mnStartIndex;
+		/* 04h */	size_t startIndex;
 
-		/// Number of primitives to render. The number of vertices used is a function of the primitive count and the primitive type.
-		/* 08h */	size_t mnPrimitiveCount;
+		/// Number of indices to render. The number of vertices used is a function of the indices count and the primitive type.
+		/* 08h */	size_t indicesCount;
 
 		/// Usage can be 0, which indicates no usage value. However, if usage is desired, use a combination of one or more D3DUSAGE constants.
 		/// By default it's D3DUSAGE_WRITEONLY
-		/* 0Ch */	DWORD mUsage;
+		/* 0Ch */	DWORD usage;
 
 		/// Member of the D3DFORMAT enumerated type, describing the format of the index buffer. By default it's D3DFMT_INDEX16
-		/* 10h */	D3DFORMAT mFormat;
+		/* 10h */	D3DFORMAT format;
 
 		/// Member of the D3DPRIMITIVETYPE enumerated type, describing the type of primitive to render.
 		/// By default it's D3DPT_TRIANGLELIST.
-		/* 14h */	D3DPRIMITIVETYPE mPrimitiveType;
+		/* 14h */	D3DPRIMITIVETYPE primitiveType;
 
 		/// The raw data of the indices. If format is D3DFMT_INDEX16, this is a uint16_t array. If format is D3DFMT_INDEX32, this is a uint32_t array.
-		/* 18h */	void* mpIndexData;
+		/* 18h */	void* pIndexData;
 
 
 		static const uint32_t TYPE = 0x20007;

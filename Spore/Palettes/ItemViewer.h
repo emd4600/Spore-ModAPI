@@ -24,6 +24,8 @@
 #include <Spore\Object.h>
 #include <Spore\UTFWin\IWindow.h>
 #include <Spore\App\IMessageListener.h>
+#include <Spore\Graphics\ModelAsset.h>
+#include <Spore\UI\cSPUILayeredObject.h>
 
 namespace Palettes
 {
@@ -36,16 +38,38 @@ namespace Palettes
 		, public App::IUnmanagedMessageListener
 	{
 	public:
+		/* 1Ch */	virtual void func1Ch();
+		/* 20h */	virtual void func20h();  // sets model visible
 
-		/* 20h */	// sets model visible
-		/* 24h */	virtual void Load(const ResourceKey fileName);
-		/* 28h */	virtual void SetName(const ResourceKey fileName);
+		/* 24h */	virtual void Load(const ResourceKey& fileName);
+		/* 28h */	virtual void SetName(const ResourceKey& fileName);
+
+		/* 2Ch */	virtual void func2Ch();
+		/* 30h */	virtual void func30h();
+		/* 34h */	virtual void func34h();
+		/* 38h */	virtual void func38h();
+		/* 3Ch */	virtual void func3Ch();
+		/* 40h */	virtual void func40h();
+		/* 44h */	virtual void func44h();
+		/* 48h */	virtual void func48h();
+		/* 4Ch */	virtual void func4Ch();
+		/* 50h */	virtual void func50h();
+		/* 54h */	virtual void func54h();
+		/* 58h */	virtual void func58h();
+		/* 5Ch */	virtual void func5Ch();
+		/* 60h */	virtual void func60h();
+		/* 64h */	virtual void func64h();
+		/* 68h */	virtual void RotateModel();
 
 		// 44h OnMouseEnter
 
 	public:
+		// probably should be protected, but then it's not as useful..
+		void InitializeViewerCamera();
+
+	public:
 		/* 10h */	bool field_10;
-		/* 14h */	int field_14;
+		/* 14h */	intrusive_ptr<UI::cSPUILayeredObject> mpLayeredObject;
 		/* 18h */	vector<int> field_18;
 		/* 2Ch */	int field_2C;
 		/* 30h */	int field_30;
@@ -59,10 +83,10 @@ namespace Palettes
 		/* 58h */	int field_58;  // not initialized
 		/* 5Ch */	intrusive_ptr<IWindow> mpWindow;
 		/* 60h */	intrusive_ptr<IWindow> field_60;
-		/* 64h */	float field_64;  // 1
-		/* 68h */	float field_68;  // 0
+		/* 64h */	float mZoom;  // 1
+		/* 68h */	float mRotation;  // 0
 		/* 6Ch */	float field_6C;  // 0
-		/* 70h */	float field_70;  // 1
+		/* 70h */	float mFinalZoom;  // 1
 		/* 74h */	char _padding_74[0x20];
 		/* 94h */	float field_94;  // 1
 		/* 98h */	Math::Matrix3 field_98;
@@ -89,13 +113,13 @@ namespace Palettes
 		/* FDh */	bool field_FD;
 		/* 100h */	uint32_t field_100;  // 0x71FA7D3F ('drag')
 		/* 104h */	vector<int> field_104;
-		/* 118h */	int field_118;  // PLACEHOLDER ModelAsset
-		/* 11Ch */	vector<int> field_11C;
-		/* 130h */	vector<int> field_130;
+		/* 118h */	intrusive_ptr<Graphics::Model> mpModel;
+		/* 11Ch */	vector<intrusive_ptr<Graphics::Model>> field_11C;
+		/* 130h */	vector<Transform> field_130;
 		/* 144h */	int field_144;
 		/* 148h */	vector<int> field_148;
 		/* 15Ch */	float field_15C;
-		/* 160h */	bool field_160;
+		/* 160h */	bool mbViewerInitialized;
 		/* 161h */	bool field_161;
 		/* 162h */	bool field_162;
 		/// If this viewer is for a creation, whether the creation is already baked or not.
@@ -106,7 +130,7 @@ namespace Palettes
 		/* 167h */	bool field_167; 
 		/* 168h */	bool field_168;  // not initialized
 		/* 169h */	bool field_169;
-		/* 16Ah */	bool field_16A;
+		/* 16Ah */	bool mbRotationEnabled;
 		/* 16Bh */	bool field_16B;
 		/// If true, no background image will be set in the preview.
 		/* 16Ch */	bool mbOmitBackground;
@@ -120,4 +144,9 @@ namespace Palettes
 	/////////////////////////////////
 
 	static_assert(sizeof(ItemViewer) == 0x17C, "sizeof(ItemViewer) != 17Ch");
+
+	namespace InternalAddressList(ItemViewer)
+	{
+		DefineAddress(InitializeViewerCamera, GetAddress(0x5F3B50,, 0x5F3D80));
+	}
 }

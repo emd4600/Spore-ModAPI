@@ -25,36 +25,75 @@
 
 namespace RenderWare
 {
-
-	enum class RWVertexElementType : uint32_t
+	enum RWElementDeclaration
 	{
-		Position = 0,
-		Normals = 2,
-		UV = 6,
-		BoneAssignments = 0xE,
-		SkinWeights = 0xF,
-		Tangents = 0x13
+		RWDECL_VERTEX_POSITION = 0,
+		RWDECL_VERTEX_NORMAL = 2,
+		RWDECL_VERTEX_COLOR = 3,
+		RWDECL_VERTEX_COLOR1 = 5,
+		RWDECL_VERTEX_TEXCOORD0 = 6,
+		RWDECL_VERTEX_TEXCOORD1 = 7,
+		RWDECL_VERTEX_TEXCOORD2 = 8,
+		RWDECL_VERTEX_TEXCOORD3 = 9,
+		RWDECL_VERTEX_TEXCOORD4 = 10,
+		RWDECL_VERTEX_TEXCOORD5 = 11,
+		RWDECL_VERTEX_TEXCOORD6 = 12,
+		RWDECL_VERTEX_TEXCOORD7 = 13,
+		RWDECL_VERTEX_BLENDINDICES = 14,
+		RWDECL_VERTEX_BLENDWEIGHTS = 15,
+		RWDECL_VERTEX_POINTSIZE = 16,
+		RWDECL_VERTEX_POSITION2 = 17,
+		RWDECL_VERTEX_NORMAL2 = 18,
+		RWDECL_VERTEX_TANGENT = 19,
+		RWDECL_VERTEX_BINORMAL = 20,
+		RWDECL_VERTEX_FOG = 21,
+		RWDECL_VERTEX_BLENDINDICES2 = 22,
+		RWDECL_VERTEX_BLENDWEIGHTS2 = 23,
+
+		RWDECL_VERTEX2_POSITION = 0x1,
+		RWDECL_VERTEX2_POSITION2 = 0x2,  // invented
+		RWDECL_VERTEX2_TANGENT = 0x100,
+		RWDECL_VERTEX2_COLOR = 0x1000,
+		RWDECL_VERTEX2_COLOR1 = 0x2000,
+		RWDECL_VERTEX2_TEXCOORD0 = 0x10000,
+		RWDECL_VERTEX2_TEXCOORD1 = 0x20000,
+		RWDECL_VERTEX2_TEXCOORD2 = 0x40000,
+		RWDECL_VERTEX2_TEXCOORD3 = 0x80000,
+		RWDECL_VERTEX2_TEXCOORD4 = 0x100000,
+		RWDECL_VERTEX2_TEXCOORD5 = 0x200000,
+		RWDECL_VERTEX2_TEXCOORD6 = 0x400000,
+		RWDECL_VERTEX2_TEXCOORD7 = 0x800000,
+		RWDECL_VERTEX2_NORMAL = 0x1000000,
+		RWDECL_VERTEX2_NORMAL2 = 0x2000000,  // invented
+		RWDECL_VERTEX2_BLENDINDICES = 0x10000000,
+		RWDECL_VERTEX2_BLENDINDICES2 = 0x20000000,  // invented
+		RWDECL_VERTEX2_BLENDWEIGHTS = 0x40000000,
+		RWDECL_VERTEX2_BLENDWEIGHTS2 = 0x80000000,  // invented
 	};
 
 	/// Defines the vertex data layout. Each vertex can contain one or more data types, and each data type is described by a vertex element.
 	struct VertexElement
 	{
 		/// Stream number.
-		/* 00h */	uint16_t mnStream;
+		/* 00h */	uint16_t stream;
 		/// Offset from the beginning of the vertex data to the data associated with the particular data type.
-		/* 02h */	uint16_t mnOffset;
+		/* 02h */	uint16_t offset;
 		/// The data type, specified as a D3DDECLTYPE. One of several predefined types that define the data size. Some methods have an implied type.
 		/* 04h */	char type;
 		/// The method specifies the tessellator processing, which determines how the tessellator interprets (or operates on) the vertex data. For more information, see D3DDECLMETHOD.
 		/* 05h */	char method;
-		/// Defines what the data will be used for; that is, the interoperability between vertex data layouts and vertex shaders.Each usage acts to bind a vertex declaration to a vertex shader.In some cases, they have a special interpretation.For example, an element that specifies D3DDECLUSAGE_NORMAL or D3DDECLUSAGE_POSITION is used by the N - patch tessellator to set up tessellation.See D3DDECLUSAGE for a list of the available semantics.D3DDECLUSAGE_TEXCOORD can be used for user - defined fields(which don't have an existing usage defined).
+		/// Defines what the data will be used for; that is, the interoperability between vertex data layouts and vertex shaders.
+		/// Each usage acts to bind a vertex declaration to a vertex shader. In some cases, they have a special interpretation.
+		/// For example, an element that specifies D3DDECLUSAGE_NORMAL or D3DDECLUSAGE_POSITION is used by the N - patch tessellator to set up tessellation.
+		/// See D3DDECLUSAGE for a list of the available semantics.
+		/// D3DDECLUSAGE_TEXCOORD can be used for user - defined fields (which don't have an existing usage defined).
 		/* 06h */	char usage;
 		/// Modifies the usage data to allow the user to specify multiple usage types.
 		/* 07h */	char usageIndex;
-		/* 08h */	RWVertexElementType mTypeCode;
+		/* 08h */	int rwDecl;
 
 		VertexElement();
-		VertexElement(uint16_t stream, uint16_t offset, char type, char method, char usage, char usageIndex, RWVertexElementType typeCode);
+		VertexElement(uint16_t stream, uint16_t offset, char type, char method, char usage, char usageIndex, int rwDecl);
 	};
 
 	///
@@ -85,25 +124,27 @@ namespace RenderWare
 		///
 		void ReleaseDirectX();
 
+		void SetElement(int index, VertexElement element);
+
 		/* 00h */	int field_0;
 		/* 04h */	int field_4;
 
 		/// The IDirect3DVertexDeclaration9 that operates behind this structure.
-		/* 08h */	IDirect3DVertexDeclaration9* mpDXVertexDeclaration;
+		/* 08h */	IDirect3DVertexDeclaration9* pDXVertexDeclaration;
 
 		/// The amount of elements contained in this description.
-		/* 0Ch */	uint16_t mnElementsCount;
+		/* 0Ch */	uint16_t elementsCount;
 
 		/* 0Eh */	char field_E;
 
 		/// The size in bytes of each vertex.
-		/* 0Fh */	uint8_t mnStride;
+		/* 0Fh */	uint8_t stride;
 
-		/* 10h */	int field_10;
-		/* 14h */	int field_14;
+		/* 10h */	int usageFlags;
+		/* 14h */	int usageFlags2;
 
 		/// An array of all the VertexElement objects of this description.
-		/* 18h */	VertexElement mElements[nVertexElements];
+		/* 18h */	VertexElement elements[nVertexElements];
 
 		static const uint32_t TYPE = 0x20004;
 	};
@@ -121,14 +162,14 @@ namespace RenderWare
 
 	template <uint16_t kVertexElements = 0>
 	VertexDescription<kVertexElements>::VertexDescription()
-		: field_10(0x0008c045)
-		, field_14(0x51010101)
+		: usageFlags(0)  // 0x0008c045
+		, usageFlags2(0)  // 0x51010101
 		, field_E(0)
-		, mnElementsCount(kVertexElements)
-		, mpDXVertexDeclaration(nullptr)
+		, elementsCount(kVertexElements)
+		, pDXVertexDeclaration(nullptr)
 		, field_0(0)
 		, field_4(0)
-		, mElements{}
+		, elements{}
 	{
 
 	}
@@ -136,10 +177,10 @@ namespace RenderWare
 	template <uint16_t kVertexElements = 0>
 	void VertexDescription<kVertexElements>::ReleaseDirectX()
 	{
-		if (mpDXVertexDeclaration != nullptr)
+		if (pDXVertexDeclaration != nullptr)
 		{
-			mpDXVertexDeclaration->Release();
-			mpDXVertexDeclaration = nullptr;
+			pDXVertexDeclaration->Release();
+			pDXVertexDeclaration = nullptr;
 		}
 	}
 
@@ -148,20 +189,30 @@ namespace RenderWare
 	{
 		D3DVERTEXELEMENT9 dxElements[17];
 
-		for (int i = 0; i < this->c && i < 16; i++)
+		for (int i = 0; i < this->elementsCount && i < 16; i++)
 		{
-			dxElements[i].Method = this->mElements[i].method;
-			dxElements[i].Offset = this->mElements[i].mnOffset;
-			dxElements[i].Type = this->mElements[i].type;
-			dxElements[i].Stream = this->mElements[i].mnStream;
-			dxElements[i].Usage = this->mElements[i].usage;
-			dxElements[i].UsageIndex = this->mElements[i].usageIndex;
+			dxElements[i].Method = this->elements[i].method;
+			dxElements[i].Offset = this->elements[i].offset;
+			dxElements[i].Type = this->elements[i].type;
+			dxElements[i].Stream = this->elements[i].stream;
+			dxElements[i].Usage = this->elements[i].usage;
+			dxElements[i].UsageIndex = this->elements[i].usageIndex;
 		}
-		dxElements[this->mnElementsCount] = D3DDECL_END();
+		dxElements[this->elementsCount] = D3DDECL_END();
 
-		pDevice->CreateVertexDeclaration(dxElements, &this->mpDXVertexDeclaration);
+		pDevice->CreateVertexDeclaration(dxElements, &this->pDXVertexDeclaration);
 	}
 
 	template <uint16_t kVertexElements = 0>
-	inline auto_METHOD_VOID_(VertexDescription<kVertexElements>, LoadDeclaration);
+	void VertexDescription<kVertexElements>::LoadDeclaration() {
+		CALL(GetMethodAddress(VertexDescription, LoadDeclaration), void,
+			PARAMS(Mesh<kNumBuffers>*), PARAMS(this));
+	}
+
+	template <uint16_t kVertexElements = 0>
+	inline void VertexDescription<kVertexElements>::SetElement(int index, VertexElement element)
+	{
+		this->elements[index] = element;
+		this->usageFlags |= 1 << element.rwDecl;
+	}
 }

@@ -20,7 +20,7 @@
 #pragma once
 
 #include <Spore\App\PropertyList.h>
-#include <Spore\App\Viewer.h>
+#include <Spore\App\cViewer.h>
 
 namespace App
 {
@@ -66,7 +66,7 @@ namespace App
 		/// @param nDeltaTime The time ellapsed since the last call, in milliseconds.
 		/// @param pViewer The Viewer instance where the transformations must be set.
 		///
-		/* 20h */	virtual void Update(int nDeltaTime, Viewer* pViewer) = 0;
+		/* 20h */	virtual void Update(int nDeltaTime, cViewer* pViewer) = 0;
 
 		/* 24h */	virtual void func24h(bool) = 0;
 		

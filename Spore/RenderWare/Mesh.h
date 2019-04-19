@@ -71,15 +71,15 @@ namespace RenderWare
 		void Render();
 
 		/* 00h */	int field_0;
-		/* 04h */	D3DPRIMITIVETYPE mPrimitiveType;
-		/* 08h */	IndexBuffer* mpIndexBuffer;
-		/* 0Ch */	size_t mnTriangleCount;
-		/* 10h */	size_t mnVertexBuffersCount;
-		/* 14h */	size_t mnFirstIndex;
-		/* 18h */	size_t mnIndicesCount;
-		/* 1Ch */	size_t mnFirstVertex;
-		/* 20h */	size_t mnVertexCount;
-		/* 24h */	VertexBuffer* mpVertexBuffers[kNumBuffers];
+		/* 04h */	D3DPRIMITIVETYPE primitiveType;
+		/* 08h */	IndexBuffer* pIndexBuffer;
+		/* 0Ch */	size_t triangleCount;
+		/* 10h */	size_t vertexBuffersCount;
+		/* 14h */	size_t firstIndex;
+		/* 18h */	size_t indicesCount;
+		/* 1Ch */	size_t firstVertex;
+		/* 20h */	size_t vertexCount;
+		/* 24h */	VertexBuffer* pVertexBuffers[kNumBuffers];
 
 
 		static const uint32_t TYPE = 0x20009;
@@ -99,28 +99,47 @@ namespace RenderWare
 	}
 
 	template <int kNumBuffers>
-	auto_METHOD(Mesh<kNumBuffers>, size_t, CalculateTriangleCount, PARAMS(D3DPRIMITIVETYPE primitiveType), PARAMS(primitiveType));
+	size_t Mesh<kNumBuffers>::CalculateTriangleCount(D3DPRIMITIVETYPE primitiveType) {
+		return CALL(GetMethodAddress(Mesh, CalculateTriangleCount), size_t,
+			PARAMS(Mesh<kNumBuffers>*, D3DPRIMITIVETYPE), PARAMS(this, primitiveType));
+	}
+
 	template <int kNumBuffers>
-	auto_METHOD(Mesh<kNumBuffers>, void, SetIndexBuffer, PARAMS(IndexBuffer* indexBuffer), PARAMS(indexBuffer));
+	void Mesh<kNumBuffers>::SetIndexBuffer(IndexBuffer* indexBuffer) {
+		CALL(GetMethodAddress(Mesh, SetIndexBuffer), void,
+			PARAMS(Mesh<kNumBuffers>*, IndexBuffer*), PARAMS(this, indexBuffer));
+	}
+
 	template <int kNumBuffers>
-	auto_METHOD(Mesh<kNumBuffers>, void, SetIndicesCount, PARAMS(size_t indicesCount), PARAMS(indicesCount));
+	void Mesh<kNumBuffers>::SetVertexBuffer(size_t index, VertexBuffer* vertexBuffer) {
+		CALL(GetMethodAddress(Mesh, SetVertexBuffer), void,
+			PARAMS(Mesh<kNumBuffers>*, size_t, VertexBuffer*), PARAMS(this, index, vertexBuffer));
+	}
+
 	template <int kNumBuffers>
-	auto_METHOD(Mesh<kNumBuffers>, void, SetVertexBuffer, PARAMS(size_t index, VertexBuffer* vertexBuffer), PARAMS(index, vertexBuffer));
+	void Mesh<kNumBuffers>::SetIndicesCount(size_t indicesCount) {
+		CALL(GetMethodAddress(Mesh, SetIndicesCount), void,
+			PARAMS(Mesh<kNumBuffers>*, size_t), PARAMS(this, indicesCount));
+	}
+
 	template <int kNumBuffers>
-	auto_METHOD_(Mesh<kNumBuffers>, void, Render);
+	void Mesh<kNumBuffers>::Render() {
+		CALL(GetMethodAddress(Mesh, Render), void,
+			PARAMS(Mesh<kNumBuffers>*), PARAMS(this));
+	}
 
 	template <int kNumBuffers>
 	Mesh<kNumBuffers>::Mesh()
 		: field_0(0)
-		, mPrimitiveType(D3DPT_TRIANGLELIST)
-		, mpIndexBuffer(nullptr)
-		, mnTriangleCount()
-		, mnVertexBufferCount(kNumBuffers)
-		, mnFirstIndex()
-		, mnPrimitiveCount()
-		, mnFirstVertex()
-		, mnVertexCount()
-		, mpVertexBuffers{}
+		, primitiveType(D3DPT_TRIANGLELIST)
+		, pIndexBuffer(nullptr)
+		, triangleCount()
+		, vertexBuffersCount(kNumBuffers)
+		, firstIndex()
+		, indicesCount()
+		, firstVertex()
+		, vertexCount()
+		, pVertexBuffers{}
 	{
 
 	}

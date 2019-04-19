@@ -52,7 +52,7 @@ namespace RenderWare
 		/* 1Ch */	int field_1C;
 		/* 20h */	float animationLength;
 		/* 24h */	size_t mnChannelSize;  // 12, sizeof(ChannelInfo)
-		/* 28h */	int mFlags;
+		/* 28h */	int mFlags;  // pointer??
 		/* 2Ch */	AnimChannel* mpChannels;
 
 		// field_C and flags are used to find something...

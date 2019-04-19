@@ -22,7 +22,7 @@
 #include <Spore\App\PropertyList.h>
 #include <Spore\App\ICamera.h>
 #include <Spore\App\IMessageListener.h>
-#include <Spore\App\Viewer.h>
+#include <Spore\App\cViewer.h>
 
 namespace App
 {
@@ -59,12 +59,12 @@ namespace App
 		/// Sets the Viewer that will receive the results of the camera in this camera manager.
 		/// @param pViewer The new Viewer.
 		///
-		/* 18h */	virtual void SetViewer(Viewer* pViewer) = 0;
+		/* 18h */	virtual void SetViewer(cViewer* pViewer) = 0;
 
 		///
 		/// Gets the Viewer that will receive the results of the camera in this camera manager.
 		///
-		/* 1Ch */	virtual Viewer* GetViewer() = 0;
+		/* 1Ch */	virtual cViewer* GetViewer() = 0;
 
 		///
 		/// Adds a new camera type. When a camera settings .prop file uses the 'cameraType' property with

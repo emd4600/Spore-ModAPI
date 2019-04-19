@@ -29,26 +29,26 @@ namespace App
 	public:
 		union MessageParameter
 		{
-			int8_t		mnInt8;
-			uint8_t		mnUInt8;
-			int16_t		mnInt16;
-			uint16_t	mnUInt16;
-			int32_t		mnInt32;
-			uint32_t	mnUInt32;
-			int64_t		mnInt64;
-			uint64_t	mnUInt64;
-			float		mfFloat;
-			double		mfDouble;
-			Object*		mpObject;
+			int8_t		int8;
+			uint8_t		uint8;
+			int16_t		int16;
+			uint16_t	uint16;
+			int32_t		int32;
+			uint32_t	uint32;
+			int64_t		int64;
+			uint64_t	uint64;
+			float		_float;
+			double		_double;
+			Object*		object;
 		};
 
 		StandardMessage();
 		virtual ~StandardMessage();
 
-		/* 08h */	MessageParameter mParams[5];
-		/* 30h */	uint32_t mID;
+		/* 08h */	MessageParameter params[5];
+		/* 30h */	uint32_t id;
 		/* 34h */	int field_34;
-		/* 38h */	uint32_t mObjectFlags;
+		/* 38h */	uint32_t objectFlags;
 		/* 3Ch */	int field_3C;
 
 		void SetObject(size_t nIndex, Object* pObject);
@@ -56,7 +56,7 @@ namespace App
 
 	inline void StandardMessage::SetObject(size_t nIndex, Object* pObject)
 	{
-		mParams[nIndex].mpObject = pObject;
-		mObjectFlags |= (1 << nIndex);
+		params[nIndex].object = pObject;
+		objectFlags |= (1 << nIndex);
 	}
 }

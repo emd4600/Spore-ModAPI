@@ -21,12 +21,38 @@
 
 #include <Spore\App\IGameMode.h>
 #include <Spore\App\ICameraManager.h>
+#include <Spore\App\StandardMessage.h>
 
-#include <Spore\App\Viewer.h>
+#include <Spore\App\cViewer.h>
 
 namespace App
 {
+	enum
+	{
+		kMsgAddRef = 1,
+		kMsgRelease = 2,
+		/// Called when the current mode is exited. The message data is the App::OnModeExitMessage class.
+		kMsgOnModeExit = 0x212D3E7,
+		/// Called after the current mode is entered. The message data is the App::OnModeEnterMessage class.
+		kMsgOnModeEnter = 0x22D1ADC
+	};
 
+	// not public, so user can't access the fields
+	class OnModeExitMessage : StandardMessage 
+	{
+	public:
+		/// Returns the current mode ID after this change.
+		inline uint32_t GetModeID() {
+			return params[0].uint32;
+		}
+
+		/// Returns the pevious mode ID before this change.
+		inline uint32_t GetPreviousModeID() {
+			return params[1].uint32;
+		}
+	};
+
+	typedef OnModeExitMessage OnModeEnterMessage;
 
 	///
 	/// A manager that takes care of game modes; check IGameMode for more information.
@@ -38,25 +64,6 @@ namespace App
 	///
 	class IGameModeManager
 	{
-	public:
-		enum
-		{
-			kMsgAddRef = 1,
-			kMsgRelease = 2,
-			/// Called when the current mode is exited. It's an App::StandardMessage with the parameter 
-			/// indices at the App::IGameModeManager::OnModeExitMessage enum.
-			kMsgOnModeExit = 0x212D3E7,
-			/// Called after the current mode is entered. It's an App::StandardMessage with the parameter 
-			/// indices at the App::IGameModeManager::OnModeEnterMessage enum.
-			kMsgOnModeEnter = 0x22D1ADC
-		};
-
-		enum OnModeExitMessage
-		{
-			kParamModeID = 0,
-			kParamOldModeID = 1
-		};
-		typedef OnModeExitMessage OnModeEnterMessage;
 
 	public:
 		/* 00h */	virtual int AddRef() = 0;
@@ -169,12 +176,12 @@ namespace App
 		/// Sets the Viewer instance that is used for rendering the main game frame.
 		/// @param pViewer The Viewer instance.
 		///
-		/* 54h */	virtual void SetViewer(Viewer* pViewer) = 0;
+		/* 54h */	virtual void SetViewer(cViewer* pViewer) = 0;
 
 		///
 		/// Returns the Viewer instance that is being used for rendering the main game frame.
 		///
-		/* 58h */	virtual Viewer* GetViewer() = 0;
+		/* 58h */	virtual cViewer* GetViewer() = 0;
 
 
 		///
@@ -197,7 +204,7 @@ namespace App
 		return mgr ? mgr->GetCameraManager() : nullptr;
 	}
 
-	inline Viewer* GetViewer()
+	inline cViewer* GetViewer()
 	{
 		auto mgr = IGameModeManager::Get();
 		return mgr ? mgr->GetViewer() : nullptr;

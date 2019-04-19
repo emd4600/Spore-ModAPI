@@ -40,7 +40,7 @@ namespace App
 		/* 14h */	virtual bool OnDeattach() override { return false; };
 		/* 18h */	virtual void OnEnter() override {};
 		/* 1Ch */	virtual void OnExit() override {};
-		/* 20h */	virtual void Update(int nDeltaTime, Viewer* pViewer) override {};
+		/* 20h */	virtual void Update(int nDeltaTime, cViewer* pViewer) override {};
 		/* 24h */	virtual void func24h(bool) override {};
 		/* 28h */	virtual bool OnKeyDown(int virtualKey, int modifiers) override { return false; };
 		/* 2Ch */	virtual bool OnKeyUp(int virtualKey, int modifiers) override { return false; };

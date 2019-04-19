@@ -40,12 +40,14 @@ namespace Graphics
 	class Material
 	{
 	public:
-		/* 00h */	uint8_t mnCompiledStates;
-		/* 04h */	RenderWare::CompiledState* mCompiledStates[4];
+		/* 00h */	uint8_t statesCount;
+		/* 04h */	RenderWare::CompiledState* states[4];
+	private:
 		/* 14h */	int mnRefCount;
+	public:
 		/* 18h */	uint32_t materialID;
 		/* 1Ch */	int field_1C;  // RenderAsset ?
-		/* 20h */	vector<intrusive_ptr<Texture>>  mTextures;
+		/* 20h */	vector<intrusive_ptr<Texture>>  textures;
 		/* 34h */	char field_34[0x14];  // ?
 
 		int AddRef();
@@ -66,8 +68,8 @@ namespace Graphics
 		{
 			kCompiledStatesLinkGroupID = 0x40212000,
 			kCompiledStatesGroupID = 0x40212001,
-			kUncompiledShadersGroupID = 0x40212002,
-			kCompiledShadersGroupID = 0x40212004,
+			kShaderFragmentsGroupID = 0x40212002,
+			kShadersGroupID = 0x40212004,
 			kSporeMaterialTypeID = 0x0469A3F7
 		};
 
@@ -138,15 +140,15 @@ namespace Graphics
 		/* 54h */	virtual void func54h(int) = 0;
 		/* 58h */	virtual void func58h(int, int, int, int, int) = 0;
 		/* 5Ch */	virtual bool WriteMaterials(DatabasePackedFile* pDBPF) = 0;
-		/* 60h */	virtual bool WriteUncompiledShaders(DatabasePackedFile* pDBPF) = 0;
-		/* 64h */	virtual bool WriteCompiledShaders(DatabasePackedFile* pDBPF) = 0;
+		/* 60h */	virtual bool WriteShaderFragments(DatabasePackedFile* pDBPF) = 0;
+		/* 64h */	virtual bool WriteShaders(DatabasePackedFile* pDBPF) = 0;
 		/* 68h */	virtual void func68h() = 0;
 		/* 6Ch */	virtual void func6Ch() = 0;
 		/* 70h */	virtual int func70h() = 0;
 		/* 74h */	virtual void func74h(int) = 0;
 		/* 78h */	virtual bool ReadMaterials(DatabasePackedFile* pDBPF) = 0;
-		/* 7Ch */	virtual bool ReadUncompiledShaders(DatabasePackedFile* pDBPF) = 0;
-		/* 80h */	virtual bool ReadCompiledShaders(DatabasePackedFile* pDBPF) = 0;
+		/* 7Ch */	virtual bool ReadShaderFragments(DatabasePackedFile* pDBPF) = 0;
+		/* 80h */	virtual bool ReadShaders(DatabasePackedFile* pDBPF) = 0;
 
 		///
 		/// Gets the active material manager. Same as GetMaterialManager().

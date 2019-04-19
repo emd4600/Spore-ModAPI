@@ -29,7 +29,7 @@
 #include <Spore\App\ICamera.h>
 #include <Spore\App\ICameraManager.h>
 #include <Spore\App\DefaultCamera.h>
-#include <Spore\App\Viewer.h>
+#include <Spore\App\cViewer.h>
 #include <Spore\Simulator\SubSystem\GameModeManager.h>
 #include <Spore\CommonIDs.h>
 

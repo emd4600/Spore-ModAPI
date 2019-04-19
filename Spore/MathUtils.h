@@ -32,6 +32,8 @@ namespace InternalAddressList(Math)
 	DefineAddress(RandomNumberGenerator_ptr, GetAddress(0x16059E8, NO_ADDRESS, 0x1601760));
 }
 
+class Transform;
+
 namespace Math
 {
 	const float PI = 3.14159f;
@@ -307,6 +309,7 @@ namespace Math
 		float b;
 		float a;
 		ColorRGBA(float r, float g, float b, float a);
+		ColorRGBA(ColorRGB color, float a);
 		ColorRGBA();
 
 		/// Returns the integer representation of the given color (in the form of a Color value).
@@ -337,7 +340,7 @@ namespace Math
 				PARAMS(Matrix3*, const Matrix3&), PARAMS(this, other));
 		}
 
-		void SetIdentity();
+		Matrix3& SetIdentity();
 	};
 
 	/// A 4x4 matrix.
@@ -354,7 +357,13 @@ namespace Math
 
 		/* 00h */ Vector3 min;
 		/* 0Ch */ Vector3 max;
+
+		void ApplyTransform(const Transform& transform);
 	};
+
+	namespace InternalAddressList(BoundingBox) {
+		DefineAddress(ApplyTransform, GetAddress(0x409D30,, 0x409DD0));
+	}
 
 	///
 	/// Multiplies the given vector with a scalar value and puts the result in a new Vector3. 

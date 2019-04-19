@@ -103,7 +103,7 @@ namespace App
 	auto_METHOD_VIRTUAL(cGameModeManager, IGameModeManager, int, func48h, PARAMS(int arg_0), PARAMS(arg_0));
 	auto_METHOD_VIRTUAL(cGameModeManager, IGameModeManager, bool, SetActiveModeByName, PARAMS(const char* pName), PARAMS(pName));
 	auto_METHOD_VIRTUAL_(cGameModeManager, IGameModeManager, ICameraManager*, GetCameraManager);
-	auto_METHOD_VIRTUAL_VOID(cGameModeManager, IGameModeManager, SetViewer, PARAMS(Viewer* scene), PARAMS(scene));
-	auto_METHOD_VIRTUAL_(cGameModeManager, IGameModeManager, Viewer*, GetViewer);
+	auto_METHOD_VIRTUAL_VOID(cGameModeManager, IGameModeManager, SetViewer, PARAMS(cViewer* scene), PARAMS(scene));
+	auto_METHOD_VIRTUAL_(cGameModeManager, IGameModeManager, cViewer*, GetViewer);
 
 }

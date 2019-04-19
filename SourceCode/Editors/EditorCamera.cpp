@@ -66,7 +66,7 @@ namespace Editors
 	auto_METHOD_VIRTUAL_(EditorCamera, EditorCamera, bool, OnDeattach);
 	auto_METHOD_VIRTUAL_VOID_(EditorCamera, EditorCamera, OnEnter);
 	auto_METHOD_VIRTUAL_VOID_(EditorCamera, EditorCamera, OnExit);
-	auto_METHOD_VIRTUAL_VOID(EditorCamera, EditorCamera, Update, PARAMS(int nDeltaTime, App::Viewer* pViewer), PARAMS(nDeltaTime, pViewer));
+	auto_METHOD_VIRTUAL_VOID(EditorCamera, EditorCamera, Update, PARAMS(int nDeltaTime, App::cViewer* pViewer), PARAMS(nDeltaTime, pViewer));
 	auto_METHOD_VIRTUAL_VOID(EditorCamera, EditorCamera, func24h, PARAMS(bool arg_0), PARAMS(arg_0));
 	auto_METHOD_VIRTUAL(EditorCamera, EditorCamera, bool, OnKeyDown, PARAMS(int virtualKey, int modifiers), PARAMS(virtualKey, modifiers));
 	auto_METHOD_VIRTUAL(EditorCamera, EditorCamera, bool, OnKeyUp, PARAMS(int virtualKey, int modifiers), PARAMS(virtualKey, modifiers));

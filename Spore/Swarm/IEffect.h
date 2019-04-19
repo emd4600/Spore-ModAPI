@@ -23,6 +23,7 @@
 #include <Spore\ResourceID.h>
 
 #include <EASTL\intrusive_ptr.h>
+#include <EASTL\utility.h>
 
 namespace Swarm
 {
@@ -36,8 +37,8 @@ namespace Swarm
 		virtual int AddRef() = 0;
 		virtual int Release() = 0;
 
-		/* 08h */	virtual void Show(int = 0);
-		/* 0Ch */	virtual int Kill(int = 0);
+		/* 08h */	virtual void Start(int hardStart) = 0;
+		/* 0Ch */	virtual int Stop(int hardStop) = 0;
 
 		/* 10h */	virtual int func10h() = 0;
 		/* 14h */	virtual void func14h(const Transform&) = 0;
@@ -46,14 +47,17 @@ namespace Swarm
 		/* 20h */	virtual Transform GetTransform() const = 0;
 		/* 24h */	virtual void func24h(int, int) = 0;
 		/* 28h */	virtual int func28h(int) = 0;
-		/* 2Ch */	virtual void func2Ch(bool) = 0;
+
+		/// If true, pauses the effect; if false, it unpauses it.
+		/// @param paused
+		/* 2Ch */	virtual void SetPaused(bool paused) = 0;
 		/* 30h */	virtual void func30h(bool) = 0;
 		/* 34h */	virtual bool func34h() = 0;
 		/* 38h */	virtual bool func38h() = 0;
 		/* 3Ch */	virtual void SetSeed(int32_t seed) = 0;
 		/* 40h */	virtual bool func40h(int, int, int) = 0;
 		/* 44h */	virtual bool func44h(int, int, int) = 0;
-		/* 48h */	virtual bool func48h(int, int, int) = 0;
+		/* 48h */	virtual bool func48h(int, const eastl::pair<void*, int>& modelAndSet, int) = 0;  // set override model
 		/* 4Ch */	virtual bool func4Ch(int, int) = 0;
 		/* 50h */	virtual int func50h(int, int) = 0;
 		/* 54h */	virtual int func54h(int, int) = 0;

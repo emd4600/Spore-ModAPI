@@ -1,97 +1,70 @@
-/****************************************************************************
-* Copyright (C) 2019 Eric Mor
-*
-* This file is part of Spore ModAPI.
-*
-* Spore ModAPI is free software: you can redistribute it and/or modify
-* it under the terms of the GNU General Public License as published by
-* the Free Software Foundation, either version 3 of the License, or
-* (at your option) any later version.
-*
-* This program is distributed in the hope that it will be useful,
-* but WITHOUT ANY WARRANTY; without even the implied warranty of
-* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-* GNU General Public License for more details.
-*
-* You should have received a copy of the GNU General Public License
-* along with this program.  If not, see <http://www.gnu.org/licenses/>.
-****************************************************************************/
 #pragma once
 
-#include <EASTL\functional.h>
+#include <Spore\Internal.h>
+#include <detours.h>
 
-#define static_detour(ClassName, FunctionName, decl) static_detour<decl>(); \
- typedef static_detour<decl>::original_pointer ClassName##_##FunctionName##_original
+// When detouring __thiscalls, optimization should be disabled to avoid __fastcall being replaced
+//#pragma optimize( "", off )
+//#pragma optimize( "", on )
 
-#define detour(ClassName, FunctionName, decl) detour<ClassName, decl>(); \
- typedef detour<ClassName, decl>::original_pointer FunctionName##_original
+#ifndef _DEBUG
+#define DisableOptimization optimize( "", off )
+#define EnableOptimization optimize( "", on )
+#else
+#define DisableOptimization
+#define EnableOptimization
+#endif
 
-namespace ModAPI
+#define attach_detour(name, className, methodName) name::attach(GetMethodAddress(className, methodName))
+
+#define DETOUR detour::detoured
+
+// this is used in DllMain before detouring
+inline void PrepareDetours(HMODULE hModule)
 {
-	template<typename T>
-	class static_detour;
-
-	template<typename T, typename U>
-	class detour;
-
-	template <typename _original_pointer, typename _detoured_pointer>
-	class detour_base
-	{
-	public:
-		typedef _original_pointer original_pointer;
-		typedef _detoured_pointer detoured_pointer;
-
-		inline void assign(detoured_pointer pNewFunction)
-		{
-			pDetouredFunction = pNewFunction;
-		}
-
-	protected:
-		original_pointer pOriginalFunction;
-		detoured_pointer pDetouredFunction;
-	};
-
-	template<typename Result, typename ... Arguments>
-	class static_detour<Result(Arguments...)>
-	{
-	public:
-		typedef Result(*original_pointer)(Arguments...);
-		typedef Result(*detoured_pointer)(original_pointer, Arguments...);
-
-		inline Result operator()(Arguments... args)
-		{
-			return pOriginalFunction(args);
-		}
-
-		inline void assign(detoured_pointer pNewFunction)
-		{
-			pDetouredFunction = pNewFunction;
-		}
-
-	protected:
-		original_pointer pOriginalFunction;
-		detoured_pointer pDetouredFunction;
-	};
-
-	template<typename ThisType, typename Result, typename ... Arguments>
-	class detour<ThisType, Result(Arguments...)>
-	{
-	public:
-		typedef Result(__thiscall*original_pointer)(ThisType*, Arguments...);
-		typedef Result(__fastcall*detoured_pointer)(ThisType*, int, original_pointer, Arguments...);
-
-		inline Result operator()(ThisType* pObject, Arguments... args)
-		{
-			return pOriginalFunction(pObject, args);
-		}
-
-		inline void assign(detoured_pointer pNewFunction)
-		{
-			pDetouredFunction = pNewFunction;
-		}
-
-	protected:
-		original_pointer pOriginalFunction;
-		detoured_pointer pDetouredFunction;
-	};
+	DisableThreadLibraryCalls(hModule);
+	DetourTransactionBegin();
+	DetourUpdateThread(GetCurrentThread());
 }
+
+// returns a LONG (error)
+inline LONG SendDetours()
+{
+	DetourUpdateThread(GetCurrentThread());
+	return DetourTransactionCommit();
+}
+
+template<typename T, typename U>
+class static_detour_;
+
+template<class T, typename Result, typename ... Arguments>
+class static_detour_<T, Result(Arguments...)>
+{
+public:
+	/// The type of function pointer used to keep track of both the original and the detoured function.
+	typedef Result(*detour_pointer)(Arguments...);
+
+	typedef static_detour_<T, Result(Arguments...)> detour;
+
+	/// The pointer to the original function, you can call this with the same parameters as the function.
+	static detour_pointer original_function;
+
+	static Result detoured_function(Arguments... args) {
+		int fake = 0;
+		//return (*((T*)&fake))(args...);
+		return ((T*)&fake)->detoured(args...);
+	}
+	
+	Result detoured(Arguments...);
+
+	static long attach(UINT function_address) {
+		original_function = (detour_pointer)function_address;
+		return DetourAttach(&(PVOID&)original_function, detoured_function);
+	}
+};
+
+template<class T, typename Result, typename ... Arguments>
+//typename static_detour_<T, D>::detour_pointer static_detour_<T, D>::original_function;
+typename static_detour_<T, Result(Arguments...)>::detour_pointer static_detour_<T, Result(Arguments...)>::original_function;
+
+#define static_detour(name, declaration) struct name : public static_detour_< name , declaration > 

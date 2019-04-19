@@ -68,6 +68,8 @@ namespace Math
 	ColorRGBA::ColorRGBA(float _r, float _g, float _b, float _a) : r(_r), g(_g), b(_b), a(_a)
 	{
 	}
+	ColorRGBA::ColorRGBA(ColorRGB color, float _a) : r(color.r), g(color.g), b(color.b), a(_a)
+	{}
 
 	Vector2::Vector2() : x(0), y(0) {}
 	Vector3::Vector3() : x(0), y(0), z(0) {}
@@ -106,11 +108,12 @@ namespace Math
 	const Color Color::WHITE =	Color(255, 255, 255, 255);
 	const Color Color::BLACK =	Color(0, 0, 0, 255);
 
-	void Matrix3::SetIdentity()
+	Matrix3& Matrix3::SetIdentity()
 	{
 		m[0][0] = 1.0f; m[0][1] = 0.0f; m[0][2] = 0.0f;
 		m[1][0] = 0.0f; m[1][1] = 1.0f; m[1][2] = 0.0f;
 		m[2][0] = 0.0f; m[2][1] = 0.0f; m[2][2] = 1.0f;
+		return *this;
 	}
 
 	void Matrix4::SetIdentity()
@@ -257,6 +260,8 @@ namespace Math
 		PARAMS(const Matrix3& matrix), PARAMS(matrix));
 
 	auto_METHOD(RandomNumberGenerator, int, GenerateRandomInt, PARAMS(int range), PARAMS(range));
+
+	auto_METHOD_VOID(BoundingBox, ApplyTransform, PARAMS(const Transform& t), PARAMS(t));
 
 }
 

@@ -25,7 +25,7 @@
 #include <Spore\Graphics\ILightingWorld.h>
 #include <Spore\Graphics\IModelWorld.h>
 #include <Spore\App\IMessageListener.h>
-#include <Spore\App\Viewer.h>
+#include <Spore\App\cViewer.h>
 #include <Spore\Simulator\SubSystem\cStrategy.h>
 #include <EASTL\intrusive_list.h>
 #include <EASTL\vector.h>
@@ -87,7 +87,7 @@ namespace Simulator
 		/* C8h */	map<int, int> field_C8;
 		/* E4h */	intrusive_ptr<Object> field_E4;  // IModelWorld?
 		/* E8h */	intrusive_ptr<Object> field_E8;
-		/* ECh */	App::Viewer* field_EC;  // with hologram render type
+		/* ECh */	App::cViewer* field_EC;  // with hologram render type
 		/* F0h */	int field_F0;  // not initialized, ResourceKey?
 		/* F4h */	int field_F4;  // not initialized
 		/* F8h */	int field_F8;  // not initialized

@@ -48,10 +48,10 @@ namespace Resource
 	{
 	public:
 		StandardFileFilter(
-			uint32_t nInstanceID = ResourceKey::kWildcardID,
-			uint32_t nGroupID = ResourceKey::kWildcardID,
-			uint32_t nTypeID = ResourceKey::kWildcardID,
-			uint32_t nGroupMask = ResourceKey::kWildcardID);
+			uint32_t instanceID = ResourceKey::kWildcardID,
+			uint32_t groupID = ResourceKey::kWildcardID,
+			uint32_t typeID = ResourceKey::kWildcardID,
+			uint32_t groupMask = ResourceKey::kWildcardID);
 
 		virtual ~StandardFileFilter() {}
 
@@ -59,11 +59,11 @@ namespace Resource
 			return CALL(GetAddress(0x404F10, 0x404F10, 0x404F10), bool, PARAMS(StandardFileFilter*, const ResourceKey&), PARAMS(this, name));
 		}
 
-	protected:
-		/* 04h */	uint32_t mnInstanceID;
-		/* 08h */	uint32_t mnGroupID;
-		/* 0Ch */	uint32_t mnTypeID;
-		/* 10h */	uint32_t mnGroupMask;
+	public:
+		/* 04h */	uint32_t instanceID;
+		/* 08h */	uint32_t groupID;
+		/* 0Ch */	uint32_t typeID;
+		/* 10h */	uint32_t groupMask;
 	};
 
 	///////////////////////////////////
@@ -75,10 +75,10 @@ namespace Resource
 		uint32_t nGroupID,
 		uint32_t nTypeID,
 		uint32_t nGroupMask)
-		: mnInstanceID(nInstanceID)
-		, mnGroupID(nGroupID)
-		, mnTypeID(nTypeID)
-		, mnGroupMask(nGroupMask)
+		: instanceID(nInstanceID)
+		, groupID(nGroupID)
+		, typeID(nTypeID)
+		, groupMask(nGroupMask)
 	{
 
 	}

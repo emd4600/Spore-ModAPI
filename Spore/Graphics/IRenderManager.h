@@ -42,6 +42,11 @@ namespace Graphics
 	/// The available layer indices that can be used for adding renderers.
 	/// Most of these have been copied from Darkspore globals.lua, so they might not match for Spore.
 	enum class LayerIndices {
+
+		// Layer 3 render from 4 to 21
+
+		ClearScene = 0,
+
 		// These two are used by cTerrainSphere, but not sure if it's for this
 		Planets = 7,
 		PlanetRings = 8,
@@ -63,6 +68,10 @@ namespace Graphics
 		CreatureFXAnim = 19,
 		// ModelWorld
 		EffectsMask = 20,
+
+		// 22 screen effects
+
+		UI = 30
 	};
 
 	///
@@ -87,15 +96,16 @@ namespace Graphics
 		/* 14h */	virtual int func14h() = 0;
 		/* 18h */	virtual int func18h() = 0;
 		/* 1Ch */	virtual RenderererParams& GetParameters() = 0;
-		/* 20h */	virtual int func20h() = 0;
+		/* 20h */	virtual int GetAdapterCount() = 0;
 		/* 24h */	virtual int func24h() = 0;
 		/* 28h */	virtual int func28h() = 0;
 		/* 2Ch */	virtual int func2Ch() = 0;
 		/* 30h */	virtual int func30h() = 0;
 		/* 34h */	virtual int func34h() = 0;
 		/* 38h */	virtual int func38h() = 0;
-		/* 3Ch */	virtual int func3Ch() = 0;
-		/* 40h */	virtual int func40h(int, int nMinQueue, int nMaxQueue, int, bool, int flags) = 0;  // renders all objects?
+		// Called in the GraphicsSystem Update method
+		/* 3Ch */	virtual int func3Ch() = 0;  // calls device Present(), then begins scene and renders everything
+		/* 40h */	virtual int RenderLayers(int, int startLayer, int endLayer, int, bool, int flags) = 0;  // renders all objects?
 		/* 44h */	virtual int func44h() = 0;
 		/* 48h */	virtual int func48h() = 0;
 
@@ -123,6 +133,8 @@ namespace Graphics
 		/// @param nQueueIndex
 		///
 		/* 50h */	virtual bool RemoveRenderable(int nQueueIndex) = 0;
+
+		// 80h update?
 
 		///
 		/// Gets the active render manager. Same as RenderManager().
