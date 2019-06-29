@@ -37,8 +37,8 @@ namespace Swarm
 		virtual int AddRef() = 0;
 		virtual int Release() = 0;
 
-		/* 08h */	virtual void Start(int hardStart) = 0;
-		/* 0Ch */	virtual int Stop(int hardStop) = 0;
+		/* 08h */	virtual void Start(int hardStart=1) = 0;
+		/* 0Ch */	virtual int Stop(int hardStop = 1) = 0;
 
 		/* 10h */	virtual int func10h() = 0;
 		/* 14h */	virtual void func14h(const Transform&) = 0;

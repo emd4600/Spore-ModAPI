@@ -119,6 +119,16 @@ namespace UTFWin
 				/* 14h */	int mouseState;
 				/// How much the mouse wheel changed, it is usually a multiple of 120.
 				/* 18h */	int wheelDelta;
+
+				inline bool IsLeftButton() const {
+					return (mouseState & kMouseLeftButtonDown) == kMouseLeftButtonDown;
+				}
+				inline bool IsMiddleButton() const {
+					return (mouseState & kMouseMiddleButtonDown) == kMouseMiddleButtonDown;
+				}
+				inline bool IsRightButton() const {
+					return (mouseState & kMouseRightButtonDown) == kMouseRightButtonDown;
+				}
 			} Mouse;
 
 			///
@@ -129,6 +139,7 @@ namespace UTFWin
 			struct
 			{
 				/* 0Ch */	int field_0C;
+				/* 10h */	int field_10;
 				/* 14h */	int field_14;
 				/// For kMsgMouseLeave, the windows that lost focus; for kMsgMouseEnter, the window that gained focus.
 				/* 18h */	IWindow* window;
@@ -152,6 +163,9 @@ namespace UTFWin
 			struct
 			{
 				/* 0Ch */	RefreshType refreshType;
+				/* 10h */	int field_10;
+				/* 14h */	int field_14;
+				/* 18h */	IWindow* window;
 			} Refresh;
 
 			///

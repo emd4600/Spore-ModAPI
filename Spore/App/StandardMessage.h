@@ -29,6 +29,7 @@ namespace App
 	public:
 		union MessageParameter
 		{
+			bool		boolean;
 			int8_t		int8;
 			uint8_t		uint8;
 			int16_t		int16;
@@ -58,5 +59,6 @@ namespace App
 	{
 		params[nIndex].object = pObject;
 		objectFlags |= (1 << nIndex);
+		if (pObject) pObject->AddRef();
 	}
 }

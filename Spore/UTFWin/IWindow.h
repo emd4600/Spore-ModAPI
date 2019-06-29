@@ -364,7 +364,7 @@ namespace UTFWin
 
 		///
 		/// Removes the given window from this IWindow's children. pWindow will be removed from its parent hierarchy even if
-		/// it's parent is not this object.
+		/// its parent is not this object.
 		/// The parent of pWindow will be set to nullptr.
 		/// @param pWindow The window to remove from this object's children.
 		///
@@ -494,7 +494,7 @@ namespace UTFWin
 		/// }
 		/// ~~~~~~~~~~~~~~~~~~~~
 		///
-		WindowProcedures procedures() const;
+		WindowProcedures procedures();
 
 		///
 		/// Adds an event listener, defined using a lambda function or by referencing a static function. 

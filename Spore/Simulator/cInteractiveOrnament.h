@@ -32,6 +32,10 @@ namespace Simulator
 	public:
 		static const uint32_t TYPE = 0x3A25119;
 		static const uint32_t NOUN_ID = 0x3A2511E;
+
+		using Object::Release;
+		using Object::AddRef;
+		using Object::Cast;
 	
 		enum Flags
 		{

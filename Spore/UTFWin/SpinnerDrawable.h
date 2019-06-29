@@ -65,7 +65,7 @@ namespace UTFWin
 
 		virtual int AddRef() override;
 		virtual int Release() override;
-		virtual void* Cast(uint32_t type) override;
+		virtual void* Cast(uint32_t type) const override;
 
 		virtual void SetSerializer(Serializer& dst) override;
 		virtual uint32_t GetProxyID() const override;

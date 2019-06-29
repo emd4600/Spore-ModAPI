@@ -50,7 +50,7 @@ namespace Palettes
 		/// @param pExpansionObject An object necessary to do the swatch expansion; generally this is the color picker.
 		///
 		void Load(
-			const App::PropertyList* pConfigProp, struct Math::ColorRGB color, union Math::Rectangle area, 
+			App::PropertyList* pConfigProp, struct Math::ColorRGB color, union Math::Rectangle area, 
 			IWindow* pContainerWindow, Object* pExpansionObject);
 
 		///
@@ -74,7 +74,9 @@ namespace Palettes
 		///
 		void AddTooltip(uint32_t instanceID);
 
-		void Update(int, int, int);
+		void Update(int msTime, bool);
+
+		void Destroy();
 
 		//// OVERRIDES ////
 
@@ -85,25 +87,25 @@ namespace Palettes
 		virtual int GetEventFlags() const override;
 		virtual bool HandleUIMessage(IWindow* pWindow, const Message& message) override;
 
-	protected:
+	public:
 		/// Whether the user interface for this color swatch has already been loaded. This is set 
 		/// to true in the Load method.
-		/* 0Ch */	bool mbIsLoaded;
+		/* 0Ch */	bool mIsLoaded;
 		/// Whether the button is on rollover state (that is, the mouse is over the button).
-		/* 0Dh */	bool mbIsRollover;
+		/* 0Dh */	bool mIsRollover;
 		/// Whether the swatch button is being pressed with the left mouse click.
-		/* 0Eh */	bool mbIsMouseDown;
+		/* 0Eh */	bool mIsMouseDown;
 		/// Whether the expansion panel is being shown.-
-		/* 0Fh */	bool mbIsShowingPanel;
+		/* 0Fh */	bool mIsShowingPanel;
 		/* 10h */	bool field_10;
 		/// Whether this swatch is the button used to set a custom color in the color picker.
-		/* 11h */	bool mbIsCustomColor;
+		/* 11h */	bool mIsCustomColor;
 		/// Whether this swatch is the button used to set the default color in the color picker.
-		/* 12h */	bool mbIsDefaultColor;
-		/* 14h */	float mfMouseRolloverTime;
+		/* 12h */	bool mIsDefaultColor;
+		/* 14h */	float mMouseRolloverTime;
 		/* 18h */	float field_18;
-		/* 1Ch */	float mfMouseDownTime;
-		/* 20h */	float mfMouseSelectTime;
+		/* 1Ch */	float mMouseDownTime;
+		/* 20h */	float mMouseSelectTime;
 		/// The original color with which this swatch was loaded. This never changes.
 		/* 24h */	Math::ColorRGB mOriginalColor;
 		/// The current selected color of the swatch.
@@ -139,11 +141,11 @@ namespace Palettes
 		/// A milliseconds clock used to measure click time.
 		/* 80h */	Clock mClock;
 		/// In milliseconds, the last time when the mouse was being pressed over the button.
-		/* 98h */	int mnClickTime;
+		/* 98h */	int mClickTime;
 		/// In milliseconds, the previous time when the mouse was being pressed over the button.
-		/* 9Ch */	int mnPreviousClickTime;
+		/* 9Ch */	int mPreviousClickTime;
 		/// The index of this color inside the color picker.
-		/* A0h */	int mnColorIndex;  // -1
+		/* A0h */	int mColorIndex;  // -1
 		/* A4h */	int field_A4;  // not initialized  // set to -1 in Load
 
 	public:
@@ -163,6 +165,7 @@ namespace Palettes
 		DefineAddress(GenerateExpansionArea, GetAddress(0x5A46C0, 0x5A4980, 0x5A4980));
 		DefineAddress(AddTooltip, GetAddress(0x5A43B0, 0x5A4670, 0x5A4670));
 		DefineAddress(Update, GetAddress(0x5A6260, 0x5A63C0, 0x5A63C0));
+		DefineAddress(Destroy, GetAddress(0x5A5C40, , PLACEHOLDER));
 
 		DefineAddress(HandleUIMessage, GetAddress(0x5A58B0, 0x5A5B60, 0x5A5B60));
 	}

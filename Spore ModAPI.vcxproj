@@ -436,6 +436,11 @@
     <ClInclude Include="ModAPI\ShaderConstantsManager.h" />
     <ClInclude Include="SourceCode\Utility.h" />
     <ClInclude Include="Spore\Anim\AnimContainer.h" />
+    <ClInclude Include="Spore\Anim\CreatureBlock.h" />
+    <ClInclude Include="Spore\Simulator\cCivilization.h" />
+    <ClInclude Include="Spore\Simulator\SubSystem\GameBehaviorManager.h" />
+    <ClInclude Include="Spore\Sporepedia\IShopperListener.h" />
+    <ClInclude Include="Spore\Sporepedia\ShopperRequest.h" />
     <ClInclude Include="Spore\App\cCameraManager.h" />
     <ClInclude Include="Spore\App\cCheatManager.h" />
     <ClInclude Include="Spore\App\cGameModeManager.h" />
@@ -465,10 +470,10 @@
     <ClInclude Include="Spore\Cheats.h" />
     <ClInclude Include="Spore\CommonIDs.h" />
     <ClInclude Include="Spore\CoreAllocatorAdapter.h" />
-    <ClInclude Include="Spore\Detouring.h" />
     <ClInclude Include="Spore\App\DirectPropertyList.h" />
     <ClInclude Include="Spore\Editors\BakeManager.h" />
     <ClInclude Include="Spore\Editors\cEditorResource.h" />
+    <ClInclude Include="Spore\Editors\EditorMessages.h" />
     <ClInclude Include="Spore\Editors\EditorPlayMode.h" />
     <ClInclude Include="Spore\Editors\SpeciesManager.h" />
     <ClInclude Include="Spore\Graphics\Animations.h" />
@@ -889,6 +894,7 @@
     <ClCompile Include="SourceCode\Simulator\Terraforming.cpp" />
     <ClCompile Include="SourceCode\Simulator\ToolManager.cpp" />
     <ClCompile Include="SourceCode\Simulator\Tools.cpp" />
+    <ClCompile Include="SourceCode\Sporepedia\Shopper.cpp" />
     <ClCompile Include="SourceCode\Swarm\Effects.cpp" />
     <ClCompile Include="SourceCode\Swarm\SwarmManager.cpp" />
     <ClCompile Include="SourceCode\Clock.cpp" />
@@ -916,9 +922,11 @@
     <ClCompile Include="SourceCode\UTFWin\WindowManager.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="IteratingSimulator.dox" />
     <None Include="mainpage.dox" />
     <None Include="Miscellaneous.dox" />
     <None Include="ModAPI.dox" />
+    <None Include="ShopperRequest.dox" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

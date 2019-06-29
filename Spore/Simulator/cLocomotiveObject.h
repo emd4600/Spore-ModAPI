@@ -23,6 +23,14 @@
 
 namespace Simulator
 {
+	struct cLocomotionRequest 
+	{
+		/* 00h */	vector<int> field_1F4;
+		/* 14h */	Vector3 dstPos;
+
+		/* 60h */	Vector4 orientation;
+	};
+
 	class cLocomotiveObject_superclass {
 	public:
 		virtual ~cLocomotiveObject_superclass();
@@ -82,6 +90,7 @@ namespace Simulator
 		/* 1ECh	*/	float mAngleVelocity;
 		/* 1F0h */	int mPlanetCorrection;  // 1
 		// This is some kind of struct for movement requests?
+		// size 74h, movement request
 		/* 1F4h */	vector<int> field_1F4;
 		/* 208h */	Vector3 field_208;
 		/* 214h */	float field_214;  // 1.0

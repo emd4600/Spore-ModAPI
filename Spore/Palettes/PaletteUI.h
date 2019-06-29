@@ -67,7 +67,7 @@ namespace Palettes
 		/// kControlRightArrowBtn and 0x7BCE6E8
 		void Load(PaletteMain* pPalette, IWindow* pWindow, bool, void*);
 
-		void Update(int);
+		void Update(int msTime);
 
 
 		//// OVERRIDES ////

@@ -76,7 +76,7 @@ namespace Editors
 		/* 84h */	int field_84;
 		/* 88h */	int field_88;
 		/* 8Ch */	int field_8C;
-		/* 90h */	int field_90;
+		/* 90h */	int field_90;  // next EditorEntry?
 		/* 94h */	int field_94;
 		/* 98h */	int field_98;
 	};

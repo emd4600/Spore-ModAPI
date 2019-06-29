@@ -73,6 +73,14 @@ namespace Math
 		Color(uint32_t color);
 		Color(uint8_t r, uint8_t g, uint8_t b, uint8_t a);
 
+		inline bool operator==(const Color& b) {
+			return value == b.value;
+		}
+
+		inline bool operator!=(const Color& b) {
+			return value != b.value;
+		}
+
 		static const Color RED;
 		static const Color BLUE;
 		static const Color GREEN;
@@ -267,6 +275,14 @@ namespace Math
 		/// Returns the point at the bottom-right corner of the rectangle.
 		inline Point GetBottomRight() const {
 			return Point(x2, y2);
+		}
+		/// Returns true if the given point is contained inside this rectangle.
+		inline bool Contains(float x, float y) const {
+			return x >= x1 && x <= x2 && y >= y1 && y <= y2;
+		}
+		/// Returns true if the given point is contained inside this rectangle.
+		inline bool Contains(const Point& p) const {
+			return Contains(p.x, p.y);
 		}
 	};
 	/// A pair of two float values that represents the dimensions of an image (width, height).

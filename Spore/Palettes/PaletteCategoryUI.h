@@ -89,7 +89,7 @@ namespace Palettes
 		/// @param nDeltaPage The number of pages to move (negative to move backwards).
 		void FlipPage(int nDeltaPage);
 
-		void Update(int);
+		void Update(int msTime);
 
 		//// OVERRIDES ////
 

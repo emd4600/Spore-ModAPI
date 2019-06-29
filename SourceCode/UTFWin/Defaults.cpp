@@ -40,7 +40,7 @@ namespace UTFWin
 		return mnRefCount;
 	}
 
-	void* DefaultDrawable::Cast(uint32_t type)
+	void* DefaultDrawable::Cast(uint32_t type) const
 	{
 		if (type == IDrawable::TYPE || type == Object::TYPE)
 		{

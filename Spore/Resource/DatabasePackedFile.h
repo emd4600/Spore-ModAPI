@@ -33,7 +33,6 @@
 #include <EASTL\map.h>
 
 using namespace eastl;
-using namespace IO;
 
 namespace Resource
 {
@@ -143,7 +142,7 @@ namespace Resource
 		/* 1Dh */	bool field_1D;  // true
 
 		/* 20h */	wstring mFilePath;
-		/* 30h */	FileStream mFileStream;
+		/* 30h */	IO::FileStream mFileStream;
 		/* 25Ch */	size_t mFileOffset;
 		/* 260h */	intrusive_ptr<IO::IStream> mpCurrentStream;
 		// Set to nullptr if not using an internal buffer;

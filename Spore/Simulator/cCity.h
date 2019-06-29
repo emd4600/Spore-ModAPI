@@ -27,6 +27,7 @@
 #include <Spore\Simulator\cCityTerritory.h>
 #include <Spore\Simulator\cCityWalls.h>
 #include <Spore\App\IMessageListener.h>
+#include <Spore\CommonIDs.h>
 
 namespace Simulator
 {
@@ -35,6 +36,8 @@ namespace Simulator
 	{
 		char padding[0x64];
 	};
+
+	class cVehicle;
 
 	class cCity 
 		: public cCommunity
@@ -48,6 +51,8 @@ namespace Simulator
 
 		bool IsAboveCity(const Vector3& position);
 		Vector3 GetWallsPosition();
+
+		cVehicle* SpawnVehicle(VehiclePurpose speciality, VehicleLocomotion locomotion, struct ResourceKey key, bool isSpaceStage);
 
 	public:
 		/* 210h */	string16 field_210;
@@ -115,7 +120,7 @@ namespace Simulator
 		/* 55Ch */	vector<intrusive_ptr<cCity>> mTradePartners;
 		/* 570h */	map<int, int> field_570;
 		/* 58Ch */	bool field_58C;
-		/* 590h */	int field_590;
+		/* 590h */	intrusive_ptr<Object> mpCivilization;  // PLACEHOLDER cCivilization
 		/* 594h */	int mBuildingPlacementAngleDelta;  // 45
 		/* 598h */	float mBuildingPlacementRadius;
 		/* 59Ch */	int mAngle;
@@ -182,6 +187,7 @@ namespace Simulator
 
 	namespace InternalAddressList(cCity) 
 	{
-		DefineAddress(IsAboveCity, GetAddress(0xBD90C0, NO_ADDRESS, 0xBD9D50));
+		DefineAddress(IsAboveCity, GetAddress(0xBD90C0, , 0xBD9D50));
+		DefineAddress(SpawnVehicle, GetAddress(0xBDD410, , PLACEHOLDER));
 	}
 }

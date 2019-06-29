@@ -242,7 +242,7 @@ namespace Resource
 	////////////////////////
 
 	PFRecordRead::PFRecordRead(DBPFItem& itemInfo, const ResourceKey& name, DatabasePackedFile* pParentDBPF)
-		: IPFRecord(PFRecordRead::kType, name, pParentDBPF, kAccessFlagRead)
+		: IPFRecord(PFRecordRead::kType, name, pParentDBPF, IO::kAccessFlagRead)
 		, field_24(0)
 		, field_28(-1)
 		, mInternalBuffer("ResourceMan/PFRecordRead")
@@ -267,7 +267,7 @@ namespace Resource
 	}
 
 	PFRecordRead::PFRecordRead(PFRecordRead* pOther, const ResourceKey& name, DatabasePackedFile* pParentDBPF)
-		: IPFRecord(PFRecordRead::kType, name, pParentDBPF, kAccessFlagRead)
+		: IPFRecord(PFRecordRead::kType, name, pParentDBPF, IO::kAccessFlagRead)
 		, field_24(0)
 		, field_28(-1)
 		, mInternalBuffer("ResourceMan/PFRecordRead")
@@ -316,13 +316,13 @@ namespace Resource
 
 	auto_METHOD_VIRTUAL_const_(PFRecordRead, IStream, uint32_t, GetType);
 	auto_METHOD_VIRTUAL_const_(PFRecordRead, IStream, int, GetAccessFlags);
-	auto_METHOD_VIRTUAL_const_(PFRecordRead, IStream, FileError, GetState);
+	auto_METHOD_VIRTUAL_const_(PFRecordRead, IStream, IO::FileError, GetState);
 	// auto_METHOD_(		PFRecordRead, bool,	Close);  // Already overriden with IPFRecord
 
-	auto_METHOD_VIRTUAL_const_(PFRecordRead, IStream, size_type, GetSize);
-	auto_METHOD_VIRTUAL(PFRecordRead, IStream, bool, SetSize, PARAMS(size_type size), PARAMS(size));
-	auto_METHOD_VIRTUAL_const(PFRecordRead, IStream, int, GetPosition, PARAMS(PositionType positionType), PARAMS(positionType));
-	auto_METHOD_VIRTUAL(PFRecordRead, IStream, bool, SetPosition, PARAMS(int distance, PositionType positionType), PARAMS(distance, positionType));
+	auto_METHOD_VIRTUAL_const_(PFRecordRead, IStream, IO::size_type, GetSize);
+	auto_METHOD_VIRTUAL(PFRecordRead, IStream, bool, SetSize, PARAMS(IO::size_type size), PARAMS(size));
+	auto_METHOD_VIRTUAL_const(PFRecordRead, IStream, int, GetPosition, PARAMS(IO::PositionType positionType), PARAMS(positionType));
+	auto_METHOD_VIRTUAL(PFRecordRead, IStream, bool, SetPosition, PARAMS(int distance, IO::PositionType positionType), PARAMS(distance, positionType));
 	auto_METHOD_VIRTUAL_const_(PFRecordRead, IStream, int, GetAvailable);
 
 	auto_METHOD_VIRTUAL(PFRecordRead, IStream, int, Read, PARAMS(void* pData, size_t nSize), PARAMS(pData, nSize));
@@ -336,7 +336,7 @@ namespace Resource
 	/////////////////////////
 
 	PFRecordWrite::PFRecordWrite(void* pData, size_t nSize, bool bUsePointer, ResourceKey& name, DatabasePackedFile* pParentDBPF)
-		: IPFRecord(kType, name, pParentDBPF, kAccessFlagReadWrite)
+		: IPFRecord(kType, name, pParentDBPF, IO::kAccessFlagReadWrite)
 		, field_24("ResourceMan/PFRecordWrite")
 		, field_48((const char*)nullptr)
 		, field_274(false)
@@ -345,14 +345,14 @@ namespace Resource
 		field_24.AddRef();
 		field_48.AddRef();
 
-		field_24.SetOption(MemoryStream::kOptionResizeEnabled, 1.0f);
+		field_24.SetOption(IO::MemoryStream::kOptionResizeEnabled, 1.0f);
 
 		field_24.SetDataRaw(pData, nSize, bUsePointer, true, mpParentDBPF->GetAllocator());
 
 	}
 
 	PFRecordWrite::PFRecordWrite(size_t nChunkOffset, size_t nSize, bool bUsePointer, ResourceKey& name, DatabasePackedFile* pParentDBPF)
-		: IPFRecord(kType, name, pParentDBPF, kAccessFlagReadWrite)
+		: IPFRecord(kType, name, pParentDBPF, IO::kAccessFlagReadWrite)
 		, field_24("ResourceMan/PFRecordWrite")
 		, field_48((const char*)nullptr)
 		, field_274(false)
@@ -361,9 +361,9 @@ namespace Resource
 		field_24.AddRef();
 		field_48.AddRef();
 
-		field_24.SetOption(MemoryStream::kOptionResizeEnabled, 1.0f);
-		field_24.SetOption(MemoryStream::kOptionResizeFactor, 1.5f);
-		field_24.SetOption(MemoryStream::kOptionResizeIncrement, 1024.0f);
+		field_24.SetOption(IO::MemoryStream::kOptionResizeEnabled, 1.0f);
+		field_24.SetOption(IO::MemoryStream::kOptionResizeFactor, 1.5f);
+		field_24.SetOption(IO::MemoryStream::kOptionResizeIncrement, 1024.0f);
 
 		if (nSize > 0)
 		{
@@ -394,8 +394,8 @@ namespace Resource
 		{
 			field_48.Close();
 
-			wchar_t fileName[kMaxPathLength];
-			field_48.GetPath((char16_t*)fileName, kMaxPathLength);
+			wchar_t fileName[IO::kMaxPathLength];
+			field_48.GetPath((char16_t*)fileName, IO::kMaxPathLength);
 
 			DeleteFileW(fileName);
 		}
@@ -424,13 +424,13 @@ namespace Resource
 
 	auto_METHOD_const_(PFRecordWrite, uint32_t, GetType);
 	auto_METHOD_const_(PFRecordWrite, int, GetAccessFlags);
-	auto_METHOD_const_(PFRecordWrite, FileError, GetState);
+	auto_METHOD_const_(PFRecordWrite, IO::FileError, GetState);
 	// auto_METHOD_(		PFRecordWrite, bool,	Close);  // Already overriden with IPFRecord
 
-	auto_METHOD_const_(PFRecordWrite, size_type, GetSize);
-	auto_METHOD(PFRecordWrite, bool, SetSize, PARAMS(size_type size), PARAMS(size));
-	auto_METHOD_const(PFRecordWrite, int, GetPosition, PARAMS(PositionType positionType), PARAMS(positionType));
-	auto_METHOD(PFRecordWrite, bool, SetPosition, PARAMS(int distance, PositionType positionType), PARAMS(distance, positionType));
+	auto_METHOD_const_(PFRecordWrite, IO::size_type, GetSize);
+	auto_METHOD(PFRecordWrite, bool, SetSize, PARAMS(IO::size_type size), PARAMS(size));
+	auto_METHOD_const(PFRecordWrite, int, GetPosition, PARAMS(IO::PositionType positionType), PARAMS(positionType));
+	auto_METHOD(PFRecordWrite, bool, SetPosition, PARAMS(int distance, IO::PositionType positionType), PARAMS(distance, positionType));
 	auto_METHOD_const_(PFRecordWrite, int, GetAvailable);
 
 	auto_METHOD(PFRecordWrite, int, Read, PARAMS(void* pData, size_t nSize), PARAMS(pData, nSize));

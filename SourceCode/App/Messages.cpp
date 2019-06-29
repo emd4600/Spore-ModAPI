@@ -76,7 +76,7 @@ namespace App
 		{
 			if (objectFlags & (1 << i))
 			{
-				params[i].object->Release();
+				if (params[i].object) params[i].object->Release();
 			}
 		}
 	}

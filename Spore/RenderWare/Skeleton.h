@@ -23,6 +23,19 @@
 
 namespace RenderWare
 {
+	enum BoneFlags
+	{
+		// Sets it's matrix as the previous matrix
+		// Not only the first bone can use this
+		kBoneRoot = 0,
+		// Sets last branch matrix as previous; therefore, all leafs use the same previous matrix
+		kBoneLeaf = 1,
+		// Saves previous matrix in 'branch' matrix; used when the parent has multiple children, so it can go back
+		kBoneBranch = 2,
+		// Doesn't change 'previous' matrix; used in leafs whose parent is a root bone (i.e. not a branch)
+		kBoneRootLeaf = 3
+	};
+
 	///
 	/// This structure represents an Skeleton, that is, a hierarchy of bones. Each bone has a unique ID,
 	/// a parent (except for the root bone) and flags.
@@ -32,14 +45,14 @@ namespace RenderWare
 		Skeleton();
 		Skeleton(size_t nBoneCount, uint32_t* pBoneIDs, int* pBoneFlags, int* pBoneParents);
 
-		/// An array of the IDs of each bone.
-		/* 00h */	uint32_t* mpBoneIDs;
-
 		/// An array of flags for each bone.
-		/* 04h */	int *mpBoneFlags;
+		/* 00h */	int *mpBoneFlags;
 
 		/// An array of the indices that tell the parent of each bone.
-		/* 08h */	int *mpBoneParents;
+		/* 04h */	int *mpBoneParents;
+
+		/// An array of the IDs of each bone.
+		/* 08h */	uint32_t* mpBoneIDs;
 
 		/// The amount of bones contained in this skeleton.
 		/* 0Ch */	size_t mnBoneCount;

@@ -1,0 +1,58 @@
+/**
+
+## Iterating through Simulator objects
+
+### Necessary includes
+
+ - <Spore\Simulator\GameNounManager.h>
+
+### Implementation
+
+Very often you will need a way to access to all Simulator objects of a certain type: do something to all creatures, remove all vehicles, etc
+You can do that with the `Simulator::GetData` method.
+
+\code{.cpp}
+// We use auto so code is more legible; it will be a pointer to the object type
+// We have used 'using namespace Simulator;' to simplify
+// We use 'auto' to simplify; in this case, it's aan intrusive_ptr<cVehicle>
+for (auto vehicle : GetData<cVehicle>()) {
+	
+}
+\endcode
+
+This method also works with base classes. For example, creatures are split in two different classes, one for animals and another for citizens.
+If you want to get all of them, you can use their common base class instead, e.g. GetData<cCreatureBase>.
+
+### Examples
+
+Example 1: Make all airplanes fly towards the nearest city to the player
+\code{.cpp}
+// Necessary includes
+#include <Spore\Simulator\GameNounManager.h>
+#include <Spore\Simulator\PlanetModel.h>
+#include <Spore\Simulator\cVehicle.h>
+
+// ... code ...
+auto city = PlanetModel()->GetNearestCity(GameNounManager()->GetAvatar()->GetPosition());
+if (city) {
+	for (auto vehicle : GetData<cVehicle>()) {
+		if (vehicle->GetLocomotion() == kLocomotionAir) {
+			vehicle->MoveTo(city)
+		}
+	}
+}
+
+\endcode
+
+Example 2: Kill all entities with health points (combatants)
+\code{.cpp}
+// Necessary includes
+#include <Spore\Simulator\GameNounManager.h>
+#include <Spore\Simulator\cCombatant.h>
+
+// ... code ...
+for (auto combatant : GetData<cCombatant>()) {
+	combatant->SetHealthPoints(0);
+}
+\endcode
+*/

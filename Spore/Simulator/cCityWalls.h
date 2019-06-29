@@ -34,6 +34,8 @@ namespace Simulator
 		static const uint32_t TYPE = 0xED7FC07;
 		static const uint32_t NOUN_ID = 0x18C7C97;
 
+		// 70h GetDirection ?
+
 	public:
 		/* 108h */	bool field_108;
 		/* 10Ch */	intrusive_ptr<cOrnament> mpDock;

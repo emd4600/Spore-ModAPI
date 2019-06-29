@@ -22,6 +22,9 @@ namespace Graphics
 	public:
 		// sub_742910 adds everything
 
+		// sub_798360 process keyframe?
+		// It converts from RWAnimChannel to fill SkinMatrixBuffer
+
 		/* 04h */	int mnRefCount;
 		/* 08h */	int mFlags;
 		/* 0Ch */	int field_C;

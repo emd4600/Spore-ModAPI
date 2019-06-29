@@ -53,6 +53,8 @@ namespace Simulator
 		/// used. Otherwise, it returns -9.8
 		float GetGravity() const;
 
+		Vector4 GetOrientation(const Vector3& position, const Vector3& direction);  // PLACEHOLDER definition
+
 	public:
 		static cPlanetModel* Get();
 	};
@@ -70,5 +72,6 @@ namespace Simulator
 		DefineAddress(ToSurface, GetAddress(0xB80F30, NO_ADDRESS, 0xB81780));
 		DefineAddress(GetGravity, GetAddress(0xB7DD40, NO_ADDRESS, 0xB7E5E0));
 		DefineAddress(GetHeightAt, GetAddress(0xB7E860, NO_ADDRESS, 0xB7F0C0));
+		DefineAddress(GetOrientation, GetAddress(0xB7EB40, , PLACEHOLDER));
 	}
 }

@@ -77,7 +77,7 @@ namespace UTFWin
 			kDefaultCollisionType = 0x19C46FB
 		};
 
-		virtual void* Cast(uint32_t);
+		virtual void* Cast(uint32_t) const override;
 
 		///
 		/// Paints this drawable onto the given UIRenderer.
@@ -122,7 +122,7 @@ namespace UTFWin
 	public:
 		virtual int AddRef() override;
 		virtual int Release() override;
-		virtual void* Cast(uint32_t type) override;
+		virtual void* Cast(uint32_t type) const override;
 
 		virtual void Paint(UIRenderer* pRenderer, const Math::Rectangle& area, const RenderParams& params) override;
 		virtual bool IsColliding(const Math::Rectangle& area, const Math::Point& point, RenderParams& params) override;

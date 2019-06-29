@@ -177,3 +177,5 @@ inline ENUMTYPE &operator ^= (ENUMTYPE &a, ENUMTYPE b) { return (ENUMTYPE &)(((u
 
 // To create managers
 #define SINGLETON(className) struct className##Singleton {className* operator->() const{return className::Get();}}; extern className##Singleton
+
+#define ASSERT_SIZE(name, size) static_assert(sizeof(name) == size, "sizeof " #name " != " #size);

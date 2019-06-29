@@ -164,8 +164,17 @@ namespace UTFWin
 	auto_METHOD_VIRTUAL(Window, IWindow, int, func45, PARAMS(int arg_0), PARAMS(arg_0));
 	auto_METHOD_VIRTUAL(Window, IWindow, int, func46, PARAMS(int arg_0, int arg_4), PARAMS(arg_0, arg_4));
 	auto_METHOD_VIRTUAL(Window, IWindow, int, func47, PARAMS(float arg_0, float arg_4), PARAMS(arg_0, arg_4));
-	auto_METHOD_VIRTUAL(Window, IWindow, Point, func48, PARAMS(float arg_0, float arg_4), PARAMS(arg_0, arg_4));
-	auto_METHOD_VIRTUAL(Window, IWindow, Point, func49, PARAMS(float arg_0, float arg_4), PARAMS(arg_0, arg_4));
+
+	Point Window::func48(float arg_0, float arg_4) {
+		Point p;
+		CALL(GetMethodAddress(Window, func48), Point*, PARAMS(IWindow*, Point*, float, float), PARAMS(this, &p, arg_0, arg_4));
+		return p;
+	}
+	Point Window::func49(float arg_0, float arg_4) {
+		Point p;
+		CALL(GetMethodAddress(Window, func49), Point*, PARAMS(IWindow*, Point*, float, float), PARAMS(this, &p, arg_0, arg_4));
+		return p;
+	}
 	auto_METHOD_VIRTUAL(Window, IWindow, bool, func50, PARAMS(float arg_0, float arg_4, Point& dst), PARAMS(arg_0, arg_4, dst));
 
 	// Specials
@@ -316,7 +325,7 @@ namespace UTFWin
 		return WindowChildren(this);
 	}
 
-	WindowProcedures IWindow::procedures() const
+	WindowProcedures IWindow::procedures()
 	{
 		return WindowProcedures(this);
 	}

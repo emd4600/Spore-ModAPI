@@ -63,13 +63,13 @@ namespace Resource
 
 		/* 0Ch */	virtual uint32_t	GetType() const override;
 		/* 10h */	virtual int			GetAccessFlags() const override;
-		/* 14h */	virtual FileError	GetState() const override;
+		/* 14h */	virtual IO::FileError	GetState() const override;
 		// /* 18h */	virtual bool		Close() override;  // already overriden with IPFRecord
 
-		/* 1Ch */	virtual size_type	GetSize() const override;
-		/* 20h */	virtual bool		SetSize(size_type size) override;  // does nothing
-		/* 24h */	virtual int			GetPosition(PositionType positionType = kPositionTypeBegin) const override;
-		/* 28h */	virtual bool		SetPosition(int distance, PositionType positionType = kPositionTypeBegin) override;
+		/* 1Ch */	virtual IO::size_type	GetSize() const override;
+		/* 20h */	virtual bool		SetSize(IO::size_type size) override;  // does nothing
+		/* 24h */	virtual int			GetPosition(IO::PositionType positionType = IO::kPositionTypeBegin) const override;
+		/* 28h */	virtual bool		SetPosition(int distance, IO::PositionType positionType = IO::kPositionTypeBegin) override;
 		/* 2Ch */	virtual int			GetAvailable() const override;
 
 		/* 30h */	virtual int		Read(void* pData, size_t nSize) override;
@@ -77,8 +77,8 @@ namespace Resource
 		/* 38h */	virtual int		Write(const void* pData, size_t nSize) override;  // does nothing
 
 	protected:
-		/* 24h */	MemoryStream field_24;
-		/* 48h */	FileStream field_48;
+		/* 24h */	IO::MemoryStream field_24;
+		/* 48h */	IO::FileStream field_48;
 		/* 274h */	bool field_274;
 		/* 278h */	int mnStreamRefCount;  // decreased when calling Close()
 	};

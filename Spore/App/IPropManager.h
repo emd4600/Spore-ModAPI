@@ -157,7 +157,7 @@ namespace App
 	///
 	/// Returns the object that is the currently active property manager. Same as IPropManager::Get().
 	///
-	inline IPropManager* GetPropManager()
+	inline IPropManager* PropManager()
 	{
 		return IPropManager::Get();
 	}

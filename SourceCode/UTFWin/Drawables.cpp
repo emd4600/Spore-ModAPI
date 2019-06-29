@@ -67,7 +67,7 @@ namespace UTFWin
 	auto_METHOD_VIRTUAL_const_(ImageDrawable, IImageDrawable, AlignmentV, GetAlignmentVertical);
 
 
-	void* ImageDrawable::Cast(uint32_t type) {
+	void* ImageDrawable::Cast(uint32_t type) const {
 		if (type == ILayoutElement::TYPE)
 		{
 			return (ILayoutElement*) this;
@@ -107,7 +107,7 @@ namespace UTFWin
 	auto_METHOD_VIRTUAL_const_(StdDrawable, IStdDrawable, float, GetHitFactor);
 	auto_METHOD_VIRTUAL_VOID(StdDrawable, IStdDrawable, SetHitFactor, PARAMS(float value), PARAMS(value));
 
-	void* StdDrawable::Cast(uint32_t type) {
+	void* StdDrawable::Cast(uint32_t type) const {
 		if (type == IStdDrawable::TYPE)
 		{
 			return (IStdDrawable*) this;
@@ -136,7 +136,7 @@ namespace UTFWin
 	auto_METHOD_VIRTUAL_(ComboBoxDrawable, IComboBoxDrawable, IDrawable*, ToDrawable);
 	auto_METHOD_VIRTUAL_VOID(ComboBoxDrawable, IComboBoxDrawable, SetImage, PARAMS(int index, Image* pImage), PARAMS(index, pImage));
 
-	void* ComboBoxDrawable::Cast(uint32_t type) {
+	void* ComboBoxDrawable::Cast(uint32_t type) const {
 		if (type == ILayoutElement::TYPE)
 		{
 			return (ILayoutElement*) this;
@@ -166,7 +166,7 @@ namespace UTFWin
 	auto_METHOD_VIRTUAL_(ScrollbarDrawable, IScrollbarDrawable, IDrawable*, ToDrawable);
 	auto_METHOD_VIRTUAL_VOID(ScrollbarDrawable, IScrollbarDrawable, SetImage, PARAMS(int index, Image* pImage), PARAMS(index, pImage));
 
-	void* ScrollbarDrawable::Cast(uint32_t type) {
+	void* ScrollbarDrawable::Cast(uint32_t type) const {
 		if (type == ILayoutElement::TYPE)
 		{
 			return (ILayoutElement*) this;
@@ -196,7 +196,7 @@ namespace UTFWin
 	auto_METHOD_VIRTUAL_(SliderDrawable, ISliderDrawable, IDrawable*, ToDrawable);
 	auto_METHOD_VIRTUAL_VOID(SliderDrawable, ISliderDrawable, SetImage, PARAMS(int index, Image* pImage), PARAMS(index, pImage));
 
-	void* SliderDrawable::Cast(uint32_t type) {
+	void* SliderDrawable::Cast(uint32_t type) const {
 		if (type == ILayoutElement::TYPE)
 		{
 			return (ILayoutElement*) this;
@@ -226,7 +226,7 @@ namespace UTFWin
 	auto_METHOD_VIRTUAL_(SpinnerDrawable, ISpinnerDrawable, IDrawable*, ToDrawable);
 	auto_METHOD_VIRTUAL_VOID(SpinnerDrawable, ISpinnerDrawable, SetImage, PARAMS(int index, Image* pImage), PARAMS(index, pImage));
 
-	void* SpinnerDrawable::Cast(uint32_t type) {
+	void* SpinnerDrawable::Cast(uint32_t type) const {
 		if (type == ILayoutElement::TYPE)
 		{
 			return (ILayoutElement*) this;
@@ -261,7 +261,7 @@ namespace UTFWin
 	auto_METHOD_VIRTUAL_VOID(DialogDrawable, IDialogDrawable, SetBackgroundTiling, PARAMS(BackgroundTiling value), PARAMS(value));
 
 
-	void* DialogDrawable::Cast(uint32_t type) {
+	void* DialogDrawable::Cast(uint32_t type) const {
 		if (type == ILayoutElement::TYPE)
 		{
 			return (ILayoutElement*) this;
@@ -293,7 +293,7 @@ namespace UTFWin
 	auto_METHOD_VIRTUAL_VOID(ButtonDrawableStandard, IButtonDrawableStandard, SetImage, PARAMS(Image* image, bool bTileable), PARAMS(image, bTileable));
 
 
-	void* ButtonDrawableStandard::Cast(uint32_t type) {
+	void* ButtonDrawableStandard::Cast(uint32_t type) const {
 		if (type == ILayoutElement::TYPE)
 		{
 			return (ILayoutElement*) this;
@@ -325,7 +325,7 @@ namespace UTFWin
 	auto_METHOD_VIRTUAL_VOID(ButtonDrawableRadio, IButtonDrawableRadio, SetImage, PARAMS(Image* image, bool bTileable), PARAMS(image, bTileable));
 
 
-	void* ButtonDrawableRadio::Cast(uint32_t type) {
+	void* ButtonDrawableRadio::Cast(uint32_t type) const {
 		if (type == ILayoutElement::TYPE)
 		{
 			return (ILayoutElement*) this;
@@ -353,7 +353,7 @@ namespace UTFWin
 	auto_METHOD_VIRTUAL(FrameDrawable, IDrawable, bool, UseCollision, PARAMS(uint32_t type, bool& dst), PARAMS(type, dst));
 
 
-	void* FrameDrawable::Cast(uint32_t type) {
+	void* FrameDrawable::Cast(uint32_t type) const {
 		if (type == ILayoutElement::TYPE)
 		{
 			return (ILayoutElement*) this;
@@ -382,7 +382,7 @@ namespace UTFWin
 	auto_METHOD_VIRTUAL(VariableWidthDrawable, IDrawable, bool, UseCollision, PARAMS(uint32_t type, bool& dst), PARAMS(type, dst));
 
 
-	void* VariableWidthDrawable::Cast(uint32_t type) {
+	void* VariableWidthDrawable::Cast(uint32_t type) const {
 		if (type == ILayoutElement::TYPE)
 		{
 			return (ILayoutElement*) this;
@@ -430,7 +430,7 @@ namespace UTFWin
 
 	}
 
-	void* SporeStdDrawableImageInfo::Cast(uint32_t type) const {
+	void* SporeStdDrawableImageInfo::Cast(uint32_t type) const const {
 		if (type == Object::TYPE)
 		{
 			return (Object*) this;
@@ -485,7 +485,7 @@ namespace UTFWin
 		}
 	}
 
-	void* SporeStdDrawable::Cast(uint32_t type) {
+	void* SporeStdDrawable::Cast(uint32_t type) const {
 		if (type == SporeStdDrawable::TYPE)
 		{
 			return (SporeStdDrawable*) this;
@@ -497,7 +497,7 @@ namespace UTFWin
 	}
 
 
-	void* IDrawable::Cast(uint32_t type)
+	void* IDrawable::Cast(uint32_t type) const
 	{
 		if (type == IDrawable::TYPE)
 		{

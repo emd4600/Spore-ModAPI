@@ -23,17 +23,17 @@
 namespace Palettes
 {
 	ColorSwatchUI::ColorSwatchUI()
-		: mbIsLoaded()
-		, mbIsRollover()
-		, mbIsMouseDown()
-		, mbIsShowingPanel()
+		: mIsLoaded()
+		, mIsRollover()
+		, mIsMouseDown()
+		, mIsShowingPanel()
 		, field_10()
-		, mbIsCustomColor()
-		, mbIsDefaultColor()
-		, mfMouseRolloverTime()
+		, mIsCustomColor()
+		, mIsDefaultColor()
+		, mMouseRolloverTime()
 		, field_18()
-		, mfMouseDownTime()
-		, mfMouseSelectTime()
+		, mMouseDownTime()
+		, mMouseSelectTime()
 		, mOriginalColor(1.0f, 1.0f, 1.0f)
 		, mColor(1.0f, 1.0f, 1.0f)
 		, mpFrameWindow(nullptr)
@@ -46,9 +46,9 @@ namespace Palettes
 		, mExpansionSwatches()
 		, mpConfigProp(nullptr)
 		, mClock(Clock::Mode::Milliseconds)
-		, mnClickTime()
-		, mnPreviousClickTime()
-		, mnColorIndex(-1)
+		, mClickTime()
+		, mPreviousClickTime()
+		, mColorIndex(-1)
 	{
 	}
 
@@ -95,7 +95,7 @@ namespace Palettes
 		PARAMS(IWindow* pWindow, const Message& message), PARAMS(pWindow, message));
 
 	auto_METHOD_VOID(ColorSwatchUI, Load, 
-		PARAMS(const App::PropertyList* pConfigProp, struct Math::ColorRGB color, union Math::Rectangle area, IWindow* pContainerWindow, Object* pExpansionObject),
+		PARAMS(App::PropertyList* pConfigProp, struct Math::ColorRGB color, union Math::Rectangle area, IWindow* pContainerWindow, Object* pExpansionObject),
 		PARAMS(pConfigProp, color, area, pContainerWindow, pExpansionObject));
 
 	auto_METHOD_VOID(ColorSwatchUI, SetArea, PARAMS(union Math::Rectangle area, bool bUpdateSwatch), PARAMS(area, bUpdateSwatch));
@@ -104,20 +104,22 @@ namespace Palettes
 
 	auto_METHOD_VOID(ColorSwatchUI, AddTooltip, PARAMS(uint32_t instanceID), PARAMS(instanceID));
 
-	auto_METHOD_VOID(ColorSwatchUI, Update, PARAMS(int arg_0, int arg_4, int arg_8), PARAMS(arg_0, arg_4, arg_8));
+	auto_METHOD_VOID(ColorSwatchUI, Update, PARAMS(int msTime, bool arg_4), PARAMS(msTime, arg_4));
+
+	auto_METHOD_VOID_(ColorSwatchUI, Destroy);
 
 
 
 	ColorPickerUI::ColorPickerUI()
 		: field_0C()
 		, mpWindow(nullptr)
-		, mfWidth()
-		, mfHeight()
+		, mWidth()
+		, mHeight()
 		, mSelectedColor(1.0f, 1.0f, 1.0f)
-		, mnCustomColorIndex(-1)
-		, mnDefaultColorIndex(-1)
+		, mCustomColorIndex(-1)
+		, mDefaultColorIndex(-1)
 		, mpColorUIs()
-		, mnColorsCount(0)
+		, mColorsCount(0)
 		, mpPropList(nullptr)
 	{
 	}
@@ -152,11 +154,18 @@ namespace Palettes
 		}
 	}
 
-	auto_METHOD_VOID(ColorPickerUI, Load, 
+	auto_METHOD(ColorPickerUI, bool, Load, 
 		PARAMS(IWindow* pWindow, uint32_t propID, uint32_t nRegionFilter, vector<ColorRGB>* pColors),
 		PARAMS(pWindow, propID, nRegionFilter, pColors));
 
 	auto_METHOD_VOID(ColorPickerUI, SetVisible, PARAMS(bool bVisible), PARAMS(bVisible));
 
-	auto_METHOD(ColorPickerUI, Math::Rectangle, GetSwatchArea, PARAMS(int nIndex), PARAMS(nIndex));
+	Math::Rectangle ColorPickerUI::GetSwatchArea(int nIndex, bool arg_4) const {
+		Math::Rectangle rect;
+		CALL(GetMethodAddress(ColorPickerUI, GetSwatchArea), void, 
+			PARAMS(const ColorPickerUI*, Math::Rectangle&, int, bool), PARAMS(this, rect, nIndex, arg_4));
+		return rect;
+	}
+
+	auto_METHOD_VOID(ColorPickerUI, SetColor, PARAMS(const ColorRGB& color), PARAMS(color));
 }

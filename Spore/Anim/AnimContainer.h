@@ -26,3 +26,7 @@
 // loc_63ACE4 play mode play run animations
 
 //  loc_D49254 ability  loc_D48CFA
+
+// [127h]: at 2E4h has vector<CreatureBlock>
+
+// vftable 58h: GetCurrentAnimationID?
