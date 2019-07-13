@@ -27,20 +27,20 @@ namespace App
 	auto_METHOD_VIRTUAL_(cCheatManager, cCheatManager, bool, Initialize);
 	auto_METHOD_VIRTUAL_(cCheatManager, cCheatManager, bool, Dispose);
 	auto_METHOD_VIRTUAL_VOID_(cCheatManager, cCheatManager, func14h);
-	auto_METHOD_VIRTUAL_VOID(cCheatManager, cCheatManager, AddCheat, PARAMS(const char* pString, ArgScript::ICommand* parser, bool bNotify), PARAMS(pString, parser, bNotify));
-	auto_METHOD_VIRTUAL_VOID(cCheatManager, cCheatManager, RemoveCheat, PARAMS(const char* pString), PARAMS(pString));
-	auto_METHOD_VIRTUAL(cCheatManager, cCheatManager, bool, ProcessLine, PARAMS(const char* pString), PARAMS(pString));
+	auto_METHOD_VIRTUAL_VOID(cCheatManager, cCheatManager, AddCheat, Args(const char* pString, ArgScript::ICommand* parser, bool bNotify), Args(pString, parser, bNotify));
+	auto_METHOD_VIRTUAL_VOID(cCheatManager, cCheatManager, RemoveCheat, Args(const char* pString), Args(pString));
+	auto_METHOD_VIRTUAL(cCheatManager, cCheatManager, bool, ProcessLine, Args(const char* pString), Args(pString));
 	auto_METHOD_VIRTUAL_(cCheatManager, cCheatManager, int, func24h);
-	auto_METHOD_VIRTUAL(cCheatManager, cCheatManager, ArgScript::ICommand*, GetCheat, PARAMS(const char* pKeyword), PARAMS(pKeyword));
-	auto_METHOD_VIRTUAL(cCheatManager, cCheatManager, size_t, GetKeywords, PARAMS(const char* pPattern, vector<const char*> dst), PARAMS(pPattern, dst));
-	auto_METHOD_VIRTUAL_VOID(cCheatManager, cCheatManager, func30h, PARAMS(Object* arg_0), PARAMS(arg_0));
-	auto_METHOD_VIRTUAL_VOID(cCheatManager, cCheatManager, func34h, PARAMS(Object* arg_0), PARAMS(arg_0));
+	auto_METHOD_VIRTUAL(cCheatManager, cCheatManager, ArgScript::ICommand*, GetCheat, Args(const char* pKeyword), Args(pKeyword));
+	auto_METHOD_VIRTUAL(cCheatManager, cCheatManager, size_t, GetKeywords, Args(const char* pPattern, vector<const char*> dst), Args(pPattern, dst));
+	auto_METHOD_VIRTUAL_VOID(cCheatManager, cCheatManager, func30h, Args(Object* arg_0), Args(arg_0));
+	auto_METHOD_VIRTUAL_VOID(cCheatManager, cCheatManager, func34h, Args(Object* arg_0), Args(arg_0));
 	auto_METHOD_VIRTUAL_(cCheatManager, cCheatManager, ArgScript::FormatParser*, GetArgScript);
-	auto_METHOD_VIRTUAL_VOID(cCheatManager, cCheatManager, func3Ch, PARAMS(int arg_0), PARAMS(arg_0));
-	auto_METHOD_VIRTUAL_VOID(cCheatManager, cCheatManager, func40h, PARAMS(int arg_0), PARAMS(arg_0));
-	auto_METHOD_VIRTUAL_VOID(cCheatManager, cCheatManager, func44h, PARAMS(int arg_0), PARAMS(arg_0));
+	auto_METHOD_VIRTUAL_VOID(cCheatManager, cCheatManager, func3Ch, Args(int arg_0), Args(arg_0));
+	auto_METHOD_VIRTUAL_VOID(cCheatManager, cCheatManager, func40h, Args(int arg_0), Args(arg_0));
+	auto_METHOD_VIRTUAL_VOID(cCheatManager, cCheatManager, func44h, Args(int arg_0), Args(arg_0));
 	auto_METHOD_VIRTUAL_(cCheatManager, cCheatManager, bool, func48h);
-	auto_METHOD_VIRTUAL_VOID(cCheatManager, cCheatManager, func4Ch, PARAMS(bool arg_0), PARAMS(arg_0));
+	auto_METHOD_VIRTUAL_VOID(cCheatManager, cCheatManager, func4Ch, Args(bool arg_0), Args(arg_0));
 
 	cCheatManager::cCheatManager()
 		: mnRefCount(0)

@@ -246,8 +246,8 @@ namespace UTFWin
 	//// INTERNAL IMPLEMENTATION ////
 	/////////////////////////////////
 
-	namespace InternalAddressList(InteractiveWinProc)
+	namespace Addresses(InteractiveWinProc)
 	{
-		DefineAddress(HandleUIMessage, GetAddress(0x951370, 0x950E50, 0x950E50));
+		DeclareAddress(HandleUIMessage, SelectAddress(0x951370, 0x950E50, 0x950E50));
 	}
 }

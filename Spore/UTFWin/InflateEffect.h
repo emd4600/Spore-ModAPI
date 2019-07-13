@@ -78,19 +78,19 @@ namespace UTFWin
 	//// INTERNAL IMPLEMENTATION ////
 	/////////////////////////////////
 
-	namespace InternalAddressList(InflateEffect)
+	namespace Addresses(InflateEffect)
 	{
-		DefineAddress(GetEventFlags, GetAddress(0x9636E0, 0x9633E0, 0x9633E0));
-		DefineAddress(HandleUIMessage, GetAddress(0x9639F0, 0x9636A0, 0x9636A0));
+		DeclareAddress(GetEventFlags, SelectAddress(0x9636E0, 0x9633E0, 0x9633E0));
+		DeclareAddress(HandleUIMessage, SelectAddress(0x9639F0, 0x9636A0, 0x9636A0));
 
-		DefineAddress(SetSerializer, GetAddress(0x97E8C0, 0x97E5D0, 0x97E5D0));
-		DefineAddress(GetProxyID, GetAddress(0x97E780, 0x97E450, 0x97E450));
+		DeclareAddress(SetSerializer, SelectAddress(0x97E8C0, 0x97E5D0, 0x97E5D0));
+		DeclareAddress(GetProxyID, SelectAddress(0x97E780, 0x97E450, 0x97E450));
 
-		DefineAddress(func80h, GetAddress(0xE1CF40, 0x1154790, 0x1154790));
-		DefineAddress(func88h, GetAddress(0x97E840, 0x97E550, 0x97E550));
+		DeclareAddress(func80h, SelectAddress(0xE1CF40, 0x1154790, 0x1154790));
+		DeclareAddress(func88h, SelectAddress(0x97E840, 0x97E550, 0x97E550));
 
-		DefineAddress(ToWinProc, GetAddress(0x980500, 0x980200, 0x980230));
-		DefineAddress(GetScale, GetAddress(0x980800, 0x97E440, 0x97E440));
-		DefineAddress(SetScale, GetAddress(0x97E770, 0x9804D0, 0x980500));
+		DeclareAddress(ToWinProc, SelectAddress(0x980500, 0x980200, 0x980230));
+		DeclareAddress(GetScale, SelectAddress(0x980800, 0x97E440, 0x97E440));
+		DeclareAddress(SetScale, SelectAddress(0x97E770, 0x9804D0, 0x980500));
 	}
 };

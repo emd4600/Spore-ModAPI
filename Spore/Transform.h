@@ -52,7 +52,7 @@ public:
 
 	Matrix4 ToMatrix4() const;
 
-	Transform& operator*(const Transform& other);
+	Transform& operator=(const Transform& other);
 
 protected:
 	/* 00h */	int16_t	mnFlags;
@@ -66,9 +66,10 @@ protected:
 //// INTERNAL IMPLEMENTATION ////
 /////////////////////////////////
 
-namespace InternalAddressList(Transform)
+namespace Addresses(Transform)
 {
-	DefineAddress(ToMatrix4, GetAddress(0x6B9720, 0x6B93F0, 0x6B93F0));
+	DeclareAddress(ToMatrix4, SelectAddress(0x6B9720, 0x6B93F0, 0x6B93F0));
+	DeclareAddress(assign, SelectAddress(0x40CC10, 0x40CCB0, 0x40CCB0));
 }
 
 static_assert(sizeof(Transform) == 0x38, "sizeof(Transform) != 38h");
@@ -109,7 +110,7 @@ inline Transform& Transform::SetRotation(Matrix3& value)
 	return *this;
 }
 
-inline Transform& Transform::operator*(const Transform& other)
+inline Transform& Transform::operator=(const Transform& other)
 {
-	return CALL(GetAddress(0x40CC10, 0x40CCB0, 0x40CCB0), Transform&, PARAMS(const Transform&), PARAMS(other));
+	return CALL(GetAddress(Transform, assign), Transform&, Args(const Transform&), Args(other));
 }

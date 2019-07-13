@@ -20,6 +20,7 @@
 #pragma once
 
 #include <Spore\RenderWare\Raster.h>
+#include <Spore\Graphics\MaterialShader.h>
 
 namespace RenderWare
 {
@@ -58,7 +59,7 @@ namespace RenderWare
 		/* 0Ch */	int field_C;
 		/* 10h */	int field_10;
 		/* 14h */	int field_14;
-		/* 18h */	int field_18;  // RWShaderManager
+		/* 18h */	Graphics::MaterialShader* pMaterialShader;  // RWShaderManager
 
 		void Load();
 
@@ -74,23 +75,23 @@ namespace RenderWare
 
 	static_assert(sizeof(TextureSlot) == 0x10, "sizeof(TextureSlot) != 10h");
 
-	namespace InternalAddressList(TextureSlot)
+	namespace Addresses(TextureSlot)
 	{
-		DefineAddress(SetTexture, GetAddress(0x00FC2ED0, 0x00FC27A0, 0x00FC27A0));
+		DeclareAddress(SetTexture, SelectAddress(0x00FC2ED0, 0x00FC27A0, 0x00FC27A0));
 	}
 
-	namespace InternalAddressList(CompiledState)
+	namespace Addresses(CompiledState)
 	{
-		DefineAddress(Load, GetAddress(0x011F0D00, 0x011EE5D0, 0x011EE5D0));
-		DefineAddress(GetRaster, GetAddress(0x011F0FF0, 0x011EE8C0, 0x11EE8C0));
-		DefineAddress(SetRaster, GetAddress(0x011F0E30, 0x011EE700, 0x011EE700));
+		DeclareAddress(Load, SelectAddress(0x011F0D00, 0x011EE5D0, 0x011EE5D0));
+		DeclareAddress(GetRaster, SelectAddress(0x011F0FF0, 0x011EE8C0, 0x11EE8C0));
+		DeclareAddress(SetRaster, SelectAddress(0x011F0E30, 0x011EE700, 0x011EE700));
 	}
 
 	inline auto_METHOD_VOID_(CompiledState, Load);
 
-	inline auto_METHOD(CompiledState, Raster*, GetRaster, PARAMS(size_t slotIndex), PARAMS(slotIndex));
-	inline auto_METHOD_VOID(CompiledState, SetRaster, PARAMS(size_t slotIndex, Raster* raster), PARAMS(slotIndex, raster));
+	inline auto_METHOD(CompiledState, Raster*, GetRaster, Args(size_t slotIndex), Args(slotIndex));
+	inline auto_METHOD_VOID(CompiledState, SetRaster, Args(size_t slotIndex, Raster* raster), Args(slotIndex, raster));
 
 
-	inline auto_METHOD_VOID(TextureSlot, SetTexture, PARAMS(CompiledState* compiledState, int slotIndex, Raster* raster), PARAMS(compiledState, slotIndex, raster));
+	inline auto_METHOD_VOID(TextureSlot, SetTexture, Args(CompiledState* compiledState, int slotIndex, Raster* raster), Args(compiledState, slotIndex, raster));
 }

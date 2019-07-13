@@ -107,8 +107,8 @@ namespace Swarm
 
 	static_assert(sizeof(cSwarmManager) == 0x258, "sizeof(cSwarmManager) != 258h");
 
-	namespace InternalAddressList(cSwarmManager)
+	namespace Addresses(cSwarmManager)
 	{
-		DefineAddress(GetDirectoryAndEffectIndex, GetAddress(0xA6D920, 0xA6D730, 0xA6D750));
+		DeclareAddress(GetDirectoryAndEffectIndex, SelectAddress(0xA6D920, 0xA6D730, 0xA6D750));
 	}
 }

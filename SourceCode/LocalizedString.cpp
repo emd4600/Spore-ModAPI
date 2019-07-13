@@ -22,24 +22,24 @@
 
 LocalizedString::LocalizedString()
 {
-	CALL(GetAddress(0x6B5330, 0x6B4FF0, 0x6B4FF0), void,
-		PARAMS(LocalizedString*),
-		PARAMS(this));
+	CALL(Address(SelectAddress(0x6B5330, 0x6B4FF0, 0x6B4FF0)), void,
+		Args(LocalizedString*),
+		Args(this));
 }
 LocalizedString::LocalizedString(uint32_t tableID, uint32_t instanceID, const char16_t* text)
 {
-	CALL(GetAddress(0x6B5A40, 0x6B5700, 0x6B5700), void,
-		PARAMS(LocalizedString*, uint32_t tableID, uint32_t instanceID, const char16_t* text),
-		PARAMS(this, tableID, instanceID, text));
+	CALL(Address(SelectAddress(0x6B5A40, 0x6B5700, 0x6B5700)), void,
+		Args(LocalizedString*, uint32_t tableID, uint32_t instanceID, const char16_t* text),
+		Args(this, tableID, instanceID, text));
 }
 LocalizedString::~LocalizedString()
 {
-	CALL(GetAddress(0x6B5510, 0x6B51D0, 0x6B51D0), void,
-		PARAMS(LocalizedString*),
-		PARAMS(this));
+	CALL(Address(SelectAddress(0x6B5510, 0x6B51D0, 0x6B51D0)), void,
+		Args(LocalizedString*),
+		Args(this));
 }
 
 auto_METHOD_const_(LocalizedString, const char16_t*, GetText);
 auto_METHOD(LocalizedString, bool, SetText, 
-	PARAMS(uint32_t tableID, uint32_t instanceID, const char16_t* text),
-	PARAMS(tableID, instanceID, text));
+	Args(uint32_t tableID, uint32_t instanceID, const char16_t* text),
+	Args(tableID, instanceID, text));

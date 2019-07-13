@@ -143,8 +143,8 @@ namespace UTFWin
 		static ITextEdit* Create();
 	};
 
-	namespace InternalAddressList(ITextEdit)
+	namespace Addresses(ITextEdit)
 	{
-		DefineAddress(Create, GetAddress(0x98CDC0, 0x98CAA0, 0x98CAA0));
+		DeclareAddress(Create, SelectAddress(0x98CDC0, 0x98CAA0, 0x98CAA0));
 	}
 }

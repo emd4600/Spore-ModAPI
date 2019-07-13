@@ -85,24 +85,24 @@ namespace App
 
 	static_assert(sizeof(cCheatManager) == 0x68, "sizeof(cCheatManager) != 68h");
 
-	namespace InternalAddressList(cCheatManager)
+	namespace Addresses(cCheatManager)
 	{
-		DefineAddress(Initialize, GetAddress(0x67EE90, 0x67ECC0, 0x67ECC0));
-		DefineAddress(Dispose, GetAddress(0x67F630, 0x67F350, 0x67F350));
-		DefineAddress(func14h, GetAddress(0x7E66D0, 0xC2E620, 0xC2E640));
-		DefineAddress(AddCheat, GetAddress(0x67FF40, 0x67FC10, 0x67FC10));
-		DefineAddress(RemoveCheat, GetAddress(0x67FCA0, 0x67F970, 0x67F970));
-		DefineAddress(ProcessLine, GetAddress(0x67F150, 0x67EF80, 0x67EF80));
-		DefineAddress(func24h, GetAddress(0x67E580, 0x67E430, 0x67E430));
-		DefineAddress(GetCheat, GetAddress(0x67F710, 0x67F430, 0x67F430));
-		DefineAddress(GetKeywords, GetAddress(0x67FA00, 0x67F6D0, 0x67F6D0));
-		DefineAddress(func30h, GetAddress(0x67F7E0, 0x67F500, 0x67F500));
-		DefineAddress(func34h, GetAddress(0x67F860, 0x67F580, 0x67F580));
-		DefineAddress(GetArgScript, GetAddress(0x113BA60, 0x113AE90, 0x113AE80));
-		DefineAddress(func3Ch, GetAddress(0x67E880, 0x67E6B0, 0x67E6B0));
-		DefineAddress(func40h, GetAddress(0x67E8C0, 0x67E6F0, 0x67E6F0));
-		DefineAddress(func44h, GetAddress(0x67E900, 0x67E730, 0x67E730));
-		DefineAddress(func48h, GetAddress(0xABFB10, 0xABF750, 0xABF790));
-		DefineAddress(func4Ch, GetAddress(0x67E200, 0x67E0A0, 0x67E0A0));
+		DeclareAddress(Initialize, SelectAddress(0x67EE90, 0x67ECC0, 0x67ECC0));
+		DeclareAddress(Dispose, SelectAddress(0x67F630, 0x67F350, 0x67F350));
+		DeclareAddress(func14h, SelectAddress(0x7E66D0, 0xC2E620, 0xC2E640));
+		DeclareAddress(AddCheat, SelectAddress(0x67FF40, 0x67FC10, 0x67FC10));
+		DeclareAddress(RemoveCheat, SelectAddress(0x67FCA0, 0x67F970, 0x67F970));
+		DeclareAddress(ProcessLine, SelectAddress(0x67F150, 0x67EF80, 0x67EF80));
+		DeclareAddress(func24h, SelectAddress(0x67E580, 0x67E430, 0x67E430));
+		DeclareAddress(GetCheat, SelectAddress(0x67F710, 0x67F430, 0x67F430));
+		DeclareAddress(GetKeywords, SelectAddress(0x67FA00, 0x67F6D0, 0x67F6D0));
+		DeclareAddress(func30h, SelectAddress(0x67F7E0, 0x67F500, 0x67F500));
+		DeclareAddress(func34h, SelectAddress(0x67F860, 0x67F580, 0x67F580));
+		DeclareAddress(GetArgScript, SelectAddress(0x113BA60, 0x113AE90, 0x113AE80));
+		DeclareAddress(func3Ch, SelectAddress(0x67E880, 0x67E6B0, 0x67E6B0));
+		DeclareAddress(func40h, SelectAddress(0x67E8C0, 0x67E6F0, 0x67E6F0));
+		DeclareAddress(func44h, SelectAddress(0x67E900, 0x67E730, 0x67E730));
+		DeclareAddress(func48h, SelectAddress(0xABFB10, 0xABF750, 0xABF790));
+		DeclareAddress(func4Ch, SelectAddress(0x67E200, 0x67E0A0, 0x67E0A0));
 	}
 }

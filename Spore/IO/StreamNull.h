@@ -83,22 +83,22 @@ namespace IO
 
 	static_assert(sizeof(StreamNull) == 0x8, "sizeof(StreamNull) != 08h");
 
-	namespace InternalAddressList(StreamNull)
+	namespace Addresses(StreamNull)
 	{
-		DefineAddress(AddRef, GetAddress(0x93BB60, 0x93C350, 0x93C350));
-		DefineAddress(Release, GetAddress(0x93BB70, 0x93C360, 0x93C360));
-		DefineAddress(GetType, GetAddress(0x93C920, 0x93C340, 0x93C340));
-		DefineAddress(GetAccessFlags, GetAddress(0x5D6800, 0x10E87E0, 0x10E87E0));
-		DefineAddress(GetState, GetAddress(0x1065680, 0xE31100, 0xE310C0));
-		DefineAddress(Close, GetAddress(0xA37650, 0xB1FB00, 0xB1FB30));
-		DefineAddress(GetSize, GetAddress(0x1065680, 0xE31100, 0xE310C0));
-		DefineAddress(SetSize, GetAddress(0xB5E030, 0xB7D4D0, 0xB7D550));
-		DefineAddress(GetPosition, GetAddress(0x108DD90, 0x111CD70, 0x111CD70));
-		DefineAddress(SetPosition, GetAddress(0xDDFB10, 0x88A5D0, 0x88A610));
-		DefineAddress(GetAvailable, GetAddress(0x93C930, 0x93C380, 0x93C380));
-		DefineAddress(Read, GetAddress(0x93C940, 0x93C390, 0x93C390));
-		DefineAddress(Flush, GetAddress(0xA37650, 0xB1FB00, 0xB1FB30));
-		DefineAddress(Write, GetAddress(0xDDFB10, 0x88A5D0, 0x88A610));
+		DeclareAddress(AddRef, SelectAddress(0x93BB60, 0x93C350, 0x93C350));
+		DeclareAddress(Release, SelectAddress(0x93BB70, 0x93C360, 0x93C360));
+		DeclareAddress(GetType, SelectAddress(0x93C920, 0x93C340, 0x93C340));
+		DeclareAddress(GetAccessFlags, SelectAddress(0x5D6800, 0x10E87E0, 0x10E87E0));
+		DeclareAddress(GetState, SelectAddress(0x1065680, 0xE31100, 0xE310C0));
+		DeclareAddress(Close, SelectAddress(0xA37650, 0xB1FB00, 0xB1FB30));
+		DeclareAddress(GetSize, SelectAddress(0x1065680, 0xE31100, 0xE310C0));
+		DeclareAddress(SetSize, SelectAddress(0xB5E030, 0xB7D4D0, 0xB7D550));
+		DeclareAddress(GetPosition, SelectAddress(0x108DD90, 0x111CD70, 0x111CD70));
+		DeclareAddress(SetPosition, SelectAddress(0xDDFB10, 0x88A5D0, 0x88A610));
+		DeclareAddress(GetAvailable, SelectAddress(0x93C930, 0x93C380, 0x93C380));
+		DeclareAddress(Read, SelectAddress(0x93C940, 0x93C390, 0x93C390));
+		DeclareAddress(Flush, SelectAddress(0xA37650, 0xB1FB00, 0xB1FB30));
+		DeclareAddress(Write, SelectAddress(0xDDFB10, 0x88A5D0, 0x88A610));
 	}
 
 }

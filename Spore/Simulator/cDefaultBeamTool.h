@@ -38,14 +38,14 @@ namespace Simulator
 		virtual bool func4Ch(cSpaceToolData* pTool, const Vector3&);
 	};
 
-	namespace InternalAddressList(cDefaultBeamTool)
+	namespace Addresses(cDefaultBeamTool)
 	{
-		DefineAddress(OnMouseDown, GetAddress(0x10548B0, NO_ADDRESS, 0x1053D00));
-		DefineAddress(OnHit, GetAddress(0x105ABC0, NO_ADDRESS, 0x105A020));
-		DefineAddress(WhileFiring, GetAddress(0x105AA90, NO_ADDRESS, 0x1059EF0));
-		DefineAddress(OnMouseUp, GetAddress(0x1054910, NO_ADDRESS, 0x1053D60));
+		DeclareAddress(OnMouseDown, SelectAddress(0x10548B0, NO_ADDRESS, 0x1053D00));
+		DeclareAddress(OnHit, SelectAddress(0x105ABC0, NO_ADDRESS, 0x105A020));
+		DeclareAddress(WhileFiring, SelectAddress(0x105AA90, NO_ADDRESS, 0x1059EF0));
+		DeclareAddress(OnMouseUp, SelectAddress(0x1054910, NO_ADDRESS, 0x1053D60));
 
-		DefineAddress(func48h, GetAddress(0x1055A20, NO_ADDRESS, 0x1054E70));
-		DefineAddress(func4Ch, GetAddress(0x1054960, NO_ADDRESS, 0x1053DB0));
+		DeclareAddress(func48h, SelectAddress(0x1055A20, NO_ADDRESS, 0x1054E70));
+		DeclareAddress(func4Ch, SelectAddress(0x1054960, NO_ADDRESS, 0x1053DB0));
 	}
 }

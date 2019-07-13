@@ -118,26 +118,26 @@ namespace App
 
 	static_assert(sizeof(DirectPropertyList) == 0x54, "sizeof(DirectPropertyList) must be 54h");
 
-	namespace InternalAddressList(DirectPropertyList)
+	namespace Addresses(DirectPropertyList)
 	{
-		DefineAddress(SetProperty, GetAddress(0x6A3310, 0x6A30C0, 0x6A30C0));
-		DefineAddress(RemoveProperty, GetAddress(0x6A3140, 0x6A2EF0, 0x6A2EF0));
-		DefineAddress(HasProperty, GetAddress(0x6A2A20, 0x6A27D0, 0x6A27D0));
-		DefineAddress(GetPropertyAlt, GetAddress(0x6A20A0, 0x6A1E50, 0x6A1E50));
-		DefineAddress(GetProperty, GetAddress(0x6A2B10, 0x6A28C0, 0x6A28C0));
-		DefineAddress(GetPropertyObject, GetAddress(0x6A2A50, 0x6A2800, 0x6A2800));
-		DefineAddress(CopyFrom, GetAddress(0x6A2D20, 0x6A2AD0, 0x6A2AD0));
-		DefineAddress(AddPropertiesFrom, GetAddress(0x6A1850, 0x6A1600, 0x6A1600));
-		DefineAddress(CopyAllPropertiesFrom, GetAddress(0x6A1720, 0x6A14D0, 0x6A14D0));
-		DefineAddress(AddAllPropertiesFrom, GetAddress(0x6A1760, 0x6A1510, 0x6A1510));
-		DefineAddress(Read, GetAddress(0x6A33C0, 0x6A3170, 0x6A3170));
-		DefineAddress(Write, GetAddress(0x6A1890, 0x6A1640, 0x6A1640));
-		DefineAddress(GetPropertyIDs, GetAddress(0x6A33D0, 0x6A3180, 0x6A3180));
-		DefineAddress(Clear, GetAddress(0x6A2D70, 0x6A2B20, 0x6A2B20));
+		DeclareAddress(SetProperty, SelectAddress(0x6A3310, 0x6A30C0, 0x6A30C0));
+		DeclareAddress(RemoveProperty, SelectAddress(0x6A3140, 0x6A2EF0, 0x6A2EF0));
+		DeclareAddress(HasProperty, SelectAddress(0x6A2A20, 0x6A27D0, 0x6A27D0));
+		DeclareAddress(GetPropertyAlt, SelectAddress(0x6A20A0, 0x6A1E50, 0x6A1E50));
+		DeclareAddress(GetProperty, SelectAddress(0x6A2B10, 0x6A28C0, 0x6A28C0));
+		DeclareAddress(GetPropertyObject, SelectAddress(0x6A2A50, 0x6A2800, 0x6A2800));
+		DeclareAddress(CopyFrom, SelectAddress(0x6A2D20, 0x6A2AD0, 0x6A2AD0));
+		DeclareAddress(AddPropertiesFrom, SelectAddress(0x6A1850, 0x6A1600, 0x6A1600));
+		DeclareAddress(CopyAllPropertiesFrom, SelectAddress(0x6A1720, 0x6A14D0, 0x6A14D0));
+		DeclareAddress(AddAllPropertiesFrom, SelectAddress(0x6A1760, 0x6A1510, 0x6A1510));
+		DeclareAddress(Read, SelectAddress(0x6A33C0, 0x6A3170, 0x6A3170));
+		DeclareAddress(Write, SelectAddress(0x6A1890, 0x6A1640, 0x6A1640));
+		DeclareAddress(GetPropertyIDs, SelectAddress(0x6A33D0, 0x6A3180, 0x6A3180));
+		DeclareAddress(Clear, SelectAddress(0x6A2D70, 0x6A2B20, 0x6A2B20));
 
-		DefineAddress(SetBool, GetAddress(0x6A1A30, 0x6A17E0, 0x6A17E0));
-		DefineAddress(SetInt, GetAddress(0x6A1AD0, 0x6A1880, 0x6A1880));
-		DefineAddress(SetFloat, GetAddress(0x6A1B60, 0x6A1910, 0x6A1910));
+		DeclareAddress(SetBool, SelectAddress(0x6A1A30, 0x6A17E0, 0x6A17E0));
+		DeclareAddress(SetInt, SelectAddress(0x6A1AD0, 0x6A1880, 0x6A1880));
+		DeclareAddress(SetFloat, SelectAddress(0x6A1B60, 0x6A1910, 0x6A1910));
 	}
 
 

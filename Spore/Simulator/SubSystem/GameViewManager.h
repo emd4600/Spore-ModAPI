@@ -33,9 +33,9 @@
 #include <EASTL\hash_map.h>
 #include <EASTL\fixed_vector.h>
 
-namespace InternalAddressList(Simulator)
+namespace Addresses(Simulator)
 {
-	DefineAddress(LightingWorld_ptr, GetAddress(0x1682CD4, NO_ADDRESS, 0x167EA54));
+	DeclareAddress(LightingWorld_ptr, SelectAddress(0x1682CD4, NO_ADDRESS, 0x167EA54));
 }
 
 namespace Simulator
@@ -110,7 +110,7 @@ namespace Simulator
 	}
 
 	inline Graphics::ILightingWorld* GetLightingWorld() {
-		return *(Graphics::ILightingWorld**)(GetMethodAddress(Simulator, LightingWorld_ptr));
+		return *(Graphics::ILightingWorld**)(GetAddress(Simulator, LightingWorld_ptr));
 	}
 
 
@@ -120,8 +120,8 @@ namespace Simulator
 
 	static_assert(sizeof(cGameViewManager) == 0x1A8, "sizeof(cGameViewManager) != 1A8h");
 
-	namespace InternalAddressList(cGameViewManager)
+	namespace Addresses(cGameViewManager)
 	{
-		DefineAddress(Get, GetAddress(0xB3D1A0, 0xB3D310, 0xB3D340));
+		DeclareAddress(Get, SelectAddress(0xB3D1A0, 0xB3D310, 0xB3D340));
 	}
 }

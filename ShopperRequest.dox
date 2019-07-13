@@ -1,25 +1,27 @@
 /**
-\page Interacting with the Sporepedia (shopper requests)
+\page sporepedia Interacting with the Sporepedia (shopper requests)
+
+How to show the Sporepedia to the player.
 
 ## Interacting with the Sporepedia
 
 ### Required includes
 
- - `<Spore\Sporepedia\ShopperRequest.h>`
+ - <tt><Spore\Sporepedia\ShopperRequest.h></tt>
  
 ### Implementation
 
 Sometimes we want the player to select a specific creation. The most practical way to do that is by using the Sporepedia.
 
-More technically, what we want to do is a Shopper request. A shopper request uses a configuration file in the `TODO` folder
+More technically, what we want to do is a Shopper request. A shopper request uses a configuration file in the \c AssetBrowserConfig folder
 to know what text it will show to the player, what are the available creation types, etc.
 
-We can prompt a Sporepedia shopper request by using the `Sporepedia::ShopperRequest` class. To react when the player selects the creation
-and clicks the Accept button, we will need to create a class that extends `Sporepedia::IShopperListener`.
+We can prompt a Sporepedia shopper request by using the Sporepedia::ShopperRequest class. To react when the player selects the creation
+and clicks the Accept button, we will need to create a class that extends Sporepedia::IShopperListener.
 
 For example, imagine we have a button that, when clicked, will show the Sporepedia:
 
-\code{.cpp}
+@code
 class ButtonListener
 	: public UTFWin::IWinProc,  // user interface things, to react to the button
 	, public Sporepedia::IShopperListener
@@ -30,23 +32,24 @@ public:
 	// This is the method that is called when the player chooses the creation
 	void OnShopperAccept(const ResourceKey& selection) override;
 };
-\code
+@endcode
 
-You must implement the `OnShooperAccept` method, which will be called when the player chooses the creation.
-The method receives the key that points to the `.crt`, `.bld`, etc file of the selected creation.
+You must implement the <tt>OnShooperAccept</tt> method, which will be called when the player chooses the creation.
+The method receives the key that points to the <tt>.crt</tt>, <tt>.bld</tt>, etc file of the selected creation.
 
 Then, we can execute the following code when the user presses the button (for example) to execute the request:
 
-\code{.cpp}
+@code
 // `this` can also be whatever object that inherits from IShopperListener
 Sporepedia::ShopperRequest request(this);
-request.SetShopperID(id("TODO"));
-\code
+request.SetShopperID(id("MilitaryAirShopper"));
+@endcode
 
-You usually want to specify the ID of the shopper configuration used; otherwise, it will use the generic `GlobalTemplate` one. 
-Another interesting method is `request.SetSelection()`, which allows you to show an already-selected creation to the player.
+You usually want to specify the ID of the shopper configuration used; otherwise, it will use the generic <tt>GlobalTemplate</tt> one. 
+Another interesting method is <tt>request.SetSelection()</tt>, which allows you to show an already-selected creation to the player.
 
-Finally, you can also use `request.SetEditorRequest()` to specify an `Editors::EditorRequest` that will be used to access the editor
-if the user decides to create a new creation (if this is not used, the player won't see that option).
+Finally, you can also use <tt>request.SetEditorRequest()</tt> to specify an <tt>Editors::EditorRequest</tt> 
+that will be used to access the editor if the user decides to create a new creation 
+(if this is not used, the player won't see that option).
 
 */

@@ -99,8 +99,8 @@ namespace Simulator
 		/* 168h */	intrusive_ptr<cSpatialObject> field_168;
 	};
 
-	namespace InternalAddressList(cGameTerrainCursor)
+	namespace Addresses(cGameTerrainCursor)
 	{
-		DefineAddress(GetTerrainCursor, GetAddress(0xB30BE0, NO_ADDRESS, 0xB30EB0));
+		DeclareAddress(GetTerrainCursor, SelectAddress(0xB30BE0, NO_ADDRESS, 0xB30EB0));
 	}
 }

@@ -25,6 +25,6 @@ namespace App
 	}
 
 	ScenarioMode* ScenarioMode::Get() {
-		return *(ScenarioMode**)(GetMethodAddress(ScenarioMode, ptr));
+		return *(ScenarioMode**)(GetAddress(ScenarioMode, ptr));
 	}
 }

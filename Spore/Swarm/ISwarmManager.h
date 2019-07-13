@@ -174,8 +174,8 @@ namespace Swarm
 		return ISwarmManager::Get();
 	}
 
-	namespace InternalAddressList(ISwarmManager)
+	namespace Addresses(ISwarmManager)
 	{
-		DefineAddress(Get, GetAddress(0x67DEF0, 0x67DD90, 0x67DD90));
+		DeclareAddress(Get, SelectAddress(0x67DEF0, 0x67DD90, 0x67DD90));
 	}
 }

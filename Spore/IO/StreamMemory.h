@@ -184,27 +184,27 @@ namespace IO
 
 	static_assert(sizeof(MemoryStream) == 0x24, "sizeof(MemoryStream) != 24h");
 
-	namespace InternalAddressList(MemoryStream)
+	namespace Addresses(MemoryStream)
 	{
-		DefineAddress(AddRef, GetAddress(0x83D030, 0x83F620, 0x83F6A0));
-		DefineAddress(Release, GetAddress(0x93BF70, 0x93B820, 0x93B820));
-		DefineAddress(GetType, GetAddress(0x93BFA0, 0x93B9F0, 0x93B9F0));
-		DefineAddress(GetAccessFlags, GetAddress(0x93BFB0, 0x93BA00, 0x93BA00));
-		DefineAddress(GetState, GetAddress(0x1065680, 0xE31100, 0xE310C0));
-		DefineAddress(Close, GetAddress(0x93C870, 0x93C290, 0x93C290));
-		DefineAddress(GetSize, GetAddress(0x80E390, 0xFC7E10, 0xFC7E10));
-		DefineAddress(SetSize, GetAddress(0x93C8C0, 0x93C2E0, 0x93C2E0));
-		DefineAddress(GetPosition, GetAddress(0x93C110, 0x93B890, 0x93B890));
-		DefineAddress(SetPosition, GetAddress(0x93C610, 0x93C030, 0x93C030));
-		DefineAddress(GetAvailable, GetAddress(0x93BFC0, 0x93BA10, 0x93BA10));
-		DefineAddress(Read, GetAddress(0x93C140, 0x93BB60, 0x93BB60));
-		DefineAddress(Flush, GetAddress(0xA37650, 0xB1FB00, 0xB1FB30));
-		DefineAddress(Write, GetAddress(0x93C6A0, 0x93C0C0, 0x93C0C0));
+		DeclareAddress(AddRef, SelectAddress(0x83D030, 0x83F620, 0x83F6A0));
+		DeclareAddress(Release, SelectAddress(0x93BF70, 0x93B820, 0x93B820));
+		DeclareAddress(GetType, SelectAddress(0x93BFA0, 0x93B9F0, 0x93B9F0));
+		DeclareAddress(GetAccessFlags, SelectAddress(0x93BFB0, 0x93BA00, 0x93BA00));
+		DeclareAddress(GetState, SelectAddress(0x1065680, 0xE31100, 0xE310C0));
+		DeclareAddress(Close, SelectAddress(0x93C870, 0x93C290, 0x93C290));
+		DeclareAddress(GetSize, SelectAddress(0x80E390, 0xFC7E10, 0xFC7E10));
+		DeclareAddress(SetSize, SelectAddress(0x93C8C0, 0x93C2E0, 0x93C2E0));
+		DeclareAddress(GetPosition, SelectAddress(0x93C110, 0x93B890, 0x93B890));
+		DeclareAddress(SetPosition, SelectAddress(0x93C610, 0x93C030, 0x93C030));
+		DeclareAddress(GetAvailable, SelectAddress(0x93BFC0, 0x93BA10, 0x93BA10));
+		DeclareAddress(Read, SelectAddress(0x93C140, 0x93BB60, 0x93BB60));
+		DeclareAddress(Flush, SelectAddress(0xA37650, 0xB1FB00, 0xB1FB30));
+		DeclareAddress(Write, SelectAddress(0x93C6A0, 0x93C0C0, 0x93C0C0));
 
-		DefineAddress(SetData, GetAddress(0x93C4C0, 0x93BEE0, 0x93BEE0));
-		DefineAddress(SetDataRaw, GetAddress(0x93C380, 0x93BDA0, 0x93BDA0));
-		DefineAddress(GetOption, GetAddress(0x93BFD0, 0x93BA20, 0x93BA20));
-		DefineAddress(SetOption, GetAddress(0x93C060, 0x93BAB0, 0x93BAB0));
+		DeclareAddress(SetData, SelectAddress(0x93C4C0, 0x93BEE0, 0x93BEE0));
+		DeclareAddress(SetDataRaw, SelectAddress(0x93C380, 0x93BDA0, 0x93BDA0));
+		DeclareAddress(GetOption, SelectAddress(0x93BFD0, 0x93BA20, 0x93BA20));
+		DeclareAddress(SetOption, SelectAddress(0x93C060, 0x93BAB0, 0x93BAB0));
 	}
 
 	///////////////////////////////////////////////////////////////////////////////

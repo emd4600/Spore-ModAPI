@@ -22,9 +22,9 @@
 namespace Simulator
 {
 	auto_STATIC_METHOD(Simulator, uint32_t, GetArchetypeRelationshipsID,
-		PARAMS(int archetype, int difficulty), PARAMS(archetype, difficulty));
+		Args(int archetype, int difficulty), Args(archetype, difficulty));
 
-	auto_METHOD_VOID(cEmpire, SetSpeciesProfile, PARAMS(cSpeciesProfile* pSpecies), PARAMS(pSpecies));
+	auto_METHOD_VOID(cEmpire, SetSpeciesProfile, Args(cSpeciesProfile* pSpecies), Args(pSpecies));
 
 	cStarRecord* cEmpire::GetHomeStarRecord() {
 		if (mHomeStar != -1) {

@@ -43,15 +43,16 @@ namespace App
 		/* 18h */	virtual bool OnEnter() override;
 		/* 1Ch */	virtual void OnExit() override;
 		/* 20h */	virtual void* func20h(int) override;
-		/* 24h */	virtual bool OnKeyDown(int virtualKey, int modifiers) override;
-		/* 28h */	virtual bool OnKeyUp(int virtualKey, int modifiers) override;
-		/* 2Ch */	virtual bool OnMouseDown(int mouseState, float mouseX, float mouseY, int flags) override;
-		/* 30h */	virtual bool OnMouseUp(int mouseState, float mouseX, float mouseY, int flags) override;
-		/* 34h */	virtual bool OnMouseMove(float mouseX, float mouseY, int state) override;
-		/* 38h */	virtual bool OnMouseWheel(int nWheelDelta, float mouseX, float mouseY, int state) override;
+		/* 24h */	virtual bool OnKeyDown(int virtualKey, KeyModifiers modifiers) override;
+		/* 28h */	virtual bool OnKeyUp(int virtualKey, KeyModifiers modifiers) override;
+		/* 2Ch */	virtual bool OnMouseDown(MouseButton mouseButton, float mouseX, float mouseY, MouseState mouseState) override;
+		/* 30h */	virtual bool OnMouseUp(MouseButton mouseButton, float mouseX, float mouseY, MouseState mouseState) override;
+		/* 34h */	virtual bool OnMouseMove(float mouseX, float mouseY, MouseState mouseState) override;
+		/* 38h */	virtual bool OnMouseWheel(int nWheelDelta, float mouseX, float mouseY, MouseState mouseState) override;
 		/* 3Ch */	virtual void Update(float fDelta1, float fDelta2) override;
 
 	protected:
 		int mnRefCount;
+		//PLACEHOLDER use a mInput here
 	};
 }

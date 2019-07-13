@@ -32,19 +32,19 @@ namespace Simulator
 		auto_METHOD_VIRTUAL_(GameModeCell, IGameMode, int, AddRef);
 		auto_METHOD_VIRTUAL_(GameModeCell, IGameMode, int, Release);
 		auto_METHOD_VIRTUAL_(GameModeCell, IGameMode, bool, func0Ch);
-		auto_METHOD_VIRTUAL(GameModeCell, IGameMode, bool, Initialize, PARAMS(App::IGameModeManager* pManager), PARAMS(pManager));
+		auto_METHOD_VIRTUAL(GameModeCell, IGameMode, bool, Initialize, Args(App::IGameModeManager* pManager), Args(pManager));
 		auto_METHOD_VIRTUAL_(GameModeCell, IGameMode, bool, Dispose);
 		auto_METHOD_VIRTUAL_(GameModeCell, IGameMode, bool, OnEnter);
 		auto_METHOD_VIRTUAL_VOID_(GameModeCell, IGameMode, OnExit);
-		auto_METHOD_VIRTUAL(GameModeCell, IGameMode, void*, func20h, PARAMS(int arg_0), PARAMS(arg_0));
-		auto_METHOD_VIRTUAL(GameModeCell, IGameMode, bool, OnKeyDown, PARAMS(int virtualKey, int modifiers), PARAMS(virtualKey, modifiers));
-		auto_METHOD_VIRTUAL(GameModeCell, IGameMode, bool, OnKeyUp, PARAMS(int virtualKey, int modifiers), PARAMS(virtualKey, modifiers));
-		auto_METHOD_VIRTUAL(GameModeCell, IGameMode, bool, OnMouseDown, PARAMS(int mouseState, float mouseX, float mouseY, int flags), PARAMS(mouseState, mouseX, mouseY, flags));
-		auto_METHOD_VIRTUAL(GameModeCell, IGameMode, bool, OnMouseUp, PARAMS(int mouseState, float mouseX, float mouseY, int flags), PARAMS(mouseState, mouseX, mouseY, flags));
-		auto_METHOD_VIRTUAL(GameModeCell, IGameMode, bool, OnMouseMove, PARAMS(float mouseX, float mouseY, int state), PARAMS(mouseX, mouseY, state));
-		auto_METHOD_VIRTUAL(GameModeCell, IGameMode, bool, OnMouseWheel, PARAMS(int nWheelDelta, float mouseX, float mouseY, int state), PARAMS(nWheelDelta, mouseX, mouseY, state));
-		auto_METHOD_VIRTUAL_VOID(GameModeCell, IGameMode, Update, PARAMS(float fDelta1, float fDelta2), PARAMS(fDelta1, fDelta2));
-		auto_METHOD_VIRTUAL(GameModeCell, IUnmanagedMessageListener, bool, HandleMessage, PARAMS(uint32_t messageID, void* pMessage), PARAMS(messageID, pMessage));
+		auto_METHOD_VIRTUAL(GameModeCell, IGameMode, void*, func20h, Args(int arg_0), Args(arg_0));
+		auto_METHOD_VIRTUAL(GameModeCell, IGameMode, bool, OnKeyDown, Args(int virtualKey, KeyModifiers modifiers), Args(virtualKey, modifiers));
+		auto_METHOD_VIRTUAL(GameModeCell, IGameMode, bool, OnKeyUp, Args(int virtualKey, KeyModifiers modifiers), Args(virtualKey, modifiers));
+		auto_METHOD_VIRTUAL(GameModeCell, IGameMode, bool, OnMouseDown, Args(MouseButton mouseButton, float mouseX, float mouseY, MouseState mouseState), Args(mouseButton, mouseX, mouseY, mouseState));
+		auto_METHOD_VIRTUAL(GameModeCell, IGameMode, bool, OnMouseUp, Args(MouseButton mouseButton, float mouseX, float mouseY, MouseState mouseState), Args(mouseButton, mouseX, mouseY, mouseState));
+		auto_METHOD_VIRTUAL(GameModeCell, IGameMode, bool, OnMouseMove, Args(float mouseX, float mouseY, MouseState mouseState), Args(mouseX, mouseY, mouseState));
+		auto_METHOD_VIRTUAL(GameModeCell, IGameMode, bool, OnMouseWheel, Args(int nWheelDelta, float mouseX, float mouseY, MouseState mouseState), Args(nWheelDelta, mouseX, mouseY, mouseState));
+		auto_METHOD_VIRTUAL_VOID(GameModeCell, IGameMode, Update, Args(float fDelta1, float fDelta2), Args(fDelta1, fDelta2));
+		auto_METHOD_VIRTUAL(GameModeCell, IUnmanagedMessageListener, bool, HandleMessage, Args(uint32_t messageID, void* pMessage), Args(messageID, pMessage));
 
 	}
 }

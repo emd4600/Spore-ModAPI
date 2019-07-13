@@ -41,10 +41,10 @@ namespace Swarm
 		class ParticleEffect : public IEffectComponent
 		{
 		public:
-			ParticleEffect()
-			{
-				VOID_THISCALL(GetAddress(0xAA3780, 0, 0), this);
-			}
+			ParticleEffect() = delete;
+			//{
+				// VOID_THISCALL(SelectAddress(0xAA3780, 0, 0), this);
+			//}
 
 			/* 08h */	int flags;
 			/* 0Ch */	int unkFlags;

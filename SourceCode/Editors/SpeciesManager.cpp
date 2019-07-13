@@ -20,7 +20,7 @@
 
 namespace Editors
 {
-	auto_METHOD(cSpeciesManager, Simulator::cSpeciesProfile*, GetSpeciesProfile, PARAMS(const ResourceKey& name), PARAMS(name));
+	auto_METHOD(cSpeciesManager, Simulator::cSpeciesProfile*, GetSpeciesProfile, Args(const ResourceKey& name), Args(name));
 
 	auto_STATIC_METHOD_(cSpeciesManager, cSpeciesManager*, Get);
 }

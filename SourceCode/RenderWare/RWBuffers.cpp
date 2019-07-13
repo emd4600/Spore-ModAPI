@@ -123,19 +123,4 @@ namespace RenderWare
 	}
 
 
-	Raster::Raster()
-		: format()
-		, flags()
-		, volumeDepth()
-		, pSurface(nullptr)
-		, width(0)
-		, height(0)
-		, field_10()
-		, levels(0)
-		, field_14()
-		, field_18()
-		, pTextureData(nullptr)
-	{}
-
-	auto_METHOD_VOID_(Raster, Create);
 }

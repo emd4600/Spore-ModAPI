@@ -158,15 +158,15 @@ namespace Palettes
 
 	static_assert(sizeof(ColorSwatchUI) == 0xA8, "sizeof(ColorSwatchUI) != A8h");
 
-	namespace InternalAddressList(ColorSwatchUI)
+	namespace Addresses(ColorSwatchUI)
 	{
-		DefineAddress(Load, GetAddress(0x5A4F00, 0x5A51B0, 0x5A51B0));
-		DefineAddress(SetArea, GetAddress(0x5A4230, 0x5A44F0, 0x5A44F0));
-		DefineAddress(GenerateExpansionArea, GetAddress(0x5A46C0, 0x5A4980, 0x5A4980));
-		DefineAddress(AddTooltip, GetAddress(0x5A43B0, 0x5A4670, 0x5A4670));
-		DefineAddress(Update, GetAddress(0x5A6260, 0x5A63C0, 0x5A63C0));
-		DefineAddress(Destroy, GetAddress(0x5A5C40, , PLACEHOLDER));
+		DeclareAddress(Load, SelectAddress(0x5A4F00, 0x5A51B0, 0x5A51B0));
+		DeclareAddress(SetArea, SelectAddress(0x5A4230, 0x5A44F0, 0x5A44F0));
+		DeclareAddress(GenerateExpansionArea, SelectAddress(0x5A46C0, 0x5A4980, 0x5A4980));
+		DeclareAddress(AddTooltip, SelectAddress(0x5A43B0, 0x5A4670, 0x5A4670));
+		DeclareAddress(Update, SelectAddress(0x5A6260, 0x5A63C0, 0x5A63C0));
+		DeclareAddress(Destroy, SelectAddress(0x5A5C40, , 0x5A5DA0));
 
-		DefineAddress(HandleUIMessage, GetAddress(0x5A58B0, 0x5A5B60, 0x5A5B60));
+		DeclareAddress(HandleUIMessage, SelectAddress(0x5A58B0, 0x5A5B60, 0x5A5B60));
 	}
 }

@@ -1,0 +1,40 @@
+/**
+
+@page editors Entering the Editor (Editor requests)
+
+How to enter the Editor.
+
+## Entering the Editor
+
+### Required includes
+
+ - <tt><Spore\Editors\EditorRequest.h></tt>
+ 
+### Implementation
+
+Editors can be accessed by using the Editors::EditorRequest class. 
+When you create a new instance of this class,
+you have to set the \c editorID field to the ID of the editor you want to go to. 
+That is the ID of the configuration file in the \c editor_setup~ folder.
+There are some additional properties that control features available in the editor
+By default, new instances of this class have the properties set to:
+ - \c sporepediaCanSwitch: false
+ - \c disableNameEdit: false
+ - \c allowSporepedia: false
+ - \c hasSaveButton: false
+ - \c hasCreateNewButton: false
+ - \c hasExitButton: false
+ - \c hasPublishButton: false
+ - \c hasCancelButton: true
+
+Example usage:
+\code{.cpp}
+intrusive_ptr<EditorRequest> request = new EditorRequest();
+request->editorID = id("CreatureEditorExtraLarge");
+request->allowSporepedia = true;
+request->hasSaveButton = true;
+
+EditorRequest::Submit(request.get());
+\endcode
+
+*/

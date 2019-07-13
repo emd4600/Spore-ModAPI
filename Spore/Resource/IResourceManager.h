@@ -340,8 +340,8 @@ namespace Resource
 	///////////////////////////////////
 
 
-	namespace InternalAddressList(IResourceManager)
+	namespace Addresses(IResourceManager)
 	{
-		DefineAddress(Get, GetAddress(0x8DE650, 0x8DE4A0, 0x8DE4B0));
+		DeclareAddress(Get, SelectAddress(0x8DE650, 0x8DE4A0, 0x8DE4B0));
 	}
 }

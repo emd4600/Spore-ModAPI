@@ -78,17 +78,17 @@ namespace UTFWin
 
 	DEFAULT_REFCOUNT(TreeNode);
 
-	auto_METHOD_VIRTUAL_VOID(TreeNode, ILayoutElement, SetSerializer, PARAMS(Serializer& dst), PARAMS(dst));
+	auto_METHOD_VIRTUAL_VOID(TreeNode, ILayoutElement, SetSerializer, Args(Serializer& dst), Args(dst));
 	auto_METHOD_VIRTUAL_const_(TreeNode, ILayoutElement, uint32_t, GetProxyID);
 
-	auto_METHOD_VIRTUAL_VOID(TreeNode, TreeNode, func18h, PARAMS(int arg_0, int arg_4), PARAMS(arg_0, arg_4));
+	auto_METHOD_VIRTUAL_VOID(TreeNode, TreeNode, func18h, Args(int arg_0, int arg_4), Args(arg_0, arg_4));
 	auto_METHOD_VIRTUAL_VOID_(TreeNode, TreeNode, func1Ch);
 	auto_METHOD_VIRTUAL_VOID_(TreeNode, TreeNode, func20h);
 	auto_METHOD_VIRTUAL_(TreeNode, TreeNode, bool, func24h);
 	auto_METHOD_VIRTUAL_(TreeNode, TreeNode, bool, func28h);
 	auto_METHOD_VIRTUAL_(TreeNode, TreeNode, bool, func2Ch);
-	auto_METHOD_VIRTUAL_VOID(TreeNode, TreeNode, func30h, PARAMS(int arg_0), PARAMS(arg_0));
-	auto_METHOD_VIRTUAL_VOID(TreeNode, TreeNode, func34h, PARAMS(int arg_0, int arg_4), PARAMS(arg_0, arg_4));
+	auto_METHOD_VIRTUAL_VOID(TreeNode, TreeNode, func30h, Args(int arg_0), Args(arg_0));
+	auto_METHOD_VIRTUAL_VOID(TreeNode, TreeNode, func34h, Args(int arg_0, int arg_4), Args(arg_0, arg_4));
 
 
 
@@ -144,13 +144,13 @@ namespace UTFWin
 
 	IButton* IButton::Create()
 	{
-		IWindow* pWindow = ((IWindow*(__stdcall*)(void*, void*)) (GetMethodAddress(IButton, Create)))(nullptr, nullptr);
+		IWindow* pWindow = ((IWindow*(__stdcall*)(void*, void*)) (GetAddress(IButton, Create)))(nullptr, nullptr);
 		return object_cast<IButton>(pWindow);
 	}
 
 	ITextEdit* ITextEdit::Create()
 	{
-		IWindow* pWindow = ((IWindow*(__stdcall*)(void*, void*)) (GetMethodAddress(ITextEdit, Create)))(nullptr, nullptr);
+		IWindow* pWindow = ((IWindow*(__stdcall*)(void*, void*)) (GetAddress(ITextEdit, Create)))(nullptr, nullptr);
 		return object_cast<ITextEdit>(pWindow);
 	}
 }

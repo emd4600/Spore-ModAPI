@@ -22,12 +22,18 @@ namespace Simulator
 {
 	SpacePlayerData* SpacePlayerData::Get()
 	{
-		return *(SpacePlayerData**)(GetMethodAddress(SpacePlayerData, ptr));
+		return *(SpacePlayerData**)(GetAddress(SpacePlayerData, ptr));
 	}
 
 	cPlanet* GetActivePlanet()
 	{
 		return SpacePlayerData::Get()->mpActivePlanet.get();
+	}
+
+	cPlanetRecord* GetActivePlanetRecord()
+	{
+		auto planet = SpacePlayerData::Get()->mpActivePlanet.get();
+		return planet ? planet->mpPlanetRecord.get() : nullptr;
 	}
 
 	auto_STATIC_METHOD_(Simulator, cStar*, GetActiveStar);

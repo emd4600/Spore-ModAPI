@@ -30,9 +30,9 @@ namespace IO
 	//// INTERNAL IMPLEMENENTATION ////
 	///////////////////////////////////
 
-	namespace InternalAddressList(IO)
+	namespace Addresses(IO)
 	{
-		DefineAddress(GetAllocator, GetAddress(0x9261B0, 0x925F40, 0x925F40));
+		DeclareAddress(GetAllocator, SelectAddress(0x9261B0, 0x925F40, 0x925F40));
 	}
 
 }

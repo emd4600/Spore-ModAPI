@@ -55,8 +55,8 @@ namespace UTFWin
 		cSPUIMessageBox() {};
 	};
 
-	namespace InternalAddressList(cSPUIMessageBox)
+	namespace Addresses(cSPUIMessageBox)
 	{
-		DefineAddress(ShowDialog, GetAddress(0x80A3B0, 0x809DD0, 0x809E60));
+		DeclareAddress(ShowDialog, SelectAddress(0x80A3B0, 0x809DD0, 0x809E60));
 	}
 }

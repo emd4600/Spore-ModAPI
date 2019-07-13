@@ -429,14 +429,14 @@
     <ClInclude Include="EASTL\vector_set.h" />
     <ClInclude Include="EASTL\version.h" />
     <ClInclude Include="EASTL\weak_ptr.h" />
-    <ClInclude Include="ModAPI\CompiledStateBuilder.h" />
+    <ClInclude Include="ModAPI\CppRevEng.h" />
+    <ClInclude Include="ModAPI\CppRevEngBase.h" />
     <ClInclude Include="ModAPI\Detouring.h" />
-    <ClInclude Include="ModAPI\MaterialConfig.h" />
-    <ClInclude Include="ModAPI\MaterialParser.h" />
-    <ClInclude Include="ModAPI\ShaderConstantsManager.h" />
     <ClInclude Include="SourceCode\Utility.h" />
     <ClInclude Include="Spore\Anim\AnimContainer.h" />
     <ClInclude Include="Spore\Anim\CreatureBlock.h" />
+    <ClInclude Include="Spore\Editors\ContentValidation.h" />
+    <ClInclude Include="Spore\Graphics\IGraphicsManager.h" />
     <ClInclude Include="Spore\Simulator\cCivilization.h" />
     <ClInclude Include="Spore\Simulator\SubSystem\GameBehaviorManager.h" />
     <ClInclude Include="Spore\Sporepedia\IShopperListener.h" />
@@ -497,7 +497,6 @@
     <ClInclude Include="Spore\RenderWare\Animations.h" />
     <ClInclude Include="Spore\RenderWare\SkeletonsInK.h" />
     <ClInclude Include="Spore\RenderWare\MorphHandle.h" />
-    <ClInclude Include="Spore\RenderWare\Renderer.h" />
     <ClInclude Include="Spore\RenderWare\RenderWareFile.h" />
     <ClInclude Include="Spore\App\ScenarioMode.h" />
     <ClInclude Include="Spore\Simulator.h" />
@@ -527,7 +526,6 @@
     <ClInclude Include="Spore\Simulator\cDefaultProjectileWeapon.h" />
     <ClInclude Include="Spore\Simulator\cDragInputProjectileToolStrategy.h" />
     <ClInclude Include="Spore\Simulator\cDropCargoToolStrategy.h" />
-    <ClInclude Include="Spore\Simulator\Cell\CellGame.h" />
     <ClInclude Include="Spore\Simulator\Cell\CellGFX.h" />
     <ClInclude Include="Spore\Simulator\Cell\CellUI.h" />
     <ClInclude Include="Spore\Simulator\Cell\GameModeCell.h" />
@@ -673,8 +671,7 @@
     <ClInclude Include="Spore\Resource\PFRecordRead.h" />
     <ClInclude Include="Spore\resourceID.h" />
     <ClInclude Include="Spore\Simulator\Sporepedia.h" />
-    <ClInclude Include="Spore\Editors\ColorPicker.h" />
-    <ClInclude Include="Spore\Editors\EditorEntry.h" />
+    <ClInclude Include="Spore\Editors\EditorRequest.h" />
     <ClInclude Include="Spore\Editors\Internal.h" />
     <ClInclude Include="Spore\Editors\PaintModeCategory.h" />
     <ClInclude Include="Spore\Simulator\SubSystem\cLivingUniverse.h" />
@@ -715,7 +712,6 @@
     <ClInclude Include="Spore\Swarm\Components\Attractor.h" />
     <ClInclude Include="Spore\Swarm\EffectDirectory.h" />
     <ClInclude Include="ModAPI\MainUtilities.h" />
-    <ClInclude Include="ModAPI\UIEventListener.h" />
     <ClInclude Include="Spore\ArgScript\Line.h" />
     <ClInclude Include="Spore\ArgScript\IParser.h" />
     <ClInclude Include="Spore\Editors\Editor.h" />
@@ -775,9 +771,11 @@
     <ClInclude Include="Spore\UTFWin\GlideEffect.h" />
     <ClInclude Include="Spore\UTFWin\Graphics2D.h" />
     <ClInclude Include="Spore\UTFWin\IButton.h" />
+    <ClInclude Include="Spore\UTFWin\IComboBox.h" />
     <ClInclude Include="Spore\UTFWin\InflateEffect.h" />
     <ClInclude Include="Spore\UTFWin\InteractiveWindow.h" />
     <ClInclude Include="Spore\UTFWin\InteractiveWinProc.h" />
+    <ClInclude Include="Spore\UTFWin\ISlider.h" />
     <ClInclude Include="Spore\UTFWin\ITextEdit.h" />
     <ClInclude Include="Spore\UTFWin\IWinProc.h" />
     <ClInclude Include="Spore\UTFWin\ILayoutElement.h" />
@@ -820,7 +818,6 @@
     <ClInclude Include="Spore\UTFWin\WinTreeView.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="ModAPI\ShaderConstantsManager.cpp" />
     <ClCompile Include="SourceCode\Allocator.cpp" />
     <ClCompile Include="SourceCode\App\App.cpp" />
     <ClCompile Include="SourceCode\App\Cameras.cpp" />
@@ -843,9 +840,13 @@
     <ClCompile Include="SourceCode\EASTL\thread_support.cpp" />
     <ClCompile Include="SourceCode\Editors\BakeManager.cpp" />
     <ClCompile Include="SourceCode\Editors\Colorpickers.cpp" />
+    <ClCompile Include="SourceCode\Editors\Editor.cpp" />
     <ClCompile Include="SourceCode\Editors\EditorCamera.cpp" />
+    <ClCompile Include="SourceCode\Editors\EditorRequest.cpp" />
     <ClCompile Include="SourceCode\Editors\SpeciesManager.cpp" />
+    <ClCompile Include="SourceCode\Graphics\GraphicsManager.cpp" />
     <ClCompile Include="SourceCode\Graphics\RenderTargets.cpp" />
+    <ClCompile Include="SourceCode\RenderWare\Raster.cpp" />
     <ClCompile Include="SourceCode\RenderWare\RenderWare.cpp" />
     <ClCompile Include="SourceCode\App\ScenarioMode.cpp" />
     <ClCompile Include="SourceCode\Simulator\cCity.cpp" />
@@ -859,6 +860,7 @@
     <ClCompile Include="SourceCode\Simulator\cSimulatorPlayerUFO.cpp" />
     <ClCompile Include="SourceCode\Simulator\cSpatialObject.cpp" />
     <ClCompile Include="SourceCode\Simulator\cVehicle.cpp" />
+    <ClCompile Include="SourceCode\Simulator\GameBehaviorManager.cpp" />
     <ClCompile Include="SourceCode\Simulator\GameInputManager.cpp" />
     <ClCompile Include="SourceCode\Simulator\GameModeManager.cpp" />
     <ClCompile Include="SourceCode\Simulator\GameViewManager.cpp" />
@@ -914,7 +916,7 @@
     <ClCompile Include="SourceCode\UTFWin\Serialization.cpp" />
     <ClCompile Include="SourceCode\UTFWin\Window.cpp" />
     <ClCompile Include="SourceCode\ArgScript\ArgScript.cpp" />
-    <ClCompile Include="ModAPI\MainUtilities.cpp" />
+    <ClCompile Include="SourceCode\MainUtilities.cpp" />
     <ClCompile Include="SourceCode\Hash.cpp" />
     <ClCompile Include="SourceCode\Math.cpp" />
     <ClCompile Include="SourceCode\Object.cpp" />
@@ -922,10 +924,12 @@
     <ClCompile Include="SourceCode\UTFWin\WindowManager.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="EditorRequest.dox" />
     <None Include="IteratingSimulator.dox" />
     <None Include="mainpage.dox" />
     <None Include="Miscellaneous.dox" />
     <None Include="ModAPI.dox" />
+    <None Include="Objects.dox" />
     <None Include="ShopperRequest.dox" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

@@ -71,8 +71,8 @@ namespace UTFWin
 
 	// static_assert(sizeof(WindowManager) == 0x838, "sizeof(WindowManager) != 838h");
 
-	namespace InternalAddressList(IWindowManager)
+	namespace Addresses(IWindowManager)
 	{
-		DefineAddress(Get, GetAddress(0x67CBF0, 0x67CA60, 0x67CA60));
+		DeclareAddress(Get, SelectAddress(0x67CBF0, 0x67CA60, 0x67CA60));
 	}
 }

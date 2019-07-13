@@ -36,6 +36,10 @@ namespace Graphics
 		int AddRef();
 		int Release();
 
+		inline Raster* GetRaster() {
+			return mpRaster;
+		}
+
 	protected:
 		/* 00h */	Raster* mpRaster;
 		/* 04h */	int mnFlags;

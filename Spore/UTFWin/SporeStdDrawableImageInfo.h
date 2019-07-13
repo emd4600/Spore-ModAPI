@@ -131,10 +131,10 @@ namespace UTFWin
 
 	static_assert(sizeof(SporeStdDrawableImageInfo) == 0x98, "sizeof(SporeStdDrawableImageInfo) != 98h");
 
-	namespace InternalAddressList(SporeStdDrawableImageInfo)
+	namespace Addresses(SporeStdDrawableImageInfo)
 	{
-		DefineAddress(SetSerializer, GetAddress(0x8310D0, 0x830840, 0x8308C0));
-		DefineAddress(GetProxyID, GetAddress(0x8311E0, 0x830950, 0x8309D0));
+		DeclareAddress(SetSerializer, SelectAddress(0x8310D0, 0x830840, 0x8308C0));
+		DeclareAddress(GetProxyID, SelectAddress(0x8311E0, 0x830950, 0x8309D0));
 	}
 
 	inline Image* SporeStdDrawableImageInfo::GetBackgroundImage() const { return mpBackgroundImage.get(); }

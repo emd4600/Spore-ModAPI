@@ -56,8 +56,8 @@ namespace RenderWare
 		void GetRWObject(int index, RWObjectQuery& query);
 	};
 
-	namespace InternalAddressList(RWHeader)
+	namespace Addresses(RWHeader)
 	{
-		DefineAddress(GetRWObject, GetAddress(0x11E5060,, 0x11E2920));
+		DeclareAddress(GetRWObject, SelectAddress(0x11E5060,, 0x11E2920));
 	}
 }

@@ -116,9 +116,9 @@ namespace Palettes
 
 	static_assert(sizeof(PaletteItem) == 0x54, "sizeof(PaletteItem) != 54h");
 
-	namespace InternalAddressList(PaletteItem)
+	namespace Addresses(PaletteItem)
 	{
-		DefineAddress(Load, GetAddress(0x5C69A0, 0x5C68D0, 0x5C6900));
+		DeclareAddress(Load, SelectAddress(0x5C69A0, 0x5C68D0, 0x5C6900));
 	}
 
 }

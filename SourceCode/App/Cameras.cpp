@@ -81,27 +81,27 @@ namespace App
 	{
 	}
 
-	auto_METHOD_VIRTUAL(cCameraManager, ICameraManager, bool, HandleMessage, PARAMS(uint32_t messageID, void* pMessage), PARAMS(messageID, pMessage));
+	auto_METHOD_VIRTUAL(cCameraManager, ICameraManager, bool, HandleMessage, Args(uint32_t messageID, void* pMessage), Args(messageID, pMessage));
 	auto_METHOD_VIRTUAL_(cCameraManager, ICameraManager, int, AddRef);
 	auto_METHOD_VIRTUAL_(cCameraManager, ICameraManager, int, Release);
-	auto_METHOD_VIRTUAL(cCameraManager, ICameraManager, bool, Initialize, PARAMS(const char* pCheatName), PARAMS(pCheatName));
+	auto_METHOD_VIRTUAL(cCameraManager, ICameraManager, bool, Initialize, Args(const char* pCheatName), Args(pCheatName));
 	auto_METHOD_VIRTUAL_(cCameraManager, ICameraManager, bool, Dispose);
-	auto_METHOD_VIRTUAL_VOID(cCameraManager, ICameraManager, SetViewer, PARAMS(cViewer* pViewer), PARAMS(pViewer));
+	auto_METHOD_VIRTUAL_VOID(cCameraManager, ICameraManager, SetViewer, Args(cViewer* pViewer), Args(pViewer));
 	auto_METHOD_VIRTUAL_(cCameraManager, ICameraManager, cViewer*, GetViewer);
-	auto_METHOD_VIRTUAL_VOID(cCameraManager, ICameraManager, AddCameraType, PARAMS(uint32_t typeID, CameraFactoryFunction_t function), PARAMS(typeID, function));
-	auto_METHOD_VIRTUAL_VOID(cCameraManager, ICameraManager, PutCamera, PARAMS(uint32_t cameraID, ICamera* pCamera, const wchar_t* pName), PARAMS(cameraID, pCamera, pName));
+	auto_METHOD_VIRTUAL_VOID(cCameraManager, ICameraManager, AddCameraType, Args(uint32_t typeID, CameraFactoryFunction_t function), Args(typeID, function));
+	auto_METHOD_VIRTUAL_VOID(cCameraManager, ICameraManager, PutCamera, Args(uint32_t cameraID, ICamera* pCamera, const wchar_t* pName), Args(cameraID, pCamera, pName));
 	auto_METHOD_VIRTUAL_VOID_(cCameraManager, ICameraManager, ParseCameras);
-	auto_METHOD_VIRTUAL_VOID(cCameraManager, ICameraManager, Update, PARAMS(int nDeltaTime), PARAMS(nDeltaTime));
-	auto_METHOD_VIRTUAL(cCameraManager, ICameraManager, bool, SetActiveCameraByKey, PARAMS(const wchar_t* pKeyString), PARAMS(pKeyString));
-	auto_METHOD_VIRTUAL(cCameraManager, ICameraManager, bool, SetActiveCameraByID, PARAMS(uint32_t cameraID), PARAMS(cameraID));
+	auto_METHOD_VIRTUAL_VOID(cCameraManager, ICameraManager, Update, Args(int nDeltaTime), Args(nDeltaTime));
+	auto_METHOD_VIRTUAL(cCameraManager, ICameraManager, bool, SetActiveCameraByKey, Args(const wchar_t* pKeyString), Args(pKeyString));
+	auto_METHOD_VIRTUAL(cCameraManager, ICameraManager, bool, SetActiveCameraByID, Args(uint32_t cameraID), Args(cameraID));
 	auto_METHOD_VIRTUAL_(cCameraManager, ICameraManager, ICamera*, GetActiveCamera);
 	auto_METHOD_VIRTUAL_(cCameraManager, ICameraManager, uint32_t, GetActiveCameraID);
-	auto_METHOD_VIRTUAL(cCameraManager, ICameraManager, ICamera*, GetCamera, PARAMS(uint32_t cameraID), PARAMS(cameraID));
-	auto_METHOD_VIRTUAL(cCameraManager, ICameraManager, uint32_t, GetCameraID, PARAMS(const char* pName), PARAMS(pName));
+	auto_METHOD_VIRTUAL(cCameraManager, ICameraManager, ICamera*, GetCamera, Args(uint32_t cameraID), Args(cameraID));
+	auto_METHOD_VIRTUAL(cCameraManager, ICameraManager, uint32_t, GetCameraID, Args(const char* pName), Args(pName));
 	auto_METHOD_VIRTUAL_(cCameraManager, ICameraManager, size_t, GetCamerasCount);
-	auto_METHOD_VIRTUAL(cCameraManager, ICameraManager, ICamera*, GetCameraAt, PARAMS(int nIndex), PARAMS(nIndex));
-	auto_METHOD_VIRTUAL(cCameraManager, ICameraManager, uint32_t, GetCameraIDAt, PARAMS(int nIndex), PARAMS(nIndex));
-	auto_METHOD_VIRTUAL(cCameraManager, ICameraManager, bool, SetActiveCamera, PARAMS(int nIndex), PARAMS(nIndex));
+	auto_METHOD_VIRTUAL(cCameraManager, ICameraManager, ICamera*, GetCameraAt, Args(int nIndex), Args(nIndex));
+	auto_METHOD_VIRTUAL(cCameraManager, ICameraManager, uint32_t, GetCameraIDAt, Args(int nIndex), Args(nIndex));
+	auto_METHOD_VIRTUAL(cCameraManager, ICameraManager, bool, SetActiveCamera, Args(int nIndex), Args(nIndex));
 	auto_METHOD_VIRTUAL_(cCameraManager, ICameraManager, int, GetActiveCameraIndex);
 	auto_METHOD_VIRTUAL_VOID_(cCameraManager, ICameraManager, RemoveCameras);
 

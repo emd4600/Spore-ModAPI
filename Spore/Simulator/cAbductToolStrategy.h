@@ -33,10 +33,10 @@ namespace Simulator
 		virtual Vector3 GetAimPoint() override;
 	};
 
-	namespace InternalAddressList(cAbductToolStrategy)
+	namespace Addresses(cAbductToolStrategy)
 	{
-		DefineAddress(OnHit, GetAddress(0x105AC80, NO_ADDRESS, 0x105A0D0));
-		DefineAddress(OnMouseUp, GetAddress(0x1055C90, NO_ADDRESS, 0x10550E0));
-		DefineAddress(GetAimPoint, GetAddress(0x1053B00, NO_ADDRESS, 0x1052FA0));
+		DeclareAddress(OnHit, SelectAddress(0x105AC80, NO_ADDRESS, 0x105A0D0));
+		DeclareAddress(OnMouseUp, SelectAddress(0x1055C90, NO_ADDRESS, 0x10550E0));
+		DeclareAddress(GetAimPoint, SelectAddress(0x1053B00, NO_ADDRESS, 0x1052FA0));
 	}
 }

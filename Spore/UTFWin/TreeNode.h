@@ -97,18 +97,18 @@ namespace UTFWin
 
 	static_assert(sizeof(TreeNode) == 0x50, "sizeof(TreeNode) != 50h");
 
-	namespace InternalAddressList(TreeNode)
+	namespace Addresses(TreeNode)
 	{
-		DefineAddress(SetSerializer, GetAddress(0x990250, 0x98FF40, 0x98FF40));
-		DefineAddress(GetProxyID, GetAddress(0x98F960, 0x98F640, 0x98F640));
-		DefineAddress(func18h, GetAddress(0x1053A60, 0xB26760, 0xB267D0));
-		DefineAddress(func1Ch, GetAddress(0x991930, 0x991620, 0x991620));
-		DefineAddress(func20h, GetAddress(0x991940, 0x991630, 0x991630));
-		DefineAddress(func24h, GetAddress(0x9916B0, 0x9913A0, 0x9913A0));
-		DefineAddress(func28h, GetAddress(0x98F970, 0x98F650, 0x98F650));
-		DefineAddress(func2Ch, GetAddress(0x66AD60, 0xB1E3E0, 0xB1E410));
-		DefineAddress(func30h, GetAddress(0xA36AD0, 0x1082A20, 0x1082A20));
-		DefineAddress(func34h, GetAddress(0x1053A60, 0xB26760, 0xB267D0));
+		DeclareAddress(SetSerializer, SelectAddress(0x990250, 0x98FF40, 0x98FF40));
+		DeclareAddress(GetProxyID, SelectAddress(0x98F960, 0x98F640, 0x98F640));
+		DeclareAddress(func18h, SelectAddress(0x1053A60, 0xB26760, 0xB267D0));
+		DeclareAddress(func1Ch, SelectAddress(0x991930, 0x991620, 0x991620));
+		DeclareAddress(func20h, SelectAddress(0x991940, 0x991630, 0x991630));
+		DeclareAddress(func24h, SelectAddress(0x9916B0, 0x9913A0, 0x9913A0));
+		DeclareAddress(func28h, SelectAddress(0x98F970, 0x98F650, 0x98F650));
+		DeclareAddress(func2Ch, SelectAddress(0x66AD60, 0xB1E3E0, 0xB1E410));
+		DeclareAddress(func30h, SelectAddress(0xA36AD0, 0x1082A20, 0x1082A20));
+		DeclareAddress(func34h, SelectAddress(0x1053A60, 0xB26760, 0xB267D0));
 
 	}
 

@@ -65,8 +65,8 @@ namespace Editors
 		/* ECh */	int field_EC;  // not initialized
 	public:
 
-		METHOD_(GetAddress(0x4ADEA0, 0x4AE520, 0x4AE520), EditorModel, string16&, GetCreationName);
-		METHOD_VOID(GetAddress(0x4ADBF0, 0x4AE250, 0x4AE250), EditorModel, SetColor, PARAMS(int index, struct ColorRGB color), PARAMS(index, color));
+		METHOD_(SelectAddress(0x4ADEA0, 0x4AE520, 0x4AE520), EditorModel, string16&, GetCreationName);
+		METHOD_VOID(SelectAddress(0x4ADBF0, 0x4AE250, 0x4AE250), EditorModel, SetColor, Args(int index, struct ColorRGB color), Args(index, color));
 	};
 
 	/////////////////////////////////

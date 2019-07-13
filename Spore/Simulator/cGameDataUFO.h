@@ -121,8 +121,8 @@ namespace Simulator
 
 	static_assert(sizeof(cGameDataUFO) == 0x818, "sizeof(cGameDataUFO) != 818h");
 
-	namespace InternalAddressList(cGameDataUFO)
+	namespace Addresses(cGameDataUFO)
 	{
-		DefineAddress(ChangeEnergy, GetAddress(0xC382C0, NO_ADDRESS, 0xC38B50));
+		DeclareAddress(ChangeEnergy, SelectAddress(0xC382C0, NO_ADDRESS, 0xC38B50));
 	}
 }

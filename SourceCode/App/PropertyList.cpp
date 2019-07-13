@@ -30,22 +30,22 @@ namespace App
 
 	}
 
-	auto_METHOD_VOID(PropertyList, SetProperty, PARAMS(uint32_t propertyID, const Property* pValue), PARAMS(propertyID, pValue));
-	auto_METHOD(PropertyList, int, RemoveProperty, PARAMS(uint32_t propertyID), PARAMS(propertyID));
-	auto_METHOD_const(PropertyList, bool, HasProperty, PARAMS(uint32_t propertyID), PARAMS(propertyID));
-	auto_METHOD_const(PropertyList, bool, GetPropertyAlt, PARAMS(uint32_t propertyID, Property*& result), PARAMS(propertyID, result));
-	auto_METHOD_const(PropertyList, bool, GetProperty, PARAMS(uint32_t propertyID, Property*& result), PARAMS(propertyID, result));
-	auto_METHOD_const(PropertyList, Property*, GetPropertyObject, PARAMS(uint32_t propertyID), PARAMS(propertyID));
-	auto_METHOD_VOID(PropertyList, CopyFrom, PARAMS(const PropertyList* pOther), PARAMS(pOther));
-	auto_METHOD_VOID(PropertyList, AddPropertiesFrom, PARAMS(const PropertyList* pOther), PARAMS(pOther));
-	auto_METHOD_VOID(PropertyList, CopyAllPropertiesFrom, PARAMS(const PropertyList* pOther), PARAMS(pOther));
-	auto_METHOD_VOID(PropertyList, AddAllPropertiesFrom, PARAMS(const PropertyList* pOther), PARAMS(pOther));
-	auto_METHOD(PropertyList, bool, Read, PARAMS(IO::IStream* pInputStream), PARAMS(pInputStream));
-	auto_METHOD_const(PropertyList, bool, Write, PARAMS(IO::IStream* pOutputStream), PARAMS(pOutputStream));
-	auto_METHOD_VOID_const(PropertyList, GetPropertyIDs, PARAMS(vector<uint32_t>& dst), PARAMS(dst));
+	auto_METHOD_VOID(PropertyList, SetProperty, Args(uint32_t propertyID, const Property* pValue), Args(propertyID, pValue));
+	auto_METHOD(PropertyList, int, RemoveProperty, Args(uint32_t propertyID), Args(propertyID));
+	auto_METHOD_const(PropertyList, bool, HasProperty, Args(uint32_t propertyID), Args(propertyID));
+	auto_METHOD_const(PropertyList, bool, GetPropertyAlt, Args(uint32_t propertyID, Property*& result), Args(propertyID, result));
+	auto_METHOD_const(PropertyList, bool, GetProperty, Args(uint32_t propertyID, Property*& result), Args(propertyID, result));
+	auto_METHOD_const(PropertyList, Property*, GetPropertyObject, Args(uint32_t propertyID), Args(propertyID));
+	auto_METHOD_VOID(PropertyList, CopyFrom, Args(const PropertyList* pOther), Args(pOther));
+	auto_METHOD_VOID(PropertyList, AddPropertiesFrom, Args(const PropertyList* pOther), Args(pOther));
+	auto_METHOD_VOID(PropertyList, CopyAllPropertiesFrom, Args(const PropertyList* pOther), Args(pOther));
+	auto_METHOD_VOID(PropertyList, AddAllPropertiesFrom, Args(const PropertyList* pOther), Args(pOther));
+	auto_METHOD(PropertyList, bool, Read, Args(IO::IStream* pInputStream), Args(pInputStream));
+	auto_METHOD_const(PropertyList, bool, Write, Args(IO::IStream* pOutputStream), Args(pOutputStream));
+	auto_METHOD_VOID_const(PropertyList, GetPropertyIDs, Args(vector<uint32_t>& dst), Args(dst));
 	auto_METHOD_VOID_(PropertyList, Clear);
 
-	auto_METHOD_VOID(PropertyList, SetParent, PARAMS(PropertyList* pParent), PARAMS(pParent));
+	auto_METHOD_VOID(PropertyList, SetParent, Args(PropertyList* pParent), Args(pParent));
 
 
 
@@ -62,22 +62,22 @@ namespace App
 	}
 
 
-	auto_METHOD_VOID(DirectPropertyList, SetBool, PARAMS(uint32_t propertyID, bool value), PARAMS(propertyID, value));
-	auto_METHOD_VOID(DirectPropertyList, SetInt, PARAMS(uint32_t propertyID, int value), PARAMS(propertyID, value));
-	auto_METHOD_VOID(DirectPropertyList, SetFloat, PARAMS(uint32_t propertyID, float value), PARAMS(propertyID, value));
+	auto_METHOD_VOID(DirectPropertyList, SetBool, Args(uint32_t propertyID, bool value), Args(propertyID, value));
+	auto_METHOD_VOID(DirectPropertyList, SetInt, Args(uint32_t propertyID, int value), Args(propertyID, value));
+	auto_METHOD_VOID(DirectPropertyList, SetFloat, Args(uint32_t propertyID, float value), Args(propertyID, value));
 
-	auto_METHOD_VOID(DirectPropertyList, SetProperty, PARAMS(uint32_t propertyID, const Property* pValue), PARAMS(propertyID, pValue));
-	auto_METHOD(DirectPropertyList, int, RemoveProperty, PARAMS(uint32_t propertyID), PARAMS(propertyID));
-	auto_METHOD_const(DirectPropertyList, bool, HasProperty, PARAMS(uint32_t propertyID), PARAMS(propertyID));
-	auto_METHOD_const(DirectPropertyList, bool, GetPropertyAlt, PARAMS(uint32_t propertyID, Property*& result), PARAMS(propertyID, result));
-	auto_METHOD_const(DirectPropertyList, bool, GetProperty, PARAMS(uint32_t propertyID, Property*& result), PARAMS(propertyID, result));
-	auto_METHOD_const(DirectPropertyList, Property*, GetPropertyObject, PARAMS(uint32_t propertyID), PARAMS(propertyID));
-	auto_METHOD_VOID(DirectPropertyList, CopyFrom, PARAMS(const PropertyList* pOther), PARAMS(pOther));
-	auto_METHOD_VOID(DirectPropertyList, AddPropertiesFrom, PARAMS(const PropertyList* pOther), PARAMS(pOther));
-	auto_METHOD_VOID(DirectPropertyList, CopyAllPropertiesFrom, PARAMS(const PropertyList* pOther), PARAMS(pOther));
-	auto_METHOD_VOID(DirectPropertyList, AddAllPropertiesFrom, PARAMS(const PropertyList* pOther), PARAMS(pOther));
-	auto_METHOD(DirectPropertyList, bool, Read, PARAMS(IO::IStream* pInputStream), PARAMS(pInputStream));
-	auto_METHOD_const(DirectPropertyList, bool, Write, PARAMS(IO::IStream* pOutputStream), PARAMS(pOutputStream));
-	auto_METHOD_VOID_const(DirectPropertyList, GetPropertyIDs, PARAMS(vector<uint32_t>& dst), PARAMS(dst));
+	auto_METHOD_VOID(DirectPropertyList, SetProperty, Args(uint32_t propertyID, const Property* pValue), Args(propertyID, pValue));
+	auto_METHOD(DirectPropertyList, int, RemoveProperty, Args(uint32_t propertyID), Args(propertyID));
+	auto_METHOD_const(DirectPropertyList, bool, HasProperty, Args(uint32_t propertyID), Args(propertyID));
+	auto_METHOD_const(DirectPropertyList, bool, GetPropertyAlt, Args(uint32_t propertyID, Property*& result), Args(propertyID, result));
+	auto_METHOD_const(DirectPropertyList, bool, GetProperty, Args(uint32_t propertyID, Property*& result), Args(propertyID, result));
+	auto_METHOD_const(DirectPropertyList, Property*, GetPropertyObject, Args(uint32_t propertyID), Args(propertyID));
+	auto_METHOD_VOID(DirectPropertyList, CopyFrom, Args(const PropertyList* pOther), Args(pOther));
+	auto_METHOD_VOID(DirectPropertyList, AddPropertiesFrom, Args(const PropertyList* pOther), Args(pOther));
+	auto_METHOD_VOID(DirectPropertyList, CopyAllPropertiesFrom, Args(const PropertyList* pOther), Args(pOther));
+	auto_METHOD_VOID(DirectPropertyList, AddAllPropertiesFrom, Args(const PropertyList* pOther), Args(pOther));
+	auto_METHOD(DirectPropertyList, bool, Read, Args(IO::IStream* pInputStream), Args(pInputStream));
+	auto_METHOD_const(DirectPropertyList, bool, Write, Args(IO::IStream* pOutputStream), Args(pOutputStream));
+	auto_METHOD_VOID_const(DirectPropertyList, GetPropertyIDs, Args(vector<uint32_t>& dst), Args(dst));
 	auto_METHOD_VOID_(DirectPropertyList, Clear);
 }

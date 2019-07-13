@@ -92,19 +92,19 @@ namespace Palettes
 	}
 
 	auto_METHOD_VIRTUAL(ColorSwatchUI, IWinProc, bool, HandleUIMessage, 
-		PARAMS(IWindow* pWindow, const Message& message), PARAMS(pWindow, message));
+		Args(IWindow* pWindow, const Message& message), Args(pWindow, message));
 
 	auto_METHOD_VOID(ColorSwatchUI, Load, 
-		PARAMS(App::PropertyList* pConfigProp, struct Math::ColorRGB color, union Math::Rectangle area, IWindow* pContainerWindow, Object* pExpansionObject),
-		PARAMS(pConfigProp, color, area, pContainerWindow, pExpansionObject));
+		Args(App::PropertyList* pConfigProp, struct Math::ColorRGB color, union Math::Rectangle area, IWindow* pContainerWindow, Object* pExpansionObject),
+		Args(pConfigProp, color, area, pContainerWindow, pExpansionObject));
 
-	auto_METHOD_VOID(ColorSwatchUI, SetArea, PARAMS(union Math::Rectangle area, bool bUpdateSwatch), PARAMS(area, bUpdateSwatch));
+	auto_METHOD_VOID(ColorSwatchUI, SetArea, Args(union Math::Rectangle area, bool bUpdateSwatch), Args(area, bUpdateSwatch));
 
-	auto_METHOD_VOID(ColorSwatchUI, GenerateExpansionArea, PARAMS(bool bFitWindow), PARAMS(bFitWindow));
+	auto_METHOD_VOID(ColorSwatchUI, GenerateExpansionArea, Args(bool bFitWindow), Args(bFitWindow));
 
-	auto_METHOD_VOID(ColorSwatchUI, AddTooltip, PARAMS(uint32_t instanceID), PARAMS(instanceID));
+	auto_METHOD_VOID(ColorSwatchUI, AddTooltip, Args(uint32_t instanceID), Args(instanceID));
 
-	auto_METHOD_VOID(ColorSwatchUI, Update, PARAMS(int msTime, bool arg_4), PARAMS(msTime, arg_4));
+	auto_METHOD_VOID(ColorSwatchUI, Update, Args(int msTime, bool arg_4), Args(msTime, arg_4));
 
 	auto_METHOD_VOID_(ColorSwatchUI, Destroy);
 
@@ -155,17 +155,17 @@ namespace Palettes
 	}
 
 	auto_METHOD(ColorPickerUI, bool, Load, 
-		PARAMS(IWindow* pWindow, uint32_t propID, uint32_t nRegionFilter, vector<ColorRGB>* pColors),
-		PARAMS(pWindow, propID, nRegionFilter, pColors));
+		Args(IWindow* pWindow, uint32_t propID, uint32_t nRegionFilter, vector<ColorRGB>* pColors),
+		Args(pWindow, propID, nRegionFilter, pColors));
 
-	auto_METHOD_VOID(ColorPickerUI, SetVisible, PARAMS(bool bVisible), PARAMS(bVisible));
+	auto_METHOD_VOID(ColorPickerUI, SetVisible, Args(bool bVisible), Args(bVisible));
 
 	Math::Rectangle ColorPickerUI::GetSwatchArea(int nIndex, bool arg_4) const {
 		Math::Rectangle rect;
-		CALL(GetMethodAddress(ColorPickerUI, GetSwatchArea), void, 
-			PARAMS(const ColorPickerUI*, Math::Rectangle&, int, bool), PARAMS(this, rect, nIndex, arg_4));
+		CALL(GetAddress(ColorPickerUI, GetSwatchArea), void, 
+			Args(const ColorPickerUI*, Math::Rectangle&, int, bool), Args(this, rect, nIndex, arg_4));
 		return rect;
 	}
 
-	auto_METHOD_VOID(ColorPickerUI, SetColor, PARAMS(const ColorRGB& color), PARAMS(color));
+	auto_METHOD_VOID(ColorPickerUI, SetColor, Args(const ColorRGB& color), Args(color));
 }

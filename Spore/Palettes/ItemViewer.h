@@ -145,8 +145,8 @@ namespace Palettes
 
 	static_assert(sizeof(ItemViewer) == 0x17C, "sizeof(ItemViewer) != 17Ch");
 
-	namespace InternalAddressList(ItemViewer)
+	namespace Addresses(ItemViewer)
 	{
-		DefineAddress(InitializeViewerCamera, GetAddress(0x5F3B50,, 0x5F3D80));
+		DeclareAddress(InitializeViewerCamera, SelectAddress(0x5F3B50,, 0x5F3D80));
 	}
 }

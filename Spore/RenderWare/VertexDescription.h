@@ -154,10 +154,10 @@ namespace RenderWare
 	//// INTERNAL IMPLEMENTATION ////
 	/////////////////////////////////
 
-	namespace InternalAddressList(VertexDescription)
+	namespace Addresses(VertexDescription)
 	{
-		DefineAddress(LoadDeclaration, GetAddress(0x011F5310, 0x11F2BF0, 0x11F2BF0));
-		DefineAddress(Process, GetAddress(0x11F5350, 0x11F2C30, 0x11F2C30));
+		DeclareAddress(LoadDeclaration, SelectAddress(0x011F5310, 0x11F2BF0, 0x11F2BF0));
+		DeclareAddress(Process, SelectAddress(0x11F5350, 0x11F2C30, 0x11F2C30));
 	}
 
 	template <uint16_t kVertexElements = 0>
@@ -205,8 +205,8 @@ namespace RenderWare
 
 	template <uint16_t kVertexElements = 0>
 	void VertexDescription<kVertexElements>::LoadDeclaration() {
-		CALL(GetMethodAddress(VertexDescription, LoadDeclaration), void,
-			PARAMS(Mesh<kNumBuffers>*), PARAMS(this));
+		CALL(GetAddress(VertexDescription, LoadDeclaration), void,
+			Args(Mesh<kNumBuffers>*), Args(this));
 	}
 
 	template <uint16_t kVertexElements = 0>

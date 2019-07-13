@@ -19,6 +19,7 @@
 
 #include <Spore\UTFWin\ILayoutElement.h>
 #include <Spore\UTFWin\SimpleLayout.h>
+#include <Spore\UTFWin\ProportionalLayout.h>
 #include <EASTL\internal\thread_support.h>
 
 namespace UTFWin
@@ -85,14 +86,59 @@ namespace UTFWin
 	}
 
 	auto_METHOD_VIRTUAL_VOID(SimpleLayout, InteractiveWinProc, OnLayout,
-		PARAMS(IWindow* window, Math::Rectangle& parentBounds), PARAMS(window, parentBounds));
+		Args(IWindow* window, Math::Rectangle& parentBounds), Args(window, parentBounds));
 
-	auto_METHOD_VIRTUAL_const(SimpleLayout, SimpleLayout, void*, Cast, PARAMS(uint32_t p), PARAMS(p));
+	auto_METHOD_VIRTUAL_const(SimpleLayout, SimpleLayout, void*, Cast, Args(uint32_t p), Args(p));
 
-	auto_METHOD_VIRTUAL_VOID(SimpleLayout, ILayoutElement, SetSerializer, PARAMS(Serializer& dst), PARAMS(dst));
+	auto_METHOD_VIRTUAL_VOID(SimpleLayout, ILayoutElement, SetSerializer, Args(Serializer& dst), Args(dst));
 	auto_METHOD_VIRTUAL_const_(SimpleLayout, ILayoutElement, uint32_t, GetProxyID);
 
-	auto_METHOD_VIRTUAL_VOID(SimpleLayout, ILayoutStyle, ApplyLayout, PARAMS(Math::Rectangle& dstBounds, const Math::Rectangle& parentBounds), PARAMS(dstBounds, parentBounds));
-	auto_METHOD_VIRTUAL(SimpleLayout, ILayoutStyle, bool, RevertLayout, PARAMS(Math::Rectangle& dstBounds, const Math::Rectangle& parentBounds), PARAMS(dstBounds, parentBounds));
+	auto_METHOD_VIRTUAL_VOID(SimpleLayout, ILayoutStyle, ApplyLayout, Args(Math::Rectangle& dstBounds, const Math::Rectangle& parentBounds), Args(dstBounds, parentBounds));
+	auto_METHOD_VIRTUAL(SimpleLayout, ILayoutStyle, bool, RevertLayout, Args(Math::Rectangle& dstBounds, const Math::Rectangle& parentBounds), Args(dstBounds, parentBounds));
+
+
+
+	ProportionalLayout::ProportionalLayout()
+		: mProportions()
+	{
+	}
+
+	int ProportionalLayout::GetEventFlags() const
+	{
+		return 0x108;
+	}
+
+	const float* ProportionalLayout::GetProportions() const {
+		return mProportions;
+	}
+	void ProportionalLayout::SetProportions(float values[4])
+	{
+		for (int i = 0; i < 4; ++i) mProportions[i] = values[i];
+	}
+
+	IWinProc* ProportionalLayout::ToWinProc() const
+	{
+		return (IWinProc*)this;
+	}
+
+	int ProportionalLayout::AddRef()
+	{
+		return InteractiveWinProc::AddRef();
+	}
+	int ProportionalLayout::Release()
+	{
+		return InteractiveWinProc::Release();
+	}
+
+	auto_METHOD_VIRTUAL_VOID(ProportionalLayout, InteractiveWinProc, OnLayout,
+		Args(IWindow* window, Math::Rectangle& parentBounds), Args(window, parentBounds));
+
+	auto_METHOD_VIRTUAL_const(ProportionalLayout, ProportionalLayout, void*, Cast, Args(uint32_t p), Args(p));
+
+	auto_METHOD_VIRTUAL_VOID(ProportionalLayout, ILayoutElement, SetSerializer, Args(Serializer& dst), Args(dst));
+	auto_METHOD_VIRTUAL_const_(ProportionalLayout, ILayoutElement, uint32_t, GetProxyID);
+
+	auto_METHOD_VIRTUAL_VOID(ProportionalLayout, ILayoutStyle, ApplyLayout, Args(Math::Rectangle& dstBounds, const Math::Rectangle& parentBounds), Args(dstBounds, parentBounds));
+	auto_METHOD_VIRTUAL(ProportionalLayout, ILayoutStyle, bool, RevertLayout, Args(Math::Rectangle& dstBounds, const Math::Rectangle& parentBounds), Args(dstBounds, parentBounds));
 
 }

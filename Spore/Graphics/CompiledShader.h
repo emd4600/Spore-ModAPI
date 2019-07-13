@@ -30,20 +30,20 @@ namespace Graphics
 
 	static_assert(sizeof(PixelShader) == 0x130, "sizeof(Shader) != 130h");
 
-	namespace InternalAddressList(CompiledShader) {
-		//DefineAddress(ReadCompiledVertexShaders, GetAddress(0x6FF950, , 0x6FF480));
-		//DefineAddress(ReadCompiledPixelShaders, GetAddress(0x6FC5C0, , 0x6FC280));
+	namespace Addresses(CompiledShader) {
+		//DeclareAddress(ReadCompiledVertexShaders, SelectAddress(0x6FF950, , 0x6FF480));
+		//DeclareAddress(ReadCompiledPixelShaders, SelectAddress(0x6FC5C0, , 0x6FC280));
 
-		DefineAddress(VertexShaders_ptr, GetAddress(0x162CE90, , 0x1628C20));
-		DefineAddress(PixelShaders_ptr, GetAddress(0x161DA88, , 0x16198A0));
+		DeclareAddress(VertexShaders_ptr, SelectAddress(0x162CE90, , 0x1628C20));
+		DeclareAddress(PixelShaders_ptr, SelectAddress(0x161DA88, , 0x16198A0));
 	}
 
 	inline vector<VertexShader>& GetVertexShaders() {
-		return *(vector<VertexShader>*)(GetMethodAddress(CompiledShader, VertexShaders_ptr));
+		return *(vector<VertexShader>*)(GetAddress(CompiledShader, VertexShaders_ptr));
 	}
 
 	inline vector<PixelShader>& GetPixelShaders() {
-		return *(vector<PixelShader>*)(GetMethodAddress(CompiledShader, PixelShaders_ptr));
+		return *(vector<PixelShader>*)(GetAddress(CompiledShader, PixelShaders_ptr));
 	}
 
 	void ReadCompiledVertexShaders(IO::IStream* pStream);

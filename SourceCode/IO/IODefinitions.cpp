@@ -42,7 +42,8 @@ namespace IO
 
 	void* EAIOZoneObject::operator new(size_t n, ICoreAllocator* pAllocator, const char* pName)
 	{
-		return STATIC_CALL(GetAddress(0x9264E0, 0x926270, 0x926270), void*, PARAMS(size_t n, ICoreAllocator* pAllocator, const char* pName), PARAMS(n, pAllocator, pName));
+		return STATIC_CALL(Address(SelectAddress(0x9264E0, 0x926270, 0x926270)), void*, 
+			Args(size_t n, ICoreAllocator* pAllocator, const char* pName), Args(n, pAllocator, pName));
 	}
 
 	void* EAIOZoneObject::operator new(size_t n)
@@ -57,7 +58,7 @@ namespace IO
 
 	void EAIOZoneObject::operator delete(void* p, ICoreAllocator* pAllocator, const char* pName)
 	{
-		STATIC_CALL(GetAddress(0x926560, 0x9262F0, 0x9262F0), void, PARAMS(void* p), PARAMS(p));
+		STATIC_CALL(Address(SelectAddress(0x926560, 0x9262F0, 0x9262F0)), void, Args(void* p), Args(p));
 	}
 
 	//////////////////////////
@@ -198,42 +199,42 @@ namespace Resource
 
 	auto_METHOD_VIRTUAL_const_(DatabasePackedFile, DatabasePackedFile, uint32_t, GetType);
 	auto_METHOD_VIRTUAL_const_(DatabasePackedFile, DatabasePackedFile, int, GetReferenceCount);
-	auto_METHOD_VIRTUAL(DatabasePackedFile, DatabasePackedFile, int, UseIndexMutex, PARAMS(bool bLock), PARAMS(bLock));
-	auto_METHOD_VIRTUAL(DatabasePackedFile, DatabasePackedFile, bool, Load, PARAMS(int nDesiredAccess, int nCreateDisposition, bool arg_8), PARAMS(nDesiredAccess, nCreateDisposition, arg_8));
+	auto_METHOD_VIRTUAL(DatabasePackedFile, DatabasePackedFile, int, UseIndexMutex, Args(bool bLock), Args(bLock));
+	auto_METHOD_VIRTUAL(DatabasePackedFile, DatabasePackedFile, bool, Load, Args(int nDesiredAccess, int nCreateDisposition, bool arg_8), Args(nDesiredAccess, nCreateDisposition, arg_8));
 	auto_METHOD_VIRTUAL_(DatabasePackedFile, DatabasePackedFile, bool, Save);
 	auto_METHOD_VIRTUAL_const_(DatabasePackedFile, DatabasePackedFile, int, GetAccessFlags);
 	auto_METHOD_VIRTUAL_(DatabasePackedFile, DatabasePackedFile, bool, Write);
 	auto_METHOD_VIRTUAL_const_(DatabasePackedFile, DatabasePackedFile, wchar_t*, GetPath);
-	auto_METHOD_VIRTUAL(DatabasePackedFile, DatabasePackedFile, bool, SetPath, PARAMS(const wchar_t* path), PARAMS(path));
-	auto_METHOD_VIRTUAL(DatabasePackedFile, DatabasePackedFile, size_t, GetFiles, PARAMS(PFIndexModifiable::KeysVector& dstVector, IResourceFilter* filter), PARAMS(dstVector, filter));
-	auto_METHOD_VIRTUAL(DatabasePackedFile, DatabasePackedFile, bool, GetFile, PARAMS(const ResourceKey& name, IPFRecord** pDst, int nDesiredAccess, int nCreateDisposition, bool arg_10, DBPFItem* pDstInfo), PARAMS(name, pDst, nDesiredAccess, nCreateDisposition, arg_10, pDstInfo));
-	auto_METHOD_VIRTUAL(DatabasePackedFile, DatabasePackedFile, int, func38h, PARAMS(int arg_0), PARAMS(arg_0));
-	auto_METHOD_VIRTUAL(DatabasePackedFile, DatabasePackedFile, bool, func3Ch, PARAMS(IPFRecord* pRecord), PARAMS(pRecord));
-	auto_METHOD_VIRTUAL(DatabasePackedFile, DatabasePackedFile, bool, RemoveFile, PARAMS(ResourceKey& name), PARAMS(name));
-	auto_METHOD_VIRTUAL(DatabasePackedFile, DatabasePackedFile, bool, SetResourceManager, PARAMS(bool arg_0, cResourceManager* pResourceMan, bool arg_8), PARAMS(arg_0, pResourceMan, arg_8));
+	auto_METHOD_VIRTUAL(DatabasePackedFile, DatabasePackedFile, bool, SetPath, Args(const wchar_t* path), Args(path));
+	auto_METHOD_VIRTUAL(DatabasePackedFile, DatabasePackedFile, size_t, GetFiles, Args(PFIndexModifiable::KeysVector& dstVector, IResourceFilter* filter), Args(dstVector, filter));
+	auto_METHOD_VIRTUAL(DatabasePackedFile, DatabasePackedFile, bool, GetFile, Args(const ResourceKey& name, IPFRecord** pDst, int nDesiredAccess, int nCreateDisposition, bool arg_10, DBPFItem* pDstInfo), Args(name, pDst, nDesiredAccess, nCreateDisposition, arg_10, pDstInfo));
+	auto_METHOD_VIRTUAL(DatabasePackedFile, DatabasePackedFile, int, func38h, Args(int arg_0), Args(arg_0));
+	auto_METHOD_VIRTUAL(DatabasePackedFile, DatabasePackedFile, bool, func3Ch, Args(IPFRecord* pRecord), Args(pRecord));
+	auto_METHOD_VIRTUAL(DatabasePackedFile, DatabasePackedFile, bool, RemoveFile, Args(ResourceKey& name), Args(name));
+	auto_METHOD_VIRTUAL(DatabasePackedFile, DatabasePackedFile, bool, SetResourceManager, Args(bool arg_0, cResourceManager* pResourceMan, bool arg_8), Args(arg_0, pResourceMan, arg_8));
 	auto_METHOD_VIRTUAL_const_(DatabasePackedFile, DatabasePackedFile, ICoreAllocator*, GetAllocator);
 	auto_METHOD_VIRTUAL_(DatabasePackedFile, DatabasePackedFile, IStream*, GetStream);
-	auto_METHOD_VIRTUAL(DatabasePackedFile, DatabasePackedFile, bool, SetStream, PARAMS(IStream* pStream), PARAMS(pStream));
+	auto_METHOD_VIRTUAL(DatabasePackedFile, DatabasePackedFile, bool, SetStream, Args(IStream* pStream), Args(pStream));
 
-	auto_METHOD_VIRTUAL(DatabasePackedFile, DatabasePackedFile, PFRecordRead*, CreatePFRecordRead, PARAMS(int nDesiredAccess, DBPFItem* info, ResourceKey& key), PARAMS(nDesiredAccess, info, key));
-	auto_METHOD_VIRTUAL(DatabasePackedFile, DatabasePackedFile, PFRecordRead*, CreatePFRecordReadCopy, PARAMS(int nDesiredAccess, PFRecordRead* pOther, ResourceKey& key), PARAMS(nDesiredAccess, pOther, key));
-	auto_METHOD_VIRTUAL(DatabasePackedFile, DatabasePackedFile, PFRecordWrite*, CreatePFRecordWriteData, PARAMS(int nDesiredAccess, void* pData, size_t nSize, ResourceKey& key), PARAMS(nDesiredAccess, pData, nSize, key));
-	auto_METHOD_VIRTUAL(DatabasePackedFile, DatabasePackedFile, PFRecordWrite*, CreatePFRecordWrite, PARAMS(int nDesiredAccess, size_t nChunkOffset, size_t nSize, ResourceKey& key), PARAMS(nDesiredAccess, nChunkOffset, nSize, key));
+	auto_METHOD_VIRTUAL(DatabasePackedFile, DatabasePackedFile, PFRecordRead*, CreatePFRecordRead, Args(int nDesiredAccess, DBPFItem* info, ResourceKey& key), Args(nDesiredAccess, info, key));
+	auto_METHOD_VIRTUAL(DatabasePackedFile, DatabasePackedFile, PFRecordRead*, CreatePFRecordReadCopy, Args(int nDesiredAccess, PFRecordRead* pOther, ResourceKey& key), Args(nDesiredAccess, pOther, key));
+	auto_METHOD_VIRTUAL(DatabasePackedFile, DatabasePackedFile, PFRecordWrite*, CreatePFRecordWriteData, Args(int nDesiredAccess, void* pData, size_t nSize, ResourceKey& key), Args(nDesiredAccess, pData, nSize, key));
+	auto_METHOD_VIRTUAL(DatabasePackedFile, DatabasePackedFile, PFRecordWrite*, CreatePFRecordWrite, Args(int nDesiredAccess, size_t nChunkOffset, size_t nSize, ResourceKey& key), Args(nDesiredAccess, nChunkOffset, nSize, key));
 	auto_METHOD_VIRTUAL_(DatabasePackedFile, DatabasePackedFile, bool, Read);
 	auto_METHOD_VIRTUAL_(DatabasePackedFile, DatabasePackedFile, bool, ReadHeader);
 	auto_METHOD_VIRTUAL_(DatabasePackedFile, DatabasePackedFile, bool, Reset);
 	auto_METHOD_VIRTUAL_(DatabasePackedFile, DatabasePackedFile, bool, IsReadyForWrite);
-	auto_METHOD_VIRTUAL(DatabasePackedFile, DatabasePackedFile, bool, IsValidHeader, PARAMS(char* header), PARAMS(header));
+	auto_METHOD_VIRTUAL(DatabasePackedFile, DatabasePackedFile, bool, IsValidHeader, Args(char* header), Args(header));
 	auto_METHOD_VIRTUAL_(DatabasePackedFile, DatabasePackedFile, bool, ReadIndex);
 	auto_METHOD_VIRTUAL_(DatabasePackedFile, DatabasePackedFile, bool, WriteIndex);
 	auto_METHOD_VIRTUAL_(DatabasePackedFile, DatabasePackedFile, bool, StreamCanContainFileData);
-	auto_METHOD_VIRTUAL(DatabasePackedFile, DatabasePackedFile, PFIndexModifiable*, CreatePFIndexModifiable, PARAMS(int nDesiredAccess), PARAMS(nDesiredAccess));
-	auto_METHOD_VIRTUAL_VOID(DatabasePackedFile, DatabasePackedFile, ReleaseObject, PARAMS(IO::EAIOZoneObject* pObject), PARAMS(pObject));
+	auto_METHOD_VIRTUAL(DatabasePackedFile, DatabasePackedFile, PFIndexModifiable*, CreatePFIndexModifiable, Args(int nDesiredAccess), Args(nDesiredAccess));
+	auto_METHOD_VIRTUAL_VOID(DatabasePackedFile, DatabasePackedFile, ReleaseObject, Args(IO::EAIOZoneObject* pObject), Args(pObject));
 	auto_METHOD_VIRTUAL_VOID_(DatabasePackedFile, DatabasePackedFile, RenovateIndex);
 	auto_METHOD_VIRTUAL_(DatabasePackedFile, DatabasePackedFile, bool, func90h);
 
-	auto_METHOD(DatabasePackedFile, int, ReadBytes, PARAMS(void* pDst, size_t nSize), PARAMS(pDst, nSize));
-	auto_METHOD(DatabasePackedFile, bool, ReadData, PARAMS(void* pDst, size_t nChunkOffset, size_t nSize), PARAMS(pDst, nChunkOffset, nSize));
+	auto_METHOD(DatabasePackedFile, int, ReadBytes, Args(void* pDst, size_t nSize), Args(pDst, nSize));
+	auto_METHOD(DatabasePackedFile, bool, ReadData, Args(void* pDst, size_t nChunkOffset, size_t nSize), Args(pDst, nChunkOffset, nSize));
 
 	//////////////////////////////
 
@@ -305,7 +306,7 @@ namespace Resource
 	}
 
 	auto_METHOD_(PFRecordRead, ResourceKey&, GetName);
-	auto_METHOD_VOID(PFRecordRead, SetName, PARAMS(const ResourceKey& name), PARAMS(name));
+	auto_METHOD_VOID(PFRecordRead, SetName, Args(const ResourceKey& name), Args(name));
 	auto_METHOD_(PFRecordRead, IStream*, GetStream);
 	auto_METHOD_const_(PFRecordRead, DatabasePackedFile*, GetParentDBPF);
 
@@ -320,14 +321,14 @@ namespace Resource
 	// auto_METHOD_(		PFRecordRead, bool,	Close);  // Already overriden with IPFRecord
 
 	auto_METHOD_VIRTUAL_const_(PFRecordRead, IStream, IO::size_type, GetSize);
-	auto_METHOD_VIRTUAL(PFRecordRead, IStream, bool, SetSize, PARAMS(IO::size_type size), PARAMS(size));
-	auto_METHOD_VIRTUAL_const(PFRecordRead, IStream, int, GetPosition, PARAMS(IO::PositionType positionType), PARAMS(positionType));
-	auto_METHOD_VIRTUAL(PFRecordRead, IStream, bool, SetPosition, PARAMS(int distance, IO::PositionType positionType), PARAMS(distance, positionType));
+	auto_METHOD_VIRTUAL(PFRecordRead, IStream, bool, SetSize, Args(IO::size_type size), Args(size));
+	auto_METHOD_VIRTUAL_const(PFRecordRead, IStream, int, GetPosition, Args(IO::PositionType positionType), Args(positionType));
+	auto_METHOD_VIRTUAL(PFRecordRead, IStream, bool, SetPosition, Args(int distance, IO::PositionType positionType), Args(distance, positionType));
 	auto_METHOD_VIRTUAL_const_(PFRecordRead, IStream, int, GetAvailable);
 
-	auto_METHOD_VIRTUAL(PFRecordRead, IStream, int, Read, PARAMS(void* pData, size_t nSize), PARAMS(pData, nSize));
+	auto_METHOD_VIRTUAL(PFRecordRead, IStream, int, Read, Args(void* pData, size_t nSize), Args(pData, nSize));
 	auto_METHOD_VIRTUAL_(PFRecordRead, IStream, bool, Flush);
-	auto_METHOD_VIRTUAL(PFRecordRead, IStream, int, Write, PARAMS(const void* pData, size_t nSize), PARAMS(pData, nSize));
+	auto_METHOD_VIRTUAL(PFRecordRead, IStream, int, Write, Args(const void* pData, size_t nSize), Args(pData, nSize));
 
 	////////////////////////
 
@@ -413,7 +414,7 @@ namespace Resource
 
 
 	auto_METHOD_(PFRecordWrite, ResourceKey&, GetName);
-	auto_METHOD_VOID(PFRecordWrite, SetName, PARAMS(const ResourceKey& name), PARAMS(name));
+	auto_METHOD_VOID(PFRecordWrite, SetName, Args(const ResourceKey& name), Args(name));
 	auto_METHOD_(PFRecordWrite, IO::IStream*, GetStream);
 	auto_METHOD_const_(PFRecordWrite, DatabasePackedFile*, GetParentDBPF);
 
@@ -428,14 +429,14 @@ namespace Resource
 	// auto_METHOD_(		PFRecordWrite, bool,	Close);  // Already overriden with IPFRecord
 
 	auto_METHOD_const_(PFRecordWrite, IO::size_type, GetSize);
-	auto_METHOD(PFRecordWrite, bool, SetSize, PARAMS(IO::size_type size), PARAMS(size));
-	auto_METHOD_const(PFRecordWrite, int, GetPosition, PARAMS(IO::PositionType positionType), PARAMS(positionType));
-	auto_METHOD(PFRecordWrite, bool, SetPosition, PARAMS(int distance, IO::PositionType positionType), PARAMS(distance, positionType));
+	auto_METHOD(PFRecordWrite, bool, SetSize, Args(IO::size_type size), Args(size));
+	auto_METHOD_const(PFRecordWrite, int, GetPosition, Args(IO::PositionType positionType), Args(positionType));
+	auto_METHOD(PFRecordWrite, bool, SetPosition, Args(int distance, IO::PositionType positionType), Args(distance, positionType));
 	auto_METHOD_const_(PFRecordWrite, int, GetAvailable);
 
-	auto_METHOD(PFRecordWrite, int, Read, PARAMS(void* pData, size_t nSize), PARAMS(pData, nSize));
+	auto_METHOD(PFRecordWrite, int, Read, Args(void* pData, size_t nSize), Args(pData, nSize));
 	auto_METHOD_(PFRecordWrite, bool, Flush);
-	auto_METHOD(PFRecordWrite, int, Write, PARAMS(const void* pData, size_t nSize), PARAMS(pData, nSize));
+	auto_METHOD(PFRecordWrite, int, Write, Args(const void* pData, size_t nSize), Args(pData, nSize));
 
 	/////////////////////////
 
@@ -457,20 +458,20 @@ namespace Resource
 	auto_METHOD_(PFIndexModifiable, bool, Reset);
 	auto_METHOD_(PFIndexModifiable, size_t, GetTotalDiskSize);
 	auto_METHOD_(PFIndexModifiable, size_t, GetDataEnd);
-	auto_METHOD(PFIndexModifiable, size_t, GetFiles, PARAMS(KeysVector& dstVector, IResourceFilter* filter), PARAMS(dstVector, filter));
-	auto_METHOD(PFIndexModifiable, size_t, GetAllFiles, PARAMS(KeysVector& dstVector), PARAMS(dstVector));
-	auto_METHOD(PFIndexModifiable, bool, func24h, PARAMS(int arg_0, size_t fileDataBegin, size_t fileDataEnd), PARAMS(arg_0, fileDataBegin, fileDataEnd));
+	auto_METHOD(PFIndexModifiable, size_t, GetFiles, Args(KeysVector& dstVector, IResourceFilter* filter), Args(dstVector, filter));
+	auto_METHOD(PFIndexModifiable, size_t, GetAllFiles, Args(KeysVector& dstVector), Args(dstVector));
+	auto_METHOD(PFIndexModifiable, bool, func24h, Args(int arg_0, size_t fileDataBegin, size_t fileDataEnd), Args(arg_0, fileDataBegin, fileDataEnd));
 
-	auto_METHOD(PFIndexModifiable, DBPFItem*, GetFileInfo, PARAMS(const ResourceKey& fileName), PARAMS(fileName));
-	auto_METHOD(PFIndexModifiable, DBPFItem&, PutFileInfo, PARAMS(const ResourceKey& fileName, DBPFItem& info), PARAMS(fileName, info));
-	auto_METHOD(PFIndexModifiable, bool, RemoveFile, PARAMS(const ResourceKey& fileName, DBPFItem& dstInfo), PARAMS(fileName, dstInfo));
+	auto_METHOD(PFIndexModifiable, DBPFItem*, GetFileInfo, Args(const ResourceKey& fileName), Args(fileName));
+	auto_METHOD(PFIndexModifiable, DBPFItem&, PutFileInfo, Args(const ResourceKey& fileName, DBPFItem& info), Args(fileName, info));
+	auto_METHOD(PFIndexModifiable, bool, RemoveFile, Args(const ResourceKey& fileName, DBPFItem& dstInfo), Args(fileName, dstInfo));
 
-	auto_METHOD(PFIndexModifiable, bool, Read, PARAMS(void* pIndexData, size_t nIndexSize, size_t nIndexCount, bool arg_C), PARAMS(pIndexData, nIndexSize, nIndexCount, arg_C));
-	auto_METHOD(PFIndexModifiable, bool, Write, PARAMS(void*& pDstIndexData, size_t& nDstIndexSize, size_t nIndexCount, bool arg_C), PARAMS(pDstIndexData, nDstIndexSize, nIndexCount, arg_C));
+	auto_METHOD(PFIndexModifiable, bool, Read, Args(void* pIndexData, size_t nIndexSize, size_t nIndexCount, bool arg_C), Args(pIndexData, nIndexSize, nIndexCount, arg_C));
+	auto_METHOD(PFIndexModifiable, bool, Write, Args(void*& pDstIndexData, size_t& nDstIndexSize, size_t nIndexCount, bool arg_C), Args(pDstIndexData, nDstIndexSize, nIndexCount, arg_C));
 
 	auto_METHOD_VOID_(PFIndexModifiable, SetIsSaved);
-	auto_METHOD(PFIndexModifiable, bool, CheckFilesInRange, PARAMS(size_t fileDataBegin, size_t fileDataEnd), PARAMS(fileDataBegin, fileDataEnd));
-	auto_METHOD(PFIndexModifiable, bool, CheckFilesInSizeRange, PARAMS(size_t fileDataBegin, size_t size), PARAMS(fileDataBegin, size));
+	auto_METHOD(PFIndexModifiable, bool, CheckFilesInRange, Args(size_t fileDataBegin, size_t fileDataEnd), Args(fileDataBegin, fileDataEnd));
+	auto_METHOD(PFIndexModifiable, bool, CheckFilesInSizeRange, Args(size_t fileDataBegin, size_t size), Args(fileDataBegin, size));
 
 	/////////////////////////////
 

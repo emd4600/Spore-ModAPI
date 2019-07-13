@@ -68,11 +68,11 @@ namespace Simulator
 
 	static_assert(sizeof(cTerraformingManager) == 0x94, "sizeof(cTerraformingManager) != 94h");
 
-	namespace InternalAddressList(cTerraformingManager)
+	namespace Addresses(cTerraformingManager)
 	{
-		DefineAddress(Get, GetAddress(0xB3D390, NO_ADDRESS, 0xB3D530));
+		DeclareAddress(Get, SelectAddress(0xB3D390, NO_ADDRESS, 0xB3D530));
 
-		DefineAddress(GetTScore, GetAddress(0xBBB750, NO_ADDRESS, 0xBBC7E0));
-		DefineAddress(CalculateTScore, GetAddress(0xFC2760, NO_ADDRESS, 0xFC2040));
+		DeclareAddress(GetTScore, SelectAddress(0xBBB750, NO_ADDRESS, 0xBBC7E0));
+		DeclareAddress(CalculateTScore, SelectAddress(0xFC2760, NO_ADDRESS, 0xFC2040));
 	}
 }

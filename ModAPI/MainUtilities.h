@@ -22,11 +22,6 @@
 
 namespace ModAPI
 {
-	class UIEventListener;
-	enum UIEventContext;
-
-	class ShaderConstantsManager;
-
 	class ModAPIUtils
 	{
 	public:
@@ -34,26 +29,14 @@ namespace ModAPI
 
 		static void AddInitFunction(InitFunction function);
 
-		static void AddUIEventListener(UIEventListener* listener, UIEventContext context);
-
-		static ShaderConstantsManager* GetShaderConstantsManager();
-
-		ModAPIUtils();
-
 		static void InitModAPI();
 
-
-	private:
-		static ModAPIUtils* Utils;
-
 	private:
 
-		HMODULE hModAPIDLL;
-
-		FARPROC pAddInitFunction;
-		FARPROC pAddInitUIEventListener;
-		FARPROC pGetShaderConstantsManager;
+		static HMODULE hModAPIDLL;
+		static FARPROC pAddInitFunction;
 	};
+
 	// For convenience, take it out of the class
 	inline void AddInitFunction(ModAPIUtils::InitFunction function)
 	{

@@ -31,12 +31,14 @@ FixedPoolAllocator::FixedPoolAllocator(ICoreAllocator* pAllocator, int arg_4, si
 
 FixedPoolAllocator::~FixedPoolAllocator()
 {
-	VOID_THISCALL(GetAddress(0x926360, 0x9260F0, 0x9260F0), this);
+	VOID_THISCALL(GetAddress(FixedPoolAllocator, dtor), this);
 }
 
-METHOD(GetAddress(0x926370, 0x926100, 0x926100), FixedPoolAllocator, void*, FixedPoolAllocator::Alloc,
-	PARAMS(size_t size, const char *name, unsigned int flags, unsigned int align, unsigned int alignOffset), PARAMS(size, name, flags, align, alignOffset));
+auto_METHOD(FixedPoolAllocator, void*, Alloc,
+	Args(size_t size, const char *name, unsigned int flags, unsigned int align, unsigned int alignOffset), 
+	Args(size, name, flags, align, alignOffset));
 
-METHOD(GetAddress(0x926490, 0x926220, 0x926220), FixedPoolAllocator, void*, FixedPoolAllocator::Alloc, PARAMS(size_t size, const char *name, unsigned int flags), PARAMS(size, name, flags));
+METHOD(GetAddress(FixedPoolAllocator, Alloc_), FixedPoolAllocator, void*, FixedPoolAllocator::Alloc, 
+	Args(size_t size, const char *name, unsigned int flags), Args(size, name, flags));
 
-METHOD_VOID(GetAddress(0x9263B0, 0x926140, 0x926140), FixedPoolAllocator, FixedPoolAllocator::Free, PARAMS(void *block, size_t size), PARAMS(block, size));
+auto_METHOD_VOID(FixedPoolAllocator, Free, Args(void *block, size_t size), Args(block, size));

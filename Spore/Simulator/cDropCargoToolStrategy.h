@@ -34,11 +34,11 @@ namespace Simulator
 		virtual bool OnMouseUp(cSpaceToolData* pTool) override;
 	};
 
-	namespace InternalAddressList(cDropCargoToolStrategy)
+	namespace Addresses(cDropCargoToolStrategy)
 	{
-		DefineAddress(Update, GetAddress(0x1057710, NO_ADDRESS, 0x1056B80));
-		DefineAddress(WhileAiming, GetAddress(0x1054BE0, NO_ADDRESS, 0x1054030));
-		DefineAddress(WhileFiring, GetAddress(0x105B5C0, NO_ADDRESS, 0x105AA10));
-		DefineAddress(OnMouseUp, GetAddress(0x1054B50, NO_ADDRESS, 0x1053FA0));
+		DeclareAddress(Update, SelectAddress(0x1057710, NO_ADDRESS, 0x1056B80));
+		DeclareAddress(WhileAiming, SelectAddress(0x1054BE0, NO_ADDRESS, 0x1054030));
+		DeclareAddress(WhileFiring, SelectAddress(0x105B5C0, NO_ADDRESS, 0x105AA10));
+		DeclareAddress(OnMouseUp, SelectAddress(0x1054B50, NO_ADDRESS, 0x1053FA0));
 	}
 }

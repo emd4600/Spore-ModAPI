@@ -60,9 +60,9 @@ namespace Editors
 		static BakeManager* Get();
 	};
 
-	namespace InternalAddressList(BakeManager)
+	namespace Addresses(BakeManager)
 	{
-		DefineAddress(Get, GetAddress(0x401010, 0x401010, 0x401010));
+		DeclareAddress(Get, SelectAddress(0x401010, 0x401010, 0x401010));
 	}
 
 	inline BakeParameters::BakeParameters(int16_t _field_04, int16_t _field_06, uint32_t defaultID)

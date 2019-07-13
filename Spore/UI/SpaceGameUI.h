@@ -179,8 +179,8 @@ namespace UI
 
 	static_assert(sizeof(SpaceGameUI) == 0x6AC, "sizeof(SpaceGameUI) != 6ACh");
 
-	namespace InternalAddressList(SpaceGameUI)
+	namespace Addresses(SpaceGameUI)
 	{
-		DefineAddress(Load, GetAddress(0x10743F0, 0x1073730, 0x1073730));
+		DeclareAddress(Load, SelectAddress(0x10743F0, 0x1073730, 0x1073730));
 	}
 }

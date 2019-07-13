@@ -21,11 +21,11 @@
 namespace Simulator
 {
 
-	auto_METHOD(cSpaceTradeRouteManager, bool, HasTradeRoute, PARAMS(StarIndex star, uint32_t empireID), PARAMS(star, empireID));
+	auto_METHOD(cSpaceTradeRouteManager, bool, HasTradeRoute, Args(StarIndex star, uint32_t empireID), Args(star, empireID));
 
 	auto_STATIC_METHOD_(cStarManager, cStarManager*, Get);
 
-	auto_METHOD(cStarManager, cPlanetRecord*, GetPlanetRecord, PARAMS(PlanetIndex recordIndex), PARAMS(recordIndex));
+	auto_METHOD(cStarManager, cPlanetRecord*, GetPlanetRecord, Args(PlanetIndex recordIndex), Args(recordIndex));
 
 	cEmpire* cStarManager::GetEmpire(uint32_t politicalID)
 	{
@@ -62,9 +62,11 @@ namespace Simulator
 	}
 
 
-	auto_METHOD(cStarManager, uint32_t, NextPoliticalID, PARAMS(bool arg), PARAMS(arg));
-	auto_METHOD(cStarManager, cEmpire*, GetEmpireForStar, PARAMS(cStarRecord* arg), PARAMS(arg));
+	auto_METHOD(cStarManager, uint32_t, NextPoliticalID, Args(bool arg), Args(arg));
+	auto_METHOD(cStarManager, cEmpire*, GetEmpireForStar, Args(cStarRecord* arg), Args(arg));
 
-	auto_METHOD_VOID(cStarManager, RecordToPlanet, PARAMS(cPlanetRecord* record, intrusive_ptr<cPlanet>& dst),
-		PARAMS(record, dst));
+	auto_METHOD_VOID(cStarManager, RecordToPlanet, Args(cPlanetRecord* record, intrusive_ptr<cPlanet>& dst),
+		Args(record, dst));
 }
+
+auto_STATIC_METHOD_VOID(Simulator, SpaceTeleportTo, Args(cStarRecord* star), Args(star));

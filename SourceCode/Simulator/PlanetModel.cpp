@@ -22,10 +22,13 @@ namespace Simulator
 {
 	auto_STATIC_METHOD_(cPlanetModel, cPlanetModel*, Get);
 
-	auto_METHOD(cPlanetModel, bool, IsInWater, PARAMS(const Vector3& position), PARAMS(position));
-	auto_METHOD(cPlanetModel, cCity*, GetNearestCity, PARAMS(const Vector3& position), PARAMS(position));
-	auto_METHOD(cPlanetModel, Vector3, ToSurface, PARAMS(const Vector3& position), PARAMS(position));
+	auto_METHOD(cPlanetModel, bool, IsInWater, Args(const Vector3& position), Args(position));
+	auto_METHOD(cPlanetModel, cCity*, GetNearestCity, Args(const Vector3& position), Args(position));
+	auto_METHOD(cPlanetModel, Vector3, ToSurface, Args(const Vector3& position), Args(position));
 
 	auto_METHOD(cPlanetModel, float, GetHeightAt, const Vector3& position, position);
 	auto_METHOD_const_(cPlanetModel, float, GetGravity);
+	
+	RedirectMethod_structret_const(cPlanetModel, GetOrientation, Vector4,
+		Args(const Vector3& position, const Vector3& direction), Args(position, direction));
 }

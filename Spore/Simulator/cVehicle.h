@@ -147,8 +147,8 @@ namespace Simulator
 
 	static_assert(sizeof(cVehicle) == 0xD98, "sizeof(cVehicle) != D98h");
 
-	namespace InternalAddressList(cVehicle)
+	namespace Addresses(cVehicle)
 	{
-		DefineAddress(Load, GetAddress(0xCA6060, NO_ADDRESS, 0xCA67C0));
+		DeclareAddress(Load, SelectAddress(0xCA6060, NO_ADDRESS, 0xCA67C0));
 	}
 }

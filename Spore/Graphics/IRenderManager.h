@@ -109,23 +109,21 @@ namespace Graphics
 		/* 44h */	virtual int func44h() = 0;
 		/* 48h */	virtual int func48h() = 0;
 
-		///
-		/// Adds a IRenderable object to the specified queue index.
-		/// @param pObject
-		/// @param nQueueIndex
-		/// @param nFlags
-		///
+		/// Adds a IRenderable object to the specified queue index; the same renderable can be assigned to multiple layers.
+		/// If there already was a renderable there, it will get removed.
+		/// @param object Pointer to the renderable object
+		/// @param layerIndex The index of the layer the given object renders.
+		/// @param flags
 		/* 4Ch */	virtual void AddRenderable(IRenderable* object, int layerIndex, int flags = 0) = 0;
 
-		///
-		/// Adds a renderable function to the specified queue index
-		/// @param renderFunction
-		/// @param nQueueIndex
-		/// @param nFlags
-		///
-		inline void AddRenderable(LambdaRenderable::Render_t renderFunction, int nQueueIndex, int nFlags = 0)
+		/// Adds a renderable function to the specified queue index; the same renderable can be assigned to multiple layers.
+		/// If there already was a renderable there, it will get removed.
+		/// @param renderFunction Renderable function, can be a lambdas
+		/// @param layerIndex The index of the layer the given object renders.
+		/// @param flags
+		inline void AddRenderable(LambdaRenderable::Render_t renderFunction, int layerIndex, int flags = 0)
 		{
-			AddRenderable(new LambdaRenderable(renderFunction), nQueueIndex, nFlags);
+			AddRenderable(new LambdaRenderable(renderFunction), layerIndex, flags);
 		}
 
 		///
@@ -134,7 +132,16 @@ namespace Graphics
 		///
 		/* 50h */	virtual bool RemoveRenderable(int nQueueIndex) = 0;
 
+		/// Removes all renderables from the manager.
+		/* 54h */	virtual void ClearRenderables() = 0;
+
+		/// Returns the renderable assigned to the given layer, or nullptr if there is none.
+		/// @param layerIndex 
+		/* 58h */	virtual IRenderable* GetRenderable(int layerIndex) = 0;
+
 		// 80h update?
+
+		// field 33Ch cViewer
 
 		///
 		/// Gets the active render manager. Same as RenderManager().
@@ -160,8 +167,8 @@ namespace Graphics
 	//// INTERNAL IMPLEMENTATION ////
 	/////////////////////////////////
 
-	namespace InternalAddressList(IRenderManager)
+	namespace Addresses(IRenderManager)
 	{
-		DefineAddress(Get, GetAddress(0x67DE70, 0x67DD10, 0x67DD10));
+		DeclareAddress(Get, SelectAddress(0x67DE70, 0x67DD10, 0x67DD10));
 	}
 }

@@ -21,6 +21,10 @@ namespace Graphics
 
 		bool Read(IO::IStream* pStream, uint32_t shaderID, int version);
 
+		/// This function is called when rendering a mesh, before the \c DrawIndexedPrimitives is called.
+		/// This function is responsible of loading the shaders into DirectX.
+		static BOOL PrepareRender(RenderWare::Mesh<>* mesh);
+
 	protected:
 		/* 48h */	intrusive_ptr<IDirect3DVertexShader9> mVertexShaders[16];
 		/* 88h */	intrusive_ptr<IDirect3DPixelShader9> mPixelShaders[16];
@@ -30,10 +34,12 @@ namespace Graphics
 
 	static_assert(sizeof(StandardShader) == 0x348, "sizeof(StandardShader) != 0x348");
 
-	namespace InternalAddressList(StandardShader) {
-		DefineAddress(ctor, GetAddress(0x6E5EF0, , 0x6E5840));
-		DefineAddress(Read, GetAddress(0x6E6470, , 0x6E5DC0));
-		DefineAddress(Reset, GetAddress(0x6E62F0, , 0x6E5C40));
-		DefineAddress(Release, GetAddress(0x6E5EC0, , 0x6E5810));
+	namespace Addresses(StandardShader) {
+		DeclareAddress(ctor, SelectAddress(0x6E5EF0, , 0x6E5840));
+		DeclareAddress(Read, SelectAddress(0x6E6470, , 0x6E5DC0));
+		DeclareAddress(Reset, SelectAddress(0x6E62F0, , 0x6E5C40));
+		DeclareAddress(Release, SelectAddress(0x6E5EC0, , 0x6E5810));
+
+		DeclareAddress(PrepareRender, SelectAddress(0x6E5C30, , 0x6E5590));
 	}
 }

@@ -89,43 +89,43 @@ namespace RenderWare
 	//// INTERNAL IMPLEMENTATION ////
 	/////////////////////////////////
 
-	namespace InternalAddressList(Mesh)
+	namespace Addresses(Mesh)
 	{
-		DefineAddress(CalculateTriangleCount, GetAddress(0x011FBD30, 0x011F95F0, 0x011F95F0));
-		DefineAddress(SetIndexBuffer, GetAddress(0x011FBE50, 0x011F9710, 0x011F9710));
-		DefineAddress(SetIndicesCount, GetAddress(0x011FBE20, 0x011F96E0, 0x011F96E0));
-		DefineAddress(SetVertexBuffer, GetAddress(0x011FBDE0, 0x011F96A0, 0x011F96A0));
-		DefineAddress(Render, GetAddress(0x011FBE80, 0x011F9740, 0x011F9740));
+		DeclareAddress(CalculateTriangleCount, SelectAddress(0x011FBD30, 0x011F95F0, 0x011F95F0));
+		DeclareAddress(SetIndexBuffer, SelectAddress(0x011FBE50, 0x011F9710, 0x011F9710));
+		DeclareAddress(SetIndicesCount, SelectAddress(0x011FBE20, 0x011F96E0, 0x011F96E0));
+		DeclareAddress(SetVertexBuffer, SelectAddress(0x011FBDE0, 0x011F96A0, 0x011F96A0));
+		DeclareAddress(Render, SelectAddress(0x011FBE80, 0x011F9740, 0x011F9740));
 	}
 
 	template <int kNumBuffers>
 	size_t Mesh<kNumBuffers>::CalculateTriangleCount(D3DPRIMITIVETYPE primitiveType) {
-		return CALL(GetMethodAddress(Mesh, CalculateTriangleCount), size_t,
-			PARAMS(Mesh<kNumBuffers>*, D3DPRIMITIVETYPE), PARAMS(this, primitiveType));
+		return CALL(GetAddress(Mesh, CalculateTriangleCount), size_t,
+			Args(Mesh<kNumBuffers>*, D3DPRIMITIVETYPE), Args(this, primitiveType));
 	}
 
 	template <int kNumBuffers>
 	void Mesh<kNumBuffers>::SetIndexBuffer(IndexBuffer* indexBuffer) {
-		CALL(GetMethodAddress(Mesh, SetIndexBuffer), void,
-			PARAMS(Mesh<kNumBuffers>*, IndexBuffer*), PARAMS(this, indexBuffer));
+		CALL(GetAddress(Mesh, SetIndexBuffer), void,
+			Args(Mesh<kNumBuffers>*, IndexBuffer*), Args(this, indexBuffer));
 	}
 
 	template <int kNumBuffers>
 	void Mesh<kNumBuffers>::SetVertexBuffer(size_t index, VertexBuffer* vertexBuffer) {
-		CALL(GetMethodAddress(Mesh, SetVertexBuffer), void,
-			PARAMS(Mesh<kNumBuffers>*, size_t, VertexBuffer*), PARAMS(this, index, vertexBuffer));
+		CALL(GetAddress(Mesh, SetVertexBuffer), void,
+			Args(Mesh<kNumBuffers>*, size_t, VertexBuffer*), Args(this, index, vertexBuffer));
 	}
 
 	template <int kNumBuffers>
 	void Mesh<kNumBuffers>::SetIndicesCount(size_t indicesCount) {
-		CALL(GetMethodAddress(Mesh, SetIndicesCount), void,
-			PARAMS(Mesh<kNumBuffers>*, size_t), PARAMS(this, indicesCount));
+		CALL(GetAddress(Mesh, SetIndicesCount), void,
+			Args(Mesh<kNumBuffers>*, size_t), Args(this, indicesCount));
 	}
 
 	template <int kNumBuffers>
 	void Mesh<kNumBuffers>::Render() {
-		CALL(GetMethodAddress(Mesh, Render), void,
-			PARAMS(Mesh<kNumBuffers>*), PARAMS(this));
+		CALL(GetAddress(Mesh, Render), void,
+			Args(Mesh<kNumBuffers>*), Args(this));
 	}
 
 	template <int kNumBuffers>

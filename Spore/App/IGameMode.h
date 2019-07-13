@@ -81,7 +81,7 @@ namespace App
 		/// @param modifiers The modifiers (Ctrl, Alt and Shift) currently being pressed. They use the enum values UTFWin::kModifier....
 		/// @returns Whether the event was handled or not.
 		///
-		/* 24h */	virtual bool OnKeyDown(int virtualKey, int modifiers) = 0;
+		/* 24h */	virtual bool OnKeyDown(int virtualKey, KeyModifiers modifiers) = 0;
 
 		///
 		/// An event listener called every time a key is released while this mode is active.
@@ -89,7 +89,7 @@ namespace App
 		/// @param modifiers The modifiers (Ctrl, Alt and Shift) currently being pressed. They use the enum values UTFWin::kModifier....
 		/// @returns Whether the event was handled or not.
 		///
-		/* 28h */	virtual bool OnKeyUp(int virtualKey, int modifiers) = 0;
+		/* 28h */	virtual bool OnKeyUp(int virtualKey, KeyModifiers modifiers) = 0;
 
 		///
 		/// An event listener called every time a mouse key is pressed while this mode is active.
@@ -99,7 +99,7 @@ namespace App
 		/// @param flags The state of the mouse, flags in the MouseFlags enum.
 		/// @returns Whether the event was handled or not.
 		///
-		/* 2Ch */	virtual bool OnMouseDown(int mouseButton, float mouseX, float mouseY, int flags) = 0;
+		/* 2Ch */	virtual bool OnMouseDown(MouseButton mouseButton, float mouseX, float mouseY, MouseState mouseState) = 0;
 
 		///
 		/// An event listener called every time a mouse key is released while this mode is active.
@@ -109,7 +109,7 @@ namespace App
 		/// @param flags The state of the mouse, flags in the MouseFlags enum.
 		/// @returns Whether the event was handled or not.
 		///
-		/* 30h */	virtual bool OnMouseUp(int mouseButton, float mouseX, float mouseY, int flags) = 0;
+		/* 30h */	virtual bool OnMouseUp(MouseButton mouseButton, float mouseX, float mouseY, MouseState mouseState) = 0;
 
 		///
 		/// An event listener called every time the mouse is moved while this mode is active.
@@ -118,7 +118,7 @@ namespace App
 		/// @param state The state of the mouse, flags of the UTFWin::kMouse.... values.
 		/// @returns Whether the event was handled or not.
 		///
-		/* 34h */	virtual bool OnMouseMove(float mouseX, float mouseY, int state) = 0;
+		/* 34h */	virtual bool OnMouseMove(float mouseX, float mouseY, MouseState mouseState) = 0;
 
 		///
 		/// An event listener called every time the mouse wheel is moved while this mode is active.
@@ -128,7 +128,7 @@ namespace App
 		/// @param flags The state of the mouse, flags of the UTFWin::kMouse.... values.
 		/// @returns Whether the event was handled or not.
 		///
-		/* 38h */	virtual bool OnMouseWheel(int nWheelDelta, float mouseX, float mouseY, int flags) = 0;
+		/* 38h */	virtual bool OnMouseWheel(int nWheelDelta, float mouseX, float mouseY, MouseState mouseState) = 0;
 
 		///
 		/// An event listener called every game loop.

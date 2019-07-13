@@ -20,7 +20,9 @@
 #include <Spore\Internal.h>
 #include <memory>
 
-#define SPORE_ALLOCATOR_ADDRESS GetAddress(0x16CCDC4, 0x16C9B24, 0x16C8B44)
+#define SPORE_ALLOCATOR_ADDRESS Address(SelectAddress(0x16CCDC4, 0x16C9B24, 0x16C8B44))
+#define ADDRESS_SPORE_NEW Address(SelectAddress(0xF47650, 0xF47240, 0xF47240))
+#define ADDRESS_SPORE_DELETE Address(SelectAddress(0xF47630, 0xF47220, 0xF47220))
 
 // EASTL expects us to define these, see allocator.h line 194
 void* operator new[](size_t size, const char* pName,

@@ -75,20 +75,20 @@ namespace UTFWin
 		}
 	}
 
-	auto_METHOD_VIRTUAL_VOID(BiStateEffect, ILayoutElement, SetSerializer, PARAMS(Serializer& dst), PARAMS(dst));
-	auto_METHOD_VIRTUAL(BiStateEffect, IWinProc, bool, HandleUIMessage, PARAMS(IWindow* pWindow, const Message& message), PARAMS(pWindow, message));
+	auto_METHOD_VIRTUAL_VOID(BiStateEffect, ILayoutElement, SetSerializer, Args(Serializer& dst), Args(dst));
+	auto_METHOD_VIRTUAL(BiStateEffect, IWinProc, bool, HandleUIMessage, Args(IWindow* pWindow, const Message& message), Args(pWindow, message));
 
 	auto_METHOD_VIRTUAL_(BiStateEffect, IBiStateEffect, IWinProc*, ToWinProc);
 	auto_METHOD_VIRTUAL_const_(BiStateEffect, IBiStateEffect, float, GetTime);
-	auto_METHOD_VIRTUAL_VOID(BiStateEffect, IBiStateEffect, SetTime, PARAMS(float value), PARAMS(value));
+	auto_METHOD_VIRTUAL_VOID(BiStateEffect, IBiStateEffect, SetTime, Args(float value), Args(value));
 	auto_METHOD_VIRTUAL_const_(BiStateEffect, IBiStateEffect, TriggerType, GetTriggerType);
-	auto_METHOD_VIRTUAL_VOID(BiStateEffect, IBiStateEffect, SetTriggerType, PARAMS(TriggerType value), PARAMS(value));
-	auto_METHOD_VIRTUAL_VOID_const(BiStateEffect, IBiStateEffect, GetEase, PARAMS(float& easeIn, float& easeOut), PARAMS(easeIn, easeOut));
-	auto_METHOD_VIRTUAL_VOID(BiStateEffect, IBiStateEffect, SetEase, PARAMS(float easeIn, float easeOut), PARAMS(easeIn, easeOut));
+	auto_METHOD_VIRTUAL_VOID(BiStateEffect, IBiStateEffect, SetTriggerType, Args(TriggerType value), Args(value));
+	auto_METHOD_VIRTUAL_VOID_const(BiStateEffect, IBiStateEffect, GetEase, Args(float& easeIn, float& easeOut), Args(easeIn, easeOut));
+	auto_METHOD_VIRTUAL_VOID(BiStateEffect, IBiStateEffect, SetEase, Args(float easeIn, float easeOut), Args(easeIn, easeOut));
 	auto_METHOD_VIRTUAL_const_(BiStateEffect, IBiStateEffect, InterpolationType, GetInterpolationType);
-	auto_METHOD_VIRTUAL_VOID(BiStateEffect, IBiStateEffect, SetInterpolationType, PARAMS(InterpolationType value), PARAMS(value));
+	auto_METHOD_VIRTUAL_VOID(BiStateEffect, IBiStateEffect, SetInterpolationType, Args(InterpolationType value), Args(value));
 	auto_METHOD_VIRTUAL_const_(BiStateEffect, IBiStateEffect, float, GetDamping);
-	auto_METHOD_VIRTUAL_VOID(BiStateEffect, IBiStateEffect, SetDamping, PARAMS(float value), PARAMS(value));
+	auto_METHOD_VIRTUAL_VOID(BiStateEffect, IBiStateEffect, SetDamping, Args(float value), Args(value));
 
 
 
@@ -128,16 +128,16 @@ namespace UTFWin
 	}
 
 	auto_METHOD_VIRTUAL_const_(CascadeEffect, IWinProc, int, GetEventFlags);
-	auto_METHOD_VIRTUAL(CascadeEffect, IWinProc, bool, HandleUIMessage, PARAMS(IWindow* pWindow, const Message& message), PARAMS(pWindow, message));
+	auto_METHOD_VIRTUAL(CascadeEffect, IWinProc, bool, HandleUIMessage, Args(IWindow* pWindow, const Message& message), Args(pWindow, message));
 
-	auto_METHOD_VIRTUAL_VOID(CascadeEffect, ILayoutElement, SetSerializer, PARAMS(Serializer& dst), PARAMS(dst));
+	auto_METHOD_VIRTUAL_VOID(CascadeEffect, ILayoutElement, SetSerializer, Args(Serializer& dst), Args(dst));
 	auto_METHOD_VIRTUAL_const_(CascadeEffect, ILayoutElement, uint32_t, GetProxyID);
 
 	auto_METHOD_VIRTUAL_(CascadeEffect, ICascadeEffect, IWinProc*, ToWinProc);
 	auto_METHOD_VIRTUAL_const_(CascadeEffect, ICascadeEffect, float, GetDelay);
-	auto_METHOD_VIRTUAL_VOID(CascadeEffect, ICascadeEffect, SetDelay, PARAMS(float delay), PARAMS(delay));
+	auto_METHOD_VIRTUAL_VOID(CascadeEffect, ICascadeEffect, SetDelay, Args(float delay), Args(delay));
 	auto_METHOD_VIRTUAL_const_(CascadeEffect, ICascadeEffect, float, GetInterval);
-	auto_METHOD_VIRTUAL_VOID(CascadeEffect, ICascadeEffect, SetInterval, PARAMS(float interval), PARAMS(interval));
+	auto_METHOD_VIRTUAL_VOID(CascadeEffect, ICascadeEffect, SetInterval, Args(float interval), Args(interval));
 
 
 	//// GLIDE EFFECT ////
@@ -170,17 +170,17 @@ namespace UTFWin
 	}
 
 	auto_METHOD_VIRTUAL_const_(GlideEffect, IWinProc, int, GetEventFlags);
-	auto_METHOD_VIRTUAL(GlideEffect, IWinProc, bool, HandleUIMessage, PARAMS(IWindow* pWindow, const Message& message), PARAMS(pWindow, message));
+	auto_METHOD_VIRTUAL(GlideEffect, IWinProc, bool, HandleUIMessage, Args(IWindow* pWindow, const Message& message), Args(pWindow, message));
 
-	auto_METHOD_VIRTUAL_VOID(GlideEffect, ILayoutElement, SetSerializer, PARAMS(Serializer& dst), PARAMS(dst));
+	auto_METHOD_VIRTUAL_VOID(GlideEffect, ILayoutElement, SetSerializer, Args(Serializer& dst), Args(dst));
 	auto_METHOD_VIRTUAL_const_(GlideEffect, ILayoutElement, uint32_t, GetProxyID);
 
 	auto_METHOD_VIRTUAL_(GlideEffect, IGlideEffect, IWinProc*, ToWinProc);
 	auto_METHOD_VIRTUAL_const_(GlideEffect, IGlideEffect, const Point&, GetOffset);
-	auto_METHOD_VIRTUAL_VOID(GlideEffect, IGlideEffect, SetOffset, PARAMS(const Point& offset), PARAMS(offset));
+	auto_METHOD_VIRTUAL_VOID(GlideEffect, IGlideEffect, SetOffset, Args(const Point& offset), Args(offset));
 
 	auto_METHOD_VIRTUAL_(GlideEffect, BiStateEffect, int, func80h);
-	auto_METHOD_VIRTUAL_VOID(GlideEffect, BiStateEffect, func88h, PARAMS(int arg_0, int arg_4, int arg_8), PARAMS(arg_0, arg_4, arg_8));
+	auto_METHOD_VIRTUAL_VOID(GlideEffect, BiStateEffect, func88h, Args(int arg_0, int arg_4, int arg_8), Args(arg_0, arg_4, arg_8));
 
 
 	//// INFLATE EFFECT ////
@@ -213,17 +213,17 @@ namespace UTFWin
 	}
 
 	auto_METHOD_VIRTUAL_const_(InflateEffect, IWinProc, int, GetEventFlags);
-	auto_METHOD_VIRTUAL(InflateEffect, IWinProc, bool, HandleUIMessage, PARAMS(IWindow* pWindow, const Message& message), PARAMS(pWindow, message));
+	auto_METHOD_VIRTUAL(InflateEffect, IWinProc, bool, HandleUIMessage, Args(IWindow* pWindow, const Message& message), Args(pWindow, message));
 
-	auto_METHOD_VIRTUAL_VOID(InflateEffect, ILayoutElement, SetSerializer, PARAMS(Serializer& dst), PARAMS(dst));
+	auto_METHOD_VIRTUAL_VOID(InflateEffect, ILayoutElement, SetSerializer, Args(Serializer& dst), Args(dst));
 	auto_METHOD_VIRTUAL_const_(InflateEffect, ILayoutElement, uint32_t, GetProxyID);
 
 	auto_METHOD_VIRTUAL_(InflateEffect, IInflateEffect, IWinProc*, ToWinProc);
 	auto_METHOD_VIRTUAL_const_(InflateEffect, IInflateEffect, float, GetScale);
-	auto_METHOD_VIRTUAL_VOID(InflateEffect, IInflateEffect, SetScale, PARAMS(float scale), PARAMS(scale));
+	auto_METHOD_VIRTUAL_VOID(InflateEffect, IInflateEffect, SetScale, Args(float scale), Args(scale));
 
 	auto_METHOD_VIRTUAL_(InflateEffect, BiStateEffect, int, func80h);
-	auto_METHOD_VIRTUAL_VOID(InflateEffect, BiStateEffect, func88h, PARAMS(int arg_0, int arg_4, int arg_8), PARAMS(arg_0, arg_4, arg_8));
+	auto_METHOD_VIRTUAL_VOID(InflateEffect, BiStateEffect, func88h, Args(int arg_0, int arg_4, int arg_8), Args(arg_0, arg_4, arg_8));
 
 
 	//// MODULATE EFFECT ////
@@ -257,16 +257,16 @@ namespace UTFWin
 	}
 
 	auto_METHOD_VIRTUAL_const_(ModulateEffect, IWinProc, int, GetEventFlags);
-	auto_METHOD_VIRTUAL(ModulateEffect, IWinProc, bool, HandleUIMessage, PARAMS(IWindow* pWindow, const Message& message), PARAMS(pWindow, message));
+	auto_METHOD_VIRTUAL(ModulateEffect, IWinProc, bool, HandleUIMessage, Args(IWindow* pWindow, const Message& message), Args(pWindow, message));
 
-	auto_METHOD_VIRTUAL_VOID(ModulateEffect, ILayoutElement, SetSerializer, PARAMS(Serializer& dst), PARAMS(dst));
+	auto_METHOD_VIRTUAL_VOID(ModulateEffect, ILayoutElement, SetSerializer, Args(Serializer& dst), Args(dst));
 	auto_METHOD_VIRTUAL_const_(ModulateEffect, ILayoutElement, uint32_t, GetProxyID);
 
 	auto_METHOD_VIRTUAL_(ModulateEffect, IModulateEffect, IWinProc*, ToWinProc);
-	auto_METHOD_VIRTUAL_const(ModulateEffect, IModulateEffect, void, GetColors, PARAMS(Color& c1, Color& c2), PARAMS(c1, c2));
-	auto_METHOD_VIRTUAL_VOID(ModulateEffect, IModulateEffect, SetColors, PARAMS(Color c1, Color c2), PARAMS(c1, c2));
+	auto_METHOD_VIRTUAL_const(ModulateEffect, IModulateEffect, void, GetColors, Args(Color& c1, Color& c2), Args(c1, c2));
+	auto_METHOD_VIRTUAL_VOID(ModulateEffect, IModulateEffect, SetColors, Args(Color c1, Color c2), Args(c1, c2));
 
-	auto_METHOD_VIRTUAL_VOID(ModulateEffect, BiStateEffect, func84h, PARAMS(int arg_0, float arg_4), PARAMS(arg_0, arg_4));
+	auto_METHOD_VIRTUAL_VOID(ModulateEffect, BiStateEffect, func84h, Args(int arg_0, float arg_4), Args(arg_0, arg_4));
 
 
 	//// PERSPECTIVE EFFECT ////
@@ -299,16 +299,16 @@ namespace UTFWin
 	}
 
 	auto_METHOD_VIRTUAL_const_(PerspectiveEffect, IWinProc, int, GetEventFlags);
-	auto_METHOD_VIRTUAL(PerspectiveEffect, IWinProc, bool, HandleUIMessage, PARAMS(IWindow* pWindow, const Message& message), PARAMS(pWindow, message));
+	auto_METHOD_VIRTUAL(PerspectiveEffect, IWinProc, bool, HandleUIMessage, Args(IWindow* pWindow, const Message& message), Args(pWindow, message));
 
-	auto_METHOD_VIRTUAL_VOID(PerspectiveEffect, ILayoutElement, SetSerializer, PARAMS(Serializer& dst), PARAMS(dst));
+	auto_METHOD_VIRTUAL_VOID(PerspectiveEffect, ILayoutElement, SetSerializer, Args(Serializer& dst), Args(dst));
 	auto_METHOD_VIRTUAL_const_(PerspectiveEffect, ILayoutElement, uint32_t, GetProxyID);
 
 	auto_METHOD_VIRTUAL_(PerspectiveEffect, IPerspectiveEffect, IWinProc*, ToWinProc);
 	auto_METHOD_VIRTUAL_const_(PerspectiveEffect, IPerspectiveEffect, float, GetNearPlane);
-	auto_METHOD_VIRTUAL_VOID(PerspectiveEffect, IPerspectiveEffect, SetNearPlane, PARAMS(float delay), PARAMS(delay));
+	auto_METHOD_VIRTUAL_VOID(PerspectiveEffect, IPerspectiveEffect, SetNearPlane, Args(float delay), Args(delay));
 
-	auto_METHOD_VIRTUAL_VOID(PerspectiveEffect, PerspectiveEffect, func80h, PARAMS(int arg_0), PARAMS(arg_0));
+	auto_METHOD_VIRTUAL_VOID(PerspectiveEffect, PerspectiveEffect, func80h, Args(int arg_0), Args(arg_0));
 
 
 	//// ROTATE EFFECT ////
@@ -342,19 +342,19 @@ namespace UTFWin
 	}
 
 	auto_METHOD_VIRTUAL_const_(RotateEffect, IWinProc, int, GetEventFlags);
-	auto_METHOD_VIRTUAL(RotateEffect, IWinProc, bool, HandleUIMessage, PARAMS(IWindow* pWindow, const Message& message), PARAMS(pWindow, message));
+	auto_METHOD_VIRTUAL(RotateEffect, IWinProc, bool, HandleUIMessage, Args(IWindow* pWindow, const Message& message), Args(pWindow, message));
 
-	auto_METHOD_VIRTUAL_VOID(RotateEffect, ILayoutElement, SetSerializer, PARAMS(Serializer& dst), PARAMS(dst));
+	auto_METHOD_VIRTUAL_VOID(RotateEffect, ILayoutElement, SetSerializer, Args(Serializer& dst), Args(dst));
 	auto_METHOD_VIRTUAL_const_(RotateEffect, ILayoutElement, uint32_t, GetProxyID);
 
 	auto_METHOD_VIRTUAL_(RotateEffect, IRotateEffect, IWinProc*, ToWinProc);
 	auto_METHOD_VIRTUAL_const_(RotateEffect, IRotateEffect, const Vector3&, GetRotationAxis);
-	auto_METHOD_VIRTUAL_VOID(RotateEffect, IRotateEffect, SetRotationAxis, PARAMS(const Vector3& delay), PARAMS(delay));
+	auto_METHOD_VIRTUAL_VOID(RotateEffect, IRotateEffect, SetRotationAxis, Args(const Vector3& delay), Args(delay));
 	auto_METHOD_VIRTUAL_const_(RotateEffect, IRotateEffect, float, GetRotationAngle);
-	auto_METHOD_VIRTUAL_VOID(RotateEffect, IRotateEffect, SetRotationAngle, PARAMS(float delay), PARAMS(delay));
+	auto_METHOD_VIRTUAL_VOID(RotateEffect, IRotateEffect, SetRotationAngle, Args(float delay), Args(delay));
 
 	auto_METHOD_VIRTUAL_(RotateEffect, BiStateEffect, int, func80h);
-	auto_METHOD_VIRTUAL_VOID(RotateEffect, BiStateEffect, func88h, PARAMS(int arg_0, int arg_4, int arg_8), PARAMS(arg_0, arg_4, arg_8));
+	auto_METHOD_VIRTUAL_VOID(RotateEffect, BiStateEffect, func88h, Args(int arg_0, int arg_4, int arg_8), Args(arg_0, arg_4, arg_8));
 
 	//// FADE EFFECT ////
 
@@ -380,8 +380,8 @@ namespace UTFWin
 		return Effect::Release();
 	}
 
-	auto_METHOD_VIRTUAL_VOID(FadeEffect, ILayoutElement, SetSerializer, PARAMS(Serializer& dst), PARAMS(dst));
+	auto_METHOD_VIRTUAL_VOID(FadeEffect, ILayoutElement, SetSerializer, Args(Serializer& dst), Args(dst));
 	auto_METHOD_VIRTUAL_const_(FadeEffect, ILayoutElement, uint32_t, GetProxyID);
 
-	auto_METHOD_VIRTUAL_VOID(FadeEffect, BiStateEffect, func84h, PARAMS(int arg_0, float arg_4), PARAMS(arg_0, arg_4));
+	auto_METHOD_VIRTUAL_VOID(FadeEffect, BiStateEffect, func84h, Args(int arg_0, float arg_4), Args(arg_0, arg_4));
 }

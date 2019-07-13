@@ -303,11 +303,11 @@ namespace UTFWin
 	//// INTERNAL IMPLEMENTATION ////
 	/////////////////////////////////
 
-	namespace InternalAddressList(Graphics2D)
+	namespace Addresses(Graphics2D)
 	{
-		DefineAddress(DrawTiledImage, GetAddress(0x95CAA0, 0x95C550, 0x95C550));
-		DefineAddress(DrawSlicedTiledImage, GetAddress(0x95CEF0, 0x95C9A0, 0x95C9A0));
-		DefineAddress(DrawSlicedStretchedImage, GetAddress(0x95D4B0, 0x95CF60, 0x95CF60));
+		DeclareAddress(DrawTiledImage, SelectAddress(0x95CAA0, 0x95C550, 0x95C550));
+		DeclareAddress(DrawSlicedTiledImage, SelectAddress(0x95CEF0, 0x95C9A0, 0x95C9A0));
+		DeclareAddress(DrawSlicedStretchedImage, SelectAddress(0x95D4B0, 0x95CF60, 0x95CF60));
 	}
 
 	// Not fully documented, so we comment it out
@@ -329,7 +329,7 @@ namespace UTFWin
 
 	//	// not meant to be used, only for documenting
 	//	/*public:
-	//	METHOD_VOID(GetAddress(0x953370, 0, 0), Graphics2DBuffer, AddPoint, PARAMS(int arg_0, int arg_4), PARAMS(this, arg_0, arg_4));*/
+	//	METHOD_VOID(SelectAddress(0x953370, 0, 0), Graphics2DBuffer, AddPoint, Args(int arg_0, int arg_4), Args(this, arg_0, arg_4));*/
 	//};
 
 }

@@ -70,7 +70,7 @@ namespace Simulator
 			ContainerAddCallback_t<T> pAdd, ContainerFilterCallback_t pFilter, uint32_t nounID)
 		{
 			return *((tGameDataVectorT<T>*(__thiscall*)(cGameNounManager*, ContainerCreateCallback_t<T>, ContainerClearCallback_t<T>,
-				ContainerAddCallback_t<T>, ContainerFilterCallback_t, uint32_t)) (GetMethodAddress(cGameNounManager, GetData)))(
+				ContainerAddCallback_t<T>, ContainerFilterCallback_t, uint32_t)) (GetAddress(cGameNounManager, GetData)))(
 					this, pCreate, pClear, pAdd, pFilter, nounID);
 		}
 
@@ -122,22 +122,34 @@ namespace Simulator
 
 	static_assert(sizeof(cGameNounManager) == 0x11C, "sizeof(cGameNounManager) != 11Ch");
 
-	namespace InternalAddressList(cGameNounManager)
+	namespace Addresses(cGameNounManager)
 	{
-		DefineAddress(Get, GetAddress(0xB3D260, 0xB3D3D0, 0xB3D400));
-		DefineAddress(CreateInstance, GetAddress(0xB20A90, 0xB20B80, 0xB20BF0));
-		DefineAddress(DestroyInstance, GetAddress(0xB22450, NO_ADDRESS, 0xB22560));
-		DefineAddress(GetData, GetAddress(0xB21280, 0xB21260, 0xB212D0));
+		DeclareAddress(Get, SelectAddress(0xB3D260, 0xB3D3D0, 0xB3D400));
+		DeclareAddress(CreateInstance, SelectAddress(0xB20A90, 0xB20B80, 0xB20BF0));
+		DeclareAddress(DestroyInstance, SelectAddress(0xB22450, NO_ADDRESS, 0xB22560));
+		DeclareAddress(GetData, SelectAddress(0xB21280, 0xB21260, 0xB212D0));
 
-		DefineAddress(UpdateModels, GetAddress(0xB227E0, NO_ADDRESS, 0xB228F0));
-		DefineAddress(SetAvatar, GetAddress(0xB1FB90, NO_ADDRESS, 0xB1FCA0));
+		DeclareAddress(UpdateModels, SelectAddress(0xB227E0, NO_ADDRESS, 0xB228F0));
+		DeclareAddress(SetAvatar, SelectAddress(0xB1FB90, NO_ADDRESS, 0xB1FCA0));
 	}
 
-	/// Gets all the game data objects that are of the specified type. No subclasses allowed.
-	/// This only works if the specified class has the NOUN_ID attribute.
+	/// Gets all the game data objects that are of the specified type, or are one of its subclasses.
+	/// All the found objects will be casted to the specified type.
 	template <class T>
 	inline tGameDataVectorT<T>& GetData() {
-		return GetData<T>(T::NOUN_ID);
+		return cGameNounManager::Get()->GetData<T>(
+			[]() {
+			return new tGameDataVectorT<T>();
+		},
+			[](tGameDataVectorT<T>* pVector) {
+			pVector->data.clear();
+		},
+			[](tGameDataVectorT<T>* pVector, cGameData* pObject) {
+			pVector->data.push_back(intrusive_ptr<T>(object_cast<T>(pObject)));
+		},
+			[](cGameData* pObject, uint32_t gameNounID) {
+			return object_cast<T>(pObject) != nullptr;
+		}, nounID);
 	}
 
 
@@ -153,7 +165,6 @@ namespace Simulator
 			pVector->data.clear();
 		},
 			[](tGameDataVectorT<T>* pVector, cGameData* pObject) {
-			// cast or whatever
 			pVector->data.push_back(intrusive_ptr<T>(object_cast<T>(pObject)));
 		},
 			[](cGameData* pObject, uint32_t gameNounID) {

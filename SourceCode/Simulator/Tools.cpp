@@ -46,10 +46,10 @@
 
 namespace Simulator
 {
-	auto_METHOD_VOID(cSpaceToolData, AddAmmo, PARAMS(int ammo), PARAMS(ammo));
-	auto_METHOD_VOID(cSpaceToolData, ConsumeAmmo, PARAMS(int amount), PARAMS(amount));
+	auto_METHOD_VOID(cSpaceToolData, AddAmmo, Args(int ammo), Args(ammo));
+	auto_METHOD_VOID(cSpaceToolData, ConsumeAmmo, Args(int amount), Args(amount));
 	auto_STATIC_METHOD(cSpaceToolData, uint32_t, ShowEventLog,
-		PARAMS(cSpaceToolData* pTool, uint32_t eventLogID, bool show), PARAMS(pTool, eventLogID, show));
+		Args(cSpaceToolData* pTool, uint32_t eventLogID, bool show), Args(pTool, eventLogID, show));
 
 	auto_METHOD_const_(cSpaceToolData, cToolStrategy*, GetStrategy);
 
@@ -81,30 +81,30 @@ namespace Simulator
 	}
 
 
-	auto_METHOD_VIRTUAL(cToolStrategy, cToolStrategy, bool, OnSelect, PARAMS(cSpaceToolData* pTool), PARAMS(pTool));
+	auto_METHOD_VIRTUAL(cToolStrategy, cToolStrategy, bool, OnSelect, Args(cSpaceToolData* pTool), Args(pTool));
 
 	bool cToolStrategy::OnDeselect(cSpaceToolData* pTool) { return true; }
 
-	auto_METHOD_VIRTUAL(cToolStrategy, cToolStrategy, bool, Update, PARAMS(cSpaceToolData* pTool, bool arg1, const char16_t** arg2), PARAMS(pTool, arg1, arg2));
-	auto_METHOD_VIRTUAL(cToolStrategy, cToolStrategy, bool, WhileAiming, PARAMS(cSpaceToolData* pTool, const Vector3& arg1, bool arg2), PARAMS(pTool, arg1, arg2));
+	auto_METHOD_VIRTUAL(cToolStrategy, cToolStrategy, bool, Update, Args(cSpaceToolData* pTool, bool arg1, const char16_t** arg2), Args(pTool, arg1, arg2));
+	auto_METHOD_VIRTUAL(cToolStrategy, cToolStrategy, bool, WhileAiming, Args(cSpaceToolData* pTool, const Vector3& arg1, bool arg2), Args(pTool, arg1, arg2));
 
 	void cToolStrategy::OnMouseDown(cSpaceToolData* pTool, const Vector3& arg1) {}
 
-	auto_METHOD_VIRTUAL_VOID(cToolStrategy, cToolStrategy, SelectedUpdate, PARAMS(cSpaceToolData* pTool, const Vector3& arg1), PARAMS(pTool, arg1));
-	auto_METHOD_VIRTUAL(cToolStrategy, cToolStrategy, bool, OnHit, PARAMS(cSpaceToolData* pTool, const Vector3& position, cSpaceToolData::SpaceToolHit hitType),
-		PARAMS(pTool, position, hitType));
-	auto_METHOD_VIRTUAL(cToolStrategy, cToolStrategy, bool, WhileFiring, PARAMS(cSpaceToolData* pTool, const Vector3& arg1, int arg2), PARAMS(pTool, arg1, arg2));
-	auto_METHOD_VIRTUAL(cToolStrategy, cToolStrategy, bool, OnMouseUp, PARAMS(cSpaceToolData* pTool), PARAMS(pTool));
+	auto_METHOD_VIRTUAL_VOID(cToolStrategy, cToolStrategy, SelectedUpdate, Args(cSpaceToolData* pTool, const Vector3& arg1), Args(pTool, arg1));
+	auto_METHOD_VIRTUAL(cToolStrategy, cToolStrategy, bool, OnHit, Args(cSpaceToolData* pTool, const Vector3& position, cSpaceToolData::SpaceToolHit hitType),
+		Args(pTool, position, hitType));
+	auto_METHOD_VIRTUAL(cToolStrategy, cToolStrategy, bool, WhileFiring, Args(cSpaceToolData* pTool, const Vector3& arg1, int arg2), Args(pTool, arg1, arg2));
+	auto_METHOD_VIRTUAL(cToolStrategy, cToolStrategy, bool, OnMouseUp, Args(cSpaceToolData* pTool), Args(pTool));
 
 	Vector3 cToolStrategy::GetAimPoint() {
 		Vector3 dst;
-		((void(__thiscall*)(cToolStrategy*,Vector3&))(GetMethodAddress(cToolStrategy, GetAimPoint)))(this, dst);
+		((void(__thiscall*)(cToolStrategy*,Vector3&))(GetAddress(cToolStrategy, GetAimPoint)))(this, dst);
 		return dst;
 	}
 
 	Vector3 cToolStrategy::func40h() { 
 		Vector3 dst;
-		((void(__thiscall*)(cToolStrategy*, Vector3&))(GetMethodAddress(cToolStrategy, func40h)))(this, dst);
+		((void(__thiscall*)(cToolStrategy*, Vector3&))(GetAddress(cToolStrategy, func40h)))(this, dst);
 		return dst;
 	}
 	int cToolStrategy::ProcessCost(int useCost) { return useCost; }
@@ -112,141 +112,141 @@ namespace Simulator
 
 	//// cRepairToolStrategy ////
 
-	auto_METHOD_VIRTUAL(cRepairToolStrategy, cToolStrategy, bool, Update, PARAMS(cSpaceToolData* pTool, bool arg1, const char16_t** arg2), PARAMS(pTool, arg1, arg2));
-	auto_METHOD_VIRTUAL(cRepairToolStrategy, cToolStrategy, bool, OnHit, PARAMS(cSpaceToolData* pTool, const Vector3& position, cSpaceToolData::SpaceToolHit hitType), PARAMS(pTool, position, hitType));
-	auto_METHOD_VIRTUAL(cRepairToolStrategy, cToolStrategy, bool, WhileFiring, PARAMS(cSpaceToolData* pTool, const Vector3& arg1, int arg2), PARAMS(pTool, arg1, arg2));
+	auto_METHOD_VIRTUAL(cRepairToolStrategy, cToolStrategy, bool, Update, Args(cSpaceToolData* pTool, bool arg1, const char16_t** arg2), Args(pTool, arg1, arg2));
+	auto_METHOD_VIRTUAL(cRepairToolStrategy, cToolStrategy, bool, OnHit, Args(cSpaceToolData* pTool, const Vector3& position, cSpaceToolData::SpaceToolHit hitType), Args(pTool, position, hitType));
+	auto_METHOD_VIRTUAL(cRepairToolStrategy, cToolStrategy, bool, WhileFiring, Args(cSpaceToolData* pTool, const Vector3& arg1, int arg2), Args(pTool, arg1, arg2));
 
 
 	//// cEnergyRepairToolStrategy ////
 
-	auto_METHOD_VIRTUAL(cEnergyRepairToolStrategy, cToolStrategy, bool, Update, PARAMS(cSpaceToolData* pTool, bool arg1, const char16_t** arg2), PARAMS(pTool, arg1, arg2));
-	auto_METHOD_VIRTUAL(cEnergyRepairToolStrategy, cToolStrategy, bool, OnHit, PARAMS(cSpaceToolData* pTool, const Vector3& position, cSpaceToolData::SpaceToolHit hitType), PARAMS(pTool, position, hitType));
+	auto_METHOD_VIRTUAL(cEnergyRepairToolStrategy, cToolStrategy, bool, Update, Args(cSpaceToolData* pTool, bool arg1, const char16_t** arg2), Args(pTool, arg1, arg2));
+	auto_METHOD_VIRTUAL(cEnergyRepairToolStrategy, cToolStrategy, bool, OnHit, Args(cSpaceToolData* pTool, const Vector3& position, cSpaceToolData::SpaceToolHit hitType), Args(pTool, position, hitType));
 
 
 	//// cGetOutOfUFOToolStrategy ////
 
-	auto_METHOD_VIRTUAL(cGetOutOfUFOToolStrategy, cToolStrategy, bool, OnSelect, PARAMS(cSpaceToolData* pTool), PARAMS(pTool));
-	auto_METHOD_VIRTUAL(cGetOutOfUFOToolStrategy, cToolStrategy, bool, Update, PARAMS(cSpaceToolData* pTool, bool arg1, const char16_t** arg2), PARAMS(pTool, arg1, arg2));
-	auto_METHOD_VIRTUAL(cGetOutOfUFOToolStrategy, cToolStrategy, bool, WhileAiming, PARAMS(cSpaceToolData* pTool, const Vector3& arg1, bool arg2), PARAMS(pTool, arg1, arg2));
-	auto_METHOD_VIRTUAL(cGetOutOfUFOToolStrategy, cToolStrategy, bool, OnHit, PARAMS(cSpaceToolData* pTool, const Vector3& position, cSpaceToolData::SpaceToolHit hitType), PARAMS(pTool, position, hitType));
+	auto_METHOD_VIRTUAL(cGetOutOfUFOToolStrategy, cToolStrategy, bool, OnSelect, Args(cSpaceToolData* pTool), Args(pTool));
+	auto_METHOD_VIRTUAL(cGetOutOfUFOToolStrategy, cToolStrategy, bool, Update, Args(cSpaceToolData* pTool, bool arg1, const char16_t** arg2), Args(pTool, arg1, arg2));
+	auto_METHOD_VIRTUAL(cGetOutOfUFOToolStrategy, cToolStrategy, bool, WhileAiming, Args(cSpaceToolData* pTool, const Vector3& arg1, bool arg2), Args(pTool, arg1, arg2));
+	auto_METHOD_VIRTUAL(cGetOutOfUFOToolStrategy, cToolStrategy, bool, OnHit, Args(cSpaceToolData* pTool, const Vector3& position, cSpaceToolData::SpaceToolHit hitType), Args(pTool, position, hitType));
 
 
 	//// cDefaultProjectileWeapon ////
 
-	auto_METHOD_VIRTUAL(cDefaultProjectileWeapon, cToolStrategy, bool, OnHit, PARAMS(cSpaceToolData* pTool, const Vector3& position, cSpaceToolData::SpaceToolHit hitType), PARAMS(pTool, position, hitType));
-	auto_METHOD_VIRTUAL(cDefaultProjectileWeapon, cToolStrategy, bool, WhileFiring, PARAMS(cSpaceToolData* pTool, const Vector3& arg1, int arg2), PARAMS(pTool, arg1, arg2));
+	auto_METHOD_VIRTUAL(cDefaultProjectileWeapon, cToolStrategy, bool, OnHit, Args(cSpaceToolData* pTool, const Vector3& position, cSpaceToolData::SpaceToolHit hitType), Args(pTool, position, hitType));
+	auto_METHOD_VIRTUAL(cDefaultProjectileWeapon, cToolStrategy, bool, WhileFiring, Args(cSpaceToolData* pTool, const Vector3& arg1, int arg2), Args(pTool, arg1, arg2));
 
 
 	//// cTurretDefenseMissileWeapon ////
 
-	auto_METHOD_VIRTUAL(cTurretDefenseMissileWeapon, cToolStrategy, bool, WhileFiring, PARAMS(cSpaceToolData* pTool, const Vector3& arg1, int arg2), PARAMS(pTool, arg1, arg2));
+	auto_METHOD_VIRTUAL(cTurretDefenseMissileWeapon, cToolStrategy, bool, WhileFiring, Args(cSpaceToolData* pTool, const Vector3& arg1, int arg2), Args(pTool, arg1, arg2));
 
 
 	//// cTurretFlakWeapon ////
 
-	auto_METHOD_VIRTUAL(cTurretFlakWeapon, cToolStrategy, bool, WhileFiring, PARAMS(cSpaceToolData* pTool, const Vector3& arg1, int arg2), PARAMS(pTool, arg1, arg2));
+	auto_METHOD_VIRTUAL(cTurretFlakWeapon, cToolStrategy, bool, WhileFiring, Args(cSpaceToolData* pTool, const Vector3& arg1, int arg2), Args(pTool, arg1, arg2));
 
 
 	//// cDeepSpaceProjectileToolStrategy ////
 
-	auto_METHOD_VIRTUAL(cDeepSpaceProjectileToolStrategy, cToolStrategy, bool, WhileFiring, PARAMS(cSpaceToolData* pTool, const Vector3& arg1, int arg2), PARAMS(pTool, arg1, arg2));
+	auto_METHOD_VIRTUAL(cDeepSpaceProjectileToolStrategy, cToolStrategy, bool, WhileFiring, Args(cSpaceToolData* pTool, const Vector3& arg1, int arg2), Args(pTool, arg1, arg2));
 
 
 	//// cPlaceObjectToolStrategy ////
 
-	auto_METHOD_VIRTUAL(cPlaceObjectToolStrategy, cToolStrategy, bool, OnSelect, PARAMS(cSpaceToolData* pTool), PARAMS(pTool));
-	auto_METHOD_VIRTUAL(cPlaceObjectToolStrategy, cToolStrategy, bool, OnDeselect, PARAMS(cSpaceToolData* pTool), PARAMS(pTool));
-	auto_METHOD_VIRTUAL(cPlaceObjectToolStrategy, cToolStrategy, bool, Update, PARAMS(cSpaceToolData* pTool, bool arg1, const char16_t** arg2), PARAMS(pTool, arg1, arg2));
-	auto_METHOD_VIRTUAL(cPlaceObjectToolStrategy, cToolStrategy, bool, WhileAiming, PARAMS(cSpaceToolData* pTool, const Vector3& arg1, bool arg2), PARAMS(pTool, arg1, arg2));
-	auto_METHOD_VIRTUAL_VOID(cPlaceObjectToolStrategy, cToolStrategy, SelectedUpdate, PARAMS(cSpaceToolData* pTool, const Vector3& arg1), PARAMS(pTool, arg1));
-	auto_METHOD_VIRTUAL(cPlaceObjectToolStrategy, cToolStrategy, bool, OnHit, PARAMS(cSpaceToolData* pTool, const Vector3& position, cSpaceToolData::SpaceToolHit hitType), PARAMS(pTool, position, hitType));
+	auto_METHOD_VIRTUAL(cPlaceObjectToolStrategy, cToolStrategy, bool, OnSelect, Args(cSpaceToolData* pTool), Args(pTool));
+	auto_METHOD_VIRTUAL(cPlaceObjectToolStrategy, cToolStrategy, bool, OnDeselect, Args(cSpaceToolData* pTool), Args(pTool));
+	auto_METHOD_VIRTUAL(cPlaceObjectToolStrategy, cToolStrategy, bool, Update, Args(cSpaceToolData* pTool, bool arg1, const char16_t** arg2), Args(pTool, arg1, arg2));
+	auto_METHOD_VIRTUAL(cPlaceObjectToolStrategy, cToolStrategy, bool, WhileAiming, Args(cSpaceToolData* pTool, const Vector3& arg1, bool arg2), Args(pTool, arg1, arg2));
+	auto_METHOD_VIRTUAL_VOID(cPlaceObjectToolStrategy, cToolStrategy, SelectedUpdate, Args(cSpaceToolData* pTool, const Vector3& arg1), Args(pTool, arg1));
+	auto_METHOD_VIRTUAL(cPlaceObjectToolStrategy, cToolStrategy, bool, OnHit, Args(cSpaceToolData* pTool, const Vector3& position, cSpaceToolData::SpaceToolHit hitType), Args(pTool, position, hitType));
 
 
 	//// cCropCirclesToolStrategy ////
 
-	auto_METHOD_VIRTUAL(cCropCirclesToolStrategy, cToolStrategy, bool, OnHit, PARAMS(cSpaceToolData* pTool, const Vector3& position, cSpaceToolData::SpaceToolHit hitType), PARAMS(pTool, position, hitType));
+	auto_METHOD_VIRTUAL(cCropCirclesToolStrategy, cToolStrategy, bool, OnHit, Args(cSpaceToolData* pTool, const Vector3& position, cSpaceToolData::SpaceToolHit hitType), Args(pTool, position, hitType));
 
 
 	//// cGenesisDeviceToolStrategy ////
 
-	auto_METHOD_VIRTUAL(cGenesisDeviceToolStrategy, cToolStrategy, bool, OnHit, PARAMS(cSpaceToolData* pTool, const Vector3& position, cSpaceToolData::SpaceToolHit hitType), PARAMS(pTool, position, hitType));
+	auto_METHOD_VIRTUAL(cGenesisDeviceToolStrategy, cToolStrategy, bool, OnHit, Args(cSpaceToolData* pTool, const Vector3& position, cSpaceToolData::SpaceToolHit hitType), Args(pTool, position, hitType));
 
 
 	//// cDefaultBeamTool ////
 
-	auto_METHOD_VIRTUAL_VOID(cDefaultBeamTool, cToolStrategy, OnMouseDown, PARAMS(cSpaceToolData* pTool, const Vector3& arg1), PARAMS(pTool, arg1));
-	auto_METHOD_VIRTUAL(cDefaultBeamTool, cToolStrategy, bool, OnHit, PARAMS(cSpaceToolData* pTool, const Vector3& position, cSpaceToolData::SpaceToolHit hitType), PARAMS(pTool, position, hitType));
-	auto_METHOD_VIRTUAL(cDefaultBeamTool, cToolStrategy, bool, WhileFiring, PARAMS(cSpaceToolData* pTool, const Vector3& arg1, int arg2), PARAMS(pTool, arg1, arg2));
-	auto_METHOD_VIRTUAL(cDefaultBeamTool, cToolStrategy, bool, OnMouseUp, PARAMS(cSpaceToolData* pTool), PARAMS(pTool));
-	auto_METHOD_VIRTUAL(cDefaultBeamTool, cToolStrategy, bool, func48h, PARAMS(cSpaceToolData* pTool, const Vector3& arg1), PARAMS(pTool, arg1));
-	auto_METHOD_VIRTUAL(cDefaultBeamTool, cToolStrategy, bool, func4Ch, PARAMS(cSpaceToolData* pTool, const Vector3& arg1), PARAMS(pTool, arg1));
+	auto_METHOD_VIRTUAL_VOID(cDefaultBeamTool, cToolStrategy, OnMouseDown, Args(cSpaceToolData* pTool, const Vector3& arg1), Args(pTool, arg1));
+	auto_METHOD_VIRTUAL(cDefaultBeamTool, cToolStrategy, bool, OnHit, Args(cSpaceToolData* pTool, const Vector3& position, cSpaceToolData::SpaceToolHit hitType), Args(pTool, position, hitType));
+	auto_METHOD_VIRTUAL(cDefaultBeamTool, cToolStrategy, bool, WhileFiring, Args(cSpaceToolData* pTool, const Vector3& arg1, int arg2), Args(pTool, arg1, arg2));
+	auto_METHOD_VIRTUAL(cDefaultBeamTool, cToolStrategy, bool, OnMouseUp, Args(cSpaceToolData* pTool), Args(pTool));
+	auto_METHOD_VIRTUAL(cDefaultBeamTool, cToolStrategy, bool, func48h, Args(cSpaceToolData* pTool, const Vector3& arg1), Args(pTool, arg1));
+	auto_METHOD_VIRTUAL(cDefaultBeamTool, cToolStrategy, bool, func4Ch, Args(cSpaceToolData* pTool, const Vector3& arg1), Args(pTool, arg1));
 
 
 	//// cDefaultAoETool ////
 
-	auto_METHOD_VIRTUAL_VOID(cDefaultAoETool, cToolStrategy, OnMouseDown, PARAMS(cSpaceToolData* pTool, const Vector3& arg1), PARAMS(pTool, arg1));
-	auto_METHOD_VIRTUAL(cDefaultAoETool, cToolStrategy, bool, OnHit, PARAMS(cSpaceToolData* pTool, const Vector3& position, cSpaceToolData::SpaceToolHit hitType), PARAMS(pTool, position, hitType));
-	auto_METHOD_VIRTUAL(cDefaultAoETool, cToolStrategy, bool, WhileFiring, PARAMS(cSpaceToolData* pTool, const Vector3& arg1, int arg2), PARAMS(pTool, arg1, arg2));
-	auto_METHOD_VIRTUAL(cDefaultAoETool, cToolStrategy, bool, OnMouseUp, PARAMS(cSpaceToolData* pTool), PARAMS(pTool));
-	auto_METHOD_VIRTUAL(cDefaultAoETool, cToolStrategy, bool, func48h, PARAMS(cSpaceToolData* pTool, const Vector3& arg1), PARAMS(pTool, arg1));
-	auto_METHOD_VIRTUAL(cDefaultAoETool, cToolStrategy, bool, func4Ch, PARAMS(cSpaceToolData* pTool, const Vector3& arg1), PARAMS(pTool, arg1));
+	auto_METHOD_VIRTUAL_VOID(cDefaultAoETool, cToolStrategy, OnMouseDown, Args(cSpaceToolData* pTool, const Vector3& arg1), Args(pTool, arg1));
+	auto_METHOD_VIRTUAL(cDefaultAoETool, cToolStrategy, bool, OnHit, Args(cSpaceToolData* pTool, const Vector3& position, cSpaceToolData::SpaceToolHit hitType), Args(pTool, position, hitType));
+	auto_METHOD_VIRTUAL(cDefaultAoETool, cToolStrategy, bool, WhileFiring, Args(cSpaceToolData* pTool, const Vector3& arg1, int arg2), Args(pTool, arg1, arg2));
+	auto_METHOD_VIRTUAL(cDefaultAoETool, cToolStrategy, bool, OnMouseUp, Args(cSpaceToolData* pTool), Args(pTool));
+	auto_METHOD_VIRTUAL(cDefaultAoETool, cToolStrategy, bool, func48h, Args(cSpaceToolData* pTool, const Vector3& arg1), Args(pTool, arg1));
+	auto_METHOD_VIRTUAL(cDefaultAoETool, cToolStrategy, bool, func4Ch, Args(cSpaceToolData* pTool, const Vector3& arg1), Args(pTool, arg1));
 
 	//// cAbductToolStrategy ////
 
-	auto_METHOD_VIRTUAL(cAbductToolStrategy, cToolStrategy, bool, OnHit, PARAMS(cSpaceToolData* pTool, const Vector3& position, cSpaceToolData::SpaceToolHit hitType), PARAMS(pTool, position, hitType));
-	auto_METHOD_VIRTUAL(cAbductToolStrategy, cToolStrategy, bool, OnMouseUp, PARAMS(cSpaceToolData* pTool), PARAMS(pTool));
+	auto_METHOD_VIRTUAL(cAbductToolStrategy, cToolStrategy, bool, OnHit, Args(cSpaceToolData* pTool, const Vector3& position, cSpaceToolData::SpaceToolHit hitType), Args(pTool, position, hitType));
+	auto_METHOD_VIRTUAL(cAbductToolStrategy, cToolStrategy, bool, OnMouseUp, Args(cSpaceToolData* pTool), Args(pTool));
 	Vector3 cAbductToolStrategy::GetAimPoint() {
 		Vector3 dst;
-		((void(__thiscall*)(cAbductToolStrategy*, Vector3&))(GetMethodAddress(cAbductToolStrategy, GetAimPoint)))(this, dst);
+		((void(__thiscall*)(cAbductToolStrategy*, Vector3&))(GetAddress(cAbductToolStrategy, GetAimPoint)))(this, dst);
 		return dst;
 	}
 
 
 	//// cScanToolStrategy ////
 
-	auto_METHOD_VIRTUAL(cScanToolStrategy, cToolStrategy, bool, OnSelect, PARAMS(cSpaceToolData* pTool), PARAMS(pTool));
-	auto_METHOD_VIRTUAL(cScanToolStrategy, cToolStrategy, bool, OnHit, PARAMS(cSpaceToolData* pTool, const Vector3& position, cSpaceToolData::SpaceToolHit hitType), PARAMS(pTool, position, hitType));
+	auto_METHOD_VIRTUAL(cScanToolStrategy, cToolStrategy, bool, OnSelect, Args(cSpaceToolData* pTool), Args(pTool));
+	auto_METHOD_VIRTUAL(cScanToolStrategy, cToolStrategy, bool, OnHit, Args(cSpaceToolData* pTool, const Vector3& position, cSpaceToolData::SpaceToolHit hitType), Args(pTool, position, hitType));
 
 
 	//// cDropCargoToolStrategy ////
 
-	auto_METHOD_VIRTUAL(cDropCargoToolStrategy, cToolStrategy, bool, Update, PARAMS(cSpaceToolData* pTool, bool arg1, const char16_t** arg2), PARAMS(pTool, arg1, arg2));
-	auto_METHOD_VIRTUAL(cDropCargoToolStrategy, cToolStrategy, bool, WhileAiming, PARAMS(cSpaceToolData* pTool, const Vector3& arg1, bool arg2), PARAMS(pTool, arg1, arg2));
-	auto_METHOD_VIRTUAL(cDropCargoToolStrategy, cToolStrategy, bool, WhileFiring, PARAMS(cSpaceToolData* pTool, const Vector3& arg1, int arg2), PARAMS(pTool, arg1, arg2));
-	auto_METHOD_VIRTUAL(cDropCargoToolStrategy, cToolStrategy, bool, OnMouseUp, PARAMS(cSpaceToolData* pTool), PARAMS(pTool));
+	auto_METHOD_VIRTUAL(cDropCargoToolStrategy, cToolStrategy, bool, Update, Args(cSpaceToolData* pTool, bool arg1, const char16_t** arg2), Args(pTool, arg1, arg2));
+	auto_METHOD_VIRTUAL(cDropCargoToolStrategy, cToolStrategy, bool, WhileAiming, Args(cSpaceToolData* pTool, const Vector3& arg1, bool arg2), Args(pTool, arg1, arg2));
+	auto_METHOD_VIRTUAL(cDropCargoToolStrategy, cToolStrategy, bool, WhileFiring, Args(cSpaceToolData* pTool, const Vector3& arg1, int arg2), Args(pTool, arg1, arg2));
+	auto_METHOD_VIRTUAL(cDropCargoToolStrategy, cToolStrategy, bool, OnMouseUp, Args(cSpaceToolData* pTool), Args(pTool));
 
 
 	//// cDragInputProjectileToolStrategy ////
 
-	auto_METHOD_VIRTUAL_VOID(cDragInputProjectileToolStrategy, cToolStrategy, OnMouseDown, PARAMS(cSpaceToolData* pTool, const Vector3& arg1), PARAMS(pTool, arg1));
-	auto_METHOD_VIRTUAL(cDragInputProjectileToolStrategy, cToolStrategy, bool, OnHit, PARAMS(cSpaceToolData* pTool, const Vector3& position, cSpaceToolData::SpaceToolHit hitType), PARAMS(pTool, position, hitType));
-	auto_METHOD_VIRTUAL(cDragInputProjectileToolStrategy, cToolStrategy, bool, WhileFiring, PARAMS(cSpaceToolData* pTool, const Vector3& arg1, int arg2), PARAMS(pTool, arg1, arg2));
+	auto_METHOD_VIRTUAL_VOID(cDragInputProjectileToolStrategy, cToolStrategy, OnMouseDown, Args(cSpaceToolData* pTool, const Vector3& arg1), Args(pTool, arg1));
+	auto_METHOD_VIRTUAL(cDragInputProjectileToolStrategy, cToolStrategy, bool, OnHit, Args(cSpaceToolData* pTool, const Vector3& position, cSpaceToolData::SpaceToolHit hitType), Args(pTool, position, hitType));
+	auto_METHOD_VIRTUAL(cDragInputProjectileToolStrategy, cToolStrategy, bool, WhileFiring, Args(cSpaceToolData* pTool, const Vector3& arg1, int arg2), Args(pTool, arg1, arg2));
 
 
 	//// cArtilleryWeaponStrategy ////
 
-	auto_METHOD_VIRTUAL(cArtilleryWeaponStrategy, cToolStrategy, bool, OnHit, PARAMS(cSpaceToolData* pTool, const Vector3& position, cSpaceToolData::SpaceToolHit hitType), PARAMS(pTool, position, hitType));
-	auto_METHOD_VIRTUAL(cArtilleryWeaponStrategy, cToolStrategy, bool, WhileFiring, PARAMS(cSpaceToolData* pTool, const Vector3& arg1, int arg2), PARAMS(pTool, arg1, arg2));
+	auto_METHOD_VIRTUAL(cArtilleryWeaponStrategy, cToolStrategy, bool, OnHit, Args(cSpaceToolData* pTool, const Vector3& position, cSpaceToolData::SpaceToolHit hitType), Args(pTool, position, hitType));
+	auto_METHOD_VIRTUAL(cArtilleryWeaponStrategy, cToolStrategy, bool, WhileFiring, Args(cSpaceToolData* pTool, const Vector3& arg1, int arg2), Args(pTool, arg1, arg2));
 
 
 	//// cMindEraseToolStrategy ////
 
-	auto_METHOD_VIRTUAL(cMindEraseToolStrategy, cToolStrategy, bool, OnHit, PARAMS(cSpaceToolData* pTool, const Vector3& position, cSpaceToolData::SpaceToolHit hitType), PARAMS(pTool, position, hitType));
+	auto_METHOD_VIRTUAL(cMindEraseToolStrategy, cToolStrategy, bool, OnHit, Args(cSpaceToolData* pTool, const Vector3& position, cSpaceToolData::SpaceToolHit hitType), Args(pTool, position, hitType));
 
 
 	//// cGlobalMindEraseToolStrategy ////
 
-	auto_METHOD_VIRTUAL(cGlobalMindEraseToolStrategy, cToolStrategy, bool, WhileFiring, PARAMS(cSpaceToolData* pTool, const Vector3& arg1, int arg2), PARAMS(pTool, arg1, arg2));
+	auto_METHOD_VIRTUAL(cGlobalMindEraseToolStrategy, cToolStrategy, bool, WhileFiring, Args(cSpaceToolData* pTool, const Vector3& arg1, int arg2), Args(pTool, arg1, arg2));
 
 
 	//// cRepairAOEToolStrategy ////
 
-	auto_METHOD_VIRTUAL(cRepairAOEToolStrategy, cToolStrategy, bool, WhileFiring, PARAMS(cSpaceToolData* pTool, const Vector3& arg1, int arg2), PARAMS(pTool, arg1, arg2));
+	auto_METHOD_VIRTUAL(cRepairAOEToolStrategy, cToolStrategy, bool, WhileFiring, Args(cSpaceToolData* pTool, const Vector3& arg1, int arg2), Args(pTool, arg1, arg2));
 
 
 	//// cRallyCallToolStrategy ////
 
-	auto_METHOD_VIRTUAL(cRallyCallToolStrategy, cToolStrategy, bool, WhileFiring, PARAMS(cSpaceToolData* pTool, const Vector3& arg1, int arg2), PARAMS(pTool, arg1, arg2));
+	auto_METHOD_VIRTUAL(cRallyCallToolStrategy, cToolStrategy, bool, WhileFiring, Args(cSpaceToolData* pTool, const Vector3& arg1, int arg2), Args(pTool, arg1, arg2));
 
 
 	//// cToggleToolStrategy ////
@@ -258,10 +258,10 @@ namespace Simulator
 
 	//// cPlaceColonyToolStrategy ////
 
-	auto_METHOD_VIRTUAL(cPlaceColonyToolStrategy, cToolStrategy, bool, OnSelect, PARAMS(cSpaceToolData* pTool), PARAMS(pTool));
-	auto_METHOD_VIRTUAL(cPlaceColonyToolStrategy, cToolStrategy, bool, OnDeselect, PARAMS(cSpaceToolData* pTool), PARAMS(pTool));
-	auto_METHOD_VIRTUAL(cPlaceColonyToolStrategy, cToolStrategy, bool, Update, PARAMS(cSpaceToolData* pTool, bool arg1, const char16_t** arg2), PARAMS(pTool, arg1, arg2));
-	auto_METHOD_VIRTUAL(cPlaceColonyToolStrategy, cToolStrategy, bool, WhileAiming, PARAMS(cSpaceToolData* pTool, const Vector3& arg1, bool arg2), PARAMS(pTool, arg1, arg2));
-	auto_METHOD_VIRTUAL_VOID(cPlaceColonyToolStrategy, cToolStrategy, SelectedUpdate, PARAMS(cSpaceToolData* pTool, const Vector3& arg1), PARAMS(pTool, arg1));
-	auto_METHOD_VIRTUAL(cPlaceColonyToolStrategy, cToolStrategy, bool, OnHit, PARAMS(cSpaceToolData* pTool, const Vector3& position, cSpaceToolData::SpaceToolHit hitType), PARAMS(pTool, position, hitType));
+	auto_METHOD_VIRTUAL(cPlaceColonyToolStrategy, cToolStrategy, bool, OnSelect, Args(cSpaceToolData* pTool), Args(pTool));
+	auto_METHOD_VIRTUAL(cPlaceColonyToolStrategy, cToolStrategy, bool, OnDeselect, Args(cSpaceToolData* pTool), Args(pTool));
+	auto_METHOD_VIRTUAL(cPlaceColonyToolStrategy, cToolStrategy, bool, Update, Args(cSpaceToolData* pTool, bool arg1, const char16_t** arg2), Args(pTool, arg1, arg2));
+	auto_METHOD_VIRTUAL(cPlaceColonyToolStrategy, cToolStrategy, bool, WhileAiming, Args(cSpaceToolData* pTool, const Vector3& arg1, bool arg2), Args(pTool, arg1, arg2));
+	auto_METHOD_VIRTUAL_VOID(cPlaceColonyToolStrategy, cToolStrategy, SelectedUpdate, Args(cSpaceToolData* pTool, const Vector3& arg1), Args(pTool, arg1));
+	auto_METHOD_VIRTUAL(cPlaceColonyToolStrategy, cToolStrategy, bool, OnHit, Args(cSpaceToolData* pTool, const Vector3& position, cSpaceToolData::SpaceToolHit hitType), Args(pTool, position, hitType));
 }

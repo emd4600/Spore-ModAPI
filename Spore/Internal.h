@@ -22,6 +22,7 @@
 #include <cstdint>
 #include <cctype>
 #include <windows.h>
+#include <ModAPI\CppRevEng.h>
 
 #define SPORE_STANDARD 0
 #define SPORE_STEAM 1
@@ -42,39 +43,8 @@
 
 #define field(_This, offset) *(int*)(_This + offset)
 #define vftable(_This, offset) *(int*)((*(int*)_This) + offset)
-//#define ida(address) (baseAddress + address - 0x400000)
 
 #define VOID_THISCALL(address, object) ((void(__thiscall*)(void*))(address))((void*) object)
-
-extern unsigned long baseAddress;
-
-#define ENUM_OPERATORS(name) \
-inline name operator |(const name selfValue, const name inValue) \
-{ \
-	return (name)(uint32_t(selfValue) | uint32_t(inValue)); \
-} \
-inline name operator &(const name selfValue, const name inValue) \
-{ \
-	return (name)(uint32_t(selfValue) & uint32_t(inValue)); \
-}
-//constexpr inline enum name operator ~(const enum name selfValue) \
-//{ \
-//	return (enum name)(~uint32_t(selfValue)); \
-//} \
-
-#define ENUM_FLAG_OPERATORS(ENUMTYPE) \
-extern "C++" { \
-inline ENUMTYPE operator | (ENUMTYPE a, ENUMTYPE b) { return ENUMTYPE(((uint32_t)a) | ((uint32_t)b)); } \
-inline ENUMTYPE &operator |= (ENUMTYPE &a, ENUMTYPE b) { return (ENUMTYPE &)(((uint32_t &)a) |= ((uint32_t)b)); } \
-inline ENUMTYPE operator & (ENUMTYPE a, ENUMTYPE b) { return ENUMTYPE(((uint32_t)a) & ((uint32_t)b)); } \
-inline ENUMTYPE &operator &= (ENUMTYPE &a, ENUMTYPE b) { return (ENUMTYPE &)(((uint32_t &)a) &= ((uint32_t)b)); } \
-inline ENUMTYPE operator ~ (ENUMTYPE a) { return ENUMTYPE(~((uint32_t)a)); } \
-inline ENUMTYPE operator ^ (ENUMTYPE a, ENUMTYPE b) { return ENUMTYPE(((uint32_t)a) ^ ((uint32_t)b)); } \
-inline ENUMTYPE &operator ^= (ENUMTYPE &a, ENUMTYPE b) { return (ENUMTYPE &)(((uint32_t &)a) ^= ((uint32_t)b)); } \
-}
-
-
-#define PARAMS(...) __VA_ARGS__
 
 #define METHOD(address, thisType, returnType, name, parameters, passedArguments) returnType name(parameters) { return ((returnType(__thiscall*)(thisType*, parameters)) (address))(this, passedArguments); }
 #define METHOD_VOID(address, thisType, name, parameters, passedArguments) void name(parameters) { ((void(__thiscall*)(thisType*, parameters)) (address))(this, passedArguments); }
@@ -104,78 +74,50 @@ inline ENUMTYPE &operator ^= (ENUMTYPE &a, ENUMTYPE b) { return (ENUMTYPE &)(((u
 #define ManualBreakpoint() ManualBreakpoint_(__FILE__, "Breakpoint");
 #define ManualBreakpoint_(text, title) MessageBoxA(NULL, text, title, MB_OK);
 
-// We want to define addresses in a list so they can be easily used in detouring
-/// Registers the address of a method of a certain class/namespace. This line must be used inside namespaces with names generated
-/// with the InternalAddressList() macro.
-#define DefineAddress(name, address) const int name = (address)
-// Don't forget to add the base address! DefineAddress is processed on compilation, so they don't have baseAddress added
-/// Gets the address of a method of the specified class/namespace; this only works for methods whose adresses have been registered.
-#define GetMethodAddress(className, functionName) InternalAddressList(className)::functionName + baseAddress
-#define InternalAddressList(className) className##_internal_address_list
-
-
 // Methods that get the address from a list; they must not be in the class declaration
+// The VOID_ counterpart is actually not necessary, but we keep it here because old methods still use it
+// Unfortunately we used a different argument order than in CppRevEng, so we have to keep these old macros
 
-#define auto_METHOD(thisType, returnType, name, parameters, passedArguments) METHOD(GetMethodAddress(thisType, name), thisType, returnType, thisType::name, parameters, passedArguments)
-#define auto_METHOD_VOID(thisType, name, parameters, passedArguments) METHOD_VOID(GetMethodAddress(thisType, name), thisType, thisType::name, parameters, passedArguments)
+#define auto_METHOD(thisType, returnType, name, parameters, passedArguments) RedirectMethod(thisType, name, returnType, parameters, passedArguments)
+#define auto_METHOD_VOID(thisType, name, parameters, passedArguments) METHOD_VOID(GetAddress(thisType, name), thisType, thisType::name, parameters, passedArguments)
 
-#define auto_METHOD_(thisType, returnType, name) METHOD_(GetMethodAddress(thisType, name), thisType, returnType, thisType::name)
-#define auto_METHOD_VOID_(thisType, name) METHOD_VOID_(GetMethodAddress(thisType, name), thisType, thisType::name)
+#define auto_METHOD_(thisType, returnType, name) RedirectMethod_noargs(thisType, name, returnType)
+#define auto_METHOD_VOID_(thisType, name) METHOD_VOID_(GetAddress(thisType, name), thisType, thisType::name)
 
-#define auto_METHOD_const(thisType, returnType, name, parameters, passedArguments) METHOD_const(GetMethodAddress(thisType, name), thisType, returnType, thisType::name, parameters, passedArguments)
-#define auto_METHOD_VOID_const(thisType, name, parameters, passedArguments) METHOD_VOID_const(GetMethodAddress(thisType, name), thisType, thisType::name, parameters, passedArguments)
+#define auto_METHOD_const(thisType, returnType, name, parameters, passedArguments) RedirectMethod_const(thisType, name, returnType, parameters, passedArguments)
+#define auto_METHOD_VOID_const(thisType, name, parameters, passedArguments) METHOD_VOID_const(GetAddress(thisType, name), thisType, thisType::name, parameters, passedArguments)
 
-#define auto_METHOD_const_(thisType, returnType, name) METHOD_const_(GetMethodAddress(thisType, name), thisType, returnType, thisType::name)
-#define auto_METHOD_VOID_const_(thisType, name) METHOD_VOID_const_(GetMethodAddress(thisType, name), thisType, thisType::name)
+#define auto_METHOD_const_(thisType, returnType, name) RedirectMethod_noargs_const(thisType, name, returnType)
+#define auto_METHOD_VOID_const_(thisType, name) METHOD_VOID_const_(GetAddress(thisType, name), thisType, thisType::name)
 
-#define auto_METHOD_VIRTUAL(className, thisType, returnType, name, parameters, passedArguments) METHOD(GetMethodAddress(className, name), thisType, returnType, className::name, parameters, passedArguments)
-#define auto_METHOD_VIRTUAL_VOID(className, thisType, name, parameters, passedArguments) METHOD_VOID(GetMethodAddress(className, name), thisType, className::name, parameters, passedArguments)
+#define auto_METHOD_VIRTUAL(className, thisType, returnType, name, parameters, passedArguments) RedirectVirtualMethod(className, thisType, name, returnType, parameters, passedArguments)
+#define auto_METHOD_VIRTUAL_VOID(className, thisType, name, parameters, passedArguments) METHOD_VOID(GetAddress(className, name), thisType, className::name, parameters, passedArguments)
 
-#define auto_METHOD_VIRTUAL_(className, thisType, returnType, name) METHOD_(GetMethodAddress(className, name), thisType, returnType, className::name)
-#define auto_METHOD_VIRTUAL_VOID_(className, thisType, name) METHOD_VOID_(GetMethodAddress(className, name), thisType, className::name)
+#define auto_METHOD_VIRTUAL_(className, thisType, returnType, name) RedirectVirtualMethod_noargs(className, thisType, name, returnType)
+#define auto_METHOD_VIRTUAL_VOID_(className, thisType, name) METHOD_VOID_(GetAddress(className, name), thisType, className::name)
 
-#define auto_METHOD_VIRTUAL_const(className, thisType, returnType, name, parameters, passedArguments) METHOD_const(GetMethodAddress(className, name), thisType, returnType, className::name, parameters, passedArguments)
-#define auto_METHOD_VIRTUAL_VOID_const(className, thisType, name, parameters, passedArguments) METHOD_VOID_const(GetMethodAddress(className, name), thisType, className::name, parameters, passedArguments)
+#define auto_METHOD_VIRTUAL_const(className, thisType, returnType, name, parameters, passedArguments) RedirectVirtualMethod_const(className, thisType, name, returnType, parameters, passedArguments)
+#define auto_METHOD_VIRTUAL_VOID_const(className, thisType, name, parameters, passedArguments) METHOD_VOID_const(GetAddress(className, name), thisType, className::name, parameters, passedArguments)
 
-#define auto_METHOD_VIRTUAL_const_(className, thisType, returnType, name) METHOD_const_(GetMethodAddress(className, name), thisType, returnType, className::name)
-#define auto_METHOD_VIRTUAL_VOID_const_(className, thisType, name) METHOD_VOID_const_(GetMethodAddress(className, name), thisType, className::name)
+#define auto_METHOD_VIRTUAL_const_(className, thisType, returnType, name) RedirectVirtualMethod_noargs_const(className, thisType, name, returnType)
+#define auto_METHOD_VIRTUAL_VOID_const_(className, thisType, name) METHOD_VOID_const_(GetAddress(className, name), thisType, className::name)
 
-#define auto_STATIC_METHOD(className, returnType, name, parameters, passedArguments) STATIC_METHOD(GetMethodAddress(className, name), returnType, className::name, parameters, passedArguments)
-#define auto_STATIC_METHOD_VOID(className, name, parameters, passedArguments) STATIC_METHOD_VOID(GetMethodAddress(className, name), className::name, parameters, passedArguments)
+#define auto_STATIC_METHOD(className, returnType, name, parameters, passedArguments) RedirectStaticMethod(className, name, returnType, parameters, passedArguments)
+#define auto_STATIC_METHOD_VOID(className, name, parameters, passedArguments) STATIC_METHOD_VOID(GetAddress(className, name), className::name, parameters, passedArguments)
 
-#define auto_STATIC_METHOD_(className, returnType, name) STATIC_METHOD_(GetMethodAddress(className, name), returnType, className::name)
-#define auto_STATIC_METHOD_VOID_(className, name) STATIC_METHOD_VOID_(GetMethodAddress(className, name), className::name)
+#define auto_STATIC_METHOD_(className, returnType, name) RedirectStaticMethod_noargs(className, name, returnType)
+#define auto_STATIC_METHOD_VOID_(className, name) STATIC_METHOD_VOID_(GetAddress(className, name), className::name)
 
 
 
 #if EXECUTABLE_TYPE == SPORE_STANDARD
-	#if PATCHED_SPORE == 0
-		#define GetAddress(addressStandard, addressSteam, addressSteamPatched) (baseAddress + addressStandard - 0x400000)
-	#else
-// I think the disk executable doesn't have a patched version
-		#define GetAddress(addressStandard, addressSteam, addressSteamPatched) (baseAddress + addressStandard - 0x400000)
-	#endif
-
+	#define SelectAddress(addressStandard, addressSteam, addressSteamPatched) addressStandard
 #elif EXECUTABLE_TYPE == SPORE_STEAM
 	#if PATCHED_SPORE == 0
-		#define GetAddress(addressStandard, addressSteam, addressSteamPatched) (baseAddress + addressSteam - 0x400000)
+		#define SelectAddress(addressStandard, addressSteam, addressSteamPatched) addressSteam
 	#else
-		#define GetAddress(addressStandard, addressSteam, addressSteamPatched) (baseAddress + addressSteamPatched - 0x400000)
+		#define SelectAddress(addressStandard, addressSteam, addressSteamPatched) addressSteamPatched
 	#endif
 #endif
-
-#define ADDRESS_SPORE_NEW GetAddress(0xF47650, 0xF47240, 0xF47240)
-#define ADDRESS_SPORE_DELETE GetAddress(0xF47630, 0xF47220, 0xF47220)
-
-#define CALL_SPORE_NEW(size) ((void*(*)(size_t, const char*, int, unsigned, const char*, int)) ADDRESS_SPORE_NEW)(size, "ModAPI", 0, 0, __FILE__, __LINE__)
-#define CALL_SPORE_DELETE(p) ((void(*)(void*)) ADDRESS_SPORE_DELETE)(p)
-
-
-#define SP_NEW(type, size) (type*)SporeClass::operator new(sizeof(type) * size);
-#define SP_DELETE(p) SporeClass::operator delete(p)
-
-
-// To create managers
-#define SINGLETON(className) struct className##Singleton {className* operator->() const{return className::Get();}}; extern className##Singleton
 
 #define ASSERT_SIZE(name, size) static_assert(sizeof(name) == size, "sizeof " #name " != " #size);

@@ -66,8 +66,8 @@ protected:
 
 static_assert(sizeof(LocalizedString) == 0x14, "sizeof(LocalizedString) != 14h");
 
-namespace InternalAddressList(LocalizedString)
+namespace Addresses(LocalizedString)
 {
-	DefineAddress(GetText, GetAddress(0x6B5890, 0x6B5550, 0x6B5550));
-	DefineAddress(SetText, GetAddress(0x6B5780, 0x6B5440, 0x6B5440));
+	DeclareAddress(GetText, SelectAddress(0x6B5890, 0x6B5550, 0x6B5550));
+	DeclareAddress(SetText, SelectAddress(0x6B5780, 0x6B5440, 0x6B5440));
 }

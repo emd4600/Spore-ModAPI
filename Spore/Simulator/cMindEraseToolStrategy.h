@@ -31,8 +31,8 @@ namespace Simulator
 		virtual bool OnHit(cSpaceToolData* pTool, const Vector3& position, cSpaceToolData::SpaceToolHit hitType) override;
 	};
 
-	namespace InternalAddressList(cMindEraseToolStrategy)
+	namespace Addresses(cMindEraseToolStrategy)
 	{
-		DefineAddress(OnHit, GetAddress(0x105C890, NO_ADDRESS, 0x105BCF0));
+		DeclareAddress(OnHit, SelectAddress(0x105C890, NO_ADDRESS, 0x105BCF0));
 	}
 }

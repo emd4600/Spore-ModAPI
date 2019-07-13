@@ -108,12 +108,12 @@ namespace Palettes
 
 	static_assert(sizeof(ColorPickerUI) == 0x50, "sizeof(ColorPickerUI) != 50h");
 
-	namespace InternalAddressList(ColorPickerUI)
+	namespace Addresses(ColorPickerUI)
 	{
-		DefineAddress(Load, GetAddress(0x5A5D50, 0x5A5EB0, 0x5A5EB0));
-		DefineAddress(SetVisible, GetAddress(0x5A3F30, 0x5A41F0, 0x5A41F0));
-		DefineAddress(GetSwatchArea, GetAddress(0x5A4480, 0x5A4740, 0x5A4740));
-		DefineAddress(Update, GetAddress(0x5A6C40, 0x5A6DA0, 0x5A6DA0));
-		DefineAddress(SetColor, GetAddress(0x5A4B50, , PLACEHOLDER));
+		DeclareAddress(Load, SelectAddress(0x5A5D50, 0x5A5EB0, 0x5A5EB0));
+		DeclareAddress(SetVisible, SelectAddress(0x5A3F30, 0x5A41F0, 0x5A41F0));
+		DeclareAddress(GetSwatchArea, SelectAddress(0x5A4480, 0x5A4740, 0x5A4740));
+		DeclareAddress(Update, SelectAddress(0x5A6C40, 0x5A6DA0, 0x5A6DA0));
+		DeclareAddress(SetColor, SelectAddress(0x5A4B50, , 0x5A4E10));
 	}
 }

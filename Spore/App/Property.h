@@ -873,86 +873,86 @@ namespace App
 
 	static_assert(sizeof(Property) == 0x14, "sizeof(Property) != 14h");
 
-	namespace InternalAddressList(Property)
+	namespace Addresses(Property)
 	{
-		DefineAddress(GetValueInt32, GetAddress(0x41ECF0, 0x41E950, 0x41E950));
-		DefineAddress(GetValueFloat, GetAddress(0x41EDD0, 0x41EA30, 0x41EA30));
-		DefineAddress(GetValueBool, GetAddress(0x41EC80, 0x41E8E0, 0x41E8E0));
-		DefineAddress(GetValueUInt32, GetAddress(0x41ED60, 0x41E9C0, 0x41E9C0));
-		DefineAddress(GetValueVector2, GetAddress(0x6A11C0, 0x6A0F70, 0x6A0F70));
-		DefineAddress(GetValueVector3, GetAddress(0xCCE1D0, 0xCCEA40, 0xCCEA90));
-		DefineAddress(GetValueVector4, GetAddress(0x6A11F0, 0x6A0FA0, 0x6A0FA0));
-		DefineAddress(GetValueColorRGB, GetAddress(0x6A1220, 0x6A0FD0, 0x6A0FD0));
-		DefineAddress(GetValueColorRGBA, GetAddress(0x6A1250, 0x6A1000, 0x6A1000));
-		DefineAddress(GetValueKey, GetAddress(0x6A1280, 0x6A1030, 0x6A1030));
-		DefineAddress(GetValueTransform, GetAddress(0x6A12B0, 0x6A1060, 0x6A1060));
-		DefineAddress(GetValueText, GetAddress(0x6A12E0, 0x6A1090, 0x6A1090));
-		DefineAddress(GetValueBBox, GetAddress(0x6A3B10, 0x5F23A0, 0x5F23A0));
-		DefineAddress(GetValueString8, GetAddress(0x60ED10, 0x60EF30, 0x60EF10));
-		DefineAddress(GetValueString16, GetAddress(0x68A740, 0x68A4E0, 0x68A4E0));
+		DeclareAddress(GetValueInt32, SelectAddress(0x41ECF0, 0x41E950, 0x41E950));
+		DeclareAddress(GetValueFloat, SelectAddress(0x41EDD0, 0x41EA30, 0x41EA30));
+		DeclareAddress(GetValueBool, SelectAddress(0x41EC80, 0x41E8E0, 0x41E8E0));
+		DeclareAddress(GetValueUInt32, SelectAddress(0x41ED60, 0x41E9C0, 0x41E9C0));
+		DeclareAddress(GetValueVector2, SelectAddress(0x6A11C0, 0x6A0F70, 0x6A0F70));
+		DeclareAddress(GetValueVector3, SelectAddress(0xCCE1D0, 0xCCEA40, 0xCCEA90));
+		DeclareAddress(GetValueVector4, SelectAddress(0x6A11F0, 0x6A0FA0, 0x6A0FA0));
+		DeclareAddress(GetValueColorRGB, SelectAddress(0x6A1220, 0x6A0FD0, 0x6A0FD0));
+		DeclareAddress(GetValueColorRGBA, SelectAddress(0x6A1250, 0x6A1000, 0x6A1000));
+		DeclareAddress(GetValueKey, SelectAddress(0x6A1280, 0x6A1030, 0x6A1030));
+		DeclareAddress(GetValueTransform, SelectAddress(0x6A12B0, 0x6A1060, 0x6A1060));
+		DeclareAddress(GetValueText, SelectAddress(0x6A12E0, 0x6A1090, 0x6A1090));
+		DeclareAddress(GetValueBBox, SelectAddress(0x6A3B10, 0x5F23A0, 0x5F23A0));
+		DeclareAddress(GetValueString8, SelectAddress(0x60ED10, 0x60EF30, 0x60EF10));
+		DeclareAddress(GetValueString16, SelectAddress(0x68A740, 0x68A4E0, 0x68A4E0));
 
-		DefineAddress(GetValueChar, GetAddress(0x6A3930, 0x6A36E0, 0x6A36E0));
-		DefineAddress(GetValueWChar, GetAddress(0x6A3960, 0x6A3710, 0x6A3710));
-		DefineAddress(GetValueInt8, GetAddress(0x6A3990, 0x6A3740, 0x6A3740));
-		DefineAddress(GetValueUInt8, GetAddress(0x6A39C0, 0x6A3770, 0x6A3770));
-		DefineAddress(GetValueInt16, GetAddress(0x6A39F0, 0x6A37A0, 0x6A37A0));
-		DefineAddress(GetValueUInt16, GetAddress(0x6A2E20, 0x6A37D0, 0x6A37D0));
-		DefineAddress(GetValueInt64, GetAddress(0x6A3A50, 0x6A3800, 0x6A3800));
-		DefineAddress(GetValueUInt64, GetAddress(0x6A3A80, 0x6A3830, 0x6A3830));
-		DefineAddress(GetValueDouble, GetAddress(0x6A3AB0, 0x6A3860, 0x6A3860));
-		DefineAddress(GetValueFlags, GetAddress(0x6A3AE0, 0x6A3890, 0x6A3890));
-		DefineAddress(GetValue, GetAddress(0x447140, 0x4474C0, 0x4474C0));
-
-
-		DefineAddress(Set, GetAddress(0x93E250, 0x93DCF0, 0x93DCF0));
-		DefineAddress(SetValueInt32, GetAddress(0x422E10, 0x422EB0, 0x422EB0));
-		DefineAddress(SetValueUInt32, GetAddress(0x428400, 0x428010, 0x428010));
-		DefineAddress(SetValueKey, GetAddress(0x422EA0, 0x422F40, 0x422F40));
-		DefineAddress(SetValueString8, GetAddress(0x4B59E0, 0x4B62F0, 0x4B62F0));
-		DefineAddress(SetValueString16, GetAddress(0x427E60, 0x427A10, 0x427A10));
-		DefineAddress(SetValueFloat, GetAddress(0x428490, 0x4280A0, 0x4280A0));
-		DefineAddress(SetValueBool, GetAddress(0x422D80, 0x422E20, 0x422E20));
-		DefineAddress(SetValueBBox, GetAddress(0x4781B0, 0x478800, 0x478800));
-		DefineAddress(SetValueVector2, GetAddress(0x6A3760, 0x6A3510, 0x6A3510));
-		DefineAddress(SetValueVector3, GetAddress(0x6A37C0, 0x6A3570, 0x6A3570));
-		DefineAddress(SetValueVector4, GetAddress(0x6A3830, 0x6A35E0, 0x6A35E0));
-		DefineAddress(SetValueColorRGB, GetAddress(0x6A3860, 0x6A3610, 0x6A3610));
-		DefineAddress(SetValueColorRGBA, GetAddress(0x6A38D0, 0x6A3680, 0x6A3680));
+		DeclareAddress(GetValueChar, SelectAddress(0x6A3930, 0x6A36E0, 0x6A36E0));
+		DeclareAddress(GetValueWChar, SelectAddress(0x6A3960, 0x6A3710, 0x6A3710));
+		DeclareAddress(GetValueInt8, SelectAddress(0x6A3990, 0x6A3740, 0x6A3740));
+		DeclareAddress(GetValueUInt8, SelectAddress(0x6A39C0, 0x6A3770, 0x6A3770));
+		DeclareAddress(GetValueInt16, SelectAddress(0x6A39F0, 0x6A37A0, 0x6A37A0));
+		DeclareAddress(GetValueUInt16, SelectAddress(0x6A2E20, 0x6A37D0, 0x6A37D0));
+		DeclareAddress(GetValueInt64, SelectAddress(0x6A3A50, 0x6A3800, 0x6A3800));
+		DeclareAddress(GetValueUInt64, SelectAddress(0x6A3A80, 0x6A3830, 0x6A3830));
+		DeclareAddress(GetValueDouble, SelectAddress(0x6A3AB0, 0x6A3860, 0x6A3860));
+		DeclareAddress(GetValueFlags, SelectAddress(0x6A3AE0, 0x6A3890, 0x6A3890));
+		DeclareAddress(GetValue, SelectAddress(0x447140, 0x4474C0, 0x4474C0));
 
 
-		DefineAddress(GetBool, GetAddress(0x407140, 0x407190, 0x407190));
-		DefineAddress(GetFloat, GetAddress(0x40CE70, 0x40CF10, 0x40CF10));
-		DefineAddress(GetInt32, GetAddress(0x410290, 0x410330, 0x410330));
-		DefineAddress(GetUInt32, GetAddress(0x4AF0A0, 0x4AF730, 0x4AF730));
-		DefineAddress(GetVector2, GetAddress(0x6A1310, 0x6A10C0, 0x6A10C0));
-		DefineAddress(GetVector3, GetAddress(0x6A1360, 0x6A1110, 0x6A1110));
-		DefineAddress(GetVector4, GetAddress(0x6A13B0, 0x6A1160, 0x6A1160));
-		DefineAddress(GetColorRGB, GetAddress(0x6A1400, 0x6A11B0, 0x6A11B0));
-		DefineAddress(GetColorRGBA, GetAddress(0x6A1450, 0x6A1200, 0x6A1200));
-		DefineAddress(GetKey, GetAddress(0x6A14A0, 0x6A1250, 0x6A1250));
-		DefineAddress(GetKeyInstanceID, GetAddress(0x6A14F0, 0x6A12A0, 0x6A12A0));
-		DefineAddress(GetKeyGroupID, GetAddress(0x6A1530, 0x6A12E0, 0x6A12E0));
-		DefineAddress(GetKeyTypeID, GetAddress(0x6A1570, 0x6A1320, 0x6A1320));
-		DefineAddress(GetText, GetAddress(0x6A15B0, 0x6A1360, 0x6A1360));
-		DefineAddress(GetCString8, GetAddress(0x6A16A0, 0x6A1450, 0x6A1450));
-		DefineAddress(GetCString16, GetAddress(0x6A16E0, 0x6A1490, 0x6A1490));
-		DefineAddress(GetString8, GetAddress(0x6A1600, 0x6A13B0, 0x6A13B0));
-		DefineAddress(GetString16, GetAddress(0x6A1650, 0x6A1400, 0x6A1400));
+		DeclareAddress(Set, SelectAddress(0x93E250, 0x93DCF0, 0x93DCF0));
+		DeclareAddress(SetValueInt32, SelectAddress(0x422E10, 0x422EB0, 0x422EB0));
+		DeclareAddress(SetValueUInt32, SelectAddress(0x428400, 0x428010, 0x428010));
+		DeclareAddress(SetValueKey, SelectAddress(0x422EA0, 0x422F40, 0x422F40));
+		DeclareAddress(SetValueString8, SelectAddress(0x4B59E0, 0x4B62F0, 0x4B62F0));
+		DeclareAddress(SetValueString16, SelectAddress(0x427E60, 0x427A10, 0x427A10));
+		DeclareAddress(SetValueFloat, SelectAddress(0x428490, 0x4280A0, 0x4280A0));
+		DeclareAddress(SetValueBool, SelectAddress(0x422D80, 0x422E20, 0x422E20));
+		DeclareAddress(SetValueBBox, SelectAddress(0x4781B0, 0x478800, 0x478800));
+		DeclareAddress(SetValueVector2, SelectAddress(0x6A3760, 0x6A3510, 0x6A3510));
+		DeclareAddress(SetValueVector3, SelectAddress(0x6A37C0, 0x6A3570, 0x6A3570));
+		DeclareAddress(SetValueVector4, SelectAddress(0x6A3830, 0x6A35E0, 0x6A35E0));
+		DeclareAddress(SetValueColorRGB, SelectAddress(0x6A3860, 0x6A3610, 0x6A3610));
+		DeclareAddress(SetValueColorRGBA, SelectAddress(0x6A38D0, 0x6A3680, 0x6A3680));
 
-		DefineAddress(GetArrayBool, GetAddress(0x6A09B0, 0x6A0760, 0x6A0760));
-		DefineAddress(GetArrayInt32, GetAddress(0x6A0A20, 0x6A07D0, 0x6A07D0));
-		DefineAddress(GetArrayUInt32, GetAddress(0x6A0A90, 0x6A0840, 0x6A0840));
-		DefineAddress(GetArrayFloat, GetAddress(0x6A0B00, 0x6A08B0, 0x6A08B0));
-		DefineAddress(GetArrayVector2, GetAddress(0x6A0B70, 0x6A0920, 0x6A0920));
-		DefineAddress(GetArrayVector3, GetAddress(0x6A0BE0, 0x6A0990, 0x6A0990));
-		DefineAddress(GetArrayVector4, GetAddress(0x6A0C50, 0x6A0A00, 0x6A0A00));
-		DefineAddress(GetArrayColorRGB, GetAddress(0x6A0CC0, 0x6A0A70, 0x6A0A70));
-		DefineAddress(GetArrayKey, GetAddress(0x6A0D30, 0x6A0AE0, 0x6A0AE0));
-		DefineAddress(GetArrayString8, GetAddress(0x6A0DA0, 0x6A0B50, 0x6A0B50));
-		DefineAddress(GetArrayString16, GetAddress(0x6A0E10, 0x6A0BC0, 0x6A0BC0));
-		DefineAddress(GetArrayTransform, GetAddress(0x6A0E80, 0x6A0C30, 0x6A0C30));
 
-		DefineAddress(Clear, GetAddress(0x93E0A0, 0x93DAF0, 0x93DAF0));
+		DeclareAddress(GetBool, SelectAddress(0x407140, 0x407190, 0x407190));
+		DeclareAddress(GetFloat, SelectAddress(0x40CE70, 0x40CF10, 0x40CF10));
+		DeclareAddress(GetInt32, SelectAddress(0x410290, 0x410330, 0x410330));
+		DeclareAddress(GetUInt32, SelectAddress(0x4AF0A0, 0x4AF730, 0x4AF730));
+		DeclareAddress(GetVector2, SelectAddress(0x6A1310, 0x6A10C0, 0x6A10C0));
+		DeclareAddress(GetVector3, SelectAddress(0x6A1360, 0x6A1110, 0x6A1110));
+		DeclareAddress(GetVector4, SelectAddress(0x6A13B0, 0x6A1160, 0x6A1160));
+		DeclareAddress(GetColorRGB, SelectAddress(0x6A1400, 0x6A11B0, 0x6A11B0));
+		DeclareAddress(GetColorRGBA, SelectAddress(0x6A1450, 0x6A1200, 0x6A1200));
+		DeclareAddress(GetKey, SelectAddress(0x6A14A0, 0x6A1250, 0x6A1250));
+		DeclareAddress(GetKeyInstanceID, SelectAddress(0x6A14F0, 0x6A12A0, 0x6A12A0));
+		DeclareAddress(GetKeyGroupID, SelectAddress(0x6A1530, 0x6A12E0, 0x6A12E0));
+		DeclareAddress(GetKeyTypeID, SelectAddress(0x6A1570, 0x6A1320, 0x6A1320));
+		DeclareAddress(GetText, SelectAddress(0x6A15B0, 0x6A1360, 0x6A1360));
+		DeclareAddress(GetCString8, SelectAddress(0x6A16A0, 0x6A1450, 0x6A1450));
+		DeclareAddress(GetCString16, SelectAddress(0x6A16E0, 0x6A1490, 0x6A1490));
+		DeclareAddress(GetString8, SelectAddress(0x6A1600, 0x6A13B0, 0x6A13B0));
+		DeclareAddress(GetString16, SelectAddress(0x6A1650, 0x6A1400, 0x6A1400));
+
+		DeclareAddress(GetArrayBool, SelectAddress(0x6A09B0, 0x6A0760, 0x6A0760));
+		DeclareAddress(GetArrayInt32, SelectAddress(0x6A0A20, 0x6A07D0, 0x6A07D0));
+		DeclareAddress(GetArrayUInt32, SelectAddress(0x6A0A90, 0x6A0840, 0x6A0840));
+		DeclareAddress(GetArrayFloat, SelectAddress(0x6A0B00, 0x6A08B0, 0x6A08B0));
+		DeclareAddress(GetArrayVector2, SelectAddress(0x6A0B70, 0x6A0920, 0x6A0920));
+		DeclareAddress(GetArrayVector3, SelectAddress(0x6A0BE0, 0x6A0990, 0x6A0990));
+		DeclareAddress(GetArrayVector4, SelectAddress(0x6A0C50, 0x6A0A00, 0x6A0A00));
+		DeclareAddress(GetArrayColorRGB, SelectAddress(0x6A0CC0, 0x6A0A70, 0x6A0A70));
+		DeclareAddress(GetArrayKey, SelectAddress(0x6A0D30, 0x6A0AE0, 0x6A0AE0));
+		DeclareAddress(GetArrayString8, SelectAddress(0x6A0DA0, 0x6A0B50, 0x6A0B50));
+		DeclareAddress(GetArrayString16, SelectAddress(0x6A0E10, 0x6A0BC0, 0x6A0BC0));
+		DeclareAddress(GetArrayTransform, SelectAddress(0x6A0E80, 0x6A0C30, 0x6A0C30));
+
+		DeclareAddress(Clear, SelectAddress(0x93E0A0, 0x93DAF0, 0x93DAF0));
 	}
 
 	inline Property::Property()
@@ -969,7 +969,7 @@ namespace App
 		}
 	}
 
-	inline auto_METHOD_VOID(Property, Clear, PARAMS(bool arg_0), PARAMS(arg_0));
+	inline auto_METHOD_VOID(Property, Clear, Args(bool arg_0), Args(arg_0));
 
 	inline auto_METHOD_(Property, int32_t*, GetValueInt32);
 	inline auto_METHOD_(Property, float*, GetValueFloat);
@@ -1002,53 +1002,53 @@ namespace App
 	inline auto_METHOD_(Property, void*, GetValue);
 
 
-	inline auto_METHOD(Property, bool, Set, PARAMS(PropertyType type, int flags, void* pValue, size_t nValueSize, size_t nValueCount), PARAMS(type, flags, pValue, nValueSize, nValueCount));
-	inline auto_METHOD(Property, Property&, SetValueInt32, PARAMS(const int32_t& value), PARAMS(value));
-	inline auto_METHOD(Property, Property&, SetValueUInt32, PARAMS(const uint32_t& value), PARAMS(value));
-	inline auto_METHOD(Property, Property&, SetValueKey, PARAMS(const ResourceKey& value), PARAMS(value));
-	inline auto_METHOD(Property, Property&, SetValueString8, PARAMS(const eastl::string8& value), PARAMS(value));
-	inline auto_METHOD(Property, Property&, SetValueString16, PARAMS(const eastl::string16& value), PARAMS(value));
-	inline auto_METHOD(Property, Property&, SetValueFloat, PARAMS(const float& value), PARAMS(value));
-	inline auto_METHOD(Property, Property&, SetValueBool, PARAMS(const bool& value), PARAMS(value));
-	inline auto_METHOD(Property, Property&, SetValueBBox, PARAMS(const BoundingBox& value), PARAMS(value));
-	inline auto_METHOD(Property, Property&, SetValueVector2, PARAMS(const Vector2& value), PARAMS(value));
-	inline auto_METHOD(Property, Property&, SetValueVector3, PARAMS(const Vector3& value), PARAMS(value));
-	inline auto_METHOD(Property, Property&, SetValueVector4, PARAMS(const Vector4& value), PARAMS(value));
-	inline auto_METHOD(Property, Property&, SetValueColorRGB, PARAMS(const ColorRGB& value), PARAMS(value));
-	inline auto_METHOD(Property, Property&, SetValueColorRGBA, PARAMS(const ColorRGBA& value), PARAMS(value));
+	inline auto_METHOD(Property, bool, Set, Args(PropertyType type, int flags, void* pValue, size_t nValueSize, size_t nValueCount), Args(type, flags, pValue, nValueSize, nValueCount));
+	inline auto_METHOD(Property, Property&, SetValueInt32, Args(const int32_t& value), Args(value));
+	inline auto_METHOD(Property, Property&, SetValueUInt32, Args(const uint32_t& value), Args(value));
+	inline auto_METHOD(Property, Property&, SetValueKey, Args(const ResourceKey& value), Args(value));
+	inline auto_METHOD(Property, Property&, SetValueString8, Args(const eastl::string8& value), Args(value));
+	inline auto_METHOD(Property, Property&, SetValueString16, Args(const eastl::string16& value), Args(value));
+	inline auto_METHOD(Property, Property&, SetValueFloat, Args(const float& value), Args(value));
+	inline auto_METHOD(Property, Property&, SetValueBool, Args(const bool& value), Args(value));
+	inline auto_METHOD(Property, Property&, SetValueBBox, Args(const BoundingBox& value), Args(value));
+	inline auto_METHOD(Property, Property&, SetValueVector2, Args(const Vector2& value), Args(value));
+	inline auto_METHOD(Property, Property&, SetValueVector3, Args(const Vector3& value), Args(value));
+	inline auto_METHOD(Property, Property&, SetValueVector4, Args(const Vector4& value), Args(value));
+	inline auto_METHOD(Property, Property&, SetValueColorRGB, Args(const ColorRGB& value), Args(value));
+	inline auto_METHOD(Property, Property&, SetValueColorRGBA, Args(const ColorRGBA& value), Args(value));
 
 
-	inline auto_STATIC_METHOD(Property, bool, GetBool, PARAMS(const PropertyList* prop, uint32_t propertyID, bool& dst), PARAMS(prop, propertyID, dst));
-	inline auto_STATIC_METHOD(Property, bool, GetFloat, PARAMS(const PropertyList* prop, uint32_t propertyID, float& dst), PARAMS(prop, propertyID, dst));
-	inline auto_STATIC_METHOD(Property, bool, GetInt32, PARAMS(const PropertyList* prop, uint32_t propertyID, int32_t& dst), PARAMS(prop, propertyID, dst));
-	inline auto_STATIC_METHOD(Property, bool, GetUInt32, PARAMS(const PropertyList* prop, uint32_t propertyID, uint32_t& dst), PARAMS(prop, propertyID, dst));
-	inline auto_STATIC_METHOD(Property, bool, GetVector2, PARAMS(const PropertyList* prop, uint32_t propertyID, Vector2& dst), PARAMS(prop, propertyID, dst));
-	inline auto_STATIC_METHOD(Property, bool, GetVector3, PARAMS(const PropertyList* prop, uint32_t propertyID, Vector3& dst), PARAMS(prop, propertyID, dst));
-	inline auto_STATIC_METHOD(Property, bool, GetVector4, PARAMS(const PropertyList* prop, uint32_t propertyID, Vector4& dst), PARAMS(prop, propertyID, dst));
-	inline auto_STATIC_METHOD(Property, bool, GetColorRGB, PARAMS(const PropertyList* prop, uint32_t propertyID, ColorRGB& dst), PARAMS(prop, propertyID, dst));
-	inline auto_STATIC_METHOD(Property, bool, GetColorRGBA, PARAMS(const PropertyList* prop, uint32_t propertyID, ColorRGBA& dst), PARAMS(prop, propertyID, dst));
-	inline auto_STATIC_METHOD(Property, bool, GetKey, PARAMS(const PropertyList* prop, uint32_t propertyID, ResourceKey& dst), PARAMS(prop, propertyID, dst));
-	inline auto_STATIC_METHOD(Property, bool, GetKeyInstanceID, PARAMS(const PropertyList* prop, uint32_t propertyID, uint32_t& dst), PARAMS(prop, propertyID, dst));
-	inline auto_STATIC_METHOD(Property, bool, GetKeyGroupID, PARAMS(const PropertyList* prop, uint32_t propertyID, uint32_t& dst), PARAMS(prop, propertyID, dst));
-	inline auto_STATIC_METHOD(Property, bool, GetKeyTypeID, PARAMS(const PropertyList* prop, uint32_t propertyID, uint32_t& dst), PARAMS(prop, propertyID, dst));
-	inline auto_STATIC_METHOD(Property, bool, GetText, PARAMS(const PropertyList* prop, uint32_t propertyID, LocalizedString& dst), PARAMS(prop, propertyID, dst));
-	inline auto_STATIC_METHOD(Property, bool, GetCString8, PARAMS(const PropertyList* prop, uint32_t propertyID, char*& dst), PARAMS(prop, propertyID, dst));
-	inline auto_STATIC_METHOD(Property, bool, GetCString16, PARAMS(const PropertyList* prop, uint32_t propertyID, wchar_t*& dst), PARAMS(prop, propertyID, dst));
-	inline auto_STATIC_METHOD(Property, bool, GetString8, PARAMS(const PropertyList* prop, uint32_t propertyID, eastl::string& dst), PARAMS(prop, propertyID, dst));
-	inline auto_STATIC_METHOD(Property, bool, GetString16, PARAMS(const PropertyList* prop, uint32_t propertyID, eastl::string16& dst), PARAMS(prop, propertyID, dst));
+	inline auto_STATIC_METHOD(Property, bool, GetBool, Args(const PropertyList* prop, uint32_t propertyID, bool& dst), Args(prop, propertyID, dst));
+	inline auto_STATIC_METHOD(Property, bool, GetFloat, Args(const PropertyList* prop, uint32_t propertyID, float& dst), Args(prop, propertyID, dst));
+	inline auto_STATIC_METHOD(Property, bool, GetInt32, Args(const PropertyList* prop, uint32_t propertyID, int32_t& dst), Args(prop, propertyID, dst));
+	inline auto_STATIC_METHOD(Property, bool, GetUInt32, Args(const PropertyList* prop, uint32_t propertyID, uint32_t& dst), Args(prop, propertyID, dst));
+	inline auto_STATIC_METHOD(Property, bool, GetVector2, Args(const PropertyList* prop, uint32_t propertyID, Vector2& dst), Args(prop, propertyID, dst));
+	inline auto_STATIC_METHOD(Property, bool, GetVector3, Args(const PropertyList* prop, uint32_t propertyID, Vector3& dst), Args(prop, propertyID, dst));
+	inline auto_STATIC_METHOD(Property, bool, GetVector4, Args(const PropertyList* prop, uint32_t propertyID, Vector4& dst), Args(prop, propertyID, dst));
+	inline auto_STATIC_METHOD(Property, bool, GetColorRGB, Args(const PropertyList* prop, uint32_t propertyID, ColorRGB& dst), Args(prop, propertyID, dst));
+	inline auto_STATIC_METHOD(Property, bool, GetColorRGBA, Args(const PropertyList* prop, uint32_t propertyID, ColorRGBA& dst), Args(prop, propertyID, dst));
+	inline auto_STATIC_METHOD(Property, bool, GetKey, Args(const PropertyList* prop, uint32_t propertyID, ResourceKey& dst), Args(prop, propertyID, dst));
+	inline auto_STATIC_METHOD(Property, bool, GetKeyInstanceID, Args(const PropertyList* prop, uint32_t propertyID, uint32_t& dst), Args(prop, propertyID, dst));
+	inline auto_STATIC_METHOD(Property, bool, GetKeyGroupID, Args(const PropertyList* prop, uint32_t propertyID, uint32_t& dst), Args(prop, propertyID, dst));
+	inline auto_STATIC_METHOD(Property, bool, GetKeyTypeID, Args(const PropertyList* prop, uint32_t propertyID, uint32_t& dst), Args(prop, propertyID, dst));
+	inline auto_STATIC_METHOD(Property, bool, GetText, Args(const PropertyList* prop, uint32_t propertyID, LocalizedString& dst), Args(prop, propertyID, dst));
+	inline auto_STATIC_METHOD(Property, bool, GetCString8, Args(const PropertyList* prop, uint32_t propertyID, char*& dst), Args(prop, propertyID, dst));
+	inline auto_STATIC_METHOD(Property, bool, GetCString16, Args(const PropertyList* prop, uint32_t propertyID, wchar_t*& dst), Args(prop, propertyID, dst));
+	inline auto_STATIC_METHOD(Property, bool, GetString8, Args(const PropertyList* prop, uint32_t propertyID, eastl::string& dst), Args(prop, propertyID, dst));
+	inline auto_STATIC_METHOD(Property, bool, GetString16, Args(const PropertyList* prop, uint32_t propertyID, eastl::string16& dst), Args(prop, propertyID, dst));
 
-	inline auto_STATIC_METHOD(Property, bool, GetArrayBool, PARAMS(const PropertyList* prop, uint32_t propertyID, size_t& dstCount, bool*& dst), PARAMS(prop, propertyID, dstCount, dst));
-	inline auto_STATIC_METHOD(Property, bool, GetArrayInt32, PARAMS(const PropertyList* prop, uint32_t propertyID, size_t& dstCount, int32_t*& dst), PARAMS(prop, propertyID, dstCount, dst));
-	inline auto_STATIC_METHOD(Property, bool, GetArrayUInt32, PARAMS(const PropertyList* prop, uint32_t propertyID, size_t& dstCount, uint32_t*& dst), PARAMS(prop, propertyID, dstCount, dst));
-	inline auto_STATIC_METHOD(Property, bool, GetArrayFloat, PARAMS(const PropertyList* prop, uint32_t propertyID, size_t& dstCount, float*& dst), PARAMS(prop, propertyID, dstCount, dst));
-	inline auto_STATIC_METHOD(Property, bool, GetArrayVector2, PARAMS(const PropertyList* prop, uint32_t propertyID, size_t& dstCount, Vector2*& dst), PARAMS(prop, propertyID, dstCount, dst));
-	inline auto_STATIC_METHOD(Property, bool, GetArrayVector3, PARAMS(const PropertyList* prop, uint32_t propertyID, size_t& dstCount, Vector3*& dst), PARAMS(prop, propertyID, dstCount, dst));
-	inline auto_STATIC_METHOD(Property, bool, GetArrayVector4, PARAMS(const PropertyList* prop, uint32_t propertyID, size_t& dstCount, Vector4*& dst), PARAMS(prop, propertyID, dstCount, dst));
-	inline auto_STATIC_METHOD(Property, bool, GetArrayColorRGB, PARAMS(const PropertyList* prop, uint32_t propertyID, size_t& dstCount, ColorRGB*& dst), PARAMS(prop, propertyID, dstCount, dst));
-	inline auto_STATIC_METHOD(Property, bool, GetArrayKey, PARAMS(const PropertyList* prop, uint32_t propertyID, size_t& dstCount, ResourceKey*& dst), PARAMS(prop, propertyID, dstCount, dst));
-	inline auto_STATIC_METHOD(Property, bool, GetArrayString8, PARAMS(const PropertyList* prop, uint32_t propertyID, size_t& dstCount, eastl::string8*& dst), PARAMS(prop, propertyID, dstCount, dst));
-	inline auto_STATIC_METHOD(Property, bool, GetArrayString16, PARAMS(const PropertyList* prop, uint32_t propertyID, size_t& dstCount, eastl::string16*& dst), PARAMS(prop, propertyID, dstCount, dst));
-	inline auto_STATIC_METHOD(Property, bool, GetArrayTransform, PARAMS(const PropertyList* prop, uint32_t propertyID, size_t& dstCount, Transform*& dst), PARAMS(prop, propertyID, dstCount, dst));
+	inline auto_STATIC_METHOD(Property, bool, GetArrayBool, Args(const PropertyList* prop, uint32_t propertyID, size_t& dstCount, bool*& dst), Args(prop, propertyID, dstCount, dst));
+	inline auto_STATIC_METHOD(Property, bool, GetArrayInt32, Args(const PropertyList* prop, uint32_t propertyID, size_t& dstCount, int32_t*& dst), Args(prop, propertyID, dstCount, dst));
+	inline auto_STATIC_METHOD(Property, bool, GetArrayUInt32, Args(const PropertyList* prop, uint32_t propertyID, size_t& dstCount, uint32_t*& dst), Args(prop, propertyID, dstCount, dst));
+	inline auto_STATIC_METHOD(Property, bool, GetArrayFloat, Args(const PropertyList* prop, uint32_t propertyID, size_t& dstCount, float*& dst), Args(prop, propertyID, dstCount, dst));
+	inline auto_STATIC_METHOD(Property, bool, GetArrayVector2, Args(const PropertyList* prop, uint32_t propertyID, size_t& dstCount, Vector2*& dst), Args(prop, propertyID, dstCount, dst));
+	inline auto_STATIC_METHOD(Property, bool, GetArrayVector3, Args(const PropertyList* prop, uint32_t propertyID, size_t& dstCount, Vector3*& dst), Args(prop, propertyID, dstCount, dst));
+	inline auto_STATIC_METHOD(Property, bool, GetArrayVector4, Args(const PropertyList* prop, uint32_t propertyID, size_t& dstCount, Vector4*& dst), Args(prop, propertyID, dstCount, dst));
+	inline auto_STATIC_METHOD(Property, bool, GetArrayColorRGB, Args(const PropertyList* prop, uint32_t propertyID, size_t& dstCount, ColorRGB*& dst), Args(prop, propertyID, dstCount, dst));
+	inline auto_STATIC_METHOD(Property, bool, GetArrayKey, Args(const PropertyList* prop, uint32_t propertyID, size_t& dstCount, ResourceKey*& dst), Args(prop, propertyID, dstCount, dst));
+	inline auto_STATIC_METHOD(Property, bool, GetArrayString8, Args(const PropertyList* prop, uint32_t propertyID, size_t& dstCount, eastl::string8*& dst), Args(prop, propertyID, dstCount, dst));
+	inline auto_STATIC_METHOD(Property, bool, GetArrayString16, Args(const PropertyList* prop, uint32_t propertyID, size_t& dstCount, eastl::string16*& dst), Args(prop, propertyID, dstCount, dst));
+	inline auto_STATIC_METHOD(Property, bool, GetArrayTransform, Args(const PropertyList* prop, uint32_t propertyID, size_t& dstCount, Transform*& dst), Args(prop, propertyID, dstCount, dst));
 	//TODO Bounding boxes?
 
 

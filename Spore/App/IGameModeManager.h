@@ -214,8 +214,8 @@ namespace App
 	//// INTERNAL IMPLEMENTATION ////
 	/////////////////////////////////
 
-	namespace InternalAddressList(IGameModeManager)
+	namespace Addresses(IGameModeManager)
 	{
-		DefineAddress(Get, GetAddress(0x67DE30, 0x67DCD0, 0x67DCD0));
+		DeclareAddress(Get, SelectAddress(0x67DE30, 0x67DCD0, 0x67DCD0));
 	}
 }

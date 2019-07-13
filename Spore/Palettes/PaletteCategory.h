@@ -130,11 +130,11 @@ namespace Palettes {
 
 	static_assert(sizeof(PaletteCategory) == 0x90, "sizeof(PaletteCategory) != 90h");
 
-	namespace InternalAddressList(PaletteCategory)
+	namespace Addresses(PaletteCategory)
 	{
-		DefineAddress(ReadProp, GetAddress(0x5C1D50, 0x5C1EE0, 0x5C1F10));
-		DefineAddress(GetCategory, GetAddress(0x5C1D00, 0x5C1E30, 0x5C1E60));
-		DefineAddress(HasCategory, GetAddress(0x5C1CD0, 0x5C1E00, 0x5C1E30));
+		DeclareAddress(ReadProp, SelectAddress(0x5C1D50, 0x5C1EE0, 0x5C1F10));
+		DeclareAddress(GetCategory, SelectAddress(0x5C1D00, 0x5C1E30, 0x5C1E60));
+		DeclareAddress(HasCategory, SelectAddress(0x5C1CD0, 0x5C1E00, 0x5C1E30));
 	}
 
 	inline PalettePage* PaletteCategory::GetPageAt(size_t nIndex)

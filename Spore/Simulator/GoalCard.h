@@ -24,8 +24,10 @@ namespace Simulator
 	class GoalCard
 	{
 	protected:
-		/* 84h */	int mnEvoPointReward;
-		/* 88h */	float mfPriority;
+		char _padding_0[0x84];
+		/* 84h */	int mEvoPointReward;
+		/* 88h */	float mPriority;
+		char _padding_8C[0xC];
 	};
 
 	/////////////////////////////////

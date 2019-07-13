@@ -23,20 +23,20 @@
 
 namespace UTFWin
 {
-	auto_METHOD_VIRTUAL_VOID(Image, Image, SetSerializer, PARAMS(Serializer& dst), PARAMS(dst));
+	auto_METHOD_VIRTUAL_VOID(Image, Image, SetSerializer, Args(Serializer& dst), Args(dst));
 	auto_METHOD_VIRTUAL_const_(Image, Image, uint32_t, GetProxyID);
 
 	auto_STATIC_METHOD(Image, bool, GetImage,
-		PARAMS(const ResourceKey& name, Image*& dst, bool arg_8, int arg_C, int arg_10),
-		PARAMS(name, dst, arg_8, arg_C, arg_10));
+		Args(const ResourceKey& name, Image*& dst, bool arg_8, int arg_C, int arg_10),
+		Args(name, dst, arg_8, arg_C, arg_10));
 
 	auto_STATIC_METHOD(Image, bool, SetBackground,
-		PARAMS(IWindow* pWindow, Image* pImage, int nImageIndex),
-		PARAMS(pWindow, pImage, nImageIndex));
+		Args(IWindow* pWindow, Image* pImage, int nImageIndex),
+		Args(pWindow, pImage, nImageIndex));
 
 	auto_STATIC_METHOD(Image, bool, SetBackgroundByKey,
-		PARAMS(IWindow* pWindow, const ResourceKey imageName, int nImageIndex),
-		PARAMS(pWindow, imageName, nImageIndex));
+		Args(IWindow* pWindow, const ResourceKey imageName, int nImageIndex),
+		Args(pWindow, imageName, nImageIndex));
 
 	int Image::AddRef()
 	{

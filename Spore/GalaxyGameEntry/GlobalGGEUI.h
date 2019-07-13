@@ -52,9 +52,10 @@ namespace GalaxyGameEntry
 
 	//	static GlobalGGEUI* GetGlobalGGEUI()
 	//	{
-	//		return *(GlobalGGEUI**)GetAddress(0x16A55C4, 0x16A2324, 0x16A1344);
+	//		return *(GlobalGGEUI**)SelectAddress(0x16A55C4, 0x16A2324, 0x16A1344);
 	//	}
 	//};
+	//PLACEHOLDER don't we need a Get method?
 
 	struct Unknown
 	{
@@ -83,7 +84,7 @@ namespace GalaxyGameEntry
 
 			kModeScenario = 0x0D,
 		};
-
+		//PLACEHOLDER wrong, where are the vftables??
 		/* 10h */	int field_10;
 		/* 14h */	int field_14;
 		/* 18h */	int field_18;
@@ -159,9 +160,9 @@ namespace GalaxyGameEntry
 		/* 271h */	bool mbScenarioStarEffectsEnabled;
 	};
 
-	namespace InternalAddressList(GlobalGGEUI)
+	namespace Addresses(GlobalGGEUI)
 	{
-		DefineAddress(Initialize, GetAddress(0xDE9290, 0xDEA200, 0xDEA1B0));
-		DefineAddress(InitializeUI, GetAddress(0xDE49E0, 0xDE5950, 0xDE5900));
+		DeclareAddress(Initialize, SelectAddress(0xDE9290, 0xDEA200, 0xDEA1B0));
+		DeclareAddress(InitializeUI, SelectAddress(0xDE49E0, 0xDE5950, 0xDE5900));
 	}
 }

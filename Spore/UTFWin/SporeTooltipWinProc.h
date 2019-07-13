@@ -116,12 +116,12 @@ namespace UTFWin
 
 	static_assert(sizeof(SporeTooltipWinProc) == 0x68, "sizeof(SporeTooltipWinProc) != 68h");
 
-	namespace InternalAddressList(SporeTooltipWinProc)
+	namespace Addresses(SporeTooltipWinProc)
 	{
-		DefineAddress(GetEventFlags, GetAddress(0x835B00, 0x835300, 0x835380));
-		DefineAddress(HandleUIMessage, GetAddress(0x8362B0, 0x835AB0, 0x835B30));
+		DeclareAddress(GetEventFlags, SelectAddress(0x835B00, 0x835300, 0x835380));
+		DeclareAddress(HandleUIMessage, SelectAddress(0x8362B0, 0x835AB0, 0x835B30));
 
-		DefineAddress(SetSerializer, GetAddress(0x835E40, 0x835640, 0x8356C0));
-		DefineAddress(GetProxyID, GetAddress(0x8365C0, 0x835DC0, 0x8365C0));
+		DeclareAddress(SetSerializer, SelectAddress(0x835E40, 0x835640, 0x8356C0));
+		DeclareAddress(GetProxyID, SelectAddress(0x8365C0, 0x835DC0, 0x8365C0));
 	}
 }

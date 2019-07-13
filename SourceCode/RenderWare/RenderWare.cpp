@@ -20,7 +20,7 @@
 
 namespace RenderWare
 {
-	auto_METHOD_VOID(RWHeader, GetRWObject, PARAMS(int index, RWObjectQuery& query), PARAMS(index, query));
+	auto_METHOD_VOID(RWHeader, GetRWObject, Args(int index, RWObjectQuery& query), Args(index, query));
 
 	RWObjectQuery::RWObjectQuery()
 		: typeCode(0)

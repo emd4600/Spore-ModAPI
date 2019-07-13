@@ -95,9 +95,9 @@ namespace Palettes
 
 	static_assert(sizeof(PalettePageUI) == 0x48, "sizeof(PalettePageUI) != 48h");
 
-	namespace InternalAddressList(PalettePageUI)
+	namespace Addresses(PalettePageUI)
 	{
-		DefineAddress(Load, GetAddress(0x5C9020, 0x5C92F0, 0x5C9320));
-		DefineAddress(GetItemArea, GetAddress(0x5C8CD0, 0x5C8E30, 0x5C8E60));
+		DeclareAddress(Load, SelectAddress(0x5C9020, 0x5C92F0, 0x5C9320));
+		DeclareAddress(GetItemArea, SelectAddress(0x5C8CD0, 0x5C8E30, 0x5C8E60));
 	}
 }

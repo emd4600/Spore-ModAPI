@@ -20,5 +20,5 @@
 
 namespace Simulator
 {
-	auto_METHOD(cGameDataUFO, float, ChangeEnergy, PARAMS(float delta), PARAMS(delta));
+	auto_METHOD(cGameDataUFO, float, ChangeEnergy, Args(float delta), Args(delta));
 }

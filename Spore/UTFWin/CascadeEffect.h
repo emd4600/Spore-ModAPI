@@ -95,18 +95,18 @@ namespace UTFWin
 
 	//// INTERNAL IMPLEMENTATION ////
 
-	namespace InternalAddressList(CascadeEffect)
+	namespace Addresses(CascadeEffect)
 	{
-		DefineAddress(GetEventFlags, GetAddress(0x9675B0, 0x8F2710, 0x8F2720));
-		DefineAddress(HandleUIMessage, GetAddress(0x967650, 0x9672D0, 0x9672D0));
+		DeclareAddress(GetEventFlags, SelectAddress(0x9675B0, 0x8F2710, 0x8F2720));
+		DeclareAddress(HandleUIMessage, SelectAddress(0x967650, 0x9672D0, 0x9672D0));
 
-		DefineAddress(SetSerializer, GetAddress(0x967620, 0x9672A0, 0x9672A0));
-		DefineAddress(GetProxyID, GetAddress(0x9675E0, 0x967260, 0x967260));
+		DeclareAddress(SetSerializer, SelectAddress(0x967620, 0x9672A0, 0x9672A0));
+		DeclareAddress(GetProxyID, SelectAddress(0x9675E0, 0x967260, 0x967260));
 
-		DefineAddress(ToWinProc, GetAddress(0x97E760, 0x96FEB0, 0x96FEB0));
-		DefineAddress(GetDelay, GetAddress(0x980800, 0x97E440, 0x97E440));
-		DefineAddress(SetDelay, GetAddress(0x9638F0, 0x967220, 0x967220));
-		DefineAddress(GetInterval, GetAddress(0x97F190, 0x97EE80, 0x97EE80));
-		DefineAddress(SetInterval, GetAddress(0x9675C0, 0x967240, 0x967240));
+		DeclareAddress(ToWinProc, SelectAddress(0x97E760, 0x96FEB0, 0x96FEB0));
+		DeclareAddress(GetDelay, SelectAddress(0x980800, 0x97E440, 0x97E440));
+		DeclareAddress(SetDelay, SelectAddress(0x9638F0, 0x967220, 0x967220));
+		DeclareAddress(GetInterval, SelectAddress(0x97F190, 0x97EE80, 0x97EE80));
+		DeclareAddress(SetInterval, SelectAddress(0x9675C0, 0x967240, 0x967240));
 	}
 }

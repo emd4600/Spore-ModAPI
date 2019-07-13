@@ -88,18 +88,18 @@ namespace UTFWin
 
 	static_assert(sizeof(SpinnerDrawable) == 0x1C, "sizeof(SpinnerDrawable) != 1Ch");
 
-	namespace InternalAddressList(SpinnerDrawable)
+	namespace Addresses(SpinnerDrawable)
 	{
-		DefineAddress(Paint, GetAddress(0x984C70, 0x9849A0, 0x9849A0));
-		DefineAddress(IsColliding, GetAddress(0x689880, 0x5ACA30, 0x5ACA30));
-		DefineAddress(GetDimensions, GetAddress(0x984240, 0x983F20, 0x983F20));
-		DefineAddress(UseCollision, GetAddress(0x951320, 0x950E00, 0x950E00));
+		DeclareAddress(Paint, SelectAddress(0x984C70, 0x9849A0, 0x9849A0));
+		DeclareAddress(IsColliding, SelectAddress(0x689880, 0x5ACA30, 0x5ACA30));
+		DeclareAddress(GetDimensions, SelectAddress(0x984240, 0x983F20, 0x983F20));
+		DeclareAddress(UseCollision, SelectAddress(0x951320, 0x950E00, 0x950E00));
 
-		DefineAddress(SetSerializer, GetAddress(0x984BA0, 0x9848D0, 0x9848D0));
-		DefineAddress(GetProxyID, GetAddress(0x9841E0, 0x983ED0, 0x983ED0));
+		DeclareAddress(SetSerializer, SelectAddress(0x984BA0, 0x9848D0, 0x9848D0));
+		DeclareAddress(GetProxyID, SelectAddress(0x9841E0, 0x983ED0, 0x983ED0));
 
-		DefineAddress(ToDrawable, GetAddress(0x97E760, 0x96FEB0, 0x96FEB0));
-		DefineAddress(SetImage, GetAddress(0x9863B0, 0x983F70, 0x983F70));
+		DeclareAddress(ToDrawable, SelectAddress(0x97E760, 0x96FEB0, 0x96FEB0));
+		DeclareAddress(SetImage, SelectAddress(0x9863B0, 0x983F70, 0x983F70));
 	}
 
 	inline SpinnerDrawable::SpinnerDrawable()

@@ -52,8 +52,8 @@ namespace Palettes
 
 	static_assert(sizeof(StandardItemUI) == 0x20, "sizeof(StandardItemUI) != 20h");
 
-	namespace InternalAddressList(StandardItemUI)
+	namespace Addresses(StandardItemUI)
 	{
-		DefineAddress(HandleUIMessage, GetAddress(0x5C73F0, 0x5C7320, 0x5C7350));
+		DeclareAddress(HandleUIMessage, SelectAddress(0x5C73F0, 0x5C7320, 0x5C7350));
 	}
 }

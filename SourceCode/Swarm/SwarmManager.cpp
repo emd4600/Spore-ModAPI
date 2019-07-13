@@ -24,5 +24,5 @@ namespace Swarm
 {
 	auto_STATIC_METHOD_(ISwarmManager, ISwarmManager*, Get);
 
-	auto_METHOD(cSwarmManager, int, GetDirectoryAndEffectIndex, PARAMS(uint32_t arg0, uint32_t arg1), PARAMS(arg0, arg1));
+	auto_METHOD(cSwarmManager, int, GetDirectoryAndEffectIndex, Args(uint32_t arg0, uint32_t arg1), Args(arg0, arg1));
 }

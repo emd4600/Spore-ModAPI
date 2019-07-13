@@ -60,7 +60,7 @@ namespace Simulator
 
 	static_assert(sizeof(cGonzagoTimer) == 0x20, "sizeof(cGonzagoTimer) != 20h");
 
-	namespace InternalAddressList(cGonzagoTimer) {
-		DefineAddress(GetSimulatorTime_ptr, GetAddress(0xB63580,, 0xB63980));
+	namespace Addresses(cGonzagoTimer) {
+		DeclareAddress(GetSimulatorTime_ptr, SelectAddress(0xB63580,, 0xB63980));
 	}
 }

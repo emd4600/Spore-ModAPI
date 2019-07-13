@@ -36,13 +36,13 @@ namespace Simulator
 		virtual bool OnHit(cSpaceToolData* pTool, const Vector3& position, cSpaceToolData::SpaceToolHit hitType) override;
 	};
 
-	namespace InternalAddressList(cPlaceColonyToolStrategy)
+	namespace Addresses(cPlaceColonyToolStrategy)
 	{
-		DefineAddress(OnSelect, GetAddress(0x1054C70, NO_ADDRESS, 0x10540C0));
-		DefineAddress(OnDeselect, GetAddress(0x1054D50, NO_ADDRESS, 0x10541A0));
-		DefineAddress(Update, GetAddress(0x10596D0, NO_ADDRESS, 0x1058B30));
-		DefineAddress(WhileAiming, GetAddress(0x105C210, NO_ADDRESS, 0x105B670));
-		DefineAddress(SelectedUpdate, GetAddress(0x1054E00, NO_ADDRESS, 0x1054300));
-		DefineAddress(OnHit, GetAddress(0x105C4D0, NO_ADDRESS, 0x105B930));
+		DeclareAddress(OnSelect, SelectAddress(0x1054C70, NO_ADDRESS, 0x10540C0));
+		DeclareAddress(OnDeselect, SelectAddress(0x1054D50, NO_ADDRESS, 0x10541A0));
+		DeclareAddress(Update, SelectAddress(0x10596D0, NO_ADDRESS, 0x1058B30));
+		DeclareAddress(WhileAiming, SelectAddress(0x105C210, NO_ADDRESS, 0x105B670));
+		DeclareAddress(SelectedUpdate, SelectAddress(0x1054E00, NO_ADDRESS, 0x1054300));
+		DeclareAddress(OnHit, SelectAddress(0x105C4D0, NO_ADDRESS, 0x105B930));
 	}
 }

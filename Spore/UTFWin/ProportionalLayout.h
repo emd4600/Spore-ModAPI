@@ -19,52 +19,60 @@
 
 #pragma once
 
-#include "IWinProc.h"
-#include "ILayoutElement.h"
-#include "LayoutStyle.h"
-#include "UIMemory.h"
+#include <Spore\UTFWin\IWinProc.h>
+#include <Spore\UTFWin\InteractiveWinProc.h>
+#include <Spore\UTFWin\ILayoutStyle.h>
 
 namespace UTFWin
 {
-	class ProportionalLayout : public ModifierWinProc, public DefaultLayoutElement, public LayoutStyle
+	class ProportionalLayout 
+		: public InteractiveWinProc
+		, public ILayoutStyle
 	{
-	private:
-		// The relative origin of each edge, as a fraction of parent
-		/* 10h */	float proportions[4];
-
 	public:
-		ProportionalLayout()
-			: proportions{0, 0, 0, 0}
-		{
-		}
+		ProportionalLayout();
 		virtual ~ProportionalLayout() {}
 
 		static inline ProportionalLayout* New() {
 			// __stdcall because it's cleanup by callee
-			return ((ProportionalLayout*(__stdcall*)(void*, void*)) GetAddress(0x97EDE0, 0x97EB00, 0x97EB00))(nullptr, nullptr);
+			return ((ProportionalLayout*(__stdcall*)(void*, void*)) SelectAddress(0x97EDE0, 0x97EB00, 0x97EB00))(nullptr, nullptr);
 		}
 
-		virtual METHOD_(GetAddress(0x967570, 0x9802A0, 0x9802D0), IWinProc, int, AddRef);
-		virtual METHOD_(GetAddress(0x9841F0, 0x980060, 0x980090), IWinProc, int, Release);
-		virtual METHOD(GetAddress(0x97EA40, 0x97E760, 0x97E760), IWinProc, void*, CastToType, PARAMS(unsigned long typeID), PARAMS(this, typeID));
-		virtual METHOD_(GetAddress(0x1065680, 0xE31100, 0xE310C0), IWinProc, int, func4);
-		virtual METHOD_(GetAddress(0x97EA70, 0x97E790, 0x97E790), IWinProc, int, func5);
-		virtual METHOD(GetAddress(0x951370, 0x950E50, 0x950E50), IWinProc, bool, HandleEvent, PARAMS(IWindow* window, Event* eventInfo), PARAMS(this, window, eventInfo));
+		virtual int AddRef() override;
+		virtual int Release() override;
+		virtual void* Cast(uint32_t typeID) const override;
+		virtual int GetEventFlags() const override;
 
-		virtual METHOD_VOID(GetAddress(0x97EDB0, 0x97EAD0, 0x97EAD0), ILayoutElement, SetBlockDefinition, PARAMS(void* dst), PARAMS(this, dst));
-		virtual METHOD_(GetAddress(0x97EAB0, 0x97E7D0, 0x97E7D0), ILayoutElement, int, GetBlockType);
+		virtual void OnLayout(IWindow* window, Math::Rectangle& parentBounds) override;
 
-		virtual METHOD_(GetAddress(0x97E760, 0x96FEB0, 0x96FEB0), LayoutStyle, IWinProc*, ToWinProc);
-		virtual METHOD_VOID(GetAddress(0x97ECC0, 0x97E9E0, 0x0x97E9E0), LayoutStyle, ApplyLayout, PARAMS(Math::Rectangle& dstBounds, Math::Rectangle& parentBounds), PARAMS(this, dstBounds, parentBounds));
-		virtual METHOD(GetAddress(0x97ED30, 0x97EA50, 0x97EA50), LayoutStyle, bool, RevertLayout, PARAMS(Math::Rectangle& dstBounds, Math::Rectangle& parentBounds), PARAMS(this, dstBounds, parentBounds));
+		virtual void SetSerializer(Serializer& dst) override;
+		virtual uint32_t GetProxyID() const override;
 
-		// Get the relative origin of each edge, as a fraction of parent
-		virtual METHOD_(GetAddress(0xAD2590, 0x97E7C0, 0x97E7C0), IWinProc, float*, GetProportions);
-		// Set the relative origin of each edge, as a fraction of parent
-		virtual METHOD_VOID(GetAddress(0x97ECA0, 0x97E9C0, 0x97E9C0), IWinProc, SetProportions, PARAMS(float* proportions), PARAMS(this, proportions));
+		virtual IWinProc* ToWinProc() const override;
+		virtual void ApplyLayout(Math::Rectangle& area, const Math::Rectangle& parentArea) override;
+		virtual bool RevertLayout(Math::Rectangle& area, const Math::Rectangle& parentArea) override;
 
-		virtual METHOD_VOID(GetAddress(0x97EAF0, 0x97E810, 0x97E810), IWinProc, func58h, PARAMS(IWindow* window, Math::Rectangle& parentBounds), PARAMS(this, window, parentBounds));
+		virtual const float* GetProportions() const;
+		virtual void SetProportions(float values[4]);
+
+	protected:
+		// The relative origin of each edge, as a fraction of parent
+		/* 10h */	float mProportions[4];
+
 	};
 
 	static_assert(sizeof(ProportionalLayout) == 0x20, "sizeof(ProportionalLayout) != 20h");
+
+	namespace Addresses(ProportionalLayout)
+	{
+		DeclareAddress(Cast, SelectAddress(0x97EA40, 0x97E760, 0x97E760));
+
+		DeclareAddress(SetSerializer, SelectAddress(0x97EDB0, 0x97EAD0, 0x97EAD0));
+		DeclareAddress(GetProxyID, SelectAddress(0x97EAB0, 0x97E7D0, 0x97E7D0));
+
+		DeclareAddress(ApplyLayout, SelectAddress(0x97ECC0, 0x97E9E0, 0x97E9E0));
+		DeclareAddress(RevertLayout, SelectAddress(0x97ED30, 0x97EA50, 0x97EA50));
+
+		DeclareAddress(OnLayout, SelectAddress(0x97EAF0, 0x97E810, 0x97E810));
+	}
 }

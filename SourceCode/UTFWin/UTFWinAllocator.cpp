@@ -34,8 +34,8 @@ namespace UTFWin
 
 	void* UTFWinObject::operator new(size_t n, size_t align, const char* pName, ICoreAllocator* pAllocator)
 	{
-		return STATIC_CALL(GetAddress(0x951760, 0x951230, 0x951230), void*, 
-			PARAMS(size_t n, size_t align, const char* pName, ICoreAllocator* pAllocator), PARAMS(n, align, pName, pAllocator));
+		return STATIC_CALL(Address(SelectAddress(0x951760, 0x951230, 0x951230)), void*,
+			Args(size_t n, size_t align, const char* pName, ICoreAllocator* pAllocator), Args(n, align, pName, pAllocator));
 	}
 
 	void* UTFWinObject::operator new(size_t n)
@@ -45,7 +45,7 @@ namespace UTFWin
 
 	void UTFWinObject::operator delete(void* p)
 	{
-		STATIC_CALL(GetAddress(0x9517C0, 0x951290, 0x951290), void, PARAMS(void* p), PARAMS(p));
+		STATIC_CALL(Address(SelectAddress(0x9517C0, 0x951290, 0x951290)), void, Args(void* p), Args(p));
 	}
 
 

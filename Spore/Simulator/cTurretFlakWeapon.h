@@ -31,8 +31,8 @@ namespace Simulator
 		virtual bool WhileFiring(cSpaceToolData* pTool, const Vector3& aimPoint, int) override;
 	};
 
-	namespace InternalAddressList(cTurretFlakWeapon)
+	namespace Addresses(cTurretFlakWeapon)
 	{
-		DefineAddress(WhileFiring, GetAddress(0x1057FD0, NO_ADDRESS, 0x1057430));
+		DeclareAddress(WhileFiring, SelectAddress(0x1057FD0, NO_ADDRESS, 0x1057430));
 	}
 }

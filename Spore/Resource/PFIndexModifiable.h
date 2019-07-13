@@ -173,25 +173,25 @@ namespace Resource
 
 	static_assert(sizeof(PFIndexModifiable) == 0x4C, "sizeof(PFIndexModifiable) != 4Ch");
 
-	namespace InternalAddressList(PFIndexModifiable)
+	namespace Addresses(PFIndexModifiable)
 	{
-		DefineAddress(func04h, GetAddress(0xA37650, 0xB1FB00, 0xB1FB30));
-		DefineAddress(IsEmpty, GetAddress(0x8DBCE0, 0x6BF430, 0x6BF430));
-		DefineAddress(GetFileCount, GetAddress(0xA654F0, 0x8E8220, 0x8E8230));
-		DefineAddress(Reset, GetAddress(0x8DBCF0, 0x8DBA90, 0x8DBAA0));
-		DefineAddress(GetTotalDiskSize, GetAddress(0x8DB570, 0x8DB2B0, 0x8DB2C0));
-		DefineAddress(GetDataEnd, GetAddress(0x8DB510, 0x8DB250, 0x8DB260));
-		DefineAddress(GetFiles, GetAddress(0x8DC250, 0x8DBFF0, 0x8DC000));
-		DefineAddress(GetAllFiles, GetAddress(0x8DC310, 0x8DC0B0, 0x8DC0C0));
-		DefineAddress(func24h, GetAddress(0x8DC810, 0x8DC5B0, 0x8DC5C0));
-		DefineAddress(GetFileInfo, GetAddress(0x8DBD70, 0x8DBB10, 0x8DBB20));
-		DefineAddress(PutFileInfo, GetAddress(0x8DC410, 0x8DC1B0, 0x8DC1C0));
-		DefineAddress(RemoveFile, GetAddress(0x8DBDB0, 0x8DBB50, 0x8DBB60));
-		DefineAddress(Read, GetAddress(0x8DBF10, 0x8DBCB0, 0x8DBCC0));
-		DefineAddress(Write, GetAddress(0x8DB5C0, 0x8DB300, 0x8DB310));
-		DefineAddress(SetIsSaved, GetAddress(0x8DB800, 0x8DB540, 0x8DB550));
-		DefineAddress(CheckFilesInRange, GetAddress(0x8DB850, 0x8DB590, 0x8DB5A0));
-		DefineAddress(CheckFilesInSizeRange, GetAddress(0x8DB8E0, 0x8DB620, 0x8DB630));
+		DeclareAddress(func04h, SelectAddress(0xA37650, 0xB1FB00, 0xB1FB30));
+		DeclareAddress(IsEmpty, SelectAddress(0x8DBCE0, 0x6BF430, 0x6BF430));
+		DeclareAddress(GetFileCount, SelectAddress(0xA654F0, 0x8E8220, 0x8E8230));
+		DeclareAddress(Reset, SelectAddress(0x8DBCF0, 0x8DBA90, 0x8DBAA0));
+		DeclareAddress(GetTotalDiskSize, SelectAddress(0x8DB570, 0x8DB2B0, 0x8DB2C0));
+		DeclareAddress(GetDataEnd, SelectAddress(0x8DB510, 0x8DB250, 0x8DB260));
+		DeclareAddress(GetFiles, SelectAddress(0x8DC250, 0x8DBFF0, 0x8DC000));
+		DeclareAddress(GetAllFiles, SelectAddress(0x8DC310, 0x8DC0B0, 0x8DC0C0));
+		DeclareAddress(func24h, SelectAddress(0x8DC810, 0x8DC5B0, 0x8DC5C0));
+		DeclareAddress(GetFileInfo, SelectAddress(0x8DBD70, 0x8DBB10, 0x8DBB20));
+		DeclareAddress(PutFileInfo, SelectAddress(0x8DC410, 0x8DC1B0, 0x8DC1C0));
+		DeclareAddress(RemoveFile, SelectAddress(0x8DBDB0, 0x8DBB50, 0x8DBB60));
+		DeclareAddress(Read, SelectAddress(0x8DBF10, 0x8DBCB0, 0x8DBCC0));
+		DeclareAddress(Write, SelectAddress(0x8DB5C0, 0x8DB300, 0x8DB310));
+		DeclareAddress(SetIsSaved, SelectAddress(0x8DB800, 0x8DB540, 0x8DB550));
+		DeclareAddress(CheckFilesInRange, SelectAddress(0x8DB850, 0x8DB590, 0x8DB5A0));
+		DeclareAddress(CheckFilesInSizeRange, SelectAddress(0x8DB8E0, 0x8DB620, 0x8DB630));
 	}
 
 }

@@ -49,6 +49,9 @@ namespace RenderWare
 		/// Creates the corresponding Direct3D object for this raster, depending on the format and flags.
 		void Create();
 
+		HRESULT CreateTexture(DWORD usage = NULL, D3DPOOL pool = D3DPOOL_DEFAULT);
+
+
 		/* 00h */	D3DFORMAT format;
 		/* 04h */	uint16_t flags;  // the first byte chooses type
 		/* 06h */	uint16_t volumeDepth;
@@ -72,8 +75,8 @@ namespace RenderWare
 
 	static_assert(sizeof(Raster) == 0x20, "sizeof(Raster) != 20h");
 
-	namespace InternalAddressList(Raster)
+	namespace Addresses(Raster)
 	{
-		DefineAddress(Create, GetAddress(0x11F22E0, , PLACEHOLDER));
+		DeclareAddress(Create, SelectAddress(0x11F22E0, , 0x11EFBB0));
 	};
 }

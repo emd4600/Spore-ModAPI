@@ -113,12 +113,12 @@ namespace UTFWin
 		}
 	}
 
-	auto_METHOD_VIRTUAL_VOID(Window, Window, SetSerializer, PARAMS(Serializer& dst), PARAMS(dst));
+	auto_METHOD_VIRTUAL_VOID(Window, Window, SetSerializer, Args(Serializer& dst), Args(dst));
 	auto_METHOD_VIRTUAL_const_(Window, Window, uint32_t, GetProxyID);
 	auto_METHOD_VIRTUAL_(Window, Window, bool, Initialize);
 	auto_METHOD_VIRTUAL_(Window, Window, bool, Dispose);
-	auto_METHOD_VIRTUAL(Window, Window, bool, DoMessage, PARAMS(const UTFWin::Message& msg), PARAMS(msg));
-	auto_METHOD_VIRTUAL(Window, Window, bool, OnPaint, PARAMS(UIRenderer* pRenderer), PARAMS(pRenderer));
+	auto_METHOD_VIRTUAL(Window, Window, bool, DoMessage, Args(const UTFWin::Message& msg), Args(msg));
+	auto_METHOD_VIRTUAL(Window, Window, bool, OnPaint, Args(UIRenderer* pRenderer), Args(pRenderer));
 
 	auto_METHOD_VIRTUAL_const_(Window, IWindow, IWindow*, GetParent);
 	auto_METHOD_VIRTUAL_const_(Window, IWindow, IWindowManager*, GetWindowManager);
@@ -136,22 +136,22 @@ namespace UTFWin
 	auto_METHOD_VIRTUAL_const_(Window, IWindow, const wchar_t*, func17);
 	auto_METHOD_VIRTUAL_const_(Window, IWindow, int, func18);
 	auto_METHOD_VIRTUAL_const_(Window, IWindow, int, func19);
-	auto_METHOD_VIRTUAL_VOID(Window, IWindow, SetControlID, PARAMS(uint32_t controlID), PARAMS(controlID));
-	auto_METHOD_VIRTUAL_VOID(Window, IWindow, SetCommandID, PARAMS(uint32_t commandID), PARAMS(commandID));
-	auto_METHOD_VIRTUAL_VOID(Window, IWindow, SetState, PARAMS(int state), PARAMS(state));
-	auto_METHOD_VIRTUAL_VOID(Window, IWindow, SetShadeColor, PARAMS(Color color), PARAMS(color));
-	auto_METHOD_VIRTUAL_VOID(Window, IWindow, SetArea, PARAMS(const Math::Rectangle& area), PARAMS(area));
-	auto_METHOD_VIRTUAL_VOID(Window, IWindow, SetLocation, PARAMS(float fX, float fY), PARAMS(fX, fY));
-	auto_METHOD_VIRTUAL_VOID(Window, IWindow, SetSize, PARAMS(float fWidth, float fHeight), PARAMS(fWidth, fHeight));
-	auto_METHOD_VIRTUAL_VOID(Window, IWindow, SetLayoutArea, PARAMS(const Math::Rectangle& layoutArea), PARAMS(layoutArea));
-	auto_METHOD_VIRTUAL_VOID(Window, IWindow, SetLayoutLocation, PARAMS(float fX, float fY), PARAMS(fX, fY));
-	auto_METHOD_VIRTUAL_VOID(Window, IWindow, SetLayoutSize, PARAMS(float fWidth, float fHeight), PARAMS(fWidth, fHeight));
-	auto_METHOD_VIRTUAL_VOID(Window, IWindow, func30, PARAMS(int arg_0), PARAMS(arg_0));
-	auto_METHOD_VIRTUAL_VOID(Window, IWindow, SetFlag, PARAMS(WindowFlags nFlag, bool bValue), PARAMS(nFlag, bValue));
-	auto_METHOD_VIRTUAL_VOID(Window, IWindow, SetCaption, PARAMS(const char16_t* pCaption), PARAMS(pCaption));
-	auto_METHOD_VIRTUAL_VOID(Window, IWindow, SetTextFontID, PARAMS(uint32_t styleID), PARAMS(styleID));
-	auto_METHOD_VIRTUAL_VOID(Window, IWindow, func34, PARAMS(int arg_0), PARAMS(arg_0));
-	auto_METHOD_VIRTUAL_VOID(Window, IWindow, func35, PARAMS(int arg_0), PARAMS(arg_0));
+	auto_METHOD_VIRTUAL_VOID(Window, IWindow, SetControlID, Args(uint32_t controlID), Args(controlID));
+	auto_METHOD_VIRTUAL_VOID(Window, IWindow, SetCommandID, Args(uint32_t commandID), Args(commandID));
+	auto_METHOD_VIRTUAL_VOID(Window, IWindow, SetState, Args(int state), Args(state));
+	auto_METHOD_VIRTUAL_VOID(Window, IWindow, SetShadeColor, Args(Color color), Args(color));
+	auto_METHOD_VIRTUAL_VOID(Window, IWindow, SetArea, Args(const Math::Rectangle& area), Args(area));
+	auto_METHOD_VIRTUAL_VOID(Window, IWindow, SetLocation, Args(float fX, float fY), Args(fX, fY));
+	auto_METHOD_VIRTUAL_VOID(Window, IWindow, SetSize, Args(float fWidth, float fHeight), Args(fWidth, fHeight));
+	auto_METHOD_VIRTUAL_VOID(Window, IWindow, SetLayoutArea, Args(const Math::Rectangle& layoutArea), Args(layoutArea));
+	auto_METHOD_VIRTUAL_VOID(Window, IWindow, SetLayoutLocation, Args(float fX, float fY), Args(fX, fY));
+	auto_METHOD_VIRTUAL_VOID(Window, IWindow, SetLayoutSize, Args(float fWidth, float fHeight), Args(fWidth, fHeight));
+	auto_METHOD_VIRTUAL_VOID(Window, IWindow, func30, Args(int arg_0), Args(arg_0));
+	auto_METHOD_VIRTUAL_VOID(Window, IWindow, SetFlag, Args(WindowFlags nFlag, bool bValue), Args(nFlag, bValue));
+	auto_METHOD_VIRTUAL_VOID(Window, IWindow, SetCaption, Args(const char16_t* pCaption), Args(pCaption));
+	auto_METHOD_VIRTUAL_VOID(Window, IWindow, SetTextFontID, Args(uint32_t styleID), Args(styleID));
+	auto_METHOD_VIRTUAL_VOID(Window, IWindow, func34, Args(int arg_0), Args(arg_0));
+	auto_METHOD_VIRTUAL_VOID(Window, IWindow, func35, Args(int arg_0), Args(arg_0));
 	auto_METHOD_VIRTUAL_(Window, IWindow, int, Invalidate);
 	auto_METHOD_VIRTUAL_VOID_(Window, IWindow, Revalidate);
 	auto_METHOD_VIRTUAL_(Window, IWindow, int, InvalidateTransform);
@@ -159,23 +159,23 @@ namespace UTFWin
 	auto_METHOD_VIRTUAL_(Window, IWindow, int, func40);
 	auto_METHOD_VIRTUAL_const_(Window, IWindow, Color, GetFillColor);
 	auto_METHOD_VIRTUAL_const_(Window, IWindow, IDrawable*, GetDrawable);
-	auto_METHOD_VIRTUAL_VOID(Window, IWindow, SetFillColor, PARAMS(Color color), PARAMS(color));
-	auto_METHOD_VIRTUAL_VOID(Window, IWindow, SetDrawable, PARAMS(IDrawable* drawable), PARAMS(drawable));
-	auto_METHOD_VIRTUAL(Window, IWindow, int, func45, PARAMS(int arg_0), PARAMS(arg_0));
-	auto_METHOD_VIRTUAL(Window, IWindow, int, func46, PARAMS(int arg_0, int arg_4), PARAMS(arg_0, arg_4));
-	auto_METHOD_VIRTUAL(Window, IWindow, int, func47, PARAMS(float arg_0, float arg_4), PARAMS(arg_0, arg_4));
+	auto_METHOD_VIRTUAL_VOID(Window, IWindow, SetFillColor, Args(Color color), Args(color));
+	auto_METHOD_VIRTUAL_VOID(Window, IWindow, SetDrawable, Args(IDrawable* drawable), Args(drawable));
+	auto_METHOD_VIRTUAL(Window, IWindow, int, func45, Args(int arg_0), Args(arg_0));
+	auto_METHOD_VIRTUAL(Window, IWindow, int, func46, Args(int arg_0, int arg_4), Args(arg_0, arg_4));
+	auto_METHOD_VIRTUAL(Window, IWindow, int, func47, Args(float arg_0, float arg_4), Args(arg_0, arg_4));
 
 	Point Window::func48(float arg_0, float arg_4) {
 		Point p;
-		CALL(GetMethodAddress(Window, func48), Point*, PARAMS(IWindow*, Point*, float, float), PARAMS(this, &p, arg_0, arg_4));
+		CALL(GetAddress(Window, func48), Point*, Args(IWindow*, Point*, float, float), Args(this, &p, arg_0, arg_4));
 		return p;
 	}
 	Point Window::func49(float arg_0, float arg_4) {
 		Point p;
-		CALL(GetMethodAddress(Window, func49), Point*, PARAMS(IWindow*, Point*, float, float), PARAMS(this, &p, arg_0, arg_4));
+		CALL(GetAddress(Window, func49), Point*, Args(IWindow*, Point*, float, float), Args(this, &p, arg_0, arg_4));
 		return p;
 	}
-	auto_METHOD_VIRTUAL(Window, IWindow, bool, func50, PARAMS(float arg_0, float arg_4, Point& dst), PARAMS(arg_0, arg_4, dst));
+	auto_METHOD_VIRTUAL(Window, IWindow, bool, func50, Args(float arg_0, float arg_4, Point& dst), Args(arg_0, arg_4, dst));
 
 	// Specials
 	IWindowList_t::iterator Window::GetChildrenBegin() {
@@ -187,28 +187,28 @@ namespace UTFWin
 	}
 
 
-	auto_METHOD_VIRTUAL_const(Window, IWindow, IWindowList_t::iterator, LocateChild, PARAMS(const IWindow* pChild), PARAMS(pChild));
-	auto_METHOD_VIRTUAL_VOID(Window, IWindow, AddWindow, PARAMS(IWindow* pWindow), PARAMS(pWindow));
-	auto_METHOD_VIRTUAL_VOID(Window, IWindow, RemoveWindow, PARAMS(IWindow* pWindow), PARAMS(pWindow));
-	auto_METHOD_VIRTUAL_VOID(Window, IWindow, DisposeWindowFamily, PARAMS(IWindow* pChildWindow), PARAMS(pChildWindow));
+	auto_METHOD_VIRTUAL_const(Window, IWindow, IWindowList_t::iterator, LocateChild, Args(const IWindow* pChild), Args(pChild));
+	auto_METHOD_VIRTUAL_VOID(Window, IWindow, AddWindow, Args(IWindow* pWindow), Args(pWindow));
+	auto_METHOD_VIRTUAL_VOID(Window, IWindow, RemoveWindow, Args(IWindow* pWindow), Args(pWindow));
+	auto_METHOD_VIRTUAL_VOID(Window, IWindow, DisposeWindowFamily, Args(IWindow* pChildWindow), Args(pChildWindow));
 	auto_METHOD_VIRTUAL_VOID_(Window, IWindow, DisposeAllWindowFamilies);
-	auto_METHOD_VIRTUAL_VOID(Window, IWindow, BringToFront, PARAMS(IWindow* pWindow), PARAMS(pWindow));
-	auto_METHOD_VIRTUAL_VOID(Window, IWindow, SendToBack, PARAMS(IWindow* pWindow), PARAMS(pWindow));
-	auto_METHOD_VIRTUAL(Window, IWindow, IWindow*, FindWindowByID, PARAMS(uint32_t controlID, bool bRecursive), PARAMS(controlID, bRecursive));
-	auto_METHOD_VIRTUAL(Window, IWindow, IWindow*, FindWindowTypeByID, PARAMS(uint32_t controlID, uint32_t type, bool bRecursive), PARAMS(controlID, type, bRecursive));
-	auto_METHOD_VIRTUAL(Window, IWindow, bool, IsAncestorOf, PARAMS(const IWindow* pChildWindow), PARAMS(pChildWindow));
-	auto_METHOD_VIRTUAL(Window, IWindow, bool, func63, PARAMS(int index), PARAMS(index));
-	auto_METHOD_VIRTUAL(Window, IWindow, bool, func64, PARAMS(int index), PARAMS(index));
-	auto_METHOD_VIRTUAL_VOID(Window, IWindow, AddWinProc, PARAMS(IWinProc* pWinProc), PARAMS(pWinProc));
-	auto_METHOD_VIRTUAL_VOID(Window, IWindow, RemoveWinProc, PARAMS(IWinProc* pWinProc), PARAMS(pWinProc));
-	auto_METHOD_VIRTUAL_const(Window, IWindow, IWinProc*, GetNextWinProc, PARAMS(const IWinProc* pWinProc), PARAMS(pWinProc));
-	auto_METHOD_VIRTUAL(Window, IWindow, int, func68, PARAMS(int arg_0), PARAMS(arg_0));
-	auto_METHOD_VIRTUAL(Window, IWindow, bool, SendMsg, PARAMS(Message& msg), PARAMS(msg));
+	auto_METHOD_VIRTUAL_VOID(Window, IWindow, BringToFront, Args(IWindow* pWindow), Args(pWindow));
+	auto_METHOD_VIRTUAL_VOID(Window, IWindow, SendToBack, Args(IWindow* pWindow), Args(pWindow));
+	auto_METHOD_VIRTUAL(Window, IWindow, IWindow*, FindWindowByID, Args(uint32_t controlID, bool bRecursive), Args(controlID, bRecursive));
+	auto_METHOD_VIRTUAL(Window, IWindow, IWindow*, FindWindowTypeByID, Args(uint32_t controlID, uint32_t type, bool bRecursive), Args(controlID, type, bRecursive));
+	auto_METHOD_VIRTUAL(Window, IWindow, bool, IsAncestorOf, Args(const IWindow* pChildWindow), Args(pChildWindow));
+	auto_METHOD_VIRTUAL(Window, IWindow, bool, func63, Args(int index), Args(index));
+	auto_METHOD_VIRTUAL(Window, IWindow, bool, func64, Args(int index), Args(index));
+	auto_METHOD_VIRTUAL_VOID(Window, IWindow, AddWinProc, Args(IWinProc* pWinProc), Args(pWinProc));
+	auto_METHOD_VIRTUAL_VOID(Window, IWindow, RemoveWinProc, Args(IWinProc* pWinProc), Args(pWinProc));
+	auto_METHOD_VIRTUAL_const(Window, IWindow, IWinProc*, GetNextWinProc, Args(const IWinProc* pWinProc), Args(pWinProc));
+	auto_METHOD_VIRTUAL(Window, IWindow, int, func68, Args(int arg_0), Args(arg_0));
+	auto_METHOD_VIRTUAL(Window, IWindow, bool, SendMsg, Args(Message& msg), Args(msg));
 	auto_METHOD_VIRTUAL_const_(Window, IWindow, const char*, GetComponentName);
 
 	//// cSPUIMessageBox ////
 
-	auto_STATIC_METHOD(cSPUIMessageBox, bool, ShowDialog, PARAMS(MessageBoxCallback* pCallback, const ResourceKey& name), PARAMS(pCallback, name));
+	auto_STATIC_METHOD(cSPUIMessageBox, bool, ShowDialog, Args(MessageBoxCallback* pCallback, const ResourceKey& name), Args(pCallback, name));
 
 
 	void IWindow::FitParentArea(IWindow* pWindow)

@@ -32,9 +32,9 @@ namespace Simulator
 		virtual bool WhileFiring(cSpaceToolData* pTool, const Vector3& aimPoint, int) override;
 	};
 
-	namespace InternalAddressList(cDefaultProjectileWeapon)
+	namespace Addresses(cDefaultProjectileWeapon)
 	{
-		DefineAddress(OnHit, GetAddress(0x105BEC0, NO_ADDRESS, 0x105B310));
-		DefineAddress(WhileFiring, GetAddress(0x1057AA0, NO_ADDRESS, 0x1056F10));
+		DeclareAddress(OnHit, SelectAddress(0x105BEC0, NO_ADDRESS, 0x105B310));
+		DeclareAddress(WhileFiring, SelectAddress(0x1057AA0, NO_ADDRESS, 0x1056F10));
 	}
 }

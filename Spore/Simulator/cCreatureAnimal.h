@@ -81,7 +81,7 @@ namespace Simulator
 
 	static_assert(sizeof(cCreatureAnimal) == 0x16A0, "sizeof(cCreatureAnimal) != 16A0h");
 
-	namespace InternalAddressList(cCreatureAnimal) {
-		DefineAddress(Create, GetAddress(0xC092A0, NO_ADDRESS, 0xC09B40));
+	namespace Addresses(cCreatureAnimal) {
+		DeclareAddress(Create, SelectAddress(0xC092A0, NO_ADDRESS, 0xC09B40));
 	}
 }

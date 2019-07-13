@@ -1,5 +1,7 @@
 #pragma once
 
+#error "Not supported yet"
+
 #include <Spore\Internal.h>
 
 namespace App
@@ -15,7 +17,7 @@ namespace App
 		return IStateManager::Get();
 	}
 
-	namespace InternalAddressList(IStateManager) {
-		DefineAddress(Get, GetAddress(0x67DE40, , PLACEHOLDER));
+	namespace Addresses(IStateManager) {
+		DeclareAddress(Get, SelectAddress(0x67DE40, , PLACEHOLDER));
 	}
 }

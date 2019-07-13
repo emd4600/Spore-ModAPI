@@ -279,42 +279,42 @@ namespace IO
 	//// INTERNAL IMPLEMENENTATION ////
 	///////////////////////////////////
 
-	namespace InternalAddressList(IO)
+	namespace Addresses(IO)
 	{
-		DefineAddress(ReadBool8, GetAddress(0x93B1B0, 0x93ABF0, 0x93ABF0));
+		DeclareAddress(ReadBool8, SelectAddress(0x93B1B0, 0x93ABF0, 0x93ABF0));
 
-		DefineAddress(ReadInt8, GetAddress(0x93ABF0, 0x93A630, 0x93A630));
-		DefineAddress(ReadUInt8, GetAddress(0x93ABF0, 0x93A630, 0x93A630));
+		DeclareAddress(ReadInt8, SelectAddress(0x93ABF0, 0x93A630, 0x93A630));
+		DeclareAddress(ReadUInt8, SelectAddress(0x93ABF0, 0x93A630, 0x93A630));
 
-		DefineAddress(ReadInt16, GetAddress(0x93AC30, 0x93A670, 0x93A670));
-		DefineAddress(ReadUInt16, GetAddress(0x93AC30, 0x93A670, 0x93A670));
+		DeclareAddress(ReadInt16, SelectAddress(0x93AC30, 0x93A670, 0x93A670));
+		DeclareAddress(ReadUInt16, SelectAddress(0x93AC30, 0x93A670, 0x93A670));
 
-		DefineAddress(ReadInt32, GetAddress(0x93ACB0, 0x93A6F0, 0x93A6F0));
-		DefineAddress(ReadUInt32, GetAddress(0x93ACB0, 0x93A6F0, 0x93A6F0));
+		DeclareAddress(ReadInt32, SelectAddress(0x93ACB0, 0x93A6F0, 0x93A6F0));
+		DeclareAddress(ReadUInt32, SelectAddress(0x93ACB0, 0x93A6F0, 0x93A6F0));
 
-		DefineAddress(ReadFloat, GetAddress(0x93ACB0, 0x93A6F0, 0x93A6F0));
+		DeclareAddress(ReadFloat, SelectAddress(0x93ACB0, 0x93A6F0, 0x93A6F0));
 
-		DefineAddress(ReadResourceID, GetAddress(0x93AD30, 0x93A770, 0x93A770));
+		DeclareAddress(ReadResourceID, SelectAddress(0x93AD30, 0x93A770, 0x93A770));
 
-		DefineAddress(ReadCString, GetAddress(0x530690, 0x530250, 0x530280));
+		DeclareAddress(ReadCString, SelectAddress(0x530690, 0x530250, 0x530280));
 
-		DefineAddress(ReadLine, GetAddress(0x93ADE0, 0x93A820, 0x93A820));
+		DeclareAddress(ReadLine, SelectAddress(0x93ADE0, 0x93A820, 0x93A820));
 
 
-		DefineAddress(WriteInt8, GetAddress(0x93AED0, 0x93A910, 0x93A910));
-		DefineAddress(WriteUInt8, GetAddress(0x93AED0, 0x93A910, 0x93A910));
+		DeclareAddress(WriteInt8, SelectAddress(0x93AED0, 0x93A910, 0x93A910));
+		DeclareAddress(WriteUInt8, SelectAddress(0x93AED0, 0x93A910, 0x93A910));
 
-		DefineAddress(WriteInt16, GetAddress(0x93AF00, 0x93A940, 0x93A940));
-		DefineAddress(WriteUInt16, GetAddress(0x93AF00, 0x93A940, 0x93A940));
+		DeclareAddress(WriteInt16, SelectAddress(0x93AF00, 0x93A940, 0x93A940));
+		DeclareAddress(WriteUInt16, SelectAddress(0x93AF00, 0x93A940, 0x93A940));
 
-		DefineAddress(WriteInt32, GetAddress(0x93AFA0, 0x93A9E0, 0x93A9E0));
-		DefineAddress(WriteUInt32, GetAddress(0x93AFA0, 0x93A9E0, 0x93A9E0));
+		DeclareAddress(WriteInt32, SelectAddress(0x93AFA0, 0x93A9E0, 0x93A9E0));
+		DeclareAddress(WriteUInt32, SelectAddress(0x93AFA0, 0x93A9E0, 0x93A9E0));
 
-		DefineAddress(WriteFloat, GetAddress(0x93AFA0, 0x93A9E0, 0x93A9E0));
+		DeclareAddress(WriteFloat, SelectAddress(0x93AFA0, 0x93A9E0, 0x93A9E0));
 
-		DefineAddress(WriteResourceID, GetAddress(0x93B040, 0x93AA80, 0x93AA80));
+		DeclareAddress(WriteResourceID, SelectAddress(0x93B040, 0x93AA80, 0x93AA80));
 
-		DefineAddress(WriteLine, GetAddress(0x93B100, 0x93AB40, 0x93AB40));
+		DeclareAddress(WriteLine, SelectAddress(0x93B100, 0x93AB40, 0x93AB40));
 	}
 
 	inline bool IO::WriteBool8(IStream* pOS, const bool* value)

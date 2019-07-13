@@ -245,10 +245,10 @@ namespace Simulator
 	static_assert(sizeof(UnknownCreatureClass) == 0x4A0, "sizeof(UnknownCreatureClass) != 4A0h");
 	static_assert(sizeof(cCreatureBase) == 0xFC0, "sizeof(cCreatureBase) != FC0h");
 
-	namespace InternalAddressList(cCreatureBase)
+	namespace Addresses(cCreatureBase)
 	{
-		DefineAddress(PlayAnimation, GetAddress(0xC11CD0, NO_ADDRESS, 0xC12470));
-		DefineAddress(PlayAnimationTo, GetAddress(0xC14380, NO_ADDRESS, 0xC14B20));
-		DefineAddress(WalkTo, GetAddress(0xC1BE40, NO_ADDRESS, 0xC1C720));
+		DeclareAddress(PlayAnimation, SelectAddress(0xC11CD0, NO_ADDRESS, 0xC12470));
+		DeclareAddress(PlayAnimationTo, SelectAddress(0xC14380, NO_ADDRESS, 0xC14B20));
+		DeclareAddress(WalkTo, SelectAddress(0xC1BE40, NO_ADDRESS, 0xC1C720));
 	}
 }

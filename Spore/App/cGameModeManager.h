@@ -91,33 +91,33 @@ namespace App
 
 	static_assert(sizeof(cGameModeManager) == 0x34, "sizeof(cGameModeManager) != 34h");
 
-	namespace InternalAddressList(cGameModeManager)
+	namespace Addresses(cGameModeManager)
 	{
-		DefineAddress(HandleMessage, GetAddress(0x7D86A0, 0x7D81D0, 0x7D8240));
+		DeclareAddress(HandleMessage, SelectAddress(0x7D86A0, 0x7D81D0, 0x7D8240));
 
-		DefineAddress(AddRef, GetAddress(0xCF91C0, 0x671F20, 0x671F20));
-		DefineAddress(Release, GetAddress(0xD57BB0, 0xAE05F0, 0xAE0620));
+		DeclareAddress(AddRef, SelectAddress(0xCF91C0, 0x671F20, 0x671F20));
+		DeclareAddress(Release, SelectAddress(0xD57BB0, 0xAE05F0, 0xAE0620));
 
-		DefineAddress(Initialize, GetAddress(0x7D8580, 0x7D80B0, 0x7D8120));
-		DefineAddress(Dispose, GetAddress(0x7D9640, 0x7D9170, 0x7D91E0));
-		DefineAddress(func14h, GetAddress(0x7D8710, 0x7D8240, 0x7D82B0));
-		DefineAddress(InitializeModes, GetAddress(0x7D8750, 0x7D8280, 0x7D82F0));
-		DefineAddress(ClearActiveMode, GetAddress(0x7D8990, 0x7D84C0, 0x7D8530));
-		DefineAddress(AddGameMode, GetAddress(0x7D9780, 0x7D92B0, 0x7D9320));
-		DefineAddress(RemoveGameMode, GetAddress(0x7D9510, 0x7D9040, 0x7D90B0));
-		DefineAddress(SetActiveMode, GetAddress(0x7D9150, 0x7D8C80, 0x7D8CF0));
-		DefineAddress(GetActiveMode, GetAddress(0x7D87E0, 0x7D8310, 0x7D8380));
-		DefineAddress(GetGameMode, GetAddress(0x7D8790, 0x7D82C0, 0x7D8330));
-		DefineAddress(GetModeIDAt, GetAddress(0x7D8930, 0x7D8460, 0x7D84D0));
-		DefineAddress(GetActiveModeID, GetAddress(0x7D8820, 0x7D8350, 0x7D83C0));
-		DefineAddress(GetModeCount, GetAddress(0x7D8860, 0x7D8390, 0x7D8400));
-		DefineAddress(SetActiveModeAt, GetAddress(0x7D91A0, 0x7D8CD0, 0x7D8D40));
-		DefineAddress(GetGameModeAt, GetAddress(0x7D88F0, 0x7D8420, 0x7D8490));
-		DefineAddress(func48h, GetAddress(0x108DD90, 0x111CD70, 0x111CD70));
-		DefineAddress(SetActiveModeByName, GetAddress(0x7D8880, 0x7D83B0, 0x7D8420));
-		DefineAddress(GetCameraManager, GetAddress(0xB18420, 0x967D90, 0x967D90));
-		DefineAddress(SetViewer, GetAddress(0x7D8970, 0x7D84A0, 0x7D8510));
-		DefineAddress(GetViewer, GetAddress(0x804E60, 0x5AADB0, 0x5AADB0));
+		DeclareAddress(Initialize, SelectAddress(0x7D8580, 0x7D80B0, 0x7D8120));
+		DeclareAddress(Dispose, SelectAddress(0x7D9640, 0x7D9170, 0x7D91E0));
+		DeclareAddress(func14h, SelectAddress(0x7D8710, 0x7D8240, 0x7D82B0));
+		DeclareAddress(InitializeModes, SelectAddress(0x7D8750, 0x7D8280, 0x7D82F0));
+		DeclareAddress(ClearActiveMode, SelectAddress(0x7D8990, 0x7D84C0, 0x7D8530));
+		DeclareAddress(AddGameMode, SelectAddress(0x7D9780, 0x7D92B0, 0x7D9320));
+		DeclareAddress(RemoveGameMode, SelectAddress(0x7D9510, 0x7D9040, 0x7D90B0));
+		DeclareAddress(SetActiveMode, SelectAddress(0x7D9150, 0x7D8C80, 0x7D8CF0));
+		DeclareAddress(GetActiveMode, SelectAddress(0x7D87E0, 0x7D8310, 0x7D8380));
+		DeclareAddress(GetGameMode, SelectAddress(0x7D8790, 0x7D82C0, 0x7D8330));
+		DeclareAddress(GetModeIDAt, SelectAddress(0x7D8930, 0x7D8460, 0x7D84D0));
+		DeclareAddress(GetActiveModeID, SelectAddress(0x7D8820, 0x7D8350, 0x7D83C0));
+		DeclareAddress(GetModeCount, SelectAddress(0x7D8860, 0x7D8390, 0x7D8400));
+		DeclareAddress(SetActiveModeAt, SelectAddress(0x7D91A0, 0x7D8CD0, 0x7D8D40));
+		DeclareAddress(GetGameModeAt, SelectAddress(0x7D88F0, 0x7D8420, 0x7D8490));
+		DeclareAddress(func48h, SelectAddress(0x108DD90, 0x111CD70, 0x111CD70));
+		DeclareAddress(SetActiveModeByName, SelectAddress(0x7D8880, 0x7D83B0, 0x7D8420));
+		DeclareAddress(GetCameraManager, SelectAddress(0xB18420, 0x967D90, 0x967D90));
+		DeclareAddress(SetViewer, SelectAddress(0x7D8970, 0x7D84A0, 0x7D8510));
+		DeclareAddress(GetViewer, SelectAddress(0x804E60, 0x5AADB0, 0x5AADB0));
 
 	}
 }

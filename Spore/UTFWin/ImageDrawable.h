@@ -202,35 +202,35 @@ namespace UTFWin
 
 	static_assert(sizeof(ImageDrawable) == 0x50, "sizeof(ImageDrawable) must be 50h");
 
-	namespace InternalAddressList(ImageDrawable)
+	namespace Addresses(ImageDrawable)
 	{
-		DefineAddress(Paint, GetAddress(0x97D520, 0x97D1E0, 0x97D1E0));
-		DefineAddress(IsColliding, GetAddress(0x689880, 0x5ACA30, 0x5ACA30));
-		DefineAddress(GetDimensions, GetAddress(0x97D420, 0x97D0E0, 0x97D0E0));
-		DefineAddress(UseCollision, GetAddress(0x951320, 0x950E00, 0x950E00));
+		DeclareAddress(Paint, SelectAddress(0x97D520, 0x97D1E0, 0x97D1E0));
+		DeclareAddress(IsColliding, SelectAddress(0x689880, 0x5ACA30, 0x5ACA30));
+		DeclareAddress(GetDimensions, SelectAddress(0x97D420, 0x97D0E0, 0x97D0E0));
+		DeclareAddress(UseCollision, SelectAddress(0x951320, 0x950E00, 0x950E00));
 
-		DefineAddress(SetSerializer, GetAddress(0x97D4B0, 0x97D170, 0x97D170));
-		DefineAddress(GetProxyID, GetAddress(0x97D370, 0x97D020, 0x97D020));
+		DeclareAddress(SetSerializer, SelectAddress(0x97D4B0, 0x97D170, 0x97D170));
+		DeclareAddress(GetProxyID, SelectAddress(0x97D370, 0x97D020, 0x97D020));
 
-		DefineAddress(ToDrawable, GetAddress(0x97E760, 0x96FEB0, 0x96FEB0));
-		DefineAddress(SetImage, GetAddress(0x97D3C0, 0x97D070, 0x97D070));
-		DefineAddress(GetImage, GetAddress(0xFC8510, 0x6C0230, 0x6C0230));
-		DefineAddress(GetImageDrawableFlags, GetAddress(0x923C40, 0x93B630, 0x93B630));
-		DefineAddress(SetImageDrawableFlags, GetAddress(0x980680, 0xFCC100, 0xFCC100));
-		DefineAddress(SetImageDrawableFlag, GetAddress(0x97D3F0, 0x97D0A0, 0x97D0A0));
-		DefineAddress(SetTiling, GetAddress(0xA67DB0, 0xFD9460, 0xFD9460));
-		DefineAddress(GetTiling, GetAddress(0x80E390, 0xFC7E10, 0xFC7E10));
-		DefineAddress(SetScale, GetAddress(0x97E770, 0x9804D0, 0x980500));
-		DefineAddress(GetScale, GetAddress(0x980800, 0x97E440, 0x97E440));
-		DefineAddress(SetAlignmentHorizontal, GetAddress(0xA702D0, 0x985CE0, 0x985CE0));
-		DefineAddress(GetAlignmentHorizontal, GetAddress(0x6BD860, 0x7F5550, 0x7F5550));
-		DefineAddress(SetAlignmentVertical, GetAddress(0x985FC0, 0x97D0D0, 0x97D0D0));
-		DefineAddress(GetAlignmentVertical, GetAddress(0x8D88F0, 0xFF02D0, 0xFF02D0));
+		DeclareAddress(ToDrawable, SelectAddress(0x97E760, 0x96FEB0, 0x96FEB0));
+		DeclareAddress(SetImage, SelectAddress(0x97D3C0, 0x97D070, 0x97D070));
+		DeclareAddress(GetImage, SelectAddress(0xFC8510, 0x6C0230, 0x6C0230));
+		DeclareAddress(GetImageDrawableFlags, SelectAddress(0x923C40, 0x93B630, 0x93B630));
+		DeclareAddress(SetImageDrawableFlags, SelectAddress(0x980680, 0xFCC100, 0xFCC100));
+		DeclareAddress(SetImageDrawableFlag, SelectAddress(0x97D3F0, 0x97D0A0, 0x97D0A0));
+		DeclareAddress(SetTiling, SelectAddress(0xA67DB0, 0xFD9460, 0xFD9460));
+		DeclareAddress(GetTiling, SelectAddress(0x80E390, 0xFC7E10, 0xFC7E10));
+		DeclareAddress(SetScale, SelectAddress(0x97E770, 0x9804D0, 0x980500));
+		DeclareAddress(GetScale, SelectAddress(0x980800, 0x97E440, 0x97E440));
+		DeclareAddress(SetAlignmentHorizontal, SelectAddress(0xA702D0, 0x985CE0, 0x985CE0));
+		DeclareAddress(GetAlignmentHorizontal, SelectAddress(0x6BD860, 0x7F5550, 0x7F5550));
+		DeclareAddress(SetAlignmentVertical, SelectAddress(0x985FC0, 0x97D0D0, 0x97D0D0));
+		DeclareAddress(GetAlignmentVertical, SelectAddress(0x8D88F0, 0xFF02D0, 0xFF02D0));
 	}
 
-	namespace InternalAddressList(IImageDrawable)
+	namespace Addresses(IImageDrawable)
 	{
-		DefineAddress(AddImageWindow, GetAddress(0x807EC0, 0x8078E0, 0x807970));
+		DeclareAddress(AddImageWindow, SelectAddress(0x807EC0, 0x8078E0, 0x807970));
 	}
 
 	inline ImageDrawable::ImageDrawable()

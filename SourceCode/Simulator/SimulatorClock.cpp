@@ -22,7 +22,7 @@
 namespace Simulator
 {
 	cGonzagoTimer::cGonzagoTimer()
-		: cGonzagoTimer((TimeFunction_t)(GetMethodAddress(cGonzagoTimer, GetSimulatorTime_ptr)))
+		: cGonzagoTimer((TimeFunction_t)(GetAddress(cGonzagoTimer, GetSimulatorTime_ptr)))
 	{
 	}
 

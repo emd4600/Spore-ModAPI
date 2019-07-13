@@ -31,22 +31,22 @@ namespace App
 
 	auto_METHOD_VIRTUAL_(cMessageManager, IMessageManager, bool, Initialize);
 	auto_METHOD_VIRTUAL_(cMessageManager, IMessageManager, bool, Dispose);
-	auto_METHOD_VIRTUAL(cMessageManager, IMessageManager, bool, GetOption, PARAMS(Options option), PARAMS(option));
-	auto_METHOD_VIRTUAL_VOID(cMessageManager, IMessageManager, SetOption, PARAMS(Options option, bool bValue), PARAMS(option, bValue));
-	auto_METHOD_VIRTUAL_VOID(cMessageManager, IMessageManager, PostMSG, PARAMS(uint32_t messageID, void* pMessage, IMessageListener* pListener), PARAMS(messageID, pMessage, pListener));
-	auto_METHOD_VIRTUAL_VOID(cMessageManager, IMessageManager, func18h, PARAMS(int arg_0, int arg_4, int arg_8), PARAMS(arg_0, arg_4, arg_8));
-	auto_METHOD_VIRTUAL_VOID(cMessageManager, IMessageManager, func1Ch, PARAMS(int arg_0, int arg_4, int arg_8, int arg_c, int arg_10), PARAMS(arg_0, arg_4, arg_8, arg_c, arg_10));
-	auto_METHOD_VIRTUAL_VOID(cMessageManager, IMessageManager, AddListener, PARAMS(IMessageListener* pListener, uint32_t messageID), PARAMS(pListener, messageID));
-	auto_METHOD_VIRTUAL_VOID(cMessageManager, IMessageManager, AddUnmanagedListener, PARAMS(IUnmanagedMessageListener* pListener, uint32_t messageID), PARAMS(pListener, messageID));
-	auto_METHOD_VIRTUAL_VOID(cMessageManager, IMessageManager, AddHandler, PARAMS(MessageHandler_t pFunction, void* pObject, uint32_t messageID, bool bRefCounted, int nPriority), PARAMS(pFunction, pObject, messageID, bRefCounted, nPriority));
-	auto_METHOD_VIRTUAL(cMessageManager, IMessageManager, bool, RemoveListener, PARAMS(IMessageListener* pListener, uint32_t messageID, int nPriority), PARAMS(pListener, messageID, nPriority));
-	auto_METHOD_VIRTUAL(cMessageManager, IMessageManager, bool, RemoveHandler, PARAMS(MessageHandler_t pFunction, uint32_t messageID, int nPriority), PARAMS(pFunction, messageID, nPriority));
-	auto_METHOD_VIRTUAL(cMessageManager, IMessageManager, int, func34h, PARAMS(int arg_0, int arg_4, int arg_8), PARAMS(arg_0, arg_4, arg_8));
+	auto_METHOD_VIRTUAL(cMessageManager, IMessageManager, bool, GetOption, Args(Options option), Args(option));
+	auto_METHOD_VIRTUAL_VOID(cMessageManager, IMessageManager, SetOption, Args(Options option, bool bValue), Args(option, bValue));
+	auto_METHOD_VIRTUAL_VOID(cMessageManager, IMessageManager, PostMSG, Args(uint32_t messageID, void* pMessage, IMessageListener* pListener), Args(messageID, pMessage, pListener));
+	auto_METHOD_VIRTUAL_VOID(cMessageManager, IMessageManager, func18h, Args(int arg_0, int arg_4, int arg_8), Args(arg_0, arg_4, arg_8));
+	auto_METHOD_VIRTUAL_VOID(cMessageManager, IMessageManager, func1Ch, Args(int arg_0, int arg_4, int arg_8, int arg_c, int arg_10), Args(arg_0, arg_4, arg_8, arg_c, arg_10));
+	auto_METHOD_VIRTUAL_VOID(cMessageManager, IMessageManager, AddListener, Args(IMessageListener* pListener, uint32_t messageID), Args(pListener, messageID));
+	auto_METHOD_VIRTUAL_VOID(cMessageManager, IMessageManager, AddUnmanagedListener, Args(IUnmanagedMessageListener* pListener, uint32_t messageID), Args(pListener, messageID));
+	auto_METHOD_VIRTUAL_VOID(cMessageManager, IMessageManager, AddHandler, Args(MessageHandler_t pFunction, void* pObject, uint32_t messageID, bool bRefCounted, int nPriority), Args(pFunction, pObject, messageID, bRefCounted, nPriority));
+	auto_METHOD_VIRTUAL(cMessageManager, IMessageManager, bool, RemoveListener, Args(IMessageListener* pListener, uint32_t messageID, int nPriority), Args(pListener, messageID, nPriority));
+	auto_METHOD_VIRTUAL(cMessageManager, IMessageManager, bool, RemoveHandler, Args(MessageHandler_t pFunction, uint32_t messageID, int nPriority), Args(pFunction, messageID, nPriority));
+	auto_METHOD_VIRTUAL(cMessageManager, IMessageManager, int, func34h, Args(int arg_0, int arg_4, int arg_8), Args(arg_0, arg_4, arg_8));
 	auto_METHOD_VIRTUAL_(cMessageManager, IMessageManager, int, func38h);
 	auto_METHOD_VIRTUAL_(cMessageManager, IMessageManager, int, func3Ch);
-	auto_METHOD_VIRTUAL(cMessageManager, IMessageManager, int, UseMutex, PARAMS(bool bLock), PARAMS(bLock));
-	auto_METHOD_VIRTUAL_VOID(cMessageManager, IMessageManager, AddEntry, PARAMS(const Entry& entry, uint32_t messageID), PARAMS(entry, messageID));
-	auto_METHOD_VIRTUAL(cMessageManager, IMessageManager, bool, RemoveEntry, PARAMS(void* pMessageObject, uint32_t messageID, int nPriority), PARAMS(pMessageObject, messageID, nPriority));
+	auto_METHOD_VIRTUAL(cMessageManager, IMessageManager, int, UseMutex, Args(bool bLock), Args(bLock));
+	auto_METHOD_VIRTUAL_VOID(cMessageManager, IMessageManager, AddEntry, Args(const Entry& entry, uint32_t messageID), Args(entry, messageID));
+	auto_METHOD_VIRTUAL(cMessageManager, IMessageManager, bool, RemoveEntry, Args(void* pMessageObject, uint32_t messageID, int nPriority), Args(pMessageObject, messageID, nPriority));
 
 	DefaultMessageListener::DefaultMessageListener() : mnRefCount(0)
 	{

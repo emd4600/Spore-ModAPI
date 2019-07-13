@@ -20,5 +20,5 @@
 
 namespace Simulator
 {
-	auto_METHOD(cStarRecord, cPlanetRecord*, GetPlanetRecord, PARAMS(size_t arg), PARAMS(arg));
+	auto_METHOD(cStarRecord, cPlanetRecord*, GetPlanetRecord, Args(size_t arg), Args(arg));
 }

@@ -34,11 +34,11 @@ namespace Simulator
 		virtual int ProcessCost(int useCost) override;
 	};
 
-	namespace InternalAddressList(cRepairToolStrategy)
+	namespace Addresses(cRepairToolStrategy)
 	{
-		DefineAddress(Update, GetAddress(0x1057810, NO_ADDRESS, 0x1056C80));
-		DefineAddress(OnHit, GetAddress(0x105BCF0, NO_ADDRESS, 0x105B140));
-		DefineAddress(WhileFiring, GetAddress(0x10577D0, NO_ADDRESS, 0x1056C40));
-		DefineAddress(ProcessCost, GetAddress(0x1054160, NO_ADDRESS, 0x10535F0));
+		DeclareAddress(Update, SelectAddress(0x1057810, NO_ADDRESS, 0x1056C80));
+		DeclareAddress(OnHit, SelectAddress(0x105BCF0, NO_ADDRESS, 0x105B140));
+		DeclareAddress(WhileFiring, SelectAddress(0x10577D0, NO_ADDRESS, 0x1056C40));
+		DeclareAddress(ProcessCost, SelectAddress(0x1054160, NO_ADDRESS, 0x10535F0));
 	}
 }

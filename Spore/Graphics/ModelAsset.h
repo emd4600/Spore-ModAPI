@@ -131,10 +131,6 @@ namespace Graphics
 	{
 		return ++mnRefCount;
 	}
-	inline int Model::Release()
-	{
-		return CALL(GetAddress(0x40F2C0, 0x40F360, 0x40F360), int, PARAMS(Model*), PARAMS(this));
-	}
 
 	inline Transform Model::GetTransform() const
 	{
@@ -159,5 +155,10 @@ namespace Graphics
 
 	inline IModelWorld* Model::GetModelWorld() const {
 		return mpWorld;
+	}
+
+	namespace Addresses(Model)
+	{
+		DeclareAddress(Release, SelectAddress(0x40F2C0, 0x40F360, 0x40F360));
 	}
 }

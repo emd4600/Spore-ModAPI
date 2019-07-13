@@ -173,8 +173,8 @@ namespace Graphics
 	//// INTERNAL IMPLEMENTATION ////
 	/////////////////////////////////
 
-	namespace InternalAddressList(IMaterialManager)
+	namespace Addresses(IMaterialManager)
 	{
-		DefineAddress(Get, GetAddress(0x67DE90, 0x67DD30, 0x67DD30));
+		DeclareAddress(Get, SelectAddress(0x67DE90, 0x67DD30, 0x67DD30));
 	}
 }

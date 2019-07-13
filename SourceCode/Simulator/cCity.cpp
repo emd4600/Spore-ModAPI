@@ -20,7 +20,7 @@
 
 namespace Simulator
 {
-	auto_METHOD(cCity, bool, IsAboveCity, PARAMS(const Vector3& position), PARAMS(position));
+	auto_METHOD(cCity, bool, IsAboveCity, Args(const Vector3& position), Args(position));
 
 	Vector3 cCity::GetWallsPosition() {
 		return mpCityWalls->GetPosition();

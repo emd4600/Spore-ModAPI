@@ -91,8 +91,8 @@ namespace Simulator
 
 	static_assert(sizeof(cSimulatorPlayerUFO) == 0xE0, "sizeof(cSimulatorPlayerUFO) != 0xE0");
 
-	namespace InternalAddressList(cSimulatorPlayerUFO)
+	namespace Addresses(cSimulatorPlayerUFO)
 	{
-		DefineAddress(Get, GetAddress(0xFFC990, NO_ADDRESS, 0xFFBD00));
+		DeclareAddress(Get, SelectAddress(0xFFC990, NO_ADDRESS, 0xFFBD00));
 	}
 }

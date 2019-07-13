@@ -31,6 +31,7 @@ namespace Graphics
 		virtual int Release() = 0;
 		virtual ~IRenderable() {};
 
+		// arg_8 is a pointer to a pointer to a cViewer
 		///
 		/// @param flags The flags this renderable was registered with, combined with the global render flags.
 		/// @param layerIndex The layer index this renderable was registered with.

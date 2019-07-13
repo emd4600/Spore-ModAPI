@@ -20,16 +20,16 @@
 
 namespace Simulator
 {
-	auto_METHOD(cToolManager, bool, LoadTool, PARAMS(const ResourceKey& id, intrusive_ptr<cSpaceToolData>& dst),
-		PARAMS(id, dst));
+	auto_METHOD(cToolManager, bool, LoadTool, Args(const ResourceKey& id, intrusive_ptr<cSpaceToolData>& dst),
+		Args(id, dst));
 
 	auto_STATIC_METHOD_(cToolManager, cToolManager*, Get);
 
-	auto_METHOD(cToolManager, cToolStrategy*, GetStrategy, PARAMS(uint32_t strategyID), PARAMS(strategyID));
+	auto_METHOD(cToolManager, cToolStrategy*, GetStrategy, Args(uint32_t strategyID), Args(strategyID));
 
-	auto_METHOD(cToolManager, bool, ActivateTool, PARAMS(cSpaceToolData* pTool), PARAMS(pTool));
-	auto_METHOD(cToolManager, bool, DeactivateTool, PARAMS(cSpaceToolData* pTool), PARAMS(pTool));
-	auto_METHOD(cToolManager, bool, OnMouseUp, PARAMS(cSpaceToolData* pTool), PARAMS(pTool));
+	auto_METHOD(cToolManager, bool, ActivateTool, Args(cSpaceToolData* pTool), Args(pTool));
+	auto_METHOD(cToolManager, bool, DeactivateTool, Args(cSpaceToolData* pTool), Args(pTool));
+	auto_METHOD(cToolManager, bool, OnMouseUp, Args(cSpaceToolData* pTool), Args(pTool));
 
 	const char16_t* cToolManager::GetToolFailText(ToolFailText index) {
 		return mToolFailTexts[index].GetText();

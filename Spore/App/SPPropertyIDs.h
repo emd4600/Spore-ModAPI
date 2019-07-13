@@ -33,7 +33,7 @@ namespace App
 	/// ~~~~~~~~~~~~~~~
 	inline DirectPropertyList* AppProperties()
 	{
-		return *(DirectPropertyList**)(GetAddress(0x1601BA0, 0x15FE910, 0x15FD918));
+		return *(DirectPropertyList**)(SelectAddress(0x1601BA0, 0x15FE910, 0x15FD918));
 	}
 
 	/// 

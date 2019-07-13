@@ -29,9 +29,9 @@ namespace UTFWin
 	//// INTERNAL IMPLEMENENTATION ////
 	///////////////////////////////////
 
-	namespace InternalAddressList(UTFWin)
+	namespace Addresses(UTFWin)
 	{
-		DefineAddress(GetAllocator, GetAddress(0x951750, 0x951220, 0x951220));
+		DeclareAddress(GetAllocator, SelectAddress(0x951750, 0x951220, 0x951220));
 	}
 
 }

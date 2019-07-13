@@ -34,11 +34,11 @@ namespace Simulator
 		virtual int ProcessCost(int useCost) override;
 	};
 
-	namespace InternalAddressList(cDragInputProjectileToolStrategy)
+	namespace Addresses(cDragInputProjectileToolStrategy)
 	{
-		DefineAddress(OnMouseDown, GetAddress(0x1055D10, NO_ADDRESS, 0x1055160));
-		DefineAddress(OnHit, GetAddress(0x105AC70, NO_ADDRESS, 0x105B660));
-		DefineAddress(WhileFiring, GetAddress(0x1058500, NO_ADDRESS, 0x1057960));
-		DefineAddress(ProcessCost, GetAddress(0x1056020, NO_ADDRESS, 0x1055470));
+		DeclareAddress(OnMouseDown, SelectAddress(0x1055D10, NO_ADDRESS, 0x1055160));
+		DeclareAddress(OnHit, SelectAddress(0x105AC70, NO_ADDRESS, 0x105B660));
+		DeclareAddress(WhileFiring, SelectAddress(0x1058500, NO_ADDRESS, 0x1057960));
+		DeclareAddress(ProcessCost, SelectAddress(0x1056020, NO_ADDRESS, 0x1055470));
 	}
 }

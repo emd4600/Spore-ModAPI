@@ -20,6 +20,7 @@
 
 #include <Spore\App\IMessageListener.h>
 #include <Spore\Object.h>
+#include <Spore\Input.h>
 #include <Spore\Simulator\SubSystem\cStrategy.h>
 #include <EASTL\map.h>
 #include <EASTL\vector.h>
@@ -48,12 +49,12 @@ namespace Simulator
 		/* 40h */	virtual void func40h_(int, const char*);
 		/* 44h */	virtual bool func44h_(int, int);
 		/* 48h */	virtual void func48h_(bool);
-		/* 4Ch */	virtual bool OnKeyDown(int virtualKey, int modifiers);
-		/* 50h */	virtual bool OnKeyUp(int virtualKey, int modifiers);
-		/* 54h */	virtual bool OnMouseDown(int mouseButton, float mouseX, float mouseY, int flags);
-		/* 58h */	virtual bool OnMouseUp(int mouseButton, float mouseX, float mouseY, int flags);
-		/* 5Ch */	virtual bool OnMouseMove(float mouseX, float mouseY, int state);
-		/* 60h */	virtual bool OnMouseWheel(int nWheelDelta, float mouseX, float mouseY, int flags);
+		/* 4Ch */	virtual bool OnKeyDown(int virtualKey, KeyModifiers modifiers);
+		/* 50h */	virtual bool OnKeyUp(int virtualKey, KeyModifiers modifiers);
+		/* 54h */	virtual bool OnMouseDown(MouseButton mouseButton, float mouseX, float mouseY, MouseState mouseState);
+		/* 58h */	virtual bool OnMouseUp(MouseButton mouseButton, float mouseX, float mouseY, MouseState mouseState);
+		/* 5Ch */	virtual bool OnMouseMove(float mouseX, float mouseY, MouseState mouseState);
+		/* 60h */	virtual bool OnMouseWheel(int nWheelDelta, float mouseX, float mouseY, MouseState mouseState);
 		/* 64h */	virtual bool func64h_(int, int);
 		/* 68h */	virtual bool func68h_(int);
 
@@ -114,8 +115,8 @@ namespace Simulator
 
 	static_assert(sizeof(cGameInputManager) == 0x114, "sizeof(cGameInputManager) != 114h");
 
-	namespace InternalAddressList(cGameInputManager)
+	namespace Addresses(cGameInputManager)
 	{
-		DefineAddress(Get, GetAddress(0xB3D1B0, NO_ADDRESS, 0xB3D350));
+		DeclareAddress(Get, SelectAddress(0xB3D1B0, NO_ADDRESS, 0xB3D350));
 	}
 }

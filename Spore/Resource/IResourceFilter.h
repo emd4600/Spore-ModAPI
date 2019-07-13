@@ -19,6 +19,7 @@
 
 #pragma once
 
+#include <Spore\Internal.h>
 #include <Spore\ResourceKey.h>
 
 namespace Resource
@@ -55,9 +56,7 @@ namespace Resource
 
 		virtual ~StandardFileFilter() {}
 
-		virtual bool IsValid(const ResourceKey& name) {
-			return CALL(GetAddress(0x404F10, 0x404F10, 0x404F10), bool, PARAMS(StandardFileFilter*, const ResourceKey&), PARAMS(this, name));
-		}
+		virtual bool IsValid(const ResourceKey& name);
 
 	public:
 		/* 04h */	uint32_t instanceID;
@@ -69,6 +68,12 @@ namespace Resource
 	///////////////////////////////////
 	//// INTERNAL IMPLEMENENTATION ////
 	///////////////////////////////////
+
+	namespace Addresses(StandardFileFilter) {
+		DeclareAddress(IsValid, SelectAddress(0x404F10, 0x404F10, 0x404F10));
+	}
+
+	inline auto_METHOD(StandardFileFilter, bool, IsValid, Args(const ResourceKey& name), Args(name));
 
 	inline StandardFileFilter::StandardFileFilter(
 		uint32_t nInstanceID,

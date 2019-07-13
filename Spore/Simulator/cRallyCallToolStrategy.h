@@ -31,8 +31,8 @@ namespace Simulator
 		virtual bool WhileFiring(cSpaceToolData* pTool, const Vector3& aimPoint, int) override;
 	};
 
-	namespace InternalAddressList(cRallyCallToolStrategy)
+	namespace Addresses(cRallyCallToolStrategy)
 	{
-		DefineAddress(WhileFiring, GetAddress(0x105CB20, NO_ADDRESS, 0x105BF80));
+		DeclareAddress(WhileFiring, SelectAddress(0x105CB20, NO_ADDRESS, 0x105BF80));
 	}
 }

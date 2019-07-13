@@ -132,11 +132,11 @@ namespace Palettes
 
 	static_assert(sizeof(PaletteMain) == 0x40, "sizeof(PaletteMain) != 40h");
 
-	namespace InternalAddressList(PaletteMain)
+	namespace Addresses(PaletteMain)
 	{
-		DefineAddress(GetCategory, GetAddress(0x5C5F90, 0x5C5EB0, 0x5C5EE0));
-		DefineAddress(ReadProp, GetAddress(0x5C64E0, 0x5C6400, 0x5C6430));
-		DefineAddress(ReadModuleProp, GetAddress(0x5C61B0, 0x5C60D0, 0x5C6100));
+		DeclareAddress(GetCategory, SelectAddress(0x5C5F90, 0x5C5EB0, 0x5C5EE0));
+		DeclareAddress(ReadProp, SelectAddress(0x5C64E0, 0x5C6400, 0x5C6430));
+		DeclareAddress(ReadModuleProp, SelectAddress(0x5C61B0, 0x5C60D0, 0x5C6100));
 	}
 
 	inline PaletteCategory* PaletteMain::GetCategoryAt(size_t nIndex)

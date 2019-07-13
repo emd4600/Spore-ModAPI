@@ -39,8 +39,8 @@ namespace UTFWin
 	//// INTERNAL IMPLEMENTATION ////
 	/////////////////////////////////
 
-	namespace InternalAddressList(UIRenderer)
+	namespace Addresses(UIRenderer)
 	{
-		DefineAddress(GetGraphics2D, GetAddress(0x95C0C0, 0x95BB70, 0x95BB70));
+		DeclareAddress(GetGraphics2D, SelectAddress(0x95C0C0, 0x95BB70, 0x95BB70));
 	}
 }

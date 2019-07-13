@@ -125,27 +125,27 @@ namespace IO
 	static_assert(sizeof(StreamBuffer) == 0x34, "sizeof(StreamBuffer) != 34h");
 
 
-	namespace InternalAddressList(StreamBuffer)
+	namespace Addresses(StreamBuffer)
 	{
-		DefineAddress(AddRef, GetAddress(0x83D030, 0x83F620, 0x83F6A0));
-		DefineAddress(Release, GetAddress(0x93BF70, 0x93B820, 0x93B820));
-		DefineAddress(GetType, GetAddress(0x93B360, 0x93ADA0, 0x93ADA0));
-		DefineAddress(GetAccessFlags, GetAddress(0x93B370, 0x93ADB0, 0x93ADB0));
-		DefineAddress(GetState, GetAddress(0x93B390, 0x93ADD0, 0x93ADD0));
-		DefineAddress(Close, GetAddress(0x93B980, 0x93B3C0, 0x93B3C0));
-		DefineAddress(GetSize, GetAddress(0x93B3B0, 0x93ADF0, 0x93ADF0));
-		DefineAddress(SetSize, GetAddress(0x93B580, 0x93AFC0, 0x93AFC0));
-		DefineAddress(GetPosition, GetAddress(0x93B3E0, 0x93AE20, 0x93AE20));
-		DefineAddress(SetPosition, GetAddress(0x93B5D0, 0x93B010, 0x93B010));
-		DefineAddress(GetAvailable, GetAddress(0x93B420, 0x93AE60, 0x93AE60));
-		DefineAddress(Read, GetAddress(0x93B670, 0x93B0B0, 0x93B0B0));
-		DefineAddress(Flush, GetAddress(0x93B830, 0x93B270, 0x93B270));
-		DefineAddress(Write, GetAddress(0x93B9C0, 0x93B400, 0x93B400));
+		DeclareAddress(AddRef, SelectAddress(0x83D030, 0x83F620, 0x83F6A0));
+		DeclareAddress(Release, SelectAddress(0x93BF70, 0x93B820, 0x93B820));
+		DeclareAddress(GetType, SelectAddress(0x93B360, 0x93ADA0, 0x93ADA0));
+		DeclareAddress(GetAccessFlags, SelectAddress(0x93B370, 0x93ADB0, 0x93ADB0));
+		DeclareAddress(GetState, SelectAddress(0x93B390, 0x93ADD0, 0x93ADD0));
+		DeclareAddress(Close, SelectAddress(0x93B980, 0x93B3C0, 0x93B3C0));
+		DeclareAddress(GetSize, SelectAddress(0x93B3B0, 0x93ADF0, 0x93ADF0));
+		DeclareAddress(SetSize, SelectAddress(0x93B580, 0x93AFC0, 0x93AFC0));
+		DeclareAddress(GetPosition, SelectAddress(0x93B3E0, 0x93AE20, 0x93AE20));
+		DeclareAddress(SetPosition, SelectAddress(0x93B5D0, 0x93B010, 0x93B010));
+		DeclareAddress(GetAvailable, SelectAddress(0x93B420, 0x93AE60, 0x93AE60));
+		DeclareAddress(Read, SelectAddress(0x93B670, 0x93B0B0, 0x93B0B0));
+		DeclareAddress(Flush, SelectAddress(0x93B830, 0x93B270, 0x93B270));
+		DeclareAddress(Write, SelectAddress(0x93B9C0, 0x93B400, 0x93B400));
 
-		DefineAddress(SetBufferSizes, GetAddress(0x93B490, 0x93AED0, 0x93AED0));
-		DefineAddress(SetStream, GetAddress(0x93B8F0, 0x93B330, 0x93B330));
-		DefineAddress(FillWriteBuffer, GetAddress(0x93B840, 0x93B280, 0x93B280));
-		DefineAddress(FlushWriteBuffer, GetAddress(0x93B430, 0x93AE70, 0x93AE70));
+		DeclareAddress(SetBufferSizes, SelectAddress(0x93B490, 0x93AED0, 0x93AED0));
+		DeclareAddress(SetStream, SelectAddress(0x93B8F0, 0x93B330, 0x93B330));
+		DeclareAddress(FillWriteBuffer, SelectAddress(0x93B840, 0x93B280, 0x93B280));
+		DeclareAddress(FlushWriteBuffer, SelectAddress(0x93B430, 0x93AE70, 0x93AE70));
 	}
 
 	inline IStream* StreamBuffer::GetStream() const

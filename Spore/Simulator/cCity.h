@@ -185,9 +185,9 @@ namespace Simulator
 	static_assert(sizeof(cCity) == 0x818, "sizeof(cCity) != 818h");
 	static_assert(sizeof(UnkCityClass) == 0x64, "sizeof(UnkCityClass) != 64h");
 
-	namespace InternalAddressList(cCity) 
+	namespace Addresses(cCity) 
 	{
-		DefineAddress(IsAboveCity, GetAddress(0xBD90C0, , 0xBD9D50));
-		DefineAddress(SpawnVehicle, GetAddress(0xBDD410, , PLACEHOLDER));
+		DeclareAddress(IsAboveCity, SelectAddress(0xBD90C0, , 0xBD9D50));
+		DeclareAddress(SpawnVehicle, SelectAddress(0xBDD410, , 0xBDDEF0));
 	}
 }

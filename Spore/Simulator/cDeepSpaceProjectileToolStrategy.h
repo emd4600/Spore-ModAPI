@@ -31,8 +31,8 @@ namespace Simulator
 		virtual bool WhileFiring(cSpaceToolData* pTool, const Vector3& aimPoint, int) override;
 	};
 
-	namespace InternalAddressList(cDeepSpaceProjectileToolStrategy)
+	namespace Addresses(cDeepSpaceProjectileToolStrategy)
 	{
-		DefineAddress(WhileFiring, GetAddress(0x10562F0, NO_ADDRESS, 0x1055740));
+		DeclareAddress(WhileFiring, SelectAddress(0x10562F0, NO_ADDRESS, 0x1055740));
 	}
 }

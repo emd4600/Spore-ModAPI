@@ -253,21 +253,21 @@ namespace Palettes
 
 	static_assert(sizeof(PageArrowsUI) == 0x28, "sizeof(PaletteCategoryUI::PageArrowsUI) != 28h");
 
-	namespace InternalAddressList(PaletteCategoryUI)
+	namespace Addresses(PaletteCategoryUI)
 	{
-		DefineAddress(Load, GetAddress(0x5C5560, 0x5C5480, 0x5C54B0));
-		DefineAddress(LoadPages, GetAddress(0x5C5380, 0x5C52A0, 0x5C52D0));
-		DefineAddress(FlipPage, GetAddress(0x5C3C60, 0x5C3CE0, 0x5C3D10));
-		DefineAddress(HandleMessage, GetAddress(0x5C3730, 0x5C37B0, 0x5C37E0));
-		DefineAddress(HandleUIMessage, GetAddress(0x5C40F0, 0x5C4170, 0x5C41A0));
-		DefineAddress(Update, GetAddress(0x5C28D0, 0x5C2970, 0x5C29A0));
+		DeclareAddress(Load, SelectAddress(0x5C5560, 0x5C5480, 0x5C54B0));
+		DeclareAddress(LoadPages, SelectAddress(0x5C5380, 0x5C52A0, 0x5C52D0));
+		DeclareAddress(FlipPage, SelectAddress(0x5C3C60, 0x5C3CE0, 0x5C3D10));
+		DeclareAddress(HandleMessage, SelectAddress(0x5C3730, 0x5C37B0, 0x5C37E0));
+		DeclareAddress(HandleUIMessage, SelectAddress(0x5C40F0, 0x5C4170, 0x5C41A0));
+		DeclareAddress(Update, SelectAddress(0x5C28D0, 0x5C2970, 0x5C29A0));
 	}
 
-	namespace InternalAddressList(PageArrowsUI)
+	namespace Addresses(PageArrowsUI)
 	{
-		DefineAddress(HandleUIMessage, GetAddress(0x5C0920, 0x5C0AC0, 0x5C0AF0));
-		DefineAddress(Load, GetAddress(0x5C0760, 0x5C0900, 0x5C0930));
-		DefineAddress(Update, GetAddress(0x5C09A0, 0x5C0B20, 0x5C0B50));
+		DeclareAddress(HandleUIMessage, SelectAddress(0x5C0920, 0x5C0AC0, 0x5C0AF0));
+		DeclareAddress(Load, SelectAddress(0x5C0760, 0x5C0900, 0x5C0930));
+		DeclareAddress(Update, SelectAddress(0x5C09A0, 0x5C0B20, 0x5C0B50));
 	}
 
 	inline void PageArrowsUI::SetVisible(bool bVisible)

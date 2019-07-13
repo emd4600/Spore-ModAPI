@@ -145,7 +145,7 @@ namespace App
 //// INTERNAL IMPLEMENTATION ////
 /////////////////////////////////
 
-namespace InternalAddressList(ICheatManager)
+namespace Addresses(ICheatManager)
 {
-	DefineAddress(Get, GetAddress(0x67DF40, 0x67DDE0, 0x67DDE0));
+	DeclareAddress(Get, SelectAddress(0x67DF40, 0x67DDE0, 0x67DDE0));
 }

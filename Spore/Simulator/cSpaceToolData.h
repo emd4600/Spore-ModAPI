@@ -309,11 +309,11 @@ namespace Simulator
 
 	static_assert(sizeof(cSpaceToolData) == 0x2A0, "sizeof(cSpaceToolData) != 0x2A0");
 
-	namespace InternalAddressList(cSpaceToolData)
+	namespace Addresses(cSpaceToolData)
 	{
-		DefineAddress(AddAmmo, GetAddress(0x104D730, 0x104CBE0, 0x104CBE0));
-		DefineAddress(ConsumeAmmo, GetAddress(0x104D760, 0x104CC10, 0x104CC10));
-		DefineAddress(GetStrategy, GetAddress(0x1050490, NO_ADDRESS, 0x1050030));
-		DefineAddress(ShowEventLog, GetAddress(0x1053350, NO_ADDRESS, 0x1052800));
+		DeclareAddress(AddAmmo, SelectAddress(0x104D730, 0x104CBE0, 0x104CBE0));
+		DeclareAddress(ConsumeAmmo, SelectAddress(0x104D760, 0x104CC10, 0x104CC10));
+		DeclareAddress(GetStrategy, SelectAddress(0x1050490, NO_ADDRESS, 0x1050030));
+		DeclareAddress(ShowEventLog, SelectAddress(0x1053350, NO_ADDRESS, 0x1052800));
 	}
 }

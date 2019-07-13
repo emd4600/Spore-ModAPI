@@ -26,17 +26,17 @@ namespace UTFWin
 	const wchar_t* const Graphics2D::kDefaultFont = nullptr;
 
 	auto_STATIC_METHOD_VOID(Graphics2D, DrawTiledImage,
-		PARAMS(Graphics2D* graphics, const Math::Rectangle& bounds, const Math::Rectangle& texCoords, const Image* image, float scaleX, float scaleY, float offsetX, float offsetY),
-		PARAMS(graphics, bounds, texCoords, image, scaleX, scaleY, offsetX, offsetY));
+		Args(Graphics2D* graphics, const Math::Rectangle& bounds, const Math::Rectangle& texCoords, const Image* image, float scaleX, float scaleY, float offsetX, float offsetY),
+		Args(graphics, bounds, texCoords, image, scaleX, scaleY, offsetX, offsetY));
 
 	auto_STATIC_METHOD_VOID(Graphics2D, DrawSlicedTiledImage,
-		PARAMS(Graphics2D* graphics, const Math::Rectangle& bounds, const Math::Rectangle& texCoords, const Image* image, const Math::Rectangle& sliceProportions, float scaleX, float scaleY),
-		PARAMS(graphics, bounds, texCoords, image, sliceProportions, scaleX, scaleY));
+		Args(Graphics2D* graphics, const Math::Rectangle& bounds, const Math::Rectangle& texCoords, const Image* image, const Math::Rectangle& sliceProportions, float scaleX, float scaleY),
+		Args(graphics, bounds, texCoords, image, sliceProportions, scaleX, scaleY));
 
 	auto_STATIC_METHOD_VOID(Graphics2D, DrawSlicedStretchedImage,
-		PARAMS(Graphics2D* graphics, const Math::Rectangle& bounds, const Math::Rectangle& texCoords, const Image* image, const Math::Rectangle& sliceProportions, float scaleX, float scaleY),
-		PARAMS(graphics, bounds, texCoords, image, sliceProportions, scaleX, scaleY));
+		Args(Graphics2D* graphics, const Math::Rectangle& bounds, const Math::Rectangle& texCoords, const Image* image, const Math::Rectangle& sliceProportions, float scaleX, float scaleY),
+		Args(graphics, bounds, texCoords, image, sliceProportions, scaleX, scaleY));
 
 
-	auto_METHOD(UIRenderer, Graphics2D&, GetGraphics2D, PARAMS(int arg_0), PARAMS(arg_0));
+	auto_METHOD(UIRenderer, Graphics2D&, GetGraphics2D, Args(int arg_0), Args(arg_0));
 }

@@ -37,7 +37,7 @@ namespace Simulator
 	cStarRecord* GetActiveStarRecord();
 
 	cPlanet* GetActivePlanet();
-	cPlanetRecord* GetActivePlanetRecord(); //TODO PLACEHOLDER
+	cPlanetRecord* GetActivePlanetRecord();
 
 	cEmpire* GetPlayerEmpire();
 	uint32_t GetPlayerEmpireID();
@@ -60,20 +60,20 @@ namespace Simulator
 		static SpacePlayerData* Get();
 	};
 
-	namespace InternalAddressList(SpacePlayerData)
+	namespace Addresses(SpacePlayerData)
 	{
-		DefineAddress(ptr, GetAddress(0x16E1D0C, 0x16DEA6C, 0x16DDA8C));
+		DeclareAddress(ptr, SelectAddress(0x16E1D0C, 0x16DEA6C, 0x16DDA8C));
 	}
 }
 
-namespace InternalAddressList(Simulator)
+namespace Addresses(Simulator)
 {
-	DefineAddress(GetActiveStar, GetAddress(0x10222B0, 0x10210E0, 0x10210E0));
-	DefineAddress(GetActiveStarRecord, GetAddress(0x10222C0, 0x10210F0, 0x10210F0));
+	DeclareAddress(GetActiveStar, SelectAddress(0x10222B0, 0x10210E0, 0x10210E0));
+	DeclareAddress(GetActiveStarRecord, SelectAddress(0x10222C0, 0x10210F0, 0x10210F0));
 
-	DefineAddress(GetPlayerEmpire, GetAddress(0x1022380, 0x10211B0, 0x10211B0));
-	DefineAddress(GetPlayerEmpireID, GetAddress(0x10220F0, 0x1020F40, 0x1020F40));
+	DeclareAddress(GetPlayerEmpire, SelectAddress(0x1022380, 0x10211B0, 0x10211B0));
+	DeclareAddress(GetPlayerEmpireID, SelectAddress(0x10220F0, 0x1020F40, 0x1020F40));
 
-	DefineAddress(GetCurrentContext, GetAddress(0x10220E0, 0x1020F30, 0x1020F30));
+	DeclareAddress(GetCurrentContext, SelectAddress(0x10220E0, 0x1020F30, 0x1020F30));
 
 }

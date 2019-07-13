@@ -38,32 +38,32 @@ namespace UTFWin
 	//// ImageDrawable ////
 
 	auto_STATIC_METHOD(IImageDrawable, IWindow*, AddImageWindow,
-		PARAMS(const ResourceKey& imageName, float offsetX, float offsetY, IWindow* parentWindow),
-		PARAMS(imageName, offsetX, offsetY, parentWindow));
+		Args(const ResourceKey& imageName, float offsetX, float offsetY, IWindow* parentWindow),
+		Args(imageName, offsetX, offsetY, parentWindow));
 
 	DEFAULT_REFCOUNT(ImageDrawable);
 
-	auto_METHOD_VIRTUAL_VOID(ImageDrawable, ILayoutElement, SetSerializer, PARAMS(Serializer& dst), PARAMS(dst));
+	auto_METHOD_VIRTUAL_VOID(ImageDrawable, ILayoutElement, SetSerializer, Args(Serializer& dst), Args(dst));
 	auto_METHOD_VIRTUAL_const_(ImageDrawable, ILayoutElement, uint32_t, GetProxyID);
 
-	auto_METHOD_VIRTUAL_VOID(ImageDrawable, IDrawable, Paint, PARAMS(UIRenderer* pRenderer, const Math::Rectangle& area, const RenderParams& params), PARAMS(pRenderer, area, params));
-	auto_METHOD_VIRTUAL(ImageDrawable, IDrawable, bool, IsColliding, PARAMS(const Math::Rectangle& area, const Math::Point& point, RenderParams& params), PARAMS(area, point, params));
-	auto_METHOD_VIRTUAL(ImageDrawable, IDrawable, bool, GetDimensions, PARAMS(Dimensions& dst, int state, int index), PARAMS(dst, state, index));
-	auto_METHOD_VIRTUAL(ImageDrawable, IDrawable, bool, UseCollision, PARAMS(uint32_t type, bool& dst), PARAMS(type, dst));
+	auto_METHOD_VIRTUAL_VOID(ImageDrawable, IDrawable, Paint, Args(UIRenderer* pRenderer, const Math::Rectangle& area, const RenderParams& params), Args(pRenderer, area, params));
+	auto_METHOD_VIRTUAL(ImageDrawable, IDrawable, bool, IsColliding, Args(const Math::Rectangle& area, const Math::Point& point, RenderParams& params), Args(area, point, params));
+	auto_METHOD_VIRTUAL(ImageDrawable, IDrawable, bool, GetDimensions, Args(Dimensions& dst, int state, int index), Args(dst, state, index));
+	auto_METHOD_VIRTUAL(ImageDrawable, IDrawable, bool, UseCollision, Args(uint32_t type, bool& dst), Args(type, dst));
 
 	auto_METHOD_VIRTUAL_(ImageDrawable, IImageDrawable, IDrawable*, ToDrawable);
-	auto_METHOD_VIRTUAL_VOID(ImageDrawable, IImageDrawable, SetImage, PARAMS(Image* pImage), PARAMS(pImage));
+	auto_METHOD_VIRTUAL_VOID(ImageDrawable, IImageDrawable, SetImage, Args(Image* pImage), Args(pImage));
 	auto_METHOD_VIRTUAL_const_(ImageDrawable, IImageDrawable, Image*, GetImage);
 	auto_METHOD_VIRTUAL_const_(ImageDrawable, IImageDrawable, int, GetImageDrawableFlags);
-	auto_METHOD_VIRTUAL_VOID(ImageDrawable, IImageDrawable, SetImageDrawableFlags, PARAMS(int flags), PARAMS(flags));
-	auto_METHOD_VIRTUAL_VOID(ImageDrawable, IImageDrawable, SetImageDrawableFlag, PARAMS(int flag, bool bValue), PARAMS(flag, bValue));
-	auto_METHOD_VIRTUAL_VOID(ImageDrawable, IImageDrawable, SetTiling, PARAMS(ImageTiling tiling), PARAMS(tiling));
+	auto_METHOD_VIRTUAL_VOID(ImageDrawable, IImageDrawable, SetImageDrawableFlags, Args(int flags), Args(flags));
+	auto_METHOD_VIRTUAL_VOID(ImageDrawable, IImageDrawable, SetImageDrawableFlag, Args(int flag, bool bValue), Args(flag, bValue));
+	auto_METHOD_VIRTUAL_VOID(ImageDrawable, IImageDrawable, SetTiling, Args(ImageTiling tiling), Args(tiling));
 	auto_METHOD_VIRTUAL_const_(ImageDrawable, IImageDrawable, ImageTiling, GetTiling);
-	auto_METHOD_VIRTUAL_VOID(ImageDrawable, IImageDrawable, SetScale, PARAMS(float fScale), PARAMS(fScale));
+	auto_METHOD_VIRTUAL_VOID(ImageDrawable, IImageDrawable, SetScale, Args(float fScale), Args(fScale));
 	auto_METHOD_VIRTUAL_const_(ImageDrawable, IImageDrawable, float, GetScale);
-	auto_METHOD_VIRTUAL_VOID(ImageDrawable, IImageDrawable, SetAlignmentHorizontal, PARAMS(AlignmentH alignment), PARAMS(alignment));
+	auto_METHOD_VIRTUAL_VOID(ImageDrawable, IImageDrawable, SetAlignmentHorizontal, Args(AlignmentH alignment), Args(alignment));
 	auto_METHOD_VIRTUAL_const_(ImageDrawable, IImageDrawable, AlignmentH, GetAlignmentHorizontal);
-	auto_METHOD_VIRTUAL_VOID(ImageDrawable, IImageDrawable, SetAlignmentVertical, PARAMS(AlignmentV alignment), PARAMS(alignment));
+	auto_METHOD_VIRTUAL_VOID(ImageDrawable, IImageDrawable, SetAlignmentVertical, Args(AlignmentV alignment), Args(alignment));
 	auto_METHOD_VIRTUAL_const_(ImageDrawable, IImageDrawable, AlignmentV, GetAlignmentVertical);
 
 
@@ -86,26 +86,26 @@ namespace UTFWin
 
 	DEFAULT_REFCOUNT(StdDrawable);
 
-	auto_METHOD_VIRTUAL_VOID(StdDrawable, ILayoutElement, SetSerializer, PARAMS(Serializer& dst), PARAMS(dst));
+	auto_METHOD_VIRTUAL_VOID(StdDrawable, ILayoutElement, SetSerializer, Args(Serializer& dst), Args(dst));
 	auto_METHOD_VIRTUAL_const_(StdDrawable, ILayoutElement, uint32_t, GetProxyID);
 
-	auto_METHOD_VIRTUAL_VOID(StdDrawable, IDrawable, Paint, PARAMS(UIRenderer* pRenderer, const Math::Rectangle& area, const RenderParams& params), PARAMS(pRenderer, area, params));
-	auto_METHOD_VIRTUAL(StdDrawable, IDrawable, bool, IsColliding, PARAMS(const Math::Rectangle& area, const Math::Point& point, RenderParams& params), PARAMS(area, point, params));
-	auto_METHOD_VIRTUAL(StdDrawable, IDrawable, bool, GetDimensions, PARAMS(Dimensions& dst, int state, int index), PARAMS(dst, state, index));
-	auto_METHOD_VIRTUAL(StdDrawable, IDrawable, bool, UseCollision, PARAMS(uint32_t type, bool& dst), PARAMS(type, dst));
+	auto_METHOD_VIRTUAL_VOID(StdDrawable, IDrawable, Paint, Args(UIRenderer* pRenderer, const Math::Rectangle& area, const RenderParams& params), Args(pRenderer, area, params));
+	auto_METHOD_VIRTUAL(StdDrawable, IDrawable, bool, IsColliding, Args(const Math::Rectangle& area, const Math::Point& point, RenderParams& params), Args(area, point, params));
+	auto_METHOD_VIRTUAL(StdDrawable, IDrawable, bool, GetDimensions, Args(Dimensions& dst, int state, int index), Args(dst, state, index));
+	auto_METHOD_VIRTUAL(StdDrawable, IDrawable, bool, UseCollision, Args(uint32_t type, bool& dst), Args(type, dst));
 
-	auto_METHOD_VIRTUAL_const(StdDrawable, IStdDrawable, Image*, GetImage, PARAMS(StateIndices index), PARAMS(index));
-	auto_METHOD_VIRTUAL_VOID(StdDrawable, IStdDrawable, SetImage, PARAMS(StateIndices index, Image* pImage), PARAMS(index, pImage));
+	auto_METHOD_VIRTUAL_const(StdDrawable, IStdDrawable, Image*, GetImage, Args(StateIndices index), Args(index));
+	auto_METHOD_VIRTUAL_VOID(StdDrawable, IStdDrawable, SetImage, Args(StateIndices index, Image* pImage), Args(index, pImage));
 	auto_METHOD_VIRTUAL_const_(StdDrawable, IStdDrawable, Scaling, GetScaleType);
-	auto_METHOD_VIRTUAL_VOID(StdDrawable, IStdDrawable, SetScaleType, PARAMS(Scaling value), PARAMS(value));
+	auto_METHOD_VIRTUAL_VOID(StdDrawable, IStdDrawable, SetScaleType, Args(Scaling value), Args(value));
 	auto_METHOD_VIRTUAL_const_(StdDrawable, IStdDrawable, const Math::Rectangle&, GetScaleArea);
-	auto_METHOD_VIRTUAL_VOID(StdDrawable, IStdDrawable, SetScaleArea, PARAMS(const Math::Rectangle& value), PARAMS(value));
+	auto_METHOD_VIRTUAL_VOID(StdDrawable, IStdDrawable, SetScaleArea, Args(const Math::Rectangle& value), Args(value));
 	auto_METHOD_VIRTUAL_const_(StdDrawable, IStdDrawable, const Vector2&, GetScaleFactor);
-	auto_METHOD_VIRTUAL_VOID(StdDrawable, IStdDrawable, SetScaleFactor, PARAMS(Vector2& value), PARAMS(value));
+	auto_METHOD_VIRTUAL_VOID(StdDrawable, IStdDrawable, SetScaleFactor, Args(Vector2& value), Args(value));
 	auto_METHOD_VIRTUAL_const_(StdDrawable, IStdDrawable, Object*, GetHitMask);
-	auto_METHOD_VIRTUAL_VOID(StdDrawable, IStdDrawable, SetHitMask, PARAMS(Object* pHitMask), PARAMS(pHitMask));
+	auto_METHOD_VIRTUAL_VOID(StdDrawable, IStdDrawable, SetHitMask, Args(Object* pHitMask), Args(pHitMask));
 	auto_METHOD_VIRTUAL_const_(StdDrawable, IStdDrawable, float, GetHitFactor);
-	auto_METHOD_VIRTUAL_VOID(StdDrawable, IStdDrawable, SetHitFactor, PARAMS(float value), PARAMS(value));
+	auto_METHOD_VIRTUAL_VOID(StdDrawable, IStdDrawable, SetHitFactor, Args(float value), Args(value));
 
 	void* StdDrawable::Cast(uint32_t type) const {
 		if (type == IStdDrawable::TYPE)
@@ -123,18 +123,18 @@ namespace UTFWin
 
 	DEFAULT_REFCOUNT(ComboBoxDrawable);
 
-	auto_METHOD_VIRTUAL_VOID(ComboBoxDrawable, ILayoutElement, SetSerializer, PARAMS(Serializer& dst), PARAMS(dst));
+	auto_METHOD_VIRTUAL_VOID(ComboBoxDrawable, ILayoutElement, SetSerializer, Args(Serializer& dst), Args(dst));
 	auto_METHOD_VIRTUAL_const_(ComboBoxDrawable, ILayoutElement, uint32_t, GetProxyID);
 
-	auto_METHOD_VIRTUAL_VOID(ComboBoxDrawable, IDrawable, Paint, PARAMS(UIRenderer* pRenderer, const Math::Rectangle& area, const RenderParams& params), PARAMS(pRenderer, area, params));
-	auto_METHOD_VIRTUAL(ComboBoxDrawable, IDrawable, bool, IsColliding, PARAMS(const Math::Rectangle& area, const Math::Point& point, RenderParams& params), PARAMS(area, point, params));
-	auto_METHOD_VIRTUAL(ComboBoxDrawable, IDrawable, bool, GetDimensions, PARAMS(Dimensions& dst, int state, int index), PARAMS(dst, state, index));
-	auto_METHOD_VIRTUAL(ComboBoxDrawable, IDrawable, bool, UseCollision, PARAMS(uint32_t type, bool& dst), PARAMS(type, dst));
+	auto_METHOD_VIRTUAL_VOID(ComboBoxDrawable, IDrawable, Paint, Args(UIRenderer* pRenderer, const Math::Rectangle& area, const RenderParams& params), Args(pRenderer, area, params));
+	auto_METHOD_VIRTUAL(ComboBoxDrawable, IDrawable, bool, IsColliding, Args(const Math::Rectangle& area, const Math::Point& point, RenderParams& params), Args(area, point, params));
+	auto_METHOD_VIRTUAL(ComboBoxDrawable, IDrawable, bool, GetDimensions, Args(Dimensions& dst, int state, int index), Args(dst, state, index));
+	auto_METHOD_VIRTUAL(ComboBoxDrawable, IDrawable, bool, UseCollision, Args(uint32_t type, bool& dst), Args(type, dst));
 
-	auto_METHOD_VIRTUAL_const(ComboBoxDrawable, ComboBoxDrawable, Image*, GetImage, PARAMS(int index), PARAMS(index));
+	auto_METHOD_VIRTUAL_const(ComboBoxDrawable, ComboBoxDrawable, Image*, GetImage, Args(int index), Args(index));
 
 	auto_METHOD_VIRTUAL_(ComboBoxDrawable, IComboBoxDrawable, IDrawable*, ToDrawable);
-	auto_METHOD_VIRTUAL_VOID(ComboBoxDrawable, IComboBoxDrawable, SetImage, PARAMS(int index, Image* pImage), PARAMS(index, pImage));
+	auto_METHOD_VIRTUAL_VOID(ComboBoxDrawable, IComboBoxDrawable, SetImage, Args(int index, Image* pImage), Args(index, pImage));
 
 	void* ComboBoxDrawable::Cast(uint32_t type) const {
 		if (type == ILayoutElement::TYPE)
@@ -155,16 +155,16 @@ namespace UTFWin
 
 	DEFAULT_REFCOUNT(ScrollbarDrawable);
 
-	auto_METHOD_VIRTUAL_VOID(ScrollbarDrawable, ILayoutElement, SetSerializer, PARAMS(Serializer& dst), PARAMS(dst));
+	auto_METHOD_VIRTUAL_VOID(ScrollbarDrawable, ILayoutElement, SetSerializer, Args(Serializer& dst), Args(dst));
 	auto_METHOD_VIRTUAL_const_(ScrollbarDrawable, ILayoutElement, uint32_t, GetProxyID);
 
-	auto_METHOD_VIRTUAL_VOID(ScrollbarDrawable, IDrawable, Paint, PARAMS(UIRenderer* pRenderer, const Math::Rectangle& area, const RenderParams& params), PARAMS(pRenderer, area, params));
-	auto_METHOD_VIRTUAL(ScrollbarDrawable, IDrawable, bool, IsColliding, PARAMS(const Math::Rectangle& area, const Math::Point& point, RenderParams& params), PARAMS(area, point, params));
-	auto_METHOD_VIRTUAL(ScrollbarDrawable, IDrawable, bool, GetDimensions, PARAMS(Dimensions& dst, int state, int index), PARAMS(dst, state, index));
-	auto_METHOD_VIRTUAL(ScrollbarDrawable, IDrawable, bool, UseCollision, PARAMS(uint32_t type, bool& dst), PARAMS(type, dst));
+	auto_METHOD_VIRTUAL_VOID(ScrollbarDrawable, IDrawable, Paint, Args(UIRenderer* pRenderer, const Math::Rectangle& area, const RenderParams& params), Args(pRenderer, area, params));
+	auto_METHOD_VIRTUAL(ScrollbarDrawable, IDrawable, bool, IsColliding, Args(const Math::Rectangle& area, const Math::Point& point, RenderParams& params), Args(area, point, params));
+	auto_METHOD_VIRTUAL(ScrollbarDrawable, IDrawable, bool, GetDimensions, Args(Dimensions& dst, int state, int index), Args(dst, state, index));
+	auto_METHOD_VIRTUAL(ScrollbarDrawable, IDrawable, bool, UseCollision, Args(uint32_t type, bool& dst), Args(type, dst));
 
 	auto_METHOD_VIRTUAL_(ScrollbarDrawable, IScrollbarDrawable, IDrawable*, ToDrawable);
-	auto_METHOD_VIRTUAL_VOID(ScrollbarDrawable, IScrollbarDrawable, SetImage, PARAMS(int index, Image* pImage), PARAMS(index, pImage));
+	auto_METHOD_VIRTUAL_VOID(ScrollbarDrawable, IScrollbarDrawable, SetImage, Args(int index, Image* pImage), Args(index, pImage));
 
 	void* ScrollbarDrawable::Cast(uint32_t type) const {
 		if (type == ILayoutElement::TYPE)
@@ -185,16 +185,16 @@ namespace UTFWin
 
 	DEFAULT_REFCOUNT(SliderDrawable);
 
-	auto_METHOD_VIRTUAL_VOID(SliderDrawable, ILayoutElement, SetSerializer, PARAMS(Serializer& dst), PARAMS(dst));
+	auto_METHOD_VIRTUAL_VOID(SliderDrawable, ILayoutElement, SetSerializer, Args(Serializer& dst), Args(dst));
 	auto_METHOD_VIRTUAL_const_(SliderDrawable, ILayoutElement, uint32_t, GetProxyID);
 
-	auto_METHOD_VIRTUAL_VOID(SliderDrawable, IDrawable, Paint, PARAMS(UIRenderer* pRenderer, const Math::Rectangle& area, const RenderParams& params), PARAMS(pRenderer, area, params));
-	auto_METHOD_VIRTUAL(SliderDrawable, IDrawable, bool, IsColliding, PARAMS(const Math::Rectangle& area, const Math::Point& point, RenderParams& params), PARAMS(area, point, params));
-	auto_METHOD_VIRTUAL(SliderDrawable, IDrawable, bool, GetDimensions, PARAMS(Dimensions& dst, int state, int index), PARAMS(dst, state, index));
-	auto_METHOD_VIRTUAL(SliderDrawable, IDrawable, bool, UseCollision, PARAMS(uint32_t type, bool& dst), PARAMS(type, dst));
+	auto_METHOD_VIRTUAL_VOID(SliderDrawable, IDrawable, Paint, Args(UIRenderer* pRenderer, const Math::Rectangle& area, const RenderParams& params), Args(pRenderer, area, params));
+	auto_METHOD_VIRTUAL(SliderDrawable, IDrawable, bool, IsColliding, Args(const Math::Rectangle& area, const Math::Point& point, RenderParams& params), Args(area, point, params));
+	auto_METHOD_VIRTUAL(SliderDrawable, IDrawable, bool, GetDimensions, Args(Dimensions& dst, int state, int index), Args(dst, state, index));
+	auto_METHOD_VIRTUAL(SliderDrawable, IDrawable, bool, UseCollision, Args(uint32_t type, bool& dst), Args(type, dst));
 
 	auto_METHOD_VIRTUAL_(SliderDrawable, ISliderDrawable, IDrawable*, ToDrawable);
-	auto_METHOD_VIRTUAL_VOID(SliderDrawable, ISliderDrawable, SetImage, PARAMS(int index, Image* pImage), PARAMS(index, pImage));
+	auto_METHOD_VIRTUAL_VOID(SliderDrawable, ISliderDrawable, SetImage, Args(int index, Image* pImage), Args(index, pImage));
 
 	void* SliderDrawable::Cast(uint32_t type) const {
 		if (type == ILayoutElement::TYPE)
@@ -215,16 +215,16 @@ namespace UTFWin
 
 	DEFAULT_REFCOUNT(SpinnerDrawable);
 
-	auto_METHOD_VIRTUAL_VOID(SpinnerDrawable, ILayoutElement, SetSerializer, PARAMS(Serializer& dst), PARAMS(dst));
+	auto_METHOD_VIRTUAL_VOID(SpinnerDrawable, ILayoutElement, SetSerializer, Args(Serializer& dst), Args(dst));
 	auto_METHOD_VIRTUAL_const_(SpinnerDrawable, ILayoutElement, uint32_t, GetProxyID);
 
-	auto_METHOD_VIRTUAL_VOID(SpinnerDrawable, IDrawable, Paint, PARAMS(UIRenderer* pRenderer, const Math::Rectangle& area, const RenderParams& params), PARAMS(pRenderer, area, params));
-	auto_METHOD_VIRTUAL(SpinnerDrawable, IDrawable, bool, IsColliding, PARAMS(const Math::Rectangle& area, const Math::Point& point, RenderParams& params), PARAMS(area, point, params));
-	auto_METHOD_VIRTUAL(SpinnerDrawable, IDrawable, bool, GetDimensions, PARAMS(Dimensions& dst, int state, int index), PARAMS(dst, state, index));
-	auto_METHOD_VIRTUAL(SpinnerDrawable, IDrawable, bool, UseCollision, PARAMS(uint32_t type, bool& dst), PARAMS(type, dst));
+	auto_METHOD_VIRTUAL_VOID(SpinnerDrawable, IDrawable, Paint, Args(UIRenderer* pRenderer, const Math::Rectangle& area, const RenderParams& params), Args(pRenderer, area, params));
+	auto_METHOD_VIRTUAL(SpinnerDrawable, IDrawable, bool, IsColliding, Args(const Math::Rectangle& area, const Math::Point& point, RenderParams& params), Args(area, point, params));
+	auto_METHOD_VIRTUAL(SpinnerDrawable, IDrawable, bool, GetDimensions, Args(Dimensions& dst, int state, int index), Args(dst, state, index));
+	auto_METHOD_VIRTUAL(SpinnerDrawable, IDrawable, bool, UseCollision, Args(uint32_t type, bool& dst), Args(type, dst));
 
 	auto_METHOD_VIRTUAL_(SpinnerDrawable, ISpinnerDrawable, IDrawable*, ToDrawable);
-	auto_METHOD_VIRTUAL_VOID(SpinnerDrawable, ISpinnerDrawable, SetImage, PARAMS(int index, Image* pImage), PARAMS(index, pImage));
+	auto_METHOD_VIRTUAL_VOID(SpinnerDrawable, ISpinnerDrawable, SetImage, Args(int index, Image* pImage), Args(index, pImage));
 
 	void* SpinnerDrawable::Cast(uint32_t type) const {
 		if (type == ILayoutElement::TYPE)
@@ -245,20 +245,20 @@ namespace UTFWin
 
 	DEFAULT_REFCOUNT(DialogDrawable);
 
-	auto_METHOD_VIRTUAL_VOID(DialogDrawable, ILayoutElement, SetSerializer, PARAMS(Serializer& dst), PARAMS(dst));
+	auto_METHOD_VIRTUAL_VOID(DialogDrawable, ILayoutElement, SetSerializer, Args(Serializer& dst), Args(dst));
 	auto_METHOD_VIRTUAL_const_(DialogDrawable, ILayoutElement, uint32_t, GetProxyID);
 
-	auto_METHOD_VIRTUAL_VOID(DialogDrawable, IDrawable, Paint, PARAMS(UIRenderer* pRenderer, const Math::Rectangle& area, const RenderParams& params), PARAMS(pRenderer, area, params));
-	auto_METHOD_VIRTUAL(DialogDrawable, IDrawable, bool, IsColliding, PARAMS(const Math::Rectangle& area, const Math::Point& point, RenderParams& params), PARAMS(area, point, params));
-	auto_METHOD_VIRTUAL(DialogDrawable, IDrawable, bool, GetDimensions, PARAMS(Dimensions& dst, int state, int index), PARAMS(dst, state, index));
-	auto_METHOD_VIRTUAL(DialogDrawable, IDrawable, bool, UseCollision, PARAMS(uint32_t type, bool& dst), PARAMS(type, dst));
+	auto_METHOD_VIRTUAL_VOID(DialogDrawable, IDrawable, Paint, Args(UIRenderer* pRenderer, const Math::Rectangle& area, const RenderParams& params), Args(pRenderer, area, params));
+	auto_METHOD_VIRTUAL(DialogDrawable, IDrawable, bool, IsColliding, Args(const Math::Rectangle& area, const Math::Point& point, RenderParams& params), Args(area, point, params));
+	auto_METHOD_VIRTUAL(DialogDrawable, IDrawable, bool, GetDimensions, Args(Dimensions& dst, int state, int index), Args(dst, state, index));
+	auto_METHOD_VIRTUAL(DialogDrawable, IDrawable, bool, UseCollision, Args(uint32_t type, bool& dst), Args(type, dst));
 
 	auto_METHOD_VIRTUAL_(DialogDrawable, IDialogDrawable, IDrawable*, ToDrawable);
-	auto_METHOD_VIRTUAL_VOID(DialogDrawable, IDialogDrawable, SetImage, PARAMS(int index, Image* image), PARAMS(index, image));
-	auto_METHOD_VIRTUAL_const(DialogDrawable, IDialogDrawable, Color, GetBackgroundColor, PARAMS(Color& dst), PARAMS(dst));
-	auto_METHOD_VIRTUAL_VOID(DialogDrawable, IDialogDrawable, SetBackgroundColor, PARAMS(Color color), PARAMS(color));
-	auto_METHOD_VIRTUAL_const(DialogDrawable, IDialogDrawable, BackgroundTiling, GetBackgroundTiling, PARAMS(BackgroundTiling& dst), PARAMS(dst));
-	auto_METHOD_VIRTUAL_VOID(DialogDrawable, IDialogDrawable, SetBackgroundTiling, PARAMS(BackgroundTiling value), PARAMS(value));
+	auto_METHOD_VIRTUAL_VOID(DialogDrawable, IDialogDrawable, SetImage, Args(int index, Image* image), Args(index, image));
+	auto_METHOD_VIRTUAL_const(DialogDrawable, IDialogDrawable, Color, GetBackgroundColor, Args(Color& dst), Args(dst));
+	auto_METHOD_VIRTUAL_VOID(DialogDrawable, IDialogDrawable, SetBackgroundColor, Args(Color color), Args(color));
+	auto_METHOD_VIRTUAL_const(DialogDrawable, IDialogDrawable, BackgroundTiling, GetBackgroundTiling, Args(BackgroundTiling& dst), Args(dst));
+	auto_METHOD_VIRTUAL_VOID(DialogDrawable, IDialogDrawable, SetBackgroundTiling, Args(BackgroundTiling value), Args(value));
 
 
 	void* DialogDrawable::Cast(uint32_t type) const {
@@ -280,17 +280,17 @@ namespace UTFWin
 
 	DEFAULT_REFCOUNT(ButtonDrawableStandard);
 
-	auto_METHOD_VIRTUAL_VOID(ButtonDrawableStandard, ILayoutElement, SetSerializer, PARAMS(Serializer& dst), PARAMS(dst));
+	auto_METHOD_VIRTUAL_VOID(ButtonDrawableStandard, ILayoutElement, SetSerializer, Args(Serializer& dst), Args(dst));
 	auto_METHOD_VIRTUAL_const_(ButtonDrawableStandard, ILayoutElement, uint32_t, GetProxyID);
 
-	auto_METHOD_VIRTUAL_VOID(ButtonDrawableStandard, IDrawable, Paint, PARAMS(UIRenderer* pRenderer, const Math::Rectangle& area, const RenderParams& params), PARAMS(pRenderer, area, params));
-	auto_METHOD_VIRTUAL(ButtonDrawableStandard, IDrawable, bool, IsColliding, PARAMS(const Math::Rectangle& area, const Math::Point& point, RenderParams& params), PARAMS(area, point, params));
-	auto_METHOD_VIRTUAL(ButtonDrawableStandard, IDrawable, bool, GetDimensions, PARAMS(Dimensions& dst, int state, int index), PARAMS(dst, state, index));
-	auto_METHOD_VIRTUAL(ButtonDrawableStandard, IDrawable, bool, UseCollision, PARAMS(uint32_t type, bool& dst), PARAMS(type, dst));
-	auto_METHOD_VIRTUAL_const(ButtonDrawableStandard, IDrawable, bool, GetTexCoords, PARAMS(int state, Math::Rectangle& dst), PARAMS(state, dst));
+	auto_METHOD_VIRTUAL_VOID(ButtonDrawableStandard, IDrawable, Paint, Args(UIRenderer* pRenderer, const Math::Rectangle& area, const RenderParams& params), Args(pRenderer, area, params));
+	auto_METHOD_VIRTUAL(ButtonDrawableStandard, IDrawable, bool, IsColliding, Args(const Math::Rectangle& area, const Math::Point& point, RenderParams& params), Args(area, point, params));
+	auto_METHOD_VIRTUAL(ButtonDrawableStandard, IDrawable, bool, GetDimensions, Args(Dimensions& dst, int state, int index), Args(dst, state, index));
+	auto_METHOD_VIRTUAL(ButtonDrawableStandard, IDrawable, bool, UseCollision, Args(uint32_t type, bool& dst), Args(type, dst));
+	auto_METHOD_VIRTUAL_const(ButtonDrawableStandard, IDrawable, bool, GetTexCoords, Args(int state, Math::Rectangle& dst), Args(state, dst));
 
 	auto_METHOD_VIRTUAL_(ButtonDrawableStandard, IButtonDrawableStandard, IDrawable*, ToDrawable);
-	auto_METHOD_VIRTUAL_VOID(ButtonDrawableStandard, IButtonDrawableStandard, SetImage, PARAMS(Image* image, bool bTileable), PARAMS(image, bTileable));
+	auto_METHOD_VIRTUAL_VOID(ButtonDrawableStandard, IButtonDrawableStandard, SetImage, Args(Image* image, bool bTileable), Args(image, bTileable));
 
 
 	void* ButtonDrawableStandard::Cast(uint32_t type) const {
@@ -312,17 +312,17 @@ namespace UTFWin
 
 	DEFAULT_REFCOUNT(ButtonDrawableRadio);
 
-	auto_METHOD_VIRTUAL_VOID(ButtonDrawableRadio, ILayoutElement, SetSerializer, PARAMS(Serializer& dst), PARAMS(dst));
+	auto_METHOD_VIRTUAL_VOID(ButtonDrawableRadio, ILayoutElement, SetSerializer, Args(Serializer& dst), Args(dst));
 	auto_METHOD_VIRTUAL_const_(ButtonDrawableRadio, ILayoutElement, uint32_t, GetProxyID);
 
-	auto_METHOD_VIRTUAL_VOID(ButtonDrawableRadio, IDrawable, Paint, PARAMS(UIRenderer* pRenderer, const Math::Rectangle& area, const RenderParams& params), PARAMS(pRenderer, area, params));
-	auto_METHOD_VIRTUAL(ButtonDrawableRadio, IDrawable, bool, IsColliding, PARAMS(const Math::Rectangle& area, const Math::Point& point, RenderParams& params), PARAMS(area, point, params));
-	auto_METHOD_VIRTUAL(ButtonDrawableRadio, IDrawable, bool, GetDimensions, PARAMS(Dimensions& dst, int state, int index), PARAMS(dst, state, index));
-	auto_METHOD_VIRTUAL(ButtonDrawableRadio, IDrawable, bool, UseCollision, PARAMS(uint32_t type, bool& dst), PARAMS(type, dst));
-	auto_METHOD_VIRTUAL_const(ButtonDrawableRadio, IDrawable, bool, GetTexCoords, PARAMS(int state, Math::Rectangle& dst), PARAMS(state, dst));
+	auto_METHOD_VIRTUAL_VOID(ButtonDrawableRadio, IDrawable, Paint, Args(UIRenderer* pRenderer, const Math::Rectangle& area, const RenderParams& params), Args(pRenderer, area, params));
+	auto_METHOD_VIRTUAL(ButtonDrawableRadio, IDrawable, bool, IsColliding, Args(const Math::Rectangle& area, const Math::Point& point, RenderParams& params), Args(area, point, params));
+	auto_METHOD_VIRTUAL(ButtonDrawableRadio, IDrawable, bool, GetDimensions, Args(Dimensions& dst, int state, int index), Args(dst, state, index));
+	auto_METHOD_VIRTUAL(ButtonDrawableRadio, IDrawable, bool, UseCollision, Args(uint32_t type, bool& dst), Args(type, dst));
+	auto_METHOD_VIRTUAL_const(ButtonDrawableRadio, IDrawable, bool, GetTexCoords, Args(int state, Math::Rectangle& dst), Args(state, dst));
 
 	auto_METHOD_VIRTUAL_(ButtonDrawableRadio, IButtonDrawableRadio, IDrawable*, ToDrawable);
-	auto_METHOD_VIRTUAL_VOID(ButtonDrawableRadio, IButtonDrawableRadio, SetImage, PARAMS(Image* image, bool bTileable), PARAMS(image, bTileable));
+	auto_METHOD_VIRTUAL_VOID(ButtonDrawableRadio, IButtonDrawableRadio, SetImage, Args(Image* image, bool bTileable), Args(image, bTileable));
 
 
 	void* ButtonDrawableRadio::Cast(uint32_t type) const {
@@ -344,13 +344,13 @@ namespace UTFWin
 
 	DEFAULT_REFCOUNT(FrameDrawable);
 
-	auto_METHOD_VIRTUAL_VOID(FrameDrawable, ILayoutElement, SetSerializer, PARAMS(Serializer& dst), PARAMS(dst));
+	auto_METHOD_VIRTUAL_VOID(FrameDrawable, ILayoutElement, SetSerializer, Args(Serializer& dst), Args(dst));
 	auto_METHOD_VIRTUAL_const_(FrameDrawable, ILayoutElement, uint32_t, GetProxyID);
 
-	auto_METHOD_VIRTUAL_VOID(FrameDrawable, IDrawable, Paint, PARAMS(UIRenderer* pRenderer, const Math::Rectangle& area, const RenderParams& params), PARAMS(pRenderer, area, params));
-	auto_METHOD_VIRTUAL(FrameDrawable, IDrawable, bool, IsColliding, PARAMS(const Math::Rectangle& area, const Math::Point& point, RenderParams& params), PARAMS(area, point, params));
-	auto_METHOD_VIRTUAL(FrameDrawable, IDrawable, bool, GetDimensions, PARAMS(Dimensions& dst, int state, int index), PARAMS(dst, state, index));
-	auto_METHOD_VIRTUAL(FrameDrawable, IDrawable, bool, UseCollision, PARAMS(uint32_t type, bool& dst), PARAMS(type, dst));
+	auto_METHOD_VIRTUAL_VOID(FrameDrawable, IDrawable, Paint, Args(UIRenderer* pRenderer, const Math::Rectangle& area, const RenderParams& params), Args(pRenderer, area, params));
+	auto_METHOD_VIRTUAL(FrameDrawable, IDrawable, bool, IsColliding, Args(const Math::Rectangle& area, const Math::Point& point, RenderParams& params), Args(area, point, params));
+	auto_METHOD_VIRTUAL(FrameDrawable, IDrawable, bool, GetDimensions, Args(Dimensions& dst, int state, int index), Args(dst, state, index));
+	auto_METHOD_VIRTUAL(FrameDrawable, IDrawable, bool, UseCollision, Args(uint32_t type, bool& dst), Args(type, dst));
 
 
 	void* FrameDrawable::Cast(uint32_t type) const {
@@ -373,13 +373,13 @@ namespace UTFWin
 
 	DEFAULT_REFCOUNT(VariableWidthDrawable);
 
-	auto_METHOD_VIRTUAL_VOID(VariableWidthDrawable, ILayoutElement, SetSerializer, PARAMS(Serializer& dst), PARAMS(dst));
+	auto_METHOD_VIRTUAL_VOID(VariableWidthDrawable, ILayoutElement, SetSerializer, Args(Serializer& dst), Args(dst));
 	auto_METHOD_VIRTUAL_const_(VariableWidthDrawable, ILayoutElement, uint32_t, GetProxyID);
 
-	auto_METHOD_VIRTUAL_VOID(VariableWidthDrawable, IDrawable, Paint, PARAMS(UIRenderer* pRenderer, const Math::Rectangle& area, const RenderParams& params), PARAMS(pRenderer, area, params));
-	auto_METHOD_VIRTUAL(VariableWidthDrawable, IDrawable, bool, IsColliding, PARAMS(const Math::Rectangle& area, const Math::Point& point, RenderParams& params), PARAMS(area, point, params));
-	auto_METHOD_VIRTUAL(VariableWidthDrawable, IDrawable, bool, GetDimensions, PARAMS(Dimensions& dst, int state, int index), PARAMS(dst, state, index));
-	auto_METHOD_VIRTUAL(VariableWidthDrawable, IDrawable, bool, UseCollision, PARAMS(uint32_t type, bool& dst), PARAMS(type, dst));
+	auto_METHOD_VIRTUAL_VOID(VariableWidthDrawable, IDrawable, Paint, Args(UIRenderer* pRenderer, const Math::Rectangle& area, const RenderParams& params), Args(pRenderer, area, params));
+	auto_METHOD_VIRTUAL(VariableWidthDrawable, IDrawable, bool, IsColliding, Args(const Math::Rectangle& area, const Math::Point& point, RenderParams& params), Args(area, point, params));
+	auto_METHOD_VIRTUAL(VariableWidthDrawable, IDrawable, bool, GetDimensions, Args(Dimensions& dst, int state, int index), Args(dst, state, index));
+	auto_METHOD_VIRTUAL(VariableWidthDrawable, IDrawable, bool, UseCollision, Args(uint32_t type, bool& dst), Args(type, dst));
 
 
 	void* VariableWidthDrawable::Cast(uint32_t type) const {
@@ -403,7 +403,7 @@ namespace UTFWin
 
 	DEFAULT_REFCOUNT(SporeStdDrawableImageInfo);
 
-	auto_METHOD_VIRTUAL_VOID(SporeStdDrawableImageInfo, ILayoutElement, SetSerializer, PARAMS(Serializer& dst), PARAMS(dst));
+	auto_METHOD_VIRTUAL_VOID(SporeStdDrawableImageInfo, ILayoutElement, SetSerializer, Args(Serializer& dst), Args(dst));
 	auto_METHOD_VIRTUAL_const_(SporeStdDrawableImageInfo, ILayoutElement, uint32_t, GetProxyID);
 
 	SporeStdDrawableImageInfo::SporeStdDrawableImageInfo()
@@ -430,7 +430,7 @@ namespace UTFWin
 
 	}
 
-	void* SporeStdDrawableImageInfo::Cast(uint32_t type) const const {
+	void* SporeStdDrawableImageInfo::Cast(uint32_t type) const {
 		if (type == Object::TYPE)
 		{
 			return (Object*) this;
@@ -454,13 +454,13 @@ namespace UTFWin
 
 	DEFAULT_REFCOUNT(SporeStdDrawable);
 
-	auto_METHOD_VIRTUAL_VOID(SporeStdDrawable, ILayoutElement, SetSerializer, PARAMS(Serializer& dst), PARAMS(dst));
+	auto_METHOD_VIRTUAL_VOID(SporeStdDrawable, ILayoutElement, SetSerializer, Args(Serializer& dst), Args(dst));
 	auto_METHOD_VIRTUAL_const_(SporeStdDrawable, ILayoutElement, uint32_t, GetProxyID);
 
-	auto_METHOD_VIRTUAL_VOID(SporeStdDrawable, IDrawable, Paint, PARAMS(UIRenderer* pRenderer, const Math::Rectangle& area, const RenderParams& params), PARAMS(pRenderer, area, params));
-	auto_METHOD_VIRTUAL(SporeStdDrawable, IDrawable, bool, IsColliding, PARAMS(const Math::Rectangle& area, const Math::Point& point, RenderParams& params), PARAMS(area, point, params));
-	auto_METHOD_VIRTUAL(SporeStdDrawable, IDrawable, bool, GetDimensions, PARAMS(Dimensions& dst, int state, int index), PARAMS(dst, state, index));
-	auto_METHOD_VIRTUAL(SporeStdDrawable, IDrawable, bool, UseCollision, PARAMS(uint32_t type, bool& dst), PARAMS(type, dst));
+	auto_METHOD_VIRTUAL_VOID(SporeStdDrawable, IDrawable, Paint, Args(UIRenderer* pRenderer, const Math::Rectangle& area, const RenderParams& params), Args(pRenderer, area, params));
+	auto_METHOD_VIRTUAL(SporeStdDrawable, IDrawable, bool, IsColliding, Args(const Math::Rectangle& area, const Math::Point& point, RenderParams& params), Args(area, point, params));
+	auto_METHOD_VIRTUAL(SporeStdDrawable, IDrawable, bool, GetDimensions, Args(Dimensions& dst, int state, int index), Args(dst, state, index));
+	auto_METHOD_VIRTUAL(SporeStdDrawable, IDrawable, bool, UseCollision, Args(uint32_t type, bool& dst), Args(type, dst));
 	auto_METHOD_VIRTUAL_const_(SporeStdDrawable, IDrawable, Vector2, GetScale);
 
 	SporeStdDrawable::SporeStdDrawable()

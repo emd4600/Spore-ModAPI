@@ -67,16 +67,16 @@ namespace UTFWin
 
 	static_assert(sizeof(SimpleLayout) == 0x14, "sizeof(SimpleLayout) != 14h");
 
-	namespace InternalAddressList(SimpleLayout)
+	namespace Addresses(SimpleLayout)
 	{
-		DefineAddress(Cast, GetAddress(0x97EA40, 0x97E760, 0x97E760));
+		DeclareAddress(Cast, SelectAddress(0x97EA40, 0x97E760, 0x97E760));
 
-		DefineAddress(SetSerializer, GetAddress(0x97EC70, 0x97E990, 0x97E990));
-		DefineAddress(GetProxyID, GetAddress(0x97EAA0, 0x97E7B0, 0x97E7B0));
+		DeclareAddress(SetSerializer, SelectAddress(0x97EC70, 0x97E990, 0x97E990));
+		DeclareAddress(GetProxyID, SelectAddress(0x97EAA0, 0x97E7B0, 0x97E7B0));
 
-		DefineAddress(ApplyLayout, GetAddress(0x97EB70, 0x97E890, 0x97E890));
-		DefineAddress(RevertLayout, GetAddress(0x97EBE0, 0x97E900, 0x97E900));
+		DeclareAddress(ApplyLayout, SelectAddress(0x97EB70, 0x97E890, 0x97E890));
+		DeclareAddress(RevertLayout, SelectAddress(0x97EBE0, 0x97E900, 0x97E900));
 
-		DefineAddress(OnLayout, GetAddress(0x97EAF0, 0x97E810, 0x97E810));
+		DeclareAddress(OnLayout, SelectAddress(0x97EAF0, 0x97E810, 0x97E810));
 	}
 }

@@ -19,6 +19,7 @@
 
 #include <Spore\Graphics\IRenderManager.h>
 #include <Spore\Graphics\LambdaRenderable.h>
+#include <Spore\Graphics\Renderer.h>
 
 namespace Graphics
 {
@@ -47,4 +48,10 @@ namespace Graphics
 	{
 		mFunction(arg_0, arg_4, arg_8, arg_C);
 	}
+
+
+	auto_STATIC_METHOD_VOID(Renderer, SetShaderData, 
+		Args(short index, void* value, bool overrideIfEqual), Args(index, value, overrideIfEqual));
+
+	auto_STATIC_METHOD_VOID(Renderer, SetTexture, Args(int slotIndex, RenderWare::Raster* raster), Args(slotIndex, raster));
 }

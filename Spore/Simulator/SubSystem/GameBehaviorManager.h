@@ -57,7 +57,7 @@ namespace Simulator
 
 	ASSERT_SIZE(cGameBehaviorManager, 0xA4);
 
-	namespace InternalAddressList(cGameBehaviorManager) {
-		DefineAddress(Get, GetAddress(0xB3D1C0, , PLACEHOLDER));
+	namespace Addresses(cGameBehaviorManager) {
+		DeclareAddress(Get, SelectAddress(0xB3D1C0, , 0xB3D360));
 	}
 }

@@ -53,7 +53,7 @@ namespace Simulator
 		/// used. Otherwise, it returns -9.8
 		float GetGravity() const;
 
-		Vector4 GetOrientation(const Vector3& position, const Vector3& direction);  // PLACEHOLDER definition
+		Vector4 GetOrientation(const Vector3& position, const Vector3& direction) const;
 
 	public:
 		static cPlanetModel* Get();
@@ -63,15 +63,15 @@ namespace Simulator
 		return cPlanetModel::Get();
 	}
 
-	namespace InternalAddressList(cPlanetModel)
+	namespace Addresses(cPlanetModel)
 	{
-		DefineAddress(Get, GetAddress(0xB3D2B0, NO_ADDRESS, 0xB3D450));
+		DeclareAddress(Get, SelectAddress(0xB3D2B0, NO_ADDRESS, 0xB3D450));
 
-		DefineAddress(IsInWater, GetAddress(0xB7DC90, NO_ADDRESS, 0xB7E530));
-		DefineAddress(GetNearestCity, GetAddress(0xB88DF0, NO_ADDRESS, 0xB895F0));
-		DefineAddress(ToSurface, GetAddress(0xB80F30, NO_ADDRESS, 0xB81780));
-		DefineAddress(GetGravity, GetAddress(0xB7DD40, NO_ADDRESS, 0xB7E5E0));
-		DefineAddress(GetHeightAt, GetAddress(0xB7E860, NO_ADDRESS, 0xB7F0C0));
-		DefineAddress(GetOrientation, GetAddress(0xB7EB40, , PLACEHOLDER));
+		DeclareAddress(IsInWater, SelectAddress(0xB7DC90, NO_ADDRESS, 0xB7E530));
+		DeclareAddress(GetNearestCity, SelectAddress(0xB88DF0, NO_ADDRESS, 0xB895F0));
+		DeclareAddress(ToSurface, SelectAddress(0xB80F30, NO_ADDRESS, 0xB81780));
+		DeclareAddress(GetGravity, SelectAddress(0xB7DD40, NO_ADDRESS, 0xB7E5E0));
+		DeclareAddress(GetHeightAt, SelectAddress(0xB7E860, NO_ADDRESS, 0xB7F0C0));
+		DeclareAddress(GetOrientation, SelectAddress(0xB7EB40, , 0xB7F3A0));
 	}
 }

@@ -104,10 +104,10 @@ namespace Simulator
 
 	static_assert(sizeof(cCreatureAbility) == 0x13C, "sizeof(cCreatureAbility) != 13Ch");
 
-	namespace InternalAddressList(cCreatureAbility)
+	namespace Addresses(cCreatureAbility)
 	{
-		DefineAddress(Parse, GetAddress(0x4D9140, 0x4D92E0, 0x4D9310));
+		DeclareAddress(Parse, SelectAddress(0x4D9140, 0x4D92E0, 0x4D9310));
 
-		DefineAddress(GetAnimationID, GetAddress(0x4D3B60, NO_ADDRESS, 0x4D3D30));
+		DeclareAddress(GetAnimationID, SelectAddress(0x4D3B60, NO_ADDRESS, 0x4D3D30));
 	}
 }

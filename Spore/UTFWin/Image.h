@@ -74,7 +74,7 @@ namespace UTFWin
 		/// Changes the drawable of the given window to display the specified image. Optionally, the index of the image
 		/// can be specified (in the case you want to use a StdDrawable).
 		///
-		/// To detour this method, you must use GetMethodAddress(Image, SetBackground_2).
+		/// To detour this method, you must use GetAddress(Image, SetBackground_2).
 		/// @param pWindow The IWindow whose drawable will change.
 		/// @param imageName The ResourceKey that points to the image file that will be displayed in the window.
 		/// @param nImageIndex [Optional] The index of the image, for StdDrawable.
@@ -97,13 +97,13 @@ namespace UTFWin
 
 	static_assert(sizeof(Image) == 0x2C, "sizeof(Image) must be 0x2C!");
 
-	namespace InternalAddressList(Image)
+	namespace Addresses(Image)
 	{
-		DefineAddress(SetSerializer, GetAddress(0x957A60, 0x957510, 957510));
-		DefineAddress(GetProxyID, GetAddress(0x957A90, 0x957540, 0x957540));
-		DefineAddress(GetImage, GetAddress(0x806870, 0x806290, 0x806320));
-		DefineAddress(SetBackground, GetAddress(0x806F10, 0x806930, 0x8069C0));
-		DefineAddress(SetBackgroundByKey, GetAddress(0x8081F0, 0x807C10, 0x807CA0));
+		DeclareAddress(SetSerializer, SelectAddress(0x957A60, 0x957510, 957510));
+		DeclareAddress(GetProxyID, SelectAddress(0x957A90, 0x957540, 0x957540));
+		DeclareAddress(GetImage, SelectAddress(0x806870, 0x806290, 0x806320));
+		DeclareAddress(SetBackground, SelectAddress(0x806F10, 0x806930, 0x8069C0));
+		DeclareAddress(SetBackgroundByKey, SelectAddress(0x8081F0, 0x807C10, 0x807CA0));
 	}
 
 	inline Image::Image()

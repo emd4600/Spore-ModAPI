@@ -93,6 +93,13 @@ namespace Math
 	Matrix3::Matrix3() : m() {}
 	Matrix4::Matrix4() : m() {}
 
+	Matrix3::Matrix3(const Matrix3& other) {
+		memcpy_s(m, sizeof(float) * 3 * 3, other.m, sizeof(float) * 3 * 3);
+	}
+	Matrix4::Matrix4(const Matrix4& other) {
+		memcpy_s(m, sizeof(float) * 4 * 4, other.m, sizeof(float) * 4 * 4);
+	}
+
 	Color::Color() : value(0) {}
 	Color::Color(const Color& color) : value(color.value) {}
 	Color::Color(uint32_t color) : value(color) {}
@@ -251,17 +258,17 @@ namespace Math
 	}
 
 	auto_STATIC_METHOD(Math, Vector3, MultiplyVectorScalar,
-		PARAMS(const Vector3& src, float& scalar), PARAMS(src, scalar));
+		Args(const Vector3& src, float& scalar), Args(src, scalar));
 
 	auto_STATIC_METHOD(Math, Matrix3, EulerToMatrix,
-		PARAMS(const Euler& vector), PARAMS(vector));
+		Args(const Euler& vector), Args(vector));
 
 	auto_STATIC_METHOD(Math, Euler, MatrixToEuler,
-		PARAMS(const Matrix3& matrix), PARAMS(matrix));
+		Args(const Matrix3& matrix), Args(matrix));
 
-	auto_METHOD(RandomNumberGenerator, int, GenerateRandomInt, PARAMS(int range), PARAMS(range));
+	auto_METHOD(RandomNumberGenerator, int, GenerateRandomInt, Args(int range), Args(range));
 
-	auto_METHOD_VOID(BoundingBox, ApplyTransform, PARAMS(const Transform& t), PARAMS(t));
+	auto_METHOD_VOID(BoundingBox, ApplyTransform, Args(const Transform& t), Args(t));
 
 }
 

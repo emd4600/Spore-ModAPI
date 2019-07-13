@@ -22,9 +22,9 @@ namespace Simulator
 {
 	auto_STATIC_METHOD_(cRelationshipManager, cRelationshipManager*, Get);
 
-	auto_METHOD(cRelationshipManager, bool, IsAtWar, PARAMS(cEmpire* pEmpire1, cEmpire* pEmpire2), PARAMS(pEmpire1, pEmpire2));
-	auto_METHOD_VOID(cRelationshipManager, DeclareWar, PARAMS(cEmpire* pEmpire1, cEmpire* pEmpire2), PARAMS(pEmpire1, pEmpire2));
+	auto_METHOD(cRelationshipManager, bool, IsAtWar, Args(cEmpire* pEmpire1, cEmpire* pEmpire2), Args(pEmpire1, pEmpire2));
+	auto_METHOD_VOID(cRelationshipManager, DeclareWar, Args(cEmpire* pEmpire1, cEmpire* pEmpire2), Args(pEmpire1, pEmpire2));
 	auto_METHOD(cRelationshipManager, float, ApplyRelationship, 
-		PARAMS(uint32_t pEmpire, uint32_t pCauseEmpire, uint32_t relationshipID, float fScale),
-		PARAMS(pEmpire, pCauseEmpire, relationshipID, fScale));
+		Args(uint32_t pEmpire, uint32_t pCauseEmpire, uint32_t relationshipID, float fScale),
+		Args(pEmpire, pCauseEmpire, relationshipID, fScale));
 }

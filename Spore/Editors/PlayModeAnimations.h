@@ -101,11 +101,11 @@ namespace Editors
 
 	static_assert(sizeof(PlayModeAnimations) == 0x90, "sizeof(PlayModeAnimations) != 90h");
 
-	namespace InternalAddressList(PlayAnimButton)
+	namespace Addresses(PlayAnimButton)
 	{
-		DefineAddress(ReadAnimations, GetAddress(0x62F1C0, 0x62F230, 0x62F210));
-		DefineAddress(ReadPanel, GetAddress(0x62EF90, 0x62F000, 0x62EFE0));
-		DefineAddress(ReadAnimButton, GetAddress(0x62EC70, 0x62ECE0, 0x62ECC0));
-		DefineAddress(GenerateUI, GetAddress(0x62E7C0, 0x62E830, 0x62E810));
+		DeclareAddress(ReadAnimations, SelectAddress(0x62F1C0, 0x62F230, 0x62F210));
+		DeclareAddress(ReadPanel, SelectAddress(0x62EF90, 0x62F000, 0x62EFE0));
+		DeclareAddress(ReadAnimButton, SelectAddress(0x62EC70, 0x62ECE0, 0x62ECC0));
+		DeclareAddress(GenerateUI, SelectAddress(0x62E7C0, 0x62E830, 0x62E810));
 	}
 }

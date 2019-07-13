@@ -476,66 +476,66 @@ namespace ArgScript
 
 	static_assert(sizeof(FormatParser) == 0x1C0, "sizeof(FormatParser) != 1C0h");
 
-	namespace InternalAddressList(ArgScript)
+	namespace Addresses(ArgScript)
 	{
-		DefineAddress(CreateStream, GetAddress(0x841190, 0x840920, 0x8409A0));
+		DeclareAddress(CreateStream, SelectAddress(0x841190, 0x840920, 0x8409A0));
 	}
 
-	namespace InternalAddressList(FormatParser)
+	namespace Addresses(FormatParser)
 	{
-		// DefineAddress(ReplaceVariables, GetAddress(0x843F10, PLACEHOLDER, PLACEHOLDER));
+		// DeclareAddress(ReplaceVariables, SelectAddress(0x843F10, , ));
 
-		DefineAddress(AddRef, GetAddress(0x83D030, 0x83F620, 0x83F6A0));
-		DefineAddress(Release, GetAddress(0x841A80, 0x841210, 0x841290));
-		DefineAddress(Initialize, GetAddress(0x845FB0, 0x845710, 0x845790));
-		DefineAddress(Dispose, GetAddress(0x847680, 0x846DE0, 0x846E60));
-		DefineAddress(SetData, GetAddress(0x841AC0, 0xA6FE50, 0xA6FE70));
-		DefineAddress(AddParser, GetAddress(0x8468D0, 0x846030, 0x8460B0));
-		DefineAddress(RemoveParser, GetAddress(0x8469C0, 0x846120, 0x8461A0));
-		DefineAddress(RemoveParserByObject, GetAddress(0x846940, 0x8460A0, 0x846120));
-		DefineAddress(GetParser, GetAddress(0x8434D0, 0x842C40, 0x842CC0));
-		DefineAddress(SetFlag, GetAddress(0x841D50, 0x8414C0, 0x841540));
-		DefineAddress(SetVersionRange, GetAddress(0x841AD0, 0x841250, 0x8412D0));
-		DefineAddress(GetVersion, GetAddress(0x804E30, 0xFF3480, 0xFF3480));
-		DefineAddress(func30h, GetAddress(0x8477E0, 0x846F40, 0x846FC0));
-		DefineAddress(Close, GetAddress(0x845780, 0x844EF0, 0x844F70));
-		DefineAddress(ProcessFile, GetAddress(0x843520, 0x842C90, 0x842D10));
-		DefineAddress(ProcessStream, GetAddress(0x843810, 0x842F80, 0x843000));
-		DefineAddress(ProcessLine, GetAddress(0x844990, 0x844100, 0x844180));
-		DefineAddress(CreateDefinition, GetAddress(0x845870, 0x844FE0, 0x845060));
-		DefineAddress(ProcessFileSafe, GetAddress(0x841AF0, 0x841270, 0x8412F0));
-		DefineAddress(ProcessStreamSafe, GetAddress(0x841B60, 0x8412E0, 0x841360));
-		DefineAddress(ProcessLineSafe, GetAddress(0x841BD0, 0x841350, 0x8413D0));
-		DefineAddress(CreateDefinitionSafe, GetAddress(0x841C40, 0x8413C0, 0x841440));
-		DefineAddress(func58h, GetAddress(0xC6FF70, 0x8414F0, 0x841570));
-		DefineAddress(func5Ch, GetAddress(0x841D80, 0x841500, 0x841580));
-		DefineAddress(func60h, GetAddress(0x843B00, 0x843270, 0x8432F0));
-		DefineAddress(HasParser, GetAddress(0x843B40, 0x8432B0, 0x843330));
-		DefineAddress(HasDefinition, GetAddress(0x843B90, 0x843300, 0x843380));
-		DefineAddress(SetVariable, GetAddress(0x8473D0, 0x846B30, 0x846BB0));
-		DefineAddress(GetVariable, GetAddress(0x843BE0, 0x843350, 0x8433D0));
-		DefineAddress(SetGlobalVariable, GetAddress(0x846B50, 0x8462B0, 0x846330));
-		DefineAddress(func78h, GetAddress(0x841DB0, 0x841530, 0x8415B0));
-		DefineAddress(StartScope, GetAddress(0x845B20, 0x845290, 0x845310));
-		DefineAddress(EndScope, GetAddress(0x842550, 0x841CC0, 0x841D40));
-		DefineAddress(PurgeScope, GetAddress(0x846CF0, 0x846450, 0x8464D0));
-		DefineAddress(GetCurrentScope, GetAddress(0x841DF0, 0xD1DCD0, 0xD1DCD0));
-		DefineAddress(AddBlock, GetAddress(0x845BA0, 0x845310, 0x845390));
-		DefineAddress(AddSpecialBlock, GetAddress(0x845BE0, 0x845350, 0x8453D0));
-		DefineAddress(ParseBool, GetAddress(0x841CB0, 0x841430, 0x8414B0));
-		DefineAddress(ParseFloat, GetAddress(0x841CC0, 0x841440, 0x8414C0));
-		DefineAddress(ParseInt, GetAddress(0x841CD0, 0x841450, 0x8414D0));
-		DefineAddress(ParseUInt, GetAddress(0x841CD0, 0x841450, 0x8414D0));
-		DefineAddress(ParseVector2, GetAddress(0x841E00, 0x841570, 0x8415F0));
-		DefineAddress(ParseVector3, GetAddress(0x841E50, 0x8415C0, 0x841640));
-		DefineAddress(ParseVector4, GetAddress(0x841ED0, 0x841640, 0x8416C0));
-		DefineAddress(ParseColorRGB, GetAddress(0x841E50, 0x8415C0, 0x841640));
-		DefineAddress(ParseColorRGBA, GetAddress(0x841F70, 0x8416E0, 0x841760));
-		DefineAddress(GetLexer, GetAddress(0x94EBD0, 0xFF3A50, 0xFF3A50));
-		DefineAddress(SetTraceStream, GetAddress(0x842000, 0x841770, 0x8417F0));
-		DefineAddress(funcC0h, GetAddress(0x842040, 0x8417B0, 0x841830));
-		DefineAddress(GetTraceStream, GetAddress(0x8D88F0, 0xFF02D0, 0xFF02D0));
-		DefineAddress(funcC8h, GetAddress(0xFC8510, 0x6C0230, 0x6C0230));
+		DeclareAddress(AddRef, SelectAddress(0x83D030, 0x83F620, 0x83F6A0));
+		DeclareAddress(Release, SelectAddress(0x841A80, 0x841210, 0x841290));
+		DeclareAddress(Initialize, SelectAddress(0x845FB0, 0x845710, 0x845790));
+		DeclareAddress(Dispose, SelectAddress(0x847680, 0x846DE0, 0x846E60));
+		DeclareAddress(SetData, SelectAddress(0x841AC0, 0xA6FE50, 0xA6FE70));
+		DeclareAddress(AddParser, SelectAddress(0x8468D0, 0x846030, 0x8460B0));
+		DeclareAddress(RemoveParser, SelectAddress(0x8469C0, 0x846120, 0x8461A0));
+		DeclareAddress(RemoveParserByObject, SelectAddress(0x846940, 0x8460A0, 0x846120));
+		DeclareAddress(GetParser, SelectAddress(0x8434D0, 0x842C40, 0x842CC0));
+		DeclareAddress(SetFlag, SelectAddress(0x841D50, 0x8414C0, 0x841540));
+		DeclareAddress(SetVersionRange, SelectAddress(0x841AD0, 0x841250, 0x8412D0));
+		DeclareAddress(GetVersion, SelectAddress(0x804E30, 0xFF3480, 0xFF3480));
+		DeclareAddress(func30h, SelectAddress(0x8477E0, 0x846F40, 0x846FC0));
+		DeclareAddress(Close, SelectAddress(0x845780, 0x844EF0, 0x844F70));
+		DeclareAddress(ProcessFile, SelectAddress(0x843520, 0x842C90, 0x842D10));
+		DeclareAddress(ProcessStream, SelectAddress(0x843810, 0x842F80, 0x843000));
+		DeclareAddress(ProcessLine, SelectAddress(0x844990, 0x844100, 0x844180));
+		DeclareAddress(CreateDefinition, SelectAddress(0x845870, 0x844FE0, 0x845060));
+		DeclareAddress(ProcessFileSafe, SelectAddress(0x841AF0, 0x841270, 0x8412F0));
+		DeclareAddress(ProcessStreamSafe, SelectAddress(0x841B60, 0x8412E0, 0x841360));
+		DeclareAddress(ProcessLineSafe, SelectAddress(0x841BD0, 0x841350, 0x8413D0));
+		DeclareAddress(CreateDefinitionSafe, SelectAddress(0x841C40, 0x8413C0, 0x841440));
+		DeclareAddress(func58h, SelectAddress(0xC6FF70, 0x8414F0, 0x841570));
+		DeclareAddress(func5Ch, SelectAddress(0x841D80, 0x841500, 0x841580));
+		DeclareAddress(func60h, SelectAddress(0x843B00, 0x843270, 0x8432F0));
+		DeclareAddress(HasParser, SelectAddress(0x843B40, 0x8432B0, 0x843330));
+		DeclareAddress(HasDefinition, SelectAddress(0x843B90, 0x843300, 0x843380));
+		DeclareAddress(SetVariable, SelectAddress(0x8473D0, 0x846B30, 0x846BB0));
+		DeclareAddress(GetVariable, SelectAddress(0x843BE0, 0x843350, 0x8433D0));
+		DeclareAddress(SetGlobalVariable, SelectAddress(0x846B50, 0x8462B0, 0x846330));
+		DeclareAddress(func78h, SelectAddress(0x841DB0, 0x841530, 0x8415B0));
+		DeclareAddress(StartScope, SelectAddress(0x845B20, 0x845290, 0x845310));
+		DeclareAddress(EndScope, SelectAddress(0x842550, 0x841CC0, 0x841D40));
+		DeclareAddress(PurgeScope, SelectAddress(0x846CF0, 0x846450, 0x8464D0));
+		DeclareAddress(GetCurrentScope, SelectAddress(0x841DF0, 0xD1DCD0, 0xD1DCD0));
+		DeclareAddress(AddBlock, SelectAddress(0x845BA0, 0x845310, 0x845390));
+		DeclareAddress(AddSpecialBlock, SelectAddress(0x845BE0, 0x845350, 0x8453D0));
+		DeclareAddress(ParseBool, SelectAddress(0x841CB0, 0x841430, 0x8414B0));
+		DeclareAddress(ParseFloat, SelectAddress(0x841CC0, 0x841440, 0x8414C0));
+		DeclareAddress(ParseInt, SelectAddress(0x841CD0, 0x841450, 0x8414D0));
+		DeclareAddress(ParseUInt, SelectAddress(0x841CD0, 0x841450, 0x8414D0));
+		DeclareAddress(ParseVector2, SelectAddress(0x841E00, 0x841570, 0x8415F0));
+		DeclareAddress(ParseVector3, SelectAddress(0x841E50, 0x8415C0, 0x841640));
+		DeclareAddress(ParseVector4, SelectAddress(0x841ED0, 0x841640, 0x8416C0));
+		DeclareAddress(ParseColorRGB, SelectAddress(0x841E50, 0x8415C0, 0x841640));
+		DeclareAddress(ParseColorRGBA, SelectAddress(0x841F70, 0x8416E0, 0x841760));
+		DeclareAddress(GetLexer, SelectAddress(0x94EBD0, 0xFF3A50, 0xFF3A50));
+		DeclareAddress(SetTraceStream, SelectAddress(0x842000, 0x841770, 0x8417F0));
+		DeclareAddress(funcC0h, SelectAddress(0x842040, 0x8417B0, 0x841830));
+		DeclareAddress(GetTraceStream, SelectAddress(0x8D88F0, 0xFF02D0, 0xFF02D0));
+		DeclareAddress(funcC8h, SelectAddress(0xFC8510, 0x6C0230, 0x6C0230));
 
 	}
 }

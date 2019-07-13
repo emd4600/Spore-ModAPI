@@ -124,8 +124,8 @@ namespace Graphics
 	//// INTERNAL IMPLEMENTATION ////
 	/////////////////////////////////
 
-	namespace InternalAddressList(IModelManager)
+	namespace Addresses(IModelManager)
 	{
-		DefineAddress(Get, GetAddress(0x67DEA0, 0x67DD40, 0x67DD40));
+		DeclareAddress(Get, SelectAddress(0x67DEA0, 0x67DD40, 0x67DD40));
 	}
 }

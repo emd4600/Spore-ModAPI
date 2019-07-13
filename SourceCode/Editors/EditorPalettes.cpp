@@ -60,12 +60,12 @@ namespace Palettes
 	}
 
 	auto_METHOD(PaletteMain, bool, ReadProp,
-		PARAMS(const ResourceKey& name, uint32_t creationTypeID, uint32_t arg_8, uint32_t defaultLayoutID, uint32_t arg_10, uint32_t arg_14, uint32_t arg_18),
-		PARAMS(name, creationTypeID, arg_8, defaultLayoutID, arg_10, arg_14, arg_18));
+		Args(const ResourceKey& name, uint32_t creationTypeID, uint32_t arg_8, uint32_t defaultLayoutID, uint32_t arg_10, uint32_t arg_14, uint32_t arg_18),
+		Args(name, creationTypeID, arg_8, defaultLayoutID, arg_10, arg_14, arg_18));
 
-	auto_METHOD_VOID(PaletteMain, ReadModuleProp, PARAMS(const ResourceKey& name), PARAMS(name));
+	auto_METHOD_VOID(PaletteMain, ReadModuleProp, Args(const ResourceKey& name), Args(name));
 
-	auto_METHOD(PaletteMain, PaletteCategory*, GetCategory, PARAMS(uint32_t ID), PARAMS(ID));
+	auto_METHOD(PaletteMain, PaletteCategory*, GetCategory, Args(uint32_t ID), Args(ID));
 
 
 	//// PALETTE CATEGORY ////
@@ -107,12 +107,12 @@ namespace Palettes
 	}
 
 	auto_METHOD(PaletteCategory, bool, ReadProp,
-		PARAMS(const ResourceKey& name, uint32_t defaultLayoutID),
-		PARAMS(name, defaultLayoutID));
+		Args(const ResourceKey& name, uint32_t defaultLayoutID),
+		Args(name, defaultLayoutID));
 
-	auto_METHOD(PaletteCategory, bool, HasCategory, PARAMS(PaletteCategory* pCategory), PARAMS(pCategory));
+	auto_METHOD(PaletteCategory, bool, HasCategory, Args(PaletteCategory* pCategory), Args(pCategory));
 
-	auto_METHOD(PaletteCategory, PaletteCategory*, GetCategory, PARAMS(uint32_t ID), PARAMS(ID));
+	auto_METHOD(PaletteCategory, PaletteCategory*, GetCategory, Args(uint32_t ID), Args(ID));
 
 
 	//// PALETTE PAGE ////
@@ -164,16 +164,16 @@ namespace Palettes
 	}
 
 	auto_METHOD(PalettePage, bool, Load,
-		PARAMS(const ResourceKey& name, uint32_t thumbnailGroupID, uint32_t arg_8, uint32_t layoutID, uint32_t arg_10),
-		PARAMS(name, thumbnailGroupID, arg_8, layoutID, arg_10));
+		Args(const ResourceKey& name, uint32_t thumbnailGroupID, uint32_t arg_8, uint32_t layoutID, uint32_t arg_10),
+		Args(name, thumbnailGroupID, arg_8, layoutID, arg_10));
 
 	auto_METHOD(PalettePage, bool, ReadProp,
-		PARAMS(const ResourceKey& name, uint32_t layoutID),
-		PARAMS(name, layoutID));
+		Args(const ResourceKey& name, uint32_t layoutID),
+		Args(name, layoutID));
 
 	auto_METHOD_VOID(PalettePage, ReadItemsModule,
-		PARAMS(const ResourceKey& pageName, const ResourceKey& moduleName, uint32_t thumbnailGroupID),
-		PARAMS(pageName, moduleName, thumbnailGroupID));
+		Args(const ResourceKey& pageName, const ResourceKey& moduleName, uint32_t thumbnailGroupID),
+		Args(pageName, moduleName, thumbnailGroupID));
 
 
 	//// PALETTE ITEM ////
@@ -211,8 +211,8 @@ namespace Palettes
 	}
 
 	auto_METHOD(PaletteItem, bool, Load,
-		PARAMS(const ResourceKey& name, int nPagePartPriority, uint32_t thumbnailGroupID),
-		PARAMS(name, nPagePartPriority, thumbnailGroupID));
+		Args(const ResourceKey& name, int nPagePartPriority, uint32_t thumbnailGroupID),
+		Args(name, nPagePartPriority, thumbnailGroupID));
 
 
 	//// PALETTE UI ////
@@ -263,13 +263,13 @@ namespace Palettes
 		return UTFWin::kEventFlagAdvanced | UTFWin::kEventFlagBasicInput;
 	}
 
-	auto_METHOD_VOID(PaletteUI, Load, PARAMS(PaletteMain* pPalette, IWindow* pWindow, bool arg_8, void* arg_C),
-		PARAMS(pPalette, pWindow, arg_8, arg_C));
+	auto_METHOD_VOID(PaletteUI, Load, Args(PaletteMain* pPalette, IWindow* pWindow, bool arg_8, void* arg_C),
+		Args(pPalette, pWindow, arg_8, arg_C));
 
-	auto_METHOD_VIRTUAL(PaletteUI, IWinProc, bool, HandleUIMessage, PARAMS(IWindow* pWindow, const Message& message),
-		PARAMS(pWindow, message));
+	auto_METHOD_VIRTUAL(PaletteUI, IWinProc, bool, HandleUIMessage, Args(IWindow* pWindow, const Message& message),
+		Args(pWindow, message));
 
-	auto_METHOD_VOID(PaletteUI, Update, PARAMS(int arg_0), PARAMS(arg_0));
+	auto_METHOD_VOID(PaletteUI, Update, Args(int arg_0), Args(arg_0));
 
 
 	//// PAGE ARROWS UI ////
@@ -311,13 +311,13 @@ namespace Palettes
 		return UTFWin::kEventFlagAdvanced | UTFWin::kEventFlagBasicInput;
 	}
 
-	auto_METHOD_VIRTUAL(PageArrowsUI, IWinProc, bool, HandleUIMessage, PARAMS(IWindow* pWindow, const Message& message),
-		PARAMS(pWindow, message));
+	auto_METHOD_VIRTUAL(PageArrowsUI, IWinProc, bool, HandleUIMessage, Args(IWindow* pWindow, const Message& message),
+		Args(pWindow, message));
 
-	auto_METHOD_VOID(PageArrowsUI, Load, PARAMS(IWindow* pWindow, PaletteCategoryUI* pCategoryUI),
-		PARAMS(pWindow, pCategoryUI));
+	auto_METHOD_VOID(PageArrowsUI, Load, Args(IWindow* pWindow, PaletteCategoryUI* pCategoryUI),
+		Args(pWindow, pCategoryUI));
 
-	auto_METHOD_VOID(PageArrowsUI, Update, PARAMS(int arg_0), PARAMS(arg_0));
+	auto_METHOD_VOID(PageArrowsUI, Update, Args(int arg_0), Args(arg_0));
 
 
 	//// PALETTE CATEGORY UI ////
@@ -385,18 +385,18 @@ namespace Palettes
 		return UTFWin::kEventFlagAdvanced | UTFWin::kEventFlagBasicInput;
 	}
 
-	auto_METHOD_VIRTUAL(PaletteCategoryUI, App::IMessageListener, bool, HandleMessage, PARAMS(uint32_t messageID, void* message),
-		PARAMS(messageID, message));
+	auto_METHOD_VIRTUAL(PaletteCategoryUI, App::IMessageListener, bool, HandleMessage, Args(uint32_t messageID, void* message),
+		Args(messageID, message));
 
-	auto_METHOD_VOID(PaletteCategoryUI, Load, PARAMS(PaletteCategory* pCategory, IWindow* pWindow, void* arg_8),
-		PARAMS(pCategory, pWindow, arg_8));
+	auto_METHOD_VOID(PaletteCategoryUI, Load, Args(PaletteCategory* pCategory, IWindow* pWindow, void* arg_8),
+		Args(pCategory, pWindow, arg_8));
 
-	auto_METHOD_VOID(PaletteCategoryUI, FlipPage, PARAMS(int nDelta),
-		PARAMS(nDelta));
+	auto_METHOD_VOID(PaletteCategoryUI, FlipPage, Args(int nDelta),
+		Args(nDelta));
 
-	auto_METHOD_VOID(PaletteCategoryUI, Update, PARAMS(int arg_0), PARAMS(arg_0));
+	auto_METHOD_VOID(PaletteCategoryUI, Update, Args(int arg_0), Args(arg_0));
 	
-	auto_METHOD_VIRTUAL(PaletteCategoryUI, IWinProc, bool, HandleUIMessage, PARAMS(IWindow* pWindow, const Message& message), PARAMS(pWindow, message));
+	auto_METHOD_VIRTUAL(PaletteCategoryUI, IWinProc, bool, HandleUIMessage, Args(IWindow* pWindow, const Message& message), Args(pWindow, message));
 
 	//// PALETTE PAGE UI ////
 
@@ -438,10 +438,10 @@ namespace Palettes
 		return UTFWin::kEventFlagAdvanced | UTFWin::kEventFlagBasicInput;
 	}
 
-	auto_METHOD(PalettePageUI, Math::Rectangle, GetItemArea, PARAMS(size_t nIndex), PARAMS(nIndex));
+	auto_METHOD(PalettePageUI, Math::Rectangle, GetItemArea, Args(size_t nIndex), Args(nIndex));
 
-	auto_METHOD_VOID(PalettePageUI, Load, PARAMS(PalettePage* pPage, IWindow* pWindow, void* arg_8, size_t nIndex, bool arg_10),
-		PARAMS(pPage, pWindow, arg_8, nIndex, arg_10));
+	auto_METHOD_VOID(PalettePageUI, Load, Args(PalettePage* pPage, IWindow* pWindow, void* arg_8, size_t nIndex, bool arg_10),
+		Args(pPage, pWindow, arg_8, nIndex, arg_10));
 
 	bool PalettePageUI::HandleUIMessage(IWindow* pWindow, const Message& message)
 	{

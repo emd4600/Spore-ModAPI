@@ -176,20 +176,20 @@ namespace ArgScript
 
 	static_assert(sizeof(Line), "sizeof(Line) != 44h");
 
-	namespace InternalAddressList(Line)
+	namespace Addresses(Line)
 	{
-		DefineAddress(GetArgumentsRange, GetAddress(0x838880, 0x838080, 0x838100));
-		DefineAddress(GetArguments, GetAddress(0x838B80, 0x838380, 0x838400));
-		DefineAddress(GetArgumentAt, GetAddress(0x838780, 0x837F80, 0x838000));
-		DefineAddress(GetArgumentsCount, GetAddress(0x838790, 0x837F90, 0x838010));
+		DeclareAddress(GetArgumentsRange, SelectAddress(0x838880, 0x838080, 0x838100));
+		DeclareAddress(GetArguments, SelectAddress(0x838B80, 0x838380, 0x838400));
+		DeclareAddress(GetArgumentAt, SelectAddress(0x838780, 0x837F80, 0x838000));
+		DeclareAddress(GetArgumentsCount, SelectAddress(0x838790, 0x837F90, 0x838010));
 
-		DefineAddress(GetOption, GetAddress(0x838B90, 0x838390, 0x838410));
-		DefineAddress(GetOptionRange, GetAddress(0x838990, 0x838190, 0x838210));
-		DefineAddress(HasFlag, GetAddress(0x838910, 0x838110, 0x838190));
+		DeclareAddress(GetOption, SelectAddress(0x838B90, 0x838390, 0x838410));
+		DeclareAddress(GetOptionRange, SelectAddress(0x838990, 0x838190, 0x838210));
+		DeclareAddress(HasFlag, SelectAddress(0x838910, 0x838110, 0x838190));
 
-		DefineAddress(GetEnum, GetAddress(0x841470, 0x840C00, 0x840C80));
-		DefineAddress(GetOptionalEnum, GetAddress(0x841080, 0x840810, 0x840890));
+		DeclareAddress(GetEnum, SelectAddress(0x841470, 0x840C00, 0x840C80));
+		DeclareAddress(GetOptionalEnum, SelectAddress(0x841080, 0x840810, 0x840890));
 
-		DefineAddress(FromString, GetAddress(0x838C20, 0x838420, 0x8384A0));
+		DeclareAddress(FromString, SelectAddress(0x838C20, 0x838420, 0x8384A0));
 	}
 }

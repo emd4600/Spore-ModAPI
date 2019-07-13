@@ -20,5 +20,5 @@
 #include <Spore\ResourceKey.h>
 
 auto_STATIC_METHOD(ResourceKey, bool, Parse,
-	PARAMS(ResourceKey& dst, const wchar_t* pString, uint32_t nDefaultTypeID, uint32_t nDefaultGroupID),
-	PARAMS(dst, pString, nDefaultTypeID, nDefaultGroupID));
+	Args(ResourceKey& dst, const wchar_t* pString, uint32_t nDefaultTypeID, uint32_t nDefaultGroupID),
+	Args(dst, pString, nDefaultTypeID, nDefaultGroupID));

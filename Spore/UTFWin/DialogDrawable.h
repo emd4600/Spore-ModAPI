@@ -143,22 +143,22 @@ namespace UTFWin
 
 	static_assert(sizeof(DialogDrawable) == 0x40, "sizeof(DialogDrawable) != 40h");
 
-	namespace InternalAddressList(DialogDrawable)
+	namespace Addresses(DialogDrawable)
 	{
-		DefineAddress(SetSerializer, GetAddress(0x96D960, 0x96D560, 0x96D560));
-		DefineAddress(GetProxyID, GetAddress(0x96BD30, 0x96B940, 0x96B940));
+		DeclareAddress(SetSerializer, SelectAddress(0x96D960, 0x96D560, 0x96D560));
+		DeclareAddress(GetProxyID, SelectAddress(0x96BD30, 0x96B940, 0x96B940));
 
-		DefineAddress(Paint, GetAddress(0x96DA20, 0x96D620, 0x96D620));
-		DefineAddress(IsColliding, GetAddress(0x689880, 0x5ACA30, 0x5ACA30));
-		DefineAddress(GetDimensions, GetAddress(0x96BD70, 0x96B980, 0x96B980));
-		DefineAddress(UseCollision, GetAddress(0x951320, 0x950E00, 0x950E00));
+		DeclareAddress(Paint, SelectAddress(0x96DA20, 0x96D620, 0x96D620));
+		DeclareAddress(IsColliding, SelectAddress(0x689880, 0x5ACA30, 0x5ACA30));
+		DeclareAddress(GetDimensions, SelectAddress(0x96BD70, 0x96B980, 0x96B980));
+		DeclareAddress(UseCollision, SelectAddress(0x951320, 0x950E00, 0x950E00));
 
-		DefineAddress(ToDrawable, GetAddress(0x97E760, 0x96FEB0, 0x96FEB0));
-		DefineAddress(SetImage, GetAddress(0x96BE50, 0x96BA60, 0x96BA60));
-		DefineAddress(GetBackgroundColor, GetAddress(0x96BE90, 0x96BAA0, 0x96BAA0));
-		DefineAddress(SetBackgroundColor, GetAddress(0x980670, 0xFCCD90, 0xFCCD90));
-		DefineAddress(GetBackgroundTiling, GetAddress(0x96BEB0, 0x96BAC0, 0x96BAC0));
-		DefineAddress(SetBackgroundTiling, GetAddress(0x96BEA0, 0x96BAB0, 0x96BAB0));
+		DeclareAddress(ToDrawable, SelectAddress(0x97E760, 0x96FEB0, 0x96FEB0));
+		DeclareAddress(SetImage, SelectAddress(0x96BE50, 0x96BA60, 0x96BA60));
+		DeclareAddress(GetBackgroundColor, SelectAddress(0x96BE90, 0x96BAA0, 0x96BAA0));
+		DeclareAddress(SetBackgroundColor, SelectAddress(0x980670, 0xFCCD90, 0xFCCD90));
+		DeclareAddress(GetBackgroundTiling, SelectAddress(0x96BEB0, 0x96BAC0, 0x96BAC0));
+		DeclareAddress(SetBackgroundTiling, SelectAddress(0x96BEA0, 0x96BAB0, 0x96BAB0));
 	}
 
 	inline DialogDrawable::DialogDrawable()

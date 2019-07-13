@@ -20,6 +20,6 @@
 
 namespace Audio
 {
-	auto_STATIC_METHOD_VOID(AudioSystem, PlayAudio, PARAMS(uint32_t soundID, AudioSystem* system), PARAMS(soundID, system));
+	auto_STATIC_METHOD_VOID(AudioSystem, PlayAudio, Args(uint32_t soundID, AudioSystem* system), Args(soundID, system));
 	auto_STATIC_METHOD_(AudioSystem, AudioSystem*, Get);
 }

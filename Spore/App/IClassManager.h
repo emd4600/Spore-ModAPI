@@ -60,8 +60,8 @@ namespace App
 		return IClassManager::Get();
 	}
 
-	namespace InternalAddressList(IClassManager)
+	namespace Addresses(IClassManager)
 	{
-		DefineAddress(Get, GetAddress(0x9205E0, NO_ADDRESS, 0x920320));
+		DeclareAddress(Get, SelectAddress(0x9205E0, NO_ADDRESS, 0x920320));
 	}
 }

@@ -102,15 +102,15 @@ namespace UTFWin
 
 	static_assert(sizeof(FrameDrawable) == 0x60, "sizeof(FrameDrawable) != 60h");
 
-	namespace InternalAddressList(FrameDrawable)
+	namespace Addresses(FrameDrawable)
 	{
-		DefineAddress(Paint, GetAddress(0x96F6B0, 0x96F350, 0x96F350));
-		DefineAddress(IsColliding, GetAddress(0x689880, 0x5ACA30, 0x5ACA30));
-		DefineAddress(GetDimensions, GetAddress(0x9516A0, 0x951190, 0x951190));
-		DefineAddress(UseCollision, GetAddress(0x951320, 0x950E00, 0x950E00));
+		DeclareAddress(Paint, SelectAddress(0x96F6B0, 0x96F350, 0x96F350));
+		DeclareAddress(IsColliding, SelectAddress(0x689880, 0x5ACA30, 0x5ACA30));
+		DeclareAddress(GetDimensions, SelectAddress(0x9516A0, 0x951190, 0x951190));
+		DeclareAddress(UseCollision, SelectAddress(0x951320, 0x950E00, 0x950E00));
 
-		DefineAddress(SetSerializer, GetAddress(0x96F680, 0x96F320, 0x96F320));
-		DefineAddress(GetProxyID, GetAddress(0x96F570, 0x96F1D0, 0x96F1D0));
+		DeclareAddress(SetSerializer, SelectAddress(0x96F680, 0x96F320, 0x96F320));
+		DeclareAddress(GetProxyID, SelectAddress(0x96F570, 0x96F1D0, 0x96F1D0));
 
 	}
 

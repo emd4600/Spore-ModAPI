@@ -20,6 +20,6 @@
 
 namespace Simulator
 {
-	auto_METHOD_VOID(cVehicle, Load, PARAMS(VehicleLocomotion locomotion, VehiclePurpose purpose, struct ResourceKey name),
-		PARAMS(locomotion, purpose, name));
+	auto_METHOD_VOID(cVehicle, Load, Args(VehicleLocomotion locomotion, VehiclePurpose purpose, struct ResourceKey name),
+		Args(locomotion, purpose, name));
 }

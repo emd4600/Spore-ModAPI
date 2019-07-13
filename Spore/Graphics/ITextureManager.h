@@ -111,8 +111,8 @@ namespace Graphics
 	//// INTERNAL IMPLEMENTATION ////
 	/////////////////////////////////
 
-	namespace InternalAddressList(ITextureManager)
+	namespace Addresses(ITextureManager)
 	{
-		DefineAddress(Get, GetAddress(0x67DE80, 0x67DD20, 0x67DD20));
+		DeclareAddress(Get, SelectAddress(0x67DE80, 0x67DD20, 0x67DD20));
 	}
 }

@@ -1,5 +1,9 @@
 /**
 
+@page iterating_simulator Iterating Simulator Objects
+
+How to get all Simulator objects of a certain type and iterate them.
+
 ## Iterating through Simulator objects
 
 ### Necessary includes
@@ -14,7 +18,7 @@ You can do that with the `Simulator::GetData` method.
 \code{.cpp}
 // We use auto so code is more legible; it will be a pointer to the object type
 // We have used 'using namespace Simulator;' to simplify
-// We use 'auto' to simplify; in this case, it's aan intrusive_ptr<cVehicle>
+// We use 'auto' to simplify; in this case, it's a cVehicle*
 for (auto vehicle : GetData<cVehicle>()) {
 	
 }
@@ -37,7 +41,7 @@ auto city = PlanetModel()->GetNearestCity(GameNounManager()->GetAvatar()->GetPos
 if (city) {
 	for (auto vehicle : GetData<cVehicle>()) {
 		if (vehicle->GetLocomotion() == kLocomotionAir) {
-			vehicle->MoveTo(city)
+			vehicle->MoveTo(city->GetWallsPosition());
 		}
 	}
 }

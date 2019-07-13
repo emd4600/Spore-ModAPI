@@ -228,9 +228,9 @@ namespace Graphics
 	//// INTERNAL IMPLEMENTATION ////
 	/////////////////////////////////
 
-	namespace InternalAddressList(IModelWorld)
+	namespace Addresses(IModelWorld)
 	{
-		DefineAddress(LoadModelProperties, GetAddress(0x74C5D0, 0x74B7D0, 0x74B7D0));
+		DeclareAddress(LoadModelProperties, SelectAddress(0x74C5D0, 0x74B7D0, 0x74B7D0));
 	}
 
 }

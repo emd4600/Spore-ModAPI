@@ -68,8 +68,8 @@ namespace Simulator
 
 	static_assert(sizeof(cStarRecord) == 0xB0, "sizeof(cStarRecord) != B0h");
 
-	namespace InternalAddressList(cStarRecord)
+	namespace Addresses(cStarRecord)
 	{
-		DefineAddress(GetPlanetRecord, GetAddress(0xBB9B40, NO_ADDRESS, 0xBBABD0));
+		DeclareAddress(GetPlanetRecord, SelectAddress(0xBB9B40, NO_ADDRESS, 0xBBABD0));
 	}
 }

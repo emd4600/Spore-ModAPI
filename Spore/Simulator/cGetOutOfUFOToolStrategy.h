@@ -34,11 +34,11 @@ namespace Simulator
 		virtual bool OnHit(cSpaceToolData* pTool, const Vector3& position, cSpaceToolData::SpaceToolHit hitType) override;
 	};
 
-	namespace InternalAddressList(cGetOutOfUFOToolStrategy)
+	namespace Addresses(cGetOutOfUFOToolStrategy)
 	{
-		DefineAddress(OnSelect, GetAddress(0x1054C30, NO_ADDRESS, 0x1054080));
-		DefineAddress(Update, GetAddress(0x1057890, NO_ADDRESS, 0x1056D00));
-		DefineAddress(WhileAiming, GetAddress(0x1054C10, NO_ADDRESS, 0x1054060));
-		DefineAddress(OnHit, GetAddress(0x105BDB0, NO_ADDRESS, 0x105B200));
+		DeclareAddress(OnSelect, SelectAddress(0x1054C30, NO_ADDRESS, 0x1054080));
+		DeclareAddress(Update, SelectAddress(0x1057890, NO_ADDRESS, 0x1056D00));
+		DeclareAddress(WhileAiming, SelectAddress(0x1054C10, NO_ADDRESS, 0x1054060));
+		DeclareAddress(OnHit, SelectAddress(0x105BDB0, NO_ADDRESS, 0x105B200));
 	}
 }

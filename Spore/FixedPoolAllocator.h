@@ -56,4 +56,10 @@ typedef CoreAllocatorAdapter<FixedPoolAllocator> FixedPoolAllocatorAdapter;
 
 static_assert(sizeof(FixedPoolAllocator) == 0x20, "sizeof(FixedPoolAllocator) != 20h");
 
-
+namespace Addresses(FixedPoolAllocator)
+{
+	DeclareAddress(dtor, SelectAddress(0x926360, 0x9260F0, 0x9260F0));
+	DeclareAddress(Alloc, SelectAddress(0x926370, 0x926100, 0x926100));
+	DeclareAddress(Alloc_, SelectAddress(0x926490, 0x926220, 0x926220));
+	DeclareAddress(Free, SelectAddress(0x9263B0, 0x926140, 0x926140));
+}

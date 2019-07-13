@@ -92,19 +92,19 @@ namespace UTFWin
 
 	static_assert(sizeof(ButtonDrawableStandard) == 0x18, "sizeof(ButtonDrawableStandard) != 18h");
 
-	namespace InternalAddressList(ButtonDrawableStandard)
+	namespace Addresses(ButtonDrawableStandard)
 	{
-		DefineAddress(Paint, GetAddress(0x965970, 0x9655F0, 0x9655F0));
-		DefineAddress(IsColliding, GetAddress(0x689880, 0x5ACA30, 0x5ACA30));
-		DefineAddress(GetDimensions, GetAddress(0x964A20, 0x964690, 0x964690));
-		DefineAddress(UseCollision, GetAddress(0x951320, 0x950E00, 0x950E00));
-		DefineAddress(GetTexCoords, GetAddress(0x966DC0, 0x966A40, 0x966A40));
+		DeclareAddress(Paint, SelectAddress(0x965970, 0x9655F0, 0x9655F0));
+		DeclareAddress(IsColliding, SelectAddress(0x689880, 0x5ACA30, 0x5ACA30));
+		DeclareAddress(GetDimensions, SelectAddress(0x964A20, 0x964690, 0x964690));
+		DeclareAddress(UseCollision, SelectAddress(0x951320, 0x950E00, 0x950E00));
+		DeclareAddress(GetTexCoords, SelectAddress(0x966DC0, 0x966A40, 0x966A40));
 
-		DefineAddress(SetSerializer, GetAddress(0x9658E0, 0x965560, 0x965560));
-		DefineAddress(GetProxyID, GetAddress(0x964A10, 0x964680, 0x964680));
+		DeclareAddress(SetSerializer, SelectAddress(0x9658E0, 0x965560, 0x965560));
+		DeclareAddress(GetProxyID, SelectAddress(0x964A10, 0x964680, 0x964680));
 
-		DefineAddress(ToDrawable, GetAddress(0x97E760, 0x96FEB0, 0x96FEB0));
-		DefineAddress(SetImage, GetAddress(0x9649C0, 0x964630, 0x964630));
+		DeclareAddress(ToDrawable, SelectAddress(0x97E760, 0x96FEB0, 0x96FEB0));
+		DeclareAddress(SetImage, SelectAddress(0x9649C0, 0x964630, 0x964630));
 
 	}
 

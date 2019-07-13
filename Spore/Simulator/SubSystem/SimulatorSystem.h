@@ -102,8 +102,8 @@ namespace Simulator
 
 	static_assert(sizeof(cSimulatorSystem) == 0x70, "sizeof(cSimulatorSystem) != 70h");
 
-	namespace InternalAddressList(cSimulatorSystem)
+	namespace Addresses(cSimulatorSystem)
 	{
-		DefineAddress(Get, GetAddress(0xB3D190, NO_ADDRESS, 0xB3D330));
+		DeclareAddress(Get, SelectAddress(0xB3D190, NO_ADDRESS, 0xB3D330));
 	}
 }

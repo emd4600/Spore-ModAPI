@@ -71,7 +71,7 @@ namespace UTFWin
 	const ComponentSerialization InteractiveWinProc::SerializationData = 
 		ComponentSerialization(0, 0, sizeof(InteractiveWinProc), nullptr, 0);
 
-	auto_METHOD_VIRTUAL(InteractiveWinProc, IWinProc, bool, HandleUIMessage, PARAMS(IWindow* pWindow, const Message& message), PARAMS(pWindow, message));
+	auto_METHOD_VIRTUAL(InteractiveWinProc, IWinProc, bool, HandleUIMessage, Args(IWindow* pWindow, const Message& message), Args(pWindow, message));
 
 	bool InteractiveWinProc::OnKeyDown2(IWindow* pWindow, int, int virtualKey, int modifiers) { return false; };
 	bool InteractiveWinProc::OnKeyUp2(IWindow* pWindow, int, int virtualKey, int modifiers) { return false; };

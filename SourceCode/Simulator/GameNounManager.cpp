@@ -23,12 +23,12 @@ namespace Simulator
 {
 	auto_STATIC_METHOD_(cGameNounManager, cGameNounManager*, Get);
 
-	auto_METHOD(cGameNounManager, cGameData*, CreateInstance, PARAMS(uint32_t nounID), PARAMS(nounID));
-	auto_METHOD_VOID(cGameNounManager, DestroyInstance, PARAMS(cGameData* p), PARAMS(p));
+	auto_METHOD(cGameNounManager, cGameData*, CreateInstance, Args(uint32_t nounID), Args(nounID));
+	auto_METHOD_VOID(cGameNounManager, DestroyInstance, Args(cGameData* p), Args(p));
 
 	auto_METHOD_VOID_(cGameNounManager, UpdateModels);
 
-	auto_METHOD_VOID(cGameNounManager, SetAvatar, PARAMS(cCreatureAnimal* pAnimal), PARAMS(pAnimal));
+	auto_METHOD_VOID(cGameNounManager, SetAvatar, Args(cCreatureAnimal* pAnimal), Args(pAnimal));
 
 	cCreatureAnimal* cGameNounManager::GetAvatar() {
 		return mpAvatar.get();

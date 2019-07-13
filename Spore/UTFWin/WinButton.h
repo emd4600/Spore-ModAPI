@@ -17,6 +17,8 @@
 * along with this program.  If not, see <http://www.gnu.org/licenses/>.
 ****************************************************************************/
 
+#error "Not implemented yet; use IButton"
+
 #include "..\Internal.h"
 
 #include "Window.h"
@@ -128,8 +130,8 @@ namespace UTFWin
 	//			field((Window*) this, 0xAC) |= 1;
 	//		}
 
-	//		VOID_THISCALL(GetAddress(0x89DE50, 0), (void*) ((int)((Window*) this) + 0x280));
-	//		VOID_THISCALL(GetAddress(0x899610, 0), (void*)((int)((Window*) this) + 0x7B0));
+	//		VOID_THISCALL(SelectAddress(0x89DE50, 0), (void*) ((int)((Window*) this) + 0x280));
+	//		VOID_THISCALL(SelectAddress(0x899610, 0), (void*)((int)((Window*) this) + 0x7B0));
 	//	}
 
 	//	~WinButton()
@@ -140,64 +142,64 @@ namespace UTFWin
 	public:
 		static inline WinButton* New() {
 			// __stdcall because it's cleanup by callee
-			return (WinButton*)((IWindow*(__stdcall*)(void*, void*)) GetAddress(0x967420, 0x9670A0, 0x9670A0))(nullptr, nullptr);
+			return (WinButton*)((IWindow*(__stdcall*)(void*, void*)) SelectAddress(0x967420, 0x9670A0, 0x9670A0))(nullptr, nullptr);
 		}
 
-		virtual METHOD_(GetAddress(0x951FF0, 0x95F8F0, 0x963E30), ILayoutElement, int, AddRef);
-		virtual METHOD_(GetAddress(0x95FE40, 0x95F900, 0x963E40), ILayoutElement, int, Release);
-		virtual METHOD(GetAddress(0x9641E0, 0x963E50, 0x963E50), ILayoutElement, void*, Cast, PARAMS(uint32_t typeID), PARAMS(typeID));
+		virtual METHOD_(SelectAddress(0x951FF0, 0x95F8F0, 0x963E30), ILayoutElement, int, AddRef);
+		virtual METHOD_(SelectAddress(0x95FE40, 0x95F900, 0x963E40), ILayoutElement, int, Release);
+		virtual METHOD(SelectAddress(0x9641E0, 0x963E50, 0x963E50), ILayoutElement, void*, Cast, Args(uint32_t typeID), Args(typeID));
 
-	//	virtual METHOD_(GetAddress(0x98F5C0, 0), ILayoutElement, int, AddRef);
-	//	virtual METHOD_(GetAddress(0x96B700, 0), ILayoutElement, int, Release);
-	//	virtual METHOD(GetAddress(0x9641E0, 0), ILayoutElement, void*, CastToType, PARAMS(unsigned long typeID), PARAMS(this, typeID));
+	//	virtual METHOD_(SelectAddress(0x98F5C0, 0), ILayoutElement, int, AddRef);
+	//	virtual METHOD_(SelectAddress(0x96B700, 0), ILayoutElement, int, Release);
+	//	virtual METHOD(SelectAddress(0x9641E0, 0), ILayoutElement, void*, CastToType, Args(unsigned long typeID), Args(this, typeID));
 
-	//	virtual METHOD_VOID(GetAddress(0x964B00, 0), ILayoutElement, SetBlockDefinition, PARAMS(void* dst), PARAMS(this, dst));
-	//	virtual METHOD_(GetAddress(0x964860, 0), ILayoutElement, int, GetBlockType);
+	//	virtual METHOD_VOID(SelectAddress(0x964B00, 0), ILayoutElement, SetBlockDefinition, Args(void* dst), Args(this, dst));
+	//	virtual METHOD_(SelectAddress(0x964860, 0), ILayoutElement, int, GetBlockType);
 
 	//protected:
-	//	virtual METHOD(GetAddress(0x951030, 0), Window, bool, func20h, PARAMS(Event* eventInfo), PARAMS(this, eventInfo));  // warning, might not be an eventInfo!
-	//	virtual METHOD(GetAddress(0x964F30, 0), Window, bool, PaintWindow, PARAMS(void* renderer), PARAMS(this, renderer));
+	//	virtual METHOD(SelectAddress(0x951030, 0), Window, bool, func20h, Args(Event* eventInfo), Args(this, eventInfo));  // warning, might not be an eventInfo!
+	//	virtual METHOD(SelectAddress(0x964F30, 0), Window, bool, PaintWindow, Args(void* renderer), Args(this, renderer));
 
-	//	virtual METHOD(GetAddress(0x9516A0, 0), WinButton, bool, winbuttonFunc28h, PARAMS(int arg_0, int arg_4, int arg_8), PARAMS(this, arg_0, arg_4, arg_8));
-	//	virtual METHOD(GetAddress(0x9516A0, 0), WinButton, bool, winbuttonFunc2Ch, PARAMS(int arg_0, int arg_4, int arg_8), PARAMS(this, arg_0, arg_4, arg_8));
-	//	virtual METHOD(GetAddress(0x964580, 0), WinButton, bool, winbuttonFunc30h, PARAMS(int arg_0, int arg_4, int arg_8), PARAMS(this, arg_0, arg_4, arg_8));
-	//	virtual METHOD(GetAddress(0x9645E0, 0), WinButton, bool, winbuttonFunc34h, PARAMS(int arg_0, int arg_4, int arg_8), PARAMS(this, arg_0, arg_4, arg_8));
-	//	virtual METHOD(GetAddress(0x951320, 0), WinButton, bool, winbuttonFunc38h, PARAMS(int arg_0, int arg_4), PARAMS(this, arg_0, arg_4));
-	//	virtual METHOD(GetAddress(0x964670, 0), WinButton, bool, winbuttonFunc3Ch, PARAMS(int arg_0, int arg_4, int arg_8, int arg_C), PARAMS(this, arg_0, arg_4, arg_8, arg_C));
-	//	virtual METHOD(GetAddress(0x964700, 0), WinButton, bool, winbuttonFunc40h, PARAMS(int arg_0, int arg_4, int arg_8, int arg_C), PARAMS(this, arg_0, arg_4, arg_8, arg_C));
-	//	virtual METHOD(GetAddress(0x9516A0, 0), WinButton, bool, winbuttonFunc44h, PARAMS(int arg_0, int arg_4, int arg_8), PARAMS(this, arg_0, arg_4, arg_8));
-	//	virtual METHOD(GetAddress(0x886860, 0), WinButton, bool, winbuttonFunc48h, PARAMS(int arg_0, int arg_4, int arg_8, int arg_C), PARAMS(this, arg_0, arg_4, arg_8, arg_C));
-	//	virtual METHOD(GetAddress(0x964780, 0), WinButton, bool, winbuttonFunc4Ch, PARAMS(int arg_0, int arg_4), PARAMS(this, arg_0, arg_4));
-	//	virtual METHOD(GetAddress(0x966F00, 0), WinButton, bool, winbuttonFunc50h, PARAMS(int arg_0, int arg_4), PARAMS(this, arg_0, arg_4));
-	//	virtual METHOD(GetAddress(0x951320, 0), WinButton, bool, winbuttonFunc54h, PARAMS(int arg_0, int arg_4), PARAMS(this, arg_0, arg_4));
-	//	virtual METHOD_(GetAddress(0x964850, 0), WinButton, bool, winbuttonFunc58h);
-	//	virtual METHOD_VOID_(GetAddress(0x7E66D0, 0), WinButton, winbuttonFunc5Ch);
-	//	virtual METHOD_VOID_(GetAddress(0x7E66D0, 0), WinButton, winbuttonFunc60h);
-	//	virtual METHOD(GetAddress(0x9516A0, 0), WinButton, bool, winbuttonFunc64h, PARAMS(int arg_0, int arg_4, int arg_8), PARAMS(this, arg_0, arg_4, arg_8));
-	//	virtual METHOD_VOID(GetAddress(0xA36AD0, 0), WinButton, winbuttonFunc68h, PARAMS(int arg_0), PARAMS(this, arg_0));
-	//	virtual METHOD_VOID(GetAddress(0xA36AD0, 0), WinButton, winbuttonFunc6Ch, PARAMS(int arg_0), PARAMS(this, arg_0));
-	//	virtual METHOD(GetAddress(0x951320, 0), WinButton, bool, winbuttonFunc70h, PARAMS(int arg_0, int arg_4), PARAMS(this, arg_0, arg_4));
-	//	virtual METHOD(GetAddress(0x9516A0, 0), WinButton, bool, winbuttonFunc74h, PARAMS(int arg_0, int arg_4, int arg_8), PARAMS(this, arg_0, arg_4, arg_8));
-	//	virtual METHOD(GetAddress(0x951320, 0), WinButton, bool, winbuttonFunc78h, PARAMS(int arg_0, int arg_4), PARAMS(this, arg_0, arg_4));
-	//	virtual METHOD(GetAddress(0x951320, 0), WinButton, bool, winbuttonFunc7Ch, PARAMS(int arg_0, int arg_4), PARAMS(this, arg_0, arg_4));
-	//	virtual METHOD(GetAddress(0x951320, 0), WinButton, bool, winbuttonFunc80h, PARAMS(int arg_0, int arg_4), PARAMS(this, arg_0, arg_4));
-	//	virtual METHOD(GetAddress(0x951320, 0), WinButton, bool, winbuttonFunc84h, PARAMS(int arg_0, int arg_4), PARAMS(this, arg_0, arg_4));
-	//	virtual METHOD_VOID(GetAddress(0x9654D0, 0), WinButton, winbuttonFunc88h, PARAMS(int arg_0), PARAMS(this, arg_0));
-	//	virtual METHOD_(GetAddress(0x9642B0, 0), WinButton, int, winbuttonFunc8Ch);
-	//	virtual METHOD_VOID_(GetAddress(0x964B30, 0), WinButton, winbuttonFunc90h);
-	//	virtual METHOD_(GetAddress(0x964440, 0), WinButton, bool, winbuttonFunc94h, PARAMS(int arg_0), PARAMS(this, arg_0));
-	//	virtual METHOD_VOID(GetAddress(0x966F10, 0), WinButton, winbuttonFunc98h, PARAMS(int arg_0, int arg_4), PARAMS(this, arg_0, arg_4));
-	//	virtual METHOD_VOID_(GetAddress(0x965690, 0), WinButton, winbuttonFunc9Ch);
-	//	virtual METHOD_VOID_(GetAddress(0x9642F0, 0), WinButton, winbuttonFuncA0h);
+	//	virtual METHOD(SelectAddress(0x9516A0, 0), WinButton, bool, winbuttonFunc28h, Args(int arg_0, int arg_4, int arg_8), Args(this, arg_0, arg_4, arg_8));
+	//	virtual METHOD(SelectAddress(0x9516A0, 0), WinButton, bool, winbuttonFunc2Ch, Args(int arg_0, int arg_4, int arg_8), Args(this, arg_0, arg_4, arg_8));
+	//	virtual METHOD(SelectAddress(0x964580, 0), WinButton, bool, winbuttonFunc30h, Args(int arg_0, int arg_4, int arg_8), Args(this, arg_0, arg_4, arg_8));
+	//	virtual METHOD(SelectAddress(0x9645E0, 0), WinButton, bool, winbuttonFunc34h, Args(int arg_0, int arg_4, int arg_8), Args(this, arg_0, arg_4, arg_8));
+	//	virtual METHOD(SelectAddress(0x951320, 0), WinButton, bool, winbuttonFunc38h, Args(int arg_0, int arg_4), Args(this, arg_0, arg_4));
+	//	virtual METHOD(SelectAddress(0x964670, 0), WinButton, bool, winbuttonFunc3Ch, Args(int arg_0, int arg_4, int arg_8, int arg_C), Args(this, arg_0, arg_4, arg_8, arg_C));
+	//	virtual METHOD(SelectAddress(0x964700, 0), WinButton, bool, winbuttonFunc40h, Args(int arg_0, int arg_4, int arg_8, int arg_C), Args(this, arg_0, arg_4, arg_8, arg_C));
+	//	virtual METHOD(SelectAddress(0x9516A0, 0), WinButton, bool, winbuttonFunc44h, Args(int arg_0, int arg_4, int arg_8), Args(this, arg_0, arg_4, arg_8));
+	//	virtual METHOD(SelectAddress(0x886860, 0), WinButton, bool, winbuttonFunc48h, Args(int arg_0, int arg_4, int arg_8, int arg_C), Args(this, arg_0, arg_4, arg_8, arg_C));
+	//	virtual METHOD(SelectAddress(0x964780, 0), WinButton, bool, winbuttonFunc4Ch, Args(int arg_0, int arg_4), Args(this, arg_0, arg_4));
+	//	virtual METHOD(SelectAddress(0x966F00, 0), WinButton, bool, winbuttonFunc50h, Args(int arg_0, int arg_4), Args(this, arg_0, arg_4));
+	//	virtual METHOD(SelectAddress(0x951320, 0), WinButton, bool, winbuttonFunc54h, Args(int arg_0, int arg_4), Args(this, arg_0, arg_4));
+	//	virtual METHOD_(SelectAddress(0x964850, 0), WinButton, bool, winbuttonFunc58h);
+	//	virtual METHOD_VOID_(SelectAddress(0x7E66D0, 0), WinButton, winbuttonFunc5Ch);
+	//	virtual METHOD_VOID_(SelectAddress(0x7E66D0, 0), WinButton, winbuttonFunc60h);
+	//	virtual METHOD(SelectAddress(0x9516A0, 0), WinButton, bool, winbuttonFunc64h, Args(int arg_0, int arg_4, int arg_8), Args(this, arg_0, arg_4, arg_8));
+	//	virtual METHOD_VOID(SelectAddress(0xA36AD0, 0), WinButton, winbuttonFunc68h, Args(int arg_0), Args(this, arg_0));
+	//	virtual METHOD_VOID(SelectAddress(0xA36AD0, 0), WinButton, winbuttonFunc6Ch, Args(int arg_0), Args(this, arg_0));
+	//	virtual METHOD(SelectAddress(0x951320, 0), WinButton, bool, winbuttonFunc70h, Args(int arg_0, int arg_4), Args(this, arg_0, arg_4));
+	//	virtual METHOD(SelectAddress(0x9516A0, 0), WinButton, bool, winbuttonFunc74h, Args(int arg_0, int arg_4, int arg_8), Args(this, arg_0, arg_4, arg_8));
+	//	virtual METHOD(SelectAddress(0x951320, 0), WinButton, bool, winbuttonFunc78h, Args(int arg_0, int arg_4), Args(this, arg_0, arg_4));
+	//	virtual METHOD(SelectAddress(0x951320, 0), WinButton, bool, winbuttonFunc7Ch, Args(int arg_0, int arg_4), Args(this, arg_0, arg_4));
+	//	virtual METHOD(SelectAddress(0x951320, 0), WinButton, bool, winbuttonFunc80h, Args(int arg_0, int arg_4), Args(this, arg_0, arg_4));
+	//	virtual METHOD(SelectAddress(0x951320, 0), WinButton, bool, winbuttonFunc84h, Args(int arg_0, int arg_4), Args(this, arg_0, arg_4));
+	//	virtual METHOD_VOID(SelectAddress(0x9654D0, 0), WinButton, winbuttonFunc88h, Args(int arg_0), Args(this, arg_0));
+	//	virtual METHOD_(SelectAddress(0x9642B0, 0), WinButton, int, winbuttonFunc8Ch);
+	//	virtual METHOD_VOID_(SelectAddress(0x964B30, 0), WinButton, winbuttonFunc90h);
+	//	virtual METHOD_(SelectAddress(0x964440, 0), WinButton, bool, winbuttonFunc94h, Args(int arg_0), Args(this, arg_0));
+	//	virtual METHOD_VOID(SelectAddress(0x966F10, 0), WinButton, winbuttonFunc98h, Args(int arg_0, int arg_4), Args(this, arg_0, arg_4));
+	//	virtual METHOD_VOID_(SelectAddress(0x965690, 0), WinButton, winbuttonFunc9Ch);
+	//	virtual METHOD_VOID_(SelectAddress(0x9642F0, 0), WinButton, winbuttonFuncA0h);
 
 	//public:
-	//	/* 7Ch */	virtual METHOD_VOID(GetAddress(0x9648F0, 0), IWindow, SetFlag, PARAMS(WindowFlags flag, bool value), PARAMS(this, flag, value));
+	//	/* 7Ch */	virtual METHOD_VOID(SelectAddress(0x9648F0, 0), IWindow, SetFlag, Args(WindowFlags flag, bool value), Args(this, flag, value));
 	//
-	//	/* 94h */	virtual METHOD_(GetAddress(0x9648C0, 0), IWindow, int, func37);
+	//	/* 94h */	virtual METHOD_(SelectAddress(0x9648C0, 0), IWindow, int, func37);
 	//	
-	//	/* BCh */	virtual METHOD(GetAddress(0x964E70, 0), IWindow, int, func47, PARAMS(float arg_0, float arg_4), PARAMS(this, arg_0, arg_4));
+	//	/* BCh */	virtual METHOD(SelectAddress(0x964E70, 0), IWindow, int, func47, Args(float arg_0, float arg_4), Args(this, arg_0, arg_4));
 	//	
-	//	/* 118h */	virtual METHOD_(GetAddress(0x1065680, 0), IWindow, char*, GetComponentName);
+	//	/* 118h */	virtual METHOD_(SelectAddress(0x1065680, 0), IWindow, char*, GetComponentName);
 	};
 
 	static_assert(sizeof(WinButton) == 0x888, "sizeof(WinButton) != 888h");

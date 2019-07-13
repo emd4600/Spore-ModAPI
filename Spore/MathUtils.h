@@ -23,13 +23,13 @@
 #include <cmath>
 #include <Spore\Internal.h>
 
-namespace InternalAddressList(Math)
+namespace Addresses(Math)
 {
-	DefineAddress(MultiplyVectorScalar, GetAddress(0x41DB70, 0x41DC60, 0x41DC60));
-	DefineAddress(EulerToMatrix, GetAddress(0x453AD0, 0x453DF0, 0x453DF0));
-	DefineAddress(MatrixToEuler, GetAddress(0x6A3BA0, 0x6A3920, 0x6A3920));
+	DeclareAddress(MultiplyVectorScalar, SelectAddress(0x41DB70, 0x41DC60, 0x41DC60));
+	DeclareAddress(EulerToMatrix, SelectAddress(0x453AD0, 0x453DF0, 0x453DF0));
+	DeclareAddress(MatrixToEuler, SelectAddress(0x6A3BA0, 0x6A3920, 0x6A3920));
 
-	DefineAddress(RandomNumberGenerator_ptr, GetAddress(0x16059E8, NO_ADDRESS, 0x1601760));
+	DeclareAddress(RandomNumberGenerator_ptr, SelectAddress(0x16059E8, NO_ADDRESS, 0x1601760));
 }
 
 class Transform;
@@ -351,10 +351,7 @@ namespace Math
 	struct Matrix3 {
 		float m[3][3];
 		Matrix3();
-		Matrix3(const Matrix3& other) {
-			CALL(GetAddress(0x41CA90, 0x41CB30, 0x41CB30), void,
-				PARAMS(Matrix3*, const Matrix3&), PARAMS(this, other));
-		}
+		Matrix3(const Matrix3& other);
 
 		Matrix3& SetIdentity();
 	};
@@ -363,6 +360,7 @@ namespace Math
 	struct Matrix4 {
 		float m[4][4];
 		Matrix4();
+		Matrix4(const Matrix4& other);
 
 		void SetIdentity();
 	};
@@ -377,8 +375,8 @@ namespace Math
 		void ApplyTransform(const Transform& transform);
 	};
 
-	namespace InternalAddressList(BoundingBox) {
-		DefineAddress(ApplyTransform, GetAddress(0x409D30,, 0x409DD0));
+	namespace Addresses(BoundingBox) {
+		DeclareAddress(ApplyTransform, SelectAddress(0x409D30,, 0x409DD0));
 	}
 
 	///
@@ -417,7 +415,7 @@ namespace Math
 	};
 
 	inline RandomNumberGenerator& GetRNG() {
-		return *(RandomNumberGenerator*)(GetMethodAddress(Math, RandomNumberGenerator_ptr));
+		return *(RandomNumberGenerator*)(GetAddress(Math, RandomNumberGenerator_ptr));
 	}
 
 	/// Generates a random integer between 0 and the given parameter, included.
@@ -426,7 +424,7 @@ namespace Math
 		return GetRNG().GenerateRandomInt(range);
 	}
 
-	namespace InternalAddressList(RandomNumberGenerator) {
-		DefineAddress(GenerateRandomInt, GetAddress(0xA68FA0, NO_ADDRESS, 0xA68F70));
+	namespace Addresses(RandomNumberGenerator) {
+		DeclareAddress(GenerateRandomInt, SelectAddress(0xA68FA0, NO_ADDRESS, 0xA68F70));
 	}
 };

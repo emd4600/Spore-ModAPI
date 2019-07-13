@@ -166,8 +166,8 @@ namespace App
 	//// INTERNAL IMPLEMENTATION ////
 	/////////////////////////////////
 
-	namespace InternalAddressList(IPropManager)
+	namespace Addresses(IPropManager)
 	{
-		DefineAddress(Get, GetAddress(0x67DF50, 0x67DDF0, 0x67DDF0));
+		DeclareAddress(Get, SelectAddress(0x67DF50, 0x67DDF0, 0x67DDF0));
 	}
 }

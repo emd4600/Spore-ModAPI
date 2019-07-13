@@ -41,28 +41,28 @@ namespace IO
 	}
 
 	auto_METHOD_(XmlWriter, bool, WriteXmlHeader);
-	auto_METHOD(XmlWriter, bool, BeginElement, PARAMS(const char16_t* pElementName), PARAMS(pElementName));
-	auto_METHOD(XmlWriter, bool, EndElement, PARAMS(const char16_t* pElementName), PARAMS(pElementName));
-	auto_METHOD(XmlWriter, bool, BeginProcessingInstruction, PARAMS(const char16_t* pInstructionName), PARAMS(pInstructionName));
+	auto_METHOD(XmlWriter, bool, BeginElement, Args(const char16_t* pElementName), Args(pElementName));
+	auto_METHOD(XmlWriter, bool, EndElement, Args(const char16_t* pElementName), Args(pElementName));
+	auto_METHOD(XmlWriter, bool, BeginProcessingInstruction, Args(const char16_t* pInstructionName), Args(pInstructionName));
 	auto_METHOD_(XmlWriter, bool, EndProcessingInstruction);
-	auto_METHOD(XmlWriter, bool, AppendAttribute, PARAMS(const char16_t* pAttrName, const char16_t* pAttrValue), PARAMS(pAttrName, pAttrValue));
+	auto_METHOD(XmlWriter, bool, AppendAttribute, Args(const char16_t* pAttrName, const char16_t* pAttrValue), Args(pAttrName, pAttrValue));
 	
 	bool XmlWriter::AppendAttributeF(const char16_t* pAttrName, const char16_t* pAttrValueFmt, ...)
 	{
 		va_list args;
 		va_start(args, pAttrValueFmt);
-		bool result = ((bool(__thiscall*)(const char16_t*, const char16_t*, va_list))(GetMethodAddress(XmlWriter, AppendAttributeF)))
+		bool result = ((bool(__thiscall*)(const char16_t*, const char16_t*, va_list))(GetAddress(XmlWriter, AppendAttributeF)))
 			(pAttrName, pAttrValueFmt, args);
 		va_end(args);
 
 		return result;
 	}
 
-	auto_METHOD(XmlWriter, bool, WriteCharData, PARAMS(const char16_t* pCharData), PARAMS(pCharData));
-	auto_METHOD(XmlWriter, bool, WriteCDATA, PARAMS(const char16_t* pCharData), PARAMS(pCharData));
-	auto_METHOD(XmlWriter, bool, WriteComment, PARAMS(const char16_t* pCommentText, bool bNewlineBefore), PARAMS(pCommentText, bNewlineBefore));
-	auto_METHOD(XmlWriter, bool, WriteName, PARAMS(const char16_t* pString), PARAMS(pString));
-	auto_METHOD(XmlWriter, bool, WriteText, PARAMS(const char16_t* pString, size_t nLength), PARAMS(pString, nLength));
+	auto_METHOD(XmlWriter, bool, WriteCharData, Args(const char16_t* pCharData), Args(pCharData));
+	auto_METHOD(XmlWriter, bool, WriteCDATA, Args(const char16_t* pCharData), Args(pCharData));
+	auto_METHOD(XmlWriter, bool, WriteComment, Args(const char16_t* pCommentText, bool bNewlineBefore), Args(pCommentText, bNewlineBefore));
+	auto_METHOD(XmlWriter, bool, WriteName, Args(const char16_t* pString), Args(pString));
+	auto_METHOD(XmlWriter, bool, WriteText, Args(const char16_t* pString, size_t nLength), Args(pString, nLength));
 }
 
 

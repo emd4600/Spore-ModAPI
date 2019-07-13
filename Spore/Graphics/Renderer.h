@@ -2,20 +2,23 @@
 
 #include <Spore\Internal.h>
 #include <Spore\Graphics\MaterialShader.h>
+#include <Spore\RenderWare\Raster.h>
 #include <d3d9.h>
 
 namespace Graphics
 {
-	namespace InternalAddressList(Renderer) {
-		DefineAddress(Device_ptr, GetAddress(0x016FFD00, 0x16F99D0, 0x16F89D0));
-		DefineAddress(ShaderData_ptr, GetAddress(0x016FD8D8, 0x16F75A8, 0x16F65A8));
-		DefineAddress(MaterialShader_ptr, GetAddress(0x016FD898, 0x16F7568, 0x16F6568));
-		DefineAddress(ModelToWorld_ptr, GetAddress(0x016FF8DC, 0x16F95AC, 0x16F85AC));
-		DefineAddress(ModelToWorldTransposed_ptr, GetAddress(0x1700024, 0x16F9CF4, 0x16F8CF4));
+	namespace Addresses(Renderer) {
+		DeclareAddress(Device_ptr, SelectAddress(0x016FFD00, 0x16F99D0, 0x16F89D0));
+		DeclareAddress(ShaderData_ptr, SelectAddress(0x016FD8D8, 0x16F75A8, 0x16F65A8));
+		DeclareAddress(MaterialShader_ptr, SelectAddress(0x016FD898, 0x16F7568, 0x16F6568));
+		DeclareAddress(ModelToWorld_ptr, SelectAddress(0x016FF8DC, 0x16F95AC, 0x16F85AC));
+		DeclareAddress(ModelToWorldTransposed_ptr, SelectAddress(0x1700024, 0x16F9CF4, 0x16F8CF4));
 
-		DefineAddress(SetShaderData, GetAddress(0x7786E0, 0x777B50, 0x777B50));
+		DeclareAddress(SetShaderData, SelectAddress(0x7786E0, 0x777B50, 0x777B50));
 
-		DefineAddress(CreateDevice, GetAddress(0x11FADF0, , PLACEHOLDER));
+		DeclareAddress(CreateDevice, SelectAddress(0x11FADF0, , 0x11F86B0));
+
+		DeclareAddress(SetTexture, SelectAddress(0x11F39D0, , 0x11F12A0));
 	}
 
 	/// 
@@ -47,50 +50,61 @@ namespace Graphics
 
 		/// Returns the Direct3D Device used for all rendering operations in the game.
 		inline IDirect3DDevice9* GetDevice() {
-			return *(IDirect3DDevice9**)(GetMethodAddress(Renderer, Device_ptr));
+			return *(IDirect3DDevice9**)(GetAddress(Renderer, Device_ptr));
 		}
 
 		/// Returns a pointer to the array that contains the values of shader data. 
 		/// For example, you can do GetShaderData()[ShaderData::skinWeights];
 		inline void** GetShaderData() {
-			return (void**)(GetMethodAddress(Renderer, ShaderData_ptr));
+			return (void**)(GetAddress(Renderer, ShaderData_ptr));
 		}
 
 		/// Returns the current MaterialShader object which is being used to render.
 		/// This can either be a ShaderBuilder or an StandardShader.
 		inline MaterialShader* GetMaterialShader() {
-			return *(MaterialShader**)(GetMethodAddress(Renderer, MaterialShader_ptr));
+			return *(MaterialShader**)(GetAddress(Renderer, MaterialShader_ptr));
 		}
 
 		/// Returns the 'modelToWorld' matrix.
 		inline D3DMATRIX* GetModelToWorld() {
-			return *(D3DMATRIX**)(GetMethodAddress(Renderer, ModelToWorld_ptr));
+			return *(D3DMATRIX**)(GetAddress(Renderer, ModelToWorld_ptr));
 		}
 
 		/// Sets the 'modelToWorld' matrix.
 		/// @param value
 		inline void SetModelMatrix(D3DMATRIX* value) {
-			*(D3DMATRIX**)(GetMethodAddress(Renderer, ModelToWorld_ptr)) = value;
+			*(D3DMATRIX**)(GetAddress(Renderer, ModelToWorld_ptr)) = value;
 		}
 
 		/// Returns the 'modelToWorld' matrix, transposed.
 		inline D3DMATRIX* GetModelToWorldTransposed() {
-			return *(D3DMATRIX**)(GetMethodAddress(Renderer, ModelToWorldTransposed_ptr));
+			return *(D3DMATRIX**)(GetAddress(Renderer, ModelToWorldTransposed_ptr));
 		}
 
 		/// Sets the 'modelToWorld' matrix, transposed.
 		/// @param value
 		inline void SetModelToWorldTransposed(D3DMATRIX* value) {
-			*(D3DMATRIX**)(GetMethodAddress(Renderer, ModelToWorldTransposed_ptr)) = value;
+			*(D3DMATRIX**)(GetAddress(Renderer, ModelToWorldTransposed_ptr)) = value;
 		}
 
-		inline void SetShaderData(short index, void* value, bool overrideIfEqual=false) {
-			STATIC_CALL((GetMethodAddress(Renderer, SetShaderData)), void, PARAMS(short, void*, bool), PARAMS(index, value, overrideIfEqual));
-		}
+		void SetShaderData(short index, void* value, bool overrideIfEqual = false);
 
 		/// Creates the Direct3D device. This must not be called, as it would create another device; if you need to 
 		/// modify this, detour this function.
 		/// @param parameters
 		int CreateDevice(DeviceParameters& parameters);
+
+		/// Sends the given raster to the Direct3D device.
+		/// @param slotIndex The slot this raster will occupy, between 0 and 15.
+		/// @param raster
+		void SetTexture(int slotIndex, RenderWare::Raster* raster);
+
+		/// Sets the given raster to be the active Direct3D render target for the given index.
+		/// Only works if the Raster is a surface.
+		/// @param index The render target index
+		/// @param D3D_OK if the operation succeeded, an error code otherwise.
+		inline HRESULT SetRenderTarget(int index, RenderWare::Raster* raster) {
+			return GetDevice()->SetRenderTarget(0, raster->pSurface);
+		}
 	}
 }

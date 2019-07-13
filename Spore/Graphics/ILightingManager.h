@@ -78,8 +78,8 @@ namespace Graphics
 		return ILightingManager::Get();
 	}
 
-	namespace InternalAddressList(ILightingManager)
+	namespace Addresses(ILightingManager)
 	{
-		DefineAddress(Get, GetAddress(0x67DEB0, 0x67DD50, 0x67DD50));
+		DeclareAddress(Get, SelectAddress(0x67DEB0, 0x67DD50, 0x67DD50));
 	}
 }

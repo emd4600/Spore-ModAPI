@@ -123,15 +123,15 @@ namespace Simulator
 
 	static_assert(sizeof(cToolManager) == 0x29C, "sizeof(cToolManager) != 29Ch");
 
-	namespace InternalAddressList(cToolManager)
+	namespace Addresses(cToolManager)
 	{
-		DefineAddress(Get, GetAddress(0xB3D2F0, 0xB3D460, 0xB3D490));
+		DeclareAddress(Get, SelectAddress(0xB3D2F0, 0xB3D460, 0xB3D490));
 
-		DefineAddress(LoadTool, GetAddress(0x104EEA0, 0x104E350, 0x104E350));
-		DefineAddress(GetStrategy, GetAddress(0x10503B0, NO_ADDRESS, 0x104F860));
+		DeclareAddress(LoadTool, SelectAddress(0x104EEA0, 0x104E350, 0x104E350));
+		DeclareAddress(GetStrategy, SelectAddress(0x10503B0, NO_ADDRESS, 0x104F860));
 
-		DefineAddress(ActivateTool, GetAddress(0x1050710, NO_ADDRESS, 0x104FBC0));
-		DefineAddress(DeactivateTool, GetAddress(0x1050770, NO_ADDRESS, 0x104FC20));
-		DefineAddress(OnMouseUp, GetAddress(0x10505F0, NO_ADDRESS, 0x104FAA0));
+		DeclareAddress(ActivateTool, SelectAddress(0x1050710, NO_ADDRESS, 0x104FBC0));
+		DeclareAddress(DeactivateTool, SelectAddress(0x1050770, NO_ADDRESS, 0x104FC20));
+		DeclareAddress(OnMouseUp, SelectAddress(0x10505F0, NO_ADDRESS, 0x104FAA0));
 	}
 }

@@ -31,8 +31,8 @@ namespace Simulator
 		virtual bool WhileFiring(cSpaceToolData* pTool, const Vector3& aimPoint, int) override;
 	};
 
-	namespace InternalAddressList(cGlobalMindEraseToolStrategy)
+	namespace Addresses(cGlobalMindEraseToolStrategy)
 	{
-		DefineAddress(WhileFiring, GetAddress(0x1059BB0, NO_ADDRESS, 0x1059010));
+		DeclareAddress(WhileFiring, SelectAddress(0x1059BB0, NO_ADDRESS, 0x1059010));
 	}
 }

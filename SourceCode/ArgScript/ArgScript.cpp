@@ -54,21 +54,21 @@ namespace ArgScript
 		}
 	}
 
-	auto_METHOD_VOID(Line, FromString, PARAMS(const char* pText), PARAMS(pText));
+	auto_METHOD_VOID(Line, FromString, Args(const char* pText), Args(pText));
 
-	auto_METHOD_const(Line, Arguments, GetArguments, PARAMS(size_t nCount), PARAMS(nCount));
-	auto_METHOD_const(Line, Arguments, GetArgumentsRange, PARAMS(size_t* dstCount, size_t nMin, size_t nMax), PARAMS(dstCount, nMin, nMax));
+	auto_METHOD_const(Line, Arguments, GetArguments, Args(size_t nCount), Args(nCount));
+	auto_METHOD_const(Line, Arguments, GetArgumentsRange, Args(size_t* dstCount, size_t nMin, size_t nMax), Args(dstCount, nMin, nMax));
 	auto_METHOD_const_(Line, size_t, GetArgumentsCount);
-	auto_METHOD_const(Line, const char*, GetArgumentAt, PARAMS(size_t nIndex), PARAMS(nIndex));
-	auto_METHOD_const(Line, Arguments, GetOption, PARAMS(const char* pOptionName, size_t nCount), PARAMS(pOptionName, nCount));
-	auto_METHOD_const(Line, Arguments, GetOptionRange, PARAMS(const char* pOptionName, size_t* dstCount, size_t nMin, size_t nMax), PARAMS(pOptionName, dstCount, nMin, nMax));
-	auto_METHOD_const(Line, bool, HasFlag, PARAMS(const char* pFlagName), PARAMS(pFlagName));
+	auto_METHOD_const(Line, const char*, GetArgumentAt, Args(size_t nIndex), Args(nIndex));
+	auto_METHOD_const(Line, Arguments, GetOption, Args(const char* pOptionName, size_t nCount), Args(pOptionName, nCount));
+	auto_METHOD_const(Line, Arguments, GetOptionRange, Args(const char* pOptionName, size_t* dstCount, size_t nMin, size_t nMax), Args(pOptionName, dstCount, nMin, nMax));
+	auto_METHOD_const(Line, bool, HasFlag, Args(const char* pFlagName), Args(pFlagName));
 
-	auto_STATIC_METHOD(Line, int, GetEnum, PARAMS(const char* pValueString, const EnumValue* pEnum), PARAMS(pValueString, pEnum));
-	auto_STATIC_METHOD(Line, bool, GetOptionalEnum, PARAMS(const char* pValueString, const EnumValue* pEnum, int& dst), PARAMS(pValueString, pEnum, dst));
+	auto_STATIC_METHOD(Line, int, GetEnum, Args(const char* pValueString, const EnumValue* pEnum), Args(pValueString, pEnum));
+	auto_STATIC_METHOD(Line, bool, GetOptionalEnum, Args(const char* pValueString, const EnumValue* pEnum, int& dst), Args(pValueString, pEnum, dst));
 
-	auto_METHOD_VOID(IBlock, AddParser, PARAMS(const char* pKeyword, IParser* pParser), PARAMS(pKeyword, pParser));
-	auto_METHOD(IBlock, IParser*, GetParser, PARAMS(const char* pKeyword), PARAMS(pKeyword));
+	auto_METHOD_VOID(IBlock, AddParser, Args(const char* pKeyword, IParser* pParser), Args(pKeyword, pParser));
+	auto_METHOD(IBlock, IParser*, GetParser, Args(const char* pKeyword), Args(pKeyword));
 
 	IParser::IParser()
 		: mnRefCount(0)
@@ -111,10 +111,10 @@ namespace ArgScript
 	}
 
 
-	auto_METHOD_VOID(Lexer, AddFunction, PARAMS(const char* pFunctionName, IFunction* pFunction), PARAMS(pFunctionName, pFunction));
-	auto_METHOD_VOID(Lexer, ExpectChar, PARAMS(LexerString& lexerString, char c), PARAMS(lexerString, c));
-	auto_METHOD(Lexer, bool, OptionalExpectChar, PARAMS(LexerString& lexerString, char c), PARAMS(lexerString, c));
-	auto_METHOD_VOID(Lexer, NextParameter, PARAMS(LexerString& lexerString, string& dst), PARAMS(lexerString, dst));
+	auto_METHOD_VOID(Lexer, AddFunction, Args(const char* pFunctionName, IFunction* pFunction), Args(pFunctionName, pFunction));
+	auto_METHOD_VOID(Lexer, ExpectChar, Args(LexerString& lexerString, char c), Args(lexerString, c));
+	auto_METHOD(Lexer, bool, OptionalExpectChar, Args(LexerString& lexerString, char c), Args(lexerString, c));
+	auto_METHOD_VOID(Lexer, NextParameter, Args(LexerString& lexerString, string& dst), Args(lexerString, dst));
 
 	auto_STATIC_METHOD_(ArgScript, FormatParser*, CreateStream);
 
@@ -129,51 +129,51 @@ namespace ArgScript
 	auto_METHOD_VIRTUAL_(FormatParser, FormatParser, int, Release);
 	auto_METHOD_VIRTUAL_(FormatParser, FormatParser, bool, Initialize);
 	auto_METHOD_VIRTUAL_(FormatParser, FormatParser, bool, Dispose);
-	auto_METHOD_VIRTUAL_VOID(FormatParser, FormatParser, SetData, PARAMS(void* pData), PARAMS(pData));
-	auto_METHOD_VIRTUAL_VOID(FormatParser, FormatParser, AddParser, PARAMS(const char* pKeyword, IParser* pParser), PARAMS(pKeyword, pParser));
-	auto_METHOD_VIRTUAL(FormatParser, FormatParser, bool, RemoveParser, PARAMS(const char* pKeyword), PARAMS(pKeyword));
-	auto_METHOD_VIRTUAL(FormatParser, FormatParser, bool, RemoveParserByObject, PARAMS(IParser* pParser), PARAMS(pParser));
-	auto_METHOD_VIRTUAL_const(FormatParser, FormatParser, IParser*, GetParser, PARAMS(const char* pKeyword), PARAMS(pKeyword));
-	auto_METHOD_VIRTUAL_VOID(FormatParser, FormatParser, SetFlag, PARAMS(int flag, bool bValue), PARAMS(flag, bValue));
-	auto_METHOD_VIRTUAL_VOID(FormatParser, FormatParser, SetVersionRange, PARAMS(int nMinVersion, int nMaxVerison), PARAMS(nMinVersion, nMaxVerison));
+	auto_METHOD_VIRTUAL_VOID(FormatParser, FormatParser, SetData, Args(void* pData), Args(pData));
+	auto_METHOD_VIRTUAL_VOID(FormatParser, FormatParser, AddParser, Args(const char* pKeyword, IParser* pParser), Args(pKeyword, pParser));
+	auto_METHOD_VIRTUAL(FormatParser, FormatParser, bool, RemoveParser, Args(const char* pKeyword), Args(pKeyword));
+	auto_METHOD_VIRTUAL(FormatParser, FormatParser, bool, RemoveParserByObject, Args(IParser* pParser), Args(pParser));
+	auto_METHOD_VIRTUAL_const(FormatParser, FormatParser, IParser*, GetParser, Args(const char* pKeyword), Args(pKeyword));
+	auto_METHOD_VIRTUAL_VOID(FormatParser, FormatParser, SetFlag, Args(int flag, bool bValue), Args(flag, bValue));
+	auto_METHOD_VIRTUAL_VOID(FormatParser, FormatParser, SetVersionRange, Args(int nMinVersion, int nMaxVerison), Args(nMinVersion, nMaxVerison));
 	auto_METHOD_VIRTUAL_const_(FormatParser, FormatParser, int, GetVersion);
 	auto_METHOD_VIRTUAL_VOID_(FormatParser, FormatParser, func30h);
-	auto_METHOD_VIRTUAL_VOID(FormatParser, FormatParser, Close, PARAMS(bool arg_0), PARAMS(arg_0));
-	auto_METHOD_VIRTUAL_VOID(FormatParser, FormatParser, ProcessFile, PARAMS(const char* pPath), PARAMS(pPath));
-	auto_METHOD_VIRTUAL_VOID(FormatParser, FormatParser, ProcessStream, PARAMS(IO::IStream* pInputStream), PARAMS(pInputStream));
-	auto_METHOD_VIRTUAL_VOID(FormatParser, FormatParser, ProcessLine, PARAMS(const char* pString), PARAMS(pString));
-	auto_METHOD_VIRTUAL_VOID(FormatParser, FormatParser, CreateDefinition, PARAMS(const char* pName, const Line& argumentsLine), PARAMS(pName, argumentsLine));
-	auto_METHOD_VIRTUAL(FormatParser, FormatParser, bool, ProcessFileSafe, PARAMS(const char* pFilePath), PARAMS(pFilePath));
-	auto_METHOD_VIRTUAL(FormatParser, FormatParser, bool, ProcessStreamSafe, PARAMS(IO::IStream* pStream), PARAMS(pStream));
-	auto_METHOD_VIRTUAL(FormatParser, FormatParser, bool, ProcessLineSafe, PARAMS(const char* pString), PARAMS(pString));
-	auto_METHOD_VIRTUAL(FormatParser, FormatParser, bool, CreateDefinitionSafe, PARAMS(const char* pName, const Line& argumentsLine), PARAMS(pName, argumentsLine));
+	auto_METHOD_VIRTUAL_VOID(FormatParser, FormatParser, Close, Args(bool arg_0), Args(arg_0));
+	auto_METHOD_VIRTUAL_VOID(FormatParser, FormatParser, ProcessFile, Args(const char* pPath), Args(pPath));
+	auto_METHOD_VIRTUAL_VOID(FormatParser, FormatParser, ProcessStream, Args(IO::IStream* pInputStream), Args(pInputStream));
+	auto_METHOD_VIRTUAL_VOID(FormatParser, FormatParser, ProcessLine, Args(const char* pString), Args(pString));
+	auto_METHOD_VIRTUAL_VOID(FormatParser, FormatParser, CreateDefinition, Args(const char* pName, const Line& argumentsLine), Args(pName, argumentsLine));
+	auto_METHOD_VIRTUAL(FormatParser, FormatParser, bool, ProcessFileSafe, Args(const char* pFilePath), Args(pFilePath));
+	auto_METHOD_VIRTUAL(FormatParser, FormatParser, bool, ProcessStreamSafe, Args(IO::IStream* pStream), Args(pStream));
+	auto_METHOD_VIRTUAL(FormatParser, FormatParser, bool, ProcessLineSafe, Args(const char* pString), Args(pString));
+	auto_METHOD_VIRTUAL(FormatParser, FormatParser, bool, CreateDefinitionSafe, Args(const char* pName, const Line& argumentsLine), Args(pName, argumentsLine));
 	auto_METHOD_VIRTUAL_(FormatParser, FormatParser, int, func58h);
 	auto_METHOD_VIRTUAL_(FormatParser, FormatParser, int, func5Ch);
-	auto_METHOD_VIRTUAL(FormatParser, FormatParser, int, func60h, PARAMS(int arg_0, int arg_4), PARAMS(arg_0, arg_4));
-	auto_METHOD_VIRTUAL_const(FormatParser, FormatParser, int, HasParser, PARAMS(const char* pName), PARAMS(pName));
-	auto_METHOD_VIRTUAL_const(FormatParser, FormatParser, bool, HasDefinition, PARAMS(const char* pName), PARAMS(pName));
-	auto_METHOD_VIRTUAL_VOID(FormatParser, FormatParser, SetVariable, PARAMS(const char* pName, const char* pValue), PARAMS(pName, pValue));
-	auto_METHOD_VIRTUAL(FormatParser, FormatParser, const char*, GetVariable, PARAMS(const char* pVariableName), PARAMS(pVariableName));
-	auto_METHOD_VIRTUAL_VOID(FormatParser, FormatParser, SetGlobalVariable, PARAMS(const char* pName, const char* pValue), PARAMS(pName, pValue));
-	auto_METHOD_VIRTUAL_VOID(FormatParser, FormatParser, func78h, PARAMS(int arg_0), PARAMS(arg_0));
-	auto_METHOD_VIRTUAL_VOID(FormatParser, FormatParser, StartScope, PARAMS(const char* pName), PARAMS(pName));
+	auto_METHOD_VIRTUAL(FormatParser, FormatParser, int, func60h, Args(int arg_0, int arg_4), Args(arg_0, arg_4));
+	auto_METHOD_VIRTUAL_const(FormatParser, FormatParser, int, HasParser, Args(const char* pName), Args(pName));
+	auto_METHOD_VIRTUAL_const(FormatParser, FormatParser, bool, HasDefinition, Args(const char* pName), Args(pName));
+	auto_METHOD_VIRTUAL_VOID(FormatParser, FormatParser, SetVariable, Args(const char* pName, const char* pValue), Args(pName, pValue));
+	auto_METHOD_VIRTUAL(FormatParser, FormatParser, const char*, GetVariable, Args(const char* pVariableName), Args(pVariableName));
+	auto_METHOD_VIRTUAL_VOID(FormatParser, FormatParser, SetGlobalVariable, Args(const char* pName, const char* pValue), Args(pName, pValue));
+	auto_METHOD_VIRTUAL_VOID(FormatParser, FormatParser, func78h, Args(int arg_0), Args(arg_0));
+	auto_METHOD_VIRTUAL_VOID(FormatParser, FormatParser, StartScope, Args(const char* pName), Args(pName));
 	auto_METHOD_VIRTUAL_VOID_(FormatParser, FormatParser, EndScope);
-	auto_METHOD_VIRTUAL_VOID(FormatParser, FormatParser, PurgeScope, PARAMS(const char* pScope), PARAMS(pScope));
+	auto_METHOD_VIRTUAL_VOID(FormatParser, FormatParser, PurgeScope, Args(const char* pScope), Args(pScope));
 	auto_METHOD_VIRTUAL_const_(FormatParser, FormatParser, const char*, GetCurrentScope);
-	auto_METHOD_VIRTUAL_VOID(FormatParser, FormatParser, AddBlock, PARAMS(IBlock* pBlock), PARAMS(pBlock));
-	auto_METHOD_VIRTUAL(FormatParser, FormatParser, int, AddSpecialBlock, PARAMS(ISpecialBlock* pSpecialBlock, const char* pEndKeyword), PARAMS(pSpecialBlock, pEndKeyword));
-	auto_METHOD_VIRTUAL_const(FormatParser, FormatParser, bool, ParseBool, PARAMS(const char* pString), PARAMS(pString));
-	auto_METHOD_VIRTUAL_const(FormatParser, FormatParser, float, ParseFloat, PARAMS(const char* pString), PARAMS(pString));
-	auto_METHOD_VIRTUAL_const(FormatParser, FormatParser, int, ParseInt, PARAMS(const char* pString), PARAMS(pString));
-	auto_METHOD_VIRTUAL_const(FormatParser, FormatParser, unsigned int, ParseUInt, PARAMS(const char* pString), PARAMS(pString));
-	auto_METHOD_VIRTUAL_const(FormatParser, FormatParser, Math::Vector2, ParseVector2, PARAMS(const char* pString), PARAMS(pString));
-	auto_METHOD_VIRTUAL_const(FormatParser, FormatParser, Math::Vector3, ParseVector3, PARAMS(const char* pString), PARAMS(pString));
-	auto_METHOD_VIRTUAL_const(FormatParser, FormatParser, Math::Vector4, ParseVector4, PARAMS(const char* pString), PARAMS(pString));
-	auto_METHOD_VIRTUAL_const(FormatParser, FormatParser, Math::ColorRGB, ParseColorRGB, PARAMS(const char* pString), PARAMS(pString));
-	auto_METHOD_VIRTUAL_const(FormatParser, FormatParser, Math::ColorRGBA, ParseColorRGBA, PARAMS(const char* pString), PARAMS(pString));
+	auto_METHOD_VIRTUAL_VOID(FormatParser, FormatParser, AddBlock, Args(IBlock* pBlock), Args(pBlock));
+	auto_METHOD_VIRTUAL(FormatParser, FormatParser, int, AddSpecialBlock, Args(ISpecialBlock* pSpecialBlock, const char* pEndKeyword), Args(pSpecialBlock, pEndKeyword));
+	auto_METHOD_VIRTUAL_const(FormatParser, FormatParser, bool, ParseBool, Args(const char* pString), Args(pString));
+	auto_METHOD_VIRTUAL_const(FormatParser, FormatParser, float, ParseFloat, Args(const char* pString), Args(pString));
+	auto_METHOD_VIRTUAL_const(FormatParser, FormatParser, int, ParseInt, Args(const char* pString), Args(pString));
+	auto_METHOD_VIRTUAL_const(FormatParser, FormatParser, unsigned int, ParseUInt, Args(const char* pString), Args(pString));
+	auto_METHOD_VIRTUAL_const(FormatParser, FormatParser, Math::Vector2, ParseVector2, Args(const char* pString), Args(pString));
+	auto_METHOD_VIRTUAL_const(FormatParser, FormatParser, Math::Vector3, ParseVector3, Args(const char* pString), Args(pString));
+	auto_METHOD_VIRTUAL_const(FormatParser, FormatParser, Math::Vector4, ParseVector4, Args(const char* pString), Args(pString));
+	auto_METHOD_VIRTUAL_const(FormatParser, FormatParser, Math::ColorRGB, ParseColorRGB, Args(const char* pString), Args(pString));
+	auto_METHOD_VIRTUAL_const(FormatParser, FormatParser, Math::ColorRGBA, ParseColorRGBA, Args(const char* pString), Args(pString));
 	auto_METHOD_VIRTUAL_(FormatParser, FormatParser, Lexer&, GetLexer);
-	auto_METHOD_VIRTUAL_VOID(FormatParser, FormatParser, SetTraceStream, PARAMS(ITraceStream* pTraceStream), PARAMS(pTraceStream));
-	auto_METHOD_VIRTUAL_VOID(FormatParser, FormatParser, funcC0h, PARAMS(int arg_0), PARAMS(arg_0));
+	auto_METHOD_VIRTUAL_VOID(FormatParser, FormatParser, SetTraceStream, Args(ITraceStream* pTraceStream), Args(pTraceStream));
+	auto_METHOD_VIRTUAL_VOID(FormatParser, FormatParser, funcC0h, Args(int arg_0), Args(arg_0));
 	auto_METHOD_VIRTUAL_(FormatParser, FormatParser, ITraceStream*, GetTraceStream);
 	auto_METHOD_VIRTUAL_(FormatParser, FormatParser, int, funcC8h);
 

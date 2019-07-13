@@ -68,11 +68,11 @@ namespace UTFWin
 
 	DEFAULT_REFCOUNT(SporeTooltipWinProc);
 
-	auto_METHOD_VIRTUAL_VOID(SporeTooltipWinProc, ILayoutElement, SetSerializer, PARAMS(Serializer& dst), PARAMS(dst));
+	auto_METHOD_VIRTUAL_VOID(SporeTooltipWinProc, ILayoutElement, SetSerializer, Args(Serializer& dst), Args(dst));
 	auto_METHOD_VIRTUAL_const_(SporeTooltipWinProc, ILayoutElement, uint32_t, GetProxyID);
 
 	auto_METHOD_VIRTUAL_const_(SporeTooltipWinProc, IWinProc, int, GetEventFlags);
-	auto_METHOD_VIRTUAL(SporeTooltipWinProc, IWinProc, bool, HandleUIMessage, PARAMS(IWindow* pWindow, const Message& message), PARAMS(pWindow, message));
+	auto_METHOD_VIRTUAL(SporeTooltipWinProc, IWinProc, bool, HandleUIMessage, Args(IWindow* pWindow, const Message& message), Args(pWindow, message));
 
 	void* SporeTooltipWinProc::Cast(uint32_t type) const 
 	{

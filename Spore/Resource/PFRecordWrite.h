@@ -90,28 +90,28 @@ namespace Resource
 	static_assert(sizeof(PFRecordWrite) == 0x27C, "sizeof(PFRecordWrite) != 27Ch");
 
 	
-	namespace InternalAddressList(PFRecordWrite)
+	namespace Addresses(PFRecordWrite)
 	{
-		DefineAddress(GetName, GetAddress(0x6C07B0, 0x8DCA90, 0x8DCAA0));
-		DefineAddress(SetName, GetAddress(0x8DCCC0, 0x6B4250, 0x6B4250));
-		DefineAddress(GetStream, GetAddress(0x6C07C0, 0x8DC640, 0x8DC650));
-		DefineAddress(GetParentDBPF, GetAddress(0xFC8510, 0x6C0230, 0x6C0230));
-		DefineAddress(Open, GetAddress(0x8DD170, 0x8DCF50, 0x8DCF60));
-		DefineAddress(Close, GetAddress(0x6C0F80, 0x6C09B0, 0x6C09B0));
-		DefineAddress(func28h, GetAddress(0x6C0F20, 0x8DCEF0, 0x8DCF00));
+		DeclareAddress(GetName, SelectAddress(0x6C07B0, 0x8DCA90, 0x8DCAA0));
+		DeclareAddress(SetName, SelectAddress(0x8DCCC0, 0x6B4250, 0x6B4250));
+		DeclareAddress(GetStream, SelectAddress(0x6C07C0, 0x8DC640, 0x8DC650));
+		DeclareAddress(GetParentDBPF, SelectAddress(0xFC8510, 0x6C0230, 0x6C0230));
+		DeclareAddress(Open, SelectAddress(0x8DD170, 0x8DCF50, 0x8DCF60));
+		DeclareAddress(Close, SelectAddress(0x6C0F80, 0x6C09B0, 0x6C09B0));
+		DeclareAddress(func28h, SelectAddress(0x6C0F20, 0x8DCEF0, 0x8DCF00));
 
-		DefineAddress(GetType, GetAddress(0x8DCCE0, 0x6C04C0, 0x8DCAB0));
-		DefineAddress(GetAccessFlags, GetAddress(0x8DCCF0, 0x8DC670, 0x8DC680));
-		DefineAddress(GetState, GetAddress(0x1065680, 0xE31100, 0xE310C0));
-		// DefineAddress(REMOVE_THIS_Close, GetAddress(0x66AD60, 0xB1E3E0, 0xB1E410));
-		DefineAddress(GetSize, GetAddress(0x8DCD00, 0x8DCAB0, 0x8DCAC0));
-		DefineAddress(SetSize, GetAddress(0x6C0A70, 0x8DCAE0, 0x8DCAF0));
-		DefineAddress(GetPosition, GetAddress(0x8DCD30, 0x6C04D0, 0x6C04D0));
-		DefineAddress(SetPosition, GetAddress(0x6C0AB0, 0x8DCB20, 0x8DCB30));
-		DefineAddress(GetAvailable, GetAddress(0x8DCD70, 0x8DCB60, 0x8DCB70));
-		DefineAddress(Read, GetAddress(0x8DCDA0, 0x6C0510, 0x6C0510));
-		DefineAddress(Flush, GetAddress(0x8DCDE0, 0x6C0550, 0x6C0550));
-		DefineAddress(Write, GetAddress(0x6C0AF0, 0x6C0580, 0x6C0580));
+		DeclareAddress(GetType, SelectAddress(0x8DCCE0, 0x6C04C0, 0x8DCAB0));
+		DeclareAddress(GetAccessFlags, SelectAddress(0x8DCCF0, 0x8DC670, 0x8DC680));
+		DeclareAddress(GetState, SelectAddress(0x1065680, 0xE31100, 0xE310C0));
+		// DeclareAddress(REMOVE_THIS_Close, SelectAddress(0x66AD60, 0xB1E3E0, 0xB1E410));
+		DeclareAddress(GetSize, SelectAddress(0x8DCD00, 0x8DCAB0, 0x8DCAC0));
+		DeclareAddress(SetSize, SelectAddress(0x6C0A70, 0x8DCAE0, 0x8DCAF0));
+		DeclareAddress(GetPosition, SelectAddress(0x8DCD30, 0x6C04D0, 0x6C04D0));
+		DeclareAddress(SetPosition, SelectAddress(0x6C0AB0, 0x8DCB20, 0x8DCB30));
+		DeclareAddress(GetAvailable, SelectAddress(0x8DCD70, 0x8DCB60, 0x8DCB70));
+		DeclareAddress(Read, SelectAddress(0x8DCDA0, 0x6C0510, 0x6C0510));
+		DeclareAddress(Flush, SelectAddress(0x8DCDE0, 0x6C0550, 0x6C0550));
+		DeclareAddress(Write, SelectAddress(0x6C0AF0, 0x6C0580, 0x6C0580));
 
 	}
 

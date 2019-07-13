@@ -149,12 +149,12 @@ namespace Simulator
 
 	static_assert(sizeof(cRelationshipManager) == 0x100, "sizeof(cRelationshipManager) != 100h");
 
-	namespace InternalAddressList(cRelationshipManager)
+	namespace Addresses(cRelationshipManager)
 	{
-		DefineAddress(Get, GetAddress(0xB3D220, 0xB3D390, 0xB3D3C0));
+		DeclareAddress(Get, SelectAddress(0xB3D220, 0xB3D390, 0xB3D3C0));
 
-		DefineAddress(IsAtWar, GetAddress(0xD014C0, 0xD01F80, 0xD01F90));
-		DefineAddress(DeclareWar, GetAddress(0xD05840, 0xD065E0, 0xD065E0));
-		DefineAddress(ApplyRelationship, GetAddress(0xD054E0, 0xD06280, 0xD06280));
+		DeclareAddress(IsAtWar, SelectAddress(0xD014C0, 0xD01F80, 0xD01F90));
+		DeclareAddress(DeclareWar, SelectAddress(0xD05840, 0xD065E0, 0xD065E0));
+		DeclareAddress(ApplyRelationship, SelectAddress(0xD054E0, 0xD06280, 0xD06280));
 	}
 }

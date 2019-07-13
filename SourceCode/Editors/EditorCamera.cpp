@@ -61,23 +61,23 @@ namespace Editors
 
 	auto_METHOD_VIRTUAL_(EditorCamera, EditorCamera, int, AddRef);
 	auto_METHOD_VIRTUAL_(EditorCamera, EditorCamera, int, Release);
-	auto_METHOD_VIRTUAL_const(EditorCamera, EditorCamera, void*, Cast, PARAMS(uint32_t type), PARAMS(type));
-	auto_METHOD_VIRTUAL(EditorCamera, EditorCamera, bool, OnAttach, PARAMS(App::ICameraManager* pManager), PARAMS(pManager));
+	auto_METHOD_VIRTUAL_const(EditorCamera, EditorCamera, void*, Cast, Args(uint32_t type), Args(type));
+	auto_METHOD_VIRTUAL(EditorCamera, EditorCamera, bool, OnAttach, Args(App::ICameraManager* pManager), Args(pManager));
 	auto_METHOD_VIRTUAL_(EditorCamera, EditorCamera, bool, OnDeattach);
 	auto_METHOD_VIRTUAL_VOID_(EditorCamera, EditorCamera, OnEnter);
 	auto_METHOD_VIRTUAL_VOID_(EditorCamera, EditorCamera, OnExit);
-	auto_METHOD_VIRTUAL_VOID(EditorCamera, EditorCamera, Update, PARAMS(int nDeltaTime, App::cViewer* pViewer), PARAMS(nDeltaTime, pViewer));
-	auto_METHOD_VIRTUAL_VOID(EditorCamera, EditorCamera, func24h, PARAMS(bool arg_0), PARAMS(arg_0));
-	auto_METHOD_VIRTUAL(EditorCamera, EditorCamera, bool, OnKeyDown, PARAMS(int virtualKey, int modifiers), PARAMS(virtualKey, modifiers));
-	auto_METHOD_VIRTUAL(EditorCamera, EditorCamera, bool, OnKeyUp, PARAMS(int virtualKey, int modifiers), PARAMS(virtualKey, modifiers));
-	auto_METHOD_VIRTUAL(EditorCamera, EditorCamera, bool, OnMouseDown, PARAMS(int mouseState, float mouseX, float mouseY, int flags), PARAMS(mouseState, mouseX, mouseY, flags));
-	auto_METHOD_VIRTUAL(EditorCamera, EditorCamera, bool, OnMouseUp, PARAMS(int mouseState, float mouseX, float mouseY, int flags), PARAMS(mouseState, mouseX, mouseY, flags));
-	auto_METHOD_VIRTUAL(EditorCamera, EditorCamera, bool, OnMouseMove, PARAMS(float mouseX, float mouseY, int state), PARAMS(mouseX, mouseY, state));
-	auto_METHOD_VIRTUAL(EditorCamera, EditorCamera, bool, OnMouseWheel, PARAMS(int nWheelDelta, float mouseX, float mouseY, int state), PARAMS(nWheelDelta, mouseX, mouseY, state));
-	auto_METHOD_VIRTUAL(EditorCamera, EditorCamera, bool, func40h, PARAMS(int arg_0), PARAMS(arg_0));
-	auto_METHOD_VIRTUAL(EditorCamera, EditorCamera, bool, func44h, PARAMS(int arg_0), PARAMS(arg_0));
-	auto_METHOD_VIRTUAL(EditorCamera, EditorCamera, bool, func48h, PARAMS(int arg_0), PARAMS(arg_0));
+	auto_METHOD_VIRTUAL_VOID(EditorCamera, EditorCamera, Update, Args(int nDeltaTime, App::cViewer* pViewer), Args(nDeltaTime, pViewer));
+	auto_METHOD_VIRTUAL_VOID(EditorCamera, EditorCamera, func24h, Args(bool arg_0), Args(arg_0));
+	auto_METHOD_VIRTUAL(EditorCamera, EditorCamera, bool, OnKeyDown, Args(int virtualKey, int modifiers), Args(virtualKey, modifiers));
+	auto_METHOD_VIRTUAL(EditorCamera, EditorCamera, bool, OnKeyUp, Args(int virtualKey, int modifiers), Args(virtualKey, modifiers));
+	auto_METHOD_VIRTUAL(EditorCamera, EditorCamera, bool, OnMouseDown, Args(int mouseState, float mouseX, float mouseY, int flags), Args(mouseState, mouseX, mouseY, flags));
+	auto_METHOD_VIRTUAL(EditorCamera, EditorCamera, bool, OnMouseUp, Args(int mouseState, float mouseX, float mouseY, int flags), Args(mouseState, mouseX, mouseY, flags));
+	auto_METHOD_VIRTUAL(EditorCamera, EditorCamera, bool, OnMouseMove, Args(float mouseX, float mouseY, int state), Args(mouseX, mouseY, state));
+	auto_METHOD_VIRTUAL(EditorCamera, EditorCamera, bool, OnMouseWheel, Args(int nWheelDelta, float mouseX, float mouseY, int state), Args(nWheelDelta, mouseX, mouseY, state));
+	auto_METHOD_VIRTUAL(EditorCamera, EditorCamera, bool, func40h, Args(int arg_0), Args(arg_0));
+	auto_METHOD_VIRTUAL(EditorCamera, EditorCamera, bool, func44h, Args(int arg_0), Args(arg_0));
+	auto_METHOD_VIRTUAL(EditorCamera, EditorCamera, bool, func48h, Args(int arg_0), Args(arg_0));
 	auto_METHOD_VIRTUAL_(EditorCamera, EditorCamera, App::PropertyList*, GetPropertyList);
 	auto_METHOD_VIRTUAL_VOID_(EditorCamera, EditorCamera, Initialize);
-	auto_METHOD_VIRTUAL_VOID(EditorCamera, EditorCamera, func54h, PARAMS(Vector3& dst), PARAMS(dst));
+	auto_METHOD_VIRTUAL_VOID(EditorCamera, EditorCamera, func54h, Args(Vector3& dst), Args(dst));
 }

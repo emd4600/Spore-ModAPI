@@ -114,11 +114,11 @@ namespace Palettes
 
 	static_assert(sizeof(PaletteUI) == 0x6C, "sizeof(PaletteUI) != 6Ch");
 
-	namespace InternalAddressList(PaletteUI)
+	namespace Addresses(PaletteUI)
 	{
-		DefineAddress(Load, GetAddress(0x5CB180, 0x5CB660, 0x5CB690));
-		DefineAddress(Update, GetAddress(0x5CA590, 0x5CAA40, 0x5CAA70));
+		DeclareAddress(Load, SelectAddress(0x5CB180, 0x5CB660, 0x5CB690));
+		DeclareAddress(Update, SelectAddress(0x5CA590, 0x5CAA40, 0x5CAA70));
 
-		DefineAddress(HandleUIMessage, GetAddress(0x5CB080, 0x5CB560, 0x5CB590));
+		DeclareAddress(HandleUIMessage, SelectAddress(0x5CB080, 0x5CB560, 0x5CB590));
 	}
 }

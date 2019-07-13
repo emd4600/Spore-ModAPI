@@ -33,6 +33,7 @@
 #include <Spore\Editors\EditorCamera.h>
 #include <Spore\Editors\EditorModel.h>
 #include <Spore\Editors\EditorPlayMode.h>
+#include <Spore\Editors\EditorRequest.h>
 
 #include <Spore\Graphics\ModelAsset.h>
 #include <Spore\Graphics\IRenderable.h>
@@ -211,7 +212,7 @@ namespace Editors
 		/* 1ACh */	int field_1AC;
 		/// Maps a creation format extension to its default editor. For example, 'crt' is mapped to 'CreatureEditorExtraLarge'.
 		/* 1B0h */	map<uint32_t, uint32_t> mDefaultEditors;
-		/* 1CCh */	UnkClass1* field_1CC;	// in 35h there is bool editorAllowNameEdit;
+		/* 1CCh */	intrusive_ptr<EditorRequest> mEditorRequest;	// in 35h there is bool editorAllowNameEdit;
 		/* 1D0h */	int field_1D0;
 		/* 1D4h */	int field_1D4;
 		/* 1D8h */	int field_1D8;
@@ -494,20 +495,26 @@ namespace Editors
 		// _ZN6Editor9ScalePartEP14EditorRigblockii
 		// Editor::ScalePart(EditorRigblock *, int, int)
 
-		METHOD(GetAddress(0x581F70, 0x582250, 0x582250), Editor, bool, sub_581F70, PARAMS(EditorRigblock* part, void* activeHandle, int value), PARAMS(part, activeHandle, value));
+
+		bool sub_581F70(EditorRigblock* part, void* activeHandle, int value);
 
 		// loc_573BB1 -> set part is hovered?
 
 
-		void RemovePart(EditorRigblock* part);
+		void RemovePart(EditorRigblock* part);  //PLACEHOLDER
 	};
 
 	static_assert(sizeof(Editor) == 0x600, "sizeof(Editor) must be 0x600!");
 
+	namespace Addresses(Editor) {
+		DeclareAddress(sub_581F70, SelectAddress(0x581F70, 0x582250, 0x582250));
+		DeclareAddress(ptr, SelectAddress(0x15E9170, 0x015E5EF0, 0x15E4EF0));
+	}
+
 	/// Returns the Editor instance (there can only be one at a time).
 	inline Editor* GetEditor()
 	{
-		return *((Editor**)GetAddress(0x15E9170, 0x015E5EF0, 0x15E4EF0));
+		return *((Editor**) GetAddress(Editor, ptr));
 	}
 
 	inline EditorCamera* Editor::GetCamera()

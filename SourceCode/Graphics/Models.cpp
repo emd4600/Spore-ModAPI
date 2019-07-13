@@ -49,4 +49,7 @@ namespace Graphics
 	}
 
 	auto_STATIC_METHOD_(IModelManager, IModelManager*, Get);
+
+
+	auto_METHOD_(Model, int, Release);
 }

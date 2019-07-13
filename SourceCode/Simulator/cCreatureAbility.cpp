@@ -22,8 +22,8 @@
 namespace Simulator
 {
 	auto_STATIC_METHOD(cCreatureAbility, bool, Parse,
-		PARAMS(cCreatureAbility* arg0, App::PropertyList* arg1),
-		PARAMS(arg0, arg1));
+		Args(cCreatureAbility* arg0, App::PropertyList* arg1),
+		Args(arg0, arg1));
 
-	auto_METHOD(cCreatureAbility, uint32_t, GetAnimationID, PARAMS(int index), PARAMS(index));
+	auto_METHOD(cCreatureAbility, uint32_t, GetAnimationID, Args(int index), Args(index));
 }

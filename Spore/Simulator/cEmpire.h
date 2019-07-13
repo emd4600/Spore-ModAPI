@@ -123,15 +123,15 @@ namespace Simulator
 
 	static_assert(sizeof(cEmpire) == 0x158, "sizeof(cEmpire) != 158h");
 
-	namespace InternalAddressList(cEmpire)
+	namespace Addresses(cEmpire)
 	{
-		DefineAddress(SetSpeciesProfile, GetAddress(0xC32FB0, 0xC337D0, 0xC337F0));
-		DefineAddress(sub_C32EA0, GetAddress(0xC32EA0, 0xC336C0, 0xC336E0));
+		DeclareAddress(SetSpeciesProfile, SelectAddress(0xC32FB0, 0xC337D0, 0xC337F0));
+		DeclareAddress(sub_C32EA0, SelectAddress(0xC32EA0, 0xC336C0, 0xC336E0));
 	}
 
 }
 
-namespace InternalAddressList(Simulator)
+namespace Addresses(Simulator)
 {
-	DefineAddress(GetArchetypeRelationshipsID, GetAddress(0xC30530, NO_ADDRESS, 0xC30E20));
+	DeclareAddress(GetArchetypeRelationshipsID, SelectAddress(0xC30530, NO_ADDRESS, 0xC30E20));
 }

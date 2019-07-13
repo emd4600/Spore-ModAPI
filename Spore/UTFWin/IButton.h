@@ -161,8 +161,8 @@ namespace UTFWin
 		static IButton* Create();
 	};
 
-	namespace InternalAddressList(IButton)
+	namespace Addresses(IButton)
 	{
-		DefineAddress(Create, GetAddress(0x967420, 0x9670A0, 0x9670A0));
+		DeclareAddress(Create, SelectAddress(0x967420, 0x9670A0, 0x9670A0));
 	}
 }

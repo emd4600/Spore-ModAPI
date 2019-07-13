@@ -94,8 +94,8 @@ namespace Simulator
 
 	static_assert(sizeof(cSimulatorSpaceGame) == 0xF0, "sizeof(cSimulatorSpaceGame) != 0xF0");
 
-	namespace InternalAddressList(cSimulatorSpaceGame)
+	namespace Addresses(cSimulatorSpaceGame)
 	{
-		DefineAddress(Get, GetAddress(0x10036E0, 0x1002A70, 0x1002A70));
+		DeclareAddress(Get, SelectAddress(0x10036E0, 0x1002A70, 0x1002A70));
 	}
 }

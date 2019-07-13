@@ -107,12 +107,12 @@ protected:
 //// INTERNAL IMPLEMENTATION ////
 /////////////////////////////////
 
-namespace InternalAddressList(Clock)
+namespace Addresses(Clock)
 {
-	DefineAddress(Stop, GetAddress(0x93A810, 0x93A250, 0x93A250));
-	DefineAddress(SetMode, GetAddress(0x93A6D0, 0x93A110, 0x93A110));
-	DefineAddress(GetElapsedTicks, GetAddress(0x93A8D0, 0x93A310, 0x93A310));
-	DefineAddress(GetElapsedTime, GetAddress(0x93AB10, 0x93A550, 0x93A550));
+	DeclareAddress(Stop, SelectAddress(0x93A810, 0x93A250, 0x93A250));
+	DeclareAddress(SetMode, SelectAddress(0x93A6D0, 0x93A110, 0x93A110));
+	DeclareAddress(GetElapsedTicks, SelectAddress(0x93A8D0, 0x93A310, 0x93A310));
+	DeclareAddress(GetElapsedTime, SelectAddress(0x93AB10, 0x93A550, 0x93A550));
 };
 
 inline void Clock::Start()

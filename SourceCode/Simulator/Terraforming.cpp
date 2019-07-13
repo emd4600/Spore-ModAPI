@@ -23,7 +23,7 @@ namespace Simulator
 	auto_STATIC_METHOD_(cTerraformingManager, cTerraformingManager*, Get);
 
 	auto_METHOD(cTerraformingManager, int, CalculateTScore,
-		PARAMS(float atmosphereScore, float temperatureScore), PARAMS(atmosphereScore, temperatureScore));
+		Args(float atmosphereScore, float temperatureScore), Args(atmosphereScore, temperatureScore));
 
-	auto_METHOD(cTerraformingManager, int, GetTScore, PARAMS(const cPlanetRecord* pPlanet), PARAMS(pPlanet));
+	auto_METHOD(cTerraformingManager, int, GetTScore, Args(const cPlanetRecord* pPlanet), Args(pPlanet));
 }

@@ -49,8 +49,8 @@ namespace Simulator
 
 	static_assert(sizeof(cPlayerInventory) == 0x98, "sizeof(cPlayerInventory) != 0x98");
 
-	namespace InternalAddressList(cPlayerInventory)
+	namespace Addresses(cPlayerInventory)
 	{
-		DefineAddress(GetUnlockableTool, GetAddress(0xFF4640, 0xFF3BF0, 0xFF3BF0));
+		DeclareAddress(GetUnlockableTool, SelectAddress(0xFF4640, 0xFF3BF0, 0xFF3BF0));
 	}
 }

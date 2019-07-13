@@ -30,4 +30,11 @@ namespace Simulator
 		auto mgr = cGameModeManager::Get();
 		return mgr == nullptr ? -1 : mgr->GetActiveModeID();
 	}
+
+	auto_METHOD_VOID(cGameModeManager, SubmitEditorRequest, Args(Editors::EditorRequest* pRequest), Args(pRequest));
+
+	auto_METHOD(cGameModeManager, App::PropertyList*, GetDifficultyTuning,
+		Args(uint32_t gameModeID, bool bUseCurrentDifficulty), Args(gameModeID, bUseCurrentDifficulty));
+
+	auto_METHOD_(cGameModeManager, App::PropertyList*, GetActiveDifficultyTuning);
 }

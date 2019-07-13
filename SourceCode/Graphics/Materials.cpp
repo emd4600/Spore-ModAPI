@@ -34,19 +34,22 @@ namespace Graphics
 
 	auto_STATIC_METHOD_(IMaterialManager, IMaterialManager*, Get);
 
+	auto_STATIC_METHOD(StandardShader, BOOL, PrepareRender, Args(RenderWare::Mesh<>* mesh), Args(mesh));
+	auto_STATIC_METHOD(ShaderBuilder, BOOL, PrepareRender, Args(RenderWare::Mesh<>* mesh), Args(mesh));
+
 	auto_STATIC_METHOD(MaterialShader, MaterialShader*, Initialize,
-		PARAMS(MaterialShader* dst, uint32_t shaderID, int arg_8, int arg_C, int arg_10, int arg_14, int arg_18, int arg_1C, int arg_20),
-		PARAMS(dst, shaderID, arg_8, arg_C, arg_10, arg_14, arg_18, arg_1C, arg_20));
+		Args(MaterialShader* dst, uint32_t shaderID, int arg_8, int arg_C, int arg_10, int arg_14, int arg_18, int arg_1C, int arg_20),
+		Args(dst, shaderID, arg_8, arg_C, arg_10, arg_14, arg_18, arg_1C, arg_20));
 
-	auto_STATIC_METHOD(MaterialShader, MaterialShader*, GetMaterialShader, PARAMS(uint32_t materialID), PARAMS(materialID));
+	auto_STATIC_METHOD(MaterialShader, MaterialShader*, GetMaterialShader, Args(uint32_t materialID), Args(materialID));
 
-	auto_METHOD(StandardShader, bool, Read, PARAMS(IO::IStream* pStream, uint32_t shaderID, int version),
-		PARAMS(pStream, shaderID, version));
+	auto_METHOD(StandardShader, bool, Read, Args(IO::IStream* pStream, uint32_t shaderID, int version),
+		Args(pStream, shaderID, version));
 
 	auto_METHOD_VOID_(StandardShader, Reset);
 
-	auto_METHOD(ShaderBuilder, bool, Read, PARAMS(IO::IStream* pStream, uint32_t shaderID, int version),
-		PARAMS(pStream, shaderID, version));
+	auto_METHOD(ShaderBuilder, bool, Read, Args(IO::IStream* pStream, uint32_t shaderID, int version),
+		Args(pStream, shaderID, version));
 
 	int MaterialShader::AddRef() {
 		++mnRefCount;
@@ -57,12 +60,12 @@ namespace Graphics
 
 	StandardShader::StandardShader()
 	{
-		VOID_THISCALL(GetMethodAddress(StandardShader, ctor), this);
+		VOID_THISCALL(GetAddress(StandardShader, ctor), this);
 	}
 
 	ShaderBuilder::ShaderBuilder()
 	{
-		VOID_THISCALL(GetMethodAddress(ShaderBuilder, ctor), this);
+		VOID_THISCALL(GetAddress(ShaderBuilder, ctor), this);
 	}
 
 	bool IMaterialManager::ReadCompiledShaders(uint32_t instanceID) {
@@ -277,7 +280,7 @@ namespace Graphics
 
 			IO::ReadInt32(pStream, &shader.mDataCount);
 
-			NamedShaderDataUniform** pPointers = (NamedShaderDataUniform**)(GetAddress(0x162CE14,, 0x1628BA4));
+			NamedShaderDataUniform** pPointers = (NamedShaderDataUniform**)Address(SelectAddress(0x162CE14,, 0x1628BA4));
 			NamedShaderDataUniform* data = *pPointers;
 			*(pPointers + 1) = *pPointers = *pPointers + shader.mDataCount;
 
@@ -322,7 +325,7 @@ namespace Graphics
 
 			IO::ReadInt32(pStream, &shader.mDataCount);
 
-			NamedShaderDataUniform** pPointers = (NamedShaderDataUniform**)(GetAddress(0x1624020, , 0x161FDB4));
+			NamedShaderDataUniform** pPointers = (NamedShaderDataUniform**)Address(SelectAddress(0x1624020, , 0x161FDB4));
 			NamedShaderDataUniform* data = *pPointers;
 			*(pPointers + 1) = *pPointers = *pPointers + shader.mDataCount;
 

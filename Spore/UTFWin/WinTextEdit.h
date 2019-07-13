@@ -19,6 +19,8 @@
 
 #pragma once
 
+#error "Not implemented yet; use ITextEdit"
+
 #include "..\Internal.h"
 #include "Window.h"
 #include "OutlineFormat.h"
@@ -73,15 +75,15 @@ namespace UTFWin
 
 	//	static inline WinTextEdit* New() {
 	//		// __stdcall because it's cleanup by callee
-	//		return (WinTextEdit*)((IWindow*(__stdcall*)(void*, void*)) GetAddress(0x98CDC0, 0x98CAA0, 0x98CAA0))(nullptr, nullptr);
+	//		return (WinTextEdit*)((IWindow*(__stdcall*)(void*, void*)) SelectAddress(0x98CDC0, 0x98CAA0, 0x98CAA0))(nullptr, nullptr);
 	//	}
 
-	//	/*virtual METHOD_(GetAddress(0x951FF0, 0), ILayoutElement, int, AddRef);
-	//	virtual METHOD_(GetAddress(0x95FE40, 0), ILayoutElement, int, Release);*/
+	//	/*virtual METHOD_(SelectAddress(0x951FF0, 0), ILayoutElement, int, AddRef);
+	//	virtual METHOD_(SelectAddress(0x95FE40, 0), ILayoutElement, int, Release);*/
 
-	//	virtual METHOD_(GetAddress(0x98F5C0, 0x95F8F0, 0x95F8F0), ILayoutElement, int, AddRef);
-	//	virtual METHOD_(GetAddress(0x96B700, 0x95F900, 0x95F900), ILayoutElement, int, Release);
-	//	virtual METHOD(GetAddress(0x9894F0, 0x989140, 0x989140), ILayoutElement, void*, CastToType, PARAMS(unsigned long typeID), PARAMS(typeID));
+	//	virtual METHOD_(SelectAddress(0x98F5C0, 0x95F8F0, 0x95F8F0), ILayoutElement, int, AddRef);
+	//	virtual METHOD_(SelectAddress(0x96B700, 0x95F900, 0x95F900), ILayoutElement, int, Release);
+	//	virtual METHOD(SelectAddress(0x9894F0, 0x989140, 0x989140), ILayoutElement, void*, CastToType, Args(unsigned long typeID), Args(typeID));
 	//};
 
 	//static_assert(sizeof(WinTextEdit) == 0x658, "sizeof(WinTextEdit) != 658h"); 

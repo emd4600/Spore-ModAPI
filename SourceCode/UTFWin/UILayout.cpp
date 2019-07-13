@@ -28,22 +28,22 @@ namespace UTFWin
 	}
 
 	auto_METHOD(UILayout, bool, Load,
-		PARAMS(const ResourceKey& name, bool arg_4, uint32_t arg_8),
-		PARAMS(name, arg_4, arg_8));
+		Args(const ResourceKey& name, bool arg_4, uint32_t arg_8),
+		Args(name, arg_4, arg_8));
 
 	auto_METHOD(UILayout, bool, LoadByName,
-		PARAMS(const wchar_t* name, uint32_t groupID, bool arg_4, uint32_t arg_8),
-		PARAMS(name, groupID, arg_4, arg_8));
+		Args(const wchar_t* name, uint32_t groupID, bool arg_4, uint32_t arg_8),
+		Args(name, groupID, arg_4, arg_8));
 
 	auto_METHOD(UILayout, IWindow*, FindWindowByID,
-		PARAMS(uint32_t name, bool recursive),
-		PARAMS(name, recursive));
+		Args(uint32_t name, bool recursive),
+		Args(name, recursive));
 
 	auto_METHOD(UILayout, bool, SetParentWindow,
-		PARAMS(IWindow* parent, bool arg_4, uint32_t arg_8),
-		PARAMS(parent, arg_4, arg_8));
+		Args(IWindow* parent, bool arg_4, uint32_t arg_8),
+		Args(parent, arg_4, arg_8));
 
-	auto_METHOD(UILayout, bool, SetVisible, PARAMS(bool value), PARAMS(value));
+	auto_METHOD(UILayout, bool, SetVisible, Args(bool value), Args(value));
 
 	auto_METHOD_(UILayout, IWindow*, GetContainerWindow);
 }

@@ -121,7 +121,7 @@ namespace eastl
 	};
 }
 
-namespace InternalAddressList(ResourceKey)
+namespace Addresses(ResourceKey)
 {
-	DefineAddress(Parse, GetAddress(0x68DD00, 0x68D830, 0x68D830));
+	DeclareAddress(Parse, SelectAddress(0x68DD00, 0x68D830, 0x68D830));
 }

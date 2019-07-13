@@ -102,8 +102,8 @@ namespace Graphics
 		/* 258h */	Mutex mMaterialsMutex;
 	};
 	
-	namespace InternalAddressList(cMaterialManager) 
+	namespace Addresses(cMaterialManager) 
 	{
-		DefineAddress(ReadShaderFragments, GetAddress(0x70F7E0, , 0x70F010));
+		DeclareAddress(ReadShaderFragments, SelectAddress(0x70F7E0, , 0x70F010));
 	};
 }

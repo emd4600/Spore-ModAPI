@@ -21,13 +21,13 @@
 namespace Simulator
 {
 	auto_STATIC_METHOD(cCreatureAnimal, cCreatureAnimal*, Create,
-		PARAMS(const Vector3& pPosition, cSpeciesProfile* pSpecies, int age, cHerd* pHerd, bool bIsAvatar, bool arg_14),
-		PARAMS(pPosition, pSpecies, age, pHerd, bIsAvatar, arg_14));
+		Args(const Vector3& pPosition, cSpeciesProfile* pSpecies, int age, cHerd* pHerd, bool bIsAvatar, bool arg_14),
+		Args(pPosition, pSpecies, age, pHerd, bIsAvatar, arg_14));
 
-	auto_METHOD(cCreatureBase, void*, PlayAnimation, PARAMS(uint32_t animationID, int arg1, bool arg2),
-		PARAMS(animationID, arg1, arg2));
+	auto_METHOD(cCreatureBase, void*, PlayAnimation, Args(uint32_t animationID, int arg1, bool arg2),
+		Args(animationID, arg1, arg2));
 
-	auto_METHOD_VOID(cCreatureBase, WalkTo, PARAMS(int arg0, const Vector3& arg1, const Vector3& arg2, float arg3, float arg4),
-		PARAMS(arg0, arg1, arg2, arg3, arg4));
+	auto_METHOD_VOID(cCreatureBase, WalkTo, Args(int arg0, const Vector3& arg1, const Vector3& arg2, float arg3, float arg4),
+		Args(arg0, arg1, arg2, arg3, arg4));
 	
 }
