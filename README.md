@@ -22,6 +22,8 @@ For those that installed older versions of the ModAPI Development Kit, we need t
 
 Now you can install the tempates as explained before.
 
+About the SDK files, it is recommended that you delete them (but not your projects folder!!!) and you copy them over, as some deprecated files have been removed in new updates. 
+
 # Creating a project
 
 Go to *File -> New -> Project…* . A dialog will open; under the tab Visual C++, select the template called Spore ModAPI Template. Now in the bottom part of the dialog there are two fields you must modify:
