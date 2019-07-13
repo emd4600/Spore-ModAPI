@@ -23,7 +23,7 @@ namespace Graphics
 
 		/// This function is called when rendering a mesh, before the \c DrawIndexedPrimitives is called.
 		/// This function is responsible of loading the shaders into DirectX.
-		static BOOL PrepareRender(RenderWare::Mesh<>* mesh);
+		static BOOL Load(RenderWare::Mesh<>* mesh);
 
 	protected:
 		/* 48h */	intrusive_ptr<IDirect3DVertexShader9> mVertexShaders[16];
@@ -40,6 +40,6 @@ namespace Graphics
 		DeclareAddress(Reset, SelectAddress(0x6E62F0, , 0x6E5C40));
 		DeclareAddress(Release, SelectAddress(0x6E5EC0, , 0x6E5810));
 
-		DeclareAddress(PrepareRender, SelectAddress(0x6E5C30, , 0x6E5590));
+		DeclareAddress(Load, SelectAddress(0x6E5C30, , 0x6E5590));
 	}
 }

@@ -34,8 +34,8 @@ namespace Graphics
 
 	auto_STATIC_METHOD_(IMaterialManager, IMaterialManager*, Get);
 
-	auto_STATIC_METHOD(StandardShader, BOOL, PrepareRender, Args(RenderWare::Mesh<>* mesh), Args(mesh));
-	auto_STATIC_METHOD(ShaderBuilder, BOOL, PrepareRender, Args(RenderWare::Mesh<>* mesh), Args(mesh));
+	auto_STATIC_METHOD(StandardShader, BOOL, Load, Args(RenderWare::Mesh<>* mesh), Args(mesh));
+	auto_STATIC_METHOD(ShaderBuilder, BOOL, Load, Args(RenderWare::Mesh<>* mesh), Args(mesh));
 
 	auto_STATIC_METHOD(MaterialShader, MaterialShader*, Initialize,
 		Args(MaterialShader* dst, uint32_t shaderID, int arg_8, int arg_C, int arg_10, int arg_14, int arg_18, int arg_1C, int arg_20),

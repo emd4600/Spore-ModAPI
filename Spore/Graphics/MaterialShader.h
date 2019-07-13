@@ -34,16 +34,16 @@ namespace Graphics
 	public:
 		/// This type of function is called when rendering a mesh, before the \c DrawIndexedPrimitives is called.
 		/// This function is responsible of loading the shaders into DirectX.
-		typedef BOOL(*PrepareRender_t)(RenderWare::Mesh<>*);
+		typedef BOOL(*LoadShader_t)(RenderWare::Mesh<>*);
 
 		int AddRef();
 
-		inline PrepareRender_t GetPrepareRenderFunction() const {
+		inline LoadShader_t GetLoadMethod() const {
 			return mpCallback;
 		}
 
-		inline void SetPrepareRenderFunction(PrepareRender_t function) {
-			mpCallback = function;
+		inline void SetLoadMethod(LoadShader_t method) {
+			mpCallback = method;
 		}
 
 	protected:
@@ -54,7 +54,7 @@ namespace Graphics
 		/* 0Eh */	int16_t mVertexShaderVersion_;
 		/* 10h */	int16_t mPixelShaderVersion;
 		/* 12h */	int16_t mPixelShaderVersion_;
-		/* 14h */	PrepareRender_t mpCallback;
+		/* 14h */	LoadShader_t mpCallback;
 		/* 18h */	int field_18;
 		/* 1Ch */	int field_1C;
 		/* 20h */	int field_20;
