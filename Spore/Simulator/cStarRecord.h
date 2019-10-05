@@ -46,7 +46,7 @@ namespace Simulator
 		/* 14h */	int mSavedGameVersionMinor;
 		/* 18h */	TimeStamp mSavedGameTimeStamp;
 		/* 3Ch */	Math::Vector3 mPosition;
-		/* 48h */	int mType;
+		/* 48h */	int mType;  // 1 - Galactic Core
 		/* 4Ch */	int mTechLevel;
 		/* 50h */	bool field_50;
 		/* 54h */	uint32_t mEmpireID;  // -1

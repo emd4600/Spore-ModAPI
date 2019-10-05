@@ -75,6 +75,7 @@ namespace Simulator
 	{
 	public:
 		static const uint32_t TYPE = 0xCE9F6639;
+		static const uint32_t NOUN_ID = 0xCE9F6639;
 
 		enum
 		{

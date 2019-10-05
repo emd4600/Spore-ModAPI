@@ -46,6 +46,7 @@ namespace Simulator
 	{
 	public:
 		static const uint32_t TYPE = 0x13F94D4;
+		static const uint32_t NOUN_ID = 0x13F94D4;
 
 		virtual ~cCombatant();
 

@@ -106,6 +106,8 @@ namespace Simulator
 
 		cStarRecord* GetSol() const;
 
+		cStarRecord* GetScenarioStar() const;
+
 	protected:
 		/* 20h */	map<int, int> field_20;
 		/* 3Ch */	vector<int> field_3C;
@@ -148,7 +150,7 @@ namespace Simulator
 		/* 1D0h */	int field_1D0;  // not initialized
 		/* 1D4h */	int field_1D4;  // 0x1234, used to give empire record numbers? If so, sub_BA5DA0 generates the next one
 		/* 1D8h */	uint32_t mGrobEmpireID;  // -1
-		/* 1DCh */	intrusive_ptr<cStarRecord> field_1DC;
+		/* 1DCh */	intrusive_ptr<cStarRecord> mpScenarioStar;
 		/* 1E0h */	cSpaceTradeRouteManager mTradeRouteMgr;
 		/* 204h */	intrusive_ptr<cRelationshipManager> mpRelationshipManager;
 		/* 208h */	vector<int> field_208;
@@ -196,7 +198,11 @@ namespace Simulator
 	}
 
 	inline cStarRecord* cStarManager::GetSol() const {
+		return mpSol.get();
+	}
 
+	inline cStarRecord* cStarManager::GetScenarioStar() const {
+		return mpScenarioStar.get();
 	}
 
 	///

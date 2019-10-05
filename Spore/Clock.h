@@ -113,6 +113,15 @@ namespace Addresses(Clock)
 	DeclareAddress(SetMode, SelectAddress(0x93A6D0, 0x93A110, 0x93A110));
 	DeclareAddress(GetElapsedTicks, SelectAddress(0x93A8D0, 0x93A310, 0x93A310));
 	DeclareAddress(GetElapsedTime, SelectAddress(0x93AB10, 0x93A550, 0x93A550));
+
+
+	// 1 - year
+	// 2 - month
+	// 6 - day of month
+	// 8 - hour
+	// 9 - minute
+	// 10 - second
+	//DeclareAddress(GetTimeParam, SelectAddress(0x92E320, , PLACEHOLDER));
 };
 
 inline void Clock::Start()

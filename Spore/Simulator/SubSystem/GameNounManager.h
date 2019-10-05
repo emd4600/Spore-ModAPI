@@ -149,7 +149,7 @@ namespace Simulator
 		},
 			[](cGameData* pObject, uint32_t gameNounID) {
 			return object_cast<T>(pObject) != nullptr;
-		}, nounID);
+		}, T::NOUN_ID);
 	}
 
 
