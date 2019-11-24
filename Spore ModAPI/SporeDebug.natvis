@@ -1,0 +1,262 @@
+<?xml version="1.0" encoding="utf-8"?> 
+<AutoVisualizer xmlns="http://schemas.microsoft.com/vstudio/debugger/natvis/2010">
+
+  <Type Name="ResourceKey">
+    <DisplayString Condition="groupID == 0 &amp;&amp; typeID == 0">{{{instanceID,x}}}</DisplayString>
+    <DisplayString Condition="groupID == 0">{{{instanceID,x} . {(TypeIDs::Names)typeID, x}}}</DisplayString>
+    <DisplayString Condition="typeID == 0">{{{(GroupIDs::Names)groupID,x} ! {instanceID,x}}}</DisplayString>
+    <DisplayString>{{{(GroupIDs::Names)groupID,x} ! {instanceID,x} . {(TypeIDs::Names)typeID, x}}}</DisplayString>
+    <Expand>
+      <Item Name="groupID">(GroupIDs::Names)groupID,x</Item>
+      <Item Name="instanceID">instanceID,x</Item>
+      <Item Name="typeID">(TypeIDs::Names)typeID,x</Item>
+    </Expand>
+  </Type>
+  
+  <Type Name="ResourceID">
+    <DisplayString Condition="groupID == 0">{{{instanceID,x}}}</DisplayString>
+    <DisplayString>{{{(GroupIDs::Names)groupID,x} ! {instanceID,x}}}</DisplayString>
+  <Expand>
+      <Item Name="groupID">(GroupIDs::Names)groupID,x</Item>
+      <Item Name="instanceID">instanceID,x</Item>
+    </Expand>
+  </Type>
+
+  <Type Name="Math::Color">
+    <DisplayString>{{Color({(int)r,d}, {(int)g,d}, {(int)b,d}, {(int)a,d})  {{hex={value,x}}}}}</DisplayString>
+  </Type>
+  
+  <Type Name="Math::ColorRGB">
+    <DisplayString>{{ColorRGB({r}, {g}, {b})}}</DisplayString>
+  </Type>
+  
+  <Type Name="Math::ColorRGBA">
+    <DisplayString>{{ColorRGBA({r}, {g}, {b}, {a})}}</DisplayString>
+  </Type>
+  
+  <Type Name="Math::ColorHSV">
+    <DisplayString>{{ColorHSV({h}, {s}, {v})}}</DisplayString>
+  </Type>
+  
+  <Type Name="Math::Vector2">
+    <DisplayString>{{Vector2({x}, {y})}}</DisplayString>
+  </Type>
+    
+  <Type Name="Math::Vector3">
+    <DisplayString>{{Vector3({x}, {y}, {z})}}</DisplayString>
+  </Type>
+  
+  <Type Name="Math::BoundingBox">
+    <DisplayString>{{BBox(min=({x}, {y}, {z})    max=({x}, {y}, {z}))}}</DisplayString>
+  </Type>
+  
+  <Type Name="Math::Vector4">
+    <DisplayString>{{Vector4({x}, {y}, {z}, {w})}}</DisplayString>
+  </Type>
+  
+  <Type Name="Math::Point">
+    <DisplayString>{{Point({x}, {y})}}</DisplayString>
+  </Type>
+  
+  <Type Name="Math::Rectangle">
+    <DisplayString>{{Point(({x1}, {y1}), ({x2}, {y2}))}}</DisplayString>
+  </Type>
+  
+  <Type Name="Math::Dimensions">
+    <DisplayString>{{Dimensions({width}, {height})}}</DisplayString>
+  </Type>
+  
+  <Type Name="Math::IntDimensions">
+    <DisplayString>{{Dimensions({width}, {height})}}</DisplayString>
+  </Type>
+  
+  <Type Name="App::Property::TextProperty">
+    <DisplayString>{{Localized Text {{({tableID,x} ! {instanceID,x})} {buffer,su}}}}</DisplayString>
+    <StringView>buffer,su</StringView>
+  </Type>
+  
+
+  <Type Name="App::Property">
+    <DisplayString Condition="mnFlags &amp; App::Property::kPropertyFlagArray &amp;&amp; mnType == App::PropertyType::Bool">bools [{mnItemCount} items]</DisplayString>
+    <DisplayString Condition="mnFlags &amp; App::Property::kPropertyFlagArray &amp;&amp; mnType == App::PropertyType::Int8">int8s [{mnItemCount} items]</DisplayString>
+    <DisplayString Condition="mnFlags &amp; App::Property::kPropertyFlagArray &amp;&amp; mnType == App::PropertyType::UInt8">uint8s [{mnItemCount} items]</DisplayString>
+    <DisplayString Condition="mnFlags &amp; App::Property::kPropertyFlagArray &amp;&amp; mnType == App::PropertyType::Int16">int16s [{mnItemCount} items]</DisplayString>
+    <DisplayString Condition="mnFlags &amp; App::Property::kPropertyFlagArray &amp;&amp; mnType == App::PropertyType::UInt16">uint16s [{mnItemCount} items]</DisplayString>
+    <DisplayString Condition="mnFlags &amp; App::Property::kPropertyFlagArray &amp;&amp; mnType == App::PropertyType::Int32">int32s [{mnItemCount} items]</DisplayString>
+    <DisplayString Condition="mnFlags &amp; App::Property::kPropertyFlagArray &amp;&amp; mnType == App::PropertyType::UInt32">uint32s [{mnItemCount} items]</DisplayString>
+    <DisplayString Condition="mnFlags &amp; App::Property::kPropertyFlagArray &amp;&amp; mnType == App::PropertyType::Int64">int64s [{mnItemCount} items]</DisplayString>
+    <DisplayString Condition="mnFlags &amp; App::Property::kPropertyFlagArray &amp;&amp; mnType == App::PropertyType::UInt64">uint64s [{mnItemCount} items]</DisplayString>
+    <DisplayString Condition="mnFlags &amp; App::Property::kPropertyFlagArray &amp;&amp; mnType == App::PropertyType::Float">floats [{mnItemCount} items]</DisplayString>
+    <DisplayString Condition="mnFlags &amp; App::Property::kPropertyFlagArray &amp;&amp; mnType == App::PropertyType::Double">doubles [{mnItemCount} items]</DisplayString>
+    <DisplayString Condition="mnFlags &amp; App::Property::kPropertyFlagArray &amp;&amp; mnType == App::PropertyType::String8">string8s [{mnItemCount} items]</DisplayString>
+    <DisplayString Condition="mnFlags &amp; App::Property::kPropertyFlagArray &amp;&amp; mnType == App::PropertyType::String16">string16s [{mnItemCount} items]</DisplayString>
+    <DisplayString Condition="mnFlags &amp; App::Property::kPropertyFlagArray &amp;&amp; mnType == App::PropertyType::Key">keys [{mnItemCount} items]</DisplayString>
+    <DisplayString Condition="mnFlags &amp; App::Property::kPropertyFlagArray &amp;&amp; mnType == App::PropertyType::Vector2">vector2s [{mnItemCount} items]</DisplayString>
+    <DisplayString Condition="mnFlags &amp; App::Property::kPropertyFlagArray &amp;&amp; mnType == App::PropertyType::Vector3">vector3s [{mnItemCount} items]</DisplayString>
+    <DisplayString Condition="mnFlags &amp; App::Property::kPropertyFlagArray &amp;&amp; mnType == App::PropertyType::Vector4">vector4s [{mnItemCount} items]</DisplayString>
+    <DisplayString Condition="mnFlags &amp; App::Property::kPropertyFlagArray &amp;&amp; mnType == App::PropertyType::ColorRGB">colorRGBs [{mnItemCount} items]</DisplayString>
+    <DisplayString Condition="mnFlags &amp; App::Property::kPropertyFlagArray &amp;&amp; mnType == App::PropertyType::ColorRGBA">colorRGBAs [{mnItemCount} items]</DisplayString>
+    <DisplayString Condition="mnFlags &amp; App::Property::kPropertyFlagArray &amp;&amp; mnType == App::PropertyType::Text">texts [{mnItemCount} items]</DisplayString>
+    <DisplayString Condition="mnFlags &amp; App::Property::kPropertyFlagArray &amp;&amp; mnType == App::PropertyType::Transform">transforms [{mnItemCount} items]</DisplayString>
+    <DisplayString Condition="mnType == App::PropertyType::Bool">bool {mValueBool}</DisplayString>
+    <DisplayString Condition="mnType == App::PropertyType::Int8">int8 {mValueInt8}</DisplayString>
+    <DisplayString Condition="mnType == App::PropertyType::UInt8">uint8 {mValueUInt8}</DisplayString>
+    <DisplayString Condition="mnType == App::PropertyType::Int16">int16 {mValueInt16}</DisplayString>
+    <DisplayString Condition="mnType == App::PropertyType::UInt16">uint16 {mValueUInt16}</DisplayString>
+    <DisplayString Condition="mnType == App::PropertyType::Int32">int32 {mValueInt32}</DisplayString>
+    <DisplayString Condition="mnType == App::PropertyType::UInt32">uint32 {mValueUInt32}</DisplayString>
+    <DisplayString Condition="mnType == App::PropertyType::Int64">int64 {*(int64_t*)&amp;mpData}</DisplayString>
+    <DisplayString Condition="mnType == App::PropertyType::UInt64">uint64 {*(uint64_t*)&amp;mpData}</DisplayString>
+    <DisplayString Condition="mnType == App::PropertyType::Float">float {mValueFloat}</DisplayString>
+    <DisplayString Condition="mnType == App::PropertyType::Double">double {*(double*)&amp;mpData}</DisplayString>
+    <DisplayString Condition="mnType == App::PropertyType::String8">string8 {mValueString8.mpBegin, s}</DisplayString>
+    <DisplayString Condition="mnType == App::PropertyType::String16">string16 {mValueString16.mpBegin, su}</DisplayString>
+    <DisplayString Condition="mnType == App::PropertyType::Key">key {mValueKey}</DisplayString>
+    <DisplayString Condition="mnType == App::PropertyType::Vector2">vector2 {mValueVector2}</DisplayString>
+    <DisplayString Condition="mnType == App::PropertyType::Vector3">vector3 {mValueVector3}</DisplayString>
+    <DisplayString Condition="mnType == App::PropertyType::Vector4">vector4 {mValueVector4}</DisplayString>
+    <DisplayString Condition="mnType == App::PropertyType::ColorRGB">colorRGB {mValueColorRGB}</DisplayString>
+    <DisplayString Condition="mnType == App::PropertyType::ColorRGBA">colorRGBA {mValueColorRGBA}</DisplayString>
+    
+    <StringView Condition="!(mnFlags &amp; App::Property::kPropertyFlagArray) &amp;&amp; mnType == App::PropertyType::String8">mValueString8.mpBegin,s</StringView>
+    <StringView Condition="!(mnFlags &amp; App::Property::kPropertyFlagArray) &amp;&amp; mnType == App::PropertyType::String16">mValueString16.mpBegin,su</StringView>
+        
+    <Expand>
+      <CustomListItems Condition="mnFlags &amp; App::Property::kPropertyFlagArray">
+        <Variable Name="i" InitialValue="0"/>
+        <Loop Condition="i != mnItemCount">
+          <Item Name="[{i}]" Condition="mnType == App::PropertyType::Bool">*(bool*)((char*)mpData + mnItemSize*i)</Item>
+          <Item Name="[{i}]" Condition="mnType == App::PropertyType::Int8">*(int8_t*)((char*)mpData + mnItemSize*i)</Item>
+          <Item Name="[{i}]" Condition="mnType == App::PropertyType::UInt8">*(uint8_t*)((char*)mpData + mnItemSize*i)</Item>
+          <Item Name="[{i}]" Condition="mnType == App::PropertyType::Int16">*(int16_t*)((char*)mpData + mnItemSize*i)</Item>
+          <Item Name="[{i}]" Condition="mnType == App::PropertyType::UInt16">*(uint16_t*)((char*)mpData + mnItemSize*i)</Item>
+          <Item Name="[{i}]" Condition="mnType == App::PropertyType::Int32">*(int32_t*)((char*)mpData + mnItemSize*i)</Item>
+          <Item Name="[{i}]" Condition="mnType == App::PropertyType::UInt32">*(uint32_t*)((char*)mpData + mnItemSize*i)</Item>
+          <Item Name="[{i}]" Condition="mnType == App::PropertyType::Int64">*(int64_t*)((char*)mpData + mnItemSize*i)</Item>
+          <Item Name="[{i}]" Condition="mnType == App::PropertyType::UInt64">*(uint64_t*)((char*)mpData + mnItemSize*i)</Item>
+          <Item Name="[{i}]" Condition="mnType == App::PropertyType::Float">*(float*)((char*)mpData + mnItemSize*i)</Item>
+          <Item Name="[{i}]" Condition="mnType == App::PropertyType::Double">*(double*)((char*)mpData + mnItemSize*i)</Item>
+          <Item Name="[{i}]" Condition="mnType == App::PropertyType::Key">*(ResourceKey*)((char*)mpData + mnItemSize*i)</Item>
+          <Item Name="[{i}]" Condition="mnType == App::PropertyType::String8">*(eastl::string8*)((char*)mpData + mnItemSize*i)</Item>
+          <Item Name="[{i}]" Condition="mnType == App::PropertyType::String16">*(eastl::string16*)((char*)mpData + mnItemSize*i)</Item>
+          <Item Name="[{i}]" Condition="mnType == App::PropertyType::Vector2">*(Math::Vector2*)((char*)mpData + mnItemSize*i)</Item>
+          <Item Name="[{i}]" Condition="mnType == App::PropertyType::Vector3">*(Math::Vector3*)((char*)mpData + mnItemSize*i)</Item>
+          <Item Name="[{i}]" Condition="mnType == App::PropertyType::Vector4">*(Math::Vector4*)((char*)mpData + mnItemSize*i)</Item>
+          <Item Name="[{i}]" Condition="mnType == App::PropertyType::ColorRGB">*(Math::ColorRGB*)((char*)mpData + mnItemSize*i)</Item>
+          <Item Name="[{i}]" Condition="mnType == App::PropertyType::ColorRGBA">*(Math::ColorRGBA*)((char*)mpData + mnItemSize*i)</Item>
+          <Item Name="[{i}]" Condition="mnType == App::PropertyType::Text">*(App::Property::TextProperty*)((char*)mpData + mnItemSize*i)</Item>
+          <Item Name="[{i}]" Condition="mnType == App::PropertyType::Transform">*(Transform*)((char*)mpData + mnItemSize*i)</Item>
+          <Exec>++i</Exec>
+        </Loop>
+      </CustomListItems>
+    </Expand>
+  </Type>
+
+  <Type Name="App::PropertyList">
+    <DisplayString>{{PropertyList {mNameKey} [{mProperties.mpEnd - mProperties.mpBegin} properties]}}</DisplayString>
+    <Expand>
+      <Item Name="[parent]">mpParent</Item>
+      <Item Name="[size]">mProperties.mpEnd - mProperties.mpBegin</Item>
+      <CustomListItems>
+        <Variable Name="pointer" InitialValue="mProperties.mpBegin"/>
+        <Loop Condition="pointer != mProperties.mpEnd">
+          <Item Name="[{pointer->first,x}]">pointer->second</Item>
+          <Exec>++pointer</Exec>
+        </Loop>
+      </CustomListItems>
+    </Expand>
+  </Type>
+  
+  <Type Name="eastl::intrusive_list&lt;UTFWin::Window_intrusive_list_node&gt;">
+    <DisplayString Condition="mAnchor.mpNext == &amp;mAnchor">No children</DisplayString>
+    <Expand>
+      <CustomListItems>
+        <Variable Name="currentNode" InitialValue="mAnchor.mpNext"/>
+        <Variable Name="i" InitialValue="0"/>
+        <Loop Condition="currentNode != &amp;mAnchor">
+          <Item Name="[{i}]">(UTFWin::Window*)(currentNode)</Item>
+          <Exec>currentNode = currentNode->mpNext</Exec>
+          <Exec>++i</Exec>
+        </Loop>
+      </CustomListItems>
+    </Expand>
+  </Type>
+  
+  <Type Name="UTFWin::Window">
+    <DisplayString Condition="*(int*)(*((*(char***)(UTFWin::ILayoutElement*)this) + 5) + 1) == 0x4ec1b8d8">Window({mControlID,x})</DisplayString>
+    <DisplayString Condition="*(int*)(*((*(char***)(UTFWin::ILayoutElement*)this) + 5) + 1) == 0xeeefe2c3">Button({mControlID,x})</DisplayString>
+    <DisplayString Condition="*(int*)(*((*(char***)(UTFWin::ILayoutElement*)this) + 5) + 1) == 0x6f15f51b">Text({mControlID,x})</DisplayString>
+    <DisplayString Condition="*(int*)(*((*(char***)(UTFWin::ILayoutElement*)this) + 5) + 1) == 0xaf552c4b">ComboBox({mControlID,x})</DisplayString>
+    <DisplayString Condition="*(int*)(*((*(char***)(UTFWin::ILayoutElement*)this) + 5) + 1) == 0x8ef37d6d">Scrollbar({mControlID,x})</DisplayString>
+    <DisplayString Condition="*(int*)(*((*(char***)(UTFWin::ILayoutElement*)this) + 5) + 1) == 0x2f00bdb3">Slider({mControlID,x})</DisplayString>
+    <DisplayString Condition="*(int*)(*((*(char***)(UTFWin::ILayoutElement*)this) + 5) + 1) == 0x4f063bb3">Spinner({mControlID,x})</DisplayString>
+    <DisplayString Condition="*(int*)(*((*(char***)(UTFWin::ILayoutElement*)this) + 5) + 1) == 0x6f42b4f0">TextEdit({mControlID,x})</DisplayString>
+    <DisplayString Condition="*(int*)(*((*(char***)(UTFWin::ILayoutElement*)this) + 5) + 1) == 0x0f0b8b73">Dialog({mControlID,x})</DisplayString>
+    <DisplayString Condition="*(int*)(*((*(char***)(UTFWin::ILayoutElement*)this) + 5) + 1) == 0x6f38282b">MessageBox({mControlID,x})</DisplayString>
+    <DisplayString Condition="*(int*)(*((*(char***)(UTFWin::ILayoutElement*)this) + 5) + 1) == 0x6f1f1aa6">Grid({mControlID,x})</DisplayString>
+    <DisplayString Condition="*(int*)(*((*(char***)(UTFWin::ILayoutElement*)this) + 5) + 1) == 0xf02aff4b">TreeView({mControlID,x})</DisplayString>
+    <DisplayString Condition="*(int*)(*((*(char***)(UTFWin::ILayoutElement*)this) + 5) + 1) == 0x4ec1b8d8">Window({mControlID,x})</DisplayString>
+    <DisplayString Condition="*(int*)(*((*(char***)(UTFWin::ILayoutElement*)this) + 5) + 1) == 0x0106f14b">AnimatedIcon({mControlID,x})</DisplayString>
+    <DisplayString Condition="*(int*)(*((*(char***)(UTFWin::ILayoutElement*)this) + 5) + 1) == 0x010ede03">ProgressBar({mControlID,x})</DisplayString>
+    <DisplayString Condition="*(int*)(*((*(char***)(UTFWin::ILayoutElement*)this) + 5) + 1) == 0x015cbbd6">GradientProgressBar({mControlID,x})</DisplayString>
+    <DisplayString Condition="*(int*)(*((*(char***)(UTFWin::ILayoutElement*)this) + 5) + 1) == 0x04c04b4e">PopupMenuItem({mControlID,x})</DisplayString>
+    <DisplayString Condition="*(int*)(*((*(char***)(UTFWin::ILayoutElement*)this) + 5) + 1) == 0x04c04b4d">PopupMenu({mControlID,x})</DisplayString>
+    <DisplayString>{{IWindow({mControlID,x})}}</DisplayString>
+    <Expand>
+      <Synthetic Name="[type]">
+        <DisplayString Condition="*(int*)(*((*(char***)(UTFWin::ILayoutElement*)this) + 5) + 1) == 0x4ec1b8d8">Window</DisplayString>
+        <DisplayString Condition="*(int*)(*((*(char***)(UTFWin::ILayoutElement*)this) + 5) + 1) == 0xeeefe2c3">Button</DisplayString>
+        <DisplayString Condition="*(int*)(*((*(char***)(UTFWin::ILayoutElement*)this) + 5) + 1) == 0x6f15f51b">Text</DisplayString>
+        <DisplayString Condition="*(int*)(*((*(char***)(UTFWin::ILayoutElement*)this) + 5) + 1) == 0xaf552c4b">ComboBox</DisplayString>
+        <DisplayString Condition="*(int*)(*((*(char***)(UTFWin::ILayoutElement*)this) + 5) + 1) == 0x8ef37d6d">Scrollbar</DisplayString>
+        <DisplayString Condition="*(int*)(*((*(char***)(UTFWin::ILayoutElement*)this) + 5) + 1) == 0x2f00bdb3">Slider</DisplayString>
+        <DisplayString Condition="*(int*)(*((*(char***)(UTFWin::ILayoutElement*)this) + 5) + 1) == 0x4f063bb3">Spinner</DisplayString>
+        <DisplayString Condition="*(int*)(*((*(char***)(UTFWin::ILayoutElement*)this) + 5) + 1) == 0x6f42b4f0">TextEdit</DisplayString>
+        <DisplayString Condition="*(int*)(*((*(char***)(UTFWin::ILayoutElement*)this) + 5) + 1) == 0x0f0b8b73">Dialog</DisplayString>
+        <DisplayString Condition="*(int*)(*((*(char***)(UTFWin::ILayoutElement*)this) + 5) + 1) == 0x6f38282b">MessageBox</DisplayString>
+        <DisplayString Condition="*(int*)(*((*(char***)(UTFWin::ILayoutElement*)this) + 5) + 1) == 0x6f1f1aa6">Grid</DisplayString>
+        <DisplayString Condition="*(int*)(*((*(char***)(UTFWin::ILayoutElement*)this) + 5) + 1) == 0xf02aff4b">TreeView</DisplayString>
+        <DisplayString Condition="*(int*)(*((*(char***)(UTFWin::ILayoutElement*)this) + 5) + 1) == 0x4ec1b8d8">Window</DisplayString>
+        <DisplayString Condition="*(int*)(*((*(char***)(UTFWin::ILayoutElement*)this) + 5) + 1) == 0x0106f14b">AnimatedIcon</DisplayString>
+        <DisplayString Condition="*(int*)(*((*(char***)(UTFWin::ILayoutElement*)this) + 5) + 1) == 0x010ede03">ProgressBar</DisplayString>
+        <DisplayString Condition="*(int*)(*((*(char***)(UTFWin::ILayoutElement*)this) + 5) + 1) == 0x015cbbd6">GradientProgressBar</DisplayString>
+        <DisplayString Condition="*(int*)(*((*(char***)(UTFWin::ILayoutElement*)this) + 5) + 1) == 0x04c04b4e">PopupMenuItem</DisplayString>
+        <DisplayString Condition="*(int*)(*((*(char***)(UTFWin::ILayoutElement*)this) + 5) + 1) == 0x04c04b4d">PopupMenu</DisplayString>
+        <DisplayString>Unknown</DisplayString>
+      </Synthetic>
+      <Item Name="[parent]">mpParentWindow</Item>
+      <Item Name="[children]">mChildrenWindows</Item>
+      <Item Name="[winprocs]">mWinProcs</Item>
+      <Item Name="[controlID]">mControlID,x</Item>
+      <Item Name="[commandID]">mCommandID,x</Item>
+      <Item Name="[flags]">(UTFWin::WindowFlags)mnFlags</Item>
+      <Item Name="[caption]">mCaption</Item>
+      <Item Name="[shadeColor]">mShadeColor</Item>
+      <Item Name="[fillColor]">mFillColor</Item>
+      <Item Name="[textStyleID]">mTextFontID,x</Item>
+      <Item Name="[drawable]">mpDrawable</Item>
+    </Expand>
+  </Type>
+  
+    
+  <Type Name="UTFWin::IWindow">
+    <DisplayString>{*(UTFWin::Window*)this}</DisplayString>
+	  <Expand>
+		  <ExpandedItem>(UTFWin::Window*)this</ExpandedItem>
+	  </Expand>
+  </Type>
+
+  <Type Name="ArgScript::Line">
+    <Expand>
+      <CustomListItems>
+        <Variable Name="i" InitialValue="0"/>
+        <Loop Condition="i &lt; (mArguments.mpEnd - mArguments.mpBegin)">
+          <Item Name="[{i}]">mArguments.mpBegin[i], s</Item>
+          <Exec>++i</Exec>
+        </Loop>
+      </CustomListItems>
+      <Item Name="[options]">mOptions</Item>
+    </Expand>
+  </Type>
+  
+</AutoVisualizer>
