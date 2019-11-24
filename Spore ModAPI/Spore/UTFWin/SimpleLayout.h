@@ -69,14 +69,14 @@ namespace UTFWin
 
 	namespace Addresses(SimpleLayout)
 	{
-		DeclareAddress(Cast, SelectAddress(0x97EA40, 0x97E760, 0x97E760));
+		DeclareAddress(Cast);
 
-		DeclareAddress(SetSerializer, SelectAddress(0x97EC70, 0x97E990, 0x97E990));
-		DeclareAddress(GetProxyID, SelectAddress(0x97EAA0, 0x97E7B0, 0x97E7B0));
+		DeclareAddress(SetSerializer);
+		DeclareAddress(GetProxyID);
 
-		DeclareAddress(ApplyLayout, SelectAddress(0x97EB70, 0x97E890, 0x97E890));
-		DeclareAddress(RevertLayout, SelectAddress(0x97EBE0, 0x97E900, 0x97E900));
+		DeclareAddress(ApplyLayout);
+		DeclareAddress(RevertLayout);
 
-		DeclareAddress(OnLayout, SelectAddress(0x97EAF0, 0x97E810, 0x97E810));
+		DeclareAddress(OnLayout);
 	}
 }

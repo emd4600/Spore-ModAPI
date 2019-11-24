@@ -101,25 +101,25 @@ namespace IO
 
 	namespace Addresses(FileStream)
 	{
-		DeclareAddress(AddRef, SelectAddress(0x931D00, 0x931780, 0x931780));
-		DeclareAddress(Release, SelectAddress(0x931D10, 0x931790, 0x931790));
-		DeclareAddress(GetType, SelectAddress(0x8D65B0, 0x8D6260, 0x8D62A0));
-		DeclareAddress(GetAccessFlags, SelectAddress(0xFA1540, 0x931A90, 0x931A90));
-		DeclareAddress(GetState, SelectAddress(0x932010, 0x931AA0, 0x931AA0));
-		DeclareAddress(Close, SelectAddress(0x931FC0, 0x931A40, 0x931A40));
-		DeclareAddress(GetSize, SelectAddress(0x9320B0, 0x931B40, 0x931B40));
-		DeclareAddress(SetSize, SelectAddress(0x932100, 0x931B90, 0x931B90));
-		DeclareAddress(GetPosition, SelectAddress(0x932150, 0x931BE0, 0x931BE0));
-		DeclareAddress(SetPosition, SelectAddress(0x9321B0, 0x931C40, 0x931C40));
-		DeclareAddress(GetAvailable, SelectAddress(0x932210, 0x931CA0, 0x931CA0));
-		DeclareAddress(Read, SelectAddress(0x932220, 0x931CB0, 0x931CB0));
-		DeclareAddress(Flush, SelectAddress(0x9322B0, 0x931D40, 0x931D40));
-		DeclareAddress(Write, SelectAddress(0x932270, 0x931D00, 0x931D00));
-		DeclareAddress(SetPath, SelectAddress(0x931D60, 0x9317E0, 0x9317E0));
-		DeclareAddress(SetPathCString, SelectAddress(0x931D30, 0x9317B0, 0x9317B0));
-		DeclareAddress(GetPath, SelectAddress(0x931DF0, 0x931870, 0x931870));
-		DeclareAddress(GetPathCString, SelectAddress(0x931D90, 0x931810, 0x931810));
-		DeclareAddress(Open, SelectAddress(0x931E40, 0x9318C0, 0x9318C0));
+		DeclareAddress(AddRef);
+		DeclareAddress(Release);
+		DeclareAddress(GetType);
+		DeclareAddress(GetAccessFlags);
+		DeclareAddress(GetState);
+		DeclareAddress(Close);
+		DeclareAddress(GetSize);
+		DeclareAddress(SetSize);
+		DeclareAddress(GetPosition);
+		DeclareAddress(SetPosition);
+		DeclareAddress(GetAvailable);
+		DeclareAddress(Read);
+		DeclareAddress(Flush);
+		DeclareAddress(Write);
+		DeclareAddress(SetPath);
+		DeclareAddress(SetPathCString);
+		DeclareAddress(GetPath);
+		DeclareAddress(GetPathCString);
+		DeclareAddress(Open);
 	}
 
 }

@@ -106,27 +106,27 @@ namespace Editors
 
 	namespace Addresses(EditorCamera)
 	{
-		DeclareAddress(AddRef, SelectAddress(0xCF91C0, 0x671F20, 0x671F20));
-		DeclareAddress(Release, SelectAddress(0xD57BB0, 0xAE05F0, 0xAE0620));
-		DeclareAddress(Cast, SelectAddress(0x7C6A50, 0x5A2030, 0x5A2030));
-		DeclareAddress(OnAttach, SelectAddress(0x101B0F0, 0xDDE980, 0xDDE930));
-		DeclareAddress(OnDeattach, SelectAddress(0x66AD60, 0xB1E3E0, 0xB1E410));
-		DeclareAddress(OnEnter, SelectAddress(0x5A2040, 0x5A22F0, 0x5A22F0));
-		DeclareAddress(OnExit, SelectAddress(0x7E66D0, 0xC2E620, 0xC2E640));
-		DeclareAddress(Update, SelectAddress(0x5A3B40, 0x5A3E00, 0x5A3E00));
-		DeclareAddress(func24h, SelectAddress(0x5A1D90, 0x5A2050, 0x5A2050));
-		DeclareAddress(OnKeyDown, SelectAddress(0x5A1DA0, 0x5A2060, 0x5A2060));
-		DeclareAddress(OnKeyUp, SelectAddress(0x5A1E40, 0x5A2100, 0x5A2100));
-		DeclareAddress(OnMouseDown, SelectAddress(0x5A2C50, 0x5A2F00, 0x5A2F00));
-		DeclareAddress(OnMouseUp, SelectAddress(0x5A1EE0, 0x5A21A0, 0x5A21A0));
-		DeclareAddress(OnMouseMove, SelectAddress(0x5A2CB0, 0x5A2F70, 0x5A2F70));
-		DeclareAddress(OnMouseWheel, SelectAddress(0x5A22B0, 0x5A2560, 0x5A2560));
-		DeclareAddress(func40h, SelectAddress(0x101B0F0, 0xDDE980, 0xDDE930));
-		DeclareAddress(func44h, SelectAddress(0x101B0F0, 0xDDE980, 0xDDE930));
-		DeclareAddress(func48h, SelectAddress(0x101B0F0, 0xDDE980, 0xDDE930));
-		DeclareAddress(GetPropertyList, SelectAddress(0x6BD860, 0x7F5550, 0x7F55C0));
-		DeclareAddress(Initialize, SelectAddress(0x5A2330, 0x5A25E0, 0x5A25E0));
-		DeclareAddress(func54h, SelectAddress(0x5A2070, 0x5A2320, 0x5A2320));
+		DeclareAddress(AddRef);
+		DeclareAddress(Release);
+		DeclareAddress(Cast);
+		DeclareAddress(OnAttach);
+		DeclareAddress(OnDeattach);
+		DeclareAddress(OnEnter);
+		DeclareAddress(OnExit);
+		DeclareAddress(Update);
+		DeclareAddress(func24h);
+		DeclareAddress(OnKeyDown);
+		DeclareAddress(OnKeyUp);
+		DeclareAddress(OnMouseDown);
+		DeclareAddress(OnMouseUp);
+		DeclareAddress(OnMouseMove);
+		DeclareAddress(OnMouseWheel);
+		DeclareAddress(func40h);
+		DeclareAddress(func44h);
+		DeclareAddress(func48h);
+		DeclareAddress(GetPropertyList);
+		DeclareAddress(Initialize);
+		DeclareAddress(func54h);
 
 	}
 }

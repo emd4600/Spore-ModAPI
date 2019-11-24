@@ -80,6 +80,6 @@ namespace Graphics
 
 	namespace Addresses(ILightingManager)
 	{
-		DeclareAddress(Get, SelectAddress(0x67DEB0, 0x67DD50, 0x67DD50));
+		DeclareAddress(Get);
 	}
 }

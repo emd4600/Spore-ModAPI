@@ -132,14 +132,13 @@ namespace Editors
 	/////////////////////////////////
 
 	static_assert(sizeof(EditorUI) == 0x12C, "sizeof(EditorUI) must be 0x20C!");
-	static_assert(sizeof(eastl::array<uint32_t>) == 8, "sizeof(EditorUI) must be 8!");
 
 	namespace Addresses(EditorUI)
 	{
-		DeclareAddress(HandleMessage, SelectAddress(0x5DED50, 0x5DEEB0, 0x5DEEB0));
+		DeclareAddress(HandleMessage);
 
-		DeclareAddress(HandleUIMessage, SelectAddress(0x5DFEE0, 0x5E0040, 0x5E0040));
+		DeclareAddress(HandleUIMessage);
 
-		DeclareAddress(Load, SelectAddress(0x5DDC40, 0x5DDDA0, 0x5DDDA0));
+		DeclareAddress(Load);
 	}
 };

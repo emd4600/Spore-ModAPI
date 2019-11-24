@@ -311,9 +311,9 @@ namespace Simulator
 
 	namespace Addresses(cSpaceToolData)
 	{
-		DeclareAddress(AddAmmo, SelectAddress(0x104D730, 0x104CBE0, 0x104CBE0));
-		DeclareAddress(ConsumeAmmo, SelectAddress(0x104D760, 0x104CC10, 0x104CC10));
-		DeclareAddress(GetStrategy, SelectAddress(0x1050490, NO_ADDRESS, 0x1050030));
-		DeclareAddress(ShowEventLog, SelectAddress(0x1053350, NO_ADDRESS, 0x1052800));
+		DeclareAddress(AddAmmo);
+		DeclareAddress(ConsumeAmmo);
+		DeclareAddress(GetStrategy);
+		DeclareAddress(ShowEventLog);
 	}
 }

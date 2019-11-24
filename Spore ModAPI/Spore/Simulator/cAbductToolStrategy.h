@@ -35,8 +35,8 @@ namespace Simulator
 
 	namespace Addresses(cAbductToolStrategy)
 	{
-		DeclareAddress(OnHit, SelectAddress(0x105AC80, NO_ADDRESS, 0x105A0D0));
-		DeclareAddress(OnMouseUp, SelectAddress(0x1055C90, NO_ADDRESS, 0x10550E0));
-		DeclareAddress(GetAimPoint, SelectAddress(0x1053B00, NO_ADDRESS, 0x1052FA0));
+		DeclareAddress(OnHit);
+		DeclareAddress(OnMouseUp);
+		DeclareAddress(GetAimPoint);
 	}
 }

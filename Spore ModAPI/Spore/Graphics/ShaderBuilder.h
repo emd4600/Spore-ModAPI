@@ -40,10 +40,10 @@ namespace Graphics
 	static_assert(sizeof(ShaderBuilder) == 0x2C8, "sizeof(ShaderBuilder) != 0x2C8");
 
 	namespace Addresses(ShaderBuilder) {
-		DeclareAddress(ctor, SelectAddress(0x6FD630, , 0x6FD310));
-		DeclareAddress(Read, SelectAddress(0x6FD980, , 0x6FD660));
-		DeclareAddress(Release, SelectAddress(0x6FD6B0, , 0x6FD390));
+		DeclareAddress(ctor);
+		DeclareAddress(Read);
+		DeclareAddress(Release);
 
-		DeclareAddress(Load, SelectAddress(0x6FDB80, , 0x6FD860));
+		DeclareAddress(Load);
 	}
 }

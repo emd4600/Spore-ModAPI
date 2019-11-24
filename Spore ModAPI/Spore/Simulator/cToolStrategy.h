@@ -117,17 +117,17 @@ namespace Simulator
 
 	namespace Addresses(cToolStrategy)
 	{
-		DeclareAddress(OnSelect, SelectAddress(0x1054340, NO_ADDRESS, 0x1053790));
+		DeclareAddress(OnSelect);
 		
-		DeclareAddress(Update, SelectAddress(0x1056CC0, NO_ADDRESS, 0x1056130));
-		DeclareAddress(WhileAiming, SelectAddress(0x10544E0, NO_ADDRESS, 0x1053930));
+		DeclareAddress(Update);
+		DeclareAddress(WhileAiming);
 		
-		DeclareAddress(SelectedUpdate, SelectAddress(0x1054710, NO_ADDRESS, 0x1053B60));
-		DeclareAddress(OnHit, SelectAddress(0x1059F50, NO_ADDRESS, 0x10593B0));
-		DeclareAddress(WhileFiring, SelectAddress(0x1057410, NO_ADDRESS, 0x1056880));
-		DeclareAddress(OnMouseUp, SelectAddress(0x10541D0, NO_ADDRESS, 0x1053660));
-		DeclareAddress(GetAimPoint, SelectAddress(0x1053A70, NO_ADDRESS, 0x1052F10));
-		DeclareAddress(func40h, SelectAddress(0x1054740, NO_ADDRESS, 0x1053B90));
+		DeclareAddress(SelectedUpdate);
+		DeclareAddress(OnHit);
+		DeclareAddress(WhileFiring);
+		DeclareAddress(OnMouseUp);
+		DeclareAddress(GetAimPoint);
+		DeclareAddress(func40h);
 
 	}
 }

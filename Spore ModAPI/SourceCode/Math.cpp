@@ -1,3 +1,4 @@
+#ifndef MODAPI_DLL_EXPORT
 /****************************************************************************
 * Copyright (C) 2018 Eric Mor
 *
@@ -283,3 +284,4 @@ Transform::Transform()
 }
 
 auto_METHOD_const_(Transform, Math::Matrix4, ToMatrix4);
+#endif

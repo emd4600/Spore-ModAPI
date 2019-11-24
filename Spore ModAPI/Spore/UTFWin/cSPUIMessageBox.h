@@ -57,6 +57,6 @@ namespace UTFWin
 
 	namespace Addresses(cSPUIMessageBox)
 	{
-		DeclareAddress(ShowDialog, SelectAddress(0x80A3B0, 0x809DD0, 0x809E60));
+		DeclareAddress(ShowDialog);
 	}
 }

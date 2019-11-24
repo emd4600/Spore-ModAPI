@@ -116,9 +116,9 @@ namespace Palettes
 
 	namespace Addresses(PaletteUI)
 	{
-		DeclareAddress(Load, SelectAddress(0x5CB180, 0x5CB660, 0x5CB690));
-		DeclareAddress(Update, SelectAddress(0x5CA590, 0x5CAA40, 0x5CAA70));
+		DeclareAddress(Load);
+		DeclareAddress(Update);
 
-		DeclareAddress(HandleUIMessage, SelectAddress(0x5CB080, 0x5CB560, 0x5CB590));
+		DeclareAddress(HandleUIMessage);
 	}
 }

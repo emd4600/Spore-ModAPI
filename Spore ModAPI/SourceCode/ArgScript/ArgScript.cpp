@@ -1,3 +1,4 @@
+#ifndef MODAPI_DLL_EXPORT
 /****************************************************************************
 * Copyright (C) 2018 Eric Mor
 *
@@ -27,13 +28,15 @@
 #include <Spore\ArgScript\Line.h>
 #include <Spore\ArgScript\FormatParser.h>
 
+RedirectStaticMethod_noargs(ArgScript, CreateStream, ArgScript::FormatParser*);
+
 namespace ArgScript
 {
 	Line::Line()
-		: mnFirstArgIndex(0)
-		, mnArgumentCount(0)
+		: mFirstArgIndex(0)
+		, mArgumentCount(0)
 		, mOptions()
-		, mStrings()
+		, mBuffer()
 		, mArguments()
 	{
 
@@ -47,10 +50,10 @@ namespace ArgScript
 
 	void Line::RemoveKeyword()
 	{
-		if (mnArgumentCount > 0)
+		if (mArgumentCount > 0)
 		{
-			mnFirstArgIndex++;
-			mnArgumentCount--;
+			mFirstArgIndex++;
+			mArgumentCount--;
 		}
 	}
 
@@ -115,8 +118,6 @@ namespace ArgScript
 	auto_METHOD_VOID(Lexer, ExpectChar, Args(LexerString& lexerString, char c), Args(lexerString, c));
 	auto_METHOD(Lexer, bool, OptionalExpectChar, Args(LexerString& lexerString, char c), Args(lexerString, c));
 	auto_METHOD_VOID(Lexer, NextParameter, Args(LexerString& lexerString, string& dst), Args(lexerString, dst));
-
-	auto_STATIC_METHOD_(ArgScript, FormatParser*, CreateStream);
 
 	void ISpecialBlock::SetData(FormatParser* pFormatParser, void* pData)
 	{
@@ -230,3 +231,4 @@ namespace ArgScript
 		AddParser(pKeyword, new LambdaParser(pParseLine, pSetData));
 	}
 }
+#endif

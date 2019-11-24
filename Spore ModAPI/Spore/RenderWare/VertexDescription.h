@@ -156,8 +156,8 @@ namespace RenderWare
 
 	namespace Addresses(VertexDescription)
 	{
-		DeclareAddress(LoadDeclaration, SelectAddress(0x011F5310, 0x11F2BF0, 0x11F2BF0));
-		DeclareAddress(Process, SelectAddress(0x11F5350, 0x11F2C30, 0x11F2C30));
+		DeclareAddress(LoadDeclaration);
+		DeclareAddress(Process);
 	}
 
 	template <uint16_t kVertexElements = 0>

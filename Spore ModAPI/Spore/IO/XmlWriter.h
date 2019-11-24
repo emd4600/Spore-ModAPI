@@ -168,18 +168,18 @@ namespace IO
 
 	namespace Addresses(XmlWriter)
 	{
-		DeclareAddress(WriteXmlHeader, SelectAddress(0x902040, 0x901C00, 0x901C00));
-		DeclareAddress(BeginElement, SelectAddress(0x902210, 0x901DD0, 0x901DD0));
-		DeclareAddress(EndElement, SelectAddress(0x902270, 0x901E30, 0x901E30));
-		DeclareAddress(BeginProcessingInstruction, SelectAddress(0x901D70, 0x901930, 0x901930));
-		DeclareAddress(EndProcessingInstruction, SelectAddress(0x901DE0, 0x9019A0, 0x9019A0));
-		DeclareAddress(AppendAttribute, SelectAddress(0x901E20, 0x9019E0, 0x9019E0));
-		DeclareAddress(AppendAttributeF, SelectAddress(0x901EB0, 0x901A70, 0x901A70));
-		DeclareAddress(WriteCharData, SelectAddress(0x901F80, 0x901B40, 0x901B40));
-		DeclareAddress(WriteCDATA, SelectAddress(0x901FB0, 0x901B70, 0x901B70));
-		DeclareAddress(WriteComment, SelectAddress(0x902340, 0x901F00, 0x901F00));
-		DeclareAddress(WriteName, SelectAddress(0x902010, 0x901BD0, 0x901BD0));
-		DeclareAddress(WriteText, SelectAddress(0x902470, 0x902030, 0x902030));
+		DeclareAddress(WriteXmlHeader);
+		DeclareAddress(BeginElement);
+		DeclareAddress(EndElement);
+		DeclareAddress(BeginProcessingInstruction);
+		DeclareAddress(EndProcessingInstruction);
+		DeclareAddress(AppendAttribute);
+		DeclareAddress(AppendAttributeF);
+		DeclareAddress(WriteCharData);
+		DeclareAddress(WriteCDATA);
+		DeclareAddress(WriteComment);
+		DeclareAddress(WriteName);
+		DeclareAddress(WriteText);
 
 	}
 }

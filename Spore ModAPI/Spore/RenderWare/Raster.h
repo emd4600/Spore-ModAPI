@@ -77,6 +77,6 @@ namespace RenderWare
 
 	namespace Addresses(Raster)
 	{
-		DeclareAddress(Create, SelectAddress(0x11F22E0, , 0x11EFBB0));
+		DeclareAddress(Create);
 	};
 }

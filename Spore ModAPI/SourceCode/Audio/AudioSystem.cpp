@@ -1,3 +1,4 @@
+#ifndef MODAPI_DLL_EXPORT
 /****************************************************************************
 * Copyright (C) 2019 Eric Mor
 *
@@ -16,6 +17,7 @@
 * You should have received a copy of the GNU General Public License
 * along with this program.  If not, see <http://www.gnu.org/licenses/>.
 ****************************************************************************/
+
 #include <Spore\Audio\AudioSystem.h>
 
 namespace Audio
@@ -23,3 +25,5 @@ namespace Audio
 	auto_STATIC_METHOD_VOID(AudioSystem, PlayAudio, Args(uint32_t soundID, AudioSystem* system), Args(soundID, system));
 	auto_STATIC_METHOD_(AudioSystem, AudioSystem*, Get);
 }
+
+#endif

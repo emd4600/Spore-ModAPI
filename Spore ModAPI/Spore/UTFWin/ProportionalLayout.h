@@ -33,11 +33,6 @@ namespace UTFWin
 		ProportionalLayout();
 		virtual ~ProportionalLayout() {}
 
-		static inline ProportionalLayout* New() {
-			// __stdcall because it's cleanup by callee
-			return ((ProportionalLayout*(__stdcall*)(void*, void*)) SelectAddress(0x97EDE0, 0x97EB00, 0x97EB00))(nullptr, nullptr);
-		}
-
 		virtual int AddRef() override;
 		virtual int Release() override;
 		virtual void* Cast(uint32_t typeID) const override;
@@ -65,14 +60,14 @@ namespace UTFWin
 
 	namespace Addresses(ProportionalLayout)
 	{
-		DeclareAddress(Cast, SelectAddress(0x97EA40, 0x97E760, 0x97E760));
+		DeclareAddress(Cast);
 
-		DeclareAddress(SetSerializer, SelectAddress(0x97EDB0, 0x97EAD0, 0x97EAD0));
-		DeclareAddress(GetProxyID, SelectAddress(0x97EAB0, 0x97E7D0, 0x97E7D0));
+		DeclareAddress(SetSerializer);
+		DeclareAddress(GetProxyID);
 
-		DeclareAddress(ApplyLayout, SelectAddress(0x97ECC0, 0x97E9E0, 0x97E9E0));
-		DeclareAddress(RevertLayout, SelectAddress(0x97ED30, 0x97EA50, 0x97EA50));
+		DeclareAddress(ApplyLayout);
+		DeclareAddress(RevertLayout);
 
-		DeclareAddress(OnLayout, SelectAddress(0x97EAF0, 0x97E810, 0x97E810));
+		DeclareAddress(OnLayout);
 	}
 }

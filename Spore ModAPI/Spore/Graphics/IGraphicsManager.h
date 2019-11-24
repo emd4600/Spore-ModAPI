@@ -45,6 +45,6 @@ namespace Graphics
 	};
 
 	namespace Addresses(IGraphicsManager) {
-		//DeclareAddress(Get, SelectAddress(0x67DE60, , PLACEHOLDER));
+		//DeclareAddress(Get);
 	}
 }

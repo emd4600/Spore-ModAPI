@@ -34,7 +34,7 @@ namespace Simulator
 
 	namespace Addresses(cScanToolStrategy)
 	{
-		DeclareAddress(OnSelect, SelectAddress(0x1054B10, NO_ADDRESS, 0x1053F60));
-		DeclareAddress(OnHit, SelectAddress(0x105B400, NO_ADDRESS, 0x105A850));
+		DeclareAddress(OnSelect);
+		DeclareAddress(OnHit);
 	}
 }

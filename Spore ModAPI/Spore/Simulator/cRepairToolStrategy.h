@@ -36,9 +36,9 @@ namespace Simulator
 
 	namespace Addresses(cRepairToolStrategy)
 	{
-		DeclareAddress(Update, SelectAddress(0x1057810, NO_ADDRESS, 0x1056C80));
-		DeclareAddress(OnHit, SelectAddress(0x105BCF0, NO_ADDRESS, 0x105B140));
-		DeclareAddress(WhileFiring, SelectAddress(0x10577D0, NO_ADDRESS, 0x1056C40));
-		DeclareAddress(ProcessCost, SelectAddress(0x1054160, NO_ADDRESS, 0x10535F0));
+		DeclareAddress(Update);
+		DeclareAddress(OnHit);
+		DeclareAddress(WhileFiring);
+		DeclareAddress(ProcessCost);
 	}
 }

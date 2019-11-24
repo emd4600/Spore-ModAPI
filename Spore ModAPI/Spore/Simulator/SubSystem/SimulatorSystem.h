@@ -104,6 +104,6 @@ namespace Simulator
 
 	namespace Addresses(cSimulatorSystem)
 	{
-		DeclareAddress(Get, SelectAddress(0xB3D190, NO_ADDRESS, 0xB3D330));
+		DeclareAddress(Get);
 	}
 }

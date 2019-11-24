@@ -20,22 +20,18 @@
 #include <Spore\Internal.h>
 #include <memory>
 
-#define SPORE_ALLOCATOR_ADDRESS Address(SelectAddress(0x16CCDC4, 0x16C9B24, 0x16C8B44))
-#define ADDRESS_SPORE_NEW Address(SelectAddress(0xF47650, 0xF47240, 0xF47240))
-#define ADDRESS_SPORE_DELETE Address(SelectAddress(0xF47630, 0xF47220, 0xF47220))
-
 // EASTL expects us to define these, see allocator.h line 194
 void* operator new[](size_t size, const char* pName,
 	int flags, unsigned debugFlags,
 	const char* file, int line) {
 
-	if (*(uint32_t*)SPORE_ALLOCATOR_ADDRESS == NULL)
+	if (*(uint32_t*)GetAddress(Internal, Allocator_ptr) == NULL)
 	{
 		return malloc(size);
 	}
 	else
 	{
-		return ((void*(*)(size_t, const char*, int, unsigned, const char*, int)) ADDRESS_SPORE_NEW)(size, pName, flags, debugFlags, file, line);
+		return ((void*(*)(size_t, const char*, int, unsigned, const char*, int)) GetAddress(Internal, new_))(size, pName, flags, debugFlags, file, line);
 	}
 }
 void* operator new[](size_t size, size_t alignment,
@@ -43,25 +39,25 @@ void* operator new[](size_t size, size_t alignment,
 	int flags, unsigned debugFlags,
 	const char* file, int line) {
 
-	if (*(uint32_t*)SPORE_ALLOCATOR_ADDRESS == NULL)
+	if (*(uint32_t*)GetAddress(Internal, Allocator_ptr) == NULL)
 	{
 		return malloc(size);
 	}
 	else
 	{
-		return ((void*(*)(size_t, const char*, int, unsigned, const char*, int)) ADDRESS_SPORE_NEW)(size, pName, flags, debugFlags, file, line);
+		return ((void*(*)(size_t, const char*, int, unsigned, const char*, int)) GetAddress(Internal, new_))(size, pName, flags, debugFlags, file, line);
 	}
 }
 
 void operator delete[](void* p) {
 
-	if (*(uint32_t*)SPORE_ALLOCATOR_ADDRESS == NULL)
+	if (*(uint32_t*)GetAddress(Internal, Allocator_ptr) == NULL)
 	{
 		free(p);
 	}
 	else
 	{
-		((void(*)(void*)) ADDRESS_SPORE_DELETE)(p);
+		((void(*)(void*)) GetAddress(Internal, delete_))(p);
 	}
 }
 

@@ -84,7 +84,7 @@ namespace ArgScript
 
 	namespace Addresses(IBlock)
 	{
-		DeclareAddress(AddParser, SelectAddress(0x83D600, 0x83CC90, 0x83CD00));
-		DeclareAddress(GetParser, SelectAddress(0x83D3D0, 0x83CA60, 0x83CAD0));
+		DeclareAddress(AddParser);
+		DeclareAddress(GetParser);
 	}
 }

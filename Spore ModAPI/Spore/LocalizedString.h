@@ -68,6 +68,10 @@ static_assert(sizeof(LocalizedString) == 0x14, "sizeof(LocalizedString) != 14h")
 
 namespace Addresses(LocalizedString)
 {
-	DeclareAddress(GetText, SelectAddress(0x6B5890, 0x6B5550, 0x6B5550));
-	DeclareAddress(SetText, SelectAddress(0x6B5780, 0x6B5440, 0x6B5440));
+	DeclareAddress(GetText);
+	DeclareAddress(SetText);
+
+	DeclareAddress(ctor_0);
+	DeclareAddress(ctor_1);
+	DeclareAddress(dtor);
 }

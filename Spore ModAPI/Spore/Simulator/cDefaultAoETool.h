@@ -39,12 +39,12 @@ namespace Simulator
 
 	namespace Addresses(cDefaultAoETool)
 	{
-		DeclareAddress(OnMouseDown, SelectAddress(0x1053AF0, NO_ADDRESS, 0x1052F90));
-		DeclareAddress(OnHit, SelectAddress(0x105AC70, NO_ADDRESS, 0x105B660));
-		DeclareAddress(WhileFiring, SelectAddress(0x10576B0, NO_ADDRESS, 0x1056B20));
-		DeclareAddress(OnMouseUp, SelectAddress(0x1054A40, NO_ADDRESS, 0x1053E90));
+		DeclareAddress(OnMouseDown);
+		DeclareAddress(OnHit);
+		DeclareAddress(WhileFiring);
+		DeclareAddress(OnMouseUp);
 
-		DeclareAddress(func48h, SelectAddress(0x1055BA0, NO_ADDRESS, 0x1054FF0));
-		DeclareAddress(func4Ch, SelectAddress(0x1054A80, NO_ADDRESS, 0x1053ED0));
+		DeclareAddress(func48h);
+		DeclareAddress(func4Ch);
 	}
 }

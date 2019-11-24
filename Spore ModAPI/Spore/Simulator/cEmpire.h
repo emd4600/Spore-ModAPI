@@ -125,13 +125,13 @@ namespace Simulator
 
 	namespace Addresses(cEmpire)
 	{
-		DeclareAddress(SetSpeciesProfile, SelectAddress(0xC32FB0, 0xC337D0, 0xC337F0));
-		DeclareAddress(sub_C32EA0, SelectAddress(0xC32EA0, 0xC336C0, 0xC336E0));
+		DeclareAddress(SetSpeciesProfile);
+		DeclareAddress(sub_C32EA0);
 	}
 
 }
 
 namespace Addresses(Simulator)
 {
-	DeclareAddress(GetArchetypeRelationshipsID, SelectAddress(0xC30530, NO_ADDRESS, 0xC30E20));
+	DeclareAddress(GetArchetypeRelationshipsID);
 }

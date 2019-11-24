@@ -1,3 +1,4 @@
+#ifndef MODAPI_DLL_EXPORT
 /****************************************************************************
 * Copyright (C) 2018 Eric Mor
 *
@@ -34,7 +35,7 @@ namespace UTFWin
 
 	void* UTFWinObject::operator new(size_t n, size_t align, const char* pName, ICoreAllocator* pAllocator)
 	{
-		return STATIC_CALL(Address(SelectAddress(0x951760, 0x951230, 0x951230)), void*,
+		return STATIC_CALL(GetAddress(UTFWinObject, new_), void*,
 			Args(size_t n, size_t align, const char* pName, ICoreAllocator* pAllocator), Args(n, align, pName, pAllocator));
 	}
 
@@ -45,9 +46,10 @@ namespace UTFWin
 
 	void UTFWinObject::operator delete(void* p)
 	{
-		STATIC_CALL(Address(SelectAddress(0x9517C0, 0x951290, 0x951290)), void, Args(void* p), Args(p));
+		STATIC_CALL(GetAddress(UTFWinObject, delete_), void, Args(void* p), Args(p));
 	}
 
 
 	//////////////////////////
 }
+#endif

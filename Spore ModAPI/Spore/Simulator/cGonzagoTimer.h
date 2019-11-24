@@ -61,6 +61,6 @@ namespace Simulator
 	static_assert(sizeof(cGonzagoTimer) == 0x20, "sizeof(cGonzagoTimer) != 20h");
 
 	namespace Addresses(cGonzagoTimer) {
-		DeclareAddress(GetSimulatorTime_ptr, SelectAddress(0xB63580,, 0xB63980));
+		DeclareAddress(GetSimulatorTime_ptr);
 	}
 }

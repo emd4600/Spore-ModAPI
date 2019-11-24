@@ -70,7 +70,7 @@ namespace Resource
 	///////////////////////////////////
 
 	namespace Addresses(StandardFileFilter) {
-		DeclareAddress(IsValid, SelectAddress(0x404F10, 0x404F10, 0x404F10));
+		DeclareAddress(IsValid);
 	}
 
 	inline auto_METHOD(StandardFileFilter, bool, IsValid, Args(const ResourceKey& name), Args(name));

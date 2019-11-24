@@ -126,6 +126,6 @@ namespace Graphics
 
 	namespace Addresses(IModelManager)
 	{
-		DeclareAddress(Get, SelectAddress(0x67DEA0, 0x67DD40, 0x67DD40));
+		DeclareAddress(Get);
 	}
 }

@@ -1,3 +1,4 @@
+#ifndef MODAPI_DLL_EXPORT
 /****************************************************************************
 * Copyright (C) 2018 Eric Mor
 *
@@ -174,3 +175,4 @@ int MultithreadObject::Release()
 	}
 	return refCount;
 }
+#endif

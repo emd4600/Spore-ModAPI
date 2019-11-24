@@ -138,14 +138,13 @@ namespace App
 	{
 		ArgScript::PrintF(GetConsoleStream(), str, args...);
 	}
-}
 
-
-/////////////////////////////////
+	/////////////////////////////////
 //// INTERNAL IMPLEMENTATION ////
 /////////////////////////////////
 
-namespace Addresses(ICheatManager)
-{
-	DeclareAddress(Get, SelectAddress(0x67DF40, 0x67DDE0, 0x67DDE0));
+	namespace Addresses(ICheatManager)
+	{
+		DeclareAddress(Get);
+	}
 }

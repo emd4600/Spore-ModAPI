@@ -1,3 +1,4 @@
+#ifndef MODAPI_DLL_EXPORT
 /****************************************************************************
 * Copyright (C) 2019 Eric Mor
 *
@@ -24,3 +25,4 @@ namespace Editors
 
 	auto_STATIC_METHOD_(cSpeciesManager, cSpeciesManager*, Get);
 }
+#endif

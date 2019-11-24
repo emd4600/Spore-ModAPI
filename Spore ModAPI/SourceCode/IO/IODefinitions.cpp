@@ -1,3 +1,4 @@
+#ifndef MODAPI_DLL_EXPORT
 /****************************************************************************
 * Copyright (C) 2018 Eric Mor
 *
@@ -42,7 +43,7 @@ namespace IO
 
 	void* EAIOZoneObject::operator new(size_t n, ICoreAllocator* pAllocator, const char* pName)
 	{
-		return STATIC_CALL(Address(SelectAddress(0x9264E0, 0x926270, 0x926270)), void*, 
+		return STATIC_CALL(GetAddress(EAIOZoneObject, new_), void*,
 			Args(size_t n, ICoreAllocator* pAllocator, const char* pName), Args(n, pAllocator, pName));
 	}
 
@@ -58,7 +59,7 @@ namespace IO
 
 	void EAIOZoneObject::operator delete(void* p, ICoreAllocator* pAllocator, const char* pName)
 	{
-		STATIC_CALL(Address(SelectAddress(0x926560, 0x9262F0, 0x9262F0)), void, Args(void* p), Args(p));
+		STATIC_CALL(GetAddress(EAIOZoneObject, delete_), void, Args(void* p), Args(p));
 	}
 
 	//////////////////////////
@@ -477,3 +478,4 @@ namespace Resource
 
 
 }
+#endif

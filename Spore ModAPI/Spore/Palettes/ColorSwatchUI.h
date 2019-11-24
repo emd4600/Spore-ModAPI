@@ -160,13 +160,13 @@ namespace Palettes
 
 	namespace Addresses(ColorSwatchUI)
 	{
-		DeclareAddress(Load, SelectAddress(0x5A4F00, 0x5A51B0, 0x5A51B0));
-		DeclareAddress(SetArea, SelectAddress(0x5A4230, 0x5A44F0, 0x5A44F0));
-		DeclareAddress(GenerateExpansionArea, SelectAddress(0x5A46C0, 0x5A4980, 0x5A4980));
-		DeclareAddress(AddTooltip, SelectAddress(0x5A43B0, 0x5A4670, 0x5A4670));
-		DeclareAddress(Update, SelectAddress(0x5A6260, 0x5A63C0, 0x5A63C0));
-		DeclareAddress(Destroy, SelectAddress(0x5A5C40, , 0x5A5DA0));
+		DeclareAddress(Load);
+		DeclareAddress(SetArea);
+		DeclareAddress(GenerateExpansionArea);
+		DeclareAddress(AddTooltip);
+		DeclareAddress(Update);
+		DeclareAddress(Destroy);
 
-		DeclareAddress(HandleUIMessage, SelectAddress(0x5A58B0, 0x5A5B60, 0x5A5B60));
+		DeclareAddress(HandleUIMessage);
 	}
 }

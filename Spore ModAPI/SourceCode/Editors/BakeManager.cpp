@@ -1,3 +1,4 @@
+#ifndef MODAPI_DLL_EXPORT
 /****************************************************************************
 * Copyright (C) 2018 Eric Mor
 *
@@ -23,3 +24,4 @@ namespace Editors
 {
 	auto_STATIC_METHOD_(BakeManager, BakeManager*, Get);
 }
+#endif

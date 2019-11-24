@@ -1,3 +1,4 @@
+#ifndef MODAPI_DLL_EXPORT
 /****************************************************************************
 * Copyright (C) 2018 Eric Mor
 *
@@ -22,3 +23,4 @@
 auto_STATIC_METHOD(ResourceKey, bool, Parse,
 	Args(ResourceKey& dst, const wchar_t* pString, uint32_t nDefaultTypeID, uint32_t nDefaultGroupID),
 	Args(dst, pString, nDefaultTypeID, nDefaultGroupID));
+#endif

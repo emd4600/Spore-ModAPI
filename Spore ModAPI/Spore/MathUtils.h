@@ -25,11 +25,11 @@
 
 namespace Addresses(Math)
 {
-	DeclareAddress(MultiplyVectorScalar, SelectAddress(0x41DB70, 0x41DC60, 0x41DC60));
-	DeclareAddress(EulerToMatrix, SelectAddress(0x453AD0, 0x453DF0, 0x453DF0));
-	DeclareAddress(MatrixToEuler, SelectAddress(0x6A3BA0, 0x6A3920, 0x6A3920));
+	DeclareAddress(MultiplyVectorScalar);
+	DeclareAddress(EulerToMatrix);
+	DeclareAddress(MatrixToEuler);
 
-	DeclareAddress(RandomNumberGenerator_ptr, SelectAddress(0x16059E8, NO_ADDRESS, 0x1601760));
+	DeclareAddress(RandomNumberGenerator_ptr);
 }
 
 class Transform;
@@ -98,7 +98,7 @@ namespace Math
 		Vector2();
 
 		inline float length() const {
-			sqrtf(x*x + y*y);
+			return sqrtf(x*x + y*y);
 		}
 	};
 
@@ -376,7 +376,7 @@ namespace Math
 	};
 
 	namespace Addresses(BoundingBox) {
-		DeclareAddress(ApplyTransform, SelectAddress(0x409D30,, 0x409DD0));
+		DeclareAddress(ApplyTransform);
 	}
 
 	///
@@ -425,6 +425,6 @@ namespace Math
 	}
 
 	namespace Addresses(RandomNumberGenerator) {
-		DeclareAddress(GenerateRandomInt, SelectAddress(0xA68FA0, NO_ADDRESS, 0xA68F70));
+		DeclareAddress(GenerateRandomInt);
 	}
 };

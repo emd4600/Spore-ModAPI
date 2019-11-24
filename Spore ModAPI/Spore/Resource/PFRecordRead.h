@@ -107,28 +107,28 @@ namespace Resource
 
 	namespace Addresses(PFRecordRead)
 	{
-		DeclareAddress(GetName, SelectAddress(0x6C07B0, 0x8DCA90, 0x8DCAA0));
-		DeclareAddress(SetName, SelectAddress(0x8DCCC0, 0x6B4250, 0x6B4250));
-		DeclareAddress(GetStream, SelectAddress(0x6C07C0, 0x8DC640, 0x8DC650));
-		DeclareAddress(GetParentDBPF, SelectAddress(0xFC8510, 0x6C0230, 0x6C0230));
-		DeclareAddress(Open, SelectAddress(0x8DCFD0, 0x6C0810, 0x8DCD60));
-		DeclareAddress(Close, SelectAddress(0x8DCFF0, 0x6C0830, 0x8DCD80));
-		DeclareAddress(func28h, SelectAddress(0x8DCF80, 0x6C07C0, 0x8DCD10));
+		DeclareAddress(GetName);
+		DeclareAddress(SetName);
+		DeclareAddress(GetStream);
+		DeclareAddress(GetParentDBPF);
+		DeclareAddress(Open);
+		DeclareAddress(Close);
+		DeclareAddress(func28h);
 
-		DeclareAddress(GetType, SelectAddress(0x8DC8A0, 0x6C0240, 0x8DC670));
-		DeclareAddress(GetAccessFlags, SelectAddress(0x8DCCF0, 0x8DC670, 0x8DC680));
-		DeclareAddress(GetState, SelectAddress(0x1065680, 0xE31100, 0xE310C0));
-		// DeclareAddress(REMOVE_THIS_Close, SelectAddress(0x6C07D0, 0x8DC650, 0x8DC660));
-		DeclareAddress(GetSize, SelectAddress(0x113BA60, 0xBB9C20, 0x113AE80));
-		DeclareAddress(SetSize, SelectAddress(0x101B0F0, 0xDDE980, 0xDDE930));
-		DeclareAddress(GetPosition, SelectAddress(0x8DC8B0, 0x6C0250, 0x8DC690));
-		DeclareAddress(SetPosition, SelectAddress(0x8DD030, 0x6C0870, 0x8DCDC0));
-		DeclareAddress(GetAvailable, SelectAddress(0x8DC8F0, 0x6C0290, 0x8DC6D0));
-		DeclareAddress(Read, SelectAddress(0x8DD0F0, 0x6C0930, 0x8DCE80));
-		DeclareAddress(Flush, SelectAddress(0xA37650, 0xB1FB00, 0xB1FB30));
-		DeclareAddress(Write, SelectAddress(0x951320, 0x950E00, 0x950E00));
+		DeclareAddress(GetType);
+		DeclareAddress(GetAccessFlags);
+		DeclareAddress(GetState);
+		// DeclareAddress(REMOVE_THIS_Close);
+		DeclareAddress(GetSize);
+		DeclareAddress(SetSize);
+		DeclareAddress(GetPosition);
+		DeclareAddress(SetPosition);
+		DeclareAddress(GetAvailable);
+		DeclareAddress(Read);
+		DeclareAddress(Flush);
+		DeclareAddress(Write);
 
 
-		DeclareAddress(ReadData, SelectAddress(0x8DCA40, 0x6C03F0, 0x8DC820));
+		DeclareAddress(ReadData);
 	}
 }

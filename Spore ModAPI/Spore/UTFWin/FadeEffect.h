@@ -48,9 +48,9 @@ namespace UTFWin
 
 	namespace Addresses(FadeEffect)
 	{
-		DeclareAddress(SetSerializer, SelectAddress(0x964000, 0x963CA0, 0x963CA0));
-		DeclareAddress(GetProxyID, SelectAddress(0x96F3C0, 0x96F020, 0x96F020));
+		DeclareAddress(SetSerializer);
+		DeclareAddress(GetProxyID);
 
-		DeclareAddress(func84h, SelectAddress(0x96F380, 0x96EFE0, 0x96EFE0));
+		DeclareAddress(func84h);
 	}
 };

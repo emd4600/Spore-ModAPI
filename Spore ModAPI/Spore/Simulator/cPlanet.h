@@ -76,6 +76,6 @@ namespace Simulator
 	static_assert(sizeof(cPlanet) == 0x1C8, "sizeof(cPlanet) != 1C8h");
 
 	namespace Addresses(cPlanet) {
-		DeclareAddress(GetTemperatureScore, SelectAddress(0xC6FD80, NO_ADDRESS, 0xC70BC0));
+		DeclareAddress(GetTemperatureScore);
 	}
 }

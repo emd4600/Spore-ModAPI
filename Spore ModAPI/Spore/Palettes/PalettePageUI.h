@@ -97,7 +97,7 @@ namespace Palettes
 
 	namespace Addresses(PalettePageUI)
 	{
-		DeclareAddress(Load, SelectAddress(0x5C9020, 0x5C92F0, 0x5C9320));
-		DeclareAddress(GetItemArea, SelectAddress(0x5C8CD0, 0x5C8E30, 0x5C8E60));
+		DeclareAddress(Load);
+		DeclareAddress(GetItemArea);
 	}
 }

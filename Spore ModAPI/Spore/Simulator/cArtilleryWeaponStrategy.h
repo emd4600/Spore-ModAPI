@@ -34,7 +34,7 @@ namespace Simulator
 
 	namespace Addresses(cArtilleryWeaponStrategy)
 	{
-		DeclareAddress(OnHit, SelectAddress(0x105C870, NO_ADDRESS, 0x105BCD0));
-		DeclareAddress(WhileFiring, SelectAddress(0x10588C0, NO_ADDRESS, 0x1057D20));
+		DeclareAddress(OnHit);
+		DeclareAddress(WhileFiring);
 	}
 }

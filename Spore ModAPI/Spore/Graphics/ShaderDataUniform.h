@@ -23,3 +23,9 @@ namespace Graphics
 		int flags;
 	};
 }
+
+namespace Addresses(Graphics)
+{
+	DeclareAddress(VertexShaderDataUniforms_ptr);
+	DeclareAddress(PixelShaderDataUniforms_ptr);
+}

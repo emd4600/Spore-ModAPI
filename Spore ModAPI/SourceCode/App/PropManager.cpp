@@ -1,3 +1,4 @@
+#ifndef MODAPI_DLL_EXPORT
 /****************************************************************************
 * Copyright (C) 2018 Eric Mor
 *
@@ -86,3 +87,4 @@ namespace App
 	auto_METHOD_VIRTUAL_const(cPropManager, IPropManager, bool, GetPropertyGroupIDAt, Args(size_t nIndex, uint32_t& dst), Args(nIndex, dst));
 
 }
+#endif

@@ -91,11 +91,11 @@ namespace RenderWare
 
 	namespace Addresses(Mesh)
 	{
-		DeclareAddress(CalculateTriangleCount, SelectAddress(0x011FBD30, 0x011F95F0, 0x011F95F0));
-		DeclareAddress(SetIndexBuffer, SelectAddress(0x011FBE50, 0x011F9710, 0x011F9710));
-		DeclareAddress(SetIndicesCount, SelectAddress(0x011FBE20, 0x011F96E0, 0x011F96E0));
-		DeclareAddress(SetVertexBuffer, SelectAddress(0x011FBDE0, 0x011F96A0, 0x011F96A0));
-		DeclareAddress(Render, SelectAddress(0x011FBE80, 0x011F9740, 0x011F9740));
+		DeclareAddress(CalculateTriangleCount);
+		DeclareAddress(SetIndexBuffer);
+		DeclareAddress(SetIndicesCount);
+		DeclareAddress(SetVertexBuffer);
+		DeclareAddress(Render);
 	}
 
 	template <int kNumBuffers>

@@ -1,3 +1,4 @@
+#ifndef MODAPI_DLL_EXPORT
 /****************************************************************************
 * Copyright (C) 2018 Eric Mor
 *
@@ -55,3 +56,4 @@ namespace Graphics
 
 	auto_STATIC_METHOD_VOID(Renderer, SetTexture, Args(int slotIndex, RenderWare::Raster* raster), Args(slotIndex, raster));
 }
+#endif

@@ -458,11 +458,10 @@ namespace ArgScript
 
 	typedef void* (*PrintF_ptr)(FormatParser* object, const char* str, ...);
 
-	// this will be defined in ModAPI\MainUtilities.cpp
 	///
 	/// A function that prints a formatted text into an ArgScript stream. This uses the same format as the C printf function.
 	///
-	extern PrintF_ptr PrintF;
+	extern MODAPI PrintF_ptr PrintF;
 
 	///
 	/// Creates a new ArgScript stream, which is an instance of FormatParser. 
@@ -476,67 +475,66 @@ namespace ArgScript
 
 	static_assert(sizeof(FormatParser) == 0x1C0, "sizeof(FormatParser) != 1C0h");
 
-	namespace Addresses(ArgScript)
-	{
-		DeclareAddress(CreateStream, SelectAddress(0x841190, 0x840920, 0x8409A0));
-	}
-
 	namespace Addresses(FormatParser)
 	{
-		// DeclareAddress(ReplaceVariables, SelectAddress(0x843F10, , ));
+		// DeclareAddress(ReplaceVariables);
 
-		DeclareAddress(AddRef, SelectAddress(0x83D030, 0x83F620, 0x83F6A0));
-		DeclareAddress(Release, SelectAddress(0x841A80, 0x841210, 0x841290));
-		DeclareAddress(Initialize, SelectAddress(0x845FB0, 0x845710, 0x845790));
-		DeclareAddress(Dispose, SelectAddress(0x847680, 0x846DE0, 0x846E60));
-		DeclareAddress(SetData, SelectAddress(0x841AC0, 0xA6FE50, 0xA6FE70));
-		DeclareAddress(AddParser, SelectAddress(0x8468D0, 0x846030, 0x8460B0));
-		DeclareAddress(RemoveParser, SelectAddress(0x8469C0, 0x846120, 0x8461A0));
-		DeclareAddress(RemoveParserByObject, SelectAddress(0x846940, 0x8460A0, 0x846120));
-		DeclareAddress(GetParser, SelectAddress(0x8434D0, 0x842C40, 0x842CC0));
-		DeclareAddress(SetFlag, SelectAddress(0x841D50, 0x8414C0, 0x841540));
-		DeclareAddress(SetVersionRange, SelectAddress(0x841AD0, 0x841250, 0x8412D0));
-		DeclareAddress(GetVersion, SelectAddress(0x804E30, 0xFF3480, 0xFF3480));
-		DeclareAddress(func30h, SelectAddress(0x8477E0, 0x846F40, 0x846FC0));
-		DeclareAddress(Close, SelectAddress(0x845780, 0x844EF0, 0x844F70));
-		DeclareAddress(ProcessFile, SelectAddress(0x843520, 0x842C90, 0x842D10));
-		DeclareAddress(ProcessStream, SelectAddress(0x843810, 0x842F80, 0x843000));
-		DeclareAddress(ProcessLine, SelectAddress(0x844990, 0x844100, 0x844180));
-		DeclareAddress(CreateDefinition, SelectAddress(0x845870, 0x844FE0, 0x845060));
-		DeclareAddress(ProcessFileSafe, SelectAddress(0x841AF0, 0x841270, 0x8412F0));
-		DeclareAddress(ProcessStreamSafe, SelectAddress(0x841B60, 0x8412E0, 0x841360));
-		DeclareAddress(ProcessLineSafe, SelectAddress(0x841BD0, 0x841350, 0x8413D0));
-		DeclareAddress(CreateDefinitionSafe, SelectAddress(0x841C40, 0x8413C0, 0x841440));
-		DeclareAddress(func58h, SelectAddress(0xC6FF70, 0x8414F0, 0x841570));
-		DeclareAddress(func5Ch, SelectAddress(0x841D80, 0x841500, 0x841580));
-		DeclareAddress(func60h, SelectAddress(0x843B00, 0x843270, 0x8432F0));
-		DeclareAddress(HasParser, SelectAddress(0x843B40, 0x8432B0, 0x843330));
-		DeclareAddress(HasDefinition, SelectAddress(0x843B90, 0x843300, 0x843380));
-		DeclareAddress(SetVariable, SelectAddress(0x8473D0, 0x846B30, 0x846BB0));
-		DeclareAddress(GetVariable, SelectAddress(0x843BE0, 0x843350, 0x8433D0));
-		DeclareAddress(SetGlobalVariable, SelectAddress(0x846B50, 0x8462B0, 0x846330));
-		DeclareAddress(func78h, SelectAddress(0x841DB0, 0x841530, 0x8415B0));
-		DeclareAddress(StartScope, SelectAddress(0x845B20, 0x845290, 0x845310));
-		DeclareAddress(EndScope, SelectAddress(0x842550, 0x841CC0, 0x841D40));
-		DeclareAddress(PurgeScope, SelectAddress(0x846CF0, 0x846450, 0x8464D0));
-		DeclareAddress(GetCurrentScope, SelectAddress(0x841DF0, 0xD1DCD0, 0xD1DCD0));
-		DeclareAddress(AddBlock, SelectAddress(0x845BA0, 0x845310, 0x845390));
-		DeclareAddress(AddSpecialBlock, SelectAddress(0x845BE0, 0x845350, 0x8453D0));
-		DeclareAddress(ParseBool, SelectAddress(0x841CB0, 0x841430, 0x8414B0));
-		DeclareAddress(ParseFloat, SelectAddress(0x841CC0, 0x841440, 0x8414C0));
-		DeclareAddress(ParseInt, SelectAddress(0x841CD0, 0x841450, 0x8414D0));
-		DeclareAddress(ParseUInt, SelectAddress(0x841CD0, 0x841450, 0x8414D0));
-		DeclareAddress(ParseVector2, SelectAddress(0x841E00, 0x841570, 0x8415F0));
-		DeclareAddress(ParseVector3, SelectAddress(0x841E50, 0x8415C0, 0x841640));
-		DeclareAddress(ParseVector4, SelectAddress(0x841ED0, 0x841640, 0x8416C0));
-		DeclareAddress(ParseColorRGB, SelectAddress(0x841E50, 0x8415C0, 0x841640));
-		DeclareAddress(ParseColorRGBA, SelectAddress(0x841F70, 0x8416E0, 0x841760));
-		DeclareAddress(GetLexer, SelectAddress(0x94EBD0, 0xFF3A50, 0xFF3A50));
-		DeclareAddress(SetTraceStream, SelectAddress(0x842000, 0x841770, 0x8417F0));
-		DeclareAddress(funcC0h, SelectAddress(0x842040, 0x8417B0, 0x841830));
-		DeclareAddress(GetTraceStream, SelectAddress(0x8D88F0, 0xFF02D0, 0xFF02D0));
-		DeclareAddress(funcC8h, SelectAddress(0xFC8510, 0x6C0230, 0x6C0230));
-
+		DeclareAddress(AddRef);
+		DeclareAddress(Release);
+		DeclareAddress(Initialize);
+		DeclareAddress(Dispose);
+		DeclareAddress(SetData);
+		DeclareAddress(AddParser);
+		DeclareAddress(RemoveParser);
+		DeclareAddress(RemoveParserByObject);
+		DeclareAddress(GetParser);
+		DeclareAddress(SetFlag);
+		DeclareAddress(SetVersionRange);
+		DeclareAddress(GetVersion);
+		DeclareAddress(func30h);
+		DeclareAddress(Close);
+		DeclareAddress(ProcessFile);
+		DeclareAddress(ProcessStream);
+		DeclareAddress(ProcessLine);
+		DeclareAddress(CreateDefinition);
+		DeclareAddress(ProcessFileSafe);
+		DeclareAddress(ProcessStreamSafe);
+		DeclareAddress(ProcessLineSafe);
+		DeclareAddress(CreateDefinitionSafe);
+		DeclareAddress(func58h);
+		DeclareAddress(func5Ch);
+		DeclareAddress(func60h);
+		DeclareAddress(HasParser);
+		DeclareAddress(HasDefinition);
+		DeclareAddress(SetVariable);
+		DeclareAddress(GetVariable);
+		DeclareAddress(SetGlobalVariable);
+		DeclareAddress(func78h);
+		DeclareAddress(StartScope);
+		DeclareAddress(EndScope);
+		DeclareAddress(PurgeScope);
+		DeclareAddress(GetCurrentScope);
+		DeclareAddress(AddBlock);
+		DeclareAddress(AddSpecialBlock);
+		DeclareAddress(ParseBool);
+		DeclareAddress(ParseFloat);
+		DeclareAddress(ParseInt);
+		DeclareAddress(ParseUInt);
+		DeclareAddress(ParseVector2);
+		DeclareAddress(ParseVector3);
+		DeclareAddress(ParseVector4);
+		DeclareAddress(ParseColorRGB);
+		DeclareAddress(ParseColorRGBA);
+		DeclareAddress(GetLexer);
+		DeclareAddress(SetTraceStream);
+		DeclareAddress(funcC0h);
+		DeclareAddress(GetTraceStream);
+		DeclareAddress(funcC8h);
 	}
+}
+
+namespace Addresses(ArgScript)
+{
+	DeclareAddress(CreateStream);
 }
 

@@ -123,21 +123,21 @@ namespace App
 
 	namespace Addresses(cViewer)
 	{
-		DeclareAddress(SetViewTransform, SelectAddress(0x7C53A0, 0x7C4D70, 0x7C4DD0));
-		DeclareAddress(GetViewTransform, SelectAddress(0x7C4790,, 0x7C41C0));
-		DeclareAddress(Initialize, SelectAddress(0x7C5470, 0x7C4E40, 0x7C4EA0));
-		DeclareAddress(ClearScene, SelectAddress(0x7C42F0, 0x7C3CC0, 0x7C3D20));
-		DeclareAddress(LoadTransformations, SelectAddress(0x7C5650, 0x7C5020, 0x7C5080));
-		DeclareAddress(SetBackgroundColor, SelectAddress(0x7C42C0, 0x7C3C90, 0x7C3CF0));
-		DeclareAddress(GetNearPlane, SelectAddress(0x7C4330, 0x7C3D00, 0x7C3D60));
-		DeclareAddress(GetFarPlane, SelectAddress(0x7C4340, 0x7C3D10, 0x7C3D70));
-		DeclareAddress(SetNearPlane, SelectAddress(0x7C5240, 0x7C4C10, 0x7C4C70));
-		DeclareAddress(SetFarPlane, SelectAddress(0x7C5260, 0x7C4C30, 0x7C4C90));
-		DeclareAddress(SetAspectRatio, SelectAddress(0x7C51F0, 0x7C4BC0, 0x7C4C20));
-		DeclareAddress(SetCameraMaterialLODs, SelectAddress(0x7C43A0, 0x7C3D70, 0x7C3DD0));
-		DeclareAddress(GetCameraMaterialLODs, SelectAddress(0x7C4B80,, 0x7C45B0));
-		DeclareAddress(SetRenderType, SelectAddress(0x7C4380, 0x7C3D50, 0x7C3DB0));
-		DeclareAddress(GetCameraToMouse, SelectAddress(0x7C4FA0, 0x7C4970, 0x7C49D0));
-		DeclareAddress(GetCameraToPoint, SelectAddress(0x7C4FA0, 0x7C47A0, 0x7C4800));
+		DeclareAddress(SetViewTransform);
+		DeclareAddress(GetViewTransform);
+		DeclareAddress(Initialize);
+		DeclareAddress(ClearScene);
+		DeclareAddress(LoadTransformations);
+		DeclareAddress(SetBackgroundColor);
+		DeclareAddress(GetNearPlane);
+		DeclareAddress(GetFarPlane);
+		DeclareAddress(SetNearPlane);
+		DeclareAddress(SetFarPlane);
+		DeclareAddress(SetAspectRatio);
+		DeclareAddress(SetCameraMaterialLODs);
+		DeclareAddress(GetCameraMaterialLODs);
+		DeclareAddress(SetRenderType);
+		DeclareAddress(GetCameraToMouse);
+		DeclareAddress(GetCameraToPoint);
 	}
 }

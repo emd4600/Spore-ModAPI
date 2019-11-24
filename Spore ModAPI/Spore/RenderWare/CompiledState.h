@@ -77,14 +77,14 @@ namespace RenderWare
 
 	namespace Addresses(TextureSlot)
 	{
-		DeclareAddress(SetTexture, SelectAddress(0x00FC2ED0, 0x00FC27A0, 0x00FC27A0));
+		DeclareAddress(SetTexture);
 	}
 
 	namespace Addresses(CompiledState)
 	{
-		DeclareAddress(Load, SelectAddress(0x011F0D00, 0x011EE5D0, 0x011EE5D0));
-		DeclareAddress(GetRaster, SelectAddress(0x011F0FF0, 0x011EE8C0, 0x11EE8C0));
-		DeclareAddress(SetRaster, SelectAddress(0x011F0E30, 0x011EE700, 0x011EE700));
+		DeclareAddress(Load);
+		DeclareAddress(GetRaster);
+		DeclareAddress(SetRaster);
 	}
 
 	inline auto_METHOD_VOID_(CompiledState, Load);

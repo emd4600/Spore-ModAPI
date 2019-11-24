@@ -84,14 +84,14 @@ namespace UTFWin
 
 	namespace Addresses(SporeStdDrawable)
 	{
-		DeclareAddress(Paint, SelectAddress(0x8320F0, 0x831870, 0x8318F0));
-		DeclareAddress(IsColliding, SelectAddress(0x831EA0, 0x831620, 0x8316A0));
-		DeclareAddress(GetDimensions, SelectAddress(0x831E10, 0x831590, 0x831610));
-		DeclareAddress(UseCollision, SelectAddress(0x988640, 0x9882F0, 0x9882F0));
-		DeclareAddress(GetScale, SelectAddress(0x8313F0, 0x830B70, 0x830BF0));
+		DeclareAddress(Paint);
+		DeclareAddress(IsColliding);
+		DeclareAddress(GetDimensions);
+		DeclareAddress(UseCollision);
+		DeclareAddress(GetScale);
 
-		DeclareAddress(SetSerializer, SelectAddress(0x831200, 0x830970, 0x8309F0));
-		DeclareAddress(GetProxyID, SelectAddress(0x831360, 0x830AE0, 0x830B60));
+		DeclareAddress(SetSerializer);
+		DeclareAddress(GetProxyID);
 	}
 
 	inline bool SporeStdDrawable::GetImageInfo(int stateIndex, SporeStdDrawableImageInfo*& dst) const

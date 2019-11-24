@@ -59,6 +59,6 @@ namespace UI
 	static_assert(sizeof(cLayerManager) == 0x98, "sizeof() != 98h");
 
 	namespace Addresses(cLayerManager) {
-		DeclareAddress(Get, SelectAddress(0x67CC20,, 0x67CA90));
+		DeclareAddress(Get);
 	}
 }

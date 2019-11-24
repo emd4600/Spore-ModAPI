@@ -35,7 +35,7 @@
 
 namespace Addresses(Simulator)
 {
-	DeclareAddress(LightingWorld_ptr, SelectAddress(0x1682CD4, NO_ADDRESS, 0x167EA54));
+	DeclareAddress(LightingWorld_ptr);
 }
 
 namespace Simulator
@@ -122,6 +122,6 @@ namespace Simulator
 
 	namespace Addresses(cGameViewManager)
 	{
-		DeclareAddress(Get, SelectAddress(0xB3D1A0, 0xB3D310, 0xB3D340));
+		DeclareAddress(Get);
 	}
 }

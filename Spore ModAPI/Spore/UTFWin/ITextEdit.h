@@ -145,6 +145,6 @@ namespace UTFWin
 
 	namespace Addresses(ITextEdit)
 	{
-		DeclareAddress(Create, SelectAddress(0x98CDC0, 0x98CAA0, 0x98CAA0));
+		DeclareAddress(Create);
 	}
 }

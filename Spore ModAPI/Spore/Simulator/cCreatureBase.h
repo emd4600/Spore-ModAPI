@@ -248,8 +248,8 @@ namespace Simulator
 
 	namespace Addresses(cCreatureBase)
 	{
-		DeclareAddress(PlayAnimation, SelectAddress(0xC11CD0, NO_ADDRESS, 0xC12470));
-		DeclareAddress(PlayAnimationTo, SelectAddress(0xC14380, NO_ADDRESS, 0xC14B20));
-		DeclareAddress(WalkTo, SelectAddress(0xC1BE40, NO_ADDRESS, 0xC1C720));
+		DeclareAddress(PlayAnimation);
+		DeclareAddress(PlayAnimationTo);
+		DeclareAddress(WalkTo);
 	}
 }

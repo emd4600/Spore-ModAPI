@@ -31,11 +31,11 @@ namespace Graphics
 	static_assert(sizeof(PixelShader) == 0x130, "sizeof(Shader) != 130h");
 
 	namespace Addresses(CompiledShader) {
-		//DeclareAddress(ReadCompiledVertexShaders, SelectAddress(0x6FF950, , 0x6FF480));
-		//DeclareAddress(ReadCompiledPixelShaders, SelectAddress(0x6FC5C0, , 0x6FC280));
+		//DeclareAddress(ReadCompiledVertexShaders);
+		//DeclareAddress(ReadCompiledPixelShaders);
 
-		DeclareAddress(VertexShaders_ptr, SelectAddress(0x162CE90, , 0x1628C20));
-		DeclareAddress(PixelShaders_ptr, SelectAddress(0x161DA88, , 0x16198A0));
+		DeclareAddress(VertexShaders_ptr);
+		DeclareAddress(PixelShaders_ptr);
 	}
 
 	inline vector<VertexShader>& GetVertexShaders() {

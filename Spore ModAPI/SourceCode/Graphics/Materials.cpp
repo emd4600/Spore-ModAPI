@@ -31,7 +31,6 @@
 
 namespace Graphics
 {
-
 	auto_STATIC_METHOD_(IMaterialManager, IMaterialManager*, Get);
 
 	auto_STATIC_METHOD(StandardShader, BOOL, Load, Args(RenderWare::Mesh<>* mesh), Args(mesh));
@@ -280,7 +279,7 @@ namespace Graphics
 
 			IO::ReadInt32(pStream, &shader.mDataCount);
 
-			NamedShaderDataUniform** pPointers = (NamedShaderDataUniform**)Address(SelectAddress(0x162CE14,, 0x1628BA4));
+			NamedShaderDataUniform** pPointers = (NamedShaderDataUniform**)GetAddress(Graphics, VertexShaderDataUniforms_ptr);
 			NamedShaderDataUniform* data = *pPointers;
 			*(pPointers + 1) = *pPointers = *pPointers + shader.mDataCount;
 
@@ -325,7 +324,7 @@ namespace Graphics
 
 			IO::ReadInt32(pStream, &shader.mDataCount);
 
-			NamedShaderDataUniform** pPointers = (NamedShaderDataUniform**)Address(SelectAddress(0x1624020, , 0x161FDB4));
+			NamedShaderDataUniform** pPointers = (NamedShaderDataUniform**)GetAddress(Graphics, PixelShaderDataUniforms_ptr);
 			NamedShaderDataUniform* data = *pPointers;
 			*(pPointers + 1) = *pPointers = *pPointers + shader.mDataCount;
 

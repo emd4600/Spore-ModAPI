@@ -33,6 +33,6 @@ namespace Simulator
 
 	namespace Addresses(cDeepSpaceProjectileToolStrategy)
 	{
-		DeclareAddress(WhileFiring, SelectAddress(0x10562F0, NO_ADDRESS, 0x1055740));
+		DeclareAddress(WhileFiring);
 	}
 }

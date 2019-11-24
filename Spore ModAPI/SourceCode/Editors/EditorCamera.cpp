@@ -1,3 +1,4 @@
+#ifndef MODAPI_DLL_EXPORT
 /****************************************************************************
 * Copyright (C) 2019 Eric Mor
 *
@@ -81,3 +82,4 @@ namespace Editors
 	auto_METHOD_VIRTUAL_VOID_(EditorCamera, EditorCamera, Initialize);
 	auto_METHOD_VIRTUAL_VOID(EditorCamera, EditorCamera, func54h, Args(Vector3& dst), Args(dst));
 }
+#endif

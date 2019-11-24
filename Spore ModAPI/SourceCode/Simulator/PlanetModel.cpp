@@ -1,3 +1,4 @@
+#ifndef MODAPI_DLL_EXPORT
 /****************************************************************************
 * Copyright (C) 2019 Eric Mor
 *
@@ -32,3 +33,4 @@ namespace Simulator
 	RedirectMethod_structret_const(cPlanetModel, GetOrientation, Vector4,
 		Args(const Vector3& position, const Vector3& direction), Args(position, direction));
 }
+#endif

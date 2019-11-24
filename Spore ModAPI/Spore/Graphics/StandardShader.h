@@ -35,11 +35,11 @@ namespace Graphics
 	static_assert(sizeof(StandardShader) == 0x348, "sizeof(StandardShader) != 0x348");
 
 	namespace Addresses(StandardShader) {
-		DeclareAddress(ctor, SelectAddress(0x6E5EF0, , 0x6E5840));
-		DeclareAddress(Read, SelectAddress(0x6E6470, , 0x6E5DC0));
-		DeclareAddress(Reset, SelectAddress(0x6E62F0, , 0x6E5C40));
-		DeclareAddress(Release, SelectAddress(0x6E5EC0, , 0x6E5810));
+		DeclareAddress(ctor);
+		DeclareAddress(Read);
+		DeclareAddress(Reset);
+		DeclareAddress(Release);
 
-		DeclareAddress(Load, SelectAddress(0x6E5C30, , 0x6E5590));
+		DeclareAddress(Load);
 	}
 }

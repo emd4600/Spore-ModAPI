@@ -27,6 +27,42 @@
 
 namespace IO
 {
+	/////////////////////////
+	//// StreamAdapter.h ////
+	/////////////////////////
+
+
+	auto_STATIC_METHOD(IO, bool, ReadBool8, Args(IStream* pIS, bool& value), Args(pIS, value));
+	auto_STATIC_METHOD(IO, bool, ReadInt8, Args(IStream* pIS, int8_t* value, size_type count), Args(pIS, value, count));
+	auto_STATIC_METHOD(IO, bool, ReadUInt8, Args(IStream* pIS, uint8_t* value, size_type count), Args(pIS, value, count));
+	auto_STATIC_METHOD(IO, bool, ReadInt16, Args(IStream* pIS, int16_t* value, size_type count, Endian endianSource), Args(pIS, value, count, endianSource));
+	auto_STATIC_METHOD(IO, bool, ReadUInt16, Args(IStream* pIS, uint16_t* value, size_type count, Endian endianSource), Args(pIS, value, count, endianSource));
+	auto_STATIC_METHOD(IO, bool, ReadInt32, Args(IStream* pIS, int32_t* value, size_type count, Endian endianSource), Args(pIS, value, count, endianSource));
+	auto_STATIC_METHOD(IO, bool, ReadUInt32, Args(IStream* pIS, uint32_t* value, size_type count, Endian endianSource), Args(pIS, value, count, endianSource));
+	auto_STATIC_METHOD(IO, bool, ReadFloat, Args(IStream* pIS, float* value, size_type count, Endian endianSource), Args(pIS, value, count, endianSource));
+
+	auto_STATIC_METHOD(IO, bool, ReadResourceID, Args(IStream* pIS, ResourceID* value, size_type count, Endian endianSource), Args(pIS, value, count, endianSource));
+	auto_STATIC_METHOD(IO, IStream*, ReadCString, Args(IStream* pIS, eastl::string8& str), Args(pIS, str));
+	auto_STATIC_METHOD(IO, size_type, ReadLine, Args(IStream* pIS, char* pLine, size_type nLineCapacity), Args(pIS, pLine, nLineCapacity));
+
+
+	auto_STATIC_METHOD(IO, bool, WriteInt8, Args(IStream* pOS, const int8_t* value, size_type count), Args(pOS, value, count));
+	auto_STATIC_METHOD(IO, bool, WriteUInt8, Args(IStream* pOS, const uint8_t* value, size_type count), Args(pOS, value, count));
+	auto_STATIC_METHOD(IO, bool, WriteInt16, Args(IStream* pOS, const int16_t* value, size_type count, Endian endianDestination), Args(pOS, value, count, endianDestination));
+	auto_STATIC_METHOD(IO, bool, WriteUInt16, Args(IStream* pOS, const uint16_t* value, size_type count, Endian endianDestination), Args(pOS, value, count, endianDestination));
+	auto_STATIC_METHOD(IO, bool, WriteInt32, Args(IStream* pOS, const int32_t* value, size_type count, Endian endianDestination), Args(pOS, value, count, endianDestination));
+	auto_STATIC_METHOD(IO, bool, WriteUInt32, Args(IStream* pOS, const uint32_t* value, size_type count, Endian endianDestination), Args(pOS, value, count, endianDestination));
+
+	auto_STATIC_METHOD(IO, bool, WriteFloat, Args(IStream* pOS, const float* value, size_type count, Endian endianDestination), Args(pOS, value, count, endianDestination));
+	auto_STATIC_METHOD(IO, bool, WriteResourceID, Args(IStream* pOS, const ResourceID* value, size_type count, Endian endianDestination), Args(pOS, value, count, endianDestination));
+	auto_STATIC_METHOD(IO, bool, WriteLine, Args(IStream* pOS, const char8_t* pLineSource, size_type nLineLength, LineEnd lineEndToUse), Args(pOS, pLineSource, nLineLength, lineEndToUse));
+
+	/////////////////////////
+}
+
+#ifndef MODAPI_DLL_EXPORT
+namespace IO
+{
 	//////////////////////
 	//// FileStream.h ////
 	//////////////////////
@@ -91,39 +127,6 @@ namespace IO
 
 
 	//////////////////////
-
-
-	/////////////////////////
-	//// StreamAdapter.h ////
-	/////////////////////////
-
-
-	auto_STATIC_METHOD(IO, bool, ReadBool8, Args(IStream* pIS, bool& value), Args(pIS, value));
-	auto_STATIC_METHOD(IO, bool, ReadInt8, Args(IStream* pIS, int8_t* value, size_type count), Args(pIS, value, count));
-	auto_STATIC_METHOD(IO, bool, ReadUInt8, Args(IStream* pIS, uint8_t* value, size_type count), Args(pIS, value, count));
-	auto_STATIC_METHOD(IO, bool, ReadInt16, Args(IStream* pIS, int16_t* value, size_type count, Endian endianSource), Args(pIS, value, count, endianSource));
-	auto_STATIC_METHOD(IO, bool, ReadUInt16, Args(IStream* pIS, uint16_t* value, size_type count, Endian endianSource), Args(pIS, value, count, endianSource));
-	auto_STATIC_METHOD(IO, bool, ReadInt32, Args(IStream* pIS, int32_t* value, size_type count, Endian endianSource), Args(pIS, value, count, endianSource));
-	auto_STATIC_METHOD(IO, bool, ReadUInt32, Args(IStream* pIS, uint32_t* value, size_type count, Endian endianSource), Args(pIS, value, count, endianSource));
-	auto_STATIC_METHOD(IO, bool, ReadFloat, Args(IStream* pIS, float* value, size_type count, Endian endianSource), Args(pIS, value, count, endianSource));
-
-	auto_STATIC_METHOD(IO, bool, ReadResourceID, Args(IStream* pIS, ResourceID* value, size_type count, Endian endianSource), Args(pIS, value, count, endianSource));
-	auto_STATIC_METHOD(IO, IStream*, ReadCString, Args(IStream* pIS, eastl::string8& str), Args(pIS, str));
-	auto_STATIC_METHOD(IO, size_type, ReadLine, Args(IStream* pIS, char* pLine, size_type nLineCapacity), Args(pIS, pLine, nLineCapacity));
-
-
-	auto_STATIC_METHOD(IO, bool, WriteInt8, Args(IStream* pOS, const int8_t* value, size_type count), Args(pOS, value, count));
-	auto_STATIC_METHOD(IO, bool, WriteUInt8, Args(IStream* pOS, const uint8_t* value, size_type count), Args(pOS, value, count));
-	auto_STATIC_METHOD(IO, bool, WriteInt16, Args(IStream* pOS, const int16_t* value, size_type count, Endian endianDestination), Args(pOS, value, count, endianDestination));
-	auto_STATIC_METHOD(IO, bool, WriteUInt16, Args(IStream* pOS, const uint16_t* value, size_type count, Endian endianDestination), Args(pOS, value, count, endianDestination));
-	auto_STATIC_METHOD(IO, bool, WriteInt32, Args(IStream* pOS, const int32_t* value, size_type count, Endian endianDestination), Args(pOS, value, count, endianDestination));
-	auto_STATIC_METHOD(IO, bool, WriteUInt32, Args(IStream* pOS, const uint32_t* value, size_type count, Endian endianDestination), Args(pOS, value, count, endianDestination));
-
-	auto_STATIC_METHOD(IO, bool, WriteFloat, Args(IStream* pOS, const float* value, size_type count, Endian endianDestination), Args(pOS, value, count, endianDestination));
-	auto_STATIC_METHOD(IO, bool, WriteResourceID, Args(IStream* pOS, const ResourceID* value, size_type count, Endian endianDestination), Args(pOS, value, count, endianDestination));
-	auto_STATIC_METHOD(IO, bool, WriteLine, Args(IStream* pOS, const char8_t* pLineSource, size_type nLineLength, LineEnd lineEndToUse), Args(pOS, pLineSource, nLineLength, lineEndToUse));
-
-	/////////////////////////
 
 
 	////////////////////////
@@ -393,3 +396,4 @@ namespace IO
 
 	//////////////////////
 }
+#endif

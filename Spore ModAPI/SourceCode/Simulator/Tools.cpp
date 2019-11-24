@@ -1,3 +1,4 @@
+#ifndef MODAPI_DLL_EXPORT
 /****************************************************************************
 * Copyright (C) 2019 Eric Mor
 *
@@ -265,3 +266,4 @@ namespace Simulator
 	auto_METHOD_VIRTUAL_VOID(cPlaceColonyToolStrategy, cToolStrategy, SelectedUpdate, Args(cSpaceToolData* pTool, const Vector3& arg1), Args(pTool, arg1));
 	auto_METHOD_VIRTUAL(cPlaceColonyToolStrategy, cToolStrategy, bool, OnHit, Args(cSpaceToolData* pTool, const Vector3& position, cSpaceToolData::SpaceToolHit hitType), Args(pTool, position, hitType));
 }
+#endif

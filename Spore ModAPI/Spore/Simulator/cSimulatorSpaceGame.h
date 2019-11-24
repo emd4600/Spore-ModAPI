@@ -96,6 +96,6 @@ namespace Simulator
 
 	namespace Addresses(cSimulatorSpaceGame)
 	{
-		DeclareAddress(Get, SelectAddress(0x10036E0, 0x1002A70, 0x1002A70));
+		DeclareAddress(Get);
 	}
 }

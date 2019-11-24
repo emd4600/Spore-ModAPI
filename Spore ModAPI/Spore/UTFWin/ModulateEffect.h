@@ -85,16 +85,16 @@ namespace UTFWin
 
 	namespace Addresses(ModulateEffect)
 	{
-		DeclareAddress(GetEventFlags, SelectAddress(0x9636E0, 0x9633E0, 0x9633E0));
-		DeclareAddress(HandleUIMessage, SelectAddress(0x9639F0, 0x9636A0, 0x9636A0));
+		DeclareAddress(GetEventFlags);
+		DeclareAddress(HandleUIMessage);
 
-		DeclareAddress(SetSerializer, SelectAddress(0x9804D0, 0x9801D0, 0x980200));
-		DeclareAddress(GetProxyID, SelectAddress(0x980410, 0x980110, 0x980140));
+		DeclareAddress(SetSerializer);
+		DeclareAddress(GetProxyID);
 
-		DeclareAddress(func84h, SelectAddress(0x9803A0, 0x9800A0, 0x9800D0));
+		DeclareAddress(func84h);
 
-		DeclareAddress(ToWinProc, SelectAddress(0x980500, 0x980200, 0x980230));
-		DeclareAddress(GetColors, SelectAddress(0x9803D0, 0x9800D0, 0x980100));
-		DeclareAddress(SetColors, SelectAddress(0x9803F0, 0x9800F0, 0x980120));
+		DeclareAddress(ToWinProc);
+		DeclareAddress(GetColors);
+		DeclareAddress(SetColors);
 	}
 }

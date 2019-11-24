@@ -1,0 +1,49 @@
+#ifdef MODAPI_DLL_EXPORT
+
+#include "stdafx.h"
+#include "Application.h"
+#include <Spore\ModAPI.h>
+
+namespace ModAPI
+{
+	int GetMajorVersion() {
+		return 2;
+	}
+	int GetMinorVersion() {
+		return 5;
+	}
+	int GetBuildVersion() {
+		return 8;
+	}
+
+	void AddInitFunction(InitFunction f) {
+		initFunctions.push_back(f);
+	}
+
+	void AddPostInitFunction(InitFunction f) {
+		postInitFunctions.push_back(f);
+	}
+
+	void AddDisposeFunction(InitFunction f) {
+		disposeFunctions.push_back(f);
+	}
+
+	GameType GetGameType()
+	{
+#if EXECUTABLE_TYPE == 0
+		return GameType::Disk;
+#else
+		return GameType::March2017;
+#endif
+	}
+
+	uintptr_t ChooseAddress(uintptr_t disk, uintptr_t march2017) {
+#if EXECUTABLE_TYPE == 0
+		return disk;
+#else
+		return march2017;
+#endif
+	}
+}
+
+#endif

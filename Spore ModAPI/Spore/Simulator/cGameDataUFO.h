@@ -123,6 +123,6 @@ namespace Simulator
 
 	namespace Addresses(cGameDataUFO)
 	{
-		DeclareAddress(ChangeEnergy, SelectAddress(0xC382C0, NO_ADDRESS, 0xC38B50));
+		DeclareAddress(ChangeEnergy);
 	}
 }

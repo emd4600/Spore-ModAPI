@@ -342,6 +342,6 @@ namespace Resource
 
 	namespace Addresses(IResourceManager)
 	{
-		DeclareAddress(Get, SelectAddress(0x8DE650, 0x8DE4A0, 0x8DE4B0));
+		DeclareAddress(Get);
 	}
 }

@@ -70,9 +70,12 @@ namespace UTFWin
 
 	class IWindow;
 
+	// Just so it can be used by the debuggger natvis
+	struct Window_intrusive_list_node : public intrusive_list_node {};
+
 	//typedef intrusive_list<IWindow> IWindowList_t;
 	// Otherwise children() won't work
-	typedef intrusive_list<intrusive_list_node> IWindowList_t;
+	typedef intrusive_list<Window_intrusive_list_node> IWindowList_t;
 
 	typedef function<bool(IWindow*, const Message&)> HandleUILambda_t;
 
@@ -81,7 +84,7 @@ namespace UTFWin
 	/// are fit inside a hierarchy: a window can have multiple children and only one parent. For more information,
 	/// check the @ref ui "User Interface page".
 	///
-	class IWindow : public UTFWinObject, public intrusive_list_node
+	class IWindow : public UTFWinObject, public Window_intrusive_list_node
 	{
 	public:
 

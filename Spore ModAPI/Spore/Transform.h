@@ -68,8 +68,8 @@ protected:
 
 namespace Addresses(Transform)
 {
-	DeclareAddress(ToMatrix4, SelectAddress(0x6B9720, 0x6B93F0, 0x6B93F0));
-	DeclareAddress(assign, SelectAddress(0x40CC10, 0x40CCB0, 0x40CCB0));
+	DeclareAddress(ToMatrix4);
+	DeclareAddress(assign);
 }
 
 static_assert(sizeof(Transform) == 0x38, "sizeof(Transform) != 38h");

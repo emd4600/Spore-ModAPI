@@ -16,7 +16,6 @@
 * You should have received a copy of the GNU General Public License
 * along with this program.  If not, see <http://www.gnu.org/licenses/>.
 ****************************************************************************/
-
 #include <Spore\App\cCheatManager.h>
 #include <Spore\ArgScript\LambdaParser.h>
 
@@ -24,6 +23,7 @@ namespace App
 {
 	auto_STATIC_METHOD_(ICheatManager, ICheatManager*, Get);
 
+#ifndef MODAPI_DLL_EXPORT
 	auto_METHOD_VIRTUAL_(cCheatManager, cCheatManager, bool, Initialize);
 	auto_METHOD_VIRTUAL_(cCheatManager, cCheatManager, bool, Dispose);
 	auto_METHOD_VIRTUAL_VOID_(cCheatManager, cCheatManager, func14h);
@@ -71,4 +71,5 @@ namespace App
 		AddCheat(pKeyword, reinterpret_cast<ArgScript::ICommand*>(new ArgScript::LambdaParser(pParseLine, pGetDescription)), bNotify);
 	}
 
+#endif
 }

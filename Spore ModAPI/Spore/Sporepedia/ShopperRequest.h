@@ -53,7 +53,7 @@ namespace Sporepedia
 	};
 
 	namespace Addresses(ShopperRequest) {
-		DeclareAddress(Show, SelectAddress(0x64A700, , 0x64A900));
+		DeclareAddress(Show);
 	}
 
 	static_assert(sizeof(ShopperRequest) == 0x48, "sizeof(ShopperRequest)");

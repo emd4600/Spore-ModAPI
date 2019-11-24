@@ -163,6 +163,6 @@ namespace UTFWin
 
 	namespace Addresses(IButton)
 	{
-		DeclareAddress(Create, SelectAddress(0x967420, 0x9670A0, 0x9670A0));
+		DeclareAddress(Create);
 	}
 }

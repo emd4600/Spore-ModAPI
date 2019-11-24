@@ -33,6 +33,6 @@ namespace Simulator
 
 	namespace Addresses(cCropCirclesToolStrategy)
 	{
-		DeclareAddress(OnHit, SelectAddress(0x105CAC0, NO_ADDRESS, 0x105BDB0));
+		DeclareAddress(OnHit);
 	}
 }

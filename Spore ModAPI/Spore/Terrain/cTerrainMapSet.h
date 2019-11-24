@@ -48,7 +48,7 @@ namespace Terrain
 	private:
 		/* 04h */	int mnRefCount;
 	protected:
-		/* 08h */	cTerrainMap mMaps[11];
+		/* 08h */	intrusive_ptr<cTerrainMap> mMaps[11];
 		/* 34h */	float field_34;  // 500.0
 		/* 38h */	float field_38;  // 100.0
 		/* 3Ch */	float field_3C;

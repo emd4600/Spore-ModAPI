@@ -85,20 +85,20 @@ namespace IO
 
 	namespace Addresses(StreamNull)
 	{
-		DeclareAddress(AddRef, SelectAddress(0x93BB60, 0x93C350, 0x93C350));
-		DeclareAddress(Release, SelectAddress(0x93BB70, 0x93C360, 0x93C360));
-		DeclareAddress(GetType, SelectAddress(0x93C920, 0x93C340, 0x93C340));
-		DeclareAddress(GetAccessFlags, SelectAddress(0x5D6800, 0x10E87E0, 0x10E87E0));
-		DeclareAddress(GetState, SelectAddress(0x1065680, 0xE31100, 0xE310C0));
-		DeclareAddress(Close, SelectAddress(0xA37650, 0xB1FB00, 0xB1FB30));
-		DeclareAddress(GetSize, SelectAddress(0x1065680, 0xE31100, 0xE310C0));
-		DeclareAddress(SetSize, SelectAddress(0xB5E030, 0xB7D4D0, 0xB7D550));
-		DeclareAddress(GetPosition, SelectAddress(0x108DD90, 0x111CD70, 0x111CD70));
-		DeclareAddress(SetPosition, SelectAddress(0xDDFB10, 0x88A5D0, 0x88A610));
-		DeclareAddress(GetAvailable, SelectAddress(0x93C930, 0x93C380, 0x93C380));
-		DeclareAddress(Read, SelectAddress(0x93C940, 0x93C390, 0x93C390));
-		DeclareAddress(Flush, SelectAddress(0xA37650, 0xB1FB00, 0xB1FB30));
-		DeclareAddress(Write, SelectAddress(0xDDFB10, 0x88A5D0, 0x88A610));
+		DeclareAddress(AddRef);
+		DeclareAddress(Release);
+		DeclareAddress(GetType);
+		DeclareAddress(GetAccessFlags);
+		DeclareAddress(GetState);
+		DeclareAddress(Close);
+		DeclareAddress(GetSize);
+		DeclareAddress(SetSize);
+		DeclareAddress(GetPosition);
+		DeclareAddress(SetPosition);
+		DeclareAddress(GetAvailable);
+		DeclareAddress(Read);
+		DeclareAddress(Flush);
+		DeclareAddress(Write);
 	}
 
 }

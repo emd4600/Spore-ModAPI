@@ -118,10 +118,10 @@ namespace UTFWin
 
 	namespace Addresses(SporeTooltipWinProc)
 	{
-		DeclareAddress(GetEventFlags, SelectAddress(0x835B00, 0x835300, 0x835380));
-		DeclareAddress(HandleUIMessage, SelectAddress(0x8362B0, 0x835AB0, 0x835B30));
+		DeclareAddress(GetEventFlags);
+		DeclareAddress(HandleUIMessage);
 
-		DeclareAddress(SetSerializer, SelectAddress(0x835E40, 0x835640, 0x8356C0));
-		DeclareAddress(GetProxyID, SelectAddress(0x8365C0, 0x835DC0, 0x8365C0));
+		DeclareAddress(SetSerializer);
+		DeclareAddress(GetProxyID);
 	}
 }

@@ -33,6 +33,6 @@ namespace Simulator
 
 	namespace Addresses(cRepairAOEToolStrategy)
 	{
-		DeclareAddress(WhileFiring, SelectAddress(0x1058B90, NO_ADDRESS, 0x1057FF0));
+		DeclareAddress(WhileFiring);
 	}
 }

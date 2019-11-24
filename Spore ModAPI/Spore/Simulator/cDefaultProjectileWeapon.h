@@ -34,7 +34,7 @@ namespace Simulator
 
 	namespace Addresses(cDefaultProjectileWeapon)
 	{
-		DeclareAddress(OnHit, SelectAddress(0x105BEC0, NO_ADDRESS, 0x105B310));
-		DeclareAddress(WhileFiring, SelectAddress(0x1057AA0, NO_ADDRESS, 0x1056F10));
+		DeclareAddress(OnHit);
+		DeclareAddress(WhileFiring);
 	}
 }

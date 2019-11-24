@@ -62,7 +62,7 @@ namespace Editors
 
 	namespace Addresses(BakeManager)
 	{
-		DeclareAddress(Get, SelectAddress(0x401010, 0x401010, 0x401010));
+		DeclareAddress(Get);
 	}
 
 	inline BakeParameters::BakeParameters(int16_t _field_04, int16_t _field_06, uint32_t defaultID)

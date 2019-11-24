@@ -132,9 +132,9 @@ namespace Palettes {
 
 	namespace Addresses(PaletteCategory)
 	{
-		DeclareAddress(ReadProp, SelectAddress(0x5C1D50, 0x5C1EE0, 0x5C1F10));
-		DeclareAddress(GetCategory, SelectAddress(0x5C1D00, 0x5C1E30, 0x5C1E60));
-		DeclareAddress(HasCategory, SelectAddress(0x5C1CD0, 0x5C1E00, 0x5C1E30));
+		DeclareAddress(ReadProp);
+		DeclareAddress(GetCategory);
+		DeclareAddress(HasCategory);
 	}
 
 	inline PalettePage* PaletteCategory::GetPageAt(size_t nIndex)

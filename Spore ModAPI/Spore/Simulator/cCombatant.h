@@ -156,7 +156,4 @@ namespace Simulator
 
 	static_assert(sizeof(cCombatant) == 0xC8, "sizeof(cCombatant) != C8h");
 
-	namespace Addresses(cCombatant) {
-
-	}
 }

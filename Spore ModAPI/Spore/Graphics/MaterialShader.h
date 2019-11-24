@@ -80,8 +80,8 @@ namespace Graphics
 	static_assert(sizeof(MaterialShader) == 0x48, "sizeof(MaterialShader) != 0x48");
 	
 	namespace Addresses(MaterialShader) {
-		DeclareAddress(Reset, SelectAddress(0x6E62F0,, 0x6E5C40));
-		DeclareAddress(Initialize, SelectAddress(0x11F6B90, 0x11F4470, 0x11F4470));
-		DeclareAddress(GetMaterialShader, SelectAddress(0x11FC770, 0x11FA030, 0x11FA030));
+		DeclareAddress(Reset);
+		DeclareAddress(Initialize);
+		DeclareAddress(GetMaterialShader);
 	}
 }

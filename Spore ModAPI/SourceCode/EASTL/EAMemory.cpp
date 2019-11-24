@@ -86,3 +86,4 @@ EASTDC_API const void* Memcheck64(const void* p, uint64_t c, size_t byteCount)
 }
 
 }}
+

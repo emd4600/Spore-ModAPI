@@ -113,6 +113,6 @@ namespace Graphics
 
 	namespace Addresses(ITextureManager)
 	{
-		DeclareAddress(Get, SelectAddress(0x67DE80, 0x67DD20, 0x67DD20));
+		DeclareAddress(Get);
 	}
 }

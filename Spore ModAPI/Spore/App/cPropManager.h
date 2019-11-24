@@ -115,39 +115,39 @@ namespace App
 
 	namespace Addresses(cPropManager)
 	{
-		DeclareAddress(HandleMessage, SelectAddress(0x6A5A30, 0x6A58D0, 0x6A58D0));
+		DeclareAddress(HandleMessage);
 
-		DeclareAddress(GetType, SelectAddress(0x1065680, 0xE31100, 0xE310C0));
-		DeclareAddress(CreateResource, SelectAddress(0x6A3580, 0x6A3330, 0x6A3330));
-		DeclareAddress(AsyncAccess, SelectAddress(0x4BB8E0, 0x4BC560, 0x4BC5B0));
-		DeclareAddress(Read, SelectAddress(0x6AB2B0, 0x6AB150, 0x6AB150));
-		DeclareAddress(Write, SelectAddress(0x6AA2C0, 0x6AA160, 0x6AA160));
-		DeclareAddress(GetSupportedTypes, SelectAddress(0x6A3650, 0x6A3400, 0x6A3400));
-		DeclareAddress(IsValid, SelectAddress(0x4CBDE0, 0x7F9BF0, 0x7F9CA0));
+		DeclareAddress(GetType);
+		DeclareAddress(CreateResource);
+		DeclareAddress(AsyncAccess);
+		DeclareAddress(Read);
+		DeclareAddress(Write);
+		DeclareAddress(GetSupportedTypes);
+		DeclareAddress(IsValid);
 
-		DeclareAddress(AddRef, SelectAddress(0x947080, 0x7685A0, 0x7685A0));
-		DeclareAddress(Release, SelectAddress(0x57CB00, 0x67D9F0, 0x67D9F0));
-		DeclareAddress(func08h, SelectAddress(0x6A3550, 0x6A3300, 0x6A3300));
-		DeclareAddress(Initialize, SelectAddress(0x6A9CF0, 0x6A9B90, 0x6A9B90));
-		DeclareAddress(PreloadPropertyLists, SelectAddress(0x6A7FD0, 0x6A7E70, 0x6A7E70));
-		DeclareAddress(Dispose, SelectAddress(0x6AA950, 0x6AA7F0, 0x6AA7F0));
-		DeclareAddress(GetPropertyID, SelectAddress(0x6A6100, 0x6A5FA0, 0x6A5FA0));
-		DeclareAddress(GetPropertyName, SelectAddress(0x6A5B00, 0x6A59A0, 0x6A59A0));
-		DeclareAddress(func20h, SelectAddress(0x6A6160, 0x6A6000, 0x6A6000));
-		DeclareAddress(GetPropertyGroupName, SelectAddress(0x6A5B40, 0x6A59E0, 0x6A59E0));
-		DeclareAddress(HasPropertyList, SelectAddress(0x6A4400, 0x6A4270, 0x6A4270));
-		DeclareAddress(GetPropertyList, SelectAddress(0x6A6240, 0x6A60E0, 0x6A60E0));
-		DeclareAddress(GetGlobalPropertyList, SelectAddress(0x6A3560, 0x6A3310, 0x6A3310));
-		DeclareAddress(SetPropertyList, SelectAddress(0x6A6350, 0x6A61F0, 0x6A61F0));
-		DeclareAddress(func38h, SelectAddress(0x6A5B80, 0x6A5A20, 0x6A5A20));
-		DeclareAddress(func3Ch, SelectAddress(0x6A5D10, 0x6A5BB0, 0x6A5BB0));
-		DeclareAddress(func40h, SelectAddress(0x6A5C20, 0x6A5AC0, 0x6A5AC0));
-		DeclareAddress(func44h, SelectAddress(0x6A4490, 0x6A4300, 0x6A4300));
-		DeclareAddress(GetAllListIDs, SelectAddress(0x6AAAA0, 0x6AA940, 0x6AA940));
-		DeclareAddress(func4Ch, SelectAddress(0x6AA260, 0x6AA100, 0x6AA100));
-		DeclareAddress(GetPropertyDefinition, SelectAddress(0x6A3F70, 0x6A3D60, 0x6A3D60));
-		DeclareAddress(GetPropertyGroupsCount, SelectAddress(0x6A3C30, 0x6A39B0, 0x6A39B0));
-		DeclareAddress(GetPropertyGroupIDAt, SelectAddress(0x6A3C60, 0x6A39E0, 0x6A39E0));
+		DeclareAddress(AddRef);
+		DeclareAddress(Release);
+		DeclareAddress(func08h);
+		DeclareAddress(Initialize);
+		DeclareAddress(PreloadPropertyLists);
+		DeclareAddress(Dispose);
+		DeclareAddress(GetPropertyID);
+		DeclareAddress(GetPropertyName);
+		DeclareAddress(func20h);
+		DeclareAddress(GetPropertyGroupName);
+		DeclareAddress(HasPropertyList);
+		DeclareAddress(GetPropertyList);
+		DeclareAddress(GetGlobalPropertyList);
+		DeclareAddress(SetPropertyList);
+		DeclareAddress(func38h);
+		DeclareAddress(func3Ch);
+		DeclareAddress(func40h);
+		DeclareAddress(func44h);
+		DeclareAddress(GetAllListIDs);
+		DeclareAddress(func4Ch);
+		DeclareAddress(GetPropertyDefinition);
+		DeclareAddress(GetPropertyGroupsCount);
+		DeclareAddress(GetPropertyGroupIDAt);
 
 
 	}

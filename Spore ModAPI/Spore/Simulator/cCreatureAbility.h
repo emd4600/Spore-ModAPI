@@ -106,8 +106,8 @@ namespace Simulator
 
 	namespace Addresses(cCreatureAbility)
 	{
-		DeclareAddress(Parse, SelectAddress(0x4D9140, 0x4D92E0, 0x4D9310));
+		DeclareAddress(Parse);
 
-		DeclareAddress(GetAnimationID, SelectAddress(0x4D3B60, NO_ADDRESS, 0x4D3D30));
+		DeclareAddress(GetAnimationID);
 	}
 }

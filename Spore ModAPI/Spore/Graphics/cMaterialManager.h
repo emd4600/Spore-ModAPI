@@ -104,6 +104,6 @@ namespace Graphics
 	
 	namespace Addresses(cMaterialManager) 
 	{
-		DeclareAddress(ReadShaderFragments, SelectAddress(0x70F7E0, , 0x70F010));
+		DeclareAddress(ReadShaderFragments);
 	};
 }

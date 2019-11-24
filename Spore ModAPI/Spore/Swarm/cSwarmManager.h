@@ -109,6 +109,6 @@ namespace Swarm
 
 	namespace Addresses(cSwarmManager)
 	{
-		DeclareAddress(GetDirectoryAndEffectIndex, SelectAddress(0xA6D920, 0xA6D730, 0xA6D750));
+		DeclareAddress(GetDirectoryAndEffectIndex);
 	}
 }

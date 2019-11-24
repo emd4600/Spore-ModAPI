@@ -93,6 +93,6 @@ namespace Simulator
 
 	namespace Addresses(cSimulatorPlayerUFO)
 	{
-		DeclareAddress(Get, SelectAddress(0xFFC990, NO_ADDRESS, 0xFFBD00));
+		DeclareAddress(Get);
 	}
 }

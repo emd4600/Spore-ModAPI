@@ -94,22 +94,22 @@ namespace IO
 
 	namespace Addresses(FixedMemoryStream)
 	{
-		DeclareAddress(AddRef, SelectAddress(0x83D030, 0x83F620, 0x83F6A0));
-		DeclareAddress(Release, SelectAddress(0x93BF70, 0x93B820, 0x93B820));
-		DeclareAddress(GetType, SelectAddress(0x93BE00, 0x93B840, 0x93B840));
-		DeclareAddress(GetAccessFlags, SelectAddress(0x5D6800, 0x10E87E0, 0x10E87E0));
-		DeclareAddress(GetState, SelectAddress(0x1065680, 0xE31100, 0xE310C0));
-		DeclareAddress(Close, SelectAddress(0xA37650, 0xB1FB00, 0xB1FB30));
-		DeclareAddress(GetSize, SelectAddress(0x80E390, 0xFC7E10, 0xFC7E10));
-		DeclareAddress(SetSize, SelectAddress(0x93BE30, 0x93B870, 0x93B870));
-		DeclareAddress(GetPosition, SelectAddress(0x93C110, 0x93B890, 0x93B890));
-		DeclareAddress(SetPosition, SelectAddress(0x93BE50, 0x93B8C0, 0x93B8C0));
-		DeclareAddress(GetAvailable, SelectAddress(0x93BFC0, 0x93BA10, 0x93BA10));
-		DeclareAddress(Read, SelectAddress(0x93BEA0, 0x93B910, 0x93B910));
-		DeclareAddress(Flush, SelectAddress(0xA37650, 0xB1FB00, 0xB1FB30));
-		DeclareAddress(Write, SelectAddress(0x93BEE0, 0x93B950, 0x93B950));
+		DeclareAddress(AddRef);
+		DeclareAddress(Release);
+		DeclareAddress(GetType);
+		DeclareAddress(GetAccessFlags);
+		DeclareAddress(GetState);
+		DeclareAddress(Close);
+		DeclareAddress(GetSize);
+		DeclareAddress(SetSize);
+		DeclareAddress(GetPosition);
+		DeclareAddress(SetPosition);
+		DeclareAddress(GetAvailable);
+		DeclareAddress(Read);
+		DeclareAddress(Flush);
+		DeclareAddress(Write);
 
-		DeclareAddress(SetData, SelectAddress(0x93BE10, 0x93B850, 0x93B850));
+		DeclareAddress(SetData);
 	}
 
 	inline void* FixedMemoryStream::GetData() const

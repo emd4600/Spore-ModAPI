@@ -164,26 +164,26 @@ namespace UTFWin
 
 	namespace Addresses(StdDrawable)
 	{
-		DeclareAddress(Paint, SelectAddress(0x987FC0, 0x987C70, 0x987C70));
-		DeclareAddress(IsColliding, SelectAddress(0x988360, 0x988010, 0x988010));
-		DeclareAddress(GetDimensions, SelectAddress(0x988670, 0x988320, 0x988320));
-		DeclareAddress(UseCollision, SelectAddress(0x988640, 0x9882F0, 0x9882F0));
+		DeclareAddress(Paint);
+		DeclareAddress(IsColliding);
+		DeclareAddress(GetDimensions);
+		DeclareAddress(UseCollision);
 
-		DeclareAddress(SetSerializer, SelectAddress(0x987D60, 0x987A10, 0x987A10));
-		DeclareAddress(GetProxyID, SelectAddress(0x987C60, 0x987910, 0x987910));
+		DeclareAddress(SetSerializer);
+		DeclareAddress(GetProxyID);
 
-		DeclareAddress(GetImage, SelectAddress(0x987C40, 0x9878E0, 0x9878E0));
-		DeclareAddress(SetImage, SelectAddress(0x987C00, 0x9878A0, 0x9878A0));
-		DeclareAddress(GetScaleType, SelectAddress(0x804E30, 0xFF3480, 0xFF3480));
-		DeclareAddress(SetScaleType, SelectAddress(0x112EBC0, 0x987900, 0x987900));
-		DeclareAddress(GetScaleArea, SelectAddress(0xFF0B60, 0x830AB0, 0x830B30));
-		DeclareAddress(SetScaleArea, SelectAddress(0x8313B0, 0x830B30, 0x830BB0));
-		DeclareAddress(GetScaleFactor, SelectAddress(0xAD25F0, 0xAD2700, 0xAD2740));
-		DeclareAddress(SetScaleFactor, SelectAddress(0x8313D0, 0x830B50, 0x830BD0));
-		DeclareAddress(GetHitMask, SelectAddress(0x97F0E0, 0xA1AC50, 0xA1ACE0));
-		DeclareAddress(SetHitMask, SelectAddress(0x987E30, 0x987AE0, 0x987AE0));
-		DeclareAddress(GetHitFactor, SelectAddress(0x831340, 0x830AC0, 0x830B40));
-		DeclareAddress(SetHitFactor, SelectAddress(0x831350, 0x830AD0, 0x830B50));
+		DeclareAddress(GetImage);
+		DeclareAddress(SetImage);
+		DeclareAddress(GetScaleType);
+		DeclareAddress(SetScaleType);
+		DeclareAddress(GetScaleArea);
+		DeclareAddress(SetScaleArea);
+		DeclareAddress(GetScaleFactor);
+		DeclareAddress(SetScaleFactor);
+		DeclareAddress(GetHitMask);
+		DeclareAddress(SetHitMask);
+		DeclareAddress(GetHitFactor);
+		DeclareAddress(SetHitFactor);
 
 	}
 

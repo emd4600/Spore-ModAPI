@@ -39,19 +39,19 @@ public:
 
 ///
 /// This class represents a basic reference counted object. Reference counted objects can be used inside intrusive_ptr structures
-/// in order to have automatic memory management. For example: intrusive_ptr<Window> mpWindow = new Window();
+/// in order to have automatic memory management. For example: intrusive_ptr\<Window\> mpWindow = new Window();
 ///
 /// Internally, reference counted objects store a reference count. That value is increased every time AddRef() is called, 
 /// and decreased every time Release() is called. When the reference count reaches 0, the object deletes itself.
 /// Every AddRef() call must be paired with a Release() call; intrusive_ptr does that automatically.
 ///
 /// However, intrusive pointers must be used carefully, since it could case problems on certain cases.
-/// For example, class A has an intrusive_ptr<B> member. B has an intrusive_ptr<A> that points to the first object. This causes a 
+/// For example, class A has an intrusive_ptr\<B\> member. B has an intrusive_ptr\<A\> that points to the first object. This causes a 
 /// recursive dependance that makes those objects never be deleted.
 /// 
 /// Additionally, this class contains a Cast method, that allows classes to implement
 /// an efficient equivalent to dynamic_cast. You can use it directly, but it's recommended to use object_cast instead.
-/// For example, to cast an IDrawable* pDrawable; into a IImageDrawable*:
+/// For example, to cast an IDrawable\* pDrawable; into a IImageDrawable\*:
 /// ~~~~~~~~~~~~~~~~~~{.cpp}
 /// // Cast an IDrawable* pDrawable into a IImageDrawable*
 /// IImageDrawable* result = object_cast<IImageDrawable>(pDrawable);

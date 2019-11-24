@@ -117,6 +117,6 @@ namespace Simulator
 
 	namespace Addresses(cGameInputManager)
 	{
-		DeclareAddress(Get, SelectAddress(0xB3D1B0, NO_ADDRESS, 0xB3D350));
+		DeclareAddress(Get);
 	}
 }

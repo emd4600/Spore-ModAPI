@@ -162,12 +162,12 @@ namespace ArgScript
 
 
 	protected:
-		/* 00h */	vector<char*>		mStrings;
-		/* 14h */	vector<char**>		mArguments;
-		/* 28h */	vector<LineOption*> mOptions;
+		/* 00h */	vector<char>		mBuffer;
+		/* 14h */	vector<char*>		mArguments;
+		/* 28h */	vector<LineOption>	mOptions;
 
-		/* 3Ch */	size_t mnFirstArgIndex;
-		/* 40h */	size_t mnArgumentCount;
+		/* 3Ch */	size_t mFirstArgIndex;
+		/* 40h */	size_t mArgumentCount;
 	};
 
 	/////////////////////////////////
@@ -178,18 +178,18 @@ namespace ArgScript
 
 	namespace Addresses(Line)
 	{
-		DeclareAddress(GetArgumentsRange, SelectAddress(0x838880, 0x838080, 0x838100));
-		DeclareAddress(GetArguments, SelectAddress(0x838B80, 0x838380, 0x838400));
-		DeclareAddress(GetArgumentAt, SelectAddress(0x838780, 0x837F80, 0x838000));
-		DeclareAddress(GetArgumentsCount, SelectAddress(0x838790, 0x837F90, 0x838010));
+		DeclareAddress(GetArgumentsRange);
+		DeclareAddress(GetArguments);
+		DeclareAddress(GetArgumentAt);
+		DeclareAddress(GetArgumentsCount);
 
-		DeclareAddress(GetOption, SelectAddress(0x838B90, 0x838390, 0x838410));
-		DeclareAddress(GetOptionRange, SelectAddress(0x838990, 0x838190, 0x838210));
-		DeclareAddress(HasFlag, SelectAddress(0x838910, 0x838110, 0x838190));
+		DeclareAddress(GetOption);
+		DeclareAddress(GetOptionRange);
+		DeclareAddress(HasFlag);
 
-		DeclareAddress(GetEnum, SelectAddress(0x841470, 0x840C00, 0x840C80));
-		DeclareAddress(GetOptionalEnum, SelectAddress(0x841080, 0x840810, 0x840890));
+		DeclareAddress(GetEnum);
+		DeclareAddress(GetOptionalEnum);
 
-		DeclareAddress(FromString, SelectAddress(0x838C20, 0x838420, 0x8384A0));
+		DeclareAddress(FromString);
 	}
 }

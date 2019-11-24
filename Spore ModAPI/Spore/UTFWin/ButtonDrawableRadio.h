@@ -94,17 +94,17 @@ namespace UTFWin
 
 	namespace Addresses(ButtonDrawableRadio)
 	{
-		DeclareAddress(Paint, SelectAddress(0x965970, 0x9655F0, 0x9655F0));
-		DeclareAddress(IsColliding, SelectAddress(0x689880, 0x5ACA30, 0x5ACA30));
-		DeclareAddress(GetDimensions, SelectAddress(0x964A60, 0x9646D0, 0x9646D0));
-		DeclareAddress(UseCollision, SelectAddress(0x951320, 0x950E00, 0x950E00));
-		DeclareAddress(GetTexCoords, SelectAddress(0x966E50, 0x966AD0, 0x966AD0));
+		DeclareAddress(Paint);
+		DeclareAddress(IsColliding);
+		DeclareAddress(GetDimensions);
+		DeclareAddress(UseCollision);
+		DeclareAddress(GetTexCoords);
 
-		DeclareAddress(SetSerializer, SelectAddress(0x9658E0, 0x965560, 0x965560));
-		DeclareAddress(GetProxyID, SelectAddress(0x964A10, 0x964680, 0x964680));
+		DeclareAddress(SetSerializer);
+		DeclareAddress(GetProxyID);
 
-		DeclareAddress(ToDrawable, SelectAddress(0x97E760, 0x96FEB0, 0x96FEB0));
-		DeclareAddress(SetImage, SelectAddress(0x9649C0, 0x964630, 0x964630));
+		DeclareAddress(ToDrawable);
+		DeclareAddress(SetImage);
 
 	}
 

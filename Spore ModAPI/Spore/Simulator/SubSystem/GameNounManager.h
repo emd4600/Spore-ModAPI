@@ -124,13 +124,13 @@ namespace Simulator
 
 	namespace Addresses(cGameNounManager)
 	{
-		DeclareAddress(Get, SelectAddress(0xB3D260, 0xB3D3D0, 0xB3D400));
-		DeclareAddress(CreateInstance, SelectAddress(0xB20A90, 0xB20B80, 0xB20BF0));
-		DeclareAddress(DestroyInstance, SelectAddress(0xB22450, NO_ADDRESS, 0xB22560));
-		DeclareAddress(GetData, SelectAddress(0xB21280, 0xB21260, 0xB212D0));
+		DeclareAddress(Get);
+		DeclareAddress(CreateInstance);
+		DeclareAddress(DestroyInstance);
+		DeclareAddress(GetData);
 
-		DeclareAddress(UpdateModels, SelectAddress(0xB227E0, NO_ADDRESS, 0xB228F0));
-		DeclareAddress(SetAvatar, SelectAddress(0xB1FB90, NO_ADDRESS, 0xB1FCA0));
+		DeclareAddress(UpdateModels);
+		DeclareAddress(SetAvatar);
 	}
 
 	/// Gets all the game data objects that are of the specified type, or are one of its subclasses.

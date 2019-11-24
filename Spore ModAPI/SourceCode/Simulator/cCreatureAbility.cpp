@@ -1,3 +1,4 @@
+#ifndef MODAPI_DLL_EXPORT
 /****************************************************************************
 * Copyright (C) 2018 Eric Mor
 *
@@ -27,3 +28,4 @@ namespace Simulator
 
 	auto_METHOD(cCreatureAbility, uint32_t, GetAnimationID, Args(int index), Args(index));
 }
+#endif

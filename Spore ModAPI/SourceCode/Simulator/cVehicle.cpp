@@ -1,3 +1,4 @@
+#ifndef MODAPI_DLL_EXPORT
 /****************************************************************************
 * Copyright (C) 2019 Eric Mor
 *
@@ -23,3 +24,4 @@ namespace Simulator
 	auto_METHOD_VOID(cVehicle, Load, Args(VehicleLocomotion locomotion, VehiclePurpose purpose, struct ResourceKey name),
 		Args(locomotion, purpose, name));
 }
+#endif

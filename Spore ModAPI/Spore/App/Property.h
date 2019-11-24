@@ -33,40 +33,40 @@ namespace App
 
 	enum class PropertyType : uint16_t
 	{
-		kNone = 0,
-		kBool = 1,
-		kInt32 = 9,
-		kUInt32 = 0x0a,
-		kFloat = 0x0d,
-		kString8 = 0x12,
-		kString16 = 0x13,
-		kKey = 0x20,
-		kText = 0x22,
-		kVector2 = 0x30,
-		kVector3 = 0x31,
-		kColorRGB = 0x32,
-		kVector4 = 0x33,
-		kColorRGBA = 0x34,
-		kTransform = 0x38,
-		kBBox = 0x39,
+		None = 0,
+		Bool = 1,
+		Int32 = 9,
+		UInt32 = 0x0a,
+		Float = 0x0d,
+		String8 = 0x12,
+		String16 = 0x13,
+		Key = 0x20,
+		Text = 0x22,
+		Vector2 = 0x30,
+		Vector3 = 0x31,
+		ColorRGB = 0x32,
+		Vector4 = 0x33,
+		ColorRGBA = 0x34,
+		Transform = 0x38,
+		BBox = 0x39,
 		// Unseen types
-		kChar = 0x0002,
-		kWChar = 0x0003,
-		kInt8 = 0x0005,
-		kUInt8 = 0x0006,
-		kInt16 = 0x0007,
-		kUInt16 = 0x0008,
-		kInt64 = 0x000B,
-		kUInt64 = 0x000C,
-		kDouble = 0x000E,
-		kPtr = 0x000F,
+		Char = 0x0002,
+		WChar = 0x0003,
+		Int8 = 0x0005,
+		UInt8 = 0x0006,
+		Int16 = 0x0007,
+		UInt16 = 0x0008,
+		Int64 = 0x000B,
+		UInt64 = 0x000C,
+		Double = 0x000E,
+		Ptr = 0x000F,
 		// only this one is used in Spore code, but not in files
-		kVoid = 0x0010,
-		kIUnknownRC = 0x0011,
-		kFlags = 0x0021,
-		kMatrix2 = 0x0035,
-		kMatrix3 = 0x0036,
-		kMatrix4 = 0x0037
+		Void = 0x0010,
+		IUnknownRC = 0x0011,
+		Flags = 0x0021,
+		Matrix2 = 0x0035,
+		Matrix3 = 0x0036,
+		Matrix4 = 0x0037
 	};
 
 
@@ -94,7 +94,13 @@ namespace App
 	///
 	class Property
 	{
-
+	public:
+		struct TextProperty
+		{
+			uint32_t tableID;
+			uint32_t instanceID;
+			wchar_t buffer[256];
+		};
 	public:
 		enum PropertyFlags
 		{
@@ -875,89 +881,89 @@ namespace App
 
 	namespace Addresses(Property)
 	{
-		DeclareAddress(GetValueInt32, SelectAddress(0x41ECF0, 0x41E950, 0x41E950));
-		DeclareAddress(GetValueFloat, SelectAddress(0x41EDD0, 0x41EA30, 0x41EA30));
-		DeclareAddress(GetValueBool, SelectAddress(0x41EC80, 0x41E8E0, 0x41E8E0));
-		DeclareAddress(GetValueUInt32, SelectAddress(0x41ED60, 0x41E9C0, 0x41E9C0));
-		DeclareAddress(GetValueVector2, SelectAddress(0x6A11C0, 0x6A0F70, 0x6A0F70));
-		DeclareAddress(GetValueVector3, SelectAddress(0xCCE1D0, 0xCCEA40, 0xCCEA90));
-		DeclareAddress(GetValueVector4, SelectAddress(0x6A11F0, 0x6A0FA0, 0x6A0FA0));
-		DeclareAddress(GetValueColorRGB, SelectAddress(0x6A1220, 0x6A0FD0, 0x6A0FD0));
-		DeclareAddress(GetValueColorRGBA, SelectAddress(0x6A1250, 0x6A1000, 0x6A1000));
-		DeclareAddress(GetValueKey, SelectAddress(0x6A1280, 0x6A1030, 0x6A1030));
-		DeclareAddress(GetValueTransform, SelectAddress(0x6A12B0, 0x6A1060, 0x6A1060));
-		DeclareAddress(GetValueText, SelectAddress(0x6A12E0, 0x6A1090, 0x6A1090));
-		DeclareAddress(GetValueBBox, SelectAddress(0x6A3B10, 0x5F23A0, 0x5F23A0));
-		DeclareAddress(GetValueString8, SelectAddress(0x60ED10, 0x60EF30, 0x60EF10));
-		DeclareAddress(GetValueString16, SelectAddress(0x68A740, 0x68A4E0, 0x68A4E0));
+		DeclareAddress(GetValueInt32);
+		DeclareAddress(GetValueFloat);
+		DeclareAddress(GetValueBool);
+		DeclareAddress(GetValueUInt32);
+		DeclareAddress(GetValueVector2);
+		DeclareAddress(GetValueVector3);
+		DeclareAddress(GetValueVector4);
+		DeclareAddress(GetValueColorRGB);
+		DeclareAddress(GetValueColorRGBA);
+		DeclareAddress(GetValueKey);
+		DeclareAddress(GetValueTransform);
+		DeclareAddress(GetValueText);
+		DeclareAddress(GetValueBBox);
+		DeclareAddress(GetValueString8);
+		DeclareAddress(GetValueString16);
 
-		DeclareAddress(GetValueChar, SelectAddress(0x6A3930, 0x6A36E0, 0x6A36E0));
-		DeclareAddress(GetValueWChar, SelectAddress(0x6A3960, 0x6A3710, 0x6A3710));
-		DeclareAddress(GetValueInt8, SelectAddress(0x6A3990, 0x6A3740, 0x6A3740));
-		DeclareAddress(GetValueUInt8, SelectAddress(0x6A39C0, 0x6A3770, 0x6A3770));
-		DeclareAddress(GetValueInt16, SelectAddress(0x6A39F0, 0x6A37A0, 0x6A37A0));
-		DeclareAddress(GetValueUInt16, SelectAddress(0x6A2E20, 0x6A37D0, 0x6A37D0));
-		DeclareAddress(GetValueInt64, SelectAddress(0x6A3A50, 0x6A3800, 0x6A3800));
-		DeclareAddress(GetValueUInt64, SelectAddress(0x6A3A80, 0x6A3830, 0x6A3830));
-		DeclareAddress(GetValueDouble, SelectAddress(0x6A3AB0, 0x6A3860, 0x6A3860));
-		DeclareAddress(GetValueFlags, SelectAddress(0x6A3AE0, 0x6A3890, 0x6A3890));
-		DeclareAddress(GetValue, SelectAddress(0x447140, 0x4474C0, 0x4474C0));
-
-
-		DeclareAddress(Set, SelectAddress(0x93E250, 0x93DCF0, 0x93DCF0));
-		DeclareAddress(SetValueInt32, SelectAddress(0x422E10, 0x422EB0, 0x422EB0));
-		DeclareAddress(SetValueUInt32, SelectAddress(0x428400, 0x428010, 0x428010));
-		DeclareAddress(SetValueKey, SelectAddress(0x422EA0, 0x422F40, 0x422F40));
-		DeclareAddress(SetValueString8, SelectAddress(0x4B59E0, 0x4B62F0, 0x4B62F0));
-		DeclareAddress(SetValueString16, SelectAddress(0x427E60, 0x427A10, 0x427A10));
-		DeclareAddress(SetValueFloat, SelectAddress(0x428490, 0x4280A0, 0x4280A0));
-		DeclareAddress(SetValueBool, SelectAddress(0x422D80, 0x422E20, 0x422E20));
-		DeclareAddress(SetValueBBox, SelectAddress(0x4781B0, 0x478800, 0x478800));
-		DeclareAddress(SetValueVector2, SelectAddress(0x6A3760, 0x6A3510, 0x6A3510));
-		DeclareAddress(SetValueVector3, SelectAddress(0x6A37C0, 0x6A3570, 0x6A3570));
-		DeclareAddress(SetValueVector4, SelectAddress(0x6A3830, 0x6A35E0, 0x6A35E0));
-		DeclareAddress(SetValueColorRGB, SelectAddress(0x6A3860, 0x6A3610, 0x6A3610));
-		DeclareAddress(SetValueColorRGBA, SelectAddress(0x6A38D0, 0x6A3680, 0x6A3680));
+		DeclareAddress(GetValueChar);
+		DeclareAddress(GetValueWChar);
+		DeclareAddress(GetValueInt8);
+		DeclareAddress(GetValueUInt8);
+		DeclareAddress(GetValueInt16);
+		DeclareAddress(GetValueUInt16);
+		DeclareAddress(GetValueInt64);
+		DeclareAddress(GetValueUInt64);
+		DeclareAddress(GetValueDouble);
+		DeclareAddress(GetValueFlags);
+		DeclareAddress(GetValue);
 
 
-		DeclareAddress(GetBool, SelectAddress(0x407140, 0x407190, 0x407190));
-		DeclareAddress(GetFloat, SelectAddress(0x40CE70, 0x40CF10, 0x40CF10));
-		DeclareAddress(GetInt32, SelectAddress(0x410290, 0x410330, 0x410330));
-		DeclareAddress(GetUInt32, SelectAddress(0x4AF0A0, 0x4AF730, 0x4AF730));
-		DeclareAddress(GetVector2, SelectAddress(0x6A1310, 0x6A10C0, 0x6A10C0));
-		DeclareAddress(GetVector3, SelectAddress(0x6A1360, 0x6A1110, 0x6A1110));
-		DeclareAddress(GetVector4, SelectAddress(0x6A13B0, 0x6A1160, 0x6A1160));
-		DeclareAddress(GetColorRGB, SelectAddress(0x6A1400, 0x6A11B0, 0x6A11B0));
-		DeclareAddress(GetColorRGBA, SelectAddress(0x6A1450, 0x6A1200, 0x6A1200));
-		DeclareAddress(GetKey, SelectAddress(0x6A14A0, 0x6A1250, 0x6A1250));
-		DeclareAddress(GetKeyInstanceID, SelectAddress(0x6A14F0, 0x6A12A0, 0x6A12A0));
-		DeclareAddress(GetKeyGroupID, SelectAddress(0x6A1530, 0x6A12E0, 0x6A12E0));
-		DeclareAddress(GetKeyTypeID, SelectAddress(0x6A1570, 0x6A1320, 0x6A1320));
-		DeclareAddress(GetText, SelectAddress(0x6A15B0, 0x6A1360, 0x6A1360));
-		DeclareAddress(GetCString8, SelectAddress(0x6A16A0, 0x6A1450, 0x6A1450));
-		DeclareAddress(GetCString16, SelectAddress(0x6A16E0, 0x6A1490, 0x6A1490));
-		DeclareAddress(GetString8, SelectAddress(0x6A1600, 0x6A13B0, 0x6A13B0));
-		DeclareAddress(GetString16, SelectAddress(0x6A1650, 0x6A1400, 0x6A1400));
+		DeclareAddress(Set);
+		DeclareAddress(SetValueInt32);
+		DeclareAddress(SetValueUInt32);
+		DeclareAddress(SetValueKey);
+		DeclareAddress(SetValueString8);
+		DeclareAddress(SetValueString16);
+		DeclareAddress(SetValueFloat);
+		DeclareAddress(SetValueBool);
+		DeclareAddress(SetValueBBox);
+		DeclareAddress(SetValueVector2);
+		DeclareAddress(SetValueVector3);
+		DeclareAddress(SetValueVector4);
+		DeclareAddress(SetValueColorRGB);
+		DeclareAddress(SetValueColorRGBA);
 
-		DeclareAddress(GetArrayBool, SelectAddress(0x6A09B0, 0x6A0760, 0x6A0760));
-		DeclareAddress(GetArrayInt32, SelectAddress(0x6A0A20, 0x6A07D0, 0x6A07D0));
-		DeclareAddress(GetArrayUInt32, SelectAddress(0x6A0A90, 0x6A0840, 0x6A0840));
-		DeclareAddress(GetArrayFloat, SelectAddress(0x6A0B00, 0x6A08B0, 0x6A08B0));
-		DeclareAddress(GetArrayVector2, SelectAddress(0x6A0B70, 0x6A0920, 0x6A0920));
-		DeclareAddress(GetArrayVector3, SelectAddress(0x6A0BE0, 0x6A0990, 0x6A0990));
-		DeclareAddress(GetArrayVector4, SelectAddress(0x6A0C50, 0x6A0A00, 0x6A0A00));
-		DeclareAddress(GetArrayColorRGB, SelectAddress(0x6A0CC0, 0x6A0A70, 0x6A0A70));
-		DeclareAddress(GetArrayKey, SelectAddress(0x6A0D30, 0x6A0AE0, 0x6A0AE0));
-		DeclareAddress(GetArrayString8, SelectAddress(0x6A0DA0, 0x6A0B50, 0x6A0B50));
-		DeclareAddress(GetArrayString16, SelectAddress(0x6A0E10, 0x6A0BC0, 0x6A0BC0));
-		DeclareAddress(GetArrayTransform, SelectAddress(0x6A0E80, 0x6A0C30, 0x6A0C30));
 
-		DeclareAddress(Clear, SelectAddress(0x93E0A0, 0x93DAF0, 0x93DAF0));
+		DeclareAddress(GetBool);
+		DeclareAddress(GetFloat);
+		DeclareAddress(GetInt32);
+		DeclareAddress(GetUInt32);
+		DeclareAddress(GetVector2);
+		DeclareAddress(GetVector3);
+		DeclareAddress(GetVector4);
+		DeclareAddress(GetColorRGB);
+		DeclareAddress(GetColorRGBA);
+		DeclareAddress(GetKey);
+		DeclareAddress(GetKeyInstanceID);
+		DeclareAddress(GetKeyGroupID);
+		DeclareAddress(GetKeyTypeID);
+		DeclareAddress(GetText);
+		DeclareAddress(GetCString8);
+		DeclareAddress(GetCString16);
+		DeclareAddress(GetString8);
+		DeclareAddress(GetString16);
+
+		DeclareAddress(GetArrayBool);
+		DeclareAddress(GetArrayInt32);
+		DeclareAddress(GetArrayUInt32);
+		DeclareAddress(GetArrayFloat);
+		DeclareAddress(GetArrayVector2);
+		DeclareAddress(GetArrayVector3);
+		DeclareAddress(GetArrayVector4);
+		DeclareAddress(GetArrayColorRGB);
+		DeclareAddress(GetArrayKey);
+		DeclareAddress(GetArrayString8);
+		DeclareAddress(GetArrayString16);
+		DeclareAddress(GetArrayTransform);
+
+		DeclareAddress(Clear);
 	}
 
 	inline Property::Property()
 		: mnFlags(0)
-		, mnType(PropertyType::kNone)
+		, mnType(PropertyType::None)
 	{
 	}
 
@@ -1053,63 +1059,63 @@ namespace App
 
 
 	inline Property& Property::SetArrayBool(const bool* pValues, size_t nValueCount) {
-		Set(PropertyType::kBool, kPropertyFlagArray, (void*) pValues, sizeof(bool), nValueCount);
+		Set(PropertyType::Bool, kPropertyFlagArray, (void*) pValues, sizeof(bool), nValueCount);
 		return *this;
 	}
 	inline Property& Property::SetArrayInt32(const int32_t* pValues, size_t nValueCount) {
-		Set(PropertyType::kInt32, kPropertyFlagArray, (void*)pValues, sizeof(int32_t), nValueCount);
+		Set(PropertyType::Int32, kPropertyFlagArray, (void*)pValues, sizeof(int32_t), nValueCount);
 		return *this;
 	}
 	inline Property& Property::SetArrayUInt32(const uint32_t* pValues, size_t nValueCount) {
-		Set(PropertyType::kUInt32, kPropertyFlagArray, (void*)pValues, sizeof(uint32_t), nValueCount);
+		Set(PropertyType::UInt32, kPropertyFlagArray, (void*)pValues, sizeof(uint32_t), nValueCount);
 		return *this;
 	}
 	inline Property& Property::SetArrayFloat(const float* pValues, size_t nValueCount) {
-		Set(PropertyType::kFloat, kPropertyFlagArray, (void*)pValues, sizeof(float), nValueCount);
+		Set(PropertyType::Float, kPropertyFlagArray, (void*)pValues, sizeof(float), nValueCount);
 		return *this;
 	}
 	inline Property& Property::SetArrayKey(const ResourceKey* pValues, size_t nValueCount) {
-		Set(PropertyType::kKey, kPropertyFlagArray, (void*)pValues, sizeof(ResourceKey), nValueCount);
+		Set(PropertyType::Key, kPropertyFlagArray, (void*)pValues, sizeof(ResourceKey), nValueCount);
 		return *this;
 	}
 	inline Property& Property::SetArrayString8(const eastl::string8* pValues, size_t nValueCount) {
-		Set(PropertyType::kString8, kPropertyFlagArray, (void*)pValues, sizeof(eastl::string8), nValueCount);
+		Set(PropertyType::String8, kPropertyFlagArray, (void*)pValues, sizeof(eastl::string8), nValueCount);
 		return *this;
 	}
 	inline Property& Property::SetArrayString16(const eastl::string16* pValues, size_t nValueCount) {
-		Set(PropertyType::kString16, kPropertyFlagArray, (void*)pValues, sizeof(eastl::string16), nValueCount);
+		Set(PropertyType::String16, kPropertyFlagArray, (void*)pValues, sizeof(eastl::string16), nValueCount);
 		return *this;
 	}
 	inline Property& Property::SetArrayBBox(const BoundingBox* pValues, size_t nValueCount) {
-		Set(PropertyType::kBBox, kPropertyFlagArray, (void*)pValues, sizeof(BoundingBox), nValueCount);
+		Set(PropertyType::BBox, kPropertyFlagArray, (void*)pValues, sizeof(BoundingBox), nValueCount);
 		return *this;
 	}
 	inline Property& Property::SetArrayTransform(const Transform* pValues, size_t nValueCount) {
-		Set(PropertyType::kTransform, kPropertyFlagArray, (void*)pValues, sizeof(Transform), nValueCount);
+		Set(PropertyType::Transform, kPropertyFlagArray, (void*)pValues, sizeof(Transform), nValueCount);
 		return *this;
 	}
 	inline Property& Property::SetArrayText(const LocalizedString* pValues, size_t nValueCount) {
-		Set(PropertyType::kText, kPropertyFlagArray, (void*)pValues, sizeof(LocalizedString), nValueCount);
+		Set(PropertyType::Text, kPropertyFlagArray, (void*)pValues, sizeof(LocalizedString), nValueCount);
 		return *this;
 	}
 	inline Property& Property::SetArrayVector2(const Vector2* pValues, size_t nValueCount) {
-		Set(PropertyType::kVector2, kPropertyFlagArray, (void*)pValues, sizeof(Vector2), nValueCount);
+		Set(PropertyType::Vector2, kPropertyFlagArray, (void*)pValues, sizeof(Vector2), nValueCount);
 		return *this;
 	}
 	inline Property& Property::SetArrayVector3(const Vector3* pValues, size_t nValueCount) {
-		Set(PropertyType::kVector3, kPropertyFlagArray, (void*)pValues, sizeof(Vector3), nValueCount);
+		Set(PropertyType::Vector3, kPropertyFlagArray, (void*)pValues, sizeof(Vector3), nValueCount);
 		return *this;
 	}
 	inline Property& Property::SetArrayVector4(const Vector4* pValues, size_t nValueCount) {
-		Set(PropertyType::kVector4, kPropertyFlagArray, (void*)pValues, sizeof(Vector4), nValueCount);
+		Set(PropertyType::Vector4, kPropertyFlagArray, (void*)pValues, sizeof(Vector4), nValueCount);
 		return *this;
 	}
 	inline Property& Property::SetArrayColorRGB(const ColorRGB* pValues, size_t nValueCount) {
-		Set(PropertyType::kColorRGB, kPropertyFlagArray, (void*)pValues, sizeof(ColorRGB), nValueCount);
+		Set(PropertyType::ColorRGB, kPropertyFlagArray, (void*)pValues, sizeof(ColorRGB), nValueCount);
 		return *this;
 	}
 	inline Property& Property::SetArrayColorRGBA(const ColorRGBA* pValues, size_t nValueCount) {
-		Set(PropertyType::kColorRGBA, kPropertyFlagArray, (void*)pValues, sizeof(ColorRGBA), nValueCount);
+		Set(PropertyType::ColorRGBA, kPropertyFlagArray, (void*)pValues, sizeof(ColorRGBA), nValueCount);
 		return *this;
 	}
 }

@@ -1,3 +1,4 @@
+#ifndef MODAPI_DLL_EXPORT
 /****************************************************************************
 * Copyright (C) 2019 Eric Mor
 *
@@ -16,6 +17,7 @@
 * You should have received a copy of the GNU General Public License
 * along with this program.  If not, see <http://www.gnu.org/licenses/>.
 ****************************************************************************/
+
 #include <Spore\App\ScenarioMode.h>
 
 namespace App
@@ -28,3 +30,4 @@ namespace App
 		return *(ScenarioMode**)(GetAddress(ScenarioMode, ptr));
 	}
 }
+#endif

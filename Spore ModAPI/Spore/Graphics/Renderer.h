@@ -8,17 +8,17 @@
 namespace Graphics
 {
 	namespace Addresses(Renderer) {
-		DeclareAddress(Device_ptr, SelectAddress(0x016FFD00, 0x16F99D0, 0x16F89D0));
-		DeclareAddress(ShaderData_ptr, SelectAddress(0x016FD8D8, 0x16F75A8, 0x16F65A8));
-		DeclareAddress(MaterialShader_ptr, SelectAddress(0x016FD898, 0x16F7568, 0x16F6568));
-		DeclareAddress(ModelToWorld_ptr, SelectAddress(0x016FF8DC, 0x16F95AC, 0x16F85AC));
-		DeclareAddress(ModelToWorldTransposed_ptr, SelectAddress(0x1700024, 0x16F9CF4, 0x16F8CF4));
+		DeclareAddress(Device_ptr);
+		DeclareAddress(ShaderData_ptr);
+		DeclareAddress(MaterialShader_ptr);
+		DeclareAddress(ModelToWorld_ptr);
+		DeclareAddress(ModelToWorldTransposed_ptr);
 
-		DeclareAddress(SetShaderData, SelectAddress(0x7786E0, 0x777B50, 0x777B50));
+		DeclareAddress(SetShaderData);
 
-		DeclareAddress(CreateDevice, SelectAddress(0x11FADF0, , 0x11F86B0));
+		DeclareAddress(CreateDevice);
 
-		DeclareAddress(SetTexture, SelectAddress(0x11F39D0, , 0x11F12A0));
+		DeclareAddress(SetTexture);
 	}
 
 	/// 

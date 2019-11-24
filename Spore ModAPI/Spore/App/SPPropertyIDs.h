@@ -21,6 +21,11 @@
 
 #include <Spore\App\DirectPropertyList.h>
 
+namespace Addresses(App)
+{
+	DeclareAddress(AppProperties_ptr);
+}
+
 namespace App
 {
 	///
@@ -33,7 +38,7 @@ namespace App
 	/// ~~~~~~~~~~~~~~~
 	inline DirectPropertyList* AppProperties()
 	{
-		return *(DirectPropertyList**)(SelectAddress(0x1601BA0, 0x15FE910, 0x15FD918));
+		return *(DirectPropertyList**)(GetAddress(App, AppProperties_ptr));
 	}
 
 	/// 

@@ -110,10 +110,10 @@ namespace Palettes
 
 	namespace Addresses(ColorPickerUI)
 	{
-		DeclareAddress(Load, SelectAddress(0x5A5D50, 0x5A5EB0, 0x5A5EB0));
-		DeclareAddress(SetVisible, SelectAddress(0x5A3F30, 0x5A41F0, 0x5A41F0));
-		DeclareAddress(GetSwatchArea, SelectAddress(0x5A4480, 0x5A4740, 0x5A4740));
-		DeclareAddress(Update, SelectAddress(0x5A6C40, 0x5A6DA0, 0x5A6DA0));
-		DeclareAddress(SetColor, SelectAddress(0x5A4B50, , 0x5A4E10));
+		DeclareAddress(Load);
+		DeclareAddress(SetVisible);
+		DeclareAddress(GetSwatchArea);
+		DeclareAddress(Update);
+		DeclareAddress(SetColor);
 	}
 }

@@ -50,13 +50,13 @@ namespace Graphics
 	}
 
 	namespace Addresses(IRenderTargetManager) {
-		DeclareAddress(Get, SelectAddress(0x67DEC0, , 0x67DD60));
+		DeclareAddress(Get);
 	}
 }
 
 namespace Addresses(Graphics) {
-	DeclareAddress(MainColorRTT_ptr, SelectAddress(0x15D4AC8, , 0x15D0838));
-	DeclareAddress(MainDepthRTT_ptr, SelectAddress(0x15D4ACC, , 0x15D083C));
+	DeclareAddress(MainColorRTT_ptr);
+	DeclareAddress(MainDepthRTT_ptr);
 }
 
 namespace Graphics

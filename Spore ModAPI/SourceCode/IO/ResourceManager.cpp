@@ -25,6 +25,7 @@ namespace Resource
 
 	auto_STATIC_METHOD_(IResourceManager, IResourceManager*, Get);
 
+#ifndef MODAPI_DLL_EXPORT
 	auto_METHOD_VIRTUAL_(cResourceManager, cResourceManager, bool, NeedsToRelease);
 	auto_METHOD_VIRTUAL_(cResourceManager, cResourceManager, bool, ReleaseResources);
 	auto_METHOD_VIRTUAL(cResourceManager, cResourceManager, bool, GetResource, Args(const ResourceKey& name, ResourceObject** ppDst, int arg_8, DBPF* pDBPF, IResourceFactory* pFactory, const ResourceKey* pCacheName), Args(name, ppDst, arg_8, pDBPF, pFactory, pCacheName));
@@ -62,4 +63,5 @@ namespace Resource
 	auto_METHOD_VIRTUAL_const(cResourceManager, cResourceManager, wchar_t*, GetExtension, Args(uint32_t nTypeID), Args(nTypeID));
 	auto_METHOD_VIRTUAL(cResourceManager, cResourceManager, bool, AddExtensionMapping, Args(uint32_t nTypeID, const wchar_t* pExtension), Args(nTypeID, pExtension));
 	auto_METHOD_VIRTUAL(cResourceManager, cResourceManager, bool, RemoveExtensionMapping, Args(uint32_t nTypeID), Args(nTypeID));
+#endif
 }

@@ -33,6 +33,6 @@ namespace Simulator
 
 	namespace Addresses(cGenesisDeviceToolStrategy)
 	{
-		DeclareAddress(OnHit, SelectAddress(0x105CAC0, NO_ADDRESS, 0x105BF20));
+		DeclareAddress(OnHit);
 	}
 }

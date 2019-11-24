@@ -305,9 +305,9 @@ namespace UTFWin
 
 	namespace Addresses(Graphics2D)
 	{
-		DeclareAddress(DrawTiledImage, SelectAddress(0x95CAA0, 0x95C550, 0x95C550));
-		DeclareAddress(DrawSlicedTiledImage, SelectAddress(0x95CEF0, 0x95C9A0, 0x95C9A0));
-		DeclareAddress(DrawSlicedStretchedImage, SelectAddress(0x95D4B0, 0x95CF60, 0x95CF60));
+		DeclareAddress(DrawTiledImage);
+		DeclareAddress(DrawSlicedTiledImage);
+		DeclareAddress(DrawSlicedStretchedImage);
 	}
 
 	// Not fully documented, so we comment it out

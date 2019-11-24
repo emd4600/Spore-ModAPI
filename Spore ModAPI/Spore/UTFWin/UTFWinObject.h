@@ -35,6 +35,12 @@ namespace UTFWin
 		static void* operator new(size_t n);
 	};
 
+	namespace Addresses(UTFWinObject)
+	{
+		DeclareAddress(new_);
+		DeclareAddress(delete_);
+	}
+
 #define UTFWinObject_AMBIGOUS_DECLARATION static void* operator new(size_t n, ICoreAllocator* pAllocator, const char* pName); \
 static void* operator new(size_t n); \
 static void operator delete(void* p, ICoreAllocator* pAllocator, const char* pName); \

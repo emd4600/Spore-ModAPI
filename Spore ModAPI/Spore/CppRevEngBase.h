@@ -94,17 +94,6 @@ RedirectStaticMethod(Spore, CreateObject, bool, Args(const char* name), Args(nam
 RedirectMethod_noargs_const(Window, GetParent, Window*);
 */
 
-// The base address of the running program.
-extern uintptr_t baseAddress;
-
-// Use in the dllmain.cpp just after the includes.
-#define BaseAddressDeclare uintptr_t baseAddress
-
-// This msut be the first function you call in the DllMain function.
-inline void InitCppRevEng() {
-	baseAddress = (uintptr_t)GetModuleHandleA(NULL);
-}
-
 // Internal note: Address() can either be used in compile-time declarations (like DeclareAddress()) or
 // on runtime; in the first ones baseAddress is 0. Therefore, when using GetAddress() we have to add the base address again.
 
@@ -122,7 +111,9 @@ inline void InitCppRevEng() {
 //     DeclareAddress(ReadInt, 0x45d230);
 //     DeclareAddress(OpenStream, 0x45e500);
 // };
-#define DeclareAddress(name, value) const uintptr_t name = Address(value)
+// Modified in the ModAPI
+#define DeclareAddress(name) extern MODAPI const uintptr_t name
+#define DefineAddress(name, value) const uintptr_t name = value - 0x400000
 
 // Returns the address stored with a DeclareAddress() in the given addresses namespace.
 #define GetAddress(namespaceName, name) (Addresses(namespaceName)::name + baseAddress)

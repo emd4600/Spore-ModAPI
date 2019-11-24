@@ -1,3 +1,4 @@
+#ifndef MODAPI_DLL_EXPORT
 /****************************************************************************
 * Copyright (C) 2018 Eric Mor
 *
@@ -47,3 +48,4 @@ namespace UTFWin
 
 	auto_METHOD_(UILayout, IWindow*, GetContainerWindow);
 }
+#endif

@@ -133,8 +133,8 @@ namespace UTFWin
 
 	namespace Addresses(SporeStdDrawableImageInfo)
 	{
-		DeclareAddress(SetSerializer, SelectAddress(0x8310D0, 0x830840, 0x8308C0));
-		DeclareAddress(GetProxyID, SelectAddress(0x8311E0, 0x830950, 0x8309D0));
+		DeclareAddress(SetSerializer);
+		DeclareAddress(GetProxyID);
 	}
 
 	inline Image* SporeStdDrawableImageInfo::GetBackgroundImage() const { return mpBackgroundImage.get(); }

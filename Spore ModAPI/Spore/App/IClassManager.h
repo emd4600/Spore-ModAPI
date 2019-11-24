@@ -62,6 +62,6 @@ namespace App
 
 	namespace Addresses(IClassManager)
 	{
-		DeclareAddress(Get, SelectAddress(0x9205E0, NO_ADDRESS, 0x920320));
+		DeclareAddress(Get);
 	}
 }

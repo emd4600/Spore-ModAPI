@@ -230,7 +230,7 @@ namespace Graphics
 
 	namespace Addresses(IModelWorld)
 	{
-		DeclareAddress(LoadModelProperties, SelectAddress(0x74C5D0, 0x74B7D0, 0x74B7D0));
+		DeclareAddress(LoadModelProperties);
 	}
 
 }

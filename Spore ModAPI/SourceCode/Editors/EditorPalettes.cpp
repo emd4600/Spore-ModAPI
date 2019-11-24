@@ -1,3 +1,4 @@
+#ifndef MODAPI_DLL_EXPORT
 /****************************************************************************
 * Copyright (C) 2018 Eric Mor
 *
@@ -452,3 +453,4 @@ namespace Palettes
 
 	auto_METHOD_VOID_(ItemViewer, InitializeViewerCamera);
 }
+#endif

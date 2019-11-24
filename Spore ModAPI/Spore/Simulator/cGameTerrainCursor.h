@@ -101,6 +101,6 @@ namespace Simulator
 
 	namespace Addresses(cGameTerrainCursor)
 	{
-		DeclareAddress(GetTerrainCursor, SelectAddress(0xB30BE0, NO_ADDRESS, 0xB30EB0));
+		DeclareAddress(GetTerrainCursor);
 	}
 }

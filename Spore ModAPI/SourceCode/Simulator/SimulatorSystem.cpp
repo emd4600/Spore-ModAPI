@@ -1,3 +1,4 @@
+#ifndef MODAPI_DLL_EXPORT
 /****************************************************************************
 * Copyright (C) 2019 Eric Mor
 *
@@ -39,3 +40,4 @@ namespace Simulator
 		GameViewManager()->PrepareSimulator();
 	}
 }
+#endif

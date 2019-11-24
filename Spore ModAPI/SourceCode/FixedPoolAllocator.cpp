@@ -1,3 +1,4 @@
+#ifndef MODAPI_DLL_EXPORT
 /****************************************************************************
 * Copyright (C) 2018 Eric Mor
 *
@@ -42,3 +43,4 @@ METHOD(GetAddress(FixedPoolAllocator, Alloc_), FixedPoolAllocator, void*, FixedP
 	Args(size_t size, const char *name, unsigned int flags), Args(size, name, flags));
 
 auto_METHOD_VOID(FixedPoolAllocator, Free, Args(void *block, size_t size), Args(block, size));
+#endif

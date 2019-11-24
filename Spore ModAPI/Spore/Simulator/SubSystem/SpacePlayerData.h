@@ -62,18 +62,18 @@ namespace Simulator
 
 	namespace Addresses(SpacePlayerData)
 	{
-		DeclareAddress(ptr, SelectAddress(0x16E1D0C, 0x16DEA6C, 0x16DDA8C));
+		DeclareAddress(ptr);
 	}
 }
 
 namespace Addresses(Simulator)
 {
-	DeclareAddress(GetActiveStar, SelectAddress(0x10222B0, 0x10210E0, 0x10210E0));
-	DeclareAddress(GetActiveStarRecord, SelectAddress(0x10222C0, 0x10210F0, 0x10210F0));
+	DeclareAddress(GetActiveStar);
+	DeclareAddress(GetActiveStarRecord);
 
-	DeclareAddress(GetPlayerEmpire, SelectAddress(0x1022380, 0x10211B0, 0x10211B0));
-	DeclareAddress(GetPlayerEmpireID, SelectAddress(0x10220F0, 0x1020F40, 0x1020F40));
+	DeclareAddress(GetPlayerEmpire);
+	DeclareAddress(GetPlayerEmpireID);
 
-	DeclareAddress(GetCurrentContext, SelectAddress(0x10220E0, 0x1020F30, 0x1020F30));
+	DeclareAddress(GetCurrentContext);
 
 }

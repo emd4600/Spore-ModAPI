@@ -149,6 +149,6 @@ namespace Simulator
 
 	namespace Addresses(cVehicle)
 	{
-		DeclareAddress(Load, SelectAddress(0xCA6060, NO_ADDRESS, 0xCA67C0));
+		DeclareAddress(Load);
 	}
 }

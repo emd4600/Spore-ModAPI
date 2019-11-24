@@ -54,6 +54,6 @@ namespace Palettes
 
 	namespace Addresses(StandardItemUI)
 	{
-		DeclareAddress(HandleUIMessage, SelectAddress(0x5C73F0, 0x5C7320, 0x5C7350));
+		DeclareAddress(HandleUIMessage);
 	}
 }

@@ -89,6 +89,6 @@ namespace App
 	static_assert(sizeof(ScenarioMode) == 0xE0, "sizeof(ScenarioMode) != E0h");
 
 	namespace Addresses(ScenarioMode) {
-		DeclareAddress(ptr, SelectAddress(0x16CBD24,, 0x16C7AA4));
+		DeclareAddress(ptr);
 	}
 }

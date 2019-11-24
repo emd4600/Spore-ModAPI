@@ -1,3 +1,4 @@
+#ifndef MODAPI_DLL_EXPORT
 /****************************************************************************
 * Copyright (C) 2019 Eric Mor
 *
@@ -27,3 +28,4 @@ namespace Simulator
 
 	auto_METHOD_const_(cPlanet, float, GetTemperatureScore);
 }
+#endif

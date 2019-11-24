@@ -1,3 +1,4 @@
+#ifndef MODAPI_DLL_EXPORT
 /****************************************************************************
 * Copyright (C) 2018 Eric Mor
 *
@@ -385,3 +386,4 @@ namespace UTFWin
 
 	auto_METHOD_VIRTUAL_VOID(FadeEffect, BiStateEffect, func84h, Args(int arg_0, float arg_4), Args(arg_0, arg_4));
 }
+#endif

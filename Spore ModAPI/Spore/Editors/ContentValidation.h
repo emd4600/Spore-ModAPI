@@ -14,8 +14,8 @@ namespace Editors
 	};
 
 	namespace Addresses(ContentValidation) {
-		DeclareAddress(IllegalCharacters_ptr, SelectAddress(0x15DEA54, , 0x15DA7C4));
-		DeclareAddress(ValidationEditableTests_ptr, SelectAddress(0x15DEA04, , 0x15DA7D4));
+		DeclareAddress(IllegalCharacters_ptr);
+		DeclareAddress(ValidationEditableTests_ptr);
 	}
 
 	inline eastl::string16& ContentValidation::IllegalCharacters() {

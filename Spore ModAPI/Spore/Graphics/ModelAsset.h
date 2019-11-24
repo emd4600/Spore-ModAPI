@@ -159,6 +159,6 @@ namespace Graphics
 
 	namespace Addresses(Model)
 	{
-		DeclareAddress(Release, SelectAddress(0x40F2C0, 0x40F360, 0x40F360));
+		DeclareAddress(Release);
 	}
 }

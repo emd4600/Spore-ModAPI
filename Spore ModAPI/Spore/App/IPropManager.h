@@ -168,6 +168,6 @@ namespace App
 
 	namespace Addresses(IPropManager)
 	{
-		DeclareAddress(Get, SelectAddress(0x67DF50, 0x67DDF0, 0x67DDF0));
+		DeclareAddress(Get);
 	}
 }

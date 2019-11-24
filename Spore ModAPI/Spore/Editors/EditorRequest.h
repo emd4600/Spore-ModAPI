@@ -137,6 +137,6 @@ namespace Editors
 	}
 
 	namespace Addresses(EditorRequest) {
-		DeclareAddress(Submit, SelectAddress(0x5A9090, , 0x5A92C0));
+		DeclareAddress(Submit);
 	}
 }

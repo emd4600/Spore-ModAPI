@@ -73,6 +73,6 @@ namespace UTFWin
 
 	namespace Addresses(IWindowManager)
 	{
-		DeclareAddress(Get, SelectAddress(0x67CBF0, 0x67CA60, 0x67CA60));
+		DeclareAddress(Get);
 	}
 }

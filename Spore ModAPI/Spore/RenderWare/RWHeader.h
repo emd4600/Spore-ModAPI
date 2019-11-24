@@ -58,6 +58,6 @@ namespace RenderWare
 
 	namespace Addresses(RWHeader)
 	{
-		DeclareAddress(GetRWObject, SelectAddress(0x11E5060,, 0x11E2920));
+		DeclareAddress(GetRWObject);
 	}
 }

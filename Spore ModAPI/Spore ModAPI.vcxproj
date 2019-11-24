@@ -1,20 +1,20 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
-    <ProjectConfiguration Include="Debug - Disk|Win32">
-      <Configuration>Debug - Disk</Configuration>
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
       <Platform>Win32</Platform>
     </ProjectConfiguration>
-    <ProjectConfiguration Include="Debug - Steam Patched|Win32">
-      <Configuration>Debug - Steam Patched</Configuration>
+    <ProjectConfiguration Include="Debug DLL|Win32">
+      <Configuration>Debug DLL</Configuration>
       <Platform>Win32</Platform>
     </ProjectConfiguration>
-    <ProjectConfiguration Include="Release - Disk|Win32">
-      <Configuration>Release - Disk</Configuration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
       <Platform>Win32</Platform>
     </ProjectConfiguration>
-    <ProjectConfiguration Include="Release - Steam Patched|Win32">
-      <Configuration>Release - Steam Patched</Configuration>
+    <ProjectConfiguration Include="Release DLL|Win32">
+      <Configuration>Release DLL</Configuration>
       <Platform>Win32</Platform>
     </ProjectConfiguration>
   </ItemGroup>
@@ -23,29 +23,29 @@
     <Keyword>Win32Proj</Keyword>
     <RootNamespace>SporeModAPI</RootNamespace>
     <ProjectName>Spore ModAPI</ProjectName>
-    <WindowsTargetPlatformVersion>10.0.15063.0</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug - Disk|Win32'" Label="Configuration">
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug DLL|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
     <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <PlatformToolset>v142</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug - Steam Patched|Win32'" Label="Configuration">
-    <ConfigurationType>StaticLibrary</ConfigurationType>
-    <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v142</PlatformToolset>
-    <CharacterSet>Unicode</CharacterSet>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release - Disk|Win32'" Label="Configuration">
-    <ConfigurationType>StaticLibrary</ConfigurationType>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release DLL|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
     <PlatformToolset>v142</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release - Steam Patched|Win32'" Label="Configuration">
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
     <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
     <PlatformToolset>v142</PlatformToolset>
@@ -55,49 +55,52 @@
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
   <ImportGroup Label="ExtensionSettings">
   </ImportGroup>
-  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug - Disk|Win32'" Label="PropertySheets">
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug DLL|Win32'" Label="PropertySheets">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
   </ImportGroup>
-  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug - Steam Patched|Win32'" Label="PropertySheets">
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
   </ImportGroup>
-  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release - Disk|Win32'" Label="PropertySheets">
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release DLL|Win32'" Label="PropertySheets">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
   </ImportGroup>
-  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release - Steam Patched|Win32'" Label="PropertySheets">
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug - Disk|Win32'">
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug DLL|Win32'">
     <IncludePath>..\Detours\include\;$(ProjectDir);$(VC_IncludePath);$(WindowsSDK_IncludePath);..\EASTL-3.02.01\test\packages\EABase\include\Common;..\EASTL-3.02.01\test\packages\EAAssert\include;..\EASTL-3.02.01\test\packages\EAStdC\include;..\EASTL-3.02.01\include;..\Detours\include\</IncludePath>
-    <TargetName>SporeModAPIBase-disk</TargetName>
+    <TargetName>SporeModAPI</TargetName>
+    <OutDir>..\dll\Debug\</OutDir>
+    <IntDir>..\dll\</IntDir>
+    <TargetExt>.dll</TargetExt>
+    <LibraryPath>..\Detours\lib.X86;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <IncludePath>..\Detours\include\;$(ProjectDir);$(VC_IncludePath);$(WindowsSDK_IncludePath);..\EASTL-3.02.01\test\packages\EABase\include\Common;..\EASTL-3.02.01\test\packages\EAAssert\include;..\EASTL-3.02.01\test\packages\EAStdC\include;..\EASTL-3.02.01\include;E:\Detours\include\</IncludePath>
+    <TargetName>SporeModAPIBase</TargetName>
     <OutDir>..\lib\Debug\</OutDir>
     <IntDir>..\lib\</IntDir>
   </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug - Steam Patched|Win32'">
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release DLL|Win32'">
     <IncludePath>..\Detours\include\;$(ProjectDir);$(VC_IncludePath);$(WindowsSDK_IncludePath);..\EASTL-3.02.01\test\packages\EABase\include\Common;..\EASTL-3.02.01\test\packages\EAAssert\include;..\EASTL-3.02.01\test\packages\EAStdC\include;..\EASTL-3.02.01\include;E:\Detours\include\</IncludePath>
-    <TargetName>SporeModAPIBase-steam_patched</TargetName>
-    <OutDir>..\lib\Debug\</OutDir>
-    <IntDir>..\lib\</IntDir>
+    <TargetName>SporeModAPI</TargetName>
+    <OutDir>..\dll\Release\</OutDir>
+    <IntDir>..\dll\</IntDir>
+    <LibraryPath>..\Detours\lib.X86;$(LibraryPath)</LibraryPath>
+    <TargetExt>.dll</TargetExt>
   </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release - Disk|Win32'">
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <IncludePath>..\Detours\include\;$(ProjectDir);$(VC_IncludePath);$(WindowsSDK_IncludePath);..\EASTL-3.02.01\test\packages\EABase\include\Common;..\EASTL-3.02.01\test\packages\EAAssert\include;..\EASTL-3.02.01\test\packages\EAStdC\include;..\EASTL-3.02.01\include;E:\Detours\include\</IncludePath>
-    <TargetName>SporeModAPIBase-disk</TargetName>
+    <TargetName>SporeModAPIBase</TargetName>
     <OutDir>..\lib\Release\</OutDir>
     <IntDir>..\lib\</IntDir>
   </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release - Steam Patched|Win32'">
-    <IncludePath>..\Detours\include\;$(ProjectDir);$(VC_IncludePath);$(WindowsSDK_IncludePath);..\EASTL-3.02.01\test\packages\EABase\include\Common;..\EASTL-3.02.01\test\packages\EAAssert\include;..\EASTL-3.02.01\test\packages\EAStdC\include;..\EASTL-3.02.01\include;E:\Detours\include\</IncludePath>
-    <TargetName>SporeModAPIBase-steam_patched</TargetName>
-    <OutDir>..\lib\Release\</OutDir>
-    <IntDir>..\lib\</IntDir>
-  </PropertyGroup>
-  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug - Disk|Win32'">
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug DLL|Win32'">
     <ClCompile>
-      <PrecompiledHeader>
-      </PrecompiledHeader>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
-      <PreprocessorDefinitions>WIN32;EXECUTABLE_TYPE=SPORE_STANDARD;PATCHED_SPORE=0;_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;_USRDLL;MODAPI_DLL_EXPORT;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <SDLCheck>true</SDLCheck>
       <DisableSpecificWarnings>4351</DisableSpecificWarnings>
       <PreprocessToFile>false</PreprocessToFile>
@@ -105,21 +108,24 @@
     <Link>
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>detours.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <PostBuildEvent>
       <Command>
       </Command>
     </PostBuildEvent>
+    <ResourceCompile>
+      <PreprocessorDefinitions>MODAPI_DLL_EXPORT;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
   </ItemDefinitionGroup>
-  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug - Steam Patched|Win32'">
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
       <PrecompiledHeader>
       </PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
-      <PreprocessorDefinitions>WIN32;EXECUTABLE_TYPE=SPORE_STEAM;PATCHED_SPORE=1;_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <SDLCheck>true</SDLCheck>
       <DisableSpecificWarnings>4351</DisableSpecificWarnings>
-      <AdditionalOptions>/d1reportSingleClassLayoutcBuildingBase %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -130,7 +136,7 @@
       </Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
-  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release - Disk|Win32'">
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release DLL|Win32'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <PrecompiledHeader>
@@ -138,7 +144,7 @@
       <Optimization>MaxSpeed</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
-      <PreprocessorDefinitions>WIN32;EXECUTABLE_TYPE=SPORE_STANDARD;PATCHED_SPORE=0;NDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;_USRDLL;MODAPI_DLL_EXPORT;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <SDLCheck>true</SDLCheck>
       <DisableSpecificWarnings>4351</DisableSpecificWarnings>
       <WholeProgramOptimization>false</WholeProgramOptimization>
@@ -149,9 +155,13 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalDependencies>detours.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
+    <ResourceCompile>
+      <PreprocessorDefinitions>MODAPI_DLL_EXPORT;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
   </ItemDefinitionGroup>
-  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release - Steam Patched|Win32'">
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <PrecompiledHeader>
@@ -159,7 +169,7 @@
       <Optimization>MaxSpeed</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
-      <PreprocessorDefinitions>WIN32;EXECUTABLE_TYPE=SPORE_STEAM;PATCHED_SPORE=1;NDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <SDLCheck>true</SDLCheck>
       <DisableSpecificWarnings>4351</DisableSpecificWarnings>
       <WholeProgramOptimization>false</WholeProgramOptimization>
@@ -281,9 +291,15 @@
     <ClInclude Include="EASTL\vector_set.h" />
     <ClInclude Include="EASTL\version.h" />
     <ClInclude Include="EASTL\weak_ptr.h" />
-    <ClInclude Include="ModAPI\CppRevEng.h" />
-    <ClInclude Include="ModAPI\CppRevEngBase.h" />
+    <ClInclude Include="SourceCode\DLL\Application.h" />
+    <ClInclude Include="SourceCode\DLL\resource.h" />
+    <ClInclude Include="SourceCode\DLL\stdafx.h" />
+    <ClInclude Include="SourceCode\DLL\targetver.h" />
+    <ClInclude Include="Spore\BasicIncludes.h" />
+    <ClInclude Include="Spore\CppRevEng.h" />
+    <ClInclude Include="Spore\CppRevEngBase.h" />
     <ClInclude Include="ModAPI\Detouring.h" />
+    <ClInclude Include="Spore\ModAPI.h" />
     <ClInclude Include="SourceCode\Utility.h" />
     <ClInclude Include="Spore\Anim\AnimContainer.h" />
     <ClInclude Include="Spore\Anim\CreatureBlock.h" />
@@ -564,7 +580,6 @@
     <ClInclude Include="Spore\App\SPPropertyIDs.h" />
     <ClInclude Include="Spore\Swarm\Components\Attractor.h" />
     <ClInclude Include="Spore\Swarm\EffectDirectory.h" />
-    <ClInclude Include="ModAPI\MainUtilities.h" />
     <ClInclude Include="Spore\ArgScript\Line.h" />
     <ClInclude Include="Spore\ArgScript\IParser.h" />
     <ClInclude Include="Spore\Editors\Editor.h" />
@@ -672,14 +687,38 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="SourceCode\Allocator.cpp" />
-    <ClCompile Include="SourceCode\App\App.cpp" />
     <ClCompile Include="SourceCode\App\Cameras.cpp" />
     <ClCompile Include="SourceCode\App\CheatManager.cpp" />
     <ClCompile Include="SourceCode\App\GameModes.cpp" />
     <ClCompile Include="SourceCode\App\Messages.cpp" />
+    <ClCompile Include="SourceCode\App\PropertyList.cpp" />
     <ClCompile Include="SourceCode\App\PropManager.cpp" />
+    <ClCompile Include="SourceCode\App\ScenarioMode.cpp" />
+    <ClCompile Include="SourceCode\App\Viewer.cpp" />
     <ClCompile Include="SourceCode\ArgScript\ClassManager.cpp" />
     <ClCompile Include="SourceCode\Audio\AudioSystem.cpp" />
+    <ClCompile Include="SourceCode\Debugging.cpp" />
+    <ClCompile Include="SourceCode\DLL\AddressesApp.cpp" />
+    <ClCompile Include="SourceCode\DLL\AddressesArgScript.cpp" />
+    <ClCompile Include="SourceCode\DLL\AddressesAudio.cpp" />
+    <ClCompile Include="SourceCode\DLL\AddressesEditors.cpp" />
+    <ClCompile Include="SourceCode\DLL\AddressesGalaxyGameEntry.cpp" />
+    <ClCompile Include="SourceCode\DLL\AddressesGraphics.cpp" />
+    <ClCompile Include="SourceCode\DLL\AddressesIO.cpp" />
+    <ClCompile Include="SourceCode\DLL\AddressesMisc.cpp" />
+    <ClCompile Include="SourceCode\DLL\AddressesPalettes.cpp" />
+    <ClCompile Include="SourceCode\DLL\AddressesRenderWare.cpp" />
+    <ClCompile Include="SourceCode\DLL\AddressesResource.cpp" />
+    <ClCompile Include="SourceCode\DLL\AddressesSimulator.cpp" />
+    <ClCompile Include="SourceCode\DLL\AddressesSporepedia.cpp" />
+    <ClCompile Include="SourceCode\DLL\AddressesSwarm.cpp" />
+    <ClCompile Include="SourceCode\DLL\AddressesTerrain.cpp" />
+    <ClCompile Include="SourceCode\DLL\AddressesUI.cpp" />
+    <ClCompile Include="SourceCode\DLL\AddressesUTFWin.cpp" />
+    <ClCompile Include="SourceCode\DLL\Application.cpp" />
+    <ClCompile Include="SourceCode\DLL\dllmain.cpp" />
+    <ClCompile Include="SourceCode\DLL\DllModAPI.cpp" />
+    <ClCompile Include="SourceCode\DLL\stdafx.cpp" />
     <ClCompile Include="SourceCode\EASTL\allocator_eastl.cpp" />
     <ClCompile Include="SourceCode\EASTL\assert.cpp" />
     <ClCompile Include="SourceCode\EASTL\EAMemory.cpp" />
@@ -701,7 +740,6 @@
     <ClCompile Include="SourceCode\Graphics\RenderTargets.cpp" />
     <ClCompile Include="SourceCode\RenderWare\Raster.cpp" />
     <ClCompile Include="SourceCode\RenderWare\RenderWare.cpp" />
-    <ClCompile Include="SourceCode\App\ScenarioMode.cpp" />
     <ClCompile Include="SourceCode\Simulator\cCity.cpp" />
     <ClCompile Include="SourceCode\Simulator\cCreatureAbility.cpp" />
     <ClCompile Include="SourceCode\Simulator\cCreatureAnimal.cpp" />
@@ -728,7 +766,6 @@
     <ClCompile Include="SourceCode\Graphics\Materials.cpp" />
     <ClCompile Include="SourceCode\Graphics\Models.cpp" />
     <ClCompile Include="SourceCode\Graphics\Rendering.cpp" />
-    <ClCompile Include="SourceCode\App\Viewer.cpp" />
     <ClCompile Include="SourceCode\Graphics\Textures.cpp" />
     <ClCompile Include="SourceCode\IO\IODefinitions.cpp" />
     <ClCompile Include="SourceCode\IO\ResourceManager.cpp" />
@@ -737,7 +774,6 @@
     <ClCompile Include="SourceCode\IO\XML.cpp" />
     <ClCompile Include="SourceCode\LocalizedString.cpp" />
     <ClCompile Include="SourceCode\Mutex.cpp" />
-    <ClCompile Include="SourceCode\App\PropertyList.cpp" />
     <ClCompile Include="SourceCode\RenderWare\RWBuffers.cpp" />
     <ClCompile Include="SourceCode\RenderWare\RWSkeleton.cpp" />
     <ClCompile Include="SourceCode\Simulator\GameNounManager.cpp" />
@@ -769,7 +805,6 @@
     <ClCompile Include="SourceCode\UTFWin\Serialization.cpp" />
     <ClCompile Include="SourceCode\UTFWin\Window.cpp" />
     <ClCompile Include="SourceCode\ArgScript\ArgScript.cpp" />
-    <ClCompile Include="SourceCode\MainUtilities.cpp" />
     <ClCompile Include="SourceCode\Hash.cpp" />
     <ClCompile Include="SourceCode\Math.cpp" />
     <ClCompile Include="SourceCode\Object.cpp" />
@@ -785,6 +820,13 @@
     <None Include="Objects.dox" />
     <None Include="README.md" />
     <None Include="ShopperRequest.dox" />
+  </ItemGroup>
+  <ItemGroup>
+    <Natvis Include="EASTL.natvis" />
+    <Natvis Include="SporeDebug.natvis" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="SourceCode\DLL\VersionInfo.rc" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -507,8 +507,8 @@ namespace Editors
 	static_assert(sizeof(Editor) == 0x600, "sizeof(Editor) must be 0x600!");
 
 	namespace Addresses(Editor) {
-		DeclareAddress(sub_581F70, SelectAddress(0x581F70, 0x582250, 0x582250));
-		DeclareAddress(ptr, SelectAddress(0x15E9170, 0x015E5EF0, 0x15E4EF0));
+		DeclareAddress(sub_581F70);
+		DeclareAddress(ptr);
 	}
 
 	/// Returns the Editor instance (there can only be one at a time).

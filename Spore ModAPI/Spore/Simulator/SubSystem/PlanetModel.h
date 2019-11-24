@@ -65,13 +65,13 @@ namespace Simulator
 
 	namespace Addresses(cPlanetModel)
 	{
-		DeclareAddress(Get, SelectAddress(0xB3D2B0, NO_ADDRESS, 0xB3D450));
+		DeclareAddress(Get);
 
-		DeclareAddress(IsInWater, SelectAddress(0xB7DC90, NO_ADDRESS, 0xB7E530));
-		DeclareAddress(GetNearestCity, SelectAddress(0xB88DF0, NO_ADDRESS, 0xB895F0));
-		DeclareAddress(ToSurface, SelectAddress(0xB80F30, NO_ADDRESS, 0xB81780));
-		DeclareAddress(GetGravity, SelectAddress(0xB7DD40, NO_ADDRESS, 0xB7E5E0));
-		DeclareAddress(GetHeightAt, SelectAddress(0xB7E860, NO_ADDRESS, 0xB7F0C0));
-		DeclareAddress(GetOrientation, SelectAddress(0xB7EB40, , 0xB7F3A0));
+		DeclareAddress(IsInWater);
+		DeclareAddress(GetNearestCity);
+		DeclareAddress(ToSurface);
+		DeclareAddress(GetGravity);
+		DeclareAddress(GetHeightAt);
+		DeclareAddress(GetOrientation);
 	}
 }

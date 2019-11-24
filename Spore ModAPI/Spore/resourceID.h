@@ -33,8 +33,8 @@ public:
 	ResourceID();
 	ResourceID(uint32_t instanceID, uint32_t groupID);
 
-	uint32_t mnGroupID;
-	uint32_t mnInstanceID;
+	uint32_t groupID;
+	uint32_t instanceID;
 
 	bool ResourceID::operator ==(const ResourceID &b) const;
 
@@ -49,20 +49,20 @@ static_assert(sizeof(ResourceID) == 0x8, "sizeof(ResourceID) must be 8h");
 
 
 inline ResourceID::ResourceID(uint32_t _instanceID, uint32_t _groupID)
-	: mnInstanceID(_instanceID)
-	, mnGroupID(_groupID)
+	: instanceID(_instanceID)
+	, groupID(_groupID)
 {
 };
 
 inline ResourceID::ResourceID()
-	: mnInstanceID(0)  // maybe use -1?
-	, mnGroupID(0)  // maybe use -1?
+	: instanceID(0)  // maybe use -1?
+	, groupID(0)  // maybe use -1?
 {
 }
 
 inline bool ResourceID::operator ==(const ResourceID &b) const
 {
-	return mnGroupID == b.mnGroupID && mnInstanceID == b.mnInstanceID;
+	return groupID == b.groupID && instanceID == b.instanceID;
 }
 
 namespace eastl
@@ -70,6 +70,6 @@ namespace eastl
 	/// A necessary structure to be able to use ResourceID on containers such as hash_map.
 	template <> struct hash<ResourceID>
 	{
-		size_t operator()(const ResourceID& val) const { return static_cast<size_t>(val.mnGroupID); }
+		size_t operator()(const ResourceID& val) const { return static_cast<size_t>(val.groupID); }
 	};
 }

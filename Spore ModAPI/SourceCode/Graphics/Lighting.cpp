@@ -1,3 +1,4 @@
+#ifndef MODAPI_DLL_EXPORT
 /****************************************************************************
 * Copyright (C) 2018 Eric Mor
 *
@@ -25,3 +26,4 @@ namespace Graphics
 {
 	auto_STATIC_METHOD_(ILightingManager, ILightingManager*, Get);
 }
+#endif

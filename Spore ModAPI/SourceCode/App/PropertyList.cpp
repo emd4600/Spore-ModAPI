@@ -1,3 +1,4 @@
+#ifndef MODAPI_DLL_EXPORT
 /****************************************************************************
 * Copyright (C) 2018 Eric Mor
 *
@@ -24,7 +25,7 @@ namespace App
 {
 	PropertyList::PropertyList()
 		: mProperties()
-		, mParent(nullptr)
+		, mpParent(nullptr)
 		, mnOperationsDone(0)
 	{
 
@@ -81,3 +82,4 @@ namespace App
 	auto_METHOD_VOID_const(DirectPropertyList, GetPropertyIDs, Args(vector<uint32_t>& dst), Args(dst));
 	auto_METHOD_VOID_(DirectPropertyList, Clear);
 }
+#endif

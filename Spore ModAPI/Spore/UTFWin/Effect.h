@@ -178,21 +178,21 @@ namespace UTFWin
 
 	namespace Addresses(BiStateEffect)
 	{
-		DeclareAddress(SetSerializer, SelectAddress(0x964000, 0x963CA0, 0x963CA0));
+		DeclareAddress(SetSerializer);
 
-		DeclareAddress(GetEventFlags, SelectAddress(0x9636E0, 0x9633E0, 0x9633E0));
-		DeclareAddress(HandleUIMessage, SelectAddress(0x9639F0, 0x9636A0, 0x9636A0));
+		DeclareAddress(GetEventFlags);
+		DeclareAddress(HandleUIMessage);
 
-		DeclareAddress(ToWinProc, SelectAddress(0x97E760, 0x96FEB0, 0x96FEB0));
-		DeclareAddress(GetTime, SelectAddress(0x980800, 0x97E440, 0x97E440));
-		DeclareAddress(SetTime, SelectAddress(0x9638F0, 0x967220, 0x967220));
-		DeclareAddress(GetTriggerType, SelectAddress(0x804E30, 0xFF3480, 0xFF3480));
-		DeclareAddress(SetTriggerType, SelectAddress(0x112EBC0, 0x987900, 0x987900));
-		DeclareAddress(GetEase, SelectAddress(0x97F110, 0x9635F0, 0x9635F0));
-		DeclareAddress(SetEase, SelectAddress(0x963910, 0x963610, 0x963610));
-		DeclareAddress(GetInterpolationType, SelectAddress(0xFCE1D0, 0x641770, 0x641760));
-		DeclareAddress(SetInterpolationType, SelectAddress(0x841AC0, 0xA6FE50, 0xA6FE70));
-		DeclareAddress(GetDamping, SelectAddress(0x963980, 0x97EE30, 0x97EE60));
-		DeclareAddress(SetDamping, SelectAddress(0x963990, 0x963680, 0x963680));
+		DeclareAddress(ToWinProc);
+		DeclareAddress(GetTime);
+		DeclareAddress(SetTime);
+		DeclareAddress(GetTriggerType);
+		DeclareAddress(SetTriggerType);
+		DeclareAddress(GetEase);
+		DeclareAddress(SetEase);
+		DeclareAddress(GetInterpolationType);
+		DeclareAddress(SetInterpolationType);
+		DeclareAddress(GetDamping);
+		DeclareAddress(SetDamping);
 	}
 };

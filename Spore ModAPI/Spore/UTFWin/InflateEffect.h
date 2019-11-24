@@ -80,17 +80,17 @@ namespace UTFWin
 
 	namespace Addresses(InflateEffect)
 	{
-		DeclareAddress(GetEventFlags, SelectAddress(0x9636E0, 0x9633E0, 0x9633E0));
-		DeclareAddress(HandleUIMessage, SelectAddress(0x9639F0, 0x9636A0, 0x9636A0));
+		DeclareAddress(GetEventFlags);
+		DeclareAddress(HandleUIMessage);
 
-		DeclareAddress(SetSerializer, SelectAddress(0x97E8C0, 0x97E5D0, 0x97E5D0));
-		DeclareAddress(GetProxyID, SelectAddress(0x97E780, 0x97E450, 0x97E450));
+		DeclareAddress(SetSerializer);
+		DeclareAddress(GetProxyID);
 
-		DeclareAddress(func80h, SelectAddress(0xE1CF40, 0x1154790, 0x1154790));
-		DeclareAddress(func88h, SelectAddress(0x97E840, 0x97E550, 0x97E550));
+		DeclareAddress(func80h);
+		DeclareAddress(func88h);
 
-		DeclareAddress(ToWinProc, SelectAddress(0x980500, 0x980200, 0x980230));
-		DeclareAddress(GetScale, SelectAddress(0x980800, 0x97E440, 0x97E440));
-		DeclareAddress(SetScale, SelectAddress(0x97E770, 0x9804D0, 0x980500));
+		DeclareAddress(ToWinProc);
+		DeclareAddress(GetScale);
+		DeclareAddress(SetScale);
 	}
 };

@@ -33,6 +33,6 @@ namespace Simulator
 
 	namespace Addresses(cMindEraseToolStrategy)
 	{
-		DeclareAddress(OnHit, SelectAddress(0x105C890, NO_ADDRESS, 0x105BCF0));
+		DeclareAddress(OnHit);
 	}
 }

@@ -26,7 +26,7 @@
 namespace Simulator
 {
 	namespace Addresses(Cell) {
-		DeclareAddress(GoalCards_ptr, SelectAddress(0x16B8068, 0x16B4DC8, 0x16B3DE8));
+		DeclareAddress(GoalCards_ptr);
 	}
 
 	namespace Cell
@@ -85,23 +85,23 @@ namespace Simulator
 
 		namespace Addresses(GameModeCell)
 		{
-			DeclareAddress(AddRef, SelectAddress(0x1098140, 0xDD3D10, 0xDD3CA0));
-			DeclareAddress(Release, SelectAddress(0xE1CF40, 0x1154790, 0x1154790));
-			DeclareAddress(func0Ch, SelectAddress(0xA37650, 0xB1FB00, 0xB1FB30));
-			DeclareAddress(Initialize, SelectAddress(0xE82280, 0xE81CF0, 0xE81CF0));
-			DeclareAddress(Dispose, SelectAddress(0xE824C0, 0xE81F30, 0xE81F30));
-			DeclareAddress(OnEnter, SelectAddress(0xE55950, 0xE55300, 0xE552F0));
-			DeclareAddress(OnExit, SelectAddress(0xE80190, 0xE7FC00, 0xE7FC00));
-			DeclareAddress(func20h, SelectAddress(0xE515F0, 0xE50FF0, 0xE50FE0));
-			DeclareAddress(OnKeyDown, SelectAddress(0xE81E80, 0xE818F0, 0xE818F0));
-			DeclareAddress(OnKeyUp, SelectAddress(0xE51600, 0xE51000, 0xE50FF0));
-			DeclareAddress(OnMouseDown, SelectAddress(0xE6CDE0, 0xE6C860, 0xE6C860));
-			DeclareAddress(OnMouseUp, SelectAddress(0xE5C6F0, 0xE5C110, 0xE5C0F0));
-			DeclareAddress(OnMouseMove, SelectAddress(0xE51620, 0xE51020, 0xE51010));
-			DeclareAddress(OnMouseWheel, SelectAddress(0xE7DBC0, 0xE7D660, 0xE7D660));
-			DeclareAddress(Update, SelectAddress(0xE80F10, 0xE80980, 0xE80980));
+			DeclareAddress(AddRef);
+			DeclareAddress(Release);
+			DeclareAddress(func0Ch);
+			DeclareAddress(Initialize);
+			DeclareAddress(Dispose);
+			DeclareAddress(OnEnter);
+			DeclareAddress(OnExit);
+			DeclareAddress(func20h);
+			DeclareAddress(OnKeyDown);
+			DeclareAddress(OnKeyUp);
+			DeclareAddress(OnMouseDown);
+			DeclareAddress(OnMouseUp);
+			DeclareAddress(OnMouseMove);
+			DeclareAddress(OnMouseWheel);
+			DeclareAddress(Update);
 
-			DeclareAddress(HandleMessage, SelectAddress(0xE5CB90, 0xE62C90, 0xE62700));
+			DeclareAddress(HandleMessage);
 
 		}
 	}

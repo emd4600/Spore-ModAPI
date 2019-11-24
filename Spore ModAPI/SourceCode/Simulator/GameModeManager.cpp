@@ -1,3 +1,4 @@
+#ifndef MODAPI_DLL_EXPORT
 /****************************************************************************
 * Copyright (C) 2019 Eric Mor
 *
@@ -38,3 +39,4 @@ namespace Simulator
 
 	auto_METHOD_(cGameModeManager, App::PropertyList*, GetActiveDifficultyTuning);
 }
+#endif

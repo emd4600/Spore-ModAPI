@@ -176,6 +176,6 @@ namespace Swarm
 
 	namespace Addresses(ISwarmManager)
 	{
-		DeclareAddress(Get, SelectAddress(0x67DEF0, 0x67DD90, 0x67DD90));
+		DeclareAddress(Get);
 	}
 }

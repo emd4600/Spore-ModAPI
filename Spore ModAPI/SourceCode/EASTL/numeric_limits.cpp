@@ -567,5 +567,3 @@
 	} // namespace eastl
 
 #endif // (VC++ 2010 or earlier)
-
-

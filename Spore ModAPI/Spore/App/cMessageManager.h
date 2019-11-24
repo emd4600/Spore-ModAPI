@@ -72,24 +72,24 @@ namespace App
 
 	namespace Addresses(cMessageManager)
 	{
-		DeclareAddress(Initialize, SelectAddress(0xA37650, 0xB1FB00, 0xB1FB30));
-		DeclareAddress(Dispose, SelectAddress(0x885780, 0x884B90, 0x884BD0));
-		DeclareAddress(GetOption, SelectAddress(0x884370, 0x883930, 0x883970));
-		DeclareAddress(SetOption, SelectAddress(0x884400, 0x8839C0, 0x883A00));
-		DeclareAddress(PostMSG, SelectAddress(0x885F10, 0x885460, 0x8854A0));
-		DeclareAddress(func18h, SelectAddress(0x8863F0, 0x885940, 0x885980));
-		DeclareAddress(func1Ch, SelectAddress(0x886490, 0x8859E0, 0x885A20));
-		DeclareAddress(AddListener, SelectAddress(0x8844D0, 0x883A90, 0x883AD0));
-		DeclareAddress(AddUnmanagedListener, SelectAddress(0x884490, 0x883A50, 0x883A90));
-		DeclareAddress(AddHandler, SelectAddress(0x884520, 0x883AE0, 0x883B20));
-		DeclareAddress(RemoveListener, SelectAddress(0x884590, 0x883B50, 0x883B90));
-		DeclareAddress(RemoveHandler, SelectAddress(0x884590, 0x883B50, 0x883B90));
-		DeclareAddress(func34h, SelectAddress(0x884C30, 0x8841B0, 0x8841F0));
-		DeclareAddress(func38h, SelectAddress(0x8853A0, 0x8847B0, 0x8847F0));
-		DeclareAddress(func3Ch, SelectAddress(0x98F7F0, 0x98F4D0, 0x98F4D0));
-		DeclareAddress(UseMutex, SelectAddress(0x8845A0, 0x883B60, 0x883BA0));
-		DeclareAddress(AddEntry, SelectAddress(0x885920, 0x884D30, 0x884D70));
-		DeclareAddress(RemoveEntry, SelectAddress(0x885270, 0x884680, 0x8846C0));
+		DeclareAddress(Initialize);
+		DeclareAddress(Dispose);
+		DeclareAddress(GetOption);
+		DeclareAddress(SetOption);
+		DeclareAddress(PostMSG);
+		DeclareAddress(func18h);
+		DeclareAddress(func1Ch);
+		DeclareAddress(AddListener);
+		DeclareAddress(AddUnmanagedListener);
+		DeclareAddress(AddHandler);
+		DeclareAddress(RemoveListener);
+		DeclareAddress(RemoveHandler);
+		DeclareAddress(func34h);
+		DeclareAddress(func38h);
+		DeclareAddress(func3Ch);
+		DeclareAddress(UseMutex);
+		DeclareAddress(AddEntry);
+		DeclareAddress(RemoveEntry);
 
 	}
 }

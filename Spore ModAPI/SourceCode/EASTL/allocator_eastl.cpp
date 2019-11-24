@@ -42,14 +42,3 @@
 
 
 #endif // EASTL_USER_DEFINED_ALLOCATOR
-
-
-
-
-
-
-
-
-
-
-

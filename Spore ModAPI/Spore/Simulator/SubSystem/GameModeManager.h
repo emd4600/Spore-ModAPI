@@ -122,12 +122,12 @@ namespace Simulator
 
 	namespace Addresses(cGameModeManager)
 	{
-		DeclareAddress(Get, SelectAddress(0xB3D280, 0xB3D3F0, 0xB3D420));
+		DeclareAddress(Get);
 
-		DeclareAddress(GetActiveDifficultyTuning, SelectAddress(0xB1DD10, 0xB1DD90, 0xB1DDC0));
-		DeclareAddress(GetDifficultyTuning, SelectAddress(0xB1D980, 0xB1DA00, 0xB1DA30));
+		DeclareAddress(GetActiveDifficultyTuning);
+		DeclareAddress(GetDifficultyTuning);
 
-		DeclareAddress(SubmitEditorRequest, SelectAddress(0xB1DD70, , 0xB1DE20));
+		DeclareAddress(SubmitEditorRequest);
 
 		//PLACEHOLDER 0xB1E2A0 transition to another game mode?
 	}

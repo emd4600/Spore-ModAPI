@@ -1,3 +1,4 @@
+#ifndef MODAPI_DLL_EXPORT
 /****************************************************************************
 * Copyright (C) 2019 Eric Mor
 *
@@ -28,3 +29,4 @@ namespace Simulator
 		Args(uint32_t pEmpire, uint32_t pCauseEmpire, uint32_t relationshipID, float fScale),
 		Args(pEmpire, pCauseEmpire, relationshipID, fScale));
 }
+#endif

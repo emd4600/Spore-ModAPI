@@ -41,6 +41,6 @@ namespace UTFWin
 
 	namespace Addresses(UIRenderer)
 	{
-		DeclareAddress(GetGraphics2D, SelectAddress(0x95C0C0, 0x95BB70, 0x95BB70));
+		DeclareAddress(GetGraphics2D);
 	}
 }

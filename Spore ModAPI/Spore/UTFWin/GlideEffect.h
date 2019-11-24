@@ -82,17 +82,17 @@ namespace UTFWin
 
 	namespace Addresses(GlideEffect)
 	{
-		DeclareAddress(GetEventFlags, SelectAddress(0x9636E0, 0x9633E0, 0x9633E0));
-		DeclareAddress(HandleUIMessage, SelectAddress(0x9639F0, 0x9636A0, 0x9636A0));
+		DeclareAddress(GetEventFlags);
+		DeclareAddress(HandleUIMessage);
 
-		DeclareAddress(SetSerializer, SelectAddress(0x970380, 0x96FFE0, 0x96FFE0));
-		DeclareAddress(GetProxyID, SelectAddress(0x970250, 0x96FEC0, 0x96FEC0));
+		DeclareAddress(SetSerializer);
+		DeclareAddress(GetProxyID);
 
-		DeclareAddress(func80h, SelectAddress(0xE1CF40, 0x1154790, 0x1154790));
-		DeclareAddress(func88h, SelectAddress(0x970310, 0x96FF70, 0x96FF70));
+		DeclareAddress(func80h);
+		DeclareAddress(func88h);
 
-		DeclareAddress(ToWinProc, SelectAddress(0x980500, 0x980200, 0x980230));
-		DeclareAddress(GetOffset, SelectAddress(0x766FC0, 0x6E6560, 0x6E6560));
-		DeclareAddress(SetOffset, SelectAddress(0x970360, 0x96FFC0, 0x96FFC0));
+		DeclareAddress(ToWinProc);
+		DeclareAddress(GetOffset);
+		DeclareAddress(SetOffset);
 	}
 }

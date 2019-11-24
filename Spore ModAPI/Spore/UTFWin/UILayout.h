@@ -111,14 +111,14 @@ namespace UTFWin
 
 	namespace Addresses(UILayout)
 	{
-		DeclareAddress(Load, SelectAddress(0x812730, 0x812170, 0x8121C0));
-		DeclareAddress(LoadByName, SelectAddress(0x8127C0, 0x812200, 0x812250));
+		DeclareAddress(Load);
+		DeclareAddress(LoadByName);
 
-		DeclareAddress(FindWindowByID, SelectAddress(0x810C10, 0x810600, 0x810650));
+		DeclareAddress(FindWindowByID);
 
-		DeclareAddress(SetParentWindow, SelectAddress(0x812810, 0x812250, 0x8122A0));
-		DeclareAddress(SetVisible, SelectAddress(0x810BF0, 0x8105E0, 0x810630));
-		DeclareAddress(GetContainerWindow, SelectAddress(0x810BD0, 0x8105C0, 0x810610));
+		DeclareAddress(SetParentWindow);
+		DeclareAddress(SetVisible);
+		DeclareAddress(GetContainerWindow);
 	}
 
 	inline bool	UILayout::LoadByID(uint32_t instanceID, uint32_t groupID, uint32_t typeID, bool arg1, uint32_t arg2)

@@ -1,3 +1,4 @@
+#ifndef MODAPI_DLL_EXPORT
 #include <Spore\Editors\EditorRequest.h>
 #include <Spore\App\IGameModeManager.h>
 
@@ -56,3 +57,4 @@ namespace Editors
 
 	auto_STATIC_METHOD(EditorRequest, bool, Submit, Args(EditorRequest* request), Args(request));
 }
+#endif

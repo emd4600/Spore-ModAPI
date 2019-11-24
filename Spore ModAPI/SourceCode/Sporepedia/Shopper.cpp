@@ -1,3 +1,4 @@
+#ifndef MODAPI_DLL_EXPORT
 #include <Spore\Internal.h>
 #include <Spore\Sporepedia\ShopperRequest.h>
 
@@ -28,3 +29,4 @@ namespace Sporepedia
 	{
 	}
 }
+#endif

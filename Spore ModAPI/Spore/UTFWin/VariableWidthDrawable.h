@@ -88,13 +88,13 @@ namespace UTFWin
 
 	namespace Addresses(VariableWidthDrawable)
 	{
-		DeclareAddress(Paint, SelectAddress(0x836840, 0x836040, 0x8360C0));
-		DeclareAddress(IsColliding, SelectAddress(0x689880, 0x5ACA30, 0x5ACA30));
-		DeclareAddress(GetDimensions, SelectAddress(0x9516A0, 0x951190, 0x951190));
-		DeclareAddress(UseCollision, SelectAddress(0x951320, 0x950E00, 0x950E00));
+		DeclareAddress(Paint);
+		DeclareAddress(IsColliding);
+		DeclareAddress(GetDimensions);
+		DeclareAddress(UseCollision);
 
-		DeclareAddress(SetSerializer, SelectAddress(0x836800, 0x836000, 0x836080));
-		DeclareAddress(GetProxyID, SelectAddress(0x836CB0, 0x8364B0, 0x836530));
+		DeclareAddress(SetSerializer);
+		DeclareAddress(GetProxyID);
 	}
 
 	inline VariableWidthDrawable::VariableWidthDrawable()

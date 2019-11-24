@@ -169,6 +169,6 @@ namespace Graphics
 
 	namespace Addresses(IRenderManager)
 	{
-		DeclareAddress(Get, SelectAddress(0x67DE70, 0x67DD10, 0x67DD10));
+		DeclareAddress(Get);
 	}
 }

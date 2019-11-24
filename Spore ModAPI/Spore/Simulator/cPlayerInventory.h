@@ -51,6 +51,6 @@ namespace Simulator
 
 	namespace Addresses(cPlayerInventory)
 	{
-		DeclareAddress(GetUnlockableTool, SelectAddress(0xFF4640, 0xFF3BF0, 0xFF3BF0));
+		DeclareAddress(GetUnlockableTool);
 	}
 }

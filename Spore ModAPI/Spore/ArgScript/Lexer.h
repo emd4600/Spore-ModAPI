@@ -74,9 +74,9 @@ namespace ArgScript
 
 	namespace Addresses(Lexer)
 	{
-		DeclareAddress(AddFunction, SelectAddress(0x83E860, 0x83DFE0, 0x83E050));
-		DeclareAddress(ExpectChar, SelectAddress(0x83DB20, 0x83D2A0, 0x83D310));
-		DeclareAddress(OptionalExpectChar, SelectAddress(0x83DB70, 0x83D2F0, 0x83D360));
-		DeclareAddress(NextParameter, SelectAddress(0x83E4E0, 0x83DC60, 0x83DCD0));
+		DeclareAddress(AddFunction);
+		DeclareAddress(ExpectChar);
+		DeclareAddress(OptionalExpectChar);
+		DeclareAddress(NextParameter);
 	}
 }

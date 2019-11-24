@@ -92,16 +92,16 @@ namespace UTFWin
 
 	namespace Addresses(ScrollbarDrawable)
 	{
-		DeclareAddress(Paint, SelectAddress(0x982A00, 0x9826D0, 0x9826D0));
-		DeclareAddress(IsColliding, SelectAddress(0x689880, 0x5ACA30, 0x5ACA30));
-		DeclareAddress(GetDimensions, SelectAddress(0x981AC0, 0x981760, 0x981760));
-		DeclareAddress(UseCollision, SelectAddress(0x951320, 0x950E00, 0x950E00));
+		DeclareAddress(Paint);
+		DeclareAddress(IsColliding);
+		DeclareAddress(GetDimensions);
+		DeclareAddress(UseCollision);
 
-		DeclareAddress(SetSerializer, SelectAddress(0x982980, 0x982640, 0x982640));
-		DeclareAddress(GetProxyID, SelectAddress(0x981A70, 0x981710, 0x981710));
+		DeclareAddress(SetSerializer);
+		DeclareAddress(GetProxyID);
 
-		DeclareAddress(ToDrawable, SelectAddress(0x97E760, 0x96FEB0, 0x96FEB0));
-		DeclareAddress(SetImage, SelectAddress(0x981B20, 0x9817C0, 0x9817C0));
+		DeclareAddress(ToDrawable);
+		DeclareAddress(SetImage);
 	}
 
 	static_assert(sizeof(ScrollbarDrawable) == 0x2C, "sizeof(ScrollbarDrawable) != 2Ch");

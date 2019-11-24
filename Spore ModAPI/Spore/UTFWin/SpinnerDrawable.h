@@ -90,16 +90,16 @@ namespace UTFWin
 
 	namespace Addresses(SpinnerDrawable)
 	{
-		DeclareAddress(Paint, SelectAddress(0x984C70, 0x9849A0, 0x9849A0));
-		DeclareAddress(IsColliding, SelectAddress(0x689880, 0x5ACA30, 0x5ACA30));
-		DeclareAddress(GetDimensions, SelectAddress(0x984240, 0x983F20, 0x983F20));
-		DeclareAddress(UseCollision, SelectAddress(0x951320, 0x950E00, 0x950E00));
+		DeclareAddress(Paint);
+		DeclareAddress(IsColliding);
+		DeclareAddress(GetDimensions);
+		DeclareAddress(UseCollision);
 
-		DeclareAddress(SetSerializer, SelectAddress(0x984BA0, 0x9848D0, 0x9848D0));
-		DeclareAddress(GetProxyID, SelectAddress(0x9841E0, 0x983ED0, 0x983ED0));
+		DeclareAddress(SetSerializer);
+		DeclareAddress(GetProxyID);
 
-		DeclareAddress(ToDrawable, SelectAddress(0x97E760, 0x96FEB0, 0x96FEB0));
-		DeclareAddress(SetImage, SelectAddress(0x9863B0, 0x983F70, 0x983F70));
+		DeclareAddress(ToDrawable);
+		DeclareAddress(SetImage);
 	}
 
 	inline SpinnerDrawable::SpinnerDrawable()

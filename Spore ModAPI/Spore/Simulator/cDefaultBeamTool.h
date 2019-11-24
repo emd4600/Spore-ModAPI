@@ -40,12 +40,12 @@ namespace Simulator
 
 	namespace Addresses(cDefaultBeamTool)
 	{
-		DeclareAddress(OnMouseDown, SelectAddress(0x10548B0, NO_ADDRESS, 0x1053D00));
-		DeclareAddress(OnHit, SelectAddress(0x105ABC0, NO_ADDRESS, 0x105A020));
-		DeclareAddress(WhileFiring, SelectAddress(0x105AA90, NO_ADDRESS, 0x1059EF0));
-		DeclareAddress(OnMouseUp, SelectAddress(0x1054910, NO_ADDRESS, 0x1053D60));
+		DeclareAddress(OnMouseDown);
+		DeclareAddress(OnHit);
+		DeclareAddress(WhileFiring);
+		DeclareAddress(OnMouseUp);
 
-		DeclareAddress(func48h, SelectAddress(0x1055A20, NO_ADDRESS, 0x1054E70));
-		DeclareAddress(func4Ch, SelectAddress(0x1054960, NO_ADDRESS, 0x1053DB0));
+		DeclareAddress(func48h);
+		DeclareAddress(func4Ch);
 	}
 }

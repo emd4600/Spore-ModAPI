@@ -175,23 +175,23 @@ namespace Resource
 
 	namespace Addresses(PFIndexModifiable)
 	{
-		DeclareAddress(func04h, SelectAddress(0xA37650, 0xB1FB00, 0xB1FB30));
-		DeclareAddress(IsEmpty, SelectAddress(0x8DBCE0, 0x6BF430, 0x6BF430));
-		DeclareAddress(GetFileCount, SelectAddress(0xA654F0, 0x8E8220, 0x8E8230));
-		DeclareAddress(Reset, SelectAddress(0x8DBCF0, 0x8DBA90, 0x8DBAA0));
-		DeclareAddress(GetTotalDiskSize, SelectAddress(0x8DB570, 0x8DB2B0, 0x8DB2C0));
-		DeclareAddress(GetDataEnd, SelectAddress(0x8DB510, 0x8DB250, 0x8DB260));
-		DeclareAddress(GetFiles, SelectAddress(0x8DC250, 0x8DBFF0, 0x8DC000));
-		DeclareAddress(GetAllFiles, SelectAddress(0x8DC310, 0x8DC0B0, 0x8DC0C0));
-		DeclareAddress(func24h, SelectAddress(0x8DC810, 0x8DC5B0, 0x8DC5C0));
-		DeclareAddress(GetFileInfo, SelectAddress(0x8DBD70, 0x8DBB10, 0x8DBB20));
-		DeclareAddress(PutFileInfo, SelectAddress(0x8DC410, 0x8DC1B0, 0x8DC1C0));
-		DeclareAddress(RemoveFile, SelectAddress(0x8DBDB0, 0x8DBB50, 0x8DBB60));
-		DeclareAddress(Read, SelectAddress(0x8DBF10, 0x8DBCB0, 0x8DBCC0));
-		DeclareAddress(Write, SelectAddress(0x8DB5C0, 0x8DB300, 0x8DB310));
-		DeclareAddress(SetIsSaved, SelectAddress(0x8DB800, 0x8DB540, 0x8DB550));
-		DeclareAddress(CheckFilesInRange, SelectAddress(0x8DB850, 0x8DB590, 0x8DB5A0));
-		DeclareAddress(CheckFilesInSizeRange, SelectAddress(0x8DB8E0, 0x8DB620, 0x8DB630));
+		DeclareAddress(func04h);
+		DeclareAddress(IsEmpty);
+		DeclareAddress(GetFileCount);
+		DeclareAddress(Reset);
+		DeclareAddress(GetTotalDiskSize);
+		DeclareAddress(GetDataEnd);
+		DeclareAddress(GetFiles);
+		DeclareAddress(GetAllFiles);
+		DeclareAddress(func24h);
+		DeclareAddress(GetFileInfo);
+		DeclareAddress(PutFileInfo);
+		DeclareAddress(RemoveFile);
+		DeclareAddress(Read);
+		DeclareAddress(Write);
+		DeclareAddress(SetIsSaved);
+		DeclareAddress(CheckFilesInRange);
+		DeclareAddress(CheckFilesInSizeRange);
 	}
 
 }

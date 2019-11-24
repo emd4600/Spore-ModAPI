@@ -1,3 +1,4 @@
+#ifndef MODAPI_DLL_EXPORT
 /****************************************************************************
 * Copyright (C) 2018 Eric Mor
 *
@@ -22,19 +23,19 @@
 
 LocalizedString::LocalizedString()
 {
-	CALL(Address(SelectAddress(0x6B5330, 0x6B4FF0, 0x6B4FF0)), void,
+	CALL(GetAddress(LocalizedString, ctor_0), void,
 		Args(LocalizedString*),
 		Args(this));
 }
 LocalizedString::LocalizedString(uint32_t tableID, uint32_t instanceID, const char16_t* text)
 {
-	CALL(Address(SelectAddress(0x6B5A40, 0x6B5700, 0x6B5700)), void,
+	CALL(GetAddress(LocalizedString, ctor_1), void,
 		Args(LocalizedString*, uint32_t tableID, uint32_t instanceID, const char16_t* text),
 		Args(this, tableID, instanceID, text));
 }
 LocalizedString::~LocalizedString()
 {
-	CALL(Address(SelectAddress(0x6B5510, 0x6B51D0, 0x6B51D0)), void,
+	CALL(GetAddress(LocalizedString, dtor), void,
 		Args(LocalizedString*),
 		Args(this));
 }
@@ -43,3 +44,5 @@ auto_METHOD_const_(LocalizedString, const char16_t*, GetText);
 auto_METHOD(LocalizedString, bool, SetText, 
 	Args(uint32_t tableID, uint32_t instanceID, const char16_t* text),
 	Args(tableID, instanceID, text));
+
+#endif

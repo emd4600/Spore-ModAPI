@@ -151,10 +151,10 @@ namespace Simulator
 
 	namespace Addresses(cRelationshipManager)
 	{
-		DeclareAddress(Get, SelectAddress(0xB3D220, 0xB3D390, 0xB3D3C0));
+		DeclareAddress(Get);
 
-		DeclareAddress(IsAtWar, SelectAddress(0xD014C0, 0xD01F80, 0xD01F90));
-		DeclareAddress(DeclareWar, SelectAddress(0xD05840, 0xD065E0, 0xD065E0));
-		DeclareAddress(ApplyRelationship, SelectAddress(0xD054E0, 0xD06280, 0xD06280));
+		DeclareAddress(IsAtWar);
+		DeclareAddress(DeclareWar);
+		DeclareAddress(ApplyRelationship);
 	}
 }

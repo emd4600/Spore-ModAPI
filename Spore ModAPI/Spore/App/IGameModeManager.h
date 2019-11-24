@@ -216,6 +216,6 @@ namespace App
 
 	namespace Addresses(IGameModeManager)
 	{
-		DeclareAddress(Get, SelectAddress(0x67DE30, 0x67DCD0, 0x67DCD0));
+		DeclareAddress(Get);
 	}
 }

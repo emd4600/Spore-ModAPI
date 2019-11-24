@@ -33,6 +33,6 @@ namespace Simulator
 
 	namespace Addresses(cTurretDefenseMissileWeapon)
 	{
-		DeclareAddress(WhileFiring, SelectAddress(0x1057D70, NO_ADDRESS, 0x10571E0));
+		DeclareAddress(WhileFiring);
 	}
 }

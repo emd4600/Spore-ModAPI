@@ -279,44 +279,6 @@ namespace IO
 	//// INTERNAL IMPLEMENENTATION ////
 	///////////////////////////////////
 
-	namespace Addresses(IO)
-	{
-		DeclareAddress(ReadBool8, SelectAddress(0x93B1B0, 0x93ABF0, 0x93ABF0));
-
-		DeclareAddress(ReadInt8, SelectAddress(0x93ABF0, 0x93A630, 0x93A630));
-		DeclareAddress(ReadUInt8, SelectAddress(0x93ABF0, 0x93A630, 0x93A630));
-
-		DeclareAddress(ReadInt16, SelectAddress(0x93AC30, 0x93A670, 0x93A670));
-		DeclareAddress(ReadUInt16, SelectAddress(0x93AC30, 0x93A670, 0x93A670));
-
-		DeclareAddress(ReadInt32, SelectAddress(0x93ACB0, 0x93A6F0, 0x93A6F0));
-		DeclareAddress(ReadUInt32, SelectAddress(0x93ACB0, 0x93A6F0, 0x93A6F0));
-
-		DeclareAddress(ReadFloat, SelectAddress(0x93ACB0, 0x93A6F0, 0x93A6F0));
-
-		DeclareAddress(ReadResourceID, SelectAddress(0x93AD30, 0x93A770, 0x93A770));
-
-		DeclareAddress(ReadCString, SelectAddress(0x530690, 0x530250, 0x530280));
-
-		DeclareAddress(ReadLine, SelectAddress(0x93ADE0, 0x93A820, 0x93A820));
-
-
-		DeclareAddress(WriteInt8, SelectAddress(0x93AED0, 0x93A910, 0x93A910));
-		DeclareAddress(WriteUInt8, SelectAddress(0x93AED0, 0x93A910, 0x93A910));
-
-		DeclareAddress(WriteInt16, SelectAddress(0x93AF00, 0x93A940, 0x93A940));
-		DeclareAddress(WriteUInt16, SelectAddress(0x93AF00, 0x93A940, 0x93A940));
-
-		DeclareAddress(WriteInt32, SelectAddress(0x93AFA0, 0x93A9E0, 0x93A9E0));
-		DeclareAddress(WriteUInt32, SelectAddress(0x93AFA0, 0x93A9E0, 0x93A9E0));
-
-		DeclareAddress(WriteFloat, SelectAddress(0x93AFA0, 0x93A9E0, 0x93A9E0));
-
-		DeclareAddress(WriteResourceID, SelectAddress(0x93B040, 0x93AA80, 0x93AA80));
-
-		DeclareAddress(WriteLine, SelectAddress(0x93B100, 0x93AB40, 0x93AB40));
-	}
-
 	inline bool IO::WriteBool8(IStream* pOS, const bool* value)
 	{
 		int8_t src = value ? 1 : 0;
@@ -330,5 +292,43 @@ namespace IO
 		pOS->Write(&terminator, 1);
 	}
 
+}
+
+namespace Addresses(IO)
+{
+	DeclareAddress(ReadBool8);
+
+	DeclareAddress(ReadInt8);
+	DeclareAddress(ReadUInt8);
+
+	DeclareAddress(ReadInt16);
+	DeclareAddress(ReadUInt16);
+
+	DeclareAddress(ReadInt32);
+	DeclareAddress(ReadUInt32);
+
+	DeclareAddress(ReadFloat);
+
+	DeclareAddress(ReadResourceID);
+
+	DeclareAddress(ReadCString);
+
+	DeclareAddress(ReadLine);
+
+
+	DeclareAddress(WriteInt8);
+	DeclareAddress(WriteUInt8);
+
+	DeclareAddress(WriteInt16);
+	DeclareAddress(WriteUInt16);
+
+	DeclareAddress(WriteInt32);
+	DeclareAddress(WriteUInt32);
+
+	DeclareAddress(WriteFloat);
+
+	DeclareAddress(WriteResourceID);
+
+	DeclareAddress(WriteLine);
 }
 

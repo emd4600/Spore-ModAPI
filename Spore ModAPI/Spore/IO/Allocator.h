@@ -25,14 +25,13 @@ class ICoreAllocator;
 namespace IO
 {
 	ICoreAllocator* GetAllocator();
+}
 
-	///////////////////////////////////
-	//// INTERNAL IMPLEMENENTATION ////
-	///////////////////////////////////
+///////////////////////////////////
+//// INTERNAL IMPLEMENENTATION ////
+///////////////////////////////////
 
-	namespace Addresses(IO)
-	{
-		DeclareAddress(GetAllocator, SelectAddress(0x9261B0, 0x925F40, 0x925F40));
-	}
-
+namespace Addresses(IO)
+{
+	DeclareAddress(GetAllocator);
 }

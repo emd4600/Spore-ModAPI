@@ -70,9 +70,9 @@ namespace Simulator
 
 	namespace Addresses(cTerraformingManager)
 	{
-		DeclareAddress(Get, SelectAddress(0xB3D390, NO_ADDRESS, 0xB3D530));
+		DeclareAddress(Get);
 
-		DeclareAddress(GetTScore, SelectAddress(0xBBB750, NO_ADDRESS, 0xBBC7E0));
-		DeclareAddress(CalculateTScore, SelectAddress(0xFC2760, NO_ADDRESS, 0xFC2040));
+		DeclareAddress(GetTScore);
+		DeclareAddress(CalculateTScore);
 	}
 }

@@ -347,7 +347,7 @@ namespace App
 
 	namespace Addresses(IMessageManager)
 	{
-		DeclareAddress(Get, SelectAddress(0x67DDE0, 0x67DC80, 0x67DC80));
+		DeclareAddress(Get);
 	}
 }
 

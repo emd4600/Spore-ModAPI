@@ -33,6 +33,6 @@ namespace Simulator
 
 	namespace Addresses(cGlobalMindEraseToolStrategy)
 	{
-		DeclareAddress(WhileFiring, SelectAddress(0x1059BB0, NO_ADDRESS, 0x1059010));
+		DeclareAddress(WhileFiring);
 	}
 }

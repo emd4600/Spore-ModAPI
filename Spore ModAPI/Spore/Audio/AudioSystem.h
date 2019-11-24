@@ -49,7 +49,7 @@ namespace Audio
 
 	namespace Addresses(AudioSystem)
 	{
-		DeclareAddress(Get, SelectAddress(0xA20620, NO_ADDRESS, 0xA20670));
-		DeclareAddress(PlayAudio, SelectAddress(0x436040, NO_ADDRESS, 0x436390));
+		DeclareAddress(Get);
+		DeclareAddress(PlayAudio);
 	}
 }

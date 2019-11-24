@@ -255,19 +255,19 @@ namespace Palettes
 
 	namespace Addresses(PaletteCategoryUI)
 	{
-		DeclareAddress(Load, SelectAddress(0x5C5560, 0x5C5480, 0x5C54B0));
-		DeclareAddress(LoadPages, SelectAddress(0x5C5380, 0x5C52A0, 0x5C52D0));
-		DeclareAddress(FlipPage, SelectAddress(0x5C3C60, 0x5C3CE0, 0x5C3D10));
-		DeclareAddress(HandleMessage, SelectAddress(0x5C3730, 0x5C37B0, 0x5C37E0));
-		DeclareAddress(HandleUIMessage, SelectAddress(0x5C40F0, 0x5C4170, 0x5C41A0));
-		DeclareAddress(Update, SelectAddress(0x5C28D0, 0x5C2970, 0x5C29A0));
+		DeclareAddress(Load);
+		DeclareAddress(LoadPages);
+		DeclareAddress(FlipPage);
+		DeclareAddress(HandleMessage);
+		DeclareAddress(HandleUIMessage);
+		DeclareAddress(Update);
 	}
 
 	namespace Addresses(PageArrowsUI)
 	{
-		DeclareAddress(HandleUIMessage, SelectAddress(0x5C0920, 0x5C0AC0, 0x5C0AF0));
-		DeclareAddress(Load, SelectAddress(0x5C0760, 0x5C0900, 0x5C0930));
-		DeclareAddress(Update, SelectAddress(0x5C09A0, 0x5C0B20, 0x5C0B50));
+		DeclareAddress(HandleUIMessage);
+		DeclareAddress(Load);
+		DeclareAddress(Update);
 	}
 
 	inline void PageArrowsUI::SetVisible(bool bVisible)

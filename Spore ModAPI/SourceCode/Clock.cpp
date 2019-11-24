@@ -1,3 +1,4 @@
+#ifndef MODAPI_DLL_EXPORT
 /****************************************************************************
 * Copyright (C) 2018 Eric Mor
 *
@@ -37,3 +38,4 @@ auto_METHOD_VOID(Clock, SetMode, Args(Clock::Mode mode), Args(mode));
 auto_METHOD_VOID_(Clock, Stop);
 auto_METHOD_(Clock, LARGE_INTEGER, GetElapsedTicks);
 auto_METHOD_(Clock, LARGE_INTEGER, GetElapsedTime);
+#endif

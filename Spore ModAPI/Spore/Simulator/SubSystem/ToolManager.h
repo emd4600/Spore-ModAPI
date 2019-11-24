@@ -125,13 +125,13 @@ namespace Simulator
 
 	namespace Addresses(cToolManager)
 	{
-		DeclareAddress(Get, SelectAddress(0xB3D2F0, 0xB3D460, 0xB3D490));
+		DeclareAddress(Get);
 
-		DeclareAddress(LoadTool, SelectAddress(0x104EEA0, 0x104E350, 0x104E350));
-		DeclareAddress(GetStrategy, SelectAddress(0x10503B0, NO_ADDRESS, 0x104F860));
+		DeclareAddress(LoadTool);
+		DeclareAddress(GetStrategy);
 
-		DeclareAddress(ActivateTool, SelectAddress(0x1050710, NO_ADDRESS, 0x104FBC0));
-		DeclareAddress(DeactivateTool, SelectAddress(0x1050770, NO_ADDRESS, 0x104FC20));
-		DeclareAddress(OnMouseUp, SelectAddress(0x10505F0, NO_ADDRESS, 0x104FAA0));
+		DeclareAddress(ActivateTool);
+		DeclareAddress(DeactivateTool);
+		DeclareAddress(OnMouseUp);
 	}
 }

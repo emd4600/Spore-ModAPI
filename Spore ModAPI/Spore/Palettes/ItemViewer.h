@@ -147,6 +147,6 @@ namespace Palettes
 
 	namespace Addresses(ItemViewer)
 	{
-		DeclareAddress(InitializeViewerCamera, SelectAddress(0x5F3B50,, 0x5F3D80));
+		DeclareAddress(InitializeViewerCamera);
 	}
 }

@@ -81,16 +81,16 @@ namespace UTFWin
 
 	namespace Addresses(PerspectiveEffect)
 	{
-		DeclareAddress(GetEventFlags, SelectAddress(0x980770, 0x980440, 0x980470));
-		DeclareAddress(HandleUIMessage, SelectAddress(0x980780, 0x980450, 0x980480));
+		DeclareAddress(GetEventFlags);
+		DeclareAddress(HandleUIMessage);
 
-		DeclareAddress(SetSerializer, SelectAddress(0x980850, 0x980560, 0x980590));
-		DeclareAddress(GetProxyID, SelectAddress(0x980810, 0x9804E0, 0x980510));
+		DeclareAddress(SetSerializer);
+		DeclareAddress(GetProxyID);
 
-		DeclareAddress(func80h, SelectAddress(0x9807E0, 0x9804B0, 0x9804E0));
+		DeclareAddress(func80h);
 
-		DeclareAddress(ToWinProc, SelectAddress(0x97E760, 0x96FEB0, 0x96FEB0));
-		DeclareAddress(GetNearPlane, SelectAddress(0x980800, 0x97E440, 0x97E440));
-		DeclareAddress(SetNearPlane, SelectAddress(0x97E770, 0x9804D0, 0x980500));
+		DeclareAddress(ToWinProc);
+		DeclareAddress(GetNearPlane);
+		DeclareAddress(SetNearPlane);
 	}
 };

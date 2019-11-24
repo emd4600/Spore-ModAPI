@@ -248,6 +248,6 @@ namespace UTFWin
 
 	namespace Addresses(InteractiveWinProc)
 	{
-		DeclareAddress(HandleUIMessage, SelectAddress(0x951370, 0x950E50, 0x950E50));
+		DeclareAddress(HandleUIMessage);
 	}
 }

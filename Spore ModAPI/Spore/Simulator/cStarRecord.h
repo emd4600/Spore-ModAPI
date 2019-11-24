@@ -70,6 +70,6 @@ namespace Simulator
 
 	namespace Addresses(cStarRecord)
 	{
-		DeclareAddress(GetPlanetRecord, SelectAddress(0xBB9B40, NO_ADDRESS, 0xBBABD0));
+		DeclareAddress(GetPlanetRecord);
 	}
 }

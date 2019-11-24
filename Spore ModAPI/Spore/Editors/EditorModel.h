@@ -63,10 +63,12 @@ namespace Editors
 		/* A4h */	ColorRGB mColors[3];
 		/* C8h */	vector<int> field_C8;  // size 18h
 		/* ECh */	int field_EC;  // not initialized
+
 	public:
 
-		METHOD_(SelectAddress(0x4ADEA0, 0x4AE520, 0x4AE520), EditorModel, string16&, GetCreationName);
-		METHOD_VOID(SelectAddress(0x4ADBF0, 0x4AE250, 0x4AE250), EditorModel, SetColor, Args(int index, struct ColorRGB color), Args(index, color));
+		string16& GetCreationName() const;
+
+		void SetColor(int index, struct ColorRGB color);
 	};
 
 	/////////////////////////////////
@@ -74,5 +76,11 @@ namespace Editors
 	/////////////////////////////////
 
 	static_assert(sizeof(EditorModel) == 0xE0, "sizeof(cOrnament) != E0h");
+
+	namespace Addresses(EditorModel)
+	{
+		DeclareAddress(GetCreationName);
+		DeclareAddress(SetColor);
+	}
 }
 

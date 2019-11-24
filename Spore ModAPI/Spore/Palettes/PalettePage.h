@@ -149,9 +149,9 @@ namespace Palettes
 
 	namespace Addresses(PalettePage)
 	{
-		DeclareAddress(ReadProp, SelectAddress(0x5C84D0, 0x5C8690, 0x5C86C0));
-		DeclareAddress(Load, SelectAddress(0x5C89D0, 0x5C8B90, 0x5C8BC0));
-		DeclareAddress(ReadItemsModule, SelectAddress(0x5C8040, 0x5C80B0, 0x5C80E0));
+		DeclareAddress(ReadProp);
+		DeclareAddress(Load);
+		DeclareAddress(ReadItemsModule);
 	}
 
 	inline PaletteItem* PalettePage::GetItemAt(size_t nIndex)

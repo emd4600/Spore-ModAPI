@@ -36,9 +36,9 @@ namespace Simulator
 
 	namespace Addresses(cDropCargoToolStrategy)
 	{
-		DeclareAddress(Update, SelectAddress(0x1057710, NO_ADDRESS, 0x1056B80));
-		DeclareAddress(WhileAiming, SelectAddress(0x1054BE0, NO_ADDRESS, 0x1054030));
-		DeclareAddress(WhileFiring, SelectAddress(0x105B5C0, NO_ADDRESS, 0x105AA10));
-		DeclareAddress(OnMouseUp, SelectAddress(0x1054B50, NO_ADDRESS, 0x1053FA0));
+		DeclareAddress(Update);
+		DeclareAddress(WhileAiming);
+		DeclareAddress(WhileFiring);
+		DeclareAddress(OnMouseUp);
 	}
 }

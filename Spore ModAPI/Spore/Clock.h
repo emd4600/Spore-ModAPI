@@ -109,10 +109,10 @@ protected:
 
 namespace Addresses(Clock)
 {
-	DeclareAddress(Stop, SelectAddress(0x93A810, 0x93A250, 0x93A250));
-	DeclareAddress(SetMode, SelectAddress(0x93A6D0, 0x93A110, 0x93A110));
-	DeclareAddress(GetElapsedTicks, SelectAddress(0x93A8D0, 0x93A310, 0x93A310));
-	DeclareAddress(GetElapsedTime, SelectAddress(0x93AB10, 0x93A550, 0x93A550));
+	DeclareAddress(Stop);
+	DeclareAddress(SetMode);
+	DeclareAddress(GetElapsedTicks);
+	DeclareAddress(GetElapsedTime);
 
 
 	// 1 - year
@@ -121,7 +121,7 @@ namespace Addresses(Clock)
 	// 8 - hour
 	// 9 - minute
 	// 10 - second
-	//DeclareAddress(GetTimeParam, SelectAddress(0x92E320, , PLACEHOLDER));
+	//DeclareAddress(GetTimeParam);
 };
 
 inline void Clock::Start()

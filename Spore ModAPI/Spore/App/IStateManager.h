@@ -18,6 +18,6 @@ namespace App
 	}
 
 	namespace Addresses(IStateManager) {
-		DeclareAddress(Get, SelectAddress(0x67DE40, , PLACEHOLDER));
+		DeclareAddress(Get);
 	}
 }

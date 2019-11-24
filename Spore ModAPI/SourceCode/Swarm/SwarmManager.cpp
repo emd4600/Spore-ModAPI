@@ -1,3 +1,4 @@
+#ifndef MODAPI_DLL_EXPORT
 /****************************************************************************
 * Copyright (C) 2018 Eric Mor
 *
@@ -26,3 +27,4 @@ namespace Swarm
 
 	auto_METHOD(cSwarmManager, int, GetDirectoryAndEffectIndex, Args(uint32_t arg0, uint32_t arg1), Args(arg0, arg1));
 }
+#endif

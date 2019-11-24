@@ -158,11 +158,11 @@ namespace Terrain
 		//// INTERNAL IMPLEMENTATION ////
 		/////////////////////////////////
 
-		static_assert(sizeof(cTerrainSphere) == 0xA50, "sizeof(cTerrainSphere) != A50h");
+		//PLACEHOLDER static_assert(sizeof(cTerrainSphere) == 0xA50, "sizeof(cTerrainSphere) != A50h");
 
 		namespace Addresses(cTerrainSphere)
 		{
-			DeclareAddress(Create, SelectAddress(0xFA29A0, NO_ADDRESS, 0xFA2350));
+			DeclareAddress(Create);
 		}
 	}
 }

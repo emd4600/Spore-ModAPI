@@ -98,17 +98,17 @@ namespace UTFWin
 
 	namespace Addresses(ComboBoxDrawable)
 	{
-		DeclareAddress(Paint, SelectAddress(0x969090, 0x968CC0, 0x968CC0));
-		DeclareAddress(IsColliding, SelectAddress(0x689880, 0x5ACA30, 0x5ACA30));
-		DeclareAddress(GetDimensions, SelectAddress(0x9681C0, 0x967E20, 0x967E20));
-		DeclareAddress(UseCollision, SelectAddress(0x951320, 0x950E00, 0x950E00));
-		DeclareAddress(GetImage, SelectAddress(0x968200, 0x967E60, 0x967E60));
+		DeclareAddress(Paint);
+		DeclareAddress(IsColliding);
+		DeclareAddress(GetDimensions);
+		DeclareAddress(UseCollision);
+		DeclareAddress(GetImage);
 
-		DeclareAddress(SetSerializer, SelectAddress(0x968FC0, 0x968C00, 0x968C00));
-		DeclareAddress(GetProxyID, SelectAddress(0x968170, 0x967DD0, 0x967DD0));
+		DeclareAddress(SetSerializer);
+		DeclareAddress(GetProxyID);
 
-		DeclareAddress(ToDrawable, SelectAddress(0x97E760, 0x96FEB0, 0x96FEB0));
-		DeclareAddress(SetImage, SelectAddress(0x968220, 0x967E80, 0x967E80));
+		DeclareAddress(ToDrawable);
+		DeclareAddress(SetImage);
 	}
 
 	inline ComboBoxDrawable::ComboBoxDrawable()

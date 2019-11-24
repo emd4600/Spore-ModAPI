@@ -99,11 +99,11 @@ namespace UTFWin
 
 	namespace Addresses(Image)
 	{
-		DeclareAddress(SetSerializer, SelectAddress(0x957A60, 0x957510, 957510));
-		DeclareAddress(GetProxyID, SelectAddress(0x957A90, 0x957540, 0x957540));
-		DeclareAddress(GetImage, SelectAddress(0x806870, 0x806290, 0x806320));
-		DeclareAddress(SetBackground, SelectAddress(0x806F10, 0x806930, 0x8069C0));
-		DeclareAddress(SetBackgroundByKey, SelectAddress(0x8081F0, 0x807C10, 0x807CA0));
+		DeclareAddress(SetSerializer);
+		DeclareAddress(GetProxyID);
+		DeclareAddress(GetImage);
+		DeclareAddress(SetBackground);
+		DeclareAddress(SetBackgroundByKey);
 	}
 
 	inline Image::Image()

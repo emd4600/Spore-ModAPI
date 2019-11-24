@@ -184,17 +184,17 @@ namespace Simulator
 
 	namespace Addresses(cStarManager)
 	{
-		DeclareAddress(Get, SelectAddress(0xB3D200, 0xB3D370, 0xB3D3A0));
+		DeclareAddress(Get);
 
-		DeclareAddress(GetPlanetRecord, SelectAddress(0xBA6540, 0xBA6EF0, 0xBA6F10));
-		DeclareAddress(NextPoliticalID, SelectAddress(0xBA5DA0, NO_ADDRESS, 0xBA6780));
-		DeclareAddress(GetEmpireForStar, SelectAddress(0xBB0230, NO_ADDRESS, 0xBB14D0));
-		DeclareAddress(RecordToPlanet, SelectAddress(0xBB4960, NO_ADDRESS, 0xBB5B50));
+		DeclareAddress(GetPlanetRecord);
+		DeclareAddress(NextPoliticalID);
+		DeclareAddress(GetEmpireForStar);
+		DeclareAddress(RecordToPlanet);
 	}
 
 	namespace Addresses(cSpaceTradeRouteManager)
 	{
-		DeclareAddress(HasTradeRoute, SelectAddress(0x1038C10, NO_ADDRESS, 0x1037D40));
+		DeclareAddress(HasTradeRoute);
 	}
 
 	inline cStarRecord* cStarManager::GetSol() const {
@@ -213,5 +213,5 @@ namespace Simulator
 }
 
 namespace Addresses(Simulator) {
-	DeclareAddress(SpaceTeleportTo, SelectAddress(0x1023A80, , 0x10228C0));
+	DeclareAddress(SpaceTeleportTo);
 }

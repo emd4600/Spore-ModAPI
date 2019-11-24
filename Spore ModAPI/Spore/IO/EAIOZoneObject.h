@@ -103,6 +103,11 @@ namespace IO
 		static void* operator new(size_t n);
 	};
 
+	namespace Addresses(EAIOZoneObject)
+	{
+		DeclareAddress(new_);
+		DeclareAddress(delete_);
+	}
 }
 
 // we must avoid ambigous call

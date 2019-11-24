@@ -118,7 +118,7 @@ namespace Palettes
 
 	namespace Addresses(PaletteItem)
 	{
-		DeclareAddress(Load, SelectAddress(0x5C69A0, 0x5C68D0, 0x5C6900));
+		DeclareAddress(Load);
 	}
 
 }

@@ -162,7 +162,7 @@ namespace GalaxyGameEntry
 
 	namespace Addresses(GlobalGGEUI)
 	{
-		DeclareAddress(Initialize, SelectAddress(0xDE9290, 0xDEA200, 0xDEA1B0));
-		DeclareAddress(InitializeUI, SelectAddress(0xDE49E0, 0xDE5950, 0xDE5900));
+		DeclareAddress(Initialize);
+		DeclareAddress(InitializeUI);
 	}
 }

@@ -1,3 +1,4 @@
+#ifndef MODAPI_DLL_EXPORT
 #include <Spore\Graphics\Renderer.h>
 #include <Spore\RenderWare\Raster.h>
 
@@ -24,3 +25,4 @@ namespace RenderWare
 			format, pool, &pTexture, NULL);
 	}
 }
+#endif

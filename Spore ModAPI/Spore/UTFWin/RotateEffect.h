@@ -95,19 +95,19 @@ namespace UTFWin
 
 	namespace Addresses(RotateEffect)
 	{
-		DeclareAddress(GetEventFlags, SelectAddress(0x9636E0, 0x9633E0, 0x9633E0));
-		DeclareAddress(HandleUIMessage, SelectAddress(0x9639F0, 0x9636A0, 0x9636A0));
+		DeclareAddress(GetEventFlags);
+		DeclareAddress(HandleUIMessage);
 
-		DeclareAddress(SetSerializer, SelectAddress(0x9810B0, 0x980D60, 0x980D60));
-		DeclareAddress(GetProxyID, SelectAddress(0x980EC0, 0x980BB, 0x980BB00));
+		DeclareAddress(SetSerializer);
+		DeclareAddress(GetProxyID);
 
-		DeclareAddress(func80h, SelectAddress(0xE1CF40, 0x1154790, 0x1154790));
-		DeclareAddress(func88h, SelectAddress(0x980FA0, 0x980C50, 0x980C50));
+		DeclareAddress(func80h);
+		DeclareAddress(func88h);
 
-		DeclareAddress(ToWinProc, SelectAddress(0x980500, 0x980200, 0x980230));
-		DeclareAddress(GetRotationAxis, SelectAddress(0x766FC0, 0x6E6560, 0x6E6560));
-		DeclareAddress(SetRotationAxis, SelectAddress(0x980EA0, 0x980B80, 0x980B80));
-		DeclareAddress(GetRotationAngle, SelectAddress(0xA0AAB0, 0xA0AA60, 0xA0AAC0));
-		DeclareAddress(SetRotationAngle, SelectAddress(0xA0AAC0, 0x980BA0, 0x980BA0));
+		DeclareAddress(ToWinProc);
+		DeclareAddress(GetRotationAxis);
+		DeclareAddress(SetRotationAxis);
+		DeclareAddress(GetRotationAngle);
+		DeclareAddress(SetRotationAngle);
 	}
 };

@@ -59,8 +59,8 @@ namespace Editors
 	static_assert(sizeof(cSpeciesManager) == 0xE4, "sizeof(cSpeciesManager) != E4h");
 
 	namespace Addresses(cSpeciesManager) {
-		DeclareAddress(Get, SelectAddress(0x401090, NO_ADDRESS, 0x401090));
+		DeclareAddress(Get);
 
-		DeclareAddress(GetSpeciesProfile, SelectAddress(0x4DF3E0, NO_ADDRESS, 0x4DF5C0));
+		DeclareAddress(GetSpeciesProfile);
 	}
 }

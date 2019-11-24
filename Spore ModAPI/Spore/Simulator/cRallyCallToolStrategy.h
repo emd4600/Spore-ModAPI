@@ -33,6 +33,6 @@ namespace Simulator
 
 	namespace Addresses(cRallyCallToolStrategy)
 	{
-		DeclareAddress(WhileFiring, SelectAddress(0x105CB20, NO_ADDRESS, 0x105BF80));
+		DeclareAddress(WhileFiring);
 	}
 }

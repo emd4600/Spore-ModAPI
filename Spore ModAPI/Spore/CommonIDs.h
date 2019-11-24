@@ -93,8 +93,9 @@ enum Difficulty
 
 namespace TypeIDs
 {
-	enum : uint32_t
+	enum Names : uint32_t
 	{
+		png = 0x2F7D0004,
 		/// App::PropertyList files.
 		prop = 0x00B1B104,
 		/// Most textures and models.
@@ -110,14 +111,54 @@ namespace TypeIDs
 		/// Spaceships.
 		ufo = 0x476A98C7,
 		/// Spore Materials
-		smt = 0x0469A3F7
+		smt = 0x0469A3F7,
+		/// Creation textures
+		raster = 0x2F4E681C,
 	};
 }
 
+/// Contains the ID of some important Spore folders.
 namespace GroupIDs
 {
-	enum : uint32_t
+	// We cannot use enum class, doesn't implicitly cast
+	enum Names : uint32_t
 	{
+		/// Global folder, also known as animations~. It's 0x00000000
+		Global = 0,
+
+		/// Where camera configuration .prop files are stored
+		CameraProperties = 0x40410100,
+
+		NounDefinitions = 0x02E9C426,
+
+		/// Where editor configuration .prop files are stored
+		EditorSetup = 0x40600100,
+
+		/// Where part models are stored
+		EditorRigblocks = 0x40606000,
+
+		GameTuning = 0x02AE0C7E,
+
+		/// Where adventure props are stored
+		PaletteItems = 0xD87454E6,
+
+		/// Where editor paint .prop files are stored
+		Paints = 0x406A0200,
+
+		Physics = 0x02A8CB47,
+
+		Verbtrays = 0xAF028F41,
+
+		/// Where space tools .prop files are stored
+		SpaceTools = 0x30608F0B,
+		/// Where trading configuration of space items are stored
+		SpaceTrading = 0x034D97FA,
+
+		TribalTools = 0xF37C24E6,
+		TribeAbilities = 0xC85C1F8B,
+		TribePlans = 0x72D02C25,
+
+		CreatureAbilities = 0xDD91AC58,
 
 		/// Where cell .cll files are stored
 		CellModels = 0x40616200,

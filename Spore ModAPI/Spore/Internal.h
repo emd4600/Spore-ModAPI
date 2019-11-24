@@ -22,24 +22,29 @@
 #include <cstdint>
 #include <cctype>
 #include <windows.h>
-#include <ModAPI\CppRevEng.h>
-
-#define SPORE_STANDARD 0
-#define SPORE_STEAM 1
+#include <Spore\CppRevEng.h>
 
 
-/* Modify this according to your build */
-// SPORE_STANDARD for Disk version, SPORE_STEAM for all the rest
-//#define EXECUTABLE_TYPE SPORE_STANDARD
-// Set to 1 to compile for the 2017 Spore patch
-//#define PATCHED_SPORE 0
-
-#ifndef EXECUTABLE_TYPE
-	#define EXECUTABLE_TYPE SPORE_STANDARD
+#ifdef MODAPI_DLL_EXPORT 
+/*Enabled as "export" while compiling the dll project*/
+#define MODAPI __declspec(dllexport)  
+#else
+/*Enabled as "import" in the Client side for using already created dll file*/
+#define MODAPI __declspec(dllimport)  
 #endif
-#ifndef PATCHED_SPORE
-	#define PATCHED_SPORE 0
+
+#ifdef MODAPI_DLL_EXPORT
+	#if EXECUTABLE_TYPE == 0
+		#define SelectAddress(addressDisk, unused, addressSteamPatched) addressDisk
+	#elif EXECUTABLE_TYPE == 2
+		#define SelectAddress(addressDisk, unused, addressSteamPatched) addressSteamPatched
+	#endif
 #endif
+
+
+// The base address of the running program.
+extern MODAPI uintptr_t baseAddress;
+
 
 #define field(_This, offset) *(int*)(_This + offset)
 #define vftable(_This, offset) *(int*)((*(int*)_This) + offset)
@@ -69,10 +74,6 @@
 #define STATIC_CALL(address, returnType, parameters, passedArguments) ((returnType (*)(parameters)) (address))(passedArguments)
 #define STATIC_CALL_(address, returnType) ((returnType (*)()) (address))()
 
-
-// believe me, it was the best way to do it I could come up with
-#define ManualBreakpoint() ManualBreakpoint_(__FILE__, "Breakpoint");
-#define ManualBreakpoint_(text, title) MessageBoxA(NULL, text, title, MB_OK);
 
 // Methods that get the address from a list; they must not be in the class declaration
 // The VOID_ counterpart is actually not necessary, but we keep it here because old methods still use it
@@ -109,15 +110,16 @@
 #define auto_STATIC_METHOD_VOID_(className, name) STATIC_METHOD_VOID_(GetAddress(className, name), className::name)
 
 
-
-#if EXECUTABLE_TYPE == SPORE_STANDARD
-	#define SelectAddress(addressStandard, addressSteam, addressSteamPatched) addressStandard
-#elif EXECUTABLE_TYPE == SPORE_STEAM
-	#if PATCHED_SPORE == 0
-		#define SelectAddress(addressStandard, addressSteam, addressSteamPatched) addressSteam
-	#else
-		#define SelectAddress(addressStandard, addressSteam, addressSteamPatched) addressSteamPatched
-	#endif
-#endif
-
 #define ASSERT_SIZE(name, size) static_assert(sizeof(name) == size, "sizeof " #name " != " #size);
+
+/// If compiled on a Debug configuration, triggers the Visual Studio Just-In-Time debugger,
+/// allowing you to attach the debugger to Spore and continue executing from this instruction.
+/// @returns false if there was an error.
+bool ManualBreakpoint();
+
+namespace Addresses(Internal)
+{
+	DeclareAddress(Allocator_ptr);
+	DeclareAddress(new_);
+	DeclareAddress(delete_);
+}

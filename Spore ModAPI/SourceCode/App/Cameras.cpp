@@ -1,3 +1,4 @@
+#ifndef MODAPI_DLL_EXPORT
 /****************************************************************************
 * Copyright (C) 2018 Eric Mor
 *
@@ -16,17 +17,9 @@
 * You should have received a copy of the GNU General Public License
 * along with this program.  If not, see <http://www.gnu.org/licenses/>.
 ****************************************************************************/
-
+#ifndef MODAPI_DLL_EXPORT
 #include <Spore\App\DefaultCamera.h>
 #include <Spore\App\cCameraManager.h>
-
-#if defined(EA_HAVE_CPP11_INITIALIZER_LIST)
-//#error
-#endif
-
-#if defined(__cplusplus) && defined(_YVALS)
-//#error "CAMERA error"
-#endif
 
 namespace App
 {
@@ -114,3 +107,5 @@ namespace App
 	auto_METHOD_VIRTUAL_VOID_(cCameraManager, ICameraManager, RemoveCameras);
 
 }
+#endif
+#endif

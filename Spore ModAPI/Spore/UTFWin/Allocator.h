@@ -24,14 +24,13 @@
 namespace UTFWin
 {
 	ICoreAllocator* GetAllocator();
+}
 
-	///////////////////////////////////
-	//// INTERNAL IMPLEMENENTATION ////
-	///////////////////////////////////
+///////////////////////////////////
+//// INTERNAL IMPLEMENENTATION ////
+///////////////////////////////////
 
-	namespace Addresses(UTFWin)
-	{
-		DeclareAddress(GetAllocator, SelectAddress(0x951750, 0x951220, 0x951220));
-	}
-
+namespace Addresses(UTFWin)
+{
+	DeclareAddress(GetAllocator);
 }

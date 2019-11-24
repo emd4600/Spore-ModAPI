@@ -381,9 +381,6 @@
     <ClInclude Include="Spore\Simulator\cSpaceInventoryItem.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="ModAPI\MainUtilities.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="Spore\UTFWin\ILayoutElement.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -1479,12 +1476,6 @@
     <ClInclude Include="Spore\Simulator\SubSystem\GameBehaviorManager.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="ModAPI\CppRevEng.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="ModAPI\CppRevEngBase.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="Spore\UTFWin\ISlider.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -1501,6 +1492,30 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Spore\Simulator\Serialization.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Spore\ModAPI.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Spore\CppRevEng.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Spore\CppRevEngBase.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SourceCode\DLL\stdafx.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SourceCode\DLL\targetver.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SourceCode\DLL\Application.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Spore\BasicIncludes.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SourceCode\DLL\resource.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -1583,16 +1598,7 @@
     <ClCompile Include="SourceCode\ArgScript\ArgScript.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="SourceCode\App\PropertyList.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="SourceCode\Graphics\Models.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="SourceCode\App\PropManager.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="SourceCode\App\CheatManager.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="SourceCode\RenderWare\RWBuffers.cpp">
@@ -1604,19 +1610,10 @@
     <ClCompile Include="SourceCode\UTFWin\OutlineFormat.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="SourceCode\App\Cameras.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="SourceCode\App\Messages.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="SourceCode\Graphics\Textures.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="SourceCode\UTFWin\WindowManager.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="SourceCode\App\GameModes.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="SourceCode\Graphics\Lighting.cpp">
@@ -1745,9 +1742,6 @@
     <ClCompile Include="SourceCode\ArgScript\ClassManager.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="SourceCode\App\Viewer.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="SourceCode\Simulator\GameInputManager.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -1784,22 +1778,13 @@
     <ClCompile Include="SourceCode\RenderWare\RenderWare.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="SourceCode\App\ScenarioMode.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="SourceCode\UI\LayerManager.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="SourceCode\Graphics\RenderTargets.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="SourceCode\App\App.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="SourceCode\Sporepedia\Shopper.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="SourceCode\MainUtilities.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="SourceCode\Editors\Editor.cpp">
@@ -1817,6 +1802,96 @@
     <ClCompile Include="SourceCode\Graphics\GraphicsManager.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="SourceCode\Debugging.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SourceCode\App\Viewer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SourceCode\App\ScenarioMode.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SourceCode\App\Cameras.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SourceCode\App\CheatManager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SourceCode\App\GameModes.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SourceCode\App\Messages.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SourceCode\App\PropertyList.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SourceCode\App\PropManager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SourceCode\DLL\dllmain.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SourceCode\DLL\stdafx.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SourceCode\DLL\AddressesApp.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SourceCode\DLL\AddressesArgScript.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SourceCode\DLL\AddressesAudio.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SourceCode\DLL\AddressesEditors.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SourceCode\DLL\AddressesGalaxyGameEntry.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SourceCode\DLL\AddressesGraphics.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SourceCode\DLL\AddressesIO.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SourceCode\DLL\AddressesMisc.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SourceCode\DLL\AddressesPalettes.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SourceCode\DLL\AddressesRenderWare.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SourceCode\DLL\AddressesResource.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SourceCode\DLL\AddressesSimulator.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SourceCode\DLL\AddressesSporepedia.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SourceCode\DLL\AddressesSwarm.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SourceCode\DLL\AddressesTerrain.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SourceCode\DLL\AddressesUI.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SourceCode\DLL\AddressesUTFWin.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SourceCode\DLL\Application.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SourceCode\DLL\DllModAPI.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="mainpage.dox" />
@@ -1827,5 +1902,14 @@
     <None Include="Objects.dox" />
     <None Include="EditorRequest.dox" />
     <None Include="README.md" />
+  </ItemGroup>
+  <ItemGroup>
+    <Natvis Include="EASTL.natvis" />
+    <Natvis Include="SporeDebug.natvis" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="SourceCode\DLL\VersionInfo.rc">
+      <Filter>Resource Files</Filter>
+    </ResourceCompile>
   </ItemGroup>
 </Project>

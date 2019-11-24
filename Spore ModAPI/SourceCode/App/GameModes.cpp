@@ -1,3 +1,4 @@
+#ifndef MODAPI_DLL_EXPORT
 /****************************************************************************
 * Copyright (C) 2018 Eric Mor
 *
@@ -107,3 +108,4 @@ namespace App
 	auto_METHOD_VIRTUAL_(cGameModeManager, IGameModeManager, cViewer*, GetViewer);
 
 }
+#endif

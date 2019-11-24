@@ -197,45 +197,45 @@ namespace Resource
 
 	namespace Addresses(DatabasePackedFile)
 	{
-		DeclareAddress(GetType, SelectAddress(0x8D9B60, 0x8D9790, 0x8D97A0));
-		DeclareAddress(GetReferenceCount, SelectAddress(0x69D630, 0x69D3F0, 0x69D3F0));
-		DeclareAddress(UseIndexMutex, SelectAddress(0x8D88C0, 0x8D84E0, 0x8D84F0));
-		DeclareAddress(Load, SelectAddress(0x8D90A0, 0x8D8C90, 0x8D8CA0));
-		DeclareAddress(Save, SelectAddress(0x8D9FF0, 0x8D9CC0, 0x8D9CD0));
-		DeclareAddress(GetAccessFlags, SelectAddress(0x8D88F0, 0xFF02D0, 0xFF02D0));
-		DeclareAddress(Write, SelectAddress(0x8DB150, 0x8DAEB0, 0x8DAEC0));
-		DeclareAddress(GetPath, SelectAddress(0xAE92B0, 0xA426C0, 0xA42700));
-		DeclareAddress(SetPath, SelectAddress(0x8DA000, 0x8D9CD0, 0x8D9CE0));
-		DeclareAddress(GetFiles, SelectAddress(0x8D8DF0, 0x8D8A20, 0x8D8A30));
-		DeclareAddress(GetFile, SelectAddress(0x8DA980, 0x8DA6E0, 0x8DA6F0));
-		DeclareAddress(func38h, SelectAddress(0x8D9C40, 0x8D9870, 0x8D9880));
-		DeclareAddress(func3Ch, SelectAddress(0x8DA050, 0x8D9D20, 0x8D9D30));
-		DeclareAddress(RemoveFile, SelectAddress(0x8D9290, 0x8D8E80, 0x8D8E90));
-		DeclareAddress(SetResourceManager, SelectAddress(0x8D8C80, 0x8D88B0, 0x8D88C0));
-		DeclareAddress(GetAllocator, SelectAddress(0x6BD860, 0x7F5550, 0x7F55C0));
-		DeclareAddress(GetStream, SelectAddress(0x8D8D90, 0x8D89C0, 0x8D89D0));
-		DeclareAddress(SetStream, SelectAddress(0x8D8DA0, 0x8D89D0, 0x8D89E0));
+		DeclareAddress(GetType);
+		DeclareAddress(GetReferenceCount);
+		DeclareAddress(UseIndexMutex);
+		DeclareAddress(Load);
+		DeclareAddress(Save);
+		DeclareAddress(GetAccessFlags);
+		DeclareAddress(Write);
+		DeclareAddress(GetPath);
+		DeclareAddress(SetPath);
+		DeclareAddress(GetFiles);
+		DeclareAddress(GetFile);
+		DeclareAddress(func38h);
+		DeclareAddress(func3Ch);
+		DeclareAddress(RemoveFile);
+		DeclareAddress(SetResourceManager);
+		DeclareAddress(GetAllocator);
+		DeclareAddress(GetStream);
+		DeclareAddress(SetStream);
 
-		DeclareAddress(CreatePFRecordRead, SelectAddress(0x8D89E0, 0x8D85F0, 0x8D8600));
-		DeclareAddress(CreatePFRecordReadCopy, SelectAddress(0x8D89A0, 0x8D85B0, 0x8D85C0));
-		DeclareAddress(CreatePFRecordWriteData, SelectAddress(0x8D8950, 0x8D8560, 0x8D8570));
-		DeclareAddress(CreatePFRecordWrite, SelectAddress(0x8D8900, 0x8D8510, 0x8D8520));
-		DeclareAddress(Read, SelectAddress(0x8D8A20, 0x8D8630, 0x8D8640));
-		DeclareAddress(ReadHeader, SelectAddress(0x8D9370, 0x8D8F60, 0x8D8F70));
-		DeclareAddress(Reset, SelectAddress(0x8D9540, 0x8D9130, 0x8D9140));
-		DeclareAddress(IsReadyForWrite, SelectAddress(0x8D9600, 0x8D91F0, 0x8D9200));
-		DeclareAddress(IsValidHeader, SelectAddress(0x8D94B0, 0x8D90A0, 0x8D90B0));
-		DeclareAddress(ReadIndex, SelectAddress(0x8DAD00, 0x8DAA60, 0x8DAA70));
-		DeclareAddress(WriteIndex, SelectAddress(0x8D9CD0, 0x8D9900, 0x8D9910));
-		DeclareAddress(StreamCanContainFileData, SelectAddress(0x8D9720, 0x8D9310, 0x8D9320));
-		DeclareAddress(CreatePFIndexModifiable, SelectAddress(0x8D8A60, 0x8D8670, 0x8D8680));
-		DeclareAddress(ReleaseObject, SelectAddress(0x6BC5B0, 0x8D86A0, 0x8D86B0));
-		DeclareAddress(RenovateIndex, SelectAddress(0x8D8A90, 0x8D86C0, 0x8D86D0));
-		DeclareAddress(func90h, SelectAddress(0x8D9E50, 0x8D9A80, 0x8D9A90));
+		DeclareAddress(CreatePFRecordRead);
+		DeclareAddress(CreatePFRecordReadCopy);
+		DeclareAddress(CreatePFRecordWriteData);
+		DeclareAddress(CreatePFRecordWrite);
+		DeclareAddress(Read);
+		DeclareAddress(ReadHeader);
+		DeclareAddress(Reset);
+		DeclareAddress(IsReadyForWrite);
+		DeclareAddress(IsValidHeader);
+		DeclareAddress(ReadIndex);
+		DeclareAddress(WriteIndex);
+		DeclareAddress(StreamCanContainFileData);
+		DeclareAddress(CreatePFIndexModifiable);
+		DeclareAddress(ReleaseObject);
+		DeclareAddress(RenovateIndex);
+		DeclareAddress(func90h);
 
 
-		DeclareAddress(ReadBytes, SelectAddress(0x8D8FB0, 0x8D8BE0, 0x8D8BF0));
-		DeclareAddress(ReadData, SelectAddress(0x8D9770, 0x6BCA80, 0x6BCA80));
+		DeclareAddress(ReadBytes);
+		DeclareAddress(ReadData);
 
 	}
 

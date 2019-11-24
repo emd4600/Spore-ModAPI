@@ -187,10 +187,10 @@ inline void GameInput::OnMouseWheel(int nWheelDelta, float mouseX, float mouseY,
 
 namespace Addresses(GameInput)
 {
-	DeclareAddress(OnKeyDown, SelectAddress(0x697CA0, 0x697A50, 0x697A50));
-	DeclareAddress(OnKeyUp, SelectAddress(0x697CD0, 0x697A80, 0x697A80));
+	DeclareAddress(OnKeyDown);
+	DeclareAddress(OnKeyUp);
 
-	DeclareAddress(IsMouseButtonDown, SelectAddress(0x8D3650, 0x8D3300, 0x8D3340));
+	DeclareAddress(IsMouseButtonDown);
 }
 
 inline auto_METHOD_VOID(GameInput, OnKeyDown, Args(int vkCode, KeyModifiers modifiers), Args(vkCode, modifiers));

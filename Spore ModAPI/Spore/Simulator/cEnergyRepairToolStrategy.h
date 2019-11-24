@@ -35,8 +35,8 @@ namespace Simulator
 
 	namespace Addresses(cEnergyRepairToolStrategy)
 	{
-		DeclareAddress(Update, SelectAddress(0x1057750, NO_ADDRESS, 0x1056BC0));
-		DeclareAddress(OnHit, SelectAddress(0x105BC60, NO_ADDRESS, 0x105B0B0));
-		DeclareAddress(ProcessCost, SelectAddress(0x1054110, NO_ADDRESS, 0x10535A0));
+		DeclareAddress(Update);
+		DeclareAddress(OnHit);
+		DeclareAddress(ProcessCost);
 	}
 }

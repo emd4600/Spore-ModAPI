@@ -36,9 +36,9 @@ namespace Simulator
 
 	namespace Addresses(cGetOutOfUFOToolStrategy)
 	{
-		DeclareAddress(OnSelect, SelectAddress(0x1054C30, NO_ADDRESS, 0x1054080));
-		DeclareAddress(Update, SelectAddress(0x1057890, NO_ADDRESS, 0x1056D00));
-		DeclareAddress(WhileAiming, SelectAddress(0x1054C10, NO_ADDRESS, 0x1054060));
-		DeclareAddress(OnHit, SelectAddress(0x105BDB0, NO_ADDRESS, 0x105B200));
+		DeclareAddress(OnSelect);
+		DeclareAddress(Update);
+		DeclareAddress(WhileAiming);
+		DeclareAddress(OnHit);
 	}
 }

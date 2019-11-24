@@ -1,3 +1,4 @@
+#ifndef MODAPI_DLL_EXPORT
 /****************************************************************************
 * Copyright (C) 2018 Eric Mor
 *
@@ -49,3 +50,4 @@ namespace App
 
 	auto_METHOD_const(cViewer, bool, GetCameraToPoint, Args(float x, float y, Vector3& dst1, Vector3& dst2), Args(x, y, dst1, dst2));
 }
+#endif

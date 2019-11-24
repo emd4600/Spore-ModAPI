@@ -181,6 +181,6 @@ namespace UI
 
 	namespace Addresses(SpaceGameUI)
 	{
-		DeclareAddress(Load, SelectAddress(0x10743F0, 0x1073730, 0x1073730));
+		DeclareAddress(Load);
 	}
 }

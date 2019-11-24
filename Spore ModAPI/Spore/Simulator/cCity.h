@@ -187,7 +187,7 @@ namespace Simulator
 
 	namespace Addresses(cCity) 
 	{
-		DeclareAddress(IsAboveCity, SelectAddress(0xBD90C0, , 0xBD9D50));
-		DeclareAddress(SpawnVehicle, SelectAddress(0xBDD410, , 0xBDDEF0));
+		DeclareAddress(IsAboveCity);
+		DeclareAddress(SpawnVehicle);
 	}
 }

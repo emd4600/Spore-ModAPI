@@ -175,6 +175,6 @@ namespace Graphics
 
 	namespace Addresses(IMaterialManager)
 	{
-		DeclareAddress(Get, SelectAddress(0x67DE90, 0x67DD30, 0x67DD30));
+		DeclareAddress(Get);
 	}
 }
