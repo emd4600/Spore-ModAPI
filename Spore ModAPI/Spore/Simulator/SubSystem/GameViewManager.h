@@ -33,6 +33,9 @@
 #include <EASTL\hash_map.h>
 #include <EASTL\fixed_vector.h>
 
+/// Gets the active game view manager.
+#define GameViewManager (*Simulator::cGameViewManager::Get())
+
 namespace Addresses(Simulator)
 {
 	DeclareAddress(LightingWorld_ptr);
@@ -104,10 +107,6 @@ namespace Simulator
 		/// Gets the active game view manager.
 		static cGameViewManager* Get();
 	};
-
-	inline cGameViewManager* GameViewManager() {
-		return cGameViewManager::Get();
-	}
 
 	inline Graphics::ILightingWorld* GetLightingWorld() {
 		return *(Graphics::ILightingWorld**)(GetAddress(Simulator, LightingWorld_ptr));

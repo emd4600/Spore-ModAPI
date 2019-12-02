@@ -336,18 +336,8 @@
 	<DisplayString Condition="mnSize == 0">
 		[0] {{}}
 	</DisplayString>
-	<DisplayString Condition="mnSize == 1">
-		[1] 
-		{{ 
-			{((eastl::rbtree_node&lt;$T1&gt;*)mAnchor.mpNodeLeft)-&gt;mValue} 
-		}}
-	</DisplayString>
-	<DisplayString Condition="mnSize &gt; 1">
-		[{mnSize}] 
-		{{ 
-			{((eastl::rbtree_node&lt;$T1&gt;*)mAnchor.mpNodeLeft)-&gt;mValue}, 
-			...
-		}}
+  <DisplayString Condition="mnSize &gt;= 1">
+		[{mnSize}] {{ ... }}
 	</DisplayString>
     <Expand>
 		<Item Name="[size]">mnSize</Item>

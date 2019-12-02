@@ -25,6 +25,9 @@
 #include <EASTL\initializer_list.h>
 #include <EASTL\intrusive_ptr.h>
 
+/// Access the active message manager.
+#define MessageManager (*App::IMessageManager::Get())
+
 namespace App
 {
 	using namespace eastl;
@@ -197,18 +200,10 @@ namespace App
 	public:
 
 		///
-		/// Returns the active message manager. Same as MessageManager().
+		/// Returns the active message manager.
 		///
 		static IMessageManager* Get();
 	};
-
-	///
-	/// Returns the active message manager. Same as IMessageManager::Get().
-	///
-	inline IMessageManager* MessageManager()
-	{
-		return IMessageManager::Get();
-	}
 
 	///
 	/// Adds an "Update" function that is called once every game frame. 
@@ -224,7 +219,7 @@ namespace App
 	/// @param function A void function with no parameters, that will be executed every frame.
 	inline intrusive_ptr<UpdateMessageListener> AddUpdateFunction(const VoidFunction_T& function) {
 		auto listener = new UpdateMessageListener(function);
-		MessageManager()->AddListener(listener, kMsgAppUpdate);
+		MessageManager.AddListener(listener, kMsgAppUpdate);
 		return listener;
 	}
 
@@ -242,7 +237,7 @@ namespace App
 	/// @param updatable An object with an Update method, that will be executed every frame.
 	inline intrusive_ptr<UpdateMessageListener> AddUpdateFunction(IUpdatable* updatable) {
 		auto listener = new UpdateMessageListener(updatable);
-		MessageManager()->AddListener(listener, kMsgAppUpdate);
+		MessageManager.AddListener(listener, kMsgAppUpdate);
 		return listener;
 	}
 
@@ -261,7 +256,7 @@ namespace App
 	/// @param scheduleTime The time that has to pass, in seconds, since the task is scheduled for it to be executed.
 	inline intrusive_ptr<ScheduledTaskListener> ScheduleTask(const VoidFunction_T& function, float scheduleTime) {
 		auto listener = new ScheduledTaskListener(function, scheduleTime, 0.0f);
-		MessageManager()->AddListener(listener, kMsgAppUpdate);
+		MessageManager.AddListener(listener, kMsgAppUpdate);
 		listener->StartClock();
 		return listener;
 	}
@@ -304,7 +299,7 @@ namespace App
 	/// @param repeatRate How many seconds have to pass between every execution of the task.
 	inline intrusive_ptr<ScheduledTaskListener> ScheduleRepeatedTask(const VoidFunction_T& function, float scheduleTime, float repeatRate) {
 		auto listener = new ScheduledTaskListener(function, scheduleTime, repeatRate);
-		MessageManager()->AddListener(listener, kMsgAppUpdate);
+		MessageManager.AddListener(listener, kMsgAppUpdate);
 		listener->StartClock();
 		return listener;
 	}
@@ -333,11 +328,11 @@ namespace App
 	}
 
 	inline bool RemoveUpdateFunction(intrusive_ptr<UpdateMessageListener>& updateListener) {
-		return MessageManager()->RemoveListener(updateListener.get(), kMsgAppUpdate);
+		return MessageManager.RemoveListener(updateListener.get(), kMsgAppUpdate);
 	}
 
 	inline bool RemoveScheduledTask(intrusive_ptr<ScheduledTaskListener>& taskListener) {
-		return MessageManager()->RemoveListener(taskListener.get(), kMsgAppUpdate);
+		return MessageManager.RemoveListener(taskListener.get(), kMsgAppUpdate);
 	}
 
 
@@ -368,7 +363,7 @@ namespace Simulator
 	/// @param scheduleTime The time that has to pass, in seconds, since the task is scheduled for it to be executed.
 	inline intrusive_ptr<ScheduledTaskListener> ScheduleTask(const App::VoidFunction_T& function, float scheduleTime) {
 		auto listener = new ScheduledTaskListener(function, scheduleTime, 0.0f);
-		App::MessageManager()->AddListener(listener, App::kMsgAppUpdate);
+		MessageManager.AddListener(listener, App::kMsgAppUpdate);
 		listener->StartClock();
 		return listener;
 	}
@@ -411,7 +406,7 @@ namespace Simulator
 	/// @param repeatRate How many seconds have to pass between every execution of the task.
 	inline intrusive_ptr<ScheduledTaskListener> ScheduleRepeatedTask(const App::VoidFunction_T& function, float scheduleTime, float repeatRate) {
 		auto listener = new ScheduledTaskListener(function, scheduleTime, repeatRate);
-		App::MessageManager()->AddListener(listener, App::kMsgAppUpdate);
+		MessageManager.AddListener(listener, App::kMsgAppUpdate);
 		listener->StartClock();
 		return listener;
 	}
@@ -440,6 +435,6 @@ namespace Simulator
 	}
 
 	inline bool RemoveScheduledTask(intrusive_ptr<ScheduledTaskListener>& taskListener) {
-		return App::MessageManager()->RemoveListener(taskListener.get(), App::kMsgAppUpdate);
+		return MessageManager.RemoveListener(taskListener.get(), App::kMsgAppUpdate);
 	}
 }

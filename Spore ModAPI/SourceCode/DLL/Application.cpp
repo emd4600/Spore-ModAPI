@@ -6,7 +6,7 @@
 
 bool ShaderFragments_detour::DETOUR(DatabasePackedFile* pDBPF)
 {
-	pDBPF = Resource::ResourceManager()->GetDBPF(
+	pDBPF = ResourceManager.GetDBPF(
 		ResourceKey(mShaderPath, Graphics::IMaterialManager::kSporeMaterialTypeID, Graphics::IMaterialManager::kShaderFragmentsGroupID));
 
 	return original_function(this, pDBPF);
@@ -18,7 +18,7 @@ void LoadMaterials(uint32_t, void*, void*) {
 	filter.typeID = TypeIDs::smt;
 
 	vector<ResourceKey> keys;
-	if (ResourceManager()->GetFileKeys(keys, &filter)) {
+	if (ResourceManager.GetFileKeys(keys, &filter)) {
 		for (const ResourceKey& key : keys) {
 			// Don't read the Spore ones, from 0 to 3
 			if (key.instanceID > 3) {
@@ -37,7 +37,7 @@ void LoadMaterials(uint32_t, void*, void*) {
 	filter.groupID = IMaterialManager::kCompiledStatesLinkGroupID;
 	filter.typeID = TypeIDs::smt;
 
-	if (ResourceManager()->GetFileKeys(keys, &filter)) {
+	if (ResourceManager.GetFileKeys(keys, &filter)) {
 		for (const ResourceKey& key : keys) {
 			// Don't read the Spore ones, from 0 to 3
 			if (key.instanceID > 3) {
@@ -69,10 +69,12 @@ namespace ModAPI
 	}
 
 	void DetachDetour() {
-		ShaderFragments_detour::detach();
+		// DetachDetour calls new, which causes crash since we are using the Spore one.
+
+		/*ShaderFragments_detour::detach();
 		sub_7E6C60_detour::detach();
 		AppInit_detour::detach();
-		AppShutdown_detour::detach();
+		AppShutdown_detour::detach();*/
 	}
 }
 

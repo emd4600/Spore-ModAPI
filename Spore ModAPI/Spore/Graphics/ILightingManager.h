@@ -22,6 +22,9 @@
 #include <Spore\Graphics\ILightingWorld.h>
 #include <Spore\MathUtils.h>
 
+/// Access the active lighting manager.
+#define LightingManager (*Graphics::ILightingManager::Get())
+
 namespace Graphics
 {
 	///
@@ -65,18 +68,10 @@ namespace Graphics
 		/* 2Ch */	virtual void func2Ch(int) = 0;
 
 		///
-		/// Returns the active lighting manager. Same as LightingManager().
+		/// Returns the active lighting manager.
 		///
 		static ILightingManager* Get();
 	};
-
-	///
-	/// Returns the active lighting manager. Same as ILightingManager::Get().
-	///
-	inline ILightingManager* LightingManager()
-	{
-		return ILightingManager::Get();
-	}
 
 	namespace Addresses(ILightingManager)
 	{

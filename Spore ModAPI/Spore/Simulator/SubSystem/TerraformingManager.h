@@ -24,6 +24,8 @@
 #include <EASTL\map.h>
 #include <EASTL\vector.h>
 
+#define TerraformingManager (*Simulator::cTerraformingManager::Get())
+
 namespace Simulator
 {
 	class cCommodityNode;  //PLACEHOLDER
@@ -57,10 +59,6 @@ namespace Simulator
 	public:
 		static cTerraformingManager* Get();
 	};
-
-	inline cTerraformingManager* TerraformingManager() {
-		return cTerraformingManager::Get();
-	}
 
 	/////////////////////////////////
 	//// INTERNAL IMPLEMENTATION ////

@@ -68,14 +68,27 @@ namespace GalaxyGameEntry
 
 	static_assert(sizeof(Unknown) == 0x8C, "sizeof(Unknown) != 8Ch");
 
+	namespace Addresses(GlobalGGEUI)
+	{
+		DeclareAddress(Initialize);
+		DeclareAddress(InitializeUI);
+
+		DeclareAddress(ptr);
+	}
+
 	class GlobalGGEUI
 	{
-	protected:
+	public:
 		void Initialize();
 
 		void InitializeUI();
 
-	protected:
+	public:
+		static GlobalGGEUI* Get() {
+			return *(GlobalGGEUI**)GetAddress(GlobalGGEUI, ptr);
+		}
+
+	public:
 		enum
 		{
 			kModeCreate = 2,
@@ -159,10 +172,4 @@ namespace GalaxyGameEntry
 		/* 270h */	bool field_270;
 		/* 271h */	bool mbScenarioStarEffectsEnabled;
 	};
-
-	namespace Addresses(GlobalGGEUI)
-	{
-		DeclareAddress(Initialize);
-		DeclareAddress(InitializeUI);
-	}
 }

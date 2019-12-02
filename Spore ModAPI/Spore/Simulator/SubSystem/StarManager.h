@@ -29,6 +29,9 @@
 #include <EASTL\vector.h>
 #include <EASTL\string.h>
 
+/// Access the active Simulator star manager, used for most things in space stage.
+#define StarManager (*Simulator::cStarManager::Get())
+
 namespace Simulator
 {
 	class cTradeRouteData
@@ -67,13 +70,10 @@ namespace Simulator
 	{
 	public:
 
-		///
 		/// Returns the empire that has the given political ID, or nullptr if no empire uses it.
 		/// @param politicalID
-		///
 		cEmpire* GetEmpire(uint32_t politicalID);
 
-		///
 		/// Returns the star record assigned to the specified id.
 		/// There are three possibilities:
 		/// - If id == 0, the galaxy center is returned ?
@@ -160,19 +160,9 @@ namespace Simulator
 		/* 228h */	intrusive_ptr<Object> field_228;  // not really object
 
 	public:
-		///
-		/// Returns the active Simulator star manager, used for most things in space stage. Same as StarManager().
-		///
+		/// Returns the active Simulator star manager, used for most things in space stage.
 		static cStarManager* Get();
 	};
-
-	///
-	/// Returns the active Simulator star manager, used for most things in space stage. Same as cStarManager::Get().
-	///
-	inline cStarManager* StarManager()
-	{
-		return cStarManager::Get();
-	}
 
 	/////////////////////////////////
 	//// INTERNAL IMPLEMENTATION ////

@@ -21,6 +21,9 @@
 #include <Spore\Object.h>
 #include <Spore\ICoreAllocator.h>
 
+/// Access the active class manager
+#define ClassManager (*App::IClassManager::Get())
+
 namespace App
 {
 
@@ -55,10 +58,6 @@ namespace App
 
 		static IClassManager* Get();
 	};
-
-	inline IClassManager* ClassManager() {
-		return IClassManager::Get();
-	}
 
 	namespace Addresses(IClassManager)
 	{

@@ -15,6 +15,7 @@ namespace Graphics
 		DeclareAddress(ModelToWorldTransposed_ptr);
 
 		DeclareAddress(SetShaderData);
+		DeclareAddress(GetShaderDataSize);
 
 		DeclareAddress(CreateDevice);
 
@@ -88,6 +89,8 @@ namespace Graphics
 		}
 
 		void SetShaderData(short index, void* value, bool overrideIfEqual = false);
+
+		int GetShaderDataSize(short index);
 
 		/// Creates the Direct3D device. This must not be called, as it would create another device; if you need to 
 		/// modify this, detour this function.

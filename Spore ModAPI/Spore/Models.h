@@ -32,3 +32,6 @@
 #include <Spore\Graphics\ILightingManager.h>
 #include <Spore\Graphics\IModelWorld.h>
 #include <Spore\Graphics\ModelAsset.h>
+#include <Spore\Graphics\Texture.h>
+#include <Spore\Graphics\ITextureManager.h>
+#include <Spore\Graphics\Renderer.h>

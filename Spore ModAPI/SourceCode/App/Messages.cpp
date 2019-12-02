@@ -144,7 +144,7 @@ namespace App
 				mFunction();
 				mbFirstTime = false;
 				if (mRepeatRate == 0) {
-					MessageManager()->RemoveListener(this, kMsgAppUpdate);
+					MessageManager.RemoveListener(this, kMsgAppUpdate);
 				}
 				else {
 					mClock.Stop();
@@ -182,7 +182,7 @@ namespace Simulator
 				mFunction();
 				mbFirstTime = false;
 				if (mRepeatRate == 0) {
-					App::MessageManager()->RemoveListener(this, App::kMsgAppUpdate);
+					MessageManager.RemoveListener(this, App::kMsgAppUpdate);
 				}
 				else {
 					mClock.Stop();

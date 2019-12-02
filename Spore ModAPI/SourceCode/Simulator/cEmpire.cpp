@@ -29,7 +29,7 @@ namespace Simulator
 
 	cStarRecord* cEmpire::GetHomeStarRecord() {
 		if (mHomeStar != -1) {
-			return StarManager()->GetStarRecord(mHomeStar);
+			return StarManager.GetStarRecord(mHomeStar);
 		}
 		else {
 			return nullptr;

@@ -24,6 +24,9 @@
 #include <EASTL\map.h>
 #include <EASTL\vector.h>
 
+/// Access the active relationship manager, which depends on the current game stage.
+#define RelationshipManager (*Simulator::cRelationshipManager::Get())
+
 namespace Simulator
 {
 	class cEmpire;
@@ -130,18 +133,10 @@ namespace Simulator
 		/* E4h */	map<int, int> field_E4;
 
 	public:
-		///
-		/// Gets the active relationship manager, which depends on the current game stage. Same as RelationshipManager().
-		///
+		/// Gets the active relationship manager, which depends on the current game stage.
 		static cRelationshipManager* Get();
 	};
 
-	///
-	/// Gets the active relationship manager, which depends on the current game stage. Same as cRelationshipManager::Get().
-	///
-	inline cRelationshipManager* RelationshipManager() {
-		return cRelationshipManager::Get();
-	}
 
 	/////////////////////////////////
 	//// INTERNAL IMPLEMENTATION ////

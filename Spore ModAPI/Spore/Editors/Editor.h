@@ -48,6 +48,9 @@
 #include <EASTL\string.h>
 #include <EASTL\vector.h>
 
+/// Access the active editor object.
+#define ActiveEditor (*Editors::GetEditor())
+
 // these are still placeholders
 typedef void UnkClass1;
 typedef void UnkClass2;

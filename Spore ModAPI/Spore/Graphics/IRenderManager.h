@@ -23,6 +23,9 @@
 #include <Spore\Graphics\IRenderable.h>
 #include <Spore\Graphics\LambdaRenderable.h>
 
+/// Access the active render manager.
+#define RenderManager (*Graphics::IRenderManager::Get())
+
 namespace Graphics
 {
 	struct RenderererParams
@@ -144,21 +147,13 @@ namespace Graphics
 		// field 33Ch cViewer
 
 		///
-		/// Gets the active render manager. Same as RenderManager().
+		/// Gets the active render manager.
 		///
 		static IRenderManager* Get();
 	};
 
-	///
-	/// Gets the active render manager. Same as IRenderManager::Get()
-	///
-	inline IRenderManager* RenderManager()
-	{
-		return IRenderManager::Get();
-	}
-
 	inline void GetMousePosition(int& mouseX, int& mouseY) {
-		auto params = RenderManager()->GetParameters();
+		auto params = RenderManager.GetParameters();
 		mouseX = params.mouseX;
 		mouseY = params.mouseY;
 	}

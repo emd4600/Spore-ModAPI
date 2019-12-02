@@ -26,6 +26,9 @@
 
 #include <EASTL\list.h>
 
+/// Access the active resource manager.
+#define ResourceManager (*Resource::IResourceManager::Get())
+
 using namespace eastl;
 
 namespace Resource
@@ -321,19 +324,11 @@ namespace Resource
 
 
 		///
-		/// Gets the active resource manager. Same as ResourceManager().
+		/// Gets the active resource manager.
 		///
 		static IResourceManager* Get();
 
 	};
-
-	///
-	/// Gets the active resource manager. Same as IResourceManager::Get().
-	///
-	inline IResourceManager* ResourceManager()
-	{
-		return IResourceManager::Get();
-	}
 
 	///////////////////////////////////
 	//// INTERNAL IMPLEMENTATION ////

@@ -44,8 +44,8 @@ namespace RenderWare
 	//// INTERNAL IMPLEMENTATION ////
 	/////////////////////////////////
 
-	template <int nCompiledStates = 1>
-	MeshCompiledStateLink::MeshCompiledStateLink()
+	template <int nCompiledStates>
+	MeshCompiledStateLink< nCompiledStates>::MeshCompiledStateLink()
 		: mpMesh(nullptr)
 		, mnCompiledStatesCount(nCompiledStates)
 		, mpCompiledStates{}

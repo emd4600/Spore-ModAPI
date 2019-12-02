@@ -21,6 +21,9 @@
 
 #include <Spore\ResourceKey.h>
 
+/// Access the active bake manager.
+#define BakeManager (*Editors::IBakeManager::Get())
+
 namespace Editors
 {
 	struct BakeParameters
@@ -32,7 +35,7 @@ namespace Editors
 		int16_t field_06;
 	};
 
-	class BakeManager
+	class IBakeManager
 	{
 	public:
 
@@ -57,10 +60,10 @@ namespace Editors
 		/* 48h */	virtual void func48h();
 		/* 4Ch */	virtual void func4Ch(const ResourceKey& nameKey, const BakeParameters& params);  // bake?
 
-		static BakeManager* Get();
+		static IBakeManager* Get();
 	};
 
-	namespace Addresses(BakeManager)
+	namespace Addresses(IBakeManager)
 	{
 		DeclareAddress(Get);
 	}

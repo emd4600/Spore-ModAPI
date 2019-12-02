@@ -24,6 +24,9 @@
 #include <Spore\UTFWin\IWindow.h>
 #include <Spore\UTFWin\Message.h>
 
+/// Access the active window manager.
+#define WindowManager (*UTFWin::IWindowManager::Get())
+
 namespace UTFWin
 {
 	class IWindowManager
@@ -60,14 +63,6 @@ namespace UTFWin
 	protected:
 		// /* 04h */	IWindow* mpMainWindow;
 	};
-
-	///
-	/// Returns the active window manager. Same as IWindowManager::Get().
-	///
-	inline IWindowManager* WindowManager()
-	{
-		return IWindowManager::Get();
-	}
 
 	// static_assert(sizeof(WindowManager) == 0x838, "sizeof(WindowManager) != 838h");
 

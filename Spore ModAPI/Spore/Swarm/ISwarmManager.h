@@ -25,6 +25,9 @@
 #include <Spore\Object.h>
 #include <Spore\Internal.h>
 
+/// Access the active swarm manager.
+#define SwarmManager (*Swarm::ISwarmManager::Get())
+
 ///
 /// Swarm is the effects system of Spore.
 ///
@@ -161,18 +164,10 @@ namespace Swarm
 		/* C4h */	virtual bool funcC4h(int, int, int) = 0;
 
 		///
-		/// Gets the active manager of the Swarm system. Same as GetSwarmManager().
+		/// Gets the active manager of the Swarm system.
 		///
 		static ISwarmManager* Get();
 	};
-
-	///
-	/// Gets the active manager of the Swarm system. Same as ISwarmManager::Get().
-	///
-	inline ISwarmManager* SwarmManager()
-	{
-		return ISwarmManager::Get();
-	}
 
 	namespace Addresses(ISwarmManager)
 	{

@@ -17,6 +17,7 @@
 #include <Spore\App\Property.h>
 #include <Spore\App\PropertyList.h>
 #include <Spore\App\ScenarioMode.h>
+#include <Spore\App\Thumbnail_cImportExport.h>
 
 namespace Addresses(App)
 {
@@ -338,6 +339,12 @@ namespace App
 	namespace Addresses(ScenarioMode) 
 	{
 		DefineAddress(ptr, SelectAddress(0x16CBD24, , 0x16C7AA4));
+	}
+
+	namespace Addresses(Thumbnail_cImportExport)
+	{
+		DefineAddress(Get, SelectAddress(0x5F7750, , 0x5F79C0));
+		DefineAddress(GetFolderPath, SelectAddress(0x5F9140, , 0x5F92C0));
 	}
 }
 #endif

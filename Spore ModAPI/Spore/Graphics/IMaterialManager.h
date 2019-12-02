@@ -27,6 +27,9 @@
 #include <EASTL\vector.h>
 #include <EASTL\intrusive_ptr.h>
 
+/// Access the active material manager.
+#define MaterialManager (*Graphics::IMaterialManager::Get())
+
 using namespace eastl;
 using Resource::DatabasePackedFile;
 
@@ -151,7 +154,7 @@ namespace Graphics
 		/* 80h */	virtual bool ReadShaders(DatabasePackedFile* pDBPF) = 0;
 
 		///
-		/// Gets the active material manager. Same as GetMaterialManager().
+		/// Gets the active material manager.
 		///
 		static IMaterialManager* Get();
 
@@ -160,14 +163,6 @@ namespace Graphics
 
 		static bool ReadMaterials(uint32_t instanceID);
 	};
-
-	///
-	/// Gets the active material manager. Same as IMaterialManager::Get()
-	///
-	inline IMaterialManager* MaterialManager()
-	{
-		return IMaterialManager::Get();
-	}
 
 	/////////////////////////////////
 	//// INTERNAL IMPLEMENTATION ////

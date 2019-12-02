@@ -26,7 +26,7 @@ namespace Graphics
 {
 	void Model::AddGroup(uint32_t groupID)
 	{
-		int flags = ModelManager()->GetGroupFlag(groupID);
+		int flags = ModelManager.GetGroupFlag(groupID);
 		if (flags < 64)
 		{
 			mGroupFlags[flags/32] |= 1 << (flags & 31);
@@ -35,7 +35,7 @@ namespace Graphics
 
 	void Model::RemoveGroup(uint32_t groupID)
 	{
-		int flags = ModelManager()->GetGroupFlag(groupID);
+		int flags = ModelManager.GetGroupFlag(groupID);
 		if (flags < 64)
 		{
 			mGroupFlags[flags / 32] &= ~(1 << (flags & 31));
@@ -44,7 +44,7 @@ namespace Graphics
 
 	bool Model::HasGroup(uint32_t groupID) const
 	{
-		int flags = ModelManager()->GetGroupFlag(groupID);
+		int flags = ModelManager.GetGroupFlag(groupID);
 		if (flags < 64) return (mGroupFlags[flags / 32] & (1 << (flags & 31))) != 0;
 		return false;
 	}

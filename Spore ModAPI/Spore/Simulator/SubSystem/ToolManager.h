@@ -29,6 +29,9 @@
 #include <EASTL\hash_map.h>
 #include <EASTL\map.h>
 
+/// Access the active Simulator tool manager.
+#define ToolManager (*Simulator::cToolManager::Get())
+
 namespace Simulator
 {
 	class cToolManager
@@ -103,19 +106,9 @@ namespace Simulator
 		/* 290h */	Math::Vector3 field_290;
 
 	public:
-		///
-		/// Returns the active Simulator tool manager. Same as ToolManager().
-		///
+		/// Returns the active Simulator tool manager.
 		static cToolManager* Get();
 	};
-
-	///
-	/// Returns the active Simulator tool manager. Same as cToolManager::Get().
-	///
-	inline cToolManager* ToolManager()
-	{
-		return cToolManager::Get();
-	}
 
 	/////////////////////////////////
 	//// INTERNAL IMPLEMENTATION ////

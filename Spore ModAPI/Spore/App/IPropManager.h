@@ -25,6 +25,9 @@
 using namespace eastl;
 using namespace Resource;
 
+/// Access the active property manager.
+#define PropManager (*App::IPropManager::Get())
+
 namespace App
 {
 	///
@@ -149,18 +152,10 @@ namespace App
 	public:
 
 		///
-		/// Returns the object that is the currently active property manager. Same as GetPropManager().
+		/// Returns the object that is the currently active property manager.
 		///
 		static IPropManager* Get();
 	};
-
-	///
-	/// Returns the object that is the currently active property manager. Same as IPropManager::Get().
-	///
-	inline IPropManager* PropManager()
-	{
-		return IPropManager::Get();
-	}
 
 	/////////////////////////////////
 	//// INTERNAL IMPLEMENTATION ////

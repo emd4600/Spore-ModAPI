@@ -24,6 +24,8 @@
 #include <Spore\Simulator\SubSystem\ISimulatorUIGraphic.h>
 #include <EASTL\list.h>
 
+#define SimulatorSystem (*Simulator::cSimulatorSystem::Get())
+
 namespace Simulator
 {
 	class cSimulatorSystem
@@ -83,10 +85,6 @@ namespace Simulator
 	public:
 		static cSimulatorSystem* Get();
 	};
-
-	inline cSimulatorSystem* SimulatorSystem() {
-		return cSimulatorSystem::Get();
-	}
 
 	/// Initializes certain Simulator systems so that most things can be used without being in a star or planet.
 	/// This method does:

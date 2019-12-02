@@ -54,6 +54,8 @@ namespace Graphics
 	auto_STATIC_METHOD_VOID(Renderer, SetShaderData, 
 		Args(short index, void* value, bool overrideIfEqual), Args(index, value, overrideIfEqual));
 
+	auto_STATIC_METHOD(Renderer, int, GetShaderDataSize, Args(short index), Args(index));
+
 	auto_STATIC_METHOD_VOID(Renderer, SetTexture, Args(int slotIndex, RenderWare::Raster* raster), Args(slotIndex, raster));
 }
 #endif

@@ -25,6 +25,12 @@
 
 #include <Spore\App\cViewer.h>
 
+/// Access the active game mode manager.
+#define GameModeManager (*App::IGameModeManager::Get())
+
+// Access the active game camera manager.
+#define CameraManager (*App::IGameModeManager::Get()->GetCameraManager())
+
 namespace App
 {
 	enum
@@ -185,24 +191,10 @@ namespace App
 
 
 		///
-		/// Gets the active game mode manager. Same as GameModeManager()
+		/// Gets the active game mode manager.
 		///
 		static IGameModeManager* Get();
 	};
-
-	///
-	/// Returns the active cheat manager. Same as IGameModeManager::Get().
-	///
-	inline IGameModeManager* GameModeManager()
-	{
-		return IGameModeManager::Get();
-	}
-
-	inline ICameraManager* CameraManager()
-	{
-		auto mgr = IGameModeManager::Get();
-		return mgr ? mgr->GetCameraManager() : nullptr;
-	}
 
 	inline cViewer* GetViewer()
 	{

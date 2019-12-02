@@ -31,7 +31,7 @@ using namespace Math;
 
 namespace Swarm
 {
-	class SwarmManager;
+	class ISwarmManager;
 
 	class cEffect
 	{
@@ -82,7 +82,7 @@ namespace Swarm
 		int field_0Ch;
 
 		/* 10h */	int mnRefCount;
-		/* 14h */	intrusive_ptr<SwarmManager> mpManager;
+		/* 14h */	intrusive_ptr<ISwarmManager> mpManager;
 		/* 18h */	uint32_t mnInstanceID;
 		/* 1Ch */	uint32_t mnGroupID;
 		/* 20h */	uint32_t mnEffectIndex;  // & 0xFF000000 is the EffectDirectory index

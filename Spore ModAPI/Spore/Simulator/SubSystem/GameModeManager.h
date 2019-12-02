@@ -28,6 +28,9 @@
 #include <Spore\CommonIDs.h>
 #include <Spore\Editors\EditorRequest.h>
 
+/// Access the active Simulator game mode manager. 
+#define SimGameModeManager (*Simulator::cGameModeManager::Get())
+
 namespace Simulator
 {
 
@@ -72,44 +75,49 @@ namespace Simulator
 		/* 90h */	intrusive_ptr<App::PropertyList> mScenarioTuning[3];  // one for each difficulty, related with Scenario
 
 	public:
-		///
-		/// Returns the active Simulator game mode manager. Same as GameModeManager().
-		///
+		/// Returns the active Simulator game mode manager. 
 		static cGameModeManager* Get();
 	};
 
-	///
-	/// Returns the active Simulator game noun manager. Same as cGameModeManager::Get().
-	///
-	inline cGameModeManager* GameModeManager()
-	{
-		return cGameModeManager::Get();
-	}
-
+	/// Returns the ID of the current game mode. You can compare it to the values in the GameModeIDs enum.
 	uint32_t GetGameModeID();
 
+	/// Returns true if the game is currently in the cell stage.
 	inline bool IsCellGame() {
 		return GetGameModeID() == kGameCell;
 	}
+
+	/// Returns true if the game is currently in the creature stage.
 	inline bool IsCreatureGame() {
 		return GetGameModeID() == kGameCreature;
 	}
+
+	/// Returns true if the game is currently in the tribe stage.
 	inline bool IsTribeGame() {
 		return GetGameModeID() == kGameTribe;
 	}
+
+	/// Returns true if the game is currently in the civilization stage.
 	inline bool IsCivGame() {
 		return GetGameModeID() == kGameCiv;
 	}
+
+	/// Returns true if the game is currently in the tribe stage.
 	inline bool IsSpaceGame() {
 		return GetGameModeID() == kGameSpace;
 	}
-	// aka level editor
+
+	/// Returns true if the game is currently in the "game edit" mode, which is the level editor.
 	inline bool IsGameEditMode() {
 		return GetGameModeID() == kGameEditMode;
 	}
+
+	/// Returns true if the game is currently in adventure mode.
 	inline bool IsScenarioMode() {
 		return GetGameModeID() == kScenarioMode;
 	}
+
+	/// Returns true if the game is currently loading a stage.
 	inline bool IsLoadingGameMode() {
 		return GetGameModeID() == kLoadGameMode;
 	}

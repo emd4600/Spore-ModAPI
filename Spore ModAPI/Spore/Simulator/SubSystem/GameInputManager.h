@@ -26,6 +26,8 @@
 #include <EASTL\vector.h>
 #include <EASTL\string.h>
 
+#define GameInputManager (*Simulator::cGameInputManager::Get())
+
 namespace Simulator
 {
 	class cGameInputManager
@@ -104,10 +106,6 @@ namespace Simulator
 	public:
 		static cGameInputManager* Get();
 	};
-
-	inline cGameInputManager* GameInputManager() {
-		return cGameInputManager::Get();
-	}
 
 	/////////////////////////////////
 	//// INTERNAL IMPLEMENTATION ////

@@ -24,6 +24,9 @@
 #include <Spore\Internal.h>
 #include <EASTL\hash_map.h>
 
+/// Access the active species manager.
+#define SpeciesManager (*Editors::cSpeciesManager::Get())
+
 namespace Editors
 {
 	using namespace eastl;
@@ -47,10 +50,6 @@ namespace Editors
 	public:
 		static cSpeciesManager* Get();
 	};
-
-	inline cSpeciesManager* SpeciesManager() {
-		return cSpeciesManager::Get();
-	}
 
 	/////////////////////////////////
 	//// INTERNAL IMPLEMENTATION ////

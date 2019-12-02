@@ -24,6 +24,8 @@
 #include <Spore\Object.h>
 #include <Spore\Graphics\IModelWorld.h>
 
+#define ModelManager (*Graphics::IModelManager::Get())
+
 namespace Graphics
 {
 	enum class ModelGroups : uint32_t
@@ -106,18 +108,10 @@ namespace Graphics
 
 
 		///
-		/// Gets the active model manager. Same as ModelManager()
+		/// Gets the active model manager.
 		///
 		static IModelManager* Get();
 	};
-
-	///
-	/// Gets the active model manager. Same as IModelManager::Get()
-	///
-	inline IModelManager* ModelManager()
-	{
-		return IModelManager::Get();
-	}
 
 
 	/////////////////////////////////

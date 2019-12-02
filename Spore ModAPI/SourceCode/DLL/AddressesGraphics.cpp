@@ -97,6 +97,7 @@ namespace Graphics
 		DefineAddress(ModelToWorldTransposed_ptr, SelectAddress(0x1700024, 0x16F9CF4, 0x16F8CF4));
 
 		DefineAddress(SetShaderData, SelectAddress(0x7786E0, 0x777B50, 0x777B50));
+		DefineAddress(GetShaderDataSize, SelectAddress(0x778C50, , 0x7780C0));
 
 		DefineAddress(CreateDevice, SelectAddress(0x11FADF0, , 0x11F86B0));
 

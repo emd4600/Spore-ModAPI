@@ -8,7 +8,7 @@ namespace Editors
 		: mRefCount()
 		, editorID(-1)
 		, creationKey()
-		, activeModeID(App::GameModeManager()->GetActiveModeID())
+		, activeModeID(GameModeManager.GetActiveModeID())
 		, field_20()
 		, editableTests()
 		, sporepediaCanSwitch()

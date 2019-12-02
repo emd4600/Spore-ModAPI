@@ -21,6 +21,15 @@
 
 #include <Spore\App\DirectPropertyList.h>
 
+/// AppProperties is a kind of PropertyList containing globally-accessible properties that control
+/// the running of the app as a whole.
+///
+/// Use AppProperties to get the property list and access global properties, for example:
+/// ~~~~~~~~~~~~~~~{.cpp}
+/// if (AppProperties.GetDirectBool(SPPropertyIDs::kRenderEffects)) ...
+/// ~~~~~~~~~~~~~~~
+#define AppProperties (*App::GetAppProperties())
+
 namespace Addresses(App)
 {
 	DeclareAddress(AppProperties_ptr);
@@ -28,15 +37,14 @@ namespace Addresses(App)
 
 namespace App
 {
-	///
 	/// AppProperties is a kind of PropertyList containing globally-accessible properties that control
 	/// the running of the app as a whole.
 	///
-	/// Use AppProperties() to get the property list and access global properties, for example:
+	/// Use AppProperties to get the property list and access global properties, for example:
 	/// ~~~~~~~~~~~~~~~{.cpp}
-	/// if (AppProperties()->GetDirectBool(SPPropertyIDs::kRenderEffects)) ...
+	/// if (AppProperties.GetDirectBool(SPPropertyIDs::kRenderEffects)) ...
 	/// ~~~~~~~~~~~~~~~
-	inline DirectPropertyList* AppProperties()
+	inline DirectPropertyList* GetAppProperties()
 	{
 		return *(DirectPropertyList**)(GetAddress(App, AppProperties_ptr));
 	}

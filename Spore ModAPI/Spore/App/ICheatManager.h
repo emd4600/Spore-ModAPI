@@ -26,6 +26,9 @@
 
 #include <EASTL\vector.h>
 
+/// Access to the active cheat manager.
+#define CheatManager (*App::ICheatManager::Get())
+
 using namespace eastl;
 
 namespace App
@@ -110,7 +113,7 @@ namespace App
 
 
 		///
-		/// Returns the active cheat manager. Same as CheatManager().
+		/// Returns the active cheat manager.
 		///
 		static ICheatManager* Get();
 
@@ -124,14 +127,6 @@ namespace App
 	inline ArgScript::FormatParser* GetConsoleStream()
 	{
 		return ICheatManager::Get()->GetArgScript();
-	}
-
-	///
-	/// Returns the active cheat manager. Same as ICheatManager::Get().
-	///
-	inline ICheatManager* CheatManager()
-	{
-		return ICheatManager::Get();
 	}
 
 	template<typename... Args> inline void ConsolePrintF(const char* str, Args... args)

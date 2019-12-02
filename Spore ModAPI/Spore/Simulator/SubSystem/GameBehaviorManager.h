@@ -7,6 +7,8 @@
 #include <EASTL\vector.h>
 #include <EASTL\list.h>
 
+#define GameBehaviorManager (*Simulator::cGameBehaviorManager::Get())
+
 namespace Simulator
 {
 	class cGameBehaviorManager
@@ -50,10 +52,6 @@ namespace Simulator
 	public:
 		static cGameBehaviorManager* Get();
 	};
-
-	inline cGameBehaviorManager* GameBehaviorManager() {
-		return cGameBehaviorManager::Get();
-	}
 
 	ASSERT_SIZE(cGameBehaviorManager, 0xA4);
 

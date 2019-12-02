@@ -3,6 +3,9 @@
 #include <Spore\Internal.h>
 #include <Spore\RenderWare\Raster.h>
 
+/// Access the active render target manager.
+#define RenderTargetManager (*Graphics::IRenderTargetManager::Get())
+
 namespace Graphics
 {
 	typedef RenderWare::Raster RenderTargetTexture;
@@ -44,10 +47,6 @@ namespace Graphics
 	protected:
 		// /* 18h */	vector<>
 	};
-
-	inline IRenderTargetManager* RenderTargetManager() {
-		return IRenderTargetManager::Get();
-	}
 
 	namespace Addresses(IRenderTargetManager) {
 		DeclareAddress(Get);

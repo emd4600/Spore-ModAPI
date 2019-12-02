@@ -22,6 +22,6 @@
 
 namespace Editors
 {
-	auto_STATIC_METHOD_(BakeManager, BakeManager*, Get);
+	auto_STATIC_METHOD_(IBakeManager, IBakeManager*, Get);
 }
 #endif

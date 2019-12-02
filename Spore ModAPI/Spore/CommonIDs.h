@@ -110,10 +110,14 @@ namespace TypeIDs
 		cll = 0x3D97A8E4,
 		/// Spaceships.
 		ufo = 0x476A98C7,
+		/// Flora.
+		flr = 0x438F6347,
 		/// Spore Materials
 		smt = 0x0469A3F7,
 		/// Creation textures
 		raster = 0x2F4E681C,
+		/// Creation models
+		gmdl = 0x00E6BCE5,
 	};
 }
 
@@ -164,6 +168,8 @@ namespace GroupIDs
 		CellModels = 0x40616200,
 		/// Where creature .crt files are stored
 		CreatureModels = 0x40626200,
+		// The super high-res.gmdl files of creatures are stored in this folder
+		CreatureModelsHQ = 0x40627100,
 		/// Where building .bld files are stored
 		BuildingModels = 0x40636200,
 		/// Where vehicle .vcl files are stored

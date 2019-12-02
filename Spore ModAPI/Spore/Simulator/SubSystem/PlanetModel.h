@@ -22,6 +22,9 @@
 #include <Spore\Simulator\cCity.h>
 #include <Spore\MathUtils.h>
 
+/// Access the active Simulator planet manager.
+#define PlanetModel (*Simulator::cPlanetModel::Get())
+
 namespace Simulator
 {
 	using namespace Math;
@@ -58,10 +61,6 @@ namespace Simulator
 	public:
 		static cPlanetModel* Get();
 	};
-
-	inline cPlanetModel* PlanetModel() {
-		return cPlanetModel::Get();
-	}
 
 	namespace Addresses(cPlanetModel)
 	{

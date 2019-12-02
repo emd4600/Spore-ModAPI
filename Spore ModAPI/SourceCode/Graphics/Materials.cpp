@@ -71,7 +71,7 @@ namespace Graphics
 		using namespace Resource;
 
 		auto fileKey = ResourceKey(instanceID, IMaterialManager::kSporeMaterialTypeID, IMaterialManager::kShadersGroupID);
-		auto dbpf = ResourceManager()->GetDBPF(fileKey);
+		auto dbpf = ResourceManager.GetDBPF(fileKey);
 
 		if (!dbpf) return false;
 
@@ -161,9 +161,9 @@ namespace Graphics
 
 		ResourceObject* pRenderWare;
 		auto rwKey = ResourceKey(instanceID, RenderWareFile::TYPE, IMaterialManager::kCompiledStatesGroupID);
-		if (!ResourceManager()->GetResource(rwKey, &pRenderWare)) return false;
+		if (!ResourceManager.GetResource(rwKey, &pRenderWare)) return false;
 
-		auto dbpf = ResourceManager()->GetDBPF(rwKey);
+		auto dbpf = ResourceManager.GetDBPF(rwKey);
 
 		IPFRecord* record;
 		if (!dbpf->GetFile(ResourceKey(instanceID, IMaterialManager::kSporeMaterialTypeID, IMaterialManager::kCompiledStatesLinkGroupID), &record)) {
@@ -208,7 +208,7 @@ namespace Graphics
 					IO::ReadUInt32(pStream, &instanceID);
 					IO::ReadUInt32(pStream, &groupID);
 
-					material.textures[i] = TextureManager()->GetRasterTexture(instanceID, groupID);
+					material.textures[i] = TextureManager.GetRasterTexture(instanceID, groupID);
 				}
 
 				for (int i = 0; i < material.statesCount; ++i) {

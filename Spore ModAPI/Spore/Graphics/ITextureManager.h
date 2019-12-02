@@ -23,11 +23,18 @@
 
 #include <Spore\Internal.h>
 
+/// Access the active texture manager.
+#define TextureManager (*Graphics::ITextureManager::Get())
+
 namespace Graphics
 {
 	class ITextureManager
 	{
 	public:
+		enum
+		{
+			kForceLoad = 2
+		};
 
 		/* 00h */	virtual int AddRef() = 0;
 		/* 04h */	virtual int Release() = 0;
@@ -44,7 +51,7 @@ namespace Graphics
 		/// The type ID will be ignored; first, it will try to load it as a .raster texture, and if it's not found, it will use the rest of texture formats.
 		/// @param name
 		///
-		/* 1Ch */	virtual Texture* GetTexture(const struct ResourceKey name, char arg_C = 0) = 0;  // arg_C = 6 for rw4?
+		/* 1Ch */	virtual Texture* GetTexture(const struct ResourceKey name, int flags = 0) = 0;  // flags = 6 for rw4?
 
 		///
 		/// Same as GetTexture().
@@ -94,18 +101,10 @@ namespace Graphics
 		/* 78h */	virtual void func78h(int) = 0;
 
 		///
-		/// Returns the active texture manager. Same as TextureManager().
+		/// Returns the active texture manager.
 		///
 		static ITextureManager* Get();
 	};
-
-	///
-	/// Returns the active texture manager. Same as ITextureManager::Get().
-	///
-	inline ITextureManager* TextureManager()
-	{
-		return ITextureManager::Get();
-	}
 
 	/////////////////////////////////
 	//// INTERNAL IMPLEMENTATION ////

@@ -23,7 +23,7 @@
 namespace Simulator
 {
 	cStarRecord* cPlanetRecord::GetStarRecord() {
-		return StarManager()->GetStarRecord(this->mKey.instanceID);
+		return StarManager.GetStarRecord(mKey.instanceID);
 	}
 
 	auto_METHOD_const_(cPlanet, float, GetTemperatureScore);

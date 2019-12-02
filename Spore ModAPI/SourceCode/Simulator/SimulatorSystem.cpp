@@ -28,16 +28,16 @@ namespace Simulator
 	auto_STATIC_METHOD_(cSimulatorSystem, cSimulatorSystem*, Get);
 
 	void InitializeWithoutPlanet() {
-		cStarRecord* pRecord = StarManager()->GetStarRecord(0);
-		pRecord->mEmpireID = StarManager()->NextPoliticalID(true);
+		cStarRecord* pRecord = StarManager.GetStarRecord(0);
+		pRecord->mEmpireID = StarManager.NextPoliticalID(true);
 		SpacePlayerData::Get()->mPlayerEmpireID = pRecord->mEmpireID;
-		SpacePlayerData::Get()->mpPlayerEmpire = StarManager()->GetEmpireForStar(pRecord);
+		SpacePlayerData::Get()->mpPlayerEmpire = StarManager.GetEmpireForStar(pRecord);
 
 		intrusive_ptr<cPlanet> planet;
-		StarManager()->RecordToPlanet(pRecord->GetPlanetRecord(0), planet);
+		StarManager.RecordToPlanet(pRecord->GetPlanetRecord(0), planet);
 		SpacePlayerData::Get()->mpActivePlanet = planet.get();
 
-		GameViewManager()->PrepareSimulator();
+		GameViewManager.PrepareSimulator();
 	}
 }
 #endif

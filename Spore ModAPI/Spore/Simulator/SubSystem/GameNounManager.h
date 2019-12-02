@@ -30,6 +30,9 @@
 #include <EASTL\map.h>
 #include <EASTL\list.h>
 
+/// Access the active Simulator game noun manager.
+#define GameNounManager (*Simulator::cGameNounManager::Get())
+
 namespace Simulator
 {
 
@@ -79,9 +82,7 @@ namespace Simulator
 
 		void SetAvatar(cCreatureAnimal* pAnimal);
 
-		///
-		/// Returns the active Simulator game noun manager. Same as GameNounManager().
-		///
+		/// Returns the active Simulator game noun manager.
 		static cGameNounManager* Get();
 			
 	protected:
@@ -107,14 +108,6 @@ namespace Simulator
 		/* 10Ch */	list<intrusive_ptr<cGameData>> mObjects;
 		/* 118h */	int field_118;
 	};
-
-	///
-	/// Returns the active Simulator game noun manager. Same as cGameNounManager::Get().
-	///
-	inline cGameNounManager* GameNounManager()
-	{
-		return cGameNounManager::Get();
-	}
 
 	/////////////////////////////////
 	//// INTERNAL IMPLEMENTATION ////

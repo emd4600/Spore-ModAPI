@@ -25,6 +25,9 @@
 #include <Spore\Object.h>
 #include <Spore\UI\cSPUILayeredObject.h>
 
+/// Access the active layer manager.
+#define LayerManager (*UI::cLayerManager::Get())
+
 namespace UI 
 {
 	using namespace Graphics;
@@ -51,10 +54,6 @@ namespace UI
 	public:
 		static cLayerManager* Get();
 	};
-
-	inline cLayerManager* LayerManager() {
-		return cLayerManager::Get();
-	}
 
 	static_assert(sizeof(cLayerManager) == 0x98, "sizeof() != 98h");
 
