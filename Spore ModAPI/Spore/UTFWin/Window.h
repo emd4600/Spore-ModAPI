@@ -69,7 +69,7 @@ namespace UTFWin
 		virtual const Math::Rectangle& GetRealArea() const override;
 		virtual const char16_t* GetCaption() const override;
 		virtual uint32_t GetTextFontID() const override;
-		virtual const wchar_t* func17() const override;
+		virtual const char16_t* func17() const override;
 		virtual int func18() const override;
 		virtual int func19() const override;
 		virtual void SetControlID(uint32_t controlID) override;

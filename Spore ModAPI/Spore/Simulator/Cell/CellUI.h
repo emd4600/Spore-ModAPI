@@ -45,7 +45,7 @@ namespace Simulator
 			/* 98h */	int field_98;
 			/* 9Ch */	char field_9C[0x874];  // not initialized
 
-			/* 910h */	wstring field_910;
+			/* 910h */	string16 field_910;
 			/* 920h */	LocalizedString field_920;
 			/* 934h */	bool field_934[0x10];  // not initialized
 		};

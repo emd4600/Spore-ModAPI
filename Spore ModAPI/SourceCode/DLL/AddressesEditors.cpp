@@ -12,7 +12,7 @@
 
 namespace Editors
 {
-	namespace Addresses(BakeManager)
+	namespace Addresses(IBakeManager)
 	{
 		DefineAddress(Get, SelectAddress(0x401010, 0x401010, 0x401010));
 	}
@@ -22,7 +22,7 @@ namespace Editors
 		DefineAddress(ValidationEditableTests_ptr, SelectAddress(0x15DEA04, , 0x15DA7D4));
 	}
 
-	namespace Addresses(Editor) 
+	namespace Addresses(cEditor)
 	{
 		DefineAddress(sub_581F70, SelectAddress(0x581F70, 0x582250, 0x582250));
 		DefineAddress(ptr, SelectAddress(0x15E9170, 0x015E5EF0, 0x15E4EF0));

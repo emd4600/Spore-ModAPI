@@ -25,6 +25,8 @@
 
 #include <cstddef>
 
+#define OBJECT_CAST(c) if (type == c::TYPE) return (c*)this
+
 using namespace eastl;
 
 ///

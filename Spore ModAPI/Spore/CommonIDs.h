@@ -18,6 +18,8 @@
 ****************************************************************************/
 #pragma once
 
+#include <stdint.h>
+
 enum ModelTypes
 {
 	kPlantSmall = 0xBCD73E89,
@@ -118,6 +120,8 @@ namespace TypeIDs
 		raster = 0x2F4E681C,
 		/// Creation models
 		gmdl = 0x00E6BCE5,
+		/// Effect directory
+		effdir = 0xEA5118B0
 	};
 }
 

@@ -26,6 +26,8 @@
 #include <Spore\UTFWin\Window.h>
 #include <Spore\UTFWin\IWindowManager.h>
 #include <Spore\UTFWin\IWinProc.h>
+#include <Spore\UTFWin\IButton.h>
+#include <Spore\UTFWin\ITextEdit.h>
 #include <Spore\UTFWin\IDrawable.h>
 #include <Spore\UTFWin\UILayout.h>
 #include <Spore\UTFWin\Constants.h>

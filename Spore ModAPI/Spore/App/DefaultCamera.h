@@ -42,12 +42,12 @@ namespace App
 		/* 1Ch */	virtual void OnExit() override {};
 		/* 20h */	virtual void Update(int nDeltaTime, cViewer* pViewer) override {};
 		/* 24h */	virtual void func24h(bool) override {};
-		/* 28h */	virtual bool OnKeyDown(int virtualKey, int modifiers) override { return false; };
-		/* 2Ch */	virtual bool OnKeyUp(int virtualKey, int modifiers) override { return false; };
-		/* 30h */	virtual bool OnMouseDown(int mouseState, float mouseX, float mouseY, int flags) override { return false; };
-		/* 34h */	virtual bool OnMouseUp(int mouseState, float mouseX, float mouseY, int flags) override { return false; };
-		/* 38h */	virtual bool OnMouseMove(float mouseX, float mouseY, int state) override { return false; };
-		/* 3Ch */	virtual bool OnMouseWheel(int nWheelDelta, float mouseX, float mouseY, int state) override { return false; };
+		/* 28h */	virtual bool OnKeyDown(int virtualKey, KeyModifiers modifiers) override { return false; };
+		/* 2Ch */	virtual bool OnKeyUp(int virtualKey, KeyModifiers modifiers) override { return false; };
+		/* 30h */	virtual bool OnMouseDown(MouseButton, float mouseX, float mouseY, MouseState) override { return false; };
+		/* 34h */	virtual bool OnMouseUp(MouseButton, float mouseX, float mouseY, MouseState) override { return false; };
+		/* 38h */	virtual bool OnMouseMove(float mouseX, float mouseY, MouseState) override { return false; };
+		/* 3Ch */	virtual bool OnMouseWheel(int wheelDelta, float mouseX, float mouseY, MouseState) override { return false; };
 		/* 40h */	virtual bool func40h(int) override { return false; };
 		/* 44h */	virtual bool func44h(int) override { return false; };
 		/* 48h */	virtual bool func48h(int) override { return false; };

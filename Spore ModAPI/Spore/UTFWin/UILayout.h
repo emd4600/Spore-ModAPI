@@ -30,7 +30,7 @@ namespace UTFWin
 	/// SPUI interfaces into the game UI. Example usage:
 	/// ~~~~~~~~~~~~~~~~{.cpp}
 	/// UILayout layout;
-	/// layout.Load("EditorCameraUI");
+	/// layout.Load(u"EditorCameraUI");
 	/// ~~~~~~~~~~~~~~~~
 	///
 	class UILayout : public DefaultRefCounted
@@ -61,7 +61,7 @@ namespace UTFWin
 		/// @param pResourceName The name of the layour file (no extension or group needed).
 		/// @param groupID [Optional] The ID of the group where the file is stored, usually UILayout::kDefaultGroup.
 		///
-		bool LoadByName(const wchar_t* pLayoutName, uint32_t groupID = kDefaultGroup, bool = true, uint32_t = kDefaultParameter);
+		bool LoadByName(const char16_t* pLayoutName, uint32_t groupID = kDefaultGroup, bool = true, uint32_t = kDefaultParameter);
 
 		///
 		/// Returns the first child window that has the given controlID. By default, this also checks on the children' children,

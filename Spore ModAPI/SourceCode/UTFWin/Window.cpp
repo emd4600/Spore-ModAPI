@@ -134,7 +134,7 @@ namespace UTFWin
 	auto_METHOD_VIRTUAL_const_(Window, IWindow, const Math::Rectangle&, GetRealArea);
 	auto_METHOD_VIRTUAL_const_(Window, IWindow, const char16_t*, GetCaption);
 	auto_METHOD_VIRTUAL_const_(Window, IWindow, uint32_t, GetTextFontID);
-	auto_METHOD_VIRTUAL_const_(Window, IWindow, const wchar_t*, func17);
+	auto_METHOD_VIRTUAL_const_(Window, IWindow, const char16_t*, func17);
 	auto_METHOD_VIRTUAL_const_(Window, IWindow, int, func18);
 	auto_METHOD_VIRTUAL_const_(Window, IWindow, int, func19);
 	auto_METHOD_VIRTUAL_VOID(Window, IWindow, SetControlID, Args(uint32_t controlID), Args(controlID));

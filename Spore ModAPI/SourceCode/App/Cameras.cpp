@@ -90,10 +90,10 @@ namespace App
 	auto_METHOD_VIRTUAL_VOID(cCameraManager, ICameraManager, SetViewer, Args(cViewer* pViewer), Args(pViewer));
 	auto_METHOD_VIRTUAL_(cCameraManager, ICameraManager, cViewer*, GetViewer);
 	auto_METHOD_VIRTUAL_VOID(cCameraManager, ICameraManager, AddCameraType, Args(uint32_t typeID, CameraFactoryFunction_t function), Args(typeID, function));
-	auto_METHOD_VIRTUAL_VOID(cCameraManager, ICameraManager, PutCamera, Args(uint32_t cameraID, ICamera* pCamera, const wchar_t* pName), Args(cameraID, pCamera, pName));
+	auto_METHOD_VIRTUAL_VOID(cCameraManager, ICameraManager, PutCamera, Args(uint32_t cameraID, ICamera* pCamera, const char16_t* pName), Args(cameraID, pCamera, pName));
 	auto_METHOD_VIRTUAL_VOID_(cCameraManager, ICameraManager, ParseCameras);
 	auto_METHOD_VIRTUAL_VOID(cCameraManager, ICameraManager, Update, Args(int nDeltaTime), Args(nDeltaTime));
-	auto_METHOD_VIRTUAL(cCameraManager, ICameraManager, bool, SetActiveCameraByKey, Args(const wchar_t* pKeyString), Args(pKeyString));
+	auto_METHOD_VIRTUAL(cCameraManager, ICameraManager, bool, SetActiveCameraByKey, Args(const char16_t* pKeyString), Args(pKeyString));
 	auto_METHOD_VIRTUAL(cCameraManager, ICameraManager, bool, SetActiveCameraByID, Args(uint32_t cameraID), Args(cameraID));
 	auto_METHOD_VIRTUAL_(cCameraManager, ICameraManager, ICamera*, GetActiveCamera);
 	auto_METHOD_VIRTUAL_(cCameraManager, ICameraManager, uint32_t, GetActiveCameraID);

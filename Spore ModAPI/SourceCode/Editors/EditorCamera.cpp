@@ -69,12 +69,12 @@ namespace Editors
 	auto_METHOD_VIRTUAL_VOID_(EditorCamera, EditorCamera, OnExit);
 	auto_METHOD_VIRTUAL_VOID(EditorCamera, EditorCamera, Update, Args(int nDeltaTime, App::cViewer* pViewer), Args(nDeltaTime, pViewer));
 	auto_METHOD_VIRTUAL_VOID(EditorCamera, EditorCamera, func24h, Args(bool arg_0), Args(arg_0));
-	auto_METHOD_VIRTUAL(EditorCamera, EditorCamera, bool, OnKeyDown, Args(int virtualKey, int modifiers), Args(virtualKey, modifiers));
-	auto_METHOD_VIRTUAL(EditorCamera, EditorCamera, bool, OnKeyUp, Args(int virtualKey, int modifiers), Args(virtualKey, modifiers));
-	auto_METHOD_VIRTUAL(EditorCamera, EditorCamera, bool, OnMouseDown, Args(int mouseState, float mouseX, float mouseY, int flags), Args(mouseState, mouseX, mouseY, flags));
-	auto_METHOD_VIRTUAL(EditorCamera, EditorCamera, bool, OnMouseUp, Args(int mouseState, float mouseX, float mouseY, int flags), Args(mouseState, mouseX, mouseY, flags));
-	auto_METHOD_VIRTUAL(EditorCamera, EditorCamera, bool, OnMouseMove, Args(float mouseX, float mouseY, int state), Args(mouseX, mouseY, state));
-	auto_METHOD_VIRTUAL(EditorCamera, EditorCamera, bool, OnMouseWheel, Args(int nWheelDelta, float mouseX, float mouseY, int state), Args(nWheelDelta, mouseX, mouseY, state));
+	auto_METHOD_VIRTUAL(EditorCamera, EditorCamera, bool, OnKeyDown, Args(int virtualKey, KeyModifiers modifiers), Args(virtualKey, modifiers));
+	auto_METHOD_VIRTUAL(EditorCamera, EditorCamera, bool, OnKeyUp, Args(int virtualKey, KeyModifiers modifiers), Args(virtualKey, modifiers));
+	auto_METHOD_VIRTUAL(EditorCamera, EditorCamera, bool, OnMouseDown, Args(MouseButton mouseButton, float mouseX, float mouseY, MouseState mouseState), Args(mouseButton, mouseX, mouseY, mouseState));
+	auto_METHOD_VIRTUAL(EditorCamera, EditorCamera, bool, OnMouseUp, Args(MouseButton mouseButton, float mouseX, float mouseY, MouseState mouseState), Args(mouseButton, mouseX, mouseY, mouseState));
+	auto_METHOD_VIRTUAL(EditorCamera, EditorCamera, bool, OnMouseMove, Args(float mouseX, float mouseY, MouseState mouseState), Args(mouseX, mouseY, mouseState));
+	auto_METHOD_VIRTUAL(EditorCamera, EditorCamera, bool, OnMouseWheel, Args(int nWheelDelta, float mouseX, float mouseY, MouseState mouseState), Args(nWheelDelta, mouseX, mouseY, mouseState));
 	auto_METHOD_VIRTUAL(EditorCamera, EditorCamera, bool, func40h, Args(int arg_0), Args(arg_0));
 	auto_METHOD_VIRTUAL(EditorCamera, EditorCamera, bool, func44h, Args(int arg_0), Args(arg_0));
 	auto_METHOD_VIRTUAL(EditorCamera, EditorCamera, bool, func48h, Args(int arg_0), Args(arg_0));

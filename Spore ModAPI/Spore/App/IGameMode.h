@@ -93,49 +93,49 @@ namespace App
 
 		///
 		/// An event listener called every time a mouse key is pressed while this mode is active.
-		/// @param mouseButton The button that was pressed, in the MouseButtons enum.
-		/// @param fMouseX The X position of the mouse.
-		/// @param fMouseY The Y position of the mouse.
-		/// @param flags The state of the mouse, flags in the MouseFlags enum.
+		/// @param mouseButton The button that was pressed.
+		/// @param mouseX The X position of the mouse.
+		/// @param mouseY The Y position of the mouse.
+		/// @param mouseState The state of the mouse.
 		/// @returns Whether the event was handled or not.
 		///
 		/* 2Ch */	virtual bool OnMouseDown(MouseButton mouseButton, float mouseX, float mouseY, MouseState mouseState) = 0;
 
 		///
 		/// An event listener called every time a mouse key is released while this mode is active.
-		/// @param mouseButton The button that was pressed, in the MouseButtons enum.
-		/// @param fMouseX The X position of the mouse.
-		/// @param fMouseY The Y position of the mouse.
-		/// @param flags The state of the mouse, flags in the MouseFlags enum.
+		/// @param mouseButton The button that was released.
+		/// @param mouseX The X position of the mouse.
+		/// @param mouseY The Y position of the mouse.
+		/// @param mouseState The state of the mouse.
 		/// @returns Whether the event was handled or not.
 		///
 		/* 30h */	virtual bool OnMouseUp(MouseButton mouseButton, float mouseX, float mouseY, MouseState mouseState) = 0;
 
 		///
 		/// An event listener called every time the mouse is moved while this mode is active.
-		/// @param fMouseX The X position of the mouse.
-		/// @param fMouseY The Y position of the mouse.
-		/// @param state The state of the mouse, flags of the UTFWin::kMouse.... values.
+		/// @param mouseX The X position of the mouse.
+		/// @param mouseY The Y position of the mouse.
+		/// @param mouseState The state of the mouse.
 		/// @returns Whether the event was handled or not.
 		///
 		/* 34h */	virtual bool OnMouseMove(float mouseX, float mouseY, MouseState mouseState) = 0;
 
 		///
 		/// An event listener called every time the mouse wheel is moved while this mode is active.
-		/// @param nWheelDelta The amount of units the wheel moved. This is a multiple of UTFWin::kMouseWheelDelta.
-		/// @param fMouseX The X position of the mouse.
-		/// @param fMouseY The Y position of the mouse.
-		/// @param flags The state of the mouse, flags of the UTFWin::kMouse.... values.
+		/// @param wheelDelta The amount of units the wheel moved. This is a multiple of UTFWin::kMouseWheelDelta.
+		/// @param mouseX The X position of the mouse.
+		/// @param mouseY The Y position of the mouse.
+		/// @param mouseState The state of the mouse.
 		/// @returns Whether the event was handled or not.
 		///
-		/* 38h */	virtual bool OnMouseWheel(int nWheelDelta, float mouseX, float mouseY, MouseState mouseState) = 0;
+		/* 38h */	virtual bool OnMouseWheel(int wheelDelta, float mouseX, float mouseY, MouseState mouseState) = 0;
 
 		///
 		/// An event listener called every game loop.
-		/// @param fDelta1 The amount of seconds elapsed since this the last update.
-		/// @param fDelta2 Usually the same as fDelta1.
+		/// @param delta1 The amount of seconds elapsed since this the last update.
+		/// @param delta2 Usually the same as delta1.
 		///
-		/* 3Ch */	virtual void Update(float fDelta1, float fDelta2) = 0;
+		/* 3Ch */	virtual void Update(float delta1, float delta2) = 0;
 	};
 
 	///

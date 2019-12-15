@@ -49,7 +49,7 @@
 #include <EASTL\vector.h>
 
 /// Access the active editor object.
-#define ActiveEditor (*Editors::GetEditor())
+#define Editor (*Editors::GetEditor())
 
 // these are still placeholders
 typedef void UnkClass1;
@@ -61,6 +61,13 @@ namespace Editors
 {
 	class EditorUI;
 
+	enum class Mode : int
+	{
+		BuildMode = 0,
+		PaintMode = 1,
+		PlayMode = 2
+	};
+
 	enum ComplexityFlags
 	{
 		kComplexityFlagBlock = 0x1,
@@ -68,24 +75,16 @@ namespace Editors
 		kComplexityFlagBakedBlock = 0x4,
 	};
 
-	class Editor 
+	class cEditor 
 		: public App::IGameMode
 		, public Graphics::IRenderable
 	{
 	public:
 
-		enum class Mode : int
-		{
-			BuildMode = 0,
-			PaintMode = 1,
-			PlayMode = 2
-		};
-
 		//PLACEHOLDER virtual method 54h -> reads temporary database
 		//PLACEHOLDER virtual method 58h -> wrties temporary database
 
-		Editor();
-		virtual ~Editor();
+		virtual ~cEditor();
 
 		///
 		/// Returns true if the editor is currently in the given mode.
@@ -155,7 +154,7 @@ namespace Editors
 		/* A8h */	intrusive_ptr<Graphics::Model> mpBackgroundModel;  // used in loc_5874D8
 		/// A background model used in accessories editors. It belongs to mpBackgroundModelWorld.
 		/* ACh */	intrusive_ptr<Graphics::Model> mpAccBackgroundModel;
-		/* B0h */	wstring field_B0;
+		/* B0h */	string16 field_B0;
 		// /* B9h */	bool editorShowAbilityIcons;  // might also be 4B6h ?
 
 		/* C0h */	int field_C0;  // not initialized  // lastMouseClick[2] ?
@@ -219,7 +218,7 @@ namespace Editors
 		/* 1D0h */	int field_1D0;
 		/* 1D4h */	int field_1D4;
 		/* 1D8h */	int field_1D8;
-		/* 1DCh */	wstring field_1DC;
+		/* 1DCh */	string16 field_1DC;
 		/* 1ECh */	int field_1EC;
 		/* 1F0h	*/	int field_1F0;
 		/* 1F4h	*/	int field_1F4;
@@ -507,20 +506,20 @@ namespace Editors
 		void RemovePart(EditorRigblock* part);  //PLACEHOLDER
 	};
 
-	static_assert(sizeof(Editor) == 0x600, "sizeof(Editor) must be 0x600!");
+	static_assert(sizeof(cEditor) == 0x600, "sizeof(cEditor) must be 0x600!");
 
-	namespace Addresses(Editor) {
+	namespace Addresses(cEditor) {
 		DeclareAddress(sub_581F70);
 		DeclareAddress(ptr);
 	}
 
 	/// Returns the Editor instance (there can only be one at a time).
-	inline Editor* GetEditor()
+	inline cEditor* GetEditor()
 	{
-		return *((Editor**) GetAddress(Editor, ptr));
+		return *((cEditor**) GetAddress(cEditor, ptr));
 	}
 
-	inline EditorCamera* Editor::GetCamera()
+	inline EditorCamera* cEditor::GetCamera()
 	{
 		App::ICamera* pCamera = this->mpGameModeMgr->GetCameraManager()->GetActiveCamera();
 
@@ -534,11 +533,11 @@ namespace Editors
 		}
 	}
 
-	inline bool Editor::IsMode(Mode mode) const {
+	inline bool cEditor::IsMode(Mode mode) const {
 		return mMode == mode;
 	}
 
-	inline bool Editor::IsActive() const {
+	inline bool cEditor::IsActive() const {
 		return mIsActive;
 	}
 }

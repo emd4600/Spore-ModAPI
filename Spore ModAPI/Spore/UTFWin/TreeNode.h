@@ -66,8 +66,8 @@ namespace UTFWin
 
 		// My own addition; without these we cannot work with treeviews!
 
-		const wchar_t* GetCaption() const;
-		void SetCaption(const wchar_t* pCaption);
+		const char16_t* GetCaption() const;
+		void SetCaption(const char16_t* pCaption);
 
 		IDrawable* GetIcon() const;
 		void SetIcon(IDrawable* pIconDrawable);
@@ -85,7 +85,7 @@ namespace UTFWin
 		/* 28h */	int mnNodeFlags;  // 2
 		/* 2Ch */	uint32_t mTextStyleID;
 		/* 30h */	int field_30;
-		/* 34h */	wstring mCaption;
+		/* 34h */	string16 mCaption;
 		/* 44h */	uint32_t mNodeID;
 		/* 48h */	intrusive_ptr<IDrawable> mpIcon;
 		/* 4Ch */	intrusive_ptr<Object> field_4C;
@@ -112,11 +112,11 @@ namespace UTFWin
 
 	}
 
-	inline const wchar_t* TreeNode::GetCaption() const
+	inline const char16_t* TreeNode::GetCaption() const
 	{
 		return mCaption.c_str();
 	}
-	inline void TreeNode::SetCaption(const wchar_t* pCaption)
+	inline void TreeNode::SetCaption(const char16_t* pCaption)
 	{
 		mCaption = pCaption;
 	}

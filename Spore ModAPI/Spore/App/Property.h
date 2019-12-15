@@ -99,7 +99,7 @@ namespace App
 		{
 			uint32_t tableID;
 			uint32_t instanceID;
-			wchar_t buffer[256];
+			char16_t buffer[256];
 		};
 	public:
 		enum PropertyFlags
@@ -215,10 +215,10 @@ namespace App
 		char* GetValueChar();
 
 		///
-		/// Returns a pointer to the wchar_t value(s) of this property.
+		/// Returns a pointer to the char16_t value(s) of this property.
 		/// If the property is not of the specified type, a pointer to a default value will be returned.
 		///
-		wchar_t* GetValueWChar();
+		char16_t* GetValueWChar();
 
 		///
 		/// Returns a pointer to the int8_t value(s) of this property.
@@ -663,15 +663,15 @@ namespace App
 		static bool GetCString8(const PropertyList* pPropertyList, uint32_t propertyID, char*& dst);
 
 		///
-		/// Gets a single wchar_t* ('string16') value from a property with the propertyID specified in the given list.
+		/// Gets a single char16_t* ('string16') value from a property with the propertyID specified in the given list.
 		/// If it is an array property, it will return the first value in the array.
-		/// The value is a null-terminated wchar_t string.
+		/// The value is a null-terminated char16_t string.
 		/// @param[in] pPropertyList The PropertyList where this property will be searched.
 		/// @param[in] propertyID The unique identifier of the property to find.
 		/// @param[out] dst The destination value that will be assigned with the value found, if any.
 		/// @returns True if a property of the required type and propertyID was found, false otherwise.
 		///
-		static bool GetCString16(const PropertyList* pPropertyList, uint32_t propertyID, wchar_t*& dst);
+		static bool GetCString16(const PropertyList* pPropertyList, uint32_t propertyID, char16_t*& dst);
 
 		///
 		/// Gets a single string8 value from a property with the propertyID specified in the given list.
@@ -797,26 +797,24 @@ namespace App
 		///
 		/// Gets an array of char* ('string8') values from a property with the propertyID specified in the given list.
 		/// If it is not an array property, a pointer to the single value will be returned.
-		/// The values are null-terminated char strings.
 		/// @param[in] pPropertyList The PropertyList where this property will be searched.
 		/// @param[in] propertyID The unique identifier of the property to find.
 		/// @param[out] dstCount The destination size_t that will be assigned with the number of values found.
 		/// @param[out] dst The destination pointer that will be assigned with the array of values found, if any.
 		/// @returns True if a property of the required type and propertyID was found, false otherwise.
 		///
-		static bool GetArrayString8(const PropertyList* pPropertyList, uint32_t propertyID, size_t& dstCount, eastl::string8*& dst);
+		static bool GetArrayString8(const PropertyList* pPropertyList, uint32_t propertyID, size_t& dstCount, string8*& dst);
 
 		///
-		/// Gets an array of wchar_t* ('string16') values from a property with the propertyID specified in the given list.
+		/// Gets an array of 'string16' values from a property with the propertyID specified in the given list.
 		/// If it is not an array property, a pointer to the single value will be returned.
-		/// The values are null-terminated wchar_t strings.
 		/// @param[in] pPropertyList The PropertyList where this property will be searched.
 		/// @param[in] propertyID The unique identifier of the property to find.
 		/// @param[out] dstCount The destination size_t that will be assigned with the number of values found.
 		/// @param[out] dst The destination pointer that will be assigned with the array of values found, if any.
 		/// @returns True if a property of the required type and propertyID was found, false otherwise.
 		///
-		static bool GetArrayString16(const PropertyList* pPropertyList, uint32_t propertyID, size_t& dstCount, eastl::string16*& dst);
+		static bool GetArrayString16(const PropertyList* pPropertyList, uint32_t propertyID, size_t& dstCount, string16*& dst);
 
 		///
 		/// Gets an array of EntityTransform values from a property with the propertyID specified in the given list.
@@ -995,7 +993,7 @@ namespace App
 
 	// Unseen types:
 	inline auto_METHOD_(Property, char*, GetValueChar);
-	inline auto_METHOD_(Property, wchar_t*, GetValueWChar);
+	inline auto_METHOD_(Property, char16_t*, GetValueWChar);
 	inline auto_METHOD_(Property, int8_t*, GetValueInt8);
 	inline auto_METHOD_(Property, uint8_t*, GetValueUInt8);
 	inline auto_METHOD_(Property, int16_t*, GetValueInt16);
@@ -1039,7 +1037,7 @@ namespace App
 	inline auto_STATIC_METHOD(Property, bool, GetKeyTypeID, Args(const PropertyList* prop, uint32_t propertyID, uint32_t& dst), Args(prop, propertyID, dst));
 	inline auto_STATIC_METHOD(Property, bool, GetText, Args(const PropertyList* prop, uint32_t propertyID, LocalizedString& dst), Args(prop, propertyID, dst));
 	inline auto_STATIC_METHOD(Property, bool, GetCString8, Args(const PropertyList* prop, uint32_t propertyID, char*& dst), Args(prop, propertyID, dst));
-	inline auto_STATIC_METHOD(Property, bool, GetCString16, Args(const PropertyList* prop, uint32_t propertyID, wchar_t*& dst), Args(prop, propertyID, dst));
+	inline auto_STATIC_METHOD(Property, bool, GetCString16, Args(const PropertyList* prop, uint32_t propertyID, char16_t*& dst), Args(prop, propertyID, dst));
 	inline auto_STATIC_METHOD(Property, bool, GetString8, Args(const PropertyList* prop, uint32_t propertyID, eastl::string& dst), Args(prop, propertyID, dst));
 	inline auto_STATIC_METHOD(Property, bool, GetString16, Args(const PropertyList* prop, uint32_t propertyID, eastl::string16& dst), Args(prop, propertyID, dst));
 

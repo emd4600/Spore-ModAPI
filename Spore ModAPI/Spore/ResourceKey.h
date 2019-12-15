@@ -53,12 +53,12 @@ struct ResourceKey {
 	/// Parse(dstKey, "CreatureGame!DifficultyTunning.prop");
 	///
 	/// @param[out] dst The ResourceKey that will be filled with the parsed information.
-	/// @param[in] pString The wstring to parse.
-	/// @param[in] nDefaultTypeID [Optional] The typeID that will be used if no extension is specified in the text.
-	/// @param[in] nDefaultGroupID [Optional] The groupID that will be used if no group is specified in the text.
+	/// @param[in] pString The string to parse.
+	/// @param[in] defaultTypeID [Optional] The typeID that will be used if no extension is specified in the text.
+	/// @param[in] defaultGroupID [Optional] The groupID that will be used if no group is specified in the text.
 	/// @returns True if the text was successfully parsed, false if the given string was nullptr.
 	///
-	static bool Parse(ResourceKey& dst, const wchar_t* pString, uint32_t nDefaultTypeID = 0, uint32_t nDefaultGroupID = 0);
+	static bool Parse(ResourceKey& dst, const char16_t* pString, uint32_t defaultTypeID = 0, uint32_t defaultGroupID = 0);
 
 	bool ResourceKey::operator ==(const ResourceKey &b) const;
 	bool ResourceKey::operator !=(const ResourceKey &b) const;

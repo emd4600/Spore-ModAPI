@@ -33,7 +33,7 @@ namespace UTFWin
 		Args(name, arg_4, arg_8));
 
 	auto_METHOD(UILayout, bool, LoadByName,
-		Args(const wchar_t* name, uint32_t groupID, bool arg_4, uint32_t arg_8),
+		Args(const char16_t* name, uint32_t groupID, bool arg_4, uint32_t arg_8),
 		Args(name, groupID, arg_4, arg_8));
 
 	auto_METHOD(UILayout, IWindow*, FindWindowByID,

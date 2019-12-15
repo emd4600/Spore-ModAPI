@@ -46,8 +46,8 @@ namespace UTFWin
 		static const int kAutoLength = -1;
 
 		// We used constexpr here before, but Visual Studio 2013 doesn't support it....
-		static const wchar_t* const kDefaultFontName;
-		static const wchar_t* const kDefaultFont;
+		static const char16_t* const kDefaultFontName;
+		static const char16_t* const kDefaultFont;
 
 		/* 00h */	virtual ~Graphics2D() = 0;
 
@@ -107,30 +107,30 @@ namespace UTFWin
 		/* 1Ch */	virtual void FillBorder(float left, float top, float right, float bottom, float thickness) = 0;
 
 		///
-		/// Draws the given wstring at the specified area. The text will be drawn in the x1,y1 coordinates of the rectangle, the rest will be ignored. 
+		/// Draws the given string at the specified area. The text will be drawn in the x1,y1 coordinates of the rectangle, the rest will be ignored. 
 		/// @param area The rectangle where the top-left corner of the text begins.
-		/// @param pString The wchar_t* string to draw.
+		/// @param pString The char16_t* string to draw.
 		/// @param length [Optional] The number of characters of the string to draw. Use Graphics2D::kAutoLength to draw the entire text.
 		/// @param pFontName [Optional] The name of the font that will be used to render this text, for example "Arial".
 		///
 		/* 20h */	virtual void DrawStringArea(const Math::Rectangle& area, 
-			const wchar_t* pString, int nLength = kAutoLength, const wchar_t* pFontName = kDefaultFontName, int = 0, int = 0, int = 0) = 0;
+			const char16_t* pString, int nLength = kAutoLength, const char16_t* pFontName = kDefaultFontName, int = 0, int = 0, int = 0) = 0;
 
 		///
-		/// Draws the given wstring at the specified position. 
+		/// Draws the given string at the specified position. 
 		/// @param x The X coordinate where the top-left corner of the text begins.
 		/// @param y The Y coordinate where the top-left corner of the text begins.
-		/// @param pString The wchar_t* string to draw.
+		/// @param pString The char16_t* string to draw.
 		/// @param length [Optional] The number of characters of the string to draw. Use Graphics2D::kAutoLength to draw the entire text.
 		/// @param pFontName [Optional] The name of the font that will be used to render this text, for example "Arial".
 		///
 		/* 24h */	virtual void DrawString(
 			float x, float y, 
-			const wchar_t* pString, int length = kAutoLength, const wchar_t* pFontName = kDefaultFontName, void* = nullptr, int = 0) = 0;
+			const char16_t* pString, int length = kAutoLength, const char16_t* pFontName = kDefaultFontName, void* = nullptr, int = 0) = 0;
 
-		/* 28h */	virtual void func28h(float, float, float, float, const wchar_t* str, int length, void*, void*, int) = 0;
+		/* 28h */	virtual void func28h(float, float, float, float, const char16_t* str, int length, void*, void*, int) = 0;
 		/* 2Ch */	virtual void func2Ch(void*) = 0;
-		/* 30h */	virtual void func30h(const wchar_t*, int, int) = 0;
+		/* 30h */	virtual void func30h(const char16_t*, int, int) = 0;
 		/* 34h */	virtual void func34h(int, int, int) = 0;
 
 		///

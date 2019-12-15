@@ -55,13 +55,13 @@ namespace Resource
 	auto_METHOD_VIRTUAL(cResourceManager, cResourceManager, bool, func6Ch, Args(int arg_0, int arg_4), Args(arg_0, arg_4));
 	auto_METHOD_VIRTUAL_VOID(cResourceManager, cResourceManager, func70h, Args(IResourceMap* arg_0, SpecialResourceObject* arg_4), Args(arg_0, arg_4));
 	auto_METHOD_VIRTUAL_const(cResourceManager, cResourceManager, size_t, GetResourceCaches, Args(list<IResourceMap*>& dst), Args(dst));
-	auto_METHOD_VIRTUAL(cResourceManager, cResourceManager, bool, AddFileName, Args(const wchar_t* pFileName), Args(pFileName));
-	auto_METHOD_VIRTUAL_VOID_const(cResourceManager, cResourceManager, GetFileName, Args(const ResourceKey& resourceKey, wstring& dst), Args(resourceKey, dst));
-	auto_METHOD_VIRTUAL(cResourceManager, cResourceManager, bool, SetFileName, Args(const ResourceKey& resourceKey, const wchar_t* pFileName), Args(resourceKey, pFileName));
+	auto_METHOD_VIRTUAL(cResourceManager, cResourceManager, bool, AddFileName, Args(const char16_t* pFileName), Args(pFileName));
+	auto_METHOD_VIRTUAL_VOID_const(cResourceManager, cResourceManager, GetFileName, Args(const ResourceKey& resourceKey, string16& dst), Args(resourceKey, dst));
+	auto_METHOD_VIRTUAL(cResourceManager, cResourceManager, bool, SetFileName, Args(const ResourceKey& resourceKey, const char16_t* pFileName), Args(resourceKey, pFileName));
 	auto_METHOD_VIRTUAL(cResourceManager, cResourceManager, bool, RemoveFileName, Args(const ResourceKey& resourceKey), Args(resourceKey));
-	auto_METHOD_VIRTUAL_const(cResourceManager, cResourceManager, uint32_t, GetTypeID, Args(const wchar_t* pExtension), Args(pExtension));
-	auto_METHOD_VIRTUAL_const(cResourceManager, cResourceManager, wchar_t*, GetExtension, Args(uint32_t nTypeID), Args(nTypeID));
-	auto_METHOD_VIRTUAL(cResourceManager, cResourceManager, bool, AddExtensionMapping, Args(uint32_t nTypeID, const wchar_t* pExtension), Args(nTypeID, pExtension));
+	auto_METHOD_VIRTUAL_const(cResourceManager, cResourceManager, uint32_t, GetTypeID, Args(const char16_t* pExtension), Args(pExtension));
+	auto_METHOD_VIRTUAL_const(cResourceManager, cResourceManager, char16_t*, GetExtension, Args(uint32_t nTypeID), Args(nTypeID));
+	auto_METHOD_VIRTUAL(cResourceManager, cResourceManager, bool, AddExtensionMapping, Args(uint32_t nTypeID, const char16_t* pExtension), Args(nTypeID, pExtension));
 	auto_METHOD_VIRTUAL(cResourceManager, cResourceManager, bool, RemoveExtensionMapping, Args(uint32_t nTypeID), Args(nTypeID));
 #endif
 }

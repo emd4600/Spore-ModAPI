@@ -46,10 +46,10 @@ namespace App
 		virtual void SetViewer(cViewer* pViewer) override;
 		virtual cViewer* GetViewer() override;
 		virtual void AddCameraType(uint32_t typeID, CameraFactoryFunction_t function) override;
-		virtual void PutCamera(uint32_t cameraID, ICamera* pCamera, const wchar_t* pName) override;
+		virtual void PutCamera(uint32_t cameraID, ICamera* pCamera, const char16_t* pName) override;
 		virtual void ParseCameras() override;
 		virtual void Update(int nDeltaTime) override;
-		virtual bool SetActiveCameraByKey(const wchar_t* pKeyString) override;
+		virtual bool SetActiveCameraByKey(const char16_t* pKeyString) override;
 		virtual bool SetActiveCameraByID(uint32_t cameraID) override;
 		virtual ICamera* GetActiveCamera() override;
 		virtual uint32_t GetActiveCameraID() override;
@@ -67,11 +67,11 @@ namespace App
 		/* 08h */	int mnRefCount;
 		/* 0Ch */	bool field_0C;
 		/* 10h */	string mCheatKeyword;
-		/* 20h */	hash_map<wstring, int> field_20;
+		/* 20h */	hash_map<string16, int> field_20;
 		/* 40h */	hash_map<uint32_t, CameraFactoryFunction_t> mTypeFactories;
 		/* 60h */	hash_map<uint32_t, size_t> mCameraIndices;
 		/* 80h */	vector<intrusive_ptr<ICamera>> mpCameras;
-		/* 94h */	vector<wstring> mCameraNames;
+		/* 94h */	vector<string16> mCameraNames;
 		/* A8h */	int mnActiveIndex;  // -1
 		/* ACh */	int field_AC;
 		/* B0h */	cViewer* mpViewer;

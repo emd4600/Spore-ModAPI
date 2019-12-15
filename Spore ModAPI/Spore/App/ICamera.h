@@ -21,6 +21,7 @@
 
 #include <Spore\App\PropertyList.h>
 #include <Spore\App\cViewer.h>
+#include <Spore\Input.h>
 
 namespace App
 {
@@ -63,67 +64,67 @@ namespace App
 
 		///
 		/// Event called every game loop, which should set all the transformations of the camera into the given Viewer.
-		/// @param nDeltaTime The time ellapsed since the last call, in milliseconds.
+		/// @param deltaTime The time ellapsed since the last call, in milliseconds.
 		/// @param pViewer The Viewer instance where the transformations must be set.
 		///
-		/* 20h */	virtual void Update(int nDeltaTime, cViewer* pViewer) = 0;
+		/* 20h */	virtual void Update(int deltaTime, cViewer* pViewer) = 0;
 
 		/* 24h */	virtual void func24h(bool) = 0;
 		
 		///
 		/// An event listener called every time a key is pressed while this camera is active.
 		/// @param virtualKey The VK code of the key.
-		/// @param modifiers The modifiers (Ctrl, Alt and Shift) currently being pressed. They use the enum values UTFWin::kModifier....
+		/// @param modifiers The modifiers (Ctrl, Alt and Shift) currently being pressed.
 		/// @returns Whether the event was handled or not.
 		///
-		/* 28h */	virtual bool OnKeyDown(int virtualKey, int modifiers) = 0;
+		/* 28h */	virtual bool OnKeyDown(int virtualKey, KeyModifiers modifiers) = 0;
 
 		///
 		/// An event listener called every time a key is released while this camera is active.
 		/// @param virtualKey The VK code of the key.
-		/// @param modifiers The modifiers (Ctrl, Alt and Shift) currently being pressed. They use the enum values UTFWin::kModifier....
+		/// @param modifiers The modifiers (Ctrl, Alt and Shift) currently being pressed.
 		/// @returns Whether the event was handled or not.
 		///
-		/* 2Ch */	virtual bool OnKeyUp(int virtualKey, int modifiers) = 0;
+		/* 2Ch */	virtual bool OnKeyUp(int virtualKey, KeyModifiers modifiers) = 0;
 
 		///
 		/// An event listener called every time a mouse key is pressed while this camera is active.
-		/// @param mouseState The state of the mouse, flags of the UTFWin::kMouse.... values.
-		/// @param fMouseX The X position of the mouse.
-		/// @param fMouseY The Y position of the mouse.
-		/// @param flags Additional flags.
+		/// @param mouseButton The button that was pressed.
+		/// @param mouseX The X position of the mouse.
+		/// @param mouseY The Y position of the mouse.
+		/// @param mouseState The state of the mouse.
 		/// @returns Whether the event was handled or not.
 		///
-		/* 30h */	virtual bool OnMouseDown(int mouseState, float mouseX, float mouseY, int flags) = 0;
+		/* 30h */	virtual bool OnMouseDown(MouseButton mouseButton, float mouseX, float mouseY, MouseState mouseState) = 0;
 
 		///
 		/// An event listener called every time a mouse key is released while this camera is active.
-		/// @param mouseState The state of the mouse, flags of the UTFWin::kMouse.... values.
-		/// @param fMouseX The X position of the mouse.
-		/// @param fMouseY The Y position of the mouse.
-		/// @param flags Additional flags.
+		/// @param mouseButton The button that was released.
+		/// @param mouseX The X position of the mouse.
+		/// @param mouseY The Y position of the mouse.
+		/// @param mouseState The state of the mouse.
 		/// @returns Whether the event was handled or not.
 		///
-		/* 34h */	virtual bool OnMouseUp(int mouseState, float mouseX, float mouseY, int flags) = 0;
+		/* 34h */	virtual bool OnMouseUp(MouseButton mouseButton, float mouseX, float mouseY, MouseState mouseState) = 0;
 
 		///
 		/// An event listener called every time the mouse is moved while this camera is active.
-		/// @param fMouseX The X position of the mouse.
-		/// @param fMouseY The Y position of the mouse.
-		/// @param state The state of the mouse, flags of the UTFWin::kMouse.... values.
+		/// @param mouseX The X position of the mouse.
+		/// @param mouseY The Y position of the mouse.
+		/// @param mouseState The state of the mouse.
 		/// @returns Whether the event was handled or not.
 		///
-		/* 38h */	virtual bool OnMouseMove(float mouseX, float mouseY, int state) = 0;
+		/* 38h */	virtual bool OnMouseMove(float mouseX, float mouseY, MouseState mouseState) = 0;
 
 		///
 		/// An event listener called every time the mouse wheel is moved while this camera is active.
-		/// @param nWheelDelta The amount of units the wheel moved. This is a multiple of UTFWin::kMouseWheelDelta.
-		/// @param fMouseX The X position of the mouse.
-		/// @param fMouseY The Y position of the mouse.
-		/// @param state The state of the mouse, flags of the UTFWin::kMouse.... values.
+		/// @param wheelDelta The amount of units the wheel moved. This is a multiple of UTFWin::kMouseWheelDelta.
+		/// @param mouseX The X position of the mouse.
+		/// @param mouseY The Y position of the mouse.
+		/// @param mouseState The state of the mouse.
 		/// @returns Whether the event was handled or not.
 		///
-		/* 3Ch */	virtual bool OnMouseWheel(int nWheelDelta, float mouseX, float mouseY, int state) = 0;
+		/* 3Ch */	virtual bool OnMouseWheel(int wheelDelta, float mouseX, float mouseY, MouseState mouseState) = 0;
 
 		/* 40h */	virtual bool func40h(int) = 0;
 		/* 44h */	virtual bool func44h(int) = 0;

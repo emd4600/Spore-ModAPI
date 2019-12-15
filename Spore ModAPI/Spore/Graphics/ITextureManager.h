@@ -85,6 +85,7 @@ namespace Graphics
 
 		/* 3Ch */	virtual int func3Ch(int, int, int, int, int, int, int, int) = 0;
 		/* 40h */	virtual int func40h(int, int, int, int, int, int) = 0;
+		//PLACEHOLDER save texture?
 		/* 44h */	virtual bool func44h(Texture* texture, int, int) = 0;
 		/* 48h */	virtual int func48h(int, int) = 0;
 		/* 4Ch */	virtual int func4Ch(int, int, int, int) = 0;

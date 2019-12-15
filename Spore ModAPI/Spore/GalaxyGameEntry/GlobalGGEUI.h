@@ -109,7 +109,7 @@ namespace GalaxyGameEntry
 		/* C8h */	bool field_C8;  // true
 		/* C9h */	bool field_C9;
 		/* CCh */	int field_CC;
-		/* D0h */	wstring field_D0;
+		/* D0h */	string16 field_D0;
 		/* E0h */	int field_E0;
 		/* E4h */	bool field_E4;  // true
 		/* E8h */	int field_E8;

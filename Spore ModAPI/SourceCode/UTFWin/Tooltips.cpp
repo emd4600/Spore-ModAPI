@@ -43,12 +43,12 @@ namespace UTFWin
 	}
 
 	SporeTooltipWinProc::SporeTooltipWinProc(
-		const wchar_t* pLayoutName,
+		const char16_t* pLayoutName,
 		uint32_t controlID,
-		const wchar_t* pText,
+		const char16_t* pText,
 		const Math::Point& offsetPositon,
 		TooltipBehaviour behaviour,
-		const wchar_t* pDetailedText,
+		const char16_t* pDetailedText,
 		uint32_t detailControlID)
 
 		: mLayoutName(pLayoutName)

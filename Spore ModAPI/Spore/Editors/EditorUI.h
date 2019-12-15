@@ -29,7 +29,7 @@
 namespace Editors
 {
 	using namespace UTFWin;
-	class Editor;
+	class cEditor;
 	
 	class _EditorUI_interface {
 		// ?
@@ -48,7 +48,7 @@ namespace Editors
 
 		//TODO sub_5DE330 Update
 
-		bool Load(Editor* pEditor, uint32_t instanceID, uint32_t groupID, bool editorModelForceSaveover);
+		bool Load(cEditor* pEditor, uint32_t instanceID, uint32_t groupID, bool editorModelForceSaveover);
 
 		virtual bool HandleMessage(uint32_t messageID, void* pMessage) override;
 
@@ -59,7 +59,7 @@ namespace Editors
 		/* 14h */	UTFWin::UILayout mMainUI;
 		/* 2Ch */	UTFWin::UILayout mSharedUI;
 		/* 44h */	UTFWin::UILayout mCameraControlsUI;
-		/* 5Ch */	Editor* mpEditor;
+		/* 5Ch */	cEditor* mpEditor;
 		/* 60h */	int field_60;
 		/* 64h */	IWindow* field_64;  // 0x5100B176
 		/* 68h */	IWindow* field_68;  // 0xF006F308

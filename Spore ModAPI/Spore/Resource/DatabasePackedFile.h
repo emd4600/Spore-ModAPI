@@ -46,7 +46,9 @@ namespace Resource
 	/// (usually in the .package extension).
 	/// This class contains all the necessary methods for accessing files and loading/saving DBPF files.
 	/// 
-	class DatabasePackedFile : public IResourceContainer, public Object
+	class DatabasePackedFile 
+		: public IResourceContainer
+		, public Object
 	{
 
 	public:
@@ -59,7 +61,7 @@ namespace Resource
 
 		EAIOZoneObject_AMBIGOUS_DECLARATION;
 
-		DatabasePackedFile(const wchar_t* pPath, ICoreAllocator* pAllocator);
+		DatabasePackedFile(const char16_t* pPath, ICoreAllocator* pAllocator);
 		virtual ~DatabasePackedFile();
 
 		virtual int AddRef() override;
@@ -76,8 +78,8 @@ namespace Resource
 		/* 1Ch */	virtual bool Save();
 		/* 20h */	virtual int GetAccessFlags() const;
 		/* 24h */	virtual bool Write();
-		/* 28h */	virtual wchar_t* GetPath() const;
-		/* 2Ch */	virtual bool SetPath(const wchar_t* path);
+		/* 28h */	virtual char16_t* GetPath() const;
+		/* 2Ch */	virtual bool SetPath(const char16_t* path);
 		/* 30h */	virtual size_t GetFiles(PFIndexModifiable::KeysVector& dstVector, IResourceFilter* filter=nullptr);
 		/* 34h */	virtual bool GetFile(
 			const ResourceKey& name,
@@ -141,7 +143,7 @@ namespace Resource
 		/* 1Ch */	bool field_1C;
 		/* 1Dh */	bool field_1D;  // true
 
-		/* 20h */	wstring mFilePath;
+		/* 20h */	string16 mFilePath;
 		/* 30h */	IO::FileStream mFileStream;
 		/* 25Ch */	size_t mFileOffset;
 		/* 260h */	intrusive_ptr<IO::IStream> mpCurrentStream;

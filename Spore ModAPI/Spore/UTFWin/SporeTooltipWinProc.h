@@ -41,12 +41,12 @@ namespace UTFWin
 
 		SporeTooltipWinProc();
 		SporeTooltipWinProc(
-			const wchar_t* pLayoutName,
+			const char16_t* pLayoutName,
 			uint32_t controlID,
-			const wchar_t* pText,
+			const char16_t* pText,
 			const Math::Point& offsetPositon, 
 			TooltipBehaviour behaviour,
-			const wchar_t* pDetailedText,
+			const char16_t* pDetailedText,
 			uint32_t detailControlID);
 
 		virtual ~SporeTooltipWinProc() {};
@@ -66,15 +66,15 @@ namespace UTFWin
 
 	protected:
 		/// Filename of the layout which contains tooltip window, by default "Tooltips".
-		/* 0Ch */	wstring mLayoutName;
+		/* 0Ch */	string16 mLayoutName;
 		/// Control ID of tooltip window, by default 0x3754E6C.
 		/* 1Ch */	uint32_t mControlID;  // 0x3754E6C
 		/// Control ID of detailed tooltip window, by default 0x3754E6C.
 		/* 20h */	uint32_t mDetailControlID;  // 0x3754E6C
 		/// Text to display in tooltip.
-		/* 24h */	wstring mText;
+		/* 24h */	string16 mText;
 		/// Detailed text to display in tooltip after extended hover.
-		/* 34h */	wstring mDetailedText;
+		/* 34h */	string16 mDetailedText;
 		/// The offset of the tooltip window relative to the cursor, by default (0, 30).
 		/* 44h */	Math::Point mOffsetPosition;  // (0, 30)
 		/* 4Ch */	int field_4C;
@@ -99,9 +99,9 @@ namespace UTFWin
 	/// @param detailControlID [Optional] The ControlID of the window in the layout that will display the detailed text.
 	///
 	inline Tooltip* CreateTooltip(
-		const wchar_t* pText,
-		const wchar_t* pDetailedText = nullptr,
-		const wchar_t* pLayoutName = L"tooltips",
+		const char16_t* pText,
+		const char16_t* pDetailedText = nullptr,
+		const char16_t* pLayoutName = u"tooltips",
 		uint32_t controlID = 0x3754E6C,
 		uint32_t detailControlID = 0x3754E6C
 		)

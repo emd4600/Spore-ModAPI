@@ -23,8 +23,8 @@
 
 namespace UTFWin
 {
-	const wchar_t* const Graphics2D::kDefaultFontName = nullptr;
-	const wchar_t* const Graphics2D::kDefaultFont = nullptr;
+	const char16_t* const Graphics2D::kDefaultFontName = nullptr;
+	const char16_t* const Graphics2D::kDefaultFont = nullptr;
 
 	auto_STATIC_METHOD_VOID(Graphics2D, DrawTiledImage,
 		Args(Graphics2D* graphics, const Math::Rectangle& bounds, const Math::Rectangle& texCoords, const Image* image, float scaleX, float scaleY, float offsetX, float offsetY),

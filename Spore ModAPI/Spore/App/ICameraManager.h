@@ -84,7 +84,7 @@ namespace App
 		/// @param pCamera The new ICamera.
 		/// @param pName [Optional] A string that identifies the camera.
 		///
-		/* 24h */	virtual void PutCamera(uint32_t cameraID, ICamera* pCamera, const wchar_t* pName = nullptr) = 0;
+		/* 24h */	virtual void PutCamera(uint32_t cameraID, ICamera* pCamera, const char16_t* pName = nullptr) = 0;
 
 		///
 		/// Reads and stores in this manager all the cameras in the 0x40410100 (camera_properties~) folder.
@@ -105,7 +105,7 @@ namespace App
 		/// @param pKeyString The string representation of a ResourceKey.
 		/// @returns True if the active camera was changed, false otherwise.
 		///
-		/* 30h */	virtual bool SetActiveCameraByKey(const wchar_t* pKeyString) = 0;
+		/* 30h */	virtual bool SetActiveCameraByKey(const char16_t* pKeyString) = 0;
 
 		///
 		/// Sets the active camera to the one mapped to the given ID. If the ID is not mapped, nothing will happen.

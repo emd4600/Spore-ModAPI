@@ -51,11 +51,11 @@ namespace App
 		///
 		/// Gets the ID that corresponds to the given property name. This function will only work for those names
 		/// that are mapped in this manager.
-		/// @param pPropertyName The name of the property.
-		/// @param[Out] result The uint32_t that will receive the ID.
+		/// @param propertyName The name of the property.
+		/// @param result [Out] The uint32_t that will receive the ID.
 		/// @returns Whether the name was found or not.
 		///
-		/* 18h */	virtual bool GetPropertyID(const char* pPropertyName, uint32_t& result) const = 0;
+		/* 18h */	virtual bool GetPropertyID(const char* propertyName, uint32_t& result) const = 0;
 
 		///
 		/// Gets the name that is mapped to the given propertyID. This function will only work for those names
@@ -77,8 +77,8 @@ namespace App
 
 		///
 		/// Tells whether a PropertyList with the given instanceID and groupID is contained in this manager.
-		/// @param instanceID
-		/// @param groupID
+		/// @param instanceID The instance ID of the list.
+		/// @param groupID The group ID of the list.
 		/// @returns True if the list exists, false otherwise.
 		///
 		/* 28h */	virtual bool HasPropertyList(uint32_t instanceID, uint32_t groupID) const = 0;
@@ -120,7 +120,7 @@ namespace App
 		///
 		/// Gets the instance IDs of all the PropertyList objects contained in the specified group.
 		/// @param groupID The ID of the group where the lists are (i.e. the folder)
-		/// @param[Out] result A uint32_t vector that will receive the instance IDs.
+		/// @param result [Out] A uint32_t vector that will receive the instance IDs.
 		/// @param 
 		///
 		/* 48h */	virtual bool GetAllListIDs(uint32_t groupID, vector<uint32_t>& result) const = 0;
@@ -143,17 +143,15 @@ namespace App
 
 		///
 		/// Gets the ID of the property group at the given index.
-		/// @param nIndex The index of the group inside this manager.
-		/// @param[Out] dst The uint32_t that will receive the ID.
+		/// @param index The index of the group inside this manager.
+		/// @param dst [Out] The uint32_t that will receive the ID.
 		/// @returns Whether the index was valid or not.
 		///
-		/* 58h */	virtual bool GetPropertyGroupIDAt(size_t nIndex, uint32_t& dst) const = 0;
+		/* 58h */	virtual bool GetPropertyGroupIDAt(size_t index, uint32_t& dst) const = 0;
 
 	public:
 
-		///
 		/// Returns the object that is the currently active property manager.
-		///
 		static IPropManager* Get();
 	};
 

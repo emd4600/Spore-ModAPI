@@ -160,7 +160,7 @@ namespace RenderWare
 		DeclareAddress(Process);
 	}
 
-	template <uint16_t kVertexElements = 0>
+	template <uint16_t kVertexElements>
 	VertexDescription<kVertexElements>::VertexDescription()
 		: usageFlags(0)  // 0x0008c045
 		, usageFlags2(0)  // 0x51010101
@@ -174,7 +174,7 @@ namespace RenderWare
 
 	}
 
-	template <uint16_t kVertexElements = 0>
+	template <uint16_t kVertexElements>
 	void VertexDescription<kVertexElements>::ReleaseDirectX()
 	{
 		if (pDXVertexDeclaration != nullptr)
@@ -184,7 +184,7 @@ namespace RenderWare
 		}
 	}
 
-	template <uint16_t kVertexElements = 0>
+	template <uint16_t kVertexElements>
 	void VertexDescription<kVertexElements>::CreateDeclaration(IDirect3DDevice9* pDevice)
 	{
 		D3DVERTEXELEMENT9 dxElements[17];
@@ -203,13 +203,13 @@ namespace RenderWare
 		pDevice->CreateVertexDeclaration(dxElements, &this->pDXVertexDeclaration);
 	}
 
-	template <uint16_t kVertexElements = 0>
+	template <uint16_t kVertexElements>
 	void VertexDescription<kVertexElements>::LoadDeclaration() {
 		CALL(GetAddress(VertexDescription, LoadDeclaration), void,
 			Args(Mesh<kNumBuffers>*), Args(this));
 	}
 
-	template <uint16_t kVertexElements = 0>
+	template <uint16_t kVertexElements>
 	inline void VertexDescription<kVertexElements>::SetElement(int index, VertexElement element)
 	{
 		this->elements[index] = element;

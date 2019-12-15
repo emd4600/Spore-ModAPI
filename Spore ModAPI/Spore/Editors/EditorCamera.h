@@ -46,12 +46,12 @@ namespace Editors
 		virtual void OnExit() override;
 		virtual void Update(int nDeltaTime, App::cViewer* pViewer) override;
 		virtual void func24h(bool) override;
-		virtual bool OnKeyDown(int virtualKey, int modifiers) override;
-		virtual bool OnKeyUp(int virtualKey, int modifiers) override;
-		virtual bool OnMouseDown(int mouseState, float mouseX, float mouseY, int flags) override;
-		virtual bool OnMouseUp(int mouseState, float mouseX, float mouseY, int flags) override;
-		virtual bool OnMouseMove(float mouseX, float mouseY, int state) override;
-		virtual bool OnMouseWheel(int nWheelDelta, float mouseX, float mouseY, int state) override;
+		virtual bool OnKeyDown(int virtualKey, KeyModifiers modifiers) override;
+		virtual bool OnKeyUp(int virtualKey, KeyModifiers modifiers) override;
+		virtual bool OnMouseDown(MouseButton mouseButton, float mouseX, float mouseY, MouseState mouseState) override;
+		virtual bool OnMouseUp(MouseButton mouseButton, float mouseX, float mouseY, MouseState mouseStates) override;
+		virtual bool OnMouseMove(float mouseX, float mouseY, MouseState mouseState) override;
+		virtual bool OnMouseWheel(int wheelDelta, float mouseX, float mouseY, MouseState mouseState) override;
 		virtual bool func40h(int) override;
 		virtual bool func44h(int) override;
 		virtual bool func48h(int) override;

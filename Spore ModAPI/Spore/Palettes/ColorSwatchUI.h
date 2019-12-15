@@ -33,7 +33,9 @@ namespace Palettes
 	/// A color swatch is a button used to select a color, and it can optionally be expanded to show more color buttons.
 	/// The multiple color swatches in the category are grouped in the Palettes::ColorPickerUI class.
 	///
-	class ColorSwatchUI : public IWinProc, public DefaultRefCounted
+	class ColorSwatchUI 
+		: public IWinProc
+		, public DefaultRefCounted
 	{
 	public:
 		ColorSwatchUI();

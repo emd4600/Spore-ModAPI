@@ -47,42 +47,42 @@ namespace Resource
 		/// Creates a new resource of the specified type, using the file record given.
 		/// @param pRecord The IPFRecord that points to the file used by the resource (either for reading or for writing).
 		/// @param[Out] pDst A pointer where the ResourceObject created must be written.
-		/// @param nTypeID The type ID of the file to read, which might be used to differentiate between different file formats or resource types.
+		/// @param typeID The type ID of the file to read, which might be used to differentiate between different file formats or resource types.
 		///
-		/* 1Ch */	virtual bool CreateResource(IPFRecord* pRecord, ResourceObject*& pDst, int, uint32_t nTypeID) = 0;
+		/* 1Ch */	virtual bool CreateResource(IPFRecord* pRecord, ResourceObject*& pDst, int, uint32_t typeID) = 0;
 		/* 20h */	virtual bool AsyncAccess(IPFRecord** ppDst, int, DBPF* pDBPF, int, int, int) = 0;  // ? renamed this to avoid name collisions in cPropManager...
 
 		///
 		/// Reads the data into the resource given.
 		/// @param pRecord The IPFRecord that points to the file that must be read.
 		/// @param pResource The ResourceObject where the data must be loaded.
-		/// @param nTypeID The type ID of the file to read, which might be used to differentiate between different file formats.
+		/// @param typeID The type ID of the file to read, which might be used to differentiate between different file formats.
 		///
-		/* 24h */	virtual bool Read(IPFRecord* pRecord, ResourceObject* pResource, int, uint32_t nTypeID) = 0;
+		/* 24h */	virtual bool Read(IPFRecord* pRecord, ResourceObject* pResource, int, uint32_t typeID) = 0;
 
 		///
 		/// Reads the resource into the file given.
 		/// @param pResource The ResourceObject that must be saved.
 		/// @param pRecord The IPFRecord that points to the file that must be written.
-		/// @param nTypeID The type ID of the file to write, which might be used to differentiate between different file formats.
+		/// @param typeID The type ID of the file to write, which might be used to differentiate between different file formats.
 		///
-		/* 28h */	virtual bool Write(ResourceObject* pResource, IPFRecord* pRecord, int, uint32_t nTypeID) = 0;
+		/* 28h */	virtual bool Write(ResourceObject* pResource, IPFRecord* pRecord, int, uint32_t typeID) = 0;
 
 		///
 		/// This method must tell all the type IDs that are accepted by this factory. The method must return how many type IDs
 		/// are supported.
 		/// @param[Out] pDstTypes The uint32_t array where the type IDs must be written.
-		/// @param nCount The size of the pDstTypes array.
+		/// @param count The size of the pDstTypes array.
 		/// @returns How many type IDs are supported.
 		///
-		/* 2Ch */	virtual size_t GetSupportedTypes(uint32_t* pDstTypes, size_t nCount) const = 0;
+		/* 2Ch */	virtual size_t GetSupportedTypes(uint32_t* pDstTypes, size_t count) const = 0;
 
 		///
 		/// This method must tell whether this type ID (which might be a generic one, e.g. .image) and the sub type ID 
 		/// (e.g. .png) are accepted by this factory. The subtypeID might be 0, in which case only the type ID matters.
-		/// @param nTypeID
-		/// @param nSubTypeID
+		/// @param typeID
+		/// @param subTypeID
 		///
-		/* 30h */	virtual bool IsValid(uint32_t nTypeID, uint32_t nSubTypeID) = 0;
+		/* 30h */	virtual bool IsValid(uint32_t typeID, uint32_t subTypeID) = 0;
 	};
 }

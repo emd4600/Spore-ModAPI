@@ -120,13 +120,13 @@ namespace Resource
 		/* 6Ch */	virtual bool func6Ch(int, int) override;
 		/* 70h */	virtual void func70h(IResourceMap*, SpecialResourceObject*) override;
 		/* 74h */	virtual size_t GetResourceCaches(list<IResourceMap*>& dst) const override;
-		/* 78h */	virtual bool AddFileName(const wchar_t* pFileName) override;
-		/* 7Ch */	virtual void GetFileName(const ResourceKey& resourceKey, wstring& dst) const override;
-		/* 80h */	virtual bool SetFileName(const ResourceKey& resourceKey, const wchar_t* pFileName) override;
+		/* 78h */	virtual bool AddFileName(const char16_t* pFileName) override;
+		/* 7Ch */	virtual void GetFileName(const ResourceKey& resourceKey, string16& dst) const override;
+		/* 80h */	virtual bool SetFileName(const ResourceKey& resourceKey, const char16_t* pFileName) override;
 		/* 84h */	virtual bool RemoveFileName(const ResourceKey& resourceKey) override;
-		/* 88h */	virtual uint32_t GetTypeID(const wchar_t* pExtension) const override;
-		/* 8Ch */	virtual wchar_t* GetExtension(uint32_t nTypeID) const override;
-		/* 90h */	virtual bool AddExtensionMapping(uint32_t nTypeID, const wchar_t* pExtension) override;
+		/* 88h */	virtual uint32_t GetTypeID(const char16_t* pExtension) const override;
+		/* 8Ch */	virtual char16_t* GetExtension(uint32_t nTypeID) const override;
+		/* 90h */	virtual bool AddExtensionMapping(uint32_t nTypeID, const char16_t* pExtension) override;
 		/* 94h */	virtual bool RemoveExtensionMapping(uint32_t nTypeID) override;
 
 
@@ -134,8 +134,8 @@ namespace Resource
 		typedef hash_map<uint32_t, vector<pair<IResourceFactory::Pointer, uint32_t>>, ICoreAllocatorAdapter> FactoriesMap_t;
 		typedef hash_map<uint32_t, vector<uint32_t>, ICoreAllocatorAdapter> TypesMap_t;
 		typedef hash_map<uint32_t, uint32_t, ICoreAllocatorAdapter> SubtypesMap_t;
-		typedef hash_map<uint32_t, wstring, ICoreAllocatorAdapter> ExtensionsMap_t;
-		typedef hash_map<ResourceKey, wstring, FixedPoolAllocatorAdapter> FilenamesMap_t;
+		typedef hash_map<uint32_t, string16, ICoreAllocatorAdapter> ExtensionsMap_t;
+		typedef hash_map<ResourceKey, string16, FixedPoolAllocatorAdapter> FilenamesMap_t;
 		typedef vector<pair<IResourceMap*, int>> CacheVector_t;
 
 		/* 04h */	bool mbNeedsToRelease;

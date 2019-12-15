@@ -170,7 +170,7 @@ namespace UTFWin
 		///
 		/* 40h */	virtual uint32_t GetTextFontID() const = 0;
 
-		/* 44h */	virtual const wchar_t* func17() const = 0;
+		/* 44h */	virtual const char16_t* func17() const = 0;
 
 		/* 48h */	virtual int func18() const = 0;  // GetStyle?
 		/* 4Ch */	virtual int func19() const = 0;

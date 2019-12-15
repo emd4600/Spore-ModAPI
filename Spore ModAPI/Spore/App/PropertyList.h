@@ -33,7 +33,7 @@ namespace App
 {
 
 	///
-	/// PropertyList: A class that contains multiple properties. This is the representation of a .prop file.
+	/// A class that contains multiple properties. This is the representation of a .prop file.
 	///
 	/// PropertyLists store properties as a map, where an uint32_t (the property ID) is the key, and a Property is the value.
 	/// The contents of a Property class vary depending on the property type and flags; therefore, it is recommended that, for
@@ -90,8 +90,8 @@ namespace App
 		/// If no property with that ID is found, the function will return false and 'result' will remain unmodified.
 		/// This function will be called recursively on the PropertyList's parents until the property is found (which returns true)
 		/// or no parents are left to check (which returns false).
-		/// @param[in] propertyID The ID of the property to find.
-		/// @param[out] result The destination that will be assigned with the pointer to the found property (if any).
+		/// @param propertyID The ID of the property to find.
+		/// @param result [Out] The destination that will be assigned with the pointer to the found property (if any).
 		/// @returns true if the property was found, false otherwise.
 		///
 		/* 24h */	virtual bool GetProperty(uint32_t propertyID, Property*& result) const;
@@ -158,7 +158,7 @@ namespace App
 		///
 		/// Fills the given vector with all the property IDs contained in this PropertyList.
 		/// This does not include the properties contained in the parent.
-		/// @param[Out] dst A uint32_t vector where the IDs will be put.
+		/// @param dst [Out] A uint32_t vector where the IDs will be put.
 		///
 		/* 44h */	virtual void GetPropertyIDs(vector<uint32_t>& dst) const;
 

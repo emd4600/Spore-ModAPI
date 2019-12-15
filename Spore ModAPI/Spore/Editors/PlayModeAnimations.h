@@ -28,7 +28,7 @@ namespace Editors
 
 	using namespace eastl;
 	
-	class Editor;
+	class cEditor;
 
 	// uses amimation ID in 62E587
 
@@ -60,7 +60,7 @@ namespace Editors
 		void GenerateUI();
 
 	protected:
-		/* 04h */	Editor* mpEditor;  // not initialized
+		/* 04h */	cEditor* mpEditor;  // not initialized
 		/* 08h */	int field_08;  // not initialized
 		/// All the PlayAnimPanel objects, ordered by the 'mnAnimPanelOrder' field.
 		/* 0Ch */	vector<intrusive_ptr<PlayAnimPanel>> mPanels;

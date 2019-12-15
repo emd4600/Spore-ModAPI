@@ -44,7 +44,7 @@ namespace App
 		/// @param msg The data of the message received, it might be nullptr.
 		/// @returns Whether the message was handled or not.
 		///
-		virtual bool HandleMessage(uint32_t messageID, void* pMessage) = 0;
+		virtual bool HandleMessage(uint32_t messageID, void* msg) = 0;
 
 		virtual int AddRef() = 0;
 		virtual int Release() = 0;

@@ -71,7 +71,7 @@ namespace Resource
 	//// DatabasePackedFile.h ////
 	//////////////////////////////
 
-	DatabasePackedFile::DatabasePackedFile(const wchar_t* pPath, ICoreAllocator* pAllocator)
+	DatabasePackedFile::DatabasePackedFile(const char16_t* pPath, ICoreAllocator* pAllocator)
 		: mnRefCount(0)
 		, mbNeedsToRelease(false)
 		, mpAllocator(pAllocator == nullptr ? IO::GetAllocator() : pAllocator)
@@ -205,8 +205,8 @@ namespace Resource
 	auto_METHOD_VIRTUAL_(DatabasePackedFile, DatabasePackedFile, bool, Save);
 	auto_METHOD_VIRTUAL_const_(DatabasePackedFile, DatabasePackedFile, int, GetAccessFlags);
 	auto_METHOD_VIRTUAL_(DatabasePackedFile, DatabasePackedFile, bool, Write);
-	auto_METHOD_VIRTUAL_const_(DatabasePackedFile, DatabasePackedFile, wchar_t*, GetPath);
-	auto_METHOD_VIRTUAL(DatabasePackedFile, DatabasePackedFile, bool, SetPath, Args(const wchar_t* path), Args(path));
+	auto_METHOD_VIRTUAL_const_(DatabasePackedFile, DatabasePackedFile, char16_t*, GetPath);
+	auto_METHOD_VIRTUAL(DatabasePackedFile, DatabasePackedFile, bool, SetPath, Args(const char16_t* path), Args(path));
 	auto_METHOD_VIRTUAL(DatabasePackedFile, DatabasePackedFile, size_t, GetFiles, Args(PFIndexModifiable::KeysVector& dstVector, IResourceFilter* filter), Args(dstVector, filter));
 	auto_METHOD_VIRTUAL(DatabasePackedFile, DatabasePackedFile, bool, GetFile, Args(const ResourceKey& name, IPFRecord** pDst, int nDesiredAccess, int nCreateDisposition, bool arg_10, DBPFItem* pDstInfo), Args(name, pDst, nDesiredAccess, nCreateDisposition, arg_10, pDstInfo));
 	auto_METHOD_VIRTUAL(DatabasePackedFile, DatabasePackedFile, int, func38h, Args(int arg_0), Args(arg_0));
@@ -396,10 +396,10 @@ namespace Resource
 		{
 			field_48.Close();
 
-			wchar_t fileName[IO::kMaxPathLength];
+			char16_t fileName[IO::kMaxPathLength];
 			field_48.GetPath((char16_t*)fileName, IO::kMaxPathLength);
 
-			DeleteFileW(fileName);
+			DeleteFileW((wchar_t*)fileName);
 		}
 	}
 

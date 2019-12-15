@@ -95,12 +95,12 @@ namespace Palettes
 		/* C4h */	float field_C4;
 		/* C8h */	int field_C8;  // -1
 		/* CCh */	int field_CC;  // -1
-		/* D0h */	const wchar_t* field_D0;  // "ui_material_blink"
-		/* D4h */	const wchar_t* field_D4;  // "ui_material_blink"
+		/* D0h */	const char16_t* field_D0;  // "ui_material_blink"
+		/* D4h */	const char16_t* field_D4;  // "ui_material_blink"
 		/* D8h */	float field_D8;
 		/* DCh */	float field_DC;
 		/* E0h */	int field_E0;  // -1
-		/* E4h */	const wchar_t* field_E4;  // "ui_material_blink"
+		/* E4h */	const char16_t* field_E4;  // "ui_material_blink"
 		/* E8h */	bool field_E8;  // true
 		/* E9h */	bool field_E9;  // true
 		/* EAh */	bool field_EA;

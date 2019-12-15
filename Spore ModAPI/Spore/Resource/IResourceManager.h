@@ -49,21 +49,21 @@ namespace Resource
 	/// already exists. The ReadResource method can be used instead of GetResource to forcibly create a new resource even if it's already
 	/// in the cache.
 	/// 
-	/// This manager provides additional functionality relating files. It keeps a map of ResourceKey - wstring values, which can be used
+	/// This manager provides additional functionality relating files. It keeps a map of ResourceKey - string16 values, which can be used
 	/// to store the original name of certain resources. For example:
 	/// ~~~~~~~~~~~~~~~~~~~~~~{.cpp}
-	/// IResourceManager::Get()->SetFileName(ResourceKey(0x00000000, 0x40212002, 0x0469A3F7), L"ShaderFragments!LowQuality.graphics");
+	/// IResourceManager::Get()->SetFileName(ResourceKey(0x00000000, 0x40212002, 0x0469A3F7), u"ShaderFragments!LowQuality.graphics");
 	/// // Now you can access this file using the name we assigned instead of the original name, which had special IDs
-	/// IResourceManager::Get()->GetFileName(dstKey, L"ShaderFragments!LowQuality.graphics");
+	/// IResourceManager::Get()->GetFileName(dstKey, u"ShaderFragments!LowQuality.graphics");
 	/// ~~~~~~~~~~~~~~~~~~~~~~
 	///
-	/// Additionally, the manager also keeps a map of typeID - wstring values, which allows to map extension strings to certain typeIDs.
+	/// Additionally, the manager also keeps a map of typeID - string16 values, which allows to map extension strings to certain typeIDs.
 	/// For example:
 	/// ~~~~~~~~~~~~~~~~~~~~~~{.cpp}
 	/// // for example, we could have the mappings on a file and load it on startup
-	/// IResourceManager::Get()->AddExtensionMapping(0x2F7D0004, L"png");
+	/// IResourceManager::Get()->AddExtensionMapping(0x2F7D0004, u"png");
 	/// // now, if we try to use the .png extension, we will receive the correct typeID, instead of using the FNV hash of "png" (which is not 0x2F7D0004)
-	/// IResourceManager::Get()->GetFileName(dstKey, L"MyImages!EditorUIFrame.png");
+	/// IResourceManager::Get()->GetFileName(dstKey, u"MyImages!EditorUIFrame.png");
 	/// ~~~~~~~~~~~~~~~~~~~~~~
 	///
 	class IResourceManager : public IResourceContainer
@@ -205,19 +205,19 @@ namespace Resource
 		/* 44h */	virtual bool SetResourceFactory(bool bRemove, IResourceFactory* pFactory, uint32_t arg_8) = 0;
 
 		///
-		/// Returns the IResourceFactory that belongs to the specified nTypeID. 
-		/// If nSubTypeID is ResourceKey::kWildcardID, the first factory assigned to the typeID will be returned;
-		/// Otherwise, IResourceFactory::IsValid will be called on every factory using the types provided here,
+		/// Returns the IResourceFactory that belongs to the specified \c typeID. 
+		/// If \c subTypeID is ResourceKey::kWildcardID, the first factory assigned to the \c typeID will be returned;
+		/// Otherwise, IResourceFactory::IsValid() will be called on every factory using the types provided here,
 		/// and the first one that returns true will be returned.
 		///
-		/* 48h */	virtual IResourceFactory* GetResourceFactory(uint32_t nTypeID, uint32_t nSubTypeID = ResourceKey::kWildcardID) const = 0;
+		/* 48h */	virtual IResourceFactory* GetResourceFactory(uint32_t typeID, uint32_t subTypeID = ResourceKey::kWildcardID) const = 0;
 
 		///
-		/// Puts all the IResourceFactory instances that are assigned to the specified typeID into the given list.
-		/// If nTypeID is ResourceKey::kWildcardID, all the factories in this manager will be added.
+		/// Puts all the IResourceFactory instances that are assigned to the specified \c typeID into the given list.
+		/// If \c typeID is ResourceKey::kWildcardID, all the factories in this manager will be added.
 		/// @returns The number of factories found.
 		///
-		/* 4Ch */	virtual size_t GetResourceFactories(list<IResourceFactory*>& dst, uint32_t nTypeID = ResourceKey::kWildcardID) const = 0;
+		/* 4Ch */	virtual size_t GetResourceFactories(list<IResourceFactory*>& dst, uint32_t typeID = ResourceKey::kWildcardID) const = 0;
 
 		///
 		/// Adds the given DatabasePackedFile to this manager, using the priority specified.
@@ -274,7 +274,7 @@ namespace Resource
 		/// key generated using the ResourceKey::Parse function.
 		/// @returns True if the file name was mapped successfully, false otherwise.
 		///
-		/* 78h */	virtual bool AddFileName(const wchar_t* pFileName) = 0;
+		/* 78h */	virtual bool AddFileName(const char16_t* pFileName) = 0;
 
 		///
 		/// Gets the file name that corresponds to the specified ResourceKey.
@@ -282,16 +282,16 @@ namespace Resource
 		/// The file name can be parsed to a key again using the ResourceKey::Parse method.
 		/// A file name wil be generated even if it's not mapped; when that happens, the ResourceKey members are displayed in hexadecimal format.
 		/// @param[in] resourceKey The ResourceKey that will be represented as a string.
-		/// @param[out] dst A wstring that will contain the resulting text. 
+		/// @param[out] dst A string16 that will contain the resulting text. 
 		///
-		/* 7Ch */	virtual void GetFileName(const ResourceKey& resourceKey, wstring& dst) const = 0;
+		/* 7Ch */	virtual void GetFileName(const ResourceKey& resourceKey, string16& dst) const = 0;
 
 		///
 		/// Maps the given ResourceKey to the file name specified, which is in the format "groupID!instanceID.typeID".
 		/// The file name can be parsed to a key again using the ResourceKey::Parse method.
 		/// @returns True if it was successfully mapped.
 		///
-		/* 80h */	virtual bool SetFileName(const ResourceKey& resourceKey, const wchar_t* pFileName) = 0;
+		/* 80h */	virtual bool SetFileName(const ResourceKey& resourceKey, const char16_t* pFileName) = 0;
 
 		///
 		/// Removes the file name mapped for the given ResourceKey.
@@ -303,24 +303,24 @@ namespace Resource
 		///
 		/// Returns the typeID that has the given extension mapped to it, or (uint32_t)-1 (so 0xFFFFFFFF) if no typeID has this extension mapped.
 		///
-		/* 88h */	virtual uint32_t GetTypeID(const wchar_t* pExtension) const = 0;
+		/* 88h */	virtual uint32_t GetTypeID(const char16_t* pExtension) const = 0;
 
 		///
 		/// Returns the extension that is mapped to the given type ID, or nullptr if there's no mapping.
 		///
-		/* 8Ch */	virtual wchar_t* GetExtension(uint32_t nTypeID) const = 0;
+		/* 8Ch */	virtual char16_t* GetExtension(uint32_t typeID) const = 0;
 
 		///
 		/// Maps the given typeID (as a uint32_t hash) to the specified extension string. 
 		/// @returns True if the extension was successfully mapped or already existed, false if the typeID was mapped to a different extension.
 		///
-		/* 90h */	virtual bool AddExtensionMapping(uint32_t nTypeID, const wchar_t* pExtension) = 0;
+		/* 90h */	virtual bool AddExtensionMapping(uint32_t typeID, const char16_t* pExtension) = 0;
 
 		///
 		/// Removes the given typeID (as a uint32_t hash) and the extension it is mapped to.
 		/// @returns True if the extension existed and was removed, false otherwise.
 		///
-		/* 94h */	virtual bool RemoveExtensionMapping(uint32_t nTypeID) = 0;
+		/* 94h */	virtual bool RemoveExtensionMapping(uint32_t typeID) = 0;
 
 
 		///

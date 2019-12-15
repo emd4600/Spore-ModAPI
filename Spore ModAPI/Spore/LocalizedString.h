@@ -26,7 +26,7 @@
 using namespace eastl;
 
 ///
-/// This class is used to store a wstring that is localized; that is, that it depends on the current language of the game.
+/// This class is used to store a string16 that is localized; that is, it depends on the current language of the game.
 /// LocalizedStrings store a tableID and instanceID which are used to get the appropiate text depending on the current language.
 /// The texts are searched inside the locale~ folder. The tableID is the name of the file, and the instanceID is the ID of that
 /// text inside that file.

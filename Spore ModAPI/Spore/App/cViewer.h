@@ -56,7 +56,7 @@ namespace App
 		/// Clears one or more surfaces such as the render target, the depth buffer or the stencil buffer.
 		/// This calls the IDirect3DDevice9::Clear() method using this Viewer background color.
 		/// It will also call IDirect3DDevice9::SetViewport() if the current viewport is not that from the viewer.
-		/// @params flags A combination of flags in the D3DCLEAR enum.
+		/// @param flags A combination of flags in the D3DCLEAR enum.
 		/// @returns true If the operation was carried out successfully.
 		bool ClearScene(int8_t flags);
 
