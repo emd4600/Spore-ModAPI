@@ -193,7 +193,7 @@ void GmdlExportCheat::OnShopperAccept(const ResourceKey& selection)
 	outputStream->Open(IO::kAccessFlagReadWrite, IO::kCDCreateAlways);
 	outputStream->Write(buffer, size);
 	outputStream->Close();
-	delete buffer;
+	delete[] buffer;
 
 	// Now, extract the textures
 	// Spore sues the .raster format, so we wil use DirectX to convert them to .tga
