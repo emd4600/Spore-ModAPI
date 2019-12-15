@@ -138,8 +138,8 @@ void GmdlExportCheat::OnShopperAccept(const ResourceKey& selection)
 	// Ensure we can export this type of creation, and then get the My Spore Creations folder.
 	string16 creationFolder;
 	auto type = selection.typeID;
-	if (type != TypeIDs::cll || type != TypeIDs::crt || type != TypeIDs::bld || type != TypeIDs::vcl || 
-		type != TypeIDs::ufo || type != TypeIDs::flr ||
+	if ((type != TypeIDs::cll && type != TypeIDs::crt && type != TypeIDs::bld && type != TypeIDs::vcl && 
+		type != TypeIDs::ufo && type != TypeIDs::flr) ||
 		!App::Thumbnail_cImportExport::Get()->GetFolderPath(type, creationFolder)) 
 	{
 		App::ConsolePrintF("Error: Only cells, creatures, buildings, vehicles, UFOs and plants can be exported.");
