@@ -1,7 +1,10 @@
 #pragma once
 
+#include <Spore\Internal.h>
 #include <Spore\Graphics\ShaderDataUniform.h>
+#include <Spore\IO.h>
 #include <EASTL\intrusive_ptr.h>
+#include <EASTL\vector.h>
 #include <d3d9.h>
 
 namespace Graphics

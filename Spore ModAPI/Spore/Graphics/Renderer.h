@@ -8,15 +8,18 @@
 namespace Graphics
 {
 	namespace Addresses(Renderer) {
+		DeclareAddress(D3D_ptr);
 		DeclareAddress(Device_ptr);
 		DeclareAddress(ShaderData_ptr);
 		DeclareAddress(MaterialShader_ptr);
 		DeclareAddress(ModelToWorld_ptr);
 		DeclareAddress(ModelToWorldTransposed_ptr);
+		DeclareAddress(PresentationParameters_ptr);
 
 		DeclareAddress(SetShaderData);
 		DeclareAddress(GetShaderDataSize);
 
+		DeclareAddress(SetPresentationParameters);
 		DeclareAddress(CreateDevice);
 
 		DeclareAddress(SetTexture);
@@ -48,6 +51,10 @@ namespace Graphics
 			/* 34h */	int field_34;
 			/* 38h */	UINT NumFramesToBuffer;  // 2
 		};
+
+		inline IDirect3D9* GetDirect3D() {
+			return *(IDirect3D9**)(GetAddress(Renderer, D3D_ptr));
+		}
 
 		/// Returns the Direct3D Device used for all rendering operations in the game.
 		inline IDirect3DDevice9* GetDevice() {
@@ -88,9 +95,18 @@ namespace Graphics
 			*(D3DMATRIX**)(GetAddress(Renderer, ModelToWorldTransposed_ptr)) = value;
 		}
 
+		inline D3DPRESENT_PARAMETERS& GetPresentationParameters() {
+			return *(D3DPRESENT_PARAMETERS*)(GetAddress(Renderer, PresentationParameters_ptr));
+		}
+
 		void SetShaderData(short index, void* value, bool overrideIfEqual = false);
 
 		int GetShaderDataSize(short index);
+
+		/// Assigns the presentation parameters that will be used by the DirectX device. 
+		/// This must not be called, as it would create another device, but it can be detoured.
+		/// @param parameters
+		int SetPresentationParameters(const DeviceParameters& parameters);
 
 		/// Creates the Direct3D device. This must not be called, as it would create another device; if you need to 
 		/// modify this, detour this function.

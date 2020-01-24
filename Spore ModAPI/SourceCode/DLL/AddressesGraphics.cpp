@@ -90,15 +90,18 @@ namespace Graphics
 
 	namespace Addresses(Renderer) 
 	{
+		DefineAddress(D3D_ptr, SelectAddress(0x16FFCF8, , 0x16F89C8));
 		DefineAddress(Device_ptr, SelectAddress(0x016FFD00, 0x16F99D0, 0x16F89D0));
 		DefineAddress(ShaderData_ptr, SelectAddress(0x016FD8D8, 0x16F75A8, 0x16F65A8));
 		DefineAddress(MaterialShader_ptr, SelectAddress(0x016FD898, 0x16F7568, 0x16F6568));
 		DefineAddress(ModelToWorld_ptr, SelectAddress(0x016FF8DC, 0x16F95AC, 0x16F85AC));
 		DefineAddress(ModelToWorldTransposed_ptr, SelectAddress(0x1700024, 0x16F9CF4, 0x16F8CF4));
+		DefineAddress(PresentationParameters_ptr, SelectAddress(0x16FFECC,, 0x16F8B9C));
 
 		DefineAddress(SetShaderData, SelectAddress(0x7786E0, 0x777B50, 0x777B50));
 		DefineAddress(GetShaderDataSize, SelectAddress(0x778C50, , 0x7780C0));
 
+		DefineAddress(SetPresentationParameters, SelectAddress(0x11FA450, , 0x11F7D30));
 		DefineAddress(CreateDevice, SelectAddress(0x11FADF0, , 0x11F86B0));
 
 		DefineAddress(SetTexture, SelectAddress(0x11F39D0, , 0x11F12A0));
