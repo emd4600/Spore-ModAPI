@@ -3,7 +3,7 @@
 
 namespace Simulator
 {
-	auto_METHOD_VIRTUAL(cGameData, cGameData, bool, Write, Args(ISerializerStream* stream), Args(stream));
+	/*auto_METHOD_VIRTUAL(cGameData, cGameData, bool, Write, Args(ISerializerStream* stream), Args(stream));
 	auto_METHOD_VIRTUAL(cGameData, cGameData, bool, Read, Args(ISerializerStream* stream), Args(stream));
 	auto_METHOD_VIRTUAL_(cGameData, cGameData, bool, func18h);
 	auto_METHOD_VIRTUAL(cGameData, cGameData, bool, WriteToXML, Args(int arg_0), Args(arg_0));
@@ -17,7 +17,7 @@ namespace Simulator
 
 	auto_METHOD_VIRTUAL_VOID_(cGameData, cGameData, RemoveOwner);
 	
-	auto_METHOD_VIRTUAL(cGameData, cGameData, int, WriteAsText, Args(int arg_0), Args(arg_0));
+	auto_METHOD_VIRTUAL(cGameData, cGameData, int, WriteAsText, Args(int arg_0), Args(arg_0));*/
 
 	cGameData* cGameData::GetGameDataOwner() {
 		return mpGameDataOwner.get();
@@ -48,16 +48,6 @@ namespace Simulator
 		CLASS_CAST(cGameData);
 		return nullptr;
 	}
-
-	/* 14h */	int field_14;
-	/* 18h */	int field_18;
-	/* 1Ch */	int field_1C;  // -1
-	/* 20h */	bool field_20;
-	/* 21h */	bool mbIsDestroyed;
-	/* 24h */	uint32_t mID;  // -1
-	/* 28h */	uint32_t mDefinitionID;
-	/* 2Ch */	intrusive_ptr<cGameData> mpGameDataOwner;
-	/* 30h */	uint32_t mPoliticalID;  // -1
 
 	cGameData::cGameData()
 		: field_14()
