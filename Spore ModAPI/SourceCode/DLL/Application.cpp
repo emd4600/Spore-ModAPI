@@ -2,7 +2,7 @@
 #include "stdafx.h"
 #include "Application.h"
 #include <Spore\ArgScript\FormatParser.h>
-#include <detours.h>
+#include <Spore\IO.h>
 
 bool ShaderFragments_detour::DETOUR(DatabasePackedFile* pDBPF)
 {
@@ -57,6 +57,7 @@ namespace ModAPI
 	fixed_vector<InitFunction, MAX_MODS> initFunctions;
 	fixed_vector<InitFunction, MAX_MODS> postInitFunctions;
 	fixed_vector<InitFunction, MAX_MODS> disposeFunctions;
+	fixed_map<uint32_t, intrusive_ptr<Simulator::ISimulatorStrategy>, MAX_MODS> simulatorStrategies;
 
 	long AttachDetour()
 	{
@@ -65,6 +66,10 @@ namespace ModAPI
 		result |= sub_7E6C60_detour::attach(Address(SelectAddress(0x7E6C60, 0x7E67E0, 0x7E6850)));
 		result |= AppInit_detour::attach(Address(SelectAddress(0xF48230, , 0xF47E90)));
 		result |= AppShutdown_detour::attach(Address(SelectAddress(0xF47950, , 0xF475A0)));
+
+		//result |= PersistanceMan_Write_detour::attach(Address(SelectAddress(0xB26670, , PLACEHOLDER)));
+		//result |= PersistanceMan_Read_detour::attach(Address(SelectAddress(0xB266B0, , PLACEHOLDER)));
+
 		return result;
 	}
 
@@ -100,7 +105,102 @@ int ModAPI::AppShutdown_detour::DETOUR()
 {
 	for (int i = ModAPI::disposeFunctions.size() - 1; i >= 0; --i) ModAPI::disposeFunctions[i]();
 
+	ModAPI::simulatorStrategies.clear();
+
 	return original_function(this);
+}
+
+
+namespace ModAPI
+{
+	bool ReadSubsystems(Simulator::ISerializerStream* stream, void* data)
+	{
+		auto s = stream->GetRecord()->GetStream();
+
+		int count;
+		IO::ReadInt32(s, &count);
+
+		vector<uint32_t> ids(count);
+		vector<int> sizes(count);
+		for (int i = 0; i < count; ++i) {
+			IO::ReadUInt32(s, &ids[i]);
+			IO::ReadInt32(s, &sizes[i]);
+		}
+
+		for (int i = 0; i < count; ++i) {
+			auto it = simulatorStrategies.find(ids[i]);
+			if (it == simulatorStrategies.end() || !it->second)
+			{
+				s->SetPosition(sizes[i], IO::kPositionTypeCurrent);
+			}
+			else
+			{
+				it->second->Read(stream);
+			}
+		}
+
+		return true;
+	}
+
+	bool WriteSubsystems(Simulator::ISerializerStream* stream, void* data)
+	{
+		auto s = stream->GetRecord()->GetStream();
+
+		int count = simulatorStrategies.size();
+		IO::WriteInt32(s, &count);
+
+		int originalOffset = s->GetPosition();
+
+		vector<uint32_t> ids(count);
+		vector<int> sizes(count);
+		for (int i = 0; i < count; ++i) {
+			IO::WriteUInt32(s, &ids[i]);
+			IO::WriteInt32(s, &sizes[i]);
+		}
+
+		int i = 0;
+		for (auto it : simulatorStrategies) {
+			int offset = s->GetPosition();
+			it.second->Write(stream);
+
+			ids[i] = it.first;
+			sizes[i] = s->GetPosition() - offset;
+			++i;
+		}
+
+		int finalOffset = s->GetPosition();
+
+		s->SetPosition(originalOffset);
+		for (int i = 0; i < count; ++i) {
+			IO::WriteUInt32(s, &ids[i]);
+			IO::WriteInt32(s, &sizes[i]);
+		}
+
+		s->SetPosition(finalOffset);
+
+		return true;
+	}
+
+	void EmptyReadText(const string& str, void* dst) {
+	}
+	void EmptyWriteText(char* buf, void* src) {
+		buf[0] = '\0';
+	}
+
+	Simulator::Attribute ATTRIBUTES[] = {
+		Simulator::Attribute("mSubSystems", 0x01001000, 0, &ReadSubsystems, &WriteSubsystems, &EmptyReadText, &EmptyWriteText, nullptr),
+		Simulator::Attribute()
+	};
+}
+
+bool ModAPI::PersistanceMan_Write_detour::DETOUR(Simulator::ISerializerStream* stream)
+{
+	return Simulator::ClassSerializer(this, ModAPI::ATTRIBUTES).Write(stream);
+}
+
+bool ModAPI::PersistanceMan_Read_detour::DETOUR(Simulator::ISerializerStream* stream)
+{
+	return Simulator::ClassSerializer(this, ModAPI::ATTRIBUTES).Read(stream);
 }
 
 #endif

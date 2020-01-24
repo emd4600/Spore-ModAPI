@@ -34,24 +34,33 @@ namespace Simulator
 	public:
 		static const uint32_t TYPE = 0x17F243B;
 
-		using DefaultRefCounted::AddRef;
-		using DefaultRefCounted::Release;
-
 		cGameData();
-		virtual ~cGameData();
+		virtual ~cGameData() {}
+
+		virtual int AddRef() override;
+		virtual int Release() override;
+		virtual void* Cast(uint32_t type) const override;
+
+		// ISimulatorSerializable
+		/* 10h */	virtual bool Write(ISerializerStream* stream) override;
+		/* 14h */	virtual bool Read(ISerializerStream* stream) override;
+		/* 18h */	virtual bool func18h() override;
+		/* 1Ch */	virtual bool WriteToXML(int) override;  // write as text?
+		// GetNounID is not implemented
 
 		/* 24h */	virtual bool SetDefinitionID(int);  // 3 arguments, parses prop?? // the parameter is not a uint32_t
 		/* 28h */	virtual void SetGameDataOwner(cGameData* pOwner);  // also sets politicalID
 		/* 2Ch */	virtual bool IsDestroyed();
 		/* 30h */	virtual cGameData* GetGameDataOwner();
 		/* 34h */	virtual void SetGameDataOwner2(cGameData* pOwner);  // also sets politicalID
-		/* 38h */	virtual int func38h() = 0;  //TODO
+		/// Returns the TYPE field of the class, that is used for object casting.
+		/* 38h */	virtual uint32_t GetCastID() const = 0;
 		/* 3Ch */	virtual bool func3Ch(int);  // just calls 40h
 		/* 40h */	virtual bool func40h();
 		/* 44h */	virtual void RemoveOwner();
 		/* 48h */	virtual void SetPoliticalID(uint32_t id);
 		/* 4Ch */	virtual uint32_t GetPoliticalID();
-		/* 50h */	virtual void func50h(int);  // related with attributes
+		/* 50h */	virtual int WriteAsText(int);  // related with attributes
 
 	protected:
 		/* 14h */	int field_14;
@@ -70,4 +79,23 @@ namespace Simulator
 	/////////////////////////////////
 
 	static_assert(sizeof(cGameData) == 0x34, "sizeof(cGameData) != 34h");
+
+	namespace Addresses(cGameData) {
+		DeclareAddress(Write);
+		DeclareAddress(Read);
+		DeclareAddress(func18h);
+		DeclareAddress(WriteToXML);
+
+		DeclareAddress(SetDefinitionID);
+		DeclareAddress(SetGameDataOwner);
+		DeclareAddress(IsDestroyed);
+
+		DeclareAddress(SetGameDataOwner2);
+
+		DeclareAddress(func3Ch);
+
+		DeclareAddress(RemoveOwner);
+
+		DeclareAddress(WriteAsText);
+	}
 }

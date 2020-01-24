@@ -19,6 +19,7 @@
 #pragma once
 
 #include <Spore\Object.h>
+#include <Spore\Simulator\Serialization.h>
 
 namespace Simulator
 {
@@ -29,20 +30,21 @@ namespace Simulator
 		/* 04h */	virtual int Release() = 0;
 		/* 08h */	virtual void Initialize() = 0;
 		/* 0Ch */	virtual void Dispose() = 0;
-		/* 10h */	virtual const char* GetName() = 0;
+		/* 10h */	virtual const char* GetName() const = 0;
 		/* 14h */	virtual void OnModeExited(uint32_t previousModeID, uint32_t newModeID) = 0;
 		/* 18h */	virtual void OnModeEntered(uint32_t previousModeID, uint32_t newModeID) = 0;
-		/* 1Ch */	virtual int func1Ch() = 0;
-		/* 20h */	virtual int func20h() = 0;
-		/* 24h */	virtual bool func24h() = 0;
-		/* 28h */	virtual bool Write(void*) = 0;
-		/* 2Ch */	virtual bool Read(void*) = 0;
+		/* 1Ch */	virtual uint32_t GetLastGameMode() const = 0;
+		/* 20h */	virtual uint32_t GetCurrentGameMode() const = 0;
+		/* 24h */	virtual bool func24h(uint32_t) = 0;
+		/* 28h */	virtual bool Write(ISerializerStream*) = 0;
+		/* 2Ch */	virtual bool Read(ISerializerStream*) = 0;
 		/* 30h */	virtual void func30h(int) = 0;
 		/* 34h */	virtual bool func34h(int) = 0;
 		/* 38h */	virtual void Update(int deltaTime, int deltaGameTime) = 0;
+		// Called just before the game mode update function finishes
 		/* 3Ch */	virtual void PostUpdate(int deltaTime, int deltaGameTime) = 0;
-		/* 40h */	virtual void func40h(int) = 0;
-		/* 44h */	virtual void func44h(int) = 0;
+		/* 40h */	virtual void func40h(uint32_t) = 0;
+		/* 44h */	virtual void func44h(uint32_t) = 0;
 		/* 48h */	virtual void func48h() = 0;
 		/* 4Ch */	virtual void func4Ch() = 0;
 	};
@@ -51,11 +53,33 @@ namespace Simulator
 		: public ISimulatorStrategy
 		, public IVirtual
 	{
+	public:
+		cStrategy();
+		virtual ~cStrategy();
+
+		int AddRef() override;
+		int Release() override;
+
+		void OnModeExited(uint32_t previousModeID, uint32_t newModeID) override;
+		void OnModeEntered(uint32_t previousModeID, uint32_t newModeID) override;
+		uint32_t GetLastGameMode() const override;
+		uint32_t GetCurrentGameMode() const override;
+		bool func24h(uint32_t) override;
+
+		void func30h(int) override;
+
+		void Update(int deltaTime, int deltaGameTime) override;
+		void PostUpdate(int deltaTime, int deltaGameTime) override;
+		void func40h(uint32_t) override;
+		void func44h(uint32_t) override;
+		void func48h() override;
+		void func4Ch() override;
+
 	protected:
 		/* 08h */	int mnRefCount;
-		/* 0Ch */	int field_C;  // -1
-		/* 10h */	int field_10;  // -1
-		/* 14h */	int field_14;  // -1
+		/* 0Ch */	uint32_t mLastGameMode;  // -1
+		/* 10h */	uint32_t mCurrentGameMode;  // -1
+		/* 14h */	uint32_t field_14;  // -1
 		/* 18h */	int field_18;
 	};
 

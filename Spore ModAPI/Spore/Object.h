@@ -25,7 +25,8 @@
 
 #include <cstddef>
 
-#define OBJECT_CAST(c) if (type == c::TYPE) return (c*)this
+#define CLASS_CAST(c) if (type == c::TYPE) return (c*)this
+#define PARENT_CAST(c) if (void* temp = c::Cast(type)) return temp;
 
 using namespace eastl;
 

@@ -19,6 +19,7 @@
 #pragma once
 
 #include <Spore\Object.h>
+#include <Spore\Simulator\Serialization.h>
 
 namespace Simulator
 {
@@ -28,13 +29,13 @@ namespace Simulator
 	public:
 		static const uint32_t TYPE = 0x179C807;
 
-		virtual ~ISimulatorSerializable();
+		virtual ~ISimulatorSerializable() {}
 
-		/* 10h */	virtual bool Write(void* arg_0) = 0;
-		/* 14h */	virtual bool Read(void* arg_0) = 0;
+		/* 10h */	virtual bool Write(ISerializerStream* stream) = 0;
+		/* 14h */	virtual bool Read(ISerializerStream* stream) = 0;
 		/* 18h */	virtual bool func18h() = 0;
-		/* 1Ch */	virtual bool func1Ch(void* arg_0) = 0;
-		/* 20h */	virtual uint32_t GetNounID() = 0;
+		/* 1Ch */	virtual bool WriteToXML(int) = 0;  // write as text?
+		/* 20h */	virtual uint32_t GetNounID() const = 0;
 	};
 
 	// Used by cEmpire

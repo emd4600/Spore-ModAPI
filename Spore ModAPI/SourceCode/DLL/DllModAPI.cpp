@@ -28,6 +28,14 @@ namespace ModAPI
 		disposeFunctions.push_back(f);
 	}
 
+	/*bool AddSimulatorStrategy(Simulator::ISimulatorStrategy* strategy, uint32_t id) {
+		if (strategy && simulatorStrategies.find(id) == simulatorStrategies.end()) {
+			simulatorStrategies[id] = strategy;
+			return true;
+		}
+		return false;
+	}*/
+
 	GameType GetGameType()
 	{
 #if EXECUTABLE_TYPE == 0

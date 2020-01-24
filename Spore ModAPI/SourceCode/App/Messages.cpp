@@ -23,9 +23,6 @@
 #include <Spore\App\cMessageManager.h>
 #include <Spore\App\StandardMessage.h>
 
-// PLACEHOLDER ONLY FOR TESTNIG REMOVE
-#include <Spore\Cheats.h>
-
 namespace App
 {
 	auto_STATIC_METHOD_(IMessageManager, IMessageManager*, Get);

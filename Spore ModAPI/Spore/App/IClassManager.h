@@ -31,9 +31,9 @@ namespace App
 	{
 	public:
 		virtual ~ISPClassFactory() {};
-		virtual size_t GetTypes(uint32_t* pDstTypes, size_t nCount) = 0;
+		virtual size_t GetTypes(uint32_t* pDstTypes, size_t count) const = 0;
 		virtual Object* Create(uint32_t type, ICoreAllocator* pAllocator = nullptr) = 0;
-		virtual const char* GetName(uint32_t type) = 0;
+		virtual const char* GetName(uint32_t type) const = 0;
 
 	protected:
 		int field_4;
@@ -54,7 +54,7 @@ namespace App
 		/* 18h */	virtual int func18h(int, int, int, int) = 0;
 		/* 1Ch */	virtual int func1Ch(int, int, int) = 0;
 		/* 20h */	virtual void* CreateCasted(uint32_t classID, uint32_t type, ICoreAllocator* pAllocator = nullptr, ISPClassFactory* pFactory = nullptr) = 0;
-		/* 24h */	virtual Object* Create(uint32_t classID, ICoreAllocator* pAllocator = nullptr, ISPClassFactory* pFactory = nullptr);
+		/* 24h */	virtual Object* Create(uint32_t classID, ICoreAllocator* pAllocator = nullptr, ISPClassFactory* pFactory = nullptr) = 0;
 
 		static IClassManager* Get();
 	};

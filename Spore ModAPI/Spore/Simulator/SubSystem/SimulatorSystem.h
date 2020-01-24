@@ -28,6 +28,8 @@
 
 namespace Simulator
 {
+	class ISerializerStream;
+
 	class cSimulatorSystem
 		: public App::IMessageListener
 		, public IVirtual
@@ -54,9 +56,9 @@ namespace Simulator
 		/* 3Ch */	virtual bool ContainsUpdatableUIGraphic(ISimulatorUIGraphic*);
 		/* 40h */	virtual bool RemoveUpdatableUIGraphic(ISimulatorUIGraphic*);
 		/* 44h */	virtual void ClearUpdatableUIGraphics();
-		/* 48h */	virtual bool Write(int);
-		/* 4Ch */	virtual bool Read(int);
-		/* 50h */	virtual bool func50h();
+		/* 48h */	virtual bool Write(ISerializerStream*);
+		/* 4Ch */	virtual bool Read(ISerializerStream*);
+		/* 50h */	virtual bool func50h();  // returns true
 		/* 54h */	virtual bool func54h();
 		/* 58h */	virtual bool func58h();
 			
@@ -84,6 +86,10 @@ namespace Simulator
 
 	public:
 		static cSimulatorSystem* Get();
+
+		/// Creates the Simulator System class. This shouldn't be called directly, but it can be detoured
+		/// to override the simulator system.
+		static cSimulatorSystem* Create();
 	};
 
 	/// Initializes certain Simulator systems so that most things can be used without being in a star or planet.
@@ -103,5 +109,6 @@ namespace Simulator
 	namespace Addresses(cSimulatorSystem)
 	{
 		DeclareAddress(Get);
+		DeclareAddress(Create);
 	}
 }

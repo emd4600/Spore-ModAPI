@@ -40,6 +40,7 @@
 #include <Spore\Simulator\cTurretDefenseMissileWeapon.h>
 #include <Spore\Simulator\cTurretFlakWeapon.h>
 #include <Spore\Simulator\cVehicle.h>
+#include <Spore\Simulator\Serialization.h>
 #include <Spore\Simulator\SubSystem\cRelationshipManager.h>
 #include <Spore\Simulator\SubSystem\GameBehaviorManager.h>
 #include <Spore\Simulator\SubSystem\GameInputManager.h>
@@ -411,7 +412,8 @@ namespace Simulator
 
 	namespace Addresses(cSimulatorSystem)
 	{
-		DefineAddress(Get, SelectAddress(0xB3D190, NO_ADDRESS, 0xB3D330));
+		DefineAddress(Get, SelectAddress(0xB3D190, , 0xB3D330));
+		DefineAddress(Create, SelectAddress(0xB5DD00, , 0xB5E160));
 	}
 
 	namespace Addresses(SpacePlayerData)
@@ -452,6 +454,33 @@ namespace Simulator
 		DefineAddress(ActivateTool, SelectAddress(0x1050710, NO_ADDRESS, 0x104FBC0));
 		DefineAddress(DeactivateTool, SelectAddress(0x1050770, NO_ADDRESS, 0x104FC20));
 		DefineAddress(OnMouseUp, SelectAddress(0x10505F0, NO_ADDRESS, 0x104FAA0));
+	}
+
+
+	namespace Addresses(ClassSerializer)
+	{
+		DefineAddress(Read, SelectAddress(0x693F20, , 0x693DE0));
+		DefineAddress(Write, SelectAddress(0x692B10, , 0x6928C0));
+	}
+
+	namespace Addresses(cGameData)
+	{
+		DefineAddress(Write, SelectAddress(0xB18430, , 0xB184D0));
+		DefineAddress(Read, SelectAddress(0xB184A0, , 0xB18540));
+		DefineAddress(func18h, SelectAddress(0xB18270, , 0xB18320));
+		DefineAddress(WriteToXML, SelectAddress(0xB18390, , 0xB18440));
+
+		DefineAddress(SetDefinitionID, SelectAddress(0xB18290, , 0xB18340));
+		DefineAddress(SetGameDataOwner, SelectAddress(0xB183E0, , 0xB18490));
+		DefineAddress(IsDestroyed, SelectAddress(0xB18260, , 0xB18310));
+
+		DefineAddress(SetGameDataOwner2, SelectAddress(0xB183E0, , 0xB18490));
+
+		DefineAddress(func3Ch, SelectAddress(0xB18280, , 0xB18330));
+
+		DefineAddress(RemoveOwner, SelectAddress(0xAFF820, , 0xAFFD20));
+
+		DefineAddress(WriteAsText, SelectAddress(0xB182B0, , 0xB18360));
 	}
 }
 #endif

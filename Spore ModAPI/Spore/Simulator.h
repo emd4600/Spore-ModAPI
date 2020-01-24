@@ -41,3 +41,6 @@
 // Needed to load creatures
 #include <Spore\Editors\SpeciesManager.h>
 #include <Spore\CommonIDs.h>
+
+#include <Spore\Simulator\Serialization.h>
+#include <Spore\Simulator\SerializationTypes.h>

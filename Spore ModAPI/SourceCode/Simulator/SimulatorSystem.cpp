@@ -22,6 +22,7 @@
 #include <Spore\Simulator\SubSystem\StarManager.h>
 #include <Spore\Simulator\SubSystem\SpacePlayerData.h>
 #include <Spore\Simulator\SubSystem\GameViewManager.h>
+#include <Spore\Simulator\SubSystem\cStrategy.h>
 
 namespace Simulator
 {
@@ -38,6 +39,75 @@ namespace Simulator
 		SpacePlayerData::Get()->mpActivePlanet = planet.get();
 
 		GameViewManager.PrepareSimulator();
+	}
+
+	/// cStrategy ///
+
+	cStrategy::cStrategy()
+		: mnRefCount(0)
+		, mLastGameMode(0xFFFFFFFF)
+		, mCurrentGameMode(0xFFFFFFFF)
+		, field_14(0xFFFFFFFF)
+		, field_18(0)
+	{}
+	cStrategy::~cStrategy() {}
+
+	int cStrategy::AddRef() {
+		return ++mnRefCount;
+	}
+
+	int cStrategy::Release() {
+		if (--mnRefCount == 0) {
+			delete this;
+			return 0;
+		}
+		else return mnRefCount;
+	}
+
+	void cStrategy::OnModeExited(uint32_t previousModeID, uint32_t newModeID) {
+		if (newModeID != GetLastGameMode()) {
+			func40h(newModeID);
+			func48h();
+		}
+	}
+	void cStrategy::OnModeEntered(uint32_t previousModeID, uint32_t newModeID) {
+		if (newModeID != GetCurrentGameMode()) {
+			func44h(newModeID);
+			func4Ch();
+		}
+	}
+	uint32_t cStrategy::GetLastGameMode() const {
+		return mLastGameMode;
+	}
+	uint32_t cStrategy::GetCurrentGameMode() const {
+		return mCurrentGameMode;
+	}
+	bool cStrategy::func24h(uint32_t mode) {
+		return mode == GetCurrentGameMode() && mode == GetLastGameMode() && field_14 == 0xFFFFFFFF;
+	}
+
+	void cStrategy::func30h(int) {}
+
+	void cStrategy::Update(int deltaTime, int deltaGameTime) {}
+	void cStrategy::PostUpdate(int deltaTime, int deltaGameTime) {}
+
+	void cStrategy::func40h(uint32_t mode) {
+		field_18 = 1;
+		if (field_14 == 0xFFFFFFFF) field_14 = mode;
+	}
+	void cStrategy::func44h(uint32_t mode) {
+		field_18 = 2;
+		if (field_14 == 0xFFFFFFFF) field_14 = mode;
+	}
+	void cStrategy::func48h() {
+		mLastGameMode = field_14;
+		field_14 = 0xFFFFFFFF;
+		field_18 = 0;
+	}
+	void cStrategy::func4Ch() {
+		mCurrentGameMode = field_14;
+		field_14 = 0xFFFFFFFF;
+		field_18 = 0;
 	}
 }
 #endif
