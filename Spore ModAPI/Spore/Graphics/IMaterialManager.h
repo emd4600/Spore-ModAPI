@@ -104,11 +104,11 @@ namespace Graphics
 		///
 		/// Gets all the materials assigned to the IDs specified. If a certain ID does not have any material assigned,
 		/// a new one will be created; therefore, this method always puts an object into the output array.
-		/// @param[In] nCount The number of elements in the IDs array.
-		/// @param[In] pMaterialIDs The IDs of the materials to get.
-		/// @param[Out] pDst A Material* array of nCount elements where the Material pointers will be written.
+		/// @param[in] count The number of elements in the IDs array.
+		/// @param[in] pMaterialIDs The IDs of the materials to get.
+		/// @param[out] pDst A Material* array of nCount elements where the Material pointers will be written.
 		///
-		/* 2Ch */	virtual void GetMaterials(size_t nCount, const uint32_t* pMaterialIDs, Material** pDst) = 0;
+		/* 2Ch */	virtual void GetMaterials(size_t count, const uint32_t* pMaterialIDs, Material** pDst) = 0;
 
 
 		/* 30h */	virtual Material* func30h(uint32_t, int) = 0;
@@ -121,17 +121,17 @@ namespace Graphics
 
 		///
 		/// Puts the ID of all the materials specified into the given array.
-		/// @param[In] nCount The number of elements in the materials array.
-		/// @param[In] pMaterials The materials whose ID will be got.
-		/// @param[Out] pDst A uint32_t array of nCount elements where the IDs will be written.
+		/// @param[in] count The number of elements in the materials array.
+		/// @param[in] pMaterials The materials whose ID will be got.
+		/// @param[out] pDst A uint32_t array of nCount elements where the IDs will be written.
 		///
-		/* 38h */	virtual void GetMaterialsID(size_t nCount, const Material* const* pMaterials, uint32_t* pDst) const = 0;
+		/* 38h */	virtual void GetMaterialsID(size_t count, const Material* const* pMaterials, uint32_t* pDst) const = 0;
 
 		///
 		/// Gets the textures used by a certain material. Optionally, a filter function can be specified to get only certain textures.
-		/// @param[In] pMaterial The Material whose textures will be returned.
-		/// @param[Out] dst A TextureVector_t where the textures will be output.
-		/// @param[In] filterFunction [Optional] A filter function that takes a Texture* as a parameter and returns a bool, whether the texture must be added or not.
+		/// @param[in] pMaterial The Material whose textures will be returned.
+		/// @param[out] dst A TextureVector_t where the textures will be output.
+		/// @param[in] filterFunction [Optional] A filter function that takes a Texture* as a parameter and returns a bool, whether the texture must be added or not.
 		///
 		/* 3Ch */	virtual void GetTextures(const Material* pMaterial, TextureVector_t& dst, bool(*filterFunction)(Texture*) = nullptr) const = 0;
 

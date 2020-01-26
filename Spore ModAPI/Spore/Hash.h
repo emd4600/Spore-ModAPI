@@ -21,15 +21,6 @@
 
 #include <cstdint>
 
-namespace Hash {
-
-	// 0 -> normal, 1 -> lower-case, 2 -> upper-case
-	//int FNV_hash(char* str, int offset_basis, int mode);
-
-	uint32_t FNV(const char* str);
-	uint32_t FNV(const char16_t* str);
-}
-
 constexpr int const_tolower(int c) {
 	return (c >= 'A' && c <= 'Z') ? c + ('a' - 'A') : c;
 }

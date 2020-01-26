@@ -36,8 +36,11 @@
 
 ///
 /// @namespace UTFWin
+///
+/// @brief The user interface system.
+///
 /// UTFWin is the user interface system in Spore. The ModAPI defines some functionalities of this system;
-/// although a user interface can be created via coding, it is recommended to use the SPUI Editor in SporeModder instead.
+/// even though a user interface can be created via coding, it is recommended to use the SPUI Editor in SporeModder FX instead.
 /// The ModAPI can be useful for programatically creating pieces of interfaces (like the editor categories) and listening
 /// to UI Events.
 ///

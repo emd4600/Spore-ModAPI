@@ -84,8 +84,8 @@ namespace UTFWin
 
 		///
 		/// Get ease-in and ease-out time, between 0 and 1.
-		/// @param[Out] easeIn The destination float where the ease-in time will be put.
-		/// @param[Out] easeOut The destination float where the ease-out time will be put.
+		/// @param[out] easeIn The destination float where the ease-in time will be put.
+		/// @param[out] easeOut The destination float where the ease-out time will be put.
 		///
 		/* 24h */	virtual void GetEase(float& easeIn, float& easeOut) const = 0;
 

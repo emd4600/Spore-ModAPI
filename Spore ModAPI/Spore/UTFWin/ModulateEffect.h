@@ -33,8 +33,8 @@ namespace UTFWin
 
 		///
 		/// Get first and second modulation color.
-		/// @param[Out] color1
-		/// @param[Out] color2
+		/// @param[out] color1
+		/// @param[out] color2
 		///
 		/* 14h */	virtual void GetColors(Color& color1, Color& color2) const = 0;
 

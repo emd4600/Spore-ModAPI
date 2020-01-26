@@ -30,6 +30,8 @@
 
 /// @namespace Resource
 ///
+/// @brief The system for accessing file resources stored in .package files.
+///
 /// This namespace contains all the necessary classes needed for working with file resources stored in .package files.
 /// The main class is the IResourceManager, which can be used to get resources from the file system.
 /// The DatabasePackedFile represents a .package file that contains resources.

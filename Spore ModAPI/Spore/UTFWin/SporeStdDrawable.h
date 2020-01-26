@@ -35,14 +35,14 @@ namespace UTFWin
 		///
 		/// Gets the image information that is being used for the state specified.
 		/// @param stateIndex The index that corresponds to the desired state.
-		/// @param[Out] dst The SporeStdDrawableImageInfo pointer where the style will be written.
+		/// @param[out] dst The SporeStdDrawableImageInfo pointer where the style will be written.
 		/// @returns True if the index is valid, false otherwise.
 		///
 		bool GetImageInfo(int stateIndex, SporeStdDrawableImageInfo*& dst) const;
 
 		///
 		/// Sets the image information that will be used for the state specified.
-		/// @param style The SporeStdDrawableImageInfo to use.
+		/// @param pInfo The SporeStdDrawableImageInfo to use.
 		/// @param stateIndex The index that corresponds to the desired state.
 		/// @returns True if the index is valid, false otherwise.
 		///

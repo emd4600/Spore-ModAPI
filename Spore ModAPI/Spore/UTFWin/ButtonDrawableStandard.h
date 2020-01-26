@@ -59,7 +59,7 @@ namespace UTFWin
 		///
 		/// Gets the texture coordinates that must be used to render the image that corresponds to the given state.
 		/// @param state The state of the window.
-		/// @param[Out] dst The Rectangle where the texture coordinates will be written.
+		/// @param[out] dst The Rectangle where the texture coordinates will be written.
 		/// @returns Whether there's a valid image or not.
 		///
 		virtual bool GetTexCoords(int state, Math::Rectangle& dst) const;

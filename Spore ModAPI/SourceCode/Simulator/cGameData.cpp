@@ -3,7 +3,7 @@
 
 namespace Simulator
 {
-	/*auto_METHOD_VIRTUAL(cGameData, cGameData, bool, Write, Args(ISerializerStream* stream), Args(stream));
+	//auto_METHOD_VIRTUAL(cGameData, cGameData, bool, Write, Args(ISerializerStream* stream), Args(stream));
 	auto_METHOD_VIRTUAL(cGameData, cGameData, bool, Read, Args(ISerializerStream* stream), Args(stream));
 	auto_METHOD_VIRTUAL_(cGameData, cGameData, bool, func18h);
 	auto_METHOD_VIRTUAL(cGameData, cGameData, bool, WriteToXML, Args(int arg_0), Args(arg_0));
@@ -17,7 +17,7 @@ namespace Simulator
 
 	auto_METHOD_VIRTUAL_VOID_(cGameData, cGameData, RemoveOwner);
 	
-	auto_METHOD_VIRTUAL(cGameData, cGameData, int, WriteAsText, Args(int arg_0), Args(arg_0));*/
+	auto_METHOD_VIRTUAL(cGameData, cGameData, int, WriteAsText, Args(int arg_0), Args(arg_0));
 
 	cGameData* cGameData::GetGameDataOwner() {
 		return mpGameDataOwner.get();

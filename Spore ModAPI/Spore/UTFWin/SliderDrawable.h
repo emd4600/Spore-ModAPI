@@ -45,7 +45,7 @@ namespace UTFWin
 		///
 		/// Set the images used by this drawable. The index is one of the AbstractSliderDrawable::kImage... values.
 		/// @param index The index of the image to set.
-		/// @param pImage The image.
+		/// @param image The image.
 		///
 		/* 14h */	virtual void SetImage(int index, Image* image) = 0;
 

@@ -178,7 +178,7 @@ namespace UTFWin
 		///
 		/// Sets the unique ID of this object. This ID is used to identfy windows, as it is the one used by FindWindowByID().
 		/// This ID can also be used on message handling, to check what window raised the message.
-		/// @param commandID The new value of the 'controlID' property.
+		/// @param controlID The new value of the 'controlID' property.
 		///
 		/* 50h */	virtual void SetControlID(uint32_t controlID) = 0;
 		

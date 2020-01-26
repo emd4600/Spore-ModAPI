@@ -93,6 +93,7 @@ enum Difficulty
 	kDifficultyHard = 2,
 };
 
+/// Contains the ID of some important file types.
 namespace TypeIDs
 {
 	enum Names : uint32_t

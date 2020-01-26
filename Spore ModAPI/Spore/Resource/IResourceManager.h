@@ -82,12 +82,12 @@ namespace Resource
 		/// Once the file is found, the correct factory will be used to generate the appropiate resource, unless
 		/// a specific IResourceFactory is specified.
 		///
-		/// @param name[In] The ResourceKey name to find. If the typeID is mapped in the manager to other alternative typeIDs, all them will be tested.
-		/// @param ppDst[Out] [Optional] A pointer to a ResourceObject*. It will be assigned with the generated resource.
+		/// @param[in] name The ResourceKey name to find. If the typeID is mapped in the manager to other alternative typeIDs, all them will be tested.
+		/// @param[out] ppDst [Optional] A pointer to a ResourceObject*. It will be assigned with the generated resource.
 		/// @param arg_8 [Optional] Usage unknown, usually 0.
-		/// @param pDBPF[In] [Optional] The DatabasePackedFile where the file will be searched. Use nullptr to search in all DBPFs in this manager.
-		/// @param pFactory[In] [Optional] The IResourceFactory used to generate the resource. Use nullptr to use the appropiate factory according to the typeID mapping in this manager.
-		/// @param pCacheName[In] [Optional] The ResourceKey name used to search the resource in the cache.
+		/// @param[in] pDBPF [Optional] The DatabasePackedFile where the file will be searched. Use nullptr to search in all DBPFs in this manager.
+		/// @param[in] pFactory [Optional] The IResourceFactory used to generate the resource. Use nullptr to use the appropiate factory according to the typeID mapping in this manager.
+		/// @param[in] pCacheName [Optional] The ResourceKey name used to search the resource in the cache.
 		/// @returns True if the resource was found or generated, false otherwise.
 		///
 		/* 0Ch */	virtual bool GetResource(

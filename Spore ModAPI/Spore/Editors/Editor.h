@@ -56,7 +56,7 @@ typedef void UnkClass1;
 typedef void UnkClass2;
 typedef void UnkClass4;
 
-
+/// @brief Everything related with the editors (except adventure editor)
 namespace Editors
 {
 	class EditorUI;

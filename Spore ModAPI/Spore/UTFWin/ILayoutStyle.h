@@ -44,8 +44,8 @@ namespace UTFWin
 		///
 		/// Applies this layout to the given area. The parent area of the window must also be specified as some layouts might use it;
 		/// the resulting area will still be relative to the parent window position, however.
-		/// @param[In, Out] area The current area of the window. The result will be written here as well.
-		/// @param[In] parentArea The area of the parent window, some layouts might use this. Even if this parameter
+		/// @param[in, out] area The current area of the window. The result will be written here as well.
+		/// @param[in] parentArea The area of the parent window, some layouts might use this. Even if this parameter
 		/// is used, the resulting area will be relative to the parent window position.
 		///
 		/* 14h */	virtual void ApplyLayout(Math::Rectangle& area, const Math::Rectangle& parentArea) = 0;
@@ -54,8 +54,8 @@ namespace UTFWin
 		/// Reverts this layout to the given area. The parent area of the window must also be specified as some layouts might use it;
 		/// the resulting area will still be relative to the parent window position, however.
 		/// This is the inverse of ApplyLayout().
-		/// @param[In, Out] area The current area of the window. The result will be written here as well.
-		/// @param[In] parentArea The area of the parent window, some layouts might use this. Even if this parameter
+		/// @param[in, out] area The current area of the window. The result will be written here as well.
+		/// @param[in] parentArea The area of the parent window, some layouts might use this. Even if this parameter
 		/// is used, the resulting area will be relative to the parent window position.
 		/// @returns True if the layout was successfully reverted.
 		///

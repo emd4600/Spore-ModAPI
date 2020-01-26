@@ -128,7 +128,7 @@ namespace UTFWin
 		/* 4Ch */	virtual void SetCaptionColor(StateIndices index, Color color) = 0;
 
 		/// Gets the caption borders.
-		/// @param[Out] dst The Math::Rectangle where the borders will be written.
+		/// @param[out] dst The Math::Rectangle where the borders will be written.
 		/* 50h */	virtual void GetCaptionBorders(union Math::Rectangle& dst) = 0;
 
 		/// Sets the caption borders
@@ -136,7 +136,7 @@ namespace UTFWin
 		/* 54h */	virtual void SetCaptionBorders(const union Math::Rectangle& borders) = 0;
 
 		/// Gets the caption offset to be used when the button is selected/depressed.
-		/// @param[Out] dst The Math::Point where the offset will be written.
+		/// @param[out] dst The Math::Point where the offset will be written.
 		/* 58h */	virtual void GetCaptionOffset(struct Point& dst) = 0;
 
 		/// Set the caption offset to be used when the button is selected/depressed.

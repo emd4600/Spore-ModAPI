@@ -28,9 +28,6 @@
 /// Access the active swarm manager.
 #define SwarmManager (*Swarm::ISwarmManager::Get())
 
-///
-/// Swarm is the effects system of Spore.
-///
 namespace Swarm
 {
 	///
@@ -66,7 +63,7 @@ namespace Swarm
 		/// uninitialized intrusive_ptr; the object must be nullptr or not be initialized, because it will be ignored.
 		/// @param instanceID The instance ID of the effect.
 		/// @param groupID The group ID of the effect, usually 0.
-		/// @param dst An uninitialized intrusive_ptr<IEffect> where the effect will be put.
+		/// @param[out] dst An uninitialized intrusive_ptr<IEffect> where the effect will be put.
 		/// @returns True if the effect was found and returned, false otherwise.
 		///
 		/* 2Ch */	virtual bool CreateEffect(uint32_t instanceID, uint32_t groupID, intrusive_ptr<IEffect>& dst) = 0;

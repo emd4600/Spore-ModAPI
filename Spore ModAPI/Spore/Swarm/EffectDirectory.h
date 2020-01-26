@@ -152,7 +152,7 @@ namespace Swarm
 		///
 		/// Tells whether an effect with this name is contained in this directory. If it is, 
 		/// the name will be written into the given string.
-		/// @param[Out] dst The destination string where the name will be written.
+		/// @param[out] dst The destination string where the name will be written.
 		/// @param pName The name of the effect to find.
 		/// @returns True if the effect exists, false otherwise.
 		///

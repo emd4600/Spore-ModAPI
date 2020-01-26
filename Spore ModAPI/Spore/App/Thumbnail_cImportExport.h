@@ -20,7 +20,7 @@ namespace App
 	public:
 		/// Gets the filepath of the folder where the .PNGs of the creation type are stored.
 		/// @param creationType One of the types in TypeIDs, such as 'crt', 'bld',...
-		/// @param [Out] dst
+		/// @param[out] dst The string where the path will be written.
 		bool GetFolderPath(uint32_t creationType, string16& dst);
 
 		static Thumbnail_cImportExport* Get();

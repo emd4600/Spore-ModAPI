@@ -42,7 +42,7 @@ namespace Simulator
 		virtual void* Cast(uint32_t type) const override;
 
 		// ISimulatorSerializable
-		/* 10h */	virtual bool Write(ISerializerStream* stream) override;
+		/* 10h */	virtual bool Write(ISerializerStream* stream) = 0;  //PLACEHOLDER
 		/* 14h */	virtual bool Read(ISerializerStream* stream) override;
 		/* 18h */	virtual bool func18h() override;
 		/* 1Ch */	virtual bool WriteToXML(int) override;  // write as text?

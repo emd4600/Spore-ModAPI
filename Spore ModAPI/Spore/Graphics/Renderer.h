@@ -121,7 +121,7 @@ namespace Graphics
 		/// Sets the given raster to be the active Direct3D render target for the given index.
 		/// Only works if the Raster is a surface.
 		/// @param index The render target index
-		/// @param D3D_OK if the operation succeeded, an error code otherwise.
+		/// @returns D3D_OK if the operation succeeded, an error code otherwise.
 		inline HRESULT SetRenderTarget(int index, RenderWare::Raster* raster) {
 			return GetDevice()->SetRenderTarget(0, raster->pSurface);
 		}

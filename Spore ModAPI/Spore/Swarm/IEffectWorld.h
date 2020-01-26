@@ -53,7 +53,7 @@ namespace Swarm
 		/// actual effect ID. An uninitialized intrusive_ptr to an IEffect must be given.
 		/// @param instanceID The instance ID of the effect.
 		/// @param groupID The group ID of the effect, usually 0.
-		/// @param[Out] An uninitialized intrusive_ptr<IEffect> where the created instance will be put.
+		/// @param[out] dst An uninitialized intrusive_ptr<IEffect> where the created instance will be put.
 		///
 		/* 08h */	virtual bool CreateEffect(uint32_t instanceID, uint32_t groupID, intrusive_ptr<IEffect>& dst) = 0;
 		/* 0Ch */	virtual void SetState(SwarmState state) = 0;

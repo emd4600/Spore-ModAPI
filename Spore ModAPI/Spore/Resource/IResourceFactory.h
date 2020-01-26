@@ -46,7 +46,7 @@ namespace Resource
 		///
 		/// Creates a new resource of the specified type, using the file record given.
 		/// @param pRecord The IPFRecord that points to the file used by the resource (either for reading or for writing).
-		/// @param[Out] pDst A pointer where the ResourceObject created must be written.
+		/// @param[out] pDst A pointer where the ResourceObject created must be written.
 		/// @param typeID The type ID of the file to read, which might be used to differentiate between different file formats or resource types.
 		///
 		/* 1Ch */	virtual bool CreateResource(IPFRecord* pRecord, ResourceObject*& pDst, int, uint32_t typeID) = 0;
@@ -71,7 +71,7 @@ namespace Resource
 		///
 		/// This method must tell all the type IDs that are accepted by this factory. The method must return how many type IDs
 		/// are supported.
-		/// @param[Out] pDstTypes The uint32_t array where the type IDs must be written.
+		/// @param[out] pDstTypes The uint32_t array where the type IDs must be written.
 		/// @param count The size of the pDstTypes array.
 		/// @returns How many type IDs are supported.
 		///

@@ -32,6 +32,8 @@
 
 ///
 /// @namespace ArgScript
+/// @brief The Spore scripting language.
+///
 /// ArgScript is a scripting language largely used in Spore. Although it can be used for scripts, it is mostly used as a file format,
 /// as a way to store information about multiple objects (for example, effects, property definitions, cinematics, etc). 
 /// ArgScript can be considered similar to XML: ArgScript is the format, but the interpretation depends on the program.

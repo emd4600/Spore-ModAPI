@@ -66,7 +66,7 @@ namespace UTFWin
 		///
 		/// Gets the clip area currently used by this graphics context.
 		/// All rendering operations modify only pixels which lie within the area bounded by the current clip.
-		/// @param[Out] dst The Rectangle where the clip will be output.
+		/// @param[out] dst The Rectangle where the clip will be output.
 		/// @returns Whether this context is using clipping or not.
 		///
 		/* 0Ch */	virtual bool GetClipArea(Math::Rectangle& dst) = 0;

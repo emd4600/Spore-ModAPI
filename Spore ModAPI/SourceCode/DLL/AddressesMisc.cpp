@@ -74,7 +74,8 @@ namespace Math
 	}
 
 	namespace Addresses(RandomNumberGenerator) {
-		DefineAddress(GenerateRandomInt, SelectAddress(0xA68FA0, , 0xA68F70));
+		DefineAddress(RandomInt, SelectAddress(0xA68FA0, , 0xA68F70));
+		DefineAddress(RandomFloat, SelectAddress(0x9365A0, , PLACEHOLDER));
 	}
 }
 

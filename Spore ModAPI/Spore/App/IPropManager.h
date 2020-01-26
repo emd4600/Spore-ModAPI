@@ -52,7 +52,7 @@ namespace App
 		/// Gets the ID that corresponds to the given property name. This function will only work for those names
 		/// that are mapped in this manager.
 		/// @param propertyName The name of the property.
-		/// @param result [Out] The uint32_t that will receive the ID.
+		/// @param[out] result The uint32_t that will receive the ID.
 		/// @returns Whether the name was found or not.
 		///
 		/* 18h */	virtual bool GetPropertyID(const char* propertyName, uint32_t& result) const = 0;
@@ -120,7 +120,7 @@ namespace App
 		///
 		/// Gets the instance IDs of all the PropertyList objects contained in the specified group.
 		/// @param groupID The ID of the group where the lists are (i.e. the folder)
-		/// @param result [Out] A uint32_t vector that will receive the instance IDs.
+		/// @param[out] result A uint32_t vector that will receive the instance IDs.
 		/// @param 
 		///
 		/* 48h */	virtual bool GetAllListIDs(uint32_t groupID, vector<uint32_t>& result) const = 0;
@@ -144,7 +144,7 @@ namespace App
 		///
 		/// Gets the ID of the property group at the given index.
 		/// @param index The index of the group inside this manager.
-		/// @param dst [Out] The uint32_t that will receive the ID.
+		/// @param[out] dst The uint32_t that will receive the ID.
 		/// @returns Whether the index was valid or not.
 		///
 		/* 58h */	virtual bool GetPropertyGroupIDAt(size_t index, uint32_t& dst) const = 0;

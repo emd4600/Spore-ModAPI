@@ -63,7 +63,7 @@ namespace UTFWin
 		///
 		/// Gets the border style that is being used for the state specified.
 		/// @param stateIndex The index that corresponds to the desired state.
-		/// @param[Out] dst The FrameStyle where the style will be written.
+		/// @param[out] dst The FrameStyle where the style will be written.
 		/// @returns True if the index is valid, false otherwise.
 		///
 		bool GetStyle(size_t stateIndex, FrameStyle& dst) const;

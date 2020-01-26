@@ -23,8 +23,15 @@
 /// This file includes all the necessary headers for working with models in Spore.
 
 /// @namespace Graphics
+///
+/// @brief All the graphics system: rendering, shaders, models, lighting, textures,... 
+///
 /// This namespace includes classes related to graphics rendering in the game. Some things included are models, textures and
 /// materials.
+
+/// @namespace RenderWare
+///
+/// @brief The representation of `.rw4` models/textures/materials
 
 
 #include <Spore\Graphics\IModelManager.h>

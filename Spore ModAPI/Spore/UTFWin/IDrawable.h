@@ -97,7 +97,7 @@ namespace UTFWin
 
 		///
 		/// Used to get the dimensions of an image contained in this drawable. 
-		/// @param[Out] dst The Dimensions where the result must be written.
+		/// @param[out] dst The Dimensions where the result must be written.
 		/// @param state The current state flags of the window.
 		/// @param index The index of the image whose dimensions must be returned.
 		/// @returns True if the dimensions were got, false otherwise.
@@ -107,7 +107,7 @@ namespace UTFWin
 		///
 		/// Tells whether the collision of a window should be handled by this drawable or not.
 		/// @param type The type, usually kDefaultCollisionType.
-		/// @param[Out] dst If the collision type is supported, whether it must be handled by this drawable or not.
+		/// @param[out] dst If the collision type is supported, whether it must be handled by this drawable or not.
 		/// @returns True if the collision type is supported (even if it's not handled by this drawable), false otherwise.
 		///
 		/* 1Ch */	virtual bool UseCollision(uint32_t type, bool& dst) = 0;

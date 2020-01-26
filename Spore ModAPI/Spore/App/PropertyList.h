@@ -91,7 +91,7 @@ namespace App
 		/// This function will be called recursively on the PropertyList's parents until the property is found (which returns true)
 		/// or no parents are left to check (which returns false).
 		/// @param propertyID The ID of the property to find.
-		/// @param result [Out] The destination that will be assigned with the pointer to the found property (if any).
+		/// @param[out] result The destination that will be assigned with the pointer to the found property (if any).
 		/// @returns true if the property was found, false otherwise.
 		///
 		/* 24h */	virtual bool GetProperty(uint32_t propertyID, Property*& result) const;
@@ -158,7 +158,7 @@ namespace App
 		///
 		/// Fills the given vector with all the property IDs contained in this PropertyList.
 		/// This does not include the properties contained in the parent.
-		/// @param dst [Out] A uint32_t vector where the IDs will be put.
+		/// @param[out] dst A uint32_t vector where the IDs will be put.
 		///
 		/* 44h */	virtual void GetPropertyIDs(vector<uint32_t>& dst) const;
 

@@ -28,7 +28,9 @@
 
 /// @namespace Swarm
 ///
+/// @brief %Swarm is the effects system in Spore
+///
 /// This namespace contains all the necessary classes needed for working with the Swarm effect system.
 /// The main class is the Swarm::ISwarmManager, which is used to control everything related with the system.
-/// Swarm::IEffect classes are instances of the effects which can be sued to display and transform effects in the game.ç
+/// Swarm::IEffect classes are instances of the effects which can be sued to display and transform effects in the game.
 ///
