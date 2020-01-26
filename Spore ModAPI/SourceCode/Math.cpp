@@ -22,6 +22,7 @@
 #include <Spore\MathUtils.h>
 #include <Spore\Transform.h>
 #include <cmath>
+#include <ctime>
 #include <EASTL\string.h>
 
 namespace Math
@@ -267,8 +268,6 @@ namespace Math
 	auto_STATIC_METHOD(Math, Euler, MatrixToEuler,
 		Args(const Matrix3& matrix), Args(matrix));
 
-	auto_METHOD(RandomNumberGenerator, int, GenerateRandomInt, Args(int range), Args(range));
-
 	auto_METHOD_VOID(BoundingBox, ApplyTransform, Args(const Transform& t), Args(t));
 
 }
@@ -284,4 +283,15 @@ Transform::Transform()
 }
 
 auto_METHOD_const_(Transform, Math::Matrix4, ToMatrix4);
+
+
+RandomNumberGenerator::RandomNumberGenerator(int32_t seed)
+{
+	if (seed == -1) seed = static_cast<int32_t>(time(0));
+	this->seed = seed;
+}
+
+auto_METHOD(RandomNumberGenerator, int, RandomInt, Args(int range), Args(range));
+auto_METHOD_(RandomNumberGenerator, float, RandomFloat);
+
 #endif

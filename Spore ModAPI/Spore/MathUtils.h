@@ -34,6 +34,9 @@ namespace Addresses(Math)
 
 class Transform;
 
+/// 
+/// @brief Basic mathematical objects and functions, such as vectors, random numbers,...
+///
 namespace Math
 {
 	const float PI = 3.14159f;
@@ -411,20 +414,38 @@ namespace Math
 	ColorHSV RGBtoHSV(const ColorRGB& rgb);
 
 	struct RandomNumberGenerator {
-		int GenerateRandomInt(int range);
+		RandomNumberGenerator(int32_t seed = -1);
+
+		/// Generates a random integer between 0 and the given parameter, included.
+		/// @param range The maximum value that can be generated.
+		int RandomInt(int range);
+
+		/// Generates a random float number between 0.0 and 1.0.
+		float RandomFloat();
+
+		int32_t seed;
 	};
 
+	/// Returns the generic random number generator.
 	inline RandomNumberGenerator& GetRNG() {
 		return *(RandomNumberGenerator*)(GetAddress(Math, RandomNumberGenerator_ptr));
 	}
 
 	/// Generates a random integer between 0 and the given parameter, included.
+	/// This uses the default RNG, which uses the time stamp as seed.
 	/// @param range The maximum value that can be generated.
-	inline int random(int range) {
-		return GetRNG().GenerateRandomInt(range);
+	inline int rand(int range) {
+		return GetRNG().RandomInt(range);
+	}
+
+	/// Generates a random float number between 0.0 and 1.0.
+	/// This uses the default RNG, which uses the time stamp as seed.
+	inline float randf() {
+		return GetRNG().RandomFloat();
 	}
 
 	namespace Addresses(RandomNumberGenerator) {
-		DeclareAddress(GenerateRandomInt);
+		DeclareAddress(RandomInt);
+		DeclareAddress(RandomFloat);
 	}
 };
