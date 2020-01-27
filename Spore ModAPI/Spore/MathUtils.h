@@ -444,6 +444,14 @@ namespace Math
 		return GetRNG().RandomFloat();
 	}
 
+	/// Generates a random float number between minValue and maxValue.
+	/// This uses the default RNG, which uses the time stamp as seed.
+	/// @param minValue The minimum possible value.
+	/// @param maxValue The maximum possible value.
+	inline float randf(float minValue, float maxValue) {
+		return GetRNG().RandomFloat() * (maxValue - minValue) + minValue;
+	}
+
 	namespace Addresses(RandomNumberGenerator) {
 		DeclareAddress(RandomInt);
 		DeclareAddress(RandomFloat);
