@@ -25,6 +25,8 @@
 #include <EASTL\intrusive_ptr.h>
 #include <EASTL\utility.h>
 
+#define IEffectPtr intrusive_ptr<Swarm::IEffect>
+
 namespace Swarm
 {
 	///

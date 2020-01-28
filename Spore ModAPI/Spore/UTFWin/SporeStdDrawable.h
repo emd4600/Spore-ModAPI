@@ -22,6 +22,8 @@
 #include <Spore\UTFWin\SporeStdDrawableImageInfo.h>
 #include <Spore\UTFWin\StdDrawable.h>
 
+#define SporeStdDrawablePtr intrusive_ptr<UTFWin::SporeStdDrawable>
+
 namespace UTFWin
 {
 	class SporeStdDrawable : public StdDrawable

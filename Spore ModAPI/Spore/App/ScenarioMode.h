@@ -25,6 +25,8 @@
 #include <Spore\Object.h>
 #include <Spore\Input.h>
 
+#define ScenarioModePtr intrusive_ptr<App::ScenarioMode>
+
 namespace App
 {
 	// kMsgEnterMode = 0x074BAF67

@@ -24,6 +24,8 @@
 #include <EASTL\vector.h>
 #include <EASTL\string.h>
 
+#define cCommunityPtr intrusive_ptr<Simulator::cCommunity>
+
 namespace Simulator
 {
 	///
@@ -41,6 +43,11 @@ namespace Simulator
 	{
 	public:
 		// No TYPE
+
+		using Object::AddRef;
+		using Object::Release;
+		using Object::Cast;
+
 	public:
 		/* 38h */	int mCommunitySize;
 		/* 3Ch */	vector<int> field_3C;

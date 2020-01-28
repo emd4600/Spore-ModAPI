@@ -26,6 +26,8 @@
 
 #define ModelManager (*Graphics::IModelManager::Get())
 
+#define IModelManagerPtr intrusive_ptr<Graphics::IModelManager>
+
 namespace Graphics
 {
 	enum class ModelGroups : uint32_t

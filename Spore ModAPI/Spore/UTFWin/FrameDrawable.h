@@ -22,6 +22,8 @@
 #include <Spore\UTFWin\ILayoutElement.h>
 #include <Spore\UTFWin\IDrawable.h>
 
+#define FrameDrawablePtr intrusive_ptr<UTFWin::FrameDrawable>
+
 namespace UTFWin
 {
 	struct FrameStyle

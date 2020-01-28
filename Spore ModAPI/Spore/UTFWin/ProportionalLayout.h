@@ -23,6 +23,8 @@
 #include <Spore\UTFWin\InteractiveWinProc.h>
 #include <Spore\UTFWin\ILayoutStyle.h>
 
+#define ProportionalLayoutPtr intrusive_ptr<UTFWin::ProportionalLayout>
+
 namespace UTFWin
 {
 	class ProportionalLayout 

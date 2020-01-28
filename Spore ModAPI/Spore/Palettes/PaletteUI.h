@@ -26,6 +26,8 @@
 #include <Spore\Palettes\PaletteMain.h>
 #include <Spore\Palettes\PaletteCategoryUI.h>
 
+#define PaletteUIPtr intrusive_ptr<Palettes::PaletteUI>
+
 namespace Palettes
 {
 	using namespace UTFWin;

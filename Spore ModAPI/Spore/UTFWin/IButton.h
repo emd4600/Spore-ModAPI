@@ -23,6 +23,8 @@
 #include <Spore\UTFWin\IWindow.h>
 #include <Spore\UTFWin\OutlineFormat.h>
 
+#define IButtonPtr intrusive_ptr<UTFWin::IButton>
+
 namespace UTFWin
 {
 	/// Flags that can be set to an UTFWin::IButton.

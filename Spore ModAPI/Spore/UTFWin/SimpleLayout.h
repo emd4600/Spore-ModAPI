@@ -24,6 +24,8 @@
 #include <Spore\UTFWin\ILayoutElement.h>
 #include <Spore\UTFWin\ILayoutStyle.h>
 
+#define SimpleLayoutPtr intrusive_ptr<UTFWin::SimpleLayout>
+
 namespace UTFWin
 {
 

@@ -20,6 +20,8 @@
 
 #include <Spore\Simulator\cDefaultBeamTool.h>
 
+#define cDropCargoToolStrategyPtr intrusive_ptr<Simulator::cDropCargoToolStrategy>
+
 namespace Simulator
 {
 	class cDropCargoToolStrategy

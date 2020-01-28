@@ -20,6 +20,8 @@
 
 #include <Spore\Simulator\cToolStrategy.h>
 
+#define cDefaultProjectileWeaponPtr intrusive_ptr<Simulator::cDefaultProjectileWeapon>
+
 namespace Simulator
 {
 	class cDefaultProjectileWeapon

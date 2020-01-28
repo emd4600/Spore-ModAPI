@@ -21,6 +21,8 @@
 #include <Spore\MathUtils.h>
 #include <EASTL\map.h>
 
+#define cIdentityColorablePtr intrusive_ptr<Simulator::cIdentityColorable>
+
 using namespace eastl;
 
 namespace Simulator

@@ -20,6 +20,8 @@
 
 #include <Spore\Simulator\cBehaviorBase.h>
 
+#define cBehaviorListPtr intrusive_ptr<Simulator::cBehaviorList>
+
 namespace Simulator
 {
 	class cBehaviorList
@@ -36,7 +38,7 @@ namespace Simulator
 		/* 14h */	virtual int Release() = 0;
 		/* 18h */	virtual int AddRef() = 0;
 
-	protected:
-		/* 04h */	vector<intrusive_ptr<cBehaviorBase>> data;
+	public:
+		/* 04h */	vector<intrusive_ptr<cBehaviorBase>> mData;
 	};
 }

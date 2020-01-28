@@ -23,6 +23,8 @@
 #include <Spore\UTFWin\ILayoutElement.h>
 #include <Spore\UTFWin\Image.h>
 
+#define IDialogDrawablePtr intrusive_ptr<UTFWin::IDialogDrawable>
+
 namespace UTFWin
 {
 	enum class BackgroundTiling : uint32_t

@@ -20,6 +20,8 @@
 
 #include <Spore\Simulator\cToolStrategy.h>
 
+#define cRallyCallToolStrategyPtr intrusive_ptr<Simulator::cRallyCallToolStrategy>
+
 namespace Simulator
 {
 	class cRallyCallToolStrategy

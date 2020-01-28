@@ -28,6 +28,8 @@
 /// Access the active swarm manager.
 #define SwarmManager (*Swarm::ISwarmManager::Get())
 
+#define ISwarmManagerPtr intrusive_ptr<Swarm::ISwarmManager>
+
 namespace Swarm
 {
 	///

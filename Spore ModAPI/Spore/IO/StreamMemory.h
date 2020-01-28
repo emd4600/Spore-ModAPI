@@ -44,6 +44,8 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #include <Spore\IO\EAIOZoneObject.h>
 #include <Spore\IO\IStream.h>
 
+#define MemoryStreamPtr intrusive_ptr<IO::MemoryStream>
+
 namespace IO
 {
 	///

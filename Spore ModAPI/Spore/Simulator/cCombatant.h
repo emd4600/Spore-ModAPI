@@ -24,6 +24,8 @@
 #include <Spore\Simulator\cGonzagoTimer.h>
 #include <Spore\Simulator\cSpaceToolData.h>
 
+#define cCombatantPtr intrusive_ptr<Simulator::cCombatant>
+
 using namespace eastl;
 
 namespace Simulator

@@ -25,6 +25,8 @@
 
 #include <EASTL\vector.h>
 
+#define cSimulatorSpaceGamePtr intrusive_ptr<Simulator::cSimulatorSpaceGame>
+
 namespace Simulator
 {
 	class cSimulatorSpaceGame
@@ -32,6 +34,9 @@ namespace Simulator
 		, public App::IMessageListener
 	{
 	public:
+		using Object::AddRef;
+		using Object::Release;
+		using Object::Cast;
 
 		cPlayerInventory* GetPlayerInventory();
 

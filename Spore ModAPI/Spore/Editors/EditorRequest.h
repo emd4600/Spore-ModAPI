@@ -25,6 +25,8 @@
 #include <EASTL\string.h>
 #include <EASTL\vector.h>
 
+#define EditorRequestPtr intrusive_ptr<Editors::EditorRequest>
+
 namespace Editors
 {
 	class IRefCounted {
@@ -51,12 +53,12 @@ namespace Editors
 	///
 	/// Example usage:
 	/// \code{.cpp}
-	/// intrusive_ptr<EditorRequest> request = new EditorRequest();
+	/// auto request = new EditorRequest();
 	/// request->editorID = id("CreatureEditorExtraLarge");
 	/// request->allowSporepedia = true;
 	/// request->hasSaveButton = true;
 	/// 
-	/// EditorRequest::Submit(request.get());
+	/// EditorRequest::Submit(request);
 	/// \endcode
 	class EditorRequest
 		: public IRefCounted

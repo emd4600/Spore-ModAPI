@@ -29,6 +29,8 @@
 #include <Spore\App\IMessageListener.h>
 #include <Spore\CommonIDs.h>
 
+#define cCityPtr intrusive_ptr<Simulator::cCity>
+
 namespace Simulator
 {
 	// Also used by Tribe
@@ -49,6 +51,11 @@ namespace Simulator
 		static const uint32_t TYPE = 0xEE9B2232;
 		static const uint32_t NOUN_ID = 0x18C43E8;
 
+		using Object::AddRef;
+		using Object::Release;
+		using Object::Cast;
+
+		/// Returns true if the given position is over this city.
 		bool IsAboveCity(const Vector3& position);
 		Vector3 GetWallsPosition();
 

@@ -23,6 +23,8 @@
 #include <Spore\MathUtils.h>
 #include <Spore\UTFWin\UIRenderer.h>
 
+#define IDrawablePtr intrusive_ptr<UTFWin::IDrawable>
+
 using namespace Math;
 
 namespace UTFWin

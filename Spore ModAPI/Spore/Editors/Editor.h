@@ -51,6 +51,8 @@
 /// Access the active editor object.
 #define Editor (*Editors::GetEditor())
 
+#define cEditorPtr intrusive_ptr<Editors::cEditor>
+
 // these are still placeholders
 typedef void UnkClass1;
 typedef void UnkClass2;

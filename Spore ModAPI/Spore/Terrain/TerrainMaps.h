@@ -18,6 +18,8 @@
 ****************************************************************************/
 #pragma once
 
+#define cTerrainMapPtr intrusive_ptr<Terrain::cTerrainMap>
+
 namespace Terrain
 {
 	class cTerrainMap

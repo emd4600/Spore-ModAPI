@@ -24,6 +24,8 @@
 #include <Spore\Object.h>
 #include <Spore\MathUtils.h>
 
+#define PalettePagePtr intrusive_ptr<Palettes::PalettePage>
+
 namespace Palettes
 {
 	using namespace eastl;

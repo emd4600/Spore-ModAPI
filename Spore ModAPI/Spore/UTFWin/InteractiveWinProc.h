@@ -23,6 +23,8 @@
 #include <Spore\UTFWin\Message.h>
 #include <Spore\UTFWin\Serialization.h>
 
+#define InteractiveWinProcPtr intrusive_ptr<UTFWin::InteractiveWinProc>
+
 namespace UTFWin
 {
 	class InteractiveWinProc : public IWinProc, public ILayoutElement

@@ -23,6 +23,8 @@
 #include <Spore\ArgScript\Line.h>
 #include <Spore\Internal.h>
 
+#define IParserPtr intrusive_ptr<ArgScript::IParser>
+
 namespace ArgScript
 {
 

@@ -20,6 +20,8 @@
 
 #include <Spore\Object.h>
 
+#define cGonzagoTimerPtr intrusive_ptr<Simulator::cGonzagoTimer>
+
 namespace Simulator
 {
 	/// A class for measuring time inside Simulator modes. This is the equivalent to the Clock class.

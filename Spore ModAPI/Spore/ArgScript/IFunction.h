@@ -65,6 +65,6 @@ namespace ArgScript
 		/// how to use it, i.e. the arguments required.
 		/// @param mode Whether the basic or complete description must be returned, in the DescriptionMode enum.
 		///
-		/* 0Ch */	virtual const char* GetDescription(DescriptionMode mode = kDescriptionBasic) const { return nullptr; };
+		/* 0Ch */	virtual const char* GetDescription(DescriptionMode mode = DescriptionMode::Basic) const { return nullptr; };
 	};
 }

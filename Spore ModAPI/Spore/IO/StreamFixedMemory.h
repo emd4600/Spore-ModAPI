@@ -41,6 +41,8 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 #include "IStream.h"
 
+#define FixedMemoryStreamPtr intrusive_ptr<IO::FixedMemoryStream>
+
 namespace IO
 {
 	/// Implements an memory-based stream that supports the IStream interface.

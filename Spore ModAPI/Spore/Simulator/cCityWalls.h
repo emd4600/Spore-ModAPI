@@ -22,6 +22,8 @@
 #include <Spore\Simulator\cSpatialObject.h>
 #include <Spore\Simulator\cOrnament.h>
 
+#define cCityWallsPtr intrusive_ptr<Simulator::cCityWalls>
+
 namespace Simulator
 {
 	class cCity;
@@ -33,6 +35,10 @@ namespace Simulator
 	public:
 		static const uint32_t TYPE = 0xED7FC07;
 		static const uint32_t NOUN_ID = 0x18C7C97;
+
+		using Object::AddRef;
+		using Object::Release;
+		using Object::Cast;
 
 		// 70h GetDirection ?
 

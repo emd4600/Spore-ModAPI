@@ -23,6 +23,8 @@
 #include <Spore\UTFWin\IDrawable.h>
 #include <Spore\UTFWin\Image.h>
 
+#define IButtonDrawableRadioPtr intrusive_ptr<UTFWin::IButtonDrawableRadio>
+
 namespace UTFWin
 {
 	///

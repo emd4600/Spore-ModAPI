@@ -22,6 +22,8 @@
 #include <Spore\UTFWin\UTFWinObject.h>
 #include <Spore\UTFWin\Serialization.h>
 
+#define ILayoutElementPtr intrusive_ptr<UTFWin::ILayoutElement>
+
 namespace UTFWin
 {
 	enum class AlignmentH

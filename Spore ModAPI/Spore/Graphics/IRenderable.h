@@ -19,6 +19,8 @@
 
 #pragma once
 
+#define IRenderablePtr intrusive_ptr<Graphics::IRenderable>
+
 namespace Graphics
 {
 	///

@@ -25,9 +25,9 @@
 #include <EASTL\vector_map.h>
 #include <EASTL\vector.h>
 
+#define PropertyListPtr intrusive_ptr<App::PropertyList>
 
 using namespace eastl;
-using namespace Resource;
 
 namespace App
 {
@@ -45,7 +45,7 @@ namespace App
 	/// PropertyList inherits from ResourceObject, and therefore, is uniquely identified using a ResourceKey. 
 	/// Use the class PropertyManager to get specific lists.
 	///
-	class PropertyList : public SpecialResourceObject
+	class PropertyList : public Resource::SpecialResourceObject
 	{
 
 	public:

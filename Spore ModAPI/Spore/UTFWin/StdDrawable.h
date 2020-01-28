@@ -31,6 +31,9 @@
 #include <Spore\UTFWin\Image.h>
 #include <Spore\UTFWin\OutlineFormat.h>
 
+#define IStdDrawablePtr intrusive_ptr<UTFWin::IStdDrawable>
+#define StdDrawablePtr intrusive_ptr<UTFWin::StdDrawable>
+
 namespace UTFWin
 {
 	///

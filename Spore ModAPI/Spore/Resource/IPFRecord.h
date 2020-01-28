@@ -24,6 +24,8 @@
 #include <Spore\Resource\DatabasePackedFile.h>
 #include <Spore\ResourceKey.h>
 
+#define IPFRecordPtr intrusive_ptr<Resource::IPFRecord>
+
 namespace Resource
 {
 	// class DatabasePackedFile;

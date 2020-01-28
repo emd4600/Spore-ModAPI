@@ -21,6 +21,8 @@
 
 #include <Spore\ArgScript\IParser.h>
 
+#define ISpecialBlockPtr intrusive_ptr<ArgScript::ISpecialBlock>
+
 namespace ArgScript
 {
 	///

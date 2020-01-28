@@ -23,6 +23,8 @@
 #include <EASTL\string.h>
 #include <EASTL\vector.h>
 
+#define cPlanetRecordPtr intrusive_ptr<Simulator::cPlanetRecord>
+
 namespace Simulator
 {
 	class cStarRecord;

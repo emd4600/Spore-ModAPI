@@ -131,7 +131,7 @@ namespace Resource
 
 
 	protected:
-		typedef hash_map<uint32_t, vector<pair<IResourceFactory::Pointer, uint32_t>>, ICoreAllocatorAdapter> FactoriesMap_t;
+		typedef hash_map<uint32_t, vector<pair<IResourceFactoryPtr, uint32_t>>, ICoreAllocatorAdapter> FactoriesMap_t;
 		typedef hash_map<uint32_t, vector<uint32_t>, ICoreAllocatorAdapter> TypesMap_t;
 		typedef hash_map<uint32_t, uint32_t, ICoreAllocatorAdapter> SubtypesMap_t;
 		typedef hash_map<uint32_t, string16, ICoreAllocatorAdapter> ExtensionsMap_t;

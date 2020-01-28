@@ -21,6 +21,8 @@
 #include <Spore\Object.h>
 #include <Spore\Simulator\ISimulatorSerializable.h>
 
+#define cGonzagoSimulatorPtr intrusive_ptr<Simulator::cGonzagoSimulator>
+
 namespace Simulator
 {
 	class cGonzagoSimulator
@@ -28,6 +30,9 @@ namespace Simulator
 		, public ISimulatorSerializable
 	{
 	public:
+		using Object::Release;
+		using Object::AddRef;
+
 		/* 10h */	virtual void func10h(int, int);
 		/* 14h */	virtual char16_t* GetName(int);
 		/* 18h */	virtual void func18h(int);

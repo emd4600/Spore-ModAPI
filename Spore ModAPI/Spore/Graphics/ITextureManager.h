@@ -26,6 +26,8 @@
 /// Access the active texture manager.
 #define TextureManager (*Graphics::ITextureManager::Get())
 
+#define ITextureManagerPtr intrusive_ptr<Graphics::ITextureManager>
+
 namespace Graphics
 {
 	class ITextureManager

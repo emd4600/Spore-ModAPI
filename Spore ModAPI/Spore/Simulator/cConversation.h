@@ -22,6 +22,8 @@
 #include <EASTL\map.h>
 #include <EASTL\vector.h>
 
+#define cConversationPtr intrusive_ptr<Simulator::cConversation>
+
 namespace Simulator
 {
 	using namespace eastl;

@@ -22,6 +22,8 @@
 #include <Spore\UTFWin\IDrawable.h>
 #include <Spore\UTFWin\Image.h>
 
+#define ISliderDrawablePtr intrusive_ptr<UTFWin::ISliderDrawable>
+
 namespace UTFWin
 {
 	///

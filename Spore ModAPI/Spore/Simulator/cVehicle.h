@@ -27,6 +27,8 @@
 #include <Spore\Simulator\cSpaceToolData.h>
 #include <Spore\CommonIDs.h>
 
+#define cVehiclePtr intrusive_ptr<Simulator::cVehicle>
+
 namespace Simulator
 {
 	class cCity;

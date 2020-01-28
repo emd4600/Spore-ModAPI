@@ -21,6 +21,8 @@
 #include <Spore\Simulator\cCreatureBase.h>
 #include <Spore\Simulator\cSpeciesProfile.h>
 
+#define cCreatureAnimalPtr intrusive_ptr<Simulator::cCreatureAnimal>
+
 namespace Simulator
 {
 	class cHerd;

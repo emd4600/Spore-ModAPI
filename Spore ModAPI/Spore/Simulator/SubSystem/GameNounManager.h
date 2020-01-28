@@ -164,10 +164,10 @@ namespace Simulator
 			return pObject->GetNounID() == gameNounID;
 		}, nounID);
 	}
+}
 
-	template <class T>
-	inline T* simulator_new()
-	{
-		return object_cast<T>(GameNounManager()->CreateInstance(T::NOUN_ID));
-	}
+template <class T>
+inline T* simulator_new()
+{
+	return object_cast<T>(GameNounManager.CreateInstance(T::NOUN_ID));
 }

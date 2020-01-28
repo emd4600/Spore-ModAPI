@@ -25,6 +25,8 @@
 #include <Spore\Resource\PFIndexModifiable.h>
 #include <Spore\Resource\ThreadedObject.h>
 
+#define PFRecordReadPtr intrusive_ptr<Resource::PFRecordRead>
+
 namespace Resource
 {
 	using IO::IStream;

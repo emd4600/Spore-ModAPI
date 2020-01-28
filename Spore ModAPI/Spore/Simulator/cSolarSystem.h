@@ -23,6 +23,8 @@
 #include <Spore\Simulator\cPlanet.h>
 #include <EASTL\vector.h>
 
+#define cSolarSystemPtr intrusive_ptr<Simulator::cSolarSystem>
+
 namespace Simulator
 {
 	class cSolarSystem
@@ -32,6 +34,9 @@ namespace Simulator
 	public:
 		static const uint32_t TYPE = 0x38CF949;
 		static const uint32_t NOUN_ID = 0x38CF94C;
+
+		using Object::AddRef;
+		using Object::Release;
 
 	protected:
 		/* 0Ch */	int field_C;

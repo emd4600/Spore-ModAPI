@@ -32,6 +32,8 @@
 #include <EASTL\string.h>
 #include <EASTL\map.h>
 
+#define DatabasePackedFilePtr intrusive_ptr<Resource::DatabasePackedFile>
+
 using namespace eastl;
 
 namespace Resource

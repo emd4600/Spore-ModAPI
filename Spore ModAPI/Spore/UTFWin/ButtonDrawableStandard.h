@@ -23,6 +23,8 @@
 #include <Spore\UTFWin\IDrawable.h>
 #include <Spore\UTFWin\Image.h>
 
+#define IButtonDrawableStandardPtr intrusive_ptr<UTFWin::IButtonDrawableStandard>
+
 namespace UTFWin
 {
 	///

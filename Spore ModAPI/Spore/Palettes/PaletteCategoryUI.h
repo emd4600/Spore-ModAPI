@@ -29,6 +29,8 @@
 #include <Spore\Palettes\ColorPickerUI.h>
 #include <Spore\Palettes\PalettePageUI.h>
 
+#define PaletteCategoryUIPtr intrusive_ptr<Palettes::PaletteCategoryUI>
+
 namespace Palettes
 {
 	using namespace UTFWin;

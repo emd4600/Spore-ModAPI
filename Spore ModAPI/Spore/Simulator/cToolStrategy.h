@@ -23,6 +23,8 @@
 #include <Spore\ResourceKey.h>
 #include <Spore\Simulator\cSpaceToolData.h>
 
+#define cToolStrategyPtr intrusive_ptr<Simulator::cToolStrategy>
+
 using namespace Math;
 
 namespace Simulator

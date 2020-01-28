@@ -24,6 +24,8 @@
 #include <Spore\Simulator\cBehaviorList.h>
 #include <Spore\Simulator\cGonzagoTimer.h>
 
+#define cDefaultBeamProjectilePtr intrusive_ptr<Simulator::cDefaultBeamProjectile>
+
 namespace Simulator
 {
 	class cCombatant;
@@ -37,6 +39,10 @@ namespace Simulator
 	{
 	public:
 		static const uint32_t TYPE = 0x24630CE;
+
+		using Object::AddRef;
+		using Object::Release;
+		using Object::Cast;
 
 	public:
 		/* 134h */	intrusive_ptr<cSpaceToolData> mpTool;

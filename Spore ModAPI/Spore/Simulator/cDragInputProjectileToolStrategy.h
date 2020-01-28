@@ -20,6 +20,8 @@
 
 #include <Spore\Simulator\cToolStrategy.h>
 
+#define cDragInputProjectileToolStrategyPtr intrusive_ptr<Simulator::cDragInputProjectileToolStrategy>
+
 namespace Simulator
 {
 	class cDragInputProjectileToolStrategy

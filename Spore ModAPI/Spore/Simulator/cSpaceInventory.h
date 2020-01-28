@@ -22,6 +22,8 @@
 #include <Spore\Simulator\cSpaceInventoryItem.h>
 #include <EASTL\vector.h>
 
+#define cSpaceInventoryPtr intrusive_ptr<Simulator::cSpaceInventory>
+
 namespace Simulator
 {
 	class cSpaceInventory

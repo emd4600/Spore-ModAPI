@@ -21,6 +21,8 @@
 
 #include <Spore\UTFWin\Effect.h>
 
+#define IInflateEffectPtr intrusive_ptr<UTFWin::IInflateEffect>
+
 namespace UTFWin
 {
 	class IInflateEffect : public UTFWinObject

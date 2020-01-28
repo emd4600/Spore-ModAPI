@@ -25,6 +25,8 @@
 #include <Spore\App\IMessageManager.h>
 #include <Spore\Simulator\ISimulatorSerializable.h>
 
+#define cSpaceInventoryItemPtr intrusive_ptr<Simulator::cSpaceInventoryItem>
+
 namespace Simulator
 {
 	class cSpaceInventoryItem 

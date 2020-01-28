@@ -24,6 +24,8 @@
 #include <Spore\App\IMessageListener.h>
 #include <Spore\App\cViewer.h>
 
+#define ICameraManagerPtr intrusive_ptr<App::ICameraManager>
+
 namespace App
 {
 	///

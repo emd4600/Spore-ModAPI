@@ -24,6 +24,8 @@
 #include <EASTL\vector.h>
 #include <EASTL\list.h>
 
+#define cSimulatorPlayerUFOPtr intrusive_ptr<Simulator::cSimulatorPlayerUFO>
+
 namespace Simulator
 {
 	class cSimulatorPlayerUFO

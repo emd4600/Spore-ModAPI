@@ -20,6 +20,8 @@
 
 #include <Spore\Simulator\cGameData.h>
 
+#define cStarPtr intrusive_ptr<Simulator::cStar>
+
 namespace Simulator
 {
 	class cStarRecord;

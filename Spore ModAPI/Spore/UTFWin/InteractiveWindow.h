@@ -21,6 +21,8 @@
 
 #include <Spore\UTFWin\Window.h>
 
+#define InteractiveWindowPtr intrusive_ptr<UTFWin::InteractiveWindow>
+
 namespace UTFWin
 {
 	class InteractiveWindow : public Window

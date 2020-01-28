@@ -26,6 +26,8 @@
 /// Access the active render manager.
 #define RenderManager (*Graphics::IRenderManager::Get())
 
+#define IRenderManagerPtr intrusive_ptr<Graphics::IRenderManager>
+
 namespace Graphics
 {
 	struct RenderererParams

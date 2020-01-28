@@ -21,6 +21,8 @@
 
 #include <Spore\Object.h>
 
+#define ResourceObjectPtr intrusive_ptr<Resource::ResourceObject>
+
 namespace Resource
 {
 	///

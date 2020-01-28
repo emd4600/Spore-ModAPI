@@ -24,6 +24,8 @@
 #include <Spore\Simulator\cGonzagoTimer.h>
 #include <Spore\Simulator\cPlanetRecord.h>
 
+#define cPlanetPtr intrusive_ptr<Simulator::cPlanet>
+
 namespace Simulator
 {
 	class cSimPlanetLowLOD;  //TODO PLACEHOLDER

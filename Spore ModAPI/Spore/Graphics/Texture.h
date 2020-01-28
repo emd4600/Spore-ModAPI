@@ -25,6 +25,8 @@
 #include <EASTL\intrusive_ptr.h>
 #include <EASTL\vector.h>
 
+#define TexturePtr intrusive_ptr<Graphics::Texture>
+
 using namespace eastl;
 using RenderWare::Raster;
 

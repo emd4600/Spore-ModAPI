@@ -26,6 +26,8 @@
 #include <Spore\Graphics\ILightingWorld.h>
 #include <Spore\App\PropertyList.h>
 
+#define IModelWorldPtr intrusive_ptr<Graphics::IModelWorld>
+
 namespace Graphics
 {
 	///

@@ -6,6 +6,8 @@
 #include <EASTL\string.h>
 #include <EASTL\vector.h>
 
+#define cAssetMetadataPtr intrusive_ptr<Pollinator::cAssetMetadata>
+
 namespace Pollinator
 {
 	class cAssetMetadata

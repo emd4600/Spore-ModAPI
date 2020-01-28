@@ -21,6 +21,8 @@
 
 #include <Spore\UTFWin\Effect.h>
 
+#define ICascadeEffectPtr intrusive_ptr<UTFWin::ICascadeEffect>
+
 namespace UTFWin
 {
 	class ICascadeEffect : public UTFWinObject

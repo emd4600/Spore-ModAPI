@@ -23,6 +23,8 @@
 #include <Spore\App\cViewer.h>
 #include <Spore\Input.h>
 
+#define ICameraPtr intrusive_ptr<App::ICamera>
+
 namespace App
 {
 	class ICameraManager;

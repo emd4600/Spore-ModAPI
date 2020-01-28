@@ -6,6 +6,8 @@
 /// Access the active render target manager.
 #define RenderTargetManager (*Graphics::IRenderTargetManager::Get())
 
+#define IRenderTargetManagerPtr intrusive_ptr<Graphics::IRenderTargetManager>
+
 namespace Graphics
 {
 	typedef RenderWare::Raster RenderTargetTexture;

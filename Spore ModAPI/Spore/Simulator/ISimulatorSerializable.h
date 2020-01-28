@@ -21,6 +21,8 @@
 #include <Spore\Object.h>
 #include <Spore\Simulator\Serialization.h>
 
+#define ISimulatorSerializablePtr intrusive_ptr<Simulator::ISimulatorSerializable>
+
 namespace Simulator
 {
 	class ISimulatorSerializable

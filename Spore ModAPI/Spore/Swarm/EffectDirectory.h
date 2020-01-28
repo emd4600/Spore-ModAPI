@@ -29,6 +29,8 @@
 #include <EASTL\hash_map.h>
 #include <EASTL\intrusive_ptr.h>
 
+#define EffectDirectoryPtr intrusive_ptr<Swarm::EffectDirectory>
+
 using namespace eastl;
 
 namespace Swarm

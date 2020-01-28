@@ -25,6 +25,8 @@
 #include <Spore\Simulator\cGonzagoTimer.h>
 #include <EASTL\functional.h>
 
+#define IMessageListenerPtr intrusive_ptr<App::IMessageListener>
+
 namespace App
 {
 	///

@@ -24,6 +24,8 @@
 #include <Spore\Simulator\cBehaviorList.h>
 #include <Spore\Simulator\cOrnamentBase.h>
 
+#define cOrnamentPtr intrusive_ptr<Simulator::cOrnament>
+
 namespace Simulator
 {
 	class cOrnament
@@ -36,8 +38,12 @@ namespace Simulator
 	public:
 		static const uint32_t TYPE = 0x175CDC9;
 		static const uint32_t NOUN_ID = 0x18C88E4;
+
+		using Object::AddRef;
+		using Object::Release;
+		using Object::Cast;
 		
-	protected:
+	public:
 		/* 228h */	int mStyle;
 		/* 22Ch */	uint32_t mModelID;
 		/* 230h */	bool field_230;  // true

@@ -22,6 +22,8 @@
 #include <Spore\Simulator\cOrnamentBase.h>
 #include <Spore\Simulator\cCombatant.h>
 
+#define cInteractiveOrnamentPtr intrusive_ptr<Simulator::cInteractiveOrnament>
+
 namespace Simulator
 {
 	class cInteractiveOrnament

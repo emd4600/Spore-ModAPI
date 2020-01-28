@@ -25,6 +25,8 @@
 #include <EASTL\string.h>
 #include <EASTL\vector.h>
 
+#define cStarRecordPtr intrusive_ptr<Simulator::cStarRecord>
+
 namespace Simulator
 {
 	typedef int TimeStamp[9];

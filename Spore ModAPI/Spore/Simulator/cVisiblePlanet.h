@@ -21,6 +21,8 @@
 #include <Spore\Simulator\cSpatialObject.h>
 #include <Spore\Simulator\cGameData.h>
 
+#define cVisiblePlanetPtr intrusive_ptr<Simulator::cVisiblePlanet>
+
 namespace Simulator
 {
 	class cPlanet;
@@ -33,7 +35,11 @@ namespace Simulator
 		static const uint32_t TYPE = 0x44462A6;
 		static const uint32_t NOUN_ID = 0x44462A6;
 
-	protected:
+		using Object::Cast;
+		using Object::AddRef;
+		using Object::Release;
+
+	public:
 		/* 108h */	intrusive_ptr<cPlanet> mpPlanet;
 	};
 

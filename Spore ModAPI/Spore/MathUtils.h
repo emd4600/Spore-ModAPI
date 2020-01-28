@@ -204,7 +204,7 @@ namespace Math
 	};
 
 	/// A vector of 4 float values (x, y, z, w) representing a quaternion rotation; same as a Vector4.
-	/// Hasa value of (0, 0, 0, 1) by default.
+	/// Has a value of (0, 0, 0, 1) by default.
 	struct Quaternion : Vector4
 	{
 		Quaternion(float x, float y, float z, float w);

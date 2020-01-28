@@ -25,6 +25,8 @@
 /// Access the active lighting manager.
 #define LightingManager (*Graphics::ILightingManager::Get())
 
+#define ILightingManagerPtr intrusive_ptr<Graphics::ILightingManager>
+
 namespace Graphics
 {
 	///

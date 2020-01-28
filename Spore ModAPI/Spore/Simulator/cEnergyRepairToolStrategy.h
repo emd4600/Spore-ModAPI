@@ -20,6 +20,8 @@
 
 #include <Spore\Simulator\cRepairToolStrategy.h>
 
+#define cEnergyRepairToolStrategyPtr intrusive_ptr<Simulator::cEnergyRepairToolStrategy>
+
 namespace Simulator
 {
 	class cEnergyRepairToolStrategy

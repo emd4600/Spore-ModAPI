@@ -21,6 +21,8 @@
 #include <Spore\Simulator\cGameData.h>
 #include <Spore\Simulator\cSpatialObject.h>
 
+#define cCityTerritoryPtr intrusive_ptr<Simulator::cCityTerritory>
+
 namespace Simulator
 {
 	class cCityTerritory
@@ -30,6 +32,10 @@ namespace Simulator
 	public:
 		static const uint32_t TYPE = 0x2450023;
 		static const uint32_t NOUN_ID = 0x244FB08;
+
+		using Object::AddRef;
+		using Object::Release;
+		using Object::Cast;
 
 	public:
 		/* 108h */	bool field_108;  // true

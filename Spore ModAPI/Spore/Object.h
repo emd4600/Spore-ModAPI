@@ -25,6 +25,9 @@
 
 #include <cstddef>
 
+#define ObjectPtr intrusive_ptr<Object>
+#define DefaultRefCountedPtr intrusive_ptr<DefaultRefCounted>
+
 #define CLASS_CAST(c) if (type == c::TYPE) return (c*)this
 #define PARENT_CAST(c) if (void* temp = c::Cast(type)) return temp;
 

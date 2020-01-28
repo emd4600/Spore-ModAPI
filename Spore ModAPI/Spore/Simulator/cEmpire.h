@@ -30,6 +30,8 @@
 #include <EASTL\vector.h>
 #include <EASTL\list.h>
 
+#define cEmpirePtr intrusive_ptr<Simulator::cEmpire>
+
 namespace Simulator
 {
 	enum Archetypes
@@ -65,6 +67,7 @@ namespace Simulator
 
 		using Object::AddRef;
 		using Object::Release;
+		using Object::Cast;
 
 		cStarRecord* GetHomeStarRecord();
 

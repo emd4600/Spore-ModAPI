@@ -20,6 +20,8 @@
 
 #include <Spore\Simulator\cToolStrategy.h>
 
+#define cGetOutOfUFOToolStrategyPtr intrusive_ptr<Simulator::cGetOutOfUFOToolStrategy>
+
 namespace Simulator
 {
 	class cGetOutOfUFOToolStrategy

@@ -20,6 +20,8 @@
 
 #include <Spore\Simulator\cToolStrategy.h>
 
+#define cToggleToolStrategyPtr intrusive_ptr<Simulator::cToggleToolStrategy>
+
 namespace Simulator
 {
 	class cToggleToolStrategy

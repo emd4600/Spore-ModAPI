@@ -23,6 +23,8 @@
 #include <Spore\Simulator\ISimulatorSerializable.h>
 #include <EASTL\intrusive_list.h>
 
+#define cGameDataPtr intrusive_ptr<Simulator::cGameData>
+
 namespace Simulator
 {
 

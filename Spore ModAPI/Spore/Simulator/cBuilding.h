@@ -26,6 +26,8 @@
 
 #include <EASTL\initializer_list.h>
 
+#define cBuildingPtr intrusive_ptr<Simulator::cBuilding>
+
 namespace Simulator
 {
 	class cCity;
@@ -43,7 +45,11 @@ namespace Simulator
 			int field_0[11];
 		};
 
-	protected:
+		using Object::AddRef;
+		using Object::Release;
+		using Object::Cast;
+
+	public:
 
 		/* 1ECh */	int field_1EC;
 		/* 1F0h */	intrusive_ptr<cCity> mpOwnerCity;

@@ -43,6 +43,7 @@ public:
 
 	const Vector3& GetOffset() const;
 	Transform& SetOffset(const Vector3& value);
+	Transform& SetOffset(float x, float y, float z);
 
 	float GetScale() const;
 	Transform& SetScale(float value);
@@ -81,6 +82,13 @@ inline const Vector3& Transform::GetOffset() const
 inline Transform& Transform::SetOffset(const Vector3& value)
 {
 	mOffset = value;
+	mnFlags |= kTransformFlagOffset;
+
+	return *this;
+}
+inline Transform& Transform::SetOffset(float x, float y, float z)
+{
+	mOffset = {x, y, z};
 	mnFlags |= kTransformFlagOffset;
 
 	return *this;

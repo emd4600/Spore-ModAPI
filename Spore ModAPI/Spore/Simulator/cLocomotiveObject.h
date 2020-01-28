@@ -21,6 +21,8 @@
 #include <Spore\Simulator\cSpatialObject.h>
 #include <EASTL\fixed_vector.h>
 
+#define cLocomotiveObjectPtr intrusive_ptr<Simulator::cLocomotiveObject>
+
 namespace Simulator
 {
 	struct cLocomotionRequest 

@@ -23,6 +23,8 @@
 #include <Spore\Simulator\cProjectile.h>
 #include <Spore\Simulator\cGonzagoTimer.h>
 
+#define cDefaultAoEAreaPtr intrusive_ptr<Simulator::cDefaultAoEArea>
+
 namespace Simulator
 {
 	class cSpaceToolData;
@@ -34,6 +36,10 @@ namespace Simulator
 	{
 	public:
 		static const uint32_t TYPE = 0x4167194;
+
+		using Object::AddRef;
+		using Object::Release;
+		using Object::Cast;
 
 	protected:
 		/* 11Ch */	intrusive_ptr<cSpaceToolData> mpTool;

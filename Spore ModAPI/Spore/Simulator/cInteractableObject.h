@@ -22,6 +22,8 @@
 #include <Spore\Simulator\cSpatialObject.h>
 #include <Spore\LocalizedString.h>
 
+#define cInteractableObjectPtr intrusive_ptr<Simulator::cInteractableObject>
+
 namespace Simulator
 {
 	class cCreatureBase;
@@ -37,6 +39,11 @@ namespace Simulator
 		: public cGameData
 		, public cSpatialObject
 	{
+	public:
+		using Object::AddRef;
+		using Object::Release;
+		using Object::Cast;
+
 	public:
 		/* 108h */	intrusive_ptr<cCreatureBase> mpWhoIsInteractingWithMe;
 		/* 10Ch */	int field_10C;

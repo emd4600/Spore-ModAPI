@@ -20,6 +20,8 @@
 
 #include <Spore\Simulator\cToolStrategy.h>
 
+#define cGlobalMindEraseToolStrategyPtr intrusive_ptr<Simulator::cGlobalMindEraseToolStrategy>
+
 namespace Simulator
 {
 	class cGlobalMindEraseToolStrategy

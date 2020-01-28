@@ -27,6 +27,8 @@
 #include <Spore\App\IMessageListener.h>
 #include <EASTL\list.h>
 
+#define cGameDataUFOPtr intrusive_ptr<Simulator::cGameDataUFO>
+
 namespace Simulator
 {
 	class cGameDataUFO
@@ -39,6 +41,10 @@ namespace Simulator
 	public:
 		static const uint32_t TYPE = 0xB033B403;
 		static const uint32_t NOUN_ID = 0x18EBADC;
+
+		using Object::AddRef;
+		using Object::Release;
+		using Object::Cast;
 
 		float ChangeEnergy(float delta);
 

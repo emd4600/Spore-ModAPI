@@ -23,6 +23,8 @@
 #include <Spore\UTFWin\ILayoutElement.h>
 #include <EASTL\string.h>
 
+#define SporeTooltipWinProcPtr intrusive_ptr<UTFWin::SporeTooltipWinProc>
+
 namespace UTFWin
 {
 	using namespace eastl;

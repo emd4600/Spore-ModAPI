@@ -24,6 +24,8 @@
 #include <Spore\Object.h>
 #include <Spore\Palettes\PaletteCategory.h>
 
+#define PaletteMainPtr intrusive_ptr<Palettes::PaletteMain>
+
 namespace Palettes
 {
 	// sub_5CB180 generates the category icons

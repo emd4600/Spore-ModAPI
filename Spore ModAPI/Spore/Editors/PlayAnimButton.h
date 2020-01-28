@@ -25,11 +25,12 @@
 
 #include <EASTL\vector.h>
 
+#define PlayAnimButtonPtr intrusive_ptr<Editors::PlayAnimButton>
+
 namespace Editors
 {
-	using namespace eastl;
-
-	class PlayAnimButton : public DefaultRefCounted
+	class PlayAnimButton 
+		: public DefaultRefCounted
 	{
 	public:
 		// Members in these classes are marked as public because they act more as just struct/containers...

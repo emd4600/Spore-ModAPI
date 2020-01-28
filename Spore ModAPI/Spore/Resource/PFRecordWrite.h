@@ -24,6 +24,8 @@
 #include <Spore\IO\FileStream.h>
 #include <Spore\IO\StreamMemory.h>
 
+#define PFRecordWritePtr intrusive_ptr<Resource::PFRecordWrite>
+
 namespace Resource
 {
 	using IO::IStream;

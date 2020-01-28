@@ -22,6 +22,8 @@
 #include <Spore\MathUtils.h>
 #include <EASTL\string.h>
 
+#define cCelestialBodyPtr intrusive_ptr<Simulator::cCelestialBody>
+
 namespace Simulator
 {
 	class cCelestialBody
@@ -31,7 +33,7 @@ namespace Simulator
 		static const uint32_t TYPE = 0x38CFB68;
 		static const uint32_t NOUN_ID = 0x38CFB6B;
 
-	protected:
+	public:
 		/* 34h */	int mType;
 		/* 38h */	bool mbOrbit;  // true
 		/* 3Ch */	char _padding_3C[0x64];

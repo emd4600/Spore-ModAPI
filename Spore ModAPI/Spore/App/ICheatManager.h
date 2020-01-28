@@ -29,6 +29,8 @@
 /// Access to the active cheat manager.
 #define CheatManager (*App::ICheatManager::Get())
 
+#define ICheatManagerPtr intrusive_ptr<App::ICheatManager>
+
 using namespace eastl;
 
 namespace App

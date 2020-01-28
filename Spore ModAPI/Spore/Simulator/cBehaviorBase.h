@@ -22,6 +22,8 @@
 #include <EASTL\vector.h>
 #include <EASTL\map.h>
 
+#define cBehaviorBasePtr intrusive_ptr<Simulator::cBehaviorBase>
+
 using namespace eastl;
 
 namespace Simulator
@@ -32,6 +34,10 @@ namespace Simulator
 	{
 	public:
 		static const uint32_t TYPE = 0x1141F86;
+
+		using Object::AddRef;
+		using Object::Release;
+		using Object::Cast;
 
 	protected:
 		/* 08h */	int mnRefCount;

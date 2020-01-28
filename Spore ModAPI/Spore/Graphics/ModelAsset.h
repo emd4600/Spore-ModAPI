@@ -27,6 +27,9 @@
 #include <Spore\MathUtils.h>
 #include <Spore\Transform.h>
 
+#define ModelPtr intrusive_ptr<Graphics::Model>
+#define ModelAssetPtr intrusive_ptr<Graphics::ModelAsset>
+
 using namespace eastl;
 
 namespace Graphics

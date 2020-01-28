@@ -22,6 +22,8 @@
 #include <Spore\Internal.h>
 #include <Spore\App\PropertyList.h>
 
+#define DirectPropertyListPtr intrusive_ptr<App::DirectPropertyList>
+
 namespace App
 {
 

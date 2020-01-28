@@ -25,6 +25,8 @@
 
 #include <EASTL\intrusive_ptr.h>
 
+#define IResourceFactoryPtr intrusive_ptr<Resource::IResourceFactory>
+
 using namespace eastl;
 
 namespace Resource
@@ -37,7 +39,6 @@ namespace Resource
 	class IResourceFactory : public ThreadedObject
 	{
 	public:
-		typedef intrusive_ptr<IResourceFactory> Pointer;
 
 		/* 10h */	virtual bool Initialize() = 0;
 		/* 14h */	virtual bool Dispose() = 0;

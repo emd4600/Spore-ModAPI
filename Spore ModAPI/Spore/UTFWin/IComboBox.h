@@ -4,6 +4,8 @@
 #include <Spore\UTFWin\ScrollBarDrawable.h>
 #include <EASTL\string.h>
 
+#define IComboBoxPtr intrusive_ptr<UTFWin::IComboBox>
+
 namespace UTFWin
 {
 	enum ComboBoxFlags

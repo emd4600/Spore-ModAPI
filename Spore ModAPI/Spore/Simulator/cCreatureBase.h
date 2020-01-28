@@ -31,6 +31,8 @@
 #include <EASTL\list.h>
 #include <EASTL\bitset.h>
 
+#define cCreatureBasePtr intrusive_ptr<Simulator::cCreatureBase>
+
 namespace Simulator
 {
 	

@@ -23,6 +23,8 @@
 #include <Spore\Object.h>
 #include <Spore\Internal.h>
 
+#define PaletteItemPtr intrusive_ptr<Palettes::PaletteItem>
+
 namespace Palettes
 {
 	using namespace eastl;

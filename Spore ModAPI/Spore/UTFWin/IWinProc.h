@@ -27,6 +27,8 @@
 #include <EASTL\initializer_list.h>
 #include <EASTL\functional.h>
 
+#define IWinProcPtr intrusive_ptr<UTFWin::IWinProc>
+
 namespace UTFWin
 {
 

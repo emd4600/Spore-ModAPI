@@ -26,6 +26,8 @@
 #include <Spore\UTFWin\IWinProc.h>
 #include <Spore\Object.h>
 
+#define PalettePageUIPtr intrusive_ptr<Palettes::PalettePageUI>
+
 namespace Palettes
 {
 	using namespace eastl;
