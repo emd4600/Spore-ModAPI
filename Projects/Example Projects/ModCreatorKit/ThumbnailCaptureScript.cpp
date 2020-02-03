@@ -115,15 +115,8 @@ Vector3 ThumbnailCaptureScript::CalculateOffset(const Graphics::Model* model)
 	else {
 		bbox = model->mpWorld->GetBoundingBox(model);
 	}
-	float lx = bbox.max.x + bbox.min.x;
-	float ly = bbox.max.y + bbox.min.y;
-	float lz = bbox.max.z + bbox.min.z;
 
-	Vector3 result;
-	result.x = -(lx / 2);
-	result.y = -(ly / 2);
-	result.z = -(lz / 2);
-	return result;
+	return -(bbox.upper + bbox.lower) / 2;
 }
 
 void ThumbnailCaptureScript::CaptureImage() {
@@ -142,7 +135,7 @@ void ThumbnailCaptureScript::CaptureImage() {
 		rect.bottom = viewport.Y + viewport.Height;
 
 		string16 path = mFolderPath;
-		path.append_sprintf((const char16_t*)L"0x%x.png", mpItemViewer->mFileName.instanceID);
+		path.append_sprintf(u"0x%x.png", mpItemViewer->mFileName.instanceID);
 
 		hr = D3DXSaveSurfaceToFile((LPCWSTR)path.c_str(), D3DXIMAGE_FILEFORMAT::D3DXIFF_PNG,
 			surface, NULL, &rect);

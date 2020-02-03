@@ -10,9 +10,6 @@
 // To use min and max
 #include <algorithm>
 
-#define TO_DEGREES(angle) angle * 180.0f / 3.14159265f
-#define TO_RADIANS(angle) angle * 3.14159265f / 180.0f
-
 ColorWheelSwatchUI::ColorWheelSwatchUI()
 	: mPanelLayout()
 	, mpWheelWindow()
@@ -24,18 +21,14 @@ ColorWheelSwatchUI::ColorWheelSwatchUI()
 	, mIsSelectingColor(false)
 	, mMouseWheelRange(0)
 	, mHsvColor(0, 0, 1.0f)
-	, mpListener()
 {
 }
 
 ColorWheelSwatchUI::~ColorWheelSwatchUI() {
-	if (mpListener) {
-		MessageManager.RemoveListener(mpListener.get(), Editors::ColorChangedMessage::ID);
-	}
 }
 
 void* ColorWheelSwatchUI::Cast(uint32_t type) const {
-	OBJECT_CAST(ColorWheelSwatchUI);
+	CLASS_CAST(ColorWheelSwatchUI);
 	return ColorSwatchUI::Cast(type);
 }
 
@@ -46,10 +39,10 @@ void ColorWheelSwatchUI::TextValueChanged(const Message& msg)
 	if (text[0] == L'#')
 	{
 		Color intColor = wcstoul((wchar_t*)&text[1], nullptr, 16);
-		if (intColor != ColorRGB::ToIntColor(mColor))
+		if (intColor != mColor.ToIntColor())
 		{
 			ColorRGB color(intColor);
-			mColor.SetValue(color.r, color.g, color.b);
+			mColor = ColorRGB(color);
 			mHsvColor = Math::RGBtoHSV(color);
 
 			//TODO when should we send a spore message?
@@ -75,7 +68,7 @@ void ColorWheelSwatchUI::WheelValueChanged(const Message& msg)
 	// float angle = acosf((baseVector.x * mouseVector.x + baseVector.y * mouseVector.y) / 
 	//	(sqrtf(baseVector.x*baseVector.x) * sqrtf(mouseVector.x*mouseVector.x)));
 
-	float angle = TO_DEGREES(atan2f(mouseVector.y, mouseVector.x));
+	float angle = Math::ToDegrees(atan2f(mouseVector.y, mouseVector.x));
 
 	if (angle < 0)  angle += 360.0f;
 
@@ -92,7 +85,7 @@ void ColorWheelSwatchUI::SliderValueChanged(const Message& msg)
 {
 	mHsvColor.v = 1.0f - msg.Mouse.mouseX / mpValueWindow->GetArea().GetWidth();
 
-	mpValueWindow->SetShadeColor(ColorRGBA::ToIntColor({ mHsvColor.v, mHsvColor.v, mHsvColor.v, 1.0f }));
+	mpValueWindow->SetShadeColor(ColorRGBA(mHsvColor.v, mHsvColor.v, mHsvColor.v, 1.0f).ToIntColor());
 	ColorChanged(false, false);
 }
 
@@ -329,13 +322,13 @@ void ColorWheelSwatchUI::Load(App::PropertyList* pConfigProp, union Math::Rectan
 
 void ColorWheelSwatchUI::UpdateTints(bool updateText)
 {
-	Color intColor = ColorRGBA::ToIntColor({ mColor.r, mColor.g, mColor.b, 1.0f });
+	Color intColor = ColorRGBA(mColor.r, mColor.g, mColor.b, 1.0f).ToIntColor();
 
 	mpPreviewWindow->SetShadeColor(intColor);
-	mpWheelWindow->SetShadeColor(ColorRGBA::ToIntColor({ mHsvColor.v, mHsvColor.v, mHsvColor.v, 1.0f }));
+	mpWheelWindow->SetShadeColor(ColorRGBA(mHsvColor.v, mHsvColor.v, mHsvColor.v, 1.0f).ToIntColor());
 
 	ColorRGB valueTint = Math::HSVtoRGB({ mHsvColor.h, mHsvColor.s, 1.0f });
-	mpValueWindow->SetShadeColor(ColorRGBA::ToIntColor({ valueTint.r, valueTint.g, valueTint.b, 1.0f }));
+	mpValueWindow->SetShadeColor(ColorRGBA(valueTint.r, valueTint.g, valueTint.b, 1.0f).ToIntColor());
 
 	if (updateText) SetTextColor(intColor);
 }
@@ -353,7 +346,7 @@ void ColorWheelSwatchUI::ColorChanged(bool sendSporeMessage)
 {
 	if (mpExpansionObject)
 	{
-		if (ColorRGB::ToIntColor(mColor) == ColorRGB::ToIntColor(mOriginalColor)) return;
+		if (mColor.ToIntColor() == mOriginalColor.ToIntColor()) return;
 
 		// We know it's the color picker, we cast it to get information
 		auto chooser = object_cast<ColorPickerUI>(mpExpansionObject.get());
@@ -364,7 +357,7 @@ void ColorWheelSwatchUI::ColorChanged(bool sendSporeMessage)
 		if (sendSporeMessage)
 		{
 			Editors::ColorChangedMessage msg(
-				ColorRGB::ToIntColor(mColor), mpExpansionObject.get(), chooser->mRegionFilter, mIsDefaultColor, mColorIndex);
+				mColor.ToIntColor(), mpExpansionObject.get(), chooser->mRegionFilter, mIsDefaultColor, mColorIndex);
 			MessageManager.PostMSG(msg.id, &msg);
 		}
 		else {
@@ -429,15 +422,13 @@ void ColorWheelSwatchUI::Update(int msTime, bool arg_4)
 			mArea.y2 + value));
 
 		// Play with opacity
-		mpMainWindow->SetShadeColor(ColorRGBA::ToIntColor(
-			ColorRGBA(1.0f, 1.0f, 1.0f, 1.0f - field_18 * 2.0f)));
+		mpMainWindow->SetShadeColor(ColorRGBA(1.0f, 1.0f, 1.0f, 1.0f - field_18 * 2.0f).ToIntColor());
 	}
 
 	if (mpFrameGlowWindow != nullptr)
 	{
-		mpFrameGlowWindow->SetShadeColor(ColorRGBA::ToIntColor(
-			ColorRGBA(1.0f, 1.0f, 1.0f,
-				mMouseSelectTime > 0 ? (mMouseSelectTime / colorpickerSelectMaxTime) : (mMouseDownTime / colorpickerMouseDownMaxTime))));
+		mpFrameGlowWindow->SetShadeColor(ColorRGBA(1.0f, 1.0f, 1.0f,
+				mMouseSelectTime > 0 ? (mMouseSelectTime / colorpickerSelectMaxTime) : (mMouseDownTime / colorpickerMouseDownMaxTime)).ToIntColor());
 	}
 
 	bool isDoubleClick = false;
@@ -464,7 +455,7 @@ void ColorWheelSwatchUI::Update(int msTime, bool arg_4)
 				Audio::PlayAudio(0xA9E589E1);
 
 				UpdateCursorPositions();
-				SetTextColor(ColorRGBA::ToIntColor(ColorRGBA(mColor.r, mColor.g, mColor.b, 1.0f)));
+				SetTextColor(ColorRGBA(mColor.r, mColor.g, mColor.b, 1.0f).ToIntColor());
 				mpExpansionWindow->SetFlag(kWinFlagVisible, true);
 				mpExpansionWindow->GetParent()->BringToFront(mpExpansionWindow.get());
 
@@ -521,8 +512,8 @@ void ColorWheelSwatchUI::UpdateCursorPositions()
 	auto wheelWindowArea = mpWheelWindow->GetArea();
 	float radius = mHsvColor.s * wheelWindowArea.GetWidth() / 2.0f;
 
-	point.x = wheelWindowArea.x1 + wheelWindowArea.GetWidth() / 2.0f + radius * cosf(TO_RADIANS(mHsvColor.h));
-	point.y = wheelWindowArea.y1 + wheelWindowArea.GetHeight() / 2.0f - radius * sinf(TO_RADIANS(mHsvColor.h));
+	point.x = wheelWindowArea.x1 + wheelWindowArea.GetWidth() / 2.0f + radius * cosf(Math::ToRadians(mHsvColor.h));
+	point.y = wheelWindowArea.y1 + wheelWindowArea.GetHeight() / 2.0f - radius * sinf(Math::ToRadians(mHsvColor.h));
 	halfWidth = wheelCursorArea.GetWidth() / 2.0f;
 	halfHeight = wheelCursorArea.GetHeight() / 2.0f;
 
@@ -578,7 +569,7 @@ void ColorWheelSwatchUI::SetPanelArea() {
 void ColorWheelSwatchUI::SetTextColor(Color intColor)
 {
 	// if the string isn't initialized sprintf gives errors
-	eastl::string16 str = u"";
+	string16 str = u"";
 	str.sprintf(u"#%06X", intColor.value & 0xFFFFFF);
 
 	mpTextField->SetText(str.c_str(), 0);

@@ -108,10 +108,10 @@ bool EffectEditorMode::OnEnter()
 
 	DebugInformation* pDebugInformation = nullptr;
 	Resource::DBPF* pDBPF = nullptr;
-	ResourceKey name = ResourceKey(Hash::FNV("main"), 0xEA5118B0, Hash::FNV("_SporeModder_EffectEditor"));
+	ResourceKey name = { id("main"), TypeIDs::effdir, id("_SporeModder_EffectEditor") };
 	string16 path;
 
-	pDBPF = Resource::IResourceManager::Get()->GetDBPF(name);
+	pDBPF = ResourceManager.GetDBPF(name);
 
 	if (Debugging::Get()->GetDebugInformation(pDBPF, &pDebugInformation)
 		&& pDebugInformation->GetFilePath(name, &path))
@@ -124,7 +124,7 @@ bool EffectEditorMode::OnEnter()
 	}
 
 	// Load camera and effect
-	CameraManager.SetActiveCameraByID(Hash::FNV("EffectEditorCamera"));
+	CameraManager.SetActiveCameraByID(id("EffectEditorCamera"));
 	CameraManager.GetViewer()->SetBackgroundColor(ColorRGBA(0.7f, 0.7f, 0.7f, 1.0f));
 
 	CreateEffect();

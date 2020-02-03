@@ -2,7 +2,6 @@
 
 #include <Spore\BasicIncludes.h>
 #include <Spore\Palettes\ColorSwatchUI.h>
-#include "EnhancedColorListener.h"
 
 using namespace Palettes;
 using namespace UTFWin;
@@ -70,22 +69,20 @@ protected:
 	UILayout mPanelLayout;
 
 	// The wheel itself. Used to select hue and saturation.
-	intrusive_ptr<IWindow> mpWheelWindow;
+	IWindowPtr mpWheelWindow;
 	// A window that acts as a slider to select the value (brightness)
-	intrusive_ptr<IWindow> mpValueWindow;
+	IWindowPtr mpValueWindow;
 
 	// A small window that is positioned over the wheel window, and acts as a cursor
-	intrusive_ptr<IWindow> mpWheelCursor;
+	IWindowPtr mpWheelCursor;
 	// A small window that is positioned over the value window, and acts as a cursor
-	intrusive_ptr<IWindow> mpValueCursor;
+	IWindowPtr mpValueCursor;
 
 	// The panel that shows the selected color for preview
-	intrusive_ptr<IWindow> mpPreviewWindow;
+	IWindowPtr mpPreviewWindow;
 
 	// The text field that shows the web hex color
-	intrusive_ptr<ITextEdit> mpTextField;
-
-	intrusive_ptr<EnhancedColorListener> mpListener;
+	ITextEditPtr mpTextField;
 
 	// The currently selected color
 	ColorHSV mHsvColor;
