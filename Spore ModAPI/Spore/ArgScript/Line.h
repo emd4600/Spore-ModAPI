@@ -63,13 +63,13 @@ namespace ArgScript
 		static const size_t kMaxInt = 0x7FFFFFFF;
 
 		Line();
-		Line(const char* pText);
+		Line(const char* text);
 
 		///
 		/// Separates the given text into the arguments and options that form the line.
 		/// By default, the keyword is considered as an argument; use the RemoveKeyword() method to change it.
 		///
-		void FromString(const char* pText);
+		void FromString(const char* text);
 
 		///
 		/// Removes the keyword (the first argument) from this line.
@@ -80,16 +80,22 @@ namespace ArgScript
 		/// Gets the specified number of arguments from this line.
 		/// This does not include the keyword.
 		/// If the number of arguments is not equal to the one required, an exception will be thrown.
-		/// @param nCount The number of arguments this line must have.
+		/// @param count The number of arguments this line must have.
 		/// @returns An array of char* strings.
 		///
-		Arguments GetArguments(size_t nCount) const;
+		Arguments GetArguments(size_t count) const;
 
 		///
 		/// Gets the arguments from this line, which must be in the specified range.
 		/// This does not include the keyword.
 		/// If the number of arguments is less than nMin, or greater than nMax, an exception will be thrown.
 		/// The number of arguments is returned in the parameter dstCount.
+		/// Usage example:
+		/// ~~~~{.cpp}
+		/// size_t count;
+		/// auto args = line.GetArgumentsRange(&count, 1, kMaxInt);
+		/// ~~~~
+		///
 		/// @param dstCount The destination size_t where the number of arguments got will be written, or nullptr.
 		/// @param nMin The minimum number of arguments this line can have.
 		/// @param nMax The maximum number of arguments this line can have.
@@ -104,9 +110,9 @@ namespace ArgScript
 
 		///
 		/// Gets the argument at the given index.
-		/// @param nIndex The index of the argument.
+		/// @param index The index of the argument.
 		///
-		const char* GetArgumentAt(size_t nIndex) const;
+		const char* GetArgumentAt(size_t index) const;
 
 
 		///
@@ -114,11 +120,11 @@ namespace ArgScript
 		/// Options are optional values, which are set prefixing the option name with a '-', for example '-scale 2'.
 		/// This does not include the keyword.
 		/// If the number of arguments is not equal to the one required, an exception will be thrown.
-		/// @param pOptionName The name of the option. In the line, it must be prefixed with a '-'.
-		/// @param nCount The number of arguments this line must have.
+		/// @param optionName The name of the option. In the line, it must be prefixed with a '-'.
+		/// @param count The number of arguments this line must have.
 		/// @returns An array of char* strings.
 		///
-		Arguments GetOption(const char* pOptionName, size_t nCount) const;
+		Arguments GetOption(const char* optionName, size_t count) const;
 
 		///
 		/// Gets the arguments from an option with the given name, which must be in the specified range.
@@ -126,39 +132,45 @@ namespace ArgScript
 		/// This does not include the keyword.
 		/// If the number of arguments is less than nMin, or greater than nMax, an exception will be thrown.
 		/// The number of arguments is returned in the parameter dstCount.
-		/// @param pOptionName The name of the option. In the line, it must be prefixed with a '-'.
+		/// Usage example:
+		/// ~~~~{.cpp}
+		/// size_t count;
+		/// auto args = line.GetOptionRange("option", &count, 1, kMaxInt);
+		/// ~~~~
+		///
+		/// @param optionName The name of the option. In the line, it must be prefixed with a '-'.
 		/// @param dstCount The destination size_t where the number of arguments got will be written, or nullptr.
 		/// @param nMin The minimum number of arguments this line can have.
 		/// @param nMax The maximum number of arguments this line can have.
 		/// @returns An array of char* strings.
 		///
-		Arguments GetOptionRange(const char* pOptionName, size_t* dstCount, size_t nMin, size_t nMax = kMaxInt) const;
+		Arguments GetOptionRange(const char* optionName, size_t* dstCount, size_t nMin, size_t nMax = kMaxInt) const;
 
 		///
 		/// Tells whether the line contains the given flag or not. A flag is an option with no values.
-		/// @param pFlagName The name of the flag. In the line, it must be prefixed with a '-'.
+		/// @param flagName The name of the flag. In the line, it must be prefixed with a '-'.
 		///
-		bool HasFlag(const char* pFlagName) const;
+		bool HasFlag(const char* flagName) const;
 
 
 		///
 		/// Gets the integer value that corresponds to the given string in the specified enum.
 		/// If the enum does not have any value assigned to that string, an exception will be thrown.
-		/// @param pValueString The string value of the enumeration.
+		/// @param valueString The string value of the enumeration.
 		/// @param pEnum An array of pair<const char*, int> objects where the values will be checked.
 		/// @returns The integer value assigned to that enumeration.
 		///
-		static int GetEnum(const char* pValueString, const EnumValue* pEnum);
+		static int GetEnum(const char* valueString, const EnumValue* pEnum);
 
 		///
 		/// Gets the integer value that corresponds to the given string in the specified enum.
 		/// This method does not throw an exception if the enumeration does not have any value assigned to that string.
-		/// @param pValueString The string value of the enumeration.
+		/// @param valueString The string value of the enumeration.
 		/// @param pEnum An array of pair<const char*, int> objects where the values will be checked.
 		/// @param dst The integer where the value will be set. If no value is found, it won't be modified.
 		/// @returns Whether a value was found or not.
 		///
-		static bool GetOptionalEnum(const char* pValueString, const EnumValue* pEnum, int& dst);
+		static bool GetOptionalEnum(const char* valueString, const EnumValue* pEnum, int& dst);
 
 
 	protected:

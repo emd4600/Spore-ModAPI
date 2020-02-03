@@ -30,7 +30,7 @@ namespace Simulator
 	auto_METHOD(cPlanetModel, float, GetHeightAt, const Vector3& position, position);
 	auto_METHOD_const_(cPlanetModel, float, GetGravity);
 	
-	RedirectMethod_structret_const(cPlanetModel, GetOrientation, Vector4,
+	RedirectMethod_structret_const(cPlanetModel, GetOrientation, Quaternion,
 		Args(const Vector3& position, const Vector3& direction), Args(position, direction));
 }
 #endif

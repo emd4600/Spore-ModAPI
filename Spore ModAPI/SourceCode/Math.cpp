@@ -27,89 +27,6 @@
 
 namespace Math
 {
-	Vector2::Vector2(const Vector2& other) : Vector2(other.x, other.y) {}
-	Vector3::Vector3(const Vector3& other) : Vector3(other.x, other.y, other.z) {}
-	Vector4::Vector4(const Vector4& other) : Vector4(other.x, other.y, other.z, other.w) {}
-	Quaternion::Quaternion(const Quaternion& other) : Quaternion(other.x, other.y, other.z, other.w) {}
-	Point::Point(const Point& other) : Point(other.x, other.y) {}
-
-	Vector2::Vector2(float _x, float _y) : x(_x), y(_y)
-	{
-	}
-	Vector3::Vector3(float _x, float _y, float _z) : x(_x), y(_y), z(_z)
-	{
-	}
-	Vector4::Vector4(float _x, float _y, float _z, float _w) : x(_x), y(_y), z(_z), w(_w)
-	{
-	}
-	Quaternion::Quaternion(float _x, float _y, float _z, float _w) : Vector4(_x, _y, _z, _w)
-	{
-	}
-	Rectangle::Rectangle(float _x1, float _y1, float _x2, float _y2) : 
-		x1(_x1), y1(_y1), x2(_x2), y2(_y2)
-	{
-	}
-	Point::Point(float _x, float _y) :
-		x(_x), y(_y)
-	{
-	}
-	Dimensions::Dimensions(float _width, float _height) :
-		width(_width), height(_height)
-	{
-	}
-	IntDimensions::IntDimensions(int _width, int _height) :
-		width(_width), height(_height)
-	{
-	}
-	ColorHSV::ColorHSV(float _h, float _s, float _v) : h(_h), s(_s), v(_v)
-	{
-	}
-	ColorRGB::ColorRGB(float _r, float _g, float _b) : r(_r), g(_g), b(_b)
-	{
-	}
-	ColorRGBA::ColorRGBA(float _r, float _g, float _b, float _a) : r(_r), g(_g), b(_b), a(_a)
-	{
-	}
-	ColorRGBA::ColorRGBA(ColorRGB color, float _a) : r(color.r), g(color.g), b(color.b), a(_a)
-	{}
-
-	Vector2::Vector2() : x(0), y(0) {}
-	Vector3::Vector3() : x(0), y(0), z(0) {}
-	Vector4::Vector4() : x(0), y(0), z(0), w(0) {}
-	Quaternion::Quaternion() : Vector4(0, 0, 0, 1.0f) {}
-	Rectangle::Rectangle() : x1(0), y1(0), x2(0), y2(0) {}
-	Point::Point() : x(0), y(0) {}
-	Dimensions::Dimensions() : width(0), height(0) {}
-	IntDimensions::IntDimensions() : width(0), height(0) {}
-	ColorHSV::ColorHSV() : h(0), s(0), v(0) {}
-	ColorRGB::ColorRGB() : r(0), g(0), b(0) {}
-	ColorRGBA::ColorRGBA() : r(0), g(0), b(0), a(0) {}
-
-	BoundingBox::BoundingBox()
-		: min(-1.0f, -1.0f, -1.0f)
-		, max(1.0f, 1.0f, 1.0f)
-	{
-
-	}
-
-	Matrix3::Matrix3() : m() {}
-	Matrix4::Matrix4() : m() {}
-
-	Matrix3::Matrix3(const Matrix3& other) {
-		memcpy_s(m, sizeof(float) * 3 * 3, other.m, sizeof(float) * 3 * 3);
-	}
-	Matrix4::Matrix4(const Matrix4& other) {
-		memcpy_s(m, sizeof(float) * 4 * 4, other.m, sizeof(float) * 4 * 4);
-	}
-
-	Color::Color() : value(0) {}
-	Color::Color(const Color& color) : value(color.value) {}
-	Color::Color(uint32_t color) : value(color) {}
-	Color::Color(uint8_t _r, uint8_t _g, uint8_t _b, uint8_t _a)
-		: r(_r), g(_g), b(_b), a(_a)
-	{
-
-	}
 
 	const Color Color::RED =	Color(255, 0, 0, 255);
 	const Color Color::BLUE =	Color(0, 0, 255, 255);
@@ -125,34 +42,13 @@ namespace Math
 		return *this;
 	}
 
-	void Matrix4::SetIdentity()
+	Matrix4& Matrix4::SetIdentity()
 	{
 		m[0][0] = 1.0f; m[0][1] = 0.0f; m[0][2] = 0.0f; m[0][3] = 0.0f;
 		m[1][0] = 0.0f; m[1][1] = 1.0f; m[1][2] = 0.0f; m[1][3] = 0.0f;
 		m[2][0] = 0.0f; m[2][1] = 0.0f; m[2][2] = 1.0f; m[2][3] = 0.0f;
 		m[3][0] = 0.0f; m[3][1] = 0.0f; m[3][2] = 0.0f; m[3][3] = 1.0f;
-	}
-
-	Color ColorRGBA::ToIntColor(const ColorRGBA& color)
-	{
-		Math::Color dstColor;
-		dstColor.r = (uint8_t)roundf(color.r * 255.0f);
-		dstColor.g = (uint8_t)roundf(color.g * 255.0f);
-		dstColor.b = (uint8_t)roundf(color.b * 255.0f);
-		dstColor.a = (uint8_t)roundf(color.a * 255.0f);
-
-		return dstColor;
-	}
-
-	Color ColorRGB::ToIntColor(const ColorRGB& color)
-	{
-		Math::Color dstColor;
-		dstColor.r = (uint8_t)roundf(color.r * 255.0f);
-		dstColor.g = (uint8_t)roundf(color.g * 255.0f);
-		dstColor.b = (uint8_t)roundf(color.b * 255.0f);
-		dstColor.a = 255;
-
-		return dstColor;
+		return *this;
 	}
 
 	ColorRGB Math::HSVtoRGB(const ColorHSV& hsv)
@@ -252,21 +148,48 @@ namespace Math
 		return dst;
 	}
 
-	ColorRGB::ColorRGB(Color color)
-	{
-		r = color.r / 255.0f;
-		g = color.g / 255.0f;
-		b = color.b / 255.0f;
+	Vector3 Matrix3::ToEuler() const {
+		Vector3 dst;
+		CALL(GetAddress(Math, MatrixToEuler), void, Args(Vector3&, const Matrix3&), Args(dst, *this));
+		return dst;
 	}
 
-	auto_STATIC_METHOD(Math, Vector3, MultiplyVectorScalar,
-		Args(const Vector3& src, float& scalar), Args(src, scalar));
+	Matrix3 Matrix3::FromEuler(const Vector3& angles) {
+		Matrix3 dst;
+		CALL(GetAddress(Math, EulerToMatrix), void, Args(Matrix3&, const Vector3&), Args(dst, angles));
+		return dst;
+	}
 
-	auto_STATIC_METHOD(Math, Matrix3, EulerToMatrix,
-		Args(const Euler& vector), Args(vector));
+	Matrix3 Quaternion::ToMatrix() const {
+		Matrix3 d;
 
-	auto_STATIC_METHOD(Math, Euler, MatrixToEuler,
-		Args(const Matrix3& matrix), Args(matrix));
+		float sqw = w * w;
+		float sqx = x * x;
+		float sqy = y * y;
+		float sqz = z * z;
+
+		// invs (inverse square length) is only required if quaternion is not already normalised
+		float invs = 1.0f / (sqx + sqy + sqz + sqw);
+		d.m[0][0] = (sqx - sqy - sqz + sqw) * invs; // since sqw + sqx + sqy + sqz =1/invs*invs
+		d.m[1][1] = (-sqx + sqy - sqz + sqw) * invs;
+		d.m[2][2] = (-sqx - sqy + sqz + sqw) * invs;
+
+		float tmp1 = x * y;
+		float tmp2 = z * w;
+		d.m[1][0] = 2.0f * (tmp1 + tmp2) * invs;
+		d.m[0][1] = 2.0f * (tmp1 - tmp2) * invs;
+
+		tmp1 = x * z;
+		tmp2 = y * w;
+		d.m[2][0] = 2.0f * (tmp1 - tmp2) * invs;
+		d.m[0][2] = 2.0f * (tmp1 + tmp2) * invs;
+		tmp1 = y * z;
+		tmp2 = x * w;
+		d.m[2][1] = 2.0f * (tmp1 + tmp2) * invs;
+		d.m[1][2] = 2.0f * (tmp1 - tmp2) * invs;
+
+		return d;
+	}
 
 	auto_METHOD_VOID(BoundingBox, ApplyTransform, Args(const Transform& t), Args(t));
 

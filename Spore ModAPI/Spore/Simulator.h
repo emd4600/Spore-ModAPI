@@ -32,11 +32,15 @@
 #include <Spore\Simulator\cGameData.h>
 #include <Spore\Simulator\GameNounIDs.h>
 #include <Spore\Simulator\cSpatialObject.h>
+#include <Spore\Simulator\cCombatant.h>
 #include <Spore\Simulator\cCity.h>
 #include <Spore\Simulator\cEmpire.h>
 #include <Spore\Simulator\cBuilding.h>
 #include <Spore\Simulator\cVehicle.h>
 #include <Spore\Simulator\cCreatureAnimal.h>
+#include <Spore\Simulator\cSpaceToolData.h>
+#include <Spore\Simulator\cSimulatorSpaceGame.h>
+
 
 // Needed to load creatures
 #include <Spore\Editors\SpeciesManager.h>

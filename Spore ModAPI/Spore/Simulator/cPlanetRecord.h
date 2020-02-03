@@ -30,9 +30,9 @@ namespace Simulator
 	class cStarRecord;
 
 	typedef uint32_t StarIndex;
-
+	
 	inline size_t GetSectorIndex(StarIndex starIndex) {
-		return (int(starIndex) & 0xFFFFF000) >> 24;
+		return (int(starIndex) & 0xFFFFF000) >> 12;
 	}
 	inline size_t GetStarIndex(StarIndex starIndex) {
 		return int(starIndex) & 0x00000FFF;

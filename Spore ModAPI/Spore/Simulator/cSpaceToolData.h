@@ -27,6 +27,8 @@
 #include <Spore\Simulator\cDefaultBeamProjectile.h>
 #include <Spore\LocalizedString.h>
 
+#define cSpaceToolDataPtr intrusive_ptr<Simulator::cSpaceToolData>
+
 namespace Simulator
 {
 	class cToolStrategy;
@@ -106,7 +108,7 @@ namespace Simulator
 		///
 		/// Adds a certain quantity to the current ammount of ammo of the tool, 
 		/// ensuring it is not greater than the `mMaxAmmoCount` property.
-		/// @param ammo
+		/// @param amount
 		///
 		void AddAmmo(int amount);
 

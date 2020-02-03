@@ -30,6 +30,8 @@
 #include <Spore\UTFWin\ITextEdit.h>
 #include <Spore\UTFWin\IDrawable.h>
 #include <Spore\UTFWin\UILayout.h>
+#include <Spore\UTFWin\SimpleLayout.h>
+#include <Spore\UTFWin\ProportionalLayout.h>
 #include <Spore\UTFWin\Constants.h>
 #include <Spore\UTFWin\Message.h>
 #include <Spore\UTFWin\WindowIterators.h>

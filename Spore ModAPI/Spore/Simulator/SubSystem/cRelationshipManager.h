@@ -104,7 +104,7 @@ namespace Simulator
 
 		void DeclareWar(cEmpire* pEmpire1, cEmpire* pEmpire2);
 
-		float ApplyRelationship(uint32_t empireID, uint32_t causeEmpireID, uint32_t relationshipID, float fScale = 1.0f);
+		float ApplyRelationship(uint32_t empireID, uint32_t causeEmpireID, uint32_t relationshipID, float scale = 1.0f);
 
 	protected:
 		/* 10h */	float field_10;

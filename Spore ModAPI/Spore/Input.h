@@ -106,6 +106,8 @@ struct GameInput
 		return mouseButtons[static_cast<int>(button) - 1000];
 	}
 
+	void Reset();
+
 	static bool IsMouseButtonDown(MouseButton button);
 
 	/// The keys that are pressed.
@@ -183,6 +185,28 @@ inline void GameInput::OnMouseMove(float mouseX, float mouseY, MouseState state)
 inline void GameInput::OnMouseWheel(int nWheelDelta, float mouseX, float mouseY, MouseState state)
 {
 	mouseWheel += nWheelDelta;
+}
+
+inline void GameInput::Reset() {
+	keys[0] = 0;
+	keys[1] = 0;
+	keys[2] = 0;
+	keys[3] = 0;
+	keys[4] = 0;
+	keys[5] = 0;
+	keys[6] = 0;
+	keys[7] = 0;
+	keyModifiers.value = 0;
+	mouseButtons[0] = false;
+	mouseButtons[1] = false;
+	mouseButtons[2] = false;
+	mouseButtons[3] = false;
+	mouseButtons[4] = false;
+	mouseButton = (MouseButton)0;
+	clickPosition.x = 0;
+	clickPosition.y = 0;
+	mouseState.value = 0;
+	mouseWheel = 0;
 }
 
 namespace Addresses(GameInput)

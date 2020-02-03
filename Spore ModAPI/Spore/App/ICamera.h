@@ -71,6 +71,7 @@ namespace App
 		///
 		/* 20h */	virtual void Update(int deltaTime, cViewer* pViewer) = 0;
 
+		// some sort of input reset?
 		/* 24h */	virtual void func24h(bool) = 0;
 		
 		///

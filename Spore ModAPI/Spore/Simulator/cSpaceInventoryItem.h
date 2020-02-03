@@ -54,9 +54,9 @@ namespace Simulator
 		/// Those colors are get from the "spaceToolImageColors" property.
 		/* 34h */	virtual bool GetImageColors(size_t& dstCount, ColorRGB*& dst);
 
-		/// Returns the ley of the panel the tool belongs to. 
+		/// Returns the key of the panel the tool belongs to. 
 		/// If this item is of cargo type, it returns the cargo panel key.
-		/// OTherwise, it returns the value of the "spaceToolPanelKey" property.
+		/// Otherwise, it returns the value of the "spaceToolPanelKey" property.
 		/* 38h */	virtual ResourceKey GetPanelID();
 		/* 3Ch */	virtual bool GetItemCount(size_t& dst);
 		/* 40h */	virtual int func40h();

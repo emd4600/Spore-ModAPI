@@ -45,26 +45,3 @@
 ///
 /// There's also a class called XmlWriter which can be used to easily write simple files in the XML format.
 ///
-
-/// 
-/// @page io Input/Output Streams
-///
-/// This page contains information about file input/output, that is, all the classes and methods contained in the IO
-/// namespace. To use the more important ones, you need to include the header IO.h
-///
-/// @tableofcontents
-///
-/// @section io_tutorial1 Tutorial: Open a file stream form the disk
-///
-/// Opening a stream from a file in the disk is really simple, you just have to use the IO::FileStream class:
-/// ~~~~~~~~~~~~~~~~~~~{.cpp}
-/// IO::IStream* pStream = new IO::FileStream("C:\\Users\\Modder\\Desktop\\VeryImportantFile.bin");
-/// // now use the stream as you would with any IStream
-/// ~~~~~~~~~~~~~~~~~~~
-///
-/// @section more_info More information:
-/// - IO::IStream
-/// - IO::FileStream
-/// - IO::MemoryStream
-/// - IO
-///

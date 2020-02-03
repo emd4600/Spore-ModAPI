@@ -56,6 +56,11 @@ namespace Simulator
 
 		void Load(VehicleLocomotion locomotion, VehiclePurpose purpose, struct ResourceKey name);
 
+		VehicleLocomotion GetLocomotion() const;
+		VehiclePurpose GetPurpose() const;
+
+		cSpaceToolData* GetWeapon() const;
+
 	public:
 		/* AF0h */	int field_AF0;  // cBehaviorTreeData
 		/* AF4h */	bool field_AF4;
@@ -152,5 +157,16 @@ namespace Simulator
 	namespace Addresses(cVehicle)
 	{
 		DeclareAddress(Load);
+	}
+
+	inline VehicleLocomotion cVehicle::GetLocomotion() const {
+		return mLocomotion;
+	}
+	inline VehiclePurpose cVehicle::GetPurpose() const {
+		return mPurpose;
+	}
+
+	inline cSpaceToolData* cVehicle::GetWeapon() const {
+		return mpWeapon.get();
 	}
 }

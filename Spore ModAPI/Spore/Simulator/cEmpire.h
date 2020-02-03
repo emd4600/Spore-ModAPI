@@ -92,8 +92,8 @@ namespace Simulator
 		/* 84h */	int mPoliticalID;  // -1
 		/* 88h */	vector<intrusive_ptr<cStarRecord>> mStars;
 		/* 9Ch */	vector<intrusive_ptr<cStarRecord>> mNextStarTowardsHome;
-		/* B0h */	uint32_t mHomeStar;  // -1
-		/* B4h */	uint32_t mHomePlanet;  // -1
+		/* B0h */	StarIndex mHomeStar;  // -1
+		/* B4h */	PlanetIndex mHomePlanet;  // -1
 		/* B8h */	ResourceKey mUFOKey;
 		/* C4h */	ResourceKey mCaptainKey;
 		/* D0h */	int mEmpireMoney;

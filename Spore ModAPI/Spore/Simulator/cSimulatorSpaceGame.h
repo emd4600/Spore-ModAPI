@@ -25,6 +25,7 @@
 
 #include <EASTL\vector.h>
 
+#define SimulatorSpaceGame (*Simulator::cSimulatorSpaceGame::Get())
 #define cSimulatorSpaceGamePtr intrusive_ptr<Simulator::cSimulatorSpaceGame>
 
 namespace Simulator
@@ -88,10 +89,6 @@ namespace Simulator
 	public:
 		static cSimulatorSpaceGame* Get();
 	};
-
-	inline cSimulatorSpaceGame* SimulatorSpaceGame() {
-		return cSimulatorSpaceGame::Get();
-	}
 
 	/////////////////////////////////
 	//// INTERNAL IMPLEMENTATION ////

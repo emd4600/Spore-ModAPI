@@ -115,7 +115,7 @@ namespace UTFWin
 				/* 0Ch */	float mouseX;
 				/// The Y coordinate of the mouse, relative to the window that raised the event.
 				/* 10h */	float mouseY;
-				/// A combination of values from the UTFWin::MouseState enum.
+				/// A combination of values from the MouseStateFlags enum.
 				/* 14h */	int mouseState;
 				/// How much the mouse wheel changed, it is usually a multiple of 120.
 				/* 18h */	int wheelDelta;

@@ -100,7 +100,7 @@ namespace Simulator
 		/* 78h */	intrusive_list<cGameData> mNouns;
 		/* 80h */	vector<intrusive_ptr<Object>> field_80;  // objects that haven't been updated since last call to UpdateModels?
 		/* 94h */	int field_94;
-		/* 98h */	map<uint32_t, int> field_98;
+		/* 98h */	map<uint32_t, tGameDataVectorT<cGameDataPtr>> mNounMap;
 		/* B4h */	map<int, int> mPoliticalMap;
 		/* D0h */	map<int, intrusive_ptr<Object>> field_D0;
 		/* ECh */	map<int, intrusive_ptr<Object>> field_EC;
@@ -126,31 +126,12 @@ namespace Simulator
 		DeclareAddress(SetAvatar);
 	}
 
-	/// Gets all the game data objects that are of the specified type, or are one of its subclasses.
-	/// All the found objects will be casted to the specified type.
-	template <class T>
-	inline tGameDataVectorT<T>& GetData() {
-		return cGameNounManager::Get()->GetData<T>(
-			[]() {
-			return new tGameDataVectorT<T>();
-		},
-			[](tGameDataVectorT<T>* pVector) {
-			pVector->data.clear();
-		},
-			[](tGameDataVectorT<T>* pVector, cGameData* pObject) {
-			pVector->data.push_back(intrusive_ptr<T>(object_cast<T>(pObject)));
-		},
-			[](cGameData* pObject, uint32_t gameNounID) {
-			return object_cast<T>(pObject) != nullptr;
-		}, T::NOUN_ID);
-	}
-
-
 	/// Gets all the game data objects that use the given game noun ID.
+	/// All the found objects will be casted to the specified type.
 	template <class T>
 	inline tGameDataVectorT<T>& GetData(uint32_t nounID)
 	{
-		return cGameNounManager::Get()->GetData<T>(
+		return GameNounManager.GetData<T>(
 			[]() {
 			return new tGameDataVectorT<T>();
 		},
@@ -163,6 +144,14 @@ namespace Simulator
 			[](cGameData* pObject, uint32_t gameNounID) {
 			return pObject->GetNounID() == gameNounID;
 		}, nounID);
+	}
+
+	/// Gets all the game data objects that are of the specified type.
+	/// Only classes that define a NOUN_ID can be used here.
+	/// All the found objects will be casted to the specified type.
+	template <class T>
+	inline tGameDataVectorT<T>& GetData() {
+		return GetData<T>(T::NOUN_ID);
 	}
 }
 

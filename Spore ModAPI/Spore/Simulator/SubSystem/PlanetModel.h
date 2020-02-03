@@ -56,7 +56,7 @@ namespace Simulator
 		/// used. Otherwise, it returns -9.8
 		float GetGravity() const;
 
-		Vector4 GetOrientation(const Vector3& position, const Vector3& direction) const;
+		Quaternion GetOrientation(const Vector3& position, const Vector3& direction) const;
 
 	public:
 		static cPlanetModel* Get();

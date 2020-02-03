@@ -49,6 +49,8 @@ namespace App
 	class OnModeExitMessage : StandardMessage 
 	{
 	public:
+		static const uint32_t ID = kMsgOnModeExit;
+
 		/// Returns the current mode ID after this change.
 		inline uint32_t GetModeID() {
 			return params[0].uint32;
@@ -60,7 +62,21 @@ namespace App
 		}
 	};
 
-	typedef OnModeExitMessage OnModeEnterMessage;
+	class OnModeEnterMessage : StandardMessage
+	{
+	public:
+		static const uint32_t ID = kMsgOnModeEnter;
+
+		/// Returns the current mode ID after this change.
+		inline uint32_t GetModeID() {
+			return params[0].uint32;
+		}
+
+		/// Returns the pevious mode ID before this change.
+		inline uint32_t GetPreviousModeID() {
+			return params[1].uint32;
+		}
+	};
 
 	///
 	/// A manager that takes care of game modes; check IGameMode for more information.

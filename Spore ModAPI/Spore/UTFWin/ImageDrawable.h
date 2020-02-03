@@ -139,12 +139,12 @@ namespace UTFWin
 		///
 		/// Creates an IWindow that will display the image with the name specified.
 		/// @param imageName The ResourceKey of the image to display.
-		/// @param fOffsetX The X coordinate of the newly generated window, relative to its parent.
-		/// @param fOffsetY The Y coordinate of the newly generated window, relative to its parent.
+		/// @param offsetX The X coordinate of the newly generated window, relative to its parent.
+		/// @param offsetY The Y coordinate of the newly generated window, relative to its parent.
 		/// @param pParentWindow The IWindow that will be the parent of the created window.
 		/// @returns The newly created window.
 		///
-		static IWindow* AddImageWindow(const ResourceKey& imageName, float fOffsetX, float fOffsetY, IWindow* pParentWindow);
+		static IWindow* AddImageWindow(const ResourceKey& imageName, float offsetX, float offsetY, IWindow* pParentWindow);
 
 		static const uint32_t TYPE = 0xEF3C47CF;
 	};

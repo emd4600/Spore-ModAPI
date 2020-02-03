@@ -27,8 +27,11 @@
 #include <Spore\Simulator.h>
 #include <Spore\UserInterface.h>
 #include <Spore\IO.h>
+
 #include <Spore\Editors\Editor.h>
 #include <Spore\Editors\EditorRequest.h>
+#include <Spore\Editors\EditorMessages.h>
+
 #include <Spore\App\IClassManager.h>
 
 using namespace eastl;

@@ -33,6 +33,7 @@ namespace UTFWin
 	{
 	public:
 		ProportionalLayout();
+		ProportionalLayout(float left, float top, float right, float bottom);
 		virtual ~ProportionalLayout() {}
 
 		virtual int AddRef() override;

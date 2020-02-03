@@ -104,6 +104,14 @@ namespace UTFWin
 	{
 	}
 
+	ProportionalLayout::ProportionalLayout(float left, float top, float right, float bottom)
+	{
+		mProportions[0] = left;
+		mProportions[1] = top;
+		mProportions[2] = right;
+		mProportions[3] = bottom;
+	}
+
 	int ProportionalLayout::GetEventFlags() const
 	{
 		return 0x108;

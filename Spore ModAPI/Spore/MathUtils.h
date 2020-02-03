@@ -96,13 +96,28 @@ namespace Math
 	struct Vector2 {
 		float x;
 		float y;
+
 		Vector2(float x, float y);
 		Vector2(const Vector2& other);
 		Vector2();
 
-		inline float length() const {
-			return sqrtf(x*x + y*y);
-		}
+		/// Returns the length of the vector, computed as the square root of then sum of its components squared.
+		float Length() const;
+
+		/// Returns a normalized version of this vector. Being normalized means it has a length of 1.0
+		Vector2 Normalized() const;
+
+		/// Computes the dot product between this vector and `other`.
+		/// The dot product is computed as `a.x * b.x + a.y * b.y + a.z * b.z`
+		/// @param other
+		float Dot(const Vector2& other) const;
+
+		Vector2& operator+=(const Vector2&);
+		Vector2& operator+=(float);
+		Vector2& operator-=(const Vector2&);
+		Vector2& operator-=(float);
+		Vector2& operator*=(float);
+		Vector2& operator/=(float);
 	};
 
 	/// A vector of 3 float values (x, y, z).
@@ -110,88 +125,36 @@ namespace Math
 		float x;
 		float y;
 		float z;
+
 		Vector3();
 		Vector3(const Vector3& other);
 		Vector3(float x, float y, float z);
 
-		inline float length() const {
-			return sqrtf(x*x + y*y + z*z);
-		}
+		/// Returns the length of the vector, computed as the square root of then sum of its components squared.
+		float Length() const;
 
-		inline Vector3& operator+=(const Vector3& b) {
-			x += b.x;
-			y += b.y;
-			z += b.z;
-			return *this;
-		}
+		/// Returns a normalized version of this vector. Being normalized means it has a length of 1.0
+		Vector3 Normalized() const;
 
-		inline Vector3& operator+=(const float b) {
-			x += b;
-			y += b;
-			z += b;
-			return *this;
-		}
+		/// Computes the dot product between this vector and `other`.
+		/// The dot product is computed as `a.x * b.x + a.y * b.y + a.z * b.z`
+		/// @param other
+		float Dot(const Vector3& other) const;
 
-		friend Vector3 operator+(Vector3 a, const Vector3& b) {
-			return Vector3(a.x + b.x, a.y + b.y, a.z + b.z);
-		}
+		/// Computes the cross product between this vector and `other`.
+		/// This will return a vector that is perpendicular to both vectors.
+		/// @param other
+		Vector3 Cross(const Vector3& other) const;
 
-		friend Vector3 operator+(Vector3 a, float b) {
-			return Vector3(a.x + b, a.y + b, a.z + b);
-		}
-
-		inline Vector3& operator-=(const Vector3& b) {
-			x -= b.x;
-			y -= b.y;
-			z -= b.z;
-			return *this;
-		}
-
-		inline Vector3& operator-=(const float b) {
-			x -= b;
-			y -= b;
-			z -= b;
-			return *this;
-		}
-
-		friend Vector3 operator-(Vector3 a, const Vector3& b) {
-			return Vector3(a.x - b.x, a.y - b.y, a.z - b.z);
-		}
-
-		friend Vector3 operator-(Vector3 a, float b) {
-			return Vector3(a.x - b, a.y - b, a.z - b);
-		}
-
-		inline Vector3& operator*=(float b) {
-			x *= b;
-			y *= b;
-			z *= b;
-			return *this;
-		}
-
-		friend Vector3 operator*(Vector3 a, float b) {
-			return Vector3(a.x * b, a.y * b, a.z * b);
-		}
-
-		inline Vector3& operator/=(float b) {
-			x /= b;
-			y /= b;
-			z /= b;
-			return *this;
-		}
-
-		friend Vector3 operator/(Vector3 a, float b) {
-			return Vector3(a.x / b, a.y / b, a.z / b);
-		}
-
-		inline Vector3 normalized() {
-			return *this / length();
-		}
+		Vector3& operator+=(const Vector3&);
+		Vector3& operator+=(float);
+		Vector3& operator-=(const Vector3&);
+		Vector3& operator-=(float);
+		Vector3& operator*=(float);
+		Vector3& operator/=(float);
 	};
 
-	/// A vector of 3 float values representing euler angles; it's the same as a Vector3.
-	typedef Vector3 Euler;
-
+	struct Matrix3;
 	/// A vector of 4 float values (x, y, z, w).
 	struct Vector4 {
 		float x;
@@ -201,24 +164,53 @@ namespace Math
 		Vector4(float x, float y, float z, float w);
 		Vector4(const Vector4& other);
 		Vector4();
+
+		/// Returns the length of the vector, computed as the square root of then sum of its components squared.
+		float Length() const;
+
+		/// Returns a normalized version of this vector. Being normalized means it has a length of 1.0
+		Vector4 Normalized() const;
+
+		/// Computes the dot product between this vector and `other`.
+		/// The dot product is computed as `a.x * b.x + a.y * b.y + a.z * b.z`
+		/// @param other
+		float Dot(const Vector4& other) const;
+
+		Vector4& operator+=(const Vector4&);
+		Vector4& operator+=(float);
+		Vector4& operator-=(const Vector4&);
+		Vector4& operator-=(float);
+		Vector4& operator*=(float);
+		Vector4& operator/=(float);
 	};
 
 	/// A vector of 4 float values (x, y, z, w) representing a quaternion rotation; same as a Vector4.
 	/// Has a value of (0, 0, 0, 1) by default.
-	struct Quaternion : Vector4
+	struct Quaternion : public Vector4
 	{
 		Quaternion(float x, float y, float z, float w);
 		Quaternion(const Quaternion& other);
 		Quaternion();
+
+		/// Builds a 3x3 rotation matrix equivalent to this quaternion rotation.
+		Matrix3 ToMatrix() const;
 	};
 
 	/// Represents a point in the space, defined by two float coordinates (x, y).
 	struct Point {
 		float x;
 		float y;
+
 		Point(float x, float y);
 		Point(const Point& other);
 		Point();
+
+		Point& operator+=(const Point&);
+		Point& operator+=(float);
+		Point& operator-=(const Point&);
+		Point& operator-=(float);
+		Point& operator*=(float);
+		Point& operator/=(float);
 	};
 
 	/// Represents a rectangular space, defined by two points or by the four edges.
@@ -288,6 +280,7 @@ namespace Math
 			return Contains(p.x, p.y);
 		}
 	};
+
 	/// A pair of two float values that represents the dimensions of an image (width, height).
 	struct Dimensions {
 		float width;
@@ -295,6 +288,7 @@ namespace Math
 		Dimensions(float width, float height);
 		Dimensions();
 	};
+
 	/// A pair of two integer values that represents the dimensions of an image (width, height).
 	struct IntDimensions {
 		int width;
@@ -302,6 +296,7 @@ namespace Math
 		IntDimensions(int width, int height);
 		IntDimensions();
 	};
+
 	/// Three float values in the range [0, 1] that represent a color (the red, green and blue components).
 	struct ColorRGB {
 		float r;
@@ -311,43 +306,40 @@ namespace Math
 		ColorRGB(Color color);
 		ColorRGB();
 
-		inline void SetValue(float r, float g, float b) {
-			this->r = r;
-			this->g = g;
-			this->b = b;
-		}
+		ColorRGB& Set(float r, float g, float b);
 
 		/// Returns the integer representation of the given color (in the form of a Color value).
-		static Color ToIntColor(const ColorRGB& color);
+		Color ToIntColor();
 	};
+
 	/// Four float values in the range [0, 1] that represent a color (the red, green, blue and alpha components).
 	/// The alpha component defines the opacity of the color: 0 alpha is fully transparent, 1 alpha is fully opaque.
 	struct ColorRGBA {
-		float r;
-		float g;
-		float b;
-		float a;
 		ColorRGBA(float r, float g, float b, float a);
 		ColorRGBA(ColorRGB color, float a);
 		ColorRGBA();
 
+		ColorRGBA& Set(float r, float g, float b, float a);
+
 		/// Returns the integer representation of the given color (in the form of a Color value).
-		static Color ToIntColor(const ColorRGBA& color);
+		Color ToIntColor();
+
+		float r;
+		float g;
+		float b;
+		float a;
 	};
+
 	/// Three float values that represent a color (the hue, saturation and value/brightness values).
 	struct ColorHSV {
-		float h;
-		float s;
-		float v;
 		ColorHSV(float h, float s, float v);
 		ColorHSV();
 
-		inline void SetValue(float h, float s, float v) {
-			this->h = h;
-			this->s = s;
-			this->v = v;
-		}
+		ColorHSV& Set(float h, float s, float v);
 
+		float h;
+		float s;
+		float v;
 	};
 
 	/// A 3x3 matrix.
@@ -356,7 +348,20 @@ namespace Math
 		Matrix3();
 		Matrix3(const Matrix3& other);
 
+		/// Turns this matrix into the identity matrix (1.0s in the diagonal, everything else 0.0s).
+		/// Multiplying a matrix/vector with an identity matrix has no effect.
 		Matrix3& SetIdentity();
+
+		/// Returns the euler angles (in radians) equivalent to the rotation of this matrix.
+		/// The euler angles are a vector of 3 values that represent the rotation around the
+		/// X, Y and Z axes respectively.
+		Vector3 ToEuler() const;
+
+		/// Builds a 3x3 rotation matrix equivalent to the euler angles provided.
+		/// The euler angles must be in radians, and each value represents the rotation
+		/// around the X, Y and Z axes respectively.
+		/// @param angles The euler angles, in radians.
+		static Matrix3 FromEuler(const Vector3& angles);
 	};
 
 	/// A 4x4 matrix.
@@ -365,47 +370,26 @@ namespace Math
 		Matrix4();
 		Matrix4(const Matrix4& other);
 
-		void SetIdentity();
+		/// Turns this matrix into the identity matrix (1.0s in the diagonal, everything else 0.0s)
+		/// Multiplying a matrix/vector with an identity matrix has no effect.
+		Matrix4& SetIdentity();
 	};
 
 	/// A pair of two Vector3 that define the boundaries of an object (the minimum point and the maximum point in the space).
 	struct BoundingBox {
 		BoundingBox();
 
-		/* 00h */ Vector3 min;
-		/* 0Ch */ Vector3 max;
+		/* 00h */ Vector3 lower;
+		/* 0Ch */ Vector3 upper;
 
+		/// Recalculates the bounding box after having applied the given transform.
+		/// @param transform The transformation to apply to the bounding box.
 		void ApplyTransform(const Transform& transform);
 	};
 
 	namespace Addresses(BoundingBox) {
 		DeclareAddress(ApplyTransform);
 	}
-
-	///
-	/// Multiplies the given vector with a scalar value and puts the result in a new Vector3. 
-	/// Scalar multiplication is just multiplying all the components of the vector with the number
-	/// @param source The source Vector3 to multiply.
-	/// @param scalar The float multiplicand.
-	/// @returns A new Vector3 with the result.
-	///
-	Vector3 MultiplyVectorScalar(const Vector3& source, float& scalar);
-
-	///
-	/// Converts the given euler angles into a 3x3 rotation matrix. The euler angles is 
-	/// a vector of 3 values, which are the X, Y and Z axis rotations respectively. The
-	/// angles must be in radians.
-	/// @param angles The 3 euler angles, in radians.
-	/// @returns A new 3x3 rotation matrix with the result.
-	///
-	Matrix3 EulerToMatrix(const Euler& angles);
-
-	///
-	/// Converts the given 3x3 rotation matrix to the 3 corresponding euler angles, in radians.
-	/// @param matrix The 3x3 rotation matrix to convert.
-	/// @returns The 3 euler angles (for the X, Y and Z axis), in radians.
-	///
-	Euler MatrixToEuler(const Matrix3& matrix);
 
 	/// Converts the given HSV color into a RGB color.
 	ColorRGB HSVtoRGB(const ColorHSV& hsv);
@@ -457,3 +441,490 @@ namespace Math
 		DeclareAddress(RandomFloat);
 	}
 };
+
+namespace Math
+{
+	inline ColorRGB::ColorRGB(Color color)
+	{
+		r = color.r / 255.0f;
+		g = color.g / 255.0f;
+		b = color.b / 255.0f;
+	}
+
+	inline ColorRGB& ColorRGB::Set(float r, float g, float b) {
+		this->r = r;
+		this->g = g;
+		this->b = b;
+		return *this;
+	}
+	inline ColorRGBA& ColorRGBA::Set(float r, float g, float b, float a) {
+		this->r = r;
+		this->g = g;
+		this->b = b;
+		this->a = a;
+		return *this;
+	}
+	inline ColorHSV& ColorHSV::Set(float h, float s, float v) {
+		this->h = h;
+		this->s = s;
+		this->v = v;
+		return *this;
+	}
+
+	inline Color ColorRGBA::ToIntColor()
+	{
+		Math::Color dstColor;
+		dstColor.r = (uint8_t)roundf(r * 255.0f);
+		dstColor.g = (uint8_t)roundf(g * 255.0f);
+		dstColor.b = (uint8_t)roundf(b * 255.0f);
+		dstColor.a = (uint8_t)roundf(a * 255.0f);
+
+		return dstColor;
+	}
+
+	inline Color ColorRGB::ToIntColor()
+	{
+		Math::Color dstColor;
+		dstColor.r = (uint8_t)roundf(r * 255.0f);
+		dstColor.g = (uint8_t)roundf(g * 255.0f);
+		dstColor.b = (uint8_t)roundf(b * 255.0f);
+		dstColor.a = 255;
+
+		return dstColor;
+	}
+
+	inline Color::Color() : value(0) {}
+	inline Color::Color(const Color& color) : value(color.value) {}
+	inline Color::Color(uint32_t color) : value(color) {}
+	inline Color::Color(uint8_t _r, uint8_t _g, uint8_t _b, uint8_t _a)
+		: r(_r), g(_g), b(_b), a(_a) {}
+
+	inline Vector2::Vector2(const Vector2& other) : Vector2(other.x, other.y) {}
+	inline Vector3::Vector3(const Vector3& other) : Vector3(other.x, other.y, other.z) {}
+	inline Vector4::Vector4(const Vector4& other) : Vector4(other.x, other.y, other.z, other.w) {}
+	inline Quaternion::Quaternion(const Quaternion& other) : Quaternion(other.x, other.y, other.z, other.w) {}
+	inline Point::Point(const Point& other) : Point(other.x, other.y) {}
+
+	inline Vector2::Vector2(float _x, float _y) : x(_x), y(_y)
+	{
+	}
+	inline Vector3::Vector3(float _x, float _y, float _z) : x(_x), y(_y), z(_z)
+	{
+	}
+	inline Vector4::Vector4(float _x, float _y, float _z, float _w) : x(_x), y(_y), z(_z), w(_w)
+	{
+	}
+	inline Quaternion::Quaternion(float _x, float _y, float _z, float _w) : Vector4(_x, _y, _z, _w)
+	{
+	}
+	inline Rectangle::Rectangle(float _x1, float _y1, float _x2, float _y2) :
+		x1(_x1), y1(_y1), x2(_x2), y2(_y2)
+	{
+	}
+	inline Point::Point(float _x, float _y) :
+		x(_x), y(_y)
+	{
+	}
+	inline Dimensions::Dimensions(float _width, float _height) :
+		width(_width), height(_height)
+	{
+	}
+	inline IntDimensions::IntDimensions(int _width, int _height) :
+		width(_width), height(_height)
+	{
+	}
+	inline ColorHSV::ColorHSV(float _h, float _s, float _v) : h(_h), s(_s), v(_v)
+	{
+	}
+	inline ColorRGB::ColorRGB(float _r, float _g, float _b) : r(_r), g(_g), b(_b)
+	{
+	}
+	inline ColorRGBA::ColorRGBA(float _r, float _g, float _b, float _a) : r(_r), g(_g), b(_b), a(_a)
+	{
+	}
+	inline ColorRGBA::ColorRGBA(ColorRGB color, float _a) : r(color.r), g(color.g), b(color.b), a(_a)
+	{}
+
+	inline Vector2::Vector2() : x(0), y(0) {}
+	inline Vector3::Vector3() : x(0), y(0), z(0) {}
+	inline Vector4::Vector4() : x(0), y(0), z(0), w(0) {}
+	inline Quaternion::Quaternion() : Vector4(0, 0, 0, 1.0f) {}
+	inline Rectangle::Rectangle() : x1(0), y1(0), x2(0), y2(0) {}
+	inline Point::Point() : x(0), y(0) {}
+	inline Dimensions::Dimensions() : width(0), height(0) {}
+	inline IntDimensions::IntDimensions() : width(0), height(0) {}
+	inline ColorHSV::ColorHSV() : h(0), s(0), v(0) {}
+	inline ColorRGB::ColorRGB() : r(0), g(0), b(0) {}
+	inline ColorRGBA::ColorRGBA() : r(0), g(0), b(0), a(0) {}
+
+	inline BoundingBox::BoundingBox()
+		: lower(-1.0f, -1.0f, -1.0f)
+		, upper(1.0f, 1.0f, 1.0f)
+	{
+	}
+
+	inline Matrix3::Matrix3() : m() {}
+	inline Matrix4::Matrix4() : m() {}
+
+	inline Matrix3::Matrix3(const Matrix3& other) {
+		memcpy_s(m, sizeof(float) * 3 * 3, other.m, sizeof(float) * 3 * 3);
+	}
+	inline Matrix4::Matrix4(const Matrix4& other) {
+		memcpy_s(m, sizeof(float) * 4 * 4, other.m, sizeof(float) * 4 * 4);
+	}
+
+	inline Vector3 operator*(Matrix3 a, const Vector3& b) {
+		return {
+			a.m[0][0] * b.x + a.m[0][1] * b.y + a.m[0][2] * b.z,
+			a.m[1][0] * b.x + a.m[1][1] * b.y + a.m[1][2] * b.z,
+			a.m[2][0] * b.x + a.m[2][1] * b.y + a.m[2][2] * b.z,
+		};
+	}
+
+	inline Matrix3 operator*(Matrix3 a, const Matrix3& b) {
+		Matrix3 r;
+		r.m[0][0] = a.m[0][0] * b.m[0][0] + a.m[0][1] * b.m[1][0] + a.m[0][2] * b.m[2][0];
+		r.m[0][1] = a.m[0][0] * b.m[0][1] + a.m[0][1] * b.m[1][1] + a.m[0][2] * b.m[2][1];
+		r.m[0][2] = a.m[0][0] * b.m[0][2] + a.m[0][1] * b.m[1][2] + a.m[0][2] * b.m[2][2];
+
+		r.m[1][0] = a.m[1][0] * b.m[0][0] + a.m[1][1] * b.m[1][0] + a.m[1][2] * b.m[2][0];
+		r.m[1][1] = a.m[1][0] * b.m[0][1] + a.m[1][1] * b.m[1][1] + a.m[1][2] * b.m[2][1];
+		r.m[1][2] = a.m[1][0] * b.m[0][2] + a.m[1][1] * b.m[1][2] + a.m[1][2] * b.m[2][2];
+
+		r.m[2][0] = a.m[2][0] * b.m[0][0] + a.m[2][1] * b.m[1][0] + a.m[2][2] * b.m[2][0];
+		r.m[2][1] = a.m[2][0] * b.m[0][1] + a.m[2][1] * b.m[1][1] + a.m[2][2] * b.m[2][1];
+		r.m[2][2] = a.m[2][0] * b.m[0][2] + a.m[2][1] * b.m[1][2] + a.m[2][2] * b.m[2][2];
+		return r;
+	}
+
+
+	/// POINT 
+
+	inline Point& Point::operator+=(const Point& b) {
+		x += b.x;
+		y += b.y;
+		return *this;
+	}
+	inline Point& Point::operator+=(float b) {
+		x += b;
+		y += b;
+		return *this;
+	}
+	inline Point& Point::operator-=(const Point& b) {
+		x -= b.x;
+		y -= b.y;
+		return *this;
+	}
+	inline Point& Point::operator-=(const float b) {
+		x -= b;
+		y -= b;
+		return *this;
+	}
+	inline Point& Point::operator*=(float b) {
+		x *= b;
+		y *= b;
+		return *this;
+	}
+	inline Point& Point::operator/=(float b) {
+		x /= b;
+		y /= b;
+		return *this;
+	}
+
+	inline Point operator+(Point a, const Point& b) {
+		return a += b;
+	}
+	inline Point operator+(Point a, float b) {
+		return a += b;
+	}
+	inline Point operator-(Point a, const Point& b) {
+		return a -= b;
+	}
+	inline Point operator-(Point a, float b) {
+		return a -= b;
+	}
+	inline Point operator*(Point a, float b) {
+		return a *= b;
+	}
+	inline Point operator/(Point a, float b) {
+		return a /= b;
+	}
+
+	inline Point operator-(const Point& a) {
+		return { -a.x, -a.y };
+	}
+
+	inline Point operator+(float a, const Point& b) {
+		return b + a;
+	}
+	inline Point operator-(float a, const Point& b) {
+		return -b + a;
+	}
+	inline Point operator*(float a, const Point& b) {
+		return b * a;
+	}
+
+	/// VECTOR 2
+
+	inline Vector2& Vector2::operator+=(const Vector2& b) {
+		x += b.x;
+		y += b.y;
+		return *this;
+	}
+	inline Vector2& Vector2::operator+=(float b) {
+		x += b;
+		y += b;
+		return *this;
+	}
+	inline Vector2& Vector2::operator-=(const Vector2& b) {
+		x -= b.x;
+		y -= b.y;
+		return *this;
+	}
+	inline Vector2& Vector2::operator-=(const float b) {
+		x -= b;
+		y -= b;
+		return *this;
+	}
+	inline Vector2& Vector2::operator*=(float b) {
+		x *= b;
+		y *= b;
+		return *this;
+	}
+	inline Vector2& Vector2::operator/=(float b) {
+		x /= b;
+		y /= b;
+		return *this;
+	}
+
+	inline Vector2 operator+(Vector2 a, const Vector2& b) {
+		return a += b;
+	}
+	inline Vector2 operator+(Vector2 a, float b) {
+		return a += b;
+	}
+	inline Vector2 operator-(Vector2 a, const Vector2& b) {
+		return a -= b;
+	}
+	inline Vector2 operator-(Vector2 a, float b) {
+		return a -= b;
+	}
+	inline Vector2 operator*(Vector2 a, float b) {
+		return a *= b;
+	}
+	inline Vector2 operator/(Vector2 a, float b) {
+		return a /= b;
+	}
+
+	inline Vector2 operator-(const Vector2& a) {
+		return { -a.x, -a.y };
+	}
+
+	inline Vector2 operator+(float a, const Vector2& b) {
+		return b + a;
+	}
+	inline Vector2 operator-(float a, const Vector2& b) {
+		return -b + a;
+	}
+	inline Vector2 operator*(float a, const Vector2& b) {
+		return b * a;
+	}
+
+	inline float Vector2::Length() const {
+		return sqrtf(x * x + y * y);
+	}
+
+	inline Vector2 Vector2::Normalized() const {
+		return *this / Length();
+	}
+
+	inline float Vector2::Dot(const Vector2& other) const {
+		return x * other.x + y * other.y;
+	}
+
+	/// VECTOR 3
+
+	inline Vector3& Vector3::operator+=(const Vector3& b) {
+		x += b.x;
+		y += b.y;
+		z += b.z;
+		return *this;
+	}
+	inline Vector3& Vector3::operator+=(float b) {
+		x += b;
+		y += b;
+		z += b;
+		return *this;
+	}
+	inline Vector3& Vector3::operator-=(const Vector3& b) {
+		x -= b.x;
+		y -= b.y;
+		z -= b.z;
+		return *this;
+	}
+	inline Vector3& Vector3::operator-=(const float b) {
+		x -= b;
+		y -= b;
+		z -= b;
+		return *this;
+	}
+	inline Vector3& Vector3::operator*=(float b) {
+		x *= b;
+		y *= b;
+		z *= b;
+		return *this;
+	}
+	inline Vector3& Vector3::operator/=(float b) {
+		x /= b;
+		y /= b;
+		z /= b;
+		return *this;
+	}
+
+	inline Vector3 operator+(Vector3 a, const Vector3& b) {
+		return a += b;
+	}
+	inline Vector3 operator+(Vector3 a, float b) {
+		return a += b;
+	}
+	inline Vector3 operator-(Vector3 a, const Vector3& b) {
+		return a -= b;
+	}
+	inline Vector3 operator-(Vector3 a, float b) {
+		return a -= b;
+	}
+	inline Vector3 operator*(Vector3 a, float b) {
+		return a *= b;
+	}
+	inline Vector3 operator/(Vector3 a, float b) {
+		return a /= b;
+	}
+
+	inline Vector3 operator-(const Vector3& a) {
+		return {-a.x, -a.y, -a.z};
+	}
+
+	inline Vector3 operator+(float a, const Vector3& b) {
+		return b + a;
+	}
+	inline Vector3 operator-(float a, const Vector3& b) {
+		return -b + a;
+	}
+	inline Vector3 operator*(float a, const Vector3& b) {
+		return b * a;
+	}
+
+
+	inline float Vector3::Length() const {
+		return sqrtf(x * x + y * y + z * z);
+	}
+
+	inline Vector3 Vector3::Normalized() const {
+		return *this / Length();
+	}
+
+	inline float Vector3::Dot(const Vector3& other) const {
+		return x * other.x + y * other.y + z * other.z;
+	}
+
+	inline Vector3 Vector3::Cross(const Vector3& b) const {
+		return {
+			y * b.z - z * b.y,
+			z * b.x - x * b.z,
+			x * b.y - y + b.x
+		};
+	}
+
+
+	/// VECTOR 4
+
+	inline Vector4& Vector4::operator+=(const Vector4& b) {
+		x += b.x;
+		y += b.y;
+		z += b.z;
+		w += b.w;
+		return *this;
+	}
+	inline Vector4& Vector4::operator+=(float b) {
+		x += b;
+		y += b;
+		z += b;
+		w += b;
+		return *this;
+	}
+	inline Vector4& Vector4::operator-=(const Vector4& b) {
+		x -= b.x;
+		y -= b.y;
+		z -= b.z;
+		w -= b.w;
+		return *this;
+	}
+	inline Vector4& Vector4::operator-=(const float b) {
+		x -= b;
+		y -= b;
+		z -= b;
+		w -= b;
+		return *this;
+	}
+	inline Vector4& Vector4::operator*=(float b) {
+		x *= b;
+		y *= b;
+		z *= b;
+		w *= b;
+		return *this;
+	}
+	inline Vector4& Vector4::operator/=(float b) {
+		x /= b;
+		y /= b;
+		z /= b;
+		w /= b;
+		return *this;
+	}
+
+	inline Vector4 operator-(const Vector4& a) {
+		return { -a.x, -a.y, -a.z, -a.w };
+	}
+
+	inline Vector4 operator+(Vector4 a, const Vector4& b) {
+		return a += b;
+	}
+	inline Vector4 operator+(Vector4 a, float b) {
+		return a += b;
+	}
+	inline Vector4 operator-(Vector4 a, const Vector4& b) {
+		return a -= b;
+	}
+	inline Vector4 operator-(Vector4 a, float b) {
+		return a -= b;
+	}
+	inline Vector4 operator*(Vector4 a, float b) {
+		return a *= b;
+	}
+	inline Vector4 operator/(Vector4 a, float b) {
+		return a /= b;
+	}
+
+	inline Vector4 operator+(float a, const Vector4& b) {
+		return b + a;
+	}
+	inline Vector4 operator-(float a, const Vector4& b) {
+		return -b + a;
+	}
+	inline Vector4 operator*(float a, const Vector4& b) {
+		return b * a;
+	}
+
+
+	inline float Vector4::Length() const {
+		return sqrtf(x * x + y * y + z * z + w * w);
+	}
+
+	inline Vector4 Vector4::Normalized() const {
+		return *this / Length();
+	}
+
+	inline float Vector4::Dot(const Vector4& other) const {
+		return x * other.x + y * other.y + z * other.z + w * other.w;
+	}
+
+}

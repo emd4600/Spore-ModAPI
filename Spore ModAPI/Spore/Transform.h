@@ -49,7 +49,8 @@ public:
 	Transform& SetScale(float value);
 
 	const Matrix3& GetRotation() const;
-	Transform& SetRotation(Matrix3& value);
+	Transform& SetRotation(const Matrix3& value);
+	Transform& SetRotation(const Vector3& euler);
 
 	Matrix4 ToMatrix4() const;
 
@@ -110,9 +111,17 @@ inline const Matrix3& Transform::GetRotation() const
 {
 	return mRotation;
 }
-inline Transform& Transform::SetRotation(Matrix3& value)
+inline Transform& Transform::SetRotation(const Matrix3& value)
 {
 	mRotation = value;
+	mnFlags |= kTransformFlagRotation;
+
+	return *this;
+}
+
+inline Transform& Transform::SetRotation(const Vector3& euler)
+{
+	mRotation = Math::Matrix3::FromEuler(euler);
 	mnFlags |= kTransformFlagRotation;
 
 	return *this;
