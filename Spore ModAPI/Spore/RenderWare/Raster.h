@@ -29,7 +29,7 @@ namespace RenderWare
 	/// A structure that contains information for a texture.
 	/// For more information, check the official Direct3D 9 documentation: 
 	/// - [IDirect3DTexture9 interface](https://msdn.microsoft.com/en-us/library/windows/desktop/bb205909.aspx)
-	/// - [IDirect3DDevice9::CreateTexture method(https://msdn.microsoft.com/en-us/library/windows/desktop/bb174363.aspx)
+	/// - [IDirect3DDevice9::CreateTexture method](https://msdn.microsoft.com/en-us/library/windows/desktop/bb174363.aspx)
 	///
 	struct Raster
 	{

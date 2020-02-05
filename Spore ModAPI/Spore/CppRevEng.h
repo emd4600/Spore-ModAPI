@@ -43,6 +43,8 @@ All macros take at least two parameters:
 ## Detouring static functions
 
 Imagine you want to detour a static function that returns a float, and takes a const char* as parameter. You would do it like this:
+
+```cpp
 static_detour(MyDetour1, float(const char*)) {
 public:
 	float detoured(const char* pString) {
@@ -53,11 +55,13 @@ public:
 		}
 	}
 };
+```
 
 ## Detouring a member method
 
 Imagine you want to detour a method that is mebmer of a certain class. It returns void, and does not take any parameter. 
 You would do it like this:
+```cpp
 // A class declaration, the method belongs to this class
 class ClassManager {
 protected:
@@ -72,11 +76,13 @@ public:
 		mObjects.clear();
 	}
 };
+```
 
 ## Detouring a virtual member method
 
 Imagine you want to detour a virtual method that is member of a certain class. It returns void, and takes 2 float parameters. 
 You would do it like this:
+```cpp
 // A class declaration, the method belongs to this class
 // It's important to know in which class the method was declared. In this case, let's imagine it was declared in ICombatant
 class cCreature : public IObject, public ICombatant {
@@ -92,6 +98,7 @@ public:
 		original_function(strength, distance);
 	}
 }
+```
 
 ## Attaching/detaching detours
 
@@ -100,6 +107,7 @@ Detours must be attached/detached in the DllMain function. This header provides 
 - `CommitDetours()`: must be used after using detours
 
 An example DllMain would look like this:
+```cpp
 switch (dwReason) {
 	case DLL_PROCESS_ATTACH:
 	PrepareDetours(hHandle);
@@ -116,11 +124,13 @@ case DLL_PROCESS_DETACH:
 	CommitDetours();
 	break;
 }
+```
 
 ## Separating header/cpp files
 
 If you want, you can declare the detour in a header file, and specify the code in a cpp file. It would look like this:
 
+```cpp
 // In the header file:
 static_detour(MyDetour1, float(const char*)) {};
 
@@ -133,6 +143,7 @@ float MyDetour1::DETOUR(const char* pString) {
 		return original_function(pString) + original_function("object");
 	}
 }
+```
 */
 
 // When detouring __thiscalls, optimization should be disabled to avoid __fastcall being replaced
@@ -293,6 +304,7 @@ member_detour_<DetourClass, BaseClass, VirtualClass, Result(Arguments...)>::orig
 ///
 /// Not assigning `virtualClass` correctly might lead to crashes or unexpected behaviour. For example:
 ///
+/// ```cpp
 /// class A {
 ///    virtual void func_A();
 /// }
@@ -302,6 +314,7 @@ member_detour_<DetourClass, BaseClass, VirtualClass, Result(Arguments...)>::orig
 /// class C : public A, public B {
 ///    virtual void func_B(int) override;
 /// }
+/// ```
 ///
 /// If you want to detour `func_B`, you need to use the macro `virtual_detour(MyDetour, C, B, void(int))`
 ///
