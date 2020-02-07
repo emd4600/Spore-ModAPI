@@ -4,7 +4,7 @@ To use those mods, you need the [ModAPI Launcher and Installers](http://davoonli
 The **Spore ModAPI SDK** allows you to create C++ mods for Spore. These mods are compiled into `.dll` files,
 that can then be used by the **[ModAPI Launcher Kit](http://davoonline.com/sporemodder/rob55rod/ModAPI/Public/index.html)** to inject them into Spore.
 
-The documentation of the SDK is available here: http://davoonline.com/sporemodder/emd4600/SporeModAPI/index.html
+The documentation of the SDK is available here: https://emd4600.github.io/Spore-ModAPI/
 
 Instructions about download, installation and updating can be found [in this tutorial](_installation.md).
 
