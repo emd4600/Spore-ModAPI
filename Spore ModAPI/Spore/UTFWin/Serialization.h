@@ -29,86 +29,113 @@ namespace UTFWin
 {
 	struct ComponentSerialization;
 	struct StructSerialization;
+	struct SerializedProperty;
 	class Serializer;
 
-	typedef bool(*StructSerializerGetter)(Serializer& dst, void* arg_4, ComponentSerialization& serialization);
-
-	typedef bool(*Getter)(void* arg_0, void* arg_4, ComponentSerialization& serialization);
-	typedef bool(*Setter)(void* arg_0, void* arg_4, ComponentSerialization& serialization);
-	typedef bool(*SerializerGetter)(Serializer& dst, void* arg_4, ComponentSerialization& serialization);
-
+	/// Structure used to define access methods for special property types.
 	struct PropertyMethods
 	{
-		Getter mGetter;
-		Setter mSetter;
-		SerializerGetter mSerializerGetter;
-	};
+		typedef bool(*Getter)(void* arg_0, void*, const ComponentSerialization& serialization);
+		typedef bool(*Setter)(void* arg_0, void*, const ComponentSerialization& serialization);
+		typedef bool(*SerializerGetter)(Serializer& dst, const Serializer& parentSerializer, const SerializedProperty* prop);
 
-	struct SerializedProperty
-	{
-		 
-		enum
-		{
-			kTypeParent = 1,
-			kTypeBool = 2,
-			kTypeUInt8 = 3,
-			kTypeUInt16 = 4,
-			kTypeUInt32 = 5,
-			kTypeUInt64 = 6,
-			kTypeInt8 = 7,
-			kTypeInt16 = 8,
-			kTypeInt32 = 9,
-			kTypeInt64 = 10,
-			kTypeFloat = 11,
-
-			kTypeDim = 15,
-			kTypeVec4 = 16,
-			kTypeVec2 = 17,
-			kTypeText = 18,
-			kTypePointer = 19,
-			kTypeStruct = 20,
-
-			kFlagArray = 0x8000
-		};
-
-		int field_0;
-		union
-		{
-			PropertyMethods* mpMethods;
-			StructSerialization* mpStructSerialization;
-		};
-		uint32_t mnProxyID;
-		uint16_t mnType;
-		size_t mnOffset;
-		size_t mnCount;
+		Getter getter;
+		Setter setter;
+		SerializerGetter serializerGetter;
 	};
 
 	struct StructSerialization
 	{
+		typedef bool(*StructSerializerGetter)(Serializer& dst, const Serializer& parentSerializer, const ComponentSerialization& serialization);
+
 		int field_0;
 		int field_4;
 		StructSerializerGetter mGetter;
 	};
 
-	struct ComponentSerialization
+	/// The possible property types used in SPUI serialization.
+	enum SerializedTypes
 	{
-		ComponentSerialization(uint16_t nType, uint32_t nProxyID, size_t nObjectSize, SerializedProperty* pProperties, size_t nPropertiesCount);
+		kTypeParent = 1,
+		kTypeBool = 2,
+		kTypeUInt8 = 3,
+		kTypeUInt16 = 4,
+		kTypeUInt32 = 5,
+		kTypeUInt64 = 6,
+		kTypeInt8 = 7,
+		kTypeInt16 = 8,
+		kTypeInt32 = 9,
+		kTypeInt64 = 10,
+		kTypeFloat = 11,
 
-		uint16_t mnType;
-		uint32_t mnProxyID;
-		size_t mnObjectSize;
-		SerializedProperty* mpProperties;
-		size_t mnPropertiesCount;
-		// 3 methods?
+		kTypeDim = 15,
+		kTypeVec4 = 16,
+		kTypeVec2 = 17,
+		kTypeText = 18,
+		kTypePointer = 19,
+		kTypeStruct = 20,
+
+		kFlagArray = 0x8000
 	};
 
-	class Serializer
+	/// Defines how a member of a class is stored in an SPUI.
+	struct SerializedProperty
 	{
-	public:
-		const ComponentSerialization* mpSerialization;
-		void* mpObject;
-		size_t mnCount;
-		uint32_t mnProxyID;
+
+
+		int field_0;
+		union
+		{
+			PropertyMethods* pMethods;
+			StructSerialization* pStructSerialization;
+		};
+		/// An ID used to uniquely identify this property.
+		uint32_t proxyID;
+		/// The type of property, 
+		uint16_t type;
+		/// The offset of the variable inside the class. Can be obtained using `offsetof(class, member)`.
+		size_t offset;
+		/// If it's an array, how many elements the property has; otherwise, 1.
+		size_t count;
+	};
+
+	/// A structure that defines how a class is stored in an SPUI.
+	struct ComponentSerialization
+	{
+		typedef bool(*UnkMethod1)(void*);
+		typedef bool(*UnkMethod2)();
+		typedef void(*OnSerializationFinished)(void*);
+
+		ComponentSerialization(uint16_t type, uint32_t proxyID, size_t objectSize, SerializedProperty* properties, size_t propertiesCount);
+
+		/// The type of component, one in UTFWin::SerializedTypes; usually `kTypePointer`.
+		uint16_t type;
+		/// The proxy ID used to identify the component type.
+		uint32_t proxyID;
+		/// The `sizeof()` of the class to be serialized
+		size_t objectSize;
+		/// A pointer to the properties of the class
+		SerializedProperty* pProperties;
+		/// How many properties there are in `pProperties`
+		size_t propertiesCount;
+
+		UnkMethod1 field_14;
+		UnkMethod2 field_18;  // always returns true?
+		/// Optional method called after the serialization has been finished. The parameter is the object.
+		OnSerializationFinished onSerializationFinished;
+	};
+
+	/// A structure that defines how an object must be read in an SPUI.
+	struct Serializer
+	{
+		/// A pointer to the structure that defines the serialization for the element.
+		const ComponentSerialization* pSerialization;
+		/// The element to be serialized
+		void* pObject;
+		/// How many components the element has (1 if it's not an array)
+		size_t count;
+		/// The proxy ID used to identify the element type. It's the same used in the class factory.
+		uint32_t proxyID;
 	};
 
 	class SerializationService

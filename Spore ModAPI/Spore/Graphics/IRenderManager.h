@@ -19,9 +19,11 @@
 
 #pragma once
 
+#include <EASTL\intrusive_ptr.h>
 #include <Spore\Internal.h>
 #include <Spore\Graphics\IRenderable.h>
 #include <Spore\Graphics\LambdaRenderable.h>
+
 
 /// Access the active render manager.
 #define RenderManager (*Graphics::IRenderManager::Get())
@@ -30,6 +32,8 @@
 
 namespace Graphics
 {
+	using namespace eastl;
+
 	struct RenderererParams
 	{
 		/* 00h */	int width;
@@ -89,6 +93,15 @@ namespace Graphics
 	{
 	public:
 
+		struct RenderLayer
+		{
+			IRenderablePtr mpRenderable;
+			int mIndex;
+			int mFlags;
+			int field_0C;  // 1 by default,  0x10000 means rendered?
+			float field_10;
+		};
+
 		// off_14114E0
 
 		virtual int AddRef() = 0;
@@ -96,8 +109,8 @@ namespace Graphics
 		virtual ~IRenderManager() = 0;
 
 		//TODO this is totally incomplete!
-		/* 0Ch */	virtual int func0Ch() = 0;
-		/* 10h */	virtual int func10h() = 0;
+		/* 0Ch */	virtual bool Initialize() = 0;
+		/* 10h */	virtual bool Dispose() = 0;
 		/* 14h */	virtual int func14h() = 0;
 		/* 18h */	virtual int func18h() = 0;
 		/* 1Ch */	virtual RenderererParams& GetParameters() = 0;
@@ -143,6 +156,13 @@ namespace Graphics
 		/// Returns the renderable assigned to the given layer, or nullptr if there is none.
 		/// @param layerIndex 
 		/* 58h */	virtual IRenderable* GetRenderable(int layerIndex) = 0;
+
+		/* 5Ch */	virtual int AddRenderableExtraFlags(int layerIndex, int flags) = 0;  // changes field_0C
+		/* 60h */	virtual int RemoveRenderableExtraFlags(int layerIndex, int flags) = 0;  // changes field_0C
+		/* 64h */	virtual int GetRenderableExtraFlags(int layerIndex) = 0;
+		/* 68h */	virtual int GetRenderablesCount() const = 0;
+		/* 6Ch */	virtual IRenderable* GetRenderableAt(int index) = 0;
+		/* 70h */	virtual RenderLayer& GetRenderLayerAt(int index) = 0;
 
 		// 80h update?
 

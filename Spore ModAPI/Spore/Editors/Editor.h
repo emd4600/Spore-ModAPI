@@ -39,6 +39,7 @@
 #include <Spore\Graphics\IRenderable.h>
 #include <Spore\Graphics\ILightingWorld.h>
 #include <Spore\Graphics\IModelWorld.h>
+#include <Spore\Graphics\ShaderData.h>
 
 #include <Spore\Swarm\IEffectWorld.h>
 
@@ -68,6 +69,18 @@ namespace Editors
 		BuildMode = 0,
 		PaintMode = 1,
 		PlayMode = 2
+	};
+
+	enum EditorRenderLayers
+	{
+		/// Renders the background model world without shadows.
+		kRenderLayerBackground = 12,
+		/// Renders the creation and the pedestal (with shadows) 
+		kRenderLayerPedestalCreation = 13
+		// 0x0F  only for paint mode
+		// 0x11  pedestal
+		// 0x14
+		// 0x1A
 	};
 
 	enum ComplexityFlags
@@ -102,9 +115,9 @@ namespace Editors
 		char _padding_8[0x18];
 
 		/// The App::IGameModeManager that holds this editor.
-		/* 20h */	intrusive_ptr<App::IGameModeManager>	mpGameModeMgr;
+		/* 20h */	IGameModeManagerPtr	mpGameModeMgr;
 		/// The App::PropertyList that contains the configuration of the current editor.
-		/* 24h */	intrusive_ptr<App::PropertyList>		mpPropList;
+		/* 24h */	PropertyListPtr		mpPropList;
 
 		/// The current position of the cursor in the editor.
 		/* 28h */	Math::Point mCursor;
@@ -125,7 +138,7 @@ namespace Editors
 		/* 64h */	int field_64;
 		/* 68h */	float field_68;  // Set to 0 when mouse click
 		/// Time to wait before starting animated creature (in milliseconds).
-		/* 6Ch */	float mfCreatureIdleActivationTime;
+		/* 6Ch */	float mCreatureIdleActivationTime;
 		/* 70h */	float field_70;
 		/* 74h */	bool field_74;
 
@@ -134,14 +147,14 @@ namespace Editors
 
 		/* 7Ch */	EditorPlayMode* mpPlayMode;
 		/// THe light to be used by the editor.
-		/* 80h */	intrusive_ptr<Graphics::ILightingWorld> mpLightingWorld;
+		/* 80h */	ILightingWorldPtr mpLightingWorld;
 		/// The model world that contains the pedestal and test environment model.
-		/* 84h */	intrusive_ptr<Graphics::IModelWorld> mpPedestalModelWorld;
-		/* 88h */	intrusive_ptr<Graphics::IModelWorld> field_88;
+		/* 84h */	IModelWorldPtr mpPedestalModelWorld;
+		/* 88h */	IModelWorldPtr field_88;
 		/// The model world that contains the background model.
-		/* 8Ch */	intrusive_ptr<Graphics::IModelWorld> mpBackgroundModelWorld;
+		/* 8Ch */	IModelWorldPtr mpBackgroundModelWorld;
 		/* 90h */	int field_90;
-		/* 94h */	intrusive_ptr<Swarm::IEffectWorld> mpEffectWorld;
+		/* 94h */	IEffectWorldPtr mpEffectWorld;
 
 		// use appropiate container!
 		// you can get it with virtual function 40h
@@ -149,13 +162,13 @@ namespace Editors
 
 		/* 9Ch */	int field_9C;
 		/// The model to be used for the pedestal in the editor. It belongs to mpPedestalModelWorld.
-		/* A0h */	intrusive_ptr<Graphics::Model> mpPedestalModel;
+		/* A0h */	ModelPtr mpPedestalModel;
 		/// The model to be used for the test environment in the editor. It belongs mpPedestalModelWorld.
-		/* A4h */	intrusive_ptr<Graphics::Model> mpTestEnvironmentModel;
+		/* A4h */	ModelPtr mpTestEnvironmentModel;
 		/// The model to be used for the background in the editor. It belongs to mpBackgroundModelWorld.
-		/* A8h */	intrusive_ptr<Graphics::Model> mpBackgroundModel;  // used in loc_5874D8
+		/* A8h */	ModelPtr mpBackgroundModel;  // used in loc_5874D8
 		/// A background model used in accessories editors. It belongs to mpBackgroundModelWorld.
-		/* ACh */	intrusive_ptr<Graphics::Model> mpAccBackgroundModel;
+		/* ACh */	ModelPtr mpAccBackgroundModel;
 		/* B0h */	string16 field_B0;
 		// /* B9h */	bool editorShowAbilityIcons;  // might also be 4B6h ?
 
@@ -190,7 +203,7 @@ namespace Editors
 		/* 144h */	bool field_144;  // true
 		/* 148h */	int field_148;
 		/* 14Ch */	int field_14C; // vertebra? only present in creature-like editor
-		/* 150h */	intrusive_ptr<Object> field_150;  // something related with painting?
+		/* 150h */	intrusive_ptr<Object> field_150;  // something related with painting?  uses sub_4C3E70 to return something that parts also use
 		/* 154h */	int field_154;
 
 		//// just guesses, apparently it calls DefaultRefCounted.Unuse()
@@ -274,7 +287,7 @@ namespace Editors
 		/* 28Ch */	int field_28C;
 		/* 290h */	int field_290;
 		/* 294h */	UnkClass2* field_294;	// something related with editorUseShadows
-		/* 298h */	int field_298;
+		/* 298h */	Graphics::ShadowMapInfo* mpShadowMapInfo;
 		/* 29Ch */	int field_29C;
 		/* 2A0h */	int field_2A0;
 		/* 2A4h */	int field_2A4;
@@ -289,32 +302,32 @@ namespace Editors
 		/* 2B4h */	char field_2B4;
 		/* 2B5h */	bool mbDisableCreatureAnimIK;  // not initialized
 		/// The width of the space that the model skin is constrained to.
-		/* 2B8h */	float mfBoundSize;  // 2.0
+		/* 2B8h */	float mBoundSize;  // 2.0
 		/// The width of the space that the feet are constrained to.
-		/* 2BCh */	float mfFeetBoundSize;  // 2.0
+		/* 2BCh */	float mFeetBoundSize;  // 2.0
 		/// The base of the cylinder.
-		/* 2C0h */	float mfMinHeight;  // -2.0
-		/// The height of the cylinder.
+		/* 2C0h */	float mMinHeight;  // -2.0
+		/// The height of te cylinder.
 		/* 2C4h */	float mfMaxHeight;  // 2.0
 		/// Minimum width a model has to be to be playable.
-		/* 2C8h */	float mfMinPlayableWidth;  // MAX_FLOAT
+		/* 2C8h */	float mMinPlayableWidth;  // MAX_FLOAT
 		/// Minimum depth a model has to be to be playable.
-		/* 2CCh */	float mfMinPlayableDepth;  // MAX_FLOAT
+		/* 2CCh */	float mMinPlayableDepth;  // MAX_FLOAT
 		/// Minimum height a model has to be to be playable.
-		/* 2D0h */	float mfMinPlayableHeight;  // MAX_FLOAT
+		/* 2D0h */	float mMinPlayableHeight;  // MAX_FLOAT
 		/// The minimum height a legless creature is allowed to be on load.
-		/* 2D4h */	float mfMinimumLeglessCreatureHeight;
+		/* 2D4h */	float mMinimumLeglessCreatureHeight;
 		/// Which complexity limits to show in meter, possible values in the ComplexityFlags enum.
 		/* 2D8h */	uint32_t mViewableComplexityFlags;  
 		/// Maximum complexity of blocks allowed in this editor.
-		/* 2DCh */	int mnComplexityLimit;  // -1
+		/* 2DCh */	int mComplexityLimit;  // -1
 		/// Maximum bone complexity of blocks allowed in this editor
-		/* 2E0h */	int mnBoneComplexityLimit;  // -1
+		/* 2E0h */	int mBoneComplexityLimit;  // -1
 		/// Maximum number of baked blocks allowed in this editor
-		/* 2E4h */	int mnMaxBakedBlocks;  // -1
+		/* 2E4h */	int mMaxBakedBlocks;  // -1
 		/* 2E8h */	int field_2E8;  // not initialized
 		/// Maximum geometric score (from vertices/indices) allowed in this editor
-		/* 2ECh */	float mfMaxGeomScore;
+		/* 2ECh */	float mMaxGeomScore;
 		/* 2F0h */	bool mbCellPinningToRigBlocks;  // not initialized
 		/* 2F1h */	bool mbUseSkin;
 		/* 2F2h */	bool mbUseSpine;
@@ -349,7 +362,7 @@ namespace Editors
 		/* 354h	*/	int field_354;
 		/* 358h	*/	int field_358;
 		/* 35Ch	*/	int field_35C;
-		/* 360h	*/	int field_360;
+		/* 360h	*/	int field_360;  // contains a renderable at 38h
 		/* 364h	*/	int field_364;
 		/* 368h	*/	int field_368;
 		/* 36Ch	*/	vector<int> field_36C;
@@ -429,7 +442,7 @@ namespace Editors
 		/* 480h */	float field_480;
 		/* 484h */	float field_484;
 		/// The distance the mouse has to travel to interrupt a reactive animation.
-		/* 488h */	float mfAnimationInterruptDistance;  // 30.0
+		/* 488h */	float mAnimationInterruptDistance;  // 30.0
 
 		/* 48Ch */	int field_48C;  // not initialized
 		/* 490h */	int field_490;  // not initialized
@@ -439,7 +452,7 @@ namespace Editors
 		/* 4A0h */	int field_4A0;
 		/* 4A4h */	int field_4A4;
 		/* 4A8h */	int field_4A8;  // not initialized
-		/* 4ACh */	int mnRenderingQuality;  // 1
+		/* 4ACh */	int mRenderingQuality;  // 1
 		/* 4B0h */	bool field_4B0;  // true
 		/* 4B1h */	bool field_4B1;  // true
 		/* 4B2h */	bool field_4B2;

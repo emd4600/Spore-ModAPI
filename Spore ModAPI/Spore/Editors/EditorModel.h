@@ -33,12 +33,23 @@ namespace Editors
 		: public Simulator::cNameableEntity
 		, public IVirtual
 	{
+	public:
+
+		string16& GetCreationName() const;
+
+		void SetColor(int index, struct ColorRGB color);
+
+		ColorRGB GetColor(int index) const;
+
+		int GetPartsCount() const;
+		EditorRigblock* GetPart(int index);
+
 	protected:
 		/* 08h */	int mnRefCount;
 
 	public:
 		/* 0Ch */	ResourceKey field_0C;
-		/* 18h */	vector<intrusive_ptr<EditorRigblock>> parts;
+		/* 18h */	vector<intrusive_ptr<EditorRigblock>> mParts;
 		/* 2Ch */	bool field_2C;
 		/* 30h */	int field_30;  // intrusive_ptr, but not to an Object
 		/* 34h */	bool field_34;
@@ -63,12 +74,6 @@ namespace Editors
 		/* A4h */	ColorRGB mColors[3];
 		/* C8h */	vector<int> field_C8;  // size 18h
 		/* ECh */	int field_EC;  // not initialized
-
-	public:
-
-		string16& GetCreationName() const;
-
-		void SetColor(int index, struct ColorRGB color);
 	};
 
 	/////////////////////////////////
@@ -81,6 +86,17 @@ namespace Editors
 	{
 		DeclareAddress(GetCreationName);
 		DeclareAddress(SetColor);
+	}
+
+	inline ColorRGB EditorModel::GetColor(int index) const {
+		return mColors[index];
+	}
+
+	inline int EditorModel::GetPartsCount() const {
+		return mParts.size();
+	}
+	inline EditorRigblock* EditorModel::GetPart(int index) {
+		return mParts[index].get();
 	}
 }
 
