@@ -59,10 +59,10 @@ namespace UTFWin
 
 	void InteractiveWinProc::SetSerializer(Serializer& dst)
 	{
-		dst.mpSerialization = &InteractiveWinProc::SerializationData;
-		dst.mpObject = (IWinProc*) this;
-		dst.mnCount = 1;
-		dst.mnProxyID = GetProxyID();
+		dst.pSerialization = &InteractiveWinProc::SerializationData;
+		dst.pObject = (IWinProc*) this;
+		dst.count = 1;
+		dst.proxyID = GetProxyID();
 	}
 	uint32_t InteractiveWinProc::GetProxyID() const
 	{

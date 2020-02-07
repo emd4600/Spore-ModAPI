@@ -30,7 +30,7 @@ namespace UTFWin
 	struct ComponentSerialization;
 	struct StructSerialization;
 	struct SerializedProperty;
-	class Serializer;
+	struct Serializer;
 
 	/// Structure used to define access methods for special property types.
 	struct PropertyMethods

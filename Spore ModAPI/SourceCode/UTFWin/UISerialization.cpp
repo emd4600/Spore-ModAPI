@@ -32,11 +32,11 @@ namespace UTFWin
 	}
 
 	ComponentSerialization::ComponentSerialization(uint16_t nType, uint32_t nProxyID, size_t nObjectSize, SerializedProperty* pProperties, size_t nPropertiesCount)
-		: mnType(nType)
-		, mnProxyID(nProxyID)
-		, mnObjectSize(nObjectSize)
-		, mpProperties(pProperties)
-		, mnPropertiesCount(nPropertiesCount)
+		: type(nType)
+		, proxyID(nProxyID)
+		, objectSize(nObjectSize)
+		, pProperties(pProperties)
+		, propertiesCount(nPropertiesCount)
 	{
 
 	}
