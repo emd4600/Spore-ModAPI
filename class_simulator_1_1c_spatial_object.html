@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Simulator::cSpatialObject class | Spore ModAPI SDK for creating C++ mods for Spore</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,600,600i%7CSource+Code+Pro:400,400i,600" />
+  <link rel="stylesheet" href="m-dark.css" />
+  <link rel="stylesheet" href="m-documentation.css" />
+  <link rel="icon" href="Spore_ModAPI_Icon.png" type="image/png" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#22272e" />
+</head>
+<body>
+<header><nav id="navigation">
+  <div class="m-container">
+    <div class="m-row">
+      <a href="index.html" id="m-navbar-brand" class="m-col-t-8 m-col-m-none m-left-m"><img src="Spore_ModAPI_Icon.png" />Spore ModAPI <span class="m-thin">SDK for creating C++ mods for Spore</span></a>
+      <div class="m-col-t-4 m-hide-m m-text-right m-nopadr">
+        <a href="#search" class="m-doc-search-icon" title="Search" onclick="return showSearch()"><svg style="height: 0.9rem;" viewBox="0 0 16 16">
+          <path id="m-doc-search-icon-path" d="m6 0c-3.31 0-6 2.69-6 6 0 3.31 2.69 6 6 6 1.49 0 2.85-0.541 3.89-1.44-0.0164 0.338 0.147 0.759 0.5 1.15l3.22 3.79c0.552 0.614 1.45 0.665 2 0.115 0.55-0.55 0.499-1.45-0.115-2l-3.79-3.22c-0.392-0.353-0.812-0.515-1.15-0.5 0.895-1.05 1.44-2.41 1.44-3.89 0-3.31-2.69-6-6-6zm0 1.56a4.44 4.44 0 0 1 4.44 4.44 4.44 4.44 0 0 1-4.44 4.44 4.44 4.44 0 0 1-4.44-4.44 4.44 4.44 0 0 1 4.44-4.44z"/>
+        </svg></a>
+        <a id="m-navbar-show" href="#navigation" title="Show navigation"></a>
+        <a id="m-navbar-hide" href="#" title="Hide navigation"></a>
+      </div>
+      <div id="m-navbar-collapse" class="m-col-t-12 m-show-m m-col-m-none m-right-m">
+        <div class="m-row">
+          <ol class="m-col-t-6 m-col-m-none">
+            <li><a href="pages.html">Tutorials</a></li>
+            <li><a href="namespaces.html">Namespaces</a></li>
+          </ol>
+          <ol class="m-col-t-6 m-col-m-none" start="3">
+            <li><a href="annotated.html">Classes</a></li>
+            <li><a href="files.html">Files</a></li>
+            <li class="m-show-m"><a href="#search" class="m-doc-search-icon" title="Search" onclick="return showSearch()"><svg style="height: 0.9rem;" viewBox="0 0 16 16">
+              <use href="#m-doc-search-icon-path" />
+            </svg></a></li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav></header>
+<main><article>
+  <div class="m-container m-container-inflatable">
+    <div class="m-row">
+      <div class="m-col-l-10 m-push-l-1">
+        <h1>
+          <span class="m-breadcrumb"><a href="namespace_simulator.html">Simulator</a>::<wbr/></span>cSpatialObject <span class="m-thin">class</span>
+          <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="c_spatial_object_8h.html">&lt;Spore/Simulator/cSpatialObject.h&gt;</a></div>
+        </h1>
+        <p><span></span></p>
+        <div class="m-block m-default">
+          <h3>Contents</h3>
+          <ul>
+            <li>
+              Reference
+              <ul>
+                <li><a href="#derived-classes">Derived classes</a></li>
+                <li><a href="#pub-static-attribs">Public static variables</a></li>
+                <li><a href="#typeless-methods">Constructors, destructors, conversion operators</a></li>
+                <li><a href="#pub-methods">Public functions</a></li>
+                <li><a href="#pub-attribs">Public variables</a></li>
+                <li><a href="#pro-attribs">Protected variables</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+        <section id="derived-classes">
+          <h2><a href="#derived-classes">Derived classes</a></h2>
+          <dl class="m-doc">
+            <dt>
+              class <a href="class_simulator_1_1c_building.html" class="m-doc">cBuilding</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              class <a href="class_simulator_1_1c_city.html" class="m-doc">cCity</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              class <a href="class_simulator_1_1c_city_territory.html" class="m-doc">cCityTerritory</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              class <a href="class_simulator_1_1c_city_walls.html" class="m-doc">cCityWalls</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              class <a href="class_simulator_1_1c_default_ao_e_area.html" class="m-doc">cDefaultAoEArea</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              class <a href="class_simulator_1_1c_default_beam_projectile.html" class="m-doc">cDefaultBeamProjectile</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              class <a href="class_simulator_1_1c_game_terrain_cursor.html" class="m-doc">cGameTerrainCursor</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              class <a href="class_simulator_1_1c_interactable_object.html" class="m-doc">cInteractableObject</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              class <a href="class_simulator_1_1c_locomotive_object.html" class="m-doc">cLocomotiveObject</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              class <a href="class_simulator_1_1c_ornament.html" class="m-doc">cOrnament</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              class <a href="class_simulator_1_1c_planet.html" class="m-doc">cPlanet</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              class <a href="class_simulator_1_1c_visible_planet.html" class="m-doc">cVisiblePlanet</a>
+            </dt>
+            <dd><span></span></dd>
+          </dl>
+        </section>
+        <section id="pub-static-attribs">
+          <h2><a href="#pub-static-attribs">Public static variables</a></h2>
+          <dl class="m-doc">
+            <dt id="a1b666476a92f2a9ed14eb1f1464c87a3">
+              static const uint32_t <a href="#a1b666476a92f2a9ed14eb1f1464c87a3" class="m-doc-self">TYPE</a>
+            </dt>
+            <dd><span></span></dd>
+          </dl>
+        </section>
+        <section id="typeless-methods">
+          <h2><a href="#typeless-methods">Constructors, destructors, conversion operators</a></h2>
+          <dl class="m-doc">
+            <dt id="a789be59dc0ea39676102be1b0d43c7b6">
+              <span class="m-doc-wrap-bumper"><a href="#a789be59dc0ea39676102be1b0d43c7b6" class="m-doc-self">~cSpatialObject</a>(</span><span class="m-doc-wrap">) <span class="m-label m-flat m-warning">virtual</span></span>
+            </dt>
+            <dd><span></span></dd>
+          </dl>
+        </section>
+        <section id="pub-methods">
+          <h2><a href="#pub-methods">Public functions</a></h2>
+          <dl class="m-doc">
+            <dt id="a78ebdb7afad1a7bf53613b6195a145f6">
+              <span class="m-doc-wrap-bumper">void <a href="#a78ebdb7afad1a7bf53613b6195a145f6" class="m-doc-self">func00h</a>(</span><span class="m-doc-wrap">int) <span class="m-label m-flat m-warning">virtual</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="ae9025fda22fa6629ea435508b29f4960">
+              <span class="m-doc-wrap-bumper">auto <a href="#ae9025fda22fa6629ea435508b29f4960" class="m-doc-self">func04h</a>(</span><span class="m-doc-wrap">) -&gt; int <span class="m-label m-flat m-warning">virtual</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="af5e473886b608289383ef868c548aae7">
+              <span class="m-doc-wrap-bumper">auto <a href="#af5e473886b608289383ef868c548aae7" class="m-doc-self">func08h</a>(</span><span class="m-doc-wrap">) -&gt; int <span class="m-label m-flat m-warning">virtual</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">void <a href="#afb787db0b116fc9f57dd7e3877a4437e" class="m-doc">Reset</a>(</span><span class="m-doc-wrap">) <span class="m-label m-flat m-warning">virtual</span></span>
+            </dt>
+            <dd>Sets this model as invisible in its IModelWorld and sets the model and model world to nullptr.</dd>
+            <dt id="a9c85836018ae1d6a2433ccb196b8bb06">
+              <span class="m-doc-wrap-bumper">auto <a href="#a9c85836018ae1d6a2433ccb196b8bb06" class="m-doc-self">Write</a>(</span><span class="m-doc-wrap">void* arg_0) -&gt; int <span class="m-label m-flat m-warning">virtual</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a68415a84dbbbdf523eaac79bb3442f79">
+              <span class="m-doc-wrap-bumper">auto <a href="#a68415a84dbbbdf523eaac79bb3442f79" class="m-doc-self">Read</a>(</span><span class="m-doc-wrap">void* arg_0) -&gt; int <span class="m-label m-flat m-warning">virtual</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a1e1ef11fd234534018f27590157213ae">
+              <span class="m-doc-wrap-bumper">auto <a href="#a1e1ef11fd234534018f27590157213ae" class="m-doc-self">func1Ch</a>(</span><span class="m-doc-wrap">int) -&gt; bool <span class="m-label m-flat m-warning">virtual</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a3f272b080c6ba1f1e44a122d0f0ca097">
+              <span class="m-doc-wrap-bumper">auto <a href="#a3f272b080c6ba1f1e44a122d0f0ca097" class="m-doc-self">func20h</a>(</span><span class="m-doc-wrap">) -&gt; bool <span class="m-label m-flat m-warning">virtual</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="afe50b8a3e04a9a7bd7aa80fe288eb103">
+              <span class="m-doc-wrap-bumper">auto <a href="#afe50b8a3e04a9a7bd7aa80fe288eb103" class="m-doc-self">IsRolledOver</a>(</span><span class="m-doc-wrap">) -&gt; bool <span class="m-label m-flat m-warning">virtual</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a058ea8cfee834456d8a99cbb7d9edcf5">
+              <span class="m-doc-wrap-bumper">void <a href="#a058ea8cfee834456d8a99cbb7d9edcf5" class="m-doc-self">SetIsRolledOver</a>(</span><span class="m-doc-wrap">bool bValue) <span class="m-label m-flat m-warning">virtual</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a3730d93889f9ef521745edaca0e2e1d9">
+              <span class="m-doc-wrap-bumper">auto <a href="#a3730d93889f9ef521745edaca0e2e1d9" class="m-doc-self">GetPosition</a>(</span><span class="m-doc-wrap">) -&gt; const <a href="struct_math_1_1_vector3.html" class="m-doc">Vector3</a>&amp; <span class="m-label m-flat m-warning">virtual</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a723963c9b32cedec609ed75110893723">
+              <span class="m-doc-wrap-bumper">auto <a href="#a723963c9b32cedec609ed75110893723" class="m-doc-self">GetOrientation</a>(</span><span class="m-doc-wrap">) -&gt; const <a href="struct_math_1_1_quaternion.html" class="m-doc">Quaternion</a>&amp; <span class="m-label m-flat m-warning">virtual</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a6ef136c67996b992d7fdae6283d8d917">
+              <span class="m-doc-wrap-bumper">auto <a href="#a6ef136c67996b992d7fdae6283d8d917" class="m-doc-self">GetScale</a>(</span><span class="m-doc-wrap">) -&gt; float <span class="m-label m-flat m-warning">virtual</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="aede6568561e4439e9d567e4627885f53">
+              <span class="m-doc-wrap-bumper">void <a href="#aede6568561e4439e9d567e4627885f53" class="m-doc-self">SetPosition</a>(</span><span class="m-doc-wrap">const <a href="struct_math_1_1_vector3.html" class="m-doc">Vector3</a>&amp; value) <span class="m-label m-flat m-warning">virtual</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a493800f2a031ecc31ba22966890878fe">
+              <span class="m-doc-wrap-bumper">void <a href="#a493800f2a031ecc31ba22966890878fe" class="m-doc-self">SetOrientation</a>(</span><span class="m-doc-wrap">const <a href="struct_math_1_1_quaternion.html" class="m-doc">Quaternion</a>&amp; value) <span class="m-label m-flat m-warning">virtual</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="ac6d87e089558f06e538785c82e37c6d2">
+              <span class="m-doc-wrap-bumper">void <a href="#ac6d87e089558f06e538785c82e37c6d2" class="m-doc-self">SetScale</a>(</span><span class="m-doc-wrap">float fValue) <span class="m-label m-flat m-warning">virtual</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="af4a7eb925c27acfc65efb16bc0d30836">
+              <span class="m-doc-wrap-bumper">void <a href="#af4a7eb925c27acfc65efb16bc0d30836" class="m-doc-self">func44h</a>(</span><span class="m-doc-wrap">int) <span class="m-label m-flat m-warning">virtual</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a17668513394ae11d43c38b3e0221223a">
+              <span class="m-doc-wrap-bumper">auto <a href="#a17668513394ae11d43c38b3e0221223a" class="m-doc-self">IsOnView</a>(</span><span class="m-doc-wrap">) -&gt; bool <span class="m-label m-flat m-warning">virtual</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a8f163ff1cc382f0f92aaf11134923070">
+              <span class="m-doc-wrap-bumper">void <a href="#a8f163ff1cc382f0f92aaf11134923070" class="m-doc-self">SetIsOnView</a>(</span><span class="m-doc-wrap">bool bValue) <span class="m-label m-flat m-warning">virtual</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a47dc8c9ac709a1db5152abb1c07d89e9">
+              <span class="m-doc-wrap-bumper">auto <a href="#a47dc8c9ac709a1db5152abb1c07d89e9" class="m-doc-self">IsSelected</a>(</span><span class="m-doc-wrap">) -&gt; bool <span class="m-label m-flat m-warning">virtual</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="aa36b0747ca18ba3b0a911b546123e606">
+              <span class="m-doc-wrap-bumper">void <a href="#aa36b0747ca18ba3b0a911b546123e606" class="m-doc-self">SetIsSeleted</a>(</span><span class="m-doc-wrap">bool bValue) <span class="m-label m-flat m-warning">virtual</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a47ebf10f819045e68905dfd455e1a4db">
+              <span class="m-doc-wrap-bumper">auto <a href="#a47ebf10f819045e68905dfd455e1a4db" class="m-doc-self">func58h</a>(</span><span class="m-doc-wrap">) -&gt; bool <span class="m-label m-flat m-warning">virtual</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a070ff00b8f7d12194d6376e087a4f554">
+              <span class="m-doc-wrap-bumper">auto <a href="#a070ff00b8f7d12194d6376e087a4f554" class="m-doc-self">func5Ch</a>(</span><span class="m-doc-wrap">) -&gt; <a href="struct_math_1_1_vector3.html" class="m-doc">Vector3</a> <span class="m-label m-flat m-warning">virtual</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a72dfadb9a366d4bf13e0847741cdcc87">
+              <span class="m-doc-wrap-bumper">auto <a href="#a72dfadb9a366d4bf13e0847741cdcc87" class="m-doc-self">func60h</a>(</span><span class="m-doc-wrap">) -&gt; <a href="struct_math_1_1_vector3.html" class="m-doc">Vector3</a> <span class="m-label m-flat m-warning">virtual</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="ab2abdbe54a26b0f523635e0840e400b9">
+              <span class="m-doc-wrap-bumper">void <a href="#ab2abdbe54a26b0f523635e0840e400b9" class="m-doc-self">SetLocalExtents</a>(</span><span class="m-doc-wrap">const <a href="struct_math_1_1_bounding_box.html" class="m-doc">BoundingBox</a>&amp; localExtents,
+              float fScale) <span class="m-label m-flat m-warning">virtual</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="ad96e5605794d5e5e155635b9578422b4">
+              <span class="m-doc-wrap-bumper">auto <a href="#ad96e5605794d5e5e155635b9578422b4" class="m-doc-self">GetLocalExtents</a>(</span><span class="m-doc-wrap">) -&gt; const <a href="struct_math_1_1_bounding_box.html" class="m-doc">BoundingBox</a>&amp; <span class="m-label m-flat m-warning">virtual</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="aee501d0badcf4d037efacf353df5ef39">
+              <span class="m-doc-wrap-bumper">auto <a href="#aee501d0badcf4d037efacf353df5ef39" class="m-doc-self">func6Ch</a>(</span><span class="m-doc-wrap">int) -&gt; int <span class="m-label m-flat m-warning">virtual</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="ab30bbc9858a1e696036b09eda59596ff">
+              <span class="m-doc-wrap-bumper">auto <a href="#ab30bbc9858a1e696036b09eda59596ff" class="m-doc-self">GetBoundingRadius</a>(</span><span class="m-doc-wrap">) -&gt; float <span class="m-label m-flat m-warning">virtual</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a17004efa0a69d25fc9f8cbaf1a2724c7">
+              <span class="m-doc-wrap-bumper">auto <a href="#a17004efa0a69d25fc9f8cbaf1a2724c7" class="m-doc-self">GetFootprintRadius</a>(</span><span class="m-doc-wrap">) -&gt; float <span class="m-label m-flat m-warning">virtual</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="aa52aabe0de0fa3b565c832a44606093e">
+              <span class="m-doc-wrap-bumper">auto <a href="#aa52aabe0de0fa3b565c832a44606093e" class="m-doc-self">GetMaxZ</a>(</span><span class="m-doc-wrap">) -&gt; float <span class="m-label m-flat m-warning">virtual</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a25d79e2ac769afd3da4d6fc3ec0ce488">
+              <span class="m-doc-wrap-bumper">auto <a href="#a25d79e2ac769afd3da4d6fc3ec0ce488" class="m-doc-self">func7Ch</a>(</span><span class="m-doc-wrap">bool,
+              <a href="struct_math_1_1_point.html" class="m-doc">Point</a>&amp; dst) -&gt; <a href="struct_math_1_1_point.html" class="m-doc">Point</a>&amp; <span class="m-label m-flat m-warning">virtual</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="afd1a674295a0df9060c83821c471f710">
+              <span class="m-doc-wrap-bumper">void <a href="#afd1a674295a0df9060c83821c471f710" class="m-doc-self">func80h</a>(</span><span class="m-doc-wrap">) <span class="m-label m-flat m-warning">virtual</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="abbbf3ea988e0982f9276c50cda4e746a">
+              <span class="m-doc-wrap-bumper">void <a href="#abbbf3ea988e0982f9276c50cda4e746a" class="m-doc-self">func84h</a>(</span><span class="m-doc-wrap">) <span class="m-label m-flat m-warning">virtual</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a92bb77f5025dcc865bbc43be975ab3d7">
+              <span class="m-doc-wrap-bumper">auto <a href="#a92bb77f5025dcc865bbc43be975ab3d7" class="m-doc-self">HasModelChanged</a>(</span><span class="m-doc-wrap">) -&gt; bool <span class="m-label m-flat m-warning">virtual</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a1b146b34c0dbc4d091a1c3a788e5c738">
+              <span class="m-doc-wrap-bumper">void <a href="#a1b146b34c0dbc4d091a1c3a788e5c738" class="m-doc-self">SetHasModelChanged</a>(</span><span class="m-doc-wrap">bool bValue) <span class="m-label m-flat m-warning">virtual</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="ac741d4133c2119fab7127f6710a42c7a">
+              <span class="m-doc-wrap-bumper">auto <a href="#ac741d4133c2119fab7127f6710a42c7a" class="m-doc-self">HasModel</a>(</span><span class="m-doc-wrap">) -&gt; bool <span class="m-label m-flat m-warning">virtual</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a0be2bc1234b21f477942131269505c4f">
+              <span class="m-doc-wrap-bumper">void <a href="#a0be2bc1234b21f477942131269505c4f" class="m-doc-self">SetModelKey</a>(</span><span class="m-doc-wrap">const <a href="struct_resource_key.html" class="m-doc">ResourceKey</a>&amp; modelKey) <span class="m-label m-flat m-warning">virtual</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a6f32259c5a5079c3bb57fbc05a4ec5a6">
+              <span class="m-doc-wrap-bumper">auto <a href="#a6f32259c5a5079c3bb57fbc05a4ec5a6" class="m-doc-self">GetModelKey</a>(</span><span class="m-doc-wrap">) -&gt; const <a href="struct_resource_key.html" class="m-doc">ResourceKey</a>&amp; <span class="m-label m-flat m-warning">virtual</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a9f4c32d259367bf06ed7b797c5a15ddb">
+              <span class="m-doc-wrap-bumper">auto <a href="#a9f4c32d259367bf06ed7b797c5a15ddb" class="m-doc-self">func9Ch</a>(</span><span class="m-doc-wrap">) -&gt; bool <span class="m-label m-flat m-warning">virtual</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="ab95238b925eab5ca11ffe155c73deb5b">
+              <span class="m-doc-wrap-bumper">void <a href="#ab95238b925eab5ca11ffe155c73deb5b" class="m-doc-self">SetModelWorld</a>(</span><span class="m-doc-wrap"><a href="class_graphics_1_1_i_model_world.html" class="m-doc">Graphics::<wbr />IModelWorld</a>* pModelWorld) <span class="m-label m-flat m-warning">virtual</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a6d9fb6f2ffd784c3981088b0407dee26">
+              <span class="m-doc-wrap-bumper">void <a href="#a6d9fb6f2ffd784c3981088b0407dee26" class="m-doc-self">funcA4h</a>(</span><span class="m-doc-wrap">) <span class="m-label m-flat m-warning">virtual</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a682cfad728f5435d55312fb0aec2d7cd">
+              <span class="m-doc-wrap-bumper">void <a href="#a682cfad728f5435d55312fb0aec2d7cd" class="m-doc-self">SetModel</a>(</span><span class="m-doc-wrap"><a href="class_graphics_1_1_model.html" class="m-doc">Graphics::<wbr />Model</a>* pModel,
+              <a href="class_graphics_1_1_i_model_world.html" class="m-doc">Graphics::<wbr />IModelWorld</a>* pModelWorld) <span class="m-label m-flat m-warning">virtual</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a6806fabf6d6b414b3b75c27619de27a5">
+              <span class="m-doc-wrap-bumper">auto <a href="#a6806fabf6d6b414b3b75c27619de27a5" class="m-doc-self">GetModel</a>(</span><span class="m-doc-wrap">) -&gt; <a href="class_graphics_1_1_model.html" class="m-doc">Graphics::<wbr />Model</a>* <span class="m-label m-flat m-warning">virtual</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="aa5cbf7541e5e7254a254282170bb0dfc">
+              <span class="m-doc-wrap-bumper">auto <a href="#aa5cbf7541e5e7254a254282170bb0dfc" class="m-doc-self">GetModelWorld</a>(</span><span class="m-doc-wrap">) -&gt; <a href="class_graphics_1_1_i_model_world.html" class="m-doc">Graphics::<wbr />IModelWorld</a>* <span class="m-label m-flat m-warning">virtual</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="ad56206ff7b78200bf8ea335139705636">
+              <span class="m-doc-wrap-bumper">void <a href="#ad56206ff7b78200bf8ea335139705636" class="m-doc-self">funcB4h</a>(</span><span class="m-doc-wrap">string&amp; dst) <span class="m-label m-flat m-warning">virtual</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="ab316721cba6f3b6b5f246df71ec0a00a">
+              <span class="m-doc-wrap-bumper">auto <a href="#ab316721cba6f3b6b5f246df71ec0a00a" class="m-doc-self">Cast</a>(</span><span class="m-doc-wrap">uint32_t type) -&gt; void* <span class="m-label m-flat m-warning">virtual</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="aab6655c605210c5f40d0591ee22efa38">
+              <span class="m-doc-wrap-bumper">auto <a href="#aab6655c605210c5f40d0591ee22efa38" class="m-doc-self">AddRef</a>(</span><span class="m-doc-wrap">) -&gt; int <span class="m-label m-flat m-warning">pure virtual</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a6752b02f50a8334751372e6c7a289268">
+              <span class="m-doc-wrap-bumper">auto <a href="#a6752b02f50a8334751372e6c7a289268" class="m-doc-self">Release</a>(</span><span class="m-doc-wrap">) -&gt; int <span class="m-label m-flat m-warning">pure virtual</span></span>
+            </dt>
+            <dd><span></span></dd>
+          </dl>
+        </section>
+        <section id="pub-attribs">
+          <h2><a href="#pub-attribs">Public variables</a></h2>
+          <dl class="m-doc">
+            <dt id="aac6fcb176133c34bb112fe7290296621">
+              uint32_t <a href="#aac6fcb176133c34bb112fe7290296621" class="m-doc-self">mFlags</a>
+            </dt>
+            <dd><span></span></dd>
+          </dl>
+        </section>
+        <section id="pro-attribs">
+          <h2><a href="#pro-attribs">Protected variables</a></h2>
+          <dl class="m-doc">
+            <dt id="ab81f98926577eb800678bb6f6712a963">
+              <a href="struct_math_1_1_vector3.html" class="m-doc">Vector3</a> <a href="#ab81f98926577eb800678bb6f6712a963" class="m-doc-self">mPosition</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="aa8238333bc1d782eaf21eb6e3794c114">
+              <a href="struct_math_1_1_quaternion.html" class="m-doc">Quaternion</a> <a href="#aa8238333bc1d782eaf21eb6e3794c114" class="m-doc-self">mOrientation</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a45653918d9405786cc1fd4e894051e6a">
+              <a href="struct_math_1_1_bounding_box.html" class="m-doc">BoundingBox</a> <a href="#a45653918d9405786cc1fd4e894051e6a" class="m-doc-self">mOriginalLocalExtents</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a328ca30d8758cdc96af6a3990a623bf0">
+              <a href="struct_math_1_1_bounding_box.html" class="m-doc">BoundingBox</a> <a href="#a328ca30d8758cdc96af6a3990a623bf0" class="m-doc-self">mLocalExtents</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="aaca8d48d4a693203c21f8bb8c4f58a50">
+              uint32_t <a href="#aaca8d48d4a693203c21f8bb8c4f58a50" class="m-doc-self">mMaterialType</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="ac54081d7f141290bd5fade7141016b67">
+              float <a href="#ac54081d7f141290bd5fade7141016b67" class="m-doc-self">field_58</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a1029b367a70203efa3086efcea91fcea">
+              float <a href="#a1029b367a70203efa3086efcea91fcea" class="m-doc-self">mfBoundingRadius</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a38cfe9043233309ea655deb7da5d37a4">
+              float <a href="#a38cfe9043233309ea655deb7da5d37a4" class="m-doc-self">mfFootprintRadius</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="adf57273e22f63932e6196f6936e43667">
+              float <a href="#adf57273e22f63932e6196f6936e43667" class="m-doc-self">mfScale</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a41cc9f81a4836d81456f660d2c15d955">
+              float <a href="#a41cc9f81a4836d81456f660d2c15d955" class="m-doc-self">mfDistanceFromCamera</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a41ab83a99434a9bd4811532febee0e2a">
+              bool <a href="#a41ab83a99434a9bd4811532febee0e2a" class="m-doc-self">mbIsSelected</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a598d4355633992d5060ef40c34532e3c">
+              bool <a href="#a598d4355633992d5060ef40c34532e3c" class="m-doc-self">mbIsRolledOver</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a35195d51896982d18130a03ddde91422">
+              bool <a href="#a35195d51896982d18130a03ddde91422" class="m-doc-self">mbIsInvalid</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a4a9587bef3d8f2b573324a83318c8a4a">
+              bool <a href="#a4a9587bef3d8f2b573324a83318c8a4a" class="m-doc-self">mbPickable</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="ab4b9176ec82520ae86a1140f2aa019fc">
+              bool <a href="#ab4b9176ec82520ae86a1140f2aa019fc" class="m-doc-self">mbIsTangible</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="ac21643e80c5bd7e0c79560041743643b">
+              bool <a href="#ac21643e80c5bd7e0c79560041743643b" class="m-doc-self">mbFixed</a>
+            </dt>
+            <dd>If a model is fixed, it isn&#x27;t affected by any kind of physics.</dd>
+            <dt id="a6f7563c3ecf4af667aeac3d22d6238f8">
+              bool <a href="#a6f7563c3ecf4af667aeac3d22d6238f8" class="m-doc-self">mbIsBeingEdited</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="aa87bcaa62e85fa9fdd23b2368740602e">
+              bool <a href="#aa87bcaa62e85fa9fdd23b2368740602e" class="m-doc-self">mbModelChanged</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a3b2edcbd5e65c9c01ef973f339592848">
+              bool <a href="#a3b2edcbd5e65c9c01ef973f339592848" class="m-doc-self">mbTransformDirty</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="aa1705f5c48474e8250851624d03768c8">
+              bool <a href="#aa1705f5c48474e8250851624d03768c8" class="m-doc-self">mbEnabled</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a4139f11c3acdc6796df908090aa3e079">
+              bool <a href="#a4139f11c3acdc6796df908090aa3e079" class="m-doc-self">mbInView</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a1eadb8e7f92f1e6332431d7445161c31">
+              bool <a href="#a1eadb8e7f92f1e6332431d7445161c31" class="m-doc-self">mbSupported</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="aa638a89086886f080521bef8b650c6d3">
+              bool <a href="#aa638a89086886f080521bef8b650c6d3" class="m-doc-self">mbIsGhost</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a62a19135fe3fe1c087f83cd842f69719">
+              float <a href="#a62a19135fe3fe1c087f83cd842f69719" class="m-doc-self">field_7C</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a8d86b2a781006ff8bf575626e00da913">
+              float <a href="#a8d86b2a781006ff8bf575626e00da913" class="m-doc-self">field_80</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a6defde5053ed20d99b5f9ec9002ecaeb">
+              float <a href="#a6defde5053ed20d99b5f9ec9002ecaeb" class="m-doc-self">field_84</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="ace086e30b386dcbbb3c29fc5578612ea">
+              float <a href="#ace086e30b386dcbbb3c29fc5578612ea" class="m-doc-self">field_88</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a44d7443ca4c3ea7533ac9fdd8f8986c3">
+              float <a href="#a44d7443ca4c3ea7533ac9fdd8f8986c3" class="m-doc-self">field_8C</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a746bfbdef761c2be88dff1d42d1d3a27">
+              <a href="struct_resource_key.html" class="m-doc">ResourceKey</a> <a href="#a746bfbdef761c2be88dff1d42d1d3a27" class="m-doc-self">mModelKey</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a08aea732dd239e4713fa7031d53b5f32">
+              intrusive_ptr&lt;<a href="class_graphics_1_1_model.html" class="m-doc">Graphics::<wbr />Model</a>&gt; <a href="#a08aea732dd239e4713fa7031d53b5f32" class="m-doc-self">mpModel</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="afb25d515aeca50340a2096d3281c6442">
+              intrusive_ptr&lt;<a href="class_graphics_1_1_i_model_world.html" class="m-doc">Graphics::<wbr />IModelWorld</a>&gt; <a href="#afb25d515aeca50340a2096d3281c6442" class="m-doc-self">mpModelWorld</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="acb953579805a9dca315245c636d849ea">
+              bool <a href="#acb953579805a9dca315245c636d849ea" class="m-doc-self">field_A4</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a1e45a3a335be3e640f1397d00e67be95">
+              bool <a href="#a1e45a3a335be3e640f1397d00e67be95" class="m-doc-self">field_A5</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="afd72a94ca5f5170aed600db75f0c74bc">
+              bool <a href="#afd72a94ca5f5170aed600db75f0c74bc" class="m-doc-self">mbKeepPinnedToPlanet</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="add05cc4992de94a346b19dbffecac601">
+              bool <a href="#add05cc4992de94a346b19dbffecac601" class="m-doc-self">field_A7</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a82bc67fd4e23dfb5bfda98b99ec65890">
+              uint32_t <a href="#a82bc67fd4e23dfb5bfda98b99ec65890" class="m-doc-self">field_A8</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a6b7773478254bec81d657138b2acc45a">
+              int <a href="#a6b7773478254bec81d657138b2acc45a" class="m-doc-self">field_AC</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a29488b661a7872aac756bda2cabb25fe">
+              int <a href="#a29488b661a7872aac756bda2cabb25fe" class="m-doc-self">field_B0</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a63bd488620c16ae38a2c450e3b7b3d87">
+              float <a href="#a63bd488620c16ae38a2c450e3b7b3d87" class="m-doc-self">field_B4</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="ae046046c1e4689563f0cb95d5d06a6ad">
+              int <a href="#ae046046c1e4689563f0cb95d5d06a6ad" class="m-doc-self">field_B8</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="ab88cae89e9030e7647d4d91c46411ea2">
+              int <a href="#ab88cae89e9030e7647d4d91c46411ea2" class="m-doc-self">field_BC</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a24e03dc45e64ba510b98c2681bd9e16e">
+              vector&lt;int&gt; <a href="#a24e03dc45e64ba510b98c2681bd9e16e" class="m-doc-self">field_C0</a>
+            </dt>
+            <dd><span></span></dd>
+          </dl>
+        </section>
+        <section>
+          <h2>Function documentation</h2>
+          <section class="m-doc-details" id="afb787db0b116fc9f57dd7e3877a4437e"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">void Simulator::<wbr />cSpatialObject::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#afb787db0b116fc9f57dd7e3877a4437e" class="m-doc-self">Reset</a>(</span><span class="m-doc-wrap">) <span class="m-label m-warning">virtual</span></span></span>
+            </h3>
+            <p>Sets this model as invisible in its IModelWorld and sets the model and model world to nullptr.</p>
+<p>It also resets all necessary parameters.</p>
+          </div></section>
+        </section>
+      </div>
+    </div>
+  </div>
+</article></main>
+<div class="m-doc-search" id="search">
+  <a href="#!" onclick="return hideSearch()"></a>
+  <div class="m-container">
+    <div class="m-row">
+      <div class="m-col-m-8 m-push-m-2">
+        <div class="m-doc-search-header m-text m-small">
+          <div><span class="m-label m-default">Tab</span> / <span class="m-label m-default">T</span> to search, <span class="m-label m-default">Esc</span> to close</div>
+          <div id="search-symbolcount">&hellip;</div>
+        </div>
+        <div class="m-doc-search-content">
+          <form>
+            <input type="search" name="q" id="search-input" placeholder="Loading &hellip;" disabled="disabled" autofocus="autofocus" autocomplete="off" spellcheck="false" />
+          </form>
+          <noscript class="m-text m-danger m-text-center">Unlike everything else in the docs, the search functionality <em>requires</em> JavaScript.</noscript>
+          <div id="search-help" class="m-text m-dim m-text-center">
+            <p class="m-noindent">Search for symbols, directories, files, pages or
+            modules. You can omit any prefix from the symbol or file path; adding a
+            <code>:</code> or <code>/</code> suffix lists all members of given symbol or
+            directory.</p>
+            <p class="m-noindent">Use <span class="m-label m-dim">&darr;</span>
+            / <span class="m-label m-dim">&uarr;</span> to navigate through the list,
+            <span class="m-label m-dim">Enter</span> to go.
+            <span class="m-label m-dim">Tab</span> autocompletes common prefix, you can
+            copy a link to the result using <span class="m-label m-dim">⌘</span>
+            <span class="m-label m-dim">L</span> while <span class="m-label m-dim">⌘</span>
+            <span class="m-label m-dim">M</span> produces a Markdown link.</p>
+          </div>
+          <div id="search-notfound" class="m-text m-warning m-text-center">Sorry, nothing was found.</div>
+          <ul id="search-results"></ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="search-v1.js"></script>
+<script src="searchdata-v1.js" async="async"></script>
+<footer><nav>
+  <div class="m-container">
+    <div class="m-row">
+      <div class="m-col-l-10 m-push-l-1">
+        <p>Spore ModAPI SDK for creating C++ mods for Spore. Created with <a href="https://doxygen.org/">Doxygen</a> 1.8.16 and <a href="https://mcss.mosra.cz/">m.css</a>.</p>
+      </div>
+    </div>
+  </div>
+</nav></footer>
+</body>
+</html>

@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Editors::EditorUI class | Spore ModAPI SDK for creating C++ mods for Spore</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,600,600i%7CSource+Code+Pro:400,400i,600" />
+  <link rel="stylesheet" href="m-dark.css" />
+  <link rel="stylesheet" href="m-documentation.css" />
+  <link rel="icon" href="Spore_ModAPI_Icon.png" type="image/png" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#22272e" />
+</head>
+<body>
+<header><nav id="navigation">
+  <div class="m-container">
+    <div class="m-row">
+      <a href="index.html" id="m-navbar-brand" class="m-col-t-8 m-col-m-none m-left-m"><img src="Spore_ModAPI_Icon.png" />Spore ModAPI <span class="m-thin">SDK for creating C++ mods for Spore</span></a>
+      <div class="m-col-t-4 m-hide-m m-text-right m-nopadr">
+        <a href="#search" class="m-doc-search-icon" title="Search" onclick="return showSearch()"><svg style="height: 0.9rem;" viewBox="0 0 16 16">
+          <path id="m-doc-search-icon-path" d="m6 0c-3.31 0-6 2.69-6 6 0 3.31 2.69 6 6 6 1.49 0 2.85-0.541 3.89-1.44-0.0164 0.338 0.147 0.759 0.5 1.15l3.22 3.79c0.552 0.614 1.45 0.665 2 0.115 0.55-0.55 0.499-1.45-0.115-2l-3.79-3.22c-0.392-0.353-0.812-0.515-1.15-0.5 0.895-1.05 1.44-2.41 1.44-3.89 0-3.31-2.69-6-6-6zm0 1.56a4.44 4.44 0 0 1 4.44 4.44 4.44 4.44 0 0 1-4.44 4.44 4.44 4.44 0 0 1-4.44-4.44 4.44 4.44 0 0 1 4.44-4.44z"/>
+        </svg></a>
+        <a id="m-navbar-show" href="#navigation" title="Show navigation"></a>
+        <a id="m-navbar-hide" href="#" title="Hide navigation"></a>
+      </div>
+      <div id="m-navbar-collapse" class="m-col-t-12 m-show-m m-col-m-none m-right-m">
+        <div class="m-row">
+          <ol class="m-col-t-6 m-col-m-none">
+            <li><a href="pages.html">Tutorials</a></li>
+            <li><a href="namespaces.html">Namespaces</a></li>
+          </ol>
+          <ol class="m-col-t-6 m-col-m-none" start="3">
+            <li><a href="annotated.html">Classes</a></li>
+            <li><a href="files.html">Files</a></li>
+            <li class="m-show-m"><a href="#search" class="m-doc-search-icon" title="Search" onclick="return showSearch()"><svg style="height: 0.9rem;" viewBox="0 0 16 16">
+              <use href="#m-doc-search-icon-path" />
+            </svg></a></li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav></header>
+<main><article>
+  <div class="m-container m-container-inflatable">
+    <div class="m-row">
+      <div class="m-col-l-10 m-push-l-1">
+        <h1>
+          <span class="m-breadcrumb"><a href="namespace_editors.html">Editors</a>::<wbr/></span>EditorUI <span class="m-thin">class</span>
+          <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_editor_u_i_8h.html">&lt;Spore/Editors/EditorUI.h&gt;</a></div>
+        </h1>
+        <p><span></span></p>
+        <div class="m-block m-default">
+          <h3>Contents</h3>
+          <ul>
+            <li>
+              Reference
+              <ul>
+                <li><a href="#base-classes">Base classes</a></li>
+                <li><a href="#typeless-methods">Constructors, destructors, conversion operators</a></li>
+                <li><a href="#pub-methods">Public functions</a></li>
+                <li><a href="#pub-attribs">Public variables</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+        <section id="base-classes">
+          <h2><a href="#base-classes">Base classes</a></h2>
+          <dl class="m-doc">
+            <dt>
+              class <a href="class_editors_1_1___editor_u_i__interface.html" class="m-doc">_EditorUI_interface</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              class <a href="class_u_t_f_win_1_1_i_win_proc.html" class="m-doc">UTFWin::IWinProc</a>
+            </dt>
+            <dd>This class is a window procedure, also known as an event/message listener.</dd>
+            <dt>
+              class <a href="class_app_1_1_i_message_listener.html" class="m-doc">App::IMessageListener</a>
+            </dt>
+            <dd>An interface that can receive messages sent through the app.</dd>
+            <dt>
+              class <a href="class_default_ref_counted.html" class="m-doc">DefaultRefCounted</a>
+            </dt>
+            <dd>The default implementation of a reference counted class.</dd>
+          </dl>
+        </section>
+        <section id="typeless-methods">
+          <h2><a href="#typeless-methods">Constructors, destructors, conversion operators</a></h2>
+          <dl class="m-doc">
+            <dt id="aa3eb61df24b97dbeb5a15aae0d02d8e5">
+              <span class="m-doc-wrap-bumper"><a href="#aa3eb61df24b97dbeb5a15aae0d02d8e5" class="m-doc-self">EditorUI</a>(</span><span class="m-doc-wrap">)</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a4e6da64835cd8a7acf3b6377ef4736a0">
+              <span class="m-doc-wrap-bumper"><a href="#a4e6da64835cd8a7acf3b6377ef4736a0" class="m-doc-self">~EditorUI</a>(</span><span class="m-doc-wrap">) <span class="m-label m-flat m-warning">virtual</span></span>
+            </dt>
+            <dd><span></span></dd>
+          </dl>
+        </section>
+        <section id="pub-methods">
+          <h2><a href="#pub-methods">Public functions</a></h2>
+          <dl class="m-doc">
+            <dt id="a2313f94eec5c77b4dab4d5031a882cc6">
+              <span class="m-doc-wrap-bumper">auto <a href="#a2313f94eec5c77b4dab4d5031a882cc6" class="m-doc-self">Load</a>(</span><span class="m-doc-wrap"><a href="class_editors_1_1c_editor.html" class="m-doc">cEditor</a>* pEditor,
+              uint32_t instanceID,
+              uint32_t groupID,
+              bool editorModelForceSaveover) -&gt; bool</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a92c31112b37540843917e7cc38b226a5" class="m-doc">HandleMessage</a>(</span><span class="m-doc-wrap">uint32_t messageID,
+              void* msg) -&gt; bool <span class="m-label m-flat m-warning">override</span></span>
+            </dt>
+            <dd>Called every time a message is received.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a044704efb586350c9450225c5897d3f9" class="m-doc">HandleUIMessage</a>(</span><span class="m-doc-wrap"><a href="class_u_t_f_win_1_1_i_window.html" class="m-doc">IWindow</a>* pWindow,
+              const <a href="class_u_t_f_win_1_1_message.html" class="m-doc">Message</a>&amp; message) -&gt; bool <span class="m-label m-flat m-warning">override</span></span>
+            </dt>
+            <dd>Method called every time a message is received on a window that has this IWinProc added.</dd>
+          </dl>
+        </section>
+        <section id="pub-attribs">
+          <h2><a href="#pub-attribs">Public variables</a></h2>
+          <dl class="m-doc">
+            <dt id="acd8b804c285eb101c38876252257a7cb">
+              <a href="class_u_t_f_win_1_1_u_i_layout.html" class="m-doc">UTFWin::<wbr />UILayout</a> <a href="#acd8b804c285eb101c38876252257a7cb" class="m-doc-self">mMainUI</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a435cb923ff83ed0cb088d4822aa162b9">
+              <a href="class_u_t_f_win_1_1_u_i_layout.html" class="m-doc">UTFWin::<wbr />UILayout</a> <a href="#a435cb923ff83ed0cb088d4822aa162b9" class="m-doc-self">mSharedUI</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a8df3866be2c35276f96fe6776b640365">
+              <a href="class_u_t_f_win_1_1_u_i_layout.html" class="m-doc">UTFWin::<wbr />UILayout</a> <a href="#a8df3866be2c35276f96fe6776b640365" class="m-doc-self">mCameraControlsUI</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a2bc5fdb668e78993dae81515bccabd45">
+              <a href="class_editors_1_1c_editor.html" class="m-doc">cEditor</a>* <a href="#a2bc5fdb668e78993dae81515bccabd45" class="m-doc-self">mpEditor</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a9c1a0f1ed0c970382209911e3f933f71">
+              int <a href="#a9c1a0f1ed0c970382209911e3f933f71" class="m-doc-self">field_60</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a8e290aae42ddf059cb5da88ba7f853f7">
+              <a href="class_u_t_f_win_1_1_i_window.html" class="m-doc">IWindow</a>* <a href="#a8e290aae42ddf059cb5da88ba7f853f7" class="m-doc-self">field_64</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="aa34cd7a88e3259ecda4c03c0afccedfb">
+              <a href="class_u_t_f_win_1_1_i_window.html" class="m-doc">IWindow</a>* <a href="#aa34cd7a88e3259ecda4c03c0afccedfb" class="m-doc-self">field_68</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="ab7d8c9d6ca5a6ffb086945fded435e82">
+              <a href="class_u_t_f_win_1_1_i_window.html" class="m-doc">IWindow</a>* <a href="#ab7d8c9d6ca5a6ffb086945fded435e82" class="m-doc-self">field_6C</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a93577114c881c71868ae38196d9c0881">
+              <a href="class_u_t_f_win_1_1_i_window.html" class="m-doc">IWindow</a>* <a href="#a93577114c881c71868ae38196d9c0881" class="m-doc-self">field_70</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="ae2145340043b00499fe11f8e0fca79a7">
+              int <a href="#ae2145340043b00499fe11f8e0fca79a7" class="m-doc-self">field_74</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="ab0c675c982f15e865540d335be2cc834">
+              <a href="class_u_t_f_win_1_1_i_window.html" class="m-doc">IWindow</a>* <a href="#ab0c675c982f15e865540d335be2cc834" class="m-doc-self">field_78</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="aa0fadc8e228b48884bde05d645d4855f">
+              int <a href="#aa0fadc8e228b48884bde05d645d4855f" class="m-doc-self">field_7C</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="acce919a29b127dd5b0fa07dcf3598a5b">
+              <a href="class_u_t_f_win_1_1_i_window.html" class="m-doc">IWindow</a>* <a href="#acce919a29b127dd5b0fa07dcf3598a5b" class="m-doc-self">field_80</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a7e8c60cc421281d23abec2e757a2c7bb">
+              <a href="class_u_t_f_win_1_1_i_window.html" class="m-doc">IWindow</a>* <a href="#a7e8c60cc421281d23abec2e757a2c7bb" class="m-doc-self">field_84</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="af63d6c076a76356bfb168b78adf48fff">
+              int <a href="#af63d6c076a76356bfb168b78adf48fff" class="m-doc-self">field_88</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a174bceec609b5711aa1bc5620a050253">
+              int <a href="#a174bceec609b5711aa1bc5620a050253" class="m-doc-self">field_8C</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="aec48f1fbd1228cb78b6be7a1ef96ac4d">
+              int <a href="#aec48f1fbd1228cb78b6be7a1ef96ac4d" class="m-doc-self">field_90</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a6d8dba95b022439d74168c1e8d8e7ac2">
+              int <a href="#a6d8dba95b022439d74168c1e8d8e7ac2" class="m-doc-self">field_94</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a09fbce8a8d0a5e76bf71966b4ec15c37">
+              int <a href="#a09fbce8a8d0a5e76bf71966b4ec15c37" class="m-doc-self">field_98</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a3278c3b26da3dabf3decd874e6dd4ef4">
+              int <a href="#a3278c3b26da3dabf3decd874e6dd4ef4" class="m-doc-self">field_9C</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a873f2e7128de0c7b80229c8c336d7c24">
+              bool <a href="#a873f2e7128de0c7b80229c8c336d7c24" class="m-doc-self">mbEditorModelForceSaveover</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a018bed139d2132311d05659f677b8f5a">
+              bool <a href="#a018bed139d2132311d05659f677b8f5a" class="m-doc-self">field_A1</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="acaae4a9b9066c3a2841639e6ec57c478">
+              bool <a href="#acaae4a9b9066c3a2841639e6ec57c478" class="m-doc-self">field_A2</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a020a61413db7aff29200b30d30a6519e">
+              char <a href="#a020a61413db7aff29200b30d30a6519e" class="m-doc-self">field_A3</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a39e72bd2ab2de19778ff06ab01f7c7d8">
+              int <a href="#a39e72bd2ab2de19778ff06ab01f7c7d8" class="m-doc-self">field_A4</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a0426406984f65acc394616d44231ef01">
+              int <a href="#a0426406984f65acc394616d44231ef01" class="m-doc-self">field_A8</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a9b4583600fc2390e5449c59156254fa9">
+              int <a href="#a9b4583600fc2390e5449c59156254fa9" class="m-doc-self">field_AC</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a6f6a9550385e3f65810e9d2be3ede5f2">
+              int <a href="#a6f6a9550385e3f65810e9d2be3ede5f2" class="m-doc-self">field_B0</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a6933d94299500eb762d154fb5936200a">
+              int <a href="#a6933d94299500eb762d154fb5936200a" class="m-doc-self">field_B4</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="ad3e947e45fd17ff6f306915d4c248b26">
+              int <a href="#ad3e947e45fd17ff6f306915d4c248b26" class="m-doc-self">field_B8</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a1a0bd359397f765d85360a8676e9636d">
+              int <a href="#a1a0bd359397f765d85360a8676e9636d" class="m-doc-self">field_BC</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="ab43b295df51964eec92b06bc8279b101">
+              int <a href="#ab43b295df51964eec92b06bc8279b101" class="m-doc-self">field_C0</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a53904a292b7c614ecc16ae89ec1ef971">
+              int <a href="#a53904a292b7c614ecc16ae89ec1ef971" class="m-doc-self">field_C4</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a854a09cccd3a0887556b10447de5762b">
+              int <a href="#a854a09cccd3a0887556b10447de5762b" class="m-doc-self">field_C8</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="abaa1fe646fe405e80efab79cab7df2e8">
+              int <a href="#abaa1fe646fe405e80efab79cab7df2e8" class="m-doc-self">field_CC</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a2c26b24a435a939a7319b16d777cdae3">
+              bool <a href="#a2c26b24a435a939a7319b16d777cdae3" class="m-doc-self">field_D0</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="ac85d9c636413262e590cbe2c09bb985e">
+              bool <a href="#ac85d9c636413262e590cbe2c09bb985e" class="m-doc-self">field_D1</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="aa8eed58854876b77fb37e7ce90c737fa">
+              int <a href="#aa8eed58854876b77fb37e7ce90c737fa" class="m-doc-self">field_D4</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="ab496e0c8864ce353982718bfc990c13a">
+              int <a href="#ab496e0c8864ce353982718bfc990c13a" class="m-doc-self">field_D8</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="aac5a674c3ee2e3c7257e9fede34324b0">
+              int <a href="#aac5a674c3ee2e3c7257e9fede34324b0" class="m-doc-self">field_DC</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a8f992403c8843967735e8dd1f740a65e">
+              int <a href="#a8f992403c8843967735e8dd1f740a65e" class="m-doc-self">field_E0</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a1f07bd964560b5b6df34803fc79c0ea1">
+              bool <a href="#a1f07bd964560b5b6df34803fc79c0ea1" class="m-doc-self">field_E4</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a626f867cf7d87a78314812ceed6069b9">
+              bool <a href="#a626f867cf7d87a78314812ceed6069b9" class="m-doc-self">field_E5</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a2e9086acfa32b01aeea6cf447f326e7d">
+              int <a href="#a2e9086acfa32b01aeea6cf447f326e7d" class="m-doc-self">field_E8</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a5be848318d4f7ab67ae9c6f7519fa8d2">
+              bool <a href="#a5be848318d4f7ab67ae9c6f7519fa8d2" class="m-doc-self">field_EC</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a4c872c351bf3531effb2b3839a909e1a">
+              int <a href="#a4c872c351bf3531effb2b3839a909e1a" class="m-doc-self">field_F0</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="ad42ecaefb24b30472836a2ec0876eb4a">
+              bool <a href="#ad42ecaefb24b30472836a2ec0876eb4a" class="m-doc-self">field_F4</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="aafb80f0477ffad2a785b3de36374f3ab">
+              int <a href="#aafb80f0477ffad2a785b3de36374f3ab" class="m-doc-self">field_F8</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a54b5b0242ad211b5e6a8ca70a4dfe108">
+              int <a href="#a54b5b0242ad211b5e6a8ca70a4dfe108" class="m-doc-self">field_FC</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a183ca897513595ed93133b32d7f52dca">
+              bool <a href="#a183ca897513595ed93133b32d7f52dca" class="m-doc-self">field_100</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a8b8ab0423b5c7f691c1f6c38ff7569e2">
+              bool <a href="#a8b8ab0423b5c7f691c1f6c38ff7569e2" class="m-doc-self">field_101</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a746658b22d0feebc8e831636a4063a1c">
+              bool <a href="#a746658b22d0feebc8e831636a4063a1c" class="m-doc-self">field_102</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a55dfa7387bf8f1e43918d7230c0f1ea8">
+              bool <a href="#a55dfa7387bf8f1e43918d7230c0f1ea8" class="m-doc-self">field_103</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a6d56e96b20788abe053c3a8240893546">
+              bool <a href="#a6d56e96b20788abe053c3a8240893546" class="m-doc-self">field_104</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a290dd6647cc9e329f1797d8c021e76c3">
+              bool <a href="#a290dd6647cc9e329f1797d8c021e76c3" class="m-doc-self">field_105</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a6986e85de5a8784227f7b58543ae159a">
+              bool <a href="#a6986e85de5a8784227f7b58543ae159a" class="m-doc-self">field_106</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a1ebbb9300464324ff73a07f99c7d82f6">
+              bool <a href="#a1ebbb9300464324ff73a07f99c7d82f6" class="m-doc-self">field_107</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a5acdc303548ba747d7668ba59ce5c12d">
+              int <a href="#a5acdc303548ba747d7668ba59ce5c12d" class="m-doc-self">field_108</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a05204154761dae915276684c896a9ff8">
+              bool <a href="#a05204154761dae915276684c896a9ff8" class="m-doc-self">field_10C</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a45efafa8857c510e61c56ca791eea0ff">
+              int <a href="#a45efafa8857c510e61c56ca791eea0ff" class="m-doc-self">field_110</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a1aaab23077ea8723359b007663213642">
+              bool <a href="#a1aaab23077ea8723359b007663213642" class="m-doc-self">mbMessageListenerAdded</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a65159298e07ef4ddc363f9c4c90de059">
+              <a href="class_app_1_1_i_message_manager.html" class="m-doc">App::<wbr />IMessageManager</a>* <a href="#a65159298e07ef4ddc363f9c4c90de059" class="m-doc-self">mpMessageManager</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a5155948b32bf0e47ff1c0184f8501ee0">
+              <a href="class_app_1_1_i_message_listener.html" class="m-doc">App::<wbr />IMessageListener</a>* <a href="#a5155948b32bf0e47ff1c0184f8501ee0" class="m-doc-self">mpMessageListener</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="aca08860495cb3bf434ebab7f3ef9193c">
+              uint32_t* <a href="#aca08860495cb3bf434ebab7f3ef9193c" class="m-doc-self">mMessageIDs</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="aa2df675da476c1692cce764c30f4bfa6">
+              size_t <a href="#aa2df675da476c1692cce764c30f4bfa6" class="m-doc-self">mNumMessageIDs</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="aa9cb3ab645f7ffc2b5b082bb15656967">
+              int <a href="#aa9cb3ab645f7ffc2b5b082bb15656967" class="m-doc-self">field_128</a>
+            </dt>
+            <dd><span></span></dd>
+          </dl>
+        </section>
+        <section>
+          <h2>Function documentation</h2>
+          <section class="m-doc-details" id="a92c31112b37540843917e7cc38b226a5"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">bool Editors::<wbr />EditorUI::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a92c31112b37540843917e7cc38b226a5" class="m-doc-self">HandleMessage</a>(</span><span class="m-doc-wrap">uint32_t messageID,
+              void* msg) <span class="m-label m-warning">override</span></span></span>
+            </h3>
+            <p>Called every time a message is received.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">messageID</td>
+                  <td>The ID of the message received.</td>
+                </tr>
+                <tr>
+                  <td>msg</td>
+                  <td>The data of the message received, it might be nullptr.</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>Returns</th>
+                  <td>Whether the message was handled or not.</td>
+                </tr>
+              </tfoot>
+            </table>
+<p>Only the messages with an ID this listened signed up for will call this event.</p>
+          </div></section>
+          <section class="m-doc-details" id="a044704efb586350c9450225c5897d3f9"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">bool Editors::<wbr />EditorUI::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a044704efb586350c9450225c5897d3f9" class="m-doc-self">HandleUIMessage</a>(</span><span class="m-doc-wrap"><a href="class_u_t_f_win_1_1_i_window.html" class="m-doc">IWindow</a>* pWindow,
+              const <a href="class_u_t_f_win_1_1_message.html" class="m-doc">Message</a>&amp; message) <span class="m-label m-warning">override</span></span></span>
+            </h3>
+            <p>Method called every time a message is received on a window that has this IWinProc added.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">pWindow</td>
+                  <td>The window that received this message.</td>
+                </tr>
+                <tr>
+                  <td>message</td>
+                  <td>The message received.</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>Returns</th>
+                  <td>Whether the message was handled or not.</td>
+                </tr>
+              </tfoot>
+            </table>
+<p>This method is responsible of handling (or not) the message. This method receives the IWindow that is currently receiving the message; this way, the same IWinProc can be listening for more than one window. This method returns whether the message was handled or not; if it was handled, no other IWinProcs will be called on that window.</p>
+          </div></section>
+        </section>
+      </div>
+    </div>
+  </div>
+</article></main>
+<div class="m-doc-search" id="search">
+  <a href="#!" onclick="return hideSearch()"></a>
+  <div class="m-container">
+    <div class="m-row">
+      <div class="m-col-m-8 m-push-m-2">
+        <div class="m-doc-search-header m-text m-small">
+          <div><span class="m-label m-default">Tab</span> / <span class="m-label m-default">T</span> to search, <span class="m-label m-default">Esc</span> to close</div>
+          <div id="search-symbolcount">&hellip;</div>
+        </div>
+        <div class="m-doc-search-content">
+          <form>
+            <input type="search" name="q" id="search-input" placeholder="Loading &hellip;" disabled="disabled" autofocus="autofocus" autocomplete="off" spellcheck="false" />
+          </form>
+          <noscript class="m-text m-danger m-text-center">Unlike everything else in the docs, the search functionality <em>requires</em> JavaScript.</noscript>
+          <div id="search-help" class="m-text m-dim m-text-center">
+            <p class="m-noindent">Search for symbols, directories, files, pages or
+            modules. You can omit any prefix from the symbol or file path; adding a
+            <code>:</code> or <code>/</code> suffix lists all members of given symbol or
+            directory.</p>
+            <p class="m-noindent">Use <span class="m-label m-dim">&darr;</span>
+            / <span class="m-label m-dim">&uarr;</span> to navigate through the list,
+            <span class="m-label m-dim">Enter</span> to go.
+            <span class="m-label m-dim">Tab</span> autocompletes common prefix, you can
+            copy a link to the result using <span class="m-label m-dim">⌘</span>
+            <span class="m-label m-dim">L</span> while <span class="m-label m-dim">⌘</span>
+            <span class="m-label m-dim">M</span> produces a Markdown link.</p>
+          </div>
+          <div id="search-notfound" class="m-text m-warning m-text-center">Sorry, nothing was found.</div>
+          <ul id="search-results"></ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="search-v1.js"></script>
+<script src="searchdata-v1.js" async="async"></script>
+<footer><nav>
+  <div class="m-container">
+    <div class="m-row">
+      <div class="m-col-l-10 m-push-l-1">
+        <p>Spore ModAPI SDK for creating C++ mods for Spore. Created with <a href="https://doxygen.org/">Doxygen</a> 1.8.16 and <a href="https://mcss.mosra.cz/">m.css</a>.</p>
+      </div>
+    </div>
+  </div>
+</nav></footer>
+</body>
+</html>

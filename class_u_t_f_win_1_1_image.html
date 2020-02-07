@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>UTFWin::Image class | Spore ModAPI SDK for creating C++ mods for Spore</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,600,600i%7CSource+Code+Pro:400,400i,600" />
+  <link rel="stylesheet" href="m-dark.css" />
+  <link rel="stylesheet" href="m-documentation.css" />
+  <link rel="icon" href="Spore_ModAPI_Icon.png" type="image/png" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#22272e" />
+</head>
+<body>
+<header><nav id="navigation">
+  <div class="m-container">
+    <div class="m-row">
+      <a href="index.html" id="m-navbar-brand" class="m-col-t-8 m-col-m-none m-left-m"><img src="Spore_ModAPI_Icon.png" />Spore ModAPI <span class="m-thin">SDK for creating C++ mods for Spore</span></a>
+      <div class="m-col-t-4 m-hide-m m-text-right m-nopadr">
+        <a href="#search" class="m-doc-search-icon" title="Search" onclick="return showSearch()"><svg style="height: 0.9rem;" viewBox="0 0 16 16">
+          <path id="m-doc-search-icon-path" d="m6 0c-3.31 0-6 2.69-6 6 0 3.31 2.69 6 6 6 1.49 0 2.85-0.541 3.89-1.44-0.0164 0.338 0.147 0.759 0.5 1.15l3.22 3.79c0.552 0.614 1.45 0.665 2 0.115 0.55-0.55 0.499-1.45-0.115-2l-3.79-3.22c-0.392-0.353-0.812-0.515-1.15-0.5 0.895-1.05 1.44-2.41 1.44-3.89 0-3.31-2.69-6-6-6zm0 1.56a4.44 4.44 0 0 1 4.44 4.44 4.44 4.44 0 0 1-4.44 4.44 4.44 4.44 0 0 1-4.44-4.44 4.44 4.44 0 0 1 4.44-4.44z"/>
+        </svg></a>
+        <a id="m-navbar-show" href="#navigation" title="Show navigation"></a>
+        <a id="m-navbar-hide" href="#" title="Hide navigation"></a>
+      </div>
+      <div id="m-navbar-collapse" class="m-col-t-12 m-show-m m-col-m-none m-right-m">
+        <div class="m-row">
+          <ol class="m-col-t-6 m-col-m-none">
+            <li><a href="pages.html">Tutorials</a></li>
+            <li><a href="namespaces.html">Namespaces</a></li>
+          </ol>
+          <ol class="m-col-t-6 m-col-m-none" start="3">
+            <li><a href="annotated.html">Classes</a></li>
+            <li><a href="files.html">Files</a></li>
+            <li class="m-show-m"><a href="#search" class="m-doc-search-icon" title="Search" onclick="return showSearch()"><svg style="height: 0.9rem;" viewBox="0 0 16 16">
+              <use href="#m-doc-search-icon-path" />
+            </svg></a></li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav></header>
+<main><article>
+  <div class="m-container m-container-inflatable">
+    <div class="m-row">
+      <div class="m-col-l-10 m-push-l-1">
+        <h1>
+          <span class="m-breadcrumb"><a href="namespace_u_t_f_win.html">UTFWin</a>::<wbr/></span>Image <span class="m-thin">class</span>
+          <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_image_8h.html">&lt;Spore/UTFWin/Image.h&gt;</a></div>
+        </h1>
+        <p>A layout element that represents an image.</p>
+        <div class="m-block m-default">
+          <h3>Contents</h3>
+          <ul>
+            <li>
+              Reference
+              <ul>
+                <li><a href="#base-classes">Base classes</a></li>
+                <li><a href="#pub-types">Public types</a></li>
+                <li><a href="#pub-static-attribs">Public static variables</a></li>
+                <li><a href="#pub-static-methods">Public static functions</a></li>
+                <li><a href="#typeless-methods">Constructors, destructors, conversion operators</a></li>
+                <li><a href="#pub-methods">Public functions</a></li>
+                <li><a href="#pro-attribs">Protected variables</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+<p>This class might only represent a portion of the entire image file, since it can use UV coordinates.</p>
+        <section id="base-classes">
+          <h2><a href="#base-classes">Base classes</a></h2>
+          <dl class="m-doc">
+            <dt>
+              class <a href="class_u_t_f_win_1_1_i_layout_element.html" class="m-doc">ILayoutElement</a>
+            </dt>
+            <dd>This class represents an element that is part of a user interfaces.</dd>
+          </dl>
+        </section>
+        <section id="pub-types">
+          <h2><a href="#pub-types">Public types</a></h2>
+          <dl class="m-doc">
+            <dt id="ac58c3cc2fdff302a9947c3ee4261fd69">
+              <span class="m-doc-wrap-bumper">enum <a href="#ac58c3cc2fdff302a9947c3ee4261fd69" class="m-doc-self">(anonymous)</a> { </span><span class="m-doc-wrap"><a href="#ac58c3cc2fdff302a9947c3ee4261fd69ad95326b867011887245dec430f78f08b" class="m-doc">kTypePNG</a> = 0x2F7D0004 }</span>
+            </dt>
+            <dd><span></span></dd>
+          </dl>
+        </section>
+        <section id="pub-static-attribs">
+          <h2><a href="#pub-static-attribs">Public static variables</a></h2>
+          <dl class="m-doc">
+            <dt id="a1b314b5ec6ae3f1ba1fd95edb1ffa3b1">
+              static const uint32_t <a href="#a1b314b5ec6ae3f1ba1fd95edb1ffa3b1" class="m-doc-self">TYPE</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="ab83a53c30b239912b513431a56d4229e">
+              static const uint32_t <a href="#ab83a53c30b239912b513431a56d4229e" class="m-doc-self">TYPE_DIMENSIONS</a>
+            </dt>
+            <dd><span></span></dd>
+          </dl>
+        </section>
+        <section id="pub-static-methods">
+          <h2><a href="#pub-static-methods">Public static functions</a></h2>
+          <dl class="m-doc">
+            <dt id="ae5a01cc0025ec8048d57a6f736096a99">
+              <span class="m-doc-wrap-bumper">static auto <a href="#ae5a01cc0025ec8048d57a6f736096a99" class="m-doc-self">GetImage</a>(</span><span class="m-doc-wrap">const <a href="struct_resource_key.html" class="m-doc">ResourceKey</a>&amp; name,
+              <a href="class_u_t_f_win_1_1_image.html" class="m-doc">Image</a>*&amp; dst,
+              bool arg_8 = false,
+              int nHeight = -1,
+              int nWidth = -1) -&gt; bool</span>
+            </dt>
+            <dd>Creates an <a href="class_u_t_f_win_1_1_image.html" class="m-doc">UTFWin::<wbr />Image</a> instance with the image extracted from the file specified.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">static auto <a href="#a0f74ccfb6ee78f2605f28e67c1c19b5b" class="m-doc">SetBackground</a>(</span><span class="m-doc-wrap"><a href="class_u_t_f_win_1_1_i_window.html" class="m-doc">IWindow</a>* pWindow,
+              <a href="class_u_t_f_win_1_1_image.html" class="m-doc">Image</a>* pImage,
+              int nImageIndex = 0) -&gt; bool</span>
+            </dt>
+            <dd>Changes the drawable of the given window to display the specified image.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">static auto <a href="#a16362672aeaae63080234dc438ae5beb" class="m-doc">SetBackgroundByKey</a>(</span><span class="m-doc-wrap"><a href="class_u_t_f_win_1_1_i_window.html" class="m-doc">IWindow</a>* pWindow,
+              const <a href="struct_resource_key.html" class="m-doc">ResourceKey</a> imageName,
+              int nImageIndex = 0) -&gt; bool</span>
+            </dt>
+            <dd>Changes the drawable of the given window to display the specified image.</dd>
+          </dl>
+        </section>
+        <section id="typeless-methods">
+          <h2><a href="#typeless-methods">Constructors, destructors, conversion operators</a></h2>
+          <dl class="m-doc">
+            <dt id="a8bcef48882a6047fca40c23d0d359487">
+              <span class="m-doc-wrap-bumper"><a href="#a8bcef48882a6047fca40c23d0d359487" class="m-doc-self">Image</a>(</span><span class="m-doc-wrap">)</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a2f2ede2a4515698955de8d923ca959f3">
+              <span class="m-doc-wrap-bumper"><a href="#a2f2ede2a4515698955de8d923ca959f3" class="m-doc-self">~Image</a>(</span><span class="m-doc-wrap">) <span class="m-label m-flat m-warning">virtual</span></span>
+            </dt>
+            <dd><span></span></dd>
+          </dl>
+        </section>
+        <section id="pub-methods">
+          <h2><a href="#pub-methods">Public functions</a></h2>
+          <dl class="m-doc">
+            <dt id="a6269f4b9b743d3623b9c40b9f569c445">
+              <span class="m-doc-wrap-bumper">auto <a href="#a6269f4b9b743d3623b9c40b9f569c445" class="m-doc-self">AddRef</a>(</span><span class="m-doc-wrap">) -&gt; int <span class="m-label m-flat m-warning">override</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="add001b33082e4ee64cf9bb7f73a73038">
+              <span class="m-doc-wrap-bumper">auto <a href="#add001b33082e4ee64cf9bb7f73a73038" class="m-doc-self">Release</a>(</span><span class="m-doc-wrap">) -&gt; int <span class="m-label m-flat m-warning">override</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="aa45e8344757492c46570ab7e0d5b9870">
+              <span class="m-doc-wrap-bumper">auto <a href="#aa45e8344757492c46570ab7e0d5b9870" class="m-doc-self">Cast</a>(</span><span class="m-doc-wrap">uint32_t type) const -&gt; void* <span class="m-label m-flat m-warning">override</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a278c8179d2c1d07db094daf9f94950ea">
+              <span class="m-doc-wrap-bumper">void <a href="#a278c8179d2c1d07db094daf9f94950ea" class="m-doc-self">SetSerializer</a>(</span><span class="m-doc-wrap"><a href="struct_u_t_f_win_1_1_serializer.html" class="m-doc">Serializer</a>&amp; dst) <span class="m-label m-flat m-warning">override</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a9894d905ba9c95b1a2185c04c5575a1c">
+              <span class="m-doc-wrap-bumper">auto <a href="#a9894d905ba9c95b1a2185c04c5575a1c" class="m-doc-self">GetProxyID</a>(</span><span class="m-doc-wrap">) const -&gt; uint32_t <span class="m-label m-flat m-warning">override</span></span>
+            </dt>
+            <dd>Returns the ID that identifies this type of element in a SPUI file.</dd>
+            <dt id="a048433d2531fc81d85af5aa4522ffbb1">
+              <span class="m-doc-wrap-bumper">auto <a href="#a048433d2531fc81d85af5aa4522ffbb1" class="m-doc-self">GetTexCoords</a>(</span><span class="m-doc-wrap">) const -&gt; const <a href="union_math_1_1_rectangle.html" class="m-doc">Math::<wbr />Rectangle</a>&amp;</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a5566b9c34a491cd9a7b4096fcae80c6a">
+              <span class="m-doc-wrap-bumper">auto <a href="#a5566b9c34a491cd9a7b4096fcae80c6a" class="m-doc-self">GetDimensions</a>(</span><span class="m-doc-wrap">) const -&gt; const <a href="struct_math_1_1_dimensions.html" class="m-doc">Math::<wbr />Dimensions</a>&amp;</span>
+            </dt>
+            <dd><span></span></dd>
+          </dl>
+        </section>
+        <section id="pro-attribs">
+          <h2><a href="#pro-attribs">Protected variables</a></h2>
+          <dl class="m-doc">
+            <dt id="a4f02d8916aae38e44d6521c0ecc926d1">
+              intrusive_ptr&lt;<a href="class_object.html" class="m-doc">Object</a>&gt; <a href="#a4f02d8916aae38e44d6521c0ecc926d1" class="m-doc-self">mpImage</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="aaffe09b31679276604d748dfbd9cc31f">
+              int <a href="#aaffe09b31679276604d748dfbd9cc31f" class="m-doc-self">field_08</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a0b423f9e84088796d6ee16c9f4c1dc0d">
+              <a href="union_math_1_1_rectangle.html" class="m-doc">Math::<wbr />Rectangle</a> <a href="#a0b423f9e84088796d6ee16c9f4c1dc0d" class="m-doc-self">mTexCoords</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a422954344577795f7fb80329bab9a752">
+              <a href="struct_math_1_1_dimensions.html" class="m-doc">Math::<wbr />Dimensions</a> <a href="#a422954344577795f7fb80329bab9a752" class="m-doc-self">mDimensions</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="aba12c36a2226847efb6090633072f64b">
+              int <a href="#aba12c36a2226847efb6090633072f64b" class="m-doc-self">field_24</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a47c545409e8de8e03fe7cd35c9cd8ee4">
+              int <a href="#a47c545409e8de8e03fe7cd35c9cd8ee4" class="m-doc-self">mnRefCount</a>
+            </dt>
+            <dd><span></span></dd>
+          </dl>
+        </section>
+        <section>
+          <h2>Function documentation</h2>
+          <section class="m-doc-details" id="a0f74ccfb6ee78f2605f28e67c1c19b5b"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">static bool UTFWin::<wbr />Image::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a0f74ccfb6ee78f2605f28e67c1c19b5b" class="m-doc-self">SetBackground</a>(</span><span class="m-doc-wrap"><a href="class_u_t_f_win_1_1_i_window.html" class="m-doc">IWindow</a>* pWindow,
+              <a href="class_u_t_f_win_1_1_image.html" class="m-doc">Image</a>* pImage,
+              int nImageIndex = 0)</span></span>
+            </h3>
+            <p>Changes the drawable of the given window to display the specified image.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">pWindow</td>
+                  <td>The <a href="class_u_t_f_win_1_1_i_window.html" class="m-doc">IWindow</a> whose drawable will change.</td>
+                </tr>
+                <tr>
+                  <td>pImage</td>
+                  <td>The image that will be displayed in the window.</td>
+                </tr>
+                <tr>
+                  <td>nImageIndex</td>
+                  <td>[Optional] The index of the image, for <a href="class_u_t_f_win_1_1_std_drawable.html" class="m-doc">StdDrawable</a>.</td>
+                </tr>
+              </tbody>
+            </table>
+<p>Optionally, the index of the image can be specified (in the case you want to use a <a href="class_u_t_f_win_1_1_std_drawable.html" class="m-doc">StdDrawable</a>).</p>
+          </div></section>
+          <section class="m-doc-details" id="a16362672aeaae63080234dc438ae5beb"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">static bool UTFWin::<wbr />Image::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a16362672aeaae63080234dc438ae5beb" class="m-doc-self">SetBackgroundByKey</a>(</span><span class="m-doc-wrap"><a href="class_u_t_f_win_1_1_i_window.html" class="m-doc">IWindow</a>* pWindow,
+              const <a href="struct_resource_key.html" class="m-doc">ResourceKey</a> imageName,
+              int nImageIndex = 0)</span></span>
+            </h3>
+            <p>Changes the drawable of the given window to display the specified image.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">pWindow</td>
+                  <td>The <a href="class_u_t_f_win_1_1_i_window.html" class="m-doc">IWindow</a> whose drawable will change.</td>
+                </tr>
+                <tr>
+                  <td>imageName</td>
+                  <td>The <a href="struct_resource_key.html" class="m-doc">ResourceKey</a> that points to the image file that will be displayed in the window.</td>
+                </tr>
+                <tr>
+                  <td>nImageIndex</td>
+                  <td>[Optional] The index of the image, for <a href="class_u_t_f_win_1_1_std_drawable.html" class="m-doc">StdDrawable</a>.</td>
+                </tr>
+              </tbody>
+            </table>
+<p>Optionally, the index of the image can be specified (in the case you want to use a <a href="class_u_t_f_win_1_1_std_drawable.html" class="m-doc">StdDrawable</a>).</p><p>To detour this method, you must use <a href="_cpp_rev_eng_base_8h.html#ab92d9d610cdc7c71d231c76aaa6af2d9" class="m-doc">GetAddress(Image, SetBackground_<wbr />2)</a>.</p>
+          </div></section>
+        </section>
+      </div>
+    </div>
+  </div>
+</article></main>
+<div class="m-doc-search" id="search">
+  <a href="#!" onclick="return hideSearch()"></a>
+  <div class="m-container">
+    <div class="m-row">
+      <div class="m-col-m-8 m-push-m-2">
+        <div class="m-doc-search-header m-text m-small">
+          <div><span class="m-label m-default">Tab</span> / <span class="m-label m-default">T</span> to search, <span class="m-label m-default">Esc</span> to close</div>
+          <div id="search-symbolcount">&hellip;</div>
+        </div>
+        <div class="m-doc-search-content">
+          <form>
+            <input type="search" name="q" id="search-input" placeholder="Loading &hellip;" disabled="disabled" autofocus="autofocus" autocomplete="off" spellcheck="false" />
+          </form>
+          <noscript class="m-text m-danger m-text-center">Unlike everything else in the docs, the search functionality <em>requires</em> JavaScript.</noscript>
+          <div id="search-help" class="m-text m-dim m-text-center">
+            <p class="m-noindent">Search for symbols, directories, files, pages or
+            modules. You can omit any prefix from the symbol or file path; adding a
+            <code>:</code> or <code>/</code> suffix lists all members of given symbol or
+            directory.</p>
+            <p class="m-noindent">Use <span class="m-label m-dim">&darr;</span>
+            / <span class="m-label m-dim">&uarr;</span> to navigate through the list,
+            <span class="m-label m-dim">Enter</span> to go.
+            <span class="m-label m-dim">Tab</span> autocompletes common prefix, you can
+            copy a link to the result using <span class="m-label m-dim">⌘</span>
+            <span class="m-label m-dim">L</span> while <span class="m-label m-dim">⌘</span>
+            <span class="m-label m-dim">M</span> produces a Markdown link.</p>
+          </div>
+          <div id="search-notfound" class="m-text m-warning m-text-center">Sorry, nothing was found.</div>
+          <ul id="search-results"></ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="search-v1.js"></script>
+<script src="searchdata-v1.js" async="async"></script>
+<footer><nav>
+  <div class="m-container">
+    <div class="m-row">
+      <div class="m-col-l-10 m-push-l-1">
+        <p>Spore ModAPI SDK for creating C++ mods for Spore. Created with <a href="https://doxygen.org/">Doxygen</a> 1.8.16 and <a href="https://mcss.mosra.cz/">m.css</a>.</p>
+      </div>
+    </div>
+  </div>
+</nav></footer>
+</body>
+</html>

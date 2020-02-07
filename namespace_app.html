@@ -1,0 +1,2158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>App namespace | Spore ModAPI SDK for creating C++ mods for Spore</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,600,600i%7CSource+Code+Pro:400,400i,600" />
+  <link rel="stylesheet" href="m-dark.css" />
+  <link rel="stylesheet" href="m-documentation.css" />
+  <link rel="icon" href="Spore_ModAPI_Icon.png" type="image/png" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#22272e" />
+</head>
+<body>
+<header><nav id="navigation">
+  <div class="m-container">
+    <div class="m-row">
+      <a href="index.html" id="m-navbar-brand" class="m-col-t-8 m-col-m-none m-left-m"><img src="Spore_ModAPI_Icon.png" />Spore ModAPI <span class="m-thin">SDK for creating C++ mods for Spore</span></a>
+      <div class="m-col-t-4 m-hide-m m-text-right m-nopadr">
+        <a href="#search" class="m-doc-search-icon" title="Search" onclick="return showSearch()"><svg style="height: 0.9rem;" viewBox="0 0 16 16">
+          <path id="m-doc-search-icon-path" d="m6 0c-3.31 0-6 2.69-6 6 0 3.31 2.69 6 6 6 1.49 0 2.85-0.541 3.89-1.44-0.0164 0.338 0.147 0.759 0.5 1.15l3.22 3.79c0.552 0.614 1.45 0.665 2 0.115 0.55-0.55 0.499-1.45-0.115-2l-3.79-3.22c-0.392-0.353-0.812-0.515-1.15-0.5 0.895-1.05 1.44-2.41 1.44-3.89 0-3.31-2.69-6-6-6zm0 1.56a4.44 4.44 0 0 1 4.44 4.44 4.44 4.44 0 0 1-4.44 4.44 4.44 4.44 0 0 1-4.44-4.44 4.44 4.44 0 0 1 4.44-4.44z"/>
+        </svg></a>
+        <a id="m-navbar-show" href="#navigation" title="Show navigation"></a>
+        <a id="m-navbar-hide" href="#" title="Hide navigation"></a>
+      </div>
+      <div id="m-navbar-collapse" class="m-col-t-12 m-show-m m-col-m-none m-right-m">
+        <div class="m-row">
+          <ol class="m-col-t-6 m-col-m-none">
+            <li><a href="pages.html">Tutorials</a></li>
+            <li><a href="namespaces.html">Namespaces</a></li>
+          </ol>
+          <ol class="m-col-t-6 m-col-m-none" start="3">
+            <li><a href="annotated.html">Classes</a></li>
+            <li><a href="files.html">Files</a></li>
+            <li class="m-show-m"><a href="#search" class="m-doc-search-icon" title="Search" onclick="return showSearch()"><svg style="height: 0.9rem;" viewBox="0 0 16 16">
+              <use href="#m-doc-search-icon-path" />
+            </svg></a></li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav></header>
+<main><article>
+  <div class="m-container m-container-inflatable">
+    <div class="m-row">
+      <div class="m-col-l-10 m-push-l-1">
+        <h1>
+          App <span class="m-thin">namespace</span>
+        </h1>
+        <div class="m-block m-default">
+          <h3>Contents</h3>
+          <ul>
+            <li>
+              Reference
+              <ul>
+                <li><a href="#namespaces">Namespaces</a></li>
+                <li><a href="#nested-classes">Classes</a></li>
+                <li><a href="#enum-members">Enums</a></li>
+                <li><a href="#typedef-members">Typedefs</a></li>
+                <li><a href="#func-members">Functions</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+<p>This namespace contains basic utilities that allow to properly interact with the app. Those utilities are:</p><ul><li>Game modes: Game modes are the contexts where the game is played. They can receive input events (mouse and keyboard) and they have an update method. For example, each stage in the game is a Game mode. For more information, check the <a href="class_app_1_1_i_game_mode.html" class="m-doc">IGameMode</a> and <a href="class_app_1_1_i_game_mode_manager.html" class="m-doc">IGameModeManager</a> classes.</li><li>Cameras: With cameras you can control the view in the game. Cameras can receive input events (mouse and keyboard) and they have an update method. For more information, check the <a href="class_app_1_1_i_camera_manager.html" class="m-doc">ICameraManager</a> and <a href="class_app_1_1_i_camera.html" class="m-doc">ICamera</a> classes.</li><li>Messages: Messages are the basic unit of communication between different objects in the app. For more information, check the Message, <a href="class_app_1_1_i_message_listener.html" class="m-doc">IMessageListener</a> and <a href="class_app_1_1_i_message_manager.html" class="m-doc">IMessageManager</a> classes.</li><li>Properties: .prop files are the basic unit of configuration in the game files. Most game objects are defined using property lists. For more information, check the <a href="class_app_1_1_property.html" class="m-doc">Property</a>, <a href="class_app_1_1_property_list.html" class="m-doc">PropertyList</a> and <a href="class_app_1_1_i_prop_manager.html" class="m-doc">IPropManager</a> classes, and the <a href="namespace_app_1_1_s_p_property_i_ds.html" class="m-doc">SPPropertyIDs</a> namespace.</li><li>Cheats: The <a href="class_app_1_1_i_cheat_manager.html" class="m-doc">ICheatManager</a> class takes care of the cheats and the console of the game.</li></ul>
+        <section id="namespaces">
+          <h2><a href="#namespaces">Namespaces</a></h2>
+          <dl class="m-doc">
+            <dt>namespace <a href="namespace_app_1_1_s_p_property_i_ds.html" class="m-doc">SPPropertyIDs</a></dt>
+            <dd>This namespace only contains property IDs to be used in the AppProperties module.</dd>
+          </dl>
+        </section>
+        <section id="nested-classes">
+          <h2><a href="#nested-classes">Classes</a></h2>
+          <dl class="m-doc">
+            <dt>
+              class <a href="class_app_1_1_camera.html" class="m-doc">Camera</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              class <a href="class_app_1_1c_camera_manager.html" class="m-doc">cCameraManager</a>
+            </dt>
+            <dd>The implementation of <a href="class_app_1_1_i_camera_manager.html" class="m-doc">ICameraManager</a>; this should only be used for extending and detouring.</dd>
+            <dt>
+              class <a href="class_app_1_1c_cheat_manager.html" class="m-doc">cCheatManager</a>
+            </dt>
+            <dd>The implementation of <a href="class_app_1_1_i_cheat_manager.html" class="m-doc">ICheatManager</a>; this should only be used for extending and detouring.</dd>
+            <dt>
+              class <a href="class_app_1_1c_game_mode_manager.html" class="m-doc">cGameModeManager</a>
+            </dt>
+            <dd>The implementation of <a href="class_app_1_1_i_game_mode_manager.html" class="m-doc">IGameModeManager</a>; this should only be used for extending and detouring.</dd>
+            <dt>
+              class <a href="class_app_1_1c_message_manager.html" class="m-doc">cMessageManager</a>
+            </dt>
+            <dd>The implementation of <a href="class_app_1_1_i_message_manager.html" class="m-doc">IMessageManager</a>; this should only be used for extending and detouring.</dd>
+            <dt>
+              class <a href="class_app_1_1c_prop_manager.html" class="m-doc">cPropManager</a>
+            </dt>
+            <dd>The implementation of <a href="class_app_1_1_i_prop_manager.html" class="m-doc">IPropManager</a>; this should only be used for extending and detouring.</dd>
+            <dt>
+              class <a href="class_app_1_1c_viewer.html" class="m-doc">cViewer</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              class <a href="class_app_1_1_default_camera.html" class="m-doc">DefaultCamera</a>
+            </dt>
+            <dd>Defines a default implementation of <a href="class_app_1_1_i_camera.html" class="m-doc">ICamera</a>.</dd>
+            <dt>
+              class <a href="class_app_1_1_default_game_mode.html" class="m-doc">DefaultGameMode</a>
+            </dt>
+            <dd>A class that provides default implementation for all the methods in a <a href="class_app_1_1_i_game_mode.html" class="m-doc">IGameMode</a>.</dd>
+            <dt>
+              class <a href="class_app_1_1_default_message_listener.html" class="m-doc">DefaultMessageListener</a>
+            </dt>
+            <dd>A class that inherits from <a href="class_app_1_1_i_message_listener.html" class="m-doc">App::<wbr />IMessageListener</a> and defines an implementation for the <a href="class_app_1_1_default_message_listener.html#aa22abd3e268cc93c8e0c0eb256b43b24" class="m-doc">AddRef()</a> and <a href="class_app_1_1_default_message_listener.html#a00e5410ab48215a3c9ff82fd1ed52356" class="m-doc">Release()</a> metods.</dd>
+            <dt>
+              class <a href="class_app_1_1_direct_property_list.html" class="m-doc">DirectPropertyList</a>
+            </dt>
+            <dd>A special kind of <a href="class_app_1_1_property_list.html" class="m-doc">PropertyList</a> that allows to have fast-access bool/int/float properties, apart from normal properties.</dd>
+            <dt>
+              class <a href="class_app_1_1_i_camera.html" class="m-doc">ICamera</a>
+            </dt>
+            <dd>This class represents a camera in the game, capable of setting the view transformations used for rendering and receiving input events.</dd>
+            <dt>
+              class <a href="class_app_1_1_i_camera_manager.html" class="m-doc">ICameraManager</a>
+            </dt>
+            <dd>This manager handles the cameras in the game.</dd>
+            <dt>
+              class <a href="class_app_1_1_i_cheat_manager.html" class="m-doc">ICheatManager</a>
+            </dt>
+            <dd>This manager is used to control the available cheats in the game, and the cheat console.</dd>
+            <dt>
+              class <a href="class_app_1_1_i_class_manager.html" class="m-doc">IClassManager</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              class <a href="class_app_1_1_i_game_mode.html" class="m-doc">IGameMode</a>
+            </dt>
+            <dd>An interface that represents a mode in the game, that can receive mouse/keyboard input and update every frame.</dd>
+            <dt>
+              class <a href="class_app_1_1_i_game_mode_manager.html" class="m-doc">IGameModeManager</a>
+            </dt>
+            <dd>A manager that takes care of game modes; check <a href="class_app_1_1_i_game_mode.html" class="m-doc">IGameMode</a> for more information.</dd>
+            <dt>
+              class <a href="class_app_1_1_i_game_mode_object.html" class="m-doc">IGameModeObject</a>
+            </dt>
+            <dd>Same as <a href="class_app_1_1_i_game_mode.html" class="m-doc">App::<wbr />IGameMode</a>, but this one includes a Cast method similar to the one in the <a href="class_object.html" class="m-doc">Object</a> class.</dd>
+            <dt>
+              class <a href="class_app_1_1_i_message_listener.html" class="m-doc">IMessageListener</a>
+            </dt>
+            <dd>An interface that can receive messages sent through the app.</dd>
+            <dt>
+              class <a href="class_app_1_1_i_message_manager.html" class="m-doc">IMessageManager</a>
+            </dt>
+            <dd>This manager defines a messaging system, that allows communication between different parts of the code.</dd>
+            <dt>
+              class <a href="class_app_1_1_i_prop_manager.html" class="m-doc">IPropManager</a>
+            </dt>
+            <dd>A manager that stores all the property lists in the game, used for most configurations.</dd>
+            <dt>
+              class <a href="class_app_1_1_i_s_p_class_factory.html" class="m-doc">ISPClassFactory</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              class <a href="class_app_1_1_i_state_manager.html" class="m-doc">IStateManager</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              class <a href="class_app_1_1_i_unmanaged_message_listener.html" class="m-doc">IUnmanagedMessageListener</a>
+            </dt>
+            <dd>Same as <a href="class_app_1_1_i_message_listener.html" class="m-doc">App::<wbr />IMessageListener</a>, but this one does not use ref-counting.</dd>
+            <dt>
+              class <a href="class_app_1_1_i_updatable.html" class="m-doc">IUpdatable</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              class <a href="class_app_1_1_lambda_message_listener.html" class="m-doc">LambdaMessageListener</a>
+            </dt>
+            <dd>An implementation of <a href="class_app_1_1_i_message_listener.html" class="m-doc">IMessageListener</a> using lambda functions.</dd>
+            <dt>
+              struct <a href="struct_app_1_1_message_listener_data.html" class="m-doc">MessageListenerData</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              class <a href="class_app_1_1_on_mode_enter_message.html" class="m-doc">OnModeEnterMessage</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              class <a href="class_app_1_1_on_mode_exit_message.html" class="m-doc">OnModeExitMessage</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              class <a href="class_app_1_1_property.html" class="m-doc">Property</a>
+            </dt>
+            <dd><a href="class_app_1_1_property.html" class="m-doc">Property</a> is a class used to represent a property belonging to a PROP file.</dd>
+            <dt>
+              class <a href="class_app_1_1_property_list.html" class="m-doc">PropertyList</a>
+            </dt>
+            <dd>A class that contains multiple properties.</dd>
+            <dt>
+              class <a href="class_app_1_1_scenario_mode.html" class="m-doc">ScenarioMode</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              class <a href="class_app_1_1_scheduled_task_listener.html" class="m-doc">ScheduledTaskListener</a>
+            </dt>
+            <dd>A message listener that, listening to Update messages, executes the given task after a certain time has passed and (optionally) repetaing it periodically.</dd>
+            <dt>
+              class <a href="class_app_1_1_standard_message.html" class="m-doc">StandardMessage</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              class <a href="class_app_1_1_thumbnail__c_import_export.html" class="m-doc">Thumbnail_cImportExport</a>
+            </dt>
+            <dd>A class related with the .PNG files of creations.</dd>
+            <dt>
+              class <a href="class_app_1_1_update_message_listener.html" class="m-doc">UpdateMessageListener</a>
+            </dt>
+            <dd>A message listener used for Update script methods.</dd>
+          </dl>
+        </section>
+        <section id="enum-members">
+          <h2><a href="#enum-members">Enums</a></h2>
+          <dl class="m-doc">
+            <dt>
+              <span class="m-doc-wrap-bumper">enum <a href="#a4f6de8bf85a961e554a9e4e7ef7dc3ea" class="m-doc">(anonymous)</a> { </span><span class="m-doc-wrap"><a href="#a4f6de8bf85a961e554a9e4e7ef7dc3eaaab99bde69d5a451b5a8d0a9949662434" class="m-doc">kMsgAddRef</a> = 1,
+              <a href="#a4f6de8bf85a961e554a9e4e7ef7dc3eaa58f34ed3e76d5d3fcbebf4a0dbfc81ed" class="m-doc">kMsgRelease</a> = 2,
+              <a href="#a4f6de8bf85a961e554a9e4e7ef7dc3eaa3c5da5adc2e58824ebc94b284a8d6c79" class="m-doc">kMsgOnModeExit</a> = 0x212D3E7,
+              <a href="#a4f6de8bf85a961e554a9e4e7ef7dc3eaa18f6cb3fd0bdd97be603d27a75e966e4" class="m-doc">kMsgOnModeEnter</a> = 0x22D1ADC }</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">enum <a href="#a63d4bdaea67eeee2a8c4550b9efb2dd0" class="m-doc">(anonymous)</a> { </span><span class="m-doc-wrap"><a href="#a63d4bdaea67eeee2a8c4550b9efb2dd0a13db3a5ebf5206f71d1b99be59f90407" class="m-doc">kMsgAppInitialized</a> = 0x49790B2,
+              <a href="#a63d4bdaea67eeee2a8c4550b9efb2dd0af0127b9bab29dce33abae2b5f6fa153a" class="m-doc">kMsgAppUpdate</a> = 0x1EE100A }</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">enum class <a href="#aa30f9441aea9fdb83254924d3a87071e" class="m-doc">PropertyType</a>: uint16_t { </span><span class="m-doc-wrap"><a href="#aa30f9441aea9fdb83254924d3a87071ea6adf97f83acf6453d4a6a4b1070f3754" class="m-doc">None</a> = 0,
+              <a href="#aa30f9441aea9fdb83254924d3a87071eac26f15e86e3de4c398a8273272aba034" class="m-doc">Bool</a> = 1,
+              <a href="#aa30f9441aea9fdb83254924d3a87071eac06129f6e6e15c09328365e553f1dc31" class="m-doc">Int32</a> = 9,
+              <a href="#aa30f9441aea9fdb83254924d3a87071eae7956ed7be1c5025a27ed3cb42a396bd" class="m-doc">UInt32</a> = 0x0a,
+              <a href="#aa30f9441aea9fdb83254924d3a87071ea22ae0e2b89e5e3d477f988cc36d3272b" class="m-doc">Float</a> = 0x0d,
+              <a href="#aa30f9441aea9fdb83254924d3a87071ea70f51cdeff8eebde672c5221834477ba" class="m-doc">String8</a> = 0x12,
+              <a href="#aa30f9441aea9fdb83254924d3a87071eae45764e626f90797b6cb712bd9044d98" class="m-doc">String16</a> = 0x13,
+              <a href="#aa30f9441aea9fdb83254924d3a87071ea897356954c2cd3d41b221e3f24f99bba" class="m-doc">Key</a> = 0x20,
+              <a href="#aa30f9441aea9fdb83254924d3a87071ea9dffbf69ffba8bc38bc4e01abf4b1675" class="m-doc">Text</a> = 0x22,
+              <a href="#aa30f9441aea9fdb83254924d3a87071ea1bebc5ae2822f8e361fb0ce57b5e09e2" class="m-doc">Vector2</a> = 0x30,
+              <a href="#aa30f9441aea9fdb83254924d3a87071ea02b4dab58bbc49e0851fb3fd8df520cc" class="m-doc">Vector3</a> = 0x31,
+              <a href="#aa30f9441aea9fdb83254924d3a87071eadd36524a945bd1e360419ab73f162df0" class="m-doc">ColorRGB</a> = 0x32,
+              <a href="#aa30f9441aea9fdb83254924d3a87071eacf637ffa2663b40ae52857aa0bdb1ec3" class="m-doc">Vector4</a> = 0x33,
+              <a href="#aa30f9441aea9fdb83254924d3a87071eae3701c589e08595d796c1c611adaa642" class="m-doc">ColorRGBA</a> = 0x34,
+              <a href="#aa30f9441aea9fdb83254924d3a87071ea2ff4148554480a37f85efd299df04850" class="m-doc">Transform</a> = 0x38,
+              <a href="#aa30f9441aea9fdb83254924d3a87071ea10d00aee2b16f65d5a5426f43e7fb77e" class="m-doc">BBox</a> = 0x39,
+              <a href="#aa30f9441aea9fdb83254924d3a87071ea8e95e84813830072b7516cfaa7dbc1a9" class="m-doc">Char</a> = 0x0002,
+              <a href="#aa30f9441aea9fdb83254924d3a87071eab69c7c4d08b8454f814a52a1ccaa8ca9" class="m-doc">WChar</a> = 0x0003,
+              <a href="#aa30f9441aea9fdb83254924d3a87071ea7d839b2c12bfd40ac121b4cc9e81c539" class="m-doc">Int8</a> = 0x0005,
+              <a href="#aa30f9441aea9fdb83254924d3a87071eab31df9c476d20e85ff898121efe11b5a" class="m-doc">UInt8</a> = 0x0006,
+              <a href="#aa30f9441aea9fdb83254924d3a87071ea39bc2ae44b184207f560ff8619823208" class="m-doc">Int16</a> = 0x0007,
+              <a href="#aa30f9441aea9fdb83254924d3a87071ea8bd950a9d7779b83f5c30046c9aaf1cf" class="m-doc">UInt16</a> = 0x0008,
+              <a href="#aa30f9441aea9fdb83254924d3a87071eafbde23b11d7e59af7828e81144c8b487" class="m-doc">Int64</a> = 0x000B,
+              <a href="#aa30f9441aea9fdb83254924d3a87071eaaf71234725f0470ccf993e263a8b820a" class="m-doc">UInt64</a> = 0x000C,
+              <a href="#aa30f9441aea9fdb83254924d3a87071ead909d38d705ce75386dd86e611a82f5b" class="m-doc">Double</a> = 0x000E,
+              <a href="#aa30f9441aea9fdb83254924d3a87071ea165d3d525f6d0cbd55e42cc3058cafcc" class="m-doc">Ptr</a> = 0x000F,
+              <a href="#aa30f9441aea9fdb83254924d3a87071ea81ceb48a978444906d80119200aa358d" class="m-doc">Void</a> = 0x0010,
+              <a href="#aa30f9441aea9fdb83254924d3a87071ea7f5e633236405c64525898e049ad054d" class="m-doc">IUnknownRC</a> = 0x0011,
+              <a href="#aa30f9441aea9fdb83254924d3a87071ea4ea7801f17a4e5485e8b050c052fb443" class="m-doc">Flags</a> = 0x0021,
+              <a href="#aa30f9441aea9fdb83254924d3a87071eabb0157417bfa7edf8606c39ca7a0a503" class="m-doc">Matrix2</a> = 0x0035,
+              <a href="#aa30f9441aea9fdb83254924d3a87071ea68f96af9f098301f98ee01187c9e8700" class="m-doc">Matrix3</a> = 0x0036,
+              <a href="#aa30f9441aea9fdb83254924d3a87071ea218021da9a8517e946ebfd95e097e1d3" class="m-doc">Matrix4</a> = 0x0037 }</span>
+            </dt>
+            <dd><span></span></dd>
+          </dl>
+        </section>
+        <section id="typedef-members">
+          <h2><a href="#typedef-members">Typedefs</a></h2>
+          <dl class="m-doc">
+            <dt>
+              using <a href="#a8e7a2854f38ce8e2b76e6f03989cc9e0" class="m-doc">CameraFactoryFunction_t</a> = <a href="class_app_1_1_i_camera.html" class="m-doc">ICamera</a>*(*)(PropertyList*pPropList)
+            </dt>
+            <dd><a href="class_app_1_1_camera.html" class="m-doc">Camera</a> types need a static function that creates the correct camera instance.</dd>
+            <dt>
+              using <a href="#a0792416baaa2251d68963db97d021cda" class="m-doc">VoidFunction_T</a> = eastl::function&lt;void()&gt;
+            </dt>
+            <dd>The type of function used in Update or schedule scripts.</dd>
+            <dt>
+              <div class="m-doc-template">template&lt;class T&gt;</div>
+              using <a href="#adf650d2c1852a6bd9fa7e8d49af6fae4" class="m-doc">VoidMethod_T</a> = void(T::*)()
+            </dt>
+            <dd>The type of member method used in Update or schedule scripts.</dd>
+          </dl>
+        </section>
+        <section id="func-members">
+          <h2><a href="#func-members">Functions</a></h2>
+          <dl class="m-doc">
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#aa35043a6c54e3b05aada833acb708849" class="m-doc">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_app_1_1c_camera_manager.html" class="m-doc">cCameraManager</a>) -&gt; namespace</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#ad793f0191d8757171a64b3f5974a497d" class="m-doc">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_app_1_1c_cheat_manager.html" class="m-doc">cCheatManager</a>) -&gt; namespace</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#ab79a4bd9bde318bbf9a4317662695088" class="m-doc">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_app_1_1c_game_mode_manager.html" class="m-doc">cGameModeManager</a>) -&gt; namespace</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a2bce90be67948b03d46f22f63a6bd7b2" class="m-doc">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_app_1_1c_message_manager.html" class="m-doc">cMessageManager</a>) -&gt; namespace</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a67d37c0d9604a85b6140309dce765236" class="m-doc">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_app_1_1c_prop_manager.html" class="m-doc">cPropManager</a>) -&gt; namespace</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#ac638a26f43fe0ca9a2ef790cac919a82" class="m-doc">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_app_1_1c_viewer.html" class="m-doc">cViewer</a>) -&gt; namespace</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a3bbac691e628e0e576d5a2778d599b77" class="m-doc">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_app_1_1_direct_property_list.html" class="m-doc">DirectPropertyList</a>) -&gt; namespace</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#ae39e55a9d9306ac26f8a7f0a7de11b50" class="m-doc">GetConsoleStream</a>(</span><span class="m-doc-wrap">) -&gt; <a href="class_arg_script_1_1_format_parser.html" class="m-doc">ArgScript::<wbr />FormatParser</a>*</span>
+            </dt>
+            <dd>An utility method that returns the active console stream, and that can be used to print strings to the console.</dd>
+            <dt>
+              <div class="m-doc-template">template&lt;typename... Args&gt;</div>
+              <span class="m-doc-wrap-bumper">void <a href="#a5cfc09513c296a1468b99530df311f4f" class="m-doc">ConsolePrintF</a>(</span><span class="m-doc-wrap">const char* str,
+              Args... args)</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#ad7a9b7474885960602b1b6c0385f5bec" class="m-doc">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_app_1_1_i_cheat_manager.html" class="m-doc">ICheatManager</a>) -&gt; namespace</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a1df9c36258cb70a2e662ba43863c5c20" class="m-doc">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_app_1_1_i_class_manager.html" class="m-doc">IClassManager</a>) -&gt; namespace</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a9a99bdbf6e2515f8cccf29d6a46e894d" class="m-doc">GetViewer</a>(</span><span class="m-doc-wrap">) -&gt; <a href="class_app_1_1c_viewer.html" class="m-doc">cViewer</a>*</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a9d9cf5e3d7f26a084646bd8df099eb4f" class="m-doc">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_app_1_1_i_game_mode_manager.html" class="m-doc">IGameModeManager</a>) -&gt; namespace</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#af7a55b14a341654f29945d7d38ace77f" class="m-doc">AddUpdateFunction</a>(</span><span class="m-doc-wrap">const <a href="namespace_app.html#a0792416baaa2251d68963db97d021cda" class="m-doc">VoidFunction_<wbr />T</a>&amp; function) -&gt; intrusive_ptr&lt;<a href="class_app_1_1_update_message_listener.html" class="m-doc">UpdateMessageListener</a>&gt;</span>
+            </dt>
+            <dd>Adds an &quot;Update&quot; function that is called once every game frame.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a12d9bbc8eec3931c5677bf1b87a62456" class="m-doc">AddUpdateFunction</a>(</span><span class="m-doc-wrap"><a href="class_app_1_1_i_updatable.html" class="m-doc">IUpdatable</a>* updatable) -&gt; intrusive_ptr&lt;<a href="class_app_1_1_update_message_listener.html" class="m-doc">UpdateMessageListener</a>&gt;</span>
+            </dt>
+            <dd>Adds a class with an Update method that is called once every game frame.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#adcc5d350caddc3ec5a0caae192f8d778" class="m-doc">ScheduleTask</a>(</span><span class="m-doc-wrap">const <a href="namespace_app.html#a0792416baaa2251d68963db97d021cda" class="m-doc">VoidFunction_<wbr />T</a>&amp; function,
+              float scheduleTime) -&gt; intrusive_ptr&lt;<a href="class_app_1_1_scheduled_task_listener.html" class="m-doc">ScheduledTaskListener</a>&gt;</span>
+            </dt>
+            <dd>Executes a function after a certain time (measured in seconds) has passed from ths call.</dd>
+            <dt>
+              <div class="m-doc-template">template&lt;class T&gt;</div>
+              <span class="m-doc-wrap-bumper">auto <a href="#ac75571a567ec26d7e148e41a83d56b54" class="m-doc">ScheduleTask</a>(</span><span class="m-doc-wrap">T* object,
+              <a href="namespace_app.html#adf650d2c1852a6bd9fa7e8d49af6fae4" class="m-doc">VoidMethod_<wbr />T</a>&lt;T&gt; method,
+              float scheduleTime) -&gt; intrusive_ptr&lt;<a href="class_app_1_1_scheduled_task_listener.html" class="m-doc">ScheduledTaskListener</a>&gt;</span>
+            </dt>
+            <dd>Executes a class method after a certain time (measured in seconds) has passed from ths call.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#afc7a9a0cdd2045e547698c4285445663" class="m-doc">ScheduleRepeatedTask</a>(</span><span class="m-doc-wrap">const <a href="namespace_app.html#a0792416baaa2251d68963db97d021cda" class="m-doc">VoidFunction_<wbr />T</a>&amp; function,
+              float scheduleTime,
+              float repeatRate) -&gt; intrusive_ptr&lt;<a href="class_app_1_1_scheduled_task_listener.html" class="m-doc">ScheduledTaskListener</a>&gt;</span>
+            </dt>
+            <dd>Executes a function after a certain time (measured in seconds) has passed from this call, and then keeps repeating it after a certain period (defined by the repeatRate parameter) parameter.</dd>
+            <dt>
+              <div class="m-doc-template">template&lt;class T&gt;</div>
+              <span class="m-doc-wrap-bumper">auto <a href="#aaf9613d0c383c31be6067537c6960dcc" class="m-doc">ScheduleRepeatedTask</a>(</span><span class="m-doc-wrap">T* object,
+              <a href="namespace_app.html#adf650d2c1852a6bd9fa7e8d49af6fae4" class="m-doc">VoidMethod_<wbr />T</a>&lt;T&gt; method,
+              float scheduleTime,
+              float repeatRate) -&gt; intrusive_ptr&lt;<a href="class_app_1_1_scheduled_task_listener.html" class="m-doc">ScheduledTaskListener</a>&gt;</span>
+            </dt>
+            <dd>Executes a function after a certain time (measured in seconds) has passed from this call, and then keeps repeating it after a certain period (defined by the repeatRate parameter) parameter.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#adaff0d514088627ec69f23c35bb914fb" class="m-doc">RemoveUpdateFunction</a>(</span><span class="m-doc-wrap">intrusive_ptr&lt;<a href="class_app_1_1_update_message_listener.html" class="m-doc">UpdateMessageListener</a>&gt;&amp; updateListener) -&gt; bool</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#aefdd84f7ca367c3e875acbbe1129a076" class="m-doc">RemoveScheduledTask</a>(</span><span class="m-doc-wrap">intrusive_ptr&lt;<a href="class_app_1_1_scheduled_task_listener.html" class="m-doc">ScheduledTaskListener</a>&gt;&amp; taskListener) -&gt; bool</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a808c959ab6e189671dac92ac56493b0b" class="m-doc">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_app_1_1_i_message_manager.html" class="m-doc">IMessageManager</a>) -&gt; namespace</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a5118c39d08a475ab7ba6c87bf67a717d" class="m-doc">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_app_1_1_i_prop_manager.html" class="m-doc">IPropManager</a>) -&gt; namespace</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a96a30a30d26539d507c79f5513a1eedb" class="m-doc">StateManager</a>(</span><span class="m-doc-wrap">) -&gt; <a href="class_app_1_1_i_state_manager.html" class="m-doc">IStateManager</a>*</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a1ae370a1485cc304e5ee9dcd6faa2edd" class="m-doc">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_app_1_1_i_state_manager.html" class="m-doc">IStateManager</a>) -&gt; namespace</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a2203c5ec42e649ff1a9046ece0da2f36" class="m-doc">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_app_1_1_property.html" class="m-doc">Property</a>) -&gt; namespace</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper"><a href="#a637c8b65399078fabe8246685ef1e78f" class="m-doc">auto_METHOD_VOID</a>(</span><span class="m-doc-wrap"><a href="class_app_1_1_property.html" class="m-doc">Property</a>,
+              Clear,
+              <a href="_cpp_rev_eng_base_8h.html#aff12ecf140cc31d5335c3c978808c268" class="m-doc">Args</a>(bool arg_0),
+              <a href="_cpp_rev_eng_base_8h.html#aff12ecf140cc31d5335c3c978808c268" class="m-doc">Args</a>(arg_0))</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper"><a href="#a3dbf51fa8cdd4f171620c7893c4ee409" class="m-doc">auto_METHOD_</a>(</span><span class="m-doc-wrap"><a href="class_app_1_1_property.html" class="m-doc">Property</a>,
+              int32_t*,
+              GetValueInt32)</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper"><a href="#a33cd660107fb91153e95a49fcf54db80" class="m-doc">auto_METHOD_</a>(</span><span class="m-doc-wrap"><a href="class_app_1_1_property.html" class="m-doc">Property</a>,
+              float*,
+              GetValueFloat)</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper"><a href="#a47ba5bf6d808769215922944fb74ec32" class="m-doc">auto_METHOD_</a>(</span><span class="m-doc-wrap"><a href="class_app_1_1_property.html" class="m-doc">Property</a>,
+              bool*,
+              GetValueBool)</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper"><a href="#abc7d69dfd9b8a11a6d8ac3a0549ae756" class="m-doc">auto_METHOD_</a>(</span><span class="m-doc-wrap"><a href="class_app_1_1_property.html" class="m-doc">Property</a>,
+              uint32_t*,
+              GetValueUInt32)</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper"><a href="#a9c8dbbe18cae6e588831e7b562ce9653" class="m-doc">auto_METHOD_</a>(</span><span class="m-doc-wrap"><a href="class_app_1_1_property.html" class="m-doc">Property</a>,
+              <a href="struct_math_1_1_vector2.html" class="m-doc">Vector2</a>*,
+              GetValueVector2)</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper"><a href="#a434e187eda2dd416c0ccacf1160a2902" class="m-doc">auto_METHOD_</a>(</span><span class="m-doc-wrap"><a href="class_app_1_1_property.html" class="m-doc">Property</a>,
+              <a href="struct_math_1_1_vector3.html" class="m-doc">Vector3</a>*,
+              GetValueVector3)</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper"><a href="#a50a70ee3a555867f4efeb4879bf3fd6f" class="m-doc">auto_METHOD_</a>(</span><span class="m-doc-wrap"><a href="class_app_1_1_property.html" class="m-doc">Property</a>,
+              <a href="struct_math_1_1_vector4.html" class="m-doc">Vector4</a>*,
+              GetValueVector4)</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper"><a href="#a2dd0deb513d0bcbcdc0c45cdfe094e09" class="m-doc">auto_METHOD_</a>(</span><span class="m-doc-wrap"><a href="class_app_1_1_property.html" class="m-doc">Property</a>,
+              <a href="struct_math_1_1_color_r_g_b.html" class="m-doc">ColorRGB</a>*,
+              GetValueColorRGB)</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper"><a href="#a5d7468f9375b72bda5b40f4f0171d6e3" class="m-doc">auto_METHOD_</a>(</span><span class="m-doc-wrap"><a href="class_app_1_1_property.html" class="m-doc">Property</a>,
+              <a href="struct_math_1_1_color_r_g_b_a.html" class="m-doc">ColorRGBA</a>*,
+              GetValueColorRGBA)</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper"><a href="#afbd81782279697f04f9610c071dfea27" class="m-doc">auto_METHOD_</a>(</span><span class="m-doc-wrap"><a href="class_app_1_1_property.html" class="m-doc">Property</a>,
+              <a href="struct_resource_key.html" class="m-doc">ResourceKey</a>*,
+              GetValueKey)</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper"><a href="#a28b73f773ab09c85bdd33654501794a3" class="m-doc">auto_METHOD_</a>(</span><span class="m-doc-wrap"><a href="class_app_1_1_property.html" class="m-doc">Property</a>,
+              <a href="class_transform.html" class="m-doc">Transform</a>*,
+              GetValueTransform)</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper"><a href="#ad877dbb9562bb7d397d79bff29cc2745" class="m-doc">auto_METHOD_</a>(</span><span class="m-doc-wrap"><a href="class_app_1_1_property.html" class="m-doc">Property</a>,
+              <a href="class_localized_string.html" class="m-doc">LocalizedString</a>*,
+              GetValueText)</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper"><a href="#a650eb1bdcef7f32ad410b39d19b3c259" class="m-doc">auto_METHOD_</a>(</span><span class="m-doc-wrap"><a href="class_app_1_1_property.html" class="m-doc">Property</a>,
+              <a href="struct_math_1_1_bounding_box.html" class="m-doc">BoundingBox</a>*,
+              GetValueBBox)</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper"><a href="#a42c3c4a8e7e9eff6f67b0e939cf17b73" class="m-doc">auto_METHOD_</a>(</span><span class="m-doc-wrap"><a href="class_app_1_1_property.html" class="m-doc">Property</a>,
+              eastl::string8*,
+              GetValueString8)</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper"><a href="#ac2b89776fda95fb4a60c254caf6fc916" class="m-doc">auto_METHOD_</a>(</span><span class="m-doc-wrap"><a href="class_app_1_1_property.html" class="m-doc">Property</a>,
+              eastl::string16*,
+              GetValueString16)</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper"><a href="#a497a8ec36c2055ff0810ef0a1eb330d4" class="m-doc">auto_METHOD_</a>(</span><span class="m-doc-wrap"><a href="class_app_1_1_property.html" class="m-doc">Property</a>,
+              char*,
+              GetValueChar)</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper"><a href="#ad83e812f3f482b4ec972dd8b5e0aaee8" class="m-doc">auto_METHOD_</a>(</span><span class="m-doc-wrap"><a href="class_app_1_1_property.html" class="m-doc">Property</a>,
+              char16_t*,
+              GetValueWChar)</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper"><a href="#ac5fcd8674d948b64e0d5dbe610c4b58e" class="m-doc">auto_METHOD_</a>(</span><span class="m-doc-wrap"><a href="class_app_1_1_property.html" class="m-doc">Property</a>,
+              int8_t*,
+              GetValueInt8)</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper"><a href="#aca1e3d2038cd516b65b2f168076d0cca" class="m-doc">auto_METHOD_</a>(</span><span class="m-doc-wrap"><a href="class_app_1_1_property.html" class="m-doc">Property</a>,
+              uint8_t*,
+              GetValueUInt8)</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper"><a href="#a0b44665c8bd10783ff4ce8ca9ed9038b" class="m-doc">auto_METHOD_</a>(</span><span class="m-doc-wrap"><a href="class_app_1_1_property.html" class="m-doc">Property</a>,
+              int16_t*,
+              GetValueInt16)</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper"><a href="#acff1aefabc9bc2cea81f0a6aee3ecd2a" class="m-doc">auto_METHOD_</a>(</span><span class="m-doc-wrap"><a href="class_app_1_1_property.html" class="m-doc">Property</a>,
+              uint16_t*,
+              GetValueUInt16)</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper"><a href="#aa9b2a86e0c23c5fa197c224e50c9c602" class="m-doc">auto_METHOD_</a>(</span><span class="m-doc-wrap"><a href="class_app_1_1_property.html" class="m-doc">Property</a>,
+              int64_t*,
+              GetValueInt64)</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper"><a href="#ad1aeb1cfe5de3ee2a06add3373d94b6e" class="m-doc">auto_METHOD_</a>(</span><span class="m-doc-wrap"><a href="class_app_1_1_property.html" class="m-doc">Property</a>,
+              uint64_t*,
+              GetValueUInt64)</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper"><a href="#a26034b1b8d3565a4f92890246ced78f5" class="m-doc">auto_METHOD_</a>(</span><span class="m-doc-wrap"><a href="class_app_1_1_property.html" class="m-doc">Property</a>,
+              double*,
+              GetValueDouble)</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper"><a href="#aba123a3c84cd296e7cafdf401609846f" class="m-doc">auto_METHOD_</a>(</span><span class="m-doc-wrap"><a href="class_app_1_1_property.html" class="m-doc">Property</a>,
+              void**,
+              GetValueFlags)</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper"><a href="#a823310d060a60f297f9924e4b37c6fdf" class="m-doc">auto_METHOD_</a>(</span><span class="m-doc-wrap"><a href="class_app_1_1_property.html" class="m-doc">Property</a>,
+              void*,
+              GetValue)</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper"><a href="#a7127ccaea1acf3cdd49a1f69214e3d62" class="m-doc">auto_METHOD</a>(</span><span class="m-doc-wrap"><a href="class_app_1_1_property.html" class="m-doc">Property</a>,
+              bool,
+              Set,
+              <a href="_cpp_rev_eng_base_8h.html#aff12ecf140cc31d5335c3c978808c268" class="m-doc">Args</a>(<a href="namespace_app.html#aa30f9441aea9fdb83254924d3a87071e" class="m-doc">PropertyType</a> type, int flags, void*pValue, size_t nValueSize, size_t nValueCount),
+              <a href="_cpp_rev_eng_base_8h.html#aff12ecf140cc31d5335c3c978808c268" class="m-doc">Args</a>(type, flags, pValue, nValueSize, nValueCount))</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper"><a href="#a869fbc6228c6fc17e5bb853a954593d4" class="m-doc">auto_METHOD</a>(</span><span class="m-doc-wrap"><a href="class_app_1_1_property.html" class="m-doc">Property</a>,
+              <a href="class_app_1_1_property.html" class="m-doc">Property</a>&amp;,
+              SetValueInt32,
+              <a href="_cpp_rev_eng_base_8h.html#aff12ecf140cc31d5335c3c978808c268" class="m-doc">Args</a>(const int32_t&amp;value),
+              <a href="_cpp_rev_eng_base_8h.html#aff12ecf140cc31d5335c3c978808c268" class="m-doc">Args</a>(value))</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper"><a href="#a911841ee594156309d4276d8e757fbdd" class="m-doc">auto_METHOD</a>(</span><span class="m-doc-wrap"><a href="class_app_1_1_property.html" class="m-doc">Property</a>,
+              <a href="class_app_1_1_property.html" class="m-doc">Property</a>&amp;,
+              SetValueUInt32,
+              <a href="_cpp_rev_eng_base_8h.html#aff12ecf140cc31d5335c3c978808c268" class="m-doc">Args</a>(const uint32_t&amp;value),
+              <a href="_cpp_rev_eng_base_8h.html#aff12ecf140cc31d5335c3c978808c268" class="m-doc">Args</a>(value))</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper"><a href="#ad34cf5dede2b3fcde1be988574f9f970" class="m-doc">auto_METHOD</a>(</span><span class="m-doc-wrap"><a href="class_app_1_1_property.html" class="m-doc">Property</a>,
+              <a href="class_app_1_1_property.html" class="m-doc">Property</a>&amp;,
+              SetValueKey,
+              <a href="_cpp_rev_eng_base_8h.html#aff12ecf140cc31d5335c3c978808c268" class="m-doc">Args</a>(const <a href="struct_resource_key.html" class="m-doc">ResourceKey</a>&amp;value),
+              <a href="_cpp_rev_eng_base_8h.html#aff12ecf140cc31d5335c3c978808c268" class="m-doc">Args</a>(value))</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper"><a href="#ab27d0ffaa4b14ffb3930acde33ad4a72" class="m-doc">auto_METHOD</a>(</span><span class="m-doc-wrap"><a href="class_app_1_1_property.html" class="m-doc">Property</a>,
+              <a href="class_app_1_1_property.html" class="m-doc">Property</a>&amp;,
+              SetValueString8,
+              <a href="_cpp_rev_eng_base_8h.html#aff12ecf140cc31d5335c3c978808c268" class="m-doc">Args</a>(const eastl::string8&amp;value),
+              <a href="_cpp_rev_eng_base_8h.html#aff12ecf140cc31d5335c3c978808c268" class="m-doc">Args</a>(value))</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper"><a href="#ae1c8c24b6d5d14865bf8e43225bbe2d0" class="m-doc">auto_METHOD</a>(</span><span class="m-doc-wrap"><a href="class_app_1_1_property.html" class="m-doc">Property</a>,
+              <a href="class_app_1_1_property.html" class="m-doc">Property</a>&amp;,
+              SetValueString16,
+              <a href="_cpp_rev_eng_base_8h.html#aff12ecf140cc31d5335c3c978808c268" class="m-doc">Args</a>(const eastl::string16&amp;value),
+              <a href="_cpp_rev_eng_base_8h.html#aff12ecf140cc31d5335c3c978808c268" class="m-doc">Args</a>(value))</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper"><a href="#a4841557351d04823086da7c18fc36f9a" class="m-doc">auto_METHOD</a>(</span><span class="m-doc-wrap"><a href="class_app_1_1_property.html" class="m-doc">Property</a>,
+              <a href="class_app_1_1_property.html" class="m-doc">Property</a>&amp;,
+              SetValueFloat,
+              <a href="_cpp_rev_eng_base_8h.html#aff12ecf140cc31d5335c3c978808c268" class="m-doc">Args</a>(const float&amp;value),
+              <a href="_cpp_rev_eng_base_8h.html#aff12ecf140cc31d5335c3c978808c268" class="m-doc">Args</a>(value))</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper"><a href="#aa7464d4d2c01a658c589eba38894735f" class="m-doc">auto_METHOD</a>(</span><span class="m-doc-wrap"><a href="class_app_1_1_property.html" class="m-doc">Property</a>,
+              <a href="class_app_1_1_property.html" class="m-doc">Property</a>&amp;,
+              SetValueBool,
+              <a href="_cpp_rev_eng_base_8h.html#aff12ecf140cc31d5335c3c978808c268" class="m-doc">Args</a>(const bool&amp;value),
+              <a href="_cpp_rev_eng_base_8h.html#aff12ecf140cc31d5335c3c978808c268" class="m-doc">Args</a>(value))</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper"><a href="#a4aa489b5dd7b2830d1fbb234ee8e985b" class="m-doc">auto_METHOD</a>(</span><span class="m-doc-wrap"><a href="class_app_1_1_property.html" class="m-doc">Property</a>,
+              <a href="class_app_1_1_property.html" class="m-doc">Property</a>&amp;,
+              SetValueBBox,
+              <a href="_cpp_rev_eng_base_8h.html#aff12ecf140cc31d5335c3c978808c268" class="m-doc">Args</a>(const <a href="struct_math_1_1_bounding_box.html" class="m-doc">BoundingBox</a>&amp;value),
+              <a href="_cpp_rev_eng_base_8h.html#aff12ecf140cc31d5335c3c978808c268" class="m-doc">Args</a>(value))</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper"><a href="#a5602961ab658194b97017d079d7fa3cc" class="m-doc">auto_METHOD</a>(</span><span class="m-doc-wrap"><a href="class_app_1_1_property.html" class="m-doc">Property</a>,
+              <a href="class_app_1_1_property.html" class="m-doc">Property</a>&amp;,
+              SetValueVector2,
+              <a href="_cpp_rev_eng_base_8h.html#aff12ecf140cc31d5335c3c978808c268" class="m-doc">Args</a>(const <a href="struct_math_1_1_vector2.html" class="m-doc">Vector2</a>&amp;value),
+              <a href="_cpp_rev_eng_base_8h.html#aff12ecf140cc31d5335c3c978808c268" class="m-doc">Args</a>(value))</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper"><a href="#a972c1d80da873cf4d61f9ee2d3780bea" class="m-doc">auto_METHOD</a>(</span><span class="m-doc-wrap"><a href="class_app_1_1_property.html" class="m-doc">Property</a>,
+              <a href="class_app_1_1_property.html" class="m-doc">Property</a>&amp;,
+              SetValueVector3,
+              <a href="_cpp_rev_eng_base_8h.html#aff12ecf140cc31d5335c3c978808c268" class="m-doc">Args</a>(const <a href="struct_math_1_1_vector3.html" class="m-doc">Vector3</a>&amp;value),
+              <a href="_cpp_rev_eng_base_8h.html#aff12ecf140cc31d5335c3c978808c268" class="m-doc">Args</a>(value))</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper"><a href="#af1cfce772b8381a985598dfd9537df38" class="m-doc">auto_METHOD</a>(</span><span class="m-doc-wrap"><a href="class_app_1_1_property.html" class="m-doc">Property</a>,
+              <a href="class_app_1_1_property.html" class="m-doc">Property</a>&amp;,
+              SetValueVector4,
+              <a href="_cpp_rev_eng_base_8h.html#aff12ecf140cc31d5335c3c978808c268" class="m-doc">Args</a>(const <a href="struct_math_1_1_vector4.html" class="m-doc">Vector4</a>&amp;value),
+              <a href="_cpp_rev_eng_base_8h.html#aff12ecf140cc31d5335c3c978808c268" class="m-doc">Args</a>(value))</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper"><a href="#aa3d99505a831561186cc9598157b8a9c" class="m-doc">auto_METHOD</a>(</span><span class="m-doc-wrap"><a href="class_app_1_1_property.html" class="m-doc">Property</a>,
+              <a href="class_app_1_1_property.html" class="m-doc">Property</a>&amp;,
+              SetValueColorRGB,
+              <a href="_cpp_rev_eng_base_8h.html#aff12ecf140cc31d5335c3c978808c268" class="m-doc">Args</a>(const <a href="struct_math_1_1_color_r_g_b.html" class="m-doc">ColorRGB</a>&amp;value),
+              <a href="_cpp_rev_eng_base_8h.html#aff12ecf140cc31d5335c3c978808c268" class="m-doc">Args</a>(value))</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper"><a href="#a1e1e9bc88a730fe6453dfb7d073b9d53" class="m-doc">auto_METHOD</a>(</span><span class="m-doc-wrap"><a href="class_app_1_1_property.html" class="m-doc">Property</a>,
+              <a href="class_app_1_1_property.html" class="m-doc">Property</a>&amp;,
+              SetValueColorRGBA,
+              <a href="_cpp_rev_eng_base_8h.html#aff12ecf140cc31d5335c3c978808c268" class="m-doc">Args</a>(const <a href="struct_math_1_1_color_r_g_b_a.html" class="m-doc">ColorRGBA</a>&amp;value),
+              <a href="_cpp_rev_eng_base_8h.html#aff12ecf140cc31d5335c3c978808c268" class="m-doc">Args</a>(value))</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper"><a href="#aa9628d6ba43eefa6be7793de367cf526" class="m-doc">auto_STATIC_METHOD</a>(</span><span class="m-doc-wrap"><a href="class_app_1_1_property.html" class="m-doc">Property</a>,
+              bool,
+              GetBool,
+              <a href="_cpp_rev_eng_base_8h.html#aff12ecf140cc31d5335c3c978808c268" class="m-doc">Args</a>(const <a href="class_app_1_1_property_list.html" class="m-doc">PropertyList</a>*prop, uint32_t propertyID, bool&amp;dst),
+              <a href="_cpp_rev_eng_base_8h.html#aff12ecf140cc31d5335c3c978808c268" class="m-doc">Args</a>(prop, propertyID, dst))</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper"><a href="#a5c372593d72903c851f921e0861b2387" class="m-doc">auto_STATIC_METHOD</a>(</span><span class="m-doc-wrap"><a href="class_app_1_1_property.html" class="m-doc">Property</a>,
+              bool,
+              GetFloat,
+              <a href="_cpp_rev_eng_base_8h.html#aff12ecf140cc31d5335c3c978808c268" class="m-doc">Args</a>(const <a href="class_app_1_1_property_list.html" class="m-doc">PropertyList</a>*prop, uint32_t propertyID, float&amp;dst),
+              <a href="_cpp_rev_eng_base_8h.html#aff12ecf140cc31d5335c3c978808c268" class="m-doc">Args</a>(prop, propertyID, dst))</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper"><a href="#aa7032e01301046a30247428e0c39c879" class="m-doc">auto_STATIC_METHOD</a>(</span><span class="m-doc-wrap"><a href="class_app_1_1_property.html" class="m-doc">Property</a>,
+              bool,
+              GetInt32,
+              <a href="_cpp_rev_eng_base_8h.html#aff12ecf140cc31d5335c3c978808c268" class="m-doc">Args</a>(const <a href="class_app_1_1_property_list.html" class="m-doc">PropertyList</a>*prop, uint32_t propertyID, int32_t&amp;dst),
+              <a href="_cpp_rev_eng_base_8h.html#aff12ecf140cc31d5335c3c978808c268" class="m-doc">Args</a>(prop, propertyID, dst))</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper"><a href="#a8bc0e3fe30efa7f3bc140a635f53dc3d" class="m-doc">auto_STATIC_METHOD</a>(</span><span class="m-doc-wrap"><a href="class_app_1_1_property.html" class="m-doc">Property</a>,
+              bool,
+              GetUInt32,
+              <a href="_cpp_rev_eng_base_8h.html#aff12ecf140cc31d5335c3c978808c268" class="m-doc">Args</a>(const <a href="class_app_1_1_property_list.html" class="m-doc">PropertyList</a>*prop, uint32_t propertyID, uint32_t&amp;dst),
+              <a href="_cpp_rev_eng_base_8h.html#aff12ecf140cc31d5335c3c978808c268" class="m-doc">Args</a>(prop, propertyID, dst))</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper"><a href="#a6fa2394ac6bf92fc172c80b6c8bd3f71" class="m-doc">auto_STATIC_METHOD</a>(</span><span class="m-doc-wrap"><a href="class_app_1_1_property.html" class="m-doc">Property</a>,
+              bool,
+              GetVector2,
+              <a href="_cpp_rev_eng_base_8h.html#aff12ecf140cc31d5335c3c978808c268" class="m-doc">Args</a>(const <a href="class_app_1_1_property_list.html" class="m-doc">PropertyList</a>*prop, uint32_t propertyID, <a href="struct_math_1_1_vector2.html" class="m-doc">Vector2</a>&amp;dst),
+              <a href="_cpp_rev_eng_base_8h.html#aff12ecf140cc31d5335c3c978808c268" class="m-doc">Args</a>(prop, propertyID, dst))</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper"><a href="#ada23bcf9cc021e1ee45211bc4fb82053" class="m-doc">auto_STATIC_METHOD</a>(</span><span class="m-doc-wrap"><a href="class_app_1_1_property.html" class="m-doc">Property</a>,
+              bool,
+              GetVector3,
+              <a href="_cpp_rev_eng_base_8h.html#aff12ecf140cc31d5335c3c978808c268" class="m-doc">Args</a>(const <a href="class_app_1_1_property_list.html" class="m-doc">PropertyList</a>*prop, uint32_t propertyID, <a href="struct_math_1_1_vector3.html" class="m-doc">Vector3</a>&amp;dst),
+              <a href="_cpp_rev_eng_base_8h.html#aff12ecf140cc31d5335c3c978808c268" class="m-doc">Args</a>(prop, propertyID, dst))</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper"><a href="#aefba116902720995fccab3e79b6d942e" class="m-doc">auto_STATIC_METHOD</a>(</span><span class="m-doc-wrap"><a href="class_app_1_1_property.html" class="m-doc">Property</a>,
+              bool,
+              GetVector4,
+              <a href="_cpp_rev_eng_base_8h.html#aff12ecf140cc31d5335c3c978808c268" class="m-doc">Args</a>(const <a href="class_app_1_1_property_list.html" class="m-doc">PropertyList</a>*prop, uint32_t propertyID, <a href="struct_math_1_1_vector4.html" class="m-doc">Vector4</a>&amp;dst),
+              <a href="_cpp_rev_eng_base_8h.html#aff12ecf140cc31d5335c3c978808c268" class="m-doc">Args</a>(prop, propertyID, dst))</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper"><a href="#a6f6d3c79a7880ce58ee831fc13dcd089" class="m-doc">auto_STATIC_METHOD</a>(</span><span class="m-doc-wrap"><a href="class_app_1_1_property.html" class="m-doc">Property</a>,
+              bool,
+              GetColorRGB,
+              <a href="_cpp_rev_eng_base_8h.html#aff12ecf140cc31d5335c3c978808c268" class="m-doc">Args</a>(const <a href="class_app_1_1_property_list.html" class="m-doc">PropertyList</a>*prop, uint32_t propertyID, <a href="struct_math_1_1_color_r_g_b.html" class="m-doc">ColorRGB</a>&amp;dst),
+              <a href="_cpp_rev_eng_base_8h.html#aff12ecf140cc31d5335c3c978808c268" class="m-doc">Args</a>(prop, propertyID, dst))</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper"><a href="#a07a0c80b55e87033461013b90b8a2e0d" class="m-doc">auto_STATIC_METHOD</a>(</span><span class="m-doc-wrap"><a href="class_app_1_1_property.html" class="m-doc">Property</a>,
+              bool,
+              GetColorRGBA,
+              <a href="_cpp_rev_eng_base_8h.html#aff12ecf140cc31d5335c3c978808c268" class="m-doc">Args</a>(const <a href="class_app_1_1_property_list.html" class="m-doc">PropertyList</a>*prop, uint32_t propertyID, <a href="struct_math_1_1_color_r_g_b_a.html" class="m-doc">ColorRGBA</a>&amp;dst),
+              <a href="_cpp_rev_eng_base_8h.html#aff12ecf140cc31d5335c3c978808c268" class="m-doc">Args</a>(prop, propertyID, dst))</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper"><a href="#af2ab5ebebdaed5d93038cd9efa42275c" class="m-doc">auto_STATIC_METHOD</a>(</span><span class="m-doc-wrap"><a href="class_app_1_1_property.html" class="m-doc">Property</a>,
+              bool,
+              GetKey,
+              <a href="_cpp_rev_eng_base_8h.html#aff12ecf140cc31d5335c3c978808c268" class="m-doc">Args</a>(const <a href="class_app_1_1_property_list.html" class="m-doc">PropertyList</a>*prop, uint32_t propertyID, <a href="struct_resource_key.html" class="m-doc">ResourceKey</a>&amp;dst),
+              <a href="_cpp_rev_eng_base_8h.html#aff12ecf140cc31d5335c3c978808c268" class="m-doc">Args</a>(prop, propertyID, dst))</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper"><a href="#abdaa6d77a393f751d8bd22208e3ba24c" class="m-doc">auto_STATIC_METHOD</a>(</span><span class="m-doc-wrap"><a href="class_app_1_1_property.html" class="m-doc">Property</a>,
+              bool,
+              GetKeyInstanceID,
+              <a href="_cpp_rev_eng_base_8h.html#aff12ecf140cc31d5335c3c978808c268" class="m-doc">Args</a>(const <a href="class_app_1_1_property_list.html" class="m-doc">PropertyList</a>*prop, uint32_t propertyID, uint32_t&amp;dst),
+              <a href="_cpp_rev_eng_base_8h.html#aff12ecf140cc31d5335c3c978808c268" class="m-doc">Args</a>(prop, propertyID, dst))</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper"><a href="#a229b3dde7b6f0d42a6cf51db9c300155" class="m-doc">auto_STATIC_METHOD</a>(</span><span class="m-doc-wrap"><a href="class_app_1_1_property.html" class="m-doc">Property</a>,
+              bool,
+              GetKeyGroupID,
+              <a href="_cpp_rev_eng_base_8h.html#aff12ecf140cc31d5335c3c978808c268" class="m-doc">Args</a>(const <a href="class_app_1_1_property_list.html" class="m-doc">PropertyList</a>*prop, uint32_t propertyID, uint32_t&amp;dst),
+              <a href="_cpp_rev_eng_base_8h.html#aff12ecf140cc31d5335c3c978808c268" class="m-doc">Args</a>(prop, propertyID, dst))</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper"><a href="#a85c75ed660d46b3c387ab615ae49fc9c" class="m-doc">auto_STATIC_METHOD</a>(</span><span class="m-doc-wrap"><a href="class_app_1_1_property.html" class="m-doc">Property</a>,
+              bool,
+              GetKeyTypeID,
+              <a href="_cpp_rev_eng_base_8h.html#aff12ecf140cc31d5335c3c978808c268" class="m-doc">Args</a>(const <a href="class_app_1_1_property_list.html" class="m-doc">PropertyList</a>*prop, uint32_t propertyID, uint32_t&amp;dst),
+              <a href="_cpp_rev_eng_base_8h.html#aff12ecf140cc31d5335c3c978808c268" class="m-doc">Args</a>(prop, propertyID, dst))</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper"><a href="#aaa0df1780a70ef5b5f894a0d40281231" class="m-doc">auto_STATIC_METHOD</a>(</span><span class="m-doc-wrap"><a href="class_app_1_1_property.html" class="m-doc">Property</a>,
+              bool,
+              GetText,
+              <a href="_cpp_rev_eng_base_8h.html#aff12ecf140cc31d5335c3c978808c268" class="m-doc">Args</a>(const <a href="class_app_1_1_property_list.html" class="m-doc">PropertyList</a>*prop, uint32_t propertyID, <a href="class_localized_string.html" class="m-doc">LocalizedString</a>&amp;dst),
+              <a href="_cpp_rev_eng_base_8h.html#aff12ecf140cc31d5335c3c978808c268" class="m-doc">Args</a>(prop, propertyID, dst))</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper"><a href="#a2a6202ba1793dbd1a90825eff109670a" class="m-doc">auto_STATIC_METHOD</a>(</span><span class="m-doc-wrap"><a href="class_app_1_1_property.html" class="m-doc">Property</a>,
+              bool,
+              GetCString8,
+              <a href="_cpp_rev_eng_base_8h.html#aff12ecf140cc31d5335c3c978808c268" class="m-doc">Args</a>(const <a href="class_app_1_1_property_list.html" class="m-doc">PropertyList</a>*prop, uint32_t propertyID, char*&amp;dst),
+              <a href="_cpp_rev_eng_base_8h.html#aff12ecf140cc31d5335c3c978808c268" class="m-doc">Args</a>(prop, propertyID, dst))</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper"><a href="#a31a1f79158082979f238c4a1f8e161a2" class="m-doc">auto_STATIC_METHOD</a>(</span><span class="m-doc-wrap"><a href="class_app_1_1_property.html" class="m-doc">Property</a>,
+              bool,
+              GetCString16,
+              <a href="_cpp_rev_eng_base_8h.html#aff12ecf140cc31d5335c3c978808c268" class="m-doc">Args</a>(const <a href="class_app_1_1_property_list.html" class="m-doc">PropertyList</a>*prop, uint32_t propertyID, char16_t*&amp;dst),
+              <a href="_cpp_rev_eng_base_8h.html#aff12ecf140cc31d5335c3c978808c268" class="m-doc">Args</a>(prop, propertyID, dst))</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper"><a href="#a4e2ff150470697dbca2426102cf10eb2" class="m-doc">auto_STATIC_METHOD</a>(</span><span class="m-doc-wrap"><a href="class_app_1_1_property.html" class="m-doc">Property</a>,
+              bool,
+              GetString8,
+              <a href="_cpp_rev_eng_base_8h.html#aff12ecf140cc31d5335c3c978808c268" class="m-doc">Args</a>(const <a href="class_app_1_1_property_list.html" class="m-doc">PropertyList</a>*prop, uint32_t propertyID, eastl::string&amp;dst),
+              <a href="_cpp_rev_eng_base_8h.html#aff12ecf140cc31d5335c3c978808c268" class="m-doc">Args</a>(prop, propertyID, dst))</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper"><a href="#a6f1ebaa378239a88d443bac23725c3fc" class="m-doc">auto_STATIC_METHOD</a>(</span><span class="m-doc-wrap"><a href="class_app_1_1_property.html" class="m-doc">Property</a>,
+              bool,
+              GetString16,
+              <a href="_cpp_rev_eng_base_8h.html#aff12ecf140cc31d5335c3c978808c268" class="m-doc">Args</a>(const <a href="class_app_1_1_property_list.html" class="m-doc">PropertyList</a>*prop, uint32_t propertyID, eastl::string16&amp;dst),
+              <a href="_cpp_rev_eng_base_8h.html#aff12ecf140cc31d5335c3c978808c268" class="m-doc">Args</a>(prop, propertyID, dst))</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper"><a href="#a146cc23ef0a08123b137491a5c48aeeb" class="m-doc">auto_STATIC_METHOD</a>(</span><span class="m-doc-wrap"><a href="class_app_1_1_property.html" class="m-doc">Property</a>,
+              bool,
+              GetArrayBool,
+              <a href="_cpp_rev_eng_base_8h.html#aff12ecf140cc31d5335c3c978808c268" class="m-doc">Args</a>(const <a href="class_app_1_1_property_list.html" class="m-doc">PropertyList</a>*prop, uint32_t propertyID, size_t&amp;dstCount, bool*&amp;dst),
+              <a href="_cpp_rev_eng_base_8h.html#aff12ecf140cc31d5335c3c978808c268" class="m-doc">Args</a>(prop, propertyID, dstCount, dst))</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper"><a href="#af3f8f0d5e6c62a2833c49fd484bd285c" class="m-doc">auto_STATIC_METHOD</a>(</span><span class="m-doc-wrap"><a href="class_app_1_1_property.html" class="m-doc">Property</a>,
+              bool,
+              GetArrayInt32,
+              <a href="_cpp_rev_eng_base_8h.html#aff12ecf140cc31d5335c3c978808c268" class="m-doc">Args</a>(const <a href="class_app_1_1_property_list.html" class="m-doc">PropertyList</a>*prop, uint32_t propertyID, size_t&amp;dstCount, int32_t*&amp;dst),
+              <a href="_cpp_rev_eng_base_8h.html#aff12ecf140cc31d5335c3c978808c268" class="m-doc">Args</a>(prop, propertyID, dstCount, dst))</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper"><a href="#af6c6548b6d635c11be8ecd5765e86eb8" class="m-doc">auto_STATIC_METHOD</a>(</span><span class="m-doc-wrap"><a href="class_app_1_1_property.html" class="m-doc">Property</a>,
+              bool,
+              GetArrayUInt32,
+              <a href="_cpp_rev_eng_base_8h.html#aff12ecf140cc31d5335c3c978808c268" class="m-doc">Args</a>(const <a href="class_app_1_1_property_list.html" class="m-doc">PropertyList</a>*prop, uint32_t propertyID, size_t&amp;dstCount, uint32_t*&amp;dst),
+              <a href="_cpp_rev_eng_base_8h.html#aff12ecf140cc31d5335c3c978808c268" class="m-doc">Args</a>(prop, propertyID, dstCount, dst))</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper"><a href="#a6e43b8cd4205ca311bcf28736bdae550" class="m-doc">auto_STATIC_METHOD</a>(</span><span class="m-doc-wrap"><a href="class_app_1_1_property.html" class="m-doc">Property</a>,
+              bool,
+              GetArrayFloat,
+              <a href="_cpp_rev_eng_base_8h.html#aff12ecf140cc31d5335c3c978808c268" class="m-doc">Args</a>(const <a href="class_app_1_1_property_list.html" class="m-doc">PropertyList</a>*prop, uint32_t propertyID, size_t&amp;dstCount, float*&amp;dst),
+              <a href="_cpp_rev_eng_base_8h.html#aff12ecf140cc31d5335c3c978808c268" class="m-doc">Args</a>(prop, propertyID, dstCount, dst))</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper"><a href="#a05cb8ecacabd1dea0c20af7af793280a" class="m-doc">auto_STATIC_METHOD</a>(</span><span class="m-doc-wrap"><a href="class_app_1_1_property.html" class="m-doc">Property</a>,
+              bool,
+              GetArrayVector2,
+              <a href="_cpp_rev_eng_base_8h.html#aff12ecf140cc31d5335c3c978808c268" class="m-doc">Args</a>(const <a href="class_app_1_1_property_list.html" class="m-doc">PropertyList</a>*prop, uint32_t propertyID, size_t&amp;dstCount, <a href="struct_math_1_1_vector2.html" class="m-doc">Vector2</a>*&amp;dst),
+              <a href="_cpp_rev_eng_base_8h.html#aff12ecf140cc31d5335c3c978808c268" class="m-doc">Args</a>(prop, propertyID, dstCount, dst))</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper"><a href="#a7ffd373e6a06ef20d9b0b8616110cf50" class="m-doc">auto_STATIC_METHOD</a>(</span><span class="m-doc-wrap"><a href="class_app_1_1_property.html" class="m-doc">Property</a>,
+              bool,
+              GetArrayVector3,
+              <a href="_cpp_rev_eng_base_8h.html#aff12ecf140cc31d5335c3c978808c268" class="m-doc">Args</a>(const <a href="class_app_1_1_property_list.html" class="m-doc">PropertyList</a>*prop, uint32_t propertyID, size_t&amp;dstCount, <a href="struct_math_1_1_vector3.html" class="m-doc">Vector3</a>*&amp;dst),
+              <a href="_cpp_rev_eng_base_8h.html#aff12ecf140cc31d5335c3c978808c268" class="m-doc">Args</a>(prop, propertyID, dstCount, dst))</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper"><a href="#a00007ddfa3635f9a14110a24752e45e7" class="m-doc">auto_STATIC_METHOD</a>(</span><span class="m-doc-wrap"><a href="class_app_1_1_property.html" class="m-doc">Property</a>,
+              bool,
+              GetArrayVector4,
+              <a href="_cpp_rev_eng_base_8h.html#aff12ecf140cc31d5335c3c978808c268" class="m-doc">Args</a>(const <a href="class_app_1_1_property_list.html" class="m-doc">PropertyList</a>*prop, uint32_t propertyID, size_t&amp;dstCount, <a href="struct_math_1_1_vector4.html" class="m-doc">Vector4</a>*&amp;dst),
+              <a href="_cpp_rev_eng_base_8h.html#aff12ecf140cc31d5335c3c978808c268" class="m-doc">Args</a>(prop, propertyID, dstCount, dst))</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper"><a href="#a3ba7ce8837d13da6fc14f73dec8b39ea" class="m-doc">auto_STATIC_METHOD</a>(</span><span class="m-doc-wrap"><a href="class_app_1_1_property.html" class="m-doc">Property</a>,
+              bool,
+              GetArrayColorRGB,
+              <a href="_cpp_rev_eng_base_8h.html#aff12ecf140cc31d5335c3c978808c268" class="m-doc">Args</a>(const <a href="class_app_1_1_property_list.html" class="m-doc">PropertyList</a>*prop, uint32_t propertyID, size_t&amp;dstCount, <a href="struct_math_1_1_color_r_g_b.html" class="m-doc">ColorRGB</a>*&amp;dst),
+              <a href="_cpp_rev_eng_base_8h.html#aff12ecf140cc31d5335c3c978808c268" class="m-doc">Args</a>(prop, propertyID, dstCount, dst))</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper"><a href="#a3f1ed876ac015801e8b5fd63129d12cb" class="m-doc">auto_STATIC_METHOD</a>(</span><span class="m-doc-wrap"><a href="class_app_1_1_property.html" class="m-doc">Property</a>,
+              bool,
+              GetArrayKey,
+              <a href="_cpp_rev_eng_base_8h.html#aff12ecf140cc31d5335c3c978808c268" class="m-doc">Args</a>(const <a href="class_app_1_1_property_list.html" class="m-doc">PropertyList</a>*prop, uint32_t propertyID, size_t&amp;dstCount, <a href="struct_resource_key.html" class="m-doc">ResourceKey</a>*&amp;dst),
+              <a href="_cpp_rev_eng_base_8h.html#aff12ecf140cc31d5335c3c978808c268" class="m-doc">Args</a>(prop, propertyID, dstCount, dst))</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper"><a href="#a64f32fa11c2d7569f72119e3afb9184a" class="m-doc">auto_STATIC_METHOD</a>(</span><span class="m-doc-wrap"><a href="class_app_1_1_property.html" class="m-doc">Property</a>,
+              bool,
+              GetArrayString8,
+              <a href="_cpp_rev_eng_base_8h.html#aff12ecf140cc31d5335c3c978808c268" class="m-doc">Args</a>(const <a href="class_app_1_1_property_list.html" class="m-doc">PropertyList</a>*prop, uint32_t propertyID, size_t&amp;dstCount, eastl::string8*&amp;dst),
+              <a href="_cpp_rev_eng_base_8h.html#aff12ecf140cc31d5335c3c978808c268" class="m-doc">Args</a>(prop, propertyID, dstCount, dst))</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper"><a href="#ade4f8639d90ff8e06ba3e0824c1e3faf" class="m-doc">auto_STATIC_METHOD</a>(</span><span class="m-doc-wrap"><a href="class_app_1_1_property.html" class="m-doc">Property</a>,
+              bool,
+              GetArrayString16,
+              <a href="_cpp_rev_eng_base_8h.html#aff12ecf140cc31d5335c3c978808c268" class="m-doc">Args</a>(const <a href="class_app_1_1_property_list.html" class="m-doc">PropertyList</a>*prop, uint32_t propertyID, size_t&amp;dstCount, eastl::string16*&amp;dst),
+              <a href="_cpp_rev_eng_base_8h.html#aff12ecf140cc31d5335c3c978808c268" class="m-doc">Args</a>(prop, propertyID, dstCount, dst))</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper"><a href="#a5ddc7b81cee23a0c24e96d483cddbb9e" class="m-doc">auto_STATIC_METHOD</a>(</span><span class="m-doc-wrap"><a href="class_app_1_1_property.html" class="m-doc">Property</a>,
+              bool,
+              GetArrayTransform,
+              <a href="_cpp_rev_eng_base_8h.html#aff12ecf140cc31d5335c3c978808c268" class="m-doc">Args</a>(const <a href="class_app_1_1_property_list.html" class="m-doc">PropertyList</a>*prop, uint32_t propertyID, size_t&amp;dstCount, <a href="class_transform.html" class="m-doc">Transform</a>*&amp;dst),
+              <a href="_cpp_rev_eng_base_8h.html#aff12ecf140cc31d5335c3c978808c268" class="m-doc">Args</a>(prop, propertyID, dstCount, dst))</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a3f193042b088b170e6b1f0d07934f62d" class="m-doc">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_app_1_1_property_list.html" class="m-doc">PropertyList</a>) -&gt; namespace</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a6f1a9205999e3e57134cdb32cb9ce751" class="m-doc">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_app_1_1_scenario_mode.html" class="m-doc">ScenarioMode</a>) -&gt; namespace</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#aa3e8f6714724de0c67c5ba6913fcfba2" class="m-doc">GetAppProperties</a>(</span><span class="m-doc-wrap">) -&gt; <a href="class_app_1_1_direct_property_list.html" class="m-doc">DirectPropertyList</a>*</span>
+            </dt>
+            <dd>AppProperties is a kind of <a href="class_app_1_1_property_list.html" class="m-doc">PropertyList</a> containing globally-accessible properties that control the running of the app as a whole.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#afadd2d37ce13d21a504a8b9e4a00c919" class="m-doc">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_app_1_1_thumbnail__c_import_export.html" class="m-doc">Thumbnail_<wbr />cImportExport</a>) -&gt; namespace</span>
+            </dt>
+            <dd><span></span></dd>
+          </dl>
+        </section>
+        <section>
+          <h2>Enum documentation</h2>
+          <section class="m-doc-details" id="a4f6de8bf85a961e554a9e4e7ef7dc3ea"><div>
+            <h3>
+              enum App::<wbr /><a href="#a4f6de8bf85a961e554a9e4e7ef7dc3ea" class="m-doc-self">(anonymous)</a>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_i_game_mode_manager_8h.html">&lt;Spore/App/IGameModeManager.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+            <table class="m-table m-fullwidth m-flat m-doc">
+              <thead><tr><th style="width: 1%">Enumerators</th><th></th></tr></thead>
+              <tbody>
+                <tr>
+                  <td><a href="#a4f6de8bf85a961e554a9e4e7ef7dc3eaaab99bde69d5a451b5a8d0a9949662434" class="m-doc-self" id="a4f6de8bf85a961e554a9e4e7ef7dc3eaaab99bde69d5a451b5a8d0a9949662434">kMsgAddRef</a></td>
+                  <td>
+                  <p><span></span></p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a4f6de8bf85a961e554a9e4e7ef7dc3eaa58f34ed3e76d5d3fcbebf4a0dbfc81ed" class="m-doc-self" id="a4f6de8bf85a961e554a9e4e7ef7dc3eaa58f34ed3e76d5d3fcbebf4a0dbfc81ed">kMsgRelease</a></td>
+                  <td>
+                  <p><span></span></p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a4f6de8bf85a961e554a9e4e7ef7dc3eaa3c5da5adc2e58824ebc94b284a8d6c79" class="m-doc-self" id="a4f6de8bf85a961e554a9e4e7ef7dc3eaa3c5da5adc2e58824ebc94b284a8d6c79">kMsgOnModeExit</a></td>
+                  <td>
+                  <p>Called when the current mode is exited. The message data is the <a href="class_app_1_1_on_mode_exit_message.html" class="m-doc">App::<wbr />OnModeExitMessage</a> class.</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a4f6de8bf85a961e554a9e4e7ef7dc3eaa18f6cb3fd0bdd97be603d27a75e966e4" class="m-doc-self" id="a4f6de8bf85a961e554a9e4e7ef7dc3eaa18f6cb3fd0bdd97be603d27a75e966e4">kMsgOnModeEnter</a></td>
+                  <td>
+                  <p>Called after the current mode is entered. The message data is the <a href="class_app_1_1_on_mode_enter_message.html" class="m-doc">App::<wbr />OnModeEnterMessage</a> class.</p>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="a63d4bdaea67eeee2a8c4550b9efb2dd0"><div>
+            <h3>
+              enum App::<wbr /><a href="#a63d4bdaea67eeee2a8c4550b9efb2dd0" class="m-doc-self">(anonymous)</a>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_i_message_manager_8h.html">&lt;Spore/App/IMessageManager.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+            <table class="m-table m-fullwidth m-flat m-doc">
+              <thead><tr><th style="width: 1%">Enumerators</th><th></th></tr></thead>
+              <tbody>
+                <tr>
+                  <td><a href="#a63d4bdaea67eeee2a8c4550b9efb2dd0a13db3a5ebf5206f71d1b99be59f90407" class="m-doc-self" id="a63d4bdaea67eeee2a8c4550b9efb2dd0a13db3a5ebf5206f71d1b99be59f90407">kMsgAppInitialized</a></td>
+                  <td>
+                  <p>Sent when all the systems in the game have finished initializing, except for the <a href="namespace_simulator.html" class="m-doc">Simulator</a> ones.</p>
+<p>Does not use message data.</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a63d4bdaea67eeee2a8c4550b9efb2dd0af0127b9bab29dce33abae2b5f6fa153a" class="m-doc-self" id="a63d4bdaea67eeee2a8c4550b9efb2dd0af0127b9bab29dce33abae2b5f6fa153a">kMsgAppUpdate</a></td>
+                  <td>
+                  <p>Sent every game frame, after all other systems have been updated. Does not use message data.</p>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="aa30f9441aea9fdb83254924d3a87071e"><div>
+            <h3>
+              enum class App::<wbr /><a href="#aa30f9441aea9fdb83254924d3a87071e" class="m-doc-self">PropertyType</a>: uint16_t
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_property_8h.html">&lt;Spore/App/Property.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+        </section>
+        <section>
+          <h2>Typedef documentation</h2>
+          <section class="m-doc-details" id="a8e7a2854f38ce8e2b76e6f03989cc9e0"><div>
+            <h3>
+              typedef <a href="class_app_1_1_i_camera.html" class="m-doc">ICamera</a>*(*App::<wbr /><a href="#a8e7a2854f38ce8e2b76e6f03989cc9e0" class="m-doc-self">CameraFactoryFunction_t</a>)(PropertyList*pPropList)
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_i_camera_manager_8h.html">&lt;Spore/App/ICameraManager.h&gt;</a></div>
+            </h3>
+            <p><a href="class_app_1_1_camera.html" class="m-doc">Camera</a> types need a static function that creates the correct camera instance.</p>
+<p>The function must take a PropertyList* as a parameter, and returns an ICamera*. This does not need to read the .prop file; instead, it should be stored in a field in the camera; the manager will call <a href="class_app_1_1_i_camera.html#aa120308ea0e844dc2df5c91b600a634f" class="m-doc">ICamera::<wbr />Initialize()</a> when necessary; there&#x27;s where the .prop file should be read.</p>
+          </div></section>
+          <section class="m-doc-details" id="a0792416baaa2251d68963db97d021cda"><div>
+            <h3>
+              typedef eastl::function&lt;void()&gt; App::<wbr /><a href="#a0792416baaa2251d68963db97d021cda" class="m-doc-self">VoidFunction_T</a>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_i_message_listener_8h.html">&lt;Spore/App/IMessageListener.h&gt;</a></div>
+            </h3>
+            <p>The type of function used in Update or schedule scripts.</p>
+          </div></section>
+          <section class="m-doc-details" id="adf650d2c1852a6bd9fa7e8d49af6fae4"><div>
+            <h3>
+              <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="_i_message_listener_8h.html">&lt;Spore/App/IMessageListener.h&gt;</a></div>
+              <div class="m-doc-template">
+                template&lt;class T&gt;
+              </div>
+              using App::<wbr /><a href="#adf650d2c1852a6bd9fa7e8d49af6fae4" class="m-doc-self">VoidMethod_T</a> = void(T::*)()
+            </h3>
+            <p>The type of member method used in Update or schedule scripts.</p>
+          </div></section>
+        </section>
+        <section>
+          <h2>Function documentation</h2>
+          <section class="m-doc-details" id="aa35043a6c54e3b05aada833acb708849"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">namespace App::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#aa35043a6c54e3b05aada833acb708849" class="m-doc-self">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_app_1_1c_camera_manager.html" class="m-doc">cCameraManager</a>)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="c_camera_manager_8h.html">&lt;Spore/App/cCameraManager.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="ad793f0191d8757171a64b3f5974a497d"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">namespace App::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ad793f0191d8757171a64b3f5974a497d" class="m-doc-self">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_app_1_1c_cheat_manager.html" class="m-doc">cCheatManager</a>)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="c_cheat_manager_8h.html">&lt;Spore/App/cCheatManager.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="ab79a4bd9bde318bbf9a4317662695088"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">namespace App::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ab79a4bd9bde318bbf9a4317662695088" class="m-doc-self">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_app_1_1c_game_mode_manager.html" class="m-doc">cGameModeManager</a>)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="c_game_mode_manager_8h.html">&lt;Spore/App/cGameModeManager.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="a2bce90be67948b03d46f22f63a6bd7b2"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">namespace App::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a2bce90be67948b03d46f22f63a6bd7b2" class="m-doc-self">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_app_1_1c_message_manager.html" class="m-doc">cMessageManager</a>)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="c_message_manager_8h.html">&lt;Spore/App/cMessageManager.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="a67d37c0d9604a85b6140309dce765236"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">namespace App::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a67d37c0d9604a85b6140309dce765236" class="m-doc-self">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_app_1_1c_prop_manager.html" class="m-doc">cPropManager</a>)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="c_prop_manager_8h.html">&lt;Spore/App/cPropManager.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="ac638a26f43fe0ca9a2ef790cac919a82"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">namespace App::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ac638a26f43fe0ca9a2ef790cac919a82" class="m-doc-self">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_app_1_1c_viewer.html" class="m-doc">cViewer</a>)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="c_viewer_8h.html">&lt;Spore/App/cViewer.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="a3bbac691e628e0e576d5a2778d599b77"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">namespace App::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a3bbac691e628e0e576d5a2778d599b77" class="m-doc-self">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_app_1_1_direct_property_list.html" class="m-doc">DirectPropertyList</a>)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_direct_property_list_8h.html">&lt;Spore/App/DirectPropertyList.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="ae39e55a9d9306ac26f8a7f0a7de11b50"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"><a href="class_arg_script_1_1_format_parser.html" class="m-doc">ArgScript::<wbr />FormatParser</a>* App::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ae39e55a9d9306ac26f8a7f0a7de11b50" class="m-doc-self">GetConsoleStream</a>(</span><span class="m-doc-wrap">)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_i_cheat_manager_8h.html">&lt;Spore/App/ICheatManager.h&gt;</a></div>
+            </h3>
+            <p>An utility method that returns the active console stream, and that can be used to print strings to the console.</p>
+<p>This is the equivalent to <a href="class_app_1_1_i_cheat_manager.html#ab756691bc925b01764f9ba30f54dd680" class="m-doc">ICheatManager::<wbr />Get()</a>-&gt;GetArgScript()</p>
+          </div></section>
+          <section class="m-doc-details" id="a5cfc09513c296a1468b99530df311f4f"><div>
+            <h3>
+              <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="_i_cheat_manager_8h.html">&lt;Spore/App/ICheatManager.h&gt;</a></div>
+              <div class="m-doc-template">
+                template&lt;typename... Args&gt;
+              </div>
+              <span class="m-doc-wrap-bumper">void App::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a5cfc09513c296a1468b99530df311f4f" class="m-doc-self">ConsolePrintF</a>(</span><span class="m-doc-wrap">const char* str,
+              Args... args)</span></span>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="ad7a9b7474885960602b1b6c0385f5bec"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">namespace App::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ad7a9b7474885960602b1b6c0385f5bec" class="m-doc-self">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_app_1_1_i_cheat_manager.html" class="m-doc">ICheatManager</a>)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_i_cheat_manager_8h.html">&lt;Spore/App/ICheatManager.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="a1df9c36258cb70a2e662ba43863c5c20"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">namespace App::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a1df9c36258cb70a2e662ba43863c5c20" class="m-doc-self">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_app_1_1_i_class_manager.html" class="m-doc">IClassManager</a>)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_i_class_manager_8h.html">&lt;Spore/App/IClassManager.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="a9a99bdbf6e2515f8cccf29d6a46e894d"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"><a href="class_app_1_1c_viewer.html" class="m-doc">cViewer</a>* App::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a9a99bdbf6e2515f8cccf29d6a46e894d" class="m-doc-self">GetViewer</a>(</span><span class="m-doc-wrap">)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_i_game_mode_manager_8h.html">&lt;Spore/App/IGameModeManager.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="a9d9cf5e3d7f26a084646bd8df099eb4f"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">namespace App::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a9d9cf5e3d7f26a084646bd8df099eb4f" class="m-doc-self">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_app_1_1_i_game_mode_manager.html" class="m-doc">IGameModeManager</a>)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_i_game_mode_manager_8h.html">&lt;Spore/App/IGameModeManager.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="af7a55b14a341654f29945d7d38ace77f"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">intrusive_ptr&lt;<a href="class_app_1_1_update_message_listener.html" class="m-doc">UpdateMessageListener</a>&gt; App::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#af7a55b14a341654f29945d7d38ace77f" class="m-doc-self">AddUpdateFunction</a>(</span><span class="m-doc-wrap">const <a href="namespace_app.html#a0792416baaa2251d68963db97d021cda" class="m-doc">VoidFunction_<wbr />T</a>&amp; function)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_i_message_manager_8h.html">&lt;Spore/App/IMessageManager.h&gt;</a></div>
+            </h3>
+            <p>Adds an &quot;Update&quot; function that is called once every game frame.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">function</td>
+                  <td>A void function with no parameters, that will be executed every frame.</td>
+                </tr>
+              </tbody>
+            </table>
+<p>The time between frames is not constant, but you can use the <a href="class_clock.html" class="m-doc">Clock</a> and <a href="class_simulator_1_1c_gonzago_timer.html" class="m-doc">Simulator::<wbr />cGonzagoTimer</a> classes to measure elapsed time.</p><p>The method returns the object that holds the update function. If you want to remove the function so it is not called, anymore, you can do it by calling App::RemoveUpdateFunction(...) with the returned object as parameter.</p><p>Internally, this is implemented just by adding a message listener that listens to the kMsgAppUpdate message.</p>
+          </div></section>
+          <section class="m-doc-details" id="a12d9bbc8eec3931c5677bf1b87a62456"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">intrusive_ptr&lt;<a href="class_app_1_1_update_message_listener.html" class="m-doc">UpdateMessageListener</a>&gt; App::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a12d9bbc8eec3931c5677bf1b87a62456" class="m-doc-self">AddUpdateFunction</a>(</span><span class="m-doc-wrap"><a href="class_app_1_1_i_updatable.html" class="m-doc">IUpdatable</a>* updatable)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_i_message_manager_8h.html">&lt;Spore/App/IMessageManager.h&gt;</a></div>
+            </h3>
+            <p>Adds a class with an Update method that is called once every game frame.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">updatable</td>
+                  <td>An object with an Update method, that will be executed every frame.</td>
+                </tr>
+              </tbody>
+            </table>
+<p>The time between frames is not constant, but you can use the <a href="class_clock.html" class="m-doc">Clock</a> and <a href="class_simulator_1_1c_gonzago_timer.html" class="m-doc">Simulator::<wbr />cGonzagoTimer</a> classes to measure elapsed time.</p><p>The method returns the object that holds the updatable class. If you want to remove the function so it is not called, anymore, you can do it by calling App::RemoveUpdateFunction(...) with the returned object as parameter.</p><p>Internally, this is implemented just by adding a message listener that listens to the kMsgAppUpdate message.</p>
+          </div></section>
+          <section class="m-doc-details" id="adcc5d350caddc3ec5a0caae192f8d778"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">intrusive_ptr&lt;<a href="class_app_1_1_scheduled_task_listener.html" class="m-doc">ScheduledTaskListener</a>&gt; App::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#adcc5d350caddc3ec5a0caae192f8d778" class="m-doc-self">ScheduleTask</a>(</span><span class="m-doc-wrap">const <a href="namespace_app.html#a0792416baaa2251d68963db97d021cda" class="m-doc">VoidFunction_<wbr />T</a>&amp; function,
+              float scheduleTime)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_i_message_manager_8h.html">&lt;Spore/App/IMessageManager.h&gt;</a></div>
+            </h3>
+            <p>Executes a function after a certain time (measured in seconds) has passed from ths call.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">function</td>
+                  <td>A void function with no parameters, that will be executed every frame.</td>
+                </tr>
+                <tr>
+                  <td>scheduleTime</td>
+                  <td>The time that has to pass, in seconds, since the task is scheduled for it to be executed.</td>
+                </tr>
+              </tbody>
+            </table>
+<p>The function is executed only once, and the time starts counting since this ScheduleTask method has been called.</p><p>The method returns the object that holds the scheduled task. If you want to remove the task before it is called, you can do it by calling App::RemoveScheduledTask(...) with the returned object as parameter.</p><p>Internally, this is implemented by adding a message listener that listens to the kMsgAppUpdate message. Every frame uses a <a href="class_clock.html" class="m-doc">Clock</a> object to compare the elapsed time since this task as scheduled. The listener is removed once the task has finished executing.</p>
+          </div></section>
+          <section class="m-doc-details" id="ac75571a567ec26d7e148e41a83d56b54"><div>
+            <h3>
+              <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="_i_message_manager_8h.html">&lt;Spore/App/IMessageManager.h&gt;</a></div>
+              <div class="m-doc-template">
+                template&lt;class T&gt;
+              </div>
+              <span class="m-doc-wrap-bumper">intrusive_ptr&lt;<a href="class_app_1_1_scheduled_task_listener.html" class="m-doc">ScheduledTaskListener</a>&gt; App::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ac75571a567ec26d7e148e41a83d56b54" class="m-doc-self">ScheduleTask</a>(</span><span class="m-doc-wrap">T* object,
+              <a href="namespace_app.html#adf650d2c1852a6bd9fa7e8d49af6fae4" class="m-doc">VoidMethod_<wbr />T</a>&lt;T&gt; method,
+              float scheduleTime)</span></span>
+            </h3>
+            <p>Executes a class method after a certain time (measured in seconds) has passed from ths call.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">object</td>
+                  <td>The object to which the method will be called.</td>
+                </tr>
+                <tr>
+                  <td>method</td>
+                  <td>A void method with no parameters, that will be executed every frame.</td>
+                </tr>
+                <tr>
+                  <td>scheduleTime</td>
+                  <td>The time that has to pass, in seconds, since the task is scheduled for it to be executed.</td>
+                </tr>
+              </tbody>
+            </table>
+<p>The method is executed only once, and the time starts counting since this ScheduleTask method has been called.</p><p>The method returns the object that holds the scheduled task. If you want to remove the task before it is called, you can do it by calling App::RemoveScheduledTask(...) with the returned object as parameter.</p><p>Internally, this is implemented by adding a message listener that listens to the kMsgAppUpdate message. Every frame uses a <a href="class_clock.html" class="m-doc">Clock</a> object to compare the elapsed time since this task as scheduled. The listener is removed once the task has finished executing.</p>
+          </div></section>
+          <section class="m-doc-details" id="afc7a9a0cdd2045e547698c4285445663"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">intrusive_ptr&lt;<a href="class_app_1_1_scheduled_task_listener.html" class="m-doc">ScheduledTaskListener</a>&gt; App::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#afc7a9a0cdd2045e547698c4285445663" class="m-doc-self">ScheduleRepeatedTask</a>(</span><span class="m-doc-wrap">const <a href="namespace_app.html#a0792416baaa2251d68963db97d021cda" class="m-doc">VoidFunction_<wbr />T</a>&amp; function,
+              float scheduleTime,
+              float repeatRate)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_i_message_manager_8h.html">&lt;Spore/App/IMessageManager.h&gt;</a></div>
+            </h3>
+            <p>Executes a function after a certain time (measured in seconds) has passed from this call, and then keeps repeating it after a certain period (defined by the repeatRate parameter) parameter.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">function</td>
+                  <td>A void function with no parameters, that will be executed every frame.</td>
+                </tr>
+                <tr>
+                  <td>scheduleTime</td>
+                  <td>The time that has to pass, in seconds, since the task is scheduled for it to be executed.</td>
+                </tr>
+                <tr>
+                  <td>repeatRate</td>
+                  <td>How many seconds have to pass between every execution of the task.</td>
+                </tr>
+              </tbody>
+            </table>
+<p>The function is executed only once, and the time starts counting since this ScheduleTask method has been called.</p><p>The method returns the object that holds the scheduled task. If you want to remove the task so it does not execute anymore, you can do it by calling App::RemoveScheduledTask(...) with the returned object as parameter.</p><p>Internally, this is implemented by adding a message listener that listens to the kMsgAppUpdate message. Every frame uses a <a href="class_clock.html" class="m-doc">Clock</a> object to compare the elapsed time since this task as scheduled. The listener is removed once the task has finished executing.</p>
+          </div></section>
+          <section class="m-doc-details" id="aaf9613d0c383c31be6067537c6960dcc"><div>
+            <h3>
+              <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="_i_message_manager_8h.html">&lt;Spore/App/IMessageManager.h&gt;</a></div>
+              <div class="m-doc-template">
+                template&lt;class T&gt;
+              </div>
+              <span class="m-doc-wrap-bumper">intrusive_ptr&lt;<a href="class_app_1_1_scheduled_task_listener.html" class="m-doc">ScheduledTaskListener</a>&gt; App::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#aaf9613d0c383c31be6067537c6960dcc" class="m-doc-self">ScheduleRepeatedTask</a>(</span><span class="m-doc-wrap">T* object,
+              <a href="namespace_app.html#adf650d2c1852a6bd9fa7e8d49af6fae4" class="m-doc">VoidMethod_<wbr />T</a>&lt;T&gt; method,
+              float scheduleTime,
+              float repeatRate)</span></span>
+            </h3>
+            <p>Executes a function after a certain time (measured in seconds) has passed from this call, and then keeps repeating it after a certain period (defined by the repeatRate parameter) parameter.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">object</td>
+                  <td>The object to which the method will be called.</td>
+                </tr>
+                <tr>
+                  <td>method</td>
+                  <td>A void method with no parameters, that will be executed every frame.</td>
+                </tr>
+                <tr>
+                  <td>scheduleTime</td>
+                  <td>The time that has to pass, in seconds, since the task is scheduled for it to be executed.</td>
+                </tr>
+                <tr>
+                  <td>repeatRate</td>
+                  <td>How many seconds have to pass between every execution of the task.</td>
+                </tr>
+              </tbody>
+            </table>
+<p>The function is executed only once, and the time starts counting since this ScheduleTask method has been called.</p><p>The method returns the object that holds the scheduled task. If you want to remove the task so it does not execute anymore, you can do it by calling App::RemoveScheduledTask(...) with the returned object as parameter.</p><p>Internally, this is implemented by adding a message listener that listens to the kMsgAppUpdate message. Every frame uses a <a href="class_clock.html" class="m-doc">Clock</a> object to compare the elapsed time since this task as scheduled. The listener is removed once the task has finished executing.</p>
+          </div></section>
+          <section class="m-doc-details" id="adaff0d514088627ec69f23c35bb914fb"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">bool App::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#adaff0d514088627ec69f23c35bb914fb" class="m-doc-self">RemoveUpdateFunction</a>(</span><span class="m-doc-wrap">intrusive_ptr&lt;<a href="class_app_1_1_update_message_listener.html" class="m-doc">UpdateMessageListener</a>&gt;&amp; updateListener)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_i_message_manager_8h.html">&lt;Spore/App/IMessageManager.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="aefdd84f7ca367c3e875acbbe1129a076"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">bool App::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#aefdd84f7ca367c3e875acbbe1129a076" class="m-doc-self">RemoveScheduledTask</a>(</span><span class="m-doc-wrap">intrusive_ptr&lt;<a href="class_app_1_1_scheduled_task_listener.html" class="m-doc">ScheduledTaskListener</a>&gt;&amp; taskListener)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_i_message_manager_8h.html">&lt;Spore/App/IMessageManager.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="a808c959ab6e189671dac92ac56493b0b"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">namespace App::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a808c959ab6e189671dac92ac56493b0b" class="m-doc-self">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_app_1_1_i_message_manager.html" class="m-doc">IMessageManager</a>)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_i_message_manager_8h.html">&lt;Spore/App/IMessageManager.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="a5118c39d08a475ab7ba6c87bf67a717d"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">namespace App::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a5118c39d08a475ab7ba6c87bf67a717d" class="m-doc-self">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_app_1_1_i_prop_manager.html" class="m-doc">IPropManager</a>)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_i_prop_manager_8h.html">&lt;Spore/App/IPropManager.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="a96a30a30d26539d507c79f5513a1eedb"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"><a href="class_app_1_1_i_state_manager.html" class="m-doc">IStateManager</a>* App::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a96a30a30d26539d507c79f5513a1eedb" class="m-doc-self">StateManager</a>(</span><span class="m-doc-wrap">)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_i_state_manager_8h.html">&lt;Spore/App/IStateManager.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="a1ae370a1485cc304e5ee9dcd6faa2edd"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">namespace App::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a1ae370a1485cc304e5ee9dcd6faa2edd" class="m-doc-self">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_app_1_1_i_state_manager.html" class="m-doc">IStateManager</a>)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_i_state_manager_8h.html">&lt;Spore/App/IStateManager.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="a2203c5ec42e649ff1a9046ece0da2f36"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">namespace App::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a2203c5ec42e649ff1a9046ece0da2f36" class="m-doc-self">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_app_1_1_property.html" class="m-doc">Property</a>)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_property_8h.html">&lt;Spore/App/Property.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="a637c8b65399078fabe8246685ef1e78f"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"> App::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a637c8b65399078fabe8246685ef1e78f" class="m-doc-self">auto_METHOD_VOID</a>(</span><span class="m-doc-wrap"><a href="class_app_1_1_property.html" class="m-doc">Property</a>,
+              Clear,
+              <a href="_cpp_rev_eng_base_8h.html#aff12ecf140cc31d5335c3c978808c268" class="m-doc">Args</a>(bool arg_0),
+              <a href="_cpp_rev_eng_base_8h.html#aff12ecf140cc31d5335c3c978808c268" class="m-doc">Args</a>(arg_0))</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_property_8h.html">&lt;Spore/App/Property.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="a3dbf51fa8cdd4f171620c7893c4ee409"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"> App::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a3dbf51fa8cdd4f171620c7893c4ee409" class="m-doc-self">auto_METHOD_</a>(</span><span class="m-doc-wrap"><a href="class_app_1_1_property.html" class="m-doc">Property</a>,
+              int32_t*,
+              GetValueInt32)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_property_8h.html">&lt;Spore/App/Property.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="a33cd660107fb91153e95a49fcf54db80"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"> App::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a33cd660107fb91153e95a49fcf54db80" class="m-doc-self">auto_METHOD_</a>(</span><span class="m-doc-wrap"><a href="class_app_1_1_property.html" class="m-doc">Property</a>,
+              float*,
+              GetValueFloat)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_property_8h.html">&lt;Spore/App/Property.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="a47ba5bf6d808769215922944fb74ec32"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"> App::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a47ba5bf6d808769215922944fb74ec32" class="m-doc-self">auto_METHOD_</a>(</span><span class="m-doc-wrap"><a href="class_app_1_1_property.html" class="m-doc">Property</a>,
+              bool*,
+              GetValueBool)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_property_8h.html">&lt;Spore/App/Property.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="abc7d69dfd9b8a11a6d8ac3a0549ae756"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"> App::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#abc7d69dfd9b8a11a6d8ac3a0549ae756" class="m-doc-self">auto_METHOD_</a>(</span><span class="m-doc-wrap"><a href="class_app_1_1_property.html" class="m-doc">Property</a>,
+              uint32_t*,
+              GetValueUInt32)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_property_8h.html">&lt;Spore/App/Property.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="a9c8dbbe18cae6e588831e7b562ce9653"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"> App::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a9c8dbbe18cae6e588831e7b562ce9653" class="m-doc-self">auto_METHOD_</a>(</span><span class="m-doc-wrap"><a href="class_app_1_1_property.html" class="m-doc">Property</a>,
+              <a href="struct_math_1_1_vector2.html" class="m-doc">Vector2</a>*,
+              GetValueVector2)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_property_8h.html">&lt;Spore/App/Property.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="a434e187eda2dd416c0ccacf1160a2902"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"> App::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a434e187eda2dd416c0ccacf1160a2902" class="m-doc-self">auto_METHOD_</a>(</span><span class="m-doc-wrap"><a href="class_app_1_1_property.html" class="m-doc">Property</a>,
+              <a href="struct_math_1_1_vector3.html" class="m-doc">Vector3</a>*,
+              GetValueVector3)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_property_8h.html">&lt;Spore/App/Property.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="a50a70ee3a555867f4efeb4879bf3fd6f"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"> App::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a50a70ee3a555867f4efeb4879bf3fd6f" class="m-doc-self">auto_METHOD_</a>(</span><span class="m-doc-wrap"><a href="class_app_1_1_property.html" class="m-doc">Property</a>,
+              <a href="struct_math_1_1_vector4.html" class="m-doc">Vector4</a>*,
+              GetValueVector4)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_property_8h.html">&lt;Spore/App/Property.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="a2dd0deb513d0bcbcdc0c45cdfe094e09"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"> App::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a2dd0deb513d0bcbcdc0c45cdfe094e09" class="m-doc-self">auto_METHOD_</a>(</span><span class="m-doc-wrap"><a href="class_app_1_1_property.html" class="m-doc">Property</a>,
+              <a href="struct_math_1_1_color_r_g_b.html" class="m-doc">ColorRGB</a>*,
+              GetValueColorRGB)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_property_8h.html">&lt;Spore/App/Property.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="a5d7468f9375b72bda5b40f4f0171d6e3"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"> App::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a5d7468f9375b72bda5b40f4f0171d6e3" class="m-doc-self">auto_METHOD_</a>(</span><span class="m-doc-wrap"><a href="class_app_1_1_property.html" class="m-doc">Property</a>,
+              <a href="struct_math_1_1_color_r_g_b_a.html" class="m-doc">ColorRGBA</a>*,
+              GetValueColorRGBA)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_property_8h.html">&lt;Spore/App/Property.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="afbd81782279697f04f9610c071dfea27"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"> App::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#afbd81782279697f04f9610c071dfea27" class="m-doc-self">auto_METHOD_</a>(</span><span class="m-doc-wrap"><a href="class_app_1_1_property.html" class="m-doc">Property</a>,
+              <a href="struct_resource_key.html" class="m-doc">ResourceKey</a>*,
+              GetValueKey)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_property_8h.html">&lt;Spore/App/Property.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="a28b73f773ab09c85bdd33654501794a3"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"> App::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a28b73f773ab09c85bdd33654501794a3" class="m-doc-self">auto_METHOD_</a>(</span><span class="m-doc-wrap"><a href="class_app_1_1_property.html" class="m-doc">Property</a>,
+              <a href="class_transform.html" class="m-doc">Transform</a>*,
+              GetValueTransform)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_property_8h.html">&lt;Spore/App/Property.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="ad877dbb9562bb7d397d79bff29cc2745"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"> App::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ad877dbb9562bb7d397d79bff29cc2745" class="m-doc-self">auto_METHOD_</a>(</span><span class="m-doc-wrap"><a href="class_app_1_1_property.html" class="m-doc">Property</a>,
+              <a href="class_localized_string.html" class="m-doc">LocalizedString</a>*,
+              GetValueText)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_property_8h.html">&lt;Spore/App/Property.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="a650eb1bdcef7f32ad410b39d19b3c259"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"> App::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a650eb1bdcef7f32ad410b39d19b3c259" class="m-doc-self">auto_METHOD_</a>(</span><span class="m-doc-wrap"><a href="class_app_1_1_property.html" class="m-doc">Property</a>,
+              <a href="struct_math_1_1_bounding_box.html" class="m-doc">BoundingBox</a>*,
+              GetValueBBox)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_property_8h.html">&lt;Spore/App/Property.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="a42c3c4a8e7e9eff6f67b0e939cf17b73"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"> App::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a42c3c4a8e7e9eff6f67b0e939cf17b73" class="m-doc-self">auto_METHOD_</a>(</span><span class="m-doc-wrap"><a href="class_app_1_1_property.html" class="m-doc">Property</a>,
+              eastl::string8*,
+              GetValueString8)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_property_8h.html">&lt;Spore/App/Property.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="ac2b89776fda95fb4a60c254caf6fc916"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"> App::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ac2b89776fda95fb4a60c254caf6fc916" class="m-doc-self">auto_METHOD_</a>(</span><span class="m-doc-wrap"><a href="class_app_1_1_property.html" class="m-doc">Property</a>,
+              eastl::string16*,
+              GetValueString16)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_property_8h.html">&lt;Spore/App/Property.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="a497a8ec36c2055ff0810ef0a1eb330d4"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"> App::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a497a8ec36c2055ff0810ef0a1eb330d4" class="m-doc-self">auto_METHOD_</a>(</span><span class="m-doc-wrap"><a href="class_app_1_1_property.html" class="m-doc">Property</a>,
+              char*,
+              GetValueChar)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_property_8h.html">&lt;Spore/App/Property.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="ad83e812f3f482b4ec972dd8b5e0aaee8"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"> App::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ad83e812f3f482b4ec972dd8b5e0aaee8" class="m-doc-self">auto_METHOD_</a>(</span><span class="m-doc-wrap"><a href="class_app_1_1_property.html" class="m-doc">Property</a>,
+              char16_t*,
+              GetValueWChar)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_property_8h.html">&lt;Spore/App/Property.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="ac5fcd8674d948b64e0d5dbe610c4b58e"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"> App::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ac5fcd8674d948b64e0d5dbe610c4b58e" class="m-doc-self">auto_METHOD_</a>(</span><span class="m-doc-wrap"><a href="class_app_1_1_property.html" class="m-doc">Property</a>,
+              int8_t*,
+              GetValueInt8)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_property_8h.html">&lt;Spore/App/Property.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="aca1e3d2038cd516b65b2f168076d0cca"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"> App::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#aca1e3d2038cd516b65b2f168076d0cca" class="m-doc-self">auto_METHOD_</a>(</span><span class="m-doc-wrap"><a href="class_app_1_1_property.html" class="m-doc">Property</a>,
+              uint8_t*,
+              GetValueUInt8)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_property_8h.html">&lt;Spore/App/Property.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="a0b44665c8bd10783ff4ce8ca9ed9038b"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"> App::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a0b44665c8bd10783ff4ce8ca9ed9038b" class="m-doc-self">auto_METHOD_</a>(</span><span class="m-doc-wrap"><a href="class_app_1_1_property.html" class="m-doc">Property</a>,
+              int16_t*,
+              GetValueInt16)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_property_8h.html">&lt;Spore/App/Property.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="acff1aefabc9bc2cea81f0a6aee3ecd2a"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"> App::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#acff1aefabc9bc2cea81f0a6aee3ecd2a" class="m-doc-self">auto_METHOD_</a>(</span><span class="m-doc-wrap"><a href="class_app_1_1_property.html" class="m-doc">Property</a>,
+              uint16_t*,
+              GetValueUInt16)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_property_8h.html">&lt;Spore/App/Property.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="aa9b2a86e0c23c5fa197c224e50c9c602"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"> App::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#aa9b2a86e0c23c5fa197c224e50c9c602" class="m-doc-self">auto_METHOD_</a>(</span><span class="m-doc-wrap"><a href="class_app_1_1_property.html" class="m-doc">Property</a>,
+              int64_t*,
+              GetValueInt64)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_property_8h.html">&lt;Spore/App/Property.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="ad1aeb1cfe5de3ee2a06add3373d94b6e"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"> App::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ad1aeb1cfe5de3ee2a06add3373d94b6e" class="m-doc-self">auto_METHOD_</a>(</span><span class="m-doc-wrap"><a href="class_app_1_1_property.html" class="m-doc">Property</a>,
+              uint64_t*,
+              GetValueUInt64)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_property_8h.html">&lt;Spore/App/Property.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="a26034b1b8d3565a4f92890246ced78f5"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"> App::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a26034b1b8d3565a4f92890246ced78f5" class="m-doc-self">auto_METHOD_</a>(</span><span class="m-doc-wrap"><a href="class_app_1_1_property.html" class="m-doc">Property</a>,
+              double*,
+              GetValueDouble)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_property_8h.html">&lt;Spore/App/Property.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="aba123a3c84cd296e7cafdf401609846f"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"> App::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#aba123a3c84cd296e7cafdf401609846f" class="m-doc-self">auto_METHOD_</a>(</span><span class="m-doc-wrap"><a href="class_app_1_1_property.html" class="m-doc">Property</a>,
+              void**,
+              GetValueFlags)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_property_8h.html">&lt;Spore/App/Property.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="a823310d060a60f297f9924e4b37c6fdf"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"> App::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a823310d060a60f297f9924e4b37c6fdf" class="m-doc-self">auto_METHOD_</a>(</span><span class="m-doc-wrap"><a href="class_app_1_1_property.html" class="m-doc">Property</a>,
+              void*,
+              GetValue)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_property_8h.html">&lt;Spore/App/Property.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="a7127ccaea1acf3cdd49a1f69214e3d62"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"> App::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a7127ccaea1acf3cdd49a1f69214e3d62" class="m-doc-self">auto_METHOD</a>(</span><span class="m-doc-wrap"><a href="class_app_1_1_property.html" class="m-doc">Property</a>,
+              bool,
+              Set,
+              <a href="_cpp_rev_eng_base_8h.html#aff12ecf140cc31d5335c3c978808c268" class="m-doc">Args</a>(<a href="namespace_app.html#aa30f9441aea9fdb83254924d3a87071e" class="m-doc">PropertyType</a> type, int flags, void*pValue, size_t nValueSize, size_t nValueCount),
+              <a href="_cpp_rev_eng_base_8h.html#aff12ecf140cc31d5335c3c978808c268" class="m-doc">Args</a>(type, flags, pValue, nValueSize, nValueCount))</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_property_8h.html">&lt;Spore/App/Property.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="a869fbc6228c6fc17e5bb853a954593d4"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"> App::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a869fbc6228c6fc17e5bb853a954593d4" class="m-doc-self">auto_METHOD</a>(</span><span class="m-doc-wrap"><a href="class_app_1_1_property.html" class="m-doc">Property</a>,
+              <a href="class_app_1_1_property.html" class="m-doc">Property</a>&amp;,
+              SetValueInt32,
+              <a href="_cpp_rev_eng_base_8h.html#aff12ecf140cc31d5335c3c978808c268" class="m-doc">Args</a>(const int32_t&amp;value),
+              <a href="_cpp_rev_eng_base_8h.html#aff12ecf140cc31d5335c3c978808c268" class="m-doc">Args</a>(value))</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_property_8h.html">&lt;Spore/App/Property.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="a911841ee594156309d4276d8e757fbdd"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"> App::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a911841ee594156309d4276d8e757fbdd" class="m-doc-self">auto_METHOD</a>(</span><span class="m-doc-wrap"><a href="class_app_1_1_property.html" class="m-doc">Property</a>,
+              <a href="class_app_1_1_property.html" class="m-doc">Property</a>&amp;,
+              SetValueUInt32,
+              <a href="_cpp_rev_eng_base_8h.html#aff12ecf140cc31d5335c3c978808c268" class="m-doc">Args</a>(const uint32_t&amp;value),
+              <a href="_cpp_rev_eng_base_8h.html#aff12ecf140cc31d5335c3c978808c268" class="m-doc">Args</a>(value))</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_property_8h.html">&lt;Spore/App/Property.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="ad34cf5dede2b3fcde1be988574f9f970"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"> App::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ad34cf5dede2b3fcde1be988574f9f970" class="m-doc-self">auto_METHOD</a>(</span><span class="m-doc-wrap"><a href="class_app_1_1_property.html" class="m-doc">Property</a>,
+              <a href="class_app_1_1_property.html" class="m-doc">Property</a>&amp;,
+              SetValueKey,
+              <a href="_cpp_rev_eng_base_8h.html#aff12ecf140cc31d5335c3c978808c268" class="m-doc">Args</a>(const <a href="struct_resource_key.html" class="m-doc">ResourceKey</a>&amp;value),
+              <a href="_cpp_rev_eng_base_8h.html#aff12ecf140cc31d5335c3c978808c268" class="m-doc">Args</a>(value))</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_property_8h.html">&lt;Spore/App/Property.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="ab27d0ffaa4b14ffb3930acde33ad4a72"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"> App::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ab27d0ffaa4b14ffb3930acde33ad4a72" class="m-doc-self">auto_METHOD</a>(</span><span class="m-doc-wrap"><a href="class_app_1_1_property.html" class="m-doc">Property</a>,
+              <a href="class_app_1_1_property.html" class="m-doc">Property</a>&amp;,
+              SetValueString8,
+              <a href="_cpp_rev_eng_base_8h.html#aff12ecf140cc31d5335c3c978808c268" class="m-doc">Args</a>(const eastl::string8&amp;value),
+              <a href="_cpp_rev_eng_base_8h.html#aff12ecf140cc31d5335c3c978808c268" class="m-doc">Args</a>(value))</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_property_8h.html">&lt;Spore/App/Property.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="ae1c8c24b6d5d14865bf8e43225bbe2d0"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"> App::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ae1c8c24b6d5d14865bf8e43225bbe2d0" class="m-doc-self">auto_METHOD</a>(</span><span class="m-doc-wrap"><a href="class_app_1_1_property.html" class="m-doc">Property</a>,
+              <a href="class_app_1_1_property.html" class="m-doc">Property</a>&amp;,
+              SetValueString16,
+              <a href="_cpp_rev_eng_base_8h.html#aff12ecf140cc31d5335c3c978808c268" class="m-doc">Args</a>(const eastl::string16&amp;value),
+              <a href="_cpp_rev_eng_base_8h.html#aff12ecf140cc31d5335c3c978808c268" class="m-doc">Args</a>(value))</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_property_8h.html">&lt;Spore/App/Property.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="a4841557351d04823086da7c18fc36f9a"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"> App::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a4841557351d04823086da7c18fc36f9a" class="m-doc-self">auto_METHOD</a>(</span><span class="m-doc-wrap"><a href="class_app_1_1_property.html" class="m-doc">Property</a>,
+              <a href="class_app_1_1_property.html" class="m-doc">Property</a>&amp;,
+              SetValueFloat,
+              <a href="_cpp_rev_eng_base_8h.html#aff12ecf140cc31d5335c3c978808c268" class="m-doc">Args</a>(const float&amp;value),
+              <a href="_cpp_rev_eng_base_8h.html#aff12ecf140cc31d5335c3c978808c268" class="m-doc">Args</a>(value))</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_property_8h.html">&lt;Spore/App/Property.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="aa7464d4d2c01a658c589eba38894735f"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"> App::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#aa7464d4d2c01a658c589eba38894735f" class="m-doc-self">auto_METHOD</a>(</span><span class="m-doc-wrap"><a href="class_app_1_1_property.html" class="m-doc">Property</a>,
+              <a href="class_app_1_1_property.html" class="m-doc">Property</a>&amp;,
+              SetValueBool,
+              <a href="_cpp_rev_eng_base_8h.html#aff12ecf140cc31d5335c3c978808c268" class="m-doc">Args</a>(const bool&amp;value),
+              <a href="_cpp_rev_eng_base_8h.html#aff12ecf140cc31d5335c3c978808c268" class="m-doc">Args</a>(value))</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_property_8h.html">&lt;Spore/App/Property.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="a4aa489b5dd7b2830d1fbb234ee8e985b"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"> App::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a4aa489b5dd7b2830d1fbb234ee8e985b" class="m-doc-self">auto_METHOD</a>(</span><span class="m-doc-wrap"><a href="class_app_1_1_property.html" class="m-doc">Property</a>,
+              <a href="class_app_1_1_property.html" class="m-doc">Property</a>&amp;,
+              SetValueBBox,
+              <a href="_cpp_rev_eng_base_8h.html#aff12ecf140cc31d5335c3c978808c268" class="m-doc">Args</a>(const <a href="struct_math_1_1_bounding_box.html" class="m-doc">BoundingBox</a>&amp;value),
+              <a href="_cpp_rev_eng_base_8h.html#aff12ecf140cc31d5335c3c978808c268" class="m-doc">Args</a>(value))</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_property_8h.html">&lt;Spore/App/Property.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="a5602961ab658194b97017d079d7fa3cc"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"> App::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a5602961ab658194b97017d079d7fa3cc" class="m-doc-self">auto_METHOD</a>(</span><span class="m-doc-wrap"><a href="class_app_1_1_property.html" class="m-doc">Property</a>,
+              <a href="class_app_1_1_property.html" class="m-doc">Property</a>&amp;,
+              SetValueVector2,
+              <a href="_cpp_rev_eng_base_8h.html#aff12ecf140cc31d5335c3c978808c268" class="m-doc">Args</a>(const <a href="struct_math_1_1_vector2.html" class="m-doc">Vector2</a>&amp;value),
+              <a href="_cpp_rev_eng_base_8h.html#aff12ecf140cc31d5335c3c978808c268" class="m-doc">Args</a>(value))</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_property_8h.html">&lt;Spore/App/Property.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="a972c1d80da873cf4d61f9ee2d3780bea"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"> App::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a972c1d80da873cf4d61f9ee2d3780bea" class="m-doc-self">auto_METHOD</a>(</span><span class="m-doc-wrap"><a href="class_app_1_1_property.html" class="m-doc">Property</a>,
+              <a href="class_app_1_1_property.html" class="m-doc">Property</a>&amp;,
+              SetValueVector3,
+              <a href="_cpp_rev_eng_base_8h.html#aff12ecf140cc31d5335c3c978808c268" class="m-doc">Args</a>(const <a href="struct_math_1_1_vector3.html" class="m-doc">Vector3</a>&amp;value),
+              <a href="_cpp_rev_eng_base_8h.html#aff12ecf140cc31d5335c3c978808c268" class="m-doc">Args</a>(value))</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_property_8h.html">&lt;Spore/App/Property.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="af1cfce772b8381a985598dfd9537df38"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"> App::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#af1cfce772b8381a985598dfd9537df38" class="m-doc-self">auto_METHOD</a>(</span><span class="m-doc-wrap"><a href="class_app_1_1_property.html" class="m-doc">Property</a>,
+              <a href="class_app_1_1_property.html" class="m-doc">Property</a>&amp;,
+              SetValueVector4,
+              <a href="_cpp_rev_eng_base_8h.html#aff12ecf140cc31d5335c3c978808c268" class="m-doc">Args</a>(const <a href="struct_math_1_1_vector4.html" class="m-doc">Vector4</a>&amp;value),
+              <a href="_cpp_rev_eng_base_8h.html#aff12ecf140cc31d5335c3c978808c268" class="m-doc">Args</a>(value))</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_property_8h.html">&lt;Spore/App/Property.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="aa3d99505a831561186cc9598157b8a9c"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"> App::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#aa3d99505a831561186cc9598157b8a9c" class="m-doc-self">auto_METHOD</a>(</span><span class="m-doc-wrap"><a href="class_app_1_1_property.html" class="m-doc">Property</a>,
+              <a href="class_app_1_1_property.html" class="m-doc">Property</a>&amp;,
+              SetValueColorRGB,
+              <a href="_cpp_rev_eng_base_8h.html#aff12ecf140cc31d5335c3c978808c268" class="m-doc">Args</a>(const <a href="struct_math_1_1_color_r_g_b.html" class="m-doc">ColorRGB</a>&amp;value),
+              <a href="_cpp_rev_eng_base_8h.html#aff12ecf140cc31d5335c3c978808c268" class="m-doc">Args</a>(value))</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_property_8h.html">&lt;Spore/App/Property.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="a1e1e9bc88a730fe6453dfb7d073b9d53"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"> App::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a1e1e9bc88a730fe6453dfb7d073b9d53" class="m-doc-self">auto_METHOD</a>(</span><span class="m-doc-wrap"><a href="class_app_1_1_property.html" class="m-doc">Property</a>,
+              <a href="class_app_1_1_property.html" class="m-doc">Property</a>&amp;,
+              SetValueColorRGBA,
+              <a href="_cpp_rev_eng_base_8h.html#aff12ecf140cc31d5335c3c978808c268" class="m-doc">Args</a>(const <a href="struct_math_1_1_color_r_g_b_a.html" class="m-doc">ColorRGBA</a>&amp;value),
+              <a href="_cpp_rev_eng_base_8h.html#aff12ecf140cc31d5335c3c978808c268" class="m-doc">Args</a>(value))</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_property_8h.html">&lt;Spore/App/Property.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="aa9628d6ba43eefa6be7793de367cf526"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"> App::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#aa9628d6ba43eefa6be7793de367cf526" class="m-doc-self">auto_STATIC_METHOD</a>(</span><span class="m-doc-wrap"><a href="class_app_1_1_property.html" class="m-doc">Property</a>,
+              bool,
+              GetBool,
+              <a href="_cpp_rev_eng_base_8h.html#aff12ecf140cc31d5335c3c978808c268" class="m-doc">Args</a>(const <a href="class_app_1_1_property_list.html" class="m-doc">PropertyList</a>*prop, uint32_t propertyID, bool&amp;dst),
+              <a href="_cpp_rev_eng_base_8h.html#aff12ecf140cc31d5335c3c978808c268" class="m-doc">Args</a>(prop, propertyID, dst))</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_property_8h.html">&lt;Spore/App/Property.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="a5c372593d72903c851f921e0861b2387"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"> App::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a5c372593d72903c851f921e0861b2387" class="m-doc-self">auto_STATIC_METHOD</a>(</span><span class="m-doc-wrap"><a href="class_app_1_1_property.html" class="m-doc">Property</a>,
+              bool,
+              GetFloat,
+              <a href="_cpp_rev_eng_base_8h.html#aff12ecf140cc31d5335c3c978808c268" class="m-doc">Args</a>(const <a href="class_app_1_1_property_list.html" class="m-doc">PropertyList</a>*prop, uint32_t propertyID, float&amp;dst),
+              <a href="_cpp_rev_eng_base_8h.html#aff12ecf140cc31d5335c3c978808c268" class="m-doc">Args</a>(prop, propertyID, dst))</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_property_8h.html">&lt;Spore/App/Property.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="aa7032e01301046a30247428e0c39c879"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"> App::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#aa7032e01301046a30247428e0c39c879" class="m-doc-self">auto_STATIC_METHOD</a>(</span><span class="m-doc-wrap"><a href="class_app_1_1_property.html" class="m-doc">Property</a>,
+              bool,
+              GetInt32,
+              <a href="_cpp_rev_eng_base_8h.html#aff12ecf140cc31d5335c3c978808c268" class="m-doc">Args</a>(const <a href="class_app_1_1_property_list.html" class="m-doc">PropertyList</a>*prop, uint32_t propertyID, int32_t&amp;dst),
+              <a href="_cpp_rev_eng_base_8h.html#aff12ecf140cc31d5335c3c978808c268" class="m-doc">Args</a>(prop, propertyID, dst))</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_property_8h.html">&lt;Spore/App/Property.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="a8bc0e3fe30efa7f3bc140a635f53dc3d"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"> App::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a8bc0e3fe30efa7f3bc140a635f53dc3d" class="m-doc-self">auto_STATIC_METHOD</a>(</span><span class="m-doc-wrap"><a href="class_app_1_1_property.html" class="m-doc">Property</a>,
+              bool,
+              GetUInt32,
+              <a href="_cpp_rev_eng_base_8h.html#aff12ecf140cc31d5335c3c978808c268" class="m-doc">Args</a>(const <a href="class_app_1_1_property_list.html" class="m-doc">PropertyList</a>*prop, uint32_t propertyID, uint32_t&amp;dst),
+              <a href="_cpp_rev_eng_base_8h.html#aff12ecf140cc31d5335c3c978808c268" class="m-doc">Args</a>(prop, propertyID, dst))</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_property_8h.html">&lt;Spore/App/Property.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="a6fa2394ac6bf92fc172c80b6c8bd3f71"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"> App::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a6fa2394ac6bf92fc172c80b6c8bd3f71" class="m-doc-self">auto_STATIC_METHOD</a>(</span><span class="m-doc-wrap"><a href="class_app_1_1_property.html" class="m-doc">Property</a>,
+              bool,
+              GetVector2,
+              <a href="_cpp_rev_eng_base_8h.html#aff12ecf140cc31d5335c3c978808c268" class="m-doc">Args</a>(const <a href="class_app_1_1_property_list.html" class="m-doc">PropertyList</a>*prop, uint32_t propertyID, <a href="struct_math_1_1_vector2.html" class="m-doc">Vector2</a>&amp;dst),
+              <a href="_cpp_rev_eng_base_8h.html#aff12ecf140cc31d5335c3c978808c268" class="m-doc">Args</a>(prop, propertyID, dst))</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_property_8h.html">&lt;Spore/App/Property.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="ada23bcf9cc021e1ee45211bc4fb82053"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"> App::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ada23bcf9cc021e1ee45211bc4fb82053" class="m-doc-self">auto_STATIC_METHOD</a>(</span><span class="m-doc-wrap"><a href="class_app_1_1_property.html" class="m-doc">Property</a>,
+              bool,
+              GetVector3,
+              <a href="_cpp_rev_eng_base_8h.html#aff12ecf140cc31d5335c3c978808c268" class="m-doc">Args</a>(const <a href="class_app_1_1_property_list.html" class="m-doc">PropertyList</a>*prop, uint32_t propertyID, <a href="struct_math_1_1_vector3.html" class="m-doc">Vector3</a>&amp;dst),
+              <a href="_cpp_rev_eng_base_8h.html#aff12ecf140cc31d5335c3c978808c268" class="m-doc">Args</a>(prop, propertyID, dst))</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_property_8h.html">&lt;Spore/App/Property.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="aefba116902720995fccab3e79b6d942e"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"> App::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#aefba116902720995fccab3e79b6d942e" class="m-doc-self">auto_STATIC_METHOD</a>(</span><span class="m-doc-wrap"><a href="class_app_1_1_property.html" class="m-doc">Property</a>,
+              bool,
+              GetVector4,
+              <a href="_cpp_rev_eng_base_8h.html#aff12ecf140cc31d5335c3c978808c268" class="m-doc">Args</a>(const <a href="class_app_1_1_property_list.html" class="m-doc">PropertyList</a>*prop, uint32_t propertyID, <a href="struct_math_1_1_vector4.html" class="m-doc">Vector4</a>&amp;dst),
+              <a href="_cpp_rev_eng_base_8h.html#aff12ecf140cc31d5335c3c978808c268" class="m-doc">Args</a>(prop, propertyID, dst))</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_property_8h.html">&lt;Spore/App/Property.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="a6f6d3c79a7880ce58ee831fc13dcd089"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"> App::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a6f6d3c79a7880ce58ee831fc13dcd089" class="m-doc-self">auto_STATIC_METHOD</a>(</span><span class="m-doc-wrap"><a href="class_app_1_1_property.html" class="m-doc">Property</a>,
+              bool,
+              GetColorRGB,
+              <a href="_cpp_rev_eng_base_8h.html#aff12ecf140cc31d5335c3c978808c268" class="m-doc">Args</a>(const <a href="class_app_1_1_property_list.html" class="m-doc">PropertyList</a>*prop, uint32_t propertyID, <a href="struct_math_1_1_color_r_g_b.html" class="m-doc">ColorRGB</a>&amp;dst),
+              <a href="_cpp_rev_eng_base_8h.html#aff12ecf140cc31d5335c3c978808c268" class="m-doc">Args</a>(prop, propertyID, dst))</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_property_8h.html">&lt;Spore/App/Property.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="a07a0c80b55e87033461013b90b8a2e0d"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"> App::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a07a0c80b55e87033461013b90b8a2e0d" class="m-doc-self">auto_STATIC_METHOD</a>(</span><span class="m-doc-wrap"><a href="class_app_1_1_property.html" class="m-doc">Property</a>,
+              bool,
+              GetColorRGBA,
+              <a href="_cpp_rev_eng_base_8h.html#aff12ecf140cc31d5335c3c978808c268" class="m-doc">Args</a>(const <a href="class_app_1_1_property_list.html" class="m-doc">PropertyList</a>*prop, uint32_t propertyID, <a href="struct_math_1_1_color_r_g_b_a.html" class="m-doc">ColorRGBA</a>&amp;dst),
+              <a href="_cpp_rev_eng_base_8h.html#aff12ecf140cc31d5335c3c978808c268" class="m-doc">Args</a>(prop, propertyID, dst))</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_property_8h.html">&lt;Spore/App/Property.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="af2ab5ebebdaed5d93038cd9efa42275c"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"> App::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#af2ab5ebebdaed5d93038cd9efa42275c" class="m-doc-self">auto_STATIC_METHOD</a>(</span><span class="m-doc-wrap"><a href="class_app_1_1_property.html" class="m-doc">Property</a>,
+              bool,
+              GetKey,
+              <a href="_cpp_rev_eng_base_8h.html#aff12ecf140cc31d5335c3c978808c268" class="m-doc">Args</a>(const <a href="class_app_1_1_property_list.html" class="m-doc">PropertyList</a>*prop, uint32_t propertyID, <a href="struct_resource_key.html" class="m-doc">ResourceKey</a>&amp;dst),
+              <a href="_cpp_rev_eng_base_8h.html#aff12ecf140cc31d5335c3c978808c268" class="m-doc">Args</a>(prop, propertyID, dst))</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_property_8h.html">&lt;Spore/App/Property.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="abdaa6d77a393f751d8bd22208e3ba24c"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"> App::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#abdaa6d77a393f751d8bd22208e3ba24c" class="m-doc-self">auto_STATIC_METHOD</a>(</span><span class="m-doc-wrap"><a href="class_app_1_1_property.html" class="m-doc">Property</a>,
+              bool,
+              GetKeyInstanceID,
+              <a href="_cpp_rev_eng_base_8h.html#aff12ecf140cc31d5335c3c978808c268" class="m-doc">Args</a>(const <a href="class_app_1_1_property_list.html" class="m-doc">PropertyList</a>*prop, uint32_t propertyID, uint32_t&amp;dst),
+              <a href="_cpp_rev_eng_base_8h.html#aff12ecf140cc31d5335c3c978808c268" class="m-doc">Args</a>(prop, propertyID, dst))</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_property_8h.html">&lt;Spore/App/Property.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="a229b3dde7b6f0d42a6cf51db9c300155"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"> App::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a229b3dde7b6f0d42a6cf51db9c300155" class="m-doc-self">auto_STATIC_METHOD</a>(</span><span class="m-doc-wrap"><a href="class_app_1_1_property.html" class="m-doc">Property</a>,
+              bool,
+              GetKeyGroupID,
+              <a href="_cpp_rev_eng_base_8h.html#aff12ecf140cc31d5335c3c978808c268" class="m-doc">Args</a>(const <a href="class_app_1_1_property_list.html" class="m-doc">PropertyList</a>*prop, uint32_t propertyID, uint32_t&amp;dst),
+              <a href="_cpp_rev_eng_base_8h.html#aff12ecf140cc31d5335c3c978808c268" class="m-doc">Args</a>(prop, propertyID, dst))</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_property_8h.html">&lt;Spore/App/Property.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="a85c75ed660d46b3c387ab615ae49fc9c"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"> App::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a85c75ed660d46b3c387ab615ae49fc9c" class="m-doc-self">auto_STATIC_METHOD</a>(</span><span class="m-doc-wrap"><a href="class_app_1_1_property.html" class="m-doc">Property</a>,
+              bool,
+              GetKeyTypeID,
+              <a href="_cpp_rev_eng_base_8h.html#aff12ecf140cc31d5335c3c978808c268" class="m-doc">Args</a>(const <a href="class_app_1_1_property_list.html" class="m-doc">PropertyList</a>*prop, uint32_t propertyID, uint32_t&amp;dst),
+              <a href="_cpp_rev_eng_base_8h.html#aff12ecf140cc31d5335c3c978808c268" class="m-doc">Args</a>(prop, propertyID, dst))</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_property_8h.html">&lt;Spore/App/Property.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="aaa0df1780a70ef5b5f894a0d40281231"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"> App::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#aaa0df1780a70ef5b5f894a0d40281231" class="m-doc-self">auto_STATIC_METHOD</a>(</span><span class="m-doc-wrap"><a href="class_app_1_1_property.html" class="m-doc">Property</a>,
+              bool,
+              GetText,
+              <a href="_cpp_rev_eng_base_8h.html#aff12ecf140cc31d5335c3c978808c268" class="m-doc">Args</a>(const <a href="class_app_1_1_property_list.html" class="m-doc">PropertyList</a>*prop, uint32_t propertyID, <a href="class_localized_string.html" class="m-doc">LocalizedString</a>&amp;dst),
+              <a href="_cpp_rev_eng_base_8h.html#aff12ecf140cc31d5335c3c978808c268" class="m-doc">Args</a>(prop, propertyID, dst))</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_property_8h.html">&lt;Spore/App/Property.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="a2a6202ba1793dbd1a90825eff109670a"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"> App::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a2a6202ba1793dbd1a90825eff109670a" class="m-doc-self">auto_STATIC_METHOD</a>(</span><span class="m-doc-wrap"><a href="class_app_1_1_property.html" class="m-doc">Property</a>,
+              bool,
+              GetCString8,
+              <a href="_cpp_rev_eng_base_8h.html#aff12ecf140cc31d5335c3c978808c268" class="m-doc">Args</a>(const <a href="class_app_1_1_property_list.html" class="m-doc">PropertyList</a>*prop, uint32_t propertyID, char*&amp;dst),
+              <a href="_cpp_rev_eng_base_8h.html#aff12ecf140cc31d5335c3c978808c268" class="m-doc">Args</a>(prop, propertyID, dst))</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_property_8h.html">&lt;Spore/App/Property.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="a31a1f79158082979f238c4a1f8e161a2"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"> App::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a31a1f79158082979f238c4a1f8e161a2" class="m-doc-self">auto_STATIC_METHOD</a>(</span><span class="m-doc-wrap"><a href="class_app_1_1_property.html" class="m-doc">Property</a>,
+              bool,
+              GetCString16,
+              <a href="_cpp_rev_eng_base_8h.html#aff12ecf140cc31d5335c3c978808c268" class="m-doc">Args</a>(const <a href="class_app_1_1_property_list.html" class="m-doc">PropertyList</a>*prop, uint32_t propertyID, char16_t*&amp;dst),
+              <a href="_cpp_rev_eng_base_8h.html#aff12ecf140cc31d5335c3c978808c268" class="m-doc">Args</a>(prop, propertyID, dst))</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_property_8h.html">&lt;Spore/App/Property.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="a4e2ff150470697dbca2426102cf10eb2"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"> App::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a4e2ff150470697dbca2426102cf10eb2" class="m-doc-self">auto_STATIC_METHOD</a>(</span><span class="m-doc-wrap"><a href="class_app_1_1_property.html" class="m-doc">Property</a>,
+              bool,
+              GetString8,
+              <a href="_cpp_rev_eng_base_8h.html#aff12ecf140cc31d5335c3c978808c268" class="m-doc">Args</a>(const <a href="class_app_1_1_property_list.html" class="m-doc">PropertyList</a>*prop, uint32_t propertyID, eastl::string&amp;dst),
+              <a href="_cpp_rev_eng_base_8h.html#aff12ecf140cc31d5335c3c978808c268" class="m-doc">Args</a>(prop, propertyID, dst))</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_property_8h.html">&lt;Spore/App/Property.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="a6f1ebaa378239a88d443bac23725c3fc"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"> App::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a6f1ebaa378239a88d443bac23725c3fc" class="m-doc-self">auto_STATIC_METHOD</a>(</span><span class="m-doc-wrap"><a href="class_app_1_1_property.html" class="m-doc">Property</a>,
+              bool,
+              GetString16,
+              <a href="_cpp_rev_eng_base_8h.html#aff12ecf140cc31d5335c3c978808c268" class="m-doc">Args</a>(const <a href="class_app_1_1_property_list.html" class="m-doc">PropertyList</a>*prop, uint32_t propertyID, eastl::string16&amp;dst),
+              <a href="_cpp_rev_eng_base_8h.html#aff12ecf140cc31d5335c3c978808c268" class="m-doc">Args</a>(prop, propertyID, dst))</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_property_8h.html">&lt;Spore/App/Property.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="a146cc23ef0a08123b137491a5c48aeeb"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"> App::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a146cc23ef0a08123b137491a5c48aeeb" class="m-doc-self">auto_STATIC_METHOD</a>(</span><span class="m-doc-wrap"><a href="class_app_1_1_property.html" class="m-doc">Property</a>,
+              bool,
+              GetArrayBool,
+              <a href="_cpp_rev_eng_base_8h.html#aff12ecf140cc31d5335c3c978808c268" class="m-doc">Args</a>(const <a href="class_app_1_1_property_list.html" class="m-doc">PropertyList</a>*prop, uint32_t propertyID, size_t&amp;dstCount, bool*&amp;dst),
+              <a href="_cpp_rev_eng_base_8h.html#aff12ecf140cc31d5335c3c978808c268" class="m-doc">Args</a>(prop, propertyID, dstCount, dst))</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_property_8h.html">&lt;Spore/App/Property.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="af3f8f0d5e6c62a2833c49fd484bd285c"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"> App::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#af3f8f0d5e6c62a2833c49fd484bd285c" class="m-doc-self">auto_STATIC_METHOD</a>(</span><span class="m-doc-wrap"><a href="class_app_1_1_property.html" class="m-doc">Property</a>,
+              bool,
+              GetArrayInt32,
+              <a href="_cpp_rev_eng_base_8h.html#aff12ecf140cc31d5335c3c978808c268" class="m-doc">Args</a>(const <a href="class_app_1_1_property_list.html" class="m-doc">PropertyList</a>*prop, uint32_t propertyID, size_t&amp;dstCount, int32_t*&amp;dst),
+              <a href="_cpp_rev_eng_base_8h.html#aff12ecf140cc31d5335c3c978808c268" class="m-doc">Args</a>(prop, propertyID, dstCount, dst))</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_property_8h.html">&lt;Spore/App/Property.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="af6c6548b6d635c11be8ecd5765e86eb8"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"> App::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#af6c6548b6d635c11be8ecd5765e86eb8" class="m-doc-self">auto_STATIC_METHOD</a>(</span><span class="m-doc-wrap"><a href="class_app_1_1_property.html" class="m-doc">Property</a>,
+              bool,
+              GetArrayUInt32,
+              <a href="_cpp_rev_eng_base_8h.html#aff12ecf140cc31d5335c3c978808c268" class="m-doc">Args</a>(const <a href="class_app_1_1_property_list.html" class="m-doc">PropertyList</a>*prop, uint32_t propertyID, size_t&amp;dstCount, uint32_t*&amp;dst),
+              <a href="_cpp_rev_eng_base_8h.html#aff12ecf140cc31d5335c3c978808c268" class="m-doc">Args</a>(prop, propertyID, dstCount, dst))</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_property_8h.html">&lt;Spore/App/Property.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="a6e43b8cd4205ca311bcf28736bdae550"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"> App::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a6e43b8cd4205ca311bcf28736bdae550" class="m-doc-self">auto_STATIC_METHOD</a>(</span><span class="m-doc-wrap"><a href="class_app_1_1_property.html" class="m-doc">Property</a>,
+              bool,
+              GetArrayFloat,
+              <a href="_cpp_rev_eng_base_8h.html#aff12ecf140cc31d5335c3c978808c268" class="m-doc">Args</a>(const <a href="class_app_1_1_property_list.html" class="m-doc">PropertyList</a>*prop, uint32_t propertyID, size_t&amp;dstCount, float*&amp;dst),
+              <a href="_cpp_rev_eng_base_8h.html#aff12ecf140cc31d5335c3c978808c268" class="m-doc">Args</a>(prop, propertyID, dstCount, dst))</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_property_8h.html">&lt;Spore/App/Property.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="a05cb8ecacabd1dea0c20af7af793280a"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"> App::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a05cb8ecacabd1dea0c20af7af793280a" class="m-doc-self">auto_STATIC_METHOD</a>(</span><span class="m-doc-wrap"><a href="class_app_1_1_property.html" class="m-doc">Property</a>,
+              bool,
+              GetArrayVector2,
+              <a href="_cpp_rev_eng_base_8h.html#aff12ecf140cc31d5335c3c978808c268" class="m-doc">Args</a>(const <a href="class_app_1_1_property_list.html" class="m-doc">PropertyList</a>*prop, uint32_t propertyID, size_t&amp;dstCount, <a href="struct_math_1_1_vector2.html" class="m-doc">Vector2</a>*&amp;dst),
+              <a href="_cpp_rev_eng_base_8h.html#aff12ecf140cc31d5335c3c978808c268" class="m-doc">Args</a>(prop, propertyID, dstCount, dst))</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_property_8h.html">&lt;Spore/App/Property.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="a7ffd373e6a06ef20d9b0b8616110cf50"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"> App::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a7ffd373e6a06ef20d9b0b8616110cf50" class="m-doc-self">auto_STATIC_METHOD</a>(</span><span class="m-doc-wrap"><a href="class_app_1_1_property.html" class="m-doc">Property</a>,
+              bool,
+              GetArrayVector3,
+              <a href="_cpp_rev_eng_base_8h.html#aff12ecf140cc31d5335c3c978808c268" class="m-doc">Args</a>(const <a href="class_app_1_1_property_list.html" class="m-doc">PropertyList</a>*prop, uint32_t propertyID, size_t&amp;dstCount, <a href="struct_math_1_1_vector3.html" class="m-doc">Vector3</a>*&amp;dst),
+              <a href="_cpp_rev_eng_base_8h.html#aff12ecf140cc31d5335c3c978808c268" class="m-doc">Args</a>(prop, propertyID, dstCount, dst))</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_property_8h.html">&lt;Spore/App/Property.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="a00007ddfa3635f9a14110a24752e45e7"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"> App::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a00007ddfa3635f9a14110a24752e45e7" class="m-doc-self">auto_STATIC_METHOD</a>(</span><span class="m-doc-wrap"><a href="class_app_1_1_property.html" class="m-doc">Property</a>,
+              bool,
+              GetArrayVector4,
+              <a href="_cpp_rev_eng_base_8h.html#aff12ecf140cc31d5335c3c978808c268" class="m-doc">Args</a>(const <a href="class_app_1_1_property_list.html" class="m-doc">PropertyList</a>*prop, uint32_t propertyID, size_t&amp;dstCount, <a href="struct_math_1_1_vector4.html" class="m-doc">Vector4</a>*&amp;dst),
+              <a href="_cpp_rev_eng_base_8h.html#aff12ecf140cc31d5335c3c978808c268" class="m-doc">Args</a>(prop, propertyID, dstCount, dst))</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_property_8h.html">&lt;Spore/App/Property.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="a3ba7ce8837d13da6fc14f73dec8b39ea"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"> App::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a3ba7ce8837d13da6fc14f73dec8b39ea" class="m-doc-self">auto_STATIC_METHOD</a>(</span><span class="m-doc-wrap"><a href="class_app_1_1_property.html" class="m-doc">Property</a>,
+              bool,
+              GetArrayColorRGB,
+              <a href="_cpp_rev_eng_base_8h.html#aff12ecf140cc31d5335c3c978808c268" class="m-doc">Args</a>(const <a href="class_app_1_1_property_list.html" class="m-doc">PropertyList</a>*prop, uint32_t propertyID, size_t&amp;dstCount, <a href="struct_math_1_1_color_r_g_b.html" class="m-doc">ColorRGB</a>*&amp;dst),
+              <a href="_cpp_rev_eng_base_8h.html#aff12ecf140cc31d5335c3c978808c268" class="m-doc">Args</a>(prop, propertyID, dstCount, dst))</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_property_8h.html">&lt;Spore/App/Property.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="a3f1ed876ac015801e8b5fd63129d12cb"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"> App::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a3f1ed876ac015801e8b5fd63129d12cb" class="m-doc-self">auto_STATIC_METHOD</a>(</span><span class="m-doc-wrap"><a href="class_app_1_1_property.html" class="m-doc">Property</a>,
+              bool,
+              GetArrayKey,
+              <a href="_cpp_rev_eng_base_8h.html#aff12ecf140cc31d5335c3c978808c268" class="m-doc">Args</a>(const <a href="class_app_1_1_property_list.html" class="m-doc">PropertyList</a>*prop, uint32_t propertyID, size_t&amp;dstCount, <a href="struct_resource_key.html" class="m-doc">ResourceKey</a>*&amp;dst),
+              <a href="_cpp_rev_eng_base_8h.html#aff12ecf140cc31d5335c3c978808c268" class="m-doc">Args</a>(prop, propertyID, dstCount, dst))</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_property_8h.html">&lt;Spore/App/Property.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="a64f32fa11c2d7569f72119e3afb9184a"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"> App::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a64f32fa11c2d7569f72119e3afb9184a" class="m-doc-self">auto_STATIC_METHOD</a>(</span><span class="m-doc-wrap"><a href="class_app_1_1_property.html" class="m-doc">Property</a>,
+              bool,
+              GetArrayString8,
+              <a href="_cpp_rev_eng_base_8h.html#aff12ecf140cc31d5335c3c978808c268" class="m-doc">Args</a>(const <a href="class_app_1_1_property_list.html" class="m-doc">PropertyList</a>*prop, uint32_t propertyID, size_t&amp;dstCount, eastl::string8*&amp;dst),
+              <a href="_cpp_rev_eng_base_8h.html#aff12ecf140cc31d5335c3c978808c268" class="m-doc">Args</a>(prop, propertyID, dstCount, dst))</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_property_8h.html">&lt;Spore/App/Property.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="ade4f8639d90ff8e06ba3e0824c1e3faf"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"> App::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ade4f8639d90ff8e06ba3e0824c1e3faf" class="m-doc-self">auto_STATIC_METHOD</a>(</span><span class="m-doc-wrap"><a href="class_app_1_1_property.html" class="m-doc">Property</a>,
+              bool,
+              GetArrayString16,
+              <a href="_cpp_rev_eng_base_8h.html#aff12ecf140cc31d5335c3c978808c268" class="m-doc">Args</a>(const <a href="class_app_1_1_property_list.html" class="m-doc">PropertyList</a>*prop, uint32_t propertyID, size_t&amp;dstCount, eastl::string16*&amp;dst),
+              <a href="_cpp_rev_eng_base_8h.html#aff12ecf140cc31d5335c3c978808c268" class="m-doc">Args</a>(prop, propertyID, dstCount, dst))</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_property_8h.html">&lt;Spore/App/Property.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="a5ddc7b81cee23a0c24e96d483cddbb9e"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"> App::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a5ddc7b81cee23a0c24e96d483cddbb9e" class="m-doc-self">auto_STATIC_METHOD</a>(</span><span class="m-doc-wrap"><a href="class_app_1_1_property.html" class="m-doc">Property</a>,
+              bool,
+              GetArrayTransform,
+              <a href="_cpp_rev_eng_base_8h.html#aff12ecf140cc31d5335c3c978808c268" class="m-doc">Args</a>(const <a href="class_app_1_1_property_list.html" class="m-doc">PropertyList</a>*prop, uint32_t propertyID, size_t&amp;dstCount, <a href="class_transform.html" class="m-doc">Transform</a>*&amp;dst),
+              <a href="_cpp_rev_eng_base_8h.html#aff12ecf140cc31d5335c3c978808c268" class="m-doc">Args</a>(prop, propertyID, dstCount, dst))</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_property_8h.html">&lt;Spore/App/Property.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="a3f193042b088b170e6b1f0d07934f62d"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">namespace App::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a3f193042b088b170e6b1f0d07934f62d" class="m-doc-self">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_app_1_1_property_list.html" class="m-doc">PropertyList</a>)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_property_list_8h.html">&lt;Spore/App/PropertyList.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="a6f1a9205999e3e57134cdb32cb9ce751"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">namespace App::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a6f1a9205999e3e57134cdb32cb9ce751" class="m-doc-self">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_app_1_1_scenario_mode.html" class="m-doc">ScenarioMode</a>)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_scenario_mode_8h.html">&lt;Spore/App/ScenarioMode.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="aa3e8f6714724de0c67c5ba6913fcfba2"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"><a href="class_app_1_1_direct_property_list.html" class="m-doc">DirectPropertyList</a>* App::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#aa3e8f6714724de0c67c5ba6913fcfba2" class="m-doc-self">GetAppProperties</a>(</span><span class="m-doc-wrap">)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_s_p_property_i_ds_8h.html">&lt;Spore/App/SPPropertyIDs.h&gt;</a></div>
+            </h3>
+            <p>AppProperties is a kind of <a href="class_app_1_1_property_list.html" class="m-doc">PropertyList</a> containing globally-accessible properties that control the running of the app as a whole.</p>
+<p>Use AppProperties to get the property list and access global properties, for example: <code class="m-code"><span class="k">if</span> <span class="p">(</span><span class="n">AppProperties</span><span class="p">.</span><span class="n">GetDirectBool</span><span class="p">(</span><span class="n">SPPropertyIDs</span><span class="o">::</span><span class="n">kRenderEffects</span><span class="p">))</span> <span class="p">...</span></code></p>
+          </div></section>
+          <section class="m-doc-details" id="afadd2d37ce13d21a504a8b9e4a00c919"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">namespace App::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#afadd2d37ce13d21a504a8b9e4a00c919" class="m-doc-self">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_app_1_1_thumbnail__c_import_export.html" class="m-doc">Thumbnail_<wbr />cImportExport</a>)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_thumbnail__c_import_export_8h.html">&lt;Spore/App/Thumbnail_cImportExport.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+        </section>
+      </div>
+    </div>
+  </div>
+</article></main>
+<div class="m-doc-search" id="search">
+  <a href="#!" onclick="return hideSearch()"></a>
+  <div class="m-container">
+    <div class="m-row">
+      <div class="m-col-m-8 m-push-m-2">
+        <div class="m-doc-search-header m-text m-small">
+          <div><span class="m-label m-default">Tab</span> / <span class="m-label m-default">T</span> to search, <span class="m-label m-default">Esc</span> to close</div>
+          <div id="search-symbolcount">&hellip;</div>
+        </div>
+        <div class="m-doc-search-content">
+          <form>
+            <input type="search" name="q" id="search-input" placeholder="Loading &hellip;" disabled="disabled" autofocus="autofocus" autocomplete="off" spellcheck="false" />
+          </form>
+          <noscript class="m-text m-danger m-text-center">Unlike everything else in the docs, the search functionality <em>requires</em> JavaScript.</noscript>
+          <div id="search-help" class="m-text m-dim m-text-center">
+            <p class="m-noindent">Search for symbols, directories, files, pages or
+            modules. You can omit any prefix from the symbol or file path; adding a
+            <code>:</code> or <code>/</code> suffix lists all members of given symbol or
+            directory.</p>
+            <p class="m-noindent">Use <span class="m-label m-dim">&darr;</span>
+            / <span class="m-label m-dim">&uarr;</span> to navigate through the list,
+            <span class="m-label m-dim">Enter</span> to go.
+            <span class="m-label m-dim">Tab</span> autocompletes common prefix, you can
+            copy a link to the result using <span class="m-label m-dim">⌘</span>
+            <span class="m-label m-dim">L</span> while <span class="m-label m-dim">⌘</span>
+            <span class="m-label m-dim">M</span> produces a Markdown link.</p>
+          </div>
+          <div id="search-notfound" class="m-text m-warning m-text-center">Sorry, nothing was found.</div>
+          <ul id="search-results"></ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="search-v1.js"></script>
+<script src="searchdata-v1.js" async="async"></script>
+<footer><nav>
+  <div class="m-container">
+    <div class="m-row">
+      <div class="m-col-l-10 m-push-l-1">
+        <p>Spore ModAPI SDK for creating C++ mods for Spore. Created with <a href="https://doxygen.org/">Doxygen</a> 1.8.16 and <a href="https://mcss.mosra.cz/">m.css</a>.</p>
+      </div>
+    </div>
+  </div>
+</nav></footer>
+</body>
+</html>

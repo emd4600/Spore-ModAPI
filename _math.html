@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Math, transforms and random numbers | Spore ModAPI SDK for creating C++ mods for Spore</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,600,600i%7CSource+Code+Pro:400,400i,600" />
+  <link rel="stylesheet" href="m-dark.css" />
+  <link rel="stylesheet" href="m-documentation.css" />
+  <link rel="icon" href="Spore_ModAPI_Icon.png" type="image/png" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#22272e" />
+</head>
+<body>
+<header><nav id="navigation">
+  <div class="m-container">
+    <div class="m-row">
+      <a href="index.html" id="m-navbar-brand" class="m-col-t-8 m-col-m-none m-left-m"><img src="Spore_ModAPI_Icon.png" />Spore ModAPI <span class="m-thin">SDK for creating C++ mods for Spore</span></a>
+      <div class="m-col-t-4 m-hide-m m-text-right m-nopadr">
+        <a href="#search" class="m-doc-search-icon" title="Search" onclick="return showSearch()"><svg style="height: 0.9rem;" viewBox="0 0 16 16">
+          <path id="m-doc-search-icon-path" d="m6 0c-3.31 0-6 2.69-6 6 0 3.31 2.69 6 6 6 1.49 0 2.85-0.541 3.89-1.44-0.0164 0.338 0.147 0.759 0.5 1.15l3.22 3.79c0.552 0.614 1.45 0.665 2 0.115 0.55-0.55 0.499-1.45-0.115-2l-3.79-3.22c-0.392-0.353-0.812-0.515-1.15-0.5 0.895-1.05 1.44-2.41 1.44-3.89 0-3.31-2.69-6-6-6zm0 1.56a4.44 4.44 0 0 1 4.44 4.44 4.44 4.44 0 0 1-4.44 4.44 4.44 4.44 0 0 1-4.44-4.44 4.44 4.44 0 0 1 4.44-4.44z"/>
+        </svg></a>
+        <a id="m-navbar-show" href="#navigation" title="Show navigation"></a>
+        <a id="m-navbar-hide" href="#" title="Hide navigation"></a>
+      </div>
+      <div id="m-navbar-collapse" class="m-col-t-12 m-show-m m-col-m-none m-right-m">
+        <div class="m-row">
+          <ol class="m-col-t-6 m-col-m-none">
+            <li><a href="pages.html">Tutorials</a></li>
+            <li><a href="namespaces.html">Namespaces</a></li>
+          </ol>
+          <ol class="m-col-t-6 m-col-m-none" start="3">
+            <li><a href="annotated.html">Classes</a></li>
+            <li><a href="files.html">Files</a></li>
+            <li class="m-show-m"><a href="#search" class="m-doc-search-icon" title="Search" onclick="return showSearch()"><svg style="height: 0.9rem;" viewBox="0 0 16 16">
+              <use href="#m-doc-search-icon-path" />
+            </svg></a></li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav></header>
+<main><article>
+  <div class="m-container m-container-inflatable">
+    <div class="m-row">
+      <div class="m-col-l-10 m-push-l-1">
+        <h1>
+          Math, transforms and random numbers
+        </h1>
+        <p>A quick overview of the main functionalities of the <a href="namespace_math.html" class="m-doc">Math</a> namespace.</p>
+<section id="Math-Vectors"><h2><a href="#Math-Vectors">Vectors</a></h2><p>In the <code><a href="namespace_math.html" class="m-doc">Math</a></code> module, <strong>vectors</strong> are collection of 2, 3 or 4 float numbers: <em>x</em>, <em>y</em>, <em>z</em>, <em>w</em>. Note that this is not related to the <code>vector</code> container in C++. <code>Vector2</code> represents a direction in 2D-space, whereas <code>Vector3</code> represents a direction in 3D-space. You can declare the values of a vector by using the constructor, or using <code>{ }</code>:</p><pre class="m-code"><span class="c1">// Using the constructor:</span>
+<span class="n">Vector2</span> <span class="n">v</span> <span class="o">=</span> <span class="n">Vector2</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">);</span>
+
+<span class="c1">// Using {}</span>
+<span class="n">Vector3</span> <span class="n">v2</span> <span class="o">=</span> <span class="p">{</span> <span class="o">-</span><span class="mf">0.4</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mf">1.75</span> <span class="p">};</span>
+
+<span class="c1">// You can access the individual elements:</span>
+<span class="kt">float</span> <span class="n">number</span> <span class="o">=</span> <span class="n">v</span><span class="p">.</span><span class="n">x</span> <span class="o">+</span> <span class="n">v2</span><span class="p">.</span><span class="n">z</span> <span class="o">*</span> <span class="n">v</span><span class="p">.</span><span class="n">y</span><span class="p">;</span></pre><p>There are basic arithmetical operations between vectors of the same type; you cannot operator with vectors of different dimensions.</p><pre class="m-code"><span class="n">Vector3</span> <span class="n">v1</span> <span class="o">=</span> <span class="p">{</span> <span class="mf">0.1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span> <span class="p">};</span>
+<span class="n">Vector3</span> <span class="n">v2</span> <span class="o">=</span> <span class="p">{</span> <span class="o">-</span><span class="mf">0.4</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mf">1.75</span> <span class="p">};</span>
+
+<span class="c1">// You can add/subtract vectors and multiply/divide them with scalars</span>
+<span class="k">auto</span> <span class="n">v</span> <span class="o">=</span> <span class="p">(</span><span class="n">v1</span> <span class="o">+</span> <span class="n">v2</span><span class="p">)</span> <span class="o">/</span> <span class="mf">2.0</span><span class="p">;</span></pre><p>There are also 2 operations specific to vector mathematics:</p><ul><li><code>Length()</code> returns the length of the vector, also known as the magnitude. This is the square root of the sum of its components squared.</li><li><code>Dot(v)</code> is the dot product with the vector <code>v</code>. This can be used to know the angle between two vectors, and whether they are perpendicular.</li></ul><p>Additionally, 3-dimensional vectors have an extra operation, the cross product <code>Cross(v)</code>. This will return another vector that is perpendicular to both vectors.</p><pre class="m-code"><span class="c1">// Example: get the distance between two creatures</span>
+<span class="kt">float</span> <span class="n">dist</span> <span class="o">=</span> <span class="p">(</span><span class="n">creature2</span><span class="o">-&gt;</span><span class="n">GetPosition</span><span class="p">()</span> <span class="o">-</span> <span class="n">creature1</span><span class="o">-&gt;</span><span class="n">GetPosition</span><span class="p">()).</span><span class="n">Length</span><span class="p">();</span></pre></section><section id="Math-Matrix"><h2><a href="#Math-Matrix">Matrices</a></h2><p>A matrix is a grid of floating point numbers, organized in rows and columns. The <code><a href="namespace_math.html" class="m-doc">Math</a></code> module only supports two types of matrices:</p><ul><li><code>Matrix3</code>, which is a <em>3x3</em> matrix (3 rows, 3 columns, in total 9 values)</li><li><code>Matrix4</code>, which is a <em>4x4</em> matrix (4 rows, 4 columns, in total 16 values)</li></ul><p><em>3x3</em> matrices are usually used to represent rotations, whereas <em>4x4</em> matrices are used to represent more general transformations (i.e. rotation, translation and scaling). The default state of a matrix, that represents no transformation, is the <em>identity</em> matrix.</p><pre class="m-code"><span class="n">Matrix3</span> <span class="n">m</span> <span class="o">=</span> <span class="n">Matrix3</span><span class="p">().</span><span class="n">SetIdentity</span><span class="p">();</span></pre><p>Matrices can be multiplied with vectors to transform that vector. Similarly, matrices can be umltiplied with other matrices to chain transformations. Keep in mind that matrix product is not commutative, that is <code>A*B != B*A</code>. Since working with rotation matrices is not intuitive, there&#x27;s a method to transform <em>euler</em> angles into a rotation matrix. Keep in mind that the angles must be in <em>radians</em>:</p><pre class="m-code"><span class="c1">// Rotate the vector &#39;v&#39; 90º around the Y axis</span>
+
+<span class="n">Matrix3</span> <span class="n">m</span> <span class="o">=</span> <span class="n">Matrix3</span><span class="o">::</span><span class="n">FromEuler</span><span class="p">({</span> <span class="mi">0</span><span class="p">,</span> <span class="n">Math</span><span class="o">::</span><span class="n">ToRadians</span><span class="p">(</span><span class="mi">90</span><span class="p">),</span> <span class="mi">0</span> <span class="p">});</span>
+<span class="n">Vector3</span> <span class="n">result</span> <span class="o">=</span> <span class="n">m</span> <span class="o">*</span> <span class="n">v</span><span class="p">;</span></pre></section><section id="Math-Colors"><h2><a href="#Math-Colors">Colors</a></h2><p>Colors in Spore are represented by 3 different structures: <code>Color</code>, <code>ColorRGB</code> and <code>ColorRGBA</code>. <code>ColorRGB</code> is equivalent to <code>Vector3</code>, but its members are <em>r</em> (red), <em>g</em> (green), <em>b</em> (blue). The values usually are between 0.0 and 1.0, but they can go higher.</p><p><code>ColorRGBA</code> is equivalent to <code>Vector4</code>. It&#x27;s very similar to the RGB version, but this has an extra member: <em>a</em> (alpha, that is, opacity). Alpha always goes between 0.0 (transparent) and 1.0 (opaque), and it&#x27;s 1.0 by default.</p><p><code>Color</code> is an integer that represents an RGBA color. It also has <em>r</em>, <em>g</em>, <em>b</em>, <em>a</em> values, but here they are integers from 0 to 255.</p><p>There&#x27;s an extra type of color, <code>ColorHSV</code>. Instead of using the common RGB channels, this one uses <em>hue</em>, <em>saturation</em> and <em>value</em>. The methods <code><a href="namespace_math.html#af0da984f5eb2069cf6f9b325b87368b5" class="m-doc">Math::<wbr />RGBtoHSV()</a></code> and <code><a href="namespace_math.html#a7214b3dfcd87f2ea903c09a8d5337105" class="m-doc">Math::<wbr />HSVtoRGB()</a></code> can be used to convert from one type to another.</p></section><section id="Math-Random"><h2><a href="#Math-Random">Random numbers</a></h2><p>The <code><a href="namespace_math.html" class="m-doc">Math</a></code> module includes function to generate pseudo-random numbers. The reason they are called pseudo-random is because they are not completely aleatory: they are generated based on a <em>seed</em>; when the seed is the same, the generated numbers can be predicted.</p><p>Spore has a generic random number generator, which uses the game time as <em>seed</em>; this ensures that every time you open the game the seed is different. <a href="namespace_math.html#abc488c565d0b4619111a0e3e7ba3f01d" class="m-doc">Math::<wbr />rand(range)</a> will generate a random integer number between 0 and <code>range</code>. There are also methods to generate random float numbers: <code><a href="namespace_math.html#aa9802e9f7360669e47bffdb8531261e3" class="m-doc">Math::<wbr />randf()</a></code> will generate a number between 0.0 and 1.0; <code>Math::randf(minValue, maxValue)</code> generates a number getween <code>minValue</code> and <code>maxValue</code>.</p><pre class="m-code"><span class="c1">// Example: generate a random vector with values from -7 to 7</span>
+<span class="n">Vector3</span> <span class="n">v</span> <span class="o">=</span> <span class="p">{</span> <span class="n">Math</span><span class="o">::</span><span class="n">randf</span><span class="p">(</span><span class="o">-</span><span class="mi">7</span><span class="p">,</span> <span class="mi">7</span><span class="p">),</span> <span class="n">Math</span><span class="o">::</span><span class="n">randf</span><span class="p">(</span><span class="o">-</span><span class="mi">7</span><span class="p">,</span> <span class="mi">7</span><span class="p">),</span> <span class="n">Math</span><span class="o">::</span><span class="n">randf</span><span class="p">(</span><span class="o">-</span><span class="mi">7</span><span class="p">,</span> <span class="mi">7</span><span class="p">)</span> <span class="p">};</span></pre><p>In some cases, it&#x27;s useful to use a fixed <code>seed</code>. For example, if you generate a planet with random effects, you will want to keep the same seed to have the same results. You can create your own RNG:</p><pre class="m-code"><span class="n">RandomNumberGenerator</span> <span class="nf">rng</span><span class="p">(</span><span class="mi">6817293</span><span class="p">);</span>
+<span class="kt">int</span> <span class="n">value</span> <span class="o">=</span> <span class="n">rng</span><span class="p">.</span><span class="n">RandomInt</span><span class="p">();</span></pre></section>
+      </div>
+    </div>
+  </div>
+</article></main>
+<div class="m-doc-search" id="search">
+  <a href="#!" onclick="return hideSearch()"></a>
+  <div class="m-container">
+    <div class="m-row">
+      <div class="m-col-m-8 m-push-m-2">
+        <div class="m-doc-search-header m-text m-small">
+          <div><span class="m-label m-default">Tab</span> / <span class="m-label m-default">T</span> to search, <span class="m-label m-default">Esc</span> to close</div>
+          <div id="search-symbolcount">&hellip;</div>
+        </div>
+        <div class="m-doc-search-content">
+          <form>
+            <input type="search" name="q" id="search-input" placeholder="Loading &hellip;" disabled="disabled" autofocus="autofocus" autocomplete="off" spellcheck="false" />
+          </form>
+          <noscript class="m-text m-danger m-text-center">Unlike everything else in the docs, the search functionality <em>requires</em> JavaScript.</noscript>
+          <div id="search-help" class="m-text m-dim m-text-center">
+            <p class="m-noindent">Search for symbols, directories, files, pages or
+            modules. You can omit any prefix from the symbol or file path; adding a
+            <code>:</code> or <code>/</code> suffix lists all members of given symbol or
+            directory.</p>
+            <p class="m-noindent">Use <span class="m-label m-dim">&darr;</span>
+            / <span class="m-label m-dim">&uarr;</span> to navigate through the list,
+            <span class="m-label m-dim">Enter</span> to go.
+            <span class="m-label m-dim">Tab</span> autocompletes common prefix, you can
+            copy a link to the result using <span class="m-label m-dim">⌘</span>
+            <span class="m-label m-dim">L</span> while <span class="m-label m-dim">⌘</span>
+            <span class="m-label m-dim">M</span> produces a Markdown link.</p>
+          </div>
+          <div id="search-notfound" class="m-text m-warning m-text-center">Sorry, nothing was found.</div>
+          <ul id="search-results"></ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="search-v1.js"></script>
+<script src="searchdata-v1.js" async="async"></script>
+<footer><nav>
+  <div class="m-container">
+    <div class="m-row">
+      <div class="m-col-l-10 m-push-l-1">
+        <p>Spore ModAPI SDK for creating C++ mods for Spore. Created with <a href="https://doxygen.org/">Doxygen</a> 1.8.16 and <a href="https://mcss.mosra.cz/">m.css</a>.</p>
+      </div>
+    </div>
+  </div>
+</nav></footer>
+</body>
+</html>

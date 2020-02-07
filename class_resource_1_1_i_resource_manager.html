@@ -1,0 +1,825 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Resource::IResourceManager class | Spore ModAPI SDK for creating C++ mods for Spore</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,600,600i%7CSource+Code+Pro:400,400i,600" />
+  <link rel="stylesheet" href="m-dark.css" />
+  <link rel="stylesheet" href="m-documentation.css" />
+  <link rel="icon" href="Spore_ModAPI_Icon.png" type="image/png" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#22272e" />
+</head>
+<body>
+<header><nav id="navigation">
+  <div class="m-container">
+    <div class="m-row">
+      <a href="index.html" id="m-navbar-brand" class="m-col-t-8 m-col-m-none m-left-m"><img src="Spore_ModAPI_Icon.png" />Spore ModAPI <span class="m-thin">SDK for creating C++ mods for Spore</span></a>
+      <div class="m-col-t-4 m-hide-m m-text-right m-nopadr">
+        <a href="#search" class="m-doc-search-icon" title="Search" onclick="return showSearch()"><svg style="height: 0.9rem;" viewBox="0 0 16 16">
+          <path id="m-doc-search-icon-path" d="m6 0c-3.31 0-6 2.69-6 6 0 3.31 2.69 6 6 6 1.49 0 2.85-0.541 3.89-1.44-0.0164 0.338 0.147 0.759 0.5 1.15l3.22 3.79c0.552 0.614 1.45 0.665 2 0.115 0.55-0.55 0.499-1.45-0.115-2l-3.79-3.22c-0.392-0.353-0.812-0.515-1.15-0.5 0.895-1.05 1.44-2.41 1.44-3.89 0-3.31-2.69-6-6-6zm0 1.56a4.44 4.44 0 0 1 4.44 4.44 4.44 4.44 0 0 1-4.44 4.44 4.44 4.44 0 0 1-4.44-4.44 4.44 4.44 0 0 1 4.44-4.44z"/>
+        </svg></a>
+        <a id="m-navbar-show" href="#navigation" title="Show navigation"></a>
+        <a id="m-navbar-hide" href="#" title="Hide navigation"></a>
+      </div>
+      <div id="m-navbar-collapse" class="m-col-t-12 m-show-m m-col-m-none m-right-m">
+        <div class="m-row">
+          <ol class="m-col-t-6 m-col-m-none">
+            <li><a href="pages.html">Tutorials</a></li>
+            <li><a href="namespaces.html">Namespaces</a></li>
+          </ol>
+          <ol class="m-col-t-6 m-col-m-none" start="3">
+            <li><a href="annotated.html">Classes</a></li>
+            <li><a href="files.html">Files</a></li>
+            <li class="m-show-m"><a href="#search" class="m-doc-search-icon" title="Search" onclick="return showSearch()"><svg style="height: 0.9rem;" viewBox="0 0 16 16">
+              <use href="#m-doc-search-icon-path" />
+            </svg></a></li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav></header>
+<main><article>
+  <div class="m-container m-container-inflatable">
+    <div class="m-row">
+      <div class="m-col-l-10 m-push-l-1">
+        <h1>
+          <span class="m-breadcrumb"><a href="namespace_resource.html">Resource</a>::<wbr/></span>IResourceManager <span class="m-thin">class</span>
+          <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_i_resource_manager_8h.html">&lt;Spore/Resource/IResourceManager.h&gt;</a></div>
+        </h1>
+        <p><a href="class_resource_1_1_i_resource_manager.html" class="m-doc">IResourceManager</a> is a singleton class used to access resources in Spore&#x27;s file system.</p>
+        <div class="m-block m-default">
+          <h3>Contents</h3>
+          <ul>
+            <li>
+              Reference
+              <ul>
+                <li><a href="#base-classes">Base classes</a></li>
+                <li><a href="#derived-classes">Derived classes</a></li>
+                <li><a href="#pub-types">Public types</a></li>
+                <li><a href="#pub-static-methods">Public static functions</a></li>
+                <li><a href="#pub-methods">Public functions</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+<p>The main function of the ResourceManager is to access to the resources stored in Spore&#x27;s files. The manager contains multiple <a href="class_resource_1_1_i_resource_factory.html" class="m-doc">IResourceFactory</a> instances, which are assigned to certain typeIDs. When trying to get a resource, those factories will be used to generate an instance of the correct class according to the resource type. Therefore, the ResourceManager can only be used for those types that have factories assigned to them.</p><p>You can assign your own factories or delete existing ones, but if that is not an option, ResourceManager provides a method to find the <a href="class_resource_1_1_database_packed_file.html" class="m-doc">DatabasePackedFile</a> that contains a certain file. This way, ResourceManager can always be used to get files, either via the GetResource method or the GetDBPF one. The DBPFs are stored in the resource manager according to their priority.</p><p>The manager contains a cache of <a href="class_resource_1_1_i_resource_map.html" class="m-doc">IResourceMap</a> instances that is used to avoid repeteadly creating new instances of a resource that already exists. The ReadResource method can be used instead of GetResource to forcibly create a new resource even if it&#x27;s already in the cache.</p><p>This manager provides additional functionality relating files. It keeps a map of <a href="struct_resource_key.html" class="m-doc">ResourceKey</a> - string16 values, which can be used to store the original name of certain resources. For example:</p><pre class="m-code"><span class="n">ResourceManager</span><span class="p">.</span><span class="n">SetFileName</span><span class="p">(</span><span class="n">ResourceKey</span><span class="p">(</span><span class="mh">0x00000000</span><span class="p">,</span> <span class="mh">0x40212002</span><span class="p">,</span> <span class="mh">0x0469A3F7</span><span class="p">),</span> <span class="sa">u</span><span class="s">&quot;ShaderFragments!LowQuality.graphics&quot;</span><span class="p">);</span>
+<span class="c1">// Now you can access this file using the name we assigned instead of the original name, which had special IDs</span>
+<span class="n">ResourceManager</span><span class="p">.</span><span class="n">GetFileName</span><span class="p">(</span><span class="n">dstKey</span><span class="p">,</span> <span class="sa">u</span><span class="s">&quot;ShaderFragments!LowQuality.graphics&quot;</span><span class="p">);</span></pre><p>Additionally, the manager also keeps a map of typeID - string16 values, which allows to map extension strings to certain typeIDs. For example:</p><pre class="m-code"><span class="c1">// for example, we could have the mappings on a file and load it on startup</span>
+<span class="n">ResourceManager</span><span class="p">.</span><span class="n">AddExtensionMapping</span><span class="p">(</span><span class="mh">0x2F7D0004</span><span class="p">,</span> <span class="sa">u</span><span class="s">&quot;png&quot;</span><span class="p">);</span>
+<span class="c1">// now, if we try to use the .png extension, we will receive the correct typeID, instead of using the FNV hash of &quot;png&quot; (which is not 0x2F7D0004)</span>
+<span class="n">ResourceManager</span><span class="p">.</span><span class="n">GetFileName</span><span class="p">(</span><span class="n">dstKey</span><span class="p">,</span> <span class="sa">u</span><span class="s">&quot;MyImages!EditorUIFrame.png&quot;</span><span class="p">);</span></pre>
+        <section id="base-classes">
+          <h2><a href="#base-classes">Base classes</a></h2>
+          <dl class="m-doc">
+            <dt>
+              class <a href="class_resource_1_1_i_resource_container.html" class="m-doc">IResourceContainer</a>
+            </dt>
+            <dd><span></span></dd>
+          </dl>
+        </section>
+        <section id="derived-classes">
+          <h2><a href="#derived-classes">Derived classes</a></h2>
+          <dl class="m-doc">
+            <dt>
+              class <a href="class_resource_1_1c_resource_manager.html" class="m-doc">cResourceManager</a>
+            </dt>
+            <dd>The implementation of <a href="class_resource_1_1_i_resource_manager.html" class="m-doc">IResourceManager</a>; this should only be used for extending and detouring.</dd>
+          </dl>
+        </section>
+        <section id="pub-types">
+          <h2><a href="#pub-types">Public types</a></h2>
+          <dl class="m-doc">
+            <dt id="a0193696f783966a121306f43a9a09cdf">
+              using <a href="#a0193696f783966a121306f43a9a09cdf" class="m-doc-self">DBPFList</a> = list&lt;<a href="class_resource_1_1_database_packed_file.html" class="m-doc">DatabasePackedFile</a>*, <a href="class_core_allocator_adapter.html" class="m-doc">CoreAllocatorAdapter</a>&lt;<a href="class_i_core_allocator.html" class="m-doc">ICoreAllocator</a>&gt;&gt;
+            </dt>
+            <dd><span></span></dd>
+          </dl>
+        </section>
+        <section id="pub-static-methods">
+          <h2><a href="#pub-static-methods">Public static functions</a></h2>
+          <dl class="m-doc">
+            <dt id="ae69fe1d052f2c4a5d1fcfb43e8c0cd48">
+              <span class="m-doc-wrap-bumper">static auto <a href="#ae69fe1d052f2c4a5d1fcfb43e8c0cd48" class="m-doc-self">Get</a>(</span><span class="m-doc-wrap">) -&gt; <a href="class_resource_1_1_i_resource_manager.html" class="m-doc">IResourceManager</a>*</span>
+            </dt>
+            <dd>Gets the active resource manager.</dd>
+          </dl>
+        </section>
+        <section id="pub-methods">
+          <h2><a href="#pub-methods">Public functions</a></h2>
+          <dl class="m-doc">
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a2146c9496ca84415c383fcd10e5dbef9" class="m-doc">GetResource</a>(</span><span class="m-doc-wrap">const <a href="struct_resource_key.html" class="m-doc">ResourceKey</a>&amp; name,
+              <a href="class_resource_1_1_resource_object.html" class="m-doc">ResourceObject</a>** ppDst = nullptr,
+              int arg_8 = 0,
+              <a href="namespace_resource.html#ab12e5000d7ef0108f3200a644b54a682" class="m-doc">DBPF</a>* pDBPF = nullptr,
+              <a href="class_resource_1_1_i_resource_factory.html" class="m-doc">IResourceFactory</a>* pFactory = nullptr,
+              const <a href="struct_resource_key.html" class="m-doc">ResourceKey</a>* pCacheName = nullptr) -&gt; bool <span class="m-label m-flat m-warning">pure virtual</span></span>
+            </dt>
+            <dd>Gets the resource that has the given <a href="struct_resource_key.html" class="m-doc">ResourceKey</a> name.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a869728746a28d4fc18a21ddc52e54630" class="m-doc">func10h</a>(</span><span class="m-doc-wrap">const <a href="struct_resource_key.html" class="m-doc">ResourceKey</a>&amp; name,
+              <a href="class_resource_1_1_resource_object.html" class="m-doc">ResourceObject</a>** ppDst = nullptr,
+              void** arg_8 = nullptr,
+              void* arg_C = nullptr,
+              void* arg_10 = nullptr,
+              <a href="namespace_resource.html#ab12e5000d7ef0108f3200a644b54a682" class="m-doc">DBPF</a>* pDBPF = nullptr,
+              <a href="class_resource_1_1_i_resource_factory.html" class="m-doc">IResourceFactory</a>* pFactory = nullptr,
+              const <a href="struct_resource_key.html" class="m-doc">ResourceKey</a>* pAlternativeName = nullptr) -&gt; bool <span class="m-label m-flat m-warning">pure virtual</span></span>
+            </dt>
+            <dd>Similar usage to ResourceManager::GetResource .</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#aa94e4365737ee71c5d8b3501e0e9e580" class="m-doc">GetCachedResource</a>(</span><span class="m-doc-wrap">const <a href="struct_resource_key.html" class="m-doc">ResourceKey</a>&amp; name,
+              intrusive_ptr&lt;<a href="class_resource_1_1_resource_object.html" class="m-doc">ResourceObject</a>&gt;* pDst) -&gt; bool <span class="m-label m-flat m-warning">pure virtual</span></span>
+            </dt>
+            <dd>Gets a resource from the resource cache in this manager.</dd>
+            <dt id="a02f8e1cd9a08ca4fa9de7841155bd2a0">
+              <span class="m-doc-wrap-bumper">auto <a href="#a02f8e1cd9a08ca4fa9de7841155bd2a0" class="m-doc-self">func18h</a>(</span><span class="m-doc-wrap">int arg_0,
+              int arg_4,
+              int arg_8,
+              int arg_C,
+              int arg_10) -&gt; bool <span class="m-label m-flat m-warning">pure virtual</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a76691fa38c590d5dcf2f1b3061b93c41" class="m-doc">ReadResource</a>(</span><span class="m-doc-wrap">const <a href="struct_resource_key.html" class="m-doc">ResourceKey</a>&amp; name,
+              <a href="class_resource_1_1_resource_object.html" class="m-doc">ResourceObject</a>** ppDst = nullptr,
+              int arg_8 = 0,
+              <a href="namespace_resource.html#ab12e5000d7ef0108f3200a644b54a682" class="m-doc">DBPF</a>* pDBPF = nullptr,
+              <a href="class_resource_1_1_i_resource_factory.html" class="m-doc">IResourceFactory</a>* pFactory = nullptr,
+              const <a href="struct_resource_key.html" class="m-doc">ResourceKey</a>* pCacheName = nullptr) -&gt; bool <span class="m-label m-flat m-warning">pure virtual</span></span>
+            </dt>
+            <dd>Similar usage to ResourceManager::GetResource .</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a0b3f65b353dbf4bc39428102db41e7d0" class="m-doc">WriteResource</a>(</span><span class="m-doc-wrap">const <a href="class_resource_1_1_resource_object.html" class="m-doc">ResourceObject</a>* pResource,
+              int arg_4 = 0,
+              <a href="namespace_resource.html#ab12e5000d7ef0108f3200a644b54a682" class="m-doc">DBPF</a>* pDBPF = nullptr,
+              <a href="class_resource_1_1_i_resource_factory.html" class="m-doc">IResourceFactory</a>* pFactory = nullptr,
+              const <a href="struct_resource_key.html" class="m-doc">ResourceKey</a>* pNameKey = nullptr) -&gt; bool <span class="m-label m-flat m-warning">pure virtual</span></span>
+            </dt>
+            <dd>Writes the given resource to a package file.</dd>
+            <dt id="a344846151bebd4c544e57e646e21cc26">
+              <span class="m-doc-wrap-bumper">void <a href="#a344846151bebd4c544e57e646e21cc26" class="m-doc-self">SetTypeRemap</a>(</span><span class="m-doc-wrap">uint32_t nTypeID,
+              uint32_t* pnTypes,
+              size_t nCount) <span class="m-label m-flat m-warning">pure virtual</span></span>
+            </dt>
+            <dd>Maps all the alternative typeIDs in pnTypes (which has nCount values) to nTypeID.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a015b651bcab3f6794c76c8d4c9002b9b" class="m-doc">GetTypeRemap</a>(</span><span class="m-doc-wrap">vector&lt;uint32_t&gt;&amp; dst,
+              uint32_t nTypeID) const -&gt; size_t <span class="m-label m-flat m-warning">pure virtual</span></span>
+            </dt>
+            <dd>Gets all the alternative typeIDs mapped to nTypeID.</dd>
+            <dt id="ac339db01b0841feced83c14d34bea511">
+              <span class="m-doc-wrap-bumper">auto <a href="#ac339db01b0841feced83c14d34bea511" class="m-doc-self">GetGeneralTypeID</a>(</span><span class="m-doc-wrap">uint32_t nSubtypeID) const -&gt; uint32_t <span class="m-label m-flat m-warning">pure virtual</span></span>
+            </dt>
+            <dd>Gets the typeID that nSubtypeId is assigned to.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#acfd2ff06c02f194fe7c5ffa693b29f0d" class="m-doc">GetRealFileKey</a>(</span><span class="m-doc-wrap">const <a href="struct_resource_key.html" class="m-doc">ResourceKey</a>&amp; nameKey,
+              <a href="struct_resource_key.html" class="m-doc">ResourceKey</a>* pDst = nullptr,
+              <a href="namespace_resource.html#ab12e5000d7ef0108f3200a644b54a682" class="m-doc">DBPF</a>* pDBPF = nullptr) const -&gt; <a href="namespace_resource.html#ab12e5000d7ef0108f3200a644b54a682" class="m-doc">DBPF</a>* <span class="m-label m-flat m-warning">pure virtual</span></span>
+            </dt>
+            <dd>Used to get the real name of a file <a href="struct_resource_key.html" class="m-doc">ResourceKey</a>, using the correct type according to the mappings in this manager.</dd>
+            <dt id="a56283781b25ac4098df58a2d73ffbccf">
+              <span class="m-doc-wrap-bumper">auto <a href="#a56283781b25ac4098df58a2d73ffbccf" class="m-doc-self">func34h</a>(</span><span class="m-doc-wrap">vector&lt;<a href="struct_resource_key.html" class="m-doc">ResourceKey</a>&gt;&amp; pDst,
+              int arg_4) -&gt; size_t <span class="m-label m-flat m-warning">pure virtual</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a4814b7edda253467c7d6471d768fd488" class="m-doc">GetFileKeys</a>(</span><span class="m-doc-wrap">vector&lt;<a href="struct_resource_key.html" class="m-doc">ResourceKey</a>&gt;&amp; dst,
+              <a href="class_resource_1_1_i_resource_filter.html" class="m-doc">IResourceFilter</a>* request,
+              vector&lt;<a href="namespace_resource.html#ab12e5000d7ef0108f3200a644b54a682" class="m-doc">DBPF</a>*&gt;* pDstDBPFs = nullptr) const -&gt; size_t <span class="m-label m-flat m-warning">pure virtual</span></span>
+            </dt>
+            <dd>Gets all the file keys in this manager that match the criteria specified by the given request.</dd>
+            <dt id="a047cff79142e5dd241c42f47ce9da7be">
+              <span class="m-doc-wrap-bumper">auto <a href="#a047cff79142e5dd241c42f47ce9da7be" class="m-doc-self">func3Ch</a>(</span><span class="m-doc-wrap">int,
+              int,
+              int) -&gt; int <span class="m-label m-flat m-warning">pure virtual</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="af1a5029b72f3dc63c315fa2fcb51cac0">
+              <span class="m-doc-wrap-bumper">auto <a href="#af1a5029b72f3dc63c315fa2fcb51cac0" class="m-doc-self">func40h</a>(</span><span class="m-doc-wrap">int,
+              int,
+              int,
+              int,
+              int) -&gt; bool <span class="m-label m-flat m-warning">pure virtual</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a56e774d64363633463e9dd6ef154221c" class="m-doc">SetResourceFactory</a>(</span><span class="m-doc-wrap">bool bRemove,
+              <a href="class_resource_1_1_i_resource_factory.html" class="m-doc">IResourceFactory</a>* pFactory,
+              uint32_t arg_8) -&gt; bool <span class="m-label m-flat m-warning">pure virtual</span></span>
+            </dt>
+            <dd>Adds or removes the given <a href="class_resource_1_1_i_resource_factory.html" class="m-doc">IResourceFactory</a> to this manager.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#aa57b6e9768b08a5dcf4990a1afc9c3a0" class="m-doc">GetResourceFactory</a>(</span><span class="m-doc-wrap">uint32_t typeID,
+              uint32_t subTypeID = <a href="struct_resource_key.html#a408a568abba680164263ea85e9ad6177" class="m-doc">ResourceKey::<wbr />kWildcardID</a>) const -&gt; <a href="class_resource_1_1_i_resource_factory.html" class="m-doc">IResourceFactory</a>* <span class="m-label m-flat m-warning">pure virtual</span></span>
+            </dt>
+            <dd>Returns the <a href="class_resource_1_1_i_resource_factory.html" class="m-doc">IResourceFactory</a> that belongs to the specified <code>typeID</code>.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#abd0596de634796616c30f1830d49ed88" class="m-doc">GetResourceFactories</a>(</span><span class="m-doc-wrap">list&lt;<a href="class_resource_1_1_i_resource_factory.html" class="m-doc">IResourceFactory</a>*&gt;&amp; dst,
+              uint32_t typeID = <a href="struct_resource_key.html#a408a568abba680164263ea85e9ad6177" class="m-doc">ResourceKey::<wbr />kWildcardID</a>) const -&gt; size_t <span class="m-label m-flat m-warning">pure virtual</span></span>
+            </dt>
+            <dd>Puts all the <a href="class_resource_1_1_i_resource_factory.html" class="m-doc">IResourceFactory</a> instances that are assigned to the specified <code>typeID</code> into the given list.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#aea0a9abc6b83140d034c22730d51b11c" class="m-doc">AddDBPF</a>(</span><span class="m-doc-wrap">bool,
+              <a href="class_resource_1_1_database_packed_file.html" class="m-doc">DatabasePackedFile</a>* pDBPF,
+              int nPriority) -&gt; bool <span class="m-label m-flat m-warning">pure virtual</span></span>
+            </dt>
+            <dd>Adds the given <a href="class_resource_1_1_database_packed_file.html" class="m-doc">DatabasePackedFile</a> to this manager, using the priority specified.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a0e20ebd7fe1f92449581d66fca9a8ac7" class="m-doc">GetPriority</a>(</span><span class="m-doc-wrap"><a href="class_resource_1_1_database_packed_file.html" class="m-doc">DatabasePackedFile</a>* pDBPF,
+              int* pDst = nullptr) const -&gt; bool <span class="m-label m-flat m-warning">pure virtual</span></span>
+            </dt>
+            <dd>Gets the priority of the given <a href="class_resource_1_1_database_packed_file.html" class="m-doc">DatabasePackedFile</a> if it is contained in this ResourceManager.</dd>
+            <dt id="afc878e46c86897266312ea0ba90f8bcb">
+              <span class="m-doc-wrap-bumper">auto <a href="#afc878e46c86897266312ea0ba90f8bcb" class="m-doc-self">GetDBPF</a>(</span><span class="m-doc-wrap">const <a href="struct_resource_key.html" class="m-doc">ResourceKey</a>&amp; name) const -&gt; <a href="class_resource_1_1_database_packed_file.html" class="m-doc">DatabasePackedFile</a>* <span class="m-label m-flat m-warning">pure virtual</span></span>
+            </dt>
+            <dd>Returns the first <a href="class_resource_1_1_database_packed_file.html" class="m-doc">DatabasePackedFile</a> that contains the given.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#ade0113cdb4c73afa1fce0f98cb7f65e9" class="m-doc">GetAllDBPFs</a>(</span><span class="m-doc-wrap"><a href="class_resource_1_1_i_resource_manager.html#a0193696f783966a121306f43a9a09cdf" class="m-doc">DBPFList</a>&amp; dst,
+              const <a href="struct_resource_key.html" class="m-doc">ResourceKey</a>* pFileKey = nullptr) -&gt; size_t <span class="m-label m-flat m-warning">pure virtual</span></span>
+            </dt>
+            <dd>Gets all the <a href="class_resource_1_1_database_packed_file.html" class="m-doc">DatabasePackedFile</a> objects in this manager and puts it to the dst list.</dd>
+            <dt id="a1ac1e42970893dd69f7b824e9ba90205">
+              <span class="m-doc-wrap-bumper">auto <a href="#a1ac1e42970893dd69f7b824e9ba90205" class="m-doc-self">func60h</a>(</span><span class="m-doc-wrap">int,
+              int) -&gt; int <span class="m-label m-flat m-warning">pure virtual</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="ac813a566ff67fc83bad04578a7314080">
+              <span class="m-doc-wrap-bumper">auto <a href="#ac813a566ff67fc83bad04578a7314080" class="m-doc-self">func64h</a>(</span><span class="m-doc-wrap">int,
+              int,
+              int) -&gt; bool <span class="m-label m-flat m-warning">pure virtual</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a981714bf1fd307152952b3da1c1c02fa">
+              <span class="m-doc-wrap-bumper">auto <a href="#a981714bf1fd307152952b3da1c1c02fa" class="m-doc-self">GetResourceCache</a>(</span><span class="m-doc-wrap"><a href="struct_resource_key.html" class="m-doc">ResourceKey</a>&amp; name) const -&gt; <a href="class_resource_1_1_i_resource_map.html" class="m-doc">IResourceMap</a>* <span class="m-label m-flat m-warning">pure virtual</span></span>
+            </dt>
+            <dd>Returns the <a href="class_resource_1_1_i_resource_map.html" class="m-doc">IResourceMap</a> cache that contains a resource with this name (if any).</dd>
+            <dt id="a91ed8e11624e964484ef3481db9de3b4">
+              <span class="m-doc-wrap-bumper">auto <a href="#a91ed8e11624e964484ef3481db9de3b4" class="m-doc-self">func6Ch</a>(</span><span class="m-doc-wrap">int,
+              int) -&gt; bool <span class="m-label m-flat m-warning">pure virtual</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a800aa36f377b6b3250de06f50169c537">
+              <span class="m-doc-wrap-bumper">void <a href="#a800aa36f377b6b3250de06f50169c537" class="m-doc-self">func70h</a>(</span><span class="m-doc-wrap"><a href="class_resource_1_1_i_resource_map.html" class="m-doc">IResourceMap</a>*,
+              <a href="class_resource_1_1_special_resource_object.html" class="m-doc">SpecialResourceObject</a>*) <span class="m-label m-flat m-warning">pure virtual</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a2e3b1ab04a7f78378fcea6e6fe000f0a" class="m-doc">GetResourceCaches</a>(</span><span class="m-doc-wrap">list&lt;<a href="class_resource_1_1_i_resource_map.html" class="m-doc">IResourceMap</a>*&gt;&amp; dst) const -&gt; size_t <span class="m-label m-flat m-warning">pure virtual</span></span>
+            </dt>
+            <dd>Puts all the resource caches used in this manager into the given list.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#ae6405a5d75012dc87785efaf82323d9c" class="m-doc">AddFileName</a>(</span><span class="m-doc-wrap">const char16_t* pFileName) -&gt; bool <span class="m-label m-flat m-warning">pure virtual</span></span>
+            </dt>
+            <dd>Adds this file name to the list, so that it can be accessed using the corresponding <a href="struct_resource_key.html" class="m-doc">ResourceKey</a>.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">void <a href="#a247290594afc7edf22ec1e5f78f37d3d" class="m-doc">GetFileName</a>(</span><span class="m-doc-wrap">const <a href="struct_resource_key.html" class="m-doc">ResourceKey</a>&amp; resourceKey,
+              string16&amp; dst) const <span class="m-label m-flat m-warning">pure virtual</span></span>
+            </dt>
+            <dd>Gets the file name that corresponds to the specified <a href="struct_resource_key.html" class="m-doc">ResourceKey</a>.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#ac799788213e264e77e5ac94207ba5132" class="m-doc">SetFileName</a>(</span><span class="m-doc-wrap">const <a href="struct_resource_key.html" class="m-doc">ResourceKey</a>&amp; resourceKey,
+              const char16_t* pFileName) -&gt; bool <span class="m-label m-flat m-warning">pure virtual</span></span>
+            </dt>
+            <dd>Maps the given <a href="struct_resource_key.html" class="m-doc">ResourceKey</a> to the file name specified, which is in the format &quot;groupID!instanceID.typeID&quot;.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a46d64f355cd1ca013106c307b604e1b4" class="m-doc">RemoveFileName</a>(</span><span class="m-doc-wrap">const <a href="struct_resource_key.html" class="m-doc">ResourceKey</a>&amp; resourceKey) -&gt; bool <span class="m-label m-flat m-warning">pure virtual</span></span>
+            </dt>
+            <dd>Removes the file name mapped for the given <a href="struct_resource_key.html" class="m-doc">ResourceKey</a>.</dd>
+            <dt id="a64fde17b298e5a94d9da390f350ec9f6">
+              <span class="m-doc-wrap-bumper">auto <a href="#a64fde17b298e5a94d9da390f350ec9f6" class="m-doc-self">GetTypeID</a>(</span><span class="m-doc-wrap">const char16_t* pExtension) const -&gt; uint32_t <span class="m-label m-flat m-warning">pure virtual</span></span>
+            </dt>
+            <dd>Returns the typeID that has the given extension mapped to it, or (uint32_t)-1 (so 0xFFFFFFFF) if no typeID has this extension mapped.</dd>
+            <dt id="ad433d23dbae5baefa03fe9190473c3e8">
+              <span class="m-doc-wrap-bumper">auto <a href="#ad433d23dbae5baefa03fe9190473c3e8" class="m-doc-self">GetExtension</a>(</span><span class="m-doc-wrap">uint32_t typeID) const -&gt; char16_t* <span class="m-label m-flat m-warning">pure virtual</span></span>
+            </dt>
+            <dd>Returns the extension that is mapped to the given type ID, or nullptr if there&#x27;s no mapping.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#ac47487cd4a1c1ce59e342e7c260944ef" class="m-doc">AddExtensionMapping</a>(</span><span class="m-doc-wrap">uint32_t typeID,
+              const char16_t* pExtension) -&gt; bool <span class="m-label m-flat m-warning">pure virtual</span></span>
+            </dt>
+            <dd>Maps the given typeID (as a uint32_t hash) to the specified extension string.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a26c986a427ecc6ac2289d227fa4eaa7e" class="m-doc">RemoveExtensionMapping</a>(</span><span class="m-doc-wrap">uint32_t typeID) -&gt; bool <span class="m-label m-flat m-warning">pure virtual</span></span>
+            </dt>
+            <dd>Removes the given typeID (as a uint32_t hash) and the extension it is mapped to.</dd>
+          </dl>
+        </section>
+        <section>
+          <h2>Function documentation</h2>
+          <section class="m-doc-details" id="a2146c9496ca84415c383fcd10e5dbef9"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">bool Resource::<wbr />IResourceManager::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a2146c9496ca84415c383fcd10e5dbef9" class="m-doc-self">GetResource</a>(</span><span class="m-doc-wrap">const <a href="struct_resource_key.html" class="m-doc">ResourceKey</a>&amp; name,
+              <a href="class_resource_1_1_resource_object.html" class="m-doc">ResourceObject</a>** ppDst = nullptr,
+              int arg_8 = 0,
+              <a href="namespace_resource.html#ab12e5000d7ef0108f3200a644b54a682" class="m-doc">DBPF</a>* pDBPF = nullptr,
+              <a href="class_resource_1_1_i_resource_factory.html" class="m-doc">IResourceFactory</a>* pFactory = nullptr,
+              const <a href="struct_resource_key.html" class="m-doc">ResourceKey</a>* pCacheName = nullptr) <span class="m-label m-warning">pure virtual</span></span></span>
+            </h3>
+            <p>Gets the resource that has the given <a href="struct_resource_key.html" class="m-doc">ResourceKey</a> name.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">name&nbsp;<span class="m-label m-flat m-info">in</span></td>
+                  <td>The <a href="struct_resource_key.html" class="m-doc">ResourceKey</a> name to find. If the typeID is mapped in the manager to other alternative typeIDs, all them will be tested.</td>
+                </tr>
+                <tr>
+                  <td>ppDst&nbsp;<span class="m-label m-flat m-warning">out</span></td>
+                  <td>[Optional] A pointer to a ResourceObject*. It will be assigned with the generated resource.</td>
+                </tr>
+                <tr>
+                  <td>arg_8</td>
+                  <td>[Optional] Usage unknown, usually 0.</td>
+                </tr>
+                <tr>
+                  <td>pDBPF&nbsp;<span class="m-label m-flat m-info">in</span></td>
+                  <td>[Optional] The <a href="class_resource_1_1_database_packed_file.html" class="m-doc">DatabasePackedFile</a> where the file will be searched. Use nullptr to search in all DBPFs in this manager.</td>
+                </tr>
+                <tr>
+                  <td>pFactory&nbsp;<span class="m-label m-flat m-info">in</span></td>
+                  <td>[Optional] The <a href="class_resource_1_1_i_resource_factory.html" class="m-doc">IResourceFactory</a> used to generate the resource. Use nullptr to use the appropiate factory according to the typeID mapping in this manager.</td>
+                </tr>
+                <tr>
+                  <td>pCacheName&nbsp;<span class="m-label m-flat m-info">in</span></td>
+                  <td>[Optional] The <a href="struct_resource_key.html" class="m-doc">ResourceKey</a> name used to search the resource in the cache.</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>Returns</th>
+                  <td>True if the resource was found or generated, false otherwise.</td>
+                </tr>
+              </tfoot>
+            </table>
+<p>If the resource is contained in the cache, that will be used. The name will be modified to use the correct types, according to the mappings in this manager. The resource will be seached in all the DBPF files in this manager, unless a specific one is specified. Once the file is found, the correct factory will be used to generate the appropiate resource, unless a specific <a href="class_resource_1_1_i_resource_factory.html" class="m-doc">IResourceFactory</a> is specified.</p>
+          </div></section>
+          <section class="m-doc-details" id="a869728746a28d4fc18a21ddc52e54630"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">bool Resource::<wbr />IResourceManager::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a869728746a28d4fc18a21ddc52e54630" class="m-doc-self">func10h</a>(</span><span class="m-doc-wrap">const <a href="struct_resource_key.html" class="m-doc">ResourceKey</a>&amp; name,
+              <a href="class_resource_1_1_resource_object.html" class="m-doc">ResourceObject</a>** ppDst = nullptr,
+              void** arg_8 = nullptr,
+              void* arg_C = nullptr,
+              void* arg_10 = nullptr,
+              <a href="namespace_resource.html#ab12e5000d7ef0108f3200a644b54a682" class="m-doc">DBPF</a>* pDBPF = nullptr,
+              <a href="class_resource_1_1_i_resource_factory.html" class="m-doc">IResourceFactory</a>* pFactory = nullptr,
+              const <a href="struct_resource_key.html" class="m-doc">ResourceKey</a>* pAlternativeName = nullptr) <span class="m-label m-warning">pure virtual</span></span></span>
+            </h3>
+            <p>Similar usage to ResourceManager::GetResource .</p>
+<p>This method allows to get more info, but it is unknown what that info is.</p>
+          </div></section>
+          <section class="m-doc-details" id="aa94e4365737ee71c5d8b3501e0e9e580"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">bool Resource::<wbr />IResourceManager::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#aa94e4365737ee71c5d8b3501e0e9e580" class="m-doc-self">GetCachedResource</a>(</span><span class="m-doc-wrap">const <a href="struct_resource_key.html" class="m-doc">ResourceKey</a>&amp; name,
+              intrusive_ptr&lt;<a href="class_resource_1_1_resource_object.html" class="m-doc">ResourceObject</a>&gt;* pDst) <span class="m-label m-warning">pure virtual</span></span></span>
+            </h3>
+            <p>Gets a resource from the resource cache in this manager.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <tfoot>
+                <tr>
+                  <th style="width: 1%">Returns</th>
+                  <td>True if the file was present in the cache, false otherwise.</td>
+                </tr>
+              </tfoot>
+            </table>
+<p>If it isn&#x27;t present in the cache, nothing will happen.</p>
+          </div></section>
+          <section class="m-doc-details" id="a76691fa38c590d5dcf2f1b3061b93c41"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">bool Resource::<wbr />IResourceManager::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a76691fa38c590d5dcf2f1b3061b93c41" class="m-doc-self">ReadResource</a>(</span><span class="m-doc-wrap">const <a href="struct_resource_key.html" class="m-doc">ResourceKey</a>&amp; name,
+              <a href="class_resource_1_1_resource_object.html" class="m-doc">ResourceObject</a>** ppDst = nullptr,
+              int arg_8 = 0,
+              <a href="namespace_resource.html#ab12e5000d7ef0108f3200a644b54a682" class="m-doc">DBPF</a>* pDBPF = nullptr,
+              <a href="class_resource_1_1_i_resource_factory.html" class="m-doc">IResourceFactory</a>* pFactory = nullptr,
+              const <a href="struct_resource_key.html" class="m-doc">ResourceKey</a>* pCacheName = nullptr) <span class="m-label m-warning">pure virtual</span></span></span>
+            </h3>
+            <p>Similar usage to ResourceManager::GetResource .</p>
+            <table class="m-table m-fullwidth m-flat">
+              <tfoot>
+                <tr>
+                  <th style="width: 1%">Returns</th>
+                  <td>True if the resource was successfully generated and read, false otherwise.</td>
+                </tr>
+              </tfoot>
+            </table>
+<p>This method does not check the cache, however, therefore always generating a new resource.</p>
+          </div></section>
+          <section class="m-doc-details" id="a0b3f65b353dbf4bc39428102db41e7d0"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">bool Resource::<wbr />IResourceManager::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a0b3f65b353dbf4bc39428102db41e7d0" class="m-doc-self">WriteResource</a>(</span><span class="m-doc-wrap">const <a href="class_resource_1_1_resource_object.html" class="m-doc">ResourceObject</a>* pResource,
+              int arg_4 = 0,
+              <a href="namespace_resource.html#ab12e5000d7ef0108f3200a644b54a682" class="m-doc">DBPF</a>* pDBPF = nullptr,
+              <a href="class_resource_1_1_i_resource_factory.html" class="m-doc">IResourceFactory</a>* pFactory = nullptr,
+              const <a href="struct_resource_key.html" class="m-doc">ResourceKey</a>* pNameKey = nullptr) <span class="m-label m-warning">pure virtual</span></span></span>
+            </h3>
+            <p>Writes the given resource to a package file.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">pResource</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>arg_4</td>
+                  <td>[Optional] Usage unknown, usually 0.</td>
+                </tr>
+                <tr>
+                  <td>pDBPF</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>pFactory</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>pNameKey</td>
+                  <td></td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>Returns</th>
+                  <td>True if the resource was successfuly written, false otherwise.</td>
+                </tr>
+              </tfoot>
+            </table>
+<p>If the DBPF is specified in this method, a new file will always be created on it even if it does not exist yet; however, if no DBPF is specified, the resource will be written in the first DBPF that contains a file with the given name. If there is a problem while writing the resource, the file on the DBPF will be deleted.</p>
+          </div></section>
+          <section class="m-doc-details" id="a015b651bcab3f6794c76c8d4c9002b9b"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">size_t Resource::<wbr />IResourceManager::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a015b651bcab3f6794c76c8d4c9002b9b" class="m-doc-self">GetTypeRemap</a>(</span><span class="m-doc-wrap">vector&lt;uint32_t&gt;&amp; dst,
+              uint32_t nTypeID) const <span class="m-label m-warning">pure virtual</span></span></span>
+            </h3>
+            <p>Gets all the alternative typeIDs mapped to nTypeID.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <tfoot>
+                <tr>
+                  <th style="width: 1%">Returns</th>
+                  <td>The number of alternative typeIDs mapped.</td>
+                </tr>
+              </tfoot>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="acfd2ff06c02f194fe7c5ffa693b29f0d"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"><a href="namespace_resource.html#ab12e5000d7ef0108f3200a644b54a682" class="m-doc">DBPF</a>* Resource::<wbr />IResourceManager::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#acfd2ff06c02f194fe7c5ffa693b29f0d" class="m-doc-self">GetRealFileKey</a>(</span><span class="m-doc-wrap">const <a href="struct_resource_key.html" class="m-doc">ResourceKey</a>&amp; nameKey,
+              <a href="struct_resource_key.html" class="m-doc">ResourceKey</a>* pDst = nullptr,
+              <a href="namespace_resource.html#ab12e5000d7ef0108f3200a644b54a682" class="m-doc">DBPF</a>* pDBPF = nullptr) const <span class="m-label m-warning">pure virtual</span></span></span>
+            </h3>
+            <p>Used to get the real name of a file <a href="struct_resource_key.html" class="m-doc">ResourceKey</a>, using the correct type according to the mappings in this manager.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">nameKey&nbsp;<span class="m-label m-flat m-info">in</span></td>
+                  <td>The original <a href="struct_resource_key.html" class="m-doc">ResourceKey</a> of the file.</td>
+                </tr>
+                <tr>
+                  <td>pDst&nbsp;<span class="m-label m-flat m-warning">out</span></td>
+                  <td>[Optional] The <a href="struct_resource_key.html" class="m-doc">ResourceKey</a> where the real key of the file will be put, with the correct typeID.</td>
+                </tr>
+                <tr>
+                  <td>pDBPF&nbsp;<span class="m-label m-flat m-info">in</span></td>
+                  <td>[Optional] The <a href="class_resource_1_1_database_packed_file.html" class="m-doc">DatabasePackedFile</a> where the file will be searched. If not specified, it will be searched in all the DBPFs in this manager.</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>Returns</th>
+                  <td>The <a href="class_resource_1_1_database_packed_file.html" class="m-doc">DatabasePackedFile</a> that contains this file.</td>
+                </tr>
+              </tfoot>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="a4814b7edda253467c7d6471d768fd488"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">size_t Resource::<wbr />IResourceManager::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a4814b7edda253467c7d6471d768fd488" class="m-doc-self">GetFileKeys</a>(</span><span class="m-doc-wrap">vector&lt;<a href="struct_resource_key.html" class="m-doc">ResourceKey</a>&gt;&amp; dst,
+              <a href="class_resource_1_1_i_resource_filter.html" class="m-doc">IResourceFilter</a>* request,
+              vector&lt;<a href="namespace_resource.html#ab12e5000d7ef0108f3200a644b54a682" class="m-doc">DBPF</a>*&gt;* pDstDBPFs = nullptr) const <span class="m-label m-warning">pure virtual</span></span></span>
+            </h3>
+            <p>Gets all the file keys in this manager that match the criteria specified by the given request.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">dst&nbsp;<span class="m-label m-flat m-warning">out</span></td>
+                  <td>The vector where all the files <a href="struct_resource_key.html" class="m-doc">ResourceKey</a> names will be added.</td>
+                </tr>
+                <tr>
+                  <td>request&nbsp;<span class="m-label m-flat m-info">in</span></td>
+                  <td>The criteria that the files must match in order to be added to the vector.</td>
+                </tr>
+                <tr>
+                  <td>pDstDBPFs&nbsp;<span class="m-label m-flat m-warning">out</span></td>
+                  <td>[Optional] A vector where all the <a href="class_resource_1_1_database_packed_file.html" class="m-doc">DatabasePackedFile</a> objects that contained the files will be added.</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>Returns</th>
+                  <td>The number of file keys that matched the criteria.</td>
+                </tr>
+              </tfoot>
+            </table>
+<p>If request is nullptr, all the files in the manager will be added.</p>
+          </div></section>
+          <section class="m-doc-details" id="a56e774d64363633463e9dd6ef154221c"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">bool Resource::<wbr />IResourceManager::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a56e774d64363633463e9dd6ef154221c" class="m-doc-self">SetResourceFactory</a>(</span><span class="m-doc-wrap">bool bRemove,
+              <a href="class_resource_1_1_i_resource_factory.html" class="m-doc">IResourceFactory</a>* pFactory,
+              uint32_t arg_8) <span class="m-label m-warning">pure virtual</span></span></span>
+            </h3>
+            <p>Adds or removes the given <a href="class_resource_1_1_i_resource_factory.html" class="m-doc">IResourceFactory</a> to this manager.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">bRemove</td>
+                  <td>If true, pFactory will be removed from the manager; if false, it will be added to the manager.</td>
+                </tr>
+                <tr>
+                  <td>pFactory</td>
+                  <td>The <a href="class_resource_1_1_i_resource_factory.html" class="m-doc">IResourceFactory</a> to add to/remove from this manager.</td>
+                </tr>
+                <tr>
+                  <td>arg_8</td>
+                  <td>Unknown usage, usually 0.</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>Returns</th>
+                  <td>True if the factory was successfully added/removed, false otherwise.</td>
+                </tr>
+              </tfoot>
+            </table>
+<p><a href="namespace_resource.html" class="m-doc">Resource</a> factories are used to generate resource objects depending on their type. The factory will be assigned to the types returned by <a href="class_resource_1_1_i_resource_factory.html#afc761f703a6af9c6ff3d1fe95e526079" class="m-doc">IResourceFactory::<wbr />GetSupportedTypes</a>.</p>
+          </div></section>
+          <section class="m-doc-details" id="aa57b6e9768b08a5dcf4990a1afc9c3a0"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"><a href="class_resource_1_1_i_resource_factory.html" class="m-doc">IResourceFactory</a>* Resource::<wbr />IResourceManager::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#aa57b6e9768b08a5dcf4990a1afc9c3a0" class="m-doc-self">GetResourceFactory</a>(</span><span class="m-doc-wrap">uint32_t typeID,
+              uint32_t subTypeID = <a href="struct_resource_key.html#a408a568abba680164263ea85e9ad6177" class="m-doc">ResourceKey::<wbr />kWildcardID</a>) const <span class="m-label m-warning">pure virtual</span></span></span>
+            </h3>
+            <p>Returns the <a href="class_resource_1_1_i_resource_factory.html" class="m-doc">IResourceFactory</a> that belongs to the specified <code>typeID</code>.</p>
+<p>If <code>subTypeID</code> is <a href="struct_resource_key.html#a408a568abba680164263ea85e9ad6177" class="m-doc">ResourceKey::<wbr />kWildcardID</a>, the first factory assigned to the <code>typeID</code> will be returned; Otherwise, <a href="class_resource_1_1_i_resource_factory.html#a0407a79d40e7986511c391dfb93a70fd" class="m-doc">IResourceFactory::<wbr />IsValid()</a> will be called on every factory using the types provided here, and the first one that returns true will be returned.</p>
+          </div></section>
+          <section class="m-doc-details" id="abd0596de634796616c30f1830d49ed88"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">size_t Resource::<wbr />IResourceManager::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#abd0596de634796616c30f1830d49ed88" class="m-doc-self">GetResourceFactories</a>(</span><span class="m-doc-wrap">list&lt;<a href="class_resource_1_1_i_resource_factory.html" class="m-doc">IResourceFactory</a>*&gt;&amp; dst,
+              uint32_t typeID = <a href="struct_resource_key.html#a408a568abba680164263ea85e9ad6177" class="m-doc">ResourceKey::<wbr />kWildcardID</a>) const <span class="m-label m-warning">pure virtual</span></span></span>
+            </h3>
+            <p>Puts all the <a href="class_resource_1_1_i_resource_factory.html" class="m-doc">IResourceFactory</a> instances that are assigned to the specified <code>typeID</code> into the given list.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <tfoot>
+                <tr>
+                  <th style="width: 1%">Returns</th>
+                  <td>The number of factories found.</td>
+                </tr>
+              </tfoot>
+            </table>
+<p>If <code>typeID</code> is <a href="struct_resource_key.html#a408a568abba680164263ea85e9ad6177" class="m-doc">ResourceKey::<wbr />kWildcardID</a>, all the factories in this manager will be added.</p>
+          </div></section>
+          <section class="m-doc-details" id="aea0a9abc6b83140d034c22730d51b11c"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">bool Resource::<wbr />IResourceManager::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#aea0a9abc6b83140d034c22730d51b11c" class="m-doc-self">AddDBPF</a>(</span><span class="m-doc-wrap">bool,
+              <a href="class_resource_1_1_database_packed_file.html" class="m-doc">DatabasePackedFile</a>* pDBPF,
+              int nPriority) <span class="m-label m-warning">pure virtual</span></span></span>
+            </h3>
+            <p>Adds the given <a href="class_resource_1_1_database_packed_file.html" class="m-doc">DatabasePackedFile</a> to this manager, using the priority specified.</p>
+<p>The priority of a DBPF is used when getting files from the resource manager; since a certain file name can be contained in multiple packages, the one with the most priority will be chosen. The usage of the first argument is unknown, but it is usually &#x27;true&#x27;.</p>
+          </div></section>
+          <section class="m-doc-details" id="a0e20ebd7fe1f92449581d66fca9a8ac7"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">bool Resource::<wbr />IResourceManager::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a0e20ebd7fe1f92449581d66fca9a8ac7" class="m-doc-self">GetPriority</a>(</span><span class="m-doc-wrap"><a href="class_resource_1_1_database_packed_file.html" class="m-doc">DatabasePackedFile</a>* pDBPF,
+              int* pDst = nullptr) const <span class="m-label m-warning">pure virtual</span></span></span>
+            </h3>
+            <p>Gets the priority of the given <a href="class_resource_1_1_database_packed_file.html" class="m-doc">DatabasePackedFile</a> if it is contained in this ResourceManager.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">pDBPF&nbsp;<span class="m-label m-flat m-info">in</span></td>
+                  <td>The <a href="class_resource_1_1_database_packed_file.html" class="m-doc">DatabasePackedFile</a> from which the priority will be got.</td>
+                </tr>
+                <tr>
+                  <td>pDst</td>
+                  <td></td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>Returns</th>
+                  <td>True if the manager contained the DBPF, false otherwise.</td>
+                </tr>
+              </tfoot>
+            </table>
+<p>This method can also be used to check if a DBPF is added or not in this list.</p>
+          </div></section>
+          <section class="m-doc-details" id="ade0113cdb4c73afa1fce0f98cb7f65e9"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">size_t Resource::<wbr />IResourceManager::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ade0113cdb4c73afa1fce0f98cb7f65e9" class="m-doc-self">GetAllDBPFs</a>(</span><span class="m-doc-wrap"><a href="class_resource_1_1_i_resource_manager.html#a0193696f783966a121306f43a9a09cdf" class="m-doc">DBPFList</a>&amp; dst,
+              const <a href="struct_resource_key.html" class="m-doc">ResourceKey</a>* pFileKey = nullptr) <span class="m-label m-warning">pure virtual</span></span></span>
+            </h3>
+            <p>Gets all the <a href="class_resource_1_1_database_packed_file.html" class="m-doc">DatabasePackedFile</a> objects in this manager and puts it to the dst list.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">dst&nbsp;<span class="m-label m-flat m-warning">out</span></td>
+                  <td>A list of DBPF pointers that uses CoreAllocatorAdapter&lt;ICoreAllocator&gt; where the DBPFs will be added.</td>
+                </tr>
+                <tr>
+                  <td>pFileKey&nbsp;<span class="m-label m-flat m-info">in</span></td>
+                  <td>[Optional] A <a href="struct_resource_key.html" class="m-doc">ResourceKey</a> that the DBPFs must contain, or nullptr if no filtering is wanted.</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>Returns</th>
+                  <td>The number of DBPFs added to the list.</td>
+                </tr>
+              </tfoot>
+            </table>
+<p>Optionally, a <a href="struct_resource_key.html" class="m-doc">ResourceKey</a> can be specified; in that case, only the DBPFs that contain that file will be added.</p>
+          </div></section>
+          <section class="m-doc-details" id="a2e3b1ab04a7f78378fcea6e6fe000f0a"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">size_t Resource::<wbr />IResourceManager::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a2e3b1ab04a7f78378fcea6e6fe000f0a" class="m-doc-self">GetResourceCaches</a>(</span><span class="m-doc-wrap">list&lt;<a href="class_resource_1_1_i_resource_map.html" class="m-doc">IResourceMap</a>*&gt;&amp; dst) const <span class="m-label m-warning">pure virtual</span></span></span>
+            </h3>
+            <p>Puts all the resource caches used in this manager into the given list.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <tfoot>
+                <tr>
+                  <th style="width: 1%">Returns</th>
+                  <td>the number of caches added.</td>
+                </tr>
+              </tfoot>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="ae6405a5d75012dc87785efaf82323d9c"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">bool Resource::<wbr />IResourceManager::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ae6405a5d75012dc87785efaf82323d9c" class="m-doc-self">AddFileName</a>(</span><span class="m-doc-wrap">const char16_t* pFileName) <span class="m-label m-warning">pure virtual</span></span></span>
+            </h3>
+            <p>Adds this file name to the list, so that it can be accessed using the corresponding <a href="struct_resource_key.html" class="m-doc">ResourceKey</a>.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <tfoot>
+                <tr>
+                  <th style="width: 1%">Returns</th>
+                  <td>True if the file name was mapped successfully, false otherwise.</td>
+                </tr>
+              </tfoot>
+            </table>
+<p>The file name is in the format &quot;groupID!instanceID.typeID&quot;, and it will be mapped to the key generated using the <a href="struct_resource_key.html#a1435cf8c86ce36755f85c921081604cf" class="m-doc">ResourceKey::<wbr />Parse</a> function.</p>
+          </div></section>
+          <section class="m-doc-details" id="a247290594afc7edf22ec1e5f78f37d3d"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">void Resource::<wbr />IResourceManager::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a247290594afc7edf22ec1e5f78f37d3d" class="m-doc-self">GetFileName</a>(</span><span class="m-doc-wrap">const <a href="struct_resource_key.html" class="m-doc">ResourceKey</a>&amp; resourceKey,
+              string16&amp; dst) const <span class="m-label m-warning">pure virtual</span></span></span>
+            </h3>
+            <p>Gets the file name that corresponds to the specified <a href="struct_resource_key.html" class="m-doc">ResourceKey</a>.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">resourceKey&nbsp;<span class="m-label m-flat m-info">in</span></td>
+                  <td>The <a href="struct_resource_key.html" class="m-doc">ResourceKey</a> that will be represented as a string.</td>
+                </tr>
+                <tr>
+                  <td>dst&nbsp;<span class="m-label m-flat m-warning">out</span></td>
+                  <td>A string16 that will contain the resulting text.</td>
+                </tr>
+              </tbody>
+            </table>
+<p>The file name will be in the format &quot;groupID!instanceID.typeID&quot;. The file name can be parsed to a key again using the <a href="struct_resource_key.html#a1435cf8c86ce36755f85c921081604cf" class="m-doc">ResourceKey::<wbr />Parse</a> method. A file name wil be generated even if it&#x27;s not mapped; when that happens, the <a href="struct_resource_key.html" class="m-doc">ResourceKey</a> members are displayed in hexadecimal format.</p>
+          </div></section>
+          <section class="m-doc-details" id="ac799788213e264e77e5ac94207ba5132"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">bool Resource::<wbr />IResourceManager::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ac799788213e264e77e5ac94207ba5132" class="m-doc-self">SetFileName</a>(</span><span class="m-doc-wrap">const <a href="struct_resource_key.html" class="m-doc">ResourceKey</a>&amp; resourceKey,
+              const char16_t* pFileName) <span class="m-label m-warning">pure virtual</span></span></span>
+            </h3>
+            <p>Maps the given <a href="struct_resource_key.html" class="m-doc">ResourceKey</a> to the file name specified, which is in the format &quot;groupID!instanceID.typeID&quot;.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <tfoot>
+                <tr>
+                  <th style="width: 1%">Returns</th>
+                  <td>True if it was successfully mapped.</td>
+                </tr>
+              </tfoot>
+            </table>
+<p>The file name can be parsed to a key again using the <a href="struct_resource_key.html#a1435cf8c86ce36755f85c921081604cf" class="m-doc">ResourceKey::<wbr />Parse</a> method.</p>
+          </div></section>
+          <section class="m-doc-details" id="a46d64f355cd1ca013106c307b604e1b4"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">bool Resource::<wbr />IResourceManager::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a46d64f355cd1ca013106c307b604e1b4" class="m-doc-self">RemoveFileName</a>(</span><span class="m-doc-wrap">const <a href="struct_resource_key.html" class="m-doc">ResourceKey</a>&amp; resourceKey) <span class="m-label m-warning">pure virtual</span></span></span>
+            </h3>
+            <p>Removes the file name mapped for the given <a href="struct_resource_key.html" class="m-doc">ResourceKey</a>.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <tfoot>
+                <tr>
+                  <th style="width: 1%">Returns</th>
+                  <td>True if the file name mapping was removed, false if it did not exist.</td>
+                </tr>
+              </tfoot>
+            </table>
+<p>The file name can be parsed to a key again using the <a href="struct_resource_key.html#a1435cf8c86ce36755f85c921081604cf" class="m-doc">ResourceKey::<wbr />Parse</a> method.</p>
+          </div></section>
+          <section class="m-doc-details" id="ac47487cd4a1c1ce59e342e7c260944ef"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">bool Resource::<wbr />IResourceManager::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ac47487cd4a1c1ce59e342e7c260944ef" class="m-doc-self">AddExtensionMapping</a>(</span><span class="m-doc-wrap">uint32_t typeID,
+              const char16_t* pExtension) <span class="m-label m-warning">pure virtual</span></span></span>
+            </h3>
+            <p>Maps the given typeID (as a uint32_t hash) to the specified extension string.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <tfoot>
+                <tr>
+                  <th style="width: 1%">Returns</th>
+                  <td>True if the extension was successfully mapped or already existed, false if the typeID was mapped to a different extension.</td>
+                </tr>
+              </tfoot>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="a26c986a427ecc6ac2289d227fa4eaa7e"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">bool Resource::<wbr />IResourceManager::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a26c986a427ecc6ac2289d227fa4eaa7e" class="m-doc-self">RemoveExtensionMapping</a>(</span><span class="m-doc-wrap">uint32_t typeID) <span class="m-label m-warning">pure virtual</span></span></span>
+            </h3>
+            <p>Removes the given typeID (as a uint32_t hash) and the extension it is mapped to.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <tfoot>
+                <tr>
+                  <th style="width: 1%">Returns</th>
+                  <td>True if the extension existed and was removed, false otherwise.</td>
+                </tr>
+              </tfoot>
+            </table>
+          </div></section>
+        </section>
+      </div>
+    </div>
+  </div>
+</article></main>
+<div class="m-doc-search" id="search">
+  <a href="#!" onclick="return hideSearch()"></a>
+  <div class="m-container">
+    <div class="m-row">
+      <div class="m-col-m-8 m-push-m-2">
+        <div class="m-doc-search-header m-text m-small">
+          <div><span class="m-label m-default">Tab</span> / <span class="m-label m-default">T</span> to search, <span class="m-label m-default">Esc</span> to close</div>
+          <div id="search-symbolcount">&hellip;</div>
+        </div>
+        <div class="m-doc-search-content">
+          <form>
+            <input type="search" name="q" id="search-input" placeholder="Loading &hellip;" disabled="disabled" autofocus="autofocus" autocomplete="off" spellcheck="false" />
+          </form>
+          <noscript class="m-text m-danger m-text-center">Unlike everything else in the docs, the search functionality <em>requires</em> JavaScript.</noscript>
+          <div id="search-help" class="m-text m-dim m-text-center">
+            <p class="m-noindent">Search for symbols, directories, files, pages or
+            modules. You can omit any prefix from the symbol or file path; adding a
+            <code>:</code> or <code>/</code> suffix lists all members of given symbol or
+            directory.</p>
+            <p class="m-noindent">Use <span class="m-label m-dim">&darr;</span>
+            / <span class="m-label m-dim">&uarr;</span> to navigate through the list,
+            <span class="m-label m-dim">Enter</span> to go.
+            <span class="m-label m-dim">Tab</span> autocompletes common prefix, you can
+            copy a link to the result using <span class="m-label m-dim">⌘</span>
+            <span class="m-label m-dim">L</span> while <span class="m-label m-dim">⌘</span>
+            <span class="m-label m-dim">M</span> produces a Markdown link.</p>
+          </div>
+          <div id="search-notfound" class="m-text m-warning m-text-center">Sorry, nothing was found.</div>
+          <ul id="search-results"></ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="search-v1.js"></script>
+<script src="searchdata-v1.js" async="async"></script>
+<footer><nav>
+  <div class="m-container">
+    <div class="m-row">
+      <div class="m-col-l-10 m-push-l-1">
+        <p>Spore ModAPI SDK for creating C++ mods for Spore. Created with <a href="https://doxygen.org/">Doxygen</a> 1.8.16 and <a href="https://mcss.mosra.cz/">m.css</a>.</p>
+      </div>
+    </div>
+  </div>
+</nav></footer>
+</body>
+</html>

@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Detouring | Spore ModAPI SDK for creating C++ mods for Spore</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,600,600i%7CSource+Code+Pro:400,400i,600" />
+  <link rel="stylesheet" href="m-dark.css" />
+  <link rel="stylesheet" href="m-documentation.css" />
+  <link rel="icon" href="Spore_ModAPI_Icon.png" type="image/png" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#22272e" />
+</head>
+<body>
+<header><nav id="navigation">
+  <div class="m-container">
+    <div class="m-row">
+      <a href="index.html" id="m-navbar-brand" class="m-col-t-8 m-col-m-none m-left-m"><img src="Spore_ModAPI_Icon.png" />Spore ModAPI <span class="m-thin">SDK for creating C++ mods for Spore</span></a>
+      <div class="m-col-t-4 m-hide-m m-text-right m-nopadr">
+        <a href="#search" class="m-doc-search-icon" title="Search" onclick="return showSearch()"><svg style="height: 0.9rem;" viewBox="0 0 16 16">
+          <path id="m-doc-search-icon-path" d="m6 0c-3.31 0-6 2.69-6 6 0 3.31 2.69 6 6 6 1.49 0 2.85-0.541 3.89-1.44-0.0164 0.338 0.147 0.759 0.5 1.15l3.22 3.79c0.552 0.614 1.45 0.665 2 0.115 0.55-0.55 0.499-1.45-0.115-2l-3.79-3.22c-0.392-0.353-0.812-0.515-1.15-0.5 0.895-1.05 1.44-2.41 1.44-3.89 0-3.31-2.69-6-6-6zm0 1.56a4.44 4.44 0 0 1 4.44 4.44 4.44 4.44 0 0 1-4.44 4.44 4.44 4.44 0 0 1-4.44-4.44 4.44 4.44 0 0 1 4.44-4.44z"/>
+        </svg></a>
+        <a id="m-navbar-show" href="#navigation" title="Show navigation"></a>
+        <a id="m-navbar-hide" href="#" title="Hide navigation"></a>
+      </div>
+      <div id="m-navbar-collapse" class="m-col-t-12 m-show-m m-col-m-none m-right-m">
+        <div class="m-row">
+          <ol class="m-col-t-6 m-col-m-none">
+            <li><a href="pages.html">Tutorials</a></li>
+            <li><a href="namespaces.html">Namespaces</a></li>
+          </ol>
+          <ol class="m-col-t-6 m-col-m-none" start="3">
+            <li><a href="annotated.html">Classes</a></li>
+            <li><a href="files.html">Files</a></li>
+            <li class="m-show-m"><a href="#search" class="m-doc-search-icon" title="Search" onclick="return showSearch()"><svg style="height: 0.9rem;" viewBox="0 0 16 16">
+              <use href="#m-doc-search-icon-path" />
+            </svg></a></li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav></header>
+<main><article>
+  <div class="m-container m-container-inflatable">
+    <div class="m-row">
+      <div class="m-col-l-10 m-push-l-1">
+        <h1>
+          Detouring
+        </h1>
+        <p>How to redirect Spore methods.</p>
+<p>One of the most promising features in the ModAPI SDK is the ability of changing the code of certain Spore methods, known as <strong>detouring</strong>. If you detour a method, your code will be executed when Spore tries to execute that method. This is actually the core of how ModAPI mods work: internally, the <code><a href="effects__example__1_8cpp.html#a98b1050f09da390896f964fb7a892391" class="m-doc">Initialize()</a></code> method is called by a detour.</p><p>One thing you must keep in mind is that you can only detour a method if you know its <em>address</em>, which is where the function is located inside <em>SporeApp.exe</em>. You can get the address of a method by using <code><a href="_cpp_rev_eng_base_8h.html#ab92d9d610cdc7c71d231c76aaa6af2d9" class="m-doc">GetAddress(class, function)</a></code>; if it gives you an error, then you cannot detour that function.</p><p>How detouring is done depends on two things:</p><ul><li>Is the function <code>static</code>?</li><li>If it&#x27;s not static, is it <code>virtual</code>?</li></ul><aside class="m-note m-info"><h4>Note</h4><p>Functions inside namespaces are also considered static, as they don&#x27;t belong to a class.</p></aside><p>If the function is static, you must use <code>static_detour</code>; if it&#x27;s not static, you must use <code>virtual_detour</code> if it&#x27;s virtual or <code>member_detour</code> if it&#x27;s not. In order to do a detour, you must know the function <em>declaration</em>: the return type and the parameter types. For example, for <code>float myfunc(int a)</code> the declaration is <code>float(int)</code>; for <code>void myfunc(const Vector3&amp;, int)</code> it&#x27;s <code>void(const Vector3&amp;, int)</code>. When you are creating a detour, you are actually creating a class, so you must give it a name.</p><ul><li><code><a href="_cpp_rev_eng_8h.html#ad6e6072240ebc07a1593299625baaa2f" class="m-doc">static_<wbr />detour(name, declaration)</a></code></li><li><code><a href="_cpp_rev_eng_8h.html#aaacfbbcada132e6256c087bab841893b" class="m-doc">member_<wbr />detour(name, className, declaration)</a></code>: <code>className</code> is the name of the class that defines the function. For example, to detour <a href="class_simulator_1_1c_creature_base.html#a9ed810dac6fd2e5fae12ad55781707d7" class="m-doc">Simulator::<wbr />cCreatureBase::<wbr />PlayAnimation()</a> you have to use <code><a href="class_simulator_1_1c_creature_base.html" class="m-doc">Simulator::<wbr />cCreatureBase</a></code>.</li><li><code><a href="_cpp_rev_eng_8h.html#a1724ec3c77ee6afeafdd45fbe279c886" class="m-doc">virtual_<wbr />detour(name, className, virtualClass, declaration)</a></code>: <code>virtualClass</code> is the name of the base class that first defined the function, whereas <code>className</code> is the name of the class that implements it and you are detouring. For example: <a href="class_u_t_f_win_1_1_window.html#ad27122b2a8330890e1e7090abd7ca220" class="m-doc">UTFWin::<wbr />Window::<wbr />SetDrawable()</a>, <code>className</code> would be <code><a href="class_u_t_f_win_1_1_window.html" class="m-doc">UTFWin::<wbr />Window</a></code> (because that&#x27;s the implementation we want to detour) but <code>virtualClass</code> will be <code><a href="class_u_t_f_win_1_1_i_window.html" class="m-doc">UTFWin::<wbr />IWindow</a></code>, since that&#x27;s where <code>SetDrawable()</code> was declared.</li></ul><p>After that, you open the &quot;class&quot; with <code>{ };</code> and inside you declare the function with the same return type and parameters, and name <code>detoured</code>. For example, to edtour <a href="namespace_graphics_1_1_renderer.html#a8e43abe85b13d658225d3b8d10bb97f1" class="m-doc">Graphics::<wbr />Renderer::<wbr />SetModelMatrix()</a>:</p><pre class="m-code"><span class="c1">// SetModelMatrix__detour will be the name of the detour class</span>
+<span class="n">static_detour</span><span class="p">(</span><span class="n">SetModelMatrix__detour</span><span class="p">,</span> <span class="kt">void</span><span class="p">())</span> <span class="p">{</span>
+    <span class="kt">void</span> <span class="n">detoured</span><span class="p">(</span><span class="n">D3DMATRIX</span><span class="o">*</span> <span class="n">value</span><span class="p">)</span>  <span class="p">{</span>
+
+    <span class="p">}</span>
+<span class="p">};</span></pre><aside class="m-note m-info"><h4>Note</h4><p>Like with classes, don&#x27;t forget the semicolon <code>;</code> after the <code>}</code></p></aside><section id="Detouring-Original"><h3><a href="#Detouring-Original">Calling the original function</a></h3><p>Inside the detoured function you can call <code>original_function()</code> to call the original implementation. If the detoured function is not static, you will also have to pass as the first parameter the object you want to call the function on (usually <code>this</code>).</p><pre class="m-code"><span class="n">static_detour</span><span class="p">(</span><span class="n">SetModelMatrix__detour</span><span class="p">,</span> <span class="kt">void</span><span class="p">())</span> <span class="p">{</span>
+    <span class="kt">void</span> <span class="n">detoured</span><span class="p">(</span><span class="n">D3DMATRIX</span><span class="o">*</span> <span class="n">value</span><span class="p">)</span>  <span class="p">{</span>
+        <span class="n">original_function</span><span class="p">(</span><span class="n">value</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">};</span>
+
+<span class="n">member_detour</span><span class="p">(</span><span class="n">PaletteLoad__detour</span><span class="p">,</span> <span class="n">Palettes</span><span class="o">::</span><span class="n">PaletteUI</span><span class="p">,</span> 
+    <span class="kt">void</span><span class="p">(</span><span class="n">Palettes</span><span class="o">::</span><span class="n">PaletteMain</span><span class="o">*</span><span class="p">,</span> <span class="n">UTFWin</span><span class="o">::</span><span class="n">IWindow</span><span class="o">*</span><span class="p">,</span> <span class="kt">bool</span><span class="p">,</span> <span class="kt">void</span><span class="o">*</span><span class="p">))</span> 
+<span class="p">{</span>
+    <span class="kt">void</span> <span class="n">detoured</span><span class="p">(</span><span class="n">Palettes</span><span class="o">::</span><span class="n">PaletteMain</span><span class="o">*</span> <span class="n">pPalette</span><span class="p">,</span> <span class="n">UTFWin</span><span class="o">::</span><span class="n">IWindow</span><span class="o">*</span> <span class="n">pWindow</span><span class="p">,</span> 
+                    <span class="kt">bool</span> <span class="n">arg3</span><span class="p">,</span> <span class="kt">void</span><span class="o">*</span> <span class="n">arg4</span><span class="p">)</span> 
+    <span class="p">{</span>
+        <span class="c1">// Just call the original on this object</span>
+        <span class="n">original_function</span><span class="p">(</span><span class="k">this</span><span class="p">,</span> <span class="n">pPalette</span><span class="p">,</span> <span class="n">pWindow</span><span class="p">,</span> <span class="n">arg3</span><span class="p">,</span> <span class="n">arg4</span><span class="p">);</span>
+    <span class="p">}</span>     
+<span class="p">};</span></pre></section><section id="Detouring-Applying"><h3><a href="#Detouring-Applying">Applying the detour</a></h3><p>Once you have the detour class, you have to tell the ModAPI what method (or more exactly, what address) you are going to redirect. You do that in the <code><a href="effects__example__1_8cpp.html#a1edab5b2de5f38b55acdfd279ae43a41" class="m-doc">AttachDetours()</a></code> method of <code>dllmain.cpp</code>, by calling the static function <code>attach()</code> of the detour class. You have to pass it the address, which you can get with <code><a href="_cpp_rev_eng_base_8h.html#ab92d9d610cdc7c71d231c76aaa6af2d9" class="m-doc">GetAddress()</a></code> as explained before.</p><pre class="m-code"><span class="kt">void</span> <span class="nf">AttachDetours</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="n">SetModelMatrix__detour</span><span class="o">::</span><span class="n">attach</span><span class="p">(</span><span class="n">GetAddress</span><span class="p">(</span><span class="n">Graphics</span><span class="o">::</span><span class="n">Renderer</span><span class="p">,</span> <span class="n">SetModelMatrix</span><span class="p">));</span>
+    
+    <span class="n">PaletteLoad__detour</span><span class="o">::</span><span class="n">attach</span><span class="p">(</span><span class="n">GetAddress</span><span class="p">(</span><span class="n">Palettes</span><span class="o">::</span><span class="n">PaletteUI</span><span class="p">,</span> <span class="n">Load</span><span class="p">));</span>
+<span class="p">}</span></pre></section><section id="Detouring-Examples"><h2><a href="#Detouring-Examples">Examples</a></h2><section id="Detouring-Examples-1"><h3><a href="#Detouring-Examples-1">Example 1: Removing the hologram</a></h3><p><a href="class_app_1_1c_viewer.html#ae08bbfd8f93d6057e332a385aeeeec75" class="m-doc">App::<wbr />cViewer::<wbr />SetRenderType()</a> decides what kind of rendering is done. We don&#x27;t know what most values do, except for two: <code>0</code> is the &quot;standard&quot; rendering, and <code>15</code> is the rendering used by the <em>hologram scout</em>. If we detour that function so that every time Spore tries to use rendering mode 15 we use 0 instead, the hologram scout will look like a normal creature instead of an hologram.</p><p>As you can see in the declaration, it returns void and gets an integer and a bool parameter, so the declaration will be like <code>void(int, bool)</code>. It is not static and it is not virtual, so we need to use <code>member_detour</code>.</p><pre class="m-code"><span class="n">member_detour</span><span class="p">(</span><span class="n">SetRenderType__detour</span><span class="p">,</span> <span class="n">App</span><span class="o">::</span><span class="n">cViewer</span><span class="p">,</span> <span class="kt">void</span><span class="p">(</span><span class="kt">int</span><span class="p">,</span> <span class="kt">bool</span><span class="p">))</span> <span class="p">{</span>
+    <span class="kt">void</span> <span class="n">detoured</span><span class="p">(</span><span class="kt">int</span> <span class="n">renderType</span><span class="p">,</span> <span class="kt">bool</span> <span class="n">arg2</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">renderType</span> <span class="o">==</span> <span class="mi">15</span><span class="p">)</span> <span class="n">renderType</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+        <span class="n">original_function</span><span class="p">(</span><span class="k">this</span><span class="p">,</span> <span class="n">renderType</span><span class="p">,</span> <span class="n">arg2</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">};</span>
+
+<span class="kt">void</span> <span class="nf">AttachDetours</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="n">SetRenderType__detour</span><span class="o">::</span><span class="n">attach</span><span class="p">(</span><span class="n">GetAddress</span><span class="p">(</span><span class="n">cViewer</span><span class="p">,</span> <span class="n">SetRenderType</span><span class="p">));</span>
+<span class="p">}</span></pre></section></section>
+      </div>
+    </div>
+  </div>
+</article></main>
+<div class="m-doc-search" id="search">
+  <a href="#!" onclick="return hideSearch()"></a>
+  <div class="m-container">
+    <div class="m-row">
+      <div class="m-col-m-8 m-push-m-2">
+        <div class="m-doc-search-header m-text m-small">
+          <div><span class="m-label m-default">Tab</span> / <span class="m-label m-default">T</span> to search, <span class="m-label m-default">Esc</span> to close</div>
+          <div id="search-symbolcount">&hellip;</div>
+        </div>
+        <div class="m-doc-search-content">
+          <form>
+            <input type="search" name="q" id="search-input" placeholder="Loading &hellip;" disabled="disabled" autofocus="autofocus" autocomplete="off" spellcheck="false" />
+          </form>
+          <noscript class="m-text m-danger m-text-center">Unlike everything else in the docs, the search functionality <em>requires</em> JavaScript.</noscript>
+          <div id="search-help" class="m-text m-dim m-text-center">
+            <p class="m-noindent">Search for symbols, directories, files, pages or
+            modules. You can omit any prefix from the symbol or file path; adding a
+            <code>:</code> or <code>/</code> suffix lists all members of given symbol or
+            directory.</p>
+            <p class="m-noindent">Use <span class="m-label m-dim">&darr;</span>
+            / <span class="m-label m-dim">&uarr;</span> to navigate through the list,
+            <span class="m-label m-dim">Enter</span> to go.
+            <span class="m-label m-dim">Tab</span> autocompletes common prefix, you can
+            copy a link to the result using <span class="m-label m-dim">⌘</span>
+            <span class="m-label m-dim">L</span> while <span class="m-label m-dim">⌘</span>
+            <span class="m-label m-dim">M</span> produces a Markdown link.</p>
+          </div>
+          <div id="search-notfound" class="m-text m-warning m-text-center">Sorry, nothing was found.</div>
+          <ul id="search-results"></ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="search-v1.js"></script>
+<script src="searchdata-v1.js" async="async"></script>
+<footer><nav>
+  <div class="m-container">
+    <div class="m-row">
+      <div class="m-col-l-10 m-push-l-1">
+        <p>Spore ModAPI SDK for creating C++ mods for Spore. Created with <a href="https://doxygen.org/">Doxygen</a> 1.8.16 and <a href="https://mcss.mosra.cz/">m.css</a>.</p>
+      </div>
+    </div>
+  </div>
+</nav></footer>
+</body>
+</html>

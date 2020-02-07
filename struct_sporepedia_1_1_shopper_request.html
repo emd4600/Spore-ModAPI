@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Sporepedia::ShopperRequest struct | Spore ModAPI SDK for creating C++ mods for Spore</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,600,600i%7CSource+Code+Pro:400,400i,600" />
+  <link rel="stylesheet" href="m-dark.css" />
+  <link rel="stylesheet" href="m-documentation.css" />
+  <link rel="icon" href="Spore_ModAPI_Icon.png" type="image/png" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#22272e" />
+</head>
+<body>
+<header><nav id="navigation">
+  <div class="m-container">
+    <div class="m-row">
+      <a href="index.html" id="m-navbar-brand" class="m-col-t-8 m-col-m-none m-left-m"><img src="Spore_ModAPI_Icon.png" />Spore ModAPI <span class="m-thin">SDK for creating C++ mods for Spore</span></a>
+      <div class="m-col-t-4 m-hide-m m-text-right m-nopadr">
+        <a href="#search" class="m-doc-search-icon" title="Search" onclick="return showSearch()"><svg style="height: 0.9rem;" viewBox="0 0 16 16">
+          <path id="m-doc-search-icon-path" d="m6 0c-3.31 0-6 2.69-6 6 0 3.31 2.69 6 6 6 1.49 0 2.85-0.541 3.89-1.44-0.0164 0.338 0.147 0.759 0.5 1.15l3.22 3.79c0.552 0.614 1.45 0.665 2 0.115 0.55-0.55 0.499-1.45-0.115-2l-3.79-3.22c-0.392-0.353-0.812-0.515-1.15-0.5 0.895-1.05 1.44-2.41 1.44-3.89 0-3.31-2.69-6-6-6zm0 1.56a4.44 4.44 0 0 1 4.44 4.44 4.44 4.44 0 0 1-4.44 4.44 4.44 4.44 0 0 1-4.44-4.44 4.44 4.44 0 0 1 4.44-4.44z"/>
+        </svg></a>
+        <a id="m-navbar-show" href="#navigation" title="Show navigation"></a>
+        <a id="m-navbar-hide" href="#" title="Hide navigation"></a>
+      </div>
+      <div id="m-navbar-collapse" class="m-col-t-12 m-show-m m-col-m-none m-right-m">
+        <div class="m-row">
+          <ol class="m-col-t-6 m-col-m-none">
+            <li><a href="pages.html">Tutorials</a></li>
+            <li><a href="namespaces.html">Namespaces</a></li>
+          </ol>
+          <ol class="m-col-t-6 m-col-m-none" start="3">
+            <li><a href="annotated.html">Classes</a></li>
+            <li><a href="files.html">Files</a></li>
+            <li class="m-show-m"><a href="#search" class="m-doc-search-icon" title="Search" onclick="return showSearch()"><svg style="height: 0.9rem;" viewBox="0 0 16 16">
+              <use href="#m-doc-search-icon-path" />
+            </svg></a></li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav></header>
+<main><article>
+  <div class="m-container m-container-inflatable">
+    <div class="m-row">
+      <div class="m-col-l-10 m-push-l-1">
+        <h1>
+          <span class="m-breadcrumb"><a href="namespace_sporepedia.html">Sporepedia</a>::<wbr/></span>ShopperRequest <span class="m-thin">struct</span>
+          <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_shopper_request_8h.html">&lt;Spore/Sporepedia/ShopperRequest.h&gt;</a></div>
+        </h1>
+        <p>A class used to show the <a href="namespace_sporepedia.html" class="m-doc">Sporepedia</a> to the user, asking him to select a creation.</p>
+        <div class="m-block m-default">
+          <h3>Contents</h3>
+          <ul>
+            <li>
+              Reference
+              <ul>
+                <li><a href="#pub-static-methods">Public static functions</a></li>
+                <li><a href="#typeless-methods">Constructors, destructors, conversion operators</a></li>
+                <li><a href="#pub-attribs">Public variables</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+<p>A shopper request uses a configuration file in the AssetBrowserConfig folder to know what text it will show to the player, what are the available creation types, etc.</p><p>To know when the user selects a creature, you must create a class that inherits from <a href="class_sporepedia_1_1_i_shopper_listener.html" class="m-doc">IShopperListener</a></p><p>Example usage:</p><pre class="m-code"><span class="c1">// `this` can also be whatever object that inherits from IShopperListener</span>
+<span class="n">Sporepedia</span><span class="o">::</span><span class="n">ShopperRequest</span> <span class="n">request</span><span class="p">(</span><span class="k">this</span><span class="p">);</span>
+<span class="n">request</span><span class="p">.</span><span class="n">SetShopperID</span><span class="p">(</span><span class="n">id</span><span class="p">(</span><span class="s">&quot;MilitaryAirShopper&quot;</span><span class="p">));</span></pre>
+        <section id="pub-static-methods">
+          <h2><a href="#pub-static-methods">Public static functions</a></h2>
+          <dl class="m-doc">
+            <dt>
+              <span class="m-doc-wrap-bumper">static void <a href="#ae541a3fd9bec94d1d3a6d5bfc23677c3" class="m-doc">Show</a>(</span><span class="m-doc-wrap"><a href="struct_sporepedia_1_1_shopper_request.html" class="m-doc">ShopperRequest</a>&amp; request)</span>
+            </dt>
+            <dd>Executes this request, showing the <a href="namespace_sporepedia.html" class="m-doc">Sporepedia</a> to the user.</dd>
+          </dl>
+        </section>
+        <section id="typeless-methods">
+          <h2><a href="#typeless-methods">Constructors, destructors, conversion operators</a></h2>
+          <dl class="m-doc">
+            <dt id="a0d124e8d6cd934d3a9853e80ad4c772f">
+              <span class="m-doc-wrap-bumper"><a href="#a0d124e8d6cd934d3a9853e80ad4c772f" class="m-doc-self">ShopperRequest</a>(</span><span class="m-doc-wrap"><a href="class_sporepedia_1_1_i_shopper_listener.html" class="m-doc">IShopperListener</a>* listener = nullptr)</span>
+            </dt>
+            <dd><span></span></dd>
+          </dl>
+        </section>
+        <section id="pub-attribs">
+          <h2><a href="#pub-attribs">Public variables</a></h2>
+          <dl class="m-doc">
+            <dt id="a753b46febc29c8c77067d3ddf5e4735c">
+              uint32_t <a href="#a753b46febc29c8c77067d3ddf5e4735c" class="m-doc-self">shopperID</a>
+            </dt>
+            <dd>The ID of the file in the <code>AssetBrowserConfig</code> folder that decides what the user can choose.</dd>
+            <dt id="aaf46936d8f61dbd8198de8fd4e53f020">
+              uint32_t <a href="#aaf46936d8f61dbd8198de8fd4e53f020" class="m-doc-self">gameModeID</a>
+            </dt>
+            <dd>The current game mode ID, it&#x27;s set automatically.</dd>
+            <dt id="ae81842c8ee7bfe6a5f2be845c456d4a3">
+              int <a href="#ae81842c8ee7bfe6a5f2be845c456d4a3" class="m-doc-self">field_8</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="ac9753ea5e140a670c86935013a707e48">
+              int <a href="#ac9753ea5e140a670c86935013a707e48" class="m-doc-self">field_C</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a5ca59cc52adc6e7301d2e0c38a8c5051">
+              bool <a href="#a5ca59cc52adc6e7301d2e0c38a8c5051" class="m-doc-self">field_10</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="aafd2304febb0eeae0bb27a568d963d90">
+              bool <a href="#aafd2304febb0eeae0bb27a568d963d90" class="m-doc-self">field_11</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a2802a721a5f29c076123e20888e8b85e">
+              bool <a href="#a2802a721a5f29c076123e20888e8b85e" class="m-doc-self">field_12</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a3a30261b3b443ab741134ee704fd6faf">
+              bool <a href="#a3a30261b3b443ab741134ee704fd6faf" class="m-doc-self">field_13</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="afd806801817f9859cab101c63fb4cbc1">
+              bool <a href="#afd806801817f9859cab101c63fb4cbc1" class="m-doc-self">field_14</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="adda983c7b32be407ed2ae87fce8f8161">
+              <a href="struct_resource_key.html" class="m-doc">ResourceKey</a> <a href="#adda983c7b32be407ed2ae87fce8f8161" class="m-doc-self">currentSelection</a>
+            </dt>
+            <dd>Key to the creation that is currently selected. If not specified, nothing is selected.</dd>
+            <dt id="a8c75056e778450c856c42ee176bd77c6">
+              bool <a href="#a8c75056e778450c856c42ee176bd77c6" class="m-doc-self">field_24</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a13aa883e0659ead5af3f21f8c6de37ba">
+              int <a href="#a13aa883e0659ead5af3f21f8c6de37ba" class="m-doc-self">field_28</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a4629893bab035e854e625668c3007529">
+              bool <a href="#a4629893bab035e854e625668c3007529" class="m-doc-self">field_2C</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a3f93459cc7d7c4ac280d2e62eb2130d6">
+              uint32_t <a href="#a3f93459cc7d7c4ac280d2e62eb2130d6" class="m-doc-self">field_30</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="af125d44f6eb2b00336d9b5fba2726ff3">
+              int <a href="#af125d44f6eb2b00336d9b5fba2726ff3" class="m-doc-self">field_34</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a398b9f087767976430b943b5c65836c9">
+              <a href="class_sporepedia_1_1_i_shopper_listener.html" class="m-doc">IShopperListener</a>* <a href="#a398b9f087767976430b943b5c65836c9" class="m-doc-self">pListener</a>
+            </dt>
+            <dd>Pointer to an object that will be called when the user accepts the selection.</dd>
+            <dt id="a085b97fb7e2b80942429f36032db90f8">
+              int <a href="#a085b97fb7e2b80942429f36032db90f8" class="m-doc-self">field_3C</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="ab61c2ab927d3489eb6c72ddb29c38a6c">
+              intrusive_ptr&lt;<a href="class_editors_1_1_editor_request.html" class="m-doc">Editors::<wbr />EditorRequest</a>&gt; <a href="#ab61c2ab927d3489eb6c72ddb29c38a6c" class="m-doc-self">pEditorRequest</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a6fb124fcb0321cdddf03784b3caf094d">
+              intrusive_ptr&lt;<a href="class_default_ref_counted.html" class="m-doc">DefaultRefCounted</a>&gt; <a href="#a6fb124fcb0321cdddf03784b3caf094d" class="m-doc-self">field_44</a>
+            </dt>
+            <dd><span></span></dd>
+          </dl>
+        </section>
+        <section>
+          <h2>Function documentation</h2>
+          <section class="m-doc-details" id="ae541a3fd9bec94d1d3a6d5bfc23677c3"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">static void Sporepedia::<wbr />ShopperRequest::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ae541a3fd9bec94d1d3a6d5bfc23677c3" class="m-doc-self">Show</a>(</span><span class="m-doc-wrap"><a href="struct_sporepedia_1_1_shopper_request.html" class="m-doc">ShopperRequest</a>&amp; request)</span></span>
+            </h3>
+            <p>Executes this request, showing the <a href="namespace_sporepedia.html" class="m-doc">Sporepedia</a> to the user.</p>
+<p>This method returns immediately; when the user clicks the Accept button, the function specified at the constructor or at <code>pListener</code> (if any) will be executed.</p>
+          </div></section>
+        </section>
+      </div>
+    </div>
+  </div>
+</article></main>
+<div class="m-doc-search" id="search">
+  <a href="#!" onclick="return hideSearch()"></a>
+  <div class="m-container">
+    <div class="m-row">
+      <div class="m-col-m-8 m-push-m-2">
+        <div class="m-doc-search-header m-text m-small">
+          <div><span class="m-label m-default">Tab</span> / <span class="m-label m-default">T</span> to search, <span class="m-label m-default">Esc</span> to close</div>
+          <div id="search-symbolcount">&hellip;</div>
+        </div>
+        <div class="m-doc-search-content">
+          <form>
+            <input type="search" name="q" id="search-input" placeholder="Loading &hellip;" disabled="disabled" autofocus="autofocus" autocomplete="off" spellcheck="false" />
+          </form>
+          <noscript class="m-text m-danger m-text-center">Unlike everything else in the docs, the search functionality <em>requires</em> JavaScript.</noscript>
+          <div id="search-help" class="m-text m-dim m-text-center">
+            <p class="m-noindent">Search for symbols, directories, files, pages or
+            modules. You can omit any prefix from the symbol or file path; adding a
+            <code>:</code> or <code>/</code> suffix lists all members of given symbol or
+            directory.</p>
+            <p class="m-noindent">Use <span class="m-label m-dim">&darr;</span>
+            / <span class="m-label m-dim">&uarr;</span> to navigate through the list,
+            <span class="m-label m-dim">Enter</span> to go.
+            <span class="m-label m-dim">Tab</span> autocompletes common prefix, you can
+            copy a link to the result using <span class="m-label m-dim">⌘</span>
+            <span class="m-label m-dim">L</span> while <span class="m-label m-dim">⌘</span>
+            <span class="m-label m-dim">M</span> produces a Markdown link.</p>
+          </div>
+          <div id="search-notfound" class="m-text m-warning m-text-center">Sorry, nothing was found.</div>
+          <ul id="search-results"></ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="search-v1.js"></script>
+<script src="searchdata-v1.js" async="async"></script>
+<footer><nav>
+  <div class="m-container">
+    <div class="m-row">
+      <div class="m-col-l-10 m-push-l-1">
+        <p>Spore ModAPI SDK for creating C++ mods for Spore. Created with <a href="https://doxygen.org/">Doxygen</a> 1.8.16 and <a href="https://mcss.mosra.cz/">m.css</a>.</p>
+      </div>
+    </div>
+  </div>
+</nav></footer>
+</body>
+</html>

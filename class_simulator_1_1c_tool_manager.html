@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Simulator::cToolManager class | Spore ModAPI SDK for creating C++ mods for Spore</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,600,600i%7CSource+Code+Pro:400,400i,600" />
+  <link rel="stylesheet" href="m-dark.css" />
+  <link rel="stylesheet" href="m-documentation.css" />
+  <link rel="icon" href="Spore_ModAPI_Icon.png" type="image/png" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#22272e" />
+</head>
+<body>
+<header><nav id="navigation">
+  <div class="m-container">
+    <div class="m-row">
+      <a href="index.html" id="m-navbar-brand" class="m-col-t-8 m-col-m-none m-left-m"><img src="Spore_ModAPI_Icon.png" />Spore ModAPI <span class="m-thin">SDK for creating C++ mods for Spore</span></a>
+      <div class="m-col-t-4 m-hide-m m-text-right m-nopadr">
+        <a href="#search" class="m-doc-search-icon" title="Search" onclick="return showSearch()"><svg style="height: 0.9rem;" viewBox="0 0 16 16">
+          <path id="m-doc-search-icon-path" d="m6 0c-3.31 0-6 2.69-6 6 0 3.31 2.69 6 6 6 1.49 0 2.85-0.541 3.89-1.44-0.0164 0.338 0.147 0.759 0.5 1.15l3.22 3.79c0.552 0.614 1.45 0.665 2 0.115 0.55-0.55 0.499-1.45-0.115-2l-3.79-3.22c-0.392-0.353-0.812-0.515-1.15-0.5 0.895-1.05 1.44-2.41 1.44-3.89 0-3.31-2.69-6-6-6zm0 1.56a4.44 4.44 0 0 1 4.44 4.44 4.44 4.44 0 0 1-4.44 4.44 4.44 4.44 0 0 1-4.44-4.44 4.44 4.44 0 0 1 4.44-4.44z"/>
+        </svg></a>
+        <a id="m-navbar-show" href="#navigation" title="Show navigation"></a>
+        <a id="m-navbar-hide" href="#" title="Hide navigation"></a>
+      </div>
+      <div id="m-navbar-collapse" class="m-col-t-12 m-show-m m-col-m-none m-right-m">
+        <div class="m-row">
+          <ol class="m-col-t-6 m-col-m-none">
+            <li><a href="pages.html">Tutorials</a></li>
+            <li><a href="namespaces.html">Namespaces</a></li>
+          </ol>
+          <ol class="m-col-t-6 m-col-m-none" start="3">
+            <li><a href="annotated.html">Classes</a></li>
+            <li><a href="files.html">Files</a></li>
+            <li class="m-show-m"><a href="#search" class="m-doc-search-icon" title="Search" onclick="return showSearch()"><svg style="height: 0.9rem;" viewBox="0 0 16 16">
+              <use href="#m-doc-search-icon-path" />
+            </svg></a></li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav></header>
+<main><article>
+  <div class="m-container m-container-inflatable">
+    <div class="m-row">
+      <div class="m-col-l-10 m-push-l-1">
+        <h1>
+          <span class="m-breadcrumb"><a href="namespace_simulator.html">Simulator</a>::<wbr/></span>cToolManager <span class="m-thin">class</span>
+          <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_tool_manager_8h.html">&lt;Spore/Simulator/SubSystem/ToolManager.h&gt;</a></div>
+        </h1>
+        <p><span></span></p>
+        <div class="m-block m-default">
+          <h3>Contents</h3>
+          <ul>
+            <li>
+              Reference
+              <ul>
+                <li><a href="#base-classes">Base classes</a></li>
+                <li><a href="#pub-types">Public types</a></li>
+                <li><a href="#pub-static-methods">Public static functions</a></li>
+                <li><a href="#pub-methods">Public functions</a></li>
+                <li><a href="#pro-attribs">Protected variables</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+        <section id="base-classes">
+          <h2><a href="#base-classes">Base classes</a></h2>
+          <dl class="m-doc">
+            <dt>
+              class <a href="class_simulator_1_1c_strategy.html" class="m-doc">cStrategy</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              class <a href="class_app_1_1_i_unmanaged_message_listener.html" class="m-doc">App::IUnmanagedMessageListener</a>
+            </dt>
+            <dd>Same as <a href="class_app_1_1_i_message_listener.html" class="m-doc">App::<wbr />IMessageListener</a>, but this one does not use ref-counting.</dd>
+          </dl>
+        </section>
+        <section id="pub-types">
+          <h2><a href="#pub-types">Public types</a></h2>
+          <dl class="m-doc">
+            <dt id="ad0d05f6f8a56bb558360b256c34a6507">
+              <span class="m-doc-wrap-bumper">enum <a href="#ad0d05f6f8a56bb558360b256c34a6507" class="m-doc-self">ToolFailText</a> { </span><span class="m-doc-wrap"><a href="#ad0d05f6f8a56bb558360b256c34a6507a63e9228078bb003f4da8f90d159edea3" class="m-doc">kCantUseInThisSystem</a> = 0,
+              <a href="#ad0d05f6f8a56bb558360b256c34a6507afe006deb31b92e141a2ae82800754c8a" class="m-doc">kMustUseOnPlanet</a> = 1,
+              <a href="#ad0d05f6f8a56bb558360b256c34a6507ade39c260238f94615cd06f5d9725a29b" class="m-doc">kRanOutOfAmmo</a> = 2,
+              <a href="#ad0d05f6f8a56bb558360b256c34a6507a9365cb3cab0fc5a85ea4ce186b119533" class="m-doc">kRecharging</a> = 3,
+              <a href="#ad0d05f6f8a56bb558360b256c34a6507aaffd2202a1a5f5c39f5f18af0e31728c" class="m-doc">kMustBeUsedOnEmpirePlanet</a> = 4,
+              <a href="#ad0d05f6f8a56bb558360b256c34a6507adca770504cd5ef22a5e6e75e9b76b44c" class="m-doc">kMustBeUsedOnAlienColony</a> = 5,
+              <a href="#ad0d05f6f8a56bb558360b256c34a6507a97f63dca6f78cda7b477ff81ea04b653" class="m-doc">kMustBeUsedOnYourColony</a> = 6,
+              <a href="#ad0d05f6f8a56bb558360b256c34a6507a36ae4cc1037e10c6a464fc98e23adc53" class="m-doc">kCanOnlyHaveOnePerPlanet</a> = 7,
+              <a href="#ad0d05f6f8a56bb558360b256c34a6507a49a010ee1305ecbd47b182dbe520dde4" class="m-doc">kNoRoomInFleet</a> = 8,
+              <a href="#ad0d05f6f8a56bb558360b256c34a6507a976780b20d17c679efe08e87c27c10ef" class="m-doc">kAlreadyHaveMiniU</a> = 9,
+              <a href="#ad0d05f6f8a56bb558360b256c34a6507ae6f871c9e8ab7d6ec96202146cbab65b" class="m-doc">kSystemMustHaveTradeRoute</a> = 0x0A,
+              <a href="#ad0d05f6f8a56bb558360b256c34a6507a692f8200cd1b75d3cbee35637cc29ef2" class="m-doc">kMustBeOnHighestTech</a> = 0x0B,
+              <a href="#ad0d05f6f8a56bb558360b256c34a6507a05f78a2bf4ef2b53cb7df9b04561aaac" class="m-doc">kAnimalMustBePresentOnPlanet</a> = 0x0C,
+              <a href="#ad0d05f6f8a56bb558360b256c34a6507aa3daa42bf808cd07008db729f525dc0a" class="m-doc">kCannotUseMonolith</a> = 0x0D,
+              <a href="#ad0d05f6f8a56bb558360b256c34a6507a8c9051dd04eb7205a35e7469e3948ab2" class="m-doc">kCantUseOnEmpireSystems</a> = 0x0E,
+              <a href="#ad0d05f6f8a56bb558360b256c34a6507a1ff6cdead6e01b0077f236c34fee0fb7" class="m-doc">kCantUseOnWildlifeSanctuary</a> = 0x0F,
+              <a href="#ad0d05f6f8a56bb558360b256c34a6507aa95ac1093de6212e50ad1801d62030cb" class="m-doc">kMustBeOnWildPlanets</a> = 0x10,
+              <a href="#ad0d05f6f8a56bb558360b256c34a6507a8b1417c9f02bb4889a2a5e017534c601" class="m-doc">kNeedHigherTerrascore</a> = 0x11,
+              <a href="#ad0d05f6f8a56bb558360b256c34a6507aeb6ea7d1e7182d9b05443ee732c2ff5b" class="m-doc">kCantUseOnHomeworld</a> = 0x12,
+              <a href="#ad0d05f6f8a56bb558360b256c34a6507a477c858ed83d640deb7ad34a3ee84a1f" class="m-doc">kEnergyIsFull</a> = 0x13,
+              <a href="#ad0d05f6f8a56bb558360b256c34a6507ad0ffc92f4bd353302645883f216f47a3" class="m-doc">kHealthIsFull</a> = 0x14,
+              <a href="#ad0d05f6f8a56bb558360b256c34a6507a0ac0ba22ee3ec6813370b7b18d33524f" class="m-doc">kCantUseOverWater</a> = 0x15,
+              <a href="#ad0d05f6f8a56bb558360b256c34a6507acc3565157ce02857c9bd468cb391277f" class="m-doc">kCantUseAboveACity</a> = 0x16,
+              <a href="#ad0d05f6f8a56bb558360b256c34a6507a37556d4f8a6ec899b8e6c9d514724afb" class="m-doc">kYouAreTooHighUp</a> = 0x17,
+              <a href="#ad0d05f6f8a56bb558360b256c34a6507ade43f1ee434e208583e8ea705d363b39" class="m-doc">kStarSystemAlreadyHasSentient</a> = 0x18,
+              <a href="#ad0d05f6f8a56bb558360b256c34a6507aa2231cc8ae888599f7819e314e8975a8" class="m-doc">kCantPlaceMoreColoniesWithCurrentTScore</a> = 0x19 }</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a8a7fa0c91773bee60fa744d6e2c737c7">
+              <span class="m-doc-wrap-bumper">enum <a href="#a8a7fa0c91773bee60fa744d6e2c737c7" class="m-doc-self">Messages</a> { </span><span class="m-doc-wrap"><a href="#a8a7fa0c91773bee60fa744d6e2c737c7a1d8fb97a1860673c4f61a8e7789a855d" class="m-doc">kMsgToolActivated</a> = 0x61DAE5C,
+              <a href="#a8a7fa0c91773bee60fa744d6e2c737c7aad5134f0c4e84b9dee0cd041a04b7641" class="m-doc">kMsgToolDeactivated</a> = 0x61DAE65 }</span>
+            </dt>
+            <dd><span></span></dd>
+          </dl>
+        </section>
+        <section id="pub-static-methods">
+          <h2><a href="#pub-static-methods">Public static functions</a></h2>
+          <dl class="m-doc">
+            <dt id="a758cc48c9033c2627ef7f7aa4b392013">
+              <span class="m-doc-wrap-bumper">static auto <a href="#a758cc48c9033c2627ef7f7aa4b392013" class="m-doc-self">Get</a>(</span><span class="m-doc-wrap">) -&gt; <a href="class_simulator_1_1c_tool_manager.html" class="m-doc">cToolManager</a>*</span>
+            </dt>
+            <dd>Returns the active <a href="namespace_simulator.html" class="m-doc">Simulator</a> tool manager.</dd>
+          </dl>
+        </section>
+        <section id="pub-methods">
+          <h2><a href="#pub-methods">Public functions</a></h2>
+          <dl class="m-doc">
+            <dt id="aaee0838bb57afce5f0fd66467e8cbf29">
+              <span class="m-doc-wrap-bumper">auto <a href="#aaee0838bb57afce5f0fd66467e8cbf29" class="m-doc-self">LoadTool</a>(</span><span class="m-doc-wrap">const <a href="struct_resource_key.html" class="m-doc">ResourceKey</a>&amp; id,
+              intrusive_ptr&lt;<a href="class_simulator_1_1c_space_tool_data.html" class="m-doc">cSpaceToolData</a>&gt;&amp; dst) -&gt; bool</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a793390f3d1b630f8760502c52a68cc88">
+              <span class="m-doc-wrap-bumper">auto <a href="#a793390f3d1b630f8760502c52a68cc88" class="m-doc-self">GetStrategy</a>(</span><span class="m-doc-wrap">uint32_t strategyID) -&gt; <a href="class_simulator_1_1c_tool_strategy.html" class="m-doc">cToolStrategy</a>*</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="ab06dc98fc74ee9fe4b4e296efee722ce">
+              <span class="m-doc-wrap-bumper">void <a href="#ab06dc98fc74ee9fe4b4e296efee722ce" class="m-doc-self">AddStrategy</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_tool_strategy.html" class="m-doc">cToolStrategy</a>* pStrategy,
+              uint32_t id)</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a8aca83c739111d8827c671d4869870ab">
+              <span class="m-doc-wrap-bumper">auto <a href="#a8aca83c739111d8827c671d4869870ab" class="m-doc-self">GetToolFailText</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_tool_manager.html#ad0d05f6f8a56bb558360b256c34a6507" class="m-doc">ToolFailText</a> index) -&gt; const char16_t*</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a450ae0f168092e3313e839a942f98046">
+              <span class="m-doc-wrap-bumper">auto <a href="#a450ae0f168092e3313e839a942f98046" class="m-doc-self">ActivateTool</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_space_tool_data.html" class="m-doc">cSpaceToolData</a>* pTool) -&gt; bool</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a8507b1ce3dfbb95422cb291e52a9b6fe">
+              <span class="m-doc-wrap-bumper">auto <a href="#a8507b1ce3dfbb95422cb291e52a9b6fe" class="m-doc-self">DeactivateTool</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_space_tool_data.html" class="m-doc">cSpaceToolData</a>* pTool) -&gt; bool</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="ae00f33cc087a1ca115a2670528352bbc">
+              <span class="m-doc-wrap-bumper">auto <a href="#ae00f33cc087a1ca115a2670528352bbc" class="m-doc-self">OnMouseUp</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_space_tool_data.html" class="m-doc">cSpaceToolData</a>* pTool) -&gt; bool</span>
+            </dt>
+            <dd><span></span></dd>
+          </dl>
+        </section>
+        <section id="pro-attribs">
+          <h2><a href="#pro-attribs">Protected variables</a></h2>
+          <dl class="m-doc">
+            <dt id="a3427ea94db369c77b6bffca9f79cbb38">
+              int <a href="#a3427ea94db369c77b6bffca9f79cbb38" class="m-doc-self">field_20</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="aacb8c5d4ca07c43e4e6fce9e491b35ce">
+              int <a href="#aacb8c5d4ca07c43e4e6fce9e491b35ce" class="m-doc-self">field_24</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a7f30fc55965d5f1a89715ef0e0484549">
+              int <a href="#a7f30fc55965d5f1a89715ef0e0484549" class="m-doc-self">field_28</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="afe049a2d2ec81d9c797051d8dd5df7da">
+              <a href="struct_math_1_1_vector3.html" class="m-doc">Math::<wbr />Vector3</a> <a href="#afe049a2d2ec81d9c797051d8dd5df7da" class="m-doc-self">field_2C</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a838c170ea813a8b3c10d27aaa37a9889">
+              hash_map&lt;uint32_t, intrusive_ptr&lt;<a href="class_simulator_1_1c_tool_strategy.html" class="m-doc">cToolStrategy</a>&gt;&gt; <a href="#a838c170ea813a8b3c10d27aaa37a9889" class="m-doc-self">mStrategies</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="af24263ac50b70f5c2f85605d578146b1">
+              map&lt;int, int&gt; <a href="#af24263ac50b70f5c2f85605d578146b1" class="m-doc-self">field_58</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a88565322673892871c0116aed7bebc37">
+              <a href="class_localized_string.html" class="m-doc">LocalizedString</a> <a href="#a88565322673892871c0116aed7bebc37" class="m-doc-self">mToolFailTexts</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a9bb1220191873d364d30bc363f43ee7b">
+              int <a href="#a9bb1220191873d364d30bc363f43ee7b" class="m-doc-self">field_27C</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a1a9b11820396bb36c3ab7f28a07da5b4">
+              int <a href="#a1a9b11820396bb36c3ab7f28a07da5b4" class="m-doc-self">field_280</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a87ee287e30acf1d4f28cad08d6c7c9a5">
+              int <a href="#a87ee287e30acf1d4f28cad08d6c7c9a5" class="m-doc-self">field_284</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="ac60b0de131715081ea22ebd7cfaac8d2">
+              int <a href="#ac60b0de131715081ea22ebd7cfaac8d2" class="m-doc-self">field_288</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a50b0a82a2a1268e799bd717d0429d368">
+              int <a href="#a50b0a82a2a1268e799bd717d0429d368" class="m-doc-self">field_28C</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a3d84c0df7f617c94462dbc3885b00dd3">
+              <a href="struct_math_1_1_vector3.html" class="m-doc">Math::<wbr />Vector3</a> <a href="#a3d84c0df7f617c94462dbc3885b00dd3" class="m-doc-self">field_290</a>
+            </dt>
+            <dd><span></span></dd>
+          </dl>
+        </section>
+      </div>
+    </div>
+  </div>
+</article></main>
+<div class="m-doc-search" id="search">
+  <a href="#!" onclick="return hideSearch()"></a>
+  <div class="m-container">
+    <div class="m-row">
+      <div class="m-col-m-8 m-push-m-2">
+        <div class="m-doc-search-header m-text m-small">
+          <div><span class="m-label m-default">Tab</span> / <span class="m-label m-default">T</span> to search, <span class="m-label m-default">Esc</span> to close</div>
+          <div id="search-symbolcount">&hellip;</div>
+        </div>
+        <div class="m-doc-search-content">
+          <form>
+            <input type="search" name="q" id="search-input" placeholder="Loading &hellip;" disabled="disabled" autofocus="autofocus" autocomplete="off" spellcheck="false" />
+          </form>
+          <noscript class="m-text m-danger m-text-center">Unlike everything else in the docs, the search functionality <em>requires</em> JavaScript.</noscript>
+          <div id="search-help" class="m-text m-dim m-text-center">
+            <p class="m-noindent">Search for symbols, directories, files, pages or
+            modules. You can omit any prefix from the symbol or file path; adding a
+            <code>:</code> or <code>/</code> suffix lists all members of given symbol or
+            directory.</p>
+            <p class="m-noindent">Use <span class="m-label m-dim">&darr;</span>
+            / <span class="m-label m-dim">&uarr;</span> to navigate through the list,
+            <span class="m-label m-dim">Enter</span> to go.
+            <span class="m-label m-dim">Tab</span> autocompletes common prefix, you can
+            copy a link to the result using <span class="m-label m-dim">⌘</span>
+            <span class="m-label m-dim">L</span> while <span class="m-label m-dim">⌘</span>
+            <span class="m-label m-dim">M</span> produces a Markdown link.</p>
+          </div>
+          <div id="search-notfound" class="m-text m-warning m-text-center">Sorry, nothing was found.</div>
+          <ul id="search-results"></ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="search-v1.js"></script>
+<script src="searchdata-v1.js" async="async"></script>
+<footer><nav>
+  <div class="m-container">
+    <div class="m-row">
+      <div class="m-col-l-10 m-push-l-1">
+        <p>Spore ModAPI SDK for creating C++ mods for Spore. Created with <a href="https://doxygen.org/">Doxygen</a> 1.8.16 and <a href="https://mcss.mosra.cz/">m.css</a>.</p>
+      </div>
+    </div>
+  </div>
+</nav></footer>
+</body>
+</html>

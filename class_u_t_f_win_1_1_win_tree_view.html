@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>UTFWin::WinTreeView class | Spore ModAPI SDK for creating C++ mods for Spore</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,600,600i%7CSource+Code+Pro:400,400i,600" />
+  <link rel="stylesheet" href="m-dark.css" />
+  <link rel="stylesheet" href="m-documentation.css" />
+  <link rel="icon" href="Spore_ModAPI_Icon.png" type="image/png" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#22272e" />
+</head>
+<body>
+<header><nav id="navigation">
+  <div class="m-container">
+    <div class="m-row">
+      <a href="index.html" id="m-navbar-brand" class="m-col-t-8 m-col-m-none m-left-m"><img src="Spore_ModAPI_Icon.png" />Spore ModAPI <span class="m-thin">SDK for creating C++ mods for Spore</span></a>
+      <div class="m-col-t-4 m-hide-m m-text-right m-nopadr">
+        <a href="#search" class="m-doc-search-icon" title="Search" onclick="return showSearch()"><svg style="height: 0.9rem;" viewBox="0 0 16 16">
+          <path id="m-doc-search-icon-path" d="m6 0c-3.31 0-6 2.69-6 6 0 3.31 2.69 6 6 6 1.49 0 2.85-0.541 3.89-1.44-0.0164 0.338 0.147 0.759 0.5 1.15l3.22 3.79c0.552 0.614 1.45 0.665 2 0.115 0.55-0.55 0.499-1.45-0.115-2l-3.79-3.22c-0.392-0.353-0.812-0.515-1.15-0.5 0.895-1.05 1.44-2.41 1.44-3.89 0-3.31-2.69-6-6-6zm0 1.56a4.44 4.44 0 0 1 4.44 4.44 4.44 4.44 0 0 1-4.44 4.44 4.44 4.44 0 0 1-4.44-4.44 4.44 4.44 0 0 1 4.44-4.44z"/>
+        </svg></a>
+        <a id="m-navbar-show" href="#navigation" title="Show navigation"></a>
+        <a id="m-navbar-hide" href="#" title="Hide navigation"></a>
+      </div>
+      <div id="m-navbar-collapse" class="m-col-t-12 m-show-m m-col-m-none m-right-m">
+        <div class="m-row">
+          <ol class="m-col-t-6 m-col-m-none">
+            <li><a href="pages.html">Tutorials</a></li>
+            <li><a href="namespaces.html">Namespaces</a></li>
+          </ol>
+          <ol class="m-col-t-6 m-col-m-none" start="3">
+            <li><a href="annotated.html">Classes</a></li>
+            <li><a href="files.html">Files</a></li>
+            <li class="m-show-m"><a href="#search" class="m-doc-search-icon" title="Search" onclick="return showSearch()"><svg style="height: 0.9rem;" viewBox="0 0 16 16">
+              <use href="#m-doc-search-icon-path" />
+            </svg></a></li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav></header>
+<main><article>
+  <div class="m-container m-container-inflatable">
+    <div class="m-row">
+      <div class="m-col-l-10 m-push-l-1">
+        <h1>
+          <span class="m-breadcrumb"><a href="namespace_u_t_f_win.html">UTFWin</a>::<wbr/></span>WinTreeView <span class="m-thin">class</span>
+          <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_win_tree_view_8h.html">&lt;Spore/UTFWin/WinTreeView.h&gt;</a></div>
+        </h1>
+        <p><span></span></p>
+        <div class="m-block m-default">
+          <h3>Contents</h3>
+          <ul>
+            <li>
+              Reference
+              <ul>
+                <li><a href="#base-classes">Base classes</a></li>
+                <li><a href="#pub-types">Public types</a></li>
+                <li><a href="#pub-methods">Public functions</a></li>
+                <li><a href="#pro-types">Protected types</a></li>
+                <li><a href="#pro-attribs">Protected variables</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+        <section id="base-classes">
+          <h2><a href="#base-classes">Base classes</a></h2>
+          <dl class="m-doc">
+            <dt>
+              class <a href="class_u_t_f_win_1_1_interactive_window.html" class="m-doc">InteractiveWindow</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              class <a href="class_u_t_f_win_1_1_i_tree_view.html" class="m-doc">ITreeView</a>
+            </dt>
+            <dd><span></span></dd>
+          </dl>
+        </section>
+        <section id="pub-types">
+          <h2><a href="#pub-types">Public types</a></h2>
+          <dl class="m-doc">
+            <dt id="af2a72b27d08e7535bfdccc5144ca043e">
+              <span class="m-doc-wrap-bumper">enum <a href="#af2a72b27d08e7535bfdccc5144ca043e" class="m-doc-self">(anonymous)</a> { </span><span class="m-doc-wrap"><a href="#af2a72b27d08e7535bfdccc5144ca043eabcb889048b7ce0e8207a03161966da93" class="m-doc">kScrollbarNever</a> = 0,
+              <a href="#af2a72b27d08e7535bfdccc5144ca043ea5d0cafacc3bc7f15e2df80c7daba6fdd" class="m-doc">kScrollbarAsNeeded</a> = 1,
+              <a href="#af2a72b27d08e7535bfdccc5144ca043ea14f2451d541e8b268b3e590d40255df5" class="m-doc">kScrollbarAlways</a> = 2 }</span>
+            </dt>
+            <dd><span></span></dd>
+          </dl>
+        </section>
+        <section id="pub-methods">
+          <h2><a href="#pub-methods">Public functions</a></h2>
+          <dl class="m-doc">
+            <dt id="a0e62430ea609f2a0b49f8c641620a6ee">
+              <span class="m-doc-wrap-bumper">auto <a href="#a0e62430ea609f2a0b49f8c641620a6ee" class="m-doc-self">GetSelectedNode</a>(</span><span class="m-doc-wrap">) -&gt; <a href="class_u_t_f_win_1_1_tree_node.html" class="m-doc">TreeNode</a>*</span>
+            </dt>
+            <dd><span></span></dd>
+          </dl>
+        </section>
+        <section id="pro-types">
+          <h2><a href="#pro-types">Protected types</a></h2>
+          <dl class="m-doc">
+            <dt>
+              class <a href="class_u_t_f_win_1_1_win_tree_view_1_1_scrollbar.html" class="m-doc">Scrollbar</a>
+            </dt>
+            <dd><span></span></dd>
+          </dl>
+        </section>
+        <section id="pro-attribs">
+          <h2><a href="#pro-attribs">Protected variables</a></h2>
+          <dl class="m-doc">
+            <dt id="a25af322973ee72ef469265e9975b2903">
+              bool <a href="#a25af322973ee72ef469265e9975b2903" class="m-doc-self">field_210</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a5ebacde840844ff1866fa66c35450208">
+              <a href="class_u_t_f_win_1_1_tree_node.html" class="m-doc">TreeNode</a> <a href="#a5ebacde840844ff1866fa66c35450208" class="m-doc-self">mRootNode</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="abaac4539e1b68d6c03fd281b9ce99040">
+              <a href="union_math_1_1_rectangle.html" class="m-doc">Math::<wbr />Rectangle</a> <a href="#abaac4539e1b68d6c03fd281b9ce99040" class="m-doc-self">mBorderWidth</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a22e3bf34714caa5143f47f453c026a27">
+              <a href="union_math_1_1_rectangle.html" class="m-doc">Math::<wbr />Rectangle</a> <a href="#a22e3bf34714caa5143f47f453c026a27" class="m-doc-self">field_274</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a6249730bb4f4b8df49d540394f603026">
+              int <a href="#a6249730bb4f4b8df49d540394f603026" class="m-doc-self">mTreeViewFlags</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="ae0032f40cef23aa0aa232fd10b736157">
+              <a href="struct_math_1_1_color.html" class="m-doc">Color</a> <a href="#ae0032f40cef23aa0aa232fd10b736157" class="m-doc-self">mColors</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="acc1274dbaada49ac53c06ba4bafe0f06">
+              size_t <a href="#acc1274dbaada49ac53c06ba4bafe0f06" class="m-doc-self">mnItemHeight</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="adac192b7a4c9d66e92167e6de877cc39">
+              intrusive_ptr&lt;<a href="class_u_t_f_win_1_1_i_drawable.html" class="m-doc">IDrawable</a>&gt; <a href="#adac192b7a4c9d66e92167e6de877cc39" class="m-doc-self">mpDefaultIcon</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a1a9d469ac31c5f59c83159172b823e0e">
+              intrusive_ptr&lt;<a href="class_u_t_f_win_1_1_i_drawable.html" class="m-doc">IDrawable</a>&gt; <a href="#a1a9d469ac31c5f59c83159172b823e0e" class="m-doc-self">mpExpanderDrawable</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a83282f6d603f2febb39348c73265fbad">
+              size_t <a href="#a83282f6d603f2febb39348c73265fbad" class="m-doc-self">mnIndentWidth</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="ad17c583cad7ecbd35cad4361d0859f9a">
+              size_t <a href="#ad17c583cad7ecbd35cad4361d0859f9a" class="m-doc-self">mnLineWidth</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="ac29fea5f950b9c40d79fd1d1ce481cc1">
+              size_t <a href="#ac29fea5f950b9c40d79fd1d1ce481cc1" class="m-doc-self">mnLineIndent</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="ac77472c09095140b396a53e4cf9d57ce">
+              size_t <a href="#ac77472c09095140b396a53e4cf9d57ce" class="m-doc-self">mnIconSpacing</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="ae28fcb21d025fd3890c3e48fef48a8a6">
+              <a href="struct_math_1_1_dimensions.html" class="m-doc">Math::<wbr />Dimensions</a> <a href="#ae28fcb21d025fd3890c3e48fef48a8a6" class="m-doc-self">mExpanderDimensions</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a2c618b6f497f247b8f68a1ee5e67a25b">
+              float <a href="#a2c618b6f497f247b8f68a1ee5e67a25b" class="m-doc-self">field_2D0</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a16ae676180fff5f16b3edb5249e7c031">
+              vector&lt;int&gt; <a href="#a16ae676180fff5f16b3edb5249e7c031" class="m-doc-self">field_2D4</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a2a03b78b9fbe69a6d927223ad0534dcc">
+              int <a href="#a2a03b78b9fbe69a6d927223ad0534dcc" class="m-doc-self">field_2E8</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a7b79897787a27305cacc4fd90e01b799">
+              <a href="class_u_t_f_win_1_1_tree_node.html" class="m-doc">TreeNode</a>* <a href="#a7b79897787a27305cacc4fd90e01b799" class="m-doc-self">field_2EC</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="aba83105d2ad2de7abbdbfa9954870ee5">
+              int <a href="#aba83105d2ad2de7abbdbfa9954870ee5" class="m-doc-self">field_2F0</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a762ef7dbe0f9f9641843c1df8000c23b">
+              intrusive_ptr&lt;<a href="class_object.html" class="m-doc">Object</a>&gt; <a href="#a762ef7dbe0f9f9641843c1df8000c23b" class="m-doc-self">field_2F4</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a41b37e108e697dcadaabf4006d504896">
+              <a href="class_u_t_f_win_1_1_win_tree_view_1_1_scrollbar.html" class="m-doc">Scrollbar</a> <a href="#a41b37e108e697dcadaabf4006d504896" class="m-doc-self">field_2F8</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a3a3f2ee38e49dc8f95f5a0158a0fe7ff">
+              <a href="class_u_t_f_win_1_1_win_tree_view_1_1_scrollbar.html" class="m-doc">Scrollbar</a> <a href="#a3a3f2ee38e49dc8f95f5a0158a0fe7ff" class="m-doc-self">field_30C</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="ae121b2406fb75845b2dc58071ae2b730">
+              char <a href="#ae121b2406fb75845b2dc58071ae2b730" class="m-doc-self">padding_320</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a06de7fa9efc30d746fb59b85db396411">
+              Timer <a href="#a06de7fa9efc30d746fb59b85db396411" class="m-doc-self">field_330</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="af4638390d139ebf1990f17686b1f6017">
+              Timer <a href="#af4638390d139ebf1990f17686b1f6017" class="m-doc-self">field_348</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="aa42b72e45be1677fe075a6fb532fa654">
+              float <a href="#aa42b72e45be1677fe075a6fb532fa654" class="m-doc-self">field_360</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a7adcac677f95a1c98073d00bcea09191">
+              int <a href="#a7adcac677f95a1c98073d00bcea09191" class="m-doc-self">field_364</a>
+            </dt>
+            <dd><span></span></dd>
+          </dl>
+        </section>
+      </div>
+    </div>
+  </div>
+</article></main>
+<div class="m-doc-search" id="search">
+  <a href="#!" onclick="return hideSearch()"></a>
+  <div class="m-container">
+    <div class="m-row">
+      <div class="m-col-m-8 m-push-m-2">
+        <div class="m-doc-search-header m-text m-small">
+          <div><span class="m-label m-default">Tab</span> / <span class="m-label m-default">T</span> to search, <span class="m-label m-default">Esc</span> to close</div>
+          <div id="search-symbolcount">&hellip;</div>
+        </div>
+        <div class="m-doc-search-content">
+          <form>
+            <input type="search" name="q" id="search-input" placeholder="Loading &hellip;" disabled="disabled" autofocus="autofocus" autocomplete="off" spellcheck="false" />
+          </form>
+          <noscript class="m-text m-danger m-text-center">Unlike everything else in the docs, the search functionality <em>requires</em> JavaScript.</noscript>
+          <div id="search-help" class="m-text m-dim m-text-center">
+            <p class="m-noindent">Search for symbols, directories, files, pages or
+            modules. You can omit any prefix from the symbol or file path; adding a
+            <code>:</code> or <code>/</code> suffix lists all members of given symbol or
+            directory.</p>
+            <p class="m-noindent">Use <span class="m-label m-dim">&darr;</span>
+            / <span class="m-label m-dim">&uarr;</span> to navigate through the list,
+            <span class="m-label m-dim">Enter</span> to go.
+            <span class="m-label m-dim">Tab</span> autocompletes common prefix, you can
+            copy a link to the result using <span class="m-label m-dim">⌘</span>
+            <span class="m-label m-dim">L</span> while <span class="m-label m-dim">⌘</span>
+            <span class="m-label m-dim">M</span> produces a Markdown link.</p>
+          </div>
+          <div id="search-notfound" class="m-text m-warning m-text-center">Sorry, nothing was found.</div>
+          <ul id="search-results"></ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="search-v1.js"></script>
+<script src="searchdata-v1.js" async="async"></script>
+<footer><nav>
+  <div class="m-container">
+    <div class="m-row">
+      <div class="m-col-l-10 m-push-l-1">
+        <p>Spore ModAPI SDK for creating C++ mods for Spore. Created with <a href="https://doxygen.org/">Doxygen</a> 1.8.16 and <a href="https://mcss.mosra.cz/">m.css</a>.</p>
+      </div>
+    </div>
+  </div>
+</nav></footer>
+</body>
+</html>

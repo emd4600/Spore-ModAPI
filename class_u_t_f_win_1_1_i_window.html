@@ -1,0 +1,1461 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>UTFWin::IWindow class | Spore ModAPI SDK for creating C++ mods for Spore</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,600,600i%7CSource+Code+Pro:400,400i,600" />
+  <link rel="stylesheet" href="m-dark.css" />
+  <link rel="stylesheet" href="m-documentation.css" />
+  <link rel="icon" href="Spore_ModAPI_Icon.png" type="image/png" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#22272e" />
+</head>
+<body>
+<header><nav id="navigation">
+  <div class="m-container">
+    <div class="m-row">
+      <a href="index.html" id="m-navbar-brand" class="m-col-t-8 m-col-m-none m-left-m"><img src="Spore_ModAPI_Icon.png" />Spore ModAPI <span class="m-thin">SDK for creating C++ mods for Spore</span></a>
+      <div class="m-col-t-4 m-hide-m m-text-right m-nopadr">
+        <a href="#search" class="m-doc-search-icon" title="Search" onclick="return showSearch()"><svg style="height: 0.9rem;" viewBox="0 0 16 16">
+          <path id="m-doc-search-icon-path" d="m6 0c-3.31 0-6 2.69-6 6 0 3.31 2.69 6 6 6 1.49 0 2.85-0.541 3.89-1.44-0.0164 0.338 0.147 0.759 0.5 1.15l3.22 3.79c0.552 0.614 1.45 0.665 2 0.115 0.55-0.55 0.499-1.45-0.115-2l-3.79-3.22c-0.392-0.353-0.812-0.515-1.15-0.5 0.895-1.05 1.44-2.41 1.44-3.89 0-3.31-2.69-6-6-6zm0 1.56a4.44 4.44 0 0 1 4.44 4.44 4.44 4.44 0 0 1-4.44 4.44 4.44 4.44 0 0 1-4.44-4.44 4.44 4.44 0 0 1 4.44-4.44z"/>
+        </svg></a>
+        <a id="m-navbar-show" href="#navigation" title="Show navigation"></a>
+        <a id="m-navbar-hide" href="#" title="Hide navigation"></a>
+      </div>
+      <div id="m-navbar-collapse" class="m-col-t-12 m-show-m m-col-m-none m-right-m">
+        <div class="m-row">
+          <ol class="m-col-t-6 m-col-m-none">
+            <li><a href="pages.html">Tutorials</a></li>
+            <li><a href="namespaces.html">Namespaces</a></li>
+          </ol>
+          <ol class="m-col-t-6 m-col-m-none" start="3">
+            <li><a href="annotated.html">Classes</a></li>
+            <li><a href="files.html">Files</a></li>
+            <li class="m-show-m"><a href="#search" class="m-doc-search-icon" title="Search" onclick="return showSearch()"><svg style="height: 0.9rem;" viewBox="0 0 16 16">
+              <use href="#m-doc-search-icon-path" />
+            </svg></a></li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav></header>
+<main><article>
+  <div class="m-container m-container-inflatable">
+    <div class="m-row">
+      <div class="m-col-l-10 m-push-l-1">
+        <h1>
+          <span class="m-breadcrumb"><a href="namespace_u_t_f_win.html">UTFWin</a>::<wbr/></span>IWindow <span class="m-thin">class</span>
+          <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_i_window_8h.html">&lt;Spore/UTFWin/IWindow.h&gt;</a></div>
+        </h1>
+        <p>An interface that represents a component in the user interface.</p>
+        <div class="m-block m-default">
+          <h3>Contents</h3>
+          <ul>
+            <li>
+              Reference
+              <ul>
+                <li><a href="#base-classes">Base classes</a></li>
+                <li><a href="#derived-classes">Derived classes</a></li>
+                <li><a href="#pub-static-attribs">Public static variables</a></li>
+                <li><a href="#pub-static-methods">Public static functions</a></li>
+                <li><a href="#pub-methods">Public functions</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+<p>Windows occupy a rectangle in the screen and are fit inside a hierarchy: a window can have multiple children and only one parent. For more information, check the User Interface page.</p>
+        <section id="base-classes">
+          <h2><a href="#base-classes">Base classes</a></h2>
+          <dl class="m-doc">
+            <dt>
+              class <a href="class_u_t_f_win_1_1_u_t_f_win_object.html" class="m-doc">UTFWinObject</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              struct <a href="struct_u_t_f_win_1_1_window__intrusive__list__node.html" class="m-doc">Window_intrusive_list_node</a>
+            </dt>
+            <dd><span></span></dd>
+          </dl>
+        </section>
+        <section id="derived-classes">
+          <h2><a href="#derived-classes">Derived classes</a></h2>
+          <dl class="m-doc">
+            <dt>
+              class <a href="class_u_t_f_win_1_1_window.html" class="m-doc">Window</a>
+            </dt>
+            <dd><span></span></dd>
+          </dl>
+        </section>
+        <section id="pub-static-attribs">
+          <h2><a href="#pub-static-attribs">Public static variables</a></h2>
+          <dl class="m-doc">
+            <dt id="a8dfc47f4a40bb37b76165f0cd03fa0de">
+              static const uint32_t <a href="#a8dfc47f4a40bb37b76165f0cd03fa0de" class="m-doc-self">TYPE</a>
+            </dt>
+            <dd><span></span></dd>
+          </dl>
+        </section>
+        <section id="pub-static-methods">
+          <h2><a href="#pub-static-methods">Public static functions</a></h2>
+          <dl class="m-doc">
+            <dt>
+              <span class="m-doc-wrap-bumper">static void <a href="#aeeae2b1ff3af53745f9f9b37a8431916" class="m-doc">FitParentArea</a>(</span><span class="m-doc-wrap"><a href="class_u_t_f_win_1_1_i_window.html" class="m-doc">IWindow</a>* pWindow)</span>
+            </dt>
+            <dd>Sets the given <a href="class_u_t_f_win_1_1_i_window.html" class="m-doc">UTFWin::<wbr />IWindow</a> to fit the entire area of its parent.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">static auto <a href="#aec85be4d6036524a13dd5d347b1dea99" class="m-doc">CreatePanel</a>(</span><span class="m-doc-wrap"><a href="class_u_t_f_win_1_1_i_window.html" class="m-doc">IWindow</a>* pParent) -&gt; <a href="class_u_t_f_win_1_1_i_window.html" class="m-doc">IWindow</a>*</span>
+            </dt>
+            <dd>Creates a new window with standard properties, and adds it to fit the given window (if any is given).</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">static void <a href="#a1280eb1d381dc57a25168a109a04f1a6" class="m-doc">SetOpacity</a>(</span><span class="m-doc-wrap"><a href="class_u_t_f_win_1_1_i_window.html" class="m-doc">IWindow</a>* pWindow,
+              float fOpacity)</span>
+            </dt>
+            <dd>Changes the opacity (opposite of transparency) of a window, which is done modifying the &#x27;alpha&#x27; value of the shade color.</dd>
+          </dl>
+        </section>
+        <section id="pub-methods">
+          <h2><a href="#pub-methods">Public functions</a></h2>
+          <dl class="m-doc">
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#ae22ac8b8615f72771bf6b2818030e24c" class="m-doc">GetParent</a>(</span><span class="m-doc-wrap">) const -&gt; <a href="class_u_t_f_win_1_1_i_window.html" class="m-doc">IWindow</a>* <span class="m-label m-flat m-warning">pure virtual</span></span>
+            </dt>
+            <dd>Returns the parent <a href="class_u_t_f_win_1_1_i_window.html" class="m-doc">IWindow</a> of this window, or nullptr if it has no parent window.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a14381ee6b941eb40c61224821debcec6" class="m-doc">GetWindowManager</a>(</span><span class="m-doc-wrap">) const -&gt; <a href="class_u_t_f_win_1_1_i_window_manager.html" class="m-doc">IWindowManager</a>* <span class="m-label m-flat m-warning">pure virtual</span></span>
+            </dt>
+            <dd>Returns the WindowManager that is operating on this window.</dd>
+            <dt id="ac3a0386b80ff7ca8e9f37ee8fe6d95e6">
+              <span class="m-doc-wrap-bumper">auto <a href="#ac3a0386b80ff7ca8e9f37ee8fe6d95e6" class="m-doc-self">func6</a>(</span><span class="m-doc-wrap">) const -&gt; int <span class="m-label m-flat m-warning">pure virtual</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#ae01c16871a826cb033c1e9de73591a54" class="m-doc">GetControlID</a>(</span><span class="m-doc-wrap">) const -&gt; uint32_t <span class="m-label m-flat m-warning">pure virtual</span></span>
+            </dt>
+            <dd>Sets the unique ID of this object.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a6abd167eb9ecaee01e11696629801cbb" class="m-doc">GetCommandID</a>(</span><span class="m-doc-wrap">) const -&gt; uint32_t <span class="m-label m-flat m-warning">pure virtual</span></span>
+            </dt>
+            <dd>Get the message ID sent by this window.</dd>
+            <dt id="aa1607ba1439d983c1193d1d0bac67465">
+              <span class="m-doc-wrap-bumper">auto <a href="#aa1607ba1439d983c1193d1d0bac67465" class="m-doc-self">func9</a>(</span><span class="m-doc-wrap">) const -&gt; int <span class="m-label m-flat m-warning">pure virtual</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#af083ac2e7a61a76db1cd74f156aff77e" class="m-doc">GetFlags</a>(</span><span class="m-doc-wrap">) const -&gt; <a href="namespace_u_t_f_win.html#ad55bb2756e25b6e36f38b47e0ca8e107" class="m-doc">WindowFlags</a> <span class="m-label m-flat m-warning">pure virtual</span></span>
+            </dt>
+            <dd>Gets the current window flags.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a1c32764e719342e31fb57fd547f73aaa" class="m-doc">GetState</a>(</span><span class="m-doc-wrap">) const -&gt; int <span class="m-label m-flat m-warning">pure virtual</span></span>
+            </dt>
+            <dd>Gets the current state (selected, pressed, mouse hover, etc) of this window.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#afc02ebb43a7a6e67a9ef594b6291d500" class="m-doc">GetShadeColor</a>(</span><span class="m-doc-wrap">) const -&gt; <a href="struct_math_1_1_color.html" class="m-doc">Math::<wbr />Color</a> <span class="m-label m-flat m-warning">pure virtual</span></span>
+            </dt>
+            <dd>Returns the color modulation value.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a59f43656ede62d474f7d3926d5db4a29" class="m-doc">GetArea</a>(</span><span class="m-doc-wrap">) const -&gt; const <a href="union_math_1_1_rectangle.html" class="m-doc">Math::<wbr />Rectangle</a>&amp; <span class="m-label m-flat m-warning">pure virtual</span></span>
+            </dt>
+            <dd>Gets the rectangular extent of this window, relative to the window&#x27;s parent.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a739b661eb604647cb5e29255d96ff1c0" class="m-doc">GetRealArea</a>(</span><span class="m-doc-wrap">) const -&gt; const <a href="union_math_1_1_rectangle.html" class="m-doc">Math::<wbr />Rectangle</a>&amp; <span class="m-label m-flat m-warning">pure virtual</span></span>
+            </dt>
+            <dd>Gets the real rectangular extent of this window, in window coordinates.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a91eaa54e8444fc2b6f767430ed5178ef" class="m-doc">GetCaption</a>(</span><span class="m-doc-wrap">) const -&gt; const char16_t* <span class="m-label m-flat m-warning">pure virtual</span></span>
+            </dt>
+            <dd>Returns the text contents or title of the window.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#ae5a7da7259456720dd286f50aa1e73fa" class="m-doc">GetTextFontID</a>(</span><span class="m-doc-wrap">) const -&gt; uint32_t <span class="m-label m-flat m-warning">pure virtual</span></span>
+            </dt>
+            <dd>Returns the text font style ID used in this window.</dd>
+            <dt id="a4faf4b80436e7532d55b0f6617d732c5">
+              <span class="m-doc-wrap-bumper">auto <a href="#a4faf4b80436e7532d55b0f6617d732c5" class="m-doc-self">func17</a>(</span><span class="m-doc-wrap">) const -&gt; const char16_t* <span class="m-label m-flat m-warning">pure virtual</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="ae7b52cac858378ca09fa7492f181bfda">
+              <span class="m-doc-wrap-bumper">auto <a href="#ae7b52cac858378ca09fa7492f181bfda" class="m-doc-self">func18</a>(</span><span class="m-doc-wrap">) const -&gt; int <span class="m-label m-flat m-warning">pure virtual</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="af6370753115177d4be16ad690456fb22">
+              <span class="m-doc-wrap-bumper">auto <a href="#af6370753115177d4be16ad690456fb22" class="m-doc-self">func19</a>(</span><span class="m-doc-wrap">) const -&gt; int <span class="m-label m-flat m-warning">pure virtual</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">void <a href="#a909f7fc24401a72c4197b37805a198ce" class="m-doc">SetControlID</a>(</span><span class="m-doc-wrap">uint32_t controlID) <span class="m-label m-flat m-warning">pure virtual</span></span>
+            </dt>
+            <dd>Sets the unique ID of this object.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">void <a href="#a6728ac7212471448cb9f251f30469361" class="m-doc">SetCommandID</a>(</span><span class="m-doc-wrap">uint32_t commandID) <span class="m-label m-flat m-warning">pure virtual</span></span>
+            </dt>
+            <dd>Set the message ID sent by this window.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">void <a href="#a6d959614f614594add454590ff66e4af" class="m-doc">SetState</a>(</span><span class="m-doc-wrap">int state) <span class="m-label m-flat m-warning">pure virtual</span></span>
+            </dt>
+            <dd>Sets the current state (selected, pressed, mouse hover, etc) of this window.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">void <a href="#a26cd6fd5e2ece3207ea6693a8b7ad4aa" class="m-doc">SetShadeColor</a>(</span><span class="m-doc-wrap"><a href="struct_math_1_1_color.html" class="m-doc">Color</a> color) <span class="m-label m-flat m-warning">pure virtual</span></span>
+            </dt>
+            <dd>Returns the color modulation value.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">void <a href="#a6540bc683d45f8367d67e93be0bc12f2" class="m-doc">SetArea</a>(</span><span class="m-doc-wrap">const <a href="union_math_1_1_rectangle.html" class="m-doc">Math::<wbr />Rectangle</a>&amp; area) <span class="m-label m-flat m-warning">pure virtual</span></span>
+            </dt>
+            <dd>Sets the rectangular extent of this window.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">void <a href="#aa7b75aeb286563e27ce42834d2dd2043" class="m-doc">SetLocation</a>(</span><span class="m-doc-wrap">float fX,
+              float fY) <span class="m-label m-flat m-warning">pure virtual</span></span>
+            </dt>
+            <dd>Sets the location of this window, relative to its parent.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">void <a href="#a6a86562e7c1df46c77da4eb7e43c7c7f" class="m-doc">SetSize</a>(</span><span class="m-doc-wrap">float fWidth,
+              float fHeight) <span class="m-label m-flat m-warning">pure virtual</span></span>
+            </dt>
+            <dd>Assigns the width and height of this window.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">void <a href="#a7aaef740fefa2abc5c02f81ef04891fb" class="m-doc">SetLayoutArea</a>(</span><span class="m-doc-wrap">const <a href="union_math_1_1_rectangle.html" class="m-doc">Math::<wbr />Rectangle</a>&amp; layoutArea) <span class="m-label m-flat m-warning">pure virtual</span></span>
+            </dt>
+            <dd>Sets the area that this component should have, relative to its parent window, after all layout styles are applied.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">void <a href="#aaffad51924a4293e376593e9ab4b706e" class="m-doc">SetLayoutLocation</a>(</span><span class="m-doc-wrap">float fX,
+              float fY) <span class="m-label m-flat m-warning">pure virtual</span></span>
+            </dt>
+            <dd>Assigns the location, relative to the parent window, that this window should have after all layouts are applied.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">void <a href="#a17a65e1f7f55941e075cbd4abf1e7dab" class="m-doc">SetLayoutSize</a>(</span><span class="m-doc-wrap">float fWidth,
+              float fHeight) <span class="m-label m-flat m-warning">pure virtual</span></span>
+            </dt>
+            <dd>Assigns the width and height that this window should have after all layouts are applied.</dd>
+            <dt id="a57be59023cb4cc8a423b75e6f399b6bb">
+              <span class="m-doc-wrap-bumper">void <a href="#a57be59023cb4cc8a423b75e6f399b6bb" class="m-doc-self">func30</a>(</span><span class="m-doc-wrap">int) <span class="m-label m-flat m-warning">pure virtual</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">void <a href="#a8b2cadb73487b7bea5584474c73d079a" class="m-doc">SetFlag</a>(</span><span class="m-doc-wrap"><a href="namespace_u_t_f_win.html#ad55bb2756e25b6e36f38b47e0ca8e107" class="m-doc">WindowFlags</a> nFlag,
+              bool bValue) <span class="m-label m-flat m-warning">pure virtual</span></span>
+            </dt>
+            <dd>Assigns the given value to the specified window flag.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">void <a href="#ae098a66b03067951bf14806662575988" class="m-doc">SetCaption</a>(</span><span class="m-doc-wrap">const char16_t* pCaption) <span class="m-label m-flat m-warning">pure virtual</span></span>
+            </dt>
+            <dd>Assigns the text contents or title of the window.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">void <a href="#a2594be799f02954a070a08cfd539e476" class="m-doc">SetTextFontID</a>(</span><span class="m-doc-wrap">uint32_t styleID) <span class="m-label m-flat m-warning">pure virtual</span></span>
+            </dt>
+            <dd>Sets the text font style ID used in this window.</dd>
+            <dt id="a01983a8cec8ceb63426e6a6706662dba">
+              <span class="m-doc-wrap-bumper">void <a href="#a01983a8cec8ceb63426e6a6706662dba" class="m-doc-self">func34</a>(</span><span class="m-doc-wrap">int) <span class="m-label m-flat m-warning">pure virtual</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a43a5cb110a8b0d29b51e59aaa5c0a70f">
+              <span class="m-doc-wrap-bumper">void <a href="#a43a5cb110a8b0d29b51e59aaa5c0a70f" class="m-doc-self">func35</a>(</span><span class="m-doc-wrap">int) <span class="m-label m-flat m-warning">pure virtual</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a29a7afdf072d227660d48fb15082bdaa">
+              <span class="m-doc-wrap-bumper">auto <a href="#a29a7afdf072d227660d48fb15082bdaa" class="m-doc-self">Invalidate</a>(</span><span class="m-doc-wrap">) -&gt; int <span class="m-label m-flat m-warning">pure virtual</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="ab5cfbb8a424612d533c292f02b14b306">
+              <span class="m-doc-wrap-bumper">void <a href="#ab5cfbb8a424612d533c292f02b14b306" class="m-doc-self">Revalidate</a>(</span><span class="m-doc-wrap">) <span class="m-label m-flat m-warning">pure virtual</span></span>
+            </dt>
+            <dd>Updates the real area of this window and all its children, using the &#x27;area&#x27; property and applying all the <a href="class_u_t_f_win_1_1_i_layout_style.html" class="m-doc">ILayoutStyle</a> objects (added as <a href="class_u_t_f_win_1_1_i_win_proc.html" class="m-doc">IWinProc</a>) in this window.</dd>
+            <dt id="aba75f5987105b5c97136a77d96dd1abe">
+              <span class="m-doc-wrap-bumper">auto <a href="#aba75f5987105b5c97136a77d96dd1abe" class="m-doc-self">InvalidateTransform</a>(</span><span class="m-doc-wrap">) -&gt; int <span class="m-label m-flat m-warning">pure virtual</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="af67154b9bb847d377beab392519e1400">
+              <span class="m-doc-wrap-bumper">auto <a href="#af67154b9bb847d377beab392519e1400" class="m-doc-self">func39</a>(</span><span class="m-doc-wrap">) -&gt; int <span class="m-label m-flat m-warning">pure virtual</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="acc8b4d9969e17010bb331d89583701d2">
+              <span class="m-doc-wrap-bumper">auto <a href="#acc8b4d9969e17010bb331d89583701d2" class="m-doc-self">func40</a>(</span><span class="m-doc-wrap">) -&gt; int <span class="m-label m-flat m-warning">pure virtual</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#ae38a6738b1a49087ab6474379b24e08c" class="m-doc">GetFillColor</a>(</span><span class="m-doc-wrap">) const -&gt; <a href="struct_math_1_1_color.html" class="m-doc">Color</a> <span class="m-label m-flat m-warning">pure virtual</span></span>
+            </dt>
+            <dd>Returns the fill color of this window.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#aa319e186d6627e292038e12b562d10e5" class="m-doc">GetDrawable</a>(</span><span class="m-doc-wrap">) const -&gt; <a href="class_u_t_f_win_1_1_i_drawable.html" class="m-doc">IDrawable</a>* <span class="m-label m-flat m-warning">pure virtual</span></span>
+            </dt>
+            <dd>Returns the fill drawable of this window.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">void <a href="#a0b22a181552180dd9ee604f44a2a26a2" class="m-doc">SetFillColor</a>(</span><span class="m-doc-wrap"><a href="struct_math_1_1_color.html" class="m-doc">Color</a> color) <span class="m-label m-flat m-warning">pure virtual</span></span>
+            </dt>
+            <dd>Sets the fill color of this window.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">void <a href="#ad3f551125a2f0f8250d1fc3f7af1f407" class="m-doc">SetDrawable</a>(</span><span class="m-doc-wrap"><a href="class_u_t_f_win_1_1_i_drawable.html" class="m-doc">IDrawable</a>* drawable) <span class="m-label m-flat m-warning">pure virtual</span></span>
+            </dt>
+            <dd>Sets the fill drawable of this window.</dd>
+            <dt id="a5ee565922b6079f6b594f387e2f96ab0">
+              <span class="m-doc-wrap-bumper">auto <a href="#a5ee565922b6079f6b594f387e2f96ab0" class="m-doc-self">func45</a>(</span><span class="m-doc-wrap">int) -&gt; int <span class="m-label m-flat m-warning">pure virtual</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a210070d396dbc82ca86155f85153060b">
+              <span class="m-doc-wrap-bumper">auto <a href="#a210070d396dbc82ca86155f85153060b" class="m-doc-self">func46</a>(</span><span class="m-doc-wrap">int,
+              int) -&gt; int <span class="m-label m-flat m-warning">pure virtual</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="afc2963e0c0dee17c0346270b7cfc7f0c">
+              <span class="m-doc-wrap-bumper">auto <a href="#afc2963e0c0dee17c0346270b7cfc7f0c" class="m-doc-self">func47</a>(</span><span class="m-doc-wrap">float,
+              float) -&gt; int <span class="m-label m-flat m-warning">pure virtual</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a91509bcff458facfac899a5c9b888aac">
+              <span class="m-doc-wrap-bumper">auto <a href="#a91509bcff458facfac899a5c9b888aac" class="m-doc-self">func48</a>(</span><span class="m-doc-wrap">float,
+              float) -&gt; <a href="struct_math_1_1_point.html" class="m-doc">Point</a> <span class="m-label m-flat m-warning">pure virtual</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="af9dca79b4dd4db8e2c40490798ef4361">
+              <span class="m-doc-wrap-bumper">auto <a href="#af9dca79b4dd4db8e2c40490798ef4361" class="m-doc-self">func49</a>(</span><span class="m-doc-wrap">float,
+              float) -&gt; <a href="struct_math_1_1_point.html" class="m-doc">Point</a> <span class="m-label m-flat m-warning">pure virtual</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a8f64faa36fba22e5a028282346d2c2dc">
+              <span class="m-doc-wrap-bumper">auto <a href="#a8f64faa36fba22e5a028282346d2c2dc" class="m-doc-self">func50</a>(</span><span class="m-doc-wrap">float,
+              float,
+              <a href="struct_math_1_1_point.html" class="m-doc">Point</a>&amp; dst) -&gt; bool <span class="m-label m-flat m-warning">pure virtual</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#adec1df64baaece43b055f48d6c80a463" class="m-doc">GetChildrenBegin</a>(</span><span class="m-doc-wrap">) -&gt; IWindowList_t::iterator <span class="m-label m-flat m-warning">pure virtual</span></span>
+            </dt>
+            <dd>Returns the begin iterator of the list of children windows contained in this window.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#ac2db1bfa1f91b98426ee463c25d56ae2" class="m-doc">GetChildrenEnd</a>(</span><span class="m-doc-wrap">) -&gt; IWindowList_t::iterator <span class="m-label m-flat m-warning">pure virtual</span></span>
+            </dt>
+            <dd>Returns the end iterator of the list of children windows contained in this window.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a2fb770a26457a1ce080ef49ef34b13ba" class="m-doc">LocateChild</a>(</span><span class="m-doc-wrap">const <a href="class_u_t_f_win_1_1_i_window.html" class="m-doc">IWindow</a>* pChild) const -&gt; IWindowList_t::iterator <span class="m-label m-flat m-warning">pure virtual</span></span>
+            </dt>
+            <dd>Converts a pointer to a child window in the list back to an iterator, or returns end() if it is not part of the children list.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">void <a href="#a604d6905f1a874963ce17a7ae708a298" class="m-doc">AddWindow</a>(</span><span class="m-doc-wrap"><a href="class_u_t_f_win_1_1_i_window.html" class="m-doc">IWindow</a>* pWindow) <span class="m-label m-flat m-warning">pure virtual</span></span>
+            </dt>
+            <dd>Adds the given window to this <a href="class_u_t_f_win_1_1_i_window.html" class="m-doc">IWindow</a>&#x27;s children.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">void <a href="#adde22640bbf67690dd75b82927edfedf" class="m-doc">RemoveWindow</a>(</span><span class="m-doc-wrap"><a href="class_u_t_f_win_1_1_i_window.html" class="m-doc">IWindow</a>* pWindow) <span class="m-label m-flat m-warning">pure virtual</span></span>
+            </dt>
+            <dd>Removes the given window from this <a href="class_u_t_f_win_1_1_i_window.html" class="m-doc">IWindow</a>&#x27;s children.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">void <a href="#a2605ec91d8a94cad7962e8c014c61fea" class="m-doc">DisposeWindowFamily</a>(</span><span class="m-doc-wrap"><a href="class_u_t_f_win_1_1_i_window.html" class="m-doc">IWindow</a>* pChildWindow) <span class="m-label m-flat m-warning">pure virtual</span></span>
+            </dt>
+            <dd>Disposes the given window and all its hierarchy.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">void <a href="#a1c7f58098fa9f2c3bc02f2917efcbf08" class="m-doc">DisposeAllWindowFamilies</a>(</span><span class="m-doc-wrap">) <span class="m-label m-flat m-warning">pure virtual</span></span>
+            </dt>
+            <dd>Disposes all the children windows and all their hierarchy.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">void <a href="#aec5459b14ed65bf98f8b858293775f07" class="m-doc">BringToFront</a>(</span><span class="m-doc-wrap"><a href="class_u_t_f_win_1_1_i_window.html" class="m-doc">IWindow</a>* pWindow) <span class="m-label m-flat m-warning">pure virtual</span></span>
+            </dt>
+            <dd>Moves the specified child window at the front of the rest of its siblings, so it is the last one to be rendered.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">void <a href="#a20d6b657b0697384c2f582363182682c" class="m-doc">SendToBack</a>(</span><span class="m-doc-wrap"><a href="class_u_t_f_win_1_1_i_window.html" class="m-doc">IWindow</a>* pWindow) <span class="m-label m-flat m-warning">pure virtual</span></span>
+            </dt>
+            <dd>Moves the specified child window at the back of the rest of its siblings, so it is the first one to be rendered.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a652f5fb0db920dedcbb8d683bb37ac69" class="m-doc">FindWindowByID</a>(</span><span class="m-doc-wrap">uint32_t controlID,
+              bool bRecursive = true) -&gt; <a href="class_u_t_f_win_1_1_i_window.html" class="m-doc">IWindow</a>* <span class="m-label m-flat m-warning">pure virtual</span></span>
+            </dt>
+            <dd>Returns the first child window that has the given controlID.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a7becc88b51929154d8c7cf8b1cd6bd03" class="m-doc">FindWindowTypeByID</a>(</span><span class="m-doc-wrap">uint32_t controlID,
+              uint32_t type,
+              bool bRecursive = true) -&gt; <a href="class_u_t_f_win_1_1_i_window.html" class="m-doc">IWindow</a>* <span class="m-label m-flat m-warning">pure virtual</span></span>
+            </dt>
+            <dd>Returns the first child window that has the given controlID and is of the given type.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a7bc36eefc6fb9036857316250b1a5ed0" class="m-doc">IsAncestorOf</a>(</span><span class="m-doc-wrap">const <a href="class_u_t_f_win_1_1_i_window.html" class="m-doc">IWindow</a>* pChildWindow) -&gt; bool <span class="m-label m-flat m-warning">pure virtual</span></span>
+            </dt>
+            <dd>Checks if the given window is contained in the component hierarchy of this <a href="class_u_t_f_win_1_1_i_window.html" class="m-doc">IWindow</a>.</dd>
+            <dt id="aa7971fa039a530c2eea8005d956b3d02">
+              <span class="m-doc-wrap-bumper">auto <a href="#aa7971fa039a530c2eea8005d956b3d02" class="m-doc-self">func63</a>(</span><span class="m-doc-wrap">int index) -&gt; bool <span class="m-label m-flat m-warning">pure virtual</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a3e77dd599962303c60405648019baecf">
+              <span class="m-doc-wrap-bumper">auto <a href="#a3e77dd599962303c60405648019baecf" class="m-doc-self">func64</a>(</span><span class="m-doc-wrap">int index) -&gt; bool <span class="m-label m-flat m-warning">pure virtual</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">void <a href="#a5b5bd37502956d7eb7343d956b0bd2ea" class="m-doc">AddWinProc</a>(</span><span class="m-doc-wrap"><a href="class_u_t_f_win_1_1_i_win_proc.html" class="m-doc">IWinProc</a>* pWinProc) <span class="m-label m-flat m-warning">pure virtual</span></span>
+            </dt>
+            <dd>Adds the given <a href="class_u_t_f_win_1_1_i_win_proc.html" class="m-doc">IWinProc</a> at the end of this window&#x27;s list.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">void <a href="#af5f2616c6d4324e65da2909865fccc59" class="m-doc">RemoveWinProc</a>(</span><span class="m-doc-wrap"><a href="class_u_t_f_win_1_1_i_win_proc.html" class="m-doc">IWinProc</a>* pWinProc) <span class="m-label m-flat m-warning">pure virtual</span></span>
+            </dt>
+            <dd>Removes the given <a href="class_u_t_f_win_1_1_i_win_proc.html" class="m-doc">IWinProc</a> from this window&#x27;s list.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#ad6ac580bfdac8b8023411be29168e76e" class="m-doc">GetNextWinProc</a>(</span><span class="m-doc-wrap">const <a href="class_u_t_f_win_1_1_i_win_proc.html" class="m-doc">IWinProc</a>* pWinProc = nullptr) const -&gt; <a href="class_u_t_f_win_1_1_i_win_proc.html" class="m-doc">IWinProc</a>* <span class="m-label m-flat m-warning">pure virtual</span></span>
+            </dt>
+            <dd>Gets the <a href="class_u_t_f_win_1_1_i_win_proc.html" class="m-doc">IWinProc</a> in this window that follows the given procedure.</dd>
+            <dt id="a1b7670f7abb4f8a9f8d731653de7ae07">
+              <span class="m-doc-wrap-bumper">auto <a href="#a1b7670f7abb4f8a9f8d731653de7ae07" class="m-doc-self">func68</a>(</span><span class="m-doc-wrap">int) -&gt; int <span class="m-label m-flat m-warning">pure virtual</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a64caadea52b02cf5c560825f0ad4c888" class="m-doc">SendMsg</a>(</span><span class="m-doc-wrap"><a href="class_u_t_f_win_1_1_message.html" class="m-doc">Message</a>&amp; msg) -&gt; bool <span class="m-label m-flat m-warning">pure virtual</span></span>
+            </dt>
+            <dd>Sends the given message through this window, using this window as the source.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a5ac0933336ed6aafbad76d3960ab95fc" class="m-doc">GetComponentName</a>(</span><span class="m-doc-wrap">) const -&gt; const char* <span class="m-label m-flat m-warning">pure virtual</span></span>
+            </dt>
+            <dd>Returns the name of this component type (e.g.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#aadd5fed7f66213fe296e815833cbe05f" class="m-doc">children</a>(</span><span class="m-doc-wrap">) -&gt; <a href="class_u_t_f_win_1_1_window_children.html" class="m-doc">WindowChildren</a></span>
+            </dt>
+            <dd>Returns an structure that allows to iterate through the children of this window.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#ac350481231351d281c3132ca831b5883" class="m-doc">procedures</a>(</span><span class="m-doc-wrap">) -&gt; <a href="class_u_t_f_win_1_1_window_procedures.html" class="m-doc">WindowProcedures</a></span>
+            </dt>
+            <dd>Returns an structure that allows to iterate through the <a href="class_u_t_f_win_1_1_i_win_proc.html" class="m-doc">IWinProc</a> objects of this window.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a627c18a80c4b98141f3f87480732aa42" class="m-doc">AddWinProc</a>(</span><span class="m-doc-wrap"><a href="namespace_u_t_f_win.html#a04f6ade66875b9b2572e883bdf2a9d60" class="m-doc">HandleUILambda_<wbr />t</a> pFunction,
+              int eventFlags = <a href="namespace_u_t_f_win.html#a53dcde7b7ffd3f5d6b53da77f5649044abada94b5e01bb4301d59887ff92a8719" class="m-doc">kEventFlagBasicInput</a>|<a href="namespace_u_t_f_win.html#a53dcde7b7ffd3f5d6b53da77f5649044ae00581bacda0d1a50bf5d3690367d321" class="m-doc">kEventFlagAdvanced</a>,
+              int priority = 0) -&gt; intrusive_ptr&lt;<a href="class_u_t_f_win_1_1_i_win_proc.html" class="m-doc">IWinProc</a>&gt;</span>
+            </dt>
+            <dd>Adds an event listener, defined using a lambda function or by referencing a static function.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a730df84f41e0c099e431d68b9260f425" class="m-doc">AddWinProcFilter</a>(</span><span class="m-doc-wrap"><a href="namespace_u_t_f_win.html#a04f6ade66875b9b2572e883bdf2a9d60" class="m-doc">HandleUILambda_<wbr />t</a> function,
+              const vector&lt;<a href="namespace_u_t_f_win.html#a9fa1532f8ae774ee9508fab26eea47bc" class="m-doc">MessageType</a>&gt; types,
+              int priority = 0) -&gt; intrusive_ptr&lt;<a href="class_u_t_f_win_1_1_i_win_proc.html" class="m-doc">IWinProc</a>&gt;</span>
+            </dt>
+            <dd>Adds an even listener that only handles the specified message types.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a1e4678a3edabc79192d527a5ccafd4d4" class="m-doc">IsVisible</a>(</span><span class="m-doc-wrap">) const -&gt; bool</span>
+            </dt>
+            <dd>Tells whether the window is visible.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">void <a href="#a2010d45c644902adf6ae6fa64005eaec" class="m-doc">SetVisible</a>(</span><span class="m-doc-wrap">bool bVisible)</span>
+            </dt>
+            <dd>Switches the visibility of this window.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#ae0e6b08575a58f06801a5b7617a98eec" class="m-doc">IsEnabled</a>(</span><span class="m-doc-wrap">) const -&gt; bool</span>
+            </dt>
+            <dd>Tells whether the window is visible.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">void <a href="#ad0ae74a42bba84ac98b6a2dc8262a2dc" class="m-doc">SetEnabled</a>(</span><span class="m-doc-wrap">bool bEnabled)</span>
+            </dt>
+            <dd>Switches the visibility of this window.</dd>
+          </dl>
+        </section>
+        <section>
+          <h2>Function documentation</h2>
+          <section class="m-doc-details" id="aeeae2b1ff3af53745f9f9b37a8431916"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">static void UTFWin::<wbr />IWindow::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#aeeae2b1ff3af53745f9f9b37a8431916" class="m-doc-self">FitParentArea</a>(</span><span class="m-doc-wrap"><a href="class_u_t_f_win_1_1_i_window.html" class="m-doc">IWindow</a>* pWindow)</span></span>
+            </h3>
+            <p>Sets the given <a href="class_u_t_f_win_1_1_i_window.html" class="m-doc">UTFWin::<wbr />IWindow</a> to fit the entire area of its parent.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">pWindow</td>
+                  <td></td>
+                </tr>
+              </tbody>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="aec85be4d6036524a13dd5d347b1dea99"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">static <a href="class_u_t_f_win_1_1_i_window.html" class="m-doc">IWindow</a>* UTFWin::<wbr />IWindow::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#aec85be4d6036524a13dd5d347b1dea99" class="m-doc-self">CreatePanel</a>(</span><span class="m-doc-wrap"><a href="class_u_t_f_win_1_1_i_window.html" class="m-doc">IWindow</a>* pParent)</span></span>
+            </h3>
+            <p>Creates a new window with standard properties, and adds it to fit the given window (if any is given).</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">pParent</td>
+                  <td>The parent window where the new window will be added. It can be nullptr.</td>
+                </tr>
+              </tbody>
+            </table>
+<p>The properties are the following:</p><ul><li>ControlID = 0</li><li>CommandID = 0</li><li>ShadeColor = 0xFFFFFFFF</li><li>FillColor = 0x00FFFFFF</li><li>Area = (0, 0, 100, 100), except if a parent is given; then it fits the parent.</li><li>kWinFlagVisible = true</li><li>kWinFlagEnabled = true</li><li>kWinFlagIgnoreMouse = false</li></ul>
+          </div></section>
+          <section class="m-doc-details" id="a1280eb1d381dc57a25168a109a04f1a6"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">static void UTFWin::<wbr />IWindow::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a1280eb1d381dc57a25168a109a04f1a6" class="m-doc-self">SetOpacity</a>(</span><span class="m-doc-wrap"><a href="class_u_t_f_win_1_1_i_window.html" class="m-doc">IWindow</a>* pWindow,
+              float fOpacity)</span></span>
+            </h3>
+            <p>Changes the opacity (opposite of transparency) of a window, which is done modifying the &#x27;alpha&#x27; value of the shade color.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">pWindow</td>
+                  <td>The component whose opacity must be changed.</td>
+                </tr>
+                <tr>
+                  <td>fOpacity</td>
+                  <td>How opaque the window must be. This follows the rule alpha = 1 - fOpacity.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="ae22ac8b8615f72771bf6b2818030e24c"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"><a href="class_u_t_f_win_1_1_i_window.html" class="m-doc">IWindow</a>* UTFWin::<wbr />IWindow::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ae22ac8b8615f72771bf6b2818030e24c" class="m-doc-self">GetParent</a>(</span><span class="m-doc-wrap">) const <span class="m-label m-warning">pure virtual</span></span></span>
+            </h3>
+            <p>Returns the parent <a href="class_u_t_f_win_1_1_i_window.html" class="m-doc">IWindow</a> of this window, or nullptr if it has no parent window.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <tfoot>
+                <tr>
+                  <th style="width: 1%">Returns</th>
+                  <td>A pointer to the <a href="class_u_t_f_win_1_1_i_window.html" class="m-doc">IWindow</a> parent of this window, or nullptr if there is none.</td>
+                </tr>
+              </tfoot>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="a14381ee6b941eb40c61224821debcec6"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"><a href="class_u_t_f_win_1_1_i_window_manager.html" class="m-doc">IWindowManager</a>* UTFWin::<wbr />IWindow::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a14381ee6b941eb40c61224821debcec6" class="m-doc-self">GetWindowManager</a>(</span><span class="m-doc-wrap">) const <span class="m-label m-warning">pure virtual</span></span></span>
+            </h3>
+            <p>Returns the WindowManager that is operating on this window.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <tfoot>
+                <tr>
+                  <th style="width: 1%">Returns</th>
+                  <td>A pointer to the WindowManager being used in this window.</td>
+                </tr>
+              </tfoot>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="ae01c16871a826cb033c1e9de73591a54"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">uint32_t UTFWin::<wbr />IWindow::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ae01c16871a826cb033c1e9de73591a54" class="m-doc-self">GetControlID</a>(</span><span class="m-doc-wrap">) const <span class="m-label m-warning">pure virtual</span></span></span>
+            </h3>
+            <p>Sets the unique ID of this object.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <tfoot>
+                <tr>
+                  <th style="width: 1%">Returns</th>
+                  <td>The value of the &#x27;controlID&#x27; property.</td>
+                </tr>
+              </tfoot>
+            </table>
+<p>This ID is used to identfy windows, as it is the one used by <a href="class_u_t_f_win_1_1_i_window.html#a652f5fb0db920dedcbb8d683bb37ac69" class="m-doc">FindWindowByID()</a>. This ID can also be used on message handling, to check what window raised the message.</p>
+          </div></section>
+          <section class="m-doc-details" id="a6abd167eb9ecaee01e11696629801cbb"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">uint32_t UTFWin::<wbr />IWindow::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a6abd167eb9ecaee01e11696629801cbb" class="m-doc-self">GetCommandID</a>(</span><span class="m-doc-wrap">) const <span class="m-label m-warning">pure virtual</span></span></span>
+            </h3>
+            <p>Get the message ID sent by this window.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <tfoot>
+                <tr>
+                  <th style="width: 1%">Returns</th>
+                  <td>The value of the &#x27;commandID&#x27; property.</td>
+                </tr>
+              </tfoot>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="af083ac2e7a61a76db1cd74f156aff77e"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"><a href="namespace_u_t_f_win.html#ad55bb2756e25b6e36f38b47e0ca8e107" class="m-doc">WindowFlags</a> UTFWin::<wbr />IWindow::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#af083ac2e7a61a76db1cd74f156aff77e" class="m-doc-self">GetFlags</a>(</span><span class="m-doc-wrap">) const <span class="m-label m-warning">pure virtual</span></span></span>
+            </h3>
+            <p>Gets the current window flags.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <tfoot>
+                <tr>
+                  <th style="width: 1%">Returns</th>
+                  <td>The value of the &#x27;flags&#x27; property.</td>
+                </tr>
+              </tfoot>
+            </table>
+<p>This can be used, for example, to check if a window is visible:</p><pre class="m-code"><span class="n">IWindow</span><span class="o">*</span> <span class="n">pWindow</span> <span class="o">=</span> <span class="p">....;</span>
+
+<span class="k">if</span> <span class="p">(</span><span class="n">pWindow</span><span class="o">-&gt;</span><span class="n">GetFlags</span><span class="p">()</span> <span class="o">&amp;</span> <span class="n">kWinFlagVisible</span><span class="p">)</span> <span class="p">...</span></pre>
+          </div></section>
+          <section class="m-doc-details" id="a1c32764e719342e31fb57fd547f73aaa"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">int UTFWin::<wbr />IWindow::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a1c32764e719342e31fb57fd547f73aaa" class="m-doc-self">GetState</a>(</span><span class="m-doc-wrap">) const <span class="m-label m-warning">pure virtual</span></span></span>
+            </h3>
+            <p>Gets the current state (selected, pressed, mouse hover, etc) of this window.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <tfoot>
+                <tr>
+                  <th style="width: 1%">Returns</th>
+                  <td>The value of the &#x27;state&#x27; property.</td>
+                </tr>
+              </tfoot>
+            </table>
+<p>Only certain types use this, like buttons.</p>
+          </div></section>
+          <section class="m-doc-details" id="afc02ebb43a7a6e67a9ef594b6291d500"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"><a href="struct_math_1_1_color.html" class="m-doc">Math::<wbr />Color</a> UTFWin::<wbr />IWindow::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#afc02ebb43a7a6e67a9ef594b6291d500" class="m-doc-self">GetShadeColor</a>(</span><span class="m-doc-wrap">) const <span class="m-label m-warning">pure virtual</span></span></span>
+            </h3>
+            <p>Returns the color modulation value.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <tfoot>
+                <tr>
+                  <th style="width: 1%">Returns</th>
+                  <td>The integer color representation of the value of the &#x27;shadeColor&#x27; property.</td>
+                </tr>
+              </tfoot>
+            </table>
+<p>This color acts as a tint: after the window is painted, it gets multiplied by this color.</p>
+          </div></section>
+          <section class="m-doc-details" id="a59f43656ede62d474f7d3926d5db4a29"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">const <a href="union_math_1_1_rectangle.html" class="m-doc">Math::<wbr />Rectangle</a>&amp; UTFWin::<wbr />IWindow::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a59f43656ede62d474f7d3926d5db4a29" class="m-doc-self">GetArea</a>(</span><span class="m-doc-wrap">) const <span class="m-label m-warning">pure virtual</span></span></span>
+            </h3>
+            <p>Gets the rectangular extent of this window, relative to the window&#x27;s parent.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <tfoot>
+                <tr>
+                  <th style="width: 1%">Returns</th>
+                  <td>The area of this window, in screen coordinates.</td>
+                </tr>
+              </tfoot>
+            </table>
+<p>Note this is the &#x27;area&#x27; property, but the real area of the window might be different depending on its parent and the IWinProcs operating in this window.</p>
+          </div></section>
+          <section class="m-doc-details" id="a739b661eb604647cb5e29255d96ff1c0"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">const <a href="union_math_1_1_rectangle.html" class="m-doc">Math::<wbr />Rectangle</a>&amp; UTFWin::<wbr />IWindow::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a739b661eb604647cb5e29255d96ff1c0" class="m-doc-self">GetRealArea</a>(</span><span class="m-doc-wrap">) const <span class="m-label m-warning">pure virtual</span></span></span>
+            </h3>
+            <p>Gets the real rectangular extent of this window, in window coordinates.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <tfoot>
+                <tr>
+                  <th style="width: 1%">Returns</th>
+                  <td>The real <a href="union_math_1_1_rectangle.html" class="m-doc">Math::<wbr />Rectangle</a> area of this window, in screen coordinates.</td>
+                </tr>
+              </tfoot>
+            </table>
+<p>This has all the IWinProcs and parent position applied, so this is the real area of the window that gets painted onto the screen.</p>
+          </div></section>
+          <section class="m-doc-details" id="a91eaa54e8444fc2b6f767430ed5178ef"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">const char16_t* UTFWin::<wbr />IWindow::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a91eaa54e8444fc2b6f767430ed5178ef" class="m-doc-self">GetCaption</a>(</span><span class="m-doc-wrap">) const <span class="m-label m-warning">pure virtual</span></span></span>
+            </h3>
+            <p>Returns the text contents or title of the window.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <tfoot>
+                <tr>
+                  <th style="width: 1%">Returns</th>
+                  <td>The char16_t* caption used in this window.</td>
+                </tr>
+              </tfoot>
+            </table>
+<p>This value might be used or not depending on the implementation and type of window.</p>
+          </div></section>
+          <section class="m-doc-details" id="ae5a7da7259456720dd286f50aa1e73fa"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">uint32_t UTFWin::<wbr />IWindow::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ae5a7da7259456720dd286f50aa1e73fa" class="m-doc-self">GetTextFontID</a>(</span><span class="m-doc-wrap">) const <span class="m-label m-warning">pure virtual</span></span></span>
+            </h3>
+            <p>Returns the text font style ID used in this window.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <tfoot>
+                <tr>
+                  <th style="width: 1%">Returns</th>
+                  <td>The text font ID used in this window.</td>
+                </tr>
+              </tfoot>
+            </table>
+<p>This value might be used or not depending on the implementation and type of window.</p>
+          </div></section>
+          <section class="m-doc-details" id="a909f7fc24401a72c4197b37805a198ce"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">void UTFWin::<wbr />IWindow::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a909f7fc24401a72c4197b37805a198ce" class="m-doc-self">SetControlID</a>(</span><span class="m-doc-wrap">uint32_t controlID) <span class="m-label m-warning">pure virtual</span></span></span>
+            </h3>
+            <p>Sets the unique ID of this object.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">controlID</td>
+                  <td>The new value of the &#x27;controlID&#x27; property.</td>
+                </tr>
+              </tbody>
+            </table>
+<p>This ID is used to identfy windows, as it is the one used by <a href="class_u_t_f_win_1_1_i_window.html#a652f5fb0db920dedcbb8d683bb37ac69" class="m-doc">FindWindowByID()</a>. This ID can also be used on message handling, to check what window raised the message.</p>
+          </div></section>
+          <section class="m-doc-details" id="a6728ac7212471448cb9f251f30469361"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">void UTFWin::<wbr />IWindow::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a6728ac7212471448cb9f251f30469361" class="m-doc-self">SetCommandID</a>(</span><span class="m-doc-wrap">uint32_t commandID) <span class="m-label m-warning">pure virtual</span></span></span>
+            </h3>
+            <p>Set the message ID sent by this window.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">commandID</td>
+                  <td>The new value of the &#x27;commandID&#x27; property.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="a6d959614f614594add454590ff66e4af"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">void UTFWin::<wbr />IWindow::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a6d959614f614594add454590ff66e4af" class="m-doc-self">SetState</a>(</span><span class="m-doc-wrap">int state) <span class="m-label m-warning">pure virtual</span></span></span>
+            </h3>
+            <p>Sets the current state (selected, pressed, mouse hover, etc) of this window.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">state</td>
+                  <td>The new value of the &#x27;state&#x27; property.</td>
+                </tr>
+              </tbody>
+            </table>
+<p>Only certain types use this, like buttons. This will generate a StateChanged message.</p>
+          </div></section>
+          <section class="m-doc-details" id="a26cd6fd5e2ece3207ea6693a8b7ad4aa"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">void UTFWin::<wbr />IWindow::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a26cd6fd5e2ece3207ea6693a8b7ad4aa" class="m-doc-self">SetShadeColor</a>(</span><span class="m-doc-wrap"><a href="struct_math_1_1_color.html" class="m-doc">Color</a> color) <span class="m-label m-warning">pure virtual</span></span></span>
+            </h3>
+            <p>Returns the color modulation value.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">color</td>
+                  <td>The color to use as the &#x27;shadeColor&#x27; property.</td>
+                </tr>
+              </tbody>
+            </table>
+<p>This color acts as a tint: after the window is painted, it gets multiplied by this color.</p>
+          </div></section>
+          <section class="m-doc-details" id="a6540bc683d45f8367d67e93be0bc12f2"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">void UTFWin::<wbr />IWindow::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a6540bc683d45f8367d67e93be0bc12f2" class="m-doc-self">SetArea</a>(</span><span class="m-doc-wrap">const <a href="union_math_1_1_rectangle.html" class="m-doc">Math::<wbr />Rectangle</a>&amp; area) <span class="m-label m-warning">pure virtual</span></span></span>
+            </h3>
+            <p>Sets the rectangular extent of this window.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">area</td>
+                  <td>The new value of the &#x27;area&#x27; property.</td>
+                </tr>
+              </tbody>
+            </table>
+<p>Note that this will only affect the &#x27;area&#x27; property of the window; the real area might use these values differently depending on the <a href="class_u_t_f_win_1_1_i_win_proc.html" class="m-doc">IWinProc</a> objects operating on this window (e.g. <a href="class_u_t_f_win_1_1_simple_layout.html" class="m-doc">SimpleLayout</a>). Calling this method effectively calls the <a href="class_u_t_f_win_1_1_i_window.html#ab5cfbb8a424612d533c292f02b14b306" class="m-doc">Revalidate()</a> method, which ensures the real area of the window is updated using the new values.</p>
+          </div></section>
+          <section class="m-doc-details" id="aa7b75aeb286563e27ce42834d2dd2043"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">void UTFWin::<wbr />IWindow::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#aa7b75aeb286563e27ce42834d2dd2043" class="m-doc-self">SetLocation</a>(</span><span class="m-doc-wrap">float fX,
+              float fY) <span class="m-label m-warning">pure virtual</span></span></span>
+            </h3>
+            <p>Sets the location of this window, relative to its parent.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">fX</td>
+                  <td>The X coordinate to use in the &#x27;area&#x27; property.</td>
+                </tr>
+                <tr>
+                  <td>fY</td>
+                  <td>The Y coordinate to use in the &#x27;area&#x27; property.</td>
+                </tr>
+              </tbody>
+            </table>
+<p>Note that this will only affect the &#x27;area&#x27; property of the window; the real area might use these values differently depending on the <a href="class_u_t_f_win_1_1_i_win_proc.html" class="m-doc">IWinProc</a> objects operating on this window (e.g. <a href="class_u_t_f_win_1_1_simple_layout.html" class="m-doc">SimpleLayout</a>). Calling this method effectively calls the <a href="class_u_t_f_win_1_1_i_window.html#ab5cfbb8a424612d533c292f02b14b306" class="m-doc">Revalidate()</a> method, which ensures the real area of the window is updated using the new values.</p>
+          </div></section>
+          <section class="m-doc-details" id="a6a86562e7c1df46c77da4eb7e43c7c7f"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">void UTFWin::<wbr />IWindow::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a6a86562e7c1df46c77da4eb7e43c7c7f" class="m-doc-self">SetSize</a>(</span><span class="m-doc-wrap">float fWidth,
+              float fHeight) <span class="m-label m-warning">pure virtual</span></span></span>
+            </h3>
+            <p>Assigns the width and height of this window.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">fWidth</td>
+                  <td>The width to use in the &#x27;area&#x27; property.</td>
+                </tr>
+                <tr>
+                  <td>fHeight</td>
+                  <td>The height to use in the &#x27;area&#x27; property.</td>
+                </tr>
+              </tbody>
+            </table>
+<p>Note that this will only affect the &#x27;area&#x27; property of the window; the real area might use these values differently depending on the <a href="class_u_t_f_win_1_1_i_win_proc.html" class="m-doc">IWinProc</a> objects operating on this window (e.g. <a href="class_u_t_f_win_1_1_simple_layout.html" class="m-doc">SimpleLayout</a>). Calling this method effectively calls the <a href="class_u_t_f_win_1_1_i_window.html#ab5cfbb8a424612d533c292f02b14b306" class="m-doc">Revalidate()</a> method, which ensures the real area of the window is updated using the new values.</p>
+          </div></section>
+          <section class="m-doc-details" id="a7aaef740fefa2abc5c02f81ef04891fb"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">void UTFWin::<wbr />IWindow::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a7aaef740fefa2abc5c02f81ef04891fb" class="m-doc-self">SetLayoutArea</a>(</span><span class="m-doc-wrap">const <a href="union_math_1_1_rectangle.html" class="m-doc">Math::<wbr />Rectangle</a>&amp; layoutArea) <span class="m-label m-warning">pure virtual</span></span></span>
+            </h3>
+            <p>Sets the area that this component should have, relative to its parent window, after all layout styles are applied.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">layoutArea</td>
+                  <td>The area this window should have.</td>
+                </tr>
+              </tbody>
+            </table>
+<p>This will call the <a href="class_u_t_f_win_1_1_i_layout_style.html#a219bde4cfe1e13e90f8a7f929daa2d87" class="m-doc">ILayoutStyle::<wbr />RevertLayout()</a> method on all the layout styles in this window, starting with the last one (so the first layout applied will be the last one to be reverted), and then SetArea is called. This ensures that the given layoutArea parameter will be the real area of this window, but relative to the parent.</p>
+          </div></section>
+          <section class="m-doc-details" id="aaffad51924a4293e376593e9ab4b706e"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">void UTFWin::<wbr />IWindow::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#aaffad51924a4293e376593e9ab4b706e" class="m-doc-self">SetLayoutLocation</a>(</span><span class="m-doc-wrap">float fX,
+              float fY) <span class="m-label m-warning">pure virtual</span></span></span>
+            </h3>
+            <p>Assigns the location, relative to the parent window, that this window should have after all layouts are applied.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">fX</td>
+                  <td>The X coordinate, relative to the parent, that this window&#x27;s location should have.</td>
+                </tr>
+                <tr>
+                  <td>fY</td>
+                  <td>The Y coordinate, relative to the parent, that this window&#x27;s location should have.</td>
+                </tr>
+              </tbody>
+            </table>
+<p>This will call the <a href="class_u_t_f_win_1_1_i_layout_style.html#a219bde4cfe1e13e90f8a7f929daa2d87" class="m-doc">ILayoutStyle::<wbr />RevertLayout()</a> method on all the layout styles in this window, starting with the last one (so the first layout applied will be the last one to be reverted), and then SetArea is called. This ensures that the given location parameters will be the real loctions of this window (relative to its parent). Calling this method effectively calls the <a href="class_u_t_f_win_1_1_i_window.html#ab5cfbb8a424612d533c292f02b14b306" class="m-doc">Revalidate()</a> method, which ensures the real area of the window is updated using the new values.</p>
+          </div></section>
+          <section class="m-doc-details" id="a17a65e1f7f55941e075cbd4abf1e7dab"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">void UTFWin::<wbr />IWindow::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a17a65e1f7f55941e075cbd4abf1e7dab" class="m-doc-self">SetLayoutSize</a>(</span><span class="m-doc-wrap">float fWidth,
+              float fHeight) <span class="m-label m-warning">pure virtual</span></span></span>
+            </h3>
+            <p>Assigns the width and height that this window should have after all layouts are applied.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">fWidth</td>
+                  <td>The width this window should have.</td>
+                </tr>
+                <tr>
+                  <td>fHeight</td>
+                  <td>The height this window should have.</td>
+                </tr>
+              </tbody>
+            </table>
+<p>This will call the <a href="class_u_t_f_win_1_1_i_layout_style.html#a219bde4cfe1e13e90f8a7f929daa2d87" class="m-doc">ILayoutStyle::<wbr />RevertLayout()</a> method on all the layout styles in this window, starting with the last one (so the first layout applied will be the last one to be reverted), and then SetArea is called. This ensures that the given width and height parameters will be the real dimensions of this window. Calling this method effectively calls the <a href="class_u_t_f_win_1_1_i_window.html#ab5cfbb8a424612d533c292f02b14b306" class="m-doc">Revalidate()</a> method, which ensures the real area of the window is updated using the new values.</p>
+          </div></section>
+          <section class="m-doc-details" id="a8b2cadb73487b7bea5584474c73d079a"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">void UTFWin::<wbr />IWindow::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a8b2cadb73487b7bea5584474c73d079a" class="m-doc-self">SetFlag</a>(</span><span class="m-doc-wrap"><a href="namespace_u_t_f_win.html#ad55bb2756e25b6e36f38b47e0ca8e107" class="m-doc">WindowFlags</a> nFlag,
+              bool bValue) <span class="m-label m-warning">pure virtual</span></span></span>
+            </h3>
+            <p>Assigns the given value to the specified window flag.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">nFlag</td>
+                  <td>The window flag whose value will be changed.</td>
+                </tr>
+                <tr>
+                  <td>bValue</td>
+                  <td>The value that will be assigned to the flag.</td>
+                </tr>
+              </tbody>
+            </table>
+<p>This can be used, for example, to toggle visibility:</p><pre class="m-code"><span class="n">IWindow</span><span class="o">*</span> <span class="n">pWindow</span> <span class="o">=</span> <span class="p">....;</span>
+
+<span class="n">pWindow</span><span class="o">-&gt;</span><span class="n">SetFlag</span><span class="p">(</span><span class="n">kWinFlagVisible</span><span class="p">,</span> <span class="nb">false</span><span class="p">);</span>  <span class="c1">// hide this window</span></pre>
+          </div></section>
+          <section class="m-doc-details" id="ae098a66b03067951bf14806662575988"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">void UTFWin::<wbr />IWindow::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ae098a66b03067951bf14806662575988" class="m-doc-self">SetCaption</a>(</span><span class="m-doc-wrap">const char16_t* pCaption) <span class="m-label m-warning">pure virtual</span></span></span>
+            </h3>
+            <p>Assigns the text contents or title of the window.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">pCaption</td>
+                  <td>The text to be used as caption.</td>
+                </tr>
+              </tbody>
+            </table>
+<p>This value might be used or not depending on the implementation and type of window.</p>
+          </div></section>
+          <section class="m-doc-details" id="a2594be799f02954a070a08cfd539e476"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">void UTFWin::<wbr />IWindow::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a2594be799f02954a070a08cfd539e476" class="m-doc-self">SetTextFontID</a>(</span><span class="m-doc-wrap">uint32_t styleID) <span class="m-label m-warning">pure virtual</span></span></span>
+            </h3>
+            <p>Sets the text font style ID used in this window.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">styleID</td>
+                  <td>The ID of the text font to use.</td>
+                </tr>
+              </tbody>
+            </table>
+<p>This value might be used or not depending on the implementation and type of window. This method will not update the current text font.</p>
+          </div></section>
+          <section class="m-doc-details" id="ae38a6738b1a49087ab6474379b24e08c"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"><a href="struct_math_1_1_color.html" class="m-doc">Color</a> UTFWin::<wbr />IWindow::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ae38a6738b1a49087ab6474379b24e08c" class="m-doc-self">GetFillColor</a>(</span><span class="m-doc-wrap">) const <span class="m-label m-warning">pure virtual</span></span></span>
+            </h3>
+            <p>Returns the fill color of this window.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <tfoot>
+                <tr>
+                  <th style="width: 1%">Returns</th>
+                  <td>The integer color representation of the value of the &#x27;fillColor&#x27; property.</td>
+                </tr>
+              </tfoot>
+            </table>
+<p>The fill color acts as a background color: when rendering the window, the area will be filled with the fill color and then the fill drawable will be drawn on top of it.</p>
+          </div></section>
+          <section class="m-doc-details" id="aa319e186d6627e292038e12b562d10e5"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"><a href="class_u_t_f_win_1_1_i_drawable.html" class="m-doc">IDrawable</a>* UTFWin::<wbr />IWindow::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#aa319e186d6627e292038e12b562d10e5" class="m-doc-self">GetDrawable</a>(</span><span class="m-doc-wrap">) const <span class="m-label m-warning">pure virtual</span></span></span>
+            </h3>
+            <p>Returns the fill drawable of this window.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <tfoot>
+                <tr>
+                  <th style="width: 1%">Returns</th>
+                  <td>The drawable used in this window.</td>
+                </tr>
+              </tfoot>
+            </table>
+<p>When rendering the window, the area will be filled with the fill color and then the fill drawable will be drawn on top of it.</p>
+          </div></section>
+          <section class="m-doc-details" id="a0b22a181552180dd9ee604f44a2a26a2"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">void UTFWin::<wbr />IWindow::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a0b22a181552180dd9ee604f44a2a26a2" class="m-doc-self">SetFillColor</a>(</span><span class="m-doc-wrap"><a href="struct_math_1_1_color.html" class="m-doc">Color</a> color) <span class="m-label m-warning">pure virtual</span></span></span>
+            </h3>
+            <p>Sets the fill color of this window.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">color</td>
+                  <td>The color to use as the &#x27;fillColor&#x27; property.</td>
+                </tr>
+              </tbody>
+            </table>
+<p>The fill color acts as a background color: when rendering the window, the area will be filled with the fill color and then the fill drawable will be drawn on top of it.</p>
+          </div></section>
+          <section class="m-doc-details" id="ad3f551125a2f0f8250d1fc3f7af1f407"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">void UTFWin::<wbr />IWindow::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ad3f551125a2f0f8250d1fc3f7af1f407" class="m-doc-self">SetDrawable</a>(</span><span class="m-doc-wrap"><a href="class_u_t_f_win_1_1_i_drawable.html" class="m-doc">IDrawable</a>* drawable) <span class="m-label m-warning">pure virtual</span></span></span>
+            </h3>
+            <p>Sets the fill drawable of this window.</p>
+<p>When rendering the window, the area will be filled with the fill color and then the fill drawable will be drawn on top of it.</p>
+          </div></section>
+          <section class="m-doc-details" id="adec1df64baaece43b055f48d6c80a463"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">IWindowList_t::iterator UTFWin::<wbr />IWindow::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#adec1df64baaece43b055f48d6c80a463" class="m-doc-self">GetChildrenBegin</a>(</span><span class="m-doc-wrap">) <span class="m-label m-warning">pure virtual</span></span></span>
+            </h3>
+            <p>Returns the begin iterator of the list of children windows contained in this window.</p>
+<p>Pair it with <a href="class_u_t_f_win_1_1_i_window.html#ac2db1bfa1f91b98426ee463c25d56ae2" class="m-doc">GetChildrenEnd()</a> to iterate through the children. Children windows are listed according to their Z-index; that is, the first children is the one on front, and the last children is the one on the bottom.</p>
+          </div></section>
+          <section class="m-doc-details" id="ac2db1bfa1f91b98426ee463c25d56ae2"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">IWindowList_t::iterator UTFWin::<wbr />IWindow::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ac2db1bfa1f91b98426ee463c25d56ae2" class="m-doc-self">GetChildrenEnd</a>(</span><span class="m-doc-wrap">) <span class="m-label m-warning">pure virtual</span></span></span>
+            </h3>
+            <p>Returns the end iterator of the list of children windows contained in this window.</p>
+<p>Pair it with <a href="class_u_t_f_win_1_1_i_window.html#adec1df64baaece43b055f48d6c80a463" class="m-doc">GetChildrenBegin()</a> to iterate through the children. Children windows are listed according to their Z-index; that is, the first children is the one on front, and the last children is the one on the bottom.</p>
+          </div></section>
+          <section class="m-doc-details" id="a2fb770a26457a1ce080ef49ef34b13ba"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">IWindowList_t::iterator UTFWin::<wbr />IWindow::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a2fb770a26457a1ce080ef49ef34b13ba" class="m-doc-self">LocateChild</a>(</span><span class="m-doc-wrap">const <a href="class_u_t_f_win_1_1_i_window.html" class="m-doc">IWindow</a>* pChild) const <span class="m-label m-warning">pure virtual</span></span></span>
+            </h3>
+            <p>Converts a pointer to a child window in the list back to an iterator, or returns end() if it is not part of the children list.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">pChild</td>
+                  <td>The <a href="class_u_t_f_win_1_1_i_window.html" class="m-doc">IWindow</a> whose next sibling will be returned.</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>Returns</th>
+                  <td>The iterator to the next sibling of pChild.</td>
+                </tr>
+              </tfoot>
+            </table>
+<p>This can be used to check if a window is a direct child of this window, using &quot;LocateChild(pChild) != <a href="class_u_t_f_win_1_1_i_window.html#ac2db1bfa1f91b98426ee463c25d56ae2" class="m-doc">GetChildrenEnd()</a></p>
+          </div></section>
+          <section class="m-doc-details" id="a604d6905f1a874963ce17a7ae708a298"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">void UTFWin::<wbr />IWindow::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a604d6905f1a874963ce17a7ae708a298" class="m-doc-self">AddWindow</a>(</span><span class="m-doc-wrap"><a href="class_u_t_f_win_1_1_i_window.html" class="m-doc">IWindow</a>* pWindow) <span class="m-label m-warning">pure virtual</span></span></span>
+            </h3>
+            <p>Adds the given window to this <a href="class_u_t_f_win_1_1_i_window.html" class="m-doc">IWindow</a>&#x27;s children.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">pWindow</td>
+                  <td>The window to add to this object&#x27;s children.</td>
+                </tr>
+              </tbody>
+            </table>
+<p>The window will be added last, so it will have the lowest Z-index. The parent of pWindow will be set to this object.</p>
+          </div></section>
+          <section class="m-doc-details" id="adde22640bbf67690dd75b82927edfedf"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">void UTFWin::<wbr />IWindow::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#adde22640bbf67690dd75b82927edfedf" class="m-doc-self">RemoveWindow</a>(</span><span class="m-doc-wrap"><a href="class_u_t_f_win_1_1_i_window.html" class="m-doc">IWindow</a>* pWindow) <span class="m-label m-warning">pure virtual</span></span></span>
+            </h3>
+            <p>Removes the given window from this <a href="class_u_t_f_win_1_1_i_window.html" class="m-doc">IWindow</a>&#x27;s children.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">pWindow</td>
+                  <td>The window to remove from this object&#x27;s children.</td>
+                </tr>
+              </tbody>
+            </table>
+<p>pWindow will be removed from its parent hierarchy even if its parent is not this object. The parent of pWindow will be set to nullptr.</p>
+          </div></section>
+          <section class="m-doc-details" id="a2605ec91d8a94cad7962e8c014c61fea"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">void UTFWin::<wbr />IWindow::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a2605ec91d8a94cad7962e8c014c61fea" class="m-doc-self">DisposeWindowFamily</a>(</span><span class="m-doc-wrap"><a href="class_u_t_f_win_1_1_i_window.html" class="m-doc">IWindow</a>* pChildWindow) <span class="m-label m-warning">pure virtual</span></span></span>
+            </h3>
+            <p>Disposes the given window and all its hierarchy.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">pChildWindow</td>
+                  <td>The <a href="class_u_t_f_win_1_1_i_window.html" class="m-doc">IWindow</a> to dispose.</td>
+                </tr>
+              </tbody>
+            </table>
+<p>If pChildWindow is a child of this window, it will be removed from it. The pChildWindow hierarchy will be disposed even if it is not a child of this window.</p>
+          </div></section>
+          <section class="m-doc-details" id="a1c7f58098fa9f2c3bc02f2917efcbf08"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">void UTFWin::<wbr />IWindow::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a1c7f58098fa9f2c3bc02f2917efcbf08" class="m-doc-self">DisposeAllWindowFamilies</a>(</span><span class="m-doc-wrap">) <span class="m-label m-warning">pure virtual</span></span></span>
+            </h3>
+            <p>Disposes all the children windows and all their hierarchy.</p>
+<p>After this method is called, this window will not have any children.</p>
+          </div></section>
+          <section class="m-doc-details" id="aec5459b14ed65bf98f8b858293775f07"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">void UTFWin::<wbr />IWindow::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#aec5459b14ed65bf98f8b858293775f07" class="m-doc-self">BringToFront</a>(</span><span class="m-doc-wrap"><a href="class_u_t_f_win_1_1_i_window.html" class="m-doc">IWindow</a>* pWindow) <span class="m-label m-warning">pure virtual</span></span></span>
+            </h3>
+            <p>Moves the specified child window at the front of the rest of its siblings, so it is the last one to be rendered.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">pWindow</td>
+                  <td>The child window to bring to the front.</td>
+                </tr>
+              </tbody>
+            </table>
+<p>This is the equivalent to setting the Z-index to the highest. Note that the window will remain behind of windows with the flag kWinFlagAlwaysInFront set to true.</p>
+          </div></section>
+          <section class="m-doc-details" id="a20d6b657b0697384c2f582363182682c"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">void UTFWin::<wbr />IWindow::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a20d6b657b0697384c2f582363182682c" class="m-doc-self">SendToBack</a>(</span><span class="m-doc-wrap"><a href="class_u_t_f_win_1_1_i_window.html" class="m-doc">IWindow</a>* pWindow) <span class="m-label m-warning">pure virtual</span></span></span>
+            </h3>
+            <p>Moves the specified child window at the back of the rest of its siblings, so it is the first one to be rendered.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">pWindow</td>
+                  <td>The child window to send to the back.</td>
+                </tr>
+              </tbody>
+            </table>
+<p>This is the equivalent to setting the Z-index to the lowest. Note that the window will remain behind of windows with the flag kWinFlagAlwaysInFront set to true.</p>
+          </div></section>
+          <section class="m-doc-details" id="a652f5fb0db920dedcbb8d683bb37ac69"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"><a href="class_u_t_f_win_1_1_i_window.html" class="m-doc">IWindow</a>* UTFWin::<wbr />IWindow::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a652f5fb0db920dedcbb8d683bb37ac69" class="m-doc-self">FindWindowByID</a>(</span><span class="m-doc-wrap">uint32_t controlID,
+              bool bRecursive = true) <span class="m-label m-warning">pure virtual</span></span></span>
+            </h3>
+            <p>Returns the first child window that has the given controlID.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">controlID</td>
+                  <td>The controlID of the window to find.</td>
+                </tr>
+                <tr>
+                  <td>bRecursive</td>
+                  <td>Whether the children hierarchy should be checked as well, true by default.</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>Returns</th>
+                  <td>The first window in the hierarchy that has the given controlID, or nullptr if there is no match.</td>
+                </tr>
+              </tfoot>
+            </table>
+<p>By default, this also checks on the children&#x27; children, so the controlID is searched in all the window hierarchy.</p>
+          </div></section>
+          <section class="m-doc-details" id="a7becc88b51929154d8c7cf8b1cd6bd03"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"><a href="class_u_t_f_win_1_1_i_window.html" class="m-doc">IWindow</a>* UTFWin::<wbr />IWindow::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a7becc88b51929154d8c7cf8b1cd6bd03" class="m-doc-self">FindWindowTypeByID</a>(</span><span class="m-doc-wrap">uint32_t controlID,
+              uint32_t type,
+              bool bRecursive = true) <span class="m-label m-warning">pure virtual</span></span></span>
+            </h3>
+            <p>Returns the first child window that has the given controlID and is of the given type.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">controlID</td>
+                  <td>The controlID of the window to find.</td>
+                </tr>
+                <tr>
+                  <td>type</td>
+                  <td>The type of the window to find. It will be used calling Cast(type) on the match.</td>
+                </tr>
+                <tr>
+                  <td>bRecursive</td>
+                  <td>Whether the children hierarchy should be checked as well, true by default.</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>Returns</th>
+                  <td>The first window in the hierarchy that has the given controlID and type, or nullptr if there is no match.</td>
+                </tr>
+              </tfoot>
+            </table>
+<p>The type is something like <a href="class_u_t_f_win_1_1_i_button.html#a491fb9b2fcf65c849d853efd727ded7b" class="m-doc">WinButton::<wbr />TYPE</a>, so it is safe to assume that the returned type will be a <a href="class_u_t_f_win_1_1_win_button.html" class="m-doc">WinButton</a> in this case. If a window with the given controlID is found but calling Cast(type) on it returns nullptr, nullptr will be returned (so it will stop searching). By default, this also checks on the children&#x27; children, so the controlID is searched in all the window hierarchy.</p>
+          </div></section>
+          <section class="m-doc-details" id="a7bc36eefc6fb9036857316250b1a5ed0"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">bool UTFWin::<wbr />IWindow::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a7bc36eefc6fb9036857316250b1a5ed0" class="m-doc-self">IsAncestorOf</a>(</span><span class="m-doc-wrap">const <a href="class_u_t_f_win_1_1_i_window.html" class="m-doc">IWindow</a>* pChildWindow) <span class="m-label m-warning">pure virtual</span></span></span>
+            </h3>
+            <p>Checks if the given window is contained in the component hierarchy of this <a href="class_u_t_f_win_1_1_i_window.html" class="m-doc">IWindow</a>.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">pChildWindow</td>
+                  <td>The child window to check.</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>Returns</th>
+                  <td>True if pChildWindow is contained in the hierarchy of this window, false otherwise.</td>
+                </tr>
+              </tfoot>
+            </table>
+<p>All the hierarchy will be checked, so the function can return true even if this window is not a direct parent of pChildWindow.</p>
+          </div></section>
+          <section class="m-doc-details" id="a5b5bd37502956d7eb7343d956b0bd2ea"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">void UTFWin::<wbr />IWindow::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a5b5bd37502956d7eb7343d956b0bd2ea" class="m-doc-self">AddWinProc</a>(</span><span class="m-doc-wrap"><a href="class_u_t_f_win_1_1_i_win_proc.html" class="m-doc">IWinProc</a>* pWinProc) <span class="m-label m-warning">pure virtual</span></span></span>
+            </h3>
+            <p>Adds the given <a href="class_u_t_f_win_1_1_i_win_proc.html" class="m-doc">IWinProc</a> at the end of this window&#x27;s list.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">pWinProc</td>
+                  <td>The <a href="class_u_t_f_win_1_1_i_win_proc.html" class="m-doc">IWinProc</a> to add.</td>
+                </tr>
+              </tbody>
+            </table>
+<p>IWinProcs are called when a message is received in the window. Also some of them might be called on layout-related methods. Some IWinProcs can also act as effects.</p>
+          </div></section>
+          <section class="m-doc-details" id="af5f2616c6d4324e65da2909865fccc59"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">void UTFWin::<wbr />IWindow::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#af5f2616c6d4324e65da2909865fccc59" class="m-doc-self">RemoveWinProc</a>(</span><span class="m-doc-wrap"><a href="class_u_t_f_win_1_1_i_win_proc.html" class="m-doc">IWinProc</a>* pWinProc) <span class="m-label m-warning">pure virtual</span></span></span>
+            </h3>
+            <p>Removes the given <a href="class_u_t_f_win_1_1_i_win_proc.html" class="m-doc">IWinProc</a> from this window&#x27;s list.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">pWinProc</td>
+                  <td>The <a href="class_u_t_f_win_1_1_i_win_proc.html" class="m-doc">IWinProc</a> to remove from this window.</td>
+                </tr>
+              </tbody>
+            </table>
+<p>IWinProcs are called when a message is received in the window. Also some of them might be called on layout-related methods. Some IWinProcs can also act as effects.</p>
+          </div></section>
+          <section class="m-doc-details" id="ad6ac580bfdac8b8023411be29168e76e"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"><a href="class_u_t_f_win_1_1_i_win_proc.html" class="m-doc">IWinProc</a>* UTFWin::<wbr />IWindow::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ad6ac580bfdac8b8023411be29168e76e" class="m-doc-self">GetNextWinProc</a>(</span><span class="m-doc-wrap">const <a href="class_u_t_f_win_1_1_i_win_proc.html" class="m-doc">IWinProc</a>* pWinProc = nullptr) const <span class="m-label m-warning">pure virtual</span></span></span>
+            </h3>
+            <p>Gets the <a href="class_u_t_f_win_1_1_i_win_proc.html" class="m-doc">IWinProc</a> in this window that follows the given procedure.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">pWinProc</td>
+                  <td>The <a href="class_u_t_f_win_1_1_i_win_proc.html" class="m-doc">IWinProc</a> that comes after this one will be returned. nullptr to return the first one.</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>Returns</th>
+                  <td>The next <a href="class_u_t_f_win_1_1_i_win_proc.html" class="m-doc">IWinProc</a>, or nullptr if there&#x27;s none.</td>
+                </tr>
+              </tfoot>
+            </table>
+<p>If pWinProc is not included in this window, nullptr will be returned. If pWinProc is nullptr, the first <a href="class_u_t_f_win_1_1_i_win_proc.html" class="m-doc">IWinProc</a> in this window will be returned.</p>
+          </div></section>
+          <section class="m-doc-details" id="a64caadea52b02cf5c560825f0ad4c888"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">bool UTFWin::<wbr />IWindow::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a64caadea52b02cf5c560825f0ad4c888" class="m-doc-self">SendMsg</a>(</span><span class="m-doc-wrap"><a href="class_u_t_f_win_1_1_message.html" class="m-doc">Message</a>&amp; msg) <span class="m-label m-warning">pure virtual</span></span></span>
+            </h3>
+            <p>Sends the given message through this window, using this window as the source.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">msg</td>
+                  <td>The message.</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>Returns</th>
+                  <td>True if the message was handled successfully.</td>
+                </tr>
+              </tfoot>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="a5ac0933336ed6aafbad76d3960ab95fc"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">const char* UTFWin::<wbr />IWindow::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a5ac0933336ed6aafbad76d3960ab95fc" class="m-doc-self">GetComponentName</a>(</span><span class="m-doc-wrap">) const <span class="m-label m-warning">pure virtual</span></span></span>
+            </h3>
+            <p>Returns the name of this component type (e.g.</p>
+<p>&quot;Window&quot;, &quot;WinButton&quot;).</p>
+          </div></section>
+          <section class="m-doc-details" id="aadd5fed7f66213fe296e815833cbe05f"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"><a href="class_u_t_f_win_1_1_window_children.html" class="m-doc">WindowChildren</a> UTFWin::<wbr />IWindow::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#aadd5fed7f66213fe296e815833cbe05f" class="m-doc-self">children</a>(</span><span class="m-doc-wrap">)</span></span>
+            </h3>
+            <p>Returns an structure that allows to iterate through the children of this window.</p>
+<p>Example usage:</p><pre class="m-code"><span class="n">IWindow</span><span class="o">*</span> <span class="n">pWindow</span> <span class="o">=</span> <span class="p">...;</span>
+
+<span class="k">for</span> <span class="p">(</span><span class="n">IWindow</span><span class="o">*</span> <span class="nl">pChild</span> <span class="p">:</span> <span class="n">children</span><span class="p">())</span>
+<span class="p">{</span>
+    <span class="p">...</span>
+<span class="p">}</span></pre>
+          </div></section>
+          <section class="m-doc-details" id="ac350481231351d281c3132ca831b5883"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"><a href="class_u_t_f_win_1_1_window_procedures.html" class="m-doc">WindowProcedures</a> UTFWin::<wbr />IWindow::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ac350481231351d281c3132ca831b5883" class="m-doc-self">procedures</a>(</span><span class="m-doc-wrap">)</span></span>
+            </h3>
+            <p>Returns an structure that allows to iterate through the <a href="class_u_t_f_win_1_1_i_win_proc.html" class="m-doc">IWinProc</a> objects of this window.</p>
+<p>Example usage:</p><pre class="m-code"><span class="n">IWindow</span><span class="o">*</span> <span class="n">pWindow</span> <span class="o">=</span> <span class="p">...;</span>
+
+<span class="k">for</span> <span class="p">(</span><span class="n">IWinProc</span><span class="o">*</span> <span class="nl">pProcedure</span> <span class="p">:</span> <span class="n">pWindow</span><span class="o">-&gt;</span><span class="n">procedures</span><span class="p">())</span>
+<span class="p">{</span>
+    <span class="p">...</span>
+<span class="p">}</span></pre>
+          </div></section>
+          <section class="m-doc-details" id="a627c18a80c4b98141f3f87480732aa42"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">intrusive_ptr&lt;<a href="class_u_t_f_win_1_1_i_win_proc.html" class="m-doc">IWinProc</a>&gt; UTFWin::<wbr />IWindow::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a627c18a80c4b98141f3f87480732aa42" class="m-doc-self">AddWinProc</a>(</span><span class="m-doc-wrap"><a href="namespace_u_t_f_win.html#a04f6ade66875b9b2572e883bdf2a9d60" class="m-doc">HandleUILambda_<wbr />t</a> pFunction,
+              int eventFlags = <a href="namespace_u_t_f_win.html#a53dcde7b7ffd3f5d6b53da77f5649044abada94b5e01bb4301d59887ff92a8719" class="m-doc">kEventFlagBasicInput</a>|<a href="namespace_u_t_f_win.html#a53dcde7b7ffd3f5d6b53da77f5649044ae00581bacda0d1a50bf5d3690367d321" class="m-doc">kEventFlagAdvanced</a>,
+              int priority = 0)</span></span>
+            </h3>
+            <p>Adds an event listener, defined using a lambda function or by referencing a static function.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">pFunction</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>eventFlags</td>
+                  <td>[Optional] A combination of kEventFlag... that defines which messages are received.</td>
+                </tr>
+                <tr>
+                  <td>priority</td>
+                  <td>[Optional] The priority of this event listener.</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>Returns</th>
+                  <td>The generated <a href="class_u_t_f_win_1_1_i_win_proc.html" class="m-doc">IWinProc</a> object, that can be used to remove this listener.</td>
+                </tr>
+              </tfoot>
+            </table>
+<p>This listener will be called for the messages that are accepted by the event flags given; by default, this listens to basic input events and advanced events, defined by the kEventFlagBasicInput | kEventFlagAdvanced flags. The priority can also be specified, with 0 being default priority.</p><p>The method returns an <a href="class_u_t_f_win_1_1_i_win_proc.html" class="m-doc">IWinProc</a> that can be used to remove this listener, by using <a href="class_u_t_f_win_1_1_i_window.html#af5f2616c6d4324e65da2909865fccc59" class="m-doc">IWindow::<wbr />RemoveWinProc()</a>;</p>
+          </div></section>
+          <section class="m-doc-details" id="a730df84f41e0c099e431d68b9260f425"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">intrusive_ptr&lt;<a href="class_u_t_f_win_1_1_i_win_proc.html" class="m-doc">IWinProc</a>&gt; UTFWin::<wbr />IWindow::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a730df84f41e0c099e431d68b9260f425" class="m-doc-self">AddWinProcFilter</a>(</span><span class="m-doc-wrap"><a href="namespace_u_t_f_win.html#a04f6ade66875b9b2572e883bdf2a9d60" class="m-doc">HandleUILambda_<wbr />t</a> function,
+              const vector&lt;<a href="namespace_u_t_f_win.html#a9fa1532f8ae774ee9508fab26eea47bc" class="m-doc">MessageType</a>&gt; types,
+              int priority = 0)</span></span>
+            </h3>
+            <p>Adds an even listener that only handles the specified message types.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">function</td>
+                  <td>The lambda function that is called when a message is received.</td>
+                </tr>
+                <tr>
+                  <td>types</td>
+                  <td>A vector of message types that this procedure receives.</td>
+                </tr>
+                <tr>
+                  <td>priority</td>
+                  <td>[Optional] The priority of this event listener.</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>Returns</th>
+                  <td>The generated <a href="class_u_t_f_win_1_1_i_win_proc.html" class="m-doc">IWinProc</a> object, that can be used to remove this listener.</td>
+                </tr>
+              </tfoot>
+            </table>
+<p>The listener is defined using a lambda function or by referencing a static function. This listener will be called for the specified message types. The priority can also be specified, with 0 being default priority.</p><p>The method returns an <a href="class_u_t_f_win_1_1_i_win_proc.html" class="m-doc">IWinProc</a> that can be used to remove this listener, by using <a href="class_u_t_f_win_1_1_i_window.html#af5f2616c6d4324e65da2909865fccc59" class="m-doc">IWindow::<wbr />RemoveWinProc()</a>;</p>
+          </div></section>
+          <section class="m-doc-details" id="a1e4678a3edabc79192d527a5ccafd4d4"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">bool UTFWin::<wbr />IWindow::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a1e4678a3edabc79192d527a5ccafd4d4" class="m-doc-self">IsVisible</a>(</span><span class="m-doc-wrap">) const</span></span>
+            </h3>
+            <p>Tells whether the window is visible.</p>
+<p>This is equivalent to <a href="class_u_t_f_win_1_1_i_window.html#af083ac2e7a61a76db1cd74f156aff77e" class="m-doc">GetFlags()</a> &amp; kWinFlagVisible.</p>
+          </div></section>
+          <section class="m-doc-details" id="a2010d45c644902adf6ae6fa64005eaec"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">void UTFWin::<wbr />IWindow::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a2010d45c644902adf6ae6fa64005eaec" class="m-doc-self">SetVisible</a>(</span><span class="m-doc-wrap">bool bVisible)</span></span>
+            </h3>
+            <p>Switches the visibility of this window.</p>
+<p>This is equivalent to SetFlag(kWinFlagVisible, bVisible).</p>
+          </div></section>
+          <section class="m-doc-details" id="ae0e6b08575a58f06801a5b7617a98eec"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">bool UTFWin::<wbr />IWindow::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ae0e6b08575a58f06801a5b7617a98eec" class="m-doc-self">IsEnabled</a>(</span><span class="m-doc-wrap">) const</span></span>
+            </h3>
+            <p>Tells whether the window is visible.</p>
+<p>This is equivalent to <a href="class_u_t_f_win_1_1_i_window.html#af083ac2e7a61a76db1cd74f156aff77e" class="m-doc">GetFlags()</a> &amp; kWinFlagEnabled.</p>
+          </div></section>
+          <section class="m-doc-details" id="ad0ae74a42bba84ac98b6a2dc8262a2dc"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">void UTFWin::<wbr />IWindow::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ad0ae74a42bba84ac98b6a2dc8262a2dc" class="m-doc-self">SetEnabled</a>(</span><span class="m-doc-wrap">bool bEnabled)</span></span>
+            </h3>
+            <p>Switches the visibility of this window.</p>
+<p>This is equivalent to SetFlag(kWinFlagEnabled, bEnabled).</p>
+          </div></section>
+        </section>
+      </div>
+    </div>
+  </div>
+</article></main>
+<div class="m-doc-search" id="search">
+  <a href="#!" onclick="return hideSearch()"></a>
+  <div class="m-container">
+    <div class="m-row">
+      <div class="m-col-m-8 m-push-m-2">
+        <div class="m-doc-search-header m-text m-small">
+          <div><span class="m-label m-default">Tab</span> / <span class="m-label m-default">T</span> to search, <span class="m-label m-default">Esc</span> to close</div>
+          <div id="search-symbolcount">&hellip;</div>
+        </div>
+        <div class="m-doc-search-content">
+          <form>
+            <input type="search" name="q" id="search-input" placeholder="Loading &hellip;" disabled="disabled" autofocus="autofocus" autocomplete="off" spellcheck="false" />
+          </form>
+          <noscript class="m-text m-danger m-text-center">Unlike everything else in the docs, the search functionality <em>requires</em> JavaScript.</noscript>
+          <div id="search-help" class="m-text m-dim m-text-center">
+            <p class="m-noindent">Search for symbols, directories, files, pages or
+            modules. You can omit any prefix from the symbol or file path; adding a
+            <code>:</code> or <code>/</code> suffix lists all members of given symbol or
+            directory.</p>
+            <p class="m-noindent">Use <span class="m-label m-dim">&darr;</span>
+            / <span class="m-label m-dim">&uarr;</span> to navigate through the list,
+            <span class="m-label m-dim">Enter</span> to go.
+            <span class="m-label m-dim">Tab</span> autocompletes common prefix, you can
+            copy a link to the result using <span class="m-label m-dim">⌘</span>
+            <span class="m-label m-dim">L</span> while <span class="m-label m-dim">⌘</span>
+            <span class="m-label m-dim">M</span> produces a Markdown link.</p>
+          </div>
+          <div id="search-notfound" class="m-text m-warning m-text-center">Sorry, nothing was found.</div>
+          <ul id="search-results"></ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="search-v1.js"></script>
+<script src="searchdata-v1.js" async="async"></script>
+<footer><nav>
+  <div class="m-container">
+    <div class="m-row">
+      <div class="m-col-l-10 m-push-l-1">
+        <p>Spore ModAPI SDK for creating C++ mods for Spore. Created with <a href="https://doxygen.org/">Doxygen</a> 1.8.16 and <a href="https://mcss.mosra.cz/">m.css</a>.</p>
+      </div>
+    </div>
+  </div>
+</nav></footer>
+</body>
+</html>

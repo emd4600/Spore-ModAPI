@@ -1,0 +1,729 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Simulator::cCreatureBase class | Spore ModAPI SDK for creating C++ mods for Spore</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,600,600i%7CSource+Code+Pro:400,400i,600" />
+  <link rel="stylesheet" href="m-dark.css" />
+  <link rel="stylesheet" href="m-documentation.css" />
+  <link rel="icon" href="Spore_ModAPI_Icon.png" type="image/png" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#22272e" />
+</head>
+<body>
+<header><nav id="navigation">
+  <div class="m-container">
+    <div class="m-row">
+      <a href="index.html" id="m-navbar-brand" class="m-col-t-8 m-col-m-none m-left-m"><img src="Spore_ModAPI_Icon.png" />Spore ModAPI <span class="m-thin">SDK for creating C++ mods for Spore</span></a>
+      <div class="m-col-t-4 m-hide-m m-text-right m-nopadr">
+        <a href="#search" class="m-doc-search-icon" title="Search" onclick="return showSearch()"><svg style="height: 0.9rem;" viewBox="0 0 16 16">
+          <path id="m-doc-search-icon-path" d="m6 0c-3.31 0-6 2.69-6 6 0 3.31 2.69 6 6 6 1.49 0 2.85-0.541 3.89-1.44-0.0164 0.338 0.147 0.759 0.5 1.15l3.22 3.79c0.552 0.614 1.45 0.665 2 0.115 0.55-0.55 0.499-1.45-0.115-2l-3.79-3.22c-0.392-0.353-0.812-0.515-1.15-0.5 0.895-1.05 1.44-2.41 1.44-3.89 0-3.31-2.69-6-6-6zm0 1.56a4.44 4.44 0 0 1 4.44 4.44 4.44 4.44 0 0 1-4.44 4.44 4.44 4.44 0 0 1-4.44-4.44 4.44 4.44 0 0 1 4.44-4.44z"/>
+        </svg></a>
+        <a id="m-navbar-show" href="#navigation" title="Show navigation"></a>
+        <a id="m-navbar-hide" href="#" title="Hide navigation"></a>
+      </div>
+      <div id="m-navbar-collapse" class="m-col-t-12 m-show-m m-col-m-none m-right-m">
+        <div class="m-row">
+          <ol class="m-col-t-6 m-col-m-none">
+            <li><a href="pages.html">Tutorials</a></li>
+            <li><a href="namespaces.html">Namespaces</a></li>
+          </ol>
+          <ol class="m-col-t-6 m-col-m-none" start="3">
+            <li><a href="annotated.html">Classes</a></li>
+            <li><a href="files.html">Files</a></li>
+            <li class="m-show-m"><a href="#search" class="m-doc-search-icon" title="Search" onclick="return showSearch()"><svg style="height: 0.9rem;" viewBox="0 0 16 16">
+              <use href="#m-doc-search-icon-path" />
+            </svg></a></li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav></header>
+<main><article>
+  <div class="m-container m-container-inflatable">
+    <div class="m-row">
+      <div class="m-col-l-10 m-push-l-1">
+        <h1>
+          <span class="m-breadcrumb"><a href="namespace_simulator.html">Simulator</a>::<wbr/></span>cCreatureBase <span class="m-thin">class</span>
+          <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="c_creature_base_8h.html">&lt;Spore/Simulator/cCreatureBase.h&gt;</a></div>
+        </h1>
+        <p><span></span></p>
+        <div class="m-block m-default">
+          <h3>Contents</h3>
+          <ul>
+            <li>
+              Reference
+              <ul>
+                <li><a href="#base-classes">Base classes</a></li>
+                <li><a href="#derived-classes">Derived classes</a></li>
+                <li><a href="#pub-types">Public types</a></li>
+                <li><a href="#pub-static-attribs">Public static variables</a></li>
+                <li><a href="#pub-methods">Public functions</a></li>
+                <li><a href="#pub-attribs">Public variables</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+        <section id="base-classes">
+          <h2><a href="#base-classes">Base classes</a></h2>
+          <dl class="m-doc">
+            <dt>
+              class <a href="class_simulator_1_1c_game_data.html" class="m-doc">cGameData</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              class <a href="class_simulator_1_1c_game_bundle_container.html" class="m-doc">cGameBundleContainer</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              class <a href="class_simulator_1_1c_behavior_agent.html" class="m-doc">cBehaviorAgent</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              class <a href="class_simulator_1_1c_locomotive_object.html" class="m-doc">cLocomotiveObject</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              class <a href="class_simulator_1_1c_behavior_list.html" class="m-doc">cBehaviorList</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              class <a href="class_simulator_1_1c_combatant.html" class="m-doc">cCombatant</a>
+            </dt>
+            <dd>Any object that has hit points and can combat other units.</dd>
+            <dt>
+              class <a href="class_simulator_1_1_unknown_creature_class.html" class="m-doc">UnknownCreatureClass</a>
+            </dt>
+            <dd><span></span></dd>
+          </dl>
+        </section>
+        <section id="derived-classes">
+          <h2><a href="#derived-classes">Derived classes</a></h2>
+          <dl class="m-doc">
+            <dt>
+              class <a href="class_simulator_1_1c_creature_animal.html" class="m-doc">cCreatureAnimal</a>
+            </dt>
+            <dd><span></span></dd>
+          </dl>
+        </section>
+        <section id="pub-types">
+          <h2><a href="#pub-types">Public types</a></h2>
+          <dl class="m-doc">
+            <dt id="a3f73d4ccd27d6af8377e1a8ab3810341">
+              <span class="m-doc-wrap-bumper">enum <a href="#a3f73d4ccd27d6af8377e1a8ab3810341" class="m-doc-self">(anonymous)</a> { </span><span class="m-doc-wrap"><a href="#a3f73d4ccd27d6af8377e1a8ab3810341a9fb9342ac16494e953c632256f8877df" class="m-doc">kStandardSpeed</a> = 2 }</span>
+            </dt>
+            <dd><span></span></dd>
+          </dl>
+        </section>
+        <section id="pub-static-attribs">
+          <h2><a href="#pub-static-attribs">Public static variables</a></h2>
+          <dl class="m-doc">
+            <dt id="a2bea11c83c12b960eb07ccf4297b7f7c">
+              static const uint32_t <a href="#a2bea11c83c12b960eb07ccf4297b7f7c" class="m-doc-self">TYPE</a>
+            </dt>
+            <dd><span></span></dd>
+          </dl>
+        </section>
+        <section id="pub-methods">
+          <h2><a href="#pub-methods">Public functions</a></h2>
+          <dl class="m-doc">
+            <dt id="a9ed810dac6fd2e5fae12ad55781707d7">
+              <span class="m-doc-wrap-bumper">auto <a href="#a9ed810dac6fd2e5fae12ad55781707d7" class="m-doc-self">PlayAnimation</a>(</span><span class="m-doc-wrap">uint32_t animationID,
+              int = 0xFFFFFFFF,
+              bool = false) -&gt; void*</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a3b962e64e856e8da39a853dd66608088">
+              <span class="m-doc-wrap-bumper">auto <a href="#a3b962e64e856e8da39a853dd66608088" class="m-doc-self">PlayAnimationTo</a>(</span><span class="m-doc-wrap">uint32_t animationID,
+              <a href="class_simulator_1_1c_spatial_object.html" class="m-doc">cSpatialObject</a>* otherObject,
+              int = 0xFFFFFFFF,
+              int = 0xFFFFFFFF) -&gt; void*</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a59de553ccde1d6f657f058d02b676d51">
+              <span class="m-doc-wrap-bumper">void <a href="#a59de553ccde1d6f657f058d02b676d51" class="m-doc-self">WalkTo</a>(</span><span class="m-doc-wrap">int speedState,
+              const <a href="struct_math_1_1_vector3.html" class="m-doc">Vector3</a>&amp; dstPos,
+              const <a href="struct_math_1_1_vector3.html" class="m-doc">Vector3</a>&amp; arg_8,
+              float goalStopDistance = 1.0f,
+              float acceptableStopDistance = 2.0f)</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a3a9c8996c8e1adc7cfec11f8f09b51c8">
+              <span class="m-doc-wrap-bumper">auto <a href="#a3a9c8996c8e1adc7cfec11f8f09b51c8" class="m-doc-self">AddRef</a>(</span><span class="m-doc-wrap">) -&gt; int <span class="m-label m-flat m-warning">pure virtual</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="aa036657cba582dd62f05811e455fb7d5">
+              <span class="m-doc-wrap-bumper">auto <a href="#aa036657cba582dd62f05811e455fb7d5" class="m-doc-self">Release</a>(</span><span class="m-doc-wrap">) -&gt; int <span class="m-label m-flat m-warning">pure virtual</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a499586d32a7e1bafdff17480d4819ba2">
+              <span class="m-doc-wrap-bumper">auto <a href="#a499586d32a7e1bafdff17480d4819ba2" class="m-doc-self">Cast</a>(</span><span class="m-doc-wrap">) const -&gt; void* <span class="m-label m-flat m-warning">pure virtual</span></span>
+            </dt>
+            <dd><span></span></dd>
+          </dl>
+        </section>
+        <section id="pub-attribs">
+          <h2><a href="#pub-attribs">Public variables</a></h2>
+          <dl class="m-doc">
+            <dt id="ac592fd31687f1971c35e7baa943e2f32">
+              bool <a href="#ac592fd31687f1971c35e7baa943e2f32" class="m-doc-self">field_B10</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="ab4b3dd50929a7900ae22e18d3258d7f8">
+              int <a href="#ab4b3dd50929a7900ae22e18d3258d7f8" class="m-doc-self">field_B14</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a14f97eee6295d6ce9a5fe09512f4bdec">
+              bool <a href="#a14f97eee6295d6ce9a5fe09512f4bdec" class="m-doc-self">field_B18</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a17c3590f52cd6520de9ad3ef789eb08c">
+              int <a href="#a17c3590f52cd6520de9ad3ef789eb08c" class="m-doc-self">field_B1C</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a3fdca213d710da71fbb62cf182e77e38">
+              <a href="class_simulator_1_1c_species_profile.html" class="m-doc">cSpeciesProfile</a>* <a href="#a3fdca213d710da71fbb62cf182e77e38" class="m-doc-self">field_B20</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a5189a07276ef4c566b49a05c072ebc3e">
+              uint32_t <a href="#a5189a07276ef4c566b49a05c072ebc3e" class="m-doc-self">mProfileSeq</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a737ad1eda68e18c7879bc04b445b5067">
+              <a href="struct_resource_key.html" class="m-doc">ResourceKey</a> <a href="#a737ad1eda68e18c7879bc04b445b5067" class="m-doc-self">mSpeciesKey</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="ad940c0c86bfb75191b88a4d2a8396c75">
+              int <a href="#ad940c0c86bfb75191b88a4d2a8396c75" class="m-doc-self">mAge</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="acf30c782b34a8bfd328356f54a9274a8">
+              string16 <a href="#acf30c782b34a8bfd328356f54a9274a8" class="m-doc-self">mCreatureName</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a2b8e83e3f9bec47bcf89c49b8620143b">
+              int <a href="#a2b8e83e3f9bec47bcf89c49b8620143b" class="m-doc-self">field_B48</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a79b6fd45c624c392a79ea3674f79862a">
+              int <a href="#a79b6fd45c624c392a79ea3674f79862a" class="m-doc-self">field_B4C</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a00f4d8267b6afcb70c0dce0cd90c77bc">
+              intrusive_ptr&lt;<a href="class_simulator_1_1c_creature_base.html" class="m-doc">cCreatureBase</a>&gt; <a href="#a00f4d8267b6afcb70c0dce0cd90c77bc" class="m-doc-self">mpWhoIsInteractingWithMe</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a91ef3affe8ff92406e0d5fb05e554b43">
+              int <a href="#a91ef3affe8ff92406e0d5fb05e554b43" class="m-doc-self">field_B54</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a1d1641d9f370043db4506818e76f275b">
+              int <a href="#a1d1641d9f370043db4506818e76f275b" class="m-doc-self">mGeneralFlags</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a96ce3659636fc262761deddcc9843bbd">
+              bool <a href="#a96ce3659636fc262761deddcc9843bbd" class="m-doc-self">field_B5C</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a4a7025e52af6a207210bb634dfa01029">
+              bool <a href="#a4a7025e52af6a207210bb634dfa01029" class="m-doc-self">mbTeleport</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a3e24b9e305959305eb5f7ac0cbee1c3b">
+              bool <a href="#a3e24b9e305959305eb5f7ac0cbee1c3b" class="m-doc-self">mbDead</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="ab793fe71994e3cddc2888a1ac7d80df5">
+              bool <a href="#ab793fe71994e3cddc2888a1ac7d80df5" class="m-doc-self">mbHasBeenEaten</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a24037d0deaa2df781c2fb7496db41060">
+              bool <a href="#a24037d0deaa2df781c2fb7496db41060" class="m-doc-self">mbUpdateInteractionEffect</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a0b47cb95c9056ce0d15b9d56fddf857f">
+              bool <a href="#a0b47cb95c9056ce0d15b9d56fddf857f" class="m-doc-self">mbUpdateMotiveEffect</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="ac749e6c67b81551dab5fd0eea326b616">
+              bool <a href="#ac749e6c67b81551dab5fd0eea326b616" class="m-doc-self">mbIsDiseased</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="aad4cf4cb8221dcaed365616af8ff7bc9">
+              bool <a href="#aad4cf4cb8221dcaed365616af8ff7bc9" class="m-doc-self">field_B63</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a64b0b64b4bb4d0e373c548422f18588d">
+              bool <a href="#a64b0b64b4bb4d0e373c548422f18588d" class="m-doc-self">field_B64</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="acb786d699577a788201c71a1340fc735">
+              bool <a href="#acb786d699577a788201c71a1340fc735" class="m-doc-self">mbColorIsIdentity</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="af2c6e3336eecbfd3a60bc0cb4f249402">
+              bool <a href="#af2c6e3336eecbfd3a60bc0cb4f249402" class="m-doc-self">field_B66</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="ae09c028fb656e34ede0669a185fda0a3">
+              bool <a href="#ae09c028fb656e34ede0669a185fda0a3" class="m-doc-self">mbCasted</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="ac30bcdaabaa449b7dde9b212291d3e17">
+              bool <a href="#ac30bcdaabaa449b7dde9b212291d3e17" class="m-doc-self">field_B68</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a09e197d2aac657ae22fe34ea06821ef7">
+              bool <a href="#a09e197d2aac657ae22fe34ea06821ef7" class="m-doc-self">field_B69</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="ad1d9d3202b9fff4e87bd2c16684e5b8d">
+              int <a href="#ad1d9d3202b9fff4e87bd2c16684e5b8d" class="m-doc-self">field_B6C</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="aaf79dee3747b9c8b119c9455d3ed3fa9">
+              int <a href="#aaf79dee3747b9c8b119c9455d3ed3fa9" class="m-doc-self">field_B70</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="aa124224fb96f003230d2ebac7a12cd7c">
+              int <a href="#aa124224fb96f003230d2ebac7a12cd7c" class="m-doc-self">mIntentionTowardsTarget</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a8d6807b2385df8fe8ddb6a119cc6b6b4">
+              float <a href="#a8d6807b2385df8fe8ddb6a119cc6b6b4" class="m-doc-self">mNoAttackTimer</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a6852a58af18ceee107b3d2b93a1ce1b3">
+              int <a href="#a6852a58af18ceee107b3d2b93a1ce1b3" class="m-doc-self">field_B7C</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="af6e9f9225396a0077c8e057f46f69b36">
+              float <a href="#af6e9f9225396a0077c8e057f46f69b36" class="m-doc-self">mCurrentLoudness</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="ad6766889d76f4f6bbe5dfbda91f8ae5c">
+              float <a href="#ad6766889d76f4f6bbe5dfbda91f8ae5c" class="m-doc-self">mFoodValue</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a236482a51ebc3f730140c1c2faf544fa">
+              int <a href="#a236482a51ebc3f730140c1c2faf544fa" class="m-doc-self">mStrengthRating</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a2d28c0713d98087eb611423bc46130c2">
+              <a href="class_simulator_1_1c_gonzago_timer.html" class="m-doc">cGonzagoTimer</a> <a href="#a2d28c0713d98087eb611423bc46130c2" class="m-doc-self">mHungerDelayTimer</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a7e1331089b85e9f19141ca0b7537b5d1">
+              bool <a href="#a7e1331089b85e9f19141ca0b7537b5d1" class="m-doc-self">field_BB0</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="aa0ec8aae6a8ce9be1508ec40d8cc4ebd">
+              bool <a href="#aa0ec8aae6a8ce9be1508ec40d8cc4ebd" class="m-doc-self">mbStealthed</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="ab4c2ef8184cc0f53e5047a0e91c4c7c9">
+              int <a href="#ab4c2ef8184cc0f53e5047a0e91c4c7c9" class="m-doc-self">field_BB4</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="ad11e913c89c8ea3f386bbaf1634cac10">
+              float <a href="#ad11e913c89c8ea3f386bbaf1634cac10" class="m-doc-self">mHungerDelta</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="ae31d99b5d2cedea35b637f60428166be">
+              float <a href="#ae31d99b5d2cedea35b637f60428166be" class="m-doc-self">mHunger</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="ac236678d335377e2cc79ec0878bd168e">
+              int <a href="#ac236678d335377e2cc79ec0878bd168e" class="m-doc-self">field_BC0</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a848dc7bebf6cbdae4a1bb388a9c5e83f">
+              int <a href="#a848dc7bebf6cbdae4a1bb388a9c5e83f" class="m-doc-self">field_BC4</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="ab9a8882b15bca7a06f49f28698b064cf">
+              int <a href="#ab9a8882b15bca7a06f49f28698b064cf" class="m-doc-self">field_BC8</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a265da2ef28c8866deda0757b408261f7">
+              int <a href="#a265da2ef28c8866deda0757b408261f7" class="m-doc-self">field_BCC</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a048dcebceb42601945daa573fae15b65">
+              int <a href="#a048dcebceb42601945daa573fae15b65" class="m-doc-self">field_BD0</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a30cd555b2257d90c9770c21974920e70">
+              int <a href="#a30cd555b2257d90c9770c21974920e70" class="m-doc-self">field_BD4</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a8efeb9c6755105e54d163bdde7482a88">
+              int <a href="#a8efeb9c6755105e54d163bdde7482a88" class="m-doc-self">field_BD8</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a2b48e38637e2501c84d7018efe7eac69">
+              int <a href="#a2b48e38637e2501c84d7018efe7eac69" class="m-doc-self">field_BDC</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a402c1861309306e41f60f8698d900d94">
+              <a href="struct_math_1_1_vector3.html" class="m-doc">Vector3</a> <a href="#a402c1861309306e41f60f8698d900d94" class="m-doc-self">field_BE0</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a732ca8810336a0f767db598d8e9b3cb6">
+              bitset&lt;88&gt; <a href="#a732ca8810336a0f767db598d8e9b3cb6" class="m-doc-self">mInUseAbilityBits</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="ae1a3bece66352c7c57d72b8a1988ec4f">
+              bitset&lt;88&gt; <a href="#ae1a3bece66352c7c57d72b8a1988ec4f" class="m-doc-self">mRechargingAbilityBits</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="ac0fbe430b090c7653e24c016bd1319bd">
+              int <a href="#ac0fbe430b090c7653e24c016bd1319bd" class="m-doc-self">field_C04</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a02eda43303fe0a71d08f3e3de2a5b736">
+              int <a href="#a02eda43303fe0a71d08f3e3de2a5b736" class="m-doc-self">field_C08</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a7e83e4bbc203dcbfa0b6d09a75aaf0d8">
+              int <a href="#a7e83e4bbc203dcbfa0b6d09a75aaf0d8" class="m-doc-self">field_C0C</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a70903031a7d370fe1253af0c8c4a85b6">
+              uint64_t <a href="#a70903031a7d370fe1253af0c8c4a85b6" class="m-doc-self">DEPRECATED_mInUseAbilityBits</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a255d2619e6556ee823d3997b7302540c">
+              uint64_t <a href="#a255d2619e6556ee823d3997b7302540c" class="m-doc-self">DEPRECATED_mRechargingAbilityBits</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a8efbb97bb9b8e85d06451efcf18aa88d">
+              int <a href="#a8efbb97bb9b8e85d06451efcf18aa88d" class="m-doc-self">field_C20</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a02f004894e7ae22d2c498231ad1e251a">
+              int <a href="#a02f004894e7ae22d2c498231ad1e251a" class="m-doc-self">field_C24</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="aea1db797c6141445bb667f2c22287cb3">
+              fixed_vector&lt;<a href="class_simulator_1_1c_ability_state.html" class="m-doc">cAbilityState</a>, 8&gt; <a href="#aea1db797c6141445bb667f2c22287cb3" class="m-doc-self">mAbilityStates</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a21674766569188dd995987ea1afa9f96">
+              int <a href="#a21674766569188dd995987ea1afa9f96" class="m-doc-self">mLastMotiveState</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a29fa370416faa55fdc10647b8f648d3b">
+              int <a href="#a29fa370416faa55fdc10647b8f648d3b" class="m-doc-self">mLastInteractionEffect</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="af0b8362b3ca0040ef41ab8ef5e66241b">
+              <a href="class_simulator_1_1_unknown_creature_class2.html" class="m-doc">UnknownCreatureClass2</a> <a href="#af0b8362b3ca0040ef41ab8ef5e66241b" class="m-doc-self">field_CC8</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a361222060cdeb02d930a247d1a80f38b">
+              <a href="class_simulator_1_1_unknown_creature_class2.html" class="m-doc">UnknownCreatureClass2</a> <a href="#a361222060cdeb02d930a247d1a80f38b" class="m-doc-self">field_D68</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a9dccf44b85f6e9879ad81b62ae50ebab">
+              map&lt;int, int&gt; <a href="#a9dccf44b85f6e9879ad81b62ae50ebab" class="m-doc-self">field_E08</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a2b0adc23a84a1f25a81f71814da58752">
+              vector&lt;int&gt; <a href="#a2b0adc23a84a1f25a81f71814da58752" class="m-doc-self">field_E24</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a6719605394a5492847417bc923bfeb0c">
+              bool <a href="#a6719605394a5492847417bc923bfeb0c" class="m-doc-self">field_E38</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a0266a224f686317dd934ee5ec5994dc0">
+              int <a href="#a0266a224f686317dd934ee5ec5994dc0" class="m-doc-self">field_E3C</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a9d0e1036c9d0ee36e081cabadd031141">
+              vector&lt;<a href="class_simulator_1_1c_creature_item.html" class="m-doc">cCreatureItem</a>&gt; <a href="#a9d0e1036c9d0ee36e081cabadd031141" class="m-doc-self">mItemInventory</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a89743d003a9eb5d2a4324665df54140a">
+              int <a href="#a89743d003a9eb5d2a4324665df54140a" class="m-doc-self">field_E54</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a510f4253220f6b66a895fece29992e1c">
+              float <a href="#a510f4253220f6b66a895fece29992e1c" class="m-doc-self">field_E58</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a482659afb941f75896d07db3535bf2e5">
+              float <a href="#a482659afb941f75896d07db3535bf2e5" class="m-doc-self">field_E5C</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a428b50040cc7e81268bda5b7e9385050">
+              bool <a href="#a428b50040cc7e81268bda5b7e9385050" class="m-doc-self">field_E60</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a8e96c1d17ef646df3594cc05a702604a">
+              bool <a href="#a8e96c1d17ef646df3594cc05a702604a" class="m-doc-self">field_E61</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a5e5309a9eca003566f1a0c371e8ec330">
+              bool <a href="#a5e5309a9eca003566f1a0c371e8ec330" class="m-doc-self">field_E62</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="ab7a891f1cb31e5c9b45855d17f72f7e5">
+              bool <a href="#ab7a891f1cb31e5c9b45855d17f72f7e5" class="m-doc-self">field_E63</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="ac4cc6ea62229a9243584dffff474e550">
+              int <a href="#ac4cc6ea62229a9243584dffff474e550" class="m-doc-self">field_E64</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="ac56e5bd11713f40d8bebbce1c96e58a4">
+              bool <a href="#ac56e5bd11713f40d8bebbce1c96e58a4" class="m-doc-self">field_E68</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a0e96606d50100720b8ccd60f0a0cbd0c">
+              int <a href="#a0e96606d50100720b8ccd60f0a0cbd0c" class="m-doc-self">field_E6C</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a6b84503f98bd39d503e6cb5172733344">
+              int <a href="#a6b84503f98bd39d503e6cb5172733344" class="m-doc-self">field_E70</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a2ba44c75c47f8b505ea594b9b31f6be1">
+              int <a href="#a2ba44c75c47f8b505ea594b9b31f6be1" class="m-doc-self">field_E74</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a18ec9b755277d4bfa013a4f53af74d03">
+              bool <a href="#a18ec9b755277d4bfa013a4f53af74d03" class="m-doc-self">field_E78</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a55b966f909bcf831863357816833539d">
+              int <a href="#a55b966f909bcf831863357816833539d" class="m-doc-self">field_E7C</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a18b32dbbf453a76146d75bbb45e99e32">
+              int <a href="#a18b32dbbf453a76146d75bbb45e99e32" class="m-doc-self">mArchetype</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="abd7277d731678cb79daa454e776a7532">
+              void* <a href="#abd7277d731678cb79daa454e776a7532" class="m-doc-self">field_E84</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="ae37d835226b97e6a131ae0bfb70588b1">
+              int <a href="#ae37d835226b97e6a131ae0bfb70588b1" class="m-doc-self">field_E88</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a255193add524676e05b0ab2b83eaf973">
+              uint32_t <a href="#a255193add524676e05b0ab2b83eaf973" class="m-doc-self">mCurrentAttackIdx</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="aa40a50ba1f53b9fdaf05e084a116a7e9">
+              uint32_t <a href="#aa40a50ba1f53b9fdaf05e084a116a7e9" class="m-doc-self">mCurrentAttackAnimId</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a6f03f61a3e2bd07d501b2f2c008dbdc4">
+              float <a href="#a6f03f61a3e2bd07d501b2f2c008dbdc4" class="m-doc-self">field_E94</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="ae6a6169b03fb144cdbcafa058acf94b1">
+              vector&lt;int&gt; <a href="#ae6a6169b03fb144cdbcafa058acf94b1" class="m-doc-self">field_E98</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="ac09888866b6db260f6cb09ee20185941">
+              int <a href="#ac09888866b6db260f6cb09ee20185941" class="m-doc-self">field_EAC</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="ac9e3a02173715535880665e10563ad04">
+              int <a href="#ac9e3a02173715535880665e10563ad04" class="m-doc-self">field_EB0</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a5517780e7bd5434a30b8998849c90a53">
+              int <a href="#a5517780e7bd5434a30b8998849c90a53" class="m-doc-self">field_ED8</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a5dc569eb037abebb2df78ea9d6eeecb1">
+              int <a href="#a5dc569eb037abebb2df78ea9d6eeecb1" class="m-doc-self">field_EDC</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a967f7110debf2bc493577653f4bf4322">
+              int <a href="#a967f7110debf2bc493577653f4bf4322" class="m-doc-self">field_EE0</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a5c49363a9cd27034e21fe7ba45f1831e">
+              int <a href="#a5c49363a9cd27034e21fe7ba45f1831e" class="m-doc-self">field_EE4</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="af1dc9c9491073185cf32b67bfdec5b3f">
+              int <a href="#af1dc9c9491073185cf32b67bfdec5b3f" class="m-doc-self">field_EE8</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="adc545174f2d0447444814f363581ae55">
+              int <a href="#adc545174f2d0447444814f363581ae55" class="m-doc-self">field_EEC</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a5b6b85337ab2cad1c136e86946feb092">
+              int <a href="#a5b6b85337ab2cad1c136e86946feb092" class="m-doc-self">field_F0C</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a22fae1e5d8dcd78563ec64dcf618131a">
+              int <a href="#a22fae1e5d8dcd78563ec64dcf618131a" class="m-doc-self">field_F10</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a2179d8905bf4ce0c9f1b3c95a9329cef">
+              int <a href="#a2179d8905bf4ce0c9f1b3c95a9329cef" class="m-doc-self">field_F14</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a516231debfdcef895633295172383384">
+              int <a href="#a516231debfdcef895633295172383384" class="m-doc-self">field_F18</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a98e6755e0fdafe9a907df5563401cdd1">
+              int <a href="#a98e6755e0fdafe9a907df5563401cdd1" class="m-doc-self">field_F1C</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a79275c33d817f2b9f5f034705e7d1cd7">
+              char <a href="#a79275c33d817f2b9f5f034705e7d1cd7" class="m-doc-self">padding_F20</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a6db34dffcdee959c6e09eb7cedaa821f">
+              int <a href="#a6db34dffcdee959c6e09eb7cedaa821f" class="m-doc-self">field_F40</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="ad874a2c98552c2486b2f3a4a1a5c7748">
+              int <a href="#ad874a2c98552c2486b2f3a4a1a5c7748" class="m-doc-self">field_F44</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a40f822e975ea5c758e19c9c321a5f776">
+              int <a href="#a40f822e975ea5c758e19c9c321a5f776" class="m-doc-self">field_F48</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a88d114d72f8e8aec4dd2e6fdb9a64793">
+              int <a href="#a88d114d72f8e8aec4dd2e6fdb9a64793" class="m-doc-self">field_F4C</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a072cc377b6f39bb49512a0386f0a6190">
+              int <a href="#a072cc377b6f39bb49512a0386f0a6190" class="m-doc-self">field_F50</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a4cc59fe7b70fd503022f520e806ebdb8">
+              char <a href="#a4cc59fe7b70fd503022f520e806ebdb8" class="m-doc-self">padding_F54</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a13207c315cae116043a4dfeb038744bd">
+              int <a href="#a13207c315cae116043a4dfeb038744bd" class="m-doc-self">field_F74</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a75612f13ee79f564d60790ad630e90e8">
+              int <a href="#a75612f13ee79f564d60790ad630e90e8" class="m-doc-self">field_F78</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="ad72f3650bb468415939bd560cdeafbf9">
+              int <a href="#ad72f3650bb468415939bd560cdeafbf9" class="m-doc-self">field_F7C</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a6601952ca9094da67a357a65380664c3">
+              int <a href="#a6601952ca9094da67a357a65380664c3" class="m-doc-self">field_F80</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="abf42188fdb6b34658da7707d2709a399">
+              list&lt;int&gt; <a href="#abf42188fdb6b34658da7707d2709a399" class="m-doc-self">field_F84</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a33cc6dc3e7e46f81257b439566976b00">
+              bool <a href="#a33cc6dc3e7e46f81257b439566976b00" class="m-doc-self">field_F90</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="af3106e1eeb8f44a515eb61908e55c2f4">
+              int <a href="#af3106e1eeb8f44a515eb61908e55c2f4" class="m-doc-self">field_F94</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a1c080128023e2d26250e0ce5d3c69a8f">
+              int <a href="#a1c080128023e2d26250e0ce5d3c69a8f" class="m-doc-self">mSpeedState</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="ad3a4e713fc4ebd64a5554fb948c6e093">
+              int <a href="#ad3a4e713fc4ebd64a5554fb948c6e093" class="m-doc-self">field_F9C</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="af973aa2062daffbe5765fbb56de2d8b3">
+              int <a href="#af973aa2062daffbe5765fbb56de2d8b3" class="m-doc-self">field_FA0</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a7bc61ea5e464c22f9e51eccf6ccf179c">
+              int <a href="#a7bc61ea5e464c22f9e51eccf6ccf179c" class="m-doc-self">field_FA4</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a75906119be6388a9d2ee7bfd27dc4882">
+              float <a href="#a75906119be6388a9d2ee7bfd27dc4882" class="m-doc-self">field_FA8</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="ad55e761cc650ca0088134a8fbc6a4a8a">
+              float <a href="#ad55e761cc650ca0088134a8fbc6a4a8a" class="m-doc-self">field_FAC</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a8f5af78a34df0504e4f23839039bbf41">
+              float <a href="#a8f5af78a34df0504e4f23839039bbf41" class="m-doc-self">field_FB0</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a8a511188182fb7266ab9b735d7212ab5">
+              float <a href="#a8a511188182fb7266ab9b735d7212ab5" class="m-doc-self">field_FB4</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a0cdd36eb5bb749578a3b7b8307d1a224">
+              char <a href="#a0cdd36eb5bb749578a3b7b8307d1a224" class="m-doc-self">padding_FB8</a>
+            </dt>
+            <dd><span></span></dd>
+          </dl>
+        </section>
+      </div>
+    </div>
+  </div>
+</article></main>
+<div class="m-doc-search" id="search">
+  <a href="#!" onclick="return hideSearch()"></a>
+  <div class="m-container">
+    <div class="m-row">
+      <div class="m-col-m-8 m-push-m-2">
+        <div class="m-doc-search-header m-text m-small">
+          <div><span class="m-label m-default">Tab</span> / <span class="m-label m-default">T</span> to search, <span class="m-label m-default">Esc</span> to close</div>
+          <div id="search-symbolcount">&hellip;</div>
+        </div>
+        <div class="m-doc-search-content">
+          <form>
+            <input type="search" name="q" id="search-input" placeholder="Loading &hellip;" disabled="disabled" autofocus="autofocus" autocomplete="off" spellcheck="false" />
+          </form>
+          <noscript class="m-text m-danger m-text-center">Unlike everything else in the docs, the search functionality <em>requires</em> JavaScript.</noscript>
+          <div id="search-help" class="m-text m-dim m-text-center">
+            <p class="m-noindent">Search for symbols, directories, files, pages or
+            modules. You can omit any prefix from the symbol or file path; adding a
+            <code>:</code> or <code>/</code> suffix lists all members of given symbol or
+            directory.</p>
+            <p class="m-noindent">Use <span class="m-label m-dim">&darr;</span>
+            / <span class="m-label m-dim">&uarr;</span> to navigate through the list,
+            <span class="m-label m-dim">Enter</span> to go.
+            <span class="m-label m-dim">Tab</span> autocompletes common prefix, you can
+            copy a link to the result using <span class="m-label m-dim">⌘</span>
+            <span class="m-label m-dim">L</span> while <span class="m-label m-dim">⌘</span>
+            <span class="m-label m-dim">M</span> produces a Markdown link.</p>
+          </div>
+          <div id="search-notfound" class="m-text m-warning m-text-center">Sorry, nothing was found.</div>
+          <ul id="search-results"></ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="search-v1.js"></script>
+<script src="searchdata-v1.js" async="async"></script>
+<footer><nav>
+  <div class="m-container">
+    <div class="m-row">
+      <div class="m-col-l-10 m-push-l-1">
+        <p>Spore ModAPI SDK for creating C++ mods for Spore. Created with <a href="https://doxygen.org/">Doxygen</a> 1.8.16 and <a href="https://mcss.mosra.cz/">m.css</a>.</p>
+      </div>
+    </div>
+  </div>
+</nav></footer>
+</body>
+</html>

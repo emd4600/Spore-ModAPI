@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Simulator::cStarManager class | Spore ModAPI SDK for creating C++ mods for Spore</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,600,600i%7CSource+Code+Pro:400,400i,600" />
+  <link rel="stylesheet" href="m-dark.css" />
+  <link rel="stylesheet" href="m-documentation.css" />
+  <link rel="icon" href="Spore_ModAPI_Icon.png" type="image/png" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#22272e" />
+</head>
+<body>
+<header><nav id="navigation">
+  <div class="m-container">
+    <div class="m-row">
+      <a href="index.html" id="m-navbar-brand" class="m-col-t-8 m-col-m-none m-left-m"><img src="Spore_ModAPI_Icon.png" />Spore ModAPI <span class="m-thin">SDK for creating C++ mods for Spore</span></a>
+      <div class="m-col-t-4 m-hide-m m-text-right m-nopadr">
+        <a href="#search" class="m-doc-search-icon" title="Search" onclick="return showSearch()"><svg style="height: 0.9rem;" viewBox="0 0 16 16">
+          <path id="m-doc-search-icon-path" d="m6 0c-3.31 0-6 2.69-6 6 0 3.31 2.69 6 6 6 1.49 0 2.85-0.541 3.89-1.44-0.0164 0.338 0.147 0.759 0.5 1.15l3.22 3.79c0.552 0.614 1.45 0.665 2 0.115 0.55-0.55 0.499-1.45-0.115-2l-3.79-3.22c-0.392-0.353-0.812-0.515-1.15-0.5 0.895-1.05 1.44-2.41 1.44-3.89 0-3.31-2.69-6-6-6zm0 1.56a4.44 4.44 0 0 1 4.44 4.44 4.44 4.44 0 0 1-4.44 4.44 4.44 4.44 0 0 1-4.44-4.44 4.44 4.44 0 0 1 4.44-4.44z"/>
+        </svg></a>
+        <a id="m-navbar-show" href="#navigation" title="Show navigation"></a>
+        <a id="m-navbar-hide" href="#" title="Hide navigation"></a>
+      </div>
+      <div id="m-navbar-collapse" class="m-col-t-12 m-show-m m-col-m-none m-right-m">
+        <div class="m-row">
+          <ol class="m-col-t-6 m-col-m-none">
+            <li><a href="pages.html">Tutorials</a></li>
+            <li><a href="namespaces.html">Namespaces</a></li>
+          </ol>
+          <ol class="m-col-t-6 m-col-m-none" start="3">
+            <li><a href="annotated.html">Classes</a></li>
+            <li><a href="files.html">Files</a></li>
+            <li class="m-show-m"><a href="#search" class="m-doc-search-icon" title="Search" onclick="return showSearch()"><svg style="height: 0.9rem;" viewBox="0 0 16 16">
+              <use href="#m-doc-search-icon-path" />
+            </svg></a></li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav></header>
+<main><article>
+  <div class="m-container m-container-inflatable">
+    <div class="m-row">
+      <div class="m-col-l-10 m-push-l-1">
+        <h1>
+          <span class="m-breadcrumb"><a href="namespace_simulator.html">Simulator</a>::<wbr/></span>cStarManager <span class="m-thin">class</span>
+          <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_star_manager_8h.html">&lt;Spore/Simulator/SubSystem/StarManager.h&gt;</a></div>
+        </h1>
+        <p><span></span></p>
+        <div class="m-block m-default">
+          <h3>Contents</h3>
+          <ul>
+            <li>
+              Reference
+              <ul>
+                <li><a href="#base-classes">Base classes</a></li>
+                <li><a href="#pub-static-methods">Public static functions</a></li>
+                <li><a href="#pub-methods">Public functions</a></li>
+                <li><a href="#pro-attribs">Protected variables</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+        <section id="base-classes">
+          <h2><a href="#base-classes">Base classes</a></h2>
+          <dl class="m-doc">
+            <dt>
+              class <a href="class_simulator_1_1c_strategy.html" class="m-doc">cStrategy</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              class <a href="class_app_1_1_i_message_listener.html" class="m-doc">App::IMessageListener</a>
+            </dt>
+            <dd>An interface that can receive messages sent through the app.</dd>
+          </dl>
+        </section>
+        <section id="pub-static-methods">
+          <h2><a href="#pub-static-methods">Public static functions</a></h2>
+          <dl class="m-doc">
+            <dt id="a8d55dab74067f7e439b9310c25c1a5cf">
+              <span class="m-doc-wrap-bumper">static auto <a href="#a8d55dab74067f7e439b9310c25c1a5cf" class="m-doc-self">Get</a>(</span><span class="m-doc-wrap">) -&gt; <a href="class_simulator_1_1c_star_manager.html" class="m-doc">cStarManager</a>*</span>
+            </dt>
+            <dd>Returns the active <a href="namespace_simulator.html" class="m-doc">Simulator</a> star manager, used for most things in space stage.</dd>
+          </dl>
+        </section>
+        <section id="pub-methods">
+          <h2><a href="#pub-methods">Public functions</a></h2>
+          <dl class="m-doc">
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a040e0bd97e66070db7a029f1f1eeb1e2" class="m-doc">GetEmpire</a>(</span><span class="m-doc-wrap">uint32_t politicalID) -&gt; <a href="class_simulator_1_1c_empire.html" class="m-doc">cEmpire</a>*</span>
+            </dt>
+            <dd>Returns the empire that has the given political ID, or nullptr if no empire uses it.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#ab60f185de56a431c7ac29949d1353327" class="m-doc">GetStarRecord</a>(</span><span class="m-doc-wrap"><a href="namespace_simulator.html#aaebd0a98d2109f873942abd9a464536c" class="m-doc">StarIndex</a> recordIndex) -&gt; <a href="class_simulator_1_1c_star_record.html" class="m-doc">cStarRecord</a>*</span>
+            </dt>
+            <dd>Returns the star record assigned to the specified id.</dd>
+            <dt id="a399f45dca498d4316f997c6c85e59c5f">
+              <span class="m-doc-wrap-bumper">auto <a href="#a399f45dca498d4316f997c6c85e59c5f" class="m-doc-self">GetPlanetRecord</a>(</span><span class="m-doc-wrap"><a href="namespace_simulator.html#a31eaba82a82dc2f65caec25153cd9191" class="m-doc">PlanetIndex</a> recordIndex) -&gt; <a href="class_simulator_1_1c_planet_record.html" class="m-doc">cPlanetRecord</a>*</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="aeb3ebeae42e3ac9bb4b76fdc104a7ae0">
+              <span class="m-doc-wrap-bumper">auto <a href="#aeb3ebeae42e3ac9bb4b76fdc104a7ae0" class="m-doc-self">GetEmpires</a>(</span><span class="m-doc-wrap">) -&gt; <a href="namespace_simulator.html#a5dd5d2f2fefe02ca780bfd6aa130f41a" class="m-doc">EmpiresMap</a>&amp;</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="adbf1e7124888964f13d23cd656f5b12b">
+              <span class="m-doc-wrap-bumper">auto <a href="#adbf1e7124888964f13d23cd656f5b12b" class="m-doc-self">GetGrobEmpireID</a>(</span><span class="m-doc-wrap">) -&gt; uint32_t</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a49fbd736e72d80b2934f32c840189f2b">
+              <span class="m-doc-wrap-bumper">auto <a href="#a49fbd736e72d80b2934f32c840189f2b" class="m-doc-self">NextPoliticalID</a>(</span><span class="m-doc-wrap">bool) -&gt; uint32_t</span>
+            </dt>
+            <dd>Generates a new political ID.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a80c13655c838d018d99a9a1f7db9d506" class="m-doc">GetEmpireForStar</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_star_record.html" class="m-doc">cStarRecord</a>* starRecord) -&gt; <a href="class_simulator_1_1c_empire.html" class="m-doc">cEmpire</a>*</span>
+            </dt>
+            <dd>Returns the empire that controls this star record, creating it if necessary.</dd>
+            <dt id="a0ee09225a3f6129044a6a0d2332a648d">
+              <span class="m-doc-wrap-bumper">void <a href="#a0ee09225a3f6129044a6a0d2332a648d" class="m-doc-self">RecordToPlanet</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_planet_record.html" class="m-doc">cPlanetRecord</a>* record,
+              intrusive_ptr&lt;<a href="class_simulator_1_1c_planet.html" class="m-doc">cPlanet</a>&gt;&amp; dst)</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a8c8f28d245a7058ef71187fb75e613d8">
+              <span class="m-doc-wrap-bumper">auto <a href="#a8c8f28d245a7058ef71187fb75e613d8" class="m-doc-self">GetSol</a>(</span><span class="m-doc-wrap">) const -&gt; <a href="class_simulator_1_1c_star_record.html" class="m-doc">cStarRecord</a>*</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="aac0063668013af1e2bd8b11489dc879e">
+              <span class="m-doc-wrap-bumper">auto <a href="#aac0063668013af1e2bd8b11489dc879e" class="m-doc-self">GetScenarioStar</a>(</span><span class="m-doc-wrap">) const -&gt; <a href="class_simulator_1_1c_star_record.html" class="m-doc">cStarRecord</a>*</span>
+            </dt>
+            <dd><span></span></dd>
+          </dl>
+        </section>
+        <section id="pro-attribs">
+          <h2><a href="#pro-attribs">Protected variables</a></h2>
+          <dl class="m-doc">
+            <dt id="a59df0ca2d195afb281b74fd6598fa390">
+              map&lt;int, int&gt; <a href="#a59df0ca2d195afb281b74fd6598fa390" class="m-doc-self">field_20</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a87871408ccbdf1deda628e7e044b93c8">
+              vector&lt;int&gt; <a href="#a87871408ccbdf1deda628e7e044b93c8" class="m-doc-self">field_3C</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="ab09a9ba8370b59638d8a40f2a06c1eb3">
+              vector&lt;int&gt; <a href="#ab09a9ba8370b59638d8a40f2a06c1eb3" class="m-doc-self">field_50</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="af8b60252345d8ed640894a72a3de9fac">
+              bool <a href="#af8b60252345d8ed640894a72a3de9fac" class="m-doc-self">field_64</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a25cd33f2ea738a6aee43f9962dec28a6">
+              int <a href="#a25cd33f2ea738a6aee43f9962dec28a6" class="m-doc-self">field_68</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="abc8ed6a305e683ebe844f7664108e1c1">
+              string16 <a href="#abc8ed6a305e683ebe844f7664108e1c1" class="m-doc-self">field_6C</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="ad2b6a3048c13f6c79014bb2a8428bca8">
+              char <a href="#ad2b6a3048c13f6c79014bb2a8428bca8" class="m-doc-self">_padding_7C</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a3ad9de42c241953772d0368c64f64ff6">
+              vector&lt;int&gt; <a href="#a3ad9de42c241953772d0368c64f64ff6" class="m-doc-self">field_A0</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="ae96ccfbea27d388126d803741c309da7">
+              int <a href="#ae96ccfbea27d388126d803741c309da7" class="m-doc-self">field_B4</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="adc4a839d3ed2d648aa46916a599faa11">
+              int <a href="#adc4a839d3ed2d648aa46916a599faa11" class="m-doc-self">field_B8</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a01d939c475fb9ed04f3f6f620c77fd57">
+              int <a href="#a01d939c475fb9ed04f3f6f620c77fd57" class="m-doc-self">field_BC</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a41b05fdc2b6306f3ec231eabfc55c33b">
+              int <a href="#a41b05fdc2b6306f3ec231eabfc55c33b" class="m-doc-self">field_C0</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a14fec1eedb3ad93305a0007fd3f1beba">
+              int <a href="#a14fec1eedb3ad93305a0007fd3f1beba" class="m-doc-self">field_C4</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a77ef473954a8163de0c3d8e16f62055b">
+              vector&lt;vector&lt;intrusive_ptr&lt;<a href="class_simulator_1_1c_star_record.html" class="m-doc">cStarRecord</a>&gt;&gt;&gt; <a href="#a77ef473954a8163de0c3d8e16f62055b" class="m-doc-self">mStarRecords</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="aacac4256c450b4720869ca0af7728fd5">
+              vector&lt;intrusive_ptr&lt;<a href="class_object.html" class="m-doc">Object</a>&gt;&gt; <a href="#aacac4256c450b4720869ca0af7728fd5" class="m-doc-self">field_DC</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="adfa728843a73383f2be90b6ec97270fc">
+              vector&lt;intrusive_ptr&lt;<a href="class_object.html" class="m-doc">Object</a>&gt;&gt; <a href="#adfa728843a73383f2be90b6ec97270fc" class="m-doc-self">field_F0</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a978b136c941472380ec84e99f99b729d">
+              vector&lt;intrusive_ptr&lt;<a href="class_object.html" class="m-doc">Object</a>&gt;&gt; <a href="#a978b136c941472380ec84e99f99b729d" class="m-doc-self">field_104</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a648ad35c81984fd1c069f1709ab15bd1">
+              vector&lt;intrusive_ptr&lt;<a href="class_object.html" class="m-doc">Object</a>&gt;&gt; <a href="#a648ad35c81984fd1c069f1709ab15bd1" class="m-doc-self">field_118</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="accbe763fc16a85f4b1d5599d0260a7b8">
+              map&lt;uint32_t, intrusive_ptr&lt;<a href="class_object.html" class="m-doc">Object</a>&gt;&gt; <a href="#accbe763fc16a85f4b1d5599d0260a7b8" class="m-doc-self">field_12C</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="afcae1f6676fe8e7a4bee144da2e593bd">
+              intrusive_ptr&lt;<a href="class_simulator_1_1c_star_record.html" class="m-doc">cStarRecord</a>&gt; <a href="#afcae1f6676fe8e7a4bee144da2e593bd" class="m-doc-self">mpSol</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="ae488f2afe1a4a561ef7bc66b292bf069">
+              intrusive_ptr&lt;<a href="class_simulator_1_1c_star_record.html" class="m-doc">cStarRecord</a>&gt; <a href="#ae488f2afe1a4a561ef7bc66b292bf069" class="m-doc-self">field_14C</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a2a5ef506af0b5ba41d79ac47fe3ec63e">
+              <a href="namespace_simulator.html#a5dd5d2f2fefe02ca780bfd6aa130f41a" class="m-doc">EmpiresMap</a> <a href="#a2a5ef506af0b5ba41d79ac47fe3ec63e" class="m-doc-self">mEmpiresMap</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a06b91d8c46e2bd85f04cdcae02ec290c">
+              vector&lt;int&gt; <a href="#a06b91d8c46e2bd85f04cdcae02ec290c" class="m-doc-self">field_16C</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a6bb58536e7d5b1a333d8ed0fa9e27bbf">
+              int <a href="#a6bb58536e7d5b1a333d8ed0fa9e27bbf" class="m-doc-self">field_180</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a2dab2b4d98e857fb59d59ee086cb114c">
+              map&lt;int, int&gt; <a href="#a2dab2b4d98e857fb59d59ee086cb114c" class="m-doc-self">field_184</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="aa275782841eb2bbbf66e36dfb5ce886b">
+              intrusive_ptr&lt;<a href="class_object.html" class="m-doc">Object</a>&gt; <a href="#aa275782841eb2bbbf66e36dfb5ce886b" class="m-doc-self">field_1A0</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a6039d873f8b95ce019d4a9d87770e66a">
+              intrusive_ptr&lt;<a href="class_object.html" class="m-doc">Object</a>&gt; <a href="#a6039d873f8b95ce019d4a9d87770e66a" class="m-doc-self">field_1A4</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a097415eceb91f9fd3a297066a119d86a">
+              int <a href="#a097415eceb91f9fd3a297066a119d86a" class="m-doc-self">field_1A8</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="ae2186686dec9540f72e5b2bde4162167">
+              int <a href="#ae2186686dec9540f72e5b2bde4162167" class="m-doc-self">field_1AC</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="aaad7c955f2ceace735b1e39c0d85eaa2">
+              int <a href="#aaad7c955f2ceace735b1e39c0d85eaa2" class="m-doc-self">field_1B0</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="ad1d330bbc2597f094f01db87fe0c28e2">
+              int <a href="#ad1d330bbc2597f094f01db87fe0c28e2" class="m-doc-self">field_1B4</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a1b60254bfe9fdfc2303d65cd4f519ced">
+              int <a href="#a1b60254bfe9fdfc2303d65cd4f519ced" class="m-doc-self">field_1B8</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a83e74896ac5e7da7ae9f0df175803dc5">
+              float <a href="#a83e74896ac5e7da7ae9f0df175803dc5" class="m-doc-self">field_1BC</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a57ba30dc8e9cf405d0e678cfcaa4c425">
+              float <a href="#a57ba30dc8e9cf405d0e678cfcaa4c425" class="m-doc-self">field_1C0</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a7b62020ce0c41cbc5d622c2eddb6c365">
+              int <a href="#a7b62020ce0c41cbc5d622c2eddb6c365" class="m-doc-self">field_1C4</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a9c6624aa1955bdbd68b5c382c4c71f2d">
+              int <a href="#a9c6624aa1955bdbd68b5c382c4c71f2d" class="m-doc-self">field_1C8</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="aa12b160caf842589fc834226c0c7648a">
+              int <a href="#aa12b160caf842589fc834226c0c7648a" class="m-doc-self">field_1CC</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a97f809b19612820591858224993a8a8f">
+              int <a href="#a97f809b19612820591858224993a8a8f" class="m-doc-self">field_1D0</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="ae7f30af906d9539a32b09bf663308dc3">
+              int <a href="#ae7f30af906d9539a32b09bf663308dc3" class="m-doc-self">field_1D4</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a935f465a92f324e3561f00b56b08c2dc">
+              uint32_t <a href="#a935f465a92f324e3561f00b56b08c2dc" class="m-doc-self">mGrobEmpireID</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="ac57fa2205d3915955f25abea31a16f03">
+              intrusive_ptr&lt;<a href="class_simulator_1_1c_star_record.html" class="m-doc">cStarRecord</a>&gt; <a href="#ac57fa2205d3915955f25abea31a16f03" class="m-doc-self">mpScenarioStar</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="ab96976b88b7bcca84db8d52861c04236">
+              <a href="class_simulator_1_1c_space_trade_route_manager.html" class="m-doc">cSpaceTradeRouteManager</a> <a href="#ab96976b88b7bcca84db8d52861c04236" class="m-doc-self">mTradeRouteMgr</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="afcface465004b58429472cc261ff1202">
+              intrusive_ptr&lt;<a href="class_simulator_1_1c_relationship_manager.html" class="m-doc">cRelationshipManager</a>&gt; <a href="#afcface465004b58429472cc261ff1202" class="m-doc-self">mpRelationshipManager</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a58c601712dae4c5055899ce55bfb5a42">
+              vector&lt;int&gt; <a href="#a58c601712dae4c5055899ce55bfb5a42" class="m-doc-self">field_208</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="aa7e01c33251f65d3c1957456cec46feb">
+              bool <a href="#aa7e01c33251f65d3c1957456cec46feb" class="m-doc-self">field_21C</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="abf3410b75a6350680156dc2140a144d4">
+              intrusive_ptr&lt;<a href="class_object.html" class="m-doc">Object</a>&gt; <a href="#abf3410b75a6350680156dc2140a144d4" class="m-doc-self">field_220</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="ac21eb78e2d3960ffafa1dc7fa15bec89">
+              intrusive_ptr&lt;<a href="class_object.html" class="m-doc">Object</a>&gt; <a href="#ac21eb78e2d3960ffafa1dc7fa15bec89" class="m-doc-self">field_224</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a104a859fda0933ef6f19872c54a38945">
+              intrusive_ptr&lt;<a href="class_object.html" class="m-doc">Object</a>&gt; <a href="#a104a859fda0933ef6f19872c54a38945" class="m-doc-self">field_228</a>
+            </dt>
+            <dd><span></span></dd>
+          </dl>
+        </section>
+        <section>
+          <h2>Function documentation</h2>
+          <section class="m-doc-details" id="a040e0bd97e66070db7a029f1f1eeb1e2"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"><a href="class_simulator_1_1c_empire.html" class="m-doc">cEmpire</a>* Simulator::<wbr />cStarManager::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a040e0bd97e66070db7a029f1f1eeb1e2" class="m-doc-self">GetEmpire</a>(</span><span class="m-doc-wrap">uint32_t politicalID)</span></span>
+            </h3>
+            <p>Returns the empire that has the given political ID, or nullptr if no empire uses it.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">politicalID</td>
+                  <td></td>
+                </tr>
+              </tbody>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="ab60f185de56a431c7ac29949d1353327"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"><a href="class_simulator_1_1c_star_record.html" class="m-doc">cStarRecord</a>* Simulator::<wbr />cStarManager::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ab60f185de56a431c7ac29949d1353327" class="m-doc-self">GetStarRecord</a>(</span><span class="m-doc-wrap"><a href="namespace_simulator.html#aaebd0a98d2109f873942abd9a464536c" class="m-doc">StarIndex</a> recordIndex)</span></span>
+            </h3>
+            <p>Returns the star record assigned to the specified id.</p>
+<p>There are three possibilities:</p><ul><li>If id == 0, the galaxy center is returned ?</li><li>If id == -1, nullptr is returned.</li><li>Otherwise, the id is divided in sector index (&amp; 0xFFFFF000) and star index (&amp; 0x00000FFF) and the star record is returned.</li></ul>
+          </div></section>
+          <section class="m-doc-details" id="a80c13655c838d018d99a9a1f7db9d506"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"><a href="class_simulator_1_1c_empire.html" class="m-doc">cEmpire</a>* Simulator::<wbr />cStarManager::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a80c13655c838d018d99a9a1f7db9d506" class="m-doc-self">GetEmpireForStar</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_star_record.html" class="m-doc">cStarRecord</a>* starRecord)</span></span>
+            </h3>
+            <p>Returns the empire that controls this star record, creating it if necessary.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">starRecord</td>
+                  <td></td>
+                </tr>
+              </tbody>
+            </table>
+<p>If no empire controls this star record or the one that controls it does not yet exist, it will be created and added to the empire map.</p>
+          </div></section>
+        </section>
+      </div>
+    </div>
+  </div>
+</article></main>
+<div class="m-doc-search" id="search">
+  <a href="#!" onclick="return hideSearch()"></a>
+  <div class="m-container">
+    <div class="m-row">
+      <div class="m-col-m-8 m-push-m-2">
+        <div class="m-doc-search-header m-text m-small">
+          <div><span class="m-label m-default">Tab</span> / <span class="m-label m-default">T</span> to search, <span class="m-label m-default">Esc</span> to close</div>
+          <div id="search-symbolcount">&hellip;</div>
+        </div>
+        <div class="m-doc-search-content">
+          <form>
+            <input type="search" name="q" id="search-input" placeholder="Loading &hellip;" disabled="disabled" autofocus="autofocus" autocomplete="off" spellcheck="false" />
+          </form>
+          <noscript class="m-text m-danger m-text-center">Unlike everything else in the docs, the search functionality <em>requires</em> JavaScript.</noscript>
+          <div id="search-help" class="m-text m-dim m-text-center">
+            <p class="m-noindent">Search for symbols, directories, files, pages or
+            modules. You can omit any prefix from the symbol or file path; adding a
+            <code>:</code> or <code>/</code> suffix lists all members of given symbol or
+            directory.</p>
+            <p class="m-noindent">Use <span class="m-label m-dim">&darr;</span>
+            / <span class="m-label m-dim">&uarr;</span> to navigate through the list,
+            <span class="m-label m-dim">Enter</span> to go.
+            <span class="m-label m-dim">Tab</span> autocompletes common prefix, you can
+            copy a link to the result using <span class="m-label m-dim">⌘</span>
+            <span class="m-label m-dim">L</span> while <span class="m-label m-dim">⌘</span>
+            <span class="m-label m-dim">M</span> produces a Markdown link.</p>
+          </div>
+          <div id="search-notfound" class="m-text m-warning m-text-center">Sorry, nothing was found.</div>
+          <ul id="search-results"></ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="search-v1.js"></script>
+<script src="searchdata-v1.js" async="async"></script>
+<footer><nav>
+  <div class="m-container">
+    <div class="m-row">
+      <div class="m-col-l-10 m-push-l-1">
+        <p>Spore ModAPI SDK for creating C++ mods for Spore. Created with <a href="https://doxygen.org/">Doxygen</a> 1.8.16 and <a href="https://mcss.mosra.cz/">m.css</a>.</p>
+      </div>
+    </div>
+  </div>
+</nav></footer>
+</body>
+</html>

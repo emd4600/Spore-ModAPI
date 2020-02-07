@@ -1,0 +1,2587 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>App::Property class | Spore ModAPI SDK for creating C++ mods for Spore</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,600,600i%7CSource+Code+Pro:400,400i,600" />
+  <link rel="stylesheet" href="m-dark.css" />
+  <link rel="stylesheet" href="m-documentation.css" />
+  <link rel="icon" href="Spore_ModAPI_Icon.png" type="image/png" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#22272e" />
+</head>
+<body>
+<header><nav id="navigation">
+  <div class="m-container">
+    <div class="m-row">
+      <a href="index.html" id="m-navbar-brand" class="m-col-t-8 m-col-m-none m-left-m"><img src="Spore_ModAPI_Icon.png" />Spore ModAPI <span class="m-thin">SDK for creating C++ mods for Spore</span></a>
+      <div class="m-col-t-4 m-hide-m m-text-right m-nopadr">
+        <a href="#search" class="m-doc-search-icon" title="Search" onclick="return showSearch()"><svg style="height: 0.9rem;" viewBox="0 0 16 16">
+          <path id="m-doc-search-icon-path" d="m6 0c-3.31 0-6 2.69-6 6 0 3.31 2.69 6 6 6 1.49 0 2.85-0.541 3.89-1.44-0.0164 0.338 0.147 0.759 0.5 1.15l3.22 3.79c0.552 0.614 1.45 0.665 2 0.115 0.55-0.55 0.499-1.45-0.115-2l-3.79-3.22c-0.392-0.353-0.812-0.515-1.15-0.5 0.895-1.05 1.44-2.41 1.44-3.89 0-3.31-2.69-6-6-6zm0 1.56a4.44 4.44 0 0 1 4.44 4.44 4.44 4.44 0 0 1-4.44 4.44 4.44 4.44 0 0 1-4.44-4.44 4.44 4.44 0 0 1 4.44-4.44z"/>
+        </svg></a>
+        <a id="m-navbar-show" href="#navigation" title="Show navigation"></a>
+        <a id="m-navbar-hide" href="#" title="Hide navigation"></a>
+      </div>
+      <div id="m-navbar-collapse" class="m-col-t-12 m-show-m m-col-m-none m-right-m">
+        <div class="m-row">
+          <ol class="m-col-t-6 m-col-m-none">
+            <li><a href="pages.html">Tutorials</a></li>
+            <li><a href="namespaces.html">Namespaces</a></li>
+          </ol>
+          <ol class="m-col-t-6 m-col-m-none" start="3">
+            <li><a href="annotated.html">Classes</a></li>
+            <li><a href="files.html">Files</a></li>
+            <li class="m-show-m"><a href="#search" class="m-doc-search-icon" title="Search" onclick="return showSearch()"><svg style="height: 0.9rem;" viewBox="0 0 16 16">
+              <use href="#m-doc-search-icon-path" />
+            </svg></a></li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav></header>
+<main><article>
+  <div class="m-container m-container-inflatable">
+    <div class="m-row">
+      <div class="m-col-l-10 m-push-l-1">
+        <h1>
+          <span class="m-breadcrumb"><a href="namespace_app.html">App</a>::<wbr/></span>Property <span class="m-thin">class</span>
+          <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_property_8h.html">&lt;Spore/App/Property.h&gt;</a></div>
+        </h1>
+        <p><a href="class_app_1_1_property.html" class="m-doc">Property</a> is a class used to represent a property belonging to a PROP file.</p>
+        <div class="m-block m-default">
+          <h3>Contents</h3>
+          <ul>
+            <li>
+              Reference
+              <ul>
+                <li><a href="#pub-types">Public types</a></li>
+                <li><a href="#typeless-methods">Constructors, destructors, conversion operators</a></li>
+                <li><a href="#pub-attribs">Public variables</a></li>
+                <li><a href="#pro-methods">Protected functions</a></li>
+                <li><a href="#pro-attribs">Protected variables</a></li>
+                <li><a href="#methods-for-getting-value-pointers">Methods for getting value pointers</a></li>
+                <li><a href="#methods-for-setting-values">Methods for setting values</a></li>
+                <li><a href="#static-methods-for-getting-values">Static methods for getting values</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+<p>This class is widely used for configuring and storing game properties. The class <a href="class_app_1_1_property_list.html" class="m-doc">PropertyList</a> is used to group properties together, and represent a PROP file.</p><p>This class is not usually used directly; it provides, however, numerous static methods to easily get data from a <a href="class_app_1_1_property_list.html" class="m-doc">PropertyList</a>. For example, to get a property from a PROP file:</p><pre class="m-code"><span class="n">PropertyList</span><span class="o">*</span> <span class="n">propList</span> <span class="o">=</span> <span class="p">...;</span>  <span class="c1">// get the PropertyList, probably from the PropManager class</span>
+<span class="kt">float</span> <span class="n">modelScale</span> <span class="o">=</span> <span class="mf">1.0f</span><span class="p">;</span>  <span class="c1">// we can assign it a default value</span>
+<span class="n">Property</span><span class="o">::</span><span class="n">GetFloat</span><span class="p">(</span><span class="n">propList</span><span class="p">,</span> <span class="mh">0x00FBA611</span><span class="p">,</span> <span class="n">modelScale</span><span class="p">);</span>  <span class="c1">// 0x00FBA611 is the propertyID of modelScale; you can find them in reg_property.txt (SporeMaster/SporeModder)</span>
+<span class="c1">// this returns a bool; if you don&#39;t assign default values, it might be a good idea to check it</span></pre><p>Another use of this class is to assign values; this can be used to store saved game data, for example:</p><pre class="m-code"><span class="c1">// assuming the propertyID is just the hash of &#39;dnaAmount&#39; (so it does not have an entry on reg_property.txt)</span>
+<span class="n">propList</span><span class="o">-&gt;</span><span class="n">AddProperty</span><span class="p">(</span><span class="n">Hash</span><span class="o">::</span><span class="n">FNV</span><span class="p">(</span><span class="s">&quot;dnaAmount&quot;</span><span class="p">),</span> <span class="n">Property</span><span class="p">().</span><span class="n">SetValueInt32</span><span class="p">(</span><span class="mi">80</span><span class="p">));</span></pre>
+        <section id="pub-types">
+          <h2><a href="#pub-types">Public types</a></h2>
+          <dl class="m-doc">
+            <dt>
+              struct <a href="struct_app_1_1_property_1_1_text_property.html" class="m-doc">TextProperty</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a3cbe8474b8de7f796d07be7d0edbe351">
+              <span class="m-doc-wrap-bumper">enum <a href="#a3cbe8474b8de7f796d07be7d0edbe351" class="m-doc-self">PropertyFlags</a> { </span><span class="m-doc-wrap"><a href="#a3cbe8474b8de7f796d07be7d0edbe351ab307421295681040ccc0a0c50f339709" class="m-doc">kPropertyFlagNotDirect</a> = 0x10,
+              <a href="#a3cbe8474b8de7f796d07be7d0edbe351ad058c7049a383cda75b105f70c437bb1" class="m-doc">kPropertyFlagArray</a> = 0x30 }</span>
+            </dt>
+            <dd><span></span></dd>
+          </dl>
+        </section>
+        <section id="typeless-methods">
+          <h2><a href="#typeless-methods">Constructors, destructors, conversion operators</a></h2>
+          <dl class="m-doc">
+            <dt id="ab8f1af8790c1c672e80025256205307b">
+              <span class="m-doc-wrap-bumper"><a href="#ab8f1af8790c1c672e80025256205307b" class="m-doc-self">Property</a>(</span><span class="m-doc-wrap">)</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a7d07a4fbb26e123f0e139686063118f2">
+              <span class="m-doc-wrap-bumper"><a href="#a7d07a4fbb26e123f0e139686063118f2" class="m-doc-self">~Property</a>(</span><span class="m-doc-wrap">)</span>
+            </dt>
+            <dd><span></span></dd>
+          </dl>
+        </section>
+        <section id="pub-attribs">
+          <h2><a href="#pub-attribs">Public variables</a></h2>
+          <dl class="m-doc">
+            <dt id="aac92f283f03f60c7e0b5c107fe4930e0">
+              bool <a href="#aac92f283f03f60c7e0b5c107fe4930e0" class="m-doc-self">mValueBool</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a6853c92403016ad51a741f87e58a6f54">
+              int8_t <a href="#a6853c92403016ad51a741f87e58a6f54" class="m-doc-self">mValueInt8</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="ae2ae018318c5443ec457eaf6aae611df">
+              uint8_t <a href="#ae2ae018318c5443ec457eaf6aae611df" class="m-doc-self">mValueUInt8</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="ad74d5d4d411b39d688b55a93cdddc793">
+              int16_t <a href="#ad74d5d4d411b39d688b55a93cdddc793" class="m-doc-self">mValueInt16</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a68a30e0157af2021b4d01bdecb21c099">
+              uint16_t <a href="#a68a30e0157af2021b4d01bdecb21c099" class="m-doc-self">mValueUInt16</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a971b9000f0ff76d77c02fad66bed0c02">
+              int32_t <a href="#a971b9000f0ff76d77c02fad66bed0c02" class="m-doc-self">mValueInt32</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="ae2cc0447131c2bae081534f89a576ee7">
+              uint32_t <a href="#ae2cc0447131c2bae081534f89a576ee7" class="m-doc-self">mValueUInt32</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a64f56dd56c5f1b0e4c48b7f34eaa058e">
+              float <a href="#a64f56dd56c5f1b0e4c48b7f34eaa058e" class="m-doc-self">mValueFloat</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a87beb6dea0c27d09792a332d93ecca2b">
+              <a href="struct_resource_key.html" class="m-doc">ResourceKey</a> <a href="#a87beb6dea0c27d09792a332d93ecca2b" class="m-doc-self">mValueKey</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a4f45e5f24188103a94521038b1683122">
+              <a href="struct_math_1_1_vector2.html" class="m-doc">Vector2</a> <a href="#a4f45e5f24188103a94521038b1683122" class="m-doc-self">mValueVector2</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="ab271ece8ffe2ce1c01aa40e0c490f849">
+              <a href="struct_math_1_1_vector3.html" class="m-doc">Vector3</a> <a href="#ab271ece8ffe2ce1c01aa40e0c490f849" class="m-doc-self">mValueVector3</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="afb87db6dcae53eb67c7c8a20e0a8f8e4">
+              <a href="struct_math_1_1_vector4.html" class="m-doc">Vector4</a> <a href="#afb87db6dcae53eb67c7c8a20e0a8f8e4" class="m-doc-self">mValueVector4</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a14c3388795be3748053e9496f9799693">
+              <a href="struct_math_1_1_color_r_g_b.html" class="m-doc">ColorRGB</a> <a href="#a14c3388795be3748053e9496f9799693" class="m-doc-self">mValueColorRGB</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a739d6a4f91e2b9ab6c4fe2a5e517d154">
+              <a href="struct_math_1_1_color_r_g_b_a.html" class="m-doc">ColorRGBA</a> <a href="#a739d6a4f91e2b9ab6c4fe2a5e517d154" class="m-doc-self">mValueColorRGBA</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="aec835c09e9210e2e34b637caa3b012a0">
+              eastl::string8 <a href="#aec835c09e9210e2e34b637caa3b012a0" class="m-doc-self">mValueString8</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="ac669671232bb5a056dd56a8fb794e49e">
+              eastl::string16 <a href="#ac669671232bb5a056dd56a8fb794e49e" class="m-doc-self">mValueString16</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="aede8517d6449fe65431c654f8215eb56">
+              void* <a href="#aede8517d6449fe65431c654f8215eb56" class="m-doc-self">mpData</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="ada6774a55ee6119f6052011bb552c118">
+              size_t <a href="#ada6774a55ee6119f6052011bb552c118" class="m-doc-self">mnItemSize</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="aa1f44172d3bec49fcff13251d5aff7c5">
+              size_t <a href="#aa1f44172d3bec49fcff13251d5aff7c5" class="m-doc-self">mnItemCount</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="abc67d6bb4dd41695eae54a0d933002fd">
+              short <a href="#abc67d6bb4dd41695eae54a0d933002fd" class="m-doc-self">mnFlags</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="ab03411c397c960052bea97fa77775c97">
+              <a href="namespace_app.html#aa30f9441aea9fdb83254924d3a87071e" class="m-doc">PropertyType</a> <a href="#ab03411c397c960052bea97fa77775c97" class="m-doc-self">mnType</a>
+            </dt>
+            <dd><span></span></dd>
+          </dl>
+        </section>
+        <section id="pro-methods">
+          <h2><a href="#pro-methods">Protected functions</a></h2>
+          <dl class="m-doc">
+            <dt id="a687d28979e46f249cb110617ce05211c">
+              <span class="m-doc-wrap-bumper">void <a href="#a687d28979e46f249cb110617ce05211c" class="m-doc-self">Clear</a>(</span><span class="m-doc-wrap">bool arg_0)</span>
+            </dt>
+            <dd><span></span></dd>
+          </dl>
+        </section>
+        <section id="pro-attribs">
+          <h2><a href="#pro-attribs">Protected variables</a></h2>
+          <dl class="m-doc">
+            <dt id="a4495f56f934dea49205539fed4120c21">
+              union App::Property::@4 <a href="#a4495f56f934dea49205539fed4120c21" class="m-doc-self">@5</a>
+            </dt>
+            <dd><span></span></dd>
+          </dl>
+        </section>
+        <section id="methods-for-getting-value-pointers">
+          <h2><a href="#methods-for-getting-value-pointers">Methods for getting value pointers</a></h2>
+          <dl class="m-doc">
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#ab26c24baaf12e987c8d7ed9b0b17ec43" class="m-doc">GetValueInt32</a>(</span><span class="m-doc-wrap">) -&gt; int32_t*</span>
+            </dt>
+            <dd>Returns a pointer to the int32_t value(s) of this property.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a21f42808167eebbef3608bc2adea9471" class="m-doc">GetValueFloat</a>(</span><span class="m-doc-wrap">) -&gt; float*</span>
+            </dt>
+            <dd>Returns a pointer to the float value(s) of this property.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a147738302d1e81632bbec7ccfd27801d" class="m-doc">GetValueBool</a>(</span><span class="m-doc-wrap">) -&gt; bool*</span>
+            </dt>
+            <dd>Returns a pointer to the bool value(s) of this property.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#af6f92cd78587d0eea941ff34d62312df" class="m-doc">GetValueUInt32</a>(</span><span class="m-doc-wrap">) -&gt; uint32_t*</span>
+            </dt>
+            <dd>Returns a pointer to the uint32_t value(s) of this property.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a6c5b23febd436f59602b6471f9cb8d4e" class="m-doc">GetValueVector2</a>(</span><span class="m-doc-wrap">) -&gt; <a href="struct_math_1_1_vector2.html" class="m-doc">Vector2</a>*</span>
+            </dt>
+            <dd>Returns a pointer to the <a href="struct_math_1_1_vector2.html" class="m-doc">Math::<wbr />Vector2</a> value(s) of this property.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a827c4b7ce48eec5d517f3382161664c4" class="m-doc">GetValueVector3</a>(</span><span class="m-doc-wrap">) -&gt; <a href="struct_math_1_1_vector3.html" class="m-doc">Vector3</a>*</span>
+            </dt>
+            <dd>Returns a pointer to the <a href="struct_math_1_1_vector3.html" class="m-doc">Math::<wbr />Vector3</a> value(s) of this property.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a7bcc3cb1e4f77d426b0807797bd6af89" class="m-doc">GetValueVector4</a>(</span><span class="m-doc-wrap">) -&gt; <a href="struct_math_1_1_vector4.html" class="m-doc">Vector4</a>*</span>
+            </dt>
+            <dd>Returns a pointer to the <a href="struct_math_1_1_vector4.html" class="m-doc">Math::<wbr />Vector4</a> value(s) of this property.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a3f3ed20c3b3018784167613857a33af7" class="m-doc">GetValueColorRGB</a>(</span><span class="m-doc-wrap">) -&gt; <a href="struct_math_1_1_color_r_g_b.html" class="m-doc">ColorRGB</a>*</span>
+            </dt>
+            <dd>Returns a pointer to the <a href="struct_math_1_1_color_r_g_b.html" class="m-doc">Math::<wbr />ColorRGB</a> value(s) of this property.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#ac271fd37d2167dfa54b91613c9c82d32" class="m-doc">GetValueColorRGBA</a>(</span><span class="m-doc-wrap">) -&gt; <a href="struct_math_1_1_color_r_g_b_a.html" class="m-doc">ColorRGBA</a>*</span>
+            </dt>
+            <dd>Returns a pointer to the <a href="struct_math_1_1_color_r_g_b_a.html" class="m-doc">Math::<wbr />ColorRGBA</a> value(s) of this property.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a355737a0d71ab9656647a02c56ec52c8" class="m-doc">GetValueKey</a>(</span><span class="m-doc-wrap">) -&gt; <a href="struct_resource_key.html" class="m-doc">ResourceKey</a>*</span>
+            </dt>
+            <dd>Returns a pointer to the <a href="struct_resource_key.html" class="m-doc">ResourceKey</a> (&#x27;key&#x27;) value(s) of this property.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#ae501ca9dd8533132d9a82c31fc6fa7ee" class="m-doc">GetValueTransform</a>(</span><span class="m-doc-wrap">) -&gt; <a href="class_transform.html" class="m-doc">Transform</a>*</span>
+            </dt>
+            <dd>Returns a pointer to the EntityTransform (&#x27;transform&#x27;) value(s) of this property.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a5aec0e3274e14d9c349acc06e9bee83c" class="m-doc">GetValueText</a>(</span><span class="m-doc-wrap">) -&gt; <a href="class_localized_string.html" class="m-doc">LocalizedString</a>*</span>
+            </dt>
+            <dd>Returns a pointer to the <a href="class_localized_string.html" class="m-doc">LocalizedString</a> (&#x27;text&#x27;) value(s) of this property.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a4570f7b62af9841cac539f193bffdbbb" class="m-doc">GetValueBBox</a>(</span><span class="m-doc-wrap">) -&gt; <a href="struct_math_1_1_bounding_box.html" class="m-doc">BoundingBox</a>*</span>
+            </dt>
+            <dd>Returns a pointer to the BoundingBox (&#x27;bbox&#x27;) value(s) of this property.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#aee156785ef46aad2deb68bc3a3e9faa4" class="m-doc">GetValueString8</a>(</span><span class="m-doc-wrap">) -&gt; eastl::string8*</span>
+            </dt>
+            <dd>Returns a pointer to the eastl::string8 value(s) of this property.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a292af7e00dcb11445788948fe6b8ccae" class="m-doc">GetValueString16</a>(</span><span class="m-doc-wrap">) -&gt; eastl::string16*</span>
+            </dt>
+            <dd>Returns a pointer to the eastl::string16 value(s) of this property.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#ac4c41aaf5715810ea59c177d8e589de4" class="m-doc">GetValueChar</a>(</span><span class="m-doc-wrap">) -&gt; char*</span>
+            </dt>
+            <dd>Returns a pointer to the char value(s) of this property.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#ab7dd391e0ccbc550bbe9d9515334e90f" class="m-doc">GetValueWChar</a>(</span><span class="m-doc-wrap">) -&gt; char16_t*</span>
+            </dt>
+            <dd>Returns a pointer to the char16_t value(s) of this property.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#afb0c9a60873083fa98caa5523ca1beab" class="m-doc">GetValueInt8</a>(</span><span class="m-doc-wrap">) -&gt; int8_t*</span>
+            </dt>
+            <dd>Returns a pointer to the int8_t value(s) of this property.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a59760d34fa94fa439fc6723c4c7a5faf" class="m-doc">GetValueUInt8</a>(</span><span class="m-doc-wrap">) -&gt; uint8_t*</span>
+            </dt>
+            <dd>Returns a pointer to the uint8_t value(s) of this property.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a1ac582b3b1399f421a46338793803e58" class="m-doc">GetValueInt16</a>(</span><span class="m-doc-wrap">) -&gt; int16_t*</span>
+            </dt>
+            <dd>Returns a pointer to the int16_t value(s) of this property.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a9fd6be6d638150853f680fb93d6371de" class="m-doc">GetValueUInt16</a>(</span><span class="m-doc-wrap">) -&gt; uint16_t*</span>
+            </dt>
+            <dd>Returns a pointer to the uint16_t value(s) of this property.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#ac70e1122b1b68a0d69652b30aa901443" class="m-doc">GetValueInt64</a>(</span><span class="m-doc-wrap">) -&gt; int64_t*</span>
+            </dt>
+            <dd>Returns a pointer to the int64_t value(s) of this property.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#acdb435004ca733bbf1d7c596bcc35842" class="m-doc">GetValueUInt64</a>(</span><span class="m-doc-wrap">) -&gt; uint64_t*</span>
+            </dt>
+            <dd>Returns a pointer to the uint64_t value(s) of this property.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#af89b502d02a6098795dcd97981d50389" class="m-doc">GetValueDouble</a>(</span><span class="m-doc-wrap">) -&gt; double*</span>
+            </dt>
+            <dd>Returns a pointer to the double value(s) of this property.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a11e2592ed431e9fc7ad7c4250a25fe0f" class="m-doc">GetValueFlags</a>(</span><span class="m-doc-wrap">) -&gt; void**</span>
+            </dt>
+            <dd>Returns a pointer to the &#x27;flags&#x27; value(s) of this property.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a4647a8e00f6c78ea8f6bacd09dc3f432" class="m-doc">GetValue</a>(</span><span class="m-doc-wrap">) -&gt; void*</span>
+            </dt>
+            <dd>Returns a pointer to the value(s) of this property, regardless of its type.</dd>
+          </dl>
+        </section>
+        <section id="methods-for-setting-values">
+          <h2><a href="#methods-for-setting-values">Methods for setting values</a></h2>
+          <dl class="m-doc">
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a58771c44df639e7533ad1fe20f9ea763" class="m-doc">Set</a>(</span><span class="m-doc-wrap"><a href="namespace_app.html#aa30f9441aea9fdb83254924d3a87071e" class="m-doc">PropertyType</a> type,
+              int flags,
+              void* pValue,
+              size_t nValueSize,
+              size_t nValueCount) -&gt; bool</span>
+            </dt>
+            <dd>Sets the value of this property.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#ab961426861225fc4a2b4e50f43edc517" class="m-doc">SetValueBool</a>(</span><span class="m-doc-wrap">const bool&amp; value) -&gt; <a href="class_app_1_1_property.html" class="m-doc">Property</a>&amp;</span>
+            </dt>
+            <dd>Sets the value of this <a href="class_app_1_1_property.html" class="m-doc">Property</a> to the given bool value.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#ae8d26576abec6977c38f5062eb27cfbf" class="m-doc">SetValueInt32</a>(</span><span class="m-doc-wrap">const int32_t&amp; value) -&gt; <a href="class_app_1_1_property.html" class="m-doc">Property</a>&amp;</span>
+            </dt>
+            <dd>Sets the value of this <a href="class_app_1_1_property.html" class="m-doc">Property</a> to the given int32_t value.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a553557d00d3851452f294b4002c48b6f" class="m-doc">SetValueUInt32</a>(</span><span class="m-doc-wrap">const uint32_t&amp; value) -&gt; <a href="class_app_1_1_property.html" class="m-doc">Property</a>&amp;</span>
+            </dt>
+            <dd>Sets the value of this <a href="class_app_1_1_property.html" class="m-doc">Property</a> to the given uint32_t value.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#ab79f52c9bb1831518a5d434924c732f1" class="m-doc">SetValueFloat</a>(</span><span class="m-doc-wrap">const float&amp; value) -&gt; <a href="class_app_1_1_property.html" class="m-doc">Property</a>&amp;</span>
+            </dt>
+            <dd>Sets the value of this <a href="class_app_1_1_property.html" class="m-doc">Property</a> to the given float value.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#afc37e5205f320929e95ac8a27e09f02f" class="m-doc">SetValueKey</a>(</span><span class="m-doc-wrap">const <a href="struct_resource_key.html" class="m-doc">ResourceKey</a>&amp; value) -&gt; <a href="class_app_1_1_property.html" class="m-doc">Property</a>&amp;</span>
+            </dt>
+            <dd>Sets the value of this <a href="class_app_1_1_property.html" class="m-doc">Property</a> to the given <a href="struct_resource_key.html" class="m-doc">ResourceKey</a> value.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a926ca699768c9e73a89f95bcd05cc007" class="m-doc">SetValueString8</a>(</span><span class="m-doc-wrap">const eastl::string8&amp; value) -&gt; <a href="class_app_1_1_property.html" class="m-doc">Property</a>&amp;</span>
+            </dt>
+            <dd>Sets the value of this <a href="class_app_1_1_property.html" class="m-doc">Property</a> to the given eastl::string8 value.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a88df3298a7130beb7dd8c157888dfe04" class="m-doc">SetValueString16</a>(</span><span class="m-doc-wrap">const eastl::string16&amp; value) -&gt; <a href="class_app_1_1_property.html" class="m-doc">Property</a>&amp;</span>
+            </dt>
+            <dd>Sets the value of this <a href="class_app_1_1_property.html" class="m-doc">Property</a> to the given eastl::string16 value.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#af0a0b25533931f068ec61e301b910b38" class="m-doc">SetValueBBox</a>(</span><span class="m-doc-wrap">const <a href="struct_math_1_1_bounding_box.html" class="m-doc">BoundingBox</a>&amp; value) -&gt; <a href="class_app_1_1_property.html" class="m-doc">Property</a>&amp;</span>
+            </dt>
+            <dd>Sets the value of this <a href="class_app_1_1_property.html" class="m-doc">Property</a> to the given BoundingBox value.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a279a8ba3b848e0f1e2a61b953d8c982e" class="m-doc">SetValueVector2</a>(</span><span class="m-doc-wrap">const <a href="struct_math_1_1_vector2.html" class="m-doc">Vector2</a>&amp; value) -&gt; <a href="class_app_1_1_property.html" class="m-doc">Property</a>&amp;</span>
+            </dt>
+            <dd>Sets the value of this <a href="class_app_1_1_property.html" class="m-doc">Property</a> to the given <a href="struct_math_1_1_vector2.html" class="m-doc">Math::<wbr />Vector2</a> value.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#aa689a7c0b55be00493c421f82871054a" class="m-doc">SetValueVector3</a>(</span><span class="m-doc-wrap">const <a href="struct_math_1_1_vector3.html" class="m-doc">Vector3</a>&amp; value) -&gt; <a href="class_app_1_1_property.html" class="m-doc">Property</a>&amp;</span>
+            </dt>
+            <dd>Sets the value of this <a href="class_app_1_1_property.html" class="m-doc">Property</a> to the given <a href="struct_math_1_1_vector3.html" class="m-doc">Math::<wbr />Vector3</a> value.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a5a5275f2f22db26207dcc18f9d97b3ef" class="m-doc">SetValueVector4</a>(</span><span class="m-doc-wrap">const <a href="struct_math_1_1_vector4.html" class="m-doc">Vector4</a>&amp; value) -&gt; <a href="class_app_1_1_property.html" class="m-doc">Property</a>&amp;</span>
+            </dt>
+            <dd>Sets the value of this <a href="class_app_1_1_property.html" class="m-doc">Property</a> to the given <a href="struct_math_1_1_vector4.html" class="m-doc">Math::<wbr />Vector4</a> value.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a87360f5ec6a20f1de33a6b3b9b9bb473" class="m-doc">SetValueColorRGB</a>(</span><span class="m-doc-wrap">const <a href="struct_math_1_1_color_r_g_b.html" class="m-doc">ColorRGB</a>&amp; value) -&gt; <a href="class_app_1_1_property.html" class="m-doc">Property</a>&amp;</span>
+            </dt>
+            <dd>Sets the value of this <a href="class_app_1_1_property.html" class="m-doc">Property</a> to the given <a href="struct_math_1_1_color_r_g_b.html" class="m-doc">Math::<wbr />ColorRGB</a> value.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a1928dc6866c1500849f862671dddbec3" class="m-doc">SetValueColorRGBA</a>(</span><span class="m-doc-wrap">const <a href="struct_math_1_1_color_r_g_b_a.html" class="m-doc">ColorRGBA</a>&amp; value) -&gt; <a href="class_app_1_1_property.html" class="m-doc">Property</a>&amp;</span>
+            </dt>
+            <dd>Sets the value of this <a href="class_app_1_1_property.html" class="m-doc">Property</a> to the given <a href="struct_math_1_1_color_r_g_b_a.html" class="m-doc">Math::<wbr />ColorRGBA</a> value.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a852113053dd04d060607be81fd38206a" class="m-doc">SetArrayBool</a>(</span><span class="m-doc-wrap">const bool* pValues,
+              size_t nValueCount) -&gt; <a href="class_app_1_1_property.html" class="m-doc">Property</a>&amp;</span>
+            </dt>
+            <dd>Sets the value of this <a href="class_app_1_1_property.html" class="m-doc">Property</a> to an array of bool values.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a94a7964c62b77085487be12cf493df7e" class="m-doc">SetArrayInt32</a>(</span><span class="m-doc-wrap">const int32_t* pValues,
+              size_t nValueCount) -&gt; <a href="class_app_1_1_property.html" class="m-doc">Property</a>&amp;</span>
+            </dt>
+            <dd>Sets the value of this <a href="class_app_1_1_property.html" class="m-doc">Property</a> to an array of int32_t values.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a258c27a3f776529e367388a685600616" class="m-doc">SetArrayUInt32</a>(</span><span class="m-doc-wrap">const uint32_t* pValues,
+              size_t nValueCount) -&gt; <a href="class_app_1_1_property.html" class="m-doc">Property</a>&amp;</span>
+            </dt>
+            <dd>Sets the value of this <a href="class_app_1_1_property.html" class="m-doc">Property</a> to an array of uint32_t values.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a89c2e12f78e8cb62693ea08b9eb5f2be" class="m-doc">SetArrayFloat</a>(</span><span class="m-doc-wrap">const float* pValues,
+              size_t nValueCount) -&gt; <a href="class_app_1_1_property.html" class="m-doc">Property</a>&amp;</span>
+            </dt>
+            <dd>Sets the value of this <a href="class_app_1_1_property.html" class="m-doc">Property</a> to an array of float values.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a8ae68aad20625011df307edecd4d7eed" class="m-doc">SetArrayKey</a>(</span><span class="m-doc-wrap">const <a href="struct_resource_key.html" class="m-doc">ResourceKey</a>* pValues,
+              size_t nValueCount) -&gt; <a href="class_app_1_1_property.html" class="m-doc">Property</a>&amp;</span>
+            </dt>
+            <dd>Sets the value of this <a href="class_app_1_1_property.html" class="m-doc">Property</a> to an array of <a href="struct_resource_key.html" class="m-doc">ResourceKey</a> values.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#ade642c1a959679963dad60613f83e080" class="m-doc">SetArrayString8</a>(</span><span class="m-doc-wrap">const eastl::string8* pValues,
+              size_t nValueCount) -&gt; <a href="class_app_1_1_property.html" class="m-doc">Property</a>&amp;</span>
+            </dt>
+            <dd>Sets the value of this <a href="class_app_1_1_property.html" class="m-doc">Property</a> to the an array of eastl::string8 values.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#aff9addf352030222baaabdf187613b8b" class="m-doc">SetArrayString16</a>(</span><span class="m-doc-wrap">const eastl::string16* pValues,
+              size_t nValueCount) -&gt; <a href="class_app_1_1_property.html" class="m-doc">Property</a>&amp;</span>
+            </dt>
+            <dd>Sets the value of this <a href="class_app_1_1_property.html" class="m-doc">Property</a> to an array of eastl::string16 values.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#aa6f7ff43d7fbcedb03b9a80b1a55eb87" class="m-doc">SetArrayBBox</a>(</span><span class="m-doc-wrap">const <a href="struct_math_1_1_bounding_box.html" class="m-doc">BoundingBox</a>* pValues,
+              size_t nValueCount) -&gt; <a href="class_app_1_1_property.html" class="m-doc">Property</a>&amp;</span>
+            </dt>
+            <dd>Sets the value of this <a href="class_app_1_1_property.html" class="m-doc">Property</a> to an array of BoundingBox values.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#aa8711088cb1239e5583ab96ccb10fcae" class="m-doc">SetArrayTransform</a>(</span><span class="m-doc-wrap">const <a href="class_transform.html" class="m-doc">Transform</a>* pValues,
+              size_t nValueCount) -&gt; <a href="class_app_1_1_property.html" class="m-doc">Property</a>&amp;</span>
+            </dt>
+            <dd>Sets the value of this <a href="class_app_1_1_property.html" class="m-doc">Property</a> to an array of <a href="class_transform.html" class="m-doc">Transform</a> values.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a6ebb572cb01efaee15c7387caae58ecc" class="m-doc">SetArrayText</a>(</span><span class="m-doc-wrap">const <a href="class_localized_string.html" class="m-doc">LocalizedString</a>* pValues,
+              size_t nValueCount) -&gt; <a href="class_app_1_1_property.html" class="m-doc">Property</a>&amp;</span>
+            </dt>
+            <dd>Sets the value of this <a href="class_app_1_1_property.html" class="m-doc">Property</a> to an array of <a href="class_localized_string.html" class="m-doc">LocalizedString</a> values.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a4d9c75e8215db4374d2cfc5c1708fdfa" class="m-doc">SetArrayVector2</a>(</span><span class="m-doc-wrap">const <a href="struct_math_1_1_vector2.html" class="m-doc">Vector2</a>* pValues,
+              size_t nValueCount) -&gt; <a href="class_app_1_1_property.html" class="m-doc">Property</a>&amp;</span>
+            </dt>
+            <dd>Sets the value of this <a href="class_app_1_1_property.html" class="m-doc">Property</a> to an array of <a href="struct_math_1_1_vector2.html" class="m-doc">Math::<wbr />Vector2</a> values.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#ac0c203e96b99fb11590fa0d8bb9c3fa3" class="m-doc">SetArrayVector3</a>(</span><span class="m-doc-wrap">const <a href="struct_math_1_1_vector3.html" class="m-doc">Vector3</a>* pValues,
+              size_t nValueCount) -&gt; <a href="class_app_1_1_property.html" class="m-doc">Property</a>&amp;</span>
+            </dt>
+            <dd>Sets the value of this <a href="class_app_1_1_property.html" class="m-doc">Property</a> to an array of <a href="struct_math_1_1_vector3.html" class="m-doc">Math::<wbr />Vector3</a> values.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#ab4ea40c3e6b65920e0cbb87a1cd90b85" class="m-doc">SetArrayVector4</a>(</span><span class="m-doc-wrap">const <a href="struct_math_1_1_vector4.html" class="m-doc">Vector4</a>* pValues,
+              size_t nValueCount) -&gt; <a href="class_app_1_1_property.html" class="m-doc">Property</a>&amp;</span>
+            </dt>
+            <dd>Sets the value of this <a href="class_app_1_1_property.html" class="m-doc">Property</a> to an array of <a href="struct_math_1_1_vector4.html" class="m-doc">Math::<wbr />Vector4</a> values.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a6b7e52c51dd972c97e0a24e2f0d05438" class="m-doc">SetArrayColorRGB</a>(</span><span class="m-doc-wrap">const <a href="struct_math_1_1_color_r_g_b.html" class="m-doc">ColorRGB</a>* pValues,
+              size_t nValueCount) -&gt; <a href="class_app_1_1_property.html" class="m-doc">Property</a>&amp;</span>
+            </dt>
+            <dd>Sets the value of this <a href="class_app_1_1_property.html" class="m-doc">Property</a> to an array of <a href="struct_math_1_1_color_r_g_b.html" class="m-doc">Math::<wbr />ColorRGB</a> values.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a9381f2de7d1df059e8636d6088d9f386" class="m-doc">SetArrayColorRGBA</a>(</span><span class="m-doc-wrap">const <a href="struct_math_1_1_color_r_g_b_a.html" class="m-doc">ColorRGBA</a>* pValues,
+              size_t nValueCount) -&gt; <a href="class_app_1_1_property.html" class="m-doc">Property</a>&amp;</span>
+            </dt>
+            <dd>Sets the value of this <a href="class_app_1_1_property.html" class="m-doc">Property</a> to an array of <a href="struct_math_1_1_color_r_g_b_a.html" class="m-doc">Math::<wbr />ColorRGBA</a> values.</dd>
+          </dl>
+        </section>
+        <section id="static-methods-for-getting-values">
+          <h2><a href="#static-methods-for-getting-values">Static methods for getting values</a></h2>
+          <dl class="m-doc">
+            <dt>
+              <span class="m-doc-wrap-bumper">static auto <a href="#a233477c813e45b7321e9519b5bda35e5" class="m-doc">GetBool</a>(</span><span class="m-doc-wrap">const <a href="class_app_1_1_property_list.html" class="m-doc">PropertyList</a>* pPropertyList,
+              uint32_t propertyID,
+              bool&amp; dst) -&gt; bool</span>
+            </dt>
+            <dd>Gets a single bool value from a property with the propertyID specified in the given list.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">static auto <a href="#a9899433a8f3fa0826819fdc51c90a45f" class="m-doc">GetFloat</a>(</span><span class="m-doc-wrap">const <a href="class_app_1_1_property_list.html" class="m-doc">PropertyList</a>* pPropertyList,
+              uint32_t propertyID,
+              float&amp; dst) -&gt; bool</span>
+            </dt>
+            <dd>Gets a single float value from a property with the propertyID specified in the given list.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">static auto <a href="#aafff108206a27565bd0af2b639805873" class="m-doc">GetInt32</a>(</span><span class="m-doc-wrap">const <a href="class_app_1_1_property_list.html" class="m-doc">PropertyList</a>* pPropertyList,
+              uint32_t propertyID,
+              int32_t&amp; dst) -&gt; bool</span>
+            </dt>
+            <dd>Gets a single int32_t value from a property with the propertyID specified in the given list.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">static auto <a href="#a618beed2254c2b894f866dd4c2841a47" class="m-doc">GetUInt32</a>(</span><span class="m-doc-wrap">const <a href="class_app_1_1_property_list.html" class="m-doc">PropertyList</a>* pPropertyList,
+              uint32_t propertyID,
+              uint32_t&amp; dst) -&gt; bool</span>
+            </dt>
+            <dd>Gets a single uint32_t value from a property with the propertyID specified in the given list.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">static auto <a href="#a5a5ff02b52632599329c1cc36a5c3a44" class="m-doc">GetVector2</a>(</span><span class="m-doc-wrap">const <a href="class_app_1_1_property_list.html" class="m-doc">PropertyList</a>* pPropertyList,
+              uint32_t propertyID,
+              <a href="struct_math_1_1_vector2.html" class="m-doc">Vector2</a>&amp; dst) -&gt; bool</span>
+            </dt>
+            <dd>Gets a single <a href="struct_math_1_1_vector2.html" class="m-doc">Math::<wbr />Vector2</a> value from a property with the propertyID specified in the given list.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">static auto <a href="#adc7543983711657e96084b39086fb80b" class="m-doc">GetVector3</a>(</span><span class="m-doc-wrap">const <a href="class_app_1_1_property_list.html" class="m-doc">PropertyList</a>* pPropertyList,
+              uint32_t propertyID,
+              <a href="struct_math_1_1_vector3.html" class="m-doc">Vector3</a>&amp; dst) -&gt; bool</span>
+            </dt>
+            <dd>Gets a single <a href="struct_math_1_1_vector3.html" class="m-doc">Math::<wbr />Vector3</a> value from a property with the propertyID specified in the given list.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">static auto <a href="#a1faf7dd20c7b0b508fa2ca4c48cd7397" class="m-doc">GetVector4</a>(</span><span class="m-doc-wrap">const <a href="class_app_1_1_property_list.html" class="m-doc">PropertyList</a>* pPropertyList,
+              uint32_t propertyID,
+              <a href="struct_math_1_1_vector4.html" class="m-doc">Vector4</a>&amp; dst) -&gt; bool</span>
+            </dt>
+            <dd>Gets a single <a href="namespace_app.html#aa30f9441aea9fdb83254924d3a87071eacf637ffa2663b40ae52857aa0bdb1ec3" class="m-doc">Meth::<wbr />Vector4</a> value from a property with the propertyID specified in the given list.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">static auto <a href="#ae1265d83889a0bec55e8e8f33fe49f79" class="m-doc">GetColorRGB</a>(</span><span class="m-doc-wrap">const <a href="class_app_1_1_property_list.html" class="m-doc">PropertyList</a>* pPropertyList,
+              uint32_t propertyID,
+              <a href="struct_math_1_1_color_r_g_b.html" class="m-doc">ColorRGB</a>&amp; dst) -&gt; bool</span>
+            </dt>
+            <dd>Gets a single <a href="namespace_app.html#aa30f9441aea9fdb83254924d3a87071eadd36524a945bd1e360419ab73f162df0" class="m-doc">Meth::<wbr />ColorRGB</a> value from a property with the propertyID specified in the given list.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">static auto <a href="#a3184f66b7ebbc666995cebb212208484" class="m-doc">GetColorRGBA</a>(</span><span class="m-doc-wrap">const <a href="class_app_1_1_property_list.html" class="m-doc">PropertyList</a>* pPropertyList,
+              uint32_t propertyID,
+              <a href="struct_math_1_1_color_r_g_b_a.html" class="m-doc">ColorRGBA</a>&amp; dst) -&gt; bool</span>
+            </dt>
+            <dd>Gets a single <a href="struct_math_1_1_color_r_g_b_a.html" class="m-doc">Math::<wbr />ColorRGBA</a> value from a property with the propertyID specified in the given list.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">static auto <a href="#abe19f111ba8a7100f091c8d07f151f77" class="m-doc">GetKey</a>(</span><span class="m-doc-wrap">const <a href="class_app_1_1_property_list.html" class="m-doc">PropertyList</a>* pPropertyList,
+              uint32_t propertyID,
+              <a href="struct_resource_key.html" class="m-doc">ResourceKey</a>&amp; dst) -&gt; bool</span>
+            </dt>
+            <dd>Gets a single <a href="struct_resource_key.html" class="m-doc">ResourceKey</a> value from a property with the propertyID specified in the given list.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">static auto <a href="#a461c6cf784110ba3088f63a8021b7430" class="m-doc">GetKeyInstanceID</a>(</span><span class="m-doc-wrap">const <a href="class_app_1_1_property_list.html" class="m-doc">PropertyList</a>* pPropertyList,
+              uint32_t propertyID,
+              uint32_t&amp; dst) -&gt; bool</span>
+            </dt>
+            <dd>Gets the instanceID of a single <a href="struct_resource_key.html" class="m-doc">ResourceKey</a> value from a property with the propertyID specified in the given list.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">static auto <a href="#a83a04512c6a93a5b1a125f84c2f0d19a" class="m-doc">GetKeyGroupID</a>(</span><span class="m-doc-wrap">const <a href="class_app_1_1_property_list.html" class="m-doc">PropertyList</a>* pPropertyList,
+              uint32_t propertyID,
+              uint32_t&amp; dst) -&gt; bool</span>
+            </dt>
+            <dd>Gets the groupID of a single <a href="struct_resource_key.html" class="m-doc">ResourceKey</a> value from a property with the propertyID specified in the given list.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">static auto <a href="#a61e27b9e3cfa48cc8627e0954e5a953a" class="m-doc">GetKeyTypeID</a>(</span><span class="m-doc-wrap">const <a href="class_app_1_1_property_list.html" class="m-doc">PropertyList</a>* pPropertyList,
+              uint32_t propertyID,
+              uint32_t&amp; dst) -&gt; bool</span>
+            </dt>
+            <dd>Gets the typeID of a single <a href="struct_resource_key.html" class="m-doc">ResourceKey</a> value from a property with the propertyID specified in the given list.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">static auto <a href="#aa3049dc1c275dbeb669c15ca36a77d77" class="m-doc">GetText</a>(</span><span class="m-doc-wrap">const <a href="class_app_1_1_property_list.html" class="m-doc">PropertyList</a>* pPropertyList,
+              uint32_t propertyID,
+              <a href="class_localized_string.html" class="m-doc">LocalizedString</a>&amp; dst) -&gt; bool</span>
+            </dt>
+            <dd>Gets a single <a href="class_localized_string.html" class="m-doc">LocalizedString</a> (&#x27;text&#x27;) value from a property with the propertyID specified in the given list.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">static auto <a href="#a34f58f0a220ad8d8e1b0cc4518507837" class="m-doc">GetCString8</a>(</span><span class="m-doc-wrap">const <a href="class_app_1_1_property_list.html" class="m-doc">PropertyList</a>* pPropertyList,
+              uint32_t propertyID,
+              char*&amp; dst) -&gt; bool</span>
+            </dt>
+            <dd>Gets a single char* (&#x27;string8&#x27;) value from a property with the propertyID specified in the given list.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">static auto <a href="#a693f20a64c69cf6e0eb0518bfcdc5661" class="m-doc">GetCString16</a>(</span><span class="m-doc-wrap">const <a href="class_app_1_1_property_list.html" class="m-doc">PropertyList</a>* pPropertyList,
+              uint32_t propertyID,
+              char16_t*&amp; dst) -&gt; bool</span>
+            </dt>
+            <dd>Gets a single char16_t* (&#x27;string16&#x27;) value from a property with the propertyID specified in the given list.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">static auto <a href="#a6d3f47611dcda927c8131e26a1a0ac97" class="m-doc">GetString8</a>(</span><span class="m-doc-wrap">const <a href="class_app_1_1_property_list.html" class="m-doc">PropertyList</a>* pPropertyList,
+              uint32_t propertyID,
+              eastl::string&amp; dst) -&gt; bool</span>
+            </dt>
+            <dd>Gets a single string8 value from a property with the propertyID specified in the given list.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">static auto <a href="#ae4e84ca04371e804d4290cdd3cffa2d2" class="m-doc">GetString16</a>(</span><span class="m-doc-wrap">const <a href="class_app_1_1_property_list.html" class="m-doc">PropertyList</a>* pPropertyList,
+              uint32_t propertyID,
+              eastl::string16&amp; dst) -&gt; bool</span>
+            </dt>
+            <dd>Gets a single string16 value from a property with the propertyID specified in the given list.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">static auto <a href="#adeeca6da827207cedb046ccdce736550" class="m-doc">GetArrayBool</a>(</span><span class="m-doc-wrap">const <a href="class_app_1_1_property_list.html" class="m-doc">PropertyList</a>* pPropertyList,
+              uint32_t propertyID,
+              size_t&amp; dstCount,
+              bool*&amp; dst) -&gt; bool</span>
+            </dt>
+            <dd>Gets an array of bool values from a property with the propertyID specified in the given list.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">static auto <a href="#a2e6961e094eaf97ef2015ad2d58b8e02" class="m-doc">GetArrayInt32</a>(</span><span class="m-doc-wrap">const <a href="class_app_1_1_property_list.html" class="m-doc">PropertyList</a>* pPropertyList,
+              uint32_t propertyID,
+              size_t&amp; dstCount,
+              int*&amp; dst) -&gt; bool</span>
+            </dt>
+            <dd>Gets an array of int32_t values from a property with the propertyID specified in the given list.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">static auto <a href="#a61dd3d604c18b1ecb17fa84ea2ab77b1" class="m-doc">GetArrayUInt32</a>(</span><span class="m-doc-wrap">const <a href="class_app_1_1_property_list.html" class="m-doc">PropertyList</a>* pPropertyList,
+              uint32_t propertyID,
+              size_t&amp; dstCount,
+              unsigned int*&amp; dst) -&gt; bool</span>
+            </dt>
+            <dd>Gets an array of uint32_t values from a property with the propertyID specified in the given list.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">static auto <a href="#a22174c9dcf00e9effed7a222e349af16" class="m-doc">GetArrayFloat</a>(</span><span class="m-doc-wrap">const <a href="class_app_1_1_property_list.html" class="m-doc">PropertyList</a>* pPropertyList,
+              uint32_t propertyID,
+              size_t&amp; dstCount,
+              float*&amp; dst) -&gt; bool</span>
+            </dt>
+            <dd>Gets an array of float values from a property with the propertyID specified in the given list.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">static auto <a href="#a917e8d9b16763a0918e761f62e93a235" class="m-doc">GetArrayVector2</a>(</span><span class="m-doc-wrap">const <a href="class_app_1_1_property_list.html" class="m-doc">PropertyList</a>* pPropertyList,
+              uint32_t propertyID,
+              size_t&amp; dstCount,
+              <a href="struct_math_1_1_vector2.html" class="m-doc">Vector2</a>*&amp; dst) -&gt; bool</span>
+            </dt>
+            <dd>Gets an array of <a href="struct_math_1_1_vector2.html" class="m-doc">Math::<wbr />Vector2</a> values from a property with the propertyID specified in the given list.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">static auto <a href="#a08799ab9e6f7464daa77c9fa4305a194" class="m-doc">GetArrayVector3</a>(</span><span class="m-doc-wrap">const <a href="class_app_1_1_property_list.html" class="m-doc">PropertyList</a>* pPropertyList,
+              uint32_t propertyID,
+              size_t&amp; dstCount,
+              <a href="struct_math_1_1_vector3.html" class="m-doc">Vector3</a>*&amp; dst) -&gt; bool</span>
+            </dt>
+            <dd>Gets an array of <a href="struct_math_1_1_vector3.html" class="m-doc">Math::<wbr />Vector3</a> values from a property with the propertyID specified in the given list.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">static auto <a href="#a9cd59c0a68acbdd7dfa737f5a5e38684" class="m-doc">GetArrayVector4</a>(</span><span class="m-doc-wrap">const <a href="class_app_1_1_property_list.html" class="m-doc">PropertyList</a>* pPropertyList,
+              uint32_t propertyID,
+              size_t&amp; dstCount,
+              <a href="struct_math_1_1_vector4.html" class="m-doc">Vector4</a>*&amp; dst) -&gt; bool</span>
+            </dt>
+            <dd>Gets an array of <a href="struct_math_1_1_vector4.html" class="m-doc">Math::<wbr />Vector4</a> values from a property with the propertyID specified in the given list.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">static auto <a href="#a216f75ac3d485dc21d9ae8b95e579d84" class="m-doc">GetArrayColorRGB</a>(</span><span class="m-doc-wrap">const <a href="class_app_1_1_property_list.html" class="m-doc">PropertyList</a>* pPropertyList,
+              uint32_t propertyID,
+              size_t&amp; dstCount,
+              <a href="struct_math_1_1_color_r_g_b.html" class="m-doc">ColorRGB</a>*&amp; dst) -&gt; bool</span>
+            </dt>
+            <dd>Gets an array of <a href="struct_math_1_1_color_r_g_b.html" class="m-doc">Math::<wbr />ColorRGB</a> values from a property with the propertyID specified in the given list.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">static auto <a href="#a03e147e1644c8c5230d6b95896946e86" class="m-doc">GetArrayKey</a>(</span><span class="m-doc-wrap">const <a href="class_app_1_1_property_list.html" class="m-doc">PropertyList</a>* pPropertyList,
+              uint32_t propertyID,
+              size_t&amp; dstCount,
+              <a href="struct_resource_key.html" class="m-doc">ResourceKey</a>*&amp; dst) -&gt; bool</span>
+            </dt>
+            <dd>Gets an array of <a href="struct_resource_key.html" class="m-doc">ResourceKey</a> values from a property with the propertyID specified in the given list.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">static auto <a href="#a817f404db2ec9bf346b8a76b266b3a30" class="m-doc">GetArrayString8</a>(</span><span class="m-doc-wrap">const <a href="class_app_1_1_property_list.html" class="m-doc">PropertyList</a>* pPropertyList,
+              uint32_t propertyID,
+              size_t&amp; dstCount,
+              string8*&amp; dst) -&gt; bool</span>
+            </dt>
+            <dd>Gets an array of char* (&#x27;string8&#x27;) values from a property with the propertyID specified in the given list.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">static auto <a href="#a93877ad0259702c969a14f528ffd898d" class="m-doc">GetArrayString16</a>(</span><span class="m-doc-wrap">const <a href="class_app_1_1_property_list.html" class="m-doc">PropertyList</a>* pPropertyList,
+              uint32_t propertyID,
+              size_t&amp; dstCount,
+              string16*&amp; dst) -&gt; bool</span>
+            </dt>
+            <dd>Gets an array of &#x27;string16&#x27; values from a property with the propertyID specified in the given list.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">static auto <a href="#a48d6b5049865c141a3a25f85d43529fd" class="m-doc">GetArrayTransform</a>(</span><span class="m-doc-wrap">const <a href="class_app_1_1_property_list.html" class="m-doc">PropertyList</a>* pPropertyList,
+              uint32_t propertyID,
+              size_t&amp; dstCount,
+              <a href="class_transform.html" class="m-doc">Transform</a>*&amp; dst) -&gt; bool</span>
+            </dt>
+            <dd>Gets an array of EntityTransform values from a property with the propertyID specified in the given list.</dd>
+          </dl>
+        </section>
+        <section>
+          <h2>Function documentation</h2>
+          <section class="m-doc-details" id="ab26c24baaf12e987c8d7ed9b0b17ec43"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">int32_t* App::<wbr />Property::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ab26c24baaf12e987c8d7ed9b0b17ec43" class="m-doc-self">GetValueInt32</a>(</span><span class="m-doc-wrap">)</span></span>
+            </h3>
+            <p>Returns a pointer to the int32_t value(s) of this property.</p>
+<p>If the property is not of the specified type, a pointer to a default value will be returned.</p>
+          </div></section>
+          <section class="m-doc-details" id="a21f42808167eebbef3608bc2adea9471"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">float* App::<wbr />Property::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a21f42808167eebbef3608bc2adea9471" class="m-doc-self">GetValueFloat</a>(</span><span class="m-doc-wrap">)</span></span>
+            </h3>
+            <p>Returns a pointer to the float value(s) of this property.</p>
+<p>If the property is not of the specified type, a pointer to a default value will be returned.</p>
+          </div></section>
+          <section class="m-doc-details" id="a147738302d1e81632bbec7ccfd27801d"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">bool* App::<wbr />Property::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a147738302d1e81632bbec7ccfd27801d" class="m-doc-self">GetValueBool</a>(</span><span class="m-doc-wrap">)</span></span>
+            </h3>
+            <p>Returns a pointer to the bool value(s) of this property.</p>
+<p>If the property is not of the specified type, a pointer to a default value will be returned.</p>
+          </div></section>
+          <section class="m-doc-details" id="af6f92cd78587d0eea941ff34d62312df"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">uint32_t* App::<wbr />Property::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#af6f92cd78587d0eea941ff34d62312df" class="m-doc-self">GetValueUInt32</a>(</span><span class="m-doc-wrap">)</span></span>
+            </h3>
+            <p>Returns a pointer to the uint32_t value(s) of this property.</p>
+<p>If the property is not of the specified type, a pointer to a default value will be returned.</p>
+          </div></section>
+          <section class="m-doc-details" id="a6c5b23febd436f59602b6471f9cb8d4e"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"><a href="struct_math_1_1_vector2.html" class="m-doc">Vector2</a>* App::<wbr />Property::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a6c5b23febd436f59602b6471f9cb8d4e" class="m-doc-self">GetValueVector2</a>(</span><span class="m-doc-wrap">)</span></span>
+            </h3>
+            <p>Returns a pointer to the <a href="struct_math_1_1_vector2.html" class="m-doc">Math::<wbr />Vector2</a> value(s) of this property.</p>
+<p>If the property is not of the specified type, a pointer to a default value will be returned.</p>
+          </div></section>
+          <section class="m-doc-details" id="a827c4b7ce48eec5d517f3382161664c4"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"><a href="struct_math_1_1_vector3.html" class="m-doc">Vector3</a>* App::<wbr />Property::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a827c4b7ce48eec5d517f3382161664c4" class="m-doc-self">GetValueVector3</a>(</span><span class="m-doc-wrap">)</span></span>
+            </h3>
+            <p>Returns a pointer to the <a href="struct_math_1_1_vector3.html" class="m-doc">Math::<wbr />Vector3</a> value(s) of this property.</p>
+<p>If the property is not of the specified type, a pointer to a default value will be returned.</p>
+          </div></section>
+          <section class="m-doc-details" id="a7bcc3cb1e4f77d426b0807797bd6af89"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"><a href="struct_math_1_1_vector4.html" class="m-doc">Vector4</a>* App::<wbr />Property::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a7bcc3cb1e4f77d426b0807797bd6af89" class="m-doc-self">GetValueVector4</a>(</span><span class="m-doc-wrap">)</span></span>
+            </h3>
+            <p>Returns a pointer to the <a href="struct_math_1_1_vector4.html" class="m-doc">Math::<wbr />Vector4</a> value(s) of this property.</p>
+<p>If the property is not of the specified type, a pointer to a default value will be returned.</p>
+          </div></section>
+          <section class="m-doc-details" id="a3f3ed20c3b3018784167613857a33af7"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"><a href="struct_math_1_1_color_r_g_b.html" class="m-doc">ColorRGB</a>* App::<wbr />Property::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a3f3ed20c3b3018784167613857a33af7" class="m-doc-self">GetValueColorRGB</a>(</span><span class="m-doc-wrap">)</span></span>
+            </h3>
+            <p>Returns a pointer to the <a href="struct_math_1_1_color_r_g_b.html" class="m-doc">Math::<wbr />ColorRGB</a> value(s) of this property.</p>
+<p>If the property is not of the specified type, a pointer to a default value will be returned.</p>
+          </div></section>
+          <section class="m-doc-details" id="ac271fd37d2167dfa54b91613c9c82d32"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"><a href="struct_math_1_1_color_r_g_b_a.html" class="m-doc">ColorRGBA</a>* App::<wbr />Property::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ac271fd37d2167dfa54b91613c9c82d32" class="m-doc-self">GetValueColorRGBA</a>(</span><span class="m-doc-wrap">)</span></span>
+            </h3>
+            <p>Returns a pointer to the <a href="struct_math_1_1_color_r_g_b_a.html" class="m-doc">Math::<wbr />ColorRGBA</a> value(s) of this property.</p>
+<p>If the property is not of the specified type, a pointer to a default value will be returned.</p>
+          </div></section>
+          <section class="m-doc-details" id="a355737a0d71ab9656647a02c56ec52c8"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"><a href="struct_resource_key.html" class="m-doc">ResourceKey</a>* App::<wbr />Property::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a355737a0d71ab9656647a02c56ec52c8" class="m-doc-self">GetValueKey</a>(</span><span class="m-doc-wrap">)</span></span>
+            </h3>
+            <p>Returns a pointer to the <a href="struct_resource_key.html" class="m-doc">ResourceKey</a> (&#x27;key&#x27;) value(s) of this property.</p>
+<p>If the property is not of the specified type, a pointer to a default value will be returned.</p>
+          </div></section>
+          <section class="m-doc-details" id="ae501ca9dd8533132d9a82c31fc6fa7ee"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"><a href="class_transform.html" class="m-doc">Transform</a>* App::<wbr />Property::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ae501ca9dd8533132d9a82c31fc6fa7ee" class="m-doc-self">GetValueTransform</a>(</span><span class="m-doc-wrap">)</span></span>
+            </h3>
+            <p>Returns a pointer to the EntityTransform (&#x27;transform&#x27;) value(s) of this property.</p>
+<p>If the property is not of the specified type, a pointer to a default value will be returned.</p>
+          </div></section>
+          <section class="m-doc-details" id="a5aec0e3274e14d9c349acc06e9bee83c"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"><a href="class_localized_string.html" class="m-doc">LocalizedString</a>* App::<wbr />Property::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a5aec0e3274e14d9c349acc06e9bee83c" class="m-doc-self">GetValueText</a>(</span><span class="m-doc-wrap">)</span></span>
+            </h3>
+            <p>Returns a pointer to the <a href="class_localized_string.html" class="m-doc">LocalizedString</a> (&#x27;text&#x27;) value(s) of this property.</p>
+<p>If the property is not of the specified type, a pointer to a default value will be returned.</p>
+          </div></section>
+          <section class="m-doc-details" id="a4570f7b62af9841cac539f193bffdbbb"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"><a href="struct_math_1_1_bounding_box.html" class="m-doc">BoundingBox</a>* App::<wbr />Property::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a4570f7b62af9841cac539f193bffdbbb" class="m-doc-self">GetValueBBox</a>(</span><span class="m-doc-wrap">)</span></span>
+            </h3>
+            <p>Returns a pointer to the BoundingBox (&#x27;bbox&#x27;) value(s) of this property.</p>
+<p>If the property is not of the specified type, a pointer to a default value will be returned.</p>
+          </div></section>
+          <section class="m-doc-details" id="aee156785ef46aad2deb68bc3a3e9faa4"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">eastl::string8* App::<wbr />Property::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#aee156785ef46aad2deb68bc3a3e9faa4" class="m-doc-self">GetValueString8</a>(</span><span class="m-doc-wrap">)</span></span>
+            </h3>
+            <p>Returns a pointer to the eastl::string8 value(s) of this property.</p>
+<p>If the property is not of the specified type, a pointer to a default value will be returned.</p>
+          </div></section>
+          <section class="m-doc-details" id="a292af7e00dcb11445788948fe6b8ccae"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">eastl::string16* App::<wbr />Property::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a292af7e00dcb11445788948fe6b8ccae" class="m-doc-self">GetValueString16</a>(</span><span class="m-doc-wrap">)</span></span>
+            </h3>
+            <p>Returns a pointer to the eastl::string16 value(s) of this property.</p>
+<p>If the property is not of the specified type, a pointer to a default value will be returned.</p>
+          </div></section>
+          <section class="m-doc-details" id="ac4c41aaf5715810ea59c177d8e589de4"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">char* App::<wbr />Property::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ac4c41aaf5715810ea59c177d8e589de4" class="m-doc-self">GetValueChar</a>(</span><span class="m-doc-wrap">)</span></span>
+            </h3>
+            <p>Returns a pointer to the char value(s) of this property.</p>
+<p>If the property is not of the specified type, a pointer to a default value will be returned.</p>
+          </div></section>
+          <section class="m-doc-details" id="ab7dd391e0ccbc550bbe9d9515334e90f"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">char16_t* App::<wbr />Property::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ab7dd391e0ccbc550bbe9d9515334e90f" class="m-doc-self">GetValueWChar</a>(</span><span class="m-doc-wrap">)</span></span>
+            </h3>
+            <p>Returns a pointer to the char16_t value(s) of this property.</p>
+<p>If the property is not of the specified type, a pointer to a default value will be returned.</p>
+          </div></section>
+          <section class="m-doc-details" id="afb0c9a60873083fa98caa5523ca1beab"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">int8_t* App::<wbr />Property::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#afb0c9a60873083fa98caa5523ca1beab" class="m-doc-self">GetValueInt8</a>(</span><span class="m-doc-wrap">)</span></span>
+            </h3>
+            <p>Returns a pointer to the int8_t value(s) of this property.</p>
+<p>If the property is not of the specified type, a pointer to a default value will be returned.</p>
+          </div></section>
+          <section class="m-doc-details" id="a59760d34fa94fa439fc6723c4c7a5faf"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">uint8_t* App::<wbr />Property::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a59760d34fa94fa439fc6723c4c7a5faf" class="m-doc-self">GetValueUInt8</a>(</span><span class="m-doc-wrap">)</span></span>
+            </h3>
+            <p>Returns a pointer to the uint8_t value(s) of this property.</p>
+<p>If the property is not of the specified type, a pointer to a default value will be returned.</p>
+          </div></section>
+          <section class="m-doc-details" id="a1ac582b3b1399f421a46338793803e58"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">int16_t* App::<wbr />Property::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a1ac582b3b1399f421a46338793803e58" class="m-doc-self">GetValueInt16</a>(</span><span class="m-doc-wrap">)</span></span>
+            </h3>
+            <p>Returns a pointer to the int16_t value(s) of this property.</p>
+<p>If the property is not of the specified type, a pointer to a default value will be returned.</p>
+          </div></section>
+          <section class="m-doc-details" id="a9fd6be6d638150853f680fb93d6371de"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">uint16_t* App::<wbr />Property::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a9fd6be6d638150853f680fb93d6371de" class="m-doc-self">GetValueUInt16</a>(</span><span class="m-doc-wrap">)</span></span>
+            </h3>
+            <p>Returns a pointer to the uint16_t value(s) of this property.</p>
+<p>If the property is not of the specified type, a pointer to a default value will be returned.</p>
+          </div></section>
+          <section class="m-doc-details" id="ac70e1122b1b68a0d69652b30aa901443"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">int64_t* App::<wbr />Property::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ac70e1122b1b68a0d69652b30aa901443" class="m-doc-self">GetValueInt64</a>(</span><span class="m-doc-wrap">)</span></span>
+            </h3>
+            <p>Returns a pointer to the int64_t value(s) of this property.</p>
+<p>If the property is not of the specified type, a pointer to a default value will be returned.</p>
+          </div></section>
+          <section class="m-doc-details" id="acdb435004ca733bbf1d7c596bcc35842"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">uint64_t* App::<wbr />Property::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#acdb435004ca733bbf1d7c596bcc35842" class="m-doc-self">GetValueUInt64</a>(</span><span class="m-doc-wrap">)</span></span>
+            </h3>
+            <p>Returns a pointer to the uint64_t value(s) of this property.</p>
+<p>If the property is not of the specified type, a pointer to a default value will be returned.</p>
+          </div></section>
+          <section class="m-doc-details" id="af89b502d02a6098795dcd97981d50389"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">double* App::<wbr />Property::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#af89b502d02a6098795dcd97981d50389" class="m-doc-self">GetValueDouble</a>(</span><span class="m-doc-wrap">)</span></span>
+            </h3>
+            <p>Returns a pointer to the double value(s) of this property.</p>
+<p>If the property is not of the specified type, a pointer to a default value will be returned.</p>
+          </div></section>
+          <section class="m-doc-details" id="a11e2592ed431e9fc7ad7c4250a25fe0f"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">void** App::<wbr />Property::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a11e2592ed431e9fc7ad7c4250a25fe0f" class="m-doc-self">GetValueFlags</a>(</span><span class="m-doc-wrap">)</span></span>
+            </h3>
+            <p>Returns a pointer to the &#x27;flags&#x27; value(s) of this property.</p>
+<p>If the property is not of the specified type, a pointer to a default value will be returned.</p>
+          </div></section>
+          <section class="m-doc-details" id="a4647a8e00f6c78ea8f6bacd09dc3f432"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">void* App::<wbr />Property::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a4647a8e00f6c78ea8f6bacd09dc3f432" class="m-doc-self">GetValue</a>(</span><span class="m-doc-wrap">)</span></span>
+            </h3>
+            <p>Returns a pointer to the value(s) of this property, regardless of its type.</p>
+<p>If the property is not of the specified type, a pointer to a default value will be returned.</p>
+          </div></section>
+          <section class="m-doc-details" id="a58771c44df639e7533ad1fe20f9ea763"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">bool App::<wbr />Property::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a58771c44df639e7533ad1fe20f9ea763" class="m-doc-self">Set</a>(</span><span class="m-doc-wrap"><a href="namespace_app.html#aa30f9441aea9fdb83254924d3a87071e" class="m-doc">PropertyType</a> type,
+              int flags,
+              void* pValue,
+              size_t nValueSize,
+              size_t nValueCount)</span></span>
+            </h3>
+            <p>Sets the value of this property.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">type</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>flags</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>pValue</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>nValueSize</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>nValueCount</td>
+                  <td></td>
+                </tr>
+              </tbody>
+            </table>
+<p>This will reset the property, so it is like creating a new one. You must specify the type of the value, a pointer to the value or array of values, the sizeof() the value type, and the number of values.</p><p>This is only for internal usage or to create arrays; to assign single values, using methods like SetValueBool, SetValueInt32, etc is recommended.</p>
+          </div></section>
+          <section class="m-doc-details" id="ab961426861225fc4a2b4e50f43edc517"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"><a href="class_app_1_1_property.html" class="m-doc">Property</a>&amp; App::<wbr />Property::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ab961426861225fc4a2b4e50f43edc517" class="m-doc-self">SetValueBool</a>(</span><span class="m-doc-wrap">const bool&amp; value)</span></span>
+            </h3>
+            <p>Sets the value of this <a href="class_app_1_1_property.html" class="m-doc">Property</a> to the given bool value.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">value</td>
+                  <td></td>
+                </tr>
+              </tbody>
+            </table>
+<p>This will be a single-valued bool property.</p>
+          </div></section>
+          <section class="m-doc-details" id="ae8d26576abec6977c38f5062eb27cfbf"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"><a href="class_app_1_1_property.html" class="m-doc">Property</a>&amp; App::<wbr />Property::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ae8d26576abec6977c38f5062eb27cfbf" class="m-doc-self">SetValueInt32</a>(</span><span class="m-doc-wrap">const int32_t&amp; value)</span></span>
+            </h3>
+            <p>Sets the value of this <a href="class_app_1_1_property.html" class="m-doc">Property</a> to the given int32_t value.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">value</td>
+                  <td></td>
+                </tr>
+              </tbody>
+            </table>
+<p>This will be a single-valued int32 property.</p>
+          </div></section>
+          <section class="m-doc-details" id="a553557d00d3851452f294b4002c48b6f"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"><a href="class_app_1_1_property.html" class="m-doc">Property</a>&amp; App::<wbr />Property::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a553557d00d3851452f294b4002c48b6f" class="m-doc-self">SetValueUInt32</a>(</span><span class="m-doc-wrap">const uint32_t&amp; value)</span></span>
+            </h3>
+            <p>Sets the value of this <a href="class_app_1_1_property.html" class="m-doc">Property</a> to the given uint32_t value.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">value</td>
+                  <td></td>
+                </tr>
+              </tbody>
+            </table>
+<p>This will be a single-valued uint32 property.</p>
+          </div></section>
+          <section class="m-doc-details" id="ab79f52c9bb1831518a5d434924c732f1"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"><a href="class_app_1_1_property.html" class="m-doc">Property</a>&amp; App::<wbr />Property::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ab79f52c9bb1831518a5d434924c732f1" class="m-doc-self">SetValueFloat</a>(</span><span class="m-doc-wrap">const float&amp; value)</span></span>
+            </h3>
+            <p>Sets the value of this <a href="class_app_1_1_property.html" class="m-doc">Property</a> to the given float value.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">value</td>
+                  <td></td>
+                </tr>
+              </tbody>
+            </table>
+<p>This will be a single-valued float property.</p>
+          </div></section>
+          <section class="m-doc-details" id="afc37e5205f320929e95ac8a27e09f02f"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"><a href="class_app_1_1_property.html" class="m-doc">Property</a>&amp; App::<wbr />Property::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#afc37e5205f320929e95ac8a27e09f02f" class="m-doc-self">SetValueKey</a>(</span><span class="m-doc-wrap">const <a href="struct_resource_key.html" class="m-doc">ResourceKey</a>&amp; value)</span></span>
+            </h3>
+            <p>Sets the value of this <a href="class_app_1_1_property.html" class="m-doc">Property</a> to the given <a href="struct_resource_key.html" class="m-doc">ResourceKey</a> value.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">value</td>
+                  <td></td>
+                </tr>
+              </tbody>
+            </table>
+<p>This will be a single-valued key property.</p>
+          </div></section>
+          <section class="m-doc-details" id="a926ca699768c9e73a89f95bcd05cc007"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"><a href="class_app_1_1_property.html" class="m-doc">Property</a>&amp; App::<wbr />Property::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a926ca699768c9e73a89f95bcd05cc007" class="m-doc-self">SetValueString8</a>(</span><span class="m-doc-wrap">const eastl::string8&amp; value)</span></span>
+            </h3>
+            <p>Sets the value of this <a href="class_app_1_1_property.html" class="m-doc">Property</a> to the given eastl::string8 value.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">value</td>
+                  <td></td>
+                </tr>
+              </tbody>
+            </table>
+<p>This will be a single-valued string8 property.</p>
+          </div></section>
+          <section class="m-doc-details" id="a88df3298a7130beb7dd8c157888dfe04"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"><a href="class_app_1_1_property.html" class="m-doc">Property</a>&amp; App::<wbr />Property::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a88df3298a7130beb7dd8c157888dfe04" class="m-doc-self">SetValueString16</a>(</span><span class="m-doc-wrap">const eastl::string16&amp; value)</span></span>
+            </h3>
+            <p>Sets the value of this <a href="class_app_1_1_property.html" class="m-doc">Property</a> to the given eastl::string16 value.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">value</td>
+                  <td></td>
+                </tr>
+              </tbody>
+            </table>
+<p>This will be a single-valued string16 property.</p>
+          </div></section>
+          <section class="m-doc-details" id="af0a0b25533931f068ec61e301b910b38"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"><a href="class_app_1_1_property.html" class="m-doc">Property</a>&amp; App::<wbr />Property::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#af0a0b25533931f068ec61e301b910b38" class="m-doc-self">SetValueBBox</a>(</span><span class="m-doc-wrap">const <a href="struct_math_1_1_bounding_box.html" class="m-doc">BoundingBox</a>&amp; value)</span></span>
+            </h3>
+            <p>Sets the value of this <a href="class_app_1_1_property.html" class="m-doc">Property</a> to the given BoundingBox value.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">value</td>
+                  <td></td>
+                </tr>
+              </tbody>
+            </table>
+<p>This will be a an array bbox property, with only one value.</p>
+          </div></section>
+          <section class="m-doc-details" id="a279a8ba3b848e0f1e2a61b953d8c982e"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"><a href="class_app_1_1_property.html" class="m-doc">Property</a>&amp; App::<wbr />Property::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a279a8ba3b848e0f1e2a61b953d8c982e" class="m-doc-self">SetValueVector2</a>(</span><span class="m-doc-wrap">const <a href="struct_math_1_1_vector2.html" class="m-doc">Vector2</a>&amp; value)</span></span>
+            </h3>
+            <p>Sets the value of this <a href="class_app_1_1_property.html" class="m-doc">Property</a> to the given <a href="struct_math_1_1_vector2.html" class="m-doc">Math::<wbr />Vector2</a> value.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">value</td>
+                  <td></td>
+                </tr>
+              </tbody>
+            </table>
+<p>This will be a single-valued vector2 property.</p>
+          </div></section>
+          <section class="m-doc-details" id="aa689a7c0b55be00493c421f82871054a"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"><a href="class_app_1_1_property.html" class="m-doc">Property</a>&amp; App::<wbr />Property::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#aa689a7c0b55be00493c421f82871054a" class="m-doc-self">SetValueVector3</a>(</span><span class="m-doc-wrap">const <a href="struct_math_1_1_vector3.html" class="m-doc">Vector3</a>&amp; value)</span></span>
+            </h3>
+            <p>Sets the value of this <a href="class_app_1_1_property.html" class="m-doc">Property</a> to the given <a href="struct_math_1_1_vector3.html" class="m-doc">Math::<wbr />Vector3</a> value.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">value</td>
+                  <td></td>
+                </tr>
+              </tbody>
+            </table>
+<p>This will be a single-valued vector3 property.</p>
+          </div></section>
+          <section class="m-doc-details" id="a5a5275f2f22db26207dcc18f9d97b3ef"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"><a href="class_app_1_1_property.html" class="m-doc">Property</a>&amp; App::<wbr />Property::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a5a5275f2f22db26207dcc18f9d97b3ef" class="m-doc-self">SetValueVector4</a>(</span><span class="m-doc-wrap">const <a href="struct_math_1_1_vector4.html" class="m-doc">Vector4</a>&amp; value)</span></span>
+            </h3>
+            <p>Sets the value of this <a href="class_app_1_1_property.html" class="m-doc">Property</a> to the given <a href="struct_math_1_1_vector4.html" class="m-doc">Math::<wbr />Vector4</a> value.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">value</td>
+                  <td></td>
+                </tr>
+              </tbody>
+            </table>
+<p>This will be a single-valued vector4 property.</p>
+          </div></section>
+          <section class="m-doc-details" id="a87360f5ec6a20f1de33a6b3b9b9bb473"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"><a href="class_app_1_1_property.html" class="m-doc">Property</a>&amp; App::<wbr />Property::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a87360f5ec6a20f1de33a6b3b9b9bb473" class="m-doc-self">SetValueColorRGB</a>(</span><span class="m-doc-wrap">const <a href="struct_math_1_1_color_r_g_b.html" class="m-doc">ColorRGB</a>&amp; value)</span></span>
+            </h3>
+            <p>Sets the value of this <a href="class_app_1_1_property.html" class="m-doc">Property</a> to the given <a href="struct_math_1_1_color_r_g_b.html" class="m-doc">Math::<wbr />ColorRGB</a> value.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">value</td>
+                  <td></td>
+                </tr>
+              </tbody>
+            </table>
+<p>This will be a single-valued colorRGB property.</p>
+          </div></section>
+          <section class="m-doc-details" id="a1928dc6866c1500849f862671dddbec3"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"><a href="class_app_1_1_property.html" class="m-doc">Property</a>&amp; App::<wbr />Property::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a1928dc6866c1500849f862671dddbec3" class="m-doc-self">SetValueColorRGBA</a>(</span><span class="m-doc-wrap">const <a href="struct_math_1_1_color_r_g_b_a.html" class="m-doc">ColorRGBA</a>&amp; value)</span></span>
+            </h3>
+            <p>Sets the value of this <a href="class_app_1_1_property.html" class="m-doc">Property</a> to the given <a href="struct_math_1_1_color_r_g_b_a.html" class="m-doc">Math::<wbr />ColorRGBA</a> value.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">value</td>
+                  <td></td>
+                </tr>
+              </tbody>
+            </table>
+<p>This will be a single-valued colorRGBA property.</p>
+          </div></section>
+          <section class="m-doc-details" id="a852113053dd04d060607be81fd38206a"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"><a href="class_app_1_1_property.html" class="m-doc">Property</a>&amp; App::<wbr />Property::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a852113053dd04d060607be81fd38206a" class="m-doc-self">SetArrayBool</a>(</span><span class="m-doc-wrap">const bool* pValues,
+              size_t nValueCount)</span></span>
+            </h3>
+            <p>Sets the value of this <a href="class_app_1_1_property.html" class="m-doc">Property</a> to an array of bool values.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">pValues</td>
+                  <td>The array with the values.</td>
+                </tr>
+                <tr>
+                  <td>nValueCount</td>
+                  <td>How many values the array has.</td>
+                </tr>
+              </tbody>
+            </table>
+<p>This will be an array bool property of &#x27;nValueCount&#x27; values.</p>
+          </div></section>
+          <section class="m-doc-details" id="a94a7964c62b77085487be12cf493df7e"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"><a href="class_app_1_1_property.html" class="m-doc">Property</a>&amp; App::<wbr />Property::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a94a7964c62b77085487be12cf493df7e" class="m-doc-self">SetArrayInt32</a>(</span><span class="m-doc-wrap">const int32_t* pValues,
+              size_t nValueCount)</span></span>
+            </h3>
+            <p>Sets the value of this <a href="class_app_1_1_property.html" class="m-doc">Property</a> to an array of int32_t values.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">pValues</td>
+                  <td>The array with the values.</td>
+                </tr>
+                <tr>
+                  <td>nValueCount</td>
+                  <td>How many values the array has.</td>
+                </tr>
+              </tbody>
+            </table>
+<p>This will be an array int32 property of &#x27;nValueCount&#x27; values.</p>
+          </div></section>
+          <section class="m-doc-details" id="a258c27a3f776529e367388a685600616"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"><a href="class_app_1_1_property.html" class="m-doc">Property</a>&amp; App::<wbr />Property::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a258c27a3f776529e367388a685600616" class="m-doc-self">SetArrayUInt32</a>(</span><span class="m-doc-wrap">const uint32_t* pValues,
+              size_t nValueCount)</span></span>
+            </h3>
+            <p>Sets the value of this <a href="class_app_1_1_property.html" class="m-doc">Property</a> to an array of uint32_t values.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">pValues</td>
+                  <td>The array with the values.</td>
+                </tr>
+                <tr>
+                  <td>nValueCount</td>
+                  <td>How many values the array has.</td>
+                </tr>
+              </tbody>
+            </table>
+<p>This will be an array uint32 property of &#x27;nValueCount&#x27; values.</p>
+          </div></section>
+          <section class="m-doc-details" id="a89c2e12f78e8cb62693ea08b9eb5f2be"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"><a href="class_app_1_1_property.html" class="m-doc">Property</a>&amp; App::<wbr />Property::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a89c2e12f78e8cb62693ea08b9eb5f2be" class="m-doc-self">SetArrayFloat</a>(</span><span class="m-doc-wrap">const float* pValues,
+              size_t nValueCount)</span></span>
+            </h3>
+            <p>Sets the value of this <a href="class_app_1_1_property.html" class="m-doc">Property</a> to an array of float values.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">pValues</td>
+                  <td>The array with the values.</td>
+                </tr>
+                <tr>
+                  <td>nValueCount</td>
+                  <td>How many values the array has.</td>
+                </tr>
+              </tbody>
+            </table>
+<p>This will be an array float property of &#x27;nValueCount&#x27; values.</p>
+          </div></section>
+          <section class="m-doc-details" id="a8ae68aad20625011df307edecd4d7eed"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"><a href="class_app_1_1_property.html" class="m-doc">Property</a>&amp; App::<wbr />Property::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a8ae68aad20625011df307edecd4d7eed" class="m-doc-self">SetArrayKey</a>(</span><span class="m-doc-wrap">const <a href="struct_resource_key.html" class="m-doc">ResourceKey</a>* pValues,
+              size_t nValueCount)</span></span>
+            </h3>
+            <p>Sets the value of this <a href="class_app_1_1_property.html" class="m-doc">Property</a> to an array of <a href="struct_resource_key.html" class="m-doc">ResourceKey</a> values.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">pValues</td>
+                  <td>The array with the values.</td>
+                </tr>
+                <tr>
+                  <td>nValueCount</td>
+                  <td>How many values the array has.</td>
+                </tr>
+              </tbody>
+            </table>
+<p>This will be an array key property of &#x27;nValueCount&#x27; values.</p>
+          </div></section>
+          <section class="m-doc-details" id="ade642c1a959679963dad60613f83e080"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"><a href="class_app_1_1_property.html" class="m-doc">Property</a>&amp; App::<wbr />Property::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ade642c1a959679963dad60613f83e080" class="m-doc-self">SetArrayString8</a>(</span><span class="m-doc-wrap">const eastl::string8* pValues,
+              size_t nValueCount)</span></span>
+            </h3>
+            <p>Sets the value of this <a href="class_app_1_1_property.html" class="m-doc">Property</a> to the an array of eastl::string8 values.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">pValues</td>
+                  <td>The array with the values.</td>
+                </tr>
+                <tr>
+                  <td>nValueCount</td>
+                  <td>How many values the array has.</td>
+                </tr>
+              </tbody>
+            </table>
+<p>This will be an array string8 property of &#x27;nValueCount&#x27; values.</p>
+          </div></section>
+          <section class="m-doc-details" id="aff9addf352030222baaabdf187613b8b"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"><a href="class_app_1_1_property.html" class="m-doc">Property</a>&amp; App::<wbr />Property::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#aff9addf352030222baaabdf187613b8b" class="m-doc-self">SetArrayString16</a>(</span><span class="m-doc-wrap">const eastl::string16* pValues,
+              size_t nValueCount)</span></span>
+            </h3>
+            <p>Sets the value of this <a href="class_app_1_1_property.html" class="m-doc">Property</a> to an array of eastl::string16 values.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">pValues</td>
+                  <td>The array with the values.</td>
+                </tr>
+                <tr>
+                  <td>nValueCount</td>
+                  <td>How many values the array has.</td>
+                </tr>
+              </tbody>
+            </table>
+<p>This will be an array string16 property of &#x27;nValueCount&#x27; values.</p>
+          </div></section>
+          <section class="m-doc-details" id="aa6f7ff43d7fbcedb03b9a80b1a55eb87"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"><a href="class_app_1_1_property.html" class="m-doc">Property</a>&amp; App::<wbr />Property::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#aa6f7ff43d7fbcedb03b9a80b1a55eb87" class="m-doc-self">SetArrayBBox</a>(</span><span class="m-doc-wrap">const <a href="struct_math_1_1_bounding_box.html" class="m-doc">BoundingBox</a>* pValues,
+              size_t nValueCount)</span></span>
+            </h3>
+            <p>Sets the value of this <a href="class_app_1_1_property.html" class="m-doc">Property</a> to an array of BoundingBox values.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">pValues</td>
+                  <td>The array with the values.</td>
+                </tr>
+                <tr>
+                  <td>nValueCount</td>
+                  <td>How many values the array has.</td>
+                </tr>
+              </tbody>
+            </table>
+<p>This will be an array bbox property of &#x27;nValueCount&#x27; values.</p>
+          </div></section>
+          <section class="m-doc-details" id="aa8711088cb1239e5583ab96ccb10fcae"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"><a href="class_app_1_1_property.html" class="m-doc">Property</a>&amp; App::<wbr />Property::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#aa8711088cb1239e5583ab96ccb10fcae" class="m-doc-self">SetArrayTransform</a>(</span><span class="m-doc-wrap">const <a href="class_transform.html" class="m-doc">Transform</a>* pValues,
+              size_t nValueCount)</span></span>
+            </h3>
+            <p>Sets the value of this <a href="class_app_1_1_property.html" class="m-doc">Property</a> to an array of <a href="class_transform.html" class="m-doc">Transform</a> values.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">pValues</td>
+                  <td>The array with the values.</td>
+                </tr>
+                <tr>
+                  <td>nValueCount</td>
+                  <td>How many values the array has.</td>
+                </tr>
+              </tbody>
+            </table>
+<p>This will be an array transform property of &#x27;nValueCount&#x27; values.</p>
+          </div></section>
+          <section class="m-doc-details" id="a6ebb572cb01efaee15c7387caae58ecc"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"><a href="class_app_1_1_property.html" class="m-doc">Property</a>&amp; App::<wbr />Property::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a6ebb572cb01efaee15c7387caae58ecc" class="m-doc-self">SetArrayText</a>(</span><span class="m-doc-wrap">const <a href="class_localized_string.html" class="m-doc">LocalizedString</a>* pValues,
+              size_t nValueCount)</span></span>
+            </h3>
+            <p>Sets the value of this <a href="class_app_1_1_property.html" class="m-doc">Property</a> to an array of <a href="class_localized_string.html" class="m-doc">LocalizedString</a> values.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">pValues</td>
+                  <td>The array with the values.</td>
+                </tr>
+                <tr>
+                  <td>nValueCount</td>
+                  <td>How many values the array has.</td>
+                </tr>
+              </tbody>
+            </table>
+<p>This will be an array text property of &#x27;nValueCount&#x27; values.</p>
+          </div></section>
+          <section class="m-doc-details" id="a4d9c75e8215db4374d2cfc5c1708fdfa"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"><a href="class_app_1_1_property.html" class="m-doc">Property</a>&amp; App::<wbr />Property::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a4d9c75e8215db4374d2cfc5c1708fdfa" class="m-doc-self">SetArrayVector2</a>(</span><span class="m-doc-wrap">const <a href="struct_math_1_1_vector2.html" class="m-doc">Vector2</a>* pValues,
+              size_t nValueCount)</span></span>
+            </h3>
+            <p>Sets the value of this <a href="class_app_1_1_property.html" class="m-doc">Property</a> to an array of <a href="struct_math_1_1_vector2.html" class="m-doc">Math::<wbr />Vector2</a> values.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">pValues</td>
+                  <td>The array with the values.</td>
+                </tr>
+                <tr>
+                  <td>nValueCount</td>
+                  <td>How many values the array has.</td>
+                </tr>
+              </tbody>
+            </table>
+<p>This will be an array vector2 property of &#x27;nValueCount&#x27; values.</p>
+          </div></section>
+          <section class="m-doc-details" id="ac0c203e96b99fb11590fa0d8bb9c3fa3"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"><a href="class_app_1_1_property.html" class="m-doc">Property</a>&amp; App::<wbr />Property::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ac0c203e96b99fb11590fa0d8bb9c3fa3" class="m-doc-self">SetArrayVector3</a>(</span><span class="m-doc-wrap">const <a href="struct_math_1_1_vector3.html" class="m-doc">Vector3</a>* pValues,
+              size_t nValueCount)</span></span>
+            </h3>
+            <p>Sets the value of this <a href="class_app_1_1_property.html" class="m-doc">Property</a> to an array of <a href="struct_math_1_1_vector3.html" class="m-doc">Math::<wbr />Vector3</a> values.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">pValues</td>
+                  <td>The array with the values.</td>
+                </tr>
+                <tr>
+                  <td>nValueCount</td>
+                  <td>How many values the array has.</td>
+                </tr>
+              </tbody>
+            </table>
+<p>This will be an array vector3 property of &#x27;nValueCount&#x27; values.</p>
+          </div></section>
+          <section class="m-doc-details" id="ab4ea40c3e6b65920e0cbb87a1cd90b85"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"><a href="class_app_1_1_property.html" class="m-doc">Property</a>&amp; App::<wbr />Property::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ab4ea40c3e6b65920e0cbb87a1cd90b85" class="m-doc-self">SetArrayVector4</a>(</span><span class="m-doc-wrap">const <a href="struct_math_1_1_vector4.html" class="m-doc">Vector4</a>* pValues,
+              size_t nValueCount)</span></span>
+            </h3>
+            <p>Sets the value of this <a href="class_app_1_1_property.html" class="m-doc">Property</a> to an array of <a href="struct_math_1_1_vector4.html" class="m-doc">Math::<wbr />Vector4</a> values.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">pValues</td>
+                  <td>The array with the values.</td>
+                </tr>
+                <tr>
+                  <td>nValueCount</td>
+                  <td>How many values the array has.</td>
+                </tr>
+              </tbody>
+            </table>
+<p>This will be an array vector4 property of &#x27;nValueCount&#x27; values.</p>
+          </div></section>
+          <section class="m-doc-details" id="a6b7e52c51dd972c97e0a24e2f0d05438"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"><a href="class_app_1_1_property.html" class="m-doc">Property</a>&amp; App::<wbr />Property::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a6b7e52c51dd972c97e0a24e2f0d05438" class="m-doc-self">SetArrayColorRGB</a>(</span><span class="m-doc-wrap">const <a href="struct_math_1_1_color_r_g_b.html" class="m-doc">ColorRGB</a>* pValues,
+              size_t nValueCount)</span></span>
+            </h3>
+            <p>Sets the value of this <a href="class_app_1_1_property.html" class="m-doc">Property</a> to an array of <a href="struct_math_1_1_color_r_g_b.html" class="m-doc">Math::<wbr />ColorRGB</a> values.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">pValues</td>
+                  <td>The array with the values.</td>
+                </tr>
+                <tr>
+                  <td>nValueCount</td>
+                  <td>How many values the array has.</td>
+                </tr>
+              </tbody>
+            </table>
+<p>This will be an array colorRGB property of &#x27;nValueCount&#x27; values.</p>
+          </div></section>
+          <section class="m-doc-details" id="a9381f2de7d1df059e8636d6088d9f386"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"><a href="class_app_1_1_property.html" class="m-doc">Property</a>&amp; App::<wbr />Property::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a9381f2de7d1df059e8636d6088d9f386" class="m-doc-self">SetArrayColorRGBA</a>(</span><span class="m-doc-wrap">const <a href="struct_math_1_1_color_r_g_b_a.html" class="m-doc">ColorRGBA</a>* pValues,
+              size_t nValueCount)</span></span>
+            </h3>
+            <p>Sets the value of this <a href="class_app_1_1_property.html" class="m-doc">Property</a> to an array of <a href="struct_math_1_1_color_r_g_b_a.html" class="m-doc">Math::<wbr />ColorRGBA</a> values.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">pValues</td>
+                  <td>The array with the values.</td>
+                </tr>
+                <tr>
+                  <td>nValueCount</td>
+                  <td>How many values the array has.</td>
+                </tr>
+              </tbody>
+            </table>
+<p>This will be an array colorRGBA property of &#x27;nValueCount&#x27; values.</p>
+          </div></section>
+          <section class="m-doc-details" id="a233477c813e45b7321e9519b5bda35e5"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">static bool App::<wbr />Property::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a233477c813e45b7321e9519b5bda35e5" class="m-doc-self">GetBool</a>(</span><span class="m-doc-wrap">const <a href="class_app_1_1_property_list.html" class="m-doc">PropertyList</a>* pPropertyList,
+              uint32_t propertyID,
+              bool&amp; dst)</span></span>
+            </h3>
+            <p>Gets a single bool value from a property with the propertyID specified in the given list.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">pPropertyList&nbsp;<span class="m-label m-flat m-info">in</span></td>
+                  <td>The <a href="class_app_1_1_property_list.html" class="m-doc">PropertyList</a> where this property will be searched.</td>
+                </tr>
+                <tr>
+                  <td>propertyID&nbsp;<span class="m-label m-flat m-info">in</span></td>
+                  <td>The unique identifier of the property to find.</td>
+                </tr>
+                <tr>
+                  <td>dst&nbsp;<span class="m-label m-flat m-warning">out</span></td>
+                  <td>The destination value that will be assigned with the value found, if any.</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>Returns</th>
+                  <td>True if a property of the required type and propertyID was found, false otherwise.</td>
+                </tr>
+              </tfoot>
+            </table>
+<p>If it is an array property, it will return the first value in the array.</p>
+          </div></section>
+          <section class="m-doc-details" id="a9899433a8f3fa0826819fdc51c90a45f"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">static bool App::<wbr />Property::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a9899433a8f3fa0826819fdc51c90a45f" class="m-doc-self">GetFloat</a>(</span><span class="m-doc-wrap">const <a href="class_app_1_1_property_list.html" class="m-doc">PropertyList</a>* pPropertyList,
+              uint32_t propertyID,
+              float&amp; dst)</span></span>
+            </h3>
+            <p>Gets a single float value from a property with the propertyID specified in the given list.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">pPropertyList&nbsp;<span class="m-label m-flat m-info">in</span></td>
+                  <td>The <a href="class_app_1_1_property_list.html" class="m-doc">PropertyList</a> where this property will be searched.</td>
+                </tr>
+                <tr>
+                  <td>propertyID&nbsp;<span class="m-label m-flat m-info">in</span></td>
+                  <td>The unique identifier of the property to find.</td>
+                </tr>
+                <tr>
+                  <td>dst&nbsp;<span class="m-label m-flat m-warning">out</span></td>
+                  <td>The destination value that will be assigned with the value found, if any.</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>Returns</th>
+                  <td>True if a property of the required type and propertyID was found, false otherwise.</td>
+                </tr>
+              </tfoot>
+            </table>
+<p>If it is an array property, it will return the first value in the array.</p>
+          </div></section>
+          <section class="m-doc-details" id="aafff108206a27565bd0af2b639805873"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">static bool App::<wbr />Property::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#aafff108206a27565bd0af2b639805873" class="m-doc-self">GetInt32</a>(</span><span class="m-doc-wrap">const <a href="class_app_1_1_property_list.html" class="m-doc">PropertyList</a>* pPropertyList,
+              uint32_t propertyID,
+              int32_t&amp; dst)</span></span>
+            </h3>
+            <p>Gets a single int32_t value from a property with the propertyID specified in the given list.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">pPropertyList&nbsp;<span class="m-label m-flat m-info">in</span></td>
+                  <td>The <a href="class_app_1_1_property_list.html" class="m-doc">PropertyList</a> where this property will be searched.</td>
+                </tr>
+                <tr>
+                  <td>propertyID&nbsp;<span class="m-label m-flat m-info">in</span></td>
+                  <td>The unique identifier of the property to find.</td>
+                </tr>
+                <tr>
+                  <td>dst&nbsp;<span class="m-label m-flat m-warning">out</span></td>
+                  <td>The destination value that will be assigned with the value found, if any.</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>Returns</th>
+                  <td>True if a property of the required type and propertyID was found, false otherwise.</td>
+                </tr>
+              </tfoot>
+            </table>
+<p>If it is an array property, it will return the first value in the array.</p>
+          </div></section>
+          <section class="m-doc-details" id="a618beed2254c2b894f866dd4c2841a47"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">static bool App::<wbr />Property::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a618beed2254c2b894f866dd4c2841a47" class="m-doc-self">GetUInt32</a>(</span><span class="m-doc-wrap">const <a href="class_app_1_1_property_list.html" class="m-doc">PropertyList</a>* pPropertyList,
+              uint32_t propertyID,
+              uint32_t&amp; dst)</span></span>
+            </h3>
+            <p>Gets a single uint32_t value from a property with the propertyID specified in the given list.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">pPropertyList&nbsp;<span class="m-label m-flat m-info">in</span></td>
+                  <td>The <a href="class_app_1_1_property_list.html" class="m-doc">PropertyList</a> where this property will be searched.</td>
+                </tr>
+                <tr>
+                  <td>propertyID&nbsp;<span class="m-label m-flat m-info">in</span></td>
+                  <td>The unique identifier of the property to find.</td>
+                </tr>
+                <tr>
+                  <td>dst&nbsp;<span class="m-label m-flat m-warning">out</span></td>
+                  <td>The destination value that will be assigned with the value found, if any.</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>Returns</th>
+                  <td>True if a property of the required type and propertyID was found, false otherwise.</td>
+                </tr>
+              </tfoot>
+            </table>
+<p>If it is an array property, it will return the first value in the array.</p>
+          </div></section>
+          <section class="m-doc-details" id="a5a5ff02b52632599329c1cc36a5c3a44"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">static bool App::<wbr />Property::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a5a5ff02b52632599329c1cc36a5c3a44" class="m-doc-self">GetVector2</a>(</span><span class="m-doc-wrap">const <a href="class_app_1_1_property_list.html" class="m-doc">PropertyList</a>* pPropertyList,
+              uint32_t propertyID,
+              <a href="struct_math_1_1_vector2.html" class="m-doc">Vector2</a>&amp; dst)</span></span>
+            </h3>
+            <p>Gets a single <a href="struct_math_1_1_vector2.html" class="m-doc">Math::<wbr />Vector2</a> value from a property with the propertyID specified in the given list.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">pPropertyList&nbsp;<span class="m-label m-flat m-info">in</span></td>
+                  <td>The <a href="class_app_1_1_property_list.html" class="m-doc">PropertyList</a> where this property will be searched.</td>
+                </tr>
+                <tr>
+                  <td>propertyID&nbsp;<span class="m-label m-flat m-info">in</span></td>
+                  <td>The unique identifier of the property to find.</td>
+                </tr>
+                <tr>
+                  <td>dst&nbsp;<span class="m-label m-flat m-warning">out</span></td>
+                  <td>The destination value that will be assigned with the value found, if any.</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>Returns</th>
+                  <td>True if a property of the required type and propertyID was found, false otherwise.</td>
+                </tr>
+              </tfoot>
+            </table>
+<p>If it is an array property, it will return the first value in the array.</p>
+          </div></section>
+          <section class="m-doc-details" id="adc7543983711657e96084b39086fb80b"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">static bool App::<wbr />Property::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#adc7543983711657e96084b39086fb80b" class="m-doc-self">GetVector3</a>(</span><span class="m-doc-wrap">const <a href="class_app_1_1_property_list.html" class="m-doc">PropertyList</a>* pPropertyList,
+              uint32_t propertyID,
+              <a href="struct_math_1_1_vector3.html" class="m-doc">Vector3</a>&amp; dst)</span></span>
+            </h3>
+            <p>Gets a single <a href="struct_math_1_1_vector3.html" class="m-doc">Math::<wbr />Vector3</a> value from a property with the propertyID specified in the given list.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">pPropertyList&nbsp;<span class="m-label m-flat m-info">in</span></td>
+                  <td>The <a href="class_app_1_1_property_list.html" class="m-doc">PropertyList</a> where this property will be searched.</td>
+                </tr>
+                <tr>
+                  <td>propertyID&nbsp;<span class="m-label m-flat m-info">in</span></td>
+                  <td>The unique identifier of the property to find.</td>
+                </tr>
+                <tr>
+                  <td>dst&nbsp;<span class="m-label m-flat m-warning">out</span></td>
+                  <td>The destination value that will be assigned with the value found, if any.</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>Returns</th>
+                  <td>True if a property of the required type and propertyID was found, false otherwise.</td>
+                </tr>
+              </tfoot>
+            </table>
+<p>If it is an array property, it will return the first value in the array.</p>
+          </div></section>
+          <section class="m-doc-details" id="a1faf7dd20c7b0b508fa2ca4c48cd7397"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">static bool App::<wbr />Property::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a1faf7dd20c7b0b508fa2ca4c48cd7397" class="m-doc-self">GetVector4</a>(</span><span class="m-doc-wrap">const <a href="class_app_1_1_property_list.html" class="m-doc">PropertyList</a>* pPropertyList,
+              uint32_t propertyID,
+              <a href="struct_math_1_1_vector4.html" class="m-doc">Vector4</a>&amp; dst)</span></span>
+            </h3>
+            <p>Gets a single <a href="namespace_app.html#aa30f9441aea9fdb83254924d3a87071eacf637ffa2663b40ae52857aa0bdb1ec3" class="m-doc">Meth::<wbr />Vector4</a> value from a property with the propertyID specified in the given list.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">pPropertyList&nbsp;<span class="m-label m-flat m-info">in</span></td>
+                  <td>The <a href="class_app_1_1_property_list.html" class="m-doc">PropertyList</a> where this property will be searched.</td>
+                </tr>
+                <tr>
+                  <td>propertyID&nbsp;<span class="m-label m-flat m-info">in</span></td>
+                  <td>The unique identifier of the property to find.</td>
+                </tr>
+                <tr>
+                  <td>dst&nbsp;<span class="m-label m-flat m-warning">out</span></td>
+                  <td>The destination value that will be assigned with the value found, if any.</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>Returns</th>
+                  <td>True if a property of the required type and propertyID was found, false otherwise.</td>
+                </tr>
+              </tfoot>
+            </table>
+<p>If it is an array property, it will return the first value in the array.</p>
+          </div></section>
+          <section class="m-doc-details" id="ae1265d83889a0bec55e8e8f33fe49f79"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">static bool App::<wbr />Property::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ae1265d83889a0bec55e8e8f33fe49f79" class="m-doc-self">GetColorRGB</a>(</span><span class="m-doc-wrap">const <a href="class_app_1_1_property_list.html" class="m-doc">PropertyList</a>* pPropertyList,
+              uint32_t propertyID,
+              <a href="struct_math_1_1_color_r_g_b.html" class="m-doc">ColorRGB</a>&amp; dst)</span></span>
+            </h3>
+            <p>Gets a single <a href="namespace_app.html#aa30f9441aea9fdb83254924d3a87071eadd36524a945bd1e360419ab73f162df0" class="m-doc">Meth::<wbr />ColorRGB</a> value from a property with the propertyID specified in the given list.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">pPropertyList&nbsp;<span class="m-label m-flat m-info">in</span></td>
+                  <td>The <a href="class_app_1_1_property_list.html" class="m-doc">PropertyList</a> where this property will be searched.</td>
+                </tr>
+                <tr>
+                  <td>propertyID&nbsp;<span class="m-label m-flat m-info">in</span></td>
+                  <td>The unique identifier of the property to find.</td>
+                </tr>
+                <tr>
+                  <td>dst&nbsp;<span class="m-label m-flat m-warning">out</span></td>
+                  <td>The destination value that will be assigned with the value found, if any.</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>Returns</th>
+                  <td>True if a property of the required type and propertyID was found, false otherwise.</td>
+                </tr>
+              </tfoot>
+            </table>
+<p>If it is an array property, it will return the first value in the array.</p>
+          </div></section>
+          <section class="m-doc-details" id="a3184f66b7ebbc666995cebb212208484"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">static bool App::<wbr />Property::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a3184f66b7ebbc666995cebb212208484" class="m-doc-self">GetColorRGBA</a>(</span><span class="m-doc-wrap">const <a href="class_app_1_1_property_list.html" class="m-doc">PropertyList</a>* pPropertyList,
+              uint32_t propertyID,
+              <a href="struct_math_1_1_color_r_g_b_a.html" class="m-doc">ColorRGBA</a>&amp; dst)</span></span>
+            </h3>
+            <p>Gets a single <a href="struct_math_1_1_color_r_g_b_a.html" class="m-doc">Math::<wbr />ColorRGBA</a> value from a property with the propertyID specified in the given list.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">pPropertyList&nbsp;<span class="m-label m-flat m-info">in</span></td>
+                  <td>The <a href="class_app_1_1_property_list.html" class="m-doc">PropertyList</a> where this property will be searched.</td>
+                </tr>
+                <tr>
+                  <td>propertyID&nbsp;<span class="m-label m-flat m-info">in</span></td>
+                  <td>The unique identifier of the property to find.</td>
+                </tr>
+                <tr>
+                  <td>dst&nbsp;<span class="m-label m-flat m-warning">out</span></td>
+                  <td>The destination value that will be assigned with the value found, if any.</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>Returns</th>
+                  <td>True if a property of the required type and propertyID was found, false otherwise.</td>
+                </tr>
+              </tfoot>
+            </table>
+<p>If it is an array property, it will return the first value in the array.</p>
+          </div></section>
+          <section class="m-doc-details" id="abe19f111ba8a7100f091c8d07f151f77"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">static bool App::<wbr />Property::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#abe19f111ba8a7100f091c8d07f151f77" class="m-doc-self">GetKey</a>(</span><span class="m-doc-wrap">const <a href="class_app_1_1_property_list.html" class="m-doc">PropertyList</a>* pPropertyList,
+              uint32_t propertyID,
+              <a href="struct_resource_key.html" class="m-doc">ResourceKey</a>&amp; dst)</span></span>
+            </h3>
+            <p>Gets a single <a href="struct_resource_key.html" class="m-doc">ResourceKey</a> value from a property with the propertyID specified in the given list.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">pPropertyList&nbsp;<span class="m-label m-flat m-info">in</span></td>
+                  <td>The <a href="class_app_1_1_property_list.html" class="m-doc">PropertyList</a> where this property will be searched.</td>
+                </tr>
+                <tr>
+                  <td>propertyID&nbsp;<span class="m-label m-flat m-info">in</span></td>
+                  <td>The unique identifier of the property to find.</td>
+                </tr>
+                <tr>
+                  <td>dst&nbsp;<span class="m-label m-flat m-warning">out</span></td>
+                  <td>The destination value that will be assigned with the value found, if any.</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>Returns</th>
+                  <td>True if a property of the required type and propertyID was found, false otherwise.</td>
+                </tr>
+              </tfoot>
+            </table>
+<p>If it is an array property, it will return the first value in the array.</p>
+          </div></section>
+          <section class="m-doc-details" id="a461c6cf784110ba3088f63a8021b7430"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">static bool App::<wbr />Property::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a461c6cf784110ba3088f63a8021b7430" class="m-doc-self">GetKeyInstanceID</a>(</span><span class="m-doc-wrap">const <a href="class_app_1_1_property_list.html" class="m-doc">PropertyList</a>* pPropertyList,
+              uint32_t propertyID,
+              uint32_t&amp; dst)</span></span>
+            </h3>
+            <p>Gets the instanceID of a single <a href="struct_resource_key.html" class="m-doc">ResourceKey</a> value from a property with the propertyID specified in the given list.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">pPropertyList&nbsp;<span class="m-label m-flat m-info">in</span></td>
+                  <td>The <a href="class_app_1_1_property_list.html" class="m-doc">PropertyList</a> where this property will be searched.</td>
+                </tr>
+                <tr>
+                  <td>propertyID&nbsp;<span class="m-label m-flat m-info">in</span></td>
+                  <td>The unique identifier of the property to find.</td>
+                </tr>
+                <tr>
+                  <td>dst&nbsp;<span class="m-label m-flat m-warning">out</span></td>
+                  <td>The destination value that will be assigned with the value found, if any.</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>Returns</th>
+                  <td>True if a property of the required type and propertyID was found, false otherwise.</td>
+                </tr>
+              </tfoot>
+            </table>
+<p>If it is an array property, it will return the first value in the array.</p>
+          </div></section>
+          <section class="m-doc-details" id="a83a04512c6a93a5b1a125f84c2f0d19a"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">static bool App::<wbr />Property::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a83a04512c6a93a5b1a125f84c2f0d19a" class="m-doc-self">GetKeyGroupID</a>(</span><span class="m-doc-wrap">const <a href="class_app_1_1_property_list.html" class="m-doc">PropertyList</a>* pPropertyList,
+              uint32_t propertyID,
+              uint32_t&amp; dst)</span></span>
+            </h3>
+            <p>Gets the groupID of a single <a href="struct_resource_key.html" class="m-doc">ResourceKey</a> value from a property with the propertyID specified in the given list.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">pPropertyList&nbsp;<span class="m-label m-flat m-info">in</span></td>
+                  <td>The <a href="class_app_1_1_property_list.html" class="m-doc">PropertyList</a> where this property will be searched.</td>
+                </tr>
+                <tr>
+                  <td>propertyID&nbsp;<span class="m-label m-flat m-info">in</span></td>
+                  <td>The unique identifier of the property to find.</td>
+                </tr>
+                <tr>
+                  <td>dst&nbsp;<span class="m-label m-flat m-warning">out</span></td>
+                  <td>The destination value that will be assigned with the value found, if any.</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>Returns</th>
+                  <td>True if a property of the required type and propertyID was found, false otherwise.</td>
+                </tr>
+              </tfoot>
+            </table>
+<p>If it is an array property, it will return the first value in the array.</p>
+          </div></section>
+          <section class="m-doc-details" id="a61e27b9e3cfa48cc8627e0954e5a953a"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">static bool App::<wbr />Property::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a61e27b9e3cfa48cc8627e0954e5a953a" class="m-doc-self">GetKeyTypeID</a>(</span><span class="m-doc-wrap">const <a href="class_app_1_1_property_list.html" class="m-doc">PropertyList</a>* pPropertyList,
+              uint32_t propertyID,
+              uint32_t&amp; dst)</span></span>
+            </h3>
+            <p>Gets the typeID of a single <a href="struct_resource_key.html" class="m-doc">ResourceKey</a> value from a property with the propertyID specified in the given list.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">pPropertyList&nbsp;<span class="m-label m-flat m-info">in</span></td>
+                  <td>The <a href="class_app_1_1_property_list.html" class="m-doc">PropertyList</a> where this property will be searched.</td>
+                </tr>
+                <tr>
+                  <td>propertyID&nbsp;<span class="m-label m-flat m-info">in</span></td>
+                  <td>The unique identifier of the property to find.</td>
+                </tr>
+                <tr>
+                  <td>dst&nbsp;<span class="m-label m-flat m-warning">out</span></td>
+                  <td>The destination value that will be assigned with the value found, if any.</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>Returns</th>
+                  <td>True if a property of the required type and propertyID was found, false otherwise.</td>
+                </tr>
+              </tfoot>
+            </table>
+<p>If it is an array property, it will return the first value in the array.</p>
+          </div></section>
+          <section class="m-doc-details" id="aa3049dc1c275dbeb669c15ca36a77d77"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">static bool App::<wbr />Property::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#aa3049dc1c275dbeb669c15ca36a77d77" class="m-doc-self">GetText</a>(</span><span class="m-doc-wrap">const <a href="class_app_1_1_property_list.html" class="m-doc">PropertyList</a>* pPropertyList,
+              uint32_t propertyID,
+              <a href="class_localized_string.html" class="m-doc">LocalizedString</a>&amp; dst)</span></span>
+            </h3>
+            <p>Gets a single <a href="class_localized_string.html" class="m-doc">LocalizedString</a> (&#x27;text&#x27;) value from a property with the propertyID specified in the given list.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">pPropertyList&nbsp;<span class="m-label m-flat m-info">in</span></td>
+                  <td>The <a href="class_app_1_1_property_list.html" class="m-doc">PropertyList</a> where this property will be searched.</td>
+                </tr>
+                <tr>
+                  <td>propertyID&nbsp;<span class="m-label m-flat m-info">in</span></td>
+                  <td>The unique identifier of the property to find.</td>
+                </tr>
+                <tr>
+                  <td>dst&nbsp;<span class="m-label m-flat m-warning">out</span></td>
+                  <td>The destination value that will be assigned with the value found, if any.</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>Returns</th>
+                  <td>True if a property of the required type and propertyID was found, false otherwise.</td>
+                </tr>
+              </tfoot>
+            </table>
+<p>If it is an array property, it will return the first value in the array.</p>
+          </div></section>
+          <section class="m-doc-details" id="a34f58f0a220ad8d8e1b0cc4518507837"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">static bool App::<wbr />Property::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a34f58f0a220ad8d8e1b0cc4518507837" class="m-doc-self">GetCString8</a>(</span><span class="m-doc-wrap">const <a href="class_app_1_1_property_list.html" class="m-doc">PropertyList</a>* pPropertyList,
+              uint32_t propertyID,
+              char*&amp; dst)</span></span>
+            </h3>
+            <p>Gets a single char* (&#x27;string8&#x27;) value from a property with the propertyID specified in the given list.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">pPropertyList&nbsp;<span class="m-label m-flat m-info">in</span></td>
+                  <td>The <a href="class_app_1_1_property_list.html" class="m-doc">PropertyList</a> where this property will be searched.</td>
+                </tr>
+                <tr>
+                  <td>propertyID&nbsp;<span class="m-label m-flat m-info">in</span></td>
+                  <td>The unique identifier of the property to find.</td>
+                </tr>
+                <tr>
+                  <td>dst&nbsp;<span class="m-label m-flat m-warning">out</span></td>
+                  <td>The destination value that will be assigned with the value found, if any.</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>Returns</th>
+                  <td>True if a property of the required type and propertyID was found, false otherwise.</td>
+                </tr>
+              </tfoot>
+            </table>
+<p>If it is an array property, it will return the first value in the array. The value is a null-terminated char string.</p>
+          </div></section>
+          <section class="m-doc-details" id="a693f20a64c69cf6e0eb0518bfcdc5661"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">static bool App::<wbr />Property::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a693f20a64c69cf6e0eb0518bfcdc5661" class="m-doc-self">GetCString16</a>(</span><span class="m-doc-wrap">const <a href="class_app_1_1_property_list.html" class="m-doc">PropertyList</a>* pPropertyList,
+              uint32_t propertyID,
+              char16_t*&amp; dst)</span></span>
+            </h3>
+            <p>Gets a single char16_t* (&#x27;string16&#x27;) value from a property with the propertyID specified in the given list.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">pPropertyList&nbsp;<span class="m-label m-flat m-info">in</span></td>
+                  <td>The <a href="class_app_1_1_property_list.html" class="m-doc">PropertyList</a> where this property will be searched.</td>
+                </tr>
+                <tr>
+                  <td>propertyID&nbsp;<span class="m-label m-flat m-info">in</span></td>
+                  <td>The unique identifier of the property to find.</td>
+                </tr>
+                <tr>
+                  <td>dst&nbsp;<span class="m-label m-flat m-warning">out</span></td>
+                  <td>The destination value that will be assigned with the value found, if any.</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>Returns</th>
+                  <td>True if a property of the required type and propertyID was found, false otherwise.</td>
+                </tr>
+              </tfoot>
+            </table>
+<p>If it is an array property, it will return the first value in the array. The value is a null-terminated char16_t string.</p>
+          </div></section>
+          <section class="m-doc-details" id="a6d3f47611dcda927c8131e26a1a0ac97"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">static bool App::<wbr />Property::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a6d3f47611dcda927c8131e26a1a0ac97" class="m-doc-self">GetString8</a>(</span><span class="m-doc-wrap">const <a href="class_app_1_1_property_list.html" class="m-doc">PropertyList</a>* pPropertyList,
+              uint32_t propertyID,
+              eastl::string&amp; dst)</span></span>
+            </h3>
+            <p>Gets a single string8 value from a property with the propertyID specified in the given list.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">pPropertyList&nbsp;<span class="m-label m-flat m-info">in</span></td>
+                  <td>The <a href="class_app_1_1_property_list.html" class="m-doc">PropertyList</a> where this property will be searched.</td>
+                </tr>
+                <tr>
+                  <td>propertyID&nbsp;<span class="m-label m-flat m-info">in</span></td>
+                  <td>The unique identifier of the property to find.</td>
+                </tr>
+                <tr>
+                  <td>dst&nbsp;<span class="m-label m-flat m-warning">out</span></td>
+                  <td>The destination value that will be assigned with the value found, if any.</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>Returns</th>
+                  <td>True if a property of the required type and propertyID was found, false otherwise.</td>
+                </tr>
+              </tfoot>
+            </table>
+<p>If it is an array property, it will return the first value in the array. This does the same as GetCString8, but wrapped inside an eastl::string8 class.</p>
+          </div></section>
+          <section class="m-doc-details" id="ae4e84ca04371e804d4290cdd3cffa2d2"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">static bool App::<wbr />Property::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ae4e84ca04371e804d4290cdd3cffa2d2" class="m-doc-self">GetString16</a>(</span><span class="m-doc-wrap">const <a href="class_app_1_1_property_list.html" class="m-doc">PropertyList</a>* pPropertyList,
+              uint32_t propertyID,
+              eastl::string16&amp; dst)</span></span>
+            </h3>
+            <p>Gets a single string16 value from a property with the propertyID specified in the given list.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">pPropertyList&nbsp;<span class="m-label m-flat m-info">in</span></td>
+                  <td>The <a href="class_app_1_1_property_list.html" class="m-doc">PropertyList</a> where this property will be searched.</td>
+                </tr>
+                <tr>
+                  <td>propertyID&nbsp;<span class="m-label m-flat m-info">in</span></td>
+                  <td>The unique identifier of the property to find.</td>
+                </tr>
+                <tr>
+                  <td>dst&nbsp;<span class="m-label m-flat m-warning">out</span></td>
+                  <td>The destination value that will be assigned with the value found, if any.</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>Returns</th>
+                  <td>True if a property of the required type and propertyID was found, false otherwise.</td>
+                </tr>
+              </tfoot>
+            </table>
+<p>If it is an array property, it will return the first value in the array. This does the same as GetCString16, but wrapped inside an eastl::string16 class.</p>
+          </div></section>
+          <section class="m-doc-details" id="adeeca6da827207cedb046ccdce736550"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">static bool App::<wbr />Property::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#adeeca6da827207cedb046ccdce736550" class="m-doc-self">GetArrayBool</a>(</span><span class="m-doc-wrap">const <a href="class_app_1_1_property_list.html" class="m-doc">PropertyList</a>* pPropertyList,
+              uint32_t propertyID,
+              size_t&amp; dstCount,
+              bool*&amp; dst)</span></span>
+            </h3>
+            <p>Gets an array of bool values from a property with the propertyID specified in the given list.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">pPropertyList&nbsp;<span class="m-label m-flat m-info">in</span></td>
+                  <td>The <a href="class_app_1_1_property_list.html" class="m-doc">PropertyList</a> where this property will be searched.</td>
+                </tr>
+                <tr>
+                  <td>propertyID&nbsp;<span class="m-label m-flat m-info">in</span></td>
+                  <td>The unique identifier of the property to find.</td>
+                </tr>
+                <tr>
+                  <td>dstCount&nbsp;<span class="m-label m-flat m-warning">out</span></td>
+                  <td>The destination size_t that will be assigned with the number of values found.</td>
+                </tr>
+                <tr>
+                  <td>dst&nbsp;<span class="m-label m-flat m-warning">out</span></td>
+                  <td>The destination pointer that will be assigned with the array of values found, if any.</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>Returns</th>
+                  <td>True if a property of the required type and propertyID was found, false otherwise.</td>
+                </tr>
+              </tfoot>
+            </table>
+<p>If it is not an array property, a pointer to the single value will be returned.</p>
+          </div></section>
+          <section class="m-doc-details" id="a2e6961e094eaf97ef2015ad2d58b8e02"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">static bool App::<wbr />Property::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a2e6961e094eaf97ef2015ad2d58b8e02" class="m-doc-self">GetArrayInt32</a>(</span><span class="m-doc-wrap">const <a href="class_app_1_1_property_list.html" class="m-doc">PropertyList</a>* pPropertyList,
+              uint32_t propertyID,
+              size_t&amp; dstCount,
+              int*&amp; dst)</span></span>
+            </h3>
+            <p>Gets an array of int32_t values from a property with the propertyID specified in the given list.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">pPropertyList&nbsp;<span class="m-label m-flat m-info">in</span></td>
+                  <td>The <a href="class_app_1_1_property_list.html" class="m-doc">PropertyList</a> where this property will be searched.</td>
+                </tr>
+                <tr>
+                  <td>propertyID&nbsp;<span class="m-label m-flat m-info">in</span></td>
+                  <td>The unique identifier of the property to find.</td>
+                </tr>
+                <tr>
+                  <td>dstCount&nbsp;<span class="m-label m-flat m-warning">out</span></td>
+                  <td>The destination size_t that will be assigned with the number of values found.</td>
+                </tr>
+                <tr>
+                  <td>dst&nbsp;<span class="m-label m-flat m-warning">out</span></td>
+                  <td>The destination pointer that will be assigned with the array of values found, if any.</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>Returns</th>
+                  <td>True if a property of the required type and propertyID was found, false otherwise.</td>
+                </tr>
+              </tfoot>
+            </table>
+<p>If it is not an array property, a pointer to the single value will be returned.</p>
+          </div></section>
+          <section class="m-doc-details" id="a61dd3d604c18b1ecb17fa84ea2ab77b1"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">static bool App::<wbr />Property::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a61dd3d604c18b1ecb17fa84ea2ab77b1" class="m-doc-self">GetArrayUInt32</a>(</span><span class="m-doc-wrap">const <a href="class_app_1_1_property_list.html" class="m-doc">PropertyList</a>* pPropertyList,
+              uint32_t propertyID,
+              size_t&amp; dstCount,
+              unsigned int*&amp; dst)</span></span>
+            </h3>
+            <p>Gets an array of uint32_t values from a property with the propertyID specified in the given list.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">pPropertyList&nbsp;<span class="m-label m-flat m-info">in</span></td>
+                  <td>The <a href="class_app_1_1_property_list.html" class="m-doc">PropertyList</a> where this property will be searched.</td>
+                </tr>
+                <tr>
+                  <td>propertyID&nbsp;<span class="m-label m-flat m-info">in</span></td>
+                  <td>The unique identifier of the property to find.</td>
+                </tr>
+                <tr>
+                  <td>dstCount&nbsp;<span class="m-label m-flat m-warning">out</span></td>
+                  <td>The destination size_t that will be assigned with the number of values found.</td>
+                </tr>
+                <tr>
+                  <td>dst&nbsp;<span class="m-label m-flat m-warning">out</span></td>
+                  <td>The destination pointer that will be assigned with the array of values found, if any.</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>Returns</th>
+                  <td>True if a property of the required type and propertyID was found, false otherwise.</td>
+                </tr>
+              </tfoot>
+            </table>
+<p>If it is not an array property, a pointer to the single value will be returned.</p>
+          </div></section>
+          <section class="m-doc-details" id="a22174c9dcf00e9effed7a222e349af16"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">static bool App::<wbr />Property::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a22174c9dcf00e9effed7a222e349af16" class="m-doc-self">GetArrayFloat</a>(</span><span class="m-doc-wrap">const <a href="class_app_1_1_property_list.html" class="m-doc">PropertyList</a>* pPropertyList,
+              uint32_t propertyID,
+              size_t&amp; dstCount,
+              float*&amp; dst)</span></span>
+            </h3>
+            <p>Gets an array of float values from a property with the propertyID specified in the given list.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">pPropertyList&nbsp;<span class="m-label m-flat m-info">in</span></td>
+                  <td>The <a href="class_app_1_1_property_list.html" class="m-doc">PropertyList</a> where this property will be searched.</td>
+                </tr>
+                <tr>
+                  <td>propertyID&nbsp;<span class="m-label m-flat m-info">in</span></td>
+                  <td>The unique identifier of the property to find.</td>
+                </tr>
+                <tr>
+                  <td>dstCount&nbsp;<span class="m-label m-flat m-warning">out</span></td>
+                  <td>The destination size_t that will be assigned with the number of values found.</td>
+                </tr>
+                <tr>
+                  <td>dst&nbsp;<span class="m-label m-flat m-warning">out</span></td>
+                  <td>The destination pointer that will be assigned with the array of values found, if any.</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>Returns</th>
+                  <td>True if a property of the required type and propertyID was found, false otherwise.</td>
+                </tr>
+              </tfoot>
+            </table>
+<p>If it is not an array property, a pointer to the single value will be returned.</p>
+          </div></section>
+          <section class="m-doc-details" id="a917e8d9b16763a0918e761f62e93a235"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">static bool App::<wbr />Property::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a917e8d9b16763a0918e761f62e93a235" class="m-doc-self">GetArrayVector2</a>(</span><span class="m-doc-wrap">const <a href="class_app_1_1_property_list.html" class="m-doc">PropertyList</a>* pPropertyList,
+              uint32_t propertyID,
+              size_t&amp; dstCount,
+              <a href="struct_math_1_1_vector2.html" class="m-doc">Vector2</a>*&amp; dst)</span></span>
+            </h3>
+            <p>Gets an array of <a href="struct_math_1_1_vector2.html" class="m-doc">Math::<wbr />Vector2</a> values from a property with the propertyID specified in the given list.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">pPropertyList&nbsp;<span class="m-label m-flat m-info">in</span></td>
+                  <td>The <a href="class_app_1_1_property_list.html" class="m-doc">PropertyList</a> where this property will be searched.</td>
+                </tr>
+                <tr>
+                  <td>propertyID&nbsp;<span class="m-label m-flat m-info">in</span></td>
+                  <td>The unique identifier of the property to find.</td>
+                </tr>
+                <tr>
+                  <td>dstCount&nbsp;<span class="m-label m-flat m-warning">out</span></td>
+                  <td>The destination size_t that will be assigned with the number of values found.</td>
+                </tr>
+                <tr>
+                  <td>dst&nbsp;<span class="m-label m-flat m-warning">out</span></td>
+                  <td>The destination pointer that will be assigned with the array of values found, if any.</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>Returns</th>
+                  <td>True if a property of the required type and propertyID was found, false otherwise.</td>
+                </tr>
+              </tfoot>
+            </table>
+<p>If it is not an array property, a pointer to the single value will be returned.</p>
+          </div></section>
+          <section class="m-doc-details" id="a08799ab9e6f7464daa77c9fa4305a194"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">static bool App::<wbr />Property::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a08799ab9e6f7464daa77c9fa4305a194" class="m-doc-self">GetArrayVector3</a>(</span><span class="m-doc-wrap">const <a href="class_app_1_1_property_list.html" class="m-doc">PropertyList</a>* pPropertyList,
+              uint32_t propertyID,
+              size_t&amp; dstCount,
+              <a href="struct_math_1_1_vector3.html" class="m-doc">Vector3</a>*&amp; dst)</span></span>
+            </h3>
+            <p>Gets an array of <a href="struct_math_1_1_vector3.html" class="m-doc">Math::<wbr />Vector3</a> values from a property with the propertyID specified in the given list.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">pPropertyList&nbsp;<span class="m-label m-flat m-info">in</span></td>
+                  <td>The <a href="class_app_1_1_property_list.html" class="m-doc">PropertyList</a> where this property will be searched.</td>
+                </tr>
+                <tr>
+                  <td>propertyID&nbsp;<span class="m-label m-flat m-info">in</span></td>
+                  <td>The unique identifier of the property to find.</td>
+                </tr>
+                <tr>
+                  <td>dstCount&nbsp;<span class="m-label m-flat m-warning">out</span></td>
+                  <td>The destination size_t that will be assigned with the number of values found.</td>
+                </tr>
+                <tr>
+                  <td>dst&nbsp;<span class="m-label m-flat m-warning">out</span></td>
+                  <td>The destination pointer that will be assigned with the array of values found, if any.</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>Returns</th>
+                  <td>True if a property of the required type and propertyID was found, false otherwise.</td>
+                </tr>
+              </tfoot>
+            </table>
+<p>If it is not an array property, a pointer to the single value will be returned.</p>
+          </div></section>
+          <section class="m-doc-details" id="a9cd59c0a68acbdd7dfa737f5a5e38684"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">static bool App::<wbr />Property::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a9cd59c0a68acbdd7dfa737f5a5e38684" class="m-doc-self">GetArrayVector4</a>(</span><span class="m-doc-wrap">const <a href="class_app_1_1_property_list.html" class="m-doc">PropertyList</a>* pPropertyList,
+              uint32_t propertyID,
+              size_t&amp; dstCount,
+              <a href="struct_math_1_1_vector4.html" class="m-doc">Vector4</a>*&amp; dst)</span></span>
+            </h3>
+            <p>Gets an array of <a href="struct_math_1_1_vector4.html" class="m-doc">Math::<wbr />Vector4</a> values from a property with the propertyID specified in the given list.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">pPropertyList&nbsp;<span class="m-label m-flat m-info">in</span></td>
+                  <td>The <a href="class_app_1_1_property_list.html" class="m-doc">PropertyList</a> where this property will be searched.</td>
+                </tr>
+                <tr>
+                  <td>propertyID&nbsp;<span class="m-label m-flat m-info">in</span></td>
+                  <td>The unique identifier of the property to find.</td>
+                </tr>
+                <tr>
+                  <td>dstCount&nbsp;<span class="m-label m-flat m-warning">out</span></td>
+                  <td>The destination size_t that will be assigned with the number of values found.</td>
+                </tr>
+                <tr>
+                  <td>dst&nbsp;<span class="m-label m-flat m-warning">out</span></td>
+                  <td>The destination pointer that will be assigned with the array of values found, if any.</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>Returns</th>
+                  <td>True if a property of the required type and propertyID was found, false otherwise.</td>
+                </tr>
+              </tfoot>
+            </table>
+<p>If it is not an array property, a pointer to the single value will be returned.</p>
+          </div></section>
+          <section class="m-doc-details" id="a216f75ac3d485dc21d9ae8b95e579d84"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">static bool App::<wbr />Property::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a216f75ac3d485dc21d9ae8b95e579d84" class="m-doc-self">GetArrayColorRGB</a>(</span><span class="m-doc-wrap">const <a href="class_app_1_1_property_list.html" class="m-doc">PropertyList</a>* pPropertyList,
+              uint32_t propertyID,
+              size_t&amp; dstCount,
+              <a href="struct_math_1_1_color_r_g_b.html" class="m-doc">ColorRGB</a>*&amp; dst)</span></span>
+            </h3>
+            <p>Gets an array of <a href="struct_math_1_1_color_r_g_b.html" class="m-doc">Math::<wbr />ColorRGB</a> values from a property with the propertyID specified in the given list.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">pPropertyList&nbsp;<span class="m-label m-flat m-info">in</span></td>
+                  <td>The <a href="class_app_1_1_property_list.html" class="m-doc">PropertyList</a> where this property will be searched.</td>
+                </tr>
+                <tr>
+                  <td>propertyID&nbsp;<span class="m-label m-flat m-info">in</span></td>
+                  <td>The unique identifier of the property to find.</td>
+                </tr>
+                <tr>
+                  <td>dstCount&nbsp;<span class="m-label m-flat m-warning">out</span></td>
+                  <td>The destination size_t that will be assigned with the number of values found.</td>
+                </tr>
+                <tr>
+                  <td>dst&nbsp;<span class="m-label m-flat m-warning">out</span></td>
+                  <td>The destination pointer that will be assigned with the array of values found, if any.</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>Returns</th>
+                  <td>True if a property of the required type and propertyID was found, false otherwise.</td>
+                </tr>
+              </tfoot>
+            </table>
+<p>If it is not an array property, a pointer to the single value will be returned.</p>
+          </div></section>
+          <section class="m-doc-details" id="a03e147e1644c8c5230d6b95896946e86"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">static bool App::<wbr />Property::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a03e147e1644c8c5230d6b95896946e86" class="m-doc-self">GetArrayKey</a>(</span><span class="m-doc-wrap">const <a href="class_app_1_1_property_list.html" class="m-doc">PropertyList</a>* pPropertyList,
+              uint32_t propertyID,
+              size_t&amp; dstCount,
+              <a href="struct_resource_key.html" class="m-doc">ResourceKey</a>*&amp; dst)</span></span>
+            </h3>
+            <p>Gets an array of <a href="struct_resource_key.html" class="m-doc">ResourceKey</a> values from a property with the propertyID specified in the given list.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">pPropertyList&nbsp;<span class="m-label m-flat m-info">in</span></td>
+                  <td>The <a href="class_app_1_1_property_list.html" class="m-doc">PropertyList</a> where this property will be searched.</td>
+                </tr>
+                <tr>
+                  <td>propertyID&nbsp;<span class="m-label m-flat m-info">in</span></td>
+                  <td>The unique identifier of the property to find.</td>
+                </tr>
+                <tr>
+                  <td>dstCount&nbsp;<span class="m-label m-flat m-warning">out</span></td>
+                  <td>The destination size_t that will be assigned with the number of values found.</td>
+                </tr>
+                <tr>
+                  <td>dst&nbsp;<span class="m-label m-flat m-warning">out</span></td>
+                  <td>The destination pointer that will be assigned with the array of values found, if any.</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>Returns</th>
+                  <td>True if a property of the required type and propertyID was found, false otherwise.</td>
+                </tr>
+              </tfoot>
+            </table>
+<p>If it is not an array property, a pointer to the single value will be returned.</p>
+          </div></section>
+          <section class="m-doc-details" id="a817f404db2ec9bf346b8a76b266b3a30"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">static bool App::<wbr />Property::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a817f404db2ec9bf346b8a76b266b3a30" class="m-doc-self">GetArrayString8</a>(</span><span class="m-doc-wrap">const <a href="class_app_1_1_property_list.html" class="m-doc">PropertyList</a>* pPropertyList,
+              uint32_t propertyID,
+              size_t&amp; dstCount,
+              string8*&amp; dst)</span></span>
+            </h3>
+            <p>Gets an array of char* (&#x27;string8&#x27;) values from a property with the propertyID specified in the given list.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">pPropertyList&nbsp;<span class="m-label m-flat m-info">in</span></td>
+                  <td>The <a href="class_app_1_1_property_list.html" class="m-doc">PropertyList</a> where this property will be searched.</td>
+                </tr>
+                <tr>
+                  <td>propertyID&nbsp;<span class="m-label m-flat m-info">in</span></td>
+                  <td>The unique identifier of the property to find.</td>
+                </tr>
+                <tr>
+                  <td>dstCount&nbsp;<span class="m-label m-flat m-warning">out</span></td>
+                  <td>The destination size_t that will be assigned with the number of values found.</td>
+                </tr>
+                <tr>
+                  <td>dst&nbsp;<span class="m-label m-flat m-warning">out</span></td>
+                  <td>The destination pointer that will be assigned with the array of values found, if any.</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>Returns</th>
+                  <td>True if a property of the required type and propertyID was found, false otherwise.</td>
+                </tr>
+              </tfoot>
+            </table>
+<p>If it is not an array property, a pointer to the single value will be returned.</p>
+          </div></section>
+          <section class="m-doc-details" id="a93877ad0259702c969a14f528ffd898d"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">static bool App::<wbr />Property::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a93877ad0259702c969a14f528ffd898d" class="m-doc-self">GetArrayString16</a>(</span><span class="m-doc-wrap">const <a href="class_app_1_1_property_list.html" class="m-doc">PropertyList</a>* pPropertyList,
+              uint32_t propertyID,
+              size_t&amp; dstCount,
+              string16*&amp; dst)</span></span>
+            </h3>
+            <p>Gets an array of &#x27;string16&#x27; values from a property with the propertyID specified in the given list.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">pPropertyList&nbsp;<span class="m-label m-flat m-info">in</span></td>
+                  <td>The <a href="class_app_1_1_property_list.html" class="m-doc">PropertyList</a> where this property will be searched.</td>
+                </tr>
+                <tr>
+                  <td>propertyID&nbsp;<span class="m-label m-flat m-info">in</span></td>
+                  <td>The unique identifier of the property to find.</td>
+                </tr>
+                <tr>
+                  <td>dstCount&nbsp;<span class="m-label m-flat m-warning">out</span></td>
+                  <td>The destination size_t that will be assigned with the number of values found.</td>
+                </tr>
+                <tr>
+                  <td>dst&nbsp;<span class="m-label m-flat m-warning">out</span></td>
+                  <td>The destination pointer that will be assigned with the array of values found, if any.</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>Returns</th>
+                  <td>True if a property of the required type and propertyID was found, false otherwise.</td>
+                </tr>
+              </tfoot>
+            </table>
+<p>If it is not an array property, a pointer to the single value will be returned.</p>
+          </div></section>
+          <section class="m-doc-details" id="a48d6b5049865c141a3a25f85d43529fd"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">static bool App::<wbr />Property::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a48d6b5049865c141a3a25f85d43529fd" class="m-doc-self">GetArrayTransform</a>(</span><span class="m-doc-wrap">const <a href="class_app_1_1_property_list.html" class="m-doc">PropertyList</a>* pPropertyList,
+              uint32_t propertyID,
+              size_t&amp; dstCount,
+              <a href="class_transform.html" class="m-doc">Transform</a>*&amp; dst)</span></span>
+            </h3>
+            <p>Gets an array of EntityTransform values from a property with the propertyID specified in the given list.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">pPropertyList&nbsp;<span class="m-label m-flat m-info">in</span></td>
+                  <td>The <a href="class_app_1_1_property_list.html" class="m-doc">PropertyList</a> where this property will be searched.</td>
+                </tr>
+                <tr>
+                  <td>propertyID&nbsp;<span class="m-label m-flat m-info">in</span></td>
+                  <td>The unique identifier of the property to find.</td>
+                </tr>
+                <tr>
+                  <td>dstCount&nbsp;<span class="m-label m-flat m-warning">out</span></td>
+                  <td>The destination size_t that will be assigned with the number of values found.</td>
+                </tr>
+                <tr>
+                  <td>dst&nbsp;<span class="m-label m-flat m-warning">out</span></td>
+                  <td>The destination pointer that will be assigned with the array of values found, if any.</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>Returns</th>
+                  <td>True if a property of the required type and propertyID was found, false otherwise.</td>
+                </tr>
+              </tfoot>
+            </table>
+<p>This type of property can only exist on array properties.</p>
+          </div></section>
+        </section>
+      </div>
+    </div>
+  </div>
+</article></main>
+<div class="m-doc-search" id="search">
+  <a href="#!" onclick="return hideSearch()"></a>
+  <div class="m-container">
+    <div class="m-row">
+      <div class="m-col-m-8 m-push-m-2">
+        <div class="m-doc-search-header m-text m-small">
+          <div><span class="m-label m-default">Tab</span> / <span class="m-label m-default">T</span> to search, <span class="m-label m-default">Esc</span> to close</div>
+          <div id="search-symbolcount">&hellip;</div>
+        </div>
+        <div class="m-doc-search-content">
+          <form>
+            <input type="search" name="q" id="search-input" placeholder="Loading &hellip;" disabled="disabled" autofocus="autofocus" autocomplete="off" spellcheck="false" />
+          </form>
+          <noscript class="m-text m-danger m-text-center">Unlike everything else in the docs, the search functionality <em>requires</em> JavaScript.</noscript>
+          <div id="search-help" class="m-text m-dim m-text-center">
+            <p class="m-noindent">Search for symbols, directories, files, pages or
+            modules. You can omit any prefix from the symbol or file path; adding a
+            <code>:</code> or <code>/</code> suffix lists all members of given symbol or
+            directory.</p>
+            <p class="m-noindent">Use <span class="m-label m-dim">&darr;</span>
+            / <span class="m-label m-dim">&uarr;</span> to navigate through the list,
+            <span class="m-label m-dim">Enter</span> to go.
+            <span class="m-label m-dim">Tab</span> autocompletes common prefix, you can
+            copy a link to the result using <span class="m-label m-dim">⌘</span>
+            <span class="m-label m-dim">L</span> while <span class="m-label m-dim">⌘</span>
+            <span class="m-label m-dim">M</span> produces a Markdown link.</p>
+          </div>
+          <div id="search-notfound" class="m-text m-warning m-text-center">Sorry, nothing was found.</div>
+          <ul id="search-results"></ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="search-v1.js"></script>
+<script src="searchdata-v1.js" async="async"></script>
+<footer><nav>
+  <div class="m-container">
+    <div class="m-row">
+      <div class="m-col-l-10 m-push-l-1">
+        <p>Spore ModAPI SDK for creating C++ mods for Spore. Created with <a href="https://doxygen.org/">Doxygen</a> 1.8.16 and <a href="https://mcss.mosra.cz/">m.css</a>.</p>
+      </div>
+    </div>
+  </div>
+</nav></footer>
+</body>
+</html>

@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>ArgScript namespace | Spore ModAPI SDK for creating C++ mods for Spore</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,600,600i%7CSource+Code+Pro:400,400i,600" />
+  <link rel="stylesheet" href="m-dark.css" />
+  <link rel="stylesheet" href="m-documentation.css" />
+  <link rel="icon" href="Spore_ModAPI_Icon.png" type="image/png" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#22272e" />
+</head>
+<body>
+<header><nav id="navigation">
+  <div class="m-container">
+    <div class="m-row">
+      <a href="index.html" id="m-navbar-brand" class="m-col-t-8 m-col-m-none m-left-m"><img src="Spore_ModAPI_Icon.png" />Spore ModAPI <span class="m-thin">SDK for creating C++ mods for Spore</span></a>
+      <div class="m-col-t-4 m-hide-m m-text-right m-nopadr">
+        <a href="#search" class="m-doc-search-icon" title="Search" onclick="return showSearch()"><svg style="height: 0.9rem;" viewBox="0 0 16 16">
+          <path id="m-doc-search-icon-path" d="m6 0c-3.31 0-6 2.69-6 6 0 3.31 2.69 6 6 6 1.49 0 2.85-0.541 3.89-1.44-0.0164 0.338 0.147 0.759 0.5 1.15l3.22 3.79c0.552 0.614 1.45 0.665 2 0.115 0.55-0.55 0.499-1.45-0.115-2l-3.79-3.22c-0.392-0.353-0.812-0.515-1.15-0.5 0.895-1.05 1.44-2.41 1.44-3.89 0-3.31-2.69-6-6-6zm0 1.56a4.44 4.44 0 0 1 4.44 4.44 4.44 4.44 0 0 1-4.44 4.44 4.44 4.44 0 0 1-4.44-4.44 4.44 4.44 0 0 1 4.44-4.44z"/>
+        </svg></a>
+        <a id="m-navbar-show" href="#navigation" title="Show navigation"></a>
+        <a id="m-navbar-hide" href="#" title="Hide navigation"></a>
+      </div>
+      <div id="m-navbar-collapse" class="m-col-t-12 m-show-m m-col-m-none m-right-m">
+        <div class="m-row">
+          <ol class="m-col-t-6 m-col-m-none">
+            <li><a href="pages.html">Tutorials</a></li>
+            <li><a href="namespaces.html">Namespaces</a></li>
+          </ol>
+          <ol class="m-col-t-6 m-col-m-none" start="3">
+            <li><a href="annotated.html">Classes</a></li>
+            <li><a href="files.html">Files</a></li>
+            <li class="m-show-m"><a href="#search" class="m-doc-search-icon" title="Search" onclick="return showSearch()"><svg style="height: 0.9rem;" viewBox="0 0 16 16">
+              <use href="#m-doc-search-icon-path" />
+            </svg></a></li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav></header>
+<main><article>
+  <div class="m-container m-container-inflatable">
+    <div class="m-row">
+      <div class="m-col-l-10 m-push-l-1">
+        <h1>
+          ArgScript <span class="m-thin">namespace</span>
+        </h1>
+        <p>The Spore scripting language.</p>
+        <div class="m-block m-default">
+          <h3>Contents</h3>
+          <ul>
+            <li>
+              Reference
+              <ul>
+                <li><a href="#nested-classes">Classes</a></li>
+                <li><a href="#enum-members">Enums</a></li>
+                <li><a href="#typedef-members">Typedefs</a></li>
+                <li><a href="#func-members">Functions</a></li>
+                <li><a href="#var-members">Variables</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+<p><a href="namespace_arg_script.html" class="m-doc">ArgScript</a> is a scripting language largely used in Spore. Although it can be used for scripts, it is mostly used as a file format, as a way to store information about multiple objects (for example, effects, property definitions, cinematics, etc). <a href="namespace_arg_script.html" class="m-doc">ArgScript</a> can be considered similar to XML: <a href="namespace_arg_script.html" class="m-doc">ArgScript</a> is the format, but the interpretation depends on the program. To create a parser for <a href="namespace_arg_script.html" class="m-doc">ArgScript</a>, use the <a href="class_arg_script_1_1_format_parser.html" class="m-doc">ArgScript::<wbr />FormatParser</a> class. Below is a detailed description of all the components in the language:</p><h3>Commands</h3><p>Commands are the basic element in <a href="namespace_arg_script.html" class="m-doc">ArgScript</a>. A command is a single line of words, separated by whitespaces. The first word is the <strong>keyword</strong>, which determines how the command is processed and executed. The rest of words are the <strong>arguments</strong>.</p><p>Words prefixed with &#x27;-&#x27;, like &#x27;-scale&#x27;, are called <strong>options</strong>, which are not required (that is, they are optional). Options can have arguments as well; when they don&#x27;t, they are called <strong>flags</strong>.</p><p>For example, consider this line: <code class="m-code"><span class="n">model</span> <span class="n">MyCube</span> <span class="mi">3</span> <span class="o">-</span><span class="n">scale</span> <span class="mf">2.0</span> <span class="o">-</span><span class="n">rigid</span></code> This command line is formed by:</p><ul><li>Keyword <em>model</em>.</li><li>2 arguments: <em>MyCube</em> and <em>3</em>.</li><li>1 option called <em>scale</em>, with 1 argument: <em>2.0</em>.</li><li>1 option called (something).</li><li>1 flag (option without arguments) called.</li></ul><p>To process commands, the <a href="class_arg_script_1_1_i_command.html" class="m-doc">ICommand</a> class is used. On its main method, <a href="class_arg_script_1_1_i_parser.html#ad77d3359dccfa329272adbcdb40dc431" class="m-doc">ICommand::<wbr />ParseLine()</a>, an instance of the class <a href="class_arg_script_1_1_line.html" class="m-doc">ArgScript::<wbr />Line</a> is received; the <a href="class_arg_script_1_1_line.html" class="m-doc">Line</a> class contains all the arguments and options, and it has functions to get them ensuring the format is correct. Finally, using the <a href="class_arg_script_1_1_format_parser.html#abb57cbec88e7e575be0e1e9a9d2714c0" class="m-doc">FormatParser::<wbr />AddParser()</a> method, an <a href="class_arg_script_1_1_i_command.html" class="m-doc">ICommand</a> can be assigned to a keyword.</p><p>The cheat console uses commands to process cheats. For more information, check the <a href="class_app_1_1_i_cheat_manager.html" class="m-doc">App::<wbr />ICheatManager</a> class.</p><h3>Blocks</h3><p>Blocks are groups of commands. A block starts with a command, and ends when a line with the keyword &#x27;end&#x27; is reached. Usually, blocks represent groups of data, for example, a scene in a cinematic; commands inside it represent its properties, for example the camera movement. A block can have its own parsers, allowing to have specific blocks and commands that only work on certain blocks.</p><p>For example:</p><pre class="m-code"><span class="n">effect</span> <span class="n">fire_special_fx</span>  <span class="err">#</span> <span class="n">a</span> <span class="n">block</span> <span class="n">is</span> <span class="n">assigned</span> <span class="n">to</span> <span class="n">the</span> <span class="n">keyword</span> <span class="err">&#39;</span><span class="n">effect</span><span class="err">&#39;</span>
+    <span class="n">particles</span> <span class="n">FireParticles</span>  <span class="err">#</span> <span class="n">a</span> <span class="n">command</span> <span class="n">inside</span> <span class="n">a</span> <span class="n">block</span><span class="p">,</span> <span class="n">it</span> <span class="n">does</span> <span class="n">not</span> <span class="n">work</span> <span class="n">outside</span> <span class="n">the</span> <span class="n">block</span>
+    <span class="n">sound</span> <span class="n">fire_sound</span>  <span class="err">#</span> <span class="n">indentation</span> <span class="n">is</span> <span class="n">not</span> <span class="n">necessary</span><span class="p">,</span> <span class="n">but</span> <span class="n">it</span> <span class="n">makes</span> <span class="n">it</span> <span class="n">look</span> <span class="n">more</span> <span class="n">organised</span>
+<span class="n">end</span>  <span class="err">#</span> <span class="k">this</span> <span class="n">is</span> <span class="n">the</span> <span class="n">end</span> <span class="n">of</span> <span class="n">the</span> <span class="err">&#39;</span><span class="n">effect</span><span class="err">&#39;</span> <span class="n">block</span></pre><p>To process blocks, the <a href="class_arg_script_1_1_i_block.html" class="m-doc">IBlock</a> class is used. The <a href="class_arg_script_1_1_i_parser.html#ad77d3359dccfa329272adbcdb40dc431" class="m-doc">IBlock::<wbr />ParseLine()</a> method reads the first line of the block: on this function, the <a href="class_arg_script_1_1_format_parser.html#a1c283c792e9240fc92540e53fb9f2439" class="m-doc">FormatParser::<wbr />AddBlock()</a> method should be called to notify the parser a block has been found. The <a href="class_arg_script_1_1_i_block.html#a0bb18b95dc151d433eb6673768adde48" class="m-doc">IBlock::<wbr />OnBlockEnd()</a> method is called when the &#x27;end&#x27; keyword is reached; the block will close automatically. Additionally, there is the <a href="class_arg_script_1_1_i_block.html#a7f5745a5f5bb231e39dd5b7417c6507d" class="m-doc">IBlock::<wbr />SetData()</a> method, which is called when the <a href="class_arg_script_1_1_format_parser.html#abb57cbec88e7e575be0e1e9a9d2714c0" class="m-doc">FormatParser::<wbr />AddParser()</a> or <a href="class_arg_script_1_1_i_block.html#ab9611e933e02303a0d76f10c103774d1" class="m-doc">IBlock::<wbr />AddParser()</a> method is called; in this function, the block should add to itself any parsers it requires. Finally, a block is assigned to a keyword using the <a href="class_arg_script_1_1_format_parser.html#abb57cbec88e7e575be0e1e9a9d2714c0" class="m-doc">FormatParser::<wbr />AddParser()</a> method, just like commands.</p><h3>Literals and parenthesis</h3><p>All the words in a line are separated when whitespaces are found. Sometimes, however, one might be interested in having an argument that has whitespaces inside; in that case, string literals surrounded by &quot;&quot; can be used. For example: <code class="m-code"><span class="n">text</span> <span class="s">&quot;Problem solved!&quot;</span></code> In that example, <em>Problem solved!</em> will be a single argument.</p><p>Parenthesis have the same effect as string literals; for convention, string literals are only used for things that are actually text; for everything else, parenthesis are preferred. For example: <code class="m-code"><span class="n">model</span> <span class="n">MyCube</span> <span class="o">-</span><span class="n">color</span> <span class="p">(</span><span class="mf">0.2</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">)</span></code> In that example <em>0.2, 0, 1.0</em> will be a single argument.</p><h3>Mathematical and logical expressions</h3><p><a href="namespace_arg_script.html" class="m-doc">ArgScript</a> has support for mathematical and logical expressions. For example, imagine there is a command with keyword <em>angle</em> and an argument which is meant to be the angle we want. We can put a mathematical expression there surrounded by parenthesis, like &#x27;(3 + 0.2^3 * sqrt(0.2))&#x27;, &#x27;(sind(50) * datan(30))&#x27;, etc. Check the <a href="class_arg_script_1_1_format_parser.html#af7dfb5ea2a91c3ff0a22e23629fa7338" class="m-doc">FormatParser::<wbr />ParseFloat()</a> method for more information.</p><p>Logical expressions are also supported. They accept the operators &#x27;not&#x27;, &#x27;or&#x27;, &#x27;and&#x27;; check the <a href="class_arg_script_1_1_format_parser.html#a2bd97252f53ccee18fa44b43348695be" class="m-doc">FormatParser::<wbr />ParseBool()</a> for more information.</p><h3>Functions</h3><p>As seen in the mathematical example before, <a href="namespace_arg_script.html" class="m-doc">ArgScript</a> has support for functions. Functions cannot be declared in the script file (like one would expect in a programming language); they can only be declared in the code. Functions can take any number of parameters and return a bool, int or float value.</p><p>Functions are processed using the <a href="class_arg_script_1_1_i_function.html" class="m-doc">IFunction</a> class. To add a function, the <a href="class_arg_script_1_1_lexer.html#a40bf97792c5f03e9e45d313e9e76431d" class="m-doc">Lexer::<wbr />AddFunction()</a> method must be used (to get the lexer of the parser, use <a href="class_arg_script_1_1_format_parser.html#afe07fb9f93b95a39fd3bba4c8e82fd61" class="m-doc">FormatParser::<wbr />GetLexer()</a>).</p><h3>Variables</h3><p><a href="namespace_arg_script.html" class="m-doc">ArgScript</a> has support for variables. Variables are assigned using the &#x27;set...&#x27; commands. To get the value of a variable, it must be prefixed with $. For example:</p><pre class="m-code"><span class="n">setf</span> <span class="n">kMaxScale</span> <span class="mf">10.0</span>  <span class="err">#</span> <span class="n">set</span> <span class="n">a</span> <span class="kt">float</span> <span class="n">variable</span> <span class="n">with</span> <span class="n">value</span> <span class="mf">10.0</span> 
+
+<span class="n">model</span> <span class="n">MyCube</span> <span class="o">-</span><span class="n">scale</span> <span class="err">$</span><span class="n">kMaxScale</span></pre><p>It is also possible to use variables inside other names or variables, using ${var_name}. For example:</p><pre class="m-code"><span class="n">set</span> <span class="n">quality</span> <span class="n">low</span>
+<span class="n">model</span> <span class="n">MyCube_</span><span class="err">$</span><span class="p">{</span><span class="n">low</span><span class="p">}</span><span class="n">_quality</span></pre><p>These are the commands for settings variables:</p><ul><li><strong>set VariableName Value</strong>: strings. For example <em>set name &quot;My name&quot;</em></li><li><strong>setb VariableName Value</strong>: booleans. For example <em>setb render false</em></li><li><strong>seti VariableName Value</strong>: integers. For exmaple <em>seti kMaxInt (2^31)</em></li><li><strong>setf VariableName Value</strong>: floats. For example <em>setf kMaxScale 10.0</em></li><li><strong>setc VariableName Value</strong>: colors. For example <em>setc red (1.0, 0, 0)</em></li><li><strong>setv2 VariableName Value</strong>: vector2. For example <em>setv2 UV_offset (0.5, -0.5)</em></li><li><strong>setv3 VariableName Value</strong>: vector3. For example <em>setv3 offset (0.5, -0.5, 3.0)</em></li><li><strong>setv4 VariableName Value</strong>: vector4. For example <em>setv4 randomv4 (0.5, -0.5, 3.0, 0.2)</em></li><li><strong>sete VariableName Value Enumeration</strong>: special case, the value is restricted to an enumeration of values. For example, <em>sete mode Wireframe (Wireframe Normal)</em>, the value can only be &#x27;Wireframe&#x27; or &#x27;Normal&#x27;.</li></ul><p>Variables can also be set and used using the <a href="class_arg_script_1_1_format_parser.html#a88b18aa1b750d91a877822a1a839b54e" class="m-doc">FormatParser::<wbr />SetVariable()</a> and <a href="class_arg_script_1_1_format_parser.html#a9b877a901343204e2ed6970f2840f3d6" class="m-doc">FormatParser::<wbr />GetVariable()</a> methods.</p><h3>Namespaces</h3><p>Namespaces are special blocks that restrict the scope (that is, where it can be used) of a variable. When a variable is assigned, it is automatically assigned in the namespace scope, and therefore it can&#x27;t be used outside of that scope. Namespace variables can be accessed prefixing the variable name with the namespace name and a &#x27;:&#x27; sign. For example:</p><pre class="m-code"><span class="k">namespace</span> <span class="n">ParticleEffects</span>
+    <span class="n">set</span> <span class="n">EffectTag</span> <span class="s">&quot;particles&quot;</span>
+    <span class="cp"># the variable can be used here because we are in the same scope</span>
+    <span class="n">effect</span> <span class="err">$</span><span class="p">{</span><span class="n">EffectTag</span><span class="p">}</span><span class="n">_01</span>  <span class="err">#</span> <span class="k">this</span> <span class="n">will</span> <span class="n">be</span> <span class="err">&#39;</span><span class="n">particles_01</span><span class="err">&#39;</span>
+        <span class="cp"># insert any code here</span>
+    <span class="n">end</span>
+<span class="n">end</span>
+
+<span class="k">namespace</span> <span class="n">SoundEffects</span>
+    <span class="n">set</span> <span class="n">EffectTag</span> <span class="s">&quot;sound&quot;</span>
+    <span class="cp"># the variable can be used here because we are in the same scope</span>
+    <span class="n">effect</span> <span class="err">$</span><span class="p">{</span><span class="n">EffectTag</span><span class="p">}</span><span class="n">_01</span>  <span class="err">#</span> <span class="k">this</span> <span class="n">will</span> <span class="n">be</span> <span class="err">&#39;</span><span class="n">sound_01</span><span class="err">&#39;</span>
+        <span class="cp"># insert any code here</span>
+    <span class="n">end</span>
+<span class="n">end</span>
+
+<span class="cp"># if we try to use $EffectTag here, it will throw an exception, because EffecTag is not defined in this scope.</span>
+<span class="cp"># however, we can do this:</span>
+<span class="n">setEffect</span> <span class="err">$</span><span class="p">{</span><span class="nl">ParticleEffects</span><span class="p">:</span><span class="n">EffectTag</span><span class="p">}</span><span class="n">_01</span></pre><p>Via code, global variables can be set; those can be accessed prefixing the name with &#x27;:&#x27;. For example, if you set a global variable (using the <a href="class_arg_script_1_1_format_parser.html#aeaba4d31b725f8b6989d2069d1d8d32b" class="m-doc">FormatParser::<wbr />SetGlobalVariable()</a> method) called &#x27;CurrentEditor&#x27;, you can access it using &#x27;:CurrentEditor&#x27;</p><h3>Conditionals</h3><p>Conditions are also supported in <a href="namespace_arg_script.html" class="m-doc">ArgScript</a>. Conditional blocks only get executed if a condition is met. To create a conditional block, use the command &#x27;<strong>if (condition...)</strong>&#x27;; to end the conditional block, use the command &#x27;<strong>endif</strong>&#x27;. To define what must be excuted if the condition is NOT met, use the &#x27;<strong>else</strong>&#x27; keyword. To define another condition when the first one is not met, use the command &#x27;<strong>elseif (condition..)</strong>&#x27;. The conditions are logical expressions, like the ones that have been described above.</p><p>For example:</p><pre class="m-code"><span class="n">seti</span> <span class="n">kQuality</span> <span class="mi">0</span>
+<span class="k">if</span> <span class="p">(</span><span class="err">$</span><span class="n">kQuality</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">)</span>
+    <span class="cp"># do something that is only executed if kQuality is less than 0</span>
+<span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="err">$</span><span class="n">kQuality</span> <span class="o">&gt;</span> <span class="mi">3</span><span class="p">)</span>
+    <span class="cp"># do something that is only executed if kQuality is greater than 3</span>
+<span class="k">else</span>
+    <span class="cp"># do something that is only executed if kQuality is not less than 0 and not greater than 3.</span>
+<span class="n">endif</span>  <span class="err">#</span> <span class="n">end</span> <span class="n">conditional</span> <span class="n">block</span>
+
+<span class="cp"># let &#39;IsInEditor&#39; and &#39;CinematicSupported&#39; be bool variables set via code</span>
+<span class="k">if</span> <span class="p">(</span><span class="n">IsInEditor</span> <span class="n">and</span> <span class="n">CinematicSupported</span><span class="p">)</span>
+    <span class="cp"># do something</span>
+<span class="n">endif</span></pre><h3>Definitions</h3><p><a href="namespace_arg_script.html" class="m-doc">ArgScript</a> has support for definitions, which are blocks of data that can be created multiple times, changing certain parameters. To create a definition, use the &#x27;<strong>define DefinitionName(arguments...)</strong>&#x27; command; to end the conditional block, use the command &#x27;<strong>enddef</strong>&#x27;. When inside the definition, the arguments can be used like variables. For example:</p><pre class="m-code"><span class="n">define</span> <span class="nf">EDT_currency_materials_MACRO</span><span class="p">(</span> <span class="n">CURRENCY</span> <span class="p">)</span>
+    <span class="n">material</span> <span class="n">EDT_currency_</span><span class="o">&amp;</span><span class="p">{</span> <span class="n">CURRENCY</span> <span class="p">}</span><span class="n">_mtl</span>
+        <span class="n">shader</span> <span class="n">planetLitIcon_material</span>
+        <span class="n">texture</span> <span class="n">sampler0</span> <span class="n">UI_currency_coin_</span><span class="o">&amp;</span><span class="p">{</span> <span class="n">CURRENCY</span> <span class="p">}</span><span class="n">_diffuse</span>
+        <span class="n">texture</span> <span class="n">sampler1</span> <span class="n">UI_currency_coin_</span><span class="o">&amp;</span><span class="p">{</span> <span class="n">CURRENCY</span> <span class="p">}</span><span class="n">_specBump</span>
+    <span class="n">end</span>
+<span class="n">enddef</span></pre><p>Now, there are three commands that can be used to create instances of that definition:</p><ul><li><strong>create</strong>: Instatiate the given definition; an exception is thrown if the definition does not exist. For example: &#x27;<em>create EDT_currency_materials_MACRO( DNA )</em>&#x27;.</li><li><strong>screate</strong>: Instatiate the given definition, without throwing an error if it does not exist. For example: &#x27;<em>screate EDT_currency_materials_MACRO( DNA )</em>&#x27;.</li><li><strong>arrayCreate</strong>: Instatiate the given definition a certain number of times. The definition will receive two parameters: the current index and the number of times to instatiate. For example: &#x27;<em>arrayCreate defined_macro 10</em>&#x27;.</li></ul><p>The command <strong>undefine</strong> can be used to remove a definition, for example, &#x27;<em>undefine EDT_currency_materials_MACRO</em>&#x27;.</p><h3>Other commands and functions</h3><p>Here is a list of other commands supported by default in <a href="namespace_arg_script.html" class="m-doc">ArgScript</a>:</p><ul><li><strong>include FileName</strong>: Includes the given file, throwing an exception if it does not exist. The path uses the format required by <a href="http://www.cplusplus.com/reference/cstdio/fopen/">http:/<wbr />/<wbr />www.cplusplus.com/<wbr />reference/<wbr />cstdio/<wbr />fopen/<wbr /></a></li><li><strong>sinclude FileName</strong>: Includes the given file, with no error if the file does not exist. The path uses the format required by <a href="http://www.cplusplus.com/reference/cstdio/fopen/">http:/<wbr />/<wbr />www.cplusplus.com/<wbr />reference/<wbr />cstdio/<wbr />fopen/<wbr /></a></li><li><strong>help [Pattern] [-full] [-html]</strong>: Shows the description of commands and blocks. Optionally, a pattern (that allows * and ?) that the keywords must follow can be specified; otherwise, all descriptions will be printed. There are two options: &#x27;-full&#x27; prints a detailed description, and &#x27;-html&#x27; prints an html description (rarely supported).</li><li><strong>eval Command</strong>: Parse the given argument as a command.</li><li><strong>purge Scope</strong>: Purge variable definitions from the given namespace scope. Scope must finish in &#x27;:&#x27;.</li><li><strong>showArguments ...</strong>: Output the arguments of this command.</li><li><strong>version Number</strong>: Set the version of this script. Using the <a href="class_arg_script_1_1_format_parser.html#aaf3659cfd63a62782a7b1d6f74ec9caf" class="m-doc">FormatParser::<wbr />SetVersionRange()</a> method, the supported version range of the script can be set; when the command &#x27;version&#x27; is found with an unsupported version, an exception is thrown.</li><li><strong>trace &quot;Text&quot;</strong>: Prints the given text to the output stream.</li></ul><p>Here is a list of other functions supported by default in <a href="namespace_arg_script.html" class="m-doc">ArgScript</a>:</p><ul><li><strong>varExists(name)</strong>: Returns true if the given variable exists (has a value).</li><li><strong>commandExists(name)</strong>: Returns true if the given command exists.</li><li><strong>defExists(name)</strong>: Returns true if the given definition exists.</li><li><strong>eq(string1, string2)</strong>: Compares two strings.</li><li><strong>match(string, pattern)</strong>: Returns true if the string matches the wildcard pattern (which supports special characters * and ?).</li><li><strong>minVersion()</strong>: Returns minimum accepted script version.</li><li><strong>maxVersion()</strong>: Returns maximum accepted script version.</li></ul><h2>Parsing files with </h2><p>To parse files with <a href="namespace_arg_script.html" class="m-doc">ArgScript</a>, first you must get a <a href="class_arg_script_1_1_format_parser.html" class="m-doc">FormatParser</a> instance using the <a href="namespace_arg_script.html#a3a9c50630ec2b0b92dc055e6e1de46cc" class="m-doc">ArgScript::<wbr />CreateStream()</a> method. After that, you must use the <a href="class_arg_script_1_1_format_parser.html#ae55e7fcf6501622d917ac8ad29e0f83c" class="m-doc">FormatParser::<wbr />Initialize()</a> method, to ensure all the default features are added. Using the <a href="class_arg_script_1_1_format_parser.html#abb57cbec88e7e575be0e1e9a9d2714c0" class="m-doc">FormatParser::<wbr />AddParser()</a> method, add any parsers your format requires. Finally, use the <a href="class_arg_script_1_1_format_parser.html#a08e8dcaf48d5764747509adaee9fe2f6" class="m-doc">FormatParser::<wbr />ProcessFile()</a> methods (or their safe methods) to process files. Mind you, the variables of processed files are stored; if you want to avoid that, you have to create a new <a href="class_arg_script_1_1_format_parser.html" class="m-doc">FormatParser</a> for each file you process.</p>
+        <section id="nested-classes">
+          <h2><a href="#nested-classes">Classes</a></h2>
+          <dl class="m-doc">
+            <dt>
+              class <a href="class_arg_script_1_1_format_parser.html" class="m-doc">FormatParser</a>
+            </dt>
+            <dd>This class contains all the parsers necessary to process a certain <a href="namespace_arg_script.html" class="m-doc">ArgScript</a> format.</dd>
+            <dt>
+              class <a href="class_arg_script_1_1_i_block.html" class="m-doc">IBlock</a>
+            </dt>
+            <dd>This parser represents a block of <a href="namespace_arg_script.html" class="m-doc">ArgScript</a> lines.</dd>
+            <dt>
+              class <a href="class_arg_script_1_1_i_command.html" class="m-doc">ICommand</a>
+            </dt>
+            <dd>This class is a type of <a href="class_arg_script_1_1_i_parser.html" class="m-doc">IParser</a> that can parse a single line of data.</dd>
+            <dt>
+              class <a href="class_arg_script_1_1_i_function.html" class="m-doc">IFunction</a>
+            </dt>
+            <dd>Represents an <a href="namespace_arg_script.html" class="m-doc">ArgScript</a> function.</dd>
+            <dt>
+              class <a href="class_arg_script_1_1_i_parser.html" class="m-doc">IParser</a>
+            </dt>
+            <dd>This interface represents a command or block that can be parsed in <a href="namespace_arg_script.html" class="m-doc">ArgScript</a>.</dd>
+            <dt>
+              class <a href="class_arg_script_1_1_i_special_block.html" class="m-doc">ISpecialBlock</a>
+            </dt>
+            <dd>This is a special kind of block that can process every line individually, and that uses its own end keywords.</dd>
+            <dt>
+              class <a href="class_arg_script_1_1_i_trace_stream.html" class="m-doc">ITraceStream</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              class <a href="class_arg_script_1_1_lambda_parser.html" class="m-doc">LambdaParser</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              class <a href="class_arg_script_1_1_lexer.html" class="m-doc">Lexer</a>
+            </dt>
+            <dd>This class is used to read and process expressions in <a href="namespace_arg_script.html" class="m-doc">ArgScript</a>.</dd>
+            <dt>
+              class <a href="class_arg_script_1_1_line.html" class="m-doc">Line</a>
+            </dt>
+            <dd>This class represents a line of <a href="namespace_arg_script.html" class="m-doc">ArgScript</a> data.</dd>
+            <dt>
+              struct <a href="struct_arg_script_1_1_line_option.html" class="m-doc">LineOption</a>
+            </dt>
+            <dd>An option of an <a href="namespace_arg_script.html" class="m-doc">ArgScript</a> line.</dd>
+          </dl>
+        </section>
+        <section id="enum-members">
+          <h2><a href="#enum-members">Enums</a></h2>
+          <dl class="m-doc">
+            <dt>
+              <span class="m-doc-wrap-bumper">enum class <a href="#a53da580510ab25203f3146caecd17e5e" class="m-doc">DescriptionMode</a> { </span><span class="m-doc-wrap"><a href="#a53da580510ab25203f3146caecd17e5ea972e73b7a882d0802a4e3a16946a2f94" class="m-doc">Basic</a> = 0,
+              <a href="#a53da580510ab25203f3146caecd17e5eaae94f80b3ce82062a5dd7815daa04f9d" class="m-doc">Complete</a> = 1,
+              <a href="#a53da580510ab25203f3146caecd17e5ea4c4ad5fca2e7a3f74dbb1ced00381aa4" class="m-doc">HTML</a> = 2 }</span>
+            </dt>
+            <dd>The type of description required by &#x27;GetDescription&#x27; functions; it can be either basic or complete.</dd>
+          </dl>
+        </section>
+        <section id="typedef-members">
+          <h2><a href="#typedef-members">Typedefs</a></h2>
+          <dl class="m-doc">
+            <dt>
+              using <a href="#a5c3e803de9bc411447e6ec5222e8d50b" class="m-doc">ArgScriptException</a> = eastl::string&amp;
+            </dt>
+            <dd>A standard <a href="namespace_arg_script.html" class="m-doc">ArgScript</a> exception, which is just a string.</dd>
+            <dt>
+              using <a href="#a5705084542134dab972e72148b25aff2" class="m-doc">ParseLine_t</a> = function&lt;void(const <a href="class_arg_script_1_1_line.html" class="m-doc">Line</a>&amp;, <a href="class_arg_script_1_1_format_parser.html" class="m-doc">FormatParser</a>*)&gt;
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              using <a href="#ad4cbdb6a809f1a31a5f7c57e9b010e69" class="m-doc">GetDescription_t</a> = function&lt;const char*(<a href="namespace_arg_script.html#a53da580510ab25203f3146caecd17e5e" class="m-doc">DescriptionMode</a>)&gt;
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              using <a href="#ac1b8e1ba0d3175f667ef518bd32558ae" class="m-doc">SetData_t</a> = function&lt;void(<a href="class_arg_script_1_1_format_parser.html" class="m-doc">FormatParser</a>*, void*)&gt;
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              using <a href="#aaf738914b4378c86f8a9082151a3d63e" class="m-doc">PrintF_ptr</a> = void*(*)(FormatParser*object, const char*str,...)
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              using <a href="#a262b38c859c03eea3023a50999db2e7d" class="m-doc">EnumValue</a> = pair&lt;const char*, int&gt;
+            </dt>
+            <dd>A key-value pair (c-string, int) in an enumeration.</dd>
+          </dl>
+        </section>
+        <section id="func-members">
+          <h2><a href="#func-members">Functions</a></h2>
+          <dl class="m-doc">
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a3a9c50630ec2b0b92dc055e6e1de46cc" class="m-doc">CreateStream</a>(</span><span class="m-doc-wrap">) -&gt; <a href="class_arg_script_1_1_format_parser.html" class="m-doc">FormatParser</a>*</span>
+            </dt>
+            <dd>Creates a new <a href="namespace_arg_script.html" class="m-doc">ArgScript</a> stream, which is an instance of <a href="class_arg_script_1_1_format_parser.html" class="m-doc">FormatParser</a>.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#aa728dd2f334ba37dc4c0e19cdd756387" class="m-doc">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_arg_script_1_1_format_parser.html" class="m-doc">FormatParser</a>) -&gt; namespace</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a45ae2f45255c496a1dca4d41ba51deee" class="m-doc">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_arg_script_1_1_i_block.html" class="m-doc">IBlock</a>) -&gt; namespace</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a2a375d988ecd05f7d50a70443d3268cf" class="m-doc">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_arg_script_1_1_lexer.html" class="m-doc">Lexer</a>) -&gt; namespace</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a39f3fe1d5f93a06b38027f4e46812116" class="m-doc">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_arg_script_1_1_line.html" class="m-doc">Line</a>) -&gt; namespace</span>
+            </dt>
+            <dd><span></span></dd>
+          </dl>
+        </section>
+        <section id="var-members">
+          <h2><a href="#var-members">Variables</a></h2>
+          <dl class="m-doc">
+            <dt>
+              const typedef char* <a href="#af41cc52a6781a4b36908270912f0e1af" class="m-doc">LexerString</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              const typedef char*const * <a href="#acfb143b12d0d8e525e4e7eb6372b67fd" class="m-doc">Arguments</a>
+            </dt>
+            <dd>An array of c-strings that are the arguments of a line or an option.</dd>
+            <dt>
+              <a href="_internal_8h.html#aad475f4a57d0c979349b80ec3613e2b7" class="m-doc">MODAPI</a> <a href="namespace_arg_script.html#aaf738914b4378c86f8a9082151a3d63e" class="m-doc">PrintF_<wbr />ptr</a> <a href="#a398523de11127813669b33c0be3fa571" class="m-doc">PrintF</a>
+            </dt>
+            <dd>A function that prints a formatted text into an <a href="namespace_arg_script.html" class="m-doc">ArgScript</a> stream.</dd>
+          </dl>
+        </section>
+        <section>
+          <h2>Enum documentation</h2>
+          <section class="m-doc-details" id="a53da580510ab25203f3146caecd17e5e"><div>
+            <h3>
+              enum class ArgScript::<wbr /><a href="#a53da580510ab25203f3146caecd17e5e" class="m-doc-self">DescriptionMode</a>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_a_s_declarations_8h.html">&lt;Spore/ArgScript/ASDeclarations.h&gt;</a></div>
+            </h3>
+            <p>The type of description required by &#x27;GetDescription&#x27; functions; it can be either basic or complete.</p>
+          </div></section>
+        </section>
+        <section>
+          <h2>Typedef documentation</h2>
+          <section class="m-doc-details" id="a5c3e803de9bc411447e6ec5222e8d50b"><div>
+            <h3>
+              typedef eastl::string&amp; ArgScript::<wbr /><a href="#a5c3e803de9bc411447e6ec5222e8d50b" class="m-doc-self">ArgScriptException</a>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_a_s_declarations_8h.html">&lt;Spore/ArgScript/ASDeclarations.h&gt;</a></div>
+            </h3>
+            <p>A standard <a href="namespace_arg_script.html" class="m-doc">ArgScript</a> exception, which is just a string.</p>
+          </div></section>
+          <section class="m-doc-details" id="a5705084542134dab972e72148b25aff2"><div>
+            <h3>
+              typedef function&lt;void(const <a href="class_arg_script_1_1_line.html" class="m-doc">Line</a>&amp;, <a href="class_arg_script_1_1_format_parser.html" class="m-doc">FormatParser</a>*)&gt; ArgScript::<wbr /><a href="#a5705084542134dab972e72148b25aff2" class="m-doc-self">ParseLine_t</a>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_format_parser_8h.html">&lt;Spore/ArgScript/FormatParser.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="ad4cbdb6a809f1a31a5f7c57e9b010e69"><div>
+            <h3>
+              typedef function&lt;const char*(<a href="namespace_arg_script.html#a53da580510ab25203f3146caecd17e5e" class="m-doc">DescriptionMode</a>)&gt; ArgScript::<wbr /><a href="#ad4cbdb6a809f1a31a5f7c57e9b010e69" class="m-doc-self">GetDescription_t</a>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_format_parser_8h.html">&lt;Spore/ArgScript/FormatParser.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="ac1b8e1ba0d3175f667ef518bd32558ae"><div>
+            <h3>
+              typedef function&lt;void(<a href="class_arg_script_1_1_format_parser.html" class="m-doc">FormatParser</a>*, void*)&gt; ArgScript::<wbr /><a href="#ac1b8e1ba0d3175f667ef518bd32558ae" class="m-doc-self">SetData_t</a>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_format_parser_8h.html">&lt;Spore/ArgScript/FormatParser.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="aaf738914b4378c86f8a9082151a3d63e"><div>
+            <h3>
+              typedef void*(*ArgScript::<wbr /><a href="#aaf738914b4378c86f8a9082151a3d63e" class="m-doc-self">PrintF_ptr</a>)(FormatParser*object, const char*str,...)
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_format_parser_8h.html">&lt;Spore/ArgScript/FormatParser.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="a262b38c859c03eea3023a50999db2e7d"><div>
+            <h3>
+              typedef pair&lt;const char*, int&gt; ArgScript::<wbr /><a href="#a262b38c859c03eea3023a50999db2e7d" class="m-doc-self">EnumValue</a>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_line_8h.html">&lt;Spore/ArgScript/Line.h&gt;</a></div>
+            </h3>
+            <p>A key-value pair (c-string, int) in an enumeration.</p>
+          </div></section>
+        </section>
+        <section>
+          <h2>Function documentation</h2>
+          <section class="m-doc-details" id="a3a9c50630ec2b0b92dc055e6e1de46cc"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"><a href="class_arg_script_1_1_format_parser.html" class="m-doc">FormatParser</a>* ArgScript::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a3a9c50630ec2b0b92dc055e6e1de46cc" class="m-doc-self">CreateStream</a>(</span><span class="m-doc-wrap">)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_format_parser_8h.html">&lt;Spore/ArgScript/FormatParser.h&gt;</a></div>
+            </h3>
+            <p>Creates a new <a href="namespace_arg_script.html" class="m-doc">ArgScript</a> stream, which is an instance of <a href="class_arg_script_1_1_format_parser.html" class="m-doc">FormatParser</a>.</p>
+          </div></section>
+          <section class="m-doc-details" id="aa728dd2f334ba37dc4c0e19cdd756387"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">namespace ArgScript::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#aa728dd2f334ba37dc4c0e19cdd756387" class="m-doc-self">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_arg_script_1_1_format_parser.html" class="m-doc">FormatParser</a>)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_format_parser_8h.html">&lt;Spore/ArgScript/FormatParser.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="a45ae2f45255c496a1dca4d41ba51deee"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">namespace ArgScript::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a45ae2f45255c496a1dca4d41ba51deee" class="m-doc-self">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_arg_script_1_1_i_block.html" class="m-doc">IBlock</a>)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_i_block_8h.html">&lt;Spore/ArgScript/IBlock.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="a2a375d988ecd05f7d50a70443d3268cf"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">namespace ArgScript::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a2a375d988ecd05f7d50a70443d3268cf" class="m-doc-self">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_arg_script_1_1_lexer.html" class="m-doc">Lexer</a>)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_lexer_8h.html">&lt;Spore/ArgScript/Lexer.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="a39f3fe1d5f93a06b38027f4e46812116"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">namespace ArgScript::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a39f3fe1d5f93a06b38027f4e46812116" class="m-doc-self">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_arg_script_1_1_line.html" class="m-doc">Line</a>)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_line_8h.html">&lt;Spore/ArgScript/Line.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+        </section>
+        <section>
+          <h2>Variable documentation</h2>
+          <section class="m-doc-details" id="af41cc52a6781a4b36908270912f0e1af"><div>
+            <h3>
+              const typedef char* ArgScript::<wbr /><a href="#af41cc52a6781a4b36908270912f0e1af" class="m-doc-self">LexerString</a>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_a_s_declarations_8h.html">&lt;Spore/ArgScript/ASDeclarations.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="acfb143b12d0d8e525e4e7eb6372b67fd"><div>
+            <h3>
+              const typedef char*const * ArgScript::<wbr /><a href="#acfb143b12d0d8e525e4e7eb6372b67fd" class="m-doc-self">Arguments</a>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_line_8h.html">&lt;Spore/ArgScript/Line.h&gt;</a></div>
+            </h3>
+            <p>An array of c-strings that are the arguments of a line or an option.</p>
+          </div></section>
+          <section class="m-doc-details" id="a398523de11127813669b33c0be3fa571"><div>
+            <h3>
+              <a href="_internal_8h.html#aad475f4a57d0c979349b80ec3613e2b7" class="m-doc">MODAPI</a> <a href="namespace_arg_script.html#aaf738914b4378c86f8a9082151a3d63e" class="m-doc">PrintF_<wbr />ptr</a> ArgScript::<wbr /><a href="#a398523de11127813669b33c0be3fa571" class="m-doc-self">PrintF</a>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_format_parser_8h.html">&lt;Spore/ArgScript/FormatParser.h&gt;</a></div>
+            </h3>
+            <p>A function that prints a formatted text into an <a href="namespace_arg_script.html" class="m-doc">ArgScript</a> stream.</p>
+<p>This uses the same format as the C printf function.</p>
+          </div></section>
+        </section>
+      </div>
+    </div>
+  </div>
+</article></main>
+<div class="m-doc-search" id="search">
+  <a href="#!" onclick="return hideSearch()"></a>
+  <div class="m-container">
+    <div class="m-row">
+      <div class="m-col-m-8 m-push-m-2">
+        <div class="m-doc-search-header m-text m-small">
+          <div><span class="m-label m-default">Tab</span> / <span class="m-label m-default">T</span> to search, <span class="m-label m-default">Esc</span> to close</div>
+          <div id="search-symbolcount">&hellip;</div>
+        </div>
+        <div class="m-doc-search-content">
+          <form>
+            <input type="search" name="q" id="search-input" placeholder="Loading &hellip;" disabled="disabled" autofocus="autofocus" autocomplete="off" spellcheck="false" />
+          </form>
+          <noscript class="m-text m-danger m-text-center">Unlike everything else in the docs, the search functionality <em>requires</em> JavaScript.</noscript>
+          <div id="search-help" class="m-text m-dim m-text-center">
+            <p class="m-noindent">Search for symbols, directories, files, pages or
+            modules. You can omit any prefix from the symbol or file path; adding a
+            <code>:</code> or <code>/</code> suffix lists all members of given symbol or
+            directory.</p>
+            <p class="m-noindent">Use <span class="m-label m-dim">&darr;</span>
+            / <span class="m-label m-dim">&uarr;</span> to navigate through the list,
+            <span class="m-label m-dim">Enter</span> to go.
+            <span class="m-label m-dim">Tab</span> autocompletes common prefix, you can
+            copy a link to the result using <span class="m-label m-dim">⌘</span>
+            <span class="m-label m-dim">L</span> while <span class="m-label m-dim">⌘</span>
+            <span class="m-label m-dim">M</span> produces a Markdown link.</p>
+          </div>
+          <div id="search-notfound" class="m-text m-warning m-text-center">Sorry, nothing was found.</div>
+          <ul id="search-results"></ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="search-v1.js"></script>
+<script src="searchdata-v1.js" async="async"></script>
+<footer><nav>
+  <div class="m-container">
+    <div class="m-row">
+      <div class="m-col-l-10 m-push-l-1">
+        <p>Spore ModAPI SDK for creating C++ mods for Spore. Created with <a href="https://doxygen.org/">Doxygen</a> 1.8.16 and <a href="https://mcss.mosra.cz/">m.css</a>.</p>
+      </div>
+    </div>
+  </div>
+</nav></footer>
+</body>
+</html>

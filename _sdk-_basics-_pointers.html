@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>ModAPI SDK Basics: Objects &amp; Pointers | Spore ModAPI SDK for creating C++ mods for Spore</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,600,600i%7CSource+Code+Pro:400,400i,600" />
+  <link rel="stylesheet" href="m-dark.css" />
+  <link rel="stylesheet" href="m-documentation.css" />
+  <link rel="icon" href="Spore_ModAPI_Icon.png" type="image/png" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#22272e" />
+</head>
+<body>
+<header><nav id="navigation">
+  <div class="m-container">
+    <div class="m-row">
+      <a href="index.html" id="m-navbar-brand" class="m-col-t-8 m-col-m-none m-left-m"><img src="Spore_ModAPI_Icon.png" />Spore ModAPI <span class="m-thin">SDK for creating C++ mods for Spore</span></a>
+      <div class="m-col-t-4 m-hide-m m-text-right m-nopadr">
+        <a href="#search" class="m-doc-search-icon" title="Search" onclick="return showSearch()"><svg style="height: 0.9rem;" viewBox="0 0 16 16">
+          <path id="m-doc-search-icon-path" d="m6 0c-3.31 0-6 2.69-6 6 0 3.31 2.69 6 6 6 1.49 0 2.85-0.541 3.89-1.44-0.0164 0.338 0.147 0.759 0.5 1.15l3.22 3.79c0.552 0.614 1.45 0.665 2 0.115 0.55-0.55 0.499-1.45-0.115-2l-3.79-3.22c-0.392-0.353-0.812-0.515-1.15-0.5 0.895-1.05 1.44-2.41 1.44-3.89 0-3.31-2.69-6-6-6zm0 1.56a4.44 4.44 0 0 1 4.44 4.44 4.44 4.44 0 0 1-4.44 4.44 4.44 4.44 0 0 1-4.44-4.44 4.44 4.44 0 0 1 4.44-4.44z"/>
+        </svg></a>
+        <a id="m-navbar-show" href="#navigation" title="Show navigation"></a>
+        <a id="m-navbar-hide" href="#" title="Hide navigation"></a>
+      </div>
+      <div id="m-navbar-collapse" class="m-col-t-12 m-show-m m-col-m-none m-right-m">
+        <div class="m-row">
+          <ol class="m-col-t-6 m-col-m-none">
+            <li><a href="pages.html">Tutorials</a></li>
+            <li><a href="namespaces.html">Namespaces</a></li>
+          </ol>
+          <ol class="m-col-t-6 m-col-m-none" start="3">
+            <li><a href="annotated.html">Classes</a></li>
+            <li><a href="files.html">Files</a></li>
+            <li class="m-show-m"><a href="#search" class="m-doc-search-icon" title="Search" onclick="return showSearch()"><svg style="height: 0.9rem;" viewBox="0 0 16 16">
+              <use href="#m-doc-search-icon-path" />
+            </svg></a></li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav></header>
+<main><article>
+  <div class="m-container m-container-inflatable">
+    <div class="m-row">
+      <div class="m-col-l-10 m-push-l-1">
+        <h1>
+          ModAPI SDK Basics: Objects &amp; Pointers
+        </h1>
+        <p>Handling memory and pointers in Spore using Objects.</p>
+<p>In this tutorial, we assume that you already know of the existance in pointers. It&#x27;s important that you understand them as they are used a lot in Spore. As you learned, we can can allocate dynamic memory by using the keyword <code>new</code>; that returns a pointer, which will have to be deleted with <code>delete</code> later.</p><p>Since all new pointers have to be eventually deleted, this is one of the most common sources of errors: <strong>memory leaks</strong>. What happens if we forget to delete a pointer? We will have memory allocated for an object that is no longer used, so we will wasting memory. But we could also introduce an error the other way round: what if we delete an object too soon, and it was being used somewhere else in the code? To fix this, Spore introduces <strong>reference counting</strong>.</p><section id="Sdk-Basics-Pointers-RefCount"><h2><a href="#Sdk-Basics-Pointers-RefCount">Reference Counting</a></h2><p>Reference counting is the way Spore has to manage dynamic memory: every objects keeps track of how many objects are using it. When the object is used, its reference count increases by one; when it stops being used, it decreases by 1.</p><p>Now you might be thinking this doesn&#x27;t solve the problem, because we can just forget to count the reference. But the SDK has an object to do this automatically: <code>intrusive_ptr</code>. An intrusive pointer will increase the reference count when it gets assigned a value, and decrease it when the intrusive pointer dies. The object will delete itself when the count reaches 0. For example:</p><pre class="m-code"><span class="c1">// The old, unsafe way to do it</span>
+<span class="n">PropertyList</span><span class="o">*</span> <span class="n">myList</span> <span class="o">=</span> <span class="k">new</span> <span class="n">PropertyList</span><span class="p">();</span>
+<span class="p">...</span>
+<span class="p">...</span>
+<span class="k">delete</span> <span class="n">myList</span><span class="p">;</span>
+
+<span class="c1">// The new, safe way to do it</span>
+<span class="n">intrusive_ptr</span><span class="o">&lt;</span><span class="n">PropertyList</span><span class="o">&gt;</span> <span class="n">myList</span> <span class="o">=</span> <span class="k">new</span> <span class="n">PropertyList</span><span class="p">();</span>
+<span class="p">...</span>
+<span class="p">...</span>
+<span class="c1">// We don&#39;t have to worry about deleting it, it&#39;s done automatically</span></pre><p>Most classes that support intrusive pointers also define an alias for the intrusive_ptr version, which is the type name finished in <code>Ptr</code>. For <code>intrusive_ptr&lt;<a href="class_app_1_1_property_list.html" class="m-doc">App::<wbr />PropertyList</a>&gt;</code> it would be <code>PropertyListPtr</code>, for <code>intrusive_ptr&lt;<a href="class_simulator_1_1c_vehicle.html" class="m-doc">Simulator::<wbr />cVehicle</a>&gt;</code> it would be <code>cVehiclePtr</code>, etc</p><p>The pointer operators, like dereferrencing (<code>*</code>) and member accessing (<code>-&gt;</code>) are done in exactly the same way with intrusive pointers. It&#x27;s still possible to get the native <code>*</code> pointer (many methods in the SDK require it) by calling the method <code>.get()</code> (in the previous example you would do <code>myList.get()</code>); of course, do not try to delete the pointer it gives you, since that defeats the purpose.</p><p>Try to use intrusive pointers wherever possible, specially when you keep pointers as members of a class.</p><aside class="m-note m-info"><h4>Note</h4><p>C++ has other pointer management objects like <code>auto_ptr</code>, <code>weak_ptr</code>, etc. We will never use them.</p></aside><section id="Sdk-Basics-Pointers-RefCount-1"><h3><a href="#Sdk-Basics-Pointers-RefCount-1">Can all objects use reference counting?</a></h3><p>No. First, you cannot use intrusive pointers on basic types like <code>int</code>, <code>float</code>, <code>vector&lt;int&gt;</code>, etc (you can have a vector of intrusive pointers though). Intrusive pointers can only be used on classes that implement these two methods: <code>AddRef()</code>, <code>Release()</code>. Most Spore objects (or at east those where you can use <code>new</code>) implement those methods.</p></section><section id="Sdk-Basics-Pointers-RefCount-2"><h3><a href="#Sdk-Basics-Pointers-RefCount-2">Ref. counting in custom objects</a></h3><p>If you want to use reference counting on your own classes, you don&#x27;t need to implement manually. You can just make your class inherit from <a href="class_default_ref_counted.html" class="m-doc">DefaultRefCounted</a>.</p><pre class="m-code"><span class="k">class</span> <span class="nc">MyClass</span>
+    <span class="o">:</span> <span class="k">public</span> <span class="n">DefaultRefCounted</span>
+<span class="p">{</span>
+
+<span class="p">}</span></pre><p>Many interfaces in Spore, like <a href="class_u_t_f_win_1_1_i_win_proc.html" class="m-doc">UTFWin::<wbr />IWinProc</a> or <a href="class_app_1_1_i_message_listener.html" class="m-doc">App::<wbr />IMessageListener</a> require you to implement reference counting. In the cases that you inherit from such classes, you will aslo need to explicitly tell that you are using the already-implemented methods, which is done like this:</p><pre class="m-code"><span class="c1">// In the .h file</span>
+<span class="k">class</span> <span class="nc">MyClass</span>
+    <span class="o">:</span> <span class="k">public</span> <span class="n">UTFWin</span><span class="o">::</span><span class="n">IWinProc</span>
+    <span class="p">,</span> <span class="k">public</span> <span class="n">DefaultRefCounted</span>
+<span class="p">{</span>
+<span class="k">public</span><span class="o">:</span>
+    <span class="c1">// Tell the compiler that we are going to implement these methods</span>
+    <span class="kt">int</span> <span class="n">AddRef</span><span class="p">()</span> <span class="k">override</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="nf">Release</span><span class="p">()</span> <span class="k">override</span><span class="p">;</span>
+<span class="p">};</span>
+
+
+<span class="c1">// In the .cpp file</span>
+<span class="c1">// Instead of implementing them, we just call the existing implementation:</span>
+<span class="kt">int</span> <span class="n">MyClass</span><span class="o">::</span><span class="n">AddRef</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="n">DefaultRefCounted</span><span class="o">::</span><span class="n">AddRef</span><span class="p">();</span>
+<span class="p">}</span>
+<span class="kt">int</span> <span class="n">MyClass</span><span class="o">::</span><span class="n">Release</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="n">DefaultRefCounted</span><span class="o">::</span><span class="n">Release</span><span class="p">();</span>
+<span class="p">}</span></pre></section></section><section id="Sdk-Basics-Pointers-Objects"><h2><a href="#Sdk-Basics-Pointers-Objects">Objects</a></h2><p>The most common reference counted class is the <a href="class_object.html" class="m-doc">Object</a> class. Not only it support reference counting, but it also implements a system for dynamic casting. Casting is converting from one type to another.</p><p>Imagine you have a function that receives a generic object. You want to do something special if that object is actually a creature. You can do that by using the <code>object_cast</code> function: if the object is of the required type, it will return it, otherwise it returns <code>nullptr</code>.</p><pre class="m-code"><span class="kt">void</span> <span class="nf">function</span><span class="p">(</span><span class="n">Object</span><span class="o">*</span> <span class="n">object</span><span class="p">)</span> 
+<span class="p">{</span>
+    <span class="k">auto</span> <span class="n">animal</span> <span class="o">=</span> <span class="n">object_cast</span><span class="o">&lt;</span><span class="n">cCreatureAnimal</span><span class="o">&gt;</span><span class="p">(</span><span class="n">object</span><span class="p">);</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">animal</span><span class="p">)</span> <span class="p">{</span>
+        <span class="c1">// animal is a cCreatureAnimal* now</span>
+        <span class="n">animal</span><span class="o">-&gt;</span><span class="n">SetScale</span><span class="p">(</span><span class="mf">2.5f</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span></pre><p>You can cast to any class that has a <code>TYPE</code> field.</p><section id="Sdk-Basics-Pointers-Objects-1"><h3><a href="#Sdk-Basics-Pointers-Objects-1">Implementing casting in custom classes</a></h3><p>When you inherit your class from <code><a href="class_object.html" class="m-doc">Object</a></code>, not only you have to implement <code>AddRef()</code> and <code>Release()</code> (which you can do with <a href="class_default_ref_counted.html" class="m-doc">DefaultRefCounted</a>), you also have to implement the cast method.</p><p>First of all, in your class declaration, you have to give the class a unique ID. You can do it by just using <code><a href="_hash_8h.html#a7ea467872702682e6ee152563a5e00c7" class="m-doc">id()</a></code> on the class name.</p><pre class="m-code"><span class="c1">// In the .h file</span>
+<span class="k">class</span> <span class="nc">MyClass</span>
+    <span class="o">:</span> <span class="k">public</span> <span class="n">Object</span>
+    <span class="p">,</span> <span class="k">public</span> <span class="n">DefaultRefCounted</span>
+<span class="p">{</span>
+<span class="k">public</span><span class="o">:</span>
+    <span class="k">static</span> <span class="k">const</span> <span class="kt">uint32_t</span> <span class="n">TYPE</span> <span class="o">=</span> <span class="n">id</span><span class="p">(</span><span class="s">&quot;MyClass&quot;</span><span class="p">);</span>
+
+    <span class="kt">int</span> <span class="nf">AddRef</span><span class="p">()</span> <span class="k">override</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="nf">Release</span><span class="p">()</span> <span class="k">override</span><span class="p">;</span>
+    <span class="kt">void</span><span class="o">*</span> <span class="nf">Cast</span><span class="p">(</span><span class="kt">uint32_t</span> <span class="n">type</span><span class="p">)</span> <span class="k">override</span><span class="p">;</span>
+<span class="p">};</span></pre><p>The implementation of a cast file is very easy, you just have to compare the given type. In fact, we provide some macros to help you.</p><ul><li><code>CLASS_CAST</code> should be used for all parent classes that the object can be casted to (i.e. that have a <code>TYPE</code> field).</li><li>If one of the parent classes also inherits from object, it&#x27;s better to use <code>PARENT_CLASS</code> instead. The first type you should compare is the class itself, then all its parents. At the end of the method return <code>nullptr</code>.</li></ul><pre class="m-code"><span class="kt">void</span><span class="o">*</span> <span class="n">MyClass</span><span class="o">::</span><span class="n">Cast</span><span class="p">(</span><span class="kt">uint32_t</span> <span class="n">type</span><span class="p">)</span> <span class="k">const</span>
+<span class="p">{</span>
+    <span class="n">CLASS_CAST</span><span class="p">(</span><span class="n">MyClass</span><span class="p">);</span>
+    <span class="n">CLASS_CAST</span><span class="p">(</span><span class="n">Object</span><span class="p">);</span>
+    <span class="c1">// If we inherited from IWinProc, since it&#39;s also an object, we would use PARENT_CAST(IWinProc);</span>
+    <span class="k">return</span> <span class="k">nullptr</span><span class="p">;</span>
+<span class="p">}</span></pre></section></section>
+      </div>
+    </div>
+  </div>
+</article></main>
+<div class="m-doc-search" id="search">
+  <a href="#!" onclick="return hideSearch()"></a>
+  <div class="m-container">
+    <div class="m-row">
+      <div class="m-col-m-8 m-push-m-2">
+        <div class="m-doc-search-header m-text m-small">
+          <div><span class="m-label m-default">Tab</span> / <span class="m-label m-default">T</span> to search, <span class="m-label m-default">Esc</span> to close</div>
+          <div id="search-symbolcount">&hellip;</div>
+        </div>
+        <div class="m-doc-search-content">
+          <form>
+            <input type="search" name="q" id="search-input" placeholder="Loading &hellip;" disabled="disabled" autofocus="autofocus" autocomplete="off" spellcheck="false" />
+          </form>
+          <noscript class="m-text m-danger m-text-center">Unlike everything else in the docs, the search functionality <em>requires</em> JavaScript.</noscript>
+          <div id="search-help" class="m-text m-dim m-text-center">
+            <p class="m-noindent">Search for symbols, directories, files, pages or
+            modules. You can omit any prefix from the symbol or file path; adding a
+            <code>:</code> or <code>/</code> suffix lists all members of given symbol or
+            directory.</p>
+            <p class="m-noindent">Use <span class="m-label m-dim">&darr;</span>
+            / <span class="m-label m-dim">&uarr;</span> to navigate through the list,
+            <span class="m-label m-dim">Enter</span> to go.
+            <span class="m-label m-dim">Tab</span> autocompletes common prefix, you can
+            copy a link to the result using <span class="m-label m-dim">⌘</span>
+            <span class="m-label m-dim">L</span> while <span class="m-label m-dim">⌘</span>
+            <span class="m-label m-dim">M</span> produces a Markdown link.</p>
+          </div>
+          <div id="search-notfound" class="m-text m-warning m-text-center">Sorry, nothing was found.</div>
+          <ul id="search-results"></ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="search-v1.js"></script>
+<script src="searchdata-v1.js" async="async"></script>
+<footer><nav>
+  <div class="m-container">
+    <div class="m-row">
+      <div class="m-col-l-10 m-push-l-1">
+        <p>Spore ModAPI SDK for creating C++ mods for Spore. Created with <a href="https://doxygen.org/">Doxygen</a> 1.8.16 and <a href="https://mcss.mosra.cz/">m.css</a>.</p>
+      </div>
+    </div>
+  </div>
+</nav></footer>
+</body>
+</html>

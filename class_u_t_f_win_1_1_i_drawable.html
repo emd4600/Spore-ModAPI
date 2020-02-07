@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>UTFWin::IDrawable class | Spore ModAPI SDK for creating C++ mods for Spore</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,600,600i%7CSource+Code+Pro:400,400i,600" />
+  <link rel="stylesheet" href="m-dark.css" />
+  <link rel="stylesheet" href="m-documentation.css" />
+  <link rel="icon" href="Spore_ModAPI_Icon.png" type="image/png" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#22272e" />
+</head>
+<body>
+<header><nav id="navigation">
+  <div class="m-container">
+    <div class="m-row">
+      <a href="index.html" id="m-navbar-brand" class="m-col-t-8 m-col-m-none m-left-m"><img src="Spore_ModAPI_Icon.png" />Spore ModAPI <span class="m-thin">SDK for creating C++ mods for Spore</span></a>
+      <div class="m-col-t-4 m-hide-m m-text-right m-nopadr">
+        <a href="#search" class="m-doc-search-icon" title="Search" onclick="return showSearch()"><svg style="height: 0.9rem;" viewBox="0 0 16 16">
+          <path id="m-doc-search-icon-path" d="m6 0c-3.31 0-6 2.69-6 6 0 3.31 2.69 6 6 6 1.49 0 2.85-0.541 3.89-1.44-0.0164 0.338 0.147 0.759 0.5 1.15l3.22 3.79c0.552 0.614 1.45 0.665 2 0.115 0.55-0.55 0.499-1.45-0.115-2l-3.79-3.22c-0.392-0.353-0.812-0.515-1.15-0.5 0.895-1.05 1.44-2.41 1.44-3.89 0-3.31-2.69-6-6-6zm0 1.56a4.44 4.44 0 0 1 4.44 4.44 4.44 4.44 0 0 1-4.44 4.44 4.44 4.44 0 0 1-4.44-4.44 4.44 4.44 0 0 1 4.44-4.44z"/>
+        </svg></a>
+        <a id="m-navbar-show" href="#navigation" title="Show navigation"></a>
+        <a id="m-navbar-hide" href="#" title="Hide navigation"></a>
+      </div>
+      <div id="m-navbar-collapse" class="m-col-t-12 m-show-m m-col-m-none m-right-m">
+        <div class="m-row">
+          <ol class="m-col-t-6 m-col-m-none">
+            <li><a href="pages.html">Tutorials</a></li>
+            <li><a href="namespaces.html">Namespaces</a></li>
+          </ol>
+          <ol class="m-col-t-6 m-col-m-none" start="3">
+            <li><a href="annotated.html">Classes</a></li>
+            <li><a href="files.html">Files</a></li>
+            <li class="m-show-m"><a href="#search" class="m-doc-search-icon" title="Search" onclick="return showSearch()"><svg style="height: 0.9rem;" viewBox="0 0 16 16">
+              <use href="#m-doc-search-icon-path" />
+            </svg></a></li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav></header>
+<main><article>
+  <div class="m-container m-container-inflatable">
+    <div class="m-row">
+      <div class="m-col-l-10 m-push-l-1">
+        <h1>
+          <span class="m-breadcrumb"><a href="namespace_u_t_f_win.html">UTFWin</a>::<wbr/></span>IDrawable <span class="m-thin">class</span>
+          <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_i_drawable_8h.html">&lt;Spore/UTFWin/IDrawable.h&gt;</a></div>
+        </h1>
+        <p>A class that is capable of drawing a user interface component.</p>
+        <div class="m-block m-default">
+          <h3>Contents</h3>
+          <ul>
+            <li>
+              Reference
+              <ul>
+                <li><a href="#base-classes">Base classes</a></li>
+                <li><a href="#derived-classes">Derived classes</a></li>
+                <li><a href="#pub-types">Public types</a></li>
+                <li><a href="#pub-static-attribs">Public static variables</a></li>
+                <li><a href="#pub-methods">Public functions</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+<p>IDrawables are used by <a href="class_u_t_f_win_1_1_i_window.html" class="m-doc">IWindow</a> objects to render. The most important method is the <a href="class_u_t_f_win_1_1_i_drawable.html#a1469707c69043e69d98f836c2f39076e" class="m-doc">IDrawable::<wbr />Paint()</a> method, which is the only one that is really required.</p><p>An <a href="class_u_t_f_win_1_1_i_drawable.html#a1469707c69043e69d98f836c2f39076e" class="m-doc">IDrawable::<wbr />Paint()</a> call doesn&#x27;t need to paint the entire component at once; some components might do multiple calls varying the <a href="struct_u_t_f_win_1_1_render_params.html" class="m-doc">RenderParams</a> object that is passed as an argument. This way the <a href="class_u_t_f_win_1_1_i_window.html" class="m-doc">IWindow</a> can draw different images, for example, on different positions (for example, in a WinScrollbar you first want to draw the background, then the handle at the handle position, etc).</p><p>An <a href="class_u_t_f_win_1_1_i_drawable.html" class="m-doc">IDrawable</a> can also take care of collision detection. This can be useful in buttons, for example, where the shape might not necessarily be a rectangle.</p>
+        <section id="base-classes">
+          <h2><a href="#base-classes">Base classes</a></h2>
+          <dl class="m-doc">
+            <dt>
+              class <a href="class_u_t_f_win_1_1_u_t_f_win_object.html" class="m-doc">UTFWinObject</a>
+            </dt>
+            <dd><span></span></dd>
+          </dl>
+        </section>
+        <section id="derived-classes">
+          <h2><a href="#derived-classes">Derived classes</a></h2>
+          <dl class="m-doc">
+            <dt>
+              class <a href="class_u_t_f_win_1_1_button_drawable_radio.html" class="m-doc">ButtonDrawableRadio</a>
+            </dt>
+            <dd>The standard <a href="class_u_t_f_win_1_1_i_drawable.html" class="m-doc">IDrawable</a> for a standard, simple radio or checkbox button component.</dd>
+            <dt>
+              class <a href="class_u_t_f_win_1_1_button_drawable_standard.html" class="m-doc">ButtonDrawableStandard</a>
+            </dt>
+            <dd>The standard <a href="class_u_t_f_win_1_1_i_drawable.html" class="m-doc">IDrawable</a> for a standard, simple button component.</dd>
+            <dt>
+              class <a href="class_u_t_f_win_1_1_combo_box_drawable.html" class="m-doc">ComboBoxDrawable</a>
+            </dt>
+            <dd>The standard <a href="class_u_t_f_win_1_1_i_drawable.html" class="m-doc">IDrawable</a> for a combo box component.</dd>
+            <dt>
+              class <a href="class_u_t_f_win_1_1_default_drawable.html" class="m-doc">DefaultDrawable</a>
+            </dt>
+            <dd>A class that implements all the methods of an <a href="class_u_t_f_win_1_1_i_drawable.html" class="m-doc">IDrawable</a>.</dd>
+            <dt>
+              class <a href="class_u_t_f_win_1_1_dialog_drawable.html" class="m-doc">DialogDrawable</a>
+            </dt>
+            <dd>The standard <a href="class_u_t_f_win_1_1_i_drawable.html" class="m-doc">IDrawable</a> for a dialog component.</dd>
+            <dt>
+              class <a href="class_u_t_f_win_1_1_frame_drawable.html" class="m-doc">FrameDrawable</a>
+            </dt>
+            <dd><a href="class_u_t_f_win_1_1_frame_drawable.html" class="m-doc">FrameDrawable</a> is a procedural drawable that renders multiple frame styles depending on the current state.</dd>
+            <dt>
+              class <a href="class_u_t_f_win_1_1_i_button_drawable.html" class="m-doc">IButtonDrawable</a>
+            </dt>
+            <dd>This class is a type of <a href="class_u_t_f_win_1_1_i_drawable.html" class="m-doc">UTFWin::<wbr />IDrawable</a> capable of rendering an <a href="class_u_t_f_win_1_1_i_button.html" class="m-doc">UTFWin::<wbr />IButton</a>.</dd>
+            <dt>
+              class <a href="class_u_t_f_win_1_1_i_button_drawable.html" class="m-doc">IButtonDrawable</a>
+            </dt>
+            <dd>This class is a type of <a href="class_u_t_f_win_1_1_i_drawable.html" class="m-doc">UTFWin::<wbr />IDrawable</a> capable of rendering an <a href="class_u_t_f_win_1_1_i_button.html" class="m-doc">UTFWin::<wbr />IButton</a>.</dd>
+            <dt>
+              class <a href="class_u_t_f_win_1_1_image_drawable.html" class="m-doc">ImageDrawable</a>
+            </dt>
+            <dd>A standard <a href="class_u_t_f_win_1_1_i_drawable.html" class="m-doc">IDrawable</a> that renders an image.</dd>
+            <dt>
+              class <a href="class_u_t_f_win_1_1_scrollbar_drawable.html" class="m-doc">ScrollbarDrawable</a>
+            </dt>
+            <dd>The standard <a href="class_u_t_f_win_1_1_i_drawable.html" class="m-doc">IDrawable</a> for a scrollbar component.</dd>
+            <dt>
+              class <a href="class_u_t_f_win_1_1_slider_drawable.html" class="m-doc">SliderDrawable</a>
+            </dt>
+            <dd>The standard <a href="class_u_t_f_win_1_1_i_drawable.html" class="m-doc">IDrawable</a> for a slider component.</dd>
+            <dt>
+              class <a href="class_u_t_f_win_1_1_spinner_drawable.html" class="m-doc">SpinnerDrawable</a>
+            </dt>
+            <dd>The standard <a href="class_u_t_f_win_1_1_i_drawable.html" class="m-doc">IDrawable</a> for a spinner component.</dd>
+            <dt>
+              class <a href="class_u_t_f_win_1_1_std_drawable.html" class="m-doc">StdDrawable</a>
+            </dt>
+            <dd>The standard <a href="class_u_t_f_win_1_1_i_drawable.html" class="m-doc">IDrawable</a> for user interactive components.</dd>
+            <dt>
+              class <a href="class_u_t_f_win_1_1_variable_width_drawable.html" class="m-doc">VariableWidthDrawable</a>
+            </dt>
+            <dd>A drawable that completely fills the window of variable width with a graphic without a horizontal stretch.</dd>
+          </dl>
+        </section>
+        <section id="pub-types">
+          <h2><a href="#pub-types">Public types</a></h2>
+          <dl class="m-doc">
+            <dt id="a6d3281155dfa622af4b8bc826e447f1c">
+              <span class="m-doc-wrap-bumper">enum <a href="#a6d3281155dfa622af4b8bc826e447f1c" class="m-doc-self">(anonymous)</a> { </span><span class="m-doc-wrap"><a href="#a6d3281155dfa622af4b8bc826e447f1ca4c890aa9d974c5780d48085fe49f71ac" class="m-doc">kDefaultCollisionType</a> = 0x19C46FB }</span>
+            </dt>
+            <dd><span></span></dd>
+          </dl>
+        </section>
+        <section id="pub-static-attribs">
+          <h2><a href="#pub-static-attribs">Public static variables</a></h2>
+          <dl class="m-doc">
+            <dt id="af3d1c5439652a75a8f27b58b78a927ac">
+              static const uint32_t <a href="#af3d1c5439652a75a8f27b58b78a927ac" class="m-doc-self">TYPE</a>
+            </dt>
+            <dd><span></span></dd>
+          </dl>
+        </section>
+        <section id="pub-methods">
+          <h2><a href="#pub-methods">Public functions</a></h2>
+          <dl class="m-doc">
+            <dt id="a49eeed2cd5b6272bccfcb1860c0bf64a">
+              <span class="m-doc-wrap-bumper">auto <a href="#a49eeed2cd5b6272bccfcb1860c0bf64a" class="m-doc-self">Cast</a>(</span><span class="m-doc-wrap">uint32_t) const -&gt; void* <span class="m-label m-flat m-warning">override</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">void <a href="#a1469707c69043e69d98f836c2f39076e" class="m-doc">Paint</a>(</span><span class="m-doc-wrap"><a href="class_u_t_f_win_1_1_u_i_renderer.html" class="m-doc">UIRenderer</a>* pRenderer,
+              const <a href="union_math_1_1_rectangle.html" class="m-doc">Math::<wbr />Rectangle</a>&amp; area,
+              const <a href="struct_u_t_f_win_1_1_render_params.html" class="m-doc">RenderParams</a>&amp; params) <span class="m-label m-flat m-warning">pure virtual</span></span>
+            </dt>
+            <dd>Paints this drawable onto the given <a href="class_u_t_f_win_1_1_u_i_renderer.html" class="m-doc">UIRenderer</a>.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a8c8c9dd22c62c153df2cb96d74e7e9ea" class="m-doc">IsColliding</a>(</span><span class="m-doc-wrap">const <a href="union_math_1_1_rectangle.html" class="m-doc">Math::<wbr />Rectangle</a>&amp; area,
+              const <a href="struct_math_1_1_point.html" class="m-doc">Math::<wbr />Point</a>&amp; point,
+              <a href="struct_u_t_f_win_1_1_render_params.html" class="m-doc">RenderParams</a>&amp; params) -&gt; bool <span class="m-label m-flat m-warning">pure virtual</span></span>
+            </dt>
+            <dd>Tells whether the point specified is colliding in this drawable or not.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a0a7f536a166499e0cbedd5ffcb915244" class="m-doc">GetDimensions</a>(</span><span class="m-doc-wrap"><a href="struct_math_1_1_dimensions.html" class="m-doc">Dimensions</a>&amp; dst,
+              int state,
+              int index) -&gt; bool <span class="m-label m-flat m-warning">pure virtual</span></span>
+            </dt>
+            <dd>Used to get the dimensions of an image contained in this drawable.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a841570a619665ff19b2296111f2b00d5" class="m-doc">UseCollision</a>(</span><span class="m-doc-wrap">uint32_t type,
+              bool&amp; dst) -&gt; bool <span class="m-label m-flat m-warning">pure virtual</span></span>
+            </dt>
+            <dd>Tells whether the collision of a window should be handled by this drawable or not.</dd>
+          </dl>
+        </section>
+        <section>
+          <h2>Function documentation</h2>
+          <section class="m-doc-details" id="a1469707c69043e69d98f836c2f39076e"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">void UTFWin::<wbr />IDrawable::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a1469707c69043e69d98f836c2f39076e" class="m-doc-self">Paint</a>(</span><span class="m-doc-wrap"><a href="class_u_t_f_win_1_1_u_i_renderer.html" class="m-doc">UIRenderer</a>* pRenderer,
+              const <a href="union_math_1_1_rectangle.html" class="m-doc">Math::<wbr />Rectangle</a>&amp; area,
+              const <a href="struct_u_t_f_win_1_1_render_params.html" class="m-doc">RenderParams</a>&amp; params) <span class="m-label m-warning">pure virtual</span></span></span>
+            </h3>
+            <p>Paints this drawable onto the given <a href="class_u_t_f_win_1_1_u_i_renderer.html" class="m-doc">UIRenderer</a>.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">pRenderer</td>
+                  <td>The <a href="class_u_t_f_win_1_1_u_i_renderer.html" class="m-doc">UIRenderer</a> where this must be drawn.</td>
+                </tr>
+                <tr>
+                  <td>area</td>
+                  <td>The area of the window to draw.</td>
+                </tr>
+                <tr>
+                  <td>params</td>
+                  <td><a href="struct_u_t_f_win_1_1_render_params.html" class="m-doc">RenderParams</a> that contain additional information (e.g. what image do draw, the current state, etc).</td>
+                </tr>
+              </tbody>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="a8c8c9dd22c62c153df2cb96d74e7e9ea"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">bool UTFWin::<wbr />IDrawable::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a8c8c9dd22c62c153df2cb96d74e7e9ea" class="m-doc-self">IsColliding</a>(</span><span class="m-doc-wrap">const <a href="union_math_1_1_rectangle.html" class="m-doc">Math::<wbr />Rectangle</a>&amp; area,
+              const <a href="struct_math_1_1_point.html" class="m-doc">Math::<wbr />Point</a>&amp; point,
+              <a href="struct_u_t_f_win_1_1_render_params.html" class="m-doc">RenderParams</a>&amp; params) <span class="m-label m-warning">pure virtual</span></span></span>
+            </h3>
+            <p>Tells whether the point specified is colliding in this drawable or not.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">area</td>
+                  <td>The area of the window that is using this drawable.</td>
+                </tr>
+                <tr>
+                  <td>point</td>
+                  <td>The Point to check whether it collides or not. Its coordinates are relative to the window position.</td>
+                </tr>
+                <tr>
+                  <td>params</td>
+                  <td>Additional information, probably unused.</td>
+                </tr>
+              </tbody>
+            </table>
+<p>This method is useful for drawables that use hitmasks.</p>
+          </div></section>
+          <section class="m-doc-details" id="a0a7f536a166499e0cbedd5ffcb915244"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">bool UTFWin::<wbr />IDrawable::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a0a7f536a166499e0cbedd5ffcb915244" class="m-doc-self">GetDimensions</a>(</span><span class="m-doc-wrap"><a href="struct_math_1_1_dimensions.html" class="m-doc">Dimensions</a>&amp; dst,
+              int state,
+              int index) <span class="m-label m-warning">pure virtual</span></span></span>
+            </h3>
+            <p>Used to get the dimensions of an image contained in this drawable.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">dst&nbsp;<span class="m-label m-flat m-warning">out</span></td>
+                  <td>The Dimensions where the result must be written.</td>
+                </tr>
+                <tr>
+                  <td>state</td>
+                  <td>The current state flags of the window.</td>
+                </tr>
+                <tr>
+                  <td>index</td>
+                  <td>The index of the image whose dimensions must be returned.</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>Returns</th>
+                  <td>True if the dimensions were got, false otherwise.</td>
+                </tr>
+              </tfoot>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="a841570a619665ff19b2296111f2b00d5"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">bool UTFWin::<wbr />IDrawable::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a841570a619665ff19b2296111f2b00d5" class="m-doc-self">UseCollision</a>(</span><span class="m-doc-wrap">uint32_t type,
+              bool&amp; dst) <span class="m-label m-warning">pure virtual</span></span></span>
+            </h3>
+            <p>Tells whether the collision of a window should be handled by this drawable or not.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">type</td>
+                  <td>The type, usually kDefaultCollisionType.</td>
+                </tr>
+                <tr>
+                  <td>dst&nbsp;<span class="m-label m-flat m-warning">out</span></td>
+                  <td>If the collision type is supported, whether it must be handled by this drawable or not.</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>Returns</th>
+                  <td>True if the collision type is supported (even if it&#x27;s not handled by this drawable), false otherwise.</td>
+                </tr>
+              </tfoot>
+            </table>
+          </div></section>
+        </section>
+      </div>
+    </div>
+  </div>
+</article></main>
+<div class="m-doc-search" id="search">
+  <a href="#!" onclick="return hideSearch()"></a>
+  <div class="m-container">
+    <div class="m-row">
+      <div class="m-col-m-8 m-push-m-2">
+        <div class="m-doc-search-header m-text m-small">
+          <div><span class="m-label m-default">Tab</span> / <span class="m-label m-default">T</span> to search, <span class="m-label m-default">Esc</span> to close</div>
+          <div id="search-symbolcount">&hellip;</div>
+        </div>
+        <div class="m-doc-search-content">
+          <form>
+            <input type="search" name="q" id="search-input" placeholder="Loading &hellip;" disabled="disabled" autofocus="autofocus" autocomplete="off" spellcheck="false" />
+          </form>
+          <noscript class="m-text m-danger m-text-center">Unlike everything else in the docs, the search functionality <em>requires</em> JavaScript.</noscript>
+          <div id="search-help" class="m-text m-dim m-text-center">
+            <p class="m-noindent">Search for symbols, directories, files, pages or
+            modules. You can omit any prefix from the symbol or file path; adding a
+            <code>:</code> or <code>/</code> suffix lists all members of given symbol or
+            directory.</p>
+            <p class="m-noindent">Use <span class="m-label m-dim">&darr;</span>
+            / <span class="m-label m-dim">&uarr;</span> to navigate through the list,
+            <span class="m-label m-dim">Enter</span> to go.
+            <span class="m-label m-dim">Tab</span> autocompletes common prefix, you can
+            copy a link to the result using <span class="m-label m-dim">⌘</span>
+            <span class="m-label m-dim">L</span> while <span class="m-label m-dim">⌘</span>
+            <span class="m-label m-dim">M</span> produces a Markdown link.</p>
+          </div>
+          <div id="search-notfound" class="m-text m-warning m-text-center">Sorry, nothing was found.</div>
+          <ul id="search-results"></ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="search-v1.js"></script>
+<script src="searchdata-v1.js" async="async"></script>
+<footer><nav>
+  <div class="m-container">
+    <div class="m-row">
+      <div class="m-col-l-10 m-push-l-1">
+        <p>Spore ModAPI SDK for creating C++ mods for Spore. Created with <a href="https://doxygen.org/">Doxygen</a> 1.8.16 and <a href="https://mcss.mosra.cz/">m.css</a>.</p>
+      </div>
+    </div>
+  </div>
+</nav></footer>
+</body>
+</html>

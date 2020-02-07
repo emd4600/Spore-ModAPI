@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Game Modes &amp; Cameras | Spore ModAPI SDK for creating C++ mods for Spore</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,600,600i%7CSource+Code+Pro:400,400i,600" />
+  <link rel="stylesheet" href="m-dark.css" />
+  <link rel="stylesheet" href="m-documentation.css" />
+  <link rel="icon" href="Spore_ModAPI_Icon.png" type="image/png" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#22272e" />
+</head>
+<body>
+<header><nav id="navigation">
+  <div class="m-container">
+    <div class="m-row">
+      <a href="index.html" id="m-navbar-brand" class="m-col-t-8 m-col-m-none m-left-m"><img src="Spore_ModAPI_Icon.png" />Spore ModAPI <span class="m-thin">SDK for creating C++ mods for Spore</span></a>
+      <div class="m-col-t-4 m-hide-m m-text-right m-nopadr">
+        <a href="#search" class="m-doc-search-icon" title="Search" onclick="return showSearch()"><svg style="height: 0.9rem;" viewBox="0 0 16 16">
+          <path id="m-doc-search-icon-path" d="m6 0c-3.31 0-6 2.69-6 6 0 3.31 2.69 6 6 6 1.49 0 2.85-0.541 3.89-1.44-0.0164 0.338 0.147 0.759 0.5 1.15l3.22 3.79c0.552 0.614 1.45 0.665 2 0.115 0.55-0.55 0.499-1.45-0.115-2l-3.79-3.22c-0.392-0.353-0.812-0.515-1.15-0.5 0.895-1.05 1.44-2.41 1.44-3.89 0-3.31-2.69-6-6-6zm0 1.56a4.44 4.44 0 0 1 4.44 4.44 4.44 4.44 0 0 1-4.44 4.44 4.44 4.44 0 0 1-4.44-4.44 4.44 4.44 0 0 1 4.44-4.44z"/>
+        </svg></a>
+        <a id="m-navbar-show" href="#navigation" title="Show navigation"></a>
+        <a id="m-navbar-hide" href="#" title="Hide navigation"></a>
+      </div>
+      <div id="m-navbar-collapse" class="m-col-t-12 m-show-m m-col-m-none m-right-m">
+        <div class="m-row">
+          <ol class="m-col-t-6 m-col-m-none">
+            <li><a href="pages.html">Tutorials</a></li>
+            <li><a href="namespaces.html">Namespaces</a></li>
+          </ol>
+          <ol class="m-col-t-6 m-col-m-none" start="3">
+            <li><a href="annotated.html">Classes</a></li>
+            <li><a href="files.html">Files</a></li>
+            <li class="m-show-m"><a href="#search" class="m-doc-search-icon" title="Search" onclick="return showSearch()"><svg style="height: 0.9rem;" viewBox="0 0 16 16">
+              <use href="#m-doc-search-icon-path" />
+            </svg></a></li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav></header>
+<main><article>
+  <div class="m-container m-container-inflatable">
+    <div class="m-row">
+      <div class="m-col-l-10 m-push-l-1">
+        <h1>
+          Game Modes &amp; Cameras
+        </h1>
+        <p>How to create new game modes and cameras.</p>
+<p>At every moment in the game, there is one game mode active. It&#x27;s a mode with its own controls, camera, and update function (a function that gets called every time). For example, the <em>Editor</em>, the <em>Galaxy Game Entry</em>, the <em>Adventure Editor</em>,... each one is a game mode.</p><section id="GameModes-Create"><h2><a href="#GameModes-Create">Creating new game modes</a></h2><p>Game modes implement the <a href="class_app_1_1_i_game_mode.html" class="m-doc">App::<wbr />IGameMode</a> class. The easiest way to create a new one is by using the *&quot;ModAPI Game Mode&quot;* item template. The main methods in a game mode are:</p><ul><li><code>OnEnter()</code>: Called when the game mode is entered. Here you should do things like loading the models, the user interface,...</li><li><code>OnExit()</code>: Called when the game mode is exited. Here you should do things like unloading the models, the user interface,...</li><li><code>Update()</code>: Called once every frame, this is where msot of the code goes.</li></ul><p>There are many methods that get called with user interaction: <code>OnMouseDown</code>, <code>OnKeyUp</code>, etc. If you used the item template, they have a default implementation that just records these interactions on a <code><a href="struct_game_input.html" class="m-doc">GameInput</a></code> object. You can then check what buttons are pressed or where the mouse is in the <code>Update()</code> method.</p><pre class="m-code"><span class="kt">void</span> <span class="n">MyGameMode</span><span class="o">::</span><span class="n">Update</span><span class="p">(</span><span class="kt">float</span> <span class="n">delta1</span><span class="p">,</span> <span class="kt">float</span> <span class="n">delta2</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">mInput</span><span class="p">.</span><span class="n">IsMouseDown</span><span class="p">(</span><span class="n">kMouseButtonLeft</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="n">mInput</span><span class="p">.</span><span class="n">mouseState</span><span class="p">.</span><span class="n">IsShiftDown</span><span class="p">)</span> <span class="p">{</span>
+        <span class="p">...</span>
+    <span class="p">}</span>
+<span class="p">}</span></pre><p>You can add the new game mode to the <code>GameModeManager</code> using the <code>AddGameMode</code> method. You must do it in the <code><a href="effects__example__1_8cpp.html#a98b1050f09da390896f964fb7a892391" class="m-doc">Initialize()</a></code> method of <code>dllmain</code>.</p><pre class="m-code"><span class="n">GameModeManager</span><span class="p">.</span><span class="n">AddGameMode</span><span class="p">(</span><span class="k">new</span> <span class="n">MyGameMode</span><span class="p">(),</span> <span class="n">id</span><span class="p">(</span><span class="s">&quot;MyGameMode&quot;</span><span class="p">),</span> <span class="s">&quot;MyGameMode&quot;</span><span class="p">);</span></pre><p>If you want an example of a mod that adds a new game mode, check the <em>Effect Editor</em> in the <a href="https://github.com/emd4600/Spore-ModAPI/tree/master/Projects/Example%20Projects/ModCreatorKit"><code>ModCreatorKit</code></a></p></section><section id="GameModes-Active"><h2><a href="#GameModes-Active">Changing the active mode</a></h2><p>There can only be one active mode at once. When the active mode is changed, the old one is notified, so the user does not have to worry about the transition and whatever mode was active before. You need to know the ID of the mode to set it active, there&#x27;s a list in the GameModeIDs enum.</p><pre class="m-code"><span class="n">GameModeManager</span><span class="p">.</span><span class="n">SetActiveMode</span><span class="p">(</span><span class="n">id</span><span class="p">(</span><span class="s">&quot;MyGameMode&quot;</span><span class="p">));</span></pre></section><section id="GameModes-Camera"><h2><a href="#GameModes-Camera">Changing the active camera</a></h2><p>Similar to game modes, there can only be one active camera at a time. Cameras have their own controls (mouse and keyboard). Cameras are defined in <code>.prop</code> files in the <code>camera_properties~</code> folder. When the game mode is activated, you should set which camera you want to use (otherwise, the previous one would be used):</p><pre class="m-code"><span class="kt">bool</span> <span class="n">MyGameMode</span><span class="o">::</span><span class="n">OnEnter</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="n">CameraManager</span><span class="p">.</span><span class="n">SetActiveCameraByID</span><span class="p">(</span><span class="n">id</span><span class="p">(</span><span class="s">&quot;EditorCameraCreatureUI&quot;</span><span class="p">));</span>
+    <span class="p">...</span>
+<span class="p">}</span></pre></section><section id="GameModes-CustomCamera"><h2><a href="#GameModes-CustomCamera">Creating a custom camera</a></h2><p>The available cameras in the game might not be enough for you. If you want to control directly how the camera works (the mouse/keyboard input, the functionality of the camera) you must create a new camera type. Cameras implement the <a href="class_app_1_1_i_camera.html" class="m-doc">App::<wbr />ICamera</a> interface; you can create a new one by using the *&quot;ModAPI Camera&quot;* item template. You will see the available methods in cameras are very similar to those in game modes. You can then add the camera to the list of available cameras in your <code><a href="effects__example__1_8cpp.html#a98b1050f09da390896f964fb7a892391" class="m-doc">Initialize()</a></code> method.</p><pre class="m-code"><span class="n">CameraManager</span><span class="p">.</span><span class="n">PutCamera</span><span class="p">(</span><span class="mh">0x8f645234</span><span class="p">,</span> <span class="k">new</span> <span class="n">MyCamera</span><span class="p">());</span>
+<span class="c1">// Now you can set the camera as active using the 0x8f645234 ID</span></pre><p>It&#x27;s also possible to create a generic camera type that can be used by multiple files in <code>camera_properties~</code>. This allows to create variations of the same camera type without having to create multiple classes. In order to do that, you have to create a function, the &quot;camera factory&quot;: the function receives a <code>.prop</code> file as parameter; you must create an isntance of your camera and read its properties from the prop list.</p><pre class="m-code"><span class="n">App</span><span class="o">::</span><span class="n">ICamera</span><span class="o">*</span> <span class="n">MyCameraFactory</span><span class="p">(</span><span class="n">App</span><span class="o">::</span><span class="n">PropertyList</span><span class="o">*</span> <span class="n">propList</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">auto</span> <span class="n">camera</span> <span class="o">=</span> <span class="k">new</span> <span class="n">MyCamera</span><span class="p">();</span>
+    
+    <span class="c1">// You should create a &#39;ReadProp&#39; method in your camera that reads the prop list</span>
+    <span class="n">camera</span><span class="o">-&gt;</span><span class="n">ReadProp</span><span class="p">(</span><span class="n">propList</span><span class="p">);</span>
+    
+    <span class="k">return</span> <span class="n">camera</span><span class="p">;</span>
+<span class="p">}</span></pre><p>Then, in your <code><a href="effects__example__1_8cpp.html#a98b1050f09da390896f964fb7a892391" class="m-doc">Initialize()</a></code> method you can add this camera factory to the camera manager so it gets recognized: <code class="m-code"><span class="n">CameraManager</span><span class="p">.</span><span class="n">AddCameraType</span><span class="p">(</span><span class="mh">0x00DF8567</span><span class="p">,</span> <span class="n">MyCameraFactory</span><span class="p">);</span></code></p><p>If a camera <code>.prop</code> file uses <code>uint32 cameraType 0x00DF8567</code>, it will be using your new camera.</p></section>
+      </div>
+    </div>
+  </div>
+</article></main>
+<div class="m-doc-search" id="search">
+  <a href="#!" onclick="return hideSearch()"></a>
+  <div class="m-container">
+    <div class="m-row">
+      <div class="m-col-m-8 m-push-m-2">
+        <div class="m-doc-search-header m-text m-small">
+          <div><span class="m-label m-default">Tab</span> / <span class="m-label m-default">T</span> to search, <span class="m-label m-default">Esc</span> to close</div>
+          <div id="search-symbolcount">&hellip;</div>
+        </div>
+        <div class="m-doc-search-content">
+          <form>
+            <input type="search" name="q" id="search-input" placeholder="Loading &hellip;" disabled="disabled" autofocus="autofocus" autocomplete="off" spellcheck="false" />
+          </form>
+          <noscript class="m-text m-danger m-text-center">Unlike everything else in the docs, the search functionality <em>requires</em> JavaScript.</noscript>
+          <div id="search-help" class="m-text m-dim m-text-center">
+            <p class="m-noindent">Search for symbols, directories, files, pages or
+            modules. You can omit any prefix from the symbol or file path; adding a
+            <code>:</code> or <code>/</code> suffix lists all members of given symbol or
+            directory.</p>
+            <p class="m-noindent">Use <span class="m-label m-dim">&darr;</span>
+            / <span class="m-label m-dim">&uarr;</span> to navigate through the list,
+            <span class="m-label m-dim">Enter</span> to go.
+            <span class="m-label m-dim">Tab</span> autocompletes common prefix, you can
+            copy a link to the result using <span class="m-label m-dim">⌘</span>
+            <span class="m-label m-dim">L</span> while <span class="m-label m-dim">⌘</span>
+            <span class="m-label m-dim">M</span> produces a Markdown link.</p>
+          </div>
+          <div id="search-notfound" class="m-text m-warning m-text-center">Sorry, nothing was found.</div>
+          <ul id="search-results"></ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="search-v1.js"></script>
+<script src="searchdata-v1.js" async="async"></script>
+<footer><nav>
+  <div class="m-container">
+    <div class="m-row">
+      <div class="m-col-l-10 m-push-l-1">
+        <p>Spore ModAPI SDK for creating C++ mods for Spore. Created with <a href="https://doxygen.org/">Doxygen</a> 1.8.16 and <a href="https://mcss.mosra.cz/">m.css</a>.</p>
+      </div>
+    </div>
+  </div>
+</nav></footer>
+</body>
+</html>

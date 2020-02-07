@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Creating space tools | Spore ModAPI SDK for creating C++ mods for Spore</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,600,600i%7CSource+Code+Pro:400,400i,600" />
+  <link rel="stylesheet" href="m-dark.css" />
+  <link rel="stylesheet" href="m-documentation.css" />
+  <link rel="icon" href="Spore_ModAPI_Icon.png" type="image/png" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#22272e" />
+</head>
+<body>
+<header><nav id="navigation">
+  <div class="m-container">
+    <div class="m-row">
+      <a href="index.html" id="m-navbar-brand" class="m-col-t-8 m-col-m-none m-left-m"><img src="Spore_ModAPI_Icon.png" />Spore ModAPI <span class="m-thin">SDK for creating C++ mods for Spore</span></a>
+      <div class="m-col-t-4 m-hide-m m-text-right m-nopadr">
+        <a href="#search" class="m-doc-search-icon" title="Search" onclick="return showSearch()"><svg style="height: 0.9rem;" viewBox="0 0 16 16">
+          <path id="m-doc-search-icon-path" d="m6 0c-3.31 0-6 2.69-6 6 0 3.31 2.69 6 6 6 1.49 0 2.85-0.541 3.89-1.44-0.0164 0.338 0.147 0.759 0.5 1.15l3.22 3.79c0.552 0.614 1.45 0.665 2 0.115 0.55-0.55 0.499-1.45-0.115-2l-3.79-3.22c-0.392-0.353-0.812-0.515-1.15-0.5 0.895-1.05 1.44-2.41 1.44-3.89 0-3.31-2.69-6-6-6zm0 1.56a4.44 4.44 0 0 1 4.44 4.44 4.44 4.44 0 0 1-4.44 4.44 4.44 4.44 0 0 1-4.44-4.44 4.44 4.44 0 0 1 4.44-4.44z"/>
+        </svg></a>
+        <a id="m-navbar-show" href="#navigation" title="Show navigation"></a>
+        <a id="m-navbar-hide" href="#" title="Hide navigation"></a>
+      </div>
+      <div id="m-navbar-collapse" class="m-col-t-12 m-show-m m-col-m-none m-right-m">
+        <div class="m-row">
+          <ol class="m-col-t-6 m-col-m-none">
+            <li><a href="pages.html">Tutorials</a></li>
+            <li><a href="namespaces.html">Namespaces</a></li>
+          </ol>
+          <ol class="m-col-t-6 m-col-m-none" start="3">
+            <li><a href="annotated.html">Classes</a></li>
+            <li><a href="files.html">Files</a></li>
+            <li class="m-show-m"><a href="#search" class="m-doc-search-icon" title="Search" onclick="return showSearch()"><svg style="height: 0.9rem;" viewBox="0 0 16 16">
+              <use href="#m-doc-search-icon-path" />
+            </svg></a></li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav></header>
+<main><article>
+  <div class="m-container m-container-inflatable">
+    <div class="m-row">
+      <div class="m-col-l-10 m-push-l-1">
+        <h1>
+          Creating space tools
+        </h1>
+        <p>How to add custom functionality to space tools.</p>
+<p>Adding new space tools has been possible for a very long time; however, they must be based in existing tools. The ModAPI SDK allows you to create new <strong>tool strategies</strong>, which let you use custom code for your custom space tools.</p><p>In order to create a tool strategy, you have to extend the <code>cToolStrategy</code> class or any of its subclasses. You should choose the one that gets closer to the type of tool you want to do (for example, if it has a projectile, use <code>cDefaultProjectileWeapon</code>). Here&#x27;s a list of all available classes:</p><ul><li><a href="class_simulator_1_1c_abduct_tool_strategy.html" class="m-doc">Simulator::<wbr />cAbductToolStrategy</a></li><li><a href="class_simulator_1_1c_artillery_weapon_strategy.html" class="m-doc">Simulator::<wbr />cArtilleryWeaponStrategy</a></li><li><a href="class_simulator_1_1c_crop_circles_tool_strategy.html" class="m-doc">Simulator::<wbr />cCropCirclesToolStrategy</a></li><li><a href="class_simulator_1_1c_default_ao_e_tool.html" class="m-doc">Simulator::<wbr />cDefaultAoETool</a></li><li><a href="class_simulator_1_1c_default_beam_tool.html" class="m-doc">Simulator::<wbr />cDefaultBeamTool</a></li><li><a href="class_simulator_1_1c_default_projectile_weapon.html" class="m-doc">Simulator::<wbr />cDefaultProjectileWeapon</a></li><li><a href="class_simulator_1_1c_deep_space_projectile_tool_strategy.html" class="m-doc">Simulator::<wbr />cDeepSpaceProjectileToolStrategy</a></li><li><a href="class_simulator_1_1c_drag_input_projectile_tool_strategy.html" class="m-doc">Simulator::<wbr />cDragInputProjectileToolStrategy</a></li><li><a href="class_simulator_1_1c_drop_cargo_tool_strategy.html" class="m-doc">Simulator::<wbr />cDropCargoToolStrategy</a></li><li><a href="class_simulator_1_1c_energy_repair_tool_strategy.html" class="m-doc">Simulator::<wbr />cEnergyRepairToolStrategy</a></li><li><a href="class_simulator_1_1c_genesis_device_tool_strategy.html" class="m-doc">Simulator::<wbr />cGenesisDeviceToolStrategy</a></li><li><a href="class_simulator_1_1c_get_out_of_u_f_o_tool_strategy.html" class="m-doc">Simulator::<wbr />cGetOutOfUFOToolStrategy</a></li><li><a href="class_simulator_1_1c_global_mind_erase_tool_strategy.html" class="m-doc">Simulator::<wbr />cGlobalMindEraseToolStrategy</a></li><li><a href="class_simulator_1_1c_mind_erase_tool_strategy.html" class="m-doc">Simulator::<wbr />cMindEraseToolStrategy</a></li><li><a href="class_simulator_1_1c_place_colony_tool_strategy.html" class="m-doc">Simulator::<wbr />cPlaceColonyToolStrategy</a></li><li><a href="class_simulator_1_1c_place_object_tool_strategy.html" class="m-doc">Simulator::<wbr />cPlaceObjectToolStrategy</a></li><li><a href="class_simulator_1_1c_rally_call_tool_strategy.html" class="m-doc">Simulator::<wbr />cRallyCallToolStrategy</a></li><li><a href="class_simulator_1_1c_repair_a_o_e_tool_strategy.html" class="m-doc">Simulator::<wbr />cRepairAOEToolStrategy</a></li><li><a href="class_simulator_1_1c_repair_tool_strategy.html" class="m-doc">Simulator::<wbr />cRepairToolStrategy</a></li><li><a href="class_simulator_1_1c_scan_tool_strategy.html" class="m-doc">Simulator::<wbr />cScanToolStrategy</a></li><li><a href="class_simulator_1_1c_toggle_tool_strategy.html" class="m-doc">Simulator::<wbr />cToggleToolStrategy</a></li><li><a href="class_simulator_1_1c_tool_strategy.html" class="m-doc">Simulator::<wbr />cToolStrategy</a></li><li><a href="class_simulator_1_1c_turret_defense_missile_weapon.html" class="m-doc">Simulator::<wbr />cTurretDefenseMissileWeapon</a></li><li><a href="class_simulator_1_1c_turret_flak_weapon.html" class="m-doc">Simulator::<wbr />cTurretFlakWeapon</a></li></ul><p>There are many methods that you can override which define the logic of the space tool. It&#x27;s recommended to first call the default implementation, and then do whatever you need. Check the methods documentation at the <a href="class_simulator_1_1c_tool_strategy.html" class="m-doc">Simulator::<wbr />cToolStrategy</a> page. The most important methods are:</p><ul><li><code>OnSelect()</code>: called when the user clicks on the tool button to select it.</li><li><code>OnDeselect()</code>: called when the user clicks on the tool button again to unselect it.</li><li><code>WhileAiming()</code>: called when the player has the tool selected and is aiming at the planet.</li><li><code>Update()</code>: called every game loop if the tool is visible, that is, if the panel that contains it is selected or if the tool is selected.</li><li><code>SelectedUpdate()</code>: unlike Update, it&#x27;s not executed if the game is paused.</li><li><code>OnMouseDown()</code>: called when the player clicks down the left mouse button with the tool selected.</li><li><code>OnMouseUp()</code>: called when the player releases the left mouse button with the tool selected.</li><li><code>OnHit()</code>: called when the moue hits an objective</li><li><code>WhileAiming()</code>: called every game update while the player is aiming with the tool selected.</li><li><code>WhileFiring()</code>: called every game update while the player is firing with the tool selected.</li></ul><p>All these methods receive a <a href="class_simulator_1_1c_space_tool_data.html" class="m-doc">Simulator::<wbr />cSpaceToolData</a> object that has the data processed from the tool <code>.prop</code> file in <code>spacetools~</code>. Keep in mind that the strategy class can be shared by multiple tools; you should not store any members in your strategy class.</p><p>You can add the strategy to the tool manager in the <code><a href="effects__example__1_8cpp.html#a98b1050f09da390896f964fb7a892391" class="m-doc">Initialize()</a></code> method in <code>dllmain</code>. You have to assign it an ID.</p><pre class="m-code"><span class="n">ToolManager</span><span class="p">.</span><span class="n">AddStrategy</span><span class="p">(</span><span class="k">new</span> <span class="n">CustomToolStrategy</span><span class="p">(),</span> <span class="n">id</span><span class="p">(</span><span class="s">&quot;CustomToolStrategy&quot;</span><span class="p">));</span></pre><p>To use it in a space tool, add this in the <code>.prop</code> file in <code>spacetools~</code>: <code class="m-code"><span class="n">key</span> <span class="n">spaceToolStrategy</span> <span class="n">hash</span><span class="p">(</span><span class="n">CustomToolStrategy</span><span class="p">)</span></code></p>
+      </div>
+    </div>
+  </div>
+</article></main>
+<div class="m-doc-search" id="search">
+  <a href="#!" onclick="return hideSearch()"></a>
+  <div class="m-container">
+    <div class="m-row">
+      <div class="m-col-m-8 m-push-m-2">
+        <div class="m-doc-search-header m-text m-small">
+          <div><span class="m-label m-default">Tab</span> / <span class="m-label m-default">T</span> to search, <span class="m-label m-default">Esc</span> to close</div>
+          <div id="search-symbolcount">&hellip;</div>
+        </div>
+        <div class="m-doc-search-content">
+          <form>
+            <input type="search" name="q" id="search-input" placeholder="Loading &hellip;" disabled="disabled" autofocus="autofocus" autocomplete="off" spellcheck="false" />
+          </form>
+          <noscript class="m-text m-danger m-text-center">Unlike everything else in the docs, the search functionality <em>requires</em> JavaScript.</noscript>
+          <div id="search-help" class="m-text m-dim m-text-center">
+            <p class="m-noindent">Search for symbols, directories, files, pages or
+            modules. You can omit any prefix from the symbol or file path; adding a
+            <code>:</code> or <code>/</code> suffix lists all members of given symbol or
+            directory.</p>
+            <p class="m-noindent">Use <span class="m-label m-dim">&darr;</span>
+            / <span class="m-label m-dim">&uarr;</span> to navigate through the list,
+            <span class="m-label m-dim">Enter</span> to go.
+            <span class="m-label m-dim">Tab</span> autocompletes common prefix, you can
+            copy a link to the result using <span class="m-label m-dim">⌘</span>
+            <span class="m-label m-dim">L</span> while <span class="m-label m-dim">⌘</span>
+            <span class="m-label m-dim">M</span> produces a Markdown link.</p>
+          </div>
+          <div id="search-notfound" class="m-text m-warning m-text-center">Sorry, nothing was found.</div>
+          <ul id="search-results"></ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="search-v1.js"></script>
+<script src="searchdata-v1.js" async="async"></script>
+<footer><nav>
+  <div class="m-container">
+    <div class="m-row">
+      <div class="m-col-l-10 m-push-l-1">
+        <p>Spore ModAPI SDK for creating C++ mods for Spore. Created with <a href="https://doxygen.org/">Doxygen</a> 1.8.16 and <a href="https://mcss.mosra.cz/">m.css</a>.</p>
+      </div>
+    </div>
+  </div>
+</nav></footer>
+</body>
+</html>

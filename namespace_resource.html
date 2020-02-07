@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Resource namespace | Spore ModAPI SDK for creating C++ mods for Spore</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,600,600i%7CSource+Code+Pro:400,400i,600" />
+  <link rel="stylesheet" href="m-dark.css" />
+  <link rel="stylesheet" href="m-documentation.css" />
+  <link rel="icon" href="Spore_ModAPI_Icon.png" type="image/png" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#22272e" />
+</head>
+<body>
+<header><nav id="navigation">
+  <div class="m-container">
+    <div class="m-row">
+      <a href="index.html" id="m-navbar-brand" class="m-col-t-8 m-col-m-none m-left-m"><img src="Spore_ModAPI_Icon.png" />Spore ModAPI <span class="m-thin">SDK for creating C++ mods for Spore</span></a>
+      <div class="m-col-t-4 m-hide-m m-text-right m-nopadr">
+        <a href="#search" class="m-doc-search-icon" title="Search" onclick="return showSearch()"><svg style="height: 0.9rem;" viewBox="0 0 16 16">
+          <path id="m-doc-search-icon-path" d="m6 0c-3.31 0-6 2.69-6 6 0 3.31 2.69 6 6 6 1.49 0 2.85-0.541 3.89-1.44-0.0164 0.338 0.147 0.759 0.5 1.15l3.22 3.79c0.552 0.614 1.45 0.665 2 0.115 0.55-0.55 0.499-1.45-0.115-2l-3.79-3.22c-0.392-0.353-0.812-0.515-1.15-0.5 0.895-1.05 1.44-2.41 1.44-3.89 0-3.31-2.69-6-6-6zm0 1.56a4.44 4.44 0 0 1 4.44 4.44 4.44 4.44 0 0 1-4.44 4.44 4.44 4.44 0 0 1-4.44-4.44 4.44 4.44 0 0 1 4.44-4.44z"/>
+        </svg></a>
+        <a id="m-navbar-show" href="#navigation" title="Show navigation"></a>
+        <a id="m-navbar-hide" href="#" title="Hide navigation"></a>
+      </div>
+      <div id="m-navbar-collapse" class="m-col-t-12 m-show-m m-col-m-none m-right-m">
+        <div class="m-row">
+          <ol class="m-col-t-6 m-col-m-none">
+            <li><a href="pages.html">Tutorials</a></li>
+            <li><a href="namespaces.html">Namespaces</a></li>
+          </ol>
+          <ol class="m-col-t-6 m-col-m-none" start="3">
+            <li><a href="annotated.html">Classes</a></li>
+            <li><a href="files.html">Files</a></li>
+            <li class="m-show-m"><a href="#search" class="m-doc-search-icon" title="Search" onclick="return showSearch()"><svg style="height: 0.9rem;" viewBox="0 0 16 16">
+              <use href="#m-doc-search-icon-path" />
+            </svg></a></li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav></header>
+<main><article>
+  <div class="m-container m-container-inflatable">
+    <div class="m-row">
+      <div class="m-col-l-10 m-push-l-1">
+        <h1>
+          Resource <span class="m-thin">namespace</span>
+        </h1>
+        <p>The system for accessing file resources stored in .package files.</p>
+        <div class="m-block m-default">
+          <h3>Contents</h3>
+          <ul>
+            <li>
+              Reference
+              <ul>
+                <li><a href="#nested-classes">Classes</a></li>
+                <li><a href="#typedef-members">Typedefs</a></li>
+                <li><a href="#func-members">Functions</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+<p>This namespace contains all the necessary classes needed for working with file resources stored in .package files. The main class is the <a href="class_resource_1_1_i_resource_manager.html" class="m-doc">IResourceManager</a>, which can be used to get resources from the file system. The <a href="class_resource_1_1_database_packed_file.html" class="m-doc">DatabasePackedFile</a> represents a .package file that contains resources.</p>
+        <section id="nested-classes">
+          <h2><a href="#nested-classes">Classes</a></h2>
+          <dl class="m-doc">
+            <dt>
+              class <a href="class_resource_1_1c_resource_manager.html" class="m-doc">cResourceManager</a>
+            </dt>
+            <dd>The implementation of <a href="class_resource_1_1_i_resource_manager.html" class="m-doc">IResourceManager</a>; this should only be used for extending and detouring.</dd>
+            <dt>
+              class <a href="class_resource_1_1_database_packed_file.html" class="m-doc">DatabasePackedFile</a>
+            </dt>
+            <dd>A <a href="class_resource_1_1_database_packed_file.html" class="m-doc">DatabasePackedFile</a> is a type of file used in Spore to store and index multiple files inside a single container (usually in the .package extension).</dd>
+            <dt>
+              struct <a href="struct_resource_1_1_d_b_p_f_item.html" class="m-doc">DBPFItem</a>
+            </dt>
+            <dd>A structure that contains the metadata of a file stored in a DBPF, such as the offset in the package file and the size.</dd>
+            <dt>
+              class <a href="class_resource_1_1_i_p_f_record.html" class="m-doc">IPFRecord</a>
+            </dt>
+            <dd>This interface defines the methods required to access the data of a file contained in a DBPF.</dd>
+            <dt>
+              class <a href="class_resource_1_1_i_resource_container.html" class="m-doc">IResourceContainer</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              class <a href="class_resource_1_1_i_resource_factory.html" class="m-doc">IResourceFactory</a>
+            </dt>
+            <dd>An interface that can be used to create resources of certain types.</dd>
+            <dt>
+              class <a href="class_resource_1_1_i_resource_filter.html" class="m-doc">IResourceFilter</a>
+            </dt>
+            <dd>A generic interface used to filter <a href="struct_resource_key.html" class="m-doc">ResourceKey</a> objects.</dd>
+            <dt>
+              class <a href="class_resource_1_1_i_resource_manager.html" class="m-doc">IResourceManager</a>
+            </dt>
+            <dd><a href="class_resource_1_1_i_resource_manager.html" class="m-doc">IResourceManager</a> is a singleton class used to access resources in Spore&#x27;s file system.</dd>
+            <dt>
+              class <a href="class_resource_1_1_i_resource_map.html" class="m-doc">IResourceMap</a>
+            </dt>
+            <dd>An interface that is used to store resources in the cache.</dd>
+            <dt>
+              class <a href="class_resource_1_1_p_f_index_modifiable.html" class="m-doc">PFIndexModifiable</a>
+            </dt>
+            <dd>This class stores the metadata of all the files contained in a DBPF file.</dd>
+            <dt>
+              class <a href="class_resource_1_1_p_f_record_read.html" class="m-doc">PFRecordRead</a>
+            </dt>
+            <dd>This class is used to read the data of a file contained inside a DBPF.</dd>
+            <dt>
+              class <a href="class_resource_1_1_p_f_record_write.html" class="m-doc">PFRecordWrite</a>
+            </dt>
+            <dd>This class is used to write data to a file contained inside a DBPF.</dd>
+            <dt>
+              class <a href="class_resource_1_1_resource_object.html" class="m-doc">ResourceObject</a>
+            </dt>
+            <dd>A type of object that is used as a resource.</dd>
+            <dt>
+              class <a href="class_resource_1_1_special_resource_object.html" class="m-doc">SpecialResourceObject</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              class <a href="class_resource_1_1_standard_file_filter.html" class="m-doc">StandardFileFilter</a>
+            </dt>
+            <dd>The standard file filter which filters resources depending on the <a href="struct_resource_key.html" class="m-doc">ResourceKey</a>.</dd>
+            <dt>
+              class <a href="class_resource_1_1_threaded_object.html" class="m-doc">ThreadedObject</a>
+            </dt>
+            <dd><span></span></dd>
+          </dl>
+        </section>
+        <section id="typedef-members">
+          <h2><a href="#typedef-members">Typedefs</a></h2>
+          <dl class="m-doc">
+            <dt>
+              using <a href="#ab12e5000d7ef0108f3200a644b54a682" class="m-doc">DBPF</a> = <a href="class_resource_1_1_database_packed_file.html" class="m-doc">DatabasePackedFile</a>
+            </dt>
+            <dd>A short name for <a href="class_resource_1_1_database_packed_file.html" class="m-doc">DatabasePackedFile</a>.</dd>
+          </dl>
+        </section>
+        <section id="func-members">
+          <h2><a href="#func-members">Functions</a></h2>
+          <dl class="m-doc">
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#aa73d56cacd7148aa3ea35be658963a14" class="m-doc">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_resource_1_1c_resource_manager.html" class="m-doc">cResourceManager</a>) -&gt; namespace</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#afab6679e338fde8f7d579db55dfdf7c8" class="m-doc">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_resource_1_1_database_packed_file.html" class="m-doc">DatabasePackedFile</a>) -&gt; namespace</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a39eaf1e15069ef8eafe436e107b01f99" class="m-doc">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_resource_1_1_standard_file_filter.html" class="m-doc">StandardFileFilter</a>) -&gt; namespace</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper"><a href="#a998222bb0895745b50fb0d13d2c05f0d" class="m-doc">auto_METHOD</a>(</span><span class="m-doc-wrap"><a href="class_resource_1_1_standard_file_filter.html" class="m-doc">StandardFileFilter</a>,
+              bool,
+              IsValid,
+              <a href="_cpp_rev_eng_base_8h.html#aff12ecf140cc31d5335c3c978808c268" class="m-doc">Args</a>(const <a href="struct_resource_key.html" class="m-doc">ResourceKey</a>&amp;name),
+              <a href="_cpp_rev_eng_base_8h.html#aff12ecf140cc31d5335c3c978808c268" class="m-doc">Args</a>(name))</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a0152393969592e9390f9237d94845ae9" class="m-doc">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_resource_1_1_i_resource_manager.html" class="m-doc">IResourceManager</a>) -&gt; namespace</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a1ac10df2e618f7dfd29a97a59eea62bc" class="m-doc">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_resource_1_1_p_f_index_modifiable.html" class="m-doc">PFIndexModifiable</a>) -&gt; namespace</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#abac6f9c723bdeb025eb0803cd9d78bf5" class="m-doc">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_resource_1_1_p_f_record_read.html" class="m-doc">PFRecordRead</a>) -&gt; namespace</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#ab5edb14c32f7747226c6d764fb8bdc3f" class="m-doc">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_resource_1_1_p_f_record_write.html" class="m-doc">PFRecordWrite</a>) -&gt; namespace</span>
+            </dt>
+            <dd><span></span></dd>
+          </dl>
+        </section>
+        <section>
+          <h2>Typedef documentation</h2>
+          <section class="m-doc-details" id="ab12e5000d7ef0108f3200a644b54a682"><div>
+            <h3>
+              typedef <a href="class_resource_1_1_database_packed_file.html" class="m-doc">DatabasePackedFile</a> Resource::<wbr /><a href="#ab12e5000d7ef0108f3200a644b54a682" class="m-doc-self">DBPF</a>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="c_resource_manager_8h.html">&lt;Spore/Resource/cResourceManager.h&gt;</a></div>
+            </h3>
+            <p>A short name for <a href="class_resource_1_1_database_packed_file.html" class="m-doc">DatabasePackedFile</a>.</p>
+          </div></section>
+        </section>
+        <section>
+          <h2>Function documentation</h2>
+          <section class="m-doc-details" id="aa73d56cacd7148aa3ea35be658963a14"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">namespace Resource::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#aa73d56cacd7148aa3ea35be658963a14" class="m-doc-self">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_resource_1_1c_resource_manager.html" class="m-doc">cResourceManager</a>)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="c_resource_manager_8h.html">&lt;Spore/Resource/cResourceManager.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="afab6679e338fde8f7d579db55dfdf7c8"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">namespace Resource::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#afab6679e338fde8f7d579db55dfdf7c8" class="m-doc-self">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_resource_1_1_database_packed_file.html" class="m-doc">DatabasePackedFile</a>)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_database_packed_file_8h.html">&lt;Spore/Resource/DatabasePackedFile.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="a39eaf1e15069ef8eafe436e107b01f99"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">namespace Resource::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a39eaf1e15069ef8eafe436e107b01f99" class="m-doc-self">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_resource_1_1_standard_file_filter.html" class="m-doc">StandardFileFilter</a>)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_i_resource_filter_8h.html">&lt;Spore/Resource/IResourceFilter.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="a998222bb0895745b50fb0d13d2c05f0d"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"> Resource::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a998222bb0895745b50fb0d13d2c05f0d" class="m-doc-self">auto_METHOD</a>(</span><span class="m-doc-wrap"><a href="class_resource_1_1_standard_file_filter.html" class="m-doc">StandardFileFilter</a>,
+              bool,
+              IsValid,
+              <a href="_cpp_rev_eng_base_8h.html#aff12ecf140cc31d5335c3c978808c268" class="m-doc">Args</a>(const <a href="struct_resource_key.html" class="m-doc">ResourceKey</a>&amp;name),
+              <a href="_cpp_rev_eng_base_8h.html#aff12ecf140cc31d5335c3c978808c268" class="m-doc">Args</a>(name))</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_i_resource_filter_8h.html">&lt;Spore/Resource/IResourceFilter.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="a0152393969592e9390f9237d94845ae9"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">namespace Resource::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a0152393969592e9390f9237d94845ae9" class="m-doc-self">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_resource_1_1_i_resource_manager.html" class="m-doc">IResourceManager</a>)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_i_resource_manager_8h.html">&lt;Spore/Resource/IResourceManager.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="a1ac10df2e618f7dfd29a97a59eea62bc"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">namespace Resource::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a1ac10df2e618f7dfd29a97a59eea62bc" class="m-doc-self">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_resource_1_1_p_f_index_modifiable.html" class="m-doc">PFIndexModifiable</a>)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_p_f_index_modifiable_8h.html">&lt;Spore/Resource/PFIndexModifiable.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="abac6f9c723bdeb025eb0803cd9d78bf5"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">namespace Resource::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#abac6f9c723bdeb025eb0803cd9d78bf5" class="m-doc-self">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_resource_1_1_p_f_record_read.html" class="m-doc">PFRecordRead</a>)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_p_f_record_read_8h.html">&lt;Spore/Resource/PFRecordRead.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="ab5edb14c32f7747226c6d764fb8bdc3f"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">namespace Resource::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ab5edb14c32f7747226c6d764fb8bdc3f" class="m-doc-self">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_resource_1_1_p_f_record_write.html" class="m-doc">PFRecordWrite</a>)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_p_f_record_write_8h.html">&lt;Spore/Resource/PFRecordWrite.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+        </section>
+      </div>
+    </div>
+  </div>
+</article></main>
+<div class="m-doc-search" id="search">
+  <a href="#!" onclick="return hideSearch()"></a>
+  <div class="m-container">
+    <div class="m-row">
+      <div class="m-col-m-8 m-push-m-2">
+        <div class="m-doc-search-header m-text m-small">
+          <div><span class="m-label m-default">Tab</span> / <span class="m-label m-default">T</span> to search, <span class="m-label m-default">Esc</span> to close</div>
+          <div id="search-symbolcount">&hellip;</div>
+        </div>
+        <div class="m-doc-search-content">
+          <form>
+            <input type="search" name="q" id="search-input" placeholder="Loading &hellip;" disabled="disabled" autofocus="autofocus" autocomplete="off" spellcheck="false" />
+          </form>
+          <noscript class="m-text m-danger m-text-center">Unlike everything else in the docs, the search functionality <em>requires</em> JavaScript.</noscript>
+          <div id="search-help" class="m-text m-dim m-text-center">
+            <p class="m-noindent">Search for symbols, directories, files, pages or
+            modules. You can omit any prefix from the symbol or file path; adding a
+            <code>:</code> or <code>/</code> suffix lists all members of given symbol or
+            directory.</p>
+            <p class="m-noindent">Use <span class="m-label m-dim">&darr;</span>
+            / <span class="m-label m-dim">&uarr;</span> to navigate through the list,
+            <span class="m-label m-dim">Enter</span> to go.
+            <span class="m-label m-dim">Tab</span> autocompletes common prefix, you can
+            copy a link to the result using <span class="m-label m-dim">⌘</span>
+            <span class="m-label m-dim">L</span> while <span class="m-label m-dim">⌘</span>
+            <span class="m-label m-dim">M</span> produces a Markdown link.</p>
+          </div>
+          <div id="search-notfound" class="m-text m-warning m-text-center">Sorry, nothing was found.</div>
+          <ul id="search-results"></ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="search-v1.js"></script>
+<script src="searchdata-v1.js" async="async"></script>
+<footer><nav>
+  <div class="m-container">
+    <div class="m-row">
+      <div class="m-col-l-10 m-push-l-1">
+        <p>Spore ModAPI SDK for creating C++ mods for Spore. Created with <a href="https://doxygen.org/">Doxygen</a> 1.8.16 and <a href="https://mcss.mosra.cz/">m.css</a>.</p>
+      </div>
+    </div>
+  </div>
+</nav></footer>
+</body>
+</html>

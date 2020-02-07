@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>C++ Basics #5: Data Containers | Spore ModAPI SDK for creating C++ mods for Spore</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,600,600i%7CSource+Code+Pro:400,400i,600" />
+  <link rel="stylesheet" href="m-dark.css" />
+  <link rel="stylesheet" href="m-documentation.css" />
+  <link rel="icon" href="Spore_ModAPI_Icon.png" type="image/png" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#22272e" />
+</head>
+<body>
+<header><nav id="navigation">
+  <div class="m-container">
+    <div class="m-row">
+      <a href="index.html" id="m-navbar-brand" class="m-col-t-8 m-col-m-none m-left-m"><img src="Spore_ModAPI_Icon.png" />Spore ModAPI <span class="m-thin">SDK for creating C++ mods for Spore</span></a>
+      <div class="m-col-t-4 m-hide-m m-text-right m-nopadr">
+        <a href="#search" class="m-doc-search-icon" title="Search" onclick="return showSearch()"><svg style="height: 0.9rem;" viewBox="0 0 16 16">
+          <path id="m-doc-search-icon-path" d="m6 0c-3.31 0-6 2.69-6 6 0 3.31 2.69 6 6 6 1.49 0 2.85-0.541 3.89-1.44-0.0164 0.338 0.147 0.759 0.5 1.15l3.22 3.79c0.552 0.614 1.45 0.665 2 0.115 0.55-0.55 0.499-1.45-0.115-2l-3.79-3.22c-0.392-0.353-0.812-0.515-1.15-0.5 0.895-1.05 1.44-2.41 1.44-3.89 0-3.31-2.69-6-6-6zm0 1.56a4.44 4.44 0 0 1 4.44 4.44 4.44 4.44 0 0 1-4.44 4.44 4.44 4.44 0 0 1-4.44-4.44 4.44 4.44 0 0 1 4.44-4.44z"/>
+        </svg></a>
+        <a id="m-navbar-show" href="#navigation" title="Show navigation"></a>
+        <a id="m-navbar-hide" href="#" title="Hide navigation"></a>
+      </div>
+      <div id="m-navbar-collapse" class="m-col-t-12 m-show-m m-col-m-none m-right-m">
+        <div class="m-row">
+          <ol class="m-col-t-6 m-col-m-none">
+            <li><a href="pages.html">Tutorials</a></li>
+            <li><a href="namespaces.html">Namespaces</a></li>
+          </ol>
+          <ol class="m-col-t-6 m-col-m-none" start="3">
+            <li><a href="annotated.html">Classes</a></li>
+            <li><a href="files.html">Files</a></li>
+            <li class="m-show-m"><a href="#search" class="m-doc-search-icon" title="Search" onclick="return showSearch()"><svg style="height: 0.9rem;" viewBox="0 0 16 16">
+              <use href="#m-doc-search-icon-path" />
+            </svg></a></li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav></header>
+<main><article>
+  <div class="m-container m-container-inflatable">
+    <div class="m-row">
+      <div class="m-col-l-10 m-push-l-1">
+        <h1>
+          C++ Basics #5: Data Containers
+        </h1>
+        <p>The basic data containers: vector, map, set, stack, queue.</p>
+<p>Data containers are used to store a collection of elements. In C++ these containers are provided by the <strong>STL</strong> (Standard Library); Spore uses another library provided by EA called <strong>EASTL</strong>, but the containers are the same and used in the same way.</p><section id="_CppBasics5-Vector"><h2><a href="#_CppBasics5-Vector">Vectors</a></h2><p><a href="www.cplusplus.com/reference/vector/vector/">Vectors</a> are sequence containers representing arrays that can change in size. It&#x27;s a simple collection of elements stored in the order they are added. This is equivalent to <em>arrays</em> and <em>lists</em> in other programming languages. You declare it like <code>vector&lt;T&gt;</code>, where <code>T</code> is the type of elements stored in the vector, such as <code>int</code>.</p><aside class="m-note m-info"><h4>Note</h4><p>In standard C++, you need to do <code>std::vector</code>, or add <code>using namespace std;</code> in the file.</p></aside><p>If you just declare the vector, it will have no elements by default. You can initialize it with values using <code>{}</code>:</p><pre class="m-code"><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">v</span><span class="p">;</span>  <span class="c1">// no elements</span>
+
+<span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">v</span> <span class="o">=</span> <span class="p">{</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">19</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">4</span> <span class="p">};</span>  <span class="c1">// 4 elements</span></pre><p>You can access the elements of the vector with <code>[i]</code>, where <code>i</code> is the index of the element you want to access. These indices are 0-based, which means that 0 is the first element, 1 is the second,...</p><pre class="m-code"><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">v</span> <span class="o">=</span> <span class="p">{</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">19</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">4</span> <span class="p">};</span>  <span class="c1">// 4 elements</span>
+
+<span class="n">v</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="mi">7</span><span class="p">;</span>
+
+<span class="c1">// now v is { 3, 19, 7, -4 }</span></pre><p>You can get the number of elements that are in the vector by calling <code>.size()</code>. This can be used to iterate through all the elements in the vector.</p><pre class="m-code"><span class="c1">// Print all elements in the vector</span>
+<span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">v</span><span class="p">.</span><span class="n">size</span><span class="p">();</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">&quot;%d&quot;</span><span class="p">,</span> <span class="n">v</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
+<span class="p">}</span></pre><p>It&#x27;s also possible to use a <em>for-each</em> loop to iterate all elements. This code also prints all the elements:</p><pre class="m-code"><span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="nl">x</span> <span class="p">:</span> <span class="n">v</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">&quot;%d&quot;</span><span class="p">,</span> <span class="n">x</span><span class="p">);</span>
+<span class="p">}</span></pre><p>Finally, you can insert elements at the end of the vector by calling <code>.push_back(x)</code>, where <code>x</code> is the element that will be added. Similarly, you can remove the last element calling <code>.pop_back()</code>:</p><pre class="m-code"><span class="n">vector</span><span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;</span> <span class="n">v</span> <span class="o">=</span> <span class="p">{</span> <span class="s">&quot;asd&quot;</span> <span class="p">};</span>
+
+<span class="n">v</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="s">&quot;water&quot;</span><span class="p">);</span>
+<span class="c1">// Now v = { &quot;asd&quot;, &quot;water&quot; }</span>
+
+<span class="n">v</span><span class="p">.</span><span class="n">pop_back</span><span class="p">();</span>
+<span class="c1">// Now v = { &quot;asd&quot; };</span></pre></section><section id="CppBasics5-Map"><h2><a href="#CppBasics5-Map">Maps</a></h2><p><a href="http://www.cplusplus.com/reference/map/map/">Maps</a> are associative containers that store elements as a combination of a <em>key</em> and its <em>value</em>. To each <em>key</em> there is a <em>value</em> assigned. In other languages maps are known as <em>dictionaries</em>. You declare them like <code>map&lt;K, V&gt;</code>, where <code>K</code> is the type of the key and <code>V</code> the type of the values. By default they don&#x27;t have elements, but you can declare them with <code>{}</code>. Inside a map, elements are stored in order automatically.</p><pre class="m-code"><span class="c1">// This map assigns a string to every integer</span>
+<span class="n">map</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">,</span> <span class="n">string</span><span class="o">&gt;</span> <span class="n">m</span><span class="p">;</span>
+
+<span class="n">map</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">,</span> <span class="n">string</span><span class="o">&gt;</span> <span class="n">m</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="p">{</span> <span class="mi">5</span><span class="p">,</span> <span class="s">&quot;water&quot;</span> <span class="p">},</span>
+    <span class="p">{</span><span class="mi">192</span><span class="p">,</span> <span class="s">&quot;planet&quot;</span> <span class="p">}</span>
+<span class="p">};</span></pre><p>You can access elements using <code>[k]</code>, where <code>k</code> is a key; this will give you access to the value assigned to that key:</p><pre class="m-code"><span class="n">map</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">,</span> <span class="n">string</span><span class="o">&gt;</span> <span class="n">m</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="p">{</span> <span class="mi">5</span><span class="p">,</span> <span class="s">&quot;water&quot;</span> <span class="p">},</span>
+    <span class="p">{</span><span class="mi">192</span><span class="p">,</span> <span class="s">&quot;planet&quot;</span> <span class="p">}</span>
+<span class="p">};</span>
+
+<span class="c1">// Prints &quot;water&quot;</span>
+<span class="n">printf</span><span class="p">(</span><span class="n">m</span><span class="p">[</span><span class="mi">5</span><span class="p">]);</span>
+
+<span class="n">m</span><span class="p">[</span><span class="mi">13</span><span class="p">]</span> <span class="o">=</span> <span class="s">&quot;air&quot;</span><span class="p">;</span>
+<span class="c1">// Now the map will be {5, &quot;water&quot;}, {13, &quot;air&quot;}, {192, &quot;planet&quot;}</span></pre><p>You can iterate through all elements with a <em>for-each</em> loop. It will give you the elements ordered by the key, stored in <a href="http://www.cplusplus.com/reference/utility/pair/">pairs</a>, where <code>.first</code> is the key and <code>.second</code> is the value.</p><pre class="m-code"><span class="k">for</span> <span class="p">(</span><span class="k">auto</span> <span class="nl">x</span> <span class="p">:</span> <span class="n">m</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">&quot;%d: %s&quot;</span><span class="p">,</span> <span class="n">x</span><span class="p">.</span><span class="n">first</span><span class="p">,</span> <span class="n">x</span><span class="p">.</span><span class="n">second</span><span class="p">);</span>
+<span class="p">}</span></pre><p>You can check if a key has a value assigned like this:</p><pre class="m-code"><span class="k">if</span> <span class="p">(</span><span class="n">m</span><span class="p">.</span><span class="n">find</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span> <span class="o">!=</span> <span class="n">m</span><span class="p">.</span><span class="n">end</span><span class="p">())</span> <span class="p">{</span>
+    <span class="c1">// m[4] exists</span>
+<span class="p">}</span></pre><aside class="m-note m-info"><h4>Note</h4><p>If you don&#x27;t care about the order of the elements, using <code>hash_map</code> is more efficient.</p></aside></section><section id="CppBasics5-Set"><h2><a href="#CppBasics5-Set">Sets</a></h2><p><a href="http://www.cplusplus.com/reference/set/set/">Sets</a> store elements unique elements in order. You can iterate all its elements in ascendent order using a <em>for-each</em> loop. The key to sets is that elements are unique: if you have a set <code>{4, 5}</code> and insert another 5, the set will remain the same. You insert elements by calling <code>.insert(x)</code>; you can erase an element calling <code>.erase(x)</code>:</p><pre class="m-code"><span class="n">set</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">s</span> <span class="o">=</span> <span class="p">{</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">7</span><span class="p">};</span>
+
+<span class="n">s</span><span class="p">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">5</span><span class="p">);</span>
+<span class="n">s</span><span class="p">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">10</span><span class="p">);</span>
+<span class="n">s</span><span class="p">.</span><span class="n">erase</span><span class="p">(</span><span class="mi">4</span><span class="p">);</span>
+
+<span class="c1">// the set is now {3, 5, 7, 10}</span>
+
+<span class="k">if</span> <span class="p">(</span><span class="n">s</span><span class="p">.</span><span class="n">find</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span> <span class="o">!=</span> <span class="n">s</span><span class="p">.</span><span class="n">end</span><span class="p">())</span> <span class="p">{</span>
+    <span class="c1">// 4 is contained in the set</span>
+<span class="p">}</span></pre><aside class="m-note m-info"><h4>Note</h4><p>Finding an element in a set is faster than finding it in a vector.</p></aside></section><section id="CppBasics5-Stack"><h2><a href="#CppBasics5-Stack">Stacks &amp; Queues</a></h2><p><a href="http://www.cplusplus.com/reference/stack/stack/">Stacks</a> contain elements as <em>LIFO</em>: last in, first out. In a stack you cannot access elements using <code>[i]</code>; instead, you can only access the last element, calling <code>.top()</code>. You add an element at the top of the stack with <code>.push(x)</code> and remove the top element calling <code>.pop()</code>. <em>LIFO</em> means that the last element added will be the first one to be removed.</p><pre class="m-code"><span class="n">stack</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">s</span><span class="p">;</span>
+
+<span class="n">s</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="mi">4</span><span class="p">);</span>
+<span class="n">s</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="mi">5</span><span class="p">);</span>
+<span class="n">s</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="mi">200</span><span class="p">);</span>
+<span class="n">s</span><span class="p">.</span><span class="n">pop</span><span class="p">();</span>  <span class="c1">// Removes 200</span>
+
+<span class="c1">// This will print 5</span>
+<span class="n">printf</span><span class="p">(</span><span class="s">&quot;%d&quot;</span><span class="p">,</span> <span class="n">s</span><span class="p">.</span><span class="n">top</span><span class="p">());</span></pre><p><a href="http://www.cplusplus.com/reference/queue/queue/">Queues</a> are similar to stacks, but they are <em>FIFO</em>: first in, first out. This means that the first element you added will be the first one to be removed; elements will be removed in the order they were added. You can only access the first element, using <code>.front()</code>:</p><pre class="m-code"><span class="n">queue</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">q</span><span class="p">;</span>
+
+<span class="n">q</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="mi">4</span><span class="p">);</span>
+<span class="n">q</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="mi">5</span><span class="p">);</span>
+<span class="n">q</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="mi">200</span><span class="p">);</span>
+
+<span class="c1">// This will print 4</span>
+<span class="n">printf</span><span class="p">(</span><span class="s">&quot;%d&quot;</span><span class="p">,</span> <span class="n">q</span><span class="p">.</span><span class="n">front</span><span class="p">());</span>
+
+<span class="n">q</span><span class="p">.</span><span class="n">pop</span><span class="p">();</span>  <span class="c1">// Removes 4</span>
+
+<span class="c1">// This will print 5</span>
+<span class="n">printf</span><span class="p">(</span><span class="s">&quot;%d&quot;</span><span class="p">,</span> <span class="n">q</span><span class="p">.</span><span class="n">front</span><span class="p">());</span></pre><aside class="m-note m-info"><h4>Note</h4><p>Stacks &amp; queues usually aren&#x27;t used to store data, but they are very useful for certain algorithms.</p></aside></section>
+      </div>
+    </div>
+  </div>
+</article></main>
+<div class="m-doc-search" id="search">
+  <a href="#!" onclick="return hideSearch()"></a>
+  <div class="m-container">
+    <div class="m-row">
+      <div class="m-col-m-8 m-push-m-2">
+        <div class="m-doc-search-header m-text m-small">
+          <div><span class="m-label m-default">Tab</span> / <span class="m-label m-default">T</span> to search, <span class="m-label m-default">Esc</span> to close</div>
+          <div id="search-symbolcount">&hellip;</div>
+        </div>
+        <div class="m-doc-search-content">
+          <form>
+            <input type="search" name="q" id="search-input" placeholder="Loading &hellip;" disabled="disabled" autofocus="autofocus" autocomplete="off" spellcheck="false" />
+          </form>
+          <noscript class="m-text m-danger m-text-center">Unlike everything else in the docs, the search functionality <em>requires</em> JavaScript.</noscript>
+          <div id="search-help" class="m-text m-dim m-text-center">
+            <p class="m-noindent">Search for symbols, directories, files, pages or
+            modules. You can omit any prefix from the symbol or file path; adding a
+            <code>:</code> or <code>/</code> suffix lists all members of given symbol or
+            directory.</p>
+            <p class="m-noindent">Use <span class="m-label m-dim">&darr;</span>
+            / <span class="m-label m-dim">&uarr;</span> to navigate through the list,
+            <span class="m-label m-dim">Enter</span> to go.
+            <span class="m-label m-dim">Tab</span> autocompletes common prefix, you can
+            copy a link to the result using <span class="m-label m-dim">⌘</span>
+            <span class="m-label m-dim">L</span> while <span class="m-label m-dim">⌘</span>
+            <span class="m-label m-dim">M</span> produces a Markdown link.</p>
+          </div>
+          <div id="search-notfound" class="m-text m-warning m-text-center">Sorry, nothing was found.</div>
+          <ul id="search-results"></ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="search-v1.js"></script>
+<script src="searchdata-v1.js" async="async"></script>
+<footer><nav>
+  <div class="m-container">
+    <div class="m-row">
+      <div class="m-col-l-10 m-push-l-1">
+        <p>Spore ModAPI SDK for creating C++ mods for Spore. Created with <a href="https://doxygen.org/">Doxygen</a> 1.8.16 and <a href="https://mcss.mosra.cz/">m.css</a>.</p>
+      </div>
+    </div>
+  </div>
+</nav></footer>
+</body>
+</html>

@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>IO::MemoryStream class | Spore ModAPI SDK for creating C++ mods for Spore</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,600,600i%7CSource+Code+Pro:400,400i,600" />
+  <link rel="stylesheet" href="m-dark.css" />
+  <link rel="stylesheet" href="m-documentation.css" />
+  <link rel="icon" href="Spore_ModAPI_Icon.png" type="image/png" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#22272e" />
+</head>
+<body>
+<header><nav id="navigation">
+  <div class="m-container">
+    <div class="m-row">
+      <a href="index.html" id="m-navbar-brand" class="m-col-t-8 m-col-m-none m-left-m"><img src="Spore_ModAPI_Icon.png" />Spore ModAPI <span class="m-thin">SDK for creating C++ mods for Spore</span></a>
+      <div class="m-col-t-4 m-hide-m m-text-right m-nopadr">
+        <a href="#search" class="m-doc-search-icon" title="Search" onclick="return showSearch()"><svg style="height: 0.9rem;" viewBox="0 0 16 16">
+          <path id="m-doc-search-icon-path" d="m6 0c-3.31 0-6 2.69-6 6 0 3.31 2.69 6 6 6 1.49 0 2.85-0.541 3.89-1.44-0.0164 0.338 0.147 0.759 0.5 1.15l3.22 3.79c0.552 0.614 1.45 0.665 2 0.115 0.55-0.55 0.499-1.45-0.115-2l-3.79-3.22c-0.392-0.353-0.812-0.515-1.15-0.5 0.895-1.05 1.44-2.41 1.44-3.89 0-3.31-2.69-6-6-6zm0 1.56a4.44 4.44 0 0 1 4.44 4.44 4.44 4.44 0 0 1-4.44 4.44 4.44 4.44 0 0 1-4.44-4.44 4.44 4.44 0 0 1 4.44-4.44z"/>
+        </svg></a>
+        <a id="m-navbar-show" href="#navigation" title="Show navigation"></a>
+        <a id="m-navbar-hide" href="#" title="Hide navigation"></a>
+      </div>
+      <div id="m-navbar-collapse" class="m-col-t-12 m-show-m m-col-m-none m-right-m">
+        <div class="m-row">
+          <ol class="m-col-t-6 m-col-m-none">
+            <li><a href="pages.html">Tutorials</a></li>
+            <li><a href="namespaces.html">Namespaces</a></li>
+          </ol>
+          <ol class="m-col-t-6 m-col-m-none" start="3">
+            <li><a href="annotated.html">Classes</a></li>
+            <li><a href="files.html">Files</a></li>
+            <li class="m-show-m"><a href="#search" class="m-doc-search-icon" title="Search" onclick="return showSearch()"><svg style="height: 0.9rem;" viewBox="0 0 16 16">
+              <use href="#m-doc-search-icon-path" />
+            </svg></a></li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav></header>
+<main><article>
+  <div class="m-container m-container-inflatable">
+    <div class="m-row">
+      <div class="m-col-l-10 m-push-l-1">
+        <h1>
+          <span class="m-breadcrumb"><a href="namespace_i_o.html">IO</a>::<wbr/></span>MemoryStream <span class="m-thin">class</span>
+          <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_stream_memory_8h.html">&lt;Spore/IO/StreamMemory.h&gt;</a></div>
+        </h1>
+        <p>Implements an memory-based stream that supports the <a href="class_i_o_1_1_i_stream.html" class="m-doc">IStream</a> interface.</p>
+        <div class="m-block m-default">
+          <h3>Contents</h3>
+          <ul>
+            <li>
+              Reference
+              <ul>
+                <li><a href="#base-classes">Base classes</a></li>
+                <li><a href="#pub-types">Public types</a></li>
+                <li><a href="#pub-static-attribs">Public static variables</a></li>
+                <li><a href="#typeless-methods">Constructors, destructors, conversion operators</a></li>
+                <li><a href="#pub-methods">Public functions</a></li>
+                <li><a href="#pro-attribs">Protected variables</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+<p>This class is not inherently thread-safe. As a result, thread-safe usage between multiple threads requires higher level coordination, such as a mutex.</p>
+        <section id="base-classes">
+          <h2><a href="#base-classes">Base classes</a></h2>
+          <dl class="m-doc">
+            <dt>
+              class <a href="class_i_o_1_1_i_stream.html" class="m-doc">IStream</a>
+            </dt>
+            <dd><span></span></dd>
+          </dl>
+        </section>
+        <section id="pub-types">
+          <h2><a href="#pub-types">Public types</a></h2>
+          <dl class="m-doc">
+            <dt>
+              <span class="m-doc-wrap-bumper">enum <a href="#a664f4b98199ef11661f2a359bad2d68f" class="m-doc">Options</a> { </span><span class="m-doc-wrap"><a href="#a664f4b98199ef11661f2a359bad2d68fa0ba71f41bc1610269fb9f8a6fe490828" class="m-doc">kOptionNone</a> = 0,
+              <a href="#a664f4b98199ef11661f2a359bad2d68fafac95649a44248c73d19b499af61cf16" class="m-doc">kOptionResizeEnabled</a> = 1,
+              <a href="#a664f4b98199ef11661f2a359bad2d68fae101c736116dc622430a46d36f1a0b6e" class="m-doc">kOptionResizeFactor</a> = 2,
+              <a href="#a664f4b98199ef11661f2a359bad2d68fa6313e1f6b4098dc95e6621c918b1f4ff" class="m-doc">kOptionResizeIncrement</a> = 3,
+              <a href="#a664f4b98199ef11661f2a359bad2d68fad37a67b3fdbeebfe08de919ff80084dd" class="m-doc">kOptionClearNewMemory</a> = 4 }</span>
+            </dt>
+            <dd>enum Options Specifies policies regarding the internal operation of this class.</dd>
+            <dt id="aa72db1b9f1d87e6281be6d6ef6992cd0">
+              using <a href="#aa72db1b9f1d87e6281be6d6ef6992cd0" class="m-doc-self">Allocator</a> = <a href="class_i_core_allocator.html" class="m-doc">ICoreAllocator</a>
+            </dt>
+            <dd><span></span></dd>
+          </dl>
+        </section>
+        <section id="pub-static-attribs">
+          <h2><a href="#pub-static-attribs">Public static variables</a></h2>
+          <dl class="m-doc">
+            <dt id="a305744fb9b75f315ac61e685cf0bfd38">
+              static const uint32_t <a href="#a305744fb9b75f315ac61e685cf0bfd38" class="m-doc-self">kType</a>
+            </dt>
+            <dd><span></span></dd>
+          </dl>
+        </section>
+        <section id="typeless-methods">
+          <h2><a href="#typeless-methods">Constructors, destructors, conversion operators</a></h2>
+          <dl class="m-doc">
+            <dt id="a0c2fc1bfcf1391688928e27fe2274e39">
+              <span class="m-doc-wrap-bumper"><a href="#a0c2fc1bfcf1391688928e27fe2274e39" class="m-doc-self">MemoryStream</a>(</span><span class="m-doc-wrap">const char* pName = NULL)</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="ae996ccb26a1164b7a190835eb55bff2e">
+              <span class="m-doc-wrap-bumper"><a href="#ae996ccb26a1164b7a190835eb55bff2e" class="m-doc-self">MemoryStream</a>(</span><span class="m-doc-wrap"><a href="class_i_o_1_1_shared_pointer.html" class="m-doc">SharedPointer</a>* pSharedPointer = NULL,
+              <a href="namespace_i_o.html#a93e482d5d18014e9184bfabe5a1a6e07" class="m-doc">size_<wbr />type</a> nSize = 0,
+              const char* pName = NULL)</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a7dd148b48a5470a46be8dcb6742cf45a">
+              <span class="m-doc-wrap-bumper"><a href="#a7dd148b48a5470a46be8dcb6742cf45a" class="m-doc-self">MemoryStream</a>(</span><span class="m-doc-wrap">void* pData,
+              <a href="namespace_i_o.html#a93e482d5d18014e9184bfabe5a1a6e07" class="m-doc">size_<wbr />type</a> nSize,
+              bool bUsePointer,
+              bool bFreePointer = true,
+              <a href="class_i_o_1_1_memory_stream.html#aa72db1b9f1d87e6281be6d6ef6992cd0" class="m-doc">Allocator</a>* pAllocator = NULL,
+              const char* pName = NULL)</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a0fde39faf9f5c15b8f66c458ee8954e5">
+              <span class="m-doc-wrap-bumper"><a href="#a0fde39faf9f5c15b8f66c458ee8954e5" class="m-doc-self">~MemoryStream</a>(</span><span class="m-doc-wrap">)</span>
+            </dt>
+            <dd><span></span></dd>
+          </dl>
+        </section>
+        <section id="pub-methods">
+          <h2><a href="#pub-methods">Public functions</a></h2>
+          <dl class="m-doc">
+            <dt id="a2170a4700723f092eed861f4903ff6dc">
+              <span class="m-doc-wrap-bumper">auto <a href="#a2170a4700723f092eed861f4903ff6dc" class="m-doc-self">GetOption</a>(</span><span class="m-doc-wrap"><a href="class_i_o_1_1_memory_stream.html#a664f4b98199ef11661f2a359bad2d68f" class="m-doc">Options</a> option) const -&gt; float</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a9600ac3ffc60c89de4ba088f89eddefe">
+              <span class="m-doc-wrap-bumper">void <a href="#a9600ac3ffc60c89de4ba088f89eddefe" class="m-doc-self">SetOption</a>(</span><span class="m-doc-wrap"><a href="class_i_o_1_1_memory_stream.html#a664f4b98199ef11661f2a359bad2d68f" class="m-doc">Options</a> option,
+              float fValue)</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="af9d7c3eb7b9d7f647ef01c398b8fda83">
+              <span class="m-doc-wrap-bumper">auto <a href="#af9d7c3eb7b9d7f647ef01c398b8fda83" class="m-doc-self">GetSharedPointer</a>(</span><span class="m-doc-wrap">) -&gt; <a href="class_i_o_1_1_shared_pointer.html" class="m-doc">SharedPointer</a>*</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="abad1e25c8e43a9fab09638f4a21857d9">
+              <span class="m-doc-wrap-bumper">auto <a href="#abad1e25c8e43a9fab09638f4a21857d9" class="m-doc-self">GetData</a>(</span><span class="m-doc-wrap">) const -&gt; void*</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="aa736b159e4135c1f8f30b1883a7a254c">
+              <span class="m-doc-wrap-bumper">auto <a href="#aa736b159e4135c1f8f30b1883a7a254c" class="m-doc-self">SetData</a>(</span><span class="m-doc-wrap"><a href="class_i_o_1_1_shared_pointer.html" class="m-doc">SharedPointer</a>* pSharedPointer,
+              <a href="namespace_i_o.html#a93e482d5d18014e9184bfabe5a1a6e07" class="m-doc">size_<wbr />type</a> nSize) -&gt; bool</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a1b6e12776eeb860cfe98f198921169bf">
+              <span class="m-doc-wrap-bumper">auto <a href="#a1b6e12776eeb860cfe98f198921169bf" class="m-doc-self">SetDataRaw</a>(</span><span class="m-doc-wrap">void* pData,
+              <a href="namespace_i_o.html#a93e482d5d18014e9184bfabe5a1a6e07" class="m-doc">size_<wbr />type</a> nSize,
+              bool bUsePointer,
+              bool bFreePointer = true,
+              <a href="class_i_o_1_1_memory_stream.html#aa72db1b9f1d87e6281be6d6ef6992cd0" class="m-doc">Allocator</a>* pAllocator = NULL) -&gt; bool</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a10304277e64363498af1400e26407499">
+              <span class="m-doc-wrap-bumper">auto <a href="#a10304277e64363498af1400e26407499" class="m-doc-self">AddRef</a>(</span><span class="m-doc-wrap">) -&gt; int <span class="m-label m-flat m-warning">override</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a967916ae38f4587b62ae6758f03a6f80">
+              <span class="m-doc-wrap-bumper">auto <a href="#a967916ae38f4587b62ae6758f03a6f80" class="m-doc-self">Release</a>(</span><span class="m-doc-wrap">) -&gt; int <span class="m-label m-flat m-warning">override</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#ab6be40371724b70cee155eb196ae36b4" class="m-doc">GetType</a>(</span><span class="m-doc-wrap">) const -&gt; uint32_t <span class="m-label m-flat m-warning">override</span></span>
+            </dt>
+            <dd>Returns the type of the stream, which is different for each Stream subclass.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a7918471499284f1c06084bacf1bacd17" class="m-doc">GetAccessFlags</a>(</span><span class="m-doc-wrap">) const -&gt; int <span class="m-label m-flat m-warning">override</span></span>
+            </dt>
+            <dd>Returns one of enum AccessFlags.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a79b28d30e1af176f03384df4e5e63b25" class="m-doc">GetState</a>(</span><span class="m-doc-wrap">) const -&gt; <a href="namespace_i_o.html#a5e58fc53b7c9d1ef2c2c8f0ce59d659d" class="m-doc">FileError</a> <span class="m-label m-flat m-warning">override</span></span>
+            </dt>
+            <dd>Returns the error state of the stream.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#aac582260ef8cf329de00ca0e718058f2" class="m-doc">Close</a>(</span><span class="m-doc-wrap">) -&gt; bool <span class="m-label m-flat m-warning">override</span></span>
+            </dt>
+            <dd>Closes the stream and releases resouces associated with it.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a435170b378dc137d99880d2e52f1066f" class="m-doc">GetSize</a>(</span><span class="m-doc-wrap">) const -&gt; <a href="namespace_i_o.html#a93e482d5d18014e9184bfabe5a1a6e07" class="m-doc">size_<wbr />type</a> <span class="m-label m-flat m-warning">override</span></span>
+            </dt>
+            <dd>Returns the size of the stream, which is not the same as the size of bytes remaining to be read from the stream.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#ad78df3eb8b795796bb19bd666aee1985" class="m-doc">SetSize</a>(</span><span class="m-doc-wrap"><a href="namespace_i_o.html#a93e482d5d18014e9184bfabe5a1a6e07" class="m-doc">size_<wbr />type</a> size) -&gt; bool <span class="m-label m-flat m-warning">override</span></span>
+            </dt>
+            <dd>Sets the size of the stream, if possible.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a20c879b64cff86ceca54eed96ac9c963" class="m-doc">GetPosition</a>(</span><span class="m-doc-wrap"><a href="namespace_i_o.html#ae8092ef26cdcadafcb368e9914fce400" class="m-doc">PositionType</a> positionType = <a href="namespace_i_o.html#ae8092ef26cdcadafcb368e9914fce400aec274c84c558b69dfc1858338c38b7cc" class="m-doc">kPositionTypeBegin</a>) const -&gt; int <span class="m-label m-flat m-warning">override</span></span>
+            </dt>
+            <dd>Gets the current read/write position within the stream.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#aed4259efafd9de99570481661e397687" class="m-doc">SetPosition</a>(</span><span class="m-doc-wrap">int distance,
+              <a href="namespace_i_o.html#ae8092ef26cdcadafcb368e9914fce400" class="m-doc">PositionType</a> positionType = <a href="namespace_i_o.html#ae8092ef26cdcadafcb368e9914fce400aec274c84c558b69dfc1858338c38b7cc" class="m-doc">kPositionTypeBegin</a>) -&gt; bool <span class="m-label m-flat m-warning">override</span></span>
+            </dt>
+            <dd>Sets the read/write position of the stream.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a0e0a57c5d9eaad4abe2e52d9a11c517f" class="m-doc">GetAvailable</a>(</span><span class="m-doc-wrap">) const -&gt; int <span class="m-label m-flat m-warning">override</span></span>
+            </dt>
+            <dd>Returns the number of bytes available for reading.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#af55918bd132a16f1f9a725ce588a6cfa" class="m-doc">Read</a>(</span><span class="m-doc-wrap">void* pData,
+              size_t nSize) -&gt; int <span class="m-label m-flat m-warning">override</span></span>
+            </dt>
+            <dd>Reads bytes from the stream given by the input count &#x27;nSize&#x27;.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#ac3e36af6dcdba1158623b2be40fdad94" class="m-doc">Flush</a>(</span><span class="m-doc-wrap">) -&gt; bool <span class="m-label m-flat m-warning">override</span></span>
+            </dt>
+            <dd>Flush any non-empty stream write buffers.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#aa18893cac6ebb25faebf488ca8545c9e" class="m-doc">Write</a>(</span><span class="m-doc-wrap">const void* pData,
+              size_t nSize) -&gt; int <span class="m-label m-flat m-warning">override</span></span>
+            </dt>
+            <dd>Writes bytes to the stream.</dd>
+          </dl>
+        </section>
+        <section id="pro-attribs">
+          <h2><a href="#pro-attribs">Protected variables</a></h2>
+          <dl class="m-doc">
+            <dt id="a1be18681398a4571b6f4e097321020fb">
+              <a href="class_i_o_1_1_shared_pointer.html" class="m-doc">SharedPointer</a>* <a href="#a1be18681398a4571b6f4e097321020fb" class="m-doc-self">mpSharedPointer</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="ae1a6b2e045862cd35b266579d8403c77">
+              int <a href="#ae1a6b2e045862cd35b266579d8403c77" class="m-doc-self">mnRefCount</a>
+            </dt>
+            <dd>Pointer to memory block.</dd>
+            <dt id="ab75d431186a138ad624563a16ad98ffe">
+              <a href="namespace_i_o.html#a93e482d5d18014e9184bfabe5a1a6e07" class="m-doc">size_<wbr />type</a> <a href="#ab75d431186a138ad624563a16ad98ffe" class="m-doc-self">mnSize</a>
+            </dt>
+            <dd>Reference count. May or may not be in use.</dd>
+            <dt id="a51ee721d7826c7ee2496f562d8ee689b">
+              <a href="namespace_i_o.html#a93e482d5d18014e9184bfabe5a1a6e07" class="m-doc">size_<wbr />type</a> <a href="#a51ee721d7826c7ee2496f562d8ee689b" class="m-doc-self">mnCapacity</a>
+            </dt>
+            <dd>The size of the stream, in bytes.</dd>
+            <dt id="a27a3618dd1e84f8d68e863fc1d771328">
+              <a href="namespace_i_o.html#a93e482d5d18014e9184bfabe5a1a6e07" class="m-doc">size_<wbr />type</a> <a href="#a27a3618dd1e84f8d68e863fc1d771328" class="m-doc-self">mnPosition</a>
+            </dt>
+            <dd>The size of the memory buffer, in bytes.</dd>
+            <dt id="ad6730ccc79c765795c4afa0966c6fb34">
+              bool <a href="#ad6730ccc79c765795c4afa0966c6fb34" class="m-doc-self">mbResizeEnabled</a>
+            </dt>
+            <dd>Current position within memory block.</dd>
+            <dt id="a8a66665121b928da5db6ec77152100c6">
+              bool <a href="#a8a66665121b928da5db6ec77152100c6" class="m-doc-self">mbClearNewMemory</a>
+            </dt>
+            <dd>True if resizing is enabled.</dd>
+            <dt id="a3a8faf51ea91eaa94b981756fdc0202e">
+              float <a href="#a3a8faf51ea91eaa94b981756fdc0202e" class="m-doc-self">mfResizeFactor</a>
+            </dt>
+            <dd>True if clearing of newly allocated memory is enabled.</dd>
+            <dt id="aad126d50047755f3a43c5d74e426c04d">
+              int <a href="#aad126d50047755f3a43c5d74e426c04d" class="m-doc-self">mnResizeIncrement</a>
+            </dt>
+            <dd>Specifies how capacity is increased.</dd>
+          </dl>
+        </section>
+        <section>
+          <h2>Enum documentation</h2>
+          <section class="m-doc-details" id="a664f4b98199ef11661f2a359bad2d68f"><div>
+            <h3>
+              enum IO::<wbr />MemoryStream::<wbr /><a href="#a664f4b98199ef11661f2a359bad2d68f" class="m-doc-self">Options</a>
+            </h3>
+            <p>enum Options Specifies policies regarding the internal operation of this class.</p>
+            <table class="m-table m-fullwidth m-flat m-doc">
+              <thead><tr><th style="width: 1%">Enumerators</th><th></th></tr></thead>
+              <tbody>
+                <tr>
+                  <td><a href="#a664f4b98199ef11661f2a359bad2d68fa0ba71f41bc1610269fb9f8a6fe490828" class="m-doc-self" id="a664f4b98199ef11661f2a359bad2d68fa0ba71f41bc1610269fb9f8a6fe490828">kOptionNone</a></td>
+                  <td>
+                  <p><span></span></p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a664f4b98199ef11661f2a359bad2d68fafac95649a44248c73d19b499af61cf16" class="m-doc-self" id="a664f4b98199ef11661f2a359bad2d68fafac95649a44248c73d19b499af61cf16">kOptionResizeEnabled</a></td>
+                  <td>
+                  <p>No options.</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a664f4b98199ef11661f2a359bad2d68fae101c736116dc622430a46d36f1a0b6e" class="m-doc-self" id="a664f4b98199ef11661f2a359bad2d68fae101c736116dc622430a46d36f1a0b6e">kOptionResizeFactor</a></td>
+                  <td>
+                  <p>0 or 1. Default is disabled. If set, then the buffer is automatically resized on beyond-bounds position sets, beyond-bounds writes, and beyond-bounds SetSize calls.</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a664f4b98199ef11661f2a359bad2d68fa6313e1f6b4098dc95e6621c918b1f4ff" class="m-doc-self" id="a664f4b98199ef11661f2a359bad2d68fa6313e1f6b4098dc95e6621c918b1f4ff">kOptionResizeIncrement</a></td>
+                  <td>
+                  <p>1.0+ Default is 1.5. Specifies how much a resize multiplies in size; is applied before kOptionResizeIncrement. Can be 1.0 if kOptionResizeIncrement &gt; 0.</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a664f4b98199ef11661f2a359bad2d68fad37a67b3fdbeebfe08de919ff80084dd" class="m-doc-self" id="a664f4b98199ef11661f2a359bad2d68fad37a67b3fdbeebfe08de919ff80084dd">kOptionClearNewMemory</a></td>
+                  <td>
+                  <p>0.0+ Default is 0.0. Specifies how much a resize increments; is applied after kOptionResizeFactor. Can be set to zero if kOptionResizeFactor is &gt; 1.</p>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div></section>
+        </section>
+        <section>
+          <h2>Function documentation</h2>
+          <section class="m-doc-details" id="ab6be40371724b70cee155eb196ae36b4"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">uint32_t IO::<wbr />MemoryStream::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ab6be40371724b70cee155eb196ae36b4" class="m-doc-self">GetType</a>(</span><span class="m-doc-wrap">) const <span class="m-label m-warning">override</span></span></span>
+            </h3>
+            <p>Returns the type of the stream, which is different for each Stream subclass.</p>
+<p>This function can be used for run-time type identification. A type of zero means the type is unknown or invalid.</p>
+          </div></section>
+          <section class="m-doc-details" id="a7918471499284f1c06084bacf1bacd17"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">int IO::<wbr />MemoryStream::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a7918471499284f1c06084bacf1bacd17" class="m-doc-self">GetAccessFlags</a>(</span><span class="m-doc-wrap">) const <span class="m-label m-warning">override</span></span></span>
+            </h3>
+            <p>Returns one of enum AccessFlags.</p>
+<p>This function also tells you if the stream is open, as a return value of zero means the stream is not open. It is not allowed that a stream<br />be open with no type of access.</p>
+          </div></section>
+          <section class="m-doc-details" id="a79b28d30e1af176f03384df4e5e63b25"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"><a href="namespace_i_o.html#a5e58fc53b7c9d1ef2c2c8f0ce59d659d" class="m-doc">FileError</a> IO::<wbr />MemoryStream::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a79b28d30e1af176f03384df4e5e63b25" class="m-doc-self">GetState</a>(</span><span class="m-doc-wrap">) const <span class="m-label m-warning">override</span></span></span>
+            </h3>
+            <p>Returns the error state of the stream.</p>
+<p>Returns <a href="namespace_i_o.html#a5e58fc53b7c9d1ef2c2c8f0ce59d659da505a83f220c02df2f85c3810cd9ceb38" class="m-doc">FileError::<wbr />Success</a> if OK, else an error code. This function is similar to &#x27;errno&#x27; or a &#x27;get last error&#x27; facility.</p>
+          </div></section>
+          <section class="m-doc-details" id="aac582260ef8cf329de00ca0e718058f2"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">bool IO::<wbr />MemoryStream::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#aac582260ef8cf329de00ca0e718058f2" class="m-doc-self">Close</a>(</span><span class="m-doc-wrap">) <span class="m-label m-warning">override</span></span></span>
+            </h3>
+            <p>Closes the stream and releases resouces associated with it.</p>
+<p>Returns true upon success, else false. If the return value is false, GetState will give the error code. If an <a href="class_i_o_1_1_i_stream.html" class="m-doc">IStream</a> encounters an error during operations on an open stream, it is guaranteed that you can safely call the Close function on the stream.</p>
+          </div></section>
+          <section class="m-doc-details" id="a435170b378dc137d99880d2e52f1066f"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"><a href="namespace_i_o.html#a93e482d5d18014e9184bfabe5a1a6e07" class="m-doc">size_<wbr />type</a> IO::<wbr />MemoryStream::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a435170b378dc137d99880d2e52f1066f" class="m-doc-self">GetSize</a>(</span><span class="m-doc-wrap">) const <span class="m-label m-warning">override</span></span></span>
+            </h3>
+            <p>Returns the size of the stream, which is not the same as the size of bytes remaining to be read from the stream.</p>
+<p>Returns (size_type)-2 if the stream is of indeterminate size. Returns (size_type)-1 (a.k.a. kSizeTypeError) upon error.</p>
+          </div></section>
+          <section class="m-doc-details" id="ad78df3eb8b795796bb19bd666aee1985"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">bool IO::<wbr />MemoryStream::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ad78df3eb8b795796bb19bd666aee1985" class="m-doc-self">SetSize</a>(</span><span class="m-doc-wrap"><a href="namespace_i_o.html#a93e482d5d18014e9184bfabe5a1a6e07" class="m-doc">size_<wbr />type</a> size) <span class="m-label m-warning">override</span></span></span>
+            </h3>
+            <p>Sets the size of the stream, if possible.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">size</td>
+                  <td></td>
+                </tr>
+              </tbody>
+            </table>
+<p>It is debatable whether this function should be present in <a href="class_i_o_1_1_i_stream.html" class="m-doc">IStream</a> or only in suclasses of StreamBase which are writable. For consistency with GetSize, we put the function here. But also consider that a SetSize function is not necessarily a data writing function, depending on the stream implementation.</p>
+          </div></section>
+          <section class="m-doc-details" id="a20c879b64cff86ceca54eed96ac9c963"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">int IO::<wbr />MemoryStream::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a20c879b64cff86ceca54eed96ac9c963" class="m-doc-self">GetPosition</a>(</span><span class="m-doc-wrap"><a href="namespace_i_o.html#ae8092ef26cdcadafcb368e9914fce400" class="m-doc">PositionType</a> positionType = <a href="namespace_i_o.html#ae8092ef26cdcadafcb368e9914fce400aec274c84c558b69dfc1858338c38b7cc" class="m-doc">kPositionTypeBegin</a>) const <span class="m-label m-warning">override</span></span></span>
+            </h3>
+            <p>Gets the current read/write position within the stream.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">positionType</td>
+                  <td></td>
+                </tr>
+              </tbody>
+            </table>
+<p>The read and write positions of a stream must be the same value; you cannot have a read position that is different from a write position. However, a Stream subclass can provide such functionality if needed. Returns -1 upon error.</p>
+          </div></section>
+          <section class="m-doc-details" id="aed4259efafd9de99570481661e397687"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">bool IO::<wbr />MemoryStream::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#aed4259efafd9de99570481661e397687" class="m-doc-self">SetPosition</a>(</span><span class="m-doc-wrap">int distance,
+              <a href="namespace_i_o.html#ae8092ef26cdcadafcb368e9914fce400" class="m-doc">PositionType</a> positionType = <a href="namespace_i_o.html#ae8092ef26cdcadafcb368e9914fce400aec274c84c558b69dfc1858338c38b7cc" class="m-doc">kPositionTypeBegin</a>) <span class="m-label m-warning">override</span></span></span>
+            </h3>
+            <p>Sets the read/write position of the stream.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">distance</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>positionType</td>
+                  <td></td>
+                </tr>
+              </tbody>
+            </table>
+<p>If the specified position is beyond the size of a fixed stream, the position is set to the end of the stream. A writable stream subclass may provide a policy whereby setting the position beyond the end of the stream results in an increase in the stream size.</p>
+          </div></section>
+          <section class="m-doc-details" id="a0e0a57c5d9eaad4abe2e52d9a11c517f"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">int IO::<wbr />MemoryStream::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a0e0a57c5d9eaad4abe2e52d9a11c517f" class="m-doc-self">GetAvailable</a>(</span><span class="m-doc-wrap">) const <span class="m-label m-warning">override</span></span></span>
+            </h3>
+            <p>Returns the number of bytes available for reading.</p>
+<p>Returns (size_type)-1 (a.k.a. kSizeTypeError) upon error. This function is non-blocking; it should return immediately.</p>
+          </div></section>
+          <section class="m-doc-details" id="af55918bd132a16f1f9a725ce588a6cfa"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">int IO::<wbr />MemoryStream::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#af55918bd132a16f1f9a725ce588a6cfa" class="m-doc-self">Read</a>(</span><span class="m-doc-wrap">void* pData,
+              size_t nSize) <span class="m-label m-warning">override</span></span></span>
+            </h3>
+            <p>Reads bytes from the stream given by the input count &#x27;nSize&#x27;.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">pData</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>nSize</td>
+                  <td></td>
+                </tr>
+              </tbody>
+            </table>
+<p>If less then nSize bytes are available, then those bytes will be read. Returns the number of bytes read. A return value of zero means that there were no bytes to be read or no bytes were requested to be read. A return value of zero means the end of file was reached. A return value &gt; 0 but &lt; &#x27;nSize&#x27; is possible, and it does not necessarily mean that the end of the file was reached. Returns (size_type)-1 (a.k.a. kSizeTypeError) if there was an error. You can use this return value or <a href="class_i_o_1_1_i_stream.html#aa1bcbedfc21d71aadd005d3ff42642f5" class="m-doc">IStream::<wbr />GetState</a> to determine the error. Input size values equal to (size_type)-1 (a.k.a. kSizeTypeError) are not valid input. Upon error, the stream pointer is at the position it was upon the error occurrence.</p>
+          </div></section>
+          <section class="m-doc-details" id="ac3e36af6dcdba1158623b2be40fdad94"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">bool IO::<wbr />MemoryStream::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ac3e36af6dcdba1158623b2be40fdad94" class="m-doc-self">Flush</a>(</span><span class="m-doc-wrap">) <span class="m-label m-warning">override</span></span></span>
+            </h3>
+            <p>Flush any non-empty stream write buffers.</p>
+<p>If the return value is false, GetState will give the error code. This function implements the flushing as per the underlying file system. The behavior of the Flush function varies with the underlying platform.</p><p>A common use of Flush is write a file to disk immediately in order to prevent the file from being corrupted if the application crashes before the file is closed. However, on desktop platforms such as Windows this strategy is unnecesary, as the Windows OS file flush doesn&#x27;t write the file to disk as might be expected. This actually is not a problem, because the Windows OS manages files outside the process and if your process crashes the OS will take care of safely closing the files. Only if the machine power is lost or if certain kinds of kernel-level crashes occur may you lose file data.<br /></p>
+          </div></section>
+          <section class="m-doc-details" id="aa18893cac6ebb25faebf488ca8545c9e"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">int IO::<wbr />MemoryStream::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#aa18893cac6ebb25faebf488ca8545c9e" class="m-doc-self">Write</a>(</span><span class="m-doc-wrap">const void* pData,
+              size_t nSize) <span class="m-label m-warning">override</span></span></span>
+            </h3>
+            <p>Writes bytes to the stream.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">pData</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>nSize</td>
+                  <td></td>
+                </tr>
+              </tbody>
+            </table>
+<p>If false is returned, you can use <a href="class_i_o_1_1_i_stream.html#aa1bcbedfc21d71aadd005d3ff42642f5" class="m-doc">IStream::<wbr />GetState</a> to determine the error. Upon error, the stream pointer is at the position it was upon the error occurrence.</p>
+          </div></section>
+        </section>
+      </div>
+    </div>
+  </div>
+</article></main>
+<div class="m-doc-search" id="search">
+  <a href="#!" onclick="return hideSearch()"></a>
+  <div class="m-container">
+    <div class="m-row">
+      <div class="m-col-m-8 m-push-m-2">
+        <div class="m-doc-search-header m-text m-small">
+          <div><span class="m-label m-default">Tab</span> / <span class="m-label m-default">T</span> to search, <span class="m-label m-default">Esc</span> to close</div>
+          <div id="search-symbolcount">&hellip;</div>
+        </div>
+        <div class="m-doc-search-content">
+          <form>
+            <input type="search" name="q" id="search-input" placeholder="Loading &hellip;" disabled="disabled" autofocus="autofocus" autocomplete="off" spellcheck="false" />
+          </form>
+          <noscript class="m-text m-danger m-text-center">Unlike everything else in the docs, the search functionality <em>requires</em> JavaScript.</noscript>
+          <div id="search-help" class="m-text m-dim m-text-center">
+            <p class="m-noindent">Search for symbols, directories, files, pages or
+            modules. You can omit any prefix from the symbol or file path; adding a
+            <code>:</code> or <code>/</code> suffix lists all members of given symbol or
+            directory.</p>
+            <p class="m-noindent">Use <span class="m-label m-dim">&darr;</span>
+            / <span class="m-label m-dim">&uarr;</span> to navigate through the list,
+            <span class="m-label m-dim">Enter</span> to go.
+            <span class="m-label m-dim">Tab</span> autocompletes common prefix, you can
+            copy a link to the result using <span class="m-label m-dim">⌘</span>
+            <span class="m-label m-dim">L</span> while <span class="m-label m-dim">⌘</span>
+            <span class="m-label m-dim">M</span> produces a Markdown link.</p>
+          </div>
+          <div id="search-notfound" class="m-text m-warning m-text-center">Sorry, nothing was found.</div>
+          <ul id="search-results"></ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="search-v1.js"></script>
+<script src="searchdata-v1.js" async="async"></script>
+<footer><nav>
+  <div class="m-container">
+    <div class="m-row">
+      <div class="m-col-l-10 m-push-l-1">
+        <p>Spore ModAPI SDK for creating C++ mods for Spore. Created with <a href="https://doxygen.org/">Doxygen</a> 1.8.16 and <a href="https://mcss.mosra.cz/">m.css</a>.</p>
+      </div>
+    </div>
+  </div>
+</nav></footer>
+</body>
+</html>

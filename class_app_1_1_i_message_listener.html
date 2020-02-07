@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>App::IMessageListener class | Spore ModAPI SDK for creating C++ mods for Spore</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,600,600i%7CSource+Code+Pro:400,400i,600" />
+  <link rel="stylesheet" href="m-dark.css" />
+  <link rel="stylesheet" href="m-documentation.css" />
+  <link rel="icon" href="Spore_ModAPI_Icon.png" type="image/png" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#22272e" />
+</head>
+<body>
+<header><nav id="navigation">
+  <div class="m-container">
+    <div class="m-row">
+      <a href="index.html" id="m-navbar-brand" class="m-col-t-8 m-col-m-none m-left-m"><img src="Spore_ModAPI_Icon.png" />Spore ModAPI <span class="m-thin">SDK for creating C++ mods for Spore</span></a>
+      <div class="m-col-t-4 m-hide-m m-text-right m-nopadr">
+        <a href="#search" class="m-doc-search-icon" title="Search" onclick="return showSearch()"><svg style="height: 0.9rem;" viewBox="0 0 16 16">
+          <path id="m-doc-search-icon-path" d="m6 0c-3.31 0-6 2.69-6 6 0 3.31 2.69 6 6 6 1.49 0 2.85-0.541 3.89-1.44-0.0164 0.338 0.147 0.759 0.5 1.15l3.22 3.79c0.552 0.614 1.45 0.665 2 0.115 0.55-0.55 0.499-1.45-0.115-2l-3.79-3.22c-0.392-0.353-0.812-0.515-1.15-0.5 0.895-1.05 1.44-2.41 1.44-3.89 0-3.31-2.69-6-6-6zm0 1.56a4.44 4.44 0 0 1 4.44 4.44 4.44 4.44 0 0 1-4.44 4.44 4.44 4.44 0 0 1-4.44-4.44 4.44 4.44 0 0 1 4.44-4.44z"/>
+        </svg></a>
+        <a id="m-navbar-show" href="#navigation" title="Show navigation"></a>
+        <a id="m-navbar-hide" href="#" title="Hide navigation"></a>
+      </div>
+      <div id="m-navbar-collapse" class="m-col-t-12 m-show-m m-col-m-none m-right-m">
+        <div class="m-row">
+          <ol class="m-col-t-6 m-col-m-none">
+            <li><a href="pages.html">Tutorials</a></li>
+            <li><a href="namespaces.html">Namespaces</a></li>
+          </ol>
+          <ol class="m-col-t-6 m-col-m-none" start="3">
+            <li><a href="annotated.html">Classes</a></li>
+            <li><a href="files.html">Files</a></li>
+            <li class="m-show-m"><a href="#search" class="m-doc-search-icon" title="Search" onclick="return showSearch()"><svg style="height: 0.9rem;" viewBox="0 0 16 16">
+              <use href="#m-doc-search-icon-path" />
+            </svg></a></li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav></header>
+<main><article>
+  <div class="m-container m-container-inflatable">
+    <div class="m-row">
+      <div class="m-col-l-10 m-push-l-1">
+        <h1>
+          <span class="m-breadcrumb"><a href="namespace_app.html">App</a>::<wbr/></span>IMessageListener <span class="m-thin">class</span>
+          <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_i_message_listener_8h.html">&lt;Spore/App/IMessageListener.h&gt;</a></div>
+        </h1>
+        <p>An interface that can receive messages sent through the app.</p>
+        <div class="m-block m-default">
+          <h3>Contents</h3>
+          <ul>
+            <li>
+              Reference
+              <ul>
+                <li><a href="#derived-classes">Derived classes</a></li>
+                <li><a href="#typeless-methods">Constructors, destructors, conversion operators</a></li>
+                <li><a href="#pub-methods">Public functions</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+<p>Using the <a href="class_app_1_1_i_message_manager.html" class="m-doc">App::<wbr />IMessageManager</a>, listeners sign up to receive certain message IDs.</p>
+        <section id="derived-classes">
+          <h2><a href="#derived-classes">Derived classes</a></h2>
+          <dl class="m-doc">
+            <dt>
+              class <a href="class_app_1_1c_game_mode_manager.html" class="m-doc">cGameModeManager</a>
+            </dt>
+            <dd>The implementation of <a href="class_app_1_1_i_game_mode_manager.html" class="m-doc">IGameModeManager</a>; this should only be used for extending and detouring.</dd>
+            <dt>
+              class <a href="class_app_1_1c_prop_manager.html" class="m-doc">cPropManager</a>
+            </dt>
+            <dd>The implementation of <a href="class_app_1_1_i_prop_manager.html" class="m-doc">IPropManager</a>; this should only be used for extending and detouring.</dd>
+            <dt>
+              class <a href="class_app_1_1_default_message_listener.html" class="m-doc">DefaultMessageListener</a>
+            </dt>
+            <dd>A class that inherits from <a href="class_app_1_1_i_message_listener.html" class="m-doc">App::<wbr />IMessageListener</a> and defines an implementation for the <a href="class_app_1_1_default_message_listener.html#aa22abd3e268cc93c8e0c0eb256b43b24" class="m-doc">AddRef()</a> and <a href="class_app_1_1_default_message_listener.html#a00e5410ab48215a3c9ff82fd1ed52356" class="m-doc">Release()</a> metods.</dd>
+            <dt>
+              class <a href="class_app_1_1_i_camera_manager.html" class="m-doc">ICameraManager</a>
+            </dt>
+            <dd>This manager handles the cameras in the game.</dd>
+            <dt>
+              class <a href="class_app_1_1_lambda_message_listener.html" class="m-doc">LambdaMessageListener</a>
+            </dt>
+            <dd>An implementation of <a href="class_app_1_1_i_message_listener.html" class="m-doc">IMessageListener</a> using lambda functions.</dd>
+            <dt>
+              class <a href="class_editors_1_1_editor_camera.html" class="m-doc">Editors::EditorCamera</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              class <a href="class_editors_1_1_editor_u_i.html" class="m-doc">Editors::EditorUI</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              class <a href="class_game_civ_1_1_game_civ.html" class="m-doc">GameCiv::GameCiv</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              class <a href="class_graphics_1_1c_render_target_manager.html" class="m-doc">Graphics::cRenderTargetManager</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              class <a href="class_palettes_1_1_outfitter_item_u_i.html" class="m-doc">Palettes::OutfitterItemUI</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              class <a href="class_palettes_1_1_palette_category_u_i.html" class="m-doc">Palettes::PaletteCategoryUI</a>
+            </dt>
+            <dd>This class holds all information related with the user interface of a palette category.</dd>
+            <dt>
+              class <a href="class_simulator_1_1c_city.html" class="m-doc">Simulator::cCity</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              class <a href="class_simulator_1_1c_game_behavior_manager.html" class="m-doc">Simulator::cGameBehaviorManager</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              class <a href="class_simulator_1_1c_game_noun_manager.html" class="m-doc">Simulator::cGameNounManager</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              class <a href="class_simulator_1_1c_game_view_manager.html" class="m-doc">Simulator::cGameViewManager</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              class <a href="class_simulator_1_1c_relationship_manager.html" class="m-doc">Simulator::cRelationshipManager</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              class <a href="class_simulator_1_1c_simulator_space_game.html" class="m-doc">Simulator::cSimulatorSpaceGame</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              class <a href="class_simulator_1_1c_simulator_system.html" class="m-doc">Simulator::cSimulatorSystem</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              class <a href="class_simulator_1_1c_star_manager.html" class="m-doc">Simulator::cStarManager</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              class <a href="class_terrain_1_1_sphere_1_1c_terrain_sphere.html" class="m-doc">Terrain::Sphere::cTerrainSphere</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              class <a href="class_u_i_1_1_space_game_u_i.html" class="m-doc">UI::SpaceGameUI</a>
+            </dt>
+            <dd><span></span></dd>
+          </dl>
+        </section>
+        <section id="typeless-methods">
+          <h2><a href="#typeless-methods">Constructors, destructors, conversion operators</a></h2>
+          <dl class="m-doc">
+            <dt id="a7df8918b9e984291c1f97906b97cdaf6">
+              <span class="m-doc-wrap-bumper"><a href="#a7df8918b9e984291c1f97906b97cdaf6" class="m-doc-self">~IMessageListener</a>(</span><span class="m-doc-wrap">) <span class="m-label m-flat m-warning">virtual</span></span>
+            </dt>
+            <dd><span></span></dd>
+          </dl>
+        </section>
+        <section id="pub-methods">
+          <h2><a href="#pub-methods">Public functions</a></h2>
+          <dl class="m-doc">
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a8c353fd4fa8edf6e4a55232f1c022289" class="m-doc">HandleMessage</a>(</span><span class="m-doc-wrap">uint32_t messageID,
+              void* msg) -&gt; bool <span class="m-label m-flat m-warning">pure virtual</span></span>
+            </dt>
+            <dd>Called every time a message is received.</dd>
+            <dt id="a1cde6ad50ac7210728c11343739f6771">
+              <span class="m-doc-wrap-bumper">auto <a href="#a1cde6ad50ac7210728c11343739f6771" class="m-doc-self">AddRef</a>(</span><span class="m-doc-wrap">) -&gt; int <span class="m-label m-flat m-warning">pure virtual</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a83491558038ff77243e4a84542db0644">
+              <span class="m-doc-wrap-bumper">auto <a href="#a83491558038ff77243e4a84542db0644" class="m-doc-self">Release</a>(</span><span class="m-doc-wrap">) -&gt; int <span class="m-label m-flat m-warning">pure virtual</span></span>
+            </dt>
+            <dd><span></span></dd>
+          </dl>
+        </section>
+        <section>
+          <h2>Function documentation</h2>
+          <section class="m-doc-details" id="a8c353fd4fa8edf6e4a55232f1c022289"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">bool App::<wbr />IMessageListener::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a8c353fd4fa8edf6e4a55232f1c022289" class="m-doc-self">HandleMessage</a>(</span><span class="m-doc-wrap">uint32_t messageID,
+              void* msg) <span class="m-label m-warning">pure virtual</span></span></span>
+            </h3>
+            <p>Called every time a message is received.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">messageID</td>
+                  <td>The ID of the message received.</td>
+                </tr>
+                <tr>
+                  <td>msg</td>
+                  <td>The data of the message received, it might be nullptr.</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>Returns</th>
+                  <td>Whether the message was handled or not.</td>
+                </tr>
+              </tfoot>
+            </table>
+<p>Only the messages with an ID this listened signed up for will call this event.</p>
+          </div></section>
+        </section>
+      </div>
+    </div>
+  </div>
+</article></main>
+<div class="m-doc-search" id="search">
+  <a href="#!" onclick="return hideSearch()"></a>
+  <div class="m-container">
+    <div class="m-row">
+      <div class="m-col-m-8 m-push-m-2">
+        <div class="m-doc-search-header m-text m-small">
+          <div><span class="m-label m-default">Tab</span> / <span class="m-label m-default">T</span> to search, <span class="m-label m-default">Esc</span> to close</div>
+          <div id="search-symbolcount">&hellip;</div>
+        </div>
+        <div class="m-doc-search-content">
+          <form>
+            <input type="search" name="q" id="search-input" placeholder="Loading &hellip;" disabled="disabled" autofocus="autofocus" autocomplete="off" spellcheck="false" />
+          </form>
+          <noscript class="m-text m-danger m-text-center">Unlike everything else in the docs, the search functionality <em>requires</em> JavaScript.</noscript>
+          <div id="search-help" class="m-text m-dim m-text-center">
+            <p class="m-noindent">Search for symbols, directories, files, pages or
+            modules. You can omit any prefix from the symbol or file path; adding a
+            <code>:</code> or <code>/</code> suffix lists all members of given symbol or
+            directory.</p>
+            <p class="m-noindent">Use <span class="m-label m-dim">&darr;</span>
+            / <span class="m-label m-dim">&uarr;</span> to navigate through the list,
+            <span class="m-label m-dim">Enter</span> to go.
+            <span class="m-label m-dim">Tab</span> autocompletes common prefix, you can
+            copy a link to the result using <span class="m-label m-dim">⌘</span>
+            <span class="m-label m-dim">L</span> while <span class="m-label m-dim">⌘</span>
+            <span class="m-label m-dim">M</span> produces a Markdown link.</p>
+          </div>
+          <div id="search-notfound" class="m-text m-warning m-text-center">Sorry, nothing was found.</div>
+          <ul id="search-results"></ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="search-v1.js"></script>
+<script src="searchdata-v1.js" async="async"></script>
+<footer><nav>
+  <div class="m-container">
+    <div class="m-row">
+      <div class="m-col-l-10 m-push-l-1">
+        <p>Spore ModAPI SDK for creating C++ mods for Spore. Created with <a href="https://doxygen.org/">Doxygen</a> 1.8.16 and <a href="https://mcss.mosra.cz/">m.css</a>.</p>
+      </div>
+    </div>
+  </div>
+</nav></footer>
+</body>
+</html>

@@ -1,0 +1,1981 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>UTFWin namespace | Spore ModAPI SDK for creating C++ mods for Spore</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,600,600i%7CSource+Code+Pro:400,400i,600" />
+  <link rel="stylesheet" href="m-dark.css" />
+  <link rel="stylesheet" href="m-documentation.css" />
+  <link rel="icon" href="Spore_ModAPI_Icon.png" type="image/png" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#22272e" />
+</head>
+<body>
+<header><nav id="navigation">
+  <div class="m-container">
+    <div class="m-row">
+      <a href="index.html" id="m-navbar-brand" class="m-col-t-8 m-col-m-none m-left-m"><img src="Spore_ModAPI_Icon.png" />Spore ModAPI <span class="m-thin">SDK for creating C++ mods for Spore</span></a>
+      <div class="m-col-t-4 m-hide-m m-text-right m-nopadr">
+        <a href="#search" class="m-doc-search-icon" title="Search" onclick="return showSearch()"><svg style="height: 0.9rem;" viewBox="0 0 16 16">
+          <path id="m-doc-search-icon-path" d="m6 0c-3.31 0-6 2.69-6 6 0 3.31 2.69 6 6 6 1.49 0 2.85-0.541 3.89-1.44-0.0164 0.338 0.147 0.759 0.5 1.15l3.22 3.79c0.552 0.614 1.45 0.665 2 0.115 0.55-0.55 0.499-1.45-0.115-2l-3.79-3.22c-0.392-0.353-0.812-0.515-1.15-0.5 0.895-1.05 1.44-2.41 1.44-3.89 0-3.31-2.69-6-6-6zm0 1.56a4.44 4.44 0 0 1 4.44 4.44 4.44 4.44 0 0 1-4.44 4.44 4.44 4.44 0 0 1-4.44-4.44 4.44 4.44 0 0 1 4.44-4.44z"/>
+        </svg></a>
+        <a id="m-navbar-show" href="#navigation" title="Show navigation"></a>
+        <a id="m-navbar-hide" href="#" title="Hide navigation"></a>
+      </div>
+      <div id="m-navbar-collapse" class="m-col-t-12 m-show-m m-col-m-none m-right-m">
+        <div class="m-row">
+          <ol class="m-col-t-6 m-col-m-none">
+            <li><a href="pages.html">Tutorials</a></li>
+            <li><a href="namespaces.html">Namespaces</a></li>
+          </ol>
+          <ol class="m-col-t-6 m-col-m-none" start="3">
+            <li><a href="annotated.html">Classes</a></li>
+            <li><a href="files.html">Files</a></li>
+            <li class="m-show-m"><a href="#search" class="m-doc-search-icon" title="Search" onclick="return showSearch()"><svg style="height: 0.9rem;" viewBox="0 0 16 16">
+              <use href="#m-doc-search-icon-path" />
+            </svg></a></li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav></header>
+<main><article>
+  <div class="m-container m-container-inflatable">
+    <div class="m-row">
+      <div class="m-col-l-10 m-push-l-1">
+        <h1>
+          UTFWin <span class="m-thin">namespace</span>
+        </h1>
+        <p>The user interface system.</p>
+        <div class="m-block m-default">
+          <h3>Contents</h3>
+          <ul>
+            <li>
+              Reference
+              <ul>
+                <li><a href="#namespaces">Namespaces</a></li>
+                <li><a href="#nested-classes">Classes</a></li>
+                <li><a href="#enum-members">Enums</a></li>
+                <li><a href="#typedef-members">Typedefs</a></li>
+                <li><a href="#func-members">Functions</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+<p><a href="namespace_u_t_f_win.html" class="m-doc">UTFWin</a> is the user interface system in Spore. The <a href="namespace_mod_a_p_i.html" class="m-doc">ModAPI</a> defines some functionalities of this system; even though a user interface can be created via coding, it is recommended to use the SPUI Editor in SporeModder FX instead. The <a href="namespace_mod_a_p_i.html" class="m-doc">ModAPI</a> can be useful for programatically creating pieces of interfaces (like the editor categories) and listening to <a href="namespace_u_i.html" class="m-doc">UI</a> Events.</p><p>The basic unit in <a href="namespace_u_t_f_win.html" class="m-doc">UTFWin</a> is the <a href="class_u_t_f_win_1_1_i_window.html" class="m-doc">IWindow</a>, an abstract class that defines an area in the screen. All classes whose name start with &#x27;Win...&#x27; are IWindows. The basic implementation is <a href="class_u_t_f_win_1_1_window.html" class="m-doc">Window</a>; there&#x27;s another class called <a href="class_u_t_f_win_1_1_interactive_window.html" class="m-doc">InteractiveWindow</a> which is prepared to receive events.</p><p>Another key piece in <a href="namespace_u_t_f_win.html" class="m-doc">UTFWin</a> is <a href="class_u_t_f_win_1_1_i_win_proc.html" class="m-doc">IWinProc</a>, &#x27;window procedures&#x27;. <a href="class_u_t_f_win_1_1_window.html" class="m-doc">Window</a> procedures receive events (aka messages) received on windows, therefore they act as event listeners; they are the <a href="namespace_u_i.html" class="m-doc">UI</a> equivalent to IMessageListener.</p><p>For rendering windows, the <a href="class_u_t_f_win_1_1_i_drawable.html" class="m-doc">IDrawable</a> interface is used. Windows can only have one (or none) <a href="class_u_t_f_win_1_1_i_drawable.html" class="m-doc">IDrawable</a> object assigned; depending on the window implementation, the drawable might only be used to render certain parts.</p>
+        <section id="namespaces">
+          <h2><a href="#namespaces">Namespaces</a></h2>
+          <dl class="m-doc">
+            <dt>namespace <a href="namespace_u_t_f_win_1_1_button_flags.html" class="m-doc">ButtonFlags</a></dt>
+            <dd><span></span></dd>
+            <dt>namespace <a href="namespace_u_t_f_win_1_1_button_state_flags.html" class="m-doc">ButtonStateFlags</a></dt>
+            <dd><span></span></dd>
+          </dl>
+        </section>
+        <section id="nested-classes">
+          <h2><a href="#nested-classes">Classes</a></h2>
+          <dl class="m-doc">
+            <dt>
+              class <a href="class_u_t_f_win_1_1_behaviour_time_oscillator.html" class="m-doc">BehaviourTimeOscillator</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              class <a href="class_u_t_f_win_1_1_behaviour_time_ramp.html" class="m-doc">BehaviourTimeRamp</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              class <a href="class_u_t_f_win_1_1_behaviour_time_smooth_ramp.html" class="m-doc">BehaviourTimeSmoothRamp</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              class <a href="class_u_t_f_win_1_1_bi_state_effect.html" class="m-doc">BiStateEffect</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              class <a href="class_u_t_f_win_1_1_button_drawable_radio.html" class="m-doc">ButtonDrawableRadio</a>
+            </dt>
+            <dd>The standard <a href="class_u_t_f_win_1_1_i_drawable.html" class="m-doc">IDrawable</a> for a standard, simple radio or checkbox button component.</dd>
+            <dt>
+              class <a href="class_u_t_f_win_1_1_button_drawable_standard.html" class="m-doc">ButtonDrawableStandard</a>
+            </dt>
+            <dd>The standard <a href="class_u_t_f_win_1_1_i_drawable.html" class="m-doc">IDrawable</a> for a standard, simple button component.</dd>
+            <dt>
+              class <a href="class_u_t_f_win_1_1_cascade_effect.html" class="m-doc">CascadeEffect</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <div class="m-doc-template">template&lt;typename Pointer, typename Reference&gt;</div>
+              class <a href="class_u_t_f_win_1_1_children_iterator.html" class="m-doc">ChildrenIterator</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              class <a href="class_u_t_f_win_1_1_combo_box_drawable.html" class="m-doc">ComboBoxDrawable</a>
+            </dt>
+            <dd>The standard <a href="class_u_t_f_win_1_1_i_drawable.html" class="m-doc">IDrawable</a> for a combo box component.</dd>
+            <dt>
+              struct <a href="struct_u_t_f_win_1_1_component_serialization.html" class="m-doc">ComponentSerialization</a>
+            </dt>
+            <dd>A structure that defines how a class is stored in an SPUI.</dd>
+            <dt>
+              class <a href="class_u_t_f_win_1_1c_s_p_u_i_message_box.html" class="m-doc">cSPUIMessageBox</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              class <a href="class_u_t_f_win_1_1_default_drawable.html" class="m-doc">DefaultDrawable</a>
+            </dt>
+            <dd>A class that implements all the methods of an <a href="class_u_t_f_win_1_1_i_drawable.html" class="m-doc">IDrawable</a>.</dd>
+            <dt>
+              class <a href="class_u_t_f_win_1_1_default_layout_element.html" class="m-doc">DefaultLayoutElement</a>
+            </dt>
+            <dd>A default implementation of <a href="class_u_t_f_win_1_1_i_layout_element.html" class="m-doc">ILayoutElement</a>.</dd>
+            <dt>
+              class <a href="class_u_t_f_win_1_1_dialog_drawable.html" class="m-doc">DialogDrawable</a>
+            </dt>
+            <dd>The standard <a href="class_u_t_f_win_1_1_i_drawable.html" class="m-doc">IDrawable</a> for a dialog component.</dd>
+            <dt>
+              class <a href="class_u_t_f_win_1_1_event_property_object.html" class="m-doc">EventPropertyObject</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              class <a href="class_u_t_f_win_1_1_event_time_function_base.html" class="m-doc">EventTimeFunctionBase</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              class <a href="class_u_t_f_win_1_1_fade_effect.html" class="m-doc">FadeEffect</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              class <a href="class_u_t_f_win_1_1_frame_drawable.html" class="m-doc">FrameDrawable</a>
+            </dt>
+            <dd><a href="class_u_t_f_win_1_1_frame_drawable.html" class="m-doc">FrameDrawable</a> is a procedural drawable that renders multiple frame styles depending on the current state.</dd>
+            <dt>
+              struct <a href="struct_u_t_f_win_1_1_frame_style.html" class="m-doc">FrameStyle</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              class <a href="class_u_t_f_win_1_1_glide_effect.html" class="m-doc">GlideEffect</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              class <a href="class_u_t_f_win_1_1_graphics2_d.html" class="m-doc">Graphics2D</a>
+            </dt>
+            <dd>A class that can be used to draw things in the user interface.</dd>
+            <dt>
+              class <a href="class_u_t_f_win_1_1_grid_unknown.html" class="m-doc">GridUnknown</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              class <a href="class_u_t_f_win_1_1_i_bi_state_effect.html" class="m-doc">IBiStateEffect</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              class <a href="class_u_t_f_win_1_1_i_button.html" class="m-doc">IButton</a>
+            </dt>
+            <dd>An interface that declares all the functions needed by a button component.</dd>
+            <dt>
+              class <a href="class_u_t_f_win_1_1_i_button_drawable.html" class="m-doc">IButtonDrawable</a>
+            </dt>
+            <dd>This class is a type of <a href="class_u_t_f_win_1_1_i_drawable.html" class="m-doc">UTFWin::<wbr />IDrawable</a> capable of rendering an <a href="class_u_t_f_win_1_1_i_button.html" class="m-doc">UTFWin::<wbr />IButton</a>.</dd>
+            <dt>
+              class <a href="class_u_t_f_win_1_1_i_button_drawable_radio.html" class="m-doc">IButtonDrawableRadio</a>
+            </dt>
+            <dd>An abstract class that has the methods that a drawable for a simple radio or checkbox button would require.</dd>
+            <dt>
+              class <a href="class_u_t_f_win_1_1_i_button_drawable_standard.html" class="m-doc">IButtonDrawableStandard</a>
+            </dt>
+            <dd>An abstract class that has the methods that a drawable for a simple standard button would require.</dd>
+            <dt>
+              class <a href="class_u_t_f_win_1_1_i_cascade_effect.html" class="m-doc">ICascadeEffect</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              class <a href="class_u_t_f_win_1_1_i_combo_box.html" class="m-doc">IComboBox</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              class <a href="class_u_t_f_win_1_1_i_combo_box_drawable.html" class="m-doc">IComboBoxDrawable</a>
+            </dt>
+            <dd>An abstract class that has the methods that a drawable for a combo box would require.</dd>
+            <dt>
+              class <a href="class_u_t_f_win_1_1_i_dialog_drawable.html" class="m-doc">IDialogDrawable</a>
+            </dt>
+            <dd>An abstract class that has the methods that a drawable for a dialog would require.</dd>
+            <dt>
+              class <a href="class_u_t_f_win_1_1_i_drawable.html" class="m-doc">IDrawable</a>
+            </dt>
+            <dd>A class that is capable of drawing a user interface component.</dd>
+            <dt>
+              class <a href="class_u_t_f_win_1_1_i_event_time_function.html" class="m-doc">IEventTimeFunction</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              class <a href="class_u_t_f_win_1_1_i_glide_effect.html" class="m-doc">IGlideEffect</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              class <a href="class_u_t_f_win_1_1_i_image_drawable.html" class="m-doc">IImageDrawable</a>
+            </dt>
+            <dd>An abstract class that has the methods that a drawable that renders an image would require.</dd>
+            <dt>
+              class <a href="class_u_t_f_win_1_1_i_inflate_effect.html" class="m-doc">IInflateEffect</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              class <a href="class_u_t_f_win_1_1_i_layout_element.html" class="m-doc">ILayoutElement</a>
+            </dt>
+            <dd>This class represents an element that is part of a user interfaces.</dd>
+            <dt>
+              class <a href="class_u_t_f_win_1_1_i_layout_style.html" class="m-doc">ILayoutStyle</a>
+            </dt>
+            <dd>This class represents an object that can apply a certain layout to a given Rectangle area.</dd>
+            <dt>
+              class <a href="class_u_t_f_win_1_1_image.html" class="m-doc">Image</a>
+            </dt>
+            <dd>A layout element that represents an image.</dd>
+            <dt>
+              class <a href="class_u_t_f_win_1_1_image_drawable.html" class="m-doc">ImageDrawable</a>
+            </dt>
+            <dd>A standard <a href="class_u_t_f_win_1_1_i_drawable.html" class="m-doc">IDrawable</a> that renders an image.</dd>
+            <dt>
+              class <a href="class_u_t_f_win_1_1_i_modulate_effect.html" class="m-doc">IModulateEffect</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              class <a href="class_u_t_f_win_1_1_inflate_effect.html" class="m-doc">InflateEffect</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              class <a href="class_u_t_f_win_1_1_interactive_window.html" class="m-doc">InteractiveWindow</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              class <a href="class_u_t_f_win_1_1_interactive_win_proc.html" class="m-doc">InteractiveWinProc</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              class <a href="class_u_t_f_win_1_1_i_perspective_effect.html" class="m-doc">IPerspectiveEffect</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              class <a href="class_u_t_f_win_1_1_i_rotate_effect.html" class="m-doc">IRotateEffect</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              class <a href="class_u_t_f_win_1_1_i_scrollbar_drawable.html" class="m-doc">IScrollbarDrawable</a>
+            </dt>
+            <dd>An abstract class that has the methods that a drawable for a scrollbar would require.</dd>
+            <dt>
+              class <a href="class_u_t_f_win_1_1_i_slider.html" class="m-doc">ISlider</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              class <a href="class_u_t_f_win_1_1_i_slider_drawable.html" class="m-doc">ISliderDrawable</a>
+            </dt>
+            <dd>An abstract class that has the methods that a drawable for a slider would require.</dd>
+            <dt>
+              class <a href="class_u_t_f_win_1_1_i_spinner_drawable.html" class="m-doc">ISpinnerDrawable</a>
+            </dt>
+            <dd>An abstract class that has the methods that a drawable for a spinner would require.</dd>
+            <dt>
+              class <a href="class_u_t_f_win_1_1_i_std_drawable.html" class="m-doc">IStdDrawable</a>
+            </dt>
+            <dd>An abstract class that has the methods that a standard drawable would require.</dd>
+            <dt>
+              class <a href="class_u_t_f_win_1_1_i_text_edit.html" class="m-doc">ITextEdit</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              class <a href="class_u_t_f_win_1_1_i_tree_node.html" class="m-doc">ITreeNode</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              class <a href="class_u_t_f_win_1_1_i_tree_view.html" class="m-doc">ITreeView</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              class <a href="class_u_t_f_win_1_1_i_window.html" class="m-doc">IWindow</a>
+            </dt>
+            <dd>An interface that represents a component in the user interface.</dd>
+            <dt>
+              class <a href="class_u_t_f_win_1_1_i_window_manager.html" class="m-doc">IWindowManager</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              class <a href="class_u_t_f_win_1_1_i_win_proc.html" class="m-doc">IWinProc</a>
+            </dt>
+            <dd>This class is a window procedure, also known as an event/message listener.</dd>
+            <dt>
+              class <a href="class_u_t_f_win_1_1_lambda_filter_proc.html" class="m-doc">LambdaFilterProc</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              class <a href="class_u_t_f_win_1_1_lambda_proc.html" class="m-doc">LambdaProc</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              class <a href="class_u_t_f_win_1_1_layout_objects_container.html" class="m-doc">LayoutObjectsContainer</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              class <a href="class_u_t_f_win_1_1_layout_reader.html" class="m-doc">LayoutReader</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              class <a href="class_u_t_f_win_1_1_message.html" class="m-doc">Message</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              class <a href="class_u_t_f_win_1_1_message_box_callback.html" class="m-doc">MessageBoxCallback</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              class <a href="class_u_t_f_win_1_1_modulate_effect.html" class="m-doc">ModulateEffect</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              class <a href="class_u_t_f_win_1_1_outline_format.html" class="m-doc">OutlineFormat</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              class <a href="class_u_t_f_win_1_1_perspective_effect.html" class="m-doc">PerspectiveEffect</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <div class="m-doc-template">template&lt;typename Pointer, typename Reference&gt;</div>
+              class <a href="class_u_t_f_win_1_1_proc_iterator.html" class="m-doc">ProcIterator</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              struct <a href="struct_u_t_f_win_1_1_property_methods.html" class="m-doc">PropertyMethods</a>
+            </dt>
+            <dd>Structure used to define access methods for special property types.</dd>
+            <dt>
+              class <a href="class_u_t_f_win_1_1_proportional_layout.html" class="m-doc">ProportionalLayout</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              struct <a href="struct_u_t_f_win_1_1_render_params.html" class="m-doc">RenderParams</a>
+            </dt>
+            <dd>A structure used to represent various parameters for the <a href="class_u_t_f_win_1_1_i_drawable.html#a1469707c69043e69d98f836c2f39076e" class="m-doc">IDrawable::<wbr />Paint()</a> method, like which image to draw, the current state of the window, etc.</dd>
+            <dt>
+              class <a href="class_u_t_f_win_1_1_rotate_effect.html" class="m-doc">RotateEffect</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              class <a href="class_u_t_f_win_1_1_scrollbar_drawable.html" class="m-doc">ScrollbarDrawable</a>
+            </dt>
+            <dd>The standard <a href="class_u_t_f_win_1_1_i_drawable.html" class="m-doc">IDrawable</a> for a scrollbar component.</dd>
+            <dt>
+              class <a href="class_u_t_f_win_1_1_serialization_service.html" class="m-doc">SerializationService</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              struct <a href="struct_u_t_f_win_1_1_serialized_property.html" class="m-doc">SerializedProperty</a>
+            </dt>
+            <dd>Defines how a member of a class is stored in an SPUI.</dd>
+            <dt>
+              struct <a href="struct_u_t_f_win_1_1_serializer.html" class="m-doc">Serializer</a>
+            </dt>
+            <dd>A structure that defines how an object must be read in an SPUI.</dd>
+            <dt>
+              class <a href="class_u_t_f_win_1_1_simple_layout.html" class="m-doc">SimpleLayout</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              class <a href="class_u_t_f_win_1_1_slider_drawable.html" class="m-doc">SliderDrawable</a>
+            </dt>
+            <dd>The standard <a href="class_u_t_f_win_1_1_i_drawable.html" class="m-doc">IDrawable</a> for a slider component.</dd>
+            <dt>
+              class <a href="class_u_t_f_win_1_1_spinner_drawable.html" class="m-doc">SpinnerDrawable</a>
+            </dt>
+            <dd>The standard <a href="class_u_t_f_win_1_1_i_drawable.html" class="m-doc">IDrawable</a> for a spinner component.</dd>
+            <dt>
+              class <a href="class_u_t_f_win_1_1_spore_animated_icon_win.html" class="m-doc">SporeAnimatedIconWin</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              class <a href="class_u_t_f_win_1_1_spore_std_drawable.html" class="m-doc">SporeStdDrawable</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              class <a href="class_u_t_f_win_1_1_spore_std_drawable_image_info.html" class="m-doc">SporeStdDrawableImageInfo</a>
+            </dt>
+            <dd>A structure that represents an state of a <a href="class_u_t_f_win_1_1_spore_std_drawable.html" class="m-doc">SporeStdDrawable</a>.</dd>
+            <dt>
+              class <a href="class_u_t_f_win_1_1_spore_tooltip_win_proc.html" class="m-doc">SporeTooltipWinProc</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              class <a href="class_u_t_f_win_1_1_std_drawable.html" class="m-doc">StdDrawable</a>
+            </dt>
+            <dd>The standard <a href="class_u_t_f_win_1_1_i_drawable.html" class="m-doc">IDrawable</a> for user interactive components.</dd>
+            <dt>
+              struct <a href="struct_u_t_f_win_1_1_struct_serialization.html" class="m-doc">StructSerialization</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              struct <a href="struct_u_t_f_win_1_1_text_change.html" class="m-doc">TextChange</a>
+            </dt>
+            <dd>This struct is used in kMsgTextChanged messages to represent the text in a <a href="class_u_t_f_win_1_1_i_text_edit.html" class="m-doc">ITextEdit</a>.</dd>
+            <dt>
+              class <a href="class_u_t_f_win_1_1_tree_node.html" class="m-doc">TreeNode</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              class <a href="class_u_t_f_win_1_1_u_i_layout.html" class="m-doc">UILayout</a>
+            </dt>
+            <dd>An object used to load and contain user interfaces.</dd>
+            <dt>
+              class <a href="class_u_t_f_win_1_1_u_i_layout_objects.html" class="m-doc">UILayoutObjects</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              class <a href="class_u_t_f_win_1_1_u_i_renderer.html" class="m-doc">UIRenderer</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              class <a href="class_u_t_f_win_1_1_u_t_f_win_object.html" class="m-doc">UTFWinObject</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              class <a href="class_u_t_f_win_1_1_variable_width_drawable.html" class="m-doc">VariableWidthDrawable</a>
+            </dt>
+            <dd>A drawable that completely fills the window of variable width with a graphic without a horizontal stretch.</dd>
+            <dt>
+              class <a href="class_u_t_f_win_1_1_win_button.html" class="m-doc">WinButton</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              class <a href="class_u_t_f_win_1_1_window.html" class="m-doc">Window</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              struct <a href="struct_u_t_f_win_1_1_window__intrusive__list__node.html" class="m-doc">Window_intrusive_list_node</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              class <a href="class_u_t_f_win_1_1_window_children.html" class="m-doc">WindowChildren</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              class <a href="class_u_t_f_win_1_1_window_procedures.html" class="m-doc">WindowProcedures</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              class <a href="class_u_t_f_win_1_1_win_grid.html" class="m-doc">WinGrid</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              class <a href="class_u_t_f_win_1_1_win_tree_view.html" class="m-doc">WinTreeView</a>
+            </dt>
+            <dd><span></span></dd>
+          </dl>
+        </section>
+        <section id="enum-members">
+          <h2><a href="#enum-members">Enums</a></h2>
+          <dl class="m-doc">
+            <dt>
+              <span class="m-doc-wrap-bumper">enum class <a href="#a6f7bd7cb259fdac49b7a3a6588c52a54" class="m-doc">OscillatorTimeFunction</a>: uint32_t { </span><span class="m-doc-wrap"><a href="#a6f7bd7cb259fdac49b7a3a6588c52a54ad911b34823c7674c292556dc56148c27" class="m-doc">Wave</a> = 1 }</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">enum <a href="#a53dcde7b7ffd3f5d6b53da77f5649044" class="m-doc">EventFlags</a> { </span><span class="m-doc-wrap"><a href="#a53dcde7b7ffd3f5d6b53da77f5649044abada94b5e01bb4301d59887ff92a8719" class="m-doc">kEventFlagBasicInput</a> = 0x01,
+              <a href="#a53dcde7b7ffd3f5d6b53da77f5649044ac7c5e9b0397ba7de8e134e658f879ca7" class="m-doc">kEventFlagUpdate</a> = 0x02,
+              <a href="#a53dcde7b7ffd3f5d6b53da77f5649044a2b162fa47d2cad579c2b60b209762505" class="m-doc">kEventFlagPaint</a> = 0x04,
+              <a href="#a53dcde7b7ffd3f5d6b53da77f5649044a4d6f21c3c88d01e42e3c5a898f675a7f" class="m-doc">kEventWindowChanged</a> = 0x08,
+              <a href="#a53dcde7b7ffd3f5d6b53da77f5649044a393649a2f697e6deeb8d8fe2ea38bef6" class="m-doc">kEventStateChanged</a> = 0x10,
+              <a href="#a53dcde7b7ffd3f5d6b53da77f5649044a738d483f2a5f1c59fc95c9535581e9ba" class="m-doc">kEventRefresh</a> = 0x40,
+              <a href="#a53dcde7b7ffd3f5d6b53da77f5649044ae00581bacda0d1a50bf5d3690367d321" class="m-doc">kEventFlagAdvanced</a> = 0x80,
+              <a href="#a53dcde7b7ffd3f5d6b53da77f5649044a8696ea1c09389d3d9228fd013da4b368" class="m-doc">kEventFlagLayout</a> = 0x108,
+              <a href="#a53dcde7b7ffd3f5d6b53da77f5649044ab73e6fb07f64f271deb5b40b6aa7a018" class="m-doc">kEventFlagElement</a> = 0x400 }</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">enum <a href="#a9fa1532f8ae774ee9508fab26eea47bc" class="m-doc">MessageType</a> { </span><span class="m-doc-wrap"><a href="#a9fa1532f8ae774ee9508fab26eea47bcaee189eb7f7c883d4a1d7fecabc42c214" class="m-doc">kMsgKeyDown</a> = 0x01,
+              <a href="#a9fa1532f8ae774ee9508fab26eea47bca3c9afc18eb3168e8fee6c64ae274a823" class="m-doc">kMsgKeyUp</a> = 0x02,
+              <a href="#a9fa1532f8ae774ee9508fab26eea47bca50fa9b47050f4e8f9c13f1ae3c78290f" class="m-doc">kMsgKeyDown2</a> = 0x03,
+              <a href="#a9fa1532f8ae774ee9508fab26eea47bca88d91e0725c049b1177b32fa7f86d97b" class="m-doc">kMsgKeyUp2</a> = 0x04,
+              <a href="#a9fa1532f8ae774ee9508fab26eea47bca28994564e93696ac63da10300a651406" class="m-doc">kMsgKeyPress</a> = 0x05,
+              <a href="#a9fa1532f8ae774ee9508fab26eea47bcac1312d2c4b139f3fd2cc233a6b861cd6" class="m-doc">kMsgMouseDown</a> = 0x06,
+              <a href="#a9fa1532f8ae774ee9508fab26eea47bca4633d5603e05894e429efbef1f54810e" class="m-doc">kMsgMouseUp</a> = 0x07,
+              <a href="#a9fa1532f8ae774ee9508fab26eea47bca3aa8b47c26334b5c06c18f95fa3fd939" class="m-doc">kMsgMouseMove</a> = 0x08,
+              <a href="#a9fa1532f8ae774ee9508fab26eea47bca74edac94c35585c228e8a73479dc5e90" class="m-doc">kMsgMouseWheel</a> = 0x09,
+              <a href="#a9fa1532f8ae774ee9508fab26eea47bca31db8e1cc08d482c54d7578fbae7d620" class="m-doc">kMsgRefresh</a> = 0x0A,
+              <a href="#a9fa1532f8ae774ee9508fab26eea47bca3fe2b3bb24ba60c046e6ead0c473b82e" class="m-doc">kMsgUpdate</a> = 0x0C,
+              <a href="#a9fa1532f8ae774ee9508fab26eea47bca03399168f3d777b4d4dbb86ad22b639d" class="m-doc">kMsgPaint</a> = 0x0D,
+              <a href="#a9fa1532f8ae774ee9508fab26eea47bca7adc57733b527c9eb9e6fc3b2327f8cc" class="m-doc">kMsgWindowChanged</a> = 0x0E,
+              <a href="#a9fa1532f8ae774ee9508fab26eea47bca92a4e1a5a69dcee2d01428cc7fea0d4f" class="m-doc">kMsgLayout</a> = 0x10,
+              <a href="#a9fa1532f8ae774ee9508fab26eea47bcaf52959500eb4bacfd30dcd43ad160e6f" class="m-doc">kMsgElementAdded</a> = 0x11,
+              <a href="#a9fa1532f8ae774ee9508fab26eea47bca0f4b2b5e6aed34b49ea618bd2f57aac4" class="m-doc">kMsgElementRemoved</a> = 0x12,
+              <a href="#a9fa1532f8ae774ee9508fab26eea47bcad02b6ca45e9a4e7361c15d8dbea8afb8" class="m-doc">kMsgStateChanged</a> = 0x13,
+              <a href="#a9fa1532f8ae774ee9508fab26eea47bca52e412737bcc4620e206cb29c433b6a7" class="m-doc">kMsgCollisionDetect</a> = 0x14,
+              <a href="#a9fa1532f8ae774ee9508fab26eea47bca8acc0370665cd3d35aa898d8515b6b86" class="m-doc">kMsgTransformed</a> = 0x15,
+              <a href="#a9fa1532f8ae774ee9508fab26eea47bca0e89eb2860b07f734dabec989d57df41" class="m-doc">kMsgButtonClick</a> = 0x17,
+              <a href="#a9fa1532f8ae774ee9508fab26eea47bca52c347affb8f2fb7979ba0c123cf5b25" class="m-doc">kMsgButtonSelect</a> = 0x18,
+              <a href="#a9fa1532f8ae774ee9508fab26eea47bca869eba728e88ff7fc5c87c200ed1edd1" class="m-doc">kMsgMouseEnter</a> = 0x1B,
+              <a href="#a9fa1532f8ae774ee9508fab26eea47bca6b83c3a6f3469145fb682ce2611a920c" class="m-doc">kMsgMouseLeave</a> = 0x1C,
+              <a href="#a9fa1532f8ae774ee9508fab26eea47bca679a51466fdbf8a985acb39c6501229d" class="m-doc">kMsgWinProcAdded</a> = 0x1000,
+              <a href="#a9fa1532f8ae774ee9508fab26eea47bca639f55dd24442db16de97ebc01a47614" class="m-doc">kMsgWinProcRemoved</a> = 0x1001,
+              <a href="#a9fa1532f8ae774ee9508fab26eea47bcaee57618cc8bcb6679d41681767983f83" class="m-doc">kMsgComponentActivated</a> = 0x287259F6,
+              <a href="#a9fa1532f8ae774ee9508fab26eea47bca959bc9673a87190a43042ab32e9dc396" class="m-doc">kMsgTextChanged</a> = 0x9B1552DA }</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">enum <a href="#aa309e5d2bda65d6faee845890d0aa867" class="m-doc">RefreshType</a> { </span><span class="m-doc-wrap"><a href="#aa309e5d2bda65d6faee845890d0aa867af8864eb8f32667d419601b8f996f62eb" class="m-doc">kRefreshMouse</a> = 1,
+              <a href="#aa309e5d2bda65d6faee845890d0aa867af1e0c5f1ed0345dc34d045950621fc2e" class="m-doc">kRefreshKeyboard</a> = 0 }</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">enum class <a href="#ad68e9a91992bf713724d2785dc867f4c" class="m-doc">BackgroundTiling</a>: uint32_t { </span><span class="m-doc-wrap"><a href="#ad68e9a91992bf713724d2785dc867f4cafbb09a82eafab60150d0996e8fe46560" class="m-doc">Stretch</a> = 0,
+              <a href="#ad68e9a91992bf713724d2785dc867f4cac5457c5f3cfb4da8638ce7190f8e5152" class="m-doc">Tile</a> = 1,
+              <a href="#ad68e9a91992bf713724d2785dc867f4cad38b3424cd046b0719453bfbca59c422" class="m-doc">CenterStretch</a> = 2,
+              <a href="#ad68e9a91992bf713724d2785dc867f4cad83028787f95bbc6e441aecd7d224abc" class="m-doc">CenterTile</a> = 3 }</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">enum class <a href="#a3ca3b4824ddcafe7ea0a57ae1db0a51d" class="m-doc">TriggerType</a> { </span><span class="m-doc-wrap"><a href="#a3ca3b4824ddcafe7ea0a57ae1db0a51daec24d78ce33048dc73a2b6b1a0690192" class="m-doc">Visible</a> = 0,
+              <a href="#a3ca3b4824ddcafe7ea0a57ae1db0a51da8bcda43732b0928d269955e0f09ff76f" class="m-doc">Invisible</a> = 1,
+              <a href="#a3ca3b4824ddcafe7ea0a57ae1db0a51da00d23a76e43b46dae9ec7aa9dcbebb32" class="m-doc">Enabled</a> = 2,
+              <a href="#a3ca3b4824ddcafe7ea0a57ae1db0a51dab9f5c797ebbf55adccdd8539a65a0241" class="m-doc">Disabled</a> = 3,
+              <a href="#a3ca3b4824ddcafe7ea0a57ae1db0a51da8685e820ef732e3ff22beae904a9d514" class="m-doc">MouseFocus</a> = 4,
+              <a href="#a3ca3b4824ddcafe7ea0a57ae1db0a51dab4f3fbbcf36f6508eaf987bdab4dcf2a" class="m-doc">KeyboardFocus</a> = 5,
+              <a href="#a3ca3b4824ddcafe7ea0a57ae1db0a51daac3cc1bd996a9610534cbf76deca4ab3" class="m-doc">AnyFocus</a> = 6,
+              <a href="#a3ca3b4824ddcafe7ea0a57ae1db0a51da3dc6a2db8d65aa9ee66a339d9ae246a8" class="m-doc">NoMouseFocus</a> = 7,
+              <a href="#a3ca3b4824ddcafe7ea0a57ae1db0a51da3027b6e5795ba0ed7e2ad4d2b701f837" class="m-doc">NoKeyboardFocus</a> = 8,
+              <a href="#a3ca3b4824ddcafe7ea0a57ae1db0a51daa11f91df0170ecddf92e6413a9eacaad" class="m-doc">NoFocus</a> = 9,
+              <a href="#a3ca3b4824ddcafe7ea0a57ae1db0a51da4176bf7e0eddb3d154aaf2fdf1dfbd66" class="m-doc">ButtonSelected</a> = 10,
+              <a href="#a3ca3b4824ddcafe7ea0a57ae1db0a51da7954b05563091b006ae7a4116bf0f7d6" class="m-doc">ButtonUnselected</a> = 11 }</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">enum class <a href="#a20665f815b59b14a25274234d92c068d" class="m-doc">InterpolationType</a> { </span><span class="m-doc-wrap"><a href="#a20665f815b59b14a25274234d92c068da32a843da6ea40ab3b17a3421ccdf671b" class="m-doc">Linear</a> = 0,
+              <a href="#a20665f815b59b14a25274234d92c068dae4ebe4cef2c4933927aabafcd9cec7df" class="m-doc">EaseInEaseOut</a> = 1,
+              <a href="#a20665f815b59b14a25274234d92c068da89b0c8571b66a10e7d4a23b7dbdc36d3" class="m-doc">DampedSpring</a> = 2 }</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">enum <a href="#ad62ad76870c24046126a9f52f4c672c3" class="m-doc">ButtonFlags</a> { </span><span class="m-doc-wrap"><a href="#ad62ad76870c24046126a9f52f4c672c3ad399f987a03f7d10b6de0750ef6a28e2" class="m-doc">kBtnFlagTriggerOnDown</a> = 0x00000001,
+              <a href="#ad62ad76870c24046126a9f52f4c672c3a156bf6ecf8d3b21a3df796412427ae7e" class="m-doc">kBtnFlagFixedWidth</a> = 0x00000002,
+              <a href="#ad62ad76870c24046126a9f52f4c672c3a60fbb18bdc5484c24c6f5b7263eeb2df" class="m-doc">kBtnFlagFixedHeight</a> = 0x00000004 }</span>
+            </dt>
+            <dd>Flags that can be set to an <a href="class_u_t_f_win_1_1_i_button.html" class="m-doc">UTFWin::<wbr />IButton</a>.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">enum <a href="#aa8397d8d161468c54cd026c18a297a65" class="m-doc">ButtonStateFlags</a> { </span><span class="m-doc-wrap"><a href="#aa8397d8d161468c54cd026c18a297a65a7b5e5c2f4f819c4cbdfa2e7cc76e9058" class="m-doc">kBtnStateSelected</a> = 4 }</span>
+            </dt>
+            <dd>Flags relted to the state of a button that can be set to an <a href="class_u_t_f_win_1_1_i_button.html" class="m-doc">UTFWin::<wbr />IButton</a>.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">enum <a href="#a7b974fc368a793146e3d725b97423cdf" class="m-doc">ComboBoxFlags</a> { </span><span class="m-doc-wrap"><a href="#a7b974fc368a793146e3d725b97423cdfa869c2fbe9d8b628f502e4b3dd61300d6" class="m-doc">kComboBoxOutline</a> = 0x00000001 }</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">enum class <a href="#a9069fbe6c52a96f38bb557510b4e890a" class="m-doc">ComboBoxColors</a> { </span><span class="m-doc-wrap"><a href="#a9069fbe6c52a96f38bb557510b4e890aa45bd1d5b32931106efbf1a82fe6a732f" class="m-doc">Foreground</a> = 0,
+              <a href="#a9069fbe6c52a96f38bb557510b4e890aaa9ded1e5ce5d75814730bb4caaf49419" class="m-doc">Background</a> = 1,
+              <a href="#a9069fbe6c52a96f38bb557510b4e890aa613f0ac3330f1551c2e906180fb5310d" class="m-doc">HighlightedForeground</a> = 2,
+              <a href="#a9069fbe6c52a96f38bb557510b4e890aa01098a23f5cd5e10d42c19b07aa0b7e8" class="m-doc">HighlightedBackground</a> = 3,
+              <a href="#a9069fbe6c52a96f38bb557510b4e890aa3df7479d32420580c74cc7bd3c4c175a" class="m-doc">SelectedForeground</a> = 4,
+              <a href="#a9069fbe6c52a96f38bb557510b4e890aa2917e643c796c5ab3c8c6d405b958805" class="m-doc">SelectedBackground</a> = 5 }</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">enum class <a href="#a5461111d581ac167195c1127a195c2dd" class="m-doc">Scaling</a> { </span><span class="m-doc-wrap"><a href="#a5461111d581ac167195c1127a195c2dda6fcab5bd54db1a8ed145c685e6e2dea1" class="m-doc">StretchImage</a> = 1,
+              <a href="#a5461111d581ac167195c1127a195c2ddaf43c7716faf26a9bb7eafe068db1b4ef" class="m-doc">StretchCenter</a> = 2,
+              <a href="#a5461111d581ac167195c1127a195c2dda24f58fe7603465361036f33b10cfd37f" class="m-doc">TileImage</a> = 3,
+              <a href="#a5461111d581ac167195c1127a195c2ddab10b3f252d6c0aabc93cd05d50280b71" class="m-doc">TileCenter</a> = 4 }</span>
+            </dt>
+            <dd>An enumeration used by certain drawables, that determines how to draw the images.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">enum class <a href="#af869e3df8ebe407d04362051647c7e6b" class="m-doc">AlignmentH</a> { </span><span class="m-doc-wrap"><a href="#af869e3df8ebe407d04362051647c7e6ba945d5e233cf7d6240f6b783b36a374ff" class="m-doc">Left</a> = 1,
+              <a href="#af869e3df8ebe407d04362051647c7e6ba92b09c7c48c520c3c55e497875da437c" class="m-doc">Right</a> = 2,
+              <a href="#af869e3df8ebe407d04362051647c7e6ba4f1f6016fc9f3f2353c0cc7c67b292bd" class="m-doc">Center</a> = 3 }</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">enum class <a href="#a854201008eb63c32d8eb03667c19cdfb" class="m-doc">AlignmentV</a> { </span><span class="m-doc-wrap"><a href="#a854201008eb63c32d8eb03667c19cdfbaa4ffdcf0dc1f31b9acaf295d75b51d00" class="m-doc">Top</a> = 1,
+              <a href="#a854201008eb63c32d8eb03667c19cdfba2ad9d63b69c4a10a5cc9cad923133bc4" class="m-doc">Bottom</a> = 2,
+              <a href="#a854201008eb63c32d8eb03667c19cdfbab1ca34f82e83c52b010f86955f264e05" class="m-doc">Middle</a> = 3 }</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">enum class <a href="#a6e96ee9ccb9f4d00095c89ef80753c1e" class="m-doc">FontAlignmentH</a> { </span><span class="m-doc-wrap"><a href="#a6e96ee9ccb9f4d00095c89ef80753c1ea7a1920d61156abc05a60135aefe8bc67" class="m-doc">Default</a> = 0,
+              <a href="#a6e96ee9ccb9f4d00095c89ef80753c1ea945d5e233cf7d6240f6b783b36a374ff" class="m-doc">Left</a> = 1,
+              <a href="#a6e96ee9ccb9f4d00095c89ef80753c1ea92b09c7c48c520c3c55e497875da437c" class="m-doc">Right</a> = 2,
+              <a href="#a6e96ee9ccb9f4d00095c89ef80753c1ea4f1f6016fc9f3f2353c0cc7c67b292bd" class="m-doc">Center</a> = 3 }</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">enum class <a href="#a8d918033b682be84f235eb23d47e750d" class="m-doc">FontAlignmentV</a> { </span><span class="m-doc-wrap"><a href="#a8d918033b682be84f235eb23d47e750da7a1920d61156abc05a60135aefe8bc67" class="m-doc">Default</a> = 0,
+              <a href="#a8d918033b682be84f235eb23d47e750daa4ffdcf0dc1f31b9acaf295d75b51d00" class="m-doc">Top</a> = 1,
+              <a href="#a8d918033b682be84f235eb23d47e750da2ad9d63b69c4a10a5cc9cad923133bc4" class="m-doc">Bottom</a> = 2,
+              <a href="#a8d918033b682be84f235eb23d47e750dab1ca34f82e83c52b010f86955f264e05" class="m-doc">Middle</a> = 3 }</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">enum class <a href="#a5d5cc7a836dc1ac26137bb9e69e194e4" class="m-doc">Orientation</a> { </span><span class="m-doc-wrap"><a href="#a5d5cc7a836dc1ac26137bb9e69e194e4ac1b5fa03ecdb95d4a45dd1c40b02527f" class="m-doc">Horizontal</a> = 1,
+              <a href="#a5d5cc7a836dc1ac26137bb9e69e194e4a06ce2a25e5d12c166a36f654dbea6012" class="m-doc">Vertical</a> = 2 }</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">enum class <a href="#a8477acb16bfb14451add5715ef9096dc" class="m-doc">ButtonTypes</a> { </span><span class="m-doc-wrap"><a href="#a8477acb16bfb14451add5715ef9096dcaeb6d8ae6f20283755b339c0dc273988b" class="m-doc">Standard</a> = 1,
+              <a href="#a8477acb16bfb14451add5715ef9096dcaa8875bbe4272c0bdd786cfaaedf77921" class="m-doc">Toggle</a> = 2,
+              <a href="#a8477acb16bfb14451add5715ef9096dca1f32d2c1b49b9b0c9d99bd10da107e41" class="m-doc">Radio</a> = 3 }</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">enum class <a href="#ada094ff2b4a937040b48ae69c2ad6459" class="m-doc">StateIndices</a>: uint32_t { </span><span class="m-doc-wrap"><a href="#ada094ff2b4a937040b48ae69c2ad6459a960b44c579bc2f6818d2daaf9e4c16f0" class="m-doc">Normal</a> = 0,
+              <a href="#ada094ff2b4a937040b48ae69c2ad6459ab9f5c797ebbf55adccdd8539a65a0241" class="m-doc">Disabled</a> = 1,
+              <a href="#ada094ff2b4a937040b48ae69c2ad6459a128f36ec46f7ca11bafb48cd2022a54c" class="m-doc">Highlighted</a> = 2,
+              <a href="#ada094ff2b4a937040b48ae69c2ad6459a4d3d769b812b6faa6b76e1a8abaece2d" class="m-doc">Active</a> = 3,
+              <a href="#ada094ff2b4a937040b48ae69c2ad6459a302a41ef1958f1d9b39d6286a2e9bd10" class="m-doc">CheckedNormal</a> = 4,
+              <a href="#ada094ff2b4a937040b48ae69c2ad6459a401551c53f7cab2c7e609ad65431a864" class="m-doc">CheckedDisabled</a> = 5,
+              <a href="#ada094ff2b4a937040b48ae69c2ad6459aa49228e3885330dd1940e5adcab3c815" class="m-doc">CheckedHighlighted</a> = 6,
+              <a href="#ada094ff2b4a937040b48ae69c2ad6459ade65e38c1200e8e02f7ceb863ae58e30" class="m-doc">CheckedActive</a> = 7 }</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">enum class <a href="#abf3171126194941ce2d0f329beb88542" class="m-doc">ImageTiling</a> { </span><span class="m-doc-wrap"><a href="#abf3171126194941ce2d0f329beb88542a6adf97f83acf6453d4a6a4b1070f3754" class="m-doc">None</a> = 0,
+              <a href="#abf3171126194941ce2d0f329beb88542aeb6d8ae6f20283755b339c0dc273988b" class="m-doc">Standard</a> = 1,
+              <a href="#abf3171126194941ce2d0f329beb88542ae4a297a0f76119a442c2595ac040673e" class="m-doc">Edge</a> = 2 }</span>
+            </dt>
+            <dd>An enumeration used by <a href="class_u_t_f_win_1_1_image_drawable.html" class="m-doc">ImageDrawable</a>, that determine how the image is tiled.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">enum class <a href="#a77fcb47eea13c1a85f5d74be61d77880" class="m-doc">TextColors</a> { </span><span class="m-doc-wrap"><a href="#a77fcb47eea13c1a85f5d74be61d77880a9dffbf69ffba8bc38bc4e01abf4b1675" class="m-doc">Text</a> = 0,
+              <a href="#a77fcb47eea13c1a85f5d74be61d77880aa9ded1e5ce5d75814730bb4caaf49419" class="m-doc">Background</a> = 1,
+              <a href="#a77fcb47eea13c1a85f5d74be61d77880aa4c072850ed5567797dd491c2bef7689" class="m-doc">DisabledText</a> = 2,
+              <a href="#a77fcb47eea13c1a85f5d74be61d77880a6b778f612ca0b0fc3b89e5249c9f5416" class="m-doc">DisabledBackground</a> = 3,
+              <a href="#a77fcb47eea13c1a85f5d74be61d77880a2dbc02f971ccf448176159870f850d27" class="m-doc">SelectedText</a> = 4,
+              <a href="#a77fcb47eea13c1a85f5d74be61d77880a2917e643c796c5ab3c8c6d405b958805" class="m-doc">SelectedBackground</a> = 5,
+              <a href="#a77fcb47eea13c1a85f5d74be61d77880acf0aa280383530e27035f2d533841703" class="m-doc">Caret</a> = 6,
+              <a href="#a77fcb47eea13c1a85f5d74be61d77880a33c46acfd62d10b18091dd1ba83b7465" class="m-doc">CaretBackground</a> = 7 }</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">enum class <a href="#a103b913ca311999f3dd52e2efb46e5d7" class="m-doc">TextEditWarpMode</a>: uint32_t { </span><span class="m-doc-wrap"><a href="#a103b913ca311999f3dd52e2efb46e5d7a3e5c1fb76b6543ac61af54b185f02af9" class="m-doc">SingleLine</a> = 0,
+              <a href="#a103b913ca311999f3dd52e2efb46e5d7ad16a748b5543974384bc43d392f1e566" class="m-doc">MultiLine</a> = 1,
+              <a href="#a103b913ca311999f3dd52e2efb46e5d7a3ea6116dc5a7ac027f4336467a103cbb" class="m-doc">MultiLineWordWrap</a> = 2 }</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">enum class <a href="#a17474dc522ad11ff86e1ff1e5f2db8cb" class="m-doc">ScrollbarEnDis</a>: uint32_t { </span><span class="m-doc-wrap"><a href="#a17474dc522ad11ff86e1ff1e5f2db8cba6e7b34fa59e1bd229b207892956dc41c" class="m-doc">Never</a> = 0,
+              <a href="#a17474dc522ad11ff86e1ff1e5f2db8cba839e5e936980d6a6306d41b2f93b4f2a" class="m-doc">AsNeeded</a> = 1,
+              <a href="#a17474dc522ad11ff86e1ff1e5f2db8cba68eec46437c384d8dad18d5464ebc35c" class="m-doc">Always</a> = 2 }</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">enum <a href="#ad55bb2756e25b6e36f38b47e0ca8e107" class="m-doc">WindowFlags</a> { </span><span class="m-doc-wrap"><a href="#ad55bb2756e25b6e36f38b47e0ca8e107a2182d3514e142aa6063ae9b238f89349" class="m-doc">kWinFlagVisible</a> = 0x1,
+              <a href="#ad55bb2756e25b6e36f38b47e0ca8e107a62a6c18da7415301ee1af34cc4043eb3" class="m-doc">kWinFlagEnabled</a> = 0x2,
+              <a href="#ad55bb2756e25b6e36f38b47e0ca8e107ad66e7650e297f6bd631c6676c459d015" class="m-doc">kWinFlagClickToFront</a> = 0x4,
+              <a href="#ad55bb2756e25b6e36f38b47e0ca8e107a7d70d0a65df88741b6582e43b8980252" class="m-doc">kWinFlagIgnoreMouse</a> = 0x10,
+              <a href="#ad55bb2756e25b6e36f38b47e0ca8e107a64638237c5438ad3668109cc6aa07065" class="m-doc">kWinFlagAlwaysInFront</a> = 0x40,
+              <a href="#ad55bb2756e25b6e36f38b47e0ca8e107afef81fd0063dc580529654669d22c809" class="m-doc">kWinFlagClip</a> = 0x400,
+              <a href="#ad55bb2756e25b6e36f38b47e0ca8e107a68fd085878a441e7f740ce4d2ae5208a" class="m-doc">kWinFlagIgnoreMouseChildren</a> = 0x1000 }</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">enum <a href="#a4d19cb87c6f1381f87dda4696c373b57" class="m-doc">(anonymous)</a> { </span><span class="m-doc-wrap"><a href="#a4d19cb87c6f1381f87dda4696c373b57aada480c01f7ccf5b895f7ef717af05ea" class="m-doc">kStateEnabled</a> = 1,
+              <a href="#a4d19cb87c6f1381f87dda4696c373b57a7cea5c16d305bbc3f513f54f9a0873f3" class="m-doc">kStateClicked</a> = 2,
+              <a href="#a4d19cb87c6f1381f87dda4696c373b57a80ed5ac6e97ccee77b0743561facda7a" class="m-doc">kStateHover</a> = 8 }</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">enum <a href="#a0361546e6bd43b73c0e341a5b239e160" class="m-doc">SerializedTypes</a> { </span><span class="m-doc-wrap"><a href="#a0361546e6bd43b73c0e341a5b239e160afd69df83e5d2b46a4b1bbbde69489210" class="m-doc">kTypeParent</a> = 1,
+              <a href="#a0361546e6bd43b73c0e341a5b239e160ae43d491d310f796f7ba3edf5c9ca153f" class="m-doc">kTypeBool</a> = 2,
+              <a href="#a0361546e6bd43b73c0e341a5b239e160ab242901765deff83084f29654da01dd7" class="m-doc">kTypeUInt8</a> = 3,
+              <a href="#a0361546e6bd43b73c0e341a5b239e160a4d1e56a733a863d7200f2f8982171fcc" class="m-doc">kTypeUInt16</a> = 4,
+              <a href="#a0361546e6bd43b73c0e341a5b239e160aa2288a9e6755a5337fa154350d50a399" class="m-doc">kTypeUInt32</a> = 5,
+              <a href="#a0361546e6bd43b73c0e341a5b239e160ad410926e61fa1d70fb1c337596c5c4a0" class="m-doc">kTypeUInt64</a> = 6,
+              <a href="#a0361546e6bd43b73c0e341a5b239e160a507192e38b37c3894af90bc992f2dbda" class="m-doc">kTypeInt8</a> = 7,
+              <a href="#a0361546e6bd43b73c0e341a5b239e160a9efa52f90f59a4db783dd56f1c972765" class="m-doc">kTypeInt16</a> = 8,
+              <a href="#a0361546e6bd43b73c0e341a5b239e160a6520e98046beb8a4a2e5437fe8c86104" class="m-doc">kTypeInt32</a> = 9,
+              <a href="#a0361546e6bd43b73c0e341a5b239e160afa63f7576eb2d941b0d7824fe4e4b006" class="m-doc">kTypeInt64</a> = 10,
+              <a href="#a0361546e6bd43b73c0e341a5b239e160ab2602646697f01ba7873ce35cb419745" class="m-doc">kTypeFloat</a> = 11,
+              <a href="#a0361546e6bd43b73c0e341a5b239e160a9da09d33d5624bb647931d4ef468359d" class="m-doc">kTypeDim</a> = 15,
+              <a href="#a0361546e6bd43b73c0e341a5b239e160a69d03bde5585c2f3ff6b8887f2027849" class="m-doc">kTypeVec4</a> = 16,
+              <a href="#a0361546e6bd43b73c0e341a5b239e160afeaa57c658da340304a90e8824336710" class="m-doc">kTypeVec2</a> = 17,
+              <a href="#a0361546e6bd43b73c0e341a5b239e160a868804eb49f6b5d7922feafbc6d40951" class="m-doc">kTypeText</a> = 18,
+              <a href="#a0361546e6bd43b73c0e341a5b239e160a22bdda76e24c23dc168afe6cb5142852" class="m-doc">kTypePointer</a> = 19,
+              <a href="#a0361546e6bd43b73c0e341a5b239e160ab3e6bc87f591e1ed014193451be87f72" class="m-doc">kTypeStruct</a> = 20,
+              <a href="#a0361546e6bd43b73c0e341a5b239e160ab1d09ce2027bf78061e849d14e9959c0" class="m-doc">kFlagArray</a> = 0x8000 }</span>
+            </dt>
+            <dd>The possible property types used in SPUI serialization.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">enum <a href="#ae7b994cda00247dd6cf8a822234809bd" class="m-doc">LayoutAnchor</a> { </span><span class="m-doc-wrap"><a href="#ae7b994cda00247dd6cf8a822234809bda2ee941f95ca5fdafee8735b33d25515d" class="m-doc">kAnchorTop</a> = 1,
+              <a href="#ae7b994cda00247dd6cf8a822234809bda4b8cdc228e41e7f6f98d8abda39ac528" class="m-doc">kAnchorBottom</a> = 2,
+              <a href="#ae7b994cda00247dd6cf8a822234809bda2475502a433251e533dc51c1045a489c" class="m-doc">kAnchorLeft</a> = 4,
+              <a href="#ae7b994cda00247dd6cf8a822234809bda1cdd78b18df964f7ff42c606d1d8a5fc" class="m-doc">kAnchorRight</a> = 8 }</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">enum class <a href="#a6a74e5b52be3f9d57087ad3ef161b7d0" class="m-doc">IconDrawModes</a>: uint32_t { </span><span class="m-doc-wrap"><a href="#a6a74e5b52be3f9d57087ad3ef161b7d0adfc4e08e5f86b8dae53ae96aa02bbda4" class="m-doc">ImageSize</a> = 0,
+              <a href="#a6a74e5b52be3f9d57087ad3ef161b7d0a816779418da71bb43dae97399c9e0b39" class="m-doc">WindowSize</a> = 1 }</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">enum class <a href="#a01c410884993f1628a255771310608df" class="m-doc">ShadowModes</a>: uint32_t { </span><span class="m-doc-wrap"><a href="#a01c410884993f1628a255771310608dfa6adf97f83acf6453d4a6a4b1070f3754" class="m-doc">None</a> = 0,
+              <a href="#a01c410884993f1628a255771310608dfabbd47109890259c0127154db1af26c75" class="m-doc">Full</a> = 1,
+              <a href="#a01c410884993f1628a255771310608dfaa9ded1e5ce5d75814730bb4caaf49419" class="m-doc">Background</a> = 2,
+              <a href="#a01c410884993f1628a255771310608dfa817434295a673aed431435658b65d9a7" class="m-doc">Icon</a> = 3 }</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">enum class <a href="#aecf6f7d990be875ad79be6c257bc6d4f" class="m-doc">TooltipBehaviour</a>: uint32_t { </span><span class="m-doc-wrap"><a href="#aecf6f7d990be875ad79be6c257bc6d4fa7a1920d61156abc05a60135aefe8bc67" class="m-doc">Default</a> = 0,
+              <a href="#aecf6f7d990be875ad79be6c257bc6d4fab6cad4ed06de1352f1449667c757c2df" class="m-doc">UnderWindow</a> = 1,
+              <a href="#aecf6f7d990be875ad79be6c257bc6d4fadfd0a82c4bf37b1e90b690a22a20692e" class="m-doc">Offset</a> = 2 }</span>
+            </dt>
+            <dd><span></span></dd>
+          </dl>
+        </section>
+        <section id="typedef-members">
+          <h2><a href="#typedef-members">Typedefs</a></h2>
+          <dl class="m-doc">
+            <dt>
+              using <a href="#afeb5fd590387d1a493c8d425e34b427b" class="m-doc">Effect</a> = <a href="class_u_t_f_win_1_1_interactive_win_proc.html" class="m-doc">InteractiveWinProc</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              using <a href="#a11e4ef0e2540c7fdd633cd98fb3fb5f7" class="m-doc">IWindowList_t</a> = intrusive_list&lt;<a href="struct_u_t_f_win_1_1_window__intrusive__list__node.html" class="m-doc">Window_<wbr />intrusive_<wbr />list_<wbr />node</a>&gt;
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              using <a href="#a04f6ade66875b9b2572e883bdf2a9d60" class="m-doc">HandleUILambda_t</a> = function&lt;bool(<a href="class_u_t_f_win_1_1_i_window.html" class="m-doc">IWindow</a>*, const <a href="class_u_t_f_win_1_1_message.html" class="m-doc">Message</a>&amp;)&gt;
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              using <a href="#a45a0de3a9a70ab6b36db39bf467ebeb9" class="m-doc">Tooltip</a> = <a href="class_u_t_f_win_1_1_spore_tooltip_win_proc.html" class="m-doc">SporeTooltipWinProc</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              using <a href="#ac6568bb91a49c6ad58a72c8f8cc88339" class="m-doc">ProgressBarDrawable</a> = <a href="class_u_t_f_win_1_1_variable_width_drawable.html" class="m-doc">VariableWidthDrawable</a>
+            </dt>
+            <dd><span></span></dd>
+          </dl>
+        </section>
+        <section id="func-members">
+          <h2><a href="#func-members">Functions</a></h2>
+          <dl class="m-doc">
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#ad02563e46538087cafd8f0abc735bcb0" class="m-doc">GetAllocator</a>(</span><span class="m-doc-wrap">) -&gt; <a href="class_i_core_allocator.html" class="m-doc">ICoreAllocator</a>*</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a9e3f8dbc5c53ea7fc4a5a820dadeb57b" class="m-doc">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_u_t_f_win_1_1_button_drawable_radio.html" class="m-doc">ButtonDrawableRadio</a>) -&gt; namespace</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a74d9ef7c4ff877c31cca2da347039f9d" class="m-doc">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_u_t_f_win_1_1_button_drawable_standard.html" class="m-doc">ButtonDrawableStandard</a>) -&gt; namespace</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a0cbf0f4cab762cb74ed84de60e8c662a" class="m-doc">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_u_t_f_win_1_1_cascade_effect.html" class="m-doc">CascadeEffect</a>) -&gt; namespace</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#afd50efc4d15e715b82589cda9029f60c" class="m-doc">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_u_t_f_win_1_1_combo_box_drawable.html" class="m-doc">ComboBoxDrawable</a>) -&gt; namespace</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#ac8e85101091250cd08b6d1b4d2ae0773" class="m-doc">GetEventFlags</a>(</span><span class="m-doc-wrap"><a href="namespace_u_t_f_win.html#a9fa1532f8ae774ee9508fab26eea47bc" class="m-doc">MessageType</a> type) -&gt; <a href="namespace_u_t_f_win.html#a53dcde7b7ffd3f5d6b53da77f5649044" class="m-doc">EventFlags</a></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a17f8c66fa3ca465436a4cac0683e6b2d" class="m-doc">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_u_t_f_win_1_1c_s_p_u_i_message_box.html" class="m-doc">cSPUIMessageBox</a>) -&gt; namespace</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#aa65f5f8ae81fd5fbd8ade395007e167d" class="m-doc">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_u_t_f_win_1_1_dialog_drawable.html" class="m-doc">DialogDrawable</a>) -&gt; namespace</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a1b20e4b6512bb05f0eb4a0123d2c1eec" class="m-doc">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_u_t_f_win_1_1_bi_state_effect.html" class="m-doc">BiStateEffect</a>) -&gt; namespace</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#ae226da4b0913fccc10d4093ae7345e1a" class="m-doc">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_u_t_f_win_1_1_fade_effect.html" class="m-doc">FadeEffect</a>) -&gt; namespace</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#adb299a207895d50c65473fe8f3402c25" class="m-doc">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_u_t_f_win_1_1_frame_drawable.html" class="m-doc">FrameDrawable</a>) -&gt; namespace</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a0fb2a03bd9d6d4501980fe7ff1d1d35d" class="m-doc">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_u_t_f_win_1_1_glide_effect.html" class="m-doc">GlideEffect</a>) -&gt; namespace</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#ae091349c8f22ca238779f400617d366f" class="m-doc">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_u_t_f_win_1_1_graphics2_d.html" class="m-doc">Graphics2D</a>) -&gt; namespace</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a9904dd236a470178d3af14da9f65b162" class="m-doc">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_u_t_f_win_1_1_i_button.html" class="m-doc">IButton</a>) -&gt; namespace</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a6f7ab84372bab58afc93a63b5fe03ee7" class="m-doc">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_u_t_f_win_1_1_image.html" class="m-doc">Image</a>) -&gt; namespace</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a4a0c958c564254691cdcccff353440b5" class="m-doc">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_u_t_f_win_1_1_image_drawable.html" class="m-doc">ImageDrawable</a>) -&gt; namespace</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a81625222a3268b30c19090af3f5da739" class="m-doc">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_u_t_f_win_1_1_i_image_drawable.html" class="m-doc">IImageDrawable</a>) -&gt; namespace</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#ac53ad317a75b4c583147fe81d22f805b" class="m-doc">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_u_t_f_win_1_1_inflate_effect.html" class="m-doc">InflateEffect</a>) -&gt; namespace</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#ae013bbd0a6388d4615e87af454838065" class="m-doc">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_u_t_f_win_1_1_interactive_win_proc.html" class="m-doc">InteractiveWinProc</a>) -&gt; namespace</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#aaa38edb56a90a8cab64b407ee7d7614d" class="m-doc">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_u_t_f_win_1_1_i_text_edit.html" class="m-doc">ITextEdit</a>) -&gt; namespace</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a47087c54a22f19407efe9282606e64d4" class="m-doc">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_u_t_f_win_1_1_i_window_manager.html" class="m-doc">IWindowManager</a>) -&gt; namespace</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#ad8e50a38ad77b6f85e8c872f32f65488" class="m-doc">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_u_t_f_win_1_1_modulate_effect.html" class="m-doc">ModulateEffect</a>) -&gt; namespace</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a71e785b3f722cfbb2f36c2cd1052c8a0" class="m-doc">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_u_t_f_win_1_1_perspective_effect.html" class="m-doc">PerspectiveEffect</a>) -&gt; namespace</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a9eaefe81015268627f8caa31800efa7a" class="m-doc">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_u_t_f_win_1_1_proportional_layout.html" class="m-doc">ProportionalLayout</a>) -&gt; namespace</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#ab6972272c4edda3bb6d7074e6a2b336c" class="m-doc">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_u_t_f_win_1_1_rotate_effect.html" class="m-doc">RotateEffect</a>) -&gt; namespace</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a20b6ab5a45ef6c58ed3fd8d6c76c68b6" class="m-doc">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_u_t_f_win_1_1_scrollbar_drawable.html" class="m-doc">ScrollbarDrawable</a>) -&gt; namespace</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#ad11fc7bab62cde9af7530086494514a3" class="m-doc">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_u_t_f_win_1_1_simple_layout.html" class="m-doc">SimpleLayout</a>) -&gt; namespace</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a1bf082b20b64296ef447732373c00821" class="m-doc">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_u_t_f_win_1_1_slider_drawable.html" class="m-doc">SliderDrawable</a>) -&gt; namespace</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#abc58c66c51b770c8f038fd22581abca1" class="m-doc">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_u_t_f_win_1_1_spinner_drawable.html" class="m-doc">SpinnerDrawable</a>) -&gt; namespace</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#afbacfec6a063cac8d2a9304d76eafbdf" class="m-doc">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_u_t_f_win_1_1_spore_std_drawable.html" class="m-doc">SporeStdDrawable</a>) -&gt; namespace</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#adbbb4024e34e5e1ff6bdbb10f9f0d37d" class="m-doc">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_u_t_f_win_1_1_spore_std_drawable_image_info.html" class="m-doc">SporeStdDrawableImageInfo</a>) -&gt; namespace</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#aaf6bd276d8aff124afcf3988a388e7b6" class="m-doc">CreateTooltip</a>(</span><span class="m-doc-wrap">const char16_t* pText,
+              const char16_t* pDetailedText = nullptr,
+              const char16_t* pLayoutName = u&quot;tooltips&quot;,
+              uint32_t controlID = 0x3754E6C,
+              uint32_t detailControlID = 0x3754E6C) -&gt; <a href="namespace_u_t_f_win.html#a45a0de3a9a70ab6b36db39bf467ebeb9" class="m-doc">Tooltip</a>*</span>
+            </dt>
+            <dd>Creates an instance of the Tooltip class that can be used to display the given text as a tooltip.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a6102e5e3cfb741fab697ad90937565c9" class="m-doc">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_u_t_f_win_1_1_spore_tooltip_win_proc.html" class="m-doc">SporeTooltipWinProc</a>) -&gt; namespace</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a7c6f1b24693e810fa696edfc850444dc" class="m-doc">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_u_t_f_win_1_1_std_drawable.html" class="m-doc">StdDrawable</a>) -&gt; namespace</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#ab8fca0ab48d4d5914bda7a72edeafac2" class="m-doc">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_u_t_f_win_1_1_tree_node.html" class="m-doc">TreeNode</a>) -&gt; namespace</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a3bfe68db62ce9be192fce501678d3f53" class="m-doc">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_u_t_f_win_1_1_u_i_layout.html" class="m-doc">UILayout</a>) -&gt; namespace</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a128ba3beeb381554c9f0adb62c8e7598" class="m-doc">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_u_t_f_win_1_1_u_i_renderer.html" class="m-doc">UIRenderer</a>) -&gt; namespace</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#ac5b85eebffee52237305680ce738f0a8" class="m-doc">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_u_t_f_win_1_1_u_t_f_win_object.html" class="m-doc">UTFWinObject</a>) -&gt; namespace</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a9ffc36689da4f46b779a48515815719d" class="m-doc">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_u_t_f_win_1_1_variable_width_drawable.html" class="m-doc">VariableWidthDrawable</a>) -&gt; namespace</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a38791f16bd2d1ab7219e6897aed66082" class="m-doc">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_u_t_f_win_1_1_window.html" class="m-doc">Window</a>) -&gt; namespace</span>
+            </dt>
+            <dd><span></span></dd>
+          </dl>
+        </section>
+        <section>
+          <h2>Enum documentation</h2>
+          <section class="m-doc-details" id="a6f7bd7cb259fdac49b7a3a6588c52a54"><div>
+            <h3>
+              enum class UTFWin::<wbr /><a href="#a6f7bd7cb259fdac49b7a3a6588c52a54" class="m-doc-self">OscillatorTimeFunction</a>: uint32_t
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_behaviour_time_ramp_8h.html">&lt;Spore/UTFWin/BehaviourTimeRamp.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="a53dcde7b7ffd3f5d6b53da77f5649044"><div>
+            <h3>
+              enum UTFWin::<wbr /><a href="#a53dcde7b7ffd3f5d6b53da77f5649044" class="m-doc-self">EventFlags</a>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_u_t_f_win_2_constants_8h.html">&lt;Spore/UTFWin/Constants.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+            <table class="m-table m-fullwidth m-flat m-doc">
+              <thead><tr><th style="width: 1%">Enumerators</th><th></th></tr></thead>
+              <tbody>
+                <tr>
+                  <td><a href="#a53dcde7b7ffd3f5d6b53da77f5649044abada94b5e01bb4301d59887ff92a8719" class="m-doc-self" id="a53dcde7b7ffd3f5d6b53da77f5649044abada94b5e01bb4301d59887ff92a8719">kEventFlagBasicInput</a></td>
+                  <td>
+                  <p>A flag to listen to message types 0x01 &ndash; 0x09 and 0x17 &ndash; 0x1A, that is, all the ones related to keyboard and mouse input.</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a53dcde7b7ffd3f5d6b53da77f5649044ac7c5e9b0397ba7de8e134e658f879ca7" class="m-doc-self" id="a53dcde7b7ffd3f5d6b53da77f5649044ac7c5e9b0397ba7de8e134e658f879ca7">kEventFlagUpdate</a></td>
+                  <td>
+                  <p>A flag to listen to the message type kMsgUpdate.</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a53dcde7b7ffd3f5d6b53da77f5649044a2b162fa47d2cad579c2b60b209762505" class="m-doc-self" id="a53dcde7b7ffd3f5d6b53da77f5649044a2b162fa47d2cad579c2b60b209762505">kEventFlagPaint</a></td>
+                  <td>
+                  <p>A flag to listen to the message type kMsgPaint.</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a53dcde7b7ffd3f5d6b53da77f5649044a4d6f21c3c88d01e42e3c5a898f675a7f" class="m-doc-self" id="a53dcde7b7ffd3f5d6b53da77f5649044a4d6f21c3c88d01e42e3c5a898f675a7f">kEventWindowChanged</a></td>
+                  <td>
+                  <p>A flag to listen to the message type kMsgWindowChanged and 0x0F.</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a53dcde7b7ffd3f5d6b53da77f5649044a393649a2f697e6deeb8d8fe2ea38bef6" class="m-doc-self" id="a53dcde7b7ffd3f5d6b53da77f5649044a393649a2f697e6deeb8d8fe2ea38bef6">kEventStateChanged</a></td>
+                  <td>
+                  <p>A flag to listen to the message type kMsgStateChanged.</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a53dcde7b7ffd3f5d6b53da77f5649044a738d483f2a5f1c59fc95c9535581e9ba" class="m-doc-self" id="a53dcde7b7ffd3f5d6b53da77f5649044a738d483f2a5f1c59fc95c9535581e9ba">kEventRefresh</a></td>
+                  <td>
+                  <p>A flag to listen to the message types kMsgRefresh, kMsgMouseEnter and kMsgMouseLeave.</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a53dcde7b7ffd3f5d6b53da77f5649044ae00581bacda0d1a50bf5d3690367d321" class="m-doc-self" id="a53dcde7b7ffd3f5d6b53da77f5649044ae00581bacda0d1a50bf5d3690367d321">kEventFlagAdvanced</a></td>
+                  <td>
+                  <p>A flag to listen to the rest of message tyoes, all the ones above 0x1C.</p>
+<p>This does not include the kMsgWinProcAdded and kMsgWinProcRemoved, which are ALWAYS listened.</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a53dcde7b7ffd3f5d6b53da77f5649044a8696ea1c09389d3d9228fd013da4b368" class="m-doc-self" id="a53dcde7b7ffd3f5d6b53da77f5649044a8696ea1c09389d3d9228fd013da4b368">kEventFlagLayout</a></td>
+                  <td>
+                  <p>Some flags to listen to the message type kMsgLayout. This is composed of multiple flags.</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a53dcde7b7ffd3f5d6b53da77f5649044ab73e6fb07f64f271deb5b40b6aa7a018" class="m-doc-self" id="a53dcde7b7ffd3f5d6b53da77f5649044ab73e6fb07f64f271deb5b40b6aa7a018">kEventFlagElement</a></td>
+                  <td>
+                  <p>A flag to listen to the message types kMsgElementAdded and kMsgElementRemoved.</p>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="a9fa1532f8ae774ee9508fab26eea47bc"><div>
+            <h3>
+              enum UTFWin::<wbr /><a href="#a9fa1532f8ae774ee9508fab26eea47bc" class="m-doc-self">MessageType</a>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_u_t_f_win_2_constants_8h.html">&lt;Spore/UTFWin/Constants.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+            <table class="m-table m-fullwidth m-flat m-doc">
+              <thead><tr><th style="width: 1%">Enumerators</th><th></th></tr></thead>
+              <tbody>
+                <tr>
+                  <td><a href="#a9fa1532f8ae774ee9508fab26eea47bcaee189eb7f7c883d4a1d7fecabc42c214" class="m-doc-self" id="a9fa1532f8ae774ee9508fab26eea47bcaee189eb7f7c883d4a1d7fecabc42c214">kMsgKeyDown</a></td>
+                  <td>
+                  <p>Occurs when a key is pressed while the component has focus.</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a9fa1532f8ae774ee9508fab26eea47bca3c9afc18eb3168e8fee6c64ae274a823" class="m-doc-self" id="a9fa1532f8ae774ee9508fab26eea47bca3c9afc18eb3168e8fee6c64ae274a823">kMsgKeyUp</a></td>
+                  <td>
+                  <p>Occurs when a key is released while the component has focus.</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a9fa1532f8ae774ee9508fab26eea47bca50fa9b47050f4e8f9c13f1ae3c78290f" class="m-doc-self" id="a9fa1532f8ae774ee9508fab26eea47bca50fa9b47050f4e8f9c13f1ae3c78290f">kMsgKeyDown2</a></td>
+                  <td>
+                  <p>Occurs when a key is pressed while the component has focus.</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a9fa1532f8ae774ee9508fab26eea47bca88d91e0725c049b1177b32fa7f86d97b" class="m-doc-self" id="a9fa1532f8ae774ee9508fab26eea47bca88d91e0725c049b1177b32fa7f86d97b">kMsgKeyUp2</a></td>
+                  <td>
+                  <p>Occurs when a key is released while the component has focus.</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a9fa1532f8ae774ee9508fab26eea47bca28994564e93696ac63da10300a651406" class="m-doc-self" id="a9fa1532f8ae774ee9508fab26eea47bca28994564e93696ac63da10300a651406">kMsgKeyPress</a></td>
+                  <td>
+                  <p>Occurs when a character. space or backspace key is pressed while the control has focus.</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a9fa1532f8ae774ee9508fab26eea47bcac1312d2c4b139f3fd2cc233a6b861cd6" class="m-doc-self" id="a9fa1532f8ae774ee9508fab26eea47bcac1312d2c4b139f3fd2cc233a6b861cd6">kMsgMouseDown</a></td>
+                  <td>
+                  <p>Occurs when the mouse pointer is over the component and a mouse button is pressed.</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a9fa1532f8ae774ee9508fab26eea47bca4633d5603e05894e429efbef1f54810e" class="m-doc-self" id="a9fa1532f8ae774ee9508fab26eea47bca4633d5603e05894e429efbef1f54810e">kMsgMouseUp</a></td>
+                  <td>
+                  <p>Occurs when the mouse pointer is over the component and a mouse button is released.</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a9fa1532f8ae774ee9508fab26eea47bca3aa8b47c26334b5c06c18f95fa3fd939" class="m-doc-self" id="a9fa1532f8ae774ee9508fab26eea47bca3aa8b47c26334b5c06c18f95fa3fd939">kMsgMouseMove</a></td>
+                  <td>
+                  <p>Occurs when the mouse pointer is moved over the component.</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a9fa1532f8ae774ee9508fab26eea47bca74edac94c35585c228e8a73479dc5e90" class="m-doc-self" id="a9fa1532f8ae774ee9508fab26eea47bca74edac94c35585c228e8a73479dc5e90">kMsgMouseWheel</a></td>
+                  <td>
+                  <p>Occurs when the mouse wheel moves while the component has focus.</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a9fa1532f8ae774ee9508fab26eea47bca31db8e1cc08d482c54d7578fbae7d620" class="m-doc-self" id="a9fa1532f8ae774ee9508fab26eea47bca31db8e1cc08d482c54d7578fbae7d620">kMsgRefresh</a></td>
+                  <td>
+                  <p>Occurs when the mouse pointer leaves or enters the component.</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a9fa1532f8ae774ee9508fab26eea47bca3fe2b3bb24ba60c046e6ead0c473b82e" class="m-doc-self" id="a9fa1532f8ae774ee9508fab26eea47bca3fe2b3bb24ba60c046e6ead0c473b82e">kMsgUpdate</a></td>
+                  <td>
+                  <p>Occurs every game loop, not all components receive this message.</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a9fa1532f8ae774ee9508fab26eea47bca03399168f3d777b4d4dbb86ad22b639d" class="m-doc-self" id="a9fa1532f8ae774ee9508fab26eea47bca03399168f3d777b4d4dbb86ad22b639d">kMsgPaint</a></td>
+                  <td>
+                  <p>Occurs when the component is redrawn.</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a9fa1532f8ae774ee9508fab26eea47bca7adc57733b527c9eb9e6fc3b2327f8cc" class="m-doc-self" id="a9fa1532f8ae774ee9508fab26eea47bca7adc57733b527c9eb9e6fc3b2327f8cc">kMsgWindowChanged</a></td>
+                  <td>
+                  <p>Occurs when something in the window (caption, flags or drawable) changes.</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a9fa1532f8ae774ee9508fab26eea47bca92a4e1a5a69dcee2d01428cc7fea0d4f" class="m-doc-self" id="a9fa1532f8ae774ee9508fab26eea47bca92a4e1a5a69dcee2d01428cc7fea0d4f">kMsgLayout</a></td>
+                  <td>
+                  <p>Occurs every time the window area is changed, when <a href="class_u_t_f_win_1_1_i_window.html#ab5cfbb8a424612d533c292f02b14b306" class="m-doc">IWindow::<wbr />Revalidate()</a> is called.</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a9fa1532f8ae774ee9508fab26eea47bcaf52959500eb4bacfd30dcd43ad160e6f" class="m-doc-self" id="a9fa1532f8ae774ee9508fab26eea47bcaf52959500eb4bacfd30dcd43ad160e6f">kMsgElementAdded</a></td>
+                  <td>
+                  <p>Occurs every time a window or procedure is added.</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a9fa1532f8ae774ee9508fab26eea47bca0f4b2b5e6aed34b49ea618bd2f57aac4" class="m-doc-self" id="a9fa1532f8ae774ee9508fab26eea47bca0f4b2b5e6aed34b49ea618bd2f57aac4">kMsgElementRemoved</a></td>
+                  <td>
+                  <p>Occurs every time a window is removed.</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a9fa1532f8ae774ee9508fab26eea47bcad02b6ca45e9a4e7361c15d8dbea8afb8" class="m-doc-self" id="a9fa1532f8ae774ee9508fab26eea47bcad02b6ca45e9a4e7361c15d8dbea8afb8">kMsgStateChanged</a></td>
+                  <td>
+                  <p>Occurs when the state of a window changes.</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a9fa1532f8ae774ee9508fab26eea47bca52e412737bcc4620e206cb29c433b6a7" class="m-doc-self" id="a9fa1532f8ae774ee9508fab26eea47bca52e412737bcc4620e206cb29c433b6a7">kMsgCollisionDetect</a></td>
+                  <td>
+                  <p>Occurs when a window is checked to see if it contains the mouse pointer.</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a9fa1532f8ae774ee9508fab26eea47bca8acc0370665cd3d35aa898d8515b6b86" class="m-doc-self" id="a9fa1532f8ae774ee9508fab26eea47bca8acc0370665cd3d35aa898d8515b6b86">kMsgTransformed</a></td>
+                  <td>
+                  <p>Occurs when a transformation is applied to a window.</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a9fa1532f8ae774ee9508fab26eea47bca0e89eb2860b07f734dabec989d57df41" class="m-doc-self" id="a9fa1532f8ae774ee9508fab26eea47bca0e89eb2860b07f734dabec989d57df41">kMsgButtonClick</a></td>
+                  <td>
+                  <p>Occurs when a standard button is clicked.</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a9fa1532f8ae774ee9508fab26eea47bca52c347affb8f2fb7979ba0c123cf5b25" class="m-doc-self" id="a9fa1532f8ae774ee9508fab26eea47bca52c347affb8f2fb7979ba0c123cf5b25">kMsgButtonSelect</a></td>
+                  <td>
+                  <p>Occurs when a toggle or radio button is selected.</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a9fa1532f8ae774ee9508fab26eea47bca869eba728e88ff7fc5c87c200ed1edd1" class="m-doc-self" id="a9fa1532f8ae774ee9508fab26eea47bca869eba728e88ff7fc5c87c200ed1edd1">kMsgMouseEnter</a></td>
+                  <td>
+                  <p>Occurs when the mouse pointer enters the component.</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a9fa1532f8ae774ee9508fab26eea47bca6b83c3a6f3469145fb682ce2611a920c" class="m-doc-self" id="a9fa1532f8ae774ee9508fab26eea47bca6b83c3a6f3469145fb682ce2611a920c">kMsgMouseLeave</a></td>
+                  <td>
+                  <p>Occurs when the mouse pointer leaves the component.</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a9fa1532f8ae774ee9508fab26eea47bca679a51466fdbf8a985acb39c6501229d" class="m-doc-self" id="a9fa1532f8ae774ee9508fab26eea47bca679a51466fdbf8a985acb39c6501229d">kMsgWinProcAdded</a></td>
+                  <td>
+                  <p>Occurs inmediately after a <a href="class_u_t_f_win_1_1_i_win_proc.html" class="m-doc">IWinProc</a> is added to a component.</p>
+<p>This is called directly on the <a href="class_u_t_f_win_1_1_i_win_proc.html" class="m-doc">IWinProc</a>.</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a9fa1532f8ae774ee9508fab26eea47bca639f55dd24442db16de97ebc01a47614" class="m-doc-self" id="a9fa1532f8ae774ee9508fab26eea47bca639f55dd24442db16de97ebc01a47614">kMsgWinProcRemoved</a></td>
+                  <td>
+                  <p>Occurs inmediately after a <a href="class_u_t_f_win_1_1_i_win_proc.html" class="m-doc">IWinProc</a> is removed from a component.</p>
+<p>This is called directly on the <a href="class_u_t_f_win_1_1_i_win_proc.html" class="m-doc">IWinProc</a>.</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a9fa1532f8ae774ee9508fab26eea47bcaee57618cc8bcb6679d41681767983f83" class="m-doc-self" id="a9fa1532f8ae774ee9508fab26eea47bcaee57618cc8bcb6679d41681767983f83">kMsgComponentActivated</a></td>
+                  <td>
+                  <p><span></span></p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a9fa1532f8ae774ee9508fab26eea47bca959bc9673a87190a43042ab32e9dc396" class="m-doc-self" id="a9fa1532f8ae774ee9508fab26eea47bca959bc9673a87190a43042ab32e9dc396">kMsgTextChanged</a></td>
+                  <td>
+                  <p>Occurs when the text inside a <a href="class_u_t_f_win_1_1_i_text_edit.html" class="m-doc">ITextEdit</a> is changed.</p>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="aa309e5d2bda65d6faee845890d0aa867"><div>
+            <h3>
+              enum UTFWin::<wbr /><a href="#aa309e5d2bda65d6faee845890d0aa867" class="m-doc-self">RefreshType</a>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_u_t_f_win_2_constants_8h.html">&lt;Spore/UTFWin/Constants.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="ad68e9a91992bf713724d2785dc867f4c"><div>
+            <h3>
+              enum class UTFWin::<wbr /><a href="#ad68e9a91992bf713724d2785dc867f4c" class="m-doc-self">BackgroundTiling</a>: uint32_t
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_dialog_drawable_8h.html">&lt;Spore/UTFWin/DialogDrawable.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+            <table class="m-table m-fullwidth m-flat m-doc">
+              <thead><tr><th style="width: 1%">Enumerators</th><th></th></tr></thead>
+              <tbody>
+                <tr>
+                  <td><a href="#ad68e9a91992bf713724d2785dc867f4cafbb09a82eafab60150d0996e8fe46560" class="m-doc-self" id="ad68e9a91992bf713724d2785dc867f4cafbb09a82eafab60150d0996e8fe46560">Stretch</a></td>
+                  <td>
+                  <p>Stretches background image.</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#ad68e9a91992bf713724d2785dc867f4cac5457c5f3cfb4da8638ce7190f8e5152" class="m-doc-self" id="ad68e9a91992bf713724d2785dc867f4cac5457c5f3cfb4da8638ce7190f8e5152">Tile</a></td>
+                  <td>
+                  <p>Tiles image.</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#ad68e9a91992bf713724d2785dc867f4cad38b3424cd046b0719453bfbca59c422" class="m-doc-self" id="ad68e9a91992bf713724d2785dc867f4cad38b3424cd046b0719453bfbca59c422">CenterStretch</a></td>
+                  <td>
+                  <p>Stretches center of image and tiles edges,.</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#ad68e9a91992bf713724d2785dc867f4cad83028787f95bbc6e441aecd7d224abc" class="m-doc-self" id="ad68e9a91992bf713724d2785dc867f4cad83028787f95bbc6e441aecd7d224abc">CenterTile</a></td>
+                  <td>
+                  <p>Tiles center and edges.</p>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="a3ca3b4824ddcafe7ea0a57ae1db0a51d"><div>
+            <h3>
+              enum class UTFWin::<wbr /><a href="#a3ca3b4824ddcafe7ea0a57ae1db0a51d" class="m-doc-self">TriggerType</a>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_effect_8h.html">&lt;Spore/UTFWin/Effect.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="a20665f815b59b14a25274234d92c068d"><div>
+            <h3>
+              enum class UTFWin::<wbr /><a href="#a20665f815b59b14a25274234d92c068d" class="m-doc-self">InterpolationType</a>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_effect_8h.html">&lt;Spore/UTFWin/Effect.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="ad62ad76870c24046126a9f52f4c672c3"><div>
+            <h3>
+              enum UTFWin::<wbr /><a href="#ad62ad76870c24046126a9f52f4c672c3" class="m-doc-self">ButtonFlags</a>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_i_button_8h.html">&lt;Spore/UTFWin/IButton.h&gt;</a></div>
+            </h3>
+            <p>Flags that can be set to an <a href="class_u_t_f_win_1_1_i_button.html" class="m-doc">UTFWin::<wbr />IButton</a>.</p>
+            <table class="m-table m-fullwidth m-flat m-doc">
+              <thead><tr><th style="width: 1%">Enumerators</th><th></th></tr></thead>
+              <tbody>
+                <tr>
+                  <td><a href="#ad62ad76870c24046126a9f52f4c672c3ad399f987a03f7d10b6de0750ef6a28e2" class="m-doc-self" id="ad62ad76870c24046126a9f52f4c672c3ad399f987a03f7d10b6de0750ef6a28e2">kBtnFlagTriggerOnDown</a></td>
+                  <td>
+                  <p>Button considers itself clicked on mouse/key down rather than mouse/key up.</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#ad62ad76870c24046126a9f52f4c672c3a156bf6ecf8d3b21a3df796412427ae7e" class="m-doc-self" id="ad62ad76870c24046126a9f52f4c672c3a156bf6ecf8d3b21a3df796412427ae7e">kBtnFlagFixedWidth</a></td>
+                  <td>
+                  <p>Button is fixed width - this means that you can still resize the window area but the actual button width will remain fixed and and it will be positioned within a given window area. Most often used with radio and check box buttons with caption text positioned to the left or right of the button.</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#ad62ad76870c24046126a9f52f4c672c3a60fbb18bdc5484c24c6f5b7263eeb2df" class="m-doc-self" id="ad62ad76870c24046126a9f52f4c672c3a60fbb18bdc5484c24c6f5b7263eeb2df">kBtnFlagFixedHeight</a></td>
+                  <td>
+                  <p>Button is fixed height - this means that you can still resize the window area but the actual button height will remain fixed and and it will be positioned within a given window area. Most often used with radio and check box buttons with caption text positioned to the left or right of the button.</p>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="aa8397d8d161468c54cd026c18a297a65"><div>
+            <h3>
+              enum UTFWin::<wbr /><a href="#aa8397d8d161468c54cd026c18a297a65" class="m-doc-self">ButtonStateFlags</a>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_i_button_8h.html">&lt;Spore/UTFWin/IButton.h&gt;</a></div>
+            </h3>
+            <p>Flags relted to the state of a button that can be set to an <a href="class_u_t_f_win_1_1_i_button.html" class="m-doc">UTFWin::<wbr />IButton</a>.</p>
+          </div></section>
+          <section class="m-doc-details" id="a7b974fc368a793146e3d725b97423cdf"><div>
+            <h3>
+              enum UTFWin::<wbr /><a href="#a7b974fc368a793146e3d725b97423cdf" class="m-doc-self">ComboBoxFlags</a>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_i_combo_box_8h.html">&lt;Spore/UTFWin/IComboBox.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+            <table class="m-table m-fullwidth m-flat m-doc">
+              <thead><tr><th style="width: 1%">Enumerators</th><th></th></tr></thead>
+              <tbody>
+                <tr>
+                  <td><a href="#a7b974fc368a793146e3d725b97423cdfa869c2fbe9d8b628f502e4b3dd61300d6" class="m-doc-self" id="a7b974fc368a793146e3d725b97423cdfa869c2fbe9d8b628f502e4b3dd61300d6">kComboBoxOutline</a></td>
+                  <td>
+                  <p>An outline is drawn around the control when highlighted.</p>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="a9069fbe6c52a96f38bb557510b4e890a"><div>
+            <h3>
+              enum class UTFWin::<wbr /><a href="#a9069fbe6c52a96f38bb557510b4e890a" class="m-doc-self">ComboBoxColors</a>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_i_combo_box_8h.html">&lt;Spore/UTFWin/IComboBox.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="a5461111d581ac167195c1127a195c2dd"><div>
+            <h3>
+              enum class UTFWin::<wbr /><a href="#a5461111d581ac167195c1127a195c2dd" class="m-doc-self">Scaling</a>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_i_drawable_8h.html">&lt;Spore/UTFWin/IDrawable.h&gt;</a></div>
+            </h3>
+            <p>An enumeration used by certain drawables, that determines how to draw the images.</p>
+            <table class="m-table m-fullwidth m-flat m-doc">
+              <thead><tr><th style="width: 1%">Enumerators</th><th></th></tr></thead>
+              <tbody>
+                <tr>
+                  <td><a href="#a5461111d581ac167195c1127a195c2dda6fcab5bd54db1a8ed145c685e6e2dea1" class="m-doc-self" id="a5461111d581ac167195c1127a195c2dda6fcab5bd54db1a8ed145c685e6e2dea1">StretchImage</a></td>
+                  <td>
+                  <p>Stretch the entire image so it fills all the space.</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a5461111d581ac167195c1127a195c2ddaf43c7716faf26a9bb7eafe068db1b4ef" class="m-doc-self" id="a5461111d581ac167195c1127a195c2ddaf43c7716faf26a9bb7eafe068db1b4ef">StretchCenter</a></td>
+                  <td>
+                  <p>Draw the edges of the image normally and then stretch the center.</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a5461111d581ac167195c1127a195c2dda24f58fe7603465361036f33b10cfd37f" class="m-doc-self" id="a5461111d581ac167195c1127a195c2dda24f58fe7603465361036f33b10cfd37f">TileImage</a></td>
+                  <td>
+                  <p>Use tiling to fill the space, repeatedly rendering the image.</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a5461111d581ac167195c1127a195c2ddab10b3f252d6c0aabc93cd05d50280b71" class="m-doc-self" id="a5461111d581ac167195c1127a195c2ddab10b3f252d6c0aabc93cd05d50280b71">TileCenter</a></td>
+                  <td>
+                  <p>Draw the edges of the iamge normally, and then tile the center.</p>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="af869e3df8ebe407d04362051647c7e6b"><div>
+            <h3>
+              enum class UTFWin::<wbr /><a href="#af869e3df8ebe407d04362051647c7e6b" class="m-doc-self">AlignmentH</a>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_i_layout_element_8h.html">&lt;Spore/UTFWin/ILayoutElement.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="a854201008eb63c32d8eb03667c19cdfb"><div>
+            <h3>
+              enum class UTFWin::<wbr /><a href="#a854201008eb63c32d8eb03667c19cdfb" class="m-doc-self">AlignmentV</a>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_i_layout_element_8h.html">&lt;Spore/UTFWin/ILayoutElement.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="a6e96ee9ccb9f4d00095c89ef80753c1e"><div>
+            <h3>
+              enum class UTFWin::<wbr /><a href="#a6e96ee9ccb9f4d00095c89ef80753c1e" class="m-doc-self">FontAlignmentH</a>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_i_layout_element_8h.html">&lt;Spore/UTFWin/ILayoutElement.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="a8d918033b682be84f235eb23d47e750d"><div>
+            <h3>
+              enum class UTFWin::<wbr /><a href="#a8d918033b682be84f235eb23d47e750d" class="m-doc-self">FontAlignmentV</a>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_i_layout_element_8h.html">&lt;Spore/UTFWin/ILayoutElement.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="a5d5cc7a836dc1ac26137bb9e69e194e4"><div>
+            <h3>
+              enum class UTFWin::<wbr /><a href="#a5d5cc7a836dc1ac26137bb9e69e194e4" class="m-doc-self">Orientation</a>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_i_layout_element_8h.html">&lt;Spore/UTFWin/ILayoutElement.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="a8477acb16bfb14451add5715ef9096dc"><div>
+            <h3>
+              enum class UTFWin::<wbr /><a href="#a8477acb16bfb14451add5715ef9096dc" class="m-doc-self">ButtonTypes</a>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_i_layout_element_8h.html">&lt;Spore/UTFWin/ILayoutElement.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="ada094ff2b4a937040b48ae69c2ad6459"><div>
+            <h3>
+              enum class UTFWin::<wbr /><a href="#ada094ff2b4a937040b48ae69c2ad6459" class="m-doc-self">StateIndices</a>: uint32_t
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_i_layout_element_8h.html">&lt;Spore/UTFWin/ILayoutElement.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="abf3171126194941ce2d0f329beb88542"><div>
+            <h3>
+              enum class UTFWin::<wbr /><a href="#abf3171126194941ce2d0f329beb88542" class="m-doc-self">ImageTiling</a>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_image_drawable_8h.html">&lt;Spore/UTFWin/ImageDrawable.h&gt;</a></div>
+            </h3>
+            <p>An enumeration used by <a href="class_u_t_f_win_1_1_image_drawable.html" class="m-doc">ImageDrawable</a>, that determine how the image is tiled.</p>
+            <table class="m-table m-fullwidth m-flat m-doc">
+              <thead><tr><th style="width: 1%">Enumerators</th><th></th></tr></thead>
+              <tbody>
+                <tr>
+                  <td><a href="#abf3171126194941ce2d0f329beb88542a6adf97f83acf6453d4a6a4b1070f3754" class="m-doc-self" id="abf3171126194941ce2d0f329beb88542a6adf97f83acf6453d4a6a4b1070f3754">None</a></td>
+                  <td>
+                  <p>No tiling is used.</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#abf3171126194941ce2d0f329beb88542aeb6d8ae6f20283755b339c0dc273988b" class="m-doc-self" id="abf3171126194941ce2d0f329beb88542aeb6d8ae6f20283755b339c0dc273988b">Standard</a></td>
+                  <td>
+                  <p>The entire image is tiled to fill the space.</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#abf3171126194941ce2d0f329beb88542ae4a297a0f76119a442c2595ac040673e" class="m-doc-self" id="abf3171126194941ce2d0f329beb88542ae4a297a0f76119a442c2595ac040673e">Edge</a></td>
+                  <td>
+                  <p>Draws the edges (whcih are considered 1/3 of the space) normally and tiles the rest of the image until it fills all the space.</p>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="a77fcb47eea13c1a85f5d74be61d77880"><div>
+            <h3>
+              enum class UTFWin::<wbr /><a href="#a77fcb47eea13c1a85f5d74be61d77880" class="m-doc-self">TextColors</a>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_i_text_edit_8h.html">&lt;Spore/UTFWin/ITextEdit.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="a103b913ca311999f3dd52e2efb46e5d7"><div>
+            <h3>
+              enum class UTFWin::<wbr /><a href="#a103b913ca311999f3dd52e2efb46e5d7" class="m-doc-self">TextEditWarpMode</a>: uint32_t
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_i_text_edit_8h.html">&lt;Spore/UTFWin/ITextEdit.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+            <table class="m-table m-fullwidth m-flat m-doc">
+              <thead><tr><th style="width: 1%">Enumerators</th><th></th></tr></thead>
+              <tbody>
+                <tr>
+                  <td><a href="#a103b913ca311999f3dd52e2efb46e5d7a3e5c1fb76b6543ac61af54b185f02af9" class="m-doc-self" id="a103b913ca311999f3dd52e2efb46e5d7a3e5c1fb76b6543ac61af54b185f02af9">SingleLine</a></td>
+                  <td>
+                  <p>All text in one line.</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a103b913ca311999f3dd52e2efb46e5d7ad16a748b5543974384bc43d392f1e566" class="m-doc-self" id="a103b913ca311999f3dd52e2efb46e5d7ad16a748b5543974384bc43d392f1e566">MultiLine</a></td>
+                  <td>
+                  <p>Wrap on hard linebreaks only.</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a103b913ca311999f3dd52e2efb46e5d7a3ea6116dc5a7ac027f4336467a103cbb" class="m-doc-self" id="a103b913ca311999f3dd52e2efb46e5d7a3ea6116dc5a7ac027f4336467a103cbb">MultiLineWordWrap</a></td>
+                  <td>
+                  <p>Multiline with soft wordwrap.</p>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="a17474dc522ad11ff86e1ff1e5f2db8cb"><div>
+            <h3>
+              enum class UTFWin::<wbr /><a href="#a17474dc522ad11ff86e1ff1e5f2db8cb" class="m-doc-self">ScrollbarEnDis</a>: uint32_t
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_i_text_edit_8h.html">&lt;Spore/UTFWin/ITextEdit.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="ad55bb2756e25b6e36f38b47e0ca8e107"><div>
+            <h3>
+              enum UTFWin::<wbr /><a href="#ad55bb2756e25b6e36f38b47e0ca8e107" class="m-doc-self">WindowFlags</a>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_i_window_8h.html">&lt;Spore/UTFWin/IWindow.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+            <table class="m-table m-fullwidth m-flat m-doc">
+              <thead><tr><th style="width: 1%">Enumerators</th><th></th></tr></thead>
+              <tbody>
+                <tr>
+                  <td><a href="#ad55bb2756e25b6e36f38b47e0ca8e107a2182d3514e142aa6063ae9b238f89349" class="m-doc-self" id="ad55bb2756e25b6e36f38b47e0ca8e107a2182d3514e142aa6063ae9b238f89349">kWinFlagVisible</a></td>
+                  <td>
+                  <p>Flag indicating that this window is visible.</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#ad55bb2756e25b6e36f38b47e0ca8e107a62a6c18da7415301ee1af34cc4043eb3" class="m-doc-self" id="ad55bb2756e25b6e36f38b47e0ca8e107a62a6c18da7415301ee1af34cc4043eb3">kWinFlagEnabled</a></td>
+                  <td>
+                  <p>Flag to put the window into an interactive state.</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#ad55bb2756e25b6e36f38b47e0ca8e107ad66e7650e297f6bd631c6676c459d015" class="m-doc-self" id="ad55bb2756e25b6e36f38b47e0ca8e107ad66e7650e297f6bd631c6676c459d015">kWinFlagClickToFront</a></td>
+                  <td>
+                  <p>If true, window will move to front when clicked.</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#ad55bb2756e25b6e36f38b47e0ca8e107a7d70d0a65df88741b6582e43b8980252" class="m-doc-self" id="ad55bb2756e25b6e36f38b47e0ca8e107a7d70d0a65df88741b6582e43b8980252">kWinFlagIgnoreMouse</a></td>
+                  <td>
+                  <p>Flag indicating that this window can&#x27;t recieve mouse events.</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#ad55bb2756e25b6e36f38b47e0ca8e107a64638237c5438ad3668109cc6aa07065" class="m-doc-self" id="ad55bb2756e25b6e36f38b47e0ca8e107a64638237c5438ad3668109cc6aa07065">kWinFlagAlwaysInFront</a></td>
+                  <td>
+                  <p>If true, window will always be in front of windows that don&#x27;t have this flag.</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#ad55bb2756e25b6e36f38b47e0ca8e107afef81fd0063dc580529654669d22c809" class="m-doc-self" id="ad55bb2756e25b6e36f38b47e0ca8e107afef81fd0063dc580529654669d22c809">kWinFlagClip</a></td>
+                  <td>
+                  <p>Flag indicating whether child windows should be clipped.</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#ad55bb2756e25b6e36f38b47e0ca8e107a68fd085878a441e7f740ce4d2ae5208a" class="m-doc-self" id="ad55bb2756e25b6e36f38b47e0ca8e107a68fd085878a441e7f740ce4d2ae5208a">kWinFlagIgnoreMouseChildren</a></td>
+                  <td>
+                  <p>Flag indicating that this window&#x27;s children can&#x27;t recieve mouse events.</p>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="a4d19cb87c6f1381f87dda4696c373b57"><div>
+            <h3>
+              enum UTFWin::<wbr /><a href="#a4d19cb87c6f1381f87dda4696c373b57" class="m-doc-self">(anonymous)</a>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_i_window_8h.html">&lt;Spore/UTFWin/IWindow.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="a0361546e6bd43b73c0e341a5b239e160"><div>
+            <h3>
+              enum UTFWin::<wbr /><a href="#a0361546e6bd43b73c0e341a5b239e160" class="m-doc-self">SerializedTypes</a>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_u_t_f_win_2_serialization_8h.html">&lt;Spore/UTFWin/Serialization.h&gt;</a></div>
+            </h3>
+            <p>The possible property types used in SPUI serialization.</p>
+          </div></section>
+          <section class="m-doc-details" id="ae7b994cda00247dd6cf8a822234809bd"><div>
+            <h3>
+              enum UTFWin::<wbr /><a href="#ae7b994cda00247dd6cf8a822234809bd" class="m-doc-self">LayoutAnchor</a>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_simple_layout_8h.html">&lt;Spore/UTFWin/SimpleLayout.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="a6a74e5b52be3f9d57087ad3ef161b7d0"><div>
+            <h3>
+              enum class UTFWin::<wbr /><a href="#a6a74e5b52be3f9d57087ad3ef161b7d0" class="m-doc-self">IconDrawModes</a>: uint32_t
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_spore_std_drawable_image_info_8h.html">&lt;Spore/UTFWin/SporeStdDrawableImageInfo.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="a01c410884993f1628a255771310608df"><div>
+            <h3>
+              enum class UTFWin::<wbr /><a href="#a01c410884993f1628a255771310608df" class="m-doc-self">ShadowModes</a>: uint32_t
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_spore_std_drawable_image_info_8h.html">&lt;Spore/UTFWin/SporeStdDrawableImageInfo.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+            <table class="m-table m-fullwidth m-flat m-doc">
+              <thead><tr><th style="width: 1%">Enumerators</th><th></th></tr></thead>
+              <tbody>
+                <tr>
+                  <td><a href="#a01c410884993f1628a255771310608dfa6adf97f83acf6453d4a6a4b1070f3754" class="m-doc-self" id="a01c410884993f1628a255771310608dfa6adf97f83acf6453d4a6a4b1070f3754">None</a></td>
+                  <td>
+                  <p>Don&#x27;t use shadows.</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a01c410884993f1628a255771310608dfabbd47109890259c0127154db1af26c75" class="m-doc-self" id="a01c410884993f1628a255771310608dfabbd47109890259c0127154db1af26c75">Full</a></td>
+                  <td>
+                  <p>Use shadows for both the background and the icon.</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a01c410884993f1628a255771310608dfaa9ded1e5ce5d75814730bb4caaf49419" class="m-doc-self" id="a01c410884993f1628a255771310608dfaa9ded1e5ce5d75814730bb4caaf49419">Background</a></td>
+                  <td>
+                  <p>Only use shadows for the background.</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a01c410884993f1628a255771310608dfa817434295a673aed431435658b65d9a7" class="m-doc-self" id="a01c410884993f1628a255771310608dfa817434295a673aed431435658b65d9a7">Icon</a></td>
+                  <td>
+                  <p>Only use shadows for the icon.</p>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="aecf6f7d990be875ad79be6c257bc6d4f"><div>
+            <h3>
+              enum class UTFWin::<wbr /><a href="#aecf6f7d990be875ad79be6c257bc6d4f" class="m-doc-self">TooltipBehaviour</a>: uint32_t
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_spore_tooltip_win_proc_8h.html">&lt;Spore/UTFWin/SporeTooltipWinProc.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+        </section>
+        <section>
+          <h2>Typedef documentation</h2>
+          <section class="m-doc-details" id="afeb5fd590387d1a493c8d425e34b427b"><div>
+            <h3>
+              typedef <a href="class_u_t_f_win_1_1_interactive_win_proc.html" class="m-doc">InteractiveWinProc</a> UTFWin::<wbr /><a href="#afeb5fd590387d1a493c8d425e34b427b" class="m-doc-self">Effect</a>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_effect_8h.html">&lt;Spore/UTFWin/Effect.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="a11e4ef0e2540c7fdd633cd98fb3fb5f7"><div>
+            <h3>
+              typedef intrusive_list&lt;<a href="struct_u_t_f_win_1_1_window__intrusive__list__node.html" class="m-doc">Window_<wbr />intrusive_<wbr />list_<wbr />node</a>&gt; UTFWin::<wbr /><a href="#a11e4ef0e2540c7fdd633cd98fb3fb5f7" class="m-doc-self">IWindowList_t</a>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_i_window_8h.html">&lt;Spore/UTFWin/IWindow.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="a04f6ade66875b9b2572e883bdf2a9d60"><div>
+            <h3>
+              typedef function&lt;bool(<a href="class_u_t_f_win_1_1_i_window.html" class="m-doc">IWindow</a>*, const <a href="class_u_t_f_win_1_1_message.html" class="m-doc">Message</a>&amp;)&gt; UTFWin::<wbr /><a href="#a04f6ade66875b9b2572e883bdf2a9d60" class="m-doc-self">HandleUILambda_t</a>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_i_window_8h.html">&lt;Spore/UTFWin/IWindow.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="a45a0de3a9a70ab6b36db39bf467ebeb9"><div>
+            <h3>
+              typedef <a href="class_u_t_f_win_1_1_spore_tooltip_win_proc.html" class="m-doc">SporeTooltipWinProc</a> UTFWin::<wbr /><a href="#a45a0de3a9a70ab6b36db39bf467ebeb9" class="m-doc-self">Tooltip</a>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_spore_tooltip_win_proc_8h.html">&lt;Spore/UTFWin/SporeTooltipWinProc.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="ac6568bb91a49c6ad58a72c8f8cc88339"><div>
+            <h3>
+              typedef <a href="class_u_t_f_win_1_1_variable_width_drawable.html" class="m-doc">VariableWidthDrawable</a> UTFWin::<wbr /><a href="#ac6568bb91a49c6ad58a72c8f8cc88339" class="m-doc-self">ProgressBarDrawable</a>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_variable_width_drawable_8h.html">&lt;Spore/UTFWin/VariableWidthDrawable.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+        </section>
+        <section>
+          <h2>Function documentation</h2>
+          <section class="m-doc-details" id="ad02563e46538087cafd8f0abc735bcb0"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"><a href="class_i_core_allocator.html" class="m-doc">ICoreAllocator</a>* UTFWin::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ad02563e46538087cafd8f0abc735bcb0" class="m-doc-self">GetAllocator</a>(</span><span class="m-doc-wrap">)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_u_t_f_win_2_allocator_8h.html">&lt;Spore/UTFWin/Allocator.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="a9e3f8dbc5c53ea7fc4a5a820dadeb57b"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">namespace UTFWin::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a9e3f8dbc5c53ea7fc4a5a820dadeb57b" class="m-doc-self">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_u_t_f_win_1_1_button_drawable_radio.html" class="m-doc">ButtonDrawableRadio</a>)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_button_drawable_radio_8h.html">&lt;Spore/UTFWin/ButtonDrawableRadio.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="a74d9ef7c4ff877c31cca2da347039f9d"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">namespace UTFWin::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a74d9ef7c4ff877c31cca2da347039f9d" class="m-doc-self">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_u_t_f_win_1_1_button_drawable_standard.html" class="m-doc">ButtonDrawableStandard</a>)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_button_drawable_standard_8h.html">&lt;Spore/UTFWin/ButtonDrawableStandard.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="a0cbf0f4cab762cb74ed84de60e8c662a"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">namespace UTFWin::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a0cbf0f4cab762cb74ed84de60e8c662a" class="m-doc-self">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_u_t_f_win_1_1_cascade_effect.html" class="m-doc">CascadeEffect</a>)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_cascade_effect_8h.html">&lt;Spore/UTFWin/CascadeEffect.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="afd50efc4d15e715b82589cda9029f60c"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">namespace UTFWin::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#afd50efc4d15e715b82589cda9029f60c" class="m-doc-self">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_u_t_f_win_1_1_combo_box_drawable.html" class="m-doc">ComboBoxDrawable</a>)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_combo_box_drawable_8h.html">&lt;Spore/UTFWin/ComboBoxDrawable.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="ac8e85101091250cd08b6d1b4d2ae0773"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"><a href="namespace_u_t_f_win.html#a53dcde7b7ffd3f5d6b53da77f5649044" class="m-doc">EventFlags</a> UTFWin::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ac8e85101091250cd08b6d1b4d2ae0773" class="m-doc-self">GetEventFlags</a>(</span><span class="m-doc-wrap"><a href="namespace_u_t_f_win.html#a9fa1532f8ae774ee9508fab26eea47bc" class="m-doc">MessageType</a> type)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_u_t_f_win_2_constants_8h.html">&lt;Spore/UTFWin/Constants.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="a17f8c66fa3ca465436a4cac0683e6b2d"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">namespace UTFWin::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a17f8c66fa3ca465436a4cac0683e6b2d" class="m-doc-self">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_u_t_f_win_1_1c_s_p_u_i_message_box.html" class="m-doc">cSPUIMessageBox</a>)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="c_s_p_u_i_message_box_8h.html">&lt;Spore/UTFWin/cSPUIMessageBox.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="aa65f5f8ae81fd5fbd8ade395007e167d"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">namespace UTFWin::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#aa65f5f8ae81fd5fbd8ade395007e167d" class="m-doc-self">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_u_t_f_win_1_1_dialog_drawable.html" class="m-doc">DialogDrawable</a>)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_dialog_drawable_8h.html">&lt;Spore/UTFWin/DialogDrawable.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="a1b20e4b6512bb05f0eb4a0123d2c1eec"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">namespace UTFWin::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a1b20e4b6512bb05f0eb4a0123d2c1eec" class="m-doc-self">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_u_t_f_win_1_1_bi_state_effect.html" class="m-doc">BiStateEffect</a>)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_effect_8h.html">&lt;Spore/UTFWin/Effect.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="ae226da4b0913fccc10d4093ae7345e1a"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">namespace UTFWin::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ae226da4b0913fccc10d4093ae7345e1a" class="m-doc-self">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_u_t_f_win_1_1_fade_effect.html" class="m-doc">FadeEffect</a>)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_fade_effect_8h.html">&lt;Spore/UTFWin/FadeEffect.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="adb299a207895d50c65473fe8f3402c25"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">namespace UTFWin::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#adb299a207895d50c65473fe8f3402c25" class="m-doc-self">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_u_t_f_win_1_1_frame_drawable.html" class="m-doc">FrameDrawable</a>)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_frame_drawable_8h.html">&lt;Spore/UTFWin/FrameDrawable.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="a0fb2a03bd9d6d4501980fe7ff1d1d35d"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">namespace UTFWin::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a0fb2a03bd9d6d4501980fe7ff1d1d35d" class="m-doc-self">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_u_t_f_win_1_1_glide_effect.html" class="m-doc">GlideEffect</a>)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_glide_effect_8h.html">&lt;Spore/UTFWin/GlideEffect.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="ae091349c8f22ca238779f400617d366f"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">namespace UTFWin::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ae091349c8f22ca238779f400617d366f" class="m-doc-self">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_u_t_f_win_1_1_graphics2_d.html" class="m-doc">Graphics2D</a>)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_graphics2_d_8h.html">&lt;Spore/UTFWin/Graphics2D.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="a9904dd236a470178d3af14da9f65b162"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">namespace UTFWin::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a9904dd236a470178d3af14da9f65b162" class="m-doc-self">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_u_t_f_win_1_1_i_button.html" class="m-doc">IButton</a>)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_i_button_8h.html">&lt;Spore/UTFWin/IButton.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="a6f7ab84372bab58afc93a63b5fe03ee7"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">namespace UTFWin::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a6f7ab84372bab58afc93a63b5fe03ee7" class="m-doc-self">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_u_t_f_win_1_1_image.html" class="m-doc">Image</a>)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_image_8h.html">&lt;Spore/UTFWin/Image.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="a4a0c958c564254691cdcccff353440b5"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">namespace UTFWin::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a4a0c958c564254691cdcccff353440b5" class="m-doc-self">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_u_t_f_win_1_1_image_drawable.html" class="m-doc">ImageDrawable</a>)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_image_drawable_8h.html">&lt;Spore/UTFWin/ImageDrawable.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="a81625222a3268b30c19090af3f5da739"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">namespace UTFWin::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a81625222a3268b30c19090af3f5da739" class="m-doc-self">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_u_t_f_win_1_1_i_image_drawable.html" class="m-doc">IImageDrawable</a>)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_image_drawable_8h.html">&lt;Spore/UTFWin/ImageDrawable.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="ac53ad317a75b4c583147fe81d22f805b"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">namespace UTFWin::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ac53ad317a75b4c583147fe81d22f805b" class="m-doc-self">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_u_t_f_win_1_1_inflate_effect.html" class="m-doc">InflateEffect</a>)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_inflate_effect_8h.html">&lt;Spore/UTFWin/InflateEffect.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="ae013bbd0a6388d4615e87af454838065"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">namespace UTFWin::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ae013bbd0a6388d4615e87af454838065" class="m-doc-self">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_u_t_f_win_1_1_interactive_win_proc.html" class="m-doc">InteractiveWinProc</a>)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_interactive_win_proc_8h.html">&lt;Spore/UTFWin/InteractiveWinProc.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="aaa38edb56a90a8cab64b407ee7d7614d"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">namespace UTFWin::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#aaa38edb56a90a8cab64b407ee7d7614d" class="m-doc-self">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_u_t_f_win_1_1_i_text_edit.html" class="m-doc">ITextEdit</a>)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_i_text_edit_8h.html">&lt;Spore/UTFWin/ITextEdit.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="a47087c54a22f19407efe9282606e64d4"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">namespace UTFWin::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a47087c54a22f19407efe9282606e64d4" class="m-doc-self">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_u_t_f_win_1_1_i_window_manager.html" class="m-doc">IWindowManager</a>)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_i_window_manager_8h.html">&lt;Spore/UTFWin/IWindowManager.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="ad8e50a38ad77b6f85e8c872f32f65488"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">namespace UTFWin::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ad8e50a38ad77b6f85e8c872f32f65488" class="m-doc-self">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_u_t_f_win_1_1_modulate_effect.html" class="m-doc">ModulateEffect</a>)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_modulate_effect_8h.html">&lt;Spore/UTFWin/ModulateEffect.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="a71e785b3f722cfbb2f36c2cd1052c8a0"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">namespace UTFWin::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a71e785b3f722cfbb2f36c2cd1052c8a0" class="m-doc-self">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_u_t_f_win_1_1_perspective_effect.html" class="m-doc">PerspectiveEffect</a>)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_perspective_effect_8h.html">&lt;Spore/UTFWin/PerspectiveEffect.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="a9eaefe81015268627f8caa31800efa7a"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">namespace UTFWin::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a9eaefe81015268627f8caa31800efa7a" class="m-doc-self">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_u_t_f_win_1_1_proportional_layout.html" class="m-doc">ProportionalLayout</a>)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_proportional_layout_8h.html">&lt;Spore/UTFWin/ProportionalLayout.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="ab6972272c4edda3bb6d7074e6a2b336c"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">namespace UTFWin::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ab6972272c4edda3bb6d7074e6a2b336c" class="m-doc-self">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_u_t_f_win_1_1_rotate_effect.html" class="m-doc">RotateEffect</a>)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_rotate_effect_8h.html">&lt;Spore/UTFWin/RotateEffect.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="a20b6ab5a45ef6c58ed3fd8d6c76c68b6"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">namespace UTFWin::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a20b6ab5a45ef6c58ed3fd8d6c76c68b6" class="m-doc-self">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_u_t_f_win_1_1_scrollbar_drawable.html" class="m-doc">ScrollbarDrawable</a>)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_scrollbar_drawable_8h.html">&lt;Spore/UTFWin/ScrollbarDrawable.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="ad11fc7bab62cde9af7530086494514a3"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">namespace UTFWin::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ad11fc7bab62cde9af7530086494514a3" class="m-doc-self">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_u_t_f_win_1_1_simple_layout.html" class="m-doc">SimpleLayout</a>)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_simple_layout_8h.html">&lt;Spore/UTFWin/SimpleLayout.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="a1bf082b20b64296ef447732373c00821"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">namespace UTFWin::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a1bf082b20b64296ef447732373c00821" class="m-doc-self">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_u_t_f_win_1_1_slider_drawable.html" class="m-doc">SliderDrawable</a>)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_slider_drawable_8h.html">&lt;Spore/UTFWin/SliderDrawable.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="abc58c66c51b770c8f038fd22581abca1"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">namespace UTFWin::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#abc58c66c51b770c8f038fd22581abca1" class="m-doc-self">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_u_t_f_win_1_1_spinner_drawable.html" class="m-doc">SpinnerDrawable</a>)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_spinner_drawable_8h.html">&lt;Spore/UTFWin/SpinnerDrawable.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="afbacfec6a063cac8d2a9304d76eafbdf"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">namespace UTFWin::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#afbacfec6a063cac8d2a9304d76eafbdf" class="m-doc-self">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_u_t_f_win_1_1_spore_std_drawable.html" class="m-doc">SporeStdDrawable</a>)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_spore_std_drawable_8h.html">&lt;Spore/UTFWin/SporeStdDrawable.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="adbbb4024e34e5e1ff6bdbb10f9f0d37d"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">namespace UTFWin::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#adbbb4024e34e5e1ff6bdbb10f9f0d37d" class="m-doc-self">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_u_t_f_win_1_1_spore_std_drawable_image_info.html" class="m-doc">SporeStdDrawableImageInfo</a>)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_spore_std_drawable_image_info_8h.html">&lt;Spore/UTFWin/SporeStdDrawableImageInfo.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="aaf6bd276d8aff124afcf3988a388e7b6"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"><a href="namespace_u_t_f_win.html#a45a0de3a9a70ab6b36db39bf467ebeb9" class="m-doc">Tooltip</a>* UTFWin::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#aaf6bd276d8aff124afcf3988a388e7b6" class="m-doc-self">CreateTooltip</a>(</span><span class="m-doc-wrap">const char16_t* pText,
+              const char16_t* pDetailedText = nullptr,
+              const char16_t* pLayoutName = u&quot;tooltips&quot;,
+              uint32_t controlID = 0x3754E6C,
+              uint32_t detailControlID = 0x3754E6C)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_spore_tooltip_win_proc_8h.html">&lt;Spore/UTFWin/SporeTooltipWinProc.h&gt;</a></div>
+            </h3>
+            <p>Creates an instance of the Tooltip class that can be used to display the given text as a tooltip.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">pText</td>
+                  <td>The text the tooltip displays.</td>
+                </tr>
+                <tr>
+                  <td>pDetailedText</td>
+                  <td>[Optional] The detailed text showed when the mouse has been a while hovering.</td>
+                </tr>
+                <tr>
+                  <td>pLayoutName</td>
+                  <td>[Optional] The name of the <a href="namespace_u_i.html" class="m-doc">UI</a> layout used in the tooltip.</td>
+                </tr>
+                <tr>
+                  <td>controlID</td>
+                  <td>[Optional] The ControlID of the window in the layout that will display the text.</td>
+                </tr>
+                <tr>
+                  <td>detailControlID</td>
+                  <td>[Optional] The ControlID of the window in the layout that will display the detailed text.</td>
+                </tr>
+              </tbody>
+            </table>
+<p>Tooltips are window procedures, so you can add it to a window with <a href="class_u_t_f_win_1_1_i_window.html#a5b5bd37502956d7eb7343d956b0bd2ea" class="m-doc">IWindow::<wbr />AddWinProc()</a>.</p>
+          </div></section>
+          <section class="m-doc-details" id="a6102e5e3cfb741fab697ad90937565c9"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">namespace UTFWin::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a6102e5e3cfb741fab697ad90937565c9" class="m-doc-self">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_u_t_f_win_1_1_spore_tooltip_win_proc.html" class="m-doc">SporeTooltipWinProc</a>)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_spore_tooltip_win_proc_8h.html">&lt;Spore/UTFWin/SporeTooltipWinProc.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="a7c6f1b24693e810fa696edfc850444dc"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">namespace UTFWin::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a7c6f1b24693e810fa696edfc850444dc" class="m-doc-self">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_u_t_f_win_1_1_std_drawable.html" class="m-doc">StdDrawable</a>)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_std_drawable_8h.html">&lt;Spore/UTFWin/StdDrawable.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="ab8fca0ab48d4d5914bda7a72edeafac2"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">namespace UTFWin::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ab8fca0ab48d4d5914bda7a72edeafac2" class="m-doc-self">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_u_t_f_win_1_1_tree_node.html" class="m-doc">TreeNode</a>)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_tree_node_8h.html">&lt;Spore/UTFWin/TreeNode.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="a3bfe68db62ce9be192fce501678d3f53"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">namespace UTFWin::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a3bfe68db62ce9be192fce501678d3f53" class="m-doc-self">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_u_t_f_win_1_1_u_i_layout.html" class="m-doc">UILayout</a>)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_u_i_layout_8h.html">&lt;Spore/UTFWin/UILayout.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="a128ba3beeb381554c9f0adb62c8e7598"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">namespace UTFWin::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a128ba3beeb381554c9f0adb62c8e7598" class="m-doc-self">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_u_t_f_win_1_1_u_i_renderer.html" class="m-doc">UIRenderer</a>)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_u_i_renderer_8h.html">&lt;Spore/UTFWin/UIRenderer.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="ac5b85eebffee52237305680ce738f0a8"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">namespace UTFWin::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ac5b85eebffee52237305680ce738f0a8" class="m-doc-self">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_u_t_f_win_1_1_u_t_f_win_object.html" class="m-doc">UTFWinObject</a>)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_u_t_f_win_object_8h.html">&lt;Spore/UTFWin/UTFWinObject.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="a9ffc36689da4f46b779a48515815719d"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">namespace UTFWin::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a9ffc36689da4f46b779a48515815719d" class="m-doc-self">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_u_t_f_win_1_1_variable_width_drawable.html" class="m-doc">VariableWidthDrawable</a>)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_variable_width_drawable_8h.html">&lt;Spore/UTFWin/VariableWidthDrawable.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="a38791f16bd2d1ab7219e6897aed66082"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">namespace UTFWin::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a38791f16bd2d1ab7219e6897aed66082" class="m-doc-self">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_u_t_f_win_1_1_window.html" class="m-doc">Window</a>)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_window_8h.html">&lt;Spore/UTFWin/Window.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+        </section>
+      </div>
+    </div>
+  </div>
+</article></main>
+<div class="m-doc-search" id="search">
+  <a href="#!" onclick="return hideSearch()"></a>
+  <div class="m-container">
+    <div class="m-row">
+      <div class="m-col-m-8 m-push-m-2">
+        <div class="m-doc-search-header m-text m-small">
+          <div><span class="m-label m-default">Tab</span> / <span class="m-label m-default">T</span> to search, <span class="m-label m-default">Esc</span> to close</div>
+          <div id="search-symbolcount">&hellip;</div>
+        </div>
+        <div class="m-doc-search-content">
+          <form>
+            <input type="search" name="q" id="search-input" placeholder="Loading &hellip;" disabled="disabled" autofocus="autofocus" autocomplete="off" spellcheck="false" />
+          </form>
+          <noscript class="m-text m-danger m-text-center">Unlike everything else in the docs, the search functionality <em>requires</em> JavaScript.</noscript>
+          <div id="search-help" class="m-text m-dim m-text-center">
+            <p class="m-noindent">Search for symbols, directories, files, pages or
+            modules. You can omit any prefix from the symbol or file path; adding a
+            <code>:</code> or <code>/</code> suffix lists all members of given symbol or
+            directory.</p>
+            <p class="m-noindent">Use <span class="m-label m-dim">&darr;</span>
+            / <span class="m-label m-dim">&uarr;</span> to navigate through the list,
+            <span class="m-label m-dim">Enter</span> to go.
+            <span class="m-label m-dim">Tab</span> autocompletes common prefix, you can
+            copy a link to the result using <span class="m-label m-dim">⌘</span>
+            <span class="m-label m-dim">L</span> while <span class="m-label m-dim">⌘</span>
+            <span class="m-label m-dim">M</span> produces a Markdown link.</p>
+          </div>
+          <div id="search-notfound" class="m-text m-warning m-text-center">Sorry, nothing was found.</div>
+          <ul id="search-results"></ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="search-v1.js"></script>
+<script src="searchdata-v1.js" async="async"></script>
+<footer><nav>
+  <div class="m-container">
+    <div class="m-row">
+      <div class="m-col-l-10 m-push-l-1">
+        <p>Spore ModAPI SDK for creating C++ mods for Spore. Created with <a href="https://doxygen.org/">Doxygen</a> 1.8.16 and <a href="https://mcss.mosra.cz/">m.css</a>.</p>
+      </div>
+    </div>
+  </div>
+</nav></footer>
+</body>
+</html>

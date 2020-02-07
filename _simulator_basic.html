@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Interacting with the Simulator | Spore ModAPI SDK for creating C++ mods for Spore</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,600,600i%7CSource+Code+Pro:400,400i,600" />
+  <link rel="stylesheet" href="m-dark.css" />
+  <link rel="stylesheet" href="m-documentation.css" />
+  <link rel="icon" href="Spore_ModAPI_Icon.png" type="image/png" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#22272e" />
+</head>
+<body>
+<header><nav id="navigation">
+  <div class="m-container">
+    <div class="m-row">
+      <a href="index.html" id="m-navbar-brand" class="m-col-t-8 m-col-m-none m-left-m"><img src="Spore_ModAPI_Icon.png" />Spore ModAPI <span class="m-thin">SDK for creating C++ mods for Spore</span></a>
+      <div class="m-col-t-4 m-hide-m m-text-right m-nopadr">
+        <a href="#search" class="m-doc-search-icon" title="Search" onclick="return showSearch()"><svg style="height: 0.9rem;" viewBox="0 0 16 16">
+          <path id="m-doc-search-icon-path" d="m6 0c-3.31 0-6 2.69-6 6 0 3.31 2.69 6 6 6 1.49 0 2.85-0.541 3.89-1.44-0.0164 0.338 0.147 0.759 0.5 1.15l3.22 3.79c0.552 0.614 1.45 0.665 2 0.115 0.55-0.55 0.499-1.45-0.115-2l-3.79-3.22c-0.392-0.353-0.812-0.515-1.15-0.5 0.895-1.05 1.44-2.41 1.44-3.89 0-3.31-2.69-6-6-6zm0 1.56a4.44 4.44 0 0 1 4.44 4.44 4.44 4.44 0 0 1-4.44 4.44 4.44 4.44 0 0 1-4.44-4.44 4.44 4.44 0 0 1 4.44-4.44z"/>
+        </svg></a>
+        <a id="m-navbar-show" href="#navigation" title="Show navigation"></a>
+        <a id="m-navbar-hide" href="#" title="Hide navigation"></a>
+      </div>
+      <div id="m-navbar-collapse" class="m-col-t-12 m-show-m m-col-m-none m-right-m">
+        <div class="m-row">
+          <ol class="m-col-t-6 m-col-m-none">
+            <li><a href="pages.html">Tutorials</a></li>
+            <li><a href="namespaces.html">Namespaces</a></li>
+          </ol>
+          <ol class="m-col-t-6 m-col-m-none" start="3">
+            <li><a href="annotated.html">Classes</a></li>
+            <li><a href="files.html">Files</a></li>
+            <li class="m-show-m"><a href="#search" class="m-doc-search-icon" title="Search" onclick="return showSearch()"><svg style="height: 0.9rem;" viewBox="0 0 16 16">
+              <use href="#m-doc-search-icon-path" />
+            </svg></a></li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav></header>
+<main><article>
+  <div class="m-container m-container-inflatable">
+    <div class="m-row">
+      <div class="m-col-l-10 m-push-l-1">
+        <h1>
+          Interacting with the Simulator
+        </h1>
+        <p>An overview of the most important <a href="namespace_simulator.html" class="m-doc">Simulator</a> functions.</p>
+        <div class="m-block m-default">
+          <h3>Contents</h3>
+          <ul>
+            <li><a href="#SimulatorBasic-Player">Player data</a></li>
+            <li><a href="#SimulatorBasic-Stars">Stars &amp; Empires</a></li>
+            <li><a href="#SimulatorBasic-Relationships">Relationships</a></li>
+            <li><a href="#SimulatorBasic-Planets">Planets</a></li>
+            <li><a href="#SimulatorBasic-Tools">Space tools &amp; inventory</a></li>
+            <li><a href="#SimulatorBasic-Modes">Game modes</a></li>
+            <li>
+              <a href="#SimulatorBasic-Loading">Loading creatures, vehicles and models</a>
+              <ul>
+                <li><a href="#SimulatorBasic-Loading-Moving">Moving &amp; Animating</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+<p>Before reading this tutorial, first read <a href="_simulator.html">&quot;Introduction to the Simulator&quot;</a> tutorial. The code in this tutorial is written assuming <code>using namespace <a href="namespace_simulator.html" class="m-doc">Simulator</a>;</code> is being used, for simplicity.</p><section id="SimulatorBasic-Player"><h2><a href="#SimulatorBasic-Player">Player data</a></h2><pre class="m-code"><span class="c1">// Gives you the active star and planet</span>
+
+<span class="n">cStar</span><span class="o">*</span> <span class="n">star</span> <span class="o">=</span> <span class="n">GetActiveStar</span><span class="p">();</span>
+<span class="n">cStarRecord</span><span class="o">*</span> <span class="n">starRecord</span> <span class="o">=</span> <span class="n">GetActiveStarRecord</span><span class="p">();</span>
+
+<span class="n">cPlanet</span><span class="o">*</span> <span class="n">planet</span> <span class="o">=</span> <span class="n">GetActivePlanet</span><span class="p">();</span>
+<span class="n">cPlanetRecord</span><span class="o">*</span> <span class="n">planetRecord</span> <span class="o">=</span> <span class="n">GetActivePlanetRecord</span><span class="p">();</span>
+
+
+<span class="c1">// Gives you the player empire and its political ID</span>
+
+<span class="n">cEmpire</span><span class="o">*</span> <span class="n">empire</span> <span class="o">=</span> <span class="n">GetPlayerEmpire</span><span class="p">();</span>
+<span class="kt">uint32_t</span> <span class="n">politicalID</span> <span class="o">=</span> <span class="n">GetPlayerEmpireID</span><span class="p">();</span>
+
+<span class="c1">// This can be used to know the current context: planet, solar system, galaxy</span>
+
+<span class="k">if</span> <span class="p">(</span><span class="n">GetCurrentContext</span><span class="p">()</span> <span class="o">==</span> <span class="n">kSpaceContextGalaxy</span><span class="p">)</span> <span class="p">{</span>
+
+<span class="p">}</span>
+<span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">GetCurrentContext</span><span class="p">()</span> <span class="o">==</span> <span class="n">kSpaceContextPlanet</span><span class="p">)</span> <span class="p">{</span>
+
+<span class="p">}</span>
+
+<span class="c1">// Returns the avatar creature</span>
+<span class="n">cCreatureAnimal</span><span class="o">*</span> <span class="n">avatar</span> <span class="o">=</span> <span class="n">GameNounManager</span><span class="p">.</span><span class="n">GetAvatar</span><span class="p">();</span></pre></section><section id="SimulatorBasic-Stars"><h2><a href="#SimulatorBasic-Stars">Stars &amp; Empires</a></h2><p>In order to identify stars and planets, Spore uses the <code>StarIndex</code> and <code>PlanetIndex</code> types, which are just integers. Star indices are divided in sectors (you can get the sector of a star index with <code>GetSectorIndex(starIndex)</code>). A planet index is composed with a star index, and then the index of the planet within that solar system (you can separate them with <code>GetStarRecordIndex(planetIndex)</code> and <code>GetPlanetIndex(planetIndex)</code>). Internally, planets and star systems are stored as <a href="class_simulator_1_1c_planet_record.html" class="m-doc">Simulator::<wbr />cPlanetRecord</a> and <a href="class_simulator_1_1c_star_record.html" class="m-doc">Simulator::<wbr />cStarRecord</a>.</p><pre class="m-code"><span class="n">cStarRecord</span><span class="o">*</span> <span class="n">star</span> <span class="o">=</span> <span class="n">StarManager</span><span class="p">.</span><span class="n">GetStarRecord</span><span class="p">(</span><span class="n">starIndex</span><span class="p">);</span>
+<span class="n">cPlanetRecord</span><span class="o">*</span> <span class="n">planet</span> <span class="o">=</span> <span class="n">StarManager</span><span class="p">.</span><span class="n">GetPlanetRecord</span><span class="p">(</span><span class="n">planetIndex</span><span class="p">);</span></pre><p>You can access things like <code>star-&gt;mName</code>, <code>star-&gt;mPlanets</code>, <code>star-&gt;mEmpireID</code>, <code>planet-&gt;mPlantSpecies</code>, <code>planet-&gt;mWaterScore</code>,... If you want to get the terraforming score of a planet, you can use <code>TerraformingManager.GetTScore(planet)</code>. You can also compute the corresponding T-score for an atmosphere and temperature using <code>TerraformingManager.CalculateTScore(atmosphereScore, temperatureScore)</code></p><p>The <a href="class_simulator_1_1c_star_manager.html" class="m-doc">StarManager</a> also has functions for many other things related with galaxies:</p><pre class="m-code"><span class="n">cEmpire</span><span class="o">*</span> <span class="n">empire</span> <span class="o">=</span> <span class="n">StarManager</span><span class="p">.</span><span class="n">GetEmpire</span><span class="p">(</span><span class="n">politicalID</span><span class="p">);</span>
+
+<span class="c1">// The Grox</span>
+<span class="kt">uint32_t</span> <span class="n">politicalID</span> <span class="o">=</span> <span class="n">StarManager</span><span class="p">.</span><span class="n">GetGrobEmpireID</span><span class="p">();</span>
+
+<span class="c1">// Where is the planet earth?</span>
+<span class="n">cStarRecord</span><span class="o">*</span> <span class="n">star</span> <span class="o">=</span> <span class="n">StarManager</span><span class="p">.</span><span class="n">GetSol</span><span class="p">();</span>
+
+<span class="c1">// If you are playing an adventure, this returns the star it is in</span>
+<span class="n">cStarRecord</span><span class="o">*</span> <span class="n">star</span> <span class="o">=</span> <span class="n">StarManager</span><span class="p">.</span><span class="n">GetScenarioStar</span><span class="p">();</span></pre><p>The <a href="class_simulator_1_1c_empire.html" class="m-doc">Simulator::<wbr />cEmpire</a> class has many useful attributes:</p><pre class="m-code"><span class="n">cStarRecord</span><span class="o">*</span> <span class="n">homeStar</span> <span class="o">=</span> <span class="n">empire</span><span class="o">-&gt;</span><span class="n">GetHomeStarRecord</span><span class="p">();</span>
+
+<span class="k">for</span> <span class="p">(</span><span class="k">auto</span> <span class="nl">starRecord</span> <span class="p">:</span> <span class="n">empire</span><span class="o">-&gt;</span><span class="n">mStars</span><span class="p">)</span> <span class="p">{</span>
+
+<span class="p">}</span>
+
+<span class="k">for</span> <span class="p">(</span><span class="k">auto</span> <span class="nl">enemy</span> <span class="p">:</span> <span class="n">empire</span><span class="o">-&gt;</span><span class="n">mEnemies</span><span class="p">)</span> <span class="p">{</span>
+
+<span class="p">}</span>
+<span class="k">for</span> <span class="p">(</span><span class="k">auto</span> <span class="nl">ally</span> <span class="p">:</span> <span class="n">empire</span><span class="o">-&gt;</span><span class="n">mAllies</span><span class="p">)</span> <span class="p">{</span>
+
+<span class="p">}</span>
+
+<span class="n">ResourceKey</span> <span class="n">factory</span> <span class="o">=</span> <span class="n">empire</span><span class="o">-&gt;</span><span class="n">mCultureSet</span><span class="p">.</span><span class="n">GetCreation</span><span class="p">(</span><span class="n">kBuildingIndustry</span><span class="p">);</span>
+
+<span class="k">if</span> <span class="p">(</span><span class="n">empire</span><span class="o">-&gt;</span><span class="n">mArchetype</span> <span class="o">==</span> <span class="n">kArchetypeEcologist</span><span class="p">)</span> <span class="p">{</span>
+
+<span class="p">}</span></pre></section><section id="SimulatorBasic-Relationships"><h2><a href="#SimulatorBasic-Relationships">Relationships</a></h2><p>The <code>RelationshipManager</code> manages the relationship between communities (tribes, cities, empires). You can do some basic actions:</p><ul><li><strong>Check if two empires are at war:</strong> <code>RelationshipManager.IsAtWar(empire1, empire2)</code></li><li><strong>Apply a relationship:</strong> The available relationships are at the <a href="namespace_simulator.html#a8796ef7d3c55cbf57acdbd86080e8050" class="m-doc">Simulator::<wbr />RelationshipEvents</a> enum. You can use <code>ApplyRelationship</code> to apply a relationship effect between two communities (you need the <em>political ID</em> of the communities). The impact of that relationship depends on settings to certain properties in <code>.prop</code> files.</li></ul><pre class="m-code"><span class="c1">// The last parameter is the scale, how much is affected</span>
+<span class="n">RelationshipManager</span><span class="p">.</span><span class="n">ApplyRelationship</span><span class="p">(</span><span class="n">empire</span><span class="o">-&gt;</span><span class="n">GetPoliticalID</span><span class="p">(),</span> <span class="n">causeEmpire</span><span class="o">-&gt;</span><span class="n">GetPoliticalID</span><span class="p">(),</span> <span class="n">kRelationshipEventHostility</span><span class="p">,</span> <span class="mf">0.3f</span><span class="p">);</span></pre></section><section id="SimulatorBasic-Planets"><h2><a href="#SimulatorBasic-Planets">Planets</a></h2><p>Given a 3D vector representing a position, there are multiple functions at <code>PlanetModel</code> related with planets. The position does not need to be at the surface, it&#x27;s just considered a direction from the center of the planet.</p><pre class="m-code"><span class="n">Vector3</span> <span class="n">position</span> <span class="o">=</span> <span class="p">...;</span>
+
+<span class="c1">// Returns true if this position is inside or above the water mass in the planet</span>
+<span class="k">if</span> <span class="p">(</span><span class="n">PlanetModel</span><span class="p">.</span><span class="n">IsInWater</span><span class="p">(</span><span class="n">position</span><span class="p">))</span> <span class="p">{</span>
+
+<span class="p">}</span>
+
+<span class="c1">// Returns the terrain height at this position</span>
+<span class="kt">float</span> <span class="n">height</span> <span class="o">=</span> <span class="n">PlanetModel</span><span class="p">.</span><span class="n">GetHeightAt</span><span class="p">(</span><span class="n">position</span><span class="p">);</span>
+
+<span class="c1">// Returns the city nearest to the position</span>
+<span class="n">cCity</span><span class="o">*</span> <span class="n">city</span> <span class="o">=</span> <span class="n">PlanetModel</span><span class="p">.</span><span class="n">GetNearestCity</span><span class="p">(</span><span class="n">position</span><span class="p">);</span>
+
+<span class="c1">// Returns the planet surface position that is aligned with the given position</span>
+<span class="n">Vector3</span> <span class="n">pos</span> <span class="o">=</span> <span class="n">PlanetModel</span><span class="p">.</span><span class="n">ToSurface</span><span class="p">(</span><span class="n">position</span><span class="p">);</span>
+
+<span class="c1">// Returns the quaternion orientation that orients an object in this direction</span>
+<span class="n">Vector3</span> <span class="n">direction</span> <span class="o">=</span> <span class="p">{</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">};</span>
+<span class="n">Quaternion</span> <span class="n">orientation</span> <span class="o">=</span> <span class="n">PlanetModel</span><span class="p">.</span><span class="n">GetOrientation</span><span class="p">(</span><span class="n">position</span><span class="p">,</span> <span class="n">direction</span><span class="p">);</span>
+
+
+<span class="c1">// Generally returns -9.8, but adventures can use a different gravity</span>
+<span class="kt">float</span> <span class="n">gravity</span> <span class="o">=</span> <span class="n">PlanetModel</span><span class="p">.</span><span class="n">GetGravity</span><span class="p">();</span>
+
+<span class="c1">// Returns the position at the planet that the mouse cursor is aiming at</span>
+<span class="c1">// This can collide with certain objects like airplanes, creatures, cyty walls, but for example not rocks</span>
+<span class="n">Vector3</span> <span class="n">pos</span> <span class="o">=</span> <span class="n">GameViewManager</span><span class="p">.</span><span class="n">GetWorldMousePosition</span><span class="p">();</span></pre><p>If you have a <a href="class_simulator_1_1c_city.html" class="m-doc">Simulator::<wbr />cCity</a> object, you can get the position of the city using <code>city-&gt;GetWallsPosition()</code>.</p></section><section id="SimulatorBasic-Tools"><h2><a href="#SimulatorBasic-Tools">Space tools &amp; inventory</a></h2><p>The <a href="_space_tools.html">space tools tutorial</a> shows you how to add new space tools. Apart from that, there are many useful functions related with space tools and the space inventory. You can get the [space inventory](<a href="class_simulator_1_1c_space_inventory.html" class="m-doc">Simulator::<wbr />cSpaceInventory</a>) with <code>SimulatorSpaceGame.GetPlayerInventory()</code>. That class has methods to see if there&#x27;s a certain item, add and remove items, etc. For example, if we want to add a planet buster weapon to our inventory:</p><pre class="m-code"><span class="n">cSpaceToolDataPtr</span> <span class="n">tool</span><span class="p">;</span>
+<span class="n">ToolManager</span><span class="p">.</span><span class="n">LoadTool</span><span class="p">({</span><span class="n">id</span><span class="p">(</span><span class="s">&quot;PlanetBusterBomb&quot;</span><span class="p">),</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">},</span> <span class="n">tool</span><span class="p">)</span>
+
+<span class="k">auto</span> <span class="n">inventory</span> <span class="o">=</span> <span class="n">SimulatorSpaceGame</span><span class="p">.</span><span class="n">GetPlayerInventory</span><span class="p">();</span>
+<span class="n">inventory</span><span class="o">-&gt;</span><span class="n">AddItem</span><span class="p">(</span><span class="n">tool</span><span class="p">.</span><span class="n">get</span><span class="p">());</span>
+
+<span class="c1">// You can also add ammo to the tool</span>
+<span class="n">tool</span><span class="o">-&gt;</span><span class="n">AddAmmo</span><span class="p">(</span><span class="mi">10</span><span class="p">);</span></pre></section><section id="SimulatorBasic-Modes"><h2><a href="#SimulatorBasic-Modes">Game modes</a></h2><p>Calling <code>SimGameModeManager.GetActiveModeID()</code> returns the ID of the current mode, which you can compare to the IDs at the GameModeIDs enum. There are also functions that do that for you: <code><a href="namespace_simulator.html#afaa668ce0e4f3750fad0bb12aa4778d0" class="m-doc">IsSpaceGame()</a></code>, <code><a href="namespace_simulator.html#a11c14d5540919cdac8858456d1107430" class="m-doc">IsScenarioMode()</a></code>,...</p><p>You can get the difficulty tunning <code>.prop</code> of the active mode and difficulty by calling <code>GameModeManager.GetActiveDifficultyTuning()</code>.</p></section><section id="SimulatorBasic-Loading"><h2><a href="#SimulatorBasic-Loading">Loading creatures, vehicles and models</a></h2><p>Some simulator objects, such as creatures and vehicles, have specialized functions that must be used when creating them.</p><p>To create a creature, first you must get its species, then use Simulator::cCreatreAnimal::Create() to create a new instance of that species. You must also give it the initial position.</p><pre class="m-code"><span class="k">auto</span> <span class="n">species</span> <span class="o">=</span> <span class="n">SpeciesManager</span><span class="p">.</span><span class="n">GetSpeciesProfile</span><span class="p">({</span> <span class="mh">0x066B8241</span><span class="p">,</span> <span class="n">TypeIDs</span><span class="o">::</span><span class="n">crt</span><span class="p">,</span> <span class="n">GroupIDs</span><span class="o">::</span><span class="n">CreatureModels</span> <span class="p">});</span>
+<span class="n">cCreatureAnimalPtr</span> <span class="n">creature</span> <span class="o">=</span> <span class="n">cCreatureAnimal</span><span class="o">::</span><span class="n">Create</span><span class="p">({</span> <span class="mf">500.0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span> <span class="p">},</span> <span class="n">species</span><span class="p">);</span></pre><p>You can create a vehicle with <code>simulator_new</code>, like most other Simulator classes. You will have to call the <code>Load()</code> method to load a model and tell which kind of vehicle it is:</p><pre class="m-code"><span class="n">cVehiclePtr</span> <span class="n">vehicle</span> <span class="o">=</span> <span class="n">simulator_new</span><span class="o">&lt;</span><span class="n">cVehicle</span><span class="o">&gt;</span><span class="p">();</span>
+<span class="n">vehicle</span><span class="o">-&gt;</span><span class="n">Load</span><span class="p">(</span><span class="n">kVehicleLand</span><span class="p">,</span> <span class="n">kVehicleMilitary</span><span class="p">,</span> <span class="p">{</span> <span class="mh">0x19A3A9AC</span><span class="p">,</span> <span class="n">TypeIDs</span><span class="o">::</span><span class="n">vcl</span><span class="p">,</span> <span class="n">GroupIDs</span><span class="o">::</span><span class="n">VehicleModels</span> <span class="p">});</span>
+
+<span class="c1">// If you are on civ/space stage, you can spawn a vehicle that belongs to a city</span>
+<span class="c1">// The last argument is whether you are on space stage</span>
+<span class="n">cVehiclePtr</span> <span class="n">vehicle</span> <span class="o">=</span> <span class="n">city</span><span class="o">-&gt;</span><span class="n">SpawnVehicle</span><span class="p">(</span><span class="n">kVehicleLand</span><span class="p">,</span> <span class="n">kVehicleMilitary</span><span class="p">,</span> <span class="p">{</span> <span class="mh">0x19A3A9AC</span><span class="p">,</span> <span class="n">TypeIDs</span><span class="o">::</span><span class="n">vcl</span><span class="p">,</span> <span class="n">GroupIDs</span><span class="o">::</span><span class="n">VehicleModels</span> <span class="p">},</span> <span class="nb">false</span><span class="p">);</span></pre><p>For other types of spatial objects, you can just use <code>SetModelKey()</code>:</p><pre class="m-code"><span class="n">cGameDataPtr</span> <span class="n">rock</span> <span class="o">=</span> <span class="n">GameNounManager</span><span class="p">.</span><span class="n">CreateInstance</span><span class="p">(</span><span class="n">kRock</span><span class="p">);</span>
+<span class="n">object_cast</span><span class="o">&lt;</span><span class="n">cSpatialObject</span><span class="o">&gt;</span><span class="p">(</span><span class="n">rock</span><span class="p">)</span><span class="o">-&gt;</span><span class="n">SetModelKey</span><span class="p">({</span> <span class="n">id</span><span class="p">(</span><span class="s">&quot;EP1_sg_rare_fossils_04&quot;</span><span class="p">),</span> <span class="n">TypeIDs</span><span class="o">::</span><span class="n">prop</span><span class="p">,</span> <span class="n">GroupIDs</span><span class="o">::</span><span class="n">CivicObjects</span> <span class="p">});</span></pre><section id="SimulatorBasic-Loading-Moving"><h3><a href="#SimulatorBasic-Loading-Moving">Moving &amp; Animating</a></h3><p>You can move a vehicle to a position using <code>MoveTo()</code>:</p><pre class="m-code"><span class="n">Vector3</span> <span class="n">dst</span> <span class="o">=</span> <span class="p">...;</span>
+<span class="n">vehicle</span><span class="o">-&gt;</span><span class="n">MoveTo</span><span class="p">(</span><span class="n">dst</span><span class="p">);</span></pre><p>For creatures, you can use <code>WalkTo()</code>. It tkaes an additional integer (<code>speedState</code>) and a 3D vector, their usage is unknown.</p><pre class="m-code"><span class="n">Vector3</span> <span class="n">dst</span> <span class="o">=</span> <span class="p">...;</span>
+<span class="n">vehicle</span><span class="o">-&gt;</span><span class="n">WalkTo</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">dst</span><span class="p">,</span> <span class="p">{</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">});</span></pre><p>Creatures also have a function to play an animation. For more information about how to find animation IDs, check this <a href="https://github.com/emd4600/SporeModder-FX/wiki/How-to:-use-Spore-animations">Spore animations tutorial</a>:</p><pre class="m-code"><span class="c1">// 0x04FFA018 is the animation where the creature tells a joke</span>
+<span class="n">creature</span><span class="o">-&gt;</span><span class="n">PlayAnimation</span><span class="p">(</span><span class="mh">0x04FFA018</span><span class="p">);</span></pre></section></section>
+      </div>
+    </div>
+  </div>
+</article></main>
+<div class="m-doc-search" id="search">
+  <a href="#!" onclick="return hideSearch()"></a>
+  <div class="m-container">
+    <div class="m-row">
+      <div class="m-col-m-8 m-push-m-2">
+        <div class="m-doc-search-header m-text m-small">
+          <div><span class="m-label m-default">Tab</span> / <span class="m-label m-default">T</span> to search, <span class="m-label m-default">Esc</span> to close</div>
+          <div id="search-symbolcount">&hellip;</div>
+        </div>
+        <div class="m-doc-search-content">
+          <form>
+            <input type="search" name="q" id="search-input" placeholder="Loading &hellip;" disabled="disabled" autofocus="autofocus" autocomplete="off" spellcheck="false" />
+          </form>
+          <noscript class="m-text m-danger m-text-center">Unlike everything else in the docs, the search functionality <em>requires</em> JavaScript.</noscript>
+          <div id="search-help" class="m-text m-dim m-text-center">
+            <p class="m-noindent">Search for symbols, directories, files, pages or
+            modules. You can omit any prefix from the symbol or file path; adding a
+            <code>:</code> or <code>/</code> suffix lists all members of given symbol or
+            directory.</p>
+            <p class="m-noindent">Use <span class="m-label m-dim">&darr;</span>
+            / <span class="m-label m-dim">&uarr;</span> to navigate through the list,
+            <span class="m-label m-dim">Enter</span> to go.
+            <span class="m-label m-dim">Tab</span> autocompletes common prefix, you can
+            copy a link to the result using <span class="m-label m-dim">⌘</span>
+            <span class="m-label m-dim">L</span> while <span class="m-label m-dim">⌘</span>
+            <span class="m-label m-dim">M</span> produces a Markdown link.</p>
+          </div>
+          <div id="search-notfound" class="m-text m-warning m-text-center">Sorry, nothing was found.</div>
+          <ul id="search-results"></ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="search-v1.js"></script>
+<script src="searchdata-v1.js" async="async"></script>
+<footer><nav>
+  <div class="m-container">
+    <div class="m-row">
+      <div class="m-col-l-10 m-push-l-1">
+        <p>Spore ModAPI SDK for creating C++ mods for Spore. Created with <a href="https://doxygen.org/">Doxygen</a> 1.8.16 and <a href="https://mcss.mosra.cz/">m.css</a>.</p>
+      </div>
+    </div>
+  </div>
+</nav></footer>
+</body>
+</html>

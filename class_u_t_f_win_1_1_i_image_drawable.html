@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>UTFWin::IImageDrawable class | Spore ModAPI SDK for creating C++ mods for Spore</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,600,600i%7CSource+Code+Pro:400,400i,600" />
+  <link rel="stylesheet" href="m-dark.css" />
+  <link rel="stylesheet" href="m-documentation.css" />
+  <link rel="icon" href="Spore_ModAPI_Icon.png" type="image/png" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#22272e" />
+</head>
+<body>
+<header><nav id="navigation">
+  <div class="m-container">
+    <div class="m-row">
+      <a href="index.html" id="m-navbar-brand" class="m-col-t-8 m-col-m-none m-left-m"><img src="Spore_ModAPI_Icon.png" />Spore ModAPI <span class="m-thin">SDK for creating C++ mods for Spore</span></a>
+      <div class="m-col-t-4 m-hide-m m-text-right m-nopadr">
+        <a href="#search" class="m-doc-search-icon" title="Search" onclick="return showSearch()"><svg style="height: 0.9rem;" viewBox="0 0 16 16">
+          <path id="m-doc-search-icon-path" d="m6 0c-3.31 0-6 2.69-6 6 0 3.31 2.69 6 6 6 1.49 0 2.85-0.541 3.89-1.44-0.0164 0.338 0.147 0.759 0.5 1.15l3.22 3.79c0.552 0.614 1.45 0.665 2 0.115 0.55-0.55 0.499-1.45-0.115-2l-3.79-3.22c-0.392-0.353-0.812-0.515-1.15-0.5 0.895-1.05 1.44-2.41 1.44-3.89 0-3.31-2.69-6-6-6zm0 1.56a4.44 4.44 0 0 1 4.44 4.44 4.44 4.44 0 0 1-4.44 4.44 4.44 4.44 0 0 1-4.44-4.44 4.44 4.44 0 0 1 4.44-4.44z"/>
+        </svg></a>
+        <a id="m-navbar-show" href="#navigation" title="Show navigation"></a>
+        <a id="m-navbar-hide" href="#" title="Hide navigation"></a>
+      </div>
+      <div id="m-navbar-collapse" class="m-col-t-12 m-show-m m-col-m-none m-right-m">
+        <div class="m-row">
+          <ol class="m-col-t-6 m-col-m-none">
+            <li><a href="pages.html">Tutorials</a></li>
+            <li><a href="namespaces.html">Namespaces</a></li>
+          </ol>
+          <ol class="m-col-t-6 m-col-m-none" start="3">
+            <li><a href="annotated.html">Classes</a></li>
+            <li><a href="files.html">Files</a></li>
+            <li class="m-show-m"><a href="#search" class="m-doc-search-icon" title="Search" onclick="return showSearch()"><svg style="height: 0.9rem;" viewBox="0 0 16 16">
+              <use href="#m-doc-search-icon-path" />
+            </svg></a></li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav></header>
+<main><article>
+  <div class="m-container m-container-inflatable">
+    <div class="m-row">
+      <div class="m-col-l-10 m-push-l-1">
+        <h1>
+          <span class="m-breadcrumb"><a href="namespace_u_t_f_win.html">UTFWin</a>::<wbr/></span>IImageDrawable <span class="m-thin">class</span>
+          <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_image_drawable_8h.html">&lt;Spore/UTFWin/ImageDrawable.h&gt;</a></div>
+        </h1>
+        <p>An abstract class that has the methods that a drawable that renders an image would require.</p>
+        <div class="m-block m-default">
+          <h3>Contents</h3>
+          <ul>
+            <li>
+              Reference
+              <ul>
+                <li><a href="#base-classes">Base classes</a></li>
+                <li><a href="#derived-classes">Derived classes</a></li>
+                <li><a href="#pub-types">Public types</a></li>
+                <li><a href="#pub-static-attribs">Public static variables</a></li>
+                <li><a href="#pub-static-methods">Public static functions</a></li>
+                <li><a href="#pub-methods">Public functions</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+        <section id="base-classes">
+          <h2><a href="#base-classes">Base classes</a></h2>
+          <dl class="m-doc">
+            <dt>
+              class <a href="class_u_t_f_win_1_1_u_t_f_win_object.html" class="m-doc">UTFWinObject</a>
+            </dt>
+            <dd><span></span></dd>
+          </dl>
+        </section>
+        <section id="derived-classes">
+          <h2><a href="#derived-classes">Derived classes</a></h2>
+          <dl class="m-doc">
+            <dt>
+              class <a href="class_u_t_f_win_1_1_image_drawable.html" class="m-doc">ImageDrawable</a>
+            </dt>
+            <dd>A standard <a href="class_u_t_f_win_1_1_i_drawable.html" class="m-doc">IDrawable</a> that renders an image.</dd>
+          </dl>
+        </section>
+        <section id="pub-types">
+          <h2><a href="#pub-types">Public types</a></h2>
+          <dl class="m-doc">
+            <dt>
+              <span class="m-doc-wrap-bumper">enum <a href="#a80a30c03fd824803e8bffdd09e560508" class="m-doc">(anonymous)</a> { </span><span class="m-doc-wrap"><a href="#a80a30c03fd824803e8bffdd09e560508ad9ce40ec8a79ad9f8077249836a43678" class="m-doc">kFlagFixedWidth</a> = 1,
+              <a href="#a80a30c03fd824803e8bffdd09e560508a2d136f4e76a0ae9d4595130837dfcc2d" class="m-doc">kFlagFixedHeight</a> = 2 }</span>
+            </dt>
+            <dd><span></span></dd>
+          </dl>
+        </section>
+        <section id="pub-static-attribs">
+          <h2><a href="#pub-static-attribs">Public static variables</a></h2>
+          <dl class="m-doc">
+            <dt id="ad7a3c24a02ec3c686a50153f1cd3df5c">
+              static const uint32_t <a href="#ad7a3c24a02ec3c686a50153f1cd3df5c" class="m-doc-self">TYPE</a>
+            </dt>
+            <dd><span></span></dd>
+          </dl>
+        </section>
+        <section id="pub-static-methods">
+          <h2><a href="#pub-static-methods">Public static functions</a></h2>
+          <dl class="m-doc">
+            <dt>
+              <span class="m-doc-wrap-bumper">static auto <a href="#a7d77033cfa621a4f68f36a00325beb02" class="m-doc">AddImageWindow</a>(</span><span class="m-doc-wrap">const <a href="struct_resource_key.html" class="m-doc">ResourceKey</a>&amp; imageName,
+              float offsetX,
+              float offsetY,
+              <a href="class_u_t_f_win_1_1_i_window.html" class="m-doc">IWindow</a>* pParentWindow) -&gt; <a href="class_u_t_f_win_1_1_i_window.html" class="m-doc">IWindow</a>*</span>
+            </dt>
+            <dd>Creates an <a href="class_u_t_f_win_1_1_i_window.html" class="m-doc">IWindow</a> that will display the image with the name specified.</dd>
+          </dl>
+        </section>
+        <section id="pub-methods">
+          <h2><a href="#pub-methods">Public functions</a></h2>
+          <dl class="m-doc">
+            <dt id="a5951ea568221f15923ed3018a7543c64">
+              <span class="m-doc-wrap-bumper">auto <a href="#a5951ea568221f15923ed3018a7543c64" class="m-doc-self">ToDrawable</a>(</span><span class="m-doc-wrap">) -&gt; <a href="class_u_t_f_win_1_1_i_drawable.html" class="m-doc">IDrawable</a>* <span class="m-label m-flat m-warning">pure virtual</span></span>
+            </dt>
+            <dd>Get the <a href="class_u_t_f_win_1_1_i_drawable.html" class="m-doc">IDrawable</a> instance that represents this class.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">void <a href="#a8e2a80744c82d4a7ba6a52f11644f8fc" class="m-doc">SetImage</a>(</span><span class="m-doc-wrap"><a href="class_u_t_f_win_1_1_image.html" class="m-doc">Image</a>* pImage) <span class="m-label m-flat m-warning">pure virtual</span></span>
+            </dt>
+            <dd>Sets the image to be shown.</dd>
+            <dt id="a9e64fdf7df010fbf03a0579721789538">
+              <span class="m-doc-wrap-bumper">auto <a href="#a9e64fdf7df010fbf03a0579721789538" class="m-doc-self">GetImage</a>(</span><span class="m-doc-wrap">) const -&gt; <a href="class_u_t_f_win_1_1_image.html" class="m-doc">Image</a>* <span class="m-label m-flat m-warning">pure virtual</span></span>
+            </dt>
+            <dd>Gets the image to be shown.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a0da6740d0bb98bf2e8b6825edba2b6f6" class="m-doc">GetImageDrawableFlags</a>(</span><span class="m-doc-wrap">) const -&gt; int <span class="m-label m-flat m-warning">pure virtual</span></span>
+            </dt>
+            <dd>Gets the flags used in this drawable.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">void <a href="#a5e2f2a2bd246f442fe16f68b1c334907" class="m-doc">SetImageDrawableFlags</a>(</span><span class="m-doc-wrap">int flags) <span class="m-label m-flat m-warning">pure virtual</span></span>
+            </dt>
+            <dd>Sets the flags used in this drawable.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">void <a href="#ab3c59832ebf2278492dc4ddccd519620" class="m-doc">SetImageDrawableFlag</a>(</span><span class="m-doc-wrap">int flag,
+              bool bValue) <span class="m-label m-flat m-warning">pure virtual</span></span>
+            </dt>
+            <dd>Sets the specific drawable flag to the value given.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">void <a href="#a62f77a5d41f38ee9f71db21d688b6b14" class="m-doc">SetTiling</a>(</span><span class="m-doc-wrap"><a href="namespace_u_t_f_win.html#abf3171126194941ce2d0f329beb88542" class="m-doc">ImageTiling</a> tiling) <span class="m-label m-flat m-warning">pure virtual</span></span>
+            </dt>
+            <dd>Sets the tiling method that will be used in this drawable.</dd>
+            <dt id="a66a86d183916804cf241011d666b8849">
+              <span class="m-doc-wrap-bumper">auto <a href="#a66a86d183916804cf241011d666b8849" class="m-doc-self">GetTiling</a>(</span><span class="m-doc-wrap">) const -&gt; <a href="namespace_u_t_f_win.html#abf3171126194941ce2d0f329beb88542" class="m-doc">ImageTiling</a> <span class="m-label m-flat m-warning">pure virtual</span></span>
+            </dt>
+            <dd>Gets the tiling method that is being used in this drawable.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">void <a href="#a7cdca92377b15080535ac6eede115b2b" class="m-doc">SetScale</a>(</span><span class="m-doc-wrap">float fScale) <span class="m-label m-flat m-warning">pure virtual</span></span>
+            </dt>
+            <dd>Sets the scale of the image.</dd>
+            <dt id="a91b7d3d0c46ed2e1ee5c976c12ef6d38">
+              <span class="m-doc-wrap-bumper">auto <a href="#a91b7d3d0c46ed2e1ee5c976c12ef6d38" class="m-doc-self">GetScale</a>(</span><span class="m-doc-wrap">) const -&gt; float <span class="m-label m-flat m-warning">pure virtual</span></span>
+            </dt>
+            <dd>Gets the scale of the image, as a float value.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">void <a href="#a3dd1c2270c832992c0678dcccb190b90" class="m-doc">SetAlignmentHorizontal</a>(</span><span class="m-doc-wrap"><a href="namespace_u_t_f_win.html#af869e3df8ebe407d04362051647c7e6b" class="m-doc">AlignmentH</a> alignment) <span class="m-label m-flat m-warning">pure virtual</span></span>
+            </dt>
+            <dd>Sets the horizontal alignment of the image.</dd>
+            <dt id="a0b920fdd081b253abc5e63407ec0a87a">
+              <span class="m-doc-wrap-bumper">auto <a href="#a0b920fdd081b253abc5e63407ec0a87a" class="m-doc-self">GetAlignmentHorizontal</a>(</span><span class="m-doc-wrap">) const -&gt; <a href="namespace_u_t_f_win.html#af869e3df8ebe407d04362051647c7e6b" class="m-doc">AlignmentH</a> <span class="m-label m-flat m-warning">pure virtual</span></span>
+            </dt>
+            <dd>Gets the horizontal alignment of the image.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">void <a href="#af16cacf534d74e9aaa2704d8ea768c93" class="m-doc">SetAlignmentVertical</a>(</span><span class="m-doc-wrap"><a href="namespace_u_t_f_win.html#a854201008eb63c32d8eb03667c19cdfb" class="m-doc">AlignmentV</a> alignment) <span class="m-label m-flat m-warning">pure virtual</span></span>
+            </dt>
+            <dd>Sets the vertical alignment of the image.</dd>
+            <dt id="ad32efaf0b88b1db9c8f50424d24845ad">
+              <span class="m-doc-wrap-bumper">auto <a href="#ad32efaf0b88b1db9c8f50424d24845ad" class="m-doc-self">GetAlignmentVertical</a>(</span><span class="m-doc-wrap">) const -&gt; <a href="namespace_u_t_f_win.html#a854201008eb63c32d8eb03667c19cdfb" class="m-doc">AlignmentV</a> <span class="m-label m-flat m-warning">pure virtual</span></span>
+            </dt>
+            <dd>Gets the vertical alignment of the image.</dd>
+          </dl>
+        </section>
+        <section>
+          <h2>Enum documentation</h2>
+          <section class="m-doc-details" id="a80a30c03fd824803e8bffdd09e560508"><div>
+            <h3>
+              enum UTFWin::<wbr />IImageDrawable::<wbr /><a href="#a80a30c03fd824803e8bffdd09e560508" class="m-doc-self">(anonymous)</a>
+            </h3>
+            <p><span></span></p>
+            <table class="m-table m-fullwidth m-flat m-doc">
+              <thead><tr><th style="width: 1%">Enumerators</th><th></th></tr></thead>
+              <tbody>
+                <tr>
+                  <td><a href="#a80a30c03fd824803e8bffdd09e560508ad9ce40ec8a79ad9f8077249836a43678" class="m-doc-self" id="a80a30c03fd824803e8bffdd09e560508ad9ce40ec8a79ad9f8077249836a43678">kFlagFixedWidth</a></td>
+                  <td>
+                  <p>Preserves the original width of the image.</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a80a30c03fd824803e8bffdd09e560508a2d136f4e76a0ae9d4595130837dfcc2d" class="m-doc-self" id="a80a30c03fd824803e8bffdd09e560508a2d136f4e76a0ae9d4595130837dfcc2d">kFlagFixedHeight</a></td>
+                  <td>
+                  <p>Preserves the original height of the image.</p>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div></section>
+        </section>
+        <section>
+          <h2>Function documentation</h2>
+          <section class="m-doc-details" id="a7d77033cfa621a4f68f36a00325beb02"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">static <a href="class_u_t_f_win_1_1_i_window.html" class="m-doc">IWindow</a>* UTFWin::<wbr />IImageDrawable::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a7d77033cfa621a4f68f36a00325beb02" class="m-doc-self">AddImageWindow</a>(</span><span class="m-doc-wrap">const <a href="struct_resource_key.html" class="m-doc">ResourceKey</a>&amp; imageName,
+              float offsetX,
+              float offsetY,
+              <a href="class_u_t_f_win_1_1_i_window.html" class="m-doc">IWindow</a>* pParentWindow)</span></span>
+            </h3>
+            <p>Creates an <a href="class_u_t_f_win_1_1_i_window.html" class="m-doc">IWindow</a> that will display the image with the name specified.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">imageName</td>
+                  <td>The <a href="struct_resource_key.html" class="m-doc">ResourceKey</a> of the image to display.</td>
+                </tr>
+                <tr>
+                  <td>offsetX</td>
+                  <td>The X coordinate of the newly generated window, relative to its parent.</td>
+                </tr>
+                <tr>
+                  <td>offsetY</td>
+                  <td>The Y coordinate of the newly generated window, relative to its parent.</td>
+                </tr>
+                <tr>
+                  <td>pParentWindow</td>
+                  <td>The <a href="class_u_t_f_win_1_1_i_window.html" class="m-doc">IWindow</a> that will be the parent of the created window.</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>Returns</th>
+                  <td>The newly created window.</td>
+                </tr>
+              </tfoot>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="a8e2a80744c82d4a7ba6a52f11644f8fc"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">void UTFWin::<wbr />IImageDrawable::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a8e2a80744c82d4a7ba6a52f11644f8fc" class="m-doc-self">SetImage</a>(</span><span class="m-doc-wrap"><a href="class_u_t_f_win_1_1_image.html" class="m-doc">Image</a>* pImage) <span class="m-label m-warning">pure virtual</span></span></span>
+            </h3>
+            <p>Sets the image to be shown.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">pImage</td>
+                  <td>The image that will be used by this drawable.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="a0da6740d0bb98bf2e8b6825edba2b6f6"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">int UTFWin::<wbr />IImageDrawable::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a0da6740d0bb98bf2e8b6825edba2b6f6" class="m-doc-self">GetImageDrawableFlags</a>(</span><span class="m-doc-wrap">) const <span class="m-label m-warning">pure virtual</span></span></span>
+            </h3>
+            <p>Gets the flags used in this drawable.</p>
+<p>The flags are the AbstractImageDrawable::kFlag... values.</p>
+          </div></section>
+          <section class="m-doc-details" id="a5e2f2a2bd246f442fe16f68b1c334907"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">void UTFWin::<wbr />IImageDrawable::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a5e2f2a2bd246f442fe16f68b1c334907" class="m-doc-self">SetImageDrawableFlags</a>(</span><span class="m-doc-wrap">int flags) <span class="m-label m-warning">pure virtual</span></span></span>
+            </h3>
+            <p>Sets the flags used in this drawable.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">flags</td>
+                  <td>The new flags value.</td>
+                </tr>
+              </tbody>
+            </table>
+<p>The flags are the AbstractImageDrawable::kFlag... values.</p>
+          </div></section>
+          <section class="m-doc-details" id="ab3c59832ebf2278492dc4ddccd519620"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">void UTFWin::<wbr />IImageDrawable::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ab3c59832ebf2278492dc4ddccd519620" class="m-doc-self">SetImageDrawableFlag</a>(</span><span class="m-doc-wrap">int flag,
+              bool bValue) <span class="m-label m-warning">pure virtual</span></span></span>
+            </h3>
+            <p>Sets the specific drawable flag to the value given.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">flag</td>
+                  <td>The flag to set.</td>
+                </tr>
+                <tr>
+                  <td>bValue</td>
+                  <td>The new bool value of the flag.</td>
+                </tr>
+              </tbody>
+            </table>
+<p>The possible flags are the AbstractImageDrawable::kFlag... values.</p>
+          </div></section>
+          <section class="m-doc-details" id="a62f77a5d41f38ee9f71db21d688b6b14"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">void UTFWin::<wbr />IImageDrawable::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a62f77a5d41f38ee9f71db21d688b6b14" class="m-doc-self">SetTiling</a>(</span><span class="m-doc-wrap"><a href="namespace_u_t_f_win.html#abf3171126194941ce2d0f329beb88542" class="m-doc">ImageTiling</a> tiling) <span class="m-label m-warning">pure virtual</span></span></span>
+            </h3>
+            <p>Sets the tiling method that will be used in this drawable.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">tiling</td>
+                  <td>ImageTiling The tiling to use, in the ImageTiling enum.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="a7cdca92377b15080535ac6eede115b2b"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">void UTFWin::<wbr />IImageDrawable::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a7cdca92377b15080535ac6eede115b2b" class="m-doc-self">SetScale</a>(</span><span class="m-doc-wrap">float fScale) <span class="m-label m-warning">pure virtual</span></span></span>
+            </h3>
+            <p>Sets the scale of the image.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">fScale</td>
+                  <td>The new scale value.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="a3dd1c2270c832992c0678dcccb190b90"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">void UTFWin::<wbr />IImageDrawable::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a3dd1c2270c832992c0678dcccb190b90" class="m-doc-self">SetAlignmentHorizontal</a>(</span><span class="m-doc-wrap"><a href="namespace_u_t_f_win.html#af869e3df8ebe407d04362051647c7e6b" class="m-doc">AlignmentH</a> alignment) <span class="m-label m-warning">pure virtual</span></span></span>
+            </h3>
+            <p>Sets the horizontal alignment of the image.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">alignment</td>
+                  <td>The new alignment value, in the enum AlignmentH.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="af16cacf534d74e9aaa2704d8ea768c93"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">void UTFWin::<wbr />IImageDrawable::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#af16cacf534d74e9aaa2704d8ea768c93" class="m-doc-self">SetAlignmentVertical</a>(</span><span class="m-doc-wrap"><a href="namespace_u_t_f_win.html#a854201008eb63c32d8eb03667c19cdfb" class="m-doc">AlignmentV</a> alignment) <span class="m-label m-warning">pure virtual</span></span></span>
+            </h3>
+            <p>Sets the vertical alignment of the image.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">alignment</td>
+                  <td>The new alignment value, in the enum AlignmentV.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div></section>
+        </section>
+      </div>
+    </div>
+  </div>
+</article></main>
+<div class="m-doc-search" id="search">
+  <a href="#!" onclick="return hideSearch()"></a>
+  <div class="m-container">
+    <div class="m-row">
+      <div class="m-col-m-8 m-push-m-2">
+        <div class="m-doc-search-header m-text m-small">
+          <div><span class="m-label m-default">Tab</span> / <span class="m-label m-default">T</span> to search, <span class="m-label m-default">Esc</span> to close</div>
+          <div id="search-symbolcount">&hellip;</div>
+        </div>
+        <div class="m-doc-search-content">
+          <form>
+            <input type="search" name="q" id="search-input" placeholder="Loading &hellip;" disabled="disabled" autofocus="autofocus" autocomplete="off" spellcheck="false" />
+          </form>
+          <noscript class="m-text m-danger m-text-center">Unlike everything else in the docs, the search functionality <em>requires</em> JavaScript.</noscript>
+          <div id="search-help" class="m-text m-dim m-text-center">
+            <p class="m-noindent">Search for symbols, directories, files, pages or
+            modules. You can omit any prefix from the symbol or file path; adding a
+            <code>:</code> or <code>/</code> suffix lists all members of given symbol or
+            directory.</p>
+            <p class="m-noindent">Use <span class="m-label m-dim">&darr;</span>
+            / <span class="m-label m-dim">&uarr;</span> to navigate through the list,
+            <span class="m-label m-dim">Enter</span> to go.
+            <span class="m-label m-dim">Tab</span> autocompletes common prefix, you can
+            copy a link to the result using <span class="m-label m-dim">⌘</span>
+            <span class="m-label m-dim">L</span> while <span class="m-label m-dim">⌘</span>
+            <span class="m-label m-dim">M</span> produces a Markdown link.</p>
+          </div>
+          <div id="search-notfound" class="m-text m-warning m-text-center">Sorry, nothing was found.</div>
+          <ul id="search-results"></ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="search-v1.js"></script>
+<script src="searchdata-v1.js" async="async"></script>
+<footer><nav>
+  <div class="m-container">
+    <div class="m-row">
+      <div class="m-col-l-10 m-push-l-1">
+        <p>Spore ModAPI SDK for creating C++ mods for Spore. Created with <a href="https://doxygen.org/">Doxygen</a> 1.8.16 and <a href="https://mcss.mosra.cz/">m.css</a>.</p>
+      </div>
+    </div>
+  </div>
+</nav></footer>
+</body>
+</html>

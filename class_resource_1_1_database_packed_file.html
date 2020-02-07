@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Resource::DatabasePackedFile class | Spore ModAPI SDK for creating C++ mods for Spore</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,600,600i%7CSource+Code+Pro:400,400i,600" />
+  <link rel="stylesheet" href="m-dark.css" />
+  <link rel="stylesheet" href="m-documentation.css" />
+  <link rel="icon" href="Spore_ModAPI_Icon.png" type="image/png" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#22272e" />
+</head>
+<body>
+<header><nav id="navigation">
+  <div class="m-container">
+    <div class="m-row">
+      <a href="index.html" id="m-navbar-brand" class="m-col-t-8 m-col-m-none m-left-m"><img src="Spore_ModAPI_Icon.png" />Spore ModAPI <span class="m-thin">SDK for creating C++ mods for Spore</span></a>
+      <div class="m-col-t-4 m-hide-m m-text-right m-nopadr">
+        <a href="#search" class="m-doc-search-icon" title="Search" onclick="return showSearch()"><svg style="height: 0.9rem;" viewBox="0 0 16 16">
+          <path id="m-doc-search-icon-path" d="m6 0c-3.31 0-6 2.69-6 6 0 3.31 2.69 6 6 6 1.49 0 2.85-0.541 3.89-1.44-0.0164 0.338 0.147 0.759 0.5 1.15l3.22 3.79c0.552 0.614 1.45 0.665 2 0.115 0.55-0.55 0.499-1.45-0.115-2l-3.79-3.22c-0.392-0.353-0.812-0.515-1.15-0.5 0.895-1.05 1.44-2.41 1.44-3.89 0-3.31-2.69-6-6-6zm0 1.56a4.44 4.44 0 0 1 4.44 4.44 4.44 4.44 0 0 1-4.44 4.44 4.44 4.44 0 0 1-4.44-4.44 4.44 4.44 0 0 1 4.44-4.44z"/>
+        </svg></a>
+        <a id="m-navbar-show" href="#navigation" title="Show navigation"></a>
+        <a id="m-navbar-hide" href="#" title="Hide navigation"></a>
+      </div>
+      <div id="m-navbar-collapse" class="m-col-t-12 m-show-m m-col-m-none m-right-m">
+        <div class="m-row">
+          <ol class="m-col-t-6 m-col-m-none">
+            <li><a href="pages.html">Tutorials</a></li>
+            <li><a href="namespaces.html">Namespaces</a></li>
+          </ol>
+          <ol class="m-col-t-6 m-col-m-none" start="3">
+            <li><a href="annotated.html">Classes</a></li>
+            <li><a href="files.html">Files</a></li>
+            <li class="m-show-m"><a href="#search" class="m-doc-search-icon" title="Search" onclick="return showSearch()"><svg style="height: 0.9rem;" viewBox="0 0 16 16">
+              <use href="#m-doc-search-icon-path" />
+            </svg></a></li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav></header>
+<main><article>
+  <div class="m-container m-container-inflatable">
+    <div class="m-row">
+      <div class="m-col-l-10 m-push-l-1">
+        <h1>
+          <span class="m-breadcrumb"><a href="namespace_resource.html">Resource</a>::<wbr/></span>DatabasePackedFile <span class="m-thin">class</span>
+          <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_database_packed_file_8h.html">&lt;Spore/Resource/DatabasePackedFile.h&gt;</a></div>
+        </h1>
+        <p>A <a href="class_resource_1_1_database_packed_file.html" class="m-doc">DatabasePackedFile</a> is a type of file used in Spore to store and index multiple files inside a single container (usually in the .package extension).</p>
+        <div class="m-block m-default">
+          <h3>Contents</h3>
+          <ul>
+            <li>
+              Reference
+              <ul>
+                <li><a href="#base-classes">Base classes</a></li>
+                <li><a href="#pub-static-attribs">Public static variables</a></li>
+                <li><a href="#typeless-methods">Constructors, destructors, conversion operators</a></li>
+                <li><a href="#pub-methods">Public functions</a></li>
+                <li><a href="#pub-attribs">Public variables</a></li>
+                <li><a href="#pro-types">Protected types</a></li>
+                <li><a href="#pro-methods">Protected functions</a></li>
+                <li><a href="#pro-attribs">Protected variables</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+<p>This class contains all the necessary methods for accessing files and loading/saving DBPF files.</p>
+        <section id="base-classes">
+          <h2><a href="#base-classes">Base classes</a></h2>
+          <dl class="m-doc">
+            <dt>
+              class <a href="class_resource_1_1_i_resource_container.html" class="m-doc">IResourceContainer</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              class <a href="class_object.html" class="m-doc">Object</a>
+            </dt>
+            <dd>This class represents a basic reference counted object.</dd>
+          </dl>
+        </section>
+        <section id="pub-static-attribs">
+          <h2><a href="#pub-static-attribs">Public static variables</a></h2>
+          <dl class="m-doc">
+            <dt id="a48ed39122241e68b295923368346a67c">
+              static const uint32_t <a href="#a48ed39122241e68b295923368346a67c" class="m-doc-self">kDefaultType</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="ad366521cb04b4707874a1643d7d887a5">
+              static const uint32_t <a href="#ad366521cb04b4707874a1643d7d887a5" class="m-doc-self">TYPE</a>
+            </dt>
+            <dd><span></span></dd>
+          </dl>
+        </section>
+        <section id="typeless-methods">
+          <h2><a href="#typeless-methods">Constructors, destructors, conversion operators</a></h2>
+          <dl class="m-doc">
+            <dt id="a1dd90a999505ad8528b9092a81cb1f8c">
+              <span class="m-doc-wrap-bumper"><a href="#a1dd90a999505ad8528b9092a81cb1f8c" class="m-doc-self">DatabasePackedFile</a>(</span><span class="m-doc-wrap">const char16_t* pPath,
+              <a href="class_i_core_allocator.html" class="m-doc">ICoreAllocator</a>* pAllocator)</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a66a378948ec83a5e63f54bfc7f185def">
+              <span class="m-doc-wrap-bumper"><a href="#a66a378948ec83a5e63f54bfc7f185def" class="m-doc-self">~DatabasePackedFile</a>(</span><span class="m-doc-wrap">) <span class="m-label m-flat m-warning">virtual</span></span>
+            </dt>
+            <dd><span></span></dd>
+          </dl>
+        </section>
+        <section id="pub-methods">
+          <h2><a href="#pub-methods">Public functions</a></h2>
+          <dl class="m-doc">
+            <dt id="ae548bbc1ba1e83b1ec53d9da14b86342">
+              <span class="m-doc-wrap-bumper">auto <a href="#ae548bbc1ba1e83b1ec53d9da14b86342" class="m-doc-self">AddRef</a>(</span><span class="m-doc-wrap">) -&gt; int <span class="m-label m-flat m-warning">override</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a5b844b40fa331bbc43be01380c461dae">
+              <span class="m-doc-wrap-bumper">auto <a href="#a5b844b40fa331bbc43be01380c461dae" class="m-doc-self">Release</a>(</span><span class="m-doc-wrap">) -&gt; int <span class="m-label m-flat m-warning">override</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a0ee3939e531c9b0dc97fa1d22930c2d3">
+              <span class="m-doc-wrap-bumper">auto <a href="#a0ee3939e531c9b0dc97fa1d22930c2d3" class="m-doc-self">Cast</a>(</span><span class="m-doc-wrap">uint32_t type) const -&gt; void* <span class="m-label m-flat m-warning">override</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a873f17dd7028fb59a15bee8ab2f909f7">
+              <span class="m-doc-wrap-bumper">auto <a href="#a873f17dd7028fb59a15bee8ab2f909f7" class="m-doc-self">NeedsToRelease</a>(</span><span class="m-doc-wrap">) -&gt; bool <span class="m-label m-flat m-warning">virtual</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="afa17701d9424b25fee244cd208192b18">
+              <span class="m-doc-wrap-bumper">auto <a href="#afa17701d9424b25fee244cd208192b18" class="m-doc-self">ReleaseResources</a>(</span><span class="m-doc-wrap">) -&gt; bool <span class="m-label m-flat m-warning">virtual</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="abdceefca1195ccbf4d5b6edc63433092">
+              <span class="m-doc-wrap-bumper">auto <a href="#abdceefca1195ccbf4d5b6edc63433092" class="m-doc-self">GetType</a>(</span><span class="m-doc-wrap">) const -&gt; uint32_t <span class="m-label m-flat m-warning">virtual</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a06c1a2165f84f2eedb2e434ca77c7f69">
+              <span class="m-doc-wrap-bumper">auto <a href="#a06c1a2165f84f2eedb2e434ca77c7f69" class="m-doc-self">GetReferenceCount</a>(</span><span class="m-doc-wrap">) const -&gt; int <span class="m-label m-flat m-warning">virtual</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a79d666c6b66e616e2eda9c0f5e0b65d6">
+              <span class="m-doc-wrap-bumper">auto <a href="#a79d666c6b66e616e2eda9c0f5e0b65d6" class="m-doc-self">UseIndexMutex</a>(</span><span class="m-doc-wrap">bool bLock) -&gt; int <span class="m-label m-flat m-warning">virtual</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a990eed73f5d9ac286a8bf4990dc6ff1f">
+              <span class="m-doc-wrap-bumper">auto <a href="#a990eed73f5d9ac286a8bf4990dc6ff1f" class="m-doc-self">Load</a>(</span><span class="m-doc-wrap">int nDesiredAccess = <a href="namespace_i_o.html#a6ebdfc60f23a884f4aecd2455972ff02ac5b43555635940d9a558028143f3c4d2" class="m-doc">IO::<wbr />kAccessFlagRead</a>,
+              int nCreateDisposition = <a href="namespace_i_o.html#a45057374e91a07d3a7a80f09ca20b83aa816845f0193dc6789d88c7749b6dcfb9" class="m-doc">IO::<wbr />kCDDefault</a>,
+              bool arg_8 = false) -&gt; bool <span class="m-label m-flat m-warning">virtual</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a6c7f86bc9007f692dbebdda0230c6e85">
+              <span class="m-doc-wrap-bumper">auto <a href="#a6c7f86bc9007f692dbebdda0230c6e85" class="m-doc-self">Save</a>(</span><span class="m-doc-wrap">) -&gt; bool <span class="m-label m-flat m-warning">virtual</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="aa20fd792c00b5551655d0221b1aafe2a">
+              <span class="m-doc-wrap-bumper">auto <a href="#aa20fd792c00b5551655d0221b1aafe2a" class="m-doc-self">GetAccessFlags</a>(</span><span class="m-doc-wrap">) const -&gt; int <span class="m-label m-flat m-warning">virtual</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="aeaa749c242641bc68f0aca4d5212f68b">
+              <span class="m-doc-wrap-bumper">auto <a href="#aeaa749c242641bc68f0aca4d5212f68b" class="m-doc-self">Write</a>(</span><span class="m-doc-wrap">) -&gt; bool <span class="m-label m-flat m-warning">virtual</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a2c04a083c7f728e3ead4f8fab93644e3">
+              <span class="m-doc-wrap-bumper">auto <a href="#a2c04a083c7f728e3ead4f8fab93644e3" class="m-doc-self">GetPath</a>(</span><span class="m-doc-wrap">) const -&gt; char16_t* <span class="m-label m-flat m-warning">virtual</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a8a086b4e3d71d2d6b48a374df608559f">
+              <span class="m-doc-wrap-bumper">auto <a href="#a8a086b4e3d71d2d6b48a374df608559f" class="m-doc-self">SetPath</a>(</span><span class="m-doc-wrap">const char16_t* path) -&gt; bool <span class="m-label m-flat m-warning">virtual</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="ac0a771e6fb79424a1d9b176e4acf6b7e">
+              <span class="m-doc-wrap-bumper">auto <a href="#ac0a771e6fb79424a1d9b176e4acf6b7e" class="m-doc-self">GetFiles</a>(</span><span class="m-doc-wrap"><a href="class_resource_1_1_p_f_index_modifiable.html#a3f853c859b0f019edafa74c0e277f064" class="m-doc">PFIndexModifiable::<wbr />KeysVector</a>&amp; dstVector,
+              <a href="class_resource_1_1_i_resource_filter.html" class="m-doc">IResourceFilter</a>* filter = nullptr) -&gt; size_t <span class="m-label m-flat m-warning">virtual</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a9b72a342fa6e4a0b11bc273ae99d9216">
+              <span class="m-doc-wrap-bumper">auto <a href="#a9b72a342fa6e4a0b11bc273ae99d9216" class="m-doc-self">GetFile</a>(</span><span class="m-doc-wrap">const <a href="struct_resource_key.html" class="m-doc">ResourceKey</a>&amp; name,
+              <a href="class_resource_1_1_i_p_f_record.html" class="m-doc">IPFRecord</a>** ppDst,
+              int nDesiredAccess = <a href="namespace_i_o.html#a6ebdfc60f23a884f4aecd2455972ff02ac5b43555635940d9a558028143f3c4d2" class="m-doc">IO::<wbr />kAccessFlagRead</a>,
+              int nCreateDisposition = <a href="namespace_i_o.html#a45057374e91a07d3a7a80f09ca20b83aa816845f0193dc6789d88c7749b6dcfb9" class="m-doc">IO::<wbr />kCDDefault</a>,
+              bool arg_10 = true,
+              <a href="struct_resource_1_1_d_b_p_f_item.html" class="m-doc">DBPFItem</a>* pDstInfo = nullptr) -&gt; bool <span class="m-label m-flat m-warning">virtual</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a6e4ba0889bd41c193356c2550b15427e">
+              <span class="m-doc-wrap-bumper">auto <a href="#a6e4ba0889bd41c193356c2550b15427e" class="m-doc-self">func38h</a>(</span><span class="m-doc-wrap">int) -&gt; int <span class="m-label m-flat m-warning">virtual</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a2ccaa14f4502be96c0d60e2bc4e9c04c">
+              <span class="m-doc-wrap-bumper">auto <a href="#a2ccaa14f4502be96c0d60e2bc4e9c04c" class="m-doc-self">func3Ch</a>(</span><span class="m-doc-wrap"><a href="class_resource_1_1_i_p_f_record.html" class="m-doc">IPFRecord</a>* pRecord) -&gt; bool <span class="m-label m-flat m-warning">virtual</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a497436c62b1824d87083d10a868a2392">
+              <span class="m-doc-wrap-bumper">auto <a href="#a497436c62b1824d87083d10a868a2392" class="m-doc-self">RemoveFile</a>(</span><span class="m-doc-wrap"><a href="struct_resource_key.html" class="m-doc">ResourceKey</a>&amp; name) -&gt; bool <span class="m-label m-flat m-warning">virtual</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="abc6c12f0749b11637dc41054c1eff1f2">
+              <span class="m-doc-wrap-bumper">auto <a href="#abc6c12f0749b11637dc41054c1eff1f2" class="m-doc-self">SetResourceManager</a>(</span><span class="m-doc-wrap">bool,
+              <a href="class_resource_1_1c_resource_manager.html" class="m-doc">cResourceManager</a>* pResourceMan,
+              bool) -&gt; bool <span class="m-label m-flat m-warning">virtual</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a95ef6f47c3ec3ab462760ad33017ef16">
+              <span class="m-doc-wrap-bumper">auto <a href="#a95ef6f47c3ec3ab462760ad33017ef16" class="m-doc-self">GetAllocator</a>(</span><span class="m-doc-wrap">) const -&gt; <a href="class_i_core_allocator.html" class="m-doc">ICoreAllocator</a>* <span class="m-label m-flat m-warning">virtual</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a32a837893d2570afad4864a1d94fad02">
+              <span class="m-doc-wrap-bumper">auto <a href="#a32a837893d2570afad4864a1d94fad02" class="m-doc-self">GetStream</a>(</span><span class="m-doc-wrap">) -&gt; <a href="class_i_o_1_1_i_stream.html" class="m-doc">IO::<wbr />IStream</a>* <span class="m-label m-flat m-warning">virtual</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a3bcc3b3124f944d666d6fc6cc27c11d3">
+              <span class="m-doc-wrap-bumper">auto <a href="#a3bcc3b3124f944d666d6fc6cc27c11d3" class="m-doc-self">SetStream</a>(</span><span class="m-doc-wrap"><a href="class_i_o_1_1_i_stream.html" class="m-doc">IO::<wbr />IStream</a>* pStream) -&gt; bool <span class="m-label m-flat m-warning">virtual</span></span>
+            </dt>
+            <dd><span></span></dd>
+          </dl>
+        </section>
+        <section id="pub-attribs">
+          <h2><a href="#pub-attribs">Public variables</a></h2>
+          <dl class="m-doc">
+            <dt id="ad65bedfb1bc0b7cfbe193875e63c07d0">
+               <a href="#ad65bedfb1bc0b7cfbe193875e63c07d0" class="m-doc-self">EAIOZoneObject_AMBIGOUS_DECLARATION</a>
+            </dt>
+            <dd><span></span></dd>
+          </dl>
+        </section>
+        <section id="pro-types">
+          <h2><a href="#pro-types">Protected types</a></h2>
+          <dl class="m-doc">
+            <dt>
+              struct <a href="struct_resource_1_1_database_packed_file_1_1_unknown.html" class="m-doc">Unknown</a>
+            </dt>
+            <dd><span></span></dd>
+          </dl>
+        </section>
+        <section id="pro-methods">
+          <h2><a href="#pro-methods">Protected functions</a></h2>
+          <dl class="m-doc">
+            <dt id="a3236d34d7e0bb7eebed1abaf625a1ce3">
+              <span class="m-doc-wrap-bumper">auto <a href="#a3236d34d7e0bb7eebed1abaf625a1ce3" class="m-doc-self">CreatePFRecordRead</a>(</span><span class="m-doc-wrap">int nDesiredAccess,
+              <a href="struct_resource_1_1_d_b_p_f_item.html" class="m-doc">DBPFItem</a>* info,
+              <a href="struct_resource_key.html" class="m-doc">ResourceKey</a>&amp; key) -&gt; <a href="class_resource_1_1_p_f_record_read.html" class="m-doc">PFRecordRead</a>* <span class="m-label m-flat m-warning">virtual</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a02dc52e230787bfc414839d5ea7fde33">
+              <span class="m-doc-wrap-bumper">auto <a href="#a02dc52e230787bfc414839d5ea7fde33" class="m-doc-self">CreatePFRecordReadCopy</a>(</span><span class="m-doc-wrap">int nDesiredAccess,
+              <a href="class_resource_1_1_p_f_record_read.html" class="m-doc">PFRecordRead</a>* pOther,
+              <a href="struct_resource_key.html" class="m-doc">ResourceKey</a>&amp; key) -&gt; <a href="class_resource_1_1_p_f_record_read.html" class="m-doc">PFRecordRead</a>* <span class="m-label m-flat m-warning">virtual</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="ab08dc7036d52f6c1761492c0c37e1946">
+              <span class="m-doc-wrap-bumper">auto <a href="#ab08dc7036d52f6c1761492c0c37e1946" class="m-doc-self">CreatePFRecordWriteData</a>(</span><span class="m-doc-wrap">int nDesiredAccess,
+              void* pData,
+              size_t nSize,
+              <a href="struct_resource_key.html" class="m-doc">ResourceKey</a>&amp; key) -&gt; <a href="class_resource_1_1_p_f_record_write.html" class="m-doc">PFRecordWrite</a>* <span class="m-label m-flat m-warning">virtual</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a480902f48da1b4f6182ad98d2942abbd">
+              <span class="m-doc-wrap-bumper">auto <a href="#a480902f48da1b4f6182ad98d2942abbd" class="m-doc-self">CreatePFRecordWrite</a>(</span><span class="m-doc-wrap">int nDesiredAccess,
+              size_t nChunkOffset,
+              size_t nSize,
+              <a href="struct_resource_key.html" class="m-doc">ResourceKey</a>&amp; key) -&gt; <a href="class_resource_1_1_p_f_record_write.html" class="m-doc">PFRecordWrite</a>* <span class="m-label m-flat m-warning">virtual</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a2053256747a88fa623290a17e94f82eb">
+              <span class="m-doc-wrap-bumper">auto <a href="#a2053256747a88fa623290a17e94f82eb" class="m-doc-self">Read</a>(</span><span class="m-doc-wrap">) -&gt; bool <span class="m-label m-flat m-warning">virtual</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="af719c02228ec9a0579de63d98f825a79">
+              <span class="m-doc-wrap-bumper">auto <a href="#af719c02228ec9a0579de63d98f825a79" class="m-doc-self">ReadHeader</a>(</span><span class="m-doc-wrap">) -&gt; bool <span class="m-label m-flat m-warning">virtual</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a4f7891184b8d9e993e1e7cecffd55eb1">
+              <span class="m-doc-wrap-bumper">auto <a href="#a4f7891184b8d9e993e1e7cecffd55eb1" class="m-doc-self">Reset</a>(</span><span class="m-doc-wrap">) -&gt; bool <span class="m-label m-flat m-warning">virtual</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a7e4c457de54a2216cd4456d01d1fb3f6">
+              <span class="m-doc-wrap-bumper">auto <a href="#a7e4c457de54a2216cd4456d01d1fb3f6" class="m-doc-self">IsReadyForWrite</a>(</span><span class="m-doc-wrap">) -&gt; bool <span class="m-label m-flat m-warning">virtual</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="acb01b00409b22111ebabc26e8d4cd482">
+              <span class="m-doc-wrap-bumper">auto <a href="#acb01b00409b22111ebabc26e8d4cd482" class="m-doc-self">IsValidHeader</a>(</span><span class="m-doc-wrap">char* header) -&gt; bool <span class="m-label m-flat m-warning">virtual</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a1cbd10de61f0239d0402b0e4ae2881c2">
+              <span class="m-doc-wrap-bumper">auto <a href="#a1cbd10de61f0239d0402b0e4ae2881c2" class="m-doc-self">ReadIndex</a>(</span><span class="m-doc-wrap">) -&gt; bool <span class="m-label m-flat m-warning">virtual</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a15afd58c687fd0155a0eb36de65aeba2">
+              <span class="m-doc-wrap-bumper">auto <a href="#a15afd58c687fd0155a0eb36de65aeba2" class="m-doc-self">WriteIndex</a>(</span><span class="m-doc-wrap">) -&gt; bool <span class="m-label m-flat m-warning">virtual</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a9e763d4143d4ab0c80572fb01506e845">
+              <span class="m-doc-wrap-bumper">auto <a href="#a9e763d4143d4ab0c80572fb01506e845" class="m-doc-self">StreamCanContainFileData</a>(</span><span class="m-doc-wrap">) -&gt; bool <span class="m-label m-flat m-warning">virtual</span></span>
+            </dt>
+            <dd>Tells whether the file stream has enough space to fit the data of the index files.</dd>
+            <dt id="a4f52d6770b53abe44988412360589adc">
+              <span class="m-doc-wrap-bumper">auto <a href="#a4f52d6770b53abe44988412360589adc" class="m-doc-self">CreatePFIndexModifiable</a>(</span><span class="m-doc-wrap">int nDesiredAccess = <a href="namespace_i_o.html#a6ebdfc60f23a884f4aecd2455972ff02a67d81b416712e26c4099d1f01c1493ba" class="m-doc">IO::<wbr />kAccessFlagReadWrite</a>) -&gt; <a href="class_resource_1_1_p_f_index_modifiable.html" class="m-doc">PFIndexModifiable</a>* <span class="m-label m-flat m-warning">virtual</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a5f1d430ae3e457f1e76c328efdaedaf7">
+              <span class="m-doc-wrap-bumper">void <a href="#a5f1d430ae3e457f1e76c328efdaedaf7" class="m-doc-self">ReleaseObject</a>(</span><span class="m-doc-wrap"><a href="class_i_o_1_1_e_a_i_o_zone_object.html" class="m-doc">IO::<wbr />EAIOZoneObject</a>* pObject) <span class="m-label m-flat m-warning">virtual</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a25af75b29821d3cb657f7cd82682c89a">
+              <span class="m-doc-wrap-bumper">void <a href="#a25af75b29821d3cb657f7cd82682c89a" class="m-doc-self">RenovateIndex</a>(</span><span class="m-doc-wrap">) <span class="m-label m-flat m-warning">virtual</span></span>
+            </dt>
+            <dd>Creates a new index that has the same information as the current one, which will be deleted.</dd>
+            <dt id="ac2ccd9b3c7c0caa6d6c946fd9da6442f">
+              <span class="m-doc-wrap-bumper">auto <a href="#ac2ccd9b3c7c0caa6d6c946fd9da6442f" class="m-doc-self">func90h</a>(</span><span class="m-doc-wrap">) -&gt; bool <span class="m-label m-flat m-warning">virtual</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a8f98c9dfbc57f4b35f4ce57587257fff">
+              <span class="m-doc-wrap-bumper">auto <a href="#a8f98c9dfbc57f4b35f4ce57587257fff" class="m-doc-self">ReadBytes</a>(</span><span class="m-doc-wrap">void* pDst,
+              size_t nSize) -&gt; int</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="ad0e2f568a79201e6f9dd14208d54412e">
+              <span class="m-doc-wrap-bumper">auto <a href="#ad0e2f568a79201e6f9dd14208d54412e" class="m-doc-self">ReadData</a>(</span><span class="m-doc-wrap">void* pDst,
+              size_t nChunkOffset,
+              size_t nSize) -&gt; bool</span>
+            </dt>
+            <dd><span></span></dd>
+          </dl>
+        </section>
+        <section id="pro-attribs">
+          <h2><a href="#pro-attribs">Protected variables</a></h2>
+          <dl class="m-doc">
+            <dt id="a5e577b53d86ad922c45719a26da37643">
+              int <a href="#a5e577b53d86ad922c45719a26da37643" class="m-doc-self">mnRefCount</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a031869107258a8acfb7127b106cffa4a">
+              bool <a href="#a031869107258a8acfb7127b106cffa4a" class="m-doc-self">mbNeedsToRelease</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="aecba1ae3f8225bc982e6a6bdcbbe8e0e">
+              <a href="class_i_core_allocator.html" class="m-doc">ICoreAllocator</a>* <a href="#aecba1ae3f8225bc982e6a6bdcbbe8e0e" class="m-doc-self">mpAllocator</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="ad5512d2cdb441adf1b58cdb769bc3b97">
+              int <a href="#ad5512d2cdb441adf1b58cdb769bc3b97" class="m-doc-self">mnFileAccess</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a1271a3c493a69098061ea22848fdc041">
+              int <a href="#a1271a3c493a69098061ea22848fdc041" class="m-doc-self">field_18</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a5b91d7530c6b533aaa5f04db329d33cb">
+              bool <a href="#a5b91d7530c6b533aaa5f04db329d33cb" class="m-doc-self">field_1C</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a585470bfcb1a34dbf87d12b44e1e598b">
+              bool <a href="#a585470bfcb1a34dbf87d12b44e1e598b" class="m-doc-self">field_1D</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a7faa877864f7ea6f4bba8cd4a4b2f0db">
+              string16 <a href="#a7faa877864f7ea6f4bba8cd4a4b2f0db" class="m-doc-self">mFilePath</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a325dace748506ac155c3548420dfe9e6">
+              <a href="class_i_o_1_1_file_stream.html" class="m-doc">IO::<wbr />FileStream</a> <a href="#a325dace748506ac155c3548420dfe9e6" class="m-doc-self">mFileStream</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="afbdcf4511a8a3506beae316e50f49799">
+              size_t <a href="#afbdcf4511a8a3506beae316e50f49799" class="m-doc-self">mFileOffset</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a458cb44ab2500418377b4e706e30dbec">
+              intrusive_ptr&lt;<a href="class_i_o_1_1_i_stream.html" class="m-doc">IO::<wbr />IStream</a>&gt; <a href="#a458cb44ab2500418377b4e706e30dbec" class="m-doc-self">mpCurrentStream</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="af2b922e17a89e242c46017ef538b5adb">
+              char* <a href="#af2b922e17a89e242c46017ef538b5adb" class="m-doc-self">mpDataBuffer</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="ab423146aae946fb4c49ab7643d21c14f">
+              size_t <a href="#ab423146aae946fb4c49ab7643d21c14f" class="m-doc-self">mpBufferSize</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a1d854edaefd3c63ff9a3abd4e54638f0">
+              size_t <a href="#a1d854edaefd3c63ff9a3abd4e54638f0" class="m-doc-self">mnBufferOffset</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a7745a39598082392fed838d526335361">
+              <a href="class_mutex.html" class="m-doc">Mutex</a> <a href="#a7745a39598082392fed838d526335361" class="m-doc-self">mIndexMutex</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a3adaef0a1b05e316476737f4acb01486">
+              <a href="class_mutex.html" class="m-doc">Mutex</a> <a href="#a3adaef0a1b05e316476737f4acb01486" class="m-doc-self">mReadWriteMutex</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a11003bda5b980e8560e4b4ca1a6c54b5">
+              <a href="class_resource_1_1_p_f_index_modifiable.html" class="m-doc">PFIndexModifiable</a>* <a href="#a11003bda5b980e8560e4b4ca1a6c54b5" class="m-doc-self">mpIndex</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="ab44397fe413eb5eed07740966e6f6d95">
+              bool <a href="#ab44397fe413eb5eed07740966e6f6d95" class="m-doc-self">field_2D4</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a428ace3b911c8fea247e42da9360588c">
+              int <a href="#a428ace3b911c8fea247e42da9360588c" class="m-doc-self">field_2D8</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="aceea0a0c3ade1d05d6c1bcca8184e29d">
+              int <a href="#aceea0a0c3ade1d05d6c1bcca8184e29d" class="m-doc-self">field_2DC</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="adf41706cb212018df0cffbf1e58f3876">
+              bool <a href="#adf41706cb212018df0cffbf1e58f3876" class="m-doc-self">field_2E0</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="ae3b8a7a32294be73d02ce488fa1f38af">
+              float <a href="#ae3b8a7a32294be73d02ce488fa1f38af" class="m-doc-self">field_2E4</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a31dfaed0a9a8e0524d9e58a59a60a9e0">
+              map&lt;<a href="struct_resource_key.html" class="m-doc">ResourceKey</a>, <a href="class_resource_1_1_i_p_f_record.html" class="m-doc">IPFRecord</a>*, less&lt;<a href="struct_resource_key.html" class="m-doc">ResourceKey</a>&gt;, <a href="_i_core_allocator_8h.html#a752d1217e82fc75218d2c66d7fd51dc7" class="m-doc">ICoreAllocatorAdapter</a>&gt; <a href="#a31dfaed0a9a8e0524d9e58a59a60a9e0" class="m-doc-self">field_2E8</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="aae03f1cf5eaa0869d6f2df8707b6002b">
+              int <a href="#aae03f1cf5eaa0869d6f2df8707b6002b" class="m-doc-self">field_308</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="adb143e39458f0d42e953b011c943ff04">
+              int <a href="#adb143e39458f0d42e953b011c943ff04" class="m-doc-self">field_30C</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="aa39e5c81b3f3ad9a6ae0128b17915436">
+              int <a href="#aa39e5c81b3f3ad9a6ae0128b17915436" class="m-doc-self">field_310</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="ab63b4c2fa7171287793c6de3b1f7750a">
+              int <a href="#ab63b4c2fa7171287793c6de3b1f7750a" class="m-doc-self">field_314</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a226135e80c07d5ffff1c4e452e19f9da">
+              int <a href="#a226135e80c07d5ffff1c4e452e19f9da" class="m-doc-self">field_318</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a8ab113f23692330fa56c7bed31e0bfd8">
+              int <a href="#a8ab113f23692330fa56c7bed31e0bfd8" class="m-doc-self">field_31C</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="ae76360267ac086894dd9e487eec90690">
+              int <a href="#ae76360267ac086894dd9e487eec90690" class="m-doc-self">field_320</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a9da12bf8ff2c08f0cc60d4064c7354c1">
+              size_t <a href="#a9da12bf8ff2c08f0cc60d4064c7354c1" class="m-doc-self">mnIndexOffset</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="afa0306da94dd463df1b48e07a966282a">
+              size_t <a href="#afa0306da94dd463df1b48e07a966282a" class="m-doc-self">mnIndexCount</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a3e5abf8e77e83234b6d4616c39cf891f">
+              size_t <a href="#a3e5abf8e77e83234b6d4616c39cf891f" class="m-doc-self">mnIndexSize</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a7c749c60334f121228c2278f794a1c98">
+              bool <a href="#a7c749c60334f121228c2278f794a1c98" class="m-doc-self">field_330</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a5d370ed97f44f869a4a4da3fc3b0e922">
+              int <a href="#a5d370ed97f44f869a4a4da3fc3b0e922" class="m-doc-self">field_334</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a2df349e0ec725bb53b529940b320b68f">
+              float <a href="#a2df349e0ec725bb53b529940b320b68f" class="m-doc-self">field_338</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="ad91ef7b7091446d92d5140ceea3b9cfa">
+              <a href="struct_resource_1_1_database_packed_file_1_1_unknown.html" class="m-doc">Unknown</a> <a href="#ad91ef7b7091446d92d5140ceea3b9cfa" class="m-doc-self">field_33C</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a8318e1a567397090b916271ddde2acf5">
+              <a href="struct_resource_1_1_database_packed_file_1_1_unknown.html" class="m-doc">Unknown</a> <a href="#a8318e1a567397090b916271ddde2acf5" class="m-doc-self">field_35C</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="ad0f6812b442cf3bdcee3dc5c0838164b">
+              bool <a href="#ad0f6812b442cf3bdcee3dc5c0838164b" class="m-doc-self">field_37C</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a028b6b8a16471c66e365cba9cbb7bb13">
+              bool <a href="#a028b6b8a16471c66e365cba9cbb7bb13" class="m-doc-self">field_37D</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a3c67c8db992e99f73ebec99d7b98c9f5">
+              <a href="class_resource_1_1c_resource_manager.html" class="m-doc">cResourceManager</a>* <a href="#a3c67c8db992e99f73ebec99d7b98c9f5" class="m-doc-self">mpResourceMan</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a33a38b2a77e89a291a41a7228577754d">
+              int <a href="#a33a38b2a77e89a291a41a7228577754d" class="m-doc-self">field_384</a>
+            </dt>
+            <dd><span></span></dd>
+          </dl>
+        </section>
+      </div>
+    </div>
+  </div>
+</article></main>
+<div class="m-doc-search" id="search">
+  <a href="#!" onclick="return hideSearch()"></a>
+  <div class="m-container">
+    <div class="m-row">
+      <div class="m-col-m-8 m-push-m-2">
+        <div class="m-doc-search-header m-text m-small">
+          <div><span class="m-label m-default">Tab</span> / <span class="m-label m-default">T</span> to search, <span class="m-label m-default">Esc</span> to close</div>
+          <div id="search-symbolcount">&hellip;</div>
+        </div>
+        <div class="m-doc-search-content">
+          <form>
+            <input type="search" name="q" id="search-input" placeholder="Loading &hellip;" disabled="disabled" autofocus="autofocus" autocomplete="off" spellcheck="false" />
+          </form>
+          <noscript class="m-text m-danger m-text-center">Unlike everything else in the docs, the search functionality <em>requires</em> JavaScript.</noscript>
+          <div id="search-help" class="m-text m-dim m-text-center">
+            <p class="m-noindent">Search for symbols, directories, files, pages or
+            modules. You can omit any prefix from the symbol or file path; adding a
+            <code>:</code> or <code>/</code> suffix lists all members of given symbol or
+            directory.</p>
+            <p class="m-noindent">Use <span class="m-label m-dim">&darr;</span>
+            / <span class="m-label m-dim">&uarr;</span> to navigate through the list,
+            <span class="m-label m-dim">Enter</span> to go.
+            <span class="m-label m-dim">Tab</span> autocompletes common prefix, you can
+            copy a link to the result using <span class="m-label m-dim">⌘</span>
+            <span class="m-label m-dim">L</span> while <span class="m-label m-dim">⌘</span>
+            <span class="m-label m-dim">M</span> produces a Markdown link.</p>
+          </div>
+          <div id="search-notfound" class="m-text m-warning m-text-center">Sorry, nothing was found.</div>
+          <ul id="search-results"></ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="search-v1.js"></script>
+<script src="searchdata-v1.js" async="async"></script>
+<footer><nav>
+  <div class="m-container">
+    <div class="m-row">
+      <div class="m-col-l-10 m-push-l-1">
+        <p>Spore ModAPI SDK for creating C++ mods for Spore. Created with <a href="https://doxygen.org/">Doxygen</a> 1.8.16 and <a href="https://mcss.mosra.cz/">m.css</a>.</p>
+      </div>
+    </div>
+  </div>
+</nav></footer>
+</body>
+</html>

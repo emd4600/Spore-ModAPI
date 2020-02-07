@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Resource::PFIndexModifiable class | Spore ModAPI SDK for creating C++ mods for Spore</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,600,600i%7CSource+Code+Pro:400,400i,600" />
+  <link rel="stylesheet" href="m-dark.css" />
+  <link rel="stylesheet" href="m-documentation.css" />
+  <link rel="icon" href="Spore_ModAPI_Icon.png" type="image/png" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#22272e" />
+</head>
+<body>
+<header><nav id="navigation">
+  <div class="m-container">
+    <div class="m-row">
+      <a href="index.html" id="m-navbar-brand" class="m-col-t-8 m-col-m-none m-left-m"><img src="Spore_ModAPI_Icon.png" />Spore ModAPI <span class="m-thin">SDK for creating C++ mods for Spore</span></a>
+      <div class="m-col-t-4 m-hide-m m-text-right m-nopadr">
+        <a href="#search" class="m-doc-search-icon" title="Search" onclick="return showSearch()"><svg style="height: 0.9rem;" viewBox="0 0 16 16">
+          <path id="m-doc-search-icon-path" d="m6 0c-3.31 0-6 2.69-6 6 0 3.31 2.69 6 6 6 1.49 0 2.85-0.541 3.89-1.44-0.0164 0.338 0.147 0.759 0.5 1.15l3.22 3.79c0.552 0.614 1.45 0.665 2 0.115 0.55-0.55 0.499-1.45-0.115-2l-3.79-3.22c-0.392-0.353-0.812-0.515-1.15-0.5 0.895-1.05 1.44-2.41 1.44-3.89 0-3.31-2.69-6-6-6zm0 1.56a4.44 4.44 0 0 1 4.44 4.44 4.44 4.44 0 0 1-4.44 4.44 4.44 4.44 0 0 1-4.44-4.44 4.44 4.44 0 0 1 4.44-4.44z"/>
+        </svg></a>
+        <a id="m-navbar-show" href="#navigation" title="Show navigation"></a>
+        <a id="m-navbar-hide" href="#" title="Hide navigation"></a>
+      </div>
+      <div id="m-navbar-collapse" class="m-col-t-12 m-show-m m-col-m-none m-right-m">
+        <div class="m-row">
+          <ol class="m-col-t-6 m-col-m-none">
+            <li><a href="pages.html">Tutorials</a></li>
+            <li><a href="namespaces.html">Namespaces</a></li>
+          </ol>
+          <ol class="m-col-t-6 m-col-m-none" start="3">
+            <li><a href="annotated.html">Classes</a></li>
+            <li><a href="files.html">Files</a></li>
+            <li class="m-show-m"><a href="#search" class="m-doc-search-icon" title="Search" onclick="return showSearch()"><svg style="height: 0.9rem;" viewBox="0 0 16 16">
+              <use href="#m-doc-search-icon-path" />
+            </svg></a></li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav></header>
+<main><article>
+  <div class="m-container m-container-inflatable">
+    <div class="m-row">
+      <div class="m-col-l-10 m-push-l-1">
+        <h1>
+          <span class="m-breadcrumb"><a href="namespace_resource.html">Resource</a>::<wbr/></span>PFIndexModifiable <span class="m-thin">class</span>
+          <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_p_f_index_modifiable_8h.html">&lt;Spore/Resource/PFIndexModifiable.h&gt;</a></div>
+        </h1>
+        <p>This class stores the metadata of all the files contained in a DBPF file.</p>
+        <div class="m-block m-default">
+          <h3>Contents</h3>
+          <ul>
+            <li>
+              Reference
+              <ul>
+                <li><a href="#base-classes">Base classes</a></li>
+                <li><a href="#pub-types">Public types</a></li>
+                <li><a href="#typeless-methods">Constructors, destructors, conversion operators</a></li>
+                <li><a href="#pub-methods">Public functions</a></li>
+                <li><a href="#pro-attribs">Protected variables</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+<p>It is used for indexing and accessing files.</p>
+        <section id="base-classes">
+          <h2><a href="#base-classes">Base classes</a></h2>
+          <dl class="m-doc">
+            <dt>
+              class <a href="class_i_o_1_1_e_a_i_o_zone_object.html" class="m-doc">IO::EAIOZoneObject</a>
+            </dt>
+            <dd>A class derived from <a href="class_i_o_1_1_e_a_i_o_zone_object.html" class="m-doc">EAIOZoneObject</a> is able to be allocated from different heaps without the owner of the object needing to know or care which heap the object came from or even what kind of allocator the object is using.</dd>
+          </dl>
+        </section>
+        <section id="pub-types">
+          <h2><a href="#pub-types">Public types</a></h2>
+          <dl class="m-doc">
+            <dt id="a17424dc4d7250b565333f0dcd8911ec0">
+              using <a href="#a17424dc4d7250b565333f0dcd8911ec0" class="m-doc-self">ItemsMap</a> = eastl::hash_map&lt;<a href="struct_resource_key.html" class="m-doc">ResourceKey</a>, <a href="struct_resource_1_1_d_b_p_f_item.html" class="m-doc">DBPFItem</a>, <a href="_i_core_allocator_8h.html#a752d1217e82fc75218d2c66d7fd51dc7" class="m-doc">ICoreAllocatorAdapter</a>&gt;
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a3f853c859b0f019edafa74c0e277f064">
+              using <a href="#a3f853c859b0f019edafa74c0e277f064" class="m-doc-self">KeysVector</a> = eastl::vector&lt;<a href="struct_resource_key.html" class="m-doc">ResourceKey</a>&gt;
+            </dt>
+            <dd><span></span></dd>
+          </dl>
+        </section>
+        <section id="typeless-methods">
+          <h2><a href="#typeless-methods">Constructors, destructors, conversion operators</a></h2>
+          <dl class="m-doc">
+            <dt id="aa54278bf93d1e98733daf344f9421ac4">
+              <span class="m-doc-wrap-bumper"><a href="#aa54278bf93d1e98733daf344f9421ac4" class="m-doc-self">PFIndexModifiable</a>(</span><span class="m-doc-wrap"><a href="class_i_core_allocator.html" class="m-doc">ICoreAllocator</a>* pAllocator)</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a142d2ec248f88f6313d7fe6c542464c8">
+              <span class="m-doc-wrap-bumper"><a href="#a142d2ec248f88f6313d7fe6c542464c8" class="m-doc-self">~PFIndexModifiable</a>(</span><span class="m-doc-wrap">) <span class="m-label m-flat m-warning">virtual</span></span>
+            </dt>
+            <dd><span></span></dd>
+          </dl>
+        </section>
+        <section id="pub-methods">
+          <h2><a href="#pub-methods">Public functions</a></h2>
+          <dl class="m-doc">
+            <dt id="aea845da6d37d80634b28887a80560476">
+              <span class="m-doc-wrap-bumper">auto <a href="#aea845da6d37d80634b28887a80560476" class="m-doc-self">func04h</a>(</span><span class="m-doc-wrap">) -&gt; bool <span class="m-label m-flat m-warning">virtual</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a8fe0c7294b0855d51dc69b072c54ddf7" class="m-doc">IsEmpty</a>(</span><span class="m-doc-wrap">) -&gt; bool <span class="m-label m-flat m-warning">virtual</span></span>
+            </dt>
+            <dd>Tells whether this PFIndex is empty (i.e.</dd>
+            <dt id="a5c40e5c2cf5b76a0858c99bd98f89d9c">
+              <span class="m-doc-wrap-bumper">auto <a href="#a5c40e5c2cf5b76a0858c99bd98f89d9c" class="m-doc-self">GetFileCount</a>(</span><span class="m-doc-wrap">) -&gt; size_t <span class="m-label m-flat m-warning">virtual</span></span>
+            </dt>
+            <dd>Returns the number of files contained in this PFIndex.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a34c4762208171f3655b245f7a3e47464" class="m-doc">Reset</a>(</span><span class="m-doc-wrap">) -&gt; bool <span class="m-label m-flat m-warning">virtual</span></span>
+            </dt>
+            <dd>Removes all the files from this PFIndex.</dd>
+            <dt id="a57bc065c2555f09d8fac5b09a628bfc4">
+              <span class="m-doc-wrap-bumper">auto <a href="#a57bc065c2555f09d8fac5b09a628bfc4" class="m-doc-self">GetTotalDiskSize</a>(</span><span class="m-doc-wrap">) -&gt; size_t <span class="m-label m-flat m-warning">virtual</span></span>
+            </dt>
+            <dd>Gets the total amount of bytes occupied by the data of the files in this PFIndex.</dd>
+            <dt id="a60fd68b3ce08c43d5510c7718373c4b4">
+              <span class="m-doc-wrap-bumper">auto <a href="#a60fd68b3ce08c43d5510c7718373c4b4" class="m-doc-self">GetDataEnd</a>(</span><span class="m-doc-wrap">) -&gt; size_t <span class="m-label m-flat m-warning">virtual</span></span>
+            </dt>
+            <dd>Returns the offset of the file where the data of this PFIndex&#x27; files ends.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a29f7e91b2f2ae4661b0219570cd2571c" class="m-doc">GetFiles</a>(</span><span class="m-doc-wrap"><a href="class_resource_1_1_p_f_index_modifiable.html#a3f853c859b0f019edafa74c0e277f064" class="m-doc">KeysVector</a>&amp; dstVector,
+              <a href="class_resource_1_1_i_resource_filter.html" class="m-doc">IResourceFilter</a>* filter = nullptr) -&gt; size_t <span class="m-label m-flat m-warning">virtual</span></span>
+            </dt>
+            <dd>Adds all the files that match the criteria to the given vector.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a9cb3cc4d5f1c99b4e6e705fd6b3d04f1" class="m-doc">GetAllFiles</a>(</span><span class="m-doc-wrap"><a href="class_resource_1_1_p_f_index_modifiable.html#a3f853c859b0f019edafa74c0e277f064" class="m-doc">KeysVector</a>&amp; dstVector) -&gt; size_t <span class="m-label m-flat m-warning">virtual</span></span>
+            </dt>
+            <dd>Adds all the file names (as ResourceKeys) in this PFIndex to the given vector.</dd>
+            <dt id="a73e14e4648ffb5c4f1d4a0acf106e6a5">
+              <span class="m-doc-wrap-bumper">auto <a href="#a73e14e4648ffb5c4f1d4a0acf106e6a5" class="m-doc-self">func24h</a>(</span><span class="m-doc-wrap">int,
+              size_t fileDataBegin,
+              size_t fileDataEnd) -&gt; bool <span class="m-label m-flat m-warning">virtual</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a84629babdd56682a3fa43e1f0fb44378">
+              <span class="m-doc-wrap-bumper">auto <a href="#a84629babdd56682a3fa43e1f0fb44378" class="m-doc-self">GetFileInfo</a>(</span><span class="m-doc-wrap">const <a href="struct_resource_key.html" class="m-doc">ResourceKey</a>&amp; fileName) -&gt; <a href="struct_resource_1_1_d_b_p_f_item.html" class="m-doc">DBPFItem</a>* <span class="m-label m-flat m-warning">virtual</span></span>
+            </dt>
+            <dd>Returns the <a href="struct_resource_1_1_d_b_p_f_item.html" class="m-doc">DBPFItem</a> for the given file name, or NULL if the PFIndex does not contain that file.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a02ea4daf2040ef58e8961dbd5e7695b5" class="m-doc">PutFileInfo</a>(</span><span class="m-doc-wrap">const <a href="struct_resource_key.html" class="m-doc">ResourceKey</a>&amp; fileName,
+              <a href="struct_resource_1_1_d_b_p_f_item.html" class="m-doc">DBPFItem</a>&amp; info) -&gt; <a href="struct_resource_1_1_d_b_p_f_item.html" class="m-doc">DBPFItem</a>&amp; <span class="m-label m-flat m-warning">virtual</span></span>
+            </dt>
+            <dd>Assigns the given file info to the specified file name.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a99a89f2f20cf06853f19e9fa96a3707b" class="m-doc">RemoveFile</a>(</span><span class="m-doc-wrap">const <a href="struct_resource_key.html" class="m-doc">ResourceKey</a>&amp; fileName,
+              <a href="struct_resource_1_1_d_b_p_f_item.html" class="m-doc">DBPFItem</a>&amp; dstInfo) -&gt; bool <span class="m-label m-flat m-warning">virtual</span></span>
+            </dt>
+            <dd>Removes the specified file from this PFIndex, if it exists.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#aea16743ac5a9ee947aa91194142cb6c3" class="m-doc">Read</a>(</span><span class="m-doc-wrap">void* pIndexData,
+              size_t nIndexSize,
+              size_t nIndexCount,
+              bool) -&gt; bool <span class="m-label m-flat m-warning">virtual</span></span>
+            </dt>
+            <dd>Reads the index items from the given buffer.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#ae49dcf955192c178926a3d29ad3741c2" class="m-doc">Write</a>(</span><span class="m-doc-wrap">void*&amp; pDstIndexData,
+              size_t&amp; nDstIndexSize,
+              size_t nIndexCount,
+              bool arg_C) -&gt; bool <span class="m-label m-flat m-warning">virtual</span></span>
+            </dt>
+            <dd>Creates a buffer to store the items and writes the index information on it.</dd>
+            <dt id="a19108cf1972fc41250ab29a909428726">
+              <span class="m-doc-wrap-bumper">void <a href="#a19108cf1972fc41250ab29a909428726" class="m-doc-self">SetIsSaved</a>(</span><span class="m-doc-wrap">) <span class="m-label m-flat m-warning">virtual</span></span>
+            </dt>
+            <dd>Sets the mIsSaved value of all files to true, meaning that the files have already been written into a <a href="class_resource_1_1_database_packed_file.html" class="m-doc">DatabasePackedFile</a> stream.</dd>
+            <dt id="ab02d3b5e6dfbc2663bf66cf53ec93fd3">
+              <span class="m-doc-wrap-bumper">auto <a href="#ab02d3b5e6dfbc2663bf66cf53ec93fd3" class="m-doc-self">CheckFilesInRange</a>(</span><span class="m-doc-wrap">size_t fileDataBegin,
+              size_t fileDataEnd) -&gt; bool <span class="m-label m-flat m-warning">virtual</span></span>
+            </dt>
+            <dd>Tells whether the data of the files in this PFIndex are contained between the given range.</dd>
+            <dt id="a532110b35e3dd44415934bbe5a86c2d7">
+              <span class="m-doc-wrap-bumper">auto <a href="#a532110b35e3dd44415934bbe5a86c2d7" class="m-doc-self">CheckFilesInSizeRange</a>(</span><span class="m-doc-wrap">size_t fileDataBegin,
+              size_t size) -&gt; bool <span class="m-label m-flat m-warning">virtual</span></span>
+            </dt>
+            <dd>Tells whether the data of the files in this PFIndex are contained between the given range.</dd>
+          </dl>
+        </section>
+        <section id="pro-attribs">
+          <h2><a href="#pro-attribs">Protected variables</a></h2>
+          <dl class="m-doc">
+            <dt id="ae0ea8da4df2bf60c449304d31af2c5d6">
+              <a href="class_i_core_allocator.html" class="m-doc">ICoreAllocator</a>* <a href="#ae0ea8da4df2bf60c449304d31af2c5d6" class="m-doc-self">mpParentAllocator</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a6100c8add1c9a1cee64d64fc032b0a7e">
+              <a href="class_fixed_pool_allocator.html" class="m-doc">FixedPoolAllocator</a> <a href="#a6100c8add1c9a1cee64d64fc032b0a7e" class="m-doc-self">mAllocator</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a6d1cde0392c677d243fe5d2ed5325801">
+              <a href="class_resource_1_1_p_f_index_modifiable.html#a17424dc4d7250b565333f0dcd8911ec0" class="m-doc">ItemsMap</a> <a href="#a6d1cde0392c677d243fe5d2ed5325801" class="m-doc-self">mItemsMap</a>
+            </dt>
+            <dd><span></span></dd>
+          </dl>
+        </section>
+        <section>
+          <h2>Function documentation</h2>
+          <section class="m-doc-details" id="a8fe0c7294b0855d51dc69b072c54ddf7"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">bool Resource::<wbr />PFIndexModifiable::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a8fe0c7294b0855d51dc69b072c54ddf7" class="m-doc-self">IsEmpty</a>(</span><span class="m-doc-wrap">) <span class="m-label m-warning">virtual</span></span></span>
+            </h3>
+            <p>Tells whether this PFIndex is empty (i.e.</p>
+<p>contains no files) or not.</p>
+          </div></section>
+          <section class="m-doc-details" id="a34c4762208171f3655b245f7a3e47464"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">bool Resource::<wbr />PFIndexModifiable::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a34c4762208171f3655b245f7a3e47464" class="m-doc-self">Reset</a>(</span><span class="m-doc-wrap">) <span class="m-label m-warning">virtual</span></span></span>
+            </h3>
+            <p>Removes all the files from this PFIndex.</p>
+<p>This only deletes the files&#x27; metadata, not the file content.</p>
+          </div></section>
+          <section class="m-doc-details" id="a29f7e91b2f2ae4661b0219570cd2571c"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">size_t Resource::<wbr />PFIndexModifiable::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a29f7e91b2f2ae4661b0219570cd2571c" class="m-doc-self">GetFiles</a>(</span><span class="m-doc-wrap"><a href="class_resource_1_1_p_f_index_modifiable.html#a3f853c859b0f019edafa74c0e277f064" class="m-doc">KeysVector</a>&amp; dstVector,
+              <a href="class_resource_1_1_i_resource_filter.html" class="m-doc">IResourceFilter</a>* filter = nullptr) <span class="m-label m-warning">virtual</span></span></span>
+            </h3>
+            <p>Adds all the files that match the criteria to the given vector.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">dstVector&nbsp;<span class="m-label m-flat m-warning">out</span></td>
+                  <td>The destination vector where the matching file names will be added.</td>
+                </tr>
+                <tr>
+                  <td>filter</td>
+                  <td>The RequestFilter used to decide which file names must be added into the vector.</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>Returns</th>
+                  <td>The number of file names added to the vector.</td>
+                </tr>
+              </tfoot>
+            </table>
+<p>The given filter will be applied on all the file names contained in this PFIndex. If a file matches the criteria, its name (as a <a href="struct_resource_key.html" class="m-doc">ResourceKey</a>) will be added to the vector.</p>
+          </div></section>
+          <section class="m-doc-details" id="a9cb3cc4d5f1c99b4e6e705fd6b3d04f1"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">size_t Resource::<wbr />PFIndexModifiable::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a9cb3cc4d5f1c99b4e6e705fd6b3d04f1" class="m-doc-self">GetAllFiles</a>(</span><span class="m-doc-wrap"><a href="class_resource_1_1_p_f_index_modifiable.html#a3f853c859b0f019edafa74c0e277f064" class="m-doc">KeysVector</a>&amp; dstVector) <span class="m-label m-warning">virtual</span></span></span>
+            </h3>
+            <p>Adds all the file names (as ResourceKeys) in this PFIndex to the given vector.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">dstVector&nbsp;<span class="m-label m-flat m-warning">out</span></td>
+                  <td>The destination vector where the file names will be added.</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>Returns</th>
+                  <td>The number of file names added to the vector.</td>
+                </tr>
+              </tfoot>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="a02ea4daf2040ef58e8961dbd5e7695b5"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"><a href="struct_resource_1_1_d_b_p_f_item.html" class="m-doc">DBPFItem</a>&amp; Resource::<wbr />PFIndexModifiable::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a02ea4daf2040ef58e8961dbd5e7695b5" class="m-doc-self">PutFileInfo</a>(</span><span class="m-doc-wrap">const <a href="struct_resource_key.html" class="m-doc">ResourceKey</a>&amp; fileName,
+              <a href="struct_resource_1_1_d_b_p_f_item.html" class="m-doc">DBPFItem</a>&amp; info) <span class="m-label m-warning">virtual</span></span></span>
+            </h3>
+            <p>Assigns the given file info to the specified file name.</p>
+<p>If the PFIndex does not contain a file with that name, a new entry will be created.</p>
+          </div></section>
+          <section class="m-doc-details" id="a99a89f2f20cf06853f19e9fa96a3707b"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">bool Resource::<wbr />PFIndexModifiable::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a99a89f2f20cf06853f19e9fa96a3707b" class="m-doc-self">RemoveFile</a>(</span><span class="m-doc-wrap">const <a href="struct_resource_key.html" class="m-doc">ResourceKey</a>&amp; fileName,
+              <a href="struct_resource_1_1_d_b_p_f_item.html" class="m-doc">DBPFItem</a>&amp; dstInfo) <span class="m-label m-warning">virtual</span></span></span>
+            </h3>
+            <p>Removes the specified file from this PFIndex, if it exists.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">fileName</td>
+                  <td>The <a href="struct_resource_key.html" class="m-doc">ResourceKey</a> name of the file to be removed.</td>
+                </tr>
+                <tr>
+                  <td>dstInfo&nbsp;<span class="m-label m-flat m-warning">out</span></td>
+                  <td>The destination <a href="struct_resource_1_1_d_b_p_f_item.html" class="m-doc">DBPFItem</a> that will be filled with the old information of the file, if it existed.</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>Returns</th>
+                  <td>True if the file was removed successfully, false if the file did not exist.</td>
+                </tr>
+              </tfoot>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="aea16743ac5a9ee947aa91194142cb6c3"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">bool Resource::<wbr />PFIndexModifiable::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#aea16743ac5a9ee947aa91194142cb6c3" class="m-doc-self">Read</a>(</span><span class="m-doc-wrap">void* pIndexData,
+              size_t nIndexSize,
+              size_t nIndexCount,
+              bool) <span class="m-label m-warning">virtual</span></span></span>
+            </h3>
+            <p>Reads the index items from the given buffer.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <tfoot>
+                <tr>
+                  <th style="width: 1%">Returns</th>
+                  <td>true if all the items were successfully read, false otherwise.</td>
+                </tr>
+              </tfoot>
+            </table>
+<p>It will be read according to the DBPF format. nIndexCount items will be read. The buffer is expected to have a size equal to nIndexSize.</p>
+          </div></section>
+          <section class="m-doc-details" id="ae49dcf955192c178926a3d29ad3741c2"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">bool Resource::<wbr />PFIndexModifiable::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ae49dcf955192c178926a3d29ad3741c2" class="m-doc-self">Write</a>(</span><span class="m-doc-wrap">void*&amp; pDstIndexData,
+              size_t&amp; nDstIndexSize,
+              size_t nIndexCount,
+              bool arg_C) <span class="m-label m-warning">virtual</span></span></span>
+            </h3>
+            <p>Creates a buffer to store the items and writes the index information on it.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">pDstIndexData&nbsp;<span class="m-label m-flat m-warning">out</span></td>
+                  <td>The void* that will be assigned with the pointer to the buffer containing the written information.</td>
+                </tr>
+                <tr>
+                  <td>nDstIndexSize</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>nIndexCount&nbsp;<span class="m-label m-flat m-info">in</span></td>
+                  <td>The number of items to write.</td>
+                </tr>
+                <tr>
+                  <td>arg_C</td>
+                  <td></td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>Returns</th>
+                  <td>true if all the items were successfully written, false otherwise.</td>
+                </tr>
+              </tfoot>
+            </table>
+          </div></section>
+        </section>
+      </div>
+    </div>
+  </div>
+</article></main>
+<div class="m-doc-search" id="search">
+  <a href="#!" onclick="return hideSearch()"></a>
+  <div class="m-container">
+    <div class="m-row">
+      <div class="m-col-m-8 m-push-m-2">
+        <div class="m-doc-search-header m-text m-small">
+          <div><span class="m-label m-default">Tab</span> / <span class="m-label m-default">T</span> to search, <span class="m-label m-default">Esc</span> to close</div>
+          <div id="search-symbolcount">&hellip;</div>
+        </div>
+        <div class="m-doc-search-content">
+          <form>
+            <input type="search" name="q" id="search-input" placeholder="Loading &hellip;" disabled="disabled" autofocus="autofocus" autocomplete="off" spellcheck="false" />
+          </form>
+          <noscript class="m-text m-danger m-text-center">Unlike everything else in the docs, the search functionality <em>requires</em> JavaScript.</noscript>
+          <div id="search-help" class="m-text m-dim m-text-center">
+            <p class="m-noindent">Search for symbols, directories, files, pages or
+            modules. You can omit any prefix from the symbol or file path; adding a
+            <code>:</code> or <code>/</code> suffix lists all members of given symbol or
+            directory.</p>
+            <p class="m-noindent">Use <span class="m-label m-dim">&darr;</span>
+            / <span class="m-label m-dim">&uarr;</span> to navigate through the list,
+            <span class="m-label m-dim">Enter</span> to go.
+            <span class="m-label m-dim">Tab</span> autocompletes common prefix, you can
+            copy a link to the result using <span class="m-label m-dim">⌘</span>
+            <span class="m-label m-dim">L</span> while <span class="m-label m-dim">⌘</span>
+            <span class="m-label m-dim">M</span> produces a Markdown link.</p>
+          </div>
+          <div id="search-notfound" class="m-text m-warning m-text-center">Sorry, nothing was found.</div>
+          <ul id="search-results"></ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="search-v1.js"></script>
+<script src="searchdata-v1.js" async="async"></script>
+<footer><nav>
+  <div class="m-container">
+    <div class="m-row">
+      <div class="m-col-l-10 m-push-l-1">
+        <p>Spore ModAPI SDK for creating C++ mods for Spore. Created with <a href="https://doxygen.org/">Doxygen</a> 1.8.16 and <a href="https://mcss.mosra.cz/">m.css</a>.</p>
+      </div>
+    </div>
+  </div>
+</nav></footer>
+</body>
+</html>

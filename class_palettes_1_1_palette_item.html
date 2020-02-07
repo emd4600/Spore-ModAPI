@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Palettes::PaletteItem class | Spore ModAPI SDK for creating C++ mods for Spore</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,600,600i%7CSource+Code+Pro:400,400i,600" />
+  <link rel="stylesheet" href="m-dark.css" />
+  <link rel="stylesheet" href="m-documentation.css" />
+  <link rel="icon" href="Spore_ModAPI_Icon.png" type="image/png" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#22272e" />
+</head>
+<body>
+<header><nav id="navigation">
+  <div class="m-container">
+    <div class="m-row">
+      <a href="index.html" id="m-navbar-brand" class="m-col-t-8 m-col-m-none m-left-m"><img src="Spore_ModAPI_Icon.png" />Spore ModAPI <span class="m-thin">SDK for creating C++ mods for Spore</span></a>
+      <div class="m-col-t-4 m-hide-m m-text-right m-nopadr">
+        <a href="#search" class="m-doc-search-icon" title="Search" onclick="return showSearch()"><svg style="height: 0.9rem;" viewBox="0 0 16 16">
+          <path id="m-doc-search-icon-path" d="m6 0c-3.31 0-6 2.69-6 6 0 3.31 2.69 6 6 6 1.49 0 2.85-0.541 3.89-1.44-0.0164 0.338 0.147 0.759 0.5 1.15l3.22 3.79c0.552 0.614 1.45 0.665 2 0.115 0.55-0.55 0.499-1.45-0.115-2l-3.79-3.22c-0.392-0.353-0.812-0.515-1.15-0.5 0.895-1.05 1.44-2.41 1.44-3.89 0-3.31-2.69-6-6-6zm0 1.56a4.44 4.44 0 0 1 4.44 4.44 4.44 4.44 0 0 1-4.44 4.44 4.44 4.44 0 0 1-4.44-4.44 4.44 4.44 0 0 1 4.44-4.44z"/>
+        </svg></a>
+        <a id="m-navbar-show" href="#navigation" title="Show navigation"></a>
+        <a id="m-navbar-hide" href="#" title="Hide navigation"></a>
+      </div>
+      <div id="m-navbar-collapse" class="m-col-t-12 m-show-m m-col-m-none m-right-m">
+        <div class="m-row">
+          <ol class="m-col-t-6 m-col-m-none">
+            <li><a href="pages.html">Tutorials</a></li>
+            <li><a href="namespaces.html">Namespaces</a></li>
+          </ol>
+          <ol class="m-col-t-6 m-col-m-none" start="3">
+            <li><a href="annotated.html">Classes</a></li>
+            <li><a href="files.html">Files</a></li>
+            <li class="m-show-m"><a href="#search" class="m-doc-search-icon" title="Search" onclick="return showSearch()"><svg style="height: 0.9rem;" viewBox="0 0 16 16">
+              <use href="#m-doc-search-icon-path" />
+            </svg></a></li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav></header>
+<main><article>
+  <div class="m-container m-container-inflatable">
+    <div class="m-row">
+      <div class="m-col-l-10 m-push-l-1">
+        <h1>
+          <span class="m-breadcrumb"><a href="namespace_palettes.html">Palettes</a>::<wbr/></span>PaletteItem <span class="m-thin">class</span>
+          <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_palette_item_8h.html">&lt;Spore/Palettes/PaletteItem.h&gt;</a></div>
+        </h1>
+        <p>Represents an item inside a palette page.</p>
+        <div class="m-block m-default">
+          <h3>Contents</h3>
+          <ul>
+            <li>
+              Reference
+              <ul>
+                <li><a href="#base-classes">Base classes</a></li>
+                <li><a href="#pub-types">Public types</a></li>
+                <li><a href="#pub-static-attribs">Public static variables</a></li>
+                <li><a href="#typeless-methods">Constructors, destructors, conversion operators</a></li>
+                <li><a href="#pub-methods">Public functions</a></li>
+                <li><a href="#pub-attribs">Public variables</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+<p>The functionality of the item is not defined here; this class only has metadata related to the display of the item itself. Each item has one thumbnail image, the icon.</p>
+        <section id="base-classes">
+          <h2><a href="#base-classes">Base classes</a></h2>
+          <dl class="m-doc">
+            <dt>
+              class <a href="class_default_ref_counted.html" class="m-doc">DefaultRefCounted</a>
+            </dt>
+            <dd>The default implementation of a reference counted class.</dd>
+            <dt>
+              class <a href="class_object.html" class="m-doc">Object</a>
+            </dt>
+            <dd>This class represents a basic reference counted object.</dd>
+          </dl>
+        </section>
+        <section id="pub-types">
+          <h2><a href="#pub-types">Public types</a></h2>
+          <dl class="m-doc">
+            <dt>
+              <span class="m-doc-wrap-bumper">enum <a href="#aabbf4fe9e3393f54352d37d2a2ff2bf2" class="m-doc">ItemType</a> { </span><span class="m-doc-wrap"><a href="#aabbf4fe9e3393f54352d37d2a2ff2bf2a40530a468d5c522e432f5cc3f1fca2f7" class="m-doc">kItemBlock</a> = 0xA2E50993,
+              <a href="#aabbf4fe9e3393f54352d37d2a2ff2bf2af50b619f71f35cf75dd9d6d6b0eba3fe" class="m-doc">kItemCreation</a> = 0x674AB27,
+              <a href="#aabbf4fe9e3393f54352d37d2a2ff2bf2aedaa334e0414bf5ec97035d17d3979ef" class="m-doc">kItemBlockPaint</a> = 0xBD110A25,
+              <a href="#aabbf4fe9e3393f54352d37d2a2ff2bf2a74d0f6f3869dda4004f06ff56e1e9f41" class="m-doc">kItemBlockPaintTheme</a> = 0x17D37D90,
+              <a href="#aabbf4fe9e3393f54352d37d2a2ff2bf2a1f4ee6404615a7b1af03e41539224f2f" class="m-doc">kItemSkinPaint</a> = 0x2B61CC2D,
+              <a href="#aabbf4fe9e3393f54352d37d2a2ff2bf2a69ad57c7586d5e7799a854bf75b2cd4e" class="m-doc">kItemSkinPaintTheme</a> = 0xDEE3D8A8,
+              <a href="#aabbf4fe9e3393f54352d37d2a2ff2bf2a10797cacf96eef11b95a629963c70fb8" class="m-doc">kItemPaintLikeThis</a> = 0x800B7988,
+              <a href="#aabbf4fe9e3393f54352d37d2a2ff2bf2a7715341f3eb54c7f87aea52df969743a" class="m-doc">kItemTribeTool</a> = 0x0FCAFD26,
+              <a href="#aabbf4fe9e3393f54352d37d2a2ff2bf2a1562da9a8c41221219e3e35716f23de9" class="m-doc">kItemOutfitter</a> = 0x42BF8C1D,
+              <a href="#aabbf4fe9e3393f54352d37d2a2ff2bf2a38ac44fc4fe72afb464efa5414a576ea" class="m-doc">kItemCityStyle</a> = 0x2B885DF4,
+              <a href="#aabbf4fe9e3393f54352d37d2a2ff2bf2ac72f4d7f5dffd94885b42ed04f28686e" class="m-doc">kItemCityVehicle</a> = 0x8BFAC054,
+              <a href="#aabbf4fe9e3393f54352d37d2a2ff2bf2aa53a205de74cfa44f4a9fa02c863179d" class="m-doc">kItemCityBuilding</a> = 0x81C74DBC }</span>
+            </dt>
+            <dd>The supported types of palette items, which are selected depending on the file extension or the value of the &#x27;paletteItemType&#x27; property.</dd>
+          </dl>
+        </section>
+        <section id="pub-static-attribs">
+          <h2><a href="#pub-static-attribs">Public static variables</a></h2>
+          <dl class="m-doc">
+            <dt id="a85f9a6bb4d0a720264ee228b5df7082e">
+              static const uint32_t <a href="#a85f9a6bb4d0a720264ee228b5df7082e" class="m-doc-self">TYPE</a>
+            </dt>
+            <dd><span></span></dd>
+          </dl>
+        </section>
+        <section id="typeless-methods">
+          <h2><a href="#typeless-methods">Constructors, destructors, conversion operators</a></h2>
+          <dl class="m-doc">
+            <dt id="a936d78414e9e83737536a3bff77c7b02">
+              <span class="m-doc-wrap-bumper"><a href="#a936d78414e9e83737536a3bff77c7b02" class="m-doc-self">PaletteItem</a>(</span><span class="m-doc-wrap">)</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="abe188b47a9e4d2264b3bb387804f4b92">
+              <span class="m-doc-wrap-bumper"><a href="#abe188b47a9e4d2264b3bb387804f4b92" class="m-doc-self">~PaletteItem</a>(</span><span class="m-doc-wrap">) <span class="m-label m-flat m-warning">virtual</span></span>
+            </dt>
+            <dd><span></span></dd>
+          </dl>
+        </section>
+        <section id="pub-methods">
+          <h2><a href="#pub-methods">Public functions</a></h2>
+          <dl class="m-doc">
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a6810e0aa1cdd41f1db3b1f4f8ea95248" class="m-doc">Load</a>(</span><span class="m-doc-wrap">const <a href="struct_resource_key.html" class="m-doc">ResourceKey</a>&amp; name,
+              int nPagePartPriority,
+              uint32_t thumbnailGroupID) -&gt; bool</span>
+            </dt>
+            <dd>Loads the configuration of a specific palette item.</dd>
+            <dt id="ae65774cbe7f1d8c228e1483e13f4fabf">
+              <span class="m-doc-wrap-bumper">auto <a href="#ae65774cbe7f1d8c228e1483e13f4fabf" class="m-doc-self">AddRef</a>(</span><span class="m-doc-wrap">) -&gt; int <span class="m-label m-flat m-warning">virtual</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="adc1b4df8e909f8103879e690b2e7a475">
+              <span class="m-doc-wrap-bumper">auto <a href="#adc1b4df8e909f8103879e690b2e7a475" class="m-doc-self">Release</a>(</span><span class="m-doc-wrap">) -&gt; int <span class="m-label m-flat m-warning">virtual</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a24eacaaeb191e1a611655d934d1bba4f">
+              <span class="m-doc-wrap-bumper">auto <a href="#a24eacaaeb191e1a611655d934d1bba4f" class="m-doc-self">Cast</a>(</span><span class="m-doc-wrap">uint32_t) -&gt; void* <span class="m-label m-flat m-warning">virtual</span></span>
+            </dt>
+            <dd><span></span></dd>
+          </dl>
+        </section>
+        <section id="pub-attribs">
+          <h2><a href="#pub-attribs">Public variables</a></h2>
+          <dl class="m-doc">
+            <dt id="a787171a365a6fe0842c0caddc73e1d75">
+              <a href="struct_resource_key.html" class="m-doc">ResourceKey</a> <a href="#a787171a365a6fe0842c0caddc73e1d75" class="m-doc-self">mName</a>
+            </dt>
+            <dd>The <a href="struct_resource_key.html" class="m-doc">ResourceKey</a> of the object that represents this item.</dd>
+            <dt id="ad0c62a57d9d4ad166c0c8632f33d6c0e">
+              <a href="struct_resource_key.html" class="m-doc">ResourceKey</a> <a href="#ad0c62a57d9d4ad166c0c8632f33d6c0e" class="m-doc-self">mThumbnailName</a>
+            </dt>
+            <dd>The <a href="struct_resource_key.html" class="m-doc">ResourceKey</a> of the image that will be used as the thumbnail of the item.</dd>
+            <dt id="aa61406d3bf69399efa09506bf502ff11">
+              uint32_t <a href="#aa61406d3bf69399efa09506bf502ff11" class="m-doc-self">mTypeID</a>
+            </dt>
+            <dd>An ID that determines the type of this block. Common IDs are in the <a href="class_palettes_1_1_palette_item.html#aabbf4fe9e3393f54352d37d2a2ff2bf2" class="m-doc">Palettes::<wbr />PaletteItem::<wbr />ItemType</a> enum.</dd>
+            <dt id="a0aa999cd9ad81c1d49f36998fa5fccf0">
+              uint32_t <a href="#a0aa999cd9ad81c1d49f36998fa5fccf0" class="m-doc-self">mUnlockableIconID</a>
+            </dt>
+            <dd>The instance ID of the icon image used when the item is unlockable (but has not been unlocked yet).</dd>
+            <dt id="a46265a6059afbed651ce3cf8e6eb345b">
+              <a href="struct_resource_key.html" class="m-doc">ResourceKey</a> <a href="#a46265a6059afbed651ce3cf8e6eb345b" class="m-doc-self">mUnlockableLayoutName</a>
+            </dt>
+            <dd>The name of the <a href="namespace_u_i.html" class="m-doc">UI</a> layout used when the item is unlockable (but has not been unlocked yet).</dd>
+            <dt id="a0b42b81a6bc00a986c77668314d5a2c6">
+              uint32_t <a href="#a0b42b81a6bc00a986c77668314d5a2c6" class="m-doc-self">mNotUnlockableIconID</a>
+            </dt>
+            <dd>The instance ID of the icon image used when the item is locked and not unlockable.</dd>
+            <dt id="ad28c4da561330964434b131175493c8e">
+              <a href="struct_resource_key.html" class="m-doc">ResourceKey</a> <a href="#ad28c4da561330964434b131175493c8e" class="m-doc-self">mNotUnlockableLayoutName</a>
+            </dt>
+            <dd>The name of the <a href="namespace_u_i.html" class="m-doc">UI</a> layout used when the item is locked and not unlockable.</dd>
+            <dt id="ad6273610a4b502b171e7b1108400f03c">
+              int <a href="#ad6273610a4b502b171e7b1108400f03c" class="m-doc-self">mnPartPriority</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="adbb9e32e5c4c414dfa47dfa0fb717d8d">
+              bool <a href="#adbb9e32e5c4c414dfa47dfa0fb717d8d" class="m-doc-self">mbEnabledLockedRollover</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="ac3d293a621fb48dc89361dd3bc0f47ed">
+              intrusive_ptr&lt;<a href="class_object.html" class="m-doc">Object</a>&gt; <a href="#ac3d293a621fb48dc89361dd3bc0f47ed" class="m-doc-self">field_50</a>
+            </dt>
+            <dd><span></span></dd>
+          </dl>
+        </section>
+        <section>
+          <h2>Enum documentation</h2>
+          <section class="m-doc-details" id="aabbf4fe9e3393f54352d37d2a2ff2bf2"><div>
+            <h3>
+              enum Palettes::<wbr />PaletteItem::<wbr /><a href="#aabbf4fe9e3393f54352d37d2a2ff2bf2" class="m-doc-self">ItemType</a>
+            </h3>
+            <p>The supported types of palette items, which are selected depending on the file extension or the value of the &#x27;paletteItemType&#x27; property.</p>
+<p>There might be more that are undocumented.</p>
+            <table class="m-table m-fullwidth m-flat m-doc">
+              <thead><tr><th style="width: 1%">Enumerators</th><th></th></tr></thead>
+              <tbody>
+                <tr>
+                  <td><a href="#aabbf4fe9e3393f54352d37d2a2ff2bf2a40530a468d5c522e432f5cc3f1fca2f7" class="m-doc-self" id="aabbf4fe9e3393f54352d37d2a2ff2bf2a40530a468d5c522e432f5cc3f1fca2f7">kItemBlock</a></td>
+                  <td>
+                  <p>The item used when the item is a .png image file.</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#aabbf4fe9e3393f54352d37d2a2ff2bf2af50b619f71f35cf75dd9d6d6b0eba3fe" class="m-doc-self" id="aabbf4fe9e3393f54352d37d2a2ff2bf2af50b619f71f35cf75dd9d6d6b0eba3fe">kItemCreation</a></td>
+                  <td>
+                  <p>The item used when the item is a creation (that is .vcl, .crt, .cll, etc files).</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#aabbf4fe9e3393f54352d37d2a2ff2bf2aedaa334e0414bf5ec97035d17d3979ef" class="m-doc-self" id="aabbf4fe9e3393f54352d37d2a2ff2bf2aedaa334e0414bf5ec97035d17d3979ef">kItemBlockPaint</a></td>
+                  <td>
+                  <p>The item used in paints (not themes) for block creations (building, vehicle and ufo).</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#aabbf4fe9e3393f54352d37d2a2ff2bf2a74d0f6f3869dda4004f06ff56e1e9f41" class="m-doc-self" id="aabbf4fe9e3393f54352d37d2a2ff2bf2a74d0f6f3869dda4004f06ff56e1e9f41">kItemBlockPaintTheme</a></td>
+                  <td>
+                  <p>The item used in paint themes for skin creations (building, vehicle and ufo).</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#aabbf4fe9e3393f54352d37d2a2ff2bf2a1f4ee6404615a7b1af03e41539224f2f" class="m-doc-self" id="aabbf4fe9e3393f54352d37d2a2ff2bf2a1f4ee6404615a7b1af03e41539224f2f">kItemSkinPaint</a></td>
+                  <td>
+                  <p>The item used in paints (not themes) for skin creations (creature, cell and flora).</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#aabbf4fe9e3393f54352d37d2a2ff2bf2a69ad57c7586d5e7799a854bf75b2cd4e" class="m-doc-self" id="aabbf4fe9e3393f54352d37d2a2ff2bf2a69ad57c7586d5e7799a854bf75b2cd4e">kItemSkinPaintTheme</a></td>
+                  <td>
+                  <p>The item used in paint themes for skin creations (creature, cell and flora).</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#aabbf4fe9e3393f54352d37d2a2ff2bf2a10797cacf96eef11b95a629963c70fb8" class="m-doc-self" id="aabbf4fe9e3393f54352d37d2a2ff2bf2a10797cacf96eef11b95a629963c70fb8">kItemPaintLikeThis</a></td>
+                  <td>
+                  <p>The &#x27;Paint Like This&#x27; item in paint mode.</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#aabbf4fe9e3393f54352d37d2a2ff2bf2a7715341f3eb54c7f87aea52df969743a" class="m-doc-self" id="aabbf4fe9e3393f54352d37d2a2ff2bf2a7715341f3eb54c7f87aea52df969743a">kItemTribeTool</a></td>
+                  <td>
+                  <p><span></span></p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#aabbf4fe9e3393f54352d37d2a2ff2bf2a1562da9a8c41221219e3e35716f23de9" class="m-doc-self" id="aabbf4fe9e3393f54352d37d2a2ff2bf2a1562da9a8c41221219e3e35716f23de9">kItemOutfitter</a></td>
+                  <td>
+                  <p><span></span></p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#aabbf4fe9e3393f54352d37d2a2ff2bf2a38ac44fc4fe72afb464efa5414a576ea" class="m-doc-self" id="aabbf4fe9e3393f54352d37d2a2ff2bf2a38ac44fc4fe72afb464efa5414a576ea">kItemCityStyle</a></td>
+                  <td>
+                  <p><span></span></p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#aabbf4fe9e3393f54352d37d2a2ff2bf2ac72f4d7f5dffd94885b42ed04f28686e" class="m-doc-self" id="aabbf4fe9e3393f54352d37d2a2ff2bf2ac72f4d7f5dffd94885b42ed04f28686e">kItemCityVehicle</a></td>
+                  <td>
+                  <p>The item used to select vehicles in cities/colonies.</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#aabbf4fe9e3393f54352d37d2a2ff2bf2aa53a205de74cfa44f4a9fa02c863179d" class="m-doc-self" id="aabbf4fe9e3393f54352d37d2a2ff2bf2aa53a205de74cfa44f4a9fa02c863179d">kItemCityBuilding</a></td>
+                  <td>
+                  <p>The item used to select buildings in cities/colonies.</p>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div></section>
+        </section>
+        <section>
+          <h2>Function documentation</h2>
+          <section class="m-doc-details" id="a6810e0aa1cdd41f1db3b1f4f8ea95248"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">bool Palettes::<wbr />PaletteItem::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a6810e0aa1cdd41f1db3b1f4f8ea95248" class="m-doc-self">Load</a>(</span><span class="m-doc-wrap">const <a href="struct_resource_key.html" class="m-doc">ResourceKey</a>&amp; name,
+              int nPagePartPriority,
+              uint32_t thumbnailGroupID)</span></span>
+            </h3>
+            <p>Loads the configuration of a specific palette item.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">name</td>
+                  <td>The <a href="struct_resource_key.html" class="m-doc">ResourceKey</a> of the item. If no typeID is specified, it will be assumed to be &#x27;prop&#x27;.</td>
+                </tr>
+                <tr>
+                  <td>nPagePartPriority</td>
+                  <td>The priority of the items module.</td>
+                </tr>
+                <tr>
+                  <td>thumbnailGroupID</td>
+                  <td>The group ID of the folder where the icon images are stored.</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>Returns</th>
+                  <td>True if the item is of a recognised type, false otherwise.</td>
+                </tr>
+              </tfoot>
+            </table>
+<p>This only sets fields related to the item configuration, and not specific to the item type itself. The item type will be set according to the file extension in the &#x27;name&#x27; parameter:</p><ul><li>If typeID == &#x27;png&#x27;, the type will be Palettes::PaletteItem::ItemType::kItemBlock.</li><li>If typeID == &#x27;crt&#x27;, &#x27;cll&#x27;, &#x27;flr&#x27;, &#x27;vcl&#x27;, &#x27;bld&#x27; or &#x27;ufo&#x27;, the type will be Palettes::PaletteItem::ItemType::kItemCreation.</li><li>If typeID == &#x27;prop&#x27;, the type will be set according to the &#x27;paletteItemType&#x27; property.</li></ul>
+          </div></section>
+        </section>
+      </div>
+    </div>
+  </div>
+</article></main>
+<div class="m-doc-search" id="search">
+  <a href="#!" onclick="return hideSearch()"></a>
+  <div class="m-container">
+    <div class="m-row">
+      <div class="m-col-m-8 m-push-m-2">
+        <div class="m-doc-search-header m-text m-small">
+          <div><span class="m-label m-default">Tab</span> / <span class="m-label m-default">T</span> to search, <span class="m-label m-default">Esc</span> to close</div>
+          <div id="search-symbolcount">&hellip;</div>
+        </div>
+        <div class="m-doc-search-content">
+          <form>
+            <input type="search" name="q" id="search-input" placeholder="Loading &hellip;" disabled="disabled" autofocus="autofocus" autocomplete="off" spellcheck="false" />
+          </form>
+          <noscript class="m-text m-danger m-text-center">Unlike everything else in the docs, the search functionality <em>requires</em> JavaScript.</noscript>
+          <div id="search-help" class="m-text m-dim m-text-center">
+            <p class="m-noindent">Search for symbols, directories, files, pages or
+            modules. You can omit any prefix from the symbol or file path; adding a
+            <code>:</code> or <code>/</code> suffix lists all members of given symbol or
+            directory.</p>
+            <p class="m-noindent">Use <span class="m-label m-dim">&darr;</span>
+            / <span class="m-label m-dim">&uarr;</span> to navigate through the list,
+            <span class="m-label m-dim">Enter</span> to go.
+            <span class="m-label m-dim">Tab</span> autocompletes common prefix, you can
+            copy a link to the result using <span class="m-label m-dim">⌘</span>
+            <span class="m-label m-dim">L</span> while <span class="m-label m-dim">⌘</span>
+            <span class="m-label m-dim">M</span> produces a Markdown link.</p>
+          </div>
+          <div id="search-notfound" class="m-text m-warning m-text-center">Sorry, nothing was found.</div>
+          <ul id="search-results"></ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="search-v1.js"></script>
+<script src="searchdata-v1.js" async="async"></script>
+<footer><nav>
+  <div class="m-container">
+    <div class="m-row">
+      <div class="m-col-l-10 m-push-l-1">
+        <p>Spore ModAPI SDK for creating C++ mods for Spore. Created with <a href="https://doxygen.org/">Doxygen</a> 1.8.16 and <a href="https://mcss.mosra.cz/">m.css</a>.</p>
+      </div>
+    </div>
+  </div>
+</nav></footer>
+</body>
+</html>

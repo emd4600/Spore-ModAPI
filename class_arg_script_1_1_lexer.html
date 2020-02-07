@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>ArgScript::Lexer class | Spore ModAPI SDK for creating C++ mods for Spore</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,600,600i%7CSource+Code+Pro:400,400i,600" />
+  <link rel="stylesheet" href="m-dark.css" />
+  <link rel="stylesheet" href="m-documentation.css" />
+  <link rel="icon" href="Spore_ModAPI_Icon.png" type="image/png" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#22272e" />
+</head>
+<body>
+<header><nav id="navigation">
+  <div class="m-container">
+    <div class="m-row">
+      <a href="index.html" id="m-navbar-brand" class="m-col-t-8 m-col-m-none m-left-m"><img src="Spore_ModAPI_Icon.png" />Spore ModAPI <span class="m-thin">SDK for creating C++ mods for Spore</span></a>
+      <div class="m-col-t-4 m-hide-m m-text-right m-nopadr">
+        <a href="#search" class="m-doc-search-icon" title="Search" onclick="return showSearch()"><svg style="height: 0.9rem;" viewBox="0 0 16 16">
+          <path id="m-doc-search-icon-path" d="m6 0c-3.31 0-6 2.69-6 6 0 3.31 2.69 6 6 6 1.49 0 2.85-0.541 3.89-1.44-0.0164 0.338 0.147 0.759 0.5 1.15l3.22 3.79c0.552 0.614 1.45 0.665 2 0.115 0.55-0.55 0.499-1.45-0.115-2l-3.79-3.22c-0.392-0.353-0.812-0.515-1.15-0.5 0.895-1.05 1.44-2.41 1.44-3.89 0-3.31-2.69-6-6-6zm0 1.56a4.44 4.44 0 0 1 4.44 4.44 4.44 4.44 0 0 1-4.44 4.44 4.44 4.44 0 0 1-4.44-4.44 4.44 4.44 0 0 1 4.44-4.44z"/>
+        </svg></a>
+        <a id="m-navbar-show" href="#navigation" title="Show navigation"></a>
+        <a id="m-navbar-hide" href="#" title="Hide navigation"></a>
+      </div>
+      <div id="m-navbar-collapse" class="m-col-t-12 m-show-m m-col-m-none m-right-m">
+        <div class="m-row">
+          <ol class="m-col-t-6 m-col-m-none">
+            <li><a href="pages.html">Tutorials</a></li>
+            <li><a href="namespaces.html">Namespaces</a></li>
+          </ol>
+          <ol class="m-col-t-6 m-col-m-none" start="3">
+            <li><a href="annotated.html">Classes</a></li>
+            <li><a href="files.html">Files</a></li>
+            <li class="m-show-m"><a href="#search" class="m-doc-search-icon" title="Search" onclick="return showSearch()"><svg style="height: 0.9rem;" viewBox="0 0 16 16">
+              <use href="#m-doc-search-icon-path" />
+            </svg></a></li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav></header>
+<main><article>
+  <div class="m-container m-container-inflatable">
+    <div class="m-row">
+      <div class="m-col-l-10 m-push-l-1">
+        <h1>
+          <span class="m-breadcrumb"><a href="namespace_arg_script.html">ArgScript</a>::<wbr/></span>Lexer <span class="m-thin">class</span>
+          <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_lexer_8h.html">&lt;Spore/ArgScript/Lexer.h&gt;</a></div>
+        </h1>
+        <p>This class is used to read and process expressions in <a href="namespace_arg_script.html" class="m-doc">ArgScript</a>.</p>
+        <div class="m-block m-default">
+          <h3>Contents</h3>
+          <ul>
+            <li>
+              Reference
+              <ul>
+                <li><a href="#pub-methods">Public functions</a></li>
+                <li><a href="#pro-attribs">Protected variables</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+<p>It contains a map of functions that can be used on expressions (for example, one could have &#x27;sin&#x27;, &#x27;cos&#x27;, etc).</p>
+        <section id="pub-methods">
+          <h2><a href="#pub-methods">Public functions</a></h2>
+          <dl class="m-doc">
+            <dt>
+              <span class="m-doc-wrap-bumper">void <a href="#a40bf97792c5f03e9e45d313e9e76431d" class="m-doc">AddFunction</a>(</span><span class="m-doc-wrap">const char* pFunctionName,
+              <a href="class_arg_script_1_1_i_function.html" class="m-doc">IFunction</a>* pFunction)</span>
+            </dt>
+            <dd>Adds a function to this lexer, that will be used when processing expresions.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">void <a href="#a1d4837fb367740840bb199d561412fe6" class="m-doc">ExpectChar</a>(</span><span class="m-doc-wrap"><a href="namespace_arg_script.html#af41cc52a6781a4b36908270912f0e1af" class="m-doc">LexerString</a>&amp; lexerString,
+              char c)</span>
+            </dt>
+            <dd>Reads one character in the lexer string, which is expected to be the one specified.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#add6b1815c769b8fca2f061b9f82002ec" class="m-doc">OptionalExpectChar</a>(</span><span class="m-doc-wrap"><a href="namespace_arg_script.html#af41cc52a6781a4b36908270912f0e1af" class="m-doc">LexerString</a>&amp; lexerString,
+              char c) -&gt; bool</span>
+            </dt>
+            <dd>Reads one character in the lexer string, only if the end of the string has not been reached.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">void <a href="#ac2e51f26b77274771b05ee9cf36f016c" class="m-doc">NextParameter</a>(</span><span class="m-doc-wrap"><a href="namespace_arg_script.html#af41cc52a6781a4b36908270912f0e1af" class="m-doc">LexerString</a>&amp; lexerString,
+              string&amp; dst)</span>
+            </dt>
+            <dd>Reads the next parameter in the string, which is all the characters until a comma, a space, or a closing parenthesis is found.</dd>
+          </dl>
+        </section>
+        <section id="pro-attribs">
+          <h2><a href="#pro-attribs">Protected variables</a></h2>
+          <dl class="m-doc">
+            <dt id="a8302302ba1f8de6c853c36681943474e">
+              hash_map&lt;string, <a href="class_arg_script_1_1_i_function.html" class="m-doc">IFunction</a>*&gt; <a href="#a8302302ba1f8de6c853c36681943474e" class="m-doc-self">mFunctions</a>
+            </dt>
+            <dd><span></span></dd>
+          </dl>
+        </section>
+        <section>
+          <h2>Function documentation</h2>
+          <section class="m-doc-details" id="a40bf97792c5f03e9e45d313e9e76431d"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">void ArgScript::<wbr />Lexer::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a40bf97792c5f03e9e45d313e9e76431d" class="m-doc-self">AddFunction</a>(</span><span class="m-doc-wrap">const char* pFunctionName,
+              <a href="class_arg_script_1_1_i_function.html" class="m-doc">IFunction</a>* pFunction)</span></span>
+            </h3>
+            <p>Adds a function to this lexer, that will be used when processing expresions.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">pFunctionName</td>
+                  <td>The name that will be used to call the function. @para pFuncion The <a href="class_arg_script_1_1_i_function.html" class="m-doc">IFunction</a> that gets executed when the function is called.</td>
+                </tr>
+                <tr>
+                  <td>pFunction</td>
+                  <td></td>
+                </tr>
+              </tbody>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="a1d4837fb367740840bb199d561412fe6"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">void ArgScript::<wbr />Lexer::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a1d4837fb367740840bb199d561412fe6" class="m-doc-self">ExpectChar</a>(</span><span class="m-doc-wrap"><a href="namespace_arg_script.html#af41cc52a6781a4b36908270912f0e1af" class="m-doc">LexerString</a>&amp; lexerString,
+              char c)</span></span>
+            </h3>
+            <p>Reads one character in the lexer string, which is expected to be the one specified.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">lexerString</td>
+                  <td>The string pointer where the character will be read.</td>
+                </tr>
+                <tr>
+                  <td>c</td>
+                  <td>The character expected.</td>
+                </tr>
+              </tbody>
+              <thead>
+                <tr><th colspan="2">Exceptions</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>ArgScriptException</td>
+                  <td>If the current character in the string is not the one required.</td>
+                </tr>
+              </tbody>
+            </table>
+<p>If it is not, an exception is thrown.</p>
+          </div></section>
+          <section class="m-doc-details" id="add6b1815c769b8fca2f061b9f82002ec"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">bool ArgScript::<wbr />Lexer::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#add6b1815c769b8fca2f061b9f82002ec" class="m-doc-self">OptionalExpectChar</a>(</span><span class="m-doc-wrap"><a href="namespace_arg_script.html#af41cc52a6781a4b36908270912f0e1af" class="m-doc">LexerString</a>&amp; lexerString,
+              char c)</span></span>
+            </h3>
+            <p>Reads one character in the lexer string, only if the end of the string has not been reached.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">lexerString</td>
+                  <td>The string pointer where the character will be read.</td>
+                </tr>
+                <tr>
+                  <td>c</td>
+                  <td>The character expected.</td>
+                </tr>
+              </tbody>
+              <thead>
+                <tr>
+                  <th>Returns</th>
+                  <td>True if the character was read, false if the end of the string was reached.</td>
+                </tr>
+              </thead>
+              <thead>
+                <tr><th colspan="2">Exceptions</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>ArgScriptException</td>
+                  <td>If the current character in the string is not the one required.</td>
+                </tr>
+              </tbody>
+            </table>
+<p>The character is expected to be the one specified, otherwise an exception is thrown.</p>
+          </div></section>
+          <section class="m-doc-details" id="ac2e51f26b77274771b05ee9cf36f016c"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">void ArgScript::<wbr />Lexer::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ac2e51f26b77274771b05ee9cf36f016c" class="m-doc-self">NextParameter</a>(</span><span class="m-doc-wrap"><a href="namespace_arg_script.html#af41cc52a6781a4b36908270912f0e1af" class="m-doc">LexerString</a>&amp; lexerString,
+              string&amp; dst)</span></span>
+            </h3>
+            <p>Reads the next parameter in the string, which is all the characters until a comma, a space, or a closing parenthesis is found.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Exceptions</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">ArgScriptException</td>
+                  <td>If the format is incorrect (i.e. &#x27;(&#x27; with no &#x27;)&#x27;, &#x27;&quot;&#x27; with no closing &#x27;&quot;&#x27;, etc).</td>
+                </tr>
+              </tbody>
+            </table>
+<p>A parameter can also be surrounded by parenthesis.</p>
+          </div></section>
+        </section>
+      </div>
+    </div>
+  </div>
+</article></main>
+<div class="m-doc-search" id="search">
+  <a href="#!" onclick="return hideSearch()"></a>
+  <div class="m-container">
+    <div class="m-row">
+      <div class="m-col-m-8 m-push-m-2">
+        <div class="m-doc-search-header m-text m-small">
+          <div><span class="m-label m-default">Tab</span> / <span class="m-label m-default">T</span> to search, <span class="m-label m-default">Esc</span> to close</div>
+          <div id="search-symbolcount">&hellip;</div>
+        </div>
+        <div class="m-doc-search-content">
+          <form>
+            <input type="search" name="q" id="search-input" placeholder="Loading &hellip;" disabled="disabled" autofocus="autofocus" autocomplete="off" spellcheck="false" />
+          </form>
+          <noscript class="m-text m-danger m-text-center">Unlike everything else in the docs, the search functionality <em>requires</em> JavaScript.</noscript>
+          <div id="search-help" class="m-text m-dim m-text-center">
+            <p class="m-noindent">Search for symbols, directories, files, pages or
+            modules. You can omit any prefix from the symbol or file path; adding a
+            <code>:</code> or <code>/</code> suffix lists all members of given symbol or
+            directory.</p>
+            <p class="m-noindent">Use <span class="m-label m-dim">&darr;</span>
+            / <span class="m-label m-dim">&uarr;</span> to navigate through the list,
+            <span class="m-label m-dim">Enter</span> to go.
+            <span class="m-label m-dim">Tab</span> autocompletes common prefix, you can
+            copy a link to the result using <span class="m-label m-dim">⌘</span>
+            <span class="m-label m-dim">L</span> while <span class="m-label m-dim">⌘</span>
+            <span class="m-label m-dim">M</span> produces a Markdown link.</p>
+          </div>
+          <div id="search-notfound" class="m-text m-warning m-text-center">Sorry, nothing was found.</div>
+          <ul id="search-results"></ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="search-v1.js"></script>
+<script src="searchdata-v1.js" async="async"></script>
+<footer><nav>
+  <div class="m-container">
+    <div class="m-row">
+      <div class="m-col-l-10 m-push-l-1">
+        <p>Spore ModAPI SDK for creating C++ mods for Spore. Created with <a href="https://doxygen.org/">Doxygen</a> 1.8.16 and <a href="https://mcss.mosra.cz/">m.css</a>.</p>
+      </div>
+    </div>
+  </div>
+</nav></footer>
+</body>
+</html>

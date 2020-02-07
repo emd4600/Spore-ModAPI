@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Graphics::cMaterialManager class | Spore ModAPI SDK for creating C++ mods for Spore</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,600,600i%7CSource+Code+Pro:400,400i,600" />
+  <link rel="stylesheet" href="m-dark.css" />
+  <link rel="stylesheet" href="m-documentation.css" />
+  <link rel="icon" href="Spore_ModAPI_Icon.png" type="image/png" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#22272e" />
+</head>
+<body>
+<header><nav id="navigation">
+  <div class="m-container">
+    <div class="m-row">
+      <a href="index.html" id="m-navbar-brand" class="m-col-t-8 m-col-m-none m-left-m"><img src="Spore_ModAPI_Icon.png" />Spore ModAPI <span class="m-thin">SDK for creating C++ mods for Spore</span></a>
+      <div class="m-col-t-4 m-hide-m m-text-right m-nopadr">
+        <a href="#search" class="m-doc-search-icon" title="Search" onclick="return showSearch()"><svg style="height: 0.9rem;" viewBox="0 0 16 16">
+          <path id="m-doc-search-icon-path" d="m6 0c-3.31 0-6 2.69-6 6 0 3.31 2.69 6 6 6 1.49 0 2.85-0.541 3.89-1.44-0.0164 0.338 0.147 0.759 0.5 1.15l3.22 3.79c0.552 0.614 1.45 0.665 2 0.115 0.55-0.55 0.499-1.45-0.115-2l-3.79-3.22c-0.392-0.353-0.812-0.515-1.15-0.5 0.895-1.05 1.44-2.41 1.44-3.89 0-3.31-2.69-6-6-6zm0 1.56a4.44 4.44 0 0 1 4.44 4.44 4.44 4.44 0 0 1-4.44 4.44 4.44 4.44 0 0 1-4.44-4.44 4.44 4.44 0 0 1 4.44-4.44z"/>
+        </svg></a>
+        <a id="m-navbar-show" href="#navigation" title="Show navigation"></a>
+        <a id="m-navbar-hide" href="#" title="Hide navigation"></a>
+      </div>
+      <div id="m-navbar-collapse" class="m-col-t-12 m-show-m m-col-m-none m-right-m">
+        <div class="m-row">
+          <ol class="m-col-t-6 m-col-m-none">
+            <li><a href="pages.html">Tutorials</a></li>
+            <li><a href="namespaces.html">Namespaces</a></li>
+          </ol>
+          <ol class="m-col-t-6 m-col-m-none" start="3">
+            <li><a href="annotated.html">Classes</a></li>
+            <li><a href="files.html">Files</a></li>
+            <li class="m-show-m"><a href="#search" class="m-doc-search-icon" title="Search" onclick="return showSearch()"><svg style="height: 0.9rem;" viewBox="0 0 16 16">
+              <use href="#m-doc-search-icon-path" />
+            </svg></a></li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav></header>
+<main><article>
+  <div class="m-container m-container-inflatable">
+    <div class="m-row">
+      <div class="m-col-l-10 m-push-l-1">
+        <h1>
+          <span class="m-breadcrumb"><a href="namespace_graphics.html">Graphics</a>::<wbr/></span>cMaterialManager <span class="m-thin">class</span>
+          <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="c_material_manager_8h.html">&lt;Spore/Graphics/cMaterialManager.h&gt;</a></div>
+        </h1>
+        <p>The implementation of <a href="class_graphics_1_1_i_material_manager.html" class="m-doc">IMaterialManager</a>; this should only be used for extending and detouring.</p>
+        <div class="m-block m-default">
+          <h3>Contents</h3>
+          <ul>
+            <li>
+              Reference
+              <ul>
+                <li><a href="#base-classes">Base classes</a></li>
+                <li><a href="#pub-methods">Public functions</a></li>
+                <li><a href="#pub-attribs">Public variables</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+        <section id="base-classes">
+          <h2><a href="#base-classes">Base classes</a></h2>
+          <dl class="m-doc">
+            <dt>
+              class <a href="class_graphics_1_1_i_material_manager.html" class="m-doc">IMaterialManager</a>
+            </dt>
+            <dd>This manager stores the information of materials, which are used to control the visual appearance of game objects.</dd>
+            <dt>
+              class <a href="class_i_virtual.html" class="m-doc">IVirtual</a>
+            </dt>
+            <dd>A default interface that provides a virtual destructor, it should only be used internally.</dd>
+          </dl>
+        </section>
+        <section id="pub-methods">
+          <h2><a href="#pub-methods">Public functions</a></h2>
+          <dl class="m-doc">
+            <dt id="af0bced17cd7ba3b1f8debc70e49b2dac">
+              <span class="m-doc-wrap-bumper">auto <a href="#af0bced17cd7ba3b1f8debc70e49b2dac" class="m-doc-self">ReadCompiledShadersImpl</a>(</span><span class="m-doc-wrap"><a href="class_i_o_1_1_i_stream.html" class="m-doc">IO::<wbr />IStream</a>* pStream) -&gt; bool</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a3b752fae988a0d60e90d400121de5c0a">
+              <span class="m-doc-wrap-bumper">auto <a href="#a3b752fae988a0d60e90d400121de5c0a" class="m-doc-self">ReadMaterialsImpl</a>(</span><span class="m-doc-wrap"><a href="class_i_o_1_1_i_stream.html" class="m-doc">IO::<wbr />IStream</a>* pLinkStream,
+              <a href="class_render_ware_1_1_render_ware_file.html" class="m-doc">RenderWare::<wbr />RenderWareFile</a>* pRenderWare) -&gt; bool</span>
+            </dt>
+            <dd><span></span></dd>
+          </dl>
+        </section>
+        <section id="pub-attribs">
+          <h2><a href="#pub-attribs">Public variables</a></h2>
+          <dl class="m-doc">
+            <dt id="a4b81c6e15cb9b3af807ce9b7ac859c6d">
+              int <a href="#a4b81c6e15cb9b3af807ce9b7ac859c6d" class="m-doc-self">mnRefCount</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a447e53dd3e7d5046a86fa4359eb3a7e5">
+              int <a href="#a447e53dd3e7d5046a86fa4359eb3a7e5" class="m-doc-self">field_0C</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a1a3560d32bb59f8ab83faa02c2c06eb0">
+              <a href="class_graphics_1_1_unk_mat_manager.html" class="m-doc">UnkMatManager</a> <a href="#a1a3560d32bb59f8ab83faa02c2c06eb0" class="m-doc-self">field_10</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="ac63bd68ad9e139804dec3ab944355ffe">
+              int <a href="#ac63bd68ad9e139804dec3ab944355ffe" class="m-doc-self">field_16C</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a61cd698a6218c2901115f8e514b7a6fb">
+              int <a href="#a61cd698a6218c2901115f8e514b7a6fb" class="m-doc-self">field_170</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="aebc430b98e39f4473773689e6015f889">
+              hash_map&lt;uint32_t, <a href="class_graphics_1_1_material.html" class="m-doc">Material</a>&gt; <a href="#aebc430b98e39f4473773689e6015f889" class="m-doc-self">mMaterials</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a949e5123001fecc4a4068ca8717af288">
+              hash_map&lt;<a href="struct_render_ware_1_1_compiled_state.html" class="m-doc">CompiledState</a>*, uint32_t&gt; <a href="#a949e5123001fecc4a4068ca8717af288" class="m-doc-self">field_194</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a0eeb8ceb89927b50c570996348c8229d">
+              <a href="struct_render_ware_1_1_compiled_state.html" class="m-doc">CompiledState</a>* <a href="#a0eeb8ceb89927b50c570996348c8229d" class="m-doc-self">mpDefaultCompiledState</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a8fc3d8d701386a0e970f34d2a63e1a50">
+              bool <a href="#a8fc3d8d701386a0e970f34d2a63e1a50" class="m-doc-self">field_1B8</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a3dc7f97d4fb1596e194f26ddd069940a">
+              int <a href="#a3dc7f97d4fb1596e194f26ddd069940a" class="m-doc-self">_padding_1BC</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a5515a24cf154bbd757a1165d97acea97">
+              int <a href="#a5515a24cf154bbd757a1165d97acea97" class="m-doc-self">field_1CC</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a8ec927333e7777adf63892565cefe0b3">
+              int <a href="#a8ec927333e7777adf63892565cefe0b3" class="m-doc-self">field_1D0</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a627acc1c93acc9c728d4e1e6bf81d162">
+              int <a href="#a627acc1c93acc9c728d4e1e6bf81d162" class="m-doc-self">field_1D4</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="af24b3759592637ccbab42944a71f059e">
+              fixed_vector&lt;int, 4&gt; <a href="#af24b3759592637ccbab42944a71f059e" class="m-doc-self">field_1D8</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="aa1e67489d4028cece1244a0b41e88d11">
+              int <a href="#aa1e67489d4028cece1244a0b41e88d11" class="m-doc-self">mShaderPath</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="aa2f995470847fcde4289045afcdc5561">
+              intrusive_ptr&lt;<a href="class_render_ware_1_1_render_ware_file.html" class="m-doc">RenderWare::<wbr />RenderWareFile</a>&gt; <a href="#aa2f995470847fcde4289045afcdc5561" class="m-doc-self">mpCompiledStatesFile</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a722237563b2e43a471704f7c42ccca5e">
+              <a href="class_clock.html" class="m-doc">Clock</a> <a href="#a722237563b2e43a471704f7c42ccca5e" class="m-doc-self">field_208</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a4e47fb151eaa69a60fff5741bb38879b">
+              int <a href="#a4e47fb151eaa69a60fff5741bb38879b" class="m-doc-self">field_220</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="ad58eb68933264af6c36a57793ba484ad">
+              int <a href="#ad58eb68933264af6c36a57793ba484ad" class="m-doc-self">field_224</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a9f73c023a50ba3b49f1b7b84e8db731f">
+              int <a href="#a9f73c023a50ba3b49f1b7b84e8db731f" class="m-doc-self">field_228</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="aaa15acbdf6117822accec00f71d03150">
+              int <a href="#aaa15acbdf6117822accec00f71d03150" class="m-doc-self">field_22C</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="aeb92f4e8c8cf086f3b4a444b702d3aa8">
+              int <a href="#aeb92f4e8c8cf086f3b4a444b702d3aa8" class="m-doc-self">field_230</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a7bfaae5a12c36d00bfcd5c29dfa01a07">
+              int <a href="#a7bfaae5a12c36d00bfcd5c29dfa01a07" class="m-doc-self">field_234</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a3e37195d5d3e8f7e1f36574cc5df8c33">
+              int <a href="#a3e37195d5d3e8f7e1f36574cc5df8c33" class="m-doc-self">field_238</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="ab8e5558ec7f5ba4f497cac24120ed9bb">
+              bool <a href="#ab8e5558ec7f5ba4f497cac24120ed9bb" class="m-doc-self">field_23C</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="af943bd7123f57050d8bac8fde108c72e">
+              int <a href="#af943bd7123f57050d8bac8fde108c72e" class="m-doc-self">field_240</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a55ce7749807be3216cb5fa4b1a747981">
+              vector&lt;intrusive_ptr&lt;<a href="class_graphics_1_1_material.html" class="m-doc">Material</a>&gt;&gt; <a href="#a55ce7749807be3216cb5fa4b1a747981" class="m-doc-self">mTexturedMaterials</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a784ad18ef548246776c9aaee4e788d0c">
+              <a href="class_mutex.html" class="m-doc">Mutex</a> <a href="#a784ad18ef548246776c9aaee4e788d0c" class="m-doc-self">mMaterialsMutex</a>
+            </dt>
+            <dd><span></span></dd>
+          </dl>
+        </section>
+      </div>
+    </div>
+  </div>
+</article></main>
+<div class="m-doc-search" id="search">
+  <a href="#!" onclick="return hideSearch()"></a>
+  <div class="m-container">
+    <div class="m-row">
+      <div class="m-col-m-8 m-push-m-2">
+        <div class="m-doc-search-header m-text m-small">
+          <div><span class="m-label m-default">Tab</span> / <span class="m-label m-default">T</span> to search, <span class="m-label m-default">Esc</span> to close</div>
+          <div id="search-symbolcount">&hellip;</div>
+        </div>
+        <div class="m-doc-search-content">
+          <form>
+            <input type="search" name="q" id="search-input" placeholder="Loading &hellip;" disabled="disabled" autofocus="autofocus" autocomplete="off" spellcheck="false" />
+          </form>
+          <noscript class="m-text m-danger m-text-center">Unlike everything else in the docs, the search functionality <em>requires</em> JavaScript.</noscript>
+          <div id="search-help" class="m-text m-dim m-text-center">
+            <p class="m-noindent">Search for symbols, directories, files, pages or
+            modules. You can omit any prefix from the symbol or file path; adding a
+            <code>:</code> or <code>/</code> suffix lists all members of given symbol or
+            directory.</p>
+            <p class="m-noindent">Use <span class="m-label m-dim">&darr;</span>
+            / <span class="m-label m-dim">&uarr;</span> to navigate through the list,
+            <span class="m-label m-dim">Enter</span> to go.
+            <span class="m-label m-dim">Tab</span> autocompletes common prefix, you can
+            copy a link to the result using <span class="m-label m-dim">⌘</span>
+            <span class="m-label m-dim">L</span> while <span class="m-label m-dim">⌘</span>
+            <span class="m-label m-dim">M</span> produces a Markdown link.</p>
+          </div>
+          <div id="search-notfound" class="m-text m-warning m-text-center">Sorry, nothing was found.</div>
+          <ul id="search-results"></ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="search-v1.js"></script>
+<script src="searchdata-v1.js" async="async"></script>
+<footer><nav>
+  <div class="m-container">
+    <div class="m-row">
+      <div class="m-col-l-10 m-push-l-1">
+        <p>Spore ModAPI SDK for creating C++ mods for Spore. Created with <a href="https://doxygen.org/">Doxygen</a> 1.8.16 and <a href="https://mcss.mosra.cz/">m.css</a>.</p>
+      </div>
+    </div>
+  </div>
+</nav></footer>
+</body>
+</html>

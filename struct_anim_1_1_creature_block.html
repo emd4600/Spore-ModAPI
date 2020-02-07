@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Anim::CreatureBlock struct | Spore ModAPI SDK for creating C++ mods for Spore</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,600,600i%7CSource+Code+Pro:400,400i,600" />
+  <link rel="stylesheet" href="m-dark.css" />
+  <link rel="stylesheet" href="m-documentation.css" />
+  <link rel="icon" href="Spore_ModAPI_Icon.png" type="image/png" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#22272e" />
+</head>
+<body>
+<header><nav id="navigation">
+  <div class="m-container">
+    <div class="m-row">
+      <a href="index.html" id="m-navbar-brand" class="m-col-t-8 m-col-m-none m-left-m"><img src="Spore_ModAPI_Icon.png" />Spore ModAPI <span class="m-thin">SDK for creating C++ mods for Spore</span></a>
+      <div class="m-col-t-4 m-hide-m m-text-right m-nopadr">
+        <a href="#search" class="m-doc-search-icon" title="Search" onclick="return showSearch()"><svg style="height: 0.9rem;" viewBox="0 0 16 16">
+          <path id="m-doc-search-icon-path" d="m6 0c-3.31 0-6 2.69-6 6 0 3.31 2.69 6 6 6 1.49 0 2.85-0.541 3.89-1.44-0.0164 0.338 0.147 0.759 0.5 1.15l3.22 3.79c0.552 0.614 1.45 0.665 2 0.115 0.55-0.55 0.499-1.45-0.115-2l-3.79-3.22c-0.392-0.353-0.812-0.515-1.15-0.5 0.895-1.05 1.44-2.41 1.44-3.89 0-3.31-2.69-6-6-6zm0 1.56a4.44 4.44 0 0 1 4.44 4.44 4.44 4.44 0 0 1-4.44 4.44 4.44 4.44 0 0 1-4.44-4.44 4.44 4.44 0 0 1 4.44-4.44z"/>
+        </svg></a>
+        <a id="m-navbar-show" href="#navigation" title="Show navigation"></a>
+        <a id="m-navbar-hide" href="#" title="Hide navigation"></a>
+      </div>
+      <div id="m-navbar-collapse" class="m-col-t-12 m-show-m m-col-m-none m-right-m">
+        <div class="m-row">
+          <ol class="m-col-t-6 m-col-m-none">
+            <li><a href="pages.html">Tutorials</a></li>
+            <li><a href="namespaces.html">Namespaces</a></li>
+          </ol>
+          <ol class="m-col-t-6 m-col-m-none" start="3">
+            <li><a href="annotated.html">Classes</a></li>
+            <li><a href="files.html">Files</a></li>
+            <li class="m-show-m"><a href="#search" class="m-doc-search-icon" title="Search" onclick="return showSearch()"><svg style="height: 0.9rem;" viewBox="0 0 16 16">
+              <use href="#m-doc-search-icon-path" />
+            </svg></a></li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav></header>
+<main><article>
+  <div class="m-container m-container-inflatable">
+    <div class="m-row">
+      <div class="m-col-l-10 m-push-l-1">
+        <h1>
+          <span class="m-breadcrumb"><a href="namespace_anim.html">Anim</a>::<wbr/></span>CreatureBlock <span class="m-thin">struct</span>
+          <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_creature_block_8h.html">&lt;Spore/Anim/CreatureBlock.h&gt;</a></div>
+        </h1>
+        <p><span></span></p>
+        <div class="m-block m-default">
+          <h3>Contents</h3>
+          <ul>
+            <li>
+              Reference
+              <ul>
+                <li><a href="#pub-types">Public types</a></li>
+                <li><a href="#pub-attribs">Public variables</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+        <section id="pub-types">
+          <h2><a href="#pub-types">Public types</a></h2>
+          <dl class="m-doc">
+            <dt id="aaeec95845c4647b0c9fd64c7c4e7d7cd">
+              <span class="m-doc-wrap-bumper">enum <a href="#aaeec95845c4647b0c9fd64c7c4e7d7cd" class="m-doc-self">(anonymous)</a> { </span><span class="m-doc-wrap"><a href="#aaeec95845c4647b0c9fd64c7c4e7d7cdafe1ed6f7f4025f8b14d1ea82eeade5f4" class="m-doc">kCapFlagRoot</a> = 1,
+              <a href="#aaeec95845c4647b0c9fd64c7c4e7d7cda789f35d373513de993bb25baffea3f5e" class="m-doc">kCapFlagLimb</a> = 2,
+              <a href="#aaeec95845c4647b0c9fd64c7c4e7d7cda80e6ff6ab38ef93c81935039a9b47d23" class="m-doc">kCapFlagFoot</a> = 4,
+              <a href="#aaeec95845c4647b0c9fd64c7c4e7d7cda10f64dc8c5c8a68d7a4208298074aa2c" class="m-doc">kCapFlagSpine</a> = 8,
+              <a href="#aaeec95845c4647b0c9fd64c7c4e7d7cda25a67690dbbe55588ea98faaf041be3b" class="m-doc">kCapFlagPseudoFoot</a> = 0x10,
+              <a href="#aaeec95845c4647b0c9fd64c7c4e7d7cda93746e30ae855081883178de558f9372" class="m-doc">kCapFlagMouth</a> = 0x20,
+              <a href="#aaeec95845c4647b0c9fd64c7c4e7d7cda70d98dd85b996e992d85e9ab45da513b" class="m-doc">kCapFlagGrasper</a> = 0x40,
+              <a href="#aaeec95845c4647b0c9fd64c7c4e7d7cdaf46b9cf6056adff4af08e68c85d5e1d0" class="m-doc">kCapFlagNoStretch</a> = 0x80 }</span>
+            </dt>
+            <dd><span></span></dd>
+          </dl>
+        </section>
+        <section id="pub-attribs">
+          <h2><a href="#pub-attribs">Public variables</a></h2>
+          <dl class="m-doc">
+            <dt id="a090cad4a4f9a7aa42851cee1bc47d35d">
+              char <a href="#a090cad4a4f9a7aa42851cee1bc47d35d" class="m-doc-self">name</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a0aacc41c39319677b9ffb5e29a3796ba">
+              int <a href="#a0aacc41c39319677b9ffb5e29a3796ba" class="m-doc-self">field_100</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="afe861d83282c421a305c3161f4e94a87">
+              float <a href="#afe861d83282c421a305c3161f4e94a87" class="m-doc-self">mass</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a4019f0c23532c51e1ba625c6965ff7da">
+              <a href="struct_math_1_1_vector3.html" class="m-doc">Math::<wbr />Vector3</a> <a href="#a4019f0c23532c51e1ba625c6965ff7da" class="m-doc-self">position</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a1465b013d59ef4143c75ac7f11ab7dfd">
+              <a href="struct_math_1_1_vector3.html" class="m-doc">Math::<wbr />Vector3</a> <a href="#a1465b013d59ef4143c75ac7f11ab7dfd" class="m-doc-self">jointPosition</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a9ca27fe2299766e077dccdb16fd6e90c">
+              <a href="struct_math_1_1_bounding_box.html" class="m-doc">Math::<wbr />BoundingBox</a> <a href="#a9ca27fe2299766e077dccdb16fd6e90c" class="m-doc-self">bbox</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a405038b5079e73a04de1cf72b0428a8a">
+              uint32_t <a href="#a405038b5079e73a04de1cf72b0428a8a" class="m-doc-self">instanceID</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a836ba06df5942b1c5e393456a047795f">
+              uint32_t <a href="#a836ba06df5942b1c5e393456a047795f" class="m-doc-self">groupID</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a8dbdfa577c1798431ed7fea6956fa0ee">
+              <a href="struct_math_1_1_vector4.html" class="m-doc">Math::<wbr />Vector4</a> <a href="#a8dbdfa577c1798431ed7fea6956fa0ee" class="m-doc-self">orientation</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a223bb789aa6fa4c43e3cbbf833e61a7f">
+              float <a href="#a223bb789aa6fa4c43e3cbbf833e61a7f" class="m-doc-self">field_128</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="aa695423b8603d57976d6f86e1d437663">
+              float <a href="#aa695423b8603d57976d6f86e1d437663" class="m-doc-self">field_12C</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a6b2ac6c82a11faa7013ec1185c526ce5">
+              float <a href="#a6b2ac6c82a11faa7013ec1185c526ce5" class="m-doc-self">field_130</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="affc10c5ac5393f45f032c4768754c7f8">
+              float <a href="#affc10c5ac5393f45f032c4768754c7f8" class="m-doc-self">field_134</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a27863d25ec6e90982c0dace6d0348bb7">
+              <a href="struct_math_1_1_vector3.html" class="m-doc">Math::<wbr />Vector3</a> <a href="#a27863d25ec6e90982c0dace6d0348bb7" class="m-doc-self">bboxHalf</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a12973684590ff697a2ebaa2b0bffef25">
+              int <a href="#a12973684590ff697a2ebaa2b0bffef25" class="m-doc-self">capFlags</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="aa470690bc4dedb32f3489d26385c014d">
+              int <a href="#aa470690bc4dedb32f3489d26385c014d" class="m-doc-self">capLvlFlags</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a653c2a9e61823af2092e9a6f8de83ccf">
+              PCTPCapability* <a href="#a653c2a9e61823af2092e9a6f8de83ccf" class="m-doc-self">capabilities</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a850105a00bbce6ad1080d9c8ed7e7a64">
+              int8_t <a href="#a850105a00bbce6ad1080d9c8ed7e7a64" class="m-doc-self">capLevels</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a1a8902e9bcdf9f6d4ce2ac544799c36a">
+              int <a href="#a1a8902e9bcdf9f6d4ce2ac544799c36a" class="m-doc-self">field_1F8</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="ace7b6f74993a333f37a597b8d5b3b242">
+              int <a href="#ace7b6f74993a333f37a597b8d5b3b242" class="m-doc-self">parentIndex</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a0d05c674a1c6fab489960e908b30144d">
+              int <a href="#a0d05c674a1c6fab489960e908b30144d" class="m-doc-self">symmetricIndex</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a38550bbc0079afda999e6265e3ab81b2">
+              char <a href="#a38550bbc0079afda999e6265e3ab81b2" class="m-doc-self">cal3DBoneName</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a594cbece8b98a2041c954fddcdf3ef24">
+              int <a href="#a594cbece8b98a2041c954fddcdf3ef24" class="m-doc-self">field_320</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a48559588697eaee0fda11f552fa81274">
+              <a href="struct_math_1_1_vector3.html" class="m-doc">Math::<wbr />Vector3</a> <a href="#a48559588697eaee0fda11f552fa81274" class="m-doc-self">cal3DOrigin</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="aca7c44ed3266b3f4a75e4d18c0b5ca5d">
+              <a href="struct_math_1_1_vector3.html" class="m-doc">Math::<wbr />Vector3</a> <a href="#aca7c44ed3266b3f4a75e4d18c0b5ca5d" class="m-doc-self">effectsOrigin</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="ad4bb695b7101ff75977114cb97ba9093">
+              int <a href="#ad4bb695b7101ff75977114cb97ba9093" class="m-doc-self">submeshIndex</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a337dbadf144b258f15d8551b3fae4dec">
+              bool <a href="#a337dbadf144b258f15d8551b3fae4dec" class="m-doc-self">isLeftHanded</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="aaa0335a4f6144fd0c9d8abff3d9ee46d">
+              float <a href="#aaa0335a4f6144fd0c9d8abff3d9ee46d" class="m-doc-self">scale</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="ab4bd0d2cb91721027074994b3df772b0">
+              uint32_t <a href="#ab4bd0d2cb91721027074994b3df772b0" class="m-doc-self">soundIDMouth</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a618b18daeba47ee4bf968c3fe6182f6b">
+              uint32_t <a href="#a618b18daeba47ee4bf968c3fe6182f6b" class="m-doc-self">soundIDFoot</a>
+            </dt>
+            <dd><span></span></dd>
+          </dl>
+        </section>
+      </div>
+    </div>
+  </div>
+</article></main>
+<div class="m-doc-search" id="search">
+  <a href="#!" onclick="return hideSearch()"></a>
+  <div class="m-container">
+    <div class="m-row">
+      <div class="m-col-m-8 m-push-m-2">
+        <div class="m-doc-search-header m-text m-small">
+          <div><span class="m-label m-default">Tab</span> / <span class="m-label m-default">T</span> to search, <span class="m-label m-default">Esc</span> to close</div>
+          <div id="search-symbolcount">&hellip;</div>
+        </div>
+        <div class="m-doc-search-content">
+          <form>
+            <input type="search" name="q" id="search-input" placeholder="Loading &hellip;" disabled="disabled" autofocus="autofocus" autocomplete="off" spellcheck="false" />
+          </form>
+          <noscript class="m-text m-danger m-text-center">Unlike everything else in the docs, the search functionality <em>requires</em> JavaScript.</noscript>
+          <div id="search-help" class="m-text m-dim m-text-center">
+            <p class="m-noindent">Search for symbols, directories, files, pages or
+            modules. You can omit any prefix from the symbol or file path; adding a
+            <code>:</code> or <code>/</code> suffix lists all members of given symbol or
+            directory.</p>
+            <p class="m-noindent">Use <span class="m-label m-dim">&darr;</span>
+            / <span class="m-label m-dim">&uarr;</span> to navigate through the list,
+            <span class="m-label m-dim">Enter</span> to go.
+            <span class="m-label m-dim">Tab</span> autocompletes common prefix, you can
+            copy a link to the result using <span class="m-label m-dim">⌘</span>
+            <span class="m-label m-dim">L</span> while <span class="m-label m-dim">⌘</span>
+            <span class="m-label m-dim">M</span> produces a Markdown link.</p>
+          </div>
+          <div id="search-notfound" class="m-text m-warning m-text-center">Sorry, nothing was found.</div>
+          <ul id="search-results"></ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="search-v1.js"></script>
+<script src="searchdata-v1.js" async="async"></script>
+<footer><nav>
+  <div class="m-container">
+    <div class="m-row">
+      <div class="m-col-l-10 m-push-l-1">
+        <p>Spore ModAPI SDK for creating C++ mods for Spore. Created with <a href="https://doxygen.org/">Doxygen</a> 1.8.16 and <a href="https://mcss.mosra.cz/">m.css</a>.</p>
+      </div>
+    </div>
+  </div>
+</nav></footer>
+</body>
+</html>
