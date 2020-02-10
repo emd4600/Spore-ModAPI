@@ -63,7 +63,7 @@
             </li>
           </ul>
         </div>
-<p>It supports multiple precisions expressed in the enum <a href="class_clock.html#a4bb672d0b12eceb314a01ab15d9676cb" class="m-doc">Clock::<wbr />Mode</a>: minutes, seconds, milliseconds, microseconds, nanoseconds, ticks and nanoseprocessor time stamp. In order to use a clock, first you have to start it with the <a href="class_clock.html#ac034a45c8476b44c262f97c4b62f4772" class="m-doc">Clock::<wbr />Start()</a> method. Then just use the <a href="class_clock.html#a2cef6987846015cabc0a4f59f1899973" class="m-doc">Clock::<wbr />GetElapsed()</a> method (or its variants) to get the elapsed time since the clock was started. In order to reset the counter, you must use <a href="class_clock.html#a9ee8cacd91323a41359ae592d14141d8" class="m-doc">Clock::<wbr />Stop()</a> and then you can start the clock again.</p>
+<p>It supports multiple precisions expressed in the enum <a href="class_clock.html#a4bb672d0b12eceb314a01ab15d9676cb" class="m-doc">Clock::<wbr />Mode</a>: minutes, seconds, milliseconds, microseconds, nanoseconds, ticks and nanoseprocessor time stamp. In order to use a clock, first you have to start it with the <a href="class_clock.html#ac034a45c8476b44c262f97c4b62f4772" class="m-doc">Clock::<wbr />Start()</a> method. Then just use the <a href="class_clock.html#aec62576bf03c1a8c6c962931750d6bf3" class="m-doc">Clock::<wbr />GetElapsed()</a> method (or its variants) to get the elapsed time since the clock was started. In order to reset the counter, you must use <a href="class_clock.html#a9ee8cacd91323a41359ae592d14141d8" class="m-doc">Clock::<wbr />Stop()</a> and then you can start the clock again.</p>
         <section id="pub-types">
           <h2><a href="#pub-types">Public types</a></h2>
           <dl class="m-doc">
@@ -104,18 +104,22 @@
               <span class="m-doc-wrap-bumper">void <a href="#a9ee8cacd91323a41359ae592d14141d8" class="m-doc">Stop</a>(</span><span class="m-doc-wrap">)</span>
             </dt>
             <dd>Stops the clock, reseting the initial time to 0.</dd>
-            <dt id="a2cef6987846015cabc0a4f59f1899973">
-              <span class="m-doc-wrap-bumper">auto <a href="#a2cef6987846015cabc0a4f59f1899973" class="m-doc-self">GetElapsed</a>(</span><span class="m-doc-wrap">) -&gt; float</span>
+            <dt id="aec62576bf03c1a8c6c962931750d6bf3">
+              <span class="m-doc-wrap-bumper">auto <a href="#aec62576bf03c1a8c6c962931750d6bf3" class="m-doc-self">GetElapsed</a>(</span><span class="m-doc-wrap">) const -&gt; float</span>
             </dt>
             <dd>Returns the elapsed time in the specified precision measure, conserving all decimals.</dd>
-            <dt id="abe41cf047c423cb9a08b050e3cfe619a">
-              <span class="m-doc-wrap-bumper">auto <a href="#abe41cf047c423cb9a08b050e3cfe619a" class="m-doc-self">GetElapsedTicks</a>(</span><span class="m-doc-wrap">) -&gt; LARGE_INTEGER</span>
+            <dt id="ac39356a34ea237c958fbfecd5b6ce240">
+              <span class="m-doc-wrap-bumper">auto <a href="#ac39356a34ea237c958fbfecd5b6ce240" class="m-doc-self">GetElapsedTicks</a>(</span><span class="m-doc-wrap">) const -&gt; LARGE_INTEGER</span>
             </dt>
             <dd>Returns the elapsed time in ticks (regardles of the clock mode).</dd>
-            <dt id="a2489f2dde27be809fec53545ebe87ccb">
-              <span class="m-doc-wrap-bumper">auto <a href="#a2489f2dde27be809fec53545ebe87ccb" class="m-doc-self">GetElapsedTime</a>(</span><span class="m-doc-wrap">) -&gt; LARGE_INTEGER</span>
+            <dt id="a5e7054278f51d0e3beed432f22c91649">
+              <span class="m-doc-wrap-bumper">auto <a href="#a5e7054278f51d0e3beed432f22c91649" class="m-doc-self">GetElapsedTime</a>(</span><span class="m-doc-wrap">) const -&gt; LARGE_INTEGER</span>
             </dt>
             <dd>Returns the elapsed time in the specified precision measure, rounded to the closest integer.</dd>
+            <dt id="a7dec3f15b6ae32cbb153a347422b067e">
+              <span class="m-doc-wrap-bumper">auto <a href="#a7dec3f15b6ae32cbb153a347422b067e" class="m-doc-self">IsRunning</a>(</span><span class="m-doc-wrap">) const -&gt; bool</span>
+            </dt>
+            <dd><span></span></dd>
           </dl>
         </section>
         <section id="pro-attribs">
