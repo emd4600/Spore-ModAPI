@@ -36,6 +36,6 @@ Clock::Clock(Clock::Mode mode, bool bStart)
 
 auto_METHOD_VOID(Clock, SetMode, Args(Clock::Mode mode), Args(mode));
 auto_METHOD_VOID_(Clock, Stop);
-auto_METHOD_(Clock, LARGE_INTEGER, GetElapsedTicks);
-auto_METHOD_(Clock, LARGE_INTEGER, GetElapsedTime);
+auto_METHOD_const_(Clock, LARGE_INTEGER, GetElapsedTicks);
+auto_METHOD_const_(Clock, LARGE_INTEGER, GetElapsedTime);
 #endif

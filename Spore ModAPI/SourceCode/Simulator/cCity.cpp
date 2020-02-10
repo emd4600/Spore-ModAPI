@@ -26,5 +26,9 @@ namespace Simulator
 	Vector3 cCity::GetWallsPosition() {
 		return mpCityWalls->GetPosition();
 	}
+
+	auto_METHOD(cCity, cVehicle*, SpawnVehicle, 
+		Args(VehiclePurpose speciality, VehicleLocomotion locomotion, struct ResourceKey key, bool isSpaceStage),
+		Args(speciality, locomotion, key, isSpaceStage));
 }
 #endif

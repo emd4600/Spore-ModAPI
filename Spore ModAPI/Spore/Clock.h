@@ -81,17 +81,19 @@ public:
 	///
 	/// Returns the elapsed time in the specified precision measure, conserving all decimals.
 	///
-	float GetElapsed();
+	float GetElapsed() const;
 
 	///
 	/// Returns the elapsed time in ticks (regardles of the clock mode).
 	///
-	LARGE_INTEGER GetElapsedTicks();
+	LARGE_INTEGER GetElapsedTicks() const;
 
 	///
 	/// Returns the elapsed time in the specified precision measure, rounded to the closest integer.
 	///
-	LARGE_INTEGER GetElapsedTime();
+	LARGE_INTEGER GetElapsedTime() const;
+
+	bool IsRunning() const;
 
 protected:
 	LARGE_INTEGER mStartTime;
@@ -139,9 +141,13 @@ inline void Clock::Start()
 	}
 };
 
-inline float Clock::GetElapsed()
+inline float Clock::GetElapsed() const
 {
 	return GetElapsedTicks().LowPart * mfMeasurePerTick;
+}
+
+inline bool Clock::IsRunning() const {
+	return mStartTime.QuadPart != 0;
 }
 
 static_assert(sizeof(Clock) == 0x18, "sizeof(Clock) != 18h");

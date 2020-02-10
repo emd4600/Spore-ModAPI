@@ -16,7 +16,7 @@ namespace Sporepedia
 	/// @code
 	/// // `this` can also be whatever object that inherits from IShopperListener
 	/// Sporepedia::ShopperRequest request(this);
-	/// request.SetShopperID(id("MilitaryAirShopper"));
+	/// request.shopperID = id("MilitaryAirShopper");
 	/// @endcode
 	struct ShopperRequest
 	{

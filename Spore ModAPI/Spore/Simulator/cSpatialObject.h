@@ -68,7 +68,7 @@ namespace Simulator
 		/* 48h */	virtual bool IsOnView();
 		/* 4Ch */	virtual void SetIsOnView(bool bValue);
 		/* 50h */	virtual bool IsSelected();
-		/* 54h */	virtual void SetIsSeleted(bool bValue);
+		/* 54h */	virtual void SetIsSelected(bool bValue);
 		/* 58h */	virtual bool func58h();
 		/* 5Ch */	virtual Vector3 func5Ch();  // Get direction?
 		/* 60h */	virtual Vector3 func60h();
@@ -107,15 +107,15 @@ namespace Simulator
 		/* 38h */	BoundingBox mLocalExtents;
 
 	public:
-		/* 50h */	uint32_t mFlags;
+		/* 50h */	uint32_t mFlags;   // kPickupEnabled = 0x200 belongs here, not in cInteractiveOrnament
 
 	protected:
 		/* 54h */	uint32_t mMaterialType;
 		/* 58h */	float field_58;  // material type?
-		/* 5Ch */	float mfBoundingRadius;
-		/* 60h */	float mfFootprintRadius;
-		/* 64h */	float mfScale;
-		/* 68h */	float mfDistanceFromCamera;
+		/* 5Ch */	float mBoundingRadius;
+		/* 60h */	float mFootprintRadius;
+		/* 64h */	float mScale;
+		/* 68h */	float mDistanceFromCamera;
 		/* 6Ch */	bool mbIsSelected;
 		/* 6Dh */	bool mbIsRolledOver;
 		/* 6Eh */	bool mbIsInvalid;
