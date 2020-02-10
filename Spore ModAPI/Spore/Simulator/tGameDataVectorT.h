@@ -32,7 +32,7 @@ namespace Simulator
 	public:
 		typedef intrusive_ptr<T> PtrT;
 
-		bool field_0;
+		bool needsUpdate;
 		vector<intrusive_ptr<T>> data;
 
 		intrusive_ptr<T>& operator[] (const int index);

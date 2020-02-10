@@ -147,11 +147,34 @@ namespace Simulator
 	}
 
 	/// Gets all the game data objects that are of the specified type.
-	/// Only classes that define a NOUN_ID can be used here.
+	/// Only classes that define a `NOUN_ID` can be used here.
 	/// All the found objects will be casted to the specified type.
 	template <class T>
 	inline tGameDataVectorT<T>& GetData() {
 		return GetData<T>(T::NOUN_ID);
+	}
+
+	/// Gets all the game data objects that can be casted to the specified type.
+	/// You can use this with base classes that aren't nouns to use all the objects of subclasses;
+	/// for example you can use it with cCombatant or cCreatureBase.
+	/// Only classes that define a `TYPE` can be used here.
+	/// All the found objects will be casted to the specified type.
+	template <class T>
+	inline tGameDataVectorT<T>& GetDataByCast()
+	{
+		return GameNounManager.GetData<T>(
+			[]() {
+			return new tGameDataVectorT<T>();
+		},
+			[](tGameDataVectorT<T>* pVector) {
+			pVector->data.clear();
+		},
+			[](tGameDataVectorT<T>* pVector, cGameData* pObject) {
+			pVector->data.push_back(intrusive_ptr<T>(object_cast<T>(pObject)));
+		},
+			[](cGameData* pObject, uint32_t gameNounID) {
+			return pObject->Cast(T::TYPE) != nullptr;
+		}, T::TYPE);
 	}
 }
 
