@@ -6,7 +6,7 @@ that can then be used by the **[ModAPI Launcher Kit](http://davoonline.com/spore
 
 The documentation of the SDK is available here: https://emd4600.github.io/Spore-ModAPI/
 
-Instructions about download, installation and updating can be found [in this tutorial](_installation.md).
+Instructions about download, installation and updating can be found [in this tutorial](https://emd4600.github.io/Spore-ModAPI/_installation.html).
 
 The source code can be found in this GitHub repository. It also includes the source code
 of 3 real mods made with the ModAPI SDK:
