@@ -32,6 +32,8 @@ namespace Simulator
 	public:
 		typedef intrusive_ptr<T> PtrT;
 
+		tGameDataVectorT();
+
 		bool needsUpdate;
 		vector<intrusive_ptr<T>> data;
 
@@ -53,6 +55,12 @@ namespace Simulator
 		inline typename vector<PtrT>::const_iterator end() const { return data.end(); };
 		inline typename vector<PtrT>::const_iterator cend() const { return data.cend(); };
 	};
+
+	template <class T>
+	inline tGameDataVectorT<T>::tGameDataVectorT()
+		: needsUpdate(true)
+		, data()
+	{}
 
 	template <class T>
 	inline intrusive_ptr<T>& tGameDataVectorT<T>::operator[] (const int index) {
