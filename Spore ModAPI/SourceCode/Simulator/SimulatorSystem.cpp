@@ -23,10 +23,18 @@
 #include <Spore\Simulator\SubSystem\SpacePlayerData.h>
 #include <Spore\Simulator\SubSystem\GameViewManager.h>
 #include <Spore\Simulator\SubSystem\cStrategy.h>
+#include <Spore\ModAPI.h>
 
 namespace Simulator
 {
 	auto_STATIC_METHOD_(cSimulatorSystem, cSimulatorSystem*, Get);
+
+	bool cSimulatorSystem::AddStrategy(ISimulatorStrategy* strategy, uint32_t id) {
+		if (!ModAPI::AddSimulatorStrategy(strategy, id)) return false;
+		mSubSystems.push_back(strategy);
+		strategy->Initialize();
+		return true;
+	}
 
 	void InitializeWithoutPlanet() {
 		cStarRecord* pRecord = StarManager.GetStarRecord(0);
@@ -86,7 +94,7 @@ namespace Simulator
 		return mode == GetCurrentGameMode() && mode == GetLastGameMode() && field_14 == 0xFFFFFFFF;
 	}
 
-	void cStrategy::func30h(int) {}
+	void cStrategy::OnLoad(const cSavedGameHeader& savedGame) {}
 
 	void cStrategy::Update(int deltaTime, int deltaGameTime) {}
 	void cStrategy::PostUpdate(int deltaTime, int deltaGameTime) {}

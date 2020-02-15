@@ -20,6 +20,10 @@
 
 #include <Spore\Object.h>
 #include <Spore\Simulator\Serialization.h>
+#include <Spore\Simulator\SubSystem\cSavedGameHeader.h>
+
+#define ISimulatorStrategyPtr intrusive_ptr<Simulator::ISimulatorStrategy>
+#define cStrategyPtr intrusive_ptr<Simulator::cStrategy>
 
 namespace Simulator
 {
@@ -38,8 +42,8 @@ namespace Simulator
 		/* 24h */	virtual bool func24h(uint32_t) = 0;
 		/* 28h */	virtual bool Write(ISerializerStream*) = 0;
 		/* 2Ch */	virtual bool Read(ISerializerStream*) = 0;
-		/* 30h */	virtual void func30h(int) = 0;
-		/* 34h */	virtual bool func34h(int) = 0;
+		/* 30h */	virtual void OnLoad(const cSavedGameHeader& savedGame) = 0;
+		/* 34h */	virtual bool WriteToXML(XmlSerializer*) = 0;
 		/* 38h */	virtual void Update(int deltaTime, int deltaGameTime) = 0;
 		// Called just before the game mode update function finishes
 		/* 3Ch */	virtual void PostUpdate(int deltaTime, int deltaGameTime) = 0;
@@ -66,7 +70,7 @@ namespace Simulator
 		uint32_t GetCurrentGameMode() const override;
 		bool func24h(uint32_t) override;
 
-		void func30h(int) override;
+		void OnLoad(const cSavedGameHeader& savedGame) override;
 
 		void Update(int deltaTime, int deltaGameTime) override;
 		void PostUpdate(int deltaTime, int deltaGameTime) override;

@@ -21,11 +21,14 @@
 #include <Spore\Internal.h>
 
 ///
-/// A class used for measuring time. It supports multiple precisions expressed in the enum Clock::Mode:
-/// minutes, seconds, milliseconds, microseconds, nanoseconds, ticks and nanoseprocessor time stamp.
+/// A class used for measuring time. It supports multiple precisions from the enum Clock::Mode:
+/// *minutes*, *seconds*, *milliseconds*, *microseconds*, *nanoseconds*, *ticks* and *processor time stamp*.
+///
 /// In order to use a clock, first you have to start it with the Clock::Start() method. Then just use the
 /// Clock::GetElapsed() method (or its variants) to get the elapsed time since the clock was started.
-/// In order to reset the counter, you must use Clock::Stop() and then you can start the clock again.
+///
+/// You can pause the clock using Clock::Pause(), then use `Start()` again to continue counting the accumulated time.
+/// If you want to clear the accumulated time and count from 0, use Clock::Reset().
 ///
 class Clock
 {
@@ -53,55 +56,48 @@ public:
 		Minutes = 6,
 	};
 
-	///
 	/// Creates a new clock object with the specified precision mode. Optionally, you can make
 	/// the clock start counting.
 	/// @param mode The precision with which the clock will measure time.
-	/// @param bStart [Optional] If true, the clock will start counting time. False by default.
-	///
-	Clock(Clock::Mode mode = Clock::Mode::Ticks, bool bStart = false);
+	/// @param start [Optional] If true, the clock will start counting time. False by default.
+	Clock(Clock::Mode mode = Clock::Mode::Ticks, bool start = false);
 
-	///
 	/// Changes the precision mode.
 	/// @param mode The precision with which the clock will measure time.
-	///
 	void SetMode(Clock::Mode mode);
 
-	///
-	/// Starts the clock, measuring the initial time; if it has already been started, does nothing.
-	///
+	/// Starts the clock, if it's not already running. If the clock was paused, it will continue
+	/// counting from the time accumulated until the last pause.
 	void Start();
 
-	///
-	/// Stops the clock, reseting the initial time to 0. After using stop, the clock can be started again using
-	/// Clock::Start().
-	///
-	void Stop();
+	/// Stops the clock, reseting the initial time to 0. After pausing, the clock can be started again using
+	/// Clock::Start(); if started again, it will continue with the time accumulated until the stop.
+	void Pause();
 
-	///
+	/// Stops the clock and clears all accumulated time. This is equivalent to creating a new clock again.
+	/// After a reset, getting the elapsed time will return 0 until the clock is started again.
+	void Reset();
+
 	/// Returns the elapsed time in the specified precision measure, conserving all decimals.
-	///
+	/// @returns The time passed since the clock was created/reset, in the assigned units.
 	float GetElapsed() const;
 
-	///
 	/// Returns the elapsed time in ticks (regardles of the clock mode).
-	///
 	LARGE_INTEGER GetElapsedTicks() const;
 
-	///
 	/// Returns the elapsed time in the specified precision measure, rounded to the closest integer.
-	///
-	LARGE_INTEGER GetElapsedTime() const;
+	int GetElapsedTime() const;
 
+	/// Tells whether the clock is counting (`true`) or is paused (`false`).
 	bool IsRunning() const;
 
 protected:
 	LARGE_INTEGER mStartTime;
-	LARGE_INTEGER field_8;  // precision loss or something like that?
+	LARGE_INTEGER mAccumulatedTime;
 	/// The mode (precision) with which the time is measured.
 	Clock::Mode mMode;
 	/// Derived from mMode, how many units of measurement (seconds, nanoseconds, etc) are equal to 1 tick.
-	float mfMeasurePerTick;  // 1.0f
+	float mMeasurePerTick;  // 1.0f
 
 };
 
@@ -112,6 +108,7 @@ protected:
 namespace Addresses(Clock)
 {
 	DeclareAddress(Stop);
+	DeclareAddress(Pause);
 	DeclareAddress(SetMode);
 	DeclareAddress(GetElapsedTicks);
 	DeclareAddress(GetElapsedTime);
@@ -125,6 +122,11 @@ namespace Addresses(Clock)
 	// 10 - second
 	//DeclareAddress(GetTimeParam);
 };
+
+inline void Clock::Reset() {
+	mStartTime.QuadPart = 0;
+	mAccumulatedTime.QuadPart = 0;
+}
 
 inline void Clock::Start()
 {
@@ -143,7 +145,7 @@ inline void Clock::Start()
 
 inline float Clock::GetElapsed() const
 {
-	return GetElapsedTicks().LowPart * mfMeasurePerTick;
+	return GetElapsedTicks().LowPart * mMeasurePerTick;
 }
 
 inline bool Clock::IsRunning() const {

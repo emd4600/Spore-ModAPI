@@ -59,16 +59,45 @@ namespace ModAPI
 	fixed_vector<InitFunction, MAX_MODS> disposeFunctions;
 	fixed_map<uint32_t, intrusive_ptr<Simulator::ISimulatorStrategy>, MAX_MODS> simulatorStrategies;
 
+	uint32_t CRC_TABLE[256];
+
+	void GenerateCRCTable() {
+		uint32_t polynomial = 0xEDB88320;
+		for (uint32_t i = 0; i < 256; ++i) {
+			uint32_t c = i;
+			for (size_t j = 0; j < 8; ++j) {
+				if (c & 1) {
+					c = polynomial ^ (c >> 1);
+				}
+				else c >>= 1;
+			}
+			CRC_TABLE[i] = c;
+		}
+	}
+
+	uint32_t CalculateCRC(uint32_t initial, const void* buf, size_t len)
+	{
+		uint32_t c = initial ^ 0xFFFFFFFF;
+		const uint8_t* u = static_cast<const uint8_t*>(buf);
+		for (size_t i = 0; i < len; ++i)
+		{
+			c = CRC_TABLE[(c ^ u[i]) & 0xFF] ^ (c >> 8);
+		}
+		return c ^ 0xFFFFFFFF;
+	}
+
 	long AttachDetour()
 	{
+		GenerateCRCTable();
+
 		long result = 0;
 		result |= ShaderFragments_detour::attach(GetAddress(cMaterialManager, ReadShaderFragments));
 		result |= sub_7E6C60_detour::attach(Address(SelectAddress(0x7E6C60, 0x7E67E0, 0x7E6850)));
 		result |= AppInit_detour::attach(Address(SelectAddress(0xF48230, , 0xF47E90)));
 		result |= AppShutdown_detour::attach(Address(SelectAddress(0xF47950, , 0xF475A0)));
 
-		//result |= PersistanceMan_Write_detour::attach(Address(SelectAddress(0xB26670, , PLACEHOLDER)));
-		//result |= PersistanceMan_Read_detour::attach(Address(SelectAddress(0xB266B0, , PLACEHOLDER)));
+		result |= PersistanceMan_Write_detour::attach(Address(SelectAddress(0xB26670, , 0xB267E0)));
+		result |= PersistanceMan_Read_detour::attach(Address(SelectAddress(0xB266B0, , 0xB26820)));
 
 		return result;
 	}
@@ -105,6 +134,7 @@ int ModAPI::AppShutdown_detour::DETOUR()
 {
 	for (int i = ModAPI::disposeFunctions.size() - 1; i >= 0; --i) ModAPI::disposeFunctions[i]();
 
+	for (auto it : ModAPI::simulatorStrategies) it.second->Dispose();
 	ModAPI::simulatorStrategies.clear();
 
 	return original_function(this);
@@ -118,7 +148,9 @@ namespace ModAPI
 		auto s = stream->GetRecord()->GetStream();
 
 		int count;
-		IO::ReadInt32(s, &count);
+		if (!IO::ReadInt32(s, &count)) return false;
+
+		if (s->GetAvailable() < count*12) return false;
 
 		vector<uint32_t> ids(count);
 		vector<int> sizes(count);
@@ -128,6 +160,9 @@ namespace ModAPI
 		}
 
 		for (int i = 0; i < count; ++i) {
+			if (sizes[i] == 0) continue;
+			if (s->GetAvailable() < sizes[i]) return false;
+
 			auto it = simulatorStrategies.find(ids[i]);
 			if (it == simulatorStrategies.end() || !it->second)
 			{

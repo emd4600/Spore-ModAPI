@@ -19,6 +19,9 @@ namespace Simulator
 	auto_METHOD(ClassSerializer, bool, Read, Args(ISerializerStream* pStream), Args(pStream));
 	auto_METHOD(ClassSerializer, bool, Write, Args(ISerializerStream* pStream), Args(pStream));
 
+	auto_METHOD(XmlSerializer, bool, AttributesToXml,
+		Args(Attribute* attributes, void* object, const char* name), Args(attributes, object, name));
+
 	void* Attribute::DefaultOffset(Attribute* ptr) {
 		return (char*)ptr->pCurrentObject + ptr->offset;
 	}

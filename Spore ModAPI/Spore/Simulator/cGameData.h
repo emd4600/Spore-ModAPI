@@ -35,6 +35,7 @@ namespace Simulator
 	{
 	public:
 		static const uint32_t TYPE = 0x17F243B;
+		static const uint32_t NOUN_ID = 0x17F243B;
 
 		cGameData();
 		virtual ~cGameData() {}
@@ -47,10 +48,11 @@ namespace Simulator
 		/* 10h */	virtual bool Write(ISerializerStream* stream) = 0;  //PLACEHOLDER
 		/* 14h */	virtual bool Read(ISerializerStream* stream) override;
 		/* 18h */	virtual bool func18h() override;
-		/* 1Ch */	virtual bool WriteToXML(int) override;  // write as text?
+		/* 1Ch */	virtual bool WriteToXML(XmlSerializer*) override;  // write as text?
 		// GetNounID is not implemented
 
-		/* 24h */	virtual bool SetDefinitionID(int);  // 3 arguments, parses prop?? // the parameter is not a uint32_t
+		/// arg0->field_4 is definition ID, field_C is prop, field_0 is noun ID
+		/* 24h */	virtual bool SetDefinitionID(int, int, int);  // 3 arguments, parses prop?? // the parameter is not a uint32_t
 		/* 28h */	virtual void SetGameDataOwner(cGameData* pOwner);  // also sets politicalID
 		/* 2Ch */	virtual bool IsDestroyed();
 		/* 30h */	virtual cGameData* GetGameDataOwner();

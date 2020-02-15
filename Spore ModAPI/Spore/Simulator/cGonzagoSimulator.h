@@ -33,7 +33,7 @@ namespace Simulator
 		using Object::Release;
 		using Object::AddRef;
 
-		/* 10h */	virtual void func10h(int, int);
+		/* 10h */	virtual void Update(int deltaTime, int);
 		/* 14h */	virtual char16_t* GetName(int);
 		/* 18h */	virtual void func18h(int);
 

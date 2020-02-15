@@ -61,6 +61,17 @@ namespace Simulator
 		/* 50h */	virtual bool func50h();  // returns true
 		/* 54h */	virtual bool func54h();
 		/* 58h */	virtual bool func58h();
+
+		/// Adds the given strategy to the SimulatorySystem and sends it to the ModAPI DLLs.
+		/// This means that the `Update()` and `PostUpdate()` methods will be called for the strategy when 
+		/// the game is in a Simulator game mode, and it also means that its data will be saved/loaded in player games.
+		///
+		/// The given ID will be used to identify this strategy in saved games.
+		///
+		/// The `Initialize()` method of the strategy will be called. `Dispose()` will be called when the game exits.
+		///
+		/// If the method returns false, the strategy was not added because the ID was already in use by an existing strategy.
+		bool AddStrategy(ISimulatorStrategy* strategy, uint32_t id);
 			
 	protected:
 		/* 08h */	int mnRefCount;
@@ -82,7 +93,7 @@ namespace Simulator
 		/* 40h */	int field_40;
 		/* 44h */	int field_44;
 		/* 48h */	App::MessageListenerData mMessageData;
-		/* 5Ch */	vector<intrusive_ptr<cStrategy>> mSubSystems;
+		/* 5Ch */	vector<ISimulatorStrategyPtr> mSubSystems;
 
 	public:
 		static cSimulatorSystem* Get();

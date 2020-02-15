@@ -1,13 +1,17 @@
 #ifndef MODAPI_DLL_EXPORT
 #include <Spore\Simulator\cGameData.h>
+#include <Spore\Simulator\NounClassFactories.h>
+
+auto_STATIC_METHOD_VOID(Simulator, RegisterNounType, Args(uint32_t nounID, uint32_t typeID, const char* name), Args(nounID, typeID, name));
+auto_STATIC_METHOD_(Simulator, eastl::hash_map<uint32_t, NounCreateFunction>, GetNounCreateMap);
 
 namespace Simulator
 {
-	//auto_METHOD_VIRTUAL(cGameData, cGameData, bool, Write, Args(ISerializerStream* stream), Args(stream));
+	auto_METHOD_VIRTUAL(cGameData, cGameData, bool, Write, Args(ISerializerStream* stream), Args(stream));
 	auto_METHOD_VIRTUAL(cGameData, cGameData, bool, Read, Args(ISerializerStream* stream), Args(stream));
 	auto_METHOD_VIRTUAL_(cGameData, cGameData, bool, func18h);
-	auto_METHOD_VIRTUAL(cGameData, cGameData, bool, WriteToXML, Args(int arg_0), Args(arg_0));
-	auto_METHOD_VIRTUAL(cGameData, cGameData, bool, SetDefinitionID, Args(int arg_0), Args(arg_0));
+	auto_METHOD_VIRTUAL(cGameData, cGameData, bool, WriteToXML, Args(XmlSerializer* arg_0), Args(arg_0));
+	auto_METHOD_VIRTUAL(cGameData, cGameData, bool, SetDefinitionID, Args(int arg_0, int arg_4, int arg_8), Args(arg_0, arg_4, arg_8));
 	auto_METHOD_VIRTUAL_VOID(cGameData, cGameData, SetGameDataOwner, Args(cGameData* pOwner), Args(pOwner));
 	auto_METHOD_VIRTUAL_(cGameData, cGameData, bool, IsDestroyed);
 	

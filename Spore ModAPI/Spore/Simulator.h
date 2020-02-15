@@ -20,6 +20,7 @@
 
 #include <Spore\Simulator\SubSystem\cRelationshipManager.h>
 #include <Spore\Simulator\SubSystem\SimulatorSystem.h>
+#include <Spore\Simulator\SubSystem\cStrategy.h>
 #include <Spore\Simulator\SubSystem\GameInputManager.h>
 #include <Spore\Simulator\SubSystem\GameModeManager.h>
 #include <Spore\Simulator\SubSystem\GameNounManager.h>
@@ -30,6 +31,7 @@
 #include <Spore\Simulator\SubSystem\PlanetModel.h>
 
 #include <Spore\Simulator\cGameData.h>
+#include <Spore\Simulator\cGonzagoSimulator.h>
 #include <Spore\Simulator\GameNounIDs.h>
 #include <Spore\Simulator\cSpatialObject.h>
 #include <Spore\Simulator\cCombatant.h>
@@ -48,3 +50,4 @@
 
 #include <Spore\Simulator\Serialization.h>
 #include <Spore\Simulator\SerializationTypes.h>
+#include <Spore\Simulator\NounClassFactories.h>

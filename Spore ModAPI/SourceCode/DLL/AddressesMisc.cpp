@@ -21,6 +21,7 @@ namespace Addresses(Clock)
 	DefineAddress(SetMode, SelectAddress(0x93A6D0, 0x93A110, 0x93A110));
 	DefineAddress(GetElapsedTicks, SelectAddress(0x93A8D0, 0x93A310, 0x93A310));
 	DefineAddress(GetElapsedTime, SelectAddress(0x93AB10, 0x93A550, 0x93A550));
+	const uintptr_t Pause = Stop;
 
 
 	// 1 - year

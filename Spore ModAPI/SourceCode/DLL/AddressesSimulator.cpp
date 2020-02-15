@@ -53,6 +53,7 @@
 #include <Spore\Simulator\SubSystem\StarManager.h>
 #include <Spore\Simulator\SubSystem\TerraformingManager.h>
 #include <Spore\Simulator\SubSystem\ToolManager.h>
+#include <Spore\Simulator\NounClassFactories.h>
 
 namespace Addresses(Simulator)
 {
@@ -69,6 +70,9 @@ namespace Addresses(Simulator)
 	DefineAddress(GetCurrentContext, SelectAddress(0x10220E0, 0x1020F30, 0x1020F30));
 
 	DefineAddress(SpaceTeleportTo, SelectAddress(0x1023A80, , 0x10228C0));
+
+	DefineAddress(RegisterNounType, SelectAddress(0xB23CE0, , 0xB23E40));
+	DefineAddress(GetNounCreateMap, SelectAddress(0xB22090, , 0xB221A0));
 }
 
 namespace Simulator
@@ -461,6 +465,11 @@ namespace Simulator
 	{
 		DefineAddress(Read, SelectAddress(0x693F20, , 0x693DE0));
 		DefineAddress(Write, SelectAddress(0x692B10, , 0x6928C0));
+	}
+
+	namespace Addresses(XmlSerializer)
+	{
+		DefineAddress(AttributesToXml, SelectAddress(0x695D40, , 0x695B20));
 	}
 
 	namespace Addresses(cGameData)

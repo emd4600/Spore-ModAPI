@@ -15,7 +15,7 @@ namespace Simulator
 		/* 1Ch */	virtual bool func1Ch() = 0;
 		/* 20h */	virtual Resource::IPFRecord* GetRecord() const = 0;
 		/* 24h */	virtual int func24h() const = 0;
-		/* 28h */	virtual bool func28h(int, int, int) = 0;
+		/* 28h */	virtual bool func28h(uint32_t nounID, int, int) = 0;
 		/* 2Ch */	virtual bool func2Ch(int, int) = 0;
 		/* 30h */	virtual bool func30h(int) = 0;  // related with prop files?
 		/* 34h */	virtual bool func34h(int, int) = 0;
@@ -101,7 +101,7 @@ namespace Simulator
 		// Attributes are searched with a binary search, they must be ordered
 		AttributePointer attributes[128];
 		/* A00h */	int count;
-		/* A04h */	int field_A04;
+		/* A04h */	int field_A04;  // count of attributes written
 		/* A08h */	uint32_t id;
 		/* A0Ch */	void* pObject;
 		/* A10h */	Attribute* pAttributes;
@@ -115,6 +115,18 @@ namespace Simulator
 	{
 		DeclareAddress(Read);
 		DeclareAddress(Write);
+	}
+
+	class XmlSerializer
+	{
+		// it has things, but we are not really interested
+	public:
+		bool AttributesToXml(Attribute* attributes, void* object, const char* name);
+	};
+
+	namespace Addresses(XmlSerializer)
+	{
+		DeclareAddress(AttributesToXml);
 	}
 }
 

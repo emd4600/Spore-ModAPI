@@ -22,9 +22,9 @@
 
 Clock::Clock(Clock::Mode mode, bool bStart)
 	: mStartTime()
-	, field_8()
+	, mAccumulatedTime()
 	, mMode()
-	, mfMeasurePerTick(1.0f)
+	, mMeasurePerTick(1.0f)
 {
 	this->SetMode(mode);
 
@@ -35,7 +35,7 @@ Clock::Clock(Clock::Mode mode, bool bStart)
 }
 
 auto_METHOD_VOID(Clock, SetMode, Args(Clock::Mode mode), Args(mode));
-auto_METHOD_VOID_(Clock, Stop);
+auto_METHOD_VOID_(Clock, Pause);
 auto_METHOD_const_(Clock, LARGE_INTEGER, GetElapsedTicks);
-auto_METHOD_const_(Clock, LARGE_INTEGER, GetElapsedTime);
+auto_METHOD_const_(Clock, int, GetElapsedTime);
 #endif

@@ -144,14 +144,14 @@ namespace App
 					MessageManager.RemoveListener(this, kMsgAppUpdate);
 				}
 				else {
-					mClock.Stop();
+					mClock.Reset();
 					mClock.Start();
 				}
 			}
 		} else {
 			if (mClock.GetElapsed() >= mRepeatRate) {
 				mFunction();
-				mClock.Stop();
+				mClock.Reset();
 				mClock.Start();
 			}
 		}

@@ -36,7 +36,7 @@ namespace Simulator
 		/* 10h */	virtual bool Write(ISerializerStream* stream) = 0;
 		/* 14h */	virtual bool Read(ISerializerStream* stream) = 0;
 		/* 18h */	virtual bool func18h() = 0;
-		/* 1Ch */	virtual bool WriteToXML(int) = 0;  // write as text?
+		/* 1Ch */	virtual bool WriteToXML(XmlSerializer*) = 0;
 		/* 20h */	virtual uint32_t GetNounID() const = 0;
 	};
 

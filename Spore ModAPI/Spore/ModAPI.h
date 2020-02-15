@@ -1,7 +1,7 @@
 #pragma once
 
 #include <Spore\Internal.h>
-// #include <Spore\Simulator\SubSystem\cStrategy.h>
+#include <Spore\Simulator\SubSystem\cStrategy.h>
 
 ///
 /// @brief Interaction with the ModAPI base DLLs.
@@ -20,7 +20,7 @@ namespace ModAPI
 	extern MODAPI void AddPostInitFunction(InitFunction);
 	extern MODAPI void AddDisposeFunction(InitFunction);
 
-	// extern MODAPI bool AddSimulatorStrategy(Simulator::ISimulatorStrategy* strategy, uint32_t id);
+	extern MODAPI bool AddSimulatorStrategy(Simulator::ISimulatorStrategy* strategy, uint32_t id);
 
 	extern MODAPI GameType GetGameType();
 
