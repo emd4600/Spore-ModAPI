@@ -150,13 +150,13 @@ namespace Math
 
 	Vector3 Matrix3::ToEuler() const {
 		Vector3 dst;
-		CALL(GetAddress(Math, MatrixToEuler), void, Args(Vector3&, const Matrix3&), Args(dst, *this));
+		STATIC_CALL(GetAddress(Math, MatrixToEuler), void, Args(Vector3&, const Matrix3&), Args(dst, *this));
 		return dst;
 	}
 
 	Matrix3 Matrix3::FromEuler(const Vector3& angles) {
 		Matrix3 dst;
-		CALL(GetAddress(Math, EulerToMatrix), void, Args(Matrix3&, const Vector3&), Args(dst, angles));
+		STATIC_CALL(GetAddress(Math, EulerToMatrix), void, Args(Matrix3&, const Vector3&), Args(dst, angles));
 		return dst;
 	}
 

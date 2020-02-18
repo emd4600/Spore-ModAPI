@@ -129,5 +129,5 @@ inline Transform& Transform::SetRotation(const Vector3& euler)
 
 inline Transform& Transform::operator=(const Transform& other)
 {
-	return CALL(GetAddress(Transform, assign), Transform&, Args(const Transform&), Args(other));
+	return CALL(GetAddress(Transform, assign), Transform&, Args(Transform*, const Transform&), Args(this, other));
 }
