@@ -192,8 +192,28 @@ namespace Math
 		Quaternion(const Quaternion& other);
 		Quaternion();
 
+		/// Returns the inverse to this quaternion: that's another quaternion that, when multiplied with this one,
+		/// gives the identity.
+		Quaternion Inverse() const;
+
 		/// Builds a 3x3 rotation matrix equivalent to this quaternion rotation.
 		Matrix3 ToMatrix() const;
+
+		/// Returns the euler angles (in radians) that represent the same rotation as
+		/// this quaternion. It returns a vector with the rotation around the X (roll),
+		/// Y (pitch) and Z (yaw) axes.
+		Vector3 ToEuler() const;
+
+		/// Constructs a Quaternion that represents a rotation of the given angle (in radians)
+		/// around a certain axis.
+		/// @param axis The axis of rotation. Only the direction matters, the length is ignored.
+		/// @param angle The angle of rotation, in radians.
+		static Quaternion FromRotation(const Vector3& axis, float angle);
+
+		/// Constructs a Quaternion that represents a rotation, given in euler angles in radians.
+		/// The quaternion will be constructed as if the rotations were applied in Z, Y, X order.
+		/// @param angles Rotation around X (roll), Y (pitch) and Z (yaw) axes, in radians
+		static Quaternion FromEuler(const Vector3& angles);
 	};
 
 	/// Represents a point in the space, defined by two float coordinates (x, y).
@@ -356,6 +376,9 @@ namespace Math
 		/// The euler angles are a vector of 3 values that represent the rotation around the
 		/// X, Y and Z axes respectively.
 		Vector3 ToEuler() const;
+
+		/// Returns a Quaternion that represents the same rotation as this matrix.
+		Quaternion ToQuaternion() const;
 
 		/// Builds a 3x3 rotation matrix equivalent to the euler angles provided.
 		/// The euler angles must be in radians, and each value represents the rotation
@@ -595,6 +618,15 @@ namespace Math
 		r.m[2][1] = a.m[2][0] * b.m[0][1] + a.m[2][1] * b.m[1][1] + a.m[2][2] * b.m[2][1];
 		r.m[2][2] = a.m[2][0] * b.m[0][2] + a.m[2][1] * b.m[1][2] + a.m[2][2] * b.m[2][2];
 		return r;
+	}
+
+	inline Quaternion operator*(Quaternion a, const Quaternion& b) {
+		Quaternion q;
+		q.w = a.w * b.w - a.x * b.x - a.y * b.y - a.z * b.z;
+		q.x = a.w * b.x + a.x * b.w + a.y * b.z - a.z * b.y;
+		q.y = a.w * b.y - a.x * b.z + a.y * b.w + a.z * b.x;
+		q.z = a.w * b.z + a.x * b.y - a.y * b.x + a.z * b.w;
+		return q;
 	}
 
 

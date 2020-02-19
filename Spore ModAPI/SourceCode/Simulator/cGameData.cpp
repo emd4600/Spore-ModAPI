@@ -3,7 +3,7 @@
 #include <Spore\Simulator\NounClassFactories.h>
 
 auto_STATIC_METHOD_VOID(Simulator, RegisterNounType, Args(uint32_t nounID, uint32_t typeID, const char* name), Args(nounID, typeID, name));
-auto_STATIC_METHOD_(Simulator, eastl::hash_map<uint32_t, NounCreateFunction>, GetNounCreateMap);
+//auto_STATIC_METHOD_(Simulator, Simulator::NounCreateMap&, GetNounCreateMap);
 
 namespace Simulator
 {
