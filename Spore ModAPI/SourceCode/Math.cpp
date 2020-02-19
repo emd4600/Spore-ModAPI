@@ -176,23 +176,118 @@ namespace Math
 
 		float tmp1 = x * y;
 		float tmp2 = z * w;
-		d.m[1][0] = 2.0f * (tmp1 + tmp2) * invs;
-		d.m[0][1] = 2.0f * (tmp1 - tmp2) * invs;
+		d.m[0][1] = 2.0f * (tmp1 + tmp2) * invs;
+		d.m[1][0] = 2.0f * (tmp1 - tmp2) * invs;
 
 		tmp1 = x * z;
 		tmp2 = y * w;
-		d.m[2][0] = 2.0f * (tmp1 - tmp2) * invs;
-		d.m[0][2] = 2.0f * (tmp1 + tmp2) * invs;
+		d.m[0][2] = 2.0f * (tmp1 - tmp2) * invs;
+		d.m[2][0] = 2.0f * (tmp1 + tmp2) * invs;
 		tmp1 = y * z;
 		tmp2 = x * w;
-		d.m[2][1] = 2.0f * (tmp1 + tmp2) * invs;
-		d.m[1][2] = 2.0f * (tmp1 - tmp2) * invs;
+		d.m[1][2] = 2.0f * (tmp1 + tmp2) * invs;
+		d.m[2][1] = 2.0f * (tmp1 - tmp2) * invs;
 
 		return d;
 	}
 
+	Quaternion Matrix3::ToQuaternion() const {
+		Quaternion q;
+		float trace = m[0][0] + m[1][1] + m[2][2];
+		if (trace > 0) {  // maybe should use epsilon here
+			float s = 0.5f / sqrtf(trace + 1.0f);
+			q.w = 0.25f / s;
+			q.x = (m[1][2] - m[2][1]) * s;
+			q.y = (m[2][0] - m[0][2]) * s;
+			q.z = (m[0][1] - m[1][0]) * s;
+		}
+		else {
+			if (m[0][0] > m[1][1] && m[0][0] > m[2][2]) {
+				float s = 2.0f * sqrtf(1.0f + m[0][0] - m[1][1] - m[2][2]);
+				q.w = (m[2][1] - m[1][2]) / s;
+				q.x = 0.25f * s;
+				q.y = (m[0][1] + m[1][0]) / s;
+				q.z = (m[0][2] + m[2][0]) / s;
+			}
+			else if (m[1][1] > m[2][2]) {
+				float s = 2.0f * sqrtf(1.0f + m[1][1] - m[0][0] - m[2][2]);
+				q.w = (m[2][0] - m[0][2]) / s;
+				q.x = (m[1][0] + m[0][1]) / s;
+				q.y = 0.25f * s;
+				q.z = (m[2][1] + m[1][2]) / s;
+			}
+			else {
+				float s = 2.0f * sqrtf(1.0f + m[2][2] - m[0][0] - m[1][1]);
+				q.w = (m[0][1] - m[1][0]) / s;
+				q.x = (m[2][0] + m[0][2]) / s;
+				q.y = (m[2][1] + m[1][2]) / s;
+				q.z = 0.25f * s;
+			}
+		}
+		return q;
+	}
+
 	auto_METHOD_VOID(BoundingBox, ApplyTransform, Args(const Transform& t), Args(t));
 
+
+	Quaternion Quaternion::FromRotation(const Vector3& axis, float angle) {
+		Quaternion q;
+		q.w = cosf(angle / 2.0);
+		q.x = sinf(angle / 2.0) * cosf(axis.x);
+		q.y = sinf(angle / 2.0) * cosf(axis.y);
+		q.z = sinf(angle / 2.0) * cosf(axis.z);
+		return q;
+	}
+
+	Quaternion Quaternion::FromEuler(const Vector3& angles) {
+		float cy = cosf(angles.z * 0.5);
+		float sy = sinf(angles.z * 0.5);
+		float cp = cosf(angles.y * 0.5);
+		float sp = sinf(angles.y * 0.5);
+		float cr = cosf(angles.x * 0.5);
+		float sr = sinf(angles.x * 0.5);
+
+		Quaternion q;
+		q.w = cy * cp * cr + sy * sp * sr;
+		q.x = cy * cp * sr - sy * sp * cr;
+		q.y = sy * cp * sr + cy * sp * cr;
+		q.z = sy * cp * cr - cy * sp * sr;
+
+		return q;
+	}
+
+	Vector3 Quaternion::ToEuler() const {
+		Vector3 angles;
+
+		// roll (x-axis rotation)
+		float sinr_cosp = 2 * (w * x + y * z);
+		float cosr_cosp = 1 - 2 * (x * x + y * y);
+		angles.x = std::atan2(sinr_cosp, cosr_cosp);
+
+		// pitch (y-axis rotation)
+		float sinp = 2 * (w * y - z * x);
+		if (std::abs(sinp) >= 1)
+			angles.y = std::copysign(PI / 2, sinp); // use 90 degrees if out of range
+		else
+			angles.y = std::asin(sinp);
+
+		// yaw (z-axis rotation)
+		float siny_cosp = 2 * (w * z + x * y);
+		float cosy_cosp = 1 - 2 * (y * y + z * z);
+		angles.z = std::atan2(siny_cosp, cosy_cosp);
+
+		return angles;
+	}
+
+	Quaternion Quaternion::Inverse() const {
+		float a = 1.0f / (w * w + x * x + y * y + z * z);
+		Quaternion q;
+		q.w = w * a;
+		q.x = -x * a;
+		q.y = -y * a;
+		q.z = -z * a;
+		return q;
+	}
 }
 
 Transform::Transform()
