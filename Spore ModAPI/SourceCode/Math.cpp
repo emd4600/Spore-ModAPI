@@ -231,11 +231,12 @@ namespace Math
 
 
 	Quaternion Quaternion::FromRotation(const Vector3& axis, float angle) {
+		Vector3 a = axis.Normalized();
 		Quaternion q;
 		q.w = cosf(angle / 2.0);
-		q.x = sinf(angle / 2.0) * cosf(axis.x);
-		q.y = sinf(angle / 2.0) * cosf(axis.y);
-		q.z = sinf(angle / 2.0) * cosf(axis.z);
+		q.x = sinf(angle / 2.0) * a.x;
+		q.y = sinf(angle / 2.0) * a.y;
+		q.z = sinf(angle / 2.0) * a.z;
 		return q;
 	}
 
