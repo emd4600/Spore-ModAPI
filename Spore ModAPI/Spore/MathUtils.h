@@ -184,8 +184,10 @@ namespace Math
 		Vector4& operator/=(float);
 	};
 
-	/// A vector of 4 float values (x, y, z, w) representing a quaternion rotation; same as a Vector4.
-	/// Has a value of (0, 0, 0, 1) by default.
+	/// A vector of 4 float values (x, y, z, w) representing a quaternion rotation, similar to a Vector4.
+	/// Quaternions an be multiplied to chain rotations: `q1 * q2` means applying rotation `r2` followed by rotation `r2`.
+	/// You can use the Quaternion::FromRotation() and Quaternion::FromEuler() to build quaternion rotations.
+	/// It has a value of (0, 0, 0, 1) by default.
 	struct Quaternion : public Vector4
 	{
 		Quaternion(float x, float y, float z, float w);

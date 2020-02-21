@@ -38,6 +38,10 @@ namespace Resource
 		virtual void* Cast(uint32_t typeID) const override;
 		virtual int GetReferenceCount();
 
+		inline ResourceKey GetName() const {
+			return mNameKey;
+		}
+
 		static const uint32_t TYPE = 0x2269ED1;
 
 	protected:
