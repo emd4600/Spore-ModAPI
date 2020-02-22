@@ -275,8 +275,8 @@ namespace App
 		void* GetValue();
 
 		///
-		/// Returns the number of items inside the array of the property it read.
-		/// If the property is not an array, I have no clue what will happen.
+		/// Only for array properties, returns the number of items inside the array.
+		/// If the property is not an array, it might return any number.
 		///
 		size_t GetItemCount();
 		///@}
