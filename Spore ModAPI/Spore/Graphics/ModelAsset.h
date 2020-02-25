@@ -44,7 +44,9 @@ namespace Graphics
 
 	enum
 	{
-		kModelFlagUseColor = 0x2,
+		kModelFlagUseColor = 0x2,  // actually 4?
+
+		kModelFlagObjectTypeColor = 0x8,
 
 		kModelFlagVisible = 0x8000,
 
@@ -87,7 +89,7 @@ namespace Graphics
 		/* 4Ch */	Math::ColorRGBA mColor;
 		/* 5Ch */	bool field_5C;
 		/* 5Dh */	bool field_5D;
-		/* 60h */	int field_60;
+		/* 60h */	int field_60;  // PLACEHOLDER used to select objectTypeColor
 		/* 64h */	int field_64;
 		/* 68h */	int field_68;  // not initialized
 		/* 6Ch */	float mDefaultBoundingRadius;  // 1.0f
@@ -103,24 +105,27 @@ namespace Graphics
 
 	protected:
 		// The object, at 30h, has vector<Material*>
+		// not really a vector, but 4 values? selected by field_128
+		// this objects have the pointers to mesh, etc
 		/* 9Ch */	vector<intrusive_ptr<void*>> field_9C;
 		/* B0h */	int field_B0;  // not initialized
-		/* B4h */	vector<intrusive_ptr<void*>> field_B4;  // PLACEHOLDER not really a vector! related with animations
+		/* B4h */	vector<intrusive_ptr<void*>> field_B4;  // PLACEHOLDER actually 4 pointers to Animations
 		/* C8h */	int field_C8;  // not initialized
 		/* CCh */	int field_CC;  // -1
 		/* D0h */	short field_D0;
+		//PLACEHOLDER THIS IS probablty wrong  // loc_750B92
 		/* D4h */	float mnLodDistances[4];
 		/* E4h */	Transform mTransform;
 		/* 11Ch */	float field_11C;  // 1.0f
 		/* 120h */	int field_120;
 		/* 124h */	float mfEffectRange;
-		/* 128h */	bool field_128;
+		/* 128h */	int8_t field_128;  // material index? max 4
 		/* 129h */	bool mbUseLodDistances;
 		/* 12Ah */	short field_12A;
 		/* 12Ch */	int field_12C;
 		/* 130h */	int field_130;
-		/* 134h */	int field_134;
-		/* 138h */	int field_138;
+		/* 134h */	int field_134;  // PLACEHOLDER sunDirAndCelStrength
+		/* 138h */	int field_138;  // flags
 	};
 
 	/////////////////////////////////

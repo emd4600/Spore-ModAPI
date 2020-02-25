@@ -21,10 +21,12 @@
 
 #include <cstdint>
 
+#include <Spore\Swarm\IEffectWorld.h>
 #include <Spore\Graphics\ModelAsset.h>
 #include <Spore\Graphics\IRenderable.h>
 #include <Spore\Graphics\ILightingWorld.h>
 #include <Spore\App\PropertyList.h>
+#include <Spore\RenderWare\RWMath.h>
 
 #define IModelWorldPtr intrusive_ptr<Graphics::IModelWorld>
 
@@ -99,7 +101,7 @@ namespace Graphics
 		/// @param pModel The model.
 		/// @param pDstInstanceID [Optional] Reference to the destination variable for the instance ID.
 		/// @param pDstGroupID [Optional] Reference to the destination variable for the group ID.
-		/* 50h */	virtual void GetResourceIDs(const Model* pModel, uint32_t* pDstInstanceID, uint32_t* pDstGroupID) = 0;
+		/* 50h */	virtual void GetResourceID(const Model* pModel, uint32_t* pDstInstanceID, uint32_t* pDstGroupID) = 0;
 
 		/* 54h */	virtual void GetRegions(const Model* pModel, vector<uint32_t>& dst) = 0;
 
@@ -124,18 +126,40 @@ namespace Graphics
 		/// @returns The bounding box.
 		/* 60h */	virtual const BoundingBox& GetBoundingBox(const Model* pModel) = 0;
 
-		/* 64h */	virtual int func64h() = 0;
-		/* 68h */	virtual int func68h() = 0;
-		/* 6Ch */	virtual int func6Ch() = 0;
-		/* 70h */	virtual int func70h() = 0;
-		/* 74h */	virtual int func74h() = 0;
-		/* 78h */	virtual int func78h() = 0;
-		/* 7Ch */	virtual int func7Ch() = 0;
-		/* 80h */	virtual int func80h() = 0;
-		/* 84h */	virtual int func84h() = 0;
-		/* 88h */	virtual int func88h() = 0;
-		/* 8Ch */	virtual int func8Ch() = 0;
-		/* 90h */	virtual int func90h() = 0;
+		/* 64h */	virtual int func64h() = 0;  // returns amount of skeletonSink?
+
+		/// Returns the amount of animations contained in the model.
+		/// @param pModel
+		/* 68h */	virtual int GetAnimCount(const Model* pModel, int skeletonSinkIndex = 0) const = 0;
+
+		/// Used to get the IDs of the animations contained in the model.
+		/// `dst` must be an array of the size returned by GetAnimCount()
+		/// @param pModel
+		/// @param[out] dst
+		/* 6Ch */	virtual int GetAnimIDs(const Model* pModel, uint32_t* dst, int skeletonSinkIndex = 0) const = 0;
+		/* 70h */	virtual void func70h(Model* pModel, uint32_t animID, int = 3, float = 0.0, int skeletonSinkIndex = 0) = 0;
+
+		/// Changes the current time of an animation in the model. The time must be in the range returned by GetAnimRange()
+		/// @param pModel
+		/// @param animID
+		/// @param time
+		/* 74h */	virtual void SetAnimTime(Model* pModel, uint32_t animID, float time, int = 0) = 0;
+		/* 78h */	virtual int func78h(Model* pModel, uint32_t animID, float, int) = 0;
+		/* 7Ch */	virtual int func7Ch(Model* pModel) const = 0;   // sets field_11C of model
+		// last parameter is index (skeleton index or smth?), first float always gets written to 0
+
+		/// Used to get the start and end time of an animation in the model, in seconds.
+		/// The length of the animation can be calculated with `dstEnd - dstStart`.
+		/// @param pModel
+		/// @param animID
+		/// @param[out] dstStart
+		/// @param[out] dstEnd
+		/* 80h */	virtual bool GetAnimRange(const Model* pModel, uint32_t animID, float& dstStart, float& dstEnd, int = 0) const = 0;
+		/* 84h */	virtual int func84h(const Model* pModel) const = 0;
+		// Returns amount of bones
+		/* 88h */	virtual int GetAnimationSkin(const Model* pModel, RenderWare::Matrix3x4* dst, bool original = false) const = 0;
+		/* 8Ch */	virtual int func8Ch(const Model* pModel, void* dst) = 0;
+		/* 90h */	virtual int func90h() = 0;  
 		/* 94h */	virtual int func94h() = 0;
 		/* 98h */	virtual int func98h() = 0;
 		/* 9Ch */	virtual int func9Ch() = 0;
@@ -190,12 +214,13 @@ namespace Graphics
 		///
 		/* 13Ch */	virtual IRenderable* ToRenderable() = 0;
 
-		/* 140h */	virtual int AddLightingWorld(ILightingWorld* pWorld, int, bool) = 0;
+		// saves boolean at 1D0, world ad 1CC, bool is related with shadows
+		/* 140h */	virtual int AddLightingWorld(ILightingWorld* pWorld, int slotIndex, bool) = 0;
 
 
-		/* 144h */	virtual int func144h() = 0;
-		/* 148h */	virtual int func148h() = 0;
-		/* 14Ch */	virtual int func14Ch() = 0;
+		/* 144h */	virtual ILightingWorld* GetLightingWorld(int slotIndex) = 0;
+		/* 148h */	virtual int func148h(Swarm::IEffectWorld*) = 0;
+		/* 14Ch */	virtual Swarm::IEffectWorld* func14Ch() = 0;
 		/* 150h */	virtual int func150h() = 0;
 		/* 154h */	virtual int func154h() = 0;
 		/* 158h */	virtual int func158h() = 0;
@@ -211,6 +236,7 @@ namespace Graphics
 		///
 		/* 16Ch */	virtual bool SetModelVisibile(Model* pModel, bool visible) = 0;
 
+		// model destructor calls this, and will crash if it was already removed
 		/* 170h */	virtual void DestroyModel(Model* pModel, bool) = 0;  // ?
 
 		/* 174h */	virtual bool Initialize() = 0;
@@ -223,6 +249,7 @@ namespace Graphics
 
 		// 2ECh vector?
 		// 300h vector
+		// 5C8h		IEffectWorldPtr
 
 	};
 

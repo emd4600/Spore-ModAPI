@@ -2,6 +2,7 @@
 
 #include <EASTL\vector.h>
 #include <Spore\RenderWare\RenderWareFile.h>
+#include <Spore\RenderWare\KeyframeAnim.h>
 
 namespace Graphics
 {
@@ -30,12 +31,15 @@ namespace Graphics
 		/* 0Ch */	int field_C;
 		/* 10h */	int field_10;
 		/* 14h */	vector<int> field_14;
+		// related with SkinsInK, 08h is SkinsInK*
 		/* 28h */	vector<int> field_28;
 		// related with SkeletonsInK
 		/* 3Ch */	vector<int> field_3C;
 		/* 50h */	vector<int> field_50;
+		// related with SkeletonsInK, used to process animations
 		/* 64h */	vector<int> field_64;
-		/* 78h */	vector<int> field_78;
+		// related with morph handles
+		/* 78h */	vector<pair<uint32_t, KeyframeAnim>> mAnimNames;
 		/* 8Ch */	int field_8C;
 		/* 90h */	int field_90;
 		/* 94h */	int field_94;
