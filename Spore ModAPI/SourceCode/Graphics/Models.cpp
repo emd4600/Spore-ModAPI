@@ -20,7 +20,8 @@
 
 #include <Spore\Graphics\IModelWorld.h>
 #include <Spore\Graphics\IModelManager.h>
-#include <Spore\Simulator\cSimulatorPlayerUFO.h>
+#include <Spore\Graphics\cMaterialInfo.h>
+#include <EASTL\internal\thread_support.h>
 
 namespace Graphics
 {
@@ -53,5 +54,22 @@ namespace Graphics
 
 
 	auto_METHOD_(Model, int, Release);
+
+
+	int cMaterialInfo::AddRef()
+	{
+		return eastl::Internal::atomic_increment(&mnRefCount);
+	}
+
+	int cMaterialInfo::Release()
+	{
+		int refCount = eastl::Internal::atomic_decrement(&mnRefCount);
+		if (refCount == 0)
+		{
+			mnRefCount = 1;
+			delete this;
+		}
+		return refCount;
+	}
 }
 #endif

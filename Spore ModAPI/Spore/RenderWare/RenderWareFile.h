@@ -21,6 +21,8 @@
 #include <Spore\Resource\ResourceObject.h>
 #include <Spore\RenderWare\RWHeader.h>
 
+#define RenderWareFilePtr intrusive_ptr<RenderWare::RenderWareFile>
+
 namespace RenderWare
 {
 	class RenderWareFile : public Resource::ResourceObject

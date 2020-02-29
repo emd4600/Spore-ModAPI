@@ -24,8 +24,13 @@
 #include <EASTL\intrusive_list.h>
 
 #include <Spore\App\PropertyList.h>
+#include <Spore\ResourceID.h>
 #include <Spore\MathUtils.h>
 #include <Spore\Transform.h>
+#include <Spore\Swarm\IEffect.h>
+#include <Spore\Graphics\cMaterialInfo.h>
+#include <Spore\Graphics\ModelMesh.h>
+#include <Spore\Graphics\Animations.h>
 
 #define ModelPtr intrusive_ptr<Graphics::Model>
 #define ModelAssetPtr intrusive_ptr<Graphics::ModelAsset>
@@ -104,28 +109,48 @@ namespace Graphics
 	public:
 
 	protected:
+		struct EffectInstance
+		{
+			/* 00h */	::ResourceID mResourceID;
+			/* 08h */	IEffectPtr mpEffect;
+			/* 0Ch */	Transform mTransform;
+			/* 44h */	bool mEnabled;  // true
+		};
+		// size depends on light count
+		struct ModelLights {
+			/* 00h */	int count;
+			/* 04h */	float* lightStrength;
+			/* 08h */	ColorRGB* lightColor;
+			/* 0Ch */	float* lightSize;
+			/* 10h */	Vector3 lightOffset;
+		};
+
 		// The object, at 30h, has vector<Material*>
-		// not really a vector, but 4 values? selected by field_128
 		// this objects have the pointers to mesh, etc
-		/* 9Ch */	vector<intrusive_ptr<void*>> field_9C;
-		/* B0h */	int field_B0;  // not initialized
-		/* B4h */	vector<intrusive_ptr<void*>> field_B4;  // PLACEHOLDER actually 4 pointers to Animations
-		/* C8h */	int field_C8;  // not initialized
+		// constructor at sub_741AD0
+		/* 9Ch */	ModelMeshPtr mMeshLods[4];
+		/* ACh */	ModelMeshPtr mMeshHull;
+		/* B0h */	ModelMeshPtr mMeshLodHi;
+		/* B4h */	intrusive_ptr<Animations> mAnimationLods[4];
+		/* C4h */	intrusive_ptr<Animations> mAnimationHull;
+		/* C8h */	intrusive_ptr<Animations> mAnimationLodHi;
 		/* CCh */	int field_CC;  // -1
-		/* D0h */	short field_D0;
-		//PLACEHOLDER THIS IS probablty wrong  // loc_750B92
-		/* D4h */	float mnLodDistances[4];
+		/* D0h */	short field_D0;  // -1
+		/* D4h */	float* mLodDistances;
+		/* D8h */	cMaterialInfoPtr mMaterialInfo;
+		/* DCh */	EffectInstance* mEffects;
+		/* E0h */	ModelLights* mLights;
 		/* E4h */	Transform mTransform;
 		/* 11Ch */	float field_11C;  // 1.0f
 		/* 120h */	int field_120;
-		/* 124h */	float mfEffectRange;
-		/* 128h */	int8_t field_128;  // material index? max 4
-		/* 129h */	bool mbUseLodDistances;
+		/* 124h */	float mEffectRange;
+		/* 128h */	int8_t mLodIndex;
+		/* 129h */	int8_t mLodLevels;
 		/* 12Ah */	short field_12A;
 		/* 12Ch */	int field_12C;
 		/* 130h */	int field_130;
 		/* 134h */	int field_134;  // PLACEHOLDER sunDirAndCelStrength
-		/* 138h */	int field_138;  // flags
+		/* 138h */	int field_138;  // flags   0x10000000 fixed lod?  0x20000000 no effect range
 	};
 
 	/////////////////////////////////

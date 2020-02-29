@@ -164,15 +164,35 @@ namespace Graphics
 		/* 98h */	virtual int func98h() = 0;
 		/* 9Ch */	virtual int func9Ch() = 0;
 		/* A0h */	virtual int funcA0h() = 0;
-		/* A4h */	virtual int funcA4h() = 0;
-		/* A8h */	virtual int funcA8h() = 0;
+
+		/* A4h */	virtual void SetMaterialInfo(Model* pModel, cMaterialInfo* pMaterialInfo, int region = -1) const = 0;
+		/* A8h */	virtual cMaterialInfo* GetMaterialInfo(const Model* pModel, int region = -1) const = 0;
+
 		/* ACh */	virtual int funcACh() = 0;
-		/* B0h */	virtual int funcB0h() = 0;
-		/* B4h */	virtual int funcB4h() = 0;
-		/* B8h */	virtual int funcB8h() = 0;
+
+		/// Returns how many mesh versions this model has, which depend on the level of detail (LOD).
+		/// @param pModel
+		/* B0h */	virtual int GetLodMeshCount(const Model* pModel) const = 0;
+
+		/// Forces the model to use a certain lod level, or restores it to the default (which is changing lod level
+		/// depending on distance).
+		/// @param pModel The model to change.
+		/// @param lod The level of detail t use, between 0 and 3. If -1 is used, the lod will be decided by distance.
+		/* B4h */	virtual void SetFixedLod(Model* pModel, int lod) const = 0;
+
+		/// Sets the effect range for the model. If the value is negative, effect range will be ignored,
+		/// so effects in this model will be displayed at any distance. Otherwise, the value is ignored, and the
+		/// effect range is loaded from the model `.prop` file.
+		/* B8h */	virtual void SetEffectRange(Model* pModel, double effectRange = -1.0f) const = 0;
 		/* BCh */	virtual int funcBCh() = 0;
 		/* C0h */	virtual int funcC0h() = 0;
-		/* C4h */	virtual int funcC4h() = 0;
+
+		/// Enables or disables the effects in the model. An instance ID can be specified; in that case, only
+		/// effects with that ID will be affected.
+		/// @param pModel
+		/// @param enable If true, effects will be enabled
+		/// @param instanceID [Optional] If not 0, only effects with this ID will be changed.
+		/* C4h */	virtual void SetEffectEnable(Model* pModel, bool enable, uint32_t instanceID = 0) const = 0;
 		/* C8h */	virtual int funcC8h() = 0;
 		/* CCh */	virtual int funcCCh() = 0;
 		/* D0h */	virtual int funcD0h() = 0;
@@ -245,6 +265,7 @@ namespace Graphics
 	protected:
 		void LoadModelProperties(const App::PropertyList* pPropList, ModelAsset* pAsset, int nFlags, int arg_C);
 
+		// 18h modelmanager
 		// /* 19Ch */	intrusive_list<ModelAsset> ??
 
 		// 2ECh vector?
