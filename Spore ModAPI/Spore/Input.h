@@ -22,6 +22,7 @@
 #include <EASTL\bitset.h>
 #include <Spore\Internal.h>
 #include <Spore\MathUtils.h>
+#include <WinUser.h>
 
 enum KeyModifierFlags
 {
@@ -111,7 +112,7 @@ struct GameInput
 	static bool IsMouseButtonDown(MouseButton button);
 
 	/// The keys that are pressed.
-	/* 00h */	int keys[8];
+	/* 00h */	eastl::bitset<8*32> keys;
 	/// The modifiers of the last key that was pressed.
 	/* 20h */	KeyModifiers keyModifiers;
 	/// The mouse buttons that are pressed.
@@ -188,14 +189,7 @@ inline void GameInput::OnMouseWheel(int nWheelDelta, float mouseX, float mouseY,
 }
 
 inline void GameInput::Reset() {
-	keys[0] = 0;
-	keys[1] = 0;
-	keys[2] = 0;
-	keys[3] = 0;
-	keys[4] = 0;
-	keys[5] = 0;
-	keys[6] = 0;
-	keys[7] = 0;
+	keys.reset();
 	keyModifiers.value = 0;
 	mouseButtons[0] = false;
 	mouseButtons[1] = false;
