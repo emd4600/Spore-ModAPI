@@ -70,6 +70,12 @@
               <span class="m-doc-wrap-bumper">static auto <a href="#a76e771d2f26e0bbd18097056fc3b5cb7" class="m-doc">FromEuler</a>(</span><span class="m-doc-wrap">const <a href="struct_math_1_1_vector3.html" class="m-doc">Vector3</a>&amp; angles) -&gt; <a href="struct_math_1_1_matrix3.html" class="m-doc">Matrix3</a></span>
             </dt>
             <dd>Builds a 3x3 rotation matrix equivalent to the euler angles provided.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">static auto <a href="#a5d60566263544803ee29791a6853927b" class="m-doc">LookAt</a>(</span><span class="m-doc-wrap">const <a href="struct_math_1_1_vector3.html" class="m-doc">Vector3</a>&amp; position,
+              const <a href="struct_math_1_1_vector3.html" class="m-doc">Vector3</a>&amp; target,
+              const <a href="struct_math_1_1_vector3.html" class="m-doc">Vector3</a>&amp; up = <a href="namespace_math.html#a3cc087fd325ae8245cd21a9f4ecf93f9" class="m-doc">Z_<wbr />AXIS</a>) -&gt; <a href="struct_math_1_1_matrix3.html" class="m-doc">Matrix3</a></span>
+            </dt>
+            <dd>Constructs a rotation matrix that can be used in cameras, for a camera at <code>position</code> looking towards <code>target</code>.</dd>
           </dl>
         </section>
         <section id="typeless-methods">
@@ -96,6 +102,14 @@
               <span class="m-doc-wrap-bumper">auto <a href="#adec44d7bbfcb3cf2984ffc1840f69e34" class="m-doc">ToEuler</a>(</span><span class="m-doc-wrap">) const -&gt; <a href="struct_math_1_1_vector3.html" class="m-doc">Vector3</a></span>
             </dt>
             <dd>Returns the euler angles (in radians) equivalent to the rotation of this matrix.</dd>
+            <dt id="a3f9836e417fd080a775873a04a4208bb">
+              <span class="m-doc-wrap-bumper">auto <a href="#a3f9836e417fd080a775873a04a4208bb" class="m-doc-self">ToQuaternion</a>(</span><span class="m-doc-wrap">) const -&gt; <a href="struct_math_1_1_quaternion.html" class="m-doc">Quaternion</a></span>
+            </dt>
+            <dd>Returns a <a href="struct_math_1_1_quaternion.html" class="m-doc">Quaternion</a> that represents the same rotation as this matrix.</dd>
+            <dt id="ad62c0f35d366fa78ccfbccc5e1b248a4">
+              <span class="m-doc-wrap-bumper">auto <a href="#ad62c0f35d366fa78ccfbccc5e1b248a4" class="m-doc-self">Transposed</a>(</span><span class="m-doc-wrap">) const -&gt; <a href="struct_math_1_1_matrix3.html" class="m-doc">Matrix3</a></span>
+            </dt>
+            <dd>Returns the transpose of this matrix, switching the rows and columns. <code>transposed[i][j] = matrix[j][i]</code></dd>
           </dl>
         </section>
         <section id="pub-attribs">
@@ -126,6 +140,34 @@
               </tbody>
             </table>
 <p>The euler angles must be in radians, and each value represents the rotation around the X, Y and Z axes respectively.</p>
+          </div></section>
+          <section class="m-doc-details" id="a5d60566263544803ee29791a6853927b"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">static <a href="struct_math_1_1_matrix3.html" class="m-doc">Matrix3</a> Math::<wbr />Matrix3::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a5d60566263544803ee29791a6853927b" class="m-doc-self">LookAt</a>(</span><span class="m-doc-wrap">const <a href="struct_math_1_1_vector3.html" class="m-doc">Vector3</a>&amp; position,
+              const <a href="struct_math_1_1_vector3.html" class="m-doc">Vector3</a>&amp; target,
+              const <a href="struct_math_1_1_vector3.html" class="m-doc">Vector3</a>&amp; up = <a href="namespace_math.html#a3cc087fd325ae8245cd21a9f4ecf93f9" class="m-doc">Z_<wbr />AXIS</a>)</span></span>
+            </h3>
+            <p>Constructs a rotation matrix that can be used in cameras, for a camera at <code>position</code> looking towards <code>target</code>.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">position</td>
+                  <td>The &quot;eye&quot; position</td>
+                </tr>
+                <tr>
+                  <td>target</td>
+                  <td>The position where the &quot;eye&quot; is looking at</td>
+                </tr>
+                <tr>
+                  <td>up</td>
+                  <td>[Optional] The up vector, Z axis by default.</td>
+                </tr>
+              </tbody>
+            </table>
+<p>Optionally, the vector that represents the up direction in the world (which usually is the Z axis) can be specified.</p><p>This method might give unexpected results if target and position are aligned.</p>
           </div></section>
           <section class="m-doc-details" id="add43f7fb30eb62b037db74eadfa88430"><div>
             <h3>

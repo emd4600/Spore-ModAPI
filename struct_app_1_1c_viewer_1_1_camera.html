@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Simulator::ISimulatorSerializable class | Spore ModAPI SDK for creating C++ mods for Spore</title>
+  <title>App::cViewer::Camera struct | Spore ModAPI SDK for creating C++ mods for Spore</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,600,600i%7CSource+Code+Pro:400,400i,600" />
   <link rel="stylesheet" href="m-dark.css" />
   <link rel="stylesheet" href="m-documentation.css" />
@@ -45,8 +45,8 @@
     <div class="m-row">
       <div class="m-col-l-10 m-push-l-1">
         <h1>
-          <span class="m-breadcrumb"><a href="namespace_simulator.html">Simulator</a>::<wbr/></span>ISimulatorSerializable <span class="m-thin">class</span>
-          <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_i_simulator_serializable_8h.html">&lt;Spore/Simulator/ISimulatorSerializable.h&gt;</a></div>
+          <span class="m-breadcrumb"><a href="namespace_app.html">App</a>::<wbr/></span><span class="m-breadcrumb"><a href="class_app_1_1c_viewer.html">cViewer</a>::<wbr/></span>Camera <span class="m-thin">struct</span>
+          <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="c_viewer_8h.html">&lt;Spore/App/cViewer.h&gt;</a></div>
         </h1>
         <p><span></span></p>
         <div class="m-block m-default">
@@ -55,100 +55,68 @@
             <li>
               Reference
               <ul>
-                <li><a href="#base-classes">Base classes</a></li>
-                <li><a href="#derived-classes">Derived classes</a></li>
-                <li><a href="#pub-static-attribs">Public static variables</a></li>
-                <li><a href="#typeless-methods">Constructors, destructors, conversion operators</a></li>
-                <li><a href="#pub-methods">Public functions</a></li>
+                <li><a href="#pub-attribs">Public variables</a></li>
               </ul>
             </li>
           </ul>
         </div>
-        <section id="base-classes">
-          <h2><a href="#base-classes">Base classes</a></h2>
+        <section id="pub-attribs">
+          <h2><a href="#pub-attribs">Public variables</a></h2>
           <dl class="m-doc">
-            <dt>
-              class <a href="class_object.html" class="m-doc">Object</a>
-            </dt>
-            <dd>This class represents a basic reference counted object.</dd>
-          </dl>
-        </section>
-        <section id="derived-classes">
-          <h2><a href="#derived-classes">Derived classes</a></h2>
-          <dl class="m-doc">
-            <dt>
-              class <a href="class_simulator_1_1c_game_data.html" class="m-doc">cGameData</a>
+            <dt id="ab1bb805374fb00629f1f09818be49703">
+              <a href="struct_math_1_1_matrix4.html" class="m-doc">Matrix4</a> <a href="#ab1bb805374fb00629f1f09818be49703" class="m-doc-self">worldToCameraTranspose</a>
             </dt>
             <dd><span></span></dd>
-            <dt>
-              class <a href="class_simulator_1_1c_gonzago_simulator.html" class="m-doc">cGonzagoSimulator</a>
+            <dt id="a801aee6586a2153a1051750f7a914c47">
+              <a href="namespace_graphics.html#a3c548300798e9385956948d634f9b5e9" class="m-doc">Graphics::<wbr />RTT</a>* <a href="#a801aee6586a2153a1051750f7a914c47" class="m-doc-self">renderTargets</a>
             </dt>
             <dd><span></span></dd>
-            <dt>
-              class <a href="class_simulator_1_1c_relationship_manager.html" class="m-doc">cRelationshipManager</a>
+            <dt id="a2ddd590d3759eceb3bf018d29de72f55">
+              <a href="namespace_graphics.html#a3c548300798e9385956948d634f9b5e9" class="m-doc">Graphics::<wbr />RTT</a>* <a href="#a2ddd590d3759eceb3bf018d29de72f55" class="m-doc-self">depthStencilSurface</a>
             </dt>
             <dd><span></span></dd>
-            <dt>
-              class <a href="class_simulator_1_1c_saved_game_header.html" class="m-doc">cSavedGameHeader</a>
+            <dt id="a5ad6ea6a855d8cbdf33a1aa18b0d4bc8">
+              char <a href="#a5ad6ea6a855d8cbdf33a1aa18b0d4bc8" class="m-doc-self">_padding_54</a>
             </dt>
             <dd><span></span></dd>
-            <dt>
-              class <a href="class_simulator_1_1c_solar_system.html" class="m-doc">cSolarSystem</a>
+            <dt id="a0ac5eed7133b14bb52fd8b3f846f6b19">
+              float <a href="#a0ac5eed7133b14bb52fd8b3f846f6b19" class="m-doc-self">field_5C</a>
             </dt>
             <dd><span></span></dd>
-            <dt>
-              class <a href="class_simulator_1_1c_space_inventory_item.html" class="m-doc">cSpaceInventoryItem</a>
+            <dt id="a754468b9c6e087f69777903c2050eda2">
+              float <a href="#a754468b9c6e087f69777903c2050eda2" class="m-doc-self">field_60</a>
             </dt>
             <dd><span></span></dd>
-            <dt>
-              class <a href="class_simulator_1_1c_star_record.html" class="m-doc">cStarRecord</a>
+            <dt id="a760db9647e7f2c5a8440ae1e72f7a7ce">
+              float <a href="#a760db9647e7f2c5a8440ae1e72f7a7ce" class="m-doc-self">scaleX</a>
             </dt>
             <dd><span></span></dd>
-            <dt>
-              class <a href="class_simulator_1_1_i_simulator_serializable_ref_counted.html" class="m-doc">ISimulatorSerializableRefCounted</a>
+            <dt id="afd96141bdeda63e6c9ee0d142187af38">
+              float <a href="#afd96141bdeda63e6c9ee0d142187af38" class="m-doc-self">scaleY</a>
             </dt>
             <dd><span></span></dd>
-          </dl>
-        </section>
-        <section id="pub-static-attribs">
-          <h2><a href="#pub-static-attribs">Public static variables</a></h2>
-          <dl class="m-doc">
-            <dt id="a68841b401dfd3431445a064f4a59d2ae">
-              static const uint32_t <a href="#a68841b401dfd3431445a064f4a59d2ae" class="m-doc-self">TYPE</a>
+            <dt id="afe24d89961ab03d8cbac3c706b6492ac">
+              int <a href="#afe24d89961ab03d8cbac3c706b6492ac" class="m-doc-self">field_6C</a>
             </dt>
             <dd><span></span></dd>
-          </dl>
-        </section>
-        <section id="typeless-methods">
-          <h2><a href="#typeless-methods">Constructors, destructors, conversion operators</a></h2>
-          <dl class="m-doc">
-            <dt id="a4ca7db109347990510c3be5993d6dfce">
-              <span class="m-doc-wrap-bumper"><a href="#a4ca7db109347990510c3be5993d6dfce" class="m-doc-self">~ISimulatorSerializable</a>(</span><span class="m-doc-wrap">) <span class="m-label m-flat m-warning">virtual</span></span>
+            <dt id="a1c7b68866ad64a9e95a3c4ebc77b726a">
+              float <a href="#a1c7b68866ad64a9e95a3c4ebc77b726a" class="m-doc-self">nearPlane</a>
             </dt>
             <dd><span></span></dd>
-          </dl>
-        </section>
-        <section id="pub-methods">
-          <h2><a href="#pub-methods">Public functions</a></h2>
-          <dl class="m-doc">
-            <dt id="aa0c3ae18e25c95cf4ce6df7c7c8f6bf6">
-              <span class="m-doc-wrap-bumper">auto <a href="#aa0c3ae18e25c95cf4ce6df7c7c8f6bf6" class="m-doc-self">Write</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1_i_serializer_stream.html" class="m-doc">ISerializerStream</a>* stream) -&gt; bool <span class="m-label m-flat m-warning">pure virtual</span></span>
+            <dt id="acc45cfdcad3673d4949714a875e2a6fe">
+              float <a href="#acc45cfdcad3673d4949714a875e2a6fe" class="m-doc-self">farPlane</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="a6b8e73a8b97b5fab52934f30004ea5a4">
-              <span class="m-doc-wrap-bumper">auto <a href="#a6b8e73a8b97b5fab52934f30004ea5a4" class="m-doc-self">Read</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1_i_serializer_stream.html" class="m-doc">ISerializerStream</a>* stream) -&gt; bool <span class="m-label m-flat m-warning">pure virtual</span></span>
+            <dt id="a901ca2d90905596ad69b5e08baeffd3a">
+              D3DVIEWPORT9 <a href="#a901ca2d90905596ad69b5e08baeffd3a" class="m-doc-self">viewport</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="a42bad13c1984f6474aaf3c2c6d741382">
-              <span class="m-doc-wrap-bumper">auto <a href="#a42bad13c1984f6474aaf3c2c6d741382" class="m-doc-self">func18h</a>(</span><span class="m-doc-wrap">) -&gt; bool <span class="m-label m-flat m-warning">pure virtual</span></span>
+            <dt id="a055cfc8f88abc15e763374fc013569cd">
+              int <a href="#a055cfc8f88abc15e763374fc013569cd" class="m-doc-self">field_90</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="ac96b0fccdbeca58f28b50e004a55fc25">
-              <span class="m-doc-wrap-bumper">auto <a href="#ac96b0fccdbeca58f28b50e004a55fc25" class="m-doc-self">WriteToXML</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1_xml_serializer.html" class="m-doc">XmlSerializer</a>*) -&gt; bool <span class="m-label m-flat m-warning">pure virtual</span></span>
-            </dt>
-            <dd><span></span></dd>
-            <dt id="a6f10061bb3076aa4e705be27802f587d">
-              <span class="m-doc-wrap-bumper">auto <a href="#a6f10061bb3076aa4e705be27802f587d" class="m-doc-self">GetNounID</a>(</span><span class="m-doc-wrap">) const -&gt; uint32_t <span class="m-label m-flat m-warning">pure virtual</span></span>
+            <dt id="ac94265072d01c10a8eb2aee1cd5ad378">
+              int <a href="#ac94265072d01c10a8eb2aee1cd5ad378" class="m-doc-self">stencilBitDepth</a>
             </dt>
             <dd><span></span></dd>
           </dl>

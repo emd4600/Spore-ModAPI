@@ -174,7 +174,7 @@
             </dt>
             <dd><span></span></dd>
             <dt>
-              <span class="m-doc-wrap-bumper">void <a href="#a2d668aef2bfaaaafa447ef6712342cfe" class="m-doc">GetResourceIDs</a>(</span><span class="m-doc-wrap">const <a href="class_graphics_1_1_model.html" class="m-doc">Model</a>* pModel,
+              <span class="m-doc-wrap-bumper">void <a href="#a21548ade94fe292ba257dcfcd93e49e5" class="m-doc">GetResourceID</a>(</span><span class="m-doc-wrap">const <a href="class_graphics_1_1_model.html" class="m-doc">Model</a>* pModel,
               uint32_t* pDstInstanceID,
               uint32_t* pDstGroupID) <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
@@ -200,44 +200,64 @@
               <span class="m-doc-wrap-bumper">auto <a href="#aa08d9e35d691d4130573f5ca293234ba" class="m-doc-self">func64h</a>(</span><span class="m-doc-wrap">) -&gt; int <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
             <dd><span></span></dd>
-            <dt id="ac8fae9885945a0cfb113a085fc9139f8">
-              <span class="m-doc-wrap-bumper">auto <a href="#ac8fae9885945a0cfb113a085fc9139f8" class="m-doc-self">func68h</a>(</span><span class="m-doc-wrap">) -&gt; int <span class="m-label m-flat m-warning">pure virtual</span></span>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a98da08a766102b22475db6666c7b74b1" class="m-doc">GetAnimCount</a>(</span><span class="m-doc-wrap">const <a href="class_graphics_1_1_model.html" class="m-doc">Model</a>* pModel,
+              int skeletonSinkIndex = 0) const -&gt; int <span class="m-label m-flat m-warning">pure virtual</span></span>
+            </dt>
+            <dd>Returns the amount of animations contained in the model.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#afbfa9e4717b4efeb5f133b1d40126608" class="m-doc">GetAnimIDs</a>(</span><span class="m-doc-wrap">const <a href="class_graphics_1_1_model.html" class="m-doc">Model</a>* pModel,
+              uint32_t* dst,
+              int skeletonSinkIndex = 0) const -&gt; int <span class="m-label m-flat m-warning">pure virtual</span></span>
+            </dt>
+            <dd>Used to get the IDs of the animations contained in the model.</dd>
+            <dt id="acfac0e3e8ed054094dcb4ed68e6524d9">
+              <span class="m-doc-wrap-bumper">void <a href="#acfac0e3e8ed054094dcb4ed68e6524d9" class="m-doc-self">func70h</a>(</span><span class="m-doc-wrap"><a href="class_graphics_1_1_model.html" class="m-doc">Model</a>* pModel,
+              uint32_t animID,
+              int = 3,
+              float = 0.0,
+              int skeletonSinkIndex = 0) <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
             <dd><span></span></dd>
-            <dt id="a1a17b194d6e20ccd414767197bc23a3b">
-              <span class="m-doc-wrap-bumper">auto <a href="#a1a17b194d6e20ccd414767197bc23a3b" class="m-doc-self">func6Ch</a>(</span><span class="m-doc-wrap">) -&gt; int <span class="m-label m-flat m-warning">pure virtual</span></span>
+            <dt>
+              <span class="m-doc-wrap-bumper">void <a href="#a996d963ce6df215818ae332775971bef" class="m-doc">SetAnimTime</a>(</span><span class="m-doc-wrap"><a href="class_graphics_1_1_model.html" class="m-doc">Model</a>* pModel,
+              uint32_t animID,
+              float time,
+              int = 0) <span class="m-label m-flat m-warning">pure virtual</span></span>
+            </dt>
+            <dd>Changes the current time of an animation in the model.</dd>
+            <dt id="abc9c13c02f75cae6a5653b5e58a96abd">
+              <span class="m-doc-wrap-bumper">auto <a href="#abc9c13c02f75cae6a5653b5e58a96abd" class="m-doc-self">func78h</a>(</span><span class="m-doc-wrap"><a href="class_graphics_1_1_model.html" class="m-doc">Model</a>* pModel,
+              uint32_t animID,
+              float,
+              int) -&gt; int <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
             <dd><span></span></dd>
-            <dt id="a372c3abfe461eb0b68bd67c1e61eb6f2">
-              <span class="m-doc-wrap-bumper">auto <a href="#a372c3abfe461eb0b68bd67c1e61eb6f2" class="m-doc-self">func70h</a>(</span><span class="m-doc-wrap">) -&gt; int <span class="m-label m-flat m-warning">pure virtual</span></span>
+            <dt id="a5fce2be7f5bfb94f4a0c99de0428493a">
+              <span class="m-doc-wrap-bumper">auto <a href="#a5fce2be7f5bfb94f4a0c99de0428493a" class="m-doc-self">func7Ch</a>(</span><span class="m-doc-wrap"><a href="class_graphics_1_1_model.html" class="m-doc">Model</a>* pModel) const -&gt; int <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
             <dd><span></span></dd>
-            <dt id="a461e174601eb793da2bb35a615c19fd0">
-              <span class="m-doc-wrap-bumper">auto <a href="#a461e174601eb793da2bb35a615c19fd0" class="m-doc-self">func74h</a>(</span><span class="m-doc-wrap">) -&gt; int <span class="m-label m-flat m-warning">pure virtual</span></span>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#aa9a493eeb94eb4f6ccc35173d57a9178" class="m-doc">GetAnimRange</a>(</span><span class="m-doc-wrap">const <a href="class_graphics_1_1_model.html" class="m-doc">Model</a>* pModel,
+              uint32_t animID,
+              float&amp; dstStart,
+              float&amp; dstEnd,
+              int = 0) const -&gt; bool <span class="m-label m-flat m-warning">pure virtual</span></span>
+            </dt>
+            <dd>Used to get the start and end time of an animation in the model, in seconds.</dd>
+            <dt id="a3560af43a3f0f90706f0af07b4e08e6c">
+              <span class="m-doc-wrap-bumper">auto <a href="#a3560af43a3f0f90706f0af07b4e08e6c" class="m-doc-self">func84h</a>(</span><span class="m-doc-wrap">const <a href="class_graphics_1_1_model.html" class="m-doc">Model</a>* pModel) const -&gt; int <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
             <dd><span></span></dd>
-            <dt id="a7867b7e8cb87ac264a0ee32401bf00c4">
-              <span class="m-doc-wrap-bumper">auto <a href="#a7867b7e8cb87ac264a0ee32401bf00c4" class="m-doc-self">func78h</a>(</span><span class="m-doc-wrap">) -&gt; int <span class="m-label m-flat m-warning">pure virtual</span></span>
+            <dt id="ae649c8a43395e1274cdc69195c4e3bf6">
+              <span class="m-doc-wrap-bumper">auto <a href="#ae649c8a43395e1274cdc69195c4e3bf6" class="m-doc-self">GetAnimationSkin</a>(</span><span class="m-doc-wrap">const <a href="class_graphics_1_1_model.html" class="m-doc">Model</a>* pModel,
+              <a href="struct_render_ware_1_1_matrix3x4.html" class="m-doc">RenderWare::<wbr />Matrix3x4</a>* dst,
+              bool original = false) const -&gt; int <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
             <dd><span></span></dd>
-            <dt id="a2c3a21c15144c8cd35d88c1ad054f891">
-              <span class="m-doc-wrap-bumper">auto <a href="#a2c3a21c15144c8cd35d88c1ad054f891" class="m-doc-self">func7Ch</a>(</span><span class="m-doc-wrap">) -&gt; int <span class="m-label m-flat m-warning">pure virtual</span></span>
-            </dt>
-            <dd><span></span></dd>
-            <dt id="aee07ad150109615584d4cf176c9b4843">
-              <span class="m-doc-wrap-bumper">auto <a href="#aee07ad150109615584d4cf176c9b4843" class="m-doc-self">func80h</a>(</span><span class="m-doc-wrap">) -&gt; int <span class="m-label m-flat m-warning">pure virtual</span></span>
-            </dt>
-            <dd><span></span></dd>
-            <dt id="aeb1da6d304604dc70c919904708e078f">
-              <span class="m-doc-wrap-bumper">auto <a href="#aeb1da6d304604dc70c919904708e078f" class="m-doc-self">func84h</a>(</span><span class="m-doc-wrap">) -&gt; int <span class="m-label m-flat m-warning">pure virtual</span></span>
-            </dt>
-            <dd><span></span></dd>
-            <dt id="a2de1fa689063b6aa0c2bc949371d5e77">
-              <span class="m-doc-wrap-bumper">auto <a href="#a2de1fa689063b6aa0c2bc949371d5e77" class="m-doc-self">func88h</a>(</span><span class="m-doc-wrap">) -&gt; int <span class="m-label m-flat m-warning">pure virtual</span></span>
-            </dt>
-            <dd><span></span></dd>
-            <dt id="adfb1aa3598d2cbdde958b4c3bede7dd3">
-              <span class="m-doc-wrap-bumper">auto <a href="#adfb1aa3598d2cbdde958b4c3bede7dd3" class="m-doc-self">func8Ch</a>(</span><span class="m-doc-wrap">) -&gt; int <span class="m-label m-flat m-warning">pure virtual</span></span>
+            <dt id="a0553ade3ab97c3402c052d286b7db0e5">
+              <span class="m-doc-wrap-bumper">auto <a href="#a0553ade3ab97c3402c052d286b7db0e5" class="m-doc-self">func8Ch</a>(</span><span class="m-doc-wrap">const <a href="class_graphics_1_1_model.html" class="m-doc">Model</a>* pModel,
+              void* dst) -&gt; int <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
             <dd><span></span></dd>
             <dt id="aa8844625435fc8e1d0c6a224740c34ca">
@@ -260,30 +280,35 @@
               <span class="m-doc-wrap-bumper">auto <a href="#ae8710c2ee3948a822557100cb9a950c9" class="m-doc-self">funcA0h</a>(</span><span class="m-doc-wrap">) -&gt; int <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
             <dd><span></span></dd>
-            <dt id="aec1f3d5d235813f3fda7157f4e702e8c">
-              <span class="m-doc-wrap-bumper">auto <a href="#aec1f3d5d235813f3fda7157f4e702e8c" class="m-doc-self">funcA4h</a>(</span><span class="m-doc-wrap">) -&gt; int <span class="m-label m-flat m-warning">pure virtual</span></span>
+            <dt id="a1ac0ab43fd5af975683a4646100dfef2">
+              <span class="m-doc-wrap-bumper">void <a href="#a1ac0ab43fd5af975683a4646100dfef2" class="m-doc-self">SetMaterialInfo</a>(</span><span class="m-doc-wrap"><a href="class_graphics_1_1_model.html" class="m-doc">Model</a>* pModel,
+              <a href="class_graphics_1_1c_material_info.html" class="m-doc">cMaterialInfo</a>* pMaterialInfo,
+              int region = -1) const <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
             <dd><span></span></dd>
-            <dt id="aa0f1e509d2a0bd1e6f534d7de54e0503">
-              <span class="m-doc-wrap-bumper">auto <a href="#aa0f1e509d2a0bd1e6f534d7de54e0503" class="m-doc-self">funcA8h</a>(</span><span class="m-doc-wrap">) -&gt; int <span class="m-label m-flat m-warning">pure virtual</span></span>
+            <dt id="a1c3f61f6dc449e8efe479f8ef682262a">
+              <span class="m-doc-wrap-bumper">auto <a href="#a1c3f61f6dc449e8efe479f8ef682262a" class="m-doc-self">GetMaterialInfo</a>(</span><span class="m-doc-wrap">const <a href="class_graphics_1_1_model.html" class="m-doc">Model</a>* pModel,
+              int region = -1) const -&gt; <a href="class_graphics_1_1c_material_info.html" class="m-doc">cMaterialInfo</a>* <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
             <dd><span></span></dd>
             <dt id="aad23c4637dcdbb422385c8972344938c">
               <span class="m-doc-wrap-bumper">auto <a href="#aad23c4637dcdbb422385c8972344938c" class="m-doc-self">funcACh</a>(</span><span class="m-doc-wrap">) -&gt; int <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
             <dd><span></span></dd>
-            <dt id="ae3e74ad7188875a93f19b2de18380c25">
-              <span class="m-doc-wrap-bumper">auto <a href="#ae3e74ad7188875a93f19b2de18380c25" class="m-doc-self">funcB0h</a>(</span><span class="m-doc-wrap">) -&gt; int <span class="m-label m-flat m-warning">pure virtual</span></span>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a7d66680ac2b8e3c164133b33b850ad7e" class="m-doc">GetLodMeshCount</a>(</span><span class="m-doc-wrap">const <a href="class_graphics_1_1_model.html" class="m-doc">Model</a>* pModel) const -&gt; int <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
-            <dd><span></span></dd>
-            <dt id="a9c8f2ee20eac8a231d50293ca85f2212">
-              <span class="m-doc-wrap-bumper">auto <a href="#a9c8f2ee20eac8a231d50293ca85f2212" class="m-doc-self">funcB4h</a>(</span><span class="m-doc-wrap">) -&gt; int <span class="m-label m-flat m-warning">pure virtual</span></span>
+            <dd>Returns how many mesh versions this model has, which depend on the level of detail (LOD).</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">void <a href="#a2392f7131d85eaf519eebce4a1f2a862" class="m-doc">SetFixedLod</a>(</span><span class="m-doc-wrap"><a href="class_graphics_1_1_model.html" class="m-doc">Model</a>* pModel,
+              int lod) const <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
-            <dd><span></span></dd>
-            <dt id="aadd2703a600caa05f8b4c922750fd924">
-              <span class="m-doc-wrap-bumper">auto <a href="#aadd2703a600caa05f8b4c922750fd924" class="m-doc-self">funcB8h</a>(</span><span class="m-doc-wrap">) -&gt; int <span class="m-label m-flat m-warning">pure virtual</span></span>
+            <dd>Forces the model to use a certain lod level, or restores it to the default (which is changing lod level depending on distance).</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">void <a href="#a5364e16099cf7eba8495f8afb011a513" class="m-doc">SetEffectRange</a>(</span><span class="m-doc-wrap"><a href="class_graphics_1_1_model.html" class="m-doc">Model</a>* pModel,
+              double effectRange = -1.0f) const <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
-            <dd><span></span></dd>
+            <dd>Sets the effect range for the model.</dd>
             <dt id="ac3afefe6c7900a51b51906f5ec074e75">
               <span class="m-doc-wrap-bumper">auto <a href="#ac3afefe6c7900a51b51906f5ec074e75" class="m-doc-self">funcBCh</a>(</span><span class="m-doc-wrap">) -&gt; int <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
@@ -292,10 +317,12 @@
               <span class="m-doc-wrap-bumper">auto <a href="#a34792cdc23697228c4c556095f60abf2" class="m-doc-self">funcC0h</a>(</span><span class="m-doc-wrap">) -&gt; int <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
             <dd><span></span></dd>
-            <dt id="a95523601d95b6a1778b45318ccd265da">
-              <span class="m-doc-wrap-bumper">auto <a href="#a95523601d95b6a1778b45318ccd265da" class="m-doc-self">funcC4h</a>(</span><span class="m-doc-wrap">) -&gt; int <span class="m-label m-flat m-warning">pure virtual</span></span>
+            <dt>
+              <span class="m-doc-wrap-bumper">void <a href="#a3aaeb9e81771574bec7a634efc063cda" class="m-doc">SetEffectEnable</a>(</span><span class="m-doc-wrap"><a href="class_graphics_1_1_model.html" class="m-doc">Model</a>* pModel,
+              bool enable,
+              uint32_t instanceID = 0) const <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
-            <dd><span></span></dd>
+            <dd>Enables or disables the effects in the model.</dd>
             <dt id="a583e468ca34cfe7668638b4607b4bf8f">
               <span class="m-doc-wrap-bumper">auto <a href="#a583e468ca34cfe7668638b4607b4bf8f" class="m-doc-self">funcC8h</a>(</span><span class="m-doc-wrap">) -&gt; int <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
@@ -416,22 +443,22 @@
               <span class="m-doc-wrap-bumper">auto <a href="#ae9d2e9f0bdfd94ba14dfbb527b417bb8" class="m-doc-self">ToRenderable</a>(</span><span class="m-doc-wrap">) -&gt; <a href="class_graphics_1_1_i_renderable.html" class="m-doc">IRenderable</a>* <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
             <dd>Returns the <a href="class_graphics_1_1_i_renderable.html" class="m-doc">IRenderable</a> object that can be used to render this model world.</dd>
-            <dt id="add1da484befb6386464594eced71ee06">
-              <span class="m-doc-wrap-bumper">auto <a href="#add1da484befb6386464594eced71ee06" class="m-doc-self">AddLightingWorld</a>(</span><span class="m-doc-wrap"><a href="class_graphics_1_1_i_lighting_world.html" class="m-doc">ILightingWorld</a>* pWorld,
-              int,
+            <dt id="a24544445f8e45d357910ca0e5cb6a465">
+              <span class="m-doc-wrap-bumper">auto <a href="#a24544445f8e45d357910ca0e5cb6a465" class="m-doc-self">AddLightingWorld</a>(</span><span class="m-doc-wrap"><a href="class_graphics_1_1_i_lighting_world.html" class="m-doc">ILightingWorld</a>* pWorld,
+              int slotIndex,
               bool) -&gt; int <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
             <dd><span></span></dd>
-            <dt id="a41aee25dbb83d0c8e552e6791316dee9">
-              <span class="m-doc-wrap-bumper">auto <a href="#a41aee25dbb83d0c8e552e6791316dee9" class="m-doc-self">func144h</a>(</span><span class="m-doc-wrap">) -&gt; int <span class="m-label m-flat m-warning">pure virtual</span></span>
+            <dt id="a77f9ba072ba04bba6099a156e4cd3d47">
+              <span class="m-doc-wrap-bumper">auto <a href="#a77f9ba072ba04bba6099a156e4cd3d47" class="m-doc-self">GetLightingWorld</a>(</span><span class="m-doc-wrap">int slotIndex) -&gt; <a href="class_graphics_1_1_i_lighting_world.html" class="m-doc">ILightingWorld</a>* <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
             <dd><span></span></dd>
-            <dt id="a6801fb5d0c3f279f8d0e2d79b051efd0">
-              <span class="m-doc-wrap-bumper">auto <a href="#a6801fb5d0c3f279f8d0e2d79b051efd0" class="m-doc-self">func148h</a>(</span><span class="m-doc-wrap">) -&gt; int <span class="m-label m-flat m-warning">pure virtual</span></span>
+            <dt id="a98960be3b7b4b12129b18e287102d5c4">
+              <span class="m-doc-wrap-bumper">auto <a href="#a98960be3b7b4b12129b18e287102d5c4" class="m-doc-self">func148h</a>(</span><span class="m-doc-wrap"><a href="class_swarm_1_1_i_effect_world.html" class="m-doc">Swarm::<wbr />IEffectWorld</a>*) -&gt; int <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
             <dd><span></span></dd>
-            <dt id="ab5fe8af1bae124bf07ba0619a6c1a54c">
-              <span class="m-doc-wrap-bumper">auto <a href="#ab5fe8af1bae124bf07ba0619a6c1a54c" class="m-doc-self">func14Ch</a>(</span><span class="m-doc-wrap">) -&gt; int <span class="m-label m-flat m-warning">pure virtual</span></span>
+            <dt id="ae4af14593a2ea3526440151796f9a356">
+              <span class="m-doc-wrap-bumper">auto <a href="#ae4af14593a2ea3526440151796f9a356" class="m-doc-self">func14Ch</a>(</span><span class="m-doc-wrap">) -&gt; <a href="class_swarm_1_1_i_effect_world.html" class="m-doc">Swarm::<wbr />IEffectWorld</a>* <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
             <dd><span></span></dd>
             <dt id="a05f08dc3bb5cb6a47ed7ea18a2c1930c">
@@ -524,9 +551,9 @@
             </table>
 <p>Keep in mind that a model refers to the configuration file (i.e. the .prop file) which includes the model files for each level of detail, the effects that must be used, etc. If the model configuration does not exist, a builtin model might be used.</p>
           </div></section>
-          <section class="m-doc-details" id="a2d668aef2bfaaaafa447ef6712342cfe"><div>
+          <section class="m-doc-details" id="a21548ade94fe292ba257dcfcd93e49e5"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">void Graphics::<wbr />IModelWorld::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a2d668aef2bfaaaafa447ef6712342cfe" class="m-doc-self">GetResourceIDs</a>(</span><span class="m-doc-wrap">const <a href="class_graphics_1_1_model.html" class="m-doc">Model</a>* pModel,
+              <span class="m-doc-wrap-bumper">void Graphics::<wbr />IModelWorld::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a21548ade94fe292ba257dcfcd93e49e5" class="m-doc-self">GetResourceID</a>(</span><span class="m-doc-wrap">const <a href="class_graphics_1_1_model.html" class="m-doc">Model</a>* pModel,
               uint32_t* pDstInstanceID,
               uint32_t* pDstGroupID) <span class="m-label m-warning">pure virtual</span></span></span>
             </h3>
@@ -613,6 +640,194 @@
                 </tr>
               </tfoot>
             </table>
+          </div></section>
+          <section class="m-doc-details" id="a98da08a766102b22475db6666c7b74b1"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">int Graphics::<wbr />IModelWorld::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a98da08a766102b22475db6666c7b74b1" class="m-doc-self">GetAnimCount</a>(</span><span class="m-doc-wrap">const <a href="class_graphics_1_1_model.html" class="m-doc">Model</a>* pModel,
+              int skeletonSinkIndex = 0) const <span class="m-label m-warning">pure virtual</span></span></span>
+            </h3>
+            <p>Returns the amount of animations contained in the model.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">pModel</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>skeletonSinkIndex</td>
+                  <td></td>
+                </tr>
+              </tbody>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="afbfa9e4717b4efeb5f133b1d40126608"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">int Graphics::<wbr />IModelWorld::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#afbfa9e4717b4efeb5f133b1d40126608" class="m-doc-self">GetAnimIDs</a>(</span><span class="m-doc-wrap">const <a href="class_graphics_1_1_model.html" class="m-doc">Model</a>* pModel,
+              uint32_t* dst,
+              int skeletonSinkIndex = 0) const <span class="m-label m-warning">pure virtual</span></span></span>
+            </h3>
+            <p>Used to get the IDs of the animations contained in the model.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">pModel</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>dst&nbsp;<span class="m-label m-flat m-warning">out</span></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>skeletonSinkIndex</td>
+                  <td></td>
+                </tr>
+              </tbody>
+            </table>
+<p><code>dst</code> must be an array of the size returned by <a href="class_graphics_1_1_i_model_world.html#a98da08a766102b22475db6666c7b74b1" class="m-doc">GetAnimCount()</a></p>
+          </div></section>
+          <section class="m-doc-details" id="a996d963ce6df215818ae332775971bef"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">void Graphics::<wbr />IModelWorld::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a996d963ce6df215818ae332775971bef" class="m-doc-self">SetAnimTime</a>(</span><span class="m-doc-wrap"><a href="class_graphics_1_1_model.html" class="m-doc">Model</a>* pModel,
+              uint32_t animID,
+              float time,
+              int = 0) <span class="m-label m-warning">pure virtual</span></span></span>
+            </h3>
+            <p>Changes the current time of an animation in the model.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">pModel</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>animID</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>time</td>
+                  <td></td>
+                </tr>
+              </tbody>
+            </table>
+<p>The time must be in the range returned by <a href="class_graphics_1_1_i_model_world.html#aa9a493eeb94eb4f6ccc35173d57a9178" class="m-doc">GetAnimRange()</a></p>
+          </div></section>
+          <section class="m-doc-details" id="aa9a493eeb94eb4f6ccc35173d57a9178"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">bool Graphics::<wbr />IModelWorld::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#aa9a493eeb94eb4f6ccc35173d57a9178" class="m-doc-self">GetAnimRange</a>(</span><span class="m-doc-wrap">const <a href="class_graphics_1_1_model.html" class="m-doc">Model</a>* pModel,
+              uint32_t animID,
+              float&amp; dstStart,
+              float&amp; dstEnd,
+              int = 0) const <span class="m-label m-warning">pure virtual</span></span></span>
+            </h3>
+            <p>Used to get the start and end time of an animation in the model, in seconds.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">pModel</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>animID</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>dstStart&nbsp;<span class="m-label m-flat m-warning">out</span></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>dstEnd&nbsp;<span class="m-label m-flat m-warning">out</span></td>
+                  <td></td>
+                </tr>
+              </tbody>
+            </table>
+<p>The length of the animation can be calculated with <code>dstEnd - dstStart</code>.</p>
+          </div></section>
+          <section class="m-doc-details" id="a7d66680ac2b8e3c164133b33b850ad7e"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">int Graphics::<wbr />IModelWorld::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a7d66680ac2b8e3c164133b33b850ad7e" class="m-doc-self">GetLodMeshCount</a>(</span><span class="m-doc-wrap">const <a href="class_graphics_1_1_model.html" class="m-doc">Model</a>* pModel) const <span class="m-label m-warning">pure virtual</span></span></span>
+            </h3>
+            <p>Returns how many mesh versions this model has, which depend on the level of detail (LOD).</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">pModel</td>
+                  <td></td>
+                </tr>
+              </tbody>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="a2392f7131d85eaf519eebce4a1f2a862"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">void Graphics::<wbr />IModelWorld::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a2392f7131d85eaf519eebce4a1f2a862" class="m-doc-self">SetFixedLod</a>(</span><span class="m-doc-wrap"><a href="class_graphics_1_1_model.html" class="m-doc">Model</a>* pModel,
+              int lod) const <span class="m-label m-warning">pure virtual</span></span></span>
+            </h3>
+            <p>Forces the model to use a certain lod level, or restores it to the default (which is changing lod level depending on distance).</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">pModel</td>
+                  <td>The model to change.</td>
+                </tr>
+                <tr>
+                  <td>lod</td>
+                  <td>The level of detail t use, between 0 and 3. If -1 is used, the lod will be decided by distance.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="a5364e16099cf7eba8495f8afb011a513"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">void Graphics::<wbr />IModelWorld::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a5364e16099cf7eba8495f8afb011a513" class="m-doc-self">SetEffectRange</a>(</span><span class="m-doc-wrap"><a href="class_graphics_1_1_model.html" class="m-doc">Model</a>* pModel,
+              double effectRange = -1.0f) const <span class="m-label m-warning">pure virtual</span></span></span>
+            </h3>
+            <p>Sets the effect range for the model.</p>
+<p>If the value is negative, effect range will be ignored, so effects in this model will be displayed at any distance. Otherwise, the value is ignored, and the effect range is loaded from the model <code>.prop</code> file.</p>
+          </div></section>
+          <section class="m-doc-details" id="a3aaeb9e81771574bec7a634efc063cda"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">void Graphics::<wbr />IModelWorld::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a3aaeb9e81771574bec7a634efc063cda" class="m-doc-self">SetEffectEnable</a>(</span><span class="m-doc-wrap"><a href="class_graphics_1_1_model.html" class="m-doc">Model</a>* pModel,
+              bool enable,
+              uint32_t instanceID = 0) const <span class="m-label m-warning">pure virtual</span></span></span>
+            </h3>
+            <p>Enables or disables the effects in the model.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">pModel</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>enable</td>
+                  <td>If true, effects will be enabled</td>
+                </tr>
+                <tr>
+                  <td>instanceID</td>
+                  <td>[Optional] If not 0, only effects with this ID will be changed.</td>
+                </tr>
+              </tbody>
+            </table>
+<p>An instance ID can be specified; in that case, only effects with that ID will be affected.</p>
           </div></section>
           <section class="m-doc-details" id="acbb919fa39705b91b133fd7e75d767a2"><div>
             <h3>

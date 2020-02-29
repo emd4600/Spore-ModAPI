@@ -63,7 +63,7 @@
             </li>
           </ul>
         </div>
-<p>It supports multiple precisions expressed in the enum <a href="class_clock.html#a4bb672d0b12eceb314a01ab15d9676cb" class="m-doc">Clock::<wbr />Mode</a>: minutes, seconds, milliseconds, microseconds, nanoseconds, ticks and nanoseprocessor time stamp. In order to use a clock, first you have to start it with the <a href="class_clock.html#ac034a45c8476b44c262f97c4b62f4772" class="m-doc">Clock::<wbr />Start()</a> method. Then just use the <a href="class_clock.html#aec62576bf03c1a8c6c962931750d6bf3" class="m-doc">Clock::<wbr />GetElapsed()</a> method (or its variants) to get the elapsed time since the clock was started. In order to reset the counter, you must use <a href="class_clock.html#a9ee8cacd91323a41359ae592d14141d8" class="m-doc">Clock::<wbr />Stop()</a> and then you can start the clock again.</p>
+<p>It supports multiple precisions from the enum <a href="class_clock.html#a4bb672d0b12eceb314a01ab15d9676cb" class="m-doc">Clock::<wbr />Mode</a>: <em>minutes</em>, <em>seconds</em>, <em>milliseconds</em>, <em>microseconds</em>, <em>nanoseconds</em>, <em>ticks</em> and <em>processor time stamp</em>.</p><p>In order to use a clock, first you have to start it with the <a href="class_clock.html#ac034a45c8476b44c262f97c4b62f4772" class="m-doc">Clock::<wbr />Start()</a> method. Then just use the <a href="class_clock.html#aec62576bf03c1a8c6c962931750d6bf3" class="m-doc">Clock::<wbr />GetElapsed()</a> method (or its variants) to get the elapsed time since the clock was started.</p><p>You can pause the clock using <a href="class_clock.html#adec6529c8f0fa8e9e848ef46d4c087e8" class="m-doc">Clock::<wbr />Pause()</a>, then use <code><a href="class_clock.html#ac034a45c8476b44c262f97c4b62f4772" class="m-doc">Start()</a></code> again to continue counting the accumulated time. If you want to clear the accumulated time and count from 0, use <a href="class_clock.html#a100a6250066b4234ec7fa53fc02d66bc" class="m-doc">Clock::<wbr />Reset()</a>.</p>
         <section id="pub-types">
           <h2><a href="#pub-types">Public types</a></h2>
           <dl class="m-doc">
@@ -83,8 +83,8 @@
           <h2><a href="#typeless-methods">Constructors, destructors, conversion operators</a></h2>
           <dl class="m-doc">
             <dt>
-              <span class="m-doc-wrap-bumper"><a href="#a18e7c9314fa8911e0f8ee5215cf058b4" class="m-doc">Clock</a>(</span><span class="m-doc-wrap"><a href="class_clock.html#a4bb672d0b12eceb314a01ab15d9676cb" class="m-doc">Clock::<wbr />Mode</a> mode = <a href="class_clock.html#a4bb672d0b12eceb314a01ab15d9676cba7ad0bde3d601cd3c0eaa8eb5bf27cb1a" class="m-doc">Clock::<wbr />Mode::<wbr />Ticks</a>,
-              bool bStart = false)</span>
+              <span class="m-doc-wrap-bumper"><a href="#a9fb7afced09099ff13fa93a271d137b8" class="m-doc">Clock</a>(</span><span class="m-doc-wrap"><a href="class_clock.html#a4bb672d0b12eceb314a01ab15d9676cb" class="m-doc">Clock::<wbr />Mode</a> mode = <a href="class_clock.html#a4bb672d0b12eceb314a01ab15d9676cba7ad0bde3d601cd3c0eaa8eb5bf27cb1a" class="m-doc">Clock::<wbr />Mode::<wbr />Ticks</a>,
+              bool start = false)</span>
             </dt>
             <dd>Creates a new clock object with the specified precision mode.</dd>
           </dl>
@@ -96,30 +96,34 @@
               <span class="m-doc-wrap-bumper">void <a href="#a8f5a8aec348b9155cce8d39a1eb8e25d" class="m-doc">SetMode</a>(</span><span class="m-doc-wrap"><a href="class_clock.html#a4bb672d0b12eceb314a01ab15d9676cb" class="m-doc">Clock::<wbr />Mode</a> mode)</span>
             </dt>
             <dd>Changes the precision mode.</dd>
-            <dt id="ac034a45c8476b44c262f97c4b62f4772">
-              <span class="m-doc-wrap-bumper">void <a href="#ac034a45c8476b44c262f97c4b62f4772" class="m-doc-self">Start</a>(</span><span class="m-doc-wrap">)</span>
-            </dt>
-            <dd>Starts the clock, measuring the initial time; if it has already been started, does nothing.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">void <a href="#a9ee8cacd91323a41359ae592d14141d8" class="m-doc">Stop</a>(</span><span class="m-doc-wrap">)</span>
+              <span class="m-doc-wrap-bumper">void <a href="#ac034a45c8476b44c262f97c4b62f4772" class="m-doc">Start</a>(</span><span class="m-doc-wrap">)</span>
+            </dt>
+            <dd>Starts the clock, if it&#x27;s not already running.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">void <a href="#adec6529c8f0fa8e9e848ef46d4c087e8" class="m-doc">Pause</a>(</span><span class="m-doc-wrap">)</span>
             </dt>
             <dd>Stops the clock, reseting the initial time to 0.</dd>
-            <dt id="aec62576bf03c1a8c6c962931750d6bf3">
-              <span class="m-doc-wrap-bumper">auto <a href="#aec62576bf03c1a8c6c962931750d6bf3" class="m-doc-self">GetElapsed</a>(</span><span class="m-doc-wrap">) const -&gt; float</span>
+            <dt>
+              <span class="m-doc-wrap-bumper">void <a href="#a100a6250066b4234ec7fa53fc02d66bc" class="m-doc">Reset</a>(</span><span class="m-doc-wrap">)</span>
+            </dt>
+            <dd>Stops the clock and clears all accumulated time.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#aec62576bf03c1a8c6c962931750d6bf3" class="m-doc">GetElapsed</a>(</span><span class="m-doc-wrap">) const -&gt; float</span>
             </dt>
             <dd>Returns the elapsed time in the specified precision measure, conserving all decimals.</dd>
             <dt id="ac39356a34ea237c958fbfecd5b6ce240">
               <span class="m-doc-wrap-bumper">auto <a href="#ac39356a34ea237c958fbfecd5b6ce240" class="m-doc-self">GetElapsedTicks</a>(</span><span class="m-doc-wrap">) const -&gt; LARGE_INTEGER</span>
             </dt>
             <dd>Returns the elapsed time in ticks (regardles of the clock mode).</dd>
-            <dt id="a5e7054278f51d0e3beed432f22c91649">
-              <span class="m-doc-wrap-bumper">auto <a href="#a5e7054278f51d0e3beed432f22c91649" class="m-doc-self">GetElapsedTime</a>(</span><span class="m-doc-wrap">) const -&gt; LARGE_INTEGER</span>
+            <dt id="a9212aca95c5cab54dda977c51c1c92bd">
+              <span class="m-doc-wrap-bumper">auto <a href="#a9212aca95c5cab54dda977c51c1c92bd" class="m-doc-self">GetElapsedTime</a>(</span><span class="m-doc-wrap">) const -&gt; int</span>
             </dt>
             <dd>Returns the elapsed time in the specified precision measure, rounded to the closest integer.</dd>
             <dt id="a7dec3f15b6ae32cbb153a347422b067e">
               <span class="m-doc-wrap-bumper">auto <a href="#a7dec3f15b6ae32cbb153a347422b067e" class="m-doc-self">IsRunning</a>(</span><span class="m-doc-wrap">) const -&gt; bool</span>
             </dt>
-            <dd><span></span></dd>
+            <dd>Tells whether the clock is counting (<code>true</code>) or is paused (<code>false</code>).</dd>
           </dl>
         </section>
         <section id="pro-attribs">
@@ -129,16 +133,16 @@
               LARGE_INTEGER <a href="#adde42e084f09f19b108e660e811cb74a" class="m-doc-self">mStartTime</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="a9d60dcd00293408309ee7770b0346f81">
-              LARGE_INTEGER <a href="#a9d60dcd00293408309ee7770b0346f81" class="m-doc-self">field_8</a>
+            <dt id="a9f01e75b172f000826022d587694797e">
+              LARGE_INTEGER <a href="#a9f01e75b172f000826022d587694797e" class="m-doc-self">mAccumulatedTime</a>
             </dt>
             <dd><span></span></dd>
             <dt id="a40d03fec5418a0e026bbd98ea38bf901">
               <a href="class_clock.html#a4bb672d0b12eceb314a01ab15d9676cb" class="m-doc">Clock::<wbr />Mode</a> <a href="#a40d03fec5418a0e026bbd98ea38bf901" class="m-doc-self">mMode</a>
             </dt>
             <dd>The mode (precision) with which the time is measured.</dd>
-            <dt id="a709f1ec6c6c22230c7e6a99350e91d0f">
-              float <a href="#a709f1ec6c6c22230c7e6a99350e91d0f" class="m-doc-self">mfMeasurePerTick</a>
+            <dt id="a1bd05e1573f5ee2d8665c6c7d4f0fc9d">
+              float <a href="#a1bd05e1573f5ee2d8665c6c7d4f0fc9d" class="m-doc-self">mMeasurePerTick</a>
             </dt>
             <dd>Derived from mMode, how many units of measurement (seconds, nanoseconds, etc) are equal to 1 tick.</dd>
           </dl>
@@ -206,10 +210,10 @@
         </section>
         <section>
           <h2>Function documentation</h2>
-          <section class="m-doc-details" id="a18e7c9314fa8911e0f8ee5215cf058b4"><div>
+          <section class="m-doc-details" id="a9fb7afced09099ff13fa93a271d137b8"><div>
             <h3>
-              <span class="m-doc-wrap-bumper"> Clock::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a18e7c9314fa8911e0f8ee5215cf058b4" class="m-doc-self">Clock</a>(</span><span class="m-doc-wrap"><a href="class_clock.html#a4bb672d0b12eceb314a01ab15d9676cb" class="m-doc">Clock::<wbr />Mode</a> mode = <a href="class_clock.html#a4bb672d0b12eceb314a01ab15d9676cba7ad0bde3d601cd3c0eaa8eb5bf27cb1a" class="m-doc">Clock::<wbr />Mode::<wbr />Ticks</a>,
-              bool bStart = false)</span></span>
+              <span class="m-doc-wrap-bumper"> Clock::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a9fb7afced09099ff13fa93a271d137b8" class="m-doc-self">Clock</a>(</span><span class="m-doc-wrap"><a href="class_clock.html#a4bb672d0b12eceb314a01ab15d9676cb" class="m-doc">Clock::<wbr />Mode</a> mode = <a href="class_clock.html#a4bb672d0b12eceb314a01ab15d9676cba7ad0bde3d601cd3c0eaa8eb5bf27cb1a" class="m-doc">Clock::<wbr />Mode::<wbr />Ticks</a>,
+              bool start = false)</span></span>
             </h3>
             <p>Creates a new clock object with the specified precision mode.</p>
             <table class="m-table m-fullwidth m-flat">
@@ -222,7 +226,7 @@
                   <td>The precision with which the clock will measure time.</td>
                 </tr>
                 <tr>
-                  <td>bStart</td>
+                  <td>start</td>
                   <td>[Optional] If true, the clock will start counting time. False by default.</td>
                 </tr>
               </tbody>
@@ -246,12 +250,40 @@
               </tbody>
             </table>
           </div></section>
-          <section class="m-doc-details" id="a9ee8cacd91323a41359ae592d14141d8"><div>
+          <section class="m-doc-details" id="ac034a45c8476b44c262f97c4b62f4772"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">void Clock::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a9ee8cacd91323a41359ae592d14141d8" class="m-doc-self">Stop</a>(</span><span class="m-doc-wrap">)</span></span>
+              <span class="m-doc-wrap-bumper">void Clock::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ac034a45c8476b44c262f97c4b62f4772" class="m-doc-self">Start</a>(</span><span class="m-doc-wrap">)</span></span>
+            </h3>
+            <p>Starts the clock, if it&#x27;s not already running.</p>
+<p>If the clock was paused, it will continue counting from the time accumulated until the last pause.</p>
+          </div></section>
+          <section class="m-doc-details" id="adec6529c8f0fa8e9e848ef46d4c087e8"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">void Clock::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#adec6529c8f0fa8e9e848ef46d4c087e8" class="m-doc-self">Pause</a>(</span><span class="m-doc-wrap">)</span></span>
             </h3>
             <p>Stops the clock, reseting the initial time to 0.</p>
-<p>After using stop, the clock can be started again using <a href="class_clock.html#ac034a45c8476b44c262f97c4b62f4772" class="m-doc">Clock::<wbr />Start()</a>.</p>
+<p>After pausing, the clock can be started again using <a href="class_clock.html#ac034a45c8476b44c262f97c4b62f4772" class="m-doc">Clock::<wbr />Start()</a>; if started again, it will continue with the time accumulated until the stop.</p>
+          </div></section>
+          <section class="m-doc-details" id="a100a6250066b4234ec7fa53fc02d66bc"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">void Clock::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a100a6250066b4234ec7fa53fc02d66bc" class="m-doc-self">Reset</a>(</span><span class="m-doc-wrap">)</span></span>
+            </h3>
+            <p>Stops the clock and clears all accumulated time.</p>
+<p>This is equivalent to creating a new clock again. After a reset, getting the elapsed time will return 0 until the clock is started again.</p>
+          </div></section>
+          <section class="m-doc-details" id="aec62576bf03c1a8c6c962931750d6bf3"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">float Clock::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#aec62576bf03c1a8c6c962931750d6bf3" class="m-doc-self">GetElapsed</a>(</span><span class="m-doc-wrap">) const</span></span>
+            </h3>
+            <p>Returns the elapsed time in the specified precision measure, conserving all decimals.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <tfoot>
+                <tr>
+                  <th style="width: 1%">Returns</th>
+                  <td>The time passed since the clock was created/reset, in the assigned units.</td>
+                </tr>
+              </tfoot>
+            </table>
           </div></section>
         </section>
       </div>

@@ -48,7 +48,7 @@
           <span class="m-breadcrumb"><a href="namespace_math.html">Math</a>::<wbr/></span>Quaternion <span class="m-thin">struct</span>
           <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_math_utils_8h.html">&lt;Spore/MathUtils.h&gt;</a></div>
         </h1>
-        <p>A vector of 4 float values (x, y, z, w) representing a quaternion rotation; same as a <a href="struct_math_1_1_vector4.html" class="m-doc">Vector4</a>.</p>
+        <p>A vector of 4 float values (x, y, z, w) representing a quaternion rotation, similar to a <a href="struct_math_1_1_vector4.html" class="m-doc">Vector4</a>.</p>
         <div class="m-block m-default">
           <h3>Contents</h3>
           <ul>
@@ -56,13 +56,14 @@
               Reference
               <ul>
                 <li><a href="#base-classes">Base classes</a></li>
+                <li><a href="#pub-static-methods">Public static functions</a></li>
                 <li><a href="#typeless-methods">Constructors, destructors, conversion operators</a></li>
                 <li><a href="#pub-methods">Public functions</a></li>
               </ul>
             </li>
           </ul>
         </div>
-<p>Has a value of (0, 0, 0, 1) by default.</p>
+<p>Quaternions an be multiplied to chain rotations: <code>q1 * q2</code> means applying rotation <code>r2</code> followed by rotation <code>r2</code>. You can use the <a href="struct_math_1_1_quaternion.html#aa19bcafe99c1d8f74ed196918a638c80" class="m-doc">Quaternion::<wbr />FromRotation()</a> and <a href="struct_math_1_1_quaternion.html#a8b895317154ffce926cb109c892cf9f9" class="m-doc">Quaternion::<wbr />FromEuler()</a> to build quaternion rotations. It has a value of (0, 0, 0, 1) by default.</p>
         <section id="base-classes">
           <h2><a href="#base-classes">Base classes</a></h2>
           <dl class="m-doc">
@@ -70,6 +71,20 @@
               struct <a href="struct_math_1_1_vector4.html" class="m-doc">Vector4</a>
             </dt>
             <dd>A vector of 4 float values (x, y, z, w).</dd>
+          </dl>
+        </section>
+        <section id="pub-static-methods">
+          <h2><a href="#pub-static-methods">Public static functions</a></h2>
+          <dl class="m-doc">
+            <dt>
+              <span class="m-doc-wrap-bumper">static auto <a href="#aa19bcafe99c1d8f74ed196918a638c80" class="m-doc">FromRotation</a>(</span><span class="m-doc-wrap">const <a href="struct_math_1_1_vector3.html" class="m-doc">Vector3</a>&amp; axis,
+              float angle) -&gt; <a href="struct_math_1_1_quaternion.html" class="m-doc">Quaternion</a></span>
+            </dt>
+            <dd>Constructs a <a href="struct_math_1_1_quaternion.html" class="m-doc">Quaternion</a> that represents a rotation of the given angle (in radians) around a certain axis.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">static auto <a href="#a8b895317154ffce926cb109c892cf9f9" class="m-doc">FromEuler</a>(</span><span class="m-doc-wrap">const <a href="struct_math_1_1_vector3.html" class="m-doc">Vector3</a>&amp; angles) -&gt; <a href="struct_math_1_1_quaternion.html" class="m-doc">Quaternion</a></span>
+            </dt>
+            <dd>Constructs a <a href="struct_math_1_1_quaternion.html" class="m-doc">Quaternion</a> that represents a rotation, given in euler angles in radians.</dd>
           </dl>
         </section>
         <section id="typeless-methods">
@@ -95,11 +110,69 @@
         <section id="pub-methods">
           <h2><a href="#pub-methods">Public functions</a></h2>
           <dl class="m-doc">
+            <dt id="a76143621ce31877deb7fe6383bef9c3b">
+              <span class="m-doc-wrap-bumper">auto <a href="#a76143621ce31877deb7fe6383bef9c3b" class="m-doc-self">Inverse</a>(</span><span class="m-doc-wrap">) const -&gt; <a href="struct_math_1_1_quaternion.html" class="m-doc">Quaternion</a></span>
+            </dt>
+            <dd>Returns the inverse to this quaternion: that&#x27;s another quaternion that, when multiplied with this one, gives the identity.</dd>
             <dt id="afda3b0aa41b8f1bfe543b5c36c8ce3c1">
               <span class="m-doc-wrap-bumper">auto <a href="#afda3b0aa41b8f1bfe543b5c36c8ce3c1" class="m-doc-self">ToMatrix</a>(</span><span class="m-doc-wrap">) const -&gt; <a href="struct_math_1_1_matrix3.html" class="m-doc">Matrix3</a></span>
             </dt>
             <dd>Builds a 3x3 rotation matrix equivalent to this quaternion rotation.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a1477a6615a81f4e80cf704d8265b1f64" class="m-doc">ToEuler</a>(</span><span class="m-doc-wrap">) const -&gt; <a href="struct_math_1_1_vector3.html" class="m-doc">Vector3</a></span>
+            </dt>
+            <dd>Returns the euler angles (in radians) that represent the same rotation as this quaternion.</dd>
           </dl>
+        </section>
+        <section>
+          <h2>Function documentation</h2>
+          <section class="m-doc-details" id="aa19bcafe99c1d8f74ed196918a638c80"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">static <a href="struct_math_1_1_quaternion.html" class="m-doc">Quaternion</a> Math::<wbr />Quaternion::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#aa19bcafe99c1d8f74ed196918a638c80" class="m-doc-self">FromRotation</a>(</span><span class="m-doc-wrap">const <a href="struct_math_1_1_vector3.html" class="m-doc">Vector3</a>&amp; axis,
+              float angle)</span></span>
+            </h3>
+            <p>Constructs a <a href="struct_math_1_1_quaternion.html" class="m-doc">Quaternion</a> that represents a rotation of the given angle (in radians) around a certain axis.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">axis</td>
+                  <td>The axis of rotation. Only the direction matters, the length is ignored.</td>
+                </tr>
+                <tr>
+                  <td>angle</td>
+                  <td>The angle of rotation, in radians.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="a8b895317154ffce926cb109c892cf9f9"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">static <a href="struct_math_1_1_quaternion.html" class="m-doc">Quaternion</a> Math::<wbr />Quaternion::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a8b895317154ffce926cb109c892cf9f9" class="m-doc-self">FromEuler</a>(</span><span class="m-doc-wrap">const <a href="struct_math_1_1_vector3.html" class="m-doc">Vector3</a>&amp; angles)</span></span>
+            </h3>
+            <p>Constructs a <a href="struct_math_1_1_quaternion.html" class="m-doc">Quaternion</a> that represents a rotation, given in euler angles in radians.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">angles</td>
+                  <td>Rotation around X (roll), Y (pitch) and Z (yaw) axes, in radians</td>
+                </tr>
+              </tbody>
+            </table>
+<p>The quaternion will be constructed as if the rotations were applied in Z, Y, X order.</p>
+          </div></section>
+          <section class="m-doc-details" id="a1477a6615a81f4e80cf704d8265b1f64"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"><a href="struct_math_1_1_vector3.html" class="m-doc">Vector3</a> Math::<wbr />Quaternion::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a1477a6615a81f4e80cf704d8265b1f64" class="m-doc-self">ToEuler</a>(</span><span class="m-doc-wrap">) const</span></span>
+            </h3>
+            <p>Returns the euler angles (in radians) that represent the same rotation as this quaternion.</p>
+<p>It returns a vector with the rotation around the X (roll), Y (pitch) and Z (yaw) axes.</p>
+          </div></section>
         </section>
       </div>
     </div>

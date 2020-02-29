@@ -107,7 +107,7 @@
             <dt>
               struct <a href="struct_math_1_1_quaternion.html" class="m-doc">Quaternion</a>
             </dt>
-            <dd>A vector of 4 float values (x, y, z, w) representing a quaternion rotation; same as a <a href="struct_math_1_1_vector4.html" class="m-doc">Vector4</a>.</dd>
+            <dd>A vector of 4 float values (x, y, z, w) representing a quaternion rotation, similar to a <a href="struct_math_1_1_vector4.html" class="m-doc">Vector4</a>.</dd>
             <dt>
               struct <a href="struct_math_1_1_random_number_generator.html" class="m-doc">RandomNumberGenerator</a>
             </dt>
@@ -182,6 +182,11 @@
             <dt>
               <span class="m-doc-wrap-bumper">auto <a href="#a5a58794aa0b2aaea294176f0a8149892" class="m-doc">operator*</a>(</span><span class="m-doc-wrap"><a href="struct_math_1_1_matrix3.html" class="m-doc">Matrix3</a> a,
               const <a href="struct_math_1_1_matrix3.html" class="m-doc">Matrix3</a>&amp; b) -&gt; <a href="struct_math_1_1_matrix3.html" class="m-doc">Matrix3</a></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a666a4c3ed930cee8e6416974f3e8f4cf" class="m-doc">operator*</a>(</span><span class="m-doc-wrap"><a href="struct_math_1_1_quaternion.html" class="m-doc">Quaternion</a> a,
+              const <a href="struct_math_1_1_quaternion.html" class="m-doc">Quaternion</a>&amp; b) -&gt; <a href="struct_math_1_1_quaternion.html" class="m-doc">Quaternion</a></span>
             </dt>
             <dd><span></span></dd>
             <dt>
@@ -389,6 +394,18 @@
               const float <a href="#af8c064b6b688407b9999ee677efd715d" class="m-doc">PI</a>
             </dt>
             <dd><span></span></dd>
+            <dt>
+              const <a href="struct_math_1_1_vector3.html" class="m-doc">Vector3</a> <a href="#acf059d12c77523b7754490eb456295cb" class="m-doc">X_AXIS</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              const <a href="struct_math_1_1_vector3.html" class="m-doc">Vector3</a> <a href="#aa5490fe39e65c5cfb97eff58593ecfca" class="m-doc">Y_AXIS</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              const <a href="struct_math_1_1_vector3.html" class="m-doc">Vector3</a> <a href="#a3cc087fd325ae8245cd21a9f4ecf93f9" class="m-doc">Z_AXIS</a>
+            </dt>
+            <dd><span></span></dd>
           </dl>
         </section>
         <section>
@@ -539,6 +556,14 @@
             <h3>
               <span class="m-doc-wrap-bumper"><a href="struct_math_1_1_matrix3.html" class="m-doc">Matrix3</a> Math::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a5a58794aa0b2aaea294176f0a8149892" class="m-doc-self">operator*</a>(</span><span class="m-doc-wrap"><a href="struct_math_1_1_matrix3.html" class="m-doc">Matrix3</a> a,
               const <a href="struct_math_1_1_matrix3.html" class="m-doc">Matrix3</a>&amp; b)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_math_utils_8h.html">&lt;Spore/MathUtils.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="a666a4c3ed930cee8e6416974f3e8f4cf"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"><a href="struct_math_1_1_quaternion.html" class="m-doc">Quaternion</a> Math::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a666a4c3ed930cee8e6416974f3e8f4cf" class="m-doc-self">operator*</a>(</span><span class="m-doc-wrap"><a href="struct_math_1_1_quaternion.html" class="m-doc">Quaternion</a> a,
+              const <a href="struct_math_1_1_quaternion.html" class="m-doc">Quaternion</a>&amp; b)</span></span>
               <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_math_utils_8h.html">&lt;Spore/MathUtils.h&gt;</a></div>
             </h3>
             <p><span></span></p>
@@ -865,6 +890,27 @@
           <section class="m-doc-details" id="af8c064b6b688407b9999ee677efd715d"><div>
             <h3>
               const float Math::<wbr /><a href="#af8c064b6b688407b9999ee677efd715d" class="m-doc-self">PI</a>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_math_utils_8h.html">&lt;Spore/MathUtils.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="acf059d12c77523b7754490eb456295cb"><div>
+            <h3>
+              const <a href="struct_math_1_1_vector3.html" class="m-doc">Vector3</a> Math::<wbr /><a href="#acf059d12c77523b7754490eb456295cb" class="m-doc-self">X_AXIS</a>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_math_utils_8h.html">&lt;Spore/MathUtils.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="aa5490fe39e65c5cfb97eff58593ecfca"><div>
+            <h3>
+              const <a href="struct_math_1_1_vector3.html" class="m-doc">Vector3</a> Math::<wbr /><a href="#aa5490fe39e65c5cfb97eff58593ecfca" class="m-doc-self">Y_AXIS</a>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_math_utils_8h.html">&lt;Spore/MathUtils.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="a3cc087fd325ae8245cd21a9f4ecf93f9"><div>
+            <h3>
+              const <a href="struct_math_1_1_vector3.html" class="m-doc">Vector3</a> Math::<wbr /><a href="#a3cc087fd325ae8245cd21a9f4ecf93f9" class="m-doc-self">Z_AXIS</a>
               <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_math_utils_8h.html">&lt;Spore/MathUtils.h&gt;</a></div>
             </h3>
             <p><span></span></p>

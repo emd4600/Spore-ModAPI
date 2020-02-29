@@ -74,10 +74,6 @@
           <h2><a href="#nested-classes">Classes</a></h2>
           <dl class="m-doc">
             <dt>
-              class <a href="class_app_1_1_camera.html" class="m-doc">Camera</a>
-            </dt>
-            <dd><span></span></dd>
-            <dt>
               class <a href="class_app_1_1c_camera_manager.html" class="m-doc">cCameraManager</a>
             </dt>
             <dd>The implementation of <a href="class_app_1_1_i_camera_manager.html" class="m-doc">ICameraManager</a>; this should only be used for extending and detouring.</dd>
@@ -277,7 +273,7 @@
             <dt>
               using <a href="#a8e7a2854f38ce8e2b76e6f03989cc9e0" class="m-doc">CameraFactoryFunction_t</a> = <a href="class_app_1_1_i_camera.html" class="m-doc">ICamera</a>*(*)(PropertyList*pPropList)
             </dt>
-            <dd><a href="class_app_1_1_camera.html" class="m-doc">Camera</a> types need a static function that creates the correct camera instance.</dd>
+            <dd>Camera types need a static function that creates the correct camera instance.</dd>
             <dt>
               using <a href="#a0792416baaa2251d68963db97d021cda" class="m-doc">VoidFunction_T</a> = eastl::function&lt;void()&gt;
             </dt>
@@ -1019,7 +1015,7 @@
               typedef <a href="class_app_1_1_i_camera.html" class="m-doc">ICamera</a>*(*App::<wbr /><a href="#a8e7a2854f38ce8e2b76e6f03989cc9e0" class="m-doc-self">CameraFactoryFunction_t</a>)(PropertyList*pPropList)
               <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_i_camera_manager_8h.html">&lt;Spore/App/ICameraManager.h&gt;</a></div>
             </h3>
-            <p><a href="class_app_1_1_camera.html" class="m-doc">Camera</a> types need a static function that creates the correct camera instance.</p>
+            <p>Camera types need a static function that creates the correct camera instance.</p>
 <p>The function must take a PropertyList* as a parameter, and returns an ICamera*. This does not need to read the .prop file; instead, it should be stored in a field in the camera; the manager will call <a href="class_app_1_1_i_camera.html#aa120308ea0e844dc2df5c91b600a634f" class="m-doc">ICamera::<wbr />Initialize()</a> when necessary; there&#x27;s where the .prop file should be read.</p>
           </div></section>
           <section class="m-doc-details" id="a0792416baaa2251d68963db97d021cda"><div>

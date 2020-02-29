@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Simulator::ISimulatorSerializable class | Spore ModAPI SDK for creating C++ mods for Spore</title>
+  <title>Graphics::ModelAsset::ModelLights struct | Spore ModAPI SDK for creating C++ mods for Spore</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,600,600i%7CSource+Code+Pro:400,400i,600" />
   <link rel="stylesheet" href="m-dark.css" />
   <link rel="stylesheet" href="m-documentation.css" />
@@ -45,8 +45,8 @@
     <div class="m-row">
       <div class="m-col-l-10 m-push-l-1">
         <h1>
-          <span class="m-breadcrumb"><a href="namespace_simulator.html">Simulator</a>::<wbr/></span>ISimulatorSerializable <span class="m-thin">class</span>
-          <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_i_simulator_serializable_8h.html">&lt;Spore/Simulator/ISimulatorSerializable.h&gt;</a></div>
+          <span class="m-breadcrumb"><a href="namespace_graphics.html">Graphics</a>::<wbr/></span><span class="m-breadcrumb"><a href="class_graphics_1_1_model_asset.html">ModelAsset</a>::<wbr/></span>ModelLights <span class="m-thin">struct</span>
+          <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_model_asset_8h.html">&lt;Spore/Graphics/ModelAsset.h&gt;</a></div>
         </h1>
         <p><span></span></p>
         <div class="m-block m-default">
@@ -55,100 +55,32 @@
             <li>
               Reference
               <ul>
-                <li><a href="#base-classes">Base classes</a></li>
-                <li><a href="#derived-classes">Derived classes</a></li>
-                <li><a href="#pub-static-attribs">Public static variables</a></li>
-                <li><a href="#typeless-methods">Constructors, destructors, conversion operators</a></li>
-                <li><a href="#pub-methods">Public functions</a></li>
+                <li><a href="#pub-attribs">Public variables</a></li>
               </ul>
             </li>
           </ul>
         </div>
-        <section id="base-classes">
-          <h2><a href="#base-classes">Base classes</a></h2>
+        <section id="pub-attribs">
+          <h2><a href="#pub-attribs">Public variables</a></h2>
           <dl class="m-doc">
-            <dt>
-              class <a href="class_object.html" class="m-doc">Object</a>
-            </dt>
-            <dd>This class represents a basic reference counted object.</dd>
-          </dl>
-        </section>
-        <section id="derived-classes">
-          <h2><a href="#derived-classes">Derived classes</a></h2>
-          <dl class="m-doc">
-            <dt>
-              class <a href="class_simulator_1_1c_game_data.html" class="m-doc">cGameData</a>
+            <dt id="a81f1756ccf0a324c35e7e5dcfe53aac0">
+              int <a href="#a81f1756ccf0a324c35e7e5dcfe53aac0" class="m-doc-self">count</a>
             </dt>
             <dd><span></span></dd>
-            <dt>
-              class <a href="class_simulator_1_1c_gonzago_simulator.html" class="m-doc">cGonzagoSimulator</a>
+            <dt id="aa170f7ca6b6613e54659664c6bcec3eb">
+              float* <a href="#aa170f7ca6b6613e54659664c6bcec3eb" class="m-doc-self">lightStrength</a>
             </dt>
             <dd><span></span></dd>
-            <dt>
-              class <a href="class_simulator_1_1c_relationship_manager.html" class="m-doc">cRelationshipManager</a>
+            <dt id="a9e29747d355f691b674e0f5626906618">
+              <a href="struct_math_1_1_color_r_g_b.html" class="m-doc">ColorRGB</a>* <a href="#a9e29747d355f691b674e0f5626906618" class="m-doc-self">lightColor</a>
             </dt>
             <dd><span></span></dd>
-            <dt>
-              class <a href="class_simulator_1_1c_saved_game_header.html" class="m-doc">cSavedGameHeader</a>
+            <dt id="a9acb2d3c097e453452a13f7122dc41b5">
+              float* <a href="#a9acb2d3c097e453452a13f7122dc41b5" class="m-doc-self">lightSize</a>
             </dt>
             <dd><span></span></dd>
-            <dt>
-              class <a href="class_simulator_1_1c_solar_system.html" class="m-doc">cSolarSystem</a>
-            </dt>
-            <dd><span></span></dd>
-            <dt>
-              class <a href="class_simulator_1_1c_space_inventory_item.html" class="m-doc">cSpaceInventoryItem</a>
-            </dt>
-            <dd><span></span></dd>
-            <dt>
-              class <a href="class_simulator_1_1c_star_record.html" class="m-doc">cStarRecord</a>
-            </dt>
-            <dd><span></span></dd>
-            <dt>
-              class <a href="class_simulator_1_1_i_simulator_serializable_ref_counted.html" class="m-doc">ISimulatorSerializableRefCounted</a>
-            </dt>
-            <dd><span></span></dd>
-          </dl>
-        </section>
-        <section id="pub-static-attribs">
-          <h2><a href="#pub-static-attribs">Public static variables</a></h2>
-          <dl class="m-doc">
-            <dt id="a68841b401dfd3431445a064f4a59d2ae">
-              static const uint32_t <a href="#a68841b401dfd3431445a064f4a59d2ae" class="m-doc-self">TYPE</a>
-            </dt>
-            <dd><span></span></dd>
-          </dl>
-        </section>
-        <section id="typeless-methods">
-          <h2><a href="#typeless-methods">Constructors, destructors, conversion operators</a></h2>
-          <dl class="m-doc">
-            <dt id="a4ca7db109347990510c3be5993d6dfce">
-              <span class="m-doc-wrap-bumper"><a href="#a4ca7db109347990510c3be5993d6dfce" class="m-doc-self">~ISimulatorSerializable</a>(</span><span class="m-doc-wrap">) <span class="m-label m-flat m-warning">virtual</span></span>
-            </dt>
-            <dd><span></span></dd>
-          </dl>
-        </section>
-        <section id="pub-methods">
-          <h2><a href="#pub-methods">Public functions</a></h2>
-          <dl class="m-doc">
-            <dt id="aa0c3ae18e25c95cf4ce6df7c7c8f6bf6">
-              <span class="m-doc-wrap-bumper">auto <a href="#aa0c3ae18e25c95cf4ce6df7c7c8f6bf6" class="m-doc-self">Write</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1_i_serializer_stream.html" class="m-doc">ISerializerStream</a>* stream) -&gt; bool <span class="m-label m-flat m-warning">pure virtual</span></span>
-            </dt>
-            <dd><span></span></dd>
-            <dt id="a6b8e73a8b97b5fab52934f30004ea5a4">
-              <span class="m-doc-wrap-bumper">auto <a href="#a6b8e73a8b97b5fab52934f30004ea5a4" class="m-doc-self">Read</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1_i_serializer_stream.html" class="m-doc">ISerializerStream</a>* stream) -&gt; bool <span class="m-label m-flat m-warning">pure virtual</span></span>
-            </dt>
-            <dd><span></span></dd>
-            <dt id="a42bad13c1984f6474aaf3c2c6d741382">
-              <span class="m-doc-wrap-bumper">auto <a href="#a42bad13c1984f6474aaf3c2c6d741382" class="m-doc-self">func18h</a>(</span><span class="m-doc-wrap">) -&gt; bool <span class="m-label m-flat m-warning">pure virtual</span></span>
-            </dt>
-            <dd><span></span></dd>
-            <dt id="ac96b0fccdbeca58f28b50e004a55fc25">
-              <span class="m-doc-wrap-bumper">auto <a href="#ac96b0fccdbeca58f28b50e004a55fc25" class="m-doc-self">WriteToXML</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1_xml_serializer.html" class="m-doc">XmlSerializer</a>*) -&gt; bool <span class="m-label m-flat m-warning">pure virtual</span></span>
-            </dt>
-            <dd><span></span></dd>
-            <dt id="a6f10061bb3076aa4e705be27802f587d">
-              <span class="m-doc-wrap-bumper">auto <a href="#a6f10061bb3076aa4e705be27802f587d" class="m-doc-self">GetNounID</a>(</span><span class="m-doc-wrap">) const -&gt; uint32_t <span class="m-label m-flat m-warning">pure virtual</span></span>
+            <dt id="af60b43af9ce1b0289c981208214e3713">
+              <a href="struct_math_1_1_vector3.html" class="m-doc">Vector3</a> <a href="#af60b43af9ce1b0289c981208214e3713" class="m-doc-self">lightOffset</a>
             </dt>
             <dd><span></span></dd>
           </dl>
