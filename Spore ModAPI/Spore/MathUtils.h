@@ -146,6 +146,10 @@ namespace Math
 		/// @param other
 		Vector3 Cross(const Vector3& other) const;
 
+		/// Returns the angle between two vectors.
+		/// @param other
+		float AngleTo(const Vector3& other) const;
+
 		Vector3& operator+=(const Vector3&);
 		Vector3& operator+=(float);
 		Vector3& operator-=(const Vector3&);
@@ -153,6 +157,10 @@ namespace Math
 		Vector3& operator*=(float);
 		Vector3& operator/=(float);
 	};
+
+	const Vector3 X_AXIS = { 1, 0, 0 };
+	const Vector3 Y_AXIS = { 0, 1, 0 };
+	const Vector3 Z_AXIS = { 0, 0, 1 };
 
 	struct Matrix3;
 	/// A vector of 4 float values (x, y, z, w).
@@ -382,11 +390,24 @@ namespace Math
 		/// Returns a Quaternion that represents the same rotation as this matrix.
 		Quaternion ToQuaternion() const;
 
+		/// Returns the transpose of this matrix, switching the rows and columns. `transposed[i][j] = matrix[j][i]`
+		Matrix3 Transposed() const;
+
 		/// Builds a 3x3 rotation matrix equivalent to the euler angles provided.
 		/// The euler angles must be in radians, and each value represents the rotation
 		/// around the X, Y and Z axes respectively.
 		/// @param angles The euler angles, in radians.
 		static Matrix3 FromEuler(const Vector3& angles);
+
+		/// Constructs a rotation matrix that can be used in cameras, for a camera at `position`
+		/// looking towards `target`. Optionally, the vector that represents the up direction in the world
+		/// (which usually is the Z axis) can be specified.
+		///
+		/// This method might give unexpected results if target and position are aligned.
+		/// @param position The "eye" position
+		/// @param target The position where the "eye" is looking at
+		/// @param up [Optional] The up vector, Z axis by default.
+		static Matrix3 LookAt(const Vector3& position, const Vector3& target, const Vector3& up = Z_AXIS);
 	};
 
 	/// A 4x4 matrix.
@@ -398,6 +419,9 @@ namespace Math
 		/// Turns this matrix into the identity matrix (1.0s in the diagonal, everything else 0.0s)
 		/// Multiplying a matrix/vector with an identity matrix has no effect.
 		Matrix4& SetIdentity();
+
+		/// Returns the transpose of this matrix, switching the rows and columns. `transposed[i][j] = matrix[j][i]`
+		Matrix4 Transposed() const;
 	};
 
 	/// A pair of two Vector3 that define the boundaries of an object (the minimum point and the maximum point in the space).
@@ -865,7 +889,7 @@ namespace Math
 		return {
 			y * b.z - z * b.y,
 			z * b.x - x * b.z,
-			x * b.y - y + b.x
+			x * b.y - y * b.x
 		};
 	}
 

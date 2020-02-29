@@ -230,23 +230,85 @@ namespace Math
 	auto_METHOD_VOID(BoundingBox, ApplyTransform, Args(const Transform& t), Args(t));
 
 
+	Matrix3 Matrix3::Transposed() const {
+		Matrix3 dst;
+
+		dst.m[0][0] = m[0][0];
+		dst.m[0][1] = m[1][0];
+		dst.m[0][2] = m[2][0];
+		dst.m[1][0] = m[0][1];
+		dst.m[1][1] = m[1][1];
+		dst.m[1][2] = m[2][1];
+		dst.m[2][0] = m[0][2];
+		dst.m[2][1] = m[1][2];
+		dst.m[2][2] = m[2][2];
+
+		return dst;
+	}
+	Matrix4 Matrix4::Transposed() const {
+		Matrix4 dst;
+
+		dst.m[0][0] = m[0][0];
+		dst.m[0][1] = m[1][0];
+		dst.m[0][2] = m[2][0];
+		dst.m[0][3] = m[3][0];
+		dst.m[1][0] = m[0][1];
+		dst.m[1][1] = m[1][1];
+		dst.m[1][2] = m[2][1];
+		dst.m[1][3] = m[3][1];
+		dst.m[2][0] = m[0][2];
+		dst.m[2][1] = m[1][2];
+		dst.m[2][2] = m[2][2];
+		dst.m[2][3] = m[3][2];
+		dst.m[3][0] = m[0][3];
+		dst.m[3][1] = m[1][3];
+		dst.m[3][2] = m[2][3];
+		dst.m[3][3] = m[3][3];
+
+		return dst;
+	}
+
+	Matrix3 Matrix3::LookAt(const Vector3& position, const Vector3& target, const Vector3& up) {
+		auto dir = (target - position).Normalized();
+		auto right = (up.Cross(dir)).Normalized();
+		auto cameraUp = dir.Cross(right).Normalized();
+
+		Matrix3 m;
+		m.m[0][0] = right.x;
+		m.m[0][1] = right.y;
+		m.m[0][2] = right.z;
+		m.m[1][0] = dir.x;
+		m.m[1][1] = dir.y;
+		m.m[1][2] = dir.z;
+		m.m[2][0] = cameraUp.x;
+		m.m[2][1] = cameraUp.y;
+		m.m[2][2] = cameraUp.z;
+
+		return m;
+	}
+
+	float Vector3::AngleTo(const Vector3& other) const {
+		return acosf(this->Dot(other) / (other.Length() * this->Length()));
+	}
+
+
 	Quaternion Quaternion::FromRotation(const Vector3& axis, float angle) {
 		Vector3 a = axis.Normalized();
 		Quaternion q;
-		q.w = cosf(angle / 2.0);
-		q.x = sinf(angle / 2.0) * a.x;
-		q.y = sinf(angle / 2.0) * a.y;
-		q.z = sinf(angle / 2.0) * a.z;
+		q.w = cosf(angle / 2.0f);
+		q.x = sinf(angle / 2.0f) * a.x;
+		q.y = sinf(angle / 2.0f) * a.y;
+		q.z = sinf(angle / 2.0f) * a.z;
 		return q;
 	}
 
 	Quaternion Quaternion::FromEuler(const Vector3& angles) {
-		float cy = cosf(angles.z * 0.5);
-		float sy = sinf(angles.z * 0.5);
-		float cp = cosf(angles.y * 0.5);
-		float sp = sinf(angles.y * 0.5);
-		float cr = cosf(angles.x * 0.5);
-		float sr = sinf(angles.x * 0.5);
+		float cy = cosf(angles.z * 0.5f);
+		float sy = sinf(angles.z * 0.5f);
+		float cp = cosf(angles.y * 0.5f);
+		float sp = sinf(angles.y * 0.5f);
+		float cr = cosf(angles.x * 0.5f);
+		float sr = sinf(angles.x * 0.5f);
 
 		Quaternion q;
 		q.w = cy * cp * cr + sy * sp * sr;

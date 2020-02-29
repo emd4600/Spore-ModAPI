@@ -51,6 +51,7 @@ public:
 	const Matrix3& GetRotation() const;
 	Transform& SetRotation(const Matrix3& value);
 	Transform& SetRotation(const Vector3& euler);
+	Transform& SetRotation(const Quaternion& value);
 
 	Matrix4 ToMatrix4() const;
 
@@ -122,6 +123,14 @@ inline Transform& Transform::SetRotation(const Matrix3& value)
 inline Transform& Transform::SetRotation(const Vector3& euler)
 {
 	mRotation = Math::Matrix3::FromEuler(euler);
+	mnFlags |= kTransformFlagRotation;
+
+	return *this;
+}
+
+inline Transform& Transform::SetRotation(const Quaternion& value)
+{
+	mRotation = value.ToMatrix();
 	mnFlags |= kTransformFlagRotation;
 
 	return *this;

@@ -28,25 +28,6 @@ using namespace Math;
 
 namespace App
 {
-	class Camera
-	{
-	public:
-		/* 00h */	Matrix4 field_0;
-		/* 40h */	Graphics::RTT* renderTargets[4];
-		/* 50h */	Graphics::RTT* depthStencilSurface;
-		/* 54h */	char _padding_54[0x8];
-		/* 5Ch */	float field_5C;
-		/* 60h */	float field_60;
-		/* 64h */	float scaleX;
-		/* 68h */	float scaleY;
-		/* 6Ch */	int field_6C;
-		/* 70h */	float nearPlane;
-		/* 74h */	float farPlane;
-		/* 78h */	D3DVIEWPORT9 viewport;
-		/* 90h */	int field_90;
-		/* 94h */	int stencilBitDepth;
-	};
-
 	class cViewer
 	{
 	public:
@@ -81,7 +62,10 @@ namespace App
 
 		void SetRenderType(int renderType, bool = 0);
 
-		void SetViewTransform(const Transform& transform);
+		/// Sets the camera position and direction.
+		/// @param transform The transform applied to the camera.
+		void SetCameraTransform(const Transform& transform);
+
 		Transform GetViewTransform() const;
 
 		///
@@ -102,6 +86,25 @@ namespace App
 		D3DVIEWPORT9 GetViewport() const;
 
 	public:
+		struct Camera
+		{
+		public:
+			/* 00h */	Matrix4 worldToCameraTranspose;
+			/* 40h */	Graphics::RTT* renderTargets[4];
+			/* 50h */	Graphics::RTT* depthStencilSurface;
+			/* 54h */	char _padding_54[0x8];
+			/* 5Ch */	float field_5C;
+			/* 60h */	float field_60;
+			/* 64h */	float scaleX;
+			/* 68h */	float scaleY;
+			/* 6Ch */	int field_6C;
+			/* 70h */	float nearPlane;
+			/* 74h */	float farPlane;
+			/* 78h */	D3DVIEWPORT9 viewport;
+			/* 90h */	int field_90;
+			/* 94h */	int stencilBitDepth;
+		};
+
 		/* 00h */	Matrix4 viewTransform;
 		/* 40h */	Matrix4 field_40;
 		/* 80h */	Matrix4 field_80;
@@ -113,12 +116,20 @@ namespace App
 		/* 158h */	int field_158;  // this points to a structure made of field_154 and renderType, it's used in shader const 0x201 (used when selecting shaders)
 		/* 15Ch */	float cameraMaterialLODs[4];
 		/* 16Ch */	bool field_16C;
-		/* 170h */	Camera* camera;
+		/* 170h */	Camera* pCamera;
+
+	private:
+		// renamed to SetCameraTransform();
+		void SetViewTransform(const Transform& transform);
 	};
+
+	inline void cViewer::SetCameraTransform(const Transform& transform) {
+		SetViewTransform(transform);
+	}
 
 	inline D3DVIEWPORT9 cViewer::GetViewport() const
 	{
-		return camera->viewport;
+		return pCamera->viewport;
 	}
 
 	namespace Addresses(cViewer)
