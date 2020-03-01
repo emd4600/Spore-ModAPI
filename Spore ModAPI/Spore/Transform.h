@@ -26,8 +26,8 @@ using namespace Math;
 ///
 /// A class that represents a 3D transformation; it can store the same information as a 4x4 matrix, but it's easier to use.
 /// This class stores the location, scale and rotation (as a 3x3 matrix) separately, making it a lot easier to use than a matrix.
-/// It does have a method to convert it to a 4x4 matrix, so that it can be used in matematical operations. (NOT YET, TODO!)
-/// Transforms can be multiplied in order to concatenate multiple transformations.
+/// It has a method to convert it to a 4x4 matrix, so that it can be used in matematical operations.
+/// Transforms can be multiplied in order to concatenate multiple transformations using `Multiply(other)`
 ///
 class Transform {
 
@@ -53,9 +53,13 @@ public:
 	Transform& SetRotation(const Vector3& euler);
 	Transform& SetRotation(const Quaternion& value);
 
+	/// Returns the 4x4 matrix that represents this transform. This matrix
+	/// can be used to apply the transform to vectors, by just multiplying.
 	Matrix4 ToMatrix4() const;
 
-	Transform& operator=(const Transform& other);
+	/// Applies another transform into this transform.
+	/// @param other
+	Transform& Multiply(const Transform& other);
 
 protected:
 	/* 00h */	int16_t	mnFlags;
@@ -72,7 +76,7 @@ protected:
 namespace Addresses(Transform)
 {
 	DeclareAddress(ToMatrix4);
-	DeclareAddress(assign);
+	DeclareAddress(assign);  // This name is wrong, it's actually multiply operation
 }
 
 static_assert(sizeof(Transform) == 0x38, "sizeof(Transform) != 38h");
@@ -136,7 +140,7 @@ inline Transform& Transform::SetRotation(const Quaternion& value)
 	return *this;
 }
 
-inline Transform& Transform::operator=(const Transform& other)
+inline Transform& Transform::Multiply(const Transform& other)
 {
 	return CALL(GetAddress(Transform, assign), Transform&, Args(Transform*, const Transform&), Args(this, other));
 }

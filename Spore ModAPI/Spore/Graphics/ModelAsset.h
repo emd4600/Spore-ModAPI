@@ -140,7 +140,7 @@ namespace Graphics
 		/* D8h */	cMaterialInfoPtr mMaterialInfo;
 		/* DCh */	EffectInstance* mEffects;
 		/* E0h */	ModelLights* mLights;
-		/* E4h */	Transform mTransform;
+		/* E4h */	Transform mTransform;  // The transformation stored in the prop file
 		/* 11Ch */	float field_11C;  // 1.0f
 		/* 120h */	int field_120;
 		/* 124h */	float mEffectRange;

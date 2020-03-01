@@ -97,7 +97,7 @@ namespace App
 			/* 60h */	float field_60;
 			/* 64h */	float scaleX;
 			/* 68h */	float scaleY;
-			/* 6Ch */	int field_6C;
+			/* 6Ch */	int field_6C;  // 1 2 or 3, used to set projection matrix
 			/* 70h */	float nearPlane;
 			/* 74h */	float farPlane;
 			/* 78h */	D3DVIEWPORT9 viewport;
