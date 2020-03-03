@@ -23,7 +23,7 @@
 #include <Spore\Transform.h>
 #include <cmath>
 #include <ctime>
-#include <EASTL\string.h>
+#include <algorithm>
 
 namespace Math
 {
@@ -350,6 +350,31 @@ namespace Math
 		q.y = -y * a;
 		q.z = -z * a;
 		return q;
+	}
+
+
+	bool BoundingBox::Contains(const Vector3& point) const
+	{
+		return (point.x >= lower.x && point.x <= upper.x)
+			&& (point.y >= lower.y && point.y <= upper.y)
+			&& (point.z >= lower.z && point.z <= upper.z);
+	}
+
+	bool BoundingBox::Intersect(const BoundingBox& other, BoundingBox& dst) const
+	{
+		dst.lower.x = max(lower.x, other.lower.x);
+		dst.upper.x = min(upper.x, other.upper.x);
+		if (dst.lower.x >= dst.upper.x) return false;
+
+		dst.lower.y = max(lower.y, other.lower.y);
+		dst.upper.y = min(upper.y, other.upper.y);
+		if (dst.lower.y >= dst.upper.y) return false;
+
+		dst.lower.z = max(lower.z, other.lower.z);
+		dst.upper.z = min(upper.z, other.upper.z);
+		if (dst.lower.z >= dst.upper.z) return false;
+
+		return true;
 	}
 }
 

@@ -57,6 +57,29 @@ namespace Math
 		return radians * (180.0f / PI);
 	}
 
+	/// Ensures that the given number stays in the range `[a, b]`, included; `a <= b`.
+	/// If `value > b`, it returns b; if `value < a`, it returns `a`.
+	/// @param value The value to clamp
+	/// @param a The minimum value
+	/// @param b The maximum value
+	template <typename T>
+	inline T clamp(T value, T a, T b) {
+		return min(max(value, a), b);
+	}
+
+	/// Linear interpolation between two values, which can be integers, floats, vectors or colors.
+	/// A `mix` value of 0 returns `a`, a value of `1` returns `b`.
+	/// 
+	/// The returned value will be equal to `mix*a + (1-mix)*b`
+	/// @param a The first value
+	/// @param b The second value
+	/// @param mix The mix factor, between 0.0 and 1.0
+	template <typename T>
+	inline T lerp(const T& a, const T& b, float mix) {
+		return a * mix + (1.0f - mix) * b;
+	}
+
+
 	/// An ARGB color represented by a 32 bit integer value.
 	struct Color
 	{
@@ -425,8 +448,10 @@ namespace Math
 	};
 
 	/// A pair of two Vector3 that define the boundaries of an object (the minimum point and the maximum point in the space).
+	/// The two vectors are the lower (minumum) bound and the upper (maximum) bound.
 	struct BoundingBox {
 		BoundingBox();
+		BoundingBox(const Vector3& lower, const Vector3& upper);
 
 		/* 00h */ Vector3 lower;
 		/* 0Ch */ Vector3 upper;
@@ -434,6 +459,25 @@ namespace Math
 		/// Recalculates the bounding box after having applied the given transform.
 		/// @param transform The transformation to apply to the bounding box.
 		void ApplyTransform(const Transform& transform);
+
+		/// Returns the center of this bounding box.
+		Vector3 GetCenter() const;
+
+		/// Tells whether this bounding box contains the given point.
+		/// @param point
+		bool Contains(const Vector3& point) const;
+
+		/// Finds the intersection between two bounding boxes. The return value will indicate
+		/// whether this bbox and the other intersect anywhere (`true`) or not (`false`);
+		/// optionally, you can pass another bounding box where the intersection will be written.
+		///
+		/// The method will return true if the resulting intersection box is degenerate, that is, has volume 0;
+		/// this means taht bounding boxes that only intersect in one point, line or plane return false.
+		///
+		/// @param other The other bounding box to intersect with.
+		/// @param[out] dst [Optional] Where the intersection will be written. Points inside this bbox are contained in both bbox.
+		/// @return `true` if the bounding boxes intersect, `false` otherwise.
+		bool Intersect(const BoundingBox& other, BoundingBox& dst = BoundingBox()) const;
 	};
 
 	namespace Addresses(BoundingBox) {
@@ -609,6 +653,11 @@ namespace Math
 	inline BoundingBox::BoundingBox()
 		: lower(-1.0f, -1.0f, -1.0f)
 		, upper(1.0f, 1.0f, 1.0f)
+	{
+	}
+	inline BoundingBox::BoundingBox(const Vector3& l, const Vector3& u)
+		: lower(l)
+		, upper(u)
 	{
 	}
 
@@ -985,4 +1034,20 @@ namespace Math
 		return x * other.x + y * other.y + z * other.z + w * other.w;
 	}
 
+
+
+	template <>
+	inline ColorRGB lerp<ColorRGB>(const ColorRGB& a, const ColorRGB& b, float mix) {
+		return { lerp(a.r, b.r, mix), lerp(a.g, b.g, mix), lerp(a.b, b.b, mix) };
+	}
+
+	template <>
+	inline ColorRGBA lerp<ColorRGBA>(const ColorRGBA& a, const ColorRGBA& b, float mix) {
+		return { lerp(a.r, b.r, mix), lerp(a.g, b.g, mix), lerp(a.b, b.b, mix), lerp(a.a, b.a, mix) };
+	}
+
+
+	inline Vector3 BoundingBox::GetCenter() const {
+		return (lower + upper) / 2.0f;
+	}
 }
