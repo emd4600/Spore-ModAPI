@@ -62,11 +62,17 @@
             </li>
           </ul>
         </div>
+<p>The two vectors are the lower (minumum) bound and the upper (maximum) bound.</p>
         <section id="typeless-methods">
           <h2><a href="#typeless-methods">Constructors, destructors, conversion operators</a></h2>
           <dl class="m-doc">
             <dt id="a1b260be22cd14e4e5086b9a1ceca8b6f">
               <span class="m-doc-wrap-bumper"><a href="#a1b260be22cd14e4e5086b9a1ceca8b6f" class="m-doc-self">BoundingBox</a>(</span><span class="m-doc-wrap">)</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a551958a4ee834b8c186ad24e5dff02cb">
+              <span class="m-doc-wrap-bumper"><a href="#a551958a4ee834b8c186ad24e5dff02cb" class="m-doc-self">BoundingBox</a>(</span><span class="m-doc-wrap">const <a href="struct_math_1_1_vector3.html" class="m-doc">Vector3</a>&amp; lower,
+              const <a href="struct_math_1_1_vector3.html" class="m-doc">Vector3</a>&amp; upper)</span>
             </dt>
             <dd><span></span></dd>
           </dl>
@@ -78,6 +84,19 @@
               <span class="m-doc-wrap-bumper">void <a href="#a3959ac71f2afebc8c9954f153ddace20" class="m-doc">ApplyTransform</a>(</span><span class="m-doc-wrap">const <a href="class_transform.html" class="m-doc">Transform</a>&amp; transform)</span>
             </dt>
             <dd>Recalculates the bounding box after having applied the given transform.</dd>
+            <dt id="ab6c8f389b0b699d00ee1a17b6c8a05fd">
+              <span class="m-doc-wrap-bumper">auto <a href="#ab6c8f389b0b699d00ee1a17b6c8a05fd" class="m-doc-self">GetCenter</a>(</span><span class="m-doc-wrap">) const -&gt; <a href="struct_math_1_1_vector3.html" class="m-doc">Vector3</a></span>
+            </dt>
+            <dd>Returns the center of this bounding box.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a158f11db5965c5ca7464277b99135eba" class="m-doc">Contains</a>(</span><span class="m-doc-wrap">const <a href="struct_math_1_1_vector3.html" class="m-doc">Vector3</a>&amp; point) const -&gt; bool</span>
+            </dt>
+            <dd>Tells whether this bounding box contains the given point.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a71fec8ba49c01240ce3f19ef9a01c986" class="m-doc">Intersect</a>(</span><span class="m-doc-wrap">const <a href="struct_math_1_1_bounding_box.html" class="m-doc">BoundingBox</a>&amp; other,
+              <a href="struct_math_1_1_bounding_box.html" class="m-doc">BoundingBox</a>&amp; dst = <a href="struct_math_1_1_bounding_box.html" class="m-doc">BoundingBox</a>()) const -&gt; bool</span>
+            </dt>
+            <dd>Finds the intersection between two bounding boxes.</dd>
           </dl>
         </section>
         <section id="pub-attribs">
@@ -111,6 +130,52 @@
                 </tr>
               </tbody>
             </table>
+          </div></section>
+          <section class="m-doc-details" id="a158f11db5965c5ca7464277b99135eba"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">bool Math::<wbr />BoundingBox::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a158f11db5965c5ca7464277b99135eba" class="m-doc-self">Contains</a>(</span><span class="m-doc-wrap">const <a href="struct_math_1_1_vector3.html" class="m-doc">Vector3</a>&amp; point) const</span></span>
+            </h3>
+            <p>Tells whether this bounding box contains the given point.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">point</td>
+                  <td></td>
+                </tr>
+              </tbody>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="a71fec8ba49c01240ce3f19ef9a01c986"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">bool Math::<wbr />BoundingBox::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a71fec8ba49c01240ce3f19ef9a01c986" class="m-doc-self">Intersect</a>(</span><span class="m-doc-wrap">const <a href="struct_math_1_1_bounding_box.html" class="m-doc">BoundingBox</a>&amp; other,
+              <a href="struct_math_1_1_bounding_box.html" class="m-doc">BoundingBox</a>&amp; dst = <a href="struct_math_1_1_bounding_box.html" class="m-doc">BoundingBox</a>()) const</span></span>
+            </h3>
+            <p>Finds the intersection between two bounding boxes.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">other</td>
+                  <td>The other bounding box to intersect with.</td>
+                </tr>
+                <tr>
+                  <td>dst&nbsp;<span class="m-label m-flat m-warning">out</span></td>
+                  <td>[Optional] Where the intersection will be written. Points inside this bbox are contained in both bbox.</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>Returns</th>
+                  <td><code>true</code> if the bounding boxes intersect, <code>false</code> otherwise.</td>
+                </tr>
+              </tfoot>
+            </table>
+<p>The return value will indicate whether this bbox and the other intersect anywhere (<code>true</code>) or not (<code>false</code>); optionally, you can pass another bounding box where the intersection will be written.</p><p>The method will return true if the resulting intersection box is degenerate, that is, has volume 0; this means taht bounding boxes that only intersect in one point, line or plane return false.</p>
           </div></section>
         </section>
       </div>

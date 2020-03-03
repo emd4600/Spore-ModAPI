@@ -63,7 +63,7 @@
             </li>
           </ul>
         </div>
-<p>This class stores the location, scale and rotation (as a 3x3 matrix) separately, making it a lot easier to use than a matrix. It does have a method to convert it to a 4x4 matrix, so that it can be used in matematical operations. (NOT YET, TODO!) Transforms can be multiplied in order to concatenate multiple transformations.</p>
+<p>This class stores the location, scale and rotation (as a 3x3 matrix) separately, making it a lot easier to use than a matrix. It has a method to convert it to a 4x4 matrix, so that it can be used in matematical operations. Transforms can be multiplied in order to concatenate multiple transformations using <code>Multiply(other)</code></p>
         <section id="pub-types">
           <h2><a href="#pub-types">Public types</a></h2>
           <dl class="m-doc">
@@ -125,14 +125,14 @@
               <span class="m-doc-wrap-bumper">auto <a href="#a6a87d50ec109629f5779cc75e5375319" class="m-doc-self">SetRotation</a>(</span><span class="m-doc-wrap">const <a href="struct_math_1_1_quaternion.html" class="m-doc">Quaternion</a>&amp; value) -&gt; <a href="class_transform.html" class="m-doc">Transform</a>&amp;</span>
             </dt>
             <dd><span></span></dd>
-            <dt id="a37b1e508d70cce4bb8bc8cc18baec992">
-              <span class="m-doc-wrap-bumper">auto <a href="#a37b1e508d70cce4bb8bc8cc18baec992" class="m-doc-self">ToMatrix4</a>(</span><span class="m-doc-wrap">) const -&gt; <a href="struct_math_1_1_matrix4.html" class="m-doc">Matrix4</a></span>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a37b1e508d70cce4bb8bc8cc18baec992" class="m-doc">ToMatrix4</a>(</span><span class="m-doc-wrap">) const -&gt; <a href="struct_math_1_1_matrix4.html" class="m-doc">Matrix4</a></span>
             </dt>
-            <dd><span></span></dd>
-            <dt id="af9c4f565af75a721317771172604c84f">
-              <span class="m-doc-wrap-bumper">auto <a href="#af9c4f565af75a721317771172604c84f" class="m-doc-self">operator=</a>(</span><span class="m-doc-wrap">const <a href="class_transform.html" class="m-doc">Transform</a>&amp; other) -&gt; <a href="class_transform.html" class="m-doc">Transform</a>&amp;</span>
+            <dd>Returns the 4x4 matrix that represents this transform.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a2396f8b91fc1539871cd04679fb7dc0c" class="m-doc">Multiply</a>(</span><span class="m-doc-wrap">const <a href="class_transform.html" class="m-doc">Transform</a>&amp; other) -&gt; <a href="class_transform.html" class="m-doc">Transform</a>&amp;</span>
             </dt>
-            <dd><span></span></dd>
+            <dd>Applies another transform into this transform.</dd>
           </dl>
         </section>
         <section id="pro-attribs">
@@ -159,6 +159,33 @@
             </dt>
             <dd><span></span></dd>
           </dl>
+        </section>
+        <section>
+          <h2>Function documentation</h2>
+          <section class="m-doc-details" id="a37b1e508d70cce4bb8bc8cc18baec992"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"><a href="struct_math_1_1_matrix4.html" class="m-doc">Matrix4</a> Transform::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a37b1e508d70cce4bb8bc8cc18baec992" class="m-doc-self">ToMatrix4</a>(</span><span class="m-doc-wrap">) const</span></span>
+            </h3>
+            <p>Returns the 4x4 matrix that represents this transform.</p>
+<p>This matrix can be used to apply the transform to vectors, by just multiplying.</p>
+          </div></section>
+          <section class="m-doc-details" id="a2396f8b91fc1539871cd04679fb7dc0c"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"><a href="class_transform.html" class="m-doc">Transform</a>&amp; Transform::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a2396f8b91fc1539871cd04679fb7dc0c" class="m-doc-self">Multiply</a>(</span><span class="m-doc-wrap">const <a href="class_transform.html" class="m-doc">Transform</a>&amp; other)</span></span>
+            </h3>
+            <p>Applies another transform into this transform.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">other</td>
+                  <td></td>
+                </tr>
+              </tbody>
+            </table>
+          </div></section>
         </section>
       </div>
     </div>
