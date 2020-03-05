@@ -57,6 +57,29 @@ namespace Math
 		return radians * (180.0f / PI);
 	}
 
+	/// Ensures that the given number stays in the range `[a, b]`, included; `a <= b`.
+	/// If `value > b`, it returns b; if `value < a`, it returns `a`.
+	/// @param value The value to clamp
+	/// @param a The minimum value
+	/// @param b The maximum value
+	template <typename T>
+	inline T clamp(T value, T a, T b) {
+		return min(max(value, a), b);
+	}
+
+	/// Linear interpolation between two values, which can be integers, floats, vectors or colors.
+	/// A `mix` value of 0 returns `a`, a value of `1` returns `b`.
+	/// 
+	/// The returned value will be equal to `mix*a + (1-mix)*b`
+	/// @param a The first value
+	/// @param b The second value
+	/// @param mix The mix factor, between 0.0 and 1.0
+	template <typename T>
+	inline T lerp(const T& a, const T& b, float mix) {
+		return a * mix + (1.0f - mix) * b;
+	}
+
+
 	/// An ARGB color represented by a 32 bit integer value.
 	struct Color
 	{
@@ -146,6 +169,10 @@ namespace Math
 		/// @param other
 		Vector3 Cross(const Vector3& other) const;
 
+		/// Returns the angle between two vectors.
+		/// @param other
+		float AngleTo(const Vector3& other) const;
+
 		Vector3& operator+=(const Vector3&);
 		Vector3& operator+=(float);
 		Vector3& operator-=(const Vector3&);
@@ -153,6 +180,10 @@ namespace Math
 		Vector3& operator*=(float);
 		Vector3& operator/=(float);
 	};
+
+	const Vector3 X_AXIS = { 1, 0, 0 };
+	const Vector3 Y_AXIS = { 0, 1, 0 };
+	const Vector3 Z_AXIS = { 0, 0, 1 };
 
 	struct Matrix3;
 	/// A vector of 4 float values (x, y, z, w).
@@ -382,11 +413,24 @@ namespace Math
 		/// Returns a Quaternion that represents the same rotation as this matrix.
 		Quaternion ToQuaternion() const;
 
+		/// Returns the transpose of this matrix, switching the rows and columns. `transposed[i][j] = matrix[j][i]`
+		Matrix3 Transposed() const;
+
 		/// Builds a 3x3 rotation matrix equivalent to the euler angles provided.
 		/// The euler angles must be in radians, and each value represents the rotation
 		/// around the X, Y and Z axes respectively.
 		/// @param angles The euler angles, in radians.
 		static Matrix3 FromEuler(const Vector3& angles);
+
+		/// Constructs a rotation matrix that can be used in cameras, for a camera at `position`
+		/// looking towards `target`. Optionally, the vector that represents the up direction in the world
+		/// (which usually is the Z axis) can be specified.
+		///
+		/// This method might give unexpected results if target and position are aligned.
+		/// @param position The "eye" position
+		/// @param target The position where the "eye" is looking at
+		/// @param up [Optional] The up vector, Z axis by default.
+		static Matrix3 LookAt(const Vector3& position, const Vector3& target, const Vector3& up = Z_AXIS);
 	};
 
 	/// A 4x4 matrix.
@@ -398,11 +442,16 @@ namespace Math
 		/// Turns this matrix into the identity matrix (1.0s in the diagonal, everything else 0.0s)
 		/// Multiplying a matrix/vector with an identity matrix has no effect.
 		Matrix4& SetIdentity();
+
+		/// Returns the transpose of this matrix, switching the rows and columns. `transposed[i][j] = matrix[j][i]`
+		Matrix4 Transposed() const;
 	};
 
 	/// A pair of two Vector3 that define the boundaries of an object (the minimum point and the maximum point in the space).
+	/// The two vectors are the lower (minumum) bound and the upper (maximum) bound.
 	struct BoundingBox {
 		BoundingBox();
+		BoundingBox(const Vector3& lower, const Vector3& upper);
 
 		/* 00h */ Vector3 lower;
 		/* 0Ch */ Vector3 upper;
@@ -410,6 +459,25 @@ namespace Math
 		/// Recalculates the bounding box after having applied the given transform.
 		/// @param transform The transformation to apply to the bounding box.
 		void ApplyTransform(const Transform& transform);
+
+		/// Returns the center of this bounding box.
+		Vector3 GetCenter() const;
+
+		/// Tells whether this bounding box contains the given point.
+		/// @param point
+		bool Contains(const Vector3& point) const;
+
+		/// Finds the intersection between two bounding boxes. The return value will indicate
+		/// whether this bbox and the other intersect anywhere (`true`) or not (`false`);
+		/// optionally, you can pass another bounding box where the intersection will be written.
+		///
+		/// The method will return true if the resulting intersection box is degenerate, that is, has volume 0;
+		/// this means taht bounding boxes that only intersect in one point, line or plane return false.
+		///
+		/// @param other The other bounding box to intersect with.
+		/// @param[out] dst [Optional] Where the intersection will be written. Points inside this bbox are contained in both bbox.
+		/// @return `true` if the bounding boxes intersect, `false` otherwise.
+		bool Intersect(const BoundingBox& other, BoundingBox& dst = BoundingBox()) const;
 	};
 
 	namespace Addresses(BoundingBox) {
@@ -585,6 +653,11 @@ namespace Math
 	inline BoundingBox::BoundingBox()
 		: lower(-1.0f, -1.0f, -1.0f)
 		, upper(1.0f, 1.0f, 1.0f)
+	{
+	}
+	inline BoundingBox::BoundingBox(const Vector3& l, const Vector3& u)
+		: lower(l)
+		, upper(u)
 	{
 	}
 
@@ -865,7 +938,7 @@ namespace Math
 		return {
 			y * b.z - z * b.y,
 			z * b.x - x * b.z,
-			x * b.y - y + b.x
+			x * b.y - y * b.x
 		};
 	}
 
@@ -961,4 +1034,20 @@ namespace Math
 		return x * other.x + y * other.y + z * other.z + w * other.w;
 	}
 
+
+
+	template <>
+	inline ColorRGB lerp<ColorRGB>(const ColorRGB& a, const ColorRGB& b, float mix) {
+		return { lerp(a.r, b.r, mix), lerp(a.g, b.g, mix), lerp(a.b, b.b, mix) };
+	}
+
+	template <>
+	inline ColorRGBA lerp<ColorRGBA>(const ColorRGBA& a, const ColorRGBA& b, float mix) {
+		return { lerp(a.r, b.r, mix), lerp(a.g, b.g, mix), lerp(a.b, b.b, mix), lerp(a.a, b.a, mix) };
+	}
+
+
+	inline Vector3 BoundingBox::GetCenter() const {
+		return (lower + upper) / 2.0f;
+	}
 }

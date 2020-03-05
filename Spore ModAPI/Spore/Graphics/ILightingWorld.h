@@ -49,9 +49,9 @@ namespace Graphics
 		/* 0Ch */	virtual int func0Ch(int, int, int, int) = 0;
 		/* 10h */	virtual int func10h(int, int) = 0;
 		/* 14h */	virtual void func14h(int) = 0;
-		/* 18h */	virtual int func18h(int, int) = 0;
+		/* 18h */	virtual int GetSunDirAndCelStrength(float boundingRadius, const Vector3& position) = 0;
 		/* 1Ch */	virtual void func1Ch(float, int, int) = 0;
-		/* 20h */	virtual void func20h(int) = 0;
+		/* 20h */	virtual void func20h(int) = 0;  // related with sunDirAndCelStrength
 		/* 24h */	virtual void func24h(int) = 0;
 		/* 28h */	virtual void func28h(const Transform&) = 0;
 		/* 2Ch */	virtual Transform func2Ch() = 0;

@@ -4,7 +4,7 @@
 #include <Spore\Graphics\cMITextureSet.h>
 #include <EASTL\vector.h>
 
-using namespace eastl;
+#define cMaterialInfoPtr intrusive_ptr<Graphics::cMaterialInfo>
 
 namespace Graphics
 {
@@ -12,6 +12,9 @@ namespace Graphics
 	{
 	public:
 		virtual ~cMaterialInfo();
+
+		int AddRef();
+		int Release();
 
 	protected:
 		int mnRefCount;

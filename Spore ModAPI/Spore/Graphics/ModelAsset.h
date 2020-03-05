@@ -24,8 +24,13 @@
 #include <EASTL\intrusive_list.h>
 
 #include <Spore\App\PropertyList.h>
+#include <Spore\ResourceID.h>
 #include <Spore\MathUtils.h>
 #include <Spore\Transform.h>
+#include <Spore\Swarm\IEffect.h>
+#include <Spore\Graphics\cMaterialInfo.h>
+#include <Spore\Graphics\ModelMesh.h>
+#include <Spore\Graphics\Animations.h>
 
 #define ModelPtr intrusive_ptr<Graphics::Model>
 #define ModelAssetPtr intrusive_ptr<Graphics::ModelAsset>
@@ -44,7 +49,9 @@ namespace Graphics
 
 	enum
 	{
-		kModelFlagUseColor = 0x2,
+		kModelFlagUseColor = 0x2,  // actually 4?
+
+		kModelFlagObjectTypeColor = 0x8,
 
 		kModelFlagVisible = 0x8000,
 
@@ -87,7 +94,7 @@ namespace Graphics
 		/* 4Ch */	Math::ColorRGBA mColor;
 		/* 5Ch */	bool field_5C;
 		/* 5Dh */	bool field_5D;
-		/* 60h */	int field_60;
+		/* 60h */	int field_60;  // PLACEHOLDER used to select objectTypeColor
 		/* 64h */	int field_64;
 		/* 68h */	int field_68;  // not initialized
 		/* 6Ch */	float mDefaultBoundingRadius;  // 1.0f
@@ -102,25 +109,48 @@ namespace Graphics
 	public:
 
 	protected:
+		struct EffectInstance
+		{
+			/* 00h */	::ResourceID mResourceID;
+			/* 08h */	IEffectPtr mpEffect;
+			/* 0Ch */	Transform mTransform;
+			/* 44h */	bool mEnabled;  // true
+		};
+		// size depends on light count
+		struct ModelLights {
+			/* 00h */	int count;
+			/* 04h */	float* lightStrength;
+			/* 08h */	ColorRGB* lightColor;
+			/* 0Ch */	float* lightSize;
+			/* 10h */	Vector3 lightOffset;
+		};
+
 		// The object, at 30h, has vector<Material*>
-		/* 9Ch */	vector<intrusive_ptr<void*>> field_9C;
-		/* B0h */	int field_B0;  // not initialized
-		/* B4h */	vector<intrusive_ptr<void*>> field_B4;  // PLACEHOLDER not really a vector! related with animations
-		/* C8h */	int field_C8;  // not initialized
+		// this objects have the pointers to mesh, etc
+		// constructor at sub_741AD0
+		/* 9Ch */	ModelMeshPtr mMeshLods[4];
+		/* ACh */	ModelMeshPtr mMeshHull;
+		/* B0h */	ModelMeshPtr mMeshLodHi;
+		/* B4h */	intrusive_ptr<Animations> mAnimationLods[4];
+		/* C4h */	intrusive_ptr<Animations> mAnimationHull;
+		/* C8h */	intrusive_ptr<Animations> mAnimationLodHi;
 		/* CCh */	int field_CC;  // -1
-		/* D0h */	short field_D0;
-		/* D4h */	float mnLodDistances[4];
-		/* E4h */	Transform mTransform;
+		/* D0h */	short field_D0;  // -1
+		/* D4h */	float* mLodDistances;
+		/* D8h */	cMaterialInfoPtr mMaterialInfo;
+		/* DCh */	EffectInstance* mEffects;
+		/* E0h */	ModelLights* mLights;
+		/* E4h */	Transform mTransform;  // The transformation stored in the prop file
 		/* 11Ch */	float field_11C;  // 1.0f
 		/* 120h */	int field_120;
-		/* 124h */	float mfEffectRange;
-		/* 128h */	bool field_128;
-		/* 129h */	bool mbUseLodDistances;
+		/* 124h */	float mEffectRange;
+		/* 128h */	int8_t mLodIndex;
+		/* 129h */	int8_t mLodLevels;
 		/* 12Ah */	short field_12A;
 		/* 12Ch */	int field_12C;
 		/* 130h */	int field_130;
-		/* 134h */	int field_134;
-		/* 138h */	int field_138;
+		/* 134h */	int field_134;  // PLACEHOLDER sunDirAndCelStrength
+		/* 138h */	int field_138;  // flags   0x10000000 fixed lod?  0x20000000 no effect range
 	};
 
 	/////////////////////////////////

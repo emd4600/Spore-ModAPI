@@ -28,7 +28,7 @@ using namespace Math;
 
 // off_13EF450 -> part vftable?  // 013EF460?
 // 0044070F -> scale part¿
-//TODO EVERYTHING!
+//TODO EVERYTHING! PLACEHOLDER
 namespace Editors
 {
 
@@ -48,6 +48,10 @@ namespace Editors
 		/* 0Ch */	intrusive_ptr<App::PropertyList> prop;
 
 		char _padding_10[0x0C];
+
+		// 10h ModelPtr
+		// 14h ModelPtr mpModel;
+		// 18h ModelWorldPtr mpModelWorld;
 
 		/* 1Ch */	unsigned long instanceID;
 		/* 20h */	unsigned long groupID;
@@ -118,6 +122,8 @@ namespace Editors
 		/* 608h */	unsigned long modelShowoffEffect;
 
 		char _padding_60C[0x7A8];
+
+		// 6CCh pointer to array of MorphHandles (at 8Ch is anim ID)
 
 		/* DB4h */	unsigned long foottype;
 		/* DB8h */	unsigned long mouthtype;

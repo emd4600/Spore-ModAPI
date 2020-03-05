@@ -52,7 +52,7 @@ namespace Graphics
 		/* 14h */	int mnRefCount;
 	public:
 		/* 18h */	uint32_t materialID;
-		/* 1Ch */	int field_1C;  // RenderAsset ?
+		/* 1Ch */	int field_1C;  // RenderAsset ? RenderWareFile?
 		/* 20h */	vector<intrusive_ptr<Texture>>  textures;
 		/* 34h */	char field_34[0x14];  // ?
 
@@ -138,7 +138,8 @@ namespace Graphics
 		///
 		/* 3Ch */	virtual void GetTextures(const Material* pMaterial, TextureVector_t& dst, bool(*filterFunction)(Texture*) = nullptr) const = 0;
 
-		/* 40h */	virtual int func40h(RenderWare::CompiledState*, RenderWare::RenderWareFile*) = 0;
+		// returns a material ID?
+		/* 40h */	virtual uint32_t AssignRWMaterial(RenderWare::CompiledState*, RenderWare::RenderWareFile*) = 0;
 		/* 44h */	virtual int func44h(int, int, int, int) = 0;
 		/* 48h */	virtual int func48h(int, int, int, int, int) = 0;
 		/* 4Ch */	virtual int func4Ch(int, int, int, int) = 0;
