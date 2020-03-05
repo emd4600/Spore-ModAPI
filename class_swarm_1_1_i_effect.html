@@ -55,12 +55,63 @@
             <li>
               Reference
               <ul>
+                <li><a href="#pub-types">Public types</a></li>
                 <li><a href="#pub-methods">Public functions</a></li>
               </ul>
             </li>
           </ul>
         </div>
-<p>The effect can receive transformations. Use Show() to activate the instance and kill to destroy the effect.</p>
+<p>The effect can receive transformations. Use <a href="class_swarm_1_1_i_effect.html#a54472e32784d8e0ece4248863d54d686" class="m-doc">Start()</a> to activate the instance and <a href="class_swarm_1_1_i_effect.html#afc3d0830cca42caf37a6a7b533c934b5" class="m-doc">Stop()</a> to destroy the effect.</p>
+        <section id="pub-types">
+          <h2><a href="#pub-types">Public types</a></h2>
+          <dl class="m-doc">
+            <dt>
+              <span class="m-doc-wrap-bumper">enum <a href="#abb7064d38995322599a6440a53a63bac" class="m-doc">IntParams</a> { </span><span class="m-doc-wrap"><a href="#abb7064d38995322599a6440a53a63baca94e8e377447797d9b1352b0a3fcd23e0" class="m-doc">kParamModelOverride</a> = 0,
+              <a href="#abb7064d38995322599a6440a53a63baca4a1a1199f4839c6d85e74cd9af28f0d5" class="m-doc">kParamTextureOverride</a> = 1,
+              <a href="#abb7064d38995322599a6440a53a63baca7879b22e781aec8c0384bad5885c9ccb" class="m-doc">kParamSelectFrame</a> = 2,
+              <a href="#abb7064d38995322599a6440a53a63bacabc0aade34a7dcd5f17e11634044349b7" class="m-doc">kParamSelectState</a> = 3,
+              <a href="#abb7064d38995322599a6440a53a63baca108ea7a8459b1fe9a66fab412fcde87c" class="m-doc">kParamDistID</a> = 4,
+              <a href="#abb7064d38995322599a6440a53a63baca6eba06b7b440da973f182b2a3b111645" class="m-doc">kParamDistUpdate</a> = 5,
+              <a href="#abb7064d38995322599a6440a53a63baca6cf8b74bf16dc565399fcd44233b95a8" class="m-doc">kParamIntUser1</a> = 6,
+              <a href="#abb7064d38995322599a6440a53a63bacaeec68212559ae77e81b05b5f4155a06c" class="m-doc">kParamIntUser2</a> = 7,
+              <a href="#abb7064d38995322599a6440a53a63baca40fd8afccf1a225c644f0a8ff2873366" class="m-doc">kParamIntUser3</a> = 8,
+              <a href="#abb7064d38995322599a6440a53a63baca13adbc4cb6cf0bda59ae16a929e60b81" class="m-doc">kParamIntUser4</a> = 9 }</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">enum <a href="#a1ea53d43e8f9a55540a5dcf9054a4e55" class="m-doc">FloatParams</a> { </span><span class="m-doc-wrap"><a href="#a1ea53d43e8f9a55540a5dcf9054a4e55ad27869681b67dda0841994fd209d69fa" class="m-doc">kParamEmitStrength</a> = 0,
+              <a href="#a1ea53d43e8f9a55540a5dcf9054a4e55ac1100fed74df03c19f017f4c6704c9e3" class="m-doc">kParamParticleSizeScale</a> = 1,
+              <a href="#a1ea53d43e8f9a55540a5dcf9054a4e55a2c9e63787481a64fe5572775168c5be3" class="m-doc">kParamParticleLifeScale</a> = 2,
+              <a href="#a1ea53d43e8f9a55540a5dcf9054a4e55a807da8666f143ec3940541851d93bb5b" class="m-doc">kParamEmitScale</a> = 3,
+              <a href="#a1ea53d43e8f9a55540a5dcf9054a4e55a6fb147a4d4189c51e52fc6b8ee7c624e" class="m-doc">kParamTransparency</a> = 4,
+              <a href="#a1ea53d43e8f9a55540a5dcf9054a4e55ae055f4a41c55624fb8bba1c85705e828" class="m-doc">kParamColor</a> = 5,
+              <a href="#a1ea53d43e8f9a55540a5dcf9054a4e55a10594e27e969319a0d1be1c046b40d9b" class="m-doc">kParamColorList</a> = 6,
+              <a href="#a1ea53d43e8f9a55540a5dcf9054a4e55a27e0f78aa8e22461dc606b0e2277db3b" class="m-doc">kParamTargetPoint</a> = 7,
+              <a href="#a1ea53d43e8f9a55540a5dcf9054a4e55a420c050bb33b83ef5451f0186b517985" class="m-doc">kParamExplosionLocation</a> = 8,
+              <a href="#a1ea53d43e8f9a55540a5dcf9054a4e55ac5d90140959536da23d04bd2a5686b26" class="m-doc">kParamAttractorLocation</a> = 9,
+              <a href="#a1ea53d43e8f9a55540a5dcf9054a4e55ac5d1cacc8ec890cd6fd6b90eac1d364e" class="m-doc">kParamAttractorIntensity</a> = 10,
+              <a href="#a1ea53d43e8f9a55540a5dcf9054a4e55a0d7ffc703211fb56728b375c0bdebf6b" class="m-doc">kParamViewRay</a> = 11,
+              <a href="#a1ea53d43e8f9a55540a5dcf9054a4e55a0dd6c38310d1ffe50661be676462d73c" class="m-doc">kParamEmissionVolume</a> = 12,
+              <a href="#a1ea53d43e8f9a55540a5dcf9054a4e55a85ac362c2ac8060c74e9fea4d9b5abba" class="m-doc">kParamPath</a> = 13,
+              <a href="#a1ea53d43e8f9a55540a5dcf9054a4e55a27303e8039e5be34a335c6f57623262e" class="m-doc">kParamShaderParams</a> = 14,
+              <a href="#a1ea53d43e8f9a55540a5dcf9054a4e55a0237974bb33cec5ad136882081a2942f" class="m-doc">kParamVolume</a> = 15,
+              <a href="#a1ea53d43e8f9a55540a5dcf9054a4e55a754f26d0f8b7548ff5ef0ac44ba79fc2" class="m-doc">kParamHeightRange</a> = 16,
+              <a href="#a1ea53d43e8f9a55540a5dcf9054a4e55aa528a71cf886844ec76e6cd563fe79d4" class="m-doc">kParamSubdivWindow</a> = 17,
+              <a href="#a1ea53d43e8f9a55540a5dcf9054a4e55ac72956c44bceefe214772752ccbc44aa" class="m-doc">kParamMapForceScale</a> = 18,
+              <a href="#a1ea53d43e8f9a55540a5dcf9054a4e55af95ad1b7654d5b9ea91dc1e584eeb267" class="m-doc">kParamLodDistanceScale</a> = 19,
+              <a href="#a1ea53d43e8f9a55540a5dcf9054a4e55a86371c2737faa39ca529dc720cfdf165" class="m-doc">kParamDistributeSizeScale</a> = 20,
+              <a href="#a1ea53d43e8f9a55540a5dcf9054a4e55a05f0bb4889f15a7672dcc68478afcadc" class="m-doc">kParamFloatUser1</a> = 21,
+              <a href="#a1ea53d43e8f9a55540a5dcf9054a4e55a1ab0fc67d574c23f06eb2e43359bb0f9" class="m-doc">kParamFloatUser2</a> = 22,
+              <a href="#a1ea53d43e8f9a55540a5dcf9054a4e55a2867b87e086e1f1ed4bb55bbfebdcf6e" class="m-doc">kParamFloatUser3</a> = 23,
+              <a href="#a1ea53d43e8f9a55540a5dcf9054a4e55a54c3b4ce652415541ee899dfe5ba311d" class="m-doc">kParamFloatUser4</a> = 24 }</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="ae740af7ffdad398358d4a4dc2619e9fb">
+              <span class="m-doc-wrap-bumper">enum <a href="#ae740af7ffdad398358d4a4dc2619e9fb" class="m-doc-self">ObjectParams</a> { </span><span class="m-doc-wrap"> }</span>
+            </dt>
+            <dd><span></span></dd>
+          </dl>
+        </section>
         <section id="pub-methods">
           <h2><a href="#pub-methods">Public functions</a></h2>
           <dl class="m-doc">
@@ -80,8 +131,8 @@
               <span class="m-doc-wrap-bumper">auto <a href="#afc3d0830cca42caf37a6a7b533c934b5" class="m-doc-self">Stop</a>(</span><span class="m-doc-wrap">int hardStop = 1) -&gt; int <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
             <dd><span></span></dd>
-            <dt id="a879a08700b17540966c57b938b7c9514">
-              <span class="m-doc-wrap-bumper">auto <a href="#a879a08700b17540966c57b938b7c9514" class="m-doc-self">func10h</a>(</span><span class="m-doc-wrap">) -&gt; int <span class="m-label m-flat m-warning">pure virtual</span></span>
+            <dt id="a3bf878c4098b7fd2b086653432c8be5a">
+              <span class="m-doc-wrap-bumper">auto <a href="#a3bf878c4098b7fd2b086653432c8be5a" class="m-doc-self">IsRunning</a>(</span><span class="m-doc-wrap">) -&gt; int <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
             <dd><span></span></dd>
             <dt id="a636f7fd283c7c9e70de8bd8b8a5a806f">
@@ -113,62 +164,62 @@
               <span class="m-doc-wrap-bumper">void <a href="#aac04d51184e4e6b6357f445b96ecc53d" class="m-doc">SetPaused</a>(</span><span class="m-doc-wrap">bool paused) <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
             <dd>If true, pauses the effect; if false, it unpauses it.</dd>
-            <dt id="ae8130b753fc595ec1cec7eb4cc1a9be8">
-              <span class="m-doc-wrap-bumper">void <a href="#ae8130b753fc595ec1cec7eb4cc1a9be8" class="m-doc-self">func30h</a>(</span><span class="m-doc-wrap">bool) <span class="m-label m-flat m-warning">pure virtual</span></span>
+            <dt id="a956f708c402a3a9a3fcbc1e5d89f215d">
+              <span class="m-doc-wrap-bumper">void <a href="#a956f708c402a3a9a3fcbc1e5d89f215d" class="m-doc-self">SetHidden</a>(</span><span class="m-doc-wrap">bool hidden) <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
             <dd><span></span></dd>
-            <dt id="a0b8c09ac04226ecc2ca7ff68bf2261d9">
-              <span class="m-doc-wrap-bumper">auto <a href="#a0b8c09ac04226ecc2ca7ff68bf2261d9" class="m-doc-self">func34h</a>(</span><span class="m-doc-wrap">) -&gt; bool <span class="m-label m-flat m-warning">pure virtual</span></span>
+            <dt id="ab20e7a0754c652644b03d0008ca442b7">
+              <span class="m-doc-wrap-bumper">auto <a href="#ab20e7a0754c652644b03d0008ca442b7" class="m-doc-self">IsPaused</a>(</span><span class="m-doc-wrap">) -&gt; bool <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
             <dd><span></span></dd>
-            <dt id="ae2611b9f3d9790273d58be0897551519">
-              <span class="m-doc-wrap-bumper">auto <a href="#ae2611b9f3d9790273d58be0897551519" class="m-doc-self">func38h</a>(</span><span class="m-doc-wrap">) -&gt; bool <span class="m-label m-flat m-warning">pure virtual</span></span>
+            <dt id="ad0557f2e3a7c25f00266006e93bd161b">
+              <span class="m-doc-wrap-bumper">auto <a href="#ad0557f2e3a7c25f00266006e93bd161b" class="m-doc-self">IsHidden</a>(</span><span class="m-doc-wrap">) -&gt; bool <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
             <dd><span></span></dd>
             <dt id="af9b77c5b597ef56f350cb2ae5fdc3a57">
               <span class="m-doc-wrap-bumper">void <a href="#af9b77c5b597ef56f350cb2ae5fdc3a57" class="m-doc-self">SetSeed</a>(</span><span class="m-doc-wrap">int32_t seed) <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
             <dd><span></span></dd>
-            <dt id="a6aa84c9ea6186c955c3edf45b4f5ff13">
-              <span class="m-doc-wrap-bumper">auto <a href="#a6aa84c9ea6186c955c3edf45b4f5ff13" class="m-doc-self">func40h</a>(</span><span class="m-doc-wrap">int,
-              int,
-              int) -&gt; bool <span class="m-label m-flat m-warning">pure virtual</span></span>
+            <dt id="a4278ada41632e93349b6225ea4d27f44">
+              <span class="m-doc-wrap-bumper">auto <a href="#a4278ada41632e93349b6225ea4d27f44" class="m-doc-self">SetVectorParams</a>(</span><span class="m-doc-wrap"><a href="class_swarm_1_1_i_effect.html#a1ea53d43e8f9a55540a5dcf9054a4e55" class="m-doc">FloatParams</a> param,
+              const <a href="struct_math_1_1_vector3.html" class="m-doc">Vector3</a>* data,
+              int count) -&gt; bool <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
             <dd><span></span></dd>
-            <dt id="a0ffddd14d3f1705be065ed2ff6d7947e">
-              <span class="m-doc-wrap-bumper">auto <a href="#a0ffddd14d3f1705be065ed2ff6d7947e" class="m-doc-self">func44h</a>(</span><span class="m-doc-wrap">int,
-              int,
-              int) -&gt; bool <span class="m-label m-flat m-warning">pure virtual</span></span>
+            <dt id="a7f4d1d669ef57b3b53ff998cd419f750">
+              <span class="m-doc-wrap-bumper">auto <a href="#a7f4d1d669ef57b3b53ff998cd419f750" class="m-doc-self">SetFloatParams</a>(</span><span class="m-doc-wrap"><a href="class_swarm_1_1_i_effect.html#a1ea53d43e8f9a55540a5dcf9054a4e55" class="m-doc">FloatParams</a> param,
+              const float* data,
+              int count) -&gt; bool <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
             <dd><span></span></dd>
-            <dt id="ab5cce0e704b82617f61c859fddd64a82">
-              <span class="m-doc-wrap-bumper">auto <a href="#ab5cce0e704b82617f61c859fddd64a82" class="m-doc-self">func48h</a>(</span><span class="m-doc-wrap">int,
-              const eastl::pair&lt;void*, int&gt;&amp; modelAndSet,
-              int) -&gt; bool <span class="m-label m-flat m-warning">pure virtual</span></span>
+            <dt id="a3f38a08ccdff28a218dd3a05fe96d079">
+              <span class="m-doc-wrap-bumper">auto <a href="#a3f38a08ccdff28a218dd3a05fe96d079" class="m-doc-self">SetIntParams</a>(</span><span class="m-doc-wrap"><a href="class_swarm_1_1_i_effect.html#abb7064d38995322599a6440a53a63bac" class="m-doc">IntParams</a> param,
+              const int* data,
+              int count) -&gt; bool <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
             <dd><span></span></dd>
-            <dt id="aa20363716186aa350bd8a8a2740bca2d">
-              <span class="m-doc-wrap-bumper">auto <a href="#aa20363716186aa350bd8a8a2740bca2d" class="m-doc-self">func4Ch</a>(</span><span class="m-doc-wrap">int,
-              int) -&gt; bool <span class="m-label m-flat m-warning">pure virtual</span></span>
+            <dt id="a050c6b3ac19c4ef88186bb4541b5130c">
+              <span class="m-doc-wrap-bumper">auto <a href="#a050c6b3ac19c4ef88186bb4541b5130c" class="m-doc-self">SetObjectParam</a>(</span><span class="m-doc-wrap"><a href="class_swarm_1_1_i_effect.html#ae740af7ffdad398358d4a4dc2619e9fb" class="m-doc">ObjectParams</a> param,
+              <a href="class_object.html" class="m-doc">Object</a>* data) -&gt; bool <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
             <dd><span></span></dd>
-            <dt id="aabf8a14bbaef199444b5c40159ec86fc">
-              <span class="m-doc-wrap-bumper">auto <a href="#aabf8a14bbaef199444b5c40159ec86fc" class="m-doc-self">func50h</a>(</span><span class="m-doc-wrap">int,
-              int) -&gt; int <span class="m-label m-flat m-warning">pure virtual</span></span>
+            <dt id="a70b42ef4d792526a8e1a6d9151b16cf1">
+              <span class="m-doc-wrap-bumper">auto <a href="#a70b42ef4d792526a8e1a6d9151b16cf1" class="m-doc-self">GetVectorParams</a>(</span><span class="m-doc-wrap"><a href="class_swarm_1_1_i_effect.html#a1ea53d43e8f9a55540a5dcf9054a4e55" class="m-doc">FloatParams</a> param,
+              int* dstCount = nullptr) -&gt; const <a href="struct_math_1_1_vector3.html" class="m-doc">Vector3</a>&amp; <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
             <dd><span></span></dd>
-            <dt id="a91dcb3bb230b8130f41b5de81e100e8d">
-              <span class="m-doc-wrap-bumper">auto <a href="#a91dcb3bb230b8130f41b5de81e100e8d" class="m-doc-self">func54h</a>(</span><span class="m-doc-wrap">int,
-              int) -&gt; int <span class="m-label m-flat m-warning">pure virtual</span></span>
+            <dt id="a75232e8d08a615fc2bd0d1bd831b5d27">
+              <span class="m-doc-wrap-bumper">auto <a href="#a75232e8d08a615fc2bd0d1bd831b5d27" class="m-doc-self">GetFloatParams</a>(</span><span class="m-doc-wrap"><a href="class_swarm_1_1_i_effect.html#a1ea53d43e8f9a55540a5dcf9054a4e55" class="m-doc">FloatParams</a> params,
+              int* dstCount = nullptr) -&gt; const float* <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
             <dd><span></span></dd>
-            <dt id="a11532c3648266c449bfe5b126b47d2e8">
-              <span class="m-doc-wrap-bumper">auto <a href="#a11532c3648266c449bfe5b126b47d2e8" class="m-doc-self">func58h</a>(</span><span class="m-doc-wrap">int,
-              int) -&gt; int <span class="m-label m-flat m-warning">pure virtual</span></span>
+            <dt id="a1c59607bb7a5df6ae17c4b41447a6657">
+              <span class="m-doc-wrap-bumper">auto <a href="#a1c59607bb7a5df6ae17c4b41447a6657" class="m-doc-self">GetIntParams</a>(</span><span class="m-doc-wrap"><a href="class_swarm_1_1_i_effect.html#abb7064d38995322599a6440a53a63bac" class="m-doc">IntParams</a> param,
+              int* dstCount = nullptr) -&gt; const int* <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
             <dd><span></span></dd>
-            <dt id="a3e4046610b75f76cb39c11db2bb60cc0">
-              <span class="m-doc-wrap-bumper">auto <a href="#a3e4046610b75f76cb39c11db2bb60cc0" class="m-doc-self">func5Ch</a>(</span><span class="m-doc-wrap">int) -&gt; int <span class="m-label m-flat m-warning">pure virtual</span></span>
+            <dt id="acb632e2d4b5d8edc6888d6b7dbada2f7">
+              <span class="m-doc-wrap-bumper">auto <a href="#acb632e2d4b5d8edc6888d6b7dbada2f7" class="m-doc-self">GetObjectParam</a>(</span><span class="m-doc-wrap"><a href="class_swarm_1_1_i_effect.html#ae740af7ffdad398358d4a4dc2619e9fb" class="m-doc">ObjectParams</a> params) -&gt; <a href="class_object.html" class="m-doc">Object</a>* <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
             <dd><span></span></dd>
             <dt id="a7af18618e24500dd7ce7a0ec32c98c55">
@@ -181,6 +232,241 @@
             </dt>
             <dd><span></span></dd>
           </dl>
+        </section>
+        <section>
+          <h2>Enum documentation</h2>
+          <section class="m-doc-details" id="abb7064d38995322599a6440a53a63bac"><div>
+            <h3>
+              enum Swarm::<wbr />IEffect::<wbr /><a href="#abb7064d38995322599a6440a53a63bac" class="m-doc-self">IntParams</a>
+            </h3>
+            <p><span></span></p>
+            <table class="m-table m-fullwidth m-flat m-doc">
+              <thead><tr><th style="width: 1%">Enumerators</th><th></th></tr></thead>
+              <tbody>
+                <tr>
+                  <td><a href="#abb7064d38995322599a6440a53a63baca94e8e377447797d9b1352b0a3fcd23e0" class="m-doc-self" id="abb7064d38995322599a6440a53a63baca94e8e377447797d9b1352b0a3fcd23e0">kParamModelOverride</a></td>
+                  <td>
+                  <p>Set an override model. This requires two parameters: <code>int overrideSet</code> and <code>uint32_t name</code></p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#abb7064d38995322599a6440a53a63baca4a1a1199f4839c6d85e74cd9af28f0d5" class="m-doc-self" id="abb7064d38995322599a6440a53a63baca4a1a1199f4839c6d85e74cd9af28f0d5">kParamTextureOverride</a></td>
+                  <td>
+                  <p>Set an override texture. This requires two parameters: <code>int overrideSet</code> and <code>uint32_t name</code></p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#abb7064d38995322599a6440a53a63baca7879b22e781aec8c0384bad5885c9ccb" class="m-doc-self" id="abb7064d38995322599a6440a53a63baca7879b22e781aec8c0384bad5885c9ccb">kParamSelectFrame</a></td>
+                  <td>
+                  <p>Select the given particle texture frame.</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#abb7064d38995322599a6440a53a63bacabc0aade34a7dcd5f17e11634044349b7" class="m-doc-self" id="abb7064d38995322599a6440a53a63bacabc0aade34a7dcd5f17e11634044349b7">kParamSelectState</a></td>
+                  <td>
+                  <p>Select the given effect state (<a href="namespace_swarm.html#ae16361599ce4f01e8b6d7915b5861fc5" class="m-doc">Swarm::<wbr />SwarmState</a>)</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#abb7064d38995322599a6440a53a63baca108ea7a8459b1fe9a66fab412fcde87c" class="m-doc-self" id="abb7064d38995322599a6440a53a63baca108ea7a8459b1fe9a66fab412fcde87c">kParamDistID</a></td>
+                  <td>
+                  <p>Used in Distribute effects, expects a ResourceID*.</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#abb7064d38995322599a6440a53a63baca6eba06b7b440da973f182b2a3b111645" class="m-doc-self" id="abb7064d38995322599a6440a53a63baca6eba06b7b440da973f182b2a3b111645">kParamDistUpdate</a></td>
+                  <td>
+                  <p><span></span></p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#abb7064d38995322599a6440a53a63baca6cf8b74bf16dc565399fcd44233b95a8" class="m-doc-self" id="abb7064d38995322599a6440a53a63baca6cf8b74bf16dc565399fcd44233b95a8">kParamIntUser1</a></td>
+                  <td>
+                  <p><span></span></p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#abb7064d38995322599a6440a53a63bacaeec68212559ae77e81b05b5f4155a06c" class="m-doc-self" id="abb7064d38995322599a6440a53a63bacaeec68212559ae77e81b05b5f4155a06c">kParamIntUser2</a></td>
+                  <td>
+                  <p><span></span></p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#abb7064d38995322599a6440a53a63baca40fd8afccf1a225c644f0a8ff2873366" class="m-doc-self" id="abb7064d38995322599a6440a53a63baca40fd8afccf1a225c644f0a8ff2873366">kParamIntUser3</a></td>
+                  <td>
+                  <p><span></span></p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#abb7064d38995322599a6440a53a63baca13adbc4cb6cf0bda59ae16a929e60b81" class="m-doc-self" id="abb7064d38995322599a6440a53a63baca13adbc4cb6cf0bda59ae16a929e60b81">kParamIntUser4</a></td>
+                  <td>
+                  <p><span></span></p>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="a1ea53d43e8f9a55540a5dcf9054a4e55"><div>
+            <h3>
+              enum Swarm::<wbr />IEffect::<wbr /><a href="#a1ea53d43e8f9a55540a5dcf9054a4e55" class="m-doc-self">FloatParams</a>
+            </h3>
+            <p><span></span></p>
+            <table class="m-table m-fullwidth m-flat m-doc">
+              <thead><tr><th style="width: 1%">Enumerators</th><th></th></tr></thead>
+              <tbody>
+                <tr>
+                  <td><a href="#a1ea53d43e8f9a55540a5dcf9054a4e55ad27869681b67dda0841994fd209d69fa" class="m-doc-self" id="a1ea53d43e8f9a55540a5dcf9054a4e55ad27869681b67dda0841994fd209d69fa">kParamEmitStrength</a></td>
+                  <td>
+                  <p><span></span></p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a1ea53d43e8f9a55540a5dcf9054a4e55ac1100fed74df03c19f017f4c6704c9e3" class="m-doc-self" id="a1ea53d43e8f9a55540a5dcf9054a4e55ac1100fed74df03c19f017f4c6704c9e3">kParamParticleSizeScale</a></td>
+                  <td>
+                  <p><span></span></p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a1ea53d43e8f9a55540a5dcf9054a4e55a2c9e63787481a64fe5572775168c5be3" class="m-doc-self" id="a1ea53d43e8f9a55540a5dcf9054a4e55a2c9e63787481a64fe5572775168c5be3">kParamParticleLifeScale</a></td>
+                  <td>
+                  <p><span></span></p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a1ea53d43e8f9a55540a5dcf9054a4e55a807da8666f143ec3940541851d93bb5b" class="m-doc-self" id="a1ea53d43e8f9a55540a5dcf9054a4e55a807da8666f143ec3940541851d93bb5b">kParamEmitScale</a></td>
+                  <td>
+                  <p><span></span></p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a1ea53d43e8f9a55540a5dcf9054a4e55a6fb147a4d4189c51e52fc6b8ee7c624e" class="m-doc-self" id="a1ea53d43e8f9a55540a5dcf9054a4e55a6fb147a4d4189c51e52fc6b8ee7c624e">kParamTransparency</a></td>
+                  <td>
+                  <p><span></span></p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a1ea53d43e8f9a55540a5dcf9054a4e55ae055f4a41c55624fb8bba1c85705e828" class="m-doc-self" id="a1ea53d43e8f9a55540a5dcf9054a4e55ae055f4a41c55624fb8bba1c85705e828">kParamColor</a></td>
+                  <td>
+                  <p>Expects a ColorRGB.</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a1ea53d43e8f9a55540a5dcf9054a4e55a10594e27e969319a0d1be1c046b40d9b" class="m-doc-self" id="a1ea53d43e8f9a55540a5dcf9054a4e55a10594e27e969319a0d1be1c046b40d9b">kParamColorList</a></td>
+                  <td>
+                  <p>Expects a list of ColorRGBs.</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a1ea53d43e8f9a55540a5dcf9054a4e55a27e0f78aa8e22461dc606b0e2277db3b" class="m-doc-self" id="a1ea53d43e8f9a55540a5dcf9054a4e55a27e0f78aa8e22461dc606b0e2277db3b">kParamTargetPoint</a></td>
+                  <td>
+                  <p>Expects a Vector3.</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a1ea53d43e8f9a55540a5dcf9054a4e55a420c050bb33b83ef5451f0186b517985" class="m-doc-self" id="a1ea53d43e8f9a55540a5dcf9054a4e55a420c050bb33b83ef5451f0186b517985">kParamExplosionLocation</a></td>
+                  <td>
+                  <p>Expects a Vector3.</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a1ea53d43e8f9a55540a5dcf9054a4e55ac5d90140959536da23d04bd2a5686b26" class="m-doc-self" id="a1ea53d43e8f9a55540a5dcf9054a4e55ac5d90140959536da23d04bd2a5686b26">kParamAttractorLocation</a></td>
+                  <td>
+                  <p>Expects a Vector3.</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a1ea53d43e8f9a55540a5dcf9054a4e55ac5d1cacc8ec890cd6fd6b90eac1d364e" class="m-doc-self" id="a1ea53d43e8f9a55540a5dcf9054a4e55ac5d1cacc8ec890cd6fd6b90eac1d364e">kParamAttractorIntensity</a></td>
+                  <td>
+                  <p><span></span></p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a1ea53d43e8f9a55540a5dcf9054a4e55a0d7ffc703211fb56728b375c0bdebf6b" class="m-doc-self" id="a1ea53d43e8f9a55540a5dcf9054a4e55a0d7ffc703211fb56728b375c0bdebf6b">kParamViewRay</a></td>
+                  <td>
+                  <p>Expects two Vector3s: position and direction.</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a1ea53d43e8f9a55540a5dcf9054a4e55a0dd6c38310d1ffe50661be676462d73c" class="m-doc-self" id="a1ea53d43e8f9a55540a5dcf9054a4e55a0dd6c38310d1ffe50661be676462d73c">kParamEmissionVolume</a></td>
+                  <td>
+                  <p><span></span></p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a1ea53d43e8f9a55540a5dcf9054a4e55a85ac362c2ac8060c74e9fea4d9b5abba" class="m-doc-self" id="a1ea53d43e8f9a55540a5dcf9054a4e55a85ac362c2ac8060c74e9fea4d9b5abba">kParamPath</a></td>
+                  <td>
+                  <p>Expects a list of Vector3s.</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a1ea53d43e8f9a55540a5dcf9054a4e55a27303e8039e5be34a335c6f57623262e" class="m-doc-self" id="a1ea53d43e8f9a55540a5dcf9054a4e55a27303e8039e5be34a335c6f57623262e">kParamShaderParams</a></td>
+                  <td>
+                  <p><span></span></p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a1ea53d43e8f9a55540a5dcf9054a4e55a0237974bb33cec5ad136882081a2942f" class="m-doc-self" id="a1ea53d43e8f9a55540a5dcf9054a4e55a0237974bb33cec5ad136882081a2942f">kParamVolume</a></td>
+                  <td>
+                  <p>Controls the volume of sound effects.</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a1ea53d43e8f9a55540a5dcf9054a4e55a754f26d0f8b7548ff5ef0ac44ba79fc2" class="m-doc-self" id="a1ea53d43e8f9a55540a5dcf9054a4e55a754f26d0f8b7548ff5ef0ac44ba79fc2">kParamHeightRange</a></td>
+                  <td>
+                  <p>Expects two floats.</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a1ea53d43e8f9a55540a5dcf9054a4e55aa528a71cf886844ec76e6cd563fe79d4" class="m-doc-self" id="a1ea53d43e8f9a55540a5dcf9054a4e55aa528a71cf886844ec76e6cd563fe79d4">kParamSubdivWindow</a></td>
+                  <td>
+                  <p><span></span></p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a1ea53d43e8f9a55540a5dcf9054a4e55ac72956c44bceefe214772752ccbc44aa" class="m-doc-self" id="a1ea53d43e8f9a55540a5dcf9054a4e55ac72956c44bceefe214772752ccbc44aa">kParamMapForceScale</a></td>
+                  <td>
+                  <p><span></span></p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a1ea53d43e8f9a55540a5dcf9054a4e55af95ad1b7654d5b9ea91dc1e584eeb267" class="m-doc-self" id="a1ea53d43e8f9a55540a5dcf9054a4e55af95ad1b7654d5b9ea91dc1e584eeb267">kParamLodDistanceScale</a></td>
+                  <td>
+                  <p><span></span></p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a1ea53d43e8f9a55540a5dcf9054a4e55a86371c2737faa39ca529dc720cfdf165" class="m-doc-self" id="a1ea53d43e8f9a55540a5dcf9054a4e55a86371c2737faa39ca529dc720cfdf165">kParamDistributeSizeScale</a></td>
+                  <td>
+                  <p><span></span></p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a1ea53d43e8f9a55540a5dcf9054a4e55a05f0bb4889f15a7672dcc68478afcadc" class="m-doc-self" id="a1ea53d43e8f9a55540a5dcf9054a4e55a05f0bb4889f15a7672dcc68478afcadc">kParamFloatUser1</a></td>
+                  <td>
+                  <p><span></span></p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a1ea53d43e8f9a55540a5dcf9054a4e55a1ab0fc67d574c23f06eb2e43359bb0f9" class="m-doc-self" id="a1ea53d43e8f9a55540a5dcf9054a4e55a1ab0fc67d574c23f06eb2e43359bb0f9">kParamFloatUser2</a></td>
+                  <td>
+                  <p><span></span></p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a1ea53d43e8f9a55540a5dcf9054a4e55a2867b87e086e1f1ed4bb55bbfebdcf6e" class="m-doc-self" id="a1ea53d43e8f9a55540a5dcf9054a4e55a2867b87e086e1f1ed4bb55bbfebdcf6e">kParamFloatUser3</a></td>
+                  <td>
+                  <p><span></span></p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a1ea53d43e8f9a55540a5dcf9054a4e55a54c3b4ce652415541ee899dfe5ba311d" class="m-doc-self" id="a1ea53d43e8f9a55540a5dcf9054a4e55a54c3b4ce652415541ee899dfe5ba311d">kParamFloatUser4</a></td>
+                  <td>
+                  <p><span></span></p>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div></section>
         </section>
         <section>
           <h2>Function documentation</h2>
