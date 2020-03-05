@@ -29,17 +29,6 @@ using namespace eastl;
 namespace Swarm
 {
 
-	/// An enum to represent the current state of an effect world and the Swarm manager.
-	enum SwarmState
-	{
-		kStateActive = 0,
-		kStatePaused = 1,
-		kStateSuspended = 2,
-		kStateHidden = 3,
-		kStateManual = 4,
-		kStateShutdown = 5,
-	};
-
 	///
 	/// An effect world is a space in the game which contains effects. The equivalent in models would be Graphics::IModelWorld.
 	/// Effects in a certain world do not interact with effects of other worlds.

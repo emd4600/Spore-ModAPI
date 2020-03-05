@@ -193,10 +193,10 @@ namespace Graphics
 		/// @param enable If true, effects will be enabled
 		/// @param instanceID [Optional] If not 0, only effects with this ID will be changed.
 		/* C4h */	virtual void SetEffectEnable(Model* pModel, bool enable, uint32_t instanceID = 0) const = 0;
-		/* C8h */	virtual int funcC8h() = 0;
-		/* CCh */	virtual int funcCCh() = 0;
-		/* D0h */	virtual int funcD0h() = 0;
-		/* D4h */	virtual int funcD4h() = 0;
+		/* C8h */	virtual bool SetEffectFloatParams(Model* pModel, Swarm::IEffect::FloatParams param, const float* data, int count, uint32_t instanceID = 0) const = 0;
+		/* CCh */	virtual bool SetEffectIntParams(Model* pModel, Swarm::IEffect::IntParams param, const int* data, int count, uint32_t instanceID = 0) const = 0;
+		/* D0h */	virtual bool SetEffectObjectParam(Model* pModel, Swarm::IEffect::IntParams param, Object* data, uint32_t instanceID = 0) const = 0;
+		/* D4h */	virtual int funcD4h(Model* pModel, const Transform* pTransform = nullptr, uint32_t instanceID = 0) = 0;
 		/* D8h */	virtual int funcD8h() = 0;
 		/* DCh */	virtual int funcDCh() = 0;
 		/* E0h */	virtual int funcE0h() = 0;
@@ -261,6 +261,7 @@ namespace Graphics
 
 		/* 174h */	virtual bool Initialize() = 0;
 		/* 178h */	virtual bool Dispose() = 0;
+		/* 17Ch */	virtual void func17Ch() = 0;  // related with collisions
 
 	protected:
 		void LoadModelProperties(const App::PropertyList* pPropList, ModelAsset* pAsset, int nFlags, int arg_C);

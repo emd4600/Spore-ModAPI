@@ -21,6 +21,7 @@
 
 #include <Spore\Transform.h>
 #include <Spore\ResourceID.h>
+#include <Spore\Object.h>
 
 #include <EASTL\intrusive_ptr.h>
 #include <EASTL\utility.h>
@@ -29,20 +30,96 @@
 
 namespace Swarm
 {
+	/// An enum to represent the current state of an effect world and the Swarm manager.
+	enum SwarmState
+	{
+		kStateActive = 0,
+		kStatePaused = 1,
+		kStateSuspended = 2,
+		kStateHidden = 3,
+		kStateManual = 4,
+		kStateShutdown = 5,
+	};
+
 	///
 	/// An instance of an effect in the game. The effect can receive transformations.
-	/// Use Show() to activate the instance and kill to destroy the effect.
+	/// Use Start() to activate the instance and Stop() to destroy the effect.
 	///
 	class IEffect
 	{
 	public:
+		// <= 10
+		enum IntParams
+		{
+			/// Set an override model. This requires two parameters: `int overrideSet` and `uint32_t name`
+			kParamModelOverride = 0,
+			/// Set an override texture. This requires two parameters: `int overrideSet` and `uint32_t name`
+			kParamTextureOverride = 1,
+			/// Select the given particle texture frame
+			kParamSelectFrame = 2,
+			/// Select the given effect state (Swarm::SwarmState)
+			kParamSelectState = 3,
+			/// Used in Distribute effects, expects a ResourceID*
+			kParamDistID = 4,
+			kParamDistUpdate = 5,
+			kParamIntUser1 = 6,
+			kParamIntUser2 = 7,
+			kParamIntUser3 = 8,
+			kParamIntUser4 = 9
+		};
+
+		enum FloatParams
+		{
+			kParamEmitStrength = 0,
+			kParamParticleSizeScale = 1,
+			kParamParticleLifeScale = 2,
+			kParamEmitScale = 3,
+			kParamTransparency = 4,
+			/// Expects a ColorRGB
+			kParamColor = 5,
+			/// Expects a list of ColorRGBs
+			kParamColorList = 6,
+			/// Expects a Vector3
+			kParamTargetPoint = 7,
+			/// Expects a Vector3
+			kParamExplosionLocation = 8,
+			/// Expects a Vector3
+			kParamAttractorLocation = 9,
+			kParamAttractorIntensity = 10,
+			/// Expects two Vector3s: position and direction
+			kParamViewRay = 11,
+			kParamEmissionVolume = 12,
+			/// Expects a list of Vector3s
+			kParamPath = 13,
+			kParamShaderParams = 14,  // ?
+			/// Controls the volume of sound effects
+			kParamVolume = 15,
+			/// Expects two floats
+			kParamHeightRange = 16,
+			kParamSubdivWindow = 17,
+			kParamMapForceScale = 18,
+			kParamLodDistanceScale = 19,
+			kParamDistributeSizeScale = 20,
+			kParamFloatUser1 = 21,
+			kParamFloatUser2 = 22,
+			kParamFloatUser3 = 23,
+			kParamFloatUser4 = 24,
+
+			// 0x101  BoundingBox
+		};
+
+		enum ObjectParams
+		{
+
+		};
+
 		virtual int AddRef() = 0;
 		virtual int Release() = 0;
 
-		/* 08h */	virtual void Start(int hardStart=1) = 0;
+		/* 08h */	virtual void Start(int hardStart = 1) = 0;
 		/* 0Ch */	virtual int Stop(int hardStop = 1) = 0;
 
-		/* 10h */	virtual int func10h() = 0;
+		/* 10h */	virtual int IsRunning() = 0;
 		/* 14h */	virtual void func14h(const Transform&) = 0;
 		/* 18h */	virtual void SetTransform(const Transform& transform) = 0;
 		/* 1Ch */	virtual Transform func1Ch() const = 0;
@@ -53,18 +130,18 @@ namespace Swarm
 		/// If true, pauses the effect; if false, it unpauses it.
 		/// @param paused
 		/* 2Ch */	virtual void SetPaused(bool paused) = 0;
-		/* 30h */	virtual void func30h(bool) = 0;
-		/* 34h */	virtual bool func34h() = 0;
-		/* 38h */	virtual bool func38h() = 0;
+		/* 30h */	virtual void SetHidden(bool hidden) = 0;
+		/* 34h */	virtual bool IsPaused() = 0;
+		/* 38h */	virtual bool IsHidden() = 0;
 		/* 3Ch */	virtual void SetSeed(int32_t seed) = 0;
-		/* 40h */	virtual bool func40h(int, int, int) = 0;
-		/* 44h */	virtual bool func44h(int, int, int) = 0;
-		/* 48h */	virtual bool func48h(int, const eastl::pair<void*, int>& modelAndSet, int) = 0;  // set override model
-		/* 4Ch */	virtual bool func4Ch(int, int) = 0;
-		/* 50h */	virtual int func50h(int, int) = 0;
-		/* 54h */	virtual int func54h(int, int) = 0;
-		/* 58h */	virtual int func58h(int, int) = 0;
-		/* 5Ch */	virtual int func5Ch(int) = 0;
+		/* 40h */	virtual bool SetVectorParams(FloatParams param, const Vector3* data, int count) = 0;
+		/* 44h */	virtual bool SetFloatParams(FloatParams param, const float* data, int count) = 0;
+		/* 48h */	virtual bool SetIntParams(IntParams param, const int* data, int count) = 0;
+		/* 4Ch */	virtual bool SetObjectParam(ObjectParams param, Object* data) = 0;
+		/* 50h */	virtual const Vector3& GetVectorParams(FloatParams param, int* dstCount = nullptr) = 0;
+		/* 54h */	virtual const float* GetFloatParams(FloatParams params, int* dstCount = nullptr) = 0;
+		/* 58h */	virtual const int* GetIntParams(IntParams param, int* dstCount = nullptr) = 0;
+		/* 5Ch */	virtual Object* GetObjectParam(ObjectParams params) = 0;
 		/* 60h */	virtual ResourceID GetName() = 0;
 		/* 64h */	virtual void func64h(int, int) = 0;
 	};
