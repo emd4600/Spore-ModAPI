@@ -274,9 +274,9 @@ namespace Math
 		auto cameraUp = dir.Cross(right).Normalized();
 
 		Matrix3 m;
-		m.m[0][0] = right.x;
-		m.m[0][1] = right.y;
-		m.m[0][2] = right.z;
+		m.m[0][0] = -right.x;
+		m.m[0][1] = -right.y;
+		m.m[0][2] = -right.z;
 		m.m[1][0] = dir.x;
 		m.m[1][1] = dir.y;
 		m.m[1][2] = dir.z;
@@ -285,6 +285,20 @@ namespace Math
 		m.m[2][2] = cameraUp.z;
 
 		return m;
+	}
+
+	Matrix3 Matrix4::To3x3() const {
+		Matrix3 dst;
+		dst.m[0][0] = m[0][0];
+		dst.m[0][1] = m[0][1];
+		dst.m[0][2] = m[0][2];
+		dst.m[1][0] = m[1][0];
+		dst.m[1][1] = m[1][1];
+		dst.m[1][2] = m[1][2];
+		dst.m[2][0] = m[2][0];
+		dst.m[2][1] = m[2][1];
+		dst.m[2][2] = m[2][2];
+		return dst;
 	}
 
 	float Vector3::AngleTo(const Vector3& other) const {

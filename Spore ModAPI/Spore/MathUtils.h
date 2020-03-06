@@ -445,6 +445,9 @@ namespace Math
 
 		/// Returns the transpose of this matrix, switching the rows and columns. `transposed[i][j] = matrix[j][i]`
 		Matrix4 Transposed() const;
+
+		/// Returns the 3x3 part of this matrix, leaving the last column and row.
+		Matrix3 To3x3() const;
 	};
 
 	/// A pair of two Vector3 that define the boundaries of an object (the minimum point and the maximum point in the space).
