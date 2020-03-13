@@ -214,7 +214,8 @@ namespace UTFWin
 	template<typename Pointer, typename Reference>
 	inline ProcIterator<Pointer, Reference>& ProcIterator<Pointer, Reference>::operator++()
 	{
-		return ProcIterator(mpParentWindow, mpParentWindow->GetNextWinProc(mpProc));
+		*this = ProcIterator(mpParentWindow, mpParentWindow->GetNextWinProc(mpProc));
+		return *this;
 	}
 
 	template<typename Pointer, typename Reference>
