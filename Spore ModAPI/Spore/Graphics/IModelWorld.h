@@ -124,7 +124,7 @@ namespace Graphics
 
 
 		/// @returns The closest model that intersected, or nullptr if no model intersected the ray.
-		/* 24h */	virtual Model* Raycast(const Vector3& point1, const Vector3& point2, float*, Vector3* dstIntersectionPoint, Vector3* = nullptr, FilterSettings& settings = FilterSettings(), int* = nullptr, int* = nullptr) = 0;
+		/* 24h */	virtual Model* Raycast(const Vector3& point1, const Vector3& point2, float* = nullptr, Vector3* dstIntersectionPoint = nullptr, Vector3* = nullptr, FilterSettings& settings = FilterSettings(), int* = nullptr, int* = nullptr) = 0;
 
 		/* 28h */	virtual Model* func28h(const Vector3& point1, const Vector3& point2, float*, FilterSettings& settings = FilterSettings()) = 0;
 
