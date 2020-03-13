@@ -55,6 +55,7 @@
               Reference
               <ul>
                 <li><a href="#nested-classes">Classes</a></li>
+                <li><a href="#typedef-members">Typedefs</a></li>
                 <li><a href="#func-members">Functions</a></li>
               </ul>
             </li>
@@ -65,6 +66,19 @@
           <dl class="m-doc">
             <dt>
               struct <a href="struct_graphics_1_1_renderer_1_1_device_parameters.html" class="m-doc">DeviceParameters</a>
+            </dt>
+            <dd><span></span></dd>
+          </dl>
+        </section>
+        <section id="typedef-members">
+          <h2><a href="#typedef-members">Typedefs</a></h2>
+          <dl class="m-doc">
+            <dt>
+              using <a href="#a9d522d35fe9dafb5b1c52a4ad123ecc0" class="m-doc">LoadShaderDataFunction_t</a> = void(*)(UINT startRegister, UINT count, bool isVertexShader)
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              using <a href="#abcbd1344cbae46ffe86b77c4cc8f9b1f" class="m-doc">UnkShaderDataFunction_t</a> = void(*)(void*data, void*)
             </dt>
             <dd><span></span></dd>
           </dl>
@@ -119,6 +133,19 @@
             </dt>
             <dd><span></span></dd>
             <dt>
+              <span class="m-doc-wrap-bumper">static void <a href="#af59f51fa460d717ba4b00d65142eadeb" class="m-doc">DefaultUnkShaderData</a>(</span><span class="m-doc-wrap">void*,
+              void*)</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">void <a href="#a5554356550153c1333063acd8db89a2d" class="m-doc">RegisterShaderData</a>(</span><span class="m-doc-wrap">short index,
+              <a href="namespace_graphics_1_1_renderer.html#abcbd1344cbae46ffe86b77c4cc8f9b1f" class="m-doc">UnkShaderDataFunction_<wbr />t</a>,
+              <a href="namespace_graphics_1_1_renderer.html#abcbd1344cbae46ffe86b77c4cc8f9b1f" class="m-doc">UnkShaderDataFunction_<wbr />t</a>,
+              <a href="namespace_graphics_1_1_renderer.html#abcbd1344cbae46ffe86b77c4cc8f9b1f" class="m-doc">UnkShaderDataFunction_<wbr />t</a>,
+              <a href="namespace_graphics_1_1_renderer.html#a9d522d35fe9dafb5b1c52a4ad123ecc0" class="m-doc">LoadShaderDataFunction_<wbr />t</a>)</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
               <span class="m-doc-wrap-bumper">auto <a href="#a555d6aea46bd655fdc1cccf9dc7966ba" class="m-doc">SetPresentationParameters</a>(</span><span class="m-doc-wrap">const <a href="struct_graphics_1_1_renderer_1_1_device_parameters.html" class="m-doc">DeviceParameters</a>&amp; parameters) -&gt; int</span>
             </dt>
             <dd>Assigns the presentation parameters that will be used by the DirectX device.</dd>
@@ -137,6 +164,23 @@
             </dt>
             <dd>Sets the given raster to be the active Direct3D render target for the given index.</dd>
           </dl>
+        </section>
+        <section>
+          <h2>Typedef documentation</h2>
+          <section class="m-doc-details" id="a9d522d35fe9dafb5b1c52a4ad123ecc0"><div>
+            <h3>
+              typedef void(*Graphics::<wbr />Renderer::<wbr /><a href="#a9d522d35fe9dafb5b1c52a4ad123ecc0" class="m-doc-self">LoadShaderDataFunction_t</a>)(UINT startRegister, UINT count, bool isVertexShader)
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_renderer_8h.html">&lt;Spore/Graphics/Renderer.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="abcbd1344cbae46ffe86b77c4cc8f9b1f"><div>
+            <h3>
+              typedef void(*Graphics::<wbr />Renderer::<wbr /><a href="#abcbd1344cbae46ffe86b77c4cc8f9b1f" class="m-doc-self">UnkShaderDataFunction_t</a>)(void*data, void*)
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_renderer_8h.html">&lt;Spore/Graphics/Renderer.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
         </section>
         <section>
           <h2>Function documentation</h2>
@@ -239,6 +283,25 @@
           <section class="m-doc-details" id="aa23825483bf6db0bbe90ea9014959bff"><div>
             <h3>
               <span class="m-doc-wrap-bumper">int Graphics::<wbr />Renderer::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#aa23825483bf6db0bbe90ea9014959bff" class="m-doc-self">GetShaderDataSize</a>(</span><span class="m-doc-wrap">short index)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_renderer_8h.html">&lt;Spore/Graphics/Renderer.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="af59f51fa460d717ba4b00d65142eadeb"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">static void Graphics::<wbr />Renderer::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#af59f51fa460d717ba4b00d65142eadeb" class="m-doc-self">DefaultUnkShaderData</a>(</span><span class="m-doc-wrap">void*,
+              void*)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_renderer_8h.html">&lt;Spore/Graphics/Renderer.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="a5554356550153c1333063acd8db89a2d"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">void Graphics::<wbr />Renderer::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a5554356550153c1333063acd8db89a2d" class="m-doc-self">RegisterShaderData</a>(</span><span class="m-doc-wrap">short index,
+              <a href="namespace_graphics_1_1_renderer.html#abcbd1344cbae46ffe86b77c4cc8f9b1f" class="m-doc">UnkShaderDataFunction_<wbr />t</a>,
+              <a href="namespace_graphics_1_1_renderer.html#abcbd1344cbae46ffe86b77c4cc8f9b1f" class="m-doc">UnkShaderDataFunction_<wbr />t</a>,
+              <a href="namespace_graphics_1_1_renderer.html#abcbd1344cbae46ffe86b77c4cc8f9b1f" class="m-doc">UnkShaderDataFunction_<wbr />t</a>,
+              <a href="namespace_graphics_1_1_renderer.html#a9d522d35fe9dafb5b1c52a4ad123ecc0" class="m-doc">LoadShaderDataFunction_<wbr />t</a>)</span></span>
               <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_renderer_8h.html">&lt;Spore/Graphics/Renderer.h&gt;</a></div>
             </h3>
             <p><span></span></p>

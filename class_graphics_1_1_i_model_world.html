@@ -129,50 +129,83 @@
               <span class="m-doc-wrap-bumper">auto <a href="#a597e1e76f9304b151be14f3c992e69dd" class="m-doc-self">func20h</a>(</span><span class="m-doc-wrap">) -&gt; int <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
             <dd><span></span></dd>
-            <dt id="a253567c007092a35501a3f00dc35b80d">
-              <span class="m-doc-wrap-bumper">auto <a href="#a253567c007092a35501a3f00dc35b80d" class="m-doc-self">func24h</a>(</span><span class="m-doc-wrap">) -&gt; int <span class="m-label m-flat m-warning">pure virtual</span></span>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#ad0a355c7014aad3a32b425054f4c2bc5" class="m-doc">Raycast</a>(</span><span class="m-doc-wrap">const <a href="struct_math_1_1_vector3.html" class="m-doc">Vector3</a>&amp; point1,
+              const <a href="struct_math_1_1_vector3.html" class="m-doc">Vector3</a>&amp; point2,
+              float*,
+              <a href="struct_math_1_1_vector3.html" class="m-doc">Vector3</a>* dstIntersectionPoint,
+              <a href="struct_math_1_1_vector3.html" class="m-doc">Vector3</a>* = nullptr,
+              <a href="struct_graphics_1_1_filter_settings.html" class="m-doc">FilterSettings</a>&amp; settings = <a href="struct_graphics_1_1_filter_settings.html" class="m-doc">FilterSettings</a>(),
+              int* = nullptr,
+              int* = nullptr) -&gt; <a href="class_graphics_1_1_model.html" class="m-doc">Model</a>* <span class="m-label m-flat m-warning">pure virtual</span></span>
+            </dt>
+            <dd></dd>
+            <dt id="ad0ee2cf7a860497153f1067b428f2147">
+              <span class="m-doc-wrap-bumper">auto <a href="#ad0ee2cf7a860497153f1067b428f2147" class="m-doc-self">func28h</a>(</span><span class="m-doc-wrap">const <a href="struct_math_1_1_vector3.html" class="m-doc">Vector3</a>&amp; point1,
+              const <a href="struct_math_1_1_vector3.html" class="m-doc">Vector3</a>&amp; point2,
+              float*,
+              <a href="struct_graphics_1_1_filter_settings.html" class="m-doc">FilterSettings</a>&amp; settings = <a href="struct_graphics_1_1_filter_settings.html" class="m-doc">FilterSettings</a>()) -&gt; <a href="class_graphics_1_1_model.html" class="m-doc">Model</a>* <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
             <dd><span></span></dd>
-            <dt id="a820ae14315bd989f0188933f375d6142">
-              <span class="m-doc-wrap-bumper">auto <a href="#a820ae14315bd989f0188933f375d6142" class="m-doc-self">func28h</a>(</span><span class="m-doc-wrap">) -&gt; int <span class="m-label m-flat m-warning">pure virtual</span></span>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#adf95964aea1151826ceb6aaf0fbb6433" class="m-doc">GetModels</a>(</span><span class="m-doc-wrap">vector&lt;<a href="class_graphics_1_1_model.html" class="m-doc">Model</a>*&gt;&amp; dst,
+              <a href="struct_graphics_1_1_filter_settings.html" class="m-doc">FilterSettings</a>&amp; settings = <a href="struct_graphics_1_1_filter_settings.html" class="m-doc">FilterSettings</a>()) -&gt; bool <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
-            <dd><span></span></dd>
-            <dt id="a202adab0b45b03484f1b73688f88082f">
-              <span class="m-doc-wrap-bumper">auto <a href="#a202adab0b45b03484f1b73688f88082f" class="m-doc-self">func2Ch</a>(</span><span class="m-doc-wrap">) -&gt; int <span class="m-label m-flat m-warning">pure virtual</span></span>
+            <dd>Gets all the models that fit the filter.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#ad3540a7a69b1ad5aefb7ab5bf9c9c94c" class="m-doc">RaycastAllOrdered</a>(</span><span class="m-doc-wrap">const <a href="struct_math_1_1_vector3.html" class="m-doc">Vector3</a>&amp; point1,
+              const <a href="struct_math_1_1_vector3.html" class="m-doc">Vector3</a>&amp; point2,
+              vector&lt;pair&lt;<a href="class_graphics_1_1_model.html" class="m-doc">Model</a>*, float&gt;&gt;&amp; result,
+              <a href="struct_graphics_1_1_filter_settings.html" class="m-doc">FilterSettings</a>&amp; settings = <a href="struct_graphics_1_1_filter_settings.html" class="m-doc">FilterSettings</a>(),
+              float = 0.0) -&gt; bool <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
-            <dd><span></span></dd>
-            <dt id="a74b68003aafbf191f43ec82b1d8dbdb6">
-              <span class="m-doc-wrap-bumper">auto <a href="#a74b68003aafbf191f43ec82b1d8dbdb6" class="m-doc-self">func30h</a>(</span><span class="m-doc-wrap">) -&gt; int <span class="m-label m-flat m-warning">pure virtual</span></span>
+            <dd>Gets all the models that intersect with a segment.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#af479533ada087064fb7c7c3e1d17f320" class="m-doc">RaycastAll</a>(</span><span class="m-doc-wrap">const <a href="struct_math_1_1_vector3.html" class="m-doc">Vector3</a>&amp; point1,
+              const <a href="struct_math_1_1_vector3.html" class="m-doc">Vector3</a>&amp; point2,
+              vector&lt;<a href="class_graphics_1_1_model.html" class="m-doc">Model</a>*&gt;&amp; result,
+              <a href="struct_graphics_1_1_filter_settings.html" class="m-doc">FilterSettings</a>&amp; settings = <a href="struct_graphics_1_1_filter_settings.html" class="m-doc">FilterSettings</a>(),
+              float = 0.0) -&gt; bool <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
-            <dd><span></span></dd>
-            <dt id="afcbd5071bcea44ba1cd8e9a91294aebe">
-              <span class="m-doc-wrap-bumper">auto <a href="#afcbd5071bcea44ba1cd8e9a91294aebe" class="m-doc-self">func34h</a>(</span><span class="m-doc-wrap">) -&gt; int <span class="m-label m-flat m-warning">pure virtual</span></span>
+            <dd>Gets all the models that intersect with a segment.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a4aa0b0168bc29d7ad238cced914da530" class="m-doc">IntersectSphere</a>(</span><span class="m-doc-wrap">const <a href="struct_math_1_1_vector3.html" class="m-doc">Vector3</a>&amp; center,
+              float radius,
+              vector&lt;<a href="class_graphics_1_1_model.html" class="m-doc">Model</a>*&gt; result,
+              <a href="struct_graphics_1_1_filter_settings.html" class="m-doc">FilterSettings</a>&amp; settings = <a href="struct_graphics_1_1_filter_settings.html" class="m-doc">FilterSettings</a>()) -&gt; bool <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
-            <dd><span></span></dd>
-            <dt id="af2d20681c6912d35f5060354e9defed1">
-              <span class="m-doc-wrap-bumper">auto <a href="#af2d20681c6912d35f5060354e9defed1" class="m-doc-self">func38h</a>(</span><span class="m-doc-wrap">) -&gt; int <span class="m-label m-flat m-warning">pure virtual</span></span>
+            <dd>Finds all the models that intersect with the sphere with <code>center</code> and <code>radius</code>.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a0b5a57cfd67544c07b4fb37845559624" class="m-doc">IntersectBBox</a>(</span><span class="m-doc-wrap">const <a href="struct_math_1_1_bounding_box.html" class="m-doc">BoundingBox</a>&amp; bbox,
+              vector&lt;<a href="class_graphics_1_1_model.html" class="m-doc">Model</a>*&gt;&amp; result,
+              <a href="struct_graphics_1_1_filter_settings.html" class="m-doc">FilterSettings</a>&amp; settings = <a href="struct_graphics_1_1_filter_settings.html" class="m-doc">FilterSettings</a>()) -&gt; bool <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
-            <dd><span></span></dd>
-            <dt id="a49ad9ab8660ec191492b42c33fc9270b">
-              <span class="m-doc-wrap-bumper">auto <a href="#a49ad9ab8660ec191492b42c33fc9270b" class="m-doc-self">func3Ch</a>(</span><span class="m-doc-wrap">) -&gt; int <span class="m-label m-flat m-warning">pure virtual</span></span>
-            </dt>
-            <dd><span></span></dd>
+            <dd>Finds all the models that intersect with the given bounding box.</dd>
             <dt id="a35a7dff257a55d0e0025d625cf784ab4">
               <span class="m-doc-wrap-bumper">auto <a href="#a35a7dff257a55d0e0025d625cf784ab4" class="m-doc-self">func40h</a>(</span><span class="m-doc-wrap">) -&gt; int <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
             <dd><span></span></dd>
-            <dt id="adb8212325a667482f63e939f4a04adac">
-              <span class="m-doc-wrap-bumper">auto <a href="#adb8212325a667482f63e939f4a04adac" class="m-doc-self">func44h</a>(</span><span class="m-doc-wrap">) -&gt; int <span class="m-label m-flat m-warning">pure virtual</span></span>
+            <dt id="a4120a631b150f6a4ee8c40b7d03bdf36">
+              <span class="m-doc-wrap-bumper">auto <a href="#a4120a631b150f6a4ee8c40b7d03bdf36" class="m-doc-self">func44h</a>(</span><span class="m-doc-wrap">const <a href="struct_math_1_1_vector3.html" class="m-doc">Vector3</a>&amp; p1,
+              const <a href="struct_math_1_1_vector3.html" class="m-doc">Vector3</a>&amp; p2,
+              const <a href="class_graphics_1_1_model.html" class="m-doc">Model</a>* model,
+              const <a href="struct_math_1_1_vector3.html" class="m-doc">Vector3</a>&amp; p3,
+              <a href="struct_graphics_1_1_filter_settings.html" class="m-doc">FilterSettings</a>&amp; settings = <a href="struct_graphics_1_1_filter_settings.html" class="m-doc">FilterSettings</a>()) -&gt; bool <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
             <dd><span></span></dd>
-            <dt id="a09dee88a1b7a3f03d621fbe2e5e5d55f">
-              <span class="m-doc-wrap-bumper">auto <a href="#a09dee88a1b7a3f03d621fbe2e5e5d55f" class="m-doc-self">func48h</a>(</span><span class="m-doc-wrap">) -&gt; int <span class="m-label m-flat m-warning">pure virtual</span></span>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#acc40784f50ec0b9a15d1af5b67f91064" class="m-doc">ModelIntersectSphere</a>(</span><span class="m-doc-wrap">const <a href="struct_math_1_1_vector3.html" class="m-doc">Vector3</a>&amp; center,
+              float radius,
+              const <a href="class_graphics_1_1_model.html" class="m-doc">Model</a>* model,
+              <a href="struct_graphics_1_1_filter_settings.html" class="m-doc">FilterSettings</a>&amp; settings = <a href="struct_graphics_1_1_filter_settings.html" class="m-doc">FilterSettings</a>()) -&gt; bool <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
-            <dd><span></span></dd>
-            <dt id="a387c358f3049f8ceaacb1fa17bc55210">
-              <span class="m-doc-wrap-bumper">auto <a href="#a387c358f3049f8ceaacb1fa17bc55210" class="m-doc-self">func4Ch</a>(</span><span class="m-doc-wrap">) -&gt; int <span class="m-label m-flat m-warning">pure virtual</span></span>
+            <dd>Returns true if the sphere with <code>center</code> and <code>radius</code> intersects with the model.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a7d663329143943a9333032e044d4364c" class="m-doc">ModelIntersectBBox</a>(</span><span class="m-doc-wrap">const <a href="struct_math_1_1_bounding_box.html" class="m-doc">BoundingBox</a>&amp; bbox,
+              const <a href="class_graphics_1_1_model.html" class="m-doc">Model</a>* model,
+              <a href="struct_graphics_1_1_filter_settings.html" class="m-doc">FilterSettings</a>&amp; settings = <a href="struct_graphics_1_1_filter_settings.html" class="m-doc">FilterSettings</a>()) -&gt; bool <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
-            <dd><span></span></dd>
+            <dd>Returns true if the given bounding box intersects with the model.</dd>
             <dt>
               <span class="m-doc-wrap-bumper">void <a href="#a21548ade94fe292ba257dcfcd93e49e5" class="m-doc">GetResourceID</a>(</span><span class="m-doc-wrap">const <a href="class_graphics_1_1_model.html" class="m-doc">Model</a>* pModel,
               uint32_t* pDstInstanceID,
@@ -364,12 +397,15 @@
               <span class="m-doc-wrap-bumper">auto <a href="#a48b943e54555f2a44a3980d6f9491667" class="m-doc-self">funcE0h</a>(</span><span class="m-doc-wrap">) -&gt; int <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
             <dd><span></span></dd>
-            <dt id="a0b9941fc4c6a97ab2052bd94091d2b2e">
-              <span class="m-doc-wrap-bumper">auto <a href="#a0b9941fc4c6a97ab2052bd94091d2b2e" class="m-doc-self">funcE4h</a>(</span><span class="m-doc-wrap">) -&gt; int <span class="m-label m-flat m-warning">pure virtual</span></span>
+            <dt id="ac40333ecdbe535a160145f2356be2d3e">
+              <span class="m-doc-wrap-bumper">void <a href="#ac40333ecdbe535a160145f2356be2d3e" class="m-doc-self">GetHullBoundingBox</a>(</span><span class="m-doc-wrap">const <a href="class_graphics_1_1_model.html" class="m-doc">Model</a>* pModel,
+              <a href="struct_math_1_1_bounding_box.html" class="m-doc">BoundingBox</a>&amp; dst) const <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
             <dd><span></span></dd>
-            <dt id="a2dafdd0e693ecf5ff1145507e0b32f83">
-              <span class="m-doc-wrap-bumper">auto <a href="#a2dafdd0e693ecf5ff1145507e0b32f83" class="m-doc-self">funcE8h</a>(</span><span class="m-doc-wrap">) -&gt; int <span class="m-label m-flat m-warning">pure virtual</span></span>
+            <dt id="ae4c1853fe863dc127d5270032b5a9133">
+              <span class="m-doc-wrap-bumper">auto <a href="#ae4c1853fe863dc127d5270032b5a9133" class="m-doc-self">GetMorphHandles</a>(</span><span class="m-doc-wrap">const <a href="class_graphics_1_1_model.html" class="m-doc">Model</a>* pModel,
+              <a href="struct_graphics_1_1_morph_handle_info.html" class="m-doc">MorphHandleInfo</a>* dst,
+              int count) -&gt; int <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
             <dd><span></span></dd>
             <dt id="a0521f577debbbe4e65580227a7415615">
@@ -567,6 +603,276 @@
               </tbody>
             </table>
 <p>Keep in mind that a model refers to the configuration file (i.e. the .prop file) which includes the model files for each level of detail, the effects that must be used, etc. If the model configuration does not exist, a builtin model might be used.</p>
+          </div></section>
+          <section class="m-doc-details" id="ad0a355c7014aad3a32b425054f4c2bc5"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"><a href="class_graphics_1_1_model.html" class="m-doc">Model</a>* Graphics::<wbr />IModelWorld::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ad0a355c7014aad3a32b425054f4c2bc5" class="m-doc-self">Raycast</a>(</span><span class="m-doc-wrap">const <a href="struct_math_1_1_vector3.html" class="m-doc">Vector3</a>&amp; point1,
+              const <a href="struct_math_1_1_vector3.html" class="m-doc">Vector3</a>&amp; point2,
+              float*,
+              <a href="struct_math_1_1_vector3.html" class="m-doc">Vector3</a>* dstIntersectionPoint,
+              <a href="struct_math_1_1_vector3.html" class="m-doc">Vector3</a>* = nullptr,
+              <a href="struct_graphics_1_1_filter_settings.html" class="m-doc">FilterSettings</a>&amp; settings = <a href="struct_graphics_1_1_filter_settings.html" class="m-doc">FilterSettings</a>(),
+              int* = nullptr,
+              int* = nullptr) <span class="m-label m-warning">pure virtual</span></span></span>
+            </h3>
+            <table class="m-table m-fullwidth m-flat">
+              <tfoot>
+                <tr>
+                  <th style="width: 1%">Returns</th>
+                  <td>The closest model that intersected, or nullptr if no model intersected the ray.</td>
+                </tr>
+              </tfoot>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="adf95964aea1151826ceb6aaf0fbb6433"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">bool Graphics::<wbr />IModelWorld::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#adf95964aea1151826ceb6aaf0fbb6433" class="m-doc-self">GetModels</a>(</span><span class="m-doc-wrap">vector&lt;<a href="class_graphics_1_1_model.html" class="m-doc">Model</a>*&gt;&amp; dst,
+              <a href="struct_graphics_1_1_filter_settings.html" class="m-doc">FilterSettings</a>&amp; settings = <a href="struct_graphics_1_1_filter_settings.html" class="m-doc">FilterSettings</a>()) <span class="m-label m-warning">pure virtual</span></span></span>
+            </h3>
+            <p>Gets all the models that fit the filter.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">dst</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>settings</td>
+                  <td>Settings that decide which models are valid.</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>Returns</th>
+                  <td>True if any model intersected, false otherwise.</td>
+                </tr>
+              </tfoot>
+            </table>
+<p>By default, the filter accepts all models.</p>
+          </div></section>
+          <section class="m-doc-details" id="ad3540a7a69b1ad5aefb7ab5bf9c9c94c"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">bool Graphics::<wbr />IModelWorld::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ad3540a7a69b1ad5aefb7ab5bf9c9c94c" class="m-doc-self">RaycastAllOrdered</a>(</span><span class="m-doc-wrap">const <a href="struct_math_1_1_vector3.html" class="m-doc">Vector3</a>&amp; point1,
+              const <a href="struct_math_1_1_vector3.html" class="m-doc">Vector3</a>&amp; point2,
+              vector&lt;pair&lt;<a href="class_graphics_1_1_model.html" class="m-doc">Model</a>*, float&gt;&gt;&amp; result,
+              <a href="struct_graphics_1_1_filter_settings.html" class="m-doc">FilterSettings</a>&amp; settings = <a href="struct_graphics_1_1_filter_settings.html" class="m-doc">FilterSettings</a>(),
+              float = 0.0) <span class="m-label m-warning">pure virtual</span></span></span>
+            </h3>
+            <p>Gets all the models that intersect with a segment.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">point1</td>
+                  <td>The start of the ray.</td>
+                </tr>
+                <tr>
+                  <td>point2</td>
+                  <td>The end of the ray.</td>
+                </tr>
+                <tr>
+                  <td>result</td>
+                  <td>The vector where the { model, factor } pairs will be added.</td>
+                </tr>
+                <tr>
+                  <td>settings</td>
+                  <td>Settings that decide which models are valid.</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>Returns</th>
+                  <td>True if any model intersected, false otherwise.</td>
+                </tr>
+              </tfoot>
+            </table>
+<p>It adds them in the vector ordered by distance to <code>point1</code>; the vector will contains pairs of model and a float, the proportion between the two points where it intersected.</p>
+          </div></section>
+          <section class="m-doc-details" id="af479533ada087064fb7c7c3e1d17f320"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">bool Graphics::<wbr />IModelWorld::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#af479533ada087064fb7c7c3e1d17f320" class="m-doc-self">RaycastAll</a>(</span><span class="m-doc-wrap">const <a href="struct_math_1_1_vector3.html" class="m-doc">Vector3</a>&amp; point1,
+              const <a href="struct_math_1_1_vector3.html" class="m-doc">Vector3</a>&amp; point2,
+              vector&lt;<a href="class_graphics_1_1_model.html" class="m-doc">Model</a>*&gt;&amp; result,
+              <a href="struct_graphics_1_1_filter_settings.html" class="m-doc">FilterSettings</a>&amp; settings = <a href="struct_graphics_1_1_filter_settings.html" class="m-doc">FilterSettings</a>(),
+              float = 0.0) <span class="m-label m-warning">pure virtual</span></span></span>
+            </h3>
+            <p>Gets all the models that intersect with a segment.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">point1</td>
+                  <td>The start of the ray.</td>
+                </tr>
+                <tr>
+                  <td>point2</td>
+                  <td>The end of the ray.</td>
+                </tr>
+                <tr>
+                  <td>result</td>
+                  <td>The vector where the models will be added.</td>
+                </tr>
+                <tr>
+                  <td>settings</td>
+                  <td>Settings that decide which models are valid.</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>Returns</th>
+                  <td>True if any model intersected, false otherwise.</td>
+                </tr>
+              </tfoot>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="a4aa0b0168bc29d7ad238cced914da530"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">bool Graphics::<wbr />IModelWorld::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a4aa0b0168bc29d7ad238cced914da530" class="m-doc-self">IntersectSphere</a>(</span><span class="m-doc-wrap">const <a href="struct_math_1_1_vector3.html" class="m-doc">Vector3</a>&amp; center,
+              float radius,
+              vector&lt;<a href="class_graphics_1_1_model.html" class="m-doc">Model</a>*&gt; result,
+              <a href="struct_graphics_1_1_filter_settings.html" class="m-doc">FilterSettings</a>&amp; settings = <a href="struct_graphics_1_1_filter_settings.html" class="m-doc">FilterSettings</a>()) <span class="m-label m-warning">pure virtual</span></span></span>
+            </h3>
+            <p>Finds all the models that intersect with the sphere with <code>center</code> and <code>radius</code>.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">center</td>
+                  <td>The center point of the sphere.</td>
+                </tr>
+                <tr>
+                  <td>radius</td>
+                  <td>The radius of the sphere.</td>
+                </tr>
+                <tr>
+                  <td>result</td>
+                  <td>The vector where the models will be added.</td>
+                </tr>
+                <tr>
+                  <td>settings</td>
+                  <td>Settings that decide which models are valid and which collision mode is used.</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>Returns</th>
+                  <td>True if any model intersected, false otherwise.</td>
+                </tr>
+              </tfoot>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="a0b5a57cfd67544c07b4fb37845559624"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">bool Graphics::<wbr />IModelWorld::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a0b5a57cfd67544c07b4fb37845559624" class="m-doc-self">IntersectBBox</a>(</span><span class="m-doc-wrap">const <a href="struct_math_1_1_bounding_box.html" class="m-doc">BoundingBox</a>&amp; bbox,
+              vector&lt;<a href="class_graphics_1_1_model.html" class="m-doc">Model</a>*&gt;&amp; result,
+              <a href="struct_graphics_1_1_filter_settings.html" class="m-doc">FilterSettings</a>&amp; settings = <a href="struct_graphics_1_1_filter_settings.html" class="m-doc">FilterSettings</a>()) <span class="m-label m-warning">pure virtual</span></span></span>
+            </h3>
+            <p>Finds all the models that intersect with the given bounding box.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">bbox</td>
+                  <td>The bounding box to check.</td>
+                </tr>
+                <tr>
+                  <td>result</td>
+                  <td>The vector where the models will be added.</td>
+                </tr>
+                <tr>
+                  <td>settings</td>
+                  <td>Settings that decide which models are valid and which collision mode is used.</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>Returns</th>
+                  <td>True if any model intersected, false otherwise.</td>
+                </tr>
+              </tfoot>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="acc40784f50ec0b9a15d1af5b67f91064"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">bool Graphics::<wbr />IModelWorld::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#acc40784f50ec0b9a15d1af5b67f91064" class="m-doc-self">ModelIntersectSphere</a>(</span><span class="m-doc-wrap">const <a href="struct_math_1_1_vector3.html" class="m-doc">Vector3</a>&amp; center,
+              float radius,
+              const <a href="class_graphics_1_1_model.html" class="m-doc">Model</a>* model,
+              <a href="struct_graphics_1_1_filter_settings.html" class="m-doc">FilterSettings</a>&amp; settings = <a href="struct_graphics_1_1_filter_settings.html" class="m-doc">FilterSettings</a>()) <span class="m-label m-warning">pure virtual</span></span></span>
+            </h3>
+            <p>Returns true if the sphere with <code>center</code> and <code>radius</code> intersects with the model.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">center</td>
+                  <td>The center point of the sphere.</td>
+                </tr>
+                <tr>
+                  <td>radius</td>
+                  <td>The radius of the sphere.</td>
+                </tr>
+                <tr>
+                  <td>model</td>
+                  <td>The model to intersect with.</td>
+                </tr>
+                <tr>
+                  <td>settings</td>
+                  <td>Settings that decide which models are valid and which collision mode is used.</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>Returns</th>
+                  <td>True if the model intersects with the bbox, false otherwise.</td>
+                </tr>
+              </tfoot>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="a7d663329143943a9333032e044d4364c"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">bool Graphics::<wbr />IModelWorld::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a7d663329143943a9333032e044d4364c" class="m-doc-self">ModelIntersectBBox</a>(</span><span class="m-doc-wrap">const <a href="struct_math_1_1_bounding_box.html" class="m-doc">BoundingBox</a>&amp; bbox,
+              const <a href="class_graphics_1_1_model.html" class="m-doc">Model</a>* model,
+              <a href="struct_graphics_1_1_filter_settings.html" class="m-doc">FilterSettings</a>&amp; settings = <a href="struct_graphics_1_1_filter_settings.html" class="m-doc">FilterSettings</a>()) <span class="m-label m-warning">pure virtual</span></span></span>
+            </h3>
+            <p>Returns true if the given bounding box intersects with the model.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">bbox</td>
+                  <td>The bounding box to check.</td>
+                </tr>
+                <tr>
+                  <td>model</td>
+                  <td>The model to intersect with.</td>
+                </tr>
+                <tr>
+                  <td>settings</td>
+                  <td>Settings that decide which models are valid and which collision mode is used.</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>Returns</th>
+                  <td>True if the model intersects with the bbox, false otherwise.</td>
+                </tr>
+              </tfoot>
+            </table>
           </div></section>
           <section class="m-doc-details" id="a21548ade94fe292ba257dcfcd93e49e5"><div>
             <h3>

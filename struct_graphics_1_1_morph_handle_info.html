@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Math::Matrix4 struct | Spore ModAPI SDK for creating C++ mods for Spore</title>
+  <title>Graphics::MorphHandleInfo struct | Spore ModAPI SDK for creating C++ mods for Spore</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,600,600i%7CSource+Code+Pro:400,400i,600" />
   <link rel="stylesheet" href="m-dark.css" />
   <link rel="stylesheet" href="m-documentation.css" />
@@ -45,68 +45,46 @@
     <div class="m-row">
       <div class="m-col-l-10 m-push-l-1">
         <h1>
-          <span class="m-breadcrumb"><a href="namespace_math.html">Math</a>::<wbr/></span>Matrix4 <span class="m-thin">struct</span>
-          <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_math_utils_8h.html">&lt;Spore/MathUtils.h&gt;</a></div>
+          <span class="m-breadcrumb"><a href="namespace_graphics.html">Graphics</a>::<wbr/></span>MorphHandleInfo <span class="m-thin">struct</span>
+          <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_i_model_world_8h.html">&lt;Spore/Graphics/IModelWorld.h&gt;</a></div>
         </h1>
-        <p>A 4x4 matrix.</p>
+        <p><span></span></p>
         <div class="m-block m-default">
           <h3>Contents</h3>
           <ul>
             <li>
               Reference
               <ul>
-                <li><a href="#derived-classes">Derived classes</a></li>
-                <li><a href="#typeless-methods">Constructors, destructors, conversion operators</a></li>
-                <li><a href="#pub-methods">Public functions</a></li>
                 <li><a href="#pub-attribs">Public variables</a></li>
               </ul>
             </li>
           </ul>
         </div>
-        <section id="derived-classes">
-          <h2><a href="#derived-classes">Derived classes</a></h2>
-          <dl class="m-doc">
-            <dt>
-              struct <a href="struct_u_t_f_win_1_1_window_1_1_unk_matrix4.html" class="m-doc">UTFWin::Window::UnkMatrix4</a>
-            </dt>
-            <dd><span></span></dd>
-          </dl>
-        </section>
-        <section id="typeless-methods">
-          <h2><a href="#typeless-methods">Constructors, destructors, conversion operators</a></h2>
-          <dl class="m-doc">
-            <dt id="a1505d63028addbd70671096e4935f63a">
-              <span class="m-doc-wrap-bumper"><a href="#a1505d63028addbd70671096e4935f63a" class="m-doc-self">Matrix4</a>(</span><span class="m-doc-wrap">)</span>
-            </dt>
-            <dd><span></span></dd>
-            <dt id="a79939a2494c5080441aae720cb4c1efd">
-              <span class="m-doc-wrap-bumper"><a href="#a79939a2494c5080441aae720cb4c1efd" class="m-doc-self">Matrix4</a>(</span><span class="m-doc-wrap">const <a href="struct_math_1_1_matrix4.html" class="m-doc">Matrix4</a>&amp; other)</span>
-            </dt>
-            <dd><span></span></dd>
-          </dl>
-        </section>
-        <section id="pub-methods">
-          <h2><a href="#pub-methods">Public functions</a></h2>
-          <dl class="m-doc">
-            <dt id="a7e1074b883d8ee92f086d79059aec265">
-              <span class="m-doc-wrap-bumper">auto <a href="#a7e1074b883d8ee92f086d79059aec265" class="m-doc-self">SetIdentity</a>(</span><span class="m-doc-wrap">) -&gt; <a href="struct_math_1_1_matrix4.html" class="m-doc">Matrix4</a>&amp;</span>
-            </dt>
-            <dd>Turns this matrix into the identity matrix (1.0s in the diagonal, everything else 0.0s) Multiplying a matrix/vector with an identity matrix has no effect.</dd>
-            <dt id="a42015b7fb56a67d33325e52fce614642">
-              <span class="m-doc-wrap-bumper">auto <a href="#a42015b7fb56a67d33325e52fce614642" class="m-doc-self">Transposed</a>(</span><span class="m-doc-wrap">) const -&gt; <a href="struct_math_1_1_matrix4.html" class="m-doc">Matrix4</a></span>
-            </dt>
-            <dd>Returns the transpose of this matrix, switching the rows and columns. <code>transposed[i][j] = matrix[j][i]</code></dd>
-            <dt id="a4c946aa64a75382ee7b0c14308ebfa53">
-              <span class="m-doc-wrap-bumper">auto <a href="#a4c946aa64a75382ee7b0c14308ebfa53" class="m-doc-self">To3x3</a>(</span><span class="m-doc-wrap">) const -&gt; <a href="struct_math_1_1_matrix3.html" class="m-doc">Matrix3</a></span>
-            </dt>
-            <dd>Returns the 3x3 part of this matrix, leaving the last column and row.</dd>
-          </dl>
-        </section>
         <section id="pub-attribs">
           <h2><a href="#pub-attribs">Public variables</a></h2>
           <dl class="m-doc">
-            <dt id="a9ae2d2541d0f8776d93eadda75ff50c8">
-              float <a href="#a9ae2d2541d0f8776d93eadda75ff50c8" class="m-doc-self">m</a>
+            <dt id="aee5d3309f66ee2e68c81bff337127f2c">
+              int <a href="#aee5d3309f66ee2e68c81bff337127f2c" class="m-doc-self">field_0</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="afaa2dc2d7d1dcac4da1d542e5899dfa3">
+              <a href="class_transform.html" class="m-doc">Transform</a> <a href="#afaa2dc2d7d1dcac4da1d542e5899dfa3" class="m-doc-self">transform</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="ae383b477b85f3c6fa7a45ae876bdc281">
+              uint32_t <a href="#ae383b477b85f3c6fa7a45ae876bdc281" class="m-doc-self">id</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a829d46b4e307ab7046c9e34db9ebbb67">
+              <a href="struct_math_1_1_vector3.html" class="m-doc">Vector3</a> <a href="#a829d46b4e307ab7046c9e34db9ebbb67" class="m-doc-self">startPos</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="aee0462d6a1e82a763d0759f9c1585094">
+              <a href="struct_math_1_1_vector3.html" class="m-doc">Vector3</a> <a href="#aee0462d6a1e82a763d0759f9c1585094" class="m-doc-self">endPos</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="ad9ee829dd4e1a9ac1264ab0221dfc01a">
+              float <a href="#ad9ee829dd4e1a9ac1264ab0221dfc01a" class="m-doc-self">defaultProgress</a>
             </dt>
             <dd><span></span></dd>
           </dl>

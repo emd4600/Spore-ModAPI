@@ -112,6 +112,10 @@
             </dt>
             <dd>The implementation of <a href="class_graphics_1_1_i_texture_manager.html" class="m-doc">ITextureManager</a>; this should only be used for extending and detouring.</dd>
             <dt>
+              struct <a href="struct_graphics_1_1_filter_settings.html" class="m-doc">FilterSettings</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
               class <a href="class_graphics_1_1_gmdl_render_asset.html" class="m-doc">GmdlRenderAsset</a>
             </dt>
             <dd><span></span></dd>
@@ -181,6 +185,10 @@
             <dd><span></span></dd>
             <dt>
               class <a href="class_graphics_1_1_model_mesh.html" class="m-doc">ModelMesh</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              struct <a href="struct_graphics_1_1_morph_handle_info.html" class="m-doc">MorphHandleInfo</a>
             </dt>
             <dd><span></span></dd>
             <dt>
@@ -289,8 +297,16 @@
             </dt>
             <dd>The available layer indices that can be used for adding renderers.</dd>
             <dt>
+              <span class="m-doc-wrap-bumper">enum class <a href="#a9b4742f9ae4c621450b08b65bd9dd9da" class="m-doc">CollisionMode</a>: uint8_t { </span><span class="m-doc-wrap"><a href="#a9b4742f9ae4c621450b08b65bd9dd9daab96da744287618055e5d086d53f42660" class="m-doc">BoundingBox</a> = 0,
+              <a href="#a9b4742f9ae4c621450b08b65bd9dd9daacfaea1acd5a4cd60e50888bfb668a4f1" class="m-doc">TightBoundingBox</a> = 1,
+              <a href="#a9b4742f9ae4c621450b08b65bd9dd9daa677de30c8ea2f3d31a1e2d21db5966f3" class="m-doc">HullKDTree</a> = 2,
+              <a href="#a9b4742f9ae4c621450b08b65bd9dd9daa7d133ec71dee479f57048f7ff000d7ca" class="m-doc">Lod0KDTree</a> = 3 }</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
               <span class="m-doc-wrap-bumper">enum <a href="#a936cca97eca11e988649742457ee4809" class="m-doc">(anonymous)</a> { </span><span class="m-doc-wrap"><a href="#a936cca97eca11e988649742457ee4809a67714109b28b4942dc96b13136f20ba6" class="m-doc">kModelFlagUseColor</a> = 0x2,
               <a href="#a936cca97eca11e988649742457ee4809ae6ee2ef9b57e55721a05bc19183167b5" class="m-doc">kModelFlagObjectTypeColor</a> = 0x8,
+              <a href="#a936cca97eca11e988649742457ee4809a06e9414d4e29ab930191c234e525c611" class="m-doc">kModelFlagOverrideRaycastMode</a> = 0x100,
               <a href="#a936cca97eca11e988649742457ee4809a712326a32a798759b2548daf75e8da43" class="m-doc">kModelFlagVisible</a> = 0x8000,
               <a href="#a936cca97eca11e988649742457ee4809a282f8e861168694308ecad124d903a6f" class="m-doc">kModelFlagOverrideBoundingBox</a> = 0x10000,
               <a href="#a936cca97eca11e988649742457ee4809a0c9e2214af3610d935ef791db7b80655" class="m-doc">kModelFlagOverrideBoundingRadius</a> = 0x20000,
@@ -383,6 +399,11 @@
             </dt>
             <dd><span></span></dd>
             <dt>
+              <span class="m-doc-wrap-bumper"><a href="#abe7169fc918c68cb742ee4f8d957d9a4" class="m-doc">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="struct_graphics_1_1_morph_handle_info.html" class="m-doc">MorphHandleInfo</a>,
+              0x5C)</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
               <span class="m-doc-wrap-bumper">auto <a href="#af75e69550a671baec11932383164a7e7" class="m-doc">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_graphics_1_1_i_model_world.html" class="m-doc">IModelWorld</a>) -&gt; namespace</span>
             </dt>
             <dd><span></span></dd>
@@ -461,6 +482,42 @@
             </h3>
             <p>The available layer indices that can be used for adding renderers.</p>
 <p>Most of these have been copied from Darkspore globals.lua, so they might not match for Spore.</p>
+          </div></section>
+          <section class="m-doc-details" id="a9b4742f9ae4c621450b08b65bd9dd9da"><div>
+            <h3>
+              enum class Graphics::<wbr /><a href="#a9b4742f9ae4c621450b08b65bd9dd9da" class="m-doc-self">CollisionMode</a>: uint8_t
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_model_asset_8h.html">&lt;Spore/Graphics/ModelAsset.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+            <table class="m-table m-fullwidth m-flat m-doc">
+              <thead><tr><th style="width: 1%">Enumerators</th><th></th></tr></thead>
+              <tbody>
+                <tr>
+                  <td><a href="#a9b4742f9ae4c621450b08b65bd9dd9daab96da744287618055e5d086d53f42660" class="m-doc-self" id="a9b4742f9ae4c621450b08b65bd9dd9daab96da744287618055e5d086d53f42660">BoundingBox</a></td>
+                  <td>
+                  <p>Just intersect with the bounding box.</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a9b4742f9ae4c621450b08b65bd9dd9daacfaea1acd5a4cd60e50888bfb668a4f1" class="m-doc-self" id="a9b4742f9ae4c621450b08b65bd9dd9daacfaea1acd5a4cd60e50888bfb668a4f1">TightBoundingBox</a></td>
+                  <td>
+                  <p><span></span></p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a9b4742f9ae4c621450b08b65bd9dd9daa677de30c8ea2f3d31a1e2d21db5966f3" class="m-doc-self" id="a9b4742f9ae4c621450b08b65bd9dd9daa677de30c8ea2f3d31a1e2d21db5966f3">HullKDTree</a></td>
+                  <td>
+                  <p>Check intersection with the hull mesh.</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a9b4742f9ae4c621450b08b65bd9dd9daa7d133ec71dee479f57048f7ff000d7ca" class="m-doc-self" id="a9b4742f9ae4c621450b08b65bd9dd9daa7d133ec71dee479f57048f7ff000d7ca">Lod0KDTree</a></td>
+                  <td>
+                  <p>Check intersection with the LOD0 mesh.</p>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
           </div></section>
           <section class="m-doc-details" id="a936cca97eca11e988649742457ee4809"><div>
             <h3>
@@ -601,6 +658,14 @@
             <h3>
               <span class="m-doc-wrap-bumper">namespace Graphics::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#aa2c68397da86c3c18c69b9088c4ec62d" class="m-doc-self">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_graphics_1_1_i_model_manager.html" class="m-doc">IModelManager</a>)</span></span>
               <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_i_model_manager_8h.html">&lt;Spore/Graphics/IModelManager.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="abe7169fc918c68cb742ee4f8d957d9a4"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"> Graphics::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#abe7169fc918c68cb742ee4f8d957d9a4" class="m-doc-self">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="struct_graphics_1_1_morph_handle_info.html" class="m-doc">MorphHandleInfo</a>,
+              0x5C)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_i_model_world_8h.html">&lt;Spore/Graphics/IModelWorld.h&gt;</a></div>
             </h3>
             <p><span></span></p>
           </div></section>

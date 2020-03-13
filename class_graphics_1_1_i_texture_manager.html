@@ -76,8 +76,9 @@
         <section id="pub-types">
           <h2><a href="#pub-types">Public types</a></h2>
           <dl class="m-doc">
-            <dt id="a44bba3d80acea9356db07da88dad5920">
-              <span class="m-doc-wrap-bumper">enum <a href="#a44bba3d80acea9356db07da88dad5920" class="m-doc-self">(anonymous)</a> { </span><span class="m-doc-wrap"><a href="#a44bba3d80acea9356db07da88dad5920a7b326794b0cb45dd4ce0c6337ce641ff" class="m-doc">kForceLoad</a> = 2 }</span>
+            <dt>
+              <span class="m-doc-wrap-bumper">enum <a href="#a44bba3d80acea9356db07da88dad5920" class="m-doc">(anonymous)</a> { </span><span class="m-doc-wrap"><a href="#a44bba3d80acea9356db07da88dad5920a7b326794b0cb45dd4ce0c6337ce641ff" class="m-doc">kForceLoad</a> = 2,
+              <a href="#a44bba3d80acea9356db07da88dad5920a0146ecaada21dc50ed7c5942d2abf97c" class="m-doc">kSetLOD</a> = 4 }</span>
             </dt>
             <dd><span></span></dd>
           </dl>
@@ -260,6 +261,32 @@
           </dl>
         </section>
         <section>
+          <h2>Enum documentation</h2>
+          <section class="m-doc-details" id="a44bba3d80acea9356db07da88dad5920"><div>
+            <h3>
+              enum Graphics::<wbr />ITextureManager::<wbr /><a href="#a44bba3d80acea9356db07da88dad5920" class="m-doc-self">(anonymous)</a>
+            </h3>
+            <p><span></span></p>
+            <table class="m-table m-fullwidth m-flat m-doc">
+              <thead><tr><th style="width: 1%">Enumerators</th><th></th></tr></thead>
+              <tbody>
+                <tr>
+                  <td><a href="#a44bba3d80acea9356db07da88dad5920a7b326794b0cb45dd4ce0c6337ce641ff" class="m-doc-self" id="a44bba3d80acea9356db07da88dad5920a7b326794b0cb45dd4ce0c6337ce641ff">kForceLoad</a></td>
+                  <td>
+                  <p>Forces the texture to load. If no .raster exists, this will look for rw4 as well.</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a44bba3d80acea9356db07da88dad5920a0146ecaada21dc50ed7c5942d2abf97c" class="m-doc-self" id="a44bba3d80acea9356db07da88dad5920a0146ecaada21dc50ed7c5942d2abf97c">kSetLOD</a></td>
+                  <td>
+                  <p>If enabled, SetLOD() will be called to the texture with the current level of detail.</p>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div></section>
+        </section>
+        <section>
           <h2>Function documentation</h2>
           <section class="m-doc-details" id="a40fc0339a1d51cb97947e193fc4ae5a9"><div>
             <h3>
@@ -282,7 +309,7 @@
                 </tr>
               </tbody>
             </table>
-<p>If the texture is not already loaded, it will be loaded in this method. The type ID will be ignored; first, it will try to load it as a .raster texture, and if it&#x27;s not found, it will use the rest of texture formats.</p>
+<p>If the texture is not already loaded, it will be loaded in this method. The type ID will be ignored; generally it tries to load <code>.raster</code> textures.</p><p>In order to load textures that are not <code>.raster</code>, you must pass <code>kForceLoad</code> as a parameter.</p>
           </div></section>
           <section class="m-doc-details" id="af4665fbdc4aa2164cc085bd8c4bdde4c"><div>
             <h3>

@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Math::Matrix4 struct | Spore ModAPI SDK for creating C++ mods for Spore</title>
+  <title>Graphics::FilterSettings struct | Spore ModAPI SDK for creating C++ mods for Spore</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,600,600i%7CSource+Code+Pro:400,400i,600" />
   <link rel="stylesheet" href="m-dark.css" />
   <link rel="stylesheet" href="m-documentation.css" />
@@ -45,29 +45,33 @@
     <div class="m-row">
       <div class="m-col-l-10 m-push-l-1">
         <h1>
-          <span class="m-breadcrumb"><a href="namespace_math.html">Math</a>::<wbr/></span>Matrix4 <span class="m-thin">struct</span>
-          <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_math_utils_8h.html">&lt;Spore/MathUtils.h&gt;</a></div>
+          <span class="m-breadcrumb"><a href="namespace_graphics.html">Graphics</a>::<wbr/></span>FilterSettings <span class="m-thin">struct</span>
+          <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_i_model_world_8h.html">&lt;Spore/Graphics/IModelWorld.h&gt;</a></div>
         </h1>
-        <p>A 4x4 matrix.</p>
+        <p><span></span></p>
         <div class="m-block m-default">
           <h3>Contents</h3>
           <ul>
             <li>
               Reference
               <ul>
-                <li><a href="#derived-classes">Derived classes</a></li>
+                <li><a href="#pub-types">Public types</a></li>
                 <li><a href="#typeless-methods">Constructors, destructors, conversion operators</a></li>
-                <li><a href="#pub-methods">Public functions</a></li>
                 <li><a href="#pub-attribs">Public variables</a></li>
               </ul>
             </li>
           </ul>
         </div>
-        <section id="derived-classes">
-          <h2><a href="#derived-classes">Derived classes</a></h2>
+        <section id="pub-types">
+          <h2><a href="#pub-types">Public types</a></h2>
           <dl class="m-doc">
-            <dt>
-              struct <a href="struct_u_t_f_win_1_1_window_1_1_unk_matrix4.html" class="m-doc">UTFWin::Window::UnkMatrix4</a>
+            <dt id="a89ca41df8ef0bbc9eb62e0126ceb11dc">
+              <span class="m-doc-wrap-bumper">enum <a href="#a89ca41df8ef0bbc9eb62e0126ceb11dc" class="m-doc-self">Flags</a> { </span><span class="m-doc-wrap"><a href="#a89ca41df8ef0bbc9eb62e0126ceb11dcacc9eff6143f68ce08dff211543f4c714" class="m-doc">kUseModelCollisionMode</a> = 1,
+              <a href="#a89ca41df8ef0bbc9eb62e0126ceb11dca3a7b4c33082066844820b5e1d57f5919" class="m-doc">kIgnoreModelScale</a> = 2 }</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="af901314d5972dc5a21409dca7f7a78d2">
+              using <a href="#af901314d5972dc5a21409dca7f7a78d2" class="m-doc-self">FilterModel_t</a> = bool(*)(Model*)
             </dt>
             <dd><span></span></dd>
           </dl>
@@ -75,38 +79,33 @@
         <section id="typeless-methods">
           <h2><a href="#typeless-methods">Constructors, destructors, conversion operators</a></h2>
           <dl class="m-doc">
-            <dt id="a1505d63028addbd70671096e4935f63a">
-              <span class="m-doc-wrap-bumper"><a href="#a1505d63028addbd70671096e4935f63a" class="m-doc-self">Matrix4</a>(</span><span class="m-doc-wrap">)</span>
+            <dt id="a0ea5b08461c57ba41947b40fff622593">
+              <span class="m-doc-wrap-bumper"><a href="#a0ea5b08461c57ba41947b40fff622593" class="m-doc-self">FilterSettings</a>(</span><span class="m-doc-wrap">)</span>
             </dt>
             <dd><span></span></dd>
-            <dt id="a79939a2494c5080441aae720cb4c1efd">
-              <span class="m-doc-wrap-bumper"><a href="#a79939a2494c5080441aae720cb4c1efd" class="m-doc-self">Matrix4</a>(</span><span class="m-doc-wrap">const <a href="struct_math_1_1_matrix4.html" class="m-doc">Matrix4</a>&amp; other)</span>
-            </dt>
-            <dd><span></span></dd>
-          </dl>
-        </section>
-        <section id="pub-methods">
-          <h2><a href="#pub-methods">Public functions</a></h2>
-          <dl class="m-doc">
-            <dt id="a7e1074b883d8ee92f086d79059aec265">
-              <span class="m-doc-wrap-bumper">auto <a href="#a7e1074b883d8ee92f086d79059aec265" class="m-doc-self">SetIdentity</a>(</span><span class="m-doc-wrap">) -&gt; <a href="struct_math_1_1_matrix4.html" class="m-doc">Matrix4</a>&amp;</span>
-            </dt>
-            <dd>Turns this matrix into the identity matrix (1.0s in the diagonal, everything else 0.0s) Multiplying a matrix/vector with an identity matrix has no effect.</dd>
-            <dt id="a42015b7fb56a67d33325e52fce614642">
-              <span class="m-doc-wrap-bumper">auto <a href="#a42015b7fb56a67d33325e52fce614642" class="m-doc-self">Transposed</a>(</span><span class="m-doc-wrap">) const -&gt; <a href="struct_math_1_1_matrix4.html" class="m-doc">Matrix4</a></span>
-            </dt>
-            <dd>Returns the transpose of this matrix, switching the rows and columns. <code>transposed[i][j] = matrix[j][i]</code></dd>
-            <dt id="a4c946aa64a75382ee7b0c14308ebfa53">
-              <span class="m-doc-wrap-bumper">auto <a href="#a4c946aa64a75382ee7b0c14308ebfa53" class="m-doc-self">To3x3</a>(</span><span class="m-doc-wrap">) const -&gt; <a href="struct_math_1_1_matrix3.html" class="m-doc">Matrix3</a></span>
-            </dt>
-            <dd>Returns the 3x3 part of this matrix, leaving the last column and row.</dd>
           </dl>
         </section>
         <section id="pub-attribs">
           <h2><a href="#pub-attribs">Public variables</a></h2>
           <dl class="m-doc">
-            <dt id="a9ae2d2541d0f8776d93eadda75ff50c8">
-              float <a href="#a9ae2d2541d0f8776d93eadda75ff50c8" class="m-doc-self">m</a>
+            <dt id="adada61bf5a8c202917bc53d96e9e013b">
+              uint64_t <a href="#adada61bf5a8c202917bc53d96e9e013b" class="m-doc-self">requiredGroupFlags</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="abc7adb4c079ba1a1ef1d99936c1b8ead">
+              uint64_t <a href="#abc7adb4c079ba1a1ef1d99936c1b8ead" class="m-doc-self">bannedGroupFlags</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="adbadd9e3ddcaebd271be9a9ee49e55d6">
+              <a href="struct_graphics_1_1_filter_settings.html#af901314d5972dc5a21409dca7f7a78d2" class="m-doc">FilterModel_<wbr />t</a> <a href="#adbadd9e3ddcaebd271be9a9ee49e55d6" class="m-doc-self">filterFunction</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a9fc0a49593e56f5132c8da9d5890153d">
+              <a href="namespace_graphics.html#a9b4742f9ae4c621450b08b65bd9dd9da" class="m-doc">CollisionMode</a> <a href="#a9fc0a49593e56f5132c8da9d5890153d" class="m-doc-self">collisionMode</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="abc933deaea20f20093bcbd08a387ca91">
+              uint8_t <a href="#abc933deaea20f20093bcbd08a387ca91" class="m-doc-self">flags</a>
             </dt>
             <dd><span></span></dd>
           </dl>
