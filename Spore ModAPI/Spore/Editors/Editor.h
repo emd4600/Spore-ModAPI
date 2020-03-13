@@ -362,7 +362,7 @@ namespace Editors
 		/* 354h	*/	int field_354;
 		/* 358h	*/	int field_358;
 		/* 35Ch	*/	int field_35C;
-		/* 360h	*/	int field_360;  // contains a renderable at 38h
+		/* 360h	*/	int field_360;  // contains a renderable at 38h: the anim world
 		/* 364h	*/	int field_364;
 		/* 368h	*/	int field_368;
 		/* 36Ch	*/	vector<int> field_36C;

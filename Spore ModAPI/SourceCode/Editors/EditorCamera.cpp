@@ -48,7 +48,7 @@ namespace Editors
 		, mfNearClip(-1.0f)
 		, mfFarClip(-1.0f)
 		, mfInitialFOV(57.29578f)
-		, field_74()
+		, mCameraPosition()
 		, field_80()
 		, field_8C(1.0f)
 		, mbEditorCameraTurntableStyle()

@@ -88,7 +88,7 @@ namespace Editors
 		/* 68h */	float mfNearClip;  // -1
 		/* 6Ch */	float mfFarClip;  // -1
 		/* 70h */	float mfInitialFOV;  // 57.29578
-		/* 74h */	Vector3 field_74;
+		/* 74h */	Vector3 mCameraPosition;
 		/* 80h */	Vector3 field_80;
 		/* 8Ch */	float field_8C;  // 1.0
 		/* 90h */	bool mbEditorCameraTurntableStyle;

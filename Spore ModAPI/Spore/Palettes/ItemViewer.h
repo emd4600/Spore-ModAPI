@@ -39,7 +39,7 @@ namespace Palettes
 	{
 	public:
 		/* 1Ch */	virtual void func1Ch();
-		/* 20h */	virtual void func20h();  // sets model visible
+		/* 20h */	virtual void Update(int time);  // sets model visible
 
 		/* 24h */	virtual void Load(const ResourceKey& fileName);
 		/* 28h */	virtual void SetName(const ResourceKey& fileName);
@@ -48,7 +48,7 @@ namespace Palettes
 		/* 30h */	virtual void func30h();
 		/* 34h */	virtual void func34h();
 		/* 38h */	virtual void func38h();
-		/* 3Ch */	virtual void func3Ch();
+		/* 3Ch */	virtual void func3Ch();  //PLACEHOLDER GetAnimatedCreature()
 		/* 40h */	virtual void func40h();
 		/* 44h */	virtual void func44h();
 		/* 48h */	virtual void func48h();

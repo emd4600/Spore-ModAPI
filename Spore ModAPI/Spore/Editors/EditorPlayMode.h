@@ -37,5 +37,6 @@ namespace Editors
 		/* 18h */	virtual bool OnMouseMove(float mouseX, float mouseY, int state);
 		/* 1Ch */	virtual bool OnKeyDown(int virtualKey, int modifiers);
 		/* 20h */	virtual bool OnKeyUp(int virtualKey, int modifiers);
+		// one function more
 	};
 }
