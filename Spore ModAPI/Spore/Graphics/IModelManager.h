@@ -106,7 +106,7 @@ namespace Graphics
 		/* 30h */	virtual bool func30h(int) = 0;
 
 		/* 34h */	virtual void func34h(float, float, int) = 0;
-		/* 38h */	virtual void func38h(float, float) = 0;
+		/* 38h */	virtual void Update(float, float) = 0;
 
 
 		///

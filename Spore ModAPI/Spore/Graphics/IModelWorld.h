@@ -32,6 +32,43 @@
 
 namespace Graphics
 {
+	struct MorphHandleInfo
+	{
+		/* 00h */	int field_0;
+		/* 04h */	Transform transform;
+		/* 3Ch */	uint32_t id;
+		/* 40h */	Vector3 startPos;
+		/* 4Ch */	Vector3 endPos;
+		/* 58h */	float defaultProgress;
+	};
+	ASSERT_SIZE(MorphHandleInfo, 0x5C);
+
+	struct FilterSettings {
+		typedef bool(*FilterModel_t)(Model*);
+
+		enum Flags {
+			kUseModelCollisionMode = 1,
+			kIgnoreModelScale = 2
+		};
+
+		FilterSettings();
+
+		/* 00h */	uint64_t requiredGroupFlags;
+		/* 08h */	uint64_t bannedGroupFlags;
+		/* 10h */	FilterModel_t filterFunction;
+		/* 14h */	CollisionMode collisionMode;
+		/* 15h */	uint8_t flags;
+	};
+
+	inline FilterSettings::FilterSettings()
+		: requiredGroupFlags()
+		, bannedGroupFlags()
+		, filterFunction(nullptr)
+		, collisionMode(CollisionMode::Lod0KDTree)
+		, flags(kUseModelCollisionMode)
+	{
+	}
+
 	///
 	/// A model world is a space where models can be rendered in the game. Model worlds keep track of all the models
 	/// loaded in order to render them when the model world itself is rendered. A world can also contain multiple
@@ -84,17 +121,68 @@ namespace Graphics
 		/* 18h */	virtual int func18h() = 0;
 		/* 1Ch */	virtual int func1Ch() = 0;
 		/* 20h */	virtual int func20h() = 0;
-		/* 24h */	virtual int func24h() = 0;
-		/* 28h */	virtual int func28h() = 0;
-		/* 2Ch */	virtual int func2Ch() = 0;
-		/* 30h */	virtual int func30h() = 0;
-		/* 34h */	virtual int func34h() = 0;
-		/* 38h */	virtual int func38h() = 0;
-		/* 3Ch */	virtual int func3Ch() = 0;
-		/* 40h */	virtual int func40h() = 0;
-		/* 44h */	virtual int func44h() = 0;
-		/* 48h */	virtual int func48h() = 0;
-		/* 4Ch */	virtual int func4Ch() = 0;
+
+
+		/// @returns The closest model that intersected, or nullptr if no model intersected the ray.
+		/* 24h */	virtual Model* Raycast(const Vector3& point1, const Vector3& point2, float*, Vector3* dstIntersectionPoint, Vector3* = nullptr, FilterSettings& settings = FilterSettings(), int* = nullptr, int* = nullptr) = 0;
+
+		/* 28h */	virtual Model* func28h(const Vector3& point1, const Vector3& point2, float*, FilterSettings& settings = FilterSettings()) = 0;
+
+		/// Gets all the models that fit the filter. By default, the filter accepts all models.
+		/// @param result The vector where the models will be added.
+		/// @param settings Settings that decide which models are valid.
+		/// @returns True if any model intersected, false otherwise.
+		/* 2Ch */	virtual bool GetModels(vector<Model*>& dst, FilterSettings& settings = FilterSettings()) = 0;
+
+		/// Gets all the models that intersect with a segment. It adds them in the vector ordered by distance to `point1`;
+		/// the vector will contains pairs of model and a float, the proportion between the two points where it intersected.
+		/// @param point1 The start of the ray.
+		/// @param point2 The end of the ray.
+		/// @param result The vector where the { model, factor } pairs will be added.
+		/// @param settings Settings that decide which models are valid.
+		/// @returns True if any model intersected, false otherwise.
+		/* 30h */	virtual bool RaycastAllOrdered(const Vector3& point1, const Vector3& point2, vector<pair<Model*, float>>& result, FilterSettings& settings = FilterSettings(), float = 0.0) = 0;
+
+		/// Gets all the models that intersect with a segment.
+		/// @param point1 The start of the ray.
+		/// @param point2 The end of the ray.
+		/// @param result The vector where the models will be added.
+		/// @param settings Settings that decide which models are valid.
+		/// @returns True if any model intersected, false otherwise.
+		/* 34h */	virtual bool RaycastAll(const Vector3& point1, const Vector3& point2, vector<Model*>& result, FilterSettings& settings = FilterSettings(), float = 0.0) = 0;
+
+		/// Finds all the models that intersect with the sphere with `center` and `radius`.
+		/// @param center The center point of the sphere.
+		/// @param radius The radius of the sphere.
+		/// @param result The vector where the models will be added.
+		/// @param settings Settings that decide which models are valid and which collision mode is used.
+		/// @returns True if any model intersected, false otherwise.
+		/* 38h */	virtual bool IntersectSphere(const Vector3& center, float radius, vector<Model*> result, FilterSettings& settings = FilterSettings()) = 0;
+
+		/// Finds all the models that intersect with the given bounding box.
+		/// @param bbox The bounding box to check.
+		/// @param result The vector where the models will be added.
+		/// @param settings Settings that decide which models are valid and which collision mode is used.
+		/// @returns True if any model intersected, false otherwise.
+		/* 3Ch */	virtual bool IntersectBBox(const BoundingBox& bbox, vector<Model*>& result, FilterSettings& settings = FilterSettings()) = 0;
+
+		/* 40h */	virtual int func40h() = 0;  // intersect with frustum
+		/* 44h */	virtual bool func44h(const Vector3& p1, const Vector3& p2, const Model* model, const Vector3& p3, FilterSettings& settings = FilterSettings()) = 0;
+
+		/// Returns true if the sphere with `center` and `radius` intersects with the model.
+		/// @param center The center point of the sphere.
+		/// @param radius The radius of the sphere.
+		/// @param model The model to intersect with.
+		/// @param settings Settings that decide which models are valid and which collision mode is used.
+		/// @returns True if the model intersects with the bbox, false otherwise.
+		/* 48h */	virtual bool ModelIntersectSphere(const Vector3& center, float radius, const Model* model, FilterSettings& settings = FilterSettings()) = 0;
+
+		/// Returns true if the given bounding box intersects with the model.
+		/// @param bbox The bounding box to check.
+		/// @param model The model to intersect with.
+		/// @param settings Settings that decide which models are valid and which collision mode is used.
+		/// @returns True if the model intersects with the bbox, false otherwise.
+		/* 4Ch */	virtual bool ModelIntersectBBox(const BoundingBox& bbox, const Model* model, FilterSettings& settings = FilterSettings()) = 0;
 		
 		///
 		/// Used to get the instance and group ID of the given model.
@@ -200,8 +288,10 @@ namespace Graphics
 		/* D8h */	virtual int funcD8h() = 0;
 		/* DCh */	virtual int funcDCh() = 0;
 		/* E0h */	virtual int funcE0h() = 0;
-		/* E4h */	virtual int funcE4h() = 0;
-		/* E8h */	virtual int funcE8h() = 0;
+		// Uses ModelAsset mTransform
+		/* E4h */	virtual void GetHullBoundingBox(const Model* pModel, BoundingBox& dst) const = 0;
+		// returns count
+		/* E8h */	virtual int GetMorphHandles(const Model* pModel, MorphHandleInfo* dst, int count) = 0;
 		/* ECh */	virtual int funcECh() = 0;
 		/* F0h */	virtual int funcF0h() = 0;
 		/* F4h */	virtual int funcF4h() = 0;

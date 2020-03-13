@@ -51,7 +51,9 @@ namespace Graphics
 		/* 14h */	virtual void func14h(int) = 0;
 		/* 18h */	virtual int GetSunDirAndCelStrength(float boundingRadius, const Vector3& position) = 0;
 		/* 1Ch */	virtual void func1Ch(float, int, int) = 0;
-		/* 20h */	virtual void func20h(int) = 0;  // related with sunDirAndCelStrength
+		// related with sunDirAndCelStrength, called when changing lighting world, setting model invisible or destroying model
+		/* 20h */	virtual void func20h(int) = 0;
+		// Parameter is cViewer, called every time in ModelWorld::Render
 		/* 24h */	virtual void func24h(int) = 0;
 		/* 28h */	virtual void func28h(const Transform&) = 0;
 		/* 2Ch */	virtual Transform func2Ch() = 0;

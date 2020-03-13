@@ -39,6 +39,16 @@ using namespace eastl;
 
 namespace Graphics
 {
+	enum class CollisionMode : uint8_t {
+		/// Just intersect with the bounding box
+		BoundingBox = 0,
+		TightBoundingBox = 1,
+		/// Check intersection with the hull mesh
+		HullKDTree = 2,
+		/// Check intersection with the LOD0 mesh
+		Lod0KDTree = 3
+	};
+
 	class IModelWorld;
 
 
@@ -52,6 +62,8 @@ namespace Graphics
 		kModelFlagUseColor = 0x2,  // actually 4?
 
 		kModelFlagObjectTypeColor = 0x8,
+
+		kModelFlagOverrideRaycastMode = 0x100,
 
 		kModelFlagVisible = 0x8000,
 
@@ -93,10 +105,10 @@ namespace Graphics
 		/* 44h */	int mGroupFlags[2];
 		/* 4Ch */	Math::ColorRGBA mColor;
 		/* 5Ch */	bool field_5C;
-		/* 5Dh */	bool field_5D;
+		/* 5Dh */	CollisionMode mCollisionMode;
 		/* 60h */	int field_60;  // PLACEHOLDER used to select objectTypeColor
 		/* 64h */	int field_64;
-		/* 68h */	int field_68;  // not initialized
+		/* 68h */	int field_68;  // not initialized, owner? sometimes it gets casted to cGameData so it probably is
 		/* 6Ch */	float mDefaultBoundingRadius;  // 1.0f
 		/* 70h */	Math::BoundingBox mDefaultBBox;
 		/* 88h */	float field_88;  // FLOAT_MAX
@@ -107,8 +119,6 @@ namespace Graphics
 	class ModelAsset : public intrusive_list_node, public Model
 	{
 	public:
-
-	protected:
 		struct EffectInstance
 		{
 			/* 00h */	::ResourceID mResourceID;

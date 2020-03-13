@@ -18,9 +18,13 @@ namespace Graphics
 	public:
 		virtual ~ModelMesh();
 
-	protected:
+		int AddRef();
+		int Release();
 
+	protected:
 		/* 04h */	int mnRefCount;
+
+	public:
 		/* 08h */	vector<RenderWare::Mesh<0>*> mMeshes;
 		/* 1Ch */	vector<int> field_1C;
 		/* 30h */	vector<Material*> mMaterials;
@@ -42,4 +46,16 @@ namespace Graphics
 	};
 
 	ASSERT_SIZE(ModelMesh, 0x100);
+
+	inline int ModelMesh::AddRef() {
+		return ++mnRefCount;
+	}
+
+	inline int ModelMesh::Release() {
+		--mnRefCount;
+		if (mnRefCount == 0) {
+			delete this;
+		}
+		return mnRefCount;
+	}
 }
