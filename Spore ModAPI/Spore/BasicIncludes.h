@@ -33,5 +33,6 @@
 #include <Spore\Editors\EditorMessages.h>
 
 #include <Spore\App\IClassManager.h>
+#include <Spore\App\FileDrop.h>
 
 using namespace eastl;
