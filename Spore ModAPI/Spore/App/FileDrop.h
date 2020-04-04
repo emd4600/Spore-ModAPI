@@ -19,7 +19,7 @@ namespace App
 		virtual int AddRef() = 0;
 		virtual int Release() = 0;
 
-		/* 00h */	int field_0;
+	public:
 		/* 04h */	vector<string16> files;
 		/* 18h */	int field_18;
 		/* 1Ch */	int field_1C;
