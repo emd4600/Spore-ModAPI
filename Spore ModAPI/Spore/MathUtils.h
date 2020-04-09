@@ -99,11 +99,11 @@ namespace Math
 		Color(uint32_t color);
 		Color(uint8_t r, uint8_t g, uint8_t b, uint8_t a);
 
-		inline bool operator==(const Color& b) {
+		inline bool operator==(const Color& b) const {
 			return value == b.value;
 		}
 
-		inline bool operator!=(const Color& b) {
+		inline bool operator!=(const Color& b) const {
 			return value != b.value;
 		}
 
@@ -141,6 +141,9 @@ namespace Math
 		Vector2& operator-=(float);
 		Vector2& operator*=(float);
 		Vector2& operator/=(float);
+
+		bool operator==(const Vector2& b) const;
+		bool operator!=(const Vector2& b) const;
 	};
 
 	/// A vector of 3 float values (x, y, z).
@@ -179,6 +182,11 @@ namespace Math
 		Vector3& operator-=(float);
 		Vector3& operator*=(float);
 		Vector3& operator/=(float);
+
+		bool operator==(const Vector3& b) const;
+		bool operator!=(const Vector3& b) const;
+
+		static const Vector3 ZERO;
 	};
 
 	const Vector3 X_AXIS = { 1, 0, 0 };
@@ -213,6 +221,9 @@ namespace Math
 		Vector4& operator-=(float);
 		Vector4& operator*=(float);
 		Vector4& operator/=(float);
+
+		bool operator==(const Vector4& b) const;
+		bool operator!=(const Vector4& b) const;
 	};
 
 	/// A vector of 4 float values (x, y, z, w) representing a quaternion rotation, similar to a Vector4.
@@ -264,6 +275,9 @@ namespace Math
 		Point& operator-=(float);
 		Point& operator*=(float);
 		Point& operator/=(float);
+
+		bool operator==(const Point& b) const;
+		bool operator!=(const Point& b) const;
 	};
 
 	/// Represents a rectangular space, defined by two points or by the four edges.
@@ -363,6 +377,9 @@ namespace Math
 
 		/// Returns the integer representation of the given color (in the form of a Color value).
 		Color ToIntColor();
+
+		bool operator==(const ColorRGB& b) const;
+		bool operator!=(const ColorRGB& b) const;
 	};
 
 	/// Four float values in the range [0, 1] that represent a color (the red, green, blue and alpha components).
@@ -376,6 +393,9 @@ namespace Math
 
 		/// Returns the integer representation of the given color (in the form of a Color value).
 		Color ToIntColor();
+
+		bool operator==(const ColorRGBA& b) const;
+		bool operator!=(const ColorRGBA& b) const;
 
 		float r;
 		float g;
@@ -1052,5 +1072,49 @@ namespace Math
 
 	inline Vector3 BoundingBox::GetCenter() const {
 		return (lower + upper) / 2.0f;
+	}
+
+
+
+	inline bool Vector2::operator==(const Vector2& b) const {
+		return x == b.x && y == b.y;
+	}
+	inline bool Vector2::operator!=(const Vector2& b) const {
+		return x != b.x || y != b.y;
+	}
+
+	inline bool Vector3::operator==(const Vector3& b) const {
+		return x == b.x && y == b.y && z == b.z;
+	}
+	inline bool Vector3::operator!=(const Vector3& b) const {
+		return x != b.x || y != b.y || z != b.z;
+	}
+
+	inline bool Vector4::operator==(const Vector4& b) const {
+		return x == b.x && y == b.y && z == b.z && w == b.w;
+	}
+	inline bool Vector4::operator!=(const Vector4& b) const {
+		return x != b.x || y != b.y || z != b.z || w != b.w;
+	}
+
+	inline bool Point::operator==(const Point& b) const {
+		return x == b.x && y == b.y;
+	}
+	inline bool Point::operator!=(const Point& b) const {
+		return x != b.x || y != b.y;
+	}
+
+	inline bool ColorRGB::operator==(const ColorRGB& b) const {
+		return r == b.r && g == b.g && this->b == b.b;
+	}
+	inline bool ColorRGB::operator!=(const ColorRGB& b) const {
+		return r != b.r || g != b.g || this->b != b.b;
+	}
+
+	inline bool ColorRGBA::operator==(const ColorRGBA& b) const {
+		return r == b.r && g == b.g && this->b == b.b && a == b.a;
+	}
+	inline bool ColorRGBA::operator!=(const ColorRGBA& b) const {
+		return r != b.r || g != b.g || this->b != b.b || a != b.a;
 	}
 }
