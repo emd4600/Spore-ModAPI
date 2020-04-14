@@ -28,6 +28,7 @@
 #include <Spore\Palettes\PaletteCategory.h>
 #include <Spore\Palettes\ColorPickerUI.h>
 #include <Spore\Palettes\PalettePageUI.h>
+#include <Spore\Palettes\PaletteSubcategoriesUI.h>
 
 #define PaletteCategoryUIPtr intrusive_ptr<Palettes::PaletteCategoryUI>
 
@@ -39,6 +40,8 @@ namespace Palettes
 	class PageArrowsUI;
 	/// Deprecated, only for internal implementation.
 	class UnkPageArrowsUI;
+
+	class PaletteSubcategoriesUI;
 
 
 	///
@@ -95,14 +98,14 @@ namespace Palettes
 
 		//// OVERRIDES ////
 
-		virtual bool HandleMessage(uint32_t messageID, void* pMessage) override;
+		bool HandleMessage(uint32_t messageID, void* pMessage) override;
 
-		virtual int AddRef();
-		virtual int Release();
-		virtual void* Cast(uint32_t);
+		int AddRef() override;
+		int Release() override;
+		void* Cast(uint32_t) const override;
 
-		virtual int GetEventFlags() const override;
-		virtual bool HandleUIMessage(IWindow* pWindow, const Message& message) override;
+		int GetEventFlags() const override;
+		bool HandleUIMessage(IWindow* pWindow, const Message& message) override;
 
 	public:
 		/// The layout of the palette category, loaded using the ID in Palettes::PaletteCategory::mLayoutID.
@@ -147,7 +150,7 @@ namespace Palettes
 		/* 70h */	intrusive_ptr<PageArrowsUI> mpPageArrowsUI;
 		/* 74h */	vector<int> field_74;
 		/* 88h */	vector<PageUIContainer> mPageUIs;
-		/* 9Ch */	int field_9C;
+		/* 9Ch */	PaletteSubcategoriesUIPtr mpSubcategoriesUI;
 		/* A0h */	int field_A0;
 		/* A4h */	int field_A4;
 		/* A8h */	int field_A8;
@@ -247,6 +250,17 @@ namespace Palettes
 		static const uint32_t TYPE = 0xF345E898;
 	};
 
+	class SubcategoryChangedMessage
+		: public App::StandardMessage
+	{
+	public:
+		static const uint32_t ID = 0x7956D8A;
+
+		SubcategoryChangedMessage(uint32_t categoryID);
+
+		uint32_t GetCategoryID() const;
+	};
+
 	/////////////////////////////////
 	//// INTERNAL IMPLEMENTATION ////
 	/////////////////////////////////
@@ -275,5 +289,15 @@ namespace Palettes
 	inline void PageArrowsUI::SetVisible(bool bVisible)
 	{
 		if (mpMainWindow) mpMainWindow->SetFlag(UTFWin::kWinFlagVisible, bVisible);
+	}
+
+
+	inline SubcategoryChangedMessage::SubcategoryChangedMessage(uint32_t categoryID)
+	{
+		this->params[0].uint32 = categoryID;
+	}
+
+	inline uint32_t SubcategoryChangedMessage::GetCategoryID() const {
+		return this->params[0].uint32;
 	}
 }

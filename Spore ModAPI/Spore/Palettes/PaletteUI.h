@@ -74,12 +74,12 @@ namespace Palettes
 
 		//// OVERRIDES ////
 
-		virtual int AddRef();
-		virtual int Release();
-		virtual void* Cast(uint32_t);
+		int AddRef() override;
+		int Release() override;
+		void* Cast(uint32_t) const override;
 
-		virtual int GetEventFlags() const override;
-		virtual bool HandleUIMessage(IWindow* pWindow, const Message& message) override;
+		int GetEventFlags() const override;
+		bool HandleUIMessage(IWindow* pWindow, const Message& message) override;
 
 	public:
 		/// The layout of the palette, loaded using the ID in Palettes::PaletteMain::mLayoutID.

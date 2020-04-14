@@ -45,7 +45,7 @@ namespace Palettes
 	int PaletteMain::AddRef() { return DefaultRefCounted::AddRef(); }
 	int PaletteMain::Release() { return DefaultRefCounted::Release(); }
 
-	void* PaletteMain::Cast(uint32_t type)
+	void* PaletteMain::Cast(uint32_t type) const
 	{
 		if (type == Object::TYPE)
 		{
@@ -92,7 +92,7 @@ namespace Palettes
 	int PaletteCategory::AddRef() { return DefaultRefCounted::AddRef(); }
 	int PaletteCategory::Release() { return DefaultRefCounted::Release(); }
 
-	void* PaletteCategory::Cast(uint32_t type)
+	void* PaletteCategory::Cast(uint32_t type) const
 	{
 		if (type == Object::TYPE)
 		{
@@ -149,7 +149,7 @@ namespace Palettes
 	int PalettePage::AddRef() { return DefaultRefCounted::AddRef(); }
 	int PalettePage::Release() { return DefaultRefCounted::Release(); }
 
-	void* PalettePage::Cast(uint32_t type)
+	void* PalettePage::Cast(uint32_t type) const
 	{
 		if (type == Object::TYPE)
 		{
@@ -196,7 +196,7 @@ namespace Palettes
 	int PaletteItem::AddRef() { return DefaultRefCounted::AddRef(); }
 	int PaletteItem::Release() { return DefaultRefCounted::Release(); }
 
-	void* PaletteItem::Cast(uint32_t type)
+	void* PaletteItem::Cast(uint32_t type) const
 	{
 		if (type == Object::TYPE)
 		{
@@ -240,7 +240,7 @@ namespace Palettes
 	int PaletteUI::AddRef() { return DefaultRefCounted::AddRef(); }
 	int PaletteUI::Release() { return DefaultRefCounted::Release(); }
 
-	void* PaletteUI::Cast(uint32_t type)
+	void* PaletteUI::Cast(uint32_t type) const
 	{
 		if (type == Object::TYPE)
 		{
@@ -339,7 +339,7 @@ namespace Palettes
 		, mpPageArrowsUI(nullptr)
 		, field_74()
 		, mPageUIs()
-		, field_9C()
+		, mpSubcategoriesUI(nullptr)
 		, field_A0()
 		, field_A4()
 		, field_A8()
@@ -362,7 +362,7 @@ namespace Palettes
 	int PaletteCategoryUI::AddRef() { return DefaultRefCounted::AddRef(); }
 	int PaletteCategoryUI::Release() { return DefaultRefCounted::Release(); }
 
-	void* PaletteCategoryUI::Cast(uint32_t type)
+	void* PaletteCategoryUI::Cast(uint32_t type) const
 	{
 		if (type == Object::TYPE)
 		{
@@ -415,7 +415,7 @@ namespace Palettes
 	int PalettePageUI::AddRef() { return DefaultRefCounted::AddRef(); }
 	int PalettePageUI::Release() { return DefaultRefCounted::Release(); }
 
-	void* PalettePageUI::Cast(uint32_t type)
+	void* PalettePageUI::Cast(uint32_t type) const
 	{
 		if (type == Object::TYPE)
 		{

@@ -81,9 +81,9 @@ namespace Palettes
 
 		//// OVERRIDES ////
 
-		virtual int AddRef();
-		virtual int Release();
-		virtual void* Cast(uint32_t);
+		int AddRef() override;
+		int Release() override;
+		void* Cast(uint32_t) const override;
 
 	public:
 		/// The instance ID of the layout file that will be used in this page. 

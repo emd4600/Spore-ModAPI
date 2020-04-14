@@ -73,8 +73,8 @@ namespace App
 	auto_METHOD_VIRTUAL(cPropManager, IPropManager, void*, func20h, Args(int arg_0, int arg_4), Args(arg_0, arg_4));
 	auto_METHOD_VIRTUAL_const(cPropManager, IPropManager, const char*, GetPropertyGroupName, Args(uint32_t propertyGroupID), Args(propertyGroupID));
 	auto_METHOD_VIRTUAL_const(cPropManager, IPropManager, bool, HasPropertyList, Args(uint32_t instanceID, uint32_t groupID), Args(instanceID, groupID));
-	auto_METHOD_VIRTUAL_const(cPropManager, IPropManager, bool, GetPropertyList, Args(uint32_t instanceID, uint32_t groupID, PropertyList::Pointer& pDst), Args(instanceID, groupID, pDst));
-	auto_METHOD_VIRTUAL(cPropManager, IPropManager, bool, GetGlobalPropertyList, Args(uint32_t instanceID, PropertyList::Pointer& pDst), Args(instanceID, pDst));
+	auto_METHOD_VIRTUAL_const(cPropManager, IPropManager, bool, GetPropertyList, Args(uint32_t instanceID, uint32_t groupID, PropertyListPtr& pDst), Args(instanceID, groupID, pDst));
+	auto_METHOD_VIRTUAL(cPropManager, IPropManager, bool, GetGlobalPropertyList, Args(uint32_t instanceID, PropertyListPtr& pDst), Args(instanceID, pDst));
 	auto_METHOD_VIRTUAL_VOID(cPropManager, IPropManager, SetPropertyList, Args(PropertyList* pList, uint32_t instanceID, uint32_t groupID), Args(pList, instanceID, groupID));
 	auto_METHOD_VIRTUAL(cPropManager, IPropManager, void*, func38h, Args(int arg_0), Args(arg_0));
 	auto_METHOD_VIRTUAL(cPropManager, IPropManager, void*, func3Ch, Args(int arg_0, int arg_4), Args(arg_0, arg_4));

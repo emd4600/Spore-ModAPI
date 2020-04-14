@@ -1,4 +1,3 @@
-#ifndef MODAPI_DLL_EXPORT
 /****************************************************************************
 * Copyright (C) 2018 Eric Mor
 *
@@ -175,4 +174,20 @@ int MultithreadObject::Release()
 	}
 	return refCount;
 }
-#endif
+
+
+int BasicLockRefCounted::AddRef()
+{
+	return eastl::Internal::atomic_increment(&mnRefCount);
+}
+
+int BasicLockRefCounted::Release()
+{
+	int refCount = eastl::Internal::atomic_decrement(&mnRefCount);
+	if (refCount == 0)
+	{
+		mnRefCount = 1;
+		delete this;
+	}
+	return refCount;
+}
