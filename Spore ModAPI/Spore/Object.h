@@ -169,3 +169,15 @@ inline DefaultRefCounted::DefaultRefCounted()
 {
 
 }
+
+class BasicLockRefCounted
+{
+public:
+	virtual ~BasicLockRefCounted() {};
+
+	int AddRef();
+	int Release();
+
+protected:
+	int mnRefCount;
+};
