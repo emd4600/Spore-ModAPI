@@ -66,8 +66,8 @@ namespace App
 		virtual void* func20h(int arg_0, int arg_4) override;
 		virtual const char* GetPropertyGroupName(uint32_t propertyGroupID) const override;
 		virtual bool HasPropertyList(uint32_t instanceID, uint32_t groupID) const override;
-		virtual bool GetPropertyList(uint32_t instanceID, uint32_t groupID, PropertyList::Pointer& pDst) const override;
-		virtual bool GetGlobalPropertyList(uint32_t instanceID, PropertyList::Pointer& pDst) override;
+		virtual bool GetPropertyList(uint32_t instanceID, uint32_t groupID, PropertyListPtr& pDst) const override;
+		virtual bool GetGlobalPropertyList(uint32_t instanceID, PropertyListPtr& pDst) override;
 		virtual void SetPropertyList(PropertyList* pList, uint32_t instanceID, uint32_t groupID) override;
 		virtual void* func38h(int arg_0) override;
 		virtual void* func3Ch(int arg_0, int arg_4) override;
@@ -89,7 +89,7 @@ namespace App
 		/* 20h */	map<uint32_t, Property> field_20;
 		// only contains appproperties?
 		/* 3Ch */	PropertyList mPropertyDefinitions;  // if !field_1C, used to store default values of properties.trigger?
-		/* 74h */	hash_map<ResourceID, PropertyList::Pointer> mPropertyLists;
+		/* 74h */	hash_map<ResourceID, PropertyListPtr> mPropertyLists;
 		/* 94h */	hash_map<string, uint32_t> mNamesToPropertyIDs;
 		/* B4h */	hash_map<uint32_t, string> mPropertyIDsToNames;
 		/* D4h */	hash_map<string, int> field_D4;

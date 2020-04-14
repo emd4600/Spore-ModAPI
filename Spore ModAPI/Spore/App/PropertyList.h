@@ -49,8 +49,6 @@ namespace App
 	{
 
 	public:
-		typedef intrusive_ptr<PropertyList> Pointer;
-
 		PropertyList();
 		virtual ~PropertyList() {};
 
@@ -175,9 +173,9 @@ namespace App
 
 	protected:
 		typedef vector_map<uint32_t, Property> PropertyMap;
-		/* 18h */	PropertyMap				mProperties;
-		/* 30h */	PropertyList::Pointer	mpParent;
-		/* 34h */	int						mnOperationsDone;  // I don't really know why this is used, but the add, remove, copy etc operations increase this
+		/* 18h */	PropertyMap		mProperties;
+		/* 30h */	PropertyListPtr	mpParent;
+		/* 34h */	int				mnOperationsDone;  // I don't really know why this is used, but the add, remove, copy etc operations increase this
 	};
 
 	///////////////////////////////////

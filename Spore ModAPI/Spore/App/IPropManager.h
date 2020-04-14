@@ -89,20 +89,20 @@ namespace App
 		/// Gets the PropertyList stored in the given group and with the given instanceID.
 		/// @param instanceID The instance ID of the list.
 		/// @param groupID The group ID of the list.
-		/// @param pDst An intrusive_ptr that will receive the list. It must not be initialized or contain nullptr; the previous pointer
+		/// @param pDst A PropertyListPtr that will receive the list. It must not be initialized or contain nullptr; the previous pointer
 		/// won't be released.
 		/// @returns Whether the list was found or not.
 		///
-		/* 2Ch */	virtual bool GetPropertyList(uint32_t instanceID, uint32_t groupID, PropertyList::Pointer &pDst) const = 0;
+		/* 2Ch */	virtual bool GetPropertyList(uint32_t instanceID, uint32_t groupID, PropertyListPtr &pDst) const = 0;
 
 		///
 		/// Gets the PropertyList stored in the global (0x00000000) folder and with the given instanceID.
 		/// @param instanceID The instance ID of the list.
-		/// @param pDst An intrusive_ptr that will receive the list. It must not be initialized or contain nullptr; the previous pointer
+		/// @param pDst An PropertyListPtr that will receive the list. It must not be initialized or contain nullptr; the previous pointer
 		/// won't be released.
 		/// @returns Whether the list was found or not.
 		///
-		/* 30h */	virtual bool GetGlobalPropertyList(uint32_t instanceID, PropertyList::Pointer &pDst) = 0;
+		/* 30h */	virtual bool GetGlobalPropertyList(uint32_t instanceID, PropertyListPtr &pDst) = 0;
 
 		///
 		/// Adds this property list with the given instance and group ID, or replaces the existing one.
