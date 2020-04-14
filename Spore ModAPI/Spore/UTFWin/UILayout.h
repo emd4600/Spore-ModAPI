@@ -19,9 +19,11 @@
 
 #pragma once
 
-#include "UILayoutObjects.h"
-#include "../ResourceKey.h"
-#include "IWindow.h"
+#include <Spore\UTFWin\UILayoutObjects.h>
+#include <Spore\UTFWin\IWindow.h>
+#include <Spore\ResourceKey.h>
+
+#define UILayoutPtr intrusive_ptr<UTFWin::UILayout>
 
 namespace UTFWin
 {

@@ -31,6 +31,8 @@
 #include <Spore\UTFWin\StdDrawable.h>
 #include <Spore\UTFWin\SporeStdDrawableImageInfo.h>
 #include <Spore\UTFWin\SporeStdDrawable.h>
+#include <Spore\UTFWin\IWindow.h>
+#include <Spore\App\IClassManager.h>
 
 #include <SourceCode\Utility.h>
 
@@ -426,6 +428,23 @@ namespace UTFWin
 		mHaloShadow.SetStrength(2);
 	}
 
+	SporeStdDrawableImageInfo::SporeStdDrawableImageInfo(const SporeStdDrawableImageInfo& other)
+		: mpBackgroundImage(other.mpBackgroundImage)
+		, mpIconImage(other.mpIconImage)
+		, mBackgroundColor(other.mBackgroundColor)
+		, mIconColor(other.mIconColor)
+		, mIconDrawMode(other.mIconDrawMode)
+		, mStrokeMode(other.mStrokeMode)
+		, mHaloMode(other.mHaloMode)
+		, mStrokeShadow(other.mStrokeShadow)
+		, mHaloShadow(other.mHaloShadow)
+		, mBackgroundScale(other.mBackgroundScale)
+		, mIconScale(other.mIconScale)
+		, mBackgroundOffset(other.mBackgroundOffset)
+		, mIconOffset(other.mIconOffset)
+	{
+	}
+
 	SporeStdDrawableImageInfo::~SporeStdDrawableImageInfo()
 	{
 
@@ -516,6 +535,46 @@ namespace UTFWin
 		{
 			return nullptr;
 		}
+	}
+
+	void SporeStdDrawable::SetIconImage(Image* pImage, int stateIndex)
+	{
+		auto info = GetImageInfo(stateIndex);
+		if (stateIndex < 8 && info != &mCurrentInfo) 
+		{
+			mImageInfos[stateIndex] = info = (SporeStdDrawableImageInfo*)ClassManager.CreateCasted(0x540037E, SporeStdDrawableImageInfo::TYPE);
+			*mImageInfos[stateIndex] = SporeStdDrawableImageInfo(mCurrentInfo);
+		}
+		info->SetIconImage(pImage);
+
+		if (field_134 || stateIndex == 8) {
+			field_134 = true;
+		}
+		else field_134 = false;
+
+		if (!field_134) {
+			if (!mImageInfos[0]) {
+				mImageInfos[0] = &mCurrentInfo;
+			}
+			mCurrentInfo = SporeStdDrawableImageInfo(*mImageInfos[0]);
+		}
+	}
+
+	bool SporeStdDrawable::SetWindowIcon(IWindow* pWindow, Image* pImage, int stateIndex)
+	{
+		if (!pWindow) return false;
+		auto drawable = pWindow->GetDrawable();
+		if (!drawable) return false;
+		auto stdDrawable = object_cast<SporeStdDrawable>(drawable);
+		if (!stdDrawable) return false;
+
+		stateIndex = Math::clamp(stateIndex, 0, 7);
+		if (stdDrawable->GetImageInfo(stateIndex)->GetIconImage() != pImage)
+		{
+			stdDrawable->SetIconImage(pImage, stateIndex);
+		}
+
+		return true;
 	}
 }
 #endif

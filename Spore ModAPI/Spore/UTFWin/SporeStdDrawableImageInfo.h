@@ -58,6 +58,7 @@ namespace UTFWin
 		static const uint32_t TYPE = 0x5400186;
 
 		SporeStdDrawableImageInfo();
+		SporeStdDrawableImageInfo(const SporeStdDrawableImageInfo& other);
 		virtual ~SporeStdDrawableImageInfo();
 
 		Image* GetBackgroundImage() const;

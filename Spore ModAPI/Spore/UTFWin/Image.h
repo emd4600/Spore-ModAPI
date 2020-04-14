@@ -61,7 +61,7 @@ namespace UTFWin
 		///
 		/// Creates an UTFWin::Image instance with the image extracted from the file specified.
 		///
-		static bool GetImage(const ResourceKey& name, Image*& dst, bool arg_8 = false, int nHeight = -1, int nWidth = -1);
+		static bool GetImage(const ResourceKey& name, ImagePtr& dst, bool arg_8 = false, int height = -1, int width = -1);
 
 		///
 		/// Changes the drawable of the given window to display the specified image. Optionally, the index of the image

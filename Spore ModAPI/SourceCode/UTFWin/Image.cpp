@@ -28,7 +28,7 @@ namespace UTFWin
 	auto_METHOD_VIRTUAL_const_(Image, Image, uint32_t, GetProxyID);
 
 	auto_STATIC_METHOD(Image, bool, GetImage,
-		Args(const ResourceKey& name, Image*& dst, bool arg_8, int arg_C, int arg_10),
+		Args(const ResourceKey& name, ImagePtr& dst, bool arg_8, int arg_C, int arg_10),
 		Args(name, dst, arg_8, arg_C, arg_10));
 
 	auto_STATIC_METHOD(Image, bool, SetBackground,

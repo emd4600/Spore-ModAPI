@@ -66,7 +66,7 @@ namespace UTFWin
 		virtual bool HandleUIMessage(IWindow* pWindow, const Message& message) override;
 
 
-	protected:
+	public:
 		/// Filename of the layout which contains tooltip window, by default "Tooltips".
 		/* 0Ch */	string16 mLayoutName;
 		/// Control ID of tooltip window, by default 0x3754E6C.

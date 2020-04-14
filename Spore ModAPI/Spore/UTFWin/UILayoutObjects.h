@@ -19,25 +19,36 @@
 
 #pragma once
 
-#include "..\Object.h"
-#include "IWindow.h"
+#include <Spore\UTFWin\ILayoutElement.h>
+#include <Spore\UTFWin\IWindow.h>
 #include <EASTL\vector.h>
+#include <EASTL\string.h>
+#include <EASTL\hash_map.h>
 
 namespace UTFWin
 {
-	class LayoutObjectsContainer
+	struct LayoutObjectsContainer
 	{
-
-		// /* 5Ch */	eastl::vector<>
+		/* 00h */	int vftable;
+		/* 04h */	int field_04;
+		/* 08h */	int field_08;
+		/* 0Ch */	int field_0C;
+		/* 10h */	int field_10;
+		/* 14h */	int field_14;
+		/* 18h */	int field_18;
+		/* 1Ch */	hash_map<int, int> field_1C;
+		/* 3Ch */	hash_map<int, int> field_3C;
+		/* 5Ch */	vector<ILayoutElementPtr> mRootComponents;  // root components?
+		/* 70h */	string16 field_70;
 	};
+	ASSERT_SIZE(LayoutObjectsContainer, 0x80);
 
-	class UILayoutObjects : public DefaultRefCounted, LayoutObjectsContainer
+	class UILayoutObjects 
+		: public DefaultRefCounted
+		, LayoutObjectsContainer
 	{
 	public:
-
-		/* 64h */	vector<intrusive_ptr<UTFWin::IWindow>> rootComponents;
-
-		/* 88h */	intrusive_ptr<UTFWin::IWindow> containerWindow;  // container window?
+		/* 88h */	IWindowPtr containerWindow;  // container window?
 		/* 8Ch */	bool isVisible;
 		/* 8Dh */	bool field_8D;
 		/* 90h */	int field_90;

@@ -37,10 +37,8 @@ namespace UTFWin
 		///
 		/// Gets the image information that is being used for the state specified.
 		/// @param stateIndex The index that corresponds to the desired state.
-		/// @param[out] dst The SporeStdDrawableImageInfo pointer where the style will be written.
-		/// @returns True if the index is valid, false otherwise.
 		///
-		bool GetImageInfo(int stateIndex, SporeStdDrawableImageInfo*& dst) const;
+		SporeStdDrawableImageInfo* GetImageInfo(int stateIndex);
 
 		///
 		/// Sets the image information that will be used for the state specified.
@@ -49,6 +47,10 @@ namespace UTFWin
 		/// @returns True if the index is valid, false otherwise.
 		///
 		bool SetImageInfo(SporeStdDrawableImageInfo* pInfo, int stateIndex);
+
+		void SetIconImage(Image* pImage, int stateIndex);
+
+		static bool SetWindowIcon(IWindow* pWindow, Image* pImage, int stateIndex = 0);
 
 		virtual Vector2 GetScale() const;
 
@@ -68,7 +70,7 @@ namespace UTFWin
 
 	protected:
 		/* 7Ch */	SporeStdDrawableImageInfo mCurrentInfo;
-		/* 114h */	intrusive_ptr<SporeStdDrawableImageInfo> mImageInfos[8];
+		/* 114h */	SporeStdDrawableImageInfoPtr mImageInfos[8];
 		/* 134h */	bool field_134;
 		/* 138h */	int field_138;
 		/* 13Ch */	int field_13C;
@@ -96,13 +98,16 @@ namespace UTFWin
 		DeclareAddress(GetProxyID);
 	}
 
-	inline bool SporeStdDrawable::GetImageInfo(int stateIndex, SporeStdDrawableImageInfo*& dst) const
+	inline SporeStdDrawableImageInfo* SporeStdDrawable::GetImageInfo(int stateIndex)
 	{
-		if (stateIndex > 7) return false;
+		if (stateIndex > 7) return &mCurrentInfo;
 
-		dst = mImageInfos[stateIndex].get();
+		SporeStdDrawableImageInfo* ptr = mImageInfos[stateIndex].get();
+		if (!mImageInfos[stateIndex]) {
+			mImageInfos[stateIndex] = &mCurrentInfo;
+		}
 
-		return true;
+		return mImageInfos[stateIndex].get();
 	}
 	inline bool SporeStdDrawable::SetImageInfo(SporeStdDrawableImageInfo* pInfo, int stateIndex)
 	{

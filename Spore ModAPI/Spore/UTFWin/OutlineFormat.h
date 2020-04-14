@@ -27,6 +27,7 @@ namespace UTFWin
 	{
 	public:
 		OutlineFormat();
+		OutlineFormat(const OutlineFormat& other);
 
 		/* 00h */	int size;
 		/* 04h */	int strength;
@@ -65,6 +66,19 @@ namespace UTFWin
 		, offsetY(0)
 		, sizeX(0)
 		, sizeY(0)
+	{
+	}
+
+	inline OutlineFormat::OutlineFormat(const OutlineFormat& other)
+		: size(other.size)
+		, strength(other.strength)
+		, quality(other.quality)
+		, offsetX(other.offsetX)
+		, offsetY(other.offsetY)
+		, sizeX(other.sizeX)
+		, sizeY(other.sizeY)
+		, smoothness(other.smoothness)
+		, saturation(other.saturation)
 	{
 	}
 }
