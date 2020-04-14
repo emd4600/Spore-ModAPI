@@ -1,4 +1,3 @@
-#ifndef MODAPI_DLL_EXPORT
 /****************************************************************************
 * Copyright (C) 2018 Eric Mor
 *
@@ -27,6 +26,8 @@
 
 namespace Math
 {
+
+	const Vector3 Vector3::ZERO = { 0, 0, 0 };
 
 	const Color Color::RED =	Color(255, 0, 0, 255);
 	const Color Color::BLUE =	Color(0, 0, 255, 255);
@@ -413,5 +414,3 @@ RandomNumberGenerator::RandomNumberGenerator(int32_t seed)
 
 auto_METHOD(RandomNumberGenerator, int, RandomInt, Args(int range), Args(range));
 auto_METHOD_(RandomNumberGenerator, float, RandomFloat);
-
-#endif
