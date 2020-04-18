@@ -2,6 +2,7 @@
 
 #include <Spore\Internal.h>
 #include <Spore\Graphics\MaterialShader.h>
+#include <Spore\Graphics\ShaderData.h>
 #include <Spore\RenderWare\Raster.h>
 #include <d3d9.h>
 
@@ -18,6 +19,7 @@ namespace Graphics
 
 		DeclareAddress(SetShaderData);
 		DeclareAddress(GetShaderDataSize);
+		DeclareAddress(RegisterShaderData);
 
 		DeclareAddress(SetPresentationParameters);
 		DeclareAddress(CreateDevice);
@@ -102,6 +104,10 @@ namespace Graphics
 		void SetShaderData(short index, void* value, bool overrideIfEqual = false);
 
 		int GetShaderDataSize(short index);
+
+		// max 2048
+		void RegisterShaderData(short id, ShaderDataInformation::UnfixCB, 
+			ShaderDataInformation::RefixCB, ShaderDataInformation::FixupCB, ShaderDataInformation::UploadCB);
 
 		/// Assigns the presentation parameters that will be used by the DirectX device. 
 		/// This must not be called, as it would create another device, but it can be detoured.

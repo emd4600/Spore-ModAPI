@@ -23,6 +23,7 @@
 
 namespace RenderWare
 {
+	// D3D9SkinMatrix
 	struct Matrix3x4 {
 		union {
 			struct {

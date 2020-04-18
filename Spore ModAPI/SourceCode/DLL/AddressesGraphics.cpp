@@ -100,6 +100,7 @@ namespace Graphics
 
 		DefineAddress(SetShaderData, SelectAddress(0x7786E0, 0x777B50, 0x777B50));
 		DefineAddress(GetShaderDataSize, SelectAddress(0x778C50, , 0x7780C0));
+		DefineAddress(RegisterShaderData, SelectAddress(0x11F69C0, , 0x11F42A0));
 
 		DefineAddress(SetPresentationParameters, SelectAddress(0x11FA450, , 0x11F7D30));
 		DefineAddress(CreateDevice, SelectAddress(0x11FADF0, , 0x11F86B0));

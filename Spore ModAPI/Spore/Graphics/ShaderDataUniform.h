@@ -1,6 +1,7 @@
 #pragma once
 
 #include <EASTL\string.h>
+#include <Spore\Internal.h>
 
 namespace Graphics
 {
