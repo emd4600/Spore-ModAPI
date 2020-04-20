@@ -63,11 +63,11 @@ namespace RenderWare
 		};
 		/* 0Ch */	uint16_t width;
 		/* 0Eh */	uint16_t height;
-		/* 10h */	char field_10;
+		/* 10h */	uint8_t depth;
 		/* 11h */	uint8_t levels;
 		/* 12h */	uint16_t cubeFaces;
-		/* 14h */	int field_14;
-		/* 18h */	int field_18;
+		/* 14h */	Raster* pNextParent;
+		/* 18h */	void* pSwapChain;
 		/* 1Ch */	void* pTextureData;
 
 		static const uint32_t TYPE = 0x20003;

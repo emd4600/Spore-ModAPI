@@ -28,9 +28,11 @@ namespace RenderWare
 	enum RWElementDeclaration
 	{
 		RWDECL_VERTEX_POSITION = 0,
+		RWDECL_VERTEX_XYZRHW = 1,
 		RWDECL_VERTEX_NORMAL = 2,
 		RWDECL_VERTEX_COLOR = 3,
-		RWDECL_VERTEX_COLOR1 = 5,
+		RWDECL_VERTEX_PRELIGHT = 4,
+		RWDECL_VERTEX_COLOR1 = 5,  // specular
 		RWDECL_VERTEX_TEXCOORD0 = 6,
 		RWDECL_VERTEX_TEXCOORD1 = 7,
 		RWDECL_VERTEX_TEXCOORD2 = 8,
@@ -69,6 +71,33 @@ namespace RenderWare
 		RWDECL_VERTEX2_BLENDINDICES2 = 0x20000000,  // invented
 		RWDECL_VERTEX2_BLENDWEIGHTS = 0x40000000,
 		RWDECL_VERTEX2_BLENDWEIGHTS2 = 0x80000000,  // invented
+	};
+
+	constexpr int RWDECL_VERTEX2[] = {
+		RWDECL_VERTEX2_POSITION,
+		0,
+		RWDECL_VERTEX2_NORMAL,
+		RWDECL_VERTEX2_COLOR,
+		0,
+		RWDECL_VERTEX2_COLOR1,
+		RWDECL_VERTEX2_TEXCOORD0,
+		RWDECL_VERTEX2_TEXCOORD1,
+		RWDECL_VERTEX2_TEXCOORD2,
+		RWDECL_VERTEX2_TEXCOORD3,
+		RWDECL_VERTEX2_TEXCOORD4,
+		RWDECL_VERTEX2_TEXCOORD5,
+		RWDECL_VERTEX2_TEXCOORD6,
+		RWDECL_VERTEX2_TEXCOORD7,
+		RWDECL_VERTEX2_BLENDINDICES,
+		RWDECL_VERTEX2_BLENDWEIGHTS,
+		0,
+		RWDECL_VERTEX2_POSITION2,
+		RWDECL_VERTEX2_NORMAL2,
+		RWDECL_VERTEX2_TANGENT,
+		0,
+		0,
+		RWDECL_VERTEX2_BLENDINDICES2,
+		RWDECL_VERTEX2_BLENDWEIGHTS2,
 	};
 
 	/// Defines the vertex data layout. Each vertex can contain one or more data types, and each data type is described by a vertex element.
@@ -126,8 +155,8 @@ namespace RenderWare
 
 		void SetElement(int index, VertexElement element);
 
-		/* 00h */	int field_0;
-		/* 04h */	int field_4;
+		/* 00h */	VertexDescription* pNextParent;
+		/* 04h */	VertexDescription* pNextSibling;
 
 		/// The IDirect3DVertexDeclaration9 that operates behind this structure.
 		/* 08h */	IDirect3DVertexDeclaration9* pDXVertexDeclaration;
@@ -135,13 +164,13 @@ namespace RenderWare
 		/// The amount of elements contained in this description.
 		/* 0Ch */	uint16_t elementsCount;
 
-		/* 0Eh */	char field_E;
+		/* 0Eh */	char lockFlags;
 
 		/// The size in bytes of each vertex.
 		/* 0Fh */	uint8_t stride;
 
-		/* 10h */	int usageFlags;
-		/* 14h */	int usageFlags2;
+		/* 10h */	int elementsUsed;
+		/* 14h */	int elementsHash;
 
 		/// An array of all the VertexElement objects of this description.
 		/* 18h */	VertexElement elements[nVertexElements];

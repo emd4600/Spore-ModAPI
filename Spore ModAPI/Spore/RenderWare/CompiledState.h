@@ -53,13 +53,13 @@ namespace RenderWare
 			UseRenderStates = 0x20000
 		};
 
-		/* 00h */	int field_0;
-		/* 04h */	int field_4;
-		/* 08h */	int flags;  // flags?
-		/* 0Ch */	int field_C;
-		/* 10h */	int field_10;
-		/* 14h */	int field_14;
-		/* 18h */	Graphics::MaterialShader* pMaterialShader;  // RWShaderManager
+		/* 00h */	int instancedSize;
+		/* 04h */	int primitiveType;
+		/* 08h */	int softStateDirty;  // flags1
+		/* 0Ch */	int softStateDelta;  // flags2
+		/* 10h */	int hardStateDirty;  // flags3
+		/* 14h */	int hardStateDelta;
+		/* 18h */	Graphics::MaterialShader* shader;
 
 		void Load();
 

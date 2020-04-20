@@ -32,6 +32,15 @@ namespace Graphics
 	class MaterialShader
 	{
 	public:
+		enum GeometryType
+		{
+			kGeometryTypeNA = 0xFFFFFFFF,
+			kGeometryTypeStatic = 0x0,
+			kGeometryTypeSkinned = 0x1,
+			kGeometryTypeMorphed = 0x2,
+			kGeometryTypeNumTypes = 0x3,
+		};
+
 		/// This type of function is called when rendering a mesh, before the \c DrawIndexedPrimitives is called.
 		/// This function is responsible of loading the shaders into DirectX.
 		typedef BOOL(*LoadShader_t)(RenderWare::Mesh<>*);
@@ -47,23 +56,23 @@ namespace Graphics
 		}
 
 	protected:
-		/* 00h */	int field_0;
-		/* 04h */	int field_4;
-		/* 08h */	int field_8;
+		/* 00h */	GeometryType mGeomType;
+		/* 04h */	int mFlags;
+		/* 08h */	int mElementTypes;
 		/* 0Ch */	int16_t mVertexShaderVersion;
 		/* 0Eh */	int16_t mVertexShaderVersion_;
 		/* 10h */	int16_t mPixelShaderVersion;
 		/* 12h */	int16_t mPixelShaderVersion_;
 		/* 14h */	LoadShader_t mpCallback;
-		/* 18h */	int field_18;
-		/* 1Ch */	int field_1C;
-		/* 20h */	int field_20;
-		/* 24h */	int field_24;
-		/* 28h */	int field_28;
-		/* 2Ch */	int field_2C;
-		/* 30h */	int field_30;
-		/* 34h */	int field_34;
-		/* 38h */	uint32_t shaderID;
+		/* 18h */	int mNumDataTypes;
+		/* 1Ch */	int mDataTypeList;
+		/* 20h */	int mVertexShaderUpdateFlags;
+		/* 24h */	int mNumVertexShaderBuilders;
+		/* 28h */	int mVertexShaderBuilders;
+		/* 2Ch */	int mPixelShaderUpdateFlags;
+		/* 30h */	int mNumPixelShaderBuilders;
+		/* 34h */	int mPixelShaderBuilders;
+		/* 38h */	uint32_t mID;
 		/* 3Ch */	int mnRefCount;
 		/* 40h */	int field_40;  // intrusive_list_node?
 		/* 44h */	int field_44;

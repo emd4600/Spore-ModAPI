@@ -70,7 +70,7 @@ namespace RenderWare
 		/// 
 		void Render();
 
-		/* 00h */	int field_0;
+		/* 00h */	int instancedSize;
 		/* 04h */	D3DPRIMITIVETYPE primitiveType;
 		/* 08h */	IndexBuffer* pIndexBuffer;
 		/* 0Ch */	size_t triangleCount;

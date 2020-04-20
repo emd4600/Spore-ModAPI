@@ -48,7 +48,7 @@ namespace RenderWare
 		void LockDirectXData();
 
 		/// The VertexDescription that defines the data that each vertex has.
-		/* 00h */	void* pVertexDescription;
+		/* 00h */	VertexDescription<0>* pVertexDescription;
 
 		/// The IDirect3DVertexBuffer9 that is operating behind this structure.
 		/* 04h */	IDirect3DVertexBuffer9* pDXBuffer;
@@ -59,10 +59,11 @@ namespace RenderWare
 		/// The amount of vertices contained in the buffer.
 		/* 0Ch */	size_t vertexCount;
 
-		/* 10h */	int field_10;
+		/* 10h */	int usage;
 
 		/// The size in bytes of each vertex structure.
-		/* 14h */	size_t stride;
+		/* 14h */	uint8_t stride;
+		/* 15h */	uint8_t lockFlags;
 
 		/// The raw data of the vertices. This is an array of vertices, but the data they contain depends on the VertexDescription.
 		/* 18h */	void* pVertexData;

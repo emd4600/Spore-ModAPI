@@ -31,7 +31,7 @@ namespace App
 	class cViewer
 	{
 	public:
-		bool Initialize(bool);
+		bool Initialize(bool isParallelProjection = false);
 
 		///
 		/// Clears one or more surfaces such as the render target, the depth buffer or the stencil buffer.
@@ -86,23 +86,29 @@ namespace App
 		D3DVIEWPORT9 GetViewport() const;
 
 	public:
+		enum class Projection : int
+		{
+			NA = 0,
+			Perspective = 1,
+			Parallel = 2,
+			PerspectiveInfinite = 3
+		};
+
 		struct Camera
 		{
 		public:
-			/* 00h */	Matrix4 worldToCameraTranspose;
-			/* 40h */	Graphics::RTT* renderTargets[4];
-			/* 50h */	Graphics::RTT* depthStencilSurface;
-			/* 54h */	char _padding_54[0x8];
-			/* 5Ch */	float field_5C;
-			/* 60h */	float field_60;
-			/* 64h */	float scaleX;
-			/* 68h */	float scaleY;
-			/* 6Ch */	int field_6C;  // 1 2 or 3, used to set projection matrix
+			/* 00h */	Matrix4 transform;  // worldToCameraTranspose
+			/* 40h */	Graphics::RTT* rasters[4];
+			/* 50h */	Graphics::RTT* zbuffer;
+			/* 54h */	Vector2 viewOffset;
+			/* 5Ch */	Vector2 viewWindow;
+			/* 64h */	Vector2 recipViewWindow;  // scale?
+			/* 6Ch */	Projection projectionType;  // 1 2 or 3, used to set projection matrix
 			/* 70h */	float nearPlane;
 			/* 74h */	float farPlane;
 			/* 78h */	D3DVIEWPORT9 viewport;
-			/* 90h */	int field_90;
-			/* 94h */	int stencilBitDepth;
+			/* 90h */	void* window;
+			/* 94h */	int stencilClear;
 		};
 
 		/* 00h */	Matrix4 viewTransform;
