@@ -20,7 +20,7 @@ namespace Graphics
 		int mnRefCount;
 
 	public:
-		vector<cMITextureSet> field_8;
+		vector<cMITextureSet*> field_8;
 	};
 
 	ASSERT_SIZE(cMaterialInfo, 0x1C);

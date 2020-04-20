@@ -19,6 +19,8 @@
 
 #pragma once
 
+#include <Spore\App\cViewer.h>
+
 #define IRenderablePtr intrusive_ptr<Graphics::IRenderable>
 
 namespace Graphics
@@ -37,6 +39,6 @@ namespace Graphics
 		///
 		/// @param flags The flags this renderable was registered with, combined with the global render flags.
 		/// @param layerIndex The layer index this renderable was registered with.
-		virtual void Render(int flags, int layerIndex, void*, void*) = 0;
+		virtual void Render(int flags, int layerIndex, App::cViewer**, void*) = 0;
 	};
 }

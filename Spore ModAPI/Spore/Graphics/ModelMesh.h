@@ -5,6 +5,7 @@
 #include <Spore\Transform.h>
 #include <Spore\Graphics\IMaterialManager.h>
 #include <Spore\Graphics\cMaterialInfo.h>
+#include <Spore\Graphics\Animations.h>
 #include <Spore\RenderWare\RenderWareFile.h>
 #include <EASTL\vector.h>
 #include <EASTL\vector_map.h>
@@ -16,6 +17,7 @@ namespace Graphics
 	class ModelMesh
 	{
 	public:
+		ModelMesh();
 		virtual ~ModelMesh();
 
 		int AddRef();
@@ -25,7 +27,7 @@ namespace Graphics
 		/* 04h */	int mnRefCount;
 
 	public:
-		/* 08h */	vector<RenderWare::Mesh<0>*> mMeshes;
+		/* 08h */	vector<RenderWare::Mesh<1>*> mMeshes;
 		/* 1Ch */	vector<int> field_1C;
 		/* 30h */	vector<Material*> mMaterials;
 		/* 44h */	vector<cMaterialInfoPtr> mMaterialInfos;
@@ -35,11 +37,11 @@ namespace Graphics
 		/* C0h */	float mBoundingRadius;
 		/* C4h */	RenderWareFilePtr mpRenderWare;
 		/* C8h */	short field_C8;
-		/* CCh */	int field_CC;  // related with TriangleKDTreeProcedural
-		/* D0h */	int field_D0;
+		/* CCh */	ObjectPtr field_CC;  // related with TriangleKDTreeProcedural
+		/* D0h */	int** field_D0;
 		/* D4h */	BoundingBox field_D4;  // possibly? uses min and max float
-		/* ECh */	int field_EC;
-		/* F0h */	int field_F0;
+		/* ECh */	ObjectPtr field_EC;
+		/* F0h */	intrusive_ptr<Animations> mpAnimations;
 		/* F4h */	int field_F4;  // not initialized
 		/* F8h */	int field_F8;  // -1
 		/* FCh */	int field_FC;  // -1
@@ -55,6 +57,7 @@ namespace Graphics
 		--mnRefCount;
 		if (mnRefCount == 0) {
 			delete this;
+			return 0;
 		}
 		return mnRefCount;
 	}

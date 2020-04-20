@@ -35,7 +35,10 @@ namespace Graphics
 	public:
 		enum
 		{
-			kForceLoad = 2
+			/// Forces the texture to load. If no .raster exists, this will look for rw4 as well
+			kForceLoad = 2,
+			/// If enabled, SetLOD() will be called to the texture with the current level of detail
+			kSetLOD = 4
 		};
 
 		/* 00h */	virtual int AddRef() = 0;
@@ -50,7 +53,9 @@ namespace Graphics
 
 		///
 		/// Gets the texture stored with the given file name. If the texture is not already loaded, it will be loaded in this method.
-		/// The type ID will be ignored; first, it will try to load it as a .raster texture, and if it's not found, it will use the rest of texture formats.
+		/// The type ID will be ignored; generally it tries to load `.raster` textures.
+		///
+		/// In order to load textures that are not `.raster`, you must pass `kForceLoad` as a parameter.
 		/// @param name
 		///
 		/* 1Ch */	virtual Texture* GetTexture(const struct ResourceKey name, int flags = 0) = 0;  // flags = 6 for rw4?
@@ -85,7 +90,7 @@ namespace Graphics
 		/* 34h */	virtual bool func34h(Texture* texture) = 0;
 		/* 38h */	virtual bool func38h(Texture* texture, void* arg_4) = 0;
 
-		/* 3Ch */	virtual int func3Ch(int, int, int, int, int, int, int, int) = 0;
+		/* 3Ch */	virtual int func3Ch(uint32_t intanceID, uint32_t groupID, int width, int height, int, int, D3DFORMAT, int) = 0;
 		/* 40h */	virtual int func40h(int, int, int, int, int, int) = 0;
 		//PLACEHOLDER save texture?
 		/* 44h */	virtual bool func44h(Texture* texture, int, int) = 0;

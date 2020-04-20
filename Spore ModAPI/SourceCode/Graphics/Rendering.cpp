@@ -45,7 +45,7 @@ namespace Graphics
 		return mnRefCount;
 	}
 
-	void LambdaRenderable::Render(int arg_0, int arg_4, void* arg_8, void* arg_C)
+	void LambdaRenderable::Render(int arg_0, int arg_4, App::cViewer** arg_8, void* arg_C)
 	{
 		mFunction(arg_0, arg_4, arg_8, arg_C);
 	}
@@ -55,6 +55,10 @@ namespace Graphics
 		Args(short index, void* value, bool overrideIfEqual), Args(index, value, overrideIfEqual));
 
 	auto_STATIC_METHOD(Renderer, int, GetShaderDataSize, Args(short index), Args(index));
+
+	auto_STATIC_METHOD(Renderer, void, RegisterShaderData,
+		Args(short index, ShaderDataInformation::UnfixCB arg_4, ShaderDataInformation::RefixCB arg_8, ShaderDataInformation::FixupCB arg_C, ShaderDataInformation::UploadCB loadFunction),
+		Args(index, arg_4, arg_8, arg_C, loadFunction));
 
 	auto_STATIC_METHOD_VOID(Renderer, SetTexture, Args(int slotIndex, RenderWare::Raster* raster), Args(slotIndex, raster));
 }

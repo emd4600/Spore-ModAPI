@@ -6,6 +6,7 @@
 #include <Spore\Internal.h>
 #include <Spore\ModAPI.h>
 #include "Application.h"
+#include "TextureOverride.h"
 
 uintptr_t baseAddress;
 ArgScript::PrintF_ptr ArgScript::PrintF;
@@ -24,6 +25,7 @@ BOOL APIENTRY DllMain(HMODULE hModule,
 
 		PrepareDetours(hModule);
 		ModAPI::AttachDetour();
+		TextureOverride::AttachDetour();
 		CommitDetours();
 		break;
 

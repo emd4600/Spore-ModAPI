@@ -20,6 +20,9 @@ namespace Graphics
 
 		virtual ~Animations();
 
+		int AddRef();
+		int Release();
+
 	public:
 		// sub_742910 adds everything
 
@@ -48,4 +51,18 @@ namespace Graphics
 	};
 
 	static_assert(sizeof(Animations) == 0xA0, "sizeof(Animations) != A0h");
+
+	inline int Animations::AddRef() {
+		++mnRefCount;
+		return mnRefCount;
+	}
+	inline int Animations::Release() {
+		--mnRefCount;
+		if (mnRefCount == 0) {
+			mnRefCount = 1;
+			delete this;
+			return 0;
+		}
+		return mnRefCount;
+	}
 }

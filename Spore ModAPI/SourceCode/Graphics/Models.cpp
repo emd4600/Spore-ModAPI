@@ -1,4 +1,3 @@
-#ifndef MODAPI_DLL_EXPORT
 /****************************************************************************
 * Copyright (C) 2018 Eric Mor
 *
@@ -20,6 +19,7 @@
 
 #include <Spore\Graphics\IModelWorld.h>
 #include <Spore\Graphics\IModelManager.h>
+#include <Spore\Graphics\StandardMesh.h>
 #include <Spore\Graphics\cMaterialInfo.h>
 #include <EASTL\internal\thread_support.h>
 
@@ -56,6 +56,12 @@ namespace Graphics
 	auto_METHOD_(Model, int, Release);
 
 
+	cMaterialInfo::~cMaterialInfo() {
+		for (auto t : field_8) {
+			if (t) delete t;
+		}
+	}
+
 	int cMaterialInfo::AddRef()
 	{
 		return eastl::Internal::atomic_increment(&mnRefCount);
@@ -71,5 +77,36 @@ namespace Graphics
 		}
 		return refCount;
 	}
+
+	ModelMesh::ModelMesh()
+		: mnRefCount(0)
+		, mMeshes()
+		, field_1C()
+		, mMaterials()
+		, mMaterialInfos()
+		, mRegionMaterialInfos()
+		, field_70()
+		, mBoundingBox()
+		, mBoundingRadius(1.0f)
+		, mpRenderWare()
+		, field_C8()
+		, field_CC()
+		, field_D0()
+		, field_D4({ FLT_MIN, FLT_MIN, FLT_MIN }, { FLT_MAX, FLT_MAX, FLT_MAX })
+		, field_EC()
+		, mpAnimations()
+		, field_F8(-1)
+		, field_FC(-1)
+	{
+	}
+
+	ModelMesh::~ModelMesh() {
+		if (field_D0) {
+			if (*field_D0) {
+				delete *field_D0;
+			}
+			delete field_D0;
+		}
+		field_D0 = nullptr;
+	}
 }
-#endif
