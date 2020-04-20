@@ -91,8 +91,9 @@ namespace RenderWare
 		, pDXBuffer(nullptr)
 		, baseVertexIndex(0)
 		, vertexCount(0)
-		, field_10(0)
+		, usage(0)
 		, stride(0)
+		, lockFlags(0)
 		, pVertexData(nullptr)
 	{
 	}

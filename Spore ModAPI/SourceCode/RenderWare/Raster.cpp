@@ -11,10 +11,11 @@ namespace RenderWare
 		, pSurface(nullptr)
 		, width(0)
 		, height(0)
-		, field_10()
+		, depth()
+		, cubeFaces()
 		, levels(0)
-		, field_14()
-		, field_18()
+		, pNextParent()
+		, pSwapChain()
 		, pTextureData(nullptr)
 	{}
 

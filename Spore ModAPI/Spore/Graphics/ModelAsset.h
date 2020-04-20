@@ -205,11 +205,11 @@ namespace Graphics
 		return mpWorld;
 	}
 
-	Object* Model::GetOwner() const
+	inline Object* Model::GetOwner() const
 	{
 		return mpOwner.get();
 	}
-	void Model::SetOwner(Object* object)
+	inline void Model::SetOwner(Object* object)
 	{
 		mpOwner = object;
 	}
