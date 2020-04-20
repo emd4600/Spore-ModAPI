@@ -51,7 +51,7 @@ namespace Simulator
 
 		/// 
 		/// Returns the dificulty tuning property list for the active game mode and difficulty. If there is no
-		/// payer dificulty set, it returns the medium difficulty.
+		/// player dificulty set, it returns the medium difficulty.
 		App::PropertyList* GetActiveDifficultyTuning();
 
 		void SubmitEditorRequest(Editors::EditorRequest* pRequest);

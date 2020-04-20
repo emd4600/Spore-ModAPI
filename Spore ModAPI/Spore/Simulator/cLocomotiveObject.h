@@ -27,10 +27,21 @@ namespace Simulator
 {
 	struct cLocomotionRequest 
 	{
-		/* 00h */	vector<int> field_1F4;
+		/* 00h */	vector<int> field_00;
 		/* 14h */	Vector3 dstPos;
+		/* 20h */	float goalStopDistance;
+		/* 24h */	int field_24;
 
-		/* 60h */	Vector4 orientation;
+		/* 50h */	Vector3 field_50;
+		/* 5Ch */	int field_5C;  // 3
+		/* 60h */	float acceptableStopDistance;
+		/* 64h */	float field_64;  // 0.99
+		/* 68h */	float field_68;  // FLT_MAX
+		/* 6Ch */	float field_6C;  // 0.0
+		/* 70h */	int field_70;
+
+		///* 60h */	Vector4 orientation;
+
 	};
 
 	class cLocomotiveObject_superclass {

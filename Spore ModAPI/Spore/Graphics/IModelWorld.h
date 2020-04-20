@@ -43,6 +43,8 @@ namespace Graphics
 	};
 	ASSERT_SIZE(MorphHandleInfo, 0x5C);
 
+	typedef bool(*ModelPredicate_t)(Model*, void*);
+
 	struct FilterSettings {
 		typedef bool(*FilterModel_t)(Model*);
 
@@ -123,10 +125,11 @@ namespace Graphics
 		/* 20h */	virtual int func20h() = 0;
 
 
+		/// Gets the first model that is intersected with the segment between `point1` and `point2`.
 		/// @returns The closest model that intersected, or nullptr if no model intersected the ray.
-		/* 24h */	virtual Model* Raycast(const Vector3& point1, const Vector3& point2, float* = nullptr, Vector3* dstIntersectionPoint = nullptr, Vector3* = nullptr, FilterSettings& settings = FilterSettings(), int* = nullptr, int* = nullptr) = 0;
+		/* 24h */	virtual Model* Raycast(const Vector3& point1, const Vector3& point2, float* factorDst = nullptr, Vector3* dstIntersectionPoint = nullptr, Vector3* = nullptr, FilterSettings& settings = FilterSettings(), int* = nullptr, int* = nullptr) = 0;
 
-		/* 28h */	virtual Model* func28h(const Vector3& point1, const Vector3& point2, float*, FilterSettings& settings = FilterSettings()) = 0;
+		/* 28h */	virtual Model* func28h(const Vector3& point1, const Vector3& point2, float* factorDst, FilterSettings& settings = FilterSettings()) = 0;
 
 		/// Gets all the models that fit the filter. By default, the filter accepts all models.
 		/// @param result The vector where the models will be added.
@@ -194,11 +197,10 @@ namespace Graphics
 		/* 54h */	virtual void GetRegions(const Model* pModel, vector<uint32_t>& dst) = 0;
 
 		///
-		/// Although this function is not necessary and it's usage is not really known, it's recommended to use
-		/// it on every model loaded to avoid delays when those are displayed for the firt time
+		/// Ensures the given model is loaded and all its parameters are updated.
 		/// @param pModel
 		///
-		/* 58h */	virtual void UpdateModel(const Model* pModel) = 0;  //PLACEHOLDER what really is this?
+		/* 58h */	virtual void UpdateModel(const Model* pModel) = 0;
 
 		///
 		/// Returns the model bounding radius, calling UpdateModel() if the model

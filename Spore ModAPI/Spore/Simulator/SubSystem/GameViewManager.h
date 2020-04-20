@@ -19,14 +19,15 @@
 
 #pragma once
 
-#include <Spore\Object.h>
-#include <Spore\MathUtils.h>
+#include <Spore\Anim\IAnimWorld.h>
 #include <Spore\Graphics\IRenderable.h>
 #include <Spore\Graphics\ILightingWorld.h>
 #include <Spore\Graphics\IModelWorld.h>
 #include <Spore\App\IMessageListener.h>
 #include <Spore\App\cViewer.h>
 #include <Spore\Simulator\SubSystem\cStrategy.h>
+#include <Spore\Simulator\cGameData.h>
+#include <Spore\Simulator\cSpatialObject.h>
 #include <EASTL\intrusive_list.h>
 #include <EASTL\vector.h>
 #include <EASTL\map.h>
@@ -76,10 +77,58 @@ namespace Simulator
 		// if pPlayer is not null, it ignores it when checking the position
 		// apparently only detects certain objects like airplanes, creatures, city walls, buildings but not planet ornaments
 		/* 40h */	virtual Vector3 GetWorldMousePosition(int=0, cCombatant* pCombanant=nullptr);
+		/* 44h */	virtual void func44h_();
+
+		/// Finds all the cSpatialObject objects that intersect with the sphere with `center` and `radius`.
+		/// The objects will be added to `dst`. `filter` is an optional filter function that receives a Model and `filterObject`,
+		/// and returns whether the model is considered or not.
+		///
+		/// The collision is only checked with the bounding box, so it is not a precise model collision.
+		/// If the `useModelCollisionMode` param is true, then the collision mode specified by each model will be used.
+		///
+		/// @param center The center of the sphere.
+		/// @param radius The radius of the sphere.
+		/// @param[out] dst The vector where all objects will be added.
+		/// @param useModelCollisionMode If true, the collision mode specified by each model will be used.
+		/// @param filter An optional filter function that decides which models are considered.
+		/// @param filterObject An object that is passed to the filter function.
+		/// @returns `true` if any object was found, `false` otherwise.
+		/* 48h */	virtual bool IntersectSphere(const Vector3& center, float radius, vector<cSpatialObjectPtr>& dst, 
+			bool useModelCollisionMode = false, Graphics::ModelPredicate_t filter = nullptr, void* filterObject = nullptr);
+
+		/// Finds all the cSpatialObject objects that intersect with the segment between `point1` and `point2`.
+		/// The objects will be added to `dst` in the order they have been found, so the ones closest to `point1` come first.
+		///
+		/// The collision is only checked with the bounding box, so it is not a precise model collision.
+		/// If the `useModelCollisionMode` param is true, then the collision mode specified by each model will be used.
+		///
+		/// @param point1 The start point of the ray.
+		/// @param point2 The end point of the ray.
+		/// @param[out] dst The vector where all objects will be added.
+		/// @param useModelCollisionMode If true, the collision mode specified by each model will be used.
+		/// @returns `true` if any object was found, `false` otherwise.
+		/* 4Ch */	virtual bool RaycastAll(const Vector3& point1, const Vector3& point2, 
+			vector<cSpatialObjectPtr>& dst, bool useModelCollisionMode = false);
+
+		/// Finds the first cGameData object that intersects with the segment between `point1` and `point2`.
+		/// Only models that pass the filter function are considered.
+		///
+		/// The collision is only checked with the bounding box, so it is not a precise model collision.
+		/// If the `useModelCollisionMode` param is true, then the collision mode specified by each model will be used.
+		///
+		/// @param point1 The start point of the ray.
+		/// @param point2 The end point of the ray.
+		/// @param filter A filter function that receives a Model and returns whether it is considered or not.
+		/// @param[out] dst The object that is found, only valid if `true` was returned.
+		/// @param[out] dstIntersection The point where the ray intersected with the model, only valid if `true` was returned.
+		/// @param useModelCollisionMode If true, the collision mode specified by each model will be used.
+		/// @returns `true` if an object was found, `false` otherwise.
+		/* 50h */	virtual bool Raycast(const Vector3& point1, const Vector3& point2, Graphics::FilterSettings::FilterModel_t filter, 
+			cGameDataPtr& dst, Vector3& dstIntersection, bool useModelCollisionMode = false);
 
 	protected:
 		/* 24h */	intrusive_list<int> field_24;
-		/* 2Ch */	fixed_vector<int, 16> field_2C;
+		/* 2Ch */	fixed_vector<ModelPtr, 16> mGrassTrampModels;
 		/* 84h */	uint32_t mGameModeID;  // -1
 		/* 88h */	intrusive_ptr<Object> field_88;
 		/* 8Ch */	hash_map<int, int> field_8C;
@@ -88,7 +137,7 @@ namespace Simulator
 		/* C1h */	bool field_C1;  // visible?
 		/* C4h */	intrusive_ptr<int> field_C4;  // release at 8
 		/* C8h */	map<int, int> field_C8;
-		/* E4h */	intrusive_ptr<Object> field_E4;  // IModelWorld?
+		/* E4h */	IModelWorldPtr field_E4;  // IModelWorld?
 		/* E8h */	intrusive_ptr<Object> field_E8;
 		/* ECh */	App::cViewer* field_EC;  // with hologram render type
 		/* F0h */	int field_F0;  // not initialized, ResourceKey?
@@ -97,7 +146,7 @@ namespace Simulator
 		/* FCh */	int field_FC;
 		/* 100h */	int field_100;
 		/* 104h */	int field_104;
-		/* 108h */	intrusive_ptr<Object> mpCreatureFXAnimWorld;
+		/* 108h */	IAnimWorldPtr mpCreatureFXAnimWorld;
 		/* 10Ch */	bool mbSuperHighResVehicles;
 		/* 10Dh */	bool mbSuperHighResIgnoreCount;
 		/* 10Eh */	bool mbSuperHighResBuildings;

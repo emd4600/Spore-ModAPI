@@ -31,6 +31,8 @@ namespace App
 	class cViewer
 	{
 	public:
+		struct Camera;
+
 		bool Initialize(bool isParallelProjection = false);
 
 		///
@@ -82,6 +84,8 @@ namespace App
 		/// @param direction [Output]
 		// direction is a normalized vector
 		bool GetCameraToPoint(float x, float y, Vector3& cameraPosition, Vector3& direction) const;
+
+		Camera* GetCamera();
 
 		D3DVIEWPORT9 GetViewport() const;
 
@@ -136,6 +140,10 @@ namespace App
 	inline D3DVIEWPORT9 cViewer::GetViewport() const
 	{
 		return pCamera->viewport;
+	}
+
+	inline cViewer::Camera* cViewer::GetCamera() {
+		return pCamera;
 	}
 
 	namespace Addresses(cViewer)

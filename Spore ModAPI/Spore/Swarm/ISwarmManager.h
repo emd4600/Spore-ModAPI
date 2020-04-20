@@ -21,6 +21,7 @@
 
 #include <Spore\Swarm\IEffect.h>
 #include <Spore\Swarm\IEffectWorld.h>
+#include <Spore\Swarm\IEffectMap.h>
 #include <Spore\Swarm\ISurface.h>
 #include <Spore\Object.h>
 #include <Spore\Internal.h>
@@ -137,8 +138,8 @@ namespace Swarm
 
 		/* 80h */	virtual void func80h(int, int, int, int) = 0;
 		/* 84h */	virtual bool func84h(int, int, int) = 0;
-		/* 88h */	virtual void func88h(class ResourceID, void*) = 0;
-		/* 8Ch */	virtual void* func8Ch(class ResourceID) = 0;  //CreateResourceMap? find 0x016F280B
+		/* 88h */	virtual void AddMapResource(class ResourceID, IEffectMap*) = 0;
+		/* 8Ch */	virtual IEffectMap* GetMapResource(class ResourceID) = 0;  //CreateResourceMap? find 0x016F280B
 		/* 90h */	virtual void func90h(int, int, int) = 0;
 		/* 94h */	virtual ResourceID func94h(int) = 0;
 

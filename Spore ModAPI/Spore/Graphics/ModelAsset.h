@@ -65,6 +65,8 @@ namespace Graphics
 
 		kModelFlagOverrideRaycastMode = 0x100,
 
+		kModelFlagHighRes = 0x2000,
+
 		kModelFlagVisible = 0x8000,
 
 		kModelFlagOverrideBoundingBox = 0x10000,
@@ -97,6 +99,9 @@ namespace Graphics
 
 		bool HasGroup(uint32_t groupID) const;
 
+		Object* GetOwner() const;
+		void SetOwner(Object* object);
+
 	public:
 		/* 00h */	IModelWorld* mpWorld;
 		/* 04h */	int mFlags;
@@ -107,8 +112,8 @@ namespace Graphics
 		/* 5Ch */	bool field_5C;
 		/* 5Dh */	CollisionMode mCollisionMode;
 		/* 60h */	int field_60;  // PLACEHOLDER used to select objectTypeColor
-		/* 64h */	int field_64;
-		/* 68h */	int field_68;  // not initialized, owner? sometimes it gets casted to cGameData so it probably is
+		/* 64h */	ObjectPtr mpOwner;  // sometimes it gets casted to cGameData
+		/* 68h */	int16_t field_68; 
 		/* 6Ch */	float mDefaultBoundingRadius;  // 1.0f
 		/* 70h */	Math::BoundingBox mDefaultBBox;
 		/* 88h */	float field_88;  // FLOAT_MAX
@@ -198,6 +203,15 @@ namespace Graphics
 
 	inline IModelWorld* Model::GetModelWorld() const {
 		return mpWorld;
+	}
+
+	Object* Model::GetOwner() const
+	{
+		return mpOwner.get();
+	}
+	void Model::SetOwner(Object* object)
+	{
+		mpOwner = object;
 	}
 
 	namespace Addresses(Model)
