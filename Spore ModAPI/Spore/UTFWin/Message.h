@@ -129,6 +129,9 @@ namespace UTFWin
 				inline bool IsRightButton() const {
 					return (mouseState & kMouseRightButtonDown) == kMouseRightButtonDown;
 				}
+				inline Point GetPosition() const {
+					return { mouseX, mouseY };
+				}
 			} Mouse;
 
 			///

@@ -48,14 +48,20 @@ namespace UTFWin
 		/* 24h */	virtual void func9();
 		/* 28h */	virtual void func10();
 		/* 2Ch */	virtual void func11(const Math::Rectangle& area);  // generates Graphics2D, maybe renders UI?
-		/* 00h */	virtual void func12();
-		/* 00h */	virtual void func13();
-		/* 00h */	virtual void func14();
-		/* 00h */	virtual void func15();
-		/* 00h */	virtual void func16();
-		/* 00h */	virtual void func17();
+		/* 30h */	virtual void func12();
+		/* 34h */	virtual void func13();
+		/* 38h */	virtual void func14();
+		/* 3Ch */	virtual void func15();
+		/* 40h */	virtual void func16();
 
+		/* 44h */	virtual IWindow* GetWindowAtPosition(const Point& point);
 		/* 48h */	virtual IWindow* GetMainWindowIndex(int index);
+
+		/* 4Ch */	virtual void func4Ch();
+		/* 50h */	virtual void func50h();
+		/* 54h */	virtual void func54h();
+		/* 58h */	virtual void func58h(int index, IWindow* window);
+		/* 5Ch */	virtual void func5Ch(int index, IWindow* window);
 
 		static IWindowManager* Get();
 

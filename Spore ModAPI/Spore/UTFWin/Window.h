@@ -101,10 +101,10 @@ namespace UTFWin
 		virtual void SetDrawable(IDrawable* drawable) override;
 		virtual int func45(int) override;
 		virtual int func46(int, int) override;
-		virtual int func47(float, float) override;
-		virtual Point func48(float, float) override;
-		virtual Point func49(float, float) override;
-		virtual bool func50(float, float, Point& dst) override;
+		virtual bool ContainsPoint(struct Point) override;
+		virtual Point ToGlobalCoordinates(struct Point) override;
+		virtual Point ToLocalCoordinates(struct Point) override;
+		virtual bool ToLocalCoordinates2(struct Point, Point& dst) override;
 		virtual IWindowList_t::iterator GetChildrenBegin() override;
 		virtual IWindowList_t::iterator GetChildrenEnd() override;
 		virtual IWindowList_t::iterator LocateChild(const IWindow* pChild) const override;
@@ -169,7 +169,7 @@ namespace UTFWin
 		/* 24h */	int field_24;
 		/* 28h */	int mnRefCount;
 		/* 2Ch */	int mnFlags;
-		/* 30h */	bool field_30;
+		/* 30h */	bool field_30;  // actually some flags
 		/* 31h */	int8_t field_31;  // kUseDrawableCollision = 8
 		/* 34h */	IWindowManager* mpWindowManager;
 		/* 38h */	intrusive_ptr<Window> mpParentWindow;
@@ -262,6 +262,10 @@ namespace UTFWin
 		DeclareAddress(func48);
 		DeclareAddress(func49);
 		DeclareAddress(func50);
+		DeclareAddress(ContainsPoint);
+		DeclareAddress(ToGlobalCoordinates);
+		DeclareAddress(ToLocalCoordinates);
+		DeclareAddress(ToLocalCoordinates2);
 		// DeclareAddress(GetChildrenBegin);
 		// DeclareAddress(GetChildrenEnd);
 		DeclareAddress(LocateChild);

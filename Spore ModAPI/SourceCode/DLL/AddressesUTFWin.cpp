@@ -536,6 +536,10 @@ namespace UTFWin
 		DefineAddress(func48, SelectAddress(0x9605C0, 0x960060, 0x960060));
 		DefineAddress(func49, SelectAddress(0x960640, 0x9600E0, 0x9600E0));
 		DefineAddress(func50, SelectAddress(0x9615C0, 0x9610B0, 0x9610B0));
+		const uintptr_t ContainsPoint = func47;
+		const uintptr_t GetGlobalCoordinates = func48;
+		const uintptr_t GetLocalCoordinates = func49;
+		const uintptr_t GetLocalCoordinates2 = func50;
 		// DefineAddress(GetChildrenBegin, SelectAddress(0x9616D0, 0x9611C0, 0x9611C0));
 		// DefineAddress(GetChildrenEnd, SelectAddress(0x9616E0, 0x9611D0, 0x9611D0));
 		DefineAddress(LocateChild, SelectAddress(0x9606A0, 0x960140, 0x960140));

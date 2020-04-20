@@ -164,19 +164,23 @@ namespace UTFWin
 	auto_METHOD_VIRTUAL_VOID(Window, IWindow, SetDrawable, Args(IDrawable* drawable), Args(drawable));
 	auto_METHOD_VIRTUAL(Window, IWindow, int, func45, Args(int arg_0), Args(arg_0));
 	auto_METHOD_VIRTUAL(Window, IWindow, int, func46, Args(int arg_0, int arg_4), Args(arg_0, arg_4));
-	auto_METHOD_VIRTUAL(Window, IWindow, int, func47, Args(float arg_0, float arg_4), Args(arg_0, arg_4));
 
-	Point Window::func48(float arg_0, float arg_4) {
+	bool Window::ContainsPoint(struct Point p) {
+		return CALL(GetAddress(Window, func47), bool, Args(IWindow*, struct Point), Args(this, p));
+	}
+	Point Window::ToGlobalCoordinates(struct Point arg_0) {
 		Point p;
-		CALL(GetAddress(Window, func48), Point*, Args(IWindow*, Point*, float, float), Args(this, &p, arg_0, arg_4));
+		CALL(GetAddress(Window, func48), Point*, Args(IWindow*, Point*, struct Point), Args(this, &p, arg_0));
 		return p;
 	}
-	Point Window::func49(float arg_0, float arg_4) {
+	Point Window::ToLocalCoordinates(struct Point arg_0) {
 		Point p;
-		CALL(GetAddress(Window, func49), Point*, Args(IWindow*, Point*, float, float), Args(this, &p, arg_0, arg_4));
+		CALL(GetAddress(Window, func49), Point*, Args(IWindow*, Point*, struct Point), Args(this, &p, arg_0));
 		return p;
 	}
-	auto_METHOD_VIRTUAL(Window, IWindow, bool, func50, Args(float arg_0, float arg_4, Point& dst), Args(arg_0, arg_4, dst));
+	bool Window::ToLocalCoordinates2(struct Point p, Point& dst) {
+		return CALL(GetAddress(Window, func50), bool, Args(IWindow*, struct Point, Point&), Args(this, p, dst));
+	}
 
 	// Specials
 	IWindowList_t::iterator Window::GetChildrenBegin() {

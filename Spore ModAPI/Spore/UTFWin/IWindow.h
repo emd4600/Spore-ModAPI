@@ -328,10 +328,10 @@ namespace UTFWin
 
 		/* B4h */	virtual int func45(int) = 0;
 		/* B8h */	virtual int func46(int, int) = 0;
-		/* BCh */	virtual int func47(float, float) = 0;
-		/* C0h */	virtual Point func48(float, float) = 0;
-		/* C4h */	virtual Point func49(float, float) = 0;
-		/* C8h */	virtual bool func50(float, float, Point& dst) = 0;
+		/* BCh */	virtual bool ContainsPoint(struct Point localCoords) = 0;
+		/* C0h */	virtual Point ToGlobalCoordinates(struct Point localCoords) = 0;
+		/* C4h */	virtual Point ToLocalCoordinates(struct Point globalPos) = 0;
+		/* C8h */	virtual bool ToLocalCoordinates2(struct Point globalPos, Point& dstLocal) = 0;
 
 		///
 		/// Returns the begin iterator of the list of children windows contained in this window. 
