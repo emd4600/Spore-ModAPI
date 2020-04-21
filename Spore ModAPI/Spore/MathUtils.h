@@ -76,7 +76,7 @@ namespace Math
 	/// @param mix The mix factor, between 0.0 and 1.0
 	template <typename T>
 	inline T lerp(const T& a, const T& b, float mix) {
-		return a * mix + (1.0f - mix) * b;
+		return a + (b - a) * mix;
 	}
 
 
