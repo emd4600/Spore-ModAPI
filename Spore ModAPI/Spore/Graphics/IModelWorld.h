@@ -346,7 +346,7 @@ namespace Graphics
 		/// @param pModel The model to set visible/invisible, which must be included inside this world.
 		/// @param visible Whether the model must be visible or not.
 		///
-		/* 16Ch */	virtual bool SetModelVisibile(Model* pModel, bool visible) = 0;
+		/* 16Ch */	virtual bool SetModelVisible(Model* pModel, bool visible) = 0;
 
 		// model destructor calls this, and will crash if it was already removed
 		/* 170h */	virtual void DestroyModel(Model* pModel, bool) = 0;  // ?

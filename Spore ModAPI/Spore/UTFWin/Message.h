@@ -105,9 +105,35 @@ namespace UTFWin
 			} KeyPress;
 
 			///
-			/// The event arguments for the message types: UTFWin::kMsgMouseDown | UTFWin::kMsgMouseUp | UTFWin::kMsgMouseMove
-			/// | UTFWin::kMsgMouseWheel.
-			/// Note that the mnWheelDelta member should only be considered on UTFWin::kMsgMouseWheel messages.
+			/// The event arguments for the message types: UTFWin::kMsgMouseDown | UTFWin::kMsgMouseUp | UTFWin::kMsgMouseMove.
+			///
+			struct
+			{
+				/// The X coordinate of the mouse, relative to the window that raised the event.
+				/* 0Ch */	float mouseX;
+				/// The Y coordinate of the mouse, relative to the window that raised the event.
+				/* 10h */	float mouseY;
+				/// A combination of values from the MouseStateFlags enum.
+				/* 14h */	int mouseState;
+				/// Which mouse button was pressed/released.
+				/* 18h */	MouseButton mouseButton;
+
+				inline bool IsLeftButton() const {
+					return mouseButton == MouseButton::kMouseButtonLeft;
+				}
+				inline bool IsMiddleButton() const {
+					return mouseButton == MouseButton::kMouseButtonWheel;
+				}
+				inline bool IsRightButton() const {
+					return mouseButton == MouseButton::kMouseButtonRight;
+				}
+				inline Point GetPosition() const {
+					return { mouseX, mouseY };
+				}
+			} Mouse;
+
+			///
+			/// The event arguments for the message type: UTFWin::kMsgMouseWheel
 			///
 			struct
 			{
@@ -120,19 +146,10 @@ namespace UTFWin
 				/// How much the mouse wheel changed, it is usually a multiple of 120.
 				/* 18h */	int wheelDelta;
 
-				inline bool IsLeftButton() const {
-					return (mouseState & kMouseLeftButtonDown) == kMouseLeftButtonDown;
-				}
-				inline bool IsMiddleButton() const {
-					return (mouseState & kMouseMiddleButtonDown) == kMouseMiddleButtonDown;
-				}
-				inline bool IsRightButton() const {
-					return (mouseState & kMouseRightButtonDown) == kMouseRightButtonDown;
-				}
 				inline Point GetPosition() const {
 					return { mouseX, mouseY };
 				}
-			} Mouse;
+			} MouseWheel;
 
 			///
 			/// The event arguments for the message types: UTFWin::kMsgMouseLeave | UTFWin::kMsgMouseEnter

@@ -40,6 +40,7 @@ int DefaultObject::Release()
 	if (refCount <= 0)
 	{
 		delete this;
+		return 0;
 	}
 	return mnRefCount;
 }
@@ -61,6 +62,7 @@ int DefaultRefCounted::Release()
 	if (refCount <= 0)
 	{
 		delete this;
+		return 0;
 	}
 	return refCount;
 }
@@ -82,6 +84,7 @@ int ResourceObject::Release()
 	if (eastl::Internal::atomic_decrement(&mnRefCount) == 0)
 	{
 		delete this;
+		return 0;
 	}
 	return mnRefCount;
 }
@@ -171,6 +174,7 @@ int MultithreadObject::Release()
 	{
 		mnRefCount = 1;
 		delete this;
+		return 0;
 	}
 	return refCount;
 }
@@ -188,6 +192,7 @@ int BasicLockRefCounted::Release()
 	{
 		mnRefCount = 1;
 		delete this;
+		return 0;
 	}
 	return refCount;
 }

@@ -295,6 +295,12 @@
     <ClInclude Include="SourceCode\DLL\resource.h" />
     <ClInclude Include="SourceCode\DLL\stdafx.h" />
     <ClInclude Include="SourceCode\DLL\targetver.h" />
+    <ClInclude Include="SourceCode\DLL\TextureOverride.h" />
+    <ClInclude Include="Spore\Anim\cAnimWorld.h" />
+    <ClInclude Include="Spore\Anim\IAnimManager.h" />
+    <ClInclude Include="Spore\Anim\IAnimWorld.h" />
+    <ClInclude Include="Spore\Anim\TLSA.h" />
+    <ClInclude Include="Spore\App\FileDrop.h" />
     <ClInclude Include="Spore\App\Thumbnail_cImportExport.h" />
     <ClInclude Include="Spore\BasicIncludes.h" />
     <ClInclude Include="Spore\CppRevEng.h" />
@@ -305,15 +311,21 @@
     <ClInclude Include="Spore\Graphics\cMITextureSet.h" />
     <ClInclude Include="Spore\Graphics\cRenderManager.h" />
     <ClInclude Include="Spore\Graphics\GmdlRenderAsset.h" />
+    <ClInclude Include="Spore\Graphics\ModelMesh.h" />
+    <ClInclude Include="Spore\Graphics\RawImage.h" />
     <ClInclude Include="Spore\Graphics\ShaderData.h" />
+    <ClInclude Include="Spore\Graphics\GeneratedMesh.h" />
     <ClInclude Include="Spore\ModAPI.h" />
     <ClInclude Include="SourceCode\Utility.h" />
-    <ClInclude Include="Spore\Anim\AnimContainer.h" />
+    <ClInclude Include="Spore\Anim\AnimatedCreature.h" />
     <ClInclude Include="Spore\Anim\CreatureBlock.h" />
     <ClInclude Include="Spore\Editors\ContentValidation.h" />
     <ClInclude Include="Spore\Graphics\IGraphicsManager.h" />
+    <ClInclude Include="Spore\Palettes\cSPScenarioBrushItemUI.h" />
+    <ClInclude Include="Spore\Palettes\PaletteSubcategoriesUI.h" />
     <ClInclude Include="Spore\Pollinator\cAssetMetadata.h" />
     <ClInclude Include="Spore\Simulator\cCivilization.h" />
+    <ClInclude Include="Spore\Simulator\NounClassFactories.h" />
     <ClInclude Include="Spore\Simulator\Serialization.h" />
     <ClInclude Include="Spore\Simulator\SerializationTypes.h" />
     <ClInclude Include="Spore\Simulator\SubSystem\cSavedGameHeader.h" />
@@ -576,14 +588,19 @@
     <ClInclude Include="Spore\Swarm\cSwarmManager.h" />
     <ClInclude Include="Spore\Swarm\cEffectWorld.h" />
     <ClInclude Include="Spore\Swarm\IEffect.h" />
+    <ClInclude Include="Spore\Swarm\IEffectMap.h" />
     <ClInclude Include="Spore\Swarm\IEffectWorld.h" />
     <ClInclude Include="Spore\Swarm\ISurface.h" />
     <ClInclude Include="Spore\Swarm\ISwarmManager.h" />
     <ClInclude Include="Spore\Clock.h" />
     <ClInclude Include="Spore\Swarm\SwarmManagerStruct.h" />
     <ClInclude Include="Spore\Terrain\cTerrainMapSet.h" />
+    <ClInclude Include="Spore\Terrain\cTerrainStateMgr.h" />
+    <ClInclude Include="Spore\Terrain\cWeatherManager.h" />
     <ClInclude Include="Spore\Terrain\ITerrain.h" />
+    <ClInclude Include="Spore\Terrain\ITerrainResourceManager.h" />
     <ClInclude Include="Spore\Terrain\TerrainMaps.h" />
+    <ClInclude Include="Spore\Terrain\TerrainShaderData.h" />
     <ClInclude Include="Spore\Transform.h" />
     <ClInclude Include="Spore\Resource\cResourceManager.h" />
     <ClInclude Include="Spore\Simulator\cCreatureAbility.h" />
@@ -697,6 +714,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="SourceCode\Allocator.cpp" />
+    <ClCompile Include="SourceCode\Anim\Animations.cpp" />
     <ClCompile Include="SourceCode\App\App.cpp" />
     <ClCompile Include="SourceCode\App\Cameras.cpp" />
     <ClCompile Include="SourceCode\App\CheatManager.cpp" />
@@ -709,6 +727,7 @@
     <ClCompile Include="SourceCode\ArgScript\ClassManager.cpp" />
     <ClCompile Include="SourceCode\Audio\AudioSystem.cpp" />
     <ClCompile Include="SourceCode\Debugging.cpp" />
+    <ClCompile Include="SourceCode\DLL\AddressesAnim.cpp" />
     <ClCompile Include="SourceCode\DLL\AddressesApp.cpp" />
     <ClCompile Include="SourceCode\DLL\AddressesArgScript.cpp" />
     <ClCompile Include="SourceCode\DLL\AddressesAudio.cpp" />
@@ -730,6 +749,7 @@
     <ClCompile Include="SourceCode\DLL\dllmain.cpp" />
     <ClCompile Include="SourceCode\DLL\DllModAPI.cpp" />
     <ClCompile Include="SourceCode\DLL\stdafx.cpp" />
+    <ClCompile Include="SourceCode\DLL\TextureOverride.cpp" />
     <ClCompile Include="SourceCode\EASTL\allocator_eastl.cpp" />
     <ClCompile Include="SourceCode\EASTL\assert.cpp" />
     <ClCompile Include="SourceCode\EASTL\EAMemory.cpp" />
@@ -746,9 +766,11 @@
     <ClCompile Include="SourceCode\Editors\Editor.cpp" />
     <ClCompile Include="SourceCode\Editors\EditorCamera.cpp" />
     <ClCompile Include="SourceCode\Editors\EditorRequest.cpp" />
+    <ClCompile Include="SourceCode\Editors\PaletteItemFrame.cpp" />
     <ClCompile Include="SourceCode\Editors\SpeciesManager.cpp" />
     <ClCompile Include="SourceCode\Graphics\GraphicsManager.cpp" />
     <ClCompile Include="SourceCode\Graphics\RenderTargets.cpp" />
+    <ClCompile Include="SourceCode\Graphics\GeneratedMesh.cpp" />
     <ClCompile Include="SourceCode\RenderWare\Raster.cpp" />
     <ClCompile Include="SourceCode\RenderWare\RenderWare.cpp" />
     <ClCompile Include="SourceCode\Simulator\cCity.cpp" />
@@ -802,6 +824,7 @@
     <ClCompile Include="SourceCode\Swarm\Effects.cpp" />
     <ClCompile Include="SourceCode\Swarm\SwarmManager.cpp" />
     <ClCompile Include="SourceCode\Clock.cpp" />
+    <ClCompile Include="SourceCode\Terrain\Terrain.cpp" />
     <ClCompile Include="SourceCode\UI\LayerManager.cpp" />
     <ClCompile Include="SourceCode\UTFWin\Defaults.cpp" />
     <ClCompile Include="SourceCode\UTFWin\Drawables.cpp" />

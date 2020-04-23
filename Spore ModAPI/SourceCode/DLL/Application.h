@@ -18,8 +18,6 @@ using namespace Resource;
 
 virtual_detour(ShaderFragments_detour, cMaterialManager, IMaterialManager, bool(DatabasePackedFile*)) {};
 
-extern void LoadMaterials(uint32_t, void*, void*);
-
 namespace ModAPI
 {
 	const int MAX_MODS = 2048;

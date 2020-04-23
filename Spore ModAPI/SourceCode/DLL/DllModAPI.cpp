@@ -13,7 +13,7 @@ namespace ModAPI
 		return 5;
 	}
 	int GetBuildVersion() {
-		return 8;
+		return 83;
 	}
 
 	void AddInitFunction(InitFunction f) {
@@ -28,13 +28,13 @@ namespace ModAPI
 		disposeFunctions.push_back(f);
 	}
 
-	/*bool AddSimulatorStrategy(Simulator::ISimulatorStrategy* strategy, uint32_t id) {
+	bool AddSimulatorStrategy(Simulator::ISimulatorStrategy* strategy, uint32_t id) {
 		if (strategy && simulatorStrategies.find(id) == simulatorStrategies.end()) {
 			simulatorStrategies[id] = strategy;
 			return true;
 		}
 		return false;
-	}*/
+	}
 
 	GameType GetGameType()
 	{

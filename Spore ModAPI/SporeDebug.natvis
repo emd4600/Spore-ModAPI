@@ -3,13 +3,13 @@
 
   <Type Name="ResourceKey">
     <DisplayString Condition="groupID == 0 &amp;&amp; typeID == 0">{{{instanceID,x}}}</DisplayString>
-    <DisplayString Condition="groupID == 0">{{{instanceID,x} . {(TypeIDs::Names)typeID, x}}}</DisplayString>
-    <DisplayString Condition="typeID == 0">{{{(GroupIDs::Names)groupID,x} ! {instanceID,x}}}</DisplayString>
-    <DisplayString>{{{(GroupIDs::Names)groupID,x} ! {instanceID,x} . {(TypeIDs::Names)typeID, x}}}</DisplayString>
+    <DisplayString Condition="groupID == 0">{{{instanceID,x} . {typeID, x}}}</DisplayString>
+    <DisplayString Condition="typeID == 0">{{{groupID,x} ! {instanceID,x}}}</DisplayString>
+    <DisplayString>{{{groupID,x} ! {instanceID,x} . {typeID, x}}}</DisplayString>
     <Expand>
-      <Item Name="groupID">(GroupIDs::Names)groupID,x</Item>
+      <Item Name="groupID">groupID,x</Item>
       <Item Name="instanceID">instanceID,x</Item>
-      <Item Name="typeID">(TypeIDs::Names)typeID,x</Item>
+      <Item Name="typeID">typeID,x</Item>
     </Expand>
   </Type>
   
@@ -59,7 +59,7 @@
   </Type>
   
   <Type Name="Math::Rectangle">
-    <DisplayString>{{Point(({x1}, {y1}), ({x2}, {y2}))}}</DisplayString>
+    <DisplayString>{{Rectangle(({x1}, {y1}), ({x2}, {y2}))}}</DisplayString>
   </Type>
   
   <Type Name="Math::Dimensions">
@@ -230,6 +230,8 @@
       <Item Name="[controlID]">mControlID,x</Item>
       <Item Name="[commandID]">mCommandID,x</Item>
       <Item Name="[flags]">(UTFWin::WindowFlags)mnFlags</Item>
+      <Item Name="[area]">mArea</Item>
+      <Item Name="[realArea]">mRealArea</Item>
       <Item Name="[caption]">mCaption</Item>
       <Item Name="[shadeColor]">mShadeColor</Item>
       <Item Name="[fillColor]">mFillColor</Item>

@@ -1,3 +1,4 @@
+#ifndef MODAPI_DLL_EXPORT
 #include <Spore\Palettes\IItemFrameUI.h>
 #include <Spore\App\IMessageManager.h>
 #include <Spore\Audio\AudioSystem.h>
@@ -162,3 +163,4 @@ namespace Palettes
 		}
 	}
 }
+#endif

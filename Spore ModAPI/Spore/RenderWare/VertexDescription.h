@@ -191,13 +191,13 @@ namespace RenderWare
 
 	template <uint16_t kVertexElements>
 	VertexDescription<kVertexElements>::VertexDescription()
-		: usageFlags(0)  // 0x0008c045
-		, usageFlags2(0)  // 0x51010101
-		, field_E(0)
+		: elementsUsed(0)  // 0x0008c045
+		, elementsHash(0)  // 0x51010101
+		, lockFlags(0)
 		, elementsCount(kVertexElements)
 		, pDXVertexDeclaration(nullptr)
-		, field_0(0)
-		, field_4(0)
+		, pNextParent(0)
+		, pNextSibling(0)
 		, elements{}
 	{
 
@@ -242,6 +242,6 @@ namespace RenderWare
 	inline void VertexDescription<kVertexElements>::SetElement(int index, VertexElement element)
 	{
 		this->elements[index] = element;
-		this->usageFlags |= 1 << element.rwDecl;
+		this->elementsUsed |= 1 << element.rwDecl;
 	}
 }

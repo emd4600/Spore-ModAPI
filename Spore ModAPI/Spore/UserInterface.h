@@ -29,6 +29,7 @@
 #include <Spore\UTFWin\IButton.h>
 #include <Spore\UTFWin\ITextEdit.h>
 #include <Spore\UTFWin\IDrawable.h>
+#include <Spore\UTFWin\ImageDrawable.h>
 #include <Spore\UTFWin\UILayout.h>
 #include <Spore\UTFWin\SimpleLayout.h>
 #include <Spore\UTFWin\ProportionalLayout.h>
