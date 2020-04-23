@@ -24,9 +24,14 @@
 #include <Spore\Resource\ResourceObject.h>
 #include <Spore\App\IMessageListener.h>
 #include <Spore\Graphics\IRenderable.h>
+#include <Spore\Graphics\Texture.h>
+#include <Spore\ResourceID.h>
 #include <EASTL\vector.h>
 
 #include <Spore\Terrain\ITerrain.h>
+#include <Spore\Terrain\cTerrainStateMgr.h>
+#include <Spore\Terrain\TerrainShaderData.h>
+#include <Spore\Terrain\Sphere\cTerrainSphereQuad.h>
 
 using namespace eastl;
 using namespace Math;
@@ -49,51 +54,65 @@ namespace Terrain
 		{
 		public:
 
-			/* 08h */	virtual int func08h();
-			/* 0Ch */	virtual cTerrainMapSet* GetTerrainMapSet();
+			void Generate(int* unused0 = nullptr, int* unused1 = nullptr, bool = false, 
+				bool generateSingleStep = false, float generateTimeLimit = 10.0f);
 
-		protected:
+
+			class TextureContainer
+			{
+			public:
+				virtual ~TextureContainer();   // there are 2 more functions
+
+				/* 04h */	bool field_4;
+				/* 08h */	int mLoadStep;
+				/* 0Ch */	int field_C;
+				/* 10h */	float field_10;
+				/* 14h */	int field_14;
+				/* 18h */	vector<TexturePtr> field_18;
+				/* 2Ch */	vector<LARGE_INTEGER> mLoadTimes;
+				/* 40h */	int field_40;
+			};
+			ASSERT_SIZE(TextureContainer, 0x44);
+
+			struct TerrainModification
+			{
+				/* 00h */	Transform transform;
+				/* 38h */	char field_38[0x60];  // floats
+				/* 98h */	ResourceKey key;
+				/* A4h */	int field_A4;
+				/* A8h */	uint32_t field_A8;
+			};
+			ASSERT_SIZE(TerrainModification, 0xAC);
+
 			/* 24h */	int field_24;
-			/* 28h */	int field_28;
+			/* 28h */	PropertyListPtr mpPropList;
 			/* 2Ch */	intrusive_ptr<cTerrainMapSet> mpTerrainMapSet;
-
-			/* FCh */	int field_FC;
-			/* 100h */	int field_100;
-			/* 104h */	int field_104;
-			/* 108h */	bool field_108;  // true
-			/* 10Ch */	float field_10C;  // 5.0
+			/* 30h */	TextureContainer field_30;
+			/* 74h */	TextureContainer field_74;
+			/* B8h */	TextureContainer field_B8;
+			/* FCh */	TextureContainer* mpLoader;
+			/* 100h */	OnLoadFinish_t mOnLoadFinish;
+			/* 104h */	void* mOnLoadFinishObject;
+			/* 108h */	bool mTerrainGenerateSingleStep;  // true
+			/* 10Ch */	float mTerrainGenerateTimeLimit;  // 5.0
 			/* 110h */	bool field_110;
 			/* 111h */	bool field_111;
 			/* 114h */	int field_114;
-
-			/* 148h */	int field_148;
-			/* 14Ch */	int field_14C;
-			/* 150h */	int field_150;
-			/* 154h */	int field_154;
-			/* 158h */	int field_158;
-			/* 15Ch */	int field_15C;
-			/* 160h */	int field_160;
-			/* 164h */	int field_164;
-			/* 168h */	int field_168;
-			/* 16Ch */	int field_16C;
-			/* 170h */	int field_170;
-			/* 174h */	int field_174;
-			/* 178h */	int field_178;
-			/* 17Ch */	int field_17C;
-			/* 180h */	int field_180;
-			/* 184h */	int field_184;
-			/* 188h */	int field_188;
-			/* 18Ch */	int field_18C;
-			// The item has a size of 16
+			/* 118h */	cTerrainSphereQuad* field_118[6];
+			/* 130h */	cTerrainSphereQuad* field_130[6];
+			/* 148h */	TexturePtr field_148[6];
+			/* 160h */	TexturePtr field_160[6];
+			/* 178h */	TexturePtr field_178[6];
+			// The item has a size of 16, used in rendering
 			/* 190h	*/	vector<void*> field_190;
 			/* 1A4h */	vector<int> field_1A4;
 			/* 1B8h */	vector<int> field_1B8;
-			/* 1CCh */	int field_1CC;
+			/* 1CCh */	uint32_t mSeed;
 			/* 1D0h */	int field_1D0;  // 4
-			/* 1D4h */	int field_1D4;  // 16
-			/* 1D8h */	float field_1D8;  // 25.0
-			/* 1DCh */	float field_1DC;  // 100.0
-			/* 1E0h */	float field_1E0;  // 1.0
+			/* 1D4h */	int mPlanetLODChunkRes;  // 16
+			/* 1D8h */	float mPlanetUnderwaterCullRadius;  // 25.0
+			/* 1DCh */	float mPlanetUnderwaterLargeCullRadius;  // 100.0
+			/* 1E0h */	float mPlanetUnderwaterCullRadiusMultiplier;  // 1.0
 			/* 1E4h */	float field_1E4;  // 1.0
 			/* 1E8h */	bool field_1E8;  // true
 			/* 1ECh */	float field_1EC;  // 1.0
@@ -104,8 +123,8 @@ namespace Terrain
 			/* 200h */	float field_200;  // 1.0
 			/* 204h */	float field_204;  // 1.0
 			/* 208h */	float field_208;  // 1.0
-			/* 20Ch */	int field_20C;
-			/* 210h */	int field_210;
+			/* 20Ch */	cTerrainStateMgr* mpTerrainStateMgr;
+			/* 210h */	cWeatherManagerPtr mpWeatherManager;
 			/* 214h */	int field_214;
 			/* 218h */	vector<int> field_218;
 			/* 22Ch */	vector<int> field_22C;
@@ -119,36 +138,61 @@ namespace Terrain
 			/* 2CCh */	vector<int> field_2CC;
 			/* 2E0h */	vector<int> field_2E0;
 			/* 2F4h */	vector<int> field_2F4;
-			/* 308h */	int field_308;
-			/* 30Ch */	Vector4 field_30C;
-			/* 31Ch */	Vector4 field_31C;
-			/* 32Ch */	Vector4 field_32C;
+			/* 308h */	TexturePtr field_308;  // PLACEHOLDER 0xE5230445
+			/* 30Ch */	Vector4 mCameraPos;
+			/* 31Ch */	Vector4 mCameraDir;
+			/* 32Ch */	Vector4 mSunDir;
 			/* 33Ch */	bool field_33C;
 			/* 33Dh */	bool field_33D;
 			/* 340h */	int field_340;
 			/* 344h */	int field_344;
 			/* 348h */	bool field_348;
-			/* 34Ch */	float field_34C;  // 1.0
-			/* 350h */	float field_350;  // 1.0
-			/* 354h */	float field_354;  // 1.0
-			/* 358h */	float field_358;  // 1.0
-			/* 35Ch */	float field_35C;  // 1.0
+			/* 34Ch */	float mMungeHeightMapScale;  // 1.0
+			/* 350h */	float mMungeWindMapScale;  // 1.0
+			/* 354h */	float mMungeTempMapScale;  // 1.0
+			/* 358h */	float mMungeLatMapScale;  // 1.0
+			/* 35Ch */	float mMungeAlphaNoiseStrength;  // 1.0
 			/* 360h */	float field_360;  // -1.0
 			/* 364h */	float field_364;  // -1.0
-			/* 368h */	int field_368;  // not initialized
+			/* 368h */	int8_t field_368[2];  // not initialized
 			/* 36Ch */	int field_36C;
 			/* 370h */	bool field_370;
-
-			/* 4F4h */	bool field_4F4;
-			/* 4F5h */	bool field_4F5;  // true
-
+			// something here is indexed by 36C
+			/* 374h */	char padding_374[0x120];  // floats?
+			/* 494h */	Vector4 field_494[6];
+			/* 4F4h */	bool field_4F4;  // ready to render?
+			/* 4F5h */	bool field_4F5;  // true  visible?
+			/* 4F8h */	TerrainState mTerrainState;
+			/* 638h */	Vector4 mTramp[8];
+			/* 6B8h */	Vector4 field_6B8;
+			/* 6C8h */	Vector4 field_6C8;
+			/* 6D8h */	TerrainLighting mTerrainLighting;
 			/* 758h */	vector<int> field_758;
-			/* 76Ch */	bool field_76C;
-			/* 770h */	vector<int> field_770;
-			/* 784h */	vector<int> field_784;
-			/* 798h */	vector<int> field_798;
-			/* 7ACh */	int field_7AC;
-			/* 7B0h */	int field_7B0;
+			/* 76Ch */	bool mAmbientEffectsLoaded;
+			/* 770h */	vector<TerrainModification> mModelFootprints;
+			/* 784h */	vector<TerrainModification> mModelNeedRelevel;
+			/* 798h */	vector<TerrainModification> mPlayerEffects;
+			/* 7ACh */	int mNumModels;  // a count of something for 7B0
+			/* 7B0h */	vector<ResourceKey> mModelKeys;
+			/* 7C4h */	vector<Transform> mModelTransforms;
+			/* 7D8h */	vector<ModelPtr> mModels;
+			/* 7ECh */	vector<IEffectPtr> mAmbientEffects;
+			/* 800h */	vector<IEffectPtr> mAmbientSoundEffects;
+			/* 814h */	int mPlayerModCount;
+
+			/* 8A0h */  //PLACEHOLDER cTerrainSphereImpostorJob
+
+			/* 8ACh */	bool mAllowUnderwaterObjects;
+			// int are flags for renderable
+			/* 8B0h */	vector<pair<IModelWorldPtr, int>> mUnderwaterModelWorlds;
+			/* 8C4h */	vector<pair<IAnimWorldPtr, int>> mUnderwaterAnimWorlds;
+
+			/* 8E4h */	App::cViewer* mpTerrainViewer;
+
+			/* 924h */	//PLACEHOLDER DecalManager
+			/* 928h */	//PLACEHOLDER TerrainDraw
+
+			/* A4Ch */	//PLACEHODLER cQuadBuffersPool
 
 		public:
 			static cTerrainSphere* Create();  //PLACEHOLDER method
@@ -163,6 +207,7 @@ namespace Terrain
 		namespace Addresses(cTerrainSphere)
 		{
 			DeclareAddress(Create);
+			DeclareAddress(Generate);
 		}
 	}
 }

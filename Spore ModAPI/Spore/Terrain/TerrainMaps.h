@@ -18,7 +18,9 @@
 ****************************************************************************/
 #pragma once
 
-#define cTerrainMapPtr intrusive_ptr<Terrain::cTerrainMap>
+#include <EASTL\intrusive_ptr.h>
+
+#define cTerrainMapPtr eastl::intrusive_ptr<Terrain::cTerrainMap>
 
 namespace Terrain
 {
@@ -46,7 +48,10 @@ namespace Terrain
 	inline int cTerrainMap::Release()
 	{
 		--mnRefCount;
-		if (mnRefCount == 0) delete this;
+		if (mnRefCount == 0) {
+			delete this;
+			return 0;
+		}
 		return mnRefCount;
 	}
 }

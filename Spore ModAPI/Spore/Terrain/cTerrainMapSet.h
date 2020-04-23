@@ -19,6 +19,7 @@
 #pragma once
 
 #include <Spore\Terrain\TerrainMaps.h>
+#include <Spore\MathUtils.h>
 
 namespace Terrain
 {
@@ -43,13 +44,15 @@ namespace Terrain
 
 		virtual ~cTerrainMapSet();
 
+		float GetHeight(const Math::Vector3& position) const;
+
 		// PLACEHOLDER sub_F93070 SetMap
 
 	private:
 		/* 04h */	int mnRefCount;
-	protected:
-		/* 08h */	intrusive_ptr<cTerrainMap> mMaps[11];
-		/* 34h */	float field_34;  // 500.0
+	public:
+		/* 08h */	cTerrainMapPtr mMaps[11];
+		/* 34h */	float mPlanetRadius;  // 500.0
 		/* 38h */	float field_38;  // 100.0
 		/* 3Ch */	float field_3C;
 		/* 40h */	float field_40;
@@ -62,4 +65,8 @@ namespace Terrain
 	};
 
 	static_assert(sizeof(cTerrainMapSet) == 0x5C, "sizeof(cTerrainMapSet) != 5Ch");
+
+	namespace Addresses(cTerrainMapSet) {
+		DeclareAddress(GetHeight);
+	}
 }

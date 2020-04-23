@@ -36,7 +36,7 @@ namespace Simulator
 	public:
 		//TODO PLACEHOLDER
 
-		// 24h.func0Ch() -> GetTerrainMapSet()
+		// 24h ITerrainPtr
 
 		// B7DC40 Get water level?
 

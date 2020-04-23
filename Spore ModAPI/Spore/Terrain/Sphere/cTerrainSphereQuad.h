@@ -19,12 +19,13 @@
 
 #pragma once
 
-#include <d3d9types.h>
-#include "..\RenderWare\IndexBuffer.h"
-#include "..\RenderWare\VertexBuffer.h"
+#include <Spore\RenderWare\VertexBuffer.h>
+#include <Spore\RenderWare\IndexBuffer.h>
 
 namespace Terrain
 {
+	class cTerrainSphere;
+
 	struct TerrainTransform
 	{
 		/* 00h */	D3DMATRIX worldViewProjection;
@@ -41,8 +42,10 @@ namespace Terrain
 	class cTerrainSphereQuad
 	{
 		// sub_FB53C0
+		// sub_FB5540 initialize
 
-	private:
+	public:
+		/* 00h */	cTerrainSphere* mpSphere;
 
 		/* 94h */	TerrainQuadMesh* mesh;
 		/* 98h */	int indicesCount;
@@ -50,5 +53,5 @@ namespace Terrain
 		/* A4h */	TerrainTransform terrainTransform;
 	};
 
-	static_assert(sizeof(cTerrainSphereQuad) == 0x1B8, "sizeof(cTerrainSphereQuad) != 1B8h");
+	//static_assert(sizeof(cTerrainSphereQuad) == 0x1B8, "sizeof(cTerrainSphereQuad) != 1B8h");
 }

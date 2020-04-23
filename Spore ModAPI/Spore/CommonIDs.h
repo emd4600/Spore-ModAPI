@@ -148,6 +148,9 @@ namespace GroupIDs
 
 		GameTuning = 0x02AE0C7E,
 
+		/// Contains the palette files loaded by Palettes::PaletteMain
+		Palettes = 0x406B6A00,
+
 		/// Where adventure props are stored
 		PaletteItems = 0xD87454E6,
 
@@ -184,6 +187,9 @@ namespace GroupIDs
 		/// Where flora .flr files are stored
 		FloraModels = 0x40666200,
 
-		CivicObjects = 0x9430ADD7
+		CivicObjects = 0x9430ADD7,
+
+		/// The main folder that contains planet scripts. The rest of the folders can be obtained by adding 0x100, 0x200,..., 0xF00
+		PlanetScripts = 0x4184A100
 	};
 }
