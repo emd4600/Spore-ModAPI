@@ -19,7 +19,6 @@
 
 #include <Spore\Graphics\IModelWorld.h>
 #include <Spore\Graphics\IModelManager.h>
-#include <Spore\Graphics\StandardMesh.h>
 #include <Spore\Graphics\cMaterialInfo.h>
 #include <EASTL\internal\thread_support.h>
 
