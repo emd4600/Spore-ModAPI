@@ -367,6 +367,51 @@ namespace Math
 		return q;
 	}
 
+	// from here https://bitbucket.org/sinbad/ogre/src/9db75e3ba05c/OgreMain/include/OgreVector3.h#cl-651
+	Quaternion Quaternion::GetRotationTo(const Vector3& from, const Vector3& to, const Vector3& fallbackAxis)
+	{
+		Vector3 v0 = from.Normalized();
+		Vector3 v1 = to.Normalized();
+
+		float d = v0.Dot(v1);
+		if (d >= 1.0f) return Quaternion();
+		else if (d < (1e-6f - 1.0f))
+		{
+			// Parallel but opposite, rotate around fallback axis
+			if (fallbackAxis == Vector3::ZERO)
+			{
+				// Generate an axis
+				Vector3 axis = X_AXIS.Cross(v0);
+				if (axis.Length() < 1e-8) // pick another if colinear
+					axis = Y_AXIS.Cross(v1);
+				axis = axis.Normalized();
+			}
+
+			return Quaternion::FromRotation(fallbackAxis, PI);
+		}
+		else
+		{
+			float s = sqrt((1 + d) * 2);
+			float invs = 1 / s;
+
+			Vector3 c = v0.Cross(v1);
+
+			Quaternion q;
+			q.x = c.x * invs;
+			q.y = c.y * invs;
+			q.z = c.z * invs;
+			q.w = s * 0.5f;
+
+			float l = q.Length();
+			q.x /= l;
+			q.y /= l;
+			q.z /= l;
+			q.w /= l;
+			
+			return q;
+		}
+	}
+
 
 	bool BoundingBox::Contains(const Vector3& point) const
 	{

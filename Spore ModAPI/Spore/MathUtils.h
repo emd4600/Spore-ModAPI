@@ -258,6 +258,17 @@ namespace Math
 		/// The quaternion will be constructed as if the rotations were applied in Z, Y, X order.
 		/// @param angles Rotation around X (roll), Y (pitch) and Z (yaw) axes, in radians
 		static Quaternion FromEuler(const Vector3& angles);
+
+		/// Returns the quaternion the rotation between two vectors. 
+		/// This means that applying the returned quaternion to the vector `from` produces the vector `to`
+		/// (assuming they have the same length).
+		///
+		/// The operation will be applied to normalized versions of the vectors, so their length does not matter.
+		///
+		/// @param from Vector to rotate from.
+		/// @param to Vector to rotate to.
+		/// @param fallbackAxis If the two vectors are parallel but opposite, this method returns a 180º rotation around the fallback axis.
+		static Quaternion GetRotationTo(const Vector3& from, const Vector3& to, const Vector3& fallbackAxis = Vector3::ZERO);
 	};
 
 	/// Represents a point in the space, defined by two float coordinates (x, y).
