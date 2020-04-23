@@ -70,7 +70,7 @@ Graphics::ModelMesh* CopyMesh(Graphics::ModelMesh* mesh) {
 
 	for (auto material : mesh->mMaterials) {
 		if (material->states[0]) {
-			int size = material->states[0]->size;
+			int size = material->states[0]->instancedSize;
 			void* buffer = _aligned_malloc(size, 16);
 			memcpy_s(buffer, size, material->states[0], size);
 			uint32_t id = MaterialManager.AssignRWMaterial((RenderWare::CompiledState*)buffer, mesh->mpRenderWare.get());
@@ -142,7 +142,7 @@ bool ApplyOverride(Graphics::ModelAsset* asset, ModelMeshPtr& mesh, int lod) {
 		for (size_t m = 0; m < mesh->mMaterials.size(); ++m) {
 			for (int i = 0; i < mesh->mMaterials[m]->statesCount; ++i) {
 				auto state = mesh->mMaterials[m]->states[i];
-				int textureFlags = state->flags3;
+				int textureFlags = state->hardStateDirty;
 				for (int j = 0; j < 16; ++j) {
 					if (!(textureFlags & 1)) continue;
 					textureFlags >>= 1;

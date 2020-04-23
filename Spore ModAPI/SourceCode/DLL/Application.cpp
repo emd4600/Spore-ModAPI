@@ -12,7 +12,7 @@ bool ShaderFragments_detour::DETOUR(DatabasePackedFile* pDBPF)
 	return original_function(this, pDBPF);
 }
 
-void LoadMaterials(uint32_t, void*, void*) {
+void LoadMaterials() {
 	StandardFileFilter filter;
 	filter.groupID = IMaterialManager::kShadersGroupID;
 	filter.typeID = TypeIDs::smt;
@@ -125,6 +125,7 @@ int ModAPI::AppInit_detour::DETOUR(int arg_0)
 {
 	int result = original_function(this, arg_0);
 
+	LoadMaterials();
 	for (ModAPI::InitFunction& func : ModAPI::postInitFunctions) func();
 
 	return result;
