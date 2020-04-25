@@ -1,5 +1,7 @@
 #pragma once
 
+#include <assert.h>
+
 #include <EASTL\vector.h>
 #include <EASTL\map.h>
 #include <EASTL\set.h>
