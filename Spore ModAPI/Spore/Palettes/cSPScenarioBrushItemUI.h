@@ -21,7 +21,7 @@ namespace Palettes
 		/* 58h */	Vector2 mBrushIntensityRange;  // 0.0, 1.0
 		/* 60h */	Vector2 mBrushSizeRange;  // 0.0, 1.0
 		/* 68h */	bool mIsTerraformModel;  // uses terraformModelID instead of toolGenericEffectID
-		/* 69h */	bool field_69;  // true
+		/* 69h */	bool mIsValidComplexity;  // true
 		/* 6Ah */	bool mIsDragging;
 		/* 6Ch */	float mBrushIntensityDefault;  // 0.5
 		/* 70h */	float mBrushSizeDefault;  // 0.5

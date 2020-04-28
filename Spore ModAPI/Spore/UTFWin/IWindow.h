@@ -118,7 +118,8 @@ namespace UTFWin
 		///
 		/* 20h */	virtual uint32_t GetCommandID() const = 0; 
 
-		/* 24h */	virtual int func9() const = 0;  // returns property EEC1B009
+		/// Returns the ID which assigns a cursor to this window.
+		/* 24h */	virtual uint32_t GetCursorID() const = 0;
 
 		///
 		/// Gets the current window flags. This can be used, for example, to check if a window is visible:
@@ -259,7 +260,9 @@ namespace UTFWin
 		///
 		/* 74h */	virtual void SetLayoutSize(float fWidth, float fHeight) = 0;
 
-		/* 78h */	virtual void func30(int) = 0;  // sets property EEC1B009 ?
+		/// Sets the ID which assigns a cursor to this window. 
+		/// The ID must have been loaded with cCursorManager::LoadCursor()
+		/* 78h */	virtual void SetCursorID(uint32_t id) = 0;
 
 		///
 		/// Assigns the given value to the specified window flag. This can be used, for example, to toggle visibility:

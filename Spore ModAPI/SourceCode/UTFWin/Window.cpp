@@ -59,7 +59,7 @@ namespace UTFWin
 		, mCommandID()
 		, mRealArea()
 		, mArea()
-		, property_EEC1B009()
+		, mCursorID()
 		, mnStateFlags()
 		, mCaption()
 		, mTextFontID(1)
@@ -126,7 +126,7 @@ namespace UTFWin
 	auto_METHOD_VIRTUAL_const_(Window, IWindow, int, func6);
 	auto_METHOD_VIRTUAL_const_(Window, IWindow, uint32_t, GetControlID);
 	auto_METHOD_VIRTUAL_const_(Window, IWindow, uint32_t, GetCommandID);
-	auto_METHOD_VIRTUAL_const_(Window, IWindow, int, func9);
+	auto_METHOD_VIRTUAL_const_(Window, IWindow, uint32_t, GetCursorID);
 	auto_METHOD_VIRTUAL_const_(Window, IWindow, WindowFlags, GetFlags);
 	auto_METHOD_VIRTUAL_const_(Window, IWindow, int, GetState);
 	auto_METHOD_VIRTUAL_const_(Window, IWindow, Math::Color, GetShadeColor);
@@ -147,7 +147,7 @@ namespace UTFWin
 	auto_METHOD_VIRTUAL_VOID(Window, IWindow, SetLayoutArea, Args(const Math::Rectangle& layoutArea), Args(layoutArea));
 	auto_METHOD_VIRTUAL_VOID(Window, IWindow, SetLayoutLocation, Args(float fX, float fY), Args(fX, fY));
 	auto_METHOD_VIRTUAL_VOID(Window, IWindow, SetLayoutSize, Args(float fWidth, float fHeight), Args(fWidth, fHeight));
-	auto_METHOD_VIRTUAL_VOID(Window, IWindow, func30, Args(int arg_0), Args(arg_0));
+	auto_METHOD_VIRTUAL_VOID(Window, IWindow, SetCursorID, Args(uint32_t arg_0), Args(arg_0));
 	auto_METHOD_VIRTUAL_VOID(Window, IWindow, SetFlag, Args(WindowFlags nFlag, bool bValue), Args(nFlag, bValue));
 	auto_METHOD_VIRTUAL_VOID(Window, IWindow, SetCaption, Args(const char16_t* pCaption), Args(pCaption));
 	auto_METHOD_VIRTUAL_VOID(Window, IWindow, SetTextFontID, Args(uint32_t styleID), Args(styleID));

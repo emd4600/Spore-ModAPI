@@ -36,6 +36,7 @@
 #include <Spore\UTFWin\Constants.h>
 #include <Spore\UTFWin\Message.h>
 #include <Spore\UTFWin\WindowIterators.h>
+#include <Spore\UTFWin\CursorManager.h>
 
 ///
 /// @namespace UTFWin

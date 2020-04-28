@@ -36,6 +36,7 @@
 #include <Spore\UTFWin\UIRenderer.h>
 #include <Spore\UTFWin\VariableWidthDrawable.h>
 #include <Spore\UTFWin\Window.h>
+#include <Spore\UTFWin\CursorManager.h>
 
 namespace Addresses(UTFWin)
 {
@@ -495,6 +496,7 @@ namespace UTFWin
 		DefineAddress(GetControlID, SelectAddress(0xF3E580, 0xA02C10, 0xA02C70));
 		DefineAddress(GetCommandID, SelectAddress(0x95FE90, 0xC2F7C0, 0xC2F7E0));
 		DefineAddress(func9, SelectAddress(0x95FEA0, 0x575EA0, 0x575EA0));
+		const uintptr_t GetCursorID = func9;
 		DefineAddress(GetFlags, SelectAddress(0xFCE1D0, 0x641770, 0x641760));
 		DefineAddress(GetState, SelectAddress(0xE464D0, 0x98F870, 0x98F870));
 		DefineAddress(GetShadeColor, SelectAddress(0x95FEB0, 0x95F940, 0x95F940));
@@ -516,6 +518,7 @@ namespace UTFWin
 		DefineAddress(SetLayoutLocation, SelectAddress(0x960440, 0x95FED0, 0x95FED0));
 		DefineAddress(SetLayoutSize, SelectAddress(0x9604A0, 0x95FF30, 0x95FF30));
 		DefineAddress(func30, SelectAddress(0x9604F0, 0x95FF80, 0x95FF80));
+		const uintptr_t SetCursorID = func30;
 		DefineAddress(SetFlag, SelectAddress(0x961B00, 0x9616B0, 0x9616B0));
 		DefineAddress(SetCaption, SelectAddress(0x962270, 0x961E70, 0x961E70));
 		DefineAddress(SetTextFontID, SelectAddress(0x95FF00, 0x95F9A0, 0x95F9A0));
@@ -560,6 +563,14 @@ namespace UTFWin
 		DefineAddress(func68, SelectAddress(0x960780, 0x960220, 0x960220));
 		DefineAddress(SendMsg, SelectAddress(0x9607B0, 0x960250, 0x960250));
 		DefineAddress(GetComponentName, SelectAddress(0x7F3770, 0x7F31D0, 0x7F3240));
+	}
+
+	namespace Addresses(cCursorManager)
+	{
+		DefineAddress(Get, SelectAddress(0x67CC00, , 0x67CA70));
+		DefineAddress(Load, SelectAddress(0x802680, , 0x802140));
+		DefineAddress(GetActiveCursor, SelectAddress(0x8019F0, , 0x801500));
+		DefineAddress(SetActiveCursor, SelectAddress(0x802210, , 0x801CF0));
 	}
 }
 #endif

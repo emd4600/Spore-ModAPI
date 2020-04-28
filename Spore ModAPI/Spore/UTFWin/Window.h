@@ -63,7 +63,7 @@ namespace UTFWin
 		virtual int func6() const override;
 		virtual uint32_t GetControlID() const override;
 		virtual uint32_t GetCommandID() const override;
-		virtual int func9() const override;
+		virtual uint32_t GetCursorID() const override;
 		virtual WindowFlags GetFlags() const override;
 		virtual int GetState() const override;
 		virtual Math::Color GetShadeColor() const override;
@@ -84,7 +84,7 @@ namespace UTFWin
 		virtual void SetLayoutArea(const Math::Rectangle& layoutArea) override;
 		virtual void SetLayoutLocation(float fX, float fY) override;
 		virtual void SetLayoutSize(float fWidth, float fHeight) override;
-		virtual void func30(int) override;
+		virtual void SetCursorID(uint32_t) override;
 		virtual void SetFlag(WindowFlags nFlag, bool bValue) override;
 		virtual void SetCaption(const char16_t* pCaption) override;
 		virtual void SetTextFontID(uint32_t styleID) override;
@@ -183,7 +183,7 @@ namespace UTFWin
 		/* 84h */	uint32_t mCommandID;
 		/* 88h */	Math::Rectangle mRealArea;
 		/* 98h */	Math::Rectangle mArea;
-		/* A8h */	int property_EEC1B009;  // EEC1B009
+		/* A8h */	uint32_t mCursorID;
 		/* ACh */	int mnStateFlags;
 		/* B0h */	string16 mCaption;
 		/* C0h */	uint32_t mTextFontID;
@@ -221,6 +221,7 @@ namespace UTFWin
 		DeclareAddress(GetControlID);
 		DeclareAddress(GetCommandID);
 		DeclareAddress(func9);
+		DeclareAddress(GetCursorID);
 		DeclareAddress(GetFlags);
 		DeclareAddress(GetState);
 		DeclareAddress(GetShadeColor);
@@ -242,6 +243,7 @@ namespace UTFWin
 		DeclareAddress(SetLayoutLocation);
 		DeclareAddress(SetLayoutSize);
 		DeclareAddress(func30);
+		DeclareAddress(SetCursorID);
 		DeclareAddress(SetFlag);
 		DeclareAddress(SetCaption);
 		DeclareAddress(SetTextFontID);
