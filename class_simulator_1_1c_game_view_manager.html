@@ -160,6 +160,35 @@
               <a href="class_simulator_1_1c_combatant.html" class="m-doc">cCombatant</a>* pCombanant = nullptr) -&gt; <a href="struct_math_1_1_vector3.html" class="m-doc">Vector3</a> <span class="m-label m-flat m-warning">virtual</span></span>
             </dt>
             <dd><span></span></dd>
+            <dt id="a7c68bb55baa707bbb5d9b6cef98e5031">
+              <span class="m-doc-wrap-bumper">void <a href="#a7c68bb55baa707bbb5d9b6cef98e5031" class="m-doc-self">func44h_</a>(</span><span class="m-doc-wrap">) <span class="m-label m-flat m-warning">virtual</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a861ab9370778fd9b02d2072a5b3a52c4" class="m-doc">IntersectSphere</a>(</span><span class="m-doc-wrap">const <a href="struct_math_1_1_vector3.html" class="m-doc">Vector3</a>&amp; center,
+              float radius,
+              vector&lt;<a href="c_spatial_object_8h.html#ae656c09ec3111878660768d156088bc9" class="m-doc">cSpatialObjectPtr</a>&gt;&amp; dst,
+              bool useModelCollisionMode = false,
+              <a href="namespace_graphics.html#ac354d1c41dc1dd5d2c9fab246990be72" class="m-doc">Graphics::<wbr />ModelPredicate_t</a> filter = nullptr,
+              void* filterObject = nullptr) -&gt; bool <span class="m-label m-flat m-warning">virtual</span></span>
+            </dt>
+            <dd>Finds all the <a href="class_simulator_1_1c_spatial_object.html" class="m-doc">cSpatialObject</a> objects that intersect with the sphere with <code>center</code> and <code>radius</code>.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a977d395a6db78fc1d5bf7643ae292312" class="m-doc">RaycastAll</a>(</span><span class="m-doc-wrap">const <a href="struct_math_1_1_vector3.html" class="m-doc">Vector3</a>&amp; point1,
+              const <a href="struct_math_1_1_vector3.html" class="m-doc">Vector3</a>&amp; point2,
+              vector&lt;<a href="c_spatial_object_8h.html#ae656c09ec3111878660768d156088bc9" class="m-doc">cSpatialObjectPtr</a>&gt;&amp; dst,
+              bool useModelCollisionMode = false) -&gt; bool <span class="m-label m-flat m-warning">virtual</span></span>
+            </dt>
+            <dd>Finds all the <a href="class_simulator_1_1c_spatial_object.html" class="m-doc">cSpatialObject</a> objects that intersect with the segment between <code>point1</code> and <code>point2</code>.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a13b1f95179f0949291b08d2747c14c5d" class="m-doc">Raycast</a>(</span><span class="m-doc-wrap">const <a href="struct_math_1_1_vector3.html" class="m-doc">Vector3</a>&amp; point1,
+              const <a href="struct_math_1_1_vector3.html" class="m-doc">Vector3</a>&amp; point2,
+              <a href="struct_graphics_1_1_filter_settings.html#af901314d5972dc5a21409dca7f7a78d2" class="m-doc">Graphics::<wbr />FilterSettings::<wbr />FilterModel_t</a> filter,
+              <a href="c_game_data_8h.html#a16ee71c4f398f8560845728987775f11" class="m-doc">cGameDataPtr</a>&amp; dst,
+              <a href="struct_math_1_1_vector3.html" class="m-doc">Vector3</a>&amp; dstIntersection,
+              bool useModelCollisionMode = false) -&gt; bool <span class="m-label m-flat m-warning">virtual</span></span>
+            </dt>
+            <dd>Finds the first <a href="class_simulator_1_1c_game_data.html" class="m-doc">cGameData</a> object that intersects with the segment between <code>point1</code> and <code>point2</code>.</dd>
           </dl>
         </section>
         <section id="pro-attribs">
@@ -169,8 +198,8 @@
               intrusive_list&lt;int&gt; <a href="#a8b3cfe2c45cbf16d445d0f14a241fdd7" class="m-doc-self">field_24</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="aac79cc94415dfe564d7b481e64a5e082">
-              fixed_vector&lt;int, 16&gt; <a href="#aac79cc94415dfe564d7b481e64a5e082" class="m-doc-self">field_2C</a>
+            <dt id="a98f7adb6027764aea9b8e482354a4b0a">
+              fixed_vector&lt;<a href="_model_asset_8h.html#a4695930ef0d84e11d31379e623af5732" class="m-doc">ModelPtr</a>, 16&gt; <a href="#a98f7adb6027764aea9b8e482354a4b0a" class="m-doc-self">mGrassTrampModels</a>
             </dt>
             <dd><span></span></dd>
             <dt id="a9761f580809ec5ed1cdd9b3f25e1d491">
@@ -205,8 +234,8 @@
               map&lt;int, int&gt; <a href="#a2aed6407e9ea6ef0fcef04438cf976a0" class="m-doc-self">field_C8</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="a7af7bea4c2866bbc0bb3141c8e646dd2">
-              intrusive_ptr&lt;<a href="class_object.html" class="m-doc">Object</a>&gt; <a href="#a7af7bea4c2866bbc0bb3141c8e646dd2" class="m-doc-self">field_E4</a>
+            <dt id="ab64ce28391f55c4ccc80b5149f78dcc2">
+              <a href="_i_model_world_8h.html#ac806a1f42e226576db417e69309943f5" class="m-doc">IModelWorldPtr</a> <a href="#ab64ce28391f55c4ccc80b5149f78dcc2" class="m-doc-self">field_E4</a>
             </dt>
             <dd><span></span></dd>
             <dt id="a5437ec5cb7318771b737d0e6bd1b6eb3">
@@ -241,8 +270,8 @@
               int <a href="#adbe59f4f86a796fd911f8b0088f9bbf7" class="m-doc-self">field_104</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="aa7cc1406224c0adf7c4ad8bcf0a8b214">
-              intrusive_ptr&lt;<a href="class_object.html" class="m-doc">Object</a>&gt; <a href="#aa7cc1406224c0adf7c4ad8bcf0a8b214" class="m-doc-self">mpCreatureFXAnimWorld</a>
+            <dt id="ae96ee19f960daa6eaa8206cbd491fb04">
+              <a href="_i_anim_world_8h.html#a9ff522673dfc4e748545440d74e45410" class="m-doc">IAnimWorldPtr</a> <a href="#ae96ee19f960daa6eaa8206cbd491fb04" class="m-doc-self">mpCreatureFXAnimWorld</a>
             </dt>
             <dd><span></span></dd>
             <dt id="a137ac9f9111cd37c3bfba28f2cd3b22f">
@@ -262,6 +291,146 @@
             </dt>
             <dd><span></span></dd>
           </dl>
+        </section>
+        <section>
+          <h2>Function documentation</h2>
+          <section class="m-doc-details" id="a861ab9370778fd9b02d2072a5b3a52c4"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">bool Simulator::<wbr />cGameViewManager::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a861ab9370778fd9b02d2072a5b3a52c4" class="m-doc-self">IntersectSphere</a>(</span><span class="m-doc-wrap">const <a href="struct_math_1_1_vector3.html" class="m-doc">Vector3</a>&amp; center,
+              float radius,
+              vector&lt;<a href="c_spatial_object_8h.html#ae656c09ec3111878660768d156088bc9" class="m-doc">cSpatialObjectPtr</a>&gt;&amp; dst,
+              bool useModelCollisionMode = false,
+              <a href="namespace_graphics.html#ac354d1c41dc1dd5d2c9fab246990be72" class="m-doc">Graphics::<wbr />ModelPredicate_t</a> filter = nullptr,
+              void* filterObject = nullptr) <span class="m-label m-warning">virtual</span></span></span>
+            </h3>
+            <p>Finds all the <a href="class_simulator_1_1c_spatial_object.html" class="m-doc">cSpatialObject</a> objects that intersect with the sphere with <code>center</code> and <code>radius</code>.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">center</td>
+                  <td>The center of the sphere.</td>
+                </tr>
+                <tr>
+                  <td>radius</td>
+                  <td>The radius of the sphere.</td>
+                </tr>
+                <tr>
+                  <td>dst&nbsp;<span class="m-label m-flat m-warning">out</span></td>
+                  <td>The vector where all objects will be added.</td>
+                </tr>
+                <tr>
+                  <td>useModelCollisionMode</td>
+                  <td>If true, the collision mode specified by each model will be used.</td>
+                </tr>
+                <tr>
+                  <td>filter</td>
+                  <td>An optional filter function that decides which models are considered.</td>
+                </tr>
+                <tr>
+                  <td>filterObject</td>
+                  <td>An object that is passed to the filter function.</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>Returns</th>
+                  <td><code>true</code> if any object was found, <code>false</code> otherwise.</td>
+                </tr>
+              </tfoot>
+            </table>
+<p>The objects will be added to <code>dst</code>. <code>filter</code> is an optional filter function that receives a Model and <code>filterObject</code>, and returns whether the model is considered or not.</p><p>The collision is only checked with the bounding box, so it is not a precise model collision. If the <code>useModelCollisionMode</code> param is true, then the collision mode specified by each model will be used.</p>
+          </div></section>
+          <section class="m-doc-details" id="a977d395a6db78fc1d5bf7643ae292312"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">bool Simulator::<wbr />cGameViewManager::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a977d395a6db78fc1d5bf7643ae292312" class="m-doc-self">RaycastAll</a>(</span><span class="m-doc-wrap">const <a href="struct_math_1_1_vector3.html" class="m-doc">Vector3</a>&amp; point1,
+              const <a href="struct_math_1_1_vector3.html" class="m-doc">Vector3</a>&amp; point2,
+              vector&lt;<a href="c_spatial_object_8h.html#ae656c09ec3111878660768d156088bc9" class="m-doc">cSpatialObjectPtr</a>&gt;&amp; dst,
+              bool useModelCollisionMode = false) <span class="m-label m-warning">virtual</span></span></span>
+            </h3>
+            <p>Finds all the <a href="class_simulator_1_1c_spatial_object.html" class="m-doc">cSpatialObject</a> objects that intersect with the segment between <code>point1</code> and <code>point2</code>.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">point1</td>
+                  <td>The start point of the ray.</td>
+                </tr>
+                <tr>
+                  <td>point2</td>
+                  <td>The end point of the ray.</td>
+                </tr>
+                <tr>
+                  <td>dst&nbsp;<span class="m-label m-flat m-warning">out</span></td>
+                  <td>The vector where all objects will be added.</td>
+                </tr>
+                <tr>
+                  <td>useModelCollisionMode</td>
+                  <td>If true, the collision mode specified by each model will be used.</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>Returns</th>
+                  <td><code>true</code> if any object was found, <code>false</code> otherwise.</td>
+                </tr>
+              </tfoot>
+            </table>
+<p>The objects will be added to <code>dst</code> in the order they have been found, so the ones closest to <code>point1</code> come first.</p><p>The collision is only checked with the bounding box, so it is not a precise model collision. If the <code>useModelCollisionMode</code> param is true, then the collision mode specified by each model will be used.</p>
+          </div></section>
+          <section class="m-doc-details" id="a13b1f95179f0949291b08d2747c14c5d"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">bool Simulator::<wbr />cGameViewManager::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a13b1f95179f0949291b08d2747c14c5d" class="m-doc-self">Raycast</a>(</span><span class="m-doc-wrap">const <a href="struct_math_1_1_vector3.html" class="m-doc">Vector3</a>&amp; point1,
+              const <a href="struct_math_1_1_vector3.html" class="m-doc">Vector3</a>&amp; point2,
+              <a href="struct_graphics_1_1_filter_settings.html#af901314d5972dc5a21409dca7f7a78d2" class="m-doc">Graphics::<wbr />FilterSettings::<wbr />FilterModel_t</a> filter,
+              <a href="c_game_data_8h.html#a16ee71c4f398f8560845728987775f11" class="m-doc">cGameDataPtr</a>&amp; dst,
+              <a href="struct_math_1_1_vector3.html" class="m-doc">Vector3</a>&amp; dstIntersection,
+              bool useModelCollisionMode = false) <span class="m-label m-warning">virtual</span></span></span>
+            </h3>
+            <p>Finds the first <a href="class_simulator_1_1c_game_data.html" class="m-doc">cGameData</a> object that intersects with the segment between <code>point1</code> and <code>point2</code>.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">point1</td>
+                  <td>The start point of the ray.</td>
+                </tr>
+                <tr>
+                  <td>point2</td>
+                  <td>The end point of the ray.</td>
+                </tr>
+                <tr>
+                  <td>filter</td>
+                  <td>A filter function that receives a Model and returns whether it is considered or not.</td>
+                </tr>
+                <tr>
+                  <td>dst&nbsp;<span class="m-label m-flat m-warning">out</span></td>
+                  <td>The object that is found, only valid if <code>true</code> was returned.</td>
+                </tr>
+                <tr>
+                  <td>dstIntersection&nbsp;<span class="m-label m-flat m-warning">out</span></td>
+                  <td>The point where the ray intersected with the model, only valid if <code>true</code> was returned.</td>
+                </tr>
+                <tr>
+                  <td>useModelCollisionMode</td>
+                  <td>If true, the collision mode specified by each model will be used.</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>Returns</th>
+                  <td><code>true</code> if an object was found, <code>false</code> otherwise.</td>
+                </tr>
+              </tfoot>
+            </table>
+<p>Only models that pass the filter function are considered.</p><p>The collision is only checked with the bounding box, so it is not a precise model collision. If the <code>useModelCollisionMode</code> param is true, then the collision mode specified by each model will be used.</p>
+          </div></section>
         </section>
       </div>
     </div>

@@ -132,14 +132,14 @@
             </dt>
             <dd>Tells whether a <a href="class_app_1_1_property_list.html" class="m-doc">PropertyList</a> with the given instanceID and groupID is contained in this manager.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#a8a74d06382adf5a724154795a6ac9c67" class="m-doc">GetPropertyList</a>(</span><span class="m-doc-wrap">uint32_t instanceID,
+              <span class="m-doc-wrap-bumper">auto <a href="#a4aac63376b87c823a36164452c69b450" class="m-doc">GetPropertyList</a>(</span><span class="m-doc-wrap">uint32_t instanceID,
               uint32_t groupID,
-              <a href="class_app_1_1_property_list.html#a8a718e468c2b89aa606c29a5e95fd21b" class="m-doc">PropertyList::<wbr />Pointer</a>&amp; pDst) const -&gt; bool <span class="m-label m-flat m-warning">pure virtual</span></span>
+              <a href="_property_list_8h.html#ae757f1639ff739ff0282dd91f3e39f0a" class="m-doc">PropertyListPtr</a>&amp; pDst) const -&gt; bool <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
             <dd>Gets the <a href="class_app_1_1_property_list.html" class="m-doc">PropertyList</a> stored in the given group and with the given instanceID.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#a83d13f2f1bd27cf800fdce4f3fe99115" class="m-doc">GetGlobalPropertyList</a>(</span><span class="m-doc-wrap">uint32_t instanceID,
-              <a href="class_app_1_1_property_list.html#a8a718e468c2b89aa606c29a5e95fd21b" class="m-doc">PropertyList::<wbr />Pointer</a>&amp; pDst) -&gt; bool <span class="m-label m-flat m-warning">pure virtual</span></span>
+              <span class="m-doc-wrap-bumper">auto <a href="#ab25e33268f22ca7dab1b6226b059420a" class="m-doc">GetGlobalPropertyList</a>(</span><span class="m-doc-wrap">uint32_t instanceID,
+              <a href="_property_list_8h.html#ae757f1639ff739ff0282dd91f3e39f0a" class="m-doc">PropertyListPtr</a>&amp; pDst) -&gt; bool <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
             <dd>Gets the <a href="class_app_1_1_property_list.html" class="m-doc">PropertyList</a> stored in the global (0x00000000) folder and with the given instanceID.</dd>
             <dt>
@@ -300,11 +300,11 @@
               </tfoot>
             </table>
           </div></section>
-          <section class="m-doc-details" id="a8a74d06382adf5a724154795a6ac9c67"><div>
+          <section class="m-doc-details" id="a4aac63376b87c823a36164452c69b450"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">bool App::<wbr />IPropManager::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a8a74d06382adf5a724154795a6ac9c67" class="m-doc-self">GetPropertyList</a>(</span><span class="m-doc-wrap">uint32_t instanceID,
+              <span class="m-doc-wrap-bumper">bool App::<wbr />IPropManager::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a4aac63376b87c823a36164452c69b450" class="m-doc-self">GetPropertyList</a>(</span><span class="m-doc-wrap">uint32_t instanceID,
               uint32_t groupID,
-              <a href="class_app_1_1_property_list.html#a8a718e468c2b89aa606c29a5e95fd21b" class="m-doc">PropertyList::<wbr />Pointer</a>&amp; pDst) const <span class="m-label m-warning">pure virtual</span></span></span>
+              <a href="_property_list_8h.html#ae757f1639ff739ff0282dd91f3e39f0a" class="m-doc">PropertyListPtr</a>&amp; pDst) const <span class="m-label m-warning">pure virtual</span></span></span>
             </h3>
             <p>Gets the <a href="class_app_1_1_property_list.html" class="m-doc">PropertyList</a> stored in the given group and with the given instanceID.</p>
             <table class="m-table m-fullwidth m-flat">
@@ -322,7 +322,7 @@
                 </tr>
                 <tr>
                   <td>pDst</td>
-                  <td>An intrusive_ptr that will receive the list. It must not be initialized or contain nullptr; the previous pointer won&#x27;t be released.</td>
+                  <td>A PropertyListPtr that will receive the list. It must not be initialized or contain nullptr; the previous pointer won&#x27;t be released.</td>
                 </tr>
               </tbody>
               <tfoot>
@@ -333,10 +333,10 @@
               </tfoot>
             </table>
           </div></section>
-          <section class="m-doc-details" id="a83d13f2f1bd27cf800fdce4f3fe99115"><div>
+          <section class="m-doc-details" id="ab25e33268f22ca7dab1b6226b059420a"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">bool App::<wbr />IPropManager::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a83d13f2f1bd27cf800fdce4f3fe99115" class="m-doc-self">GetGlobalPropertyList</a>(</span><span class="m-doc-wrap">uint32_t instanceID,
-              <a href="class_app_1_1_property_list.html#a8a718e468c2b89aa606c29a5e95fd21b" class="m-doc">PropertyList::<wbr />Pointer</a>&amp; pDst) <span class="m-label m-warning">pure virtual</span></span></span>
+              <span class="m-doc-wrap-bumper">bool App::<wbr />IPropManager::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ab25e33268f22ca7dab1b6226b059420a" class="m-doc-self">GetGlobalPropertyList</a>(</span><span class="m-doc-wrap">uint32_t instanceID,
+              <a href="_property_list_8h.html#ae757f1639ff739ff0282dd91f3e39f0a" class="m-doc">PropertyListPtr</a>&amp; pDst) <span class="m-label m-warning">pure virtual</span></span></span>
             </h3>
             <p>Gets the <a href="class_app_1_1_property_list.html" class="m-doc">PropertyList</a> stored in the global (0x00000000) folder and with the given instanceID.</p>
             <table class="m-table m-fullwidth m-flat">
@@ -350,7 +350,7 @@
                 </tr>
                 <tr>
                   <td>pDst</td>
-                  <td>An intrusive_ptr that will receive the list. It must not be initialized or contain nullptr; the previous pointer won&#x27;t be released.</td>
+                  <td>An PropertyListPtr that will receive the list. It must not be initialized or contain nullptr; the previous pointer won&#x27;t be released.</td>
                 </tr>
               </tbody>
               <tfoot>

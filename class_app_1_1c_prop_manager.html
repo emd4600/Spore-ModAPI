@@ -193,14 +193,14 @@
             </dt>
             <dd>Tells whether a <a href="class_app_1_1_property_list.html" class="m-doc">PropertyList</a> with the given instanceID and groupID is contained in this manager.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#aab3bd39853facc62a648905a3f4e4e45" class="m-doc">GetPropertyList</a>(</span><span class="m-doc-wrap">uint32_t instanceID,
+              <span class="m-doc-wrap-bumper">auto <a href="#ac866bfe7b73360674cdf0f2eed0d50f0" class="m-doc">GetPropertyList</a>(</span><span class="m-doc-wrap">uint32_t instanceID,
               uint32_t groupID,
-              <a href="class_app_1_1_property_list.html#a8a718e468c2b89aa606c29a5e95fd21b" class="m-doc">PropertyList::<wbr />Pointer</a>&amp; pDst) const -&gt; bool <span class="m-label m-flat m-warning">override</span></span>
+              <a href="_property_list_8h.html#ae757f1639ff739ff0282dd91f3e39f0a" class="m-doc">PropertyListPtr</a>&amp; pDst) const -&gt; bool <span class="m-label m-flat m-warning">override</span></span>
             </dt>
             <dd>Gets the <a href="class_app_1_1_property_list.html" class="m-doc">PropertyList</a> stored in the given group and with the given instanceID.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#a70f96e0ef22f3c598694cca78e04b4c0" class="m-doc">GetGlobalPropertyList</a>(</span><span class="m-doc-wrap">uint32_t instanceID,
-              <a href="class_app_1_1_property_list.html#a8a718e468c2b89aa606c29a5e95fd21b" class="m-doc">PropertyList::<wbr />Pointer</a>&amp; pDst) -&gt; bool <span class="m-label m-flat m-warning">override</span></span>
+              <span class="m-doc-wrap-bumper">auto <a href="#a429442c6dbd63948508ed18dd1a36715" class="m-doc">GetGlobalPropertyList</a>(</span><span class="m-doc-wrap">uint32_t instanceID,
+              <a href="_property_list_8h.html#ae757f1639ff739ff0282dd91f3e39f0a" class="m-doc">PropertyListPtr</a>&amp; pDst) -&gt; bool <span class="m-label m-flat m-warning">override</span></span>
             </dt>
             <dd>Gets the <a href="class_app_1_1_property_list.html" class="m-doc">PropertyList</a> stored in the global (0x00000000) folder and with the given instanceID.</dd>
             <dt>
@@ -285,8 +285,8 @@
               <a href="class_app_1_1_property_list.html" class="m-doc">PropertyList</a> <a href="#a8d2e66630ba8c375745dfa4558832466" class="m-doc-self">mPropertyDefinitions</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="abb34be597e75e8c92bb0361fde2be3a8">
-              hash_map&lt;<a href="class_resource_i_d.html" class="m-doc">ResourceID</a>, <a href="class_app_1_1_property_list.html#a8a718e468c2b89aa606c29a5e95fd21b" class="m-doc">PropertyList::<wbr />Pointer</a>&gt; <a href="#abb34be597e75e8c92bb0361fde2be3a8" class="m-doc-self">mPropertyLists</a>
+            <dt id="a86523020bacb08ddd20a9b27428561be">
+              hash_map&lt;<a href="class_resource_i_d.html" class="m-doc">ResourceID</a>, <a href="_property_list_8h.html#ae757f1639ff739ff0282dd91f3e39f0a" class="m-doc">PropertyListPtr</a>&gt; <a href="#a86523020bacb08ddd20a9b27428561be" class="m-doc-self">mPropertyLists</a>
             </dt>
             <dd><span></span></dd>
             <dt id="a26482fdea1adaae3f738c57358554b01">
@@ -623,11 +623,11 @@
               </tfoot>
             </table>
           </div></section>
-          <section class="m-doc-details" id="aab3bd39853facc62a648905a3f4e4e45"><div>
+          <section class="m-doc-details" id="ac866bfe7b73360674cdf0f2eed0d50f0"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">bool App::<wbr />cPropManager::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#aab3bd39853facc62a648905a3f4e4e45" class="m-doc-self">GetPropertyList</a>(</span><span class="m-doc-wrap">uint32_t instanceID,
+              <span class="m-doc-wrap-bumper">bool App::<wbr />cPropManager::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ac866bfe7b73360674cdf0f2eed0d50f0" class="m-doc-self">GetPropertyList</a>(</span><span class="m-doc-wrap">uint32_t instanceID,
               uint32_t groupID,
-              <a href="class_app_1_1_property_list.html#a8a718e468c2b89aa606c29a5e95fd21b" class="m-doc">PropertyList::<wbr />Pointer</a>&amp; pDst) const <span class="m-label m-warning">override</span></span></span>
+              <a href="_property_list_8h.html#ae757f1639ff739ff0282dd91f3e39f0a" class="m-doc">PropertyListPtr</a>&amp; pDst) const <span class="m-label m-warning">override</span></span></span>
             </h3>
             <p>Gets the <a href="class_app_1_1_property_list.html" class="m-doc">PropertyList</a> stored in the given group and with the given instanceID.</p>
             <table class="m-table m-fullwidth m-flat">
@@ -645,7 +645,7 @@
                 </tr>
                 <tr>
                   <td>pDst</td>
-                  <td>An intrusive_ptr that will receive the list. It must not be initialized or contain nullptr; the previous pointer won&#x27;t be released.</td>
+                  <td>A PropertyListPtr that will receive the list. It must not be initialized or contain nullptr; the previous pointer won&#x27;t be released.</td>
                 </tr>
               </tbody>
               <tfoot>
@@ -656,10 +656,10 @@
               </tfoot>
             </table>
           </div></section>
-          <section class="m-doc-details" id="a70f96e0ef22f3c598694cca78e04b4c0"><div>
+          <section class="m-doc-details" id="a429442c6dbd63948508ed18dd1a36715"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">bool App::<wbr />cPropManager::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a70f96e0ef22f3c598694cca78e04b4c0" class="m-doc-self">GetGlobalPropertyList</a>(</span><span class="m-doc-wrap">uint32_t instanceID,
-              <a href="class_app_1_1_property_list.html#a8a718e468c2b89aa606c29a5e95fd21b" class="m-doc">PropertyList::<wbr />Pointer</a>&amp; pDst) <span class="m-label m-warning">override</span></span></span>
+              <span class="m-doc-wrap-bumper">bool App::<wbr />cPropManager::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a429442c6dbd63948508ed18dd1a36715" class="m-doc-self">GetGlobalPropertyList</a>(</span><span class="m-doc-wrap">uint32_t instanceID,
+              <a href="_property_list_8h.html#ae757f1639ff739ff0282dd91f3e39f0a" class="m-doc">PropertyListPtr</a>&amp; pDst) <span class="m-label m-warning">override</span></span></span>
             </h3>
             <p>Gets the <a href="class_app_1_1_property_list.html" class="m-doc">PropertyList</a> stored in the global (0x00000000) folder and with the given instanceID.</p>
             <table class="m-table m-fullwidth m-flat">
@@ -673,7 +673,7 @@
                 </tr>
                 <tr>
                   <td>pDst</td>
-                  <td>An intrusive_ptr that will receive the list. It must not be initialized or contain nullptr; the previous pointer won&#x27;t be released.</td>
+                  <td>An PropertyListPtr that will receive the list. It must not be initialized or contain nullptr; the previous pointer won&#x27;t be released.</td>
                 </tr>
               </tbody>
               <tfoot>

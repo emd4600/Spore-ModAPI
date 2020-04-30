@@ -56,9 +56,11 @@
               Reference
               <ul>
                 <li><a href="#base-classes">Base classes</a></li>
+                <li><a href="#pub-types">Public types</a></li>
                 <li><a href="#pub-static-methods">Public static functions</a></li>
+                <li><a href="#typeless-methods">Constructors, destructors, conversion operators</a></li>
                 <li><a href="#pub-methods">Public functions</a></li>
-                <li><a href="#pro-attribs">Protected variables</a></li>
+                <li><a href="#pub-attribs">Public variables</a></li>
               </ul>
             </li>
           </ul>
@@ -88,6 +90,19 @@
             <dd>A type of object that is used as a resource.</dd>
           </dl>
         </section>
+        <section id="pub-types">
+          <h2><a href="#pub-types">Public types</a></h2>
+          <dl class="m-doc">
+            <dt>
+              struct <a href="struct_terrain_1_1_sphere_1_1c_terrain_sphere_1_1_terrain_modification.html" class="m-doc">TerrainModification</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              class <a href="class_terrain_1_1_sphere_1_1c_terrain_sphere_1_1_texture_container.html" class="m-doc">TextureContainer</a>
+            </dt>
+            <dd><span></span></dd>
+          </dl>
+        </section>
         <section id="pub-static-methods">
           <h2><a href="#pub-static-methods">Public static functions</a></h2>
           <dl class="m-doc">
@@ -97,52 +112,79 @@
             <dd><span></span></dd>
           </dl>
         </section>
-        <section id="pub-methods">
-          <h2><a href="#pub-methods">Public functions</a></h2>
+        <section id="typeless-methods">
+          <h2><a href="#typeless-methods">Constructors, destructors, conversion operators</a></h2>
           <dl class="m-doc">
-            <dt id="a0c07ee6b95d35747a33b2c18335108cf">
-              <span class="m-doc-wrap-bumper">auto <a href="#a0c07ee6b95d35747a33b2c18335108cf" class="m-doc-self">func08h</a>(</span><span class="m-doc-wrap">) -&gt; int <span class="m-label m-flat m-warning">virtual</span></span>
+            <dt id="af0c99002dd1f14d8dd539cc62d9d7aff">
+              <span class="m-doc-wrap-bumper"><a href="#af0c99002dd1f14d8dd539cc62d9d7aff" class="m-doc-self">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_terrain_1_1_sphere_1_1c_terrain_sphere_1_1_texture_container.html" class="m-doc">TextureContainer</a>,
+              0x44)</span>
             </dt>
             <dd><span></span></dd>
-            <dt id="a0eeb78ad00c014307becf6e48e56c90e">
-              <span class="m-doc-wrap-bumper">auto <a href="#a0eeb78ad00c014307becf6e48e56c90e" class="m-doc-self">GetTerrainMapSet</a>(</span><span class="m-doc-wrap">) -&gt; <a href="class_terrain_1_1c_terrain_map_set.html" class="m-doc">cTerrainMapSet</a>* <span class="m-label m-flat m-warning">virtual</span></span>
+            <dt id="a267cc2753f4558de33f0368fccd76e45">
+              <span class="m-doc-wrap-bumper"><a href="#a267cc2753f4558de33f0368fccd76e45" class="m-doc-self">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="struct_terrain_1_1_sphere_1_1c_terrain_sphere_1_1_terrain_modification.html" class="m-doc">TerrainModification</a>,
+              0xAC)</span>
             </dt>
             <dd><span></span></dd>
           </dl>
         </section>
-        <section id="pro-attribs">
-          <h2><a href="#pro-attribs">Protected variables</a></h2>
+        <section id="pub-methods">
+          <h2><a href="#pub-methods">Public functions</a></h2>
+          <dl class="m-doc">
+            <dt id="aafc42e51f563b9aac5f332fb3eb07130">
+              <span class="m-doc-wrap-bumper">void <a href="#aafc42e51f563b9aac5f332fb3eb07130" class="m-doc-self">Generate</a>(</span><span class="m-doc-wrap">int* unused0 = nullptr,
+              int* unused1 = nullptr,
+              bool = false,
+              bool generateSingleStep = false,
+              float generateTimeLimit = 10.0f)</span>
+            </dt>
+            <dd><span></span></dd>
+          </dl>
+        </section>
+        <section id="pub-attribs">
+          <h2><a href="#pub-attribs">Public variables</a></h2>
           <dl class="m-doc">
             <dt id="a604703c5c1c0e418175dd7f47d78516b">
               int <a href="#a604703c5c1c0e418175dd7f47d78516b" class="m-doc-self">field_24</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="a7b537f498bf9142ee96542438509cd6d">
-              int <a href="#a7b537f498bf9142ee96542438509cd6d" class="m-doc-self">field_28</a>
+            <dt id="a6473dbbb50ac5bb3b667d5e201f1c203">
+              <a href="_property_list_8h.html#ae757f1639ff739ff0282dd91f3e39f0a" class="m-doc">PropertyListPtr</a> <a href="#a6473dbbb50ac5bb3b667d5e201f1c203" class="m-doc-self">mpPropList</a>
             </dt>
             <dd><span></span></dd>
             <dt id="a353620454c21a876cce890b97cf2f400">
               intrusive_ptr&lt;<a href="class_terrain_1_1c_terrain_map_set.html" class="m-doc">cTerrainMapSet</a>&gt; <a href="#a353620454c21a876cce890b97cf2f400" class="m-doc-self">mpTerrainMapSet</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="a73af2ba908dcf3088893f470b34a1045">
-              int <a href="#a73af2ba908dcf3088893f470b34a1045" class="m-doc-self">field_FC</a>
+            <dt id="a3fa9abee1762773b016dbee9e67a9581">
+              <a href="class_terrain_1_1_sphere_1_1c_terrain_sphere_1_1_texture_container.html" class="m-doc">TextureContainer</a> <a href="#a3fa9abee1762773b016dbee9e67a9581" class="m-doc-self">field_30</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="abe85a88ea7df61b3d3ed3075dbfc1179">
-              int <a href="#abe85a88ea7df61b3d3ed3075dbfc1179" class="m-doc-self">field_100</a>
+            <dt id="afeb70ebe8b6e812fb6d70725a49e1b47">
+              <a href="class_terrain_1_1_sphere_1_1c_terrain_sphere_1_1_texture_container.html" class="m-doc">TextureContainer</a> <a href="#afeb70ebe8b6e812fb6d70725a49e1b47" class="m-doc-self">field_74</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="a9b8eb49700872525df9fcefbce8edf2d">
-              int <a href="#a9b8eb49700872525df9fcefbce8edf2d" class="m-doc-self">field_104</a>
+            <dt id="a630cc119c960dc715921d1046b155bd9">
+              <a href="class_terrain_1_1_sphere_1_1c_terrain_sphere_1_1_texture_container.html" class="m-doc">TextureContainer</a> <a href="#a630cc119c960dc715921d1046b155bd9" class="m-doc-self">field_B8</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="a47712516a45c6165739261acd60fe4bd">
-              bool <a href="#a47712516a45c6165739261acd60fe4bd" class="m-doc-self">field_108</a>
+            <dt id="a80e397794e88fec4626bd9ee4d2749ba">
+              <a href="class_terrain_1_1_sphere_1_1c_terrain_sphere_1_1_texture_container.html" class="m-doc">TextureContainer</a>* <a href="#a80e397794e88fec4626bd9ee4d2749ba" class="m-doc-self">mpLoader</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="a5c406e630bea2af41152113b902e5bc6">
-              float <a href="#a5c406e630bea2af41152113b902e5bc6" class="m-doc-self">field_10C</a>
+            <dt id="a3e8ab6e3d836adc26ae6f56b23b529d5">
+              <a href="class_terrain_1_1_i_terrain.html#a4da653c06dd601298e7f18acefaa883a" class="m-doc">OnLoadFinish_<wbr />t</a> <a href="#a3e8ab6e3d836adc26ae6f56b23b529d5" class="m-doc-self">mOnLoadFinish</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a6433142ec4772c3971558bf2a05b8b43">
+              void* <a href="#a6433142ec4772c3971558bf2a05b8b43" class="m-doc-self">mOnLoadFinishObject</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a50fa9669c59d7ad4e79961c8665a927d">
+              bool <a href="#a50fa9669c59d7ad4e79961c8665a927d" class="m-doc-self">mTerrainGenerateSingleStep</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="acddc4b581e85d0e444905ac46ee4fd35">
+              float <a href="#acddc4b581e85d0e444905ac46ee4fd35" class="m-doc-self">mTerrainGenerateTimeLimit</a>
             </dt>
             <dd><span></span></dd>
             <dt id="a0a1e0e1046699c61b26dac0b5adb6474">
@@ -157,76 +199,24 @@
               int <a href="#a955fc7b2fbf13e27d18ca806b644bcdc" class="m-doc-self">field_114</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="a629092924d397249e85f16c8e6a9fd3d">
-              int <a href="#a629092924d397249e85f16c8e6a9fd3d" class="m-doc-self">field_148</a>
+            <dt id="a071a552b7b98ed334f9b379cf73a7e85">
+              <a href="class_terrain_1_1c_terrain_sphere_quad.html" class="m-doc">cTerrainSphereQuad</a>* <a href="#a071a552b7b98ed334f9b379cf73a7e85" class="m-doc-self">field_118</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="a83b4cdedc75770809b259f651c972358">
-              int <a href="#a83b4cdedc75770809b259f651c972358" class="m-doc-self">field_14C</a>
+            <dt id="a5a529d0e06d0fbd8296bdb4eea7adb7d">
+              <a href="class_terrain_1_1c_terrain_sphere_quad.html" class="m-doc">cTerrainSphereQuad</a>* <a href="#a5a529d0e06d0fbd8296bdb4eea7adb7d" class="m-doc-self">field_130</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="af89fd26c3297bd2c03dbec124957e39f">
-              int <a href="#af89fd26c3297bd2c03dbec124957e39f" class="m-doc-self">field_150</a>
+            <dt id="a8fc05611b3bbcbb3319d871359865fb3">
+              <a href="_texture_8h.html#affea3369120131ed058702d2945a10b4" class="m-doc">TexturePtr</a> <a href="#a8fc05611b3bbcbb3319d871359865fb3" class="m-doc-self">field_148</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="a60864725dd8bf0a3787764447e4b4498">
-              int <a href="#a60864725dd8bf0a3787764447e4b4498" class="m-doc-self">field_154</a>
+            <dt id="ab243ff0d5a28d2de2e458ca214d2aac2">
+              <a href="_texture_8h.html#affea3369120131ed058702d2945a10b4" class="m-doc">TexturePtr</a> <a href="#ab243ff0d5a28d2de2e458ca214d2aac2" class="m-doc-self">field_160</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="a4b9c9f48e853fd22f6f507439011f8dc">
-              int <a href="#a4b9c9f48e853fd22f6f507439011f8dc" class="m-doc-self">field_158</a>
-            </dt>
-            <dd><span></span></dd>
-            <dt id="a4590d96a303600d35a76a2de09590fa7">
-              int <a href="#a4590d96a303600d35a76a2de09590fa7" class="m-doc-self">field_15C</a>
-            </dt>
-            <dd><span></span></dd>
-            <dt id="ae953db1c82555389f77cb09241aae9b7">
-              int <a href="#ae953db1c82555389f77cb09241aae9b7" class="m-doc-self">field_160</a>
-            </dt>
-            <dd><span></span></dd>
-            <dt id="a040b44d616f7bbda0f4bbc1d182b78ec">
-              int <a href="#a040b44d616f7bbda0f4bbc1d182b78ec" class="m-doc-self">field_164</a>
-            </dt>
-            <dd><span></span></dd>
-            <dt id="a884d4b0a84995a9c923c2e020283c8ce">
-              int <a href="#a884d4b0a84995a9c923c2e020283c8ce" class="m-doc-self">field_168</a>
-            </dt>
-            <dd><span></span></dd>
-            <dt id="aca490f2e8fa59f6300f96ceea74fc207">
-              int <a href="#aca490f2e8fa59f6300f96ceea74fc207" class="m-doc-self">field_16C</a>
-            </dt>
-            <dd><span></span></dd>
-            <dt id="a1f47e986b9bb08f9715a091b6bfe9e04">
-              int <a href="#a1f47e986b9bb08f9715a091b6bfe9e04" class="m-doc-self">field_170</a>
-            </dt>
-            <dd><span></span></dd>
-            <dt id="a509b0c4ea32e91c636054ac315af705e">
-              int <a href="#a509b0c4ea32e91c636054ac315af705e" class="m-doc-self">field_174</a>
-            </dt>
-            <dd><span></span></dd>
-            <dt id="ae1d360998a578b2c6cbf51c5853f82cf">
-              int <a href="#ae1d360998a578b2c6cbf51c5853f82cf" class="m-doc-self">field_178</a>
-            </dt>
-            <dd><span></span></dd>
-            <dt id="a7f341b46275a8e66ab83d27a0ab80e35">
-              int <a href="#a7f341b46275a8e66ab83d27a0ab80e35" class="m-doc-self">field_17C</a>
-            </dt>
-            <dd><span></span></dd>
-            <dt id="ab6c61896e86a1fb3c1e615f4a4ecbee7">
-              int <a href="#ab6c61896e86a1fb3c1e615f4a4ecbee7" class="m-doc-self">field_180</a>
-            </dt>
-            <dd><span></span></dd>
-            <dt id="a9f89cdc71cdfa6122d6f05e5c658e1f1">
-              int <a href="#a9f89cdc71cdfa6122d6f05e5c658e1f1" class="m-doc-self">field_184</a>
-            </dt>
-            <dd><span></span></dd>
-            <dt id="abe82130c840850a89c3d60357223c7c0">
-              int <a href="#abe82130c840850a89c3d60357223c7c0" class="m-doc-self">field_188</a>
-            </dt>
-            <dd><span></span></dd>
-            <dt id="a7b27da827159180a9ce02f396e68d4a7">
-              int <a href="#a7b27da827159180a9ce02f396e68d4a7" class="m-doc-self">field_18C</a>
+            <dt id="a21cec9a027b79213ccc4dfbfa783c366">
+              <a href="_texture_8h.html#affea3369120131ed058702d2945a10b4" class="m-doc">TexturePtr</a> <a href="#a21cec9a027b79213ccc4dfbfa783c366" class="m-doc-self">field_178</a>
             </dt>
             <dd><span></span></dd>
             <dt id="a63f0534328ca2950881d5080b6faf94a">
@@ -241,28 +231,28 @@
               vector&lt;int&gt; <a href="#ad31924bb97c290de2d9a26a97e2b25f1" class="m-doc-self">field_1B8</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="a4e53a17b3ce8c7488661c4c75c3ae6b5">
-              int <a href="#a4e53a17b3ce8c7488661c4c75c3ae6b5" class="m-doc-self">field_1CC</a>
+            <dt id="af2c72425386e91cc03743a89a557dec9">
+              uint32_t <a href="#af2c72425386e91cc03743a89a557dec9" class="m-doc-self">mSeed</a>
             </dt>
             <dd><span></span></dd>
             <dt id="a6bd637f260f76bdf8a77c2661d1594d9">
               int <a href="#a6bd637f260f76bdf8a77c2661d1594d9" class="m-doc-self">field_1D0</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="a9c4f5a7df5c59bfa299ce88c9cd9e831">
-              int <a href="#a9c4f5a7df5c59bfa299ce88c9cd9e831" class="m-doc-self">field_1D4</a>
+            <dt id="a67925057359316facf6285cea169318e">
+              int <a href="#a67925057359316facf6285cea169318e" class="m-doc-self">mPlanetLODChunkRes</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="a7d8fa77a9e0ad5e9dd7bc52fcd442295">
-              float <a href="#a7d8fa77a9e0ad5e9dd7bc52fcd442295" class="m-doc-self">field_1D8</a>
+            <dt id="a8244938c97d035f3530889e39a0bd1e2">
+              float <a href="#a8244938c97d035f3530889e39a0bd1e2" class="m-doc-self">mPlanetUnderwaterCullRadius</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="adcca45a88563a070742c5da9562aaa7e">
-              float <a href="#adcca45a88563a070742c5da9562aaa7e" class="m-doc-self">field_1DC</a>
+            <dt id="aab01779f81a3f7cbe39c185c0b4d21ac">
+              float <a href="#aab01779f81a3f7cbe39c185c0b4d21ac" class="m-doc-self">mPlanetUnderwaterLargeCullRadius</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="a116063e303cc4d93fe686e51eade8c90">
-              float <a href="#a116063e303cc4d93fe686e51eade8c90" class="m-doc-self">field_1E0</a>
+            <dt id="a818501776b0cb9e0a21b4617566c3be0">
+              float <a href="#a818501776b0cb9e0a21b4617566c3be0" class="m-doc-self">mPlanetUnderwaterCullRadiusMultiplier</a>
             </dt>
             <dd><span></span></dd>
             <dt id="a4cd26e0fc2e68237fd41247147d297ec">
@@ -305,12 +295,12 @@
               float <a href="#a3d34f4388f34d5c9b2d90dfee1e331ea" class="m-doc-self">field_208</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="affeb03cb08e92d0619b2043011894504">
-              int <a href="#affeb03cb08e92d0619b2043011894504" class="m-doc-self">field_20C</a>
+            <dt id="a51aabd1df1bd447c7b505434e492ba2c">
+              <a href="class_terrain_1_1c_terrain_state_mgr.html" class="m-doc">cTerrainStateMgr</a>* <a href="#a51aabd1df1bd447c7b505434e492ba2c" class="m-doc-self">mpTerrainStateMgr</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="a695af66e377e4fbcb0661b25231866c4">
-              int <a href="#a695af66e377e4fbcb0661b25231866c4" class="m-doc-self">field_210</a>
+            <dt id="aaf4073ff0dea1d8eb106c60381c1ecd2">
+              <a href="c_weather_manager_8h.html#acb27aec14643b0a97a79fe2d67d6e13f" class="m-doc">cWeatherManagerPtr</a> <a href="#aaf4073ff0dea1d8eb106c60381c1ecd2" class="m-doc-self">mpWeatherManager</a>
             </dt>
             <dd><span></span></dd>
             <dt id="a723c5dec819090b54351466f8172ea16">
@@ -365,20 +355,20 @@
               vector&lt;int&gt; <a href="#a624a9a3ca58cd2973308663839f8876e" class="m-doc-self">field_2F4</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="aca6cbb4fba78e089b57548d99b1091eb">
-              int <a href="#aca6cbb4fba78e089b57548d99b1091eb" class="m-doc-self">field_308</a>
+            <dt id="a8afe3147e9dbf325335aa98913b1dc6b">
+              <a href="_texture_8h.html#affea3369120131ed058702d2945a10b4" class="m-doc">TexturePtr</a> <a href="#a8afe3147e9dbf325335aa98913b1dc6b" class="m-doc-self">field_308</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="a032439857850d8b350ce32764e6c31e1">
-              <a href="struct_math_1_1_vector4.html" class="m-doc">Vector4</a> <a href="#a032439857850d8b350ce32764e6c31e1" class="m-doc-self">field_30C</a>
+            <dt id="a649f689453bd95ee13285f064c12e117">
+              <a href="struct_math_1_1_vector4.html" class="m-doc">Vector4</a> <a href="#a649f689453bd95ee13285f064c12e117" class="m-doc-self">mCameraPos</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="a25f63a11835b64af798bb7e122dd07b4">
-              <a href="struct_math_1_1_vector4.html" class="m-doc">Vector4</a> <a href="#a25f63a11835b64af798bb7e122dd07b4" class="m-doc-self">field_31C</a>
+            <dt id="a8a94f53725980014d9fda81c47b60530">
+              <a href="struct_math_1_1_vector4.html" class="m-doc">Vector4</a> <a href="#a8a94f53725980014d9fda81c47b60530" class="m-doc-self">mCameraDir</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="ab5a55b0a58d3e7cf72c3e295b94b94e0">
-              <a href="struct_math_1_1_vector4.html" class="m-doc">Vector4</a> <a href="#ab5a55b0a58d3e7cf72c3e295b94b94e0" class="m-doc-self">field_32C</a>
+            <dt id="a10c82d2e9e5e9bbab8491658b2a65812">
+              <a href="struct_math_1_1_vector4.html" class="m-doc">Vector4</a> <a href="#a10c82d2e9e5e9bbab8491658b2a65812" class="m-doc-self">mSunDir</a>
             </dt>
             <dd><span></span></dd>
             <dt id="a5fd737bc29d1c9a8516c43a5f14be2a8">
@@ -401,24 +391,24 @@
               bool <a href="#a1086a2cbbdde855c77a2d51ea15c2ed5" class="m-doc-self">field_348</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="aa74f4b7991dbac412ea5f1ba027051f5">
-              float <a href="#aa74f4b7991dbac412ea5f1ba027051f5" class="m-doc-self">field_34C</a>
+            <dt id="aaa2ba52d9d42fc28e462b775c4b6e959">
+              float <a href="#aaa2ba52d9d42fc28e462b775c4b6e959" class="m-doc-self">mMungeHeightMapScale</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="a08a9be57090bf2f021a21b1ffac3b570">
-              float <a href="#a08a9be57090bf2f021a21b1ffac3b570" class="m-doc-self">field_350</a>
+            <dt id="a1ea02bd80d1cef52da3de6a78d88548e">
+              float <a href="#a1ea02bd80d1cef52da3de6a78d88548e" class="m-doc-self">mMungeWindMapScale</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="a385fd81f91ed9abfc0231e5c1a6a0883">
-              float <a href="#a385fd81f91ed9abfc0231e5c1a6a0883" class="m-doc-self">field_354</a>
+            <dt id="a6c267dc265b524c332d8f7bdcbeece81">
+              float <a href="#a6c267dc265b524c332d8f7bdcbeece81" class="m-doc-self">mMungeTempMapScale</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="a2ca626e4da96e1232e60ba680f8d5201">
-              float <a href="#a2ca626e4da96e1232e60ba680f8d5201" class="m-doc-self">field_358</a>
+            <dt id="a248c0c6e44f3def395fb00584f970f23">
+              float <a href="#a248c0c6e44f3def395fb00584f970f23" class="m-doc-self">mMungeLatMapScale</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="ab39635a332805b54d36ff167b593772e">
-              float <a href="#ab39635a332805b54d36ff167b593772e" class="m-doc-self">field_35C</a>
+            <dt id="aa065f618056b84d295566621767242af">
+              float <a href="#aa065f618056b84d295566621767242af" class="m-doc-self">mMungeAlphaNoiseStrength</a>
             </dt>
             <dd><span></span></dd>
             <dt id="a03f2e6a82ece4fe8931d3e40dfed8c6a">
@@ -429,8 +419,8 @@
               float <a href="#ada208fa6b91660005878c78e67daa01a" class="m-doc-self">field_364</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="ad893963472f3991b292d4cd90f90ac4b">
-              int <a href="#ad893963472f3991b292d4cd90f90ac4b" class="m-doc-self">field_368</a>
+            <dt id="aceca605e990b4934c4bd33c408096858">
+              int8_t <a href="#aceca605e990b4934c4bd33c408096858" class="m-doc-self">field_368</a>
             </dt>
             <dd><span></span></dd>
             <dt id="a8564cee0c5caa98bdb016f7f173c8b88">
@@ -441,6 +431,14 @@
               bool <a href="#a3afb36e8eba6d5c8c4f4c3f54965161c" class="m-doc-self">field_370</a>
             </dt>
             <dd><span></span></dd>
+            <dt id="acc1fd16c2934c01d86075a70661c738c">
+              char <a href="#acc1fd16c2934c01d86075a70661c738c" class="m-doc-self">padding_374</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="af5dbd3ed0f2a84492e11662ed55710bc">
+              <a href="struct_math_1_1_vector4.html" class="m-doc">Vector4</a> <a href="#af5dbd3ed0f2a84492e11662ed55710bc" class="m-doc-self">field_494</a>
+            </dt>
+            <dd><span></span></dd>
             <dt id="a2853e17fe7bbd0c0edecb6571e5f3ec5">
               bool <a href="#a2853e17fe7bbd0c0edecb6571e5f3ec5" class="m-doc-self">field_4F4</a>
             </dt>
@@ -449,32 +447,88 @@
               bool <a href="#ad9b5d0afee30ce7009bfea7071b980e1" class="m-doc-self">field_4F5</a>
             </dt>
             <dd><span></span></dd>
+            <dt id="a79d42c3bae6fb380de761d3d9d8291ab">
+              <a href="struct_terrain_1_1_terrain_state.html" class="m-doc">TerrainState</a> <a href="#a79d42c3bae6fb380de761d3d9d8291ab" class="m-doc-self">mTerrainState</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="af8a3598037a3a10742c56ed4e54f12ab">
+              <a href="struct_math_1_1_vector4.html" class="m-doc">Vector4</a> <a href="#af8a3598037a3a10742c56ed4e54f12ab" class="m-doc-self">mTramp</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a7ce47285a9f33a863bda890e45c47868">
+              <a href="struct_math_1_1_vector4.html" class="m-doc">Vector4</a> <a href="#a7ce47285a9f33a863bda890e45c47868" class="m-doc-self">field_6B8</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="aacf1b4d8449f6f9a4e755a3d911eb056">
+              <a href="struct_math_1_1_vector4.html" class="m-doc">Vector4</a> <a href="#aacf1b4d8449f6f9a4e755a3d911eb056" class="m-doc-self">field_6C8</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a97107c7ec8f73dee2016c571351ac5b6">
+              <a href="struct_terrain_1_1_terrain_lighting.html" class="m-doc">TerrainLighting</a> <a href="#a97107c7ec8f73dee2016c571351ac5b6" class="m-doc-self">mTerrainLighting</a>
+            </dt>
+            <dd><span></span></dd>
             <dt id="a0cf376cfec1bbf87b4da9e28126b7778">
               vector&lt;int&gt; <a href="#a0cf376cfec1bbf87b4da9e28126b7778" class="m-doc-self">field_758</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="acc114e78714d1f63dc029f278264a31d">
-              bool <a href="#acc114e78714d1f63dc029f278264a31d" class="m-doc-self">field_76C</a>
+            <dt id="a2f9ae78edf7d51c19cf4c30b97b4554a">
+              bool <a href="#a2f9ae78edf7d51c19cf4c30b97b4554a" class="m-doc-self">mAmbientEffectsLoaded</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="af8f462b0a9585c2ae434e9a70b6d0369">
-              vector&lt;int&gt; <a href="#af8f462b0a9585c2ae434e9a70b6d0369" class="m-doc-self">field_770</a>
+            <dt id="a4c2979c716de049f7aa71cd256e8697b">
+              vector&lt;<a href="struct_terrain_1_1_sphere_1_1c_terrain_sphere_1_1_terrain_modification.html" class="m-doc">TerrainModification</a>&gt; <a href="#a4c2979c716de049f7aa71cd256e8697b" class="m-doc-self">mModelFootprints</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="a2098de6b9ed51f02917362abaea86bec">
-              vector&lt;int&gt; <a href="#a2098de6b9ed51f02917362abaea86bec" class="m-doc-self">field_784</a>
+            <dt id="a92b0e16ae6a4105a4d5e509d13a6a30f">
+              vector&lt;<a href="struct_terrain_1_1_sphere_1_1c_terrain_sphere_1_1_terrain_modification.html" class="m-doc">TerrainModification</a>&gt; <a href="#a92b0e16ae6a4105a4d5e509d13a6a30f" class="m-doc-self">mModelNeedRelevel</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="a4d2604a938344f448fa566782b8020c9">
-              vector&lt;int&gt; <a href="#a4d2604a938344f448fa566782b8020c9" class="m-doc-self">field_798</a>
+            <dt id="a2fc78ce4d2d7fd02a8ddfef3190dee4b">
+              vector&lt;<a href="struct_terrain_1_1_sphere_1_1c_terrain_sphere_1_1_terrain_modification.html" class="m-doc">TerrainModification</a>&gt; <a href="#a2fc78ce4d2d7fd02a8ddfef3190dee4b" class="m-doc-self">mPlayerEffects</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="ac506a169a047c9b3a6fa3144844369b7">
-              int <a href="#ac506a169a047c9b3a6fa3144844369b7" class="m-doc-self">field_7AC</a>
+            <dt id="a967ca329504660b3348fee0f352f5782">
+              int <a href="#a967ca329504660b3348fee0f352f5782" class="m-doc-self">mNumModels</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="a4e6c1006f1310c53bd49d8c1799a4304">
-              int <a href="#a4e6c1006f1310c53bd49d8c1799a4304" class="m-doc-self">field_7B0</a>
+            <dt id="a32902d981b86535736d84e5848e17498">
+              vector&lt;<a href="struct_resource_key.html" class="m-doc">ResourceKey</a>&gt; <a href="#a32902d981b86535736d84e5848e17498" class="m-doc-self">mModelKeys</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="ac18ef8ca048858401f9ca985f910e0ba">
+              vector&lt;<a href="class_transform.html" class="m-doc">Transform</a>&gt; <a href="#ac18ef8ca048858401f9ca985f910e0ba" class="m-doc-self">mModelTransforms</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="aa70385cefacfbc4e7f3edaed6ee337f0">
+              vector&lt;<a href="_model_asset_8h.html#a4695930ef0d84e11d31379e623af5732" class="m-doc">ModelPtr</a>&gt; <a href="#aa70385cefacfbc4e7f3edaed6ee337f0" class="m-doc-self">mModels</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a316f39e2b40b7af2629841ee4084123d">
+              vector&lt;<a href="_i_effect_8h.html#adc433612d1d4c8a3a401b5c1dc2d4eba" class="m-doc">IEffectPtr</a>&gt; <a href="#a316f39e2b40b7af2629841ee4084123d" class="m-doc-self">mAmbientEffects</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a86ab2b65a62b7eb5cbaf0c3559d60932">
+              vector&lt;<a href="_i_effect_8h.html#adc433612d1d4c8a3a401b5c1dc2d4eba" class="m-doc">IEffectPtr</a>&gt; <a href="#a86ab2b65a62b7eb5cbaf0c3559d60932" class="m-doc-self">mAmbientSoundEffects</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a1248a942b1dfedb3df912ab40f2fb0f6">
+              int <a href="#a1248a942b1dfedb3df912ab40f2fb0f6" class="m-doc-self">mPlayerModCount</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="adb73ea64527f8cc1bcc1945d0845652c">
+              bool <a href="#adb73ea64527f8cc1bcc1945d0845652c" class="m-doc-self">mAllowUnderwaterObjects</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a7f194621377a6e1c3a21aa147c3d3c31">
+              vector&lt;pair&lt;<a href="_i_model_world_8h.html#ac806a1f42e226576db417e69309943f5" class="m-doc">IModelWorldPtr</a>, int&gt;&gt; <a href="#a7f194621377a6e1c3a21aa147c3d3c31" class="m-doc-self">mUnderwaterModelWorlds</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a7fda9317cc18ffa03e83a6e32c5c12b6">
+              vector&lt;pair&lt;<a href="_i_anim_world_8h.html#a9ff522673dfc4e748545440d74e45410" class="m-doc">IAnimWorldPtr</a>, int&gt;&gt; <a href="#a7fda9317cc18ffa03e83a6e32c5c12b6" class="m-doc-self">mUnderwaterAnimWorlds</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="ad5176161a41e8c78fa0a0a77eadff77c">
+              <a href="class_app_1_1c_viewer.html" class="m-doc">App::<wbr />cViewer</a>* <a href="#ad5176161a41e8c78fa0a0a77eadff77c" class="m-doc-self">mpTerrainViewer</a>
             </dt>
             <dd><span></span></dd>
           </dl>

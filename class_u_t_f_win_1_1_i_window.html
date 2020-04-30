@@ -137,10 +137,10 @@
               <span class="m-doc-wrap-bumper">auto <a href="#a6abd167eb9ecaee01e11696629801cbb" class="m-doc">GetCommandID</a>(</span><span class="m-doc-wrap">) const -&gt; uint32_t <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
             <dd>Get the message ID sent by this window.</dd>
-            <dt id="aa1607ba1439d983c1193d1d0bac67465">
-              <span class="m-doc-wrap-bumper">auto <a href="#aa1607ba1439d983c1193d1d0bac67465" class="m-doc-self">func9</a>(</span><span class="m-doc-wrap">) const -&gt; int <span class="m-label m-flat m-warning">pure virtual</span></span>
+            <dt id="a3b6fb5122732a166a2f740d939d07c9b">
+              <span class="m-doc-wrap-bumper">auto <a href="#a3b6fb5122732a166a2f740d939d07c9b" class="m-doc-self">GetCursorID</a>(</span><span class="m-doc-wrap">) const -&gt; uint32_t <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
-            <dd><span></span></dd>
+            <dd>Returns the ID which assigns a cursor to this window.</dd>
             <dt>
               <span class="m-doc-wrap-bumper">auto <a href="#af083ac2e7a61a76db1cd74f156aff77e" class="m-doc">GetFlags</a>(</span><span class="m-doc-wrap">) const -&gt; <a href="namespace_u_t_f_win.html#ad55bb2756e25b6e36f38b47e0ca8e107" class="m-doc">WindowFlags</a> <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
@@ -225,10 +225,10 @@
               float fHeight) <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
             <dd>Assigns the width and height that this window should have after all layouts are applied.</dd>
-            <dt id="a57be59023cb4cc8a423b75e6f399b6bb">
-              <span class="m-doc-wrap-bumper">void <a href="#a57be59023cb4cc8a423b75e6f399b6bb" class="m-doc-self">func30</a>(</span><span class="m-doc-wrap">int) <span class="m-label m-flat m-warning">pure virtual</span></span>
+            <dt>
+              <span class="m-doc-wrap-bumper">void <a href="#a1851e8f389df55ab6b9e5a66de68e259" class="m-doc">SetCursorID</a>(</span><span class="m-doc-wrap">uint32_t id) <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
-            <dd><span></span></dd>
+            <dd>Sets the ID which assigns a cursor to this window.</dd>
             <dt>
               <span class="m-doc-wrap-bumper">void <a href="#a8b2cadb73487b7bea5584474c73d079a" class="m-doc">SetFlag</a>(</span><span class="m-doc-wrap"><a href="namespace_u_t_f_win.html#ad55bb2756e25b6e36f38b47e0ca8e107" class="m-doc">WindowFlags</a> nFlag,
               bool bValue) <span class="m-label m-flat m-warning">pure virtual</span></span>
@@ -295,25 +295,21 @@
               int) -&gt; int <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
             <dd><span></span></dd>
-            <dt id="afc2963e0c0dee17c0346270b7cfc7f0c">
-              <span class="m-doc-wrap-bumper">auto <a href="#afc2963e0c0dee17c0346270b7cfc7f0c" class="m-doc-self">func47</a>(</span><span class="m-doc-wrap">float,
-              float) -&gt; int <span class="m-label m-flat m-warning">pure virtual</span></span>
+            <dt id="a187b93ba8ee55eb776e4fd73edef2fc2">
+              <span class="m-doc-wrap-bumper">auto <a href="#a187b93ba8ee55eb776e4fd73edef2fc2" class="m-doc-self">ContainsPoint</a>(</span><span class="m-doc-wrap">struct <a href="struct_math_1_1_point.html" class="m-doc">Point</a> localCoords) -&gt; bool <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
             <dd><span></span></dd>
-            <dt id="a91509bcff458facfac899a5c9b888aac">
-              <span class="m-doc-wrap-bumper">auto <a href="#a91509bcff458facfac899a5c9b888aac" class="m-doc-self">func48</a>(</span><span class="m-doc-wrap">float,
-              float) -&gt; <a href="struct_math_1_1_point.html" class="m-doc">Point</a> <span class="m-label m-flat m-warning">pure virtual</span></span>
+            <dt id="a1bf0735d7d8177c7388e61a5eab5a8f3">
+              <span class="m-doc-wrap-bumper">auto <a href="#a1bf0735d7d8177c7388e61a5eab5a8f3" class="m-doc-self">ToGlobalCoordinates</a>(</span><span class="m-doc-wrap">struct <a href="struct_math_1_1_point.html" class="m-doc">Point</a> localCoords) -&gt; <a href="struct_math_1_1_point.html" class="m-doc">Point</a> <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
             <dd><span></span></dd>
-            <dt id="af9dca79b4dd4db8e2c40490798ef4361">
-              <span class="m-doc-wrap-bumper">auto <a href="#af9dca79b4dd4db8e2c40490798ef4361" class="m-doc-self">func49</a>(</span><span class="m-doc-wrap">float,
-              float) -&gt; <a href="struct_math_1_1_point.html" class="m-doc">Point</a> <span class="m-label m-flat m-warning">pure virtual</span></span>
+            <dt id="a2c45993693f28c56de480ec092281439">
+              <span class="m-doc-wrap-bumper">auto <a href="#a2c45993693f28c56de480ec092281439" class="m-doc-self">ToLocalCoordinates</a>(</span><span class="m-doc-wrap">struct <a href="struct_math_1_1_point.html" class="m-doc">Point</a> globalPos) -&gt; <a href="struct_math_1_1_point.html" class="m-doc">Point</a> <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
             <dd><span></span></dd>
-            <dt id="a8f64faa36fba22e5a028282346d2c2dc">
-              <span class="m-doc-wrap-bumper">auto <a href="#a8f64faa36fba22e5a028282346d2c2dc" class="m-doc-self">func50</a>(</span><span class="m-doc-wrap">float,
-              float,
-              <a href="struct_math_1_1_point.html" class="m-doc">Point</a>&amp; dst) -&gt; bool <span class="m-label m-flat m-warning">pure virtual</span></span>
+            <dt id="ab6fc0e52d3dcdc7777dfebf3e0fc4a2e">
+              <span class="m-doc-wrap-bumper">auto <a href="#ab6fc0e52d3dcdc7777dfebf3e0fc4a2e" class="m-doc-self">ToLocalCoordinates2</a>(</span><span class="m-doc-wrap">struct <a href="struct_math_1_1_point.html" class="m-doc">Point</a> globalPos,
+              <a href="struct_math_1_1_point.html" class="m-doc">Point</a>&amp; dstLocal) -&gt; bool <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
             <dd><span></span></dd>
             <dt>
@@ -858,6 +854,13 @@
               </tbody>
             </table>
 <p>This will call the <a href="class_u_t_f_win_1_1_i_layout_style.html#a219bde4cfe1e13e90f8a7f929daa2d87" class="m-doc">ILayoutStyle::<wbr />RevertLayout()</a> method on all the layout styles in this window, starting with the last one (so the first layout applied will be the last one to be reverted), and then SetArea is called. This ensures that the given width and height parameters will be the real dimensions of this window. Calling this method effectively calls the <a href="class_u_t_f_win_1_1_i_window.html#ab5cfbb8a424612d533c292f02b14b306" class="m-doc">Revalidate()</a> method, which ensures the real area of the window is updated using the new values.</p>
+          </div></section>
+          <section class="m-doc-details" id="a1851e8f389df55ab6b9e5a66de68e259"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">void UTFWin::<wbr />IWindow::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a1851e8f389df55ab6b9e5a66de68e259" class="m-doc-self">SetCursorID</a>(</span><span class="m-doc-wrap">uint32_t id) <span class="m-label m-warning">pure virtual</span></span></span>
+            </h3>
+            <p>Sets the ID which assigns a cursor to this window.</p>
+<p>The ID must have been loaded with cCursorManager::LoadCursor()</p>
           </div></section>
           <section class="m-doc-details" id="a8b2cadb73487b7bea5584474c73d079a"><div>
             <h3>

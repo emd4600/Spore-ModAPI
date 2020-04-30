@@ -166,10 +166,10 @@
               <span class="m-doc-wrap-bumper">auto <a href="#a8faa60e975a97cf02b9a37e7290704b8" class="m-doc">GetCommandID</a>(</span><span class="m-doc-wrap">) const -&gt; uint32_t <span class="m-label m-flat m-warning">override</span></span>
             </dt>
             <dd>Get the message ID sent by this window.</dd>
-            <dt id="a92833def6ce8f9d3000305523c3ea38a">
-              <span class="m-doc-wrap-bumper">auto <a href="#a92833def6ce8f9d3000305523c3ea38a" class="m-doc-self">func9</a>(</span><span class="m-doc-wrap">) const -&gt; int <span class="m-label m-flat m-warning">override</span></span>
+            <dt id="a5ba5e3e976d041f745ee3497bbb38916">
+              <span class="m-doc-wrap-bumper">auto <a href="#a5ba5e3e976d041f745ee3497bbb38916" class="m-doc-self">GetCursorID</a>(</span><span class="m-doc-wrap">) const -&gt; uint32_t <span class="m-label m-flat m-warning">override</span></span>
             </dt>
-            <dd><span></span></dd>
+            <dd>Returns the ID which assigns a cursor to this window.</dd>
             <dt>
               <span class="m-doc-wrap-bumper">auto <a href="#a7c885751d2936beba8d1cedbd186116e" class="m-doc">GetFlags</a>(</span><span class="m-doc-wrap">) const -&gt; <a href="namespace_u_t_f_win.html#ad55bb2756e25b6e36f38b47e0ca8e107" class="m-doc">WindowFlags</a> <span class="m-label m-flat m-warning">override</span></span>
             </dt>
@@ -254,10 +254,10 @@
               float fHeight) <span class="m-label m-flat m-warning">override</span></span>
             </dt>
             <dd>Assigns the width and height that this window should have after all layouts are applied.</dd>
-            <dt id="a529498916df6afe366645721ccb0831a">
-              <span class="m-doc-wrap-bumper">void <a href="#a529498916df6afe366645721ccb0831a" class="m-doc-self">func30</a>(</span><span class="m-doc-wrap">int) <span class="m-label m-flat m-warning">override</span></span>
+            <dt>
+              <span class="m-doc-wrap-bumper">void <a href="#ad19f8f04cff75cb5a5030680acdb3d95" class="m-doc">SetCursorID</a>(</span><span class="m-doc-wrap">uint32_t id) <span class="m-label m-flat m-warning">override</span></span>
             </dt>
-            <dd><span></span></dd>
+            <dd>Sets the ID which assigns a cursor to this window.</dd>
             <dt>
               <span class="m-doc-wrap-bumper">void <a href="#a6d2d0128a41130cd27db3239bf522a52" class="m-doc">SetFlag</a>(</span><span class="m-doc-wrap"><a href="namespace_u_t_f_win.html#ad55bb2756e25b6e36f38b47e0ca8e107" class="m-doc">WindowFlags</a> nFlag,
               bool bValue) <span class="m-label m-flat m-warning">override</span></span>
@@ -324,24 +324,20 @@
               int) -&gt; int <span class="m-label m-flat m-warning">override</span></span>
             </dt>
             <dd><span></span></dd>
-            <dt id="aab765c9f20a1b72b0376dd9557b30f96">
-              <span class="m-doc-wrap-bumper">auto <a href="#aab765c9f20a1b72b0376dd9557b30f96" class="m-doc-self">func47</a>(</span><span class="m-doc-wrap">float,
-              float) -&gt; int <span class="m-label m-flat m-warning">override</span></span>
+            <dt id="ac4d5c3cb8ebe532cf90b70677b4c20df">
+              <span class="m-doc-wrap-bumper">auto <a href="#ac4d5c3cb8ebe532cf90b70677b4c20df" class="m-doc-self">ContainsPoint</a>(</span><span class="m-doc-wrap">struct <a href="struct_math_1_1_point.html" class="m-doc">Point</a>) -&gt; bool <span class="m-label m-flat m-warning">override</span></span>
             </dt>
             <dd><span></span></dd>
-            <dt id="a9801dd04e4af480155ee730458c711ea">
-              <span class="m-doc-wrap-bumper">auto <a href="#a9801dd04e4af480155ee730458c711ea" class="m-doc-self">func48</a>(</span><span class="m-doc-wrap">float,
-              float) -&gt; <a href="struct_math_1_1_point.html" class="m-doc">Point</a> <span class="m-label m-flat m-warning">override</span></span>
+            <dt id="a6a25973e3084de6373037aae2a9bd6bb">
+              <span class="m-doc-wrap-bumper">auto <a href="#a6a25973e3084de6373037aae2a9bd6bb" class="m-doc-self">ToGlobalCoordinates</a>(</span><span class="m-doc-wrap">struct <a href="struct_math_1_1_point.html" class="m-doc">Point</a>) -&gt; <a href="struct_math_1_1_point.html" class="m-doc">Point</a> <span class="m-label m-flat m-warning">override</span></span>
             </dt>
             <dd><span></span></dd>
-            <dt id="a1b5c7b06f0a3adb9a680eab4e74057c9">
-              <span class="m-doc-wrap-bumper">auto <a href="#a1b5c7b06f0a3adb9a680eab4e74057c9" class="m-doc-self">func49</a>(</span><span class="m-doc-wrap">float,
-              float) -&gt; <a href="struct_math_1_1_point.html" class="m-doc">Point</a> <span class="m-label m-flat m-warning">override</span></span>
+            <dt id="a3c71be09e6792dcb9374b92fcac226dd">
+              <span class="m-doc-wrap-bumper">auto <a href="#a3c71be09e6792dcb9374b92fcac226dd" class="m-doc-self">ToLocalCoordinates</a>(</span><span class="m-doc-wrap">struct <a href="struct_math_1_1_point.html" class="m-doc">Point</a>) -&gt; <a href="struct_math_1_1_point.html" class="m-doc">Point</a> <span class="m-label m-flat m-warning">override</span></span>
             </dt>
             <dd><span></span></dd>
-            <dt id="a3a0d2aac77354b2c4481533ca9180861">
-              <span class="m-doc-wrap-bumper">auto <a href="#a3a0d2aac77354b2c4481533ca9180861" class="m-doc-self">func50</a>(</span><span class="m-doc-wrap">float,
-              float,
+            <dt id="a7f0034bfb5c8fbb5101b7eab6eb790aa">
+              <span class="m-doc-wrap-bumper">auto <a href="#a7f0034bfb5c8fbb5101b7eab6eb790aa" class="m-doc-self">ToLocalCoordinates2</a>(</span><span class="m-doc-wrap">struct <a href="struct_math_1_1_point.html" class="m-doc">Point</a>,
               <a href="struct_math_1_1_point.html" class="m-doc">Point</a>&amp; dst) -&gt; bool <span class="m-label m-flat m-warning">override</span></span>
             </dt>
             <dd><span></span></dd>
@@ -555,8 +551,8 @@
               <a href="union_math_1_1_rectangle.html" class="m-doc">Math::<wbr />Rectangle</a> <a href="#a3aee47229e0d793ff4f0548a483d68f8" class="m-doc-self">mArea</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="ae007c9dbe576c5baa90090cb7b1eed1c">
-              int <a href="#ae007c9dbe576c5baa90090cb7b1eed1c" class="m-doc-self">property_EEC1B009</a>
+            <dt id="a9fc89a02376050bcc17c20c96f1ed84e">
+              uint32_t <a href="#a9fc89a02376050bcc17c20c96f1ed84e" class="m-doc-self">mCursorID</a>
             </dt>
             <dd><span></span></dd>
             <dt id="a5e49d5c23a6d18efd006087c5f09e8b2">
@@ -981,6 +977,13 @@
               </tbody>
             </table>
 <p>This will call the <a href="class_u_t_f_win_1_1_i_layout_style.html#a219bde4cfe1e13e90f8a7f929daa2d87" class="m-doc">ILayoutStyle::<wbr />RevertLayout()</a> method on all the layout styles in this window, starting with the last one (so the first layout applied will be the last one to be reverted), and then SetArea is called. This ensures that the given width and height parameters will be the real dimensions of this window. Calling this method effectively calls the <a href="class_u_t_f_win_1_1_window.html#ab427389484ead82d08cb689d71b3e9fc" class="m-doc">Revalidate()</a> method, which ensures the real area of the window is updated using the new values.</p>
+          </div></section>
+          <section class="m-doc-details" id="ad19f8f04cff75cb5a5030680acdb3d95"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">void UTFWin::<wbr />Window::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ad19f8f04cff75cb5a5030680acdb3d95" class="m-doc-self">SetCursorID</a>(</span><span class="m-doc-wrap">uint32_t id) <span class="m-label m-warning">override</span></span></span>
+            </h3>
+            <p>Sets the ID which assigns a cursor to this window.</p>
+<p>The ID must have been loaded with cCursorManager::LoadCursor()</p>
           </div></section>
           <section class="m-doc-details" id="a6d2d0128a41130cd27db3239bf522a52"><div>
             <h3>

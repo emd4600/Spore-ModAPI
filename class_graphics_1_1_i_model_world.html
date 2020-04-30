@@ -63,7 +63,7 @@
             </li>
           </ul>
         </div>
-<p><a href="class_graphics_1_1_model.html" class="m-doc">Model</a> worlds keep track of all the models loaded in order to render them when the model world itself is rendered. A world can also contain multiple lighting worlds; for more information, check the <a href="class_graphics_1_1_i_lighting_world.html" class="m-doc">ILightingWorld</a> interface. When no lighting worlds are added a default lighting is used.</p><p>In order for the model world to render, you must add it to the render queue. This step is not necessary if the <a href="class_graphics_1_1_i_renderable.html#a36b74c565bd8908b46fc230c16ba39f3" class="m-doc">IRenderable::<wbr />Render()</a> method is called directly from another renderer. For example: <code class="m-code"><span class="n">RenderManager</span><span class="p">.</span><span class="n">AddRenderable</span><span class="p">(</span><span class="n">pModelWorld</span><span class="o">-&gt;</span><span class="n">ToRenderable</span><span class="p">(),</span> <span class="n">Graphics</span><span class="o">::</span><span class="n">kRenderQueueMain</span><span class="p">);</span></code> You might use greater render queue indices, like <a href="namespace_graphics.html#ad960f88ad5a5485084972f788b784497abe828be9aa9033cacef10bef145e82ef" class="m-doc">Graphics::<wbr />kRenderQueueMain</a> + 1. An example of this would be having a model world for translucid objects, which need to be rendered last.</p>
+<p><a href="class_graphics_1_1_model.html" class="m-doc">Model</a> worlds keep track of all the models loaded in order to render them when the model world itself is rendered. A world can also contain multiple lighting worlds; for more information, check the <a href="class_graphics_1_1_i_lighting_world.html" class="m-doc">ILightingWorld</a> interface. When no lighting worlds are added a default lighting is used.</p><p>In order for the model world to render, you must add it to the render queue. This step is not necessary if the <a href="class_graphics_1_1_i_renderable.html#a0f0851cd9f759af968a5cd7b123b9e89" class="m-doc">IRenderable::<wbr />Render()</a> method is called directly from another renderer. For example: <code class="m-code"><span class="n">RenderManager</span><span class="p">.</span><span class="n">AddRenderable</span><span class="p">(</span><span class="n">pModelWorld</span><span class="o">-&gt;</span><span class="n">ToRenderable</span><span class="p">(),</span> <span class="n">Graphics</span><span class="o">::</span><span class="n">kRenderQueueMain</span><span class="p">);</span></code> You might use greater render queue indices, like <a href="namespace_graphics.html#ad960f88ad5a5485084972f788b784497abe828be9aa9033cacef10bef145e82ef" class="m-doc">Graphics::<wbr />kRenderQueueMain</a> + 1. An example of this would be having a model world for translucid objects, which need to be rendered last.</p>
         <section id="pub-types">
           <h2><a href="#pub-types">Public types</a></h2>
           <dl class="m-doc">
@@ -130,20 +130,20 @@
             </dt>
             <dd><span></span></dd>
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#ad0a355c7014aad3a32b425054f4c2bc5" class="m-doc">Raycast</a>(</span><span class="m-doc-wrap">const <a href="struct_math_1_1_vector3.html" class="m-doc">Vector3</a>&amp; point1,
+              <span class="m-doc-wrap-bumper">auto <a href="#afac43126b8ede2c430359831dbea18b1" class="m-doc">Raycast</a>(</span><span class="m-doc-wrap">const <a href="struct_math_1_1_vector3.html" class="m-doc">Vector3</a>&amp; point1,
               const <a href="struct_math_1_1_vector3.html" class="m-doc">Vector3</a>&amp; point2,
-              float*,
-              <a href="struct_math_1_1_vector3.html" class="m-doc">Vector3</a>* dstIntersectionPoint,
+              float* factorDst = nullptr,
+              <a href="struct_math_1_1_vector3.html" class="m-doc">Vector3</a>* dstIntersectionPoint = nullptr,
               <a href="struct_math_1_1_vector3.html" class="m-doc">Vector3</a>* = nullptr,
               <a href="struct_graphics_1_1_filter_settings.html" class="m-doc">FilterSettings</a>&amp; settings = <a href="struct_graphics_1_1_filter_settings.html" class="m-doc">FilterSettings</a>(),
               int* = nullptr,
               int* = nullptr) -&gt; <a href="class_graphics_1_1_model.html" class="m-doc">Model</a>* <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
-            <dd></dd>
-            <dt id="ad0ee2cf7a860497153f1067b428f2147">
-              <span class="m-doc-wrap-bumper">auto <a href="#ad0ee2cf7a860497153f1067b428f2147" class="m-doc-self">func28h</a>(</span><span class="m-doc-wrap">const <a href="struct_math_1_1_vector3.html" class="m-doc">Vector3</a>&amp; point1,
+            <dd>Gets the first model that is intersected with the segment between <code>point1</code> and <code>point2</code>.</dd>
+            <dt id="a27e4f07e54c47087f22306cd725e6ee3">
+              <span class="m-doc-wrap-bumper">auto <a href="#a27e4f07e54c47087f22306cd725e6ee3" class="m-doc-self">func28h</a>(</span><span class="m-doc-wrap">const <a href="struct_math_1_1_vector3.html" class="m-doc">Vector3</a>&amp; point1,
               const <a href="struct_math_1_1_vector3.html" class="m-doc">Vector3</a>&amp; point2,
-              float*,
+              float* factorDst,
               <a href="struct_graphics_1_1_filter_settings.html" class="m-doc">FilterSettings</a>&amp; settings = <a href="struct_graphics_1_1_filter_settings.html" class="m-doc">FilterSettings</a>()) -&gt; <a href="class_graphics_1_1_model.html" class="m-doc">Model</a>* <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
             <dd><span></span></dd>
@@ -220,7 +220,7 @@
             <dt>
               <span class="m-doc-wrap-bumper">void <a href="#a8d5bdf1327e9fa220a59883928f2bb93" class="m-doc">UpdateModel</a>(</span><span class="m-doc-wrap">const <a href="class_graphics_1_1_model.html" class="m-doc">Model</a>* pModel) <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
-            <dd>Although this function is not necessary and it&#x27;s usage is not really known, it&#x27;s recommended to use it on every model loaded to avoid delays when those are displayed for the firt time.</dd>
+            <dd>Ensures the given model is loaded and all its parameters are updated.</dd>
             <dt>
               <span class="m-doc-wrap-bumper">auto <a href="#aec1bfce6c47779ae9160a2b69d18a9ee" class="m-doc">GetBoundingRadius</a>(</span><span class="m-doc-wrap">const <a href="class_graphics_1_1_model.html" class="m-doc">Model</a>* pModel) -&gt; float <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
@@ -539,7 +539,7 @@
             </dt>
             <dd><span></span></dd>
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#a1de5823d09f19834a864b16519fcad93" class="m-doc">SetModelVisibile</a>(</span><span class="m-doc-wrap"><a href="class_graphics_1_1_model.html" class="m-doc">Model</a>* pModel,
+              <span class="m-doc-wrap-bumper">auto <a href="#a54663da683ec2d4e01e0eb403738ec6c" class="m-doc">SetModelVisible</a>(</span><span class="m-doc-wrap"><a href="class_graphics_1_1_model.html" class="m-doc">Model</a>* pModel,
               bool visible) -&gt; bool <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
             <dd>Changes the visibility of a given model inside this world.</dd>
@@ -604,17 +604,18 @@
             </table>
 <p>Keep in mind that a model refers to the configuration file (i.e. the .prop file) which includes the model files for each level of detail, the effects that must be used, etc. If the model configuration does not exist, a builtin model might be used.</p>
           </div></section>
-          <section class="m-doc-details" id="ad0a355c7014aad3a32b425054f4c2bc5"><div>
+          <section class="m-doc-details" id="afac43126b8ede2c430359831dbea18b1"><div>
             <h3>
-              <span class="m-doc-wrap-bumper"><a href="class_graphics_1_1_model.html" class="m-doc">Model</a>* Graphics::<wbr />IModelWorld::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ad0a355c7014aad3a32b425054f4c2bc5" class="m-doc-self">Raycast</a>(</span><span class="m-doc-wrap">const <a href="struct_math_1_1_vector3.html" class="m-doc">Vector3</a>&amp; point1,
+              <span class="m-doc-wrap-bumper"><a href="class_graphics_1_1_model.html" class="m-doc">Model</a>* Graphics::<wbr />IModelWorld::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#afac43126b8ede2c430359831dbea18b1" class="m-doc-self">Raycast</a>(</span><span class="m-doc-wrap">const <a href="struct_math_1_1_vector3.html" class="m-doc">Vector3</a>&amp; point1,
               const <a href="struct_math_1_1_vector3.html" class="m-doc">Vector3</a>&amp; point2,
-              float*,
-              <a href="struct_math_1_1_vector3.html" class="m-doc">Vector3</a>* dstIntersectionPoint,
+              float* factorDst = nullptr,
+              <a href="struct_math_1_1_vector3.html" class="m-doc">Vector3</a>* dstIntersectionPoint = nullptr,
               <a href="struct_math_1_1_vector3.html" class="m-doc">Vector3</a>* = nullptr,
               <a href="struct_graphics_1_1_filter_settings.html" class="m-doc">FilterSettings</a>&amp; settings = <a href="struct_graphics_1_1_filter_settings.html" class="m-doc">FilterSettings</a>(),
               int* = nullptr,
               int* = nullptr) <span class="m-label m-warning">pure virtual</span></span></span>
             </h3>
+            <p>Gets the first model that is intersected with the segment between <code>point1</code> and <code>point2</code>.</p>
             <table class="m-table m-fullwidth m-flat">
               <tfoot>
                 <tr>
@@ -905,7 +906,7 @@
             <h3>
               <span class="m-doc-wrap-bumper">void Graphics::<wbr />IModelWorld::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a8d5bdf1327e9fa220a59883928f2bb93" class="m-doc-self">UpdateModel</a>(</span><span class="m-doc-wrap">const <a href="class_graphics_1_1_model.html" class="m-doc">Model</a>* pModel) <span class="m-label m-warning">pure virtual</span></span></span>
             </h3>
-            <p>Although this function is not necessary and it&#x27;s usage is not really known, it&#x27;s recommended to use it on every model loaded to avoid delays when those are displayed for the firt time.</p>
+            <p>Ensures the given model is loaded and all its parameters are updated.</p>
             <table class="m-table m-fullwidth m-flat">
               <thead>
                 <tr><th colspan="2">Parameters</th></tr>
@@ -1169,9 +1170,9 @@
               </tbody>
             </table>
           </div></section>
-          <section class="m-doc-details" id="a1de5823d09f19834a864b16519fcad93"><div>
+          <section class="m-doc-details" id="a54663da683ec2d4e01e0eb403738ec6c"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">bool Graphics::<wbr />IModelWorld::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a1de5823d09f19834a864b16519fcad93" class="m-doc-self">SetModelVisibile</a>(</span><span class="m-doc-wrap"><a href="class_graphics_1_1_model.html" class="m-doc">Model</a>* pModel,
+              <span class="m-doc-wrap-bumper">bool Graphics::<wbr />IModelWorld::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a54663da683ec2d4e01e0eb403738ec6c" class="m-doc-self">SetModelVisible</a>(</span><span class="m-doc-wrap"><a href="class_graphics_1_1_model.html" class="m-doc">Model</a>* pModel,
               bool visible) <span class="m-label m-warning">pure virtual</span></span></span>
             </h3>
             <p>Changes the visibility of a given model inside this world.</p>

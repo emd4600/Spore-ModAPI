@@ -57,6 +57,7 @@
               <ul>
                 <li><a href="#base-classes">Base classes</a></li>
                 <li><a href="#pub-static-attribs">Public static variables</a></li>
+                <li><a href="#pub-static-methods">Public static functions</a></li>
                 <li><a href="#typeless-methods">Constructors, destructors, conversion operators</a></li>
                 <li><a href="#pub-methods">Public functions</a></li>
                 <li><a href="#pro-attribs">Protected variables</a></li>
@@ -82,6 +83,17 @@
             <dd><span></span></dd>
           </dl>
         </section>
+        <section id="pub-static-methods">
+          <h2><a href="#pub-static-methods">Public static functions</a></h2>
+          <dl class="m-doc">
+            <dt id="aa63aea38400dc4bb55b192214d463573">
+              <span class="m-doc-wrap-bumper">static auto <a href="#aa63aea38400dc4bb55b192214d463573" class="m-doc-self">SetWindowIcon</a>(</span><span class="m-doc-wrap"><a href="class_u_t_f_win_1_1_i_window.html" class="m-doc">IWindow</a>* pWindow,
+              <a href="class_u_t_f_win_1_1_image.html" class="m-doc">Image</a>* pImage,
+              int stateIndex = 0) -&gt; bool</span>
+            </dt>
+            <dd><span></span></dd>
+          </dl>
+        </section>
         <section id="typeless-methods">
           <h2><a href="#typeless-methods">Constructors, destructors, conversion operators</a></h2>
           <dl class="m-doc">
@@ -99,8 +111,7 @@
           <h2><a href="#pub-methods">Public functions</a></h2>
           <dl class="m-doc">
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#aa61d7fcd5f83f7da9d3d083171024d88" class="m-doc">GetImageInfo</a>(</span><span class="m-doc-wrap">int stateIndex,
-              <a href="class_u_t_f_win_1_1_spore_std_drawable_image_info.html" class="m-doc">SporeStdDrawableImageInfo</a>*&amp; dst) const -&gt; bool</span>
+              <span class="m-doc-wrap-bumper">auto <a href="#a3288ea149fe105e36f0f53db4d665ab1" class="m-doc">GetImageInfo</a>(</span><span class="m-doc-wrap">int stateIndex) -&gt; <a href="class_u_t_f_win_1_1_spore_std_drawable_image_info.html" class="m-doc">SporeStdDrawableImageInfo</a>*</span>
             </dt>
             <dd>Gets the image information that is being used for the state specified.</dd>
             <dt>
@@ -108,6 +119,11 @@
               int stateIndex) -&gt; bool</span>
             </dt>
             <dd>Sets the image information that will be used for the state specified.</dd>
+            <dt id="a0663d30118cfbbeb0e3b9d34f887ceaa">
+              <span class="m-doc-wrap-bumper">void <a href="#a0663d30118cfbbeb0e3b9d34f887ceaa" class="m-doc-self">SetIconImage</a>(</span><span class="m-doc-wrap"><a href="class_u_t_f_win_1_1_image.html" class="m-doc">Image</a>* pImage,
+              int stateIndex)</span>
+            </dt>
+            <dd><span></span></dd>
             <dt id="ae2a4fd35d21f3987b3a7850c1a2d0ed1">
               <span class="m-doc-wrap-bumper">auto <a href="#ae2a4fd35d21f3987b3a7850c1a2d0ed1" class="m-doc-self">GetScale</a>(</span><span class="m-doc-wrap">) const -&gt; <a href="struct_math_1_1_vector2.html" class="m-doc">Vector2</a> <span class="m-label m-flat m-warning">virtual</span></span>
             </dt>
@@ -164,8 +180,8 @@
               <a href="class_u_t_f_win_1_1_spore_std_drawable_image_info.html" class="m-doc">SporeStdDrawableImageInfo</a> <a href="#ac3d771a1f32484eebb6a60dbcd60d2f2" class="m-doc-self">mCurrentInfo</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="a664d7bac8b62079445463e8d0f01a324">
-              intrusive_ptr&lt;<a href="class_u_t_f_win_1_1_spore_std_drawable_image_info.html" class="m-doc">SporeStdDrawableImageInfo</a>&gt; <a href="#a664d7bac8b62079445463e8d0f01a324" class="m-doc-self">mImageInfos</a>
+            <dt id="a4d27a859c28075b3b49131cacc8e4d5d">
+              <a href="_spore_std_drawable_image_info_8h.html#a27945f0c63a39d76f13baddd8f9e055c" class="m-doc">SporeStdDrawableImageInfoPtr</a> <a href="#a4d27a859c28075b3b49131cacc8e4d5d" class="m-doc-self">mImageInfos</a>
             </dt>
             <dd><span></span></dd>
             <dt id="a4fa59b23ed7f7e2f177012f30ab6a2cc">
@@ -200,10 +216,9 @@
         </section>
         <section>
           <h2>Function documentation</h2>
-          <section class="m-doc-details" id="aa61d7fcd5f83f7da9d3d083171024d88"><div>
+          <section class="m-doc-details" id="a3288ea149fe105e36f0f53db4d665ab1"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">bool UTFWin::<wbr />SporeStdDrawable::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#aa61d7fcd5f83f7da9d3d083171024d88" class="m-doc-self">GetImageInfo</a>(</span><span class="m-doc-wrap">int stateIndex,
-              <a href="class_u_t_f_win_1_1_spore_std_drawable_image_info.html" class="m-doc">SporeStdDrawableImageInfo</a>*&amp; dst) const</span></span>
+              <span class="m-doc-wrap-bumper"><a href="class_u_t_f_win_1_1_spore_std_drawable_image_info.html" class="m-doc">SporeStdDrawableImageInfo</a>* UTFWin::<wbr />SporeStdDrawable::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a3288ea149fe105e36f0f53db4d665ab1" class="m-doc-self">GetImageInfo</a>(</span><span class="m-doc-wrap">int stateIndex)</span></span>
             </h3>
             <p>Gets the image information that is being used for the state specified.</p>
             <table class="m-table m-fullwidth m-flat">
@@ -215,17 +230,7 @@
                   <td style="width: 1%">stateIndex</td>
                   <td>The index that corresponds to the desired state.</td>
                 </tr>
-                <tr>
-                  <td>dst&nbsp;<span class="m-label m-flat m-warning">out</span></td>
-                  <td>The <a href="class_u_t_f_win_1_1_spore_std_drawable_image_info.html" class="m-doc">SporeStdDrawableImageInfo</a> pointer where the style will be written.</td>
-                </tr>
               </tbody>
-              <tfoot>
-                <tr>
-                  <th>Returns</th>
-                  <td>True if the index is valid, false otherwise.</td>
-                </tr>
-              </tfoot>
             </table>
           </div></section>
           <section class="m-doc-details" id="ab522618764e509860a475107446932c6"><div>

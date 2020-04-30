@@ -131,24 +131,24 @@
               <span class="m-doc-wrap-bumper">auto <a href="#a8320420c3bfec4efd67eb935275aa7d3" class="m-doc">GetItemArea</a>(</span><span class="m-doc-wrap">size_t nItemIndex) -&gt; <a href="union_math_1_1_rectangle.html" class="m-doc">Math::<wbr />Rectangle</a></span>
             </dt>
             <dd>Returns the area the item in the given index should have, relative to the items panel.</dd>
-            <dt id="ae8da82534929c6dafe878aa2c1c25464">
-              <span class="m-doc-wrap-bumper">auto <a href="#ae8da82534929c6dafe878aa2c1c25464" class="m-doc-self">AddRef</a>(</span><span class="m-doc-wrap">) -&gt; int <span class="m-label m-flat m-warning">virtual</span></span>
+            <dt id="a0598425ac001c70486ce5785989ded43">
+              <span class="m-doc-wrap-bumper">auto <a href="#a0598425ac001c70486ce5785989ded43" class="m-doc-self">AddRef</a>(</span><span class="m-doc-wrap">) -&gt; int <span class="m-label m-flat m-warning">override</span></span>
             </dt>
             <dd><span></span></dd>
-            <dt id="ab738f4beff45c4991e2c9ced85d192fe">
-              <span class="m-doc-wrap-bumper">auto <a href="#ab738f4beff45c4991e2c9ced85d192fe" class="m-doc-self">Release</a>(</span><span class="m-doc-wrap">) -&gt; int <span class="m-label m-flat m-warning">virtual</span></span>
+            <dt id="abd6a6cdcbe79189db25a13f08a928f56">
+              <span class="m-doc-wrap-bumper">auto <a href="#abd6a6cdcbe79189db25a13f08a928f56" class="m-doc-self">Release</a>(</span><span class="m-doc-wrap">) -&gt; int <span class="m-label m-flat m-warning">override</span></span>
             </dt>
             <dd><span></span></dd>
-            <dt id="a0d234431c91de2bea4a7181c6308e581">
-              <span class="m-doc-wrap-bumper">auto <a href="#a0d234431c91de2bea4a7181c6308e581" class="m-doc-self">Cast</a>(</span><span class="m-doc-wrap">uint32_t) -&gt; void* <span class="m-label m-flat m-warning">virtual</span></span>
+            <dt id="a3aaa457876c9281f1d28b82637ce48a8">
+              <span class="m-doc-wrap-bumper">auto <a href="#a3aaa457876c9281f1d28b82637ce48a8" class="m-doc-self">Cast</a>(</span><span class="m-doc-wrap">uint32_t) const -&gt; void* <span class="m-label m-flat m-warning">override</span></span>
             </dt>
             <dd><span></span></dd>
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#a132fc5630efd189179332edf1d98b8b2" class="m-doc">GetEventFlags</a>(</span><span class="m-doc-wrap">) const -&gt; int <span class="m-label m-flat m-warning">override</span></span>
+              <span class="m-doc-wrap-bumper">auto <a href="#adc299ec0470bffcf1c55a6f134db7227" class="m-doc">GetEventFlags</a>(</span><span class="m-doc-wrap">) const -&gt; int <span class="m-label m-flat m-warning">override</span></span>
             </dt>
             <dd>Gets the flags that represent which type of messages this IWinProc can handle.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#a662f939ae152fc4d4fbecc1b12f0616a" class="m-doc">HandleUIMessage</a>(</span><span class="m-doc-wrap"><a href="class_u_t_f_win_1_1_i_window.html" class="m-doc">IWindow</a>* pWindow,
+              <span class="m-doc-wrap-bumper">auto <a href="#a27ada852e0d47192ebb1476b6062d9af" class="m-doc">HandleUIMessage</a>(</span><span class="m-doc-wrap"><a href="class_u_t_f_win_1_1_i_window.html" class="m-doc">IWindow</a>* pWindow,
               const <a href="class_u_t_f_win_1_1_message.html" class="m-doc">Message</a>&amp; message) -&gt; bool <span class="m-label m-flat m-warning">override</span></span>
             </dt>
             <dd>Method called every time a message is received on a window that has this IWinProc added.</dd>
@@ -216,16 +216,16 @@
             <p>Returns the area the item in the given index should have, relative to the items panel.</p>
 <p>The layout properties of the page will be applied here. The index is the index to the item in the <a href="class_palettes_1_1_palette_page.html#a79a36083f046d3b4b0f12ab5ff00f0e1" class="m-doc">Palettes::<wbr />PalettePage::<wbr />mItems</a> vector.</p>
           </div></section>
-          <section class="m-doc-details" id="a132fc5630efd189179332edf1d98b8b2"><div>
+          <section class="m-doc-details" id="adc299ec0470bffcf1c55a6f134db7227"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">int Palettes::<wbr />PalettePageUI::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a132fc5630efd189179332edf1d98b8b2" class="m-doc-self">GetEventFlags</a>(</span><span class="m-doc-wrap">) const <span class="m-label m-warning">override</span></span></span>
+              <span class="m-doc-wrap-bumper">int Palettes::<wbr />PalettePageUI::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#adc299ec0470bffcf1c55a6f134db7227" class="m-doc-self">GetEventFlags</a>(</span><span class="m-doc-wrap">) const <span class="m-label m-warning">override</span></span></span>
             </h3>
             <p>Gets the flags that represent which type of messages this IWinProc can handle.</p>
 <p>This allows for better performance, since generally a procedure only needs to listen specific events. The flags are in the kEventFlag... values.</p>
           </div></section>
-          <section class="m-doc-details" id="a662f939ae152fc4d4fbecc1b12f0616a"><div>
+          <section class="m-doc-details" id="a27ada852e0d47192ebb1476b6062d9af"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">bool Palettes::<wbr />PalettePageUI::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a662f939ae152fc4d4fbecc1b12f0616a" class="m-doc-self">HandleUIMessage</a>(</span><span class="m-doc-wrap"><a href="class_u_t_f_win_1_1_i_window.html" class="m-doc">IWindow</a>* pWindow,
+              <span class="m-doc-wrap-bumper">bool Palettes::<wbr />PalettePageUI::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a27ada852e0d47192ebb1476b6062d9af" class="m-doc-self">HandleUIMessage</a>(</span><span class="m-doc-wrap"><a href="class_u_t_f_win_1_1_i_window.html" class="m-doc">IWindow</a>* pWindow,
               const <a href="class_u_t_f_win_1_1_message.html" class="m-doc">Message</a>&amp; message) <span class="m-label m-warning">override</span></span></span>
             </h3>
             <p>Method called every time a message is received on a window that has this IWinProc added.</p>

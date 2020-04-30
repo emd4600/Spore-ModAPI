@@ -80,6 +80,14 @@
         <section id="pub-types">
           <h2><a href="#pub-types">Public types</a></h2>
           <dl class="m-doc">
+            <dt id="a4511e1987f2a2d6067f602fca4182ce9">
+              <span class="m-doc-wrap-bumper">enum <a href="#a4511e1987f2a2d6067f602fca4182ce9" class="m-doc-self">GeometryType</a> { </span><span class="m-doc-wrap"><a href="#a4511e1987f2a2d6067f602fca4182ce9a56d5b27fda22392acb7b4737b3adf831" class="m-doc">kGeometryTypeNA</a> = 0xFFFFFFFF,
+              <a href="#a4511e1987f2a2d6067f602fca4182ce9a32d26ff38bbd0ff7dd780ef484f7a1bc" class="m-doc">kGeometryTypeStatic</a> = 0x0,
+              <a href="#a4511e1987f2a2d6067f602fca4182ce9a615e96adc5c1c9fe9499f71732b52c45" class="m-doc">kGeometryTypeSkinned</a> = 0x1,
+              <a href="#a4511e1987f2a2d6067f602fca4182ce9a4e2f2a9d94cf2ceb998fa8223bc15265" class="m-doc">kGeometryTypeMorphed</a> = 0x2,
+              <a href="#a4511e1987f2a2d6067f602fca4182ce9a65ebf6150834bb6724180e4010380e95" class="m-doc">kGeometryTypeNumTypes</a> = 0x3 }</span>
+            </dt>
+            <dd><span></span></dd>
             <dt>
               using <a href="#a01a30bb33e247f7067d00ff69509337d" class="m-doc">LoadShader_t</a> = BOOL(*)(RenderWare::Mesh&lt;&gt;*)
             </dt>
@@ -127,16 +135,16 @@
         <section id="pro-attribs">
           <h2><a href="#pro-attribs">Protected variables</a></h2>
           <dl class="m-doc">
-            <dt id="af94bdcad4b1e8b48b6d695e215bcfd3b">
-              int <a href="#af94bdcad4b1e8b48b6d695e215bcfd3b" class="m-doc-self">field_0</a>
+            <dt id="abc350700f5f6b4553a4d79759370e043">
+              <a href="class_graphics_1_1_material_shader.html#a4511e1987f2a2d6067f602fca4182ce9" class="m-doc">GeometryType</a> <a href="#abc350700f5f6b4553a4d79759370e043" class="m-doc-self">mGeomType</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="abd650eedd48b835bb11ab2861fb8569a">
-              int <a href="#abd650eedd48b835bb11ab2861fb8569a" class="m-doc-self">field_4</a>
+            <dt id="a4b9fc0e1996996aa9a620142c8989c35">
+              int <a href="#a4b9fc0e1996996aa9a620142c8989c35" class="m-doc-self">mFlags</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="a23aa11ed4b57d3e25c35f43e8b09bf02">
-              int <a href="#a23aa11ed4b57d3e25c35f43e8b09bf02" class="m-doc-self">field_8</a>
+            <dt id="ac3ec767fca1d99ca531c115eb0559735">
+              int <a href="#ac3ec767fca1d99ca531c115eb0559735" class="m-doc-self">mElementTypes</a>
             </dt>
             <dd><span></span></dd>
             <dt id="aeb75708c934da61f326774f92168a8f7">
@@ -159,40 +167,40 @@
               <a href="class_graphics_1_1_material_shader.html#a01a30bb33e247f7067d00ff69509337d" class="m-doc">LoadShader_<wbr />t</a> <a href="#a1517fff9ca6ecacf5bddfb222c7d1920" class="m-doc-self">mpCallback</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="a446ef4941b0019dd3161e131eb7a5f4d">
-              int <a href="#a446ef4941b0019dd3161e131eb7a5f4d" class="m-doc-self">field_18</a>
+            <dt id="ad4b3828a65f9b113f785101bc0ac2ed9">
+              int <a href="#ad4b3828a65f9b113f785101bc0ac2ed9" class="m-doc-self">mNumDataTypes</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="aadd98adf94719005e9a5bf4ca8af7717">
-              int <a href="#aadd98adf94719005e9a5bf4ca8af7717" class="m-doc-self">field_1C</a>
+            <dt id="a7cbf32ff0533dfcf7440ead274013dcb">
+              int <a href="#a7cbf32ff0533dfcf7440ead274013dcb" class="m-doc-self">mDataTypeList</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="a3ba05d3658e56030e6112f19cf74b5ac">
-              int <a href="#a3ba05d3658e56030e6112f19cf74b5ac" class="m-doc-self">field_20</a>
+            <dt id="a7a80988009b32a8566694651b20c1d89">
+              int <a href="#a7a80988009b32a8566694651b20c1d89" class="m-doc-self">mVertexShaderUpdateFlags</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="a0b08b4dde9c1dcbf8314964db0aaf9b1">
-              int <a href="#a0b08b4dde9c1dcbf8314964db0aaf9b1" class="m-doc-self">field_24</a>
+            <dt id="a4046604922e29c84d9ea19dc44990ec9">
+              int <a href="#a4046604922e29c84d9ea19dc44990ec9" class="m-doc-self">mNumVertexShaderBuilders</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="a7a8ff60b968a21fba202c61b2539b42a">
-              int <a href="#a7a8ff60b968a21fba202c61b2539b42a" class="m-doc-self">field_28</a>
+            <dt id="a23ae82ba22e93d9f234b06408164c93b">
+              int <a href="#a23ae82ba22e93d9f234b06408164c93b" class="m-doc-self">mVertexShaderBuilders</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="a05354b7eb2294cbeee3f456423f84bf6">
-              int <a href="#a05354b7eb2294cbeee3f456423f84bf6" class="m-doc-self">field_2C</a>
+            <dt id="aea1735bd77706ba8c11d154ad5a204c3">
+              int <a href="#aea1735bd77706ba8c11d154ad5a204c3" class="m-doc-self">mPixelShaderUpdateFlags</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="ad46fa3ea608872a6594fff0d97316aaa">
-              int <a href="#ad46fa3ea608872a6594fff0d97316aaa" class="m-doc-self">field_30</a>
+            <dt id="a900308f0686afcb18dfff5053114aa58">
+              int <a href="#a900308f0686afcb18dfff5053114aa58" class="m-doc-self">mNumPixelShaderBuilders</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="a7388513db3b3a5d98462dc4d15404d4e">
-              int <a href="#a7388513db3b3a5d98462dc4d15404d4e" class="m-doc-self">field_34</a>
+            <dt id="a563af283d3ae598be55562074f2889c8">
+              int <a href="#a563af283d3ae598be55562074f2889c8" class="m-doc-self">mPixelShaderBuilders</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="a8f792d7d8aeabfcd20dd36c22f59761a">
-              uint32_t <a href="#a8f792d7d8aeabfcd20dd36c22f59761a" class="m-doc-self">shaderID</a>
+            <dt id="ad1c4a126d7b3c152065b811d2f3c27fb">
+              uint32_t <a href="#ad1c4a126d7b3c152065b811d2f3c27fb" class="m-doc-self">mID</a>
             </dt>
             <dd><span></span></dd>
             <dt id="a37205fc0d4dfbe9b9f7eccac5d6e1b7d">

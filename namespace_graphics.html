@@ -116,6 +116,11 @@
             </dt>
             <dd><span></span></dd>
             <dt>
+              <div class="m-doc-template">template&lt;typename Vertex&gt;</div>
+              class <a href="class_graphics_1_1_generated_mesh.html" class="m-doc">GeneratedMesh</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
               class <a href="class_graphics_1_1_gmdl_render_asset.html" class="m-doc">GmdlRenderAsset</a>
             </dt>
             <dd><span></span></dd>
@@ -143,6 +148,10 @@
               class <a href="class_graphics_1_1_i_model_world.html" class="m-doc">IModelWorld</a>
             </dt>
             <dd>A model world is a space where models can be rendered in the game.</dd>
+            <dt>
+              class <a href="class_graphics_1_1_i_raw_image.html" class="m-doc">IRawImage</a>
+            </dt>
+            <dd><span></span></dd>
             <dt>
               class <a href="class_graphics_1_1_i_renderable.html" class="m-doc">IRenderable</a>
             </dt>
@@ -196,7 +205,7 @@
             </dt>
             <dd><span></span></dd>
             <dt>
-              struct <a href="struct_graphics_1_1_pos_texcoord_vertex.html" class="m-doc">PosTexcoordVertex</a>
+              struct <a href="struct_graphics_1_1_pos_normal_vertex.html" class="m-doc">PosNormalVertex</a>
             </dt>
             <dd><span></span></dd>
             <dt>
@@ -212,16 +221,15 @@
             </dt>
             <dd><span></span></dd>
             <dt>
+              struct <a href="struct_graphics_1_1_shader_data_information.html" class="m-doc">ShaderDataInformation</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
               struct <a href="struct_graphics_1_1_shader_data_uniform.html" class="m-doc">ShaderDataUniform</a>
             </dt>
             <dd><span></span></dd>
             <dt>
               struct <a href="struct_graphics_1_1_shadow_map_info.html" class="m-doc">ShadowMapInfo</a>
-            </dt>
-            <dd><span></span></dd>
-            <dt>
-              <div class="m-doc-template">template&lt;typename Vertex&gt;</div>
-              class <a href="class_graphics_1_1_standard_mesh.html" class="m-doc">StandardMesh</a>
             </dt>
             <dd><span></span></dd>
             <dt>
@@ -307,6 +315,7 @@
               <span class="m-doc-wrap-bumper">enum <a href="#a936cca97eca11e988649742457ee4809" class="m-doc">(anonymous)</a> { </span><span class="m-doc-wrap"><a href="#a936cca97eca11e988649742457ee4809a67714109b28b4942dc96b13136f20ba6" class="m-doc">kModelFlagUseColor</a> = 0x2,
               <a href="#a936cca97eca11e988649742457ee4809ae6ee2ef9b57e55721a05bc19183167b5" class="m-doc">kModelFlagObjectTypeColor</a> = 0x8,
               <a href="#a936cca97eca11e988649742457ee4809a06e9414d4e29ab930191c234e525c611" class="m-doc">kModelFlagOverrideRaycastMode</a> = 0x100,
+              <a href="#a936cca97eca11e988649742457ee4809ae8126b97a58029f99739a19522b5a19a" class="m-doc">kModelFlagHighRes</a> = 0x2000,
               <a href="#a936cca97eca11e988649742457ee4809a712326a32a798759b2548daf75e8da43" class="m-doc">kModelFlagVisible</a> = 0x8000,
               <a href="#a936cca97eca11e988649742457ee4809a282f8e861168694308ecad124d903a6f" class="m-doc">kModelFlagOverrideBoundingBox</a> = 0x10000,
               <a href="#a936cca97eca11e988649742457ee4809a0c9e2214af3610d935ef791db7b80655" class="m-doc">kModelFlagOverrideBoundingRadius</a> = 0x20000,
@@ -324,6 +333,10 @@
             <dd><span></span></dd>
             <dt>
               using <a href="#a2fbff200e72a71153ff9239f663a569f" class="m-doc">PixelShader</a> = <a href="class_graphics_1_1_compiled_shader.html" class="m-doc">CompiledShader</a>&lt;IDirect3DPixelShader9&gt;
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              using <a href="#ac354d1c41dc1dd5d2c9fab246990be72" class="m-doc">ModelPredicate_t</a> = bool(*)(Model*, void*)
             </dt>
             <dd><span></span></dd>
             <dt>
@@ -540,6 +553,13 @@
             <h3>
               typedef <a href="class_graphics_1_1_compiled_shader.html" class="m-doc">CompiledShader</a>&lt;IDirect3DPixelShader9&gt; Graphics::<wbr /><a href="#a2fbff200e72a71153ff9239f663a569f" class="m-doc-self">PixelShader</a>
               <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_compiled_shader_8h.html">&lt;Spore/Graphics/CompiledShader.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="ac354d1c41dc1dd5d2c9fab246990be72"><div>
+            <h3>
+              typedef bool(*Graphics::<wbr /><a href="#ac354d1c41dc1dd5d2c9fab246990be72" class="m-doc-self">ModelPredicate_t</a>)(Model*, void*)
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_i_model_world_8h.html">&lt;Spore/Graphics/IModelWorld.h&gt;</a></div>
             </h3>
             <p><span></span></p>
           </div></section>

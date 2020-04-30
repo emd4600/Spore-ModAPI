@@ -127,24 +127,24 @@
               <span class="m-doc-wrap-bumper">void <a href="#a742c8c74060d2b589107c72b23459bd1" class="m-doc-self">Update</a>(</span><span class="m-doc-wrap">int msTime)</span>
             </dt>
             <dd><span></span></dd>
-            <dt id="ae64d0e3b3334dc9c193c87568156fa10">
-              <span class="m-doc-wrap-bumper">auto <a href="#ae64d0e3b3334dc9c193c87568156fa10" class="m-doc-self">AddRef</a>(</span><span class="m-doc-wrap">) -&gt; int <span class="m-label m-flat m-warning">virtual</span></span>
+            <dt id="a18b9a4e0b3de3e5a4369a30633ba2688">
+              <span class="m-doc-wrap-bumper">auto <a href="#a18b9a4e0b3de3e5a4369a30633ba2688" class="m-doc-self">AddRef</a>(</span><span class="m-doc-wrap">) -&gt; int <span class="m-label m-flat m-warning">override</span></span>
             </dt>
             <dd><span></span></dd>
-            <dt id="afb6a78d8e4e51d64d2157d513af66c6d">
-              <span class="m-doc-wrap-bumper">auto <a href="#afb6a78d8e4e51d64d2157d513af66c6d" class="m-doc-self">Release</a>(</span><span class="m-doc-wrap">) -&gt; int <span class="m-label m-flat m-warning">virtual</span></span>
+            <dt id="a30fa502bacd051ba6c44724c43620b61">
+              <span class="m-doc-wrap-bumper">auto <a href="#a30fa502bacd051ba6c44724c43620b61" class="m-doc-self">Release</a>(</span><span class="m-doc-wrap">) -&gt; int <span class="m-label m-flat m-warning">override</span></span>
             </dt>
             <dd><span></span></dd>
-            <dt id="a4a53075212bd524610bee552f0937457">
-              <span class="m-doc-wrap-bumper">auto <a href="#a4a53075212bd524610bee552f0937457" class="m-doc-self">Cast</a>(</span><span class="m-doc-wrap">uint32_t) -&gt; void* <span class="m-label m-flat m-warning">virtual</span></span>
+            <dt id="a25c725023009ce39d2fe644aa5cd450d">
+              <span class="m-doc-wrap-bumper">auto <a href="#a25c725023009ce39d2fe644aa5cd450d" class="m-doc-self">Cast</a>(</span><span class="m-doc-wrap">uint32_t) const -&gt; void* <span class="m-label m-flat m-warning">override</span></span>
             </dt>
             <dd><span></span></dd>
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#a3bb6b54fe2f49ef9cb4da6556b0595a9" class="m-doc">GetEventFlags</a>(</span><span class="m-doc-wrap">) const -&gt; int <span class="m-label m-flat m-warning">override</span></span>
+              <span class="m-doc-wrap-bumper">auto <a href="#af620054e67f1dc498abf06c8d9bbbba1" class="m-doc">GetEventFlags</a>(</span><span class="m-doc-wrap">) const -&gt; int <span class="m-label m-flat m-warning">override</span></span>
             </dt>
             <dd>Gets the flags that represent which type of messages this IWinProc can handle.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#aaed0b1495aacd49d46a49c937da05504" class="m-doc">HandleUIMessage</a>(</span><span class="m-doc-wrap"><a href="class_u_t_f_win_1_1_i_window.html" class="m-doc">IWindow</a>* pWindow,
+              <span class="m-doc-wrap-bumper">auto <a href="#ade4d85b3220bcd347ac4cc401a502744" class="m-doc">HandleUIMessage</a>(</span><span class="m-doc-wrap"><a href="class_u_t_f_win_1_1_i_window.html" class="m-doc">IWindow</a>* pWindow,
               const <a href="class_u_t_f_win_1_1_message.html" class="m-doc">Message</a>&amp; message) -&gt; bool <span class="m-label m-flat m-warning">override</span></span>
             </dt>
             <dd>Method called every time a message is received on a window that has this IWinProc added.</dd>
@@ -273,16 +273,16 @@
             <p>The <a href="namespace_u_i.html" class="m-doc">UI</a> is generated in the following steps:</p>
 <ol><li>The UILayout of the palette is loaded; it&#x27;s parent is set to pWindow using the <a href="class_u_t_f_win_1_1_u_i_layout.html#acb630bbaf4bcb4ed64437833a4f496ff" class="m-doc">UTFWin::<wbr />UILayout::<wbr />SetParentWindow()</a> method.</li><li>The mpMainWindow is set to the window with ControlID 0xFFFFFFFF; if it exists, the method <a href="class_u_t_f_win_1_1_i_window.html#aeeae2b1ff3af53745f9f9b37a8431916" class="m-doc">IWindow::<wbr />FitParentArea()</a> will be called.</li><li>The mAnimatedWindow is set to the window with ControlID 0x49AFE6A1, and it is set invisible.</li><li>This object is added as a IWinProc in the windows with ControlID: kControlLeftArrowBtn, kControlRightArrowBtn and 0x7BCE6E8</li></ol>
           </div></section>
-          <section class="m-doc-details" id="a3bb6b54fe2f49ef9cb4da6556b0595a9"><div>
+          <section class="m-doc-details" id="af620054e67f1dc498abf06c8d9bbbba1"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">int Palettes::<wbr />PaletteUI::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a3bb6b54fe2f49ef9cb4da6556b0595a9" class="m-doc-self">GetEventFlags</a>(</span><span class="m-doc-wrap">) const <span class="m-label m-warning">override</span></span></span>
+              <span class="m-doc-wrap-bumper">int Palettes::<wbr />PaletteUI::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#af620054e67f1dc498abf06c8d9bbbba1" class="m-doc-self">GetEventFlags</a>(</span><span class="m-doc-wrap">) const <span class="m-label m-warning">override</span></span></span>
             </h3>
             <p>Gets the flags that represent which type of messages this IWinProc can handle.</p>
 <p>This allows for better performance, since generally a procedure only needs to listen specific events. The flags are in the kEventFlag... values.</p>
           </div></section>
-          <section class="m-doc-details" id="aaed0b1495aacd49d46a49c937da05504"><div>
+          <section class="m-doc-details" id="ade4d85b3220bcd347ac4cc401a502744"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">bool Palettes::<wbr />PaletteUI::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#aaed0b1495aacd49d46a49c937da05504" class="m-doc-self">HandleUIMessage</a>(</span><span class="m-doc-wrap"><a href="class_u_t_f_win_1_1_i_window.html" class="m-doc">IWindow</a>* pWindow,
+              <span class="m-doc-wrap-bumper">bool Palettes::<wbr />PaletteUI::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ade4d85b3220bcd347ac4cc401a502744" class="m-doc-self">HandleUIMessage</a>(</span><span class="m-doc-wrap"><a href="class_u_t_f_win_1_1_i_window.html" class="m-doc">IWindow</a>* pWindow,
               const <a href="class_u_t_f_win_1_1_message.html" class="m-doc">Message</a>&amp; message) <span class="m-label m-warning">override</span></span></span>
             </h3>
             <p>Method called every time a message is received on a window that has this IWinProc added.</p>

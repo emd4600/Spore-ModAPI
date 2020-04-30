@@ -56,7 +56,8 @@
               Reference
               <ul>
                 <li><a href="#typeless-methods">Constructors, destructors, conversion operators</a></li>
-                <li><a href="#pro-attribs">Protected variables</a></li>
+                <li><a href="#pub-methods">Public functions</a></li>
+                <li><a href="#pub-attribs">Public variables</a></li>
               </ul>
             </li>
           </ul>
@@ -70,25 +71,38 @@
             <dd><span></span></dd>
           </dl>
         </section>
-        <section id="pro-attribs">
-          <h2><a href="#pro-attribs">Protected variables</a></h2>
+        <section id="pub-methods">
+          <h2><a href="#pub-methods">Public functions</a></h2>
           <dl class="m-doc">
-            <dt id="a6bbfecbdd8631bcf9ff44a86f2a1b15c">
-              intrusive_ptr&lt;<a href="class_terrain_1_1c_terrain_map.html" class="m-doc">cTerrainMap</a>&gt; <a href="#a6bbfecbdd8631bcf9ff44a86f2a1b15c" class="m-doc-self">mMaps</a>
+            <dt id="a1b1b60dae4f3c8eb7e51365ce208a6b1">
+              <span class="m-doc-wrap-bumper">auto <a href="#a1b1b60dae4f3c8eb7e51365ce208a6b1" class="m-doc-self">GetHeight</a>(</span><span class="m-doc-wrap">const <a href="struct_math_1_1_vector3.html" class="m-doc">Math::<wbr />Vector3</a>&amp; position) const -&gt; float</span>
             </dt>
             <dd><span></span></dd>
-            <dt id="a36c1d5fcf57b59d1f7faed327836655b">
-              float <a href="#a36c1d5fcf57b59d1f7faed327836655b" class="m-doc-self">field_34</a>
+            <dt id="a10844efddac385cd26bd3b6d28061a55">
+              <span class="m-doc-wrap-bumper">auto <a href="#a10844efddac385cd26bd3b6d28061a55" class="m-doc-self">GetWaterHeight</a>(</span><span class="m-doc-wrap">) const -&gt; float</span>
             </dt>
             <dd><span></span></dd>
-            <dt id="a61d14cf93fea6b03d5e39aa555f22669">
-              float <a href="#a61d14cf93fea6b03d5e39aa555f22669" class="m-doc-self">field_38</a>
+          </dl>
+        </section>
+        <section id="pub-attribs">
+          <h2><a href="#pub-attribs">Public variables</a></h2>
+          <dl class="m-doc">
+            <dt id="aae9bfb096d501ae19ea773dbcedacdd9">
+              <a href="_terrain_maps_8h.html#a1d383980829ced078185d5bf2394a282" class="m-doc">cTerrainMapPtr</a> <a href="#aae9bfb096d501ae19ea773dbcedacdd9" class="m-doc-self">mMaps</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="a317b0ad953c30acff4af6419e19b598d">
-              float <a href="#a317b0ad953c30acff4af6419e19b598d" class="m-doc-self">field_3C</a>
+            <dt id="a2cbc8270262045871e4151855f8377fb">
+              float <a href="#a2cbc8270262045871e4151855f8377fb" class="m-doc-self">mPlanetRadius</a>
             </dt>
             <dd><span></span></dd>
+            <dt id="a2b157c4936ca02524a69ea93503f8fcd">
+              float <a href="#a2b157c4936ca02524a69ea93503f8fcd" class="m-doc-self">mAltitudeRange</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="af16272095f0c79e7bde4dbeaa4370e07">
+              float <a href="#af16272095f0c79e7bde4dbeaa4370e07" class="m-doc-self">mWaterLevel</a>
+            </dt>
+            <dd>Between -1 and 1, gets multiplied by altitude range.</dd>
             <dt id="a1562eb105b1cb4b6b8b5dd10d56a71a4">
               float <a href="#a1562eb105b1cb4b6b8b5dd10d56a71a4" class="m-doc-self">field_40</a>
             </dt>
