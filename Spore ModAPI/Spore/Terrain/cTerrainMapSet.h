@@ -46,6 +46,8 @@ namespace Terrain
 
 		float GetHeight(const Math::Vector3& position) const;
 
+		float GetWaterHeight() const;
+
 		// PLACEHOLDER sub_F93070 SetMap
 
 	private:
@@ -53,8 +55,12 @@ namespace Terrain
 	public:
 		/* 08h */	cTerrainMapPtr mMaps[11];
 		/* 34h */	float mPlanetRadius;  // 500.0
-		/* 38h */	float field_38;  // 100.0
-		/* 3Ch */	float field_3C;
+		// (kMaxMaxAlt - kMidMaxAlt) * (radius / 500.0 - 1.0)
+		// or if (radius / 500.0 < 1.0)
+		// kMinMaxAlt + (kMidMaxAlt - kMinMaxAlt) / 500.0
+		/* 38h */	float mAltitudeRange;  // 100.0
+		/// Between -1 and 1, gets multiplied by altitude range
+		/* 3Ch */	float mWaterLevel;
 		/* 40h */	float field_40;
 		/* 44h */	float field_44;  // 0.025
 		/* 48h */	float field_48;
@@ -68,5 +74,10 @@ namespace Terrain
 
 	namespace Addresses(cTerrainMapSet) {
 		DeclareAddress(GetHeight);
+	}
+
+	inline float cTerrainMapSet::GetWaterHeight() const
+	{
+		return mPlanetRadius + mAltitudeRange * mWaterLevel;
 	}
 }
