@@ -179,7 +179,7 @@ namespace App
 		DefineAddress(GetCameraMaterialLODs, SelectAddress(0x7C4B80, , 0x7C45B0));
 		DefineAddress(SetRenderType, SelectAddress(0x7C4380, 0x7C3D50, 0x7C3DB0));
 		DefineAddress(GetCameraToMouse, SelectAddress(0x7C4FA0, 0x7C4970, 0x7C49D0));
-		DefineAddress(GetCameraToPoint, SelectAddress(0x7C4FA0, 0x7C47A0, 0x7C4800));
+		DefineAddress(GetCameraToPoint, SelectAddress(0x7C4DD0, 0x7C47A0, 0x7C4800));
 	}
 
 	namespace Addresses(DirectPropertyList)
