@@ -459,3 +459,12 @@ RandomNumberGenerator::RandomNumberGenerator(int32_t seed)
 
 auto_METHOD(RandomNumberGenerator, int, RandomInt, Args(int range), Args(range));
 auto_METHOD_(RandomNumberGenerator, float, RandomFloat);
+
+
+void Transform::Invert()
+{
+	mfScale = 1.0f / mfScale;
+	// We can transpose instead of inverting, as rotation matrices are ortogonal
+	mRotation = mRotation.Transposed();
+	mOffset = mRotation * (-mfScale * mOffset);
+}

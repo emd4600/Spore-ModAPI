@@ -92,10 +92,9 @@ namespace Graphics
 		///
 		/* 1Ch */	virtual IModelWorld* GetWorld(uint32_t id) = 0;
 
-		/* 20h */	virtual Object* func20h() = 0;
+		/* 20h */	virtual IModelWorld* GetMainWorld() = 0;
 
-		// possible SetActiveWorld?
-		/* 24h */	virtual void func24h(Object*) = 0;
+		/* 24h */	virtual void SetMainWorld(IModelWorld* world) = 0;
 
 		// returns some kind of flags
 		/* 28h */	virtual int GetGroupFlag(uint32_t groupID, int=0) = 0;

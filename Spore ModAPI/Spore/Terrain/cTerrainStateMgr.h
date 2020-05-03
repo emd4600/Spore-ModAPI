@@ -26,6 +26,7 @@ namespace Terrain
 			/* 20h */	char padding_20[0x10];  // not initialized
 			/* 30h */	float field_30;  // related with minmaxalt and midmaxalt and planet height?
 			/* 34h */	char padding_34[0xC];  // not initialized
+			// 38h is a Matrix4, 2C is sun pos ? check sub_FBB460
 			/* 40h */	float kMinCliffGradient;
 			/* 44h */	float kMaxCliffGradient;
 			/* 48h */	char padding_48[0x30];  // not initialized

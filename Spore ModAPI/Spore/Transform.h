@@ -61,6 +61,10 @@ public:
 	/// @param other
 	Transform& Multiply(const Transform& other);
 
+	/// Inverts this transform, so that now it will do exactly the opposite transformation.
+	/// A transform multiplied by its inverse results in the identity transform, which doesn't change anything.
+	void Invert();
+
 protected:
 	/* 00h */	int16_t	mnFlags;
 	/* 02h */	int16_t	mnTransformCount;  // ?
