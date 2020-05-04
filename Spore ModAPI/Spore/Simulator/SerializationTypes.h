@@ -5,10 +5,11 @@
 
 namespace Simulator
 {
-
+	class ISimulatorSerializable;
 
 	namespace SerializationTypes
 	{
+		//PLACEHOLDER use bool = std::is_base_of<ISimulatorSerializable, T>::value
 		template <typename T>
 		struct SerializedType
 		{
@@ -60,6 +61,28 @@ namespace Simulator
 			}
 
 			static void WriteText(char* buf, int* src) {
+				sprintf_s(buf, 1024, "%d", *src);
+			}
+		};
+
+		template <>
+		struct SerializedType<uint32_t>
+		{
+			static bool Read(ISerializerStream* stream, uint32_t* dst) {
+				IO::ReadUInt32(stream->GetRecord()->GetStream(), dst);
+				return true;
+			}
+
+			static bool Write(ISerializerStream* stream, uint32_t* src) {
+				IO::WriteUInt32(stream->GetRecord()->GetStream(), src);
+				return true;
+			}
+
+			static void ReadText(const string& str, uint32_t* dst) {
+				*dst = atol(str.c_str());
+			}
+
+			static void WriteText(char* buf, uint32_t* src) {
 				sprintf_s(buf, 1024, "%d", *src);
 			}
 		};
@@ -138,6 +161,32 @@ namespace Simulator
 			}
 			static void WriteText(char* buf, string16* src) {
 				sprintf_s(buf, 1024, "%ls", (wchar_t*)src->c_str());
+			}
+		};
+
+		template <>
+		struct SerializedType<ResourceKey>
+		{
+			static bool Read(ISerializerStream* stream, ResourceKey* dst) {
+				IO::ReadUInt32(stream->GetRecord()->GetStream(), &dst->groupID);
+				IO::ReadUInt32(stream->GetRecord()->GetStream(), &dst->typeID);
+				IO::ReadUInt32(stream->GetRecord()->GetStream(), &dst->instanceID);
+				return true;
+			}
+
+			static bool Write(ISerializerStream* stream, ResourceKey* src) {
+				IO::WriteUInt32(stream->GetRecord()->GetStream(), &src->groupID);
+				IO::WriteUInt32(stream->GetRecord()->GetStream(), &src->typeID);
+				IO::WriteUInt32(stream->GetRecord()->GetStream(), &src->instanceID);
+				return true;
+			}
+
+			static void ReadText(const string& str, ResourceKey* dst) {
+				ResourceKey::Parse(*dst, string16(string16::CtorConvert(), str).c_str());
+			}
+
+			static void WriteText(char* buf, ResourceKey* src) {
+				sprintf_s(buf, 1024, "0x%x!0x%x.0x%x", src->groupID, src->instanceID, src->typeID);
 			}
 		};
 
