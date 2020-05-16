@@ -32,7 +32,7 @@ namespace Simulator
 		static const uint32_t TYPE = 0x60079DE;
 
 		virtual void OnMouseDown(cSpaceToolData* pTool, const Vector3& playerPosition) override;
-		virtual bool OnHit(cSpaceToolData* pTool, const Vector3& position, cSpaceToolData::SpaceToolHit hitType) override;
+		virtual bool OnHit(cSpaceToolData* pTool, const Vector3& position, cSpaceToolData::SpaceToolHit hitType, int) override;
 		virtual bool WhileFiring(cSpaceToolData* pTool, const Vector3& aimPoint, int) override;
 		virtual bool OnMouseUp(cSpaceToolData* pTool) override;
 

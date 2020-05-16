@@ -30,7 +30,7 @@ namespace Simulator
 	public:
 		static const uint32_t STRATEGY_ID = 0x8A8B6F35;
 
-		virtual bool OnHit(cSpaceToolData* pTool, const Vector3& position, cSpaceToolData::SpaceToolHit hitType) override;
+		virtual bool OnHit(cSpaceToolData* pTool, const Vector3& position, cSpaceToolData::SpaceToolHit hitType, int) override;
 		virtual bool WhileFiring(cSpaceToolData* pTool, const Vector3& aimPoint, int) override;
 	};
 

@@ -31,7 +31,7 @@ namespace Simulator
 		static const uint32_t STRATEGY_ID = 0xFE8FA3D3;
 
 		virtual bool OnSelect(cSpaceToolData* pTool) override;
-		virtual bool OnHit(cSpaceToolData* pTool, const Vector3& position, cSpaceToolData::SpaceToolHit hitType) override;
+		virtual bool OnHit(cSpaceToolData* pTool, const Vector3& position, cSpaceToolData::SpaceToolHit hitType, int) override;
 	};
 
 	namespace Addresses(cScanToolStrategy)
