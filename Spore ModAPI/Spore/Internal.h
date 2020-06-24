@@ -113,7 +113,7 @@ extern MODAPI uintptr_t baseAddress;
 #define ASSERT_SIZE(name, size) static_assert(sizeof(name) == size, "sizeof " #name " != " #size);
 
 #ifdef _DEBUG
-#define SporeDebugPrint(...) App::ConsolePrintF(__VA_ARGS__);
+#define SporeDebugPrint(...) App::ConsolePrintF(__VA_ARGS__)
 #else
 #define SporeDebugPrint(...)
 #endif
