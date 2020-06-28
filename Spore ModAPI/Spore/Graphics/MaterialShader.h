@@ -43,7 +43,7 @@ namespace Graphics
 
 		/// This type of function is called when rendering a mesh, before the \c DrawIndexedPrimitives is called.
 		/// This function is responsible of loading the shaders into DirectX.
-		typedef BOOL(*LoadShader_t)(RenderWare::Mesh<>*);
+		typedef BOOL(*LoadShader_t)(RenderWare::Mesh*);
 
 		int AddRef();
 

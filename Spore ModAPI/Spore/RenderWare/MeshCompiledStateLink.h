@@ -26,29 +26,33 @@ namespace RenderWare
 {
 	///
 	/// This structure links one or more compiled states (that is, materials) to a mesh.
+	/// By default this only links one material; more materials can be used with MeshCompiledStateLink_
 	///
-	template <int nCompiledStates = 1>
 	struct MeshCompiledStateLink
 	{
 		MeshCompiledStateLink();
 
 		/* 00h */	Mesh* mpMesh;
-		/* 04h */	size_t mnCompiledStatesCount;
-		/* 08h */	CompiledState* mpCompiledStates[nCompiledStates];
+		/* 04h */	size_t mCompiledStatesCount;
+		/* 08h */	CompiledState* mpCompiledStates[1];
 
 		static const uint32_t TYPE = 0x2001a;
 	};
 
+	template <int nCompiledStates = 1>
+	struct MeshCompiledStateLink_ : public MeshCompiledStateLink
+	{
+		MeshCompiledStateLink_();
 
-	/////////////////////////////////
-	//// INTERNAL IMPLEMENTATION ////
-	/////////////////////////////////
+	private:
+		int padding[nCompiledStates-1];
+	};
 
 	template <int nCompiledStates>
-	MeshCompiledStateLink< nCompiledStates>::MeshCompiledStateLink()
-		: mpMesh(nullptr)
-		, mnCompiledStatesCount(nCompiledStates)
-		, mpCompiledStates{}
+	inline MeshCompiledStateLink_<nCompiledStates>::MeshCompiledStateLink_()
+		: MeshCompiledStateLink()
+		, padding{}
 	{
+		mCompiledStatesCount = nCompiledStates;
 	}
 }

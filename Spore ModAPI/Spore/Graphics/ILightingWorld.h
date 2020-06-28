@@ -20,6 +20,7 @@
 #pragma once
 
 #include <Spore\App\PropertyList.h>
+#include <Spore\App\cViewer.h>
 #include <Spore\Transform.h>
 
 #define ILightingWorldPtr intrusive_ptr<Graphics::ILightingWorld>
@@ -37,10 +38,6 @@ namespace Graphics
 	class ILightingWorld
 	{
 	public:
-		// 0Ch LightingManager
-		// 10h related with propertyList
-		// 14h configurationID
-
 		/* 00h */	virtual int AddRef() = 0;
 		/* 04h */	virtual int Release() = 0;
 		
@@ -53,8 +50,8 @@ namespace Graphics
 		/* 1Ch */	virtual void func1Ch(float, int, int) = 0;
 		// related with sunDirAndCelStrength, called when changing lighting world, setting model invisible or destroying model
 		/* 20h */	virtual void func20h(int) = 0;
-		// Parameter is cViewer, called every time in ModelWorld::Render
-		/* 24h */	virtual void func24h(int) = 0;
+		// Called every time in ModelWorld::Render
+		/* 24h */	virtual void PrepareRender(App::cViewer*) = 0;
 		/* 28h */	virtual void func28h(const Transform&) = 0;
 		/* 2Ch */	virtual Transform func2Ch() = 0;
 
@@ -77,5 +74,21 @@ namespace Graphics
 
 		/* 3Ch */	virtual void func3Ch(int) = 0;
 		/* 40h */	virtual void func40h(int, int) = 0;
+
+	private:
+		// 0Ch LightingManager
+		// 10h related with propertyList
+		// 14h configurationID
+
+		// 40h ColorRGB mAmbientColor;
+		// 4Ch vector<Light*> mLights;
+		// 60h Light*
+		// 64h Transform
+		
+		// 260h sunDirAndCelStrength, 261 is whether it's enabled
+
+		// A0h Transform
+
+		// D4h Vector3 mViewPos;
 	};
 }

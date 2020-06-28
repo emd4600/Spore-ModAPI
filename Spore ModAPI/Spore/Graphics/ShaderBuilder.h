@@ -30,7 +30,7 @@ namespace Graphics
 
 		/// This function is called when rendering a mesh, before the \c DrawIndexedPrimitives is called.
 		/// This function is responsible of loading the shaders into DirectX.
-		static BOOL Load(RenderWare::Mesh<>* mesh);
+		static BOOL Load(RenderWare::Mesh* mesh);
 
 	protected:
 		/* 48h */	vector<ShaderBuilderEntry> mVertexShaders[16];

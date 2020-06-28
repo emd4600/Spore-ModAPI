@@ -7,20 +7,20 @@ namespace Graphics
 {
 	struct ShaderDataUniform
 	{
-		short field_0;
+		short dataIndex;
 		short field_2;
-		short field_4;
-		short field_6;
+		short registerSize;
+		short registerIndex;
 		int flags;
 	};
 
 	struct NamedShaderDataUniform
 	{
 		eastl::string name;
-		short field_10;
+		short dataIndex;
 		short field_12;
-		short field_14;
-		short field_16;
+		short registerSize;
+		short registerIndex;
 		int flags;
 	};
 }

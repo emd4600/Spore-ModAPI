@@ -125,18 +125,11 @@ namespace RenderWare
 		VertexElement(uint16_t stream, uint16_t offset, char type, char method, char usage, char usageIndex, int rwDecl);
 	};
 
-	///
-	/// A vertex declaration defines the vertex buffer layout and programs the tessellation engine.
-	/// This structure has a template parameter which is the number of elements it contains.
-	/// For example, to use 3 elements: new VertexDescription<3>();
-	/// For more information, check the official Direct3D 9 documentation: 
-	/// - [Vertex Declaration](https://msdn.microsoft.com/en-us/library/windows/desktop/bb206335.aspx)
-	/// - [D3DVERTEXELEMENT9](https://msdn.microsoft.com/en-us/library/windows/desktop/bb172630.aspx)
-	///
-	template <uint16_t nVertexElements = (uint16_t)0>
-	struct VertexDescription
+	struct VertexDescriptionBase
 	{
-		VertexDescription();
+		static const uint32_t TYPE = 0x20004;
+
+		VertexDescriptionBase();
 
 		///
 		/// Creates the IDirect3DVertexDeclaration9 object required by Direct3D 9 using the elements in this description.
@@ -153,10 +146,10 @@ namespace RenderWare
 		///
 		void ReleaseDirectX();
 
-		void SetElement(int index, VertexElement element);
+		void SetElement(int index, const VertexElement& element);
 
-		/* 00h */	VertexDescription* pNextParent;
-		/* 04h */	VertexDescription* pNextSibling;
+		/* 00h */	VertexDescriptionBase* pNextParent;
+		/* 04h */	VertexDescriptionBase* pNextSibling;
 
 		/// The IDirect3DVertexDeclaration9 that operates behind this structure.
 		/* 08h */	IDirect3DVertexDeclaration9* pDXVertexDeclaration;
@@ -173,9 +166,24 @@ namespace RenderWare
 		/* 14h */	int elementsHash;
 
 		/// An array of all the VertexElement objects of this description.
-		/* 18h */	VertexElement elements[nVertexElements];
+		/* 18h */	VertexElement elements[1];
+	};
 
-		static const uint32_t TYPE = 0x20004;
+	///
+	/// A vertex declaration defines the vertex buffer layout and programs the tessellation engine.
+	/// This structure has a template parameter which is the number of elements it contains.
+	/// For example, to use 3 elements: new VertexDescription<3>();
+	/// For more information, check the official Direct3D 9 documentation: 
+	/// - [Vertex Declaration](https://msdn.microsoft.com/en-us/library/windows/desktop/bb206335.aspx)
+	/// - [D3DVERTEXELEMENT9](https://msdn.microsoft.com/en-us/library/windows/desktop/bb172630.aspx)
+	///
+	template <uint16_t nVertexElements = (uint16_t)1>
+	struct VertexDescription : public VertexDescriptionBase
+	{
+		VertexDescription();
+
+	private:
+		VertexElement padding[nVertexElements - 1];
 	};
 
 
@@ -189,59 +197,11 @@ namespace RenderWare
 		DeclareAddress(Process);
 	}
 
-	template <uint16_t kVertexElements>
-	VertexDescription<kVertexElements>::VertexDescription()
-		: elementsUsed(0)  // 0x0008c045
-		, elementsHash(0)  // 0x51010101
-		, lockFlags(0)
-		, elementsCount(kVertexElements)
-		, pDXVertexDeclaration(nullptr)
-		, pNextParent(0)
-		, pNextSibling(0)
-		, elements{}
+	template <uint16_t nVertexElements>
+	inline VertexDescription<nVertexElements>::VertexDescription()
+		: VertexDescriptionBase()
+		, padding{}
 	{
-
-	}
-
-	template <uint16_t kVertexElements>
-	void VertexDescription<kVertexElements>::ReleaseDirectX()
-	{
-		if (pDXVertexDeclaration != nullptr)
-		{
-			pDXVertexDeclaration->Release();
-			pDXVertexDeclaration = nullptr;
-		}
-	}
-
-	template <uint16_t kVertexElements>
-	void VertexDescription<kVertexElements>::CreateDeclaration(IDirect3DDevice9* pDevice)
-	{
-		D3DVERTEXELEMENT9 dxElements[17];
-
-		for (int i = 0; i < this->elementsCount && i < 16; i++)
-		{
-			dxElements[i].Method = this->elements[i].method;
-			dxElements[i].Offset = this->elements[i].offset;
-			dxElements[i].Type = this->elements[i].type;
-			dxElements[i].Stream = this->elements[i].stream;
-			dxElements[i].Usage = this->elements[i].usage;
-			dxElements[i].UsageIndex = this->elements[i].usageIndex;
-		}
-		dxElements[this->elementsCount] = D3DDECL_END();
-
-		pDevice->CreateVertexDeclaration(dxElements, &this->pDXVertexDeclaration);
-	}
-
-	template <uint16_t kVertexElements>
-	void VertexDescription<kVertexElements>::LoadDeclaration() {
-		CALL(GetAddress(VertexDescription, LoadDeclaration), void,
-			Args(Mesh<kNumBuffers>*), Args(this));
-	}
-
-	template <uint16_t kVertexElements>
-	inline void VertexDescription<kVertexElements>::SetElement(int index, VertexElement element)
-	{
-		this->elements[index] = element;
-		this->elementsUsed |= 1 << element.rwDecl;
+		elementsCount = nVertexElements;
 	}
 }

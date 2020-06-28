@@ -124,6 +124,56 @@ namespace RenderWare
 
 	}
 
+	VertexDescriptionBase::VertexDescriptionBase()
+		: elementsUsed(0)  // 0x0008c045
+		, elementsHash(0)  // 0x51010101
+		, lockFlags(0)
+		, elementsCount(1)
+		, pDXVertexDeclaration(nullptr)
+		, pNextParent(nullptr)
+		, pNextSibling(nullptr)
+		, elements{}
+	{
 
+	}
+
+	void VertexDescriptionBase::ReleaseDirectX()
+	{
+		if (pDXVertexDeclaration != nullptr)
+		{
+			pDXVertexDeclaration->Release();
+			pDXVertexDeclaration = nullptr;
+		}
+	}
+
+	void VertexDescriptionBase::CreateDeclaration(IDirect3DDevice9* pDevice)
+	{
+		D3DVERTEXELEMENT9 dxElements[17];
+
+		for (int i = 0; i < this->elementsCount && i < 16; i++)
+		{
+			dxElements[i].Method = this->elements[i].method;
+			dxElements[i].Offset = this->elements[i].offset;
+			dxElements[i].Type = this->elements[i].type;
+			dxElements[i].Stream = this->elements[i].stream;
+			dxElements[i].Usage = this->elements[i].usage;
+			dxElements[i].UsageIndex = this->elements[i].usageIndex;
+		}
+		dxElements[this->elementsCount] = D3DDECL_END();
+
+		pDevice->CreateVertexDeclaration(dxElements, &this->pDXVertexDeclaration);
+	}
+
+	void VertexDescriptionBase::LoadDeclaration() {
+		CALL(GetAddress(VertexDescription, LoadDeclaration), void,
+			Args(VertexDescriptionBase*), Args(this));
+	}
+
+
+	void VertexDescriptionBase::SetElement(int index, const VertexElement& element)
+	{
+		this->elements[index] = element;
+		this->elementsUsed |= 1 << element.rwDecl;
+	}
 }
 #endif

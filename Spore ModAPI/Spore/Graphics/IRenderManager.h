@@ -166,6 +166,8 @@ namespace Graphics
 
 		// 80h update?
 
+		// 88h, 8Ch used to lock scene, used by sub_F97DF0
+
 		// field 33Ch cViewer
 
 		///

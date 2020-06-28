@@ -48,7 +48,7 @@ namespace RenderWare
 		void LockDirectXData();
 
 		/// The VertexDescription that defines the data that each vertex has.
-		/* 00h */	VertexDescription<0>* pVertexDescription;
+		/* 00h */	VertexDescriptionBase* pVertexDescription;
 
 		/// The IDirect3DVertexBuffer9 that is operating behind this structure.
 		/* 04h */	IDirect3DVertexBuffer9* pDXBuffer;

@@ -33,8 +33,8 @@ namespace Graphics
 {
 	auto_STATIC_METHOD_(IMaterialManager, IMaterialManager*, Get);
 
-	auto_STATIC_METHOD(StandardShader, BOOL, Load, Args(RenderWare::Mesh<>* mesh), Args(mesh));
-	auto_STATIC_METHOD(ShaderBuilder, BOOL, Load, Args(RenderWare::Mesh<>* mesh), Args(mesh));
+	auto_STATIC_METHOD(StandardShader, BOOL, Load, Args(RenderWare::Mesh* mesh), Args(mesh));
+	auto_STATIC_METHOD(ShaderBuilder, BOOL, Load, Args(RenderWare::Mesh* mesh), Args(mesh));
 
 	auto_STATIC_METHOD(MaterialShader, MaterialShader*, Initialize,
 		Args(MaterialShader* dst, uint32_t shaderID, int arg_8, int arg_C, int arg_10, int arg_14, int arg_18, int arg_1C, int arg_20),
@@ -284,10 +284,10 @@ namespace Graphics
 			*(pPointers + 1) = *pPointers = *pPointers + shader.mDataCount;
 
 			for (int i = 0; i < shader.mDataCount; ++i) {
-				IO::ReadInt16(pStream, &data->field_10);
+				IO::ReadInt16(pStream, &data->dataIndex);
 				IO::ReadInt16(pStream, &data->field_12);
-				IO::ReadInt16(pStream, &data->field_14);
-				IO::ReadInt16(pStream, &data->field_16);
+				IO::ReadInt16(pStream, &data->registerSize);
+				IO::ReadInt16(pStream, &data->registerIndex);
 				IO::ReadInt32(pStream, &data->flags);
 				shader.mShaderData[i] = data;
 
@@ -329,10 +329,10 @@ namespace Graphics
 			*(pPointers + 1) = *pPointers = *pPointers + shader.mDataCount;
 
 			for (int i = 0; i < shader.mDataCount; ++i) {
-				IO::ReadInt16(pStream, &data->field_10);
+				IO::ReadInt16(pStream, &data->dataIndex);
 				IO::ReadInt16(pStream, &data->field_12);
-				IO::ReadInt16(pStream, &data->field_14);
-				IO::ReadInt16(pStream, &data->field_16);
+				IO::ReadInt16(pStream, &data->registerSize);
+				IO::ReadInt16(pStream, &data->registerIndex);
 				IO::ReadInt32(pStream, &data->flags);
 				shader.mShaderData[i] = data;
 

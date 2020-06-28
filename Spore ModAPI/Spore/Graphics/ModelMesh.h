@@ -27,7 +27,7 @@ namespace Graphics
 		/* 04h */	int mnRefCount;
 
 	public:
-		/* 08h */	vector<RenderWare::Mesh<1>*> mMeshes;
+		/* 08h */	vector<RenderWare::Mesh*> mMeshes;
 		/* 1Ch */	vector<int> field_1C;
 		/* 30h */	vector<Material*> mMaterials;
 		/* 44h */	vector<cMaterialInfoPtr> mMaterialInfos;

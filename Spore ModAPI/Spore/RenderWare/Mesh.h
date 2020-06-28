@@ -26,10 +26,11 @@
 namespace RenderWare
 {
 	///
-	/// A structure that represents a basic mesh, made up of vertices and triangles. See IndexBuffer and VertexBuffer
-	/// for more information.
+	/// A structure that represents a basic mesh, made up of vertices and triangles. By default it
+	/// only has one vertex buffer, you can have more by using Mesh_ . A vertex and index buffer can be
+	/// shared by multiple meshes, as each mesh specifies the vertex and index count.
+	/// See IndexBuffer and VertexBuffer for more information.
 	///
-	template <int kNumBuffers = 1>
 	struct Mesh
 	{
 		Mesh();
@@ -79,7 +80,7 @@ namespace RenderWare
 		/* 18h */	size_t indicesCount;
 		/* 1Ch */	size_t firstVertex;
 		/* 20h */	size_t vertexCount;
-		/* 24h */	VertexBuffer* pVertexBuffers[kNumBuffers];
+		/* 24h */	VertexBuffer* pVertexBuffers[1];
 
 
 		static const uint32_t TYPE = 0x20009;
@@ -98,49 +99,21 @@ namespace RenderWare
 		DeclareAddress(Render);
 	}
 
-	template <int kNumBuffers>
-	size_t Mesh<kNumBuffers>::CalculateTriangleCount(D3DPRIMITIVETYPE primitiveType) {
-		return CALL(GetAddress(Mesh, CalculateTriangleCount), size_t,
-			Args(Mesh<kNumBuffers>*, D3DPRIMITIVETYPE), Args(this, primitiveType));
-	}
-
-	template <int kNumBuffers>
-	void Mesh<kNumBuffers>::SetIndexBuffer(IndexBuffer* indexBuffer) {
-		CALL(GetAddress(Mesh, SetIndexBuffer), void,
-			Args(Mesh<kNumBuffers>*, IndexBuffer*), Args(this, indexBuffer));
-	}
-
-	template <int kNumBuffers>
-	void Mesh<kNumBuffers>::SetVertexBuffer(size_t index, VertexBuffer* vertexBuffer) {
-		CALL(GetAddress(Mesh, SetVertexBuffer), void,
-			Args(Mesh<kNumBuffers>*, size_t, VertexBuffer*), Args(this, index, vertexBuffer));
-	}
-
-	template <int kNumBuffers>
-	void Mesh<kNumBuffers>::SetIndicesCount(size_t indicesCount) {
-		CALL(GetAddress(Mesh, SetIndicesCount), void,
-			Args(Mesh<kNumBuffers>*, size_t), Args(this, indicesCount));
-	}
-
-	template <int kNumBuffers>
-	void Mesh<kNumBuffers>::Render() {
-		CALL(GetAddress(Mesh, Render), void,
-			Args(Mesh<kNumBuffers>*), Args(this));
-	}
-
-	template <int kNumBuffers>
-	Mesh<kNumBuffers>::Mesh()
-		: field_0(0)
-		, primitiveType(D3DPT_TRIANGLELIST)
-		, pIndexBuffer(nullptr)
-		, triangleCount()
-		, vertexBuffersCount(kNumBuffers)
-		, firstIndex()
-		, indicesCount()
-		, firstVertex()
-		, vertexCount()
-		, pVertexBuffers{}
+	template <int numBuffers = 1>
+	struct Mesh_ : public Mesh
 	{
+		Mesh_();
 
+	private:
+		int padding[numBuffers - 1];
+	};
+
+	template <int numBuffers>
+	inline Mesh_<numBuffers>::Mesh_()
+		: Mesh()
+		, padding{}
+	{
+		instancedSize = sizeof(Mesh_<numBuffers>);
+		vertexBuffersCount = numBuffers;
 	}
 }

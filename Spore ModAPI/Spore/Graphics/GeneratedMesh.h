@@ -23,6 +23,14 @@ namespace Graphics
 		static const RenderWare::VertexElement ELEMENTS[2];
 	};
 
+	struct PosUvVertex
+	{
+		Vector3 pos;
+		Vector2 uv;
+
+		static const RenderWare::VertexElement ELEMENTS[2];
+	};
+
 	struct StandardVertex
 	{
 		Vector3 pos;
@@ -104,7 +112,7 @@ namespace Graphics
 		int GetMaterialCount() const;
 
 		/// Removes all materials from the mesh. Nothing will be rendered after this.
-		void ClearMaterials() const;
+		void ClearMaterials();
 
 		/// Gets the information about a material assigned to this mesh.
 		/// For a given material index, it gets the parameters with which it was assigned.
@@ -132,7 +140,8 @@ namespace Graphics
 
 		BoundingBox GetBoundingBox();
 
-		void Submit();
+		void SubmitGeometry();
+		void UnloadGeometry();
 
 		void Render();
 
@@ -144,12 +153,16 @@ namespace Graphics
 		vector<Vertex> mVertices;
 		vector<uint16_t> mIndices;
 
-		vector<RenderWare::Mesh<1>> mMeshes;
+		vector<RenderWare::Mesh> mMeshes;
 		vector<MaterialPtr> mMaterials;
 
 		BoundingBox mBounds;
 		bool mBoundsValid;
 	};
+
+
+	GeneratedMesh<PosUvVertex>* GenerateScreenPlane(float z = 0.0);
+
 
 	template <typename Vertex>
 	GeneratedMesh<Vertex>::GeneratedMesh(int numVertices, int numTriangles)
@@ -164,13 +177,11 @@ namespace Graphics
 		mVertexBuffer.stride = sizeof(Vertex);
 		mVertexBuffer.lockFlags = 0;
 		mVertexBuffer.pVertexDescription = &mVertexDesc;
-		mVertexBuffer.pVertexData = mVertices.data();
 
 		mIndexBuffer.format = D3DFORMAT::D3DFMT_INDEX16;
 		mIndexBuffer.indicesCount = numTriangles * 3;
 		mIndexBuffer.usage = D3DUSAGE_WRITEONLY;
 		mIndexBuffer.primitiveType = D3DPRIMITIVETYPE::D3DPT_TRIANGLELIST;
-		mIndexBuffer.pIndexData = mIndices.data();
 
 		mVertexDesc.stride = sizeof(Vertex);
 
@@ -182,8 +193,7 @@ namespace Graphics
 
 	template <typename Vertex>
 	inline GeneratedMesh<Vertex>::~GeneratedMesh() {
-		mIndexBuffer.ReleaseDirectX();
-		mVertexBuffer.ReleaseDirectX();
+		UnloadGeometry();
 	}
 
 	template <typename Vertex>
@@ -254,8 +264,7 @@ namespace Graphics
 	int GeneratedMesh<Vertex>::AddMaterial(uint32_t materialID, int start, int indicesCount, int minVertex) {
 		if (indicesCount == -1) indicesCount = mIndices.size();
 
-		RenderWare::Mesh<1> mesh;
-		mesh.instancedSize = 40;  // ?
+		RenderWare::Mesh mesh;
 		mesh.firstIndex = start;
 		mesh.firstVertex = minVertex;
 		mesh.SetIndexBuffer(&mIndexBuffer);
@@ -275,7 +284,7 @@ namespace Graphics
 	}
 
 	template <typename Vertex>
-	inline void GeneratedMesh<Vertex>::ClearMaterials() const {
+	inline void GeneratedMesh<Vertex>::ClearMaterials() {
 		mMaterials.clear();
 		mMeshes.clear();
 	}
@@ -338,10 +347,19 @@ namespace Graphics
 	}
 
 	template <typename Vertex>
-	inline void GeneratedMesh<Vertex>::Submit() {
+	inline void GeneratedMesh<Vertex>::SubmitGeometry() {
+		mVertexBuffer.pVertexData = mVertices.data();
+		mIndexBuffer.pIndexData = mIndices.data();
+
 		mVertexBuffer.CreateDirectX();
 		mVertexBuffer.LockDirectXData();
 		mIndexBuffer.CreateDirectX();
 		mIndexBuffer.LockDirectXData();
+	}
+
+	template <typename Vertex>
+	inline void GeneratedMesh<Vertex>::UnloadGeometry() {
+		mIndexBuffer.ReleaseDirectX();
+		mVertexBuffer.ReleaseDirectX();
 	}
 }
