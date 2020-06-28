@@ -11,7 +11,7 @@
 namespace Terrain
 {
 	class ITerrain;
-	class cTerrainStateMgr;
+	struct cTerrainStateMgr;
 	class cTerrainMapSet;
 
 	class UnkWeatherManager

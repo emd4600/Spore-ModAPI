@@ -18,12 +18,14 @@
 ****************************************************************************/
 #pragma once
 
-#include <Spore\Terrain\TerrainMaps.h>
+#include <Spore\Terrain\cTerrainMap.h>
 #include <Spore\MathUtils.h>
+
+#define cTerrainMapSetPtr intrusive_ptr<Terrain::cTerrainMapSet>
 
 namespace Terrain
 {
-	enum class TerrainMapIndices : int
+	enum class TerrainMapIndex : int
 	{
 		HeightMap = 0,
 		NormalMap = 1,
@@ -41,8 +43,27 @@ namespace Terrain
 	class cTerrainMapSet
 	{
 	public:
+		struct cHeightRanges
+		{
+			cHeightRanges();
 
+			/* 00h */	int field_0;  // 0x555
+			/* 04h */	int field_4;  // 1
+			/* 08h */	int field_8;  // 5
+			/* 0Ch */	int field_C;  // 0x15
+			/* 10h */	int field_10;  // 0x55
+			/* 14h */	int field_14;  // 0x155
+			/* 18h */	int* mpCell;
+		};
+
+		cTerrainMapSet();
 		virtual ~cTerrainMapSet();
+
+		int AddRef();
+		int Release();
+
+		void SetMap(TerrainMapIndex index, cTerrainMap* pMap);
+		cTerrainMap* GetMap(TerrainMapIndex index);
 
 		float GetHeight(const Math::Vector3& position) const;
 
@@ -64,10 +85,10 @@ namespace Terrain
 		/* 40h */	float field_40;
 		/* 44h */	float field_44;  // 0.025
 		/* 48h */	float field_48;
-		/* 4Ch */	float field_4C;
+		/* 4Ch */	float mMaxCliffGradient;
 		/* 50h */	float field_50;  // -1.0
 		/* 54h */	float field_54;  // -1.0
-		/* 58h */	int field_58;  // cHeightRanges PLACEHOLDER
+		/* 58h */	cHeightRanges* mpHeightRanges;
 	};
 
 	static_assert(sizeof(cTerrainMapSet) == 0x5C, "sizeof(cTerrainMapSet) != 5Ch");
@@ -79,5 +100,18 @@ namespace Terrain
 	inline float cTerrainMapSet::GetWaterHeight() const
 	{
 		return mPlanetRadius + mAltitudeRange * mWaterLevel;
+	}
+
+	inline int cTerrainMapSet::AddRef() {
+		++mnRefCount;
+		return mnRefCount;
+	}
+	inline int cTerrainMapSet::Release() {
+		--mnRefCount;
+		if (mnRefCount == 0) {
+			delete this;
+			return 0;
+		}
+		return mnRefCount;
 	}
 }

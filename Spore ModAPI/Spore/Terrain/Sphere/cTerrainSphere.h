@@ -80,13 +80,13 @@ namespace Terrain
 				/* 38h */	char field_38[0x60];  // floats
 				/* 98h */	ResourceKey key;
 				/* A4h */	int field_A4;
-				/* A8h */	uint32_t field_A8;
+				/* A8h */	uint32_t modid;
 			};
 			ASSERT_SIZE(TerrainModification, 0xAC);
 
 			/* 24h */	int field_24;
 			/* 28h */	PropertyListPtr mpPropList;
-			/* 2Ch */	intrusive_ptr<cTerrainMapSet> mpTerrainMapSet;
+			/* 2Ch */	cTerrainMapSetPtr mpTerrainMapSet;
 			/* 30h */	TextureContainer field_30;
 			/* 74h */	TextureContainer field_74;
 			/* B8h */	TextureContainer field_B8;
@@ -166,9 +166,10 @@ namespace Terrain
 			/* 638h */	Vector4 mTramp[8];
 			/* 6B8h */	Vector4 field_6B8;
 			/* 6C8h */	Vector4 field_6C8;
-			/* 6D8h */	TerrainLighting mTerrainLighting;
+			///* 6D8h */	TerrainLighting mTerrainLighting;
+			/* 6D8h */	Vector4 field_6D8[8];  //PLACEHODER what is really this?
 			/* 758h */	vector<int> field_758;
-			/* 76Ch */	bool mAmbientEffectsLoaded;
+			/* 76Ch */	bool mAssetsLoaded;  // ambient effects and models
 			/* 770h */	vector<TerrainModification> mModelFootprints;
 			/* 784h */	vector<TerrainModification> mModelNeedRelevel;
 			/* 798h */	vector<TerrainModification> mPlayerEffects;
@@ -179,20 +180,43 @@ namespace Terrain
 			/* 7ECh */	vector<IEffectPtr> mAmbientEffects;
 			/* 800h */	vector<IEffectPtr> mAmbientSoundEffects;
 			/* 814h */	int mPlayerModCount;
-
-			/* 8A0h */  //PLACEHOLDER cTerrainSphereImpostorJob
-
+			/* 818h */	int field_818;
+			/* 81Ch */	int field_81C;
+			/* 820h */	char padding_820[0x60];
+			/* 880h */	bool field_880;
+			/* 884h */	int field_884;
+			/* 888h */	int field_888;
+			/* 88Ch */	int field_88C;
+			/* 890h */	int field_890;
+			/* 894h */	int field_894;
+			/* 898h */	int field_898;  // -1
+			/* 89Ch */	int field_89C;  // -1
+			/* 8A0h */  void* mpImpostorJob;  //PLACEHOLDER cTerrainSphereImpostorJob
+			/* 8A4h */	int field_8A4;  // -1
+			/* 8A8h */	int field_8A8;
 			/* 8ACh */	bool mAllowUnderwaterObjects;
 			// int are flags for renderable
 			/* 8B0h */	vector<pair<IModelWorldPtr, int>> mUnderwaterModelWorlds;
 			/* 8C4h */	vector<pair<IAnimWorldPtr, int>> mUnderwaterAnimWorlds;
-
+			/* 8D8h */	int field_8D8;
+			/* 8DCh */	int field_8DC;
+			/* 8E0h */	int field_8E0;
 			/* 8E4h */	App::cViewer* mpTerrainViewer;
-
-			/* 924h */	//PLACEHOLDER DecalManager
-			/* 928h */	//PLACEHOLDER TerrainDraw
-
-			/* A4Ch */	//PLACEHODLER cQuadBuffersPool
+			/* 8E8h */	Transform field_8E8;
+			/* 920h */	int field_920;  // -1
+			/* 924h */	void* mpDecalManager;  //PLACEHOLDER DecalManager
+			/* 928h */	void* mpTerrainDraw;  //PLACEHOLDER TerrainDraw
+			/* 92Ch */	char padding_92C[0xF0];
+			/* A1Ch */	float field_A1C;
+			/* A20h */	float field_A20;
+			/* A24h */	float field_A24;
+			/* A28h */	float field_A28;
+			/* A2Ch */	float field_A2C;
+			/* A30h */	float field_A30;
+			/* A34h */	float field_A34;
+			/* A38h */	ColorRGBA field_A38;
+			/* A48h */	int field_A48;
+			/* A4Ch */	void* mpQuadBuffersPool;  //PLACEHODLER cQuadBuffersPool
 
 		public:
 			static cTerrainSphere* Create();  //PLACEHOLDER method
@@ -202,7 +226,8 @@ namespace Terrain
 		//// INTERNAL IMPLEMENTATION ////
 		/////////////////////////////////
 
-		//PLACEHOLDER static_assert(sizeof(cTerrainSphere) == 0xA50, "sizeof(cTerrainSphere) != A50h");
+		ASSERT_SIZE(cTerrainSphere, 0xA50);
+		//ASSERT_SIZE(cTerrainSphere, 0xA50);
 
 		namespace Addresses(cTerrainSphere)
 		{

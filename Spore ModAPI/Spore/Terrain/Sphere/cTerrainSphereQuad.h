@@ -51,6 +51,8 @@ namespace Terrain
 		/* 98h */	int indicesCount;
 
 		/* A4h */	TerrainTransform terrainTransform;
+
+		// 154h vector with struct of size 16 with pointer to cTerrainSphereDecal
 	};
 
 	//static_assert(sizeof(cTerrainSphereQuad) == 0x1B8, "sizeof(cTerrainSphereQuad) != 1B8h");

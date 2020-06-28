@@ -18,6 +18,7 @@
 ****************************************************************************/
 #pragma once
 
+#include <EASTL\vector.h>
 #include <EASTL\intrusive_ptr.h>
 
 #define cTerrainMapPtr eastl::intrusive_ptr<Terrain::cTerrainMap>
@@ -27,31 +28,39 @@ namespace Terrain
 	class cTerrainMap
 	{
 	public:
-		virtual ~cTerrainMap();
-		virtual void* GetData();
+		cTerrainMap();
+		virtual ~cTerrainMap() {};
+		virtual void* GetData() = 0;
 
 		int AddRef();
 		int Release();
 
 	protected:
-		int mnRefCount;
-		char _padding[0x1C];
+		/* 04h */	int mnRefCount;
+
+	public:
+		/* 08h */	int size;
+		/* 0Ch */	int field_0C;
 	};
 
-	static_assert(sizeof(cTerrainMap) == 0x24, "sizeof(cTerrainMap) != 24h");
+	class cTerrainMap16
+		: public cTerrainMap
+	{
+	public:
+		cTerrainMap16();
+		virtual ~cTerrainMap16() {}
+		virtual void* GetData() override;
 
-	inline int cTerrainMap::AddRef()
+		/* 10h */	eastl::vector<uint16_t> data;
+	};
+	class cTerrainMap32
+		: public cTerrainMap
 	{
-		++mnRefCount;
-		return mnRefCount;
-	}
-	inline int cTerrainMap::Release()
-	{
-		--mnRefCount;
-		if (mnRefCount == 0) {
-			delete this;
-			return 0;
-		}
-		return mnRefCount;
-	}
+	public:
+		cTerrainMap32();
+		virtual ~cTerrainMap32() {}
+		virtual void* GetData() override;
+
+		/* 10h */	eastl::vector<uint32_t> data;
+	};
 }

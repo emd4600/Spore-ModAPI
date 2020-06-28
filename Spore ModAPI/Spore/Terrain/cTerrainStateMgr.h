@@ -14,11 +14,12 @@ namespace Terrain
 	class ITerrain;
 	class cTerrainMapSet;
 
-	class cTerrainStateMgr
+	struct cTerrainStateMgr
 	{
-	public:
 		struct TerrainMaterial
 		{
+			TerrainMaterial();
+
 			/* 00h */	char padding_00[0x14];  // not initialized
 			/* 14h */	float kMinMaxAlt;
 			/* 18h */	float kMidMaxAlt;
@@ -103,6 +104,8 @@ namespace Terrain
 
 		struct TerrainTextures
 		{
+			TerrainTextures();
+
 			/* 00h */	TexturePtr field_00;
 			/* 04h */	TexturePtr field_04;
 			/* 08h */	TexturePtr field_08;
@@ -148,9 +151,11 @@ namespace Terrain
 		};
 		ASSERT_SIZE(TerrainTextures, 0x2B8);
 
+		cTerrainStateMgr(ITerrain*);
+
 		/* 00h */	ITerrain* mpTerrain;
 		/* 04h */	cTerrainMapSet* mpMapSet;
-		/* 08h */	TerrainMaterial field_08;
+		/* 08h */	TerrainMaterial mMaterial;
 		/* 2F4h */	TerrainTextures mTextures;
 		/* 5ACh */	bool field_5AC;  // true
 		/* 5ADh */	bool field_5AD;

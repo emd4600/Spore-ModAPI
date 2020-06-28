@@ -20,6 +20,7 @@
 
 #include <Spore\Simulator\SubSystem\cStrategy.h>
 #include <Spore\Simulator\cCity.h>
+#include <Spore\Terrain\ITerrain.h>
 #include <Spore\MathUtils.h>
 
 /// Access the active Simulator planet manager.
@@ -35,8 +36,6 @@ namespace Simulator
 	{
 	public:
 		//TODO PLACEHOLDER
-
-		// 24h ITerrainPtr
 
 		// B7DC40 Get water level?
 
@@ -60,6 +59,17 @@ namespace Simulator
 
 	public:
 		static cPlanetModel* Get();
+
+	public:
+		/* 1Ch */	int field_1C;  // not initialized
+		// one of these is cTerrainSphere*?
+		/* 20h */	ITerrainPtr mpTerrain;
+		/* 24h */	Terrain::ITerrain* mpTerrain2;
+		/* 28h */	float field_28;
+		/* 2Ch */	ResourceKey mPlanetKey;
+		/* 38h */	string16 field_38;
+		/* 48h */	bool mbAddedMessageListeners;
+		//PLACEHODER more things
 	};
 
 	namespace Addresses(cPlanetModel)
