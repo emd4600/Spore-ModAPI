@@ -19,11 +19,22 @@ namespace RenderWare
 		, pTextureData(nullptr)
 	{}
 
+	Raster::~Raster() {
+		Delete();
+	}
+
 	auto_METHOD_VOID_(Raster, Create);
 
 	HRESULT Raster::CreateTexture(DWORD usage, D3DPOOL pool) {
 		return Graphics::Renderer::GetDevice()->CreateTexture(width, height, levels, usage,
 			format, pool, &pTexture, NULL);
 	}
+
+	auto_METHOD_VOID_(Raster, Delete);
+	auto_METHOD_VOID_(Raster, D3D9AddToUnmanagedList);
+
+	auto_STATIC_METHOD(Raster, Raster*, CreateRaster,
+		Args(Raster*& pDst, uint16_t width, uint16_t height, uint8_t levels, int flagsDepth, D3DFORMAT format),
+		Args(pDst, width, height, levels, flagsDepth, format));
 }
 #endif

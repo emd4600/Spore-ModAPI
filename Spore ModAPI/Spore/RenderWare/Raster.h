@@ -34,22 +34,41 @@ namespace RenderWare
 	struct Raster
 	{
 		enum : uint16_t {
-			kTypeTexture = 8,
+			/*kTypeTexture = 8,
 			kTypeCubeTextureRTT = 9,
 			kTypeTextureRTT = 10,
 
 			kFlagDynamicUsage = 0x10,
 			kFlagAutoGenMipap = 0x200,
 
-			kFlagCubeTexture = 0x1000
+			kFlagCubeTexture = 0x1000,
+			kFlagVolumeTexture = 0x2000 // ?*/
+
+			kTypeDepthStencilSurface = 2,
+			kTypeTexture = 8,
+			kTypeRenderTarget = 9,
+			kTypeDepthStencilTexture = 10,
+
+			kFlagDynamicUsage = 0x10,
+			kFlagAutoGenMipap = 0x200,
+
+			kFlagCubeTexture = 0x1000,
+			kFlagVolumeTexture = 0x2000
 		};
 
 		Raster();
+		~Raster();
+
+		void Delete();
 
 		/// Creates the corresponding Direct3D object for this raster, depending on the format and flags.
 		void Create();
 
 		HRESULT CreateTexture(DWORD usage = NULL, D3DPOOL pool = D3DPOOL_DEFAULT);
+
+		void D3D9AddToUnmanagedList();
+
+		static Raster* CreateRaster(Raster*& pDst, uint16_t width, uint16_t height, uint8_t levels, int flagsDepth, D3DFORMAT format);
 
 
 		/* 00h */	D3DFORMAT format;
@@ -78,5 +97,8 @@ namespace RenderWare
 	namespace Addresses(Raster)
 	{
 		DeclareAddress(Create);
+		DeclareAddress(Delete);
+		DeclareAddress(CreateRaster);
+		DeclareAddress(D3D9AddToUnmanagedList);
 	};
 }
