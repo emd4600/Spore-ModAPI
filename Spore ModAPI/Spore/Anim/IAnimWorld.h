@@ -10,7 +10,7 @@
 
 namespace Anim
 {
-	typedef float(*AnimFunction)(void* object, int, int, Vector3& dst, int, int);
+	typedef float(*AnimFunction)(void* object, AnimatedCreature* creature, const Quaternion&, Vector3* dstNormal, bool, bool);
 
 	class IAnimWorld
 		: public Graphics::IRenderable

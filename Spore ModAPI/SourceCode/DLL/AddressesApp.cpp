@@ -231,7 +231,7 @@ namespace App
 
 	/*namespace Addresses(IStateManager) 
 	{
-		DefineAddress(Get, SelectAddress(0x67DE40, , PLACEHOLDER));
+		DefineAddress(Get, SelectAddress(0x67DE40, , 0x67DCE0));
 	}*/
 
 	namespace Addresses(Property)

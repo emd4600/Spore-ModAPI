@@ -101,7 +101,7 @@ namespace Anim
 		/* 50h */	virtual int func50h() = 0;
 		/* 54h */	virtual int func54h() = 0;
 		// Used to get current animation ID?
-		/* 58h */	virtual int func58h(uint32_t* dstAnimID, float*, int*, AnimIndex* dstAnimIndex) = 0;
+		/* 58h */	virtual int GetCurrentAnimation(uint32_t* dstAnimID, float* dstTime = nullptr, int* = nullptr, AnimIndex* dstAnimIndex = nullptr) = 0;
 		/* 5Ch */	virtual bool func5Ch(AnimIndex index, float*, float*) = 0;
 		/* 60h */	virtual float GetAnimationLength(uint32_t animID) = 0;
 		/* 64h */	virtual int func64h() = 0;
@@ -112,6 +112,10 @@ namespace Anim
 		/* 78h */	virtual int func78h() = 0;
 		/* 7Ch */	virtual ~AnimatedCreature();
 
+		static bool IsIdleWalkLookatStart(uint32_t animID);
+		static bool IsIdleWalkStop(uint32_t animID);
+		static bool IsIdleWalk(uint32_t animID);
+
 
 		int AddRef();
 		int Release();
@@ -120,16 +124,24 @@ namespace Anim
 
 		/* 04h */	Vector3 mPosition;
 		/* 10h */	Quaternion mOrientation;
-		/* 20h */	char padding_04[0x15C];
+		/* 20h */	char padding_20[0x154 - 0x20];
 
 		// 3Ch scale?
 
-		// 15Ch is another animated creature?
+		// 74h ColorRGBA that gets copied to model color
 
+		/* 154h */	int field_154;
+		/* 158h */	int field_158;
+		/* 15Ch */	int field_15C;  // another animated creature?
+		/* 160h */	int field_160;
+		/* 164h */	Vector3 field_164;  // dest position?
+		/* 170h */	int field_170[3];
 		/* 17Ch */	int field_17C;  // contains blocks?
 		/* 180h */	ModelPtr mpModel;
 		// 184h "anim_qb", contains data about animations
-		/* 184h */	char padding_184[0xC];
+		/* 184h */	int field_184;
+		/* 188h */	int field_188;
+		/* 18Ch */	AnimIndex field_18C;
 		/* 190h */	IAnimWorld* mpAnimWorld;
 		/* 194h */	int field_194;
 		/* 198h */	int mnRefCount;

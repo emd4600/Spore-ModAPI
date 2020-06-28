@@ -145,7 +145,7 @@ namespace Editors
 		//TODO ManagedPtr
 		/* 78h */	EditorUI* mpEditorUI;
 
-		/* 7Ch */	EditorPlayMode* mpPlayMode;
+		/* 7Ch */	EditorPlayMode* mpPlayMode;  // TODO intrusive_ptr
 		/// THe light to be used by the editor.
 		/* 80h */	ILightingWorldPtr mpLightingWorld;
 		/// The model world that contains the pedestal and test environment model.
@@ -526,6 +526,18 @@ namespace Editors
 	namespace Addresses(cEditor) {
 		DeclareAddress(sub_581F70);
 		DeclareAddress(ptr);
+
+		DeclareAddress(Initialize);
+		DeclareAddress(Dispose);
+		DeclareAddress(OnEnter);
+		DeclareAddress(OnExit);
+		DeclareAddress(OnKeyDown);
+		DeclareAddress(OnKeyUp);
+		DeclareAddress(OnMouseDown);
+		DeclareAddress(OnMouseUp);
+		DeclareAddress(OnMouseMove);
+		DeclareAddress(OnMouseWheel);
+		DeclareAddress(Update);
 	}
 
 	/// Returns the Editor instance (there can only be one at a time).

@@ -32,6 +32,9 @@ namespace RenderWare
 	namespace Addresses(Raster)
 	{
 		DefineAddress(Create, SelectAddress(0x11F22E0, , 0x11EFBB0));
+		DefineAddress(Delete, SelectAddress(0x11F26E0, , 0x11EFFB0));
+		DefineAddress(CreateRaster, SelectAddress(0x11F2630, , 0x11EFF00));
+		DefineAddress(D3D9AddToUnmanagedList, SelectAddress(0x11F1E90, , 0x11EF760));
 	};
 
 	namespace Addresses(RWHeader)

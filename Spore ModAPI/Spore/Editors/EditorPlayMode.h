@@ -19,6 +19,8 @@
 #pragma once
 
 #include <Spore\Object.h>
+#include <Spore\Editors\PlayModeAnimations.h>
+#include <Spore\Editors\PlayModeActor.h>
 
 //TODO vftable 10h OnMouseClick sub_62A810
 
@@ -38,5 +40,11 @@ namespace Editors
 		/* 1Ch */	virtual bool OnKeyDown(int virtualKey, int modifiers);
 		/* 20h */	virtual bool OnKeyUp(int virtualKey, int modifiers);
 		// one function more
+
+	public:
+		/* 08h */	char padding_08[0x7C - 0x8];
+		/* 7Ch */	PlayModeActor** mpMainActor;  // at 10h, AnimatedCreatureController
+		/* 80h */	char padding_80[0x3588 - 0x80];
+		/* 3588h */	PlayModeAnimations mAnimations;
 	};
 }

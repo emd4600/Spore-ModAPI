@@ -40,7 +40,7 @@ namespace Editors
 
 		virtual bool Initialize(int, int);
 		virtual void Dispose();
-		virtual float PlayAnim(int, uint32_t playAnimName, bool, int, int* dstAnimIndex = nullptr);
+		virtual float PlayAnimation(int, uint32_t playAnimName, bool loop, int mode, int* dstAnimIndex = nullptr);
 
 	protected:
 		/// Reads all the animation panels in the 0x4060E000 folder.

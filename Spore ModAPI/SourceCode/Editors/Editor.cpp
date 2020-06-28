@@ -8,5 +8,6 @@ namespace Editors
 
 	auto_METHOD_const_(EditorModel, string16&, GetCreationName);
 	auto_METHOD_VOID(EditorModel, SetColor, Args(int index, struct ColorRGB color), Args(index, color));
+
 }
 #endif

@@ -9,6 +9,8 @@
 #include <Spore\Editors\EditorUI.h>
 #include <Spore\Editors\PlayModeAnimations.h>
 #include <Spore\Editors\SpeciesManager.h>
+#include <Spore\Editors\CreatureWalkController.h>
+#include <Spore\Editors\PlayModeActor.h>
 
 namespace Editors
 {
@@ -26,6 +28,18 @@ namespace Editors
 	{
 		DefineAddress(sub_581F70, SelectAddress(0x581F70, 0x582250, 0x582250));
 		DefineAddress(ptr, SelectAddress(0x15E9170, 0x015E5EF0, 0x15E4EF0));
+
+		DefineAddress(Initialize, SelectAddress(0x583FD0, , 0x584300));
+		DefineAddress(Dispose, SelectAddress(0x576B70, , 0x576C50));
+		DefineAddress(OnEnter, SelectAddress(0x58E3B0, , 0x58E6D0));
+		DefineAddress(OnExit, SelectAddress(0x5876F0, , 0x587A20));
+		DefineAddress(OnKeyDown, SelectAddress(0x58A8E0, , 0x58AC10));
+		DefineAddress(OnKeyUp, SelectAddress(0x585560, , 0x585890));
+		DefineAddress(OnMouseDown, SelectAddress(0x588240, , 0x588570));
+		DefineAddress(OnMouseUp, SelectAddress(0x58B320, , 0x58B650));
+		DefineAddress(OnMouseMove, SelectAddress(0x5736C0, , 0x5737D0));
+		DefineAddress(OnMouseWheel, SelectAddress(0x5859E0, , 0x585D10));
+		DefineAddress(Update, SelectAddress(0x58BB20, , 0x58BE50));
 	}
 
 	namespace Addresses(EditorCamera)
@@ -86,6 +100,17 @@ namespace Editors
 	{
 		DefineAddress(GetCreationName, SelectAddress(0x4ADEA0, 0x4AE520, 0x4AE520));
 		DefineAddress(SetColor, SelectAddress(0x4ADBF0, 0x4AE250, 0x4AE250));
+	}
+
+	namespace Addresses(CreatureWalkController)
+	{
+		DefineAddress(Update, SelectAddress(0x59B190, , 0x59B4B0));
+		DefineAddress(SetTargetPosition, SelectAddress(0x59ADD0, , 0x59B0F0));
+	}
+
+	namespace Addresses(PlayModeActor)
+	{
+		DefineAddress(AddWalkAction, SelectAddress(0x62CE10, , 0x62CE30));
 	}
 }
 #endif
