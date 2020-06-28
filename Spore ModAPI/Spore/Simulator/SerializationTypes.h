@@ -10,6 +10,8 @@ namespace Simulator
 	namespace SerializationTypes
 	{
 		//PLACEHOLDER use bool = std::is_base_of<ISimulatorSerializable, T>::value
+		// but keep in mind that for that we actually save the pointer, or whatever
+
 		template <typename T>
 		struct SerializedType
 		{

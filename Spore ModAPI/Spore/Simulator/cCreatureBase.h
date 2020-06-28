@@ -108,6 +108,9 @@ namespace Simulator
 		// virtual B0h GetAbilityCount()
 		// virtual B4h cCreatureAbility* GetAbility(int index)
 
+		// /* E0h */ virtual const ColorRGB& GetColor() const;
+		// /* E4h */ virtual void SetColor(const ColorRGB& color);
+
 		// sub_D48710 play ability
 
 	public:
@@ -143,7 +146,7 @@ namespace Simulator
 		/* B70h */	int field_B70;
 		/* B74h */	int mIntentionTowardsTarget;
 		/* B78h */	float mNoAttackTimer;  // not initialized
-		/* B7Ch */	int field_B7C;  // not initialized
+		/* B7Ch */	float field_B7C;  // not initialized, alpha for animatedcreature, used in stealth?
 		/* B80h */	float mCurrentLoudness;  // not initialized
 		/* B84h */	float mFoodValue;
 		/* B88h */	int mStrengthRating;  // 5

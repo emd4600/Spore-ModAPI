@@ -20,3 +20,4 @@
 
 // 10108h civ game
 // 0x1248 in difficulty
+// 0x1184 vector<PlanetIndex> visitedPlanets
