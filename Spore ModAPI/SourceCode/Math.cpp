@@ -35,6 +35,59 @@ namespace Math
 	const Color Color::WHITE =	Color(255, 255, 255, 255);
 	const Color Color::BLACK =	Color(0, 0, 0, 255);
 
+	const float PI2 = 2 * PI;
+
+	float GetAngleDifference(float angle1, float angle2)
+	{
+
+		angle1 = fmodf(angle1, PI2);
+		// convert to [-PI, PI]
+		if (angle1 >= PI) angle1 = angle1 - PI2;
+
+		angle2 = fmodf(angle2, PI2);
+		// convert to [-PI, PI]
+		if (angle2 >= PI) angle2 = angle2 - PI2;
+
+		float minAngle = min(angle1, angle2);
+		float maxAngle = max(angle1, angle2);
+
+		float result = PI2 - maxAngle + minAngle;
+		if ((maxAngle - minAngle) <= result)
+			result = maxAngle - minAngle;
+		return result;
+	}
+
+	float IncrementAngleTo(float a1, float a2, float inc)
+	{
+		if (inc < GetAngleDifference(a1, a2))
+		{
+			float result;
+			if (GetAngleDifference(a1 - inc, a2) <= GetAngleDifference(a1 + inc, a2)) {
+				result = a1 - inc;
+			}
+			else {
+				result = a1 + inc;
+			}
+			result = fmodf(result, PI2);
+			if (result >= PI) result = result - PI2;
+			return result;
+		}
+		else return a2;
+	}
+
+	float CorrectAngleRange(float angle)
+	{
+		angle = fmodf(angle, PI2);
+		if (angle <= PI)
+		{
+			if (-PI > angle) return angle + PI2;
+			return angle;
+		}
+		else {
+			return angle - PI2;
+		}
+	}
+
 	Matrix3& Matrix3::SetIdentity()
 	{
 		m[0][0] = 1.0f; m[0][1] = 0.0f; m[0][2] = 0.0f;
@@ -158,6 +211,28 @@ namespace Math
 	Matrix3 Matrix3::FromEuler(const Vector3& angles) {
 		Matrix3 dst;
 		STATIC_CALL(GetAddress(Math, EulerToMatrix), void, Args(Matrix3&, const Vector3&), Args(dst, angles));
+		return dst;
+	}
+
+	Matrix3 Matrix3::FromAxisAngle(const Vector3& axis, float angle) {
+		Matrix3 dst;
+		float c = cosf(angle);
+		float s = sinf(angle);
+		float cx = (1.0f - c) * axis.x;
+		float cy = (1.0f - c) * axis.y;
+		float cz = (1.0f - c) * axis.z;
+
+		dst.m[0][0] = axis.x * cx + c;
+		dst.m[0][1] = axis.x * cy - axis.z * s;
+		dst.m[0][2] = axis.x * cz + axis.y * s;
+
+		dst.m[1][0] = axis.y * cx + axis.z * s;
+		dst.m[1][1] = axis.y * cy + c;
+		dst.m[1][2] = axis.y * cz - axis.x * s;
+
+		dst.m[2][0] = axis.z * cx - axis.y * s;
+		dst.m[2][1] = axis.z * cy + axis.x * s;
+		dst.m[2][2] = axis.z * cz + c;
 		return dst;
 	}
 
@@ -306,6 +381,18 @@ namespace Math
 		return acosf(this->Dot(other) / (other.Length() * this->Length()));
 	}
 
+	float Vector3::OrientedAngle(const Vector3& _v1, const Vector3& _v2, const Vector3& orientationAxis)
+	{
+		auto v1 = _v1.Normalized();
+		auto v2 = _v2.Normalized();
+
+		if (v1 == v2) return 0.0f;
+
+		float angle = acosf(clamp(v1.Dot(v2), -1.0f, 1.0f));
+
+		if (orientationAxis.Dot(v1.Cross(v2)) < 0) angle = 2 * PI - angle;
+		return angle;
+	}
 
 	Quaternion Quaternion::FromRotation(const Vector3& axis, float angle) {
 		Vector3 a = axis.Normalized();

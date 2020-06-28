@@ -79,6 +79,22 @@ namespace Math
 		return a + (b - a) * mix;
 	}
 
+	/// Returns the shortest difference between two angles (in radians), the result is always in the range [0, PI].
+	/// The order of the angles does not matter.
+	/// @param angle1
+	/// @param angle2
+	float GetAngleDifference(float angle1, float angle2);
+
+	/// Returns `angle1 + inc` or `angle2 - inc`, in the range [-PI, PI], depending on what's the shortest
+	/// way to get from `angle1` to `angle2`. All the angles are in radians.
+	/// @param angle1 "Source" angle
+	/// @param angle2 "Dest" angle
+	/// @param inc How many radians are incremented.
+	float IncrementAngleTo(float angle1, float angle2, float inc);
+
+	/// Converts the given angle to the [-PI, PI] range, everything in radians.
+	/// @param angle
+	float CorrectAngleRange(float angle);
 
 	/// An ARGB color represented by a 32 bit integer value.
 	struct Color
@@ -159,6 +175,9 @@ namespace Math
 		/// Returns the length of the vector, computed as the square root of then sum of its components squared.
 		float Length() const;
 
+		/// Similar to Length(), but without applying the square root.
+		float SquaredLength() const;
+
 		/// Returns a normalized version of this vector. Being normalized means it has a length of 1.0
 		Vector3 Normalized() const;
 
@@ -175,6 +194,14 @@ namespace Math
 		/// Returns the angle between two vectors.
 		/// @param other
 		float AngleTo(const Vector3& other) const;
+
+		/// Returns the oriented angle between the vectors `v1` and `v2`, in the range [0, 2pi).
+		/// An additional vector must be passed to determine which is the orientation (i.e. whether a 
+		/// positive angle moves from `v1` to `v2` or the other way around), following the "right hand rule".
+		/// @param v1
+		/// @param v2
+		/// @param orientationAxis
+		static float OrientedAngle(const Vector3& v1, const Vector3& v2, const Vector3& orientationAxis);
 
 		Vector3& operator+=(const Vector3&);
 		Vector3& operator+=(float);
@@ -453,7 +480,13 @@ namespace Math
 		/// @param angles The euler angles, in radians.
 		static Matrix3 FromEuler(const Vector3& angles);
 
-		/// Constructs a rotation matrix that can be used in cameras, for a camera at `position`
+		/// Builds a 3x3 rotation matrix that rotates `angle` radians around the given `axis`.
+		/// This is equivalent to `Quaternion::FromRotation(axis, angle).ToMatrix()`.
+		/// @param axis The axis of rotation, which stays fixed.
+		/// @param angle The angle, in radians.
+		static Matrix3 FromAxisAngle(const Vector3& axis, float angle);
+
+		/// Builds a rotation matrix that can be used in cameras, for a camera at `position`
 		/// looking towards `target`. Optionally, the vector that represents the up direction in the world
 		/// (which usually is the Z axis) can be specified.
 		///
@@ -958,6 +991,10 @@ namespace Math
 
 	inline float Vector3::Length() const {
 		return sqrtf(x * x + y * y + z * z);
+	}
+
+	inline float Vector3::SquaredLength() const {
+		return x * x + y * y + z * z;
 	}
 
 	inline Vector3 Vector3::Normalized() const {
