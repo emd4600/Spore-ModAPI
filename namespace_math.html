@@ -152,6 +152,21 @@
             </dt>
             <dd>Linear interpolation between two values, which can be integers, floats, vectors or colors.</dd>
             <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a29b07bfe38b33186e0b4809f7f4cc9db" class="m-doc">GetAngleDifference</a>(</span><span class="m-doc-wrap">float angle1,
+              float angle2) -&gt; float</span>
+            </dt>
+            <dd>Returns the shortest difference between two angles (in radians), the result is always in the range [0, PI].</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a8ede53739c683c2e8fb20773acd4c120" class="m-doc">IncrementAngleTo</a>(</span><span class="m-doc-wrap">float angle1,
+              float angle2,
+              float inc) -&gt; float</span>
+            </dt>
+            <dd>Returns <code>angle1 + inc</code> or <code>angle2 - inc</code>, in the range [-PI, PI], depending on what&#x27;s the shortest way to get from <code>angle1</code> to <code>angle2</code>.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a2029152cd0e18ab00ca78a116cee7ae7" class="m-doc">CorrectAngleRange</a>(</span><span class="m-doc-wrap">float angle) -&gt; float</span>
+            </dt>
+            <dd>Converts the given angle to the [-PI, PI] range, everything in radians.</dd>
+            <dt>
               <span class="m-doc-wrap-bumper">auto <a href="#a8f6dfc8f757953fe0c2d91129573d8f0" class="m-doc">Addresses</a>(</span><span class="m-doc-wrap"><a href="struct_math_1_1_bounding_box.html" class="m-doc">BoundingBox</a>) -&gt; namespace</span>
             </dt>
             <dd><span></span></dd>
@@ -545,6 +560,77 @@
               </tbody>
             </table>
 <p>A <code>mix</code> value of 0 returns <code>a</code>, a value of <code>1</code> returns <code>b</code>.</p><p>The returned value will be equal to <code>mix*a + (1-mix)*b</code></p>
+          </div></section>
+          <section class="m-doc-details" id="a29b07bfe38b33186e0b4809f7f4cc9db"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">float Math::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a29b07bfe38b33186e0b4809f7f4cc9db" class="m-doc-self">GetAngleDifference</a>(</span><span class="m-doc-wrap">float angle1,
+              float angle2)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_math_utils_8h.html">&lt;Spore/MathUtils.h&gt;</a></div>
+            </h3>
+            <p>Returns the shortest difference between two angles (in radians), the result is always in the range [0, PI].</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">angle1</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>angle2</td>
+                  <td></td>
+                </tr>
+              </tbody>
+            </table>
+<p>The order of the angles does not matter.</p>
+          </div></section>
+          <section class="m-doc-details" id="a8ede53739c683c2e8fb20773acd4c120"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">float Math::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a8ede53739c683c2e8fb20773acd4c120" class="m-doc-self">IncrementAngleTo</a>(</span><span class="m-doc-wrap">float angle1,
+              float angle2,
+              float inc)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_math_utils_8h.html">&lt;Spore/MathUtils.h&gt;</a></div>
+            </h3>
+            <p>Returns <code>angle1 + inc</code> or <code>angle2 - inc</code>, in the range [-PI, PI], depending on what&#x27;s the shortest way to get from <code>angle1</code> to <code>angle2</code>.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">angle1</td>
+                  <td>&quot;Source&quot; angle</td>
+                </tr>
+                <tr>
+                  <td>angle2</td>
+                  <td>&quot;Dest&quot; angle</td>
+                </tr>
+                <tr>
+                  <td>inc</td>
+                  <td>How many radians are incremented.</td>
+                </tr>
+              </tbody>
+            </table>
+<p>All the angles are in radians.</p>
+          </div></section>
+          <section class="m-doc-details" id="a2029152cd0e18ab00ca78a116cee7ae7"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">float Math::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a2029152cd0e18ab00ca78a116cee7ae7" class="m-doc-self">CorrectAngleRange</a>(</span><span class="m-doc-wrap">float angle)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_math_utils_8h.html">&lt;Spore/MathUtils.h&gt;</a></div>
+            </h3>
+            <p>Converts the given angle to the [-PI, PI] range, everything in radians.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">angle</td>
+                  <td></td>
+                </tr>
+              </tbody>
+            </table>
           </div></section>
           <section class="m-doc-details" id="a8f6dfc8f757953fe0c2d91129573d8f0"><div>
             <h3>

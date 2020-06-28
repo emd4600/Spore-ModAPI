@@ -45,9 +45,8 @@
     <div class="m-row">
       <div class="m-col-l-10 m-push-l-1">
         <h1>
-          <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="_mesh_8h.html">&lt;Spore/RenderWare/Mesh.h&gt;</a></div>
-          <div class="m-doc-template">template&lt;int kNumBuffers = 1&gt;</div>
           <span class="m-breadcrumb"><a href="namespace_render_ware.html">RenderWare</a>::<wbr/></span>Mesh <span class="m-thin">struct</span>
+          <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_mesh_8h.html">&lt;Spore/RenderWare/Mesh.h&gt;</a></div>
         </h1>
         <p>A structure that represents a basic mesh, made up of vertices and triangles.</p>
         <div class="m-block m-default">
@@ -56,6 +55,7 @@
             <li>
               Reference
               <ul>
+                <li><a href="#derived-classes">Derived classes</a></li>
                 <li><a href="#pub-static-attribs">Public static variables</a></li>
                 <li><a href="#typeless-methods">Constructors, destructors, conversion operators</a></li>
                 <li><a href="#pub-methods">Public functions</a></li>
@@ -64,12 +64,22 @@
             </li>
           </ul>
         </div>
-<p>See <a href="struct_render_ware_1_1_index_buffer.html" class="m-doc">IndexBuffer</a> and <a href="struct_render_ware_1_1_vertex_buffer.html" class="m-doc">VertexBuffer</a> for more information.</p>
+<p>By default it only has one vertex buffer, you can have more by using <a href="struct_render_ware_1_1_mesh__.html" class="m-doc">Mesh_<wbr /></a> . A vertex and index buffer can be shared by multiple meshes, as each mesh specifies the vertex and index count. See <a href="struct_render_ware_1_1_index_buffer.html" class="m-doc">IndexBuffer</a> and <a href="struct_render_ware_1_1_vertex_buffer.html" class="m-doc">VertexBuffer</a> for more information.</p>
+        <section id="derived-classes">
+          <h2><a href="#derived-classes">Derived classes</a></h2>
+          <dl class="m-doc">
+            <dt>
+              <div class="m-doc-template">template&lt;int numBuffers = 1&gt;</div>
+              struct <a href="struct_render_ware_1_1_mesh__.html" class="m-doc">Mesh_</a>
+            </dt>
+            <dd><span></span></dd>
+          </dl>
+        </section>
         <section id="pub-static-attribs">
           <h2><a href="#pub-static-attribs">Public static variables</a></h2>
           <dl class="m-doc">
-            <dt id="a56744b506cfff5a3801544c81b106370">
-              static const uint32_t <a href="#a56744b506cfff5a3801544c81b106370" class="m-doc-self">TYPE</a>
+            <dt id="a8c232f4213958318d99d315b2fb3471f">
+              static const uint32_t <a href="#a8c232f4213958318d99d315b2fb3471f" class="m-doc-self">TYPE</a>
             </dt>
             <dd><span></span></dd>
           </dl>
@@ -77,8 +87,8 @@
         <section id="typeless-methods">
           <h2><a href="#typeless-methods">Constructors, destructors, conversion operators</a></h2>
           <dl class="m-doc">
-            <dt id="ae106c27b36b57be52df847099fae2dbe">
-              <span class="m-doc-wrap-bumper"><a href="#ae106c27b36b57be52df847099fae2dbe" class="m-doc-self">Mesh</a>(</span><span class="m-doc-wrap">)</span>
+            <dt id="ad494d89cb5b1f7587a7d2a465192bf52">
+              <span class="m-doc-wrap-bumper"><a href="#ad494d89cb5b1f7587a7d2a465192bf52" class="m-doc-self">Mesh</a>(</span><span class="m-doc-wrap">)</span>
             </dt>
             <dd><span></span></dd>
           </dl>
@@ -87,24 +97,24 @@
           <h2><a href="#pub-methods">Public functions</a></h2>
           <dl class="m-doc">
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#a9493f1f2b0882c925122165fc562bed0" class="m-doc">CalculateTriangleCount</a>(</span><span class="m-doc-wrap">D3DPRIMITIVETYPE primitiveType) -&gt; size_t</span>
+              <span class="m-doc-wrap-bumper">auto <a href="#aa62646a7e6ab57522438994ae0b9dc77" class="m-doc">CalculateTriangleCount</a>(</span><span class="m-doc-wrap">D3DPRIMITIVETYPE primitiveType) -&gt; size_t</span>
             </dt>
             <dd>Returns the number of triangles this mesh would use if the primitive type was the one specified.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">void <a href="#a20c0bf2b73948c1374471b4922b0d287" class="m-doc">SetIndexBuffer</a>(</span><span class="m-doc-wrap"><a href="struct_render_ware_1_1_index_buffer.html" class="m-doc">IndexBuffer</a>* pBuffer)</span>
+              <span class="m-doc-wrap-bumper">void <a href="#a643850676df5a2ba57cc4f520ef4a8e4" class="m-doc">SetIndexBuffer</a>(</span><span class="m-doc-wrap"><a href="struct_render_ware_1_1_index_buffer.html" class="m-doc">IndexBuffer</a>* pBuffer)</span>
             </dt>
             <dd>Sets the <a href="struct_render_ware_1_1_index_buffer.html" class="m-doc">IndexBuffer</a> used by this mesh.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">void <a href="#ab353950659811df0a625d8590da17fbe" class="m-doc">SetIndicesCount</a>(</span><span class="m-doc-wrap">size_t nIndicesCount)</span>
+              <span class="m-doc-wrap-bumper">void <a href="#adf83e98d649021ef9f28e5840f4a89c8" class="m-doc">SetIndicesCount</a>(</span><span class="m-doc-wrap">size_t nIndicesCount)</span>
             </dt>
             <dd>Sets the number of indicies used in this mesh.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">void <a href="#a3ea9e21df6f68e228ab17f59a749b49a" class="m-doc">SetVertexBuffer</a>(</span><span class="m-doc-wrap">size_t nIndex,
+              <span class="m-doc-wrap-bumper">void <a href="#a028abb10907e917b102ae633f462691d" class="m-doc">SetVertexBuffer</a>(</span><span class="m-doc-wrap">size_t nIndex,
               <a href="struct_render_ware_1_1_vertex_buffer.html" class="m-doc">VertexBuffer</a>* pVertexBuffer)</span>
             </dt>
             <dd>Sets the <a href="struct_render_ware_1_1_vertex_buffer.html" class="m-doc">VertexBuffer</a> used by this mesh at the given index.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">void <a href="#abb3a6698474060509535b307b1c47a6c" class="m-doc">Render</a>(</span><span class="m-doc-wrap">)</span>
+              <span class="m-doc-wrap-bumper">void <a href="#aa03087a791a7745cb24e8fa3aa4c7c4f" class="m-doc">Render</a>(</span><span class="m-doc-wrap">)</span>
             </dt>
             <dd>Renders this mesh.</dd>
           </dl>
@@ -112,56 +122,53 @@
         <section id="pub-attribs">
           <h2><a href="#pub-attribs">Public variables</a></h2>
           <dl class="m-doc">
-            <dt id="a8006a22e1ebe6dd89136c928ac7f0020">
-              int <a href="#a8006a22e1ebe6dd89136c928ac7f0020" class="m-doc-self">instancedSize</a>
+            <dt id="a939855ecbe2c016844f122123ac6e610">
+              int <a href="#a939855ecbe2c016844f122123ac6e610" class="m-doc-self">instancedSize</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="a6d38c3046d11e30e1b09ce9e3ffb31a8">
-              D3DPRIMITIVETYPE <a href="#a6d38c3046d11e30e1b09ce9e3ffb31a8" class="m-doc-self">primitiveType</a>
+            <dt id="a6117b5435c5a30e615cb2097ed737bb4">
+              D3DPRIMITIVETYPE <a href="#a6117b5435c5a30e615cb2097ed737bb4" class="m-doc-self">primitiveType</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="a754e36002f221d4ff605c7ca18393e36">
-              <a href="struct_render_ware_1_1_index_buffer.html" class="m-doc">IndexBuffer</a>* <a href="#a754e36002f221d4ff605c7ca18393e36" class="m-doc-self">pIndexBuffer</a>
+            <dt id="ac33fd22ac30a7c592b305830c670a40b">
+              <a href="struct_render_ware_1_1_index_buffer.html" class="m-doc">IndexBuffer</a>* <a href="#ac33fd22ac30a7c592b305830c670a40b" class="m-doc-self">pIndexBuffer</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="aeee3e54ad959c3c1c9c0ee19b280134e">
-              size_t <a href="#aeee3e54ad959c3c1c9c0ee19b280134e" class="m-doc-self">triangleCount</a>
+            <dt id="ad035603c10ef96ff042dde738c103207">
+              size_t <a href="#ad035603c10ef96ff042dde738c103207" class="m-doc-self">triangleCount</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="a5b8a0e2198c5a7df0a8af20cbc001419">
-              size_t <a href="#a5b8a0e2198c5a7df0a8af20cbc001419" class="m-doc-self">vertexBuffersCount</a>
+            <dt id="a3dc92c9b6b6f7450eae330e7b5127e8c">
+              size_t <a href="#a3dc92c9b6b6f7450eae330e7b5127e8c" class="m-doc-self">vertexBuffersCount</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="ad808aae693071c3aae570ff2ec867eef">
-              size_t <a href="#ad808aae693071c3aae570ff2ec867eef" class="m-doc-self">firstIndex</a>
+            <dt id="af029a13fc6a5d6343076067c6b373343">
+              size_t <a href="#af029a13fc6a5d6343076067c6b373343" class="m-doc-self">firstIndex</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="a41c136ccc41fa714b5e445e546b71998">
-              size_t <a href="#a41c136ccc41fa714b5e445e546b71998" class="m-doc-self">indicesCount</a>
+            <dt id="af6a8a05b37b94c414c7f375d2eaffd65">
+              size_t <a href="#af6a8a05b37b94c414c7f375d2eaffd65" class="m-doc-self">indicesCount</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="af7b757dd525169ce272d5ff101f381a9">
-              size_t <a href="#af7b757dd525169ce272d5ff101f381a9" class="m-doc-self">firstVertex</a>
+            <dt id="ac74184cbc2cde68fc2e187fef3022e50">
+              size_t <a href="#ac74184cbc2cde68fc2e187fef3022e50" class="m-doc-self">firstVertex</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="a11645a00f5af01fe538eb3314e0f32a5">
-              size_t <a href="#a11645a00f5af01fe538eb3314e0f32a5" class="m-doc-self">vertexCount</a>
+            <dt id="a25a5676cc3680ab6765b2ce884f20691">
+              size_t <a href="#a25a5676cc3680ab6765b2ce884f20691" class="m-doc-self">vertexCount</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="a88c6c98e9d9302b372370e7ecbdb0385">
-              <a href="struct_render_ware_1_1_vertex_buffer.html" class="m-doc">VertexBuffer</a>* <a href="#a88c6c98e9d9302b372370e7ecbdb0385" class="m-doc-self">pVertexBuffers</a>
+            <dt id="a6ba2d6468927f3d310dfc8046317597f">
+              <a href="struct_render_ware_1_1_vertex_buffer.html" class="m-doc">VertexBuffer</a>* <a href="#a6ba2d6468927f3d310dfc8046317597f" class="m-doc-self">pVertexBuffers</a>
             </dt>
             <dd><span></span></dd>
           </dl>
         </section>
         <section>
           <h2>Function documentation</h2>
-          <section class="m-doc-details" id="a9493f1f2b0882c925122165fc562bed0"><div>
+          <section class="m-doc-details" id="aa62646a7e6ab57522438994ae0b9dc77"><div>
             <h3>
-              <div class="m-doc-template">
-                template&lt;int kNumBuffers&gt;
-              </div>
-              <span class="m-doc-wrap-bumper">size_t RenderWare::<wbr />Mesh&lt;kNumBuffers&gt;::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a9493f1f2b0882c925122165fc562bed0" class="m-doc-self">CalculateTriangleCount</a>(</span><span class="m-doc-wrap">D3DPRIMITIVETYPE primitiveType)</span></span>
+              <span class="m-doc-wrap-bumper">size_t RenderWare::<wbr />Mesh::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#aa62646a7e6ab57522438994ae0b9dc77" class="m-doc-self">CalculateTriangleCount</a>(</span><span class="m-doc-wrap">D3DPRIMITIVETYPE primitiveType)</span></span>
             </h3>
             <p>Returns the number of triangles this mesh would use if the primitive type was the one specified.</p>
             <table class="m-table m-fullwidth m-flat">
@@ -176,12 +183,9 @@
               </tbody>
             </table>
           </div></section>
-          <section class="m-doc-details" id="a20c0bf2b73948c1374471b4922b0d287"><div>
+          <section class="m-doc-details" id="a643850676df5a2ba57cc4f520ef4a8e4"><div>
             <h3>
-              <div class="m-doc-template">
-                template&lt;int kNumBuffers&gt;
-              </div>
-              <span class="m-doc-wrap-bumper">void RenderWare::<wbr />Mesh&lt;kNumBuffers&gt;::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a20c0bf2b73948c1374471b4922b0d287" class="m-doc-self">SetIndexBuffer</a>(</span><span class="m-doc-wrap"><a href="struct_render_ware_1_1_index_buffer.html" class="m-doc">IndexBuffer</a>* pBuffer)</span></span>
+              <span class="m-doc-wrap-bumper">void RenderWare::<wbr />Mesh::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a643850676df5a2ba57cc4f520ef4a8e4" class="m-doc-self">SetIndexBuffer</a>(</span><span class="m-doc-wrap"><a href="struct_render_ware_1_1_index_buffer.html" class="m-doc">IndexBuffer</a>* pBuffer)</span></span>
             </h3>
             <p>Sets the <a href="struct_render_ware_1_1_index_buffer.html" class="m-doc">IndexBuffer</a> used by this mesh.</p>
             <table class="m-table m-fullwidth m-flat">
@@ -195,14 +199,11 @@
                 </tr>
               </tbody>
             </table>
-<p>The primitive type will be set to use the one the buffer uses. <a href="struct_render_ware_1_1_mesh.html#a9493f1f2b0882c925122165fc562bed0" class="m-doc">CalculateTriangleCount(D3DPRIMITIVETYPE)</a> will be called to update the triangle count.</p>
+<p>The primitive type will be set to use the one the buffer uses. <a href="struct_render_ware_1_1_mesh.html#aa62646a7e6ab57522438994ae0b9dc77" class="m-doc">CalculateTriangleCount(D3DPRIMITIVETYPE)</a> will be called to update the triangle count.</p>
           </div></section>
-          <section class="m-doc-details" id="ab353950659811df0a625d8590da17fbe"><div>
+          <section class="m-doc-details" id="adf83e98d649021ef9f28e5840f4a89c8"><div>
             <h3>
-              <div class="m-doc-template">
-                template&lt;int kNumBuffers&gt;
-              </div>
-              <span class="m-doc-wrap-bumper">void RenderWare::<wbr />Mesh&lt;kNumBuffers&gt;::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ab353950659811df0a625d8590da17fbe" class="m-doc-self">SetIndicesCount</a>(</span><span class="m-doc-wrap">size_t nIndicesCount)</span></span>
+              <span class="m-doc-wrap-bumper">void RenderWare::<wbr />Mesh::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#adf83e98d649021ef9f28e5840f4a89c8" class="m-doc-self">SetIndicesCount</a>(</span><span class="m-doc-wrap">size_t nIndicesCount)</span></span>
             </h3>
             <p>Sets the number of indicies used in this mesh.</p>
             <table class="m-table m-fullwidth m-flat">
@@ -216,14 +217,11 @@
                 </tr>
               </tbody>
             </table>
-<p>The primitive type will be set to use the one the index buffer uses. <a href="struct_render_ware_1_1_mesh.html#a9493f1f2b0882c925122165fc562bed0" class="m-doc">CalculateTriangleCount(D3DPRIMITIVETYPE)</a> will be called to update the triangle count.</p>
+<p>The primitive type will be set to use the one the index buffer uses. <a href="struct_render_ware_1_1_mesh.html#aa62646a7e6ab57522438994ae0b9dc77" class="m-doc">CalculateTriangleCount(D3DPRIMITIVETYPE)</a> will be called to update the triangle count.</p>
           </div></section>
-          <section class="m-doc-details" id="a3ea9e21df6f68e228ab17f59a749b49a"><div>
+          <section class="m-doc-details" id="a028abb10907e917b102ae633f462691d"><div>
             <h3>
-              <div class="m-doc-template">
-                template&lt;int kNumBuffers&gt;
-              </div>
-              <span class="m-doc-wrap-bumper">void RenderWare::<wbr />Mesh&lt;kNumBuffers&gt;::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a3ea9e21df6f68e228ab17f59a749b49a" class="m-doc-self">SetVertexBuffer</a>(</span><span class="m-doc-wrap">size_t nIndex,
+              <span class="m-doc-wrap-bumper">void RenderWare::<wbr />Mesh::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a028abb10907e917b102ae633f462691d" class="m-doc-self">SetVertexBuffer</a>(</span><span class="m-doc-wrap">size_t nIndex,
               <a href="struct_render_ware_1_1_vertex_buffer.html" class="m-doc">VertexBuffer</a>* pVertexBuffer)</span></span>
             </h3>
             <p>Sets the <a href="struct_render_ware_1_1_vertex_buffer.html" class="m-doc">VertexBuffer</a> used by this mesh at the given index.</p>
@@ -242,14 +240,11 @@
                 </tr>
               </tbody>
             </table>
-<p>Meshes can use multiple vertex buffers, although usually only one is used. The index is expected to be lower than the amount of buffers specified using the templated parameter. The primitive type will be set to use the one the index buffer uses. <a href="struct_render_ware_1_1_mesh.html#a9493f1f2b0882c925122165fc562bed0" class="m-doc">CalculateTriangleCount(D3DPRIMITIVETYPE)</a> will be called to update the triangle count.</p>
+<p>Meshes can use multiple vertex buffers, although usually only one is used. The index is expected to be lower than the amount of buffers specified using the templated parameter. The primitive type will be set to use the one the index buffer uses. <a href="struct_render_ware_1_1_mesh.html#aa62646a7e6ab57522438994ae0b9dc77" class="m-doc">CalculateTriangleCount(D3DPRIMITIVETYPE)</a> will be called to update the triangle count.</p>
           </div></section>
-          <section class="m-doc-details" id="abb3a6698474060509535b307b1c47a6c"><div>
+          <section class="m-doc-details" id="aa03087a791a7745cb24e8fa3aa4c7c4f"><div>
             <h3>
-              <div class="m-doc-template">
-                template&lt;int kNumBuffers&gt;
-              </div>
-              <span class="m-doc-wrap-bumper">void RenderWare::<wbr />Mesh&lt;kNumBuffers&gt;::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#abb3a6698474060509535b307b1c47a6c" class="m-doc-self">Render</a>(</span><span class="m-doc-wrap">)</span></span>
+              <span class="m-doc-wrap-bumper">void RenderWare::<wbr />Mesh::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#aa03087a791a7745cb24e8fa3aa4c7c4f" class="m-doc-self">Render</a>(</span><span class="m-doc-wrap">)</span></span>
             </h3>
             <p>Renders this mesh.</p>
 <p>This will use the material set in the Renderer.</p>

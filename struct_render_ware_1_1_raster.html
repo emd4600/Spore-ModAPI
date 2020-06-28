@@ -57,6 +57,7 @@
               <ul>
                 <li><a href="#pub-types">Public types</a></li>
                 <li><a href="#pub-static-attribs">Public static variables</a></li>
+                <li><a href="#pub-static-methods">Public static functions</a></li>
                 <li><a href="#typeless-methods">Constructors, destructors, conversion operators</a></li>
                 <li><a href="#pub-methods">Public functions</a></li>
                 <li><a href="#pub-attribs">Public variables</a></li>
@@ -69,12 +70,14 @@
           <h2><a href="#pub-types">Public types</a></h2>
           <dl class="m-doc">
             <dt id="a766c1167ebbbc7a0aff6eb8e3f09f76b">
-              <span class="m-doc-wrap-bumper">enum <a href="#a766c1167ebbbc7a0aff6eb8e3f09f76b" class="m-doc-self">(anonymous)</a>: uint16_t { </span><span class="m-doc-wrap"><a href="#a766c1167ebbbc7a0aff6eb8e3f09f76ba4d23e68e53dd4c760e231fdc703e2b74" class="m-doc">kTypeTexture</a> = 8,
-              <a href="#a766c1167ebbbc7a0aff6eb8e3f09f76ba33e12b1f7d1c83eba5c5e10deba1abf2" class="m-doc">kTypeCubeTextureRTT</a> = 9,
-              <a href="#a766c1167ebbbc7a0aff6eb8e3f09f76baecb35a7d13a30d85302bac9eabc04619" class="m-doc">kTypeTextureRTT</a> = 10,
+              <span class="m-doc-wrap-bumper">enum <a href="#a766c1167ebbbc7a0aff6eb8e3f09f76b" class="m-doc-self">(anonymous)</a>: uint16_t { </span><span class="m-doc-wrap"><a href="#a766c1167ebbbc7a0aff6eb8e3f09f76ba39db2b9754adec13f1222c358c058240" class="m-doc">kTypeDepthStencilSurface</a> = 2,
+              <a href="#a766c1167ebbbc7a0aff6eb8e3f09f76ba4d23e68e53dd4c760e231fdc703e2b74" class="m-doc">kTypeTexture</a> = 8,
+              <a href="#a766c1167ebbbc7a0aff6eb8e3f09f76ba60dc6a3c2710e02b778a4006ce856979" class="m-doc">kTypeRenderTarget</a> = 9,
+              <a href="#a766c1167ebbbc7a0aff6eb8e3f09f76ba8b4574a191180f83226c7a7a9a2b8cd9" class="m-doc">kTypeDepthStencilTexture</a> = 10,
               <a href="#a766c1167ebbbc7a0aff6eb8e3f09f76baa6cd779ac37b48f48aee74f61d9fb89b" class="m-doc">kFlagDynamicUsage</a> = 0x10,
               <a href="#a766c1167ebbbc7a0aff6eb8e3f09f76ba1b442e962cc3d4b63ea6bf31087e393a" class="m-doc">kFlagAutoGenMipap</a> = 0x200,
-              <a href="#a766c1167ebbbc7a0aff6eb8e3f09f76ba4fc8f21d0efef1f9df35d9a59db5bfaf" class="m-doc">kFlagCubeTexture</a> = 0x1000 }</span>
+              <a href="#a766c1167ebbbc7a0aff6eb8e3f09f76ba4fc8f21d0efef1f9df35d9a59db5bfaf" class="m-doc">kFlagCubeTexture</a> = 0x1000,
+              <a href="#a766c1167ebbbc7a0aff6eb8e3f09f76ba3671551b9186b418178b9d7d4ae98019" class="m-doc">kFlagVolumeTexture</a> = 0x2000 }</span>
             </dt>
             <dd><span></span></dd>
           </dl>
@@ -88,6 +91,20 @@
             <dd><span></span></dd>
           </dl>
         </section>
+        <section id="pub-static-methods">
+          <h2><a href="#pub-static-methods">Public static functions</a></h2>
+          <dl class="m-doc">
+            <dt id="a89551b83807e726536c8f3de06e2189c">
+              <span class="m-doc-wrap-bumper">static auto <a href="#a89551b83807e726536c8f3de06e2189c" class="m-doc-self">CreateRaster</a>(</span><span class="m-doc-wrap"><a href="struct_render_ware_1_1_raster.html" class="m-doc">Raster</a>*&amp; pDst,
+              uint16_t width,
+              uint16_t height,
+              uint8_t levels,
+              int flagsDepth,
+              D3DFORMAT format) -&gt; <a href="struct_render_ware_1_1_raster.html" class="m-doc">Raster</a>*</span>
+            </dt>
+            <dd><span></span></dd>
+          </dl>
+        </section>
         <section id="typeless-methods">
           <h2><a href="#typeless-methods">Constructors, destructors, conversion operators</a></h2>
           <dl class="m-doc">
@@ -95,11 +112,19 @@
               <span class="m-doc-wrap-bumper"><a href="#adcdaeaec437b1c5cf549b0581668f191" class="m-doc-self">Raster</a>(</span><span class="m-doc-wrap">)</span>
             </dt>
             <dd><span></span></dd>
+            <dt id="a882d05859f71fd5b13dd0121c9f0e504">
+              <span class="m-doc-wrap-bumper"><a href="#a882d05859f71fd5b13dd0121c9f0e504" class="m-doc-self">~Raster</a>(</span><span class="m-doc-wrap">)</span>
+            </dt>
+            <dd><span></span></dd>
           </dl>
         </section>
         <section id="pub-methods">
           <h2><a href="#pub-methods">Public functions</a></h2>
           <dl class="m-doc">
+            <dt id="a27b00eeab85d5d451ba697ce882cfbfb">
+              <span class="m-doc-wrap-bumper">void <a href="#a27b00eeab85d5d451ba697ce882cfbfb" class="m-doc-self">Delete</a>(</span><span class="m-doc-wrap">)</span>
+            </dt>
+            <dd><span></span></dd>
             <dt id="ad3899e205b2c9bef31b43d543833bcf7">
               <span class="m-doc-wrap-bumper">void <a href="#ad3899e205b2c9bef31b43d543833bcf7" class="m-doc-self">Create</a>(</span><span class="m-doc-wrap">)</span>
             </dt>
@@ -107,6 +132,10 @@
             <dt id="ac7da8d7a6b85a3e81cd456321854e445">
               <span class="m-doc-wrap-bumper">auto <a href="#ac7da8d7a6b85a3e81cd456321854e445" class="m-doc-self">CreateTexture</a>(</span><span class="m-doc-wrap">DWORD usage = NULL,
               D3DPOOL pool = D3DPOOL_DEFAULT) -&gt; HRESULT</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a4448eb4827b92d62509094b5a9a521e7">
+              <span class="m-doc-wrap-bumper">void <a href="#a4448eb4827b92d62509094b5a9a521e7" class="m-doc-self">D3D9AddToUnmanagedList</a>(</span><span class="m-doc-wrap">)</span>
             </dt>
             <dd><span></span></dd>
           </dl>

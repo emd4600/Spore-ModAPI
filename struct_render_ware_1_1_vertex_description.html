@@ -46,7 +46,7 @@
       <div class="m-col-l-10 m-push-l-1">
         <h1>
           <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="_vertex_description_8h.html">&lt;Spore/RenderWare/VertexDescription.h&gt;</a></div>
-          <div class="m-doc-template">template&lt;uint16_t nVertexElements = (uint16_t)0&gt;</div>
+          <div class="m-doc-template">template&lt;uint16_t nVertexElements = (uint16_t)1&gt;</div>
           <span class="m-breadcrumb"><a href="namespace_render_ware.html">RenderWare</a>::<wbr/></span>VertexDescription <span class="m-thin">struct</span>
         </h1>
         <p>A vertex declaration defines the vertex buffer layout and programs the tessellation engine.</p>
@@ -56,20 +56,18 @@
             <li>
               Reference
               <ul>
-                <li><a href="#pub-static-attribs">Public static variables</a></li>
+                <li><a href="#base-classes">Base classes</a></li>
                 <li><a href="#typeless-methods">Constructors, destructors, conversion operators</a></li>
-                <li><a href="#pub-methods">Public functions</a></li>
-                <li><a href="#pub-attribs">Public variables</a></li>
               </ul>
             </li>
           </ul>
         </div>
-<p>This structure has a template parameter which is the number of elements it contains. For example, to use 3 elements: new <a href="struct_render_ware_1_1_vertex_description.html#a0c4db846ea3e2338d53986350a0eea79" class="m-doc">VertexDescription&lt;3&gt;()</a>; For more information, check the official Direct3D 9 documentation:</p><ul><li><a href="https://msdn.microsoft.com/en-us/library/windows/desktop/bb206335.aspx">Vertex Declaration</a></li><li><a href="https://msdn.microsoft.com/en-us/library/windows/desktop/bb172630.aspx">D3DVERTEXELEMENT9</a></li></ul>
-        <section id="pub-static-attribs">
-          <h2><a href="#pub-static-attribs">Public static variables</a></h2>
+<p>This structure has a template parameter which is the number of elements it contains. For example, to use 3 elements: new <a href="struct_render_ware_1_1_vertex_description.html#a3b311bdcd14a79ab4d7b93667a09ae87" class="m-doc">VertexDescription&lt;3&gt;()</a>; For more information, check the official Direct3D 9 documentation:</p><ul><li><a href="https://msdn.microsoft.com/en-us/library/windows/desktop/bb206335.aspx">Vertex Declaration</a></li><li><a href="https://msdn.microsoft.com/en-us/library/windows/desktop/bb172630.aspx">D3DVERTEXELEMENT9</a></li></ul>
+        <section id="base-classes">
+          <h2><a href="#base-classes">Base classes</a></h2>
           <dl class="m-doc">
-            <dt id="ae8667211ac5daed408b0c66dede99cb8">
-              static const uint32_t <a href="#ae8667211ac5daed408b0c66dede99cb8" class="m-doc-self">TYPE</a>
+            <dt>
+              struct <a href="struct_render_ware_1_1_vertex_description_base.html" class="m-doc">VertexDescriptionBase</a>
             </dt>
             <dd><span></span></dd>
           </dl>
@@ -77,73 +75,10 @@
         <section id="typeless-methods">
           <h2><a href="#typeless-methods">Constructors, destructors, conversion operators</a></h2>
           <dl class="m-doc">
-            <dt id="a0c4db846ea3e2338d53986350a0eea79">
-              <span class="m-doc-wrap-bumper"><a href="#a0c4db846ea3e2338d53986350a0eea79" class="m-doc-self">VertexDescription</a>(</span><span class="m-doc-wrap">)</span>
+            <dt id="a3b311bdcd14a79ab4d7b93667a09ae87">
+              <span class="m-doc-wrap-bumper"><a href="#a3b311bdcd14a79ab4d7b93667a09ae87" class="m-doc-self">VertexDescription</a>(</span><span class="m-doc-wrap">)</span>
             </dt>
             <dd><span></span></dd>
-          </dl>
-        </section>
-        <section id="pub-methods">
-          <h2><a href="#pub-methods">Public functions</a></h2>
-          <dl class="m-doc">
-            <dt id="a671f0788743e24d89b43173c6b780b17">
-              <span class="m-doc-wrap-bumper">void <a href="#a671f0788743e24d89b43173c6b780b17" class="m-doc-self">CreateDeclaration</a>(</span><span class="m-doc-wrap">IDirect3DDevice9* pDevice)</span>
-            </dt>
-            <dd>Creates the IDirect3DVertexDeclaration9 object required by Direct3D 9 using the elements in this description.</dd>
-            <dt id="a4bc881333f7f1e9ed2e509dc2ef287b1">
-              <span class="m-doc-wrap-bumper">void <a href="#a4bc881333f7f1e9ed2e509dc2ef287b1" class="m-doc-self">LoadDeclaration</a>(</span><span class="m-doc-wrap">)</span>
-            </dt>
-            <dd>Loads this IDirect3DVertexDeclaration9 into DirectX.</dd>
-            <dt id="a66afcddc5f331ae803b700d74831a816">
-              <span class="m-doc-wrap-bumper">void <a href="#a66afcddc5f331ae803b700d74831a816" class="m-doc-self">ReleaseDirectX</a>(</span><span class="m-doc-wrap">)</span>
-            </dt>
-            <dd>Releases the DirectX object.</dd>
-            <dt id="ae07e43bb74113085c9c9b0f644bc4add">
-              <span class="m-doc-wrap-bumper">void <a href="#ae07e43bb74113085c9c9b0f644bc4add" class="m-doc-self">SetElement</a>(</span><span class="m-doc-wrap">int index,
-              <a href="struct_render_ware_1_1_vertex_element.html" class="m-doc">VertexElement</a> element)</span>
-            </dt>
-            <dd><span></span></dd>
-          </dl>
-        </section>
-        <section id="pub-attribs">
-          <h2><a href="#pub-attribs">Public variables</a></h2>
-          <dl class="m-doc">
-            <dt id="a04ca12a2562a4ec46ad6ffb1c7cdc75e">
-              <a href="struct_render_ware_1_1_vertex_description.html" class="m-doc">VertexDescription</a>* <a href="#a04ca12a2562a4ec46ad6ffb1c7cdc75e" class="m-doc-self">pNextParent</a>
-            </dt>
-            <dd><span></span></dd>
-            <dt id="a2f208e4416dbf1765c2a04e9a761a261">
-              <a href="struct_render_ware_1_1_vertex_description.html" class="m-doc">VertexDescription</a>* <a href="#a2f208e4416dbf1765c2a04e9a761a261" class="m-doc-self">pNextSibling</a>
-            </dt>
-            <dd><span></span></dd>
-            <dt id="aa651fa4c26bd680114afc83de802445d">
-              IDirect3DVertexDeclaration9* <a href="#aa651fa4c26bd680114afc83de802445d" class="m-doc-self">pDXVertexDeclaration</a>
-            </dt>
-            <dd>The IDirect3DVertexDeclaration9 that operates behind this structure.</dd>
-            <dt id="a9eda28c3cfded821a01b8338d7b7061b">
-              uint16_t <a href="#a9eda28c3cfded821a01b8338d7b7061b" class="m-doc-self">elementsCount</a>
-            </dt>
-            <dd>The amount of elements contained in this description.</dd>
-            <dt id="a2d288832a9c446c7c7e46ff7d39fdec1">
-              char <a href="#a2d288832a9c446c7c7e46ff7d39fdec1" class="m-doc-self">lockFlags</a>
-            </dt>
-            <dd><span></span></dd>
-            <dt id="a3f31d42e051590e740cc9c4d87479dc7">
-              uint8_t <a href="#a3f31d42e051590e740cc9c4d87479dc7" class="m-doc-self">stride</a>
-            </dt>
-            <dd>The size in bytes of each vertex.</dd>
-            <dt id="a8b09a9c61b4bb1ecae0c507a4a67e7da">
-              int <a href="#a8b09a9c61b4bb1ecae0c507a4a67e7da" class="m-doc-self">elementsUsed</a>
-            </dt>
-            <dd><span></span></dd>
-            <dt id="ad8a6ab63713ea653f243d52969fe9a3c">
-              int <a href="#ad8a6ab63713ea653f243d52969fe9a3c" class="m-doc-self">elementsHash</a>
-            </dt>
-            <dd><span></span></dd>
-            <dt id="a9c70053fd667f029ad97bdce489dd6c1">
-              <a href="struct_render_ware_1_1_vertex_element.html" class="m-doc">VertexElement</a> <a href="#a9c70053fd667f029ad97bdce489dd6c1" class="m-doc-self">elements</a>
-            </dt>
-            <dd>An array of all the <a href="struct_render_ware_1_1_vertex_element.html" class="m-doc">VertexElement</a> objects of this description.</dd>
           </dl>
         </section>
       </div>

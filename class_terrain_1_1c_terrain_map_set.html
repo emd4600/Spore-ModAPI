@@ -55,6 +55,7 @@
             <li>
               Reference
               <ul>
+                <li><a href="#pub-types">Public types</a></li>
                 <li><a href="#typeless-methods">Constructors, destructors, conversion operators</a></li>
                 <li><a href="#pub-methods">Public functions</a></li>
                 <li><a href="#pub-attribs">Public variables</a></li>
@@ -62,9 +63,22 @@
             </li>
           </ul>
         </div>
+        <section id="pub-types">
+          <h2><a href="#pub-types">Public types</a></h2>
+          <dl class="m-doc">
+            <dt>
+              struct <a href="struct_terrain_1_1c_terrain_map_set_1_1c_height_ranges.html" class="m-doc">cHeightRanges</a>
+            </dt>
+            <dd><span></span></dd>
+          </dl>
+        </section>
         <section id="typeless-methods">
           <h2><a href="#typeless-methods">Constructors, destructors, conversion operators</a></h2>
           <dl class="m-doc">
+            <dt id="a9c8c894e08c4cdbb3b878ebf774ba1ec">
+              <span class="m-doc-wrap-bumper"><a href="#a9c8c894e08c4cdbb3b878ebf774ba1ec" class="m-doc-self">cTerrainMapSet</a>(</span><span class="m-doc-wrap">)</span>
+            </dt>
+            <dd><span></span></dd>
             <dt id="a72b582d591b0e131135a1d1390a350f6">
               <span class="m-doc-wrap-bumper"><a href="#a72b582d591b0e131135a1d1390a350f6" class="m-doc-self">~cTerrainMapSet</a>(</span><span class="m-doc-wrap">) <span class="m-label m-flat m-warning">virtual</span></span>
             </dt>
@@ -74,6 +88,23 @@
         <section id="pub-methods">
           <h2><a href="#pub-methods">Public functions</a></h2>
           <dl class="m-doc">
+            <dt id="a0f762a6f1ec9fa5b6037c74ed363a389">
+              <span class="m-doc-wrap-bumper">auto <a href="#a0f762a6f1ec9fa5b6037c74ed363a389" class="m-doc-self">AddRef</a>(</span><span class="m-doc-wrap">) -&gt; int</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a20b551db0c0fd3564df0582f44225cda">
+              <span class="m-doc-wrap-bumper">auto <a href="#a20b551db0c0fd3564df0582f44225cda" class="m-doc-self">Release</a>(</span><span class="m-doc-wrap">) -&gt; int</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a1560bec2fcf2f25657f22ed0c2b07d76">
+              <span class="m-doc-wrap-bumper">void <a href="#a1560bec2fcf2f25657f22ed0c2b07d76" class="m-doc-self">SetMap</a>(</span><span class="m-doc-wrap"><a href="namespace_terrain.html#aac84cdc40d8fe17a0b036974639dd5f8" class="m-doc">TerrainMapIndex</a> index,
+              <a href="class_terrain_1_1c_terrain_map.html" class="m-doc">cTerrainMap</a>* pMap)</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a3b29da264ce9adb91c152846c8eebfd3">
+              <span class="m-doc-wrap-bumper">auto <a href="#a3b29da264ce9adb91c152846c8eebfd3" class="m-doc-self">GetMap</a>(</span><span class="m-doc-wrap"><a href="namespace_terrain.html#aac84cdc40d8fe17a0b036974639dd5f8" class="m-doc">TerrainMapIndex</a> index) -&gt; <a href="class_terrain_1_1c_terrain_map.html" class="m-doc">cTerrainMap</a>*</span>
+            </dt>
+            <dd><span></span></dd>
             <dt id="a1b1b60dae4f3c8eb7e51365ce208a6b1">
               <span class="m-doc-wrap-bumper">auto <a href="#a1b1b60dae4f3c8eb7e51365ce208a6b1" class="m-doc-self">GetHeight</a>(</span><span class="m-doc-wrap">const <a href="struct_math_1_1_vector3.html" class="m-doc">Math::<wbr />Vector3</a>&amp; position) const -&gt; float</span>
             </dt>
@@ -88,7 +119,7 @@
           <h2><a href="#pub-attribs">Public variables</a></h2>
           <dl class="m-doc">
             <dt id="aae9bfb096d501ae19ea773dbcedacdd9">
-              <a href="_terrain_maps_8h.html#a1d383980829ced078185d5bf2394a282" class="m-doc">cTerrainMapPtr</a> <a href="#aae9bfb096d501ae19ea773dbcedacdd9" class="m-doc-self">mMaps</a>
+              <a href="c_terrain_map_8h.html#a1d383980829ced078185d5bf2394a282" class="m-doc">cTerrainMapPtr</a> <a href="#aae9bfb096d501ae19ea773dbcedacdd9" class="m-doc-self">mMaps</a>
             </dt>
             <dd><span></span></dd>
             <dt id="a2cbc8270262045871e4151855f8377fb">
@@ -115,8 +146,8 @@
               float <a href="#a079c972d7b0bd0b4f16f456a5da1f8c2" class="m-doc-self">field_48</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="a90f84a783b6d6d044ffbf7c762da04ef">
-              float <a href="#a90f84a783b6d6d044ffbf7c762da04ef" class="m-doc-self">field_4C</a>
+            <dt id="a6d5b522f52a191d59398aeb67cd775ee">
+              float <a href="#a6d5b522f52a191d59398aeb67cd775ee" class="m-doc-self">mMaxCliffGradient</a>
             </dt>
             <dd><span></span></dd>
             <dt id="af7dd6e0a71078fe956f1f3a763d26dde">
@@ -127,8 +158,8 @@
               float <a href="#a433ee8808e7cb4db4bf2ec5d2da87597" class="m-doc-self">field_54</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="aafded683f440850d4790fe10dd4d0623">
-              int <a href="#aafded683f440850d4790fe10dd4d0623" class="m-doc-self">field_58</a>
+            <dt id="a4b52e6f5620b94f329267370a460753e">
+              <a href="struct_terrain_1_1c_terrain_map_set_1_1c_height_ranges.html" class="m-doc">cHeightRanges</a>* <a href="#a4b52e6f5620b94f329267370a460753e" class="m-doc-self">mpHeightRanges</a>
             </dt>
             <dd><span></span></dd>
           </dl>

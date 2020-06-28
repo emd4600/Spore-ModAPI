@@ -55,6 +55,7 @@
             <li>
               Reference
               <ul>
+                <li><a href="#pub-static-methods">Public static functions</a></li>
                 <li><a href="#typeless-methods">Constructors, destructors, conversion operators</a></li>
                 <li><a href="#pub-methods">Public functions</a></li>
                 <li><a href="#pub-attribs">Public variables</a></li>
@@ -62,6 +63,23 @@
             </li>
           </ul>
         </div>
+        <section id="pub-static-methods">
+          <h2><a href="#pub-static-methods">Public static functions</a></h2>
+          <dl class="m-doc">
+            <dt id="ad9a5aa9d9a7697f54b03c0df17129a24">
+              <span class="m-doc-wrap-bumper">static auto <a href="#ad9a5aa9d9a7697f54b03c0df17129a24" class="m-doc-self">IsIdleWalkLookatStart</a>(</span><span class="m-doc-wrap">uint32_t animID) -&gt; bool</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="abe78ba028352dc79f54c0e0c74e38a38">
+              <span class="m-doc-wrap-bumper">static auto <a href="#abe78ba028352dc79f54c0e0c74e38a38" class="m-doc-self">IsIdleWalkStop</a>(</span><span class="m-doc-wrap">uint32_t animID) -&gt; bool</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a72a0add4ce034d9a1eea6afd477d7b4d">
+              <span class="m-doc-wrap-bumper">static auto <a href="#a72a0add4ce034d9a1eea6afd477d7b4d" class="m-doc-self">IsIdleWalk</a>(</span><span class="m-doc-wrap">uint32_t animID) -&gt; bool</span>
+            </dt>
+            <dd><span></span></dd>
+          </dl>
+        </section>
         <section id="typeless-methods">
           <h2><a href="#typeless-methods">Constructors, destructors, conversion operators</a></h2>
           <dl class="m-doc">
@@ -173,11 +191,11 @@
               <span class="m-doc-wrap-bumper">auto <a href="#a337c08df66e7eb83ead20ed7d50027f9" class="m-doc-self">func54h</a>(</span><span class="m-doc-wrap">) -&gt; int <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
             <dd><span></span></dd>
-            <dt id="a952de92f9ee60bdfc58fcace07488f85">
-              <span class="m-doc-wrap-bumper">auto <a href="#a952de92f9ee60bdfc58fcace07488f85" class="m-doc-self">func58h</a>(</span><span class="m-doc-wrap">uint32_t* dstAnimID,
-              float*,
-              int*,
-              <a href="namespace_anim.html#a3b0f854f8c5f7ea805a07634dc180bc4" class="m-doc">AnimIndex</a>* dstAnimIndex) -&gt; int <span class="m-label m-flat m-warning">pure virtual</span></span>
+            <dt id="a0af8e0f7a7c600590a444025d09590e5">
+              <span class="m-doc-wrap-bumper">auto <a href="#a0af8e0f7a7c600590a444025d09590e5" class="m-doc-self">GetCurrentAnimation</a>(</span><span class="m-doc-wrap">uint32_t* dstAnimID,
+              float* dstTime = nullptr,
+              int* = nullptr,
+              <a href="namespace_anim.html#a3b0f854f8c5f7ea805a07634dc180bc4" class="m-doc">AnimIndex</a>* dstAnimIndex = nullptr) -&gt; int <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
             <dd><span></span></dd>
             <dt id="a9eace785d4e0a5ffb3eed371f203e16d">
@@ -239,8 +257,32 @@
               <a href="struct_math_1_1_quaternion.html" class="m-doc">Quaternion</a> <a href="#aafda2739a0cee145f6b015024c18128f" class="m-doc-self">mOrientation</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="a145e515cb9929fc5c8e104b18faa0f76">
-              char <a href="#a145e515cb9929fc5c8e104b18faa0f76" class="m-doc-self">padding_04</a>
+            <dt id="a22b05bef3dd89403c7a10e1dee090ba8">
+              char <a href="#a22b05bef3dd89403c7a10e1dee090ba8" class="m-doc-self">padding_20</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="ae98d67bb85c24e5570fdadeb7f37dd20">
+              int <a href="#ae98d67bb85c24e5570fdadeb7f37dd20" class="m-doc-self">field_154</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="aa640755eeea5b4edefed948889b16a96">
+              int <a href="#aa640755eeea5b4edefed948889b16a96" class="m-doc-self">field_158</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a67dfb49f355e51f0687bd99de36fbe49">
+              int <a href="#a67dfb49f355e51f0687bd99de36fbe49" class="m-doc-self">field_15C</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="acf5410b77352e604458de869b81892ee">
+              int <a href="#acf5410b77352e604458de869b81892ee" class="m-doc-self">field_160</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="af7cd1622ec5ffb2c5c3ddb278698f2bf">
+              <a href="struct_math_1_1_vector3.html" class="m-doc">Vector3</a> <a href="#af7cd1622ec5ffb2c5c3ddb278698f2bf" class="m-doc-self">field_164</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a2ee9b586393c59e8546c23de90afaef4">
+              int <a href="#a2ee9b586393c59e8546c23de90afaef4" class="m-doc-self">field_170</a>
             </dt>
             <dd><span></span></dd>
             <dt id="a4893259c686ad01fabbac1e731d970a7">
@@ -251,8 +293,16 @@
               <a href="_model_asset_8h.html#a4695930ef0d84e11d31379e623af5732" class="m-doc">ModelPtr</a> <a href="#accfd40f55d7133ecdfa9036b4df874b0" class="m-doc-self">mpModel</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="afae3cfc7b41c820e1569a1fb5c107dbb">
-              char <a href="#afae3cfc7b41c820e1569a1fb5c107dbb" class="m-doc-self">padding_184</a>
+            <dt id="ad728679bacc323dd39b10c0119af0bf6">
+              int <a href="#ad728679bacc323dd39b10c0119af0bf6" class="m-doc-self">field_184</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a40d5ae5660fcda3a8722865dea5ed72b">
+              int <a href="#a40d5ae5660fcda3a8722865dea5ed72b" class="m-doc-self">field_188</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a704ab94f52155c4e7291e7a5890f4a27">
+              <a href="namespace_anim.html#a3b0f854f8c5f7ea805a07634dc180bc4" class="m-doc">AnimIndex</a> <a href="#a704ab94f52155c4e7291e7a5890f4a27" class="m-doc-self">field_18C</a>
             </dt>
             <dd><span></span></dd>
             <dt id="a9c4b08569b84519bde60b6f5a529ec47">

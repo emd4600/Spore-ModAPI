@@ -45,9 +45,8 @@
     <div class="m-row">
       <div class="m-col-l-10 m-push-l-1">
         <h1>
-          <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="_mesh_compiled_state_link_8h.html">&lt;Spore/RenderWare/MeshCompiledStateLink.h&gt;</a></div>
-          <div class="m-doc-template">template&lt;int nCompiledStates = 1&gt;</div>
           <span class="m-breadcrumb"><a href="namespace_render_ware.html">RenderWare</a>::<wbr/></span>MeshCompiledStateLink <span class="m-thin">struct</span>
+          <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_mesh_compiled_state_link_8h.html">&lt;Spore/RenderWare/MeshCompiledStateLink.h&gt;</a></div>
         </h1>
         <p>This structure links one or more compiled states (that is, materials) to a mesh.</p>
         <div class="m-block m-default">
@@ -56,6 +55,7 @@
             <li>
               Reference
               <ul>
+                <li><a href="#derived-classes">Derived classes</a></li>
                 <li><a href="#pub-static-attribs">Public static variables</a></li>
                 <li><a href="#typeless-methods">Constructors, destructors, conversion operators</a></li>
                 <li><a href="#pub-attribs">Public variables</a></li>
@@ -63,11 +63,22 @@
             </li>
           </ul>
         </div>
+<p>By default this only links one material; more materials can be used with <a href="struct_render_ware_1_1_mesh_compiled_state_link__.html" class="m-doc">MeshCompiledStateLink_<wbr /></a></p>
+        <section id="derived-classes">
+          <h2><a href="#derived-classes">Derived classes</a></h2>
+          <dl class="m-doc">
+            <dt>
+              <div class="m-doc-template">template&lt;int nCompiledStates = 1&gt;</div>
+              struct <a href="struct_render_ware_1_1_mesh_compiled_state_link__.html" class="m-doc">MeshCompiledStateLink_</a>
+            </dt>
+            <dd><span></span></dd>
+          </dl>
+        </section>
         <section id="pub-static-attribs">
           <h2><a href="#pub-static-attribs">Public static variables</a></h2>
           <dl class="m-doc">
-            <dt id="adac310a8d85dc2495ceafa7f08daadf8">
-              static const uint32_t <a href="#adac310a8d85dc2495ceafa7f08daadf8" class="m-doc-self">TYPE</a>
+            <dt id="a9981bc48fedcd8454c6746ddca08ae38">
+              static const uint32_t <a href="#a9981bc48fedcd8454c6746ddca08ae38" class="m-doc-self">TYPE</a>
             </dt>
             <dd><span></span></dd>
           </dl>
@@ -75,8 +86,8 @@
         <section id="typeless-methods">
           <h2><a href="#typeless-methods">Constructors, destructors, conversion operators</a></h2>
           <dl class="m-doc">
-            <dt id="ad78e4c73b91aa95245c2ac14d1cba389">
-              <span class="m-doc-wrap-bumper"><a href="#ad78e4c73b91aa95245c2ac14d1cba389" class="m-doc-self">MeshCompiledStateLink</a>(</span><span class="m-doc-wrap">)</span>
+            <dt id="a948a83d486a1153d17312b73fd2a873e">
+              <span class="m-doc-wrap-bumper"><a href="#a948a83d486a1153d17312b73fd2a873e" class="m-doc-self">MeshCompiledStateLink</a>(</span><span class="m-doc-wrap">)</span>
             </dt>
             <dd><span></span></dd>
           </dl>
@@ -84,16 +95,16 @@
         <section id="pub-attribs">
           <h2><a href="#pub-attribs">Public variables</a></h2>
           <dl class="m-doc">
-            <dt id="a95fee04295744bde1c876b2fbd5decd7">
-              <a href="struct_render_ware_1_1_mesh.html" class="m-doc">Mesh</a>* <a href="#a95fee04295744bde1c876b2fbd5decd7" class="m-doc-self">mpMesh</a>
+            <dt id="aa7295e6ce9c991c6897fd6cab6727321">
+              <a href="struct_render_ware_1_1_mesh.html" class="m-doc">Mesh</a>* <a href="#aa7295e6ce9c991c6897fd6cab6727321" class="m-doc-self">mpMesh</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="a19a59a8655cafbea1b4b449db5774d27">
-              size_t <a href="#a19a59a8655cafbea1b4b449db5774d27" class="m-doc-self">mnCompiledStatesCount</a>
+            <dt id="a60fa9720538804e73028273bf60eacff">
+              size_t <a href="#a60fa9720538804e73028273bf60eacff" class="m-doc-self">mCompiledStatesCount</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="ab556addcfd25db312e04f5cb6b164db1">
-              <a href="struct_render_ware_1_1_compiled_state.html" class="m-doc">CompiledState</a>* <a href="#ab556addcfd25db312e04f5cb6b164db1" class="m-doc-self">mpCompiledStates</a>
+            <dt id="a9f8103dd007d440c669e98967280efb0">
+              <a href="struct_render_ware_1_1_compiled_state.html" class="m-doc">CompiledState</a>* <a href="#a9f8103dd007d440c669e98967280efb0" class="m-doc-self">mpCompiledStates</a>
             </dt>
             <dd><span></span></dd>
           </dl>

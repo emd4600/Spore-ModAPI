@@ -71,11 +71,16 @@
             </dt>
             <dd>Builds a 3x3 rotation matrix equivalent to the euler angles provided.</dd>
             <dt>
+              <span class="m-doc-wrap-bumper">static auto <a href="#ab6872d21bac6ff56b5fd739e9fc42225" class="m-doc">FromAxisAngle</a>(</span><span class="m-doc-wrap">const <a href="struct_math_1_1_vector3.html" class="m-doc">Vector3</a>&amp; axis,
+              float angle) -&gt; <a href="struct_math_1_1_matrix3.html" class="m-doc">Matrix3</a></span>
+            </dt>
+            <dd>Builds a 3x3 rotation matrix that rotates <code>angle</code> radians around the given <code>axis</code>.</dd>
+            <dt>
               <span class="m-doc-wrap-bumper">static auto <a href="#a5d60566263544803ee29791a6853927b" class="m-doc">LookAt</a>(</span><span class="m-doc-wrap">const <a href="struct_math_1_1_vector3.html" class="m-doc">Vector3</a>&amp; position,
               const <a href="struct_math_1_1_vector3.html" class="m-doc">Vector3</a>&amp; target,
               const <a href="struct_math_1_1_vector3.html" class="m-doc">Vector3</a>&amp; up = <a href="namespace_math.html#a3cc087fd325ae8245cd21a9f4ecf93f9" class="m-doc">Z_<wbr />AXIS</a>) -&gt; <a href="struct_math_1_1_matrix3.html" class="m-doc">Matrix3</a></span>
             </dt>
-            <dd>Constructs a rotation matrix that can be used in cameras, for a camera at <code>position</code> looking towards <code>target</code>.</dd>
+            <dd>Builds a rotation matrix that can be used in cameras, for a camera at <code>position</code> looking towards <code>target</code>.</dd>
           </dl>
         </section>
         <section id="typeless-methods">
@@ -141,13 +146,36 @@
             </table>
 <p>The euler angles must be in radians, and each value represents the rotation around the X, Y and Z axes respectively.</p>
           </div></section>
+          <section class="m-doc-details" id="ab6872d21bac6ff56b5fd739e9fc42225"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">static <a href="struct_math_1_1_matrix3.html" class="m-doc">Matrix3</a> Math::<wbr />Matrix3::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ab6872d21bac6ff56b5fd739e9fc42225" class="m-doc-self">FromAxisAngle</a>(</span><span class="m-doc-wrap">const <a href="struct_math_1_1_vector3.html" class="m-doc">Vector3</a>&amp; axis,
+              float angle)</span></span>
+            </h3>
+            <p>Builds a 3x3 rotation matrix that rotates <code>angle</code> radians around the given <code>axis</code>.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">axis</td>
+                  <td>The axis of rotation, which stays fixed.</td>
+                </tr>
+                <tr>
+                  <td>angle</td>
+                  <td>The angle, in radians.</td>
+                </tr>
+              </tbody>
+            </table>
+<p>This is equivalent to <code>Quaternion::FromRotation(axis, angle).ToMatrix()</code>.</p>
+          </div></section>
           <section class="m-doc-details" id="a5d60566263544803ee29791a6853927b"><div>
             <h3>
               <span class="m-doc-wrap-bumper">static <a href="struct_math_1_1_matrix3.html" class="m-doc">Matrix3</a> Math::<wbr />Matrix3::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a5d60566263544803ee29791a6853927b" class="m-doc-self">LookAt</a>(</span><span class="m-doc-wrap">const <a href="struct_math_1_1_vector3.html" class="m-doc">Vector3</a>&amp; position,
               const <a href="struct_math_1_1_vector3.html" class="m-doc">Vector3</a>&amp; target,
               const <a href="struct_math_1_1_vector3.html" class="m-doc">Vector3</a>&amp; up = <a href="namespace_math.html#a3cc087fd325ae8245cd21a9f4ecf93f9" class="m-doc">Z_<wbr />AXIS</a>)</span></span>
             </h3>
-            <p>Constructs a rotation matrix that can be used in cameras, for a camera at <code>position</code> looking towards <code>target</code>.</p>
+            <p>Builds a rotation matrix that can be used in cameras, for a camera at <code>position</code> looking towards <code>target</code>.</p>
             <table class="m-table m-fullwidth m-flat">
               <thead>
                 <tr><th colspan="2">Parameters</th></tr>
