@@ -31,6 +31,35 @@ namespace Simulator
 {
 	typedef int TimeStamp[9];
 
+	enum class StarType : int
+	{
+		None = 0,
+		/// The galactic core
+		GalacticCore = 1,
+		/// Black holes
+		BlackHole = 2,
+		/// Proto-planetary disks
+		ProtoPlanetary = 3,
+		/// Yellow stars
+		StarG = 4,
+		/// Blue stars
+		StarO = 5,
+		/// Red stars
+		StarM = 6,
+		/// Binary O-O (blue-blue) star system
+		BinaryOO = 7,
+		/// Binary O-M (blue-red) star system
+		BinaryOM = 8,
+		/// Binary O-G (blue-yellow) star system
+		BinaryOG = 9,
+		/// Binary G-G (yellow-yellow) star system
+		BinaryGG = 10,
+		/// Binary G-M (yellow-red) star system
+		BinaryGM = 11,
+		/// Binary M-M (red-red) star system
+		BinaryMM = 12
+	};
+
 	class cStarRecord
 		: public ISimulatorSerializable
 		, public DefaultRefCounted
@@ -40,6 +69,9 @@ namespace Simulator
 
 		//TODO uint32_t getEmpireID PLACEHOLDER
 
+		StarType GetType() const;
+		TechLevel GetTechLevel() const;
+
 		cPlanetRecord* GetPlanetRecord(size_t planetIndex);
 
 	public:
@@ -48,8 +80,8 @@ namespace Simulator
 		/* 14h */	int mSavedGameVersionMinor;
 		/* 18h */	TimeStamp mSavedGameTimeStamp;
 		/* 3Ch */	Math::Vector3 mPosition;
-		/* 48h */	int mType;  // 1 - Galactic Core
-		/* 4Ch */	int mTechLevel;
+		/* 48h */	StarType mType;  // 1 - Galactic Core
+		/* 4Ch */	TechLevel mTechLevel;
 		/* 50h */	bool field_50;
 		/* 54h */	uint32_t mEmpireID;  // -1
 		/* 58h */	uint32_t mStarterWorldID;

@@ -22,11 +22,11 @@
 namespace Simulator
 {
 
-	auto_METHOD(cSpaceTradeRouteManager, bool, HasTradeRoute, Args(StarIndex star, uint32_t empireID), Args(star, empireID));
+	auto_METHOD(cSpaceTradeRouteManager, bool, HasTradeRoute, Args(StarID star, uint32_t empireID), Args(star, empireID));
 
 	auto_STATIC_METHOD_(cStarManager, cStarManager*, Get);
 
-	auto_METHOD(cStarManager, cPlanetRecord*, GetPlanetRecord, Args(PlanetIndex recordIndex), Args(recordIndex));
+	auto_METHOD(cStarManager, cPlanetRecord*, GetPlanetRecord, Args(PlanetID recordIndex), Args(recordIndex));
 
 	cEmpire* cStarManager::GetEmpire(uint32_t politicalID)
 	{
@@ -41,7 +41,7 @@ namespace Simulator
 		}
 	}
 
-	cStarRecord* cStarManager::GetStarRecord(StarIndex id)
+	cStarRecord* cStarManager::GetStarRecord(StarID id)
 	{
 		if (id == 0)
 		{
@@ -68,7 +68,30 @@ namespace Simulator
 
 	auto_METHOD_VOID(cStarManager, RecordToPlanet, Args(cPlanetRecord* record, intrusive_ptr<cPlanet>& dst),
 		Args(record, dst));
+
+
+	StarRequestFilter::StarRequestFilter()
+		: starTypes(0x1FFF)
+		, techLevels(0x3F)
+		, flags()
+		, minDistance(-1.0f)
+		, maxDistance(-1.0f)
+		, field_14(-1.0f)
+		, field_18()
+	{
+	}
+
+	void StarRequestFilter::AddStarType(StarType type) {
+		starTypes |= 1 << int(type);
+	}
+	void StarRequestFilter::AddTechLevel(TechLevel level) {
+		techLevels |= 1 << int(level);
+	}
 }
 
 auto_STATIC_METHOD_VOID(Simulator, SpaceTeleportTo, Args(cStarRecord* star), Args(star));
+
+auto_STATIC_METHOD(Simulator, Vector3&, GalaxyCoordinatesTo3D, 
+	Args(float parsecDistance, float angle, Vector3& dst), Args(parsecDistance, angle, dst));
+
 #endif

@@ -53,6 +53,7 @@
 #include <Spore\Simulator\SubSystem\StarManager.h>
 #include <Spore\Simulator\SubSystem\TerraformingManager.h>
 #include <Spore\Simulator\SubSystem\ToolManager.h>
+#include <Spore\Simulator\SubSystem\CommManager.h>
 #include <Spore\Simulator\NounClassFactories.h>
 
 namespace Addresses(Simulator)
@@ -70,6 +71,7 @@ namespace Addresses(Simulator)
 	DefineAddress(GetCurrentContext, SelectAddress(0x10220E0, 0x1020F30, 0x1020F30));
 
 	DefineAddress(SpaceTeleportTo, SelectAddress(0x1023A80, , 0x10228C0));
+	DefineAddress(GalaxyCoordinatesTo3D, SelectAddress(0x1066640, , 0x1065A60));
 
 	DefineAddress(RegisterNounType, SelectAddress(0xB23CE0, , 0xB23E40));
 	DefineAddress(GetNounCreateMap, SelectAddress(0xB22090, , 0xB221A0));
@@ -433,6 +435,7 @@ namespace Simulator
 		DefineAddress(NextPoliticalID, SelectAddress(0xBA5DA0, NO_ADDRESS, 0xBA6780));
 		DefineAddress(GetEmpireForStar, SelectAddress(0xBB0230, NO_ADDRESS, 0xBB14D0));
 		DefineAddress(RecordToPlanet, SelectAddress(0xBB4960, NO_ADDRESS, 0xBB5B50));
+		DefineAddress(FindClosestStar, SelectAddress(0xBAFD80, , 0xBB1020));
 	}
 
 	namespace Addresses(cSpaceTradeRouteManager)
@@ -491,5 +494,17 @@ namespace Simulator
 
 		DefineAddress(WriteAsText, SelectAddress(0xB182B0, , 0xB18360));
 	}
+
+	namespace Addresses(cCommManager)
+	{
+		DefineAddress(Get, SelectAddress(0xB3D400, , 0xB3D5A0));
+
+		DefineAddress(CreateCivCommEvent, SelectAddress(0xAEABB0, , 0xAEB1C0));
+		DefineAddress(CreateSpaceCommEvent, SelectAddress(0xAEAAD0, , 0xAEB0E0));
+		DefineAddress(ShowCommEvent, SelectAddress(0xAEB800, , 0xAEBE10));
+		DefineAddress(HandleCivCommAction, SelectAddress(0xAEB200, , 0xAEB810));
+		DefineAddress(HandleSpaceCommAction, SelectAddress(0xAEB120, , 0xAEB730));
+		DefineAddress(IsCommScreenActive, SelectAddress(0xAE8EA0, , 0xAE9310));
+	};
 }
 #endif

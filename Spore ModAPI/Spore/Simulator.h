@@ -42,6 +42,7 @@
 #include <Spore\Simulator\cCreatureAnimal.h>
 #include <Spore\Simulator\cSpaceToolData.h>
 #include <Spore\Simulator\cSimulatorSpaceGame.h>
+#include <Spore\Simulator\cSimulatorPlayerUFO.h>
 
 
 // Needed to load creatures

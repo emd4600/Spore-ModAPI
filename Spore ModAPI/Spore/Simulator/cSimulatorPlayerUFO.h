@@ -24,6 +24,8 @@
 #include <EASTL\vector.h>
 #include <EASTL\list.h>
 
+#define SimulatorPlayerUFO (*Simulator::cSimulatorPlayerUFO::Get())
+
 #define cSimulatorPlayerUFOPtr intrusive_ptr<Simulator::cSimulatorPlayerUFO>
 
 namespace Simulator
@@ -82,10 +84,6 @@ namespace Simulator
 	public:
 		static cSimulatorPlayerUFO* Get();
 	};
-
-	inline cSimulatorPlayerUFO* SimulatorPlayerUFO() {
-		return cSimulatorPlayerUFO::Get();
-	}
 
 	inline cGameDataUFO* GetPlayerUFO() {
 		return cSimulatorPlayerUFO::Get()->GetUFO();

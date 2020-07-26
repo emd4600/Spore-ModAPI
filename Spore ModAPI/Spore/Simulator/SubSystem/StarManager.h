@@ -34,13 +34,33 @@
 
 namespace Simulator
 {
+	struct StarRequestFilter
+	{
+		StarRequestFilter();
+
+		void AddStarType(StarType type);
+		void AddTechLevel(TechLevel level);
+
+		/// Flags that represent accepted star types. By default, all types are accepted.
+		/// To accept specific types, first set to 0 and then call AddStarType()
+		/* 00h */	int starTypes;  // 0x1FFF
+		/// Flags that represent accepted planet tech levels. By default, all tech levels are accepted.
+		/// To accept specific levels, first set to 0 and then call AddTechLevel()
+		/* 04h */	int techLevels;  // 0x3F
+		/* 08h */	int flags;  // 2 - has rare
+		/* 0Ch */	float minDistance;  // -1
+		/* 10h */	float maxDistance;  // -1
+		/* 14h */	float field_14;  // -1
+		/* 18h */	int field_18;
+	};
+
 	class cTradeRouteData
 	{
 	public:
 		/* 04h */	uint32_t mPoliticalID1;
 		/* 08h */	uint32_t mPoliticalID2;
-		/* 0Ch */	StarIndex mStarID1;
-		/* 10h */	StarIndex mStarID2;
+		/* 0Ch */	StarID mStarID1;
+		/* 10h */	StarID mStarID2;
 		/* 14h */	float mTradeRouteProgress;
 		/* 18h */	int field_18;
 		/* 1Ch */	uint32_t mTimeSinceLastUFOMS;
@@ -55,7 +75,7 @@ namespace Simulator
 		virtual bool Write(void*);
 		virtual bool Read(void*);
 
-		bool HasTradeRoute(StarIndex star, uint32_t empireID);
+		bool HasTradeRoute(StarID star, uint32_t empireID);
 
 	protected:
 		/* 04h */	map<int, cTradeRouteData> mTradeRoutes;
@@ -80,10 +100,10 @@ namespace Simulator
 		/// - If id == -1, nullptr is returned.
 		/// - Otherwise, the id is divided in sector index (& 0xFFFFF000) and star index (& 0x00000FFF)
 		/// and the star record is returned.
-		cStarRecord* GetStarRecord(StarIndex recordIndex);
+		cStarRecord* GetStarRecord(StarID starID);
 
 		// & 0xFFFFFF is the star record index, 0xFF000000 is the planet index
-		cPlanetRecord* GetPlanetRecord(PlanetIndex recordIndex);
+		cPlanetRecord* GetPlanetRecord(PlanetID planetID);
 
 		EmpiresMap& GetEmpires();
 
@@ -107,6 +127,14 @@ namespace Simulator
 		cStarRecord* GetSol() const;
 
 		cStarRecord* GetScenarioStar() const;
+
+		/// Returns the record for the star closest to the given coords. The Z coordinate is not considered when calculating
+		/// distances between stars. A StarRequestFilter can be passed to accept only certain stars (with a certain type,
+		/// at a minimum distance, etc)
+		/// @param coords The reference coordinates.
+		/// @param filter A filter that describes which kind of stars are accepted.
+		/// @returns The closest star record that matches the filter.
+		cStarRecord* FindClosestStar(const Vector3& coords, const StarRequestFilter& filter = StarRequestFilter());
 
 	protected:
 		/* 20h */	map<int, int> field_20;
@@ -180,6 +208,7 @@ namespace Simulator
 		DeclareAddress(NextPoliticalID);
 		DeclareAddress(GetEmpireForStar);
 		DeclareAddress(RecordToPlanet);
+		DeclareAddress(FindClosestStar);
 	}
 
 	namespace Addresses(cSpaceTradeRouteManager)
@@ -200,8 +229,16 @@ namespace Simulator
 	/// Only works if the player is in the galaxy view.
 	/// @param star The star record the player will be teleported to.
 	void SpaceTeleportTo(cStarRecord* star);
+
+	/// Converts the parsec distance and angle into the 3D coordinates used in the galaxy map
+	/// and in functions like cStarManager::FindClosestStar(). The Z coordinate will be 0.
+	/// @param parsecDistance The distance from the galaxy center, in parsecs.
+	/// @param angle The angle, in degrees.
+	/// @param dst A 3D vector where the coordinates will be written.
+	Vector3& GalaxyCoordinatesTo3D(float parsecDistance, float angle, Vector3& dst);
 }
 
 namespace Addresses(Simulator) {
 	DeclareAddress(SpaceTeleportTo);
+	DeclareAddress(GalaxyCoordinatesTo3D);
 }

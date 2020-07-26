@@ -18,6 +18,7 @@
 ****************************************************************************/
 #pragma once
 
+#include <Spore\Simulator\StarID.h>
 #include <Spore\Resource\ResourceObject.h>
 #include <Spore\MathUtils.h>
 #include <EASTL\string.h>
@@ -29,23 +30,15 @@ namespace Simulator
 {
 	class cStarRecord;
 
-	typedef uint32_t StarIndex;
-	
-	inline size_t GetSectorIndex(StarIndex starIndex) {
-		return (int(starIndex) & 0xFFFFF000) >> 12;
-	}
-	inline size_t GetStarIndex(StarIndex starIndex) {
-		return int(starIndex) & 0x00000FFF;
-	}
-
-	typedef uint32_t PlanetIndex;
-
-	inline StarIndex GetStarRecordIndex(PlanetIndex planetIndex) {
-		return int(planetIndex) & 0x00FFFFFF;
-	}
-	inline size_t GetPlanetIndex(PlanetIndex planetIndex) {
-		return (int(planetIndex) & 0xFF000000) >> 24;
-	}
+	enum class TechLevel : int
+	{
+		None = 0,
+		Creature = 1,
+		Tribe = 2,
+		City = 3,
+		Civilization = 4,
+		Empire = 5,
+	};
 
 	class cEllipticalOrbit
 	{
@@ -61,11 +54,10 @@ namespace Simulator
 		: public Resource::SpecialResourceObject
 	{
 	public:
-		cStarRecord* GetStarRecord();
-
-		inline StarIndex GetStarIndex() {
-			return Simulator::GetStarIndex(mKey.instanceID);
-		}
+		cStarRecord* GetStarRecord() const;
+		StarID GetStarID() const;
+		PlanetID GetID() const;
+		TechLevel GetTechLevel() const;
 
 	public:
 		/* 18h */	string16 mName;
@@ -97,7 +89,7 @@ namespace Simulator
 		/* 170h */	vector<int> field_170;
 		/* 184h */	ResourceKey mKey;
 		/* 190h */	int field_190;
-		/* 194h */	int mTechLevel;  // 5 empire, 1 wildlife
+		/* 194h */	TechLevel mTechLevel;
 		/* 198h */	ResourceKey mSpiceGen;
 		/* 1A4h */	ResourceKey mGeneratedTerrainKey;
 	};

@@ -18,14 +18,35 @@
 * along with this program.  If not, see <http://www.gnu.org/licenses/>.
 ****************************************************************************/
 #include <Spore\Simulator\cPlanetRecord.h>
+#include <Spore\Simulator\cPlanet.h>
 #include <Spore\Simulator\SubSystem\StarManager.h>
 
 namespace Simulator
 {
-	cStarRecord* cPlanetRecord::GetStarRecord() {
+	cStarRecord* cPlanetRecord::GetStarRecord() const {
 		return StarManager.GetStarRecord(mKey.instanceID);
 	}
 
+	StarID cPlanetRecord::GetStarID() const {
+		return Simulator::GetStarKey(mKey.instanceID);
+	}
+
+	PlanetID cPlanetRecord::GetID() const {
+		return mKey.instanceID;
+	}
+
+	TechLevel cPlanetRecord::GetTechLevel() const {
+		return mTechLevel;
+	}
+
+
 	auto_METHOD_const_(cPlanet, float, GetTemperatureScore);
+
+	cEmpire* cPlanet::GetEmpire() {
+		if (mpPlanetRecord && mpPlanetRecord->GetTechLevel() == TechLevel::Empire) {
+			return StarManager.GetEmpire(GetPoliticalID());
+		}
+		return nullptr;
+	}
 }
 #endif

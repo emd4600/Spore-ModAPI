@@ -29,6 +29,7 @@
 namespace Simulator
 {
 	class cSimPlanetLowLOD;  //TODO PLACEHOLDER
+	class cEmpire;
 
 	class cPlanet
 		: public cSpatialObject
@@ -44,6 +45,9 @@ namespace Simulator
 		/// Returns the temperature score of the planet record in the [0, 1] range or 0.5
 		/// if there is no planet record
 		float GetTemperatureScore() const;
+
+		/// Returns the empire that controls this planet, if any.
+		cEmpire* GetEmpire();
 
 	public:
 		/* 108h */	int mNumSpecializedBehaviorUFOs;

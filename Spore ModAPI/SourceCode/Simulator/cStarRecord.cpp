@@ -22,5 +22,12 @@
 namespace Simulator
 {
 	auto_METHOD(cStarRecord, cPlanetRecord*, GetPlanetRecord, Args(size_t arg), Args(arg));
+
+	StarType cStarRecord::GetType() const {
+		return mType;
+	}
+	TechLevel cStarRecord::GetTechLevel() const {
+		return mTechLevel;
+	}
 }
 #endif
