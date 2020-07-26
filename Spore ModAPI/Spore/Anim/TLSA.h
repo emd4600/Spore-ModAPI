@@ -17,8 +17,8 @@ namespace Anim
 
 	struct TlsaAnimChoice
 	{
-		float probabilityThreshold;
 		vector<TlsaAnimation> animations;
+		float probabilityThreshold;
 	};
 
 	struct TlsaAnimGroup

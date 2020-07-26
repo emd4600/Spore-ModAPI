@@ -88,16 +88,16 @@ namespace Anim
 		/// @param index Index of the animation
 		/// @param loopTimes How many times the animation is played. You can use decimals to only play a portion the last time.
 		/* 24h */	virtual bool SetLoopTimes(AnimIndex index, float loopTimes = -1.0f) = 0;
-		/* 28h */	virtual int func28h() = 0;
-		/* 2Ch */	virtual int func2Ch() = 0;
-		/* 30h */	virtual int func30h() = 0;
-		/* 34h */	virtual int func34h() = 0;
-		/* 38h */	virtual int func38h() = 0;
-		/* 3Ch */	virtual int func3Ch(int index, int) = 0;
+		/* 28h */	virtual bool func28h(AnimIndex index, float) = 0;
+		/* 2Ch */	virtual bool func2Ch(AnimIndex index, float) = 0;
+		/* 30h */	virtual bool func30h(AnimIndex index, float) = 0;
+		/* 34h */	virtual bool func34h(AnimIndex index, float) = 0;
+		/* 38h */	virtual bool func38h(AnimIndex index, float) = 0;
+		/* 3Ch */	virtual bool func3Ch(AnimIndex index, int) = 0;
 		/* 40h */	virtual bool SetAnimationID(AnimIndex index, uint32_t animID) = 0;
-		/* 44h */	virtual int func44h() = 0;
-		/* 48h */	virtual int func48h() = 0;
-		/* 4Ch */	virtual int func4Ch() = 0;
+		/* 44h */	virtual bool func44h(AnimIndex index, float) = 0;
+		/* 48h */	virtual bool func48h(AnimIndex index, int) = 0;
+		/* 4Ch */	virtual bool func4Ch(AnimIndex index, int, int) = 0;
 		/* 50h */	virtual int func50h() = 0;
 		/* 54h */	virtual int func54h() = 0;
 		// Used to get current animation ID?
@@ -109,7 +109,7 @@ namespace Anim
 		/* 6Ch */	virtual int func6Ch() = 0;
 		/* 70h */	virtual Graphics::IModelWorld* GetAnimWorld() = 0;
 		/* 74h */	virtual int func74h() = 0;
-		/* 78h */	virtual int func78h() = 0;
+		/* 78h */	virtual int func78h() = 0;  // returns main anim_query?
 		/* 7Ch */	virtual ~AnimatedCreature();
 
 		static bool IsIdleWalkLookatStart(uint32_t animID);
@@ -136,7 +136,7 @@ namespace Anim
 		/* 160h */	int field_160;
 		/* 164h */	Vector3 field_164;  // dest position?
 		/* 170h */	int field_170[3];
-		/* 17Ch */	int field_17C;  // contains blocks?
+		/* 17Ch */	int field_17C;  // contains blocks?  cid
 		/* 180h */	ModelPtr mpModel;
 		// 184h "anim_qb", contains data about animations
 		/* 184h */	int field_184;
@@ -147,6 +147,83 @@ namespace Anim
 		/* 198h */	int mnRefCount;
 	};
 	ASSERT_SIZE(AnimatedCreature, 0x19C);
+
+	struct anim_query
+	{
+		struct AnimReference {
+			uint32_t animID;
+			float duration;  // -1.0
+			float durationScale;  // 1.0
+		};
+
+		/* 00h */	int field_0;
+		/* 04h */	int field_4;
+		/* 08h */	AnimReference anims[8];
+		/* 68h */	int field_68;
+		/* 6Ch */	AnimIndex field_6C;
+		/* 70h */	float field_70;
+		/* 74h */	float field_74;
+		/* 78h */	float field_78;
+		/* 7Ch */	bool field_7C;
+		/* 80h */	int mode;  // 1
+		/* 84h */	bool idle;
+		/* 88h */	float blendInTime;
+		/* 8Ch */	float field_8C;
+		/* 90h */	float field_90;  // 1.0
+		/* 94h */	float field_94;  // 1.0
+		/* 98h */	float field_98;
+		/* 9Ch */	bool field_9C;
+		/* 9Dh */	bool field_9D;
+		/* A0h */	float field_A0;
+		/* A4h */	int field_A4;  // not initialized
+		/* A8h */	float field_A8;  // current time?
+		/* ACh */	int field_AC;  // not initialized
+		/* B0h */	int field_B0;
+		/* B4h */	int field_B4;
+		/* B8h */	float field_B8;
+		/* BCh */	int field_BC;
+		/* C0h */	int field_C0;
+		/* C4h */	float field_C4;
+		/* C8h */	float field_C8;
+		/* CCh */	float field_CC;  // -1.0
+		/* D0h */	float field_D0;  // 1.0
+		/* D4h */	bool field_D4;
+		/* D8h */	uint32_t animID;
+		/* DCh */	int field_DC;
+		/* E0h */	int field_E0;
+		/* E4h */	int field_E4;
+		/* E8h */	int field_E8;
+		/* ECh */	int field_EC;
+	};
+	ASSERT_SIZE(anim_query, 0xF0);
+
+	struct anim_qb
+	{
+		/* 00h */	int field_0;
+		/* 04h */	int field_4;
+		/* 08h */	anim_query queries[16];
+		/* F08h */	int field_F08;  // -1
+		/* F0Ch */	int field_F0C[16];  // -1, indices to queries
+		/* F4Ch */	int field_F4C[16];  // -1
+		/* F8Ch */	int field_F8C;  // not initialized
+		/* F90h */	int field_F90;  // not initialized
+		/* F94h */	int field_F94;  // not initialized
+		/* F98h */	int field_F98;  // not initialized
+		/* F9Ch */	int field_F9C;  // -1
+		/* FA0h */	int field_FA0;  // -1
+		/* FA4h */	int field_FA4;  // -1
+		/* FA8h */	int field_FA8;  // -1
+		/* FACh */	bool field_FAC;
+		/* FB0h */	float field_FB0;
+		/* FB4h */	float field_FB4;  // 1.0
+		/* FB8h */	float field_FB8;
+		/* FBCh */	int field_FBC;  // cid, like creature field_17C
+		/* FC0h */	int field_FC0;
+		/* FC4h */	float field_FC4;  // 0.2
+		/* FC8h */	float field_FC8;  // 0.4
+		/* FCCh */	bool field_FCC;
+	};
+	ASSERT_SIZE(anim_qb, 0xFD0);
 
 	/*
 	struct AnimEntry {

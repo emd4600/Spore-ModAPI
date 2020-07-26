@@ -16,7 +16,7 @@ namespace Anim
 		/* 08h */	virtual ~IAnimManager() = 0;
 		/* 0Ch */	virtual bool Initialize(int) = 0;
 		/* 10h */	virtual bool Dispose() = 0;
-		/* 14h */	virtual void func14h(int) = 0;
+		/* 14h */	virtual void Update(int) = 0;
 		/* 18h */	virtual float func18h() = 0;
 		/* 1Ch */	virtual void func1Ch(float) = 0;
 		/* 20h */	virtual IAnimWorld* CreateWorld(const char16_t* name) = 0;
@@ -25,12 +25,13 @@ namespace Anim
 		// calls func30h for all animations in the animID group
 		// used to preload animations
 		/* 2Ch */	virtual void func2Ch(uint32_t animID, int* pOnlyIndex = nullptr) = 0;
-		/* 30h */	virtual void func30h(uint32_t animResourceID) = 0;
+		// Adds animation to list of pending to load
+		/* 30h */	virtual void RequestAnimation(uint32_t animResourceID) = 0;
 		/* 34h */	virtual void func34h(int) = 0;
-		/* 38h */	virtual void func38h() = 0;  // reads .animation
-		/* 3Ch */	virtual bool func3Ch(uint32_t animID) = 0;
+		/* 38h */	virtual void LoadPendingAnimations() = 0;  // reads .animation
+		/* 3Ch */	virtual bool SetDefaultFillerAnimation(uint32_t animID) = 0;
 		/* 40h */	virtual TlsaAnimGroup* GetAnimGroup(uint32_t animID) = 0;
-		/* 44h */	virtual void func44h(uint32_t animID) = 0;  // reads .animation
+		/* 44h */	virtual void LoadRequiredAnimations(uint32_t animID) = 0;  // reads .animation
 		/* 48h */	virtual int func48h() = 0;
 		/* 4Ch */	virtual int func4Ch() = 0;
 		/* 50h */	virtual bool SaveTlsa(Resource::DBPF* pDBPF) = 0;
@@ -40,9 +41,6 @@ namespace Anim
 		/* 5Ch */	virtual int func5Ch(int, int) = 0;
 
 		static IAnimManager* Get();
-
-	protected:
-		// 68h	vector<IAnimWorldPtr>
 	};
 
 	namespace Addresses(IAnimManager) {

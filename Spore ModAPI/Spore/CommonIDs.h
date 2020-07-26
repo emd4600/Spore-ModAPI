@@ -122,7 +122,9 @@ namespace TypeIDs
 		/// Creation models
 		gmdl = 0x00E6BCE5,
 		/// Effect directory
-		effdir = 0xEA5118B0
+		effdir = 0xEA5118B0,
+		/// Animation data
+		animation = 0xEE17C6AD,
 	};
 }
 
