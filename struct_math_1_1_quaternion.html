@@ -85,6 +85,12 @@
               <span class="m-doc-wrap-bumper">static auto <a href="#a8b895317154ffce926cb109c892cf9f9" class="m-doc">FromEuler</a>(</span><span class="m-doc-wrap">const <a href="struct_math_1_1_vector3.html" class="m-doc">Vector3</a>&amp; angles) -&gt; <a href="struct_math_1_1_quaternion.html" class="m-doc">Quaternion</a></span>
             </dt>
             <dd>Constructs a <a href="struct_math_1_1_quaternion.html" class="m-doc">Quaternion</a> that represents a rotation, given in euler angles in radians.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">static auto <a href="#a0eb3c81f076aa1c0277d156eff013db5" class="m-doc">GetRotationTo</a>(</span><span class="m-doc-wrap">const <a href="struct_math_1_1_vector3.html" class="m-doc">Vector3</a>&amp; from,
+              const <a href="struct_math_1_1_vector3.html" class="m-doc">Vector3</a>&amp; to,
+              const <a href="struct_math_1_1_vector3.html" class="m-doc">Vector3</a>&amp; fallbackAxis = <a href="struct_math_1_1_vector3.html#a7e76b3bc78f4936d391631e07f251536" class="m-doc">Vector3::<wbr />ZERO</a>) -&gt; <a href="struct_math_1_1_quaternion.html" class="m-doc">Quaternion</a></span>
+            </dt>
+            <dd>Returns the quaternion the rotation between two vectors.</dd>
           </dl>
         </section>
         <section id="typeless-methods">
@@ -165,6 +171,34 @@
               </tbody>
             </table>
 <p>The quaternion will be constructed as if the rotations were applied in Z, Y, X order.</p>
+          </div></section>
+          <section class="m-doc-details" id="a0eb3c81f076aa1c0277d156eff013db5"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">static <a href="struct_math_1_1_quaternion.html" class="m-doc">Quaternion</a> Math::<wbr />Quaternion::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a0eb3c81f076aa1c0277d156eff013db5" class="m-doc-self">GetRotationTo</a>(</span><span class="m-doc-wrap">const <a href="struct_math_1_1_vector3.html" class="m-doc">Vector3</a>&amp; from,
+              const <a href="struct_math_1_1_vector3.html" class="m-doc">Vector3</a>&amp; to,
+              const <a href="struct_math_1_1_vector3.html" class="m-doc">Vector3</a>&amp; fallbackAxis = <a href="struct_math_1_1_vector3.html#a7e76b3bc78f4936d391631e07f251536" class="m-doc">Vector3::<wbr />ZERO</a>)</span></span>
+            </h3>
+            <p>Returns the quaternion the rotation between two vectors.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">from</td>
+                  <td>Vector to rotate from.</td>
+                </tr>
+                <tr>
+                  <td>to</td>
+                  <td>Vector to rotate to.</td>
+                </tr>
+                <tr>
+                  <td>fallbackAxis</td>
+                  <td>If the two vectors are parallel but opposite, this method returns a 180 degrees rotation around the fallback axis.</td>
+                </tr>
+              </tbody>
+            </table>
+<p>This means that applying the returned quaternion to the vector <code>from</code> produces the vector <code>to</code> (assuming they have the same length).</p><p>The operation will be applied to normalized versions of the vectors, so their length does not matter.</p>
           </div></section>
           <section class="m-doc-details" id="a1477a6615a81f4e80cf704d8265b1f64"><div>
             <h3>

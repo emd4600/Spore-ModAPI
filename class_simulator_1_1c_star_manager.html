@@ -93,11 +93,11 @@
             </dt>
             <dd>Returns the empire that has the given political ID, or nullptr if no empire uses it.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#ab60f185de56a431c7ac29949d1353327" class="m-doc">GetStarRecord</a>(</span><span class="m-doc-wrap"><a href="namespace_simulator.html#aaebd0a98d2109f873942abd9a464536c" class="m-doc">StarIndex</a> recordIndex) -&gt; <a href="class_simulator_1_1c_star_record.html" class="m-doc">cStarRecord</a>*</span>
+              <span class="m-doc-wrap-bumper">auto <a href="#a20a0def203b54f7a14b9ec462c8c96b2" class="m-doc">GetStarRecord</a>(</span><span class="m-doc-wrap"><a href="namespace_simulator.html#a98420fedd9079b2285e9cdc71a839a11" class="m-doc">StarID</a> starID) -&gt; <a href="class_simulator_1_1c_star_record.html" class="m-doc">cStarRecord</a>*</span>
             </dt>
             <dd>Returns the star record assigned to the specified id.</dd>
-            <dt id="a399f45dca498d4316f997c6c85e59c5f">
-              <span class="m-doc-wrap-bumper">auto <a href="#a399f45dca498d4316f997c6c85e59c5f" class="m-doc-self">GetPlanetRecord</a>(</span><span class="m-doc-wrap"><a href="namespace_simulator.html#a31eaba82a82dc2f65caec25153cd9191" class="m-doc">PlanetIndex</a> recordIndex) -&gt; <a href="class_simulator_1_1c_planet_record.html" class="m-doc">cPlanetRecord</a>*</span>
+            <dt id="af15bc1cc1d00803d6a43bd4e4c21aff0">
+              <span class="m-doc-wrap-bumper">auto <a href="#af15bc1cc1d00803d6a43bd4e4c21aff0" class="m-doc-self">GetPlanetRecord</a>(</span><span class="m-doc-wrap"><a href="namespace_simulator.html#a6edc4879527b972a44081640e47fc6c7" class="m-doc">PlanetID</a> planetID) -&gt; <a href="class_simulator_1_1c_planet_record.html" class="m-doc">cPlanetRecord</a>*</span>
             </dt>
             <dd><span></span></dd>
             <dt id="aeb3ebeae42e3ac9bb4b76fdc104a7ae0">
@@ -129,6 +129,11 @@
               <span class="m-doc-wrap-bumper">auto <a href="#aac0063668013af1e2bd8b11489dc879e" class="m-doc-self">GetScenarioStar</a>(</span><span class="m-doc-wrap">) const -&gt; <a href="class_simulator_1_1c_star_record.html" class="m-doc">cStarRecord</a>*</span>
             </dt>
             <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a3e514bdbaae7aab64cfb80a79dc7b521" class="m-doc">FindClosestStar</a>(</span><span class="m-doc-wrap">const <a href="struct_math_1_1_vector3.html" class="m-doc">Vector3</a>&amp; coords,
+              const <a href="struct_simulator_1_1_star_request_filter.html" class="m-doc">StarRequestFilter</a>&amp; filter = <a href="struct_simulator_1_1_star_request_filter.html" class="m-doc">StarRequestFilter</a>()) -&gt; <a href="class_simulator_1_1c_star_record.html" class="m-doc">cStarRecord</a>*</span>
+            </dt>
+            <dd>Returns the record for the star closest to the given coords.</dd>
           </dl>
         </section>
         <section id="pro-attribs">
@@ -347,9 +352,9 @@
               </tbody>
             </table>
           </div></section>
-          <section class="m-doc-details" id="ab60f185de56a431c7ac29949d1353327"><div>
+          <section class="m-doc-details" id="a20a0def203b54f7a14b9ec462c8c96b2"><div>
             <h3>
-              <span class="m-doc-wrap-bumper"><a href="class_simulator_1_1c_star_record.html" class="m-doc">cStarRecord</a>* Simulator::<wbr />cStarManager::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ab60f185de56a431c7ac29949d1353327" class="m-doc-self">GetStarRecord</a>(</span><span class="m-doc-wrap"><a href="namespace_simulator.html#aaebd0a98d2109f873942abd9a464536c" class="m-doc">StarIndex</a> recordIndex)</span></span>
+              <span class="m-doc-wrap-bumper"><a href="class_simulator_1_1c_star_record.html" class="m-doc">cStarRecord</a>* Simulator::<wbr />cStarManager::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a20a0def203b54f7a14b9ec462c8c96b2" class="m-doc-self">GetStarRecord</a>(</span><span class="m-doc-wrap"><a href="namespace_simulator.html#a98420fedd9079b2285e9cdc71a839a11" class="m-doc">StarID</a> starID)</span></span>
             </h3>
             <p>Returns the star record assigned to the specified id.</p>
 <p>There are three possibilities:</p><ul><li>If id == 0, the galaxy center is returned ?</li><li>If id == -1, nullptr is returned.</li><li>Otherwise, the id is divided in sector index (&amp; 0xFFFFF000) and star index (&amp; 0x00000FFF) and the star record is returned.</li></ul>
@@ -371,6 +376,35 @@
               </tbody>
             </table>
 <p>If no empire controls this star record or the one that controls it does not yet exist, it will be created and added to the empire map.</p>
+          </div></section>
+          <section class="m-doc-details" id="a3e514bdbaae7aab64cfb80a79dc7b521"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"><a href="class_simulator_1_1c_star_record.html" class="m-doc">cStarRecord</a>* Simulator::<wbr />cStarManager::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a3e514bdbaae7aab64cfb80a79dc7b521" class="m-doc-self">FindClosestStar</a>(</span><span class="m-doc-wrap">const <a href="struct_math_1_1_vector3.html" class="m-doc">Vector3</a>&amp; coords,
+              const <a href="struct_simulator_1_1_star_request_filter.html" class="m-doc">StarRequestFilter</a>&amp; filter = <a href="struct_simulator_1_1_star_request_filter.html" class="m-doc">StarRequestFilter</a>())</span></span>
+            </h3>
+            <p>Returns the record for the star closest to the given coords.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">coords</td>
+                  <td>The reference coordinates.</td>
+                </tr>
+                <tr>
+                  <td>filter</td>
+                  <td>A filter that describes which kind of stars are accepted.</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>Returns</th>
+                  <td>The closest star record that matches the filter.</td>
+                </tr>
+              </tfoot>
+            </table>
+<p>The Z coordinate is not considered when calculating distances between stars. A <a href="struct_simulator_1_1_star_request_filter.html" class="m-doc">StarRequestFilter</a> can be passed to accept only certain stars (with a certain type, at a minimum distance, etc)</p>
           </div></section>
         </section>
       </div>
