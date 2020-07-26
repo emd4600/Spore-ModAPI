@@ -77,7 +77,7 @@ namespace Simulator
 		/* B20h */	VehiclePurpose mPurpose;
 		/* B24h */	uint32_t mStance;
 		/* B28h */	uint32_t mCargoType;
-		/* B2Ch */	UnknownBehaviorContainer mEvents;
+		/* B2Ch */	deque<int> mEvents;
 		/* B58h */	float mCargoUnits;
 		/* B5Ch */	intrusive_ptr<cCity> mpNearestCity;
 		/* B60h */	intrusive_ptr<cSpaceToolData> mpWeapon;

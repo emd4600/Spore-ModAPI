@@ -43,8 +43,8 @@ namespace Simulator
 		/* 1010h */	ColorRGB mColor;
 		/* 101Ch */	int field_101C;
 		/* 1020h */	vector<int> field_1020;
-		/* 1034h */	UnknownBehaviorContainer field_1034;
-		/* 1060h */ UnknownBehaviorContainer field_1060;
+		/* 1034h */	deque<int> field_1034;
+		/* 1060h */ deque<int> field_1060;
 		/* 108Ch */	fixed_vector<int, 32> field_108C;
 		/* 1124h */	fixed_vector<int, 128> field_1124;
 		/* 133Ch */	fixed_vector<int, 32> field_133C;

@@ -39,6 +39,9 @@ namespace Simulator
 		using Object::Release;
 		using Object::Cast;
 
+		// function 14h returns description string?
+		// 34h bool IsSupported(cBehaviorAgent*);
+
 	protected:
 		/* 08h */	int mnRefCount;
 		/* 0Ch */	vector<int> field_C;

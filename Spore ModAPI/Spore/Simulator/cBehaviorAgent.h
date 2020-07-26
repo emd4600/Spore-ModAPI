@@ -18,16 +18,15 @@
 ****************************************************************************/
 #pragma once
 
+#include <Spore\Simulator\cBehaviorList.h>
 #include <Spore\Object.h>
+#include <EASTL\string.h>
+#include <EASTL\deque.h>
+
+#define cBehaviorAgentPtr eastl::intrusive_ptr<Simulator::cBehaviorAgent>
 
 namespace Simulator
 {
-	//PLACEHOLDER also used by other classes
-	struct UnknownBehaviorContainer
-	{
-		char field_0[0x2C];
-	};
-
 	// used by the cGameBehaviorManager
 	class cBehaviorAgent
 	{
@@ -37,10 +36,37 @@ namespace Simulator
 		//TODO more
 		virtual ~cBehaviorAgent();
 
+		/* 04h */	virtual void func04h();
+		/* 08h */	virtual bool func08h(uint32_t);
+		/// For example, abducting calls this on the creature passing pSpaceGameBehaviorAbducted and the space projectile
+		/* 0Ch */	virtual int func0Ch(cBehaviorBase* pBehavior, cBehaviorList* pOwner, int);
+		/* 10h */	virtual int func10h(int, int, int);
+		/* 14h */	virtual void func14h(bool);
+		/* 18h */	virtual bool func18h();
+		/* 1Ch */	virtual bool HasInteractions();
+		/* 20h */	virtual cBehaviorBase* GetLastInteraction();
+		/* 24h */	virtual int func24h();
+		/* 28h */	virtual int func28h();
+		/* 2Ch */	virtual int func2Ch();
+		/* 30h */	virtual void func30h();
+		/* 34h */	virtual void func34h();
+		/* 38h */	virtual int GetInteractionStackSize() const;
+		/* 3Ch */	virtual bool func3Ch(int);
+		/* 40h */	virtual bool func40h(int, int);
+		/* 44h */	virtual int func44h(int);  // ?
+		/* 48h */	virtual void func48h();
+		/* 4Ch */	virtual void func4Ch(bool);
+		/* 50h */	virtual bool func50h();
+		/* 54h */	virtual void func54h(string& dst);
+		/* 58h */	virtual void func58h(string& dst);
+		/* 5Ch */	virtual int Release();
+		/* 60h */	virtual int AddRef();
+		/* 64h */	virtual int func64h();
+
 	public:
 		/* 04h */	bool field_4;
-		/* 08h */	UnknownBehaviorContainer field_8;
-		/* 34h */	UnknownBehaviorContainer field_34;
+		/* 08h */	deque<int> mInteractionHistory;
+		/* 34h */	deque<cBehaviorBasePtr> mInteractionStack;
 		/* 60h */	int field_60;  // not initialized
 		/* 64h */	bool field_64;
 		/* 65h */	bool field_65;  // true

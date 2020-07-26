@@ -87,7 +87,7 @@ namespace Simulator
 		using Object::Release;
 		using Object::Cast;
 
-		void* PlayAnimation(uint32_t animationID, int = 0xFFFFFFFF, bool = false);
+		void* PlayAnimation(uint32_t animationID, int toolIndex = 0xFFFFFFFF, bool disableBlendInTime = false);
 
 		void* PlayAnimationTo(uint32_t animationID, cSpatialObject* otherObject, int = 0xFFFFFFFF, int = 0xFFFFFFFF);
 
