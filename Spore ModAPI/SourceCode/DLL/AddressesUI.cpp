@@ -2,7 +2,7 @@
 #include "stdafx.h"
 #include <Spore\UI\LayerManager.h>
 #include <Spore\UI\SpaceGameUI.h>
-#include <Spore\UI\cHintManager.h>
+#include <Spore\UI\HintManager.h>
 
 namespace UI
 {

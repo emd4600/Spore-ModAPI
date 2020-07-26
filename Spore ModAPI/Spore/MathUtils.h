@@ -294,7 +294,7 @@ namespace Math
 		///
 		/// @param from Vector to rotate from.
 		/// @param to Vector to rotate to.
-		/// @param fallbackAxis If the two vectors are parallel but opposite, this method returns a 180º rotation around the fallback axis.
+		/// @param fallbackAxis If the two vectors are parallel but opposite, this method returns a 180 degrees rotation around the fallback axis.
 		static Quaternion GetRotationTo(const Vector3& from, const Vector3& to, const Vector3& fallbackAxis = Vector3::ZERO);
 	};
 
