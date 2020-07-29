@@ -1,3 +1,5 @@
+#pragma once
+
 #include <Spore\Simulator\ISimulatorSerializable.h>
 #include <Spore\Simulator\cCity.h>
 #include <Spore\Simulator\StarID.h>

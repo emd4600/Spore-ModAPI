@@ -1,3 +1,5 @@
+#pragma once
+
 #include <Spore\Simulator\SubSystem\cStrategy.h>
 #include <Spore\Simulator\cCommEvent.h>
 #include <Spore\Simulator\ConversationResource.h>
