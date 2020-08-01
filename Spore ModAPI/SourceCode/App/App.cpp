@@ -1,3 +1,4 @@
+#ifndef MODAPI_DLL_EXPORT
 #include <Spore\App\Thumbnail_cImportExport.h>
 
 namespace App
@@ -7,3 +8,4 @@ namespace App
 	auto_METHOD(Thumbnail_cImportExport, bool, GetFolderPath,
 		Args(uint32_t creationType, string16& dst), Args(creationType, dst));
 }
+#endif

@@ -29,6 +29,7 @@
 #include <Spore\Simulator\SubSystem\ToolManager.h>
 #include <Spore\Simulator\SubSystem\SpacePlayerData.h>
 #include <Spore\Simulator\SubSystem\PlanetModel.h>
+#include <Spore\Simulator\SubSystem\UIEventLog.h>
 
 #include <Spore\Simulator\cGameData.h>
 #include <Spore\Simulator\cGonzagoSimulator.h>

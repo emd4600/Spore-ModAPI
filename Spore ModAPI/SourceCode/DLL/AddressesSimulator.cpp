@@ -54,6 +54,7 @@
 #include <Spore\Simulator\SubSystem\TerraformingManager.h>
 #include <Spore\Simulator\SubSystem\ToolManager.h>
 #include <Spore\Simulator\SubSystem\CommManager.h>
+#include <Spore\Simulator\SubSystem\UIEventLog.h>
 #include <Spore\Simulator\NounClassFactories.h>
 
 namespace Addresses(Simulator)
@@ -506,5 +507,14 @@ namespace Simulator
 		DefineAddress(HandleSpaceCommAction, SelectAddress(0xAEB120, , 0xAEB730));
 		DefineAddress(IsCommScreenActive, SelectAddress(0xAE8EA0, , 0xAE9310));
 	};
+
+	namespace Addresses(cUIEventLog)
+	{
+		DefineAddress(Get, SelectAddress(0xB3D340, , 0xB3D4E0));
+		DefineAddress(ShowEvent, SelectAddress(0xDD7810, , 0xDD85E0));
+		DefineAddress(SetDescription, SelectAddress(0xDD6120, , 0xDD6D80));
+		DefineAddress(HideEvent, SelectAddress(0xDD6040, , 0xDD6CA0));
+		DefineAddress(SetVisible, SelectAddress(0xDD7F70, , 0xDD8D40));
+	}
 }
 #endif

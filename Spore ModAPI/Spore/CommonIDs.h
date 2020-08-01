@@ -192,6 +192,11 @@ namespace GroupIDs
 		CivicObjects = 0x9430ADD7,
 
 		/// The main folder that contains planet scripts. The rest of the folders can be obtained by adding 0x100, 0x200,..., 0xF00
-		PlanetScripts = 0x4184A100
+		PlanetScripts = 0x4184A100,
+
+		/// This folder contains popups used in Space stage that can be used with UIEventLog.
+		SpacePopups = 0x131A9F54,
+		/// This folder contains popups used in Civilization stage that can be used with UIEventLog.
+		CivPopups = 0xAA9A8ED7,
 	};
 }
