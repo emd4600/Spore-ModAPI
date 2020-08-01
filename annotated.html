@@ -80,8 +80,10 @@
                   <li>struct <a href="struct_app_1_1c_game_mode_manager_1_1_mode_entry.html" class="m-doc">ModeEntry</a> <span class="m-doc"><span></span></span></li>
                 </ul>
               </li>
+              <li>class <a href="class_app_1_1c_locale_manager.html" class="m-doc">cLocaleManager</a> <span class="m-doc"><span></span></span></li>
               <li>class <a href="class_app_1_1c_message_manager.html" class="m-doc">cMessageManager</a> <span class="m-doc">The implementation of <a href="class_app_1_1_i_message_manager.html" class="m-doc">IMessageManager</a>; this should only be used for extending and detouring.</span></li>
               <li>class <a href="class_app_1_1c_prop_manager.html" class="m-doc">cPropManager</a> <span class="m-doc">The implementation of <a href="class_app_1_1_i_prop_manager.html" class="m-doc">IPropManager</a>; this should only be used for extending and detouring.</span></li>
+              <li>class <a href="class_app_1_1c_string_detokenizer.html" class="m-doc">cStringDetokenizer</a> <span class="m-doc">The class responsible for translating text tokens, which are special characters in locale files.</span></li>
               <li class="m-doc-collapsible collapsed">
                 <a href="#" onclick="return toggle(this)">class</a> <a href="class_app_1_1c_viewer.html" class="m-doc">cViewer</a> <span class="m-doc"><span></span></span>
                 <ul class="m-doc">
@@ -115,6 +117,7 @@
               <li>class <a href="class_app_1_1_i_prop_manager.html" class="m-doc">IPropManager</a> <span class="m-doc">A manager that stores all the property lists in the game, used for most configurations.</span></li>
               <li>class <a href="class_app_1_1_i_s_p_class_factory.html" class="m-doc">ISPClassFactory</a> <span class="m-doc"><span></span></span></li>
               <li>class <a href="class_app_1_1_i_state_manager.html" class="m-doc">IStateManager</a> <span class="m-doc"><span></span></span></li>
+              <li>class <a href="class_app_1_1_i_token_translator.html" class="m-doc">ITokenTranslator</a> <span class="m-doc"><span></span></span></li>
               <li>class <a href="class_app_1_1_i_unmanaged_message_listener.html" class="m-doc">IUnmanagedMessageListener</a> <span class="m-doc">Same as <a href="class_app_1_1_i_message_listener.html" class="m-doc">App::<wbr />IMessageListener</a>, but this one does not use ref-counting.</span></li>
               <li>class <a href="class_app_1_1_i_updatable.html" class="m-doc">IUpdatable</a> <span class="m-doc"><span></span></span></li>
               <li>class <a href="class_app_1_1_lambda_message_listener.html" class="m-doc">LambdaMessageListener</a> <span class="m-doc">An implementation of <a href="class_app_1_1_i_message_listener.html" class="m-doc">IMessageListener</a> using lambda functions.</span></li>
@@ -522,6 +525,7 @@
               <li>class <a href="class_simulator_1_1c_elliptical_orbit.html" class="m-doc">cEllipticalOrbit</a> <span class="m-doc"><span></span></span></li>
               <li>class <a href="class_simulator_1_1c_empire.html" class="m-doc">cEmpire</a> <span class="m-doc"><span></span></span></li>
               <li>class <a href="class_simulator_1_1c_energy_repair_tool_strategy.html" class="m-doc">cEnergyRepairToolStrategy</a> <span class="m-doc"><span></span></span></li>
+              <li>class <a href="class_simulator_1_1c_feedback_event.html" class="m-doc">cFeedbackEvent</a> <span class="m-doc"><span></span></span></li>
               <li>class <a href="class_simulator_1_1c_game_behavior_manager.html" class="m-doc">cGameBehaviorManager</a> <span class="m-doc"><span></span></span></li>
               <li>class <a href="class_simulator_1_1c_game_bundle_container.html" class="m-doc">cGameBundleContainer</a> <span class="m-doc"><span></span></span></li>
               <li>class <a href="class_simulator_1_1c_game_data.html" class="m-doc">cGameData</a> <span class="m-doc"><span></span></span></li>
@@ -598,6 +602,7 @@
               <li>class <a href="class_simulator_1_1c_scenario_posse_member.html" class="m-doc">cScenarioPosseMember</a> <span class="m-doc"><span></span></span></li>
               <li>class <a href="class_simulator_1_1c_scenario_resource.html" class="m-doc">cScenarioResource</a> <span class="m-doc"><span></span></span></li>
               <li>class <a href="class_simulator_1_1c_scenario_string.html" class="m-doc">cScenarioString</a> <span class="m-doc"><span></span></span></li>
+              <li>class <a href="class_simulator_1_1c_sim_planet_low_l_o_d.html" class="m-doc">cSimPlanetLowLOD</a> <span class="m-doc"><span></span></span></li>
               <li>class <a href="class_simulator_1_1c_sim_ticker.html" class="m-doc">cSimTicker</a> <span class="m-doc"><span></span></span></li>
               <li>class <a href="class_simulator_1_1c_simulator_player_u_f_o.html" class="m-doc">cSimulatorPlayerUFO</a> <span class="m-doc"><span></span></span></li>
               <li>class <a href="class_simulator_1_1c_simulator_space_game.html" class="m-doc">cSimulatorSpaceGame</a> <span class="m-doc"><span></span></span></li>
@@ -621,6 +626,7 @@
               <li>class <a href="class_simulator_1_1c_trade_route_data.html" class="m-doc">cTradeRouteData</a> <span class="m-doc"><span></span></span></li>
               <li>class <a href="class_simulator_1_1c_turret_defense_missile_weapon.html" class="m-doc">cTurretDefenseMissileWeapon</a> <span class="m-doc"><span></span></span></li>
               <li>class <a href="class_simulator_1_1c_turret_flak_weapon.html" class="m-doc">cTurretFlakWeapon</a> <span class="m-doc"><span></span></span></li>
+              <li>class <a href="class_simulator_1_1c_u_i_event_log.html" class="m-doc">cUIEventLog</a> <span class="m-doc">This class manages event logs in <a href="namespace_simulator.html" class="m-doc">Simulator</a> game modes.</span></li>
               <li>class <a href="class_simulator_1_1c_vehicle.html" class="m-doc">cVehicle</a> <span class="m-doc"><span></span></span></li>
               <li>class <a href="class_simulator_1_1c_visible_planet.html" class="m-doc">cVisiblePlanet</a> <span class="m-doc"><span></span></span></li>
               <li>class <a href="class_simulator_1_1_enter_editor_message.html" class="m-doc">EnterEditorMessage</a> <span class="m-doc"><span></span></span></li>
@@ -642,6 +648,7 @@
               <li>class <a href="class_simulator_1_1_unknown_creature_class.html" class="m-doc">UnknownCreatureClass</a> <span class="m-doc"><span></span></span></li>
               <li>class <a href="class_simulator_1_1_unknown_creature_class2.html" class="m-doc">UnknownCreatureClass2</a> <span class="m-doc"><span></span></span></li>
               <li>class <a href="class_simulator_1_1_unknown_manager_superclass.html" class="m-doc">UnknownManagerSuperclass</a> <span class="m-doc"><span></span></span></li>
+              <li>struct <a href="struct_simulator_1_1_unk_ref_counted.html" class="m-doc">UnkRefCounted</a> <span class="m-doc"><span></span></span></li>
               <li>class <a href="class_simulator_1_1_xml_serializer.html" class="m-doc">XmlSerializer</a> <span class="m-doc"><span></span></span></li>
             </ul>
           </li>

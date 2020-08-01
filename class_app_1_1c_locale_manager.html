@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Spore/App/ directory | Spore ModAPI SDK for creating C++ mods for Spore</title>
+  <title>App::cLocaleManager class | Spore ModAPI SDK for creating C++ mods for Spore</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,600,600i%7CSource+Code+Pro:400,400i,600" />
   <link rel="stylesheet" href="m-dark.css" />
   <link rel="stylesheet" href="m-documentation.css" />
@@ -45,7 +45,8 @@
     <div class="m-row">
       <div class="m-col-l-10 m-push-l-1">
         <h1>
-          <span class="m-breadcrumb"><a href="dir_c27950c697e5dfd98eb6c6418519a737.html">Spore</a>/</span>App<span class="m-breadcrumb">/</span> <span class="m-thin">directory</span>
+          <span class="m-breadcrumb"><a href="namespace_app.html">App</a>::<wbr/></span>cLocaleManager <span class="m-thin">class</span>
+          <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="c_locale_manager_8h.html">&lt;Spore/App/cLocaleManager.h&gt;</a></div>
         </h1>
         <p><span></span></p>
         <div class="m-block m-default">
@@ -54,73 +55,58 @@
             <li>
               Reference
               <ul>
-                <li><a href="#files">Files</a></li>
+                <li><a href="#base-classes">Base classes</a></li>
+                <li><a href="#pub-static-methods">Public static functions</a></li>
+                <li><a href="#pub-methods">Public functions</a></li>
               </ul>
             </li>
           </ul>
         </div>
-        <section id="files">
-          <h2><a href="#files">Files</a></h2>
+        <section id="base-classes">
+          <h2><a href="#base-classes">Base classes</a></h2>
           <dl class="m-doc">
-            <dt>file <a href="c_camera_manager_8h.html" class="m-doc">cCameraManager.h</a></dt>
+            <dt>
+              class <a href="class_default_ref_counted.html" class="m-doc">DefaultRefCounted</a>
+            </dt>
+            <dd>The default implementation of a reference counted class.</dd>
+          </dl>
+        </section>
+        <section id="pub-static-methods">
+          <h2><a href="#pub-static-methods">Public static functions</a></h2>
+          <dl class="m-doc">
+            <dt id="ac83f8bdd599138bc6393e47a0cfd7df1">
+              <span class="m-doc-wrap-bumper">static auto <a href="#ac83f8bdd599138bc6393e47a0cfd7df1" class="m-doc-self">Get</a>(</span><span class="m-doc-wrap">) -&gt; <a href="class_app_1_1c_locale_manager.html" class="m-doc">cLocaleManager</a>*</span>
+            </dt>
             <dd><span></span></dd>
-            <dt>file <a href="c_cheat_manager_8h.html" class="m-doc">cCheatManager.h</a></dt>
+          </dl>
+        </section>
+        <section id="pub-methods">
+          <h2><a href="#pub-methods">Public functions</a></h2>
+          <dl class="m-doc">
+            <dt id="ae24e43ffc79964b2e738e8e2bd914bb3">
+              <span class="m-doc-wrap-bumper">auto <a href="#ae24e43ffc79964b2e738e8e2bd914bb3" class="m-doc-self">SetLanguage</a>(</span><span class="m-doc-wrap">const string16&amp; languageCode) -&gt; bool <span class="m-label m-flat m-warning">virtual</span></span>
+            </dt>
             <dd><span></span></dd>
-            <dt>file <a href="c_game_mode_manager_8h.html" class="m-doc">cGameModeManager.h</a></dt>
+            <dt id="aaa1aa3fb0e65d6e71a94e20475314a9a">
+              <span class="m-doc-wrap-bumper">auto <a href="#aaa1aa3fb0e65d6e71a94e20475314a9a" class="m-doc-self">GetActiveLanguage</a>(</span><span class="m-doc-wrap">) const -&gt; const string16&amp; <span class="m-label m-flat m-warning">virtual</span></span>
+            </dt>
             <dd><span></span></dd>
-            <dt>file <a href="c_locale_manager_8h.html" class="m-doc">cLocaleManager.h</a></dt>
+            <dt id="a6f5de6a95110973eeb58e750b2b0cfb7">
+              <span class="m-doc-wrap-bumper">auto <a href="#a6f5de6a95110973eeb58e750b2b0cfb7" class="m-doc-self">SetLanguageByName</a>(</span><span class="m-doc-wrap">const string16&amp; languageName) -&gt; bool <span class="m-label m-flat m-warning">virtual</span></span>
+            </dt>
             <dd><span></span></dd>
-            <dt>file <a href="c_message_manager_8h.html" class="m-doc">cMessageManager.h</a></dt>
+            <dt id="a2057af8ddb8772d016ba8ba88181d99f">
+              <span class="m-doc-wrap-bumper">auto <a href="#a2057af8ddb8772d016ba8ba88181d99f" class="m-doc-self">GetActiveLanguageName</a>(</span><span class="m-doc-wrap">) const -&gt; const char16_t* <span class="m-label m-flat m-warning">virtual</span></span>
+            </dt>
             <dd><span></span></dd>
-            <dt>file <a href="c_prop_manager_8h.html" class="m-doc">cPropManager.h</a></dt>
+            <dt id="a8ef7280d4e57130430e561e952b92cfb">
+              <span class="m-doc-wrap-bumper">auto <a href="#a8ef7280d4e57130430e561e952b92cfb" class="m-doc-self">GetStringDetokenizer</a>(</span><span class="m-doc-wrap">) -&gt; <a href="class_app_1_1c_string_detokenizer.html" class="m-doc">cStringDetokenizer</a>* <span class="m-label m-flat m-warning">virtual</span></span>
+            </dt>
             <dd><span></span></dd>
-            <dt>file <a href="c_string_detokenizer_8h.html" class="m-doc">cStringDetokenizer.h</a></dt>
-            <dd><span></span></dd>
-            <dt>file <a href="c_viewer_8h.html" class="m-doc">cViewer.h</a></dt>
-            <dd><span></span></dd>
-            <dt>file <a href="_default_camera_8h.html" class="m-doc">DefaultCamera.h</a></dt>
-            <dd><span></span></dd>
-            <dt>file <a href="_default_game_mode_8h.html" class="m-doc">DefaultGameMode.h</a></dt>
-            <dd><span></span></dd>
-            <dt>file <a href="_direct_property_list_8h.html" class="m-doc">DirectPropertyList.h</a></dt>
-            <dd><span></span></dd>
-            <dt>file <a href="_file_drop_8h.html" class="m-doc">FileDrop.h</a></dt>
-            <dd><span></span></dd>
-            <dt>file <a href="_i_camera_8h.html" class="m-doc">ICamera.h</a></dt>
-            <dd><span></span></dd>
-            <dt>file <a href="_i_camera_manager_8h.html" class="m-doc">ICameraManager.h</a></dt>
-            <dd><span></span></dd>
-            <dt>file <a href="_i_cheat_manager_8h.html" class="m-doc">ICheatManager.h</a></dt>
-            <dd><span></span></dd>
-            <dt>file <a href="_i_class_manager_8h.html" class="m-doc">IClassManager.h</a></dt>
-            <dd><span></span></dd>
-            <dt>file <a href="_i_game_mode_8h.html" class="m-doc">IGameMode.h</a></dt>
-            <dd><span></span></dd>
-            <dt>file <a href="_i_game_mode_manager_8h.html" class="m-doc">IGameModeManager.h</a></dt>
-            <dd><span></span></dd>
-            <dt>file <a href="_i_message_listener_8h.html" class="m-doc">IMessageListener.h</a></dt>
-            <dd><span></span></dd>
-            <dt>file <a href="_i_message_manager_8h.html" class="m-doc">IMessageManager.h</a></dt>
-            <dd><span></span></dd>
-            <dt>file <a href="_i_prop_manager_8h.html" class="m-doc">IPropManager.h</a></dt>
-            <dd><span></span></dd>
-            <dt>file <a href="_i_state_manager_8h.html" class="m-doc">IStateManager.h</a></dt>
-            <dd><span></span></dd>
-            <dt>file <a href="_app_2_i_token_translator_8h.html" class="m-doc">ITokenTranslator.h</a></dt>
-            <dd><span></span></dd>
-            <dt>file <a href="_message_listener_data_8h.html" class="m-doc">MessageListenerData.h</a></dt>
-            <dd><span></span></dd>
-            <dt>file <a href="_property_8h.html" class="m-doc">Property.h</a></dt>
-            <dd><span></span></dd>
-            <dt>file <a href="_property_list_8h.html" class="m-doc">PropertyList.h</a></dt>
-            <dd><span></span></dd>
-            <dt>file <a href="_scenario_mode_8h.html" class="m-doc">ScenarioMode.h</a></dt>
-            <dd><span></span></dd>
-            <dt>file <a href="_s_p_property_i_ds_8h.html" class="m-doc">SPPropertyIDs.h</a></dt>
-            <dd><span></span></dd>
-            <dt>file <a href="_standard_message_8h.html" class="m-doc">StandardMessage.h</a></dt>
-            <dd><span></span></dd>
-            <dt>file <a href="_thumbnail__c_import_export_8h.html" class="m-doc">Thumbnail_cImportExport.h</a></dt>
+            <dt id="a3ebb036b9e372df745d7bb9274d43b35">
+              <span class="m-doc-wrap-bumper">auto <a href="#a3ebb036b9e372df745d7bb9274d43b35" class="m-doc-self">func24h</a>(</span><span class="m-doc-wrap">const <a href="struct_resource_key.html" class="m-doc">ResourceKey</a>&amp; key,
+              <a href="class_resource_1_1_resource_object.html" class="m-doc">Resource::<wbr />ResourceObject</a>** ppDst) const -&gt; bool <span class="m-label m-flat m-warning">virtual</span></span>
+            </dt>
             <dd><span></span></dd>
           </dl>
         </section>

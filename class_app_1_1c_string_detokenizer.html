@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>UI::ITokenTranslator class | Spore ModAPI SDK for creating C++ mods for Spore</title>
+  <title>App::cStringDetokenizer class | Spore ModAPI SDK for creating C++ mods for Spore</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,600,600i%7CSource+Code+Pro:400,400i,600" />
   <link rel="stylesheet" href="m-dark.css" />
   <link rel="stylesheet" href="m-documentation.css" />
@@ -45,10 +45,10 @@
     <div class="m-row">
       <div class="m-col-l-10 m-push-l-1">
         <h1>
-          <span class="m-breadcrumb"><a href="namespace_u_i.html">UI</a>::<wbr/></span>ITokenTranslator <span class="m-thin">class</span>
-          <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_u_i_2_i_token_translator_8h.html">&lt;Spore/UI/ITokenTranslator.h&gt;</a></div>
+          <span class="m-breadcrumb"><a href="namespace_app.html">App</a>::<wbr/></span>cStringDetokenizer <span class="m-thin">class</span>
+          <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="c_string_detokenizer_8h.html">&lt;Spore/App/cStringDetokenizer.h&gt;</a></div>
         </h1>
-        <p><span></span></p>
+        <p>The class responsible for translating text tokens, which are special characters in locale files.</p>
         <div class="m-block m-default">
           <h3>Contents</h3>
           <ul>
@@ -57,29 +57,84 @@
               <ul>
                 <li><a href="#base-classes">Base classes</a></li>
                 <li><a href="#pub-methods">Public functions</a></li>
+                <li><a href="#pro-attribs">Protected variables</a></li>
               </ul>
             </li>
           </ul>
         </div>
+<p>In locale files, tokens are surrounded with <code>~</code> characters, and get replaced in-game with a text provided by an <a href="class_app_1_1_i_token_translator.html" class="m-doc">App::<wbr />ITokenTranslator</a> class.</p>
         <section id="base-classes">
           <h2><a href="#base-classes">Base classes</a></h2>
           <dl class="m-doc">
             <dt>
-              class <a href="class_default_ref_counted.html" class="m-doc">DefaultRefCounted</a>
+              class <a href="class_app_1_1_i_token_translator.html" class="m-doc">ITokenTranslator</a>
             </dt>
-            <dd>The default implementation of a reference counted class.</dd>
+            <dd><span></span></dd>
           </dl>
         </section>
         <section id="pub-methods">
           <h2><a href="#pub-methods">Public functions</a></h2>
           <dl class="m-doc">
-            <dt id="a5b82cba8068f2ccdd7bd6b44021a452e">
-              <span class="m-doc-wrap-bumper">auto <a href="#a5b82cba8068f2ccdd7bd6b44021a452e" class="m-doc-self">TranslateToken</a>(</span><span class="m-doc-wrap">uint32_t tokenID,
-              string16&amp; dst) -&gt; bool <span class="m-label m-flat m-warning">pure virtual</span></span>
+            <dt id="a9c5a7a7e22ed26199a557f1968b26764">
+              <span class="m-doc-wrap-bumper">void <a href="#a9c5a7a7e22ed26199a557f1968b26764" class="m-doc-self">func18h</a>(</span><span class="m-doc-wrap">) <span class="m-label m-flat m-warning">virtual</span></span>
             </dt>
             <dd><span></span></dd>
-            <dt id="ac68a277e6b1c044d815c0e8a0e978d80">
-              <span class="m-doc-wrap-bumper">void <a href="#ac68a277e6b1c044d815c0e8a0e978d80" class="m-doc-self">func14h</a>(</span><span class="m-doc-wrap">int) <span class="m-label m-flat m-warning">pure virtual</span></span>
+            <dt id="a7f9523f0ee69c9740fe0caf83150f9c5">
+              <span class="m-doc-wrap-bumper">void <a href="#a7f9523f0ee69c9740fe0caf83150f9c5" class="m-doc-self">AddTranslator</a>(</span><span class="m-doc-wrap"><a href="class_app_1_1_i_token_translator.html" class="m-doc">ITokenTranslator</a>* pTranslator) <span class="m-label m-flat m-warning">virtual</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a48e58fe6e0f808617c3493ea4ac0e523">
+              <span class="m-doc-wrap-bumper">void <a href="#a48e58fe6e0f808617c3493ea4ac0e523" class="m-doc-self">RemoveTranslator</a>(</span><span class="m-doc-wrap"><a href="class_app_1_1_i_token_translator.html" class="m-doc">ITokenTranslator</a>* pTranslator) <span class="m-label m-flat m-warning">virtual</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a1a603a5959101de17599fa18b1833fd5">
+              <span class="m-doc-wrap-bumper">auto <a href="#a1a603a5959101de17599fa18b1833fd5" class="m-doc-self">HasTokens</a>(</span><span class="m-doc-wrap">const char16_t* pStr) const -&gt; bool <span class="m-label m-flat m-warning">virtual</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a657c08df29000d3c303ae6896f947939">
+              <span class="m-doc-wrap-bumper">auto <a href="#a657c08df29000d3c303ae6896f947939" class="m-doc-self">func28h</a>(</span><span class="m-doc-wrap">int,
+              string16&amp; dst) -&gt; bool <span class="m-label m-flat m-warning">virtual</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a13014042a85b3c9af3677bcd50f4d0b3">
+              <span class="m-doc-wrap-bumper">auto <a href="#a13014042a85b3c9af3677bcd50f4d0b3" class="m-doc-self">ProcessString</a>(</span><span class="m-doc-wrap">const char16_t* pStr,
+              string16&amp; dst) -&gt; bool <span class="m-label m-flat m-warning">virtual</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a6203df195924f36dfdff75bb6f732981">
+              <span class="m-doc-wrap-bumper">auto <a href="#a6203df195924f36dfdff75bb6f732981" class="m-doc-self">func30h</a>(</span><span class="m-doc-wrap"><a href="class_localized_string.html" class="m-doc">LocalizedString</a>*,
+              pair&lt;uint32_t, string16&gt;* pTokensBegin,
+              pair&lt;uint32_t, string16&gt;* pTokensEnd) -&gt; bool <span class="m-label m-flat m-warning">virtual</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="ae10e300160fae531af5cf94529ec62d2">
+              <span class="m-doc-wrap-bumper">void <a href="#ae10e300160fae531af5cf94529ec62d2" class="m-doc-self">func34h</a>(</span><span class="m-doc-wrap">const char16_t* pStr,
+              int index) <span class="m-label m-flat m-warning">virtual</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a78cc88fc00bbd2a107eb21078a9e80a1">
+              <span class="m-doc-wrap-bumper">auto <a href="#a78cc88fc00bbd2a107eb21078a9e80a1" class="m-doc-self">ProcessStringEx</a>(</span><span class="m-doc-wrap">const char16_t* pStr,
+              string16&amp; dst,
+              pair&lt;uint32_t, string16&gt;* pTokensBegin = nullptr,
+              pair&lt;uint32_t, string16&gt;* pTokensEnd = nullptr) -&gt; bool <span class="m-label m-flat m-warning">virtual</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a00990beb23dc308dcdeddfb8f6d299bb">
+              <span class="m-doc-wrap-bumper">auto <a href="#a00990beb23dc308dcdeddfb8f6d299bb" class="m-doc-self">FindTokenTranslation</a>(</span><span class="m-doc-wrap">const char16_t* pToken,
+              string16&amp; dst) const -&gt; bool <span class="m-label m-flat m-warning">virtual</span></span>
+            </dt>
+            <dd><span></span></dd>
+          </dl>
+        </section>
+        <section id="pro-attribs">
+          <h2><a href="#pro-attribs">Protected variables</a></h2>
+          <dl class="m-doc">
+            <dt id="ae5713da27d00ac0db8741568fd4579f4">
+              vector&lt;<a href="_u_i_2_i_token_translator_8h.html#ae65754ec1554f25d9597c83f64fea309" class="m-doc">ITokenTranslatorPtr</a>&gt; <a href="#ae5713da27d00ac0db8741568fd4579f4" class="m-doc-self">mTranslators</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a40e98f9eef1234fa12797412b183c2e7">
+              string16 <a href="#a40e98f9eef1234fa12797412b183c2e7" class="m-doc-self">field_1C</a>
             </dt>
             <dd><span></span></dd>
           </dl>

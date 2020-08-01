@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Simulator::cUIEventLog class | Spore ModAPI SDK for creating C++ mods for Spore</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,600,600i%7CSource+Code+Pro:400,400i,600" />
+  <link rel="stylesheet" href="m-dark.css" />
+  <link rel="stylesheet" href="m-documentation.css" />
+  <link rel="icon" href="Spore_ModAPI_Icon.png" type="image/png" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#22272e" />
+</head>
+<body>
+<header><nav id="navigation">
+  <div class="m-container">
+    <div class="m-row">
+      <a href="index.html" id="m-navbar-brand" class="m-col-t-8 m-col-m-none m-left-m"><img src="Spore_ModAPI_Icon.png" />Spore ModAPI <span class="m-thin">SDK for creating C++ mods for Spore</span></a>
+      <div class="m-col-t-4 m-hide-m m-text-right m-nopadr">
+        <a href="#search" class="m-doc-search-icon" title="Search" onclick="return showSearch()"><svg style="height: 0.9rem;" viewBox="0 0 16 16">
+          <path id="m-doc-search-icon-path" d="m6 0c-3.31 0-6 2.69-6 6 0 3.31 2.69 6 6 6 1.49 0 2.85-0.541 3.89-1.44-0.0164 0.338 0.147 0.759 0.5 1.15l3.22 3.79c0.552 0.614 1.45 0.665 2 0.115 0.55-0.55 0.499-1.45-0.115-2l-3.79-3.22c-0.392-0.353-0.812-0.515-1.15-0.5 0.895-1.05 1.44-2.41 1.44-3.89 0-3.31-2.69-6-6-6zm0 1.56a4.44 4.44 0 0 1 4.44 4.44 4.44 4.44 0 0 1-4.44 4.44 4.44 4.44 0 0 1-4.44-4.44 4.44 4.44 0 0 1 4.44-4.44z"/>
+        </svg></a>
+        <a id="m-navbar-show" href="#navigation" title="Show navigation"></a>
+        <a id="m-navbar-hide" href="#" title="Hide navigation"></a>
+      </div>
+      <div id="m-navbar-collapse" class="m-col-t-12 m-show-m m-col-m-none m-right-m">
+        <div class="m-row">
+          <ol class="m-col-t-6 m-col-m-none">
+            <li><a href="pages.html">Tutorials</a></li>
+            <li><a href="namespaces.html">Namespaces</a></li>
+          </ol>
+          <ol class="m-col-t-6 m-col-m-none" start="3">
+            <li><a href="annotated.html">Classes</a></li>
+            <li><a href="files.html">Files</a></li>
+            <li class="m-show-m"><a href="#search" class="m-doc-search-icon" title="Search" onclick="return showSearch()"><svg style="height: 0.9rem;" viewBox="0 0 16 16">
+              <use href="#m-doc-search-icon-path" />
+            </svg></a></li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav></header>
+<main><article>
+  <div class="m-container m-container-inflatable">
+    <div class="m-row">
+      <div class="m-col-l-10 m-push-l-1">
+        <h1>
+          <span class="m-breadcrumb"><a href="namespace_simulator.html">Simulator</a>::<wbr/></span>cUIEventLog <span class="m-thin">class</span>
+          <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_u_i_event_log_8h.html">&lt;Spore/Simulator/SubSystem/UIEventLog.h&gt;</a></div>
+        </h1>
+        <p>This class manages event logs in <a href="namespace_simulator.html" class="m-doc">Simulator</a> game modes.</p>
+        <div class="m-block m-default">
+          <h3>Contents</h3>
+          <ul>
+            <li>
+              Reference
+              <ul>
+                <li><a href="#base-classes">Base classes</a></li>
+                <li><a href="#pub-static-methods">Public static functions</a></li>
+                <li><a href="#pub-methods">Public functions</a></li>
+                <li><a href="#pro-attribs">Protected variables</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+<p>Event logs are small alerts shown on the left side of the screen, such as &quot;There&#x27;s a ecodisaster in this planet!&quot;. An example of usage of this class: <code class="m-code"><span class="n">UIEventLog</span><span class="p">.</span><span class="n">ShowEvent</span><span class="p">(</span><span class="n">id</span><span class="p">(</span><span class="s">&quot;PirateAmbush&quot;</span><span class="p">),</span> <span class="n">GroupIDs</span><span class="o">::</span><span class="n">SpacePopups</span><span class="p">);</span></code> The <a href="class_simulator_1_1c_u_i_event_log.html#a3d3c87dc1858594ef89a55a7090efab3" class="m-doc">ShowEvent()</a> method returns an ID that identifies that event log. Sometimes it&#x27;s useful to save that ID to use it in other methods. For example, you can use it to change the text of the event log:</p><pre class="m-code"><span class="kt">uint32_t</span> <span class="n">eventID</span> <span class="o">=</span> <span class="n">UIEventLog</span><span class="p">.</span><span class="n">ShowEvent</span><span class="p">(</span><span class="n">id</span><span class="p">(</span><span class="s">&quot;GenericMissionProgress&quot;</span><span class="p">),</span> <span class="n">GroupIDs</span><span class="o">::</span><span class="n">SpacePopups</span><span class="p">);</span>
+<span class="n">UIEventLog</span><span class="p">.</span><span class="n">SetDescription</span><span class="p">(</span><span class="n">eventID</span><span class="p">,</span> <span class="sa">u</span><span class="s">&quot;The mission is almost complete!&quot;</span><span class="p">);</span></pre>
+        <section id="base-classes">
+          <h2><a href="#base-classes">Base classes</a></h2>
+          <dl class="m-doc">
+            <dt>
+              class <a href="class_u_t_f_win_1_1_i_win_proc.html" class="m-doc">UTFWin::IWinProc</a>
+            </dt>
+            <dd>This class is a window procedure, also known as an event/message listener.</dd>
+            <dt>
+              class <a href="class_simulator_1_1c_strategy.html" class="m-doc">cStrategy</a>
+            </dt>
+            <dd><span></span></dd>
+          </dl>
+        </section>
+        <section id="pub-static-methods">
+          <h2><a href="#pub-static-methods">Public static functions</a></h2>
+          <dl class="m-doc">
+            <dt id="aecdc6df99a3634d742f1bb166b9cbde6">
+              <span class="m-doc-wrap-bumper">static auto <a href="#aecdc6df99a3634d742f1bb166b9cbde6" class="m-doc-self">Get</a>(</span><span class="m-doc-wrap">) -&gt; <a href="class_simulator_1_1c_u_i_event_log.html" class="m-doc">cUIEventLog</a>*</span>
+            </dt>
+            <dd><span></span></dd>
+          </dl>
+        </section>
+        <section id="pub-methods">
+          <h2><a href="#pub-methods">Public functions</a></h2>
+          <dl class="m-doc">
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a3d3c87dc1858594ef89a55a7090efab3" class="m-doc">ShowEvent</a>(</span><span class="m-doc-wrap">uint32_t instanceID,
+              uint32_t groupID,
+              int = 0,
+              <a href="struct_math_1_1_vector3.html" class="m-doc">Vector3</a>* = nullptr,
+              bool dontAllowDuplicates = true,
+              int = 0) -&gt; uint32_t</span>
+            </dt>
+            <dd>Shows an event log item, with the given instance and group ID.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">void <a href="#afead03e47631b73a2b9f8509b77d112b" class="m-doc">HideEvent</a>(</span><span class="m-doc-wrap">uint32_t eventID,
+              bool partially)</span>
+            </dt>
+            <dd>Hides an event log, either totally or partially.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">void <a href="#a8ee3bd0ae41cd6214291a6c248336e87" class="m-doc">SetDescription</a>(</span><span class="m-doc-wrap">uint32_t eventID,
+              const char16_t* pText)</span>
+            </dt>
+            <dd>Changes the description text of the event log.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">void <a href="#a63ccb9d4ff39592d3a7a3aa2d7f28320" class="m-doc">SetVisible</a>(</span><span class="m-doc-wrap">bool visible)</span>
+            </dt>
+            <dd>Changes the visibility of all the event log items.</dd>
+          </dl>
+        </section>
+        <section id="pro-attribs">
+          <h2><a href="#pro-attribs">Protected variables</a></h2>
+          <dl class="m-doc">
+            <dt id="a89bd190ce1f3dacfd0fcb4c11a5da371">
+              int <a href="#a89bd190ce1f3dacfd0fcb4c11a5da371" class="m-doc-self">field_20</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a6a89225ead0646e7e09f67a1663839a0">
+              bool <a href="#a6a89225ead0646e7e09f67a1663839a0" class="m-doc-self">field_24</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="ab33d32e19575242426694e216c181bc5">
+              map&lt;uint32_t, intrusive_ptr&lt;<a href="class_simulator_1_1c_feedback_event.html" class="m-doc">cFeedbackEvent</a>&gt;&gt; <a href="#ab33d32e19575242426694e216c181bc5" class="m-doc-self">mEvents</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a2610be7d09074a358fd7b500245e05de">
+              int <a href="#a2610be7d09074a358fd7b500245e05de" class="m-doc-self">field_44</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a59657e034f204270cb112e3be6348f92">
+              float <a href="#a59657e034f204270cb112e3be6348f92" class="m-doc-self">field_48</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a8eb176ed4547bdb719671e45465290da">
+              char <a href="#a8eb176ed4547bdb719671e45465290da" class="m-doc-self">padding_4C</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a7360050052b39de73aac97b6385194c6">
+              float <a href="#a7360050052b39de73aac97b6385194c6" class="m-doc-self">field_5C</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="ada31bfa04249c382616bd08f89b1d5aa">
+              float <a href="#ada31bfa04249c382616bd08f89b1d5aa" class="m-doc-self">field_60</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a8b47521d6847016cb61144bce6252318">
+              int <a href="#a8b47521d6847016cb61144bce6252318" class="m-doc-self">field_64</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a8c8c3bcc7b2f1e002ddd805d6dd39a47">
+              int <a href="#a8c8c3bcc7b2f1e002ddd805d6dd39a47" class="m-doc-self">field_68</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a31ec777995de47a6824590c9e6d1a212">
+              <a href="_property_list_8h.html#ae757f1639ff739ff0282dd91f3e39f0a" class="m-doc">PropertyListPtr</a> <a href="#a31ec777995de47a6824590c9e6d1a212" class="m-doc-self">mpPropList</a>
+            </dt>
+            <dd><span></span></dd>
+          </dl>
+        </section>
+        <section>
+          <h2>Function documentation</h2>
+          <section class="m-doc-details" id="a3d3c87dc1858594ef89a55a7090efab3"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">uint32_t Simulator::<wbr />cUIEventLog::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a3d3c87dc1858594ef89a55a7090efab3" class="m-doc-self">ShowEvent</a>(</span><span class="m-doc-wrap">uint32_t instanceID,
+              uint32_t groupID,
+              int = 0,
+              <a href="struct_math_1_1_vector3.html" class="m-doc">Vector3</a>* = nullptr,
+              bool dontAllowDuplicates = true,
+              int = 0)</span></span>
+            </h3>
+            <p>Shows an event log item, with the given instance and group ID.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">instanceID</td>
+                  <td>The ID of the prop file used for this event.</td>
+                </tr>
+                <tr>
+                  <td>groupID</td>
+                  <td>The ID of the folder of the prop file, usually <a href="namespace_group_i_ds.html#a7336869349c1fdce783daaa13128fc87a40caec3f8010fc1b7b36b61f8553a64c" class="m-doc">GroupIDs::<wbr />SpacePopups</a> or <a href="namespace_group_i_ds.html#a7336869349c1fdce783daaa13128fc87acc2d29b6f0200c53628162f7bb9594aa" class="m-doc">GroupIDs::<wbr />CivPopups</a>.</td>
+                </tr>
+                <tr>
+                  <td>dontAllowDuplicates</td>
+                  <td>If the prop file doesn&#x27;t define <code>eventAllowDuplicates</code>, this parameter will be used to know if you can&#x27;t have more than one event of that same prop.</td>
+                </tr>
+              </tbody>
+            </table>
+<p>This method returns an ID that uniquely identifies the event log item created by this method; that id can be used in other methods.</p>
+          </div></section>
+          <section class="m-doc-details" id="afead03e47631b73a2b9f8509b77d112b"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">void Simulator::<wbr />cUIEventLog::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#afead03e47631b73a2b9f8509b77d112b" class="m-doc-self">HideEvent</a>(</span><span class="m-doc-wrap">uint32_t eventID,
+              bool partially)</span></span>
+            </h3>
+            <p>Hides an event log, either totally or partially.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">eventID</td>
+                  <td>The ID of the event, as returned by <a href="class_simulator_1_1c_u_i_event_log.html#a3d3c87dc1858594ef89a55a7090efab3" class="m-doc">ShowEvent()</a></td>
+                </tr>
+                <tr>
+                  <td>partially</td>
+                  <td>If true, only the text is hidden; if false, the entire event item is destroyed</td>
+                </tr>
+              </tbody>
+            </table>
+<p>Hiding it partially (second parameter set to <code>true</code>) means the icon still shows; if oyu hide it totally, you delete the event completely.</p>
+          </div></section>
+          <section class="m-doc-details" id="a8ee3bd0ae41cd6214291a6c248336e87"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">void Simulator::<wbr />cUIEventLog::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a8ee3bd0ae41cd6214291a6c248336e87" class="m-doc-self">SetDescription</a>(</span><span class="m-doc-wrap">uint32_t eventID,
+              const char16_t* pText)</span></span>
+            </h3>
+            <p>Changes the description text of the event log.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">eventID</td>
+                  <td>The ID of the event, as returned by <a href="class_simulator_1_1c_u_i_event_log.html#a3d3c87dc1858594ef89a55a7090efab3" class="m-doc">ShowEvent()</a></td>
+                </tr>
+                <tr>
+                  <td>pText</td>
+                  <td>The new text of the event.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="a63ccb9d4ff39592d3a7a3aa2d7f28320"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">void Simulator::<wbr />cUIEventLog::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a63ccb9d4ff39592d3a7a3aa2d7f28320" class="m-doc-self">SetVisible</a>(</span><span class="m-doc-wrap">bool visible)</span></span>
+            </h3>
+            <p>Changes the visibility of all the event log items.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">visible</td>
+                  <td></td>
+                </tr>
+              </tbody>
+            </table>
+          </div></section>
+        </section>
+      </div>
+    </div>
+  </div>
+</article></main>
+<div class="m-doc-search" id="search">
+  <a href="#!" onclick="return hideSearch()"></a>
+  <div class="m-container">
+    <div class="m-row">
+      <div class="m-col-m-8 m-push-m-2">
+        <div class="m-doc-search-header m-text m-small">
+          <div><span class="m-label m-default">Tab</span> / <span class="m-label m-default">T</span> to search, <span class="m-label m-default">Esc</span> to close</div>
+          <div id="search-symbolcount">&hellip;</div>
+        </div>
+        <div class="m-doc-search-content">
+          <form>
+            <input type="search" name="q" id="search-input" placeholder="Loading &hellip;" disabled="disabled" autofocus="autofocus" autocomplete="off" spellcheck="false" />
+          </form>
+          <noscript class="m-text m-danger m-text-center">Unlike everything else in the docs, the search functionality <em>requires</em> JavaScript.</noscript>
+          <div id="search-help" class="m-text m-dim m-text-center">
+            <p class="m-noindent">Search for symbols, directories, files, pages or
+            modules. You can omit any prefix from the symbol or file path; adding a
+            <code>:</code> or <code>/</code> suffix lists all members of given symbol or
+            directory.</p>
+            <p class="m-noindent">Use <span class="m-label m-dim">&darr;</span>
+            / <span class="m-label m-dim">&uarr;</span> to navigate through the list,
+            <span class="m-label m-dim">Enter</span> to go.
+            <span class="m-label m-dim">Tab</span> autocompletes common prefix, you can
+            copy a link to the result using <span class="m-label m-dim">⌘</span>
+            <span class="m-label m-dim">L</span> while <span class="m-label m-dim">⌘</span>
+            <span class="m-label m-dim">M</span> produces a Markdown link.</p>
+          </div>
+          <div id="search-notfound" class="m-text m-warning m-text-center">Sorry, nothing was found.</div>
+          <ul id="search-results"></ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="search-v1.js"></script>
+<script src="searchdata-v1.js" async="async"></script>
+<footer><nav>
+  <div class="m-container">
+    <div class="m-row">
+      <div class="m-col-l-10 m-push-l-1">
+        <p>Spore ModAPI SDK for creating C++ mods for Spore. Created with <a href="https://doxygen.org/">Doxygen</a> 1.8.16 and <a href="https://mcss.mosra.cz/">m.css</a>.</p>
+      </div>
+    </div>
+  </div>
+</nav></footer>
+</body>
+</html>
