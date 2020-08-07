@@ -535,7 +535,7 @@ Transform::Transform()
 	mRotation.SetIdentity();
 }
 
-auto_METHOD_const_(Transform, Math::Matrix4, ToMatrix4);
+RedirectMethod_noargs_structret_const(Transform, ToMatrix4, Math::Matrix4);
 
 
 RandomNumberGenerator::RandomNumberGenerator(int32_t seed)
