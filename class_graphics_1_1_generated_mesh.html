@@ -171,6 +171,24 @@
               int compiledStateIndex = 0) const -&gt; <a href="struct_render_ware_1_1_raster.html" class="m-doc">RenderWare::<wbr />Raster</a>*</span>
             </dt>
             <dd>Returns the raster texture that is being used for a certain material in this mesh.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a389c590eaa54587fd0953885cacdd432" class="m-doc">GetTransform</a>(</span><span class="m-doc-wrap">int materialIndex) -&gt; const <a href="struct_math_1_1_matrix4.html" class="m-doc">Matrix4</a>&amp;</span>
+            </dt>
+            <dd>Returns the 4x4 matrix transformation that gets applied to a certain material of this mesh.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">void <a href="#a4dca896ecb32c6065085af2836b2f1e8" class="m-doc">SetTransform</a>(</span><span class="m-doc-wrap">int materialIndex,
+              const <a href="struct_math_1_1_matrix4.html" class="m-doc">Matrix4</a>&amp; transform)</span>
+            </dt>
+            <dd>Sets the 4x4 matrix transformation that gets applied to a certain material of this mesh.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a93a2e3d94d9eca2de8450a67a918706a" class="m-doc">GetColor</a>(</span><span class="m-doc-wrap">int materialIndex) -&gt; const <a href="struct_math_1_1_color_r_g_b_a.html" class="m-doc">ColorRGBA</a>&amp;</span>
+            </dt>
+            <dd>Returns the color that gets applied to a certain material of this mesh.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">void <a href="#a80589d0afe17dc4142fc3eade25f892b" class="m-doc">SetColor</a>(</span><span class="m-doc-wrap">int materialIndex,
+              const <a href="struct_math_1_1_color_r_g_b_a.html" class="m-doc">ColorRGBA</a>&amp; color)</span>
+            </dt>
+            <dd>Sets the color that gets applied to a certain material of this mesh.</dd>
             <dt id="a9dcbad80e08b3d20b0aeadbd2d7db952">
               <span class="m-doc-wrap-bumper">auto <a href="#a9dcbad80e08b3d20b0aeadbd2d7db952" class="m-doc-self">GetBoundingBox</a>(</span><span class="m-doc-wrap">) -&gt; <a href="struct_math_1_1_bounding_box.html" class="m-doc">BoundingBox</a></span>
             </dt>
@@ -218,6 +236,14 @@
             <dd><span></span></dd>
             <dt id="ae2a1b0554518b02cbac4d6f5e63b9c6f">
               vector&lt;<a href="_i_material_manager_8h.html#aae3f43280ebd4ec44a83f09ff7d3580a" class="m-doc">MaterialPtr</a>&gt; <a href="#ae2a1b0554518b02cbac4d6f5e63b9c6f" class="m-doc-self">mMaterials</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a22387568edd48dbac5b416114f267c7c">
+              vector&lt;<a href="struct_math_1_1_color_r_g_b_a.html" class="m-doc">ColorRGBA</a>&gt; <a href="#a22387568edd48dbac5b416114f267c7c" class="m-doc-self">mColors</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a5d528e93b02e13e54ccc57e6cdfcf174">
+              vector&lt;<a href="struct_math_1_1_matrix4.html" class="m-doc">Matrix4</a>&gt; <a href="#a5d528e93b02e13e54ccc57e6cdfcf174" class="m-doc-self">mTransforms</a>
             </dt>
             <dd><span></span></dd>
             <dt id="a1714911cc258faac6b706ddfc35d8e90">
@@ -566,6 +592,124 @@
                 </tr>
               </tfoot>
             </table>
+          </div></section>
+          <section class="m-doc-details" id="a389c590eaa54587fd0953885cacdd432"><div>
+            <h3>
+              <div class="m-doc-template">
+                template&lt;typename Vertex&gt;
+              </div>
+              <span class="m-doc-wrap-bumper">const <a href="struct_math_1_1_matrix4.html" class="m-doc">Matrix4</a>&amp; Graphics::<wbr />GeneratedMesh&lt;Vertex&gt;::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a389c590eaa54587fd0953885cacdd432" class="m-doc-self">GetTransform</a>(</span><span class="m-doc-wrap">int materialIndex)</span></span>
+            </h3>
+            <p>Returns the 4x4 matrix transformation that gets applied to a certain material of this mesh.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">materialIndex</td>
+                  <td>The index of the material, as returned by <a href="class_graphics_1_1_generated_mesh.html#a562a9591f479e03e95dbe4a7f9eb6b8b" class="m-doc">AddMaterial()</a>.</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>Returns</th>
+                  <td>The 4x4 matrix transformation</td>
+                </tr>
+              </tfoot>
+            </table>
+<p>By default it&#x27;s the identity, that is, no transform.</p>
+          </div></section>
+          <section class="m-doc-details" id="a4dca896ecb32c6065085af2836b2f1e8"><div>
+            <h3>
+              <div class="m-doc-template">
+                template&lt;typename Vertex&gt;
+              </div>
+              <span class="m-doc-wrap-bumper">void Graphics::<wbr />GeneratedMesh&lt;Vertex&gt;::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a4dca896ecb32c6065085af2836b2f1e8" class="m-doc-self">SetTransform</a>(</span><span class="m-doc-wrap">int materialIndex,
+              const <a href="struct_math_1_1_matrix4.html" class="m-doc">Matrix4</a>&amp; transform)</span></span>
+            </h3>
+            <p>Sets the 4x4 matrix transformation that gets applied to a certain material of this mesh.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">materialIndex</td>
+                  <td>The index of the material, as returned by <a href="class_graphics_1_1_generated_mesh.html#a562a9591f479e03e95dbe4a7f9eb6b8b" class="m-doc">AddMaterial()</a>.</td>
+                </tr>
+                <tr>
+                  <td>transform</td>
+                  <td></td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>Returns</th>
+                  <td>The 4x4 matrix transformation</td>
+                </tr>
+              </tfoot>
+            </table>
+<p>By default it&#x27;s the identity, that is, no transform.</p>
+          </div></section>
+          <section class="m-doc-details" id="a93a2e3d94d9eca2de8450a67a918706a"><div>
+            <h3>
+              <div class="m-doc-template">
+                template&lt;typename Vertex&gt;
+              </div>
+              <span class="m-doc-wrap-bumper">const <a href="struct_math_1_1_color_r_g_b_a.html" class="m-doc">ColorRGBA</a>&amp; Graphics::<wbr />GeneratedMesh&lt;Vertex&gt;::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a93a2e3d94d9eca2de8450a67a918706a" class="m-doc-self">GetColor</a>(</span><span class="m-doc-wrap">int materialIndex)</span></span>
+            </h3>
+            <p>Returns the color that gets applied to a certain material of this mesh.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">materialIndex</td>
+                  <td>The index of the material, as returned by <a href="class_graphics_1_1_generated_mesh.html#a562a9591f479e03e95dbe4a7f9eb6b8b" class="m-doc">AddMaterial()</a>.</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>Returns</th>
+                  <td>The material color.</td>
+                </tr>
+              </tfoot>
+            </table>
+<p>By default it&#x27;s white.</p>
+          </div></section>
+          <section class="m-doc-details" id="a80589d0afe17dc4142fc3eade25f892b"><div>
+            <h3>
+              <div class="m-doc-template">
+                template&lt;typename Vertex&gt;
+              </div>
+              <span class="m-doc-wrap-bumper">void Graphics::<wbr />GeneratedMesh&lt;Vertex&gt;::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a80589d0afe17dc4142fc3eade25f892b" class="m-doc-self">SetColor</a>(</span><span class="m-doc-wrap">int materialIndex,
+              const <a href="struct_math_1_1_color_r_g_b_a.html" class="m-doc">ColorRGBA</a>&amp; color)</span></span>
+            </h3>
+            <p>Sets the color that gets applied to a certain material of this mesh.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">materialIndex</td>
+                  <td>The index of the material, as returned by <a href="class_graphics_1_1_generated_mesh.html#a562a9591f479e03e95dbe4a7f9eb6b8b" class="m-doc">AddMaterial()</a>.</td>
+                </tr>
+                <tr>
+                  <td>color</td>
+                  <td></td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>Returns</th>
+                  <td>The material color.</td>
+                </tr>
+              </tfoot>
+            </table>
+<p>By default it&#x27;s white.</p>
           </div></section>
         </section>
       </div>
