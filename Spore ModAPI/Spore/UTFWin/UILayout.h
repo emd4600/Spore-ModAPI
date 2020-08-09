@@ -100,7 +100,7 @@ namespace UTFWin
 
 	protected:
 		/* 08h */	ResourceKey			mResourceKey;
-		/* 14h */	UILayoutObjects*	mpLayoutObjects;
+		/* 14h */	UILayoutObjectsPtr	mpLayoutObjects;
 	};
 
 

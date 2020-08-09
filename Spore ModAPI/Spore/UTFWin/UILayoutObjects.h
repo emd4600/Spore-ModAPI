@@ -25,6 +25,8 @@
 #include <EASTL\string.h>
 #include <EASTL\hash_map.h>
 
+#define UILayoutObjectsPtr eastl::intrusive_ptr<UTFWin::UILayoutObjects>
+
 namespace UTFWin
 {
 	struct LayoutObjectsContainer
