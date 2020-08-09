@@ -455,6 +455,7 @@ namespace UTFWin
 
 	namespace Addresses(UILayout)
 	{
+		DefineAddress(Delete, SelectAddress(0x812130, , 0x811BC0));
 		DefineAddress(Load, SelectAddress(0x812730, 0x812170, 0x8121C0));
 		DefineAddress(LoadByName, SelectAddress(0x8127C0, 0x812200, 0x812250));
 

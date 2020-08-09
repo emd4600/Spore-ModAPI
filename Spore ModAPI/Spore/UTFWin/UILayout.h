@@ -39,6 +39,7 @@ namespace UTFWin
 	{
 	public:
 		UILayout();
+		~UILayout();
 
 		///
 		/// Loads a user interface from a file. The user interface is expected to be in the SPUI format or an
@@ -99,6 +100,8 @@ namespace UTFWin
 		};
 
 	protected:
+		void Delete(int);
+
 		/* 08h */	ResourceKey			mResourceKey;
 		/* 14h */	UILayoutObjectsPtr	mpLayoutObjects;
 	};
@@ -113,6 +116,7 @@ namespace UTFWin
 
 	namespace Addresses(UILayout)
 	{
+		DeclareAddress(Delete);
 		DeclareAddress(Load);
 		DeclareAddress(LoadByName);
 

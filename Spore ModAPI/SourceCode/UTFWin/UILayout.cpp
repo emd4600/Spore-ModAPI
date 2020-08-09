@@ -28,6 +28,13 @@ namespace UTFWin
 	{
 	}
 
+	UILayout::~UILayout()
+	{
+		if (mpLayoutObjects) {
+			Delete(1);
+		}
+	}
+
 	auto_METHOD(UILayout, bool, Load,
 		Args(const ResourceKey& name, bool arg_4, uint32_t arg_8),
 		Args(name, arg_4, arg_8));
@@ -47,5 +54,7 @@ namespace UTFWin
 	auto_METHOD(UILayout, bool, SetVisible, Args(bool value), Args(value));
 
 	auto_METHOD_(UILayout, IWindow*, GetContainerWindow);
+
+	auto_METHOD_VOID(UILayout, Delete, Args(int a), Args(a));
 }
 #endif
