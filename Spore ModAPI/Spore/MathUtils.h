@@ -71,12 +71,23 @@ namespace Math
 	/// A `mix` value of 0 returns `a`, a value of `1` returns `b`.
 	/// 
 	/// The returned value will be equal to `mix*a + (1-mix)*b`
-	/// @param a The first value
-	/// @param b The second value
+	/// @param a The first value of the range
+	/// @param b The second value of the range
 	/// @param mix The mix factor, between 0.0 and 1.0
 	template <typename T>
 	inline T lerp(const T& a, const T& b, float mix) {
 		return a + (b - a) * mix;
+	}
+
+	/// Inverse operation of lerp(): given a range and a value, returns the parameter
+	/// that would make a linear interpolation between `a` and `b` result in `value`
+	/// 
+	/// @param a The first value of the range
+	/// @param b The second value of the range
+	/// @param value A value between `a` and `b`
+	template <typename T>
+	inline float invLerp(const T& a, const T& b, const T& value) {
+		return (value - a) / (b - a);
 	}
 
 	/// Returns the shortest difference between two angles (in radians), the result is always in the range [0, PI].
@@ -95,6 +106,13 @@ namespace Math
 	/// Converts the given angle to the [-PI, PI] range, everything in radians.
 	/// @param angle
 	float CorrectAngleRange(float angle);
+
+	/// Returns -1 for negative numbers, +1 for positive numbers, and 0 if the value is 0
+	template <typename T> int sgn(T val) {
+		return (T(0) < val) - (val < T(0));
+	}
+
+	struct Point;
 
 	/// An ARGB color represented by a 32 bit integer value.
 	struct Color
@@ -138,6 +156,7 @@ namespace Math
 
 		Vector2(float x, float y);
 		Vector2(const Vector2& other);
+		Vector2(const Point& other);
 		Vector2();
 
 		/// Returns the length of the vector, computed as the square root of then sum of its components squared.
@@ -160,6 +179,8 @@ namespace Math
 
 		bool operator==(const Vector2& b) const;
 		bool operator!=(const Vector2& b) const;
+
+		static const Vector2 ZERO;
 	};
 
 	/// A vector of 3 float values (x, y, z).
@@ -191,7 +212,7 @@ namespace Math
 		/// @param other
 		Vector3 Cross(const Vector3& other) const;
 
-		/// Returns the angle between two vectors.
+		/// Returns the angle between two vectors in radians, in the range [0, PI]
 		/// @param other
 		float AngleTo(const Vector3& other) const;
 
@@ -305,6 +326,7 @@ namespace Math
 
 		Point(float x, float y);
 		Point(const Point& other);
+		Point(const Vector2& other);
 		Point();
 
 		Point& operator+=(const Point&);
@@ -459,6 +481,9 @@ namespace Math
 		Matrix3();
 		Matrix3(const Matrix3& other);
 
+		Vector3 Row(int index) const;
+		Vector3 Column(int index) const;
+
 		/// Turns this matrix into the identity matrix (1.0s in the diagonal, everything else 0.0s).
 		/// Multiplying a matrix/vector with an identity matrix has no effect.
 		Matrix3& SetIdentity();
@@ -480,7 +505,7 @@ namespace Math
 		/// @param angles The euler angles, in radians.
 		static Matrix3 FromEuler(const Vector3& angles);
 
-		/// Builds a 3x3 rotation matrix that rotates `angle` radians around the given `axis`.
+		/// Builds a 3x3 rotation matrix that rotates `angle` radians around the given `axis`. 
 		/// This is equivalent to `Quaternion::FromRotation(axis, angle).ToMatrix()`.
 		/// @param axis The axis of rotation, which stays fixed.
 		/// @param angle The angle, in radians.
@@ -660,10 +685,12 @@ namespace Math
 		: r(_r), g(_g), b(_b), a(_a) {}
 
 	inline Vector2::Vector2(const Vector2& other) : Vector2(other.x, other.y) {}
+	inline Vector2::Vector2(const Point& other) : Vector2(other.x, other.y) {}
 	inline Vector3::Vector3(const Vector3& other) : Vector3(other.x, other.y, other.z) {}
 	inline Vector4::Vector4(const Vector4& other) : Vector4(other.x, other.y, other.z, other.w) {}
 	inline Quaternion::Quaternion(const Quaternion& other) : Quaternion(other.x, other.y, other.z, other.w) {}
 	inline Point::Point(const Point& other) : Point(other.x, other.y) {}
+	inline Point::Point(const Vector2& other) : Point(other.x, other.y) {}
 
 	inline Vector2::Vector2(float _x, float _y) : x(_x), y(_y)
 	{

@@ -26,7 +26,7 @@
 
 namespace Math
 {
-
+	const Vector2 Vector2::ZERO = { 0, 0 };
 	const Vector3 Vector3::ZERO = { 0, 0, 0 };
 
 	const Color Color::RED =	Color(255, 0, 0, 255);
@@ -215,24 +215,25 @@ namespace Math
 	}
 
 	Matrix3 Matrix3::FromAxisAngle(const Vector3& axis, float angle) {
+		Vector3 a = axis.Normalized();
 		Matrix3 dst;
 		float c = cosf(angle);
 		float s = sinf(angle);
-		float cx = (1.0f - c) * axis.x;
-		float cy = (1.0f - c) * axis.y;
-		float cz = (1.0f - c) * axis.z;
+		float cx = (1.0f - c) * a.x;
+		float cy = (1.0f - c) * a.y;
+		float cz = (1.0f - c) * a.z;
 
-		dst.m[0][0] = axis.x * cx + c;
-		dst.m[0][1] = axis.x * cy - axis.z * s;
-		dst.m[0][2] = axis.x * cz + axis.y * s;
+		dst.m[0][0] = a.x * cx + c;
+		dst.m[0][1] = a.x * cy - a.z * s;
+		dst.m[0][2] = a.x * cz + a.y * s;
 
-		dst.m[1][0] = axis.y * cx + axis.z * s;
-		dst.m[1][1] = axis.y * cy + c;
-		dst.m[1][2] = axis.y * cz - axis.x * s;
+		dst.m[1][0] = a.y * cx + a.z * s;
+		dst.m[1][1] = a.y * cy + c;
+		dst.m[1][2] = a.y * cz - a.x * s;
 
-		dst.m[2][0] = axis.z * cx - axis.y * s;
-		dst.m[2][1] = axis.z * cy + axis.x * s;
-		dst.m[2][2] = axis.z * cz + c;
+		dst.m[2][0] = a.z * cx - a.y * s;
+		dst.m[2][1] = a.z * cy + a.x * s;
+		dst.m[2][2] = a.z * cz + c;
 		return dst;
 	}
 
@@ -301,6 +302,15 @@ namespace Math
 			}
 		}
 		return q;
+	}
+
+	Vector3 Matrix3::Row(int index) const
+	{
+		return { m[index][0], m[index][1], m[index][2] };
+	}
+	Vector3 Matrix3::Column(int index) const
+	{
+		return { m[0][index], m[1][index], m[2][index] };
 	}
 
 	auto_METHOD_VOID(BoundingBox, ApplyTransform, Args(const Transform& t), Args(t));
