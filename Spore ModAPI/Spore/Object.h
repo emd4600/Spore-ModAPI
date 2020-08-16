@@ -98,7 +98,7 @@ public:
 template <class Type, class CallerType>
 inline Type* object_cast(const CallerType pObject)
 {
-	return (Type*) pObject->Cast(Type::TYPE);
+	return pObject ? (Type*) pObject->Cast(Type::TYPE) : nullptr;
 }
 
 
