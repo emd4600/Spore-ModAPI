@@ -3,6 +3,7 @@
 #include <Spore\UI\LayerManager.h>
 #include <Spore\UI\SpaceGameUI.h>
 #include <Spore\UI\HintManager.h>
+#include <Spore\UI\ScrollFrameVertical.h>
 
 namespace UI
 {
@@ -20,6 +21,11 @@ namespace UI
 	{
 		DefineAddress(Get, SelectAddress(0x67CC10, , 0x67CA80));
 		DefineAddress(ShowHint, SelectAddress(0x67C980, , 0x67C7F0));
+	}
+
+	namespace Addresses(ScrollFrameVertical)
+	{
+		DefineAddress(Create, SelectAddress(0x807C40, , 0x8076F0));
 	}
 }
 #endif
