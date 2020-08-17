@@ -7,6 +7,16 @@
 
 namespace Anim
 {
+	struct SPAnimation;
+
+	struct SPAnimationChannel
+	{
+		/* 00h */	uint32_t magic;  // 'CHAN'
+		/* 04h */	SPAnimation* pAnimation;
+		/* 08h */	char name[0x80];
+		/* 88h */	
+	};
+
 	struct SPAnimation
 	{
 		int AddRef();
@@ -26,7 +36,7 @@ namespace Anim
 		/* 13Ch */	int vfxCount;
 		/* 140h */	void* pVFX;
 		/* 144h */	int channelCount;
-		/* 148h */	void* pChannels;
+		/* 148h */	SPAnimationChannel** pChannels;
 	};
 
 	inline int SPAnimation::AddRef() {

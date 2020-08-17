@@ -20,6 +20,8 @@
 
 #include <Spore\Internal.h>
 #include <Spore\Graphics\ModelAsset.h>
+#include <Spore\Anim\anim_cid.h>
+#include <Spore\Anim\SPAnimation.h>
 
 
 // ??? Spore calls it "new_ac" so don't really know what it stands for
@@ -29,8 +31,6 @@
 // loc_63ACE4 play mode play run animations
 
 //  loc_D49254 ability  loc_D48CFA
-
-// [127h]: at 2E4h has vector<CreatureBlock>
 
 // vftable 58h: GetCurrentAnimationID?
 
@@ -136,7 +136,7 @@ namespace Anim
 		/* 160h */	int field_160;
 		/* 164h */	Vector3 field_164;  // dest position?
 		/* 170h */	int field_170[3];
-		/* 17Ch */	int field_17C;  // contains blocks?  cid
+		/* 17Ch */	anim_cid* p_cid;
 		/* 180h */	ModelPtr mpModel;
 		// 184h "anim_qb", contains data about animations
 		/* 184h */	int field_184;
@@ -156,10 +156,10 @@ namespace Anim
 			float durationScale;  // 1.0
 		};
 
-		/* 00h */	int field_0;
+		/* 00h */	void* p_anim_aid;
 		/* 04h */	int field_4;
 		/* 08h */	AnimReference anims[8];
-		/* 68h */	int field_68;
+		/* 68h */	int field_68;  // index to anims
 		/* 6Ch */	AnimIndex field_6C;
 		/* 70h */	float field_70;
 		/* 74h */	float field_74;
@@ -217,7 +217,7 @@ namespace Anim
 		/* FB0h */	float field_FB0;
 		/* FB4h */	float field_FB4;  // 1.0
 		/* FB8h */	float field_FB8;
-		/* FBCh */	int field_FBC;  // cid, like creature field_17C
+		/* FBCh */	anim_cid* p_anim_cid;
 		/* FC0h */	int field_FC0;
 		/* FC4h */	float field_FC4;  // 0.2
 		/* FC8h */	float field_FC8;  // 0.4

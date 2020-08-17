@@ -10,6 +10,8 @@ namespace Anim
 		/* 0Ch */	string16 mName;
 		/* 1Ch */	IAnimManagerPtr mpManager;
 
+		/* 24h */	vector<AnimatedCreaturePtr> mCreatures;
+
 		/* 44h */	IModelWorldPtr mpModelWorld;
 
 		/* 4Ch */	IEffectWorldPtr	mpEffectWorld;

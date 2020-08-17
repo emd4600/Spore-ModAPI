@@ -14,7 +14,7 @@ namespace Anim
 		--mnRefCount;
 		if (mnRefCount == 0) {
 			mnRefCount = 1;
-			if (field_17C != 0 && mpAnimWorld) {
+			if (p_cid != 0 && mpAnimWorld) {
 				mpAnimWorld->DestroyCreature(this);
 			}
 			delete this;

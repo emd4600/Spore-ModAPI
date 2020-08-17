@@ -31,9 +31,9 @@ namespace Anim
 		// first argument is delta seconds?, calls func28h 
 		// does something with all creatures, which are at 24h vector
 		// when finishes calls func2Ch
-		/* 24h */	virtual void Update(float deltaTime, void* = nullptr) = 0;  // must be called every frame?
-		/* 28h */	virtual void func28h(int, int) = 0;
-		/* 2Ch */	virtual void func2Ch(int, int) = 0;
+		/* 24h */	virtual void Update(float deltaTime, App::cViewer* = nullptr) = 0;  // must be called every frame?
+		/* 28h */	virtual void UpdateCreatures(float deltaTime, App::cViewer* = nullptr) = 0;
+		/* 2Ch */	virtual void PostUpdateCreatures(float deltaTime, App::cViewer* = nullptr) = 0;
 		// model is not visible by default
 		/* 30h */	virtual AnimatedCreature* LoadCreature(const ResourceKey& key, int = 2, const Vector3& = Vector3(), const Vector3& = Vector3(), bool = true) = 0;
 		/* 34h */	virtual int func34h(int, int, int, int, int) = 0;
@@ -44,7 +44,7 @@ namespace Anim
 		// int is second argument of func30h too
 		/* 40h */	virtual int func40h(AnimatedCreature*, int, bool) = 0;
 		/* 44h */	virtual const vector<AnimatedCreature*>& GetCreatures() const = 0;
-		/* 48h */	virtual void func48h(int index, int) = 0;
+		/* 48h */	virtual void func48h(int index, int) = 0;  // related with lod max
 		/* 4Ch */	virtual int func4Ch(int index) = 0;
 		/* 50h */	virtual void func50h(bool) = 0;
 		/* 54h */	virtual bool func54h() = 0;
