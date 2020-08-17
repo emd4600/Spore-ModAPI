@@ -154,7 +154,7 @@ RedirectMethod_noargs_const(Window, GetParent, Window*);
 //    args: The parameter types of this function, use `Args()` to define it (even if it has no parameters).
 //    argNames: The parameter names of this function (don't need to match the header), 
 //       use `Args()` to define it (even if it has no parameters).
-#define RedirectStaticMethod_structret(namespaceName, name, returnType, args, argNames) returnType namespaceName::name(args) { returnType ret; ((returnType(*)(returnType&, args)) GetAddress(namespaceName, name))(ret, argNames); return ret; }
+#define RedirectStaticMethod_structret(namespaceName, name, returnType, args, argNames) returnType namespaceName::name(args) { returnType ret; ((void(*)(returnType&, args)) GetAddress(namespaceName, name))(ret, argNames); return ret; }
 
 // Defines the body of a redirected static function with no arguments whose address is stored in an address namespace. 
 // This should only be used if it returns a big struct (i.e. sizeof() > 8) by value. Examples:
@@ -163,7 +163,7 @@ RedirectMethod_noargs_const(Window, GetParent, Window*);
 //    namespaceName: The name of the namespace that stores the addresses.
 //    name: The name of the function declared in the header.
 //    returnType: The return type of the function.
-#define RedirectStaticMethod_noargs_structret(namespaceName, name, returnType) returnType namespaceName::name() { returnType ret; ((returnType(*)(returnType&)) GetAddress(namespaceName, name))(ret); return ret; }
+#define RedirectStaticMethod_noargs_structret(namespaceName, name, returnType) returnType namespaceName::name() { returnType ret; ((void(*)(returnType&)) GetAddress(namespaceName, name))(ret); return ret; }
 
 // -- NON-STATIC METHOS -- //
 
@@ -218,7 +218,7 @@ RedirectMethod_noargs_const(Window, GetParent, Window*);
 //    className: The name of the class that has the method.
 //    name: The name of the function declared in the header.
 //    returnType: The return type of the function, can be void.
-#define RedirectMethod_noargs_structret(className, name, returnType) returnType className::name() { returnType ret; ((returnType(__thiscall*)(className*, returnType&)) GetAddress(className, name))(this, ret); return ret; }
+#define RedirectMethod_noargs_structret(className, name, returnType) returnType className::name() { returnType ret; ((void(__thiscall*)(className*, returnType&)) GetAddress(className, name))(this, ret); return ret; }
 
 // Defines the body of a redirected member method whose address is stored in an address namespace. 
 // The addresses namespace must use the same name as the class that has the method.
@@ -231,7 +231,7 @@ RedirectMethod_noargs_const(Window, GetParent, Window*);
 //    args: The parameter types of this function, use `Args()` to define it (even if it has no parameters).
 //    argNames: The parameter names of this function (don't need to match the header), 
 //       use `Args()` to define it (even if it has no parameters).
-#define RedirectMethod_structret(className, name, returnType, args, argNames) returnType className::name(args) { returnType ret; ((returnType(__thiscall*)(className*, returnType&, args)) GetAddress(className, name))(this, ret, argNames); return ret; }
+#define RedirectMethod_structret(className, name, returnType, args, argNames) returnType className::name(args) { returnType ret; ((void(__thiscall*)(className*, returnType&, args)) GetAddress(className, name))(this, ret, argNames); return ret; }
 
 // Defines the body of a redirected const member method with no parameters whose address is stored in an address namespace. 
 // The addresses namespace must use the same name as the class that has the method.
@@ -241,7 +241,7 @@ RedirectMethod_noargs_const(Window, GetParent, Window*);
 //    className: The name of the class that has the method.
 //    name: The name of the function declared in the header.
 //    returnType: The return type of the function, can be void.
-#define RedirectMethod_noargs_structret_const(className, name, returnType) returnType className::name() const { returnType ret; ((returnType(__thiscall*)(const className*, returnType&)) GetAddress(className, name))(this, ret); return ret; }
+#define RedirectMethod_noargs_structret_const(className, name, returnType) returnType className::name() const { returnType ret; ((void(__thiscall*)(const className*, returnType&)) GetAddress(className, name))(this, ret); return ret; }
 
 // Defines the body of a redirected const member method whose address is stored in an address namespace. 
 // The addresses namespace must use the same name as the class that has the method.
@@ -255,7 +255,7 @@ RedirectMethod_noargs_const(Window, GetParent, Window*);
 //    args: The parameter types of this function, use `Args()` to define it (even if it has no parameters).
 //    argNames: The parameter names of this function (don't need to match the header), 
 //       use `Args()` to define it (even if it has no parameters).
-#define RedirectMethod_structret_const(className, name, returnType, args, argNames) returnType className::name(args) const { returnType ret; ((returnType(__thiscall*)(const className*, returnType&, args)) GetAddress(className, name))(this, ret, argNames); return ret; }
+#define RedirectMethod_structret_const(className, name, returnType, args, argNames) returnType className::name(args) const { returnType ret; ((void(__thiscall*)(const className*, returnType&, args)) GetAddress(className, name))(this, ret, argNames); return ret; }
 
 
 // -- VIRTUAL NON-STATIC METHOS -- //
@@ -317,7 +317,7 @@ RedirectMethod_noargs_const(Window, GetParent, Window*);
 //    virtualType: The name of the base class that first declared the virtual method. If there is no mulitple inheritance, use same as `className`.
 //    name: The name of the function declared in the header.
 //    returnType: The return type of the function, can be void.
-#define RedirectVirtualMethod_noargs_structret(className, virtualType, name, returnType) returnType className::name() { returnType ret; ((returnType(__thiscall*)(virtualType*, returnType&)) GetAddress(className, name))(this, ret); return ret; }
+#define RedirectVirtualMethod_noargs_structret(className, virtualType, name, returnType) returnType className::name() { returnType ret; ((void(__thiscall*)(virtualType*, returnType&)) GetAddress(className, name))(this, ret); return ret; }
 
 // Defines the body of a redirected virtual method whose address is stored in an address namespace. 
 // The addresses namespace must use the same name as the class that has the method.
@@ -332,7 +332,7 @@ RedirectMethod_noargs_const(Window, GetParent, Window*);
 //    args: The parameter types of this function, use `Args()` to define it (even if it has no parameters).
 //    argNames: The parameter names of this function (don't need to match the header), 
 //       use `Args()` to define it (even if it has no parameters).
-#define RedirectVirtualMethod_structret(className, virtualType, name, returnType, args, argNames) returnType className::name(args) { returnType ret; ((returnType(__thiscall*)(virtualType*, returnType&, args)) GetAddress(className, name))(this, ret, argNames); return ret; }
+#define RedirectVirtualMethod_structret(className, virtualType, name, returnType, args, argNames) returnType className::name(args) { returnType ret; ((void(__thiscall*)(virtualType*, returnType&, args)) GetAddress(className, name))(this, ret, argNames); return ret; }
 
 // Defines the body of a redirected const virtual method with no parameters whose address is stored in an address namespace. 
 // The addresses namespace must use the same name as the class that has the method.
@@ -343,7 +343,7 @@ RedirectMethod_noargs_const(Window, GetParent, Window*);
 //    virtualType: The name of the base class that first declared the virtual method. If there is no mulitple inheritance, use same as `className`.
 //    name: The name of the function declared in the header.
 //    returnType: The return type of the function, can be void.
-#define RedirectVirtualMethod_noargs_structret_const(className, virtualType, name, returnType) returnType className::name() const { returnType ret; ((returnType(__thiscall*)(const virtualType*, returnType&)) GetAddress(className, name))(this, ret); return ret; }
+#define RedirectVirtualMethod_noargs_structret_const(className, virtualType, name, returnType) returnType className::name() const { returnType ret; ((void(__thiscall*)(const virtualType*, returnType&)) GetAddress(className, name))(this, ret); return ret; }
 
 // Defines the body of a redirected const virtual method whose address is stored in an address namespace. 
 // The addresses namespace must use the same name as the class that has the method.
@@ -358,4 +358,4 @@ RedirectMethod_noargs_const(Window, GetParent, Window*);
 //    args: The parameter types of this function, use `Args()` to define it (even if it has no parameters).
 //    argNames: The parameter names of this function (don't need to match the header), 
 //       use `Args()` to define it (even if it has no parameters).
-#define RedirectVirtualMethod_structret_const(className, virtualType, name, returnType, args, argNames) returnType className::name(args) const { returnType ret; ((returnType(__thiscall*)(const virtualType*, returnType&, args)) GetAddress(className, name))(this, ret, argNames); return ret; }
+#define RedirectVirtualMethod_structret_const(className, virtualType, name, returnType, args, argNames) returnType className::name(args) const { returnType ret; ((void(__thiscall*)(const virtualType*, returnType&, args)) GetAddress(className, name))(this, ret, argNames); return ret; }
