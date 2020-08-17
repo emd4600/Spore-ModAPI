@@ -43,6 +43,7 @@ namespace App
 		if (eastl::Internal::atomic_decrement(&mnRefCount) == 0)
 		{
 			delete this;
+			return 0;
 		}
 		return mnRefCount;
 	}
