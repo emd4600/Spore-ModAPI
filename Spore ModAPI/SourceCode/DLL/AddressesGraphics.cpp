@@ -13,6 +13,7 @@
 #include <Spore\Graphics\IRenderTargetManager.h>
 #include <Spore\Graphics\cMaterialManager.h>
 #include <Spore\Graphics\ShaderDataUniform.h>
+#include <Spore\Graphics\GlobalState.h>
 
 namespace Addresses(Graphics)
 {
@@ -125,6 +126,15 @@ namespace Graphics
 		DefineAddress(Release, SelectAddress(0x6E5EC0, , 0x6E5810));
 
 		DefineAddress(Load, SelectAddress(0x6E5C30, , 0x6E5590));
+	}
+
+	namespace Addresses(GlobalState)
+	{
+		DefineAddress(transform_ptr, SelectAddress(0x17016B0, , PLACEHOLDER));
+		DefineAddress(transformType_ptr, SelectAddress(0x17009D0, , PLACEHOLDER));
+		DefineAddress(color_ptr, SelectAddress(0x17009D8, , PLACEHOLDER));
+		DefineAddress(softStateDirty_ptr, SelectAddress(0x1700858, , PLACEHOLDER));
+		DefineAddress(SetTransform, SelectAddress(0x5295C0, , PLACEHOLDER));
 	}
 }
 #endif

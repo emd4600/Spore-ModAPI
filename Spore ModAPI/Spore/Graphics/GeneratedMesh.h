@@ -5,6 +5,7 @@
 #include <Spore\RenderWare\VertexBuffer.h>
 #include <Spore\RenderWare\IndexBuffer.h>
 #include <Spore\Graphics\IMaterialManager.h>
+#include <Spore\Graphics\GlobalState.h>
 #include <Spore\MathUtils.h>
 #include <EASTL\vector.h>
 
@@ -138,6 +139,30 @@ namespace Graphics
 		/// @returns The raster texture used in the material.
 		RenderWare::Raster* GetTexture(int materialIndex, int samplerIndex, int compiledStateIndex = 0) const;
 
+		/// Returns the 4x4 matrix transformation that gets applied to a certain material of this mesh.
+		/// By default it's the identity, that is, no transform.
+		/// @param materialIndex The index of the material, as returned by AddMaterial().
+		/// @returns The 4x4 matrix transformation
+		const Matrix4& GetTransform(int materialIndex);
+
+		/// Sets the 4x4 matrix transformation that gets applied to a certain material of this mesh.
+		/// By default it's the identity, that is, no transform.
+		/// @param materialIndex The index of the material, as returned by AddMaterial().
+		/// @returns The 4x4 matrix transformation
+		void SetTransform(int materialIndex, const Matrix4& transform);
+
+		/// Returns the color that gets applied to a certain material of this mesh.
+		/// By default it's white.
+		/// @param materialIndex The index of the material, as returned by AddMaterial().
+		/// @returns The material color.
+		const ColorRGBA& GetColor(int materialIndex);
+
+		/// Sets the color that gets applied to a certain material of this mesh.
+		/// By default it's white.
+		/// @param materialIndex The index of the material, as returned by AddMaterial().
+		/// @returns The material color.
+		void SetColor(int materialIndex, const ColorRGBA& color);
+
 		BoundingBox GetBoundingBox();
 
 		void SubmitGeometry();
@@ -155,6 +180,8 @@ namespace Graphics
 
 		vector<RenderWare::Mesh> mMeshes;
 		vector<MaterialPtr> mMaterials;
+		vector<ColorRGBA> mColors;
+		vector<Matrix4> mTransforms;
 
 		BoundingBox mBounds;
 		bool mBoundsValid;
@@ -272,6 +299,8 @@ namespace Graphics
 		mesh.SetIndicesCount(indicesCount);
 
 		mMeshes.push_back(mesh);
+		mColors.push_back({ 1.0f, 1.0f, 1.0f, 1.0f });
+		mTransforms.push_back(Matrix4().SetIdentity());
 
 		mMaterials.push_back(MaterialManager.GetMaterial(materialID));
 
@@ -310,6 +339,28 @@ namespace Graphics
 	}
 
 	template <typename Vertex>
+	inline const Matrix4& GeneratedMesh<Vertex>::GetTransform(int materialIndex) {
+		if (materialIndex >= mTransforms.size()) return nullptr;
+		return mTransforms[materialIndex];
+	}
+
+	template <typename Vertex>
+	inline void GeneratedMesh<Vertex>::SetTransform(int materialIndex, const Matrix4& transform) {
+		mTransforms[materialIndex] = transform;
+	}
+
+	template <typename Vertex>
+	inline const ColorRGBA& GeneratedMesh<Vertex>::GetColor(int materialIndex) {
+		if (materialIndex >= mColors.size()) return nullptr;
+		return mColors[materialIndex];
+	}
+
+	template <typename Vertex>
+	inline void GeneratedMesh<Vertex>::SetColor(int materialIndex, const ColorRGBA& color) {
+		mColors[materialIndex] = color;
+	}
+
+	template <typename Vertex>
 	BoundingBox GeneratedMesh<Vertex>::GetBoundingBox() {
 		if (!mBoundsValid) {
 			int offset = 0;
@@ -341,6 +392,8 @@ namespace Graphics
 	template <typename Vertex>
 	inline void GeneratedMesh<Vertex>::Render() {
 		for (int i = 0; i < GetMaterialCount(); ++i) {
+			GlobalState::SetTransform(mTransforms[i]);
+			GlobalState::SetColor(mColors[i]);
 			mMaterials[i]->states[0]->Load();
 			mMeshes[i].Render();
 		}

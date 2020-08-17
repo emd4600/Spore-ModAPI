@@ -42,3 +42,4 @@
 #include <Spore\Graphics\Texture.h>
 #include <Spore\Graphics\ITextureManager.h>
 #include <Spore\Graphics\Renderer.h>
+#include <Spore\Graphics\GlobalState.h>

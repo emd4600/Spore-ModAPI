@@ -21,6 +21,7 @@
 #include <Spore\Graphics\IRenderManager.h>
 #include <Spore\Graphics\LambdaRenderable.h>
 #include <Spore\Graphics\Renderer.h>
+#include <Spore\Graphics\GlobalState.h>
 
 namespace Graphics
 {
@@ -61,5 +62,33 @@ namespace Graphics
 		Args(index, arg_4, arg_8, arg_C, loadFunction));
 
 	auto_STATIC_METHOD_VOID(Renderer, SetTexture, Args(int slotIndex, RenderWare::Raster* raster), Args(slotIndex, raster));
+
+
+	namespace GlobalState
+	{
+		MatrixType GetTransformType() {
+			return *(MatrixType*)GetAddress(GlobalState, transformType_ptr);
+		}
+		Math::Matrix4* GetTransform() {
+			return *(Math::Matrix4**)GetAddress(GlobalState, transform_ptr);
+		}
+		auto_STATIC_METHOD_VOID(GlobalState, SetTransform,
+			Args(const Math::Matrix4& matrix, MatrixType type), Args(matrix, type));
+
+		Math::ColorRGBA& GetColor() {
+			return *(Math::ColorRGBA*)GetAddress(GlobalState, color_ptr);
+		}
+		void SetColor(const Math::ColorRGBA& color) {
+			SetSoftStateDirty(kSoftStateColor | GetSoftStateDirty());
+			*(Math::ColorRGBA*)GetAddress(GlobalState, color_ptr) = color;
+		}
+
+		int GetSoftStateDirty() {
+			return *(int*)GetAddress(GlobalState, softStateDirty_ptr);
+		}
+		void SetSoftStateDirty(int state) {
+			*(int*)GetAddress(GlobalState, softStateDirty_ptr) = state;
+		}
+	}
 }
 #endif
