@@ -572,6 +572,9 @@ namespace UTFWin
 		DefineAddress(Load, SelectAddress(0x802680, , 0x802140));
 		DefineAddress(GetActiveCursor, SelectAddress(0x8019F0, , 0x801500));
 		DefineAddress(SetActiveCursor, SelectAddress(0x802210, , 0x801CF0));
+		DefineAddress(ShowCursor, SelectAddress(0x801A00, , 0x801510));
+		DefineAddress(UseDropCursorIcon, SelectAddress(0x801F50, , 0x801A90));
+		DefineAddress(ShowDropCursorIcon, SelectAddress(0x801F80, , 0x801AC0));
 	}
 }
 #endif

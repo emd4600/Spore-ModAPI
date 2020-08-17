@@ -18,6 +18,18 @@ namespace UTFWin
 		uint32_t GetActiveCursor() const;
 		bool SetActiveCursor(uint32_t id);
 
+		/// Changes whether the native cursor is visible or not.
+		/// @param visible
+		void ShowCursor(bool visible);
+
+		/// Selects the given controlID in the `DropCursorIcons.spui` layout to be used in the ShowDropCursorIcon() function.
+		/// @param controlID
+		bool UseDropCursorIcon(uint32_t controlID);
+
+		/// Toggles the visibility of the drop cursor icon selected by UseDropCursorIcon()
+		/// @param visible
+		void ShowDropCursorIcon(bool visible);
+
 		static cCursorManager* Get();
 	};
 
@@ -28,5 +40,8 @@ namespace UTFWin
 		DeclareAddress(Load);
 		DeclareAddress(GetActiveCursor);
 		DeclareAddress(SetActiveCursor);
+		DeclareAddress(ShowCursor);
+		DeclareAddress(UseDropCursorIcon);
+		DeclareAddress(ShowDropCursorIcon);
 	}
 }
