@@ -273,6 +273,12 @@ namespace App
 		/// If the property is not of the specified type, a pointer to a default value will be returned.
 		///
 		void* GetValue();
+
+		///
+		/// Only for array properties, returns the number of items inside the array.
+		/// If the property is not an array, it might return any number.
+		///
+		size_t GetItemCount();
 		///@}
 
 		/// @name Methods for setting values
@@ -1056,6 +1062,9 @@ namespace App
 	//TODO Bounding boxes?
 
 
+	inline size_t Property::GetItemCount() {
+		return this->mnItemCount;
+	}
 	inline Property& Property::SetArrayBool(const bool* pValues, size_t nValueCount) {
 		Set(PropertyType::Bool, kPropertyFlagArray, (void*) pValues, sizeof(bool), nValueCount);
 		return *this;

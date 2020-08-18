@@ -24,7 +24,7 @@
 #include <detours.h>
 
 /*
-This class is used to simplify the process of detouring functions. When using DLL injection, 
+This class is used to simplify the process of detouring functions. When using DLL injection,
 detouring is the most important technique: it allows you to hook the executable methods and
 override them with your own functionality.
 
@@ -36,7 +36,7 @@ This header file defines 3 macros:
 These macros are class declarations, so you must follow them with a {};  - don't forget the final semicolon!
 Also, use the `public:` keyword when defining the detoured method.
 
-All macros take at least two parameters: 
+All macros take at least two parameters:
  - `name`: A unique name to identify the detour object. You will use it to attach the detour.
  - `declaration`: The type and parameter types of the function. Examples: `void(int)`, `bool()`, `const float&(const vector<int>, int**)`
 
@@ -59,7 +59,7 @@ public:
 
 ## Detouring a member method
 
-Imagine you want to detour a method that is mebmer of a certain class. It returns void, and does not take any parameter. 
+Imagine you want to detour a method that is mebmer of a certain class. It returns void, and does not take any parameter.
 You would do it like this:
 ```cpp
 // A class declaration, the method belongs to this class
@@ -80,7 +80,7 @@ public:
 
 ## Detouring a virtual member method
 
-Imagine you want to detour a virtual method that is member of a certain class. It returns void, and takes 2 float parameters. 
+Imagine you want to detour a virtual method that is member of a certain class. It returns void, and takes 2 float parameters.
 You would do it like this:
 ```cpp
 // A class declaration, the method belongs to this class
@@ -148,13 +148,8 @@ float MyDetour1::DETOUR(const char* pString) {
 
 // When detouring __thiscalls, optimization should be disabled to avoid __fastcall being replaced
 
-#ifndef _DEBUG
 #define DisableOptimization optimize( "", off )
 #define EnableOptimization optimize( "", on )
-#else
-#define DisableOptimization
-#define EnableOptimization
-#endif
 
 // Attaches a detour with the address taken from an address namespace.
 #define attach_detour(name, className, methodName) name::attach(GetAddress(className, methodName))
@@ -206,7 +201,7 @@ public:
 		int fake;
 		return ((DetourClass*)&fake)->detoured(args...);
 	}
-	
+
 	Result detoured(Parameters...);
 
 	static LONG attach(UINT function_address) {
@@ -255,8 +250,8 @@ public:
 };
 
 template<class DetourClass, typename Result, typename ... Arguments>
-typename static_detour_<DetourClass, Result(Arguments...)>::detour_pointer 
-	static_detour_<DetourClass, Result(Arguments...)>::original_function;
+typename static_detour_<DetourClass, Result(Arguments...)>::detour_pointer
+static_detour_<DetourClass, Result(Arguments...)>::original_function;
 
 template<class DetourClass, typename BaseClass, typename VirtualClass, typename Result, typename ... Arguments>
 typename member_detour_<DetourClass, BaseClass, VirtualClass, Result(Arguments...)>::detour_pointer
