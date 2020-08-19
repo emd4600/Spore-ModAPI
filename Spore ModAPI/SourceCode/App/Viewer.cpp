@@ -44,7 +44,7 @@ namespace App
 	auto_METHOD_VOID(cViewer, SetRenderType, Args(int arg_0, bool arg_4), Args(arg_0, arg_4));
 
 	auto_METHOD_VOID(cViewer, SetViewTransform, Args(const Transform& transform), Args(transform));
-	auto_METHOD_const_(cViewer, Transform, GetViewTransform);
+	RedirectMethod_noargs_structret_const(cViewer, GetViewTransform, Transform);
 
 	auto_METHOD_const(cViewer, bool, GetCameraToMouse, Args(Vector3& dst1, Vector3& dst2), Args(dst1, dst2));
 
