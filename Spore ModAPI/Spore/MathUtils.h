@@ -572,6 +572,41 @@ namespace Math
 		bool Intersect(const BoundingBox& other, BoundingBox& dst = BoundingBox()) const;
 	};
 
+	struct PlaneEquation {
+		/// The type of intersection between the plane and a line
+		enum class Intersection {
+			// No intersection point, line is parallel to plane
+			None,
+			// A single intersection point
+			Point,
+			/// Infinite intersection points, the line is contained inside the plane
+			InPlane
+		};
+
+		float a;
+		float b;
+		float c;
+		float d;
+
+		PlaneEquation();
+		PlaneEquation(const PlaneEquation& other);
+		PlaneEquation(float a, float b, float c, float d);
+		PlaneEquation(const Vector3& normal, const Vector3& point);
+		PlaneEquation(const Vector3& u, const Vector3& v, const Vector3& point);
+
+		/// Returns the normal vector of the plane; this vector is perpendicular to the plane.
+		/// @returns The normal vector of the plane.
+		Vector3 GetNormal() const;
+
+		/// Returns whether a given point is inside the plane. A certain tolerancy can be specified.
+		/// @param point The point to be evaluated
+		/// @param epsilon Tolerancy
+		/// @returns True if the point is in the plane, false otherwise.
+		bool IsOnPlane(const Vector3& point, float epsilon = 1e-7f) const;
+
+		Intersection IntersectRay(const Vector3& point, const Vector3& direction, Vector3& dst);
+	};
+
 	namespace Addresses(BoundingBox) {
 		DeclareAddress(ApplyTransform);
 	}
@@ -796,6 +831,25 @@ namespace Math
 		q.y = a.w * b.y - a.x * b.z + a.y * b.w + a.z * b.x;
 		q.z = a.w * b.z + a.x * b.y - a.y * b.x + a.z * b.w;
 		return q;
+	}
+
+	inline PlaneEquation::PlaneEquation() : a(), b(), c(), d() {}
+	inline PlaneEquation::PlaneEquation(const PlaneEquation& other)
+		: a(other.a), b(other.b), c(other.c), d(other.d) {}
+	inline PlaneEquation::PlaneEquation(float a2, float b2, float c2, float d2)
+		: a(a2), b(b2), c(c2), d(d2) {}
+	inline PlaneEquation::PlaneEquation(const Vector3& normal, const Vector3& point) {
+		Vector3 normalized = normal.Normalized();
+		a = normalized.x;
+		b = normalized.y;
+		c = normalized.z;
+		d = - a * point.x - b * point.y - c * point.z;
+	}
+	inline PlaneEquation::PlaneEquation(const Vector3& u, const Vector3& v, const Vector3& point)
+		: PlaneEquation(u.Cross(v), point) {}
+
+	inline Vector3 PlaneEquation::GetNormal() const {
+		return { a, b, c };
 	}
 
 

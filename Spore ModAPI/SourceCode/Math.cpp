@@ -565,3 +565,34 @@ void Transform::Invert()
 	mRotation = mRotation.Transposed();
 	mOffset = mRotation * (-mfScale * mOffset);
 }
+
+
+bool PlaneEquation::IsOnPlane(const Vector3& point, float epsilon) const {
+	return abs(a * point.x + b * point.y + c * point.z + d) <= epsilon;
+}
+
+PlaneEquation::Intersection PlaneEquation::IntersectRay(const Vector3& point, const Vector3& direction, Vector3& dst)
+{
+	Vector3 pointOnPlane;
+	if (a != 0.0f) pointOnPlane.x = -d / a;
+	else if (b != 0.0f) pointOnPlane.y = -d / b;
+	else if (c != 0.0f) pointOnPlane.z = -d / c;
+	else return Intersection::None;  // invalid plane
+
+	Vector3 normal = { a, b, c };
+	float nominator = (pointOnPlane - point).Dot(normal);
+	float denominator = direction.Dot(normal);
+	if (denominator == 0.0f) {
+		// line is parallel, two possible cases
+		if (nominator == 0.0f) return Intersection::InPlane;
+		else return Intersection::None;
+	}
+	else {
+		float p = nominator / denominator;
+		// We only do intersection with the positive ray
+		if (p < 0.0f) return Intersection::None;
+		
+		dst = point + p * direction;
+		return Intersection::Point;
+	}
+}
