@@ -2,6 +2,7 @@
 
 #include <Spore\Internal.h>
 #include <Spore\MathUtils.h>
+#include <EASTL\bitset.h>
 
 namespace Graphics
 {
@@ -22,6 +23,9 @@ namespace Graphics
 			MATRIXTYPE_IDENTITY = 0x4,
 		};
 
+		void D3D9Sync();
+		void Dispatch();
+
 		int GetSoftStateDirty();
 		void SetSoftStateDirty(int state);
 
@@ -31,14 +35,28 @@ namespace Graphics
 
 		Math::ColorRGBA& GetColor();
 		void SetColor(const Math::ColorRGBA& color);
+
+		int* GetRenderStates();
+		// shifted by 7, the first render state
+		eastl::bitset<203>& GetRenderStateDirty();
+
+		inline void SetRenderState(D3DRENDERSTATETYPE state, int value) 
+		{
+			GetRenderStates()[state] = value;
+			GetRenderStateDirty().set(state - 7, true);
+		}
 	}
 
 	namespace Addresses(GlobalState)
 	{
+		DeclareAddress(D3D9Sync);
+		DeclareAddress(Dispatch);
 		DeclareAddress(transform_ptr);
 		DeclareAddress(transformType_ptr);
 		DeclareAddress(color_ptr);
 		DeclareAddress(softStateDirty_ptr);
 		DeclareAddress(SetTransform);
+		DeclareAddress(renderStates_ptr);
+		DeclareAddress(renderStateDirty_ptr);
 	}
 }

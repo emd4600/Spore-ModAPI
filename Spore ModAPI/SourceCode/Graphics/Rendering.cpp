@@ -66,6 +66,9 @@ namespace Graphics
 
 	namespace GlobalState
 	{
+		auto_STATIC_METHOD_VOID_(GlobalState, D3D9Sync);
+		auto_STATIC_METHOD_VOID_(GlobalState, Dispatch);
+
 		MatrixType GetTransformType() {
 			return *(MatrixType*)GetAddress(GlobalState, transformType_ptr);
 		}
@@ -88,6 +91,13 @@ namespace Graphics
 		}
 		void SetSoftStateDirty(int state) {
 			*(int*)GetAddress(GlobalState, softStateDirty_ptr) = state;
+		}
+
+		int* GetRenderStates() {
+			return (int*)GetAddress(GlobalState, renderStates_ptr);
+		}
+		eastl::bitset<203>& GetRenderStateDirty() {
+			return *(eastl::bitset<203>*)GetAddress(GlobalState, renderStateDirty_ptr);
 		}
 	}
 }

@@ -130,11 +130,15 @@ namespace Graphics
 
 	namespace Addresses(GlobalState)
 	{
-		DefineAddress(transform_ptr, SelectAddress(0x17016B0, , PLACEHOLDER));
-		DefineAddress(transformType_ptr, SelectAddress(0x17009D0, , PLACEHOLDER));
-		DefineAddress(color_ptr, SelectAddress(0x17009D8, , PLACEHOLDER));
-		DefineAddress(softStateDirty_ptr, SelectAddress(0x1700858, , PLACEHOLDER));
-		DefineAddress(SetTransform, SelectAddress(0x5295C0, , PLACEHOLDER));
+		DefineAddress(D3D9Sync, SelectAddress(0x11F48F0, , 0x11F21D0));
+		DefineAddress(Dispatch, SelectAddress(0x11F4370, , 0x11F1C40));
+		DefineAddress(transform_ptr, SelectAddress(0x17016B0, , 0x16FA380));
+		DefineAddress(transformType_ptr, SelectAddress(0x17009D0, , 0x16F96A0));
+		DefineAddress(color_ptr, SelectAddress(0x17009D8, , 0x16F96A8));
+		DefineAddress(softStateDirty_ptr, SelectAddress(0x1700858, , 0x16F9528));
+		DefineAddress(SetTransform, SelectAddress(0x5295C0, , 0x5291F0));
+		DefineAddress(renderStates_ptr, SelectAddress(0x01700510, , 0x16F91E0));
+		DefineAddress(renderStateDirty_ptr, SelectAddress(0x017016BC, , 0x16FA38C));
 	}
 }
 #endif
