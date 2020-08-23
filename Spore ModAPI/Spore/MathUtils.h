@@ -598,13 +598,41 @@ namespace Math
 		/// @returns The normal vector of the plane.
 		Vector3 GetNormal() const;
 
+		/// Returns an arbitrary point that is contained on the plane, might not be the same as the one used in the constructor.
+		/// @returns A point in the plane
+		Vector3 GetPointOnPlane() const;
+
 		/// Returns whether a given point is inside the plane. A certain tolerancy can be specified.
 		/// @param point The point to be evaluated
 		/// @param epsilon Tolerancy
 		/// @returns True if the point is in the plane, false otherwise.
 		bool IsOnPlane(const Vector3& point, float epsilon = 1e-7f) const;
 
-		Intersection IntersectRay(const Vector3& point, const Vector3& direction, Vector3& dst);
+		/// Calculates the intesection between a ray (semi-infinite line) and the plane. The ray is defined
+		/// by the start point and a direction; only positive multiples of the direction will be considered.
+		/// 
+		/// A ray can intersect with a plane in 3 different ways:
+		///  - Intersection::None, line is parallel to plane
+		///  - Intersection::Point, line intersects with the plane in only one point
+		///  - Intersection::InPlane, line is parallel to plane and contained within it, so all points of the ray are inside the plane
+		/// Only in the one point case this method gives a valid result.
+		/// @param point Start point of the ray
+		/// @param direction Direction of the ray
+		/// @param[out] dst Where the intersection point will be written. Only valid if returns Intersection::Point
+		/// @returns The type of intersection
+		Intersection IntersectRay(const Vector3& point, const Vector3& direction, Vector3& dst) const;
+
+		/// Returns the projection of the point onto the plane: that is the point inside the plane that is closest
+		/// to the given point.
+		/// @param point The point to project
+		/// @returns The projected point, which is contained in the plane
+		Vector3 ProjectPoint(const Vector3& point) const;
+
+		/// Returns the projection of the vector onto the plane. This only considers the plane normal and not its position,
+		/// since its irrelevant for a vector.
+		/// @param v The vector to project
+		/// @returns The projected vector.
+		Vector3 ProjectVector(const Vector3& v) const;
 	};
 
 	namespace Addresses(BoundingBox) {
@@ -664,6 +692,16 @@ namespace Math
 
 namespace Math
 {
+	/// Remaps a value from one `source` range to a different `target` range. This is the combination
+	/// of invLerp() for the source range and lerp() for the target range
+	/// 
+	/// @param source The source range
+	/// @param target The target range
+	/// @param value A value inside the source range
+	inline float remap(const Vector2& source, const Vector2& target, float value) {
+		return lerp(target.x, target.y, invLerp(source.x, source.y, value));
+	}
+
 	inline ColorRGB::ColorRGB(Color color)
 	{
 		r = color.r / 255.0f;

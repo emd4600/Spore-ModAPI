@@ -474,17 +474,18 @@ namespace Math
 		if (d >= 1.0f) return Quaternion();
 		else if (d < (1e-6f - 1.0f))
 		{
+			Vector3 axis = fallbackAxis;
 			// Parallel but opposite, rotate around fallback axis
-			if (fallbackAxis == Vector3::ZERO)
+			if (axis == Vector3::ZERO)
 			{
 				// Generate an axis
-				Vector3 axis = X_AXIS.Cross(v0);
+				axis = X_AXIS.Cross(v0);
 				if (axis.Length() < 1e-8) // pick another if colinear
 					axis = Y_AXIS.Cross(v1);
 				axis = axis.Normalized();
 			}
 
-			return Quaternion::FromRotation(fallbackAxis, PI);
+			return Quaternion::FromRotation(axis, PI);
 		}
 		else
 		{
@@ -571,15 +572,21 @@ bool PlaneEquation::IsOnPlane(const Vector3& point, float epsilon) const {
 	return abs(a * point.x + b * point.y + c * point.z + d) <= epsilon;
 }
 
-PlaneEquation::Intersection PlaneEquation::IntersectRay(const Vector3& point, const Vector3& direction, Vector3& dst)
+Vector3 PlaneEquation::GetPointOnPlane() const
 {
 	Vector3 pointOnPlane;
 	if (a != 0.0f) pointOnPlane.x = -d / a;
 	else if (b != 0.0f) pointOnPlane.y = -d / b;
 	else if (c != 0.0f) pointOnPlane.z = -d / c;
-	else return Intersection::None;  // invalid plane
+	return pointOnPlane;
+}
 
+PlaneEquation::Intersection PlaneEquation::IntersectRay(const Vector3& point, const Vector3& direction, Vector3& dst) const
+{
+	Vector3 pointOnPlane = GetPointOnPlane();
 	Vector3 normal = { a, b, c };
+	if (normal == Vector3::ZERO) return Intersection::None;  // invalid plane
+
 	float nominator = (pointOnPlane - point).Dot(normal);
 	float denominator = direction.Dot(normal);
 	if (denominator == 0.0f) {
@@ -595,4 +602,20 @@ PlaneEquation::Intersection PlaneEquation::IntersectRay(const Vector3& point, co
 		dst = point + p * direction;
 		return Intersection::Point;
 	}
+}
+
+Vector3 PlaneEquation::ProjectPoint(const Vector3& point) const
+{
+	Vector3 pointOnPlane = GetPointOnPlane();
+	Vector3 v = point - pointOnPlane;
+	Vector3 normal = GetNormal();
+	float dist = v.Dot(normal);
+	return point - dist * normal;
+}
+
+Vector3 PlaneEquation::ProjectVector(const Vector3& v) const
+{
+	Vector3 normal = GetNormal();
+	float dist = v.Dot(normal);
+	return v - dist * normal;
 }
