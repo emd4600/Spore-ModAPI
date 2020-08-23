@@ -41,77 +41,6 @@ namespace Math
 {
 	const float PI = 3.14159f;
 
-	/// Converts the given angle in degrees into the angle in radians.
-	/// @param degrees The angle, in degrees.
-	/// @returns The angle in radians.
-	inline float ToRadians(float degrees)
-	{
-		return degrees * (PI / 180.0f);
-	}
-
-	/// Converts the given angle in radians into the angle in degrees.
-	/// @param radians The angle, in radians.
-	/// @returns The angle in degrees.
-	inline float ToDegrees(float radians)
-	{
-		return radians * (180.0f / PI);
-	}
-
-	/// Ensures that the given number stays in the range `[a, b]`, included; `a <= b`.
-	/// If `value > b`, it returns b; if `value < a`, it returns `a`.
-	/// @param value The value to clamp
-	/// @param a The minimum value
-	/// @param b The maximum value
-	template <typename T>
-	inline T clamp(T value, T a, T b) {
-		return min(max(value, a), b);
-	}
-
-	/// Linear interpolation between two values, which can be integers, floats, vectors or colors.
-	/// A `mix` value of 0 returns `a`, a value of `1` returns `b`.
-	/// 
-	/// The returned value will be equal to `mix*a + (1-mix)*b`
-	/// @param a The first value of the range
-	/// @param b The second value of the range
-	/// @param mix The mix factor, between 0.0 and 1.0
-	template <typename T>
-	inline T lerp(const T& a, const T& b, float mix) {
-		return a + (b - a) * mix;
-	}
-
-	/// Inverse operation of lerp(): given a range and a value, returns the parameter
-	/// that would make a linear interpolation between `a` and `b` result in `value`
-	/// 
-	/// @param a The first value of the range
-	/// @param b The second value of the range
-	/// @param value A value between `a` and `b`
-	template <typename T>
-	inline float invLerp(const T& a, const T& b, const T& value) {
-		return (value - a) / (b - a);
-	}
-
-	/// Returns the shortest difference between two angles (in radians), the result is always in the range [0, PI].
-	/// The order of the angles does not matter.
-	/// @param angle1
-	/// @param angle2
-	float GetAngleDifference(float angle1, float angle2);
-
-	/// Returns `angle1 + inc` or `angle2 - inc`, in the range [-PI, PI], depending on what's the shortest
-	/// way to get from `angle1` to `angle2`. All the angles are in radians.
-	/// @param angle1 "Source" angle
-	/// @param angle2 "Dest" angle
-	/// @param inc How many radians are incremented.
-	float IncrementAngleTo(float angle1, float angle2, float inc);
-
-	/// Converts the given angle to the [-PI, PI] range, everything in radians.
-	/// @param angle
-	float CorrectAngleRange(float angle);
-
-	/// Returns -1 for negative numbers, +1 for positive numbers, and 0 if the value is 0
-	template <typename T> int sgn(T val) {
-		return (T(0) < val) - (val < T(0));
-	}
-
 	struct Point;
 
 	/// An ARGB color represented by a 32 bit integer value.
@@ -692,6 +621,77 @@ namespace Math
 
 namespace Math
 {
+	/// Converts the given angle in degrees into the angle in radians.
+	/// @param degrees The angle, in degrees.
+	/// @returns The angle in radians.
+	inline float ToRadians(float degrees)
+	{
+		return degrees * (PI / 180.0f);
+	}
+
+	/// Converts the given angle in radians into the angle in degrees.
+	/// @param radians The angle, in radians.
+	/// @returns The angle in degrees.
+	inline float ToDegrees(float radians)
+	{
+		return radians * (180.0f / PI);
+	}
+
+	/// Ensures that the given number stays in the range `[a, b]`, included; `a <= b`.
+	/// If `value > b`, it returns b; if `value < a`, it returns `a`.
+	/// @param value The value to clamp
+	/// @param a The minimum value
+	/// @param b The maximum value
+	template <typename T>
+	inline T clamp(T value, T a, T b) {
+		return min(max(value, a), b);
+	}
+
+	/// Linear interpolation between two values, which can be integers, floats, vectors or colors.
+	/// A `mix` value of 0 returns `a`, a value of `1` returns `b`.
+	/// 
+	/// The returned value will be equal to `mix*a + (1-mix)*b`
+	/// @param a The first value of the range
+	/// @param b The second value of the range
+	/// @param mix The mix factor, between 0.0 and 1.0
+	template <typename T>
+	inline T lerp(const T& a, const T& b, float mix) {
+		return a + (b - a) * mix;
+	}
+
+	/// Inverse operation of lerp(): given a range and a value, returns the parameter
+	/// that would make a linear interpolation between `a` and `b` result in `value`
+	/// 
+	/// @param a The first value of the range
+	/// @param b The second value of the range
+	/// @param value A value between `a` and `b`
+	template <typename T>
+	inline float invLerp(const T& a, const T& b, const T& value) {
+		return (value - a) / (b - a);
+	}
+
+	/// Returns the shortest difference between two angles (in radians), the result is always in the range [0, PI].
+	/// The order of the angles does not matter.
+	/// @param angle1
+	/// @param angle2
+	float GetAngleDifference(float angle1, float angle2);
+
+	/// Returns `angle1 + inc` or `angle2 - inc`, in the range [-PI, PI], depending on what's the shortest
+	/// way to get from `angle1` to `angle2`. All the angles are in radians.
+	/// @param angle1 "Source" angle
+	/// @param angle2 "Dest" angle
+	/// @param inc How many radians are incremented.
+	float IncrementAngleTo(float angle1, float angle2, float inc);
+
+	/// Converts the given angle to the [-PI, PI] range, everything in radians.
+	/// @param angle
+	float CorrectAngleRange(float angle);
+
+	/// Returns -1 for negative numbers, +1 for positive numbers, and 0 if the value is 0
+	template <typename T> int sgn(T val) {
+		return (T(0) < val) - (val < T(0));
+	}
+
 	/// Remaps a value from one `source` range to a different `target` range. This is the combination
 	/// of invLerp() for the source range and lerp() for the target range
 	/// 
@@ -700,6 +700,13 @@ namespace Math
 	/// @param value A value inside the source range
 	inline float remap(const Vector2& source, const Vector2& target, float value) {
 		return lerp(target.x, target.y, invLerp(source.x, source.y, value));
+	}
+
+	/// Returns the distance between two points.
+	/// @param point1
+	/// @param point2
+	inline float distance(const Vector3& point1, const Vector3& point2) {
+		return (point2 - point1).Length();
 	}
 
 	inline ColorRGB::ColorRGB(Color color)
