@@ -21,9 +21,9 @@ namespace Sporepedia
 		, field_28()
 		, field_2C()
 		, field_30(0xAD0E52)
-		, field_34(1)
+		, maxSelections(1)
 		, pListener(listener)
-		, field_3C()
+		, pMultiListener()
 		, pEditorRequest(nullptr)
 		, field_44()
 	{

@@ -44,12 +44,12 @@ namespace Sporepedia
 		/* 28h */	int field_28;
 		/* 2Ch */	bool field_2C;
 		/* 30h */	uint32_t field_30;  // 0xAD0E52, also can be 0x54ACB9F1, 0x74174C59, 0x74D01473, 0x6135298, 0x53D6FE2A
-		/* 34h */	int field_34;  // 1, number of selections expected?
+		/* 34h */	int maxSelections;  // 1, number of selections expected?
 		/// Pointer to an object that will be called when the user accepts the selection.
 		/* 38h */	IShopperListener* pListener;
-		/* 3Ch */	int field_3C;
+		/* 3Ch */	IMultiShopperListener* pMultiListener;
 		/* 40h */	intrusive_ptr<Editors::EditorRequest> pEditorRequest;
-		/* 44h */	intrusive_ptr<DefaultRefCounted> field_44;
+		/* 44h */	intrusive_ptr<Editors::EditorRequest> field_44;
 	};
 
 	namespace Addresses(ShopperRequest) {
