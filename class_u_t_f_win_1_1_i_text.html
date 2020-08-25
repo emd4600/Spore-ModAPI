@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Spore/Sporepedia/IShopperListener.h file | Spore ModAPI SDK for creating C++ mods for Spore</title>
+  <title>UTFWin::IText class | Spore ModAPI SDK for creating C++ mods for Spore</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,600,600i%7CSource+Code+Pro:400,400i,600" />
   <link rel="stylesheet" href="m-dark.css" />
   <link rel="stylesheet" href="m-documentation.css" />
@@ -45,7 +45,8 @@
     <div class="m-row">
       <div class="m-col-l-10 m-push-l-1">
         <h1>
-          <span class="m-breadcrumb"><a href="dir_c27950c697e5dfd98eb6c6418519a737.html">Spore</a>/</span><span class="m-breadcrumb"><a href="dir_b01661b4e0834ffd715f1c0b923066ed.html">Sporepedia</a>/</span>IShopperListener.h <span class="m-thin">file</span>
+          <span class="m-breadcrumb"><a href="namespace_u_t_f_win.html">UTFWin</a>::<wbr/></span>IText <span class="m-thin">class</span>
+          <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_i_text_8h.html">&lt;Spore/UTFWin/IText.h&gt;</a></div>
         </h1>
         <p><span></span></p>
         <div class="m-block m-default">
@@ -54,30 +55,79 @@
             <li>
               Reference
               <ul>
-                <li><a href="#namespaces">Namespaces</a></li>
-                <li><a href="#nested-classes">Classes</a></li>
+                <li><a href="#base-classes">Base classes</a></li>
+                <li><a href="#pub-static-attribs">Public static variables</a></li>
+                <li><a href="#pub-methods">Public functions</a></li>
               </ul>
             </li>
           </ul>
         </div>
-        <section id="namespaces">
-          <h2><a href="#namespaces">Namespaces</a></h2>
+        <section id="base-classes">
+          <h2><a href="#base-classes">Base classes</a></h2>
           <dl class="m-doc">
-            <dt>namespace <a href="namespace_sporepedia.html" class="m-doc">Sporepedia</a></dt>
+            <dt>
+              class <a href="class_u_t_f_win_1_1_u_t_f_win_object.html" class="m-doc">UTFWinObject</a>
+            </dt>
             <dd><span></span></dd>
           </dl>
         </section>
-        <section id="nested-classes">
-          <h2><a href="#nested-classes">Classes</a></h2>
+        <section id="pub-static-attribs">
+          <h2><a href="#pub-static-attribs">Public static variables</a></h2>
           <dl class="m-doc">
-            <dt>
-              class <a href="class_sporepedia_1_1_i_shopper_listener.html" class="m-doc">Sporepedia::IShopperListener</a>
+            <dt id="abae290e57590bbe143fe0e458c29a894">
+              static const uint32_t <a href="#abae290e57590bbe143fe0e458c29a894" class="m-doc-self">TYPE</a>
             </dt>
-            <dd>Extend this class to know when the user accepts an <a href="namespace_sporepedia.html" class="m-doc">Sporepedia</a> shopper request.</dd>
-            <dt>
-              class <a href="class_sporepedia_1_1_i_multi_shopper_listener.html" class="m-doc">Sporepedia::IMultiShopperListener</a>
+            <dd><span></span></dd>
+          </dl>
+        </section>
+        <section id="pub-methods">
+          <h2><a href="#pub-methods">Public functions</a></h2>
+          <dl class="m-doc">
+            <dt id="a1c058c9717d753cd8ddaa3e467e622df">
+              <span class="m-doc-wrap-bumper">auto <a href="#a1c058c9717d753cd8ddaa3e467e622df" class="m-doc-self">ToWindow</a>(</span><span class="m-doc-wrap">) -&gt; <a href="class_u_t_f_win_1_1_i_window.html" class="m-doc">IWindow</a>* <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
-            <dd>Extend this class to know when the user accepts a multi-selection <a href="namespace_sporepedia.html" class="m-doc">Sporepedia</a> shopper request.</dd>
+            <dd><span></span></dd>
+            <dt id="abe96b71c8e707c0581d54603b74fcf03">
+              <span class="m-doc-wrap-bumper">void <a href="#abe96b71c8e707c0581d54603b74fcf03" class="m-doc-self">func14h</a>(</span><span class="m-doc-wrap">bool) <span class="m-label m-flat m-warning">pure virtual</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="abb1e42ee85106a496fb701e2119cbbbf">
+              <span class="m-doc-wrap-bumper">void <a href="#abb1e42ee85106a496fb701e2119cbbbf" class="m-doc-self">func18h</a>(</span><span class="m-doc-wrap">bool) <span class="m-label m-flat m-warning">pure virtual</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a62f4d8feadaa6a1fdc223ea70b042f87">
+              <span class="m-doc-wrap-bumper">void <a href="#a62f4d8feadaa6a1fdc223ea70b042f87" class="m-doc-self">func1Ch</a>(</span><span class="m-doc-wrap">bool) <span class="m-label m-flat m-warning">pure virtual</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a788e3c0470778fdf1a7ff00c776313bd">
+              <span class="m-doc-wrap-bumper">auto <a href="#a788e3c0470778fdf1a7ff00c776313bd" class="m-doc-self">GetTextBounds</a>(</span><span class="m-doc-wrap">bool,
+              bool) -&gt; <a href="union_math_1_1_rectangle.html" class="m-doc">Math::<wbr />Rectangle</a> <span class="m-label m-flat m-warning">pure virtual</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a96e7d17cbed773b65d0cb12fcbc368a3">
+              <span class="m-doc-wrap-bumper">auto <a href="#a96e7d17cbed773b65d0cb12fcbc368a3" class="m-doc-self">GetTextColor</a>(</span><span class="m-doc-wrap">) const -&gt; <a href="struct_math_1_1_color.html" class="m-doc">Color</a> <span class="m-label m-flat m-warning">pure virtual</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="aeeb9feac54fa8e9c5ffa2235a06c575c">
+              <span class="m-doc-wrap-bumper">void <a href="#aeeb9feac54fa8e9c5ffa2235a06c575c" class="m-doc-self">SetTextColor</a>(</span><span class="m-doc-wrap"><a href="struct_math_1_1_color.html" class="m-doc">Color</a> color) <span class="m-label m-flat m-warning">pure virtual</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a69a0608942da7767c28cb8144d71d731">
+              <span class="m-doc-wrap-bumper">auto <a href="#a69a0608942da7767c28cb8144d71d731" class="m-doc-self">func2Ch</a>(</span><span class="m-doc-wrap">) -&gt; float <span class="m-label m-flat m-warning">pure virtual</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a6ca0393f332f711ded7f7dc8ebeb8903">
+              <span class="m-doc-wrap-bumper">void <a href="#a6ca0393f332f711ded7f7dc8ebeb8903" class="m-doc-self">func30h</a>(</span><span class="m-doc-wrap">float) <span class="m-label m-flat m-warning">pure virtual</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a44c41faadf59c17620c476de7adbb3f2">
+              <span class="m-doc-wrap-bumper">void <a href="#a44c41faadf59c17620c476de7adbb3f2" class="m-doc-self">GetTextBorders</a>(</span><span class="m-doc-wrap">struct Borders&amp; dst) const <span class="m-label m-flat m-warning">pure virtual</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a185af597bb82b576fb0734b75ade26e8">
+              <span class="m-doc-wrap-bumper">void <a href="#a185af597bb82b576fb0734b75ade26e8" class="m-doc-self">SetTextBorders</a>(</span><span class="m-doc-wrap">const struct Borders&amp; borders) <span class="m-label m-flat m-warning">pure virtual</span></span>
+            </dt>
+            <dd><span></span></dd>
           </dl>
         </section>
       </div>

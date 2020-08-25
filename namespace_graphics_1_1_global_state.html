@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Math::Point struct | Spore ModAPI SDK for creating C++ mods for Spore</title>
+  <title>Graphics::GlobalState namespace | Spore ModAPI SDK for creating C++ mods for Spore</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,600,600i%7CSource+Code+Pro:400,400i,600" />
   <link rel="stylesheet" href="m-dark.css" />
   <link rel="stylesheet" href="m-documentation.css" />
@@ -45,91 +45,91 @@
     <div class="m-row">
       <div class="m-col-l-10 m-push-l-1">
         <h1>
-          <span class="m-breadcrumb"><a href="namespace_math.html">Math</a>::<wbr/></span>Point <span class="m-thin">struct</span>
-          <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_math_utils_8h.html">&lt;Spore/MathUtils.h&gt;</a></div>
+          <span class="m-breadcrumb"><a href="namespace_graphics.html">Graphics</a>::<wbr/></span>GlobalState <span class="m-thin">namespace</span>
+          <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_global_state_8h.html">&lt;Spore/Graphics/GlobalState.h&gt;</a></div>
         </h1>
-        <p>Represents a point in the space, defined by two float coordinates (x, y).</p>
+        <p><span></span></p>
         <div class="m-block m-default">
           <h3>Contents</h3>
           <ul>
             <li>
               Reference
               <ul>
-                <li><a href="#typeless-methods">Constructors, destructors, conversion operators</a></li>
-                <li><a href="#pub-methods">Public functions</a></li>
-                <li><a href="#pub-attribs">Public variables</a></li>
+                <li><a href="#enum-members">Enums</a></li>
+                <li><a href="#func-members">Functions</a></li>
               </ul>
             </li>
           </ul>
         </div>
-        <section id="typeless-methods">
-          <h2><a href="#typeless-methods">Constructors, destructors, conversion operators</a></h2>
+        <section id="enum-members">
+          <h2><a href="#enum-members">Enums</a></h2>
           <dl class="m-doc">
-            <dt id="a426b604f2b553c7b52106c6aa57d4c03">
-              <span class="m-doc-wrap-bumper"><a href="#a426b604f2b553c7b52106c6aa57d4c03" class="m-doc-self">Point</a>(</span><span class="m-doc-wrap">float x,
-              float y)</span>
+            <dt id="a7692a2da73a9094e1536872089b345e7">
+              <span class="m-doc-wrap-bumper">enum <a href="#a7692a2da73a9094e1536872089b345e7" class="m-doc-self">SoftState</a> { </span><span class="m-doc-wrap"><a href="#a7692a2da73a9094e1536872089b345e7a75b51dbf47b04626e41f1eb3aa90ccec" class="m-doc">kSoftStateTransform</a> = 1,
+              <a href="#a7692a2da73a9094e1536872089b345e7a6f790c74361971e4de67015b6f89ae1e" class="m-doc">kSoftStateColor</a> = 0x10 }</span>
             </dt>
             <dd><span></span></dd>
-            <dt id="a88e2b9f937fdf83cc9137bfb829f07b1">
-              <span class="m-doc-wrap-bumper"><a href="#a88e2b9f937fdf83cc9137bfb829f07b1" class="m-doc-self">Point</a>(</span><span class="m-doc-wrap">const <a href="struct_math_1_1_point.html" class="m-doc">Point</a>&amp; other)</span>
-            </dt>
-            <dd><span></span></dd>
-            <dt id="a70707e10420a2e3aaddd53dec987802d">
-              <span class="m-doc-wrap-bumper"><a href="#a70707e10420a2e3aaddd53dec987802d" class="m-doc-self">Point</a>(</span><span class="m-doc-wrap">const <a href="struct_math_1_1_vector2.html" class="m-doc">Vector2</a>&amp; other)</span>
-            </dt>
-            <dd><span></span></dd>
-            <dt id="a6c2c8ee9fecabf08d16606106e3f9cd1">
-              <span class="m-doc-wrap-bumper"><a href="#a6c2c8ee9fecabf08d16606106e3f9cd1" class="m-doc-self">Point</a>(</span><span class="m-doc-wrap">)</span>
+            <dt id="a213d6bda002136c9c33069a73e7e588f">
+              <span class="m-doc-wrap-bumper">enum <a href="#a213d6bda002136c9c33069a73e7e588f" class="m-doc-self">MatrixType</a> { </span><span class="m-doc-wrap"><a href="#a213d6bda002136c9c33069a73e7e588fa78162b54c7f85d102b829bb8000f601f" class="m-doc">MATRIXTYPE_NA</a> = 0x0,
+              <a href="#a213d6bda002136c9c33069a73e7e588fa866c9eb51d5dd69df5f526495d49138c" class="m-doc">MATRIXTYPE_NORMAL</a> = 0x1,
+              <a href="#a213d6bda002136c9c33069a73e7e588fa5e1380b52f122703099e8306e55d78c4" class="m-doc">MATRIXTYPE_ORTHOGONAL</a> = 0x2,
+              <a href="#a213d6bda002136c9c33069a73e7e588fa7e6c13bee548e31f0634cd0bb2513196" class="m-doc">MATRIXTYPE_ORTHONORMAL</a> = 0x3,
+              <a href="#a213d6bda002136c9c33069a73e7e588fa2c7d0a21dc0996e7d1f976d2ec7afff1" class="m-doc">MATRIXTYPE_IDENTITY</a> = 0x4 }</span>
             </dt>
             <dd><span></span></dd>
           </dl>
         </section>
-        <section id="pub-methods">
-          <h2><a href="#pub-methods">Public functions</a></h2>
+        <section id="func-members">
+          <h2><a href="#func-members">Functions</a></h2>
           <dl class="m-doc">
-            <dt id="afbc2455a745fab70f7c304afbcf0a1e6">
-              <span class="m-doc-wrap-bumper">auto <a href="#afbc2455a745fab70f7c304afbcf0a1e6" class="m-doc-self">operator+=</a>(</span><span class="m-doc-wrap">const <a href="struct_math_1_1_point.html" class="m-doc">Point</a>&amp;) -&gt; <a href="struct_math_1_1_point.html" class="m-doc">Point</a>&amp;</span>
-            </dt>
-            <dd>POINT.</dd>
-            <dt id="a3715d3486373ed2883ee01a6b7c7482e">
-              <span class="m-doc-wrap-bumper">auto <a href="#a3715d3486373ed2883ee01a6b7c7482e" class="m-doc-self">operator+=</a>(</span><span class="m-doc-wrap">float) -&gt; <a href="struct_math_1_1_point.html" class="m-doc">Point</a>&amp;</span>
+            <dt id="a3b35ead4ce269192b19e5ca96c6dc665">
+              <span class="m-doc-wrap-bumper">void <a href="#a3b35ead4ce269192b19e5ca96c6dc665" class="m-doc-self">D3D9Sync</a>(</span><span class="m-doc-wrap">)</span>
             </dt>
             <dd><span></span></dd>
-            <dt id="a6b5004e5318edfc7a9c3adb153ad0a20">
-              <span class="m-doc-wrap-bumper">auto <a href="#a6b5004e5318edfc7a9c3adb153ad0a20" class="m-doc-self">operator-=</a>(</span><span class="m-doc-wrap">const <a href="struct_math_1_1_point.html" class="m-doc">Point</a>&amp;) -&gt; <a href="struct_math_1_1_point.html" class="m-doc">Point</a>&amp;</span>
+            <dt id="aa634c66ac175e508954a549c889d6899">
+              <span class="m-doc-wrap-bumper">void <a href="#aa634c66ac175e508954a549c889d6899" class="m-doc-self">Dispatch</a>(</span><span class="m-doc-wrap">)</span>
             </dt>
             <dd><span></span></dd>
-            <dt id="a7c4753e3554e5ef639086051ac0ce67a">
-              <span class="m-doc-wrap-bumper">auto <a href="#a7c4753e3554e5ef639086051ac0ce67a" class="m-doc-self">operator-=</a>(</span><span class="m-doc-wrap">float) -&gt; <a href="struct_math_1_1_point.html" class="m-doc">Point</a>&amp;</span>
+            <dt id="a1d4870f92309a011caf29c3f5dec70dc">
+              <span class="m-doc-wrap-bumper">auto <a href="#a1d4870f92309a011caf29c3f5dec70dc" class="m-doc-self">GetSoftStateDirty</a>(</span><span class="m-doc-wrap">) -&gt; int</span>
             </dt>
             <dd><span></span></dd>
-            <dt id="af39e550c1606ccbfcc429145619fcd96">
-              <span class="m-doc-wrap-bumper">auto <a href="#af39e550c1606ccbfcc429145619fcd96" class="m-doc-self">operator*=</a>(</span><span class="m-doc-wrap">float) -&gt; <a href="struct_math_1_1_point.html" class="m-doc">Point</a>&amp;</span>
+            <dt id="afddcdad6fabf1d5efb5b195cea46bfb4">
+              <span class="m-doc-wrap-bumper">void <a href="#afddcdad6fabf1d5efb5b195cea46bfb4" class="m-doc-self">SetSoftStateDirty</a>(</span><span class="m-doc-wrap">int state)</span>
             </dt>
             <dd><span></span></dd>
-            <dt id="a7297ac89bf2dfef5adea6add5b12d38b">
-              <span class="m-doc-wrap-bumper">auto <a href="#a7297ac89bf2dfef5adea6add5b12d38b" class="m-doc-self">operator/=</a>(</span><span class="m-doc-wrap">float) -&gt; <a href="struct_math_1_1_point.html" class="m-doc">Point</a>&amp;</span>
+            <dt id="a2dd9d7d328a267249ea4a4240493c15d">
+              <span class="m-doc-wrap-bumper">auto <a href="#a2dd9d7d328a267249ea4a4240493c15d" class="m-doc-self">GetTransformType</a>(</span><span class="m-doc-wrap">) -&gt; <a href="namespace_graphics_1_1_global_state.html#a213d6bda002136c9c33069a73e7e588f" class="m-doc">MatrixType</a></span>
             </dt>
             <dd><span></span></dd>
-            <dt id="abc1286ad879dcbeb6361e8d283cc76de">
-              <span class="m-doc-wrap-bumper">auto <a href="#abc1286ad879dcbeb6361e8d283cc76de" class="m-doc-self">operator==</a>(</span><span class="m-doc-wrap">const <a href="struct_math_1_1_point.html" class="m-doc">Point</a>&amp; b) const -&gt; bool</span>
+            <dt id="ad5bfd7917e84373b5532eb075c6872f8">
+              <span class="m-doc-wrap-bumper">auto <a href="#ad5bfd7917e84373b5532eb075c6872f8" class="m-doc-self">GetTransform</a>(</span><span class="m-doc-wrap">) -&gt; <a href="struct_math_1_1_matrix4.html" class="m-doc">Math::<wbr />Matrix4</a>*</span>
             </dt>
             <dd><span></span></dd>
-            <dt id="a5fdd4fcb45ec430e2192b95fe14e5e57">
-              <span class="m-doc-wrap-bumper">auto <a href="#a5fdd4fcb45ec430e2192b95fe14e5e57" class="m-doc-self">operator!=</a>(</span><span class="m-doc-wrap">const <a href="struct_math_1_1_point.html" class="m-doc">Point</a>&amp; b) const -&gt; bool</span>
+            <dt id="ac6b20b8cd1bfdfa021ac22a8eb2e400b">
+              <span class="m-doc-wrap-bumper">void <a href="#ac6b20b8cd1bfdfa021ac22a8eb2e400b" class="m-doc-self">SetTransform</a>(</span><span class="m-doc-wrap">const <a href="struct_math_1_1_matrix4.html" class="m-doc">Math::<wbr />Matrix4</a>&amp; matrix,
+              <a href="namespace_graphics_1_1_global_state.html#a213d6bda002136c9c33069a73e7e588f" class="m-doc">MatrixType</a> type = <a href="namespace_graphics_1_1_global_state.html#a213d6bda002136c9c33069a73e7e588fa5e1380b52f122703099e8306e55d78c4" class="m-doc">MATRIXTYPE_<wbr />ORTHOGONAL</a>)</span>
             </dt>
             <dd><span></span></dd>
-          </dl>
-        </section>
-        <section id="pub-attribs">
-          <h2><a href="#pub-attribs">Public variables</a></h2>
-          <dl class="m-doc">
-            <dt id="a7cafe308edd39b7dea5faefe7a1d6445">
-              float <a href="#a7cafe308edd39b7dea5faefe7a1d6445" class="m-doc-self">x</a>
+            <dt id="aac0161619979a4eb87951e27f3d7ed38">
+              <span class="m-doc-wrap-bumper">auto <a href="#aac0161619979a4eb87951e27f3d7ed38" class="m-doc-self">GetColor</a>(</span><span class="m-doc-wrap">) -&gt; <a href="struct_math_1_1_color_r_g_b_a.html" class="m-doc">Math::<wbr />ColorRGBA</a>&amp;</span>
             </dt>
             <dd><span></span></dd>
-            <dt id="a74eb0dc72303ec41e0bcef505b252a99">
-              float <a href="#a74eb0dc72303ec41e0bcef505b252a99" class="m-doc-self">y</a>
+            <dt id="a3559f5b4ce6fad37acf46ec9d98bafec">
+              <span class="m-doc-wrap-bumper">void <a href="#a3559f5b4ce6fad37acf46ec9d98bafec" class="m-doc-self">SetColor</a>(</span><span class="m-doc-wrap">const <a href="struct_math_1_1_color_r_g_b_a.html" class="m-doc">Math::<wbr />ColorRGBA</a>&amp; color)</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="aa0dddd6c21382a74ec12a9cf89f4cde2">
+              <span class="m-doc-wrap-bumper">auto <a href="#aa0dddd6c21382a74ec12a9cf89f4cde2" class="m-doc-self">GetRenderStates</a>(</span><span class="m-doc-wrap">) -&gt; int*</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a11c601352312e5b987dd81b36593ad7a">
+              <span class="m-doc-wrap-bumper">auto <a href="#a11c601352312e5b987dd81b36593ad7a" class="m-doc-self">GetRenderStateDirty</a>(</span><span class="m-doc-wrap">) -&gt; eastl::bitset&lt;203&gt;&amp;</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a4369f2bc7fa1204cb0c210471cee1132">
+              <span class="m-doc-wrap-bumper">void <a href="#a4369f2bc7fa1204cb0c210471cee1132" class="m-doc-self">SetRenderState</a>(</span><span class="m-doc-wrap">D3DRENDERSTATETYPE state,
+              int value)</span>
             </dt>
             <dd><span></span></dd>
           </dl>

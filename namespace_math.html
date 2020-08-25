@@ -101,6 +101,10 @@
             </dt>
             <dd>A 4x4 matrix.</dd>
             <dt>
+              struct <a href="struct_math_1_1_plane_equation.html" class="m-doc">PlaneEquation</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
               struct <a href="struct_math_1_1_point.html" class="m-doc">Point</a>
             </dt>
             <dd>Represents a point in the space, defined by two float coordinates (x, y).</dd>
@@ -133,43 +137,6 @@
         <section id="func-members">
           <h2><a href="#func-members">Functions</a></h2>
           <dl class="m-doc">
-            <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#a3cb686c95bbcce3f8a96a9214263aaaa" class="m-doc">ToRadians</a>(</span><span class="m-doc-wrap">float degrees) -&gt; float</span>
-            </dt>
-            <dd>Converts the given angle in degrees into the angle in radians.</dd>
-            <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#a0d041d1f5cd6c4ee20734f24f6abf1f0" class="m-doc">ToDegrees</a>(</span><span class="m-doc-wrap">float radians) -&gt; float</span>
-            </dt>
-            <dd>Converts the given angle in radians into the angle in degrees.</dd>
-            <dt>
-              <div class="m-doc-template">template&lt;typename T&gt;</div>
-              <span class="m-doc-wrap-bumper">auto <a href="#acbfd7dc4e97fe6a5b3804641edf2c7bd" class="m-doc">clamp</a>(</span><span class="m-doc-wrap">T value,
-              T a,
-              T b) -&gt; T</span>
-            </dt>
-            <dd>Ensures that the given number stays in the range <code>[a, b]</code>, included; <code>a &lt;= b</code>.</dd>
-            <dt>
-              <div class="m-doc-template">template&lt;typename T&gt;</div>
-              <span class="m-doc-wrap-bumper">auto <a href="#aa25dc35f229a223a879baf6b4fe760c2" class="m-doc">lerp</a>(</span><span class="m-doc-wrap">const T&amp; a,
-              const T&amp; b,
-              float mix) -&gt; T</span>
-            </dt>
-            <dd>Linear interpolation between two values, which can be integers, floats, vectors or colors.</dd>
-            <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#a29b07bfe38b33186e0b4809f7f4cc9db" class="m-doc">GetAngleDifference</a>(</span><span class="m-doc-wrap">float angle1,
-              float angle2) -&gt; float</span>
-            </dt>
-            <dd>Returns the shortest difference between two angles (in radians), the result is always in the range [0, PI].</dd>
-            <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#a8ede53739c683c2e8fb20773acd4c120" class="m-doc">IncrementAngleTo</a>(</span><span class="m-doc-wrap">float angle1,
-              float angle2,
-              float inc) -&gt; float</span>
-            </dt>
-            <dd>Returns <code>angle1 + inc</code> or <code>angle2 - inc</code>, in the range [-PI, PI], depending on what&#x27;s the shortest way to get from <code>angle1</code> to <code>angle2</code>.</dd>
-            <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#a2029152cd0e18ab00ca78a116cee7ae7" class="m-doc">CorrectAngleRange</a>(</span><span class="m-doc-wrap">float angle) -&gt; float</span>
-            </dt>
-            <dd>Converts the given angle to the [-PI, PI] range, everything in radians.</dd>
             <dt>
               <span class="m-doc-wrap-bumper">auto <a href="#a8f6dfc8f757953fe0c2d91129573d8f0" class="m-doc">Addresses</a>(</span><span class="m-doc-wrap"><a href="struct_math_1_1_bounding_box.html" class="m-doc">BoundingBox</a>) -&gt; namespace</span>
             </dt>
@@ -415,6 +382,66 @@
             </dt>
             <dd><span></span></dd>
             <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a3cb686c95bbcce3f8a96a9214263aaaa" class="m-doc">ToRadians</a>(</span><span class="m-doc-wrap">float degrees) -&gt; float</span>
+            </dt>
+            <dd>Converts the given angle in degrees into the angle in radians.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a0d041d1f5cd6c4ee20734f24f6abf1f0" class="m-doc">ToDegrees</a>(</span><span class="m-doc-wrap">float radians) -&gt; float</span>
+            </dt>
+            <dd>Converts the given angle in radians into the angle in degrees.</dd>
+            <dt>
+              <div class="m-doc-template">template&lt;typename T&gt;</div>
+              <span class="m-doc-wrap-bumper">auto <a href="#acbfd7dc4e97fe6a5b3804641edf2c7bd" class="m-doc">clamp</a>(</span><span class="m-doc-wrap">T value,
+              T a,
+              T b) -&gt; T</span>
+            </dt>
+            <dd>Ensures that the given number stays in the range <code>[a, b]</code>, included; <code>a &lt;= b</code>.</dd>
+            <dt>
+              <div class="m-doc-template">template&lt;typename T&gt;</div>
+              <span class="m-doc-wrap-bumper">auto <a href="#aa25dc35f229a223a879baf6b4fe760c2" class="m-doc">lerp</a>(</span><span class="m-doc-wrap">const T&amp; a,
+              const T&amp; b,
+              float mix) -&gt; T</span>
+            </dt>
+            <dd>Linear interpolation between two values, which can be integers, floats, vectors or colors.</dd>
+            <dt>
+              <div class="m-doc-template">template&lt;typename T&gt;</div>
+              <span class="m-doc-wrap-bumper">auto <a href="#a75f129c1c903de7801936bb8b7192f5c" class="m-doc">invLerp</a>(</span><span class="m-doc-wrap">const T&amp; a,
+              const T&amp; b,
+              const T&amp; value) -&gt; float</span>
+            </dt>
+            <dd>Inverse operation of <a href="namespace_math.html#aa25dc35f229a223a879baf6b4fe760c2" class="m-doc">lerp()</a>: given a range and a value, returns the parameter that would make a linear interpolation between <code>a</code> and <code>b</code> result in <code>value</code></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a29b07bfe38b33186e0b4809f7f4cc9db" class="m-doc">GetAngleDifference</a>(</span><span class="m-doc-wrap">float angle1,
+              float angle2) -&gt; float</span>
+            </dt>
+            <dd>Returns the shortest difference between two angles (in radians), the result is always in the range [0, PI].</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a8ede53739c683c2e8fb20773acd4c120" class="m-doc">IncrementAngleTo</a>(</span><span class="m-doc-wrap">float angle1,
+              float angle2,
+              float inc) -&gt; float</span>
+            </dt>
+            <dd>Returns <code>angle1 + inc</code> or <code>angle2 - inc</code>, in the range [-PI, PI], depending on what&#x27;s the shortest way to get from <code>angle1</code> to <code>angle2</code>.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a2029152cd0e18ab00ca78a116cee7ae7" class="m-doc">CorrectAngleRange</a>(</span><span class="m-doc-wrap">float angle) -&gt; float</span>
+            </dt>
+            <dd>Converts the given angle to the [-PI, PI] range, everything in radians.</dd>
+            <dt>
+              <div class="m-doc-template">template&lt;typename T&gt;</div>
+              <span class="m-doc-wrap-bumper">auto <a href="#a373c150940c5a88008a47c42eb07c582" class="m-doc">sgn</a>(</span><span class="m-doc-wrap">T val) -&gt; int</span>
+            </dt>
+            <dd>Returns -1 for negative numbers, +1 for positive numbers, and 0 if the value is 0.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a4094575c9b98d89a92608bccb105f0e1" class="m-doc">remap</a>(</span><span class="m-doc-wrap">const <a href="struct_math_1_1_vector2.html" class="m-doc">Vector2</a>&amp; source,
+              const <a href="struct_math_1_1_vector2.html" class="m-doc">Vector2</a>&amp; target,
+              float value) -&gt; float</span>
+            </dt>
+            <dd>Remaps a value from one <code>source</code> range to a different <code>target</code> range.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#adfc6418a2a001c5742c2814f75ad907e" class="m-doc">distance</a>(</span><span class="m-doc-wrap">const <a href="struct_math_1_1_vector3.html" class="m-doc">Vector3</a>&amp; point1,
+              const <a href="struct_math_1_1_vector3.html" class="m-doc">Vector3</a>&amp; point2) -&gt; float</span>
+            </dt>
+            <dd>Returns the distance between two points.</dd>
+            <dt>
               <div class="m-doc-template">template&lt;&gt;</div>
               <span class="m-doc-wrap-bumper">auto <a href="#a37bd8f6b7cf6a2955662835ba6dfad25" class="m-doc">lerp&lt;ColorRGB&gt;</a>(</span><span class="m-doc-wrap">const <a href="struct_math_1_1_color_r_g_b.html" class="m-doc">ColorRGB</a>&amp; a,
               const <a href="struct_math_1_1_color_r_g_b.html" class="m-doc">ColorRGB</a>&amp; b,
@@ -453,189 +480,6 @@
         </section>
         <section>
           <h2>Function documentation</h2>
-          <section class="m-doc-details" id="a3cb686c95bbcce3f8a96a9214263aaaa"><div>
-            <h3>
-              <span class="m-doc-wrap-bumper">float Math::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a3cb686c95bbcce3f8a96a9214263aaaa" class="m-doc-self">ToRadians</a>(</span><span class="m-doc-wrap">float degrees)</span></span>
-              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_math_utils_8h.html">&lt;Spore/MathUtils.h&gt;</a></div>
-            </h3>
-            <p>Converts the given angle in degrees into the angle in radians.</p>
-            <table class="m-table m-fullwidth m-flat">
-              <thead>
-                <tr><th colspan="2">Parameters</th></tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td style="width: 1%">degrees</td>
-                  <td>The angle, in degrees.</td>
-                </tr>
-              </tbody>
-              <tfoot>
-                <tr>
-                  <th>Returns</th>
-                  <td>The angle in radians.</td>
-                </tr>
-              </tfoot>
-            </table>
-          </div></section>
-          <section class="m-doc-details" id="a0d041d1f5cd6c4ee20734f24f6abf1f0"><div>
-            <h3>
-              <span class="m-doc-wrap-bumper">float Math::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a0d041d1f5cd6c4ee20734f24f6abf1f0" class="m-doc-self">ToDegrees</a>(</span><span class="m-doc-wrap">float radians)</span></span>
-              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_math_utils_8h.html">&lt;Spore/MathUtils.h&gt;</a></div>
-            </h3>
-            <p>Converts the given angle in radians into the angle in degrees.</p>
-            <table class="m-table m-fullwidth m-flat">
-              <thead>
-                <tr><th colspan="2">Parameters</th></tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td style="width: 1%">radians</td>
-                  <td>The angle, in radians.</td>
-                </tr>
-              </tbody>
-              <tfoot>
-                <tr>
-                  <th>Returns</th>
-                  <td>The angle in degrees.</td>
-                </tr>
-              </tfoot>
-            </table>
-          </div></section>
-          <section class="m-doc-details" id="acbfd7dc4e97fe6a5b3804641edf2c7bd"><div>
-            <h3>
-              <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="_math_utils_8h.html">&lt;Spore/MathUtils.h&gt;</a></div>
-              <div class="m-doc-template">
-                template&lt;typename T&gt;
-              </div>
-              <span class="m-doc-wrap-bumper">T Math::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#acbfd7dc4e97fe6a5b3804641edf2c7bd" class="m-doc-self">clamp</a>(</span><span class="m-doc-wrap">T value,
-              T a,
-              T b)</span></span>
-            </h3>
-            <p>Ensures that the given number stays in the range <code>[a, b]</code>, included; <code>a &lt;= b</code>.</p>
-            <table class="m-table m-fullwidth m-flat">
-              <thead>
-                <tr><th colspan="2">Parameters</th></tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td style="width: 1%">value</td>
-                  <td>The value to clamp</td>
-                </tr>
-                <tr>
-                  <td>a</td>
-                  <td>The minimum value</td>
-                </tr>
-                <tr>
-                  <td>b</td>
-                  <td>The maximum value</td>
-                </tr>
-              </tbody>
-            </table>
-<p>If <code>value &gt; b</code>, it returns b; if <code>value &lt; a</code>, it returns <code>a</code>.</p>
-          </div></section>
-          <section class="m-doc-details" id="aa25dc35f229a223a879baf6b4fe760c2"><div>
-            <h3>
-              <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="_math_utils_8h.html">&lt;Spore/MathUtils.h&gt;</a></div>
-              <div class="m-doc-template">
-                template&lt;typename T&gt;
-              </div>
-              <span class="m-doc-wrap-bumper">T Math::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#aa25dc35f229a223a879baf6b4fe760c2" class="m-doc-self">lerp</a>(</span><span class="m-doc-wrap">const T&amp; a,
-              const T&amp; b,
-              float mix)</span></span>
-            </h3>
-            <p>Linear interpolation between two values, which can be integers, floats, vectors or colors.</p>
-            <table class="m-table m-fullwidth m-flat">
-              <thead>
-                <tr><th colspan="2">Parameters</th></tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td style="width: 1%">a</td>
-                  <td>The first value</td>
-                </tr>
-                <tr>
-                  <td>b</td>
-                  <td>The second value</td>
-                </tr>
-                <tr>
-                  <td>mix</td>
-                  <td>The mix factor, between 0.0 and 1.0</td>
-                </tr>
-              </tbody>
-            </table>
-<p>A <code>mix</code> value of 0 returns <code>a</code>, a value of <code>1</code> returns <code>b</code>.</p><p>The returned value will be equal to <code>mix*a + (1-mix)*b</code></p>
-          </div></section>
-          <section class="m-doc-details" id="a29b07bfe38b33186e0b4809f7f4cc9db"><div>
-            <h3>
-              <span class="m-doc-wrap-bumper">float Math::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a29b07bfe38b33186e0b4809f7f4cc9db" class="m-doc-self">GetAngleDifference</a>(</span><span class="m-doc-wrap">float angle1,
-              float angle2)</span></span>
-              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_math_utils_8h.html">&lt;Spore/MathUtils.h&gt;</a></div>
-            </h3>
-            <p>Returns the shortest difference between two angles (in radians), the result is always in the range [0, PI].</p>
-            <table class="m-table m-fullwidth m-flat">
-              <thead>
-                <tr><th colspan="2">Parameters</th></tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td style="width: 1%">angle1</td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <td>angle2</td>
-                  <td></td>
-                </tr>
-              </tbody>
-            </table>
-<p>The order of the angles does not matter.</p>
-          </div></section>
-          <section class="m-doc-details" id="a8ede53739c683c2e8fb20773acd4c120"><div>
-            <h3>
-              <span class="m-doc-wrap-bumper">float Math::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a8ede53739c683c2e8fb20773acd4c120" class="m-doc-self">IncrementAngleTo</a>(</span><span class="m-doc-wrap">float angle1,
-              float angle2,
-              float inc)</span></span>
-              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_math_utils_8h.html">&lt;Spore/MathUtils.h&gt;</a></div>
-            </h3>
-            <p>Returns <code>angle1 + inc</code> or <code>angle2 - inc</code>, in the range [-PI, PI], depending on what&#x27;s the shortest way to get from <code>angle1</code> to <code>angle2</code>.</p>
-            <table class="m-table m-fullwidth m-flat">
-              <thead>
-                <tr><th colspan="2">Parameters</th></tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td style="width: 1%">angle1</td>
-                  <td>&quot;Source&quot; angle</td>
-                </tr>
-                <tr>
-                  <td>angle2</td>
-                  <td>&quot;Dest&quot; angle</td>
-                </tr>
-                <tr>
-                  <td>inc</td>
-                  <td>How many radians are incremented.</td>
-                </tr>
-              </tbody>
-            </table>
-<p>All the angles are in radians.</p>
-          </div></section>
-          <section class="m-doc-details" id="a2029152cd0e18ab00ca78a116cee7ae7"><div>
-            <h3>
-              <span class="m-doc-wrap-bumper">float Math::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a2029152cd0e18ab00ca78a116cee7ae7" class="m-doc-self">CorrectAngleRange</a>(</span><span class="m-doc-wrap">float angle)</span></span>
-              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_math_utils_8h.html">&lt;Spore/MathUtils.h&gt;</a></div>
-            </h3>
-            <p>Converts the given angle to the [-PI, PI] range, everything in radians.</p>
-            <table class="m-table m-fullwidth m-flat">
-              <thead>
-                <tr><th colspan="2">Parameters</th></tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td style="width: 1%">angle</td>
-                  <td></td>
-                </tr>
-              </tbody>
-            </table>
-          </div></section>
           <section class="m-doc-details" id="a8f6dfc8f757953fe0c2d91129573d8f0"><div>
             <h3>
               <span class="m-doc-wrap-bumper">namespace Math::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a8f6dfc8f757953fe0c2d91129573d8f0" class="m-doc-self">Addresses</a>(</span><span class="m-doc-wrap"><a href="struct_math_1_1_bounding_box.html" class="m-doc">BoundingBox</a>)</span></span>
@@ -1061,6 +905,282 @@
               <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_math_utils_8h.html">&lt;Spore/MathUtils.h&gt;</a></div>
             </h3>
             <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="a3cb686c95bbcce3f8a96a9214263aaaa"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">float Math::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a3cb686c95bbcce3f8a96a9214263aaaa" class="m-doc-self">ToRadians</a>(</span><span class="m-doc-wrap">float degrees)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_math_utils_8h.html">&lt;Spore/MathUtils.h&gt;</a></div>
+            </h3>
+            <p>Converts the given angle in degrees into the angle in radians.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">degrees</td>
+                  <td>The angle, in degrees.</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>Returns</th>
+                  <td>The angle in radians.</td>
+                </tr>
+              </tfoot>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="a0d041d1f5cd6c4ee20734f24f6abf1f0"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">float Math::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a0d041d1f5cd6c4ee20734f24f6abf1f0" class="m-doc-self">ToDegrees</a>(</span><span class="m-doc-wrap">float radians)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_math_utils_8h.html">&lt;Spore/MathUtils.h&gt;</a></div>
+            </h3>
+            <p>Converts the given angle in radians into the angle in degrees.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">radians</td>
+                  <td>The angle, in radians.</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>Returns</th>
+                  <td>The angle in degrees.</td>
+                </tr>
+              </tfoot>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="acbfd7dc4e97fe6a5b3804641edf2c7bd"><div>
+            <h3>
+              <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="_math_utils_8h.html">&lt;Spore/MathUtils.h&gt;</a></div>
+              <div class="m-doc-template">
+                template&lt;typename T&gt;
+              </div>
+              <span class="m-doc-wrap-bumper">T Math::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#acbfd7dc4e97fe6a5b3804641edf2c7bd" class="m-doc-self">clamp</a>(</span><span class="m-doc-wrap">T value,
+              T a,
+              T b)</span></span>
+            </h3>
+            <p>Ensures that the given number stays in the range <code>[a, b]</code>, included; <code>a &lt;= b</code>.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">value</td>
+                  <td>The value to clamp</td>
+                </tr>
+                <tr>
+                  <td>a</td>
+                  <td>The minimum value</td>
+                </tr>
+                <tr>
+                  <td>b</td>
+                  <td>The maximum value</td>
+                </tr>
+              </tbody>
+            </table>
+<p>If <code>value &gt; b</code>, it returns b; if <code>value &lt; a</code>, it returns <code>a</code>.</p>
+          </div></section>
+          <section class="m-doc-details" id="aa25dc35f229a223a879baf6b4fe760c2"><div>
+            <h3>
+              <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="_math_utils_8h.html">&lt;Spore/MathUtils.h&gt;</a></div>
+              <div class="m-doc-template">
+                template&lt;typename T&gt;
+              </div>
+              <span class="m-doc-wrap-bumper">T Math::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#aa25dc35f229a223a879baf6b4fe760c2" class="m-doc-self">lerp</a>(</span><span class="m-doc-wrap">const T&amp; a,
+              const T&amp; b,
+              float mix)</span></span>
+            </h3>
+            <p>Linear interpolation between two values, which can be integers, floats, vectors or colors.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">a</td>
+                  <td>The first value of the range</td>
+                </tr>
+                <tr>
+                  <td>b</td>
+                  <td>The second value of the range</td>
+                </tr>
+                <tr>
+                  <td>mix</td>
+                  <td>The mix factor, between 0.0 and 1.0</td>
+                </tr>
+              </tbody>
+            </table>
+<p>A <code>mix</code> value of 0 returns <code>a</code>, a value of <code>1</code> returns <code>b</code>.</p><p>The returned value will be equal to <code>mix*a + (1-mix)*b</code></p>
+          </div></section>
+          <section class="m-doc-details" id="a75f129c1c903de7801936bb8b7192f5c"><div>
+            <h3>
+              <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="_math_utils_8h.html">&lt;Spore/MathUtils.h&gt;</a></div>
+              <div class="m-doc-template">
+                template&lt;typename T&gt;
+              </div>
+              <span class="m-doc-wrap-bumper">float Math::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a75f129c1c903de7801936bb8b7192f5c" class="m-doc-self">invLerp</a>(</span><span class="m-doc-wrap">const T&amp; a,
+              const T&amp; b,
+              const T&amp; value)</span></span>
+            </h3>
+            <p>Inverse operation of <a href="namespace_math.html#aa25dc35f229a223a879baf6b4fe760c2" class="m-doc">lerp()</a>: given a range and a value, returns the parameter that would make a linear interpolation between <code>a</code> and <code>b</code> result in <code>value</code></p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">a</td>
+                  <td>The first value of the range</td>
+                </tr>
+                <tr>
+                  <td>b</td>
+                  <td>The second value of the range</td>
+                </tr>
+                <tr>
+                  <td>value</td>
+                  <td>A value between <code>a</code> and <code>b</code></td>
+                </tr>
+              </tbody>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="a29b07bfe38b33186e0b4809f7f4cc9db"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">float Math::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a29b07bfe38b33186e0b4809f7f4cc9db" class="m-doc-self">GetAngleDifference</a>(</span><span class="m-doc-wrap">float angle1,
+              float angle2)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_math_utils_8h.html">&lt;Spore/MathUtils.h&gt;</a></div>
+            </h3>
+            <p>Returns the shortest difference between two angles (in radians), the result is always in the range [0, PI].</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">angle1</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>angle2</td>
+                  <td></td>
+                </tr>
+              </tbody>
+            </table>
+<p>The order of the angles does not matter.</p>
+          </div></section>
+          <section class="m-doc-details" id="a8ede53739c683c2e8fb20773acd4c120"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">float Math::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a8ede53739c683c2e8fb20773acd4c120" class="m-doc-self">IncrementAngleTo</a>(</span><span class="m-doc-wrap">float angle1,
+              float angle2,
+              float inc)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_math_utils_8h.html">&lt;Spore/MathUtils.h&gt;</a></div>
+            </h3>
+            <p>Returns <code>angle1 + inc</code> or <code>angle2 - inc</code>, in the range [-PI, PI], depending on what&#x27;s the shortest way to get from <code>angle1</code> to <code>angle2</code>.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">angle1</td>
+                  <td>&quot;Source&quot; angle</td>
+                </tr>
+                <tr>
+                  <td>angle2</td>
+                  <td>&quot;Dest&quot; angle</td>
+                </tr>
+                <tr>
+                  <td>inc</td>
+                  <td>How many radians are incremented.</td>
+                </tr>
+              </tbody>
+            </table>
+<p>All the angles are in radians.</p>
+          </div></section>
+          <section class="m-doc-details" id="a2029152cd0e18ab00ca78a116cee7ae7"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">float Math::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a2029152cd0e18ab00ca78a116cee7ae7" class="m-doc-self">CorrectAngleRange</a>(</span><span class="m-doc-wrap">float angle)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_math_utils_8h.html">&lt;Spore/MathUtils.h&gt;</a></div>
+            </h3>
+            <p>Converts the given angle to the [-PI, PI] range, everything in radians.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">angle</td>
+                  <td></td>
+                </tr>
+              </tbody>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="a373c150940c5a88008a47c42eb07c582"><div>
+            <h3>
+              <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="_math_utils_8h.html">&lt;Spore/MathUtils.h&gt;</a></div>
+              <div class="m-doc-template">
+                template&lt;typename T&gt;
+              </div>
+              <span class="m-doc-wrap-bumper">int Math::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a373c150940c5a88008a47c42eb07c582" class="m-doc-self">sgn</a>(</span><span class="m-doc-wrap">T val)</span></span>
+            </h3>
+            <p>Returns -1 for negative numbers, +1 for positive numbers, and 0 if the value is 0.</p>
+          </div></section>
+          <section class="m-doc-details" id="a4094575c9b98d89a92608bccb105f0e1"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">float Math::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a4094575c9b98d89a92608bccb105f0e1" class="m-doc-self">remap</a>(</span><span class="m-doc-wrap">const <a href="struct_math_1_1_vector2.html" class="m-doc">Vector2</a>&amp; source,
+              const <a href="struct_math_1_1_vector2.html" class="m-doc">Vector2</a>&amp; target,
+              float value)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_math_utils_8h.html">&lt;Spore/MathUtils.h&gt;</a></div>
+            </h3>
+            <p>Remaps a value from one <code>source</code> range to a different <code>target</code> range.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">source</td>
+                  <td>The source range</td>
+                </tr>
+                <tr>
+                  <td>target</td>
+                  <td>The target range</td>
+                </tr>
+                <tr>
+                  <td>value</td>
+                  <td>A value inside the source range</td>
+                </tr>
+              </tbody>
+            </table>
+<p>This is the combination of <a href="namespace_math.html#a75f129c1c903de7801936bb8b7192f5c" class="m-doc">invLerp()</a> for the source range and <a href="namespace_math.html#aa25dc35f229a223a879baf6b4fe760c2" class="m-doc">lerp()</a> for the target range</p>
+          </div></section>
+          <section class="m-doc-details" id="adfc6418a2a001c5742c2814f75ad907e"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">float Math::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#adfc6418a2a001c5742c2814f75ad907e" class="m-doc-self">distance</a>(</span><span class="m-doc-wrap">const <a href="struct_math_1_1_vector3.html" class="m-doc">Vector3</a>&amp; point1,
+              const <a href="struct_math_1_1_vector3.html" class="m-doc">Vector3</a>&amp; point2)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_math_utils_8h.html">&lt;Spore/MathUtils.h&gt;</a></div>
+            </h3>
+            <p>Returns the distance between two points.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">point1</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>point2</td>
+                  <td></td>
+                </tr>
+              </tbody>
+            </table>
           </div></section>
           <section class="m-doc-details" id="a37bd8f6b7cf6a2955662835ba6dfad25"><div>
             <h3>

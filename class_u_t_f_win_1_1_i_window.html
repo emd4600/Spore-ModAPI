@@ -112,6 +112,22 @@
               float fOpacity)</span>
             </dt>
             <dd>Changes the opacity (opposite of transparency) of a window, which is done modifying the &#x27;alpha&#x27; value of the shade color.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">static void <a href="#a7e08bb6ea005d0800d4383bf1843d616" class="m-doc">ExecuteHierarchy</a>(</span><span class="m-doc-wrap"><a href="class_u_t_f_win_1_1_i_window.html" class="m-doc">IWindow</a>* pWindow,
+              bool(*)(<a href="class_u_t_f_win_1_1_i_window.html" class="m-doc">IWindow</a>*, void*) pFunction,
+              void* parameter = nullptr)</span>
+            </dt>
+            <dd>Executes a function for all the hierarchy of the given function.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">static void <a href="#a33d3a93767c8cd9dd41c956539996a6c" class="m-doc">AddWinProcHierarchy</a>(</span><span class="m-doc-wrap"><a href="class_u_t_f_win_1_1_i_window.html" class="m-doc">IWindow</a>* pWindow,
+              <a href="class_u_t_f_win_1_1_i_win_proc.html" class="m-doc">IWinProc</a>* pWinProc)</span>
+            </dt>
+            <dd>Adds the given procedure to all the hierarchy of the given window, inclusive.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">static void <a href="#a7c2e79a7964e4d15922e0c29d3bdba92" class="m-doc">RemoveWinProcHierarchy</a>(</span><span class="m-doc-wrap"><a href="class_u_t_f_win_1_1_i_window.html" class="m-doc">IWindow</a>* pWindow,
+              <a href="class_u_t_f_win_1_1_i_win_proc.html" class="m-doc">IWinProc</a>* pWinProc)</span>
+            </dt>
+            <dd>Removes the given procedure from all the hierarchy of the given window, inclusive.</dd>
           </dl>
         </section>
         <section id="pub-methods">
@@ -491,6 +507,80 @@
                 </tr>
               </tbody>
             </table>
+          </div></section>
+          <section class="m-doc-details" id="a7e08bb6ea005d0800d4383bf1843d616"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">static void UTFWin::<wbr />IWindow::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a7e08bb6ea005d0800d4383bf1843d616" class="m-doc-self">ExecuteHierarchy</a>(</span><span class="m-doc-wrap"><a href="class_u_t_f_win_1_1_i_window.html" class="m-doc">IWindow</a>* pWindow,
+              bool(*)(<a href="class_u_t_f_win_1_1_i_window.html" class="m-doc">IWindow</a>*, void*) pFunction,
+              void* parameter = nullptr)</span></span>
+            </h3>
+            <p>Executes a function for all the hierarchy of the given function.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">pWindow</td>
+                  <td>The first window of the hierarchy, the method will be executed for it and its children.</td>
+                </tr>
+                <tr>
+                  <td>pFunction</td>
+                  <td>The function to execute</td>
+                </tr>
+                <tr>
+                  <td>parameter</td>
+                  <td>An optional parameter that is passed to the window</td>
+                </tr>
+              </tbody>
+            </table>
+<p>The function must be static and take two parameters: the window for which it is being executed, and an optional parameter. It must return a boolean: if it returns false, the execution stops. This function is called &quot;in-depth&quot;, that is, for a given child its whole hierarchy is executed before moving to the next child.</p>
+          </div></section>
+          <section class="m-doc-details" id="a33d3a93767c8cd9dd41c956539996a6c"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">static void UTFWin::<wbr />IWindow::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a33d3a93767c8cd9dd41c956539996a6c" class="m-doc-self">AddWinProcHierarchy</a>(</span><span class="m-doc-wrap"><a href="class_u_t_f_win_1_1_i_window.html" class="m-doc">IWindow</a>* pWindow,
+              <a href="class_u_t_f_win_1_1_i_win_proc.html" class="m-doc">IWinProc</a>* pWinProc)</span></span>
+            </h3>
+            <p>Adds the given procedure to all the hierarchy of the given window, inclusive.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">pWindow</td>
+                  <td>The first window of the hierarchy, the procedure will be added for it and its children.</td>
+                </tr>
+                <tr>
+                  <td>pWinProc</td>
+                  <td>The procedure to add.</td>
+                </tr>
+              </tbody>
+            </table>
+<p>This is done by calling <a href="class_u_t_f_win_1_1_i_window.html#a7e08bb6ea005d0800d4383bf1843d616" class="m-doc">ExecuteHierarchy()</a>.</p>
+          </div></section>
+          <section class="m-doc-details" id="a7c2e79a7964e4d15922e0c29d3bdba92"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">static void UTFWin::<wbr />IWindow::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a7c2e79a7964e4d15922e0c29d3bdba92" class="m-doc-self">RemoveWinProcHierarchy</a>(</span><span class="m-doc-wrap"><a href="class_u_t_f_win_1_1_i_window.html" class="m-doc">IWindow</a>* pWindow,
+              <a href="class_u_t_f_win_1_1_i_win_proc.html" class="m-doc">IWinProc</a>* pWinProc)</span></span>
+            </h3>
+            <p>Removes the given procedure from all the hierarchy of the given window, inclusive.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">pWindow</td>
+                  <td>The first window of the hierarchy, the procedure will be removed from it and its children.</td>
+                </tr>
+                <tr>
+                  <td>pWinProc</td>
+                  <td>The procedure to remove.</td>
+                </tr>
+              </tbody>
+            </table>
+<p>This is done by calling <a href="class_u_t_f_win_1_1_i_window.html#a7e08bb6ea005d0800d4383bf1843d616" class="m-doc">ExecuteHierarchy()</a>.</p>
           </div></section>
           <section class="m-doc-details" id="ae22ac8b8615f72771bf6b2818030e24c"><div>
             <h3>
