@@ -56,6 +56,8 @@ namespace UTFWin
 	public:
 		static const uint32_t TYPE = 0x8ED27E7A;
 
+		static const uint32_t WinButton_ID = 0xEEEFE2C3;
+
 		/// Returns the UTFWin::IWindow representation of this button.
 		/* 10h */	virtual IWindow* ToWindow() = 0;
 
@@ -120,9 +122,9 @@ namespace UTFWin
 		/// @param groupID An ID that represents the button group.
 		/* 44h */	virtual void SetButtonGroupID(uint32_t groupID) = 0;
 
-		/// Gets the caption color for the given state.
+		/// Gets the caption color for the given state. The return value can be casted to Math::Color
 		/// @param index The state whose color must be returned, in the UTFWin::StateIndices enum.
-		/* 48h */	virtual Color GetCaptionColor(StateIndices index) = 0;
+		/* 48h */	virtual uint32_t GetCaptionColor(StateIndices index) = 0;
 
 		/// Sets the caption color for the given state.
 		/// @param index The state whose color must be changed, in the UTFWin::StateIndices enum.

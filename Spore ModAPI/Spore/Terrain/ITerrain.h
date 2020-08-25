@@ -138,7 +138,7 @@ namespace Terrain
 		/// @returns The position of the terrain where the ray hit, or (0,0,0) if there was no intersection with the planet.
 		/* 108h */	virtual Vector3 Raycast(const Vector3& pos, const Vector3& dir) = 0;
 		/* 10Ch */	virtual Quaternion GetOrientation(const Vector3& upAxis) = 0;
-		/* 110h */	virtual void func110h() = 0;
+		/* 110h */	virtual void Dispose() = 0;
 		/* 114h */	virtual void ParseProp(App::PropertyList* pPropList) = 0;
 		/* 118h */	virtual const Vector3& GetCameraPos() = 0;
 		/* 11Ch */	virtual const Vector3& GetCameraDir() = 0;

@@ -70,7 +70,8 @@ namespace Simulator
 		/* 50h */	virtual bool IsSelected();
 		/* 54h */	virtual void SetIsSelected(bool bValue);
 		/* 58h */	virtual bool func58h();
-		/* 5Ch */	virtual Vector3 func5Ch();  // Get direction?
+		/// Returns the local Y axis of this spatial object
+		/* 5Ch */	virtual Vector3 GetDirection();
 		/* 60h */	virtual Vector3 func60h();
 		/* 64h */	virtual void SetLocalExtents(const BoundingBox& localExtents, float fScale);
 		/* 68h */	virtual const BoundingBox& GetLocalExtents();
