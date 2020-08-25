@@ -587,6 +587,28 @@ namespace UTFWin
 		/// @param fOpacity How opaque the window must be. This follows the rule alpha = 1 - fOpacity.
 		///
 		static void SetOpacity(IWindow* pWindow, float fOpacity);
+
+		/// Executes a function for all the hierarchy of the given function. 
+		/// The function must be static and take two parameters: the window for which it is being executed,
+		/// and an optional parameter. It must return a boolean: if it returns false, the execution stops.
+		/// This function is called "in-depth", that is, for a given child its whole hierarchy is executed
+		/// before moving to the next child.
+		/// @param pWindow The first window of the hierarchy, the method will be executed for it and its children.
+		/// @param pFunction The function to execute
+		/// @param parameter An optional parameter that is passed to the window
+		static void ExecuteHierarchy(IWindow* pWindow, bool(*pFunction)(IWindow*, void*), void* parameter = nullptr);
+
+		/// Adds the given procedure to all the hierarchy of the given window, inclusive.
+		/// This is done by calling ExecuteHierarchy().
+		/// @param pWindow The first window of the hierarchy, the procedure will be added for it and its children.
+		/// @param pWinProc The procedure to add.
+		static void AddWinProcHierarchy(IWindow* pWindow, IWinProc* pWinProc);
+
+		/// Removes the given procedure from all the hierarchy of the given window, inclusive.
+		/// This is done by calling ExecuteHierarchy().
+		/// @param pWindow The first window of the hierarchy, the procedure will be removed from it and its children.
+		/// @param pWinProc The procedure to remove.
+		static void RemoveWinProcHierarchy(IWindow* pWindow, IWinProc* pWinProc);
 	};
 
 }

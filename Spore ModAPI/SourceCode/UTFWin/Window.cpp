@@ -414,5 +414,28 @@ namespace UTFWin
 		}
 		return false;
 	}
+
+	void IWindow::ExecuteHierarchy(IWindow* pWindow, bool(*pFunction)(IWindow*, void*), void* parameter)
+	{
+		pFunction(pWindow, parameter);
+
+		for (auto child : pWindow->children()) {
+			ExecuteHierarchy(child, pFunction, parameter);
+		}
+	}
+
+	void IWindow::AddWinProcHierarchy(IWindow* pWindow, IWinProc* pWinProc) {
+		ExecuteHierarchy(pWindow, [](UTFWin::IWindow* window, void* proc) {
+			window->AddWinProc((UTFWin::IWinProc*)proc);
+			return true;
+		}, pWinProc);
+	}
+
+	void IWindow::RemoveWinProcHierarchy(IWindow* pWindow, IWinProc* pWinProc) {
+		ExecuteHierarchy(pWindow, [](UTFWin::IWindow* window, void* proc) {
+			window->RemoveWinProc((UTFWin::IWinProc*)proc);
+			return true;
+		}, pWinProc);
+	}
 }
 #endif
