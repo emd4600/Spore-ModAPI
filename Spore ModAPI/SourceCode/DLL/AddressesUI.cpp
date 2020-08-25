@@ -4,6 +4,7 @@
 #include <Spore\UI\SpaceGameUI.h>
 #include <Spore\UI\HintManager.h>
 #include <Spore\UI\ScrollFrameVertical.h>
+#include <Spore\UI\cSPUITextZoom.h>
 
 namespace UI
 {
@@ -26,6 +27,12 @@ namespace UI
 	namespace Addresses(ScrollFrameVertical)
 	{
 		DefineAddress(Create, SelectAddress(0x807C40, , 0x8076F0));
+	}
+
+	namespace Addresses(cSPUITextZoom)
+	{
+		DefineAddress(ctor, SelectAddress(0x834E10, , 0x8346A0));
+		DefineAddress(Initialize, SelectAddress(0x835800, , 0x835080));
 	}
 }
 #endif
