@@ -74,6 +74,7 @@ namespace Palettes
 		DefineAddress(GetCategory, SelectAddress(0x5C5F90, 0x5C5EB0, 0x5C5EE0));
 		DefineAddress(ReadProp, SelectAddress(0x5C64E0, 0x5C6400, 0x5C6430));
 		DefineAddress(ReadModuleProp, SelectAddress(0x5C61B0, 0x5C60D0, 0x5C6100));
+		DefineAddress(Unload, SelectAddress(0x5C5DC0, , 0x5C5D10));
 	}
 
 	namespace Addresses(PalettePage)
@@ -93,7 +94,7 @@ namespace Palettes
 	{
 		DefineAddress(Load, SelectAddress(0x5CB180, 0x5CB660, 0x5CB690));
 		DefineAddress(Update, SelectAddress(0x5CA590, 0x5CAA40, 0x5CAA70));
-
+		DefineAddress(Unload, SelectAddress(0x5CB670, , 0x5CBB80));
 		DefineAddress(HandleUIMessage, SelectAddress(0x5CB080, 0x5CB560, 0x5CB590));
 	}
 

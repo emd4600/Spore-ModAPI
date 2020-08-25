@@ -66,6 +66,8 @@ namespace Palettes
 
 	auto_METHOD_VOID(PaletteMain, ReadModuleProp, Args(const ResourceKey& name), Args(name));
 
+	auto_METHOD_VOID_(PaletteMain, Unload);
+
 	auto_METHOD(PaletteMain, PaletteCategory*, GetCategory, Args(uint32_t ID), Args(ID));
 
 
@@ -271,6 +273,8 @@ namespace Palettes
 		Args(pWindow, message));
 
 	auto_METHOD_VOID(PaletteUI, Update, Args(int arg_0), Args(arg_0));
+
+	auto_METHOD_VOID_(PaletteUI, Unload);
 
 
 	//// PAGE ARROWS UI ////

@@ -90,6 +90,8 @@ namespace Palettes
 		///
 		PaletteCategory* GetCategoryAt(size_t nIndex);
 
+		void Unload();
+
 		//// OVERRIDES ////
 
 		int AddRef() override;
@@ -139,6 +141,7 @@ namespace Palettes
 		DeclareAddress(GetCategory);
 		DeclareAddress(ReadProp);
 		DeclareAddress(ReadModuleProp);
+		DeclareAddress(Unload);
 	}
 
 	inline PaletteCategory* PaletteMain::GetCategoryAt(size_t nIndex)

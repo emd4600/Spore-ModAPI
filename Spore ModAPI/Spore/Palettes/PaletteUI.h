@@ -69,6 +69,8 @@ namespace Palettes
 		/// kControlRightArrowBtn and 0x7BCE6E8
 		void Load(PaletteMain* pPalette, IWindow* pWindow, bool, void*);
 
+		void Unload();
+
 		void Update(int msTime);
 
 
@@ -120,7 +122,7 @@ namespace Palettes
 	{
 		DeclareAddress(Load);
 		DeclareAddress(Update);
-
+		DeclareAddress(Unload);
 		DeclareAddress(HandleUIMessage);
 	}
 }
