@@ -66,22 +66,30 @@ namespace UTFWin
 		///
 		/// Changes the drawable of the given window to display the specified image. Optionally, the index of the image
 		/// can be specified (in the case you want to use a StdDrawable).
+		/// 
+		/// The method will try to use the existing drawable of the window; if there's no drawable or it's not an StdDrawable or
+		/// an ImageDrawable, one will be created; by default an ImageDrawable will be created, unless an image index is specified.
+		/// 
 		/// @param pWindow The IWindow whose drawable will change.
 		/// @param pImage The image that will be displayed in the window.
 		/// @param nImageIndex [Optional] The index of the image, for StdDrawable.
 		///
-		static bool SetBackground(IWindow* pWindow, Image* pImage, int nImageIndex = 0);
+		static bool SetBackground(IWindow* pWindow, Image* pImage, int imageIndex = -1);
 
 		///
 		/// Changes the drawable of the given window to display the specified image. Optionally, the index of the image
 		/// can be specified (in the case you want to use a StdDrawable).
+		/// 
+		/// The method will try to use the existing drawable of the window; if there's no drawable or it's not an StdDrawable or
+		/// an ImageDrawable, one will be created; by default an ImageDrawable will be created, unless an image index is specified.
 		///
 		/// To detour this method, you must use GetAddress(Image, SetBackground_2).
+		/// 
 		/// @param pWindow The IWindow whose drawable will change.
 		/// @param imageName The ResourceKey that points to the image file that will be displayed in the window.
 		/// @param nImageIndex [Optional] The index of the image, for StdDrawable.
 		///
-		static bool SetBackgroundByKey(IWindow* pWindow, const ResourceKey imageName, int nImageIndex = 0);
+		static bool SetBackgroundByKey(IWindow* pWindow, const ResourceKey& imageName, int imageIndex = -1);
 		
 	protected:
 		/* 04h */	intrusive_ptr<Object> mpImage;

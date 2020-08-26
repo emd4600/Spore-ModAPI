@@ -36,7 +36,7 @@ namespace UTFWin
 		Args(pWindow, pImage, nImageIndex));
 
 	auto_STATIC_METHOD(Image, bool, SetBackgroundByKey,
-		Args(IWindow* pWindow, const ResourceKey imageName, int nImageIndex),
+		Args(IWindow* pWindow, const ResourceKey& imageName, int nImageIndex),
 		Args(pWindow, imageName, nImageIndex));
 
 	int Image::AddRef()
