@@ -456,5 +456,23 @@ namespace Palettes
 
 
 	auto_METHOD_VOID_(ItemViewer, InitializeViewerCamera);
+
+
+
+	PaletteInfo::~PaletteInfo() {}
+
+	int PaletteInfo::AddRef() {
+		++mnRefCount;
+		return mnRefCount;
+	}
+
+	int PaletteInfo::Release() {
+		--mnRefCount;
+		if (mnRefCount == 0) {
+			delete this;
+			return 0;
+		}
+		return mnRefCount;
+	}
 }
 #endif
