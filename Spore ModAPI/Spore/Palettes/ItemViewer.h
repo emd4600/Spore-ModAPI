@@ -27,6 +27,8 @@
 #include <Spore\Graphics\ModelAsset.h>
 #include <Spore\UI\cSPUILayeredObject.h>
 
+#define ItemViewerPtr eastl::intrusive_ptr<Palettes::ItemViewer>
+
 namespace Palettes
 {
 	using namespace eastl;
@@ -38,6 +40,9 @@ namespace Palettes
 		, public App::IUnmanagedMessageListener
 	{
 	public:
+		using Object::AddRef;
+		using Object::Release;
+
 		/* 1Ch */	virtual void func1Ch();
 		/* 20h */	virtual void Update(int time);  // sets model visible
 

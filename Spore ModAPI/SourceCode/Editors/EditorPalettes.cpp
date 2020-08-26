@@ -266,7 +266,7 @@ namespace Palettes
 		return UTFWin::kEventFlagAdvanced | UTFWin::kEventFlagBasicInput;
 	}
 
-	auto_METHOD_VOID(PaletteUI, Load, Args(PaletteMain* pPalette, IWindow* pWindow, bool arg_8, void* arg_C),
+	auto_METHOD_VOID(PaletteUI, Load, Args(PaletteMain* pPalette, IWindow* pWindow, bool arg_8, PaletteInfo* arg_C),
 		Args(pPalette, pWindow, arg_8, arg_C));
 
 	auto_METHOD_VIRTUAL(PaletteUI, IWinProc, bool, HandleUIMessage, Args(IWindow* pWindow, const Message& message),
@@ -393,7 +393,7 @@ namespace Palettes
 	auto_METHOD_VIRTUAL(PaletteCategoryUI, App::IMessageListener, bool, HandleMessage, Args(uint32_t messageID, void* message),
 		Args(messageID, message));
 
-	auto_METHOD_VOID(PaletteCategoryUI, Load, Args(PaletteCategory* pCategory, IWindow* pWindow, void* arg_8),
+	auto_METHOD_VOID(PaletteCategoryUI, Load, Args(PaletteCategory* pCategory, IWindow* pWindow, PaletteInfo* arg_8),
 		Args(pCategory, pWindow, arg_8));
 
 	auto_METHOD_VOID(PaletteCategoryUI, FlipPage, Args(int nDelta),
@@ -445,7 +445,7 @@ namespace Palettes
 
 	auto_METHOD(PalettePageUI, Math::Rectangle, GetItemArea, Args(size_t nIndex), Args(nIndex));
 
-	auto_METHOD_VOID(PalettePageUI, Load, Args(PalettePage* pPage, IWindow* pWindow, void* arg_8, size_t nIndex, bool arg_10),
+	auto_METHOD_VOID(PalettePageUI, Load, Args(PalettePage* pPage, IWindow* pWindow, PaletteInfo* arg_8, size_t nIndex, bool arg_10),
 		Args(pPage, pWindow, arg_8, nIndex, arg_10));
 
 	bool PalettePageUI::HandleUIMessage(IWindow* pWindow, const Message& message)

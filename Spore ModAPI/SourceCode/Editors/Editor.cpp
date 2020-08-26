@@ -9,5 +9,20 @@ namespace Editors
 	auto_METHOD_const_(EditorModel, string16&, GetCreationName);
 	auto_METHOD_VOID(EditorModel, SetColor, Args(int index, struct ColorRGB color), Args(index, color));
 
+
+	int IEditorLimits::AddRef() {
+		++mnRefCount;
+		return mnRefCount;
+	}
+
+	int IEditorLimits::Release() {
+		--mnRefCount;
+		if (mnRefCount == 0) {
+			delete this;
+			return 0;
+		}
+		return mnRefCount;
+	}
+
 }
 #endif

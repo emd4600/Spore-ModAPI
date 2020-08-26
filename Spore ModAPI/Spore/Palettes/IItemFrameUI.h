@@ -20,6 +20,7 @@
 #pragma once
 
 #include <Spore\Palettes\PaletteItem.h>
+#include <Spore\Palettes\PaletteInfo.h>
 #include <Spore\UTFWin\IWindow.h>
 #include <Spore\UTFWin\IWinProc.h>
 
@@ -35,7 +36,7 @@ namespace Palettes
 		IItemFrameUI();
 		virtual ~IItemFrameUI() {};
 
-		/* 04h */	virtual void Initialize(PaletteItem* pItem, IWindow* pWindow, IWindow* pItemsPanel, void*) = 0;
+		/* 04h */	virtual void Initialize(PaletteItem* pItem, IWindow* pWindow, IWindow* pItemsPanel, PaletteInfo* pInfo) = 0;
 		/* 08h */	virtual void Dispose() = 0;
 		/* 0Ch */	virtual void SetPaletteItem(PaletteItem* pItem) = 0;
 		/* 10h */	virtual PaletteItem* GetPaletteItem() = 0;
@@ -67,7 +68,7 @@ namespace Palettes
 		int Release() override;
 		void* Cast(uint32_t type) const override;
 
-		void Initialize(PaletteItem* pItem, IWindow* pWindow, IWindow* pItemsPanel, void*) override;
+		void Initialize(PaletteItem* pItem, IWindow* pWindow, IWindow* pItemsPanel, PaletteInfo* pInfo) override;
 		void Dispose() override;
 		void SetPaletteItem(PaletteItem* pItem) override;
 		PaletteItem* GetPaletteItem() override;

@@ -22,6 +22,7 @@
 #include <EASTL\vector.h>
 #include <Spore\Palettes\PalettePage.h>
 #include <Spore\Palettes\StandardItemUI.h>
+#include <Spore\Palettes\PaletteInfo.h>
 #include <Spore\UTFWin\UILayout.h>
 #include <Spore\UTFWin\IWinProc.h>
 #include <Spore\Object.h>
@@ -58,7 +59,7 @@ namespace Palettes
 		PalettePageUI();
 		virtual ~PalettePageUI() {};
 
-		void Load(PalettePage* pPage, IWindow* pWindow, void*, size_t nIndex, bool);
+		void Load(PalettePage* pPage, IWindow* pWindow, PaletteInfo* pInfo, size_t nIndex, bool);
 
 		///
 		/// Returns the area the item in the given index should have, relative to the items panel.

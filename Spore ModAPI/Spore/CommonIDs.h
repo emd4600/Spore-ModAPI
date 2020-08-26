@@ -125,6 +125,8 @@ namespace TypeIDs
 		effdir = 0xEA5118B0,
 		/// Animation data
 		animation = 0xEE17C6AD,
+		/// Data of an adventure
+		adventure = 0x366A930D
 	};
 }
 
@@ -198,5 +200,7 @@ namespace GroupIDs
 		SpacePopups = 0x131A9F54,
 		/// This folder contains popups used in Civilization stage that can be used with UIEventLog.
 		CivPopups = 0xAA9A8ED7,
+
+		CivicThumbs = 0x65928944
 	};
 }

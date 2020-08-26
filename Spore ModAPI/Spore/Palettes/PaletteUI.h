@@ -25,6 +25,7 @@
 #include <Spore\UTFWin\SporeAnimatedIconWin.h>
 #include <Spore\Palettes\PaletteMain.h>
 #include <Spore\Palettes\PaletteCategoryUI.h>
+#include <Spore\Palettes\PaletteInfo.h>
 
 #define PaletteUIPtr intrusive_ptr<Palettes::PaletteUI>
 
@@ -67,7 +68,7 @@ namespace Palettes
 		/// 3. The mAnimatedWindow is set to the window with ControlID 0x49AFE6A1, and it is set invisible.
 		/// 4. This object is added as a IWinProc in the windows with ControlID: kControlLeftArrowBtn,
 		/// kControlRightArrowBtn and 0x7BCE6E8
-		void Load(PaletteMain* pPalette, IWindow* pWindow, bool, void*);
+		void Load(PaletteMain* pPalette, IWindow* pWindow, bool, PaletteInfo* pInfo);
 
 		void Unload();
 
@@ -85,7 +86,7 @@ namespace Palettes
 
 	public:
 		/// The layout of the palette, loaded using the ID in Palettes::PaletteMain::mLayoutID.
-		/* 0Ch */	intrusive_ptr<UILayout> mpLayout;
+		/* 0Ch */	UILayoutPtr mpLayout;
 		/// The window that contains the category selection buttons.
 		/* 10h */	IWindow* mpCategoryButtonsWindow;  // 0x72DF4CEE
 		/* 14h */	IWindow* field_14;  // 0xBA83C461
@@ -97,10 +98,10 @@ namespace Palettes
 		/// The main window of the UILayout, with ControlID 0xFFFFFFFF.
 		/* 28h */	IWindow* mpMainWindow;  // not initialized
 		/// The Palettes::PaletteMain that this UI displays.
-		/* 2Ch */	intrusive_ptr<PaletteMain> mpPalette;
-		/* 30h */	intrusive_ptr<DefaultRefCounted> field_30;  // intrusive_ptr, it's arg_C in Load method
+		/* 2Ch */	PaletteMainPtr mpPalette;
+		/* 30h */	PaletteInfoPtr mpPaletteInfo;
 		/// The UI objects for all categories contained in the palette. They are in the same order as the PaletteMain::mCategories field.
-		/* 34h */	vector<intrusive_ptr<PaletteCategoryUI>> mCategories;
+		/* 34h */	vector<PaletteCategoryUIPtr> mCategories;
 		/* 48h */	vector<int> field_48;  // intrusive_ptrs too, but it's never used?
 		/* 5Ch */	int field_5C;
 		/* 60h */	int field_60;

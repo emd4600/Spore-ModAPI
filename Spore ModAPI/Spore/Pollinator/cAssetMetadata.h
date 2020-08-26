@@ -66,7 +66,7 @@ namespace Pollinator
 		if (!ResourceManager.GetResource({ instanceID, Pollinator::cAssetMetadata::TYPE, groupID }, &pResource)) {
 			return nullptr;
 		}
-		return (cAssetMetadata*)pResource;
+		return object_cast<cAssetMetadata>(pResource);
 	}
 
 	inline string16 cAssetMetadata::GetName() const { return mName; }

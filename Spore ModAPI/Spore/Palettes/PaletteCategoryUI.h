@@ -29,6 +29,7 @@
 #include <Spore\Palettes\ColorPickerUI.h>
 #include <Spore\Palettes\PalettePageUI.h>
 #include <Spore\Palettes\PaletteSubcategoriesUI.h>
+#include <Spore\Palettes\PaletteInfo.h>
 
 #define PaletteCategoryUIPtr intrusive_ptr<Palettes::PaletteCategoryUI>
 
@@ -85,7 +86,7 @@ namespace Palettes
 		PaletteCategoryUI();
 		virtual ~PaletteCategoryUI() {};
 
-		void Load(PaletteCategory* pCategory, IWindow* pWindow, void*);
+		void Load(PaletteCategory* pCategory, IWindow* pWindow, PaletteInfo* pInfo);
 
 		void LoadPages(PaletteCategory* pCategory, void*);
 

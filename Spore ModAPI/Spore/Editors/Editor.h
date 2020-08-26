@@ -34,6 +34,7 @@
 #include <Spore\Editors\EditorModel.h>
 #include <Spore\Editors\EditorPlayMode.h>
 #include <Spore\Editors\EditorRequest.h>
+#include <Spore\Editors\EditorLimits.h>
 
 #include <Spore\Graphics\ModelAsset.h>
 #include <Spore\Graphics\IRenderable.h>
@@ -421,7 +422,7 @@ namespace Editors
 		/* 428h */	int field_428;
 		/* 42Ch */	int field_42C;
 		/* 430h */	bool field_430;
-		/* 434h */	int field_434;
+		/* 434h */	StdEditorLimitsPtr mpEditorLimits;
 		/* 438h */	int field_438;
 		/* 43Ch */	int field_43C;
 		/* 440h */	int field_440;

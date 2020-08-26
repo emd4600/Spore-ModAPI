@@ -35,7 +35,7 @@ namespace Palettes
 	{
 	}
 
-	void DefaultItemFrameUI::Initialize(PaletteItem* pItem, IWindow* pWindow, IWindow* pItemsPanel, void*)
+	void DefaultItemFrameUI::Initialize(PaletteItem* pItem, IWindow* pWindow, IWindow* pItemsPanel, PaletteInfo*)
 	{
 		mpItem = pItem;
 		mpWindow = pWindow;
