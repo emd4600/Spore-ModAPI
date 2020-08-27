@@ -38,4 +38,6 @@
 #include <Spore\App\FileDrop.h>
 #include <Spore\App\cLocaleManager.h>
 
+#include <Spore\Audio\AudioSystem.h>
+
 using namespace eastl;

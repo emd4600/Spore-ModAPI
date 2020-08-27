@@ -29,6 +29,7 @@ namespace Simulator
 		/* 0Ch */	uint32_t mMachineId;
 		/* 10h */	uint64_t mServerId;
 		/* 18h */	uint32_t mModelType;
+		/* 1Ch */	bool field_1C;
 	};
 
 	/////////////////////////////////

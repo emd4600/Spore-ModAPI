@@ -123,7 +123,7 @@ namespace Editors
 		/// The current position of the cursor in the editor.
 		/* 28h */	Math::Point mCursor;
 		/* 30h */	int mMouseFlags;
-		/* 34h */	int mMouseState;
+		/* 34h */	MouseState mMouseState;
 
 		/* 38h */	bool field_38;
 		/* 3Ch */	int field_3C;

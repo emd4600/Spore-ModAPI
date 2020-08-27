@@ -59,7 +59,7 @@ namespace UTFWin
 
 		/* 4Ch */	virtual void func4Ch();
 		/* 50h */	virtual void func50h();
-		/* 54h */	virtual void func54h();
+		/* 54h */	virtual IWindow* func54h(int index);
 		/* 58h */	virtual void func58h(int index, IWindow* window);
 		/* 5Ch */	virtual void func5Ch(int index, IWindow* window);
 
