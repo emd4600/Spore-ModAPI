@@ -26,6 +26,7 @@
 #include <Spore\Palettes\PaletteCategoryUI.h>
 #include <Spore\Palettes\PalettePageUI.h>
 #include <Spore\Palettes\ItemViewer.h>
+#include <Spore\Palettes\AdvancedItemViewer.h>
 
 namespace Palettes
 {
@@ -474,5 +475,9 @@ namespace Palettes
 		}
 		return mnRefCount;
 	}
+
+
+	auto_METHOD_VOID(AdvancedItemViewer, SetAutoRotate, Args(bool arg), Args(arg));
+	auto_METHOD_VOID(AdvancedItemViewer, SetZoom, Args(float zoom), Args(zoom));
 }
 #endif

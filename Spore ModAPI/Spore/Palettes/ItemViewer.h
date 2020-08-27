@@ -52,7 +52,7 @@ namespace Palettes
 		/* 2Ch */	virtual void func2Ch();
 		/* 30h */	virtual void func30h();
 		/* 34h */	virtual void func34h();
-		/* 38h */	virtual void func38h();
+		/* 38h */	virtual void Set3dPreview(bool enabled);
 		/* 3Ch */	virtual void func3Ch();  //PLACEHOLDER GetAnimatedCreature()
 		/* 40h */	virtual void func40h();
 		/* 44h */	virtual void func44h();
@@ -135,7 +135,7 @@ namespace Palettes
 		/* 167h */	bool field_167; 
 		/* 168h */	bool field_168;  // not initialized
 		/* 169h */	bool field_169;
-		/* 16Ah */	bool mbRotationEnabled;
+		/* 16Ah */	bool field_16A;  // mbRotationEnabled ?
 		/* 16Bh */	bool field_16B;
 		/// If true, no background image will be set in the preview.
 		/* 16Ch */	bool mbOmitBackground;

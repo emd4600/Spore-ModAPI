@@ -3,6 +3,7 @@
 #include <Spore\Palettes\ColorPickerUI.h>
 #include <Spore\Palettes\ColorSwatchUI.h>
 #include <Spore\Palettes\ItemViewer.h>
+#include <Spore\Palettes\AdvancedItemViewer.h>
 #include <Spore\Palettes\PaletteCategory.h>
 #include <Spore\Palettes\PaletteCategoryUI.h>
 #include <Spore\Palettes\PaletteItem.h>
@@ -101,6 +102,12 @@ namespace Palettes
 	namespace Addresses(StandardItemUI)
 	{
 		DefineAddress(HandleUIMessage, SelectAddress(0x5C73F0, 0x5C7320, 0x5C7350));
+	}
+
+	namespace Addresses(AdvancedItemViewer)
+	{
+		DefineAddress(SetAutoRotate, SelectAddress(0x5F4800, , 0x5F4A30));
+		DefineAddress(SetZoom, SelectAddress(0x5F2190, , 0x5F2370));
 	}
 }
 #endif
