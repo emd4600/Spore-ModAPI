@@ -45,10 +45,12 @@ FilePFRecord::FilePFRecord(FilePFRecord* pOther, const ResourceKey& name, Databa
 
 FilePFRecord::~FilePFRecord()
 {
-	//if (mnFileAccess != kAccessFlagNone)
-	//{
-	//	mpParentDBPF->func3Ch(this);
-	//}
+	if (mnFileAccess != IO::kAccessFlagNone)
+	{
+		mpParentDBPF->func3Ch(this);
+		mFileStream.Close();
+		mnFileAccess = IO::kAccessFlagNone;
+	}
 }
 
 ResourceKey& FilePFRecord::GetName()
@@ -94,6 +96,8 @@ bool FilePFRecord::Close()
 		if (mnFileAccess != IO::kAccessFlagNone)
 		{
 			mpParentDBPF->func3Ch(this);
+			mFileStream.Close();
+			mnFileAccess = IO::kAccessFlagNone;
 		}
 	}
 

@@ -2,7 +2,7 @@
 
 #include <Spore\BasicIncludes.h>
 
-class AnimLogCheat
+class UILogCheat
 	: public ArgScript::ICommand
 {
 public:

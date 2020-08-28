@@ -27,7 +27,7 @@
 
 EffectEditorMode::EffectEditorMode()
 	: mpEffect(nullptr)
-	, mClock(Clock::Mode::Milliseconds)
+	, mClock(Clock::Mode::Seconds)
 	, mnLastCheckTime()
 	, mpPath()
 	, mpEffectWorld(nullptr)
@@ -55,7 +55,6 @@ bool EffectEditorMode::func0Ch()
 
 bool EffectEditorMode::Initialize(App::IGameModeManager*)
 {
-	mpEffectWorld = SwarmManager.CreateWorld(kWorldID);
 	return true;
 }
 
@@ -79,7 +78,7 @@ void EffectEditorMode::CreateEffect()
 	}
 
 	// Stop and start the clock again
-	mClock.Stop();
+	mClock.Reset();
 	mClock.Start();
 }
 
@@ -103,6 +102,8 @@ void EffectEditorMode::UpdateFileTime()
 bool EffectEditorMode::OnEnter()
 {
 	// Get the handle of the main.effdir file
+
+	mpEffectWorld = SwarmManager.CreateWorld(kWorldID);
 
 	SwarmManager.SetActiveWorld(mpEffectWorld.get());
 
@@ -134,6 +135,7 @@ bool EffectEditorMode::OnEnter()
 
 void EffectEditorMode::OnExit()
 {
+	SwarmManager.RemoveWorld(kWorldID);
 }
 
 // The use of this function is unknown.
@@ -180,7 +182,7 @@ bool EffectEditorMode::OnMouseWheel(int wheelDelta, float mouseX, float mouseY, 
 void EffectEditorMode::Update(float delta1, float delta2)
 {
 	// Update every second
-	if (mClock.GetElapsed() >= 1000.0f)
+	if (mClock.GetElapsed() >= 1.0f)
 	{
 		ULARGE_INTEGER oldTime = mnLastCheckTime;
 		UpdateFileTime();

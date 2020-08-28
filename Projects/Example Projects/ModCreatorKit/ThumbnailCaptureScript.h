@@ -48,7 +48,7 @@ public:
 	void ParseLine(const ArgScript::Line& line) override;
 	const char* GetDescription(ArgScript::DescriptionMode mode) const override;
 
-	void Render(int flags, int layerIndex, void*, void*) override;
+	void Render(int flags, int layerIndex, App::cViewer**, void*) override;
 
 	bool HandleMessage(uint32_t messageID, void* pMessage) override;
 

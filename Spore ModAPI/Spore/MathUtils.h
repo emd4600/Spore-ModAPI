@@ -309,7 +309,7 @@ namespace Math
 		}
 		/// Returns the point at the center of the rectangle.
 		inline Point GetCenter() const {
-			return Point(x1 + (x2 - x1) / 2, y1 + (y2 - y1) / 2);
+			return Point((x1 + x2) / 2.0f, (y1 + y2) / 2.0f);
 		}
 		/// Returns the point at the top-left corner of the rectangle.
 		inline Point GetTopLeft() const {

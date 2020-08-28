@@ -45,9 +45,9 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
     <IncludePath>$(DXSDK_DIR)\Include;$(SporeSdkPath)Spore ModAPI;$(SporeSdkPath)EASTL-3.02.01\test\packages\EABase\include\Common;$(SporeSdkPath)EASTL-3.02.01\test\packages\EAAssert\include;$(SporeSdkPath)EASTL-3.02.01\test\packages\EAStdC\include;$(SporeSdkPath)EASTL-3.02.01\include;$(SporeSdkPath)Detours\include\;$(IncludePath)</IncludePath>
-    <LibraryPath>$(DXSDK_DIR)Lib\x86;$(SporeLauncherPath);$(SporeSdkPath)Detours\lib.X86;$(SporeSdkPath)lib\Debug;$(LibraryPath)</LibraryPath>
+    <LibraryPath>$(DXSDK_DIR)Lib\x86;$(SporeLauncherPath)coreLibs;$(SporeSdkPath)Detours\lib.X86;$(SporeSdkPath)lib\Debug;$(LibraryPath)</LibraryPath>
     <TargetName>$(ProjectName)</TargetName>
-    <OutDir>$(SporeLauncherPath)</OutDir>
+    <OutDir>$(SporeLauncherPath)mLibs\</OutDir>
     <LocalDebuggerCommand>$(SporeLauncherPath)Spore ModAPI Launcher.exe</LocalDebuggerCommand>
     <LocalDebuggerWorkingDirectory>$(SporeLauncherPath)</LocalDebuggerWorkingDirectory>
     <DebuggerFlavor>WindowsLocalDebugger</DebuggerFlavor>
@@ -55,9 +55,9 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
     <IncludePath>$(DXSDK_DIR)\Include;$(SporeSdkPath)Spore ModAPI;$(SporeSdkPath)EASTL-3.02.01\test\packages\EABase\include\Common;$(SporeSdkPath)EASTL-3.02.01\test\packages\EAAssert\include;$(SporeSdkPath)EASTL-3.02.01\test\packages\EAStdC\include;$(SporeSdkPath)EASTL-3.02.01\include;$(SporeSdkPath)Detours\include\;$(IncludePath)</IncludePath>
-    <LibraryPath>$(DXSDK_DIR)Lib\x86;$(SporeLauncherPath);$(SporeSdkPath)Detours\lib.X86;$(SporeSdkPath)lib\Release;$(LibraryPath)</LibraryPath>
+    <LibraryPath>$(DXSDK_DIR)Lib\x86;$(SporeLauncherPath)coreLibs;$(SporeSdkPath)Detours\lib.X86;$(SporeSdkPath)lib\Release;$(LibraryPath)</LibraryPath>
     <TargetName>$(ProjectName)</TargetName>
-    <OutDir>$(SporeLauncherPath)</OutDir>
+    <OutDir>$(SporeLauncherPath)mLibs\</OutDir>
     <LocalDebuggerCommand>$(SporeLauncherPath)Spore ModAPI Launcher.exe</LocalDebuggerCommand>
     <LocalDebuggerWorkingDirectory>$(SporeLauncherPath)</LocalDebuggerWorkingDirectory>
     <DebuggerFlavor>WindowsLocalDebugger</DebuggerFlavor>
@@ -96,6 +96,15 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="AddressCheat.h" />
+    <ClInclude Include="AnimEditorBlocks.h" />
+    <ClInclude Include="AnimEditorMode.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
+    <ClInclude Include="AnimEditorUI.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
     <ClInclude Include="AnimLogCheat.h" />
     <ClInclude Include="Cheats.h" />
     <ClInclude Include="ContextCheat.h" />
@@ -107,12 +116,27 @@
     <ClInclude Include="EffectEditorCheat.h" />
     <ClInclude Include="EffectEditorMode.h" />
     <ClInclude Include="FilePFRecord.h" />
+    <ClInclude Include="PackageCheat.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="targetver.h" />
     <ClInclude Include="ThumbnailCaptureScript.h" />
+    <ClInclude Include="UIInspectCheat.h" />
+    <ClInclude Include="UILogCheat.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="AddressCheat.cpp" />
+    <ClCompile Include="AnimEditorBlocks.cpp" />
+    <ClCompile Include="AnimEditorMode.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="AnimEditorUI.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
     <ClCompile Include="AnimLogCheat.cpp" />
     <ClCompile Include="Cheats.cpp" />
     <ClCompile Include="ContextCheat.cpp" />
@@ -132,11 +156,17 @@
     <ClCompile Include="EffectEditorCheat.cpp" />
     <ClCompile Include="EffectEditorMode.cpp" />
     <ClCompile Include="FilePFRecord.cpp" />
+    <ClCompile Include="PackageCheat.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
     </ClCompile>
     <ClCompile Include="ThumbnailCaptureScript.cpp" />
+    <ClCompile Include="UIInspectCheat.cpp" />
+    <ClCompile Include="UILogCheat.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="SdkPathConfig.props" />

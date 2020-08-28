@@ -143,7 +143,7 @@ bool ColorWheelSwatchUI::HandleUIMessage(IWindow* window, const Message& msg)
 	else if (msg.IsType(kMsgMouseWheel) && mIsSelectingColor &&
 		(window == mpWheelWindow || window == mpValueWindow))
 	{
-		mHsvColor.v += msg.Mouse.wheelDelta / (float)mMouseWheelRange;
+		mHsvColor.v += msg.MouseWheel.wheelDelta / (float)mMouseWheelRange;
 		mHsvColor.v = min(max(mHsvColor.v, 0.0f), 1.0f);
 		ColorChanged(false, false);
 	}
@@ -534,11 +534,8 @@ void ColorWheelSwatchUI::SetPanelArea() {
 	auto parentArea = WindowManager.GetMainWindow()->GetArea();
 	auto mainWindowArea = mpMainWindow->GetRealArea();
 
-	Point point = mpMainWindow->GetParent()->func48(
-		(mainWindowArea.x1 + mainWindowArea.x2) / 2.0f,
-		(mainWindowArea.y1 + mainWindowArea.y2) / 2.0f);
-
-	point = WindowManager.GetMainWindow()->func49(point.x, point.y);
+	Point point = mpMainWindow->GetParent()->ToGlobalCoordinates(mainWindowArea.GetCenter());
+	point = WindowManager.GetMainWindow()->ToLocalCoordinates(point);
 
 	Math::Rectangle panelArea = mpExpansionWindow->GetArea();
 

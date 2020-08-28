@@ -16,7 +16,11 @@ namespace Sporepedia
 		/* 20h */	eastl::vector<ResourceKey> parameterKeys;
 	};
 
+	/// Finds all the assets that match the given filter. This method will use a filter with the given ID
+	/// in the `AssetBrowserFilter` folder. The `dst` vector will be filled with one instance for every 
+	/// `browserFilterData` that has been searched; each instance contains vectors of the resource keys that match it.
 	/// @param filterID ID of filter file in `AssetBrowserFilter` folder
+	/// @param[out] dst The destination vector
 	void ProcessAssetFilter(uint32_t filterID, eastl::vector<AssetBrowserQuery>& dst);
 
 	//TODO ObjectTemplateDB

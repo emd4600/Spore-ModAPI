@@ -22,6 +22,9 @@
 #include "ContextCheat.h"
 #include "AddressCheat.h"
 #include "AnimLogCheat.h"
+#include "PackageCheat.h"
+#include "UILogCheat.h"
+#include "UIInspectCheat.h"
 
 #include <Spore\App\ICheatManager.h>
 #include <Spore\Editors\BakeManager.h>
@@ -44,6 +47,9 @@ void AddCheats()
 {
 	CheatManager.AddCheat("devContext", new ContextCheat());
 	CheatManager.AddCheat("devAnimLog", new AnimLogCheat());
+	CheatManager.AddCheat("devPackage", new PackageCheat());
+	CheatManager.AddCheat("devLogUI", new UILogCheat());
+	CheatManager.AddCheat("devInspectUI", new UIInspectCheat());
 
 	AddressCheat::AddCheat(Address(ModAPI::ChooseAddress(0x1498444, 0x1493E5C)), "devRaid");
 	AddressCheat::AddCheat(Address(ModAPI::ChooseAddress(0x149845C, 0x1493E74)), "devSpace");

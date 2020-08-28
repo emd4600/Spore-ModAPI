@@ -147,7 +147,7 @@ void GmdlExportCheat::OnShopperAccept(const ResourceKey& selection)
 	}
 
 	// Get the .prop file that defines the creation
-	App::PropertyList::Pointer propList;
+	PropertyListPtr propList;
 	if (!PropManager.GetPropertyList(selection.instanceID, selection.groupID, propList))
 	{
 		App::ConsolePrintF("Error: The creation is not baked. Preview it in the Sporepedia before exporting it.");
@@ -197,7 +197,7 @@ void GmdlExportCheat::OnShopperAccept(const ResourceKey& selection)
 
 	// Now, extract the textures
 	// Spore sues the .raster format, so we wil use DirectX to convert them to .tga
-	for (auto textureID : textureIDs) {
+	for (const auto& textureID : textureIDs) {
 		auto texture = TextureManager.GetTexture(textureID.second, Graphics::ITextureManager::kForceLoad);
 		auto raster = texture->GetRaster();
 		string16 textureEnding;

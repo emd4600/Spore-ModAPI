@@ -58,7 +58,7 @@ bool ThumbnailCaptureScript::HandleUIMessage(IWindow* pWindow, const Message& me
 	return false;
 }
 
-void ThumbnailCaptureScript::Render(int flags, int layerIndex, void* arg_8, void* arg_C) {
+void ThumbnailCaptureScript::Render(int flags, int layerIndex, App::cViewer** arg_8, void* arg_C) {
 	if (mpItemViewer && mpItemViewer->mpModel) {
 
 		auto model = mpItemViewer->mpModel.get();
@@ -70,7 +70,7 @@ void ThumbnailCaptureScript::Render(int flags, int layerIndex, void* arg_8, void
 			mOldColorSet = true;
 		}
 
-		mpItemViewer->mbRotationEnabled = false;
+		mpItemViewer->field_16A = false;
 
 		auto viewer = mpItemViewer->mpLayeredObject->GetViewer();
 		viewer->SetBackgroundColor(ColorRGBA(0, 0, 0, 0));
@@ -84,7 +84,7 @@ void ThumbnailCaptureScript::Render(int flags, int layerIndex, void* arg_8, void
 
 		model->mColor = ColorRGBA(mIdentityColor, 1.0f);
 
-		modelWorld->SetModelVisibile(model, true);
+		modelWorld->SetModelVisible(model, true);
 		modelWorld->ToRenderable()->Render(flags, layerIndex, &viewer, arg_C);
 
 		model->RemoveGroup(0x32FAB27);
@@ -94,7 +94,7 @@ void ThumbnailCaptureScript::Render(int flags, int layerIndex, void* arg_8, void
 		if (mpItemViewer->mZoom == mpItemViewer->mFinalZoom) {
 			CaptureImage();
 			// We will only do it once, also restore the rotation
-			mpItemViewer->mbRotationEnabled = true;
+			mpItemViewer->field_16A = true;
 			mpItemViewer = nullptr;
 
 			model->mColor = ColorRGBA(mOldColor, 1.0f);
