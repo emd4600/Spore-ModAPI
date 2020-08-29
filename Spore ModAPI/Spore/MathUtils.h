@@ -577,7 +577,7 @@ namespace Math
 	struct RandomNumberGenerator {
 		RandomNumberGenerator(int32_t seed = -1);
 
-		/// Generates a random integer between 0 and the given parameter, included.
+		/// Generates a random integer between 0 and the given parameter, excluded.
 		/// @param range The maximum value that can be generated.
 		int RandomInt(int range);
 
@@ -592,7 +592,7 @@ namespace Math
 		return *(RandomNumberGenerator*)(GetAddress(Math, RandomNumberGenerator_ptr));
 	}
 
-	/// Generates a random integer between 0 and the given parameter, included.
+	/// Generates a random integer between 0 and the given parameter, excluded.
 	/// This uses the default RNG, which uses the time stamp as seed.
 	/// @param range The maximum value that can be generated.
 	inline int rand(int range) {
