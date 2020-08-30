@@ -400,6 +400,8 @@ namespace Palettes
 	auto_METHOD_VOID(PaletteCategoryUI, FlipPage, Args(int nDelta),
 		Args(nDelta));
 
+	auto_METHOD_VOID_(PaletteCategoryUI, LayoutPagePanel);
+
 	auto_METHOD_VOID(PaletteCategoryUI, Update, Args(int arg_0), Args(arg_0));
 	
 	auto_METHOD_VIRTUAL(PaletteCategoryUI, IWinProc, bool, HandleUIMessage, Args(IWindow* pWindow, const Message& message), Args(pWindow, message));
@@ -413,7 +415,7 @@ namespace Palettes
 		, field_18()
 		, field_1C()
 		, mStandardItems()
-		, field_34()
+		, mAdvancedItems()
 	{
 	}
 

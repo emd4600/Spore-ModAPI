@@ -78,9 +78,9 @@ namespace Palettes
 	public:
 		struct PageUIContainer {
 			intrusive_ptr<PalettePageUI> page;
-			bool field_4;
+			bool isEnabled;
 			bool field_5;
-			bool field_6;
+			bool dontUpdate;
 		};
 
 		PaletteCategoryUI();
@@ -94,6 +94,8 @@ namespace Palettes
 		/// to a previous page.
 		/// @param nDeltaPage The number of pages to move (negative to move backwards).
 		void FlipPage(int nDeltaPage);
+
+		void LayoutPagePanel();
 
 		void Update(int msTime);
 
@@ -152,7 +154,7 @@ namespace Palettes
 		/* 74h */	vector<int> field_74;
 		/* 88h */	vector<PageUIContainer> mPageUIs;
 		/* 9Ch */	PaletteSubcategoriesUIPtr mpSubcategoriesUI;
-		/* A0h */	int field_A0;
+		/* A0h */	int field_A0;  // current page index?
 		/* A4h */	int field_A4;
 		/* A8h */	int field_A8;
 		/* ACh */	int field_AC;
@@ -278,6 +280,7 @@ namespace Palettes
 		DeclareAddress(HandleMessage);
 		DeclareAddress(HandleUIMessage);
 		DeclareAddress(Update);
+		DeclareAddress(LayoutPagePanel);
 	}
 
 	namespace Addresses(PageArrowsUI)

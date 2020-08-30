@@ -22,6 +22,7 @@
 #include <EASTL\vector.h>
 #include <Spore\Palettes\PalettePage.h>
 #include <Spore\Palettes\StandardItemUI.h>
+#include <Spore\Palettes\IItemFrameUI.h>
 #include <Spore\Palettes\PaletteInfo.h>
 #include <Spore\UTFWin\UILayout.h>
 #include <Spore\UTFWin\IWinProc.h>
@@ -86,7 +87,7 @@ namespace Palettes
 		/* 18h */	float field_18;
 		/* 1Ch */	float field_1C;
 		/* 20h */	vector<intrusive_ptr<StandardItemUI>> mStandardItems;
-		/* 34h */	vector<int> field_34;  // intrusive_ptr with vftable at 0C
+		/* 34h */	vector<intrusive_ptr<IAdvancedItemUI>> mAdvancedItems;
 
 	public:
 		const static uint32_t TYPE = 0x72DEED2B;

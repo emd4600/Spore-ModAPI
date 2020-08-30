@@ -56,6 +56,7 @@ namespace Palettes
 		DefineAddress(HandleMessage, SelectAddress(0x5C3730, 0x5C37B0, 0x5C37E0));
 		DefineAddress(HandleUIMessage, SelectAddress(0x5C40F0, 0x5C4170, 0x5C41A0));
 		DefineAddress(Update, SelectAddress(0x5C28D0, 0x5C2970, 0x5C29A0));
+		DefineAddress(LayoutPagePanel, SelectAddress(0x5C3000, , 0x5C30F0));
 	}
 
 	namespace Addresses(PageArrowsUI)

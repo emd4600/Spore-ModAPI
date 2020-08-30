@@ -53,10 +53,10 @@ namespace Palettes
 		uint32_t mFrameTypeID;
 	};
 
+	class IAdvancedItemUI : public IItemFrameUI, public IWinProc {};
 
 	class DefaultItemFrameUI 
-		: public IItemFrameUI
-		, public IWinProc
+		: public IAdvancedItemUI
 		, public DefaultRefCounted
 	{
 	public:
