@@ -5,6 +5,7 @@
 #include <Spore\UI\HintManager.h>
 #include <Spore\UI\ScrollFrameVertical.h>
 #include <Spore\UI\cSPUITextZoom.h>
+#include <Spore\UI\GameSettings.h>
 
 namespace UI
 {
@@ -33,6 +34,11 @@ namespace UI
 	{
 		DefineAddress(ctor, SelectAddress(0x834E10, , 0x8346A0));
 		DefineAddress(Initialize, SelectAddress(0x835800, , 0x835080));
+	}
+
+	namespace Addresses(GameSettings)
+	{
+		DefineAddress(Show, SelectAddress(0x603430, , 0x603670));
 	}
 }
 #endif

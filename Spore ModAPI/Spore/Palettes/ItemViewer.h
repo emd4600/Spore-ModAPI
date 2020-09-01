@@ -26,6 +26,7 @@
 #include <Spore\App\IMessageListener.h>
 #include <Spore\Graphics\ModelAsset.h>
 #include <Spore\UI\cSPUILayeredObject.h>
+#include <Spore\Anim\AnimatedCreature.h>
 
 #define ItemViewerPtr eastl::intrusive_ptr<Palettes::ItemViewer>
 
@@ -40,31 +41,36 @@ namespace Palettes
 		, public App::IUnmanagedMessageListener
 	{
 	public:
+		static const uint32_t TYPE = 0x31E56741;
+
+		ItemViewer();
+		~ItemViewer();
+
 		using Object::AddRef;
 		using Object::Release;
 
-		/* 1Ch */	virtual void func1Ch();
-		/* 20h */	virtual void Update(int time);  // sets model visible
+		/* 1Ch */	virtual void Unload();
+		/* 20h */	virtual void Update(int time) = 0;  // sets model visible
 
-		/* 24h */	virtual void Load(const ResourceKey& fileName);
-		/* 28h */	virtual void SetName(const ResourceKey& fileName);
+		/* 24h */	virtual void Load(const ResourceKey& fileName) = 0;
+		/* 28h */	virtual void SetName(const ResourceKey& fileName) = 0;
 
-		/* 2Ch */	virtual void func2Ch();
-		/* 30h */	virtual void func30h();
-		/* 34h */	virtual void func34h();
-		/* 38h */	virtual void Set3dPreview(bool enabled);
-		/* 3Ch */	virtual void func3Ch();  //PLACEHOLDER GetAnimatedCreature()
-		/* 40h */	virtual void func40h();
-		/* 44h */	virtual void func44h();
-		/* 48h */	virtual void func48h();
-		/* 4Ch */	virtual void func4Ch();
-		/* 50h */	virtual void func50h();
-		/* 54h */	virtual void func54h();
-		/* 58h */	virtual void func58h();
-		/* 5Ch */	virtual void func5Ch();
-		/* 60h */	virtual void func60h();
-		/* 64h */	virtual void func64h();
-		/* 68h */	virtual void RotateModel();
+		/* 2Ch */	virtual void func2Ch(bool) = 0;
+		/* 30h */	virtual bool func30h() const = 0;
+		/* 34h */	virtual IWindow* GetWindow() const = 0;
+		/* 38h */	virtual void Set3dPreview(bool enabled) = 0;
+		/* 3Ch */	virtual Anim::AnimatedCreature* GetAnimatedCreature() const = 0;  //PLACEHOLDER GetAnimatedCreature()
+		/* 40h */	virtual void func40h() = 0;
+		/* 44h */	virtual bool func44h() = 0;
+		/* 48h */	virtual void func48h() = 0;
+		/* 4Ch */	virtual void func4Ch() = 0;
+		/* 50h */	virtual void func50h() = 0;
+		/* 54h */	virtual void func54h(int) = 0;
+		/* 58h */	virtual float func58h() = 0;
+		/* 5Ch */	virtual bool IsOutside() = 0;
+		/* 60h */	virtual void OnOutside() = 0;
+		/* 64h */	virtual void func64h() = 0;
+		/* 68h */	virtual void RotateModel() = 0;
 
 		// 44h OnMouseEnter
 
@@ -74,20 +80,20 @@ namespace Palettes
 
 	public:
 		/* 10h */	bool field_10;
-		/* 14h */	intrusive_ptr<UI::cSPUILayeredObject> mpLayeredObject;
-		/* 18h */	vector<int> field_18;
-		/* 2Ch */	int field_2C;
-		/* 30h */	int field_30;
-		/* 34h */	int field_34;
-		/* 38h */	int field_38;
+		/* 14h */	cSPUILayeredObjectPtr mpLayeredObject;
+		/* 18h */	vector<ModelPtr> field_18;
+		/* 2Ch */	AnimatedCreaturePtr field_2C;
+		/* 30h */	ObjectPtr field_30;
+		/* 34h */	ObjectPtr field_34;
+		/* 38h */	ObjectPtr field_38;
 		/* 3Ch */	int field_3C;
 		/* 40h */	int field_40;
 		/* 44h */	int field_44;
 		/* 48h */	int field_48;
 		/* 4Ch */	ResourceKey mFileName;
 		/* 58h */	int field_58;  // not initialized
-		/* 5Ch */	intrusive_ptr<IWindow> mpWindow;
-		/* 60h */	intrusive_ptr<IWindow> field_60;
+		/* 5Ch */	IWindowPtr mpWindow;
+		/* 60h */	IWindowPtr field_60;
 		/* 64h */	float mZoom;  // 1
 		/* 68h */	float mRotation;  // 0
 		/* 6Ch */	float field_6C;  // 0
@@ -107,21 +113,21 @@ namespace Palettes
 		/* E0h */	int field_E0;  // -1
 		/* E4h */	const char16_t* field_E4;  // "ui_material_blink"
 		/* E8h */	bool field_E8;  // true
-		/* E9h */	bool field_E9;  // true
-		/* EAh */	bool field_EA;
+		/* E9h */	bool field_E9;
+		/* EAh */	bool field_EA;  // true
 		/* EBh */	bool field_EB;
 		/* ECh */	bool field_EC;
-		/* F0h */	int field_F0;
+		/* F0h */	AnimatedCreaturePtr mpCreature;
 		/* F4h */	int field_F4;  // 2
-		/* F8h */	int field_F80;
+		/* F8h */	int field_F8;
 		/* FCh */	bool field_FC;  // true
 		/* FDh */	bool field_FD;
 		/* 100h */	uint32_t field_100;  // 0x71FA7D3F ('drag')
-		/* 104h */	vector<int> field_104;
-		/* 118h */	intrusive_ptr<Graphics::Model> mpModel;
-		/* 11Ch */	vector<intrusive_ptr<Graphics::Model>> field_11C;
+		/* 104h */	vector<ModelPtr> field_104;
+		/* 118h */	ModelPtr mpModel;
+		/* 11Ch */	vector<ModelPtr> field_11C;
 		/* 130h */	vector<Transform> field_130;
-		/* 144h */	int field_144;
+		/* 144h */	ObjectPtr field_144;
 		/* 148h */	vector<int> field_148;
 		/* 15Ch */	float field_15C;
 		/* 160h */	bool mbViewerInitialized;
@@ -130,13 +136,13 @@ namespace Palettes
 		/// If this viewer is for a creation, whether the creation is already baked or not.
 		/* 163h */	bool mbCreationIsBaked;
 		/* 164h */	bool field_164;
-		/* 165h */	bool field_165;
-		/* 166h */	bool field_166;
+		/* 165h */	bool field_165;  // true
+		/* 166h */	bool field_166;  // true
 		/* 167h */	bool field_167; 
 		/* 168h */	bool field_168;  // not initialized
 		/* 169h */	bool field_169;
-		/* 16Ah */	bool field_16A;  // mbRotationEnabled ?
-		/* 16Bh */	bool field_16B;
+		/* 16Ah */	bool field_16A;  // true  // mbRotationEnabled ?
+		/* 16Bh */	bool mShowTooltip;  // true
 		/// If true, no background image will be set in the preview.
 		/* 16Ch */	bool mbOmitBackground;
 		/* 170h */	int field_170;  // not initialized
@@ -153,5 +159,10 @@ namespace Palettes
 	namespace Addresses(ItemViewer)
 	{
 		DeclareAddress(InitializeViewerCamera);
+
+		DeclareAddress(UnkUnload1);
+		DeclareAddress(UnkUnload2);
+
+		DeclareAddress(Unload);
 	}
 }

@@ -27,6 +27,7 @@
 #include <Spore\Palettes\PalettePageUI.h>
 #include <Spore\Palettes\ItemViewer.h>
 #include <Spore\Palettes\AdvancedItemViewer.h>
+#include <Spore\Palettes\SwatchManager.h>
 
 namespace Palettes
 {
@@ -479,7 +480,180 @@ namespace Palettes
 	}
 
 
+
+	auto_STATIC_METHOD_(cSwatchManager, cSwatchManager*, Get);
+	auto_METHOD_VOID(cSwatchManager, SetUnloadTime, Args(ItemViewer* pViewer, float time), Args(pViewer, time));
+	auto_METHOD(cSwatchManager, ItemViewer*, AddViewer, Args(ItemViewer* pViewer), Args(pViewer));
+
+
+
+	int AdvancedItemViewer::AddRef() {
+		return DefaultRefCounted::AddRef();
+	}
+	int AdvancedItemViewer::Release() {
+		return DefaultRefCounted::Release();
+	}
+	void* AdvancedItemViewer::Cast(uint32_t type) const {
+		CLASS_CAST(IWinProc);
+		CLASS_CAST(Object);
+		CLASS_CAST(ItemViewer);
+		CLASS_CAST(AdvancedItemViewer);
+		return nullptr;
+	}
+
+
 	auto_METHOD_VOID(AdvancedItemViewer, SetAutoRotate, Args(bool arg), Args(arg));
 	auto_METHOD_VOID(AdvancedItemViewer, SetZoom, Args(float zoom), Args(zoom));
+
+	void AdvancedItemViewer::func2Ch(bool value) {
+		field_166 = value;
+	}
+	bool AdvancedItemViewer::func30h() const {
+		return field_166;
+	}
+	IWindow* AdvancedItemViewer::GetWindow() const {
+		return mpWindow.get();
+	}
+	void AdvancedItemViewer::Set3dPreview(bool value) {
+		field_EA = value;
+	}
+	Anim::AnimatedCreature* AdvancedItemViewer::GetAnimatedCreature() const {
+		return mpCreature.get();
+	}
+	void AdvancedItemViewer::func7Ch() {}
+
+	int AdvancedItemViewer::GetEventFlags() const {
+		return UTFWin::kEventFlagAdvanced | UTFWin::kEventFlagBasicInput | UTFWin::kEventRefresh;
+	}
+
+	auto_METHOD_VIRTUAL_VOID_(ItemViewer, ItemViewer, Unload);
+
+	auto_METHOD_VIRTUAL_VOID_(AdvancedItemViewer, AdvancedItemViewer, Unload);
+	auto_METHOD_VIRTUAL_VOID(AdvancedItemViewer, AdvancedItemViewer, Update, Args(int time), Args(time));
+	auto_METHOD_VIRTUAL_VOID(AdvancedItemViewer, AdvancedItemViewer, Load, Args(const ResourceKey& fileName), Args(fileName));
+	auto_METHOD_VIRTUAL_VOID(AdvancedItemViewer, AdvancedItemViewer, SetName, Args(const ResourceKey& fileName), Args(fileName));
+	auto_METHOD_VIRTUAL_VOID_(AdvancedItemViewer, AdvancedItemViewer, func40h);
+	auto_METHOD_VIRTUAL_(AdvancedItemViewer, AdvancedItemViewer, bool, func44h);
+	auto_METHOD_VIRTUAL_VOID_(AdvancedItemViewer, AdvancedItemViewer, func48h);
+	auto_METHOD_VIRTUAL_VOID_(AdvancedItemViewer, AdvancedItemViewer, func4Ch);
+	auto_METHOD_VIRTUAL_VOID_(AdvancedItemViewer, AdvancedItemViewer, func50h);
+	auto_METHOD_VIRTUAL_VOID(AdvancedItemViewer, AdvancedItemViewer, func54h, Args(int arg_0), Args(arg_0));
+	auto_METHOD_VIRTUAL_(AdvancedItemViewer, AdvancedItemViewer, float, func58h);
+	auto_METHOD_VIRTUAL_(AdvancedItemViewer, AdvancedItemViewer, bool, IsOutside);
+	auto_METHOD_VIRTUAL_VOID_(AdvancedItemViewer, AdvancedItemViewer, OnOutside);
+	auto_METHOD_VIRTUAL_VOID_(AdvancedItemViewer, AdvancedItemViewer, func64h);
+	auto_METHOD_VIRTUAL_VOID_(AdvancedItemViewer, AdvancedItemViewer, RotateModel);
+	auto_METHOD_VIRTUAL_(AdvancedItemViewer, AdvancedItemViewer, bool, func6Ch);
+	auto_METHOD_VIRTUAL_VOID_(AdvancedItemViewer, AdvancedItemViewer, func70h);
+	auto_METHOD_VIRTUAL_(AdvancedItemViewer, AdvancedItemViewer, int, func74h);
+	auto_METHOD_VIRTUAL_VOID(AdvancedItemViewer, AdvancedItemViewer, func78h, Args(int arg_0), Args(arg_0));
+	
+	auto_METHOD_VIRTUAL(AdvancedItemViewer, UTFWin::IWinProc, bool, HandleUIMessage, Args(IWindow* pWindow, const UTFWin::Message& message), Args(pWindow, message));
+	auto_METHOD_VIRTUAL(AdvancedItemViewer, App::IUnmanagedMessageListener, bool, HandleMessage, Args(uint32_t messageID, void* pMessage), Args(messageID, pMessage));
+
+
+	auto_METHOD_VOID(AdvancedItemViewer, Initialize, 
+		Args(const ResourceKey& nameKey, IWindow* pWindow, IWindow* pParentWindow,
+			uint32_t messageID, PaletteItem* pItem, PaletteInfo* pPaletteInfo, bool arg),
+		Args(nameKey, pWindow, pParentWindow, messageID, pItem, pPaletteInfo, arg));
+
+	ItemViewer::~ItemViewer()
+	{
+		if (mpWindow) {
+			Unload();
+		}
+
+		void* unk = (void*)(int(this) + 0x10);
+		if (field_34) {
+			CALL(GetAddress(ItemViewer, UnkUnload1), void, Args(void*), Args(unk));
+		}
+		if (field_3C) {
+			CALL(GetAddress(ItemViewer, UnkUnload2), void, Args(int), Args(field_3C));
+		}
+	}
+
+	ItemViewer::ItemViewer()
+		: field_10()
+		, mpLayeredObject()
+		, field_18()
+		, field_2C()
+		, field_30()
+		, field_34()
+		, field_38()
+		, field_3C()
+		, field_40()
+		, field_44()
+		, field_48()
+		, mFileName()
+		, mpWindow()
+		, field_60()
+		, mZoom(1.0f)
+		, mRotation(0.0f)
+		, field_6C(0.0f)
+		, mFinalZoom(1.0f)
+		, field_94(1.0f)
+		, field_98(Matrix3().SetIdentity())
+		, field_BC()
+		, field_C0()
+		, field_C4()
+		, field_C8(-1)
+		, field_CC(-1)
+		, field_D0(u"ui_material_blink")
+		, field_D4(u"ui_material_blink")
+		, field_D8()
+		, field_DC()
+		, field_E0(-1)
+		, field_E4(u"ui_material_blink")
+		, field_E8(true)
+		, field_E9()
+		, field_EA(true)
+		, field_EB()
+		, field_EC()
+		, mpCreature()
+		, field_F4(2)
+		, field_F8()
+		, field_FC(true)
+		, field_FD()
+		, field_100(0x71FA7D3F)
+		, field_104()
+		, mpModel()
+		, field_11C()
+		, field_130()
+		, field_144()
+		, field_148()
+		, field_15C()
+		, mbViewerInitialized()
+		, field_161()
+		, field_162()
+		, mbCreationIsBaked()
+		, field_164()
+		, field_165(true)
+		, field_166(true)
+		, field_167()
+		, field_169()
+		, field_16A(true)
+		, mShowTooltip(true)
+		, mbOmitBackground()
+		, field_170()
+		, mThumbnailCameraID()
+		, field_178()
+	{
+	}
+
+	AdvancedItemViewer::AdvancedItemViewer()
+		: field_17C()
+		, mpItem()
+		, field_184()
+		, field_188(1.0f)
+		, field_18C()
+		, field_190()
+		, field_194()
+		, field_198(true)
+		, field_19A()
+		, field_1A0()
+		, field_1B8()
+		, field_1BC()
+	{
+	}
 }
 #endif

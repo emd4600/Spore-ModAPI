@@ -12,6 +12,7 @@
 #include <Spore\Palettes\PalettePageUI.h>
 #include <Spore\Palettes\PaletteUI.h>
 #include <Spore\Palettes\StandardItemUI.h>
+#include <Spore\Palettes\SwatchManager.h>
 
 namespace Palettes
 {
@@ -36,9 +37,11 @@ namespace Palettes
 		DefineAddress(HandleUIMessage, SelectAddress(0x5A58B0, 0x5A5B60, 0x5A5B60));
 	}
 
-	namespace Addresses(ItemViewer)
+	namespace Addresses(cSwatchManager)
 	{
-		DefineAddress(InitializeViewerCamera, SelectAddress(0x5F3B50, , 0x5F3D80));
+		DefineAddress(Get, SelectAddress(0x401020, , 0x401020));
+		DefineAddress(SetUnloadTime, SelectAddress(0x5F0B00, , 0x5F0CE0));
+		DefineAddress(AddViewer, SelectAddress(0x5F0B40, , 0x5F0D20));
 	}
 
 	namespace Addresses(PaletteCategory)
@@ -105,10 +108,45 @@ namespace Palettes
 		DefineAddress(HandleUIMessage, SelectAddress(0x5C73F0, 0x5C7320, 0x5C7350));
 	}
 
+	namespace Addresses(ItemViewer)
+	{
+		DefineAddress(InitializeViewerCamera, SelectAddress(0x5F3B50, , 0x5F3D80));
+
+		DefineAddress(UnkUnload1, SelectAddress(0x5F65C0, , 0x5F6860));
+		DefineAddress(UnkUnload2, SelectAddress(0x80E5E0, , 0x80E020));
+
+		DefineAddress(Unload, SelectAddress(0x5F6690, , 0x5F6930));
+	}
+
 	namespace Addresses(AdvancedItemViewer)
 	{
 		DefineAddress(SetAutoRotate, SelectAddress(0x5F4800, , 0x5F4A30));
 		DefineAddress(SetZoom, SelectAddress(0x5F2190, , 0x5F2370));
+
+		DefineAddress(HandleUIMessage, SelectAddress(0x5F2630, , 0x5F2840));
+		DefineAddress(Unload, SelectAddress(0x5F68D0, , 0x5F6B70));
+		DefineAddress(Update, SelectAddress(0x5F7290, , 0x5F7520));
+		DefineAddress(Load, SelectAddress(0x5F5D10, , 0x5F5FB0));
+		DefineAddress(SetName, SelectAddress(0x5F3EE0, , 0x5F4110));
+		DefineAddress(func40h, SelectAddress(0x5F4520, , 0x5F4750));
+		DefineAddress(func44h, SelectAddress(0x5F2ED0, , 0x5F30F0));
+		DefineAddress(func48h, SelectAddress(0x5F45B0, , 0x5F47E0));
+		DefineAddress(func4Ch, SelectAddress(0x5F2F20, , 0x5F3140));
+		DefineAddress(func50h, SelectAddress(0x5F4850, , 0x5F4A80));
+		DefineAddress(func54h, SelectAddress(0x5F3010, , 0x5F3230));
+		DefineAddress(func58h, SelectAddress(0x5F21B0, , 0x5F2390));
+		DefineAddress(IsOutside, SelectAddress(0x5F3190, , 0x5F33B0));
+		DefineAddress(OnOutside, SelectAddress(0x5F49E0, , 0x5F4C10));
+		DefineAddress(func64h, SelectAddress(0x5F4130, , 0x5F4360));
+		DefineAddress(RotateModel, SelectAddress(0x5F53D0, , 0x5F5670));
+		DefineAddress(func6Ch, SelectAddress(0x5F2C70, , 0x5F2E80));
+		DefineAddress(func70h, SelectAddress(0x5F2D20, , 0x5F2F30));
+		DefineAddress(func74h, SelectAddress(0x5F2FC0, , 0x5F31E0));
+		DefineAddress(func78h, SelectAddress(0x5F2060, , 0x5F2250));
+
+		DefineAddress(HandleMessage, SelectAddress(0x5F4550, , 0x5F4780));
+
+		DefineAddress(Initialize, SelectAddress(0x5F4170, , 0x5F43A0));
 	}
 }
 #endif
