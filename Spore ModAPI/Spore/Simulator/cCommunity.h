@@ -20,7 +20,7 @@
 
 #include <Spore\Simulator\cGameData.h>
 #include <Spore\Simulator\cGonzagoTimer.h>
-#include <Spore\Simulator\cNameableEntity.h>
+#include <Spore\Editors\INameableEntity.h>
 #include <EASTL\vector.h>
 #include <EASTL\string.h>
 
@@ -39,7 +39,7 @@ namespace Simulator
 	///
 	class cCommunity 
 		: public cGameData
-		, public cNameableEntity
+		, public Editors::INameableEntity
 	{
 	public:
 		// No TYPE

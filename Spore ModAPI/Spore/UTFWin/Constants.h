@@ -45,7 +45,7 @@ namespace UTFWin
 		/// A flag to listen to the message types kMsgRefresh, kMsgMouseEnter and kMsgMouseLeave.
 		kEventRefresh = 0x40,
 
-		/// A flag to listen to the rest of message tyoes, all the ones above 0x1C.
+		/// A flag to listen to the rest of message types, all the ones above 0x1C.
 		/// This does not include the kMsgWinProcAdded and kMsgWinProcRemoved, which are ALWAYS listened.
 		kEventFlagAdvanced = 0x80,
 
@@ -67,7 +67,7 @@ namespace UTFWin
 		kMsgKeyDown2 = 0x03,
 		/// Occurs when a key is released while the component has focus.
 		kMsgKeyUp2 = 0x04,
-		/// Occurs when a character. space or backspace key is pressed while the control has focus.
+		/// Occurs when a character, space or backspace key is pressed while the control has focus.
 		kMsgKeyPress = 0x05,
 
 		/// Occurs when the mouse pointer is over the component and a mouse button is pressed.

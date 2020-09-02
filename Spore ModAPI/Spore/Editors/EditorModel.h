@@ -22,7 +22,7 @@
 #include <Spore\ResourceKey.h>
 #include <Spore\MathUtils.h>
 #include <Spore\Editors\EditorRigblock.h>
-#include <Spore\Simulator\cNameableEntity.h>
+#include <Spore\Editors\INameableEntity.h>
 
 #include <EASTL\string.h>
 #include <EASTL\vector.h>
@@ -30,7 +30,7 @@
 namespace Editors 
 {
 	class EditorModel
-		: public Simulator::cNameableEntity
+		: public INameableEntity
 		, public IVirtual
 	{
 	public:

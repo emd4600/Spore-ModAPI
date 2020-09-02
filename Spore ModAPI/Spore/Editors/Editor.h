@@ -35,6 +35,7 @@
 #include <Spore\Editors\EditorPlayMode.h>
 #include <Spore\Editors\EditorRequest.h>
 #include <Spore\Editors\EditorLimits.h>
+#include <Spore\Editors\INameableEntity.h>
 
 #include <Spore\Graphics\ModelAsset.h>
 #include <Spore\Graphics\IRenderable.h>
@@ -43,6 +44,8 @@
 #include <Spore\Graphics\ShaderData.h>
 
 #include <Spore\Swarm\IEffectWorld.h>
+
+#include <Spore\UI\HintManager.h>
 
 #include <Spore\UTFWin\UILayout.h>
 
@@ -94,6 +97,11 @@ namespace Editors
 	class cEditor 
 		: public App::IGameMode
 		, public Graphics::IRenderable
+		, public UI::IHintConditioner
+		, public INameableEntity
+		, public App::IMessageListener
+		, public DefaultRefCounted
+		//TODO one vftable more
 	{
 	public:
 
@@ -113,7 +121,7 @@ namespace Editors
 
 	public:
 
-		char _padding_8[0x18];
+		int vftable_1C;
 
 		/// The App::IGameModeManager that holds this editor.
 		/* 20h */	IGameModeManagerPtr	mpGameModeMgr;

@@ -7,6 +7,12 @@
 
 namespace UI
 {
+	class IHintConditioner
+	{
+	public:
+		virtual bool Evaluate(uint32_t conditionID) = 0;
+	};
+
 	class cHintManager
 	{
 	public:
