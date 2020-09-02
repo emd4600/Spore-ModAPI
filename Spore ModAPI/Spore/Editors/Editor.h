@@ -46,6 +46,7 @@
 #include <Spore\Swarm\IEffectWorld.h>
 
 #include <Spore\UI\HintManager.h>
+#include <Spore\UI\EditorNamePanel.h>
 
 #include <Spore\UTFWin\UILayout.h>
 
@@ -369,7 +370,7 @@ namespace Editors
 		/* 34Ch */	int mnDefaultBrainLevel;
 		/* 350h	*/	int field_350;	/* 350h -> UI? */
 		/* 354h	*/	int field_354;
-		/* 358h	*/	int field_358;
+		/* 358h	*/	EditorNamePanelPtr mpEditorNamePanel;
 		/* 35Ch	*/	int field_35C;
 		/* 360h	*/	int field_360;  // contains a renderable at 38h: the anim world
 		/* 364h	*/	int field_364;
