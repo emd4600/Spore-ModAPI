@@ -87,6 +87,9 @@ namespace Simulator
 	void StarRequestFilter::AddTechLevel(TechLevel level) {
 		techLevels |= 1 << int(level);
 	}
+
+	auto_METHOD(cStarManager, cStarRecord*, FindClosestStar, 
+		Args(const Vector3& coords, const StarRequestFilter& filter), Args(coords, filter));
 }
 
 auto_STATIC_METHOD_VOID(Simulator, SpaceTeleportTo, Args(cStarRecord* star), Args(star));
