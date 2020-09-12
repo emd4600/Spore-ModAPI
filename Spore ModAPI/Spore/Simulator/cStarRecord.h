@@ -67,6 +67,9 @@ namespace Simulator
 	public:
 		static const uint32_t TYPE = 0x3E4353B;
 
+		using Object::AddRef;
+		using Object::Release;
+
 		//TODO uint32_t getEmpireID PLACEHOLDER
 
 		StarType GetType() const;
