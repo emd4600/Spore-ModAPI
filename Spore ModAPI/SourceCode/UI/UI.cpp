@@ -50,5 +50,7 @@ namespace UI
 	auto_METHOD_VOID(EditorNamePanel, Initialize,
 		Args(Editors::INameableEntity* pEntity, UTFWin::IWindow* pContainer, uint32_t layoutID, bool arg, uint32_t randomNameType),
 		Args(pEntity, pContainer, layoutID, arg, randomNameType));
+
+	auto_METHOD_VOID_(EditorNamePanel, Dispose);
 }
 #endif

@@ -22,6 +22,7 @@ namespace UI
 
 		void Initialize(Editors::INameableEntity* pEntity, UTFWin::IWindow* pContainer, uint32_t layoutID,
 			bool, uint32_t randomNameType);
+		void Dispose();
 
 		virtual void SetExtended(bool extended);
 
@@ -49,6 +50,7 @@ namespace UI
 	namespace Addresses(EditorNamePanel)
 	{
 		DeclareAddress(Initialize);
+		DeclareAddress(Dispose);
 		DeclareAddress(HandleUIMessage);
 		DeclareAddress(SetExtended);
 		DeclareAddress(HandleMessage);
