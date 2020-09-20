@@ -21,7 +21,7 @@
 
 #include <Spore\App\cViewer.h>
 
-#define IRenderablePtr intrusive_ptr<Graphics::IRenderable>
+#define IRenderablePtr eastl::intrusive_ptr<Graphics::IRenderable>
 
 namespace Graphics
 {

@@ -20,6 +20,7 @@
 
 #include <Spore\Graphics\IRenderManager.h>
 #include <Spore\Graphics\LambdaRenderable.h>
+#include <Spore\Graphics\SequenceRenderable.h>
 #include <Spore\Graphics\Renderer.h>
 #include <Spore\Graphics\GlobalState.h>
 
@@ -42,7 +43,10 @@ namespace Graphics
 	int LambdaRenderable::Release()
 	{
 		--mnRefCount;
-		if (mnRefCount == 0) delete this;
+		if (mnRefCount == 0) {
+			delete this;
+			return 0;
+		}
 		return mnRefCount;
 	}
 
@@ -50,6 +54,50 @@ namespace Graphics
 	{
 		mFunction(arg_0, arg_4, arg_8, arg_C);
 	}
+
+
+
+	SequenceRenderable::SequenceRenderable()
+		: mnRefCount(0)
+		, mEntries()
+	{}
+
+	int SequenceRenderable::AddRef()
+	{
+		++mnRefCount;
+		return mnRefCount;
+	}
+
+	int SequenceRenderable::Release()
+	{
+		--mnRefCount;
+		if (mnRefCount == 0) {
+			delete this;
+			return 0;
+		}
+		return mnRefCount;
+	}
+
+	void SequenceRenderable::Add(IRenderable* renderable, int layer, int flags) 
+	{
+		auto it = mEntries.begin();
+		while (it != mEntries.end() && layer > it->layer) ++it;
+
+		if (it == mEntries.end()) {
+			mEntries.push_back({ renderable, layer, flags });
+		}
+		else {
+			mEntries.insert(it, { renderable, layer, flags });
+		}
+	}
+
+	void SequenceRenderable::Render(int, int, App::cViewer** arg_8, void* arg_C)
+	{
+		for (auto& entry : mEntries) {
+			entry.pRenderable->Render(entry.flags, entry.layer, arg_8, arg_C);
+		}
+	}
+
 
 
 	auto_STATIC_METHOD_VOID(Renderer, SetShaderData, 
