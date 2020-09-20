@@ -72,7 +72,7 @@ namespace Editors
 		/* 8Ch */	int field_8C[3];
 		/* 98h */	int field_98[3];  // 1234
 		/* A4h */	ColorRGB mColors[3];
-		/* C8h */	vector<int> field_C8;  // size 18h
+		/* C8h */	vector<BoundingBox> field_C8;  // size 18h
 		/* ECh */	int field_EC;  // not initialized
 	};
 

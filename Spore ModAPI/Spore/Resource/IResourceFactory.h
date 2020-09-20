@@ -50,7 +50,7 @@ namespace Resource
 		/// @param[out] pDst A pointer where the ResourceObject created must be written.
 		/// @param typeID The type ID of the file to read, which might be used to differentiate between different file formats or resource types.
 		///
-		/* 1Ch */	virtual bool CreateResource(IPFRecord* pRecord, ResourceObject*& pDst, int, uint32_t typeID) = 0;
+		/* 1Ch */	virtual bool CreateResource(IPFRecord* pRecord, ResourceObjectPtr& pDst, int, uint32_t typeID) = 0;
 		/* 20h */	virtual bool AsyncAccess(IPFRecord** ppDst, int, DBPF* pDBPF, int, int, int) = 0;  // ? renamed this to avoid name collisions in cPropManager...
 
 		///

@@ -207,7 +207,7 @@ namespace Resource
 	auto_METHOD_VIRTUAL_(DatabasePackedFile, DatabasePackedFile, bool, Write);
 	auto_METHOD_VIRTUAL_const_(DatabasePackedFile, DatabasePackedFile, char16_t*, GetPath);
 	auto_METHOD_VIRTUAL(DatabasePackedFile, DatabasePackedFile, bool, SetPath, Args(const char16_t* path), Args(path));
-	auto_METHOD_VIRTUAL(DatabasePackedFile, DatabasePackedFile, size_t, GetFiles, Args(PFIndexModifiable::KeysVector& dstVector, IResourceFilter* filter), Args(dstVector, filter));
+	auto_METHOD_VIRTUAL(DatabasePackedFile, DatabasePackedFile, size_t, GetFiles, Args(vector<ResourceKey>& dstVector, IResourceFilter* filter), Args(dstVector, filter));
 	auto_METHOD_VIRTUAL(DatabasePackedFile, DatabasePackedFile, bool, GetFile, Args(const ResourceKey& name, IPFRecord** pDst, int nDesiredAccess, int nCreateDisposition, bool arg_10, DBPFItem* pDstInfo), Args(name, pDst, nDesiredAccess, nCreateDisposition, arg_10, pDstInfo));
 	auto_METHOD_VIRTUAL(DatabasePackedFile, DatabasePackedFile, int, func38h, Args(int arg_0), Args(arg_0));
 	auto_METHOD_VIRTUAL(DatabasePackedFile, DatabasePackedFile, bool, func3Ch, Args(IPFRecord* pRecord), Args(pRecord));
@@ -459,8 +459,8 @@ namespace Resource
 	auto_METHOD_(PFIndexModifiable, bool, Reset);
 	auto_METHOD_(PFIndexModifiable, size_t, GetTotalDiskSize);
 	auto_METHOD_(PFIndexModifiable, size_t, GetDataEnd);
-	auto_METHOD(PFIndexModifiable, size_t, GetFiles, Args(KeysVector& dstVector, IResourceFilter* filter), Args(dstVector, filter));
-	auto_METHOD(PFIndexModifiable, size_t, GetAllFiles, Args(KeysVector& dstVector), Args(dstVector));
+	auto_METHOD(PFIndexModifiable, size_t, GetFiles, Args(vector<ResourceKey>& dstVector, IResourceFilter* filter), Args(dstVector, filter));
+	auto_METHOD(PFIndexModifiable, size_t, GetAllFiles, Args(vector<ResourceKey>& dstVector), Args(dstVector));
 	auto_METHOD(PFIndexModifiable, bool, func24h, Args(int arg_0, size_t fileDataBegin, size_t fileDataEnd), Args(arg_0, fileDataBegin, fileDataEnd));
 
 	auto_METHOD(PFIndexModifiable, DBPFItem*, GetFileInfo, Args(const ResourceKey& fileName), Args(fileName));

@@ -47,7 +47,7 @@ namespace App
 		virtual ~IClassManager();
 
 		/* 04h */	virtual bool AddFactory(ISPClassFactory* pFactory, int=0) = 0;
-		/* 08h */	virtual bool func08h(int) = 0;
+		/* 08h */	virtual bool RemoveFactory(ISPClassFactory* pFactory) = 0;
 		/* 0Ch */	virtual int func0Ch(int) = 0;
 		/* 10h */	virtual int func10h(int, int) = 0;
 		/* 14h */	virtual ISPClassFactory* GetFactory(uint32_t type) = 0;

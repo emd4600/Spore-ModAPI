@@ -48,7 +48,7 @@ namespace App
 		virtual bool HandleMessage(uint32_t messageID, void* pMessage) override;
 
 		virtual uint32_t GetType() override;
-		virtual bool CreateResource(IPFRecord* pRecord, ResourceObject*& pDst, int, uint32_t nTypeID) override;
+		virtual bool CreateResource(IPFRecord* pRecord, ResourceObjectPtr& pDst, int, uint32_t nTypeID) override;
 		virtual bool AsyncAccess(IPFRecord** ppDst, int, DBPF* pDBPF, int, int, int) override;
 		virtual bool Read(IPFRecord* pRecord, ResourceObject* pResource, int, uint32_t nTypeID) override;
 		virtual bool Write(ResourceObject* pResource, IPFRecord* pRecord, int, uint32_t nTypeID) override;

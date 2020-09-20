@@ -21,7 +21,8 @@
 
 #include <Spore\Object.h>
 
-#define ResourceObjectPtr intrusive_ptr<Resource::ResourceObject>
+#define ResourceObjectPtr eastl::intrusive_ptr<Resource::ResourceObject>
+#define AsyncResourcePtr eastl::intrusive_ptr<Resource::AsyncResource>
 
 namespace Resource
 {
@@ -38,8 +39,11 @@ namespace Resource
 		virtual void* Cast(uint32_t typeID) const override;
 		virtual int GetReferenceCount();
 
-		inline ResourceKey GetName() const {
+		inline ResourceKey GetResourceKey() const {
 			return mNameKey;
+		}
+		inline void SetResourceKey(const ResourceKey& key) {
+			mNameKey = key;
 		}
 
 		static const uint32_t TYPE = 0x2269ED1;
@@ -72,6 +76,16 @@ namespace Resource
 
 	protected:
 		/* 14h */	Manager*		mpManager;
+	};
+
+	class AsyncResource
+		: public Object
+	{
+	public:
+		static const uint32_t TYPE = 0x3A212AC;
+
+		/* 10h */	virtual bool IsReady() = 0;
+		/* 14h */	virtual bool GetResource(ResourceObjectPtr& dst) = 0;
 	};
 
 

@@ -170,7 +170,7 @@ namespace Editors
 		// you can get it with virtual function 40h
 		/* 98h */	EditorModel* mpEditorModel;	// something containing the parts ? -> sub_4ACB70 get aprt?
 
-		/* 9Ch */	int field_9C;
+		/* 9Ch */	int field_9C;  // another editor model?
 		/// The model to be used for the pedestal in the editor. It belongs to mpPedestalModelWorld.
 		/* A0h */	ModelPtr mpPedestalModel;
 		/// The model to be used for the test environment in the editor. It belongs mpPedestalModelWorld.
@@ -240,9 +240,7 @@ namespace Editors
 		/// Maps a creation format extension to its default editor. For example, 'crt' is mapped to 'CreatureEditorExtraLarge'.
 		/* 1B0h */	map<uint32_t, uint32_t> mDefaultEditors;
 		/* 1CCh */	intrusive_ptr<EditorRequest> mEditorRequest;	// in 35h there is bool editorAllowNameEdit;
-		/* 1D0h */	int field_1D0;
-		/* 1D4h */	int field_1D4;
-		/* 1D8h */	int field_1D8;
+		/* 1D0h */	ResourceKey mParentAssetKey;
 		/* 1DCh */	string16 field_1DC;
 		/* 1ECh */	int field_1EC;
 		/* 1F0h	*/	int field_1F0;
@@ -360,7 +358,7 @@ namespace Editors
 		/* 30Ch */	int field_30C;
 		/// Whether to save the parent key to newly saved assets
 		/* 310h */	bool mbPreserveLineage;  // true
-		/* 314h */	float field_314;  // 0.5
+		/* 314h */	float field_314;  // 0.5  //PLACEHOLDER wrong, this is TexturePtr mpThumbnail, 28Ch too
 		/* 318h */	uint32_t field_318;	// property 0x9036D280.instanceID
 		/* 31Ch */	Mode mMode;
 		/* 320h */	vector<uint32_t> mEnabledManipulators;

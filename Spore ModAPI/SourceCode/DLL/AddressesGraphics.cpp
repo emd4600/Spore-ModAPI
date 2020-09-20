@@ -2,7 +2,7 @@
 #include "stdafx.h"
 #include <Spore\Graphics\cMaterialManager.h>
 #include <Spore\Graphics\CompiledShader.h>
-#include <Spore\Graphics\IGraphicsManager.h>
+#include <Spore\Graphics\IThumbnailManager.h>
 #include <Spore\Graphics\ILightingManager.h>
 #include <Spore\Graphics\IMaterialManager.h>
 #include <Spore\Graphics\IModelManager.h>
@@ -34,6 +34,10 @@ namespace Graphics
 
 		DefineAddress(VertexShaders_ptr, SelectAddress(0x162CE90, , 0x1628C20));
 		DefineAddress(PixelShaders_ptr, SelectAddress(0x161DA88, , 0x16198A0));
+	}
+
+	namespace Addresses(IThumbnailManager) {
+		DefineAddress(Get, SelectAddress(0x67DED0, , 0x67DD70));
 	}
 
 	namespace Addresses(IGraphicsManager) {

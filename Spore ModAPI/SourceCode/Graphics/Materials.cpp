@@ -159,7 +159,7 @@ namespace Graphics
 		using namespace Resource;
 		using namespace RenderWare;
 
-		ResourceObject* pRenderWare;
+		ResourceObjectPtr pRenderWare;
 		auto rwKey = ResourceKey(instanceID, RenderWareFile::TYPE, IMaterialManager::kCompiledStatesGroupID);
 		if (!ResourceManager.GetResource(rwKey, &pRenderWare)) return false;
 

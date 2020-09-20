@@ -55,7 +55,7 @@ namespace App
 	auto_METHOD_VIRTUAL(cPropManager, IMessageListener, bool, HandleMessage, Args(uint32_t messageID, void* pMessage), Args(messageID, pMessage));
 
 	auto_METHOD_VIRTUAL_(cPropManager, IResourceFactory, uint32_t, GetType);
-	auto_METHOD_VIRTUAL(cPropManager, IResourceFactory, bool, CreateResource, Args(IPFRecord* pRecord, ResourceObject*& pDst, int arg_8, uint32_t nTypeID), Args(pRecord, pDst, arg_8, nTypeID));
+	auto_METHOD_VIRTUAL(cPropManager, IResourceFactory, bool, CreateResource, Args(IPFRecord* pRecord, ResourceObjectPtr& pDst, int arg_8, uint32_t nTypeID), Args(pRecord, pDst, arg_8, nTypeID));
 	auto_METHOD_VIRTUAL(cPropManager, IResourceFactory, bool, AsyncAccess, Args(IPFRecord** arg_0, int arg_4, DBPF* arg_8, int arg_c, int arg_10, int arg_14), Args(arg_0, arg_4, arg_8, arg_c, arg_10, arg_14));
 	auto_METHOD_VIRTUAL(cPropManager, IResourceFactory, bool, Read, Args(IPFRecord* pRecord, ResourceObject* pResource, int arg_8, uint32_t nTypeID), Args(pRecord, pResource, arg_8, nTypeID));
 	auto_METHOD_VIRTUAL(cPropManager, IResourceFactory, bool, Write, Args(ResourceObject* pResource, IPFRecord* pRecord, int arg_8, uint32_t nTypeID), Args(pResource, pRecord, arg_8, nTypeID));

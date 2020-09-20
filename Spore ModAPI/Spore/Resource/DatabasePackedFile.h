@@ -82,7 +82,7 @@ namespace Resource
 		/* 24h */	virtual bool Write();
 		/* 28h */	virtual char16_t* GetPath() const;
 		/* 2Ch */	virtual bool SetPath(const char16_t* path);
-		/* 30h */	virtual size_t GetFiles(PFIndexModifiable::KeysVector& dstVector, IResourceFilter* filter=nullptr);
+		/* 30h */	virtual size_t GetFiles(vector<ResourceKey>& dstVector, IResourceFilter* filter=nullptr);
 		/* 34h */	virtual bool GetFile(
 			const ResourceKey& name,
 			IPFRecord** ppDst,

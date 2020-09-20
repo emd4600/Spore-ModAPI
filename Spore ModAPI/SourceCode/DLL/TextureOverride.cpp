@@ -89,7 +89,7 @@ bool ApplyOverride(Graphics::ModelAsset* asset, ModelMeshPtr& mesh, int lod) {
 	if (!mesh) {
 		if (hasPropOverride) {
 			App::ConsolePrintF("0x%x!0x%x.prop error: tried to apply texture override to inexistent LOD%i",
-				propList->GetName().groupID, propList->GetName().instanceID, lod);
+				propList->GetResourceKey().groupID, propList->GetResourceKey().instanceID, lod);
 			return false;
 		}
 		return true;
@@ -99,10 +99,10 @@ bool ApplyOverride(Graphics::ModelAsset* asset, ModelMeshPtr& mesh, int lod) {
 		propertyKeysID = kOverrideKeysPropertyIDs[1];
 		hasPropOverride = propList->HasProperty(propertyID) && propList->HasProperty(propertyKeysID);
 	}
-	if (!mesh->mpRenderWare || mesh->mpRenderWare->GetName().typeID != TypeIDs::rw4) {
+	if (!mesh->mpRenderWare || mesh->mpRenderWare->GetResourceKey().typeID != TypeIDs::rw4) {
 		if (hasPropOverride) {
 			App::ConsolePrintF("0x%x!0x%x.prop error: tried to apply texture override to LOD%i, which does not use RW4",
-				propList->GetName().groupID, propList->GetName().instanceID, lod);
+				propList->GetResourceKey().groupID, propList->GetResourceKey().instanceID, lod);
 			return false;
 		}
 		return true;
@@ -110,7 +110,7 @@ bool ApplyOverride(Graphics::ModelAsset* asset, ModelMeshPtr& mesh, int lod) {
 	if (UsesOverride(mesh->mpRenderWare.get())) {
 		if (!hasPropOverride) {
 			App::ConsolePrintF("0x%x!0x%x.prop error: LOD%i override not specified, but model requires it",
-				propList->GetName().groupID, propList->GetName().instanceID, lod);
+				propList->GetResourceKey().groupID, propList->GetResourceKey().instanceID, lod);
 			return false;
 		}
 
@@ -124,7 +124,7 @@ bool ApplyOverride(Graphics::ModelAsset* asset, ModelMeshPtr& mesh, int lod) {
 
 		if (overrideCount != overrideCount2) {
 			App::ConsolePrintF("0x%x!0x%x.prop error: texture override incorrectly defined for LOD%i",
-				propList->GetName().groupID, propList->GetName().instanceID, lod);
+				propList->GetResourceKey().groupID, propList->GetResourceKey().instanceID, lod);
 			return false;
 		}
 
@@ -160,14 +160,14 @@ bool ApplyOverride(Graphics::ModelAsset* asset, ModelMeshPtr& mesh, int lod) {
 						auto it = overrides.find(string(name));
 						if (it == overrides.end()) {
 							App::ConsolePrintF("0x%x!0x%x.prop LOD%i error: no override found for texture slot \"%s\"",
-								propList->GetName().groupID, propList->GetName().instanceID, lod, name);
+								propList->GetResourceKey().groupID, propList->GetResourceKey().instanceID, lod, name);
 							return false;
 						}
 
 						auto texture = TextureManager.GetTexture(it->second, 2);
 						if (!texture) {
 							App::ConsolePrintF("0x%x!0x%x.prop LOD%i error: texture 0x%x!0x%x does not exist",
-								propList->GetName().groupID, propList->GetName().instanceID, lod, it->second.groupID, it->second.instanceID);
+								propList->GetResourceKey().groupID, propList->GetResourceKey().instanceID, lod, it->second.groupID, it->second.instanceID);
 							return false;
 						}
 

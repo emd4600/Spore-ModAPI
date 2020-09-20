@@ -94,7 +94,7 @@ namespace Resource
 		///
 		/* 0Ch */	virtual bool GetResource(
 			const ResourceKey& name,
-			ResourceObject** ppDst = nullptr,
+			ResourceObjectPtr* ppDst = nullptr,
 			int arg_8 = 0,
 			DBPF* pDBPF = nullptr,
 			IResourceFactory* pFactory = nullptr,
@@ -104,10 +104,10 @@ namespace Resource
 		/// Similar usage to ResourceManager::GetResource . This method allows to get more info,
 		/// but it is unknown what that info is.
 		///
-		/* 10h */	virtual bool func10h(
+		/* 10h */	virtual bool GetAsyncResource(
 			const ResourceKey& name,
-			ResourceObject** ppDst = nullptr,
-			void** arg_8 = nullptr,
+			ResourceObjectPtr* ppDst = nullptr,
+			AsyncResourcePtr* ppDstAsync = nullptr,
 			void* arg_C = nullptr,
 			void* arg_10 = nullptr,
 			DBPF* pDBPF = nullptr,
@@ -119,7 +119,7 @@ namespace Resource
 		/// nothing will happen.
 		/// @returns True if the file was present in the cache, false otherwise.
 		///
-		/* 14h */	virtual bool GetCachedResource(const ResourceKey& name, intrusive_ptr<ResourceObject>* pDst) = 0;
+		/* 14h */	virtual bool GetCachedResource(const ResourceKey& name, ResourceObjectPtr* pDst) = 0;
 
 		/* 18h */	virtual bool func18h(int arg_0, int arg_4, int arg_8, int arg_C, int arg_10) = 0;
 
@@ -130,7 +130,7 @@ namespace Resource
 		///
 		/* 1Ch */	virtual bool ReadResource(
 			const ResourceKey& name,
-			ResourceObject** ppDst = nullptr,
+			ResourceObjectPtr* ppDst = nullptr,
 			int arg_8 = 0,
 			DBPF* pDBPF = nullptr,
 			IResourceFactory* pFactory = nullptr,
@@ -199,12 +199,12 @@ namespace Resource
 		///
 		/// Adds or removes the given IResourceFactory to this manager. Resource factories are used to generate resource objects depending on
 		/// their type. The factory will be assigned to the types returned by IResourceFactory::GetSupportedTypes.
-		/// @param bRemove If true, pFactory will be removed from the manager; if false, it will be added to the manager.
+		/// @param add If true, pFactory will be added to the manager; if false, it will be removed from the manager.
 		/// @param pFactory The IResourceFactory to add to/remove from this manager.
 		/// @param arg_8 Unknown usage, usually 0.
 		/// @returns True if the factory was successfully added/removed, false otherwise.
 		///
-		/* 44h */	virtual bool SetResourceFactory(bool bRemove, IResourceFactory* pFactory, uint32_t arg_8) = 0;
+		/* 44h */	virtual bool SetResourceFactory(bool add, IResourceFactory* pFactory, uint32_t arg_8) = 0;
 
 		///
 		/// Returns the IResourceFactory that belongs to the specified \c typeID. 

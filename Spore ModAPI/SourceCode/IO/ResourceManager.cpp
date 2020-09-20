@@ -28,11 +28,11 @@ namespace Resource
 #ifndef MODAPI_DLL_EXPORT
 	auto_METHOD_VIRTUAL_(cResourceManager, cResourceManager, bool, NeedsToRelease);
 	auto_METHOD_VIRTUAL_(cResourceManager, cResourceManager, bool, ReleaseResources);
-	auto_METHOD_VIRTUAL(cResourceManager, cResourceManager, bool, GetResource, Args(const ResourceKey& name, ResourceObject** ppDst, int arg_8, DBPF* pDBPF, IResourceFactory* pFactory, const ResourceKey* pCacheName), Args(name, ppDst, arg_8, pDBPF, pFactory, pCacheName));
-	auto_METHOD_VIRTUAL(cResourceManager, cResourceManager, bool, func10h, Args(const ResourceKey& name, ResourceObject** ppDst, void** arg_8, void* arg_C, void* arg_10, DBPF* pDBPF, IResourceFactory* pFactory, const ResourceKey* pAlternativeName), Args(name, ppDst, arg_8, arg_C, arg_10, pDBPF, pFactory, pAlternativeName));
+	auto_METHOD_VIRTUAL(cResourceManager, cResourceManager, bool, GetResource, Args(const ResourceKey& name, ResourceObjectPtr* ppDst, int arg_8, DBPF* pDBPF, IResourceFactory* pFactory, const ResourceKey* pCacheName), Args(name, ppDst, arg_8, pDBPF, pFactory, pCacheName));
+	auto_METHOD_VIRTUAL(cResourceManager, cResourceManager, bool, GetAsyncResource, Args(const ResourceKey& name, ResourceObjectPtr* ppDst, AsyncResourcePtr* arg_8, void* arg_C, void* arg_10, DBPF* pDBPF, IResourceFactory* pFactory, const ResourceKey* pAlternativeName), Args(name, ppDst, arg_8, arg_C, arg_10, pDBPF, pFactory, pAlternativeName));
 	auto_METHOD_VIRTUAL(cResourceManager, cResourceManager, bool, GetCachedResource, Args(const ResourceKey& name, intrusive_ptr<ResourceObject>* pDst), Args(name, pDst));
 	auto_METHOD_VIRTUAL(cResourceManager, cResourceManager, bool, func18h, Args(int arg_0, int arg_4, int arg_8, int arg_C, int arg_10), Args(arg_0, arg_4, arg_8, arg_C, arg_10));
-	auto_METHOD_VIRTUAL(cResourceManager, cResourceManager, bool, ReadResource, Args(const ResourceKey& name, ResourceObject** ppDst, int arg_8, DBPF* pDBPF, IResourceFactory* pFactory, const ResourceKey* pCacheName), Args(name, ppDst, arg_8, pDBPF, pFactory, pCacheName));
+	auto_METHOD_VIRTUAL(cResourceManager, cResourceManager, bool, ReadResource, Args(const ResourceKey& name, ResourceObjectPtr* ppDst, int arg_8, DBPF* pDBPF, IResourceFactory* pFactory, const ResourceKey* pCacheName), Args(name, ppDst, arg_8, pDBPF, pFactory, pCacheName));
 	auto_METHOD_VIRTUAL(cResourceManager, cResourceManager, bool, WriteResource, Args(const ResourceObject* pResource, int arg_4, DBPF* pDBPF, IResourceFactory* pFactory, const ResourceKey* pNameKey), Args(pResource, arg_4, pDBPF, pFactory, pNameKey));
 	auto_METHOD_VIRTUAL_VOID(cResourceManager, cResourceManager, SetTypeRemap, Args(uint32_t nTypeID, uint32_t* pnTypes, size_t nCount), Args(nTypeID, pnTypes, nCount));
 	auto_METHOD_VIRTUAL_const(cResourceManager, cResourceManager, size_t, GetTypeRemap, Args(vector<uint32_t>& dst, uint32_t nTypeID), Args(dst, nTypeID));

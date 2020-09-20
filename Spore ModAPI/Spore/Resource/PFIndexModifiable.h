@@ -55,7 +55,6 @@ namespace Resource
 	public:
 		
 		typedef eastl::hash_map<ResourceKey, DBPFItem, ICoreAllocatorAdapter> ItemsMap;
-		typedef eastl::vector<ResourceKey> KeysVector;
 
 		PFIndexModifiable(ICoreAllocator* pAllocator);
 		virtual ~PFIndexModifiable() {};
@@ -96,14 +95,14 @@ namespace Resource
 		/// @param filter The RequestFilter used to decide which file names must be added into the vector.
 		/// @returns The number of file names added to the vector.
 		///
-		/* 1Ch */	virtual size_t GetFiles(KeysVector& dstVector, IResourceFilter* filter = nullptr);
+		/* 1Ch */	virtual size_t GetFiles(vector<ResourceKey>& dstVector, IResourceFilter* filter = nullptr);
 
 		/// 
 		/// Adds all the file names (as ResourceKeys) in this PFIndex to the given vector.
 		/// @param[out] dstVector The destination vector where the file names will be added.
 		/// @returns The number of file names added to the vector.
 		///
-		/* 20h */	virtual size_t GetAllFiles(KeysVector& dstVector);
+		/* 20h */	virtual size_t GetAllFiles(vector<ResourceKey>& dstVector);
 
 		/* 24h */	virtual bool func24h(int, size_t fileDataBegin, size_t fileDataEnd);
 

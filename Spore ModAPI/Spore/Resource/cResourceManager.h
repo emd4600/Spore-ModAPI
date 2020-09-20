@@ -66,16 +66,16 @@ namespace Resource
 
 		/* 0Ch */	virtual bool GetResource(
 			const ResourceKey& name,
-			ResourceObject** ppDst = nullptr, 
+			ResourceObjectPtr* ppDst = nullptr, 
 			int arg_8 = 0, 
 			DBPF* pDBPF = nullptr,
 			IResourceFactory* pFactory = nullptr, 
 			const ResourceKey* pCacheName = nullptr) override;
 
-		/* 10h */	virtual bool func10h(
+		/* 10h */	virtual bool GetAsyncResource(
 			const ResourceKey& name,
-			ResourceObject** ppDst = nullptr, 
-			void** arg_8 = nullptr, 
+			ResourceObjectPtr* ppDst = nullptr,
+			AsyncResourcePtr* arg_8 = nullptr, 
 			void* arg_C = nullptr, 
 			void* arg_10 = nullptr, 
 			DBPF* pDBPF = nullptr, 
@@ -86,7 +86,7 @@ namespace Resource
 		/* 18h */	virtual bool func18h(int arg_0, int arg_4, int arg_8, int arg_C, int arg_10) override;
 		/* 1Ch */	virtual bool ReadResource(
 			const ResourceKey& name,
-			ResourceObject** ppDst = nullptr,
+			ResourceObjectPtr* ppDst = nullptr,
 			int arg_8 = 0,
 			DBPF* pDBPF = nullptr,
 			IResourceFactory* pFactory = nullptr,
@@ -165,6 +165,7 @@ namespace Resource
 		DeclareAddress(NeedsToRelease);
 		DeclareAddress(ReleaseResources);
 		DeclareAddress(GetResource);
+		DeclareAddress(GetAsyncResource);
 		DeclareAddress(func10h);
 		DeclareAddress(GetCachedResource);
 		DeclareAddress(func18h);
