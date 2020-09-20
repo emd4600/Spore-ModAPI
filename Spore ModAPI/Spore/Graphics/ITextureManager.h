@@ -90,12 +90,12 @@ namespace Graphics
 		/* 34h */	virtual bool func34h(Texture* texture) = 0;
 		/* 38h */	virtual bool func38h(Texture* texture, void* arg_4) = 0;
 
-		/* 3Ch */	virtual int func3Ch(uint32_t intanceID, uint32_t groupID, int width, int height, int, int, D3DFORMAT, int) = 0;
+		/* 3Ch */	virtual Texture* CreateTexture(uint32_t intanceID, uint32_t groupID, int width, int height, int mipmapLevels, int flags, D3DFORMAT format, int) = 0;
 		/* 40h */	virtual int func40h(int, int, int, int, int, int) = 0;
 		//PLACEHOLDER save texture?
 		/* 44h */	virtual bool func44h(Texture* texture, int, int) = 0;
 		/* 48h */	virtual int func48h(int, int) = 0;
-		/* 4Ch */	virtual int func4Ch(int, int, int, int) = 0;
+		/* 4Ch */	virtual Texture* AddTextureFromRaster(uint32_t instanceID, uint32_t groupID, Raster* pRaster, int) = 0;
 		/* 50h */	virtual int func50h(int, int, int, int) = 0;
 		/* 54h */	virtual void func54h(Texture* texture, bool) = 0;
 		/* 58h */	virtual bool func58h(int, int, int, int) = 0;
