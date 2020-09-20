@@ -126,7 +126,9 @@ namespace TypeIDs
 		/// Animation data
 		animation = 0xEE17C6AD,
 		/// Data of an adventure
-		adventure = 0x366A930D
+		adventure = 0x366A930D,
+		/// Type for Pollinator::cAssetMetadata files
+		pollen_metadata = 0x30BDEE3
 	};
 }
 
@@ -201,6 +203,8 @@ namespace GroupIDs
 		/// This folder contains popups used in Civilization stage that can be used with UIEventLog.
 		CivPopups = 0xAA9A8ED7,
 
-		CivicThumbs = 0x65928944
+		CivicThumbs = 0x65928944,
+
+		AssetBrowserGraphics = 0xCA14DE92
 	};
 }

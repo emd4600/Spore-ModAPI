@@ -19,6 +19,7 @@
 #include <Spore\App\ScenarioMode.h>
 #include <Spore\App\Thumbnail_cImportExport.h>
 #include <Spore\App\cLocaleManager.h>
+#include <Spore\App\AppData.h>
 
 namespace Addresses(App)
 {
@@ -346,11 +347,19 @@ namespace App
 	{
 		DefineAddress(Get, SelectAddress(0x5F7750, , 0x5F79C0));
 		DefineAddress(GetFolderPath, SelectAddress(0x5F9140, , 0x5F92C0));
+		DefineAddress(FolderPathFromLocale, SelectAddress(0x5F9220, , 0x5F93A0));
+		DefineAddress(SavePNG, SelectAddress(0x5FA7E0, , 0x5FA960));
 	}
 
 	namespace Addresses(cLocaleManager)
 	{
 		DefineAddress(Get, SelectAddress(0x67DF60, , 0x67DE00));
+	}
+
+	namespace Addresses(AppData)
+	{
+		DefineAddress(GetPackageForSaveDirectory, SelectAddress(0x6B22C0, , 0x6B1F20));
+		DefineAddress(SetPackageForSaveDirectory, SelectAddress(0x6B3A90, , 0x6B36F0));
 	}
 }
 #endif

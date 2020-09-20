@@ -22,8 +22,6 @@ namespace Sporepedia
 	/// @param filterID ID of filter file in `AssetBrowserFilter` folder
 	/// @param[out] dst The destination vector
 	void ProcessAssetFilter(uint32_t filterID, eastl::vector<AssetBrowserQuery>& dst);
-
-	//TODO ObjectTemplateDB
 }
 
 namespace Addresses(Sporepedia)

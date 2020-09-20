@@ -11,11 +11,15 @@
 namespace Pollinator
 {
 	// documented from https://spore-community.github.io/docs/pollination/pollen_metadata.html#use-in-package-files
+	/// The class representation of `.pollen_metadata` files, which represent the metadata (name, author, time created,...) of a creation.
+	/// You can get a metadata object using Pollinator::GetMetadata()
 	class cAssetMetadata
 		: public Resource::ResourceObject
 	{
 	public:
 		const static uint32_t TYPE = 0x30BDEE3;
+
+		void* Cast(uint32_t type) const override;
 
 		int64_t GetAssetID() const;
 		int64_t GetParentAssetID() const;
@@ -39,6 +43,10 @@ namespace Pollinator
 		bool IsShareable() const;
 		bool IsLocalized() const;
 
+
+		bool Set(const ResourceKey& assetKey, const char16_t* pName, const char16_t* pDescription, const char16_t* pTags, 
+			const ResourceKey& parentAssetKey, bool isPollinated);
+
 	public:
 		/* 18h */	int64_t mAssetID;  // -1
 		/* 20h */	ResourceKey mAssetKey;
@@ -60,13 +68,21 @@ namespace Pollinator
 
 	ASSERT_SIZE(cAssetMetadata, 0xD8);
 
-	inline cAssetMetadata* GetMetadata(uint32_t instanceID, uint32_t groupID)
+	/// Used to get the metadata of a creation, if it exists. Example usage:
+	/// ```cpp
+	/// cAssetMetadataPtr metadata;
+	/// if (Pollinator::GetMetadata(0x07ed7d9f, GroupIDs::BuildingModels, metadata)) {
+	///		App::ConsolePrintF("%ls", metadata->GetName().c_str());
+	/// }
+	/// ```
+	inline bool GetMetadata(uint32_t instanceID, uint32_t groupID, cAssetMetadataPtr& dst)
 	{
-		Resource::ResourceObject* pResource;
+		ResourceObjectPtr pResource;
 		if (!ResourceManager.GetResource({ instanceID, Pollinator::cAssetMetadata::TYPE, groupID }, &pResource)) {
-			return nullptr;
+			return false;
 		}
-		return object_cast<cAssetMetadata>(pResource);
+		dst = object_cast<cAssetMetadata>(pResource);
+		return true;
 	}
 
 	inline string16 cAssetMetadata::GetName() const { return mName; }
@@ -90,4 +106,9 @@ namespace Pollinator
 
 	inline int64_t cAssetMetadata::GetTimeCreated() { return mTimeCreated; }
 	inline int64_t cAssetMetadata::GetTimeDownloaded() { return mTimeDownloaded; }
+
+	namespace Addresses(cAssetMetadata)
+	{
+		DeclareAddress(Set);
+	}
 }

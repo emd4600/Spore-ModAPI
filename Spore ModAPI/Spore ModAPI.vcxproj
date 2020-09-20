@@ -304,6 +304,7 @@
     <ClInclude Include="Spore\Anim\IAnimManager.h" />
     <ClInclude Include="Spore\Anim\IAnimWorld.h" />
     <ClInclude Include="Spore\Anim\TLSA.h" />
+    <ClInclude Include="Spore\App\AppData.h" />
     <ClInclude Include="Spore\App\cLocaleManager.h" />
     <ClInclude Include="Spore\App\cStringDetokenizer.h" />
     <ClInclude Include="Spore\App\FileDrop.h" />
@@ -323,9 +324,11 @@
     <ClInclude Include="Spore\Graphics\cRenderManager.h" />
     <ClInclude Include="Spore\Graphics\GlobalState.h" />
     <ClInclude Include="Spore\Graphics\GmdlRenderAsset.h" />
+    <ClInclude Include="Spore\Graphics\IGraphicsManager.h" />
     <ClInclude Include="Spore\Graphics\Light.h" />
     <ClInclude Include="Spore\Graphics\ModelMesh.h" />
     <ClInclude Include="Spore\Graphics\RawImage.h" />
+    <ClInclude Include="Spore\Graphics\SequenceRenderable.h" />
     <ClInclude Include="Spore\Graphics\ShaderData.h" />
     <ClInclude Include="Spore\Graphics\GeneratedMesh.h" />
     <ClInclude Include="Spore\ModAPI.h" />
@@ -333,13 +336,16 @@
     <ClInclude Include="Spore\Anim\AnimatedCreature.h" />
     <ClInclude Include="Spore\Anim\CreatureBlock.h" />
     <ClInclude Include="Spore\Editors\ContentValidation.h" />
-    <ClInclude Include="Spore\Graphics\IGraphicsManager.h" />
+    <ClInclude Include="Spore\Graphics\IThumbnailManager.h" />
     <ClInclude Include="Spore\Palettes\AdvancedItemViewer.h" />
     <ClInclude Include="Spore\Palettes\cSPScenarioBrushItemUI.h" />
     <ClInclude Include="Spore\Palettes\PaletteInfo.h" />
     <ClInclude Include="Spore\Palettes\PaletteSubcategoriesUI.h" />
     <ClInclude Include="Spore\Palettes\SwatchManager.h" />
     <ClInclude Include="Spore\Pollinator\cAssetMetadata.h" />
+    <ClInclude Include="Spore\Sporepedia\AssetViewManager.h" />
+    <ClInclude Include="Spore\Sporepedia\ObjectTemplateDB.h" />
+    <ClInclude Include="Spore\Sporepedia\OTDBParameters.h" />
     <ClInclude Include="Spore\Simulator\cCivilization.h" />
     <ClInclude Include="Spore\Simulator\cCommEvent.h" />
     <ClInclude Include="Spore\Simulator\ConversationResource.h" />
@@ -353,9 +359,9 @@
     <ClInclude Include="Spore\Simulator\SubSystem\GameBehaviorManager.h" />
     <ClInclude Include="Spore\Simulator\SubSystem\SimTicker.h" />
     <ClInclude Include="Spore\Simulator\SubSystem\UIEventLog.h" />
+    <ClInclude Include="Spore\Sporepedia\AssetData.h" />
     <ClInclude Include="Spore\Sporepedia\IShopperListener.h" />
     <ClInclude Include="Spore\Sporepedia\AssetBrowserQuery.h" />
-    <ClInclude Include="Spore\Sporepedia\ObjectTemplateDB.h" />
     <ClInclude Include="Spore\Sporepedia\ShopperRequest.h" />
     <ClInclude Include="Spore\App\cCameraManager.h" />
     <ClInclude Include="Spore\App\cCheatManager.h" />
@@ -769,6 +775,7 @@
     <ClCompile Include="SourceCode\DLL\AddressesIO.cpp" />
     <ClCompile Include="SourceCode\DLL\AddressesMisc.cpp" />
     <ClCompile Include="SourceCode\DLL\AddressesPalettes.cpp" />
+    <ClCompile Include="SourceCode\DLL\AddressesPollinator.cpp" />
     <ClCompile Include="SourceCode\DLL\AddressesRenderWare.cpp" />
     <ClCompile Include="SourceCode\DLL\AddressesResource.cpp" />
     <ClCompile Include="SourceCode\DLL\AddressesSimulator.cpp" />
@@ -802,8 +809,10 @@
     <ClCompile Include="SourceCode\Editors\PaletteItemFrame.cpp" />
     <ClCompile Include="SourceCode\Editors\SpeciesManager.cpp" />
     <ClCompile Include="SourceCode\Graphics\GraphicsManager.cpp" />
+    <ClCompile Include="SourceCode\Graphics\ThumbnailManager.cpp" />
     <ClCompile Include="SourceCode\Graphics\RenderTargets.cpp" />
     <ClCompile Include="SourceCode\Graphics\GeneratedMesh.cpp" />
+    <ClCompile Include="SourceCode\Pollinator\Pollinator.cpp" />
     <ClCompile Include="SourceCode\RenderWare\Raster.cpp" />
     <ClCompile Include="SourceCode\RenderWare\RenderWare.cpp" />
     <ClCompile Include="SourceCode\RenderWare\RWMesh.cpp" />
@@ -857,6 +866,7 @@
     <ClCompile Include="SourceCode\Simulator\Tools.cpp" />
     <ClCompile Include="SourceCode\Simulator\UIEventLog.cpp" />
     <ClCompile Include="SourceCode\Sporepedia\Assetbrowser.cpp" />
+    <ClCompile Include="SourceCode\Sporepedia\AssetData.cpp" />
     <ClCompile Include="SourceCode\Sporepedia\Shopper.cpp" />
     <ClCompile Include="SourceCode\Swarm\Effects.cpp" />
     <ClCompile Include="SourceCode\Swarm\SwarmManager.cpp" />

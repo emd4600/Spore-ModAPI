@@ -1,76 +1,65 @@
 #pragma once
 
-#include <Spore\Object.h>
-#include <EASTL\vector.h>
+#include <Spore\Sporepedia\OTDBParameters.h>
 
-#define ObjectTemplateDB (*Sporepedia::cObjectTemplateDB::Get())
+#define ObjectTemplateDB (*Sporepedia::OTDB::cObjectTemplateDB::Get())
 
 namespace Sporepedia
 {
-	struct OTDBParameter
+	namespace OTDB
 	{
-		OTDBParameter();
-		OTDBParameter(uint32_t paramID, float minValue, float maxValue);
-
-		/* 00h */	uint32_t paramID;
-		/* 04h */	uint32_t type;  // 0x2E1A7FF
-		/* 08h */	float minValue;
-		/* 0Ch */	float maxValue;
-		/* 10h */	vector<OTDBParameter> field_10;
-	};
-
-	class cObjectTemplateDB
-		: public Object
-	{
-	public:
-		/* 10h */	virtual bool Initialize();
-		/* 14h */	virtual bool Dispose();
-		/* 18h */	virtual bool func18h(int, int);
-		/* 1Ch */	virtual bool func1Ch();
-		/* 20h */	virtual void func20h();
-		/* 24h */	virtual bool func24h(int, int, int);
-		/* 28h */	virtual bool func28h(int, int, int);
-		/* 2Ch */	virtual void FindObjects(vector<ResourceKey>& dst, const vector<OTDBParameter>& parameters);
-		//TODO there are more functions
-
-		static cObjectTemplateDB* Get();
-	};
-
-	namespace OTDBParameters
-	{
-		enum : uint32_t
+		class ISummarizer
+			: public DefaultRefCounted
 		{
-			cost = 0x5B06E36,
-			baseGear = 0x2F05C60,
-			height = 0x7358629A,
-			carnivore = 0x2F05C58,
-			herbivore = 0x2F05C59,
-			cuteness = 0x2F05C5E,
-			totalSocial = 0x2F05C5F,
-			social = 0x5B15AA5,
-			numGraspers = 0x2F05C61,
-			meanLookingScore = 0x3FEA210,
-			totalAttack = 0x3FEA1A0,
-			attack = 0x5B15A92,
-			numFeet = 0x3FEA1C0,
-			biteCapRange = 0x4AB3BD8,
-			strikeCapRange = 0x4AB3BD9,
-			chargeCapRange = 0x4AB3BDA,
-			spitCapRange = 0x4AB3BDB,
-			singCapRange = 0xF42136D5,
-			danceCapRange = 0xF42136D6,
-			charmCapRange = 0xF42136D7,
-			poseCapRange = 0xF42136D8,
-			glideCapRange = 0x5AC2B96,
-			stealthCapRange = 0x5AC2B97,
-			sprintCapRange = 0x5AC2B98,
-			senseCapRange = 0x68DE3E8,
-			healthCapRange = 0x5AC2B99,
+		public:
+			/* 10h */	virtual uint32_t GetID() const = 0;
+			/* 14h */	virtual int GetAMTuningVersion() const = 0;
+			/* 18h */	virtual int GetAssetTypesCount() const = 0;
+			/* 1Ch */	virtual uint32_t GetAssetType(int index) const = 0;
+			/* 20h */	virtual bool SetParameters(const ResourceKey& key, vector<Parameter>& dst) = 0;
 		};
-	}
 
-	namespace Addresses(cObjectTemplateDB)
-	{
-		DeclareAddress(Get);
+		class cObjectTemplateDB
+			: public Object
+		{
+		public:
+			/* 10h */	virtual bool Initialize();
+			/* 14h */	virtual bool Dispose();
+			/* 18h */	virtual bool Write(bool, bool writeSummarizers);
+			/* 1Ch */	virtual bool func1Ch();
+			/* 20h */	virtual void func20h();
+			/* 24h */	virtual bool func24h(int, int, int);
+			/* 28h */	virtual bool func28h(int, int, int);
+			/* 2Ch */	virtual void FindObjects(vector<ResourceKey>& dst, const vector<QueryParameter>& parameters);
+			//TODO thse functions are placeholders
+			/* 30h */	virtual int func30h();
+			/* 34h */	virtual int func34h();
+			/* 38h */	virtual int func38h();
+			/* 3Ch */	virtual int func3Ch();
+			/* 40h */	virtual int func40h();
+			/* 44h */	virtual int func44h();
+			/* 48h */	virtual int func48h();
+			/* 4Ch */	virtual int func4Ch();
+			/* 50h */	virtual int func50h();
+			/* 54h */	virtual int func54h();
+			/* 58h */	virtual int func58h();
+			/* 5Ch */	virtual int func5Ch();
+			/* 60h */	virtual int func60h();
+			/* 64h */	virtual int func64h();
+			/* 68h */	virtual int func68h();
+			/* 6Ch */	virtual int func6Ch();
+			/* 70h */	virtual int func70h();
+			/* 74h */	virtual int func74h();
+			/* 78h */	virtual int func78h();
+
+			/* 7Ch */	virtual void AddSummarizer(ISummarizer* pSummarizer);
+
+			static cObjectTemplateDB* Get();
+		};
+
+		namespace Addresses(cObjectTemplateDB)
+		{
+			DeclareAddress(Get);
+		}
 	}
 }
