@@ -40,6 +40,7 @@ namespace Simulator
 	};
 
 	class cVehicle;
+	class cCivilization;
 
 	class cCity 
 		: public cCommunity
@@ -127,7 +128,7 @@ namespace Simulator
 		/* 55Ch */	vector<intrusive_ptr<cCity>> mTradePartners;
 		/* 570h */	map<int, int> field_570;
 		/* 58Ch */	bool field_58C;
-		/* 590h */	intrusive_ptr<Object> mpCivilization;  // PLACEHOLDER cCivilization
+		/* 590h */	intrusive_ptr<cCivilization> mpCivilization;
 		/* 594h */	int mBuildingPlacementAngleDelta;  // 45
 		/* 598h */	float mBuildingPlacementRadius;
 		/* 59Ch */	int mAngle;

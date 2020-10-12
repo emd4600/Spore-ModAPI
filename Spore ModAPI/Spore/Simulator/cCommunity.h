@@ -28,6 +28,19 @@
 
 namespace Simulator
 {
+	struct cEmptyBubble
+	{
+		/* 00h */	Vector3 mCenter;
+		/* 0Ch */	float mRadius;
+		/* 10h */	uint32_t mSourceID;
+	};
+
+	struct cLaneInfo
+	{
+		/* 00h */	Vector3 mPosition;
+		/* 0Ch */	vector<int> mConnections;
+	};
+
 	///
 	/// The following attributes are saved:
 	/// - mCommunitySize
@@ -55,8 +68,8 @@ namespace Simulator
 		/* 54h */	int field_54;  // not initialized
 		/* 58h */	vector<int> field_58;
 		/* 6Ch */	bool field_6C;
-		/* 70h */	vector<int> mAssemblyBubbles;
-		/* 84h */	vector<int> mLanes;
+		/* 70h */	vector<cEmptyBubble> mAssemblyBubbles;
+		/* 84h */	vector<cLaneInfo> mLanes;
 		/* 98h */	int field_98;
 		/* 9Ch */	int field_9C;
 		/* A0h */	int field_A0;
@@ -65,11 +78,11 @@ namespace Simulator
 		/* ACh */	int field_AC;
 		/* B0h */	cGonzagoTimer field_B0;
 		/* D0h */	vector<int> field_D0;  // With release at C0h
-		/* E4h */	vector<intrusive_ptr<Object>> field_E4;
+		/* E4h */	vector<ObjectPtr> field_E4;
 		/* F8h */	string16 mName;
 		/* 108h */	string16 mDescription;
 		/* 118h */	int field_118;  // -1
-		/* 11Ch */	intrusive_ptr<Object> mpLeader;  //TODO probably cCreatureBase
+		/* 11Ch */	ObjectPtr mpLeader;  //TODO probably cCreatureBase
 	};
 
 	/////////////////////////////////

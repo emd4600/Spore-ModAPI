@@ -2,6 +2,7 @@
 
 #include <Spore\Simulator\ISimulatorSerializable.h>
 #include <Spore\Simulator\cCity.h>
+#include <Spore\Simulator\cCivilization.h>
 #include <Spore\Simulator\StarID.h>
 
 #define cCommEventPtr eastl::intrusive_ptr<Simulator::cCommEvent>
@@ -29,8 +30,8 @@ namespace Simulator
 		/* 1Ch */	uint32_t mTarget;  // -1
 		/* 20h */	cCityPtr mpSourceCity;
 		/* 24h */	cCityPtr mpTargetCity;
-		/* 28h */	int mpSourceCivilization;  //PLACEHOLDER
-		/* 2Ch */	int mpTargetCivilization;  //PLACEHOLDER
+		/* 28h */	cCivilizationPtr mpSourceCivilization;
+		/* 2Ch */	cCivilizationPtr mpTargetCivilization;
 		/* 30h */	bool mbVisibleInGalaxy;
 		/* 34h */	PlanetID mPlanetKey;  // -1
 		/* 38h */	uint32_t mFileID;  // -1

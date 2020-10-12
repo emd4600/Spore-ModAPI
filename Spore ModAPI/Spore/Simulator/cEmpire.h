@@ -25,6 +25,7 @@
 #include <Spore\Simulator\cGonzagoTimer.h>
 #include <Spore\Simulator\SubSystem\cRelationshipManager.h>
 #include <Spore\Simulator\cSpeciesProfile.h>
+#include <Spore\Simulator\ICityMusic.h>
 #include <Spore\ResourceKey.h>
 #include <EASTL\string.h>
 #include <EASTL\vector.h>
@@ -105,7 +106,7 @@ namespace Simulator
 		/* E8h */	float field_E8;
 		/* ECh */	float field_EC;
 		/* F0h */	vector<int> field_F0;
-		/* 104h */	intrusive_ptr<Object> mpCityMusic;
+		/* 104h */	ICityMusicPtr mpCityMusic;
 		/* 108h */	cCultureSet mCultureSet;
 		/* 128h */	cGonzagoTimer field_128;
 		/* 148h */	list<uint32_t> mAdventureList;

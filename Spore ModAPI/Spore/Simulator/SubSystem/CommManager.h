@@ -12,7 +12,7 @@ namespace Simulator
 		: public cStrategy
 	{
 	public:		
-		cCommEvent* CreateCivCommEvent(void* pSourceCivilization, cCity* pTargetCity, PlanetID planetKey, 
+		cCommEvent* CreateCivCommEvent(cCivilization* pSourceCivilization, cCity* pTargetCity, PlanetID planetKey, 
 			uint32_t fileID, uint32_t dialogID, int priority = 0);
 
 		cCommEvent* CreateSpaceCommEvent(uint32_t sourceEmpire, PlanetID planetKey, uint32_t fileID,
