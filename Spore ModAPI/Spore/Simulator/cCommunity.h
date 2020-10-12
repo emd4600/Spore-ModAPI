@@ -21,6 +21,7 @@
 #include <Spore\Simulator\cGameData.h>
 #include <Spore\Simulator\cGonzagoTimer.h>
 #include <Spore\Editors\INameableEntity.h>
+#include <Spore\MathUtils.h>
 #include <EASTL\vector.h>
 #include <EASTL\string.h>
 
@@ -30,14 +31,14 @@ namespace Simulator
 {
 	struct cEmptyBubble
 	{
-		/* 00h */	Vector3 mCenter;
+		/* 00h */	Math::Vector3 mCenter;
 		/* 0Ch */	float mRadius;
 		/* 10h */	uint32_t mSourceID;
 	};
 
 	struct cLaneInfo
 	{
-		/* 00h */	Vector3 mPosition;
+		/* 00h */	Math::Vector3 mPosition;
 		/* 0Ch */	vector<int> mConnections;
 	};
 

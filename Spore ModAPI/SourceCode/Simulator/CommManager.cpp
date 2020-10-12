@@ -6,7 +6,7 @@ namespace Simulator
 	auto_STATIC_METHOD_(cCommManager, cCommManager*, Get);
 
 	auto_METHOD(cCommManager, cCommEvent*, CreateCivCommEvent,
-		Args(void* sourceCiv, cCity* targetCity, PlanetID planetKey, uint32_t fileID, uint32_t dialogID, int priority),
+		Args(cCivilization* sourceCiv, cCity* targetCity, PlanetID planetKey, uint32_t fileID, uint32_t dialogID, int priority),
 		Args(sourceCiv, targetCity, planetKey, fileID, dialogID, priority));
 
 	auto_METHOD(cCommManager, cCommEvent*, CreateSpaceCommEvent,
