@@ -55,16 +55,424 @@
             <li>
               Reference
               <ul>
-                <li><a href="#pri-methods">Private functions</a></li>
+                <li><a href="#base-classes">Base classes</a></li>
+                <li><a href="#pub-static-attribs">Public static variables</a></li>
+                <li><a href="#pub-attribs">Public variables</a></li>
               </ul>
             </li>
           </ul>
         </div>
-        <section id="pri-methods">
-          <h2><a href="#pri-methods">Private functions</a></h2>
+        <section id="base-classes">
+          <h2><a href="#base-classes">Base classes</a></h2>
           <dl class="m-doc">
-            <dt id="aa1c8a746b583c6b821a3dc0ab6380ad3">
-              <span class="m-doc-wrap-bumper">auto <a href="#aa1c8a746b583c6b821a3dc0ab6380ad3" class="m-doc-self">GetPoliticalID</a>(</span><span class="m-doc-wrap">) const -&gt; uint32_t <span class="m-label m-flat m-warning">virtual</span></span>
+            <dt>
+              class <a href="class_simulator_1_1c_game_data.html" class="m-doc">cGameData</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              class <a href="class_editors_1_1_i_nameable_entity.html" class="m-doc">Editors::INameableEntity</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              class <a href="class_app_1_1_i_message_listener.html" class="m-doc">App::IMessageListener</a>
+            </dt>
+            <dd>An interface that can receive messages sent through the app.</dd>
+            <dt>
+              class <a href="class_simulator_1_1c_identity_colorable.html" class="m-doc">cIdentityColorable</a>
+            </dt>
+            <dd>A <a href="namespace_simulator.html" class="m-doc">Simulator</a> class inherited by all those classes that can have an identity color, such as empires, tribes, etc.</dd>
+          </dl>
+        </section>
+        <section id="pub-static-attribs">
+          <h2><a href="#pub-static-attribs">Public static variables</a></h2>
+          <dl class="m-doc">
+            <dt id="a382984d5bf570b176f0b47f05c228b9e">
+              static const uint32_t <a href="#a382984d5bf570b176f0b47f05c228b9e" class="m-doc-self">TYPE</a>
+            </dt>
+            <dd><span></span></dd>
+          </dl>
+        </section>
+        <section id="pub-attribs">
+          <h2><a href="#pub-attribs">Public variables</a></h2>
+          <dl class="m-doc">
+            <dt id="adae9c4ef38d74695115da51a99ae2608">
+              <a href="class_simulator_1_1c_culture_set.html" class="m-doc">cCultureSet</a> <a href="#adae9c4ef38d74695115da51a99ae2608" class="m-doc-self">mCultureSet</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a3072ccf040a567334952f2a4f8960605">
+              bool <a href="#a3072ccf040a567334952f2a4f8960605" class="m-doc-self">mInitialized</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a05ba0ab7bf9fc1c792e60a04d0befc16">
+              bool <a href="#a05ba0ab7bf9fc1c792e60a04d0befc16" class="m-doc-self">mIsPlayerOwned</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a7adcec8f5ed30a1de8be8fb5907174ec">
+              bool <a href="#a7adcec8f5ed30a1de8be8fb5907174ec" class="m-doc-self">mIsNeutral</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="ae8d64488de6e0c742766885fb1cb7d86">
+              bool <a href="#ae8d64488de6e0c742766885fb1cb7d86" class="m-doc-self">mCommNotifiedFirstCityCapture</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a57a80e90a12e11cdda52db9310614d4f">
+              bool <a href="#a57a80e90a12e11cdda52db9310614d4f" class="m-doc-self">mCommNotifiedWarning</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a20e8372a3f21ba1a4e075bd3db415e97">
+              bool <a href="#a20e8372a3f21ba1a4e075bd3db415e97" class="m-doc-self">mHasDeveloped</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="ab9507ea26ca6e040dd49a6bb88c20fd6">
+              bool <a href="#ab9507ea26ca6e040dd49a6bb88c20fd6" class="m-doc-self">mAttackedByMilitary</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a73566e6466aba8a574bf8443426d4426">
+              bool <a href="#a73566e6466aba8a574bf8443426d4426" class="m-doc-self">mAttackedByReligion</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a01a8382cff5d185c287f26ee1fa383c8">
+              bool <a href="#a01a8382cff5d185c287f26ee1fa383c8" class="m-doc-self">mSurrendered</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="af9b6446c6d83f2c2ad892c6fa1bb064a">
+              bool <a href="#af9b6446c6d83f2c2ad892c6fa1bb064a" class="m-doc-self">field_91</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="ae020925a590774e1437061b02af33c5c">
+              bool <a href="#ae020925a590774e1437061b02af33c5c" class="m-doc-self">mTargetMinerals</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a2dad974c919236271f43a3d712a57a71">
+              bool <a href="#a2dad974c919236271f43a3d712a57a71" class="m-doc-self">mFirstMinerals</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a4ea74544b34210a40d5f5278793234e6">
+              bool <a href="#a4ea74544b34210a40d5f5278793234e6" class="m-doc-self">mFirstBudget</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a86ede4c3cd49758ed11bc9e0542015ff">
+              float <a href="#a86ede4c3cd49758ed11bc9e0542015ff" class="m-doc-self">mWealth</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a23e57e12b53ac78e661ed1411ccc4a93">
+              vector&lt;<a href="c_city_8h.html#ad769fae800809e8a8e0861bca84f77cf" class="m-doc">cCityPtr</a>&gt; <a href="#a23e57e12b53ac78e661ed1411ccc4a93" class="m-doc-self">mCities</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="af0fc92440a1f3ea01a00a0a1ad8bfeea">
+              vector&lt;<a href="c_vehicle_8h.html#a1ecb25ec3d651a33c81890940fb189c9" class="m-doc">cVehiclePtr</a>&gt; <a href="#af0fc92440a1f3ea01a00a0a1ad8bfeea" class="m-doc-self">mVehicles</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a23069d5fafb89ea15ef1029d05813149">
+              <a href="struct_math_1_1_color_r_g_b.html" class="m-doc">ColorRGB</a> <a href="#a23069d5fafb89ea15ef1029d05813149" class="m-doc-self">mPrimaryColor</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="ae2521385d7fa408b0120b07421df6093">
+              uint32_t <a href="#ae2521385d7fa408b0120b07421df6093" class="m-doc-self">mCultureId</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a9e2c26a5bb9bec6085f5f4ad124af341">
+              vector&lt;<a href="c_spatial_object_8h.html#ae656c09ec3111878660768d156088bc9" class="m-doc">cSpatialObjectPtr</a>&gt; <a href="#a9e2c26a5bb9bec6085f5f4ad124af341" class="m-doc-self">mSelectableObjectVector</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="afa184e76ef7813f110a7f1e3b587e4eb">
+              <a href="class_simulator_1_1c_gonzago_timer.html" class="m-doc">cGonzagoTimer</a> <a href="#afa184e76ef7813f110a7f1e3b587e4eb" class="m-doc-self">mHumanAttackTimer</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="ad2e220cae88796115022d7e2ab279972">
+              <a href="class_simulator_1_1c_gonzago_timer.html" class="m-doc">cGonzagoTimer</a> <a href="#ad2e220cae88796115022d7e2ab279972" class="m-doc-self">mHumanProposeTimer</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="ac820715848140393b9a505aa7d0100b4">
+              <a href="class_simulator_1_1c_gonzago_timer.html" class="m-doc">cGonzagoTimer</a> <a href="#ac820715848140393b9a505aa7d0100b4" class="m-doc-self">mProposeRouteTimer</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a46e97cd7e010f4c2a1bacf286bb2395b">
+              <a href="class_simulator_1_1c_gonzago_timer.html" class="m-doc">cGonzagoTimer</a> <a href="#a46e97cd7e010f4c2a1bacf286bb2395b" class="m-doc-self">mBuildMilitaryUnitsTimer</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a3ffda51da42ec690255a87070dd80984">
+              <a href="class_simulator_1_1c_gonzago_timer.html" class="m-doc">cGonzagoTimer</a> <a href="#a3ffda51da42ec690255a87070dd80984" class="m-doc-self">mBuildReligionUnitsTimer</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="aa6b2c4812c34cd0eafc809429788ea4b">
+              <a href="class_simulator_1_1c_gonzago_timer.html" class="m-doc">cGonzagoTimer</a> <a href="#aa6b2c4812c34cd0eafc809429788ea4b" class="m-doc-self">mBuildEconUnitsTimer</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="ac5d3d469734fe4cd5c6065713ca8279e">
+              <a href="class_simulator_1_1c_gonzago_timer.html" class="m-doc">cGonzagoTimer</a> <a href="#ac5d3d469734fe4cd5c6065713ca8279e" class="m-doc-self">mExpansionMineralTimer</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a66f5b513b2e5ccf1acb924c18124b3ac">
+              <a href="class_simulator_1_1c_gonzago_timer.html" class="m-doc">cGonzagoTimer</a> <a href="#a66f5b513b2e5ccf1acb924c18124b3ac" class="m-doc-self">mClaimMineralTimer</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="ac56e660d71cf30d9945b72a92a7cee3e">
+              <a href="class_simulator_1_1c_gonzago_timer.html" class="m-doc">cGonzagoTimer</a> <a href="#ac56e660d71cf30d9945b72a92a7cee3e" class="m-doc-self">mDemandTimer</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a3fc2400fd42cb0e6bcbe1f6bf87e8850">
+              <a href="class_simulator_1_1c_gonzago_timer.html" class="m-doc">cGonzagoTimer</a> <a href="#a3fc2400fd42cb0e6bcbe1f6bf87e8850" class="m-doc-self">mEmbargoTimer</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a4a02f066aa140a1ab4f48663074bd793">
+              <a href="class_simulator_1_1c_gonzago_timer.html" class="m-doc">cGonzagoTimer</a> <a href="#a4a02f066aa140a1ab4f48663074bd793" class="m-doc-self">mAllianceTimer</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="ac1b8a9eb296e3df31df08a14e719b532">
+              <a href="class_simulator_1_1c_gonzago_timer.html" class="m-doc">cGonzagoTimer</a> <a href="#ac1b8a9eb296e3df31df08a14e719b532" class="m-doc-self">mNemesisTimer</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="aa63270c3f15111e32e12cc873a5e10b9">
+              <a href="struct_resource_key.html" class="m-doc">ResourceKey</a> <a href="#aa63270c3f15111e32e12cc873a5e10b9" class="m-doc-self">mSpeciesKey</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="ae0522a4a7ef037516bc895ed38c9f547">
+              <a href="_i_city_music_8h.html#ae40b307d2c92634eb9cb4b75dc5caa62" class="m-doc">ICityMusicPtr</a> <a href="#ae0522a4a7ef037516bc895ed38c9f547" class="m-doc-self">mCityMusic</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a4f8c68cfdf7a740c976eb25d1af00874">
+              string16 <a href="#a4f8c68cfdf7a740c976eb25d1af00874" class="m-doc-self">mName</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a1b66ea6362cd25e8c438913d8130ef77">
+              string16 <a href="#a1b66ea6362cd25e8c438913d8130ef77" class="m-doc-self">mDescription</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a7cba3d64e63630744220cf56e196a6e5">
+              int <a href="#a7cba3d64e63630744220cf56e196a6e5" class="m-doc-self">mVehicleTechLevel</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a69e177b110396529ad254eab033b5871">
+              int <a href="#a69e177b110396529ad254eab033b5871" class="m-doc-self">mCommRelPanelSlot</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a2849c6cb0c0acedbec6e0583e987be92">
+              uint32_t <a href="#a2849c6cb0c0acedbec6e0583e987be92" class="m-doc-self">mCurrentCommEventId</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a1af76fa96f69a100062854f1bf1534ce">
+              <a href="c_game_data_8h.html#a16ee71c4f398f8560845728987775f11" class="m-doc">cGameDataPtr</a> <a href="#a1af76fa96f69a100062854f1bf1534ce" class="m-doc-self">mpCurrentCommSource</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a50e1be6ec6364933edab91099facf3f7">
+              <a href="c_city_8h.html#ad769fae800809e8a8e0861bca84f77cf" class="m-doc">cCityPtr</a> <a href="#a50e1be6ec6364933edab91099facf3f7" class="m-doc-self">mpCurrentCommTargetCity</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a7bd8d18962fe04a1c28ee8fac7ae0b74">
+              int <a href="#a7bd8d18962fe04a1c28ee8fac7ae0b74" class="m-doc-self">field_2AC</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a85d9f7bf0c3d31a62ec0563c307c8e4f">
+              <a href="class_simulator_1_1c_gonzago_timer.html" class="m-doc">cGonzagoTimer</a> <a href="#a85d9f7bf0c3d31a62ec0563c307c8e4f" class="m-doc-self">field_2B0</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="aa6111bd21c8bfb7d191472e6750f0dc7">
+              int <a href="#aa6111bd21c8bfb7d191472e6750f0dc7" class="m-doc-self">field_2D0</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a28d43058eee604dfa76e3dd1409ead17">
+              <a href="class_simulator_1_1c_gonzago_timer.html" class="m-doc">cGonzagoTimer</a> <a href="#a28d43058eee604dfa76e3dd1409ead17" class="m-doc-self">field_2D4</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a75fe828e67d052bd112e5f8c0b658a50">
+              int <a href="#a75fe828e67d052bd112e5f8c0b658a50" class="m-doc-self">field_2F8</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="aecf8784a442ddf2b6ba2e7071a7801c2">
+              <a href="class_simulator_1_1c_gonzago_timer.html" class="m-doc">cGonzagoTimer</a> <a href="#aecf8784a442ddf2b6ba2e7071a7801c2" class="m-doc-self">field_300</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="afe5df1fd16168c2610a9ba4166430f34">
+              bool <a href="#afe5df1fd16168c2610a9ba4166430f34" class="m-doc-self">field_320</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a62a2940ea4727777164ab1723f3c360f">
+              <a href="class_simulator_1_1c_gonzago_timer.html" class="m-doc">cGonzagoTimer</a> <a href="#a62a2940ea4727777164ab1723f3c360f" class="m-doc-self">field_328</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="ad18451bce94adc411d3fe52bcda4a8b4">
+              bool <a href="#ad18451bce94adc411d3fe52bcda4a8b4" class="m-doc-self">field_348</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a23aa02a3b7b9c8a9db80a6b9c8c979e6">
+              <a href="class_simulator_1_1c_gonzago_timer.html" class="m-doc">cGonzagoTimer</a> <a href="#a23aa02a3b7b9c8a9db80a6b9c8c979e6" class="m-doc-self">field_350</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="add002b46402f4d3958cd67fbf36899bc">
+              bool <a href="#add002b46402f4d3958cd67fbf36899bc" class="m-doc-self">field_370</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="aca942f1cb0e6a3fa0ad6714f0cef5d5f">
+              <a href="class_simulator_1_1c_gonzago_timer.html" class="m-doc">cGonzagoTimer</a> <a href="#aca942f1cb0e6a3fa0ad6714f0cef5d5f" class="m-doc-self">field_378</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a291cb8095f5d7f29d04009c2c54a4bcf">
+              bool <a href="#a291cb8095f5d7f29d04009c2c54a4bcf" class="m-doc-self">field_398</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a97745065a007bc65324e8c59b6ef3983">
+              <a href="class_simulator_1_1c_gonzago_timer.html" class="m-doc">cGonzagoTimer</a> <a href="#a97745065a007bc65324e8c59b6ef3983" class="m-doc-self">field_3A0</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a4019acb16fd21030f4a0d3058f453171">
+              bool <a href="#a4019acb16fd21030f4a0d3058f453171" class="m-doc-self">field_3C0</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a92adefb06a3675ca7017dc7bdd907df5">
+              <a href="class_simulator_1_1c_gonzago_timer.html" class="m-doc">cGonzagoTimer</a> <a href="#a92adefb06a3675ca7017dc7bdd907df5" class="m-doc-self">field_3C8</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a8f7ed711da1aeea6ad550263d24c6df0">
+              bool <a href="#a8f7ed711da1aeea6ad550263d24c6df0" class="m-doc-self">field_3E8</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a8dbd55f006f43a56af66cfa0caa90b60">
+              <a href="class_simulator_1_1c_gonzago_timer.html" class="m-doc">cGonzagoTimer</a> <a href="#a8dbd55f006f43a56af66cfa0caa90b60" class="m-doc-self">field_3F0</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a89b51b7d5eb96fdef167d12ac85c8802">
+              map&lt;<a href="c_city_8h.html#ad769fae800809e8a8e0861bca84f77cf" class="m-doc">cCityPtr</a>, float&gt; <a href="#a89b51b7d5eb96fdef167d12ac85c8802" class="m-doc-self">mDistanceToCityMap</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="aef9f892c6af521d42bc409ca709e22ab">
+              int <a href="#aef9f892c6af521d42bc409ca709e22ab" class="m-doc-self">field_42C</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a2157aa4dd282620a9bd0fe9473819a4f">
+              bool <a href="#a2157aa4dd282620a9bd0fe9473819a4f" class="m-doc-self">field_430</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a94937c8cc2d347b1c31fa0774a05df29">
+              bool <a href="#a94937c8cc2d347b1c31fa0774a05df29" class="m-doc-self">field_431</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a3e3bc6865874a02eb9e36c370c62d48b">
+              int <a href="#a3e3bc6865874a02eb9e36c370c62d48b" class="m-doc-self">field_434</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a99d48a81d27ef9b2dff81d61b3e2d5c8">
+              int <a href="#a99d48a81d27ef9b2dff81d61b3e2d5c8" class="m-doc-self">field_438</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="aba6029ed6e80e588962ccc09c48b354a">
+              int <a href="#aba6029ed6e80e588962ccc09c48b354a" class="m-doc-self">field_43C</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="af1ff060264821de39ebef9341cfceb88">
+              int <a href="#af1ff060264821de39ebef9341cfceb88" class="m-doc-self">field_440</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a8f654fa64e4e5a075f47438afce66168">
+              int <a href="#a8f654fa64e4e5a075f47438afce66168" class="m-doc-self">field_444</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a0be4dbc04c4bb1b3e338266ff2a2bf5a">
+              float <a href="#a0be4dbc04c4bb1b3e338266ff2a2bf5a" class="m-doc-self">field_448</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a29f6703238e32f039d94d9e0a3298cce">
+              int <a href="#a29f6703238e32f039d94d9e0a3298cce" class="m-doc-self">field_44C</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a6453d7216c7aeecfe664357c2ba34449">
+              int <a href="#a6453d7216c7aeecfe664357c2ba34449" class="m-doc-self">field_450</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a373c39a9658e447b57574f76bafb0993">
+              int <a href="#a373c39a9658e447b57574f76bafb0993" class="m-doc-self">field_454</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a7a30faa0377be305310e6b41370b8e6c">
+              <a href="c_city_8h.html#ad769fae800809e8a8e0861bca84f77cf" class="m-doc">cCityPtr</a> <a href="#a7a30faa0377be305310e6b41370b8e6c" class="m-doc-self">mMilitaryExpansionCity</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a2c6327cd01a861c9024edb94648985f7">
+              <a href="c_city_8h.html#ad769fae800809e8a8e0861bca84f77cf" class="m-doc">cCityPtr</a> <a href="#a2c6327cd01a861c9024edb94648985f7" class="m-doc-self">mReligiousExpansionCity</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="af390c11ab31d797f13048a53684e80f2">
+              <a href="c_city_8h.html#ad769fae800809e8a8e0861bca84f77cf" class="m-doc">cCityPtr</a> <a href="#af390c11ab31d797f13048a53684e80f2" class="m-doc-self">mDiploAttackCity</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="ab8e1928d496e275dc1562a11a3046ed8">
+              <a href="c_commodity_node_8h.html#a62fe714cd2bbea3436f4ceb3449bf84b" class="m-doc">cCommodityNodePtr</a> <a href="#ab8e1928d496e275dc1562a11a3046ed8" class="m-doc-self">mExpansionMineral</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="ae4e47738f325b0600d5d4e0697aa6efa">
+              <a href="c_commodity_node_8h.html#a62fe714cd2bbea3436f4ceb3449bf84b" class="m-doc">cCommodityNodePtr</a> <a href="#ae4e47738f325b0600d5d4e0697aa6efa" class="m-doc-self">mClaimMineral</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a56389c931ec87b1a9654eaed57e4696a">
+              <a href="c_civilization_8h.html#af6eab9ab6fc479f7f614348083a1dfcd" class="m-doc">cCivilizationPtr</a> <a href="#a56389c931ec87b1a9654eaed57e4696a" class="m-doc-self">mNemesisCiv</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="aa520e436cfccebf7e660131f58cba60a">
+              vector&lt;<a href="class_default_ref_counted.html" class="m-doc">DefaultRefCounted</a>&gt; <a href="#aa520e436cfccebf7e660131f58cba60a" class="m-doc-self">field_470</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="aa762d5f548a9b64bd7086d2f7035cbf7">
+              int <a href="#aa762d5f548a9b64bd7086d2f7035cbf7" class="m-doc-self">field_484</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a3427daada92003f8b883ac4404886c9b">
+              int <a href="#a3427daada92003f8b883ac4404886c9b" class="m-doc-self">field_488</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a5daca55791396f4d13c82ccff42e2fb3">
+              int <a href="#a5daca55791396f4d13c82ccff42e2fb3" class="m-doc-self">field_48C</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a750aac5893ef93d785c2e906de7e3ca2">
+              vector&lt;<a href="class_simulator_1_1c_gonzago_timer.html" class="m-doc">cGonzagoTimer</a>&gt; <a href="#a750aac5893ef93d785c2e906de7e3ca2" class="m-doc-self">mSuperweaponCooldown</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a77bf03319589f138677a01b165b672e8">
+              <a href="_object_8h.html#a364c2967a9338c07ddc9a3d507389b5d" class="m-doc">ObjectPtr</a> <a href="#a77bf03319589f138677a01b165b672e8" class="m-doc-self">field_4A4</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a03114daee9d379431831b06f9fca0c86">
+              int <a href="#a03114daee9d379431831b06f9fca0c86" class="m-doc-self">field_4A8</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a2a956dbe5bf288ad3ea9ff6eaabc2e36">
+              float <a href="#a2a956dbe5bf288ad3ea9ff6eaabc2e36" class="m-doc-self">mDomesticBudget</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a06d7177f9ac58a0555f267e16660beb5">
+              float <a href="#a06d7177f9ac58a0555f267e16660beb5" class="m-doc-self">mExpansionBudget</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="ac3b1d48500cb604134379cb215fd156c">
+              int <a href="#ac3b1d48500cb604134379cb215fd156c" class="m-doc-self">mUpdateMoneyCount</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="aa1afb3a0f532d874eb0b9f31ade18a94">
+              int <a href="#aa1afb3a0f532d874eb0b9f31ade18a94" class="m-doc-self">mForceMinDiploCount</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a4889823f086e4fb657ae14559a76b920">
+              int <a href="#a4889823f086e4fb657ae14559a76b920" class="m-doc-self">field_4BC</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="ae69654c8ddf8fe0bfc9353d55ca55e34">
+              int <a href="#ae69654c8ddf8fe0bfc9353d55ca55e34" class="m-doc-self">mMilitaryCaptureCount</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a29ab0a7b4dcc31097c28eb25d16def73">
+              int <a href="#a29ab0a7b4dcc31097c28eb25d16def73" class="m-doc-self">mReligiousCaptureCount</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a009b9fda1a3b3c675b49fba3bf56d3bd">
+              int <a href="#a009b9fda1a3b3c675b49fba3bf56d3bd" class="m-doc-self">mEconomicCaptureCount</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a5f488da9777aa6eb28bca143f8bbfc64">
+              bool <a href="#a5f488da9777aa6eb28bca143f8bbfc64" class="m-doc-self">mbLauncedIWinWeapon</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a0fa1713b064c09a60f2b060cb3257381">
+              int <a href="#a0fa1713b064c09a60f2b060cb3257381" class="m-doc-self">mHighestCityCount</a>
             </dt>
             <dd><span></span></dd>
           </dl>

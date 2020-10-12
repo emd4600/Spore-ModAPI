@@ -79,8 +79,8 @@
         <section id="pub-types">
           <h2><a href="#pub-types">Public types</a></h2>
           <dl class="m-doc">
-            <dt id="a43c19ad124c818752329b1b6b6a8da1e">
-              <span class="m-doc-wrap-bumper">enum <a href="#a43c19ad124c818752329b1b6b6a8da1e" class="m-doc-self">(anonymous)</a> { </span><span class="m-doc-wrap"><a href="#a43c19ad124c818752329b1b6b6a8da1ead95326b867011887245dec430f78f08b" class="m-doc">kTypePNG</a> = 0x2F7D0004 }</span>
+            <dt id="aaaa00aeaf4336126683113be43b7071d">
+              <span class="m-doc-wrap-bumper">enum <a href="#aaaa00aeaf4336126683113be43b7071d" class="m-doc-self">(anonymous)</a> { </span><span class="m-doc-wrap"><a href="#aaaa00aeaf4336126683113be43b7071dad95326b867011887245dec430f78f08b" class="m-doc">kTypePNG</a> = 0x2F7D0004 }</span>
             </dt>
             <dd><span></span></dd>
           </dl>
@@ -110,15 +110,15 @@
             </dt>
             <dd>Creates an <a href="class_u_t_f_win_1_1_image.html" class="m-doc">UTFWin::<wbr />Image</a> instance with the image extracted from the file specified.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">static auto <a href="#a0f74ccfb6ee78f2605f28e67c1c19b5b" class="m-doc">SetBackground</a>(</span><span class="m-doc-wrap"><a href="class_u_t_f_win_1_1_i_window.html" class="m-doc">IWindow</a>* pWindow,
+              <span class="m-doc-wrap-bumper">static auto <a href="#a94d63e77c7614f14e5af1e8644d7b78a" class="m-doc">SetBackground</a>(</span><span class="m-doc-wrap"><a href="class_u_t_f_win_1_1_i_window.html" class="m-doc">IWindow</a>* pWindow,
               <a href="class_u_t_f_win_1_1_image.html" class="m-doc">Image</a>* pImage,
-              int nImageIndex = 0) -&gt; bool</span>
+              int imageIndex = -1) -&gt; bool</span>
             </dt>
             <dd>Changes the drawable of the given window to display the specified image.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">static auto <a href="#a16362672aeaae63080234dc438ae5beb" class="m-doc">SetBackgroundByKey</a>(</span><span class="m-doc-wrap"><a href="class_u_t_f_win_1_1_i_window.html" class="m-doc">IWindow</a>* pWindow,
-              const <a href="struct_resource_key.html" class="m-doc">ResourceKey</a> imageName,
-              int nImageIndex = 0) -&gt; bool</span>
+              <span class="m-doc-wrap-bumper">static auto <a href="#a1c82e0d5c792ffa4a6db6ecd77a8d83b" class="m-doc">SetBackgroundByKey</a>(</span><span class="m-doc-wrap"><a href="class_u_t_f_win_1_1_i_window.html" class="m-doc">IWindow</a>* pWindow,
+              const <a href="struct_resource_key.html" class="m-doc">ResourceKey</a>&amp; imageName,
+              int imageIndex = -1) -&gt; bool</span>
             </dt>
             <dd>Changes the drawable of the given window to display the specified image.</dd>
           </dl>
@@ -200,11 +200,11 @@
         </section>
         <section>
           <h2>Function documentation</h2>
-          <section class="m-doc-details" id="a0f74ccfb6ee78f2605f28e67c1c19b5b"><div>
+          <section class="m-doc-details" id="a94d63e77c7614f14e5af1e8644d7b78a"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">static bool UTFWin::<wbr />Image::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a0f74ccfb6ee78f2605f28e67c1c19b5b" class="m-doc-self">SetBackground</a>(</span><span class="m-doc-wrap"><a href="class_u_t_f_win_1_1_i_window.html" class="m-doc">IWindow</a>* pWindow,
+              <span class="m-doc-wrap-bumper">static bool UTFWin::<wbr />Image::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a94d63e77c7614f14e5af1e8644d7b78a" class="m-doc-self">SetBackground</a>(</span><span class="m-doc-wrap"><a href="class_u_t_f_win_1_1_i_window.html" class="m-doc">IWindow</a>* pWindow,
               <a href="class_u_t_f_win_1_1_image.html" class="m-doc">Image</a>* pImage,
-              int nImageIndex = 0)</span></span>
+              int imageIndex = -1)</span></span>
             </h3>
             <p>Changes the drawable of the given window to display the specified image.</p>
             <table class="m-table m-fullwidth m-flat">
@@ -221,18 +221,18 @@
                   <td>The image that will be displayed in the window.</td>
                 </tr>
                 <tr>
-                  <td>nImageIndex</td>
-                  <td>[Optional] The index of the image, for <a href="class_u_t_f_win_1_1_std_drawable.html" class="m-doc">StdDrawable</a>.</td>
+                  <td>imageIndex</td>
+                  <td></td>
                 </tr>
               </tbody>
             </table>
-<p>Optionally, the index of the image can be specified (in the case you want to use a <a href="class_u_t_f_win_1_1_std_drawable.html" class="m-doc">StdDrawable</a>).</p>
+<p>Optionally, the index of the image can be specified (in the case you want to use a <a href="class_u_t_f_win_1_1_std_drawable.html" class="m-doc">StdDrawable</a>).</p><p>The method will try to use the existing drawable of the window; if there&#x27;s no drawable or it&#x27;s not an <a href="class_u_t_f_win_1_1_std_drawable.html" class="m-doc">StdDrawable</a> or an <a href="class_u_t_f_win_1_1_image_drawable.html" class="m-doc">ImageDrawable</a>, one will be created; by default an <a href="class_u_t_f_win_1_1_image_drawable.html" class="m-doc">ImageDrawable</a> will be created, unless an image index is specified.</p>
           </div></section>
-          <section class="m-doc-details" id="a16362672aeaae63080234dc438ae5beb"><div>
+          <section class="m-doc-details" id="a1c82e0d5c792ffa4a6db6ecd77a8d83b"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">static bool UTFWin::<wbr />Image::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a16362672aeaae63080234dc438ae5beb" class="m-doc-self">SetBackgroundByKey</a>(</span><span class="m-doc-wrap"><a href="class_u_t_f_win_1_1_i_window.html" class="m-doc">IWindow</a>* pWindow,
-              const <a href="struct_resource_key.html" class="m-doc">ResourceKey</a> imageName,
-              int nImageIndex = 0)</span></span>
+              <span class="m-doc-wrap-bumper">static bool UTFWin::<wbr />Image::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a1c82e0d5c792ffa4a6db6ecd77a8d83b" class="m-doc-self">SetBackgroundByKey</a>(</span><span class="m-doc-wrap"><a href="class_u_t_f_win_1_1_i_window.html" class="m-doc">IWindow</a>* pWindow,
+              const <a href="struct_resource_key.html" class="m-doc">ResourceKey</a>&amp; imageName,
+              int imageIndex = -1)</span></span>
             </h3>
             <p>Changes the drawable of the given window to display the specified image.</p>
             <table class="m-table m-fullwidth m-flat">
@@ -249,12 +249,12 @@
                   <td>The <a href="struct_resource_key.html" class="m-doc">ResourceKey</a> that points to the image file that will be displayed in the window.</td>
                 </tr>
                 <tr>
-                  <td>nImageIndex</td>
-                  <td>[Optional] The index of the image, for <a href="class_u_t_f_win_1_1_std_drawable.html" class="m-doc">StdDrawable</a>.</td>
+                  <td>imageIndex</td>
+                  <td></td>
                 </tr>
               </tbody>
             </table>
-<p>Optionally, the index of the image can be specified (in the case you want to use a <a href="class_u_t_f_win_1_1_std_drawable.html" class="m-doc">StdDrawable</a>).</p><p>To detour this method, you must use <a href="_cpp_rev_eng_base_8h.html#ab92d9d610cdc7c71d231c76aaa6af2d9" class="m-doc">GetAddress(Image, SetBackground_<wbr />2)</a>.</p>
+<p>Optionally, the index of the image can be specified (in the case you want to use a <a href="class_u_t_f_win_1_1_std_drawable.html" class="m-doc">StdDrawable</a>).</p><p>The method will try to use the existing drawable of the window; if there&#x27;s no drawable or it&#x27;s not an <a href="class_u_t_f_win_1_1_std_drawable.html" class="m-doc">StdDrawable</a> or an <a href="class_u_t_f_win_1_1_image_drawable.html" class="m-doc">ImageDrawable</a>, one will be created; by default an <a href="class_u_t_f_win_1_1_image_drawable.html" class="m-doc">ImageDrawable</a> will be created, unless an image index is specified.</p><p>To detour this method, you must use <a href="_cpp_rev_eng_base_8h.html#ab92d9d610cdc7c71d231c76aaa6af2d9" class="m-doc">GetAddress(Image, SetBackground_<wbr />2)</a>.</p>
           </div></section>
         </section>
       </div>

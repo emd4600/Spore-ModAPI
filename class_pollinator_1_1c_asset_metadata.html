@@ -48,7 +48,7 @@
           <span class="m-breadcrumb"><a href="namespace_pollinator.html">Pollinator</a>::<wbr/></span>cAssetMetadata <span class="m-thin">class</span>
           <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="c_asset_metadata_8h.html">&lt;Spore/Pollinator/cAssetMetadata.h&gt;</a></div>
         </h1>
-        <p><span></span></p>
+        <p>The class representation of <code>.pollen_metadata</code> files, which represent the metadata (name, author, time created,...) of a creation.</p>
         <div class="m-block m-default">
           <h3>Contents</h3>
           <ul>
@@ -63,6 +63,7 @@
             </li>
           </ul>
         </div>
+<p>You can get a metadata object using <a href="namespace_pollinator.html#a4b07b1802f4bc296117a2c505ff12266" class="m-doc">Pollinator::<wbr />GetMetadata()</a></p>
         <section id="base-classes">
           <h2><a href="#base-classes">Base classes</a></h2>
           <dl class="m-doc">
@@ -84,6 +85,10 @@
         <section id="pub-methods">
           <h2><a href="#pub-methods">Public functions</a></h2>
           <dl class="m-doc">
+            <dt id="a16c11afb1bfb5be649d9fff24c1ebbcf">
+              <span class="m-doc-wrap-bumper">auto <a href="#a16c11afb1bfb5be649d9fff24c1ebbcf" class="m-doc-self">Cast</a>(</span><span class="m-doc-wrap">uint32_t type) const -&gt; void* <span class="m-label m-flat m-warning">override</span></span>
+            </dt>
+            <dd><span></span></dd>
             <dt id="a71d0f889733f5dc5d2d3358411e2f781">
               <span class="m-doc-wrap-bumper">auto <a href="#a71d0f889733f5dc5d2d3358411e2f781" class="m-doc-self">GetAssetID</a>(</span><span class="m-doc-wrap">) const -&gt; int64_t</span>
             </dt>
@@ -146,6 +151,15 @@
             <dd><span></span></dd>
             <dt id="a95d159fdb64c3d81a8707e3c6766b23f">
               <span class="m-doc-wrap-bumper">auto <a href="#a95d159fdb64c3d81a8707e3c6766b23f" class="m-doc-self">IsLocalized</a>(</span><span class="m-doc-wrap">) const -&gt; bool</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a0a3e3f4a01494113b3d8452e72befd5f">
+              <span class="m-doc-wrap-bumper">auto <a href="#a0a3e3f4a01494113b3d8452e72befd5f" class="m-doc-self">Set</a>(</span><span class="m-doc-wrap">const <a href="struct_resource_key.html" class="m-doc">ResourceKey</a>&amp; assetKey,
+              const char16_t* pName,
+              const char16_t* pDescription,
+              const char16_t* pTags,
+              const <a href="struct_resource_key.html" class="m-doc">ResourceKey</a>&amp; parentAssetKey,
+              bool isPollinated) -&gt; bool</span>
             </dt>
             <dd><span></span></dd>
           </dl>

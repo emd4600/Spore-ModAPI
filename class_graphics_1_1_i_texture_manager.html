@@ -77,8 +77,8 @@
           <h2><a href="#pub-types">Public types</a></h2>
           <dl class="m-doc">
             <dt>
-              <span class="m-doc-wrap-bumper">enum <a href="#a44bba3d80acea9356db07da88dad5920" class="m-doc">(anonymous)</a> { </span><span class="m-doc-wrap"><a href="#a44bba3d80acea9356db07da88dad5920a7b326794b0cb45dd4ce0c6337ce641ff" class="m-doc">kForceLoad</a> = 2,
-              <a href="#a44bba3d80acea9356db07da88dad5920a0146ecaada21dc50ed7c5942d2abf97c" class="m-doc">kSetLOD</a> = 4 }</span>
+              <span class="m-doc-wrap-bumper">enum <a href="#a18a73275124cc19fbb732ceea7d7a2a0" class="m-doc">(anonymous)</a> { </span><span class="m-doc-wrap"><a href="#a18a73275124cc19fbb732ceea7d7a2a0a7b326794b0cb45dd4ce0c6337ce641ff" class="m-doc">kForceLoad</a> = 2,
+              <a href="#a18a73275124cc19fbb732ceea7d7a2a0a0146ecaada21dc50ed7c5942d2abf97c" class="m-doc">kSetLOD</a> = 4 }</span>
             </dt>
             <dd><span></span></dd>
           </dl>
@@ -165,15 +165,15 @@
               void* arg_4) -&gt; bool <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
             <dd><span></span></dd>
-            <dt id="abe5fdbf4dc320cb2683c48e703fd3e69">
-              <span class="m-doc-wrap-bumper">auto <a href="#abe5fdbf4dc320cb2683c48e703fd3e69" class="m-doc-self">func3Ch</a>(</span><span class="m-doc-wrap">uint32_t intanceID,
+            <dt id="a8bc669d3b722ccadbc56a1da1737cc9e">
+              <span class="m-doc-wrap-bumper">auto <a href="#a8bc669d3b722ccadbc56a1da1737cc9e" class="m-doc-self">CreateTexture</a>(</span><span class="m-doc-wrap">uint32_t intanceID,
               uint32_t groupID,
               int width,
               int height,
-              int,
-              int,
-              D3DFORMAT,
-              int) -&gt; int <span class="m-label m-flat m-warning">pure virtual</span></span>
+              int mipmapLevels,
+              int flags,
+              D3DFORMAT format,
+              int) -&gt; <a href="class_graphics_1_1_texture.html" class="m-doc">Texture</a>* <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
             <dd><span></span></dd>
             <dt id="a3a9b48d207feb0576981b50b67f83684">
@@ -196,11 +196,11 @@
               int) -&gt; int <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
             <dd><span></span></dd>
-            <dt id="abbed1f630e98275922e1e64fe2137540">
-              <span class="m-doc-wrap-bumper">auto <a href="#abbed1f630e98275922e1e64fe2137540" class="m-doc-self">func4Ch</a>(</span><span class="m-doc-wrap">int,
-              int,
-              int,
-              int) -&gt; int <span class="m-label m-flat m-warning">pure virtual</span></span>
+            <dt id="a59fb9838e7df6a2432dae5b80d564a98">
+              <span class="m-doc-wrap-bumper">auto <a href="#a59fb9838e7df6a2432dae5b80d564a98" class="m-doc-self">AddTextureFromRaster</a>(</span><span class="m-doc-wrap">uint32_t instanceID,
+              uint32_t groupID,
+              <a href="struct_render_ware_1_1_raster.html" class="m-doc">Raster</a>* pRaster,
+              int) -&gt; <a href="class_graphics_1_1_texture.html" class="m-doc">Texture</a>* <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
             <dd><span></span></dd>
             <dt id="a9e05e3758503d5860ba9cc30819623e1">
@@ -262,22 +262,22 @@
         </section>
         <section>
           <h2>Enum documentation</h2>
-          <section class="m-doc-details" id="a44bba3d80acea9356db07da88dad5920"><div>
+          <section class="m-doc-details" id="a18a73275124cc19fbb732ceea7d7a2a0"><div>
             <h3>
-              enum Graphics::<wbr />ITextureManager::<wbr /><a href="#a44bba3d80acea9356db07da88dad5920" class="m-doc-self">(anonymous)</a>
+              enum Graphics::<wbr />ITextureManager::<wbr /><a href="#a18a73275124cc19fbb732ceea7d7a2a0" class="m-doc-self">(anonymous)</a>
             </h3>
             <p><span></span></p>
             <table class="m-table m-fullwidth m-flat m-doc">
               <thead><tr><th style="width: 1%">Enumerators</th><th></th></tr></thead>
               <tbody>
                 <tr>
-                  <td><a href="#a44bba3d80acea9356db07da88dad5920a7b326794b0cb45dd4ce0c6337ce641ff" class="m-doc-self" id="a44bba3d80acea9356db07da88dad5920a7b326794b0cb45dd4ce0c6337ce641ff">kForceLoad</a></td>
+                  <td><a href="#a18a73275124cc19fbb732ceea7d7a2a0a7b326794b0cb45dd4ce0c6337ce641ff" class="m-doc-self" id="a18a73275124cc19fbb732ceea7d7a2a0a7b326794b0cb45dd4ce0c6337ce641ff">kForceLoad</a></td>
                   <td>
                   <p>Forces the texture to load. If no .raster exists, this will look for rw4 as well.</p>
                   </td>
                 </tr>
                 <tr>
-                  <td><a href="#a44bba3d80acea9356db07da88dad5920a0146ecaada21dc50ed7c5942d2abf97c" class="m-doc-self" id="a44bba3d80acea9356db07da88dad5920a0146ecaada21dc50ed7c5942d2abf97c">kSetLOD</a></td>
+                  <td><a href="#a18a73275124cc19fbb732ceea7d7a2a0a0146ecaada21dc50ed7c5942d2abf97c" class="m-doc-self" id="a18a73275124cc19fbb732ceea7d7a2a0a0146ecaada21dc50ed7c5942d2abf97c">kSetLOD</a></td>
                   <td>
                   <p>If enabled, SetLOD() will be called to the texture with the current level of detail.</p>
                   </td>

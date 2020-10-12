@@ -63,8 +63,8 @@
           </ul>
         </div>
 <p>It can be used to get the path to the My Spore Creations folder:</p><pre class="m-code"><span class="n">string16</span> <span class="n">path</span><span class="p">;</span>
-<span class="n">App</span><span class="o">::</span><span class="n">Thumbnail_cImportExport</span><span class="o">::</span><span class="n">Get</span><span class="p">()</span><span class="o">-&gt;</span><span class="n">GetFolderPath</span><span class="p">(</span><span class="n">TypeIDs</span><span class="o">::</span><span class="n">crt</span><span class="p">,</span> <span class="n">path</span><span class="p">);</span>
-<span class="c1">// Now path is something like &#39;C:\Users\...\My Documents\My Spore Creations\Creatures&#39;</span></pre>
+<span class="n">ThumbnailImportExport</span><span class="p">.</span><span class="n">GetFolderPath</span><span class="p">(</span><span class="n">TypeIDs</span><span class="o">::</span><span class="n">crt</span><span class="p">,</span> <span class="n">path</span><span class="p">);</span>
+<span class="c1">// Now path is something like &#39;C:\Users\...\My Documents\My Spore Creations\Creatures&#39;</span></pre><p>You can also use it to save a <a href="class_resource_1_1_resource_object.html" class="m-doc">Resource::<wbr />ResourceObject</a> into a <code>.png</code> with <a href="class_app_1_1_thumbnail__c_import_export.html#a3f59c0319b4f184c89fc50724e8df6e3" class="m-doc">Thumbnail_cImportExport::<wbr />SavePNG()</a></p>
         <section id="base-classes">
           <h2><a href="#base-classes">Base classes</a></h2>
           <dl class="m-doc">
@@ -91,6 +91,20 @@
               string16&amp; dst) -&gt; bool</span>
             </dt>
             <dd>Gets the filepath of the folder where the .PNGs of the creation type are stored.</dd>
+            <dt id="ac482020edd9b5a1ee5003e289a3eaae9">
+              <span class="m-doc-wrap-bumper">auto <a href="#ac482020edd9b5a1ee5003e289a3eaae9" class="m-doc-self">FolderPathFromLocale</a>(</span><span class="m-doc-wrap">uint32_t instanceID,
+              string16&amp; dst,
+              uint32_t tableID = 0xFFFFFFFF) -&gt; bool</span>
+            </dt>
+            <dd>Used to obtain a path from a locale file, by default <code>0x19F76D11.locale</code>, similar to the one that would return <a href="class_app_1_1_thumbnail__c_import_export.html#a601fdcc25bec2a835b709b81f4aa7373" class="m-doc">GetFolderPath()</a></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a3f59c0319b4f184c89fc50724e8df6e3" class="m-doc">SavePNG</a>(</span><span class="m-doc-wrap"><a href="class_resource_1_1_resource_object.html" class="m-doc">Resource::<wbr />ResourceObject</a>* pResource,
+              <a href="struct_render_ware_1_1_raster.html" class="m-doc">RenderWare::<wbr />Raster</a>* pImage,
+              <a href="namespace_resource.html#ab12e5000d7ef0108f3200a644b54a682" class="m-doc">Resource::<wbr />DBPF</a>* pDBPF,
+              bool forceReplace = false,
+              bool disableSteganography = false) -&gt; bool</span>
+            </dt>
+            <dd>Encodes the given resource into a <code>.png</code> image and saves it, both in the given package and in the &quot;My Spore Creations&quot; in the user Documents folder.</dd>
           </dl>
         </section>
         <section>
@@ -116,6 +130,50 @@
                 </tr>
               </tbody>
             </table>
+          </div></section>
+          <section class="m-doc-details" id="a3f59c0319b4f184c89fc50724e8df6e3"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">bool App::<wbr />Thumbnail_cImportExport::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a3f59c0319b4f184c89fc50724e8df6e3" class="m-doc-self">SavePNG</a>(</span><span class="m-doc-wrap"><a href="class_resource_1_1_resource_object.html" class="m-doc">Resource::<wbr />ResourceObject</a>* pResource,
+              <a href="struct_render_ware_1_1_raster.html" class="m-doc">RenderWare::<wbr />Raster</a>* pImage,
+              <a href="namespace_resource.html#ab12e5000d7ef0108f3200a644b54a682" class="m-doc">Resource::<wbr />DBPF</a>* pDBPF,
+              bool forceReplace = false,
+              bool disableSteganography = false)</span></span>
+            </h3>
+            <p>Encodes the given resource into a <code>.png</code> image and saves it, both in the given package and in the &quot;My Spore Creations&quot; in the user Documents folder.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">pResource</td>
+                  <td>The resource object to encode inside the PNG. It will be encoded using the appropriate <a href="class_resource_1_1_i_resource_factory.html" class="m-doc">Resource::<wbr />IResourceFactory</a></td>
+                </tr>
+                <tr>
+                  <td>pImage</td>
+                  <td>The raster that is written as the image</td>
+                </tr>
+                <tr>
+                  <td>pDBPF</td>
+                  <td>The DBPF taht contains the pollen metadata, and where the PNG will be saved</td>
+                </tr>
+                <tr>
+                  <td>forceReplace</td>
+                  <td>[Optional] If false (by default), if the <code>.png</code> already exists in the folder, it will try writing variants like <code>(1)</code>, <code>(2)</code>,...</td>
+                </tr>
+                <tr>
+                  <td>disableSteganography</td>
+                  <td>[Optional] If false (by default), the data in the <code>.png</code> will be stored in a special way meant to save space.</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>Returns</th>
+                  <td><code>true</code> on success, <code>false</code> if something failed.</td>
+                </tr>
+              </tfoot>
+            </table>
+<p>In the package, the image will be saved using the same <a href="struct_resource_key.html" class="m-doc">ResourceKey</a> as the resource, but with a <a href="namespace_type_i_ds.html#abdeebbef113e599eb270baf3f9e5b2d5ae9f1f25d8abe0549036fe4e15a7b5b1f" class="m-doc">TypeIDs::<wbr />png</a> type. The function expects a <a href="namespace_type_i_ds.html#abdeebbef113e599eb270baf3f9e5b2d5ad62b8ed35c68090d8c102fd95ec50986" class="m-doc">TypeIDs::<wbr />pollen_metadata</a> file to exist in that same folder, which will be used to write the metadata (name, description, author, etc) of the creation.</p>
           </div></section>
         </section>
       </div>

@@ -117,10 +117,10 @@
           <h2><a href="#pub-methods">Public functions</a></h2>
           <dl class="m-doc">
             <dt>
-              <span class="m-doc-wrap-bumper">void <a href="#adf696bd984e7c5017720b661515ad0fb" class="m-doc">Load</a>(</span><span class="m-doc-wrap"><a href="class_palettes_1_1_palette_main.html" class="m-doc">PaletteMain</a>* pPalette,
+              <span class="m-doc-wrap-bumper">void <a href="#a084fbae2581c77cfb8bc75cf2048df30" class="m-doc">Load</a>(</span><span class="m-doc-wrap"><a href="class_palettes_1_1_palette_main.html" class="m-doc">PaletteMain</a>* pPalette,
               <a href="class_u_t_f_win_1_1_i_window.html" class="m-doc">IWindow</a>* pWindow,
               bool,
-              void*)</span>
+              <a href="class_palettes_1_1_palette_info.html" class="m-doc">PaletteInfo</a>* pInfo)</span>
             </dt>
             <dd>The <a href="namespace_u_i.html" class="m-doc">UI</a> is generated in the following steps:</dd>
             <dt id="a704ac9cb50c31e7ae9a8cf0fc4ad4369">
@@ -157,8 +157,8 @@
         <section id="pub-attribs">
           <h2><a href="#pub-attribs">Public variables</a></h2>
           <dl class="m-doc">
-            <dt id="a926861cfd57c6651df7084d73a4bb091">
-              intrusive_ptr&lt;<a href="class_u_t_f_win_1_1_u_i_layout.html" class="m-doc">UILayout</a>&gt; <a href="#a926861cfd57c6651df7084d73a4bb091" class="m-doc-self">mpLayout</a>
+            <dt id="a2b2884e681ac44697f1cd39a7c1176a5">
+              <a href="_u_i_layout_8h.html#aca5b38a6789bbf1eda0157d721e679d2" class="m-doc">UILayoutPtr</a> <a href="#a2b2884e681ac44697f1cd39a7c1176a5" class="m-doc-self">mpLayout</a>
             </dt>
             <dd>The layout of the palette, loaded using the ID in <a href="class_palettes_1_1_palette_main.html#a84f79d6215d8df8a05d3b09bfc804b46" class="m-doc">Palettes::<wbr />PaletteMain::<wbr />mLayoutID</a>.</dd>
             <dt id="adcd20c349c377366bd383fb4831de11e">
@@ -189,16 +189,16 @@
               <a href="class_u_t_f_win_1_1_i_window.html" class="m-doc">IWindow</a>* <a href="#aa2e96701f3a28e45005ebf89dc8f3c20" class="m-doc-self">mpMainWindow</a>
             </dt>
             <dd>The main window of the UILayout, with ControlID 0xFFFFFFFF.</dd>
-            <dt id="a0fff103f38506c9acf336e749b0c6fc7">
-              intrusive_ptr&lt;<a href="class_palettes_1_1_palette_main.html" class="m-doc">PaletteMain</a>&gt; <a href="#a0fff103f38506c9acf336e749b0c6fc7" class="m-doc-self">mpPalette</a>
+            <dt id="a3559a812494319f0730a608a43266bc0">
+              <a href="_palette_main_8h.html#a9fd3c85d419b54d86adb1489eefee6da" class="m-doc">PaletteMainPtr</a> <a href="#a3559a812494319f0730a608a43266bc0" class="m-doc-self">mpPalette</a>
             </dt>
             <dd>The <a href="class_palettes_1_1_palette_main.html" class="m-doc">Palettes::<wbr />PaletteMain</a> that this <a href="namespace_u_i.html" class="m-doc">UI</a> displays.</dd>
-            <dt id="a1e047640568c4a3010598211c9f303d3">
-              intrusive_ptr&lt;<a href="class_default_ref_counted.html" class="m-doc">DefaultRefCounted</a>&gt; <a href="#a1e047640568c4a3010598211c9f303d3" class="m-doc-self">field_30</a>
+            <dt id="a8537505c58bfa6ebd2440cbac0a58083">
+              <a href="_palette_info_8h.html#a5cfb8bd7b05f2b5bc1a43acef6d9e75c" class="m-doc">PaletteInfoPtr</a> <a href="#a8537505c58bfa6ebd2440cbac0a58083" class="m-doc-self">mpPaletteInfo</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="a1927639dca88ba248893da5f034c1605">
-              vector&lt;intrusive_ptr&lt;<a href="class_palettes_1_1_palette_category_u_i.html" class="m-doc">PaletteCategoryUI</a>&gt;&gt; <a href="#a1927639dca88ba248893da5f034c1605" class="m-doc-self">mCategories</a>
+            <dt id="abf6a0bc73a128ff2adb2364ba73cbfad">
+              vector&lt;<a href="_palette_category_u_i_8h.html#ab33ed607f2d5220bcf15d4a6f3eba243" class="m-doc">PaletteCategoryUIPtr</a>&gt; <a href="#abf6a0bc73a128ff2adb2364ba73cbfad" class="m-doc-self">mCategories</a>
             </dt>
             <dd>The <a href="namespace_u_i.html" class="m-doc">UI</a> objects for all categories contained in the palette. They are in the same order as the <a href="class_palettes_1_1_palette_main.html#aeb96c16af4ec6ca571830f13496d13ee" class="m-doc">PaletteMain::<wbr />mCategories</a> field.</dd>
             <dt id="acd56a4aa538da1b881bf660ae0ef9550">
@@ -267,12 +267,12 @@
         </section>
         <section>
           <h2>Function documentation</h2>
-          <section class="m-doc-details" id="adf696bd984e7c5017720b661515ad0fb"><div>
+          <section class="m-doc-details" id="a084fbae2581c77cfb8bc75cf2048df30"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">void Palettes::<wbr />PaletteUI::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#adf696bd984e7c5017720b661515ad0fb" class="m-doc-self">Load</a>(</span><span class="m-doc-wrap"><a href="class_palettes_1_1_palette_main.html" class="m-doc">PaletteMain</a>* pPalette,
+              <span class="m-doc-wrap-bumper">void Palettes::<wbr />PaletteUI::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a084fbae2581c77cfb8bc75cf2048df30" class="m-doc-self">Load</a>(</span><span class="m-doc-wrap"><a href="class_palettes_1_1_palette_main.html" class="m-doc">PaletteMain</a>* pPalette,
               <a href="class_u_t_f_win_1_1_i_window.html" class="m-doc">IWindow</a>* pWindow,
               bool,
-              void*)</span></span>
+              <a href="class_palettes_1_1_palette_info.html" class="m-doc">PaletteInfo</a>* pInfo)</span></span>
             </h3>
             <p>The <a href="namespace_u_i.html" class="m-doc">UI</a> is generated in the following steps:</p>
 <ol><li>The UILayout of the palette is loaded; it&#x27;s parent is set to pWindow using the <a href="class_u_t_f_win_1_1_u_i_layout.html#acb630bbaf4bcb4ed64437833a4f496ff" class="m-doc">UTFWin::<wbr />UILayout::<wbr />SetParentWindow()</a> method.</li><li>The mpMainWindow is set to the window with ControlID 0xFFFFFFFF; if it exists, the method <a href="class_u_t_f_win_1_1_i_window.html#aeeae2b1ff3af53745f9f9b37a8431916" class="m-doc">IWindow::<wbr />FitParentArea()</a> will be called.</li><li>The mAnimatedWindow is set to the window with ControlID 0x49AFE6A1, and it is set invisible.</li><li>This object is added as a IWinProc in the windows with ControlID: kControlLeftArrowBtn, kControlRightArrowBtn and 0x7BCE6E8</li></ol>

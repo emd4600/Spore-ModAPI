@@ -110,8 +110,8 @@
           <h2><a href="#pub-methods">Public functions</a></h2>
           <dl class="m-doc">
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#a2146c9496ca84415c383fcd10e5dbef9" class="m-doc">GetResource</a>(</span><span class="m-doc-wrap">const <a href="struct_resource_key.html" class="m-doc">ResourceKey</a>&amp; name,
-              <a href="class_resource_1_1_resource_object.html" class="m-doc">ResourceObject</a>** ppDst = nullptr,
+              <span class="m-doc-wrap-bumper">auto <a href="#a8f3fe5b481af9e5e9405c0119b41993d" class="m-doc">GetResource</a>(</span><span class="m-doc-wrap">const <a href="struct_resource_key.html" class="m-doc">ResourceKey</a>&amp; name,
+              <a href="_resource_object_8h.html#a1545ff2e1aa08f1935f251e338e72e33" class="m-doc">ResourceObjectPtr</a>* ppDst = nullptr,
               int arg_8 = 0,
               <a href="namespace_resource.html#ab12e5000d7ef0108f3200a644b54a682" class="m-doc">DBPF</a>* pDBPF = nullptr,
               <a href="class_resource_1_1_i_resource_factory.html" class="m-doc">IResourceFactory</a>* pFactory = nullptr,
@@ -119,9 +119,9 @@
             </dt>
             <dd>Gets the resource that has the given <a href="struct_resource_key.html" class="m-doc">ResourceKey</a> name.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#a869728746a28d4fc18a21ddc52e54630" class="m-doc">func10h</a>(</span><span class="m-doc-wrap">const <a href="struct_resource_key.html" class="m-doc">ResourceKey</a>&amp; name,
-              <a href="class_resource_1_1_resource_object.html" class="m-doc">ResourceObject</a>** ppDst = nullptr,
-              void** arg_8 = nullptr,
+              <span class="m-doc-wrap-bumper">auto <a href="#ac4c8f93a671160f622659b6b5c2d30b4" class="m-doc">GetAsyncResource</a>(</span><span class="m-doc-wrap">const <a href="struct_resource_key.html" class="m-doc">ResourceKey</a>&amp; name,
+              <a href="_resource_object_8h.html#a1545ff2e1aa08f1935f251e338e72e33" class="m-doc">ResourceObjectPtr</a>* ppDst = nullptr,
+              <a href="_resource_object_8h.html#a1f615fa45918ae5b5408b64b8b3c20ec" class="m-doc">AsyncResourcePtr</a>* ppDstAsync = nullptr,
               void* arg_C = nullptr,
               void* arg_10 = nullptr,
               <a href="namespace_resource.html#ab12e5000d7ef0108f3200a644b54a682" class="m-doc">DBPF</a>* pDBPF = nullptr,
@@ -130,8 +130,8 @@
             </dt>
             <dd>Similar usage to ResourceManager::GetResource .</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#aa94e4365737ee71c5d8b3501e0e9e580" class="m-doc">GetCachedResource</a>(</span><span class="m-doc-wrap">const <a href="struct_resource_key.html" class="m-doc">ResourceKey</a>&amp; name,
-              intrusive_ptr&lt;<a href="class_resource_1_1_resource_object.html" class="m-doc">ResourceObject</a>&gt;* pDst) -&gt; bool <span class="m-label m-flat m-warning">pure virtual</span></span>
+              <span class="m-doc-wrap-bumper">auto <a href="#a1a6fcd75fb5889274e8cd66299d81edf" class="m-doc">GetCachedResource</a>(</span><span class="m-doc-wrap">const <a href="struct_resource_key.html" class="m-doc">ResourceKey</a>&amp; name,
+              <a href="_resource_object_8h.html#a1545ff2e1aa08f1935f251e338e72e33" class="m-doc">ResourceObjectPtr</a>* pDst) -&gt; bool <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
             <dd>Gets a resource from the resource cache in this manager.</dd>
             <dt id="a02f8e1cd9a08ca4fa9de7841155bd2a0">
@@ -143,8 +143,8 @@
             </dt>
             <dd><span></span></dd>
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#a76691fa38c590d5dcf2f1b3061b93c41" class="m-doc">ReadResource</a>(</span><span class="m-doc-wrap">const <a href="struct_resource_key.html" class="m-doc">ResourceKey</a>&amp; name,
-              <a href="class_resource_1_1_resource_object.html" class="m-doc">ResourceObject</a>** ppDst = nullptr,
+              <span class="m-doc-wrap-bumper">auto <a href="#a86ea8774eff9eb580e75665902a5339f" class="m-doc">ReadResource</a>(</span><span class="m-doc-wrap">const <a href="struct_resource_key.html" class="m-doc">ResourceKey</a>&amp; name,
+              <a href="_resource_object_8h.html#a1545ff2e1aa08f1935f251e338e72e33" class="m-doc">ResourceObjectPtr</a>* ppDst = nullptr,
               int arg_8 = 0,
               <a href="namespace_resource.html#ab12e5000d7ef0108f3200a644b54a682" class="m-doc">DBPF</a>* pDBPF = nullptr,
               <a href="class_resource_1_1_i_resource_factory.html" class="m-doc">IResourceFactory</a>* pFactory = nullptr,
@@ -206,7 +206,7 @@
             </dt>
             <dd><span></span></dd>
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#a56e774d64363633463e9dd6ef154221c" class="m-doc">SetResourceFactory</a>(</span><span class="m-doc-wrap">bool bRemove,
+              <span class="m-doc-wrap-bumper">auto <a href="#aff590939e66a37d41706bc678b7fafad" class="m-doc">SetResourceFactory</a>(</span><span class="m-doc-wrap">bool add,
               <a href="class_resource_1_1_i_resource_factory.html" class="m-doc">IResourceFactory</a>* pFactory,
               uint32_t arg_8) -&gt; bool <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
@@ -309,10 +309,10 @@
         </section>
         <section>
           <h2>Function documentation</h2>
-          <section class="m-doc-details" id="a2146c9496ca84415c383fcd10e5dbef9"><div>
+          <section class="m-doc-details" id="a8f3fe5b481af9e5e9405c0119b41993d"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">bool Resource::<wbr />IResourceManager::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a2146c9496ca84415c383fcd10e5dbef9" class="m-doc-self">GetResource</a>(</span><span class="m-doc-wrap">const <a href="struct_resource_key.html" class="m-doc">ResourceKey</a>&amp; name,
-              <a href="class_resource_1_1_resource_object.html" class="m-doc">ResourceObject</a>** ppDst = nullptr,
+              <span class="m-doc-wrap-bumper">bool Resource::<wbr />IResourceManager::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a8f3fe5b481af9e5e9405c0119b41993d" class="m-doc-self">GetResource</a>(</span><span class="m-doc-wrap">const <a href="struct_resource_key.html" class="m-doc">ResourceKey</a>&amp; name,
+              <a href="_resource_object_8h.html#a1545ff2e1aa08f1935f251e338e72e33" class="m-doc">ResourceObjectPtr</a>* ppDst = nullptr,
               int arg_8 = 0,
               <a href="namespace_resource.html#ab12e5000d7ef0108f3200a644b54a682" class="m-doc">DBPF</a>* pDBPF = nullptr,
               <a href="class_resource_1_1_i_resource_factory.html" class="m-doc">IResourceFactory</a>* pFactory = nullptr,
@@ -358,11 +358,11 @@
             </table>
 <p>If the resource is contained in the cache, that will be used. The name will be modified to use the correct types, according to the mappings in this manager. The resource will be seached in all the DBPF files in this manager, unless a specific one is specified. Once the file is found, the correct factory will be used to generate the appropiate resource, unless a specific <a href="class_resource_1_1_i_resource_factory.html" class="m-doc">IResourceFactory</a> is specified.</p>
           </div></section>
-          <section class="m-doc-details" id="a869728746a28d4fc18a21ddc52e54630"><div>
+          <section class="m-doc-details" id="ac4c8f93a671160f622659b6b5c2d30b4"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">bool Resource::<wbr />IResourceManager::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a869728746a28d4fc18a21ddc52e54630" class="m-doc-self">func10h</a>(</span><span class="m-doc-wrap">const <a href="struct_resource_key.html" class="m-doc">ResourceKey</a>&amp; name,
-              <a href="class_resource_1_1_resource_object.html" class="m-doc">ResourceObject</a>** ppDst = nullptr,
-              void** arg_8 = nullptr,
+              <span class="m-doc-wrap-bumper">bool Resource::<wbr />IResourceManager::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ac4c8f93a671160f622659b6b5c2d30b4" class="m-doc-self">GetAsyncResource</a>(</span><span class="m-doc-wrap">const <a href="struct_resource_key.html" class="m-doc">ResourceKey</a>&amp; name,
+              <a href="_resource_object_8h.html#a1545ff2e1aa08f1935f251e338e72e33" class="m-doc">ResourceObjectPtr</a>* ppDst = nullptr,
+              <a href="_resource_object_8h.html#a1f615fa45918ae5b5408b64b8b3c20ec" class="m-doc">AsyncResourcePtr</a>* ppDstAsync = nullptr,
               void* arg_C = nullptr,
               void* arg_10 = nullptr,
               <a href="namespace_resource.html#ab12e5000d7ef0108f3200a644b54a682" class="m-doc">DBPF</a>* pDBPF = nullptr,
@@ -372,10 +372,10 @@
             <p>Similar usage to ResourceManager::GetResource .</p>
 <p>This method allows to get more info, but it is unknown what that info is.</p>
           </div></section>
-          <section class="m-doc-details" id="aa94e4365737ee71c5d8b3501e0e9e580"><div>
+          <section class="m-doc-details" id="a1a6fcd75fb5889274e8cd66299d81edf"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">bool Resource::<wbr />IResourceManager::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#aa94e4365737ee71c5d8b3501e0e9e580" class="m-doc-self">GetCachedResource</a>(</span><span class="m-doc-wrap">const <a href="struct_resource_key.html" class="m-doc">ResourceKey</a>&amp; name,
-              intrusive_ptr&lt;<a href="class_resource_1_1_resource_object.html" class="m-doc">ResourceObject</a>&gt;* pDst) <span class="m-label m-warning">pure virtual</span></span></span>
+              <span class="m-doc-wrap-bumper">bool Resource::<wbr />IResourceManager::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a1a6fcd75fb5889274e8cd66299d81edf" class="m-doc-self">GetCachedResource</a>(</span><span class="m-doc-wrap">const <a href="struct_resource_key.html" class="m-doc">ResourceKey</a>&amp; name,
+              <a href="_resource_object_8h.html#a1545ff2e1aa08f1935f251e338e72e33" class="m-doc">ResourceObjectPtr</a>* pDst) <span class="m-label m-warning">pure virtual</span></span></span>
             </h3>
             <p>Gets a resource from the resource cache in this manager.</p>
             <table class="m-table m-fullwidth m-flat">
@@ -388,10 +388,10 @@
             </table>
 <p>If it isn&#x27;t present in the cache, nothing will happen.</p>
           </div></section>
-          <section class="m-doc-details" id="a76691fa38c590d5dcf2f1b3061b93c41"><div>
+          <section class="m-doc-details" id="a86ea8774eff9eb580e75665902a5339f"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">bool Resource::<wbr />IResourceManager::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a76691fa38c590d5dcf2f1b3061b93c41" class="m-doc-self">ReadResource</a>(</span><span class="m-doc-wrap">const <a href="struct_resource_key.html" class="m-doc">ResourceKey</a>&amp; name,
-              <a href="class_resource_1_1_resource_object.html" class="m-doc">ResourceObject</a>** ppDst = nullptr,
+              <span class="m-doc-wrap-bumper">bool Resource::<wbr />IResourceManager::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a86ea8774eff9eb580e75665902a5339f" class="m-doc-self">ReadResource</a>(</span><span class="m-doc-wrap">const <a href="struct_resource_key.html" class="m-doc">ResourceKey</a>&amp; name,
+              <a href="_resource_object_8h.html#a1545ff2e1aa08f1935f251e338e72e33" class="m-doc">ResourceObjectPtr</a>* ppDst = nullptr,
               int arg_8 = 0,
               <a href="namespace_resource.html#ab12e5000d7ef0108f3200a644b54a682" class="m-doc">DBPF</a>* pDBPF = nullptr,
               <a href="class_resource_1_1_i_resource_factory.html" class="m-doc">IResourceFactory</a>* pFactory = nullptr,
@@ -534,9 +534,9 @@
             </table>
 <p>If request is nullptr, all the files in the manager will be added.</p>
           </div></section>
-          <section class="m-doc-details" id="a56e774d64363633463e9dd6ef154221c"><div>
+          <section class="m-doc-details" id="aff590939e66a37d41706bc678b7fafad"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">bool Resource::<wbr />IResourceManager::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a56e774d64363633463e9dd6ef154221c" class="m-doc-self">SetResourceFactory</a>(</span><span class="m-doc-wrap">bool bRemove,
+              <span class="m-doc-wrap-bumper">bool Resource::<wbr />IResourceManager::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#aff590939e66a37d41706bc678b7fafad" class="m-doc-self">SetResourceFactory</a>(</span><span class="m-doc-wrap">bool add,
               <a href="class_resource_1_1_i_resource_factory.html" class="m-doc">IResourceFactory</a>* pFactory,
               uint32_t arg_8) <span class="m-label m-warning">pure virtual</span></span></span>
             </h3>
@@ -547,8 +547,8 @@
               </thead>
               <tbody>
                 <tr>
-                  <td style="width: 1%">bRemove</td>
-                  <td>If true, pFactory will be removed from the manager; if false, it will be added to the manager.</td>
+                  <td style="width: 1%">add</td>
+                  <td>If true, pFactory will be added to the manager; if false, it will be removed from the manager.</td>
                 </tr>
                 <tr>
                   <td>pFactory</td>

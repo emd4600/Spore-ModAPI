@@ -54,15 +54,44 @@
             <li>
               Reference
               <ul>
+                <li><a href="#namespaces">Namespaces</a></li>
                 <li><a href="#nested-classes">Classes</a></li>
+                <li><a href="#typedef-members">Typedefs</a></li>
                 <li><a href="#func-members">Functions</a></li>
               </ul>
             </li>
           </ul>
         </div>
+        <section id="namespaces">
+          <h2><a href="#namespaces">Namespaces</a></h2>
+          <dl class="m-doc">
+            <dt>namespace <a href="namespace_sporepedia_1_1_o_t_d_b.html" class="m-doc">OTDB</a></dt>
+            <dd><span></span></dd>
+          </dl>
+        </section>
         <section id="nested-classes">
           <h2><a href="#nested-classes">Classes</a></h2>
           <dl class="m-doc">
+            <dt>
+              struct <a href="struct_sporepedia_1_1_asset_browser_query.html" class="m-doc">AssetBrowserQuery</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              class <a href="class_sporepedia_1_1c_asset_view_manager.html" class="m-doc">cAssetViewManager</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              class <a href="class_sporepedia_1_1class___b8.html" class="m-doc">class_B8</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              class <a href="class_sporepedia_1_1c_s_p_asset_data_o_t_d_b.html" class="m-doc">cSPAssetDataOTDB</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              class <a href="class_sporepedia_1_1_i_asset_data.html" class="m-doc">IAssetData</a>
+            </dt>
+            <dd><span></span></dd>
             <dt>
               class <a href="class_sporepedia_1_1_i_multi_shopper_listener.html" class="m-doc">IMultiShopperListener</a>
             </dt>
@@ -77,9 +106,40 @@
             <dd>A class used to show the <a href="namespace_sporepedia.html" class="m-doc">Sporepedia</a> to the user, asking him to select a creation.</dd>
           </dl>
         </section>
+        <section id="typedef-members">
+          <h2><a href="#typedef-members">Typedefs</a></h2>
+          <dl class="m-doc">
+            <dt>
+              using <a href="#a8de5911b4605be1457cdbdb36fd6328a" class="m-doc">AssetDataFactory</a> = <a href="class_sporepedia_1_1c_s_p_asset_data_o_t_d_b.html" class="m-doc">cSPAssetDataOTDB</a>*(*)()
+            </dt>
+            <dd><span></span></dd>
+          </dl>
+        </section>
         <section id="func-members">
           <h2><a href="#func-members">Functions</a></h2>
           <dl class="m-doc">
+            <dt>
+              <span class="m-doc-wrap-bumper">void <a href="#a6996d683e0f16e028dfa69973b97adbf" class="m-doc">ProcessAssetFilter</a>(</span><span class="m-doc-wrap">uint32_t filterID,
+              eastl::vector&lt;<a href="struct_sporepedia_1_1_asset_browser_query.html" class="m-doc">AssetBrowserQuery</a>&gt;&amp; dst)</span>
+            </dt>
+            <dd>Finds all the assets that match the given filter.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper"><a href="#a3edd16fdd1a239bce44a17573c26ccce" class="m-doc">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_sporepedia_1_1c_s_p_asset_data_o_t_d_b.html" class="m-doc">cSPAssetDataOTDB</a>,
+              0x78)</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a14f6dcdf83f7cb8eb7e2e6a9d18283f4" class="m-doc">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_sporepedia_1_1c_s_p_asset_data_o_t_d_b.html" class="m-doc">cSPAssetDataOTDB</a>) -&gt; namespace</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a28807864093bcc9eac505fcadb80031b" class="m-doc">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_sporepedia_1_1c_asset_view_manager.html" class="m-doc">cAssetViewManager</a>) -&gt; namespace</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a7f316dbc0e7f8d3778c3596d3cc3c476" class="m-doc">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_sporepedia_1_1class___b8.html" class="m-doc">class_<wbr />B8</a>) -&gt; namespace</span>
+            </dt>
+            <dd><span></span></dd>
             <dt>
               <span class="m-doc-wrap-bumper">auto <a href="#a7eced7800988506f5007d74761a59ef9" class="m-doc">Addresses</a>(</span><span class="m-doc-wrap"><a href="struct_sporepedia_1_1_shopper_request.html" class="m-doc">ShopperRequest</a>) -&gt; namespace</span>
             </dt>
@@ -87,7 +147,70 @@
           </dl>
         </section>
         <section>
+          <h2>Typedef documentation</h2>
+          <section class="m-doc-details" id="a8de5911b4605be1457cdbdb36fd6328a"><div>
+            <h3>
+              typedef <a href="class_sporepedia_1_1c_s_p_asset_data_o_t_d_b.html" class="m-doc">cSPAssetDataOTDB</a>*(*Sporepedia::<wbr /><a href="#a8de5911b4605be1457cdbdb36fd6328a" class="m-doc-self">AssetDataFactory</a>)()
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_asset_view_manager_8h.html">&lt;Spore/Sporepedia/AssetViewManager.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+        </section>
+        <section>
           <h2>Function documentation</h2>
+          <section class="m-doc-details" id="a6996d683e0f16e028dfa69973b97adbf"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">void Sporepedia::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a6996d683e0f16e028dfa69973b97adbf" class="m-doc-self">ProcessAssetFilter</a>(</span><span class="m-doc-wrap">uint32_t filterID,
+              eastl::vector&lt;<a href="struct_sporepedia_1_1_asset_browser_query.html" class="m-doc">AssetBrowserQuery</a>&gt;&amp; dst)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_asset_browser_query_8h.html">&lt;Spore/Sporepedia/AssetBrowserQuery.h&gt;</a></div>
+            </h3>
+            <p>Finds all the assets that match the given filter.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">filterID</td>
+                  <td>ID of filter file in <code>AssetBrowserFilter</code> folder</td>
+                </tr>
+                <tr>
+                  <td>dst&nbsp;<span class="m-label m-flat m-warning">out</span></td>
+                  <td>The destination vector</td>
+                </tr>
+              </tbody>
+            </table>
+<p>This method will use a filter with the given ID in the <code>AssetBrowserFilter</code> folder. The <code>dst</code> vector will be filled with one instance for every <code>browserFilterData</code> that has been searched; each instance contains vectors of the resource keys that match it.</p>
+          </div></section>
+          <section class="m-doc-details" id="a3edd16fdd1a239bce44a17573c26ccce"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"> Sporepedia::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a3edd16fdd1a239bce44a17573c26ccce" class="m-doc-self">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_sporepedia_1_1c_s_p_asset_data_o_t_d_b.html" class="m-doc">cSPAssetDataOTDB</a>,
+              0x78)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_asset_data_8h.html">&lt;Spore/Sporepedia/AssetData.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="a14f6dcdf83f7cb8eb7e2e6a9d18283f4"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">namespace Sporepedia::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a14f6dcdf83f7cb8eb7e2e6a9d18283f4" class="m-doc-self">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_sporepedia_1_1c_s_p_asset_data_o_t_d_b.html" class="m-doc">cSPAssetDataOTDB</a>)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_asset_data_8h.html">&lt;Spore/Sporepedia/AssetData.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="a28807864093bcc9eac505fcadb80031b"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">namespace Sporepedia::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a28807864093bcc9eac505fcadb80031b" class="m-doc-self">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_sporepedia_1_1c_asset_view_manager.html" class="m-doc">cAssetViewManager</a>)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_asset_view_manager_8h.html">&lt;Spore/Sporepedia/AssetViewManager.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="a7f316dbc0e7f8d3778c3596d3cc3c476"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">namespace Sporepedia::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a7f316dbc0e7f8d3778c3596d3cc3c476" class="m-doc-self">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_sporepedia_1_1class___b8.html" class="m-doc">class_<wbr />B8</a>)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_asset_view_manager_8h.html">&lt;Spore/Sporepedia/AssetViewManager.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
           <section class="m-doc-details" id="a7eced7800988506f5007d74761a59ef9"><div>
             <h3>
               <span class="m-doc-wrap-bumper">namespace Sporepedia::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a7eced7800988506f5007d74761a59ef9" class="m-doc-self">Addresses</a>(</span><span class="m-doc-wrap"><a href="struct_sporepedia_1_1_shopper_request.html" class="m-doc">ShopperRequest</a>)</span></span>
