@@ -20,6 +20,7 @@
 
 #include <Spore\Simulator\SubSystem\cStrategy.h>
 #include <Spore\Simulator\cPlanetRecord.h>
+#include <Spore\Simulator\cCommodityNode.h>
 #include <EASTL\hash_map.h>
 #include <EASTL\map.h>
 #include <EASTL\vector.h>
@@ -28,8 +29,6 @@
 
 namespace Simulator
 {
-	class cCommodityNode;  //PLACEHOLDER
-
 	class cTerraformingManager
 		: public cStrategy
 	{
@@ -48,7 +47,7 @@ namespace Simulator
 		/* 44h */	bool field_44;
 		/* 48h */	map<int, int> field_48;
 		/* 64h */	int field_64;
-		/* 68h */	vector<intrusive_ptr<cCommodityNode>> mCommodityNodes;
+		/* 68h */	vector<cCommodityNodePtr> mCommodityNodes;
 		/* 7Ch */	int field_7C;
 		/* 80h */	int field_80;
 		/* 84h */	int field_84;

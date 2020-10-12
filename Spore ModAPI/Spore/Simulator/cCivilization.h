@@ -6,6 +6,7 @@
 #include <Spore\Simulator\cCity.h>
 #include <Spore\Simulator\cVehicle.h>
 #include <Spore\Simulator\ICityMusic.h>
+#include <Spore\Simulator\cCommodityNode.h>
 #include <Spore\Editors\INameableEntity.h>
 #include <Spore\App\IMessageListener.h>
 
@@ -97,8 +98,8 @@ namespace Simulator
 		/* 458h */	cCityPtr mMilitaryExpansionCity;
 		/* 45Ch */	cCityPtr mReligiousExpansionCity;
 		/* 460h */	cCityPtr mDiploAttackCity;
-		/* 464h */	int mExpansionMineral;  //PLACEHOLDER cCommodityNode
-		/* 468h */	int mClaimMineral;
+		/* 464h */	cCommodityNodePtr mExpansionMineral;
+		/* 468h */	cCommodityNodePtr mClaimMineral;
 		/* 46Ch */	cCivilizationPtr mNemesisCiv;
 		/* 470h */	vector<DefaultRefCounted> field_470;
 		/* 484h */	int field_484;
