@@ -11,6 +11,7 @@
 #include <Spore\Editors\SpeciesManager.h>
 #include <Spore\Editors\CreatureWalkController.h>
 #include <Spore\Editors\PlayModeActor.h>
+#include <Spore\Editors\PlayModeBackgrounds.h>
 
 namespace Editors
 {
@@ -111,6 +112,12 @@ namespace Editors
 	namespace Addresses(PlayModeActor)
 	{
 		DefineAddress(AddWalkAction, SelectAddress(0x62CE10, , 0x62CE30));
+	}
+
+	namespace Addresses(PlayModeBackground)
+	{
+		DefineAddress(SwitchBackground, SelectAddress(0x62F5F0, , 0x62F640));
+		DefineAddress(DisableBackground, SelectAddress(0x62F900, , 0x62F950));
 	}
 }
 #endif

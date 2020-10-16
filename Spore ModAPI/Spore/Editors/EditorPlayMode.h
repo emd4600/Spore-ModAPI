@@ -21,6 +21,7 @@
 #include <Spore\Object.h>
 #include <Spore\Editors\PlayModeAnimations.h>
 #include <Spore\Editors\PlayModeActor.h>
+#include <Spore\Editors\PlayModeBackgrounds.h>
 
 //TODO vftable 10h OnMouseClick sub_62A810
 
@@ -39,12 +40,13 @@ namespace Editors
 		/* 18h */	virtual bool OnMouseMove(float mouseX, float mouseY, int state);
 		/* 1Ch */	virtual bool OnKeyDown(int virtualKey, int modifiers);
 		/* 20h */	virtual bool OnKeyUp(int virtualKey, int modifiers);
-		// one function more
+		// one function more, related with UI
 
 	public:
 		/* 08h */	char padding_08[0x7C - 0x8];
 		/* 7Ch */	PlayModeActor** mpMainActor;  // at 10h, AnimatedCreatureController
 		/* 80h */	char padding_80[0x3588 - 0x80];
 		/* 3588h */	PlayModeAnimations mAnimations;
+		/* 3618h */	PlayModeBackgrounds mBackgrounds;
 	};
 }
