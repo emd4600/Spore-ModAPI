@@ -130,9 +130,10 @@ bool AnimEditorMode::OnEnter()
 
 	// Add one creature by default
 	AddCreature({ 0x67cd060, TypeIDs::crt, GroupIDs::CreatureModels });
-
-	mpBlocks = new AnimEditorBlocks();
-	mpBlocks->GenerateMesh(mCreatures[0]->p_cid);
+	
+	// Disabled blocks because the load transform crashes the game for unexplainable reasons
+	/*mpBlocks = new AnimEditorBlocks();
+	mpBlocks->GenerateMesh(mCreatures[0]->p_cid);*/
 
 	DebugInformation* pDebugInformation = nullptr;
 	Resource::DBPF* pDBPF = nullptr;
@@ -151,12 +152,10 @@ bool AnimEditorMode::OnEnter()
 
 	RenderManager.AddRenderable(this, 10);
 
-	mpUI = new AnimEditorUI();
-	mpUI->Load();
+	/*mpUI = new AnimEditorUI();
+	mpUI->Load();*/
 
 	PlayAnimation(ANIM_ID, 0);
-
-	MessageBoxA(NULL, "", "", MB_OK);
 
 	return true;
 }
@@ -270,10 +269,10 @@ void AnimEditorMode::Update(float dt, float delta2)
 
 void AnimEditorMode::Render(int flags, int layerIndex, App::cViewer** pViewers, void*)
 {
-	if (mpBlocks) {
+	/*if (mpBlocks) {
 		CameraManager.GetViewer()->LoadTransformations();
 		mpBlocks->Render();
-	}
+	}*/
 }
 
 
@@ -304,7 +303,8 @@ void AnimEditorMode::AddCreature(const ResourceKey& selection)
 		int index = mCreatures.size() - 1;
 
 		string16 name = u"";
-		if (auto metadata = Pollinator::GetMetadata(selection.instanceID, selection.groupID)) {
+		cAssetMetadataPtr metadata;
+		if (Pollinator::GetMetadata(selection.instanceID, selection.groupID, metadata)) {
 			name = metadata->GetName();
 		}
 		mNames.push_back(name);

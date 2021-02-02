@@ -30,7 +30,7 @@ int SwarmManager_detour::DETOUR(uint32_t instanceID, uint32_t groupID)
 	// _effect_editor
 	if (groupID == 0 && instanceID == 0x568EEC19)
 	{
-		Resource::ResourceObject* pResource = nullptr;
+		ResourceObjectPtr pResource = nullptr;
 		
 		if (!ResourceManager.GetResource( { id("main"), TypeIDs::effdir, id("_SporeModder_EffectEditor") },
 			&pResource))
@@ -39,7 +39,7 @@ int SwarmManager_detour::DETOUR(uint32_t instanceID, uint32_t groupID)
 			return -1;
 		}
 
-		Swarm::EffectDirectory* pDirectory = ((Swarm::CollectionResource*)pResource)->GetCollection();
+		Swarm::EffectDirectory* pDirectory = ((Swarm::CollectionResource*)pResource.get())->GetCollection();
 
 		if (SwarmManager_detour::directoryIndex == -1)
 		{

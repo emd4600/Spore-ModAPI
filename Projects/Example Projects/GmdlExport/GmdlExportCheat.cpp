@@ -168,8 +168,8 @@ void GmdlExportCheat::OnShopperAccept(const ResourceKey& selection)
 	}
 
 	// Get the creation name
-	auto metadata = Pollinator::GetMetadata(selection.instanceID, selection.groupID);
-	if (!metadata) {
+	cAssetMetadataPtr metadata;
+	if (!Pollinator::GetMetadata(selection.instanceID, selection.groupID, metadata)) {
 		App::ConsolePrintF("Error: Could not get creation name.");
 		return;
 	}

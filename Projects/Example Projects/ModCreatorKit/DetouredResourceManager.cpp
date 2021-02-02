@@ -23,7 +23,7 @@
 
 // virtual bool Resource::IResourceManager::GetResource(const ResourceKey& name, ResourceObject** ppDst, int arg_8, DBPF* pDBPF, IResourceFactory* pFactory, const ResourceKey* pCacheName)
 bool ResourceManager_detour::DETOUR(
-	const ResourceKey& name, ResourceObject** ppDst, int arg_8, DBPF* pDBPF, IResourceFactory* pFactory, const ResourceKey* pCacheName)
+	const ResourceKey& name, ResourceObjectPtr* ppDst, int arg_8, DBPF* pDBPF, IResourceFactory* pFactory, const ResourceKey* pCacheName)
 {
 	DebugInformation* pDebugInformation = nullptr;
 

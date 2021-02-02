@@ -248,9 +248,9 @@ namespace Graphics
 		/* 84h */	virtual int func84h(const Model* pModel) const = 0;
 		// Returns amount of bones
 		/* 88h */	virtual int GetAnimationSkin(const Model* pModel, RenderWare::Matrix3x4* dst, bool original = false) const = 0;
-		/* 8Ch */	virtual int func8Ch(const Model* pModel, void* dst) = 0;
-		/* 90h */	virtual int func90h() = 0;  
-		/* 94h */	virtual int func94h() = 0;
+		/* 8Ch */	virtual int func8Ch(const Model* pModel, RenderWare::Matrix3x4* dst) = 0;
+		/* 90h */	virtual int func90h(const Model* pModel, int* dst) = 0;
+		/* 94h */	virtual int func94h(const Model* pModel, int* dst) = 0;
 		/* 98h */	virtual int func98h() = 0;
 		/* 9Ch */	virtual int func9Ch() = 0;
 		/* A0h */	virtual int funcA0h() = 0;

@@ -392,7 +392,7 @@ namespace Graphics
 	template <typename Vertex>
 	inline void GeneratedMesh<Vertex>::Render() {
 		for (int i = 0; i < GetMaterialCount(); ++i) {
-			GlobalState::SetTransform(mTransforms[i]);
+			//PLACEHOLDER GlobalState::SetTransform(mTransforms[i]);
 			GlobalState::SetColor(mColors[i]);
 			mMaterials[i]->states[0]->Load();
 			mMeshes[i].Render();
