@@ -56,11 +56,11 @@ namespace Anim
 		/* 1FCh */	int parentIndex;  // -1
 		/* 200h */	int symmetricIndex;  // -1
 		/* 204h */	int field_204;  // -1
-		/* 208h */	int field_208;
+		/* 208h */	int field_208;  // count of elements in field_218
 		/* 20Ch */	int field_20C;
 		/* 210h */	int field_210;
-		/* 214h */	int field_214;
-		/* 218h */	int field_218;
+		/* 214h */	CreatureBlock* pParent;
+		/* 218h */	CreatureBlock* field_218;
 		/// A number that identifies this block when referenced from other blocks
 		/* 21Ch */	int blockID;  // -1
 		/* 220h */	char cal3DBoneName[260];

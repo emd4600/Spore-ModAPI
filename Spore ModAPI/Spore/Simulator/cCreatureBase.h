@@ -26,6 +26,7 @@
 #include <Spore\Simulator\cBehaviorList.h>
 #include <Spore\Simulator\cCombatant.h>
 #include <Spore\Simulator\UnknownCreatureClass.h>
+#include <Spore\Anim\AnimatedCreature.h>
 #include <Spore\resourceID.h>
 #include <EASTL\vector.h>
 #include <EASTL\list.h>
@@ -126,7 +127,7 @@ namespace Simulator
 		/* B48h */	int field_B48;
 		/* B4Ch */	int field_B4C;  // cBehaviorTreeData
 		/* B50h */	intrusive_ptr<cCreatureBase> mpWhoIsInteractingWithMe;
-		/* B54h */	int field_B54;  // anim container?
+		/* B54h */	AnimatedCreaturePtr mpAnimatedCreature;
 		/* B58h */	int mGeneralFlags;  // 0x200 IsPlayerAvatar
 		/* B5Ch */	bool field_B5C;
 		/* B5Dh */	bool mbTeleport;

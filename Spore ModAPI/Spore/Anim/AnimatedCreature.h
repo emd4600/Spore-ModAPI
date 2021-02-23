@@ -239,6 +239,17 @@ namespace Anim
 	};
 	*/
 
+	/// Data of a message sent from an animation event
+	struct AnimationMessage
+	{
+		/* 00h */	uint32_t messageID;
+		/* 04h */	char* pName;
+		/* 08h */	AnimatedCreature* pCreature;
+		/* 0Ch */	int blockIndex;
+		/* 10h */	float parameter0;
+		/* 14h */	float parameter1;
+	};
+
 	inline Graphics::Model* AnimatedCreature::GetModel() {
 		return mpModel.get();
 	}

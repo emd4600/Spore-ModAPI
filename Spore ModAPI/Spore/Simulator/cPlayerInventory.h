@@ -33,7 +33,10 @@ namespace Simulator
 		static const uint32_t TYPE = 0x9073163B;
 		static const uint32_t NOUN_ID = 0x2265FDC;
 
-		cSpaceToolData* GetUnlockableTool(const ResourceKey& id);
+		/// Checks mInventoryItems and mUnlockableTools and returns the tool that has the specified id,
+		/// or null otherwise
+		/// @param id
+		cSpaceToolData* GetUnlockableTool(const ResourceKey& id) const;
 
 	public:
 		/* 4Ch */	vector<intrusive_ptr<cSpaceInventoryItem>> mUnlockableTools;

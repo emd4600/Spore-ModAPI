@@ -6,6 +6,8 @@
 
 namespace Anim
 {
+	class AnimatedCreature;
+
 	struct anim_cid;
 
 	// check address 9C7565
@@ -56,7 +58,8 @@ namespace Anim
 	struct anim_cid
 	{
 		/* 00h */	eastl::intrusive_ptr<anim_csd> csd;
-		/* 04h */	char padding_4[0x10];
+		/* 04h */	eastl::intrusive_ptr<AnimatedCreature> pCreature;
+		/* 08h */	char padding_8[0xC];
 		/* 14h */	int refCount;
 		/* 18h */	char padding_18[0x2C0 - 0x18];
 		// Contains the models?

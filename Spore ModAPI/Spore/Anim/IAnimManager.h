@@ -21,7 +21,7 @@ namespace Anim
 		/* 1Ch */	virtual void func1Ch(float) = 0;
 		/* 20h */	virtual IAnimWorld* CreateWorld(const char16_t* name) = 0;
 		/* 24h */	virtual bool func24h(int, int, int) = 0;
-		/* 28h */	virtual void func28h() = 0;
+		/* 28h */	virtual void ClearAnimationCache() = 0;
 		// calls func30h for all animations in the animID group
 		// used to preload animations
 		/* 2Ch */	virtual void func2Ch(uint32_t animID, int* pOnlyIndex = nullptr) = 0;
