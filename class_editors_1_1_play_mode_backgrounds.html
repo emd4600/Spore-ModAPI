@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Spore/Anim/anim_cid.h file | Spore ModAPI SDK for creating C++ mods for Spore</title>
+  <title>Editors::PlayModeBackgrounds class | Spore ModAPI SDK for creating C++ mods for Spore</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,600,600i%7CSource+Code+Pro:400,400i,600" />
   <link rel="stylesheet" href="m-dark.css" />
   <link rel="stylesheet" href="m-documentation.css" />
@@ -45,7 +45,8 @@
     <div class="m-row">
       <div class="m-col-l-10 m-push-l-1">
         <h1>
-          <span class="m-breadcrumb"><a href="dir_c27950c697e5dfd98eb6c6418519a737.html">Spore</a>/</span><span class="m-breadcrumb"><a href="dir_15317ebff6bacf8f9288877b1520cafa.html">Anim</a>/</span>anim_cid.h <span class="m-thin">file</span>
+          <span class="m-breadcrumb"><a href="namespace_editors.html">Editors</a>::<wbr/></span>PlayModeBackgrounds <span class="m-thin">class</span>
+          <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_play_mode_backgrounds_8h.html">&lt;Spore/Editors/PlayModeBackgrounds.h&gt;</a></div>
         </h1>
         <p><span></span></p>
         <div class="m-block m-default">
@@ -54,36 +55,88 @@
             <li>
               Reference
               <ul>
-                <li><a href="#namespaces">Namespaces</a></li>
-                <li><a href="#nested-classes">Classes</a></li>
+                <li><a href="#base-classes">Base classes</a></li>
+                <li><a href="#pub-methods">Public functions</a></li>
+                <li><a href="#pub-attribs">Public variables</a></li>
               </ul>
             </li>
           </ul>
         </div>
-        <section id="namespaces">
-          <h2><a href="#namespaces">Namespaces</a></h2>
+        <section id="base-classes">
+          <h2><a href="#base-classes">Base classes</a></h2>
           <dl class="m-doc">
-            <dt>namespace <a href="namespace_anim.html" class="m-doc">Anim</a></dt>
+            <dt>
+              class <a href="class_i_virtual.html" class="m-doc">IVirtual</a>
+            </dt>
+            <dd>A default interface that provides a virtual destructor, it should only be used internally.</dd>
+          </dl>
+        </section>
+        <section id="pub-methods">
+          <h2><a href="#pub-methods">Public functions</a></h2>
+          <dl class="m-doc">
+            <dt id="a5f08cda03206669667bb7df0324eb206">
+              <span class="m-doc-wrap-bumper">void <a href="#a5f08cda03206669667bb7df0324eb206" class="m-doc-self">SwitchBackground</a>(</span><span class="m-doc-wrap">)</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="aede5f3ef3529d84b46f54f83e23ed8a0">
+              <span class="m-doc-wrap-bumper">void <a href="#aede5f3ef3529d84b46f54f83e23ed8a0" class="m-doc-self">DisableBackground</a>(</span><span class="m-doc-wrap">)</span>
+            </dt>
             <dd><span></span></dd>
           </dl>
         </section>
-        <section id="nested-classes">
-          <h2><a href="#nested-classes">Classes</a></h2>
+        <section id="pub-attribs">
+          <h2><a href="#pub-attribs">Public variables</a></h2>
           <dl class="m-doc">
-            <dt>
-              struct <a href="struct_anim_1_1anim__cid__unk.html" class="m-doc">Anim::anim_cid_unk</a>
+            <dt id="a1232b4b67cf83939d92c38aeb9d13b46">
+              vector&lt;intrusive_ptr&lt;<a href="class_editors_1_1_editor_play_mode_background.html" class="m-doc">EditorPlayModeBackground</a>&gt;&gt; <a href="#a1232b4b67cf83939d92c38aeb9d13b46" class="m-doc-self">mBackgrounds</a>
             </dt>
             <dd><span></span></dd>
-            <dt>
-              struct <a href="struct_anim_1_1anim__cid__unk_1_1model__unk.html" class="m-doc">Anim::anim_cid_unk::model_unk</a>
+            <dt id="ad2ea8a997956b1dc5b131add152943f4">
+              int <a href="#ad2ea8a997956b1dc5b131add152943f4" class="m-doc-self">mCurrentIndex</a>
             </dt>
             <dd><span></span></dd>
-            <dt>
-              struct <a href="struct_anim_1_1anim__block.html" class="m-doc">Anim::anim_block</a>
+            <dt id="a47af73d8357d5b85bcddb35a026d1d30">
+              int <a href="#a47af73d8357d5b85bcddb35a026d1d30" class="m-doc-self">mTargetIndex</a>
             </dt>
             <dd><span></span></dd>
-            <dt>
-              struct <a href="struct_anim_1_1anim__cid.html" class="m-doc">Anim::anim_cid</a>
+            <dt id="adb94f74013a20ed6e983b06f3717ffa6">
+              uint32_t <a href="#adb94f74013a20ed6e983b06f3717ffa6" class="m-doc-self">mCurrentEntryEffectID</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a3009ae909c735292ea824ad773cc3cc6">
+              uint32_t <a href="#a3009ae909c735292ea824ad773cc3cc6" class="m-doc-self">mTargetEntryEffectID</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a240d34d04067a4afafba9be43f12bb45">
+              uint32_t <a href="#a240d34d04067a4afafba9be43f12bb45" class="m-doc-self">mCrossFadeSnapEffectID</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a7e3da56f27facf5bde6992f1e4dbf402">
+              uint32_t <a href="#a7e3da56f27facf5bde6992f1e4dbf402" class="m-doc-self">mPlayModeEntryEffectID</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="aaa32ad8defec1fefa06b93e3b818f239">
+              int <a href="#aaa32ad8defec1fefa06b93e3b818f239" class="m-doc-self">field_30</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a20b1f6fc621a6466697ef9eda42c6d8b">
+              int <a href="#a20b1f6fc621a6466697ef9eda42c6d8b" class="m-doc-self">field_34</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="ac1633610da03aaa4e2102e8dc4effc14">
+              int <a href="#ac1633610da03aaa4e2102e8dc4effc14" class="m-doc-self">mCurrentPageIndex</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="ac79d7b69caf4f00a86ac0a8f48e35bc1">
+              int <a href="#ac79d7b69caf4f00a86ac0a8f48e35bc1" class="m-doc-self">mPageCount</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a05ba9e33033b56d20c84690abdf5b92c">
+              <a href="_i_lighting_world_8h.html#a8c8bd51c9f04e4c39accaa196c0cac41" class="m-doc">ILightingWorldPtr</a> <a href="#a05ba9e33033b56d20c84690abdf5b92c" class="m-doc-self">mpLightingWorld</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a7a4261d7b57b1385405ade7d2988a593">
+              bool <a href="#a7a4261d7b57b1385405ade7d2988a593" class="m-doc-self">field_44</a>
             </dt>
             <dd><span></span></dd>
           </dl>
