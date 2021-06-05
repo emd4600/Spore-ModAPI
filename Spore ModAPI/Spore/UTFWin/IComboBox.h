@@ -28,6 +28,8 @@ namespace UTFWin
 		: public UTFWinObject
 	{
 	public:
+		static const uint32_t TYPE = 0x2F5528D9;
+
 		/* 10h */	virtual IWindow* ToWindow() = 0;
 		/* 14h */	virtual int GetComboBoxFlags() = 0;
 		/* 18h */	virtual void SetComboBoxFlags(int flags) = 0;

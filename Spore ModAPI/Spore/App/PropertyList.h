@@ -71,8 +71,8 @@ namespace App
 		/* 18h */	virtual int RemoveProperty(uint32_t propertyID);
 
 		///
-		/// Tells whether a property with this propertyID is contained inside this list, or inside any of its parents.
-		/// This funciton will be called recursively on the PropertyList's parents until the property is found (which returns true)
+		/// Tells whether a property with this propertyID is contained inside this list, or inside any of its parents. 
+		/// This function will be called recursively on the PropertyList's parents until the property is found (which returns true)
 		/// or no parents are left to check (which returns false).
 		/// @param propertyID The ID of the property to check whether it exists.
 		///

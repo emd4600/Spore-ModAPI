@@ -246,7 +246,7 @@ namespace Anim
 		/* 04h */	char* pName;
 		/* 08h */	AnimatedCreature* pCreature;
 		/* 0Ch */	int blockIndex;
-		/* 10h */	float parameter0;
+		/* 10h */	int parameter0;
 		/* 14h */	float parameter1;
 	};
 

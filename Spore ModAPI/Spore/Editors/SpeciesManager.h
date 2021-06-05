@@ -38,12 +38,12 @@ namespace Editors
 		Simulator::cSpeciesProfile* GetSpeciesProfile(const ResourceKey& name);
 
 	protected:
-		/* 04h */	hash_map<ResourceKey, Simulator::cSpeciesProfile> field_4;
+		/* 04h */	hash_map<ResourceKey, Simulator::cSpeciesProfile> mSpeciesProfiles;
 		/* 24h */	hash_map<int, int> field_24;
 		/* 44h */	hash_map<int, int> field_44;
 		/* 64h */	hash_map<int, int> field_64;
 		/* 84h */	hash_map<int, int> field_84;
-		/* A4h */	int field_A4[3];
+		/* A4h */	ResourceKey mDefaultKey;
 		/* B0h */	hash_map<int, int> field_B0;
 		/* D0h */	int field_D0[5];
 

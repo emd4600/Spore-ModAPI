@@ -52,8 +52,8 @@ namespace Graphics
 		/* 20h */	virtual void func20h(int) = 0;
 		// Called every time in ModelWorld::Render
 		/* 24h */	virtual void PrepareRender(App::cViewer*) = 0;
-		/* 28h */	virtual void func28h(const Transform&) = 0;
-		/* 2Ch */	virtual Transform func2Ch() = 0;
+		/* 28h */	virtual void SetWorldTransform(const Transform&) = 0;
+		/* 2Ch */	virtual Transform GetWorldTransform() = 0;
 
 		///
 		/// Sets this lighting world to use the given configuration. The ID is the instance ID of a .prop

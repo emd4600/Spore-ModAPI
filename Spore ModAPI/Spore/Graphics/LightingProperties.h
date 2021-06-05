@@ -36,29 +36,19 @@ namespace Graphics
 			kUsePointLight = 0x20
 		};
 
+		struct DirectionalLight {
+			/* 00h */	ColorRGB color;  // black
+			/* 0Ch */	float strength;  // 1.0
+			/* 10h */	Vector3 direction;  // 0,0,-1
+		};
+
 	public:
 		/* 00h */	intrusive_ptr<App::PropertyList> mpPropList;
 		/* 04h */	int mFlags;
-		/* 08h */	Vector3 field_08;
-		/* 14h */	float field_14;  // 1.0
-		/* 18h */	float field_18;
-		/* 1Ch */	float field_1C;
-		/* 20h */	float field_20;  // -1.0
-		/* 24h */	Vector3 field_24;
-		/* 30h */	float field_30;  // 1.0
-		/* 34h */	float field_34;
-		/* 38h */	float field_38;
-		/* 3Ch */	float field_3C;  // -1.0
-		/* 40h */	Vector3 field_40;
-		/* 4Ch */	float field_4C;  // 1.0
-		/* 50h */	float field_50;
-		/* 54h */	float field_54;
-		/* 58h */	float field_58;  // -1.0
-		/* 5Ch */	Vector3 field_5C;
-		/* 68h */	float field_68;  // 1.0
-		/* 6Ch */	float field_6C;
-		/* 70h */	float field_70;
-		/* 74h */	float field_74;  // -1.0
+		/* 08h */	DirectionalLight dirLightSun;
+		/* 24h */	DirectionalLight dirLightSky;
+		/* 40h */	DirectionalLight dirLightFill1;
+		/* 5Ch */	DirectionalLight dirLightFill2;
 		/* 78h */	Vector3 mPointLightColor;
 		/* 84h */	float mPointLightStrength;  // 1.0
 		/* 88h */	float mPointLightRadius;  // 10.0
