@@ -1,4 +1,7 @@
-The `ModCreatorKit` adds a bunch of cheats and utilities that are useful to modders. 
+The `ModCreatorKit` adds a bunch of cheats and utilities that are useful to modders, such as the Effects Editor, the Animation Editor, the thumbnail capture cheat,...
+You can download a compiled version here: https://mega.nz/file/yNUAkRiB#jI3A1NX5PnqDJRrxcH4ViEC5DX_w8aHdA57irdpKB1g
+
+It requires the latest version of the ModAPI DLLs. IF you want to use them, you can compile them following [this tutorial](https://emd4600.github.io/Spore-ModAPI/_dev_d_l_ls.html), or download them from [the release page](https://github.com/emd4600/Spore-ModAPI/releases) (please, backup your existing DLLs first).
 
 ## Dev Cheats
 
