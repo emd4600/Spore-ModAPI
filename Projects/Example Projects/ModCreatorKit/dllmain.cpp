@@ -25,10 +25,10 @@ public:
 			id("mission_destroy_turrets"), id("mission_clues")
 		));*/
 
-		bool b = CALL(Address(0xAE8EA0), bool, Args(Simulator::cCommManager*), Args(Simulator::cCommManager::Get()));
+		/*bool b = CALL(Address(0xAE8EA0), bool, Args(Simulator::cCommManager*), Args(Simulator::cCommManager::Get()));
 		App::ConsolePrintF("%d", b);
 
-		App::ConsolePrintF("Star Type: %d", Simulator::GetActiveStarRecord()->GetType());
+		App::ConsolePrintF("Star Type: %d", Simulator::GetActiveStarRecord()->GetType());*/
 
 		/*CALL(Address(0xAE9E20), void, Args(Simulator::cCommManager*), Args(Simulator::cCommManager::Get()));
 
@@ -71,7 +71,18 @@ public:
 
 		CALL(Address(0xDD7F70), void, Args(Simulator::cUIEventLog*, bool), Args(Simulator::cUIEventLog::Get(), false));*/
 
-		LocaleManager.SetLanguage(u"ru-ru");
+		//LocaleManager.SetLanguage(u"ru-ru");
+
+		Simulator::StarRequestFilter filter;
+		filter.AddStarType(Simulator::StarType::StarO);
+		auto star = StarManager.FindClosestStar(Simulator::GetActiveStarRecord()->mPosition, filter);
+		if (star) {
+			App::ConsolePrintF("Moving to star...");
+
+			CALL(Address(0x1002CB0), void, 
+				Args(Simulator::cSimulatorPlayerUFO*, Simulator::cStarRecord*),
+				Args(Simulator::cSimulatorPlayerUFO::Get(), star));
+		}
 	}
 };
 
@@ -84,7 +95,7 @@ void Initialize()
 	AddCheats();
 	GameModeManager.AddGameMode(new AnimEditorMode(), AnimEditorMode::MODE_ID, "AnimEditorMode");
 
-	CheatManager.AddCheat("spacetest", new Cheat());
+	// CheatManager.AddCheat("spacetest", new Cheat());
 }
 
 void Dispose()

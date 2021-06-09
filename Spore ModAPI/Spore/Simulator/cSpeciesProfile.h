@@ -19,6 +19,11 @@
 #pragma once
 
 #include <EASTL/fixed_vector.h>
+#include <EASTL/vector.h>
+#include <EASTL/string.h>
+#include <Spore\ResourceKey.h>
+
+using namespace eastl;
 
 namespace Simulator
 {

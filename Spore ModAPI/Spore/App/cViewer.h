@@ -133,6 +133,8 @@ namespace App
 		void SetViewTransform(const Transform& transform);
 	};
 
+	ASSERT_SIZE(cViewer, 0x174);
+
 	inline void cViewer::SetCameraTransform(const Transform& transform) {
 		SetViewTransform(transform);
 	}

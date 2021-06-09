@@ -21,6 +21,7 @@
 
 #include <Spore\RenderWare\Raster.h>
 #include <Spore\Graphics\MaterialShader.h>
+#include <Spore\Graphics\GlobalState.h>
 
 namespace RenderWare
 {
@@ -40,6 +41,8 @@ namespace RenderWare
 	{
 		enum class Flags : uint32_t
 		{
+			UseTransform = 0x01,
+			UseTransformObject = 0x02,
 			UseShaderConstants = 0x08,
 			UseMaterialColor = 0x10,
 			UseAmbientColor = 0x20,
@@ -65,6 +68,15 @@ namespace RenderWare
 
 		Raster* GetRaster(size_t nSlotIndex);
 		void SetRaster(size_t nSlotIndex, Raster* pRaster);
+
+		/// Sets the matrix transform, only if it is enabled for this compiled state.
+		/// Returns false if it wasn't enabled.
+		bool SetTransform(const Math::Matrix4& matrix, Graphics::GlobalState::MatrixType type = Graphics::GlobalState::MATRIXTYPE_ORTHOGONAL);
+
+		inline char* GetData() {
+			char* thisp = (char*)this;
+			return (char*)(((int)thisp + 0x2B) & ~15);
+		}
 
 		static const uint32_t TYPE = 0x2000B;
 	};

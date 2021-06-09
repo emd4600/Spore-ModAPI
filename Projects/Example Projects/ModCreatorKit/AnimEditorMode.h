@@ -45,6 +45,7 @@ public:
 
 
 	void AddCreature(const ResourceKey& key);
+	void ReloadCreature(int index);
 	void RemoveCreature(int index);
 	void PlayAnimation(uint32_t animID, int mode);
 	
@@ -60,12 +61,12 @@ protected:
 	IAnimWorldPtr mpAnimWorld;
 	vector<AnimatedCreaturePtr> mCreatures;
 	vector<string16> mNames;
+	vector<ResourceKey> mCreatureKeys;
 	vector<Anim::AnimIndex> mAnimIndices;
 	uint32_t mCurrentAnimID;
 	int mCurrentAnimMode;
 
 	AnimEditorBlocksPtr mpBlocks;
-	SPAnimationPtr mpAnimation;
 
 	Clock mClock;
 	ULARGE_INTEGER mLastCheckTime;

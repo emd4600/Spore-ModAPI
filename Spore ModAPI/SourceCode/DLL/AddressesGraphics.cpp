@@ -9,6 +9,7 @@
 #include <Spore\Graphics\IModelWorld.h>
 #include <Spore\Graphics\IRenderManager.h>
 #include <Spore\Graphics\ITextureManager.h>
+#include <Spore\Graphics\IShadowManager.h>
 #include <Spore\Graphics\Renderer.h>
 #include <Spore\Graphics\IRenderTargetManager.h>
 #include <Spore\Graphics\cMaterialManager.h>
@@ -79,6 +80,11 @@ namespace Graphics
 	namespace Addresses(ITextureManager)
 	{
 		DefineAddress(Get, SelectAddress(0x67DE80, 0x67DD20, 0x67DD20));
+	}
+
+	namespace Addresses(IShadowManager)
+	{
+		DefineAddress(Get, SelectAddress(0x67DEE0, , 0x67DD80));
 	}
 
 	namespace Addresses(MaterialShader) 

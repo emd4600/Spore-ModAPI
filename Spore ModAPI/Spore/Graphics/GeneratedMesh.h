@@ -42,12 +42,35 @@ namespace Graphics
 		static const RenderWare::VertexElement ELEMENTS[4];
 	};
 
+	struct StandardVertexCompact
+	{
+		Vector3 pos;
+		Vector2 uv;
+		uint8_t normal[4];
+		uint8_t tangent[4];
+
+		inline void SetNormal(Vector3 v) {
+			normal[0] = int(roundf(v.x * 127.5f + 127.5f)) & 0xFF;
+			normal[1] = int(roundf(v.y * 127.5f + 127.5f)) & 0xFF;
+			normal[2] = int(roundf(v.z * 127.5f + 127.5f)) & 0xFF;
+			normal[3] = 0;
+		}
+		inline void SetTangent(Vector3 v) {
+			tangent[0] = int(roundf(v.x * 127.5f + 127.5f)) & 0xFF;
+			tangent[1] = int(roundf(v.y * 127.5f + 127.5f)) & 0xFF;
+			tangent[2] = int(roundf(v.z * 127.5f + 127.5f)) & 0xFF;
+			tangent[3] = 0;
+		}
+
+		static const RenderWare::VertexElement ELEMENTS[4];
+	};
+
 	template <typename Vertex>
 	class GeneratedMesh
 		: public DefaultRefCounted
 	{
 	public:
-		GeneratedMesh(int numVertices = 0, int numTriangles = 0);
+		GeneratedMesh(int numVertices = 0, int numTriangles = 0, D3DPRIMITIVETYPE primitiveType = D3DPRIMITIVETYPE::D3DPT_TRIANGLELIST);
 		virtual ~GeneratedMesh();
 
 		/// Returns how many vertices there are in this mesh.
@@ -76,6 +99,8 @@ namespace Graphics
 		/// Returns the vertex data of the vertex at the specified index.
 		/// @param index The index of the vertex.
 		Vertex GetVertex(int index) const;
+
+		Vertex& ModifyVertex(int index);
 
 		/// Sets the indices of a triangle, this can be used if the number of triangles has been
 		/// specified beforehand in the constructor.
@@ -123,6 +148,8 @@ namespace Graphics
 		/// @param[out] indexCount
 		/// @param[out] minVertex
 		void GetMaterial(int index, uint32_t& materialID, int& start, int& indexCount, int& minVertex) const;
+
+		Material* GetMaterial(int index) const;
 		
 		/// Changes a texture for one of the materials used in this mesh.
 		/// The `raster` object will NOT be memory managed by this mesh.
@@ -192,7 +219,7 @@ namespace Graphics
 
 
 	template <typename Vertex>
-	GeneratedMesh<Vertex>::GeneratedMesh(int numVertices, int numTriangles)
+	GeneratedMesh<Vertex>::GeneratedMesh(int numVertices, int numTriangles, D3DPRIMITIVETYPE primitiveType)
 		: mVertices(numVertices)
 		, mIndices(numTriangles * 3)
 		, mBoundsValid(false)
@@ -208,7 +235,7 @@ namespace Graphics
 		mIndexBuffer.format = D3DFORMAT::D3DFMT_INDEX16;
 		mIndexBuffer.indicesCount = numTriangles * 3;
 		mIndexBuffer.usage = D3DUSAGE_WRITEONLY;
-		mIndexBuffer.primitiveType = D3DPRIMITIVETYPE::D3DPT_TRIANGLELIST;
+		mIndexBuffer.primitiveType = primitiveType;
 
 		mVertexDesc.stride = sizeof(Vertex);
 
@@ -257,6 +284,11 @@ namespace Graphics
 
 	template <typename Vertex>
 	inline Vertex GeneratedMesh<Vertex>::GetVertex(int index) const {
+		return mVertices[index];
+	}
+
+	template <typename Vertex>
+	inline Vertex& GeneratedMesh<Vertex>::ModifyVertex(int index) {
 		return mVertices[index];
 	}
 
@@ -324,6 +356,11 @@ namespace Graphics
 		start = mMeshes[index].firstIndex;
 		indexCount = mMeshes[index].indicesCount;
 		minVertex = mMeshes[index].firstVertex;
+	}
+
+	template <typename Vertex>
+	inline Material* GeneratedMesh<Vertex>::GetMaterial(int index) const {
+		return mMaterials[index].get();
 	}
 
 	template <typename Vertex>
@@ -395,6 +432,7 @@ namespace Graphics
 			//PLACEHOLDER GlobalState::SetTransform(mTransforms[i]);
 			GlobalState::SetColor(mColors[i]);
 			mMaterials[i]->states[0]->Load();
+			//MessageBoxA(NULL, "", "", MB_OK);
 			mMeshes[i].Render();
 		}
 	}

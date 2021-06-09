@@ -12,6 +12,7 @@ AnimEditorMode::AnimEditorMode()
 	, mpEffectWorld()
 	, mpAnimWorld()
 	, mCreatures()
+	, mCreatureKeys()
 	, mNames()
 	, mCurrentAnimID(0xFFFFFFFF)
 	, mCurrentAnimMode()
@@ -279,6 +280,7 @@ void AnimEditorMode::Render(int flags, int layerIndex, App::cViewer** pViewers, 
 void AnimEditorMode::OnShopperAccept(const ResourceKey& selection)
 {
 	AddCreature(selection);
+	PlayAnimation(ANIM_ID, 0);
 }
 
 const static Vector3 kCreatureSeparation = { 2.5f, 0.0f, 0.0f };
@@ -296,6 +298,7 @@ void AnimEditorMode::AddCreature(const ResourceKey& selection)
 
 		creature->mPosition = position;
 		mCreatures.push_back(creature);
+		mCreatureKeys.push_back(selection);
 		mAnimIndices.push_back(-1);
 		mpModelWorld->UpdateModel(creature->GetModel());
 		mpModelWorld->SetModelVisible(creature->GetModel(), true);
@@ -325,6 +328,7 @@ void AnimEditorMode::RemoveCreature(int index)
 		mpAnimWorld->DestroyCreature(mCreatures[index].get());
 		mCreatures.erase(mCreatures.begin() + index);
 		mAnimIndices.erase(mAnimIndices.begin() + index);
+		mCreatureKeys.erase(mCreatureKeys.begin() + index);
 
 		App::ConsolePrintF("Removed creature %s", mNames[index].c_str());
 		mNames.erase(mNames.begin() + index);
@@ -338,33 +342,9 @@ void AnimEditorMode::RemoveCreature(int index)
 
 void AnimEditorMode::PlayAnimation(uint32_t animID, int mode)
 {
-	auto group = AnimManager.GetAnimGroup(animID);
-	if (group) {
-		App::ConsolePrintF("Playing animation: %ls (0x%x)", group->name.c_str(), animID);
-
-		typedef map<uint32_t, SPAnimationPtr> AnimMap;
-		AnimMap* animMap = *((AnimMap**)Address(0x16702D8));  //PLACEHOLDER address for steam patched
-
-		for (auto choice : group->animations) {
-			for (auto anim : choice.animations) {
-				App::ConsolePrintF("Reloading %ls", anim.name.c_str());
-				animMap->erase(anim.id);
-			}
-		}
-	}
+	AnimManager.ClearAnimationCache();
 
 	AnimManager.LoadRequiredAnimations(animID);
-
-	mpAnimation = nullptr;
-	if (group) {
-		typedef map<uint32_t, SPAnimationPtr> AnimMap;
-		AnimMap* animMap = *((AnimMap**)Address(0x16702D8));  //PLACEHOLDER address for steam patched
-		mpAnimation = (*animMap)[group->animations[0].animations[0].id];
-		if (mpAnimation)
-		{
-			mpUI->GenerateChannels(mpAnimation.get());
-		}
-	}
 
 	mCurrentAnimID = animID;
 	mCurrentAnimMode = mode;

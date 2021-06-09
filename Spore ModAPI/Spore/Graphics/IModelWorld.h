@@ -327,7 +327,7 @@ namespace Graphics
 		/* 13Ch */	virtual IRenderable* ToRenderable() = 0;
 
 		// saves boolean at 1D0, world ad 1CC, bool is related with shadows
-		/* 140h */	virtual int AddLightingWorld(ILightingWorld* pWorld, int slotIndex, bool) = 0;
+		/* 140h */	virtual int AddLightingWorld(ILightingWorld* pWorld, int slotIndex, bool drawShadows) = 0;
 
 
 		/* 144h */	virtual ILightingWorld* GetLightingWorld(int slotIndex) = 0;

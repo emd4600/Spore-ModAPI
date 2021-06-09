@@ -1,5 +1,6 @@
+#ifndef MODAPI_DLL_EXPORT
 /****************************************************************************
-* Copyright (C) 2019 Eric Mor
+* Copyright (C) 2018 Eric Mor
 *
 * This file is part of Spore ModAPI.
 *
@@ -16,32 +17,13 @@
 * You should have received a copy of the GNU General Public License
 * along with this program.  If not, see <http://www.gnu.org/licenses/>.
 ****************************************************************************/
-#include <Spore\RenderWare\RWHeader.h>
-#include <Spore\RenderWare\CompiledState.h>
 
-namespace RenderWare
+#pragma once
+
+#include <Spore\Graphics\IShadowManager.h>
+
+namespace Graphics
 {
-	auto_METHOD_VOID(RWHeader, GetRWObject, Args(int index, RWObjectQuery& query), Args(index, query));
-
-	RWObjectQuery::RWObjectQuery()
-		: typeCode(0)
-		, pData(nullptr)
-		, field_8()
-		, field_18()
-	{
-	}
-
-
-	bool CompiledState::SetTransform(const Math::Matrix4& matrix, Graphics::GlobalState::MatrixType type)
-	{
-		if ((softStateDirty & (int)Flags::UseTransform) != 0) {
-			auto data = GetData();
-			*((Math::Matrix4*)data) = matrix;
-
-			softStateDirty &= 0x0FFFFFFF;
-			softStateDirty |= type << 28;
-			return true;
-		}
-		return false;
-	}
+	auto_STATIC_METHOD_(IShadowManager, IShadowManager*, Get);
 }
+#endif
