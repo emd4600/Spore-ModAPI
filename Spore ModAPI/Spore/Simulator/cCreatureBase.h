@@ -198,7 +198,7 @@ namespace Simulator
 		/* E70h */	int field_E70;  // -1
 		/* E74h */	int field_E74;  // -1
 		/* E78h */	bool field_E78;
-		/* E7Ch */	cCombatant* mpCreatureTarget;  // cCombatant, the same instance?
+		/* E7Ch */	cCombatant* mpCombatantTarget;  // cCombatant, the same instance?
 		/* E80h */	int mArchetype;
 		/* E84h */	void* field_E84;
 		/* E88h */	int field_E88;
