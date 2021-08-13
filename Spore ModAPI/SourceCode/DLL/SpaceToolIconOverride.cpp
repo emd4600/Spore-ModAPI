@@ -5,10 +5,9 @@
 #include <Spore\UTFWin\UILayout.h>
 #include <Spore\UTFWin\ImageDrawable.h>
 #include <Spore/App/ICheatManager.h>
-#include <EASTL\array.h>
 
 // Keys already found in ufotools~ folder
-constexpr eastl::array<uint32_t, 144> kIllegalIconIDs{
+const uint32_t kIllegalIconIDs[] = {
 	0x0376BCCB, 0x0413CDCC, 0x0693541D, 0x093E2784, 0x09408000, 0x0B253979,
 	0x0B634E74, 0x0BBF8B7F, 0x0E46B215, 0x0E46B216, 0x0E46B217, 0x13303157,
 	0x1585FFDA, 0x16405742, 0x166EF53B, 0x17C14197, 0x193DF54C, 0x193DF54D,
