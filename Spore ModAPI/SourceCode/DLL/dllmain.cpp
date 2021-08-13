@@ -8,6 +8,7 @@
 #include "Application.h"
 #include "TextureOverride.h"
 #include "SpaceToolIconOverride.h"
+
 uintptr_t baseAddress;
 ArgScript::PrintF_ptr ArgScript::PrintF;
 
