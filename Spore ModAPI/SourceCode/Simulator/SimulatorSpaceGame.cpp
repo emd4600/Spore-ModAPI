@@ -27,5 +27,7 @@ namespace Simulator
 	}
 
 	auto_STATIC_METHOD_(cSimulatorSpaceGame, cSimulatorSpaceGame*, Get);
+
+	auto_METHOD_VOID(cSimPlanetHighLOD, DestroyCity, Args(cCity* pCity, uint32_t aggressorEmpireID), Args(pCity, aggressorEmpireID));
 }
 #endif

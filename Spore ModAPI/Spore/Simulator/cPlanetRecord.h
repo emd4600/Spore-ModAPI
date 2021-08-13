@@ -62,6 +62,7 @@ namespace Simulator
 	public:
 		/* 18h */	string16 mName;
 		/* 28h */	int mType;  // -1
+		// dictates whether or not a planet is destroyed - giving this flag to a planet turns it into a ball of lava, stops you visiting it and makes it vanish completely once you go to another system. And removing this flag makes the planet normal again.
 		/* 2Ch */	int mFlags;  // not initialized
 		/* 30h */	cEllipticalOrbit mOrbit;
 		/* 54h */	char padding_54[0x44];

@@ -40,6 +40,7 @@
 #include <Spore\Simulator\cTurretDefenseMissileWeapon.h>
 #include <Spore\Simulator\cTurretFlakWeapon.h>
 #include <Spore\Simulator\cVehicle.h>
+#include <Spore\Simulator\cSimPlanetHighLOD.h>
 #include <Spore\Simulator\Serialization.h>
 #include <Spore\Simulator\SubSystem\cRelationshipManager.h>
 #include <Spore\Simulator\SubSystem\GameBehaviorManager.h>
@@ -515,6 +516,11 @@ namespace Simulator
 		DefineAddress(SetDescription, SelectAddress(0xDD6120, , 0xDD6D80));
 		DefineAddress(HideEvent, SelectAddress(0xDD6040, , 0xDD6CA0));
 		DefineAddress(SetVisible, SelectAddress(0xDD7F70, , 0xDD8D40));
+	}
+
+	namespace Addresses(cSimPlanetHighLOD)
+	{
+		DefineAddress(DestroyCity, SelectAddress(0xFFB440, , 0xFFA7B0));
 	}
 }
 #endif
