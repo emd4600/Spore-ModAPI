@@ -21,6 +21,7 @@
 #include <Spore\Simulator\cPlayerInventory.h>
 #include <Spore\Simulator\cGonzagoSimulator.h>
 #include <Spore\Simulator\cGonzagoTimer.h>
+#include <Spore\Simulator\cSimPlanetHighLOD.h>
 #include <Spore\App\IMessageListener.h>
 
 #include <EASTL\vector.h>
@@ -40,6 +41,8 @@ namespace Simulator
 		using Object::Cast;
 
 		cPlayerInventory* GetPlayerInventory();
+
+		cSimPlanetHighLOD* GetPlanetHighLOD();
 
 		// sub_10068B0 assigns archetype
 
@@ -63,7 +66,7 @@ namespace Simulator
 		/* 4Eh */	bool field_4E;
 		/* 4Fh */	bool field_4F;
 		/* 50h */	int field_50;
-		/* 54h */	int mpHighLODPlanetSim;  // TODO
+		/* 54h */	cSimPlanetHighLODPtr mpHighLODPlanetSim;
 		/* 58h */	int field_58;
 		/* 5Ch */	int field_5C;
 		/* 60h */	int field_60;
@@ -93,6 +96,10 @@ namespace Simulator
 	/////////////////////////////////
 	//// INTERNAL IMPLEMENTATION ////
 	/////////////////////////////////
+
+	inline cSimPlanetHighLOD* cSimulatorSpaceGame::GetPlanetHighLOD() {
+		return mpHighLODPlanetSim.get();
+	}
 
 	static_assert(sizeof(cSimulatorSpaceGame) == 0xF0, "sizeof(cSimulatorSpaceGame) != 0xF0");
 

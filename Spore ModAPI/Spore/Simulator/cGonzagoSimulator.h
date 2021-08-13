@@ -42,4 +42,5 @@ namespace Simulator
 		/* 0Dh */	bool field_0D;
 		/* 0Eh */	bool field_0E;
 	};
+	ASSERT_SIZE(cGonzagoSimulator, 0x10);
 }
