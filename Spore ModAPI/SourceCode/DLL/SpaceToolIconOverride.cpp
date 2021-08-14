@@ -88,8 +88,8 @@ void InjectIconWindows(UTFWin::IWindow* window)
 member_detour(LoadSpaceGameUI_detour, UI::SpaceGameUI, void()) {
 	void detoured() {
 		original_function(this);
-		UTFWin::IWindow* firstIcon = this->mInventoryItemIcons->FindWindowByID(0xC19CCD88); // First icon from spui. Should be the fastest to access.
-		InjectIconWindows(firstIcon); // Icons should be destroyed with window hierarchy
+		InjectIconWindows(this->mInventoryItemIcons->FindWindowByID(0xC19CCD88)); // First icon from spui. Should be the fastest to access. 
+		// Icons should be destroyed with window hierarchy when they are no longer needed.
 	}
 };
 
