@@ -204,8 +204,10 @@ namespace Simulator
 
 	namespace Addresses(cEmpire)
 	{
+		DefineAddress(GetSpeciesProfile, SelectAddress(0xC304F0, , 0xC30DE0));
 		DefineAddress(SetSpeciesProfile, SelectAddress(0xC32FB0, 0xC337D0, 0xC337F0));
 		DefineAddress(sub_C32EA0, SelectAddress(0xC32EA0, 0xC336C0, 0xC336E0));
+		DefineAddress(CaptureSystem, SelectAddress(0xC8C320, , 0xC8D190));
 	}
 
 	namespace Addresses(cEnergyRepairToolStrategy)
@@ -364,7 +366,10 @@ namespace Simulator
 		DefineAddress(Get, SelectAddress(0xB3D220, 0xB3D390, 0xB3D3C0));
 
 		DefineAddress(IsAtWar, SelectAddress(0xD014C0, 0xD01F80, 0xD01F90));
+		DefineAddress(IsAtWar2, SelectAddress(0xD01490, , 0xD01F60));
 		DefineAddress(DeclareWar, SelectAddress(0xD05840, 0xD065E0, 0xD065E0));
+		DefineAddress(DeclarePeace, SelectAddress(0xD02B90, , 0xD03920));
+		DefineAddress(ResetRelationship, SelectAddress(0xD04AD0, , 0xD05870));
 		DefineAddress(ApplyRelationship, SelectAddress(0xD054E0, 0xD06280, 0xD06280));
 	}
 

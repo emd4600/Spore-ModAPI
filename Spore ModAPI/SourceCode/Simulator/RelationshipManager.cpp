@@ -24,9 +24,19 @@ namespace Simulator
 	auto_STATIC_METHOD_(cRelationshipManager, cRelationshipManager*, Get);
 
 	auto_METHOD(cRelationshipManager, bool, IsAtWar, Args(cEmpire* pEmpire1, cEmpire* pEmpire2), Args(pEmpire1, pEmpire2));
+
 	auto_METHOD_VOID(cRelationshipManager, DeclareWar, Args(cEmpire* pEmpire1, cEmpire* pEmpire2), Args(pEmpire1, pEmpire2));
+
+	auto_METHOD_VOID(cRelationshipManager, DeclarePeace, Args(uint32_t id1, uint32_t id2), Args(id1, id2));
+
+	auto_METHOD_VOID(cRelationshipManager, ResetRelationship, Args(uint32_t id1, uint32_t id2), Args(id1, id2));
+
 	auto_METHOD(cRelationshipManager, float, ApplyRelationship, 
 		Args(uint32_t pEmpire, uint32_t pCauseEmpire, uint32_t relationshipID, float fScale),
 		Args(pEmpire, pCauseEmpire, relationshipID, fScale));
+
+	bool cRelationshipManager::IsAtWar(uint32_t politicalID1, uint32_t politicalID2) {
+		return CALL(GetAddress(cRelationshipManager, IsAtWar2), bool, Args(cRelationshipManager*, uint32_t, uint32_t), Args(this, politicalID1, politicalID2));
+	}
 }
 #endif

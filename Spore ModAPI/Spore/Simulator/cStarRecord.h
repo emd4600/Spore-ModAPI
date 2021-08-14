@@ -20,6 +20,7 @@
 
 #include <Spore\Simulator\ISimulatorSerializable.h>
 #include <Spore\Simulator\cPlanet.h>
+#include <Spore\Simulator\cSpeciesProfile.h>
 #include <Spore\MathUtils.h>
 #include <Spore\ResourceKey.h>
 #include <EASTL\string.h>
@@ -92,9 +93,9 @@ namespace Simulator
 		/* 60h */	string16 mName;
 		/* 70h */	uint32_t mKey;  // not initialized
 		/* 74h */	ResourceKey mCitizenSpeciesKey;
-		/* 80h */	int field_80;
-		/* 84h */	vector<intrusive_ptr<cPlanetRecord>> mPlanets;
-		/* 98h */	vector<int> field_98;
+		/* 80h */	cSpeciesProfile* mpSpeciesProfile;
+		/* 84h */	vector<cPlanetRecordPtr> mPlanets;
+		/* 98h */	vector<cPlanetRecordPtr> field_98;
 		/* ACh */	char mPlanetCount;
 
 	};

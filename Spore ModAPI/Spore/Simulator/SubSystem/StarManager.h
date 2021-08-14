@@ -176,7 +176,8 @@ namespace Simulator
 		/* 1C8h */	int field_1C8;  // not initialized
 		/* 1C8h */	int field_1CC;  // not initialized
 		/* 1D0h */	int field_1D0;  // not initialized
-		/* 1D4h */	int field_1D4;  // 0x1234, used to give empire record numbers? If so, sub_BA5DA0 generates the next one
+		// Empire IDs always have the first bit set to 1
+		/* 1D4h */	int mNextEmpireID;  // 0x1234, used to give empire record numbers? If so, sub_BA5DA0 generates the next one
 		/* 1D8h */	uint32_t mGrobEmpireID;  // -1
 		/* 1DCh */	intrusive_ptr<cStarRecord> mpScenarioStar;
 		/* 1E0h */	cSpaceTradeRouteManager mTradeRouteMgr;

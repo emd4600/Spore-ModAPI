@@ -58,6 +58,13 @@ namespace Simulator
 		kArchetypePlayerKnight = 18,
 	};
 
+	enum EmpireTrait
+	{
+		kEmpireTraitStingy = 1,
+		kEmpireTraitGenerous = 2,
+		kEmpireTraitAccidentProne = 3,
+	};
+
 	class cEmpire
 		: public ISimulatorSerializableRefCounted
 		, public cIdentityColorable
@@ -70,17 +77,19 @@ namespace Simulator
 		using Object::Release;
 		using Object::Cast;
 
+		/// Returns the political ID of this empire.
+		uint32_t GetEmpireID() const;
+
 		cStarRecord* GetHomeStarRecord();
+
+		cSpeciesProfile* GetSpeciesProfile();
 
 		void SetSpeciesProfile(cSpeciesProfile* pSpecies);
 
-		inline bool IsAtWar(cEmpire* pOther) {
-			return cRelationshipManager::Get()->IsAtWar(this, pOther);
-		}
-
-		inline void DeclareWar(cEmpire* pOther) {
-			cRelationshipManager::Get()->DeclareWar(this, pOther);
-		}
+		/// Captures a star system for a specific empire.
+		/// @param pStarRecord The star system to capture.
+		/// @param empireID Political ID of the empire that will become the owner.
+		static void CaptureSystem(cStarRecord* pStarRecord, uint32_t empireID);
 
 	public:
 		/* 3Ch */	string16 mEmpireName;  // "unknown"
@@ -88,11 +97,11 @@ namespace Simulator
 		/* 50h */	int mFlags;  // 0x10 -> grox?
 		/* 54h */	int mTrait;
 		/* 58h */	Archetypes mArchetype;  // kArchetypePlayerWanderer
-		/* 5Ch */	vector<intrusive_ptr<cEmpire>> mEnemies;
-		/* 70h */	vector<intrusive_ptr<cEmpire>> mAllies;
+		/* 5Ch */	vector<cEmpirePtr> mEnemies;
+		/* 70h */	vector<cEmpirePtr> mAllies;
 		/* 84h */	int mPoliticalID;  // -1
-		/* 88h */	vector<intrusive_ptr<cStarRecord>> mStars;
-		/* 9Ch */	vector<intrusive_ptr<cStarRecord>> mNextStarTowardsHome;
+		/* 88h */	vector<cStarRecordPtr> mStars;
+		/* 9Ch */	vector<cStarRecordPtr> mNextStarTowardsHome;
 		/* B0h */	StarID mHomeStar;  // -1
 		/* B4h */	PlanetID mHomePlanet;  // -1
 		/* B8h */	ResourceKey mUFOKey;
@@ -127,10 +136,17 @@ namespace Simulator
 
 	static_assert(sizeof(cEmpire) == 0x158, "sizeof(cEmpire) != 158h");
 
+	inline uint32_t cEmpire::GetEmpireID() const
+	{
+		return mPoliticalID;
+	}
+
 	namespace Addresses(cEmpire)
 	{
+		DeclareAddress(GetSpeciesProfile);
 		DeclareAddress(SetSpeciesProfile);
 		DeclareAddress(sub_C32EA0);
+		DeclareAddress(CaptureSystem);
 		//TODO sub_C30F90 RequireHomePlanet
 	}
 

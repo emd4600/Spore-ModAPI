@@ -22,7 +22,9 @@
 #include <Spore\Simulator\cGonzagoSimulator.h>
 #include <Spore\Simulator\cGonzagoTimer.h>
 #include <Spore\Simulator\cSimPlanetHighLOD.h>
+#include <Spore\Simulator\cSimulatorPlayerUFO.h>
 #include <Spore\App\IMessageListener.h>
+#include <Spore\App\MessageListenerData.h>
 #include <Spore\UI\SpaceGameUI.h>
 
 #include <EASTL\vector.h>
@@ -51,18 +53,18 @@ namespace Simulator
 
 	public:
 		/* 14h */	SpaceGameUIPtr mpUI;
-		/* 18h */	int field_18;
+		/* 18h */	int field_18;  //TODO space trading UI
 		/* 1Ch */	int field_1C;  // -1
-		/* 20h */	int field_20;
+		/* 20h */	int mpCommunityEditor;  //TODO cCommunityEditor
 		/* 24h */	int field_24;
 		/* 28h */	int field_28;
 		/* 2Ch */	int field_2C;  // not initialized
 		/* 30h */	int field_30;  // a class
-		/* 34h */	float field_34;
-		/* 38h */	float field_38;
-		/* 3Ch */	int field_3C;  // not initialized
+		/* 34h */	float mSpacePhiOffsetGalaxy;
+		/* 38h */	float mSpacePhiOffsetSolar;
+		/* 3Ch */	float mPlanetCameraMouseRotationSpeed;  // not initialized
 		/* 40h */	cPlayerInventoryPtr mpPlayerInventory;
-		/* 44h */	int field_44;
+		/* 44h */	int field_44;  // a resource factory
 		/* 48h */	int field_48;
 		/* 4Ch */	bool field_4C;
 		/* 4Dh */	bool field_4D;
@@ -70,11 +72,7 @@ namespace Simulator
 		/* 4Fh */	bool field_4F;
 		/* 50h */	int field_50;
 		/* 54h */	cSimPlanetHighLODPtr mpHighLODPlanetSim;
-		/* 58h */	int field_58;
-		/* 5Ch */	int field_5C;
-		/* 60h */	int field_60;
-		/* 64h */	int field_64;
-		/* 68h */	int field_68;
+		/* 58h */	App::MessageListenerData mMessageListenerData;
 		/* 6Ch */	bool field_6C;
 		/* 70h */	int mpBadgeManager;  //TODO
 		/* 74h */	bool field_74;
@@ -84,10 +82,10 @@ namespace Simulator
 		/* 78h */	vector<int> mNPC_UFOs;  //TODO
 		/* 90h */	cGonzagoTimer mTimeSinceStartedSpaceGame;
 		/* B0h */	int field_B0;
-		/* B4h */	int field_B4;
-		/* B8h */	int field_B8;
-		/* BCh */	int field_BC;
-		/* C0h */	int field_C0;
+		/* B4h */	cSimulatorPlayerUFOPtr mpPlayerUFO;
+		/* B8h */	int mpMissionManager;  //TODO
+		/* BCh */	int mpSimulatorWalkAround;  //TODO cSimulatorWalkAround
+		/* C0h */	int mpSimulatorUniverse;  //TODO cSimulatorUniverse
 		/* C4h */	int field_C4;
 		/* C8h */	vector<int> field_C8;
 		/* DCh */	vector<int> mPlanetsToUplift;  // TODO
