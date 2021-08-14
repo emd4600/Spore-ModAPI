@@ -131,6 +131,7 @@ namespace Simulator
 	{
 		DeclareAddress(SetSpeciesProfile);
 		DeclareAddress(sub_C32EA0);
+		//TODO sub_C30F90 RequireHomePlanet
 	}
 
 }

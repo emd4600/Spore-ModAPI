@@ -22,6 +22,6 @@ namespace UI
 {
 	class GlobalUI
 	{
-
+		// vftable 08h sets the main stage layout, for example 0x1E453B88 for space stage
 	};
 }

@@ -18,6 +18,7 @@ namespace UI
 	namespace Addresses(SpaceGameUI)
 	{
 		DefineAddress(Load, SelectAddress(0x10743F0, 0x1073730, 0x1073730));
+		DefineAddress(SetActivePalette, SelectAddress(0x106F060, , 0x106E410));
 	}
 
 	namespace Addresses(cHintManager)
