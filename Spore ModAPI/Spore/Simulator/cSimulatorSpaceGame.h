@@ -23,6 +23,7 @@
 #include <Spore\Simulator\cGonzagoTimer.h>
 #include <Spore\Simulator\cSimPlanetHighLOD.h>
 #include <Spore\App\IMessageListener.h>
+#include <Spore\UI\SpaceGameUI.h>
 
 #include <EASTL\vector.h>
 
@@ -40,14 +41,16 @@ namespace Simulator
 		using Object::Release;
 		using Object::Cast;
 
+		UI::SpaceGameUI* GetUI();
+
 		cPlayerInventory* GetPlayerInventory();
 
 		cSimPlanetHighLOD* GetPlanetHighLOD();
 
 		// sub_10068B0 assigns archetype
 
-	protected:
-		/* 14h */	int field_14;
+	public:
+		/* 14h */	SpaceGameUIPtr mpUI;
 		/* 18h */	int field_18;
 		/* 1Ch */	int field_1C;  // -1
 		/* 20h */	int field_20;
@@ -58,7 +61,7 @@ namespace Simulator
 		/* 34h */	float field_34;
 		/* 38h */	float field_38;
 		/* 3Ch */	int field_3C;  // not initialized
-		/* 40h */	intrusive_ptr<cPlayerInventory> mpPlayerInventory;
+		/* 40h */	cPlayerInventoryPtr mpPlayerInventory;
 		/* 44h */	int field_44;
 		/* 48h */	int field_48;
 		/* 4Ch */	bool field_4C;
@@ -99,6 +102,10 @@ namespace Simulator
 
 	inline cSimPlanetHighLOD* cSimulatorSpaceGame::GetPlanetHighLOD() {
 		return mpHighLODPlanetSim.get();
+	}
+
+	inline UI::SpaceGameUI* cSimulatorSpaceGame::GetUI() {
+		return mpUI.get();
 	}
 
 	static_assert(sizeof(cSimulatorSpaceGame) == 0xF0, "sizeof(cSimulatorSpaceGame) != 0xF0");
