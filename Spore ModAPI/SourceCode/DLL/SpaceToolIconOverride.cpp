@@ -2,9 +2,9 @@
 #include "stdafx.h"
 #include "SpaceToolIconOverride.h"
 #include <Spore\CommonIDs.h>
+#include <Spore\UI\SpaceGameUI.h>
 #include <Spore\UTFWin\UILayout.h>
 #include <Spore\UTFWin\ImageDrawable.h>
-#include <Spore/App/ICheatManager.h>
 
 // Keys already found in ufotools~ folder
 const uint32_t kIllegalIconIDs[] = {
@@ -85,22 +85,17 @@ void InjectIconWindows(UTFWin::IWindow* window)
 	}
 }
 
-member_detour(LoadSPUI_detour, UTFWin::UILayout, bool(const ResourceKey&, bool, uint32_t)) {
-	bool detoured(const ResourceKey & resourceKey, bool unkBool, uint32_t unkParams) {
-		bool result = original_function(this, resourceKey, unkBool, unkParams);
-		if (resourceKey.instanceID == 0x46fed9c8) { // Only modify layout with all base game icons
-			UTFWin::UILayout* layout = this;
-			UTFWin::IWindow* firstIcon = layout->FindWindowByID(0xC19CCD88); // First icon from spui. Should be the fastest to access.
-			InjectIconWindows(firstIcon); // Icons should be destroyed with window hierarchy
-		}
-
-		return result;
+member_detour(LoadSpaceGameUI_detour, UI::SpaceGameUI, void()) {
+	void detoured() {
+		original_function(this);
+		UTFWin::IWindow* firstIcon = this->mInventoryItemIcons->FindWindowByID(0xC19CCD88); // First icon from spui. Should be the fastest to access.
+		InjectIconWindows(firstIcon); // Icons should be destroyed with window hierarchy
 	}
 };
 
 long SpaceToolIconOverride::AttachDetour() {
 	long result = 0;
-	result |= LoadSPUI_detour::attach(GetAddress(UTFWin::UILayout, Load));
+	result |= LoadSpaceGameUI_detour::attach(GetAddress(UI::SpaceGameUI, Load));
 	return result;
 }
 
