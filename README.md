@@ -13,3 +13,8 @@ of 3 real mods made with the ModAPI SDK:
  - [EnhancedColorPicker](https://github.com/emd4600/Spore-ModAPI/tree/master/Projects/Example%20Projects/EnhancedColorPicker)
  - [GmdlExport](https://github.com/emd4600/Spore-ModAPI/tree/master/Projects/Example%20Projects/GmdlExport)
  - [ModCreatorKit](https://github.com/emd4600/Spore-ModAPI/tree/master/Projects/Example%20Projects/ModCreatorKit)
+
+To compile the core DLLs (unless you want to develop the SDK itself, you don't need to do this):
+ 1. Open the Visual Studio Command Prompt
+ 2. Navigate to the SDK root directory.
+ 3. Execute `msbuild "Spore ModAPI" -t:BuildDlls -p:BuildVer=177 -p:Config=Release` (changing the version and config accordingly)

@@ -53,8 +53,8 @@ END
 //
 
 VS_VERSION_INFO VERSIONINFO
- FILEVERSION 2,5,157,0
- PRODUCTVERSION 2,5,157,0
+ FILEVERSION 2,5,SDK_BUILD_VER,EXECUTABLE_TYPE
+ PRODUCTVERSION 2,5,SDK_BUILD_VER,EXECUTABLE_TYPE
  FILEFLAGSMASK 0x3fL
 #ifdef _DEBUG
  FILEFLAGS 0x1L
@@ -69,12 +69,12 @@ BEGIN
     BEGIN
         BLOCK "000904b0"
         BEGIN
-            VALUE "FileVersion", "2.5.157.0"
+            VALUE "FileVersion", "2.5."SDK_BUILD_VER"."EXECUTABLE_TYPE
             VALUE "InternalName", "SporeModAPI.dll"
             VALUE "LegalCopyright", "Copyright (C) 2020"
             VALUE "OriginalFilename", "SporeModAPI.dll"
             VALUE "ProductName", "Spore ModAPI"
-            VALUE "ProductVersion", "2.5.157.0"
+            VALUE "ProductVersion", "2.5."SDK_BUILD_VER"."EXECUTABLE_TYPE
         END
     END
     BLOCK "VarFileInfo"

@@ -100,7 +100,7 @@
     <ClCompile>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
-      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;_USRDLL;MODAPI_DLL_EXPORT;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;SDK_BUILD_VER=$(SDK_BUILD_VER);EXECUTABLE_TYPE=$(EXECUTABLE_TYPE);_DEBUG;_WINDOWS;_USRDLL;MODAPI_DLL_EXPORT;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <SDLCheck>true</SDLCheck>
       <DisableSpecificWarnings>4351</DisableSpecificWarnings>
       <PreprocessToFile>false</PreprocessToFile>
@@ -115,7 +115,7 @@
       </Command>
     </PostBuildEvent>
     <ResourceCompile>
-      <PreprocessorDefinitions>MODAPI_DLL_EXPORT;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>MODAPI_DLL_EXPORT;SDK_BUILD_VER=$(SDK_BUILD_VER);EXECUTABLE_TYPE=$(EXECUTABLE_TYPE);%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ResourceCompile>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
@@ -144,7 +144,7 @@
       <Optimization>MaxSpeed</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
-      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;_USRDLL;MODAPI_DLL_EXPORT;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;SDK_BUILD_VER=$(SDK_BUILD_VER);EXECUTABLE_TYPE=$(EXECUTABLE_TYPE);NDEBUG;_WINDOWS;_USRDLL;MODAPI_DLL_EXPORT;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <SDLCheck>true</SDLCheck>
       <DisableSpecificWarnings>4351</DisableSpecificWarnings>
       <WholeProgramOptimization>false</WholeProgramOptimization>
@@ -158,7 +158,7 @@
       <AdditionalDependencies>detours.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <ResourceCompile>
-      <PreprocessorDefinitions>MODAPI_DLL_EXPORT;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>MODAPI_DLL_EXPORT;SDK_BUILD_VER=$(SDK_BUILD_VER);EXECUTABLE_TYPE=$(EXECUTABLE_TYPE);%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ResourceCompile>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -348,6 +348,7 @@
     <ClInclude Include="Spore\Pollinator\cAssetMetadata.h" />
     <ClInclude Include="Spore\Simulator\cCommodityNode.h" />
     <ClInclude Include="Spore\Simulator\cGameplayMarker.h" />
+    <ClInclude Include="Spore\Simulator\cMission.h" />
     <ClInclude Include="Spore\Simulator\cSimPlanetHighLOD.h" />
     <ClInclude Include="Spore\Simulator\ICityMusic.h" />
     <ClInclude Include="Spore\Sporepedia\AssetViewManager.h" />
@@ -923,4 +924,12 @@
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
+  <Target Name="BuildDlls">
+    <Message Text="Compiling $(Config) DLLs for Disk version, build $(BuildVer)..." />
+    <Exec Command="msbuild.exe /p:Configuration=&quot;$(Config) DLL&quot; /p:Platform=Win32 /p:SDK_BUILD_VER=$(BuildVer) /p:EXECUTABLE_TYPE=2" />
+    <Copy SourceFiles="../dll/Debug/SporeModAPI.dll" DestinationFiles="../dll/Debug/SporeModAPI.march2017.dll" />
+    <Message Text="Compiling $(Config) DLLs for March2017 version, build $(BuildVer)..." />
+    <Exec Command="msbuild.exe /p:Configuration=&quot;$(Config) DLL&quot; /p:Platform=Win32 /p:SDK_BUILD_VER=$(BuildVer) /p:EXECUTABLE_TYPE=0" />
+    <Copy SourceFiles="../dll/Debug/SporeModAPI.dll" DestinationFiles="../dll/Debug/SporeModAPI.disk.dll" />
+  </Target>
 </Project>
