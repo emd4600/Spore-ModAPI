@@ -33,7 +33,7 @@ namespace Simulator
 
 	auto_METHOD_VOID(cRelationshipManager, BreakAlliance, Args(cEmpire* pEmpire1, cEmpire* pEmpire2), Args(pEmpire1, pEmpire2));
 
-	auto_METHOD_VOID(cRelationshipManager, DeclarePeace, Args(uint32_t id1, uint32_t id2), Args(id1, id2));
+	auto_METHOD_VOID(cRelationshipManager, DeclarePeace, Args(cEmpire* pEmpire1, cEmpire* pEmpire2), Args(pEmpire1, pEmpire2));
 
 	auto_METHOD_VOID(cRelationshipManager, ResetRelationship, Args(uint32_t id1, uint32_t id2), Args(id1, id2));
 

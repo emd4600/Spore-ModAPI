@@ -5,6 +5,10 @@
 
 #include "resource.h"
 
+#define STR(value) #value
+#define STRINGIZE(value) STR(value)
+#define FULLVERSION_STR "2.5." STRINGIZE(SDK_BUILD_VER) "." STRINGIZE(EXECUTABLE_TYPE)
+
 #define APSTUDIO_READONLY_SYMBOLS
 /////////////////////////////////////////////////////////////////////////////
 //
@@ -69,12 +73,12 @@ BEGIN
     BEGIN
         BLOCK "000904b0"
         BEGIN
-            VALUE "FileVersion", "2.5."SDK_BUILD_VER"."EXECUTABLE_TYPE
+            VALUE "FileVersion", FULLVERSION_STR
             VALUE "InternalName", "SporeModAPI.dll"
             VALUE "LegalCopyright", "Copyright (C) 2020"
             VALUE "OriginalFilename", "SporeModAPI.dll"
             VALUE "ProductName", "Spore ModAPI"
-            VALUE "ProductVersion", "2.5."SDK_BUILD_VER"."EXECUTABLE_TYPE
+            VALUE "ProductVersion", FULLVERSION_STR
         END
     END
     BLOCK "VarFileInfo"

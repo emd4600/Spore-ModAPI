@@ -179,10 +179,10 @@ namespace Simulator
 		/// @param pEmpire2
 		void DeclareWar(cEmpire* pEmpire1, cEmpire* pEmpire2);
 
-		/// Declares peace between two political entities. This does not change the relationship events or score.
-		/// @param politicalID1
-		/// @param politicalID2
-		void DeclarePeace(uint32_t politicalID1, uint32_t politicalID2);
+		/// Declares peace between two empires. This does not change the relationship events or score.
+		/// @param pEmpire1
+		/// @param pEmpire2
+		void DeclarePeace(cEmpire* pEmpire1, cEmpire* pEmpire2);
 
 		/// Declares an alliance between two empires. 
 		/// If one of the empires is the player, it sends a SimulatorMessages::kMsgPlayerEmpireAllied message.
