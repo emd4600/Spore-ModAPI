@@ -45,6 +45,8 @@
 #include <Spore\Simulator\cSimulatorSpaceGame.h>
 #include <Spore\Simulator\cSimulatorPlayerUFO.h>
 
+#include <Spore\Simulator\SimulatorMessages.h>
+
 
 // Needed to load creatures
 #include <Spore\Editors\SpeciesManager.h>

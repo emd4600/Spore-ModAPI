@@ -927,9 +927,9 @@
   <Target Name="BuildDlls">
     <Message Text="Compiling $(Config) DLLs for Disk version, build $(BuildVer)..." />
     <Exec Command="msbuild.exe /p:Configuration=&quot;$(Config) DLL&quot; /p:Platform=Win32 /p:SDK_BUILD_VER=$(BuildVer) /p:EXECUTABLE_TYPE=2" />
-    <Copy SourceFiles="../dll/Debug/SporeModAPI.dll" DestinationFiles="../dll/Debug/SporeModAPI.march2017.dll" />
+    <Copy SourceFiles="../dll/$(Config)/SporeModAPI.dll" DestinationFiles="../dll/$(Config)/SporeModAPI.march2017.dll" />
     <Message Text="Compiling $(Config) DLLs for March2017 version, build $(BuildVer)..." />
     <Exec Command="msbuild.exe /p:Configuration=&quot;$(Config) DLL&quot; /p:Platform=Win32 /p:SDK_BUILD_VER=$(BuildVer) /p:EXECUTABLE_TYPE=0" />
-    <Copy SourceFiles="../dll/Debug/SporeModAPI.dll" DestinationFiles="../dll/Debug/SporeModAPI.disk.dll" />
+    <Copy SourceFiles="../dll/$(Config)/SporeModAPI.dll" DestinationFiles="../dll/$(Config)/SporeModAPI.disk.dll" />
   </Target>
 </Project>
