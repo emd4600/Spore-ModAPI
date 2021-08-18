@@ -34,7 +34,7 @@ namespace Simulator
 
 		//PLACEHOLDER 6D4h vector<intrusive_ptr<cCreatureAbility>>
 
-		/* 504h */	ResourceKey field_504;
+		/* 504h */	ResourceKey field_504;  //TODO this is the main key?
 		/* 510h */	ResourceKey field_510;
 		/* 51Ch */	string16 field_51C;
 		/* 52Ch */	string16 field_52C;

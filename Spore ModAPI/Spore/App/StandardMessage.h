@@ -41,6 +41,7 @@ namespace App
 			float		_float;
 			double		_double;
 			Object*		object;
+			void*		ptr;
 		};
 
 		StandardMessage();

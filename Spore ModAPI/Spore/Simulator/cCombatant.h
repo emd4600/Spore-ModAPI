@@ -80,7 +80,7 @@ namespace Simulator
 		/// Returns the weapon tool used by this combatant. This is only available for vehicles.
 		/* 14h */	virtual cSpaceToolData* GetWeapon();
 
-		/* 18h */	virtual int func18h(float, int, int, int, int);  // used to substract health?
+		/* 18h */	virtual int func18h(float damage, uint32_t attackerPoliticalID, int, const Vector3&, cCombatant* pAttacker);  // used to substract health?
 
 		/* 1Ch */	virtual void AddHostileUnit(cCombatant* combatant);
 		/* 20h */	virtual Math::Vector3 func20h();
@@ -127,15 +127,15 @@ namespace Simulator
 		/* 08h */	bool field_8;  // if true, it's ignored when checking mouse position
 		/* 09h */	bool field_9;
 		/* 0Ch */	map<int, int> field_0C;
-		/* 28h */	intrusive_ptr<cCombatant> field_28;
+		/* 28h */	cCombatantPtr mpLastAttacker;
 		/* 2Ch */	float mMaxHealthPoints;  // 10.0
 		/* 30h */	intrusive_ptr<Object>  field_30;
-		/* 34h */	int field_34;
+		/* 34h */	int field_34;  // if dead, 2
 		/* 38h */	float mHealthPoints;  // 10.0
-		/* 3Ch */	int mLastAttacker;  // -1
+		/* 3Ch */	uint32_t mLastAttacker;  // -1
 		/* 40h */	float mArmorProbability;  // 0.5
-		/* 44h */	intrusive_ptr<cCombatant> field_44;
-		/* 48h */	intrusive_ptr<cCombatant> mpTarget;
+		/* 44h */	cCombatantPtr field_44;
+		/* 48h */	cCombatantPtr mpTarget;
 		/* 4Ch */	Vector3 field_4C;
 		/* 58h */	vector<Vector3> mAimPoints;
 		/* 6Ch */	bool field_6C;  // true, needsToLoadAimPoints?
