@@ -367,10 +367,16 @@ namespace Simulator
 
 		DefineAddress(IsAtWar, SelectAddress(0xD014C0, 0xD01F80, 0xD01F90));
 		DefineAddress(IsAtWar2, SelectAddress(0xD01490, , 0xD01F60));
+		DefineAddress(IsAllied, SelectAddress(0xD01560, , 0xD02030));
+		DefineAddress(IsAllied2, SelectAddress(0xD01520, , 0xD01FF0));
 		DefineAddress(DeclareWar, SelectAddress(0xD05840, 0xD065E0, 0xD065E0));
 		DefineAddress(DeclarePeace, SelectAddress(0xD02B90, , 0xD03920));
+		DefineAddress(DeclareAlliance, SelectAddress(0xD05BC0, , 0xD06960));
+		DefineAddress(BreakAlliance, SelectAddress(0xD013A0, , 0xD01E70));
 		DefineAddress(ResetRelationship, SelectAddress(0xD04AD0, , 0xD05870));
 		DefineAddress(ApplyRelationship, SelectAddress(0xD054E0, 0xD06280, 0xD06280));
+		DefineAddress(RelationshipExists, SelectAddress(0xD010C0, , 0xD01B90));
+		DefineAddress(GetRelationshipEventValue, SelectAddress(0xD010F0, , 0xD01BC0));
 	}
 
 	namespace Addresses(cGameBehaviorManager) 

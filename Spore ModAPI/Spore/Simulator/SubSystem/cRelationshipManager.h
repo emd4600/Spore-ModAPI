@@ -132,7 +132,7 @@ namespace Simulator
 	{
 	public:
 		/* 00h */	float mValue;
-		// Flag 0x1 is at war
+		// Flag 0x1 is at war, 0x2 allied?
 		/* 04h */	int mFlags;
 		/* 08h */	map<uint32_t, float> mRelationshipEvents;
 	};
@@ -162,6 +162,18 @@ namespace Simulator
 		/// @param politicalID2
 		bool IsAtWar(uint32_t politicalID1, uint32_t politicalID2);
 
+		/// Returns true if there is an alliance between the two empires, or false otherwise.
+		/// The order of the parameters is irrelevant.
+		/// @param pEmpire1
+		/// @param pEmpire2
+		bool IsAllied(cEmpire* pEmpire1, cEmpire* pEmpire2);
+
+		/// Returns true if there is an alliance between the two political entities, or false otherwise.
+		/// The order of the parameters is irrelevant.
+		/// @param politicalID1
+		/// @param politicalID2
+		bool IsAllied(uint32_t politicalID1, uint32_t politicalID2);
+
 		/// Declares war between the two empires, applying a bad relationship between them.
 		/// @param pEmpire1
 		/// @param pEmpire2
@@ -172,13 +184,24 @@ namespace Simulator
 		/// @param politicalID2
 		void DeclarePeace(uint32_t politicalID1, uint32_t politicalID2);
 
+		/// Declares an alliance between two empires. 
+		/// If one of the empires is the player, it sends a SimulatorMessages::kMsgPlayerEmpireAllied message.
+		void DeclareAlliance(cEmpire* pEmpire1, cEmpire* pEmpire2);
+
+		/// Breaks the alliance between two empires, if it exists.
+		/// If one of the empires is the player, it sends a SimulatorMessages::kMsgPlayerEmpireLostAlliance message.
+		void BreakAlliance(cEmpire* pEmpire1, cEmpire* pEmpire2);
+
+
+		//TODO sub_D001E0
+
 		/// Resets the relationship between two political entities, setting their global relationship to 0
 		/// and removing all events between them.
 		/// @param politicalID1
 		/// @param politicalID2
 		void ResetRelationship(uint32_t politicalID1, uint32_t politicalID2);
 
-		/// Applies a relationship event between two political entites (tribes, civilizations, empires,...).
+		/// Applies a relationship event between two political entities (tribes, civilizations, empires,...).
 		/// The relationship ID is a property ID; the list of base relationships is found in the RelationshipEvents enum,
 		/// but more can be added.
 		/// The relations aren't necessarily symmetric, so there's one of the two political entities that is considered
@@ -189,6 +212,19 @@ namespace Simulator
 		/// @param scale Optional, a multiplier over the effect the relationship has.
 		/// @returns The current state of the relationship
 		float ApplyRelationship(uint32_t politicalID, uint32_t causePoliticalID, uint32_t relationshipID, float scale = 1.0f);
+
+		/// Returns true if there is a relationship between the two political entities.
+		/// @param politicalID1
+		/// @param politicalID2
+		/// @returns
+		bool RelationshipExists(uint32_t politicalID1, uint32_t politicalID2);
+
+		/// Returns the value of a relationship event between two political entities, or 0 if no such relation exists.
+		/// @param politicalID1
+		/// @param politicalID2
+		/// @param relationshipID
+		/// @returns
+		float GetRelationshipEventValue(uint32_t politicalID1, uint32_t politicalID2, uint32_t relationshipID);
 
 	protected:
 		/* 10h */	float field_10;
@@ -234,9 +270,15 @@ namespace Simulator
 
 		DeclareAddress(IsAtWar);
 		DeclareAddress(IsAtWar2);
+		DeclareAddress(IsAllied);
+		DeclareAddress(IsAllied2);
 		DeclareAddress(DeclareWar);
 		DeclareAddress(DeclarePeace);
+		DeclareAddress(DeclareAlliance);
+		DeclareAddress(BreakAlliance);
 		DeclareAddress(ResetRelationship);
 		DeclareAddress(ApplyRelationship);
+		DeclareAddress(RelationshipExists);
+		DeclareAddress(GetRelationshipEventValue);
 	}
 }
