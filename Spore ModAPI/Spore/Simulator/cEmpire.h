@@ -108,7 +108,8 @@ namespace Simulator
 		/* C4h */	ResourceKey mCaptainKey;
 		/* D0h */	int mEmpireMoney;
 		/* D4h */	char mTravelDistance;  // 3
-		/* D8h */	int field_D8;  // -1
+		//TODO sub_C31000 GetEmpireTier ?
+		/* D8h */	int field_D8;  // -1  //TODO empire size? Related with combat tuning, check loc_C31039
 		/* DCh */	float field_DC;
 		/* E0h */	float field_E0;
 		/* E4h */	float field_E4;

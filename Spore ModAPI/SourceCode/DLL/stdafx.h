@@ -12,4 +12,6 @@
 #include <windows.h>
 
 // 0 - Disk, 2 - March2017
-#define EXECUTABLE_TYPE 0
+#ifndef EXECUTABLE_TYPE
+	#define EXECUTABLE_TYPE 0
+#endif

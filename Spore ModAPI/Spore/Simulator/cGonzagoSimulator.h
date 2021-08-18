@@ -35,7 +35,7 @@ namespace Simulator
 
 		/* 10h */	virtual void Update(int deltaTime, int);
 		/* 14h */	virtual char16_t* GetName(int);
-		/* 18h */	virtual void Load(int);
+		/* 18h */	virtual void Load();
 
 	protected:
 		/* 0Ch */	bool field_0C;

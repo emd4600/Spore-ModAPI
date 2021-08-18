@@ -13,7 +13,7 @@ namespace ModAPI
 		return 5;
 	}
 	int GetBuildVersion() {
-		return 83;
+		return SDK_BUILD_VER;
 	}
 
 	void AddInitFunction(InitFunction f) {
