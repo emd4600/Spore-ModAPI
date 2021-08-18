@@ -85,17 +85,20 @@ void InjectIconWindows(UTFWin::IWindow* window)
 	}
 }
 
-member_detour(LoadSpaceGameUI_detour, UI::SpaceGameUI, void()) {
-	void detoured() {
-		original_function(this);
-		InjectIconWindows(this->mInventoryItemIcons->FindWindowByID(0xC19CCD88)); // First icon from spui. Should be the fastest to access. 
-		// Icons should be destroyed with window hierarchy when they are no longer needed.
+member_detour(LoadIconSpui_detour, UTFWin::UILayout, bool(const ResourceKey&, bool, uint32_t)) {
+	bool detoured(const ResourceKey & resourceKey, bool unkBool, uint32_t params) {
+		bool result = original_function(this, resourceKey, unkBool, params);
+		if (resourceKey.instanceID == 0x46fed9c8) { // SPU holding all space icons.
+			InjectIconWindows(this->FindWindowByID(0xC19CCD88)); // First icon from spui. Should be the fastest to access. 
+		}
+
+		return result;
 	}
 };
 
 long SpaceToolIconOverride::AttachDetour() {
 	long result = 0;
-	result |= LoadSpaceGameUI_detour::attach(GetAddress(UI::SpaceGameUI, Load));
+	result |= LoadIconSpui_detour::attach(GetAddress(UTFWin::UILayout, Load));
 	return result;
 }
 
