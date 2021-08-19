@@ -102,7 +102,7 @@ namespace UTFWin
 	///
 	inline Tooltip* CreateTooltip(
 		const char16_t* pText,
-		const char16_t* pDetailedText = nullptr,
+		const char16_t* pDetailedText = u"",
 		const char16_t* pLayoutName = u"tooltips",
 		uint32_t controlID = 0x3754E6C,
 		uint32_t detailControlID = 0x3754E6C

@@ -51,6 +51,9 @@ namespace UI
 		, public App::IMessageListener
 	{
 	public:
+		using IWinProc::AddRef;
+		using IWinProc::Release;
+
 		void Load();
 
 		void SetActivePalette(uint32_t paletteID);
