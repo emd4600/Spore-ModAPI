@@ -10,8 +10,9 @@
 
 namespace Simulator
 {
-	struct UnkRefCounted
+	class UnkRefCounted
 	{
+	public:
 		virtual int AddRef();
 		virtual int Release();
 		virtual ~UnkRefCounted();

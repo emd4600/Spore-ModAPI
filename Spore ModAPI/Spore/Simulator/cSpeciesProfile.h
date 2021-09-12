@@ -121,7 +121,7 @@ namespace Simulator
 		/* 6B8h */	vector<int> field_6B8;
 		/* 6CCh */	bool field_6CC;
 		/* 6D0h */	int field_6D0;
-		/* 6D4h */	fixed_vector<int, 20> field_6D4;
+		/* 6D4h */	fixed_vector<int, 20> field_6D4;  //TODO abilities
 		/* 73Ch */	fixed_vector<int, 20> field_73C;
 		/* 7A4h */	fixed_vector<int, 20> field_7A4;
 		/* 80Ch */	bool field_80C;

@@ -19,12 +19,12 @@
 
 #pragma once
 
+#include <Spore\IO\FileStream.h>
 #include <Spore\Object.h>
 #include <Spore\Mutex.h>
 #include <Spore\ICoreAllocator.h>
 #include <Spore\Resource\IResourceContainer.h>
 #include <Spore\Resource\IResourceFilter.h>
-#include <Spore\IO\FileStream.h>
 #include <Spore\IO\EAIOZoneObject.h>
 #include <Spore\Resource\PFIndexModifiable.h>
 

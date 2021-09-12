@@ -33,10 +33,9 @@
 namespace Palettes
 {
 	using namespace eastl;
-	using namespace UTFWin;
 
 	class ItemViewer 
-		: public IWinProc
+		: public UTFWin::IWinProc
 		, public DefaultRefCounted
 		, public App::IUnmanagedMessageListener
 	{
@@ -57,7 +56,7 @@ namespace Palettes
 
 		/* 2Ch */	virtual void func2Ch(bool) = 0;
 		/* 30h */	virtual bool func30h() const = 0;
-		/* 34h */	virtual IWindow* GetWindow() const = 0;
+		/* 34h */	virtual UTFWin::IWindow* GetWindow() const = 0;
 		/* 38h */	virtual void Set3dPreview(bool enabled) = 0;
 		/* 3Ch */	virtual Anim::AnimatedCreature* GetAnimatedCreature() const = 0;  //PLACEHOLDER GetAnimatedCreature()
 		/* 40h */	virtual void func40h() = 0;

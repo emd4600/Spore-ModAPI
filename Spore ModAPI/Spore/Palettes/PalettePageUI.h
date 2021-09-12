@@ -33,13 +33,12 @@
 namespace Palettes
 {
 	using namespace eastl;
-	using namespace UTFWin;
 
 	///
 	/// This class holds all information related with the user interface of a palette page.
 	/// It's the UI representation of a Palettes::PalettePage.
 	///
-	class PalettePageUI : public IWinProc, public DefaultRefCounted
+	class PalettePageUI : public UTFWin::IWinProc, public DefaultRefCounted
 	{
 	public:
 		enum DisplayType
@@ -60,7 +59,7 @@ namespace Palettes
 		PalettePageUI();
 		virtual ~PalettePageUI() {};
 
-		void Load(PalettePage* pPage, IWindow* pWindow, PaletteInfo* pInfo, size_t nIndex, bool);
+		void Load(PalettePage* pPage, UTFWin::IWindow* pWindow, PaletteInfo* pInfo, size_t nIndex, bool);
 
 		///
 		/// Returns the area the item in the given index should have, relative to the items panel.
@@ -75,14 +74,14 @@ namespace Palettes
 		void* Cast(uint32_t) const override;
 
 		int GetEventFlags() const override;
-		bool HandleUIMessage(IWindow* pWindow, const Message& message) override;
+		bool HandleUIMessage(UTFWin::IWindow* pWindow, const UTFWin::Message& message) override;
 
 	public:
 		/// The layout of the palette page, loaded using the ID in Palettes::PalettePage::mLayoutID.
-		/* 0Ch */	intrusive_ptr<UILayout> mpLayout;
+		/* 0Ch */	UILayoutPtr mpLayout;
 		/// The panel that will contain the items.
 		/// It corresponds to the Palettes::PaletteCategoryUI::ControlIDs::kControlItemsPanel window.
-		/* 10h */	IWindow* mpItemsPanel;
+		/* 10h */	UTFWin::IWindow* mpItemsPanel;
 		/* 14h */	intrusive_ptr<PalettePage> mpPage;
 		/* 18h */	float field_18;
 		/* 1Ch */	float field_1C;

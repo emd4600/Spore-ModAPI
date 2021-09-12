@@ -126,7 +126,7 @@ namespace Graphics
 	public:
 		struct EffectInstance
 		{
-			/* 00h */	::ResourceID mResourceID;
+			/* 00h */	ResourceID mResourceID;
 			/* 08h */	IEffectPtr mpEffect;
 			/* 0Ch */	Transform mTransform;
 			/* 44h */	bool mEnabled;  // true
@@ -172,6 +172,7 @@ namespace Graphics
 	//// INTERNAL IMPLEMENTATION ////
 	/////////////////////////////////
 
+	static_assert(sizeof(ModelAsset::EffectInstance) == 0x48, "sizeof(ModelAsset::EffectInstance) != 48h");
 	static_assert(sizeof(ModelAsset) == 0x13C, "sizeof(ModelAsset) != 13Ch");
 	static_assert(sizeof(Model) == 0x94, "sizeof(Model) != 94h");
 

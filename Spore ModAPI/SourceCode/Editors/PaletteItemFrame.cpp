@@ -35,7 +35,7 @@ namespace Palettes
 	{
 	}
 
-	void DefaultItemFrameUI::Initialize(PaletteItem* pItem, IWindow* pWindow, IWindow* pItemsPanel, PaletteInfo*)
+	void DefaultItemFrameUI::Initialize(PaletteItem* pItem, UTFWin::IWindow* pWindow, UTFWin::IWindow* pItemsPanel, PaletteInfo*)
 	{
 		mpItem = pItem;
 		mpWindow = pWindow;
@@ -124,7 +124,7 @@ namespace Palettes
 		return UTFWin::kEventFlagBasicInput | UTFWin::kEventRefresh;
 	}
 
-	bool DefaultItemFrameUI::HandleUIMessage(IWindow* pWindow, const Message& message)
+	bool DefaultItemFrameUI::HandleUIMessage(UTFWin::IWindow* pWindow, const UTFWin::Message& message)
 	{
 		switch (message.eventType) 
 		{

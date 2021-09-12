@@ -26,8 +26,6 @@
 
 namespace Palettes
 {
-	using namespace UTFWin;
-
 	class IItemFrameUI
 	{
 	public:
@@ -36,7 +34,7 @@ namespace Palettes
 		IItemFrameUI();
 		virtual ~IItemFrameUI() {};
 
-		/* 04h */	virtual void Initialize(PaletteItem* pItem, IWindow* pWindow, IWindow* pItemsPanel, PaletteInfo* pInfo) = 0;
+		/* 04h */	virtual void Initialize(PaletteItem* pItem, UTFWin::IWindow* pWindow, UTFWin::IWindow* pItemsPanel, PaletteInfo* pInfo) = 0;
 		/* 08h */	virtual void Dispose() = 0;
 		/* 0Ch */	virtual void SetPaletteItem(PaletteItem* pItem) = 0;
 		/* 10h */	virtual PaletteItem* GetPaletteItem() = 0;
@@ -53,7 +51,7 @@ namespace Palettes
 		uint32_t mFrameTypeID;
 	};
 
-	class IAdvancedItemUI : public IItemFrameUI, public IWinProc {};
+	class IAdvancedItemUI : public IItemFrameUI, public UTFWin::IWinProc {};
 
 	class DefaultItemFrameUI 
 		: public IAdvancedItemUI
@@ -68,7 +66,7 @@ namespace Palettes
 		int Release() override;
 		void* Cast(uint32_t type) const override;
 
-		void Initialize(PaletteItem* pItem, IWindow* pWindow, IWindow* pItemsPanel, PaletteInfo* pInfo) override;
+		void Initialize(PaletteItem* pItem, UTFWin::IWindow* pWindow, UTFWin::IWindow* pItemsPanel, PaletteInfo* pInfo) override;
 		void Dispose() override;
 		void SetPaletteItem(PaletteItem* pItem) override;
 		PaletteItem* GetPaletteItem() override;
@@ -81,7 +79,7 @@ namespace Palettes
 		void SetVisible(bool visible) override;
 
 		int GetEventFlags() const override;
-		bool HandleUIMessage(IWindow* pWindow, const Message& message) override;
+		bool HandleUIMessage(UTFWin::IWindow* pWindow, const UTFWin::Message& message) override;
 
 	protected:
 		/* 14h */	int field_14;

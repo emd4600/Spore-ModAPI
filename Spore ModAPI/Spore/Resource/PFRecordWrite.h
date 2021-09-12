@@ -28,8 +28,6 @@
 
 namespace Resource
 {
-	using IO::IStream;
-
 	///
 	/// This class is used to write data to a file contained inside a DBPF. Use PFRecordRead::GetStream() to get the
 	/// IStream that can be used to write the file.

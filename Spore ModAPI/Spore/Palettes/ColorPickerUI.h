@@ -28,7 +28,6 @@
 
 namespace Palettes
 {
-	using namespace UTFWin;
 	using namespace eastl;
 
 	///
@@ -51,7 +50,7 @@ namespace Palettes
 		/// @param pColors [Optional] A list of the colors that must be generated. If it is not present, the list will be taken
 		/// from the property 'colorpickerColors' of the .prop file.
 		///
-		bool Load(IWindow* pWindow, uint32_t propID, uint32_t regionFilter, vector<ColorRGB>* pColors = nullptr);
+		bool Load(UTFWin::IWindow* pWindow, uint32_t propID, uint32_t regionFilter, vector<ColorRGB>* pColors = nullptr);
 
 		///
 		/// Toggles the visibility of this color picker. If bVisible is true, the color picker UI will be brought to the front
@@ -76,9 +75,9 @@ namespace Palettes
 		virtual void* Cast(uint32_t type) const override;
 
 	public:
-		/* 0Ch */	intrusive_ptr<Object> field_0C;
+		/* 0Ch */	ObjectPtr field_0C;
 		/// The container window where the layout is inserted.
-		/* 10h */	IWindow* mpWindow;
+		/* 10h */	UTFWin::IWindow* mpWindow;
 		/// The total width of the container window.
 		/* 14h */	float mWidth;
 		/// The total height of the container window.
@@ -90,11 +89,11 @@ namespace Palettes
 		/// The index of the button for setting the default color, only used if the property 'colorpickerAddDefaultColor' is true.
 		/* 2Ch */	int mDefaultColorIndex;  // -1
 		/// The user interfaces of the multiple color swatches that are shown in the color picker.
-		/* 30h */	vector<intrusive_ptr<ColorSwatchUI>> mpColorUIs;
+		/* 30h */	vector<ColorSwatchUIPtr> mpColorUIs;
 		/// The number of color buttons that fit into the picker layout.
 		/* 44h */	size_t mColorsCount;
 		/// The PROP file that contains the configuration for this color picker.
-		/* 48h */	intrusive_ptr<App::PropertyList> mpPropList;
+		/* 48h */	PropertyListPtr mpPropList;
 		/// In block painting, the instance ID of a file that defines which region is painted in partial styles;
 		/// The file is assumed to be in the folder with group ID 0x406A6F00.
 		/// In skinpaints, this is the skinpaint index (0 -> base, 1 -> coat, 2 -> detail).

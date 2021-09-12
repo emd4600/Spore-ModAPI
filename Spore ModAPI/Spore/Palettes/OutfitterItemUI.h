@@ -25,8 +25,6 @@
 
 namespace Palettes
 {
-	using namespace UTFWin;
-
 	enum ControlIDs
 	{
 		/// The ControlID of the button used to edit the creature.
@@ -43,12 +41,12 @@ namespace Palettes
 	public:
 
 	protected:
-		/* 24h */	intrusive_ptr<IWindow> field_24;  // possible display of the creature
-		/* 28h */	intrusive_ptr<IWindow> mpMainWindow;
-		/* 2Ch */	intrusive_ptr<IWindow> field_2C;
-		/* 30h */	intrusive_ptr<IWindow> field_30;
-		/* 34h */	intrusive_ptr<IWindow> mpEditButton;
-		/* 38h */	intrusive_ptr<UILayout> mpLayout;
+		/* 24h */	IWindowPtr field_24;  // possible display of the creature
+		/* 28h */	IWindowPtr mpMainWindow;
+		/* 2Ch */	IWindowPtr field_2C;
+		/* 30h */	IWindowPtr field_30;
+		/* 34h */	IWindowPtr mpEditButton;
+		/* 38h */	UILayoutPtr mpLayout;
 		/* 3Ch */	int field_3C;
 		/* 40h */	int field_40;
 		/* 44h */	int field_44;

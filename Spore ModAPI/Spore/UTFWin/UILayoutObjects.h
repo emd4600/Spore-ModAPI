@@ -29,8 +29,9 @@
 
 namespace UTFWin
 {
-	struct LayoutObjectsContainer
+	class LayoutObjectsContainer
 	{
+	public:
 		/* 00h */	int vftable;
 		/* 04h */	int field_04;
 		/* 08h */	int field_08;

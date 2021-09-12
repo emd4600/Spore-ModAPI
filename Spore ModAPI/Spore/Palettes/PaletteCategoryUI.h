@@ -35,7 +35,6 @@
 
 namespace Palettes
 {
-	using namespace UTFWin;
 	using namespace eastl;
 
 	class PageArrowsUI;
@@ -51,7 +50,7 @@ namespace Palettes
 	///
 	class PaletteCategoryUI 
 		: public App::IMessageListener
-		, public IWinProc
+		, public UTFWin::IWinProc
 		, public DefaultRefCounted
 	{
 	public:
@@ -86,7 +85,7 @@ namespace Palettes
 		PaletteCategoryUI();
 		virtual ~PaletteCategoryUI() {};
 
-		void Load(PaletteCategory* pCategory, IWindow* pWindow, PaletteInfo* pInfo);
+		void Load(PaletteCategory* pCategory, UTFWin::IWindow* pWindow, PaletteInfo* pInfo);
 
 		void LoadPages(PaletteCategory* pCategory, void*);
 
@@ -108,31 +107,31 @@ namespace Palettes
 		void* Cast(uint32_t) const override;
 
 		int GetEventFlags() const override;
-		bool HandleUIMessage(IWindow* pWindow, const Message& message) override;
+		bool HandleUIMessage(UTFWin::IWindow* pWindow, const UTFWin::Message& message) override;
 
 	public:
 		/// The layout of the palette category, loaded using the ID in Palettes::PaletteCategory::mLayoutID.
-		/* 10h */	intrusive_ptr<UILayout> mpLayout;
+		/* 10h */	UILayoutPtr mpLayout;
 		/* 14h */	int field_14;
 		/// The window that contains most important windows.
 		/// It corresponds to the Palettes::PaletteCategoryUI::ControlIDs::kControlMainFrame window.
-		/* 18h */	intrusive_ptr<IWindow> mpMainFrame;
+		/* 18h */	IWindowPtr mpMainFrame;
 		/// The panel that will contain the page number and the arrow buttons to switch pages.
 		/// It corresponds to the Palettes::PaletteCategoryUI::ControlIDs::kControlArrowsPanel window.
-		/* 1Ch */	intrusive_ptr<IWindow> mpArrowsPanel;
+		/* 1Ch */	IWindowPtr mpArrowsPanel;
 		/// The panel that will contain the buttons for the DLC groups. 
 		/// It corresponds to the Palettes::PaletteCategoryUI::ControlIDs::kControlDLCPanel window.
-		/* 20h */	intrusive_ptr<IWindow> mpDLCPanel;
+		/* 20h */	IWindowPtr mpDLCPanel;
 		/// The window that contains the panels that will contain the color picker UI(s).
 		/// It corresponds to the Palettes::PaletteCategoryUI::ControlIDs::kControlColorPickersPanel window.
-		/* 24h */	intrusive_ptr<IWindow> mpColorPickersPanel;
+		/* 24h */	IWindowPtr mpColorPickersPanel;
 		/// The panel that will contain the current page itself.
 		/// It corresponds to the Palettes::PaletteCategoryUI::ControlIDs::kControlPagePanel window.
-		/* 28h */	intrusive_ptr<IWindow> mpPagePanel;
+		/* 28h */	IWindowPtr mpPagePanel;
 		/// The window that contains all panels related with pages.
 		/// This window contains the mpArrowsPanel, mpDLCPanel and mpPagePanel windows.
 		/// It corresponds to the Palettes::PaletteCategoryUI::ControlIDs::kControlPageFrame window.
-		/* 2Ch */	intrusive_ptr<IWindow> mpPageFrame;
+		/* 2Ch */	IWindowPtr mpPageFrame;
 		/// The UI of the color picker buttons.
 		/// It is generated and added to the Palettes::PaletteCategoryUI::ControlIDs::kControlColorPicker window.
 		/* 30h */	intrusive_ptr<ColorPickerUI> mpColorPickerUI;
@@ -188,7 +187,7 @@ namespace Palettes
 	/// The class that represents the fragment of user interface of the page numbers and arrow buttons in an Editors::PaletteCategory.
 	///
 	class PageArrowsUI
-		: public IWinProc
+		: public UTFWin::IWinProc
 		, public UnkPageArrowsUI
 		, public DefaultRefCounted
 	{
@@ -214,7 +213,7 @@ namespace Palettes
 		/// window procedure to the main window of the UI layout loaded, in order to receive events.
 		/// @param pWindow
 		/// @param pCategoryUI
-		void Load(IWindow* pWindow, PaletteCategoryUI* pCategoryUI);
+		void Load(UTFWin::IWindow* pWindow, PaletteCategoryUI* pCategoryUI);
 
 		/// Toggles the visibility of this panel.
 		/// @param bVisible Whether the panel must be visible or not.
@@ -229,7 +228,7 @@ namespace Palettes
 		virtual void* Cast(uint32_t);
 
 		virtual int GetEventFlags() const override;
-		virtual bool HandleUIMessage(IWindow* pWindow, const Message& message) override;
+		virtual bool HandleUIMessage(UTFWin::IWindow* pWindow, const UTFWin::Message& message) override;
 
 		virtual bool func04h(int, int) override {
 			return true;
@@ -237,15 +236,15 @@ namespace Palettes
 		
 	public:
 		/// The UI layout of this panel.
-		/* 10h */	intrusive_ptr<UILayout> mpLayout;
+		/* 10h */	UILayoutPtr mpLayout;
 		/// The UI of the palette category whose page numbers are being displayed by this class.
 		/* 14h */	intrusive_ptr<PaletteCategoryUI> mpCategoryUI;
 		/// The window (something meant to display text) that shows the page number.
 		/// It corresponds to the Editors::PaletteCategoryUI::ControlIDs::PageArrowsUI::TODO window.
-		/* 18h */	intrusive_ptr<IWindow> mpPageNumberPanel;  // a WinText, the page number?
+		/* 18h */	IWindowPtr mpPageNumberPanel;  // a WinText, the page number?
 		/// The window that contains all the page number/arrows stuff.
 		/// It corresponds to the Editors::PaletteCategoryUI::ControlIDs::PageArrowsUI::TODO window.
-		/* 1Ch */	intrusive_ptr<IWindow> mpMainWindow;
+		/* 1Ch */	IWindowPtr mpMainWindow;
 		/* 20h */	int field_20;  // -1
 		/* 24h */	int field_24;  // -1
 

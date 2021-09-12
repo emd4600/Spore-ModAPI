@@ -91,7 +91,7 @@ namespace Terrain
 			/* 74h */	TextureContainer field_74;
 			/* B8h */	TextureContainer field_B8;
 			/* FCh */	TextureContainer* mpLoader;
-			/* 100h */	OnLoadFinish_t mOnLoadFinish;
+			/* 100h */	ITerrain::OnLoadFinish_t mOnLoadFinish;
 			/* 104h */	void* mOnLoadFinishObject;
 			/* 108h */	bool mTerrainGenerateSingleStep;  // true
 			/* 10Ch */	float mTerrainGenerateTimeLimit;  // 5.0

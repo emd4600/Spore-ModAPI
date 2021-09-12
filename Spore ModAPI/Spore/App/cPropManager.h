@@ -37,7 +37,7 @@ namespace App
 	///
 	/// The implementation of IPropManager; this should only be used for extending and detouring.
 	///
-	class cPropManager : public IPropManager, public IResourceFactory, public IMessageListener
+	class cPropManager : public IPropManager, public Resource::IResourceFactory, public IMessageListener
 	{
 	public:
 		cPropManager();
@@ -48,10 +48,10 @@ namespace App
 		virtual bool HandleMessage(uint32_t messageID, void* pMessage) override;
 
 		virtual uint32_t GetType() override;
-		virtual bool CreateResource(IPFRecord* pRecord, ResourceObjectPtr& pDst, int, uint32_t nTypeID) override;
-		virtual bool AsyncAccess(IPFRecord** ppDst, int, DBPF* pDBPF, int, int, int) override;
-		virtual bool Read(IPFRecord* pRecord, ResourceObject* pResource, int, uint32_t nTypeID) override;
-		virtual bool Write(ResourceObject* pResource, IPFRecord* pRecord, int, uint32_t nTypeID) override;
+		virtual bool CreateResource(Resource::IPFRecord* pRecord, ResourceObjectPtr& pDst, int, uint32_t nTypeID) override;
+		virtual bool AsyncAccess(Resource::IPFRecord** ppDst, int, Resource::DBPF* pDBPF, int, int, int) override;
+		virtual bool Read(Resource::IPFRecord* pRecord, Resource::ResourceObject* pResource, int, uint32_t nTypeID) override;
+		virtual bool Write(Resource::ResourceObject* pResource, Resource::IPFRecord* pRecord, int, uint32_t nTypeID) override;
 		virtual size_t GetSupportedTypes(uint32_t* pDstTypes, size_t nCount) const override;
 		virtual bool IsValid(uint32_t nTypeID, uint32_t nSubTypeID) override;
 
@@ -84,7 +84,7 @@ namespace App
 		/* 10h */	int field_10;
 		/* 14h */	bool mbIsInitialized;
 		/* 15h */	bool field_15;
-		/* 18h */	IResourceManager* mpResourceMgr;
+		/* 18h */	Resource::IResourceManager* mpResourceMgr;
 		/* 1Ch */	bool field_1C;
 		/* 20h */	map<uint32_t, Property> field_20;
 		// only contains appproperties?

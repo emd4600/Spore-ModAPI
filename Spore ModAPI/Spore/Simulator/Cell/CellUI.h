@@ -30,9 +30,7 @@ namespace Simulator
 {
 	namespace Cell
 	{
-
 		using namespace eastl;
-		using namespace UTFWin;
 
 		class CellUI
 		{
@@ -40,7 +38,7 @@ namespace Simulator
 
 			/* 00h */	GameInput mGameInput;
 			/* 48h */	char field_48[0x48];  // not initialized
-			/* 90h */	intrusive_ptr<UILayout> field_90;
+			/* 90h */	UILayoutPtr field_90;
 			/* 94h */	int field_94;
 			/* 98h */	int field_98;
 			/* 9Ch */	char field_9C[0x874];  // not initialized

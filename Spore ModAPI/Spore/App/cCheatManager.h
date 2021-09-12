@@ -32,7 +32,6 @@
 namespace App
 {
 	using namespace eastl;
-	using namespace ArgScript;
 
 	///
 	/// The implementation of ICheatManager; this should only be used for extending and detouring. 

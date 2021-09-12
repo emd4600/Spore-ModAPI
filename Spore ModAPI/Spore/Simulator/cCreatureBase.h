@@ -31,6 +31,7 @@
 #include <EASTL\vector.h>
 #include <EASTL\list.h>
 #include <EASTL\bitset.h>
+#include <EASTL\queue.h>
 
 #define cCreatureBasePtr intrusive_ptr<Simulator::cCreatureBase>
 
@@ -106,6 +107,10 @@ namespace Simulator
 
 		//TODO loc_D315AE know how much distance advances with WASD
 
+		// sub_C19000 get anim index for slot?
+
+		// /* 60h */	virtual void Update(int deltaTime);
+
 		// virtual B0h GetAbilityCount()
 		// virtual B4h cCreatureAbility* GetAbility(int index)
 
@@ -119,7 +124,7 @@ namespace Simulator
 		/* B14h */	int field_B14;  // not initialized
 		/* B18h */	bool field_B18;
 		/* B1Ch */	int field_B1C;  // not initialized
-		/* B20h */	cSpeciesProfile* field_B20;  // species profile?
+		/* B20h */	cSpeciesProfile* mpSpeciesProfile;  // species profile?
 		/* B24h */	uint32_t mProfileSeq;
 		/* B28h */	ResourceKey mSpeciesKey;
 		/* B34h */	int mAge;  // 1
@@ -198,7 +203,7 @@ namespace Simulator
 		/* E70h */	int field_E70;  // -1
 		/* E74h */	int field_E74;  // -1
 		/* E78h */	bool field_E78;
-		/* E7Ch */	cCombatant* mpCombatantTarget;  // cCombatant, the same instance?
+		/* E7Ch */	cCombatant* mpCombatantTarget;  // cCombatant
 		/* E80h */	int mArchetype;
 		/* E84h */	void* field_E84;
 		/* E88h */	int field_E88;

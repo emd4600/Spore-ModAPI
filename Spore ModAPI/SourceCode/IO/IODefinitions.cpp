@@ -214,8 +214,8 @@ namespace Resource
 	auto_METHOD_VIRTUAL(DatabasePackedFile, DatabasePackedFile, bool, RemoveFile, Args(ResourceKey& name), Args(name));
 	auto_METHOD_VIRTUAL(DatabasePackedFile, DatabasePackedFile, bool, SetResourceManager, Args(bool arg_0, cResourceManager* pResourceMan, bool arg_8), Args(arg_0, pResourceMan, arg_8));
 	auto_METHOD_VIRTUAL_const_(DatabasePackedFile, DatabasePackedFile, ICoreAllocator*, GetAllocator);
-	auto_METHOD_VIRTUAL_(DatabasePackedFile, DatabasePackedFile, IStream*, GetStream);
-	auto_METHOD_VIRTUAL(DatabasePackedFile, DatabasePackedFile, bool, SetStream, Args(IStream* pStream), Args(pStream));
+	auto_METHOD_VIRTUAL_(DatabasePackedFile, DatabasePackedFile, IO::IStream*, GetStream);
+	auto_METHOD_VIRTUAL(DatabasePackedFile, DatabasePackedFile, bool, SetStream, Args(IO::IStream* pStream), Args(pStream));
 
 	auto_METHOD_VIRTUAL(DatabasePackedFile, DatabasePackedFile, PFRecordRead*, CreatePFRecordRead, Args(int nDesiredAccess, DBPFItem* info, ResourceKey& key), Args(nDesiredAccess, info, key));
 	auto_METHOD_VIRTUAL(DatabasePackedFile, DatabasePackedFile, PFRecordRead*, CreatePFRecordReadCopy, Args(int nDesiredAccess, PFRecordRead* pOther, ResourceKey& key), Args(nDesiredAccess, pOther, key));
@@ -308,7 +308,7 @@ namespace Resource
 
 	auto_METHOD_(PFRecordRead, ResourceKey&, GetName);
 	auto_METHOD_VOID(PFRecordRead, SetName, Args(const ResourceKey& name), Args(name));
-	auto_METHOD_(PFRecordRead, IStream*, GetStream);
+	auto_METHOD_(PFRecordRead, IO::IStream*, GetStream);
 	auto_METHOD_const_(PFRecordRead, DatabasePackedFile*, GetParentDBPF);
 
 	auto_METHOD_(PFRecordRead, bool, Open);

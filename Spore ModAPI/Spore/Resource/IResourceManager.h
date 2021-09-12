@@ -23,6 +23,7 @@
 #include <Spore\Resource\IResourceFactory.h>
 #include <Spore\Resource\IResourceFilter.h>
 #include <Spore\Resource\IResourceMap.h>
+#include <Spore\Resource\DatabasePackedFile.h>
 
 #include <EASTL\list.h>
 

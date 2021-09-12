@@ -29,13 +29,11 @@
 
 namespace Resource
 {
-	using IO::IStream;
-
 	///
 	/// This class is used to read the data of a file contained inside a DBPF. Use PFRecordRead::GetStream() to get the
 	/// IStream that can be used to read the file. If the file is compressed, it will be decompressed before reading it.
 	///
-	class PFRecordRead : public IPFRecord, IStream
+	class PFRecordRead : public IPFRecord, IO::IStream
 	{
 	public:
 		friend class DatabasePackedFile;

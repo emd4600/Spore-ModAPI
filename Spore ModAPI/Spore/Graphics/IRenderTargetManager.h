@@ -1,6 +1,7 @@
 #pragma once
 
 #include <Spore\Internal.h>
+#include <Spore\resourceID.h>
 #include <Spore\RenderWare\Raster.h>
 
 /// Access the active render target manager.

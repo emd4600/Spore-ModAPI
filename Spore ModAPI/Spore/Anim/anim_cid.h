@@ -3,6 +3,7 @@
 #include <Spore\Anim\anim_csd.h>
 #include <Spore\Graphics\ModelAsset.h>
 #include <EASTL\intrusive_ptr.h>
+#include <EASTL\map.h>
 
 namespace Anim
 {

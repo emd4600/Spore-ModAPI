@@ -93,10 +93,10 @@ namespace Palettes
 	}
 
 	auto_METHOD_VIRTUAL(ColorSwatchUI, IWinProc, bool, HandleUIMessage, 
-		Args(IWindow* pWindow, const Message& message), Args(pWindow, message));
+		Args(UTFWin::IWindow* pWindow, const UTFWin::Message& message), Args(pWindow, message));
 
 	auto_METHOD_VOID(ColorSwatchUI, Load, 
-		Args(App::PropertyList* pConfigProp, struct Math::ColorRGB color, union Math::Rectangle area, IWindow* pContainerWindow, Object* pExpansionObject),
+		Args(App::PropertyList* pConfigProp, struct Math::ColorRGB color, union Math::Rectangle area, UTFWin::IWindow* pContainerWindow, Object* pExpansionObject),
 		Args(pConfigProp, color, area, pContainerWindow, pExpansionObject));
 
 	auto_METHOD_VOID(ColorSwatchUI, SetArea, Args(union Math::Rectangle area, bool bUpdateSwatch), Args(area, bUpdateSwatch));
@@ -156,7 +156,7 @@ namespace Palettes
 	}
 
 	auto_METHOD(ColorPickerUI, bool, Load, 
-		Args(IWindow* pWindow, uint32_t propID, uint32_t nRegionFilter, vector<ColorRGB>* pColors),
+		Args(UTFWin::IWindow* pWindow, uint32_t propID, uint32_t nRegionFilter, vector<ColorRGB>* pColors),
 		Args(pWindow, propID, nRegionFilter, pColors));
 
 	auto_METHOD_VOID(ColorPickerUI, SetVisible, Args(bool bVisible), Args(bVisible));

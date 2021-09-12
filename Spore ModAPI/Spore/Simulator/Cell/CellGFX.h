@@ -30,10 +30,7 @@ namespace Simulator
 {
 	namespace Cell
 	{
-
 		using namespace eastl;
-		using namespace Swarm;
-		using namespace Graphics;
 
 		class CellGFX
 		{
@@ -55,16 +52,16 @@ namespace Simulator
 
 		protected:
 
-			/* 00h */	vector<intrusive_ptr<Model>> mPreloadedModels;
-			/* 14h */	vector<intrusive_ptr<Texture>> mPreloadedTextures;
+			/* 00h */	vector<ModelPtr> mPreloadedModels;
+			/* 14h */	vector<TexturePtr> mPreloadedTextures;
 			/* 28h */	vector<int> field_28;
 			/* 3Ch */	int field_3C;
 			/* 40h */	int field_40;
 			/* 44h */	int field_44;
 			/* 48h */	int field_48;
 			/* 4Ch */	int field_4C;  // not initialized
-			/* 50h */	intrusive_ptr<IEffectWorld> mpPreloadedEffectWorld;
-			/* 54h */	intrusive_ptr<IModelWorld> mpPreloadedModelWorld;
+			/* 50h */	IEffectWorldPtr mpPreloadedEffectWorld;
+			/* 54h */	IModelWorldPtr mpPreloadedModelWorld;
 			/* 58h */	int mpPreloadedAnimWorld;
 			/* 5Ch */	int field_5C[0x40];
 			/* 15Ch */	int field_15C;
@@ -79,20 +76,20 @@ namespace Simulator
 			/* 198h */	int field_198;  // not initialized
 			/* 19Ch */	char field_19C[0x16000];
 			/* 1619Ch */	int field_1619C;  // not initialized
-			/* 161A0h */	intrusive_ptr<ILightingWorld> mpLightingWorld;
+			/* 161A0h */	ILightingWorldPtr mpLightingWorld;
 			/* 161A4h */	int field_161A4;
-			/* 161A8h */	intrusive_ptr<IModelWorld> mpBeachModelWorld;
-			/* 161ACh */	intrusive_ptr<IEffectWorld> mpBeachEffectWorld;
+			/* 161A8h */	IModelWorldPtr mpBeachModelWorld;
+			/* 161ACh */	IEffectWorldPtr mpBeachEffectWorld;
 			/* 161B0h */	int field_161B0;
-			/* 161B4h */	intrusive_ptr<IEffectWorld> mpSkyboxEffectWorld;
+			/* 161B4h */	IEffectWorldPtr mpSkyboxEffectWorld;
 			/* 161B8h */	int field_161B8;
-			/* 161BCh */	intrusive_ptr<IEffectWorld> mpBackgroundEffectWorld;
-			/* 161C0h */	intrusive_ptr<IModelWorld> mpBackgroundModelWorld;
+			/* 161BCh */	IEffectWorldPtr mpBackgroundEffectWorld;
+			/* 161C0h */	IModelWorldPtr mpBackgroundModelWorld;
 			/* 161C4h */	int mpBackgroundAnimWorld;
-			/* 161C8h */	intrusive_ptr<IEffectWorld> mpEffectWorld;
-			/* 161CCh */	intrusive_ptr<IModelWorld> mpModelWorld;
+			/* 161C8h */	IEffectWorldPtr mpEffectWorld;
+			/* 161CCh */	IModelWorldPtr mpModelWorld;
 			/* 161D0h */	int mpAnimWorld;
-			/* 161D4h */	intrusive_ptr<IEffectWorld> mpForegroundEffectWorld;
+			/* 161D4h */	IEffectWorldPtr mpForegroundEffectWorld;
 			/* 161D8h */	int field_161D8;
 			/* 161DCh */	int field_161DC;
 			/* 161E0h */	int field_161E0;

@@ -28,25 +28,25 @@ namespace UTFWin
 {
 	struct FrameStyle
 	{
-		enum
+		enum class BorderStyle : uint32_t
 		{
-			kBorderDefault = 0,
-			kBorderHidden = 1,
-			kBorderSolid = 2,
-			kBorderDotted = 3,
-			kBorderDashed = 4,
-			kBorderInset = 5,
-			kBorderOutset = 6,
-			kBorderGroove = 7,
-			kBorderRidge = 8,
-			kBorderOutsetOutline = 9,
-			kBorderInsetOutline = 10
+			BorderDefault = 0,
+			BorderHidden = 1,
+			BorderSolid = 2,
+			BorderDotted = 3,
+			BorderDashed = 4,
+			BorderInset = 5,
+			BorderOutset = 6,
+			BorderGroove = 7,
+			BorderRidge = 8,
+			BorderOutsetOutline = 9,
+			BorderInsetOutline = 10
 		};
 
 		FrameStyle();
-		FrameStyle(int nBorderStyle, Color color);
+		FrameStyle(BorderStyle borderStyle, Color color);
 
-		int mnBorderStyle;
+		BorderStyle mBorderStyle;
 		Color mColor;
 	};
 
@@ -117,12 +117,12 @@ namespace UTFWin
 	}
 
 	inline FrameStyle::FrameStyle()
-		: mColor(0), mnBorderStyle(0)
+		: mColor(0), mBorderStyle(BorderStyle::BorderDefault)
 	{
 
 	}
-	inline FrameStyle::FrameStyle(int nBorderStyle, Color color)
-		: mColor(color), mnBorderStyle(nBorderStyle)
+	inline FrameStyle::FrameStyle(BorderStyle borderStyle, Color color)
+		: mColor(color), mBorderStyle(borderStyle)
 	{
 
 	}
@@ -133,7 +133,7 @@ namespace UTFWin
 		, field_5C(0, 0, 0, 255)
 	{
 		mStyles[0].mColor = Color::WHITE;
-		mStyles[0].mnBorderStyle = FrameStyle::kBorderSolid;
+		mStyles[0].mBorderStyle = FrameStyle::BorderStyle::BorderSolid;
 	}
 
 	inline FrameDrawable::~FrameDrawable() {}

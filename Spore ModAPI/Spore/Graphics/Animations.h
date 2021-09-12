@@ -7,7 +7,6 @@
 namespace Graphics
 {
 	using namespace eastl;
-	using namespace RenderWare;
 
 	// Theorically inside ModelManager, but it's used by Model so...
 	class Animations
@@ -42,11 +41,11 @@ namespace Graphics
 		// related with SkeletonsInK, used to process animations
 		/* 64h */	vector<int> field_64;
 		// related with morph handles
-		/* 78h */	vector<pair<uint32_t, KeyframeAnim>> mAnimNames;
+		/* 78h */	vector<pair<uint32_t, RenderWare::KeyframeAnim>> mAnimNames;
 		/* 8Ch */	int field_8C;
 		/* 90h */	int field_90;
 		/* 94h */	int field_94;
-		/* 98h */	intrusive_ptr<RenderWareFile> mpRenderWare;
+		/* 98h */	intrusive_ptr<RenderWare::RenderWareFile> mpRenderWare;
 		/* 9Ch */	int field_9C;  // not initialized
 	};
 

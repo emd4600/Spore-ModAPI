@@ -268,10 +268,10 @@ namespace Palettes
 		return UTFWin::kEventFlagAdvanced | UTFWin::kEventFlagBasicInput;
 	}
 
-	auto_METHOD_VOID(PaletteUI, Load, Args(PaletteMain* pPalette, IWindow* pWindow, bool arg_8, PaletteInfo* arg_C),
+	auto_METHOD_VOID(PaletteUI, Load, Args(PaletteMain* pPalette, UTFWin::IWindow* pWindow, bool arg_8, PaletteInfo* arg_C),
 		Args(pPalette, pWindow, arg_8, arg_C));
 
-	auto_METHOD_VIRTUAL(PaletteUI, IWinProc, bool, HandleUIMessage, Args(IWindow* pWindow, const Message& message),
+	auto_METHOD_VIRTUAL(PaletteUI, UTFWin::IWinProc, bool, HandleUIMessage, Args(UTFWin::IWindow* pWindow, const UTFWin::Message& message),
 		Args(pWindow, message));
 
 	auto_METHOD_VOID(PaletteUI, Update, Args(int arg_0), Args(arg_0));
@@ -318,10 +318,10 @@ namespace Palettes
 		return UTFWin::kEventFlagAdvanced | UTFWin::kEventFlagBasicInput;
 	}
 
-	auto_METHOD_VIRTUAL(PageArrowsUI, IWinProc, bool, HandleUIMessage, Args(IWindow* pWindow, const Message& message),
+	auto_METHOD_VIRTUAL(PageArrowsUI, UTFWin::IWinProc, bool, HandleUIMessage, Args(UTFWin::IWindow* pWindow, const UTFWin::Message& message),
 		Args(pWindow, message));
 
-	auto_METHOD_VOID(PageArrowsUI, Load, Args(IWindow* pWindow, PaletteCategoryUI* pCategoryUI),
+	auto_METHOD_VOID(PageArrowsUI, Load, Args(UTFWin::IWindow* pWindow, PaletteCategoryUI* pCategoryUI),
 		Args(pWindow, pCategoryUI));
 
 	auto_METHOD_VOID(PageArrowsUI, Update, Args(int arg_0), Args(arg_0));
@@ -395,7 +395,7 @@ namespace Palettes
 	auto_METHOD_VIRTUAL(PaletteCategoryUI, App::IMessageListener, bool, HandleMessage, Args(uint32_t messageID, void* message),
 		Args(messageID, message));
 
-	auto_METHOD_VOID(PaletteCategoryUI, Load, Args(PaletteCategory* pCategory, IWindow* pWindow, PaletteInfo* arg_8),
+	auto_METHOD_VOID(PaletteCategoryUI, Load, Args(PaletteCategory* pCategory, UTFWin::IWindow* pWindow, PaletteInfo* arg_8),
 		Args(pCategory, pWindow, arg_8));
 
 	auto_METHOD_VOID(PaletteCategoryUI, FlipPage, Args(int nDelta),
@@ -405,7 +405,7 @@ namespace Palettes
 
 	auto_METHOD_VOID(PaletteCategoryUI, Update, Args(int arg_0), Args(arg_0));
 	
-	auto_METHOD_VIRTUAL(PaletteCategoryUI, IWinProc, bool, HandleUIMessage, Args(IWindow* pWindow, const Message& message), Args(pWindow, message));
+	auto_METHOD_VIRTUAL(PaletteCategoryUI, UTFWin::IWinProc, bool, HandleUIMessage, Args(UTFWin::IWindow* pWindow, const UTFWin::Message& message), Args(pWindow, message));
 
 	//// PALETTE PAGE UI ////
 
@@ -449,10 +449,10 @@ namespace Palettes
 
 	auto_METHOD(PalettePageUI, Math::Rectangle, GetItemArea, Args(size_t nIndex), Args(nIndex));
 
-	auto_METHOD_VOID(PalettePageUI, Load, Args(PalettePage* pPage, IWindow* pWindow, PaletteInfo* arg_8, size_t nIndex, bool arg_10),
+	auto_METHOD_VOID(PalettePageUI, Load, Args(PalettePage* pPage, UTFWin::IWindow* pWindow, PaletteInfo* arg_8, size_t nIndex, bool arg_10),
 		Args(pPage, pWindow, arg_8, nIndex, arg_10));
 
-	bool PalettePageUI::HandleUIMessage(IWindow* pWindow, const Message& message)
+	bool PalettePageUI::HandleUIMessage(UTFWin::IWindow* pWindow, const UTFWin::Message& message)
 	{
 		return true;
 	}
@@ -511,7 +511,7 @@ namespace Palettes
 	bool AdvancedItemViewer::func30h() const {
 		return field_166;
 	}
-	IWindow* AdvancedItemViewer::GetWindow() const {
+	UTFWin::IWindow* AdvancedItemViewer::GetWindow() const {
 		return mpWindow.get();
 	}
 	void AdvancedItemViewer::Set3dPreview(bool value) {
@@ -548,12 +548,12 @@ namespace Palettes
 	auto_METHOD_VIRTUAL_(AdvancedItemViewer, AdvancedItemViewer, int, func74h);
 	auto_METHOD_VIRTUAL_VOID(AdvancedItemViewer, AdvancedItemViewer, func78h, Args(int arg_0), Args(arg_0));
 	
-	auto_METHOD_VIRTUAL(AdvancedItemViewer, UTFWin::IWinProc, bool, HandleUIMessage, Args(IWindow* pWindow, const UTFWin::Message& message), Args(pWindow, message));
+	auto_METHOD_VIRTUAL(AdvancedItemViewer, UTFWin::IWinProc, bool, HandleUIMessage, Args(UTFWin::IWindow* pWindow, const UTFWin::Message& message), Args(pWindow, message));
 	auto_METHOD_VIRTUAL(AdvancedItemViewer, App::IUnmanagedMessageListener, bool, HandleMessage, Args(uint32_t messageID, void* pMessage), Args(messageID, pMessage));
 
 
 	auto_METHOD_VOID(AdvancedItemViewer, Initialize, 
-		Args(const ResourceKey& nameKey, IWindow* pWindow, IWindow* pParentWindow,
+		Args(const ResourceKey& nameKey, UTFWin::IWindow* pWindow, UTFWin::IWindow* pParentWindow,
 			uint32_t messageID, PaletteItem* pItem, PaletteInfo* pPaletteInfo, bool arg),
 		Args(nameKey, pWindow, pParentWindow, messageID, pItem, pPaletteInfo, arg));
 

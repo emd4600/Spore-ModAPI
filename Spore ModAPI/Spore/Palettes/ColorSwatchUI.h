@@ -28,15 +28,13 @@
 
 namespace Palettes
 {
-	using namespace UTFWin;
-
 	///
 	/// This class holds all information related with a single color button in editor categories and its user interface.
 	/// A color swatch is a button used to select a color, and it can optionally be expanded to show more color buttons.
 	/// The multiple color swatches in the category are grouped in the Palettes::ColorPickerUI class.
 	///
 	class ColorSwatchUI 
-		: public IWinProc
+		: public UTFWin::IWinProc
 		, public DefaultRefCounted
 	{
 	public:
@@ -55,7 +53,7 @@ namespace Palettes
 		///
 		void Load(
 			App::PropertyList* pConfigProp, struct Math::ColorRGB color, union Math::Rectangle area, 
-			IWindow* pContainerWindow, Object* pExpansionObject);
+			UTFWin::IWindow* pContainerWindow, Object* pExpansionObject);
 
 		///
 		/// Sets the area of this swatch, updating the area of all the windows used by it.
@@ -89,7 +87,7 @@ namespace Palettes
 		virtual void* Cast(uint32_t type) const override;
 
 		virtual int GetEventFlags() const override;
-		virtual bool HandleUIMessage(IWindow* pWindow, const Message& message) override;
+		virtual bool HandleUIMessage(UTFWin::IWindow* pWindow, const UTFWin::Message& message) override;
 
 	public:
 		/// Whether the user interface for this color swatch has already been loaded. This is set 
@@ -118,30 +116,30 @@ namespace Palettes
 		/* 3Ch */	Math::Rectangle mArea;  // not initialized
 		/// The window that displays the frame of the swatch. It displays the image determined by the 
 		/// property 'colorpickerImageDefaultFrame'.
-		/* 4Ch */	intrusive_ptr<IWindow> mpFrameWindow;
+		/* 4Ch */	IWindowPtr mpFrameWindow;
 		/// The window that displays the frame glow of the swatch. It displays the image determined by the 
 		/// property 'colorpickerImageDefaultFrameGlow'.
-		/* 50h */	intrusive_ptr<IWindow> mpFrameGlowWindow;
+		/* 50h */	IWindowPtr mpFrameGlowWindow;
 		/// The window that displays the frame shine of the swatch. It displays the image determined by the 
 		/// property 'colorpickerImageDefaultFrameShine'.
-		/* 54h */	intrusive_ptr<IWindow> mpFrameShineWindow;
+		/* 54h */	IWindowPtr mpFrameShineWindow;
 		/// The window that displays the current selected color. It uses the image determined by the 
 		/// property 'colorPickerImageDefaultColor' as background.
-		/* 58h */	intrusive_ptr<IWindow> mpColorWindow;
+		/* 58h */	IWindowPtr mpColorWindow;
 		/// The main window that contains all the other windows of the swatch. This one is added
 		/// into the container window provided in the method Load, and has this class added as a 
 		/// window procedure.
-		/* 5Ch */	intrusive_ptr<IWindow> mpMainWindow;
+		/* 5Ch */	IWindowPtr mpMainWindow;
 		/// The panel that shows when the swatch is pressed, and that expands the swatch to show multiple colors.
 		/// This shows the image determined by the property 'colorpickerImageExpansionBackground', and it is not added
 		/// into mpMainWindow, but into the main game window instead.
-		/* 60h */	intrusive_ptr<IWindow> mpExpansionWindow;
+		/* 60h */	IWindowPtr mpExpansionWindow;
 		/// An object necessary to do the swatch expansion; generally this is the color picker.
-		/* 64h */	intrusive_ptr<Object> mpExpansionObject;
+		/* 64h */	ObjectPtr mpExpansionObject;
 		/// All the color swatch UIs that are shown in the expansion panel of this swatch.
-		/* 68h */	vector<intrusive_ptr<ColorSwatchUI>> mExpansionSwatches;
+		/* 68h */	vector<ColorSwatchUIPtr> mExpansionSwatches;
 		/// The PROP file used to configurate the color picker.
-		/* 7Ch */	intrusive_ptr<App::PropertyList> mpConfigProp;
+		/* 7Ch */	PropertyListPtr mpConfigProp;
 		/// A milliseconds clock used to measure click time.
 		/* 80h */	Clock mClock;
 		/// In milliseconds, the last time when the mouse was being pressed over the button.

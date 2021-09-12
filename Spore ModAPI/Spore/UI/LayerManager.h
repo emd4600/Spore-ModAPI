@@ -30,10 +30,8 @@
 
 namespace UI 
 {
-	using namespace Graphics;
-
 	class cLayerManager 
-		: public IRenderable
+		: public Graphics::IRenderable
 		, DefaultRefCounted
 	{
 	public:
@@ -43,12 +41,12 @@ namespace UI
 		};
 	
 	public:
-		/* 0Ch */	vector<intrusive_ptr<cSPUILayeredObject>> mLayeredObjects;
-		/* 20h */	vector<intrusive_ptr<DefaultRefCounted>> field_20;
+		/* 0Ch */	vector<cSPUILayeredObjectPtr> mLayeredObjects;
+		/* 20h */	vector<DefaultRefCountedPtr> field_20;
 		/* 34h */	bool field_34;
 		/* 38h */	int field_38;  // -1
 		/* 3Ch */	intrusive_ptr<Object> field_3C;
-		/* 40h */	fixed_vector<intrusive_ptr<IModelWorld>, 15> field_40;
+		/* 40h */	fixed_vector<IModelWorldPtr, 15> field_40;
 		/* 94h */	bool field_94;
 
 	public:

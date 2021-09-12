@@ -30,7 +30,6 @@
 #include <EASTL\map.h>
 #include <EASTL\string.h>
 
-using namespace UTFWin;
 using namespace eastl;
 
 namespace GalaxyGameEntry
@@ -131,7 +130,7 @@ namespace GalaxyGameEntry
 		/* 110h */	vector<int, int> field_110;
 		/* 124h */	map<int, int> field_124;
 		/* 140h */	int field_140;  // not initialized
-		/* 144h */	UILayout mZoomPanelLayout;
+		/* 144h */	UTFWin::UILayout mZoomPanelLayout;
 		/* 15Ch */	intrusive_ptr<Object> field_15C;
 		/* 160h */	intrusive_ptr<Object> field_160;
 		/* 164h */	intrusive_ptr<Object> field_164;

@@ -25,7 +25,7 @@ namespace Swarm
 {
 	namespace Components
 	{
-		enum class DrawMode : unsigned char
+		enum class DrawMode : uint8_t
 		{
 			Decal = 0,
 			DecalInvertDepth = 1,

@@ -24,12 +24,13 @@
 #include <Spore\Palettes\ItemViewer.h>
 #include <Spore\Object.h>
 
+#define StandardItemUIPtr eastl::intrusive_ptr<Palettes::StandardItemUI>
+
 namespace Palettes
 {
 	using namespace eastl;
-	using namespace UTFWin;
 
-	class StandardItemUI : public DefaultRefCounted, public IWinProc
+	class StandardItemUI : public DefaultRefCounted, public UTFWin::IWinProc
 	{
 	public:
 		StandardItemUI();
@@ -42,7 +43,7 @@ namespace Palettes
 		/* 0Ch */	intrusive_ptr<PaletteItem> mpItem;
 		/* 10h */	int field_10;
 		/* 14h */	intrusive_ptr<ItemViewer> mpViewer;
-		/* 18h */	intrusive_ptr<IWindow> field_18;
+		/* 18h */	IWindowPtr field_18;
 		/* 1Ch */	bool field_1C;
 	};
 

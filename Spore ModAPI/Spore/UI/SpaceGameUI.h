@@ -42,11 +42,8 @@
 
 namespace UI
 {
-	using namespace UTFWin;
-	// using namespace Simulator;
-
 	class SpaceGameUI
-		: public IWinProc
+		: public UTFWin::IWinProc
 		, public DefaultRefCounted
 		, public App::IMessageListener
 	{

@@ -69,8 +69,6 @@ namespace UTFWin
 		kStateHover = 8,
 	};
 
-	class IWindow;
-
 	// Just so it can be used by the debuggger natvis
 	struct Window_intrusive_list_node : public intrusive_list_node {};
 
@@ -78,6 +76,7 @@ namespace UTFWin
 	// Otherwise children() won't work
 	typedef intrusive_list<Window_intrusive_list_node> IWindowList_t;
 
+	class IWindow;
 	typedef function<bool(IWindow*, const Message&)> HandleUILambda_t;
 
 	///

@@ -31,13 +31,11 @@
 
 namespace Palettes
 {
-	using namespace UTFWin;
-
 	///
 	/// This class holds all information related to the user interface of a palette.
 	/// It's the UI representation of a Palettes::PaletteMain.
 	///
-	class PaletteUI : public IWinProc, public DefaultRefCounted
+	class PaletteUI : public UTFWin::IWinProc, public DefaultRefCounted
 	{
 	public:
 		enum ControlIDs
@@ -68,7 +66,7 @@ namespace Palettes
 		/// 3. The mAnimatedWindow is set to the window with ControlID 0x49AFE6A1, and it is set invisible.
 		/// 4. This object is added as a IWinProc in the windows with ControlID: kControlLeftArrowBtn,
 		/// kControlRightArrowBtn and 0x7BCE6E8
-		void Load(PaletteMain* pPalette, IWindow* pWindow, bool, PaletteInfo* pInfo);
+		void Load(PaletteMain* pPalette, UTFWin::IWindow* pWindow, bool, PaletteInfo* pInfo);
 
 		void Unload();
 
@@ -82,21 +80,21 @@ namespace Palettes
 		void* Cast(uint32_t) const override;
 
 		int GetEventFlags() const override;
-		bool HandleUIMessage(IWindow* pWindow, const Message& message) override;
+		bool HandleUIMessage(UTFWin::IWindow* pWindow, const UTFWin::Message& message) override;
 
 	public:
 		/// The layout of the palette, loaded using the ID in Palettes::PaletteMain::mLayoutID.
 		/* 0Ch */	UILayoutPtr mpLayout;
 		/// The window that contains the category selection buttons.
-		/* 10h */	IWindow* mpCategoryButtonsWindow;  // 0x72DF4CEE
-		/* 14h */	IWindow* field_14;  // 0xBA83C461
-		/* 18h */	IWindow* field_18;  // 0x90D4AADC
-		/* 1Ch */	IWindow* field_1C;  // 0x05AEFF7F
-		/* 20h */	SporeAnimatedIconWin* mpAnimatedWindow;
+		/* 10h */	UTFWin::IWindow* mpCategoryButtonsWindow;  // 0x72DF4CEE
+		/* 14h */	UTFWin::IWindow* field_14;  // 0xBA83C461
+		/* 18h */	UTFWin::IWindow* field_18;  // 0x90D4AADC
+		/* 1Ch */	UTFWin::IWindow* field_1C;  // 0x05AEFF7F
+		/* 20h */	UTFWin::SporeAnimatedIconWin* mpAnimatedWindow;
 		/// The window that is used to display the category content (e.g. its pages)
-		/* 24h */	IWindow* mpCategoryContent;  // 0x93019DBC
+		/* 24h */	UTFWin::IWindow* mpCategoryContent;  // 0x93019DBC
 		/// The main window of the UILayout, with ControlID 0xFFFFFFFF.
-		/* 28h */	IWindow* mpMainWindow;  // not initialized
+		/* 28h */	UTFWin::IWindow* mpMainWindow;  // not initialized
 		/// The Palettes::PaletteMain that this UI displays.
 		/* 2Ch */	PaletteMainPtr mpPalette;
 		/* 30h */	PaletteInfoPtr mpPaletteInfo;

@@ -41,7 +41,7 @@ namespace Palettes
 		void SetAutoRotate(bool enabled);
 		void SetZoom(float zoom);
 
-		void Initialize(const ResourceKey& nameKey, IWindow* pWindow, IWindow* pParentWindow, 
+		void Initialize(const ResourceKey& nameKey, UTFWin::IWindow* pWindow, UTFWin::IWindow* pParentWindow,
 			uint32_t messageID, PaletteItem* pItem, PaletteInfo* pPaletteInfo, bool);
 
 		/* 1Ch */	virtual void Unload() override;
@@ -50,7 +50,7 @@ namespace Palettes
 		/* 28h */	virtual void SetName(const ResourceKey& fileName) override;
 		/* 2Ch */	virtual void func2Ch(bool) override;
 		/* 30h */	virtual bool func30h() const override;
-		/* 34h */	virtual IWindow* GetWindow() const override;
+		/* 34h */	virtual UTFWin::IWindow* GetWindow() const override;
 		/* 38h */	virtual void Set3dPreview(bool enabled) override;
 		/* 3Ch */	virtual Anim::AnimatedCreature* GetAnimatedCreature() const override;
 		/* 40h */	virtual void func40h() override;
@@ -72,7 +72,7 @@ namespace Palettes
 		/* 7Ch */	virtual void func7Ch();
 
 		virtual int GetEventFlags() const override;
-		virtual bool HandleUIMessage(IWindow* pWindow, const UTFWin::Message& message) override;
+		virtual bool HandleUIMessage(UTFWin::IWindow* pWindow, const UTFWin::Message& message) override;
 		virtual bool HandleMessage(uint32_t messageID, void* pMessage) override;
 
 		/* 17Ch */	DefaultRefCountedPtr field_17C;

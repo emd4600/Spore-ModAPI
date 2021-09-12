@@ -23,7 +23,6 @@
 #include <Spore\App\PropertyList.h>
 
 using namespace eastl;
-using namespace Resource;
 
 /// Access the active property manager.
 #define PropManager (*App::IPropManager::Get())

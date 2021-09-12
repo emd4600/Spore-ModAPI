@@ -28,7 +28,6 @@
 
 namespace Editors
 {
-	using namespace UTFWin;
 	class cEditor;
 	
 	class _EditorUI_interface {
@@ -38,7 +37,7 @@ namespace Editors
 
 	class EditorUI
 		: public _EditorUI_interface
-		, public IWinProc
+		, public UTFWin::IWinProc
 		, public App::IMessageListener
 		, public DefaultRefCounted
 	{
@@ -52,7 +51,7 @@ namespace Editors
 
 		virtual bool HandleMessage(uint32_t messageID, void* pMessage) override;
 
-		virtual bool HandleUIMessage(IWindow* pWindow, const Message& message) override;
+		virtual bool HandleUIMessage(UTFWin::IWindow* pWindow, const UTFWin::Message& message) override;
 
 	public:
 
@@ -61,15 +60,15 @@ namespace Editors
 		/* 44h */	UTFWin::UILayout mCameraControlsUI;
 		/* 5Ch */	cEditor* mpEditor;
 		/* 60h */	int field_60;
-		/* 64h */	IWindow* field_64;  // 0x5100B176
-		/* 68h */	IWindow* field_68;  // 0xF006F308
-		/* 6Ch */	IWindow* field_6C;  // 0xF006F309
-		/* 70h */	IWindow* field_70;  // 0xD0353720
+		/* 64h */	UTFWin::IWindow* field_64;  // 0x5100B176
+		/* 68h */	UTFWin::IWindow* field_68;  // 0xF006F308
+		/* 6Ch */	UTFWin::IWindow* field_6C;  // 0xF006F309
+		/* 70h */	UTFWin::IWindow* field_70;  // 0xD0353720
 		/* 74h */	int field_74;  // IWinGrid*, editor types
-		/* 78h */	IWindow* field_78;
+		/* 78h */	UTFWin::IWindow* field_78;
 		/* 7Ch */	int field_7C;
-		/* 80h */	IWindow* field_80;  // 0x908891A7
-		/* 84h */	IWindow* field_84;  // 0xF383C97D
+		/* 80h */	UTFWin::IWindow* field_80;  // 0x908891A7
+		/* 84h */	UTFWin::IWindow* field_84;  // 0xF383C97D
 		/* 88h */	int field_88;
 		/* 8Ch */	int field_8C;
 		/* 90h */	int field_90;
