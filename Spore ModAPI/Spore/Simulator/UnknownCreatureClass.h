@@ -49,4 +49,5 @@ namespace Simulator
 		/* 498h */	float field_498;
 		/* 49Ch */	int field_49C;
 	};
+	ASSERT_SIZE(UnknownCreatureClass, 0x4A0);
 }

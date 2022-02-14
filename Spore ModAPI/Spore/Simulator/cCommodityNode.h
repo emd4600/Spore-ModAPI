@@ -40,6 +40,7 @@ namespace Simulator
 		/* 228h */	float mConvertPercent;
 		/* 22Ch */	float mBuyPercent;
 		/* 230h */	deque<ObjectPtr> field_230;
+		/* 25Ch	*/	int field_25C;  // not initialized
 		/* 260h	*/	int field_260;
 		/* 264h */	int field_264;
 		/* 268h */	cGonzagoTimer field_268;

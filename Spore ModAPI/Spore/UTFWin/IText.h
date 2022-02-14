@@ -22,7 +22,7 @@ namespace UTFWin
 		/* 28h */	virtual void SetTextColor(Color color) = 0;
 		/* 2Ch */	virtual float func2Ch() = 0;
 		/* 30h */	virtual void func30h(float) = 0;
-		/* 34h */	virtual void GetTextBorders(struct Borders& dst) const = 0;
-		/* 38h */	virtual void SetTextBorders(const struct Borders& borders) = 0;
+		/* 34h */	virtual void GetTextBorders(Math::Rectangle& dst) const = 0;
+		/* 38h */	virtual void SetTextBorders(const Math::Rectangle& borders) = 0;
 	};
 }

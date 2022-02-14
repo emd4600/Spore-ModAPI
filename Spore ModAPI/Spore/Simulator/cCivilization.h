@@ -67,7 +67,7 @@ namespace Simulator
 		/* 2ACh */	int field_2AC;
 		/* 2B0h */	cGonzagoTimer field_2B0;
 		/* 2D0h */	int field_2D0;
-		/* 2D8h */	cGonzagoTimer field_2D4;
+		/* 2D8h */	cGonzagoTimer field_2D8;
 		/* 2F8h */	int field_2F8;
 		/* 300h */	cGonzagoTimer field_300;
 		/* 320h */	bool field_320;

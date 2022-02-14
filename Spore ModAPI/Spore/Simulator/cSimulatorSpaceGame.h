@@ -18,6 +18,7 @@
 ****************************************************************************/
 #pragma once
 
+#include <Spore\Simulator\cBadgeManager.h>
 #include <Spore\Simulator\cPlayerInventory.h>
 #include <Spore\Simulator\cGonzagoSimulator.h>
 #include <Spore\Simulator\cGonzagoTimer.h>
@@ -74,7 +75,7 @@ namespace Simulator
 		/* 54h */	cSimPlanetHighLODPtr mpHighLODPlanetSim;
 		/* 58h */	App::MessageListenerData mMessageListenerData;
 		/* 6Ch */	bool field_6C;
-		/* 70h */	int mpBadgeManager;  //TODO
+		/* 70h */	cBadgeManagerPtr mpBadgeManager;
 		/* 74h */	bool field_74;
 		/* 75h */	bool field_75;  // true
 		/* 76h */	bool field_76;

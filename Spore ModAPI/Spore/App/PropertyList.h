@@ -25,7 +25,7 @@
 #include <EASTL\vector_map.h>
 #include <EASTL\vector.h>
 
-#define PropertyListPtr intrusive_ptr<App::PropertyList>
+#define PropertyListPtr eastl::intrusive_ptr<App::PropertyList>
 
 using namespace eastl;
 
