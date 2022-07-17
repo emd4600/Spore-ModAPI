@@ -67,7 +67,9 @@
           <h2><a href="#pub-types">Public types</a></h2>
           <dl class="m-doc">
             <dt id="a00b0872b24273d3616370b4112ea85fe">
-              <span class="m-doc-wrap-bumper">enum class <a href="#a00b0872b24273d3616370b4112ea85fe" class="m-doc-self">Flags</a>: uint32_t { </span><span class="m-doc-wrap"><a href="#a00b0872b24273d3616370b4112ea85fea95f092b0aaea27d0902d406795391465" class="m-doc">UseShaderConstants</a> = 0x08,
+              <span class="m-doc-wrap-bumper">enum class <a href="#a00b0872b24273d3616370b4112ea85fe" class="m-doc-self">Flags</a>: uint32_t { </span><span class="m-doc-wrap"><a href="#a00b0872b24273d3616370b4112ea85feac3ce1a9b0e6ba0cc5fff08edf6c5a6c3" class="m-doc">UseTransform</a> = 0x01,
+              <a href="#a00b0872b24273d3616370b4112ea85fea10722ff9eca89402b918e70fca55df14" class="m-doc">UseTransformObject</a> = 0x02,
+              <a href="#a00b0872b24273d3616370b4112ea85fea95f092b0aaea27d0902d406795391465" class="m-doc">UseShaderConstants</a> = 0x08,
               <a href="#a00b0872b24273d3616370b4112ea85fead97ce6c82d2d2a5f03fb6639fb3c5a67" class="m-doc">UseMaterialColor</a> = 0x10,
               <a href="#a00b0872b24273d3616370b4112ea85fea87aab1648cfb2e7ffae645ef9ba35122" class="m-doc">UseAmbientColor</a> = 0x20,
               <a href="#a00b0872b24273d3616370b4112ea85feadc72d5edd53e29aa1562dab14a163a2a" class="m-doc">UseVertexDescription</a> = 0x100000,
@@ -106,6 +108,15 @@
               <a href="struct_render_ware_1_1_raster.html" class="m-doc">Raster</a>* pRaster)</span>
             </dt>
             <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a074ac657081365d1f2a134a03dc2c908" class="m-doc">SetTransform</a>(</span><span class="m-doc-wrap">const <a href="struct_math_1_1_matrix4.html" class="m-doc">Math::<wbr />Matrix4</a>&amp; matrix,
+              <a href="namespace_graphics_1_1_global_state.html#a213d6bda002136c9c33069a73e7e588f" class="m-doc">Graphics::<wbr />GlobalState::<wbr />MatrixType</a> type = <a href="namespace_graphics_1_1_global_state.html#a213d6bda002136c9c33069a73e7e588fa5e1380b52f122703099e8306e55d78c4" class="m-doc">Graphics::<wbr />GlobalState::<wbr />MATRIXTYPE_ORTHOGONAL</a>) -&gt; bool</span>
+            </dt>
+            <dd>Sets the matrix transform, only if it is enabled for this compiled state.</dd>
+            <dt id="ad0077570629b669bfd570a2c2eda3763">
+              <span class="m-doc-wrap-bumper">auto <a href="#ad0077570629b669bfd570a2c2eda3763" class="m-doc-self">GetData</a>(</span><span class="m-doc-wrap">) -&gt; char*</span>
+            </dt>
+            <dd><span></span></dd>
           </dl>
         </section>
         <section id="pub-attribs">
@@ -140,6 +151,17 @@
             </dt>
             <dd><span></span></dd>
           </dl>
+        </section>
+        <section>
+          <h2>Function documentation</h2>
+          <section class="m-doc-details" id="a074ac657081365d1f2a134a03dc2c908"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">bool RenderWare::<wbr />CompiledState::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a074ac657081365d1f2a134a03dc2c908" class="m-doc-self">SetTransform</a>(</span><span class="m-doc-wrap">const <a href="struct_math_1_1_matrix4.html" class="m-doc">Math::<wbr />Matrix4</a>&amp; matrix,
+              <a href="namespace_graphics_1_1_global_state.html#a213d6bda002136c9c33069a73e7e588f" class="m-doc">Graphics::<wbr />GlobalState::<wbr />MatrixType</a> type = <a href="namespace_graphics_1_1_global_state.html#a213d6bda002136c9c33069a73e7e588fa5e1380b52f122703099e8306e55d78c4" class="m-doc">Graphics::<wbr />GlobalState::<wbr />MATRIXTYPE_ORTHOGONAL</a>)</span></span>
+            </h3>
+            <p>Sets the matrix transform, only if it is enabled for this compiled state.</p>
+<p>Returns false if it wasn&#x27;t enabled.</p>
+          </div></section>
         </section>
       </div>
     </div>

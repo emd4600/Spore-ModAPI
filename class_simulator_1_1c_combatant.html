@@ -147,12 +147,12 @@
               <span class="m-doc-wrap-bumper">auto <a href="#a8d919d1304dae68649d2bb32e0f96a9e" class="m-doc-self">GetWeapon</a>(</span><span class="m-doc-wrap">) -&gt; <a href="class_simulator_1_1c_space_tool_data.html" class="m-doc">cSpaceToolData</a>* <span class="m-label m-flat m-warning">virtual</span></span>
             </dt>
             <dd>Returns the weapon tool used by this combatant. This is only available for vehicles.</dd>
-            <dt id="a6fcc2e8ab68d7f27c0b83c13fc25e3b7">
-              <span class="m-doc-wrap-bumper">auto <a href="#a6fcc2e8ab68d7f27c0b83c13fc25e3b7" class="m-doc-self">func18h</a>(</span><span class="m-doc-wrap">float,
+            <dt id="a296851e6cb2e0df8bc1c3f257a2c264b">
+              <span class="m-doc-wrap-bumper">auto <a href="#a296851e6cb2e0df8bc1c3f257a2c264b" class="m-doc-self">func18h</a>(</span><span class="m-doc-wrap">float damage,
+              uint32_t attackerPoliticalID,
               int,
-              int,
-              int,
-              int) -&gt; int <span class="m-label m-flat m-warning">virtual</span></span>
+              const <a href="struct_math_1_1_vector3.html" class="m-doc">Vector3</a>&amp;,
+              <a href="class_simulator_1_1c_combatant.html" class="m-doc">cCombatant</a>* pAttacker) -&gt; int <span class="m-label m-flat m-warning">virtual</span></span>
             </dt>
             <dd><span></span></dd>
             <dt id="a1961fe46b386e5d30738d740ad6f345a">
@@ -249,8 +249,8 @@
               map&lt;int, int&gt; <a href="#a60015ae894d7622c977a1f4f1275cdad" class="m-doc-self">field_0C</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="a26ebd69f0739a2cd04d5e6dd744103d6">
-              intrusive_ptr&lt;<a href="class_simulator_1_1c_combatant.html" class="m-doc">cCombatant</a>&gt; <a href="#a26ebd69f0739a2cd04d5e6dd744103d6" class="m-doc-self">field_28</a>
+            <dt id="af6c377358a00e2e8631ca027fdbcf829">
+              <a href="c_combatant_8h.html#a26e59ec08f99a9b91658f45ce5e24b80" class="m-doc">cCombatantPtr</a> <a href="#af6c377358a00e2e8631ca027fdbcf829" class="m-doc-self">mpLastAttacker</a>
             </dt>
             <dd><span></span></dd>
             <dt id="ac98e7c52d626b545a1d56c721da97406">
@@ -269,20 +269,20 @@
               float <a href="#a91493adff09497724d5e2cfb1e305900" class="m-doc-self">mHealthPoints</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="a7a6a364db9957a700a0be25a14c23699">
-              int <a href="#a7a6a364db9957a700a0be25a14c23699" class="m-doc-self">mLastAttacker</a>
+            <dt id="ad0b82fb6409f157db7f12dc16b586ced">
+              uint32_t <a href="#ad0b82fb6409f157db7f12dc16b586ced" class="m-doc-self">mLastAttacker</a>
             </dt>
             <dd><span></span></dd>
             <dt id="ade26b695a0fa2636304b05a669e942d5">
               float <a href="#ade26b695a0fa2636304b05a669e942d5" class="m-doc-self">mArmorProbability</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="a19e1302b58761ab7e35114cb033f5f86">
-              intrusive_ptr&lt;<a href="class_simulator_1_1c_combatant.html" class="m-doc">cCombatant</a>&gt; <a href="#a19e1302b58761ab7e35114cb033f5f86" class="m-doc-self">field_44</a>
+            <dt id="a34e215cfbcd178d5853bbba1368a70a4">
+              <a href="c_combatant_8h.html#a26e59ec08f99a9b91658f45ce5e24b80" class="m-doc">cCombatantPtr</a> <a href="#a34e215cfbcd178d5853bbba1368a70a4" class="m-doc-self">field_44</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="a57c9c34d106477b2ee444773e2bf2951">
-              intrusive_ptr&lt;<a href="class_simulator_1_1c_combatant.html" class="m-doc">cCombatant</a>&gt; <a href="#a57c9c34d106477b2ee444773e2bf2951" class="m-doc-self">mpTarget</a>
+            <dt id="a1c9b0fe9bf9776a224f6f88ce7adfbab">
+              <a href="c_combatant_8h.html#a26e59ec08f99a9b91658f45ce5e24b80" class="m-doc">cCombatantPtr</a> <a href="#a1c9b0fe9bf9776a224f6f88ce7adfbab" class="m-doc-self">mpTarget</a>
             </dt>
             <dd><span></span></dd>
             <dt id="accf81e5903b236e689aeeff3939016f1">

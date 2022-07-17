@@ -126,7 +126,7 @@
             </dt>
             <dd>Sets the <a href="struct_resource_key.html" class="m-doc">ResourceKey</a> name that identifies this record.</dd>
             <dt id="a8fb0b35eb40abcd3688b5cf6ac849b68">
-              <span class="m-doc-wrap-bumper">auto <a href="#a8fb0b35eb40abcd3688b5cf6ac849b68" class="m-doc-self">GetStream</a>(</span><span class="m-doc-wrap">) -&gt; <a href="class_i_o_1_1_i_stream.html" class="m-doc">IStream</a>* <span class="m-label m-flat m-warning">override</span></span>
+              <span class="m-doc-wrap-bumper">auto <a href="#a8fb0b35eb40abcd3688b5cf6ac849b68" class="m-doc-self">GetStream</a>(</span><span class="m-doc-wrap">) -&gt; IStream* <span class="m-label m-flat m-warning">override</span></span>
             </dt>
             <dd>Returns the IStream used to access this record data.</dd>
             <dt id="a315cca4d749f81aac4032d2628964365">
@@ -374,7 +374,7 @@
                 </tr>
               </tbody>
             </table>
-<p>If less then nSize bytes are available, then those bytes will be read. Returns the number of bytes read. A return value of zero means that there were no bytes to be read or no bytes were requested to be read. A return value of zero means the end of file was reached. A return value &gt; 0 but &lt; &#x27;nSize&#x27; is possible, and it does not necessarily mean that the end of the file was reached. Returns (size_type)-1 (a.k.a. kSizeTypeError) if there was an error. You can use this return value or <a href="class_i_o_1_1_i_stream.html#aa1bcbedfc21d71aadd005d3ff42642f5" class="m-doc">IStream::<wbr />GetState</a> to determine the error. Input size values equal to (size_type)-1 (a.k.a. kSizeTypeError) are not valid input. Upon error, the stream pointer is at the position it was upon the error occurrence.</p>
+<p>If less then nSize bytes are available, then those bytes will be read. Returns the number of bytes read. A return value of zero means that there were no bytes to be read or no bytes were requested to be read. A return value of zero means the end of file was reached. A return value &gt; 0 but &lt; &#x27;nSize&#x27; is possible, and it does not necessarily mean that the end of the file was reached. Returns (size_type)-1 (a.k.a. kSizeTypeError) if there was an error. You can use this return value or IStream::GetState to determine the error. Input size values equal to (size_type)-1 (a.k.a. kSizeTypeError) are not valid input. Upon error, the stream pointer is at the position it was upon the error occurrence.</p>
           </div></section>
           <section class="m-doc-details" id="a3067e3f548e438a82b8b452049e1d0b7"><div>
             <h3>
@@ -404,7 +404,7 @@
                 </tr>
               </tbody>
             </table>
-<p>If false is returned, you can use <a href="class_i_o_1_1_i_stream.html#aa1bcbedfc21d71aadd005d3ff42642f5" class="m-doc">IStream::<wbr />GetState</a> to determine the error. Upon error, the stream pointer is at the position it was upon the error occurrence.</p>
+<p>If false is returned, you can use IStream::GetState to determine the error. Upon error, the stream pointer is at the position it was upon the error occurrence.</p>
           </div></section>
         </section>
       </div>

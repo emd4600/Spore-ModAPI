@@ -104,10 +104,10 @@
           <h2><a href="#pub-methods">Public functions</a></h2>
           <dl class="m-doc">
             <dt>
-              <span class="m-doc-wrap-bumper">void <a href="#a83ed430189450de3754631a9b16a54a6" class="m-doc">Load</a>(</span><span class="m-doc-wrap"><a href="class_app_1_1_property_list.html" class="m-doc">App::<wbr />PropertyList</a>* pConfigProp,
+              <span class="m-doc-wrap-bumper">void <a href="#a459995c553bd173a0915167e7134b0f7" class="m-doc">Load</a>(</span><span class="m-doc-wrap"><a href="class_app_1_1_property_list.html" class="m-doc">App::<wbr />PropertyList</a>* pConfigProp,
               struct <a href="struct_math_1_1_color_r_g_b.html" class="m-doc">Math::<wbr />ColorRGB</a> color,
               union <a href="union_math_1_1_rectangle.html" class="m-doc">Math::<wbr />Rectangle</a> area,
-              <a href="class_u_t_f_win_1_1_i_window.html" class="m-doc">IWindow</a>* pContainerWindow,
+              <a href="class_u_t_f_win_1_1_i_window.html" class="m-doc">UTFWin::<wbr />IWindow</a>* pContainerWindow,
               <a href="class_object.html" class="m-doc">Object</a>* pExpansionObject)</span>
             </dt>
             <dd>Loads and generates the user interface for this color swatch, using the given color and area, as well as some properties of the configuration PROP file given.</dd>
@@ -150,8 +150,8 @@
             </dt>
             <dd>Gets the flags that represent which type of messages this IWinProc can handle.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#a975cddbd23d26d5fca1179d70c458d62" class="m-doc">HandleUIMessage</a>(</span><span class="m-doc-wrap"><a href="class_u_t_f_win_1_1_i_window.html" class="m-doc">IWindow</a>* pWindow,
-              const <a href="class_u_t_f_win_1_1_message.html" class="m-doc">Message</a>&amp; message) -&gt; bool <span class="m-label m-flat m-warning">override</span></span>
+              <span class="m-doc-wrap-bumper">auto <a href="#aaad611be0df136472a3fda23bfe26c47" class="m-doc">HandleUIMessage</a>(</span><span class="m-doc-wrap"><a href="class_u_t_f_win_1_1_i_window.html" class="m-doc">UTFWin::<wbr />IWindow</a>* pWindow,
+              const <a href="class_u_t_f_win_1_1_message.html" class="m-doc">UTFWin::<wbr />Message</a>&amp; message) -&gt; bool <span class="m-label m-flat m-warning">override</span></span>
             </dt>
             <dd>Method called every time a message is received on a window that has this IWinProc added.</dd>
           </dl>
@@ -216,39 +216,39 @@
             </dt>
             <dd>The area (relative to the container window) that this swatch button fits.</dd>
             <dt>
-              intrusive_ptr&lt;<a href="class_u_t_f_win_1_1_i_window.html" class="m-doc">IWindow</a>&gt; <a href="#a985340ffc1ab19a3141c21c581b79a9e" class="m-doc">mpFrameWindow</a>
+              <a href="_i_window_8h.html#a8a007ed4a799cf73a9ba71b157f9d051" class="m-doc">IWindowPtr</a> <a href="#a21be223efbd752ff534d275586cc484d" class="m-doc">mpFrameWindow</a>
             </dt>
             <dd>The window that displays the frame of the swatch.</dd>
             <dt>
-              intrusive_ptr&lt;<a href="class_u_t_f_win_1_1_i_window.html" class="m-doc">IWindow</a>&gt; <a href="#af1163cd0944273ca2d144d25c9fc826c" class="m-doc">mpFrameGlowWindow</a>
+              <a href="_i_window_8h.html#a8a007ed4a799cf73a9ba71b157f9d051" class="m-doc">IWindowPtr</a> <a href="#a27b3c2076ede8197ed462fe84634c749" class="m-doc">mpFrameGlowWindow</a>
             </dt>
             <dd>The window that displays the frame glow of the swatch.</dd>
             <dt>
-              intrusive_ptr&lt;<a href="class_u_t_f_win_1_1_i_window.html" class="m-doc">IWindow</a>&gt; <a href="#a0f41271c39871da82a4c3b863f2095a4" class="m-doc">mpFrameShineWindow</a>
+              <a href="_i_window_8h.html#a8a007ed4a799cf73a9ba71b157f9d051" class="m-doc">IWindowPtr</a> <a href="#ae5f6d797b3621b020b7c87572b240fb7" class="m-doc">mpFrameShineWindow</a>
             </dt>
             <dd>The window that displays the frame shine of the swatch.</dd>
             <dt>
-              intrusive_ptr&lt;<a href="class_u_t_f_win_1_1_i_window.html" class="m-doc">IWindow</a>&gt; <a href="#a99ec8d352369d1f5718f12b40d1e4229" class="m-doc">mpColorWindow</a>
+              <a href="_i_window_8h.html#a8a007ed4a799cf73a9ba71b157f9d051" class="m-doc">IWindowPtr</a> <a href="#a2761a5715cff394cccfb74cf4f65dee1" class="m-doc">mpColorWindow</a>
             </dt>
             <dd>The window that displays the current selected color.</dd>
             <dt>
-              intrusive_ptr&lt;<a href="class_u_t_f_win_1_1_i_window.html" class="m-doc">IWindow</a>&gt; <a href="#ad6310f74ec56e9548752687175a2cf7d" class="m-doc">mpMainWindow</a>
+              <a href="_i_window_8h.html#a8a007ed4a799cf73a9ba71b157f9d051" class="m-doc">IWindowPtr</a> <a href="#ada280bc1c8b5f5da36ef90b61100d03d" class="m-doc">mpMainWindow</a>
             </dt>
             <dd>The main window that contains all the other windows of the swatch.</dd>
             <dt>
-              intrusive_ptr&lt;<a href="class_u_t_f_win_1_1_i_window.html" class="m-doc">IWindow</a>&gt; <a href="#a29a860c4ff5ca43dd77e152f97f9e6ec" class="m-doc">mpExpansionWindow</a>
+              <a href="_i_window_8h.html#a8a007ed4a799cf73a9ba71b157f9d051" class="m-doc">IWindowPtr</a> <a href="#af318d45c8e654f0590346c72314c8f08" class="m-doc">mpExpansionWindow</a>
             </dt>
             <dd>The panel that shows when the swatch is pressed, and that expands the swatch to show multiple colors.</dd>
-            <dt id="af7bd8bc08ebb499d9f90cbf31580d94b">
-              intrusive_ptr&lt;<a href="class_object.html" class="m-doc">Object</a>&gt; <a href="#af7bd8bc08ebb499d9f90cbf31580d94b" class="m-doc-self">mpExpansionObject</a>
+            <dt id="ad314714fde89fd0403e8317796778ac9">
+              <a href="_object_8h.html#a364c2967a9338c07ddc9a3d507389b5d" class="m-doc">ObjectPtr</a> <a href="#ad314714fde89fd0403e8317796778ac9" class="m-doc-self">mpExpansionObject</a>
             </dt>
             <dd>An object necessary to do the swatch expansion; generally this is the color picker.</dd>
-            <dt id="aa0b326ce10f00a26f6d161920cef5482">
-              vector&lt;intrusive_ptr&lt;<a href="class_palettes_1_1_color_swatch_u_i.html" class="m-doc">ColorSwatchUI</a>&gt;&gt; <a href="#aa0b326ce10f00a26f6d161920cef5482" class="m-doc-self">mExpansionSwatches</a>
+            <dt id="a018eab4b0194c2c7ca265dcfdfaad76b">
+              vector&lt;<a href="_color_swatch_u_i_8h.html#a73db9b2c2e8789ad141203ebbded8055" class="m-doc">ColorSwatchUIPtr</a>&gt; <a href="#a018eab4b0194c2c7ca265dcfdfaad76b" class="m-doc-self">mExpansionSwatches</a>
             </dt>
             <dd>All the color swatch UIs that are shown in the expansion panel of this swatch.</dd>
-            <dt id="a7eff88d91803c4efc040893fbd660d40">
-              intrusive_ptr&lt;<a href="class_app_1_1_property_list.html" class="m-doc">App::<wbr />PropertyList</a>&gt; <a href="#a7eff88d91803c4efc040893fbd660d40" class="m-doc-self">mpConfigProp</a>
+            <dt id="a0c7b3487b6b6ec7f4ef79c35ccb91a27">
+              <a href="_property_list_8h.html#ae757f1639ff739ff0282dd91f3e39f0a" class="m-doc">PropertyListPtr</a> <a href="#a0c7b3487b6b6ec7f4ef79c35ccb91a27" class="m-doc-self">mpConfigProp</a>
             </dt>
             <dd>The PROP file used to configurate the color picker.</dd>
             <dt id="a644384614d1589b056a840df37696160">
@@ -275,12 +275,12 @@
         </section>
         <section>
           <h2>Function documentation</h2>
-          <section class="m-doc-details" id="a83ed430189450de3754631a9b16a54a6"><div>
+          <section class="m-doc-details" id="a459995c553bd173a0915167e7134b0f7"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">void Palettes::<wbr />ColorSwatchUI::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a83ed430189450de3754631a9b16a54a6" class="m-doc-self">Load</a>(</span><span class="m-doc-wrap"><a href="class_app_1_1_property_list.html" class="m-doc">App::<wbr />PropertyList</a>* pConfigProp,
+              <span class="m-doc-wrap-bumper">void Palettes::<wbr />ColorSwatchUI::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a459995c553bd173a0915167e7134b0f7" class="m-doc-self">Load</a>(</span><span class="m-doc-wrap"><a href="class_app_1_1_property_list.html" class="m-doc">App::<wbr />PropertyList</a>* pConfigProp,
               struct <a href="struct_math_1_1_color_r_g_b.html" class="m-doc">Math::<wbr />ColorRGB</a> color,
               union <a href="union_math_1_1_rectangle.html" class="m-doc">Math::<wbr />Rectangle</a> area,
-              <a href="class_u_t_f_win_1_1_i_window.html" class="m-doc">IWindow</a>* pContainerWindow,
+              <a href="class_u_t_f_win_1_1_i_window.html" class="m-doc">UTFWin::<wbr />IWindow</a>* pContainerWindow,
               <a href="class_object.html" class="m-doc">Object</a>* pExpansionObject)</span></span>
             </h3>
             <p>Loads and generates the user interface for this color swatch, using the given color and area, as well as some properties of the configuration PROP file given.</p>
@@ -377,10 +377,10 @@
             <p>Gets the flags that represent which type of messages this IWinProc can handle.</p>
 <p>This allows for better performance, since generally a procedure only needs to listen specific events. The flags are in the kEventFlag... values.</p>
           </div></section>
-          <section class="m-doc-details" id="a975cddbd23d26d5fca1179d70c458d62"><div>
+          <section class="m-doc-details" id="aaad611be0df136472a3fda23bfe26c47"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">bool Palettes::<wbr />ColorSwatchUI::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a975cddbd23d26d5fca1179d70c458d62" class="m-doc-self">HandleUIMessage</a>(</span><span class="m-doc-wrap"><a href="class_u_t_f_win_1_1_i_window.html" class="m-doc">IWindow</a>* pWindow,
-              const <a href="class_u_t_f_win_1_1_message.html" class="m-doc">Message</a>&amp; message) <span class="m-label m-warning">override</span></span></span>
+              <span class="m-doc-wrap-bumper">bool Palettes::<wbr />ColorSwatchUI::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#aaad611be0df136472a3fda23bfe26c47" class="m-doc-self">HandleUIMessage</a>(</span><span class="m-doc-wrap"><a href="class_u_t_f_win_1_1_i_window.html" class="m-doc">UTFWin::<wbr />IWindow</a>* pWindow,
+              const <a href="class_u_t_f_win_1_1_message.html" class="m-doc">UTFWin::<wbr />Message</a>&amp; message) <span class="m-label m-warning">override</span></span></span>
             </h3>
             <p>Method called every time a message is received on a window that has this IWinProc added.</p>
             <table class="m-table m-fullwidth m-flat">
@@ -416,44 +416,44 @@
             <p>Whether the user interface for this color swatch has already been loaded.</p>
 <p>This is set to true in the Load method.</p>
           </div></section>
-          <section class="m-doc-details" id="a985340ffc1ab19a3141c21c581b79a9e"><div>
+          <section class="m-doc-details" id="a21be223efbd752ff534d275586cc484d"><div>
             <h3>
-              intrusive_ptr&lt;<a href="class_u_t_f_win_1_1_i_window.html" class="m-doc">IWindow</a>&gt; Palettes::<wbr />ColorSwatchUI::<wbr /><a href="#a985340ffc1ab19a3141c21c581b79a9e" class="m-doc-self">mpFrameWindow</a>
+              <a href="_i_window_8h.html#a8a007ed4a799cf73a9ba71b157f9d051" class="m-doc">IWindowPtr</a> Palettes::<wbr />ColorSwatchUI::<wbr /><a href="#a21be223efbd752ff534d275586cc484d" class="m-doc-self">mpFrameWindow</a>
             </h3>
             <p>The window that displays the frame of the swatch.</p>
 <p>It displays the image determined by the property &#x27;colorpickerImageDefaultFrame&#x27;.</p>
           </div></section>
-          <section class="m-doc-details" id="af1163cd0944273ca2d144d25c9fc826c"><div>
+          <section class="m-doc-details" id="a27b3c2076ede8197ed462fe84634c749"><div>
             <h3>
-              intrusive_ptr&lt;<a href="class_u_t_f_win_1_1_i_window.html" class="m-doc">IWindow</a>&gt; Palettes::<wbr />ColorSwatchUI::<wbr /><a href="#af1163cd0944273ca2d144d25c9fc826c" class="m-doc-self">mpFrameGlowWindow</a>
+              <a href="_i_window_8h.html#a8a007ed4a799cf73a9ba71b157f9d051" class="m-doc">IWindowPtr</a> Palettes::<wbr />ColorSwatchUI::<wbr /><a href="#a27b3c2076ede8197ed462fe84634c749" class="m-doc-self">mpFrameGlowWindow</a>
             </h3>
             <p>The window that displays the frame glow of the swatch.</p>
 <p>It displays the image determined by the property &#x27;colorpickerImageDefaultFrameGlow&#x27;.</p>
           </div></section>
-          <section class="m-doc-details" id="a0f41271c39871da82a4c3b863f2095a4"><div>
+          <section class="m-doc-details" id="ae5f6d797b3621b020b7c87572b240fb7"><div>
             <h3>
-              intrusive_ptr&lt;<a href="class_u_t_f_win_1_1_i_window.html" class="m-doc">IWindow</a>&gt; Palettes::<wbr />ColorSwatchUI::<wbr /><a href="#a0f41271c39871da82a4c3b863f2095a4" class="m-doc-self">mpFrameShineWindow</a>
+              <a href="_i_window_8h.html#a8a007ed4a799cf73a9ba71b157f9d051" class="m-doc">IWindowPtr</a> Palettes::<wbr />ColorSwatchUI::<wbr /><a href="#ae5f6d797b3621b020b7c87572b240fb7" class="m-doc-self">mpFrameShineWindow</a>
             </h3>
             <p>The window that displays the frame shine of the swatch.</p>
 <p>It displays the image determined by the property &#x27;colorpickerImageDefaultFrameShine&#x27;.</p>
           </div></section>
-          <section class="m-doc-details" id="a99ec8d352369d1f5718f12b40d1e4229"><div>
+          <section class="m-doc-details" id="a2761a5715cff394cccfb74cf4f65dee1"><div>
             <h3>
-              intrusive_ptr&lt;<a href="class_u_t_f_win_1_1_i_window.html" class="m-doc">IWindow</a>&gt; Palettes::<wbr />ColorSwatchUI::<wbr /><a href="#a99ec8d352369d1f5718f12b40d1e4229" class="m-doc-self">mpColorWindow</a>
+              <a href="_i_window_8h.html#a8a007ed4a799cf73a9ba71b157f9d051" class="m-doc">IWindowPtr</a> Palettes::<wbr />ColorSwatchUI::<wbr /><a href="#a2761a5715cff394cccfb74cf4f65dee1" class="m-doc-self">mpColorWindow</a>
             </h3>
             <p>The window that displays the current selected color.</p>
 <p>It uses the image determined by the property &#x27;colorPickerImageDefaultColor&#x27; as background.</p>
           </div></section>
-          <section class="m-doc-details" id="ad6310f74ec56e9548752687175a2cf7d"><div>
+          <section class="m-doc-details" id="ada280bc1c8b5f5da36ef90b61100d03d"><div>
             <h3>
-              intrusive_ptr&lt;<a href="class_u_t_f_win_1_1_i_window.html" class="m-doc">IWindow</a>&gt; Palettes::<wbr />ColorSwatchUI::<wbr /><a href="#ad6310f74ec56e9548752687175a2cf7d" class="m-doc-self">mpMainWindow</a>
+              <a href="_i_window_8h.html#a8a007ed4a799cf73a9ba71b157f9d051" class="m-doc">IWindowPtr</a> Palettes::<wbr />ColorSwatchUI::<wbr /><a href="#ada280bc1c8b5f5da36ef90b61100d03d" class="m-doc-self">mpMainWindow</a>
             </h3>
             <p>The main window that contains all the other windows of the swatch.</p>
 <p>This one is added into the container window provided in the method Load, and has this class added as a window procedure.</p>
           </div></section>
-          <section class="m-doc-details" id="a29a860c4ff5ca43dd77e152f97f9e6ec"><div>
+          <section class="m-doc-details" id="af318d45c8e654f0590346c72314c8f08"><div>
             <h3>
-              intrusive_ptr&lt;<a href="class_u_t_f_win_1_1_i_window.html" class="m-doc">IWindow</a>&gt; Palettes::<wbr />ColorSwatchUI::<wbr /><a href="#a29a860c4ff5ca43dd77e152f97f9e6ec" class="m-doc-self">mpExpansionWindow</a>
+              <a href="_i_window_8h.html#a8a007ed4a799cf73a9ba71b157f9d051" class="m-doc">IWindowPtr</a> Palettes::<wbr />ColorSwatchUI::<wbr /><a href="#af318d45c8e654f0590346c72314c8f08" class="m-doc-self">mpExpansionWindow</a>
             </h3>
             <p>The panel that shows when the swatch is pressed, and that expands the swatch to show multiple colors.</p>
 <p>This shows the image determined by the property &#x27;colorpickerImageExpansionBackground&#x27;, and it is not added into mpMainWindow, but into the main game window instead.</p>

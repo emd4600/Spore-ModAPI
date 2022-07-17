@@ -48,7 +48,7 @@
           <span class="m-breadcrumb"><a href="namespace_simulator.html">Simulator</a>::<wbr/></span>cRelationshipManager <span class="m-thin">class</span>
           <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="c_relationship_manager_8h.html">&lt;Spore/Simulator/SubSystem/cRelationshipManager.h&gt;</a></div>
         </h1>
-        <p><span></span></p>
+        <p>Handles relationships between political entities.</p>
         <div class="m-block m-default">
           <h3>Contents</h3>
           <ul>
@@ -64,6 +64,7 @@
             </li>
           </ul>
         </div>
+<p>A political entity is a tribe, civilization, empire, etc. Relationships are always between two different political enties (such as two empires). They are composed of a series of events (declared war, gave gift, etc) and a global score (negative means you hate each other, positive you like each other).</p>
         <section id="base-classes">
           <h2><a href="#base-classes">Base classes</a></h2>
           <dl class="m-doc">
@@ -102,23 +103,69 @@
         <section id="pub-methods">
           <h2><a href="#pub-methods">Public functions</a></h2>
           <dl class="m-doc">
-            <dt id="afe1d22958de37ec7e2c1bd92a8fd3f01">
-              <span class="m-doc-wrap-bumper">auto <a href="#afe1d22958de37ec7e2c1bd92a8fd3f01" class="m-doc-self">IsAtWar</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_empire.html" class="m-doc">cEmpire</a>* pEmpire1,
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#afe1d22958de37ec7e2c1bd92a8fd3f01" class="m-doc">IsAtWar</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_empire.html" class="m-doc">cEmpire</a>* pEmpire1,
               <a href="class_simulator_1_1c_empire.html" class="m-doc">cEmpire</a>* pEmpire2) -&gt; bool</span>
             </dt>
-            <dd><span></span></dd>
-            <dt id="aaa80e697b058a0395e50210832b5e9c9">
-              <span class="m-doc-wrap-bumper">void <a href="#aaa80e697b058a0395e50210832b5e9c9" class="m-doc-self">DeclareWar</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_empire.html" class="m-doc">cEmpire</a>* pEmpire1,
+            <dd>Returns true if the two empires are currently at war, or false otherwise.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a17cca18e1417573bfb85b9171b9ed4bd" class="m-doc">IsAtWar</a>(</span><span class="m-doc-wrap">uint32_t politicalID1,
+              uint32_t politicalID2) -&gt; bool</span>
+            </dt>
+            <dd>Returns true if the two political entities are currently at war, or false otherwise.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#ac201523b244334bc1bde5643f16302b3" class="m-doc">IsAllied</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_empire.html" class="m-doc">cEmpire</a>* pEmpire1,
+              <a href="class_simulator_1_1c_empire.html" class="m-doc">cEmpire</a>* pEmpire2) -&gt; bool</span>
+            </dt>
+            <dd>Returns true if there is an alliance between the two empires, or false otherwise.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#ab0a7703630e4c49cfadeec26dafd285e" class="m-doc">IsAllied</a>(</span><span class="m-doc-wrap">uint32_t politicalID1,
+              uint32_t politicalID2) -&gt; bool</span>
+            </dt>
+            <dd>Returns true if there is an alliance between the two political entities, or false otherwise.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">void <a href="#aaa80e697b058a0395e50210832b5e9c9" class="m-doc">DeclareWar</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_empire.html" class="m-doc">cEmpire</a>* pEmpire1,
               <a href="class_simulator_1_1c_empire.html" class="m-doc">cEmpire</a>* pEmpire2)</span>
             </dt>
-            <dd><span></span></dd>
-            <dt id="aaa484dbdff66c5c6c41f74c1d4666025">
-              <span class="m-doc-wrap-bumper">auto <a href="#aaa484dbdff66c5c6c41f74c1d4666025" class="m-doc-self">ApplyRelationship</a>(</span><span class="m-doc-wrap">uint32_t empireID,
-              uint32_t causeEmpireID,
+            <dd>Declares war between the two empires, applying a bad relationship between them.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">void <a href="#ad1c0fbaddface3b11be1e7d85778017b" class="m-doc">DeclarePeace</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_empire.html" class="m-doc">cEmpire</a>* pEmpire1,
+              <a href="class_simulator_1_1c_empire.html" class="m-doc">cEmpire</a>* pEmpire2)</span>
+            </dt>
+            <dd>Declares peace between two empires.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">void <a href="#a1a35ca6be23bd152e3cede045a37bbd7" class="m-doc">DeclareAlliance</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_empire.html" class="m-doc">cEmpire</a>* pEmpire1,
+              <a href="class_simulator_1_1c_empire.html" class="m-doc">cEmpire</a>* pEmpire2)</span>
+            </dt>
+            <dd>Declares an alliance between two empires.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">void <a href="#a0e407ca6b9e6903ac315b7719ba37ed9" class="m-doc">BreakAlliance</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_empire.html" class="m-doc">cEmpire</a>* pEmpire1,
+              <a href="class_simulator_1_1c_empire.html" class="m-doc">cEmpire</a>* pEmpire2)</span>
+            </dt>
+            <dd>Breaks the alliance between two empires, if it exists.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">void <a href="#afc7a12f7dbdecec3fc9d9e8b625e076d" class="m-doc">ResetRelationship</a>(</span><span class="m-doc-wrap">uint32_t politicalID1,
+              uint32_t politicalID2)</span>
+            </dt>
+            <dd>Resets the relationship between two political entities, setting their global relationship to 0 and removing all events between them.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a2c940cff5b349ebceda7792e0b59c102" class="m-doc">ApplyRelationship</a>(</span><span class="m-doc-wrap">uint32_t politicalID,
+              uint32_t causePoliticalID,
               uint32_t relationshipID,
               float scale = 1.0f) -&gt; float</span>
             </dt>
-            <dd><span></span></dd>
+            <dd>Applies a relationship event between two political entities (tribes, civilizations, empires,...).</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a2897201d3b27f6fb74f029af74b66b36" class="m-doc">RelationshipExists</a>(</span><span class="m-doc-wrap">uint32_t politicalID1,
+              uint32_t politicalID2) -&gt; bool</span>
+            </dt>
+            <dd>Returns true if there is a relationship between the two political entities.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a7705e6083e1536e5c0a702a8cea9e710" class="m-doc">GetRelationshipEventValue</a>(</span><span class="m-doc-wrap">uint32_t politicalID1,
+              uint32_t politicalID2,
+              uint32_t relationshipID) -&gt; float</span>
+            </dt>
+            <dd>Returns the value of a relationship event between two political entities, or 0 if no such relation exists.</dd>
           </dl>
         </section>
         <section id="pro-attribs">
@@ -144,8 +191,8 @@
               bool <a href="#ac8cf79ddf6b4701c0d5d11e3e8411c91" class="m-doc-self">mbIsInitialized</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="aa25b437c7e624ead82fd0bff3bb99ed3">
-              map&lt;int, <a href="class_simulator_1_1c_relationship_data.html" class="m-doc">cRelationshipData</a>&gt; <a href="#aa25b437c7e624ead82fd0bff3bb99ed3" class="m-doc-self">mRelationships</a>
+            <dt id="a4e1052e6d7c8ee0eef9534058b81935c">
+              map&lt;pair&lt;uint32_t, uint32_t&gt;, <a href="class_simulator_1_1c_relationship_data.html" class="m-doc">cRelationshipData</a>&gt; <a href="#a4e1052e6d7c8ee0eef9534058b81935c" class="m-doc-self">mRelationships</a>
             </dt>
             <dd><span></span></dd>
             <dt id="a5c537a450af77d2906e68de50bf8faf4">
@@ -221,6 +268,272 @@
             </dt>
             <dd><span></span></dd>
           </dl>
+        </section>
+        <section>
+          <h2>Function documentation</h2>
+          <section class="m-doc-details" id="afe1d22958de37ec7e2c1bd92a8fd3f01"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">bool Simulator::<wbr />cRelationshipManager::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#afe1d22958de37ec7e2c1bd92a8fd3f01" class="m-doc-self">IsAtWar</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_empire.html" class="m-doc">cEmpire</a>* pEmpire1,
+              <a href="class_simulator_1_1c_empire.html" class="m-doc">cEmpire</a>* pEmpire2)</span></span>
+            </h3>
+            <p>Returns true if the two empires are currently at war, or false otherwise.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">pEmpire1</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>pEmpire2</td>
+                  <td></td>
+                </tr>
+              </tbody>
+            </table>
+<p>The order of the parameters is irrelevant.</p>
+          </div></section>
+          <section class="m-doc-details" id="a17cca18e1417573bfb85b9171b9ed4bd"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">bool Simulator::<wbr />cRelationshipManager::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a17cca18e1417573bfb85b9171b9ed4bd" class="m-doc-self">IsAtWar</a>(</span><span class="m-doc-wrap">uint32_t politicalID1,
+              uint32_t politicalID2)</span></span>
+            </h3>
+            <p>Returns true if the two political entities are currently at war, or false otherwise.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">politicalID1</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>politicalID2</td>
+                  <td></td>
+                </tr>
+              </tbody>
+            </table>
+<p>The order of the parameters is irrelevant.</p>
+          </div></section>
+          <section class="m-doc-details" id="ac201523b244334bc1bde5643f16302b3"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">bool Simulator::<wbr />cRelationshipManager::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ac201523b244334bc1bde5643f16302b3" class="m-doc-self">IsAllied</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_empire.html" class="m-doc">cEmpire</a>* pEmpire1,
+              <a href="class_simulator_1_1c_empire.html" class="m-doc">cEmpire</a>* pEmpire2)</span></span>
+            </h3>
+            <p>Returns true if there is an alliance between the two empires, or false otherwise.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">pEmpire1</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>pEmpire2</td>
+                  <td></td>
+                </tr>
+              </tbody>
+            </table>
+<p>The order of the parameters is irrelevant.</p>
+          </div></section>
+          <section class="m-doc-details" id="ab0a7703630e4c49cfadeec26dafd285e"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">bool Simulator::<wbr />cRelationshipManager::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ab0a7703630e4c49cfadeec26dafd285e" class="m-doc-self">IsAllied</a>(</span><span class="m-doc-wrap">uint32_t politicalID1,
+              uint32_t politicalID2)</span></span>
+            </h3>
+            <p>Returns true if there is an alliance between the two political entities, or false otherwise.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">politicalID1</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>politicalID2</td>
+                  <td></td>
+                </tr>
+              </tbody>
+            </table>
+<p>The order of the parameters is irrelevant.</p>
+          </div></section>
+          <section class="m-doc-details" id="aaa80e697b058a0395e50210832b5e9c9"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">void Simulator::<wbr />cRelationshipManager::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#aaa80e697b058a0395e50210832b5e9c9" class="m-doc-self">DeclareWar</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_empire.html" class="m-doc">cEmpire</a>* pEmpire1,
+              <a href="class_simulator_1_1c_empire.html" class="m-doc">cEmpire</a>* pEmpire2)</span></span>
+            </h3>
+            <p>Declares war between the two empires, applying a bad relationship between them.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">pEmpire1</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>pEmpire2</td>
+                  <td></td>
+                </tr>
+              </tbody>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="ad1c0fbaddface3b11be1e7d85778017b"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">void Simulator::<wbr />cRelationshipManager::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ad1c0fbaddface3b11be1e7d85778017b" class="m-doc-self">DeclarePeace</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_empire.html" class="m-doc">cEmpire</a>* pEmpire1,
+              <a href="class_simulator_1_1c_empire.html" class="m-doc">cEmpire</a>* pEmpire2)</span></span>
+            </h3>
+            <p>Declares peace between two empires.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">pEmpire1</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>pEmpire2</td>
+                  <td></td>
+                </tr>
+              </tbody>
+            </table>
+<p>This does not change the relationship events or score.</p>
+          </div></section>
+          <section class="m-doc-details" id="a1a35ca6be23bd152e3cede045a37bbd7"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">void Simulator::<wbr />cRelationshipManager::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a1a35ca6be23bd152e3cede045a37bbd7" class="m-doc-self">DeclareAlliance</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_empire.html" class="m-doc">cEmpire</a>* pEmpire1,
+              <a href="class_simulator_1_1c_empire.html" class="m-doc">cEmpire</a>* pEmpire2)</span></span>
+            </h3>
+            <p>Declares an alliance between two empires.</p>
+<p>If one of the empires is the player, it sends a SimulatorMessages::kMsgPlayerEmpireAllied message.</p>
+          </div></section>
+          <section class="m-doc-details" id="a0e407ca6b9e6903ac315b7719ba37ed9"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">void Simulator::<wbr />cRelationshipManager::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a0e407ca6b9e6903ac315b7719ba37ed9" class="m-doc-self">BreakAlliance</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_empire.html" class="m-doc">cEmpire</a>* pEmpire1,
+              <a href="class_simulator_1_1c_empire.html" class="m-doc">cEmpire</a>* pEmpire2)</span></span>
+            </h3>
+            <p>Breaks the alliance between two empires, if it exists.</p>
+<p>If one of the empires is the player, it sends a SimulatorMessages::kMsgPlayerEmpireLostAlliance message.</p>
+          </div></section>
+          <section class="m-doc-details" id="afc7a12f7dbdecec3fc9d9e8b625e076d"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">void Simulator::<wbr />cRelationshipManager::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#afc7a12f7dbdecec3fc9d9e8b625e076d" class="m-doc-self">ResetRelationship</a>(</span><span class="m-doc-wrap">uint32_t politicalID1,
+              uint32_t politicalID2)</span></span>
+            </h3>
+            <p>Resets the relationship between two political entities, setting their global relationship to 0 and removing all events between them.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">politicalID1</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>politicalID2</td>
+                  <td></td>
+                </tr>
+              </tbody>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="a2c940cff5b349ebceda7792e0b59c102"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">float Simulator::<wbr />cRelationshipManager::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a2c940cff5b349ebceda7792e0b59c102" class="m-doc-self">ApplyRelationship</a>(</span><span class="m-doc-wrap">uint32_t politicalID,
+              uint32_t causePoliticalID,
+              uint32_t relationshipID,
+              float scale = 1.0f)</span></span>
+            </h3>
+            <p>Applies a relationship event between two political entities (tribes, civilizations, empires,...).</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">politicalID</td>
+                  <td>ID of the political entity</td>
+                </tr>
+                <tr>
+                  <td>causePoliticalID</td>
+                  <td>ID of the other political entity, that caused the relation change</td>
+                </tr>
+                <tr>
+                  <td>relationshipID</td>
+                  <td>ID of the relationship properties, like those in RelationshipEvents</td>
+                </tr>
+                <tr>
+                  <td>scale</td>
+                  <td>Optional, a multiplier over the effect the relationship has.</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>Returns</th>
+                  <td>The current state of the relationship</td>
+                </tr>
+              </tfoot>
+            </table>
+<p>The relationship ID is a property ID; the list of base relationships is found in the RelationshipEvents enum, but more can be added. The relations aren&#x27;t necessarily symmetric, so there&#x27;s one of the two political entities that is considered the causant of the relation change (for example, the empire that declared war is responsible for the bad relation).</p>
+          </div></section>
+          <section class="m-doc-details" id="a2897201d3b27f6fb74f029af74b66b36"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">bool Simulator::<wbr />cRelationshipManager::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a2897201d3b27f6fb74f029af74b66b36" class="m-doc-self">RelationshipExists</a>(</span><span class="m-doc-wrap">uint32_t politicalID1,
+              uint32_t politicalID2)</span></span>
+            </h3>
+            <p>Returns true if there is a relationship between the two political entities.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">politicalID1</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>politicalID2</td>
+                  <td></td>
+                </tr>
+              </tbody>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="a7705e6083e1536e5c0a702a8cea9e710"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">float Simulator::<wbr />cRelationshipManager::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a7705e6083e1536e5c0a702a8cea9e710" class="m-doc-self">GetRelationshipEventValue</a>(</span><span class="m-doc-wrap">uint32_t politicalID1,
+              uint32_t politicalID2,
+              uint32_t relationshipID)</span></span>
+            </h3>
+            <p>Returns the value of a relationship event between two political entities, or 0 if no such relation exists.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">politicalID1</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>politicalID2</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>relationshipID</td>
+                  <td></td>
+                </tr>
+              </tbody>
+            </table>
+          </div></section>
         </section>
       </div>
     </div>

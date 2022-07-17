@@ -57,6 +57,7 @@
               <ul>
                 <li><a href="#base-classes">Base classes</a></li>
                 <li><a href="#pub-static-attribs">Public static variables</a></li>
+                <li><a href="#pub-static-methods">Public static functions</a></li>
                 <li><a href="#pub-methods">Public functions</a></li>
                 <li><a href="#pub-attribs">Public variables</a></li>
               </ul>
@@ -89,23 +90,33 @@
             <dd><span></span></dd>
           </dl>
         </section>
+        <section id="pub-static-methods">
+          <h2><a href="#pub-static-methods">Public static functions</a></h2>
+          <dl class="m-doc">
+            <dt>
+              <span class="m-doc-wrap-bumper">static void <a href="#a9a2636b5bb4d9e80cb26aaa2ced92ca4" class="m-doc">CaptureSystem</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_star_record.html" class="m-doc">cStarRecord</a>* pStarRecord,
+              uint32_t empireID)</span>
+            </dt>
+            <dd>Captures a star system for a specific empire.</dd>
+          </dl>
+        </section>
         <section id="pub-methods">
           <h2><a href="#pub-methods">Public functions</a></h2>
           <dl class="m-doc">
+            <dt id="a837f9d8a4116707629652ea98d8b68f4">
+              <span class="m-doc-wrap-bumper">auto <a href="#a837f9d8a4116707629652ea98d8b68f4" class="m-doc-self">GetEmpireID</a>(</span><span class="m-doc-wrap">) const -&gt; uint32_t</span>
+            </dt>
+            <dd>Returns the political ID of this empire.</dd>
             <dt id="a28833bc5bf9db610e5a7672d7c5528f8">
               <span class="m-doc-wrap-bumper">auto <a href="#a28833bc5bf9db610e5a7672d7c5528f8" class="m-doc-self">GetHomeStarRecord</a>(</span><span class="m-doc-wrap">) -&gt; <a href="class_simulator_1_1c_star_record.html" class="m-doc">cStarRecord</a>*</span>
             </dt>
             <dd><span></span></dd>
+            <dt id="a28cd29feb5066f9f246b3a0f5b638e71">
+              <span class="m-doc-wrap-bumper">auto <a href="#a28cd29feb5066f9f246b3a0f5b638e71" class="m-doc-self">GetSpeciesProfile</a>(</span><span class="m-doc-wrap">) -&gt; <a href="class_simulator_1_1c_species_profile.html" class="m-doc">cSpeciesProfile</a>*</span>
+            </dt>
+            <dd><span></span></dd>
             <dt id="a648f3146d2ae63cd5f99caa1ef06f87b">
               <span class="m-doc-wrap-bumper">void <a href="#a648f3146d2ae63cd5f99caa1ef06f87b" class="m-doc-self">SetSpeciesProfile</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_species_profile.html" class="m-doc">cSpeciesProfile</a>* pSpecies)</span>
-            </dt>
-            <dd><span></span></dd>
-            <dt id="aefa98c8895982c83c641abb1aeab44aa">
-              <span class="m-doc-wrap-bumper">auto <a href="#aefa98c8895982c83c641abb1aeab44aa" class="m-doc-self">IsAtWar</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_empire.html" class="m-doc">cEmpire</a>* pOther) -&gt; bool</span>
-            </dt>
-            <dd><span></span></dd>
-            <dt id="a7b1143b5e89307a6ac60eacedd741d91">
-              <span class="m-doc-wrap-bumper">void <a href="#a7b1143b5e89307a6ac60eacedd741d91" class="m-doc-self">DeclareWar</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_empire.html" class="m-doc">cEmpire</a>* pOther)</span>
             </dt>
             <dd><span></span></dd>
             <dt id="a3a9c8996c8e1adc7cfec11f8f09b51c8">
@@ -145,24 +156,24 @@
               <a href="namespace_simulator.html#aff9d1a25fc0929e070682f6bba21db02" class="m-doc">Archetypes</a> <a href="#a517a9961606d905f0e5ac86f0551c1f6" class="m-doc-self">mArchetype</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="a28ca2e6f3961b774524b1b6b5b26f347">
-              vector&lt;intrusive_ptr&lt;<a href="class_simulator_1_1c_empire.html" class="m-doc">cEmpire</a>&gt;&gt; <a href="#a28ca2e6f3961b774524b1b6b5b26f347" class="m-doc-self">mEnemies</a>
+            <dt id="a19fbce472c94d8bc7ec844707191dea3">
+              vector&lt;<a href="c_empire_8h.html#af8ca66b45d5d36ab090e9c1ed9dc9af0" class="m-doc">cEmpirePtr</a>&gt; <a href="#a19fbce472c94d8bc7ec844707191dea3" class="m-doc-self">mEnemies</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="ac8d8ca8726d55bc61cd8cd25771b1a78">
-              vector&lt;intrusive_ptr&lt;<a href="class_simulator_1_1c_empire.html" class="m-doc">cEmpire</a>&gt;&gt; <a href="#ac8d8ca8726d55bc61cd8cd25771b1a78" class="m-doc-self">mAllies</a>
+            <dt id="a3dcb9cb9bd58648a5fc410a915094524">
+              vector&lt;<a href="c_empire_8h.html#af8ca66b45d5d36ab090e9c1ed9dc9af0" class="m-doc">cEmpirePtr</a>&gt; <a href="#a3dcb9cb9bd58648a5fc410a915094524" class="m-doc-self">mAllies</a>
             </dt>
             <dd><span></span></dd>
             <dt id="a645e63fbdb0d2fee5a81198ea9a9e332">
               int <a href="#a645e63fbdb0d2fee5a81198ea9a9e332" class="m-doc-self">mPoliticalID</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="aded628804b829e90a8e0aa6036717eaa">
-              vector&lt;intrusive_ptr&lt;<a href="class_simulator_1_1c_star_record.html" class="m-doc">cStarRecord</a>&gt;&gt; <a href="#aded628804b829e90a8e0aa6036717eaa" class="m-doc-self">mStars</a>
+            <dt id="afc40992def49e07a7e38885a92add026">
+              vector&lt;<a href="c_star_record_8h.html#a45bf5963088a11c31f2b96f32be43662" class="m-doc">cStarRecordPtr</a>&gt; <a href="#afc40992def49e07a7e38885a92add026" class="m-doc-self">mStars</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="a41c61b46c54dd706b693b7213e57669e">
-              vector&lt;intrusive_ptr&lt;<a href="class_simulator_1_1c_star_record.html" class="m-doc">cStarRecord</a>&gt;&gt; <a href="#a41c61b46c54dd706b693b7213e57669e" class="m-doc-self">mNextStarTowardsHome</a>
+            <dt id="ae78871e8345f04f3cbd556ebc7180c7e">
+              vector&lt;<a href="c_star_record_8h.html#a45bf5963088a11c31f2b96f32be43662" class="m-doc">cStarRecordPtr</a>&gt; <a href="#ae78871e8345f04f3cbd556ebc7180c7e" class="m-doc-self">mNextStarTowardsHome</a>
             </dt>
             <dd><span></span></dd>
             <dt id="a1c30e404982fdfe7913124191f2d3e95">
@@ -234,6 +245,31 @@
             </dt>
             <dd><span></span></dd>
           </dl>
+        </section>
+        <section>
+          <h2>Function documentation</h2>
+          <section class="m-doc-details" id="a9a2636b5bb4d9e80cb26aaa2ced92ca4"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">static void Simulator::<wbr />cEmpire::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a9a2636b5bb4d9e80cb26aaa2ced92ca4" class="m-doc-self">CaptureSystem</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_star_record.html" class="m-doc">cStarRecord</a>* pStarRecord,
+              uint32_t empireID)</span></span>
+            </h3>
+            <p>Captures a star system for a specific empire.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">pStarRecord</td>
+                  <td>The star system to capture.</td>
+                </tr>
+                <tr>
+                  <td>empireID</td>
+                  <td>Political ID of the empire that will become the owner.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div></section>
         </section>
       </div>
     </div>

@@ -122,7 +122,7 @@
             </dt>
             <dd>Same as <a href="class_app_1_1_i_message_manager.html#ae959dd3f8cea42d889b9e96ad51d3414" class="m-doc">IMessageManager::<wbr />AddListener()</a>, but this does not call AddRef().</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">void <a href="#a140eed09eb6ce7b12c0db43bcdea83da" class="m-doc">AddHandler</a>(</span><span class="m-doc-wrap"><a href="class_app_1_1_i_message_manager.html#a23f3c448b7d6b5b9acc15c6300f8ab7c" class="m-doc">MessageHandler_<wbr />t</a> pFunction,
+              <span class="m-doc-wrap-bumper">void <a href="#ad4802fa361ca81ce879f6ee57a78e08e" class="m-doc">AddHandler</a>(</span><span class="m-doc-wrap"><a href="class_app_1_1_i_message_manager.html#a23f3c448b7d6b5b9acc15c6300f8ab7c" class="m-doc">IMessageManager::<wbr />MessageHandler_t</a> pFunction,
               void* pObject,
               uint32_t messageID,
               bool bRefCounted,
@@ -136,7 +136,7 @@
             </dt>
             <dd>Makes the listener stop listening to the specified message ID.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#a6fab1b8af9296ce190c1678097dcdae8" class="m-doc">RemoveHandler</a>(</span><span class="m-doc-wrap"><a href="class_app_1_1_i_message_manager.html#a23f3c448b7d6b5b9acc15c6300f8ab7c" class="m-doc">MessageHandler_<wbr />t</a> pFunction,
+              <span class="m-doc-wrap-bumper">auto <a href="#a6fa2b44a8236173daf043aa7c309bb8b" class="m-doc">RemoveHandler</a>(</span><span class="m-doc-wrap"><a href="class_app_1_1_i_message_manager.html#a23f3c448b7d6b5b9acc15c6300f8ab7c" class="m-doc">IMessageManager::<wbr />MessageHandler_t</a> pFunction,
               uint32_t messageID,
               int nPriority) -&gt; bool <span class="m-label m-flat m-warning">override</span></span>
             </dt>
@@ -160,7 +160,7 @@
             </dt>
             <dd>Locks or unlocks the mutexs in this manager, allowing to safely interact with this manager in different threads.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">void <a href="#aee01d95e23edcd7739295642f9f80c68" class="m-doc">AddEntry</a>(</span><span class="m-doc-wrap">const <a href="struct_app_1_1_i_message_manager_1_1_entry.html" class="m-doc">Entry</a>&amp; entry,
+              <span class="m-doc-wrap-bumper">void <a href="#abad068d3c3e7cabb5b2c1d0c0eb8e62a" class="m-doc">AddEntry</a>(</span><span class="m-doc-wrap">const <a href="struct_app_1_1_i_message_manager_1_1_entry.html" class="m-doc">IMessageManager::<wbr />Entry</a>&amp; entry,
               uint32_t messageID) <span class="m-label m-flat m-warning">override</span></span>
             </dt>
             <dd>Adds the entry to listen to the given message ID.</dd>
@@ -318,9 +318,9 @@
               </tbody>
             </table>
           </div></section>
-          <section class="m-doc-details" id="a140eed09eb6ce7b12c0db43bcdea83da"><div>
+          <section class="m-doc-details" id="ad4802fa361ca81ce879f6ee57a78e08e"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">void App::<wbr />cMessageManager::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a140eed09eb6ce7b12c0db43bcdea83da" class="m-doc-self">AddHandler</a>(</span><span class="m-doc-wrap"><a href="class_app_1_1_i_message_manager.html#a23f3c448b7d6b5b9acc15c6300f8ab7c" class="m-doc">MessageHandler_<wbr />t</a> pFunction,
+              <span class="m-doc-wrap-bumper">void App::<wbr />cMessageManager::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ad4802fa361ca81ce879f6ee57a78e08e" class="m-doc-self">AddHandler</a>(</span><span class="m-doc-wrap"><a href="class_app_1_1_i_message_manager.html#a23f3c448b7d6b5b9acc15c6300f8ab7c" class="m-doc">IMessageManager::<wbr />MessageHandler_t</a> pFunction,
               void* pObject,
               uint32_t messageID,
               bool bRefCounted,
@@ -390,9 +390,9 @@
             </table>
 <p>Optionally, a priority can be specified; if so, only if the listener with that priority will be removed.</p>
           </div></section>
-          <section class="m-doc-details" id="a6fab1b8af9296ce190c1678097dcdae8"><div>
+          <section class="m-doc-details" id="a6fa2b44a8236173daf043aa7c309bb8b"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">bool App::<wbr />cMessageManager::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a6fab1b8af9296ce190c1678097dcdae8" class="m-doc-self">RemoveHandler</a>(</span><span class="m-doc-wrap"><a href="class_app_1_1_i_message_manager.html#a23f3c448b7d6b5b9acc15c6300f8ab7c" class="m-doc">MessageHandler_<wbr />t</a> pFunction,
+              <span class="m-doc-wrap-bumper">bool App::<wbr />cMessageManager::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a6fa2b44a8236173daf043aa7c309bb8b" class="m-doc-self">RemoveHandler</a>(</span><span class="m-doc-wrap"><a href="class_app_1_1_i_message_manager.html#a23f3c448b7d6b5b9acc15c6300f8ab7c" class="m-doc">IMessageManager::<wbr />MessageHandler_t</a> pFunction,
               uint32_t messageID,
               int nPriority) <span class="m-label m-warning">override</span></span></span>
             </h3>
@@ -442,9 +442,9 @@
             </table>
 <p>If kOptionAllowLock is not true, this won&#x27;t do anything.</p>
           </div></section>
-          <section class="m-doc-details" id="aee01d95e23edcd7739295642f9f80c68"><div>
+          <section class="m-doc-details" id="abad068d3c3e7cabb5b2c1d0c0eb8e62a"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">void App::<wbr />cMessageManager::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#aee01d95e23edcd7739295642f9f80c68" class="m-doc-self">AddEntry</a>(</span><span class="m-doc-wrap">const <a href="struct_app_1_1_i_message_manager_1_1_entry.html" class="m-doc">Entry</a>&amp; entry,
+              <span class="m-doc-wrap-bumper">void App::<wbr />cMessageManager::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#abad068d3c3e7cabb5b2c1d0c0eb8e62a" class="m-doc-self">AddEntry</a>(</span><span class="m-doc-wrap">const <a href="struct_app_1_1_i_message_manager_1_1_entry.html" class="m-doc">IMessageManager::<wbr />Entry</a>&amp; entry,
               uint32_t messageID) <span class="m-label m-warning">override</span></span></span>
             </h3>
             <p>Adds the entry to listen to the given message ID.</p>

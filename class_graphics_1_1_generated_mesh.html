@@ -76,9 +76,10 @@
         <section id="typeless-methods">
           <h2><a href="#typeless-methods">Constructors, destructors, conversion operators</a></h2>
           <dl class="m-doc">
-            <dt id="abe7e4d07da2ee9710dddf7c75dde02d2">
-              <span class="m-doc-wrap-bumper"><a href="#abe7e4d07da2ee9710dddf7c75dde02d2" class="m-doc-self">GeneratedMesh</a>(</span><span class="m-doc-wrap">int numVertices = 0,
-              int numTriangles = 0)</span>
+            <dt id="a121fcccbb621c12c53a6d1bb5aef42a1">
+              <span class="m-doc-wrap-bumper"><a href="#a121fcccbb621c12c53a6d1bb5aef42a1" class="m-doc-self">GeneratedMesh</a>(</span><span class="m-doc-wrap">int numVertices = 0,
+              int numTriangles = 0,
+              D3DPRIMITIVETYPE primitiveType = D3DPRIMITIVETYPE::D3DPT_TRIANGLELIST)</span>
             </dt>
             <dd><span></span></dd>
             <dt id="a696ea29e4d66ab7a04da0f1f8b87b4a8">
@@ -115,6 +116,10 @@
               <span class="m-doc-wrap-bumper">auto <a href="#aff46f3f9f3ba9ce7ec09fc19431d99ef" class="m-doc">GetVertex</a>(</span><span class="m-doc-wrap">int index) const -&gt; Vertex</span>
             </dt>
             <dd>Returns the vertex data of the vertex at the specified index.</dd>
+            <dt id="a774200fcc11de7d0e9a2ea9d9c12851f">
+              <span class="m-doc-wrap-bumper">auto <a href="#a774200fcc11de7d0e9a2ea9d9c12851f" class="m-doc-self">ModifyVertex</a>(</span><span class="m-doc-wrap">int index) -&gt; Vertex&amp;</span>
+            </dt>
+            <dd><span></span></dd>
             <dt>
               <span class="m-doc-wrap-bumper">void <a href="#a1a9dd533f5cf41afcf5801e4f0f94e2e" class="m-doc">SetTriangle</a>(</span><span class="m-doc-wrap">int tindex,
               int i,
@@ -158,6 +163,10 @@
               int&amp; minVertex) const</span>
             </dt>
             <dd>Gets the information about a material assigned to this mesh.</dd>
+            <dt id="a1a5b66521eaa95e3ea9fd62ffab1f06d">
+              <span class="m-doc-wrap-bumper">auto <a href="#a1a5b66521eaa95e3ea9fd62ffab1f06d" class="m-doc-self">GetMaterial</a>(</span><span class="m-doc-wrap">int index) const -&gt; <a href="class_graphics_1_1_material.html" class="m-doc">Material</a>*</span>
+            </dt>
+            <dd><span></span></dd>
             <dt>
               <span class="m-doc-wrap-bumper">void <a href="#aa5a34b899046a6e22e97c454ee481a05" class="m-doc">SetTexture</a>(</span><span class="m-doc-wrap">int materialIndex,
               int samplerIndex,

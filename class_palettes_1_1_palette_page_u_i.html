@@ -119,9 +119,9 @@
         <section id="pub-methods">
           <h2><a href="#pub-methods">Public functions</a></h2>
           <dl class="m-doc">
-            <dt id="acf7bc008a94388de371b6fe9a72aa484">
-              <span class="m-doc-wrap-bumper">void <a href="#acf7bc008a94388de371b6fe9a72aa484" class="m-doc-self">Load</a>(</span><span class="m-doc-wrap"><a href="class_palettes_1_1_palette_page.html" class="m-doc">PalettePage</a>* pPage,
-              <a href="class_u_t_f_win_1_1_i_window.html" class="m-doc">IWindow</a>* pWindow,
+            <dt id="a0651294ac2c2cf35bbcba540f01d860e">
+              <span class="m-doc-wrap-bumper">void <a href="#a0651294ac2c2cf35bbcba540f01d860e" class="m-doc-self">Load</a>(</span><span class="m-doc-wrap"><a href="class_palettes_1_1_palette_page.html" class="m-doc">PalettePage</a>* pPage,
+              <a href="class_u_t_f_win_1_1_i_window.html" class="m-doc">UTFWin::<wbr />IWindow</a>* pWindow,
               <a href="class_palettes_1_1_palette_info.html" class="m-doc">PaletteInfo</a>* pInfo,
               size_t nIndex,
               bool)</span>
@@ -148,8 +148,8 @@
             </dt>
             <dd>Gets the flags that represent which type of messages this IWinProc can handle.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#a27ada852e0d47192ebb1476b6062d9af" class="m-doc">HandleUIMessage</a>(</span><span class="m-doc-wrap"><a href="class_u_t_f_win_1_1_i_window.html" class="m-doc">IWindow</a>* pWindow,
-              const <a href="class_u_t_f_win_1_1_message.html" class="m-doc">Message</a>&amp; message) -&gt; bool <span class="m-label m-flat m-warning">override</span></span>
+              <span class="m-doc-wrap-bumper">auto <a href="#ade81eba94290a3e8ab961bbc5f928ffa" class="m-doc">HandleUIMessage</a>(</span><span class="m-doc-wrap"><a href="class_u_t_f_win_1_1_i_window.html" class="m-doc">UTFWin::<wbr />IWindow</a>* pWindow,
+              const <a href="class_u_t_f_win_1_1_message.html" class="m-doc">UTFWin::<wbr />Message</a>&amp; message) -&gt; bool <span class="m-label m-flat m-warning">override</span></span>
             </dt>
             <dd>Method called every time a message is received on a window that has this IWinProc added.</dd>
           </dl>
@@ -157,12 +157,12 @@
         <section id="pub-attribs">
           <h2><a href="#pub-attribs">Public variables</a></h2>
           <dl class="m-doc">
-            <dt id="a26da336aa230018af3850eafe9886a4c">
-              intrusive_ptr&lt;<a href="class_u_t_f_win_1_1_u_i_layout.html" class="m-doc">UILayout</a>&gt; <a href="#a26da336aa230018af3850eafe9886a4c" class="m-doc-self">mpLayout</a>
+            <dt id="ab695e513ce39d07ac724dc4b56d374a6">
+              <a href="_u_i_layout_8h.html#aca5b38a6789bbf1eda0157d721e679d2" class="m-doc">UILayoutPtr</a> <a href="#ab695e513ce39d07ac724dc4b56d374a6" class="m-doc-self">mpLayout</a>
             </dt>
             <dd>The layout of the palette page, loaded using the ID in <a href="class_palettes_1_1_palette_page.html#af27698b0251e42719ea6262215b06beb" class="m-doc">Palettes::<wbr />PalettePage::<wbr />mLayoutID</a>.</dd>
             <dt>
-              <a href="class_u_t_f_win_1_1_i_window.html" class="m-doc">IWindow</a>* <a href="#a2f49fa94b73880ce8a71494e6b58eadb" class="m-doc">mpItemsPanel</a>
+              <a href="class_u_t_f_win_1_1_i_window.html" class="m-doc">UTFWin::<wbr />IWindow</a>* <a href="#addf190ecff6a7d164ef51d70d6c9c07f" class="m-doc">mpItemsPanel</a>
             </dt>
             <dd>The panel that will contain the items.</dd>
             <dt id="ac1f19051c7c9c31b2e935954694d41ac">
@@ -223,10 +223,10 @@
             <p>Gets the flags that represent which type of messages this IWinProc can handle.</p>
 <p>This allows for better performance, since generally a procedure only needs to listen specific events. The flags are in the kEventFlag... values.</p>
           </div></section>
-          <section class="m-doc-details" id="a27ada852e0d47192ebb1476b6062d9af"><div>
+          <section class="m-doc-details" id="ade81eba94290a3e8ab961bbc5f928ffa"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">bool Palettes::<wbr />PalettePageUI::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a27ada852e0d47192ebb1476b6062d9af" class="m-doc-self">HandleUIMessage</a>(</span><span class="m-doc-wrap"><a href="class_u_t_f_win_1_1_i_window.html" class="m-doc">IWindow</a>* pWindow,
-              const <a href="class_u_t_f_win_1_1_message.html" class="m-doc">Message</a>&amp; message) <span class="m-label m-warning">override</span></span></span>
+              <span class="m-doc-wrap-bumper">bool Palettes::<wbr />PalettePageUI::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ade81eba94290a3e8ab961bbc5f928ffa" class="m-doc-self">HandleUIMessage</a>(</span><span class="m-doc-wrap"><a href="class_u_t_f_win_1_1_i_window.html" class="m-doc">UTFWin::<wbr />IWindow</a>* pWindow,
+              const <a href="class_u_t_f_win_1_1_message.html" class="m-doc">UTFWin::<wbr />Message</a>&amp; message) <span class="m-label m-warning">override</span></span></span>
             </h3>
             <p>Method called every time a message is received on a window that has this IWinProc added.</p>
             <table class="m-table m-fullwidth m-flat">
@@ -255,9 +255,9 @@
         </section>
         <section>
           <h2>Variable documentation</h2>
-          <section class="m-doc-details" id="a2f49fa94b73880ce8a71494e6b58eadb"><div>
+          <section class="m-doc-details" id="addf190ecff6a7d164ef51d70d6c9c07f"><div>
             <h3>
-              <a href="class_u_t_f_win_1_1_i_window.html" class="m-doc">IWindow</a>* Palettes::<wbr />PalettePageUI::<wbr /><a href="#a2f49fa94b73880ce8a71494e6b58eadb" class="m-doc-self">mpItemsPanel</a>
+              <a href="class_u_t_f_win_1_1_i_window.html" class="m-doc">UTFWin::<wbr />IWindow</a>* Palettes::<wbr />PalettePageUI::<wbr /><a href="#addf190ecff6a7d164ef51d70d6c9c07f" class="m-doc-self">mpItemsPanel</a>
             </h3>
             <p>The panel that will contain the items.</p>
 <p>It corresponds to the Palettes::PaletteCategoryUI::ControlIDs::kControlItemsPanel window.</p>

@@ -128,9 +128,9 @@
         <section id="pub-methods">
           <h2><a href="#pub-methods">Public functions</a></h2>
           <dl class="m-doc">
-            <dt id="ae6aa201082278fbb3bceea31f50d2f84">
-              <span class="m-doc-wrap-bumper">void <a href="#ae6aa201082278fbb3bceea31f50d2f84" class="m-doc-self">Load</a>(</span><span class="m-doc-wrap"><a href="class_palettes_1_1_palette_category.html" class="m-doc">PaletteCategory</a>* pCategory,
-              <a href="class_u_t_f_win_1_1_i_window.html" class="m-doc">IWindow</a>* pWindow,
+            <dt id="a86f29981f84421e4b0fef9886e0ad539">
+              <span class="m-doc-wrap-bumper">void <a href="#a86f29981f84421e4b0fef9886e0ad539" class="m-doc-self">Load</a>(</span><span class="m-doc-wrap"><a href="class_palettes_1_1_palette_category.html" class="m-doc">PaletteCategory</a>* pCategory,
+              <a href="class_u_t_f_win_1_1_i_window.html" class="m-doc">UTFWin::<wbr />IWindow</a>* pWindow,
               <a href="class_palettes_1_1_palette_info.html" class="m-doc">PaletteInfo</a>* pInfo)</span>
             </dt>
             <dd><span></span></dd>
@@ -173,8 +173,8 @@
             </dt>
             <dd>Gets the flags that represent which type of messages this IWinProc can handle.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#a36b8ea92d93298dfa2e1a2ef5bb07658" class="m-doc">HandleUIMessage</a>(</span><span class="m-doc-wrap"><a href="class_u_t_f_win_1_1_i_window.html" class="m-doc">IWindow</a>* pWindow,
-              const <a href="class_u_t_f_win_1_1_message.html" class="m-doc">Message</a>&amp; message) -&gt; bool <span class="m-label m-flat m-warning">override</span></span>
+              <span class="m-doc-wrap-bumper">auto <a href="#a1513ca822fb3e8f1c544fc3cfa7a7126" class="m-doc">HandleUIMessage</a>(</span><span class="m-doc-wrap"><a href="class_u_t_f_win_1_1_i_window.html" class="m-doc">UTFWin::<wbr />IWindow</a>* pWindow,
+              const <a href="class_u_t_f_win_1_1_message.html" class="m-doc">UTFWin::<wbr />Message</a>&amp; message) -&gt; bool <span class="m-label m-flat m-warning">override</span></span>
             </dt>
             <dd>Method called every time a message is received on a window that has this IWinProc added.</dd>
           </dl>
@@ -182,8 +182,8 @@
         <section id="pub-attribs">
           <h2><a href="#pub-attribs">Public variables</a></h2>
           <dl class="m-doc">
-            <dt id="ad47ceb9e2eaa0950d7c5e6f19bedaf7e">
-              intrusive_ptr&lt;<a href="class_u_t_f_win_1_1_u_i_layout.html" class="m-doc">UILayout</a>&gt; <a href="#ad47ceb9e2eaa0950d7c5e6f19bedaf7e" class="m-doc-self">mpLayout</a>
+            <dt id="a079f2479de47603df1ed32263ab8571b">
+              <a href="_u_i_layout_8h.html#aca5b38a6789bbf1eda0157d721e679d2" class="m-doc">UILayoutPtr</a> <a href="#a079f2479de47603df1ed32263ab8571b" class="m-doc-self">mpLayout</a>
             </dt>
             <dd>The layout of the palette category, loaded using the ID in <a href="class_palettes_1_1_palette_category.html#ad425a4533d7360e6e921891b5c20e41f" class="m-doc">Palettes::<wbr />PaletteCategory::<wbr />mLayoutID</a>.</dd>
             <dt id="a8e4fea16e93cb81c4a5f248866a26856">
@@ -191,27 +191,27 @@
             </dt>
             <dd><span></span></dd>
             <dt>
-              intrusive_ptr&lt;<a href="class_u_t_f_win_1_1_i_window.html" class="m-doc">IWindow</a>&gt; <a href="#aff4e3db34d1d41517403dd6277478a04" class="m-doc">mpMainFrame</a>
+              <a href="_i_window_8h.html#a8a007ed4a799cf73a9ba71b157f9d051" class="m-doc">IWindowPtr</a> <a href="#afb4106d43ecd70f23c4fd0bfd6a9a2b1" class="m-doc">mpMainFrame</a>
             </dt>
             <dd>The window that contains most important windows.</dd>
             <dt>
-              intrusive_ptr&lt;<a href="class_u_t_f_win_1_1_i_window.html" class="m-doc">IWindow</a>&gt; <a href="#adc8b2b24d361fd60e618f99b8f8c1365" class="m-doc">mpArrowsPanel</a>
+              <a href="_i_window_8h.html#a8a007ed4a799cf73a9ba71b157f9d051" class="m-doc">IWindowPtr</a> <a href="#aa3caa3236cf389f2f6533d64155cc86f" class="m-doc">mpArrowsPanel</a>
             </dt>
             <dd>The panel that will contain the page number and the arrow buttons to switch pages.</dd>
             <dt>
-              intrusive_ptr&lt;<a href="class_u_t_f_win_1_1_i_window.html" class="m-doc">IWindow</a>&gt; <a href="#a354e237861d4578ddded56fc840e348b" class="m-doc">mpDLCPanel</a>
+              <a href="_i_window_8h.html#a8a007ed4a799cf73a9ba71b157f9d051" class="m-doc">IWindowPtr</a> <a href="#a12855e7daa62323a68d4fd083f0c8ed9" class="m-doc">mpDLCPanel</a>
             </dt>
             <dd>The panel that will contain the buttons for the DLC groups.</dd>
             <dt>
-              intrusive_ptr&lt;<a href="class_u_t_f_win_1_1_i_window.html" class="m-doc">IWindow</a>&gt; <a href="#aa72cb98e763a20807fc6043ba23c9d3b" class="m-doc">mpColorPickersPanel</a>
+              <a href="_i_window_8h.html#a8a007ed4a799cf73a9ba71b157f9d051" class="m-doc">IWindowPtr</a> <a href="#a516139e5e8e2b50484811d717b1491c4" class="m-doc">mpColorPickersPanel</a>
             </dt>
             <dd>The window that contains the panels that will contain the color picker UI(s).</dd>
             <dt>
-              intrusive_ptr&lt;<a href="class_u_t_f_win_1_1_i_window.html" class="m-doc">IWindow</a>&gt; <a href="#af11aee84010b08095ff5c46f3456001f" class="m-doc">mpPagePanel</a>
+              <a href="_i_window_8h.html#a8a007ed4a799cf73a9ba71b157f9d051" class="m-doc">IWindowPtr</a> <a href="#aa742f040fac38467788c1ab3400a3fb9" class="m-doc">mpPagePanel</a>
             </dt>
             <dd>The panel that will contain the current page itself.</dd>
             <dt>
-              intrusive_ptr&lt;<a href="class_u_t_f_win_1_1_i_window.html" class="m-doc">IWindow</a>&gt; <a href="#a298ae88462f059575bf2729eff2a288f" class="m-doc">mpPageFrame</a>
+              <a href="_i_window_8h.html#a8a007ed4a799cf73a9ba71b157f9d051" class="m-doc">IWindowPtr</a> <a href="#a6f8b2aa618d4e42618fa00ab2cd0ee4d" class="m-doc">mpPageFrame</a>
             </dt>
             <dd>The window that contains all panels related with pages.</dd>
             <dt>
@@ -442,10 +442,10 @@
             <p>Gets the flags that represent which type of messages this IWinProc can handle.</p>
 <p>This allows for better performance, since generally a procedure only needs to listen specific events. The flags are in the kEventFlag... values.</p>
           </div></section>
-          <section class="m-doc-details" id="a36b8ea92d93298dfa2e1a2ef5bb07658"><div>
+          <section class="m-doc-details" id="a1513ca822fb3e8f1c544fc3cfa7a7126"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">bool Palettes::<wbr />PaletteCategoryUI::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a36b8ea92d93298dfa2e1a2ef5bb07658" class="m-doc-self">HandleUIMessage</a>(</span><span class="m-doc-wrap"><a href="class_u_t_f_win_1_1_i_window.html" class="m-doc">IWindow</a>* pWindow,
-              const <a href="class_u_t_f_win_1_1_message.html" class="m-doc">Message</a>&amp; message) <span class="m-label m-warning">override</span></span></span>
+              <span class="m-doc-wrap-bumper">bool Palettes::<wbr />PaletteCategoryUI::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a1513ca822fb3e8f1c544fc3cfa7a7126" class="m-doc-self">HandleUIMessage</a>(</span><span class="m-doc-wrap"><a href="class_u_t_f_win_1_1_i_window.html" class="m-doc">UTFWin::<wbr />IWindow</a>* pWindow,
+              const <a href="class_u_t_f_win_1_1_message.html" class="m-doc">UTFWin::<wbr />Message</a>&amp; message) <span class="m-label m-warning">override</span></span></span>
             </h3>
             <p>Method called every time a message is received on a window that has this IWinProc added.</p>
             <table class="m-table m-fullwidth m-flat">
@@ -474,44 +474,44 @@
         </section>
         <section>
           <h2>Variable documentation</h2>
-          <section class="m-doc-details" id="aff4e3db34d1d41517403dd6277478a04"><div>
+          <section class="m-doc-details" id="afb4106d43ecd70f23c4fd0bfd6a9a2b1"><div>
             <h3>
-              intrusive_ptr&lt;<a href="class_u_t_f_win_1_1_i_window.html" class="m-doc">IWindow</a>&gt; Palettes::<wbr />PaletteCategoryUI::<wbr /><a href="#aff4e3db34d1d41517403dd6277478a04" class="m-doc-self">mpMainFrame</a>
+              <a href="_i_window_8h.html#a8a007ed4a799cf73a9ba71b157f9d051" class="m-doc">IWindowPtr</a> Palettes::<wbr />PaletteCategoryUI::<wbr /><a href="#afb4106d43ecd70f23c4fd0bfd6a9a2b1" class="m-doc-self">mpMainFrame</a>
             </h3>
             <p>The window that contains most important windows.</p>
 <p>It corresponds to the Palettes::PaletteCategoryUI::ControlIDs::kControlMainFrame window.</p>
           </div></section>
-          <section class="m-doc-details" id="adc8b2b24d361fd60e618f99b8f8c1365"><div>
+          <section class="m-doc-details" id="aa3caa3236cf389f2f6533d64155cc86f"><div>
             <h3>
-              intrusive_ptr&lt;<a href="class_u_t_f_win_1_1_i_window.html" class="m-doc">IWindow</a>&gt; Palettes::<wbr />PaletteCategoryUI::<wbr /><a href="#adc8b2b24d361fd60e618f99b8f8c1365" class="m-doc-self">mpArrowsPanel</a>
+              <a href="_i_window_8h.html#a8a007ed4a799cf73a9ba71b157f9d051" class="m-doc">IWindowPtr</a> Palettes::<wbr />PaletteCategoryUI::<wbr /><a href="#aa3caa3236cf389f2f6533d64155cc86f" class="m-doc-self">mpArrowsPanel</a>
             </h3>
             <p>The panel that will contain the page number and the arrow buttons to switch pages.</p>
 <p>It corresponds to the Palettes::PaletteCategoryUI::ControlIDs::kControlArrowsPanel window.</p>
           </div></section>
-          <section class="m-doc-details" id="a354e237861d4578ddded56fc840e348b"><div>
+          <section class="m-doc-details" id="a12855e7daa62323a68d4fd083f0c8ed9"><div>
             <h3>
-              intrusive_ptr&lt;<a href="class_u_t_f_win_1_1_i_window.html" class="m-doc">IWindow</a>&gt; Palettes::<wbr />PaletteCategoryUI::<wbr /><a href="#a354e237861d4578ddded56fc840e348b" class="m-doc-self">mpDLCPanel</a>
+              <a href="_i_window_8h.html#a8a007ed4a799cf73a9ba71b157f9d051" class="m-doc">IWindowPtr</a> Palettes::<wbr />PaletteCategoryUI::<wbr /><a href="#a12855e7daa62323a68d4fd083f0c8ed9" class="m-doc-self">mpDLCPanel</a>
             </h3>
             <p>The panel that will contain the buttons for the DLC groups.</p>
 <p>It corresponds to the Palettes::PaletteCategoryUI::ControlIDs::kControlDLCPanel window.</p>
           </div></section>
-          <section class="m-doc-details" id="aa72cb98e763a20807fc6043ba23c9d3b"><div>
+          <section class="m-doc-details" id="a516139e5e8e2b50484811d717b1491c4"><div>
             <h3>
-              intrusive_ptr&lt;<a href="class_u_t_f_win_1_1_i_window.html" class="m-doc">IWindow</a>&gt; Palettes::<wbr />PaletteCategoryUI::<wbr /><a href="#aa72cb98e763a20807fc6043ba23c9d3b" class="m-doc-self">mpColorPickersPanel</a>
+              <a href="_i_window_8h.html#a8a007ed4a799cf73a9ba71b157f9d051" class="m-doc">IWindowPtr</a> Palettes::<wbr />PaletteCategoryUI::<wbr /><a href="#a516139e5e8e2b50484811d717b1491c4" class="m-doc-self">mpColorPickersPanel</a>
             </h3>
             <p>The window that contains the panels that will contain the color picker UI(s).</p>
 <p>It corresponds to the Palettes::PaletteCategoryUI::ControlIDs::kControlColorPickersPanel window.</p>
           </div></section>
-          <section class="m-doc-details" id="af11aee84010b08095ff5c46f3456001f"><div>
+          <section class="m-doc-details" id="aa742f040fac38467788c1ab3400a3fb9"><div>
             <h3>
-              intrusive_ptr&lt;<a href="class_u_t_f_win_1_1_i_window.html" class="m-doc">IWindow</a>&gt; Palettes::<wbr />PaletteCategoryUI::<wbr /><a href="#af11aee84010b08095ff5c46f3456001f" class="m-doc-self">mpPagePanel</a>
+              <a href="_i_window_8h.html#a8a007ed4a799cf73a9ba71b157f9d051" class="m-doc">IWindowPtr</a> Palettes::<wbr />PaletteCategoryUI::<wbr /><a href="#aa742f040fac38467788c1ab3400a3fb9" class="m-doc-self">mpPagePanel</a>
             </h3>
             <p>The panel that will contain the current page itself.</p>
 <p>It corresponds to the Palettes::PaletteCategoryUI::ControlIDs::kControlPagePanel window.</p>
           </div></section>
-          <section class="m-doc-details" id="a298ae88462f059575bf2729eff2a288f"><div>
+          <section class="m-doc-details" id="a6f8b2aa618d4e42618fa00ab2cd0ee4d"><div>
             <h3>
-              intrusive_ptr&lt;<a href="class_u_t_f_win_1_1_i_window.html" class="m-doc">IWindow</a>&gt; Palettes::<wbr />PaletteCategoryUI::<wbr /><a href="#a298ae88462f059575bf2729eff2a288f" class="m-doc-self">mpPageFrame</a>
+              <a href="_i_window_8h.html#a8a007ed4a799cf73a9ba71b157f9d051" class="m-doc">IWindowPtr</a> Palettes::<wbr />PaletteCategoryUI::<wbr /><a href="#a6f8b2aa618d4e42618fa00ab2cd0ee4d" class="m-doc-self">mpPageFrame</a>
             </h3>
             <p>The window that contains all panels related with pages.</p>
 <p>This window contains the mpArrowsPanel, mpDLCPanel and mpPagePanel windows. It corresponds to the Palettes::PaletteCategoryUI::ControlIDs::kControlPageFrame window.</p>
