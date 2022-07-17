@@ -44,6 +44,7 @@
 #include <Spore\Simulator\cSpaceToolData.h>
 #include <Spore\Simulator\cSimulatorSpaceGame.h>
 #include <Spore\Simulator\cSimulatorPlayerUFO.h>
+#include <Spore\Simulator\cMissionManager.h>
 
 #include <Spore\Simulator\SimulatorMessages.h>
 
