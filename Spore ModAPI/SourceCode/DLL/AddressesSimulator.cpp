@@ -41,6 +41,7 @@
 #include <Spore\Simulator\cTurretFlakWeapon.h>
 #include <Spore\Simulator\cVehicle.h>
 #include <Spore\Simulator\cSimPlanetHighLOD.h>
+#include <Spore\Simulator\cMissionManager.h>
 #include <Spore\Simulator\Serialization.h>
 #include <Spore\Simulator\SubSystem\cRelationshipManager.h>
 #include <Spore\Simulator\SubSystem\GameBehaviorManager.h>
@@ -532,6 +533,17 @@ namespace Simulator
 	namespace Addresses(cSimPlanetHighLOD)
 	{
 		DefineAddress(DestroyCity, SelectAddress(0xFFB440, , 0xFFA7B0));
+	}
+
+	namespace Addresses(cMissionManager)
+	{
+		DefineAddress(Get, SelectAddress(0xFEC0C0, , 0xFEB880));
+		DefineAddress(CreateMission, SelectAddress(0xFECC50, , 0xFEC420));
+		DefineAddress(ChooseMission, SelectAddress(0xFEF450, , 0xFEEBC0));
+		DefineAddress(HasMissionsAvailable, SelectAddress(0xFEEAE0, , 0xFEE260));
+		DefineAddress(GetMissionByID, SelectAddress(0xFEEB90, , 0xFEE310));
+		DefineAddress(GetMissionTrackColor, SelectAddress(0xFEC510, , 0xFEBCE0));
+		DefineAddress(ThereIsEventInPlanet, SelectAddress(0xFEE8A0, , 0xFEE020));
 	}
 }
 #endif

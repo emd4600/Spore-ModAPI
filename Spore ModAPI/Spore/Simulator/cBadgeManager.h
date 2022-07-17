@@ -14,6 +14,9 @@ namespace Simulator
 		: public cGonzagoSimulator
 	{
 	public:
+		static const uint32_t TYPE = 0x2CB0EDE;
+
+	public:
 		/// Maps the file ID to the PropertyList, for each badge in space_badges~ (0x2CB089D)
 		/* 10h */	map<uint32_t, PropertyListPtr> mBadges;
 		/* 2Ch */	map<int, int> mBadgeMap;

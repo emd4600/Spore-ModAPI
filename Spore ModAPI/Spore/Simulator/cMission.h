@@ -140,7 +140,7 @@ namespace Simulator
 		/* 78h */	uint32_t mMissionID;
 		/* 7Ch */	unsigned int mElapsedTimeMS;
 		/* 80h */	int mDuration;
-		/* 84h */	int mState;
+		/* 84h */	MissionState mState;
 		/* 88h */	bool mSystemsShutdown;
 		/* 8Ch */	uint32_t mOwnerEmpireID;  // -1
 		/// Owner empire. Use GetOwnerEmpire

@@ -24,6 +24,7 @@
 #include <Spore\Simulator\cGonzagoTimer.h>
 #include <Spore\Simulator\cSimPlanetHighLOD.h>
 #include <Spore\Simulator\cSimulatorPlayerUFO.h>
+#include <Spore\Simulator\cMissionManager.h>
 #include <Spore\App\IMessageListener.h>
 #include <Spore\App\MessageListenerData.h>
 #include <Spore\UI\SpaceGameUI.h>
@@ -84,7 +85,7 @@ namespace Simulator
 		/* 90h */	cGonzagoTimer mTimeSinceStartedSpaceGame;
 		/* B0h */	int field_B0;
 		/* B4h */	cSimulatorPlayerUFOPtr mpPlayerUFO;
-		/* B8h */	int mpMissionManager;  //TODO
+		/* B8h */	cMissionManagerPtr mpMissionManager;
 		/* BCh */	int mpSimulatorWalkAround;  //TODO cSimulatorWalkAround
 		/* C0h */	int mpSimulatorUniverse;  //TODO cSimulatorUniverse
 		/* C4h */	int field_C4;

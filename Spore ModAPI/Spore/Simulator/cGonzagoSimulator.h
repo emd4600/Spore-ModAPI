@@ -30,6 +30,8 @@ namespace Simulator
 		, public ISimulatorSerializable
 	{
 	public:
+		static const uint32_t TYPE = 0x11416B8;
+
 		using Object::Release;
 		using Object::AddRef;
 
