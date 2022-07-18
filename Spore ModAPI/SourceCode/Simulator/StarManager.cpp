@@ -90,6 +90,10 @@ namespace Simulator
 
 	auto_METHOD(cStarManager, cStarRecord*, FindClosestStar, 
 		Args(const Vector3& coords, const StarRequestFilter& filter), Args(coords, filter));
+
+	auto_METHOD_VOID(cStarManager, FindStars,
+		Args(const Vector3& coords, const StarRequestFilter& filter, vector<cStarRecordPtr>& dst),
+		Args(coords, filter, dst));
 }
 
 auto_STATIC_METHOD_VOID(Simulator, SpaceTeleportTo, Args(cStarRecord* star), Args(star));

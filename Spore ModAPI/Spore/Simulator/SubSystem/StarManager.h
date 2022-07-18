@@ -136,6 +136,14 @@ namespace Simulator
 		/// @returns The closest star record that matches the filter.
 		cStarRecord* FindClosestStar(const Vector3& coords, const StarRequestFilter& filter = StarRequestFilter());
 
+		/// Finds all the stars that match the given star filter. This can be used to find all the star systems
+		/// close to a certain position that match some parameters. For example, you can find all the stars
+		/// with empires in a 20 parsec radius, etc.
+		/// @param coords The reference coordinates.
+		/// @param filter A filter that describes which kind of stars are accepted.
+		/// @param dst A vector where all found stars will be added.
+		void FindStars(const Vector3& coords, const StarRequestFilter& filter, vector<cStarRecordPtr>& dst);
+
 	protected:
 		/* 20h */	map<int, int> field_20;
 		/* 3Ch */	vector<int> field_3C;
@@ -210,6 +218,7 @@ namespace Simulator
 		DeclareAddress(GetEmpireForStar);
 		DeclareAddress(RecordToPlanet);
 		DeclareAddress(FindClosestStar);
+		DeclareAddress(FindStars);
 	}
 
 	namespace Addresses(cSpaceTradeRouteManager)

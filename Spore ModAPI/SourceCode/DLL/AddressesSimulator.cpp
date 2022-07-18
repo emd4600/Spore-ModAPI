@@ -450,6 +450,7 @@ namespace Simulator
 		DefineAddress(GetEmpireForStar, SelectAddress(0xBB0230, NO_ADDRESS, 0xBB14D0));
 		DefineAddress(RecordToPlanet, SelectAddress(0xBB4960, NO_ADDRESS, 0xBB5B50));
 		DefineAddress(FindClosestStar, SelectAddress(0xBAFD80, , 0xBB1020));
+		DefineAddress(FindStars, SelectAddress(0xBAFF70, , 0xBB1210));
 	}
 
 	namespace Addresses(cSpaceTradeRouteManager)
