@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Spore/Simulator/SubSystem/GameNounManager.h file | Spore ModAPI SDK for creating C++ mods for Spore</title>
+  <title>Simulator::cGameTimeManager::PauseType struct | Spore ModAPI SDK for creating C++ mods for Spore</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,600,600i%7CSource+Code+Pro:400,400i,600" />
   <link rel="stylesheet" href="m-dark.css" />
   <link rel="stylesheet" href="m-documentation.css" />
@@ -45,7 +45,8 @@
     <div class="m-row">
       <div class="m-col-l-10 m-push-l-1">
         <h1>
-          <span class="m-breadcrumb"><a href="dir_c27950c697e5dfd98eb6c6418519a737.html">Spore</a>/</span><span class="m-breadcrumb"><a href="dir_0c2ed0f1c41a4f73f627d8cb2bd71031.html">Simulator</a>/</span><span class="m-breadcrumb"><a href="dir_9553b69fad63594d27310f471c8cd21b.html">SubSystem</a>/</span>GameNounManager.h <span class="m-thin">file</span>
+          <span class="m-breadcrumb"><a href="namespace_simulator.html">Simulator</a>::<wbr/></span><span class="m-breadcrumb"><a href="class_simulator_1_1c_game_time_manager.html">cGameTimeManager</a>::<wbr/></span>PauseType <span class="m-thin">struct</span>
+          <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_game_time_manager_8h.html">&lt;Spore/Simulator/SubSystem/GameTimeManager.h&gt;</a></div>
         </h1>
         <p><span></span></p>
         <div class="m-block m-default">
@@ -54,47 +55,22 @@
             <li>
               Reference
               <ul>
-                <li><a href="#namespaces">Namespaces</a></li>
-                <li><a href="#nested-classes">Classes</a></li>
-                <li><a href="#func-members">Functions</a></li>
-                <li><a href="#define-members">Defines</a></li>
+                <li><a href="#pub-attribs">Public variables</a></li>
               </ul>
             </li>
           </ul>
         </div>
-        <section id="namespaces">
-          <h2><a href="#namespaces">Namespaces</a></h2>
+        <section id="pub-attribs">
+          <h2><a href="#pub-attribs">Public variables</a></h2>
           <dl class="m-doc">
-            <dt>namespace <a href="namespace_simulator.html" class="m-doc">Simulator</a></dt>
-            <dd><span></span></dd>
-          </dl>
-        </section>
-        <section id="nested-classes">
-          <h2><a href="#nested-classes">Classes</a></h2>
-          <dl class="m-doc">
-            <dt>
-              class <a href="class_simulator_1_1c_game_noun_manager.html" class="m-doc">Simulator::cGameNounManager</a>
+            <dt id="a42e96f77e31f3c902c5f889a99167804">
+              int <a href="#a42e96f77e31f3c902c5f889a99167804" class="m-doc-self">counter</a>
             </dt>
-            <dd>The class that manages game objects, known in Spore code as &#x27;nouns&#x27;.</dd>
-          </dl>
-        </section>
-        <section id="func-members">
-          <h2><a href="#func-members">Functions</a></h2>
-          <dl class="m-doc">
-            <dt id="a89de4d194e5897b2ff6c128b3599448c">
-              <div class="m-doc-template">template&lt;class T&gt;</div>
-              <span class="m-doc-wrap-bumper">auto <a href="#a89de4d194e5897b2ff6c128b3599448c" class="m-doc-self">simulator_new</a>(</span><span class="m-doc-wrap">) -&gt; T*</span>
+            <dd>A counter of Pauses/Resumes, increases one when paused, decreases one when resumed; is considered paused if greater than 0.</dd>
+            <dt id="a624a09afb92191d56aad93de64c6047e">
+              int <a href="#a624a09afb92191d56aad93de64c6047e" class="m-doc-self">flags</a>
             </dt>
-            <dd><span></span></dd>
-          </dl>
-        </section>
-        <section id="define-members">
-          <h2><a href="#define-members">Defines</a></h2>
-          <dl class="m-doc">
-            <dt id="a1aa5349549f602c5e3c5723603949e8b">
-              <span class="m-doc-wrap-bumper">#define <a href="#a1aa5349549f602c5e3c5723603949e8b" class="m-doc-self">GameNounManager</a></span>
-            </dt>
-            <dd>Access the active <a href="namespace_simulator.html" class="m-doc">Simulator</a> game noun manager.</dd>
+            <dd>A combination of PauseFlags.</dd>
           </dl>
         </section>
       </div>

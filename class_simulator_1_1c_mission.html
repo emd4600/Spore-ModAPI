@@ -188,8 +188,8 @@
               <span class="m-doc-wrap-bumper">auto <a href="#a3423c042cea017407c695742a814e614" class="m-doc-self">GetTravelDistance</a>(</span><span class="m-doc-wrap">) -&gt; float <span class="m-label m-flat m-warning">virtual</span></span>
             </dt>
             <dd>Returns how much distance to travel from the source planet to the target planet and back.</dd>
-            <dt id="ae6ef6961795460a3e1ec01ff7087594f">
-              <span class="m-doc-wrap-bumper">auto <a href="#ae6ef6961795460a3e1ec01ff7087594f" class="m-doc-self">IsTargetPlanet</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_planet_record.html" class="m-doc">cPlanetRecord</a>* pPlanetRecord) -&gt; bool <span class="m-label m-flat m-warning">virtual</span></span>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#ae6ef6961795460a3e1ec01ff7087594f" class="m-doc">IsTargetPlanet</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_planet_record.html" class="m-doc">cPlanetRecord</a>* pPlanetRecord) -&gt; bool <span class="m-label m-flat m-warning">virtual</span></span>
             </dt>
             <dd>Returns true if the given planet is the target planet of the mission, or false otherwise.</dd>
             <dt id="a48ea7415b21399c9193a997b10599518">
@@ -244,6 +244,10 @@
             <dd><span></span></dd>
             <dt id="a3e9b8f211564c158b162eeb375c9ccfc">
               <span class="m-doc-wrap-bumper">auto <a href="#a3e9b8f211564c158b162eeb375c9ccfc" class="m-doc-self">func128h</a>(</span><span class="m-doc-wrap">) -&gt; bool <span class="m-label m-flat m-warning">virtual</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a7f492bf3984c447bf8abb78dedfd10d5">
+              <span class="m-doc-wrap-bumper">auto <a href="#a7f492bf3984c447bf8abb78dedfd10d5" class="m-doc-self">func12Ch</a>(</span><span class="m-doc-wrap">) -&gt; bool <span class="m-label m-flat m-warning">virtual</span></span>
             </dt>
             <dd><span></span></dd>
           </dl>
@@ -323,8 +327,8 @@
               vector&lt;int&gt; <a href="#a4364c9103cbb5094c43804f3bc111df4" class="m-doc-self">field_CC</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="a8baa667d90cd802ed80d54e152c27af0">
-              vector&lt;<a href="_object_8h.html#a364c2967a9338c07ddc9a3d507389b5d" class="m-doc">ObjectPtr</a>&gt; <a href="#a8baa667d90cd802ed80d54e152c27af0" class="m-doc-self">field_E0</a>
+            <dt id="a781bb2dbcf5237045127b57a1317ebcc">
+              vector&lt;<a href="c_star_record_8h.html#a45bf5963088a11c31f2b96f32be43662" class="m-doc">cStarRecordPtr</a>&gt; <a href="#a781bb2dbcf5237045127b57a1317ebcc" class="m-doc-self">field_E0</a>
             </dt>
             <dd><span></span></dd>
             <dt id="a181c5d28ac6411bf4479b0d089f31074">
@@ -458,6 +462,23 @@
             </h3>
             <p>Returns the ID of a <code>.cnv</code> conversation file used for the mission.</p>
 <p>If the mission has a parent, it will return the conversation of the parent.</p>
+          </div></section>
+          <section class="m-doc-details" id="ae6ef6961795460a3e1ec01ff7087594f"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">bool Simulator::<wbr />cMission::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ae6ef6961795460a3e1ec01ff7087594f" class="m-doc-self">IsTargetPlanet</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_planet_record.html" class="m-doc">cPlanetRecord</a>* pPlanetRecord) <span class="m-label m-warning">virtual</span></span></span>
+            </h3>
+            <p>Returns true if the given planet is the target planet of the mission, or false otherwise.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">pPlanetRecord</td>
+                  <td></td>
+                </tr>
+              </tbody>
+            </table>
           </div></section>
           <section class="m-doc-details" id="a4c081edfe1872f6f901bc5490f57035e"><div>
             <h3>

@@ -274,7 +274,7 @@
             <dt>
               class <a href="class_simulator_1_1c_game_noun_manager.html" class="m-doc">cGameNounManager</a>
             </dt>
-            <dd><span></span></dd>
+            <dd>The class that manages game objects, known in Spore code as &#x27;nouns&#x27;.</dd>
             <dt>
               class <a href="class_simulator_1_1c_gameplay_marker.html" class="m-doc">cGameplayMarker</a>
             </dt>
@@ -283,6 +283,10 @@
               class <a href="class_simulator_1_1c_game_terrain_cursor.html" class="m-doc">cGameTerrainCursor</a>
             </dt>
             <dd><span></span></dd>
+            <dt>
+              class <a href="class_simulator_1_1c_game_time_manager.html" class="m-doc">cGameTimeManager</a>
+            </dt>
+            <dd>This class controls game time speed and pauses.</dd>
             <dt>
               class <a href="class_simulator_1_1c_game_view_manager.html" class="m-doc">cGameViewManager</a>
             </dt>
@@ -579,6 +583,10 @@
               class <a href="class_simulator_1_1c_terraforming_manager.html" class="m-doc">cTerraformingManager</a>
             </dt>
             <dd><span></span></dd>
+            <dt>
+              class <a href="class_simulator_1_1c_time_of_day.html" class="m-doc">cTimeOfDay</a>
+            </dt>
+            <dd>Class used to manage day duration and current time of day in planets.</dd>
             <dt>
               class <a href="class_simulator_1_1c_toggle_tool_strategy.html" class="m-doc">cToggleToolStrategy</a>
             </dt>
@@ -1030,6 +1038,19 @@
             </dt>
             <dd><span></span></dd>
             <dt>
+              <span class="m-doc-wrap-bumper">enum class <a href="#a47f6e1218df34ba12db8ee6946791524" class="m-doc">TimeManagerPause</a> { </span><span class="m-doc-wrap"><a href="#a47f6e1218df34ba12db8ee6946791524adb8abbeda4df662c3ca505163d2d2770" class="m-doc">CinematicAll</a> = 0x600C4AE,
+              <a href="#a47f6e1218df34ba12db8ee6946791524a8fce77fd86da3af309c0ad415d8d7952" class="m-doc">Cinematic</a> = 0x4BF38A5,
+              <a href="#a47f6e1218df34ba12db8ee6946791524a368fe771261fcb18f7988833c9294a20" class="m-doc">Tutorial</a> = 0x64BEB65,
+              <a href="#a47f6e1218df34ba12db8ee6946791524a344a7f427fb765610ef96eb7bce95257" class="m-doc">Editor</a> = 0x4BF38A6,
+              <a href="#a47f6e1218df34ba12db8ee6946791524a93f4f96d7a09885a12208cba1386fc11" class="m-doc">CommScreen</a> = 0x4D02E35,
+              <a href="#a47f6e1218df34ba12db8ee6946791524a98446fa38cb1ae7d8c94c346f628dd94" class="m-doc">AdventureDialog</a> = 0x7E9E4B7,
+              <a href="#a47f6e1218df34ba12db8ee6946791524aab9cb8aba5e36e02a72894e443ab0d65" class="m-doc">UserToggle</a> = 0x4BF38A8,
+              <a href="#a47f6e1218df34ba12db8ee6946791524a6288740a1cd0de37312619df3b6ddcf3" class="m-doc">Gameplay</a> = 0x4BF38A7,
+              <a href="#a47f6e1218df34ba12db8ee6946791524a1699ca13f05b84ceb986f896f81b03b0" class="m-doc">UIToggle</a> = 0x4BF38A4,
+              <a href="#a47f6e1218df34ba12db8ee6946791524aeabe3db9a9d8e5a9f7417e371e96d298" class="m-doc">ModalDialog</a> = 0x4BF38A9 }</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
               <span class="m-doc-wrap-bumper">enum <a href="#a3e7ff8b0741f9ad7a7a142faea410106" class="m-doc">SpaceContext</a> { </span><span class="m-doc-wrap"><a href="#a3e7ff8b0741f9ad7a7a142faea410106a7a0668be3ddeff3d78cffca8515bb67a" class="m-doc">kSpaceContextNone</a> = -1,
               <a href="#a3e7ff8b0741f9ad7a7a142faea410106a9857c961b7740cd1353450f398189313" class="m-doc">kSpaceContextPlanet</a> = 0,
               <a href="#a3e7ff8b0741f9ad7a7a142faea410106a0a7f7c87a2682203d749f12dcc5f8c14" class="m-doc">kSpaceContextSolarSystem</a> = 1,
@@ -1360,6 +1381,15 @@
             </dt>
             <dd><span></span></dd>
             <dt>
+              <span class="m-doc-wrap-bumper"><a href="#a87ebcd6086f4828b2ffa9ea5da453a84" class="m-doc">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_time_of_day.html" class="m-doc">cTimeOfDay</a>,
+              0x28)</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a003c3b7539f8eb0a1b0fc1599a90cd89" class="m-doc">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_time_of_day.html" class="m-doc">cTimeOfDay</a>) -&gt; namespace</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
               <span class="m-doc-wrap-bumper">auto <a href="#abddacf313e12ba64ae7c21f676f83e03" class="m-doc">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_tool_strategy.html" class="m-doc">cToolStrategy</a>) -&gt; namespace</span>
             </dt>
             <dd><span></span></dd>
@@ -1500,6 +1530,15 @@
               <span class="m-doc-wrap-bumper">auto <a href="#a5a8c0f9c3b8047e49a61d2efb202d985" class="m-doc">GetDataByCast</a>(</span><span class="m-doc-wrap">) -&gt; <a href="class_simulator_1_1t_game_data_vector_t.html" class="m-doc">tGameDataVectorT</a>&lt;T&gt;&amp;</span>
             </dt>
             <dd>Gets all the game data objects that can be casted to the specified type.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper"><a href="#a94cf8715a5191f0c1d06864c7d32147d" class="m-doc">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_game_time_manager.html" class="m-doc">cGameTimeManager</a>,
+              0x80)</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#ae203c065349c997e87667e53c43b2c14" class="m-doc">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_game_time_manager.html" class="m-doc">cGameTimeManager</a>) -&gt; namespace</span>
+            </dt>
+            <dd><span></span></dd>
             <dt>
               <span class="m-doc-wrap-bumper">auto <a href="#ac8baff6a9a145c44e8e46647ebdc0ecc" class="m-doc">GetLightingWorld</a>(</span><span class="m-doc-wrap">) -&gt; <a href="class_graphics_1_1_i_lighting_world.html" class="m-doc">Graphics::<wbr />ILightingWorld</a>*</span>
             </dt>
@@ -1885,6 +1924,78 @@
               <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="c_relationship_manager_8h.html">&lt;Spore/Simulator/SubSystem/cRelationshipManager.h&gt;</a></div>
             </h3>
             <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="a47f6e1218df34ba12db8ee6946791524"><div>
+            <h3>
+              enum class Simulator::<wbr /><a href="#a47f6e1218df34ba12db8ee6946791524" class="m-doc-self">TimeManagerPause</a>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_game_time_manager_8h.html">&lt;Spore/Simulator/SubSystem/GameTimeManager.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+            <table class="m-table m-fullwidth m-flat m-doc">
+              <thead><tr><th style="width: 1%">Enumerators</th><th></th></tr></thead>
+              <tbody>
+                <tr>
+                  <td><a href="#a47f6e1218df34ba12db8ee6946791524adb8abbeda4df662c3ca505163d2d2770" class="m-doc-self" id="a47f6e1218df34ba12db8ee6946791524adb8abbeda4df662c3ca505163d2d2770">CinematicAll</a></td>
+                  <td>
+                  <p>Pauses game and effects, not audio.</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a47f6e1218df34ba12db8ee6946791524a8fce77fd86da3af309c0ad415d8d7952" class="m-doc-self" id="a47f6e1218df34ba12db8ee6946791524a8fce77fd86da3af309c0ad415d8d7952">Cinematic</a></td>
+                  <td>
+                  <p>Pauses game, not effects nor audio.</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a47f6e1218df34ba12db8ee6946791524a368fe771261fcb18f7988833c9294a20" class="m-doc-self" id="a47f6e1218df34ba12db8ee6946791524a368fe771261fcb18f7988833c9294a20">Tutorial</a></td>
+                  <td>
+                  <p>Pauses game, not effects nor audio.</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a47f6e1218df34ba12db8ee6946791524a344a7f427fb765610ef96eb7bce95257" class="m-doc-self" id="a47f6e1218df34ba12db8ee6946791524a344a7f427fb765610ef96eb7bce95257">Editor</a></td>
+                  <td>
+                  <p>Pauses game, not effects nor audio.</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a47f6e1218df34ba12db8ee6946791524a93f4f96d7a09885a12208cba1386fc11" class="m-doc-self" id="a47f6e1218df34ba12db8ee6946791524a93f4f96d7a09885a12208cba1386fc11">CommScreen</a></td>
+                  <td>
+                  <p>Pauses game and effects, not audio.</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a47f6e1218df34ba12db8ee6946791524a98446fa38cb1ae7d8c94c346f628dd94" class="m-doc-self" id="a47f6e1218df34ba12db8ee6946791524a98446fa38cb1ae7d8c94c346f628dd94">AdventureDialog</a></td>
+                  <td>
+                  <p>Pauses game, not effects nor audio.</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a47f6e1218df34ba12db8ee6946791524aab9cb8aba5e36e02a72894e443ab0d65" class="m-doc-self" id="a47f6e1218df34ba12db8ee6946791524aab9cb8aba5e36e02a72894e443ab0d65">UserToggle</a></td>
+                  <td>
+                  <p>Pauses game, effects and audio.</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a47f6e1218df34ba12db8ee6946791524a6288740a1cd0de37312619df3b6ddcf3" class="m-doc-self" id="a47f6e1218df34ba12db8ee6946791524a6288740a1cd0de37312619df3b6ddcf3">Gameplay</a></td>
+                  <td>
+                  <p>Pauses game and effects, not audio.</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a47f6e1218df34ba12db8ee6946791524a1699ca13f05b84ceb986f896f81b03b0" class="m-doc-self" id="a47f6e1218df34ba12db8ee6946791524a1699ca13f05b84ceb986f896f81b03b0">UIToggle</a></td>
+                  <td>
+                  <p>Pauses game and effects, not audio.</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a47f6e1218df34ba12db8ee6946791524aeabe3db9a9d8e5a9f7417e371e96d298" class="m-doc-self" id="a47f6e1218df34ba12db8ee6946791524aeabe3db9a9d8e5a9f7417e371e96d298">ModalDialog</a></td>
+                  <td>
+                  <p>Pauses game and effects, not audio.</p>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
           </div></section>
           <section class="m-doc-details" id="a3e7ff8b0741f9ad7a7a142faea410106"><div>
             <h3>
@@ -2539,6 +2650,21 @@
             </h3>
             <p><span></span></p>
           </div></section>
+          <section class="m-doc-details" id="a87ebcd6086f4828b2ffa9ea5da453a84"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"> Simulator::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a87ebcd6086f4828b2ffa9ea5da453a84" class="m-doc-self">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_time_of_day.html" class="m-doc">cTimeOfDay</a>,
+              0x28)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="c_time_of_day_8h.html">&lt;Spore/Simulator/cTimeOfDay.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="a003c3b7539f8eb0a1b0fc1599a90cd89"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">namespace Simulator::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a003c3b7539f8eb0a1b0fc1599a90cd89" class="m-doc-self">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_time_of_day.html" class="m-doc">cTimeOfDay</a>)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="c_time_of_day_8h.html">&lt;Spore/Simulator/cTimeOfDay.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
           <section class="m-doc-details" id="abddacf313e12ba64ae7c21f676f83e03"><div>
             <h3>
               <span class="m-doc-wrap-bumper">namespace Simulator::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#abddacf313e12ba64ae7c21f676f83e03" class="m-doc-self">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_tool_strategy.html" class="m-doc">cToolStrategy</a>)</span></span>
@@ -2831,6 +2957,21 @@
             </h3>
             <p>Gets all the game data objects that can be casted to the specified type.</p>
 <p>You can use this with base classes that aren&#x27;t nouns to use all the objects of subclasses; for example you can use it with <a href="class_simulator_1_1c_combatant.html" class="m-doc">cCombatant</a> or <a href="class_simulator_1_1c_creature_base.html" class="m-doc">cCreatureBase</a>. Only classes that define a <code>TYPE</code> can be used here. All the found objects will be casted to the specified type.</p>
+          </div></section>
+          <section class="m-doc-details" id="a94cf8715a5191f0c1d06864c7d32147d"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"> Simulator::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a94cf8715a5191f0c1d06864c7d32147d" class="m-doc-self">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_game_time_manager.html" class="m-doc">cGameTimeManager</a>,
+              0x80)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_game_time_manager_8h.html">&lt;Spore/Simulator/SubSystem/GameTimeManager.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="ae203c065349c997e87667e53c43b2c14"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">namespace Simulator::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ae203c065349c997e87667e53c43b2c14" class="m-doc-self">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_game_time_manager.html" class="m-doc">cGameTimeManager</a>)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_game_time_manager_8h.html">&lt;Spore/Simulator/SubSystem/GameTimeManager.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
           </div></section>
           <section class="m-doc-details" id="ac8baff6a9a145c44e8e46647ebdc0ecc"><div>
             <h3>

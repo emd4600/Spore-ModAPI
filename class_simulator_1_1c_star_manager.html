@@ -134,6 +134,12 @@
               const <a href="struct_simulator_1_1_star_request_filter.html" class="m-doc">StarRequestFilter</a>&amp; filter = <a href="struct_simulator_1_1_star_request_filter.html" class="m-doc">StarRequestFilter</a>()) -&gt; <a href="class_simulator_1_1c_star_record.html" class="m-doc">cStarRecord</a>*</span>
             </dt>
             <dd>Returns the record for the star closest to the given coords.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">void <a href="#a46769b4458f705ab0e42b6184f9bd88c" class="m-doc">FindStars</a>(</span><span class="m-doc-wrap">const <a href="struct_math_1_1_vector3.html" class="m-doc">Vector3</a>&amp; coords,
+              const <a href="struct_simulator_1_1_star_request_filter.html" class="m-doc">StarRequestFilter</a>&amp; filter,
+              vector&lt;<a href="c_star_record_8h.html#a45bf5963088a11c31f2b96f32be43662" class="m-doc">cStarRecordPtr</a>&gt;&amp; dst)</span>
+            </dt>
+            <dd>Finds all the stars that match the given star filter.</dd>
           </dl>
         </section>
         <section id="pro-attribs">
@@ -405,6 +411,34 @@
               </tfoot>
             </table>
 <p>The Z coordinate is not considered when calculating distances between stars. A <a href="struct_simulator_1_1_star_request_filter.html" class="m-doc">StarRequestFilter</a> can be passed to accept only certain stars (with a certain type, at a minimum distance, etc)</p>
+          </div></section>
+          <section class="m-doc-details" id="a46769b4458f705ab0e42b6184f9bd88c"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">void Simulator::<wbr />cStarManager::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a46769b4458f705ab0e42b6184f9bd88c" class="m-doc-self">FindStars</a>(</span><span class="m-doc-wrap">const <a href="struct_math_1_1_vector3.html" class="m-doc">Vector3</a>&amp; coords,
+              const <a href="struct_simulator_1_1_star_request_filter.html" class="m-doc">StarRequestFilter</a>&amp; filter,
+              vector&lt;<a href="c_star_record_8h.html#a45bf5963088a11c31f2b96f32be43662" class="m-doc">cStarRecordPtr</a>&gt;&amp; dst)</span></span>
+            </h3>
+            <p>Finds all the stars that match the given star filter.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">coords</td>
+                  <td>The reference coordinates.</td>
+                </tr>
+                <tr>
+                  <td>filter</td>
+                  <td>A filter that describes which kind of stars are accepted.</td>
+                </tr>
+                <tr>
+                  <td>dst</td>
+                  <td>A vector where all found stars will be added.</td>
+                </tr>
+              </tbody>
+            </table>
+<p>This can be used to find all the star systems close to a certain position that match some parameters. For example, you can find all the stars with empires in a 20 parsec radius, etc.</p>
           </div></section>
         </section>
       </div>
