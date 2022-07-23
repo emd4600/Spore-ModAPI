@@ -65,8 +65,10 @@ namespace Simulator
 		/* 70h */	virtual void func70h();  // field_58.Start()
 		/* 74h */	virtual uint32_t GetCardWindowControlID();  // returns a window controlID
 		/* 78h */	virtual void Initialize();  // related with parsing prop, called when mission is created
+
 		/// Only called when state is 3, called every frame.
 		/* 7Ch */	virtual MissionState Update(int deltaTime);
+
 		/// Loads prop file
 		/* 80h */	virtual void Load();
 		/* 84h */	virtual void func84h();
@@ -107,12 +109,17 @@ namespace Simulator
 
 		/* E4h */	virtual uint32_t GetStarMapEffectGroup();
 		/* E8h */	virtual uint32_t GetStarMapEffect();
+
 		/// Returns how much money it costs to travel from the source planet to the target planet and back.
 		/* ECh */	virtual int GetTravelCost();
+
 		/// Returns how much distance to travel from the source planet to the target planet and back.
 		/* F0h */	virtual float GetTravelDistance();
+
 		/// Returns true if the given planet is the target planet of the mission, or false otherwise.
+		/// @param pPlanetRecord
 		/* F4h */	virtual bool IsTargetPlanet(cPlanetRecord* pPlanetRecord);
+
 		/* F8h */	virtual bool funcF8h();  // returns false
 		/* FCh */	virtual bool funcFCh();  // returns false
 		/* 100h */	virtual bool func100h();  // returns false
@@ -128,11 +135,14 @@ namespace Simulator
 		/// @param dst Where the token text must be written.
 		/// @returns True if the token was processed, false otherwise.
 		/* 118h */	virtual bool TranslateToken(uint32_t tokenID, string16& dst);
+
 		/// By default, `event_log_return_for_rewards`
 		/* 11Ch */	virtual uint32_t GetCompletedEventLogID();
+
 		/* 120h */	virtual bool func120h();  // returns false
 		/* 124h */	virtual void func120h(int);  // nothing
 		/* 128h */	virtual bool func128h();
+		/* 12Ch */	virtual bool func12Ch();
 
 	public:
 		/* 38h */	cGonzagoTimer field_38;
@@ -155,7 +165,7 @@ namespace Simulator
 		/* C4h */	int mStarClue;  // -1  //TODO cStarClue
 		/* C8h */	int field_C4;
 		/* CCh */	vector<int> field_CC;
-		/* E0h */	vector<ObjectPtr> field_E0;
+		/* E0h */	vector<cStarRecordPtr> field_E0;
 		/* F4h */	int mPlanetClue;  //TODO cPlanetClue
 		/* F8h */	int field_F8;
 		/* FCh */	int field_FC;

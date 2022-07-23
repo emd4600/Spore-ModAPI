@@ -55,7 +55,7 @@ namespace Simulator
 		/* 130h */	int field_130;
 		/* 134h */	int field_134;
 		/* 138h */	int field_138;
-		/* 13Ch */	intrusive_ptr<cPlanetRecord> mpPlanetRecord;
+		/* 13Ch */	cPlanetRecordPtr mpPlanetRecord;
 		/* 140h */	uint32_t mPlanetKey;  // not initialized
 		/* 144h */	uint32_t mStarterWorldID;
 		/* 148h */	Math::Vector3 mOrbitedPlanetLastKnownPosition;
@@ -66,12 +66,12 @@ namespace Simulator
 		/* 170h */	vector<int> field_170;
 		/* 184h */	float mPlanetScale;
 		/* 188h */	int field_188;
-		/* 18Ch */	intrusive_ptr<cVisiblePlanet> mpVisiblePlanet;
+		/* 18Ch */	cVisiblePlanetPtr mpVisiblePlanet;
 		/* 190h */	bool field_190;  // true
 		/* 198h */	cGonzagoTimer mTimeSinceLastColonyPlaced;
 		/* 1B8h */	bool field_1B8;  // true
 		/* 1BCh */	int mPlanetFlags;
-		/* 1C0h */	intrusive_ptr<cPlanet> mpParent;
+		/* 1C0h */	cPlanetPtr mpParent;
 		/* 1C4h */	uint32_t field_1C4;  // 0xFFD3D3D3
 	};
 

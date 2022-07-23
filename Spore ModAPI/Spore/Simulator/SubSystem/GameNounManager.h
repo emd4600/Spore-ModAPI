@@ -50,6 +50,12 @@ namespace Simulator
 	/// evaluate and the game noun ID passed to the GetData function.
 	using ContainerFilterCallback_t = bool(*)(cGameData* pObject, uint32_t gameNounID);
 
+	/// The class that manages game objects, known in Spore code as 'nouns'. Use this class to create or destroy
+	/// instances of Simulator classes. To create a Simulator object, use simulator_new() (which calls this class).
+	/// This class is also used to obtain all active instances of a certain object, using Simulator::GetData().
+	/// Use `GameNounManager.GetAvatar()` to obtain the player creature.
+	/// 
+	/// This is a singleton class, so use GameNounManager to access it.
 	class cGameNounManager
 		: public App::IMessageListener
 		, public cStrategy

@@ -48,6 +48,7 @@
 #include <Spore\Simulator\SubSystem\GameInputManager.h>
 #include <Spore\Simulator\SubSystem\GameModeManager.h>
 #include <Spore\Simulator\SubSystem\GameNounManager.h>
+#include <Spore\Simulator\SubSystem\GameTimeManager.h>
 #include <Spore\Simulator\SubSystem\GameViewManager.h>
 #include <Spore\Simulator\SubSystem\PlanetModel.h>
 #include <Spore\Simulator\SubSystem\SimulatorSystem.h>
@@ -545,6 +546,25 @@ namespace Simulator
 		DefineAddress(GetMissionByID, SelectAddress(0xFEEB90, , 0xFEE310));
 		DefineAddress(GetMissionTrackColor, SelectAddress(0xFEC510, , 0xFEBCE0));
 		DefineAddress(ThereIsEventInPlanet, SelectAddress(0xFEE8A0, , 0xFEE020));
+	}
+
+	namespace Addresses(cGameTimeManager)
+	{
+		DefineAddress(Get, SelectAddress(0xB3D2E0, , 0xB3D480));
+		DefineAddress(Pause, SelectAddress(0xB32140, , 0x00b32330));
+		DefineAddress(Resume, SelectAddress(0xB32170, , 0x00b32360));
+		DefineAddress(Toggle, SelectAddress(0xB32170, , 0x00b32390));
+		DefineAddress(GetPauseCount, SelectAddress(0xB31EE0, , 0x00b321e0));
+		DefineAddress(ConvertDeltaTime, SelectAddress(0xB31AA0, , 0xb31da0));
+		DefineAddress(SetSpeed, SelectAddress(0xB32370, , 0x00b32560));
+	}
+
+	namespace Addresses(cTimeOfDay)
+	{
+		DefineAddress(Get, SelectAddress(0xBC2550, , 0xBC3220));
+		DefineAddress(SetSpeedMultiplier, SelectAddress(0xBC1D60, , 0xBC2A30));
+		DefineAddress(SetDayDuration, SelectAddress(0xBC1CD0, , 0xBC29A0));
+		DefineAddress(SetTimeOfDay, SelectAddress(0xBC23A0, , 0xBC3070));
 	}
 }
 #endif
