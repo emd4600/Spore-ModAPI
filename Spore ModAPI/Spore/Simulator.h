@@ -25,11 +25,14 @@
 #include <Spore\Simulator\SubSystem\GameModeManager.h>
 #include <Spore\Simulator\SubSystem\GameNounManager.h>
 #include <Spore\Simulator\SubSystem\GameViewManager.h>
+#include <Spore\Simulator\SubSystem\GameTimeManager.h>
 #include <Spore\Simulator\SubSystem\StarManager.h>
 #include <Spore\Simulator\SubSystem\ToolManager.h>
 #include <Spore\Simulator\SubSystem\SpacePlayerData.h>
 #include <Spore\Simulator\SubSystem\PlanetModel.h>
 #include <Spore\Simulator\SubSystem\UIEventLog.h>
+#include <Spore\Simulator\SubSystem\PlantSpeciesManager.h>
+#include <Spore\Simulator\SubSystem\AnimalSpeciesManager.h>
 
 #include <Spore\Simulator\cGameData.h>
 #include <Spore\Simulator\cGonzagoSimulator.h>
@@ -45,6 +48,7 @@
 #include <Spore\Simulator\cSimulatorSpaceGame.h>
 #include <Spore\Simulator\cSimulatorPlayerUFO.h>
 #include <Spore\Simulator\cMissionManager.h>
+#include <Spore\Simulator\cTimeOfDay.h>
 
 #include <Spore\Simulator\SimulatorMessages.h>
 

@@ -29,6 +29,27 @@
 
 namespace Simulator
 {
+	enum class SpaceInventoryItemType
+	{
+		/// Plants or non-sentient animals
+		NonSentient = 0,
+		// uses ObjectTemplateDB
+		Unk1 = 1,
+		/// Space tools in `spacetools~` (`0x30608F0B`) group
+		Tool = 2,
+		CargoSlot = 3,
+		/// Objects in `spacetrading~` (`0x34D97FA`) group
+		TradingObject = 4,
+		/// Objects in `multiDelivery_mision_objects~` (`0x037D494E`) group
+		MultiDeliveryObject = 5,
+		/// Sentient animals (citizens)
+		Sentient = 6,
+
+		// cObjectInstanceInventoryItem
+		ObjectInstance = 8
+	};
+	
+	/// Represents an item of the space player inventory. This include space tools and cargo.
 	class cSpaceInventoryItem 
 		: public DefaultRefCounted
 		, public App::IUnmanagedMessageListener
@@ -46,34 +67,52 @@ namespace Simulator
 		/* 1Ch */	virtual uint32_t GetItemInstanceID();
 		/* 20h */	virtual bool IsCargoType();
 		/* 24h */	virtual intrusive_ptr<cSpaceInventoryItem> Duplicate();
-		/* 28h */	virtual const char16_t* func28();
-		/* 2Ch */	virtual const char16_t* func2C();
+		/* 28h */	virtual const char16_t* GetDescription();
+		/* 2Ch */	virtual const char16_t* GetDetailDescription();
 		/* 30h */	virtual ResourceKey GetImageID();
 
 		/// Returns the colors that override the icon color states, therefore 8 colors.
 		/// Those colors are get from the "spaceToolImageColors" property.
+		/// @param dstCount
+		/// @param dst
+		/// @returns 
 		/* 34h */	virtual bool GetImageColors(size_t& dstCount, ColorRGB*& dst);
 
 		/// Returns the key of the panel the tool belongs to. 
 		/// If this item is of cargo type, it returns the cargo panel key.
 		/// Otherwise, it returns the value of the "spaceToolPanelKey" property.
+		/// @returns
 		/* 38h */	virtual ResourceKey GetPanelID();
+
 		/* 3Ch */	virtual bool GetItemCount(size_t& dst);
 		/* 40h */	virtual int func40h();
-		/* 44h */	virtual bool func44h();
+
+		/// Returns true if this item is available in the current planet. 
+		/// For example, for animal cargo this is true if the animal species is present in the planet.
+		/// @returns
+		/* 44h */	virtual bool IsAvailableInCurrentPlanet();
+
 		/* 48h */	virtual bool func48h();
 		/* 4Ch */	virtual void ParseProp();
 
+
+		/// Creates an inventory item for multi-delivery mission objects. It will read a .prop file with
+		/// name `instanceID` in the folder `multiDelivery_mision_objects~` (`0x37D494E`).
+		/// @param dst
+		/// @param itemID
+		/// @param instanceIDcddc
+		static void CreateMultiDeliveryObject(cSpaceInventoryItem& dst, const ResourceKey& itemID, uint32_t instanceID);
+
 	public:
 		/* 10h */	size_t mItemCount;  // 1
-		/* 14h */	int mItemType;  // 2
+		/* 14h */	SpaceInventoryItemType mItemType;  // 2
 		/* 18h */	unsigned int mItemCost;
 		/* 1Ch */	bool mbIsUnique;
 		/* 20h */	uint32_t mPoliticalId;  // -1
 		/* 24h */	unsigned int mItemPosition;  // -1
 		/* 28h */	bool mbIsActive;
-		/* 2Ch */	intrusive_ptr<cSpaceInventoryItem> mpCargoSlot;
-		/* 30h */	intrusive_ptr<App::PropertyList> mpPropList;
+		/* 2Ch */	cSpaceInventoryItemPtr mpCargoSlot;
+		/* 30h */	PropertyListPtr mpPropList;
 		/* 34h */	LocalizedString mDescription;
 		/* 48h */	LocalizedString mDetailDescription;
 		/* 5Ch */	ResourceKey mItemID;
@@ -88,5 +127,10 @@ namespace Simulator
 	//// INTERNAL IMPLEMENTATION ////
 	/////////////////////////////////
 
-	static_assert(sizeof(cSpaceInventoryItem) == 0x7C, "sizeof(cSpaceInventoryItem) != 0x7C");
+	ASSERT_SIZE(cSpaceInventoryItem, 0x7C);
+
+	namespace Addresses(cSpaceInventoryItem)
+	{
+		DeclareAddress(CreateMultiDeliveryObject);
+	}
 }

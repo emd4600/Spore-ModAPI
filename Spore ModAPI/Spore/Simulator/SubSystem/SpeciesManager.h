@@ -18,6 +18,8 @@
 ****************************************************************************/
 #pragma once
 
+//TODO AnimalSpeciesManager, AC0E90
+
 namespace Simulator
 {
 	class cSpeciesManager

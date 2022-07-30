@@ -39,12 +39,12 @@ namespace Simulator
 		cSpaceToolData* GetUnlockableTool(const ResourceKey& id) const;
 
 	public:
-		/* 4Ch */	vector<intrusive_ptr<cSpaceInventoryItem>> mUnlockableTools;
+		/* 4Ch */	vector<cSpaceInventoryItemPtr> mUnlockableTools;
 		/* 60h */	vector<int> field_60;
 		/* 74h */	vector<ResourceKey> mUpgradedToolIds;
-		/* 88h */	intrusive_ptr<cSpaceToolData> mpDropCargoTool;
-		/* 8Ch */	intrusive_ptr<cSpaceToolData> mpActiveTool;
-		/* 90h */	intrusive_ptr<cSpaceInventoryItem> mpActiveCargoItem;
+		/* 88h */	cSpaceToolDataPtr mpDropCargoTool;
+		/* 8Ch */	cSpaceToolDataPtr mpActiveTool;
+		/* 90h */	cSpaceInventoryItemPtr mpActiveCargoItem;
 		/* 94h */	bool mbHasAddedItem;
 	};
 

@@ -48,6 +48,21 @@ namespace Simulator
 		StepCompleted = 9
 	};
 
+	struct cStarClue
+	{
+		/// -1 is disabled, 0 is for landmarks that are closer than 2 units, 1 for farther than 2 units, there might be other types
+		/* 00h */	int mType;  // -1
+		/* 04h */	float mDistance;
+		/* 08h */	vector<int> mLandmarkTypes;
+	};
+
+	struct cPlanetClue
+	{
+		/* 00h */	int mType;
+		/* 04h */	int mPlanetType;
+		/* 08h */	int mOrbitOrder;
+	};
+
 	class cMission
 		: public cGameData
 		, public App::IMessageListener
@@ -142,7 +157,20 @@ namespace Simulator
 		/* 120h */	virtual bool func120h();  // returns false
 		/* 124h */	virtual void func120h(int);  // nothing
 		/* 128h */	virtual bool func128h();
-		/* 12Ch */	virtual bool func12Ch();
+
+		/// Chooses one nearby star where a landmark must be found, and enables the `mStarClue` accordingly.
+		/// The maximum star distance is determined by the property `missionLandmarkSearchRadius`
+		/// @returns
+		/* 12Ch */	virtual bool ChooseLandmarkStar();  // HideStarName?
+
+		/* 130h */	virtual bool func13Ch();  // similar to ChooseLandmarkStar but with planets? HidePlanetName?
+
+		/// Returns true if the mission is Active or Complete, and the given empire and planet are
+		/// the empire and planet where the mission originated.
+		/// @param empireId
+		/// @param planetId
+		/// @returns
+		/* 134h */	virtual bool IsSourcePlanetAndEmpire(uint32_t empireId, PlanetID planetId);
 
 	public:
 		/* 38h */	cGonzagoTimer field_38;
@@ -162,13 +190,9 @@ namespace Simulator
 		/* A0h */	float mRewardMoney;
 		/* A4h */	ResourceKey mRewardToolID;
 		/* B0h */	LocalizedString field_B0;
-		/* C4h */	int mStarClue;  // -1  //TODO cStarClue
-		/* C8h */	int field_C4;
-		/* CCh */	vector<int> field_CC;
+		/* C4h */	cStarClue mStarClue;
 		/* E0h */	vector<cStarRecordPtr> field_E0;
-		/* F4h */	int mPlanetClue;  //TODO cPlanetClue
-		/* F8h */	int field_F8;
-		/* FCh */	int field_FC;
+		/* F4h */	cPlanetClue mPlanetClue;
 		/* 100h */	uint32_t mStarMapIconEffectID;
 		/* 104h */	int field_104;
 		/* 108h */	vector<int> field_108;

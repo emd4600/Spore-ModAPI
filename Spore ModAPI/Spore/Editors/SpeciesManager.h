@@ -37,6 +37,8 @@ namespace Editors
 	public:
 		Simulator::cSpeciesProfile* GetSpeciesProfile(const ResourceKey& name);
 
+		//TODO 4DF2D0 used to get plants?
+
 	protected:
 		/* 04h */	hash_map<ResourceKey, Simulator::cSpeciesProfile> mSpeciesProfiles;
 		/* 24h */	hash_map<int, int> field_24;

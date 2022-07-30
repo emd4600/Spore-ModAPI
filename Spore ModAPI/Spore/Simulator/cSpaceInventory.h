@@ -33,16 +33,38 @@ namespace Simulator
 		static const uint32_t TYPE = 0xB075DEC5;
 		static const uint32_t NOUN_ID = 0x21FFA3F;
 
+		/// Creates 10 cargo slots.
 		/* 54h */	virtual void func54h();
 		/* 58h */	virtual void SetMaxCargoAmount(int amount);
 		/* 5Ch */	virtual size_t GetItemCount();
 		/* 60h */	virtual cSpaceInventoryItem* GetItem(size_t index);
-		/* 64h */	virtual int IndexOf(int type, const ResourceKey& id);
-		/* 68h */	virtual cSpaceInventoryItem* GetTool(const ResourceKey& id);  // calls IndexOf with type 2
-		/* 6Ch */	virtual int func6Ch(int type, size_t);
-		/* 70h */	virtual bool HasItem(int itemType, uint32_t id) = 0;
+		/* 64h */	virtual int IndexOf(SpaceInventoryItemType type, const ResourceKey& id);
+
+		/// Returns the inventory item for the given tool ID, if it is present in the current inventory.
+		/// @param id
+		/// @returns The tool inventory item (probably a cSpaceToolData), or nullptr if not in the inventory.
+		/* 68h */	virtual cSpaceInventoryItem* GetTool(const ResourceKey& id);
+
+		/// Returns the index to the nth item of the given type in this inventory.
+		/// For example, nth=3 means it returns the fourth (index starts in 0!) item of the specificed type.
+		/// @param type
+		/// @param nth
+		/// @returns The index of the item (that can be used in GetItem()), or -1 if not present in the inventory.
+		/* 6Ch */	virtual int IndexOfNthItem(SpaceInventoryItemType type, size_t nth);
+
+		/// Returns true if the inventory has an item of the given type and item instance id.
+		/// @param type
+		/// @param id
+		/// @returns
+		/* 70h */	virtual bool HasItem(SpaceInventoryItemType type, uint32_t id) = 0;
+
 		// apparently only the instanceid matters, gets it with item type 2
+		/// Returns true if the inventory has the tool with the given ID (only instance id matters).
+		/// Equivalent to `HasItem(SpaceInventoryItemType::Tool, id.instanceID)`.
+		/// @param id
+		/// @returns
 		/* 74h */	virtual bool HasTool(const ResourceKey& id) = 0;
+
 		/* 78h */	virtual bool RemoveItem(cSpaceInventoryItem* pItem);  // also sets pItem->mpCargoSlot = nullptr
 																		  // Transfer ammo? If it's a tool substracts count from items[index] and sets dst.count = count
 		/* 7Ch */	virtual bool func7Ch(size_t index, intrusive_ptr<cSpaceInventoryItem>& dst, int count);
@@ -52,16 +74,38 @@ namespace Simulator
 		/// but there is another item with the same ID (and the item is not unique), it will increase the amount
 		/// (or ammo) of items with that ID. 
 		/* 80h */	virtual void AddItem(cSpaceInventoryItem* pItem, int = 0, bool = true);
-		/* 84h */	virtual cSpaceInventoryItem* GetItemByCargSlot(cSpaceInventoryItem* pCargoSlot);  // ?
-		/* 88h */	virtual size_t func88h();
-		/* 8Ch */	virtual size_t func8Ch();
-		/* 90h */	virtual bool func90h(cSpaceInventoryItem*&);
-		/* 94h */	virtual void GenerateItems(size_t count);
-		/* 98h */	virtual bool func98h(cSpaceInventoryItem* pCargoSlot);
+
+		/// Returns the inventory item that uses the given cargo slot.
+		/// @param pCargoSlot
+		/// @returns
+		/* 84h */	virtual cSpaceInventoryItem* GetItemByCargoSlot(cSpaceInventoryItem* pCargoSlot);
+
+		/// Returns the total amount of cargo slots in the inventory, either used or available.
+		/// @returns
+		/* 88h */	virtual size_t GetCargoSlotsCount();
+		
+		/// Returns how many cargo slots are free and available to use.
+		/// @returns
+		/* 8Ch */	virtual size_t GetAvailableCargoSlotsCount();
+
+		/// Gets the first available cargo slot item. Returns true if an item was written to `pDst`, false
+		/// if there are no available cargo slots.
+		/// @param pDst
+		/// @returns True if `pDst` was written, false if there are no available cargo slots.
+		/* 90h */	virtual bool GetFreeCargoSlot(cSpaceInventoryItem*& pDst);
+
+		/// Creates new empty cargo slots and adds them to the inventory.
+		/// @param count
+		/* 94h */	virtual void AddCargoSlots(size_t count);
+
+		/// Returns true if none of the inventory items use the given item as cargo slot.
+		/// @param pCargSlot
+		/// @returns
+		/* 98h */	virtual bool CargoSlotIsFree(cSpaceInventoryItem* pCargoSlot);
 
 	public:
 
-		/* 34h */	vector<intrusive_ptr<cSpaceInventoryItem>> mInventoryItems;
+		/* 34h */	vector<cSpaceInventoryItemPtr> mInventoryItems;
 		/* 48h */	int mMaxItemCountPerItem;  // -1
 	};
 

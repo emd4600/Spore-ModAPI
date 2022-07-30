@@ -28,6 +28,7 @@
 #include <Spore\Simulator\cPlaceObjectToolStrategy.h>
 #include <Spore\Simulator\cPlanet.h>
 #include <Spore\Simulator\cPlayerInventory.h>
+#include <Spore\Simulator\cTimeOfDay.h>
 #include <Spore\Simulator\cRallyCallToolStrategy.h>
 #include <Spore\Simulator\cRepairAOEToolStrategy.h>
 #include <Spore\Simulator\cRepairToolStrategy.h>
@@ -35,6 +36,7 @@
 #include <Spore\Simulator\cSimulatorPlayerUFO.h>
 #include <Spore\Simulator\cSimulatorSpaceGame.h>
 #include <Spore\Simulator\cSpaceToolData.h>
+#include <Spore\Simulator\cSpaceInventoryItem.h>
 #include <Spore\Simulator\cStarRecord.h>
 #include <Spore\Simulator\cToolStrategy.h>
 #include <Spore\Simulator\cTurretDefenseMissileWeapon.h>
@@ -58,6 +60,8 @@
 #include <Spore\Simulator\SubSystem\ToolManager.h>
 #include <Spore\Simulator\SubSystem\CommManager.h>
 #include <Spore\Simulator\SubSystem\UIEventLog.h>
+#include <Spore\Simulator\SubSystem\AnimalSpeciesManager.h>
+#include <Spore\Simulator\SubSystem\PlantSpeciesManager.h>
 #include <Spore\Simulator\NounClassFactories.h>
 
 namespace Addresses(Simulator)
@@ -565,6 +569,23 @@ namespace Simulator
 		DefineAddress(SetSpeedMultiplier, SelectAddress(0xBC1D60, , 0xBC2A30));
 		DefineAddress(SetDayDuration, SelectAddress(0xBC1CD0, , 0xBC29A0));
 		DefineAddress(SetTimeOfDay, SelectAddress(0xBC23A0, , 0xBC3070));
+	}
+
+	namespace Addresses(cAnimalSpeciesManager)
+	{
+		DefineAddress(Get, SelectAddress(0xB3D3B0, , 0xB3D550));
+		DefineAddress(CreateAnimalItem, SelectAddress(0xAC0E90, , 0xAC0C00));
+	}
+
+	namespace Addresses(cPlantSpeciesManager)
+	{
+		DefineAddress(Get, SelectAddress(0xB3D380, , 0xB3D520));
+		DefineAddress(CreateAnimalItem, SelectAddress(0xB8FEF0, , 0xB90560));
+	}
+
+	namespace Addresses(cSpaceInventoryItem)
+	{
+		DefineAddress(CreateMultiDeliveryObject, SelectAddress(0xC86C00, , 0xC86C00));
 	}
 }
 #endif
