@@ -20,6 +20,7 @@
 
 #include <Spore\Simulator\cGameData.h>
 #include <Spore\Simulator\cGonzagoTimer.h>
+#include <Spore\Simulator\cCreatureCitizen.h>
 #include <Spore\Editors\INameableEntity.h>
 #include <Spore\MathUtils.h>
 #include <EASTL\vector.h>
@@ -62,6 +63,11 @@ namespace Simulator
 		using Object::Release;
 		using Object::Cast;
 
+		/// Returns the leader of this community, casted as a cCreatureCitizen.
+		/// This can ge used in cTribe to get the tribe chief.
+		/// @returns
+		inline cCreatureCitizen* GetLeaderCitizen();
+
 	public:
 		/* 38h */	int mCommunitySize;
 		/* 3Ch */	vector<int> field_3C;
@@ -83,7 +89,7 @@ namespace Simulator
 		/* F8h */	string16 mName;
 		/* 108h */	string16 mDescription;
 		/* 118h */	int field_118;  // -1
-		/* 11Ch */	ObjectPtr mpLeader;  //TODO probably cCreatureBase
+		/* 11Ch */	cCreatureBasePtr mpLeader;
 	};
 
 	/////////////////////////////////
@@ -91,4 +97,9 @@ namespace Simulator
 	/////////////////////////////////
 
 	static_assert(sizeof(cCommunity) == 0x120, "sizeof(cCommunity) != 120h");
+
+	cCreatureCitizen* cCommunity::GetLeaderCitizen()
+	{
+		return object_cast<cCreatureCitizen>(mpLeader.get());
+	}
 }

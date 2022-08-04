@@ -25,6 +25,8 @@
 #include <Spore\Simulator\GameNounIDs.h>
 #include <Spore\Simulator\tGameDataVectorT.h>
 #include <Spore\Simulator\cCreatureAnimal.h>
+#include <Spore\Simulator\cTribe.h>
+#include <Spore\Simulator\cHerd.h>
 #include <Spore\App\IMessageListener.h>
 #include <EASTL\hash_map.h>
 #include <EASTL\map.h>
@@ -88,6 +90,8 @@ namespace Simulator
 
 		void SetAvatar(cCreatureAnimal* pAnimal);
 
+		cTribe* GetPlayerTribe();
+
 		/// Returns the active Simulator game noun manager.
 		static cGameNounManager* Get();
 			
@@ -98,28 +102,27 @@ namespace Simulator
 		/* 48h */	int field_48;
 		/* 4Ch */	int field_4C;
 		/* 50h */	int field_50;
-		/* 54h */	intrusive_ptr<cCreatureAnimal> mpAvatar;  // cCreatureAnimal player?
-		/* 58h */	intrusive_ptr<Object> mpAvatarHerd;  // cHerd
-		/* 5Ch */	vector<intrusive_ptr<Object>> mPosseMembers;
-		/* 70h */	intrusive_ptr<Object> mpPlayerTribe;
-		/* 74h */	intrusive_ptr<Object> mpPlayer;  // cPlayer
+		/* 54h */	cCreatureAnimalPtr mpAvatar;
+		/* 58h */	cHerdPtr mpAvatarHerd;
+		/* 5Ch */	vector<cCreatureAnimalPtr> mPosseMembers;
+		/* 70h */	cTribePtr mpPlayerTribe;
+		/* 74h */	ObjectPtr mpPlayer;  // cPlayer
 		/* 78h */	intrusive_list<cGameData> mNouns;
-		/* 80h */	vector<intrusive_ptr<Object>> field_80;  // objects that haven't been updated since last call to UpdateModels?
+		/* 80h */	vector<ObjectPtr> field_80;  // objects that haven't been updated since last call to UpdateModels?
 		/* 94h */	int field_94;
 		/* 98h */	map<uint32_t, tGameDataVectorT<cGameDataPtr>> mNounMap;
 		/* B4h */	map<int, int> mPoliticalMap;
-		/* D0h */	map<int, intrusive_ptr<Object>> field_D0;
-		/* ECh */	map<int, intrusive_ptr<Object>> field_EC;
+		/* D0h */	map<int, ObjectPtr> field_D0;
+		/* ECh */	map<int, ObjectPtr> field_EC;
 		/* 108h */	int field_108;
-		/* 10Ch */	list<intrusive_ptr<cGameData>> mObjects;
+		/* 10Ch */	list<cGameDataPtr> mObjects;
 		/* 118h */	int field_118;
 	};
+	ASSERT_SIZE(cGameNounManager, 0x11C);
 
 	/////////////////////////////////
 	//// INTERNAL IMPLEMENTATION ////
 	/////////////////////////////////
-
-	static_assert(sizeof(cGameNounManager) == 0x11C, "sizeof(cGameNounManager) != 11Ch");
 
 	namespace Addresses(cGameNounManager)
 	{

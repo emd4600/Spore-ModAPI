@@ -9,6 +9,8 @@
 
 namespace Simulator
 {
+	class cMission;
+
 	enum class cCommEventType : int
 	{
 		None = -1,
@@ -36,7 +38,7 @@ namespace Simulator
 		/* 34h */	PlanetID mPlanetKey;  // -1
 		/* 38h */	uint32_t mFileID;  // -1
 		/* 3Ch */	uint32_t mDialogID;  // -1
-		/* 40h */	int mpMission;  //PLACEHOLDER
+		/* 40h */	intrusive_ptr<cMission> mpMission;
 		/* 44h */	int mPriority;  // -1
 		/* 48h */	unsigned int mDuration;
 		/* 4Ch */	unsigned int mElapsedTime;

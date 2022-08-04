@@ -60,6 +60,7 @@ namespace Simulator
 
 	enum EmpireTrait
 	{
+		kEmpireTraitNone = 0,
 		kEmpireTraitStingy = 1,
 		kEmpireTraitGenerous = 2,
 		kEmpireTraitAccidentProne = 3,
@@ -95,7 +96,9 @@ namespace Simulator
 		/* 3Ch */	string16 mEmpireName;  // "unknown"
 		/* 4Ch */	int mCurrentGameMode;  // not initialized  // uint32_t ?
 		/* 50h */	int mFlags;  // 0x10 -> grox?
-		/* 54h */	int mTrait;
+		/// A member of EmpireTrait enum, EmpireTrait::kEmpireTraitNone
+		/* 54h */	EmpireTrait mTrait;
+		/// A member of Archetypes enum, Archetypes::kArchetypePlayerWanderer by default
 		/* 58h */	Archetypes mArchetype;  // kArchetypePlayerWanderer
 		/* 5Ch */	vector<cEmpirePtr> mEnemies;
 		/* 70h */	vector<cEmpirePtr> mAllies;

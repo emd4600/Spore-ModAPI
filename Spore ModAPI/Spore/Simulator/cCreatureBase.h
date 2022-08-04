@@ -130,7 +130,7 @@ namespace Simulator
 		/* B34h */	int mAge;  // 1
 		/* B38h */	string16 mCreatureName;
 		/* B48h */	int field_B48;
-		/* B4Ch */	int field_B4C;  // cBehaviorTreeData
+		/* B4Ch */	int field_B4C;  //TODO cBehaviorTreeData
 		/* B50h */	intrusive_ptr<cCreatureBase> mpWhoIsInteractingWithMe;
 		/* B54h */	AnimatedCreaturePtr mpAnimatedCreature;
 		/* B58h */	int mGeneralFlags;  // 0x200 IsPlayerAvatar

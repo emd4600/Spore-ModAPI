@@ -48,14 +48,14 @@ namespace Simulator
 	{
 	public:
 		/* 00h */	int mMillisecondsSinceLastUpdate;  // not initialized
-		/* 04h */	intrusive_ptr<cPlanet> mpActivePlanet;
-		/* 08h */	intrusive_ptr<cStar> mpActiveStar;
+		/* 04h */	cPlanetPtr mpActivePlanet;
+		/* 08h */	cStarPtr mpActiveStar;
 		/* 0Ch */	intrusive_ptr<cRelationshipManager> mpTribeCivRelationships;
 		/* 10h */	SpaceContext mCurrentContext;  // -1
 		/* 14h */	float mfRotationRateFactor;  // 1.0
 		/* 18h */	uint32_t mPlayerEmpireID;  // -1
-		/* 1Ch */	intrusive_ptr<cEmpire> mpPlayerEmpire;
-		/* 20h */	vector<intrusive_ptr<cPlanet>> mPlayerColonies;
+		/* 1Ch */	cEmpirePtr mpPlayerEmpire;
+		/* 20h */	vector<cPlanetPtr> mPlayerColonies;
 
 		static SpacePlayerData* Get();
 	};

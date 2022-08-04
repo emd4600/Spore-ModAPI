@@ -39,6 +39,7 @@
 #include <Spore\Simulator\cSpaceInventoryItem.h>
 #include <Spore\Simulator\cStarRecord.h>
 #include <Spore\Simulator\cToolStrategy.h>
+#include <Spore\Simulator\cTribeArchetype.h>
 #include <Spore\Simulator\cTurretDefenseMissileWeapon.h>
 #include <Spore\Simulator\cTurretFlakWeapon.h>
 #include <Spore\Simulator\cVehicle.h>
@@ -586,6 +587,11 @@ namespace Simulator
 	namespace Addresses(cSpaceInventoryItem)
 	{
 		DefineAddress(CreateMultiDeliveryObject, SelectAddress(0xC86C00, , 0xC86C00));
+	}
+
+	namespace Addresses(cTribeArchetype)
+	{
+		DefineAddress(GetTribeArchetype, SelectAddress(0xC8E060, , 0xC8EC00));
 	}
 }
 #endif

@@ -39,6 +39,11 @@ namespace Simulator
 		: public Resource::ResourceObject
 	{
 	public:
+		static const uint32_t TYPE = 0xE742574A;
+
+		bool Write(IO::IStream* pStream);
+
+	public:
 		/* 14h */	int field_14;
 		/* 18h */	App::PropertyList field_18;
 		/* 50h */	float mfWaterScoreDEPRECATED;
@@ -86,4 +91,10 @@ namespace Simulator
 	/////////////////////////////////
 
 	static_assert(sizeof(cScenarioResource) == 0x2CB0, "sizeof(cScenarioResource) != 0x2CB0");
+
+	namespace Addresses(cScenarioResource)
+	{
+		DeclareAddress(Read);
+		DeclareAddress(Write);  // 0xF261F0
+	}
 }

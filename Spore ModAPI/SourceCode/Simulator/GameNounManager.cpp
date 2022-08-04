@@ -34,5 +34,9 @@ namespace Simulator
 	cCreatureAnimal* cGameNounManager::GetAvatar() {
 		return mpAvatar.get();
 	}
+
+	cTribe* cGameNounManager::GetPlayerTribe() {
+		return mpPlayerTribe.get();
+	}
 }
 #endif

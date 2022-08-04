@@ -62,7 +62,7 @@ namespace Simulator
 		cSpaceToolData* GetWeapon() const;
 
 	public:
-		/* AF0h */	int field_AF0;  // cBehaviorTreeData
+		/* AF0h */	int field_AF0;  //TODO cBehaviorTreeData
 		/* AF4h */	bool field_AF4;
 		/* AF8h */	uint32_t mLocomotionHint;
 		/* AFCh */	bool field_AFC;

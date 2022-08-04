@@ -31,10 +31,10 @@ namespace Simulator
 {
 	enum class SpaceInventoryItemType
 	{
-		/// Plants or non-sentient animals
-		NonSentient = 0,
-		// uses ObjectTemplateDB
-		Unk1 = 1,
+		/// Plants 
+		Plant = 0,
+		/// Non-sentient animals
+		NonSentientAnimal = 1,
 		/// Space tools in `spacetools~` (`0x30608F0B`) group
 		Tool = 2,
 		CargoSlot = 3,
@@ -45,7 +45,7 @@ namespace Simulator
 		/// Sentient animals (citizens)
 		Sentient = 6,
 
-		// cObjectInstanceInventoryItem
+		/// cObjectInstanceInventoryItem
 		ObjectInstance = 8
 	};
 	

@@ -34,9 +34,18 @@
 namespace Simulator
 {
 	// Also used by Tribe
-	class UnkCityClass
+	struct UnkCityClass
 	{
-		char padding[0x64];
+		/* 00h */	Vector3 field_0;
+		/* 0Ch */	float field_C;  // -1.0
+		/* 10h */	float field_10;  // -1.0
+		/* 14h */	Vector3 field_14;
+		/* 20h */	float field_20;
+		/* 24h */	int field_24;  // not initialized
+		/* 28h */	bool field_28;
+		/* 2Ch */	Quaternion field_2C;
+		/* 3Ch */	vector<int> field_3C;
+		/* 50h */	vector<int> field_50;
 	};
 
 	class cVehicle;
