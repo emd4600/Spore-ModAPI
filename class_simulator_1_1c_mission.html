@@ -88,6 +88,22 @@
         <section id="pub-methods">
           <h2><a href="#pub-methods">Public functions</a></h2>
           <dl class="m-doc">
+            <dt>
+              <span class="m-doc-wrap-bumper">void <a href="#aa50589922b62b47ee0a4cd462fba1cfe" class="m-doc">SetState</a>(</span><span class="m-doc-wrap"><a href="namespace_simulator.html#ac85911e301d4c48524493bd864ce1e42" class="m-doc">MissionState</a> state)</span>
+            </dt>
+            <dd>Changes the state of the mission.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a7384806648cf9264968bf64d02933982" class="m-doc">GetOwnerEmpire</a>(</span><span class="m-doc-wrap">) -&gt; <a href="class_simulator_1_1c_empire.html" class="m-doc">cEmpire</a>*</span>
+            </dt>
+            <dd>Returns the empire that created this mission.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#af2b9073dc2b9f033fe8c3075452fe103" class="m-doc">GetTargetEmpire</a>(</span><span class="m-doc-wrap">) -&gt; <a href="class_simulator_1_1c_empire.html" class="m-doc">cEmpire</a>*</span>
+            </dt>
+            <dd>Returns the target empire of this mission.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">void <a href="#acd2e1c64077349a05ed6ee8ab0c5e7ff" class="m-doc">SetTargetEmpire</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_empire.html" class="m-doc">cEmpire</a>* pEmpire)</span>
+            </dt>
+            <dd>Sets the target empire of this mission.</dd>
             <dt id="a846f888a0ee50d17c46e10dce07c93c8">
               <span class="m-doc-wrap-bumper">auto <a href="#a846f888a0ee50d17c46e10dce07c93c8" class="m-doc-self">GetState</a>(</span><span class="m-doc-wrap">) -&gt; int <span class="m-label m-flat m-warning">virtual</span></span>
             </dt>
@@ -116,10 +132,10 @@
               <span class="m-doc-wrap-bumper">void <a href="#a5024507832586713dfb9e84a6923b6ad" class="m-doc-self">Initialize</a>(</span><span class="m-doc-wrap">) <span class="m-label m-flat m-warning">virtual</span></span>
             </dt>
             <dd><span></span></dd>
-            <dt id="ac4db6723964c38b11655e9d6d7ad4f86">
-              <span class="m-doc-wrap-bumper">auto <a href="#ac4db6723964c38b11655e9d6d7ad4f86" class="m-doc-self">Update</a>(</span><span class="m-doc-wrap">int deltaTime) -&gt; <a href="namespace_simulator.html#ac85911e301d4c48524493bd864ce1e42" class="m-doc">MissionState</a> <span class="m-label m-flat m-warning">virtual</span></span>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#ac4db6723964c38b11655e9d6d7ad4f86" class="m-doc">Update</a>(</span><span class="m-doc-wrap">int deltaTime) -&gt; <a href="namespace_simulator.html#ac85911e301d4c48524493bd864ce1e42" class="m-doc">MissionState</a> <span class="m-label m-flat m-warning">virtual</span></span>
             </dt>
-            <dd>Only called when state is 3, called every frame.</dd>
+            <dd>Only called when state is Active, called every frame.</dd>
             <dt id="a3b43297549f3461176bef2d9cf6b2c48">
               <span class="m-doc-wrap-bumper">void <a href="#a3b43297549f3461176bef2d9cf6b2c48" class="m-doc-self">Load</a>(</span><span class="m-doc-wrap">) <span class="m-label m-flat m-warning">virtual</span></span>
             </dt>
@@ -140,8 +156,8 @@
               <span class="m-doc-wrap-bumper">void <a href="#a975b877482520d2dc284332e0a2f0255" class="m-doc-self">OnMissionAbort</a>(</span><span class="m-doc-wrap">) <span class="m-label m-flat m-warning">virtual</span></span>
             </dt>
             <dd>Called when the mission is aborted.</dd>
-            <dt id="a5713ad454c8467a2d235855931340e86">
-              <span class="m-doc-wrap-bumper">void <a href="#a5713ad454c8467a2d235855931340e86" class="m-doc-self">OnMissionCompleted</a>(</span><span class="m-doc-wrap">) <span class="m-label m-flat m-warning">virtual</span></span>
+            <dt>
+              <span class="m-doc-wrap-bumper">void <a href="#a5713ad454c8467a2d235855931340e86" class="m-doc">OnMissionCompleted</a>(</span><span class="m-doc-wrap">) <span class="m-label m-flat m-warning">virtual</span></span>
             </dt>
             <dd>Called when the mission is completed.</dd>
             <dt id="a7725f5cf7647b5312d7df93d4dd64235">
@@ -172,6 +188,55 @@
               <span class="m-doc-wrap-bumper">auto <a href="#a34c41735e498891a05e194e4827c982b" class="m-doc-self">GetTargetAnimalSpecies</a>(</span><span class="m-doc-wrap">) -&gt; <a href="class_simulator_1_1c_species_profile.html" class="m-doc">cSpeciesProfile</a>* <span class="m-label m-flat m-warning">virtual</span></span>
             </dt>
             <dd><span></span></dd>
+            <dt id="a659e33146115298b3c23294b8bf2c9fc">
+              <span class="m-doc-wrap-bumper">void <a href="#a659e33146115298b3c23294b8bf2c9fc" class="m-doc-self">GetTargetAnimalSpeciesNameText</a>(</span><span class="m-doc-wrap">string16&amp; dst) <span class="m-label m-flat m-warning">virtual</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="abd99c61528c4e9101d93983f666806a4">
+              <span class="m-doc-wrap-bumper">void <a href="#abd99c61528c4e9101d93983f666806a4" class="m-doc-self">GetTitleText</a>(</span><span class="m-doc-wrap">string16&amp; dst) <span class="m-label m-flat m-warning">virtual</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a0dc3530498ea19fde831e1815829c5cf">
+              <span class="m-doc-wrap-bumper">void <a href="#a0dc3530498ea19fde831e1815829c5cf" class="m-doc-self">GetUIMediumDescText</a>(</span><span class="m-doc-wrap">string16&amp; dst) <span class="m-label m-flat m-warning">virtual</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a8183c6072b3b852e5d55ce7f23099b21">
+              <span class="m-doc-wrap-bumper">void <a href="#a8183c6072b3b852e5d55ce7f23099b21" class="m-doc-self">GetUILongDescText</a>(</span><span class="m-doc-wrap">string16&amp; dst) <span class="m-label m-flat m-warning">virtual</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a1ffa2bce9e521572ed065bb16aec9ea3">
+              <span class="m-doc-wrap-bumper">void <a href="#a1ffa2bce9e521572ed065bb16aec9ea3" class="m-doc-self">funcC4h</a>(</span><span class="m-doc-wrap">string16&amp; dst) <span class="m-label m-flat m-warning">virtual</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a336a2c8a52637cdc5f0ac63a92fba101">
+              <span class="m-doc-wrap-bumper">void <a href="#a336a2c8a52637cdc5f0ac63a92fba101" class="m-doc-self">GetAlertTitleText</a>(</span><span class="m-doc-wrap">string16&amp; dst) <span class="m-label m-flat m-warning">virtual</span></span>
+            </dt>
+            <dd>&quot;Mission&quot; or &quot;Alert&quot;</dd>
+            <dt id="a2834c172f0140112e0e878d6925c5426">
+              <span class="m-doc-wrap-bumper">void <a href="#a2834c172f0140112e0e878d6925c5426" class="m-doc-self">GetStarClueText</a>(</span><span class="m-doc-wrap">int index,
+              string16&amp; dst) <span class="m-label m-flat m-warning">virtual</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="ade06f65fda6bd862531a551c70ab681d">
+              <span class="m-doc-wrap-bumper">void <a href="#ade06f65fda6bd862531a551c70ab681d" class="m-doc-self">GetStarClueDistanceText</a>(</span><span class="m-doc-wrap">string16&amp; dst) <span class="m-label m-flat m-warning">virtual</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a2708f6c92476dca107dbdf4774bd5913">
+              <span class="m-doc-wrap-bumper">void <a href="#a2708f6c92476dca107dbdf4774bd5913" class="m-doc-self">GetStarClueRangeMinText</a>(</span><span class="m-doc-wrap">string16&amp; dst) <span class="m-label m-flat m-warning">virtual</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a675a3ce3c573671e12f2e47b6623f33e">
+              <span class="m-doc-wrap-bumper">void <a href="#a675a3ce3c573671e12f2e47b6623f33e" class="m-doc-self">GetStarClueRangeMaxText</a>(</span><span class="m-doc-wrap">string16&amp; dst) <span class="m-label m-flat m-warning">virtual</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="acbfc5824754098e8d13b709cbdf4ffe7">
+              <span class="m-doc-wrap-bumper">void <a href="#acbfc5824754098e8d13b709cbdf4ffe7" class="m-doc-self">GetPlanetClueOrbitOrderText</a>(</span><span class="m-doc-wrap">string16&amp; dst) <span class="m-label m-flat m-warning">virtual</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a7a00e8edf5250b5643fb383eb9526a2c">
+              <span class="m-doc-wrap-bumper">void <a href="#a7a00e8edf5250b5643fb383eb9526a2c" class="m-doc-self">GetPlanetClueText</a>(</span><span class="m-doc-wrap">string16&amp; dst) <span class="m-label m-flat m-warning">virtual</span></span>
+            </dt>
+            <dd><span></span></dd>
             <dt id="a483858bfb1fed7c7231401143ea44407">
               <span class="m-doc-wrap-bumper">auto <a href="#a483858bfb1fed7c7231401143ea44407" class="m-doc-self">GetStarMapEffectGroup</a>(</span><span class="m-doc-wrap">) -&gt; uint32_t <span class="m-label m-flat m-warning">virtual</span></span>
             </dt>
@@ -192,12 +257,12 @@
               <span class="m-doc-wrap-bumper">auto <a href="#ae6ef6961795460a3e1ec01ff7087594f" class="m-doc">IsTargetPlanet</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_planet_record.html" class="m-doc">cPlanetRecord</a>* pPlanetRecord) -&gt; bool <span class="m-label m-flat m-warning">virtual</span></span>
             </dt>
             <dd>Returns true if the given planet is the target planet of the mission, or false otherwise.</dd>
-            <dt id="a48ea7415b21399c9193a997b10599518">
-              <span class="m-doc-wrap-bumper">auto <a href="#a48ea7415b21399c9193a997b10599518" class="m-doc-self">funcF8h</a>(</span><span class="m-doc-wrap">) -&gt; bool <span class="m-label m-flat m-warning">virtual</span></span>
+            <dt id="ab19d405a6d0ececa4b562471eb278fbc">
+              <span class="m-doc-wrap-bumper">auto <a href="#ab19d405a6d0ececa4b562471eb278fbc" class="m-doc-self">HasBeenFulfilled</a>(</span><span class="m-doc-wrap">) -&gt; bool <span class="m-label m-flat m-warning">virtual</span></span>
             </dt>
             <dd><span></span></dd>
-            <dt id="a3743e4d0879935ae33562e345ea9769e">
-              <span class="m-doc-wrap-bumper">auto <a href="#a3743e4d0879935ae33562e345ea9769e" class="m-doc-self">funcFCh</a>(</span><span class="m-doc-wrap">) -&gt; bool <span class="m-label m-flat m-warning">virtual</span></span>
+            <dt id="a7b27f68d9a16472527c6ceeeefb8b011">
+              <span class="m-doc-wrap-bumper">auto <a href="#a7b27f68d9a16472527c6ceeeefb8b011" class="m-doc-self">HasFailed</a>(</span><span class="m-doc-wrap">) -&gt; bool <span class="m-label m-flat m-warning">virtual</span></span>
             </dt>
             <dd><span></span></dd>
             <dt id="a08c47922bf518b7ae4f9f636092c0478">
@@ -242,12 +307,143 @@
               <span class="m-doc-wrap-bumper">void <a href="#a95af6ef6ad0fda6de98b9df49c85d941" class="m-doc-self">func120h</a>(</span><span class="m-doc-wrap">int) <span class="m-label m-flat m-warning">virtual</span></span>
             </dt>
             <dd><span></span></dd>
-            <dt id="a3e9b8f211564c158b162eeb375c9ccfc">
-              <span class="m-doc-wrap-bumper">auto <a href="#a3e9b8f211564c158b162eeb375c9ccfc" class="m-doc-self">func128h</a>(</span><span class="m-doc-wrap">) -&gt; bool <span class="m-label m-flat m-warning">virtual</span></span>
+            <dt id="a4c28e8c6eb8c01d017188b59e500285c">
+              <span class="m-doc-wrap-bumper">auto <a href="#a4c28e8c6eb8c01d017188b59e500285c" class="m-doc-self">CreateClues</a>(</span><span class="m-doc-wrap">) -&gt; bool <span class="m-label m-flat m-warning">virtual</span></span>
+            </dt>
+            <dd>Creates the star and planet clues for finding landmarks, only if they are not disabled with the <code>kMissionFlagHideStarName</code> and <code>kMissionFlagHidePlanetName</code> flags.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a4151469f960e48819f26b8f3fff9c01d" class="m-doc">CreateStarClue</a>(</span><span class="m-doc-wrap">) -&gt; bool <span class="m-label m-flat m-warning">virtual</span></span>
+            </dt>
+            <dd>Chooses one nearby star where a landmark must be found, and enables the <code>mStarClue</code> accordingly.</dd>
+            <dt id="aea20f3ff064ed660c52809b29b424023">
+              <span class="m-doc-wrap-bumper">auto <a href="#aea20f3ff064ed660c52809b29b424023" class="m-doc-self">CreatePlanetClue</a>(</span><span class="m-doc-wrap">) -&gt; bool <span class="m-label m-flat m-warning">virtual</span></span>
             </dt>
             <dd><span></span></dd>
-            <dt id="a7f492bf3984c447bf8abb78dedfd10d5">
-              <span class="m-doc-wrap-bumper">auto <a href="#a7f492bf3984c447bf8abb78dedfd10d5" class="m-doc-self">func12Ch</a>(</span><span class="m-doc-wrap">) -&gt; bool <span class="m-label m-flat m-warning">virtual</span></span>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a28726823c704fde65337139476615afb" class="m-doc">IsSourcePlanetAndEmpire</a>(</span><span class="m-doc-wrap">uint32_t empireId,
+              <a href="namespace_simulator.html#a6edc4879527b972a44081640e47fc6c7" class="m-doc">PlanetID</a> planetId) -&gt; bool <span class="m-label m-flat m-warning">virtual</span></span>
+            </dt>
+            <dd>Returns true if the mission is Active or Complete, and the given empire and planet are the empire and planet where the mission originated.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a6436a536f6d65f13cbffb2a50e314091" class="m-doc">HasEnoughAvailableCargoSlots</a>(</span><span class="m-doc-wrap">) -&gt; bool <span class="m-label m-flat m-warning">virtual</span></span>
+            </dt>
+            <dd>Checks if the player has enough available cargo slots in the inventory to give the animals and plants of the mission (<code>mGiveOnAcceptAnimalIDs</code> and <code>mGiveOnAcceptPlantIDs</code>).</dd>
+            <dt id="a93e2defce19ec5c24829ce24bd3cadb2">
+              <span class="m-doc-wrap-bumper">auto <a href="#a93e2defce19ec5c24829ce24bd3cadb2" class="m-doc-self">func13Ch</a>(</span><span class="m-doc-wrap">) -&gt; bool <span class="m-label m-flat m-warning">virtual</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a81e7ea5a4c0f84d26e4dffadf9c39a06">
+              <span class="m-doc-wrap-bumper">auto <a href="#a81e7ea5a4c0f84d26e4dffadf9c39a06" class="m-doc-self">func140h</a>(</span><span class="m-doc-wrap">int,
+              int) -&gt; bool <span class="m-label m-flat m-warning">virtual</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">void <a href="#a726d2993de4be2d6773c411713d714e6" class="m-doc">AddMessageListeners</a>(</span><span class="m-doc-wrap">) <span class="m-label m-flat m-warning">virtual</span></span>
+            </dt>
+            <dd>Adds this mission as listener to some game messages.</dd>
+            <dt id="af23c1e791ac98bfb61878353be78b193">
+              <span class="m-doc-wrap-bumper">void <a href="#af23c1e791ac98bfb61878353be78b193" class="m-doc-self">RemoveMessageListeners</a>(</span><span class="m-doc-wrap">) <span class="m-label m-flat m-warning">virtual</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a17da97ebd7b2cbb6bdc548c64d3a4f7a">
+              <span class="m-doc-wrap-bumper">void <a href="#a17da97ebd7b2cbb6bdc548c64d3a4f7a" class="m-doc-self">AddMessageListener</a>(</span><span class="m-doc-wrap">uint32_t messageId) <span class="m-label m-flat m-warning">virtual</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a7a9f1b152998426a4b88f47d76584fb0">
+              <span class="m-doc-wrap-bumper">void <a href="#a7a9f1b152998426a4b88f47d76584fb0" class="m-doc-self">RemoveMessageListener</a>(</span><span class="m-doc-wrap">uint32_t messageId) <span class="m-label m-flat m-warning">virtual</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#adae8432b22ac5a2828d80a6453dc97da" class="m-doc">ListensToMessage</a>(</span><span class="m-doc-wrap">uint32_t messageId) -&gt; bool <span class="m-label m-flat m-warning">virtual</span></span>
+            </dt>
+            <dd>Returns true if the mission is a listener to the given game internal message.</dd>
+            <dt id="af61c435abb37db0dc7b951d24ba857eb">
+              <span class="m-doc-wrap-bumper">auto <a href="#af61c435abb37db0dc7b951d24ba857eb" class="m-doc-self">func158h</a>(</span><span class="m-doc-wrap">) -&gt; bool <span class="m-label m-flat m-warning">virtual</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a47e20aa6ba2231061c6f70da32c7f32b">
+              <span class="m-doc-wrap-bumper">auto <a href="#a47e20aa6ba2231061c6f70da32c7f32b" class="m-doc-self">func15Ch</a>(</span><span class="m-doc-wrap">) -&gt; bool <span class="m-label m-flat m-warning">virtual</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="ac6d3729738115e7c7c5c09e76ac93485">
+              <span class="m-doc-wrap-bumper">auto <a href="#ac6d3729738115e7c7c5c09e76ac93485" class="m-doc-self">func160h</a>(</span><span class="m-doc-wrap">) -&gt; int <span class="m-label m-flat m-warning">virtual</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a4964952137358757548398d60775a77e">
+              <span class="m-doc-wrap-bumper">auto <a href="#a4964952137358757548398d60775a77e" class="m-doc-self">func164h</a>(</span><span class="m-doc-wrap">) -&gt; int <span class="m-label m-flat m-warning">virtual</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a529889425391b9a5f0e1247b0231dc1d">
+              <span class="m-doc-wrap-bumper">auto <a href="#a529889425391b9a5f0e1247b0231dc1d" class="m-doc-self">func168h</a>(</span><span class="m-doc-wrap">) -&gt; bool <span class="m-label m-flat m-warning">virtual</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a8d9f196af38a029af6789fb398a98f75">
+              <span class="m-doc-wrap-bumper">void <a href="#a8d9f196af38a029af6789fb398a98f75" class="m-doc-self">func16Ch</a>(</span><span class="m-doc-wrap">) <span class="m-label m-flat m-warning">virtual</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">void <a href="#a63ddf40741c23f3b5ea04a63005cc8ac" class="m-doc">ExportTargetPlanetAndSpecies</a>(</span><span class="m-doc-wrap">) <span class="m-label m-flat m-warning">virtual</span></span>
+            </dt>
+            <dd>Reads properties <code>missionExportTargetPlanetTo</code> and <code>missionExportTargetSpeciesTo</code>.</dd>
+            <dt id="af75b030532e9d77e98a6acc9b8e9aa54">
+              <span class="m-doc-wrap-bumper">void <a href="#af75b030532e9d77e98a6acc9b8e9aa54" class="m-doc-self">func174h</a>(</span><span class="m-doc-wrap">int) <span class="m-label m-flat m-warning">virtual</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="af4e433461d522c53ef3b94b05c2204f9">
+              <span class="m-doc-wrap-bumper">auto <a href="#af4e433461d522c53ef3b94b05c2204f9" class="m-doc-self">func178h</a>(</span><span class="m-doc-wrap">) -&gt; uint32_t <span class="m-label m-flat m-warning">virtual</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="abe75ac7b16a50040510b67324bada055">
+              <span class="m-doc-wrap-bumper">auto <a href="#abe75ac7b16a50040510b67324bada055" class="m-doc-self">GetCreatureGoalCardLayoutId</a>(</span><span class="m-doc-wrap">) -&gt; uint32_t <span class="m-label m-flat m-warning">virtual</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="aefc8674fbfd63ce1697d2626c25ba946">
+              <span class="m-doc-wrap-bumper">auto <a href="#aefc8674fbfd63ce1697d2626c25ba946" class="m-doc-self">func180h</a>(</span><span class="m-doc-wrap">) -&gt; bool <span class="m-label m-flat m-warning">virtual</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="adf6a06ce3f252ff40c088a78d57d9250">
+              <span class="m-doc-wrap-bumper">auto <a href="#adf6a06ce3f252ff40c088a78d57d9250" class="m-doc-self">func184h</a>(</span><span class="m-doc-wrap">int,
+              int) -&gt; float <span class="m-label m-flat m-warning">virtual</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a38004149040b0825bf675be15345c99a">
+              <span class="m-doc-wrap-bumper">auto <a href="#a38004149040b0825bf675be15345c99a" class="m-doc-self">CalculateMissionDuration</a>(</span><span class="m-doc-wrap">) -&gt; int <span class="m-label m-flat m-warning">virtual</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a02750af9d22d2aadaf713a1176c9b82f" class="m-doc">PickTargetAnimalSpecies</a>(</span><span class="m-doc-wrap">) -&gt; bool <span class="m-label m-flat m-warning">virtual</span></span>
+            </dt>
+            <dd>Sets <code>mTargetAnimalSpecies</code> and <code>mTargetAnimalSpeciesKey</code>.</dd>
+            <dt id="adbffbedd1b02cbfe122c92c21308c294">
+              <span class="m-doc-wrap-bumper">void <a href="#adbffbedd1b02cbfe122c92c21308c294" class="m-doc-self">func190h</a>(</span><span class="m-doc-wrap">const <a href="struct_resource_key.html" class="m-doc">ResourceKey</a>&amp; speciesId) <span class="m-label m-flat m-warning">virtual</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="ac258dd7773a831c9b581425cb0e0064e">
+              <span class="m-doc-wrap-bumper">void <a href="#ac258dd7773a831c9b581425cb0e0064e" class="m-doc-self">func194h</a>(</span><span class="m-doc-wrap">) <span class="m-label m-flat m-warning">virtual</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a75658eb846f5a44795ba845485c58c8a">
+              <span class="m-doc-wrap-bumper">auto <a href="#a75658eb846f5a44795ba845485c58c8a" class="m-doc-self">func198h</a>(</span><span class="m-doc-wrap">bool) -&gt; bool <span class="m-label m-flat m-warning">virtual</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a8c8ecb7e8ccf1d49558c4e04276e2aa2">
+              <span class="m-doc-wrap-bumper">void <a href="#a8c8ecb7e8ccf1d49558c4e04276e2aa2" class="m-doc-self">func19Ch</a>(</span><span class="m-doc-wrap">) <span class="m-label m-flat m-warning">virtual</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a29bddf79ba9d557402da400a97715fd2">
+              <span class="m-doc-wrap-bumper">void <a href="#a29bddf79ba9d557402da400a97715fd2" class="m-doc-self">func1A0h</a>(</span><span class="m-doc-wrap">bool) <span class="m-label m-flat m-warning">virtual</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a3a9c8996c8e1adc7cfec11f8f09b51c8">
+              <span class="m-doc-wrap-bumper">auto <a href="#a3a9c8996c8e1adc7cfec11f8f09b51c8" class="m-doc-self">AddRef</a>(</span><span class="m-doc-wrap">) -&gt; int <span class="m-label m-flat m-warning">pure virtual</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="aa036657cba582dd62f05811e455fb7d5">
+              <span class="m-doc-wrap-bumper">auto <a href="#aa036657cba582dd62f05811e455fb7d5" class="m-doc-self">Release</a>(</span><span class="m-doc-wrap">) -&gt; int <span class="m-label m-flat m-warning">pure virtual</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a499586d32a7e1bafdff17480d4819ba2">
+              <span class="m-doc-wrap-bumper">auto <a href="#a499586d32a7e1bafdff17480d4819ba2" class="m-doc-self">Cast</a>(</span><span class="m-doc-wrap">) const -&gt; void* <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
             <dd><span></span></dd>
           </dl>
@@ -290,7 +486,7 @@
             <dt id="a1f330045fb806a1c529514dc62e4764b">
               <a href="c_empire_8h.html#af8ca66b45d5d36ab090e9c1ed9dc9af0" class="m-doc">cEmpirePtr</a> <a href="#a1f330045fb806a1c529514dc62e4764b" class="m-doc-self">mpOwnerEmpire</a>
             </dt>
-            <dd>Owner empire. Use GetOwnerEmpire.</dd>
+            <dd>Owner empire. Use <a href="class_simulator_1_1c_mission.html#a7384806648cf9264968bf64d02933982" class="m-doc">GetOwnerEmpire()</a></dd>
             <dt id="a194ae10f6bb023fac205d421d01ebe13">
               uint32_t <a href="#a194ae10f6bb023fac205d421d01ebe13" class="m-doc-self">mTargetEmpireID</a>
             </dt>
@@ -298,7 +494,7 @@
             <dt id="a8fc1e0913981a423ad0950e656a31398">
               <a href="c_empire_8h.html#af8ca66b45d5d36ab090e9c1ed9dc9af0" class="m-doc">cEmpirePtr</a> <a href="#a8fc1e0913981a423ad0950e656a31398" class="m-doc-self">mpTargetEmpire</a>
             </dt>
-            <dd>Owner empire. Use GetTargetEmpire.</dd>
+            <dd>Owner empire. Use <a href="class_simulator_1_1c_mission.html#af2b9073dc2b9f033fe8c3075452fe103" class="m-doc">GetTargetEmpire()</a> and <a href="class_simulator_1_1c_mission.html#acd2e1c64077349a05ed6ee8ab0c5e7ff" class="m-doc">SetTargetEmpire()</a></dd>
             <dt id="ac8ec58f793c154b903c61f0297b7a9a0">
               <a href="c_planet_8h.html#a9cf4bb12f2504ebf5ba5f6c28ffda8aa" class="m-doc">cPlanetPtr</a> <a href="#ac8ec58f793c154b903c61f0297b7a9a0" class="m-doc-self">mpSourcePlanet</a>
             </dt>
@@ -315,32 +511,12 @@
               <a href="class_localized_string.html" class="m-doc">LocalizedString</a> <a href="#a7179f8a1d610b387de6de74f7f6d9c67" class="m-doc-self">field_B0</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="a35808bd1ac05d111bab6b6feb84f7ade">
-              int <a href="#a35808bd1ac05d111bab6b6feb84f7ade" class="m-doc-self">mStarClue</a>
+            <dt id="a333071cbc04491a07665bbae56f4569a">
+              <a href="struct_simulator_1_1c_star_clue.html" class="m-doc">cStarClue</a> <a href="#a333071cbc04491a07665bbae56f4569a" class="m-doc-self">mStarClue</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="a5f8c23e11db6a817ada08265e9e304bf">
-              int <a href="#a5f8c23e11db6a817ada08265e9e304bf" class="m-doc-self">field_C4</a>
-            </dt>
-            <dd><span></span></dd>
-            <dt id="a4364c9103cbb5094c43804f3bc111df4">
-              vector&lt;int&gt; <a href="#a4364c9103cbb5094c43804f3bc111df4" class="m-doc-self">field_CC</a>
-            </dt>
-            <dd><span></span></dd>
-            <dt id="a781bb2dbcf5237045127b57a1317ebcc">
-              vector&lt;<a href="c_star_record_8h.html#a45bf5963088a11c31f2b96f32be43662" class="m-doc">cStarRecordPtr</a>&gt; <a href="#a781bb2dbcf5237045127b57a1317ebcc" class="m-doc-self">field_E0</a>
-            </dt>
-            <dd><span></span></dd>
-            <dt id="a181c5d28ac6411bf4479b0d089f31074">
-              int <a href="#a181c5d28ac6411bf4479b0d089f31074" class="m-doc-self">mPlanetClue</a>
-            </dt>
-            <dd><span></span></dd>
-            <dt id="aaca2811fdd237f4441aace034665d2f0">
-              int <a href="#aaca2811fdd237f4441aace034665d2f0" class="m-doc-self">field_F8</a>
-            </dt>
-            <dd><span></span></dd>
-            <dt id="a3c65f6011552cfa6a2a1c45b49732036">
-              int <a href="#a3c65f6011552cfa6a2a1c45b49732036" class="m-doc-self">field_FC</a>
+            <dt id="a99ac4d2443944c56a260e3a0f7a464fc">
+              <a href="struct_simulator_1_1c_planet_clue.html" class="m-doc">cPlanetClue</a> <a href="#a99ac4d2443944c56a260e3a0f7a464fc" class="m-doc-self">mPlanetClue</a>
             </dt>
             <dd><span></span></dd>
             <dt id="a1043280ba1493eb0d643472ab2efd3b3">
@@ -423,8 +599,8 @@
               vector&lt;<a href="struct_resource_key.html" class="m-doc">ResourceKey</a>&gt; <a href="#a430f25672ca91be936e8a29a17142920" class="m-doc-self">mGiveOnAcceptPlantIDs</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="a46d795b30d8c8ea19ab2613bdb086939">
-              vector&lt;int&gt; <a href="#a46d795b30d8c8ea19ab2613bdb086939" class="m-doc-self">field_1D0</a>
+            <dt id="ab38a40762f7e3410ee926feed0f51c66">
+              vector&lt;uint32_t&gt; <a href="#ab38a40762f7e3410ee926feed0f51c66" class="m-doc-self">field_1D0</a>
             </dt>
             <dd><span></span></dd>
             <dt id="ab1b826b360b45e73bb31d7ea15bd16a0">
@@ -439,6 +615,86 @@
         </section>
         <section>
           <h2>Function documentation</h2>
+          <section class="m-doc-details" id="aa50589922b62b47ee0a4cd462fba1cfe"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">void Simulator::<wbr />cMission::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#aa50589922b62b47ee0a4cd462fba1cfe" class="m-doc-self">SetState</a>(</span><span class="m-doc-wrap"><a href="namespace_simulator.html#ac85911e301d4c48524493bd864ce1e42" class="m-doc">MissionState</a> state)</span></span>
+            </h3>
+            <p>Changes the state of the mission.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">state</td>
+                  <td></td>
+                </tr>
+              </tbody>
+            </table>
+<p>Sets <code>mTitle</code> and <code>field_15C</code> to an empty string. If the new state is <a href="namespace_simulator.html#ac85911e301d4c48524493bd864ce1e42a4d3d769b812b6faa6b76e1a8abaece2d" class="m-doc">MissionState::<wbr />Active</a>, emits a SimulatorMessages::kMsgMissionUpdate message.</p>
+          </div></section>
+          <section class="m-doc-details" id="a7384806648cf9264968bf64d02933982"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"><a href="class_simulator_1_1c_empire.html" class="m-doc">cEmpire</a>* Simulator::<wbr />cMission::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a7384806648cf9264968bf64d02933982" class="m-doc-self">GetOwnerEmpire</a>(</span><span class="m-doc-wrap">)</span></span>
+            </h3>
+            <p>Returns the empire that created this mission.</p>
+<p>This will return <code>mpOwnerEmpire</code>, or set it to the empire of <code>mpOwnerEmpireID</code> if not set.</p>
+          </div></section>
+          <section class="m-doc-details" id="af2b9073dc2b9f033fe8c3075452fe103"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"><a href="class_simulator_1_1c_empire.html" class="m-doc">cEmpire</a>* Simulator::<wbr />cMission::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#af2b9073dc2b9f033fe8c3075452fe103" class="m-doc-self">GetTargetEmpire</a>(</span><span class="m-doc-wrap">)</span></span>
+            </h3>
+            <p>Returns the target empire of this mission.</p>
+<p>This will return <code>mpTargetEmpire</code>, or set it to the empire of <code>mpTargetEmpireID</code> if not set.</p>
+          </div></section>
+          <section class="m-doc-details" id="acd2e1c64077349a05ed6ee8ab0c5e7ff"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">void Simulator::<wbr />cMission::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#acd2e1c64077349a05ed6ee8ab0c5e7ff" class="m-doc-self">SetTargetEmpire</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_empire.html" class="m-doc">cEmpire</a>* pEmpire)</span></span>
+            </h3>
+            <p>Sets the target empire of this mission.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">pEmpire</td>
+                  <td></td>
+                </tr>
+              </tbody>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="ac4db6723964c38b11655e9d6d7ad4f86"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"><a href="namespace_simulator.html#ac85911e301d4c48524493bd864ce1e42" class="m-doc">MissionState</a> Simulator::<wbr />cMission::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ac4db6723964c38b11655e9d6d7ad4f86" class="m-doc-self">Update</a>(</span><span class="m-doc-wrap">int deltaTime) <span class="m-label m-warning">virtual</span></span></span>
+            </h3>
+            <p>Only called when state is Active, called every frame.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">deltaTime</td>
+                  <td></td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>Returns</th>
+                  <td>New state of the mission.</td>
+                </tr>
+              </tfoot>
+            </table>
+<p>Default behaviour:</p><ol><li>Updates <code>mElapsedTimeMS</code>, and if it is greater than the mission max duration, fails the mission.</li><li>Calls <a href="class_simulator_1_1c_mission.html#a529889425391b9a5f0e1247b0231dc1d" class="m-doc">func168h()</a></li><li>Updates clocks <code>field_38</code> and <code>field_58</code>, and sends message <code>0x38CF2FD</code> sometimes</li><li>If <code>field_18C</code> and player is in galaxy context, calls <a href="class_simulator_1_1c_mission.html#a29bddf79ba9d557402da400a97715fd2" class="m-doc">func1A0h()</a></li></ol>
+          </div></section>
+          <section class="m-doc-details" id="a5713ad454c8467a2d235855931340e86"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">void Simulator::<wbr />cMission::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a5713ad454c8467a2d235855931340e86" class="m-doc-self">OnMissionCompleted</a>(</span><span class="m-doc-wrap">) <span class="m-label m-warning">virtual</span></span></span>
+            </h3>
+            <p>Called when the mission is completed.</p>
+<p>Default behaviour:</p><ol><li>If mission is a tutorial, it changes MissionManager.mTutorialMissionStates</li><li>If mission is an adventure, advances some variable on player empire</li><li>Unlocks (or gives?) the tools in <code>mUnlockToolIDList</code></li><li>Unlocks (or gives?) the tool in <code>mRewardToolID</code></li><li>Adds <code>mRewardMoney</code> to player empire money</li><li>Applies empire relationships ... more things ...</li></ol>
+          </div></section>
           <section class="m-doc-details" id="af03aa68131ecdd5be1d24fa352866631"><div>
             <h3>
               <span class="m-doc-wrap-bumper">string16* Simulator::<wbr />cMission::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#af03aa68131ecdd5be1d24fa352866631" class="m-doc-self">GetDescription</a>(</span><span class="m-doc-wrap">string16* dst) <span class="m-label m-warning">virtual</span></span></span>
@@ -508,6 +764,95 @@
               </tfoot>
             </table>
 <p>For example, it is used to provide the target planet name, target species, etc</p>
+          </div></section>
+          <section class="m-doc-details" id="a4151469f960e48819f26b8f3fff9c01d"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">bool Simulator::<wbr />cMission::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a4151469f960e48819f26b8f3fff9c01d" class="m-doc-self">CreateStarClue</a>(</span><span class="m-doc-wrap">) <span class="m-label m-warning">virtual</span></span></span>
+            </h3>
+            <p>Chooses one nearby star where a landmark must be found, and enables the <code>mStarClue</code> accordingly.</p>
+<p>The maximum star distance is determined by the property <code>missionLandmarkSearchRadius</code></p>
+          </div></section>
+          <section class="m-doc-details" id="a28726823c704fde65337139476615afb"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">bool Simulator::<wbr />cMission::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a28726823c704fde65337139476615afb" class="m-doc-self">IsSourcePlanetAndEmpire</a>(</span><span class="m-doc-wrap">uint32_t empireId,
+              <a href="namespace_simulator.html#a6edc4879527b972a44081640e47fc6c7" class="m-doc">PlanetID</a> planetId) <span class="m-label m-warning">virtual</span></span></span>
+            </h3>
+            <p>Returns true if the mission is Active or Complete, and the given empire and planet are the empire and planet where the mission originated.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">empireId</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>planetId</td>
+                  <td></td>
+                </tr>
+              </tbody>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="a6436a536f6d65f13cbffb2a50e314091"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">bool Simulator::<wbr />cMission::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a6436a536f6d65f13cbffb2a50e314091" class="m-doc-self">HasEnoughAvailableCargoSlots</a>(</span><span class="m-doc-wrap">) <span class="m-label m-warning">virtual</span></span></span>
+            </h3>
+            <p>Checks if the player has enough available cargo slots in the inventory to give the animals and plants of the mission (<code>mGiveOnAcceptAnimalIDs</code> and <code>mGiveOnAcceptPlantIDs</code>).</p>
+            <table class="m-table m-fullwidth m-flat">
+              <tfoot>
+                <tr>
+                  <th style="width: 1%">Returns</th>
+                  <td>True if it has enough cargo slots, false otherwise.</td>
+                </tr>
+              </tfoot>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="a726d2993de4be2d6773c411713d714e6"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">void Simulator::<wbr />cMission::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a726d2993de4be2d6773c411713d714e6" class="m-doc-self">AddMessageListeners</a>(</span><span class="m-doc-wrap">) <span class="m-label m-warning">virtual</span></span></span>
+            </h3>
+            <p>Adds this mission as listener to some game messages.</p>
+<p>By default, it listens to <code>0x35EC3DE</code>, <code>0x248975F</code>, <code>0x2489760</code>, <code>0x4249453</code></p>
+          </div></section>
+          <section class="m-doc-details" id="adae8432b22ac5a2828d80a6453dc97da"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">bool Simulator::<wbr />cMission::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#adae8432b22ac5a2828d80a6453dc97da" class="m-doc-self">ListensToMessage</a>(</span><span class="m-doc-wrap">uint32_t messageId) <span class="m-label m-warning">virtual</span></span></span>
+            </h3>
+            <p>Returns true if the mission is a listener to the given game internal message.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">messageId</td>
+                  <td></td>
+                </tr>
+              </tbody>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="a63ddf40741c23f3b5ea04a63005cc8ac"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">void Simulator::<wbr />cMission::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a63ddf40741c23f3b5ea04a63005cc8ac" class="m-doc-self">ExportTargetPlanetAndSpecies</a>(</span><span class="m-doc-wrap">) <span class="m-label m-warning">virtual</span></span></span>
+            </h3>
+            <p>Reads properties <code>missionExportTargetPlanetTo</code> and <code>missionExportTargetSpeciesTo</code>.</p>
+<p>If set, it sets the mission target planet and species id as the tutorial ones in MissionManager.</p>
+          </div></section>
+          <section class="m-doc-details" id="a02750af9d22d2aadaf713a1176c9b82f"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">bool Simulator::<wbr />cMission::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a02750af9d22d2aadaf713a1176c9b82f" class="m-doc-self">PickTargetAnimalSpecies</a>(</span><span class="m-doc-wrap">) <span class="m-label m-warning">virtual</span></span></span>
+            </h3>
+            <p>Sets <code>mTargetAnimalSpecies</code> and <code>mTargetAnimalSpeciesKey</code>.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <tfoot>
+                <tr>
+                  <th style="width: 1%">Returns</th>
+                  <td><br /></td>
+                </tr>
+              </tfoot>
+            </table>
+<p>By default, it just picks a random creature from the planet.</p>
           </div></section>
         </section>
       </div>

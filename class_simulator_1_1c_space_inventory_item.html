@@ -48,7 +48,7 @@
           <span class="m-breadcrumb"><a href="namespace_simulator.html">Simulator</a>::<wbr/></span>cSpaceInventoryItem <span class="m-thin">class</span>
           <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="c_space_inventory_item_8h.html">&lt;Spore/Simulator/cSpaceInventoryItem.h&gt;</a></div>
         </h1>
-        <p><span></span></p>
+        <p>Represents an item of the space player inventory. This include space tools and cargo.</p>
         <div class="m-block m-default">
           <h3>Contents</h3>
           <ul>
@@ -58,6 +58,7 @@
                 <li><a href="#base-classes">Base classes</a></li>
                 <li><a href="#derived-classes">Derived classes</a></li>
                 <li><a href="#pub-static-attribs">Public static variables</a></li>
+                <li><a href="#pub-static-methods">Public static functions</a></li>
                 <li><a href="#pub-methods">Public functions</a></li>
                 <li><a href="#pub-attribs">Public variables</a></li>
               </ul>
@@ -85,6 +86,18 @@
           <h2><a href="#derived-classes">Derived classes</a></h2>
           <dl class="m-doc">
             <dt>
+              class <a href="class_simulator_1_1c_animal_cargo_info.html" class="m-doc">cAnimalCargoInfo</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              class <a href="class_simulator_1_1c_object_instance_inventory_item.html" class="m-doc">cObjectInstanceInventoryItem</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              class <a href="class_simulator_1_1c_plant_cargo_info.html" class="m-doc">cPlantCargoInfo</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
               class <a href="class_simulator_1_1c_space_tool_data.html" class="m-doc">cSpaceToolData</a>
             </dt>
             <dd><span></span></dd>
@@ -97,6 +110,17 @@
               static const uint32_t <a href="#a37163837add2949ec66f00f479dbfb55" class="m-doc-self">TYPE</a>
             </dt>
             <dd><span></span></dd>
+          </dl>
+        </section>
+        <section id="pub-static-methods">
+          <h2><a href="#pub-static-methods">Public static functions</a></h2>
+          <dl class="m-doc">
+            <dt>
+              <span class="m-doc-wrap-bumper">static void <a href="#aa92864fc46a271fcf63cc86444a53108" class="m-doc">CreateMultiDeliveryObject</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_space_inventory_item.html" class="m-doc">cSpaceInventoryItem</a>&amp; dst,
+              const <a href="struct_resource_key.html" class="m-doc">ResourceKey</a>&amp; itemID,
+              uint32_t instanceID)</span>
+            </dt>
+            <dd>Creates an inventory item for multi-delivery mission objects.</dd>
           </dl>
         </section>
         <section id="pub-methods">
@@ -126,12 +150,12 @@
               <span class="m-doc-wrap-bumper">auto <a href="#afd84802e6741785bb22c3da189791d57" class="m-doc-self">Duplicate</a>(</span><span class="m-doc-wrap">) -&gt; intrusive_ptr&lt;<a href="class_simulator_1_1c_space_inventory_item.html" class="m-doc">cSpaceInventoryItem</a>&gt; <span class="m-label m-flat m-warning">virtual</span></span>
             </dt>
             <dd><span></span></dd>
-            <dt id="a48132b33a2bde7f47c2577475805ed57">
-              <span class="m-doc-wrap-bumper">auto <a href="#a48132b33a2bde7f47c2577475805ed57" class="m-doc-self">func28</a>(</span><span class="m-doc-wrap">) -&gt; const char16_t* <span class="m-label m-flat m-warning">virtual</span></span>
+            <dt id="aadacd0fa198feac77cde936162b2f484">
+              <span class="m-doc-wrap-bumper">auto <a href="#aadacd0fa198feac77cde936162b2f484" class="m-doc-self">GetDescription</a>(</span><span class="m-doc-wrap">) -&gt; const char16_t* <span class="m-label m-flat m-warning">virtual</span></span>
             </dt>
             <dd><span></span></dd>
-            <dt id="a3d329f746357600424bcecb2248c2580">
-              <span class="m-doc-wrap-bumper">auto <a href="#a3d329f746357600424bcecb2248c2580" class="m-doc-self">func2C</a>(</span><span class="m-doc-wrap">) -&gt; const char16_t* <span class="m-label m-flat m-warning">virtual</span></span>
+            <dt id="abc5c3b323a5e38b96cf0e74926dd8848">
+              <span class="m-doc-wrap-bumper">auto <a href="#abc5c3b323a5e38b96cf0e74926dd8848" class="m-doc-self">GetDetailDescription</a>(</span><span class="m-doc-wrap">) -&gt; const char16_t* <span class="m-label m-flat m-warning">virtual</span></span>
             </dt>
             <dd><span></span></dd>
             <dt id="a88e77c430201b7c5281b1392521c7cee">
@@ -155,10 +179,10 @@
               <span class="m-doc-wrap-bumper">auto <a href="#aef63fd691d5c376bb573d63773d1a4f6" class="m-doc-self">func40h</a>(</span><span class="m-doc-wrap">) -&gt; int <span class="m-label m-flat m-warning">virtual</span></span>
             </dt>
             <dd><span></span></dd>
-            <dt id="aea70949694055d2c854d2f72c12ee85d">
-              <span class="m-doc-wrap-bumper">auto <a href="#aea70949694055d2c854d2f72c12ee85d" class="m-doc-self">func44h</a>(</span><span class="m-doc-wrap">) -&gt; bool <span class="m-label m-flat m-warning">virtual</span></span>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a2eabefa4238b90c77491027745acf786" class="m-doc">IsAvailableInCurrentPlanet</a>(</span><span class="m-doc-wrap">) -&gt; bool <span class="m-label m-flat m-warning">virtual</span></span>
             </dt>
-            <dd><span></span></dd>
+            <dd>Returns true if this item is available in the current planet.</dd>
             <dt id="a6bd2558040944b821a43bdb51d164cd7">
               <span class="m-doc-wrap-bumper">auto <a href="#a6bd2558040944b821a43bdb51d164cd7" class="m-doc-self">func48h</a>(</span><span class="m-doc-wrap">) -&gt; bool <span class="m-label m-flat m-warning">virtual</span></span>
             </dt>
@@ -184,8 +208,8 @@
               size_t <a href="#a788634032e9346fe3afc3560bf8568b4" class="m-doc-self">mItemCount</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="a75859d4b5c645a5fccd3c6c56b7c6c8c">
-              int <a href="#a75859d4b5c645a5fccd3c6c56b7c6c8c" class="m-doc-self">mItemType</a>
+            <dt id="adbd1bddf224beb5e8d373cda4d5aa5a8">
+              <a href="namespace_simulator.html#a90c225698982bc8a7ae96d52c71359c0" class="m-doc">SpaceInventoryItemType</a> <a href="#adbd1bddf224beb5e8d373cda4d5aa5a8" class="m-doc-self">mItemType</a>
             </dt>
             <dd><span></span></dd>
             <dt id="aba5fd0f8627e0363599e9b0faefbaa68">
@@ -208,12 +232,12 @@
               bool <a href="#a9b0bc804c5b0aa2e945cd627c63680bb" class="m-doc-self">mbIsActive</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="a975d0d8ae15b3ec560e683a24868fddc">
-              intrusive_ptr&lt;<a href="class_simulator_1_1c_space_inventory_item.html" class="m-doc">cSpaceInventoryItem</a>&gt; <a href="#a975d0d8ae15b3ec560e683a24868fddc" class="m-doc-self">mpCargoSlot</a>
+            <dt id="a11529f60037814494ecc4a9d3b694089">
+              <a href="c_space_inventory_item_8h.html#aa81d947a8a712f43f0eef7d0ee0f8ce5" class="m-doc">cSpaceInventoryItemPtr</a> <a href="#a11529f60037814494ecc4a9d3b694089" class="m-doc-self">mpCargoSlot</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="a6699944d4a8ee49f61004c8b6975f1e8">
-              intrusive_ptr&lt;<a href="class_app_1_1_property_list.html" class="m-doc">App::<wbr />PropertyList</a>&gt; <a href="#a6699944d4a8ee49f61004c8b6975f1e8" class="m-doc-self">mpPropList</a>
+            <dt id="a348e02e6421c68fa6bf1923f2678bb2c">
+              <a href="_property_list_8h.html#ae757f1639ff739ff0282dd91f3e39f0a" class="m-doc">PropertyListPtr</a> <a href="#a348e02e6421c68fa6bf1923f2678bb2c" class="m-doc-self">mpPropList</a>
             </dt>
             <dd><span></span></dd>
             <dt id="ada0f15378183ec9a536d423b414112f6">
@@ -252,12 +276,61 @@
         </section>
         <section>
           <h2>Function documentation</h2>
+          <section class="m-doc-details" id="aa92864fc46a271fcf63cc86444a53108"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">static void Simulator::<wbr />cSpaceInventoryItem::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#aa92864fc46a271fcf63cc86444a53108" class="m-doc-self">CreateMultiDeliveryObject</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_space_inventory_item.html" class="m-doc">cSpaceInventoryItem</a>&amp; dst,
+              const <a href="struct_resource_key.html" class="m-doc">ResourceKey</a>&amp; itemID,
+              uint32_t instanceID)</span></span>
+            </h3>
+            <p>Creates an inventory item for multi-delivery mission objects.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">dst</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>itemID</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>instanceID</td>
+                  <td></td>
+                </tr>
+              </tbody>
+            </table>
+<p>It will read a .prop file with name <code>instanceID</code> in the folder <code>multiDelivery_mision_objects~</code> (<code>0x37D494E</code>).</p>
+          </div></section>
           <section class="m-doc-details" id="a4a451dbc4aeff737b4d7c86f469fb673"><div>
             <h3>
               <span class="m-doc-wrap-bumper">bool Simulator::<wbr />cSpaceInventoryItem::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a4a451dbc4aeff737b4d7c86f469fb673" class="m-doc-self">GetImageColors</a>(</span><span class="m-doc-wrap">size_t&amp; dstCount,
               <a href="struct_math_1_1_color_r_g_b.html" class="m-doc">ColorRGB</a>*&amp; dst) <span class="m-label m-warning">virtual</span></span></span>
             </h3>
             <p>Returns the colors that override the icon color states, therefore 8 colors.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">dstCount</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>dst</td>
+                  <td></td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>Returns</th>
+                  <td><br /></td>
+                </tr>
+              </tfoot>
+            </table>
 <p>Those colors are get from the &quot;spaceToolImageColors&quot; property.</p>
           </div></section>
           <section class="m-doc-details" id="a09d351acf9e13c1e689b6fd686fe29a5"><div>
@@ -266,6 +339,13 @@
             </h3>
             <p>Returns the key of the panel the tool belongs to.</p>
 <p>If this item is of cargo type, it returns the cargo panel key. Otherwise, it returns the value of the &quot;spaceToolPanelKey&quot; property.</p>
+          </div></section>
+          <section class="m-doc-details" id="a2eabefa4238b90c77491027745acf786"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">bool Simulator::<wbr />cSpaceInventoryItem::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a2eabefa4238b90c77491027745acf786" class="m-doc-self">IsAvailableInCurrentPlanet</a>(</span><span class="m-doc-wrap">) <span class="m-label m-warning">virtual</span></span></span>
+            </h3>
+            <p>Returns true if this item is available in the current planet.</p>
+<p>For example, for animal cargo this is true if the animal species is present in the planet.</p>
           </div></section>
         </section>
       </div>
