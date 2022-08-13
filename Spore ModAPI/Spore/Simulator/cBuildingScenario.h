@@ -19,14 +19,30 @@
 
 #pragma once
 
-#include <Spore\Object.h>
+#include <Spore\Simulator\cBuilding.h>
+
+#define cBuildingScenarioPtr eastl::intrusive_ptr<Simulator::cBuildingScenario>
 
 namespace Simulator
 {
 	class cBuildingScenario
+		: public cBuilding
 	{
 	public:
 		static const uint32_t TYPE = 0x70704DB;
 		static const uint32_t NOUN_ID = 0x70703B3;
+
+		using Object::AddRef;
+		using Object::Release;
+		using Object::Cast;
+
+	public:
+		/* 340h */	int field_340;  // not initialized
+		/* 344h */	vector<int> field_344;  // vector of some struct
+		/* 358h */	char _padding_358[0x30];  // not initialized
+		/* 388h */	Transform field_388;
+		/* 3C0h */	int field_3C0;  // not initialized
+		/* 3C4h */	int field_3C4;  // not initialized
 	};
+	ASSERT_SIZE(cBuildingScenario, 0x3C8);
 }

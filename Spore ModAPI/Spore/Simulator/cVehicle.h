@@ -25,6 +25,7 @@
 #include <Spore\Simulator\cBehaviorAgent.h>
 #include <Spore\Simulator\cBehaviorList.h>
 #include <Spore\Simulator\cSpaceToolData.h>
+#include <Spore\Simulator\cHitSphere.h>
 #include <Spore\CommonIDs.h>
 
 #define cVehiclePtr intrusive_ptr<Simulator::cVehicle>
@@ -118,7 +119,7 @@ namespace Simulator
 		/* CC8h */	string16 field_CC8;
 		/* CD8h */	cGonzagoTimer field_CD8;
 		/* CF8h */	int field_CF8;  // not initialized
-		/* CFCh */	int mpHitSphere;  //TODO PLACEHOLDER cHitSphere
+		/* CFCh */	cHitSpherePtr mpHitSphere;
 		/* D00h */	int field_D00;
 		/* D04h */	int field_D04;
 		/* D08h */	int field_D08;

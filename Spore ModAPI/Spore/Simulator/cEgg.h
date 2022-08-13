@@ -6,7 +6,7 @@
 #include <Spore\Simulator\cCombatant.h>
 #include <Spore\Simulator\cCreatureBase.h>
 
-#define cEggPtr intrusive_ptr<Simulator::cEgg>
+#define cEggPtr eastl::intrusive_ptr<Simulator::cEgg>
 
 namespace Simulator
 {

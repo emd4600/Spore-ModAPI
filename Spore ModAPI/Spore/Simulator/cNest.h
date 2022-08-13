@@ -4,7 +4,7 @@
 #include <Spore\Simulator\cSpatialObject.h>
 #include <Spore\Simulator\cBehaviorList.h>
 
-#define cNestPtr intrusive_ptr<Simulator::cNest>
+#define cNestPtr eastl::intrusive_ptr<Simulator::cNest>
 
 namespace Simulator
 {

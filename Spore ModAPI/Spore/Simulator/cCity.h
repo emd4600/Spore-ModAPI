@@ -26,6 +26,7 @@
 #include <Spore\Simulator\cOrnament.h>
 #include <Spore\Simulator\cCityTerritory.h>
 #include <Spore\Simulator\cCityWalls.h>
+#include <Spore\Simulator\cInterCityRoad.h>
 #include <Spore\App\IMessageListener.h>
 #include <Spore\CommonIDs.h>
 
@@ -47,6 +48,16 @@ namespace Simulator
 		/* 3Ch */	vector<int> field_3C;
 		/* 50h */	vector<int> field_50;
 	};
+
+	class cCity;
+
+	struct cCityPartner
+	{
+		/* 00h */	cInterCityRoadPtr mpInterCityRoad;
+		/* 04h */	intrusive_ptr<cCity> mpPartnerCity;
+		/* 08h */	int field_08;
+	};
+	ASSERT_SIZE(cCityPartner, 0xC);
 
 	class cVehicle;
 	class cCivilization;
@@ -105,15 +116,15 @@ namespace Simulator
 		/* 2FCh */	bool field_2FC;
 		/* 300h */	int field_300;  // not initialized
 		/* 304h */	int field_304;  // not initialized
-		/* 308h */	vector<intrusive_ptr<cOrnament>> mCivicObjects;  // cOrnament
+		/* 308h */	vector<cOrnamentPtr> mCivicObjects;
 		/* 31Ch */	int mHousingAmount;  // not initialized
-		/* 320h */	intrusive_ptr<cBuilding> mpCityHall;
-		/* 324h */	intrusive_ptr<cCityWalls> mpCityWalls;
-		/* 328h */	intrusive_ptr<cCityTerritory> mpCityTerritory;
+		/* 320h */	cBuildingPtr mpCityHall;
+		/* 324h */	cCityWallsPtr mpCityWalls;
+		/* 328h */	cCityTerritoryPtr mpCityTerritory;
 		/* 32Ch */	Math::Vector3 field_32C;
 		/* 338h */	float mFrameRate;  // 10.0
 		/* 33Ch */	bool mbIsPlayerCity;  // not initialized
-		/* 340h */	vector<intrusive_ptr<cBuilding>> mBuildings;
+		/* 340h */	vector<cBuildingPtr> mBuildings;
 		/* 354h */	int mTurrets;  // points to _field_36C  // vector<cTurret>
 		/* 358h */	int field_358;  // points to _field_36C
 		/* 35Ch */	int field_35C;  // points to end of _field_36C
@@ -134,7 +145,7 @@ namespace Simulator
 		/* 540h */	int mVehicleSpecialty;  // -1
 		/* 544h */	int field_544;  // not initialized
 		/* 548h */	vector<int> field_548;
-		/* 55Ch */	vector<intrusive_ptr<cCity>> mTradePartners;
+		/* 55Ch */	vector<cCityPartner> mTradePartners;
 		/* 570h */	map<int, int> field_570;
 		/* 58Ch */	bool field_58C;
 		/* 590h */	intrusive_ptr<cCivilization> mpCivilization;
@@ -199,8 +210,8 @@ namespace Simulator
 	//// INTERNAL IMPLEMENTATION ////
 	/////////////////////////////////
 
-	static_assert(sizeof(cCity) == 0x818, "sizeof(cCity) != 818h");
-	static_assert(sizeof(UnkCityClass) == 0x64, "sizeof(UnkCityClass) != 64h");
+	ASSERT_SIZE(cCity, 0x818);
+	ASSERT_SIZE(UnkCityClass, 0x64);
 
 	namespace Addresses(cCity) 
 	{

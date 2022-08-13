@@ -5,7 +5,7 @@
 #include <Spore\Simulator\cBehaviorList.h>
 #include <Spore\Simulator\cCombatant.h>
 
-#define cTribeToolPtr intrusive_ptr<Simulator::cTribeTool>
+#define cTribeToolPtr eastl::intrusive_ptr<Simulator::cTribeTool>
 
 namespace Simulator
 {

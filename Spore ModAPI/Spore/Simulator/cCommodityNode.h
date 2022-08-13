@@ -4,6 +4,7 @@
 #include <Spore\Simulator\cSpatialObject.h>
 #include <Spore\Simulator\cCombatant.h>
 #include <Spore\Simulator\cVehicle.h>
+#include <Spore\Simulator\cHitSphere.h>
 
 #define cCommodityNodePtr eastl::intrusive_ptr<Simulator::cCommodityNode>
 
@@ -20,7 +21,7 @@ namespace Simulator
 
 		/* 1D0h */	float mResourcePoints;  // 100.0
 		/* 1D4h */	float mMaxResourcePoints;  // 100.0
-		/* 1D8h */	cGameDataPtr mpHitSphere;  //PLACEHOLDER cHitSphere
+		/* 1D8h */	cHitSpherePtr mpHitSphere;
 		/* 1DCh */	int field_1DC;
 		/* 1E0h */	cVehiclePtr mConstructingVehicle;
 		/* 1E4h */	bool mbMineInitialized;

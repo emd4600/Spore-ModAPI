@@ -49,6 +49,13 @@
 #include <Spore\Simulator\cSimulatorPlayerUFO.h>
 #include <Spore\Simulator\cMissionManager.h>
 #include <Spore\Simulator\cTimeOfDay.h>
+#include <Spore\Simulator\cCreatureCitizen.h>
+#include <Spore\Simulator\cGamePlant.h>
+#include <Spore\Simulator\cBuildingScenario.h>
+#include <Spore\Simulator\cBuildingIndustry.h>
+#include <Spore\Simulator\cBuildingHouse.h>
+#include <Spore\Simulator\cBuildingEntertainment.h>
+#include <Spore\Simulator\cBuildingHall.h>
 
 #include <Spore\Simulator\SimulatorMessages.h>
 

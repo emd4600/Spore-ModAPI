@@ -33,17 +33,19 @@ namespace Simulator
 	class cCity;
 
 	class cBuilding
-		: public cGameData
-		, public cSpatialObject
-		, public cBehaviorList
-		, public cCombatant
-		, public cPlaceableStructure
+		/* 00h */	: public cGameData
+		/* 34h */	, public cSpatialObject
+		/* 108h */	, public cBehaviorList
+		/* 120h */	, public cCombatant
+		/* 1E8h */	, public cPlaceableStructure
 	{
 	public:
 		struct _Unknown1
 		{
 			int field_0[11];
 		};
+
+		static const uint32_t TYPE = 0xE9CB8BA;
 
 		using Object::AddRef;
 		using Object::Release;

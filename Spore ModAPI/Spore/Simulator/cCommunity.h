@@ -26,7 +26,7 @@
 #include <EASTL\vector.h>
 #include <EASTL\string.h>
 
-#define cCommunityPtr intrusive_ptr<Simulator::cCommunity>
+#define cCommunityPtr eastl::intrusive_ptr<Simulator::cCommunity>
 
 namespace Simulator
 {

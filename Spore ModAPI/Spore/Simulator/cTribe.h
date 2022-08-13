@@ -15,7 +15,7 @@
 #include <EASTL\fixed_vector.h>
 #include <EASTL\deque.h>
 
-#define cTribePtr intrusive_ptr<Simulator::cTribe>
+#define cTribePtr eastl::intrusive_ptr<Simulator::cTribe>
 
 namespace Simulator
 {

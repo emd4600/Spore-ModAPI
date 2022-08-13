@@ -5,7 +5,7 @@
 #include <Spore\Simulator\cNest.h>
 #include <Spore\Simulator\cEgg.h>
 
-#define cHerdPtr intrusive_ptr<Simulator::cHerd>
+#define cHerdPtr eastl::intrusive_ptr<Simulator::cHerd>
 
 namespace Simulator
 {

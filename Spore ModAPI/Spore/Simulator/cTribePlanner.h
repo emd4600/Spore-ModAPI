@@ -4,7 +4,7 @@
 #include <Spore\Simulator\cCreatureCitizen.h>
 #include <EASTL\fixed_vector.h>
 
-#define cTribePlannerPtr intrusive_ptr<Simulator::cTribePlanner>
+#define cTribePlannerPtr eastl::intrusive_ptr<Simulator::cTribePlanner>
 
 namespace Simulator
 {

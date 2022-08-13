@@ -26,7 +26,7 @@
 #include <EASTL\string.h>
 #include <EASTL\vector.h>
 
-#define cStarRecordPtr intrusive_ptr<Simulator::cStarRecord>
+#define cStarRecordPtr eastl::intrusive_ptr<Simulator::cStarRecord>
 
 namespace Simulator
 {
