@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Simulator::cOrnament class | Spore ModAPI SDK for creating C++ mods for Spore</title>
+  <title>Simulator::cTribePlanProperties struct | Spore ModAPI SDK for creating C++ mods for Spore</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,600,600i%7CSource+Code+Pro:400,400i,600" />
   <link rel="stylesheet" href="m-dark.css" />
   <link rel="stylesheet" href="m-documentation.css" />
@@ -45,102 +45,90 @@
     <div class="m-row">
       <div class="m-col-l-10 m-push-l-1">
         <h1>
-          <span class="m-breadcrumb"><a href="namespace_simulator.html">Simulator</a>::<wbr/></span>cOrnament <span class="m-thin">class</span>
-          <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="c_ornament_8h.html">&lt;Spore/Simulator/cOrnament.h&gt;</a></div>
+          <span class="m-breadcrumb"><a href="namespace_simulator.html">Simulator</a>::<wbr/></span>cTribePlanProperties <span class="m-thin">struct</span>
+          <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="c_tribe_planner_8h.html">&lt;Spore/Simulator/cTribePlanner.h&gt;</a></div>
         </h1>
-        <p><span></span></p>
+        <p>Read from a <code>.prop</code> file in folder <code>TribePlans</code></p>
         <div class="m-block m-default">
           <h3>Contents</h3>
           <ul>
             <li>
               Reference
               <ul>
-                <li><a href="#base-classes">Base classes</a></li>
-                <li><a href="#derived-classes">Derived classes</a></li>
-                <li><a href="#pub-static-attribs">Public static variables</a></li>
-                <li><a href="#pub-methods">Public functions</a></li>
                 <li><a href="#pub-attribs">Public variables</a></li>
               </ul>
             </li>
           </ul>
         </div>
-        <section id="base-classes">
-          <h2><a href="#base-classes">Base classes</a></h2>
-          <dl class="m-doc">
-            <dt>
-              class <a href="class_simulator_1_1c_game_data.html" class="m-doc">cGameData</a>
-            </dt>
-            <dd><span></span></dd>
-            <dt>
-              class <a href="class_simulator_1_1c_ornament_base.html" class="m-doc">cOrnamentBase</a>
-            </dt>
-            <dd><span></span></dd>
-            <dt>
-              class <a href="class_simulator_1_1c_spatial_object.html" class="m-doc">cSpatialObject</a>
-            </dt>
-            <dd><span></span></dd>
-            <dt>
-              class <a href="class_simulator_1_1c_combatant.html" class="m-doc">cCombatant</a>
-            </dt>
-            <dd>Any object that has hit points and can combat other units.</dd>
-            <dt>
-              class <a href="class_simulator_1_1c_behavior_list.html" class="m-doc">cBehaviorList</a>
-            </dt>
-            <dd><span></span></dd>
-          </dl>
-        </section>
-        <section id="derived-classes">
-          <h2><a href="#derived-classes">Derived classes</a></h2>
-          <dl class="m-doc">
-            <dt>
-              class <a href="class_simulator_1_1c_hit_sphere.html" class="m-doc">cHitSphere</a>
-            </dt>
-            <dd><span></span></dd>
-          </dl>
-        </section>
-        <section id="pub-static-attribs">
-          <h2><a href="#pub-static-attribs">Public static variables</a></h2>
-          <dl class="m-doc">
-            <dt id="a7e55081def6431ec238221275e9e2981">
-              static const uint32_t <a href="#a7e55081def6431ec238221275e9e2981" class="m-doc-self">TYPE</a>
-            </dt>
-            <dd><span></span></dd>
-            <dt id="af960b1ce1b7a6a77956d63fc96dc2dcc">
-              static const uint32_t <a href="#af960b1ce1b7a6a77956d63fc96dc2dcc" class="m-doc-self">NOUN_ID</a>
-            </dt>
-            <dd><span></span></dd>
-          </dl>
-        </section>
-        <section id="pub-methods">
-          <h2><a href="#pub-methods">Public functions</a></h2>
-          <dl class="m-doc">
-            <dt id="a3a9c8996c8e1adc7cfec11f8f09b51c8">
-              <span class="m-doc-wrap-bumper">auto <a href="#a3a9c8996c8e1adc7cfec11f8f09b51c8" class="m-doc-self">AddRef</a>(</span><span class="m-doc-wrap">) -&gt; int <span class="m-label m-flat m-warning">pure virtual</span></span>
-            </dt>
-            <dd><span></span></dd>
-            <dt id="aa036657cba582dd62f05811e455fb7d5">
-              <span class="m-doc-wrap-bumper">auto <a href="#aa036657cba582dd62f05811e455fb7d5" class="m-doc-self">Release</a>(</span><span class="m-doc-wrap">) -&gt; int <span class="m-label m-flat m-warning">pure virtual</span></span>
-            </dt>
-            <dd><span></span></dd>
-            <dt id="a499586d32a7e1bafdff17480d4819ba2">
-              <span class="m-doc-wrap-bumper">auto <a href="#a499586d32a7e1bafdff17480d4819ba2" class="m-doc-self">Cast</a>(</span><span class="m-doc-wrap">) const -&gt; void* <span class="m-label m-flat m-warning">pure virtual</span></span>
-            </dt>
-            <dd><span></span></dd>
-          </dl>
-        </section>
         <section id="pub-attribs">
           <h2><a href="#pub-attribs">Public variables</a></h2>
           <dl class="m-doc">
-            <dt id="ac00af9a92457275c81a862343b660a50">
-              int <a href="#ac00af9a92457275c81a862343b660a50" class="m-doc-self">mStyle</a>
+            <dt id="a929872ba89d7813e7dec0ea6bd5e18e0">
+              float <a href="#a929872ba89d7813e7dec0ea6bd5e18e0" class="m-doc-self">mInitialDelay</a>
             </dt>
-            <dd><span></span></dd>
-            <dt id="af2366e00a439c430d5af71390909468b">
-              uint32_t <a href="#af2366e00a439c430d5af71390909468b" class="m-doc-self">mModelID</a>
+            <dd>Property <code>InitialDelay</code></dd>
+            <dt id="a9713fc5b50dd9e05d2c557a3deb2c718">
+              float <a href="#a9713fc5b50dd9e05d2c557a3deb2c718" class="m-doc-self">mCheckTime</a>
             </dt>
-            <dd><span></span></dd>
-            <dt id="aedbc2be0c3ab05260bec534bf1bf8818">
-              bool <a href="#aedbc2be0c3ab05260bec534bf1bf8818" class="m-doc-self">field_230</a>
+            <dd>Property <code>CheckTime</code></dd>
+            <dt id="a4433604d6e69abc8d2e998101bc9ecc5">
+              float <a href="#a4433604d6e69abc8d2e998101bc9ecc5" class="m-doc-self">field_08</a>
+            </dt>
+            <dd>Property <code>0xCD927E7C</code></dd>
+            <dt id="a9b198aa1bd1478574888fb5d8802e441">
+              float <a href="#a9b198aa1bd1478574888fb5d8802e441" class="m-doc-self">mFrequency</a>
+            </dt>
+            <dd>Property <code>Frequency</code></dd>
+            <dt id="ab145dca0fe287873135c7a5ee906114b">
+              int <a href="#ab145dca0fe287873135c7a5ee906114b" class="m-doc-self">mRequiredTools</a>
+            </dt>
+            <dd>Each bit represents a tool index. Property <code>RequiredTools</code>.</dd>
+            <dt id="a9ea6f5edd9e22e894c275a49d93ce035">
+              int <a href="#a9ea6f5edd9e22e894c275a49d93ce035" class="m-doc-self">mDesiredTools</a>
+            </dt>
+            <dd>Each bit represents a tool index. Property <code>DesiredTools</code>.</dd>
+            <dt id="ae3b07fe47672b5e47f1989e7467f06ab">
+              int <a href="#ae3b07fe47672b5e47f1989e7467f06ab" class="m-doc-self">mNumRequiredTribeMembers</a>
+            </dt>
+            <dd>Property <code>NumRequiredTribeMembers</code></dd>
+            <dt id="a557fc33411e4dbb86aefc6c8a33d7a6e">
+              int <a href="#a557fc33411e4dbb86aefc6c8a33d7a6e" class="m-doc-self">mNumDesiredTribeMembers</a>
+            </dt>
+            <dd>Property <code>NumDesiredTribeMembers</code></dd>
+            <dt id="a20939832947cd230b742a4606e7e86c9">
+              int <a href="#a20939832947cd230b742a4606e7e86c9" class="m-doc-self">field_20</a>
+            </dt>
+            <dd>Property <code>0xF90F8D19</code></dd>
+            <dt id="abcbfaeb160bce6c43720b1e56233173b">
+              int <a href="#abcbfaeb160bce6c43720b1e56233173b" class="m-doc-self">field_24</a>
+            </dt>
+            <dd>Property <code>0x6CF6D7B7</code></dd>
+            <dt id="aeafaccb0f11b926898a1d6c5a8ac42fc">
+              int <a href="#aeafaccb0f11b926898a1d6c5a8ac42fc" class="m-doc-self">field_28</a>
+            </dt>
+            <dd>Property <code>0x2B374411</code></dd>
+            <dt id="a3406f264d22187d15d1ffa03c6b293cc">
+              int <a href="#a3406f264d22187d15d1ffa03c6b293cc" class="m-doc-self">field_2C</a>
+            </dt>
+            <dd>Property <code>0xE32953B7</code></dd>
+            <dt id="ab61b90d3bfb00151c5111ff1f9d9de1c">
+              float <a href="#ab61b90d3bfb00151c5111ff1f9d9de1c" class="m-doc-self">mFoodRate</a>
+            </dt>
+            <dd>Property <code>FoodRate</code></dd>
+            <dt id="a03a315be4235ea61bcded38519db17ba">
+              int <a href="#a03a315be4235ea61bcded38519db17ba" class="m-doc-self">mRequiredFood</a>
+            </dt>
+            <dd>Property <code>RequiredFood</code></dd>
+            <dt id="ab23489cf662cc64a5aed21b8b26afb46">
+              int <a href="#ab23489cf662cc64a5aed21b8b26afb46" class="m-doc-self">mDesiredFood</a>
+            </dt>
+            <dd>Property <code>DesiredFood</code></dd>
+            <dt id="a74356de22b0f2761d3aa96bba527565b">
+              bool <a href="#a74356de22b0f2761d3aa96bba527565b" class="m-doc-self">field_3C</a>
+            </dt>
+            <dd>Property <code>0x5D153EE8</code></dd>
+            <dt id="a0206d4b8c74f5adfa527d51875b8ca1d">
+              <a href="_property_list_8h.html#ae757f1639ff739ff0282dd91f3e39f0a" class="m-doc">PropertyListPtr</a> <a href="#a0206d4b8c74f5adfa527d51875b8ca1d" class="m-doc-self">mpPropList</a>
             </dt>
             <dd><span></span></dd>
           </dl>

@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Simulator::cOrnament class | Spore ModAPI SDK for creating C++ mods for Spore</title>
+  <title>Simulator::cTotemPole class | Spore ModAPI SDK for creating C++ mods for Spore</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,600,600i%7CSource+Code+Pro:400,400i,600" />
   <link rel="stylesheet" href="m-dark.css" />
   <link rel="stylesheet" href="m-documentation.css" />
@@ -45,10 +45,10 @@
     <div class="m-row">
       <div class="m-col-l-10 m-push-l-1">
         <h1>
-          <span class="m-breadcrumb"><a href="namespace_simulator.html">Simulator</a>::<wbr/></span>cOrnament <span class="m-thin">class</span>
-          <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="c_ornament_8h.html">&lt;Spore/Simulator/cOrnament.h&gt;</a></div>
+          <span class="m-breadcrumb"><a href="namespace_simulator.html">Simulator</a>::<wbr/></span>cTotemPole <span class="m-thin">class</span>
+          <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="c_totem_pole_8h.html">&lt;Spore/Simulator/cTotemPole.h&gt;</a></div>
         </h1>
-        <p><span></span></p>
+        <p>The totem pole of a tribe. Default model is <code>TribalTools!0x93256BA</code>, default <code>mMaterialType</code> is 2.</p>
         <div class="m-block m-default">
           <h3>Contents</h3>
           <ul>
@@ -56,7 +56,6 @@
               Reference
               <ul>
                 <li><a href="#base-classes">Base classes</a></li>
-                <li><a href="#derived-classes">Derived classes</a></li>
                 <li><a href="#pub-static-attribs">Public static variables</a></li>
                 <li><a href="#pub-methods">Public functions</a></li>
                 <li><a href="#pub-attribs">Public variables</a></li>
@@ -72,28 +71,7 @@
             </dt>
             <dd><span></span></dd>
             <dt>
-              class <a href="class_simulator_1_1c_ornament_base.html" class="m-doc">cOrnamentBase</a>
-            </dt>
-            <dd><span></span></dd>
-            <dt>
               class <a href="class_simulator_1_1c_spatial_object.html" class="m-doc">cSpatialObject</a>
-            </dt>
-            <dd><span></span></dd>
-            <dt>
-              class <a href="class_simulator_1_1c_combatant.html" class="m-doc">cCombatant</a>
-            </dt>
-            <dd>Any object that has hit points and can combat other units.</dd>
-            <dt>
-              class <a href="class_simulator_1_1c_behavior_list.html" class="m-doc">cBehaviorList</a>
-            </dt>
-            <dd><span></span></dd>
-          </dl>
-        </section>
-        <section id="derived-classes">
-          <h2><a href="#derived-classes">Derived classes</a></h2>
-          <dl class="m-doc">
-            <dt>
-              class <a href="class_simulator_1_1c_hit_sphere.html" class="m-doc">cHitSphere</a>
             </dt>
             <dd><span></span></dd>
           </dl>
@@ -101,12 +79,8 @@
         <section id="pub-static-attribs">
           <h2><a href="#pub-static-attribs">Public static variables</a></h2>
           <dl class="m-doc">
-            <dt id="a7e55081def6431ec238221275e9e2981">
-              static const uint32_t <a href="#a7e55081def6431ec238221275e9e2981" class="m-doc-self">TYPE</a>
-            </dt>
-            <dd><span></span></dd>
-            <dt id="af960b1ce1b7a6a77956d63fc96dc2dcc">
-              static const uint32_t <a href="#af960b1ce1b7a6a77956d63fc96dc2dcc" class="m-doc-self">NOUN_ID</a>
+            <dt id="a7571b74ae05834b8aeb579b5b13a780b">
+              static const uint32_t <a href="#a7571b74ae05834b8aeb579b5b13a780b" class="m-doc-self">TYPE</a>
             </dt>
             <dd><span></span></dd>
           </dl>
@@ -131,18 +105,26 @@
         <section id="pub-attribs">
           <h2><a href="#pub-attribs">Public variables</a></h2>
           <dl class="m-doc">
-            <dt id="ac00af9a92457275c81a862343b660a50">
-              int <a href="#ac00af9a92457275c81a862343b660a50" class="m-doc-self">mStyle</a>
+            <dt id="a833eb52962f2cf681b2b6fe6c87564f7">
+              vector&lt;int&gt; <a href="#a833eb52962f2cf681b2b6fe6c87564f7" class="m-doc-self">field_108</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="af2366e00a439c430d5af71390909468b">
-              uint32_t <a href="#af2366e00a439c430d5af71390909468b" class="m-doc-self">mModelID</a>
+            <dt id="abce8db6211d565687b92271fba39d549">
+              vector&lt;int&gt; <a href="#abce8db6211d565687b92271fba39d549" class="m-doc-self">mSegments</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="aedbc2be0c3ab05260bec534bf1bf8818">
-              bool <a href="#aedbc2be0c3ab05260bec534bf1bf8818" class="m-doc-self">field_230</a>
+            <dt id="ad3123b9613fa8f36e711026531997560">
+              vector&lt;<a href="struct_math_1_1_color_r_g_b.html" class="m-doc">Math::<wbr />ColorRGB</a>&gt; <a href="#ad3123b9613fa8f36e711026531997560" class="m-doc-self">mSegmentColors</a>
             </dt>
             <dd><span></span></dd>
+            <dt id="a153bcb283a5ff50749ccf2286d7a0e0d">
+              int <a href="#a153bcb283a5ff50749ccf2286d7a0e0d" class="m-doc-self">mTotalPossibleSegments</a>
+            </dt>
+            <dd>Default value is 5.</dd>
+            <dt id="a2aed1a0451f8c1bb88620d2827f02f8e">
+              bool <a href="#a2aed1a0451f8c1bb88620d2827f02f8e" class="m-doc-self">field_148</a>
+            </dt>
+            <dd>Default value is true.</dd>
           </dl>
         </section>
       </div>

@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Simulator::cOrnament class | Spore ModAPI SDK for creating C++ mods for Spore</title>
+  <title>Simulator::cTribeTool class | Spore ModAPI SDK for creating C++ mods for Spore</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,600,600i%7CSource+Code+Pro:400,400i,600" />
   <link rel="stylesheet" href="m-dark.css" />
   <link rel="stylesheet" href="m-documentation.css" />
@@ -45,8 +45,8 @@
     <div class="m-row">
       <div class="m-col-l-10 m-push-l-1">
         <h1>
-          <span class="m-breadcrumb"><a href="namespace_simulator.html">Simulator</a>::<wbr/></span>cOrnament <span class="m-thin">class</span>
-          <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="c_ornament_8h.html">&lt;Spore/Simulator/cOrnament.h&gt;</a></div>
+          <span class="m-breadcrumb"><a href="namespace_simulator.html">Simulator</a>::<wbr/></span>cTribeTool <span class="m-thin">class</span>
+          <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="c_tribe_tool_8h.html">&lt;Spore/Simulator/cTribeTool.h&gt;</a></div>
         </h1>
         <p><span></span></p>
         <div class="m-block m-default">
@@ -56,7 +56,6 @@
               Reference
               <ul>
                 <li><a href="#base-classes">Base classes</a></li>
-                <li><a href="#derived-classes">Derived classes</a></li>
                 <li><a href="#pub-static-attribs">Public static variables</a></li>
                 <li><a href="#pub-methods">Public functions</a></li>
                 <li><a href="#pub-attribs">Public variables</a></li>
@@ -72,41 +71,24 @@
             </dt>
             <dd><span></span></dd>
             <dt>
-              class <a href="class_simulator_1_1c_ornament_base.html" class="m-doc">cOrnamentBase</a>
+              class <a href="class_simulator_1_1c_spatial_object.html" class="m-doc">cSpatialObject</a>
             </dt>
             <dd><span></span></dd>
             <dt>
-              class <a href="class_simulator_1_1c_spatial_object.html" class="m-doc">cSpatialObject</a>
+              class <a href="class_simulator_1_1c_behavior_list.html" class="m-doc">cBehaviorList</a>
             </dt>
             <dd><span></span></dd>
             <dt>
               class <a href="class_simulator_1_1c_combatant.html" class="m-doc">cCombatant</a>
             </dt>
             <dd>Any object that has hit points and can combat other units.</dd>
-            <dt>
-              class <a href="class_simulator_1_1c_behavior_list.html" class="m-doc">cBehaviorList</a>
-            </dt>
-            <dd><span></span></dd>
-          </dl>
-        </section>
-        <section id="derived-classes">
-          <h2><a href="#derived-classes">Derived classes</a></h2>
-          <dl class="m-doc">
-            <dt>
-              class <a href="class_simulator_1_1c_hit_sphere.html" class="m-doc">cHitSphere</a>
-            </dt>
-            <dd><span></span></dd>
           </dl>
         </section>
         <section id="pub-static-attribs">
           <h2><a href="#pub-static-attribs">Public static variables</a></h2>
           <dl class="m-doc">
-            <dt id="a7e55081def6431ec238221275e9e2981">
-              static const uint32_t <a href="#a7e55081def6431ec238221275e9e2981" class="m-doc-self">TYPE</a>
-            </dt>
-            <dd><span></span></dd>
-            <dt id="af960b1ce1b7a6a77956d63fc96dc2dcc">
-              static const uint32_t <a href="#af960b1ce1b7a6a77956d63fc96dc2dcc" class="m-doc-self">NOUN_ID</a>
+            <dt id="a8e6e6cae83560e2ea9538dd135196a55">
+              static const uint32_t <a href="#a8e6e6cae83560e2ea9538dd135196a55" class="m-doc-self">TYPE</a>
             </dt>
             <dd><span></span></dd>
           </dl>
@@ -131,16 +113,44 @@
         <section id="pub-attribs">
           <h2><a href="#pub-attribs">Public variables</a></h2>
           <dl class="m-doc">
-            <dt id="ac00af9a92457275c81a862343b660a50">
-              int <a href="#ac00af9a92457275c81a862343b660a50" class="m-doc-self">mStyle</a>
+            <dt id="ac4a7caa561fd8b6cbc1c71c789bed8fc">
+              float <a href="#ac4a7caa561fd8b6cbc1c71c789bed8fc" class="m-doc-self">field_1EC</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="af2366e00a439c430d5af71390909468b">
-              uint32_t <a href="#af2366e00a439c430d5af71390909468b" class="m-doc-self">mModelID</a>
+            <dt id="a281c2199c7b16a7890c5343ce9178426">
+              int <a href="#a281c2199c7b16a7890c5343ce9178426" class="m-doc-self">field_1F0</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="aedbc2be0c3ab05260bec534bf1bf8818">
-              bool <a href="#aedbc2be0c3ab05260bec534bf1bf8818" class="m-doc-self">field_230</a>
+            <dt id="a36079ad91138515f0b3bdf7bdcf1eb58">
+              int <a href="#a36079ad91138515f0b3bdf7bdcf1eb58" class="m-doc-self">field_1F4</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a24d185eac0f11f7ad154f038c584690a">
+              int <a href="#a24d185eac0f11f7ad154f038c584690a" class="m-doc-self">field_1F8</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="ab204627380a54402bf2b6aa68bdfee8d">
+              int <a href="#ab204627380a54402bf2b6aa68bdfee8d" class="m-doc-self">mToolType</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a586368861a32f2e745efc9daf6bd5ea4">
+              <a href="class_simulator_1_1c_gonzago_timer.html" class="m-doc">cGonzagoTimer</a> <a href="#a586368861a32f2e745efc9daf6bd5ea4" class="m-doc-self">mCreationTimer</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a0ed78142a75a536c1e5fc379b2a5f819">
+              <a href="class_simulator_1_1c_gonzago_timer.html" class="m-doc">cGonzagoTimer</a> <a href="#a0ed78142a75a536c1e5fc379b2a5f819" class="m-doc-self">mDestroyedTimer</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a1af6df0d1a3a8fab8fcbf3d91336f51b">
+              int <a href="#a1af6df0d1a3a8fab8fcbf3d91336f51b" class="m-doc-self">field_240</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="abb4e9f7cf4c526478c85cdcedbc30c4b">
+              int <a href="#abb4e9f7cf4c526478c85cdcedbc30c4b" class="m-doc-self">field_244</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a53ccee4b3360051921bc9ab8175fe272">
+              int <a href="#a53ccee4b3360051921bc9ab8175fe272" class="m-doc-self">mhFootprint</a>
             </dt>
             <dd><span></span></dd>
           </dl>

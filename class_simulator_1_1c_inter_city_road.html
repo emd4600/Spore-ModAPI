@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Simulator::cOrnament class | Spore ModAPI SDK for creating C++ mods for Spore</title>
+  <title>Simulator::cInterCityRoad class | Spore ModAPI SDK for creating C++ mods for Spore</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,600,600i%7CSource+Code+Pro:400,400i,600" />
   <link rel="stylesheet" href="m-dark.css" />
   <link rel="stylesheet" href="m-documentation.css" />
@@ -45,8 +45,8 @@
     <div class="m-row">
       <div class="m-col-l-10 m-push-l-1">
         <h1>
-          <span class="m-breadcrumb"><a href="namespace_simulator.html">Simulator</a>::<wbr/></span>cOrnament <span class="m-thin">class</span>
-          <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="c_ornament_8h.html">&lt;Spore/Simulator/cOrnament.h&gt;</a></div>
+          <span class="m-breadcrumb"><a href="namespace_simulator.html">Simulator</a>::<wbr/></span>cInterCityRoad <span class="m-thin">class</span>
+          <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="c_inter_city_road_8h.html">&lt;Spore/Simulator/cInterCityRoad.h&gt;</a></div>
         </h1>
         <p><span></span></p>
         <div class="m-block m-default">
@@ -56,7 +56,6 @@
               Reference
               <ul>
                 <li><a href="#base-classes">Base classes</a></li>
-                <li><a href="#derived-classes">Derived classes</a></li>
                 <li><a href="#pub-static-attribs">Public static variables</a></li>
                 <li><a href="#pub-methods">Public functions</a></li>
                 <li><a href="#pub-attribs">Public variables</a></li>
@@ -72,28 +71,7 @@
             </dt>
             <dd><span></span></dd>
             <dt>
-              class <a href="class_simulator_1_1c_ornament_base.html" class="m-doc">cOrnamentBase</a>
-            </dt>
-            <dd><span></span></dd>
-            <dt>
               class <a href="class_simulator_1_1c_spatial_object.html" class="m-doc">cSpatialObject</a>
-            </dt>
-            <dd><span></span></dd>
-            <dt>
-              class <a href="class_simulator_1_1c_combatant.html" class="m-doc">cCombatant</a>
-            </dt>
-            <dd>Any object that has hit points and can combat other units.</dd>
-            <dt>
-              class <a href="class_simulator_1_1c_behavior_list.html" class="m-doc">cBehaviorList</a>
-            </dt>
-            <dd><span></span></dd>
-          </dl>
-        </section>
-        <section id="derived-classes">
-          <h2><a href="#derived-classes">Derived classes</a></h2>
-          <dl class="m-doc">
-            <dt>
-              class <a href="class_simulator_1_1c_hit_sphere.html" class="m-doc">cHitSphere</a>
             </dt>
             <dd><span></span></dd>
           </dl>
@@ -101,12 +79,8 @@
         <section id="pub-static-attribs">
           <h2><a href="#pub-static-attribs">Public static variables</a></h2>
           <dl class="m-doc">
-            <dt id="a7e55081def6431ec238221275e9e2981">
-              static const uint32_t <a href="#a7e55081def6431ec238221275e9e2981" class="m-doc-self">TYPE</a>
-            </dt>
-            <dd><span></span></dd>
-            <dt id="af960b1ce1b7a6a77956d63fc96dc2dcc">
-              static const uint32_t <a href="#af960b1ce1b7a6a77956d63fc96dc2dcc" class="m-doc-self">NOUN_ID</a>
+            <dt id="af6e2f22cd8abadcda3701d66f23df2cf">
+              static const uint32_t <a href="#af6e2f22cd8abadcda3701d66f23df2cf" class="m-doc-self">TYPE</a>
             </dt>
             <dd><span></span></dd>
           </dl>
@@ -131,16 +105,40 @@
         <section id="pub-attribs">
           <h2><a href="#pub-attribs">Public variables</a></h2>
           <dl class="m-doc">
-            <dt id="ac00af9a92457275c81a862343b660a50">
-              int <a href="#ac00af9a92457275c81a862343b660a50" class="m-doc-self">mStyle</a>
+            <dt id="a1fd8aebfd04f687d020ccd536c4cf967">
+              string16 <a href="#a1fd8aebfd04f687d020ccd536c4cf967" class="m-doc-self">field_108</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="af2366e00a439c430d5af71390909468b">
-              uint32_t <a href="#af2366e00a439c430d5af71390909468b" class="m-doc-self">mModelID</a>
+            <dt id="a5c2af40e502e9159c036c554429150e0">
+              int <a href="#a5c2af40e502e9159c036c554429150e0" class="m-doc-self">field_118</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="aedbc2be0c3ab05260bec534bf1bf8818">
-              bool <a href="#aedbc2be0c3ab05260bec534bf1bf8818" class="m-doc-self">field_230</a>
+            <dt id="aca3dfecfb8d817c9f9a48a394d0f18c7">
+              intrusive_ptr&lt;<a href="class_simulator_1_1c_city.html" class="m-doc">cCity</a>&gt; <a href="#aca3dfecfb8d817c9f9a48a394d0f18c7" class="m-doc-self">mpCity1</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a19deda4503b530a63376ea9ed7901ef7">
+              intrusive_ptr&lt;<a href="class_simulator_1_1c_city.html" class="m-doc">cCity</a>&gt; <a href="#a19deda4503b530a63376ea9ed7901ef7" class="m-doc-self">mpCity2</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="aa8d5c80a3034b83593ee7fc762179419">
+              int <a href="#aa8d5c80a3034b83593ee7fc762179419" class="m-doc-self">mRoadType</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="aa743bd06f25c1e869ac8dab87b752e67">
+              <a href="struct_math_1_1_vector3.html" class="m-doc">Vector3</a> <a href="#aa743bd06f25c1e869ac8dab87b752e67" class="m-doc-self">mPathData</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="aedd02602d3048bf1448fe94621ac707e">
+              int <a href="#aedd02602d3048bf1448fe94621ac707e" class="m-doc-self">field_134</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="acd9be3eda49e1085a4f3c217a57baeac">
+              int <a href="#acd9be3eda49e1085a4f3c217a57baeac" class="m-doc-self">field_138</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a11834d1aaa0072203d60bbb7ef5756bb">
+              float <a href="#a11834d1aaa0072203d60bbb7ef5756bb" class="m-doc-self">mWidth</a>
             </dt>
             <dd><span></span></dd>
           </dl>

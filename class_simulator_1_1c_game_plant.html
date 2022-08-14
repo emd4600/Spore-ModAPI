@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Simulator::cOrnament class | Spore ModAPI SDK for creating C++ mods for Spore</title>
+  <title>Simulator::cGamePlant class | Spore ModAPI SDK for creating C++ mods for Spore</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,600,600i%7CSource+Code+Pro:400,400i,600" />
   <link rel="stylesheet" href="m-dark.css" />
   <link rel="stylesheet" href="m-documentation.css" />
@@ -45,8 +45,8 @@
     <div class="m-row">
       <div class="m-col-l-10 m-push-l-1">
         <h1>
-          <span class="m-breadcrumb"><a href="namespace_simulator.html">Simulator</a>::<wbr/></span>cOrnament <span class="m-thin">class</span>
-          <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="c_ornament_8h.html">&lt;Spore/Simulator/cOrnament.h&gt;</a></div>
+          <span class="m-breadcrumb"><a href="namespace_simulator.html">Simulator</a>::<wbr/></span>cGamePlant <span class="m-thin">class</span>
+          <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="c_game_plant_8h.html">&lt;Spore/Simulator/cGamePlant.h&gt;</a></div>
         </h1>
         <p><span></span></p>
         <div class="m-block m-default">
@@ -56,7 +56,6 @@
               Reference
               <ul>
                 <li><a href="#base-classes">Base classes</a></li>
-                <li><a href="#derived-classes">Derived classes</a></li>
                 <li><a href="#pub-static-attribs">Public static variables</a></li>
                 <li><a href="#pub-methods">Public functions</a></li>
                 <li><a href="#pub-attribs">Public variables</a></li>
@@ -72,11 +71,11 @@
             </dt>
             <dd><span></span></dd>
             <dt>
-              class <a href="class_simulator_1_1c_ornament_base.html" class="m-doc">cOrnamentBase</a>
+              class <a href="class_simulator_1_1c_locomotive_object.html" class="m-doc">cLocomotiveObject</a>
             </dt>
             <dd><span></span></dd>
             <dt>
-              class <a href="class_simulator_1_1c_spatial_object.html" class="m-doc">cSpatialObject</a>
+              class <a href="class_simulator_1_1c_behavior_list.html" class="m-doc">cBehaviorList</a>
             </dt>
             <dd><span></span></dd>
             <dt>
@@ -84,16 +83,7 @@
             </dt>
             <dd>Any object that has hit points and can combat other units.</dd>
             <dt>
-              class <a href="class_simulator_1_1c_behavior_list.html" class="m-doc">cBehaviorList</a>
-            </dt>
-            <dd><span></span></dd>
-          </dl>
-        </section>
-        <section id="derived-classes">
-          <h2><a href="#derived-classes">Derived classes</a></h2>
-          <dl class="m-doc">
-            <dt>
-              class <a href="class_simulator_1_1c_hit_sphere.html" class="m-doc">cHitSphere</a>
+              class <a href="class_simulator_1_1c_behavior_agent.html" class="m-doc">cBehaviorAgent</a>
             </dt>
             <dd><span></span></dd>
           </dl>
@@ -101,12 +91,8 @@
         <section id="pub-static-attribs">
           <h2><a href="#pub-static-attribs">Public static variables</a></h2>
           <dl class="m-doc">
-            <dt id="a7e55081def6431ec238221275e9e2981">
-              static const uint32_t <a href="#a7e55081def6431ec238221275e9e2981" class="m-doc-self">TYPE</a>
-            </dt>
-            <dd><span></span></dd>
-            <dt id="af960b1ce1b7a6a77956d63fc96dc2dcc">
-              static const uint32_t <a href="#af960b1ce1b7a6a77956d63fc96dc2dcc" class="m-doc-self">NOUN_ID</a>
+            <dt id="accbd4a5085f8bd0d6b968e74cfd53515">
+              static const uint32_t <a href="#accbd4a5085f8bd0d6b968e74cfd53515" class="m-doc-self">TYPE</a>
             </dt>
             <dd><span></span></dd>
           </dl>
@@ -131,16 +117,32 @@
         <section id="pub-attribs">
           <h2><a href="#pub-attribs">Public variables</a></h2>
           <dl class="m-doc">
-            <dt id="ac00af9a92457275c81a862343b660a50">
-              int <a href="#ac00af9a92457275c81a862343b660a50" class="m-doc-self">mStyle</a>
+            <dt id="a9d0ea0edb780028aef9b6404594b5027">
+              <a href="struct_resource_key.html" class="m-doc">ResourceKey</a> <a href="#a9d0ea0edb780028aef9b6404594b5027" class="m-doc-self">mSpecies</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="af2366e00a439c430d5af71390909468b">
-              uint32_t <a href="#af2366e00a439c430d5af71390909468b" class="m-doc-self">mModelID</a>
+            <dt id="a5254e3b2d0e7d1a106c981d6840a3ba6">
+              <a href="struct_resource_key.html" class="m-doc">ResourceKey</a> <a href="#a5254e3b2d0e7d1a106c981d6840a3ba6" class="m-doc-self">field_65C</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="aedbc2be0c3ab05260bec534bf1bf8818">
-              bool <a href="#aedbc2be0c3ab05260bec534bf1bf8818" class="m-doc-self">field_230</a>
+            <dt id="a4e789ed28f5ea6f68188ca2868ee742f">
+              int <a href="#a4e789ed28f5ea6f68188ca2868ee742f" class="m-doc-self">field_668</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="acb565a2b93b65a7cce6593e02bf5fa66">
+              float <a href="#acb565a2b93b65a7cce6593e02bf5fa66" class="m-doc-self">field_66C</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="ace3c52bcaf656d983a5c9c95223dcee8">
+              int <a href="#ace3c52bcaf656d983a5c9c95223dcee8" class="m-doc-self">field_670</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="acebe68df7c3eb7c2157254dd290d77e3">
+              float <a href="#acebe68df7c3eb7c2157254dd290d77e3" class="m-doc-self">field_674</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="ab882d05813b6f3ffaacc47d7269aaa97">
+              float <a href="#ab882d05813b6f3ffaacc47d7269aaa97" class="m-doc-self">field_678</a>
             </dt>
             <dd><span></span></dd>
           </dl>

@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Simulator::cOrnament class | Spore ModAPI SDK for creating C++ mods for Spore</title>
+  <title>Simulator::cEgg class | Spore ModAPI SDK for creating C++ mods for Spore</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,600,600i%7CSource+Code+Pro:400,400i,600" />
   <link rel="stylesheet" href="m-dark.css" />
   <link rel="stylesheet" href="m-documentation.css" />
@@ -45,10 +45,10 @@
     <div class="m-row">
       <div class="m-col-l-10 m-push-l-1">
         <h1>
-          <span class="m-breadcrumb"><a href="namespace_simulator.html">Simulator</a>::<wbr/></span>cOrnament <span class="m-thin">class</span>
-          <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="c_ornament_8h.html">&lt;Spore/Simulator/cOrnament.h&gt;</a></div>
+          <span class="m-breadcrumb"><a href="namespace_simulator.html">Simulator</a>::<wbr/></span>cEgg <span class="m-thin">class</span>
+          <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="c_egg_8h.html">&lt;Spore/Simulator/cEgg.h&gt;</a></div>
         </h1>
-        <p><span></span></p>
+        <p>Default model is <code>0x00000000!0xA76CD528</code>, default <code>mMaterialType</code> is 5.</p>
         <div class="m-block m-default">
           <h3>Contents</h3>
           <ul>
@@ -56,7 +56,6 @@
               Reference
               <ul>
                 <li><a href="#base-classes">Base classes</a></li>
-                <li><a href="#derived-classes">Derived classes</a></li>
                 <li><a href="#pub-static-attribs">Public static variables</a></li>
                 <li><a href="#pub-methods">Public functions</a></li>
                 <li><a href="#pub-attribs">Public variables</a></li>
@@ -72,41 +71,24 @@
             </dt>
             <dd><span></span></dd>
             <dt>
-              class <a href="class_simulator_1_1c_ornament_base.html" class="m-doc">cOrnamentBase</a>
+              class <a href="class_simulator_1_1c_spatial_object.html" class="m-doc">cSpatialObject</a>
             </dt>
             <dd><span></span></dd>
             <dt>
-              class <a href="class_simulator_1_1c_spatial_object.html" class="m-doc">cSpatialObject</a>
+              class <a href="class_simulator_1_1c_behavior_list.html" class="m-doc">cBehaviorList</a>
             </dt>
             <dd><span></span></dd>
             <dt>
               class <a href="class_simulator_1_1c_combatant.html" class="m-doc">cCombatant</a>
             </dt>
             <dd>Any object that has hit points and can combat other units.</dd>
-            <dt>
-              class <a href="class_simulator_1_1c_behavior_list.html" class="m-doc">cBehaviorList</a>
-            </dt>
-            <dd><span></span></dd>
-          </dl>
-        </section>
-        <section id="derived-classes">
-          <h2><a href="#derived-classes">Derived classes</a></h2>
-          <dl class="m-doc">
-            <dt>
-              class <a href="class_simulator_1_1c_hit_sphere.html" class="m-doc">cHitSphere</a>
-            </dt>
-            <dd><span></span></dd>
           </dl>
         </section>
         <section id="pub-static-attribs">
           <h2><a href="#pub-static-attribs">Public static variables</a></h2>
           <dl class="m-doc">
-            <dt id="a7e55081def6431ec238221275e9e2981">
-              static const uint32_t <a href="#a7e55081def6431ec238221275e9e2981" class="m-doc-self">TYPE</a>
-            </dt>
-            <dd><span></span></dd>
-            <dt id="af960b1ce1b7a6a77956d63fc96dc2dcc">
-              static const uint32_t <a href="#af960b1ce1b7a6a77956d63fc96dc2dcc" class="m-doc-self">NOUN_ID</a>
+            <dt id="ab35bb6aab333e94e33b40f6afe997d65">
+              static const uint32_t <a href="#ab35bb6aab333e94e33b40f6afe997d65" class="m-doc-self">TYPE</a>
             </dt>
             <dd><span></span></dd>
           </dl>
@@ -131,16 +113,36 @@
         <section id="pub-attribs">
           <h2><a href="#pub-attribs">Public variables</a></h2>
           <dl class="m-doc">
-            <dt id="ac00af9a92457275c81a862343b660a50">
-              int <a href="#ac00af9a92457275c81a862343b660a50" class="m-doc-self">mStyle</a>
+            <dt id="ac20f52ee758f1e0ccc7d2a25e136f866">
+              int <a href="#ac20f52ee758f1e0ccc7d2a25e136f866" class="m-doc-self">mState</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="af2366e00a439c430d5af71390909468b">
-              uint32_t <a href="#af2366e00a439c430d5af71390909468b" class="m-doc-self">mModelID</a>
+            <dt id="ae4e35a7a3de743dd225961fda11e125c">
+              bool <a href="#ae4e35a7a3de743dd225961fda11e125c" class="m-doc-self">field_1EC</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="aedbc2be0c3ab05260bec534bf1bf8818">
-              bool <a href="#aedbc2be0c3ab05260bec534bf1bf8818" class="m-doc-self">field_230</a>
+            <dt id="a993bdf4f14d1b62b82d00209e3d14b43">
+              int <a href="#a993bdf4f14d1b62b82d00209e3d14b43" class="m-doc-self">mTimeToHatch</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a3ca1ea10ec20b39978019f4462e305e6">
+              intrusive_ptr&lt;<a href="class_simulator_1_1c_herd.html" class="m-doc">cHerd</a>&gt; <a href="#a3ca1ea10ec20b39978019f4462e305e6" class="m-doc-self">mpHerd</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a6b66db2143a273613da43ac715a776a4">
+              <a href="class_simulator_1_1c_gonzago_timer.html" class="m-doc">cGonzagoTimer</a> <a href="#a6b66db2143a273613da43ac715a776a4" class="m-doc-self">mBrokenTimer</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="ab8148edd4f8d1ef977d0ac958f4b3347">
+              <a href="c_creature_base_8h.html#aa9b8afe080b94a78b5dc09454a0829b4" class="m-doc">cCreatureBasePtr</a> <a href="#ab8148edd4f8d1ef977d0ac958f4b3347" class="m-doc-self">mpToHatch</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="accebe279c4994207a2d6859b90c1ac65">
+              <a href="_object_8h.html#a364c2967a9338c07ddc9a3d507389b5d" class="m-doc">ObjectPtr</a> <a href="#accebe279c4994207a2d6859b90c1ac65" class="m-doc-self">field_21C</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="af25332671d73afc4940b192397dd3e58">
+              float <a href="#af25332671d73afc4940b192397dd3e58" class="m-doc-self">mEffectScale</a>
             </dt>
             <dd><span></span></dd>
           </dl>
