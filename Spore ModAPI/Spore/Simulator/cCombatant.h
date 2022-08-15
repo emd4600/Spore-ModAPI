@@ -122,7 +122,7 @@ namespace Simulator
 		/// Same as Object::Release().
 		/* 64h */	virtual int Release() = 0;
 
-	protected:
+	public:
 		// WARNING: there's no "field_4". The vfpointer is 8 bytes long because cGonzagoTimer sets alignment to 8!
 		/* 08h */	bool field_8;  // if true, it's ignored when checking mouse position
 		/* 09h */	bool field_9;

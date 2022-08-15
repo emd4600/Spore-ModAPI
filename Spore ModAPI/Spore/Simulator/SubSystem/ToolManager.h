@@ -90,7 +90,7 @@ namespace Simulator
 
 		// sub_10505F0 deselect? PLACEHOLDER
 
-	protected:
+	public:
 		/* 20h */	int field_20;
 		/* 24h */	int field_24;
 		/* 28h */	int field_28;

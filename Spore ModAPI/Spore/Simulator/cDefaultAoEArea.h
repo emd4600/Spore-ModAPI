@@ -36,12 +36,13 @@ namespace Simulator
 	{
 	public:
 		static const uint32_t TYPE = 0x4167194;
+		static const uint32_t NOUN_ID = 0x4167186;
 
 		using Object::AddRef;
 		using Object::Release;
 		using Object::Cast;
 
-	protected:
+	public:
 		/* 11Ch */	intrusive_ptr<cSpaceToolData> mpTool;
 		/* 120h */	Vector3 mSourceOffset;  // 1, 1, 1
 		/* 12Ch */	float mDamageRadius;

@@ -29,7 +29,7 @@ namespace Simulator
 {
 	class cSpeciesProfile
 	{
-	protected:
+	public:
 		char padding[0xA18];
 
 		//PLACEHOLDER 6D4h vector<intrusive_ptr<cCreatureAbility>>

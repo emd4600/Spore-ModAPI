@@ -42,6 +42,7 @@
 
 namespace UI
 {
+	/// User interface for the Space game. The main SPUI is `0x1e453b88.spui`
 	class SpaceGameUI
 		: public UTFWin::IWinProc
 		, public DefaultRefCounted

@@ -67,7 +67,7 @@ namespace Simulator
 
 			virtual bool HandleMessage(uint32_t messageID, void* pMessage) override;
 
-		protected:
+		public:
 			/* 08h */	bool mbEnableLoadingCards;  // not initialized
 			/* 09h */	bool field_09;
 			/* 0Ah */	bool field_0A;

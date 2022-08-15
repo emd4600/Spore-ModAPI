@@ -10,6 +10,7 @@
 
 namespace Simulator
 {
+	/// Represents a spice geyser in civilization stage, maybe it is also used elsewhere.
 	class cCommodityNode
 		: public cGameData
 		, public cSpatialObject
@@ -19,6 +20,11 @@ namespace Simulator
 		static const uint32_t TYPE = 0x403DF5F;
 		static const uint32_t NOUN_ID = 0x403DF5C;
 
+		using Object::AddRef;
+		using Object::Release;
+		using Object::Cast;
+
+	public:
 		/* 1D0h */	float mResourcePoints;  // 100.0
 		/* 1D4h */	float mMaxResourcePoints;  // 100.0
 		/* 1D8h */	cHitSpherePtr mpHitSphere;

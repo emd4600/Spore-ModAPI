@@ -40,7 +40,7 @@ namespace Palettes
 	{
 	public:
 
-	protected:
+	public:
 		/* 24h */	IWindowPtr field_24;  // possible display of the creature
 		/* 28h */	IWindowPtr mpMainWindow;
 		/* 2Ch */	IWindowPtr field_2C;

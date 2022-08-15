@@ -60,7 +60,7 @@ namespace Simulator
 		/* 64h */	virtual bool func64h_(int, int);
 		/* 68h */	virtual bool func68h_(int);
 
-	protected:
+	public:
 		struct InputUnknown
 		{
 			/* 00h */	int field_0;

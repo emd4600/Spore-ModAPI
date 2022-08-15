@@ -42,7 +42,7 @@ namespace Editors
 		virtual void Dispose();
 		virtual float PlayAnimation(int, uint32_t playAnimName, bool loop, int mode, int* dstAnimIndex = nullptr);
 
-	protected:
+	public:
 		/// Reads all the animation panels in the 0x4060E000 folder.
 		void ReadAnimations();
 
@@ -59,7 +59,7 @@ namespace Editors
 		/// Creates all the buttons and windows that represent the animations in this object.
 		void GenerateUI();
 
-	protected:
+	public:
 		/* 04h */	cEditor* mpEditor;  // not initialized
 		/* 08h */	int field_08;  // not initialized
 		/// All the PlayAnimPanel objects, ordered by the 'mnAnimPanelOrder' field.

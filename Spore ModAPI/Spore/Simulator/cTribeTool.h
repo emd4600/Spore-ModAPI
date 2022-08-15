@@ -17,6 +17,7 @@ namespace Simulator
 	{
 	public:
 		static const uint32_t TYPE = 0x116D858;
+		static const uint32_t NOUN_ID = 0x18C8F0C;
 
 		using Object::AddRef;
 		using Object::Release;

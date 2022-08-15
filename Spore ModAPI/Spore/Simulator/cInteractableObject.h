@@ -22,7 +22,7 @@
 #include <Spore\Simulator\cSpatialObject.h>
 #include <Spore\LocalizedString.h>
 
-#define cInteractableObjectPtr intrusive_ptr<Simulator::cInteractableObject>
+#define cInteractableObjectPtr eastl::intrusive_ptr<Simulator::cInteractableObject>
 
 namespace Simulator
 {
@@ -40,6 +40,8 @@ namespace Simulator
 		, public cSpatialObject
 	{
 	public:
+		static const uint32_t TYPE = 0x398420D;
+
 		using Object::AddRef;
 		using Object::Release;
 		using Object::Cast;

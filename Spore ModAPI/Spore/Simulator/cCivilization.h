@@ -22,7 +22,13 @@ namespace Simulator
 	{
 	public:
 		static const uint32_t TYPE = 0x901F1362;
+		static const uint32_t NOUN_ID = 0x18C816A;
 
+		using Object::AddRef;
+		using Object::Release;
+		using Object::Cast;
+
+	public:
 		/* 6Ch */	cCultureSet mCultureSet;
 		/* 88h */	bool mInitialized;
 		/* 89h */	bool mIsPlayerOwned;

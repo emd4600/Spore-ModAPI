@@ -26,6 +26,8 @@ using namespace eastl;
 
 namespace Simulator
 {
+	/// Contains the IDs of all the creation types of a specific "culture" or civilization/empire. This maps
+	/// each member of the ModelTypes enum to a creation ID.
 	class cCultureSet
 	{
 	public:

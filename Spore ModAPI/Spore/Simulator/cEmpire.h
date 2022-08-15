@@ -66,6 +66,12 @@ namespace Simulator
 		kEmpireTraitAccidentProne = 3,
 	};
 
+	enum EmpireFlags
+	{
+		kEmpireFlagNeedsEmpireLines = 0x10,
+	};
+
+	/// An empire in Space Stage.
 	class cEmpire
 		: public ISimulatorSerializableRefCounted
 		, public cIdentityColorable
@@ -95,6 +101,7 @@ namespace Simulator
 	public:
 		/* 3Ch */	string16 mEmpireName;  // "unknown"
 		/* 4Ch */	int mCurrentGameMode;  // not initialized  // uint32_t ?
+		/// EmpireFlags
 		/* 50h */	int mFlags;  // 0x10 -> grox?
 		/// A member of EmpireTrait enum, EmpireTrait::kEmpireTraitNone
 		/* 54h */	EmpireTrait mTrait;

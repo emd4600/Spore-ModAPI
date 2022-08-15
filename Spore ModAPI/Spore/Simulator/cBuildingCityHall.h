@@ -3,15 +3,16 @@
 #include <Spore\Simulator\cBuilding.h>
 #include <Spore\Simulator\cHitSphere.h>
 
-#define cBuildingHallPtr eastl::intrusive_ptr<Simulator::cBuildingHall>
+#define cBuildingCityHallPtr eastl::intrusive_ptr<Simulator::cBuildingCityHall>
 
 namespace Simulator
 {
-	class cBuildingHall
+	class cBuildingCityHall
 		: public cBuilding
 	{
 	public:
 		static const uint32_t TYPE = 0x1007AE63;
+		static const uint32_t NOUN_ID = 0x18EA1EB;
 
 		using Object::AddRef;
 		using Object::Release;
@@ -24,5 +25,5 @@ namespace Simulator
 		/* 348h */	int _padding_348[4];  // not initialized
 		/* 358h */	cGonzagoTimer field_358;
 	};
-	ASSERT_SIZE(cBuildingHall, 0x378);
+	ASSERT_SIZE(cBuildingCityHall, 0x378);
 }

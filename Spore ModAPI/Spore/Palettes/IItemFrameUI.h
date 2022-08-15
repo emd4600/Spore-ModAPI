@@ -46,7 +46,7 @@ namespace Palettes
 		/* 28h */	virtual void OnMouseUp() = 0;
 		/* 2Ch */	virtual void SetVisible(bool visible) = 0;
 
-	protected:
+	public:
 		PaletteItemPtr mpItem;
 		uint32_t mFrameTypeID;
 	};
@@ -81,7 +81,7 @@ namespace Palettes
 		int GetEventFlags() const override;
 		bool HandleUIMessage(UTFWin::IWindow* pWindow, const UTFWin::Message& message) override;
 
-	protected:
+	public:
 		/* 14h */	int field_14;
 		/* 18h */	bool mIsHovering;
 		/* 1Ch */	IWindowPtr mpWindow;

@@ -56,7 +56,7 @@ namespace Simulator
 
 		void SubmitEditorRequest(Editors::EditorRequest* pRequest);
 
-	protected:
+	public:
 		struct DifficultyTuning {
 			intrusive_ptr<App::PropertyList> values[3];
 		};

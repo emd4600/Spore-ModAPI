@@ -83,7 +83,8 @@ namespace Simulator
 		/* 77h */	bool field_77;
 		/* 78h */	vector<int> mNPC_UFOs;  //TODO
 		/* 90h */	cGonzagoTimer mTimeSinceStartedSpaceGame;
-		/* B0h */	int field_B0;
+		/// Current star ID??
+		/* B0h */	StarID field_B0;
 		/* B4h */	cSimulatorPlayerUFOPtr mpPlayerUFO;
 		/* B8h */	cMissionManagerPtr mpMissionManager;
 		/* BCh */	int mpSimulatorWalkAround;  //TODO cSimulatorWalkAround

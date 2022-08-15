@@ -50,7 +50,7 @@ namespace Simulator
 				kCellForegroundEffectWorldID = 0x1010031,
 			};
 
-		protected:
+		public:
 
 			/* 00h */	vector<ModelPtr> mPreloadedModels;
 			/* 14h */	vector<TexturePtr> mPreloadedTextures;

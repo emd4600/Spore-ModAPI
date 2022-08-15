@@ -15,7 +15,7 @@ namespace Simulator
 		/* 58h */	virtual void ClearAllSimulators() = 0;
 		// there are two methods more
 
-	protected:
+	public:
 		/* 1Ch */	list<cGonzagoSimulatorPtr> mSimulators;
 		// If it was ticking when simulator was added, it gets added here
 		/* 28h */	list<cGonzagoSimulatorPtr> mToAddSimulators;

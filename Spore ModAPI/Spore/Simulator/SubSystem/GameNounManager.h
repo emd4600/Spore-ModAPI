@@ -95,7 +95,7 @@ namespace Simulator
 		/// Returns the active Simulator game noun manager.
 		static cGameNounManager* Get();
 			
-	protected:
+	public:
 		/* 20h */	hash_map<int, int> field_20;
 		/* 40h */	int field_40;
 		/* 44h */	int field_44;

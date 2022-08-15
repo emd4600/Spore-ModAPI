@@ -27,7 +27,7 @@
 #include <Spore\App\IMessageListener.h>
 #include <EASTL\list.h>
 
-#define cGameDataUFOPtr intrusive_ptr<Simulator::cGameDataUFO>
+#define cGameDataUFOPtr eastl::intrusive_ptr<Simulator::cGameDataUFO>
 
 namespace Simulator
 {

@@ -11,10 +11,13 @@ namespace Simulator
 	{
 	public:
 		static const uint32_t TYPE = 0x2E71A5A;
+		static const uint32_t NOUN_ID = 0x2E72CAE;
 
 		using Object::AddRef;
 		using Object::Release;
 		using Object::Cast;
+
+		void SetParameters(const Vector3& origin, float radius);
 
 	public:
 		/* 238h */	float mRadius;

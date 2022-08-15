@@ -27,7 +27,8 @@
 
 namespace Simulator
 {
-
+	/// Base class for most Simulator objects. All cGameData objects have a *political ID* that uniquely
+	/// identifies the object, and is often used to reference it in other classes.
 	class cGameData 
 		: public ISimulatorSerializable
 		, public DefaultRefCounted
@@ -66,7 +67,7 @@ namespace Simulator
 		/* 4Ch */	virtual uint32_t GetPoliticalID();
 		/* 50h */	virtual int WriteAsText(int);  // related with attributes
 
-	protected:
+	public:
 		/* 14h */	int field_14;
 		/* 18h */	int field_18;
 		/* 1Ch */	int field_1C;  // -1

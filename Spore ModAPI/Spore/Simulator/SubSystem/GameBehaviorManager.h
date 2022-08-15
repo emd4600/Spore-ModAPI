@@ -32,7 +32,7 @@ namespace Simulator
 		/* 40h */	virtual bool HasAgent(cBehaviorAgent* agent);
 		/* 44h */	virtual void func44h();
 
-	protected:
+	public:
 		/* 20h */	Clock* mpStopwatch;
 		/* 24h */	vector<cBehaviorAgentPtr> mAgents;
 		/* 38h */	list<intrusive_ptr<Object>> field_38;

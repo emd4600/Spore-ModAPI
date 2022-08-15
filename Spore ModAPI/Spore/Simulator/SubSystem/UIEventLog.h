@@ -94,7 +94,7 @@ namespace Simulator
 
 		static cUIEventLog* Get();
 
-	protected:
+	public:
 		/* 20h */	int field_20;  // 255
 		/* 24h */	bool field_24;  // true
 		/* 28h */	map<uint32_t, intrusive_ptr<cFeedbackEvent>> mEvents;

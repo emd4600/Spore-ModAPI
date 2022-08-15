@@ -79,7 +79,7 @@ namespace Simulator
 		void func48h() override;
 		void func4Ch() override;
 
-	protected:
+	public:
 		/* 08h */	int mnRefCount;
 		/* 0Ch */	uint32_t mLastGameMode;  // -1
 		/* 10h */	uint32_t mCurrentGameMode;  // -1

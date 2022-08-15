@@ -100,17 +100,13 @@ namespace Simulator
 		/* BCh */	virtual int AddRef() = 0;
 		/* C0h */	virtual int Release() = 0;
 
-	protected:
+	public:
 
 		/* 04h */	Vector3 mPosition;
 		/* 10h */	Quaternion mOrientation;
 		/* 20h */	BoundingBox mOriginalLocalExtents;
 		/* 38h */	BoundingBox mLocalExtents;
-
-	public:
 		/* 50h */	uint32_t mFlags;   // kPickupEnabled = 0x200 belongs here, not in cInteractiveOrnament
-
-	protected:
 		/* 54h */	uint32_t mMaterialType;
 		/* 58h */	float field_58;  // material type?
 		/* 5Ch */	float mBoundingRadius;

@@ -34,7 +34,6 @@ namespace GameCiv
 	public:
 		//TODO Apart from the IGameModeObject methods, it also has another virtual method
 
-	protected:
 		/* 28h */	bool field_28;
 		/* 29h */	bool field_29;
 		/* 2Ah */	bool field_2A;

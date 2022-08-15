@@ -31,7 +31,12 @@ namespace Simulator
 		: public cCreatureBase
 	{
 	public:
+		static const uint32_t TYPE = 0xD0036E08;
 		static const uint32_t NOUN_ID = 0x18EB45E;
+
+		using Object::AddRef;
+		using Object::Release;
+		using Object::Cast;
 
 		static cCreatureAnimal* Create(const Vector3& pPosition, cSpeciesProfile* pSpecies, int age = 1, cHerd* pHerd = nullptr, bool bIsAvatar = false, bool = false);
 

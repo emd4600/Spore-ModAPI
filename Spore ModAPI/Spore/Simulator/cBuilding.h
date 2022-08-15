@@ -32,6 +32,13 @@ namespace Simulator
 {
 	class cCity;
 
+	/// Base class for all buildings in Simulator game modes. This class cannot be instantiated;
+	/// instead, you have to create instances of specific building types:
+	/// - Simulator::cBuildingCityHall
+	/// - Simulator::cBuildingIndustry
+	/// - Simulator::cBuildingHouse
+	/// - Simulator::cBuildingEntertainment
+	/// - Simulator::cBuildingScenario
 	class cBuilding
 		/* 00h */	: public cGameData
 		/* 34h */	, public cSpatialObject

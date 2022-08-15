@@ -226,7 +226,7 @@ namespace Simulator
 		/// @returns
 		float GetRelationshipEventValue(uint32_t politicalID1, uint32_t politicalID2, uint32_t relationshipID);
 
-	protected:
+	public:
 		/* 10h */	float field_10;
 		/* 14h */	float field_14;
 		/* 18h */	float field_18;

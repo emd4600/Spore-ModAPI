@@ -39,7 +39,7 @@ namespace Editors
 
 		//TODO 4DF2D0 used to get plants?
 
-	protected:
+	public:
 		/* 04h */	hash_map<ResourceKey, Simulator::cSpeciesProfile> mSpeciesProfiles;
 		/* 24h */	hash_map<int, int> field_24;
 		/* 44h */	hash_map<int, int> field_44;

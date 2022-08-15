@@ -126,7 +126,7 @@ namespace Simulator
 		/* 50h */	virtual bool Raycast(const Vector3& point1, const Vector3& point2, Graphics::FilterSettings::FilterModel_t filter, 
 			cGameDataPtr& dst, Vector3& dstIntersection, bool useModelCollisionMode = false);
 
-	protected:
+	public:
 		/* 24h */	intrusive_list<int> field_24;
 		/* 2Ch */	fixed_vector<ModelPtr, 16> mGrassTrampModels;
 		/* 84h */	uint32_t mGameModeID;  // -1

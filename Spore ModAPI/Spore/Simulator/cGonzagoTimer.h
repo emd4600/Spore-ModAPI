@@ -24,7 +24,8 @@
 
 namespace Simulator
 {
-	/// A class for measuring time inside Simulator modes. This is the equivalent to the Clock class.
+	/// A class for measuring time inside Simulator modes. This is the equivalent to the Clock class
+	/// but in the Simulator.
 	class cGonzagoTimer : public DefaultRefCounted
 	{
 	public:

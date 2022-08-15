@@ -49,7 +49,7 @@ namespace Simulator
 		/* 14h */	virtual void Write(void*);
 		/* 18h */	virtual void Read(void*);
 
-	protected:
+	public:
 		/* 04h */	uint32_t mIDColorID;  // 0x53DBCF1
 		/* 08h */	map<int, int> field_8;
 		/* 24h */	Math::ColorRGB mCachedColor;

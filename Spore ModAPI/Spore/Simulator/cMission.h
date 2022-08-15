@@ -88,6 +88,7 @@ namespace Simulator
 		/* 08h */	int mOrbitOrder;
 	};
 
+	/// Base class for all missions, this class cannot be instantiated.
 	class cMission
 		: public cGameData
 		, public App::IMessageListener
@@ -120,6 +121,7 @@ namespace Simulator
 
 		/* 60h */	virtual int GetState();
 		/* 64h */	virtual bool func64h();  // field_38.IsRunning()
+		// Called by sub_E13A70
 		/* 68h */	virtual bool func68h();  // field_58.IsRunning()
 		/* 6Ch */	virtual void func6Ch();  //TODO start?
 		/* 70h */	virtual void func70h();  // field_58.Start()
@@ -137,7 +139,9 @@ namespace Simulator
 
 		/// Loads prop file
 		/* 80h */	virtual void Load();
-		/* 84h */	virtual void func84h();
+
+		/// Calling when destroying the mission, if `mSystemsShutdown` is false.
+		/* 84h */	virtual void ShutdownSystems();
 
 		/// Called when the player accepts the mission.
 		/* 88h */	virtual void OnMissionAccept();

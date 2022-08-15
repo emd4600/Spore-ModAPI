@@ -23,7 +23,7 @@
 #include <Spore\UTFWin\IWindow.h>
 #include <Spore\ResourceKey.h>
 
-#define UILayoutPtr intrusive_ptr<UTFWin::UILayout>
+#define UILayoutPtr eastl::intrusive_ptr<UTFWin::UILayout>
 
 namespace UTFWin
 {

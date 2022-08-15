@@ -61,7 +61,7 @@ namespace Editors
 		virtual void Initialize() override;  // here it parses the prop file
 		virtual void func54h(Vector3& dst) override;
 
-	protected:
+	public:
 		/* 0Ch */	int mnRefCount;
 		/* 10h */	intrusive_ptr<App::PropertyList> mpPropList;
 		/* 14h */	float mfZoomScale;  // 1.0

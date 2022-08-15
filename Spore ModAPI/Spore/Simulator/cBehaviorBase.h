@@ -42,7 +42,7 @@ namespace Simulator
 		// function 14h returns description string?
 		// 34h bool IsSupported(cBehaviorAgent*);
 
-	protected:
+	public:
 		/* 08h */	int mnRefCount;
 		/* 0Ch */	vector<int> field_C;
 		/* 20h */	int field_20;  // 0x7F

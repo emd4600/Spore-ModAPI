@@ -39,7 +39,7 @@ namespace Simulator
 		/* 14h */	virtual char16_t* GetName(int);
 		/* 18h */	virtual void Load();
 
-	protected:
+	public:
 		/* 0Ch */	bool field_0C;
 		/* 0Dh */	bool field_0D;
 		/* 0Eh */	bool field_0E;

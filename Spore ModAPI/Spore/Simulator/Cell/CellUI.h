@@ -34,7 +34,7 @@ namespace Simulator
 
 		class CellUI
 		{
-		protected:
+		public:
 
 			/* 00h */	GameInput mGameInput;
 			/* 48h */	char field_48[0x48];  // not initialized

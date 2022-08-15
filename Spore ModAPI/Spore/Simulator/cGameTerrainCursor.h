@@ -33,7 +33,7 @@ namespace Simulator
 		static const uint32_t TYPE = 0x14A4EDC;
 		static const uint32_t NOUN_ID = 0x18C40BC;
 
-		typedef vector<intrusive_ptr<cSpatialObject>> SpatialObjects;
+		typedef vector<cSpatialObjectPtr> SpatialObjects;
 
 		using Object::Cast;
 		using Object::AddRef;
@@ -98,7 +98,7 @@ namespace Simulator
 		/* 15Ch */	int mSelectedObjectCount;
 		/* 160h */	bool mbAnchorValid;
 		/* 164h */	SpatialObjects* mpObjects;
-		/* 168h */	intrusive_ptr<cSpatialObject> field_168;
+		/* 168h */	cSpatialObjectPtr field_168;
 	};
 
 	namespace Addresses(cGameTerrainCursor)

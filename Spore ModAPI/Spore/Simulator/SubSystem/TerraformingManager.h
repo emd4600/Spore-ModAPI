@@ -40,7 +40,7 @@ namespace Simulator
 
 		int CalculateTScore(float atmosphereScore, float temperatureScore);
 
-	protected:
+	public:
 		/* 1Ch */	hash_map<int, int> field_1C;
 		/* 3Ch */	bool field_3C;  // true
 		/* 40h */	int field_40;  // -1

@@ -73,7 +73,7 @@ namespace Simulator
 		/// If the method returns false, the strategy was not added because the ID was already in use by an existing strategy.
 		bool AddStrategy(ISimulatorStrategy* strategy, uint32_t id);
 			
-	protected:
+	public:
 		/* 08h */	int mnRefCount;
 		/* 0Ch */	bool field_0C;  // notInEditor?
 		/* 0Dh */	bool field_0D;

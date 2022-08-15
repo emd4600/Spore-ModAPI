@@ -1,3 +1,4 @@
+#ifndef MODAPI_DLL_EXPORT
 /****************************************************************************
 * Copyright (C) 2019 Eric Mor
 *
@@ -16,28 +17,14 @@
 * You should have received a copy of the GNU General Public License
 * along with this program.  If not, see <http://www.gnu.org/licenses/>.
 ****************************************************************************/
-#pragma once
-
-#include <Spore\Resource\ResourceObject.h>
-#include <EASTL\map.h>
-#include <EASTL\vector.h>
-
-#define cConversationPtr intrusive_ptr<Simulator::cConversation>
+#include <Spore\Simulator\cHitSphere.h>
 
 namespace Simulator
 {
-	using namespace eastl;
-
-	// Maybe SpecialReosurceObject?
-	class cConversation : public Resource::ResourceObject
+	void cHitSphere::SetParameters(const Vector3& origin, float radius)
 	{
-	public:
-		/* 14h */	int field_14;
-		/* 18h */	map<int, int> field_18;
-		/* 34h */	map<int, int> field_34;
-		/* 50h */	map<int, int> field_50;
-		/* 6Ch */	vector<int> field_6C;
-	};
-
-	static_assert(sizeof(cConversation) == 0x80, "sizeof(cConversation) != 80h");
+		SetPosition(origin);
+		mRadius = radius;
+	}
 }
+#endif

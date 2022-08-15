@@ -77,7 +77,7 @@ namespace Simulator
 
 		bool HasTradeRoute(StarID star, uint32_t empireID);
 
-	protected:
+	public:
 		/* 04h */	map<int, cTradeRouteData> mTradeRoutes;
 		/* 20h */	int field_20;
 	};
@@ -144,10 +144,10 @@ namespace Simulator
 		/// @param dst A vector where all found stars will be added.
 		void FindStars(const Vector3& coords, const StarRequestFilter& filter, vector<cStarRecordPtr>& dst);
 
-	protected:
+	public:
 		/* 20h */	map<int, int> field_20;
 		/* 3Ch */	vector<int> field_3C;
-		/* 50h */	vector<int> field_50;
+		/* 50h */	vector<cPlanetPtr> field_50;
 		/* 64h */	bool field_64;
 		/* 68h */	int field_68;  // not initialized
 		/* 6Ch */	string16 field_6C;
