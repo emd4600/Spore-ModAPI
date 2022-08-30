@@ -48,7 +48,7 @@
           <span class="m-breadcrumb"><a href="namespace_simulator.html">Simulator</a>::<wbr/></span>cMission <span class="m-thin">class</span>
           <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="c_mission_8h.html">&lt;Spore/Simulator/cMission.h&gt;</a></div>
         </h1>
-        <p><span></span></p>
+        <p>Base class for all missions, this class cannot be instantiated.</p>
         <div class="m-block m-default">
           <h3>Contents</h3>
           <ul>
@@ -69,7 +69,7 @@
             <dt>
               class <a href="class_simulator_1_1c_game_data.html" class="m-doc">cGameData</a>
             </dt>
-            <dd><span></span></dd>
+            <dd>Base class for most <a href="namespace_simulator.html" class="m-doc">Simulator</a> objects.</dd>
             <dt>
               class <a href="class_app_1_1_i_message_listener.html" class="m-doc">App::IMessageListener</a>
             </dt>
@@ -89,7 +89,7 @@
           <h2><a href="#pub-methods">Public functions</a></h2>
           <dl class="m-doc">
             <dt>
-              <span class="m-doc-wrap-bumper">void <a href="#aa50589922b62b47ee0a4cd462fba1cfe" class="m-doc">SetState</a>(</span><span class="m-doc-wrap"><a href="namespace_simulator.html#ac85911e301d4c48524493bd864ce1e42" class="m-doc">MissionState</a> state)</span>
+              <span class="m-doc-wrap-bumper">void <a href="#aa50589922b62b47ee0a4cd462fba1cfe" class="m-doc">SetState</a>(</span><span class="m-doc-wrap"><a href="namespace_simulator.html#a6c02c45dd84113deb21949fb943de64d" class="m-doc">MissionState</a> state)</span>
             </dt>
             <dd>Changes the state of the mission.</dd>
             <dt>
@@ -133,17 +133,17 @@
             </dt>
             <dd><span></span></dd>
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#ac4db6723964c38b11655e9d6d7ad4f86" class="m-doc">Update</a>(</span><span class="m-doc-wrap">int deltaTime) -&gt; <a href="namespace_simulator.html#ac85911e301d4c48524493bd864ce1e42" class="m-doc">MissionState</a> <span class="m-label m-flat m-warning">virtual</span></span>
+              <span class="m-doc-wrap-bumper">auto <a href="#ac4db6723964c38b11655e9d6d7ad4f86" class="m-doc">Update</a>(</span><span class="m-doc-wrap">int deltaTime) -&gt; <a href="namespace_simulator.html#a6c02c45dd84113deb21949fb943de64d" class="m-doc">MissionState</a> <span class="m-label m-flat m-warning">virtual</span></span>
             </dt>
             <dd>Only called when state is Active, called every frame.</dd>
             <dt id="a3b43297549f3461176bef2d9cf6b2c48">
               <span class="m-doc-wrap-bumper">void <a href="#a3b43297549f3461176bef2d9cf6b2c48" class="m-doc-self">Load</a>(</span><span class="m-doc-wrap">) <span class="m-label m-flat m-warning">virtual</span></span>
             </dt>
             <dd>Loads prop file.</dd>
-            <dt id="a1df07d2588be84bd13b0fe38568d2873">
-              <span class="m-doc-wrap-bumper">void <a href="#a1df07d2588be84bd13b0fe38568d2873" class="m-doc-self">func84h</a>(</span><span class="m-doc-wrap">) <span class="m-label m-flat m-warning">virtual</span></span>
+            <dt id="ae48bb8da5c950df0b3931ba9c79e812e">
+              <span class="m-doc-wrap-bumper">void <a href="#ae48bb8da5c950df0b3931ba9c79e812e" class="m-doc-self">ShutdownSystems</a>(</span><span class="m-doc-wrap">) <span class="m-label m-flat m-warning">virtual</span></span>
             </dt>
-            <dd><span></span></dd>
+            <dd>Calling when destroying the mission, if <code>mSystemsShutdown</code> is false.</dd>
             <dt id="a481206a68b0bc1363415f16cf3517e42">
               <span class="m-doc-wrap-bumper">void <a href="#a481206a68b0bc1363415f16cf3517e42" class="m-doc-self">OnMissionAccept</a>(</span><span class="m-doc-wrap">) <span class="m-label m-flat m-warning">virtual</span></span>
             </dt>
@@ -472,7 +472,7 @@
             </dt>
             <dd><span></span></dd>
             <dt id="a9880f73b0e70f92e5ff41164cfbcf577">
-              <a href="namespace_simulator.html#ac85911e301d4c48524493bd864ce1e42" class="m-doc">MissionState</a> <a href="#a9880f73b0e70f92e5ff41164cfbcf577" class="m-doc-self">mState</a>
+              <a href="namespace_simulator.html#a6c02c45dd84113deb21949fb943de64d" class="m-doc">MissionState</a> <a href="#a9880f73b0e70f92e5ff41164cfbcf577" class="m-doc-self">mState</a>
             </dt>
             <dd><span></span></dd>
             <dt id="aaacc06d54b0d74a9b8e33984f17b0e71">
@@ -617,7 +617,7 @@
           <h2>Function documentation</h2>
           <section class="m-doc-details" id="aa50589922b62b47ee0a4cd462fba1cfe"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">void Simulator::<wbr />cMission::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#aa50589922b62b47ee0a4cd462fba1cfe" class="m-doc-self">SetState</a>(</span><span class="m-doc-wrap"><a href="namespace_simulator.html#ac85911e301d4c48524493bd864ce1e42" class="m-doc">MissionState</a> state)</span></span>
+              <span class="m-doc-wrap-bumper">void Simulator::<wbr />cMission::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#aa50589922b62b47ee0a4cd462fba1cfe" class="m-doc-self">SetState</a>(</span><span class="m-doc-wrap"><a href="namespace_simulator.html#a6c02c45dd84113deb21949fb943de64d" class="m-doc">MissionState</a> state)</span></span>
             </h3>
             <p>Changes the state of the mission.</p>
             <table class="m-table m-fullwidth m-flat">
@@ -631,7 +631,7 @@
                 </tr>
               </tbody>
             </table>
-<p>Sets <code>mTitle</code> and <code>field_15C</code> to an empty string. If the new state is <a href="namespace_simulator.html#ac85911e301d4c48524493bd864ce1e42a4d3d769b812b6faa6b76e1a8abaece2d" class="m-doc">MissionState::<wbr />Active</a>, emits a SimulatorMessages::kMsgMissionUpdate message.</p>
+<p>Sets <code>mTitle</code> and <code>field_15C</code> to an empty string. If the new state is <a href="namespace_simulator.html#a6c02c45dd84113deb21949fb943de64da4d3d769b812b6faa6b76e1a8abaece2d" class="m-doc">MissionState::<wbr />Active</a>, emits a SimulatorMessages::kMsgMissionUpdate message.</p>
           </div></section>
           <section class="m-doc-details" id="a7384806648cf9264968bf64d02933982"><div>
             <h3>
@@ -666,7 +666,7 @@
           </div></section>
           <section class="m-doc-details" id="ac4db6723964c38b11655e9d6d7ad4f86"><div>
             <h3>
-              <span class="m-doc-wrap-bumper"><a href="namespace_simulator.html#ac85911e301d4c48524493bd864ce1e42" class="m-doc">MissionState</a> Simulator::<wbr />cMission::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ac4db6723964c38b11655e9d6d7ad4f86" class="m-doc-self">Update</a>(</span><span class="m-doc-wrap">int deltaTime) <span class="m-label m-warning">virtual</span></span></span>
+              <span class="m-doc-wrap-bumper"><a href="namespace_simulator.html#a6c02c45dd84113deb21949fb943de64d" class="m-doc">MissionState</a> Simulator::<wbr />cMission::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ac4db6723964c38b11655e9d6d7ad4f86" class="m-doc-self">Update</a>(</span><span class="m-doc-wrap">int deltaTime) <span class="m-label m-warning">virtual</span></span></span>
             </h3>
             <p>Only called when state is Active, called every frame.</p>
             <table class="m-table m-fullwidth m-flat">

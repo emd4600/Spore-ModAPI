@@ -48,7 +48,7 @@
           <span class="m-breadcrumb"><a href="namespace_simulator.html">Simulator</a>::<wbr/></span>cPlanetRecord <span class="m-thin">class</span>
           <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="c_planet_record_8h.html">&lt;Spore/Simulator/cPlanetRecord.h&gt;</a></div>
         </h1>
-        <p><span></span></p>
+        <p>Keeps all the information related to a planet.</p>
         <div class="m-block m-default">
           <h3>Contents</h3>
           <ul>
@@ -62,6 +62,7 @@
             </li>
           </ul>
         </div>
+<p>This does not represent the planet visually (that is the <a href="class_simulator_1_1c_planet.html" class="m-doc">Simulator::<wbr />cPlanet</a> class), this is just information about the planet that will be stored in the galaxy database in the saved games folder. This class is used by <a href="class_simulator_1_1c_star_record.html" class="m-doc">Simulator::<wbr />cStarRecord</a>. Despite the name, this class also represents asteroid belts in a solar system.</p><p>Planet records are uniquely identified with an ID, which can be retrieved using <a href="class_simulator_1_1c_planet_record.html#a9bbbcab62b2dcd2d666be5bb884d2bf7" class="m-doc">GetID()</a>. You can get the record from an ID using <a href="class_simulator_1_1c_star_manager.html#af15bc1cc1d00803d6a43bd4e4c21aff0" class="m-doc">cStarManager::<wbr />GetPlanetRecord()</a>.</p>
         <section id="base-classes">
           <h2><a href="#base-classes">Base classes</a></h2>
           <dl class="m-doc">
@@ -99,10 +100,10 @@
               string16 <a href="#abaeb5534ab8cc1cddd44eef78bc651cf" class="m-doc-self">mName</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="a6a1ae37e346e4b61d5dc0ff6a398391f">
-              int <a href="#a6a1ae37e346e4b61d5dc0ff6a398391f" class="m-doc-self">mType</a>
+            <dt id="a349f61fd63e85465cb1b8cbe29cac9ca">
+              <a href="namespace_simulator.html#a594d67006822a9e0240e9f678b08faa7" class="m-doc">PlanetType</a> <a href="#a349f61fd63e85465cb1b8cbe29cac9ca" class="m-doc-self">mType</a>
             </dt>
-            <dd><span></span></dd>
+            <dd>The type of the planet, which determines whether it is a gas giant, asteroid belt, or regular rocky planet.</dd>
             <dt id="a9dd3ec2ef516172bb607df2a5d78f8f3">
               int <a href="#a9dd3ec2ef516172bb607df2a5d78f8f3" class="m-doc-self">mFlags</a>
             </dt>
@@ -110,23 +111,19 @@
             <dt id="a3f97374f9f716a1e394e125291bf164d">
               <a href="class_simulator_1_1c_elliptical_orbit.html" class="m-doc">cEllipticalOrbit</a> <a href="#a3f97374f9f716a1e394e125291bf164d" class="m-doc-self">mOrbit</a>
             </dt>
-            <dd><span></span></dd>
-            <dt id="af152327527d6851ec7bde6dc1b70e34c">
-              char <a href="#af152327527d6851ec7bde6dc1b70e34c" class="m-doc-self">padding_54</a>
-            </dt>
-            <dd><span></span></dd>
+            <dd>The orbit this planet follows around its star.</dd>
             <dt id="acd3d0a0ab5297b8811d424503498e902">
               bool <a href="#acd3d0a0ab5297b8811d424503498e902" class="m-doc-self">mbRotationIsNull</a>
             </dt>
-            <dd><span></span></dd>
+            <dd>If true, the planet does not rotate around itself (i.e. there are no &quot;days&quot;).</dd>
             <dt id="a44c910fbe9780052c837a9201dbf8e15">
               <a href="struct_math_1_1_vector3.html" class="m-doc">Math::<wbr />Vector3</a> <a href="#a44c910fbe9780052c837a9201dbf8e15" class="m-doc-self">mRotationAxis</a>
             </dt>
-            <dd><span></span></dd>
+            <dd>Axis of rotation for planet days, that is, in which axis the planet spins around itself.</dd>
             <dt id="aa86ce8be110b7d1c734d3e69cf6ee090">
               float <a href="#aa86ce8be110b7d1c734d3e69cf6ee090" class="m-doc-self">mRotationPeriod</a>
             </dt>
-            <dd><span></span></dd>
+            <dd>How much time, in real seconds, the planet takes to make a full spin around itself (that is, how long an astronomical day is for this planet).</dd>
             <dt id="a5a5a3986dc51b8c0c3c6edb5181084f0">
               char <a href="#a5a5a3986dc51b8c0c3c6edb5181084f0" class="m-doc-self">field_AC</a>
             </dt>
@@ -150,11 +147,11 @@
             <dt id="ac2da2d4b1a2094c727c15e9f7d92d892">
               vector&lt;<a href="struct_resource_key.html" class="m-doc">ResourceKey</a>&gt; <a href="#ac2da2d4b1a2094c727c15e9f7d92d892" class="m-doc-self">mPlantSpecies</a>
             </dt>
-            <dd><span></span></dd>
+            <dd>IDs of the plant species that inhabit this planet.</dd>
             <dt id="acb0063b8fa95fffcf7bd46417ed23c49">
               vector&lt;<a href="struct_resource_key.html" class="m-doc">ResourceKey</a>&gt; <a href="#acb0063b8fa95fffcf7bd46417ed23c49" class="m-doc-self">mAnimalSpecies</a>
             </dt>
-            <dd><span></span></dd>
+            <dd>IDs of the animal species that inhabit this planet.</dd>
             <dt id="aaa2525d76d22ca73fb11e1241917145e">
               vector&lt;int&gt; <a href="#aaa2525d76d22ca73fb11e1241917145e" class="m-doc-self">field_E4</a>
             </dt>

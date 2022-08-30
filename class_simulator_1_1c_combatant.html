@@ -59,23 +59,23 @@
                 <li><a href="#pub-static-attribs">Public static variables</a></li>
                 <li><a href="#typeless-methods">Constructors, destructors, conversion operators</a></li>
                 <li><a href="#pub-methods">Public functions</a></li>
-                <li><a href="#pro-attribs">Protected variables</a></li>
+                <li><a href="#pub-attribs">Public variables</a></li>
               </ul>
             </li>
           </ul>
         </div>
-<p>This class acts more as a container of different variables (like the target combatant, number of hit points, etc), and therefore it barely has any combat logic on it. The combat logic is managed externally, by the cCombatSimulator class.</p><p>Combatants can only fight with other combatants, and can only attack one of them at a time. To do so, use the <a href="class_simulator_1_1c_combatant.html#acc24d6838e6479b4e0ee44b3a498e6c5" class="m-doc">SetTarget()</a> method. If the class has no target, it won&#x27;t attack anyone.</p><p>Several attributes can be saved into the game data:</p><ul><li>mHealthPoints</li><li>mMaxHealthPoints</li><li>mLastAttacker</li><li>mArmorProbability</li></ul>
+<p>This class acts more as a container of different variables (like the target combatant, number of hit points, etc), and therefore it barely has any combat logic on it. The combat logic is managed externally, by the <a href="class_simulator_1_1c_combat_simulator.html" class="m-doc">cCombatSimulator</a> class.</p><p>Combatants can only fight with other combatants, and can only attack one of them at a time. To do so, use the <a href="class_simulator_1_1c_combatant.html#acc24d6838e6479b4e0ee44b3a498e6c5" class="m-doc">SetTarget()</a> method. If the class has no target, it won&#x27;t attack anyone.</p><p>Several attributes can be saved into the game data:</p><ul><li>mHealthPoints</li><li>mMaxHealthPoints</li><li>mLastAttacker</li><li>mArmorProbability</li></ul>
         <section id="derived-classes">
           <h2><a href="#derived-classes">Derived classes</a></h2>
           <dl class="m-doc">
             <dt>
               class <a href="class_simulator_1_1c_building.html" class="m-doc">cBuilding</a>
             </dt>
-            <dd><span></span></dd>
+            <dd>Base class for all buildings in <a href="namespace_simulator.html" class="m-doc">Simulator</a> game modes.</dd>
             <dt>
               class <a href="class_simulator_1_1c_commodity_node.html" class="m-doc">cCommodityNode</a>
             </dt>
-            <dd><span></span></dd>
+            <dd>Represents a spice geyser in civilization stage, maybe it is also used elsewhere.</dd>
             <dt>
               class <a href="class_simulator_1_1c_creature_base.html" class="m-doc">cCreatureBase</a>
             </dt>
@@ -250,8 +250,8 @@
             <dd>Same as <a href="class_object.html#aa036657cba582dd62f05811e455fb7d5" class="m-doc">Object::<wbr />Release()</a>.</dd>
           </dl>
         </section>
-        <section id="pro-attribs">
-          <h2><a href="#pro-attribs">Protected variables</a></h2>
+        <section id="pub-attribs">
+          <h2><a href="#pub-attribs">Public variables</a></h2>
           <dl class="m-doc">
             <dt id="adf6e328369372f0d5b19a0cc9e4982ac">
               bool <a href="#adf6e328369372f0d5b19a0cc9e4982ac" class="m-doc-self">field_8</a>

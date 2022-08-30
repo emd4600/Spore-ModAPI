@@ -48,7 +48,7 @@
           <span class="m-breadcrumb"><a href="namespace_simulator.html">Simulator</a>::<wbr/></span>cPlanet <span class="m-thin">class</span>
           <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="c_planet_8h.html">&lt;Spore/Simulator/cPlanet.h&gt;</a></div>
         </h1>
-        <p><span></span></p>
+        <p>Visual representation of a planet (or asteroids).</p>
         <div class="m-block m-default">
           <h3>Contents</h3>
           <ul>
@@ -63,17 +63,18 @@
             </li>
           </ul>
         </div>
+<p>The information of a planet is stored in the <a href="class_simulator_1_1c_planet_record.html" class="m-doc">Simulator::<wbr />cPlanetRecord</a> class, but that class does not hold any visual information. Whenever a planet must be viewed (in the solar system view in Space stage, or when you see planets in the sky while you are in a planet), this <a href="class_simulator_1_1c_planet.html" class="m-doc">cPlanet</a> class is used. You can use the <a href="class_simulator_1_1c_star_manager.html#a0ee09225a3f6129044a6a0d2332a648d" class="m-doc">Simulator::<wbr />cStarManager::<wbr />RecordToPlanet()</a> method to generate a planet from a planet record.</p>
         <section id="base-classes">
           <h2><a href="#base-classes">Base classes</a></h2>
           <dl class="m-doc">
             <dt>
               class <a href="class_simulator_1_1c_spatial_object.html" class="m-doc">cSpatialObject</a>
             </dt>
-            <dd><span></span></dd>
+            <dd>A 3D model in the <a href="namespace_simulator.html" class="m-doc">Simulator</a>.</dd>
             <dt>
               class <a href="class_simulator_1_1c_game_data.html" class="m-doc">cGameData</a>
             </dt>
-            <dd><span></span></dd>
+            <dd>Base class for most <a href="namespace_simulator.html" class="m-doc">Simulator</a> objects.</dd>
           </dl>
         </section>
         <section id="pub-static-attribs">
@@ -100,6 +101,10 @@
               <span class="m-doc-wrap-bumper">auto <a href="#a4a2e46d970edddb22a720fb3b6823ba2" class="m-doc-self">GetEmpire</a>(</span><span class="m-doc-wrap">) -&gt; <a href="class_simulator_1_1c_empire.html" class="m-doc">cEmpire</a>*</span>
             </dt>
             <dd>Returns the empire that controls this planet, if any.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">void <a href="#a32514a744fb4b4c0262ebb6c46665cf3" class="m-doc">SetRepresentationMode</a>(</span><span class="m-doc-wrap"><a href="namespace_simulator.html#ad26faa7837bc0a3c91f32063a4b089c1" class="m-doc">PlanetRepresentationMode</a> mode)</span>
+            </dt>
+            <dd>Sets and enables the graphical representation of the planet.</dd>
             <dt id="a3a9c8996c8e1adc7cfec11f8f09b51c8">
               <span class="m-doc-wrap-bumper">auto <a href="#a3a9c8996c8e1adc7cfec11f8f09b51c8" class="m-doc-self">AddRef</a>(</span><span class="m-doc-wrap">) -&gt; int <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
@@ -153,8 +158,8 @@
               intrusive_ptr&lt;<a href="class_simulator_1_1c_sim_planet_low_l_o_d.html" class="m-doc">cSimPlanetLowLOD</a>&gt; <a href="#ad2f0249701039cc69c6e0eb773f0dbb6" class="m-doc-self">mpPlanetSim</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="acf29e56c55ccf7a8c2b5a9a946bb848a">
-              int <a href="#acf29e56c55ccf7a8c2b5a9a946bb848a" class="m-doc-self">field_158</a>
+            <dt id="ab721a9e4a47c63bbd7b6db83cb521e8f">
+              <a href="namespace_simulator.html#ad26faa7837bc0a3c91f32063a4b089c1" class="m-doc">PlanetRepresentationMode</a> <a href="#ab721a9e4a47c63bbd7b6db83cb521e8f" class="m-doc-self">mGraphicRepresentationMode</a>
             </dt>
             <dd><span></span></dd>
             <dt id="a84f8ac83651a4e5f492a8541534216a1">
@@ -173,8 +178,8 @@
               float <a href="#af1b076f2b8e8e2f255f9a6a969f03ada" class="m-doc-self">mPlanetScale</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="a87a8712ac3f75b49211e85073eb68a29">
-              int <a href="#a87a8712ac3f75b49211e85073eb68a29" class="m-doc-self">field_188</a>
+            <dt id="aaec3d039e030a9bdef317f2c015ccf46">
+              <a href="c_solar_hit_sphere_8h.html#acafe2dfe0ebea2c7d55bcddd5d345312" class="m-doc">cSolarHitSpherePtr</a> <a href="#aaec3d039e030a9bdef317f2c015ccf46" class="m-doc-self">mpSolarHitSphere</a>
             </dt>
             <dd><span></span></dd>
             <dt id="ac957b11ae0925189b86b41a9312a7bc4">
@@ -206,6 +211,27 @@
             </dt>
             <dd><span></span></dd>
           </dl>
+        </section>
+        <section>
+          <h2>Function documentation</h2>
+          <section class="m-doc-details" id="a32514a744fb4b4c0262ebb6c46665cf3"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">void Simulator::<wbr />cPlanet::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a32514a744fb4b4c0262ebb6c46665cf3" class="m-doc-self">SetRepresentationMode</a>(</span><span class="m-doc-wrap"><a href="namespace_simulator.html#ad26faa7837bc0a3c91f32063a4b089c1" class="m-doc">PlanetRepresentationMode</a> mode)</span></span>
+            </h3>
+            <p>Sets and enables the graphical representation of the planet.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">mode</td>
+                  <td></td>
+                </tr>
+              </tbody>
+            </table>
+<p>Depending on the type, this creates and sets visible the <code>mpSolarHitSphere</code> and the <code>mpVisiblePlanet</code>.</p>
+          </div></section>
         </section>
       </div>
     </div>

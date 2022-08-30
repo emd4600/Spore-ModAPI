@@ -46,44 +46,79 @@
       <div class="m-col-l-10 m-push-l-1">
         <h1>
           <span class="m-breadcrumb"><a href="namespace_simulator.html">Simulator</a>::<wbr/></span>cEllipticalOrbit <span class="m-thin">class</span>
-          <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="c_planet_record_8h.html">&lt;Spore/Simulator/cPlanetRecord.h&gt;</a></div>
+          <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="c_elliptical_orbit_8h.html">&lt;Spore/Simulator/cEllipticalOrbit.h&gt;</a></div>
         </h1>
-        <p><span></span></p>
+        <p>Settings of the orbit of a planet or celestial body in a solar system.</p>
         <div class="m-block m-default">
           <h3>Contents</h3>
           <ul>
             <li>
               Reference
               <ul>
+                <li><a href="#pub-types">Public types</a></li>
+                <li><a href="#pub-methods">Public functions</a></li>
                 <li><a href="#pub-attribs">Public variables</a></li>
               </ul>
             </li>
           </ul>
         </div>
+<p>These are all mathematical properties to define an elliptical orbit. <code>mPlaneNormal</code> describes the plane of rotation, whereas <code>mEccentricty</code> and <code>mPerihelion</code> describe the ellipse in that plane.</p><p>This class saves all its parameters except <code>mCache</code>. <code>mCache</code> is precalculated from the other parameters when the data is loaded, so if you change one of the parameters you have to calculate the cache again using <a href="class_simulator_1_1c_elliptical_orbit.html#a17add94b4849f1bffaed3261f6e4623d" class="m-doc">Precalculate()</a>.</p>
+        <section id="pub-types">
+          <h2><a href="#pub-types">Public types</a></h2>
+          <dl class="m-doc">
+            <dt>
+              struct <a href="struct_simulator_1_1c_elliptical_orbit_1_1_orbit_cache.html" class="m-doc">OrbitCache</a>
+            </dt>
+            <dd><span></span></dd>
+          </dl>
+        </section>
+        <section id="pub-methods">
+          <h2><a href="#pub-methods">Public functions</a></h2>
+          <dl class="m-doc">
+            <dt>
+              <span class="m-doc-wrap-bumper">void <a href="#a17add94b4849f1bffaed3261f6e4623d" class="m-doc">Precalculate</a>(</span><span class="m-doc-wrap">)</span>
+            </dt>
+            <dd>Calculates all the valeus in <code>mCache</code> using the rest of parameters in this class.</dd>
+          </dl>
+        </section>
         <section id="pub-attribs">
           <h2><a href="#pub-attribs">Public variables</a></h2>
           <dl class="m-doc">
             <dt id="a43da5a68447c869c3deea801bf33e5a0">
               bool <a href="#a43da5a68447c869c3deea801bf33e5a0" class="m-doc-self">mbNullOrbit</a>
             </dt>
-            <dd><span></span></dd>
+            <dd>If true, the orbit is null (so there is no orbit at all)</dd>
             <dt id="ac35c04b835bb53692e845f7b38f34fab">
               <a href="struct_math_1_1_vector3.html" class="m-doc">Math::<wbr />Vector3</a> <a href="#ac35c04b835bb53692e845f7b38f34fab" class="m-doc-self">mPlaneNormal</a>
             </dt>
-            <dd><span></span></dd>
+            <dd>Normal vector of the plane in which the planet orbits. The planet never leaves that plane.</dd>
             <dt id="a8f973e1e1c392955681e0de928149198">
               float <a href="#a8f973e1e1c392955681e0de928149198" class="m-doc-self">mEccentricity</a>
             </dt>
-            <dd><span></span></dd>
+            <dd>Eccentricity of the ellipse of the orbit; 0.0 is a circular orbit.</dd>
             <dt id="a15ab0f4ae315c9d42ac35f4287db0c92">
               <a href="struct_math_1_1_vector3.html" class="m-doc">Math::<wbr />Vector3</a> <a href="#a15ab0f4ae315c9d42ac35f4287db0c92" class="m-doc-self">mPerihelion</a>
             </dt>
-            <dd><span></span></dd>
+            <dd>Point of the orbit in which the planet is closest to the star. Also known as periapsis.</dd>
             <dt id="af08456530976969c1f8a5f0093a06a71">
               float <a href="#af08456530976969c1f8a5f0093a06a71" class="m-doc-self">mPeriod</a>
             </dt>
+            <dd>Time it takes, in real seconds, to complete one orbit (i.e. how long an astronomical year is)</dd>
+            <dt id="a059960e3dd3f71eecd7e9ae8a87bee6b">
+              <a href="struct_simulator_1_1c_elliptical_orbit_1_1_orbit_cache.html" class="m-doc">OrbitCache</a> <a href="#a059960e3dd3f71eecd7e9ae8a87bee6b" class="m-doc-self">mCache</a>
+            </dt>
             <dd><span></span></dd>
           </dl>
+        </section>
+        <section>
+          <h2>Function documentation</h2>
+          <section class="m-doc-details" id="a17add94b4849f1bffaed3261f6e4623d"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">void Simulator::<wbr />cEllipticalOrbit::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a17add94b4849f1bffaed3261f6e4623d" class="m-doc-self">Precalculate</a>(</span><span class="m-doc-wrap">)</span></span>
+            </h3>
+            <p>Calculates all the valeus in <code>mCache</code> using the rest of parameters in this class.</p>
+<p>This must be called every time a parameter is changed.</p>
+          </div></section>
         </section>
       </div>
     </div>

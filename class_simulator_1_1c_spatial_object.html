@@ -48,7 +48,7 @@
           <span class="m-breadcrumb"><a href="namespace_simulator.html">Simulator</a>::<wbr/></span>cSpatialObject <span class="m-thin">class</span>
           <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="c_spatial_object_8h.html">&lt;Spore/Simulator/cSpatialObject.h&gt;</a></div>
         </h1>
-        <p><span></span></p>
+        <p>A 3D model in the <a href="namespace_simulator.html" class="m-doc">Simulator</a>.</p>
         <div class="m-block m-default">
           <h3>Contents</h3>
           <ul>
@@ -60,18 +60,18 @@
                 <li><a href="#typeless-methods">Constructors, destructors, conversion operators</a></li>
                 <li><a href="#pub-methods">Public functions</a></li>
                 <li><a href="#pub-attribs">Public variables</a></li>
-                <li><a href="#pro-attribs">Protected variables</a></li>
               </ul>
             </li>
           </ul>
         </div>
+<p>This class is inherit by all classes that have a visual representation, and therefore need a position, orientation, and scale in 3D space. Models are identified by a <a href="struct_resource_key.html" class="m-doc">ResourceKey</a> (using the <a href="class_simulator_1_1c_spatial_object.html#a0be2bc1234b21f477942131269505c4f" class="m-doc">SetModelKey()</a> and <a href="class_simulator_1_1c_spatial_object.html#a6f32259c5a5079c3bb57fbc05a4ec5a6" class="m-doc">GetModelKey()</a> methods). The graphical model itself is loaded in the <a href="class_simulator_1_1c_spatial_object.html#ab95238b925eab5ca11ffe155c73deb5b" class="m-doc">SetModelWorld()</a> method.</p>
         <section id="derived-classes">
           <h2><a href="#derived-classes">Derived classes</a></h2>
           <dl class="m-doc">
             <dt>
               class <a href="class_simulator_1_1c_building.html" class="m-doc">cBuilding</a>
             </dt>
-            <dd><span></span></dd>
+            <dd>Base class for all buildings in <a href="namespace_simulator.html" class="m-doc">Simulator</a> game modes.</dd>
             <dt>
               class <a href="class_simulator_1_1c_city.html" class="m-doc">cCity</a>
             </dt>
@@ -87,7 +87,7 @@
             <dt>
               class <a href="class_simulator_1_1c_commodity_node.html" class="m-doc">cCommodityNode</a>
             </dt>
-            <dd><span></span></dd>
+            <dd>Represents a spice geyser in civilization stage, maybe it is also used elsewhere.</dd>
             <dt>
               class <a href="class_simulator_1_1c_default_ao_e_area.html" class="m-doc">cDefaultAoEArea</a>
             </dt>
@@ -131,7 +131,7 @@
             <dt>
               class <a href="class_simulator_1_1c_planet.html" class="m-doc">cPlanet</a>
             </dt>
-            <dd><span></span></dd>
+            <dd>Visual representation of a planet (or asteroids).</dd>
             <dt>
               class <a href="class_simulator_1_1c_totem_pole.html" class="m-doc">cTotemPole</a>
             </dt>
@@ -203,8 +203,8 @@
               <span class="m-doc-wrap-bumper">auto <a href="#a68415a84dbbbdf523eaac79bb3442f79" class="m-doc-self">Read</a>(</span><span class="m-doc-wrap">void* arg_0) -&gt; int <span class="m-label m-flat m-warning">virtual</span></span>
             </dt>
             <dd><span></span></dd>
-            <dt id="a1e1ef11fd234534018f27590157213ae">
-              <span class="m-doc-wrap-bumper">auto <a href="#a1e1ef11fd234534018f27590157213ae" class="m-doc-self">func1Ch</a>(</span><span class="m-doc-wrap">int) -&gt; bool <span class="m-label m-flat m-warning">virtual</span></span>
+            <dt id="a6eccfa375d9e5b8ac8317603b5e80c18">
+              <span class="m-doc-wrap-bumper">auto <a href="#a6eccfa375d9e5b8ac8317603b5e80c18" class="m-doc-self">WriteToXML</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1_xml_serializer.html" class="m-doc">XmlSerializer</a>*) -&gt; bool <span class="m-label m-flat m-warning">virtual</span></span>
             </dt>
             <dd><span></span></dd>
             <dt id="a3f272b080c6ba1f1e44a122d0f0ca097">
@@ -379,15 +379,6 @@
         <section id="pub-attribs">
           <h2><a href="#pub-attribs">Public variables</a></h2>
           <dl class="m-doc">
-            <dt id="aac6fcb176133c34bb112fe7290296621">
-              uint32_t <a href="#aac6fcb176133c34bb112fe7290296621" class="m-doc-self">mFlags</a>
-            </dt>
-            <dd><span></span></dd>
-          </dl>
-        </section>
-        <section id="pro-attribs">
-          <h2><a href="#pro-attribs">Protected variables</a></h2>
-          <dl class="m-doc">
             <dt id="ab81f98926577eb800678bb6f6712a963">
               <a href="struct_math_1_1_vector3.html" class="m-doc">Vector3</a> <a href="#ab81f98926577eb800678bb6f6712a963" class="m-doc-self">mPosition</a>
             </dt>
@@ -402,6 +393,10 @@
             <dd><span></span></dd>
             <dt id="a328ca30d8758cdc96af6a3990a623bf0">
               <a href="struct_math_1_1_bounding_box.html" class="m-doc">BoundingBox</a> <a href="#a328ca30d8758cdc96af6a3990a623bf0" class="m-doc-self">mLocalExtents</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="aac6fcb176133c34bb112fe7290296621">
+              uint32_t <a href="#aac6fcb176133c34bb112fe7290296621" class="m-doc-self">mFlags</a>
             </dt>
             <dd><span></span></dd>
             <dt id="aaca8d48d4a693203c21f8bb8c4f58a50">

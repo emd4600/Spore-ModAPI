@@ -48,7 +48,7 @@
           <span class="m-breadcrumb"><a href="namespace_simulator.html">Simulator</a>::<wbr/></span>cCelestialBody <span class="m-thin">class</span>
           <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="c_celestial_body_8h.html">&lt;Spore/Simulator/cCelestialBody.h&gt;</a></div>
         </h1>
-        <p><span></span></p>
+        <p>Represents celestial bodies in a solar system (except planets), that is, the star and the comets.</p>
         <div class="m-block m-default">
           <h3>Contents</h3>
           <ul>
@@ -62,13 +62,14 @@
             </li>
           </ul>
         </div>
+<p>This is the actual graphical representation that you see in the solar system view, with the graphics itself being <code>mpEffect</code>. Celestial bodies are used by the <a href="class_simulator_1_1c_solar_system.html" class="m-doc">cSolarSystem</a> class.</p>
         <section id="base-classes">
           <h2><a href="#base-classes">Base classes</a></h2>
           <dl class="m-doc">
             <dt>
               class <a href="class_simulator_1_1c_game_data.html" class="m-doc">cGameData</a>
             </dt>
-            <dd><span></span></dd>
+            <dd>Base class for most <a href="namespace_simulator.html" class="m-doc">Simulator</a> objects.</dd>
           </dl>
         </section>
         <section id="pub-static-attribs">
@@ -87,16 +88,12 @@
         <section id="pub-attribs">
           <h2><a href="#pub-attribs">Public variables</a></h2>
           <dl class="m-doc">
-            <dt id="acb2c5e90c805cb1790647969bbd7bb67">
-              int <a href="#acb2c5e90c805cb1790647969bbd7bb67" class="m-doc-self">mType</a>
+            <dt id="a0da1ffd3df75d3029ef39eb8ff77b4b5">
+              <a href="namespace_simulator.html#ac97cf1223a774e6ec987032dbcfa6c33" class="m-doc">cCelestialBodyType</a> <a href="#a0da1ffd3df75d3029ef39eb8ff77b4b5" class="m-doc-self">mType</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="af9b6eb5f2b703dc2490fc2cb111c5bb3">
-              bool <a href="#af9b6eb5f2b703dc2490fc2cb111c5bb3" class="m-doc-self">mbOrbit</a>
-            </dt>
-            <dd><span></span></dd>
-            <dt id="a0e69a6b9e2bfaf12e30fa846b26f716a">
-              char <a href="#a0e69a6b9e2bfaf12e30fa846b26f716a" class="m-doc-self">_padding_3C</a>
+            <dt id="af9d4def91a5b01c1c26534e437215e33">
+              <a href="class_simulator_1_1c_elliptical_orbit.html" class="m-doc">cEllipticalOrbit</a> <a href="#af9d4def91a5b01c1c26534e437215e33" class="m-doc-self">mOrbit</a>
             </dt>
             <dd><span></span></dd>
             <dt id="aed2a203d3f824358d5172c47e736654f">
@@ -110,19 +107,19 @@
             <dt id="ad1f5ccdeace20e0dddc57ae34699b13e">
               string16 <a href="#ad1f5ccdeace20e0dddc57ae34699b13e" class="m-doc-self">mName</a>
             </dt>
-            <dd><span></span></dd>
-            <dt id="aa7a4f8b823d4b7e3a8a8f50492c88d1f">
-              intrusive_ptr&lt;<a href="class_object.html" class="m-doc">Object</a>&gt; <a href="#aa7a4f8b823d4b7e3a8a8f50492c88d1f" class="m-doc-self">field_C0</a>
+            <dd>Name of the celestial body, shown in a tooltip when hovering it with the mouse.</dd>
+            <dt id="ae8398c23cf607f463f7f265e5fdd9f9d">
+              <a href="_i_effect_8h.html#adc433612d1d4c8a3a401b5c1dc2d4eba" class="m-doc">IEffectPtr</a> <a href="#ae8398c23cf607f463f7f265e5fdd9f9d" class="m-doc-self">mpEffect</a>
             </dt>
-            <dd><span></span></dd>
-            <dt id="af1fdb9952811edefbf2da2589eb7e1c7">
-              intrusive_ptr&lt;<a href="class_object.html" class="m-doc">Object</a>&gt; <a href="#af1fdb9952811edefbf2da2589eb7e1c7" class="m-doc-self">field_C4</a>
+            <dd>Effect <code>0x3D6F8D8</code> for type Comet.</dd>
+            <dt id="a447372baa71b8dbab89787e391cf28d9">
+              <a href="c_solar_hit_sphere_8h.html#acafe2dfe0ebea2c7d55bcddd5d345312" class="m-doc">cSolarHitSpherePtr</a> <a href="#a447372baa71b8dbab89787e391cf28d9" class="m-doc-self">mpHitSphere</a>
             </dt>
             <dd><span></span></dd>
             <dt id="a8807a0dd8ae28c38b865fb1fedf750b4">
               float <a href="#a8807a0dd8ae28c38b865fb1fedf750b4" class="m-doc-self">mfHitSphereSize</a>
             </dt>
-            <dd><span></span></dd>
+            <dd>Probably used to detect the mouse.</dd>
           </dl>
         </section>
       </div>

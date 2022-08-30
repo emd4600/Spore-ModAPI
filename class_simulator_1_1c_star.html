@@ -57,6 +57,7 @@
               <ul>
                 <li><a href="#base-classes">Base classes</a></li>
                 <li><a href="#pub-static-attribs">Public static variables</a></li>
+                <li><a href="#pub-methods">Public functions</a></li>
                 <li><a href="#pub-attribs">Public variables</a></li>
               </ul>
             </li>
@@ -68,7 +69,7 @@
             <dt>
               class <a href="class_simulator_1_1c_game_data.html" class="m-doc">cGameData</a>
             </dt>
-            <dd><span></span></dd>
+            <dd>Base class for most <a href="namespace_simulator.html" class="m-doc">Simulator</a> objects.</dd>
           </dl>
         </section>
         <section id="pub-static-attribs">
@@ -84,31 +85,52 @@
             <dd><span></span></dd>
           </dl>
         </section>
+        <section id="pub-methods">
+          <h2><a href="#pub-methods">Public functions</a></h2>
+          <dl class="m-doc">
+            <dt id="a794a8dfe0be1f349b71d41bacc9ff83a">
+              <span class="m-doc-wrap-bumper">auto <a href="#a794a8dfe0be1f349b71d41bacc9ff83a" class="m-doc-self">GetSolarSystem</a>(</span><span class="m-doc-wrap">) -&gt; <a href="class_simulator_1_1c_solar_system.html" class="m-doc">cSolarSystem</a>*</span>
+            </dt>
+            <dd>Gets the solar system of this star, creating it if necessary.</dd>
+            <dt id="a3a9c8996c8e1adc7cfec11f8f09b51c8">
+              <span class="m-doc-wrap-bumper">auto <a href="#a3a9c8996c8e1adc7cfec11f8f09b51c8" class="m-doc-self">AddRef</a>(</span><span class="m-doc-wrap">) -&gt; int <span class="m-label m-flat m-warning">pure virtual</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="aa036657cba582dd62f05811e455fb7d5">
+              <span class="m-doc-wrap-bumper">auto <a href="#aa036657cba582dd62f05811e455fb7d5" class="m-doc-self">Release</a>(</span><span class="m-doc-wrap">) -&gt; int <span class="m-label m-flat m-warning">pure virtual</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a499586d32a7e1bafdff17480d4819ba2">
+              <span class="m-doc-wrap-bumper">auto <a href="#a499586d32a7e1bafdff17480d4819ba2" class="m-doc-self">Cast</a>(</span><span class="m-doc-wrap">) const -&gt; void* <span class="m-label m-flat m-warning">pure virtual</span></span>
+            </dt>
+            <dd><span></span></dd>
+          </dl>
+        </section>
         <section id="pub-attribs">
           <h2><a href="#pub-attribs">Public variables</a></h2>
           <dl class="m-doc">
-            <dt id="ae5c2f1c2a2652d9b53d3cf9735e05e83">
-              int <a href="#ae5c2f1c2a2652d9b53d3cf9735e05e83" class="m-doc-self">mPrimaryType</a>
+            <dt id="a5a0911d93f27386866a98f4b6b3de279">
+              <a href="namespace_simulator.html#abe57cfb0b8f7d0b95e69aec0cbc46497" class="m-doc">StarType</a> <a href="#a5a0911d93f27386866a98f4b6b3de279" class="m-doc-self">mPrimaryType</a>
             </dt>
-            <dd><span></span></dd>
-            <dt id="a9059d4ea990147f2570655e5d25c2f1a">
-              int <a href="#a9059d4ea990147f2570655e5d25c2f1a" class="m-doc-self">mSecondaryType</a>
+            <dd>For binary systems, type of the first star.</dd>
+            <dt id="aa84e99c97314f69bb41d0e1c7c57a38e">
+              <a href="namespace_simulator.html#abe57cfb0b8f7d0b95e69aec0cbc46497" class="m-doc">StarType</a> <a href="#aa84e99c97314f69bb41d0e1c7c57a38e" class="m-doc-self">mSecondaryType</a>
             </dt>
-            <dd><span></span></dd>
+            <dd>For binary systems, type of the second star.</dd>
             <dt id="a77c0f76c260166010afe0010f8658a15">
               bool <a href="#a77c0f76c260166010afe0010f8658a15" class="m-doc-self">mActivatedPlanets</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="a2173ca8d41c6026d6fac819fbb68e991">
-              int <a href="#a2173ca8d41c6026d6fac819fbb68e991" class="m-doc-self">field_40</a>
+            <dt id="ac08005b265bcc0c11abcf7b1478bf699">
+              <a href="c_solar_system_8h.html#a9acc9cad1270d4f2602176c1915c8365" class="m-doc">cSolarSystemPtr</a> <a href="#ac08005b265bcc0c11abcf7b1478bf699" class="m-doc-self">mpSolarSystem</a>
             </dt>
             <dd><span></span></dd>
             <dt id="aa87a8cb83c66ddb9bf829cc39f60dfee">
               bool <a href="#aa87a8cb83c66ddb9bf829cc39f60dfee" class="m-doc-self">mPlayerCanCapture</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="a7d167138bbab322d5359d06c5f32ffd6">
-              intrusive_ptr&lt;<a href="class_simulator_1_1c_star_record.html" class="m-doc">cStarRecord</a>&gt; <a href="#a7d167138bbab322d5359d06c5f32ffd6" class="m-doc-self">mpStarRecord</a>
+            <dt id="ad1c46fb800b1fe564a65961fafc1b5d6">
+              <a href="c_star_record_8h.html#a45bf5963088a11c31f2b96f32be43662" class="m-doc">cStarRecordPtr</a> <a href="#ad1c46fb800b1fe564a65961fafc1b5d6" class="m-doc-self">mpStarRecord</a>
             </dt>
             <dd><span></span></dd>
             <dt id="a43408c0939fe0cfd03940088bd6844a4">

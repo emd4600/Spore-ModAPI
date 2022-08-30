@@ -48,7 +48,7 @@
           <span class="m-breadcrumb"><a href="namespace_simulator.html">Simulator</a>::<wbr/></span>cStarRecord <span class="m-thin">class</span>
           <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="c_star_record_8h.html">&lt;Spore/Simulator/cStarRecord.h&gt;</a></div>
         </h1>
-        <p><span></span></p>
+        <p>Keeps all the information related to a star and all the elements in its solar system.</p>
         <div class="m-block m-default">
           <h3>Contents</h3>
           <ul>
@@ -63,6 +63,7 @@
             </li>
           </ul>
         </div>
+<p>This does not represent the star visually (that is the <a href="class_simulator_1_1c_planet.html" class="m-doc">Simulator::<wbr />cPlanet</a> class), this is just information about the planet that will be stored in the galaxy database in the saved games folder.</p><p>This class represents any element in the galaxy view, so it is also used by binary stars, black holes, proto-planteary disks and the galaxy center.</p><p>Star records are uniquely identified with an ID, which can be retrieved using <a href="class_simulator_1_1c_star_record.html#ab6f84a77249bea9d566c5dbf8aacc08a" class="m-doc">GetID()</a>. You can get the record from an ID using <a href="class_simulator_1_1c_star_manager.html#a20a0def203b54f7a14b9ec462c8c96b2" class="m-doc">cStarManager::<wbr />GetStarRecord()</a>.</p>
         <section id="base-classes">
           <h2><a href="#base-classes">Base classes</a></h2>
           <dl class="m-doc">
@@ -96,16 +97,28 @@
               <span class="m-doc-wrap-bumper">auto <a href="#af8fba69629ef2b1278583efef553097d" class="m-doc-self">GetTechLevel</a>(</span><span class="m-doc-wrap">) const -&gt; <a href="namespace_simulator.html#a99e847b63394f8daa87d1a67318e7453" class="m-doc">TechLevel</a></span>
             </dt>
             <dd><span></span></dd>
+            <dt id="ab6f84a77249bea9d566c5dbf8aacc08a">
+              <span class="m-doc-wrap-bumper">auto <a href="#ab6f84a77249bea9d566c5dbf8aacc08a" class="m-doc-self">GetID</a>(</span><span class="m-doc-wrap">) const -&gt; <a href="namespace_simulator.html#a98420fedd9079b2285e9cdc71a839a11" class="m-doc">StarID</a></span>
+            </dt>
+            <dd><span></span></dd>
             <dt id="a21a303f43a041a280ce1b67b6de434e8">
               <span class="m-doc-wrap-bumper">auto <a href="#a21a303f43a041a280ce1b67b6de434e8" class="m-doc-self">GetPlanetRecord</a>(</span><span class="m-doc-wrap">size_t planetIndex) -&gt; <a href="class_simulator_1_1c_planet_record.html" class="m-doc">cPlanetRecord</a>*</span>
             </dt>
-            <dd><span></span></dd>
+            <dd>Returns the planet record information at the given orbit index (0 - planet closest to the sun, 1 - second planet, etc)</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a2826761aef5fe3fe79537a500f245c3b" class="m-doc">GetPlanetRecords</a>(</span><span class="m-doc-wrap">) -&gt; vector&lt;<a href="c_planet_record_8h.html#a682e62ad9640c48598962d9ffc2c2893" class="m-doc">cPlanetRecordPtr</a>&gt;&amp;</span>
+            </dt>
+            <dd>Returns a reference to the planet records of this star, generating them if they are not loaded.</dd>
             <dt id="a3a9c8996c8e1adc7cfec11f8f09b51c8">
               <span class="m-doc-wrap-bumper">auto <a href="#a3a9c8996c8e1adc7cfec11f8f09b51c8" class="m-doc-self">AddRef</a>(</span><span class="m-doc-wrap">) -&gt; int <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
             <dd><span></span></dd>
             <dt id="aa036657cba582dd62f05811e455fb7d5">
               <span class="m-doc-wrap-bumper">auto <a href="#aa036657cba582dd62f05811e455fb7d5" class="m-doc-self">Release</a>(</span><span class="m-doc-wrap">) -&gt; int <span class="m-label m-flat m-warning">pure virtual</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a499586d32a7e1bafdff17480d4819ba2">
+              <span class="m-doc-wrap-bumper">auto <a href="#a499586d32a7e1bafdff17480d4819ba2" class="m-doc-self">Cast</a>(</span><span class="m-doc-wrap">) const -&gt; void* <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
             <dd><span></span></dd>
           </dl>
@@ -180,12 +193,30 @@
             <dt id="a024016ae18a42970ed55263a038cafb1">
               vector&lt;<a href="c_planet_record_8h.html#a682e62ad9640c48598962d9ffc2c2893" class="m-doc">cPlanetRecordPtr</a>&gt; <a href="#a024016ae18a42970ed55263a038cafb1" class="m-doc-self">field_98</a>
             </dt>
-            <dd><span></span></dd>
+            <dd>Subset of mPlanets, only those with a specific flag set.</dd>
             <dt id="ada1612b86754c1105b16de2f848ee7b6">
               char <a href="#ada1612b86754c1105b16de2f848ee7b6" class="m-doc-self">mPlanetCount</a>
             </dt>
             <dd><span></span></dd>
           </dl>
+        </section>
+        <section>
+          <h2>Function documentation</h2>
+          <section class="m-doc-details" id="a2826761aef5fe3fe79537a500f245c3b"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">vector&lt;<a href="c_planet_record_8h.html#a682e62ad9640c48598962d9ffc2c2893" class="m-doc">cPlanetRecordPtr</a>&gt;&amp; Simulator::<wbr />cStarRecord::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a2826761aef5fe3fe79537a500f245c3b" class="m-doc-self">GetPlanetRecords</a>(</span><span class="m-doc-wrap">)</span></span>
+            </h3>
+            <p>Returns a reference to the planet records of this star, generating them if they are not loaded.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <tfoot>
+                <tr>
+                  <th style="width: 1%">Returns</th>
+                  <td>A read only vector of the planet records in this star.</td>
+                </tr>
+              </tfoot>
+            </table>
+<p>It is preferrable to use this instead of <code>mPlanets</code>.</p>
+          </div></section>
         </section>
       </div>
     </div>
