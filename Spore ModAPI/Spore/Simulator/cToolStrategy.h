@@ -87,7 +87,7 @@ namespace Simulator
 		/// Unlike Update, it's not executed if the game is paused.
 		/* 2Ch */	virtual void SelectedUpdate(cSpaceToolData* pTool, const Vector3& position);
 
-		/* 30h */	virtual bool OnHit(cSpaceToolData* pTool, const Vector3& position, cSpaceToolData::SpaceToolHit hitType, int);
+		/* 30h */	virtual bool OnHit(cSpaceToolData* pTool, const Vector3& position, SpaceToolHit hitType, int);
 
 		/* 34h */	virtual bool WhileFiring(cSpaceToolData* pTool, const Vector3& aimPoint, int);
 

@@ -30,7 +30,7 @@ namespace Simulator
 	public:
 		static const uint32_t STRATEGY_ID = 0x72E076A7;
 
-		virtual bool OnHit(cSpaceToolData* pTool, const Vector3& position, cSpaceToolData::SpaceToolHit hitType, int) override;
+		virtual bool OnHit(cSpaceToolData* pTool, const Vector3& position, SpaceToolHit hitType, int) override;
 	};
 
 	namespace Addresses(cGenesisDeviceToolStrategy)

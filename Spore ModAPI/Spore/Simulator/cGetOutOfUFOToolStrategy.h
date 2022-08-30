@@ -33,7 +33,7 @@ namespace Simulator
 		virtual bool OnSelect(cSpaceToolData* pTool) override;
 		virtual bool Update(cSpaceToolData* pTool, bool showErrors, const char16_t** ppFailText = nullptr) override;
 		virtual bool WhileAiming(cSpaceToolData* pTool, const Vector3& aimPoint, bool showErrors) override;
-		virtual bool OnHit(cSpaceToolData* pTool, const Vector3& position, cSpaceToolData::SpaceToolHit hitType, int) override;
+		virtual bool OnHit(cSpaceToolData* pTool, const Vector3& position, SpaceToolHit hitType, int) override;
 	};
 
 	namespace Addresses(cGetOutOfUFOToolStrategy)

@@ -23,6 +23,7 @@
 #include <Spore\App\Propertylist.h>
 #include <Spore\App\IMessageListener.h>
 #include <Spore\App\IMessageManager.h>
+#include <Spore\Simulator\SimulatorEnums.h>
 #include <Spore\Simulator\ISimulatorSerializable.h>
 
 #define cSpaceInventoryItemPtr intrusive_ptr<Simulator::cSpaceInventoryItem>
