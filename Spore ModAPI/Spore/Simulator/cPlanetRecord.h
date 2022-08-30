@@ -19,6 +19,8 @@
 #pragma once
 
 #include <Spore\Simulator\StarID.h>
+#include <Spore\Simulator\cEllipticalOrbit.h>
+#include <Spore\Simulator\SimulatorEnums.h>
 #include <Spore\Resource\ResourceObject.h>
 #include <Spore\MathUtils.h>
 #include <EASTL\string.h>
@@ -30,26 +32,13 @@ namespace Simulator
 {
 	class cStarRecord;
 
-	enum class TechLevel : int
-	{
-		None = 0,
-		Creature = 1,
-		Tribe = 2,
-		City = 3,
-		Civilization = 4,
-		Empire = 5,
-	};
-
-	class cEllipticalOrbit
-	{
-	public:
-		/* 00h */	bool mbNullOrbit;  // true
-		/* 04h */	Math::Vector3 mPlaneNormal;
-		/* 10h */	float mEccentricity;
-		/* 14h */	Math::Vector3 mPerihelion;
-		/* 20h */	float mPeriod;
-	};
-
+	/// Keeps all the information related to a planet. This does not represent the planet visually 
+	/// (that is the Simulator::cPlanet class), this is just information about the planet that will be stored
+	/// in the galaxy database in the saved games folder. This class is used by Simulator::cStarRecord.
+	/// Despite the name, this class also represents asteroid belts in a solar system.
+	///  
+	/// Planet records are uniquely identified with an ID, which can be retrieved using GetID().
+	/// You can get the record from an ID using cStarManager::GetPlanetRecord().
 	class cPlanetRecord
 		: public Resource::SpecialResourceObject
 	{
@@ -61,20 +50,27 @@ namespace Simulator
 
 	public:
 		/* 18h */	string16 mName;
-		/* 28h */	int mType;  // -1
+		/// The type of the planet, which determines whether it is a gas giant, asteroid belt, or regular rocky planet.
+		/* 28h */	PlanetType mType;  // -1
 		// dictates whether or not a planet is destroyed - giving this flag to a planet turns it into a ball of lava, stops you visiting it and makes it vanish completely once you go to another system. And removing this flag makes the planet normal again.
+		// 0x1000 - hot orbit, 0x2000 cold orbit??
 		/* 2Ch */	int mFlags;  // not initialized
+		/// The orbit this planet follows around its star.
 		/* 30h */	cEllipticalOrbit mOrbit;
-		/* 54h */	char padding_54[0x44];
+		/// If true, the planet does not rotate around itself (i.e. there are no "days").
 		/* 98h */	bool mbRotationIsNull;  // true
+		/// Axis of rotation for planet days, that is, in which axis the planet spins around itself.
 		/* 9Ch */	Math::Vector3 mRotationAxis;  // (0, 0, 1)
+		/// How much time, in real seconds, the planet takes to make a full spin around itself (that is, how long an astronomical day is for this planet).
 		/* A8h */	float mRotationPeriod;  // 1.0
 		/* ACh */	char field_AC;  // 0xFF
 		/* ACh */	char field_AD;  // 0xFF
 		/* B0h */	float mAtmosphereScore;  // -1.0
 		/* B4h */	float mTemperatureScore;  // -1.0
 		/* B8h */	float mWaterScore;  // -1.0
+		/// IDs of the plant species that inhabit this planet.
 		/* BCh */	vector<ResourceKey> mPlantSpecies;
+		/// IDs of the animal species that inhabit this planet.
 		/* D0h */	vector<ResourceKey> mAnimalSpecies;
 		/* E4h */	vector<int> field_E4;
 		/* F8h */	vector<int> field_F8;

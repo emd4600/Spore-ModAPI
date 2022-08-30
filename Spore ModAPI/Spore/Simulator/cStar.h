@@ -19,13 +19,13 @@
 #pragma once
 
 #include <Spore\Simulator\cGameData.h>
+#include <Spore\Simulator\cStarRecord.h>
+#include <Spore\Simulator\cSolarSystem.h>
 
-#define cStarPtr intrusive_ptr<Simulator::cStar>
+#define cStarPtr eastl::intrusive_ptr<Simulator::cStar>
 
 namespace Simulator
 {
-	class cStarRecord;
-
 	class cStar 
 		: public cGameData
 	{
@@ -33,13 +33,23 @@ namespace Simulator
 		static const uint32_t TYPE = 0x355C8DF;
 		static const uint32_t NOUN_ID = 0x355C93A;
 
+		using Object::AddRef;
+		using Object::Release;
+		using Object::Cast;
+
+		/// Gets the solar system of this star, creating it if necessary.
+		/// @returns
+		cSolarSystem* GetSolarSystem();
+
 	public:
-		/* 34h */	int mPrimaryType;
-		/* 38h */	int mSecondaryType;
+		/// For binary systems, type of the first star.
+		/* 34h */	StarType mPrimaryType;
+		/// For binary systems, type of the second star.
+		/* 38h */	StarType mSecondaryType;
 		/* 3Ch */	bool mActivatedPlanets;
-		/* 40h */	int field_40;
+		/* 40h */	cSolarSystemPtr mpSolarSystem;
 		/* 44h */	bool mPlayerCanCapture;  // true
-		/* 48h */	intrusive_ptr<cStarRecord> mpStarRecord;
+		/* 48h */	cStarRecordPtr mpStarRecord;
 		/* 4Ch */	uint32_t mKey;  // -1
 	};
 
@@ -48,4 +58,9 @@ namespace Simulator
 	/////////////////////////////////
 
 	static_assert(sizeof(cStar) == 0x50, "sizeof(cStar) != 50h");
+
+	namespace Addresses(cStar)
+	{
+		DeclareAddress(GetSolarSystem);  // 0xC8AA90  0xC8B900
+	}
 }

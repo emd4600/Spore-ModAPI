@@ -24,54 +24,6 @@ namespace Simulator
 		/* 7 */	kMissionFlagIsAdventure = 0x80,
 	};
 
-	enum class MissionState 
-	{
-		/// When the mission hasn't been accepted yet, and player is in the initial conversation
-		Unaccepted = 0,
-		/// The mission has been finished (not necessarily completed). After this, the mission is destroyed.
-		Finished = 1,
-		/// The player just accepted the mission, but it hasn't started yet.
-		/// It calls cMission::OnMissionAccept() and immediately transitions to MissionState::Active
-		Accepted = 2,
-		/// The mission is currently active. While the mission is in this state, it receives calls to Update()
-		Active = 3,
-		/// The player has successfully completed the mission. It calls cMission::OnMissionCompleted() and immediately 
-		/// transitions to MissionState::Finished, or to MissionState::StepCompleted if this is a sub-mission of a bigger mission.
-		Completed = 5,
-		/// The player has failed the mission.
-		/// It calls cMission::OnMissionFailed() and immediately transitions to MissionState::Finished
-		Failed = 6,
-		/// The mission has been aborted. 
-		/// It calls cMission::OnMissionAbort() and immediately transitions to MissionState::Finished
-		Aborted = 7,
-		/// The mission has been rejected. 
-		/// It calls cMission::OnMissionReject() and immediately transitions to MissionState::Finished
-		Rejected = 8,
-		/// When this mission is only a step of a bigger mission, and the step gets completed
-		StepCompleted = 9
-	};
-
-	enum class LandmarkStarType
-	{
-		Here = 0,
-		Star = 1,
-		Wormhole = 2,
-		BigStar = 3,
-		RedStar = 4,
-		ProtoPlanetaryStar = 5,
-		GalacticCore = 6
-	};
-
-	enum class LandmarkPlanetType
-	{
-		AsteroidBelt = 0,
-		GasGiant = 1,
-		T0 = 2,
-		T1 = 3,
-		T2 = 4,
-		T3 = 5
-	};
-
 	struct cStarClue
 	{
 		/// -1 is disabled, 0 is for landmarks that are closer than 2 units, 1 for farther than 2 units, there might be other types

@@ -48,5 +48,7 @@ namespace Simulator
 		}
 		return nullptr;
 	}
+
+	auto_METHOD_VOID(cPlanet, SetRepresentationMode, Args(PlanetRepresentationMode mode), Args(mode));
 }
 #endif

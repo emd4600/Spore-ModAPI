@@ -18,6 +18,7 @@
 ****************************************************************************/
 #pragma once
 
+#include <Spore\Simulator\SimulatorEnums.h>
 #include <Spore\Simulator\ISimulatorSerializable.h>
 #include <Spore\Simulator\cIdentityColorable.h>
 #include <Spore\Simulator\cCultureSet.h>
@@ -35,37 +36,6 @@
 
 namespace Simulator
 {
-	enum Archetypes
-	{
-		kArchetypeWarrior = 0,
-		kArchetypeTrader = 1,
-		kArchetypeScientist = 2,
-		kArchetypeShaman = 3,
-		kArchetypeBard = 4,
-		kArchetypeZealot = 5,
-		kArchetypeDiplomat = 6,
-		kArchetypeEcologist = 7,
-		kArchetypeGrob = 8,
-		kArchetypePlayerWarrior = 9,
-		kArchetypePlayerTrader = 10,
-		kArchetypePlayerScientist = 11,
-		kArchetypePlayerShaman = 12,
-		kArchetypePlayerBard = 13,
-		kArchetypePlayerZealot = 14,
-		kArchetypePlayerDiplomat = 15,
-		kArchetypePlayerEcologist = 16,
-		kArchetypePlayerWanderer = 17,
-		kArchetypePlayerKnight = 18,
-	};
-
-	enum EmpireTrait
-	{
-		kEmpireTraitNone = 0,
-		kEmpireTraitStingy = 1,
-		kEmpireTraitGenerous = 2,
-		kEmpireTraitAccidentProne = 3,
-	};
-
 	enum EmpireFlags
 	{
 		kEmpireFlagNeedsEmpireLines = 0x10,

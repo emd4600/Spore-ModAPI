@@ -1,5 +1,6 @@
 #pragma once
 
+#include <Spore\Simulator\SimulatorEnums.h>
 #include <Spore\Simulator\cGonzagoSimulator.h>
 #include <Spore\Simulator\cCreatureCitizen.h>
 #include <EASTL\fixed_vector.h>
@@ -62,30 +63,6 @@ namespace Simulator
 		/* 54h */	cTribePlanProperties* mpProperties;
 	};
 	ASSERT_SIZE(cTribePlan, 0x58);
-
-	enum class TribePlanType
-	{
-		/// In tribe archetype, property `RaidPlans`
-		Raid = 1,
-		/// In tribe archetype, property `GiftPlans`
-		Gift = 2,
-		/// In tribe archetype, property `HuntPlans`
-		Hunt = 3,
-		/// In tribe archetype, property `GatherPlans`
-		Gather = 4,
-		/// In tribe archetype, property `FishPlans`
-		Fish = 5,
-		/// In tribe archetype, property `MatePlans`
-		Mate = 6,
-		/// In tribe archetype, property `CheatMemberPlans`
-		CheatMember = 7,
-		/// In tribe archetype, property `BuyToolsPlans`
-		BuyTools = 8,
-		/// In tribe archetype, property `IdlePlans`
-		Idle = 9,
-		/// In tribe archetype, property `StealFoodPlans`
-		StealFood = 10
-	};
 
 	class cTribePlanner
 		: public cGonzagoSimulator

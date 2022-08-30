@@ -18,6 +18,8 @@
 * along with this program.  If not, see <http://www.gnu.org/licenses/>.
 ****************************************************************************/
 #include <Spore\Simulator\cHitSphere.h>
+#include <Spore\Simulator\cStarRecord.h>
+#include <Spore\Simulator\cSolarSystem.h>
 
 namespace Simulator
 {
@@ -26,5 +28,14 @@ namespace Simulator
 		SetPosition(origin);
 		mRadius = radius;
 	}
+
+	auto_METHOD_VOID(cSolarSystem, Load, Args(cStar* pStar), Args(pStar));
+	auto_METHOD_VOID(cSolarSystem, GenerateGraphics, Args(bool create), Args(create));
+	auto_METHOD_VOID(cSolarSystem, GenerateCelestialBodiesEffects, 
+		Args(bool create, float scale), Args(create, scale));
+
+	auto_STATIC_METHOD_VOID(cSolarSystem, CreateStarEffect,
+		Args(IEffectPtr& dst, Swarm::IEffectWorld* pEffectWorld, StarType starType),
+		Args(dst, pEffectWorld, starType));
 }
 #endif

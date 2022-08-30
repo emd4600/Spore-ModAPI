@@ -33,6 +33,9 @@ namespace Simulator
 
 		kMsgSwitchGameMode = 0x0212D3E7,
 
+		/// Saves the game, pausing the game and showing a dialog on success. Use with message data `1` (as in, an integer).
+		kMsgSaveGame = 0x1CD20F0,
+
 		/// Simulator::GameNounStatusChangedMessage
 		kMsgGameNounStatusChanged = 0x1A0219E,
 

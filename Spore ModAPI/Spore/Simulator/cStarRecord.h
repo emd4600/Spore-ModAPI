@@ -18,6 +18,7 @@
 ****************************************************************************/
 #pragma once
 
+#include <Spore\Simulator\SimulatorEnums.h>
 #include <Spore\Simulator\ISimulatorSerializable.h>
 #include <Spore\Simulator\cPlanet.h>
 #include <Spore\Simulator\cSpeciesProfile.h>
@@ -32,35 +33,16 @@ namespace Simulator
 {
 	typedef int TimeStamp[9];
 
-	enum class StarType : int
-	{
-		None = 0,
-		/// The galactic core
-		GalacticCore = 1,
-		/// Black holes
-		BlackHole = 2,
-		/// Proto-planetary disks
-		ProtoPlanetary = 3,
-		/// Yellow stars
-		StarG = 4,
-		/// Blue stars
-		StarO = 5,
-		/// Red stars
-		StarM = 6,
-		/// Binary O-O (blue-blue) star system
-		BinaryOO = 7,
-		/// Binary O-M (blue-red) star system
-		BinaryOM = 8,
-		/// Binary O-G (blue-yellow) star system
-		BinaryOG = 9,
-		/// Binary G-G (yellow-yellow) star system
-		BinaryGG = 10,
-		/// Binary G-M (yellow-red) star system
-		BinaryGM = 11,
-		/// Binary M-M (red-red) star system
-		BinaryMM = 12
-	};
-
+	/// Keeps all the information related to a star and all the elements in its solar system. 
+	/// This does not represent the star visually (that is the Simulator::cPlanet class),
+	/// this is just information about the planet that will be stored in the galaxy database 
+	/// in the saved games folder. 
+	/// 
+	/// This class represents any element in the galaxy view, so it is also used by binary stars, 
+	/// black holes, proto-planteary disks and the galaxy center. 
+	/// 
+	/// Star records are uniquely identified with an ID, which can be retrieved using GetID().
+	/// You can get the record from an ID using cStarManager::GetStarRecord().
 	class cStarRecord
 		: public ISimulatorSerializable
 		, public DefaultRefCounted
@@ -70,13 +52,23 @@ namespace Simulator
 
 		using Object::AddRef;
 		using Object::Release;
+		using Object::Cast;
 
 		//TODO uint32_t getEmpireID PLACEHOLDER
 
 		StarType GetType() const;
 		TechLevel GetTechLevel() const;
 
+		inline StarID GetID() const;
+
+		/// Returns the planet record information at the given orbit index (0 - planet closest to the sun,
+		/// 1 - second planet, etc)
 		cPlanetRecord* GetPlanetRecord(size_t planetIndex);
+
+		/// Returns a reference to the planet records of this star, generating them if they are not loaded.
+		/// It is preferrable to use this instead of `mPlanets`.
+		/// @returns A read only vector of the planet records in this star.
+		vector<cPlanetRecordPtr>& GetPlanetRecords();
 
 	public:
 		/* 0Ch */	int mLastObservedTime;
@@ -95,6 +87,7 @@ namespace Simulator
 		/* 74h */	ResourceKey mCitizenSpeciesKey;
 		/* 80h */	cSpeciesProfile* mpSpeciesProfile;
 		/* 84h */	vector<cPlanetRecordPtr> mPlanets;
+		/// Subset of mPlanets, only those with a specific flag set
 		/* 98h */	vector<cPlanetRecordPtr> field_98;
 		/* ACh */	char mPlanetCount;
 
@@ -109,5 +102,11 @@ namespace Simulator
 	namespace Addresses(cStarRecord)
 	{
 		DeclareAddress(GetPlanetRecord);
+		DeclareAddress(GetPlanetRecords);  // 0xBB9870   0xBBA900
+	}
+
+	inline StarID cStarRecord::GetID() const
+	{
+		return (StarID)mKey;
 	}
 }

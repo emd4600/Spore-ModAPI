@@ -18,6 +18,7 @@
 ****************************************************************************/
 #pragma once
 
+#include <Spore\Simulator\SimulatorEnums.h>
 #include <Spore\Simulator\cGameData.h>
 #include <Spore\Simulator\cSpatialObject.h>
 #include <Spore\LocalizedString.h>
@@ -27,13 +28,6 @@
 namespace Simulator
 {
 	class cCreatureBase;
-	
-	enum OrnamentType
-	{
-		kOrnamentFlower = 1,
-		kOrnamentBone = 2,
-		kOrnamentStick = 3
-	};
 	
 	class cInteractableObject
 		: public cGameData

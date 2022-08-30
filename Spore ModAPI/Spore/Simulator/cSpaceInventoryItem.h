@@ -29,26 +29,6 @@
 
 namespace Simulator
 {
-	enum class SpaceInventoryItemType
-	{
-		/// Plants 
-		Plant = 0,
-		/// Non-sentient animals
-		NonSentientAnimal = 1,
-		/// Space tools in `spacetools~` (`0x30608F0B`) group
-		Tool = 2,
-		CargoSlot = 3,
-		/// Objects in `spacetrading~` (`0x34D97FA`) group
-		TradingObject = 4,
-		/// Objects in `multiDelivery_mision_objects~` (`0x037D494E`) group
-		MultiDeliveryObject = 5,
-		/// Sentient animals (citizens)
-		Sentient = 6,
-
-		/// cObjectInstanceInventoryItem
-		ObjectInstance = 8
-	};
-	
 	/// Represents an item of the space player inventory. This include space tools and cargo.
 	class cSpaceInventoryItem 
 		: public DefaultRefCounted

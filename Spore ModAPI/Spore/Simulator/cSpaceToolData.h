@@ -20,6 +20,7 @@
 #pragma once
 
 #include <Spore\App\PropertyList.h>
+#include <Spore\Simulator\SimulatorEnums.h>
 #include <Spore\Simulator\cSpaceInventoryItem.h>
 #include <Spore\Simulator\cGonzagoTimer.h>
 #include <Spore\Simulator\cSpatialObject.h>
@@ -38,29 +39,6 @@ namespace Simulator
 	{
 	public:
 		static const uint32_t TYPE = 0x707459F0;
-
-		enum SpaceToolHit
-		{
-			kHitCombatant = 0,
-			kHitGround = 1,
-			kHitWater = 2,
-			kHitAir = 3
-		};
-
-		enum SpaceToolTarget
-		{
-			/* shr 0 */	kTargetAnimal = 1,
-			/* shr 1 */	kTargetA13ABC9F = 2,
-			/* shr 2 */	kTargetUFO = 4,
-			/* shr 3 */	kTargetVehicle = 8,
-			/* shr 4 */	kTargetTurret = 0x10,
-			/* shr 5 */	kTargetCity = 0x20,
-			/* shr 6 */	kTargetBuilding = 0x40,
-			/* shr 7 */	kTargetWorld = 0x80,
-			/* shr 8 */	kTargetAir = 0x100,
-			/* shr 9 */	kTargetA6663355 = 0x200,
-			/* shr 10 */	//4BF0FA5A = 0x400
-		};
 
 		enum SpaceToolFlags
 		{

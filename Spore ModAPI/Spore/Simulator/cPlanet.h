@@ -22,6 +22,7 @@
 #include <Spore\Simulator\cGameData.h>
 #include <Spore\Simulator\cVisiblePlanet.h>
 #include <Spore\Simulator\cGonzagoTimer.h>
+#include <Spore\Simulator\cSolarHitSphere.h>
 #include <Spore\Simulator\cPlanetRecord.h>
 
 #define cPlanetPtr intrusive_ptr<Simulator::cPlanet>
@@ -30,10 +31,16 @@ namespace Simulator
 {
 	class cSimPlanetLowLOD;  //TODO PLACEHOLDER
 	class cEmpire;
+	
 
+	/// Visual representation of a planet (or asteroids). The information of a planet is stored in the 
+	/// Simulator::cPlanetRecord class, but that class does not hold any visual information. Whenever a 
+	/// planet must be viewed (in the solar system view in Space stage, or when you see planets in the sky
+	/// while you are in a planet), this cPlanet class is used.
+	/// You can use the Simulator::cStarManager::RecordToPlanet() method to generate a planet from a planet record.
 	class cPlanet
-		: public cSpatialObject
-		, public cGameData
+		/* 00h */	: public cSpatialObject
+		/* D4h */	, public cGameData
 	{
 	public:
 		static const uint32_t TYPE = 0x3275872;
@@ -49,6 +56,11 @@ namespace Simulator
 		/// Returns the empire that controls this planet, if any.
 		cEmpire* GetEmpire();
 
+		/// Sets and enables the graphical representation of the planet. Depending on the type, this creates
+		/// and sets visible the `mpSolarHitSphere` and the `mpVisiblePlanet`.
+		/// @param mode
+		void SetRepresentationMode(PlanetRepresentationMode mode);
+
 	public:
 		/* 108h */	int mNumSpecializedBehaviorUFOs;
 		/* 10Ch */	Math::Matrix3 field_10C;
@@ -60,12 +72,12 @@ namespace Simulator
 		/* 144h */	uint32_t mStarterWorldID;
 		/* 148h */	Math::Vector3 mOrbitedPlanetLastKnownPosition;
 		/* 154h */	intrusive_ptr<cSimPlanetLowLOD> mpPlanetSim;
-		/* 158h */	int field_158;
+		/* 158h */	PlanetRepresentationMode mGraphicRepresentationMode;
 		/* 15Ch */	string16 mImpostorModel;
 		/* 16Ch */	uint32_t mEffectScript;  // not initialized
 		/* 170h */	vector<int> field_170;
 		/* 184h */	float mPlanetScale;
-		/* 188h */	int field_188;
+		/* 188h */	cSolarHitSpherePtr mpSolarHitSphere;
 		/* 18Ch */	cVisiblePlanetPtr mpVisiblePlanet;
 		/* 190h */	bool field_190;  // true
 		/* 198h */	cGonzagoTimer mTimeSinceLastColonyPlaced;
@@ -83,5 +95,6 @@ namespace Simulator
 
 	namespace Addresses(cPlanet) {
 		DeclareAddress(GetTemperatureScore);
+		DeclareAddress(SetRepresentationMode);
 	}
 }

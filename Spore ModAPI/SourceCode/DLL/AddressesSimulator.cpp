@@ -44,6 +44,8 @@
 #include <Spore\Simulator\cTurretFlakWeapon.h>
 #include <Spore\Simulator\cVehicle.h>
 #include <Spore\Simulator\cSimPlanetHighLOD.h>
+#include <Spore\Simulator\cSolarSystem.h>
+#include <Spore\Simulator\cStar.h>
 #include <Spore\Simulator\cMissionManager.h>
 #include <Spore\Simulator\Serialization.h>
 #include <Spore\Simulator\SubSystem\cRelationshipManager.h>
@@ -284,6 +286,7 @@ namespace Simulator
 	namespace Addresses(cPlanet) 
 	{
 		DefineAddress(GetTemperatureScore, SelectAddress(0xC6FD80, NO_ADDRESS, 0xC70BC0));
+		DefineAddress(SetRepresentationMode, SelectAddress(0xC70CD0, , 0xC71B70));
 	}
 
 	namespace Addresses(cPlayerInventory)
@@ -336,6 +339,7 @@ namespace Simulator
 	namespace Addresses(cStarRecord)
 	{
 		DefineAddress(GetPlanetRecord, SelectAddress(0xBB9B40, NO_ADDRESS, 0xBBABD0));
+		DefineAddress(GetPlanetRecords, SelectAddress(0xBB9870, , 0xBBA900));
 	}
 
 	namespace Addresses(cToolStrategy)
@@ -592,6 +596,19 @@ namespace Simulator
 	namespace Addresses(cTribeArchetype)
 	{
 		DefineAddress(GetTribeArchetype, SelectAddress(0xC8E060, , 0xC8EC00));
+	}
+
+	namespace Addresses(cSolarSystem)
+	{
+		DefineAddress(Load, SelectAddress(0xC85AC0, , 0xC868F0));
+		DefineAddress(GenerateGraphics, SelectAddress(0xC85FD0, , 0xC86E00));
+		DefineAddress(CreateStarEffect, SelectAddress(0xC82FF0, , 0xC83E80));
+		DefineAddress(GenerateCelestialBodiesEffects, SelectAddress(0xC83920, , 0xC847B0));
+	}
+
+	namespace Addresses(cStar)
+	{
+		DefineAddress(GetSolarSystem, SelectAddress(0xC8AA90, , 0xC8B900));
 	}
 }
 #endif

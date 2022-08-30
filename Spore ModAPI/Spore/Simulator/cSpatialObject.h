@@ -25,6 +25,8 @@
 #include <Spore\Graphics\ModelAsset.h>
 #include <Spore\Graphics\IModelWorld.h>
 
+#include <Spore\Simulator\Serialization.h>
+
 #include <EASTL\vector.h>
 #include <EASTL\string.h>
 
@@ -34,6 +36,10 @@ namespace Simulator
 {
 	using namespace Math;
 
+	/// A 3D model in the Simulator. This class is inherit by all classes that have a visual representation,
+	/// and therefore need a position, orientation, and scale in 3D space. Models are identified by a 
+	/// ResourceKey (using the SetModelKey() and GetModelKey() methods). The graphical model itself is 
+	/// loaded in the SetModelWorld() method.
 	class cSpatialObject
 	{
 	public:
@@ -52,9 +58,8 @@ namespace Simulator
 
 		/* 14h */	virtual int Write(void* arg_0);
 		/* 18h */	virtual int Read(void* arg_0);
-
-		/* 1Ch */	virtual bool func1Ch(int);
-		/* 20h */	virtual bool func20h();
+		/* 1Ch */	virtual bool WriteToXML(XmlSerializer*);  // returns true
+		/* 20h */	virtual bool func20h();  // returns true
 
 		/* 24h */	virtual bool IsRolledOver();
 		/* 28h */	virtual void SetIsRolledOver(bool bValue);
@@ -69,9 +74,12 @@ namespace Simulator
 		/* 4Ch */	virtual void SetIsOnView(bool bValue);
 		/* 50h */	virtual bool IsSelected();
 		/* 54h */	virtual void SetIsSelected(bool bValue);
-		/* 58h */	virtual bool func58h();
+		/* 58h */	virtual bool func58h();  // does nothing by default
+
 		/// Returns the local Y axis of this spatial object
+		/// @returns
 		/* 5Ch */	virtual Vector3 GetDirection();
+
 		/* 60h */	virtual Vector3 func60h();
 		/* 64h */	virtual void SetLocalExtents(const BoundingBox& localExtents, float fScale);
 		/* 68h */	virtual const BoundingBox& GetLocalExtents();

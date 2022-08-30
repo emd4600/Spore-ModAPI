@@ -22,7 +22,7 @@
 #include <Spore\Object.h>
 #include <Spore\Simulator\cGameData.h>
 #include <Spore\Simulator\SubSystem\cStrategy.h>
-#include <Spore\Simulator\GameNounIDs.h>
+#include <Spore\Simulator\SimulatorEnums.h>
 #include <Spore\Simulator\tGameDataVectorT.h>
 #include <Spore\Simulator\cCreatureAnimal.h>
 #include <Spore\Simulator\cTribe.h>

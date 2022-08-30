@@ -309,6 +309,7 @@
     <ClInclude Include="Spore\App\cLocaleManager.h" />
     <ClInclude Include="Spore\App\cStringDetokenizer.h" />
     <ClInclude Include="Spore\App\FileDrop.h" />
+    <ClInclude Include="Spore\App\GameSpace.h" />
     <ClInclude Include="Spore\App\ITokenTranslator.h" />
     <ClInclude Include="Spore\App\Thumbnail_cImportExport.h" />
     <ClInclude Include="Spore\BasicIncludes.h" />
@@ -348,12 +349,14 @@
     <ClInclude Include="Spore\Pollinator\cAssetMetadata.h" />
     <ClInclude Include="Spore\Simulator\cAnimalCargoInfo.h" />
     <ClInclude Include="Spore\Simulator\cBuildingEntertainment.h" />
-    <ClInclude Include="Spore\Simulator\cBuildingHall.h" />
+    <ClInclude Include="Spore\Simulator\cBuildingCityHall.h" />
     <ClInclude Include="Spore\Simulator\cBuildingHouse.h" />
     <ClInclude Include="Spore\Simulator\cBuildingIndustry.h" />
+    <ClInclude Include="Spore\Simulator\cCombatSimulator.h" />
     <ClInclude Include="Spore\Simulator\cCommodityNode.h" />
     <ClInclude Include="Spore\Simulator\cCreatureCitizen.h" />
     <ClInclude Include="Spore\Simulator\cEgg.h" />
+    <ClInclude Include="Spore\Simulator\cEllipticalOrbit.h" />
     <ClInclude Include="Spore\Simulator\cGamePlant.h" />
     <ClInclude Include="Spore\Simulator\cGameplayMarker.h" />
     <ClInclude Include="Spore\Simulator\cHerd.h" />
@@ -363,7 +366,9 @@
     <ClInclude Include="Spore\Simulator\cNest.h" />
     <ClInclude Include="Spore\Simulator\cObjectInstanceInventoryItem.h" />
     <ClInclude Include="Spore\Simulator\cPlantCargoInfo.h" />
+    <ClInclude Include="Spore\Simulator\cResourceProjectile.h" />
     <ClInclude Include="Spore\Simulator\cSimPlanetHighLOD.h" />
+    <ClInclude Include="Spore\Simulator\cSolarHitSphere.h" />
     <ClInclude Include="Spore\Simulator\cTimeOfDay.h" />
     <ClInclude Include="Spore\Simulator\cTotemPole.h" />
     <ClInclude Include="Spore\Simulator\cTribe.h" />
@@ -375,6 +380,8 @@
     <ClInclude Include="Spore\Simulator\ICityMusic.h" />
     <ClInclude Include="Spore\Simulator\cBadgeManager.h" />
     <ClInclude Include="Spore\Simulator\cMissionManager.h" />
+    <ClInclude Include="Spore\Simulator\IProjectile.h" />
+    <ClInclude Include="Spore\Simulator\SimulatorEnums.h" />
     <ClInclude Include="Spore\Simulator\SubSystem\AnimalSpeciesManager.h" />
     <ClInclude Include="Spore\Simulator\SubSystem\PlantSpeciesManager.h" />
     <ClInclude Include="Spore\Sporepedia\AssetViewManager.h" />
@@ -545,7 +552,6 @@
     <ClInclude Include="Spore\Simulator\cStar.h" />
     <ClInclude Include="Spore\Simulator\cStarRecord.h" />
     <ClInclude Include="Spore\Simulator\cVisiblePlanet.h" />
-    <ClInclude Include="Spore\Simulator\GameNounIDs.h" />
     <ClInclude Include="Spore\Simulator\GoalCard.h" />
     <ClInclude Include="Spore\Simulator\cCombatant.h" />
     <ClInclude Include="Spore\Simulator\cGonzagoTimer.h" />
@@ -903,6 +909,7 @@
     <ClCompile Include="SourceCode\Simulator\SimulatorSpaceGame.cpp" />
     <ClCompile Include="SourceCode\Simulator\SimulatorSystem.cpp" />
     <ClCompile Include="SourceCode\Simulator\cStarRecord.cpp" />
+    <ClCompile Include="SourceCode\Simulator\SolarSystem.cpp" />
     <ClCompile Include="SourceCode\Simulator\SpaceInventory.cpp" />
     <ClCompile Include="SourceCode\Simulator\SpacePlayerData.cpp" />
     <ClCompile Include="SourceCode\Simulator\StarManager.cpp" />

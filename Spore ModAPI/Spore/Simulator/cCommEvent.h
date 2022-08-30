@@ -4,19 +4,13 @@
 #include <Spore\Simulator\cCity.h>
 #include <Spore\Simulator\cCivilization.h>
 #include <Spore\Simulator\StarID.h>
+#include <Spore\Simulator\SimulatorEnums.h>
 
 #define cCommEventPtr eastl::intrusive_ptr<Simulator::cCommEvent>
 
 namespace Simulator
 {
 	class cMission;
-
-	enum class cCommEventType : int
-	{
-		None = -1,
-		Space = 0,
-		Civ = 1
-	};
 
 	class cCommEvent
 		: public ISimulatorSerializable

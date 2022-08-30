@@ -20,6 +20,7 @@
 
 #include <Spore\App\MessageListenerData.h>
 #include <Spore\Simulator\ISimulatorSerializable.h>
+#include <Spore\Simulator\SimulatorEnums.h>
 
 #include <EASTL\map.h>
 #include <EASTL\vector.h>
@@ -43,89 +44,6 @@ namespace Simulator
 
 	protected:
 		int mnRefCount;
-	};
-
-	enum RelationshipEvents
-	{
-		kRelationshipEventCompliment = 0x0526E4E5,
-		kRelationshipEventTrade = 0x0526E4EE,
-		kRelationshipEventGift = 0x0526E4F2,
-		kRelationshipEventBuyCityOver = 0x0526E4F5,
-		kRelationshipEventJoinedAlliance = 0x0526E4F8,
-		kRelationshipEventBribeNode = 0x0526E4FB,
-		kRelationshipEventInsult = 0x0526E4FE,
-		kRelationshipEventHostility = 0x0526E501,
-		kRelationshipEventReligion = 0x0526E504,
-		kRelationshipEventBuyCityUnder = 0x0526E50A,
-		kRelationshipEventDemandRejected = 0x0526E50E,
-		kRelationshipEventDeclaredWar = 0x0526E512,
-		kRelationshipEventUsedNuclearWeapon = 0x05776D99,
-		kRelationshipEventBrokeDeal = 0x05ADB0AA,
-		kRelationshipEventFoughtEnemy = 0x05DA8036,
-
-		kRelationshipEventSpaceMissionComplete = 0x0526E519,
-		kRelationshipEventSpaceMissionFailed = 0x0526E51C,
-		kRelationshipEventSpaceMissionRejected = 0x0526E51D,
-		kRelationshipEventSpaceMissionAborted = 0x0526E51E,
-		kRelationshipEventSpaceGiveGift = 0x0526E51F,
-		kRelationshipEventSpaceBreakAlliance = 0x0526E521,
-		kRelationshipEventSpaceCreateAlliance = 0x0526E524,
-		kRelationshipEventSpaceTradeComplete = 0x0526E527,
-		kRelationshipEventSpaceTradeDeclined = 0x0526E52A,
-		kRelationshipEventSpaceCityPanicked = 0x0526E52D,
-		kRelationshipEventSpaceTerraformWorsened = 0x0526E531,
-		kRelationshipEventSpaceTerraformImproved = 0x0526E535,
-		kRelationshipEventSpaceTerraformExtinction = 0x0526E537,
-		kRelationshipEventSpaceDestroyBuilding = 0x0526E53C,
-		kRelationshipEventSpaceDestroyAllyUFO = 0x0526E542,
-		kRelationshipEventSpaceBadToolUse = 0x0526E545,
-		kRelationshipEventSpaceGoodToolUse = 0x0526E56A,
-		kRelationshipEventSpaceFloodCity = 0x0526E5CF,
-		kRelationshipEventSpaceAbductCitizen = 0x0526E5D4,
-		kRelationshipEventSpaceStealCommodity = 0x0526E5D8,
-		kRelationshipEventSpaceCheatGood = 0x0526E5DC,
-		kRelationshipEventSpaceCheatBad = 0x0526E5F3,
-		kRelationshipEventSpaceNewEmpireAndCTMGOwner = 0x0526E5F4,
-		kRelationshipEventSpaceUpliftedCiv = 0x055165F5,
-		kRelationshipEventSpaceBadSystemPurchaseOffer = 0x05590199,
-		kRelationshipEventSpaceGoodSystemPurchaseOffer = 0x055901B3,
-		kRelationshipEventSpaceBeNice = 0x0577909A,
-		kRelationshipEventSpaceBeNasty = 0x0577909B,
-		kRelationshipEventSpacePushedTooFar = 0x057B4514,
-		kRelationshipEventSpaceCapturedASystem = 0x057B9100,
-		kRelationshipEventSpaceWasAtWar = 0x057E4FE3,
-		kRelationshipEventSpaceEmbassyBonus = 0x0580E23B,
-		kRelationshipEventSpaceDestroyUFO = 0x0591F833,
-		kRelationshipEventSpaceWitholdTribute = 0x0594AFFF,
-		kRelationshipEventSpaceAcceptGift = 0x0594B017,
-		kRelationshipEventSpaceMissionStarted = 0x05B6CE81,
-		kRelationshipEventSpaceCommunicatedNice = 0x05B6CF09,
-		kRelationshipEventSpacePersonalityNice = 0x05B6FCC9,
-		kRelationshipEventSpacePersonalityMean = 0x05B6FCD4,
-		kRelationshipEventSpaceAvoidedContact = 0x05B942D0,
-		kRelationshipEventSpaceCommunicatedMean = 0x05F62736,
-		kRelationshipEventSpaceStartedWar = 0x05F8A1AD,
-		kRelationshipEventSpaceArchetypeNice = 0x05FF85B2,
-		kRelationshipEventSpaceArchetypeMean = 0x05FF85B3,
-		kRelationshipEventSpaceArchetypeMods = 0x05FF85B4,
-		kRelationshipEventSpaceSuperPower = 0x0601DF2A,
-		kRelationshipEventSpaceTradeRouteSpice = 0x0667AF08,
-		kRelationshipEventSpaceAlliedWithGrob = 0x068B2938,
-		kRelationshipEventSpaceCommittedAtrocity = 0x068B2971,
-
-		kRelationshipEventTribeAttack = 0x0530CF00,
-		kRelationshipEventTribeKill = 0x0530CF01,
-		kRelationshipEventTribeRaid = 0x0530CF02,
-		kRelationshipEventTribeStealBaby = 0x0530CF03,
-		kRelationshipEventTribeAttackToolOrHut = 0x0530CF04,
-		kRelationshipEventTribeDestroyTool = 0x0530CF05,
-		kRelationshipEventTribeGift = 0x0530CF06,
-		kRelationshipEventTribeSocial = 0x0530CF07,
-		kRelationshipEventTribeRecruit = 0x0530CF08,
-		kRelationshipEventTribeConvert = 0x0530CF09,
-		kRelationshipEventTribeCheatGood = 0x0530CF0A,
-		kRelationshipEventTribeCheatBad = 0x0530CF0B,
-		kRelationshipEventTribeSocialPower = 0x54EAB4B3
 	};
 
 	class cRelationshipData

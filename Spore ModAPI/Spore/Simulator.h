@@ -36,7 +36,7 @@
 
 #include <Spore\Simulator\cGameData.h>
 #include <Spore\Simulator\cGonzagoSimulator.h>
-#include <Spore\Simulator\GameNounIDs.h>
+#include <Spore\Simulator\SimulatorEnums.h>
 #include <Spore\Simulator\cSpatialObject.h>
 #include <Spore\Simulator\cCombatant.h>
 #include <Spore\Simulator\cCity.h>
@@ -55,7 +55,13 @@
 #include <Spore\Simulator\cBuildingIndustry.h>
 #include <Spore\Simulator\cBuildingHouse.h>
 #include <Spore\Simulator\cBuildingEntertainment.h>
-#include <Spore\Simulator\cBuildingHall.h>
+#include <Spore\Simulator\cBuildingCityHall.h>
+#include <Spore\Simulator\cStar.h>
+#include <Spore\Simulator\cPlanet.h>
+#include <Spore\Simulator\cStarRecord.h>
+#include <Spore\Simulator\cPlanetRecord.h>
+#include <Spore\Simulator\cCelestialBody.h>
+#include <Spore\Simulator\cSolarSystem.h>
 
 #include <Spore\Simulator\SimulatorMessages.h>
 

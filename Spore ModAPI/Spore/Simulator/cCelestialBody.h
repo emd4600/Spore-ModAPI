@@ -19,6 +19,10 @@
 #pragma once
 
 #include <Spore\Simulator\cGameData.h>
+#include <Spore\Simulator\SimulatorEnums.h>
+#include <Spore\Simulator\cEllipticalOrbit.h>
+#include <Spore\Simulator\cSolarHitSphere.h>
+#include <Spore\Swarm\IEffect.h>
 #include <Spore\MathUtils.h>
 #include <EASTL\string.h>
 
@@ -26,6 +30,9 @@
 
 namespace Simulator
 {
+	/// Represents celestial bodies in a solar system (except planets), that is, the star and
+	/// the comets. This is the actual graphical representation that you see in the solar system view,
+	/// with the graphics itself being `mpEffect`. Celestial bodies are used by the cSolarSystem class.
 	class cCelestialBody
 		: public cGameData
 	{
@@ -34,14 +41,16 @@ namespace Simulator
 		static const uint32_t NOUN_ID = 0x38CFB6B;
 
 	public:
-		/* 34h */	int mType;
-		/* 38h */	bool mbOrbit;  // true
-		/* 3Ch */	char _padding_3C[0x64];
+		/* 34h */	cCelestialBodyType mType;
+		/* 38h */	cEllipticalOrbit mOrbit;
 		/* A0h */	Math::Vector3 mPosition;
 		/* ACh */	float mfRotationRate;
+		/// Name of the celestial body, shown in a tooltip when hovering it with the mouse.
 		/* B0h */	string16 mName;
-		/* C0h */	intrusive_ptr<Object> field_C0;
-		/* C4h */	intrusive_ptr<Object> field_C4;
+		/// Effect `0x3D6F8D8` for type Comet
+		/* C0h */	IEffectPtr mpEffect;
+		/* C4h */	cSolarHitSpherePtr mpHitSphere;
+		/// Probably used to detect the mouse.
 		/* C8h */	float mfHitSphereSize;  // 1.0
 	};
 
