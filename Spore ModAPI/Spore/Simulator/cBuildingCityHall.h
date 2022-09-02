@@ -22,7 +22,8 @@ namespace Simulator
 		/* 340h */	bool mbMoneyAddedThisTick;
 		/* 341h */	bool field_341;  // true
 		/* 344h */	cHitSpherePtr mpHitSphere;
-		/* 348h */	int _padding_348[4];  // not initialized
+		/* 348h */	Math::Vector3 field_348;  // not initialized
+		/* 354h */	int field_354;  // not initialized
 		/* 358h */	cGonzagoTimer field_358;
 	};
 	ASSERT_SIZE(cBuildingCityHall, 0x378);

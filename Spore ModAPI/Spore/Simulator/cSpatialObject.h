@@ -47,9 +47,9 @@ namespace Simulator
 
 		// loc_D315AE creature movement?
 
-		/* 00h */	virtual void func00h(int);
-		/* 04h */	virtual int func04h();
-		/* 08h */	virtual int func08h();
+		/* 00h */	virtual void cSpatialObject_func00h(int);
+		/* 04h */	virtual int cSpatialObject_func04h();
+		/* 08h */	virtual int cSpatialObject_func08h();
 		/* 0Ch */	virtual ~cSpatialObject();
 
 		/// Sets this model as invisible in its IModelWorld and sets the model and model world to nullptr.
@@ -59,7 +59,7 @@ namespace Simulator
 		/* 14h */	virtual int Write(void* arg_0);
 		/* 18h */	virtual int Read(void* arg_0);
 		/* 1Ch */	virtual bool WriteToXML(XmlSerializer*);  // returns true
-		/* 20h */	virtual bool func20h();  // returns true
+		/* 20h */	virtual bool cSpatialObject_func20h();  // returns true
 
 		/* 24h */	virtual bool IsRolledOver();
 		/* 28h */	virtual void SetIsRolledOver(bool bValue);
@@ -69,41 +69,41 @@ namespace Simulator
 		/* 38h */	virtual void SetPosition(const Vector3& value);
 		/* 3Ch */	virtual void SetOrientation(const Quaternion& value);
 		/* 40h */	virtual void SetScale(float fValue);
-		/* 44h */	virtual void func44h(int);  // something related with physics
+		/* 44h */	virtual void cSpatialObject_func44h(int);  // something related with physics
 		/* 48h */	virtual bool IsOnView();
 		/* 4Ch */	virtual void SetIsOnView(bool bValue);
 		/* 50h */	virtual bool IsSelected();
 		/* 54h */	virtual void SetIsSelected(bool bValue);
-		/* 58h */	virtual bool func58h();  // does nothing by default
+		/* 58h */	virtual bool cSpatialObject_func58h();  // does nothing by default
 
 		/// Returns the local Y axis of this spatial object
 		/// @returns
 		/* 5Ch */	virtual Vector3 GetDirection();
 
-		/* 60h */	virtual Vector3 func60h();
+		/* 60h */	virtual Vector3 cSpatialObject_func60h();
 		/* 64h */	virtual void SetLocalExtents(const BoundingBox& localExtents, float fScale);
 		/* 68h */	virtual const BoundingBox& GetLocalExtents();
-		/* 6Ch */	virtual int func6Ch(int);
+		/* 6Ch */	virtual int cSpatialObject_func6Ch(int);
 		/* 70h */	virtual float GetBoundingRadius();
 		/* 74h */	virtual float GetFootprintRadius();
 		/* 78h */	virtual float GetMaxZ();
 		// Something related with screen pos?
-		/* 7Ch */	virtual Point& func7Ch(bool, Point& dst);
+		/* 7Ch */	virtual Point& cSpatialObject_func7Ch(bool, Point& dst);
 		// Both methods related with pinning the model to the planet
-		/* 80h */	virtual void func80h();
-		/* 84h */	virtual void func84h();
+		/* 80h */	virtual void cSpatialObject_func80h();
+		/* 84h */	virtual void cSpatialObject_func84h();
 		/* 88h */	virtual bool HasModelChanged();
 		/* 8Ch */	virtual void SetHasModelChanged(bool bValue);
 		/* 90h */	virtual bool HasModel();
 		/* 94h */	virtual void SetModelKey(const ResourceKey& modelKey);
 		/* 98h */	virtual const ResourceKey& GetModelKey();
-		/* 9Ch */	virtual bool func9Ch();
+		/* 9Ch */	virtual bool cSpatialObject_func9Ch();
 		/* A0h */	virtual void SetModelWorld(Graphics::IModelWorld* pModelWorld);
-		/* A4h */	virtual void funcA4h();
+		/* A4h */	virtual void cSpatialObject_funcA4h();
 		/* A8h */	virtual void SetModel(Graphics::Model* pModel, Graphics::IModelWorld* pModelWorld);
 		/* ACh */	virtual Graphics::Model* GetModel();
 		/* B0h */	virtual Graphics::IModelWorld* GetModelWorld();
-		/* B4h */	virtual void funcB4h(string& dst);
+		/* B4h */	virtual void cSpatialObject_funcB4h(string& dst);
 		/* B8h */	virtual void* Cast(uint32_t type);
 		/* BCh */	virtual int AddRef() = 0;
 		/* C0h */	virtual int Release() = 0;

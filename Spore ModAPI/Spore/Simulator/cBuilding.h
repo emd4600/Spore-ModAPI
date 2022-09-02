@@ -23,6 +23,7 @@
 #include <Spore\Simulator\cBehaviorList.h>
 #include <Spore\Simulator\cCombatant.h>
 #include <Spore\Simulator\cPlaceableStructure.h>
+#include <Spore\Simulator\cSpaceInventory.h>
 
 #include <EASTL\initializer_list.h>
 
@@ -58,9 +59,32 @@ namespace Simulator
 		using Object::Release;
 		using Object::Cast;
 
-	public:
+		/* 54h */	virtual void SetOwnerCity1(cCity* pCity);
+		/* 58h */	virtual void SetOwnerCity2(cCity* pCity);
+		/* 5Ch */	virtual float GetCost();
+		/* 60h */	virtual float func60h();
 
-		/* 1ECh */	int field_1EC;
+		/// Returns the `mbIsOn` variable
+		/// @returns
+		/* 64h */	virtual bool IsOn();
+		
+		/// Sets the `mbIsOn` variable
+		/// @param isOn
+		/* 68h */	virtual void SetIsOn(bool isOn);
+
+		/* 6Ch */	virtual bool func6Ch();  // gets field_288
+		/* 70h */	virtual void func70h(bool value);  // sets field_288
+		/* 74h */	virtual const char16_t* func74h(); // returns field_278
+		/* 78h */	virtual bool func78h();  // does nothing
+		/* 7Ch */	virtual bool func7Ch(const Math::Vector3&);
+		/* 80h */	virtual float func80h();  // returns 1.0
+		/* 84h */	virtual cCity* GetOwnerCity();
+		/* 88h */	virtual bool func88h();  // returns true
+		/* 8Ch */	virtual Math::Vector3& func8Ch();
+
+	public:
+		/// Used by scenario buildings?
+		/* 1ECh */	cSpaceInventoryPtr mpSpaceInventory;
 		/* 1F0h */	intrusive_ptr<cCity> mpOwnerCity;
 		/* 1F4h */	bool mbIsOn;  // true
 		/* 1F8h */	_Unknown1 mEvents;

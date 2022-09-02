@@ -63,10 +63,10 @@ namespace Simulator
 	class cCivilization;
 
 	class cCity 
-		: public cCommunity
-		, public cSpatialObject
-		, public cBehaviorList
-		, public App::IMessageListener
+		/* 00h */	: public cCommunity
+		/* 120h */	, public cSpatialObject
+		/* 1F4h */	, public cBehaviorList
+		/* 20Ch */	, public App::IMessageListener
 	{
 	public:
 		static const uint32_t TYPE = 0xEE9B2232;
@@ -75,6 +75,8 @@ namespace Simulator
 		using Object::AddRef;
 		using Object::Release;
 		using Object::Cast;
+
+		/* 8Ch */	virtual void SetIsPlayerCity(bool value);
 
 		/// Returns true if the given position is over this city.
 		bool IsAboveCity(const Vector3& position);

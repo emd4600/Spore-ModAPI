@@ -68,6 +68,21 @@ namespace Simulator
 		/// @returns
 		inline cCreatureCitizen* GetLeaderCitizen();
 
+		/* 54h */	virtual int func54h();  // returns 0
+		/* 58h */	virtual Vector3	func58h();  // in city, returns walls position
+		/* 5Ch */	virtual Vector3	func5Ch();
+		/* 60h */	virtual float func60h();
+		/* 64h */	virtual Vector3& func64h();
+		/* 68h */	virtual void func68h();
+		/* 6Ch */	virtual int func6Ch();  // returns 0
+		/* 70h */	virtual vector<ObjectPtr>& GetPopulation();
+		/* 74h */	virtual int GetPopulationCount();  // returns the count of vector returned by func70h
+		/* 78h */	virtual void func78h(); 
+		/* 7Ch */	virtual string16& GetCommunityName();
+		/* 80h */	virtual void func80h();
+		/* 84h */	virtual void func84h();  // deletes AssemblyBubbles?
+		/* 88h */	virtual void func88h();  // does nothing
+
 	public:
 		/* 38h */	int mCommunitySize;
 		/* 3Ch */	vector<int> field_3C;
@@ -84,8 +99,8 @@ namespace Simulator
 		/* A8h */	int field_A8;
 		/* ACh */	int field_AC;
 		/* B0h */	cGonzagoTimer field_B0;
-		/* D0h */	vector<int> field_D0;  // With release at C0h
-		/* E4h */	vector<ObjectPtr> field_E4;
+		/* D0h */	vector<cSpatialObjectPtr> field_D0;  // With release at C0h
+		/* E4h */	vector<ObjectPtr> mCommunityMembers;
 		/* F8h */	string16 mName;
 		/* 108h */	string16 mDescription;
 		/* 118h */	int field_118;  // -1

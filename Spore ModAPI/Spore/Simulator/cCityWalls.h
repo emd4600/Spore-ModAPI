@@ -29,8 +29,8 @@ namespace Simulator
 	class cCity;
 
 	class cCityWalls
-		: public cGameData
-		, public cSpatialObject
+		/* 00h */	: public cGameData
+		/* 34h */	, public cSpatialObject
 	{
 	public:
 		static const uint32_t TYPE = 0xED7FC07;

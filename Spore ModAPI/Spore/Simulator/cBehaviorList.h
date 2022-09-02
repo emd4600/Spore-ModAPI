@@ -41,4 +41,5 @@ namespace Simulator
 	public:
 		/* 04h */	vector<intrusive_ptr<cBehaviorBase>> mData;
 	};
+	ASSERT_SIZE(cBehaviorList, 0x18);
 }
