@@ -88,7 +88,7 @@ namespace Simulator
 	namespace Addresses(cGameData) {
 		DeclareAddress(Write);
 		DeclareAddress(Read);
-		DeclareAddress(func18h);
+		DeclareAddress(ISimulatorSerializable_func18h);
 		DeclareAddress(WriteToXML);
 
 		DeclareAddress(SetDefinitionID);
@@ -97,10 +97,16 @@ namespace Simulator
 
 		DeclareAddress(SetGameDataOwner2);
 
-		DeclareAddress(func3Ch);
+		DeclareAddress(cGameData_func3Ch);
 
 		DeclareAddress(RemoveOwner);
 
 		DeclareAddress(WriteAsText);
+	}
+	// Addresses kept for backwards compatibility
+	namespace Addresses(cGameData)
+	{
+		DeclareAddress(func18h);
+		DeclareAddress(func3Ch);
 	}
 }

@@ -9,7 +9,7 @@ namespace Simulator
 {
 	auto_METHOD_VIRTUAL(cGameData, cGameData, bool, Write, Args(ISerializerStream* stream), Args(stream));
 	auto_METHOD_VIRTUAL(cGameData, cGameData, bool, Read, Args(ISerializerStream* stream), Args(stream));
-	auto_METHOD_VIRTUAL_(cGameData, cGameData, bool, func18h);
+	auto_METHOD_VIRTUAL_(cGameData, cGameData, bool, ISimulatorSerializable_func18h);
 	auto_METHOD_VIRTUAL(cGameData, cGameData, bool, WriteToXML, Args(XmlSerializer* arg_0), Args(arg_0));
 	auto_METHOD_VIRTUAL(cGameData, cGameData, bool, SetDefinitionID, Args(int arg_0, int arg_4, int arg_8), Args(arg_0, arg_4, arg_8));
 	auto_METHOD_VIRTUAL_VOID(cGameData, cGameData, SetGameDataOwner, Args(cGameData* pOwner), Args(pOwner));
@@ -17,7 +17,7 @@ namespace Simulator
 	
 	auto_METHOD_VIRTUAL_VOID(cGameData, cGameData, SetGameDataOwner2, Args(cGameData* pOwner), Args(pOwner));
 
-	auto_METHOD_VIRTUAL(cGameData, cGameData, bool, func3Ch, Args(int arg_0), Args(arg_0));
+	auto_METHOD_VIRTUAL(cGameData, cGameData, bool, cGameData_func3Ch, Args(int arg_0), Args(arg_0));
 
 	auto_METHOD_VIRTUAL_VOID_(cGameData, cGameData, RemoveOwner);
 	
@@ -35,7 +35,7 @@ namespace Simulator
 		return mPoliticalID;
 	}
 
-	bool cGameData::func40h() {
+	bool cGameData::cGameData_func40h() {
 		return true;
 	}
 

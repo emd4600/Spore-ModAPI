@@ -505,6 +505,7 @@ namespace Simulator
 		DefineAddress(Write, SelectAddress(0xB18430, , 0xB184D0));
 		DefineAddress(Read, SelectAddress(0xB184A0, , 0xB18540));
 		DefineAddress(func18h, SelectAddress(0xB18270, , 0xB18320));
+		DefineAddress(ISimulatorSerializable_func18h, SelectAddress(0xB18270, , 0xB18320));
 		DefineAddress(WriteToXML, SelectAddress(0xB18390, , 0xB18440));
 
 		DefineAddress(SetDefinitionID, SelectAddress(0xB18290, , 0xB18340));
@@ -514,6 +515,7 @@ namespace Simulator
 		DefineAddress(SetGameDataOwner2, SelectAddress(0xB183E0, , 0xB18490));
 
 		DefineAddress(func3Ch, SelectAddress(0xB18280, , 0xB18330));
+		DefineAddress(cGameData_func3Ch, SelectAddress(0xB18280, , 0xB18330));
 
 		DefineAddress(RemoveOwner, SelectAddress(0xAFF820, , 0xAFFD20));
 
