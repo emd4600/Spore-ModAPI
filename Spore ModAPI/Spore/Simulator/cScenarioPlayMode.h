@@ -55,7 +55,8 @@ namespace Simulator
 	{
 	public:
 		//TODO check sub_F1EFC0
-		//TODO sub_F1F260 set act?
+		
+		void SetCurrentAct(int actIndex);
 
 	public:
 		/* 0Ch */	cScenarioPlaySummary mSummary;
@@ -91,4 +92,9 @@ namespace Simulator
 		/* 100h */	int field_100;
 	};
 	ASSERT_SIZE(cScenarioPlayMode, 0x108);
+
+	namespace Addresses(cScenarioPlayMode)
+	{
+		DeclareAddress(SetCurrentAct);  // 0xF1F260, 0xF1EE70
+	}
 }
