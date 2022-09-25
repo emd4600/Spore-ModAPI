@@ -22,12 +22,12 @@
 
 namespace App
 {
-	ScenarioMode::Mode ScenarioMode::GetMode() const {
+	cScenarioMode::Mode cScenarioMode::GetMode() const {
 		return mMode;
 	}
 
-	ScenarioMode* ScenarioMode::Get() {
-		return *(ScenarioMode**)(GetAddress(ScenarioMode, ptr));
+	cScenarioMode* cScenarioMode::Get() {
+		return *(cScenarioMode**)(GetAddress(cScenarioMode, ptr));
 	}
 }
 #endif

@@ -18,10 +18,13 @@
 ****************************************************************************/
 #pragma once
 
+#include <Spore\MathUtils.h>
 #include <Spore\Internal.h>
 
 namespace Audio
 {
+	typedef int AudioTrack;
+
 	class AudioSystem
 	{
 		//PLACEHODER we might need to complete this
@@ -36,20 +39,71 @@ namespace Audio
 		/* 1Ch */	int func1Ch();
 
 	public:
-		/* 20h */	virtual AudioSystem* func20h();
-
-		static void PlayAudio(uint32_t soundID, AudioSystem* system);
+		/// Creates a new audio channel (an individual track where only one sound can be played at the same time)
+		/// and returns the index used to reference it.
+		/// @returns 
+		/* 20h */	virtual AudioTrack CreateAudioTrack();
 
 		static AudioSystem* Get();
 	};
 
-	inline void PlayAudio(uint32_t soundID) {
-		AudioSystem::PlayAudio(soundID, AudioSystem::Get()->func20h());
-	}
-
 	namespace Addresses(AudioSystem)
 	{
 		DeclareAddress(Get);
+		// Kept here for backwards compatibility
 		DeclareAddress(PlayAudio);
 	}
+
+	/// Creates a new audio channel (an individual track where only one sound can be played at the same time)
+	/// and returns the index used to reference it.
+	/// @returns 
+	inline AudioTrack CreateAudioTrack() {
+		return AudioSystem::Get()->CreateAudioTrack();
+	}
+
+	/// Plays a standard sound (`.snr` file?) in the given audio track.
+	/// @param soundID
+	/// @param track The track index
+	void PlayAudio(uint32_t soundID, AudioTrack track);
+
+	/// Creates a new track and plays the given sound on it.
+	/// @param soundID
+	/// @returns The track index
+	inline AudioTrack PlayAudio(uint32_t soundID) {
+		auto track = AudioSystem::Get()->CreateAudioTrack();
+		PlayAudio(soundID, track);
+		return track;
+	}
+
+	/// Stops playing a given audio track and destroys it.
+	/// @param track
+	/// @param param2
+	void StopAudio(AudioTrack track, int param2 = 0);
+
+	/// Plays a procedural audio (`.pd` files??) at a specific position.
+	/// @param audioID
+	/// @param track
+	/// @param position
+	void PlayProceduralAudio(uint32_t audioID, AudioTrack track, const Math::Vector3& position);
+
+	/// Sets a string property for the given track.
+	/// @param track
+	/// @param propertyID
+	/// @param pValue
+	void SetPropertyString(AudioTrack track, uint32_t propertyID, const char* pValue);
+
+	/// Sets an int/bool/float property for the given track.
+	/// @param track
+	/// @param propertyID
+	/// @param pValue
+	void SetProperty(AudioTrack track, uint32_t propertyID, float floatValue, int intValue);
+}
+
+namespace Addresses(Audio)
+{
+	DeclareAddress(PlayAudio);
+	DeclareAddress(StopAudio);  // 0x571F40, 0x572020
+	DeclareAddress(PlayProceduralAudio);  // 0x571EA0, 0x571F80
+	DeclareAddress(SetProperty);  // 0x4360B0, 0x436400
+	DeclareAddress(SetPropertyString);  // 0x571F90, 0x572070
 }

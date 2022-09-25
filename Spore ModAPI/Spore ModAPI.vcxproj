@@ -29,26 +29,26 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug DLL|Win32'" Label="Configuration">
     <ConfigurationType>DynamicLibrary</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v142</PlatformToolset>
+    <PlatformToolset>v143</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
     <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v142</PlatformToolset>
+    <PlatformToolset>v143</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release DLL|Win32'" Label="Configuration">
     <ConfigurationType>DynamicLibrary</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
-    <PlatformToolset>v142</PlatformToolset>
+    <PlatformToolset>v143</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
     <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
-    <PlatformToolset>v142</PlatformToolset>
+    <PlatformToolset>v143</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
@@ -367,6 +367,12 @@
     <ClInclude Include="Spore\Simulator\cObjectInstanceInventoryItem.h" />
     <ClInclude Include="Spore\Simulator\cPlantCargoInfo.h" />
     <ClInclude Include="Spore\Simulator\cResourceProjectile.h" />
+    <ClInclude Include="Spore\Simulator\cScenarioEditHistory.h" />
+    <ClInclude Include="Spore\Simulator\cScenarioEconomy.h" />
+    <ClInclude Include="Spore\Simulator\cScenarioData.h" />
+    <ClInclude Include="Spore\Simulator\cScenarioPlayMode.h" />
+    <ClInclude Include="Spore\Simulator\cScenarioSimulator.h" />
+    <ClInclude Include="Spore\Simulator\cScenarioTerraformMode.h" />
     <ClInclude Include="Spore\Simulator\cSimPlanetHighLOD.h" />
     <ClInclude Include="Spore\Simulator\cSolarHitSphere.h" />
     <ClInclude Include="Spore\Simulator\cTimeOfDay.h" />
@@ -530,7 +536,7 @@
     <ClInclude Include="Spore\Simulator\cSimulatorSpaceGame.h" />
     <ClInclude Include="Spore\Simulator\cSpatialObject.h" />
     <ClInclude Include="Spore\Simulator\cOrnament.h" />
-    <ClInclude Include="Spore\Simulator\cOrnamentBase.h" />
+    <ClInclude Include="Spore\Simulator\cScenarioPowerup.h" />
     <ClInclude Include="Spore\Simulator\cPlaceableStructure.h" />
     <ClInclude Include="Spore\Simulator\cPlanet.h" />
     <ClInclude Include="Spore\Simulator\cPlayer.h" />
@@ -886,6 +892,7 @@
     <ClCompile Include="SourceCode\Simulator\PlanetModel.cpp" />
     <ClCompile Include="SourceCode\Simulator\Planets.cpp" />
     <ClCompile Include="SourceCode\Simulator\RelationshipManager.cpp" />
+    <ClCompile Include="SourceCode\Simulator\Scenario.cpp" />
     <ClCompile Include="SourceCode\Simulator\Serialization.cpp" />
     <ClCompile Include="SourceCode\Simulator\SimulatorClock.cpp" />
     <ClCompile Include="SourceCode\Simulator\SimulatorMessages.cpp" />
@@ -906,6 +913,7 @@
     <ClCompile Include="SourceCode\RenderWare\RWBuffers.cpp" />
     <ClCompile Include="SourceCode\RenderWare\RWSkeleton.cpp" />
     <ClCompile Include="SourceCode\Simulator\GameNounManager.cpp" />
+    <ClCompile Include="SourceCode\Simulator\SimulatorMisc.cpp" />
     <ClCompile Include="SourceCode\Simulator\SimulatorSpaceGame.cpp" />
     <ClCompile Include="SourceCode\Simulator\SimulatorSystem.cpp" />
     <ClCompile Include="SourceCode\Simulator\cStarRecord.cpp" />

@@ -22,6 +22,7 @@
 #include <EASTL/vector.h>
 #include <EASTL/string.h>
 #include <Spore\ResourceKey.h>
+#include <Spore\Simulator\cCreatureAbility.h>
 
 using namespace eastl;
 
@@ -34,11 +35,11 @@ namespace Simulator
 
 		//PLACEHOLDER 6D4h vector<intrusive_ptr<cCreatureAbility>>
 
-		/* 504h */	ResourceKey field_504;  //TODO this is the main key?
+		/* 504h */	ResourceKey mSpeciesKey;  //TODO this is the main key?
 		/* 510h */	ResourceKey field_510;
 		/* 51Ch */	string16 field_51C;
 		/* 52Ch */	string16 field_52C;
-		/* 53Ch */	ResourceKey field_53C;
+		/* 53Ch */	ResourceKey mProfileSeq;
 		/* 548h */	float field_548;
 		/* 54Ch */	float field_54C;
 		/* 550h */	float field_550;
@@ -88,8 +89,8 @@ namespace Simulator
 		/* 618h */	int field_618;  // not initialized
 		/* 61Ch */	int field_61C;
 
-		/* 640h */	float field_640;
-
+		/* 640h */	float mEnergyRecoveryRate;
+		/* 644h */	float mMaxEnergy;
 		/* 648h */	int field_648;
 		/* 64Ch */	int field_64C;
 		/* 650h */	int field_650;
@@ -99,7 +100,7 @@ namespace Simulator
 		/* 660h */	int field_660;
 		/* 664h */	int field_664;
 		/* 668h */	int field_668;
-		/* 66Ch */	float field_66C;
+		/* 66Ch */	float mHealthRecoveryRate;
 		/* 670h */	int field_670;
 		/* 674h */	int field_674;
 		/* 678h */	int field_678;
@@ -121,7 +122,7 @@ namespace Simulator
 		/* 6B8h */	vector<int> field_6B8;
 		/* 6CCh */	bool field_6CC;
 		/* 6D0h */	int field_6D0;
-		/* 6D4h */	fixed_vector<int, 20> field_6D4;  //TODO abilities
+		/* 6D4h */	fixed_vector<cCreatureAbility*, 20> mAbilities;  //TODO abilities
 		/* 73Ch */	fixed_vector<int, 20> field_73C;
 		/* 7A4h */	fixed_vector<int, 20> field_7A4;
 		/* 80Ch */	bool field_80C;

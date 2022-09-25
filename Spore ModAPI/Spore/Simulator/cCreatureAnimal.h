@@ -57,12 +57,11 @@ namespace Simulator
 		/* 140Ch */	fixed_vector<int, 128> field_140C;
 		/* 1624h */	int field_1624;  // cAIMemory
 		/* 1628h */	cGonzagoTimer field_1628;
+		//TODO struct related with adventures, check sub_D98AC0
 		/* 1648h */	int field_1648;
 		/* 164Ch */	int field_164C;
 		/* 1650h */	int field_1650;  // 1
-		/* 1654h */	float field_1654;
-		/* 1658h */	float field_1658;
-		/* 165Ch */	float field_165C;
+		/* 1654h */	Vector3 field_1654;
 		/* 1660h */	float field_1660;
 		/* 1664h */	int field_1664;  // 5
 		/* 1668h */	int field_1668;

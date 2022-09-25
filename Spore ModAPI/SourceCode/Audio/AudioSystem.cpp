@@ -22,8 +22,22 @@
 
 namespace Audio
 {
-	auto_STATIC_METHOD_VOID(AudioSystem, PlayAudio, Args(uint32_t soundID, AudioSystem* system), Args(soundID, system));
 	auto_STATIC_METHOD_(AudioSystem, AudioSystem*, Get);
 }
+
+auto_STATIC_METHOD_VOID(Audio, PlayAudio, Args(uint32_t soundID, Audio::AudioTrack track), Args(soundID, track));
+auto_STATIC_METHOD_VOID(Audio, StopAudio, Args(Audio::AudioTrack track, int arg2), Args(track, arg2));
+
+auto_STATIC_METHOD_VOID(Audio, PlayProceduralAudio,
+	Args(uint32_t audioID, AudioTrack track, const Math::Vector3& position), 
+	Args(audioID, track, position));
+
+auto_STATIC_METHOD_VOID(Audio, SetPropertyString,
+	Args(AudioTrack track, uint32_t propertyID, const char* pValue),
+	Args(track, propertyID, pValue));
+
+auto_STATIC_METHOD_VOID(Audio, SetProperty,
+	Args(AudioTrack track, uint32_t propertyID, float floatValue, int intValue),
+	Args(track, propertyID, floatValue, intValue));
 
 #endif

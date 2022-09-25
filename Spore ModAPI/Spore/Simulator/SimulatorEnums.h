@@ -1,5 +1,7 @@
 #pragma once
 
+#include <stdint.h>
+
 namespace Simulator
 {
 	/// All the noun IDs used to identify Simulator game data classes in the game files.
@@ -449,5 +451,104 @@ namespace Simulator
 		kRelationshipEventTribeCheatGood = 0x0530CF0A,
 		kRelationshipEventTribeCheatBad = 0x0530CF0B,
 		kRelationshipEventTribeSocialPower = 0x54EAB4B3
+	};
+
+	/// Possible genres of an adventure, used by Simulator::cScenarioModeData
+	enum class ScenarioGenre : uint32_t
+	{
+		ScenarioUnset = 0x20790816,
+		ScenarioPlanet = 0x24720859,
+		ScenarioGenreTemplate = 0x27818FE6,
+		ScenarioGenreAttack = 0x287ADCDC,
+		ScenarioGenreDefend = 0xC34C5E14,
+		ScenarioGenreSocialize = 0xFB734CD1,
+		ScenarioGenreExplore = 0x37FD4E0D,
+		ScenarioGenreQuest = 0xC422519E,
+		ScenarioGenreStory = 0xB4707F8F,
+		ScenarioGenreCollect = 0x25A6EA6E,
+		ScenarioGenrePuzzle = 0xE27DDAD4
+	};
+
+	enum class ScenarioPowerupType : int
+	{
+		MedKit = 1,
+		EnergyKit = 2,
+		SpeedBoost = 3,
+		DamageBoost = 4,
+		ArmorBoost = 5,
+		Mine = 6,
+		JumpPad = 7,
+		Teleporter = 8,
+		Spawner = 9,
+		Bomb = 10,
+		Gate = 11,
+		KeyCard = 12,
+		Grenade = 13,
+
+		Destructible = 15,  // also used by explosive barrel
+	};
+
+	enum class ScenarioObjectType : uint32_t
+	{
+		ScenarioUndefined = 0x867A9EE9,
+		ScenarioBuilding = 0xB10E526F,
+		ScenarioCreature = 0xE34E8A60,
+		ScenarioVehicle = 0x5B3D1D0D,
+		ScenarioUfo = 0xD37C1045,
+		ScenarioFixedObject = 0x6031C03A,
+		ScenarioFixedObjectEffect = 0x7998CE71,
+		ScenarioFixedObjectGameplay = 0xCF56099A,
+		ScenarioFixedObjectAudio = 0xE137FF08,
+		ScenarioFixedObjectCommodityNode = 0xC7FDCB1E
+	};
+
+	enum class ScenarioGfxOverrideType : int
+	{
+		/// No override
+		Invisible = 0,
+		/// Use the default model, no override
+		Normal = 1,
+		/// Use a custom asset specified by the player
+		Disguised = 2,
+	};
+
+	enum class ScenarioGoalType : int
+	{
+		None = 0,
+		MoveTo = 1,
+		TalkTo = 2,
+		Kill = 3,
+		Befriend = 4,
+		AllyWith = 5,
+		Bring = 6,
+		Collect = 7,
+		Hold = 8,
+		Give = 9,
+		Block = 10,
+		Defend = 11,
+	};
+
+	/// Possible motive (health & hunger) states for a creature; what is considered "low" and "critical" depends on the `MotiveTuning` settings
+	enum class CreatureMotive : int
+	{
+		None = 0,
+		Default = 1,
+		LowHunger = 2,
+		CriticalHealthAndHunger = 3,
+		LowHealth = 4,
+		CriticalHealth = 5
+	};
+
+	/// Possible types of interactable objects, used by cInteractableObject
+	enum class InteractableObjectType : int
+	{
+		None = 0,
+		Flower = 1,
+		Bone = 2,
+		Stick = 3,
+		Fruit = 4,
+		Rock = 5,
+		Unk6 = 6,
+		FixedScenarioObject = 7,
 	};
 }

@@ -41,9 +41,13 @@ namespace Simulator
 		/* 48Ch */	float mfHealthMultiplier;
 		/* 490h */	float mfSpeedMultiplier;
 		/* 494h */	float mfDamageMultiplier;
+		/// Property `powerupRadius`
 		/* 498h */	float mfRadiusTuning;
+		/// Property `powerupAmount`
 		/* 49Ch */	float mfDamageTuning;
+		/// Property `powerupAmount`
 		/* 4A0h */	float mfJumpTuning;
+		/// -1: class is not visible in this act; 0: no spawner
 		/* 4A4h */	int mSpawnDelay;
 		/* 4A8h */	int mTeamBehavior;
 		/* 4ACh */	int mStanceBehavior;

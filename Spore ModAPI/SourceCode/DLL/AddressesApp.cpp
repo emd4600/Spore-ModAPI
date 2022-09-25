@@ -338,7 +338,13 @@ namespace App
 		DefineAddress(SetParent, SelectAddress(0x6A1960, 0x6A1710, 0x6A1710));
 	}
 
-	namespace Addresses(ScenarioMode) 
+	// We keed it for backwards compatibility
+	namespace ScenarioMode_addresses
+	{
+		DefineAddress(ptr, SelectAddress(0x16CBD24, , 0x16C7AA4));
+	}
+
+	namespace Addresses(cScenarioMode)
 	{
 		DefineAddress(ptr, SelectAddress(0x16CBD24, , 0x16C7AA4));
 	}

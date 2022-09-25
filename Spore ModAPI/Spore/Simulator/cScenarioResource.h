@@ -30,8 +30,7 @@
 #include <EASTL\vector_map.h>
 #include <EASTL\vector_multimap.h>
 
-using namespace Math;
-using namespace eastl;
+#define cScenarioResourcePtr eastl::intrusive_ptr<Simulator::cScenarioResource>
 
 namespace Simulator
 {
@@ -41,11 +40,19 @@ namespace Simulator
 	public:
 		static const uint32_t TYPE = 0xE742574A;
 
+		/// Reads a `0x366A930D` type file, which contains the planet prop file and the adventure data itself.
+		/// @param pStream
+		/// @returns
+		bool Read(IO::IStream* pStream);
+
+		/// Writes a `0x366A930D` type file, which contains the planet prop file and the adventure data itself.
+		/// @param pStream
+		/// @returns
 		bool Write(IO::IStream* pStream);
 
 	public:
 		/* 14h */	int field_14;
-		/* 18h */	App::PropertyList field_18;
+		/* 18h */	App::PropertyList mpPropList;
 		/* 50h */	float mfWaterScoreDEPRECATED;
 		/* 54h */	float mfAtmosphereScoreDEPRECATED;
 		/* 58h */	float mfTemperatureScoreDEPRECATED;
@@ -68,7 +75,7 @@ namespace Simulator
 		/* 190h */	cScenarioPosseMember mInitialPosseMembers_[3];
 		/* 238h */	int mNumAllowedPosseMembers;
 		/* 23Ch */	fixed_vector<cScenarioAct, 8> mActs;
-		/* 2BF4h */	vector_map<int, cScenarioClass> field_2BF4;
+		/* 2BF4h */	vector_map<int, cScenarioClass> mClasses;
 		/* 2C0Ch */	int mClassIDCounter;  // 1024
 		/* 2C10h */	vector_map<int, cScenarioMarker> mMarkers;
 		/* 2C28h */	int field_2C28; 
@@ -83,7 +90,7 @@ namespace Simulator
 		/* 2C80h */	vector<ResourceKey> mInitialPosseMemberKeysDEPRECATED;
 		/* 2C94h */	ResourceKey mAvatarAssetKeyDEPRECATED;
 		/* 2CA0h */	uint64_t mAvatarServerIDDEPRECATED;
-		/* 2CA8h */	int field_2CA8;  // 0x11
+		/* 2CA8h */	int mVersion;  // 0x11
 	};
 
 	/////////////////////////////////
@@ -94,7 +101,7 @@ namespace Simulator
 
 	namespace Addresses(cScenarioResource)
 	{
-		DeclareAddress(Read);
-		DeclareAddress(Write);  // 0xF261F0
+		DeclareAddress(Read);  // 0xF2FDD0, 0xF2FC40
+		DeclareAddress(Write);  // 0xF261F0, 0xF25E00
 	}
 }

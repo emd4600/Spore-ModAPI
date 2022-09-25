@@ -35,6 +35,11 @@ namespace Simulator
 		using Object::Release;
 		using Object::Cast;
 
+		cHerd* Create(const Vector3& position, cSpeciesProfile* pSpeciesProfile, int herdSize, 
+			bool isOwnedByAvatar, int creaturePersonality, bool createNest);
+
+		void SetEnabled(bool enabled);
+
 	public:
 		/* 34h */	Vector3 mInitialPosition;
 		/* 40h */	vector<cCreatureAnimalPtr> mHerd;
@@ -50,7 +55,7 @@ namespace Simulator
 		/* 90h */	int mScheduleIndex;
 		/* 94h */	float mDNAEvolutionThreshold;
 		/* 98h */	ResourceKey mOwnerSpeciesKey;
-		/* A4h */	int field_A4;
+		/* A4h */	cSpeciesProfile* mpSpeciesProfile;
 		/* A8h */	fixed_vector<ResourceKey, 4> mEvolvedSpeciesProfileKeys;
 		/* F0h */	int mGeneration;
 		/* F4h */	int mTargetHerdSize;
@@ -89,4 +94,9 @@ namespace Simulator
 		/* 218h */	bool mbEnabled;
 	};
 	ASSERT_SIZE(cHerd, 0x220);
+
+	namespace Addresses(cHerd)
+	{
+		DeclareAddress(Create);  // 0xB237C0
+	}
 }

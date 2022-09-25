@@ -22,18 +22,19 @@
 #include <Spore\Simulator\cSpatialObject.h>
 #include <Spore\Simulator\cCombatant.h>
 #include <Spore\Simulator\cBehaviorList.h>
-#include <Spore\Simulator\cOrnamentBase.h>
+#include <Spore\Simulator\cScenarioPowerup.h>
 
 #define cOrnamentPtr intrusive_ptr<Simulator::cOrnament>
 
 namespace Simulator
 {
+	/// Used, among other things, for adventure objects (except pickable ones)
 	class cOrnament
-		: public cGameData
-		, public cOrnamentBase
-		, public cSpatialObject
-		, public cCombatant
-		, public cBehaviorList
+		/* 00h */	: public cGameData
+		/* 34h */	, public cScenarioPowerup
+		/* 70h */	, public cSpatialObject
+		/* 148h */	, public cCombatant
+		/* 210h */	, public cBehaviorList
 	{
 	public:
 		static const uint32_t TYPE = 0x175CDC9;

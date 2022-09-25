@@ -29,7 +29,7 @@ namespace Simulator
 
 	public:
 		/* 1E8h */	int mState;
-		/* 1ECh */	bool field_1EC;  // true
+		/* 1ECh */	bool mEnabled;  // true
 		/* 1F0h */	int mTimeToHatch;  // 10000
 		/* 1F4h */	intrusive_ptr<cHerd> mpHerd;
 		/* 1F8h */	cGonzagoTimer mBrokenTimer;

@@ -38,6 +38,13 @@
 #include <Spore\Simulator\cSpaceToolData.h>
 #include <Spore\Simulator\cSpaceInventoryItem.h>
 #include <Spore\Simulator\cStarRecord.h>
+#include <Spore\Simulator\cScenarioData.h>
+#include <Spore\Simulator\cScenarioResource.h>
+#include <Spore\Simulator\cScenarioEditHistory.h>
+#include <Spore\Simulator\cScenarioPowerup.h>
+#include <Spore\Simulator\cScenarioSimulator.h>
+#include <Spore\Simulator\cScenarioTerraformMode.h>
+#include <Spore\Simulator\cHerd.h>
 #include <Spore\Simulator\cToolStrategy.h>
 #include <Spore\Simulator\cTribeArchetype.h>
 #include <Spore\Simulator\cTurretDefenseMissileWeapon.h>
@@ -126,6 +133,18 @@ namespace Simulator
 		DefineAddress(PlayAnimation, SelectAddress(0xC11CD0, NO_ADDRESS, 0xC12470));
 		DefineAddress(PlayAnimationTo, SelectAddress(0xC14380, NO_ADDRESS, 0xC14B20));
 		DefineAddress(WalkTo, SelectAddress(0xC1BE40, NO_ADDRESS, 0xC1C720));
+		DefineAddress(GetAbilityIndexByType, SelectAddress(0xC0B930, , 0xC0C1E0));
+		DefineAddress(GetAnimalTarget, SelectAddress(0xC0E740, , 0xC0EFF0));
+		DefineAddress(CreateEffectForPool1Renamed, SelectAddress(0xC1C9A0, , 0xC1D280));
+		DefineAddress(CreateEffectForPool1, SelectAddress(0xC1CB10, , 0xC1D3F0));
+		DefineAddress(CreateAndStartEffectForPool1Renamed, SelectAddress(0xC1CC80, , 0xC1D560));
+		DefineAddress(CreateAndStartEffectForPool1, SelectAddress(0xC1CCB0, , 0xC1D590));
+		DefineAddress(CreateEffectForPool2Renamed, SelectAddress(0xC1CCE0, , 0xC1D5C0));
+		DefineAddress(StartOrStopEffectFromPool1, SelectAddress(0xC1FA20, , 0xC20300));
+		DefineAddress(StartOrStopEffectFromPool2, SelectAddress(0xC1CE60, , 0xC1D740));
+		DefineAddress(GetEffectFromPools, SelectAddress(0xC14830, , 0xC14FD0));
+		DefineAddress(StopEffectFromPools, SelectAddress(0xC16CB0, , 0xC174B0));
+		DefineAddress(PlayVoice, SelectAddress(0xC1CEC0, , 0xC1D7A0));
 	}
 
 	namespace Addresses(cCropCirclesToolStrategy)
@@ -611,6 +630,73 @@ namespace Simulator
 	namespace Addresses(cStar)
 	{
 		DefineAddress(GetSolarSystem, SelectAddress(0xC8AA90, , 0xC8B900));
+	}
+
+	namespace Addresses(cScenarioEditHistory)
+	{
+		DefineAddress(ptr, SelectAddress(0x160A850, , 0x16065D8));
+	}
+
+	namespace Addresses(cScenarioData)
+	{
+		DefineAddress(Initialize, SelectAddress(0xF44AC0, , 0xF44690));
+		DefineAddress(StartHistoryEntry, SelectAddress(0xF45C40, , 0xF45810));
+		DefineAddress(CommitHistoryEntry, SelectAddress(0xF45D50, , 0xF45920));
+		DefineAddress(GetClass, SelectAddress(0xF3EBA0, , 0xF3E740));
+		DefineAddress(GetCurrentClassAct, SelectAddress(0xF3FC50, , 0xF3F7F0));
+		DefineAddress(GetEditModeActIndex, SelectAddress(0xEFC740, , 0xEFC410));
+		DefineAddress(CreateObjectInstance, SelectAddress(0xEEE090, , 0xEEDD40));
+		DefineAddress(CreatePowerupObjectInstance, SelectAddress(0xF216A0, , 0xF212C0));
+		DefineAddress(GetObjectForMarker, SelectAddress(0xF3D810, , 0xF3D620));
+		DefineAddress(GetMarkerForObject, SelectAddress(0xF3D810, , 0xF3D620));
+	}
+
+	namespace Addresses(cScenarioResource)
+	{
+		DefineAddress(Read, SelectAddress(0xF2FDD0, , 0xF2FC40));
+		DefineAddress(Write, SelectAddress(0xF261F0, , 0xF25E00));
+	}
+
+	namespace Addresses(cScenarioTerraformMode)
+	{
+		DefineAddress(StartHistoryEntry, SelectAddress(0xF33AD0, , 0xF33A90));  // 0xF33AD0, 0xF33A90
+		DefineAddress(CommitHistoryEntry, SelectAddress(0xF45D50, , 0xF34400));  // 0xF45D50, 0xF34400
+		DefineAddress(SetWaterColor, SelectAddress(0xF32140, , 0xF31FA0));  // 0xF32140, 0xF31FA0
+		DefineAddress(SetAtmosphereColor, SelectAddress(0xF32190, , 0xF31FF0));  // 0xF32190, 0xF31FF0
+		DefineAddress(SetBeachColor, SelectAddress(0xF321E0, , 0xF32040));  // 0xF321E0, 0xF32040
+		DefineAddress(SetCliffColor, SelectAddress(0xF32230, , 0xF32090));  // 0xF32230, 0xF32090
+	}
+
+	namespace Addresses(cHerd)
+	{
+		DefineAddress(Create, SelectAddress(0xB237C0, , 0xB23920));
+	}
+
+	namespace Addresses(cScenarioClass)
+	{
+		DefineAddress(GetObjectType, SelectAddress(0xEED090, , 0xEECD40));
+		DefineAddress(IsConsumible, SelectAddress(0xF27A90, , 0xF27730));
+	}
+
+	namespace Addresses(cScenarioPowerup)
+	{
+		DefineAddress(ReactToPowerup, SelectAddress(0xF23FD0, , 0xF23BF0));
+		//TODO DefineAddress(ApplyBoost, SelectAddress(0xF20670, , 0xF20290));
+		DefineAddress(ActivateMedKit, SelectAddress(0xF229C0, , 0xF225E0));
+		DefineAddress(ActivateEnergyKit, SelectAddress(0xF22BE0, , 0xF22800));
+		DefineAddress(ActivateSpeedBoost, SelectAddress(0xF232B0, , 0xF22ED0));
+		DefineAddress(ActivateDamageBoost, SelectAddress(0xF23000, , 0xF22C20));
+		DefineAddress(ActivateArmorBoost, SelectAddress(0xF22D50, , 0xF22970));
+		DefineAddress(ActivateMine, SelectAddress(0xF20BB0, , 0xF207D0));
+		DefineAddress(ActivateJumpPad, SelectAddress(0xF23890, , 0xF234B0));
+		DefineAddress(ActivateTeleporter, SelectAddress(0xF23660, , 0xF23280));
+		DefineAddress(ActivateGate, SelectAddress(0xF23E90, , 0xF23AB0));
+		DefineAddress(ActivateGrenade, SelectAddress(0xF20C40, , 0xF20860));
+	}
+
+	namespace Addresses(cScenarioSimulator)
+	{
+		DefineAddress(Get, SelectAddress(0xC02AE0, , 0xC033C0));
 	}
 }
 #endif

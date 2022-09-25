@@ -56,6 +56,14 @@ namespace Simulator
 
 		/// Simulator::ToolOnHitMessage; called when a space tool hits a target
 		kMsgToolOnHit = 0x56690BB,
+
+		/// Simulator::ScenarioCreatureHealedMessage; called when a creature is healed (either by natural heal rate, or using a medkit) in Scenario mode
+		kMsgScenarioCreatureHealed = 0x7C789F8,
+
+		/// No data, called when pressing the undo button in the scenario editor
+		kMsgScenarioUndo = 0xC9D86390,
+		/// No data, called when pressing the redo button in the scenario editor
+		kMsgScenarioRedo = 0xC9D86391,
 	};
 
 	class IMessageParameters
@@ -182,6 +190,17 @@ namespace Simulator
 		/// Returns the noun, can be null
 		inline cGameData* GetNoun() {
 			return (cGameData*)params[1].ptr;
+		}
+	};
+
+	/// Called when a creature is healed (either by natural heal rate, or using a medkit) in Scenario mode
+	class ScenarioCreatureHealedMessage : App::StandardMessage
+	{
+	public:
+		static const uint32_t ID = kMsgScenarioCreatureHealed;
+
+		inline float GetAmountHealed() {
+			return params[0]._float;
 		}
 	};
 }

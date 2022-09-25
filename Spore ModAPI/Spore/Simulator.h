@@ -62,6 +62,8 @@
 #include <Spore\Simulator\cPlanetRecord.h>
 #include <Spore\Simulator\cCelestialBody.h>
 #include <Spore\Simulator\cSolarSystem.h>
+#include <Spore\Simulator\cScenarioEditHistory.h>
+#include <Spore\App\ScenarioMode.h>
 
 #include <Spore\Simulator\SimulatorMessages.h>
 

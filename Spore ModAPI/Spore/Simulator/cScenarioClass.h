@@ -21,17 +21,27 @@
 #include <Spore\Simulator\cScenarioString.h>
 #include <Spore\Simulator\cScenarioAsset.h>
 #include <Spore\Simulator\cScenarioClassAct.h>
+#include <Spore\Simulator\SimulatorEnums.h>
 
 namespace Simulator
 {
 	class cScenarioClass
 	{
 	public:
+
+		static ScenarioObjectType GetObjectType(const ResourceKey& key);
+
+		/// Returns true if this class is the kind of object that is consumed when the player 
+		/// approaches it. By default, this returns true on teleporters, jumppads, spead/damage/armor boosts and med/energy kits.
+		/// @returns
+		bool IsConsumible();
+
+	public:
 		/* 00h */	cScenarioAsset mAsset;
 		/* 20h */	bool mbIsDeepEditEnabled;
-		/* 24h */	int mGfxOverrideType;
+		/* 24h */	ScenarioGfxOverrideType mGfxOverrideType;
 		/* 28h */	cScenarioAsset mGameplayObjectGfxOverrideAsset;
-		/* 48h */	int mGfxOverideTypeSecondary;
+		/* 48h */	ScenarioGfxOverrideType mGfxOverideTypeSecondary;
 		/* 50h */	cScenarioAsset mGameplayObjectGfxOverrideAsset_Secondary;
 		/* 70h */	fixed_vector<cScenarioClassAct, 8> mActs;
 		/* 2788h */	cScenarioString mCastName;
@@ -39,7 +49,6 @@ namespace Simulator
 		/* 27D0h */	int field_27D0;
 		/* 27D4h */	uint32_t mModelTypeDEPRECATED;  // not initialized
 		/* 27D8h */	uint64_t mServerIDDEPRECATED;
-		///* 27E0h */	int field_27E0;  // not initialized
 	};
 
 	/////////////////////////////////
@@ -47,4 +56,10 @@ namespace Simulator
 	/////////////////////////////////
 
 	static_assert(sizeof(cScenarioClass) == 0x27E0, "sizeof(cScenarioClass) != 0x27E0");
+
+	namespace Addresses(cScenarioClass)
+	{
+		DeclareAddress(GetObjectType);  // 0xEED090
+		DeclareAddress(IsConsumible);  // 0xF27A90
+	}
 }

@@ -1,6 +1,7 @@
 #ifndef MODAPI_DLL_EXPORT
 #include <Spore\Simulator\cGameData.h>
 #include <Spore\Simulator\NounClassFactories.h>
+#include <Spore\App\ScenarioMode.h>
 
 auto_STATIC_METHOD_VOID(Simulator, RegisterNounType, Args(uint32_t nounID, uint32_t typeID, const char* name), Args(nounID, typeID, name));
 //auto_STATIC_METHOD_(Simulator, Simulator::NounCreateMap&, GetNounCreateMap);
@@ -55,8 +56,8 @@ namespace Simulator
 
 	cGameData::cGameData()
 		: field_14()
-		, field_18()
-		, field_1C(0xFFFFFFFF)
+		, mpScenarioMarker(nullptr)
+		, mScenarioClassIndex(-1)
 		, field_20()
 		, mbIsDestroyed()
 		, mID(0xFFFFFFFF)
@@ -64,5 +65,11 @@ namespace Simulator
 		, mpGameDataOwner()
 		, mPoliticalID(0xFFFFFFFF)
 	{}
+
+	cScenarioClass* cGameData::GetScenarioClass()
+	{
+		if (mScenarioClassIndex == -1) return nullptr;
+		else return ScenarioMode.GetData()->GetClass(mScenarioClassIndex);
+	}
 }
 #endif

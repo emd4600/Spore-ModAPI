@@ -19,20 +19,25 @@
 
 #pragma once
 
+#include <Spore\Simulator\cScenarioData.h>
+#include <Spore\Simulator\cScenarioPlayMode.h>
+#include <Spore\Simulator\cScenarioTerraformMode.h>
 #include <Spore\App\IGameMode.h>
 #include <Spore\App\IMessageListener.h>
 #include <Spore\App\MessageListenerData.h>
 #include <Spore\Object.h>
 #include <Spore\Input.h>
 
-#define ScenarioModePtr intrusive_ptr<App::ScenarioMode>
+#define ScenarioMode (*App::cScenarioMode::Get())
+
+#define ScenarioModePtr eastl::intrusive_ptr<App::ScenarioMode>
 
 namespace App
 {
 	// kMsgEnterMode = 0x074BAF67
 	// kMsgExitMode = 0x0462C656
 
-	class ScenarioMode 
+	class cScenarioMode 
 		: public App::IGameMode
 		, public App::IUnmanagedMessageListener
 		, public DefaultRefCounted
@@ -50,17 +55,25 @@ namespace App
 
 		Mode GetMode() const;
 
+		inline Simulator::cScenarioData* GetData();
+
+		inline Simulator::cScenarioTerraformMode* GetTerraformMode();
+
+		inline Simulator::cScenarioPlayMode* GetPlayMode();
+
+		inline Simulator::cScenarioResource* GetResource();
+
 	public:
 		/* 10h */	int mpEditModeInputStrategy;  // cScenarioEditModeInputStrategy
 		/* 14h */	int mpEditModeDisplayStrategy;  // cScenarioEditModeDisplayStrategy
-		/* 18h */	int field_18;
+		/* 18h */	cScenarioTerraformModePtr mpTerraformMode;
 		/* 1Ch */	int mpScenarioUI;  // Simulator::ScenarioModeUI ?
 		/* 20h */	GameInput mInput;
 		/* 68h */	int field_68;
-		/* 6Ch */	int field_6C;
+		/* 6Ch */	int field_6C;  // another UI?
 		/* 70h */	int field_70;
-		/* 74h */	int field_74;  // 10h is cScenarioResource!
-		/* 78h */	int field_78;
+		/* 74h */	cScenarioDataPtr mpData;
+		/* 78h */	cScenarioPlayModePtr mpPlayMode;
 		/* 7Ch */	int field_7C;  // token translator
 		/* 80h */	App::MessageListenerData field_80;
 		/* 94h */	App::MessageListenerData field_94;
@@ -74,6 +87,7 @@ namespace App
 		/* C4h */	int field_C4;  // 2
 		/* C8h */	int* field_C8;
 		/* CCh */	Mode mMode;
+		/// Only counts achivement if == 2
 		/* D0h */	int field_D0;  // not initialized
 		/* D4h */	int mpScenarioTutorials;  // cScenarioTutorials
 		/* D8h */	int mpScenarioYoutube;  // cScenarioYoutube
@@ -81,16 +95,40 @@ namespace App
 
 	public:
 		/// Returns the ScenarioMode instance.
-		static ScenarioMode* Get();
+		static cScenarioMode* Get();
 	};
 
 	/////////////////////////////////
 	//// INTERNAL IMPLEMENTATION ////
 	/////////////////////////////////
 
-	static_assert(sizeof(ScenarioMode) == 0xE0, "sizeof(ScenarioMode) != E0h");
+	static_assert(sizeof(cScenarioMode) == 0xE0, "sizeof(ScenarioMode) != E0h");
 
-	namespace Addresses(ScenarioMode) {
+	namespace Addresses(cScenarioMode) {
 		DeclareAddress(ptr);
+	}
+	// We keed it for backwards compatibility
+	namespace ScenarioMode_addresses {
+		DeclareAddress(ptr);
+	}
+
+	Simulator::cScenarioData* cScenarioMode::GetData()
+	{
+		return mpData.get();
+	}
+
+	Simulator::cScenarioResource* cScenarioMode::GetResource()
+	{
+		return mpData->mpResource.get();
+	}
+
+	Simulator::cScenarioTerraformMode* cScenarioMode::GetTerraformMode()
+	{
+		return mpTerraformMode.get();
+	}
+
+	Simulator::cScenarioPlayMode* cScenarioMode::GetPlayMode()
+	{
+		return mpPlayMode.get();
 	}
 }

@@ -20,6 +20,7 @@
 
 #include <Spore\Simulator\cScenarioString.h>
 #include <Spore\Simulator\cScenarioDialog.h>
+#include <Spore\Simulator\SimulatorEnums.h>
 #include <EASTL\fixed_vector.h>
 
 namespace Simulator
@@ -27,7 +28,7 @@ namespace Simulator
 	class cScenarioGoal
 	{
 	public:
-		/* 00h */	int mType;
+		/* 00h */	ScenarioGoalType mType;
 		/* 04h */	int mTargetClassIndex;
 		/* 08h */	int mTargetClass2Index;
 		/* 0Ch */	int mRequiredCount;

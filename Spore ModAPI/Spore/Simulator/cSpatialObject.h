@@ -69,7 +69,7 @@ namespace Simulator
 		/* 38h */	virtual void SetPosition(const Vector3& value);
 		/* 3Ch */	virtual void SetOrientation(const Quaternion& value);
 		/* 40h */	virtual void SetScale(float fValue);
-		/* 44h */	virtual void cSpatialObject_func44h(int);  // something related with physics
+		/* 44h */	virtual void cSpatialObject_func44h(const Vector3& position, const Quaternion& orientation);  // something related with physics
 		/* 48h */	virtual bool IsOnView();
 		/* 4Ch */	virtual void SetIsOnView(bool bValue);
 		/* 50h */	virtual bool IsSelected();
@@ -133,6 +133,7 @@ namespace Simulator
 		/* 74h */	bool mbTransformDirty;
 		/* 75h */	bool mbEnabled;
 		/* 76h */	bool mbInView;
+		/// True if the object is not floating on air
 		/* 77h */	bool mbSupported;
 		/* 78h */	bool mbIsGhost;
 		/* 7Ch */	float field_7C;

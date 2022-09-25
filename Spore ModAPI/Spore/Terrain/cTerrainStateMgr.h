@@ -24,7 +24,10 @@ namespace Terrain
 			/* 14h */	float kMinMaxAlt;
 			/* 18h */	float kMidMaxAlt;
 			/* 1Ch */	float kMaxMaxAlt;
-			/* 20h */	char padding_20[0x10];  // not initialized
+			/* 20h */	int field_20;  // not initialized
+			/* 24h */	float mAtmosphereReciprocalScore;  // not initialized, 1 - atmosphereScore
+			/* 28h */	float mTemperatureScore;  // not initialized
+			/* 2Ch */	int field_2C;  // not initialized
 			/* 30h */	float field_30;  // related with minmaxalt and midmaxalt and planet height?
 			/* 34h */	char padding_34[0xC];  // not initialized
 			// 38h is a Matrix4, 2C is sun pos ? check sub_FBB460
@@ -83,9 +86,13 @@ namespace Terrain
 			/* 238h */	Vector3 kP2Brightness;
 			/* 244h */	Vector3 kP3Phase;
 			/* 250h */	Vector3 kP3Brightness;
-			/* 25Ch */	char padding_25C[0x34];  // not initialized
-			/* 290h */	vector<int> field_290;
-			/* 2A4h */	vector<int> field_2A4;
+			/* 25Ch */	bool userColorBeachEnabled;  // not initialized
+			/* 260h */	ColorRGB factoredTerrainUserColorBeach;  // not initialized
+			/* 26Ch */	ColorRGB factoredTerrainUserColorCliff;  // not initialized
+			/* 278h */	ColorRGB factoredTerrainUserColorWater;  // not initialized
+			/* 284h */	ColorRGB factoredTerrainUserColorAtmosphere;  // not initialized
+			/* 290h */	vector<float> factoredTerrainUserColorElevations;
+			/* 2A4h */	vector<ColorRGB> factoredTerrainUserColorElevationColors;
 			/* 2B8h */	float terrainUserColorRockSaturationFactor;
 			/* 2BCh */	float terrainUserColorBeachSaturationFactor;
 			/* 2C0h */	float terrainUserColorCliffSaturationFactor;

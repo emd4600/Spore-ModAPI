@@ -21,6 +21,8 @@
 
 #include <Spore\Object.h>
 #include <Spore\Simulator\ISimulatorSerializable.h>
+#include <Spore\Simulator\cScenarioClass.h>
+#include <Spore\Simulator\cScenarioMarker.h>
 #include <EASTL\intrusive_list.h>
 
 #define cGameDataPtr intrusive_ptr<Simulator::cGameData>
@@ -67,10 +69,16 @@ namespace Simulator
 		/* 4Ch */	virtual uint32_t GetPoliticalID();
 		/* 50h */	virtual int WriteAsText(int);  // related with attributes
 
+		/// Returns the scenario class for this game data, if any; if scenario data is not available
+		/// (for example, player is not in an adventure), the game will crash.
+		/// The scenario class is the object that holds all the adventure-related data of this object.
+		/// @returns The scenario class for this object.
+		cScenarioClass* GetScenarioClass();
+
 	public:
 		/* 14h */	int field_14;
-		/* 18h */	int field_18;
-		/* 1Ch */	int field_1C;  // -1
+		/* 18h */	cScenarioMarker* mpScenarioMarker;
+		/* 1Ch */	int mScenarioClassIndex;  // -1
 		/* 20h */	bool field_20;
 		/* 21h */	bool mbIsDestroyed;
 		/* 24h */	uint32_t mID;  // -1

@@ -19,17 +19,19 @@
 #pragma once
 
 #include <Spore\Simulator\cInteractableObject.h>
-#include <Spore\Simulator\cOrnamentBase.h>
+#include <Spore\Simulator\cScenarioPowerup.h>
 #include <Spore\Simulator\cCombatant.h>
 
 #define cInteractiveOrnamentPtr intrusive_ptr<Simulator::cInteractiveOrnament>
 
 namespace Simulator
 {
+	/// Static objects in a planet that the player can interact with,
+	/// such as pickable objects, skeletons in creature stage,...
 	class cInteractiveOrnament
-		: public cInteractableObject
-		, public cOrnamentBase
-		, public cCombatant
+		/* 00h */	: public cInteractableObject
+		/* 130h */	, public cScenarioPowerup
+		/* 16Ch */	, public cCombatant
 	{
 	public:
 		static const uint32_t TYPE = 0x3A25119;

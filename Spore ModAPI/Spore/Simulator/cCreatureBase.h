@@ -18,6 +18,7 @@
 ****************************************************************************/
 #pragma once
 
+#include <Spore\Audio\AudioSystem.h>
 #include <Spore\Simulator\cGameData.h>
 #include <Spore\Simulator\cGameBundleContainer.h>
 #include <Spore\Simulator\cSpeciesProfile.h>
@@ -33,15 +34,16 @@
 #include <EASTL\bitset.h>
 #include <EASTL\queue.h>
 
-#define cCreatureBasePtr intrusive_ptr<Simulator::cCreatureBase>
+#define cCreatureBasePtr eastl::intrusive_ptr<Simulator::cCreatureBase>
 
 namespace Simulator
 {
 	
 
-	class UnknownCreatureClass2
+	class CreatureEffectPool
 	{
-		char field_0[0xA0];
+		/* 00h */	hash_map<uint32_t, IEffectPtr> mEffectMap;
+		/* 20h */	char field_0[0x80];
 	};
 
 	// Maybe used in other places as well?
@@ -65,9 +67,12 @@ namespace Simulator
 		/* 14h */	int field_14;  // not written
 		/* 18h */	bool field_18;
 		/* 1Ch */	int field_1C;  // not written
-		/* 20h */	intrusive_ptr<cSpatialObject> field_20;
+		/* 20h */	cSpatialObjectPtr mpObject;
 	};
 
+	class cCreatureAnimal;
+
+	/// The base class for all creatures in the Simulator.
 	class cCreatureBase
 		: /* 00h */	public cGameData
 		, /* 34h */	public cGameBundleContainer
@@ -89,17 +94,15 @@ namespace Simulator
 		using Object::Release;
 		using Object::Cast;
 
-		void* PlayAnimation(uint32_t animationID, int toolIndex = 0xFFFFFFFF, bool disableBlendInTime = false);
+		Anim::AnimIndex PlayAnimation(uint32_t animationID, int toolIndex = 0xFFFFFFFF, bool disableBlendInTime = false);
 
-		void* PlayAnimationTo(uint32_t animationID, cSpatialObject* otherObject, int = 0xFFFFFFFF, int = 0xFFFFFFFF);
+		Anim::AnimIndex PlayAnimationTo(uint32_t animationID, cSpatialObject* otherObject, int = 0xFFFFFFFF, int toolIndex = 0xFFFFFFFF);
 
 		// sub_C0BEE0 decides the movement animation
 
 		// sub_C0C730 get speed
 
 		// sub_C1DCE0 related with playing ability
-
-		// sub_C0E740 get target creature??
 
 		// sub_C1BE40 WALK TO??
 		// arg_8 is normalized vector
@@ -109,21 +112,125 @@ namespace Simulator
 
 		// sub_C19000 get anim index for slot?
 
-		// /* 60h */	virtual void Update(int deltaTime);
-
-		// virtual B0h GetAbilityCount()
-		// virtual B4h cCreatureAbility* GetAbility(int index)
-
-		// /* E0h */ virtual const ColorRGB& GetColor() const;
-		// /* E4h */ virtual void SetColor(const ColorRGB& color);
-
 		// sub_D48710 play ability
 
+		/// Returns the index to the first ability of the craeture that has the specified ability type.
+		/// @param abilityType
+		/// @returns Index to ability, or -1 if not found
+		int GetAbilityIndexByType(int abilityType);
+
+		/// Returns the target of this creature ONLY if it is a Simulator::cCreatureAnimal.
+		/// @returns
+		cCreatureAnimal* GetAnimalTarget();
+
+		/// Creates an effect on the creature effect pool 1, storing it with a different ID than the effect ID.
+		/// The effect will be returned in its default state, positioned in the creature, without having started.
+		/// @param effectId ID of the effect to create
+		/// @param poolId ID used to identify this new effect within the pool, must be used to access it in related methods.
+		/// @returns The created effect, or null if the effect id is not valid.
+		Swarm::IEffect* CreateEffectForPool1Renamed(uint32_t effectId, uint32_t poolId);
+
+		/// Creates an effect on the creature effect pool 1.
+		/// The effect will be returned in its default state, positioned in the creature, without having started.
+		/// @param effectId ID of the effect to create
+		/// @returns The created effect, or null if the effect id is not valid.
+		Swarm::IEffect* CreateEffectForPool1(uint32_t effectId);
+
+		/// Creates and starts an effect on the creature effect pool 1, storing it with a different ID than the effect ID.
+		/// The effect will be returned in its default state, positioned in the creature, but starting it with `hardStart=0`.
+		/// @param effectId ID of the effect to create
+		/// @param poolId ID used to identify this new effect within the pool, must be used to access it in related methods.
+		/// @returns The created effect, or null if the effect id is not valid.
+		Swarm::IEffect* CreateAndStartEffectForPool1Renamed(uint32_t effectId, uint32_t poolId);
+
+		/// Creates and starts an effect on the creature effect pool 1.
+		/// The effect will be returned in its default state, positioned in the creature, but starting it with `hardStart=0`.
+		/// @param effectId ID of the effect to create
+		/// @returns The created effect, or null if the effect id is not valid.
+		Swarm::IEffect* CreateAndStartEffectForPool1(uint32_t effectId);
+
+		/// Creates an effect on the creature effect pool 2, storing it with a different ID than the effect ID.
+		/// The effect will be returned in its default state, positioned in the creature, without having started.
+		/// @param effectId ID of the effect to create
+		/// @param poolId ID used to identify this new effect within the pool, must be used to access it in related methods.
+		/// @returns The created effect, or null if the effect id is not valid.
+		Swarm::IEffect* CreateEffectForPool2Renamed(uint32_t effectId, uint32_t poolId);
+
+
+		Swarm::IEffect* StartOrStopEffectFromPool1(bool create, uint32_t effectId, uint32_t poolId);
+
+		Swarm::IEffect* StartOrStopEffectFromPool2(bool create, uint32_t effectId, uint32_t poolId);
+
+		/// Gets an active effect from one of the effect pools of the creature. The effect is referenced with the ID
+		/// that was given at its creation, which usually is the effect ID.
+		/// @param poolId
+		/// @returns
+		Swarm::IEffect* GetEffectFromPools(uint32_t poolId);
+
+		/// Stops an effect from one of the effect pools of the creature. The effect is referenced with the ID
+		/// that was given at its creation, which usually is the effect ID.
+		/// @param poolId
+		/// @param hardStop
+		/// @returns
+		Swarm::IEffect* StopEffectFromPools(uint32_t poolId, int hardStop = 0);
+
+		/// Plays a voice file on the creature (only sound, creature does not animate accordingly).
+		/// Example usage: `PlayVoice("vcode_baby_born_cry", 2, 0)`
+		/// @param pName
+		/// @param param2
+		/// @param param3
+		/// @returns
+		int PlayVoice(const char* pName, int param2, int param3);
+
+
+		/* 54h */	virtual void CreateLocomotionStrategy();
+
+		/// Called when the creature touches land after jumping/hovering in the air.
+		/* 58h */	virtual void OnJumpLand();
+		/* 5Ch */	virtual void func5Ch();
+
+		/// Called every frame, parameter is the ellapsed time in milliseconds.
+		/// @param deltaTime
+		/* 60h */	virtual void Update(int deltaTime);
+
+		/* 64h */	virtual void func64h(float);  // called by Update
+		/* 68h */	virtual void func68h(float);  // called by Update
+		/* 6Ch */	virtual void func6Ch(int deltaTime);  // called by Update
+		/* 70h */	virtual void func70h(float deltaTimeSeconds);  // called by Update
+		/* 74h */	virtual void func74h(void*);  // related to babies growing up
+		/* 7Ch */	virtual float GetBaseMaxHitPoints() = 0;
+		/* 80h */	virtual float CalculateScale(bool isBaby);
+		/* 84h */	virtual void SetCreatureTarget(cCombatant* pTarget, bool, int intentionTowardsTarget);  //TODO check loc_D3242E
+		/* 88h */	virtual void UpdateHunger(float deltaTimeSeconds);
+		/* 8Ch */	virtual void func8Ch();  // sets dead
+		/* 90h */	virtual void func90h();  // sets not dead
+		/* 94h */	virtual void func94h(float);
+		/* 98h */	virtual uint32_t GetLastInteractionEffect();
+		/* 9Ch */	virtual void SetLastInteractionEffect(uint32_t effect);
+		/* A0h */	virtual bool ForgetUpdateInteractionEffect();
+		/* A4h */	virtual CreatureMotive UpdateMotiveState();  // returns new motive state
+		/* A8h */	virtual bool HasUpdateMotiveEffect();
+		/* ACh */	virtual bool funcACh(bool);
+		/* B0h */	virtual int GetAbilitiesCount();
+		/* B4h */	virtual cCreatureAbility* GetAbility(int index);
+		/* B8h */	virtual bool funcB8h(int, int, int);
+		/* BCh */	virtual int funcBCh();
+		/* C0h */	virtual bool funcC0h(cCreatureBase* pOtherCreature, float, float);
+		/* C4h */	virtual void funcC4h();
+		/* C8h */	virtual void funcC8h(bool) = 0;
+		/* CCh */	virtual void funcCCh(bool);
+		/* D0h */	virtual bool IsDefaultSpecies();
+		/* D4h */	virtual int funcD4h();
+		/* D8h */	virtual int GetCurrentBrainLevel();
+		/* DCh */	virtual void SetCurrentBrainLevel(int level);
+		/* E0h */	virtual const ColorRGB& GetIdentityColor() const;
+		/* E4h */	virtual void SetIdentityColor(const ColorRGB& color);	
+
 	public:
-		/* B10h */	bool field_B10;
-		/* B14h */	int field_B14;  // not initialized
-		/* B18h */	bool field_B18;
-		/* B1Ch */	int field_B1C;  // not initialized
+		/* B10h */	bool mHasDamageBoost;
+		/* B14h */	float mDamageBoostAmount;  // not initialized
+		/* B18h */	bool mHasArmorBoost;
+		/* B1Ch */	float mArmorBoostAmount;  // not initialized
 		/* B20h */	cSpeciesProfile* mpSpeciesProfile;  // species profile?
 		/* B24h */	uint32_t mProfileSeq;
 		/* B28h */	ResourceKey mSpeciesKey;
@@ -133,7 +240,7 @@ namespace Simulator
 		/* B4Ch */	int field_B4C;  //TODO cBehaviorTreeData
 		/* B50h */	intrusive_ptr<cCreatureBase> mpWhoIsInteractingWithMe;
 		/* B54h */	AnimatedCreaturePtr mpAnimatedCreature;
-		/* B58h */	int mGeneralFlags;  // 0x200 IsPlayerAvatar
+		/* B58h */	int mGeneralFlags;  // 0x200 IsPlayerAvatar, 0x100 hasHunger?
 		/* B5Ch */	bool field_B5C;
 		/* B5Dh */	bool mbTeleport;
 		/* B5Eh */	bool mbDead;
@@ -148,7 +255,7 @@ namespace Simulator
 		/* B67h */	bool mbCasted;
 		/* B68h */	bool field_B68;  // true
 		/* B69h */	bool field_B69;
-		/* B6Ch */	int field_B6C;
+		/* B6Ch */	Audio::AudioTrack field_B6C;
 		/* B70h */	int field_B70;
 		/* B74h */	int mIntentionTowardsTarget;
 		/* B78h */	float mNoAttackTimer;  // not initialized
@@ -181,18 +288,19 @@ namespace Simulator
 		/* C20h */	int field_C20;  // not initialized
 		/* C24h */	int field_C24;  // not initialized
 		/* C28h */	fixed_vector<cAbilityState, 8> mAbilityStates;
-		/* CC0h */	int mLastMotiveState;
-		/* CC4h */	int mLastInteractionEffect;
-		/* CC8h */	UnknownCreatureClass2 field_CC8;
-		/* D68h */	UnknownCreatureClass2 field_D68;
-		/* E08h */	map<int, int> field_E08;
+		/* CC0h */	CreatureMotive mLastMotiveState;
+		/* CC4h */	uint32_t mLastInteractionEffect;
+		/* CC8h */	CreatureEffectPool mEffectPool1;
+		/* D68h */	CreatureEffectPool mEffectPool2;
+		/* E08h */	map<int, int> field_E08;  // related with audio
 		/* E24h */	vector<int> field_E24;
 		/* E38h */	bool field_E38;
 		/* E3Ch */	int field_E3C;  // -1
 		/* E40h */	vector<cCreatureItem> mItemInventory;
 		/* E54h */	int field_E54;
-		/* E58h */	float field_E58;  // PLACEHOLDER adventurer energy??
-		/* E5Ch */	float field_E5C;
+		/// For adventurer creatures, their current energy.
+		/* E58h */	float mEnergy;
+		/* E5Ch */	float mMaxEnergy;
 		/* E60h */	bool field_E60;
 		/* E61h */	bool field_E61;
 		/* E62h */	bool field_E62;
@@ -200,12 +308,14 @@ namespace Simulator
 		/* E64h */	int field_E64;
 		/* E68h */	bool field_E68;
 		/* E6Ch */	int field_E6C;
-		/* E70h */	int field_E70;  // -1
-		/* E74h */	int field_E74;  // -1
+		/// Index to default attack ability, which is generally bite or its improvements (energy or poison blade)
+		/* E70h */	int mDefaultAttackAbilityIndex;  // -1
+		/// Index to default socialize ability, which is generally vocalize or its improvements (inspiring or harmonious song)
+		/* E74h */	int mDefaultSocializeAbilityIndex;  // -1
 		/* E78h */	bool field_E78;
 		/* E7Ch */	cCombatant* mpCombatantTarget;  // cCombatant
 		/* E80h */	int mArchetype;
-		/* E84h */	void* field_E84;
+		/* E84h */	void* field_E84;  // related with hunger
 		/* E88h */	int field_E88;
 		/* E8Ch */	uint32_t mCurrentAttackIdx;  // -1
 		/* E90h */	uint32_t mCurrentAttackAnimId;  // -1
@@ -261,5 +371,17 @@ namespace Simulator
 		DeclareAddress(PlayAnimation);
 		DeclareAddress(PlayAnimationTo);
 		DeclareAddress(WalkTo);
+		DeclareAddress(GetAbilityIndexByType);  // C0B930
+		DeclareAddress(GetAnimalTarget);  // C0E740
+		DeclareAddress(CreateEffectForPool1Renamed);  // C1C9A0
+		DeclareAddress(CreateEffectForPool1);  // C1CB10
+		DeclareAddress(CreateAndStartEffectForPool1Renamed);  // C1CC80
+		DeclareAddress(CreateAndStartEffectForPool1);  // C1CCB0
+		DeclareAddress(CreateEffectForPool2Renamed);  // C1CCE0
+		DeclareAddress(StartOrStopEffectFromPool1);  // C1FA20
+		DeclareAddress(StartOrStopEffectFromPool2);  // C1CE60
+		DeclareAddress(GetEffectFromPools);
+		DeclareAddress(StopEffectFromPools);
+		DeclareAddress(PlayVoice);  // C1CEC0
 	}
 }

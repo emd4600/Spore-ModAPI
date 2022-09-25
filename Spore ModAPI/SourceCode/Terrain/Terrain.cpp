@@ -114,8 +114,8 @@ namespace Terrain
 		, mAtmosphereMap()
 		, field_20C()
 		, field_210()
-		, field_290()
-		, field_2A4()
+		, factoredTerrainUserColorElevations()
+		, factoredTerrainUserColorElevationColors()
 	{
 	}
 

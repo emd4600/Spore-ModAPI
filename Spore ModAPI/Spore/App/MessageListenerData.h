@@ -28,6 +28,7 @@ namespace App
 		/* 04h */	IMessageListener* mpMessageListener;
 		/* 08h */	uint32_t* mpMessageIDs;
 		/* 0Ch */	size_t mNumMessageIDs;
-		/* 10h */	int field_98;
+		/* 10h */	int field_10;
 	};
+	ASSERT_SIZE(MessageListenerData, 0x14);
 }

@@ -70,9 +70,7 @@ namespace Simulator
 		/* B00h */	int field_B00;
 		/* B04h */	int field_B04;
 		/* B08h */	int field_B08;
-		/* B0Ch */	float field_B0C;
-		/* B10h */	float field_B10;
-		/* B14h */	float field_B14;
+		/* B0Ch */	Vector3 field_B0C;
 		/* B18h */	float field_B18;  // 10.0
 		/* B1Ch */	VehicleLocomotion mLocomotion;
 		/* B20h */	VehiclePurpose mPurpose;
