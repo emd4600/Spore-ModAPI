@@ -69,7 +69,11 @@ namespace Simulator
 		/* 38h */	virtual void SetPosition(const Vector3& value);
 		/* 3Ch */	virtual void SetOrientation(const Quaternion& value);
 		/* 40h */	virtual void SetScale(float fValue);
-		/* 44h */	virtual void cSpatialObject_func44h(const Vector3& position, const Quaternion& orientation);  // something related with physics
+		/// Changes the position and orientation of the object recalculating its physics.
+		/// For example, it can be used to teleport creatures (using SetOffset() manually just moves them back to their original position)
+		/// @param position
+		/// @param orientation
+		/* 44h */	virtual void Teleport(const Vector3& position, const Quaternion& orientation); 
 		/* 48h */	virtual bool IsOnView();
 		/* 4Ch */	virtual void SetIsOnView(bool bValue);
 		/* 50h */	virtual bool IsSelected();
