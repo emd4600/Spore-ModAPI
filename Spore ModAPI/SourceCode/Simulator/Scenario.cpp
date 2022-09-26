@@ -71,6 +71,6 @@ namespace Simulator
 		Args(pFirst, pSecond, p));
 
 
-	auto_METHOD_VOID(cScenarioPlayMode, SetCurrentAct, Args(int index), Args(index));
+	auto_METHOD_VOID(cScenarioPlayMode, SetCurrentAct, Args(int index, bool arg), Args(index, arg));
 }
 #endif
