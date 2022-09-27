@@ -652,9 +652,9 @@
                 </tr>
               </tfoot>
             </table>
-<p>This can be used, for example, to check if a window is visible:</p><pre class="m-code"><span class="n">IWindow</span><span class="o">*</span> <span class="n">pWindow</span> <span class="o">=</span> <span class="p">....;</span>
+<p>This can be used, for example, to check if a window is visible:</p><pre class="m-code"><span class="n">IWindow</span><span class="o">*</span><span class="w"> </span><span class="n">pWindow</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">....;</span><span class="w"></span>
 
-<span class="k">if</span> <span class="p">(</span><span class="n">pWindow</span><span class="o">-&gt;</span><span class="n">GetFlags</span><span class="p">()</span> <span class="o">&amp;</span> <span class="n">kWinFlagVisible</span><span class="p">)</span> <span class="p">...</span></pre>
+<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">pWindow</span><span class="o">-&gt;</span><span class="n">GetFlags</span><span class="p">()</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">kWinFlagVisible</span><span class="p">)</span><span class="w"> </span><span class="p">...</span><span class="w"></span></pre>
           </div></section>
           <section class="m-doc-details" id="a1c32764e719342e31fb57fd547f73aaa"><div>
             <h3>
@@ -973,9 +973,9 @@
                 </tr>
               </tbody>
             </table>
-<p>This can be used, for example, to toggle visibility:</p><pre class="m-code"><span class="n">IWindow</span><span class="o">*</span> <span class="n">pWindow</span> <span class="o">=</span> <span class="p">....;</span>
+<p>This can be used, for example, to toggle visibility:</p><pre class="m-code"><span class="n">IWindow</span><span class="o">*</span><span class="w"> </span><span class="n">pWindow</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">....;</span><span class="w"></span>
 
-<span class="n">pWindow</span><span class="o">-&gt;</span><span class="n">SetFlag</span><span class="p">(</span><span class="n">kWinFlagVisible</span><span class="p">,</span> <span class="nb">false</span><span class="p">);</span>  <span class="c1">// hide this window</span></pre>
+<span class="n">pWindow</span><span class="o">-&gt;</span><span class="n">SetFlag</span><span class="p">(</span><span class="n">kWinFlagVisible</span><span class="p">,</span><span class="w"> </span><span class="nb">false</span><span class="p">);</span><span class="w">  </span><span class="c1">// hide this window</span></pre>
           </div></section>
           <section class="m-doc-details" id="ae098a66b03067951bf14806662575988"><div>
             <h3>
@@ -1385,24 +1385,24 @@
               <span class="m-doc-wrap-bumper"><a href="class_u_t_f_win_1_1_window_children.html" class="m-doc">WindowChildren</a> UTFWin::<wbr />IWindow::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#aadd5fed7f66213fe296e815833cbe05f" class="m-doc-self">children</a>(</span><span class="m-doc-wrap">)</span></span>
             </h3>
             <p>Returns an structure that allows to iterate through the children of this window.</p>
-<p>Example usage:</p><pre class="m-code"><span class="n">IWindow</span><span class="o">*</span> <span class="n">pWindow</span> <span class="o">=</span> <span class="p">...;</span>
+<p>Example usage:</p><pre class="m-code"><span class="n">IWindow</span><span class="o">*</span><span class="w"> </span><span class="n">pWindow</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">...;</span><span class="w"></span>
 
-<span class="k">for</span> <span class="p">(</span><span class="n">IWindow</span><span class="o">*</span> <span class="nl">pChild</span> <span class="p">:</span> <span class="n">children</span><span class="p">())</span>
-<span class="p">{</span>
-    <span class="p">...</span>
-<span class="p">}</span></pre>
+<span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">IWindow</span><span class="o">*</span><span class="w"> </span><span class="n">pChild</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">children</span><span class="p">())</span><span class="w"></span>
+<span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="p">...</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span></pre>
           </div></section>
           <section class="m-doc-details" id="ac350481231351d281c3132ca831b5883"><div>
             <h3>
               <span class="m-doc-wrap-bumper"><a href="class_u_t_f_win_1_1_window_procedures.html" class="m-doc">WindowProcedures</a> UTFWin::<wbr />IWindow::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ac350481231351d281c3132ca831b5883" class="m-doc-self">procedures</a>(</span><span class="m-doc-wrap">)</span></span>
             </h3>
             <p>Returns an structure that allows to iterate through the <a href="class_u_t_f_win_1_1_i_win_proc.html" class="m-doc">IWinProc</a> objects of this window.</p>
-<p>Example usage:</p><pre class="m-code"><span class="n">IWindow</span><span class="o">*</span> <span class="n">pWindow</span> <span class="o">=</span> <span class="p">...;</span>
+<p>Example usage:</p><pre class="m-code"><span class="n">IWindow</span><span class="o">*</span><span class="w"> </span><span class="n">pWindow</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">...;</span><span class="w"></span>
 
-<span class="k">for</span> <span class="p">(</span><span class="n">IWinProc</span><span class="o">*</span> <span class="nl">pProcedure</span> <span class="p">:</span> <span class="n">pWindow</span><span class="o">-&gt;</span><span class="n">procedures</span><span class="p">())</span>
-<span class="p">{</span>
-    <span class="p">...</span>
-<span class="p">}</span></pre>
+<span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">IWinProc</span><span class="o">*</span><span class="w"> </span><span class="n">pProcedure</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">pWindow</span><span class="o">-&gt;</span><span class="n">procedures</span><span class="p">())</span><span class="w"></span>
+<span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="p">...</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span></pre>
           </div></section>
           <section class="m-doc-details" id="a627c18a80c4b98141f3f87480732aa42"><div>
             <h3>

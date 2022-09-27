@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Simulator::cScenarioData class | Spore ModAPI SDK for creating C++ mods for Spore</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,600,600i%7CSource+Code+Pro:400,400i,600" />
+  <link rel="stylesheet" href="m-dark.css" />
+  <link rel="stylesheet" href="m-documentation.css" />
+  <link rel="icon" href="Spore_ModAPI_Icon.png" type="image/png" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#22272e" />
+</head>
+<body>
+<header><nav id="navigation">
+  <div class="m-container">
+    <div class="m-row">
+      <a href="index.html" id="m-navbar-brand" class="m-col-t-8 m-col-m-none m-left-m"><img src="Spore_ModAPI_Icon.png" />Spore ModAPI <span class="m-thin">SDK for creating C++ mods for Spore</span></a>
+      <div class="m-col-t-4 m-hide-m m-text-right m-nopadr">
+        <a href="#search" class="m-doc-search-icon" title="Search" onclick="return showSearch()"><svg style="height: 0.9rem;" viewBox="0 0 16 16">
+          <path id="m-doc-search-icon-path" d="m6 0c-3.31 0-6 2.69-6 6 0 3.31 2.69 6 6 6 1.49 0 2.85-0.541 3.89-1.44-0.0164 0.338 0.147 0.759 0.5 1.15l3.22 3.79c0.552 0.614 1.45 0.665 2 0.115 0.55-0.55 0.499-1.45-0.115-2l-3.79-3.22c-0.392-0.353-0.812-0.515-1.15-0.5 0.895-1.05 1.44-2.41 1.44-3.89 0-3.31-2.69-6-6-6zm0 1.56a4.44 4.44 0 0 1 4.44 4.44 4.44 4.44 0 0 1-4.44 4.44 4.44 4.44 0 0 1-4.44-4.44 4.44 4.44 0 0 1 4.44-4.44z"/>
+        </svg></a>
+        <a id="m-navbar-show" href="#navigation" title="Show navigation"></a>
+        <a id="m-navbar-hide" href="#" title="Hide navigation"></a>
+      </div>
+      <div id="m-navbar-collapse" class="m-col-t-12 m-show-m m-col-m-none m-right-m">
+        <div class="m-row">
+          <ol class="m-col-t-6 m-col-m-none">
+            <li><a href="pages.html">Tutorials</a></li>
+            <li><a href="namespaces.html">Namespaces</a></li>
+          </ol>
+          <ol class="m-col-t-6 m-col-m-none" start="3">
+            <li><a href="annotated.html">Classes</a></li>
+            <li><a href="files.html">Files</a></li>
+            <li class="m-show-m"><a href="#search" class="m-doc-search-icon" title="Search" onclick="return showSearch()"><svg style="height: 0.9rem;" viewBox="0 0 16 16">
+              <use href="#m-doc-search-icon-path" />
+            </svg></a></li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav></header>
+<main><article>
+  <div class="m-container m-container-inflatable">
+    <div class="m-row">
+      <div class="m-col-l-10 m-push-l-1">
+        <h1>
+          <span class="m-breadcrumb"><a href="namespace_simulator.html">Simulator</a>::<wbr/></span>cScenarioData <span class="m-thin">class</span>
+          <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="c_scenario_data_8h.html">&lt;Spore/Simulator/cScenarioData.h&gt;</a></div>
+        </h1>
+        <p><span></span></p>
+        <div class="m-block m-default">
+          <h3>Contents</h3>
+          <ul>
+            <li>
+              Reference
+              <ul>
+                <li><a href="#base-classes">Base classes</a></li>
+                <li><a href="#pub-static-methods">Public static functions</a></li>
+                <li><a href="#pub-methods">Public functions</a></li>
+                <li><a href="#pub-attribs">Public variables</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+        <section id="base-classes">
+          <h2><a href="#base-classes">Base classes</a></h2>
+          <dl class="m-doc">
+            <dt>
+              class <a href="class_app_1_1_i_unmanaged_message_listener.html" class="m-doc">App::IUnmanagedMessageListener</a>
+            </dt>
+            <dd>Same as <a href="class_app_1_1_i_message_listener.html" class="m-doc">App::<wbr />IMessageListener</a>, but this one does not use ref-counting.</dd>
+            <dt>
+              class <a href="class_editors_1_1_i_nameable_entity.html" class="m-doc">Editors::INameableEntity</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              class <a href="class_default_ref_counted.html" class="m-doc">DefaultRefCounted</a>
+            </dt>
+            <dd>The default implementation of a reference counted class.</dd>
+          </dl>
+        </section>
+        <section id="pub-static-methods">
+          <h2><a href="#pub-static-methods">Public static functions</a></h2>
+          <dl class="m-doc">
+            <dt id="a1b1721ff54f29324f7475e5cb6b108c2">
+              <span class="m-doc-wrap-bumper">static auto <a href="#a1b1721ff54f29324f7475e5cb6b108c2" class="m-doc-self">GetEditModeActIndex</a>(</span><span class="m-doc-wrap">) -&gt; int</span>
+            </dt>
+            <dd>Returns the index of the current act in the adventure edit mode.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">static auto <a href="#a3018c6b2ef9736c81215cbce75ed68a2" class="m-doc">CreateObjectInstance</a>(</span><span class="m-doc-wrap">const <a href="struct_resource_key.html" class="m-doc">ResourceKey</a>&amp; name,
+              const <a href="struct_math_1_1_vector3.html" class="m-doc">Vector3</a>&amp; position,
+              const <a href="struct_math_1_1_quaternion.html" class="m-doc">Quaternion</a>&amp; orientation,
+              float scale,
+              bool isAvatar,
+              int scenarioClassIndex,
+              <a href="class_simulator_1_1c_scenario_marker.html" class="m-doc">cScenarioMarker</a>* pMarker,
+              <a href="class_simulator_1_1c_scenario_marker_act.html" class="m-doc">cScenarioMarkerAct</a>* pActs,
+              int actIndex) -&gt; <a href="class_simulator_1_1c_game_data.html" class="m-doc">cGameData</a>*</span>
+            </dt>
+            <dd>Create an <a href="namespace_simulator.html" class="m-doc">Simulator</a> object instance for a scenario object class.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">static auto <a href="#aff60c5407559f322263bc99d5189128d" class="m-doc">CreatePowerupObjectInstance</a>(</span><span class="m-doc-wrap"><a href="class_app_1_1_property_list.html" class="m-doc">App::<wbr />PropertyList</a>* pPropList,
+              <a href="class_simulator_1_1c_scenario_marker.html" class="m-doc">cScenarioMarker</a>* pMarker,
+              int scenarioClassIndex) -&gt; <a href="class_simulator_1_1c_game_data.html" class="m-doc">cGameData</a>*</span>
+            </dt>
+            <dd>Called by <a href="class_simulator_1_1c_scenario_data.html#a3018c6b2ef9736c81215cbce75ed68a2" class="m-doc">CreateObjectInstance()</a> (and another method related with respawners), creates the object instance of a powerup adventure object.</dd>
+          </dl>
+        </section>
+        <section id="pub-methods">
+          <h2><a href="#pub-methods">Public functions</a></h2>
+          <dl class="m-doc">
+            <dt id="a50793291f3781c525342c64890d09230">
+              <span class="m-doc-wrap-bumper">auto <a href="#a50793291f3781c525342c64890d09230" class="m-doc-self">GetGenre</a>(</span><span class="m-doc-wrap">) -&gt; <a href="namespace_simulator.html#a7b46e49652b772806664b81d8828175f" class="m-doc">ScenarioGenre</a> <span class="m-label m-flat m-warning">virtual</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="aecfe44e3e36f2ddca8b9f26343a00f44">
+              <span class="m-doc-wrap-bumper">void <a href="#aecfe44e3e36f2ddca8b9f26343a00f44" class="m-doc-self">SetGenre</a>(</span><span class="m-doc-wrap"><a href="namespace_simulator.html#a7b46e49652b772806664b81d8828175f" class="m-doc">ScenarioGenre</a> genre) <span class="m-label m-flat m-warning">virtual</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a94e9f7b649f5b9d2993610b6f457612a">
+              <span class="m-doc-wrap-bumper">void <a href="#a94e9f7b649f5b9d2993610b6f457612a" class="m-doc-self">Initialize</a>(</span><span class="m-doc-wrap">bool)</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">void <a href="#a39da6ef18f0e5469b364e6e3be2ce7ad" class="m-doc">StartHistoryEntry</a>(</span><span class="m-doc-wrap">)</span>
+            </dt>
+            <dd>Starts a history entry (i.e.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">void <a href="#a201b861373b02e8691b3b55c4ccc6e0a" class="m-doc">CommitHistoryEntry</a>(</span><span class="m-doc-wrap">)</span>
+            </dt>
+            <dd>Commits an on-going history entry (i.e.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a66ba645fa5950971509257b66a6c7381" class="m-doc">GetClass</a>(</span><span class="m-doc-wrap">int index) -&gt; <a href="class_simulator_1_1c_scenario_class.html" class="m-doc">cScenarioClass</a>*</span>
+            </dt>
+            <dd>Returns the scenario class identified by the given index.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a845c63fddefe312007f99052e1659157" class="m-doc">GetCurrentClassAct</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_game_data.html" class="m-doc">cGameData</a>* pObject) -&gt; <a href="class_simulator_1_1c_scenario_class_act.html" class="m-doc">cScenarioClassAct</a>*</span>
+            </dt>
+            <dd>Retrieves the scenario act-specific data of a certain object.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#af8be5af3c43c04f55c99dd19c743cc01" class="m-doc">GetObjectForMarker</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_scenario_marker.html" class="m-doc">cScenarioMarker</a>* pMarker) -&gt; <a href="class_simulator_1_1c_game_data.html" class="m-doc">cGameData</a>*</span>
+            </dt>
+            <dd>Returns the game data object that represents the given marker.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#af5a00e896d5bd6d2dcb3e31dbb025238" class="m-doc">GetMarkerForObject</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_game_data.html" class="m-doc">cGameData</a>* pGameData) -&gt; <a href="class_simulator_1_1c_scenario_marker.html" class="m-doc">cScenarioMarker</a>*</span>
+            </dt>
+            <dd>Returns the scenario marker information that is represented by the given game data object.</dd>
+          </dl>
+        </section>
+        <section id="pub-attribs">
+          <h2><a href="#pub-attribs">Public variables</a></h2>
+          <dl class="m-doc">
+            <dt id="acbd805880f3cc6bf8ed417fbf5a93e21">
+              <a href="c_scenario_resource_8h.html#a505926efb829928a096111d5b207ca4e" class="m-doc">cScenarioResourcePtr</a> <a href="#acbd805880f3cc6bf8ed417fbf5a93e21" class="m-doc-self">mpResource</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="adaf09eab0c1a52eab64f6ea5b29ea174">
+              bool <a href="#adaf09eab0c1a52eab64f6ea5b29ea174" class="m-doc-self">mHadMissingAssets</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a081c76ca266bfa504999641e77d5ff01">
+              int <a href="#a081c76ca266bfa504999641e77d5ff01" class="m-doc-self">field_18</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="abee69dd0c42b45c979d6b72b76c93ca4">
+              bool <a href="#abee69dd0c42b45c979d6b72b76c93ca4" class="m-doc-self">field_1C</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="af949a23633e81e3838f51620264e8bc4">
+              int <a href="#af949a23633e81e3838f51620264e8bc4" class="m-doc-self">field_20</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a0538efd1e01d3c8cd6b70bc1f7c60dec">
+              int <a href="#a0538efd1e01d3c8cd6b70bc1f7c60dec" class="m-doc-self">field_24</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="aea2d1b67d5113861a62af3036cf614c0">
+              int <a href="#aea2d1b67d5113861a62af3036cf614c0" class="m-doc-self">field_28</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="ac9506dd56c2f3c9f76280f32e53196be">
+              bool <a href="#ac9506dd56c2f3c9f76280f32e53196be" class="m-doc-self">field_2C</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a696de82f1d5a8584bedd7bc9bae1904a">
+              int <a href="#a696de82f1d5a8584bedd7bc9bae1904a" class="m-doc-self">field_30</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a3e3f130e653fc543b25f20147c0cbaee">
+              int <a href="#a3e3f130e653fc543b25f20147c0cbaee" class="m-doc-self">field_34</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a5ab3d12d2ea7df079a28801afa402062">
+              <a href="_texture_8h.html#affea3369120131ed058702d2945a10b4" class="m-doc">TexturePtr</a> <a href="#a5ab3d12d2ea7df079a28801afa402062" class="m-doc-self">mThumbnail</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="adb08dc725f6c18278d474156eb97ab8f">
+              <a href="_texture_8h.html#affea3369120131ed058702d2945a10b4" class="m-doc">TexturePtr</a> <a href="#adb08dc725f6c18278d474156eb97ab8f" class="m-doc-self">mLargeThumbnail</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a973f7032d27f0bf52f1827cc2f5d95cb">
+              int <a href="#a973f7032d27f0bf52f1827cc2f5d95cb" class="m-doc-self">field_40</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a8ca306c79d25e1ca9c8da2b6ab100740">
+              int <a href="#a8ca306c79d25e1ca9c8da2b6ab100740" class="m-doc-self">field_44</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="aa8c8b5e6d709c6852b0ef1e3b4ac3a5e">
+              int <a href="#aa8c8b5e6d709c6852b0ef1e3b4ac3a5e" class="m-doc-self">field_48</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="ae31ea35ebc565e4d4de0e17aa62c1c0b">
+              string16 <a href="#ae31ea35ebc565e4d4de0e17aa62c1c0b" class="m-doc-self">mName</a>
+            </dt>
+            <dd>Whenever the name is changed (use the <a href="class_editors_1_1_i_nameable_entity.html#ae640e5fd2fc9ef794dc30c694dadcf81" class="m-doc">SetName()</a> method) it sends a <code>0x7AA519DC</code> message.</dd>
+            <dt id="a5a4e278c5daab0a5d791b354b65730f4">
+              string16 <a href="#a5a4e278c5daab0a5d791b354b65730f4" class="m-doc-self">mDescription</a>
+            </dt>
+            <dd>Whenever the description is changed (use the <a href="class_editors_1_1_i_nameable_entity.html#a2ab373178655dda8af2d8ad319ee383c" class="m-doc">SetDescription()</a> method) it sends a <code>0x14418C3F</code> message.</dd>
+            <dt id="a3eced3e54d14b6caff5a0c4561d914f5">
+              string16 <a href="#a3eced3e54d14b6caff5a0c4561d914f5" class="m-doc-self">mTags</a>
+            </dt>
+            <dd>Whenever the tags are changed (use the <a href="class_editors_1_1_i_nameable_entity.html#a9dfcf9ad4f40573e3ef60bfde555a3d5" class="m-doc">SetTags()</a> method) it sends a <code>0x73127E6</code> message.</dd>
+            <dt id="a33b2145bf3d1f9eed43d5634c417d25b">
+              <a href="namespace_simulator.html#a7b46e49652b772806664b81d8828175f" class="m-doc">ScenarioGenre</a> <a href="#a33b2145bf3d1f9eed43d5634c417d25b" class="m-doc-self">mGenre</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="ade9cf6674b3710b23cc8a19338270a92">
+              int <a href="#ade9cf6674b3710b23cc8a19338270a92" class="m-doc-self">field_80</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a9a89259011a6e60d192df9dee2a0636a">
+              bool <a href="#a9a89259011a6e60d192df9dee2a0636a" class="m-doc-self">mGenreHasChanged</a>
+            </dt>
+            <dd>Set by the <a href="class_simulator_1_1c_scenario_data.html#aecfe44e3e36f2ddca8b9f26343a00f44" class="m-doc">SetGenre()</a> function when the genre changes.</dd>
+            <dt id="abfb6c8d31929c51a2a38f0ce0743d9ed">
+              bool <a href="#abfb6c8d31929c51a2a38f0ce0743d9ed" class="m-doc-self">mMetadataHasChanged</a>
+            </dt>
+            <dd>Set to true when the name, description, or tags are changed.</dd>
+            <dt id="a53dd298679a33276d97fb0b04abc4e0a">
+              int <a href="#a53dd298679a33276d97fb0b04abc4e0a" class="m-doc-self">field_88</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="ab81546eb18b3520a73998f9056e5c0ac">
+              <a href="class_simulator_1_1c_scenario_marker.html" class="m-doc">cScenarioMarker</a>* <a href="#ab81546eb18b3520a73998f9056e5c0ac" class="m-doc-self">mpAvatarMarker</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="ad95a8bb0d0048c64bda03049293fdaad">
+              hash_map&lt;<a href="class_simulator_1_1c_game_data.html" class="m-doc">cGameData</a>*, int&gt; <a href="#ad95a8bb0d0048c64bda03049293fdaad" class="m-doc-self">mObjectsToMarkersMap</a>
+            </dt>
+            <dd>Maps to each scenario marker (its index) its instantiated <a href="class_simulator_1_1c_game_data.html" class="m-doc">cGameData</a> object.</dd>
+            <dt id="a2fff69b08684501dbc189fb87d5cb5dc">
+              hash_map&lt;int, <a href="c_game_data_8h.html#a16ee71c4f398f8560845728987775f11" class="m-doc">cGameDataPtr</a>&gt; <a href="#a2fff69b08684501dbc189fb87d5cb5dc" class="m-doc-self">mMarkersToObjectsMap</a>
+            </dt>
+            <dd>Maps each scenario marker (its index) to its instantiated <a href="class_simulator_1_1c_game_data.html" class="m-doc">cGameData</a> object.</dd>
+            <dt id="ac4030a79824cce6d9258ab8ef35d386a">
+              <a href="c_scenario_economy_8h.html#a510c48d91ccf172363a59cadd0e0a578" class="m-doc">cScenarioDataEconomyPtr</a> <a href="#ac4030a79824cce6d9258ab8ef35d386a" class="m-doc-self">mpEconomy</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a3e91bceccc6c1f22ad1f637077ab644c">
+              <a href="struct_app_1_1_message_listener_data.html" class="m-doc">App::<wbr />MessageListenerData</a> <a href="#a3e91bceccc6c1f22ad1f637077ab644c" class="m-doc-self">field_D4</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a2bee7b409fe5f7ddc7a252fdfb71f837">
+              int <a href="#a2bee7b409fe5f7ddc7a252fdfb71f837" class="m-doc-self">field_E8</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a467b17e3162a05fe1b05bbf5cd2b6ea4">
+              int <a href="#a467b17e3162a05fe1b05bbf5cd2b6ea4" class="m-doc-self">field_EC</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a74fbaa30e2a278e71001a46673404cef">
+              int <a href="#a74fbaa30e2a278e71001a46673404cef" class="m-doc-self">field_F0</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a53fce340126e9ed332a8f4da419d11bf">
+              int <a href="#a53fce340126e9ed332a8f4da419d11bf" class="m-doc-self">field_F4</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a7124b0cc64efeaf8fc8410a6fd9f606f">
+              int <a href="#a7124b0cc64efeaf8fc8410a6fd9f606f" class="m-doc-self">field_F8</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="ab6b4931f36918786f38930437dd91978">
+              int <a href="#ab6b4931f36918786f38930437dd91978" class="m-doc-self">field_FC</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="aeea70a0d4371e4e7d8fb5fd6e72c0b62">
+              int <a href="#aeea70a0d4371e4e7d8fb5fd6e72c0b62" class="m-doc-self">field_100</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="ad830683416ebe40b8f4a85c5f8092282">
+              int <a href="#ad830683416ebe40b8f4a85c5f8092282" class="m-doc-self">field_104</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="aeb75cfb2a0b34d1ca3bb7b554a7b6dc8">
+              int <a href="#aeb75cfb2a0b34d1ca3bb7b554a7b6dc8" class="m-doc-self">field_108</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="ae3ad40391bcb3fe62414d789e40c15ac">
+              int <a href="#ae3ad40391bcb3fe62414d789e40c15ac" class="m-doc-self">field_10C</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a3567d496380b6c2ec3745c80eacbfb1e">
+              int <a href="#a3567d496380b6c2ec3745c80eacbfb1e" class="m-doc-self">field_110</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a8f58510206116bfcfc6f508add27e006">
+              int <a href="#a8f58510206116bfcfc6f508add27e006" class="m-doc-self">field_114</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a74a64bb1668fe43706d8bc5e67822f38">
+              int <a href="#a74a64bb1668fe43706d8bc5e67822f38" class="m-doc-self">field_118</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="af9729433fa4eae2b412b38ca34e7c624">
+              int <a href="#af9729433fa4eae2b412b38ca34e7c624" class="m-doc-self">field_11C</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a0b3ab50f4617cae1b13bc43d1b81eeb4">
+              int <a href="#a0b3ab50f4617cae1b13bc43d1b81eeb4" class="m-doc-self">field_120</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="ad663d772aef97f4fce68e569d0e83034">
+              bool <a href="#ad663d772aef97f4fce68e569d0e83034" class="m-doc-self">mHasLoaded</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a650f53ae754b08048be2a379bfeb968f">
+              vector&lt;int&gt; <a href="#a650f53ae754b08048be2a379bfeb968f" class="m-doc-self">field_128</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="adddab4a35d332c391b24f39b35b538a0">
+              hash_map&lt;int, int&gt; <a href="#adddab4a35d332c391b24f39b35b538a0" class="m-doc-self">field_13C</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a3aefba4683a502d0023167d7a2f59efa">
+              hash_map&lt;int, int&gt; <a href="#a3aefba4683a502d0023167d7a2f59efa" class="m-doc-self">field_15C</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a0a7ea4948d8e4ce3f2dabbf419f24400">
+              hash_map&lt;int, int&gt; <a href="#a0a7ea4948d8e4ce3f2dabbf419f24400" class="m-doc-self">field_17C</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="abd78f94b82814bfe0008e5b831cdaeb6">
+              hash_map&lt;int, int&gt; <a href="#abd78f94b82814bfe0008e5b831cdaeb6" class="m-doc-self">field_19C</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="aabbec145fe68d7457fea67c4bc4ec2b9">
+              hash_map&lt;int, int&gt; <a href="#aabbec145fe68d7457fea67c4bc4ec2b9" class="m-doc-self">field_1BC</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="ac8e61f9c4a81311385222759058e1411">
+              hash_map&lt;int, int&gt; <a href="#ac8e61f9c4a81311385222759058e1411" class="m-doc-self">field_1DC</a>
+            </dt>
+            <dd><span></span></dd>
+          </dl>
+        </section>
+        <section>
+          <h2>Function documentation</h2>
+          <section class="m-doc-details" id="a3018c6b2ef9736c81215cbce75ed68a2"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">static <a href="class_simulator_1_1c_game_data.html" class="m-doc">cGameData</a>* Simulator::<wbr />cScenarioData::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a3018c6b2ef9736c81215cbce75ed68a2" class="m-doc-self">CreateObjectInstance</a>(</span><span class="m-doc-wrap">const <a href="struct_resource_key.html" class="m-doc">ResourceKey</a>&amp; name,
+              const <a href="struct_math_1_1_vector3.html" class="m-doc">Vector3</a>&amp; position,
+              const <a href="struct_math_1_1_quaternion.html" class="m-doc">Quaternion</a>&amp; orientation,
+              float scale,
+              bool isAvatar,
+              int scenarioClassIndex,
+              <a href="class_simulator_1_1c_scenario_marker.html" class="m-doc">cScenarioMarker</a>* pMarker,
+              <a href="class_simulator_1_1c_scenario_marker_act.html" class="m-doc">cScenarioMarkerAct</a>* pActs,
+              int actIndex)</span></span>
+            </h3>
+            <p>Create an <a href="namespace_simulator.html" class="m-doc">Simulator</a> object instance for a scenario object class.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">name</td>
+                  <td>File name of the object to create (usually a <code>.crt</code>, <code>.bld</code>, <code>.prop</code> etc)</td>
+                </tr>
+                <tr>
+                  <td>position</td>
+                  <td>World position for the newly created object</td>
+                </tr>
+                <tr>
+                  <td>orientation</td>
+                  <td>World orientation for the newly created object</td>
+                </tr>
+                <tr>
+                  <td>scale</td>
+                  <td>Scale of the object</td>
+                </tr>
+                <tr>
+                  <td>isAvatar</td>
+                  <td>True if the object being created is the avatar (i.e. the player creature)</td>
+                </tr>
+                <tr>
+                  <td>scenarioClassIndex</td>
+                  <td>Index to the scenario class that describes this object (within the <a href="class_simulator_1_1c_scenario_resource.html" class="m-doc">cScenarioResource</a> classes vector)</td>
+                </tr>
+                <tr>
+                  <td>pMarker</td>
+                  <td><br /></td>
+                </tr>
+                <tr>
+                  <td>pActs</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>actIndex</td>
+                  <td></td>
+                </tr>
+              </tbody>
+            </table>
+<p>It also calls the <a href="class_simulator_1_1c_game_noun_manager.html#a85f0ae1786fe9e3d8c7b6aa988fb91d0" class="m-doc">cGameNounManager::<wbr />UpdateModels()</a> method.</p>
+          </div></section>
+          <section class="m-doc-details" id="aff60c5407559f322263bc99d5189128d"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">static <a href="class_simulator_1_1c_game_data.html" class="m-doc">cGameData</a>* Simulator::<wbr />cScenarioData::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#aff60c5407559f322263bc99d5189128d" class="m-doc-self">CreatePowerupObjectInstance</a>(</span><span class="m-doc-wrap"><a href="class_app_1_1_property_list.html" class="m-doc">App::<wbr />PropertyList</a>* pPropList,
+              <a href="class_simulator_1_1c_scenario_marker.html" class="m-doc">cScenarioMarker</a>* pMarker,
+              int scenarioClassIndex)</span></span>
+            </h3>
+            <p>Called by <a href="class_simulator_1_1c_scenario_data.html#a3018c6b2ef9736c81215cbce75ed68a2" class="m-doc">CreateObjectInstance()</a> (and another method related with respawners), creates the object instance of a powerup adventure object.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">pPropList</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>pMarker</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>scenarioClassIndex</td>
+                  <td></td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>Returns</th>
+                  <td>The created game object</td>
+                </tr>
+              </tfoot>
+            </table>
+<p>The instance is a <a href="class_simulator_1_1c_ornament.html" class="m-doc">cOrnament</a> for most objects, or a <a href="class_simulator_1_1c_interactive_ornament.html" class="m-doc">cInteractiveOrnament</a> for objects that can be picked up. Teleporters create two objects (for the entrance and exit teleporters) and return the entrance one.</p>
+          </div></section>
+          <section class="m-doc-details" id="a39da6ef18f0e5469b364e6e3be2ce7ad"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">void Simulator::<wbr />cScenarioData::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a39da6ef18f0e5469b364e6e3be2ce7ad" class="m-doc-self">StartHistoryEntry</a>(</span><span class="m-doc-wrap">)</span></span>
+            </h3>
+            <p>Starts a history entry (i.e.</p>
+<p>one undo/redo action) based on the current state of the scenario data (the <code>mpResource</code> field). This must be called before changing the data; after the data has been modified, call <a href="class_simulator_1_1c_scenario_data.html#a201b861373b02e8691b3b55c4ccc6e0a" class="m-doc">CommitHistoryEntry()</a> to finish this history entry.</p>
+          </div></section>
+          <section class="m-doc-details" id="a201b861373b02e8691b3b55c4ccc6e0a"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">void Simulator::<wbr />cScenarioData::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a201b861373b02e8691b3b55c4ccc6e0a" class="m-doc-self">CommitHistoryEntry</a>(</span><span class="m-doc-wrap">)</span></span>
+            </h3>
+            <p>Commits an on-going history entry (i.e.</p>
+<p>one undo/redo action) based on the current state of the scenario data (the <code>mpResource</code> field). This must be called after changing the data; before modifying the data you must have called <a href="class_simulator_1_1c_scenario_data.html#a39da6ef18f0e5469b364e6e3be2ce7ad" class="m-doc">StartHistoryEntry()</a>.</p>
+          </div></section>
+          <section class="m-doc-details" id="a66ba645fa5950971509257b66a6c7381"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"><a href="class_simulator_1_1c_scenario_class.html" class="m-doc">cScenarioClass</a>* Simulator::<wbr />cScenarioData::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a66ba645fa5950971509257b66a6c7381" class="m-doc-self">GetClass</a>(</span><span class="m-doc-wrap">int index)</span></span>
+            </h3>
+            <p>Returns the scenario class identified by the given index.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">index</td>
+                  <td></td>
+                </tr>
+              </tbody>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="a845c63fddefe312007f99052e1659157"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"><a href="class_simulator_1_1c_scenario_class_act.html" class="m-doc">cScenarioClassAct</a>* Simulator::<wbr />cScenarioData::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a845c63fddefe312007f99052e1659157" class="m-doc-self">GetCurrentClassAct</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_game_data.html" class="m-doc">cGameData</a>* pObject)</span></span>
+            </h3>
+            <p>Retrieves the scenario act-specific data of a certain object.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">pObject</td>
+                  <td></td>
+                </tr>
+              </tbody>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="af8be5af3c43c04f55c99dd19c743cc01"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"><a href="class_simulator_1_1c_game_data.html" class="m-doc">cGameData</a>* Simulator::<wbr />cScenarioData::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#af8be5af3c43c04f55c99dd19c743cc01" class="m-doc-self">GetObjectForMarker</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_scenario_marker.html" class="m-doc">cScenarioMarker</a>* pMarker)</span></span>
+            </h3>
+            <p>Returns the game data object that represents the given marker.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">pMarker</td>
+                  <td></td>
+                </tr>
+              </tbody>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="af5a00e896d5bd6d2dcb3e31dbb025238"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"><a href="class_simulator_1_1c_scenario_marker.html" class="m-doc">cScenarioMarker</a>* Simulator::<wbr />cScenarioData::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#af5a00e896d5bd6d2dcb3e31dbb025238" class="m-doc-self">GetMarkerForObject</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_game_data.html" class="m-doc">cGameData</a>* pGameData)</span></span>
+            </h3>
+            <p>Returns the scenario marker information that is represented by the given game data object.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">pGameData</td>
+                  <td></td>
+                </tr>
+              </tbody>
+            </table>
+          </div></section>
+        </section>
+      </div>
+    </div>
+  </div>
+</article></main>
+<div class="m-doc-search" id="search">
+  <a href="#!" onclick="return hideSearch()"></a>
+  <div class="m-container">
+    <div class="m-row">
+      <div class="m-col-m-8 m-push-m-2">
+        <div class="m-doc-search-header m-text m-small">
+          <div><span class="m-label m-default">Tab</span> / <span class="m-label m-default">T</span> to search, <span class="m-label m-default">Esc</span> to close</div>
+          <div id="search-symbolcount">&hellip;</div>
+        </div>
+        <div class="m-doc-search-content">
+          <form>
+            <input type="search" name="q" id="search-input" placeholder="Loading &hellip;" disabled="disabled" autofocus="autofocus" autocomplete="off" spellcheck="false" />
+          </form>
+          <noscript class="m-text m-danger m-text-center">Unlike everything else in the docs, the search functionality <em>requires</em> JavaScript.</noscript>
+          <div id="search-help" class="m-text m-dim m-text-center">
+            <p class="m-noindent">Search for symbols, directories, files, pages or
+            modules. You can omit any prefix from the symbol or file path; adding a
+            <code>:</code> or <code>/</code> suffix lists all members of given symbol or
+            directory.</p>
+            <p class="m-noindent">Use <span class="m-label m-dim">&darr;</span>
+            / <span class="m-label m-dim">&uarr;</span> to navigate through the list,
+            <span class="m-label m-dim">Enter</span> to go.
+            <span class="m-label m-dim">Tab</span> autocompletes common prefix, you can
+            copy a link to the result using <span class="m-label m-dim">⌘</span>
+            <span class="m-label m-dim">L</span> while <span class="m-label m-dim">⌘</span>
+            <span class="m-label m-dim">M</span> produces a Markdown link.</p>
+          </div>
+          <div id="search-notfound" class="m-text m-warning m-text-center">Sorry, nothing was found.</div>
+          <ul id="search-results"></ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="search-v1.js"></script>
+<script src="searchdata-v1.js" async="async"></script>
+<footer><nav>
+  <div class="m-container">
+    <div class="m-row">
+      <div class="m-col-l-10 m-push-l-1">
+        <p>Spore ModAPI SDK for creating C++ mods for Spore. Created with <a href="https://doxygen.org/">Doxygen</a> 1.8.16 and <a href="https://mcss.mosra.cz/">m.css</a>.</p>
+      </div>
+    </div>
+  </div>
+</nav></footer>
+</body>
+</html>

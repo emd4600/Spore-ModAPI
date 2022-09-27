@@ -48,7 +48,7 @@
           <span class="m-breadcrumb"><a href="namespace_editors.html">Editors</a>::<wbr/></span>cEditor <span class="m-thin">class</span>
           <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_editor_8h.html">&lt;Spore/Editors/Editor.h&gt;</a></div>
         </h1>
-        <p><span></span></p>
+        <p>Main class for editors.</p>
         <div class="m-block m-default">
           <h3>Contents</h3>
           <ul>
@@ -56,13 +56,13 @@
               Reference
               <ul>
                 <li><a href="#base-classes">Base classes</a></li>
-                <li><a href="#typeless-methods">Constructors, destructors, conversion operators</a></li>
                 <li><a href="#pub-methods">Public functions</a></li>
                 <li><a href="#pub-attribs">Public variables</a></li>
               </ul>
             </li>
           </ul>
         </div>
+<p>A single instance of this class exists during the whole game, and is used for all editors (except the Adventure editor, that one uses <a href="class_app_1_1c_scenario_mode.html" class="m-doc">App::<wbr />cScenarioMode</a>); you can access it with the Editor macro.</p>
         <section id="base-classes">
           <h2><a href="#base-classes">Base classes</a></h2>
           <dl class="m-doc">
@@ -92,18 +92,27 @@
             <dd>The default implementation of a reference counted class.</dd>
           </dl>
         </section>
-        <section id="typeless-methods">
-          <h2><a href="#typeless-methods">Constructors, destructors, conversion operators</a></h2>
-          <dl class="m-doc">
-            <dt id="adef3f855dcbc027ee9ff4804465f1696">
-              <span class="m-doc-wrap-bumper"><a href="#adef3f855dcbc027ee9ff4804465f1696" class="m-doc-self">~cEditor</a>(</span><span class="m-doc-wrap">) <span class="m-label m-flat m-warning">virtual</span></span>
-            </dt>
-            <dd><span></span></dd>
-          </dl>
-        </section>
         <section id="pub-methods">
           <h2><a href="#pub-methods">Public functions</a></h2>
           <dl class="m-doc">
+            <dt>
+              <span class="m-doc-wrap-bumper">void <a href="#a6f0d4dbdf72ee42c218148a816c93a91" class="m-doc">SetEditorModel</a>(</span><span class="m-doc-wrap"><a href="class_editors_1_1_editor_model.html" class="m-doc">EditorModel</a>* pEditorModel)</span>
+            </dt>
+            <dd>Changes the current editor model, updating the creation with the parts and paints of the new editor model.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">void <a href="#a53d1dae37471316f4259217895f77ecf" class="m-doc">CommitEditHistory</a>(</span><span class="m-doc-wrap">bool arg1,
+              <a href="class_editors_1_1_editor_state_edit_history.html" class="m-doc">EditorStateEditHistory</a>* pStateHistory = nullptr)</span>
+            </dt>
+            <dd>Adds an edit history (undo/redo) entry based on the current model of the editor.</dd>
+            <dt id="a519d7959b989994c0fc90b0ec84ef4f5">
+              <span class="m-doc-wrap-bumper">void <a href="#a519d7959b989994c0fc90b0ec84ef4f5" class="m-doc-self">Undo</a>(</span><span class="m-doc-wrap">bool,
+              bool)</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a6183fbd720c9baf0f4a8bf39c484cf0f">
+              <span class="m-doc-wrap-bumper">void <a href="#a6183fbd720c9baf0f4a8bf39c484cf0f" class="m-doc-self">Redo</a>(</span><span class="m-doc-wrap">)</span>
+            </dt>
+            <dd><span></span></dd>
             <dt>
               <span class="m-doc-wrap-bumper">auto <a href="#a10153c2328478f95228f7699ecf8240e" class="m-doc">IsMode</a>(</span><span class="m-doc-wrap"><a href="namespace_editors.html#ac58a0d836dc46427d3c2128f87430edd" class="m-doc">Mode</a> mode) const -&gt; bool</span>
             </dt>
@@ -291,32 +300,32 @@
               int <a href="#a713ad57351aa1fdf6eab4495624d8cbb" class="m-doc-self">field_C8</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="afdd53a3c3a07cda828e034e30a068c72">
-              intrusive_ptr&lt;<a href="class_editors_1_1_editor_rigblock.html" class="m-doc">EditorRigblock</a>&gt; <a href="#afdd53a3c3a07cda828e034e30a068c72" class="m-doc-self">mpActivePart</a>
+            <dt id="a28782ff345f1a7bce627f245c7460fd0">
+              <a href="_editor_rigblock_8h.html#ac23466b995d482a0e4ba9c16fb9b3ac7" class="m-doc">EditorRigblockPtr</a> <a href="#a28782ff345f1a7bce627f245c7460fd0" class="m-doc-self">mpActivePart</a>
+            </dt>
+            <dd>Rigblock that is being hovered, and where actions like mouse wheel scaling will be applied.</dd>
+            <dt id="abd28ea1223317eb215794a4549b46f41">
+              <a href="_editor_rigblock_8h.html#ac23466b995d482a0e4ba9c16fb9b3ac7" class="m-doc">EditorRigblockPtr</a> <a href="#abd28ea1223317eb215794a4549b46f41" class="m-doc-self">mpMovingPart</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="a5ab8321b743cb0dbda2b95a8c72f0b89">
-              intrusive_ptr&lt;<a href="class_editors_1_1_editor_rigblock.html" class="m-doc">EditorRigblock</a>&gt; <a href="#a5ab8321b743cb0dbda2b95a8c72f0b89" class="m-doc-self">mpMovingPart</a>
+            <dt id="a0a25eb9a3753c57681e8ca4fd6270240">
+              <a href="_editor_rigblock_8h.html#ac23466b995d482a0e4ba9c16fb9b3ac7" class="m-doc">EditorRigblockPtr</a> <a href="#a0a25eb9a3753c57681e8ca4fd6270240" class="m-doc-self">mpSelectedPart</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="acfb9aa0cc67baf492ec49f580852f561">
-              intrusive_ptr&lt;<a href="class_editors_1_1_editor_rigblock.html" class="m-doc">EditorRigblock</a>&gt; <a href="#acfb9aa0cc67baf492ec49f580852f561" class="m-doc-self">mpSelectedPart</a>
+            <dt id="a367ce6e3d304a5ba37a8872ac9191b4c">
+              <a href="_object_8h.html#a0ea2b8888d2f409fc73033686f57c456" class="m-doc">DefaultRefCountedPtr</a> <a href="#a367ce6e3d304a5ba37a8872ac9191b4c" class="m-doc-self">field_D8</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="a5ba88ea9796ea9646595aad64164e5ab">
-              int <a href="#a5ba88ea9796ea9646595aad64164e5ab" class="m-doc-self">field_D8</a>
-            </dt>
-            <dd><span></span></dd>
-            <dt id="af8b178980aa63f7e6e91651dd8416162">
-              int <a href="#af8b178980aa63f7e6e91651dd8416162" class="m-doc-self">field_DC</a>
+            <dt id="afc483116d6ad2f8960a159d7839f0e77">
+              <a href="_object_8h.html#a0ea2b8888d2f409fc73033686f57c456" class="m-doc">DefaultRefCountedPtr</a> <a href="#afc483116d6ad2f8960a159d7839f0e77" class="m-doc-self">field_DC</a>
             </dt>
             <dd><span></span></dd>
             <dt id="a85a6d608593d4ef24261010b17f49eea">
               bool <a href="#a85a6d608593d4ef24261010b17f49eea" class="m-doc-self">field_E0</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="ab511ae5b5b81c0dfe8c5b01f97ed1c49">
-              <a href="_editor_8h.html#ae2f11c2f17d6847a5182f3f94f7cd98d" class="m-doc">UnkClass4</a>* <a href="#ab511ae5b5b81c0dfe8c5b01f97ed1c49" class="m-doc-self">mpActiveHandle</a>
+            <dt id="a2790ed6afb96d62b72a4fc6540b55326">
+              <a href="class_editors_1_1_editor_base_handle.html" class="m-doc">EditorBaseHandle</a>* <a href="#a2790ed6afb96d62b72a4fc6540b55326" class="m-doc-self">mpActiveHandle</a>
             </dt>
             <dd><span></span></dd>
             <dt id="a2caa5c651e152b37b1b0da62cf6be19e">
@@ -363,8 +372,8 @@
               bool <a href="#a6b6f53a45256b064733a448ec522932a" class="m-doc-self">field_144</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="a038b22dacd69176b882712802962431c">
-              int <a href="#a038b22dacd69176b882712802962431c" class="m-doc-self">field_148</a>
+            <dt id="aa5034baddde3f9590a578241ae363e3f">
+              <a href="_object_8h.html#a364c2967a9338c07ddc9a3d507389b5d" class="m-doc">ObjectPtr</a> <a href="#aa5034baddde3f9590a578241ae363e3f" class="m-doc-self">field_148</a>
             </dt>
             <dd><span></span></dd>
             <dt id="af59624591d7cd0d0e7e0224aaf6a81aa">
@@ -387,16 +396,16 @@
               int <a href="#a885e4930808c0526308302e9fb8279b8" class="m-doc-self">field_15C</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="a7ebd03e5da46059ea32fa05e25b3c2fb">
-              vector&lt;int&gt; <a href="#a7ebd03e5da46059ea32fa05e25b3c2fb" class="m-doc-self">field_160</a>
+            <dt id="a1ec31b65a1dbe4c731a93fd0e241e1f4">
+              vector&lt;intrusive_ptr&lt;<a href="class_editors_1_1_editor_state_edit_history.html" class="m-doc">EditorStateEditHistory</a>&gt;&gt; <a href="#a1ec31b65a1dbe4c731a93fd0e241e1f4" class="m-doc-self">mStateEditHistory</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="aed99966e210dc270fc2c36cb508616df">
-              vector&lt;int&gt; <a href="#aed99966e210dc270fc2c36cb508616df" class="m-doc-self">field_174</a>
+            <dt id="a28061319e85c05853a7a547deb49f72d">
+              vector&lt;<a href="c_editor_resource_8h.html#a1f685087c2852276013d7a85ff47ea4d" class="m-doc">cEditorResourcePtr</a>&gt; <a href="#a28061319e85c05853a7a547deb49f72d" class="m-doc-self">mEditHistory</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="a9e01f6efc23e6d81815d23e2325d4d01">
-              int <a href="#a9e01f6efc23e6d81815d23e2325d4d01" class="m-doc-self">field_188</a>
+            <dt id="ad1c195d57809f3c90a66da64133537f7">
+              int <a href="#ad1c195d57809f3c90a66da64133537f7" class="m-doc-self">mEditHistoryIndex</a>
             </dt>
             <dd><span></span></dd>
             <dt id="aecc8ee8509db2adf3c5891eb580df6cc">
@@ -443,8 +452,8 @@
               map&lt;uint32_t, uint32_t&gt; <a href="#a11327d0d07429fb827d4920bcf4c0f42" class="m-doc-self">mDefaultEditors</a>
             </dt>
             <dd>Maps a creation format extension to its default editor. For example, &#x27;crt&#x27; is mapped to &#x27;CreatureEditorExtraLarge&#x27;.</dd>
-            <dt id="ad33e41c6ddc241e8f36d3a451eec3c86">
-              intrusive_ptr&lt;<a href="class_editors_1_1_editor_request.html" class="m-doc">EditorRequest</a>&gt; <a href="#ad33e41c6ddc241e8f36d3a451eec3c86" class="m-doc-self">mEditorRequest</a>
+            <dt id="a386bbe3cc880c609bdc7917abcf29520">
+              <a href="_editor_request_8h.html#a235083e9dd7df6d9e1072362aff8cfed" class="m-doc">EditorRequestPtr</a> <a href="#a386bbe3cc880c609bdc7917abcf29520" class="m-doc-self">mEditorRequest</a>
             </dt>
             <dd><span></span></dd>
             <dt id="a8a0241a623aae32b56acb72cff90c434">
@@ -859,8 +868,8 @@
               vector&lt;int&gt; <a href="#a895e3f25cce0b9519949a54c96f9c993" class="m-doc-self">field_36C</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="a0d790aff4e3cdaf3925d15e184fb1691">
-              int <a href="#a0d790aff4e3cdaf3925d15e184fb1691" class="m-doc-self">field_380</a>
+            <dt id="a9ca5d0cd0f95b8a7dc1bf5b3ebf35a11">
+              <a href="_object_8h.html#a0ea2b8888d2f409fc73033686f57c456" class="m-doc">DefaultRefCountedPtr</a> <a href="#a9ca5d0cd0f95b8a7dc1bf5b3ebf35a11" class="m-doc-self">field_380</a>
             </dt>
             <dd><span></span></dd>
             <dt id="a20a094af164ef4c94bca6d56dab883d0">
@@ -911,48 +920,32 @@
               bool <a href="#adc8cbf991cdf672272167c981674ab95" class="m-doc-self">field_39A</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="a995e8aee76b8a2d3e2cf0749169df003">
-              int <a href="#a995e8aee76b8a2d3e2cf0749169df003" class="m-doc-self">field_39C</a>
+            <dt id="a541fe8650bcddceac5799229ab1f37f3">
+              vector&lt;int&gt; <a href="#a541fe8650bcddceac5799229ab1f37f3" class="m-doc-self">field_39C</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="a87a8082e16038bdd992e249c68fd1074">
-              int <a href="#a87a8082e16038bdd992e249c68fd1074" class="m-doc-self">field_3A0</a>
-            </dt>
-            <dd><span></span></dd>
-            <dt id="ac2177ea603cf8111d3891835690c6ee8">
-              int <a href="#ac2177ea603cf8111d3891835690c6ee8" class="m-doc-self">field_3A4</a>
-            </dt>
-            <dd><span></span></dd>
-            <dt id="ab2c8eb16404915c64c3b9686a8474286">
-              int <a href="#ab2c8eb16404915c64c3b9686a8474286" class="m-doc-self">field_3A8</a>
-            </dt>
-            <dd><span></span></dd>
-            <dt id="afc37551d9bf6e13dd1a00b16d68d9fb9">
-              int <a href="#afc37551d9bf6e13dd1a00b16d68d9fb9" class="m-doc-self">field_3AC</a>
-            </dt>
-            <dd><span></span></dd>
-            <dt id="a06a70ac17202e28a3debc097e5e5ae06">
-              int <a href="#a06a70ac17202e28a3debc097e5e5ae06" class="m-doc-self">field_3B0</a>
+            <dt id="ace0f63e808e2e0205839480b033493e4">
+              float <a href="#ace0f63e808e2e0205839480b033493e4" class="m-doc-self">field_3B0</a>
             </dt>
             <dd><span></span></dd>
             <dt id="a97bf694a9329e4da9ebd91e869796957">
               int <a href="#a97bf694a9329e4da9ebd91e869796957" class="m-doc-self">field_3B4</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="aaaaae0876ae73616bb0850eaf40bcd66">
-              intrusive_ptr&lt;<a href="class_palettes_1_1_palette_main.html" class="m-doc">Palettes::<wbr />PaletteMain</a>&gt; <a href="#aaaaae0876ae73616bb0850eaf40bcd66" class="m-doc-self">mpPartsPalette</a>
+            <dt id="a5720e465c27046deb94c2fb141b8c168">
+              <a href="_palette_main_8h.html#a9fd3c85d419b54d86adb1489eefee6da" class="m-doc">PaletteMainPtr</a> <a href="#a5720e465c27046deb94c2fb141b8c168" class="m-doc-self">mpPartsPalette</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="a6a59352ec409c2e0823f987bb7e6fb73">
-              intrusive_ptr&lt;<a href="class_palettes_1_1_palette_u_i.html" class="m-doc">Palettes::<wbr />PaletteUI</a>&gt; <a href="#a6a59352ec409c2e0823f987bb7e6fb73" class="m-doc-self">mpPartsPaletteUI</a>
+            <dt id="a2a833bc152a97dfb98b62942e29e425c">
+              <a href="_palette_u_i_8h.html#aafe3d7ba94eb3cc7667c8f1580f50149" class="m-doc">PaletteUIPtr</a> <a href="#a2a833bc152a97dfb98b62942e29e425c" class="m-doc-self">mpPartsPaletteUI</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="aa7f502d0a75254a06d8a725c8bfa9678">
-              intrusive_ptr&lt;<a href="class_palettes_1_1_palette_main.html" class="m-doc">Palettes::<wbr />PaletteMain</a>&gt; <a href="#aa7f502d0a75254a06d8a725c8bfa9678" class="m-doc-self">mpPaintPalette</a>
+            <dt id="a6583ea0d23e2a4eace8a3841b99ebc8d">
+              <a href="_palette_main_8h.html#a9fd3c85d419b54d86adb1489eefee6da" class="m-doc">PaletteMainPtr</a> <a href="#a6583ea0d23e2a4eace8a3841b99ebc8d" class="m-doc-self">mpPaintPalette</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="a37882f716af58df64a5abce9c78916b6">
-              intrusive_ptr&lt;<a href="class_palettes_1_1_palette_u_i.html" class="m-doc">Palettes::<wbr />PaletteUI</a>&gt; <a href="#a37882f716af58df64a5abce9c78916b6" class="m-doc-self">mpPaintPaletteUI</a>
+            <dt id="a391c549ce32f9badecfb357ee743ad3f">
+              <a href="_palette_u_i_8h.html#aafe3d7ba94eb3cc7667c8f1580f50149" class="m-doc">PaletteUIPtr</a> <a href="#a391c549ce32f9badecfb357ee743ad3f" class="m-doc-self">mpPaintPaletteUI</a>
             </dt>
             <dd><span></span></dd>
             <dt id="ad0b940b71099eb14b55c9ee24dd0bc0f">
@@ -1387,6 +1380,45 @@
         </section>
         <section>
           <h2>Function documentation</h2>
+          <section class="m-doc-details" id="a6f0d4dbdf72ee42c218148a816c93a91"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">void Editors::<wbr />cEditor::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a6f0d4dbdf72ee42c218148a816c93a91" class="m-doc-self">SetEditorModel</a>(</span><span class="m-doc-wrap"><a href="class_editors_1_1_editor_model.html" class="m-doc">EditorModel</a>* pEditorModel)</span></span>
+            </h3>
+            <p>Changes the current editor model, updating the creation with the parts and paints of the new editor model.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">pEditorModel</td>
+                  <td></td>
+                </tr>
+              </tbody>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="a53d1dae37471316f4259217895f77ecf"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">void Editors::<wbr />cEditor::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a53d1dae37471316f4259217895f77ecf" class="m-doc-self">CommitEditHistory</a>(</span><span class="m-doc-wrap">bool arg1,
+              <a href="class_editors_1_1_editor_state_edit_history.html" class="m-doc">EditorStateEditHistory</a>* pStateHistory = nullptr)</span></span>
+            </h3>
+            <p>Adds an edit history (undo/redo) entry based on the current model of the editor.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">arg1</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>pStateHistory</td>
+                  <td></td>
+                </tr>
+              </tbody>
+            </table>
+          </div></section>
           <section class="m-doc-details" id="a10153c2328478f95228f7699ecf8240e"><div>
             <h3>
               <span class="m-doc-wrap-bumper">bool Editors::<wbr />cEditor::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a10153c2328478f95228f7699ecf8240e" class="m-doc-self">IsMode</a>(</span><span class="m-doc-wrap"><a href="namespace_editors.html#ac58a0d836dc46427d3c2128f87430edd" class="m-doc">Mode</a> mode) const</span></span>

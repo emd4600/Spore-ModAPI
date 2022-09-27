@@ -94,6 +94,7 @@
             <a href="#" onclick="return toggle(this)">namespace</a> <a href="namespace_app.html" class="m-doc">App</a> <span class="m-doc"></span>
             <ul class="m-doc">
               <li>namespace <a href="namespace_app_1_1_app_data.html" class="m-doc">AppData</a> <span class="m-doc"><span></span></span></li>
+              <li>namespace <a href="namespace_app_1_1_scenario_mode__addresses.html" class="m-doc">ScenarioMode_addresses</a> <span class="m-doc"><span></span></span></li>
               <li>namespace <a href="namespace_app_1_1_s_p_property_i_ds.html" class="m-doc">SPPropertyIDs</a> <span class="m-doc">This namespace only contains property IDs to be used in the AppProperties module.</span></li>
               <li>class <a href="class_app_1_1c_camera_manager.html" class="m-doc">cCameraManager</a> <span class="m-doc">The implementation of <a href="class_app_1_1_i_camera_manager.html" class="m-doc">ICameraManager</a>; this should only be used for extending and detouring.</span></li>
               <li>class <a href="class_app_1_1c_cheat_manager.html" class="m-doc">cCheatManager</a> <span class="m-doc">The implementation of <a href="class_app_1_1_i_cheat_manager.html" class="m-doc">ICheatManager</a>; this should only be used for extending and detouring.</span></li>
@@ -106,6 +107,7 @@
               <li>class <a href="class_app_1_1c_locale_manager.html" class="m-doc">cLocaleManager</a> <span class="m-doc"><span></span></span></li>
               <li>class <a href="class_app_1_1c_message_manager.html" class="m-doc">cMessageManager</a> <span class="m-doc">The implementation of <a href="class_app_1_1_i_message_manager.html" class="m-doc">IMessageManager</a>; this should only be used for extending and detouring.</span></li>
               <li>class <a href="class_app_1_1c_prop_manager.html" class="m-doc">cPropManager</a> <span class="m-doc">The implementation of <a href="class_app_1_1_i_prop_manager.html" class="m-doc">IPropManager</a>; this should only be used for extending and detouring.</span></li>
+              <li>class <a href="class_app_1_1c_scenario_mode.html" class="m-doc">cScenarioMode</a> <span class="m-doc"><span></span></span></li>
               <li>class <a href="class_app_1_1c_string_detokenizer.html" class="m-doc">cStringDetokenizer</a> <span class="m-doc">The class responsible for translating text tokens, which are special characters in locale files.</span></li>
               <li class="m-doc-collapsible collapsed">
                 <a href="#" onclick="return toggle(this)">class</a> <a href="class_app_1_1c_viewer.html" class="m-doc">cViewer</a> <span class="m-doc"><span></span></span>
@@ -155,7 +157,6 @@
                 </ul>
               </li>
               <li>class <a href="class_app_1_1_property_list.html" class="m-doc">PropertyList</a> <span class="m-doc">A class that contains multiple properties.</span></li>
-              <li>class <a href="class_app_1_1_scenario_mode.html" class="m-doc">ScenarioMode</a> <span class="m-doc"><span></span></span></li>
               <li>class <a href="class_app_1_1_scheduled_task_listener.html" class="m-doc">ScheduledTaskListener</a> <span class="m-doc">A message listener that, listening to Update messages, executes the given task after a certain time has passed and (optionally) repetaing it periodically.</span></li>
               <li class="m-doc-collapsible collapsed">
                 <a href="#" onclick="return toggle(this)">class</a> <a href="class_app_1_1_standard_message.html" class="m-doc">StandardMessage</a> <span class="m-doc"><span></span></span>
@@ -201,23 +202,29 @@
             <ul class="m-doc">
               <li>class <a href="class_editors_1_1___editor_u_i__interface.html" class="m-doc">_EditorUI_interface</a> <span class="m-doc"><span></span></span></li>
               <li>struct <a href="struct_editors_1_1_bake_parameters.html" class="m-doc">BakeParameters</a> <span class="m-doc"><span></span></span></li>
-              <li>class <a href="class_editors_1_1c_editor.html" class="m-doc">cEditor</a> <span class="m-doc"><span></span></span></li>
+              <li>class <a href="class_editors_1_1c_editor.html" class="m-doc">cEditor</a> <span class="m-doc">Main class for editors.</span></li>
               <li class="m-doc-collapsible collapsed">
-                <a href="#" onclick="return toggle(this)">class</a> <a href="class_editors_1_1c_editor_resource.html" class="m-doc">cEditorResource</a> <span class="m-doc"><span></span></span>
+                <a href="#" onclick="return toggle(this)">class</a> <a href="class_editors_1_1c_editor_resource.html" class="m-doc">cEditorResource</a> <span class="m-doc"><a href="namespace_resource.html" class="m-doc">Resource</a> of a saved creation, represents a <code>.crt</code>, <code>.bld</code>, <code>.vcl</code>, etc file.</span>
                 <ul class="m-doc">
                   <li>struct <a href="struct_editors_1_1c_editor_resource_1_1_properties.html" class="m-doc">Properties</a> <span class="m-doc"><span></span></span></li>
                 </ul>
               </li>
+              <li>struct <a href="struct_editors_1_1c_editor_resource_block.html" class="m-doc">cEditorResourceBlock</a> <span class="m-doc"><span></span></span></li>
               <li>class <a href="class_editors_1_1_color_changed_message.html" class="m-doc">ColorChangedMessage</a> <span class="m-doc">A message sent every time the user changes the color of the creation in the editor.</span></li>
               <li>struct <a href="struct_editors_1_1_content_validation.html" class="m-doc">ContentValidation</a> <span class="m-doc"><span></span></span></li>
               <li>class <a href="class_editors_1_1_creature_walk_controller.html" class="m-doc">CreatureWalkController</a> <span class="m-doc"><span></span></span></li>
               <li>class <a href="class_editors_1_1c_species_manager.html" class="m-doc">cSpeciesManager</a> <span class="m-doc"><span></span></span></li>
+              <li>class <a href="class_editors_1_1c_tuning_spine.html" class="m-doc">cTuningSpine</a> <span class="m-doc"><span></span></span></li>
+              <li>class <a href="class_editors_1_1_editor_base_handle.html" class="m-doc">EditorBaseHandle</a> <span class="m-doc"><span></span></span></li>
               <li>class <a href="class_editors_1_1_editor_camera.html" class="m-doc">EditorCamera</a> <span class="m-doc"><span></span></span></li>
-              <li>class <a href="class_editors_1_1_editor_model.html" class="m-doc">EditorModel</a> <span class="m-doc"><span></span></span></li>
+              <li>class <a href="class_editors_1_1_editor_model.html" class="m-doc">EditorModel</a> <span class="m-doc">Represents the state of a creation in an editor.</span></li>
               <li>class <a href="class_editors_1_1_editor_play_mode.html" class="m-doc">EditorPlayMode</a> <span class="m-doc"><span></span></span></li>
               <li>class <a href="class_editors_1_1_editor_play_mode_background.html" class="m-doc">EditorPlayModeBackground</a> <span class="m-doc"><span></span></span></li>
               <li>class <a href="class_editors_1_1_editor_request.html" class="m-doc">EditorRequest</a> <span class="m-doc">This class is used to access the editors.</span></li>
-              <li>class <a href="class_editors_1_1_editor_rigblock.html" class="m-doc">EditorRigblock</a> <span class="m-doc"><span></span></span></li>
+              <li>class <a href="class_editors_1_1_editor_rigblock.html" class="m-doc">EditorRigblock</a> <span class="m-doc">Represents a &quot;part&quot; (or rigblock) in an editor.</span></li>
+              <li>struct <a href="struct_editors_1_1_editor_rigblock_capability.html" class="m-doc">EditorRigblockCapability</a> <span class="m-doc"><span></span></span></li>
+              <li>struct <a href="struct_editors_1_1_editor_rigblock_paint.html" class="m-doc">EditorRigblockPaint</a> <span class="m-doc"><span></span></span></li>
+              <li>class <a href="class_editors_1_1_editor_state_edit_history.html" class="m-doc">EditorStateEditHistory</a> <span class="m-doc">Structure that records the state of the editor (current mode, budget, etc) for undo/redo history.</span></li>
               <li>class <a href="class_editors_1_1_editor_u_i.html" class="m-doc">EditorUI</a> <span class="m-doc"><span></span></span></li>
               <li>class <a href="class_editors_1_1_i_bake_manager.html" class="m-doc">IBakeManager</a> <span class="m-doc"><span></span></span></li>
               <li>class <a href="class_editors_1_1_i_editor_limits.html" class="m-doc">IEditorLimits</a> <span class="m-doc"><span></span></span></li>
@@ -235,7 +242,8 @@
               <li>class <a href="class_editors_1_1_play_mode_animations.html" class="m-doc">PlayModeAnimations</a> <span class="m-doc"><span></span></span></li>
               <li>class <a href="class_editors_1_1_play_mode_backgrounds.html" class="m-doc">PlayModeBackgrounds</a> <span class="m-doc"><span></span></span></li>
               <li>class <a href="class_editors_1_1_std_editor_limits.html" class="m-doc">StdEditorLimits</a> <span class="m-doc"><span></span></span></li>
-              <li>class <a href="class_editors_1_1_tuning_spine.html" class="m-doc">TuningSpine</a> <span class="m-doc"><span></span></span></li>
+              <li>struct <a href="struct_editors_1_1_unk_editor_rigblock_struct1.html" class="m-doc">UnkEditorRigblockStruct1</a> <span class="m-doc"><span></span></span></li>
+              <li>struct <a href="struct_editors_1_1_unk_editor_rigblock_struct2.html" class="m-doc">UnkEditorRigblockStruct2</a> <span class="m-doc"><span></span></span></li>
             </ul>
           </li>
           <li class="m-doc-collapsible">
@@ -261,7 +269,12 @@
                   <li>struct <a href="struct_graphics_1_1_renderer_1_1_device_parameters.html" class="m-doc">DeviceParameters</a> <span class="m-doc"><span></span></span></li>
                 </ul>
               </li>
-              <li>class <a href="class_graphics_1_1_animations.html" class="m-doc">Animations</a> <span class="m-doc"><span></span></span></li>
+              <li class="m-doc-collapsible collapsed">
+                <a href="#" onclick="return toggle(this)">class</a> <a href="class_graphics_1_1_animations.html" class="m-doc">Animations</a> <span class="m-doc"><span></span></span>
+                <ul class="m-doc">
+                  <li>struct <a href="struct_graphics_1_1_animations_1_1_internal_render_ware_data.html" class="m-doc">InternalRenderWareData</a> <span class="m-doc"><span></span></span></li>
+                </ul>
+              </li>
               <li>class <a href="class_graphics_1_1c_material_info.html" class="m-doc">cMaterialInfo</a> <span class="m-doc"><span></span></span></li>
               <li>class <a href="class_graphics_1_1c_material_manager.html" class="m-doc">cMaterialManager</a> <span class="m-doc">The implementation of <a href="class_graphics_1_1_i_material_manager.html" class="m-doc">IMaterialManager</a>; this should only be used for extending and detouring.</span></li>
               <li class="m-doc-collapsible collapsed">
@@ -581,7 +594,7 @@
               <li>class <a href="class_simulator_1_1c_conversation.html" class="m-doc">cConversation</a> <span class="m-doc"><span></span></span></li>
               <li>class <a href="class_simulator_1_1c_creature_ability.html" class="m-doc">cCreatureAbility</a> <span class="m-doc"><span></span></span></li>
               <li>class <a href="class_simulator_1_1c_creature_animal.html" class="m-doc">cCreatureAnimal</a> <span class="m-doc"><span></span></span></li>
-              <li>class <a href="class_simulator_1_1c_creature_base.html" class="m-doc">cCreatureBase</a> <span class="m-doc"><span></span></span></li>
+              <li>class <a href="class_simulator_1_1c_creature_base.html" class="m-doc">cCreatureBase</a> <span class="m-doc">The base class for all creatures in the <a href="namespace_simulator.html" class="m-doc">Simulator</a>.</span></li>
               <li>class <a href="class_simulator_1_1c_creature_citizen.html" class="m-doc">cCreatureCitizen</a> <span class="m-doc"><span></span></span></li>
               <li>class <a href="class_simulator_1_1c_creature_item.html" class="m-doc">cCreatureItem</a> <span class="m-doc"><span></span></span></li>
               <li>class <a href="class_simulator_1_1c_crop_circles_tool_strategy.html" class="m-doc">cCropCirclesToolStrategy</a> <span class="m-doc"><span></span></span></li>
@@ -642,7 +655,7 @@
               <li>class <a href="class_simulator_1_1c_hit_sphere.html" class="m-doc">cHitSphere</a> <span class="m-doc"><span></span></span></li>
               <li>class <a href="class_simulator_1_1c_identity_colorable.html" class="m-doc">cIdentityColorable</a> <span class="m-doc">A <a href="namespace_simulator.html" class="m-doc">Simulator</a> class inherited by all those classes that can have an identity color, such as empires, tribes, etc.</span></li>
               <li>class <a href="class_simulator_1_1c_interactable_object.html" class="m-doc">cInteractableObject</a> <span class="m-doc"><span></span></span></li>
-              <li>class <a href="class_simulator_1_1c_interactive_ornament.html" class="m-doc">cInteractiveOrnament</a> <span class="m-doc"><span></span></span></li>
+              <li>class <a href="class_simulator_1_1c_interactive_ornament.html" class="m-doc">cInteractiveOrnament</a> <span class="m-doc">Static objects in a planet that the player can interact with, such as pickable objects, skeletons in creature stage,...</span></li>
               <li>class <a href="class_simulator_1_1c_inter_city_road.html" class="m-doc">cInterCityRoad</a> <span class="m-doc"><span></span></span></li>
               <li>struct <a href="struct_simulator_1_1c_lane_info.html" class="m-doc">cLaneInfo</a> <span class="m-doc"><span></span></span></li>
               <li class="m-doc-collapsible collapsed">
@@ -669,8 +682,7 @@
               <li>class <a href="class_simulator_1_1c_object_instance_inventory_item.html" class="m-doc">cObjectInstanceInventoryItem</a> <span class="m-doc"><span></span></span></li>
               <li>class <a href="class_simulator_1_1_combatant_killed_message.html" class="m-doc">CombatantKilledMessage</a> <span class="m-doc">Called when a <a href="class_simulator_1_1c_combatant.html" class="m-doc">cCombatant</a> is killed.</span></li>
               <li>class <a href="class_simulator_1_1_conversation_resource.html" class="m-doc">ConversationResource</a> <span class="m-doc"><span></span></span></li>
-              <li>class <a href="class_simulator_1_1c_ornament.html" class="m-doc">cOrnament</a> <span class="m-doc"><span></span></span></li>
-              <li>class <a href="class_simulator_1_1c_ornament_base.html" class="m-doc">cOrnamentBase</a> <span class="m-doc"><span></span></span></li>
+              <li>class <a href="class_simulator_1_1c_ornament.html" class="m-doc">cOrnament</a> <span class="m-doc">Used, among other things, for adventure objects (except pickable ones)</span></li>
               <li>class <a href="class_simulator_1_1c_placeable_structure.html" class="m-doc">cPlaceableStructure</a> <span class="m-doc">A structure that can be placed into a community slot, like buildings, turrets, ornaments and tribe tools.</span></li>
               <li>class <a href="class_simulator_1_1c_place_colony_tool_strategy.html" class="m-doc">cPlaceColonyToolStrategy</a> <span class="m-doc"><span></span></span></li>
               <li>class <a href="class_simulator_1_1c_place_object_tool_strategy.html" class="m-doc">cPlaceObjectToolStrategy</a> <span class="m-doc"><span></span></span></li>
@@ -683,6 +695,7 @@
               <li>class <a href="class_simulator_1_1c_player_inventory.html" class="m-doc">cPlayerInventory</a> <span class="m-doc"><span></span></span></li>
               <li>class <a href="class_simulator_1_1c_projectile.html" class="m-doc">cProjectile</a> <span class="m-doc"><span></span></span></li>
               <li>class <a href="class_simulator_1_1c_rally_call_tool_strategy.html" class="m-doc">cRallyCallToolStrategy</a> <span class="m-doc"><span></span></span></li>
+              <li>class <a href="class_simulator_1_1_creature_effect_pool.html" class="m-doc">CreatureEffectPool</a> <span class="m-doc"><span></span></span></li>
               <li>class <a href="class_simulator_1_1c_relationship_data.html" class="m-doc">cRelationshipData</a> <span class="m-doc"><span></span></span></li>
               <li>class <a href="class_simulator_1_1c_relationship_manager.html" class="m-doc">cRelationshipManager</a> <span class="m-doc">Handles relationships between political entities.</span></li>
               <li>class <a href="class_simulator_1_1c_repair_a_o_e_tool_strategy.html" class="m-doc">cRepairAOEToolStrategy</a> <span class="m-doc"><span></span></span></li>
@@ -694,13 +707,25 @@
               <li>class <a href="class_simulator_1_1c_scenario_asset.html" class="m-doc">cScenarioAsset</a> <span class="m-doc"><span></span></span></li>
               <li>class <a href="class_simulator_1_1c_scenario_class.html" class="m-doc">cScenarioClass</a> <span class="m-doc"><span></span></span></li>
               <li>class <a href="class_simulator_1_1c_scenario_class_act.html" class="m-doc">cScenarioClassAct</a> <span class="m-doc"><span></span></span></li>
+              <li>class <a href="class_simulator_1_1c_scenario_data.html" class="m-doc">cScenarioData</a> <span class="m-doc"><span></span></span></li>
+              <li>class <a href="class_simulator_1_1c_scenario_data_economy.html" class="m-doc">cScenarioDataEconomy</a> <span class="m-doc"><span></span></span></li>
+              <li>class <a href="class_simulator_1_1c_scenario_data_history_entry.html" class="m-doc">cScenarioDataHistoryEntry</a> <span class="m-doc">Undo/redo history entry for scenario data actions (anything related with objects, creatures, etc), that is, changes to the <a href="class_simulator_1_1c_scenario_resource.html" class="m-doc">cScenarioResource</a>.</span></li>
               <li>class <a href="class_simulator_1_1c_scenario_dialog.html" class="m-doc">cScenarioDialog</a> <span class="m-doc"><span></span></span></li>
+              <li>class <a href="class_simulator_1_1c_scenario_edit_history.html" class="m-doc">cScenarioEditHistory</a> <span class="m-doc">Class that manages the undo/redo history of the adventure editor.</span></li>
               <li>class <a href="class_simulator_1_1c_scenario_goal.html" class="m-doc">cScenarioGoal</a> <span class="m-doc"><span></span></span></li>
               <li>class <a href="class_simulator_1_1c_scenario_marker.html" class="m-doc">cScenarioMarker</a> <span class="m-doc"><span></span></span></li>
               <li>class <a href="class_simulator_1_1c_scenario_marker_act.html" class="m-doc">cScenarioMarkerAct</a> <span class="m-doc"><span></span></span></li>
+              <li>class <a href="class_simulator_1_1c_scenario_play_mode.html" class="m-doc">cScenarioPlayMode</a> <span class="m-doc"><span></span></span></li>
+              <li>class <a href="class_simulator_1_1c_scenario_play_mode_goal.html" class="m-doc">cScenarioPlayModeGoal</a> <span class="m-doc"><span></span></span></li>
+              <li>struct <a href="struct_simulator_1_1c_scenario_play_summary.html" class="m-doc">cScenarioPlaySummary</a> <span class="m-doc"><span></span></span></li>
               <li>class <a href="class_simulator_1_1c_scenario_posse_member.html" class="m-doc">cScenarioPosseMember</a> <span class="m-doc"><span></span></span></li>
+              <li>class <a href="class_simulator_1_1c_scenario_powerup.html" class="m-doc">cScenarioPowerup</a> <span class="m-doc"><span></span></span></li>
               <li>class <a href="class_simulator_1_1c_scenario_resource.html" class="m-doc">cScenarioResource</a> <span class="m-doc"><span></span></span></li>
+              <li>class <a href="class_simulator_1_1c_scenario_simulator.html" class="m-doc">cScenarioSimulator</a> <span class="m-doc"><span></span></span></li>
               <li>class <a href="class_simulator_1_1c_scenario_string.html" class="m-doc">cScenarioString</a> <span class="m-doc"><span></span></span></li>
+              <li>class <a href="class_simulator_1_1c_scenario_terraform_economy.html" class="m-doc">cScenarioTerraformEconomy</a> <span class="m-doc"><span></span></span></li>
+              <li>class <a href="class_simulator_1_1c_scenario_terraform_history_entry.html" class="m-doc">cScenarioTerraformHistoryEntry</a> <span class="m-doc">Undo/redo history entry for terraform (or planet color, etc) actions.</span></li>
+              <li>class <a href="class_simulator_1_1c_scenario_terraform_mode.html" class="m-doc">cScenarioTerraformMode</a> <span class="m-doc"><span></span></span></li>
               <li>class <a href="class_simulator_1_1c_sim_planet_high_l_o_d.html" class="m-doc">cSimPlanetHighLOD</a> <span class="m-doc"><span></span></span></li>
               <li>class <a href="class_simulator_1_1c_sim_planet_low_l_o_d.html" class="m-doc">cSimPlanetLowLOD</a> <span class="m-doc"><span></span></span></li>
               <li>class <a href="class_simulator_1_1c_sim_ticker.html" class="m-doc">cSimTicker</a> <span class="m-doc"><span></span></span></li>
@@ -748,6 +773,7 @@
               <li>class <a href="class_simulator_1_1_i_city_music.html" class="m-doc">ICityMusic</a> <span class="m-doc"><span></span></span></li>
               <li>class <a href="class_simulator_1_1_i_message_parameters.html" class="m-doc">IMessageParameters</a> <span class="m-doc"><span></span></span></li>
               <li>class <a href="class_simulator_1_1_i_projectile.html" class="m-doc">IProjectile</a> <span class="m-doc"><span></span></span></li>
+              <li>class <a href="class_simulator_1_1_i_scenario_edit_history_entry.html" class="m-doc">IScenarioEditHistoryEntry</a> <span class="m-doc">A generic entry of undo/redo history in the adventure editor.</span></li>
               <li>class <a href="class_simulator_1_1_i_serializer_stream.html" class="m-doc">ISerializerStream</a> <span class="m-doc"><span></span></span></li>
               <li>class <a href="class_simulator_1_1_i_simulator_serializable.html" class="m-doc">ISimulatorSerializable</a> <span class="m-doc"><span></span></span></li>
               <li>class <a href="class_simulator_1_1_i_simulator_serializable_ref_counted.html" class="m-doc">ISimulatorSerializableRefCounted</a> <span class="m-doc"><span></span></span></li>
@@ -758,16 +784,16 @@
               <li>class <a href="class_simulator_1_1_noun_create_map.html" class="m-doc">NounCreateMap</a> <span class="m-doc"><span></span></span></li>
               <li>class <a href="class_simulator_1_1_player_empire_allied_message.html" class="m-doc">PlayerEmpireAlliedMessage</a> <span class="m-doc">Called when the player empire makes a new alliance.</span></li>
               <li>class <a href="class_simulator_1_1_player_empire_lost_alliance_message.html" class="m-doc">PlayerEmpireLostAllianceMessage</a> <span class="m-doc">Called when the player empire loses an alliance.</span></li>
+              <li>class <a href="class_simulator_1_1_scenario_creature_healed_message.html" class="m-doc">ScenarioCreatureHealedMessage</a> <span class="m-doc">Called when a creature is healed (either by natural heal rate, or using a medkit) in Scenario mode.</span></li>
               <li>class <a href="class_simulator_1_1_scheduled_task_listener.html" class="m-doc">ScheduledTaskListener</a> <span class="m-doc">A message listener that, listening to Update messages, executes the given task after a certain time has passed and (optionally) repetaing it periodically.</span></li>
               <li>class <a href="class_simulator_1_1_space_player_data.html" class="m-doc">SpacePlayerData</a> <span class="m-doc"><span></span></span></li>
               <li>class <a href="class_simulator_1_1_sporepedia.html" class="m-doc">Sporepedia</a> <span class="m-doc"><span></span></span></li>
               <li>struct <a href="struct_simulator_1_1_star_request_filter.html" class="m-doc">StarRequestFilter</a> <span class="m-doc"><span></span></span></li>
               <li>class <a href="class_simulator_1_1t_game_data_vector_t.html" class="m-doc">tGameDataVectorT</a> <span class="m-doc"><span></span></span></li>
-              <li>class <a href="class_simulator_1_1_tool_on_hit_message.html" class="m-doc">ToolOnHitMessage</a> <span class="m-doc">Called when a space tool hits a target. Called by <a href="class_simulator_1_1c_tool_strategy.html#ae4e543e170fab12be5494459e8c729cc" class="m-doc">cToolStrategy::<wbr />OnHit</a>.</span></li>
+              <li>class <a href="class_simulator_1_1_tool_on_hit_message.html" class="m-doc">ToolOnHitMessage</a> <span class="m-doc">Called when a space tool hits a target. Called by <a href="class_simulator_1_1c_tool_strategy.html#a2561e73287e748536c5de8ae994dfec3" class="m-doc">cToolStrategy::<wbr />OnHit</a>.</span></li>
               <li>struct <a href="struct_simulator_1_1_unk_city_class.html" class="m-doc">UnkCityClass</a> <span class="m-doc"><span></span></span></li>
               <li>struct <a href="struct_simulator_1_1_unk_mission_manager_struct.html" class="m-doc">UnkMissionManagerStruct</a> <span class="m-doc"><span></span></span></li>
               <li>class <a href="class_simulator_1_1_unknown_creature_class.html" class="m-doc">UnknownCreatureClass</a> <span class="m-doc"><span></span></span></li>
-              <li>class <a href="class_simulator_1_1_unknown_creature_class2.html" class="m-doc">UnknownCreatureClass2</a> <span class="m-doc"><span></span></span></li>
               <li>class <a href="class_simulator_1_1_unknown_manager_superclass.html" class="m-doc">UnknownManagerSuperclass</a> <span class="m-doc"><span></span></span></li>
               <li>class <a href="class_simulator_1_1_unk_ref_counted.html" class="m-doc">UnkRefCounted</a> <span class="m-doc"><span></span></span></li>
               <li>class <a href="class_simulator_1_1_xml_serializer.html" class="m-doc">XmlSerializer</a> <span class="m-doc"><span></span></span></li>

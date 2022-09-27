@@ -55,11 +55,31 @@
             <li>
               Reference
               <ul>
+                <li><a href="#pub-static-methods">Public static functions</a></li>
+                <li><a href="#pub-methods">Public functions</a></li>
                 <li><a href="#pub-attribs">Public variables</a></li>
               </ul>
             </li>
           </ul>
         </div>
+        <section id="pub-static-methods">
+          <h2><a href="#pub-static-methods">Public static functions</a></h2>
+          <dl class="m-doc">
+            <dt id="aaeca570b5576bda71bb335a644c4d42b">
+              <span class="m-doc-wrap-bumper">static auto <a href="#aaeca570b5576bda71bb335a644c4d42b" class="m-doc-self">GetObjectType</a>(</span><span class="m-doc-wrap">const <a href="struct_resource_key.html" class="m-doc">ResourceKey</a>&amp; key) -&gt; <a href="namespace_simulator.html#a75cb0e11b191ef98e88d484bd93578bf" class="m-doc">ScenarioObjectType</a></span>
+            </dt>
+            <dd><span></span></dd>
+          </dl>
+        </section>
+        <section id="pub-methods">
+          <h2><a href="#pub-methods">Public functions</a></h2>
+          <dl class="m-doc">
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a9c51626b1faa4dc39bd8f9d968a8d457" class="m-doc">IsConsumible</a>(</span><span class="m-doc-wrap">) -&gt; bool</span>
+            </dt>
+            <dd>Returns true if this class is the kind of object that is consumed when the player approaches it.</dd>
+          </dl>
+        </section>
         <section id="pub-attribs">
           <h2><a href="#pub-attribs">Public variables</a></h2>
           <dl class="m-doc">
@@ -71,16 +91,16 @@
               bool <a href="#a984fc2aeb9678cd2d8340b5ea8d5d351" class="m-doc-self">mbIsDeepEditEnabled</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="af3204f729f9a6f3e51bf6be63aa95770">
-              int <a href="#af3204f729f9a6f3e51bf6be63aa95770" class="m-doc-self">mGfxOverrideType</a>
+            <dt id="a9dacc4358b782c0c8d515d0780ea9b0a">
+              <a href="namespace_simulator.html#ad25a68efb96ee742d9a81a16490c4706" class="m-doc">ScenarioGfxOverrideType</a> <a href="#a9dacc4358b782c0c8d515d0780ea9b0a" class="m-doc-self">mGfxOverrideType</a>
             </dt>
             <dd><span></span></dd>
             <dt id="ad5f6154f8336fa87817455e9e983c4c1">
               <a href="class_simulator_1_1c_scenario_asset.html" class="m-doc">cScenarioAsset</a> <a href="#ad5f6154f8336fa87817455e9e983c4c1" class="m-doc-self">mGameplayObjectGfxOverrideAsset</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="a0f7a3ac79a908e593a9270bdd54f4e1b">
-              int <a href="#a0f7a3ac79a908e593a9270bdd54f4e1b" class="m-doc-self">mGfxOverideTypeSecondary</a>
+            <dt id="a88c2d0caf8462e49f18fb480843cdc22">
+              <a href="namespace_simulator.html#ad25a68efb96ee742d9a81a16490c4706" class="m-doc">ScenarioGfxOverrideType</a> <a href="#a88c2d0caf8462e49f18fb480843cdc22" class="m-doc-self">mGfxOverideTypeSecondary</a>
             </dt>
             <dd><span></span></dd>
             <dt id="ab2400c30efa1bb298ac0200b5b1a8092">
@@ -112,6 +132,16 @@
             </dt>
             <dd><span></span></dd>
           </dl>
+        </section>
+        <section>
+          <h2>Function documentation</h2>
+          <section class="m-doc-details" id="a9c51626b1faa4dc39bd8f9d968a8d457"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">bool Simulator::<wbr />cScenarioClass::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a9c51626b1faa4dc39bd8f9d968a8d457" class="m-doc-self">IsConsumible</a>(</span><span class="m-doc-wrap">)</span></span>
+            </h3>
+            <p>Returns true if this class is the kind of object that is consumed when the player approaches it.</p>
+<p>By default, this returns true on teleporters, jumppads, spead/damage/armor boosts and med/energy kits.</p>
+          </div></section>
         </section>
       </div>
     </div>

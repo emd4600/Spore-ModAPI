@@ -113,7 +113,7 @@
             <dt>
               class <a href="class_simulator_1_1c_creature_base.html" class="m-doc">cCreatureBase</a>
             </dt>
-            <dd><span></span></dd>
+            <dd>The base class for all creatures in the <a href="namespace_simulator.html" class="m-doc">Simulator</a>.</dd>
             <dt>
               class <a href="class_simulator_1_1c_default_ao_e_area.html" class="m-doc">cDefaultAoEArea</a>
             </dt>
@@ -165,7 +165,7 @@
             <dt>
               class <a href="class_simulator_1_1c_ornament.html" class="m-doc">cOrnament</a>
             </dt>
-            <dd><span></span></dd>
+            <dd>Used, among other things, for adventure objects (except pickable ones)</dd>
             <dt>
               class <a href="class_simulator_1_1c_planet.html" class="m-doc">cPlanet</a>
             </dt>
@@ -257,8 +257,8 @@
               <span class="m-doc-wrap-bumper">auto <a href="#a50f5f3099f62fa4bc091045406d7f2d4" class="m-doc-self">Read</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1_i_serializer_stream.html" class="m-doc">ISerializerStream</a>* stream) -&gt; bool <span class="m-label m-flat m-warning">override</span></span>
             </dt>
             <dd><span></span></dd>
-            <dt id="a29c651e708941e73a7c8f8085da3eb57">
-              <span class="m-doc-wrap-bumper">auto <a href="#a29c651e708941e73a7c8f8085da3eb57" class="m-doc-self">func18h</a>(</span><span class="m-doc-wrap">) -&gt; bool <span class="m-label m-flat m-warning">override</span></span>
+            <dt id="af617d3e78931378e1877b4ff64a3a2b1">
+              <span class="m-doc-wrap-bumper">auto <a href="#af617d3e78931378e1877b4ff64a3a2b1" class="m-doc-self">ISimulatorSerializable_func18h</a>(</span><span class="m-doc-wrap">) -&gt; bool <span class="m-label m-flat m-warning">override</span></span>
             </dt>
             <dd><span></span></dd>
             <dt id="aeb19c3829805cde28ce059e8a0d23fea">
@@ -291,12 +291,12 @@
               <span class="m-doc-wrap-bumper">auto <a href="#aeb7f0f466f972660a75012feb85dcc48" class="m-doc-self">GetCastID</a>(</span><span class="m-doc-wrap">) const -&gt; uint32_t <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
             <dd>Returns the TYPE field of the class, that is used for object casting.</dd>
-            <dt id="ab174bf63ed96fe58814b6496170a1c84">
-              <span class="m-doc-wrap-bumper">auto <a href="#ab174bf63ed96fe58814b6496170a1c84" class="m-doc-self">func3Ch</a>(</span><span class="m-doc-wrap">int) -&gt; bool <span class="m-label m-flat m-warning">virtual</span></span>
+            <dt id="af086eabc9819f0fa24309a043fa7682c">
+              <span class="m-doc-wrap-bumper">auto <a href="#af086eabc9819f0fa24309a043fa7682c" class="m-doc-self">cGameData_func3Ch</a>(</span><span class="m-doc-wrap">int) -&gt; bool <span class="m-label m-flat m-warning">virtual</span></span>
             </dt>
             <dd><span></span></dd>
-            <dt id="aa0f3b1d017aeb6a187feb8d8a78e6d5e">
-              <span class="m-doc-wrap-bumper">auto <a href="#aa0f3b1d017aeb6a187feb8d8a78e6d5e" class="m-doc-self">func40h</a>(</span><span class="m-doc-wrap">) -&gt; bool <span class="m-label m-flat m-warning">virtual</span></span>
+            <dt id="a97d4d6c603e431813ed9501dc2ca0b0b">
+              <span class="m-doc-wrap-bumper">auto <a href="#a97d4d6c603e431813ed9501dc2ca0b0b" class="m-doc-self">cGameData_func40h</a>(</span><span class="m-doc-wrap">) -&gt; bool <span class="m-label m-flat m-warning">virtual</span></span>
             </dt>
             <dd><span></span></dd>
             <dt id="a7d7e6b5b1564752dc67029ff0ebee2eb">
@@ -315,6 +315,10 @@
               <span class="m-doc-wrap-bumper">auto <a href="#a6adad22b9e26513eef9725d135ef9202" class="m-doc-self">WriteAsText</a>(</span><span class="m-doc-wrap">int) -&gt; int <span class="m-label m-flat m-warning">virtual</span></span>
             </dt>
             <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a5b65575c41e00bf3022c5e77968a5514" class="m-doc">GetScenarioClass</a>(</span><span class="m-doc-wrap">) -&gt; <a href="class_simulator_1_1c_scenario_class.html" class="m-doc">cScenarioClass</a>*</span>
+            </dt>
+            <dd>Returns the scenario class for this game data, if any; if scenario data is not available (for example, player is not in an adventure), the game will crash.</dd>
           </dl>
         </section>
         <section id="pub-attribs">
@@ -324,12 +328,12 @@
               int <a href="#aadf37bbb7f2a06004b8dc0293016223c" class="m-doc-self">field_14</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="a282eab95f1d9cf09134d4d83e8a691a4">
-              int <a href="#a282eab95f1d9cf09134d4d83e8a691a4" class="m-doc-self">field_18</a>
+            <dt id="a38229d94b1a543b171d89fbdcc79d6cf">
+              <a href="class_simulator_1_1c_scenario_marker.html" class="m-doc">cScenarioMarker</a>* <a href="#a38229d94b1a543b171d89fbdcc79d6cf" class="m-doc-self">mpScenarioMarker</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="a2d8ca748c5f47a07700b63542c9ab65a">
-              int <a href="#a2d8ca748c5f47a07700b63542c9ab65a" class="m-doc-self">field_1C</a>
+            <dt id="ac753a550b699647a3864c42c0137fe31">
+              int <a href="#ac753a550b699647a3864c42c0137fe31" class="m-doc-self">mScenarioClassIndex</a>
             </dt>
             <dd><span></span></dd>
             <dt id="a691041e23b8cad7bae7920906b2914e6">
@@ -357,6 +361,24 @@
             </dt>
             <dd><span></span></dd>
           </dl>
+        </section>
+        <section>
+          <h2>Function documentation</h2>
+          <section class="m-doc-details" id="a5b65575c41e00bf3022c5e77968a5514"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"><a href="class_simulator_1_1c_scenario_class.html" class="m-doc">cScenarioClass</a>* Simulator::<wbr />cGameData::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a5b65575c41e00bf3022c5e77968a5514" class="m-doc-self">GetScenarioClass</a>(</span><span class="m-doc-wrap">)</span></span>
+            </h3>
+            <p>Returns the scenario class for this game data, if any; if scenario data is not available (for example, player is not in an adventure), the game will crash.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <tfoot>
+                <tr>
+                  <th style="width: 1%">Returns</th>
+                  <td>The scenario class for this object.</td>
+                </tr>
+              </tfoot>
+            </table>
+<p>The scenario class is the object that holds all the adventure-related data of this object.</p>
+          </div></section>
         </section>
       </div>
     </div>

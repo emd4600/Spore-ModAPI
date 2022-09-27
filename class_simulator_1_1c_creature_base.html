@@ -48,7 +48,7 @@
           <span class="m-breadcrumb"><a href="namespace_simulator.html">Simulator</a>::<wbr/></span>cCreatureBase <span class="m-thin">class</span>
           <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="c_creature_base_8h.html">&lt;Spore/Simulator/cCreatureBase.h&gt;</a></div>
         </h1>
-        <p><span></span></p>
+        <p>The base class for all creatures in the <a href="namespace_simulator.html" class="m-doc">Simulator</a>.</p>
         <div class="m-block m-default">
           <h3>Contents</h3>
           <ul>
@@ -132,17 +132,17 @@
         <section id="pub-methods">
           <h2><a href="#pub-methods">Public functions</a></h2>
           <dl class="m-doc">
-            <dt id="a04a12f4ea275a8c3f5ae7cbed5520f11">
-              <span class="m-doc-wrap-bumper">auto <a href="#a04a12f4ea275a8c3f5ae7cbed5520f11" class="m-doc-self">PlayAnimation</a>(</span><span class="m-doc-wrap">uint32_t animationID,
+            <dt id="afc7b3a5fc20b24c2f94bee5bb9bba2fc">
+              <span class="m-doc-wrap-bumper">auto <a href="#afc7b3a5fc20b24c2f94bee5bb9bba2fc" class="m-doc-self">PlayAnimation</a>(</span><span class="m-doc-wrap">uint32_t animationID,
               int toolIndex = 0xFFFFFFFF,
-              bool disableBlendInTime = false) -&gt; void*</span>
+              bool disableBlendInTime = false) -&gt; <a href="namespace_anim.html#a3b0f854f8c5f7ea805a07634dc180bc4" class="m-doc">Anim::<wbr />AnimIndex</a></span>
             </dt>
             <dd><span></span></dd>
-            <dt id="a3b962e64e856e8da39a853dd66608088">
-              <span class="m-doc-wrap-bumper">auto <a href="#a3b962e64e856e8da39a853dd66608088" class="m-doc-self">PlayAnimationTo</a>(</span><span class="m-doc-wrap">uint32_t animationID,
+            <dt id="a5db2f57bafe31d52a578fcbc7cee9611">
+              <span class="m-doc-wrap-bumper">auto <a href="#a5db2f57bafe31d52a578fcbc7cee9611" class="m-doc-self">PlayAnimationTo</a>(</span><span class="m-doc-wrap">uint32_t animationID,
               <a href="class_simulator_1_1c_spatial_object.html" class="m-doc">cSpatialObject</a>* otherObject,
               int = 0xFFFFFFFF,
-              int = 0xFFFFFFFF) -&gt; void*</span>
+              int toolIndex = 0xFFFFFFFF) -&gt; <a href="namespace_anim.html#a3b0f854f8c5f7ea805a07634dc180bc4" class="m-doc">Anim::<wbr />AnimIndex</a></span>
             </dt>
             <dd><span></span></dd>
             <dt id="a59de553ccde1d6f657f058d02b676d51">
@@ -151,6 +151,214 @@
               const <a href="struct_math_1_1_vector3.html" class="m-doc">Vector3</a>&amp; arg_8,
               float goalStopDistance = 1.0f,
               float acceptableStopDistance = 2.0f)</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a44d9667232d759c7d6e327da9a4cacc7" class="m-doc">GetAbilityIndexByType</a>(</span><span class="m-doc-wrap">int abilityType) -&gt; int</span>
+            </dt>
+            <dd>Returns the index to the first ability of the craeture that has the specified ability type.</dd>
+            <dt id="abf6187bf1895af5b5bf85f261c56c927">
+              <span class="m-doc-wrap-bumper">auto <a href="#abf6187bf1895af5b5bf85f261c56c927" class="m-doc-self">GetAnimalTarget</a>(</span><span class="m-doc-wrap">) -&gt; <a href="class_simulator_1_1c_creature_animal.html" class="m-doc">cCreatureAnimal</a>*</span>
+            </dt>
+            <dd>Returns the target of this creature ONLY if it is a <a href="class_simulator_1_1c_creature_animal.html" class="m-doc">Simulator::<wbr />cCreatureAnimal</a>.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a73fec3429c0152ae1679171f6a17ada8" class="m-doc">CreateEffectForPool1Renamed</a>(</span><span class="m-doc-wrap">uint32_t effectId,
+              uint32_t poolId) -&gt; <a href="class_swarm_1_1_i_effect.html" class="m-doc">Swarm::<wbr />IEffect</a>*</span>
+            </dt>
+            <dd>Creates an effect on the creature effect pool 1, storing it with a different ID than the effect ID.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a0a66d44520698440e102c791ee725389" class="m-doc">CreateEffectForPool1</a>(</span><span class="m-doc-wrap">uint32_t effectId) -&gt; <a href="class_swarm_1_1_i_effect.html" class="m-doc">Swarm::<wbr />IEffect</a>*</span>
+            </dt>
+            <dd>Creates an effect on the creature effect pool 1.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#aba775059599615d08a36a57f82a80cb6" class="m-doc">CreateAndStartEffectForPool1Renamed</a>(</span><span class="m-doc-wrap">uint32_t effectId,
+              uint32_t poolId) -&gt; <a href="class_swarm_1_1_i_effect.html" class="m-doc">Swarm::<wbr />IEffect</a>*</span>
+            </dt>
+            <dd>Creates and starts an effect on the creature effect pool 1, storing it with a different ID than the effect ID.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a1130d3158a14a4e703a66bbe4e89ebfd" class="m-doc">CreateAndStartEffectForPool1</a>(</span><span class="m-doc-wrap">uint32_t effectId) -&gt; <a href="class_swarm_1_1_i_effect.html" class="m-doc">Swarm::<wbr />IEffect</a>*</span>
+            </dt>
+            <dd>Creates and starts an effect on the creature effect pool 1.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a2fd96d9c68b9dcd8be00d9e00411e00c" class="m-doc">CreateEffectForPool2Renamed</a>(</span><span class="m-doc-wrap">uint32_t effectId,
+              uint32_t poolId) -&gt; <a href="class_swarm_1_1_i_effect.html" class="m-doc">Swarm::<wbr />IEffect</a>*</span>
+            </dt>
+            <dd>Creates an effect on the creature effect pool 2, storing it with a different ID than the effect ID.</dd>
+            <dt id="a9922fdcabe13b6d71bc5f4f034f636a6">
+              <span class="m-doc-wrap-bumper">auto <a href="#a9922fdcabe13b6d71bc5f4f034f636a6" class="m-doc-self">StartOrStopEffectFromPool1</a>(</span><span class="m-doc-wrap">bool create,
+              uint32_t effectId,
+              uint32_t poolId) -&gt; <a href="class_swarm_1_1_i_effect.html" class="m-doc">Swarm::<wbr />IEffect</a>*</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a178826b413bacb83d241614dfbb12587">
+              <span class="m-doc-wrap-bumper">auto <a href="#a178826b413bacb83d241614dfbb12587" class="m-doc-self">StartOrStopEffectFromPool2</a>(</span><span class="m-doc-wrap">bool create,
+              uint32_t effectId,
+              uint32_t poolId) -&gt; <a href="class_swarm_1_1_i_effect.html" class="m-doc">Swarm::<wbr />IEffect</a>*</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a8862635ee5bc89a9d7c388819ea4e0ab" class="m-doc">GetEffectFromPools</a>(</span><span class="m-doc-wrap">uint32_t poolId) -&gt; <a href="class_swarm_1_1_i_effect.html" class="m-doc">Swarm::<wbr />IEffect</a>*</span>
+            </dt>
+            <dd>Gets an active effect from one of the effect pools of the creature.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a51f264b7f79f83de67a60d4b5c11a058" class="m-doc">StopEffectFromPools</a>(</span><span class="m-doc-wrap">uint32_t poolId,
+              int hardStop = 0) -&gt; <a href="class_swarm_1_1_i_effect.html" class="m-doc">Swarm::<wbr />IEffect</a>*</span>
+            </dt>
+            <dd>Stops an effect from one of the effect pools of the creature.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a6f8004487b2d1fd3828d440fb0ae0d7d" class="m-doc">PlayVoice</a>(</span><span class="m-doc-wrap">const char* pName,
+              int param2,
+              int param3) -&gt; int</span>
+            </dt>
+            <dd>Plays a voice file on the creature (only sound, creature does not animate accordingly).</dd>
+            <dt id="af1322e8692070dbeac732da91d7fbd14">
+              <span class="m-doc-wrap-bumper">void <a href="#af1322e8692070dbeac732da91d7fbd14" class="m-doc-self">CreateLocomotionStrategy</a>(</span><span class="m-doc-wrap">) <span class="m-label m-flat m-warning">virtual</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="af37b6457f76702b6ea00e9e388af140e">
+              <span class="m-doc-wrap-bumper">void <a href="#af37b6457f76702b6ea00e9e388af140e" class="m-doc-self">OnJumpLand</a>(</span><span class="m-doc-wrap">) <span class="m-label m-flat m-warning">virtual</span></span>
+            </dt>
+            <dd>Called when the creature touches land after jumping/hovering in the air.</dd>
+            <dt id="a3935f947f3c4d79e6cb6ebf96e093e56">
+              <span class="m-doc-wrap-bumper">void <a href="#a3935f947f3c4d79e6cb6ebf96e093e56" class="m-doc-self">func5Ch</a>(</span><span class="m-doc-wrap">) <span class="m-label m-flat m-warning">virtual</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">void <a href="#abe84f57726f16f0e72ced6955a38510b" class="m-doc">Update</a>(</span><span class="m-doc-wrap">int deltaTime) <span class="m-label m-flat m-warning">virtual</span></span>
+            </dt>
+            <dd>Called every frame, parameter is the ellapsed time in milliseconds.</dd>
+            <dt id="af01067e79e3656e277ee7188991ea1ef">
+              <span class="m-doc-wrap-bumper">void <a href="#af01067e79e3656e277ee7188991ea1ef" class="m-doc-self">func64h</a>(</span><span class="m-doc-wrap">float) <span class="m-label m-flat m-warning">virtual</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a77dec9841eca54eb8a57175718b418cf">
+              <span class="m-doc-wrap-bumper">void <a href="#a77dec9841eca54eb8a57175718b418cf" class="m-doc-self">func68h</a>(</span><span class="m-doc-wrap">float) <span class="m-label m-flat m-warning">virtual</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="afe9bfac3a07890eb365dc814d707189f">
+              <span class="m-doc-wrap-bumper">void <a href="#afe9bfac3a07890eb365dc814d707189f" class="m-doc-self">func6Ch</a>(</span><span class="m-doc-wrap">int deltaTime) <span class="m-label m-flat m-warning">virtual</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="afaed0361fd2134a974032e26a03325af">
+              <span class="m-doc-wrap-bumper">void <a href="#afaed0361fd2134a974032e26a03325af" class="m-doc-self">func70h</a>(</span><span class="m-doc-wrap">float deltaTimeSeconds) <span class="m-label m-flat m-warning">virtual</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a17eaa144709e10aec605f0037a93fae8">
+              <span class="m-doc-wrap-bumper">void <a href="#a17eaa144709e10aec605f0037a93fae8" class="m-doc-self">func74h</a>(</span><span class="m-doc-wrap">void*) <span class="m-label m-flat m-warning">virtual</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a7be7866308a236d4a06435f5250976cf">
+              <span class="m-doc-wrap-bumper">auto <a href="#a7be7866308a236d4a06435f5250976cf" class="m-doc-self">GetBaseMaxHitPoints</a>(</span><span class="m-doc-wrap">) -&gt; float <span class="m-label m-flat m-warning">pure virtual</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="afbc42daeee0ded5c97d1f1604fba93af">
+              <span class="m-doc-wrap-bumper">auto <a href="#afbc42daeee0ded5c97d1f1604fba93af" class="m-doc-self">CalculateScale</a>(</span><span class="m-doc-wrap">bool isBaby) -&gt; float <span class="m-label m-flat m-warning">virtual</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a165dac8391248283fe43bac58b9c410f">
+              <span class="m-doc-wrap-bumper">void <a href="#a165dac8391248283fe43bac58b9c410f" class="m-doc-self">SetCreatureTarget</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_combatant.html" class="m-doc">cCombatant</a>* pTarget,
+              bool,
+              int intentionTowardsTarget) <span class="m-label m-flat m-warning">virtual</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a46bb5ed63fee4b4ff7ee00e467274972">
+              <span class="m-doc-wrap-bumper">void <a href="#a46bb5ed63fee4b4ff7ee00e467274972" class="m-doc-self">UpdateHunger</a>(</span><span class="m-doc-wrap">float deltaTimeSeconds) <span class="m-label m-flat m-warning">virtual</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a09791d69022cc218644d2ca7486ad4c9">
+              <span class="m-doc-wrap-bumper">void <a href="#a09791d69022cc218644d2ca7486ad4c9" class="m-doc-self">func8Ch</a>(</span><span class="m-doc-wrap">) <span class="m-label m-flat m-warning">virtual</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a01f1e6be80e27eec88dd136df4894f56">
+              <span class="m-doc-wrap-bumper">void <a href="#a01f1e6be80e27eec88dd136df4894f56" class="m-doc-self">func90h</a>(</span><span class="m-doc-wrap">) <span class="m-label m-flat m-warning">virtual</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a2b18b60bc6c929427dd3894663c9670a">
+              <span class="m-doc-wrap-bumper">void <a href="#a2b18b60bc6c929427dd3894663c9670a" class="m-doc-self">func94h</a>(</span><span class="m-doc-wrap">float) <span class="m-label m-flat m-warning">virtual</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a0c8e1edbef6921c381793678ab61c800">
+              <span class="m-doc-wrap-bumper">auto <a href="#a0c8e1edbef6921c381793678ab61c800" class="m-doc-self">GetLastInteractionEffect</a>(</span><span class="m-doc-wrap">) -&gt; uint32_t <span class="m-label m-flat m-warning">virtual</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a3eb9e6f13844696b71eb69f0279af40c">
+              <span class="m-doc-wrap-bumper">void <a href="#a3eb9e6f13844696b71eb69f0279af40c" class="m-doc-self">SetLastInteractionEffect</a>(</span><span class="m-doc-wrap">uint32_t effect) <span class="m-label m-flat m-warning">virtual</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a4729538d33b35ad9f1c0803dd4d4b856">
+              <span class="m-doc-wrap-bumper">auto <a href="#a4729538d33b35ad9f1c0803dd4d4b856" class="m-doc-self">ForgetUpdateInteractionEffect</a>(</span><span class="m-doc-wrap">) -&gt; bool <span class="m-label m-flat m-warning">virtual</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a2cc6a1a9948d0de9ba4f6dd07e5a65f1">
+              <span class="m-doc-wrap-bumper">auto <a href="#a2cc6a1a9948d0de9ba4f6dd07e5a65f1" class="m-doc-self">UpdateMotiveState</a>(</span><span class="m-doc-wrap">) -&gt; <a href="namespace_simulator.html#a19de5794c1d78a60b79d487c4a144768" class="m-doc">CreatureMotive</a> <span class="m-label m-flat m-warning">virtual</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="ad03297158260691a4aef13251c5aed7b">
+              <span class="m-doc-wrap-bumper">auto <a href="#ad03297158260691a4aef13251c5aed7b" class="m-doc-self">HasUpdateMotiveEffect</a>(</span><span class="m-doc-wrap">) -&gt; bool <span class="m-label m-flat m-warning">virtual</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a76cf0f8613b806042c64327b73607ee5">
+              <span class="m-doc-wrap-bumper">auto <a href="#a76cf0f8613b806042c64327b73607ee5" class="m-doc-self">funcACh</a>(</span><span class="m-doc-wrap">bool) -&gt; bool <span class="m-label m-flat m-warning">virtual</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="afae5d509f1c183fe93edba05c5b25630">
+              <span class="m-doc-wrap-bumper">auto <a href="#afae5d509f1c183fe93edba05c5b25630" class="m-doc-self">GetAbilitiesCount</a>(</span><span class="m-doc-wrap">) -&gt; int <span class="m-label m-flat m-warning">virtual</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a233783b0a241a8402f0aa99566572c49">
+              <span class="m-doc-wrap-bumper">auto <a href="#a233783b0a241a8402f0aa99566572c49" class="m-doc-self">GetAbility</a>(</span><span class="m-doc-wrap">int index) -&gt; <a href="class_simulator_1_1c_creature_ability.html" class="m-doc">cCreatureAbility</a>* <span class="m-label m-flat m-warning">virtual</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a0ceeb837a4afe91ea0f0aac926af2971">
+              <span class="m-doc-wrap-bumper">auto <a href="#a0ceeb837a4afe91ea0f0aac926af2971" class="m-doc-self">funcB8h</a>(</span><span class="m-doc-wrap">int,
+              int,
+              int) -&gt; bool <span class="m-label m-flat m-warning">virtual</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="aa6501f1aa62a78bd6c75e0706f94836b">
+              <span class="m-doc-wrap-bumper">auto <a href="#aa6501f1aa62a78bd6c75e0706f94836b" class="m-doc-self">funcBCh</a>(</span><span class="m-doc-wrap">) -&gt; int <span class="m-label m-flat m-warning">virtual</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="aa390636022922c5e0bc8bebe690e1621">
+              <span class="m-doc-wrap-bumper">auto <a href="#aa390636022922c5e0bc8bebe690e1621" class="m-doc-self">funcC0h</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_creature_base.html" class="m-doc">cCreatureBase</a>* pOtherCreature,
+              float,
+              float) -&gt; bool <span class="m-label m-flat m-warning">virtual</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a4b6bdab81000b38d80d486cd674afd81">
+              <span class="m-doc-wrap-bumper">void <a href="#a4b6bdab81000b38d80d486cd674afd81" class="m-doc-self">funcC4h</a>(</span><span class="m-doc-wrap">) <span class="m-label m-flat m-warning">virtual</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a0c7f4595a90ad859f5c2addc12579886">
+              <span class="m-doc-wrap-bumper">void <a href="#a0c7f4595a90ad859f5c2addc12579886" class="m-doc-self">funcC8h</a>(</span><span class="m-doc-wrap">bool) <span class="m-label m-flat m-warning">pure virtual</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a911dc75bdad22a2d6ffacf1fc3261e63">
+              <span class="m-doc-wrap-bumper">void <a href="#a911dc75bdad22a2d6ffacf1fc3261e63" class="m-doc-self">funcCCh</a>(</span><span class="m-doc-wrap">bool) <span class="m-label m-flat m-warning">virtual</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a56c64b1e5dff2b61e7e19564933995f3">
+              <span class="m-doc-wrap-bumper">auto <a href="#a56c64b1e5dff2b61e7e19564933995f3" class="m-doc-self">IsDefaultSpecies</a>(</span><span class="m-doc-wrap">) -&gt; bool <span class="m-label m-flat m-warning">virtual</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a7457d0f88e058bd7f26f96a1a431d0e9">
+              <span class="m-doc-wrap-bumper">auto <a href="#a7457d0f88e058bd7f26f96a1a431d0e9" class="m-doc-self">funcD4h</a>(</span><span class="m-doc-wrap">) -&gt; int <span class="m-label m-flat m-warning">virtual</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a6650c66d5ae2ed10e653b9151a6f677b">
+              <span class="m-doc-wrap-bumper">auto <a href="#a6650c66d5ae2ed10e653b9151a6f677b" class="m-doc-self">GetCurrentBrainLevel</a>(</span><span class="m-doc-wrap">) -&gt; int <span class="m-label m-flat m-warning">virtual</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a743e703f56acc0bb9b47d1770ec552b9">
+              <span class="m-doc-wrap-bumper">void <a href="#a743e703f56acc0bb9b47d1770ec552b9" class="m-doc-self">SetCurrentBrainLevel</a>(</span><span class="m-doc-wrap">int level) <span class="m-label m-flat m-warning">virtual</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a3aac96c224933d8aeb1d5bbe63b9ca94">
+              <span class="m-doc-wrap-bumper">auto <a href="#a3aac96c224933d8aeb1d5bbe63b9ca94" class="m-doc-self">GetIdentityColor</a>(</span><span class="m-doc-wrap">) const -&gt; const <a href="struct_math_1_1_color_r_g_b.html" class="m-doc">ColorRGB</a>&amp; <span class="m-label m-flat m-warning">virtual</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a903548d81e152ebb9021818cde8c69a9">
+              <span class="m-doc-wrap-bumper">void <a href="#a903548d81e152ebb9021818cde8c69a9" class="m-doc-self">SetIdentityColor</a>(</span><span class="m-doc-wrap">const <a href="struct_math_1_1_color_r_g_b.html" class="m-doc">ColorRGB</a>&amp; color) <span class="m-label m-flat m-warning">virtual</span></span>
             </dt>
             <dd><span></span></dd>
             <dt id="a3a9c8996c8e1adc7cfec11f8f09b51c8">
@@ -170,20 +378,20 @@
         <section id="pub-attribs">
           <h2><a href="#pub-attribs">Public variables</a></h2>
           <dl class="m-doc">
-            <dt id="ac592fd31687f1971c35e7baa943e2f32">
-              bool <a href="#ac592fd31687f1971c35e7baa943e2f32" class="m-doc-self">field_B10</a>
+            <dt id="a54af7c2e242a99e2a56f085e4a4937b9">
+              bool <a href="#a54af7c2e242a99e2a56f085e4a4937b9" class="m-doc-self">mHasDamageBoost</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="ab4b3dd50929a7900ae22e18d3258d7f8">
-              int <a href="#ab4b3dd50929a7900ae22e18d3258d7f8" class="m-doc-self">field_B14</a>
+            <dt id="aace752ba43ea59a3c8282355466763b0">
+              float <a href="#aace752ba43ea59a3c8282355466763b0" class="m-doc-self">mDamageBoostAmount</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="a14f97eee6295d6ce9a5fe09512f4bdec">
-              bool <a href="#a14f97eee6295d6ce9a5fe09512f4bdec" class="m-doc-self">field_B18</a>
+            <dt id="a633daf4baf200b152c04900948139b8d">
+              bool <a href="#a633daf4baf200b152c04900948139b8d" class="m-doc-self">mHasArmorBoost</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="a17c3590f52cd6520de9ad3ef789eb08c">
-              int <a href="#a17c3590f52cd6520de9ad3ef789eb08c" class="m-doc-self">field_B1C</a>
+            <dt id="a6c5db6a203587400a9c65f514a2d1523">
+              float <a href="#a6c5db6a203587400a9c65f514a2d1523" class="m-doc-self">mArmorBoostAmount</a>
             </dt>
             <dd><span></span></dd>
             <dt id="a8b0aa165bfdc4e3980afeca4bcbf2196">
@@ -282,8 +490,8 @@
               bool <a href="#a09e197d2aac657ae22fe34ea06821ef7" class="m-doc-self">field_B69</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="ad1d9d3202b9fff4e87bd2c16684e5b8d">
-              int <a href="#ad1d9d3202b9fff4e87bd2c16684e5b8d" class="m-doc-self">field_B6C</a>
+            <dt id="a4bc89c42f37d2b88f2b016f691f61574">
+              <a href="namespace_audio.html#a5572380a651053d0fc3e4b7b0b5cd468" class="m-doc">Audio::<wbr />AudioTrack</a> <a href="#a4bc89c42f37d2b88f2b016f691f61574" class="m-doc-self">field_B6C</a>
             </dt>
             <dd><span></span></dd>
             <dt id="aaf79dee3747b9c8b119c9455d3ed3fa9">
@@ -414,20 +622,20 @@
               fixed_vector&lt;<a href="class_simulator_1_1c_ability_state.html" class="m-doc">cAbilityState</a>, 8&gt; <a href="#aea1db797c6141445bb667f2c22287cb3" class="m-doc-self">mAbilityStates</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="a21674766569188dd995987ea1afa9f96">
-              int <a href="#a21674766569188dd995987ea1afa9f96" class="m-doc-self">mLastMotiveState</a>
+            <dt id="a976e36e2d07d632b8ff5a995e6e2d4d2">
+              <a href="namespace_simulator.html#a19de5794c1d78a60b79d487c4a144768" class="m-doc">CreatureMotive</a> <a href="#a976e36e2d07d632b8ff5a995e6e2d4d2" class="m-doc-self">mLastMotiveState</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="a29fa370416faa55fdc10647b8f648d3b">
-              int <a href="#a29fa370416faa55fdc10647b8f648d3b" class="m-doc-self">mLastInteractionEffect</a>
+            <dt id="a1ab0c4e000914a8d102b652f4b076246">
+              uint32_t <a href="#a1ab0c4e000914a8d102b652f4b076246" class="m-doc-self">mLastInteractionEffect</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="af0b8362b3ca0040ef41ab8ef5e66241b">
-              <a href="class_simulator_1_1_unknown_creature_class2.html" class="m-doc">UnknownCreatureClass2</a> <a href="#af0b8362b3ca0040ef41ab8ef5e66241b" class="m-doc-self">field_CC8</a>
+            <dt id="a0b61a3a38769db9d0e405b0a1e7a7926">
+              <a href="class_simulator_1_1_creature_effect_pool.html" class="m-doc">CreatureEffectPool</a> <a href="#a0b61a3a38769db9d0e405b0a1e7a7926" class="m-doc-self">mEffectPool1</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="a361222060cdeb02d930a247d1a80f38b">
-              <a href="class_simulator_1_1_unknown_creature_class2.html" class="m-doc">UnknownCreatureClass2</a> <a href="#a361222060cdeb02d930a247d1a80f38b" class="m-doc-self">field_D68</a>
+            <dt id="ae6f473d6836fb4ca91d2ed38739da44a">
+              <a href="class_simulator_1_1_creature_effect_pool.html" class="m-doc">CreatureEffectPool</a> <a href="#ae6f473d6836fb4ca91d2ed38739da44a" class="m-doc-self">mEffectPool2</a>
             </dt>
             <dd><span></span></dd>
             <dt id="a9dccf44b85f6e9879ad81b62ae50ebab">
@@ -454,12 +662,12 @@
               int <a href="#a89743d003a9eb5d2a4324665df54140a" class="m-doc-self">field_E54</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="a510f4253220f6b66a895fece29992e1c">
-              float <a href="#a510f4253220f6b66a895fece29992e1c" class="m-doc-self">field_E58</a>
+            <dt id="a5d56820f60431128cce0f368959ac129">
+              float <a href="#a5d56820f60431128cce0f368959ac129" class="m-doc-self">mEnergy</a>
             </dt>
-            <dd><span></span></dd>
-            <dt id="a482659afb941f75896d07db3535bf2e5">
-              float <a href="#a482659afb941f75896d07db3535bf2e5" class="m-doc-self">field_E5C</a>
+            <dd>For adventurer creatures, their current energy.</dd>
+            <dt id="a001bd7700799abfbaf13656f39748b16">
+              float <a href="#a001bd7700799abfbaf13656f39748b16" class="m-doc-self">mMaxEnergy</a>
             </dt>
             <dd><span></span></dd>
             <dt id="a428b50040cc7e81268bda5b7e9385050">
@@ -490,14 +698,14 @@
               int <a href="#a0e96606d50100720b8ccd60f0a0cbd0c" class="m-doc-self">field_E6C</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="a6b84503f98bd39d503e6cb5172733344">
-              int <a href="#a6b84503f98bd39d503e6cb5172733344" class="m-doc-self">field_E70</a>
+            <dt id="a9a43e763f121743c0b0539b4713f44bf">
+              int <a href="#a9a43e763f121743c0b0539b4713f44bf" class="m-doc-self">mDefaultAttackAbilityIndex</a>
             </dt>
-            <dd><span></span></dd>
-            <dt id="a2ba44c75c47f8b505ea594b9b31f6be1">
-              int <a href="#a2ba44c75c47f8b505ea594b9b31f6be1" class="m-doc-self">field_E74</a>
+            <dd>Index to default attack ability, which is generally bite or its improvements (energy or poison blade)</dd>
+            <dt id="aa6d496438ab521c5a30bf1b211cfb9d7">
+              int <a href="#aa6d496438ab521c5a30bf1b211cfb9d7" class="m-doc-self">mDefaultSocializeAbilityIndex</a>
             </dt>
-            <dd><span></span></dd>
+            <dd>Index to default socialize ability, which is generally vocalize or its improvements (inspiring or harmonious song)</dd>
             <dt id="a18ec9b755277d4bfa013a4f53af74d03">
               bool <a href="#a18ec9b755277d4bfa013a4f53af74d03" class="m-doc-self">field_E78</a>
             </dt>
@@ -679,6 +887,253 @@
             </dt>
             <dd><span></span></dd>
           </dl>
+        </section>
+        <section>
+          <h2>Function documentation</h2>
+          <section class="m-doc-details" id="a44d9667232d759c7d6e327da9a4cacc7"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">int Simulator::<wbr />cCreatureBase::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a44d9667232d759c7d6e327da9a4cacc7" class="m-doc-self">GetAbilityIndexByType</a>(</span><span class="m-doc-wrap">int abilityType)</span></span>
+            </h3>
+            <p>Returns the index to the first ability of the craeture that has the specified ability type.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">abilityType</td>
+                  <td></td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>Returns</th>
+                  <td>Index to ability, or -1 if not found</td>
+                </tr>
+              </tfoot>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="a73fec3429c0152ae1679171f6a17ada8"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"><a href="class_swarm_1_1_i_effect.html" class="m-doc">Swarm::<wbr />IEffect</a>* Simulator::<wbr />cCreatureBase::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a73fec3429c0152ae1679171f6a17ada8" class="m-doc-self">CreateEffectForPool1Renamed</a>(</span><span class="m-doc-wrap">uint32_t effectId,
+              uint32_t poolId)</span></span>
+            </h3>
+            <p>Creates an effect on the creature effect pool 1, storing it with a different ID than the effect ID.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">effectId</td>
+                  <td>ID of the effect to create</td>
+                </tr>
+                <tr>
+                  <td>poolId</td>
+                  <td>ID used to identify this new effect within the pool, must be used to access it in related methods.</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>Returns</th>
+                  <td>The created effect, or null if the effect id is not valid.</td>
+                </tr>
+              </tfoot>
+            </table>
+<p>The effect will be returned in its default state, positioned in the creature, without having started.</p>
+          </div></section>
+          <section class="m-doc-details" id="a0a66d44520698440e102c791ee725389"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"><a href="class_swarm_1_1_i_effect.html" class="m-doc">Swarm::<wbr />IEffect</a>* Simulator::<wbr />cCreatureBase::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a0a66d44520698440e102c791ee725389" class="m-doc-self">CreateEffectForPool1</a>(</span><span class="m-doc-wrap">uint32_t effectId)</span></span>
+            </h3>
+            <p>Creates an effect on the creature effect pool 1.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">effectId</td>
+                  <td>ID of the effect to create</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>Returns</th>
+                  <td>The created effect, or null if the effect id is not valid.</td>
+                </tr>
+              </tfoot>
+            </table>
+<p>The effect will be returned in its default state, positioned in the creature, without having started.</p>
+          </div></section>
+          <section class="m-doc-details" id="aba775059599615d08a36a57f82a80cb6"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"><a href="class_swarm_1_1_i_effect.html" class="m-doc">Swarm::<wbr />IEffect</a>* Simulator::<wbr />cCreatureBase::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#aba775059599615d08a36a57f82a80cb6" class="m-doc-self">CreateAndStartEffectForPool1Renamed</a>(</span><span class="m-doc-wrap">uint32_t effectId,
+              uint32_t poolId)</span></span>
+            </h3>
+            <p>Creates and starts an effect on the creature effect pool 1, storing it with a different ID than the effect ID.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">effectId</td>
+                  <td>ID of the effect to create</td>
+                </tr>
+                <tr>
+                  <td>poolId</td>
+                  <td>ID used to identify this new effect within the pool, must be used to access it in related methods.</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>Returns</th>
+                  <td>The created effect, or null if the effect id is not valid.</td>
+                </tr>
+              </tfoot>
+            </table>
+<p>The effect will be returned in its default state, positioned in the creature, but starting it with <code>hardStart=0</code>.</p>
+          </div></section>
+          <section class="m-doc-details" id="a1130d3158a14a4e703a66bbe4e89ebfd"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"><a href="class_swarm_1_1_i_effect.html" class="m-doc">Swarm::<wbr />IEffect</a>* Simulator::<wbr />cCreatureBase::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a1130d3158a14a4e703a66bbe4e89ebfd" class="m-doc-self">CreateAndStartEffectForPool1</a>(</span><span class="m-doc-wrap">uint32_t effectId)</span></span>
+            </h3>
+            <p>Creates and starts an effect on the creature effect pool 1.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">effectId</td>
+                  <td>ID of the effect to create</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>Returns</th>
+                  <td>The created effect, or null if the effect id is not valid.</td>
+                </tr>
+              </tfoot>
+            </table>
+<p>The effect will be returned in its default state, positioned in the creature, but starting it with <code>hardStart=0</code>.</p>
+          </div></section>
+          <section class="m-doc-details" id="a2fd96d9c68b9dcd8be00d9e00411e00c"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"><a href="class_swarm_1_1_i_effect.html" class="m-doc">Swarm::<wbr />IEffect</a>* Simulator::<wbr />cCreatureBase::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a2fd96d9c68b9dcd8be00d9e00411e00c" class="m-doc-self">CreateEffectForPool2Renamed</a>(</span><span class="m-doc-wrap">uint32_t effectId,
+              uint32_t poolId)</span></span>
+            </h3>
+            <p>Creates an effect on the creature effect pool 2, storing it with a different ID than the effect ID.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">effectId</td>
+                  <td>ID of the effect to create</td>
+                </tr>
+                <tr>
+                  <td>poolId</td>
+                  <td>ID used to identify this new effect within the pool, must be used to access it in related methods.</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>Returns</th>
+                  <td>The created effect, or null if the effect id is not valid.</td>
+                </tr>
+              </tfoot>
+            </table>
+<p>The effect will be returned in its default state, positioned in the creature, without having started.</p>
+          </div></section>
+          <section class="m-doc-details" id="a8862635ee5bc89a9d7c388819ea4e0ab"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"><a href="class_swarm_1_1_i_effect.html" class="m-doc">Swarm::<wbr />IEffect</a>* Simulator::<wbr />cCreatureBase::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a8862635ee5bc89a9d7c388819ea4e0ab" class="m-doc-self">GetEffectFromPools</a>(</span><span class="m-doc-wrap">uint32_t poolId)</span></span>
+            </h3>
+            <p>Gets an active effect from one of the effect pools of the creature.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">poolId</td>
+                  <td></td>
+                </tr>
+              </tbody>
+            </table>
+<p>The effect is referenced with the ID that was given at its creation, which usually is the effect ID.</p>
+          </div></section>
+          <section class="m-doc-details" id="a51f264b7f79f83de67a60d4b5c11a058"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"><a href="class_swarm_1_1_i_effect.html" class="m-doc">Swarm::<wbr />IEffect</a>* Simulator::<wbr />cCreatureBase::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a51f264b7f79f83de67a60d4b5c11a058" class="m-doc-self">StopEffectFromPools</a>(</span><span class="m-doc-wrap">uint32_t poolId,
+              int hardStop = 0)</span></span>
+            </h3>
+            <p>Stops an effect from one of the effect pools of the creature.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">poolId</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>hardStop</td>
+                  <td></td>
+                </tr>
+              </tbody>
+            </table>
+<p>The effect is referenced with the ID that was given at its creation, which usually is the effect ID.</p>
+          </div></section>
+          <section class="m-doc-details" id="a6f8004487b2d1fd3828d440fb0ae0d7d"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">int Simulator::<wbr />cCreatureBase::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a6f8004487b2d1fd3828d440fb0ae0d7d" class="m-doc-self">PlayVoice</a>(</span><span class="m-doc-wrap">const char* pName,
+              int param2,
+              int param3)</span></span>
+            </h3>
+            <p>Plays a voice file on the creature (only sound, creature does not animate accordingly).</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">pName</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>param2</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>param3</td>
+                  <td></td>
+                </tr>
+              </tbody>
+            </table>
+<p>Example usage: <code>PlayVoice(&quot;vcode_baby_born_cry&quot;, 2, 0)</code></p>
+          </div></section>
+          <section class="m-doc-details" id="abe84f57726f16f0e72ced6955a38510b"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">void Simulator::<wbr />cCreatureBase::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#abe84f57726f16f0e72ced6955a38510b" class="m-doc-self">Update</a>(</span><span class="m-doc-wrap">int deltaTime) <span class="m-label m-warning">virtual</span></span></span>
+            </h3>
+            <p>Called every frame, parameter is the ellapsed time in milliseconds.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">deltaTime</td>
+                  <td></td>
+                </tr>
+              </tbody>
+            </table>
+          </div></section>
         </section>
       </div>
     </div>

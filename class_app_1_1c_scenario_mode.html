@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>App::cScenarioMode class | Spore ModAPI SDK for creating C++ mods for Spore</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,600,600i%7CSource+Code+Pro:400,400i,600" />
+  <link rel="stylesheet" href="m-dark.css" />
+  <link rel="stylesheet" href="m-documentation.css" />
+  <link rel="icon" href="Spore_ModAPI_Icon.png" type="image/png" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#22272e" />
+</head>
+<body>
+<header><nav id="navigation">
+  <div class="m-container">
+    <div class="m-row">
+      <a href="index.html" id="m-navbar-brand" class="m-col-t-8 m-col-m-none m-left-m"><img src="Spore_ModAPI_Icon.png" />Spore ModAPI <span class="m-thin">SDK for creating C++ mods for Spore</span></a>
+      <div class="m-col-t-4 m-hide-m m-text-right m-nopadr">
+        <a href="#search" class="m-doc-search-icon" title="Search" onclick="return showSearch()"><svg style="height: 0.9rem;" viewBox="0 0 16 16">
+          <path id="m-doc-search-icon-path" d="m6 0c-3.31 0-6 2.69-6 6 0 3.31 2.69 6 6 6 1.49 0 2.85-0.541 3.89-1.44-0.0164 0.338 0.147 0.759 0.5 1.15l3.22 3.79c0.552 0.614 1.45 0.665 2 0.115 0.55-0.55 0.499-1.45-0.115-2l-3.79-3.22c-0.392-0.353-0.812-0.515-1.15-0.5 0.895-1.05 1.44-2.41 1.44-3.89 0-3.31-2.69-6-6-6zm0 1.56a4.44 4.44 0 0 1 4.44 4.44 4.44 4.44 0 0 1-4.44 4.44 4.44 4.44 0 0 1-4.44-4.44 4.44 4.44 0 0 1 4.44-4.44z"/>
+        </svg></a>
+        <a id="m-navbar-show" href="#navigation" title="Show navigation"></a>
+        <a id="m-navbar-hide" href="#" title="Hide navigation"></a>
+      </div>
+      <div id="m-navbar-collapse" class="m-col-t-12 m-show-m m-col-m-none m-right-m">
+        <div class="m-row">
+          <ol class="m-col-t-6 m-col-m-none">
+            <li><a href="pages.html">Tutorials</a></li>
+            <li><a href="namespaces.html">Namespaces</a></li>
+          </ol>
+          <ol class="m-col-t-6 m-col-m-none" start="3">
+            <li><a href="annotated.html">Classes</a></li>
+            <li><a href="files.html">Files</a></li>
+            <li class="m-show-m"><a href="#search" class="m-doc-search-icon" title="Search" onclick="return showSearch()"><svg style="height: 0.9rem;" viewBox="0 0 16 16">
+              <use href="#m-doc-search-icon-path" />
+            </svg></a></li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav></header>
+<main><article>
+  <div class="m-container m-container-inflatable">
+    <div class="m-row">
+      <div class="m-col-l-10 m-push-l-1">
+        <h1>
+          <span class="m-breadcrumb"><a href="namespace_app.html">App</a>::<wbr/></span>cScenarioMode <span class="m-thin">class</span>
+          <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_scenario_mode_8h.html">&lt;Spore/App/ScenarioMode.h&gt;</a></div>
+        </h1>
+        <p><span></span></p>
+        <div class="m-block m-default">
+          <h3>Contents</h3>
+          <ul>
+            <li>
+              Reference
+              <ul>
+                <li><a href="#base-classes">Base classes</a></li>
+                <li><a href="#pub-types">Public types</a></li>
+                <li><a href="#pub-static-methods">Public static functions</a></li>
+                <li><a href="#pub-methods">Public functions</a></li>
+                <li><a href="#pub-attribs">Public variables</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+        <section id="base-classes">
+          <h2><a href="#base-classes">Base classes</a></h2>
+          <dl class="m-doc">
+            <dt>
+              class <a href="class_app_1_1_i_game_mode.html" class="m-doc">IGameMode</a>
+            </dt>
+            <dd>An interface that represents a mode in the game, that can receive mouse/keyboard input and update every frame.</dd>
+            <dt>
+              class <a href="class_app_1_1_i_unmanaged_message_listener.html" class="m-doc">IUnmanagedMessageListener</a>
+            </dt>
+            <dd>Same as <a href="class_app_1_1_i_message_listener.html" class="m-doc">App::<wbr />IMessageListener</a>, but this one does not use ref-counting.</dd>
+            <dt>
+              class <a href="class_default_ref_counted.html" class="m-doc">DefaultRefCounted</a>
+            </dt>
+            <dd>The default implementation of a reference counted class.</dd>
+          </dl>
+        </section>
+        <section id="pub-types">
+          <h2><a href="#pub-types">Public types</a></h2>
+          <dl class="m-doc">
+            <dt id="a7a1de663672e11f91bbc18d2303c6a4d">
+              <span class="m-doc-wrap-bumper">enum class <a href="#a7a1de663672e11f91bbc18d2303c6a4d" class="m-doc-self">Mode</a>: int { </span><span class="m-doc-wrap"><a href="#a7a1de663672e11f91bbc18d2303c6a4da61f05fcdd581dfd0dfa82eec05dd2b6c" class="m-doc">UnkMode</a> = 0,
+              <a href="#a7a1de663672e11f91bbc18d2303c6a4da892169d13e2cfd4638bf38dd53dd0178" class="m-doc">EditMode</a> = 1,
+              <a href="#a7a1de663672e11f91bbc18d2303c6a4da194ed09f62aaab600e7a9fdc32763f40" class="m-doc">PlayMode</a> = 2 }</span>
+            </dt>
+            <dd><span></span></dd>
+          </dl>
+        </section>
+        <section id="pub-static-methods">
+          <h2><a href="#pub-static-methods">Public static functions</a></h2>
+          <dl class="m-doc">
+            <dt id="a1456d93729d6a0b78db2f4632cc0ba89">
+              <span class="m-doc-wrap-bumper">static auto <a href="#a1456d93729d6a0b78db2f4632cc0ba89" class="m-doc-self">Get</a>(</span><span class="m-doc-wrap">) -&gt; <a href="class_app_1_1c_scenario_mode.html" class="m-doc">cScenarioMode</a>*</span>
+            </dt>
+            <dd>Returns the ScenarioMode instance.</dd>
+          </dl>
+        </section>
+        <section id="pub-methods">
+          <h2><a href="#pub-methods">Public functions</a></h2>
+          <dl class="m-doc">
+            <dt id="aa509c812ad4450f56cf7c2c19fcb8674">
+              <span class="m-doc-wrap-bumper">auto <a href="#aa509c812ad4450f56cf7c2c19fcb8674" class="m-doc-self">GetMode</a>(</span><span class="m-doc-wrap">) const -&gt; <a href="class_app_1_1c_scenario_mode.html#a7a1de663672e11f91bbc18d2303c6a4d" class="m-doc">Mode</a></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a990217c8eb3fdcc336ae37d5c320800f">
+              <span class="m-doc-wrap-bumper">auto <a href="#a990217c8eb3fdcc336ae37d5c320800f" class="m-doc-self">GetData</a>(</span><span class="m-doc-wrap">) -&gt; <a href="class_simulator_1_1c_scenario_data.html" class="m-doc">Simulator::<wbr />cScenarioData</a>*</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="affe71d485da74f88e3c784cb480a895b">
+              <span class="m-doc-wrap-bumper">auto <a href="#affe71d485da74f88e3c784cb480a895b" class="m-doc-self">GetTerraformMode</a>(</span><span class="m-doc-wrap">) -&gt; <a href="class_simulator_1_1c_scenario_terraform_mode.html" class="m-doc">Simulator::<wbr />cScenarioTerraformMode</a>*</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a595acea36421adc37d066c1c2bec80d9">
+              <span class="m-doc-wrap-bumper">auto <a href="#a595acea36421adc37d066c1c2bec80d9" class="m-doc-self">GetPlayMode</a>(</span><span class="m-doc-wrap">) -&gt; <a href="class_simulator_1_1c_scenario_play_mode.html" class="m-doc">Simulator::<wbr />cScenarioPlayMode</a>*</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="afa733a43891dd9263dec346faf998c2a">
+              <span class="m-doc-wrap-bumper">auto <a href="#afa733a43891dd9263dec346faf998c2a" class="m-doc-self">GetResource</a>(</span><span class="m-doc-wrap">) -&gt; <a href="class_simulator_1_1c_scenario_resource.html" class="m-doc">Simulator::<wbr />cScenarioResource</a>*</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a7f83eee02844e20b59c13dfe6ef2a46a">
+              <span class="m-doc-wrap-bumper">auto <a href="#a7f83eee02844e20b59c13dfe6ef2a46a" class="m-doc-self">AddRef</a>(</span><span class="m-doc-wrap">) -&gt; int</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="aace8d1b512662f09bf4c68167d434871">
+              <span class="m-doc-wrap-bumper">auto <a href="#aace8d1b512662f09bf4c68167d434871" class="m-doc-self">Release</a>(</span><span class="m-doc-wrap">) -&gt; int</span>
+            </dt>
+            <dd><span></span></dd>
+          </dl>
+        </section>
+        <section id="pub-attribs">
+          <h2><a href="#pub-attribs">Public variables</a></h2>
+          <dl class="m-doc">
+            <dt id="a08d9927f9fe67db1a8a6abd333652473">
+              int <a href="#a08d9927f9fe67db1a8a6abd333652473" class="m-doc-self">mpEditModeInputStrategy</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="acadb07bd31dd415460a4bb89f657f157">
+              int <a href="#acadb07bd31dd415460a4bb89f657f157" class="m-doc-self">mpEditModeDisplayStrategy</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a4fa0454ee0ff0c071930689d02dc7a5f">
+              <a href="c_scenario_terraform_mode_8h.html#a777e3b21f4c0eda64b875c2215994cb1" class="m-doc">cScenarioTerraformModePtr</a> <a href="#a4fa0454ee0ff0c071930689d02dc7a5f" class="m-doc-self">mpTerraformMode</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a2f4a5c05148df7c8b6648f9c10a81344">
+              int <a href="#a2f4a5c05148df7c8b6648f9c10a81344" class="m-doc-self">mpScenarioUI</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a3b37942bdf93fd021f04387b57e71504">
+              <a href="struct_game_input.html" class="m-doc">GameInput</a> <a href="#a3b37942bdf93fd021f04387b57e71504" class="m-doc-self">mInput</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="abb87c04b1ee4df027d4caaab0be57239">
+              int <a href="#abb87c04b1ee4df027d4caaab0be57239" class="m-doc-self">field_68</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a49471c5fd848ff72b3a8a6f1e19810aa">
+              int <a href="#a49471c5fd848ff72b3a8a6f1e19810aa" class="m-doc-self">field_6C</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a20013b078e41b6fdbc8ce666375a10f4">
+              int <a href="#a20013b078e41b6fdbc8ce666375a10f4" class="m-doc-self">field_70</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a42d57e2662e4a42a9128fd5b2e7b2de7">
+              <a href="c_scenario_data_8h.html#a73eda897bf1c0f23f70406185cdb2991" class="m-doc">cScenarioDataPtr</a> <a href="#a42d57e2662e4a42a9128fd5b2e7b2de7" class="m-doc-self">mpData</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a97c0267cf4543c47d78d7ae5454203bc">
+              <a href="c_scenario_play_mode_8h.html#ae1ce3b1f86d04bfc851c40873235abc1" class="m-doc">cScenarioPlayModePtr</a> <a href="#a97c0267cf4543c47d78d7ae5454203bc" class="m-doc-self">mpPlayMode</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="afe1f2ccdfd162907b8985c1d2e78fc23">
+              int <a href="#afe1f2ccdfd162907b8985c1d2e78fc23" class="m-doc-self">field_7C</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="ad91e166a4bf717839c1785bf0e0f95c0">
+              <a href="struct_app_1_1_message_listener_data.html" class="m-doc">App::<wbr />MessageListenerData</a> <a href="#ad91e166a4bf717839c1785bf0e0f95c0" class="m-doc-self">field_80</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a8aeda5f97d5b4cdf7a1ca205aa3df4ad">
+              <a href="struct_app_1_1_message_listener_data.html" class="m-doc">App::<wbr />MessageListenerData</a> <a href="#a8aeda5f97d5b4cdf7a1ca205aa3df4ad" class="m-doc-self">field_94</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="ae28eb2b1e420351bd4fc991eea866f32">
+              bool <a href="#ae28eb2b1e420351bd4fc991eea866f32" class="m-doc-self">field_A8</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a247f6ab8b2e69145caba18f4450675b8">
+              int <a href="#a247f6ab8b2e69145caba18f4450675b8" class="m-doc-self">field_AC</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a308fe2a5a81a3501caf71277735f0e1b">
+              int <a href="#a308fe2a5a81a3501caf71277735f0e1b" class="m-doc-self">field_B0</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a3f685c7bd4c753c1719902640371bc9e">
+              int <a href="#a3f685c7bd4c753c1719902640371bc9e" class="m-doc-self">field_B4</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a39b20dc703a1788e1b405f0144dc7016">
+              int <a href="#a39b20dc703a1788e1b405f0144dc7016" class="m-doc-self">field_B8</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="af8dca500e3af906d354fb6eb02846fbd">
+              int <a href="#af8dca500e3af906d354fb6eb02846fbd" class="m-doc-self">field_BC</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a773f8a98fdda39cabbf57e8ae6c56f23">
+              int <a href="#a773f8a98fdda39cabbf57e8ae6c56f23" class="m-doc-self">field_C0</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a24eb209a11e6b033062b0ddd3852e1c6">
+              int <a href="#a24eb209a11e6b033062b0ddd3852e1c6" class="m-doc-self">field_C4</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a05eba415b4155ee759e8ab4d86fb439e">
+              int* <a href="#a05eba415b4155ee759e8ab4d86fb439e" class="m-doc-self">field_C8</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a37e99ed3438a607ec0ec4b6a87d05612">
+              <a href="class_app_1_1c_scenario_mode.html#a7a1de663672e11f91bbc18d2303c6a4d" class="m-doc">Mode</a> <a href="#a37e99ed3438a607ec0ec4b6a87d05612" class="m-doc-self">mMode</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="ad5e532f01a3a18b04b57fd463fc7cff7">
+              int <a href="#ad5e532f01a3a18b04b57fd463fc7cff7" class="m-doc-self">field_D0</a>
+            </dt>
+            <dd>Only counts achivement if == 2.</dd>
+            <dt id="a502beb030364d4ad5fdb0d850f7bf399">
+              int <a href="#a502beb030364d4ad5fdb0d850f7bf399" class="m-doc-self">mpScenarioTutorials</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="aa1024f253f462a5982e476cfc733aaff">
+              int <a href="#aa1024f253f462a5982e476cfc733aaff" class="m-doc-self">mpScenarioYoutube</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a0f93fc101d2cdee409fa04f78a67758c">
+              bool <a href="#a0f93fc101d2cdee409fa04f78a67758c" class="m-doc-self">field_DC</a>
+            </dt>
+            <dd><span></span></dd>
+          </dl>
+        </section>
+      </div>
+    </div>
+  </div>
+</article></main>
+<div class="m-doc-search" id="search">
+  <a href="#!" onclick="return hideSearch()"></a>
+  <div class="m-container">
+    <div class="m-row">
+      <div class="m-col-m-8 m-push-m-2">
+        <div class="m-doc-search-header m-text m-small">
+          <div><span class="m-label m-default">Tab</span> / <span class="m-label m-default">T</span> to search, <span class="m-label m-default">Esc</span> to close</div>
+          <div id="search-symbolcount">&hellip;</div>
+        </div>
+        <div class="m-doc-search-content">
+          <form>
+            <input type="search" name="q" id="search-input" placeholder="Loading &hellip;" disabled="disabled" autofocus="autofocus" autocomplete="off" spellcheck="false" />
+          </form>
+          <noscript class="m-text m-danger m-text-center">Unlike everything else in the docs, the search functionality <em>requires</em> JavaScript.</noscript>
+          <div id="search-help" class="m-text m-dim m-text-center">
+            <p class="m-noindent">Search for symbols, directories, files, pages or
+            modules. You can omit any prefix from the symbol or file path; adding a
+            <code>:</code> or <code>/</code> suffix lists all members of given symbol or
+            directory.</p>
+            <p class="m-noindent">Use <span class="m-label m-dim">&darr;</span>
+            / <span class="m-label m-dim">&uarr;</span> to navigate through the list,
+            <span class="m-label m-dim">Enter</span> to go.
+            <span class="m-label m-dim">Tab</span> autocompletes common prefix, you can
+            copy a link to the result using <span class="m-label m-dim">⌘</span>
+            <span class="m-label m-dim">L</span> while <span class="m-label m-dim">⌘</span>
+            <span class="m-label m-dim">M</span> produces a Markdown link.</p>
+          </div>
+          <div id="search-notfound" class="m-text m-warning m-text-center">Sorry, nothing was found.</div>
+          <ul id="search-results"></ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="search-v1.js"></script>
+<script src="searchdata-v1.js" async="async"></script>
+<footer><nav>
+  <div class="m-container">
+    <div class="m-row">
+      <div class="m-col-l-10 m-push-l-1">
+        <p>Spore ModAPI SDK for creating C++ mods for Spore. Created with <a href="https://doxygen.org/">Doxygen</a> 1.8.16 and <a href="https://mcss.mosra.cz/">m.css</a>.</p>
+      </div>
+    </div>
+  </div>
+</nav></footer>
+</body>
+</html>

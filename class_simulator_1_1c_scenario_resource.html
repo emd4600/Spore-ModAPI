@@ -84,10 +84,14 @@
         <section id="pub-methods">
           <h2><a href="#pub-methods">Public functions</a></h2>
           <dl class="m-doc">
-            <dt id="a54bfe60cfce3a8ef62b430f061238c84">
-              <span class="m-doc-wrap-bumper">auto <a href="#a54bfe60cfce3a8ef62b430f061238c84" class="m-doc-self">Write</a>(</span><span class="m-doc-wrap"><a href="class_i_o_1_1_i_stream.html" class="m-doc">IO::<wbr />IStream</a>* pStream) -&gt; bool</span>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#affc1606ab45d1ecf0bc9e67bcd266a4c" class="m-doc">Read</a>(</span><span class="m-doc-wrap"><a href="class_i_o_1_1_i_stream.html" class="m-doc">IO::<wbr />IStream</a>* pStream) -&gt; bool</span>
             </dt>
-            <dd><span></span></dd>
+            <dd>Reads a <code>0x366A930D</code> type file, which contains the planet prop file and the adventure data itself.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a54bfe60cfce3a8ef62b430f061238c84" class="m-doc">Write</a>(</span><span class="m-doc-wrap"><a href="class_i_o_1_1_i_stream.html" class="m-doc">IO::<wbr />IStream</a>* pStream) -&gt; bool</span>
+            </dt>
+            <dd>Writes a <code>0x366A930D</code> type file, which contains the planet prop file and the adventure data itself.</dd>
           </dl>
         </section>
         <section id="pub-attribs">
@@ -97,8 +101,8 @@
               int <a href="#af39eaa1300e02b1ac6c79a1610e978e8" class="m-doc-self">field_14</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="a75cb275fffdd0eb34c1869bb9a9087af">
-              <a href="class_app_1_1_property_list.html" class="m-doc">App::<wbr />PropertyList</a> <a href="#a75cb275fffdd0eb34c1869bb9a9087af" class="m-doc-self">field_18</a>
+            <dt id="aeb491bd7107a952ae0d5a5349dd63a18">
+              <a href="class_app_1_1_property_list.html" class="m-doc">App::<wbr />PropertyList</a> <a href="#aeb491bd7107a952ae0d5a5349dd63a18" class="m-doc-self">mpPropList</a>
             </dt>
             <dd><span></span></dd>
             <dt id="a4c5e2a312153f508db04a5a9103d7c4b">
@@ -189,8 +193,8 @@
               fixed_vector&lt;<a href="class_simulator_1_1c_scenario_act.html" class="m-doc">cScenarioAct</a>, 8&gt; <a href="#a8b2173c779cf85170c3dfa7a013d6b1d" class="m-doc-self">mActs</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="a938bb9d1984d24b5bbc4677dd973cdf1">
-              vector_map&lt;int, <a href="class_simulator_1_1c_scenario_class.html" class="m-doc">cScenarioClass</a>&gt; <a href="#a938bb9d1984d24b5bbc4677dd973cdf1" class="m-doc-self">field_2BF4</a>
+            <dt id="a490d05abbea2873448ec6f8da40b23e8">
+              vector_map&lt;int, <a href="class_simulator_1_1c_scenario_class.html" class="m-doc">cScenarioClass</a>&gt; <a href="#a490d05abbea2873448ec6f8da40b23e8" class="m-doc-self">mClasses</a>
             </dt>
             <dd><span></span></dd>
             <dt id="a02c66f034d831a1f9de866bcf1e997d7">
@@ -249,11 +253,48 @@
               uint64_t <a href="#a77b2117ffe3d8a1d40c4bd7c58437632" class="m-doc-self">mAvatarServerIDDEPRECATED</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="a21e2305913f79a1b4bc17bb890fd337b">
-              int <a href="#a21e2305913f79a1b4bc17bb890fd337b" class="m-doc-self">field_2CA8</a>
+            <dt id="a493be4cd784139362ff81fc7e7fe3d49">
+              int <a href="#a493be4cd784139362ff81fc7e7fe3d49" class="m-doc-self">mVersion</a>
             </dt>
             <dd><span></span></dd>
           </dl>
+        </section>
+        <section>
+          <h2>Function documentation</h2>
+          <section class="m-doc-details" id="affc1606ab45d1ecf0bc9e67bcd266a4c"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">bool Simulator::<wbr />cScenarioResource::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#affc1606ab45d1ecf0bc9e67bcd266a4c" class="m-doc-self">Read</a>(</span><span class="m-doc-wrap"><a href="class_i_o_1_1_i_stream.html" class="m-doc">IO::<wbr />IStream</a>* pStream)</span></span>
+            </h3>
+            <p>Reads a <code>0x366A930D</code> type file, which contains the planet prop file and the adventure data itself.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">pStream</td>
+                  <td></td>
+                </tr>
+              </tbody>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="a54bfe60cfce3a8ef62b430f061238c84"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">bool Simulator::<wbr />cScenarioResource::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a54bfe60cfce3a8ef62b430f061238c84" class="m-doc-self">Write</a>(</span><span class="m-doc-wrap"><a href="class_i_o_1_1_i_stream.html" class="m-doc">IO::<wbr />IStream</a>* pStream)</span></span>
+            </h3>
+            <p>Writes a <code>0x366A930D</code> type file, which contains the planet prop file and the adventure data itself.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">pStream</td>
+                  <td></td>
+                </tr>
+              </tbody>
+            </table>
+          </div></section>
         </section>
       </div>
     </div>

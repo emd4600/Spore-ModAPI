@@ -63,7 +63,7 @@
             </li>
           </ul>
         </div>
-<p><a href="class_graphics_1_1_model.html" class="m-doc">Model</a> worlds keep track of all the models loaded in order to render them when the model world itself is rendered. A world can also contain multiple lighting worlds; for more information, check the <a href="class_graphics_1_1_i_lighting_world.html" class="m-doc">ILightingWorld</a> interface. When no lighting worlds are added a default lighting is used.</p><p>In order for the model world to render, you must add it to the render queue. This step is not necessary if the <a href="class_graphics_1_1_i_renderable.html#a0f0851cd9f759af968a5cd7b123b9e89" class="m-doc">IRenderable::<wbr />Render()</a> method is called directly from another renderer. For example: <code class="m-code"><span class="n">RenderManager</span><span class="p">.</span><span class="n">AddRenderable</span><span class="p">(</span><span class="n">pModelWorld</span><span class="o">-&gt;</span><span class="n">ToRenderable</span><span class="p">(),</span> <span class="n">Graphics</span><span class="o">::</span><span class="n">kRenderQueueMain</span><span class="p">);</span></code> You might use greater render queue indices, like <a href="namespace_graphics.html#a3dcd02aa5a247b3d6096420a0787ce4cabe828be9aa9033cacef10bef145e82ef" class="m-doc">Graphics::<wbr />kRenderQueueMain</a> + 1. An example of this would be having a model world for translucid objects, which need to be rendered last.</p>
+<p><a href="class_graphics_1_1_model.html" class="m-doc">Model</a> worlds keep track of all the models loaded in order to render them when the model world itself is rendered. A world can also contain multiple lighting worlds; for more information, check the <a href="class_graphics_1_1_i_lighting_world.html" class="m-doc">ILightingWorld</a> interface. When no lighting worlds are added a default lighting is used.</p><p>In order for the model world to render, you must add it to the render queue. This step is not necessary if the <a href="class_graphics_1_1_i_renderable.html#a0f0851cd9f759af968a5cd7b123b9e89" class="m-doc">IRenderable::<wbr />Render()</a> method is called directly from another renderer. For example: <code class="m-code"><span class="n">RenderManager</span><span class="p">.</span><span class="n">AddRenderable</span><span class="p">(</span><span class="n">pModelWorld</span><span class="o">-&gt;</span><span class="n">ToRenderable</span><span class="p">(),</span><span class="w"> </span><span class="n">Graphics</span><span class="o">::</span><span class="n">kRenderQueueMain</span><span class="p">);</span><span class="w"></span></code> You might use greater render queue indices, like <a href="namespace_graphics.html#a3dcd02aa5a247b3d6096420a0787ce4cabe828be9aa9033cacef10bef145e82ef" class="m-doc">Graphics::<wbr />kRenderQueueMain</a> + 1. An example of this would be having a model world for translucid objects, which need to be rendered last.</p>
         <section id="pub-types">
           <h2><a href="#pub-types">Public types</a></h2>
           <dl class="m-doc">
@@ -278,10 +278,10 @@
               int = 0) const -&gt; bool <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
             <dd>Used to get the start and end time of an animation in the model, in seconds.</dd>
-            <dt id="a3560af43a3f0f90706f0af07b4e08e6c">
-              <span class="m-doc-wrap-bumper">auto <a href="#a3560af43a3f0f90706f0af07b4e08e6c" class="m-doc-self">func84h</a>(</span><span class="m-doc-wrap">const <a href="class_graphics_1_1_model.html" class="m-doc">Model</a>* pModel) const -&gt; int <span class="m-label m-flat m-warning">pure virtual</span></span>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a490f7345c8a9631ae86929444178734e" class="m-doc">GetNumBones</a>(</span><span class="m-doc-wrap">const <a href="class_graphics_1_1_model.html" class="m-doc">Model</a>* pModel) const -&gt; int <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
-            <dd><span></span></dd>
+            <dd>Returns amount of animation bones in the given model.</dd>
             <dt id="ae649c8a43395e1274cdc69195c4e3bf6">
               <span class="m-doc-wrap-bumper">auto <a href="#ae649c8a43395e1274cdc69195c4e3bf6" class="m-doc-self">GetAnimationSkin</a>(</span><span class="m-doc-wrap">const <a href="class_graphics_1_1_model.html" class="m-doc">Model</a>* pModel,
               <a href="struct_render_ware_1_1_matrix3x4.html" class="m-doc">RenderWare::<wbr />Matrix3x4</a>* dst,
@@ -293,11 +293,11 @@
               <a href="struct_render_ware_1_1_matrix3x4.html" class="m-doc">RenderWare::<wbr />Matrix3x4</a>* dst) -&gt; int <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
             <dd><span></span></dd>
-            <dt id="af68c5051d1c7447f274d79eee325fb2e">
-              <span class="m-doc-wrap-bumper">auto <a href="#af68c5051d1c7447f274d79eee325fb2e" class="m-doc-self">func90h</a>(</span><span class="m-doc-wrap">const <a href="class_graphics_1_1_model.html" class="m-doc">Model</a>* pModel,
-              int* dst) -&gt; int <span class="m-label m-flat m-warning">pure virtual</span></span>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#aa38636e19f241b1fc63b25b4ac090749" class="m-doc">GetBoneIDs</a>(</span><span class="m-doc-wrap">const <a href="class_graphics_1_1_model.html" class="m-doc">Model</a>* pModel,
+              uint32_t* dst) -&gt; int <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
-            <dd><span></span></dd>
+            <dd>Used to obtain the IDs of the animation bones in the given model.</dd>
             <dt id="a9b075ba0bd0a4a8643faba32edba948c">
               <span class="m-doc-wrap-bumper">auto <a href="#a9b075ba0bd0a4a8643faba32edba948c" class="m-doc-self">func94h</a>(</span><span class="m-doc-wrap">const <a href="class_graphics_1_1_model.html" class="m-doc">Model</a>* pModel,
               int* dst) -&gt; int <span class="m-label m-flat m-warning">pure virtual</span></span>
@@ -438,10 +438,10 @@
               <span class="m-doc-wrap-bumper">auto <a href="#ad06b92b91da1e502d5fa19fb70f49657" class="m-doc-self">func104h</a>(</span><span class="m-doc-wrap">) -&gt; int <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
             <dd><span></span></dd>
-            <dt id="a3f089f4667533e05194883ead7aa9d40">
-              <span class="m-doc-wrap-bumper">auto <a href="#a3f089f4667533e05194883ead7aa9d40" class="m-doc-self">func108h</a>(</span><span class="m-doc-wrap">) -&gt; int <span class="m-label m-flat m-warning">pure virtual</span></span>
+            <dt id="a625cc89fbc05f983ee0a1a0d7855ccca">
+              <span class="m-doc-wrap-bumper">auto <a href="#a625cc89fbc05f983ee0a1a0d7855ccca" class="m-doc-self">GetAssetTransform</a>(</span><span class="m-doc-wrap"><a href="class_graphics_1_1_model.html" class="m-doc">Model</a>*) -&gt; <a href="class_transform.html" class="m-doc">Transform</a>* <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
-            <dd><span></span></dd>
+            <dd>Returns default transform stored in the prop file of the model.</dd>
             <dt id="a1f511e7b87ef651e98f3b43583121d03">
               <span class="m-doc-wrap-bumper">auto <a href="#a1f511e7b87ef651e98f3b43583121d03" class="m-doc-self">func10Ch</a>(</span><span class="m-doc-wrap">) -&gt; int <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
@@ -1079,6 +1079,51 @@
               </tbody>
             </table>
 <p>The length of the animation can be calculated with <code>dstEnd - dstStart</code>.</p>
+          </div></section>
+          <section class="m-doc-details" id="a490f7345c8a9631ae86929444178734e"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">int Graphics::<wbr />IModelWorld::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a490f7345c8a9631ae86929444178734e" class="m-doc-self">GetNumBones</a>(</span><span class="m-doc-wrap">const <a href="class_graphics_1_1_model.html" class="m-doc">Model</a>* pModel) const <span class="m-label m-warning">pure virtual</span></span></span>
+            </h3>
+            <p>Returns amount of animation bones in the given model.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">pModel</td>
+                  <td></td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>Returns</th>
+                  <td><br /></td>
+                </tr>
+              </tfoot>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="aa38636e19f241b1fc63b25b4ac090749"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">int Graphics::<wbr />IModelWorld::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#aa38636e19f241b1fc63b25b4ac090749" class="m-doc-self">GetBoneIDs</a>(</span><span class="m-doc-wrap">const <a href="class_graphics_1_1_model.html" class="m-doc">Model</a>* pModel,
+              uint32_t* dst) <span class="m-label m-warning">pure virtual</span></span></span>
+            </h3>
+            <p>Used to obtain the IDs of the animation bones in the given model.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">pModel</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>dst&nbsp;<span class="m-label m-flat m-warning">out</span></td>
+                  <td>Array of uint32_t of enough size (<a href="class_graphics_1_1_i_model_world.html#a490f7345c8a9631ae86929444178734e" class="m-doc">GetNumBones()</a>)</td>
+                </tr>
+              </tbody>
+            </table>
           </div></section>
           <section class="m-doc-details" id="a7d66680ac2b8e3c164133b33b850ad7e"><div>
             <h3>

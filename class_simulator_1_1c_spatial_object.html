@@ -127,7 +127,7 @@
             <dt>
               class <a href="class_simulator_1_1c_ornament.html" class="m-doc">cOrnament</a>
             </dt>
-            <dd><span></span></dd>
+            <dd>Used, among other things, for adventure objects (except pickable ones)</dd>
             <dt>
               class <a href="class_simulator_1_1c_planet.html" class="m-doc">cPlanet</a>
             </dt>
@@ -179,16 +179,16 @@
         <section id="pub-methods">
           <h2><a href="#pub-methods">Public functions</a></h2>
           <dl class="m-doc">
-            <dt id="a78ebdb7afad1a7bf53613b6195a145f6">
-              <span class="m-doc-wrap-bumper">void <a href="#a78ebdb7afad1a7bf53613b6195a145f6" class="m-doc-self">func00h</a>(</span><span class="m-doc-wrap">int) <span class="m-label m-flat m-warning">virtual</span></span>
+            <dt id="a7e2dd45464ad6dd26445350eea62d5c1">
+              <span class="m-doc-wrap-bumper">void <a href="#a7e2dd45464ad6dd26445350eea62d5c1" class="m-doc-self">cSpatialObject_func00h</a>(</span><span class="m-doc-wrap">int) <span class="m-label m-flat m-warning">virtual</span></span>
             </dt>
             <dd><span></span></dd>
-            <dt id="ae9025fda22fa6629ea435508b29f4960">
-              <span class="m-doc-wrap-bumper">auto <a href="#ae9025fda22fa6629ea435508b29f4960" class="m-doc-self">func04h</a>(</span><span class="m-doc-wrap">) -&gt; int <span class="m-label m-flat m-warning">virtual</span></span>
+            <dt id="a52a99a70a7ca6dea279425e735552269">
+              <span class="m-doc-wrap-bumper">auto <a href="#a52a99a70a7ca6dea279425e735552269" class="m-doc-self">cSpatialObject_func04h</a>(</span><span class="m-doc-wrap">) -&gt; int <span class="m-label m-flat m-warning">virtual</span></span>
             </dt>
             <dd><span></span></dd>
-            <dt id="af5e473886b608289383ef868c548aae7">
-              <span class="m-doc-wrap-bumper">auto <a href="#af5e473886b608289383ef868c548aae7" class="m-doc-self">func08h</a>(</span><span class="m-doc-wrap">) -&gt; int <span class="m-label m-flat m-warning">virtual</span></span>
+            <dt id="a8f063dd917b72f256e3f9983871b0edf">
+              <span class="m-doc-wrap-bumper">auto <a href="#a8f063dd917b72f256e3f9983871b0edf" class="m-doc-self">cSpatialObject_func08h</a>(</span><span class="m-doc-wrap">) -&gt; int <span class="m-label m-flat m-warning">virtual</span></span>
             </dt>
             <dd><span></span></dd>
             <dt>
@@ -207,8 +207,8 @@
               <span class="m-doc-wrap-bumper">auto <a href="#a6eccfa375d9e5b8ac8317603b5e80c18" class="m-doc-self">WriteToXML</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1_xml_serializer.html" class="m-doc">XmlSerializer</a>*) -&gt; bool <span class="m-label m-flat m-warning">virtual</span></span>
             </dt>
             <dd><span></span></dd>
-            <dt id="a3f272b080c6ba1f1e44a122d0f0ca097">
-              <span class="m-doc-wrap-bumper">auto <a href="#a3f272b080c6ba1f1e44a122d0f0ca097" class="m-doc-self">func20h</a>(</span><span class="m-doc-wrap">) -&gt; bool <span class="m-label m-flat m-warning">virtual</span></span>
+            <dt id="a3a0da7dacd662a5f1f6c0d757ef497b8">
+              <span class="m-doc-wrap-bumper">auto <a href="#a3a0da7dacd662a5f1f6c0d757ef497b8" class="m-doc-self">cSpatialObject_func20h</a>(</span><span class="m-doc-wrap">) -&gt; bool <span class="m-label m-flat m-warning">virtual</span></span>
             </dt>
             <dd><span></span></dd>
             <dt id="afe50b8a3e04a9a7bd7aa80fe288eb103">
@@ -243,10 +243,11 @@
               <span class="m-doc-wrap-bumper">void <a href="#ac6d87e089558f06e538785c82e37c6d2" class="m-doc-self">SetScale</a>(</span><span class="m-doc-wrap">float fValue) <span class="m-label m-flat m-warning">virtual</span></span>
             </dt>
             <dd><span></span></dd>
-            <dt id="af4a7eb925c27acfc65efb16bc0d30836">
-              <span class="m-doc-wrap-bumper">void <a href="#af4a7eb925c27acfc65efb16bc0d30836" class="m-doc-self">func44h</a>(</span><span class="m-doc-wrap">int) <span class="m-label m-flat m-warning">virtual</span></span>
+            <dt>
+              <span class="m-doc-wrap-bumper">void <a href="#aa4a22132048a0a04cb10163501835ee0" class="m-doc">Teleport</a>(</span><span class="m-doc-wrap">const <a href="struct_math_1_1_vector3.html" class="m-doc">Vector3</a>&amp; position,
+              const <a href="struct_math_1_1_quaternion.html" class="m-doc">Quaternion</a>&amp; orientation) <span class="m-label m-flat m-warning">virtual</span></span>
             </dt>
-            <dd><span></span></dd>
+            <dd>Changes the position and orientation of the object recalculating its physics.</dd>
             <dt id="a17668513394ae11d43c38b3e0221223a">
               <span class="m-doc-wrap-bumper">auto <a href="#a17668513394ae11d43c38b3e0221223a" class="m-doc-self">IsOnView</a>(</span><span class="m-doc-wrap">) -&gt; bool <span class="m-label m-flat m-warning">virtual</span></span>
             </dt>
@@ -263,16 +264,16 @@
               <span class="m-doc-wrap-bumper">void <a href="#a6490f927bcd7879a278ed491cd4edcbe" class="m-doc-self">SetIsSelected</a>(</span><span class="m-doc-wrap">bool bValue) <span class="m-label m-flat m-warning">virtual</span></span>
             </dt>
             <dd><span></span></dd>
-            <dt id="a47ebf10f819045e68905dfd455e1a4db">
-              <span class="m-doc-wrap-bumper">auto <a href="#a47ebf10f819045e68905dfd455e1a4db" class="m-doc-self">func58h</a>(</span><span class="m-doc-wrap">) -&gt; bool <span class="m-label m-flat m-warning">virtual</span></span>
+            <dt id="a63ae952f0eec186825fa1c0f790fa9a5">
+              <span class="m-doc-wrap-bumper">auto <a href="#a63ae952f0eec186825fa1c0f790fa9a5" class="m-doc-self">cSpatialObject_func58h</a>(</span><span class="m-doc-wrap">) -&gt; bool <span class="m-label m-flat m-warning">virtual</span></span>
             </dt>
             <dd><span></span></dd>
             <dt id="a532d0c8962ec719349f3d464ae91f6f7">
               <span class="m-doc-wrap-bumper">auto <a href="#a532d0c8962ec719349f3d464ae91f6f7" class="m-doc-self">GetDirection</a>(</span><span class="m-doc-wrap">) -&gt; <a href="struct_math_1_1_vector3.html" class="m-doc">Vector3</a> <span class="m-label m-flat m-warning">virtual</span></span>
             </dt>
             <dd>Returns the local Y axis of this spatial object.</dd>
-            <dt id="a72dfadb9a366d4bf13e0847741cdcc87">
-              <span class="m-doc-wrap-bumper">auto <a href="#a72dfadb9a366d4bf13e0847741cdcc87" class="m-doc-self">func60h</a>(</span><span class="m-doc-wrap">) -&gt; <a href="struct_math_1_1_vector3.html" class="m-doc">Vector3</a> <span class="m-label m-flat m-warning">virtual</span></span>
+            <dt id="ae8c42d8ad76bd787935c603d3e785259">
+              <span class="m-doc-wrap-bumper">auto <a href="#ae8c42d8ad76bd787935c603d3e785259" class="m-doc-self">cSpatialObject_func60h</a>(</span><span class="m-doc-wrap">) -&gt; <a href="struct_math_1_1_vector3.html" class="m-doc">Vector3</a> <span class="m-label m-flat m-warning">virtual</span></span>
             </dt>
             <dd><span></span></dd>
             <dt id="ab2abdbe54a26b0f523635e0840e400b9">
@@ -284,8 +285,8 @@
               <span class="m-doc-wrap-bumper">auto <a href="#ad96e5605794d5e5e155635b9578422b4" class="m-doc-self">GetLocalExtents</a>(</span><span class="m-doc-wrap">) -&gt; const <a href="struct_math_1_1_bounding_box.html" class="m-doc">BoundingBox</a>&amp; <span class="m-label m-flat m-warning">virtual</span></span>
             </dt>
             <dd><span></span></dd>
-            <dt id="aee501d0badcf4d037efacf353df5ef39">
-              <span class="m-doc-wrap-bumper">auto <a href="#aee501d0badcf4d037efacf353df5ef39" class="m-doc-self">func6Ch</a>(</span><span class="m-doc-wrap">int) -&gt; int <span class="m-label m-flat m-warning">virtual</span></span>
+            <dt id="a38b2ced01026a8199010b32eddff7238">
+              <span class="m-doc-wrap-bumper">auto <a href="#a38b2ced01026a8199010b32eddff7238" class="m-doc-self">cSpatialObject_func6Ch</a>(</span><span class="m-doc-wrap">int) -&gt; int <span class="m-label m-flat m-warning">virtual</span></span>
             </dt>
             <dd><span></span></dd>
             <dt id="ab30bbc9858a1e696036b09eda59596ff">
@@ -300,17 +301,17 @@
               <span class="m-doc-wrap-bumper">auto <a href="#aa52aabe0de0fa3b565c832a44606093e" class="m-doc-self">GetMaxZ</a>(</span><span class="m-doc-wrap">) -&gt; float <span class="m-label m-flat m-warning">virtual</span></span>
             </dt>
             <dd><span></span></dd>
-            <dt id="a25d79e2ac769afd3da4d6fc3ec0ce488">
-              <span class="m-doc-wrap-bumper">auto <a href="#a25d79e2ac769afd3da4d6fc3ec0ce488" class="m-doc-self">func7Ch</a>(</span><span class="m-doc-wrap">bool,
+            <dt id="a2e83b4e3107df0db6dd262c9666b921e">
+              <span class="m-doc-wrap-bumper">auto <a href="#a2e83b4e3107df0db6dd262c9666b921e" class="m-doc-self">cSpatialObject_func7Ch</a>(</span><span class="m-doc-wrap">bool,
               <a href="struct_math_1_1_point.html" class="m-doc">Point</a>&amp; dst) -&gt; <a href="struct_math_1_1_point.html" class="m-doc">Point</a>&amp; <span class="m-label m-flat m-warning">virtual</span></span>
             </dt>
             <dd><span></span></dd>
-            <dt id="afd1a674295a0df9060c83821c471f710">
-              <span class="m-doc-wrap-bumper">void <a href="#afd1a674295a0df9060c83821c471f710" class="m-doc-self">func80h</a>(</span><span class="m-doc-wrap">) <span class="m-label m-flat m-warning">virtual</span></span>
+            <dt id="a1937d03e9298007258a6bc94595fd60b">
+              <span class="m-doc-wrap-bumper">void <a href="#a1937d03e9298007258a6bc94595fd60b" class="m-doc-self">cSpatialObject_func80h</a>(</span><span class="m-doc-wrap">) <span class="m-label m-flat m-warning">virtual</span></span>
             </dt>
             <dd><span></span></dd>
-            <dt id="abbbf3ea988e0982f9276c50cda4e746a">
-              <span class="m-doc-wrap-bumper">void <a href="#abbbf3ea988e0982f9276c50cda4e746a" class="m-doc-self">func84h</a>(</span><span class="m-doc-wrap">) <span class="m-label m-flat m-warning">virtual</span></span>
+            <dt id="adb4571863b4d66bfcf21108e91159939">
+              <span class="m-doc-wrap-bumper">void <a href="#adb4571863b4d66bfcf21108e91159939" class="m-doc-self">cSpatialObject_func84h</a>(</span><span class="m-doc-wrap">) <span class="m-label m-flat m-warning">virtual</span></span>
             </dt>
             <dd><span></span></dd>
             <dt id="a92bb77f5025dcc865bbc43be975ab3d7">
@@ -333,16 +334,16 @@
               <span class="m-doc-wrap-bumper">auto <a href="#a6f32259c5a5079c3bb57fbc05a4ec5a6" class="m-doc-self">GetModelKey</a>(</span><span class="m-doc-wrap">) -&gt; const <a href="struct_resource_key.html" class="m-doc">ResourceKey</a>&amp; <span class="m-label m-flat m-warning">virtual</span></span>
             </dt>
             <dd><span></span></dd>
-            <dt id="a9f4c32d259367bf06ed7b797c5a15ddb">
-              <span class="m-doc-wrap-bumper">auto <a href="#a9f4c32d259367bf06ed7b797c5a15ddb" class="m-doc-self">func9Ch</a>(</span><span class="m-doc-wrap">) -&gt; bool <span class="m-label m-flat m-warning">virtual</span></span>
+            <dt id="a046b1e7fe902b5843780fdcc5bfb5811">
+              <span class="m-doc-wrap-bumper">auto <a href="#a046b1e7fe902b5843780fdcc5bfb5811" class="m-doc-self">cSpatialObject_func9Ch</a>(</span><span class="m-doc-wrap">) -&gt; bool <span class="m-label m-flat m-warning">virtual</span></span>
             </dt>
             <dd><span></span></dd>
             <dt id="ab95238b925eab5ca11ffe155c73deb5b">
               <span class="m-doc-wrap-bumper">void <a href="#ab95238b925eab5ca11ffe155c73deb5b" class="m-doc-self">SetModelWorld</a>(</span><span class="m-doc-wrap"><a href="class_graphics_1_1_i_model_world.html" class="m-doc">Graphics::<wbr />IModelWorld</a>* pModelWorld) <span class="m-label m-flat m-warning">virtual</span></span>
             </dt>
             <dd><span></span></dd>
-            <dt id="a6d9fb6f2ffd784c3981088b0407dee26">
-              <span class="m-doc-wrap-bumper">void <a href="#a6d9fb6f2ffd784c3981088b0407dee26" class="m-doc-self">funcA4h</a>(</span><span class="m-doc-wrap">) <span class="m-label m-flat m-warning">virtual</span></span>
+            <dt id="ae428f3059d91ec571e9a3125d3070027">
+              <span class="m-doc-wrap-bumper">void <a href="#ae428f3059d91ec571e9a3125d3070027" class="m-doc-self">cSpatialObject_funcA4h</a>(</span><span class="m-doc-wrap">) <span class="m-label m-flat m-warning">virtual</span></span>
             </dt>
             <dd><span></span></dd>
             <dt id="a682cfad728f5435d55312fb0aec2d7cd">
@@ -358,8 +359,8 @@
               <span class="m-doc-wrap-bumper">auto <a href="#aa5cbf7541e5e7254a254282170bb0dfc" class="m-doc-self">GetModelWorld</a>(</span><span class="m-doc-wrap">) -&gt; <a href="class_graphics_1_1_i_model_world.html" class="m-doc">Graphics::<wbr />IModelWorld</a>* <span class="m-label m-flat m-warning">virtual</span></span>
             </dt>
             <dd><span></span></dd>
-            <dt id="ad56206ff7b78200bf8ea335139705636">
-              <span class="m-doc-wrap-bumper">void <a href="#ad56206ff7b78200bf8ea335139705636" class="m-doc-self">funcB4h</a>(</span><span class="m-doc-wrap">string&amp; dst) <span class="m-label m-flat m-warning">virtual</span></span>
+            <dt id="a465477b041f6e6b899c484b873e6b864">
+              <span class="m-doc-wrap-bumper">void <a href="#a465477b041f6e6b899c484b873e6b864" class="m-doc-self">cSpatialObject_funcB4h</a>(</span><span class="m-doc-wrap">string&amp; dst) <span class="m-label m-flat m-warning">virtual</span></span>
             </dt>
             <dd><span></span></dd>
             <dt id="ab316721cba6f3b6b5f246df71ec0a00a">
@@ -470,7 +471,7 @@
             <dt id="a1eadb8e7f92f1e6332431d7445161c31">
               bool <a href="#a1eadb8e7f92f1e6332431d7445161c31" class="m-doc-self">mbSupported</a>
             </dt>
-            <dd><span></span></dd>
+            <dd>True if the object is not floating on air.</dd>
             <dt id="aa638a89086886f080521bef8b650c6d3">
               bool <a href="#aa638a89086886f080521bef8b650c6d3" class="m-doc-self">mbIsGhost</a>
             </dt>
@@ -561,6 +562,29 @@
             </h3>
             <p>Sets this model as invisible in its IModelWorld and sets the model and model world to nullptr.</p>
 <p>It also resets all necessary parameters.</p>
+          </div></section>
+          <section class="m-doc-details" id="aa4a22132048a0a04cb10163501835ee0"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">void Simulator::<wbr />cSpatialObject::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#aa4a22132048a0a04cb10163501835ee0" class="m-doc-self">Teleport</a>(</span><span class="m-doc-wrap">const <a href="struct_math_1_1_vector3.html" class="m-doc">Vector3</a>&amp; position,
+              const <a href="struct_math_1_1_quaternion.html" class="m-doc">Quaternion</a>&amp; orientation) <span class="m-label m-warning">virtual</span></span></span>
+            </h3>
+            <p>Changes the position and orientation of the object recalculating its physics.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">position</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>orientation</td>
+                  <td></td>
+                </tr>
+              </tbody>
+            </table>
+<p>For example, it can be used to teleport creatures (using SetOffset() manually just moves them back to their original position)</p>
           </div></section>
         </section>
       </div>

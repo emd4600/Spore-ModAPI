@@ -48,7 +48,7 @@
           <span class="m-breadcrumb"><a href="namespace_editors.html">Editors</a>::<wbr/></span>EditorModel <span class="m-thin">class</span>
           <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_editor_model_8h.html">&lt;Spore/Editors/EditorModel.h&gt;</a></div>
         </h1>
-        <p><span></span></p>
+        <p>Represents the state of a creation in an editor.</p>
         <div class="m-block m-default">
           <h3>Contents</h3>
           <ul>
@@ -56,6 +56,7 @@
               Reference
               <ul>
                 <li><a href="#base-classes">Base classes</a></li>
+                <li><a href="#typeless-methods">Constructors, destructors, conversion operators</a></li>
                 <li><a href="#pub-methods">Public functions</a></li>
                 <li><a href="#pub-attribs">Public variables</a></li>
                 <li><a href="#pro-attribs">Protected variables</a></li>
@@ -63,6 +64,7 @@
             </li>
           </ul>
         </div>
+<p>This class keeps track of all its parts and paints, and is used to load and save the creation of the editor. The data can be converted into a <a href="class_editors_1_1c_editor_resource.html" class="m-doc">cEditorResource</a> with the <a href="class_editors_1_1_editor_model.html#a7f7fa2e91b591b087e0cd10b8eb9003b" class="m-doc">Load()</a> and <a href="class_editors_1_1_editor_model.html#ad0a230c60465977dafe8081c6c84aa23" class="m-doc">Save()</a> methods; then, you can use the ResourceManager to save the editor resource into a <code>.crt</code>, <code>.bld</code>, etc file.</p>
         <section id="base-classes">
           <h2><a href="#base-classes">Base classes</a></h2>
           <dl class="m-doc">
@@ -76,9 +78,58 @@
             <dd>A default interface that provides a virtual destructor, it should only be used internally.</dd>
           </dl>
         </section>
+        <section id="typeless-methods">
+          <h2><a href="#typeless-methods">Constructors, destructors, conversion operators</a></h2>
+          <dl class="m-doc">
+            <dt id="a8210e9f24ef7067eb2b021e49a85fe9c">
+              <span class="m-doc-wrap-bumper"><a href="#a8210e9f24ef7067eb2b021e49a85fe9c" class="m-doc-self">EditorModel</a>(</span><span class="m-doc-wrap">)</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a2e6d0a0a57871d3a6296da042729906f">
+              <span class="m-doc-wrap-bumper"><a href="#a2e6d0a0a57871d3a6296da042729906f" class="m-doc-self">~EditorModel</a>(</span><span class="m-doc-wrap">) <span class="m-label m-flat m-warning">virtual</span></span>
+            </dt>
+            <dd><span></span></dd>
+          </dl>
+        </section>
         <section id="pub-methods">
           <h2><a href="#pub-methods">Public functions</a></h2>
           <dl class="m-doc">
+            <dt id="a45c2960371eb36430cec5b65842b4ed2">
+              <span class="m-doc-wrap-bumper">void <a href="#a45c2960371eb36430cec5b65842b4ed2" class="m-doc-self">SetName</a>(</span><span class="m-doc-wrap">const char16_t* pString) <span class="m-label m-flat m-warning">override</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="ad212dfef993a831f9a089736df0068f3">
+              <span class="m-doc-wrap-bumper">auto <a href="#ad212dfef993a831f9a089736df0068f3" class="m-doc-self">GetName</a>(</span><span class="m-doc-wrap">) -&gt; const char16_t* <span class="m-label m-flat m-warning">override</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="af9bc98cc0d6f0a87b8601eab83dc2495">
+              <span class="m-doc-wrap-bumper">void <a href="#af9bc98cc0d6f0a87b8601eab83dc2495" class="m-doc-self">SetDescription</a>(</span><span class="m-doc-wrap">const char16_t* pString) <span class="m-label m-flat m-warning">override</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a380f55d82be6c9d94ce4cd8d4da4d464">
+              <span class="m-doc-wrap-bumper">auto <a href="#a380f55d82be6c9d94ce4cd8d4da4d464" class="m-doc-self">GetDescription</a>(</span><span class="m-doc-wrap">) -&gt; const char16_t* <span class="m-label m-flat m-warning">override</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="ad0cfc9b886a8667afae4c40d918493aa">
+              <span class="m-doc-wrap-bumper">void <a href="#ad0cfc9b886a8667afae4c40d918493aa" class="m-doc-self">SetTags</a>(</span><span class="m-doc-wrap">const char16_t* pString) <span class="m-label m-flat m-warning">override</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a4bcf7fac8e58e57d6d3d05df1f14d396">
+              <span class="m-doc-wrap-bumper">auto <a href="#a4bcf7fac8e58e57d6d3d05df1f14d396" class="m-doc-self">GetTags</a>(</span><span class="m-doc-wrap">) -&gt; const char16_t* <span class="m-label m-flat m-warning">override</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a7f7fa2e91b591b087e0cd10b8eb9003b">
+              <span class="m-doc-wrap-bumper">void <a href="#a7f7fa2e91b591b087e0cd10b8eb9003b" class="m-doc-self">Load</a>(</span><span class="m-doc-wrap"><a href="class_editors_1_1c_editor_resource.html" class="m-doc">cEditorResource</a>* pResource)</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="ad0a230c60465977dafe8081c6c84aa23">
+              <span class="m-doc-wrap-bumper">void <a href="#ad0a230c60465977dafe8081c6c84aa23" class="m-doc-self">Save</a>(</span><span class="m-doc-wrap"><a href="class_editors_1_1c_editor_resource.html" class="m-doc">cEditorResource</a>* pResource)</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="affa75bc3af0359a93f20cc0ae8687184">
+              <span class="m-doc-wrap-bumper">void <a href="#affa75bc3af0359a93f20cc0ae8687184" class="m-doc-self">Dispose</a>(</span><span class="m-doc-wrap">)</span>
+            </dt>
+            <dd><span></span></dd>
             <dt id="ae4f73b09b27d5a9e61ff955aaebb711d">
               <span class="m-doc-wrap-bumper">auto <a href="#ae4f73b09b27d5a9e61ff955aaebb711d" class="m-doc-self">GetCreationName</a>(</span><span class="m-doc-wrap">) const -&gt; string16&amp;</span>
             </dt>
@@ -105,12 +156,12 @@
         <section id="pub-attribs">
           <h2><a href="#pub-attribs">Public variables</a></h2>
           <dl class="m-doc">
-            <dt id="a2af423cf0fa4f947b779f5fe34853faa">
-              <a href="struct_resource_key.html" class="m-doc">ResourceKey</a> <a href="#a2af423cf0fa4f947b779f5fe34853faa" class="m-doc-self">field_0C</a>
+            <dt id="a5891115aff34f103f88d4d3135e954e9">
+              <a href="struct_resource_key.html" class="m-doc">ResourceKey</a> <a href="#a5891115aff34f103f88d4d3135e954e9" class="m-doc-self">mKey</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="ab6fd86f79c64950c1d4089ccbf222dd5">
-              vector&lt;intrusive_ptr&lt;<a href="class_editors_1_1_editor_rigblock.html" class="m-doc">EditorRigblock</a>&gt;&gt; <a href="#ab6fd86f79c64950c1d4089ccbf222dd5" class="m-doc-self">mParts</a>
+            <dt id="ae5d9474269daa1030a7f7f687d65fc2b">
+              vector&lt;<a href="_editor_rigblock_8h.html#ac23466b995d482a0e4ba9c16fb9b3ac7" class="m-doc">EditorRigblockPtr</a>&gt; <a href="#ae5d9474269daa1030a7f7f687d65fc2b" class="m-doc-self">mParts</a>
             </dt>
             <dd><span></span></dd>
             <dt id="a4b75b0d4ae19ecb3a726623de3b7d63f">
@@ -169,8 +220,8 @@
               bool <a href="#a7a73678999c2811a1bd32ff46b36beff" class="m-doc-self">field_51</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="a63221c1492f961dedc5c508b0ac94852">
-              int <a href="#a63221c1492f961dedc5c508b0ac94852" class="m-doc-self">field_54</a>
+            <dt id="ac5918ceb9a681d61c52165839510d8d1">
+              int <a href="#ac5918ceb9a681d61c52165839510d8d1" class="m-doc-self">mTranslationOptions</a>
             </dt>
             <dd><span></span></dd>
             <dt id="a2a34208ce231d234c566b578aef9ee43">
@@ -189,12 +240,12 @@
               string16 <a href="#a1387d42ad5e75d2bc6c455a32566519b" class="m-doc-self">mAcceptedName</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="a461b7901e9b35d2177c6c1a473ede472">
-              int <a href="#a461b7901e9b35d2177c6c1a473ede472" class="m-doc-self">field_8C</a>
+            <dt id="a495a95b8739ea47305d7272f4138fb79">
+              int <a href="#a495a95b8739ea47305d7272f4138fb79" class="m-doc-self">mSkinEffectIDs</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="af4360f6c003ca4dc6228f24f69e67030">
-              int <a href="#af4360f6c003ca4dc6228f24f69e67030" class="m-doc-self">field_98</a>
+            <dt id="ab9f4804f7b04bf079f89d23662c9db8c">
+              int <a href="#ab9f4804f7b04bf079f89d23662c9db8c" class="m-doc-self">mSkinEffectSeeds</a>
             </dt>
             <dd><span></span></dd>
             <dt id="ad9663b05cea22f32e3bd67bbc32220d9">
@@ -205,8 +256,8 @@
               vector&lt;<a href="struct_math_1_1_bounding_box.html" class="m-doc">BoundingBox</a>&gt; <a href="#acf2601c819f8ede1f0b52313a0d295df" class="m-doc-self">field_C8</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="ad2f4aaf4966617963668a19a3eb4a323">
-              int <a href="#ad2f4aaf4966617963668a19a3eb4a323" class="m-doc-self">field_EC</a>
+            <dt id="aa4a55b43cfc8391a8a420cdf5203c4fb">
+              int <a href="#aa4a55b43cfc8391a8a420cdf5203c4fb" class="m-doc-self">mZCorpScore</a>
             </dt>
             <dd><span></span></dd>
           </dl>

@@ -75,9 +75,13 @@
             <dt>
               class <a href="class_editors_1_1c_editor.html" class="m-doc">cEditor</a>
             </dt>
-            <dd><span></span></dd>
+            <dd>Main class for editors.</dd>
             <dt>
               class <a href="class_editors_1_1c_editor_resource.html" class="m-doc">cEditorResource</a>
+            </dt>
+            <dd><a href="namespace_resource.html" class="m-doc">Resource</a> of a saved creation, represents a <code>.crt</code>, <code>.bld</code>, <code>.vcl</code>, etc file.</dd>
+            <dt>
+              struct <a href="struct_editors_1_1c_editor_resource_block.html" class="m-doc">cEditorResourceBlock</a>
             </dt>
             <dd><span></span></dd>
             <dt>
@@ -97,13 +101,21 @@
             </dt>
             <dd><span></span></dd>
             <dt>
+              class <a href="class_editors_1_1c_tuning_spine.html" class="m-doc">cTuningSpine</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              class <a href="class_editors_1_1_editor_base_handle.html" class="m-doc">EditorBaseHandle</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
               class <a href="class_editors_1_1_editor_camera.html" class="m-doc">EditorCamera</a>
             </dt>
             <dd><span></span></dd>
             <dt>
               class <a href="class_editors_1_1_editor_model.html" class="m-doc">EditorModel</a>
             </dt>
-            <dd><span></span></dd>
+            <dd>Represents the state of a creation in an editor.</dd>
             <dt>
               class <a href="class_editors_1_1_editor_play_mode.html" class="m-doc">EditorPlayMode</a>
             </dt>
@@ -119,7 +131,19 @@
             <dt>
               class <a href="class_editors_1_1_editor_rigblock.html" class="m-doc">EditorRigblock</a>
             </dt>
+            <dd>Represents a &quot;part&quot; (or rigblock) in an editor.</dd>
+            <dt>
+              struct <a href="struct_editors_1_1_editor_rigblock_capability.html" class="m-doc">EditorRigblockCapability</a>
+            </dt>
             <dd><span></span></dd>
+            <dt>
+              struct <a href="struct_editors_1_1_editor_rigblock_paint.html" class="m-doc">EditorRigblockPaint</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              class <a href="class_editors_1_1_editor_state_edit_history.html" class="m-doc">EditorStateEditHistory</a>
+            </dt>
+            <dd>Structure that records the state of the editor (current mode, budget, etc) for undo/redo history.</dd>
             <dt>
               class <a href="class_editors_1_1_editor_u_i.html" class="m-doc">EditorUI</a>
             </dt>
@@ -169,7 +193,11 @@
             </dt>
             <dd><span></span></dd>
             <dt>
-              class <a href="class_editors_1_1_tuning_spine.html" class="m-doc">TuningSpine</a>
+              struct <a href="struct_editors_1_1_unk_editor_rigblock_struct1.html" class="m-doc">UnkEditorRigblockStruct1</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              struct <a href="struct_editors_1_1_unk_editor_rigblock_struct2.html" class="m-doc">UnkEditorRigblockStruct2</a>
             </dt>
             <dd><span></span></dd>
           </dl>
@@ -194,6 +222,65 @@
               <a href="#aef10828808c6ecec25b23f5e1d51e43ea3c34bb91b941ed055330afe9f07c3964" class="m-doc">kComplexityFlagBakedBlock</a> = 0x4 }</span>
             </dt>
             <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">enum class <a href="#a3b2e68e6093edc5b85a42ba1856246dc" class="m-doc">EditorHandleState</a>: int { </span><span class="m-doc-wrap"><a href="#a3b2e68e6093edc5b85a42ba1856246dca4d3d769b812b6faa6b76e1a8abaece2d" class="m-doc">Active</a> = 0,
+              <a href="#a3b2e68e6093edc5b85a42ba1856246dca810460332a38c9ade69a49b057494cad" class="m-doc">Unselected</a> = 1,
+              <a href="#a3b2e68e6093edc5b85a42ba1856246dcac598d83d76b2228eadaa9ca5853420cb" class="m-doc">Rollover</a> = 2,
+              <a href="#a3b2e68e6093edc5b85a42ba1856246dca7a1920d61156abc05a60135aefe8bc67" class="m-doc">Default</a> = 3 }</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">enum <a href="#a9c1cc19f70f537f5174ddc14e7c585ff" class="m-doc">EditorRigblockBoolAttributes</a> { </span><span class="m-doc-wrap"><a href="#a9c1cc19f70f537f5174ddc14e7c585ffaa1758cec59ae1a277627cfecdb4240cf" class="m-doc">kEditorRigblockModelOrientToSurfaces</a> = 0,
+              <a href="#a9c1cc19f70f537f5174ddc14e7c585ffaf126fbe19db7bd60f0e00d5c4c6221f3" class="m-doc">kEditorRigblockModelOrientWhenSnapped</a> = 4,
+              <a href="#a9c1cc19f70f537f5174ddc14e7c585ffa2c1c9bac41cac5072e8660d6b9db061e" class="m-doc">kEditorRigblockModelUseDummyBlocks</a> = 5,
+              <a href="#a9c1cc19f70f537f5174ddc14e7c585ffa4153cb08cefcd0c61973dd83b45e0fbe" class="m-doc">kEditorRigblockModelIsVertebra</a> = 7,
+              <a href="#a9c1cc19f70f537f5174ddc14e7c585ffa47487b3788fcea6dc699c3b23adcd183" class="m-doc">kEditorRigblockModelIsPlantRoot</a> = 8,
+              <a href="#a9c1cc19f70f537f5174ddc14e7c585ffa3ac40871b9a7e7e45286107417a46248" class="m-doc">kEditorRigblockModelOverrideBounds</a> = 9,
+              <a href="#a9c1cc19f70f537f5174ddc14e7c585ffa5b5a025b4dc0fcb4db6992855dbc9e40" class="m-doc">kEditorRigblockModelUseSkin</a> = 0xA,
+              <a href="#a9c1cc19f70f537f5174ddc14e7c585ffae76df1214d806250ce5e3caa01a61537" class="m-doc">kEditorRigblockModelHasSocketAndBallConnector</a> = 0xA,
+              <a href="#a9c1cc19f70f537f5174ddc14e7c585ffa623a43daf10b9631bc3fb5861218f7d6" class="m-doc">kEditorRigblockIsSnapped</a> = 0xC,
+              <a href="#a9c1cc19f70f537f5174ddc14e7c585ffaf95375475bc082b35b7d2b662f6856a8" class="m-doc">kEditorRigblockHasLeftModel</a> = 0xD,
+              <a href="#a9c1cc19f70f537f5174ddc14e7c585ffaaec0899c5863d1d3a0190ed4df8182c6" class="m-doc">kEditorRigblockModelRemainUpright</a> = 0x11,
+              <a href="#a9c1cc19f70f537f5174ddc14e7c585ffa67fb26e65646610096475fc2c09de3b3" class="m-doc">kEditorRigblockModelMoveBottomEdgeToSurface</a> = 0x12,
+              <a href="#a9c1cc19f70f537f5174ddc14e7c585ffa545bf1e5788c0bc623897d91757b714a" class="m-doc">kEditorRigblockModelPointForward</a> = 0x13,
+              <a href="#a9c1cc19f70f537f5174ddc14e7c585ffa35679b153c51766261fcd21dd2701786" class="m-doc">kEditorRigblockModelIsNullBlock</a> = 0x14,
+              <a href="#a9c1cc19f70f537f5174ddc14e7c585ffa28ccaf5ed62a616afe70d0ffef2d38ea" class="m-doc">kEditorRigblockModelUseHullForBBox</a> = 0x15,
+              <a href="#a9c1cc19f70f537f5174ddc14e7c585ffaf8cd5fdb7621de388e82e8e400662016" class="m-doc">kEditorRigblockModelHasStayAbove</a> = 0x16,
+              <a href="#a9c1cc19f70f537f5174ddc14e7c585ffa3ebade04123a5fe0fcb0133afc5afbeb" class="m-doc">kEditorRigblockModelHasSnapDawnTo</a> = 0x17,
+              <a href="#a9c1cc19f70f537f5174ddc14e7c585ffa0ecd2df5274429a01c38c7c34e08c77e" class="m-doc">kEditorRigblockModelHideDeformHandles</a> = 0x18,
+              <a href="#a9c1cc19f70f537f5174ddc14e7c585ffa7c25ed4faea7b296670faf8128f21a89" class="m-doc">kEditorRigblockModelHideRotationHandles</a> = 0x19,
+              <a href="#a9c1cc19f70f537f5174ddc14e7c585ffa1429221009e8519ce04c467fd7e53cd6" class="m-doc">kEditorRigblockModelHasAlignLateralWith</a> = 0x1A,
+              <a href="#a9c1cc19f70f537f5174ddc14e7c585ffa818b7bd1a72ea01e95eab68f60e9718b" class="m-doc">kEditorRigblockModelHasAlignHeightWith</a> = 0x1B,
+              <a href="#a9c1cc19f70f537f5174ddc14e7c585ffac84ff9c5cb83a998675d4f764c426ac3" class="m-doc">kEditorRigblockModelSnapToParentCenter</a> = 0x1C,
+              <a href="#a9c1cc19f70f537f5174ddc14e7c585ffaa71d1ece42416494e3b078b162d59d2e" class="m-doc">kEditorRigblockModelSnapToParentSnapVectors</a> = 0x1D,
+              <a href="#a9c1cc19f70f537f5174ddc14e7c585ffa5db2b97120d0d79f0ced003627645015" class="m-doc">kEditorRigblockModelSnapToCenterOfEditor</a> = 0x1E,
+              <a href="#a9c1cc19f70f537f5174ddc14e7c585ffadefdc1bc12f0cc270cb45ca137861f6c" class="m-doc">kEditorRigblockModelHasBallConnector</a> = 0x1F,
+              <a href="#a9c1cc19f70f537f5174ddc14e7c585ffa562f9675b45a4339e8960600b2348fbf" class="m-doc">kEditorRigblockModelHasSocketConnector</a> = 0x20,
+              <a href="#a9c1cc19f70f537f5174ddc14e7c585ffafccaf67cb84e5196b68399382350a76d" class="m-doc">kEditorRigblockModelCellAllowOnTopOfBody</a> = 0x21,
+              <a href="#a9c1cc19f70f537f5174ddc14e7c585ffae1b30241887bac0cd35af9902fbd7528" class="m-doc">kEditorRigblockModelPreferToBeOnPlaneOfSymmetry</a> = 0x22,
+              <a href="#a9c1cc19f70f537f5174ddc14e7c585ffa811e38e911143bf0be99bbc406f145ac" class="m-doc">kEditorRigblockModelCanBeParentless</a> = 0x23,
+              <a href="#a9c1cc19f70f537f5174ddc14e7c585ffacbec1df7959f4dda04a7df3a80cfe428" class="m-doc">kEditorRigblockModelBoundsCheckOnlyForDelete</a> = 0x24,
+              <a href="#a9c1cc19f70f537f5174ddc14e7c585ffaa3e6efd62d9fe8300c903afb73779d31" class="m-doc">kEditorRigblockModelHasRotationBallHandle</a> = 0x26,
+              <a href="#a9c1cc19f70f537f5174ddc14e7c585ffa2cb4f3900387e2c9b74740465e827767" class="m-doc">kEditorRigblockModelHasEffectsBone</a> = 0x27,
+              <a href="#a9c1cc19f70f537f5174ddc14e7c585ffa95b9c5efaa290e9d9b47276d62288617" class="m-doc">kEditorRigblockModelActLikeFinOnPlaneOfSymmetry</a> = 0x28,
+              <a href="#a9c1cc19f70f537f5174ddc14e7c585ffa60125c2afb0aacd981cdc1107247e094" class="m-doc">kEditorRigblockModelWarpCursorToPinPoint</a> = 0x29,
+              <a href="#a9c1cc19f70f537f5174ddc14e7c585ffa92576c3995fa9bb3414c84ea1c9108ed" class="m-doc">kEditorRigblockModelActsLikeGrasper</a> = 0x2C,
+              <a href="#a9c1cc19f70f537f5174ddc14e7c585ffa726ac8157a60fc245c8eea3a483ff54c" class="m-doc">kEditorRigblockModelActsLikeFoot</a> = 0x2D,
+              <a href="#a9c1cc19f70f537f5174ddc14e7c585ffa98aad244c0069c9ac90d7bec8a942b83" class="m-doc">kEditorRigblockModelUseHullForPicking</a> = 0x2E,
+              <a href="#a9c1cc19f70f537f5174ddc14e7c585ffa91907ddb34696d4e405133ac2291ce3b" class="m-doc">kEditorRigblockModelHasForcePinningAgainstType</a> = 0x2F,
+              <a href="#a9c1cc19f70f537f5174ddc14e7c585ffa632c9848582b12d0fa909577278c5120" class="m-doc">kEditorRigblockModelAllowAsymmetricalRotationOnPlaneOfSymmetry</a> = 0x30,
+              <a href="#a9c1cc19f70f537f5174ddc14e7c585ffa7c87182a1488312c6e60dd0577dd5c87" class="m-doc">kEditorRigblockModelCircularTopAlignment</a> = 0x31,
+              <a href="#a9c1cc19f70f537f5174ddc14e7c585ffacc5b33402e6bb2b5bb636f94cc117655" class="m-doc">kEditorRigblockModelRemainUprightOnTop</a> = 0x32,
+              <a href="#a9c1cc19f70f537f5174ddc14e7c585ffafb550fb1ac0236a0cc7d1f50b83b84a7" class="m-doc">kEditorRigblockModelIsAllowedOutOfBounds</a> = 0x33,
+              <a href="#a9c1cc19f70f537f5174ddc14e7c585ffa49aeef89fa4b51173a6762a469209771" class="m-doc">kEditorRigblockModelDoNotFlipBasedOnSurfaceNormalOnPlaneOfSymmetry</a> = 0x34,
+              <a href="#a9c1cc19f70f537f5174ddc14e7c585ffa00e115f688312265d4e0d7484f054219" class="m-doc">kEditorRigblockModelHasAlignXYWith</a> = 0x35,
+              <a href="#a9c1cc19f70f537f5174ddc14e7c585ffabc3882fc5776e198e4a64b293f53e90b" class="m-doc">kEditorRigblockModelHas2002C980Bone</a> = 0x36,
+              <a href="#a9c1cc19f70f537f5174ddc14e7c585ffa073523f720153bb858d5d3b318923b5c" class="m-doc">kEditorRigblockModelAllowTopBehaviors</a> = 0x37,
+              <a href="#a9c1cc19f70f537f5174ddc14e7c585ffafabee24a525da451a81f7e5c19010370" class="m-doc">kEditorRigblockModelCellApplyBehaviorToUserRotation</a> = 0x38,
+              <a href="#a9c1cc19f70f537f5174ddc14e7c585ffa225a923daf6d58f76fd45f229a7d1885" class="m-doc">kEditorRigblockModelIsAsymmetric</a> = 0x39,
+              <a href="#a9c1cc19f70f537f5174ddc14e7c585ffa6cb647c14198d5a2b6d94332f3456bec" class="m-doc">kEditorRigblockModelStartAsymmetric</a> = 0x3B }</span>
+            </dt>
+            <dd><span></span></dd>
           </dl>
         </section>
         <section id="func-members">
@@ -201,6 +288,11 @@
           <dl class="m-doc">
             <dt>
               <span class="m-doc-wrap-bumper">auto <a href="#a1aa5950753776c28b4b1bdc13416ab0b" class="m-doc">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_editors_1_1_i_bake_manager.html" class="m-doc">IBakeManager</a>) -&gt; namespace</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper"><a href="#a91f09335eb059ac1a96c9042b6ee1743" class="m-doc">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="struct_editors_1_1c_editor_resource_block.html" class="m-doc">cEditorResourceBlock</a>,
+              0x1d8)</span>
             </dt>
             <dd><span></span></dd>
             <dt>
@@ -214,6 +306,11 @@
             <dd><span></span></dd>
             <dt>
               <span class="m-doc-wrap-bumper">auto <a href="#aa29e24dbcaf8fd5ccb45aee9905117da" class="m-doc">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_editors_1_1_creature_walk_controller.html" class="m-doc">CreatureWalkController</a>) -&gt; namespace</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper"><a href="#aac37e2a5f114cc9483092195122a6cf9" class="m-doc">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_editors_1_1_editor_state_edit_history.html" class="m-doc">EditorStateEditHistory</a>,
+              0x2C)</span>
             </dt>
             <dd><span></span></dd>
             <dt>
@@ -239,6 +336,26 @@
             <dd><span></span></dd>
             <dt>
               <span class="m-doc-wrap-bumper">auto <a href="#adabced4735cff0688cdd8b8b527c6c07" class="m-doc">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_editors_1_1_editor_request.html" class="m-doc">EditorRequest</a>) -&gt; namespace</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper"><a href="#afd43b97666752b9f4e3a01896845f118" class="m-doc">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="struct_editors_1_1_editor_rigblock_capability.html" class="m-doc">EditorRigblockCapability</a>,
+              0x14)</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper"><a href="#a82212bac67717bc745229fa11eac899b" class="m-doc">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="struct_editors_1_1_editor_rigblock_paint.html" class="m-doc">EditorRigblockPaint</a>,
+              0x1C)</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper"><a href="#a8d7eaf2d7a3dfe1bcad0acfb036d3913" class="m-doc">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="struct_editors_1_1_unk_editor_rigblock_struct1.html" class="m-doc">UnkEditorRigblockStruct1</a>,
+              0x34)</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper"><a href="#afefbd664d471ce55566c17bb7abbe793" class="m-doc">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="struct_editors_1_1_unk_editor_rigblock_struct2.html" class="m-doc">UnkEditorRigblockStruct2</a>,
+              0x8)</span>
             </dt>
             <dd><span></span></dd>
             <dt>
@@ -279,6 +396,15 @@
             <dd><span></span></dd>
             <dt>
               <span class="m-doc-wrap-bumper">auto <a href="#a851467fdc96360dfe139b5e008bb4161" class="m-doc">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_editors_1_1c_species_manager.html" class="m-doc">cSpeciesManager</a>) -&gt; namespace</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper"><a href="#ae08d66960d1f60a207f3c491a2fb88a7" class="m-doc">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_editors_1_1c_tuning_spine.html" class="m-doc">cTuningSpine</a>,
+              0xB8)</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a80b7df5bf611d4d8cefdf95b984adfa3" class="m-doc">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_editors_1_1c_tuning_spine.html" class="m-doc">cTuningSpine</a>) -&gt; namespace</span>
             </dt>
             <dd><span></span></dd>
           </dl>
@@ -323,6 +449,49 @@
             </h3>
             <p><span></span></p>
           </div></section>
+          <section class="m-doc-details" id="a3b2e68e6093edc5b85a42ba1856246dc"><div>
+            <h3>
+              enum class Editors::<wbr /><a href="#a3b2e68e6093edc5b85a42ba1856246dc" class="m-doc-self">EditorHandleState</a>: int
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_editor_base_handle_8h.html">&lt;Spore/Editors/EditorBaseHandle.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+            <table class="m-table m-fullwidth m-flat m-doc">
+              <thead><tr><th style="width: 1%">Enumerators</th><th></th></tr></thead>
+              <tbody>
+                <tr>
+                  <td><a href="#a3b2e68e6093edc5b85a42ba1856246dca4d3d769b812b6faa6b76e1a8abaece2d" class="m-doc-self" id="a3b2e68e6093edc5b85a42ba1856246dca4d3d769b812b6faa6b76e1a8abaece2d">Active</a></td>
+                  <td>
+                  <p>User is moving the handle.</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a3b2e68e6093edc5b85a42ba1856246dca810460332a38c9ade69a49b057494cad" class="m-doc-self" id="a3b2e68e6093edc5b85a42ba1856246dca810460332a38c9ade69a49b057494cad">Unselected</a></td>
+                  <td>
+                  <p>Rigblock is not selected, usually handle is invisible.</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a3b2e68e6093edc5b85a42ba1856246dcac598d83d76b2228eadaa9ca5853420cb" class="m-doc-self" id="a3b2e68e6093edc5b85a42ba1856246dcac598d83d76b2228eadaa9ca5853420cb">Rollover</a></td>
+                  <td>
+                  <p>Mouse is hovering over the handle.</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a3b2e68e6093edc5b85a42ba1856246dca7a1920d61156abc05a60135aefe8bc67" class="m-doc-self" id="a3b2e68e6093edc5b85a42ba1856246dca7a1920d61156abc05a60135aefe8bc67">Default</a></td>
+                  <td>
+                  <p>Rigblock is selected but user is not interacting with handle.</p>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="a9c1cc19f70f537f5174ddc14e7c585ff"><div>
+            <h3>
+              enum Editors::<wbr /><a href="#a9c1cc19f70f537f5174ddc14e7c585ff" class="m-doc-self">EditorRigblockBoolAttributes</a>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_editor_rigblock_8h.html">&lt;Spore/Editors/EditorRigblock.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
         </section>
         <section>
           <h2>Function documentation</h2>
@@ -330,6 +499,14 @@
             <h3>
               <span class="m-doc-wrap-bumper">namespace Editors::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a1aa5950753776c28b4b1bdc13416ab0b" class="m-doc-self">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_editors_1_1_i_bake_manager.html" class="m-doc">IBakeManager</a>)</span></span>
               <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_bake_manager_8h.html">&lt;Spore/Editors/BakeManager.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="a91f09335eb059ac1a96c9042b6ee1743"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"> Editors::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a91f09335eb059ac1a96c9042b6ee1743" class="m-doc-self">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="struct_editors_1_1c_editor_resource_block.html" class="m-doc">cEditorResourceBlock</a>,
+              0x1d8)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="c_editor_resource_8h.html">&lt;Spore/Editors/cEditorResource.h&gt;</a></div>
             </h3>
             <p><span></span></p>
           </div></section>
@@ -352,6 +529,14 @@
             <h3>
               <span class="m-doc-wrap-bumper">namespace Editors::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#aa29e24dbcaf8fd5ccb45aee9905117da" class="m-doc-self">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_editors_1_1_creature_walk_controller.html" class="m-doc">CreatureWalkController</a>)</span></span>
               <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_creature_walk_controller_8h.html">&lt;Spore/Editors/CreatureWalkController.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="aac37e2a5f114cc9483092195122a6cf9"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"> Editors::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#aac37e2a5f114cc9483092195122a6cf9" class="m-doc-self">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_editors_1_1_editor_state_edit_history.html" class="m-doc">EditorStateEditHistory</a>,
+              0x2C)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_editor_8h.html">&lt;Spore/Editors/Editor.h&gt;</a></div>
             </h3>
             <p><span></span></p>
           </div></section>
@@ -395,6 +580,38 @@
             <h3>
               <span class="m-doc-wrap-bumper">namespace Editors::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#adabced4735cff0688cdd8b8b527c6c07" class="m-doc-self">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_editors_1_1_editor_request.html" class="m-doc">EditorRequest</a>)</span></span>
               <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_editor_request_8h.html">&lt;Spore/Editors/EditorRequest.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="afd43b97666752b9f4e3a01896845f118"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"> Editors::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#afd43b97666752b9f4e3a01896845f118" class="m-doc-self">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="struct_editors_1_1_editor_rigblock_capability.html" class="m-doc">EditorRigblockCapability</a>,
+              0x14)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_editor_rigblock_8h.html">&lt;Spore/Editors/EditorRigblock.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="a82212bac67717bc745229fa11eac899b"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"> Editors::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a82212bac67717bc745229fa11eac899b" class="m-doc-self">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="struct_editors_1_1_editor_rigblock_paint.html" class="m-doc">EditorRigblockPaint</a>,
+              0x1C)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_editor_rigblock_8h.html">&lt;Spore/Editors/EditorRigblock.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="a8d7eaf2d7a3dfe1bcad0acfb036d3913"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"> Editors::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a8d7eaf2d7a3dfe1bcad0acfb036d3913" class="m-doc-self">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="struct_editors_1_1_unk_editor_rigblock_struct1.html" class="m-doc">UnkEditorRigblockStruct1</a>,
+              0x34)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_editor_rigblock_8h.html">&lt;Spore/Editors/EditorRigblock.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="afefbd664d471ce55566c17bb7abbe793"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"> Editors::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#afefbd664d471ce55566c17bb7abbe793" class="m-doc-self">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="struct_editors_1_1_unk_editor_rigblock_struct2.html" class="m-doc">UnkEditorRigblockStruct2</a>,
+              0x8)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_editor_rigblock_8h.html">&lt;Spore/Editors/EditorRigblock.h&gt;</a></div>
             </h3>
             <p><span></span></p>
           </div></section>
@@ -462,6 +679,21 @@
             <h3>
               <span class="m-doc-wrap-bumper">namespace Editors::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a851467fdc96360dfe139b5e008bb4161" class="m-doc-self">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_editors_1_1c_species_manager.html" class="m-doc">cSpeciesManager</a>)</span></span>
               <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_editors_2_species_manager_8h.html">&lt;Spore/Editors/SpeciesManager.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="ae08d66960d1f60a207f3c491a2fb88a7"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"> Editors::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ae08d66960d1f60a207f3c491a2fb88a7" class="m-doc-self">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_editors_1_1c_tuning_spine.html" class="m-doc">cTuningSpine</a>,
+              0xB8)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_tuning_spine_8h.html">&lt;Spore/Editors/TuningSpine.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="a80b7df5bf611d4d8cefdf95b984adfa3"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">namespace Editors::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a80b7df5bf611d4d8cefdf95b984adfa3" class="m-doc-self">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_editors_1_1c_tuning_spine.html" class="m-doc">cTuningSpine</a>)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_tuning_spine_8h.html">&lt;Spore/Editors/TuningSpine.h&gt;</a></div>
             </h3>
             <p><span></span></p>
           </div></section>

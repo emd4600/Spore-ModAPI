@@ -48,7 +48,7 @@
           <span class="m-breadcrumb"><a href="namespace_editors.html">Editors</a>::<wbr/></span>EditorRigblock <span class="m-thin">class</span>
           <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_editor_rigblock_8h.html">&lt;Spore/Editors/EditorRigblock.h&gt;</a></div>
         </h1>
-        <p><span></span></p>
+        <p>Represents a &quot;part&quot; (or rigblock) in an editor.</p>
         <div class="m-block m-default">
           <h3>Contents</h3>
           <ul>
@@ -56,12 +56,14 @@
               Reference
               <ul>
                 <li><a href="#base-classes">Base classes</a></li>
-                <li><a href="#typeless-methods">Constructors, destructors, conversion operators</a></li>
+                <li><a href="#pub-static-attribs">Public static variables</a></li>
+                <li><a href="#pub-methods">Public functions</a></li>
                 <li><a href="#pub-attribs">Public variables</a></li>
               </ul>
             </li>
           </ul>
         </div>
+<p>Rigblocks are any of the objects in the editor the player can interact with, including spines. The rigblocks of the current creation are stored in the <a href="class_editors_1_1_editor_model.html" class="m-doc">EditorModel</a> class.</p>
         <section id="base-classes">
           <h2><a href="#base-classes">Base classes</a></h2>
           <dl class="m-doc">
@@ -75,15 +77,24 @@
             <dd>This class represents a basic reference counted object.</dd>
           </dl>
         </section>
-        <section id="typeless-methods">
-          <h2><a href="#typeless-methods">Constructors, destructors, conversion operators</a></h2>
+        <section id="pub-static-attribs">
+          <h2><a href="#pub-static-attribs">Public static variables</a></h2>
           <dl class="m-doc">
-            <dt id="ab8fd53bcc3982b624694a546362a41e1">
-              <span class="m-doc-wrap-bumper"><a href="#ab8fd53bcc3982b624694a546362a41e1" class="m-doc-self">EditorRigblock</a>(</span><span class="m-doc-wrap">) <span class="m-label m-flat m-danger">deleted</span></span>
+            <dt id="ae771348faef11d5da4f30519e330872d">
+              static const uint32_t <a href="#ae771348faef11d5da4f30519e330872d" class="m-doc-self">TYPE</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="a2c46e1ca7ca8dfdf351f62a417fb5eb0">
-              <span class="m-doc-wrap-bumper"><a href="#a2c46e1ca7ca8dfdf351f62a417fb5eb0" class="m-doc-self">~EditorRigblock</a>(</span><span class="m-doc-wrap">) <span class="m-label m-flat m-warning">virtual</span></span>
+          </dl>
+        </section>
+        <section id="pub-methods">
+          <h2><a href="#pub-methods">Public functions</a></h2>
+          <dl class="m-doc">
+            <dt id="a7f83eee02844e20b59c13dfe6ef2a46a">
+              <span class="m-doc-wrap-bumper">auto <a href="#a7f83eee02844e20b59c13dfe6ef2a46a" class="m-doc-self">AddRef</a>(</span><span class="m-doc-wrap">) -&gt; int</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="aace8d1b512662f09bf4c68167d434871">
+              <span class="m-doc-wrap-bumper">auto <a href="#aace8d1b512662f09bf4c68167d434871" class="m-doc-self">Release</a>(</span><span class="m-doc-wrap">) -&gt; int</span>
             </dt>
             <dd><span></span></dd>
           </dl>
@@ -91,36 +102,208 @@
         <section id="pub-attribs">
           <h2><a href="#pub-attribs">Public variables</a></h2>
           <dl class="m-doc">
-            <dt id="a108f4ecfbf792b85f77176bb584fe8d7">
-              intrusive_ptr&lt;<a href="class_app_1_1_property_list.html" class="m-doc">App::<wbr />PropertyList</a>&gt; <a href="#a108f4ecfbf792b85f77176bb584fe8d7" class="m-doc-self">prop</a>
+            <dt id="a2d2a52043ba14366511052edd578f708">
+              <a href="_property_list_8h.html#ae757f1639ff739ff0282dd91f3e39f0a" class="m-doc">PropertyListPtr</a> <a href="#a2d2a52043ba14366511052edd578f708" class="m-doc-self">mpPropList</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="a157f49ece17f2777d18fa0808948eb7e">
-              char <a href="#a157f49ece17f2777d18fa0808948eb7e" class="m-doc-self">_padding_10</a>
+            <dt id="ac96765a22d9e37ebba90aeab54dd9b8b">
+              <a href="_model_asset_8h.html#a4695930ef0d84e11d31379e623af5732" class="m-doc">ModelPtr</a> <a href="#ac96765a22d9e37ebba90aeab54dd9b8b" class="m-doc-self">field_10</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="a86b04ba6c5d5912deeb65fec64776cb1">
-              unsigned long <a href="#a86b04ba6c5d5912deeb65fec64776cb1" class="m-doc-self">instanceID</a>
+            <dt id="ab66d76a83fe699c57fd979e42cd0ff65">
+              <a href="_model_asset_8h.html#a4695930ef0d84e11d31379e623af5732" class="m-doc">ModelPtr</a> <a href="#ab66d76a83fe699c57fd979e42cd0ff65" class="m-doc-self">field_14</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="a792203c2251506e0629ac37017c7ced8">
-              unsigned long <a href="#a792203c2251506e0629ac37017c7ced8" class="m-doc-self">groupID</a>
+            <dt id="ad189bf2c2d8ea1b9df7e0ac8b75a7b7b">
+              <a href="_i_model_world_8h.html#ac806a1f42e226576db417e69309943f5" class="m-doc">IModelWorldPtr</a> <a href="#ad189bf2c2d8ea1b9df7e0ac8b75a7b7b" class="m-doc-self">mpModelWorld</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="a2efb8314a08c6377ecc80ce8823c1337">
-              char <a href="#a2efb8314a08c6377ecc80ce8823c1337" class="m-doc-self">_padding_24</a>
+            <dt id="a48e9137e1212c7bd079c2462c154cb27">
+              uint32_t <a href="#a48e9137e1212c7bd079c2462c154cb27" class="m-doc-self">mInstanceID</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="ad56656709fad0061aee92505bddd2e17">
-              <a href="struct_math_1_1_vector3.html" class="m-doc">Vector3</a> <a href="#ad56656709fad0061aee92505bddd2e17" class="m-doc-self">pos</a>
+            <dt id="a517b6cf1ace29952a16ce147fe4ebab5">
+              uint32_t <a href="#a517b6cf1ace29952a16ce147fe4ebab5" class="m-doc-self">mGroupID</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a40513665e34ce9d8566ed74b74e25ead">
+              int <a href="#a40513665e34ce9d8566ed74b74e25ead" class="m-doc-self">field_24</a>
+            </dt>
+            <dd>Property <code>0xE305AAFB</code></dd>
+            <dt id="a0d8cacb73aa42d0d2c12e8cf83364d18">
+              <a href="class_editors_1_1_editor_model.html" class="m-doc">EditorModel</a>* <a href="#a0d8cacb73aa42d0d2c12e8cf83364d18" class="m-doc-self">mpEditorModel</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a22e2197c335366a5a452b8ef2bafc2bf">
+              int <a href="#a22e2197c335366a5a452b8ef2bafc2bf" class="m-doc-self">field_2C</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a6ae23cdb23ca444b10b5b5c14d9aac37">
+              float <a href="#a6ae23cdb23ca444b10b5b5c14d9aac37" class="m-doc-self">field_30</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a2e055478c34cd725227d37ca5610b09d">
+              bool <a href="#a2e055478c34cd725227d37ca5610b09d" class="m-doc-self">field_34</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a20b27a8eb4b663f9d31cd4d764d827e4">
+              <a href="struct_editors_1_1_unk_editor_rigblock_struct2.html" class="m-doc">UnkEditorRigblockStruct2</a> <a href="#a20b27a8eb4b663f9d31cd4d764d827e4" class="m-doc-self">field_38</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="ad196a349828c6fc0be5aa2896a8de81e">
+              <a href="struct_editors_1_1_unk_editor_rigblock_struct2.html" class="m-doc">UnkEditorRigblockStruct2</a> <a href="#ad196a349828c6fc0be5aa2896a8de81e" class="m-doc-self">field_40</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a5b69cae64cc7cb796b012a7a4c53f836">
+              <a href="struct_math_1_1_vector3.html" class="m-doc">Vector3</a> <a href="#a5b69cae64cc7cb796b012a7a4c53f836" class="m-doc-self">mPosition</a>
             </dt>
             <dd><span></span></dd>
             <dt id="a07a95b53d50c5848a7a21acd66bc8ab2">
               <a href="struct_math_1_1_vector3.html" class="m-doc">Vector3</a> <a href="#a07a95b53d50c5848a7a21acd66bc8ab2" class="m-doc-self">lastPos</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="a612a84e3d35d89f145645f61e8834e75">
-              char <a href="#a612a84e3d35d89f145645f61e8834e75" class="m-doc-self">_padding_60</a>
+            <dt id="a2791e4d0dbfc423f3c2d69ae445be000">
+              <a href="struct_math_1_1_matrix3.html" class="m-doc">Matrix3</a> <a href="#a2791e4d0dbfc423f3c2d69ae445be000" class="m-doc-self">mTotalOrientation</a>
+            </dt>
+            <dd>Combination of mUserOrientation and mOrientation.</dd>
+            <dt id="ae07192fc4c6c4558e760ca753fd6c05d">
+              <a href="struct_math_1_1_matrix3.html" class="m-doc">Matrix3</a> <a href="#ae07192fc4c6c4558e760ca753fd6c05d" class="m-doc-self">field_84</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="ac04c399eb647c5705c6006470d9b3b7d">
+              <a href="struct_math_1_1_matrix3.html" class="m-doc">Matrix3</a> <a href="#ac04c399eb647c5705c6006470d9b3b7d" class="m-doc-self">mOrientation</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="ad3d3b5e4f6dbf82f879a43d4683480fc">
+              <a href="struct_math_1_1_matrix3.html" class="m-doc">Matrix3</a> <a href="#ad3d3b5e4f6dbf82f879a43d4683480fc" class="m-doc-self">field_CC</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="ae372a3d18c3e0704c4641148b39feedf">
+              <a href="struct_math_1_1_matrix3.html" class="m-doc">Matrix3</a> <a href="#ae372a3d18c3e0704c4641148b39feedf" class="m-doc-self">mUserOrientation</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a0e20c484f1e2862c034ba1af6cef73ee">
+              <a href="struct_math_1_1_matrix3.html" class="m-doc">Matrix3</a> <a href="#a0e20c484f1e2862c034ba1af6cef73ee" class="m-doc-self">field_114</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a53fab29d79a649327a94ac1c6276b5f2">
+              <a href="struct_math_1_1_vector3.html" class="m-doc">Vector3</a> <a href="#a53fab29d79a649327a94ac1c6276b5f2" class="m-doc-self">field_138</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a94319e586292b074e04632a8eb3603c4">
+              <a href="struct_math_1_1_vector3.html" class="m-doc">Vector3</a> <a href="#a94319e586292b074e04632a8eb3603c4" class="m-doc-self">field_144</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a1fe4c78915d84bac9823eb6c5c5379e1">
+              int <a href="#a1fe4c78915d84bac9823eb6c5c5379e1" class="m-doc-self">field_150</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a0c81dc0a8ee792ae4ebf8701d3ede02c">
+              <a href="_editor_base_handle_8h.html#a25d13ad614ec18ff5a345693603f1f93" class="m-doc">EditorBaseHandlePtr</a> <a href="#a0c81dc0a8ee792ae4ebf8701d3ede02c" class="m-doc-self">mAxisHandles</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a812aded2c9a371ae81bf71f317124e71">
+              <a href="_editor_base_handle_8h.html#a25d13ad614ec18ff5a345693603f1f93" class="m-doc">EditorBaseHandlePtr</a> <a href="#a812aded2c9a371ae81bf71f317124e71" class="m-doc-self">mpRotationBallHandle</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="ab6ba74550d19f4870906f1136159d9e1">
+              int <a href="#ab6ba74550d19f4870906f1136159d9e1" class="m-doc-self">field_164</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a8424fcf7354b422becfd0ff67878698e">
+              int <a href="#a8424fcf7354b422becfd0ff67878698e" class="m-doc-self">field_168</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="ac112a6a8528b33259b051ceab02dad18">
+              float <a href="#ac112a6a8528b33259b051ceab02dad18" class="m-doc-self">field_16C</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a7b3a928384f73846c254d3c407dc1772">
+              <a href="class_clock.html" class="m-doc">Clock</a> <a href="#a7b3a928384f73846c254d3c407dc1772" class="m-doc-self">field_170</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a1e845326b283beba625071ba6ec772f8">
+              int <a href="#a1e845326b283beba625071ba6ec772f8" class="m-doc-self">field_188</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a694333e684502927b0975376e9dc1ba4">
+              int <a href="#a694333e684502927b0975376e9dc1ba4" class="m-doc-self">field_18C</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="acf6db61e7796dd6ab15d12b748a888c2">
+              int <a href="#acf6db61e7796dd6ab15d12b748a888c2" class="m-doc-self">field_190</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="ad4bc6cff3bc29068009b6846ad4d0862">
+              int <a href="#ad4bc6cff3bc29068009b6846ad4d0862" class="m-doc-self">field_194</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="ae0f002fdc5b3d00d935d6bdea26c1177">
+              int <a href="#ae0f002fdc5b3d00d935d6bdea26c1177" class="m-doc-self">field_198</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a62202cf23cb739f173c734ec6b0fc4bf">
+              int <a href="#a62202cf23cb739f173c734ec6b0fc4bf" class="m-doc-self">field_19C</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a04b2d2c5a857d24deef11c2617337c2b">
+              bool <a href="#a04b2d2c5a857d24deef11c2617337c2b" class="m-doc-self">field_1A0</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a894262bcb18ed9c550cb44e7bbdb81f4">
+              int <a href="#a894262bcb18ed9c550cb44e7bbdb81f4" class="m-doc-self">field_1A4</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="ad9b12cb84287a9fa4f1593bf76502bea">
+              bool <a href="#ad9b12cb84287a9fa4f1593bf76502bea" class="m-doc-self">field_1A8</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a0428b42cb0bbdb09cd43f6f09d92d319">
+              bool <a href="#a0428b42cb0bbdb09cd43f6f09d92d319" class="m-doc-self">field_1A9</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="ad1604b603fb341560d48ed195d0b71a9">
+              int <a href="#ad1604b603fb341560d48ed195d0b71a9" class="m-doc-self">field_1AC</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a1482d5445e7034cea5a23e9adf9cbf90">
+              int <a href="#a1482d5445e7034cea5a23e9adf9cbf90" class="m-doc-self">field_1B0</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="aaaaf66c681760926e37206c67f1aad04">
+              int <a href="#aaaaf66c681760926e37206c67f1aad04" class="m-doc-self">field_1B4</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a1c7b3b2f34977dfea26e1bd593a039eb">
+              int <a href="#a1c7b3b2f34977dfea26e1bd593a039eb" class="m-doc-self">field_1B8</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a3d5a353d8c91c14620f2eac4537d80cd">
+              int <a href="#a3d5a353d8c91c14620f2eac4537d80cd" class="m-doc-self">field_1BC</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a0cea8f1c3dcc6f9d18ef67966446a404">
+              int <a href="#a0cea8f1c3dcc6f9d18ef67966446a404" class="m-doc-self">field_1C0</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="af0363b98287d16ed3da47eea390f60a5">
+              int <a href="#af0363b98287d16ed3da47eea390f60a5" class="m-doc-self">field_1C4</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="aed76c1c1d881dbd59919be4face5bea6">
+              int <a href="#aed76c1c1d881dbd59919be4face5bea6" class="m-doc-self">field_1C8</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a1aa988673ab45fa50e0433ab37655272">
+              int <a href="#a1aa988673ab45fa50e0433ab37655272" class="m-doc-self">mLimbType</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="acc9af00bc8f21a8023e72baca76603d8">
+              float <a href="#acc9af00bc8f21a8023e72baca76603d8" class="m-doc-self">mMuscleScale</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="acf1650b56e27bb7f46ee724903899c82">
+              float <a href="#acf1650b56e27bb7f46ee724903899c82" class="m-doc-self">mBaseMuscleScale</a>
             </dt>
             <dd><span></span></dd>
             <dt id="a2df6b4fbde44bcd23fd45fe4f62b9274">
@@ -131,156 +314,392 @@
               float <a href="#a675b7028a1da3f0082205a45162c17d7" class="m-doc-self">size_2</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="a31b417fa34a673c98633709c4a1ebc92">
-              float <a href="#a31b417fa34a673c98633709c4a1ebc92" class="m-doc-self">minScale</a>
+            <dt id="a6b9ebe3bd68b241bd57a5d93901d8fda">
+              float <a href="#a6b9ebe3bd68b241bd57a5d93901d8fda" class="m-doc-self">mModelMinScale</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="a1727242c3622fd9192a4611d193af62e">
-              float <a href="#a1727242c3622fd9192a4611d193af62e" class="m-doc-self">maxScale</a>
+            <dt id="adec9a4df477fa5b99e531e0280085773">
+              float <a href="#adec9a4df477fa5b99e531e0280085773" class="m-doc-self">mModelMaxScale</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="a4948deedb282195bed99a9566dab24c2">
-              <a href="struct_math_1_1_vector3.html" class="m-doc">Vector3</a> <a href="#a4948deedb282195bed99a9566dab24c2" class="m-doc-self">modelDefaultMouseOffset</a>
+            <dt id="a46b70f2809b070a9aa73c5b5649805d9">
+              <a href="struct_math_1_1_vector3.html" class="m-doc">Vector3</a> <a href="#a46b70f2809b070a9aa73c5b5649805d9" class="m-doc-self">mModelDefaultMouseOffset</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="a713f79da85ad6812298bf4d187217b3f">
-              char <a href="#a713f79da85ad6812298bf4d187217b3f" class="m-doc-self">_padding_1F4</a>
+            <dt id="a4c13bdc55e996865a3bebb81e6eb9aa7">
+              <a href="struct_math_1_1_matrix3.html" class="m-doc">Matrix3</a> <a href="#a4c13bdc55e996865a3bebb81e6eb9aa7" class="m-doc-self">mModelEditorInitialRotation</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="a7665bfebffcd8f78c60da7307067ce70">
-              float <a href="#a7665bfebffcd8f78c60da7307067ce70" class="m-doc-self">modelMinBallConnectorScale</a>
+            <dt id="aa31562a4bbfb92f3b4adc51fd3b89e5c">
+              float <a href="#aa31562a4bbfb92f3b4adc51fd3b89e5c" class="m-doc-self">mModelMinBallConnectorScale</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="a8d493a71986e05b2641379f743b3681d">
-              float <a href="#a8d493a71986e05b2641379f743b3681d" class="m-doc-self">modelMaxBallConnectorScale</a>
+            <dt id="a6a913a6ae2f41413a84f40ffbe82e2b6">
+              float <a href="#a6a913a6ae2f41413a84f40ffbe82e2b6" class="m-doc-self">mModelMaxBallConnectorScale</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="ada6cdc4d8e361cbf51e30d3839fe158e">
-              float <a href="#ada6cdc4d8e361cbf51e30d3839fe158e" class="m-doc-self">modelSymmetrySnapDelta</a>
+            <dt id="a0ffdc5910137f412acb9188cabacec02">
+              float <a href="#a0ffdc5910137f412acb9188cabacec02" class="m-doc-self">mModelSymmetrySnapDelta</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="aaf54f6d7fe24ee27e4c3f9dc6666d848">
-              int <a href="#aaf54f6d7fe24ee27e4c3f9dc6666d848" class="m-doc-self">field_224</a>
+            <dt id="ac1ce4ce0004631881f2b1bfdff0ba219">
+              float <a href="#ac1ce4ce0004631881f2b1bfdff0ba219" class="m-doc-self">field_224</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="a72fc7c664b0bcd9404056f5d37fd87a2">
-              float <a href="#a72fc7c664b0bcd9404056f5d37fd87a2" class="m-doc-self">modelReplaceSnapDelta</a>
+            <dt id="a35eac299844bc3dc4445d9f1d15f8d29">
+              float <a href="#a35eac299844bc3dc4445d9f1d15f8d29" class="m-doc-self">mModelReplaceSnapDelta</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="a0aea9adfd9ae6e1372a2398a178c5d60">
-              float <a href="#a0aea9adfd9ae6e1372a2398a178c5d60" class="m-doc-self">modelSymmetryRotationSnapAngle</a>
+            <dt id="a1a70e61a973c7b04f1e1f9846e6b3ef8">
+              float <a href="#a1a70e61a973c7b04f1e1f9846e6b3ef8" class="m-doc-self">mModelSymmetryRotationSnapAngle</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="ac7494d4e48bf55c2d07024b8540138f3">
-              char <a href="#ac7494d4e48bf55c2d07024b8540138f3" class="m-doc-self">_padding_230</a>
+            <dt id="a0f6dc3ad195f1f0cc6232dcf50bb33a8">
+              bool <a href="#a0f6dc3ad195f1f0cc6232dcf50bb33a8" class="m-doc-self">field_230</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="a28b860b6b71d2078d66df559cd39fe26">
-              int <a href="#a28b860b6b71d2078d66df559cd39fe26" class="m-doc-self">modelNumberOfSnapAxes</a>
+            <dt id="a3c9679aa616ffb3932e5b087314babf0">
+              vector&lt;int&gt; <a href="#a3c9679aa616ffb3932e5b087314babf0" class="m-doc-self">field_234</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="a0b1e7db0cb3728a600af78a64fed333d">
-              char <a href="#a0b1e7db0cb3728a600af78a64fed333d" class="m-doc-self">_padding_250</a>
+            <dt id="ad5b148edb574092c887aff432bd636f0">
+              int <a href="#ad5b148edb574092c887aff432bd636f0" class="m-doc-self">mModelNumberOfSnapAxes</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="a156f19c20d39c20797b9ffb423ca1230">
-              unsigned long <a href="#a156f19c20d39c20797b9ffb423ca1230" class="m-doc-self">modelForcePinningType</a>
+            <dt id="a45c9f973a27eac6a4cec82361c7b5957">
+              <a href="class_transform.html" class="m-doc">Transform</a> <a href="#a45c9f973a27eac6a4cec82361c7b5957" class="m-doc-self">mEffectsBoneTransform1</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="a282df9cd91c51eb9a1cbb91b687faca2">
-              unsigned long <a href="#a282df9cd91c51eb9a1cbb91b687faca2" class="m-doc-self">modelPinningType</a>
+            <dt id="a28c1ce4cff809b91b5ff685daa637fe4">
+              <a href="class_transform.html" class="m-doc">Transform</a> <a href="#a28c1ce4cff809b91b5ff685daa637fe4" class="m-doc-self">mEffectsBoneTransform2</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="a38b5d9acb26963b444fd655fdeef281e">
-              char <a href="#a38b5d9acb26963b444fd655fdeef281e" class="m-doc-self">_padding_3C4</a>
+            <dt id="a00ec95053bbd9eb81454e29dda5adee6">
+              int <a href="#a00ec95053bbd9eb81454e29dda5adee6" class="m-doc-self">mEffectsBoneIndex</a>
+            </dt>
+            <dd>Index to the model bone named <code>effecs</code></dd>
+            <dt id="a0233c600916db324b6904bb47d7d81aa">
+              <a href="class_transform.html" class="m-doc">Transform</a> <a href="#a0233c600916db324b6904bb47d7d81aa" class="m-doc-self">mCSnapBoneTransform1</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="acad4410dcec24d327ea1531824d43479">
-              <a href="struct_math_1_1_vector3.html" class="m-doc">Vector3</a> <a href="#acad4410dcec24d327ea1531824d43479" class="m-doc-self">modelPaletteRotation</a>
+            <dt id="ad01f584403ed9b2db41f44c36a78a7cc">
+              <a href="class_transform.html" class="m-doc">Transform</a> <a href="#ad01f584403ed9b2db41f44c36a78a7cc" class="m-doc-self">mCSnapBoneTransform2</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="ace8033f0deda4642b6ff478012b078ef">
-              char <a href="#ace8033f0deda4642b6ff478012b078ef" class="m-doc-self">_padding_430</a>
+            <dt id="aa877574711c9545167c3df242a786a3c">
+              int <a href="#aa877574711c9545167c3df242a786a3c" class="m-doc-self">mCSnapBoneIndex</a>
+            </dt>
+            <dd>Index to the model bone named <code>csnap</code></dd>
+            <dt id="a8baaed4eb5e989c748da5454b71b4284">
+              int <a href="#a8baaed4eb5e989c748da5454b71b4284" class="m-doc-self">field_334</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="a1132f175f70f90e64f056e6ca8b7e0ec">
-              float <a href="#a1132f175f70f90e64f056e6ca8b7e0ec" class="m-doc-self">modelBottomEdgeDistanceAdjustment</a>
+            <dt id="acccae28c6af9285e995d89f1805e2595">
+              int <a href="#acccae28c6af9285e995d89f1805e2595" class="m-doc-self">field_338</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="a2a80e2bea1981ab0a167918b4a5e2e65">
-              float <a href="#a2a80e2bea1981ab0a167918b4a5e2e65" class="m-doc-self">modelScale</a>
+            <dt id="ae9da0033d3b789f67ae5977e487e8b80">
+              intrusive_ptr&lt;<a href="class_editors_1_1_editor_rigblock.html" class="m-doc">EditorRigblock</a>&gt; <a href="#ae9da0033d3b789f67ae5977e487e8b80" class="m-doc-self">mpParent</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="ab8d8305aed0b19ecca4677b133cfa396">
-              <a href="struct_resource_key.html" class="m-doc">ResourceKey</a>* <a href="#ab8d8305aed0b19ecca4677b133cfa396" class="m-doc-self">modelMinMuscleFile</a>
+            <dt id="a3a3a95be62b7895c4c07648a7c97312e">
+              fixed_vector&lt;intrusive_ptr&lt;<a href="class_editors_1_1_editor_rigblock.html" class="m-doc">EditorRigblock</a>&gt;, 8&gt; <a href="#a3a3a95be62b7895c4c07648a7c97312e" class="m-doc-self">mChildren</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="a47e79150e2b9505e846cfb84e8ba7755">
-              <a href="struct_resource_key.html" class="m-doc">ResourceKey</a>* <a href="#a47e79150e2b9505e846cfb84e8ba7755" class="m-doc-self">modelMaxMuscleFile</a>
+            <dt id="a7e4c8860a5bd075105b401710e86381a">
+              int <a href="#a7e4c8860a5bd075105b401710e86381a" class="m-doc-self">field_378</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="a83456ef83231cb41c9f31180c6d42615">
-              char <a href="#a83456ef83231cb41c9f31180c6d42615" class="m-doc-self">_padding_460</a>
+            <dt id="ad34951a35c31c5d9199157c1c053d664">
+              char <a href="#ad34951a35c31c5d9199157c1c053d664" class="m-doc-self">_padding_37C</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="a4786247f2b83891433b73ed377f72f9e">
-              float <a href="#a4786247f2b83891433b73ed377f72f9e" class="m-doc-self">animationTime</a>
+            <dt id="a52f642f2a1138313295bb0c470fa9fb8">
+              <a href="struct_math_1_1_vector3.html" class="m-doc">Vector3</a> <a href="#a52f642f2a1138313295bb0c470fa9fb8" class="m-doc-self">mTriangleDirection</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="a81e332cc8c6bad84ad6bea7daa9f0413">
-              char <a href="#a81e332cc8c6bad84ad6bea7daa9f0413" class="m-doc-self">_padding_48C</a>
+            <dt id="a0c6942b09ed5b136c96a17fc1cf9bf78">
+              <a href="struct_math_1_1_vector3.html" class="m-doc">Vector3</a> <a href="#a0c6942b09ed5b136c96a17fc1cf9bf78" class="m-doc-self">mTrianglePickOrigin</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="a58abb4f974a96644b21d90a2bb1e9543">
-              int <a href="#a58abb4f974a96644b21d90a2bb1e9543" class="m-doc-self">modelPrice</a>
+            <dt id="afaa70637c47b083c246caf3a42822c83">
+              int <a href="#afaa70637c47b083c246caf3a42822c83" class="m-doc-self">field_3B8</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="a896c11d63bc7e98667faa6278177f293">
-              int <a href="#a896c11d63bc7e98667faa6278177f293" class="m-doc-self">modelComplexityScore</a>
+            <dt id="acf832a9f223b888b586f20a4e80731a0">
+              int <a href="#acf832a9f223b888b586f20a4e80731a0" class="m-doc-self">mModelForcePinningType</a>
+            </dt>
+            <dd>2 for <code>PinningPhysics</code>, 4 for <code>PinningGeometry</code></dd>
+            <dt id="a94da35dcbc1b359b3041dfd5ad90bcef">
+              uint32_t <a href="#a94da35dcbc1b359b3041dfd5ad90bcef" class="m-doc-self">mModelPinningTypeGroup</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="a7c7b924fe166fe8343ff1e1f316c0449">
-              int <a href="#a7c7b924fe166fe8343ff1e1f316c0449" class="m-doc-self">modelRunTimeBoneCount</a>
+            <dt id="ab334c10e99a623d57b1fd786c8c32d9f">
+              int <a href="#ab334c10e99a623d57b1fd786c8c32d9f" class="m-doc-self">field_3C4</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="acac0e53b18569d079687c5ae8c4c39bf">
-              int <a href="#acac0e53b18569d079687c5ae8c4c39bf" class="m-doc-self">modelBakeLevel</a>
+            <dt id="a58066faa62412cac7ee03acbde627c24">
+              bool <a href="#a58066faa62412cac7ee03acbde627c24" class="m-doc-self">field_3C8</a>
+            </dt>
+            <dd>True if pinning type instanceID is <code>0x17CFD48F</code></dd>
+            <dt id="aaec88c8d97e5a11ebcc95bf4765b4d6a">
+              bool <a href="#aaec88c8d97e5a11ebcc95bf4765b4d6a" class="m-doc-self">field_3C9</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="a585209a48d524c77018508a577b8a2e1">
-              int <a href="#a585209a48d524c77018508a577b8a2e1" class="m-doc-self">field_5F4</a>
+            <dt id="ada62f96e0b08a07037a0dade449266b0">
+              int <a href="#ada62f96e0b08a07037a0dade449266b0" class="m-doc-self">field_3CC</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="abe163385fa5f568f5aa52373b4cc1e15">
-              <a href="struct_resource_key.html" class="m-doc">ResourceKey</a> <a href="#abe163385fa5f568f5aa52373b4cc1e15" class="m-doc-self">modelRigBlockType</a>
+            <dt id="ab8c4647c5464003b06c9436a54c1f449">
+              int <a href="#ab8c4647c5464003b06c9436a54c1f449" class="m-doc-self">field_3D0</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="ae6ab184140d40930e17847f2216645c2">
-              unsigned long <a href="#ae6ab184140d40930e17847f2216645c2" class="m-doc-self">modelShowoffAnimation</a>
+            <dt id="ae660abd4fd8b6e3b278faa27711d7ee1">
+              int <a href="#ae660abd4fd8b6e3b278faa27711d7ee1" class="m-doc-self">field_3D4</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="a7978077125d933128f95c46d320211e7">
-              unsigned long <a href="#a7978077125d933128f95c46d320211e7" class="m-doc-self">modelShowoffEffect</a>
+            <dt id="a02d16387af62f8eab03d34a7f122b8da">
+              int <a href="#a02d16387af62f8eab03d34a7f122b8da" class="m-doc-self">field_3D8</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="a2d8a71da84f9871178ad08b9aaf2253f">
-              char <a href="#a2d8a71da84f9871178ad08b9aaf2253f" class="m-doc-self">_padding_60C</a>
+            <dt id="a690b9619f9be5755c52788d740a3e788">
+              int <a href="#a690b9619f9be5755c52788d740a3e788" class="m-doc-self">field_3DC</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="a0164318b8df30f6cce851a12cf0e1050">
-              unsigned long <a href="#a0164318b8df30f6cce851a12cf0e1050" class="m-doc-self">foottype</a>
+            <dt id="ae734598b55b61b82a028ef1e937f73e0">
+              intrusive_ptr&lt;<a href="class_editors_1_1_editor_rigblock.html" class="m-doc">EditorRigblock</a>&gt; <a href="#ae734598b55b61b82a028ef1e937f73e0" class="m-doc-self">mpSymmetricRigblock</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="a365dc82cd9c7053fc76834f8536bed4e">
-              unsigned long <a href="#a365dc82cd9c7053fc76834f8536bed4e" class="m-doc-self">mouthtype</a>
+            <dt id="a9e7bee742fed48266c2586feb6d4f37c">
+              intrusive_ptr&lt;<a href="class_editors_1_1_editor_rigblock.html" class="m-doc">EditorRigblock</a>&gt; <a href="#a9e7bee742fed48266c2586feb6d4f37c" class="m-doc-self">mpSymmetricRigblock2</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="afb5b97c1512549db34364f242722a3ae">
-              unsigned long <a href="#afb5b97c1512549db34364f242722a3ae" class="m-doc-self">weapontype</a>
+            <dt id="a118ebecd16b453e19e1a56fcf05aa90c">
+              bool <a href="#a118ebecd16b453e19e1a56fcf05aa90c" class="m-doc-self">field_3E8</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="aad19cbebb8b5fde63cb55991cfbc67ce">
-              char <a href="#aad19cbebb8b5fde63cb55991cfbc67ce" class="m-doc-self">_padding_DC0</a>
+            <dt id="aac6cf98975fbe988b5326c2ad4522c71">
+              <a href="_editor_base_handle_8h.html#a25d13ad614ec18ff5a345693603f1f93" class="m-doc">EditorBaseHandlePtr</a> <a href="#aac6cf98975fbe988b5326c2ad4522c71" class="m-doc-self">mpBallConnectorHandle</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a5951b03fa2e18fbe799ac35a401a9d81">
+              <a href="_model_asset_8h.html#a4695930ef0d84e11d31379e623af5732" class="m-doc">ModelPtr</a> <a href="#a5951b03fa2e18fbe799ac35a401a9d81" class="m-doc-self">mpSocketConnectorModel</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a1fca93324d1be7424c1f0720b47339bc">
+              <a href="struct_math_1_1_vector3.html" class="m-doc">Vector3</a> <a href="#a1fca93324d1be7424c1f0720b47339bc" class="m-doc-self">mModelMinSocketConnectorOffset</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="ac157b1b6da288ada43a668a79424a006">
+              <a href="struct_math_1_1_vector3.html" class="m-doc">Vector3</a> <a href="#ac157b1b6da288ada43a668a79424a006" class="m-doc-self">mModelMaxSocketConnectorOffset</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a7e1610c6755c14533f1ce2a5bbda3ab9">
+              <a href="struct_math_1_1_vector3.html" class="m-doc">Vector3</a> <a href="#a7e1610c6755c14533f1ce2a5bbda3ab9" class="m-doc-self">mSocketConnectorOffset</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="ae62fd137d471ec44cc496ca6d47cf8e6">
+              <a href="struct_math_1_1_vector3.html" class="m-doc">Vector3</a> <a href="#ae62fd137d471ec44cc496ca6d47cf8e6" class="m-doc-self">mModelRotationBallHandleOffset</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a2c71d7dc9d7ce474285c15b36763d78b">
+              <a href="struct_math_1_1_vector3.html" class="m-doc">Vector3</a> <a href="#a2c71d7dc9d7ce474285c15b36763d78b" class="m-doc-self">mModelPaletteRotation</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="ac41511d6893e99bfefa544d522a47634">
+              int <a href="#ac41511d6893e99bfefa544d522a47634" class="m-doc-self">field_430</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="af5f10b97b51120d3ccbb86c471235d6e">
+              int <a href="#af5f10b97b51120d3ccbb86c471235d6e" class="m-doc-self">field_434</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="ac45383598bd9a2776e39b7270c19b95b">
+              bool <a href="#ac45383598bd9a2776e39b7270c19b95b" class="m-doc-self">field_438</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a6d5cfb2e5a45fa6e25ecab7bfe335880">
+              int <a href="#a6d5cfb2e5a45fa6e25ecab7bfe335880" class="m-doc-self">field_43C</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a3fec7ecf7cb50bad93cc78e994a5387e">
+              float <a href="#a3fec7ecf7cb50bad93cc78e994a5387e" class="m-doc-self">field_440</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="aca9b2c5e8df860ad1a6dd70c489ab05b">
+              float <a href="#aca9b2c5e8df860ad1a6dd70c489ab05b" class="m-doc-self">field_444</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a4a1d7282fd0387caa69ff1c5c78e1fd5">
+              int <a href="#a4a1d7282fd0387caa69ff1c5c78e1fd5" class="m-doc-self">field_448</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a2ede3f5d096611c895814d9a8a10dd41">
+              int <a href="#a2ede3f5d096611c895814d9a8a10dd41" class="m-doc-self">field_44C</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a16e4cca2146a455b6f06b59c8c5bb9c8">
+              float <a href="#a16e4cca2146a455b6f06b59c8c5bb9c8" class="m-doc-self">mModelBottomEdgeDistanceAdjustment</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a288ef92951f488bdd8d1f76690025da9">
+              float <a href="#a288ef92951f488bdd8d1f76690025da9" class="m-doc-self">mModelScale</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="afd243d440552a12495885aea22441e88">
+              <a href="struct_resource_key.html" class="m-doc">ResourceKey</a>* <a href="#afd243d440552a12495885aea22441e88" class="m-doc-self">mModelMinMuscleFile</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a27e673840303d19fe3f1e77a83fbc310">
+              <a href="struct_resource_key.html" class="m-doc">ResourceKey</a>* <a href="#a27e673840303d19fe3f1e77a83fbc310" class="m-doc-self">mModelMaxMuscleFile</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="aa5fe25fb0655d5862730554c276a86d5">
+              fixed_string&lt;char, 32&gt; <a href="#aa5fe25fb0655d5862730554c276a86d5" class="m-doc-self">mModelSoundScale</a>
+            </dt>
+            <dd>Name of the sound played when scaling this rigblock, default is <code>creature_size</code></dd>
+            <dt id="aeb03f658a9494aae8b2eda3a4b91ac3a">
+              fixed_string&lt;char, 32&gt; <a href="#aeb03f658a9494aae8b2eda3a4b91ac3a" class="m-doc-self">mModelSoundRotation</a>
+            </dt>
+            <dd>Name of the sound played when rotating this rigblock, default is <code>creature_rotate</code></dd>
+            <dt id="a46524b919c739e5353d23f9e956af222">
+              fixed_vector&lt;pair&lt;uint32_t, <a href="struct_editors_1_1_editor_rigblock_paint.html" class="m-doc">EditorRigblockPaint</a>&gt;, 8&gt; <a href="#a46524b919c739e5353d23f9e956af222" class="m-doc-self">mPaints</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="af970b442378602d14519e0d3dc15aafd">
+              bool <a href="#af970b442378602d14519e0d3dc15aafd" class="m-doc-self">field_5E0</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="adcb4d46ace28c5d2cbfdf4f75026613d">
+              int <a href="#adcb4d46ace28c5d2cbfdf4f75026613d" class="m-doc-self">mModelPrice</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="ac4ae55c142012c2a6c7f1d98ca5fe441">
+              int <a href="#ac4ae55c142012c2a6c7f1d98ca5fe441" class="m-doc-self">mModelComplexityScore</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="afa0be6903cfcb22d201ad42f7d13240a">
+              int <a href="#afa0be6903cfcb22d201ad42f7d13240a" class="m-doc-self">mModelRunTimeBoneCount</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="aad93509f127953577b3c9fd234ce6aec">
+              int <a href="#aad93509f127953577b3c9fd234ce6aec" class="m-doc-self">mModelBakeLevel</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="ad24019fa7732b780b930f24d0ad0d0d5">
+              float <a href="#ad24019fa7732b780b930f24d0ad0d0d5" class="m-doc-self">field_5F4</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a48837b65051338bc82a70f1f22d75061">
+              <a href="struct_resource_key.html" class="m-doc">ResourceKey</a> <a href="#a48837b65051338bc82a70f1f22d75061" class="m-doc-self">mModelRigBlockType</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a53c5e82432dbe41441fe901d2e721ae1">
+              uint32_t <a href="#a53c5e82432dbe41441fe901d2e721ae1" class="m-doc-self">mModelShowoffAnimation</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a927ddbbcf351514467c525e2724446f6">
+              uint32_t <a href="#a927ddbbcf351514467c525e2724446f6" class="m-doc-self">mModelShowoffEffect</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="af3c0ddf0583d4e87a37c11e382a1b3ce">
+              bool <a href="#af3c0ddf0583d4e87a37c11e382a1b3ce" class="m-doc-self">field_60C</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a65d108adead6dc09770c5b846f616fc8">
+              int <a href="#a65d108adead6dc09770c5b846f616fc8" class="m-doc-self">field_610</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a03c6fb587c532ab05639b362b7793be7">
+              map&lt;int, int&gt; <a href="#a03c6fb587c532ab05639b362b7793be7" class="m-doc-self">field_614</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a4127befa14e9881c185ab535b2364d54">
+              fixed_vector&lt;int, 32&gt; <a href="#a4127befa14e9881c185ab535b2364d54" class="m-doc-self">field_630</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a5c66502e8cb355b0d7f831bd0b395c3d">
+              int <a href="#a5c66502e8cb355b0d7f831bd0b395c3d" class="m-doc-self">field_6C8</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a97bb556bd3375f9c75a95087cd3a67e5">
+              fixed_vector&lt;<a href="_editor_base_handle_8h.html#a25d13ad614ec18ff5a345693603f1f93" class="m-doc">EditorBaseHandlePtr</a>, 8&gt; <a href="#a97bb556bd3375f9c75a95087cd3a67e5" class="m-doc-self">mMorphHandles</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="ab59db0cdc48bf657a72ea7da3e0dcfe4">
+              fixed_vector&lt;float, 8&gt; <a href="#ab59db0cdc48bf657a72ea7da3e0dcfe4" class="m-doc-self">mMorphHandleWeights</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a62c9feb223bda11a7b7af859933f1cbd">
+              fixed_vector&lt;uint32_t, 8&gt; <a href="#a62c9feb223bda11a7b7af859933f1cbd" class="m-doc-self">mMorphHandleChannels</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a9e0087f7f20321e1acf19249198c5caa">
+              fixed_vector&lt;<a href="struct_resource_key.html" class="m-doc">ResourceKey</a>, 8&gt; <a href="#a9e0087f7f20321e1acf19249198c5caa" class="m-doc-self">mModelSnapDownTo</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a381b118452c693d65f6eea469fa13d9b">
+              fixed_vector&lt;<a href="struct_resource_key.html" class="m-doc">ResourceKey</a>, 8&gt; <a href="#a381b118452c693d65f6eea469fa13d9b" class="m-doc-self">mModelSnapToParentTypes</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="aa620a4ab0336b11e38667c3bcc73f496">
+              fixed_vector&lt;<a href="struct_resource_key.html" class="m-doc">ResourceKey</a>, 8&gt; <a href="#aa620a4ab0336b11e38667c3bcc73f496" class="m-doc-self">mModelStayAbove</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="ace5afa21845d5f210df36ef9f208e055">
+              fixed_vector&lt;<a href="struct_resource_key.html" class="m-doc">ResourceKey</a>, 8&gt; <a href="#ace5afa21845d5f210df36ef9f208e055" class="m-doc-self">mModelAlignLateralWith</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="af0cc7d143e76f21927e417a1a9076139">
+              fixed_vector&lt;<a href="struct_resource_key.html" class="m-doc">ResourceKey</a>, 8&gt; <a href="#af0cc7d143e76f21927e417a1a9076139" class="m-doc-self">mModelAlignHeightWith</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="abcdd36bd26a783a7170425e5745c77ff">
+              fixed_vector&lt;<a href="struct_resource_key.html" class="m-doc">ResourceKey</a>, 8&gt; <a href="#abcdd36bd26a783a7170425e5745c77ff" class="m-doc-self">mModelAlignXYWith</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="ad1d02e0e4b5fcb2a0d984989b69020db">
+              fixed_vector&lt;<a href="struct_resource_key.html" class="m-doc">ResourceKey</a>, 8&gt; <a href="#ad1d02e0e4b5fcb2a0d984989b69020db" class="m-doc-self">mModelTypesToInteractWith</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="afb75d971c925bf3eecdfe3e35c52efe4">
+              fixed_vector&lt;<a href="struct_resource_key.html" class="m-doc">ResourceKey</a>, 8&gt; <a href="#afb75d971c925bf3eecdfe3e35c52efe4" class="m-doc-self">mModelTypesToSnapReplace</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="ad76026be430c4bfaa15045bd355ecae1">
+              fixed_vector&lt;<a href="struct_resource_key.html" class="m-doc">ResourceKey</a>, 16&gt; <a href="#ad76026be430c4bfaa15045bd355ecae1" class="m-doc-self">mModelTypesNotToInteractWith</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="ae6a65ea7eac36ef5ffe4022923d38ce7">
+              fixed_vector&lt;<a href="struct_editors_1_1_editor_rigblock_capability.html" class="m-doc">EditorRigblockCapability</a>, 20&gt; <a href="#ae6a65ea7eac36ef5ffe4022923d38ce7" class="m-doc-self">mCapabilities</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a8b29fcd3e7600d0851b26a03b88bcb6f">
+              uint32_t <a href="#a8b29fcd3e7600d0851b26a03b88bcb6f" class="m-doc-self">mFootType</a>
+            </dt>
+            <dd>For audio.</dd>
+            <dt id="a21bf8f2c39b37737a1610bba5613af8e">
+              uint32_t <a href="#a21bf8f2c39b37737a1610bba5613af8e" class="m-doc-self">mMouthType</a>
+            </dt>
+            <dd>For audio.</dd>
+            <dt id="a449f39e4deeeeed9a9eb078804a2e689">
+              uint32_t <a href="#a449f39e4deeeeed9a9eb078804a2e689" class="m-doc-self">mWeaponType</a>
+            </dt>
+            <dd>For audio.</dd>
+            <dt id="a8ea82eb24132b7f75ab8e39409d586ff">
+              int <a href="#a8ea82eb24132b7f75ab8e39409d586ff" class="m-doc-self">field_DC0</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a151fcb3dcc78277c8c6c273718132aa0">
+              int <a href="#a151fcb3dcc78277c8c6c273718132aa0" class="m-doc-self">field_DC4</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="ab648844a9d9311cec040687d9ff7083e">
+              bitset&lt;64&gt; <a href="#ab648844a9d9311cec040687d9ff7083e" class="m-doc-self">mBooleanAttributes</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="adbe48acdd824931cd6bcddb37a1d73c5">
+              <a href="struct_editors_1_1_unk_editor_rigblock_struct1.html" class="m-doc">UnkEditorRigblockStruct1</a> <a href="#adbe48acdd824931cd6bcddb37a1d73c5" class="m-doc-self">field_DD0</a>
             </dt>
             <dd><span></span></dd>
           </dl>
