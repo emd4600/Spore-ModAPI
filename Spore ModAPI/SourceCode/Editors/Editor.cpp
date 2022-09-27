@@ -94,5 +94,16 @@ namespace Editors
 			}
 		}
 	}
+
+	cEditorResource::cEditorResource()
+		: mBlocks()
+		, mProperties {}
+		, padding_5C {}
+	{
+	}
+
+	cEditorResource::~cEditorResource()
+	{}
+
 }
 #endif

@@ -61,6 +61,7 @@ namespace Editors
 	class cEditorResource 
 		: public Resource::ResourceObject
 	{
+	public:
 		struct Properties
 		{
 			/* 00h */	uint32_t mModelType;
@@ -78,6 +79,9 @@ namespace Editors
 		ASSERT_SIZE(Properties, 0x44);
 
 		static const uint32_t TYPE = 0x3C609F8;
+
+		cEditorResource();
+		~cEditorResource();
 
 	public:
 		/* 18h */	Properties mProperties;
