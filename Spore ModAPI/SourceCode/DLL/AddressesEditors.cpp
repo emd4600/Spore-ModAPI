@@ -7,6 +7,7 @@
 #include <Spore\Editors\EditorCamera.h>
 #include <Spore\Editors\EditorRequest.h>
 #include <Spore\Editors\EditorUI.h>
+#include <Spore\Editors\TuningSpine.h>
 #include <Spore\Editors\PlayModeAnimations.h>
 #include <Spore\Editors\SpeciesManager.h>
 #include <Spore\Editors\CreatureWalkController.h>
@@ -18,6 +19,11 @@ namespace Editors
 	namespace Addresses(IBakeManager)
 	{
 		DefineAddress(Get, SelectAddress(0x401010, 0x401010, 0x401010));
+	}
+
+	namespace Addresses(cTuningSpine)
+	{
+		DefineAddress(Get, SelectAddress(0x401070, , 0x401070));
 	}
 
 	namespace Addresses(ContentValidation) {
@@ -41,6 +47,11 @@ namespace Editors
 		DefineAddress(OnMouseMove, SelectAddress(0x5736C0, , 0x5737D0));
 		DefineAddress(OnMouseWheel, SelectAddress(0x5859E0, , 0x585D10));
 		DefineAddress(Update, SelectAddress(0x58BB20, , 0x58BE50));
+
+		DefineAddress(SetEditorModel, SelectAddress(0x5867D0, , 0x586B00));
+		DefineAddress(CommitEditHistory, SelectAddress(0x5860E0, , 0x586410));
+		DefineAddress(Undo, SelectAddress(0x58A270, , 0x58A5A0));
+		DefineAddress(Redo, SelectAddress(0x58A620, , 0x58A950));
 	}
 
 	namespace Addresses(EditorCamera)
@@ -99,8 +110,13 @@ namespace Editors
 
 	namespace Addresses(EditorModel)
 	{
+		DefineAddress(SetName, SelectAddress(0x4ADC20, , 0x4AE280));
+		DefineAddress(SetDescription, SelectAddress(0x4ADDE0, , 0x4AE440));
 		DefineAddress(GetCreationName, SelectAddress(0x4ADEA0, 0x4AE520, 0x4AE520));
 		DefineAddress(SetColor, SelectAddress(0x4ADBF0, 0x4AE250, 0x4AE250));
+		DefineAddress(Load, SelectAddress(0x4AE240, , 0x4AE8D0));
+		DefineAddress(Save, SelectAddress(0x4AF0F0, , 0x4AF780));
+		DefineAddress(Dispose, SelectAddress(0x4AD1F0, , 0x4AD850));
 	}
 
 	namespace Addresses(CreatureWalkController)

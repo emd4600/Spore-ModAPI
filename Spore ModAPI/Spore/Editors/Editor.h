@@ -55,7 +55,7 @@
 #include <EASTL\string.h>
 #include <EASTL\vector.h>
 
-/// Access the active editor object.
+/// Access the active editor object; check Editors::cEditor
 #define Editor (*Editors::GetEditor())
 
 #define cEditorPtr intrusive_ptr<Editors::cEditor>
@@ -96,6 +96,26 @@ namespace Editors
 		kComplexityFlagBakedBlock = 0x4,
 	};
 
+	/// Structure that records the state of the editor (current mode, budget, etc) for undo/redo history
+	class EditorStateEditHistory
+		: public DefaultRefCounted
+	{
+	public:
+		/* 08h */	int mBudget;
+		/* 0Ch */	Mode mMode;
+		/* 10h */	int field_10;
+		/* 14h */	bool field_14;
+		/* 15h */	bool field_15;
+		/* 18h */	int field_18;
+		/* 1Ch */	int field_1C;
+		/* 20h */	int field_20;
+		/* 24h */	int field_24;
+		/* 28h */	int field_28;
+	};
+	ASSERT_SIZE(EditorStateEditHistory, 0x2C);
+
+	/// Main class for editors. A single instance of this class exists during the whole game, and is used for all
+	/// editors (except the Adventure editor, that one uses App::cScenarioMode); you can access it with the Editor macro.
 	class cEditor 
 		: public App::IGameMode
 		, public Graphics::IRenderable
@@ -110,16 +130,43 @@ namespace Editors
 		//PLACEHOLDER virtual method 54h -> reads temporary database
 		//PLACEHOLDER virtual method 58h -> wrties temporary database
 
-		virtual ~cEditor();
+		/// Changes the current editor model, updating the creation with the parts and paints of the new editor model.
+		/// @param pEditorModel
+		void SetEditorModel(EditorModel* pEditorModel);
 
-		///
+		/// Get current editor model, which is the creation with the parts and paints.
+		/// @returns
+		inline EditorModel* GetEditorModel() const;
+
+		/// Adds an edit history (undo/redo) entry based on the current model of the editor.
+		/// @param arg1
+		/// @param pStateHistory
+		void CommitEditHistory(bool arg1, EditorStateEditHistory* pStateHistory = nullptr);
+
+		void Undo(bool, bool);
+		void Redo();
+
 		/// Returns true if the editor is currently in the given mode.
 		/// @param mode Either build, paint or play mode.
+		/// @returns
 		bool IsMode(Mode mode) const;
 
-		///
 		/// Returns true if the editor is currently active.
+		/// @returns
 		bool IsActive() const;
+
+		EditorCamera* GetCamera();
+
+		// _ZN6Editor9ScalePartEP14EditorRigblockii
+		// Editor::ScalePart(EditorRigblock *, int, int)
+
+
+		bool sub_581F70(EditorRigblock* part, void* activeHandle, int value);
+
+		// loc_573BB1 -> set part is hovered?
+
+
+		void RemovePart(EditorRigblock* part);  //PLACEHOLDER
 
 	public:
 
@@ -164,7 +211,7 @@ namespace Editors
 		/* 88h */	IModelWorldPtr field_88;
 		/// The model world that contains the background model.
 		/* 8Ch */	IModelWorldPtr mpBackgroundModelWorld;
-		/* 90h */	int field_90;
+		/* 90h */	int field_90;  // related with havok world?
 		/* 94h */	IEffectWorldPtr mpEffectWorld;
 
 		// use appropiate container!
@@ -188,14 +235,15 @@ namespace Editors
 		/* C8h */	int field_C8;  // not initialized
 
 		// also valid for spines
-		/* CCh */	intrusive_ptr<EditorRigblock> mpActivePart;
-		/* D0h */	intrusive_ptr<EditorRigblock> mpMovingPart;  // the part that is being moved, only when mouse is being clicked
-		/* D4h */	intrusive_ptr<EditorRigblock> mpSelectedPart;  // also valid for spines
+		/// Rigblock that is being hovered, and where actions like mouse wheel scaling will be applied
+		/* CCh */	EditorRigblockPtr mpActivePart;
+		/* D0h */	EditorRigblockPtr mpMovingPart;  // the part that is being moved, only when mouse is being clicked
+		/* D4h */	EditorRigblockPtr mpSelectedPart;  // also valid for spines
 
-		/* D8h */	int field_D8;
-		/* DCh */	int field_DC;
+		/* D8h */	DefaultRefCountedPtr field_D8;
+		/* DCh */	DefaultRefCountedPtr field_DC;
 		/* E0h */	bool field_E0;
-		/* E4h */	UnkClass4* mpActiveHandle;  // morph handles
+		/* E4h */	EditorBaseHandle* mpActiveHandle;  // morph handles
 		/// Is the mouse over the skin of the creature?
 		/* E8h */	bool mbMouseIsInSkin;
 		/* E9h */	bool field_E9;
@@ -212,7 +260,7 @@ namespace Editors
 		/* 142h */	bool field_142;
 		/* 143h */	bool field_143;  // not initialized
 		/* 144h */	bool field_144;  // true
-		/* 148h */	int field_148;
+		/* 148h */	ObjectPtr field_148;
 		/* 14Ch */	int field_14C; // vertebra? only present in creature-like editor
 		/* 150h */	intrusive_ptr<Object> field_150;  // something related with painting?  uses sub_4C3E70 to return something that parts also use
 		/* 154h */	int field_154;
@@ -224,9 +272,9 @@ namespace Editors
 
 		/* 158h */	int field_158;
 		/* 15Ch */	int field_15C;
-		/* 160h */	vector<int> field_160;
-		/* 174h */	vector<int> field_174;
-		/* 188h */	int field_188;
+		/* 160h */	vector<intrusive_ptr<EditorStateEditHistory>> mStateEditHistory;
+		/* 174h */	vector<cEditorResourcePtr> mEditHistory;
+		/* 188h */	int mEditHistoryIndex;
 		/// The ID of the .prop configuration file of the current editor.
 		/* 18Ch */	uint32_t mEditorName;  // 0x465C50BA
 		/* 190h */	bool mbTransitionHideUI;  // true
@@ -240,7 +288,7 @@ namespace Editors
 		/* 1ACh */	int field_1AC;
 		/// Maps a creation format extension to its default editor. For example, 'crt' is mapped to 'CreatureEditorExtraLarge'.
 		/* 1B0h */	map<uint32_t, uint32_t> mDefaultEditors;
-		/* 1CCh */	intrusive_ptr<EditorRequest> mEditorRequest;	// in 35h there is bool editorAllowNameEdit;
+		/* 1CCh */	EditorRequestPtr mEditorRequest;	// in 35h there is bool editorAllowNameEdit;
 		/* 1D0h */	ResourceKey mParentAssetKey;
 		/* 1DCh */	string16 field_1DC;
 		/* 1ECh */	int field_1EC;
@@ -375,7 +423,7 @@ namespace Editors
 		/* 364h	*/	int field_364;
 		/* 368h	*/	int field_368;
 		/* 36Ch	*/	vector<int> field_36C;
-		/* 380h */	int field_380;
+		/* 380h */	DefaultRefCountedPtr field_380;
 		/* 384h */	bool field_384;
 		/* 385h */	bool field_385;
 		/* 388h */	int field_388;  // not initialized
@@ -388,17 +436,13 @@ namespace Editors
 		/* 398h */	bool field_398;  // true
 		/* 399h */	bool field_399;  // true
 		/* 39Ah */	bool field_39A;  // true
-		/* 39Ch */	int field_39C;
-		/* 3A0h */	int field_3A0;
-		/* 3A4h */	int field_3A4;
-		/* 3A8h */	int field_3A8;  // not initialized
-		/* 3ACh */	int field_3AC;  // not initialized
-		/* 3B0h */	int field_3B0;  // not initialized
+		/* 39Ch */	vector<int> field_39C;
+		/* 3B0h */	float field_3B0;  // not initialized
 		/* 3B4h */	int field_3B4;  // not initialized
-		/* 3B8h */	intrusive_ptr<Palettes::PaletteMain> mpPartsPalette;
-		/* 3BCh */	intrusive_ptr<Palettes::PaletteUI> mpPartsPaletteUI;
-		/* 3C0h */	intrusive_ptr<Palettes::PaletteMain> mpPaintPalette;
-		/* 3C4h */	intrusive_ptr<Palettes::PaletteUI> mpPaintPaletteUI;
+		/* 3B8h */	PaletteMainPtr mpPartsPalette;
+		/* 3BCh */	PaletteUIPtr mpPartsPaletteUI;
+		/* 3C0h */	PaletteMainPtr mpPaintPalette;
+		/* 3C4h */	PaletteUIPtr mpPaintPaletteUI;
 		/* 3C8h */	bool field_3C8;
 		/* 3C9h */	bool field_3C9;  // true
 
@@ -515,19 +559,6 @@ namespace Editors
 		/* 5F4h */	int field_5F4;
 		/* 5F8h */	int field_5F8;
 		/* 5FCh */	int field_5FC;  // not initialized
-
-		EditorCamera* GetCamera();
-
-		// _ZN6Editor9ScalePartEP14EditorRigblockii
-		// Editor::ScalePart(EditorRigblock *, int, int)
-
-
-		bool sub_581F70(EditorRigblock* part, void* activeHandle, int value);
-
-		// loc_573BB1 -> set part is hovered?
-
-
-		void RemovePart(EditorRigblock* part);  //PLACEHOLDER
 	};
 
 	static_assert(sizeof(cEditor) == 0x600, "sizeof(cEditor) must be 0x600!");
@@ -547,6 +578,11 @@ namespace Editors
 		DeclareAddress(OnMouseMove);
 		DeclareAddress(OnMouseWheel);
 		DeclareAddress(Update);
+
+		DeclareAddress(SetEditorModel);  // 0x5867D0, 0x586B00
+		DeclareAddress(CommitEditHistory);  // 0x5860E0, 0x586410
+		DeclareAddress(Undo);  // 0x58A270, 0x58A5A0
+		DeclareAddress(Redo);  // 0x58A620, 0x58A950
 	}
 
 	/// Returns the Editor instance (there can only be one at a time).
@@ -557,16 +593,7 @@ namespace Editors
 
 	inline EditorCamera* cEditor::GetCamera()
 	{
-		App::ICamera* pCamera = this->mpGameModeMgr->GetCameraManager()->GetActiveCamera();
-
-		if (pCamera != nullptr)
-		{
-			return (EditorCamera*) pCamera->Cast(EditorCamera::TYPE);
-		}
-		else
-		{
-			return nullptr;
-		}
+		return object_cast<EditorCamera>(mpGameModeMgr->GetCameraManager()->GetActiveCamera());
 	}
 
 	inline bool cEditor::IsMode(Mode mode) const {
@@ -575,5 +602,10 @@ namespace Editors
 
 	inline bool cEditor::IsActive() const {
 		return mIsActive;
+	}
+
+	inline EditorModel* cEditor::GetEditorModel() const
+	{
+		return mpEditorModel;
 	}
 }

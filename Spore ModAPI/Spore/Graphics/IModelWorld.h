@@ -244,12 +244,22 @@ namespace Graphics
 		/// @param animID
 		/// @param[out] dstStart
 		/// @param[out] dstEnd
+		/// @returns
 		/* 80h */	virtual bool GetAnimRange(const Model* pModel, uint32_t animID, float& dstStart, float& dstEnd, int = 0) const = 0;
-		/* 84h */	virtual int func84h(const Model* pModel) const = 0;
+
+		/// Returns amount of animation bones in the given model.
+		/// @param pModel
+		/// @returns 
+		/* 84h */	virtual int GetNumBones(const Model* pModel) const = 0;
 		// Returns amount of bones
 		/* 88h */	virtual int GetAnimationSkin(const Model* pModel, RenderWare::Matrix3x4* dst, bool original = false) const = 0;
 		/* 8Ch */	virtual int func8Ch(const Model* pModel, RenderWare::Matrix3x4* dst) = 0;
-		/* 90h */	virtual int func90h(const Model* pModel, int* dst) = 0;
+
+		/// Used to obtain the IDs of the animation bones in the given model.
+		/// @param pModel
+		/// @param[out] dst Array of uint32_t of enough size (GetNumBones())
+		/// @returns
+		/* 90h */	virtual int GetBoneIDs(const Model* pModel, uint32_t* dst) = 0;
 		/* 94h */	virtual int func94h(const Model* pModel, int* dst) = 0;
 		/* 98h */	virtual int func98h() = 0;
 		/* 9Ch */	virtual int func9Ch() = 0;
@@ -301,7 +311,8 @@ namespace Graphics
 		/* FCh */	virtual int funcFCh() = 0;
 		/* 100h */	virtual int func100h() = 0;
 		/* 104h */	virtual int func104h() = 0;
-		/* 108h */	virtual int func108h() = 0;
+		/// Returns default transform stored in the prop file of the model
+		/* 108h */	virtual Transform* GetAssetTransform(Model*) = 0;
 		/* 10Ch */	virtual int func10Ch() = 0;
 		/* 110h */	virtual int func110h() = 0;
 		/* 114h */	virtual int func114h() = 0;

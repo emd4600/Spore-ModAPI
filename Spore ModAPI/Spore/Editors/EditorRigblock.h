@@ -22,115 +22,140 @@
 #include <Spore\Internal.h>
 #include <Spore\Object.h>
 #include <Spore\MathUtils.h>
+#include <Spore\Clock.h>
+#include <Spore\Graphics\IModelWorld.h>
 #include <Spore\App\PropertyList.h>
+#include <Spore\Editors\EditorBaseHandle.h>
+#include <EASTL\bitset.h>
+#include <EASTL\fixed_vector.h>
+#include <EASTL\fixed_string.h>
 
-using namespace Math;
+#define EditorRigblockPtr eastl::intrusive_ptr<Editors::EditorRigblock>
 
 // off_13EF450 -> part vftable?  // 013EF460?
 // 0044070F -> scale part¿
 //TODO EVERYTHING! PLACEHOLDER
 namespace Editors
 {
+	class EditorRigblock;
+	class EditorModel;
 
-	class EditorRigblock : public DefaultRefCounted, public Object
+	struct EditorRigblockCapability
+	{
+		/// Property ID used to check the capability, such as `modelCapabilityAdventurerMissile`
+		/* 00h */	uint32_t mPropertyID;
+		/// True if the level can be changed with a handle, like with some adventurer parts
+		/* 04h */	bool mIsVariableLevel;
+		/* 08h */	int mCapabilityLevel;
+		/* 0Ch */	int mCapabilityLevel2;
+		/* 10h */	int field_10;
+	};
+	ASSERT_SIZE(EditorRigblockCapability, 0x14);
+
+	struct EditorRigblockPaint
+	{
+		/* 00h */	uint32_t mPaintID;
+		/* 04h */	ColorRGB mPaintColor1;
+		/* 10h */	ColorRGB mPaintColor2;
+	};
+	ASSERT_SIZE(EditorRigblockPaint, 0x1C);
+
+	struct UnkEditorRigblockStruct1
+	{
+		/* 00h */	int field_0;
+		/* 04h */	float field_4;
+		/* 08h */	float field_8;
+		/* 0Ch */	float field_C;  // 0.1
+		/* 10h */	bool field_10;
+		/* 11h */	bool field_11;
+		/* 14h */	int field_14;
+		/* 18h */	char padding_18[0x10];
+		/* 28h */	bool field_28;
+		/* 29h */	bool field_29;
+		/* 2Ch */	EditorRigblock* field_2C;
+		/* 30h */	int field_30;
+	};
+	ASSERT_SIZE(UnkEditorRigblockStruct1, 0x34);
+
+	struct UnkEditorRigblockStruct2
+	{
+		/* 00h */	bool field_0;
+		/* 01h */	bool field_1;
+		/* 04h */	int field_4;
+	};
+	ASSERT_SIZE(UnkEditorRigblockStruct2, 0x8);
+
+	enum EditorRigblockBoolAttributes
+	{
+		kEditorRigblockModelOrientToSurfaces = 0,
+
+		kEditorRigblockModelOrientWhenSnapped = 4,
+		kEditorRigblockModelUseDummyBlocks = 5,
+
+		kEditorRigblockModelIsVertebra = 7,
+		kEditorRigblockModelIsPlantRoot = 8,
+		kEditorRigblockModelOverrideBounds = 9,
+		kEditorRigblockModelUseSkin = 0xA,
+		kEditorRigblockModelHasSocketAndBallConnector = 0xA,  //????
+
+		kEditorRigblockIsSnapped = 0xC,
+		kEditorRigblockHasLeftModel = 0xD,
+
+		kEditorRigblockModelRemainUpright = 0x11,
+		kEditorRigblockModelMoveBottomEdgeToSurface = 0x12,
+		kEditorRigblockModelPointForward = 0x13,
+		kEditorRigblockModelIsNullBlock = 0x14,
+		kEditorRigblockModelUseHullForBBox = 0x15,
+		kEditorRigblockModelHasStayAbove = 0x16,
+		kEditorRigblockModelHasSnapDawnTo = 0x17,
+		kEditorRigblockModelHideDeformHandles = 0x18,
+		kEditorRigblockModelHideRotationHandles = 0x19,
+		kEditorRigblockModelHasAlignLateralWith = 0x1A,
+		kEditorRigblockModelHasAlignHeightWith = 0x1B,
+		kEditorRigblockModelSnapToParentCenter = 0x1C,
+		kEditorRigblockModelSnapToParentSnapVectors = 0x1D,
+		kEditorRigblockModelSnapToCenterOfEditor = 0x1E,
+		kEditorRigblockModelHasBallConnector = 0x1F,
+		kEditorRigblockModelHasSocketConnector = 0x20,
+		kEditorRigblockModelCellAllowOnTopOfBody = 0x21,
+		kEditorRigblockModelPreferToBeOnPlaneOfSymmetry = 0x22,
+		kEditorRigblockModelCanBeParentless = 0x23,
+		kEditorRigblockModelBoundsCheckOnlyForDelete = 0x24,
+
+		kEditorRigblockModelHasRotationBallHandle = 0x26,
+		kEditorRigblockModelHasEffectsBone = 0x27,
+		kEditorRigblockModelActLikeFinOnPlaneOfSymmetry = 0x28,
+		kEditorRigblockModelWarpCursorToPinPoint = 0x29,
+
+		kEditorRigblockModelActsLikeGrasper = 0x2C,
+		kEditorRigblockModelActsLikeFoot = 0x2D,
+		kEditorRigblockModelUseHullForPicking = 0x2E,
+		kEditorRigblockModelHasForcePinningAgainstType = 0x2F,
+		kEditorRigblockModelAllowAsymmetricalRotationOnPlaneOfSymmetry = 0x30,
+		kEditorRigblockModelCircularTopAlignment = 0x31,
+		kEditorRigblockModelRemainUprightOnTop = 0x32,
+		kEditorRigblockModelIsAllowedOutOfBounds = 0x33,
+		kEditorRigblockModelDoNotFlipBasedOnSurfaceNormalOnPlaneOfSymmetry = 0x34,
+		kEditorRigblockModelHasAlignXYWith = 0x35,
+		kEditorRigblockModelHas2002C980Bone = 0x36,
+		kEditorRigblockModelAllowTopBehaviors = 0x37,
+		kEditorRigblockModelCellApplyBehaviorToUserRotation = 0x38,
+		kEditorRigblockModelIsAsymmetric = 0x39,
+
+		kEditorRigblockModelStartAsymmetric = 0x3B,
+	};
+
+	/// Represents a "part" (or rigblock) in an editor. Rigblocks are any of the objects in the editor the player can
+	/// interact with, including spines. The rigblocks of the current creation are stored in the EditorModel class.
+	class EditorRigblock 
+		: public DefaultRefCounted
+		, public Object
 	{
 	public:
+		static const uint32_t TYPE = 0xEFD66F0B;
 
-		EditorRigblock() = delete;
-		//{
-		//	VOID_THISCALL(SelectAddress(0x434820, 0x434B70, 0x434B70), this);
-		//}
-		virtual ~EditorRigblock()
-		{
-			//TODO
-		}
-
-		/* 0Ch */	intrusive_ptr<App::PropertyList> prop;
-
-		char _padding_10[0x0C];
-
-		// 10h ModelPtr
-		// 14h ModelPtr mpModel;
-		// 18h ModelWorldPtr mpModelWorld;
-
-		/* 1Ch */	unsigned long instanceID;
-		/* 20h */	unsigned long groupID;
-
-		char _padding_24[0x24];
-
-		/* 48h */	Vector3 pos;
-		/* 54h */	Vector3 lastPos;  // updated when the part is clicked
-
-		// the same?
-		// /* 88h */	Vector3 coords;
-		// /* 94h */	Vector3 coords2;
-
-		char _padding_60[0x178];
-
-		/* 1D8h */	float size;
-		/* 1DCh */	float size_2;  // again?!
-		/* 1E0h */	float minScale;
-		/* 1E4h */	float maxScale;
-		/* 1E8h */	Vector3 modelDefaultMouseOffset;
-
-		char _padding_1F4[0x24];
-
-		/* 218h */	float modelMinBallConnectorScale;
-		/* 21Ch */	float modelMaxBallConnectorScale;
-		/* 220h */	float modelSymmetrySnapDelta;
-		/* 224h */	int field_224;
-		/* 228h */	float modelReplaceSnapDelta;
-		/* 22Ch */	float modelSymmetryRotationSnapAngle;
-
-		char _padding_230[0x1C];
-
-		/* 24Ch */	int modelNumberOfSnapAxes;
-
-		char _padding_250[0x16C];
-
-		// /* 33Ch */	EditorRigblock* parent
-
-		/* 3BCh */	unsigned long modelForcePinningType;
-		/* 3C0h */	unsigned long modelPinningType;
-
-		char _padding_3C4[0x60];
-
-		// /* 40Ch */	Vector3
-
-		/* 424h */	Vector3 modelPaletteRotation;
-
-		char _padding_430[0x20];
-
-		/* 450h */	float modelBottomEdgeDistanceAdjustment = 0.0f;
-		/* 454h */	float modelScale = 1.0f;
-		/* 458h */	ResourceKey* modelMinMuscleFile;
-		/* 45Ch */	ResourceKey* modelMaxMuscleFile;
-
-		char _padding_460[0x28];
-
-		/* 488h */	float animationTime;
-
-		char _padding_48C[0x158];
-
-		/* 5E4h */	int modelPrice;
-		/* 5E8h */	int modelComplexityScore;
-		/* 5ECh */	int modelRunTimeBoneCount;
-		/* 5F0h */	int modelBakeLevel;
-		/* 5F4h */	int field_5F4;
-		/* 5F8h */	ResourceKey modelRigBlockType;
-		/* 604h */	unsigned long modelShowoffAnimation;
-		/* 608h */	unsigned long modelShowoffEffect;
-
-		char _padding_60C[0x7A8];
-
-		// 6CCh pointer to array of MorphHandles (at 8Ch is anim ID)
-
-		/* DB4h */	unsigned long foottype;
-		/* DB8h */	unsigned long mouthtype;
-		/* DBCh */	unsigned long weapontype;
-
-		char _padding_DC0[0x48];
-
+		using DefaultRefCounted::AddRef;
+		using DefaultRefCounted::Release;
 
 		//// _ZN14EditorRigblock8SetScaleEfii
 		//// not sure, apparently there are more methods
@@ -163,6 +188,173 @@ namespace Editors
 
 	//	//TODO rotate part?
 	//	static void(__thiscall*sub_44A230_ptr)(EditorRigblock*, Matrix3 rot, int arg_24);
+
+	public:
+		/* 0Ch */	PropertyListPtr mpPropList;
+		/* 10h */	ModelPtr field_10;
+		/* 14h */	ModelPtr field_14;
+		/* 18h */	IModelWorldPtr mpModelWorld;
+		// 10h ModelPtr
+		// 14h ModelPtr mpModel;
+		// 18h ModelWorldPtr mpModelWorld;
+		/* 1Ch */	uint32_t mInstanceID;
+		/* 20h */	uint32_t mGroupID;
+		/// Property `0xE305AAFB`
+		/* 24h */	int field_24;
+		/* 28h */	EditorModel* mpEditorModel;
+		/* 2Ch */	int field_2C;
+		/* 30h */	float field_30;
+		/* 34h */	bool field_34;  // true
+		/* 38h */	UnkEditorRigblockStruct2 field_38;
+		/* 40h */	UnkEditorRigblockStruct2 field_40;
+		/* 48h */	Vector3 mPosition;
+		/* 54h */	Vector3 lastPos;  // updated when the part is clicked
+		/// Combination of mUserOrientation and mOrientation
+		/* 60h */	Matrix3 mTotalOrientation;
+		/* 84h */	Matrix3 field_84;
+		/* A8h */	Matrix3 mOrientation;
+		/* CCh */	Matrix3 field_CC;
+		/* F0h */	Matrix3 mUserOrientation;
+		/* 114h */	Matrix3 field_114;
+		/* 138h */	Vector3 field_138;
+		/* 144h */	Vector3 field_144;
+		/* 150h */	int field_150;  // -2
+		/* 154h */	EditorBaseHandlePtr mAxisHandles[3];  //TODO  sub_483CE0
+		/* 160h */	EditorBaseHandlePtr mpRotationBallHandle;  //TODO a handle, sub_482F30
+		/* 164h */	int field_164;
+		/* 168h */	int field_168;
+		/* 16Ch */	float field_16C;
+		/* 170h */	Clock field_170;
+		/* 188h */	int field_188;
+		/* 18Ch */	int field_18C;
+		/* 190h */	int field_190;
+		/* 194h */	int field_194;  // not initialized
+		/* 198h */	int field_198;  // not initialized
+		/* 19Ch */	int field_19C;  // not initialized
+		/* 1A0h */	bool field_1A0;
+		/* 1A4h */	int field_1A4;
+		/* 1A8h */	bool field_1A8;
+		/* 1A9h */	bool field_1A9;
+		/* 1ACh */	int field_1AC;  // not initialized
+		/* 1B0h */	int field_1B0;  // not initialized
+		/* 1B4h */	int field_1B4;  // -1
+		/* 1B8h */	int field_1B8;  // -1
+		/* 1BCh */	int field_1BC;  // -1
+		/* 1C0h */	int field_1C0;  // -2
+		/* 1C4h */	int field_1C4;  // 1
+		/* 1C8h */	int field_1C8;  // 1
+		/* 1CCh */	int mLimbType;  // 3, sub_44F2B0
+		/* 1D0h */	float mMuscleScale;  // 0.5
+		/* 1D4h */	float mBaseMuscleScale;  // 1.0
+		/* 1D8h */	float size;  // 1.0
+		/* 1DCh */	float size_2;  // 1.0  // again?!
+		/* 1E0h */	float mModelMinScale;
+		/* 1E4h */	float mModelMaxScale;
+		/* 1E8h */	Vector3 mModelDefaultMouseOffset;
+		/* 1F4h */	Matrix3 mModelEditorInitialRotation;
+		/* 218h */	float mModelMinBallConnectorScale;  // 0.5
+		/* 21Ch */	float mModelMaxBallConnectorScale;  // 2.0
+		/* 220h */	float mModelSymmetrySnapDelta;
+		/* 224h */	float field_224;
+		/* 228h */	float mModelReplaceSnapDelta;  // 0.4
+		/* 22Ch */	float mModelSymmetryRotationSnapAngle;  // 0.5
+		/* 230h */	bool field_230;  // true
+		/* 234h */	vector<int> field_234;
+		/* 248h */	int mModelNumberOfSnapAxes;  // -1
+		/* 24Ch */	Transform mEffectsBoneTransform1;
+		/* 284h */	Transform mEffectsBoneTransform2;
+		/// Index to the model bone named `effecs`
+		/* 2BCh */	int mEffectsBoneIndex;  // not initialized
+		/* 2C0h */	Transform mCSnapBoneTransform1;
+		/* 2F8h */	Transform mCSnapBoneTransform2;
+		/// Index to the model bone named `csnap`
+		/* 330h */	int mCSnapBoneIndex;  // not initialized
+		/* 334h */	int field_334;  // not initialized
+		/* 338h */	int field_338;  // not initialized
+		/* 33Ch */	intrusive_ptr<EditorRigblock> mpParent;
+		/* 340h */	fixed_vector<intrusive_ptr<EditorRigblock>, 8> mChildren;
+		/* 378h */	int field_378;
+		/* 37Ch */	char _padding_37C[0x3A0 - 0x37C];  // not initialized
+		/* 3A0h */	Vector3 mTriangleDirection;
+		/* 3ACh */	Vector3 mTrianglePickOrigin;
+		/* 3B8h */	int field_3B8;  // not initialized
+		/// 2 for `PinningPhysics`, 4 for `PinningGeometry`
+		/* 3BCh */	int mModelForcePinningType;  // not initialized
+		/* 3C0h */	uint32_t mModelPinningTypeGroup;  // not initialized
+		/* 3C4h */	int field_3C4;  // not initialized
+		/// True if pinning type instanceID is `0x17CFD48F`
+		/* 3C8h */	bool field_3C8;  // not initialized
+		/* 3C9h */	bool field_3C9;
+		/* 3CCh */	int field_3CC;  // not initialized
+		/* 3D0h */	int field_3D0;  // not initialized
+		/* 3D4h */	int field_3D4;  // not initialized
+		/* 3D8h */	int field_3D8;  // -1
+		/* 3DCh */	int field_3DC;
+		/* 3E0h */	intrusive_ptr<EditorRigblock> mpSymmetricRigblock;
+		/* 3E4h */	intrusive_ptr<EditorRigblock> mpSymmetricRigblock2;
+		/* 3E8h */	bool field_3E8;
+		/* 3ECh */	EditorBaseHandlePtr mpBallConnectorHandle;  //TODO BallConnectorHandle type, sub_47F410
+		/* 3F0h */	ModelPtr mpSocketConnectorModel;
+		/* 3F4h */	Vector3 mModelMinSocketConnectorOffset;
+		/* 400h */	Vector3 mModelMaxSocketConnectorOffset;
+		/* 40Ch */	Vector3 mSocketConnectorOffset;
+		/* 418h */	Vector3 mModelRotationBallHandleOffset;
+		/* 424h */	Vector3 mModelPaletteRotation;
+		/* 430h */	int field_430;  // -1
+		/* 434h */	int field_434;
+		/* 438h */	bool field_438;
+		/* 43Ch */	int field_43C;
+		/* 440h */	float field_440;
+		/* 444h */	float field_444;
+		/* 448h */	int field_448;  // not initialized
+		/* 44Ch */	int field_44C;  // not initialized
+		/* 450h */	float mModelBottomEdgeDistanceAdjustment;
+		/* 454h */	float mModelScale;  // not initialized
+		/* 458h */	ResourceKey* mModelMinMuscleFile;
+		/* 45Ch */	ResourceKey* mModelMaxMuscleFile;
+		/// Name of the sound played when scaling this rigblock, default is `creature_size`
+		/* 460h */	fixed_string<char, 32> mModelSoundScale;
+		/// Name of the sound played when rotating this rigblock, default is `creature_rotate`
+		/* 494h */	fixed_string<char, 32> mModelSoundRotation;
+		/* 4C8h */	fixed_vector<pair<uint32_t, EditorRigblockPaint>, 8> mPaints;
+		/* 5E0h */	bool field_5E0;  // not initialized, part of field_4C8
+		/* 5E4h */	int mModelPrice;
+		/* 5E8h */	int mModelComplexityScore;
+		/* 5ECh */	int mModelRunTimeBoneCount;
+		/* 5F0h */	int mModelBakeLevel;
+		/* 5F4h */	float field_5F4;
+		/* 5F8h */	ResourceKey mModelRigBlockType;
+		/* 604h */	uint32_t mModelShowoffAnimation;  // not initialized
+		/* 608h */	uint32_t mModelShowoffEffect;  // not initialized
+		/* 60Ch */	bool field_60C;
+		/* 610h */	int field_610;
+		/* 614h */	map<int, int> field_614;
+		/* 630h */	fixed_vector<int, 32> field_630;
+		/* 6C8h */	int field_6C8;  // not initialized
+		//TODO 6CCh pointer to array of MorphHandles (at 8Ch is anim ID)
+		/* 6CCh */	fixed_vector<EditorBaseHandlePtr, 8> mMorphHandles;
+		/* 704h */	fixed_vector<float, 8> mMorphHandleWeights;
+		/* 73Ch */	fixed_vector<uint32_t, 8> mMorphHandleChannels;
+		/* 774h */	fixed_vector<ResourceKey, 8> mModelSnapDownTo;
+		/* 7ECh */	fixed_vector<ResourceKey, 8> mModelSnapToParentTypes;
+		/* 864h */	fixed_vector<ResourceKey, 8> mModelStayAbove;
+		/* 8DCh */	fixed_vector<ResourceKey, 8> mModelAlignLateralWith;
+		/* 954h */	fixed_vector<ResourceKey, 8> mModelAlignHeightWith;
+		/* 9CCh */	fixed_vector<ResourceKey, 8> mModelAlignXYWith;
+		/* A44h */	fixed_vector<ResourceKey, 8> mModelTypesToInteractWith;
+		/* ABCh */	fixed_vector<ResourceKey, 8> mModelTypesToSnapReplace;
+		/* B34h */	fixed_vector<ResourceKey, 16> mModelTypesNotToInteractWith;
+		/* C0Ch */	fixed_vector<EditorRigblockCapability, 20> mCapabilities;
+		/// For audio
+		/* DB4h */	uint32_t mFootType;
+		/// For audio
+		/* DB8h */	uint32_t mMouthType;
+		/// For audio
+		/* DBCh */	uint32_t mWeaponType;
+		/* DC0h */	int field_DC0;  // not initialized
+		/* DC4h */	int field_DC4;  // not initialized
+		/* DC8h */	bitset<64> mBooleanAttributes;
+		/* DD0h */	UnkEditorRigblockStruct1 field_DD0;
 	};
 
 	static_assert(sizeof(EditorRigblock) == 0xE08, "sizeof(EditorRigblock) must be 0xE08!");

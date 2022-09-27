@@ -3,6 +3,7 @@
 #include <EASTL\vector.h>
 #include <Spore\RenderWare\RenderWareFile.h>
 #include <Spore\RenderWare\KeyframeAnim.h>
+#include <Spore\RenderWare\SkeletonsInK.h>
 
 namespace Graphics
 {
@@ -23,6 +24,14 @@ namespace Graphics
 		int Release();
 
 	public:
+		struct InternalRenderWareData
+		{
+			/* 00h */	int field_0;
+			/* 04h */	bool field_4;
+			/* 05h */	bool field_5;
+			/* 08h */	void* mpData;  // pointer to RenderWare section data
+		};
+		ASSERT_SIZE(InternalRenderWareData, 0xC);
 		// sub_742910 adds everything
 
 		// sub_798360 process keyframe?
@@ -36,8 +45,8 @@ namespace Graphics
 		// related with SkinsInK, 08h is SkinsInK*
 		/* 28h */	vector<int> field_28;
 		// related with SkeletonsInK
-		/* 3Ch */	vector<int> field_3C;
-		/* 50h */	vector<int> field_50;
+		/* 3Ch */	vector<InternalRenderWareData> mSkeletonsInK;
+		/* 50h */	vector<InternalRenderWareData> mBlendShapeConfig;
 		// related with SkeletonsInK, used to process animations
 		/* 64h */	vector<int> field_64;
 		// related with morph handles
