@@ -110,6 +110,7 @@ namespace App
 
 	public:
 		Property();
+		Property(const Property&);
 		//TODO if flags & 4, does something special
 		~Property();
 

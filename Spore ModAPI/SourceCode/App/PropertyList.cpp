@@ -81,5 +81,12 @@ namespace App
 	auto_METHOD_const(DirectPropertyList, bool, Write, Args(IO::IStream* pOutputStream), Args(pOutputStream));
 	auto_METHOD_VOID_const(DirectPropertyList, GetPropertyIDs, Args(vector<uint32_t>& dst), Args(dst));
 	auto_METHOD_VOID_(DirectPropertyList, Clear);
+
+	Property::Property(const Property& other)
+		: mValueVector4(other.mValueVector4)
+		, mnFlags(other.mnFlags)
+		, mnType(other.mnType)
+	{
+	}
 }
 #endif

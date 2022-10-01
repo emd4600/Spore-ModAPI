@@ -58,7 +58,6 @@ namespace Math
 		};
 
 		Color();
-		Color(const Color& color);
 		Color(uint32_t color);
 		Color(uint8_t r, uint8_t g, uint8_t b, uint8_t a);
 
@@ -84,7 +83,6 @@ namespace Math
 		float y;
 
 		Vector2(float x, float y);
-		Vector2(const Vector2& other);
 		Vector2(const Point& other);
 		Vector2();
 
@@ -119,7 +117,6 @@ namespace Math
 		float z;
 
 		Vector3();
-		Vector3(const Vector3& other);
 		Vector3(float x, float y, float z);
 
 		/// Returns the length of the vector, computed as the square root of then sum of its components squared.
@@ -178,7 +175,6 @@ namespace Math
 		float z;
 		float w;
 		Vector4(float x, float y, float z, float w);
-		Vector4(const Vector4& other);
 		Vector4();
 
 		/// Returns the length of the vector, computed as the square root of then sum of its components squared.
@@ -210,7 +206,6 @@ namespace Math
 	struct Quaternion : public Vector4
 	{
 		Quaternion(float x, float y, float z, float w);
-		Quaternion(const Quaternion& other);
 		Quaternion();
 
 		/// Returns the inverse to this quaternion: that's another quaternion that, when multiplied with this one,
@@ -254,7 +249,6 @@ namespace Math
 		float y;
 
 		Point(float x, float y);
-		Point(const Point& other);
 		Point(const Vector2& other);
 		Point();
 
@@ -408,7 +402,6 @@ namespace Math
 	struct Matrix3 {
 		float m[3][3];
 		Matrix3();
-		Matrix3(const Matrix3& other);
 
 		Vector3 Row(int index) const;
 		Vector3 Column(int index) const;
@@ -455,7 +448,6 @@ namespace Math
 	struct Matrix4 {
 		float m[4][4];
 		Matrix4();
-		Matrix4(const Matrix4& other);
 
 		/// Turns this matrix into the identity matrix (1.0s in the diagonal, everything else 0.0s)
 		/// Multiplying a matrix/vector with an identity matrix has no effect.
@@ -518,7 +510,6 @@ namespace Math
 		float d;
 
 		PlaneEquation();
-		PlaneEquation(const PlaneEquation& other);
 		PlaneEquation(float a, float b, float c, float d);
 		PlaneEquation(const Vector3& normal, const Vector3& point);
 		PlaneEquation(const Vector3& u, const Vector3& v, const Vector3& point);
@@ -672,17 +663,11 @@ namespace Math
 	}
 
 	inline Color::Color() : value(0) {}
-	inline Color::Color(const Color& color) : value(color.value) {}
 	inline Color::Color(uint32_t color) : value(color) {}
 	inline Color::Color(uint8_t _r, uint8_t _g, uint8_t _b, uint8_t _a)
 		: r(_r), g(_g), b(_b), a(_a) {}
 
-	inline Vector2::Vector2(const Vector2& other) : Vector2(other.x, other.y) {}
 	inline Vector2::Vector2(const Point& other) : Vector2(other.x, other.y) {}
-	inline Vector3::Vector3(const Vector3& other) : Vector3(other.x, other.y, other.z) {}
-	inline Vector4::Vector4(const Vector4& other) : Vector4(other.x, other.y, other.z, other.w) {}
-	inline Quaternion::Quaternion(const Quaternion& other) : Quaternion(other.x, other.y, other.z, other.w) {}
-	inline Point::Point(const Point& other) : Point(other.x, other.y) {}
 	inline Point::Point(const Vector2& other) : Point(other.x, other.y) {}
 
 	inline Vector2::Vector2(float _x, float _y) : x(_x), y(_y)
@@ -751,13 +736,6 @@ namespace Math
 	inline Matrix3::Matrix3() : m() {}
 	inline Matrix4::Matrix4() : m() {}
 
-	inline Matrix3::Matrix3(const Matrix3& other) {
-		memcpy_s(m, sizeof(float) * 3 * 3, other.m, sizeof(float) * 3 * 3);
-	}
-	inline Matrix4::Matrix4(const Matrix4& other) {
-		memcpy_s(m, sizeof(float) * 4 * 4, other.m, sizeof(float) * 4 * 4);
-	}
-
 	inline Vector3 operator*(Matrix3 a, const Vector3& b) {
 		return {
 			a.m[0][0] * b.x + a.m[0][1] * b.y + a.m[0][2] * b.z,
@@ -792,8 +770,6 @@ namespace Math
 	}
 
 	inline PlaneEquation::PlaneEquation() : a(), b(), c(), d() {}
-	inline PlaneEquation::PlaneEquation(const PlaneEquation& other)
-		: a(other.a), b(other.b), c(other.c), d(other.d) {}
 	inline PlaneEquation::PlaneEquation(float a2, float b2, float c2, float d2)
 		: a(a2), b(b2), c(c2), d(d2) {}
 	inline PlaneEquation::PlaneEquation(const Vector3& normal, const Vector3& point) {
