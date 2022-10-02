@@ -63,7 +63,7 @@
             </li>
           </ul>
         </div>
-<p>This does not represent the star visually (that is the <a href="class_simulator_1_1c_planet.html" class="m-doc">Simulator::<wbr />cPlanet</a> class), this is just information about the planet that will be stored in the galaxy database in the saved games folder.</p><p>This class represents any element in the galaxy view, so it is also used by binary stars, black holes, proto-planteary disks and the galaxy center.</p><p>Star records are uniquely identified with an ID, which can be retrieved using <a href="class_simulator_1_1c_star_record.html#ab6f84a77249bea9d566c5dbf8aacc08a" class="m-doc">GetID()</a>. You can get the record from an ID using <a href="class_simulator_1_1c_star_manager.html#a20a0def203b54f7a14b9ec462c8c96b2" class="m-doc">cStarManager::<wbr />GetStarRecord()</a>.</p>
+<p>This does not represent the star visually (that is the <a href="class_simulator_1_1c_planet.html" class="m-doc">Simulator::<wbr />cPlanet</a> class), this is just information about the planet that will be stored in the galaxy database in the saved games folder.</p><p>This class represents any element in the galaxy view, so it is also used by binary stars, black holes, proto-planteary disks and the galaxy center.</p><p>Star records are uniquely identified with a <a href="struct_simulator_1_1_star_i_d.html" class="m-doc">StarID</a>, which can be retrieved using <a href="class_simulator_1_1c_star_record.html#ab6f84a77249bea9d566c5dbf8aacc08a" class="m-doc">GetID()</a>. You can get the record from an ID using <a href="class_simulator_1_1c_star_manager.html#a20a0def203b54f7a14b9ec462c8c96b2" class="m-doc">cStarManager::<wbr />GetStarRecord()</a>.</p><p>You can create a star record using <code>(cStarRecord*)ClassManager.Create(cStarRecord::CLASS_ID)</code></p>
         <section id="base-classes">
           <h2><a href="#base-classes">Base classes</a></h2>
           <dl class="m-doc">
@@ -84,6 +84,10 @@
               static const uint32_t <a href="#abc695cb43900afb2825e7678e9716993" class="m-doc-self">TYPE</a>
             </dt>
             <dd><span></span></dd>
+            <dt id="ac31aeefdf8eb4f99d140c2e79626d019">
+              static const uint32_t <a href="#ac31aeefdf8eb4f99d140c2e79626d019" class="m-doc-self">CLASS_ID</a>
+            </dt>
+            <dd><span></span></dd>
           </dl>
         </section>
         <section id="pub-methods">
@@ -98,7 +102,7 @@
             </dt>
             <dd><span></span></dd>
             <dt id="ab6f84a77249bea9d566c5dbf8aacc08a">
-              <span class="m-doc-wrap-bumper">auto <a href="#ab6f84a77249bea9d566c5dbf8aacc08a" class="m-doc-self">GetID</a>(</span><span class="m-doc-wrap">) const -&gt; <a href="namespace_simulator.html#a98420fedd9079b2285e9cdc71a839a11" class="m-doc">StarID</a></span>
+              <span class="m-doc-wrap-bumper">auto <a href="#ab6f84a77249bea9d566c5dbf8aacc08a" class="m-doc-self">GetID</a>(</span><span class="m-doc-wrap">) const -&gt; <a href="struct_simulator_1_1_star_i_d.html" class="m-doc">StarID</a></span>
             </dt>
             <dd><span></span></dd>
             <dt id="a21a303f43a041a280ce1b67b6de434e8">
@@ -174,8 +178,8 @@
               string16 <a href="#ab73731e826df1be2b6843cf759ffd30b" class="m-doc-self">mName</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="ab73182e01d4633746525b11b7c198b54">
-              uint32_t <a href="#ab73182e01d4633746525b11b7c198b54" class="m-doc-self">mKey</a>
+            <dt id="a045a3073e2128c9e9260c2d86b591bd3">
+              <a href="struct_simulator_1_1_star_i_d.html" class="m-doc">StarID</a> <a href="#a045a3073e2128c9e9260c2d86b591bd3" class="m-doc-self">mKey</a>
             </dt>
             <dd><span></span></dd>
             <dt id="aefec934814a2f6328b7cd2116dc466c3">

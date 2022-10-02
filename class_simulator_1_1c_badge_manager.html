@@ -87,18 +87,18 @@
               map&lt;uint32_t, <a href="_property_list_8h.html#ae757f1639ff739ff0282dd91f3e39f0a" class="m-doc">PropertyListPtr</a>&gt; <a href="#a9b80a1a08ef869027721109f13eadbe6" class="m-doc-self">mBadges</a>
             </dt>
             <dd>Maps the file ID to the PropertyList, for each badge in space_badges~ (0x2CB089D)</dd>
-            <dt id="a113e9026db0b831934f52ee2f940c515">
-              map&lt;int, int&gt; <a href="#a113e9026db0b831934f52ee2f940c515" class="m-doc-self">mBadgeMap</a>
+            <dt id="aaa85d261c79e0757566a896f091c2e67">
+              map&lt;uint32_t, int&gt; <a href="#aaa85d261c79e0757566a896f091c2e67" class="m-doc-self">mBadgeMap</a>
             </dt>
-            <dd><span></span></dd>
+            <dd>Tracks the state of each badge (wether its unlocked, in progress, etc)</dd>
             <dt id="aca1ad9548583d8351ba11645ffbcf5b4">
               map&lt;int, int&gt; <a href="#aca1ad9548583d8351ba11645ffbcf5b4" class="m-doc-self">mStageMap</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="ad0d9b4ee677e80e72f9a5076d922dd7e">
-              map&lt;int, int&gt; <a href="#ad0d9b4ee677e80e72f9a5076d922dd7e" class="m-doc-self">mEventCounts</a>
+            <dt id="a5a5253f85ec957550092111cb3106fbc">
+              map&lt;<a href="namespace_simulator.html#a732e8fffbb39bbf511184fb821ad62eb" class="m-doc">BadgeManagerEvent</a>, int&gt; <a href="#a5a5253f85ec957550092111cb3106fbc" class="m-doc-self">mEventCounts</a>
             </dt>
-            <dd><span></span></dd>
+            <dd>Counts how many events of a certain kind have happened, used to know when to give a badge.</dd>
             <dt id="a1fde18d806e434a2f607cda5ba893acd">
               hash_map&lt;int, int&gt; <a href="#a1fde18d806e434a2f607cda5ba893acd" class="m-doc-self">field_80</a>
             </dt>

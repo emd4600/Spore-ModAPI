@@ -710,9 +710,18 @@
             </h3>
             <p>Reads an <a href="namespace_arg_script.html" class="m-doc">ArgScript</a> file from the IStream given, without throwing any exceptions.</p>
             <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">pStream</td>
+                  <td>The input IStream with the data to process.</td>
+                </tr>
+              </tbody>
               <tfoot>
                 <tr>
-                  <th style="width: 1%">Returns</th>
+                  <th>Returns</th>
                   <td>True if there were no exceptions, false otherwise.</td>
                 </tr>
               </tfoot>
@@ -907,11 +916,20 @@
             <p>Removes all the variables definitions from the given namespace scope.</p>
             <table class="m-table m-fullwidth m-flat">
               <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">pScope</td>
+                  <td>The name of the scope.</td>
+                </tr>
+              </tbody>
+              <thead>
                 <tr><th colspan="2">Exceptions</th></tr>
               </thead>
               <tbody>
                 <tr>
-                  <td style="width: 1%">ArgScriptException</td>
+                  <td>ArgScriptException</td>
                   <td>If the name of the scope is not valid.</td>
                 </tr>
               </tbody>

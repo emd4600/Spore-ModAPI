@@ -438,8 +438,8 @@
               <span class="m-doc-wrap-bumper">auto <a href="#ad06b92b91da1e502d5fa19fb70f49657" class="m-doc-self">func104h</a>(</span><span class="m-doc-wrap">) -&gt; int <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
             <dd><span></span></dd>
-            <dt id="a625cc89fbc05f983ee0a1a0d7855ccca">
-              <span class="m-doc-wrap-bumper">auto <a href="#a625cc89fbc05f983ee0a1a0d7855ccca" class="m-doc-self">GetAssetTransform</a>(</span><span class="m-doc-wrap"><a href="class_graphics_1_1_model.html" class="m-doc">Model</a>*) -&gt; <a href="class_transform.html" class="m-doc">Transform</a>* <span class="m-label m-flat m-warning">pure virtual</span></span>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#aa9fac6556a47525da88745f3e6c51f34" class="m-doc">GetAssetTransform</a>(</span><span class="m-doc-wrap"><a href="class_graphics_1_1_model.html" class="m-doc">Model</a>* pModel) -&gt; <a href="class_transform.html" class="m-doc">Transform</a>* <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
             <dd>Returns default transform stored in the prop file of the model.</dd>
             <dt id="a1f511e7b87ef651e98f3b43583121d03">
@@ -1170,6 +1170,21 @@
               double effectRange = -1.0f) const <span class="m-label m-warning">pure virtual</span></span></span>
             </h3>
             <p>Sets the effect range for the model.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">pModel</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>effectRange</td>
+                  <td></td>
+                </tr>
+              </tbody>
+            </table>
 <p>If the value is negative, effect range will be ignored, so effects in this model will be displayed at any distance. Otherwise, the value is ignored, and the effect range is loaded from the model <code>.prop</code> file.</p>
           </div></section>
           <section class="m-doc-details" id="a3aaeb9e81771574bec7a634efc063cda"><div>
@@ -1199,6 +1214,23 @@
               </tbody>
             </table>
 <p>An instance ID can be specified; in that case, only effects with that ID will be affected.</p>
+          </div></section>
+          <section class="m-doc-details" id="aa9fac6556a47525da88745f3e6c51f34"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"><a href="class_transform.html" class="m-doc">Transform</a>* Graphics::<wbr />IModelWorld::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#aa9fac6556a47525da88745f3e6c51f34" class="m-doc-self">GetAssetTransform</a>(</span><span class="m-doc-wrap"><a href="class_graphics_1_1_model.html" class="m-doc">Model</a>* pModel) <span class="m-label m-warning">pure virtual</span></span></span>
+            </h3>
+            <p>Returns default transform stored in the prop file of the model.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">pModel</td>
+                  <td></td>
+                </tr>
+              </tbody>
+            </table>
           </div></section>
           <section class="m-doc-details" id="acbb919fa39705b91b133fd7e75d767a2"><div>
             <h3>

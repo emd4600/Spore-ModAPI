@@ -107,6 +107,7 @@
               <li>class <a href="class_app_1_1c_locale_manager.html" class="m-doc">cLocaleManager</a> <span class="m-doc"><span></span></span></li>
               <li>class <a href="class_app_1_1c_message_manager.html" class="m-doc">cMessageManager</a> <span class="m-doc">The implementation of <a href="class_app_1_1_i_message_manager.html" class="m-doc">IMessageManager</a>; this should only be used for extending and detouring.</span></li>
               <li>class <a href="class_app_1_1c_prop_manager.html" class="m-doc">cPropManager</a> <span class="m-doc">The implementation of <a href="class_app_1_1_i_prop_manager.html" class="m-doc">IPropManager</a>; this should only be used for extending and detouring.</span></li>
+              <li>class <a href="class_app_1_1c_resource_key_generator.html" class="m-doc">cResourceKeyGenerator</a> <span class="m-doc"><span></span></span></li>
               <li>class <a href="class_app_1_1c_scenario_mode.html" class="m-doc">cScenarioMode</a> <span class="m-doc"><span></span></span></li>
               <li>class <a href="class_app_1_1c_string_detokenizer.html" class="m-doc">cStringDetokenizer</a> <span class="m-doc">The class responsible for translating text tokens, which are special characters in locale files.</span></li>
               <li class="m-doc-collapsible collapsed">
@@ -575,21 +576,25 @@
                 </ul>
               </li>
               <li>class <a href="class_simulator_1_1c_building_city_hall.html" class="m-doc">cBuildingCityHall</a> <span class="m-doc"><span></span></span></li>
+              <li>struct <a href="struct_simulator_1_1c_building_data.html" class="m-doc">cBuildingData</a> <span class="m-doc"><span></span></span></li>
               <li>class <a href="class_simulator_1_1c_building_entertainment.html" class="m-doc">cBuildingEntertainment</a> <span class="m-doc"><span></span></span></li>
               <li>class <a href="class_simulator_1_1c_building_house.html" class="m-doc">cBuildingHouse</a> <span class="m-doc"><span></span></span></li>
               <li>class <a href="class_simulator_1_1c_building_industry.html" class="m-doc">cBuildingIndustry</a> <span class="m-doc"><span></span></span></li>
               <li>class <a href="class_simulator_1_1c_building_scenario.html" class="m-doc">cBuildingScenario</a> <span class="m-doc"><span></span></span></li>
               <li>class <a href="class_simulator_1_1c_celestial_body.html" class="m-doc">cCelestialBody</a> <span class="m-doc">Represents celestial bodies in a solar system (except planets), that is, the star and the comets.</span></li>
               <li>class <a href="class_simulator_1_1c_city.html" class="m-doc">cCity</a> <span class="m-doc"><span></span></span></li>
+              <li>struct <a href="struct_simulator_1_1c_city_data.html" class="m-doc">cCityData</a> <span class="m-doc"><span></span></span></li>
               <li>struct <a href="struct_simulator_1_1c_city_partner.html" class="m-doc">cCityPartner</a> <span class="m-doc"><span></span></span></li>
               <li>class <a href="class_simulator_1_1c_city_territory.html" class="m-doc">cCityTerritory</a> <span class="m-doc"><span></span></span></li>
               <li>class <a href="class_simulator_1_1c_city_walls.html" class="m-doc">cCityWalls</a> <span class="m-doc"><span></span></span></li>
+              <li>struct <a href="struct_simulator_1_1c_civ_data.html" class="m-doc">cCivData</a> <span class="m-doc"><span></span></span></li>
               <li>class <a href="class_simulator_1_1c_civilization.html" class="m-doc">cCivilization</a> <span class="m-doc"><span></span></span></li>
               <li>class <a href="class_simulator_1_1c_combatant.html" class="m-doc">cCombatant</a> <span class="m-doc">Any object that has hit points and can combat other units.</span></li>
               <li>class <a href="class_simulator_1_1c_combat_simulator.html" class="m-doc">cCombatSimulator</a> <span class="m-doc"><span></span></span></li>
               <li>class <a href="class_simulator_1_1c_comm_event.html" class="m-doc">cCommEvent</a> <span class="m-doc"><span></span></span></li>
               <li>class <a href="class_simulator_1_1c_comm_manager.html" class="m-doc">cCommManager</a> <span class="m-doc"><span></span></span></li>
               <li>class <a href="class_simulator_1_1c_commodity_node.html" class="m-doc">cCommodityNode</a> <span class="m-doc">Represents a spice geyser in civilization stage, maybe it is also used elsewhere.</span></li>
+              <li>struct <a href="struct_simulator_1_1c_commodity_node_data.html" class="m-doc">cCommodityNodeData</a> <span class="m-doc"><span></span></span></li>
               <li>class <a href="class_simulator_1_1c_community.html" class="m-doc">cCommunity</a> <span class="m-doc">The following attributes are saved:</span></li>
               <li>class <a href="class_simulator_1_1c_conversation.html" class="m-doc">cConversation</a> <span class="m-doc"><span></span></span></li>
               <li>class <a href="class_simulator_1_1c_creature_ability.html" class="m-doc">cCreatureAbility</a> <span class="m-doc"><span></span></span></li>
@@ -683,12 +688,14 @@
               <li>class <a href="class_simulator_1_1_combatant_killed_message.html" class="m-doc">CombatantKilledMessage</a> <span class="m-doc">Called when a <a href="class_simulator_1_1c_combatant.html" class="m-doc">cCombatant</a> is killed.</span></li>
               <li>class <a href="class_simulator_1_1_conversation_resource.html" class="m-doc">ConversationResource</a> <span class="m-doc"><span></span></span></li>
               <li>class <a href="class_simulator_1_1c_ornament.html" class="m-doc">cOrnament</a> <span class="m-doc">Used, among other things, for adventure objects (except pickable ones)</span></li>
+              <li>struct <a href="struct_simulator_1_1c_ornament_data.html" class="m-doc">cOrnamentData</a> <span class="m-doc"><span></span></span></li>
               <li>class <a href="class_simulator_1_1c_placeable_structure.html" class="m-doc">cPlaceableStructure</a> <span class="m-doc">A structure that can be placed into a community slot, like buildings, turrets, ornaments and tribe tools.</span></li>
               <li>class <a href="class_simulator_1_1c_place_colony_tool_strategy.html" class="m-doc">cPlaceColonyToolStrategy</a> <span class="m-doc"><span></span></span></li>
               <li>class <a href="class_simulator_1_1c_place_object_tool_strategy.html" class="m-doc">cPlaceObjectToolStrategy</a> <span class="m-doc"><span></span></span></li>
               <li>class <a href="class_simulator_1_1c_planet.html" class="m-doc">cPlanet</a> <span class="m-doc">Visual representation of a planet (or asteroids).</span></li>
               <li>struct <a href="struct_simulator_1_1c_planet_clue.html" class="m-doc">cPlanetClue</a> <span class="m-doc"><span></span></span></li>
               <li>class <a href="class_simulator_1_1c_planet_model.html" class="m-doc">cPlanetModel</a> <span class="m-doc"><span></span></span></li>
+              <li>struct <a href="struct_simulator_1_1c_planet_object_data.html" class="m-doc">cPlanetObjectData</a> <span class="m-doc"><span></span></span></li>
               <li>class <a href="class_simulator_1_1c_planet_record.html" class="m-doc">cPlanetRecord</a> <span class="m-doc">Keeps all the information related to a planet.</span></li>
               <li>class <a href="class_simulator_1_1c_plant_cargo_info.html" class="m-doc">cPlantCargoInfo</a> <span class="m-doc"><span></span></span></li>
               <li>class <a href="class_simulator_1_1c_plant_species_manager.html" class="m-doc">cPlantSpeciesManager</a> <span class="m-doc"><span></span></span></li>
@@ -736,6 +743,7 @@
               <li>class <a href="class_simulator_1_1c_solar_system.html" class="m-doc">cSolarSystem</a> <span class="m-doc">Holds visual information about a solar system in the solar system view, or when inside a planet.</span></li>
               <li>class <a href="class_simulator_1_1c_space_inventory.html" class="m-doc">cSpaceInventory</a> <span class="m-doc"><span></span></span></li>
               <li>class <a href="class_simulator_1_1c_space_inventory_item.html" class="m-doc">cSpaceInventoryItem</a> <span class="m-doc">Represents an item of the space player inventory. This include space tools and cargo.</span></li>
+              <li>class <a href="class_simulator_1_1c_space_names.html" class="m-doc">cSpaceNames</a> <span class="m-doc">Class to generate names (for creatures, planets, etc.), for example: <code>auto name = SpaceNames.GenerateRandomName(Simulator::SpaceNamesType::kPlanet);</code></span></li>
               <li>class <a href="class_simulator_1_1c_space_tool_data.html" class="m-doc">cSpaceToolData</a> <span class="m-doc"><span></span></span></li>
               <li>class <a href="class_simulator_1_1c_space_trade_route_manager.html" class="m-doc">cSpaceTradeRouteManager</a> <span class="m-doc"><span></span></span></li>
               <li>class <a href="class_simulator_1_1c_spatial_object.html" class="m-doc">cSpatialObject</a> <span class="m-doc">A 3D model in the <a href="namespace_simulator.html" class="m-doc">Simulator</a>.</span></li>
@@ -743,7 +751,7 @@
               <li>class <a href="class_simulator_1_1c_species_profile.html" class="m-doc">cSpeciesProfile</a> <span class="m-doc"><span></span></span></li>
               <li>class <a href="class_simulator_1_1c_star.html" class="m-doc">cStar</a> <span class="m-doc"><span></span></span></li>
               <li>struct <a href="struct_simulator_1_1c_star_clue.html" class="m-doc">cStarClue</a> <span class="m-doc"><span></span></span></li>
-              <li>class <a href="class_simulator_1_1c_star_manager.html" class="m-doc">cStarManager</a> <span class="m-doc"><span></span></span></li>
+              <li>class <a href="class_simulator_1_1c_star_manager.html" class="m-doc">cStarManager</a> <span class="m-doc">This class controls most stuff related with the galaxy, stars, planets and empires.</span></li>
               <li>class <a href="class_simulator_1_1c_star_record.html" class="m-doc">cStarRecord</a> <span class="m-doc">Keeps all the information related to a star and all the elements in its solar system.</span></li>
               <li>class <a href="class_simulator_1_1c_strategy.html" class="m-doc">cStrategy</a> <span class="m-doc"><span></span></span></li>
               <li>class <a href="class_simulator_1_1c_terraforming_manager.html" class="m-doc">cTerraformingManager</a> <span class="m-doc"><span></span></span></li>
@@ -755,6 +763,7 @@
               <li>class <a href="class_simulator_1_1c_trade_route_data.html" class="m-doc">cTradeRouteData</a> <span class="m-doc"><span></span></span></li>
               <li>class <a href="class_simulator_1_1c_tribe.html" class="m-doc">cTribe</a> <span class="m-doc">A tribe from the tribe stage.</span></li>
               <li>struct <a href="struct_simulator_1_1c_tribe_archetype.html" class="m-doc">cTribeArchetype</a> <span class="m-doc">Represents a type of tribe, with its configuration stored in folder <code>TribeArchetypes</code>.</span></li>
+              <li>struct <a href="struct_simulator_1_1c_tribe_data.html" class="m-doc">cTribeData</a> <span class="m-doc"><span></span></span></li>
               <li>class <a href="class_simulator_1_1c_tribe_food_mat.html" class="m-doc">cTribeFoodMat</a> <span class="m-doc">The food mat of a tribe. Default model is <code>TribalTools!trg_sacrifice_altar1</code>, default <code>mMaterialType</code> is 2.</span></li>
               <li>class <a href="class_simulator_1_1c_tribe_hut.html" class="m-doc">cTribeHut</a> <span class="m-doc"><span></span></span></li>
               <li>struct <a href="struct_simulator_1_1c_tribe_plan.html" class="m-doc">cTribePlan</a> <span class="m-doc"><span></span></span></li>
@@ -765,7 +774,9 @@
               <li>class <a href="class_simulator_1_1c_turret_flak_weapon.html" class="m-doc">cTurretFlakWeapon</a> <span class="m-doc"><span></span></span></li>
               <li>class <a href="class_simulator_1_1c_u_i_event_log.html" class="m-doc">cUIEventLog</a> <span class="m-doc">This class manages event logs in <a href="namespace_simulator.html" class="m-doc">Simulator</a> game modes.</span></li>
               <li>class <a href="class_simulator_1_1c_vehicle.html" class="m-doc">cVehicle</a> <span class="m-doc"><span></span></span></li>
+              <li>struct <a href="struct_simulator_1_1c_vehicle_data.html" class="m-doc">cVehicleData</a> <span class="m-doc"><span></span></span></li>
               <li>class <a href="class_simulator_1_1c_visible_planet.html" class="m-doc">cVisiblePlanet</a> <span class="m-doc"><span></span></span></li>
+              <li>struct <a href="struct_simulator_1_1c_wall_data.html" class="m-doc">cWallData</a> <span class="m-doc"><span></span></span></li>
               <li>class <a href="class_simulator_1_1_enter_editor_message.html" class="m-doc">EnterEditorMessage</a> <span class="m-doc"><span></span></span></li>
               <li>class <a href="class_simulator_1_1_enter_mode_message.html" class="m-doc">EnterModeMessage</a> <span class="m-doc"><span></span></span></li>
               <li>class <a href="class_simulator_1_1_game_noun_status_changed_message.html" class="m-doc">GameNounStatusChangedMessage</a> <span class="m-doc"><span></span></span></li>
@@ -782,12 +793,14 @@
               <li>struct <a href="struct_simulator_1_1_mission_manager_timer_entry.html" class="m-doc">MissionManagerTimerEntry</a> <span class="m-doc"><span></span></span></li>
               <li>class <a href="class_simulator_1_1_mission_update_message.html" class="m-doc">MissionUpdateMessage</a> <span class="m-doc">Called every update of a mission, only if the mission is ongoing.</span></li>
               <li>class <a href="class_simulator_1_1_noun_create_map.html" class="m-doc">NounCreateMap</a> <span class="m-doc"><span></span></span></li>
+              <li>struct <a href="struct_simulator_1_1_planet_i_d.html" class="m-doc">PlanetID</a> <span class="m-doc">32 bits field that uniquely identifies a planet in the galaxy.</span></li>
               <li>class <a href="class_simulator_1_1_player_empire_allied_message.html" class="m-doc">PlayerEmpireAlliedMessage</a> <span class="m-doc">Called when the player empire makes a new alliance.</span></li>
               <li>class <a href="class_simulator_1_1_player_empire_lost_alliance_message.html" class="m-doc">PlayerEmpireLostAllianceMessage</a> <span class="m-doc">Called when the player empire loses an alliance.</span></li>
               <li>class <a href="class_simulator_1_1_scenario_creature_healed_message.html" class="m-doc">ScenarioCreatureHealedMessage</a> <span class="m-doc">Called when a creature is healed (either by natural heal rate, or using a medkit) in Scenario mode.</span></li>
               <li>class <a href="class_simulator_1_1_scheduled_task_listener.html" class="m-doc">ScheduledTaskListener</a> <span class="m-doc">A message listener that, listening to Update messages, executes the given task after a certain time has passed and (optionally) repetaing it periodically.</span></li>
               <li>class <a href="class_simulator_1_1_space_player_data.html" class="m-doc">SpacePlayerData</a> <span class="m-doc"><span></span></span></li>
               <li>class <a href="class_simulator_1_1_sporepedia.html" class="m-doc">Sporepedia</a> <span class="m-doc"><span></span></span></li>
+              <li>struct <a href="struct_simulator_1_1_star_i_d.html" class="m-doc">StarID</a> <span class="m-doc">32 bits field used to uniquely identify a star within the galaxy.</span></li>
               <li>struct <a href="struct_simulator_1_1_star_request_filter.html" class="m-doc">StarRequestFilter</a> <span class="m-doc"><span></span></span></li>
               <li>class <a href="class_simulator_1_1t_game_data_vector_t.html" class="m-doc">tGameDataVectorT</a> <span class="m-doc"><span></span></span></li>
               <li>class <a href="class_simulator_1_1_tool_on_hit_message.html" class="m-doc">ToolOnHitMessage</a> <span class="m-doc">Called when a space tool hits a target. Called by <a href="class_simulator_1_1c_tool_strategy.html#a2561e73287e748536c5de8ae994dfec3" class="m-doc">cToolStrategy::<wbr />OnHit</a>.</span></li>
@@ -830,6 +843,12 @@
                 <a href="#" onclick="return toggle(this)">namespace</a> <a href="namespace_swarm_1_1_components.html" class="m-doc">Components</a> <span class="m-doc"><span></span></span>
                 <ul class="m-doc">
                   <li>class <a href="class_swarm_1_1_components_1_1_attractor.html" class="m-doc">Attractor</a> <span class="m-doc"><span></span></span></li>
+                  <li class="m-doc-collapsible collapsed">
+                    <a href="#" onclick="return toggle(this)">struct</a> <a href="struct_swarm_1_1_components_1_1_distribute_effect_message_data.html" class="m-doc">DistributeEffectMessageData</a> <span class="m-doc"><span></span></span>
+                    <ul class="m-doc">
+                      <li>struct <a href="struct_swarm_1_1_components_1_1_distribute_effect_message_data_1_1_distributed_object.html" class="m-doc">DistributedObject</a> <span class="m-doc"><span></span></span></li>
+                    </ul>
+                  </li>
                   <li>class <a href="class_swarm_1_1_components_1_1_i_effect_component.html" class="m-doc">IEffectComponent</a> <span class="m-doc"><span></span></span></li>
                   <li>class <a href="class_swarm_1_1_components_1_1_particle_effect.html" class="m-doc">ParticleEffect</a> <span class="m-doc"><span></span></span></li>
                   <li>class <a href="class_swarm_1_1_components_1_1_path_point.html" class="m-doc">PathPoint</a> <span class="m-doc"><span></span></span></li>

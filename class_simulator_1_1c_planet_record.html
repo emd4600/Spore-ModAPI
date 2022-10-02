@@ -56,18 +56,33 @@
               Reference
               <ul>
                 <li><a href="#base-classes">Base classes</a></li>
+                <li><a href="#pub-static-methods">Public static functions</a></li>
                 <li><a href="#pub-methods">Public functions</a></li>
                 <li><a href="#pub-attribs">Public variables</a></li>
               </ul>
             </li>
           </ul>
         </div>
-<p>This does not represent the planet visually (that is the <a href="class_simulator_1_1c_planet.html" class="m-doc">Simulator::<wbr />cPlanet</a> class), this is just information about the planet that will be stored in the galaxy database in the saved games folder. This class is used by <a href="class_simulator_1_1c_star_record.html" class="m-doc">Simulator::<wbr />cStarRecord</a>. Despite the name, this class also represents asteroid belts in a solar system.</p><p>Planet records are uniquely identified with an ID, which can be retrieved using <a href="class_simulator_1_1c_planet_record.html#a9bbbcab62b2dcd2d666be5bb884d2bf7" class="m-doc">GetID()</a>. You can get the record from an ID using <a href="class_simulator_1_1c_star_manager.html#af15bc1cc1d00803d6a43bd4e4c21aff0" class="m-doc">cStarManager::<wbr />GetPlanetRecord()</a>.</p>
+<p>This does not represent the planet visually (that is the <a href="class_simulator_1_1c_planet.html" class="m-doc">Simulator::<wbr />cPlanet</a> class), this is just information about the planet that will be stored in the galaxy database in the saved games folder. This class is used by <a href="class_simulator_1_1c_star_record.html" class="m-doc">Simulator::<wbr />cStarRecord</a>. Despite the name, this class also represents asteroid belts in a solar system.</p><p>Planet records are uniquely identified with a <a href="struct_simulator_1_1_planet_i_d.html" class="m-doc">PlanetID</a>, which can be retrieved using <a href="class_simulator_1_1c_planet_record.html#a9bbbcab62b2dcd2d666be5bb884d2bf7" class="m-doc">GetID()</a>. You can get the record from an ID using <a href="class_simulator_1_1c_star_manager.html#af15bc1cc1d00803d6a43bd4e4c21aff0" class="m-doc">cStarManager::<wbr />GetPlanetRecord()</a>.</p>
         <section id="base-classes">
           <h2><a href="#base-classes">Base classes</a></h2>
           <dl class="m-doc">
             <dt>
               class <a href="class_resource_1_1_special_resource_object.html" class="m-doc">Resource::SpecialResourceObject</a>
+            </dt>
+            <dd><span></span></dd>
+          </dl>
+        </section>
+        <section id="pub-static-methods">
+          <h2><a href="#pub-static-methods">Public static functions</a></h2>
+          <dl class="m-doc">
+            <dt id="ad202d67afbcd8948880ceaa72698882d">
+              <span class="m-doc-wrap-bumper">static auto <a href="#ad202d67afbcd8948880ceaa72698882d" class="m-doc-self">GenerateTerrainKey</a>(</span><span class="m-doc-wrap">) -&gt; <a href="struct_resource_key.html" class="m-doc">ResourceKey</a></span>
+            </dt>
+            <dd>Generates a <code>.prop</code> file <a href="struct_resource_key.html" class="m-doc">ResourceKey</a> that is currently unused in game packages, so that the planet terrain can be saved there.</dd>
+            <dt id="afebfb955ab65eef6333106aba3e15545">
+              <span class="m-doc-wrap-bumper">static void <a href="#afebfb955ab65eef6333106aba3e15545" class="m-doc-self">Create</a>(</span><span class="m-doc-wrap"><a href="struct_simulator_1_1_planet_i_d.html" class="m-doc">PlanetID</a> planetId,
+              <a href="c_planet_record_8h.html#a682e62ad9640c48598962d9ffc2c2893" class="m-doc">cPlanetRecordPtr</a>&amp; dst)</span>
             </dt>
             <dd><span></span></dd>
           </dl>
@@ -80,15 +95,23 @@
             </dt>
             <dd><span></span></dd>
             <dt id="a4462405baf4a5437fce441cc5fdb21d8">
-              <span class="m-doc-wrap-bumper">auto <a href="#a4462405baf4a5437fce441cc5fdb21d8" class="m-doc-self">GetStarID</a>(</span><span class="m-doc-wrap">) const -&gt; <a href="namespace_simulator.html#a98420fedd9079b2285e9cdc71a839a11" class="m-doc">StarID</a></span>
+              <span class="m-doc-wrap-bumper">auto <a href="#a4462405baf4a5437fce441cc5fdb21d8" class="m-doc-self">GetStarID</a>(</span><span class="m-doc-wrap">) const -&gt; <a href="struct_simulator_1_1_star_i_d.html" class="m-doc">StarID</a></span>
             </dt>
             <dd><span></span></dd>
             <dt id="a9bbbcab62b2dcd2d666be5bb884d2bf7">
-              <span class="m-doc-wrap-bumper">auto <a href="#a9bbbcab62b2dcd2d666be5bb884d2bf7" class="m-doc-self">GetID</a>(</span><span class="m-doc-wrap">) const -&gt; <a href="namespace_simulator.html#a6edc4879527b972a44081640e47fc6c7" class="m-doc">PlanetID</a></span>
+              <span class="m-doc-wrap-bumper">auto <a href="#a9bbbcab62b2dcd2d666be5bb884d2bf7" class="m-doc-self">GetID</a>(</span><span class="m-doc-wrap">) const -&gt; <a href="struct_simulator_1_1_planet_i_d.html" class="m-doc">PlanetID</a></span>
             </dt>
             <dd><span></span></dd>
             <dt id="a48abb1973c1c1114cc4decbd8a66fa00">
               <span class="m-doc-wrap-bumper">auto <a href="#a48abb1973c1c1114cc4decbd8a66fa00" class="m-doc-self">GetTechLevel</a>(</span><span class="m-doc-wrap">) const -&gt; <a href="namespace_simulator.html#a99e847b63394f8daa87d1a67318e7453" class="m-doc">TechLevel</a></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a6ddf2525f4c12b057e2ac77916dbe136">
+              <span class="m-doc-wrap-bumper">void <a href="#a6ddf2525f4c12b057e2ac77916dbe136" class="m-doc-self">SetGeneratedTerrainKey</a>(</span><span class="m-doc-wrap">const <a href="struct_resource_key.html" class="m-doc">ResourceKey</a>&amp; key)</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a844323d4b4f47a2f23a32bd63ce6d40d">
+              <span class="m-doc-wrap-bumper">auto <a href="#a844323d4b4f47a2f23a32bd63ce6d40d" class="m-doc-self">GetGeneratedTerrainKey</a>(</span><span class="m-doc-wrap">) -&gt; <a href="struct_resource_key.html" class="m-doc">ResourceKey</a>&amp;</span>
             </dt>
             <dd><span></span></dd>
           </dl>
@@ -152,8 +175,8 @@
               vector&lt;<a href="struct_resource_key.html" class="m-doc">ResourceKey</a>&gt; <a href="#acb0063b8fa95fffcf7bd46417ed23c49" class="m-doc-self">mAnimalSpecies</a>
             </dt>
             <dd>IDs of the animal species that inhabit this planet.</dd>
-            <dt id="aaa2525d76d22ca73fb11e1241917145e">
-              vector&lt;int&gt; <a href="#aaa2525d76d22ca73fb11e1241917145e" class="m-doc-self">field_E4</a>
+            <dt id="a29f1a04779c2f23ce5dae544e02d277a">
+              vector&lt;<a href="struct_simulator_1_1c_commodity_node_data.html" class="m-doc">cCommodityNodeData</a>*&gt; <a href="#a29f1a04779c2f23ce5dae544e02d277a" class="m-doc-self">mCommodityNodes</a>
             </dt>
             <dd><span></span></dd>
             <dt id="ab5e7f82d8a2c261a2fbd7dcbdf867516">
@@ -184,20 +207,20 @@
               bool <a href="#a18d486a6581c87d4222d832455966a6b" class="m-doc-self">mbHomeWorld</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="adee601e794ce10ea95054403f74050c3">
-              vector&lt;int&gt; <a href="#adee601e794ce10ea95054403f74050c3" class="m-doc-self">field_134</a>
+            <dt id="a58f915eae3b280d4e26e072b1d24da9f">
+              vector&lt;<a href="struct_simulator_1_1c_planet_object_data.html" class="m-doc">cPlanetObjectData</a>&gt; <a href="#a58f915eae3b280d4e26e072b1d24da9f" class="m-doc-self">mPlanetObjects</a>
             </dt>
             <dd><span></span></dd>
             <dt id="a10e0b1d954bf1af87fe02a7ca59b17d3">
               vector&lt;uint32_t&gt; <a href="#a10e0b1d954bf1af87fe02a7ca59b17d3" class="m-doc-self">mTerrainStampsToRemove</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="a5973c6793a805aa4743e047286c5809e">
-              vector&lt;int&gt; <a href="#a5973c6793a805aa4743e047286c5809e" class="m-doc-self">field_15C</a>
+            <dt id="a08df52a2a78c77e364ba8585450a3037">
+              vector&lt;<a href="struct_simulator_1_1c_civ_data.html" class="m-doc">cCivData</a>*&gt; <a href="#a08df52a2a78c77e364ba8585450a3037" class="m-doc-self">mCivData</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="a54ac61db7cc8ef150956fb8f6c21b2cf">
-              vector&lt;int&gt; <a href="#a54ac61db7cc8ef150956fb8f6c21b2cf" class="m-doc-self">field_170</a>
+            <dt id="a9be2bf52969755155d9776ee3be9afb7">
+              vector&lt;<a href="struct_simulator_1_1c_tribe_data.html" class="m-doc">cTribeData</a>*&gt; <a href="#a9be2bf52969755155d9776ee3be9afb7" class="m-doc-self">mTribeData</a>
             </dt>
             <dd><span></span></dd>
             <dt id="a7198d284c2741b9ea4a9200a1a0eeeff">
