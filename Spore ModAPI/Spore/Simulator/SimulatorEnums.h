@@ -141,7 +141,8 @@ namespace Simulator
 		T0 = 2,
 		T1 = 3,
 		T2 = 4,
-		T3 = 5
+		T3 = 5,
+		Unset = 6
 	};
 
 	/// The type of a star in a galaxy (which includes black holes, binary stars, 
@@ -550,5 +551,54 @@ namespace Simulator
 		Rock = 5,
 		Unk6 = 6,
 		FixedScenarioObject = 7,
+	};
+
+	/// Used by cBadgeManager, ounts how many events of a certain kind have happened, used to know when to give a badge
+	enum class BadgeManagerEvent : int
+	{
+		ReqPlanetsColonized = 0,
+		ReqAlliancesFormed = 1,
+		ReqStarsExplored = 2,
+		ReqPlanetsTerraformed = 3,
+		ReqEmpiresMet = 4,
+		ReqWarsStarted = 5,
+		Unk6 = 6,
+		ReqFetchMissionsComplete = 7,
+		ReqEradicateMissionsComplete = 8,
+		ReqEcoDisasterMissionsComplete = 9,
+		ReqFoodWebsComplete = 0xA,
+		ReqRaresCollected = 0xB,
+		ReqBadgePointsEarned = 0xC,
+		ReqTradesComplete = 0xD,
+		ReqMissionsComplete = 0xE,
+		ReqGrobDefeated = 0xF,
+		ReqGrobAllied = 0x10,
+		Flight101Complete = 0x11,
+		FriendsDefended = 0x12,
+		CivsPromoted = 0x13,
+		CreaturesPromoted = 0x14,
+		Sightseer = 0x15,
+		FlightsMade = 0x16,
+		AestheticTools = 0x17,
+		StorybooksVisited = 0x18,
+		TradeRoutes = 0x19,
+		SystemsPurchased = 0x1A,
+		PlanetsConquered = 0x1B,
+		ToolsPurchased = 0x1C,
+		Joker = 0x1D,
+		ReqArchetypeSwitches = 0x1E,
+	};
+
+	/// Types of names that can be generated with cSpaceNames
+	enum class SpaceNamesType : uint32_t
+	{
+		kPlanet = 0x07E1310A,
+		kBuilding = 0x03DEE114,
+		kVehicle = 0xBA1FD5AC,
+		kBlackHole = 0xDEB2D943,
+		kTribe = 0x055EA490,
+		kCreature = 0x51AA76BB,
+		kCity = 0x58F4C251,
+		kStar = 0x7CAB064C
 	};
 }

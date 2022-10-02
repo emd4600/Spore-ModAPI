@@ -1,5 +1,6 @@
 #ifndef MODAPI_DLL_EXPORT
 #include <Spore\Simulator\cHerd.h>
+#include <Spore\Simulator\cSpaceNames.h>
 
 namespace Simulator
 {
@@ -15,6 +16,17 @@ namespace Simulator
 		for (auto egg : mEggs) {
 			egg->mEnabled = enabled;
 		}
+	}
+
+
+	auto_STATIC_METHOD_(cSpaceNames, cSpaceNames*, Get);
+
+	string16 cSpaceNames::GenerateRandomName(SpaceNamesType arg)
+	{
+		string16 dst;
+		CALL(GetAddress(cSpaceNames, GenerateRandomName), void, 
+			Args(cSpaceNames*, string16&, SpaceNamesType), Args(this, dst, arg));
+		return dst;
 	}
 }
 #endif

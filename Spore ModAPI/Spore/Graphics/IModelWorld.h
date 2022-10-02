@@ -220,12 +220,16 @@ namespace Graphics
 
 		/// Returns the amount of animations contained in the model.
 		/// @param pModel
+		/// @param skeletonSinkIndex
+		/// @returns
 		/* 68h */	virtual int GetAnimCount(const Model* pModel, int skeletonSinkIndex = 0) const = 0;
 
 		/// Used to get the IDs of the animations contained in the model.
 		/// `dst` must be an array of the size returned by GetAnimCount()
 		/// @param pModel
 		/// @param[out] dst
+		/// @param skeletonSinkIndex
+		/// @returns
 		/* 6Ch */	virtual int GetAnimIDs(const Model* pModel, uint32_t* dst, int skeletonSinkIndex = 0) const = 0;
 		/* 70h */	virtual void func70h(Model* pModel, uint32_t animID, int = 3, float = 0.0, int skeletonSinkIndex = 0) = 0;
 
@@ -283,6 +287,8 @@ namespace Graphics
 		/// Sets the effect range for the model. If the value is negative, effect range will be ignored,
 		/// so effects in this model will be displayed at any distance. Otherwise, the value is ignored, and the
 		/// effect range is loaded from the model `.prop` file.
+		/// @param pModel
+		/// @param effectRange
 		/* B8h */	virtual void SetEffectRange(Model* pModel, double effectRange = -1.0f) const = 0;
 		/* BCh */	virtual int funcBCh() = 0;
 		/* C0h */	virtual int funcC0h() = 0;
@@ -312,7 +318,9 @@ namespace Graphics
 		/* 100h */	virtual int func100h() = 0;
 		/* 104h */	virtual int func104h() = 0;
 		/// Returns default transform stored in the prop file of the model
-		/* 108h */	virtual Transform* GetAssetTransform(Model*) = 0;
+		/// @param pModel
+		/// @returns
+		/* 108h */	virtual Transform* GetAssetTransform(Model* pModel) = 0;
 		/* 10Ch */	virtual int func10Ch() = 0;
 		/* 110h */	virtual int func110h() = 0;
 		/* 114h */	virtual int func114h() = 0;

@@ -57,33 +57,35 @@ namespace Graphics
 		///
 		/// In order to load textures that are not `.raster`, you must pass `kForceLoad` as a parameter.
 		/// @param name
-		///
+		/// @param flags
+		/// @returns
 		/* 1Ch */	virtual Texture* GetTexture(const struct ResourceKey name, int flags = 0) = 0;  // flags = 6 for rw4?
 
 		///
 		/// Same as GetTexture().
 		/// @param instanceID
 		/// @param groupID
-		///
+		/// @param arg_8
+		/// @returns
 		/* 20h */	virtual Texture* GetRasterTexture(uint32_t instanceID, uint32_t groupID, char arg_8 = 0) = 0;
 
 		///
 		/// Tells whether a texture with this name is loaded in this manager, or a .raster texture exists with this name.
 		/// @param name The name of the texture. The type ID will be ignored.
-		///
+		/// @returns
 		/* 24h */	virtual bool HasTexture(const struct ResourceKey name) const = 0;
 
 		///
 		/// Same as HasTexture().
 		/// @param instanceID
 		/// @param groupID
-		///
+		/// @returns
 		/* 28h */	virtual bool HasRasterTexture(uint32_t instanceID, uint32_t groupID) const = 0;
 
 		///
 		/// Returns the ResourceKey name of the given Texture. The type ID might be irrelevant.
 		/// @param pTexture The Texture whose name will be returned.
-		///
+		/// @returns
 		/* 2Ch */	virtual ResourceKey GetTextureName(const Texture* pTexture) const = 0;
 
 		/* 30h */	virtual int func30h(Texture* texture) = 0;

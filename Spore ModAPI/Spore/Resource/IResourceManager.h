@@ -143,11 +143,11 @@ namespace Resource
 		/// will be written in the first DBPF that contains a file with the given name.
 		/// If there is a problem while writing the resource, the file on the DBPF will be deleted.
 		///
-		/// @param pResource[In] The ResourceObject to write. It will be written according to the IResourceFactory specified or the one that corresponds to the typeID.
+		/// @param pResource[in] The ResourceObject to write. It will be written according to the IResourceFactory specified or the one that corresponds to the typeID.
 		/// @param arg_4 [Optional] Usage unknown, usually 0.
-		/// @param pDBPF[In] [Optional] The DatabasePackedFile where the resource will be written.
-		/// @param pFactory[In] [Optional] The IResourceFactory that will be used to write the resource. Use nullptr to use the one that corresponds to the resource's typeID.
-		/// @param pNameKey[In] [Optional] The ResourceKey that must be used as the name. If nullptr, the name of the resource will be used.
+		/// @param pDBPF[in] [Optional] The DatabasePackedFile where the resource will be written.
+		/// @param pFactory[in] [Optional] The IResourceFactory that will be used to write the resource. Use nullptr to use the one that corresponds to the resource's typeID.
+		/// @param pNameKey[in] [Optional] The ResourceKey that must be used as the name. If nullptr, the name of the resource will be used.
 		/// @returns True if the resource was successfuly written, false otherwise.
 		///
 		/* 20h */	virtual bool WriteResource(

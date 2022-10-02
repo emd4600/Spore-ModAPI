@@ -30,8 +30,8 @@ namespace Simulator
 
 	cEmpire* cStarManager::GetEmpire(uint32_t politicalID)
 	{
-		auto it = mEmpiresMap.find(politicalID);
-		if (it != mEmpiresMap.end())
+		auto it = mEmpires.find(politicalID);
+		if (it != mEmpires.end())
 		{
 			return it->second.get();
 		}
@@ -43,23 +43,23 @@ namespace Simulator
 
 	cStarRecord* cStarManager::GetStarRecord(StarID id)
 	{
-		if (id == 0)
+		if (id.internalValue == 0)
 		{
-			return field_14C.get();
+			return mpTempStar.get();
 		}
-		else if (id == -1)
+		else if (id.internalValue == -1)
 		{
 			return nullptr;
 		}
 		else
 		{
-			return mStarRecords[id >> 12][id & 0xFFF].get();
+			return mStarRecordGrid[id.GetSectorIndex()][id.GetStarIndex()].get();
 		}
 	}
 
 	EmpiresMap& cStarManager::GetEmpires()
 	{
-		return mEmpiresMap;
+		return mEmpires;
 	}
 
 
@@ -94,6 +94,33 @@ namespace Simulator
 	auto_METHOD_VOID(cStarManager, FindStars,
 		Args(const Vector3& coords, const StarRequestFilter& filter, vector<cStarRecordPtr>& dst),
 		Args(coords, filter, dst));
+
+	auto_METHOD_VOID(cStarManager, CalculatePlanetScores,
+		Args(cPlanetRecord* pPlanetRecord, cStarRecord* pStar, int arg), Args(pPlanetRecord, pStar, arg));
+
+	auto_METHOD_VOID(cStarManager, GetStarGridPosition,
+		Args(const Vector3& position, unsigned int& dstX, unsigned int& dstY), Args(position, dstX, dstY));
+
+	auto_METHOD_VOID(cStarManager, GenerateEllipticalOrbit,
+		Args(cStarRecord* pStarRecord, cEllipticalOrbit& dst, float mind, float maxd, cPlanetRecord* pOrbitAroundPlanet),
+		Args(pStarRecord, dst, mind, maxd, pOrbitAroundPlanet));
+
+	auto_METHOD_VOID_(cStarManager, GenerateSolSystem);
+
+	auto_STATIC_METHOD(cStarManager, bool, StarGenerationMessageHandler,
+		Args(uint32_t messageId, Swarm::Components::DistributeEffectMessageData* pDistributeData, StarType starType),
+		Args(messageId, pDistributeData, starType));
+
+
+	cPlanetRecord* PlanetID::GetRecord()
+	{
+		return StarManager.GetPlanetRecord(*this);
+	}
+
+	cStarRecord* StarID::GetRecord()
+	{
+		return StarManager.GetStarRecord(*this);
+	}
 }
 
 auto_STATIC_METHOD_VOID(Simulator, SpaceTeleportTo, Args(cStarRecord* star), Args(star));

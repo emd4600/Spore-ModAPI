@@ -138,7 +138,7 @@ namespace IO
 
 	///
 	/// Reads a null-terminated string from the source IStream
-	/// This will read bytes until a \x00 byte is found.
+	/// This will read bytes until a \\x00 byte is found.
 	///
 	IStream* ReadCString(IStream* pIS, eastl::string8& str);
 
@@ -251,7 +251,7 @@ namespace IO
 
 	///
 	/// Reads a null-terminated string from the source IStream
-	/// This will read bytes until a \x00 byte is found.
+	/// This will read bytes until a \\x00 byte is found.
 	///
 	void WriteCString(IStream* pOS, eastl::string8& str);
 

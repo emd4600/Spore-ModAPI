@@ -95,7 +95,8 @@ namespace Audio
 	/// Sets an int/bool/float property for the given track.
 	/// @param track
 	/// @param propertyID
-	/// @param pValue
+	/// @param floatValue
+	/// @param intValue
 	void SetProperty(AudioTrack track, uint32_t propertyID, float floatValue, int intValue);
 }
 

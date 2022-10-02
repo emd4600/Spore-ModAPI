@@ -69,8 +69,8 @@ namespace Simulator
 		/// Called every game loop if the tool is visible, that is, if the panel that contains it is selected or if the tool
 		/// is selected.
 		/// The return value is used to tell if the tool is available to be used or not.
-		/// <li>If the method returns false, the tool is disabled and cannot be selected.</li>
-		/// <li>If the method returns true, the tool is enabled and can be used.</li>
+		/// - If the method returns false, the tool is disabled and cannot be selected.
+		/// - If the method returns true, the tool is enabled and can be used.
 		///
 		/// @param pTool The space tool.
 		/// @param showErrors Whether event logs should be shown to the player or not.

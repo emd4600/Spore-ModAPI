@@ -43,7 +43,7 @@ namespace App
 		/// Called every time a message is received. Only the messages with an ID this listened
 		/// signed up for will call this event.
 		/// @param messageID The ID of the message received.
-		/// @param msg The data of the message received, it might be nullptr.
+		/// @param pMessage The data of the message received, it might be nullptr.
 		/// @returns Whether the message was handled or not.
 		///
 		virtual bool HandleMessage(uint32_t messageID, void* msg) = 0;
@@ -65,7 +65,7 @@ namespace App
 		/// Called every time a message is received. Only the messages with an ID this listened
 		/// signed up for will call this event.
 		/// @param messageID The ID of the message received.
-		/// @param msg The data of the message received, it might be nullptr.
+		/// @param pMessage The data of the message received, it might be nullptr.
 		/// @returns Whether the message was handled or not.
 		///
 		virtual bool HandleMessage(uint32_t messageID, void* pMessage) = 0;

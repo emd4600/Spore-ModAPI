@@ -170,7 +170,7 @@ namespace ArgScript
 		///
 		/// Reads an ArgScript file from the IStream given, without throwing any exceptions. 
 		/// This calls ProcessStream(IO::IStream*) inside a try-catch block.
-		/// @param pInputStream The input IStream with the data to process.
+		/// @param pStream The input IStream with the data to process.
 		/// @returns True if there were no exceptions, false otherwise.
 		///
 		/* 4Ch */	virtual bool ProcessStreamSafe(IO::IStream* pStream);
@@ -257,7 +257,7 @@ namespace ArgScript
 
 		///
 		/// Removes all the variables definitions from the given namespace scope. The scope name must finish with ':' to be valid.
-		/// @param pName The name of the variable.
+		/// @param pScope The name of the scope.
 		/// @throws ArgScriptException If the name of the scope is not valid.
 		///
 		/* 84h */	virtual void PurgeScope(const char* pScope);

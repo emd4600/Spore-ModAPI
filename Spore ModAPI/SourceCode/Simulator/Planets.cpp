@@ -28,11 +28,11 @@ namespace Simulator
 	}
 
 	StarID cPlanetRecord::GetStarID() const {
-		return Simulator::GetStarKey(mKey.instanceID);
+		return PlanetID(mKey.instanceID).GetStarID();
 	}
 
 	PlanetID cPlanetRecord::GetID() const {
-		return mKey.instanceID;
+		return PlanetID(mKey.instanceID);
 	}
 
 	TechLevel cPlanetRecord::GetTechLevel() const {
@@ -50,5 +50,7 @@ namespace Simulator
 	}
 
 	auto_METHOD_VOID(cPlanet, SetRepresentationMode, Args(PlanetRepresentationMode mode), Args(mode));
+
+	auto_STATIC_METHOD_VOID(cPlanetRecord, Create, Args(PlanetID planetId, cPlanetRecordPtr& dst), Args(planetId, dst));
 }
 #endif

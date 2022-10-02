@@ -31,14 +31,12 @@ using namespace eastl;
 
 namespace App
 {
-	///
-	/// A manager that stores all the property lists in the game, used for most configurations. Property lists (.prop files) are
+	/// A manager that stores all the property lists in the game, used for most configurations. Property lists (`.prop` files) are
 	/// simple instances of the class PropertyList that contains properties. This is used for configuring most objects and things
 	/// in the game.
 	///
-	/// A property manager can also contain definitions for properties, which are stored in the Properties.txt and AppProperties.txt
+	/// A property manager can also contain definitions for properties, which are stored in the `Properties.txt` and `AppProperties.txt`
 	/// files.
-	///
 	class IPropManager
 	{
 	public:
@@ -122,8 +120,7 @@ namespace App
 		/// Gets the instance IDs of all the PropertyList objects contained in the specified group.
 		/// @param groupID The ID of the group where the lists are (i.e. the folder)
 		/// @param[out] result A uint32_t vector that will receive the instance IDs.
-		/// @param 
-		///
+		/// @returns
 		/* 48h */	virtual bool GetAllListIDs(uint32_t groupID, vector<uint32_t>& result) const = 0;
 
 		/* 4Ch */	virtual void* func4Ch(int arg_0, int arg_4) = 0;

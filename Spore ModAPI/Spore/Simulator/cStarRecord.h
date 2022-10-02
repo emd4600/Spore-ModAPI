@@ -41,14 +41,17 @@ namespace Simulator
 	/// This class represents any element in the galaxy view, so it is also used by binary stars, 
 	/// black holes, proto-planteary disks and the galaxy center. 
 	/// 
-	/// Star records are uniquely identified with an ID, which can be retrieved using GetID().
+	/// Star records are uniquely identified with a StarID, which can be retrieved using GetID().
 	/// You can get the record from an ID using cStarManager::GetStarRecord().
+	/// 
+	/// You can create a star record using `(cStarRecord*)ClassManager.Create(cStarRecord::CLASS_ID)`
 	class cStarRecord
 		: public ISimulatorSerializable
 		, public DefaultRefCounted
 	{
 	public:
 		static const uint32_t TYPE = 0x3E4353B;
+		static const uint32_t CLASS_ID = 0x3E4353C;
 
 		using Object::AddRef;
 		using Object::Release;
@@ -81,9 +84,11 @@ namespace Simulator
 		/* 50h */	bool field_50;
 		/* 54h */	uint32_t mEmpireID;  // -1
 		/* 58h */	uint32_t mStarterWorldID;
+		//TODO 1 << 4 is visited? sub_BB8B50
+		//TODO 0x1000 has rare?
 		/* 5Ch */	int mFlags;
 		/* 60h */	string16 mName;
-		/* 70h */	uint32_t mKey;  // not initialized
+		/* 70h */	StarID mKey;  // not initialized
 		/* 74h */	ResourceKey mCitizenSpeciesKey;
 		/* 80h */	cSpeciesProfile* mpSpeciesProfile;
 		/* 84h */	vector<cPlanetRecordPtr> mPlanets;
@@ -107,6 +112,6 @@ namespace Simulator
 
 	inline StarID cStarRecord::GetID() const
 	{
-		return (StarID)mKey;
+		return mKey;
 	}
 }

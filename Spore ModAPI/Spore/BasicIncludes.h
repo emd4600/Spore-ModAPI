@@ -40,4 +40,7 @@
 
 #include <Spore\Audio\AudioSystem.h>
 
+#include <Spore\Terrain\ITerrain.h>
+#include <Spore\Terrain\ITerrainResourceManager.h>
+
 using namespace eastl;

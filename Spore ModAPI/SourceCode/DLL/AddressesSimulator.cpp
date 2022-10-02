@@ -27,6 +27,7 @@
 #include <Spore\Simulator\cPlaceColonyToolStrategy.h>
 #include <Spore\Simulator\cPlaceObjectToolStrategy.h>
 #include <Spore\Simulator\cPlanet.h>
+#include <Spore\Simulator\cPlanetRecord.h>
 #include <Spore\Simulator\cPlayerInventory.h>
 #include <Spore\Simulator\cTimeOfDay.h>
 #include <Spore\Simulator\cRallyCallToolStrategy.h>
@@ -481,6 +482,12 @@ namespace Simulator
 		DefineAddress(RecordToPlanet, SelectAddress(0xBB4960, NO_ADDRESS, 0xBB5B50));
 		DefineAddress(FindClosestStar, SelectAddress(0xBAFD80, , 0xBB1020));
 		DefineAddress(FindStars, SelectAddress(0xBAFF70, , 0xBB1210));
+
+		DefineAddress(CalculatePlanetScores, SelectAddress(0xBA5C10, , 0xBA65F0));
+		DefineAddress(StarGenerationMessageHandler, SelectAddress(0xBB4D10, , 0xBB5F00));
+		DefineAddress(GetStarGridPosition, SelectAddress(0xBA6880, , 0xBA7250));
+		DefineAddress(GenerateEllipticalOrbit, SelectAddress(0xBA81B0, , 0xBA8D90));
+		DefineAddress(GenerateSolSystem, SelectAddress(0xBB1A00, , 0xBB2BF0));
 	}
 
 	namespace Addresses(cSpaceTradeRouteManager)
@@ -703,6 +710,11 @@ namespace Simulator
 	namespace Addresses(cScenarioPlayMode)
 	{
 		DefineAddress(SetCurrentAct, SelectAddress(0xF1F260, , 0xF1EE70));
+	}
+
+	namespace Addresses(cPlanetRecord)
+	{
+		DefineAddress(Create, SelectAddress(0xBA5920, , 0xBA6300));
 	}
 }
 #endif

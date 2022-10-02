@@ -64,6 +64,31 @@ namespace Simulator
 		kMsgScenarioUndo = 0xC9D86390,
 		/// No data, called when pressing the redo button in the scenario editor
 		kMsgScenarioRedo = 0xC9D86391,
+
+		/// Message emitted by the galaxy generation effect to create stars of StarType::StarG (yellow) type.
+		kMsgGalaxyGenerateStarG = 0x35B2B15,
+		/// Message emitted by the galaxy generation effect to create stars of StarType::StarO (blue) type.
+		kMsgGalaxyGenerateStarO = 0x36998AE,
+		/// Message emitted by the galaxy generation effect to create stars of StarType::StarM (red) type.
+		kMsgGalaxyGenerateStarM = 0x3757942,
+		/// Message emitted by the galaxy generation effect to create black holes (StarType::BlackHole).
+		kMsgGalaxyGenerateBlackHole = 0x36AD255,
+		/// Message emitted by the galaxy generation effect to create proto-planteray disks (StarType::ProtoPlanetary).
+		kMsgGalaxyGenerateProtoPlanetary = 0x36AD784,
+		/// Message emitted by the galaxy generation effect to create galactic cores (StarType::GalacticCore).
+		kMsgGalaxyGenerateGalacticCore = 0x3D1DEBA,
+		/// Message emitted by the galaxy generation effect to create binary O-O (blue-blue) star systems (StarType::BinaryOO).
+		kMsgGalaxyGenerateBinaryOO = 0x3DFF99F,
+		/// Message emitted by the galaxy generation effect to create binary O-M (blue-red) star systems (StarType::BinaryOM).
+		kMsgGalaxyGenerateBinaryOM = 0x3DFF9A9,
+		/// Message emitted by the galaxy generation effect to create binary O-G (blue-yellow) star systems (StarType::BinaryOG).
+		kMsgGalaxyGenerateBinaryOG = 0x3DFF9B1,
+		/// Message emitted by the galaxy generation effect to create binary G-G (yellow-yellow) star systems (StarType::BinaryGG).
+		kMsgGalaxyGenerateBinaryGG = 0x3DFF9BA,
+		/// Message emitted by the galaxy generation effect to create binary G-M (yellow-red) star systems (StarType::BinaryGM).
+		kMsgGalaxyGenerateBinaryGM = 0x3DFF9C1,
+		/// Message emitted by the galaxy generation effect to create binary M-M (red-red) star systems (StarType::BinaryMM).
+		kMsgGalaxyGenerateBinaryMM = 0x3DFF9C6,
 	};
 
 	class IMessageParameters

@@ -24,7 +24,10 @@
 #include <Spore\Simulator\SubSystem\cRelationshipManager.h>
 #include <Spore\Simulator\cStarRecord.h>
 #include <Spore\Simulator\cPlanet.h>
+#include <Spore\Resource\DatabasePackedFile.h>
+#include <Spore\Swarm\Components\DistributeEffect.h>
 #include <Spore\App\IMessageListener.h>
+#include <Spore\App\MessageListenerData.h>
 #include <EASTL\map.h>
 #include <EASTL\vector.h>
 #include <EASTL\string.h>
@@ -57,6 +60,11 @@ namespace Simulator
 	class cTradeRouteData
 	{
 	public:
+		/* 00h */	virtual ~cTradeRouteData();
+		/* 04h */	virtual bool Write(ISerializerStream* stream);
+		/* 08h */	virtual bool Read(ISerializerStream* stream);
+
+	public:
 		/* 04h */	uint32_t mPoliticalID1;
 		/* 08h */	uint32_t mPoliticalID2;
 		/* 0Ch */	StarID mStarID1;
@@ -67,6 +75,7 @@ namespace Simulator
 		/* 20h */	uint32_t mTimeSinceLastSimMS;
 		/* 24h */	float mRouteLength;
 	};
+	ASSERT_SIZE(cTradeRouteData, 0x28);
 
 	class cSpaceTradeRouteManager
 	{
@@ -81,9 +90,30 @@ namespace Simulator
 		/* 04h */	map<int, cTradeRouteData> mTradeRoutes;
 		/* 20h */	int field_20;
 	};
+	ASSERT_SIZE(cSpaceTradeRouteManager, 0x24);
 
 	typedef map<uint32_t, intrusive_ptr<cEmpire>> EmpiresMap;
 
+	/// This class controls most stuff related with the galaxy, stars, planets and empires.
+	/// Use StarManager to access it, like `StarManager.GetSol()`
+	/// 
+	/// Stars and planets are organized in "records": cStarRecord and cPlanetRecord. Those contain all the data
+	/// that is saved into the save games database, and is loaded every time you open the game.
+	/// A star record is anything you can click on the galaxy view: stars but also black holes, proto-planterary disks, 
+	/// binary star systems, and the galaxy core. The star records keeps a field of StarType to differentiate them.
+	///
+	/// The galaxy is divided in a 64x64 grid of star sectors, each star sector can have at most 4096 stars.
+	/// This is only used to quickly access stars, and it doesn't seem to have any impact on the game.
+	/// 
+	/// The galaxy is generated using the `0x035DD6E7` (`SG_galaxy_messages~`) effect. This effect is a bunch of `distribute`
+	/// effects, one for each star type, which generate random positions depending on a map (with the shape of the galaxy);
+	/// then a message is emmited (check SimulatorMessages::kMsgGalaxyGenerateBlackHole and similars) which is handled by the
+	/// cStarManager::StarGenerationMessageHandler() method.
+	/// 
+	/// After the galaxy has been generated it is recommended to not add any new star records; if you want to make special stars,
+	/// you can instead use cStarManager::FindClosestStar() to get the star you want, then make whatever changes you need. This
+	/// is what cStarManager::GenerateSolSystem() does (we recommend you detour that method since it is executed before saving 
+	/// the star database).
 	class cStarManager
 		: public cStrategy
 		, public App::IMessageListener
@@ -92,26 +122,31 @@ namespace Simulator
 
 		/// Returns the empire that has the given political ID, or nullptr if no empire uses it.
 		/// @param politicalID
+		/// @returns
 		cEmpire* GetEmpire(uint32_t politicalID);
 
 		/// Returns the star record assigned to the specified id.
 		/// There are three possibilities:
-		/// - If id == 0, the galaxy center is returned ?
+		/// - If id == 0, the temporary star is returned (it is nowhere in the galaxy)
 		/// - If id == -1, nullptr is returned.
 		/// - Otherwise, the id is divided in sector index (& 0xFFFFF000) and star index (& 0x00000FFF)
 		/// and the star record is returned.
+		/// @param starID
+		/// @returns
 		cStarRecord* GetStarRecord(StarID starID);
 
-		// & 0xFFFFFF is the star record index, 0xFF000000 is the planet index
+		/// Returns the planet recor assigned to the specified id.
+		/// @param planetID
+		/// @returns
 		cPlanetRecord* GetPlanetRecord(PlanetID planetID);
 
 		EmpiresMap& GetEmpires();
 
-		inline uint32_t GetGrobEmpireID() { return mGrobEmpireID; }
+		/// Returns the political ID of the Grox empire.
+		/// @return
+		uint32_t GetGrobEmpireID();
 
 		// sub_1023630 fill fake spaceplayerdata?
-
-		//PLACEHOLDER BAFD80 get star at position?
 
 		/// Generates a new political ID.
 		uint32_t NextPoliticalID(bool);
@@ -122,10 +157,18 @@ namespace Simulator
 		/// @param starRecord
 		cEmpire* GetEmpireForStar(cStarRecord* starRecord);
 
-		void RecordToPlanet(cPlanetRecord* record, intrusive_ptr<cPlanet>& dst);
+		/// Creates a cPlanet from its planet record.
+		/// @param record
+		/// @param[out] dst
+		void RecordToPlanet(cPlanetRecord* record, cPlanetPtr& dst);
 
+		/// Returns the star record for the Sol system (the one that contains the Earth, Mars, etc)
+		/// @returns
 		cStarRecord* GetSol() const;
 
+		/// Can only be used in adventure (scenario) mode, returns the star record being used for the adventure.
+		/// If not playing from the Space stage, this will return a temporary star that is nowhere in the galaxy.
+		/// @returns
 		cStarRecord* GetScenarioStar() const;
 
 		/// Returns the record for the star closest to the given coords. The Z coordinate is not considered when calculating
@@ -144,6 +187,58 @@ namespace Simulator
 		/// @param dst A vector where all found stars will be added.
 		void FindStars(const Vector3& coords, const StarRequestFilter& filter, vector<cStarRecordPtr>& dst);
 
+		/// Calculates the `mAtmosphereScore`, `mTemperatureScore` and `mWaterScore` of a cPlanetRecord depending on the planet type and
+		/// the generated terrain key. If planet type is PlanetType::Unset, this method will also set it to the corresponding
+		/// PlanetType::T0, PlanetType::T1, PlanetType::T2 or PlanetType::T3 type. 
+		/// @param pPlanetRecord
+		/// @param pStarRecord Not used
+		void CalculatePlanetScores(cPlanetRecord* pPlanetRecord, cStarRecord* pStarRecord = nullptr, int = 0);
+
+		/// Obtains the X and Y coordinates within the 64x64 grid in which galaxy stars are organized.
+		/// @param position Real position of the star
+		/// @param[out] dstX
+		/// @param[out] dstY		
+		void GetStarGridPosition(const Vector3& position, unsigned int& dstX, unsigned int& dstY);
+
+		/// Converts X and Y indices of the star record grid (like obtained with GetStarGridPosition())
+		/// and translates them into an index that can be used to access the corresponding star second in `mStarRecordGrid`.
+		/// @param gridX
+		/// @param gridY
+		/// @returns
+		unsigned int GetRecordGridIndex(unsigned int gridX, unsigned int gridY);
+
+		/// Generates an elliptical orbit that has a distance between the `minDistance` and `maxDistance` arguments.
+		/// By default, the orbit is made around the given star but if `pOrbitAroundPlanet` is specified, it
+		/// will be made to orbit the planet instead (like a moon).
+		/// The period of the orbit will be detemined as a function of the distance and properties 
+		/// `averageMoonOrbitPeriodGasGiant`, `averageMoonOrbitPeriodRocky` and `averagePlanetaryOrbitPeriod`.
+		/// @param pStarRecord
+		/// @param[out] dst
+		/// @param minDistance
+		/// @param maxDistance
+		/// @param pOrbitAroundPlanet Optional, if specified orbit will be around this planet instead of the star.
+		void GenerateEllipticalOrbit(cStarRecord* pStarRecord, cEllipticalOrbit& dst, float minDistance, float maxDistance, cPlanetRecord* pOrbitAroundPlanet = nullptr);
+
+		/// Generates the sol system with the Earth and the rest of planets; this does not create a new star record, instead
+		/// it modifies the star closest to the `(257.34799, 257.34799)` position.
+		/// This method is called during the galaxy generation (which only happens after a galaxy reset) and before the 
+		/// stars database is saved, so it can be detoured to make changes to other stars as well.
+		void GenerateSolSystem();
+
+		/// Generates the StarID for a new star that would be added to `mStarRecordGrid`. 
+		/// The star record using this ID will have to be added at the end of the corresponding vector using GetStarGridPosition()
+		/// @param position Position of the star in the galaxy
+		StarID CreateNewStarID(const Vector3& position);
+
+		/// Method used by the galaxy generation effect to create the cStarRecord instances. This method is the handler of the corresponding
+		/// `kMsgGalaxyGenerate...` messages, such as SimulatorMessages::kMsgGalaxyGenerateBlackHole. The method generates
+		/// one cStarRecord for every entry in the `pDistributeData` object.
+		/// @param messageId
+		/// @param pDistributeData
+		/// @param starType
+		/// @returns True
+		static bool StarGenerationMessageHandler(uint32_t messageId, Swarm::Components::DistributeEffectMessageData* pDistributeData, StarType starType);
+
 	public:
 		/* 20h */	map<int, int> field_20;
 		/* 3Ch */	vector<int> field_3C;
@@ -152,62 +247,60 @@ namespace Simulator
 		/* 68h */	int field_68;  // not initialized
 		/* 6Ch */	string16 field_6C;
 		/* 7Ch */	char _padding_7C[0x24];  // not initialized;
-		/* A0h */	vector<int> field_A0;
-		/* B4h */	int field_B4;
-		/* B8h */	int field_B8;
-		/* BCh */	int field_BC;
-		/* C0h */	int field_C0;
-		/* C4h */	int field_C4;
-		/* C8h */	vector<vector<intrusive_ptr<cStarRecord>>> mStarRecords;
-		/* DCh */	vector<intrusive_ptr<Object>> field_DC;
-		/* F0h */	vector<intrusive_ptr<Object>> field_F0;
-		/* 104h */	vector<intrusive_ptr<Object>> field_104;
-		/* 118h */	vector<intrusive_ptr<Object>> field_118;
-		// maps politicalID to star record?
-		/* 12Ch	*/	map<uint32_t, intrusive_ptr<Object>> field_12C;
-		/* 148h */	intrusive_ptr<cStarRecord> mpSol;
-		/* 14Ch */	intrusive_ptr<cStarRecord> field_14C;  // some kind of default record; the galaxy center?
-		/* 150h	*/	EmpiresMap mEmpiresMap;
-		/* 16Ch */	vector<int> field_16C;
+		/// List of all instance IDs of files in `StarterWorlds` folder, only the ones that aren't already used
+		/* A0h */	vector<uint32_t> mAvailableStarterWorlds;
+		/* B4h */	App::MessageListenerData mMessageListenerData;
+		/// All star records of the galaxy, organized in a grid of 64x64 different blocks. First index is "y" index of the grid,
+		/// second index is "x" index of the grid. You can get x, y for certain coordinates with the GetStarGridPosition() method
+		/* C8h */	vector<vector<cStarRecordPtr>> mStarRecordGrid;
+		/* DCh */	vector<cStarRecordPtr> mStarterStarRecords;
+		/* F0h */	vector<cStarRecordPtr> mSavedGameStarRecords;
+		/* 104h */	vector<cStarRecordPtr> mBlackHoles;
+		/* 118h */	vector<cStarRecordPtr> mPossibleStartLocations;
+		/// Maps empire political IDs to their home star cStarRecord
+		/* 12Ch	*/	map<uint32_t, cStarRecordPtr> mEmpireHomeStarRecords;
+		/* 148h */	cStarRecordPtr mSol;
+		/// A star record used in contexts where a real one is not available, such as playing an adventure from the create menu.
+		/* 14Ch */	cStarRecordPtr mpTempStar;
+		/* 150h	*/	EmpiresMap mEmpires;
+		/* 16Ch */	vector<string16> mEmpireNamesInUse;
 		/* 180h */	int field_180;  // not initialized
-		/* 184h */	map<int, int> field_184;
-		/* 1A0h */	intrusive_ptr<Object> field_1A0;
-		/* 1A4h */	intrusive_ptr<Object> field_1A4;
-		/* 1A8h */	int field_1A8;
-		/* 1ACh */	int field_1AC;
-		/* 1B0h */	int field_1B0;
-		/* 1B4h */	int field_1B4;
-		/* 1B8h */	int field_1B8;
-		/* 1B8h */	float field_1BC;
-		/* 1C0h */	float field_1C0;
-		/* 1C4h */	int field_1C4;
-		/* 1C8h */	int field_1C8;  // not initialized
-		/* 1C8h */	int field_1CC;  // not initialized
-		/* 1D0h */	int field_1D0;  // not initialized
+		/* 184h */	map<int, int> mAdventureIDs;  //TODO
+		///`gametuning~!SpaceSolarSystem.prop`
+		/* 1A0h */	PropertyListPtr mpSolarSystemPropList;
+		///`gametuning~!SpaceGalacticConstants.prop`
+		/* 1A4h */	PropertyListPtr mpGalacticConstantsPropList;
+		/* 1A8h */	int mTScoreTribePlanet;
+		/* 1ACh */	int mTScoreCivPlanet;
+		/* 1B0h */	int mTScoreColonyPlanet;
+		/* 1B4h */	int mTScoreEmpireHomeWorld;
+		/* 1B8h */	int mTScoreGrobPlanet;
+		/* 1BCh */	float mGrobOnlyRadius;
+		/* 1C0h */	float mChanceStarIsHomeStar;
+		/* 1C4h */	int mPercentChanceStarHasRare;
+		/* 1C8h */	int mGalacticCoreTravelLimit;  // not initialized
+		/* 1C8h */	Vector2 mGalacticCoreTravelRadii;  // not initialized
 		// Empire IDs always have the first bit set to 1
-		/* 1D4h */	int mNextEmpireID;  // 0x1234, used to give empire record numbers? If so, sub_BA5DA0 generates the next one
-		/* 1D8h */	uint32_t mGrobEmpireID;  // -1
-		/* 1DCh */	intrusive_ptr<cStarRecord> mpScenarioStar;
-		/* 1E0h */	cSpaceTradeRouteManager mTradeRouteMgr;
+		/* 1D4h */	int mNextPoliticalID;  // 0x1234, used to give empire record numbers? If so, sub_BA5DA0 generates the next one
+		/// Political ID for the Grox (Grob)
+		/* 1D8h */	uint32_t mGrobID;  // -1
+		/* 1DCh */	cStarRecordPtr mpScenarioStar;
+		/* 1E0h */	cSpaceTradeRouteManager mTradeRouteManager;
 		/* 204h */	intrusive_ptr<cRelationshipManager> mpRelationshipManager;
-		/* 208h */	vector<int> field_208;
+		//TODO
+		/* 208h */	vector<string> mTransactionLog;
 		/* 21Ch */	bool field_21C;  // true
-		/* 220h */	intrusive_ptr<Object> field_220;
-		/* 224h */	intrusive_ptr<Object> field_224;  // not really object
-		/* 228h */	intrusive_ptr<Object> field_228;  // not really object
+		/* 220h */	intrusive_ptr<Object> mpGlobalCLGItems;  //TODO cCollectableItems
+		/// `planetRecords.pkt`
+		/* 224h */	DatabasePackedFilePtr mpPlanetRecordsTempDBPF;
+		/// `planetRecords.pkp`
+		/* 228h */	DatabasePackedFilePtr mpPlanetRecordsDBPF;
 
 	public:
 		/// Returns the active Simulator star manager, used for most things in space stage.
 		static cStarManager* Get();
 	};
-
-	/////////////////////////////////
-	//// INTERNAL IMPLEMENTATION ////
-	/////////////////////////////////
-
-	static_assert(sizeof(cSpaceTradeRouteManager) == 0x24, "sizeof(cSpaceTradeRouteManager) != 24h");
-
-	static_assert(sizeof(cStarManager) == 0x22C, "sizeof(cStarManager) != 22Ch");
+	ASSERT_SIZE(cStarManager, 0x22C);
 
 	namespace Addresses(cStarManager)
 	{
@@ -219,6 +312,11 @@ namespace Simulator
 		DeclareAddress(RecordToPlanet);
 		DeclareAddress(FindClosestStar);
 		DeclareAddress(FindStars);
+		DeclareAddress(CalculatePlanetScores);  // 0xBA5C10, 0xBA65F0
+		DeclareAddress(StarGenerationMessageHandler);  // 0xBB4D10, 0xBB5F00
+		DeclareAddress(GetStarGridPosition);  // 0xBA6880, 0xBA7250
+		DeclareAddress(GenerateEllipticalOrbit);  // 0xBA81B0, 0xBA8D90
+		DeclareAddress(GenerateSolSystem);  // 0xBB1A00, 0xBB2BF0
 	}
 
 	namespace Addresses(cSpaceTradeRouteManager)
@@ -227,12 +325,29 @@ namespace Simulator
 	}
 
 	inline cStarRecord* cStarManager::GetSol() const {
-		return mpSol.get();
+		return mSol.get();
 	}
 
 	inline cStarRecord* cStarManager::GetScenarioStar() const {
 		return mpScenarioStar.get();
 	}
+
+	inline unsigned int GetRecordGridIndex(unsigned int gridX, unsigned int gridY)
+	{
+		return gridY * 64 + gridX;
+	}
+
+	inline StarID cStarManager::CreateNewStarID(const Vector3& position)
+	{
+		unsigned int gridX, gridY;
+		GetStarGridPosition(position, gridX, gridY);
+		unsigned int sectorIndex = GetRecordGridIndex(gridX, gridY);
+		unsigned int size = mStarRecordGrid[sectorIndex].size();
+		return StarID(sectorIndex, size);
+	}
+
+	inline uint32_t cStarManager::GetGrobEmpireID() { return mGrobID; }
+
 
 	///
 	/// Teleports the player spaceship into the given star record.

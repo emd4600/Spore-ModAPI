@@ -39,7 +39,7 @@ namespace ArgScript
 		///
 		/// Adds a function to this lexer, that will be used when processing expresions.
 		/// @param pFunctionName The name that will be used to call the function.
-		/// @para pFuncion The IFunction that gets executed when the function is called.
+		/// @param pFuncion The IFunction that gets executed when the function is called.
 		///
 		void AddFunction(const char* pFunctionName, IFunction* pFunction);
 
