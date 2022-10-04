@@ -43,4 +43,7 @@
 #include <Spore\Terrain\ITerrain.h>
 #include <Spore\Terrain\ITerrainResourceManager.h>
 
+#include <Spore\Anim\IAnimManager.h>
+#include <Spore\Anim\AnimatedCreature.h>
+
 using namespace eastl;

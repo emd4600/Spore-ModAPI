@@ -104,7 +104,7 @@ namespace ArgScript
 		Arguments GetArgumentsRange(size_t* dstCount, size_t nMin, size_t nMax = kMaxInt) const;
 
 		///
-		/// Gets the number of arguments this line contains. This does not include the keyword.
+		/// Gets the number of arguments this line contains. This includes the keyword.
 		///
 		size_t GetArgumentsCount() const;
 
