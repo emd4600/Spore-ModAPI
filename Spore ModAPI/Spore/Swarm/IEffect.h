@@ -31,7 +31,7 @@
 namespace Swarm
 {
 	/// An enum to represent the current state of an effect world and the Swarm manager.
-	enum SwarmState
+	enum class SwarmState
 	{
 		kStateActive = 0,
 		kStatePaused = 1,

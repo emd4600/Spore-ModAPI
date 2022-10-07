@@ -23,6 +23,7 @@
 #include <Spore\Simulator\ISimulatorSerializable.h>
 #include <Spore\Simulator\cScenarioClass.h>
 #include <Spore\Simulator\cScenarioMarker.h>
+#include <Spore\Simulator\IGameDataView.h>
 #include <EASTL\intrusive_list.h>
 
 #define cGameDataPtr intrusive_ptr<Simulator::cGameData>
@@ -76,7 +77,7 @@ namespace Simulator
 		cScenarioClass* GetScenarioClass();
 
 	public:
-		/* 14h */	int field_14;
+		/* 14h */	IGameDataView* mpView;
 		/* 18h */	cScenarioMarker* mpScenarioMarker;
 		/* 1Ch */	int mScenarioClassIndex;  // -1
 		/* 20h */	bool field_20;

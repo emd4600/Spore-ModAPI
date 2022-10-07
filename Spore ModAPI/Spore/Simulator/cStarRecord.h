@@ -33,6 +33,11 @@ namespace Simulator
 {
 	typedef int TimeStamp[9];
 
+	enum StarFlags
+	{
+		kStarFlagHasRare = 0x1000,  // 1 << 12
+	};
+
 	/// Keeps all the information related to a star and all the elements in its solar system. 
 	/// This does not represent the star visually (that is the Simulator::cPlanet class),
 	/// this is just information about the planet that will be stored in the galaxy database 
@@ -42,7 +47,10 @@ namespace Simulator
 	/// black holes, proto-planteary disks and the galaxy center. 
 	/// 
 	/// Star records are uniquely identified with a StarID, which can be retrieved using GetID().
-	/// You can get the record from an ID using cStarManager::GetStarRecord().
+	/// You can get the record from an ID using StarID::GetRecord().
+	/// 
+	/// The vector `mPlanets` only gets loaded when it is needed, so sometimes it might be empty even if
+	/// this star has planets. To force it to load, use cStarRecord::GetPlanetRecords() to access the vector instead.
 	/// 
 	/// You can create a star record using `(cStarRecord*)ClassManager.Create(cStarRecord::CLASS_ID)`
 	class cStarRecord
@@ -68,7 +76,7 @@ namespace Simulator
 		/// 1 - second planet, etc)
 		cPlanetRecord* GetPlanetRecord(size_t planetIndex);
 
-		/// Returns a reference to the planet records of this star, generating them if they are not loaded.
+		/// Returns a reference to the planet records of this star, loading them if they are not loaded.
 		/// It is preferrable to use this instead of `mPlanets`.
 		/// @returns A read only vector of the planet records in this star.
 		vector<cPlanetRecordPtr>& GetPlanetRecords();
@@ -84,8 +92,7 @@ namespace Simulator
 		/* 50h */	bool field_50;
 		/* 54h */	uint32_t mEmpireID;  // -1
 		/* 58h */	uint32_t mStarterWorldID;
-		//TODO 1 << 4 is visited? sub_BB8B50
-		//TODO 0x1000 has rare?
+		//TODO 1 << 4 (16) is visited? sub_BB8B50
 		/* 5Ch */	int mFlags;
 		/* 60h */	string16 mName;
 		/* 70h */	StarID mKey;  // not initialized

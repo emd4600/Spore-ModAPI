@@ -114,6 +114,13 @@ namespace Simulator
 	/// you can instead use cStarManager::FindClosestStar() to get the star you want, then make whatever changes you need. This
 	/// is what cStarManager::GenerateSolSystem() does (we recommend you detour that method since it is executed before saving 
 	/// the star database).
+	/// 
+	/// Galaxy generation generates the star records, but NOT the planets. Planet records are only created when a star system
+	/// is first visited (or a bit earlier, for example if a mission has to know a planet from a star) by calling cStarManager::RequirePlanetsForStar().
+	/// This means that most theoretical planets in the galaxy never actually exist, since their stars are never visited.
+	/// Even when planets are generated, cStarRecord::mPlanets might be empty, as it is only loaded when needed; use cStarRecord::GetPlanetRecords()
+	/// instead.
+	/// If you want to change how planets are generated for a star, detour cStarManager::GeneratePlanetsForStar().
 	class cStarManager
 		: public cStrategy
 		, public App::IMessageListener
@@ -230,6 +237,22 @@ namespace Simulator
 		/// @param position Position of the star in the galaxy
 		StarID CreateNewStarID(const Vector3& position);
 
+		/// Ensures that the given star record has planets. If cStarRecord::mPlanetCount is 0, it will generate them
+		/// calling GeneratePlanetsForStar().
+		/// @param pStarRecord
+		/// @param pFilter
+		void RequirePlanetsForStar(cStarRecord* pStarRecord, StarRequestFilter* pFilter = nullptr);
+
+		/// Generates the planets for a star record. Planet records are not generated when the galaxy is generated;
+		/// instead, they are only created the first time the star is discovered. This function will create a number
+		/// of planets between properties `numPlanetsMin` and `numPlanetsMax` from `mpSolarSystemPropList`.
+		/// This function changes the cStarRecord::mPlanetCount of the star, but it does NOT add the planets to the
+		/// star planets vector.
+		/// @param pStarRecord
+		/// @param pFilter
+		/// @param useMaxPlanets If true, spawn the maximum amount of planets.
+		void GeneratePlanetsForStar(cStarRecord* pStarRecord, StarRequestFilter* pFilter, bool useMaxPlanets);
+
 		/// Method used by the galaxy generation effect to create the cStarRecord instances. This method is the handler of the corresponding
 		/// `kMsgGalaxyGenerate...` messages, such as SimulatorMessages::kMsgGalaxyGenerateBlackHole. The method generates
 		/// one cStarRecord for every entry in the `pDistributeData` object.
@@ -265,7 +288,7 @@ namespace Simulator
 		/* 150h	*/	EmpiresMap mEmpires;
 		/* 16Ch */	vector<string16> mEmpireNamesInUse;
 		/* 180h */	int field_180;  // not initialized
-		/* 184h */	map<int, int> mAdventureIDs;  //TODO
+		/* 184h */	map<PlanetID, uint32_t> mAdventureIDs;  //TODO
 		///`gametuning~!SpaceSolarSystem.prop`
 		/* 1A0h */	PropertyListPtr mpSolarSystemPropList;
 		///`gametuning~!SpaceGalacticConstants.prop`
@@ -317,6 +340,8 @@ namespace Simulator
 		DeclareAddress(GetStarGridPosition);  // 0xBA6880, 0xBA7250
 		DeclareAddress(GenerateEllipticalOrbit);  // 0xBA81B0, 0xBA8D90
 		DeclareAddress(GenerateSolSystem);  // 0xBB1A00, 0xBB2BF0
+		DeclareAddress(RequirePlanetsForStar);  // 0xBB3AA0 0xBB4C90
+		DeclareAddress(GeneratePlanetsForStar);  // 0xBB30B0 0xBB42A0
 	}
 
 	namespace Addresses(cSpaceTradeRouteManager)

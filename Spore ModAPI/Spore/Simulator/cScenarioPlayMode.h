@@ -75,7 +75,7 @@ namespace Simulator
 		/// Time limit of the current act, in milliseconds (negative number if no time limit)
 		/* BCh */	long mTimeLimitMS;
 		/* C0h */	int field_C0;
-		/* C4h */	int field_C4;  // not initialized
+		/* C4h */	int mAdventurePoints;  // not initialized
 		/* C8h */	int field_C8;  // not initialized
 		/* CCh */	int field_CC;  // not initialized
 		/* D0h */	int field_D0;  // not initialized

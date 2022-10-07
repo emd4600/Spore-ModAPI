@@ -31,16 +31,16 @@ namespace Simulator
 			: internalValue(value)
 		{}
 
-		cStarRecord* GetRecord();
+		cStarRecord* GetRecord() const;
 
 		/// Returns the index of the sector where this star is stored.
 		/// @returns
-		inline unsigned int GetSectorIndex() {
+		inline unsigned int GetSectorIndex() const {
 			return (internalValue & 0xFFFFF000) >> 12;
 		}
 		/// Returns the index of the star within its star sector.
 		/// @returns
-		inline unsigned int GetStarIndex() {
+		inline unsigned int GetStarIndex() const {
 			return internalValue & 0x00000FFF;
 		}
 	};
@@ -73,16 +73,16 @@ namespace Simulator
 			: internalValue(value)
 		{}
 
-		cPlanetRecord* GetRecord();
+		cPlanetRecord* GetRecord() const;
 
 		/// Returns the ID that uniquely identifies the star where this planet is.
 		/// @returns
-		inline StarID GetStarID() {
+		inline StarID GetStarID() const {
 			return internalValue & 0x00FFFFFF;
 		}
 		/// Returns the index of this planet within its star system.
 		/// @returns
-		inline unsigned int GetPlanetIndex() {
+		inline unsigned int GetPlanetIndex() const {
 			return internalValue & 0xFF000000 >> 24;
 		}
 	};

@@ -26,6 +26,7 @@
 #include <Spore\Graphics\IModelWorld.h>
 
 #include <Spore\Simulator\Serialization.h>
+#include <Spore\Simulator\cGameData.h>
 
 #include <EASTL\vector.h>
 #include <EASTL\string.h>
@@ -161,12 +162,28 @@ namespace Simulator
 		/* C0h */	vector<int> field_C0;
 
 	};
+	ASSERT_SIZE(cSpatialObject, 0xD4);
 
-	/////////////////////////////////
-	//// INTERNAL IMPLEMENTATION ////
-	/////////////////////////////////
+	class cCombatant;
 
-	static_assert(sizeof(cSpatialObject) == 0xD4, "sizeof(cSpatialObject) != D4h");
+	class cSpatialObjectView
+		: public IGameDataView
+	{
+	public:
+
+	public:
+		/* 0Ch */	cSpatialObjectPtr mpObject;
+		/* 10h */	intrusive_ptr<cCombatant> field_10;
+		/* 14h */	bool field_14;
+		/* 18h */	ColorRGB field_18;
+		/* 24h */	int field_24;
+		/* 28h */	int field_28;
+		/* 2Ch */	int field_2C;
+		/* 30h */	bool field_30;
+		/* 31h */	bool field_31;
+		/* 32h */	bool field_32;
+	};
+	ASSERT_SIZE(cSpatialObjectView, 0x34);
 }
 
 

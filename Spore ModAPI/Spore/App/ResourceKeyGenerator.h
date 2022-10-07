@@ -41,8 +41,8 @@ namespace App
 	};
 	ASSERT_SIZE(cResourceKeyGenerator, 0x40);
 
-	namespace Addresses(ResourceKeyGenerator)
+	namespace Addresses(cResourceKeyGenerator)
 	{
-		DeclareAddress(Get);  // 0x67DF80, TODO
+		DeclareAddress(Get);  // 0x67DF80, 0x67DE20
 	}
 }

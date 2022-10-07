@@ -126,17 +126,19 @@ namespace Simulator
 		/* 50h */	virtual bool Raycast(const Vector3& point1, const Vector3& point2, Graphics::FilterSettings::FilterModel_t filter, 
 			cGameDataPtr& dst, Vector3& dstIntersection, bool useModelCollisionMode = false);
 
+		/* 54h */	virtual IGameDataView GetObjectView(cGameData* pObject);
+
 	public:
-		/* 24h */	intrusive_list<int> field_24;
+		/* 24h */	intrusive_list<IGameDataView> mViews;
 		/* 2Ch */	fixed_vector<ModelPtr, 16> mGrassTrampModels;
 		/* 84h */	uint32_t mGameModeID;  // -1
-		/* 88h */	intrusive_ptr<Object> field_88;
+		/* 88h */	cGameDataPtr field_88;
 		/* 8Ch */	hash_map<int, int> field_8C;
 		/* ACh */	vector<int> field_AC;
 		/* C0h */	bool field_C0;
 		/* C1h */	bool field_C1;  // visible?
 		/* C4h */	intrusive_ptr<int> field_C4;  // release at 8
-		/* C8h */	map<int, int> field_C8;
+		/* C8h */	map<int, int> field_C8;  // actually might be a set, of object TYPEs that are not visible?
 		/* E4h */	IModelWorldPtr field_E4;  // IModelWorld?
 		/* E8h */	intrusive_ptr<Object> field_E8;
 		/* ECh */	App::cViewer* field_EC;  // with hologram render type

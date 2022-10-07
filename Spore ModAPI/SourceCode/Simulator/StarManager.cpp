@@ -18,6 +18,8 @@
 * along with this program.  If not, see <http://www.gnu.org/licenses/>.
 ****************************************************************************/
 #include <Spore\Simulator\SubSystem\StarManager.h>
+#include <Spore\Simulator\SubSystem\SpaceGfx.h>
+#include <Spore\Simulator\SpaceConstants.h>
 
 namespace Simulator
 {
@@ -107,25 +109,72 @@ namespace Simulator
 
 	auto_METHOD_VOID_(cStarManager, GenerateSolSystem);
 
+	auto_METHOD_VOID(cStarManager, RequirePlanetsForStar,
+		Args(cStarRecord* pStarRecord, StarRequestFilter* pFilter),
+		Args(pStarRecord, pFilter));
+
+	auto_METHOD_VOID(cStarManager, GeneratePlanetsForStar,
+		Args(cStarRecord* pStarRecord, StarRequestFilter* pFilter, bool arg),
+		Args(pStarRecord, pFilter, arg));
+
 	auto_STATIC_METHOD(cStarManager, bool, StarGenerationMessageHandler,
 		Args(uint32_t messageId, Swarm::Components::DistributeEffectMessageData* pDistributeData, StarType starType),
 		Args(messageId, pDistributeData, starType));
 
 
-	cPlanetRecord* PlanetID::GetRecord()
+	cPlanetRecord* PlanetID::GetRecord() const
 	{
 		return StarManager.GetPlanetRecord(*this);
 	}
 
-	cStarRecord* StarID::GetRecord()
+	cStarRecord* StarID::GetRecord() const
 	{
 		return StarManager.GetStarRecord(*this);
 	}
+
+
+
+	auto_STATIC_METHOD_(cSpaceGfx, cSpaceGfx*, Get);
+	auto_METHOD_VOID_(cSpaceGfx, InitializeInternal);
+	auto_METHOD_VOID_(cSpaceGfx, DisposeInternal);
 }
 
 auto_STATIC_METHOD_VOID(Simulator, SpaceTeleportTo, Args(cStarRecord* star), Args(star));
 
 auto_STATIC_METHOD(Simulator, Vector3&, GalaxyCoordinatesTo3D, 
 	Args(float parsecDistance, float angle, Vector3& dst), Args(parsecDistance, angle, dst));
+
+
+auto_STATIC_METHOD_VOID(Simulator, GetBinarySystemStarTypes,
+	Args(Simulator::StarType binaryType, Simulator::StarType& star1, Simulator::StarType& star2), 
+	Args(binaryType, star1, star2));
+
+auto_STATIC_METHOD(Simulator, float, GetBinarySystemBaseRadius,
+	Args(Simulator::StarType binaryType), Args(binaryType));
+
+auto_STATIC_METHOD(Simulator, float, GetSolarStarTemperature,
+	Args(Simulator::StarType starType), Args(starType));
+
+auto_STATIC_METHOD(Simulator, float, GetSolarStarMass, 
+	Args(Simulator::StarType starType), Args(starType));
+
+auto_STATIC_METHOD(Simulator, float, GetSolarStarRadius,
+	Args(Simulator::StarType starType), Args(starType));
+
+auto_STATIC_METHOD(Simulator, float, GetSolarStarRotationRate,
+	Args(Simulator::StarType starType), Args(starType));
+
+auto_STATIC_METHOD(Simulator, float, GetSolarStarOrbitRadius,
+	Args(Simulator::StarType starType, Simulator::SolarSystemOrbitTemperature orbitTemperature), 
+	Args(starType, orbitTemperature));
+
+auto_STATIC_METHOD(Simulator, Simulator::PlanetTemperatureType,  GetPlanetTemperatureType,
+	Args(float temperatureScore), Args(temperatureScore));
+
+auto_STATIC_METHOD(Simulator, bool, IsBinaryStar,
+	Args(Simulator::StarType starType), Args(starType));
+
+auto_STATIC_METHOD(Simulator, bool, IsNotStarOrBinaryStar,
+	Args(Simulator::StarType starType), Args(starType));
 
 #endif

@@ -48,4 +48,19 @@ namespace Simulator
 	/////////////////////////////////
 
 	static_assert(sizeof(cVisiblePlanet) == 0x10C, "sizeof(cVisiblePlanet) != 10Ch");
+
+	class cPlanetGfx
+		: public cSpatialObjectView
+	{
+	public:
+		static const uint32_t VIEW_ID = cVisiblePlanet::NOUN_ID;
+
+	public:
+		/* 34h */	intrusive_ptr<cPlanet> mpPlanet;
+		/* 38h */	vector<IEffectPtr> field_38;
+		/* 4Ch */	vector<int> field_4C;
+		/* 60h */	int field_60;
+		/* 64h */	int field_64;
+	};
+	ASSERT_SIZE(cPlanetGfx, 0x68);
 }

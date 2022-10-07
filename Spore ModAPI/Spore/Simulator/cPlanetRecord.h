@@ -141,6 +141,15 @@ namespace Simulator
 	};
 	ASSERT_SIZE(cPlanetObjectData, 0x2C);
 
+	enum PlanetFlags
+	{
+		kPlanetFlagHasRings = 0x2,  // 1 << 1
+		kPlanetFlagIsMoon = 0x4,  // 1 << 2
+
+		kPlanetFlagRedOrbit = 0x1000,  // 1 << 12
+		kPlanetFlagBlueOrbit = 0x2000,  // 1 << 13
+	};
+
 	/// Keeps all the information related to a planet. This does not represent the planet visually 
 	/// (that is the Simulator::cPlanet class), this is just information about the planet that will be stored
 	/// in the galaxy database in the saved games folder. This class is used by Simulator::cStarRecord.
@@ -152,6 +161,8 @@ namespace Simulator
 		: public Resource::SpecialResourceObject
 	{
 	public:
+		static const uint32_t TYPE = 0x3E434E1;
+
 		cStarRecord* GetStarRecord() const;
 		StarID GetStarID() const;
 		PlanetID GetID() const;
@@ -172,7 +183,6 @@ namespace Simulator
 		/// The type of the planet, which determines whether it is a gas giant, asteroid belt, or regular rocky planet.
 		/* 28h */	PlanetType mType;  // -1
 		// dictates whether or not a planet is destroyed - giving this flag to a planet turns it into a ball of lava, stops you visiting it and makes it vanish completely once you go to another system. And removing this flag makes the planet normal again.
-		// 0x1000 - hot orbit, 0x2000 cold orbit??
 		/* 2Ch */	int mFlags;  // not initialized
 		/// The orbit this planet follows around its star.
 		/* 30h */	cEllipticalOrbit mOrbit;
@@ -182,7 +192,7 @@ namespace Simulator
 		/* 9Ch */	Math::Vector3 mRotationAxis;  // (0, 0, 1)
 		/// How much time, in real seconds, the planet takes to make a full spin around itself (that is, how long an astronomical day is for this planet).
 		/* A8h */	float mRotationPeriod;  // 1.0
-		/* ACh */	char field_AC;  // 0xFF
+		/* ACh */	int8_t mPlanetRing;  // 0xFF ring type TODO sub_C6FB50
 		/* ADh */	char field_AD;  // 0xFF
 		/* B0h */	float mAtmosphereScore;  // -1.0
 		/* B4h */	float mTemperatureScore;  // -1.0
@@ -203,8 +213,8 @@ namespace Simulator
 		/* 148h */	vector<uint32_t> mTerrainStampsToRemove;
 		/* 15Ch */	vector<cCivData*> mCivData;
 		/* 170h */	vector<cTribeData*> mTribeData;
-		/* 184h */	ResourceKey mKey;
-		/* 190h */	int field_190;
+		/* 184h */	PlanetID mKey;
+		/* 188h */	ResourceKey field_188;
 		/* 194h */	TechLevel mTechLevel;
 		/* 198h */	ResourceKey mSpiceGen;
 		/* 1A4h */	ResourceKey mGeneratedTerrainKey;

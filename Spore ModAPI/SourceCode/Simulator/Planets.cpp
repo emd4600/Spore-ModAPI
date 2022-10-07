@@ -24,15 +24,15 @@
 namespace Simulator
 {
 	cStarRecord* cPlanetRecord::GetStarRecord() const {
-		return StarManager.GetStarRecord(mKey.instanceID);
+		return StarManager.GetStarRecord(mKey.GetStarID());
 	}
 
 	StarID cPlanetRecord::GetStarID() const {
-		return PlanetID(mKey.instanceID).GetStarID();
+		return PlanetID(mKey).GetStarID();
 	}
 
 	PlanetID cPlanetRecord::GetID() const {
-		return PlanetID(mKey.instanceID);
+		return mKey;
 	}
 
 	TechLevel cPlanetRecord::GetTechLevel() const {
@@ -52,5 +52,7 @@ namespace Simulator
 	auto_METHOD_VOID(cPlanet, SetRepresentationMode, Args(PlanetRepresentationMode mode), Args(mode));
 
 	auto_STATIC_METHOD_VOID(cPlanetRecord, Create, Args(PlanetID planetId, cPlanetRecordPtr& dst), Args(planetId, dst));
+
+	auto_METHOD(cPlanet, uint32_t, GetRingEffect, Args(bool isFromPlanet), Args(isFromPlanet));
 }
 #endif

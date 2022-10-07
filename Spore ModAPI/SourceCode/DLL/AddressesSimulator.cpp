@@ -46,6 +46,7 @@
 #include <Spore\Simulator\cScenarioPowerup.h>
 #include <Spore\Simulator\cScenarioSimulator.h>
 #include <Spore\Simulator\cScenarioTerraformMode.h>
+#include <Spore\Simulator\SubSystem\SpaceGfx.h>
 #include <Spore\Simulator\cHerd.h>
 #include <Spore\Simulator\cToolStrategy.h>
 #include <Spore\Simulator\cTribeArchetype.h>
@@ -57,6 +58,7 @@
 #include <Spore\Simulator\cStar.h>
 #include <Spore\Simulator\cMissionManager.h>
 #include <Spore\Simulator\Serialization.h>
+#include <Spore\Simulator\SpaceConstants.h>
 #include <Spore\Simulator\SubSystem\cRelationshipManager.h>
 #include <Spore\Simulator\SubSystem\GameBehaviorManager.h>
 #include <Spore\Simulator\SubSystem\GameInputManager.h>
@@ -95,6 +97,17 @@ namespace Addresses(Simulator)
 
 	DefineAddress(RegisterNounType, SelectAddress(0xB23CE0, , 0xB23E40));
 	DefineAddress(GetNounCreateMap, SelectAddress(0xB22090, , 0xB221A0));
+
+	DefineAddress(GetBinarySystemStarTypes, SelectAddress(0xC8A790, , 0xC8B600));
+	DefineAddress(GetBinarySystemBaseRadius, SelectAddress(0xC83720, , 0xC845B0));
+	DefineAddress(GetSolarStarTemperature, SelectAddress(0xC83610, , 0xC844A0));
+	DefineAddress(GetSolarStarMass, SelectAddress(0xC834A0, , 0xC84330));
+	DefineAddress(GetSolarStarRadius, SelectAddress(0xC83420, , 0xC842B0));
+	DefineAddress(GetSolarStarRotationRate, SelectAddress(0xC835A0, , 0xC84430));
+	DefineAddress(GetSolarStarOrbitRadius, SelectAddress(0xC83F60, , 0xC84DF0));
+	DefineAddress(GetPlanetTemperatureType, SelectAddress(0xFC26B0, , 0xFC1F90));
+	DefineAddress(IsBinaryStar, SelectAddress(0xC8A770, , 0xC8B5E0));
+	DefineAddress(IsNotStarOrBinaryStar, SelectAddress(0xC8A840, , 0xC8B6B0));
 }
 
 namespace Simulator
@@ -308,6 +321,7 @@ namespace Simulator
 	{
 		DefineAddress(GetTemperatureScore, SelectAddress(0xC6FD80, NO_ADDRESS, 0xC70BC0));
 		DefineAddress(SetRepresentationMode, SelectAddress(0xC70CD0, , 0xC71B70));
+		DefineAddress(GetRingEffect, SelectAddress(0xC6FB50, , 0xC70990));
 	}
 
 	namespace Addresses(cPlayerInventory)
@@ -488,6 +502,8 @@ namespace Simulator
 		DefineAddress(GetStarGridPosition, SelectAddress(0xBA6880, , 0xBA7250));
 		DefineAddress(GenerateEllipticalOrbit, SelectAddress(0xBA81B0, , 0xBA8D90));
 		DefineAddress(GenerateSolSystem, SelectAddress(0xBB1A00, , 0xBB2BF0));
+		DefineAddress(RequirePlanetsForStar, SelectAddress(0xBB3AA0, , 0xBB4C90));
+		DefineAddress(GeneratePlanetsForStar, SelectAddress(0xBB30B0, , 0xBB42A0));
 	}
 
 	namespace Addresses(cSpaceTradeRouteManager)
@@ -715,6 +731,13 @@ namespace Simulator
 	namespace Addresses(cPlanetRecord)
 	{
 		DefineAddress(Create, SelectAddress(0xBA5920, , 0xBA6300));
+	}
+
+	namespace Addresses(cSpaceGfx)
+	{
+		DefineAddress(Get, SelectAddress(0xB3D3D0, , 0xB3D570));
+		DefineAddress(InitializeInternal, SelectAddress(0x10367E0, , 0x1035910));
+		DefineAddress(DisposeInternal, SelectAddress(0x1038190, , 0x10372C0));
 	}
 }
 #endif

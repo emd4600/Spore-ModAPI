@@ -20,6 +20,7 @@
 #include <Spore\App\Thumbnail_cImportExport.h>
 #include <Spore\App\cLocaleManager.h>
 #include <Spore\App\AppData.h>
+#include <Spore\App\ResourceKeyGenerator.h>
 
 namespace Addresses(App)
 {
@@ -366,6 +367,11 @@ namespace App
 	{
 		DefineAddress(GetPackageForSaveDirectory, SelectAddress(0x6B22C0, , 0x6B1F20));
 		DefineAddress(SetPackageForSaveDirectory, SelectAddress(0x6B3A90, , 0x6B36F0));
+	}
+
+	namespace Addresses(cResourceKeyGenerator)
+	{
+		DefineAddress(Get, SelectAddress(0x67DF80, , 0x67DE20));
 	}
 }
 #endif

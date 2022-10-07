@@ -61,6 +61,12 @@ namespace Simulator
 		/// @param mode
 		void SetRepresentationMode(PlanetRepresentationMode mode);
 
+		/// Returns the ID of the effect used to display the planet ring, which depends on the cPlanetRecord::mPlanetRing field
+		/// and whether it is being viewed from inside the planet, or from the solar system view.
+		/// @param isFromPlanet True if it is being viewed from inside a planet, false otherwise.
+		/// @returns The effect ID, or 0 if no effect is desired.
+		uint32_t GetRingEffect(bool isFromPlanet);
+
 	public:
 		/* 108h */	int mNumSpecializedBehaviorUFOs;
 		/* 10Ch */	Math::Matrix3 field_10C;
@@ -75,7 +81,8 @@ namespace Simulator
 		/* 158h */	PlanetRepresentationMode mGraphicRepresentationMode;
 		/* 15Ch */	string16 mImpostorModel;
 		/* 16Ch */	uint32_t mEffectScript;  // not initialized
-		/* 170h */	vector<int> field_170;
+		/// Effects created by cVisiblePlanet such as clouds, planet rings,...
+		/* 170h */	vector<IEffectPtr> mPlanetEffects;
 		/* 184h */	float mPlanetScale;
 		/* 188h */	cSolarHitSpherePtr mpSolarHitSphere;
 		/* 18Ch */	cVisiblePlanetPtr mpVisiblePlanet;
@@ -84,7 +91,7 @@ namespace Simulator
 		/* 1B8h */	bool field_1B8;  // true
 		/* 1BCh */	int mPlanetFlags;
 		/* 1C0h */	cPlanetPtr mpParent;
-		/* 1C4h */	uint32_t field_1C4;  // 0xFFD3D3D3
+		/* 1C4h */	uint32_t mSpaceEconomySpiceColor;  // 0xFFD3D3D3
 	};
 
 	/////////////////////////////////
@@ -96,5 +103,6 @@ namespace Simulator
 	namespace Addresses(cPlanet) {
 		DeclareAddress(GetTemperatureScore);
 		DeclareAddress(SetRepresentationMode);
+		DeclareAddress(GetRingEffect);  // 0xC6FB50 0xC70990
 	}
 }

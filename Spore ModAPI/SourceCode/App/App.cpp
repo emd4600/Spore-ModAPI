@@ -1,6 +1,7 @@
 #ifndef MODAPI_DLL_EXPORT
 #include <Spore\App\Thumbnail_cImportExport.h>
 #include <Spore\App\AppData.h>
+#include <Spore\App\ResourceKeyGenerator.h>
 
 namespace App
 {
@@ -21,5 +22,8 @@ namespace App
 	auto_STATIC_METHOD(AppData, Resource::DBPF*, GetPackageForSaveDirectory, Args(uint32_t arg), Args(arg));
 	auto_STATIC_METHOD_VOID(AppData, SetPackageForSaveDirectory, 
 		Args(uint32_t arg, Resource::DBPF* package, bool b), Args(arg, package, b));
+
+
+	auto_STATIC_METHOD_(cResourceKeyGenerator, cResourceKeyGenerator*, Get);
 }
 #endif

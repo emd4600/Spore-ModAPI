@@ -601,4 +601,36 @@ namespace Simulator
 		kCity = 0x58F4C251,
 		kStar = 0x7CAB064C
 	};
+
+	enum class SpaceGfxObjectType : int
+	{
+		Planet = 0,
+		Moon = 1,
+		GasGiant = 2,
+		Star = 3
+	};
+
+	enum class PlanetTemperatureType : int
+	{
+		/// Temperature score is between 0.4 and 0.6
+		Normal = 1,
+		/// Temperature score is lower than 0.1
+		VeryCold = 2,
+		/// Temperature score is between 0.1 and 0.4
+		Cold = 3,
+		/// Temperature score is higher than 0.85
+		VeryHot = 4,
+		/// Temperature score is between 0.6 and 0.85
+		Hot = 5,
+	};
+
+	enum class SolarSystemOrbitTemperature
+	{
+		/// Hot orbit, close to the sun
+		Hot = 0,
+		/// Normal orbit, neither too close nor too far to the sun
+		Normal = 1,
+		/// Cold orbit, far from the sun
+		Cold = 2,
+	};
 }

@@ -55,7 +55,7 @@ namespace Simulator
 	}
 
 	cGameData::cGameData()
-		: field_14()
+		: mpView(nullptr)
 		, mpScenarioMarker(nullptr)
 		, mScenarioClassIndex(-1)
 		, field_20()
