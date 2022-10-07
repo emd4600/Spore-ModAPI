@@ -63,7 +63,7 @@
             </li>
           </ul>
         </div>
-<p>This does not represent the star visually (that is the <a href="class_simulator_1_1c_planet.html" class="m-doc">Simulator::<wbr />cPlanet</a> class), this is just information about the planet that will be stored in the galaxy database in the saved games folder.</p><p>This class represents any element in the galaxy view, so it is also used by binary stars, black holes, proto-planteary disks and the galaxy center.</p><p>Star records are uniquely identified with a <a href="struct_simulator_1_1_star_i_d.html" class="m-doc">StarID</a>, which can be retrieved using <a href="class_simulator_1_1c_star_record.html#ab6f84a77249bea9d566c5dbf8aacc08a" class="m-doc">GetID()</a>. You can get the record from an ID using <a href="class_simulator_1_1c_star_manager.html#a20a0def203b54f7a14b9ec462c8c96b2" class="m-doc">cStarManager::<wbr />GetStarRecord()</a>.</p><p>You can create a star record using <code>(cStarRecord*)ClassManager.Create(cStarRecord::CLASS_ID)</code></p>
+<p>This does not represent the star visually (that is the <a href="class_simulator_1_1c_planet.html" class="m-doc">Simulator::<wbr />cPlanet</a> class), this is just information about the planet that will be stored in the galaxy database in the saved games folder.</p><p>This class represents any element in the galaxy view, so it is also used by binary stars, black holes, proto-planteary disks and the galaxy center.</p><p>Star records are uniquely identified with a <a href="struct_simulator_1_1_star_i_d.html" class="m-doc">StarID</a>, which can be retrieved using <a href="class_simulator_1_1c_star_record.html#ab6f84a77249bea9d566c5dbf8aacc08a" class="m-doc">GetID()</a>. You can get the record from an ID using <a href="struct_simulator_1_1_star_i_d.html#acd8e2e72b8dacf5b3b74ba49dbb7a6df" class="m-doc">StarID::<wbr />GetRecord()</a>.</p><p>The vector <code>mPlanets</code> only gets loaded when it is needed, so sometimes it might be empty even if this star has planets. To force it to load, use <a href="class_simulator_1_1c_star_record.html#a2826761aef5fe3fe79537a500f245c3b" class="m-doc">cStarRecord::<wbr />GetPlanetRecords()</a> to access the vector instead.</p><p>You can create a star record using <code>(cStarRecord*)ClassManager.Create(cStarRecord::CLASS_ID)</code></p>
         <section id="base-classes">
           <h2><a href="#base-classes">Base classes</a></h2>
           <dl class="m-doc">
@@ -112,7 +112,7 @@
             <dt>
               <span class="m-doc-wrap-bumper">auto <a href="#a2826761aef5fe3fe79537a500f245c3b" class="m-doc">GetPlanetRecords</a>(</span><span class="m-doc-wrap">) -&gt; vector&lt;<a href="c_planet_record_8h.html#a682e62ad9640c48598962d9ffc2c2893" class="m-doc">cPlanetRecordPtr</a>&gt;&amp;</span>
             </dt>
-            <dd>Returns a reference to the planet records of this star, generating them if they are not loaded.</dd>
+            <dd>Returns a reference to the planet records of this star, loading them if they are not loaded.</dd>
             <dt id="a3a9c8996c8e1adc7cfec11f8f09b51c8">
               <span class="m-doc-wrap-bumper">auto <a href="#a3a9c8996c8e1adc7cfec11f8f09b51c8" class="m-doc-self">AddRef</a>(</span><span class="m-doc-wrap">) -&gt; int <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
@@ -210,7 +210,7 @@
             <h3>
               <span class="m-doc-wrap-bumper">vector&lt;<a href="c_planet_record_8h.html#a682e62ad9640c48598962d9ffc2c2893" class="m-doc">cPlanetRecordPtr</a>&gt;&amp; Simulator::<wbr />cStarRecord::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a2826761aef5fe3fe79537a500f245c3b" class="m-doc-self">GetPlanetRecords</a>(</span><span class="m-doc-wrap">)</span></span>
             </h3>
-            <p>Returns a reference to the planet records of this star, generating them if they are not loaded.</p>
+            <p>Returns a reference to the planet records of this star, loading them if they are not loaded.</p>
             <table class="m-table m-fullwidth m-flat">
               <tfoot>
                 <tr>

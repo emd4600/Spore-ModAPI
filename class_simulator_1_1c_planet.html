@@ -105,6 +105,10 @@
               <span class="m-doc-wrap-bumper">void <a href="#a32514a744fb4b4c0262ebb6c46665cf3" class="m-doc">SetRepresentationMode</a>(</span><span class="m-doc-wrap"><a href="namespace_simulator.html#ad26faa7837bc0a3c91f32063a4b089c1" class="m-doc">PlanetRepresentationMode</a> mode)</span>
             </dt>
             <dd>Sets and enables the graphical representation of the planet.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a4efbd7023e9f98f9560310f9a448de73" class="m-doc">GetRingEffect</a>(</span><span class="m-doc-wrap">bool isFromPlanet) -&gt; uint32_t</span>
+            </dt>
+            <dd>Returns the ID of the effect used to display the planet ring, which depends on the <a href="class_simulator_1_1c_planet_record.html#a33349b7de1fba80be4e820c7a67685dc" class="m-doc">cPlanetRecord::<wbr />mPlanetRing</a> field and whether it is being viewed from inside the planet, or from the solar system view.</dd>
             <dt id="a3a9c8996c8e1adc7cfec11f8f09b51c8">
               <span class="m-doc-wrap-bumper">auto <a href="#a3a9c8996c8e1adc7cfec11f8f09b51c8" class="m-doc-self">AddRef</a>(</span><span class="m-doc-wrap">) -&gt; int <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
@@ -170,10 +174,10 @@
               uint32_t <a href="#a60d937b37f1788b4e7c8689cdaaf98b4" class="m-doc-self">mEffectScript</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="a7edea30fdea039a9b1a0d3ee37582899">
-              vector&lt;int&gt; <a href="#a7edea30fdea039a9b1a0d3ee37582899" class="m-doc-self">field_170</a>
+            <dt id="a12abde09835c893fdb295477619ab659">
+              vector&lt;<a href="_i_effect_8h.html#adc433612d1d4c8a3a401b5c1dc2d4eba" class="m-doc">IEffectPtr</a>&gt; <a href="#a12abde09835c893fdb295477619ab659" class="m-doc-self">mPlanetEffects</a>
             </dt>
-            <dd><span></span></dd>
+            <dd>Effects created by <a href="class_simulator_1_1c_visible_planet.html" class="m-doc">cVisiblePlanet</a> such as clouds, planet rings,...</dd>
             <dt id="af1b076f2b8e8e2f255f9a6a969f03ada">
               float <a href="#af1b076f2b8e8e2f255f9a6a969f03ada" class="m-doc-self">mPlanetScale</a>
             </dt>
@@ -206,8 +210,8 @@
               <a href="c_planet_8h.html#a9cf4bb12f2504ebf5ba5f6c28ffda8aa" class="m-doc">cPlanetPtr</a> <a href="#ada40a3d95e72a52780efd264d76084c7" class="m-doc-self">mpParent</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="a26c3111ac0b5a53fe0bcbc756b28caae">
-              uint32_t <a href="#a26c3111ac0b5a53fe0bcbc756b28caae" class="m-doc-self">field_1C4</a>
+            <dt id="a08508282323ba76f62ffb51f754095e4">
+              uint32_t <a href="#a08508282323ba76f62ffb51f754095e4" class="m-doc-self">mSpaceEconomySpiceColor</a>
             </dt>
             <dd><span></span></dd>
           </dl>
@@ -231,6 +235,29 @@
               </tbody>
             </table>
 <p>Depending on the type, this creates and sets visible the <code>mpSolarHitSphere</code> and the <code>mpVisiblePlanet</code>.</p>
+          </div></section>
+          <section class="m-doc-details" id="a4efbd7023e9f98f9560310f9a448de73"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">uint32_t Simulator::<wbr />cPlanet::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a4efbd7023e9f98f9560310f9a448de73" class="m-doc-self">GetRingEffect</a>(</span><span class="m-doc-wrap">bool isFromPlanet)</span></span>
+            </h3>
+            <p>Returns the ID of the effect used to display the planet ring, which depends on the <a href="class_simulator_1_1c_planet_record.html#a33349b7de1fba80be4e820c7a67685dc" class="m-doc">cPlanetRecord::<wbr />mPlanetRing</a> field and whether it is being viewed from inside the planet, or from the solar system view.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">isFromPlanet</td>
+                  <td>True if it is being viewed from inside a planet, false otherwise.</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>Returns</th>
+                  <td>The effect ID, or 0 if no effect is desired.</td>
+                </tr>
+              </tfoot>
+            </table>
           </div></section>
         </section>
       </div>

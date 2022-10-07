@@ -58,6 +58,7 @@
                 <li><a href="#pub-static-methods">Public static functions</a></li>
                 <li><a href="#typeless-methods">Constructors, destructors, conversion operators</a></li>
                 <li><a href="#pub-methods">Public functions</a></li>
+                <li><a href="#pub-attribs">Public variables</a></li>
               </ul>
             </li>
           </ul>
@@ -96,12 +97,12 @@
               <span class="m-doc-wrap-bumper">void <a href="#a2fd568a6224032f21ee37921fb580d33" class="m-doc-self">func0Ch</a>(</span><span class="m-doc-wrap">const <a href="struct_resource_key.html" class="m-doc">ResourceKey</a>&amp; key) <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
             <dd><span></span></dd>
-            <dt id="a139d234843324eded1f01df183850958">
-              <span class="m-doc-wrap-bumper">auto <a href="#a139d234843324eded1f01df183850958" class="m-doc-self">func10h</a>(</span><span class="m-doc-wrap">int,
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a69d02901b5d6d3cb6299c602ff4dfc55" class="m-doc">SaveTerrain</a>(</span><span class="m-doc-wrap">const <a href="struct_resource_key.html" class="m-doc">ResourceKey</a>&amp; outputKey,
               uint32_t instanceID,
               uint32_t groupID) -&gt; <a href="class_app_1_1_property_list.html" class="m-doc">App::<wbr />PropertyList</a>* <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
-            <dd><span></span></dd>
+            <dd>Creates a property list and saves it to a file with key <code>outputKey</code>, copying to it the terrain script identified with <code>groupID!instanceID</code>.</dd>
             <dt id="a456b3e07a29c7073defb4de235a56d37">
               <span class="m-doc-wrap-bumper">auto <a href="#a456b3e07a29c7073defb4de235a56d37" class="m-doc-self">LoadPlanet</a>(</span><span class="m-doc-wrap">const <a href="struct_resource_key.html" class="m-doc">ResourceKey</a>&amp; key,
               <a href="_i_terrain_8h.html#ac12fc6416f3a59c04f66f7c339c27b5e" class="m-doc">ITerrainPtr</a>&amp; dst,
@@ -131,6 +132,78 @@
             </dt>
             <dd><span></span></dd>
           </dl>
+        </section>
+        <section id="pub-attribs">
+          <h2><a href="#pub-attribs">Public variables</a></h2>
+          <dl class="m-doc">
+            <dt id="a70eba692898d543f3a4dc4a491a57b83">
+              int <a href="#a70eba692898d543f3a4dc4a491a57b83" class="m-doc-self">vftable_4</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a3aa4e6a65b3eb03daa38b7d7a862a0ea">
+              int <a href="#a3aa4e6a65b3eb03daa38b7d7a862a0ea" class="m-doc-self">field_8</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a8e6b5e351174b71508feec9800b136e1">
+              bool <a href="#a8e6b5e351174b71508feec9800b136e1" class="m-doc-self">mIsInitialized</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a50175f4c222aa0f7a2abf3ef20834ae8">
+              vector&lt;<a href="struct_resource_key.html" class="m-doc">ResourceKey</a>&gt; <a href="#a50175f4c222aa0f7a2abf3ef20834ae8" class="m-doc-self">field_10</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a794e439ca957982d05d95b767405dd00">
+              vector&lt;<a href="struct_resource_key.html" class="m-doc">ResourceKey</a>&gt; <a href="#a794e439ca957982d05d95b767405dd00" class="m-doc-self">field_24</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="aa3b396e2bb298e8355c0bd741fc41268">
+              vector&lt;<a href="struct_resource_key.html" class="m-doc">ResourceKey</a>&gt; <a href="#aa3b396e2bb298e8355c0bd741fc41268" class="m-doc-self">field_38</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="ac331064fe089e7281b08f006227b4b64">
+              vector&lt;<a href="struct_resource_key.html" class="m-doc">ResourceKey</a>&gt; <a href="#ac331064fe089e7281b08f006227b4b64" class="m-doc-self">field_4C</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="ac6439ffc613be996b13681c1275265cc">
+              bool <a href="#ac6439ffc613be996b13681c1275265cc" class="m-doc-self">field_60</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a70721f9aa24963d7e1a2907d43fda96f">
+              <a href="_database_packed_file_8h.html#aea85ff0f3bdb65a4f52af0bb89a050d6" class="m-doc">DatabasePackedFilePtr</a> <a href="#a70721f9aa24963d7e1a2907d43fda96f" class="m-doc-self">field_64</a>
+            </dt>
+            <dd><span></span></dd>
+          </dl>
+        </section>
+        <section>
+          <h2>Function documentation</h2>
+          <section class="m-doc-details" id="a69d02901b5d6d3cb6299c602ff4dfc55"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"><a href="class_app_1_1_property_list.html" class="m-doc">App::<wbr />PropertyList</a>* Terrain::<wbr />ITerrainResourceManager::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a69d02901b5d6d3cb6299c602ff4dfc55" class="m-doc-self">SaveTerrain</a>(</span><span class="m-doc-wrap">const <a href="struct_resource_key.html" class="m-doc">ResourceKey</a>&amp; outputKey,
+              uint32_t instanceID,
+              uint32_t groupID) <span class="m-label m-warning">pure virtual</span></span></span>
+            </h3>
+            <p>Creates a property list and saves it to a file with key <code>outputKey</code>, copying to it the terrain script identified with <code>groupID!instanceID</code>.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">outputKey</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>instanceID</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>groupID</td>
+                  <td></td>
+                </tr>
+              </tbody>
+            </table>
+<p>This will also rewrite the DBPF that stores the planet property lists.</p>
+          </div></section>
         </section>
       </div>
     </div>
