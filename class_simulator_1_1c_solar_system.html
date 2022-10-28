@@ -109,6 +109,14 @@
               <span class="m-doc-wrap-bumper">void <a href="#a10e964fcfb44d902ff3378526a3eefff" class="m-doc">Load</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_star.html" class="m-doc">cStar</a>* pStar)</span>
             </dt>
             <dd>Generates all data of the solar system for the given star data.</dd>
+            <dt id="ace4548018917ef5a8980b132d49dbab2">
+              <span class="m-doc-wrap-bumper">void <a href="#ace4548018917ef5a8980b132d49dbab2" class="m-doc-self">LoadBinaryStar</a>(</span><span class="m-doc-wrap">)</span>
+            </dt>
+            <dd>Called by <a href="class_simulator_1_1c_solar_system.html#a10e964fcfb44d902ff3378526a3eefff" class="m-doc">Load()</a> only in binary systems, generates the two individual star celestial bodies.</dd>
+            <dt id="a9772998d2a126e91b0bc894b4af97064">
+              <span class="m-doc-wrap-bumper">void <a href="#a9772998d2a126e91b0bc894b4af97064" class="m-doc-self">LoadAsteroids</a>(</span><span class="m-doc-wrap">)</span>
+            </dt>
+            <dd>Called by <a href="class_simulator_1_1c_solar_system.html#a10e964fcfb44d902ff3378526a3eefff" class="m-doc">Load()</a>, generates the asteroids celestial bodies.</dd>
             <dt>
               <span class="m-doc-wrap-bumper">void <a href="#ac77ebd4d7c1059a8eb14c59878ad0519" class="m-doc">GenerateGraphics</a>(</span><span class="m-doc-wrap">bool create)</span>
             </dt>
@@ -207,7 +215,7 @@
                 </tr>
               </tbody>
             </table>
-<p>By default, this generates <code>mpStar1</code> (and <code>mpStar2</code> if it&#x27;s a binary system), the asteroids, and the planets. This does not any visual effects yet, it only sets up the <a href="namespace_simulator.html" class="m-doc">Simulator</a> classes (<a href="class_simulator_1_1c_celestial_body.html" class="m-doc">cCelestialBody</a> and <a href="class_simulator_1_1c_planet.html" class="m-doc">cPlanet</a>).</p>
+<p>By default, this generates <code>mpStar1</code> (and <code>mpStar2</code> if it&#x27;s a binary system), the asteroids, and the planets. This does not any visual effects yet, it only sets up the <a href="namespace_simulator.html" class="m-doc">Simulator</a> classes (<a href="class_simulator_1_1c_celestial_body.html" class="m-doc">cCelestialBody</a> and <a href="class_simulator_1_1c_planet.html" class="m-doc">cPlanet</a>). Source code: <a href="_source_code-_simulator.html#SourceCode-Simulator-cSolarSystem-Load" class="m-doc">cSolarSystem::<wbr />Load()</a></p>
           </div></section>
           <section class="m-doc-details" id="ac77ebd4d7c1059a8eb14c59878ad0519"><div>
             <h3>
@@ -248,7 +256,7 @@
                 </tr>
               </tbody>
             </table>
-<p>This method generates the effect of the star (or black hole/planetary disk etc) and comets. By default, these are the effects used:</p><ul><li>Comets: <code>0x3D6F8D8</code></li><li>Stars: check <a href="class_simulator_1_1c_solar_system.html#a7b08d9e04edfe27c97d6b513c51d1b8e" class="m-doc">CreateStarEffect()</a></li></ul>
+<p>This method generates the effect of the star (or black hole/planetary disk etc) and comets. By default, these are the effects used:</p><ul><li>Comets: <code>0x3D6F8D8</code></li><li>Stars: check <a href="class_simulator_1_1c_solar_system.html#a7b08d9e04edfe27c97d6b513c51d1b8e" class="m-doc">CreateStarEffect()</a> Source code: <a href="_source_code-_simulator.html#SourceCode-Simulator-cSolarSystem-GenerateCelestialBodiesEffects" class="m-doc">cSolarSystem::<wbr />GenerateCelestialBodiesEffects()</a></li></ul>
           </div></section>
         </section>
       </div>

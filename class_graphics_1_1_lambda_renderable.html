@@ -76,8 +76,8 @@
         <section id="pub-types">
           <h2><a href="#pub-types">Public types</a></h2>
           <dl class="m-doc">
-            <dt id="abaedd19e97b1598e450fb95c44c08590">
-              using <a href="#abaedd19e97b1598e450fb95c44c08590" class="m-doc-self">Render_t</a> = eastl::function&lt;void(int, int, <a href="class_app_1_1c_viewer.html" class="m-doc">App::<wbr />cViewer</a>**, void*)&gt;
+            <dt id="a24dcf638789464fe16d7ba797a8a6527">
+              using <a href="#a24dcf638789464fe16d7ba797a8a6527" class="m-doc-self">Render_t</a> = eastl::function&lt;void(int, int, <a href="class_app_1_1c_viewer.html" class="m-doc">App::<wbr />cViewer</a>**, <a href="struct_graphics_1_1_render_statistics.html" class="m-doc">RenderStatistics</a>&amp;)&gt;
             </dt>
             <dd><span></span></dd>
           </dl>
@@ -86,7 +86,7 @@
           <h2><a href="#typeless-methods">Constructors, destructors, conversion operators</a></h2>
           <dl class="m-doc">
             <dt id="ad11e3447f466ebb458013f9cf0314af0">
-              <span class="m-doc-wrap-bumper"><a href="#ad11e3447f466ebb458013f9cf0314af0" class="m-doc-self">LambdaRenderable</a>(</span><span class="m-doc-wrap"><a href="class_graphics_1_1_lambda_renderable.html#abaedd19e97b1598e450fb95c44c08590" class="m-doc">Render_<wbr />t</a>)</span>
+              <span class="m-doc-wrap-bumper"><a href="#ad11e3447f466ebb458013f9cf0314af0" class="m-doc-self">LambdaRenderable</a>(</span><span class="m-doc-wrap"><a href="class_graphics_1_1_lambda_renderable.html#a24dcf638789464fe16d7ba797a8a6527" class="m-doc">Render_<wbr />t</a>)</span>
             </dt>
             <dd><span></span></dd>
           </dl>
@@ -103,10 +103,10 @@
             </dt>
             <dd><span></span></dd>
             <dt>
-              <span class="m-doc-wrap-bumper">void <a href="#aab5e6678d176f56dc36a52d4266cc9d4" class="m-doc">Render</a>(</span><span class="m-doc-wrap">int flags,
+              <span class="m-doc-wrap-bumper">void <a href="#ae4f3679ab9caf9817f8e93529d69fa13" class="m-doc">Render</a>(</span><span class="m-doc-wrap">int flags,
               int layerIndex,
-              <a href="class_app_1_1c_viewer.html" class="m-doc">App::<wbr />cViewer</a>**,
-              void*) <span class="m-label m-flat m-warning">override</span></span>
+              <a href="class_app_1_1c_viewer.html" class="m-doc">App::<wbr />cViewer</a>** arg_8,
+              <a href="struct_graphics_1_1_render_statistics.html" class="m-doc">RenderStatistics</a>&amp; statistics) <span class="m-label m-flat m-warning">override</span></span>
             </dt>
             <dd></dd>
           </dl>
@@ -119,19 +119,19 @@
             </dt>
             <dd><span></span></dd>
             <dt id="a92b17a7f1de84157f3c3ee61f232f3ec">
-              <a href="class_graphics_1_1_lambda_renderable.html#abaedd19e97b1598e450fb95c44c08590" class="m-doc">Render_<wbr />t</a> <a href="#a92b17a7f1de84157f3c3ee61f232f3ec" class="m-doc-self">mFunction</a>
+              <a href="class_graphics_1_1_lambda_renderable.html#a24dcf638789464fe16d7ba797a8a6527" class="m-doc">Render_<wbr />t</a> <a href="#a92b17a7f1de84157f3c3ee61f232f3ec" class="m-doc-self">mFunction</a>
             </dt>
             <dd><span></span></dd>
           </dl>
         </section>
         <section>
           <h2>Function documentation</h2>
-          <section class="m-doc-details" id="aab5e6678d176f56dc36a52d4266cc9d4"><div>
+          <section class="m-doc-details" id="ae4f3679ab9caf9817f8e93529d69fa13"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">void Graphics::<wbr />LambdaRenderable::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#aab5e6678d176f56dc36a52d4266cc9d4" class="m-doc-self">Render</a>(</span><span class="m-doc-wrap">int flags,
+              <span class="m-doc-wrap-bumper">void Graphics::<wbr />LambdaRenderable::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ae4f3679ab9caf9817f8e93529d69fa13" class="m-doc-self">Render</a>(</span><span class="m-doc-wrap">int flags,
               int layerIndex,
-              <a href="class_app_1_1c_viewer.html" class="m-doc">App::<wbr />cViewer</a>**,
-              void*) <span class="m-label m-warning">override</span></span></span>
+              <a href="class_app_1_1c_viewer.html" class="m-doc">App::<wbr />cViewer</a>** arg_8,
+              <a href="struct_graphics_1_1_render_statistics.html" class="m-doc">RenderStatistics</a>&amp; statistics) <span class="m-label m-warning">override</span></span></span>
             </h3>
             <table class="m-table m-fullwidth m-flat">
               <thead>
@@ -145,6 +145,14 @@
                 <tr>
                   <td>layerIndex</td>
                   <td>The layer index this renderable was registered with.</td>
+                </tr>
+                <tr>
+                  <td>arg_8</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>statistics</td>
+                  <td></td>
                 </tr>
               </tbody>
             </table>

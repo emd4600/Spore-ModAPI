@@ -104,14 +104,14 @@
                   <li>struct <a href="struct_app_1_1c_game_mode_manager_1_1_mode_entry.html" class="m-doc">ModeEntry</a> <span class="m-doc"><span></span></span></li>
                 </ul>
               </li>
+              <li>class <a href="class_app_1_1c_i_d_generator.html" class="m-doc">cIDGenerator</a> <span class="m-doc"><span></span></span></li>
               <li>class <a href="class_app_1_1c_locale_manager.html" class="m-doc">cLocaleManager</a> <span class="m-doc"><span></span></span></li>
               <li>class <a href="class_app_1_1c_message_manager.html" class="m-doc">cMessageManager</a> <span class="m-doc">The implementation of <a href="class_app_1_1_i_message_manager.html" class="m-doc">IMessageManager</a>; this should only be used for extending and detouring.</span></li>
               <li>class <a href="class_app_1_1c_prop_manager.html" class="m-doc">cPropManager</a> <span class="m-doc">The implementation of <a href="class_app_1_1_i_prop_manager.html" class="m-doc">IPropManager</a>; this should only be used for extending and detouring.</span></li>
-              <li>class <a href="class_app_1_1c_resource_key_generator.html" class="m-doc">cResourceKeyGenerator</a> <span class="m-doc"><span></span></span></li>
               <li>class <a href="class_app_1_1c_scenario_mode.html" class="m-doc">cScenarioMode</a> <span class="m-doc"><span></span></span></li>
               <li>class <a href="class_app_1_1c_string_detokenizer.html" class="m-doc">cStringDetokenizer</a> <span class="m-doc">The class responsible for translating text tokens, which are special characters in locale files.</span></li>
               <li class="m-doc-collapsible collapsed">
-                <a href="#" onclick="return toggle(this)">class</a> <a href="class_app_1_1c_viewer.html" class="m-doc">cViewer</a> <span class="m-doc"><span></span></span>
+                <a href="#" onclick="return toggle(this)">class</a> <a href="class_app_1_1c_viewer.html" class="m-doc">cViewer</a> <span class="m-doc">This class represents all the camera and viewport configuration used to render a scene.</span>
                 <ul class="m-doc">
                   <li>struct <a href="struct_app_1_1c_viewer_1_1_camera.html" class="m-doc">Camera</a> <span class="m-doc"><span></span></span></li>
                 </ul>
@@ -276,6 +276,9 @@
                   <li>struct <a href="struct_graphics_1_1_animations_1_1_internal_render_ware_data.html" class="m-doc">InternalRenderWareData</a> <span class="m-doc"><span></span></span></li>
                 </ul>
               </li>
+              <li>class <a href="class_graphics_1_1c_buffer_draw.html" class="m-doc">cBufferDraw</a> <span class="m-doc"><span></span></span></li>
+              <li>class <a href="class_graphics_1_1c_image_data.html" class="m-doc">cImageData</a> <span class="m-doc"><span></span></span></li>
+              <li>class <a href="class_graphics_1_1c_image_data_raw.html" class="m-doc">cImageDataRaw</a> <span class="m-doc"><span></span></span></li>
               <li>class <a href="class_graphics_1_1c_material_info.html" class="m-doc">cMaterialInfo</a> <span class="m-doc"><span></span></span></li>
               <li>class <a href="class_graphics_1_1c_material_manager.html" class="m-doc">cMaterialManager</a> <span class="m-doc">The implementation of <a href="class_graphics_1_1_i_material_manager.html" class="m-doc">IMaterialManager</a>; this should only be used for extending and detouring.</span></li>
               <li class="m-doc-collapsible collapsed">
@@ -287,7 +290,14 @@
               <li>class <a href="class_graphics_1_1c_model_manager.html" class="m-doc">cModelManager</a> <span class="m-doc">The implementation of <a href="class_graphics_1_1_i_model_manager.html" class="m-doc">IModelManager</a>; this should only be used for extending and detouring.</span></li>
               <li>class <a href="class_graphics_1_1_compiled_shader.html" class="m-doc">CompiledShader</a> <span class="m-doc"><span></span></span></li>
               <li>class <a href="class_graphics_1_1c_render_manager.html" class="m-doc">cRenderManager</a> <span class="m-doc"><span></span></span></li>
-              <li>class <a href="class_graphics_1_1c_render_target_manager.html" class="m-doc">cRenderTargetManager</a> <span class="m-doc"><span></span></span></li>
+              <li class="m-doc-collapsible collapsed">
+                <a href="#" onclick="return toggle(this)">class</a> <a href="class_graphics_1_1c_render_target_manager.html" class="m-doc">cRenderTargetManager</a> <span class="m-doc"><span></span></span>
+                <ul class="m-doc">
+                  <li>struct <a href="struct_graphics_1_1c_render_target_manager_1_1_entry.html" class="m-doc">Entry</a> <span class="m-doc"><span></span></span></li>
+                  <li>struct <a href="struct_graphics_1_1c_render_target_manager_1_1_entry_region.html" class="m-doc">EntryRegion</a> <span class="m-doc"><span></span></span></li>
+                </ul>
+              </li>
+              <li>class <a href="class_graphics_1_1c_rw_direct_resource.html" class="m-doc">cRwDirectResource</a> <span class="m-doc"><span></span></span></li>
               <li>class <a href="class_graphics_1_1c_texture_manager.html" class="m-doc">cTextureManager</a> <span class="m-doc">The implementation of <a href="class_graphics_1_1_i_texture_manager.html" class="m-doc">ITextureManager</a>; this should only be used for extending and detouring.</span></li>
               <li>struct <a href="struct_graphics_1_1_filter_settings.html" class="m-doc">FilterSettings</a> <span class="m-doc"><span></span></span></li>
               <li>class <a href="class_graphics_1_1_generated_mesh.html" class="m-doc">GeneratedMesh</a> <span class="m-doc"><span></span></span></li>
@@ -306,12 +316,7 @@
                   <li>struct <a href="struct_graphics_1_1_i_render_manager_1_1_render_layer.html" class="m-doc">RenderLayer</a> <span class="m-doc"><span></span></span></li>
                 </ul>
               </li>
-              <li class="m-doc-collapsible collapsed">
-                <a href="#" onclick="return toggle(this)">class</a> <a href="class_graphics_1_1_i_render_target_manager.html" class="m-doc">IRenderTargetManager</a> <span class="m-doc"><span></span></span>
-                <ul class="m-doc">
-                  <li>struct <a href="struct_graphics_1_1_i_render_target_manager_1_1_entry.html" class="m-doc">Entry</a> <span class="m-doc"><span></span></span></li>
-                </ul>
-              </li>
+              <li>class <a href="class_graphics_1_1_i_render_target_manager.html" class="m-doc">IRenderTargetManager</a> <span class="m-doc"><span></span></span></li>
               <li>class <a href="class_graphics_1_1_i_shadow_manager.html" class="m-doc">IShadowManager</a> <span class="m-doc"><span></span></span></li>
               <li>class <a href="class_graphics_1_1_i_texture_manager.html" class="m-doc">ITextureManager</a> <span class="m-doc"><span></span></span></li>
               <li>class <a href="class_graphics_1_1_i_thumbnail_manager.html" class="m-doc">IThumbnailManager</a> <span class="m-doc"><span></span></span></li>
@@ -340,6 +345,8 @@
               <li>struct <a href="struct_graphics_1_1_pos_normal_vertex.html" class="m-doc">PosNormalVertex</a> <span class="m-doc"><span></span></span></li>
               <li>struct <a href="struct_graphics_1_1_pos_uv_vertex.html" class="m-doc">PosUvVertex</a> <span class="m-doc"><span></span></span></li>
               <li>struct <a href="struct_graphics_1_1_rendererer_params.html" class="m-doc">RenderererParams</a> <span class="m-doc"><span></span></span></li>
+              <li>struct <a href="struct_graphics_1_1_render_statistics.html" class="m-doc">RenderStatistics</a> <span class="m-doc"><span></span></span></li>
+              <li>struct <a href="struct_graphics_1_1_render_target_i_d.html" class="m-doc">RenderTargetID</a> <span class="m-doc"><span></span></span></li>
               <li class="m-doc-collapsible collapsed">
                 <a href="#" onclick="return toggle(this)">class</a> <a href="class_graphics_1_1_sequence_renderable.html" class="m-doc">SequenceRenderable</a> <span class="m-doc">An implementation of <a href="class_graphics_1_1_i_renderable.html" class="m-doc">IRenderable</a> that renders a sequence of IRenderables.</span>
                 <ul class="m-doc">
@@ -354,14 +361,14 @@
               <li>class <a href="class_graphics_1_1_standard_shader.html" class="m-doc">StandardShader</a> <span class="m-doc"><span></span></span></li>
               <li>struct <a href="struct_graphics_1_1_standard_vertex.html" class="m-doc">StandardVertex</a> <span class="m-doc"><span></span></span></li>
               <li>struct <a href="struct_graphics_1_1_standard_vertex_compact.html" class="m-doc">StandardVertexCompact</a> <span class="m-doc"><span></span></span></li>
-              <li>class <a href="class_graphics_1_1_texture.html" class="m-doc">Texture</a> <span class="m-doc"><span></span></span></li>
+              <li>class <a href="class_graphics_1_1_texture.html" class="m-doc">Texture</a> <span class="m-doc">High level representation of a game texture.</span></li>
               <li>class <a href="class_graphics_1_1_texture_container.html" class="m-doc">TextureContainer</a> <span class="m-doc"><span></span></span></li>
               <li>class <a href="class_graphics_1_1_unk_mat_manager.html" class="m-doc">UnkMatManager</a> <span class="m-doc"><span></span></span></li>
             </ul>
           </li>
           <li>namespace <a href="namespace_group_i_ds.html" class="m-doc">GroupIDs</a> <span class="m-doc">Contains the ID of some important Spore folders.</span></li>
           <li class="m-doc-collapsible">
-            <a href="#" onclick="return toggle(this)">namespace</a> <a href="namespace_i_o.html" class="m-doc">IO</a> <span class="m-doc"></span>
+            <a href="#" onclick="return toggle(this)">namespace</a> <a href="namespace_i_o.html" class="m-doc">IO</a> <span class="m-doc">Classes to work with file input/output, that is, reading and writing data into files.</span>
             <ul class="m-doc">
               <li>class <a href="class_i_o_1_1_e_a_i_o_zone_object.html" class="m-doc">EAIOZoneObject</a> <span class="m-doc">A class derived from <a href="class_i_o_1_1_e_a_i_o_zone_object.html" class="m-doc">EAIOZoneObject</a> is able to be allocated from different heaps without the owner of the object needing to know or care which heap the object came from or even what kind of allocator the object is using.</span></li>
               <li>class <a href="class_i_o_1_1_file_stream.html" class="m-doc">FileStream</a> <span class="m-doc"><span></span></span></li>
@@ -385,6 +392,7 @@
               <li>struct <a href="struct_math_1_1_color_r_g_b_a.html" class="m-doc">ColorRGBA</a> <span class="m-doc">Four float values in the range [0, 1] that represent a color (the red, green, blue and alpha components).</span></li>
               <li>struct <a href="struct_math_1_1_dimensions.html" class="m-doc">Dimensions</a> <span class="m-doc">A pair of two float values that represents the dimensions of an image (width, height).</span></li>
               <li>struct <a href="struct_math_1_1_int_dimensions.html" class="m-doc">IntDimensions</a> <span class="m-doc">A pair of two integer values that represents the dimensions of an image (width, height).</span></li>
+              <li>struct <a href="struct_math_1_1_int_rectangle.html" class="m-doc">IntRectangle</a> <span class="m-doc">Represents a rectangular space, defined by two points or by the four edges.</span></li>
               <li>struct <a href="struct_math_1_1_matrix3.html" class="m-doc">Matrix3</a> <span class="m-doc">A 3x3 matrix.</span></li>
               <li>struct <a href="struct_math_1_1_matrix4.html" class="m-doc">Matrix4</a> <span class="m-doc">A 4x4 matrix.</span></li>
               <li>struct <a href="struct_math_1_1_plane_equation.html" class="m-doc">PlaneEquation</a> <span class="m-doc"><span></span></span></li>
@@ -455,7 +463,7 @@
               <li>struct <a href="struct_render_ware_1_1_animations.html" class="m-doc">Animations</a> <span class="m-doc"><span></span></span></li>
               <li>struct <a href="struct_render_ware_1_1_animation_skin.html" class="m-doc">AnimationSkin</a> <span class="m-doc">A structure that contains the bind pose transformations of all bones.</span></li>
               <li>struct <a href="struct_render_ware_1_1_anim_channel.html" class="m-doc">AnimChannel</a> <span class="m-doc">A channel is the group of keyframes that modify a bone.</span></li>
-              <li>struct <a href="struct_render_ware_1_1_compiled_state.html" class="m-doc">CompiledState</a> <span class="m-doc"><span></span></span></li>
+              <li>struct <a href="struct_render_ware_1_1_compiled_state.html" class="m-doc">CompiledState</a> <span class="m-doc">This structure contains properties that tells the renderer how to draw a certain object.</span></li>
               <li>struct <a href="struct_render_ware_1_1_index_buffer.html" class="m-doc">IndexBuffer</a> <span class="m-doc">A buffer that contains all the indices (so triangles) data.</span></li>
               <li>struct <a href="struct_render_ware_1_1_keyframe_anim.html" class="m-doc">KeyframeAnim</a> <span class="m-doc">A structure that represents an animation made of multiple keyframes.</span></li>
               <li class="m-doc-collapsible collapsed">
@@ -470,7 +478,7 @@
               <li>struct <a href="struct_render_ware_1_1_mesh_compiled_state_link.html" class="m-doc">MeshCompiledStateLink</a> <span class="m-doc">This structure links one or more compiled states (that is, materials) to a mesh.</span></li>
               <li>struct <a href="struct_render_ware_1_1_mesh_compiled_state_link__.html" class="m-doc">MeshCompiledStateLink_</a> <span class="m-doc"><span></span></span></li>
               <li>struct <a href="struct_render_ware_1_1_morph_handle.html" class="m-doc">MorphHandle</a> <span class="m-doc"><span></span></span></li>
-              <li>struct <a href="struct_render_ware_1_1_raster.html" class="m-doc">Raster</a> <span class="m-doc">A structure that contains information for a texture.</span></li>
+              <li>struct <a href="struct_render_ware_1_1_raster.html" class="m-doc">Raster</a> <span class="m-doc">Low-level representation of a game texture.</span></li>
               <li>class <a href="class_render_ware_1_1_render_ware_file.html" class="m-doc">RenderWareFile</a> <span class="m-doc"><span></span></span></li>
               <li>struct <a href="struct_render_ware_1_1_r_w_header.html" class="m-doc">RWHeader</a> <span class="m-doc">A structure that represents the general information contained in the header of a rw4 file.</span></li>
               <li>struct <a href="struct_render_ware_1_1_r_w_object_query.html" class="m-doc">RWObjectQuery</a> <span class="m-doc"><span></span></span></li>
@@ -480,7 +488,7 @@
               <li>struct <a href="struct_render_ware_1_1_skin_matrix_buffer.html" class="m-doc">SkinMatrixBuffer</a> <span class="m-doc">A structure that contains the final animation transformations of all bones.</span></li>
               <li>struct <a href="struct_render_ware_1_1_skins_in_k.html" class="m-doc">SkinsInK</a> <span class="m-doc">A structure needed to get animations working.</span></li>
               <li>struct <a href="struct_render_ware_1_1_skin_transform.html" class="m-doc">SkinTransform</a> <span class="m-doc"><span></span></span></li>
-              <li>struct <a href="struct_render_ware_1_1_texture_slot.html" class="m-doc">TextureSlot</a> <span class="m-doc"><span></span></span></li>
+              <li>struct <a href="struct_render_ware_1_1_texture_slot.html" class="m-doc">TextureSlot</a> <span class="m-doc">Structure used to configure textures in a <a href="struct_render_ware_1_1_compiled_state.html" class="m-doc">CompiledState</a>.</span></li>
               <li>struct <a href="struct_render_ware_1_1_vertex_buffer.html" class="m-doc">VertexBuffer</a> <span class="m-doc">A buffer that contains all the vertices data.</span></li>
               <li>struct <a href="struct_render_ware_1_1_vertex_description.html" class="m-doc">VertexDescription</a> <span class="m-doc">A vertex declaration defines the vertex buffer layout and programs the tessellation engine.</span></li>
               <li>struct <a href="struct_render_ware_1_1_vertex_description_base.html" class="m-doc">VertexDescriptionBase</a> <span class="m-doc"><span></span></span></li>
@@ -694,6 +702,7 @@
               <li>class <a href="class_simulator_1_1c_place_object_tool_strategy.html" class="m-doc">cPlaceObjectToolStrategy</a> <span class="m-doc"><span></span></span></li>
               <li>class <a href="class_simulator_1_1c_planet.html" class="m-doc">cPlanet</a> <span class="m-doc">Visual representation of a planet (or asteroids).</span></li>
               <li>struct <a href="struct_simulator_1_1c_planet_clue.html" class="m-doc">cPlanetClue</a> <span class="m-doc"><span></span></span></li>
+              <li>class <a href="class_simulator_1_1c_planet_gfx.html" class="m-doc">cPlanetGfx</a> <span class="m-doc"><span></span></span></li>
               <li>class <a href="class_simulator_1_1c_planet_model.html" class="m-doc">cPlanetModel</a> <span class="m-doc"><span></span></span></li>
               <li>struct <a href="struct_simulator_1_1c_planet_object_data.html" class="m-doc">cPlanetObjectData</a> <span class="m-doc"><span></span></span></li>
               <li>class <a href="class_simulator_1_1c_planet_record.html" class="m-doc">cPlanetRecord</a> <span class="m-doc">Keeps all the information related to a planet.</span></li>
@@ -741,12 +750,14 @@
               <li>class <a href="class_simulator_1_1c_simulator_system.html" class="m-doc">cSimulatorSystem</a> <span class="m-doc"><span></span></span></li>
               <li>class <a href="class_simulator_1_1c_solar_hit_sphere.html" class="m-doc">cSolarHitSphere</a> <span class="m-doc"><span></span></span></li>
               <li>class <a href="class_simulator_1_1c_solar_system.html" class="m-doc">cSolarSystem</a> <span class="m-doc">Holds visual information about a solar system in the solar system view, or when inside a planet.</span></li>
+              <li>class <a href="class_simulator_1_1c_space_gfx.html" class="m-doc">cSpaceGfx</a> <span class="m-doc"><span></span></span></li>
               <li>class <a href="class_simulator_1_1c_space_inventory.html" class="m-doc">cSpaceInventory</a> <span class="m-doc"><span></span></span></li>
               <li>class <a href="class_simulator_1_1c_space_inventory_item.html" class="m-doc">cSpaceInventoryItem</a> <span class="m-doc">Represents an item of the space player inventory. This include space tools and cargo.</span></li>
               <li>class <a href="class_simulator_1_1c_space_names.html" class="m-doc">cSpaceNames</a> <span class="m-doc">Class to generate names (for creatures, planets, etc.), for example: <code>auto name = SpaceNames.GenerateRandomName(Simulator::SpaceNamesType::kPlanet);</code></span></li>
               <li>class <a href="class_simulator_1_1c_space_tool_data.html" class="m-doc">cSpaceToolData</a> <span class="m-doc"><span></span></span></li>
               <li>class <a href="class_simulator_1_1c_space_trade_route_manager.html" class="m-doc">cSpaceTradeRouteManager</a> <span class="m-doc"><span></span></span></li>
               <li>class <a href="class_simulator_1_1c_spatial_object.html" class="m-doc">cSpatialObject</a> <span class="m-doc">A 3D model in the <a href="namespace_simulator.html" class="m-doc">Simulator</a>.</span></li>
+              <li>class <a href="class_simulator_1_1c_spatial_object_view.html" class="m-doc">cSpatialObjectView</a> <span class="m-doc"><span></span></span></li>
               <li>class <a href="class_simulator_1_1c_species_manager.html" class="m-doc">cSpeciesManager</a> <span class="m-doc"><span></span></span></li>
               <li>class <a href="class_simulator_1_1c_species_profile.html" class="m-doc">cSpeciesProfile</a> <span class="m-doc"><span></span></span></li>
               <li>class <a href="class_simulator_1_1c_star.html" class="m-doc">cStar</a> <span class="m-doc"><span></span></span></li>
@@ -782,6 +793,7 @@
               <li>class <a href="class_simulator_1_1_game_noun_status_changed_message.html" class="m-doc">GameNounStatusChangedMessage</a> <span class="m-doc"><span></span></span></li>
               <li>class <a href="class_simulator_1_1_goal_card.html" class="m-doc">GoalCard</a> <span class="m-doc"><span></span></span></li>
               <li>class <a href="class_simulator_1_1_i_city_music.html" class="m-doc">ICityMusic</a> <span class="m-doc"><span></span></span></li>
+              <li>class <a href="class_simulator_1_1_i_game_data_view.html" class="m-doc">IGameDataView</a> <span class="m-doc"><span></span></span></li>
               <li>class <a href="class_simulator_1_1_i_message_parameters.html" class="m-doc">IMessageParameters</a> <span class="m-doc"><span></span></span></li>
               <li>class <a href="class_simulator_1_1_i_projectile.html" class="m-doc">IProjectile</a> <span class="m-doc"><span></span></span></li>
               <li>class <a href="class_simulator_1_1_i_scenario_edit_history_entry.html" class="m-doc">IScenarioEditHistoryEntry</a> <span class="m-doc">A generic entry of undo/redo history in the adventure editor.</span></li>
@@ -880,20 +892,9 @@
             </ul>
           </li>
           <li class="m-doc-collapsible">
-            <a href="#" onclick="return toggle(this)">namespace</a> <a href="namespace_terrain.html" class="m-doc">Terrain</a> <span class="m-doc"><span></span></span>
+            <a href="#" onclick="return toggle(this)">namespace</a> <a href="namespace_terrain.html" class="m-doc">Terrain</a> <span class="m-doc">Everything related with the planet terrain system.</span>
             <ul class="m-doc">
-              <li class="m-doc-collapsible collapsed">
-                <a href="#" onclick="return toggle(this)">namespace</a> <a href="namespace_terrain_1_1_sphere.html" class="m-doc">Sphere</a> <span class="m-doc"><span></span></span>
-                <ul class="m-doc">
-                  <li class="m-doc-collapsible collapsed">
-                    <a href="#" onclick="return toggle(this)">class</a> <a href="class_terrain_1_1_sphere_1_1c_terrain_sphere.html" class="m-doc">cTerrainSphere</a> <span class="m-doc"><span></span></span>
-                    <ul class="m-doc">
-                      <li>struct <a href="struct_terrain_1_1_sphere_1_1c_terrain_sphere_1_1_terrain_modification.html" class="m-doc">TerrainModification</a> <span class="m-doc"><span></span></span></li>
-                      <li>class <a href="class_terrain_1_1_sphere_1_1c_terrain_sphere_1_1_texture_container.html" class="m-doc">TextureContainer</a> <span class="m-doc"><span></span></span></li>
-                    </ul>
-                  </li>
-                </ul>
-              </li>
+              <li>namespace <a href="namespace_terrain_1_1_sphere.html" class="m-doc">Sphere</a> <span class="m-doc"><span></span></span></li>
               <li>class <a href="class_terrain_1_1c_terrain_map.html" class="m-doc">cTerrainMap</a> <span class="m-doc"><span></span></span></li>
               <li>class <a href="class_terrain_1_1c_terrain_map16.html" class="m-doc">cTerrainMap16</a> <span class="m-doc"><span></span></span></li>
               <li>class <a href="class_terrain_1_1c_terrain_map32.html" class="m-doc">cTerrainMap32</a> <span class="m-doc"><span></span></span></li>
@@ -903,7 +904,16 @@
                   <li>struct <a href="struct_terrain_1_1c_terrain_map_set_1_1c_height_ranges.html" class="m-doc">cHeightRanges</a> <span class="m-doc"><span></span></span></li>
                 </ul>
               </li>
+              <li>class <a href="class_terrain_1_1c_terrain_shader_mgr.html" class="m-doc">cTerrainShaderMgr</a> <span class="m-doc"><span></span></span></li>
+              <li class="m-doc-collapsible collapsed">
+                <a href="#" onclick="return toggle(this)">class</a> <a href="class_terrain_1_1c_terrain_sphere.html" class="m-doc">cTerrainSphere</a> <span class="m-doc"><span></span></span>
+                <ul class="m-doc">
+                  <li>struct <a href="struct_terrain_1_1c_terrain_sphere_1_1_terrain_modification.html" class="m-doc">TerrainModification</a> <span class="m-doc"><span></span></span></li>
+                  <li>class <a href="class_terrain_1_1c_terrain_sphere_1_1_texture_container.html" class="m-doc">TextureContainer</a> <span class="m-doc"><span></span></span></li>
+                </ul>
+              </li>
               <li>class <a href="class_terrain_1_1c_terrain_sphere_quad.html" class="m-doc">cTerrainSphereQuad</a> <span class="m-doc"><span></span></span></li>
+              <li>struct <a href="struct_terrain_1_1c_terrain_sphere_rendering_chunk.html" class="m-doc">cTerrainSphereRenderingChunk</a> <span class="m-doc"><span></span></span></li>
               <li class="m-doc-collapsible collapsed">
                 <a href="#" onclick="return toggle(this)">struct</a> <a href="struct_terrain_1_1c_terrain_state_mgr.html" class="m-doc">cTerrainStateMgr</a> <span class="m-doc"><span></span></span>
                 <ul class="m-doc">

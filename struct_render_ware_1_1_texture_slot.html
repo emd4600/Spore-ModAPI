@@ -48,28 +48,43 @@
           <span class="m-breadcrumb"><a href="namespace_render_ware.html">RenderWare</a>::<wbr/></span>TextureSlot <span class="m-thin">struct</span>
           <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_compiled_state_8h.html">&lt;Spore/RenderWare/CompiledState.h&gt;</a></div>
         </h1>
-        <p><span></span></p>
+        <p>Structure used to configure textures in a <a href="struct_render_ware_1_1_compiled_state.html" class="m-doc">CompiledState</a>.</p>
         <div class="m-block m-default">
           <h3>Contents</h3>
           <ul>
             <li>
               Reference
               <ul>
+                <li><a href="#typeless-methods">Constructors, destructors, conversion operators</a></li>
                 <li><a href="#pub-methods">Public functions</a></li>
                 <li><a href="#pub-attribs">Public variables</a></li>
               </ul>
             </li>
           </ul>
         </div>
+<p>The benefit of this structure is that it keeps track of the previous of the state, and restores it once the <a href="struct_render_ware_1_1_texture_slot.html" class="m-doc">TextureSlot</a> object is destroyed.</p>
+        <section id="typeless-methods">
+          <h2><a href="#typeless-methods">Constructors, destructors, conversion operators</a></h2>
+          <dl class="m-doc">
+            <dt id="ac8ce4673aec0de8eeab7a0bc2ceacadf">
+              <span class="m-doc-wrap-bumper"><a href="#ac8ce4673aec0de8eeab7a0bc2ceacadf" class="m-doc-self">TextureSlot</a>(</span><span class="m-doc-wrap">)</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a0288fee8c96fbdd1d8614e803fe7cbf3">
+              <span class="m-doc-wrap-bumper"><a href="#a0288fee8c96fbdd1d8614e803fe7cbf3" class="m-doc-self">~TextureSlot</a>(</span><span class="m-doc-wrap">)</span>
+            </dt>
+            <dd><span></span></dd>
+          </dl>
+        </section>
         <section id="pub-methods">
           <h2><a href="#pub-methods">Public functions</a></h2>
           <dl class="m-doc">
-            <dt id="a62b132408126a2461f2be87c29dc45b4">
-              <span class="m-doc-wrap-bumper">void <a href="#a62b132408126a2461f2be87c29dc45b4" class="m-doc-self">SetTexture</a>(</span><span class="m-doc-wrap"><a href="struct_render_ware_1_1_compiled_state.html" class="m-doc">CompiledState</a>* compiledState,
+            <dt>
+              <span class="m-doc-wrap-bumper">void <a href="#a62b132408126a2461f2be87c29dc45b4" class="m-doc">SetTexture</a>(</span><span class="m-doc-wrap"><a href="struct_render_ware_1_1_compiled_state.html" class="m-doc">CompiledState</a>* compiledState,
               int slotIndex,
               <a href="struct_render_ware_1_1_raster.html" class="m-doc">Raster</a>* raster)</span>
             </dt>
-            <dd><span></span></dd>
+            <dd>Sets one texture of a compiled state, storing the previous texture in this slot so it can be restored later.</dd>
           </dl>
         </section>
         <section id="pub-attribs">
@@ -92,6 +107,37 @@
             </dt>
             <dd><span></span></dd>
           </dl>
+        </section>
+        <section>
+          <h2>Function documentation</h2>
+          <section class="m-doc-details" id="a62b132408126a2461f2be87c29dc45b4"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">void RenderWare::<wbr />TextureSlot::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a62b132408126a2461f2be87c29dc45b4" class="m-doc-self">SetTexture</a>(</span><span class="m-doc-wrap"><a href="struct_render_ware_1_1_compiled_state.html" class="m-doc">CompiledState</a>* compiledState,
+              int slotIndex,
+              <a href="struct_render_ware_1_1_raster.html" class="m-doc">Raster</a>* raster)</span></span>
+            </h3>
+            <p>Sets one texture of a compiled state, storing the previous texture in this slot so it can be restored later.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">compiledState</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>slotIndex</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>raster</td>
+                  <td></td>
+                </tr>
+              </tbody>
+            </table>
+<p><code>slotIndex</code> is the number used to reference the texture inside the shader.</p>
+          </div></section>
         </section>
       </div>
     </div>

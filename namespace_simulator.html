@@ -504,6 +504,10 @@
             </dt>
             <dd><span></span></dd>
             <dt>
+              class <a href="class_simulator_1_1c_planet_gfx.html" class="m-doc">cPlanetGfx</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
               class <a href="class_simulator_1_1c_planet_model.html" class="m-doc">cPlanetModel</a>
             </dt>
             <dd><span></span></dd>
@@ -692,6 +696,10 @@
             </dt>
             <dd>Holds visual information about a solar system in the solar system view, or when inside a planet.</dd>
             <dt>
+              class <a href="class_simulator_1_1c_space_gfx.html" class="m-doc">cSpaceGfx</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
               class <a href="class_simulator_1_1c_space_inventory.html" class="m-doc">cSpaceInventory</a>
             </dt>
             <dd><span></span></dd>
@@ -715,6 +723,10 @@
               class <a href="class_simulator_1_1c_spatial_object.html" class="m-doc">cSpatialObject</a>
             </dt>
             <dd>A 3D model in the <a href="namespace_simulator.html" class="m-doc">Simulator</a>.</dd>
+            <dt>
+              class <a href="class_simulator_1_1c_spatial_object_view.html" class="m-doc">cSpatialObjectView</a>
+            </dt>
+            <dd><span></span></dd>
             <dt>
               class <a href="class_simulator_1_1c_species_manager.html" class="m-doc">cSpeciesManager</a>
             </dt>
@@ -856,6 +868,10 @@
             </dt>
             <dd><span></span></dd>
             <dt>
+              class <a href="class_simulator_1_1_i_game_data_view.html" class="m-doc">IGameDataView</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
               class <a href="class_simulator_1_1_i_message_parameters.html" class="m-doc">IMessageParameters</a>
             </dt>
             <dd><span></span></dd>
@@ -988,6 +1004,17 @@
             </dt>
             <dd><span></span></dd>
             <dt>
+              <span class="m-doc-wrap-bumper">enum <a href="#ada179a897c6b00b12e5234f46de301f6" class="m-doc">PlanetFlags</a> { </span><span class="m-doc-wrap"><a href="#ada179a897c6b00b12e5234f46de301f6a46917a8dc8df53351c0cb2ef3fd8fb3b" class="m-doc">kPlanetFlagHasRings</a> = 0x2,
+              <a href="#ada179a897c6b00b12e5234f46de301f6a537094325f91901f3badfa8a8acac4e2" class="m-doc">kPlanetFlagIsMoon</a> = 0x4,
+              <a href="#ada179a897c6b00b12e5234f46de301f6a0148bd8fc3c4490e46af3fec88ef28c5" class="m-doc">kPlanetFlagRedOrbit</a> = 0x1000,
+              <a href="#ada179a897c6b00b12e5234f46de301f6ac54b7b2a855d88ebf0bc4ef612e44685" class="m-doc">kPlanetFlagBlueOrbit</a> = 0x2000 }</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">enum <a href="#a64ba5e5b1e86fc333f90fbbd7b7de7eb" class="m-doc">StarFlags</a> { </span><span class="m-doc-wrap"><a href="#a64ba5e5b1e86fc333f90fbbd7b7de7eba6cc9f50b8e6117827fe8517505d08a8d" class="m-doc">kStarFlagHasRare</a> = 0x1000 }</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
               <span class="m-doc-wrap-bumper">enum <a href="#a00da9a155f0dfa4b01c8c5a297b0191e" class="m-doc">GameNounIDs</a> { </span><span class="m-doc-wrap"><a href="#a00da9a155f0dfa4b01c8c5a297b0191ea60c85a2ad4ce31dcd7903faaa48ce5c5" class="m-doc">kGameData</a> = 0x17F243B,
               <a href="#a00da9a155f0dfa4b01c8c5a297b0191eaf08f9d71b79b6d711d462dfec93cde9f" class="m-doc">kCheatObject</a> = 0x2A37E35,
               <a href="#a00da9a155f0dfa4b01c8c5a297b0191ea3104802a111e615c00c3eaa5338793eb" class="m-doc">kMissionFetch</a> = 0x2AFD284,
@@ -1101,6 +1128,13 @@
             </dt>
             <dd>All the noun IDs used to identify <a href="namespace_simulator.html" class="m-doc">Simulator</a> game data classes in the game files.</dd>
             <dt>
+              <span class="m-doc-wrap-bumper">enum class <a href="#a9635a972489703015834387c78f8d016" class="m-doc">SpaceContext</a>: int { </span><span class="m-doc-wrap"><a href="#a9635a972489703015834387c78f8d016a6adf97f83acf6453d4a6a4b1070f3754" class="m-doc">None</a> = -1,
+              <a href="#a9635a972489703015834387c78f8d016a9ffc5da794071c4508a5bc2fe0422e46" class="m-doc">Planet</a> = 0,
+              <a href="#a9635a972489703015834387c78f8d016ac4eac4c88921a6c7c14f4b5bcd464889" class="m-doc">SolarSystem</a> = 1,
+              <a href="#a9635a972489703015834387c78f8d016a756fb2b980ffa9a26e5290293efba3aa" class="m-doc">Galaxy</a> = 2 }</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
               <span class="m-doc-wrap-bumper">enum class <a href="#a99e847b63394f8daa87d1a67318e7453" class="m-doc">TechLevel</a>: int { </span><span class="m-doc-wrap"><a href="#a99e847b63394f8daa87d1a67318e7453a6adf97f83acf6453d4a6a4b1070f3754" class="m-doc">None</a> = 0,
               <a href="#a99e847b63394f8daa87d1a67318e7453a35a88e03e6699907873597f5549e0b7a" class="m-doc">Creature</a> = 1,
               <a href="#a99e847b63394f8daa87d1a67318e7453affec4c2ee3a32c04e074fca3b29c5275" class="m-doc">Tribe</a> = 2,
@@ -1142,6 +1176,13 @@
               <a href="#ac97cf1223a774e6ec987032dbcfa6c33ab9a8503552f9f7e1e1bc4a0ba9902594" class="m-doc">Comet</a> = 2 }</span>
             </dt>
             <dd>Used by <a href="class_simulator_1_1c_celestial_body.html" class="m-doc">Simulator::<wbr />cCelestialBody</a>.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">enum class <a href="#a3e0de1170096e1e818aa72b20caabc69" class="m-doc">MoonPerihelionType</a>: int { </span><span class="m-doc-wrap"><a href="#a3e0de1170096e1e818aa72b20caabc69a1050d3ad6355f7b3eaa26d85c89978d2" class="m-doc">DifferenceWithParent</a> = 0,
+              <a href="#a3e0de1170096e1e818aa72b20caabc69a30269022e9d8f51beaabb52e5d0de2b7" class="m-doc">Parent</a> = 1,
+              <a href="#a3e0de1170096e1e818aa72b20caabc69a8e79ac1208d759a9d8777bd2545c53f7" class="m-doc">SumWithParent</a> = 2,
+              <a href="#a3e0de1170096e1e818aa72b20caabc69a41d1b8a85e0c9fde901473fc2a49e7c4" class="m-doc">RelativeToParent</a> = 3 }</span>
+            </dt>
+            <dd>Used by function <a href="class_simulator_1_1c_planet_record.html#aee7e926a67700bea470da20f3c341ce6" class="m-doc">cPlanetRecord::<wbr />GetPerihelion()</a></dd>
             <dt>
               <span class="m-doc-wrap-bumper">enum class <a href="#adc3fd8b9df00a85ef9ed3b87af9c8bac" class="m-doc">cCommEventType</a>: int { </span><span class="m-doc-wrap"><a href="#adc3fd8b9df00a85ef9ed3b87af9c8baca6adf97f83acf6453d4a6a4b1070f3754" class="m-doc">None</a> = -1,
               <a href="#adc3fd8b9df00a85ef9ed3b87af9c8bacad511f8439ecde36647437fbba67a4394" class="m-doc">Space</a> = 0,
@@ -1477,6 +1518,27 @@
             </dt>
             <dd>Types of names that can be generated with <a href="class_simulator_1_1c_space_names.html" class="m-doc">cSpaceNames</a>.</dd>
             <dt>
+              <span class="m-doc-wrap-bumper">enum class <a href="#ade0fd61b6799d6d944da3f19beb31915" class="m-doc">SpaceGfxObjectType</a>: int { </span><span class="m-doc-wrap"><a href="#ade0fd61b6799d6d944da3f19beb31915a9ffc5da794071c4508a5bc2fe0422e46" class="m-doc">Planet</a> = 0,
+              <a href="#ade0fd61b6799d6d944da3f19beb31915ad502a50ed945d5fca74e0105575b5b34" class="m-doc">Moon</a> = 1,
+              <a href="#ade0fd61b6799d6d944da3f19beb31915a3e07f09b9e68132787658c84fccb75fc" class="m-doc">GasGiant</a> = 2,
+              <a href="#ade0fd61b6799d6d944da3f19beb31915a26f93e6e68e28a698377e941cb59f29a" class="m-doc">Star</a> = 3 }</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">enum class <a href="#a3c485e2c140d140bfdc053e52b6bc4b8" class="m-doc">PlanetTemperatureType</a>: int { </span><span class="m-doc-wrap"><a href="#a3c485e2c140d140bfdc053e52b6bc4b8a960b44c579bc2f6818d2daaf9e4c16f0" class="m-doc">Normal</a> = 1,
+              <a href="#a3c485e2c140d140bfdc053e52b6bc4b8a665123a09635d11f8670e52576707f8b" class="m-doc">VeryCold</a> = 2,
+              <a href="#a3c485e2c140d140bfdc053e52b6bc4b8a1a3c2e99e572ec71d3820d0363d90742" class="m-doc">Cold</a> = 3,
+              <a href="#a3c485e2c140d140bfdc053e52b6bc4b8a3a550197ea579b28bcc779871a94e240" class="m-doc">VeryHot</a> = 4,
+              <a href="#a3c485e2c140d140bfdc053e52b6bc4b8a4194726ee334e1085d93e002837b73f0" class="m-doc">Hot</a> = 5 }</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">enum class <a href="#ac33dcd19ab50a86a36be33b20efdaaf9" class="m-doc">SolarSystemOrbitTemperature</a> { </span><span class="m-doc-wrap"><a href="#ac33dcd19ab50a86a36be33b20efdaaf9a4194726ee334e1085d93e002837b73f0" class="m-doc">Hot</a> = 0,
+              <a href="#ac33dcd19ab50a86a36be33b20efdaaf9a960b44c579bc2f6818d2daaf9e4c16f0" class="m-doc">Normal</a> = 1,
+              <a href="#ac33dcd19ab50a86a36be33b20efdaaf9a1a3c2e99e572ec71d3820d0363d90742" class="m-doc">Cold</a> = 2 }</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
               <span class="m-doc-wrap-bumper">enum <a href="#a4b1f459203b8dbf8583312aa067c8c54" class="m-doc">SimulatorMessages</a> { </span><span class="m-doc-wrap"><a href="#a4b1f459203b8dbf8583312aa067c8c54afaa877c01fe00a1dad6f0eb4a78ba75f" class="m-doc">kMsgEnterEditor</a> = 0x53850BAE,
               <a href="#a4b1f459203b8dbf8583312aa067c8c54a5edeab9362d5e625c62466364e194af0" class="m-doc">kMsgSwitchGameMode</a> = 0x0212D3E7,
               <a href="#a4b1f459203b8dbf8583312aa067c8c54ae09650fb53b169697e5b7e2aea8296d5" class="m-doc">kMsgSaveGame</a> = 0x1CD20F0,
@@ -1515,13 +1577,6 @@
               <a href="#a47f6e1218df34ba12db8ee6946791524a6288740a1cd0de37312619df3b6ddcf3" class="m-doc">Gameplay</a> = 0x4BF38A7,
               <a href="#a47f6e1218df34ba12db8ee6946791524a1699ca13f05b84ceb986f896f81b03b0" class="m-doc">UIToggle</a> = 0x4BF38A4,
               <a href="#a47f6e1218df34ba12db8ee6946791524aeabe3db9a9d8e5a9f7417e371e96d298" class="m-doc">ModalDialog</a> = 0x4BF38A9 }</span>
-            </dt>
-            <dd><span></span></dd>
-            <dt>
-              <span class="m-doc-wrap-bumper">enum <a href="#a3e7ff8b0741f9ad7a7a142faea410106" class="m-doc">SpaceContext</a> { </span><span class="m-doc-wrap"><a href="#a3e7ff8b0741f9ad7a7a142faea410106a7a0668be3ddeff3d78cffca8515bb67a" class="m-doc">kSpaceContextNone</a> = -1,
-              <a href="#a3e7ff8b0741f9ad7a7a142faea410106a9857c961b7740cd1353450f398189313" class="m-doc">kSpaceContextPlanet</a> = 0,
-              <a href="#a3e7ff8b0741f9ad7a7a142faea410106a0a7f7c87a2682203d749f12dcc5f8c14" class="m-doc">kSpaceContextSolarSystem</a> = 1,
-              <a href="#a3e7ff8b0741f9ad7a7a142faea410106af5871bc88649819b5a3a75317cb8afef" class="m-doc">kSpaceContextGalaxy</a> = 2 }</span>
             </dt>
             <dd><span></span></dd>
           </dl>
@@ -1639,6 +1694,10 @@
             <dt>
               <span class="m-doc-wrap-bumper"><a href="#a06d99116418d7ab21bc36f1ea6853edc" class="m-doc">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_badge_manager.html" class="m-doc">cBadgeManager</a>,
               0xC0)</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a8e69da82bd266475264449df81614afa" class="m-doc">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_badge_manager.html" class="m-doc">cBadgeManager</a>) -&gt; namespace</span>
             </dt>
             <dd><span></span></dd>
             <dt>
@@ -2125,6 +2184,16 @@
             </dt>
             <dd><span></span></dd>
             <dt>
+              <span class="m-doc-wrap-bumper"><a href="#a49dd215e91fc6bea845ac5b0000a479d" class="m-doc">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_spatial_object.html" class="m-doc">cSpatialObject</a>,
+              0xD4)</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper"><a href="#a0933d8501e85a4c2a9222dd621dabedf" class="m-doc">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_spatial_object_view.html" class="m-doc">cSpatialObjectView</a>,
+              0x34)</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
               <span class="m-doc-wrap-bumper">auto <a href="#a4555000c2ecc163338465a78d65d7c38" class="m-doc">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_star.html" class="m-doc">cStar</a>) -&gt; namespace</span>
             </dt>
             <dd><span></span></dd>
@@ -2207,6 +2276,16 @@
             </dt>
             <dd><span></span></dd>
             <dt>
+              <span class="m-doc-wrap-bumper"><a href="#a70c4558da2b98020e46619eb7029cf13" class="m-doc">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_planet_gfx.html" class="m-doc">cPlanetGfx</a>,
+              0x68)</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper"><a href="#ae0a346f66b00ea78752cfd54b7443a51" class="m-doc">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1_i_game_data_view.html" class="m-doc">IGameDataView</a>,
+              0xC)</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
               <span class="m-doc-wrap-bumper">void <a href="#a000f8f077944a8434abc22234555af13" class="m-doc">RegisterNounType</a>(</span><span class="m-doc-wrap">uint32_t nounID,
               uint32_t typeID,
               const char* name)</span>
@@ -2228,6 +2307,53 @@
             <dd><span></span></dd>
             <dt>
               <span class="m-doc-wrap-bumper">auto <a href="#a060d77c272ec11b9bcb8329397b8e1b0" class="m-doc">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1_xml_serializer.html" class="m-doc">XmlSerializer</a>) -&gt; namespace</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">void <a href="#a5d1f8f56b83079f72a7f4f811a4cc77b" class="m-doc">GetBinarySystemStarTypes</a>(</span><span class="m-doc-wrap"><a href="namespace_simulator.html#abe57cfb0b8f7d0b95e69aec0cbc46497" class="m-doc">StarType</a> binaryType,
+              <a href="namespace_simulator.html#abe57cfb0b8f7d0b95e69aec0cbc46497" class="m-doc">StarType</a>&amp; star1,
+              <a href="namespace_simulator.html#abe57cfb0b8f7d0b95e69aec0cbc46497" class="m-doc">StarType</a>&amp; star2)</span>
+            </dt>
+            <dd>Used to obtain the individual star types of each of the two stars in a binary system.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#ade3618b3d5db08d455efbce707e6939a" class="m-doc">GetBinarySystemBaseRadius</a>(</span><span class="m-doc-wrap"><a href="namespace_simulator.html#abe57cfb0b8f7d0b95e69aec0cbc46497" class="m-doc">StarType</a> binaryType) -&gt; float</span>
+            </dt>
+            <dd>Returns the radius that is used as a base for calculating planet orbits in a binary-star system.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#acd64250fa7daff27f7737f0c228c26d2" class="m-doc">GetSolarStarTemperature</a>(</span><span class="m-doc-wrap"><a href="namespace_simulator.html#abe57cfb0b8f7d0b95e69aec0cbc46497" class="m-doc">StarType</a> starType) -&gt; float</span>
+            </dt>
+            <dd>Returns the solar temperature for a given star type.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#ab1219e03e664a2b7487f04a8e9a68a8d" class="m-doc">GetSolarStarMass</a>(</span><span class="m-doc-wrap"><a href="namespace_simulator.html#abe57cfb0b8f7d0b95e69aec0cbc46497" class="m-doc">StarType</a> starType) -&gt; float</span>
+            </dt>
+            <dd>Returns the stellar mass for a given star type, in solar mass units (1.0 is the mass of the Sun, 2.0 is twice as massive as the Sun, etc).</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a4a2e9bca8b83abf4a2052a9475ff593e" class="m-doc">GetSolarStarRadius</a>(</span><span class="m-doc-wrap"><a href="namespace_simulator.html#abe57cfb0b8f7d0b95e69aec0cbc46497" class="m-doc">StarType</a> starType) -&gt; float</span>
+            </dt>
+            <dd>Returns the radius for a given star type.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a805bbb9396818ee7f664d4e69f030862" class="m-doc">GetSolarStarRotationRate</a>(</span><span class="m-doc-wrap"><a href="namespace_simulator.html#abe57cfb0b8f7d0b95e69aec0cbc46497" class="m-doc">StarType</a> starType) -&gt; float</span>
+            </dt>
+            <dd>Returns the rotation rate for a given star type, only used for individual stars.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#ae02df9fa4e6b9ffc7d9f16c80e00953b" class="m-doc">GetSolarStarOrbitRadius</a>(</span><span class="m-doc-wrap"><a href="namespace_simulator.html#abe57cfb0b8f7d0b95e69aec0cbc46497" class="m-doc">StarType</a> starType,
+              <a href="namespace_simulator.html#ac33dcd19ab50a86a36be33b20efdaaf9" class="m-doc">SolarSystemOrbitTemperature</a> orbitTemperature) -&gt; float</span>
+            </dt>
+            <dd>Returns the distance from the center of the solar system for cold, normal and hot orbits.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#ae644ca1e76315fa6f69ebfd674526bf6" class="m-doc">GetPlanetTemperatureType</a>(</span><span class="m-doc-wrap">float temperatureScore) -&gt; <a href="namespace_simulator.html#a3c485e2c140d140bfdc053e52b6bc4b8" class="m-doc">PlanetTemperatureType</a></span>
+            </dt>
+            <dd>Returns the type of temperature (very cold, cold, normal, hot, very hot) of a planet.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#ad74094e2532c54ae43f34245c36ca9d1" class="m-doc">IsBinaryStar</a>(</span><span class="m-doc-wrap"><a href="namespace_simulator.html#abe57cfb0b8f7d0b95e69aec0cbc46497" class="m-doc">StarType</a> starType) -&gt; bool</span>
+            </dt>
+            <dd>Returns true if the given star type is a binary star, false otherwise.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a2811988af4ce154cd2bcd36d3504d765" class="m-doc">IsNotStarOrBinaryStar</a>(</span><span class="m-doc-wrap"><a href="namespace_simulator.html#abe57cfb0b8f7d0b95e69aec0cbc46497" class="m-doc">StarType</a> starType) -&gt; bool</span>
+            </dt>
+            <dd>Returns true if the given star is not a single star or binary star system, false otherwise.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a377d6ec79fa21c7232ecfc418bec69b5" class="m-doc">GetPrecalculatedSolarStarRadius</a>(</span><span class="m-doc-wrap">) -&gt; float*</span>
             </dt>
             <dd><span></span></dd>
             <dt>
@@ -2378,6 +2504,15 @@
             </dt>
             <dd><span></span></dd>
             <dt>
+              <span class="m-doc-wrap-bumper"><a href="#ab9fcf469c3c9b552dfd73abcd247f97c" class="m-doc">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_space_gfx.html" class="m-doc">cSpaceGfx</a>,
+              0x140)</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a713dcea4d4d4d4fb85a4c870e7d6e575" class="m-doc">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_space_gfx.html" class="m-doc">cSpaceGfx</a>) -&gt; namespace</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
               <span class="m-doc-wrap-bumper">auto <a href="#abd5fc48eb6e7f03899470276754be9aa" class="m-doc">GetActiveStar</a>(</span><span class="m-doc-wrap">) -&gt; <a href="class_simulator_1_1c_star.html" class="m-doc">cStar</a>*</span>
             </dt>
             <dd><span></span></dd>
@@ -2402,7 +2537,7 @@
             </dt>
             <dd><span></span></dd>
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#acfc96e842bfc03440d610d32c1178816" class="m-doc">GetCurrentContext</a>(</span><span class="m-doc-wrap">) -&gt; <a href="namespace_simulator.html#a3e7ff8b0741f9ad7a7a142faea410106" class="m-doc">SpaceContext</a></span>
+              <span class="m-doc-wrap-bumper">auto <a href="#acfc96e842bfc03440d610d32c1178816" class="m-doc">GetCurrentContext</a>(</span><span class="m-doc-wrap">) -&gt; <a href="namespace_simulator.html#a9635a972489703015834387c78f8d016" class="m-doc">SpaceContext</a></span>
             </dt>
             <dd><span></span></dd>
             <dt>
@@ -2492,6 +2627,20 @@
             </h3>
             <p><span></span></p>
           </div></section>
+          <section class="m-doc-details" id="ada179a897c6b00b12e5234f46de301f6"><div>
+            <h3>
+              enum Simulator::<wbr /><a href="#ada179a897c6b00b12e5234f46de301f6" class="m-doc-self">PlanetFlags</a>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="c_planet_record_8h.html">&lt;Spore/Simulator/cPlanetRecord.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="a64ba5e5b1e86fc333f90fbbd7b7de7eb"><div>
+            <h3>
+              enum Simulator::<wbr /><a href="#a64ba5e5b1e86fc333f90fbbd7b7de7eb" class="m-doc-self">StarFlags</a>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="c_star_record_8h.html">&lt;Spore/Simulator/cStarRecord.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
           <section class="m-doc-details" id="a00da9a155f0dfa4b01c8c5a297b0191e"><div>
             <h3>
               enum Simulator::<wbr /><a href="#a00da9a155f0dfa4b01c8c5a297b0191e" class="m-doc-self">GameNounIDs</a>
@@ -2499,6 +2648,13 @@
             </h3>
             <p>All the noun IDs used to identify <a href="namespace_simulator.html" class="m-doc">Simulator</a> game data classes in the game files.</p>
 <p>These IDs can be passed to the <a href="class_simulator_1_1c_game_noun_manager.html" class="m-doc">cGameNounManager</a> to create instances of these classes, even if the class itself isn&#x27;t in the SDK yet.</p>
+          </div></section>
+          <section class="m-doc-details" id="a9635a972489703015834387c78f8d016"><div>
+            <h3>
+              enum class Simulator::<wbr /><a href="#a9635a972489703015834387c78f8d016" class="m-doc-self">SpaceContext</a>: int
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_simulator_enums_8h.html">&lt;Spore/Simulator/SimulatorEnums.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
           </div></section>
           <section class="m-doc-details" id="a99e847b63394f8daa87d1a67318e7453"><div>
             <h3>
@@ -2629,6 +2785,42 @@
                   <td><a href="#ac97cf1223a774e6ec987032dbcfa6c33ab9a8503552f9f7e1e1bc4a0ba9902594" class="m-doc-self" id="ac97cf1223a774e6ec987032dbcfa6c33ab9a8503552f9f7e1e1bc4a0ba9902594">Comet</a></td>
                   <td>
                   <p>Uses effect <code>0x3D6F8D8</code></p>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="a3e0de1170096e1e818aa72b20caabc69"><div>
+            <h3>
+              enum class Simulator::<wbr /><a href="#a3e0de1170096e1e818aa72b20caabc69" class="m-doc-self">MoonPerihelionType</a>: int
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_simulator_enums_8h.html">&lt;Spore/Simulator/SimulatorEnums.h&gt;</a></div>
+            </h3>
+            <p>Used by function <a href="class_simulator_1_1c_planet_record.html#aee7e926a67700bea470da20f3c341ce6" class="m-doc">cPlanetRecord::<wbr />GetPerihelion()</a></p>
+            <table class="m-table m-fullwidth m-flat m-doc">
+              <thead><tr><th style="width: 1%">Enumerators</th><th></th></tr></thead>
+              <tbody>
+                <tr>
+                  <td><a href="#a3e0de1170096e1e818aa72b20caabc69a1050d3ad6355f7b3eaa26d85c89978d2" class="m-doc-self" id="a3e0de1170096e1e818aa72b20caabc69a1050d3ad6355f7b3eaa26d85c89978d2">DifferenceWithParent</a></td>
+                  <td>
+                  <p>The returned value is the parent perihelion minus the moon perihelion.</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a3e0de1170096e1e818aa72b20caabc69a30269022e9d8f51beaabb52e5d0de2b7" class="m-doc-self" id="a3e0de1170096e1e818aa72b20caabc69a30269022e9d8f51beaabb52e5d0de2b7">Parent</a></td>
+                  <td>
+                  <p>The returned value is the parent perihelion.</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a3e0de1170096e1e818aa72b20caabc69a8e79ac1208d759a9d8777bd2545c53f7" class="m-doc-self" id="a3e0de1170096e1e818aa72b20caabc69a8e79ac1208d759a9d8777bd2545c53f7">SumWithParent</a></td>
+                  <td>
+                  <p>The returned value is the parent perihelion plus the moon perihelion.</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a3e0de1170096e1e818aa72b20caabc69a41d1b8a85e0c9fde901473fc2a49e7c4" class="m-doc-self" id="a3e0de1170096e1e818aa72b20caabc69a41d1b8a85e0c9fde901473fc2a49e7c4">RelativeToParent</a></td>
+                  <td>
+                  <p>The returned value is the moon perihelion within its orbit, so relative to the parent planet.</p>
                   </td>
                 </tr>
               </tbody>
@@ -3029,6 +3221,85 @@
             </h3>
             <p>Types of names that can be generated with <a href="class_simulator_1_1c_space_names.html" class="m-doc">cSpaceNames</a>.</p>
           </div></section>
+          <section class="m-doc-details" id="ade0fd61b6799d6d944da3f19beb31915"><div>
+            <h3>
+              enum class Simulator::<wbr /><a href="#ade0fd61b6799d6d944da3f19beb31915" class="m-doc-self">SpaceGfxObjectType</a>: int
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_simulator_enums_8h.html">&lt;Spore/Simulator/SimulatorEnums.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="a3c485e2c140d140bfdc053e52b6bc4b8"><div>
+            <h3>
+              enum class Simulator::<wbr /><a href="#a3c485e2c140d140bfdc053e52b6bc4b8" class="m-doc-self">PlanetTemperatureType</a>: int
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_simulator_enums_8h.html">&lt;Spore/Simulator/SimulatorEnums.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+            <table class="m-table m-fullwidth m-flat m-doc">
+              <thead><tr><th style="width: 1%">Enumerators</th><th></th></tr></thead>
+              <tbody>
+                <tr>
+                  <td><a href="#a3c485e2c140d140bfdc053e52b6bc4b8a960b44c579bc2f6818d2daaf9e4c16f0" class="m-doc-self" id="a3c485e2c140d140bfdc053e52b6bc4b8a960b44c579bc2f6818d2daaf9e4c16f0">Normal</a></td>
+                  <td>
+                  <p>Temperature score is between 0.4 and 0.6.</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a3c485e2c140d140bfdc053e52b6bc4b8a665123a09635d11f8670e52576707f8b" class="m-doc-self" id="a3c485e2c140d140bfdc053e52b6bc4b8a665123a09635d11f8670e52576707f8b">VeryCold</a></td>
+                  <td>
+                  <p>Temperature score is lower than 0.1.</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a3c485e2c140d140bfdc053e52b6bc4b8a1a3c2e99e572ec71d3820d0363d90742" class="m-doc-self" id="a3c485e2c140d140bfdc053e52b6bc4b8a1a3c2e99e572ec71d3820d0363d90742">Cold</a></td>
+                  <td>
+                  <p>Temperature score is between 0.1 and 0.4.</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a3c485e2c140d140bfdc053e52b6bc4b8a3a550197ea579b28bcc779871a94e240" class="m-doc-self" id="a3c485e2c140d140bfdc053e52b6bc4b8a3a550197ea579b28bcc779871a94e240">VeryHot</a></td>
+                  <td>
+                  <p>Temperature score is higher than 0.85.</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a3c485e2c140d140bfdc053e52b6bc4b8a4194726ee334e1085d93e002837b73f0" class="m-doc-self" id="a3c485e2c140d140bfdc053e52b6bc4b8a4194726ee334e1085d93e002837b73f0">Hot</a></td>
+                  <td>
+                  <p>Temperature score is between 0.6 and 0.85.</p>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="ac33dcd19ab50a86a36be33b20efdaaf9"><div>
+            <h3>
+              enum class Simulator::<wbr /><a href="#ac33dcd19ab50a86a36be33b20efdaaf9" class="m-doc-self">SolarSystemOrbitTemperature</a>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_simulator_enums_8h.html">&lt;Spore/Simulator/SimulatorEnums.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+            <table class="m-table m-fullwidth m-flat m-doc">
+              <thead><tr><th style="width: 1%">Enumerators</th><th></th></tr></thead>
+              <tbody>
+                <tr>
+                  <td><a href="#ac33dcd19ab50a86a36be33b20efdaaf9a4194726ee334e1085d93e002837b73f0" class="m-doc-self" id="ac33dcd19ab50a86a36be33b20efdaaf9a4194726ee334e1085d93e002837b73f0">Hot</a></td>
+                  <td>
+                  <p>Hot orbit, close to the sun.</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#ac33dcd19ab50a86a36be33b20efdaaf9a960b44c579bc2f6818d2daaf9e4c16f0" class="m-doc-self" id="ac33dcd19ab50a86a36be33b20efdaaf9a960b44c579bc2f6818d2daaf9e4c16f0">Normal</a></td>
+                  <td>
+                  <p>Normal orbit, neither too close nor too far to the sun.</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#ac33dcd19ab50a86a36be33b20efdaaf9a1a3c2e99e572ec71d3820d0363d90742" class="m-doc-self" id="ac33dcd19ab50a86a36be33b20efdaaf9a1a3c2e99e572ec71d3820d0363d90742">Cold</a></td>
+                  <td>
+                  <p>Cold orbit, far from the sun.</p>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div></section>
           <section class="m-doc-details" id="a4b1f459203b8dbf8583312aa067c8c54"><div>
             <h3>
               enum Simulator::<wbr /><a href="#a4b1f459203b8dbf8583312aa067c8c54" class="m-doc-self">SimulatorMessages</a>
@@ -3262,13 +3533,6 @@
                 </tr>
               </tbody>
             </table>
-          </div></section>
-          <section class="m-doc-details" id="a3e7ff8b0741f9ad7a7a142faea410106"><div>
-            <h3>
-              enum Simulator::<wbr /><a href="#a3e7ff8b0741f9ad7a7a142faea410106" class="m-doc-self">SpaceContext</a>
-              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_space_player_data_8h.html">&lt;Spore/Simulator/SubSystem/SpacePlayerData.h&gt;</a></div>
-            </h3>
-            <p><span></span></p>
           </div></section>
         </section>
         <section>
@@ -3544,6 +3808,13 @@
             <h3>
               <span class="m-doc-wrap-bumper"> Simulator::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a06d99116418d7ab21bc36f1ea6853edc" class="m-doc-self">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_badge_manager.html" class="m-doc">cBadgeManager</a>,
               0xC0)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="c_badge_manager_8h.html">&lt;Spore/Simulator/cBadgeManager.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="a8e69da82bd266475264449df81614afa"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">namespace Simulator::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a8e69da82bd266475264449df81614afa" class="m-doc-self">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_badge_manager.html" class="m-doc">cBadgeManager</a>)</span></span>
               <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="c_badge_manager_8h.html">&lt;Spore/Simulator/cBadgeManager.h&gt;</a></div>
             </h3>
             <p><span></span></p>
@@ -4367,6 +4638,22 @@
             </h3>
             <p><span></span></p>
           </div></section>
+          <section class="m-doc-details" id="a49dd215e91fc6bea845ac5b0000a479d"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"> Simulator::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a49dd215e91fc6bea845ac5b0000a479d" class="m-doc-self">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_spatial_object.html" class="m-doc">cSpatialObject</a>,
+              0xD4)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="c_spatial_object_8h.html">&lt;Spore/Simulator/cSpatialObject.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="a0933d8501e85a4c2a9222dd621dabedf"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"> Simulator::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a0933d8501e85a4c2a9222dd621dabedf" class="m-doc-self">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_spatial_object_view.html" class="m-doc">cSpatialObjectView</a>,
+              0x34)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="c_spatial_object_8h.html">&lt;Spore/Simulator/cSpatialObject.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
           <section class="m-doc-details" id="a4555000c2ecc163338465a78d65d7c38"><div>
             <h3>
               <span class="m-doc-wrap-bumper">namespace Simulator::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a4555000c2ecc163338465a78d65d7c38" class="m-doc-self">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_star.html" class="m-doc">cStar</a>)</span></span>
@@ -4503,6 +4790,22 @@
             </h3>
             <p><span></span></p>
           </div></section>
+          <section class="m-doc-details" id="a70c4558da2b98020e46619eb7029cf13"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"> Simulator::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a70c4558da2b98020e46619eb7029cf13" class="m-doc-self">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_planet_gfx.html" class="m-doc">cPlanetGfx</a>,
+              0x68)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="c_visible_planet_8h.html">&lt;Spore/Simulator/cVisiblePlanet.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="ae0a346f66b00ea78752cfd54b7443a51"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"> Simulator::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ae0a346f66b00ea78752cfd54b7443a51" class="m-doc-self">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1_i_game_data_view.html" class="m-doc">IGameDataView</a>,
+              0xC)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_i_game_data_view_8h.html">&lt;Spore/Simulator/IGameDataView.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
           <section class="m-doc-details" id="a000f8f077944a8434abc22234555af13"><div>
             <h3>
               <span class="m-doc-wrap-bumper">void Simulator::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a000f8f077944a8434abc22234555af13" class="m-doc-self">RegisterNounType</a>(</span><span class="m-doc-wrap">uint32_t nounID,
@@ -4539,6 +4842,192 @@
             <h3>
               <span class="m-doc-wrap-bumper">namespace Simulator::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a060d77c272ec11b9bcb8329397b8e1b0" class="m-doc-self">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1_xml_serializer.html" class="m-doc">XmlSerializer</a>)</span></span>
               <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_simulator_2_serialization_8h.html">&lt;Spore/Simulator/Serialization.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="a5d1f8f56b83079f72a7f4f811a4cc77b"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">void Simulator::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a5d1f8f56b83079f72a7f4f811a4cc77b" class="m-doc-self">GetBinarySystemStarTypes</a>(</span><span class="m-doc-wrap"><a href="namespace_simulator.html#abe57cfb0b8f7d0b95e69aec0cbc46497" class="m-doc">StarType</a> binaryType,
+              <a href="namespace_simulator.html#abe57cfb0b8f7d0b95e69aec0cbc46497" class="m-doc">StarType</a>&amp; star1,
+              <a href="namespace_simulator.html#abe57cfb0b8f7d0b95e69aec0cbc46497" class="m-doc">StarType</a>&amp; star2)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_space_constants_8h.html">&lt;Spore/Simulator/SpaceConstants.h&gt;</a></div>
+            </h3>
+            <p>Used to obtain the individual star types of each of the two stars in a binary system.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">binaryType</td>
+                  <td>Type of the system, which should be a binary system.</td>
+                </tr>
+                <tr>
+                  <td>star1&nbsp;<span class="m-label m-flat m-warning">out</span></td>
+                  <td>Type of the first star.</td>
+                </tr>
+                <tr>
+                  <td>star2&nbsp;<span class="m-label m-flat m-warning">out</span></td>
+                  <td>Type of the second star.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="ade3618b3d5db08d455efbce707e6939a"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">float Simulator::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ade3618b3d5db08d455efbce707e6939a" class="m-doc-self">GetBinarySystemBaseRadius</a>(</span><span class="m-doc-wrap"><a href="namespace_simulator.html#abe57cfb0b8f7d0b95e69aec0cbc46497" class="m-doc">StarType</a> binaryType)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_space_constants_8h.html">&lt;Spore/Simulator/SpaceConstants.h&gt;</a></div>
+            </h3>
+            <p>Returns the radius that is used as a base for calculating planet orbits in a binary-star system.</p>
+<p>It calculates it by predicting how the two stars should orbit around one another, depending on their mass and radius calculated using <a href="namespace_simulator.html#a4a2e9bca8b83abf4a2052a9475ff593e" class="m-doc">GetSolarStarRadius()</a> and <a href="namespace_simulator.html#ab1219e03e664a2b7487f04a8e9a68a8d" class="m-doc">GetSolarStarMass()</a></p>
+          </div></section>
+          <section class="m-doc-details" id="acd64250fa7daff27f7737f0c228c26d2"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">float Simulator::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#acd64250fa7daff27f7737f0c228c26d2" class="m-doc-self">GetSolarStarTemperature</a>(</span><span class="m-doc-wrap"><a href="namespace_simulator.html#abe57cfb0b8f7d0b95e69aec0cbc46497" class="m-doc">StarType</a> starType)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_space_constants_8h.html">&lt;Spore/Simulator/SpaceConstants.h&gt;</a></div>
+            </h3>
+            <p>Returns the solar temperature for a given star type.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">starType</td>
+                  <td></td>
+                </tr>
+              </tbody>
+            </table>
+<ul><li>For star types that are not stars (e.g. black holes, planetary disks, etc) it returns 1.</li><li>For binary systems, it is the sum of the temperature of each of the stars.</li><li>For red, yellow and blue stars, it returns the <code>solarStarTemperature</code> property of their property list.</li></ul>
+          </div></section>
+          <section class="m-doc-details" id="ab1219e03e664a2b7487f04a8e9a68a8d"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">float Simulator::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ab1219e03e664a2b7487f04a8e9a68a8d" class="m-doc-self">GetSolarStarMass</a>(</span><span class="m-doc-wrap"><a href="namespace_simulator.html#abe57cfb0b8f7d0b95e69aec0cbc46497" class="m-doc">StarType</a> starType)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_space_constants_8h.html">&lt;Spore/Simulator/SpaceConstants.h&gt;</a></div>
+            </h3>
+            <p>Returns the stellar mass for a given star type, in solar mass units (1.0 is the mass of the Sun, 2.0 is twice as massive as the Sun, etc).</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">starType</td>
+                  <td></td>
+                </tr>
+              </tbody>
+            </table>
+<ul><li>For the galactic core, it returns 300.</li><li>For black holes and proto-planteray disks, it returns 100.</li><li>For binary systems, it is the sum of the stellar mass of each of the stars.</li><li>For red, yellow and blue stars, it returns the <code>solarStarMass</code> property of their property list.</li></ul>
+          </div></section>
+          <section class="m-doc-details" id="a4a2e9bca8b83abf4a2052a9475ff593e"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">float Simulator::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a4a2e9bca8b83abf4a2052a9475ff593e" class="m-doc-self">GetSolarStarRadius</a>(</span><span class="m-doc-wrap"><a href="namespace_simulator.html#abe57cfb0b8f7d0b95e69aec0cbc46497" class="m-doc">StarType</a> starType)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_space_constants_8h.html">&lt;Spore/Simulator/SpaceConstants.h&gt;</a></div>
+            </h3>
+            <p>Returns the radius for a given star type.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">starType</td>
+                  <td></td>
+                </tr>
+              </tbody>
+            </table>
+<ul><li>For black holes and the galactic core, it returns 100.</li><li>For proto-planteray disks, it returns 1.</li><li>For binary systems, it is the sum of the radius of each of the stars.</li><li>For red, yellow and blue stars, it returns the <code>solarStarRadius</code> property of their property list.</li></ul>
+          </div></section>
+          <section class="m-doc-details" id="a805bbb9396818ee7f664d4e69f030862"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">float Simulator::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a805bbb9396818ee7f664d4e69f030862" class="m-doc-self">GetSolarStarRotationRate</a>(</span><span class="m-doc-wrap"><a href="namespace_simulator.html#abe57cfb0b8f7d0b95e69aec0cbc46497" class="m-doc">StarType</a> starType)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_space_constants_8h.html">&lt;Spore/Simulator/SpaceConstants.h&gt;</a></div>
+            </h3>
+            <p>Returns the rotation rate for a given star type, only used for individual stars.</p>
+<p>The returned value is an angle in radius, probably the angular change per second. For red, yellow and blue stars it returns the <code>solarStarRotationRate</code> property of their property list (converted to radians, the property is in degrees), for all the rest it returns 0.1</p>
+          </div></section>
+          <section class="m-doc-details" id="ae02df9fa4e6b9ffc7d9f16c80e00953b"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">float Simulator::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ae02df9fa4e6b9ffc7d9f16c80e00953b" class="m-doc-self">GetSolarStarOrbitRadius</a>(</span><span class="m-doc-wrap"><a href="namespace_simulator.html#abe57cfb0b8f7d0b95e69aec0cbc46497" class="m-doc">StarType</a> starType,
+              <a href="namespace_simulator.html#ac33dcd19ab50a86a36be33b20efdaaf9" class="m-doc">SolarSystemOrbitTemperature</a> orbitTemperature)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_space_constants_8h.html">&lt;Spore/Simulator/SpaceConstants.h&gt;</a></div>
+            </h3>
+            <p>Returns the distance from the center of the solar system for cold, normal and hot orbits.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">starType</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>orbitTemperature</td>
+                  <td></td>
+                </tr>
+              </tbody>
+            </table>
+<p>First, a base radius is calculated, using <a href="namespace_simulator.html#ade3618b3d5db08d455efbce707e6939a" class="m-doc">GetBinarySystemBaseRadius()</a> and <a href="namespace_simulator.html#a4a2e9bca8b83abf4a2052a9475ff593e" class="m-doc">GetSolarStarRadius()</a>.</p><ul><li>Hot orbits are <code>baseRadius + 15</code></li><li>Normal orbits are <code>baseRadius * 85</code></li><li>Cold orbits are <code>baseRadius * 195</code></li></ul>
+          </div></section>
+          <section class="m-doc-details" id="ae644ca1e76315fa6f69ebfd674526bf6"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"><a href="namespace_simulator.html#a3c485e2c140d140bfdc053e52b6bc4b8" class="m-doc">PlanetTemperatureType</a> Simulator::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ae644ca1e76315fa6f69ebfd674526bf6" class="m-doc-self">GetPlanetTemperatureType</a>(</span><span class="m-doc-wrap">float temperatureScore)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_space_constants_8h.html">&lt;Spore/Simulator/SpaceConstants.h&gt;</a></div>
+            </h3>
+            <p>Returns the type of temperature (very cold, cold, normal, hot, very hot) of a planet.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">temperatureScore</td>
+                  <td>The temperature score of the planet, from 0.0 (cold) to 1.0 (hot).</td>
+                </tr>
+              </tbody>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="ad74094e2532c54ae43f34245c36ca9d1"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">bool Simulator::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ad74094e2532c54ae43f34245c36ca9d1" class="m-doc-self">IsBinaryStar</a>(</span><span class="m-doc-wrap"><a href="namespace_simulator.html#abe57cfb0b8f7d0b95e69aec0cbc46497" class="m-doc">StarType</a> starType)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_space_constants_8h.html">&lt;Spore/Simulator/SpaceConstants.h&gt;</a></div>
+            </h3>
+            <p>Returns true if the given star type is a binary star, false otherwise.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">starType</td>
+                  <td></td>
+                </tr>
+              </tbody>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="a2811988af4ce154cd2bcd36d3504d765"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">bool Simulator::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a2811988af4ce154cd2bcd36d3504d765" class="m-doc-self">IsNotStarOrBinaryStar</a>(</span><span class="m-doc-wrap"><a href="namespace_simulator.html#abe57cfb0b8f7d0b95e69aec0cbc46497" class="m-doc">StarType</a> starType)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_space_constants_8h.html">&lt;Spore/Simulator/SpaceConstants.h&gt;</a></div>
+            </h3>
+            <p>Returns true if the given star is not a single star or binary star system, false otherwise.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">starType</td>
+                  <td></td>
+                </tr>
+              </tbody>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="a377d6ec79fa21c7232ecfc418bec69b5"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">float* Simulator::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a377d6ec79fa21c7232ecfc418bec69b5" class="m-doc-self">GetPrecalculatedSolarStarRadius</a>(</span><span class="m-doc-wrap">)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_space_constants_8h.html">&lt;Spore/Simulator/SpaceConstants.h&gt;</a></div>
             </h3>
             <p><span></span></p>
           </div></section>
@@ -4801,6 +5290,21 @@
             </h3>
             <p><span></span></p>
           </div></section>
+          <section class="m-doc-details" id="ab9fcf469c3c9b552dfd73abcd247f97c"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"> Simulator::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ab9fcf469c3c9b552dfd73abcd247f97c" class="m-doc-self">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_space_gfx.html" class="m-doc">cSpaceGfx</a>,
+              0x140)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_space_gfx_8h.html">&lt;Spore/Simulator/SubSystem/SpaceGfx.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="a713dcea4d4d4d4fb85a4c870e7d6e575"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">namespace Simulator::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a713dcea4d4d4d4fb85a4c870e7d6e575" class="m-doc-self">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_space_gfx.html" class="m-doc">cSpaceGfx</a>)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_space_gfx_8h.html">&lt;Spore/Simulator/SubSystem/SpaceGfx.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
           <section class="m-doc-details" id="abd5fc48eb6e7f03899470276754be9aa"><div>
             <h3>
               <span class="m-doc-wrap-bumper"><a href="class_simulator_1_1c_star.html" class="m-doc">cStar</a>* Simulator::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#abd5fc48eb6e7f03899470276754be9aa" class="m-doc-self">GetActiveStar</a>(</span><span class="m-doc-wrap">)</span></span>
@@ -4845,7 +5349,7 @@
           </div></section>
           <section class="m-doc-details" id="acfc96e842bfc03440d610d32c1178816"><div>
             <h3>
-              <span class="m-doc-wrap-bumper"><a href="namespace_simulator.html#a3e7ff8b0741f9ad7a7a142faea410106" class="m-doc">SpaceContext</a> Simulator::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#acfc96e842bfc03440d610d32c1178816" class="m-doc-self">GetCurrentContext</a>(</span><span class="m-doc-wrap">)</span></span>
+              <span class="m-doc-wrap-bumper"><a href="namespace_simulator.html#a9635a972489703015834387c78f8d016" class="m-doc">SpaceContext</a> Simulator::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#acfc96e842bfc03440d610d32c1178816" class="m-doc-self">GetCurrentContext</a>(</span><span class="m-doc-wrap">)</span></span>
               <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_space_player_data_8h.html">&lt;Spore/Simulator/SubSystem/SpacePlayerData.h&gt;</a></div>
             </h3>
             <p><span></span></p>

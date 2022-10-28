@@ -47,7 +47,7 @@
         <h1>
           Terrain <span class="m-thin">namespace</span>
         </h1>
-        <p><span></span></p>
+        <p>Everything related with the planet terrain system.</p>
         <div class="m-block m-default">
           <h3>Contents</h3>
           <ul>
@@ -62,6 +62,7 @@
             </li>
           </ul>
         </div>
+<p>Planets in Spore are spheres, but geometrically they are actually cubes, with the faces deformed outwards to look like a sphere. The main terrain class for a planet is <a href="class_terrain_1_1c_terrain_sphere.html" class="m-doc">Terrain::<wbr />cTerrainSphere</a>, which is composed of 6 <a href="class_terrain_1_1c_terrain_sphere_quad.html" class="m-doc">Terrain::<wbr />cTerrainSphereQuad</a> faces.</p>
         <section id="namespaces">
           <h2><a href="#namespaces">Namespaces</a></h2>
           <dl class="m-doc">
@@ -89,7 +90,19 @@
             </dt>
             <dd><span></span></dd>
             <dt>
+              class <a href="class_terrain_1_1c_terrain_shader_mgr.html" class="m-doc">cTerrainShaderMgr</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              class <a href="class_terrain_1_1c_terrain_sphere.html" class="m-doc">cTerrainSphere</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
               class <a href="class_terrain_1_1c_terrain_sphere_quad.html" class="m-doc">cTerrainSphereQuad</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              struct <a href="struct_terrain_1_1c_terrain_sphere_rendering_chunk.html" class="m-doc">cTerrainSphereRenderingChunk</a>
             </dt>
             <dd><span></span></dd>
             <dt>
@@ -151,6 +164,20 @@
               <a href="#aac84cdc40d8fe17a0b036974639dd5f8ae94510412cd258a3bee5330cb35340ad" class="m-doc">FilteredMap</a> = 10 }</span>
             </dt>
             <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">enum class <a href="#add21c184ae1ef9ab03185dbcbc8400b2" class="m-doc">TerrainMaterialIndex</a>: int { </span><span class="m-doc-wrap"><a href="#add21c184ae1ef9ab03185dbcbc8400b2a56ab83bdb44fe672a3c6219bdf4d98d1" class="m-doc">TerrainAbove</a> = 0,
+              <a href="#add21c184ae1ef9ab03185dbcbc8400b2a83572dea62b4d879c739c8776be5e417" class="m-doc">TerrainBelow</a> = 1,
+              <a href="#add21c184ae1ef9ab03185dbcbc8400b2a52b509a8e6fc2c67fb4285d0d3642874" class="m-doc">TerrainWater</a> = 2,
+              <a href="#add21c184ae1ef9ab03185dbcbc8400b2acd913e66d227ce29c69200b3eb161de4" class="m-doc">TerrainLava</a> = 3,
+              <a href="#add21c184ae1ef9ab03185dbcbc8400b2ab34c763536bb7c2b69cc73a4fb8c6577" class="m-doc">TerrainIce</a> = 4,
+              <a href="#add21c184ae1ef9ab03185dbcbc8400b2a9dcf6ccb6613bd7538f8509a4793f95b" class="m-doc">TerrainAtmosphere</a> = 5,
+              <a href="#add21c184ae1ef9ab03185dbcbc8400b2a4de7bd2eb6e8aa3c1b440266d1419b88" class="m-doc">TerrainDecal</a> = 6,
+              <a href="#add21c184ae1ef9ab03185dbcbc8400b2aa9a3b27c764642c8ee87fd2101e85fb0" class="m-doc">TerrainWaterDecal</a> = 7,
+              <a href="#add21c184ae1ef9ab03185dbcbc8400b2a25dcede4d2820380207b32db41e36d17" class="m-doc">TerrainAndWaterDecal</a> = 8,
+              <a href="#add21c184ae1ef9ab03185dbcbc8400b2aa97071608aa46d7f75f585d698c78629" class="m-doc">TerrainDecalEmissive</a> = 9,
+              <a href="#add21c184ae1ef9ab03185dbcbc8400b2ab6c8e71872f128a37734c3f1d022fca2" class="m-doc">TerrainDebug</a> = 10 }</span>
+            </dt>
+            <dd><span></span></dd>
           </dl>
         </section>
         <section id="func-members">
@@ -158,6 +185,43 @@
           <dl class="m-doc">
             <dt>
               <span class="m-doc-wrap-bumper">auto <a href="#ab0397d361e284549592c5665a220d9e4" class="m-doc">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_terrain_1_1c_terrain_map_set.html" class="m-doc">cTerrainMapSet</a>) -&gt; namespace</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper"><a href="#a7f393290897240a5d113945e8b47fb75" class="m-doc">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_terrain_1_1c_terrain_shader_mgr.html" class="m-doc">cTerrainShaderMgr</a>,
+              0x9C)</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#ab77250828507e480fc018a383cb7a779" class="m-doc">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_terrain_1_1c_terrain_shader_mgr.html" class="m-doc">cTerrainShaderMgr</a>) -&gt; namespace</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper"><a href="#adac591ef05972f2925a15722ee8244bc" class="m-doc">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="struct_terrain_1_1c_terrain_sphere_rendering_chunk.html" class="m-doc">cTerrainSphereRenderingChunk</a>,
+              0x10)</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper"><a href="#aaacf6aecdfc309db648fec013c6eecf7" class="m-doc">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_terrain_1_1c_terrain_sphere.html" class="m-doc">cTerrainSphere</a>,
+              0xA50)</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a60f46a0f6bbd0a379171161c43c5c653" class="m-doc">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_terrain_1_1c_terrain_sphere.html" class="m-doc">cTerrainSphere</a>) -&gt; namespace</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper"><a href="#af1cc9fcc93a48ba0df6edeaed7949228" class="m-doc">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="struct_terrain_1_1_terrain_transform.html" class="m-doc">TerrainTransform</a>,
+              0xB0)</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper"><a href="#ac4ab8c97fd087d21331b0ed46b38ff0b" class="m-doc">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_terrain_1_1c_terrain_sphere_quad.html" class="m-doc">cTerrainSphereQuad</a>,
+              0x1B8)</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a38ef62b9bc11246800ca24c1ed69d431" class="m-doc">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_terrain_1_1c_terrain_sphere_quad.html" class="m-doc">cTerrainSphereQuad</a>) -&gt; namespace</span>
             </dt>
             <dd><span></span></dd>
             <dt>
@@ -171,7 +235,134 @@
             </dt>
             <dd><span></span></dd>
             <dt>
+              <span class="m-doc-wrap-bumper"><a href="#a09a0991faf203bfa9f5eb026ff8b76b3" class="m-doc">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_terrain_1_1_i_terrain_resource_manager.html" class="m-doc">ITerrainResourceManager</a>,
+              0x68)</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
               <span class="m-doc-wrap-bumper">auto <a href="#a3c7b91e2773ac876bd6ecf4f26c58873" class="m-doc">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_terrain_1_1_i_terrain_resource_manager.html" class="m-doc">ITerrainResourceManager</a>) -&gt; namespace</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a9b58f55150c11e86be13dd4706ab5c49" class="m-doc">GetActiveMaterialIndex</a>(</span><span class="m-doc-wrap">) -&gt; <a href="namespace_terrain.html#add21c184ae1ef9ab03185dbcbc8400b2" class="m-doc">TerrainMaterialIndex</a></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">void <a href="#a33f97dd28e7d5efd091e390a86d67894" class="m-doc">SetActiveMaterialIndex</a>(</span><span class="m-doc-wrap"><a href="namespace_terrain.html#add21c184ae1ef9ab03185dbcbc8400b2" class="m-doc">TerrainMaterialIndex</a> material)</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a04ccb579788ea1ff5fc39c63a90c0f03" class="m-doc">GetActiveQuadIndex</a>(</span><span class="m-doc-wrap">) -&gt; int</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">void <a href="#a0048ab974557a4677459c69365ccf1a9" class="m-doc">SetActiveQuadIndex</a>(</span><span class="m-doc-wrap">int index)</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a62905215ab81a3286134500a836e95a4" class="m-doc">IsActiveQuadMaterial</a>(</span><span class="m-doc-wrap"><a href="namespace_terrain.html#add21c184ae1ef9ab03185dbcbc8400b2" class="m-doc">TerrainMaterialIndex</a> material,
+              int quadIndex) -&gt; bool</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">void <a href="#ae3dcc9ca8b84a5ce4a194da4062ae161" class="m-doc">SetActiveQuadMaterial</a>(</span><span class="m-doc-wrap"><a href="namespace_terrain.html#add21c184ae1ef9ab03185dbcbc8400b2" class="m-doc">TerrainMaterialIndex</a> material,
+              int quadIndex)</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a0b6046c743106461f55addc4a5864afc" class="m-doc">GetAtmosphereIndexBuffer</a>(</span><span class="m-doc-wrap">) -&gt; <a href="struct_render_ware_1_1_index_buffer.html" class="m-doc">RenderWare::<wbr />IndexBuffer</a>*</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">void <a href="#a70b29c1d88859419cceed2a2b1ca8c3c" class="m-doc">CreateRefractionRTTs</a>(</span><span class="m-doc-wrap">)</span>
+            </dt>
+            <dd>Creates the &quot;TerrainRefractionBuffers&quot;, &quot;TerrainRefractionBlur1&quot; and &quot;TerrainRefractionBlur2&quot; render target textures, used for water refraction.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">void <a href="#a424d9a14a8c1a53100e4e70df8ffa550" class="m-doc">DisposeRefractionRTTs</a>(</span><span class="m-doc-wrap">)</span>
+            </dt>
+            <dd>Disposes the terrain refraction render target textures.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a0e3cf58d03659f583e81675f9347b068" class="m-doc">GetRefractionBuffersRenderTargetID</a>(</span><span class="m-doc-wrap">) -&gt; <a href="struct_graphics_1_1_render_target_i_d.html" class="m-doc">Graphics::<wbr />RenderTargetID</a>*</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#aeb0fdaf40b7350f9b7968180666a74b6" class="m-doc">GetRefractionBuffersRenderTargetTexture</a>(</span><span class="m-doc-wrap">) -&gt; <a href="class_graphics_1_1_texture.html" class="m-doc">Graphics::<wbr />Texture</a>*</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#aa7caf723eb3ca47ae1caae80827060cc" class="m-doc">GetRefractionBuffersRenderTarget</a>(</span><span class="m-doc-wrap">) -&gt; <a href="struct_render_ware_1_1_raster.html" class="m-doc">RenderWare::<wbr />Raster</a>*</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">void <a href="#adf2673f10d16331915ec0b672d4f87fa" class="m-doc">SetRefractionBuffersRenderTargetTexture</a>(</span><span class="m-doc-wrap"><a href="class_graphics_1_1_texture.html" class="m-doc">Graphics::<wbr />Texture</a>* texture)</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a0fd744d39af2cd04bfe8ca5e06bef315" class="m-doc">GetRefractionBlur1RenderTargetID</a>(</span><span class="m-doc-wrap">) -&gt; <a href="struct_graphics_1_1_render_target_i_d.html" class="m-doc">Graphics::<wbr />RenderTargetID</a>*</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#adf3bb739aba4b4f5b7352150b94093d5" class="m-doc">GetRefractionBlur2RenderTargetID</a>(</span><span class="m-doc-wrap">) -&gt; <a href="struct_graphics_1_1_render_target_i_d.html" class="m-doc">Graphics::<wbr />RenderTargetID</a>*</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a6d0d18c1f97e78b663d4d22523b3fdaa" class="m-doc">GetRefractionViewer</a>(</span><span class="m-doc-wrap">) -&gt; <a href="class_app_1_1c_viewer.html" class="m-doc">App::<wbr />cViewer</a>*</span>
+            </dt>
+            <dd>Returns the camera configuration used to render the water refraction textures.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">void <a href="#aa8e25d8d4876f6f393a16e6d3ffc5992" class="m-doc">CreateReflectionRTTs</a>(</span><span class="m-doc-wrap">)</span>
+            </dt>
+            <dd>Creates the render target texture used for water reflection.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">void <a href="#ad91f95f45b7d0d013b5c917465785992" class="m-doc">DisposeReflectionRTTs</a>(</span><span class="m-doc-wrap">)</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a9da5f2874629433463b180b79cc72f71" class="m-doc">GetReflectionTexture</a>(</span><span class="m-doc-wrap">) -&gt; <a href="_texture_8h.html#affea3369120131ed058702d2945a10b4" class="m-doc">TexturePtr</a>&amp;</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a0e140c97beaaff40663fd88f8eb47006" class="m-doc">GetReflectionViewer</a>(</span><span class="m-doc-wrap">) -&gt; <a href="class_app_1_1c_viewer.html" class="m-doc">App::<wbr />cViewer</a>*</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">void <a href="#a9f510ca37e1480aec2e0fbc9027049a5" class="m-doc">CreateScatterRTTs</a>(</span><span class="m-doc-wrap">)</span>
+            </dt>
+            <dd>Creates render targets for scatter texture.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#aec9cb163986feb124b36b9707463d7eb" class="m-doc">GetBakeInScatterTexture</a>(</span><span class="m-doc-wrap">) -&gt; <a href="_texture_8h.html#affea3369120131ed058702d2945a10b4" class="m-doc">TexturePtr</a>&amp;</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a18c71f4666e109b1e2084415b3d1bcb9" class="m-doc">GetScatterTexture</a>(</span><span class="m-doc-wrap">) -&gt; <a href="_texture_8h.html#affea3369120131ed058702d2945a10b4" class="m-doc">TexturePtr</a>&amp;</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a451ebc575866e83fc791182cc0f73883" class="m-doc">GetScatterViewer</a>(</span><span class="m-doc-wrap">) -&gt; <a href="class_app_1_1c_viewer.html" class="m-doc">App::<wbr />cViewer</a>*</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a6dc9b0b9f47ead900227dccd4f439cf3" class="m-doc">GetSimDataRenderTargetTextures</a>(</span><span class="m-doc-wrap">) -&gt; <a href="class_graphics_1_1_texture.html" class="m-doc">Graphics::<wbr />Texture</a>**</span>
+            </dt>
+            <dd>Returns an array of 6 render target textures used for &quot;SimData&quot;, which apparently controls planet color for each of the 6 terrain quads.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#af8987b0d15310db78ad1276ea137c29e" class="m-doc">GetSimDataRenderTargetIDs</a>(</span><span class="m-doc-wrap">) -&gt; <a href="struct_graphics_1_1_render_target_i_d.html" class="m-doc">Graphics::<wbr />RenderTargetID</a>*</span>
+            </dt>
+            <dd>Returns an array of 6 render target textures IDs used for &quot;SimData&quot;.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#abd71288ad5176291e819966695236ee5" class="m-doc">GetColorMapID</a>(</span><span class="m-doc-wrap">) -&gt; <a href="struct_graphics_1_1_render_target_i_d.html" class="m-doc">Graphics::<wbr />RenderTargetID</a>*</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a21f11ba721bce0d1062c421664632a3a" class="m-doc">GetColorMap</a>(</span><span class="m-doc-wrap">) -&gt; <a href="struct_render_ware_1_1_raster.html" class="m-doc">RenderWare::<wbr />Raster</a>*</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">void <a href="#a15d95343279d29592cc51a242b4c1b83" class="m-doc">SetColorMap</a>(</span><span class="m-doc-wrap"><a href="struct_render_ware_1_1_raster.html" class="m-doc">RenderWare::<wbr />Raster</a>* pRaster)</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a704fa145eb3a9689b91aed8156a1559a" class="m-doc">GetColorMapViewer</a>(</span><span class="m-doc-wrap">) -&gt; <a href="class_app_1_1c_viewer.html" class="m-doc">App::<wbr />cViewer</a>*</span>
             </dt>
             <dd><span></span></dd>
             <dt>
@@ -195,6 +386,84 @@
             </h3>
             <p><span></span></p>
           </div></section>
+          <section class="m-doc-details" id="add21c184ae1ef9ab03185dbcbc8400b2"><div>
+            <h3>
+              enum class Terrain::<wbr /><a href="#add21c184ae1ef9ab03185dbcbc8400b2" class="m-doc-self">TerrainMaterialIndex</a>: int
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="c_terrain_shader_mgr_8h.html">&lt;Spore/Terrain/cTerrainShaderMgr.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+            <table class="m-table m-fullwidth m-flat m-doc">
+              <thead><tr><th style="width: 1%">Enumerators</th><th></th></tr></thead>
+              <tbody>
+                <tr>
+                  <td><a href="#add21c184ae1ef9ab03185dbcbc8400b2a56ab83bdb44fe672a3c6219bdf4d98d1" class="m-doc-self" id="add21c184ae1ef9ab03185dbcbc8400b2a56ab83bdb44fe672a3c6219bdf4d98d1">TerrainAbove</a></td>
+                  <td>
+                  <p>Used when rendering land above water level.</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#add21c184ae1ef9ab03185dbcbc8400b2a83572dea62b4d879c739c8776be5e417" class="m-doc-self" id="add21c184ae1ef9ab03185dbcbc8400b2a83572dea62b4d879c739c8776be5e417">TerrainBelow</a></td>
+                  <td>
+                  <p>Used when rendering land below water level (so the seabed land)</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#add21c184ae1ef9ab03185dbcbc8400b2a52b509a8e6fc2c67fb4285d0d3642874" class="m-doc-self" id="add21c184ae1ef9ab03185dbcbc8400b2a52b509a8e6fc2c67fb4285d0d3642874">TerrainWater</a></td>
+                  <td>
+                  <p><span></span></p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#add21c184ae1ef9ab03185dbcbc8400b2acd913e66d227ce29c69200b3eb161de4" class="m-doc-self" id="add21c184ae1ef9ab03185dbcbc8400b2acd913e66d227ce29c69200b3eb161de4">TerrainLava</a></td>
+                  <td>
+                  <p><span></span></p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#add21c184ae1ef9ab03185dbcbc8400b2ab34c763536bb7c2b69cc73a4fb8c6577" class="m-doc-self" id="add21c184ae1ef9ab03185dbcbc8400b2ab34c763536bb7c2b69cc73a4fb8c6577">TerrainIce</a></td>
+                  <td>
+                  <p><span></span></p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#add21c184ae1ef9ab03185dbcbc8400b2a9dcf6ccb6613bd7538f8509a4793f95b" class="m-doc-self" id="add21c184ae1ef9ab03185dbcbc8400b2a9dcf6ccb6613bd7538f8509a4793f95b">TerrainAtmosphere</a></td>
+                  <td>
+                  <p><span></span></p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#add21c184ae1ef9ab03185dbcbc8400b2a4de7bd2eb6e8aa3c1b440266d1419b88" class="m-doc-self" id="add21c184ae1ef9ab03185dbcbc8400b2a4de7bd2eb6e8aa3c1b440266d1419b88">TerrainDecal</a></td>
+                  <td>
+                  <p><span></span></p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#add21c184ae1ef9ab03185dbcbc8400b2aa9a3b27c764642c8ee87fd2101e85fb0" class="m-doc-self" id="add21c184ae1ef9ab03185dbcbc8400b2aa9a3b27c764642c8ee87fd2101e85fb0">TerrainWaterDecal</a></td>
+                  <td>
+                  <p><span></span></p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#add21c184ae1ef9ab03185dbcbc8400b2a25dcede4d2820380207b32db41e36d17" class="m-doc-self" id="add21c184ae1ef9ab03185dbcbc8400b2a25dcede4d2820380207b32db41e36d17">TerrainAndWaterDecal</a></td>
+                  <td>
+                  <p><span></span></p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#add21c184ae1ef9ab03185dbcbc8400b2aa97071608aa46d7f75f585d698c78629" class="m-doc-self" id="add21c184ae1ef9ab03185dbcbc8400b2aa97071608aa46d7f75f585d698c78629">TerrainDecalEmissive</a></td>
+                  <td>
+                  <p><span></span></p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#add21c184ae1ef9ab03185dbcbc8400b2ab6c8e71872f128a37734c3f1d022fca2" class="m-doc-self" id="add21c184ae1ef9ab03185dbcbc8400b2ab6c8e71872f128a37734c3f1d022fca2">TerrainDebug</a></td>
+                  <td>
+                  <p><span></span></p>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div></section>
         </section>
         <section>
           <h2>Function documentation</h2>
@@ -202,6 +471,67 @@
             <h3>
               <span class="m-doc-wrap-bumper">namespace Terrain::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ab0397d361e284549592c5665a220d9e4" class="m-doc-self">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_terrain_1_1c_terrain_map_set.html" class="m-doc">cTerrainMapSet</a>)</span></span>
               <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="c_terrain_map_set_8h.html">&lt;Spore/Terrain/cTerrainMapSet.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="a7f393290897240a5d113945e8b47fb75"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"> Terrain::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a7f393290897240a5d113945e8b47fb75" class="m-doc-self">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_terrain_1_1c_terrain_shader_mgr.html" class="m-doc">cTerrainShaderMgr</a>,
+              0x9C)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="c_terrain_shader_mgr_8h.html">&lt;Spore/Terrain/cTerrainShaderMgr.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="ab77250828507e480fc018a383cb7a779"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">namespace Terrain::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ab77250828507e480fc018a383cb7a779" class="m-doc-self">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_terrain_1_1c_terrain_shader_mgr.html" class="m-doc">cTerrainShaderMgr</a>)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="c_terrain_shader_mgr_8h.html">&lt;Spore/Terrain/cTerrainShaderMgr.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="adac591ef05972f2925a15722ee8244bc"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"> Terrain::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#adac591ef05972f2925a15722ee8244bc" class="m-doc-self">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="struct_terrain_1_1c_terrain_sphere_rendering_chunk.html" class="m-doc">cTerrainSphereRenderingChunk</a>,
+              0x10)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="c_terrain_sphere_8h.html">&lt;Spore/Terrain/cTerrainSphere.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="aaacf6aecdfc309db648fec013c6eecf7"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"> Terrain::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#aaacf6aecdfc309db648fec013c6eecf7" class="m-doc-self">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_terrain_1_1c_terrain_sphere.html" class="m-doc">cTerrainSphere</a>,
+              0xA50)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="c_terrain_sphere_8h.html">&lt;Spore/Terrain/cTerrainSphere.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="a60f46a0f6bbd0a379171161c43c5c653"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">namespace Terrain::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a60f46a0f6bbd0a379171161c43c5c653" class="m-doc-self">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_terrain_1_1c_terrain_sphere.html" class="m-doc">cTerrainSphere</a>)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="c_terrain_sphere_8h.html">&lt;Spore/Terrain/cTerrainSphere.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="af1cc9fcc93a48ba0df6edeaed7949228"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"> Terrain::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#af1cc9fcc93a48ba0df6edeaed7949228" class="m-doc-self">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="struct_terrain_1_1_terrain_transform.html" class="m-doc">TerrainTransform</a>,
+              0xB0)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="c_terrain_sphere_quad_8h.html">&lt;Spore/Terrain/cTerrainSphereQuad.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="ac4ab8c97fd087d21331b0ed46b38ff0b"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"> Terrain::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ac4ab8c97fd087d21331b0ed46b38ff0b" class="m-doc-self">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_terrain_1_1c_terrain_sphere_quad.html" class="m-doc">cTerrainSphereQuad</a>,
+              0x1B8)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="c_terrain_sphere_quad_8h.html">&lt;Spore/Terrain/cTerrainSphereQuad.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="a38ef62b9bc11246800ca24c1ed69d431"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">namespace Terrain::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a38ef62b9bc11246800ca24c1ed69d431" class="m-doc-self">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_terrain_1_1c_terrain_sphere_quad.html" class="m-doc">cTerrainSphereQuad</a>)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="c_terrain_sphere_quad_8h.html">&lt;Spore/Terrain/cTerrainSphereQuad.h&gt;</a></div>
             </h3>
             <p><span></span></p>
           </div></section>
@@ -221,10 +551,234 @@
             </h3>
             <p><span></span></p>
           </div></section>
+          <section class="m-doc-details" id="a09a0991faf203bfa9f5eb026ff8b76b3"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"> Terrain::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a09a0991faf203bfa9f5eb026ff8b76b3" class="m-doc-self">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_terrain_1_1_i_terrain_resource_manager.html" class="m-doc">ITerrainResourceManager</a>,
+              0x68)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_i_terrain_resource_manager_8h.html">&lt;Spore/Terrain/ITerrainResourceManager.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
           <section class="m-doc-details" id="a3c7b91e2773ac876bd6ecf4f26c58873"><div>
             <h3>
               <span class="m-doc-wrap-bumper">namespace Terrain::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a3c7b91e2773ac876bd6ecf4f26c58873" class="m-doc-self">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_terrain_1_1_i_terrain_resource_manager.html" class="m-doc">ITerrainResourceManager</a>)</span></span>
               <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_i_terrain_resource_manager_8h.html">&lt;Spore/Terrain/ITerrainResourceManager.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="a9b58f55150c11e86be13dd4706ab5c49"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"><a href="namespace_terrain.html#add21c184ae1ef9ab03185dbcbc8400b2" class="m-doc">TerrainMaterialIndex</a> Terrain::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a9b58f55150c11e86be13dd4706ab5c49" class="m-doc-self">GetActiveMaterialIndex</a>(</span><span class="m-doc-wrap">)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_terrain_rendering_8h.html">&lt;Spore/Terrain/TerrainRendering.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="a33f97dd28e7d5efd091e390a86d67894"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">void Terrain::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a33f97dd28e7d5efd091e390a86d67894" class="m-doc-self">SetActiveMaterialIndex</a>(</span><span class="m-doc-wrap"><a href="namespace_terrain.html#add21c184ae1ef9ab03185dbcbc8400b2" class="m-doc">TerrainMaterialIndex</a> material)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_terrain_rendering_8h.html">&lt;Spore/Terrain/TerrainRendering.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="a04ccb579788ea1ff5fc39c63a90c0f03"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">int Terrain::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a04ccb579788ea1ff5fc39c63a90c0f03" class="m-doc-self">GetActiveQuadIndex</a>(</span><span class="m-doc-wrap">)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_terrain_rendering_8h.html">&lt;Spore/Terrain/TerrainRendering.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="a0048ab974557a4677459c69365ccf1a9"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">void Terrain::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a0048ab974557a4677459c69365ccf1a9" class="m-doc-self">SetActiveQuadIndex</a>(</span><span class="m-doc-wrap">int index)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_terrain_rendering_8h.html">&lt;Spore/Terrain/TerrainRendering.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="a62905215ab81a3286134500a836e95a4"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">bool Terrain::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a62905215ab81a3286134500a836e95a4" class="m-doc-self">IsActiveQuadMaterial</a>(</span><span class="m-doc-wrap"><a href="namespace_terrain.html#add21c184ae1ef9ab03185dbcbc8400b2" class="m-doc">TerrainMaterialIndex</a> material,
+              int quadIndex)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_terrain_rendering_8h.html">&lt;Spore/Terrain/TerrainRendering.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="ae3dcc9ca8b84a5ce4a194da4062ae161"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">void Terrain::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ae3dcc9ca8b84a5ce4a194da4062ae161" class="m-doc-self">SetActiveQuadMaterial</a>(</span><span class="m-doc-wrap"><a href="namespace_terrain.html#add21c184ae1ef9ab03185dbcbc8400b2" class="m-doc">TerrainMaterialIndex</a> material,
+              int quadIndex)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_terrain_rendering_8h.html">&lt;Spore/Terrain/TerrainRendering.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="a0b6046c743106461f55addc4a5864afc"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"><a href="struct_render_ware_1_1_index_buffer.html" class="m-doc">RenderWare::<wbr />IndexBuffer</a>* Terrain::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a0b6046c743106461f55addc4a5864afc" class="m-doc-self">GetAtmosphereIndexBuffer</a>(</span><span class="m-doc-wrap">)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_terrain_rendering_8h.html">&lt;Spore/Terrain/TerrainRendering.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="a70b29c1d88859419cceed2a2b1ca8c3c"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">void Terrain::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a70b29c1d88859419cceed2a2b1ca8c3c" class="m-doc-self">CreateRefractionRTTs</a>(</span><span class="m-doc-wrap">)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_terrain_rendering_8h.html">&lt;Spore/Terrain/TerrainRendering.h&gt;</a></div>
+            </h3>
+            <p>Creates the &quot;TerrainRefractionBuffers&quot;, &quot;TerrainRefractionBlur1&quot; and &quot;TerrainRefractionBlur2&quot; render target textures, used for water refraction.</p>
+<p>Source code: <a href="_source_code-_terrain.html#SourceCode-Terrain-Misc-CreateTerrainRefractionRTTs" class="m-doc">CreateTerrainRefractionRTTs()</a></p>
+          </div></section>
+          <section class="m-doc-details" id="a424d9a14a8c1a53100e4e70df8ffa550"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">void Terrain::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a424d9a14a8c1a53100e4e70df8ffa550" class="m-doc-self">DisposeRefractionRTTs</a>(</span><span class="m-doc-wrap">)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_terrain_rendering_8h.html">&lt;Spore/Terrain/TerrainRendering.h&gt;</a></div>
+            </h3>
+            <p>Disposes the terrain refraction render target textures.</p>
+<p>Source code: <a href="_source_code-_terrain.html#SourceCode-Terrain-Misc-DisposeTerrainRefractionRTTs" class="m-doc">DisposeTerrainRefractionRTTs()</a></p>
+          </div></section>
+          <section class="m-doc-details" id="a0e3cf58d03659f583e81675f9347b068"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"><a href="struct_graphics_1_1_render_target_i_d.html" class="m-doc">Graphics::<wbr />RenderTargetID</a>* Terrain::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a0e3cf58d03659f583e81675f9347b068" class="m-doc-self">GetRefractionBuffersRenderTargetID</a>(</span><span class="m-doc-wrap">)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_terrain_rendering_8h.html">&lt;Spore/Terrain/TerrainRendering.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="aeb0fdaf40b7350f9b7968180666a74b6"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"><a href="class_graphics_1_1_texture.html" class="m-doc">Graphics::<wbr />Texture</a>* Terrain::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#aeb0fdaf40b7350f9b7968180666a74b6" class="m-doc-self">GetRefractionBuffersRenderTargetTexture</a>(</span><span class="m-doc-wrap">)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_terrain_rendering_8h.html">&lt;Spore/Terrain/TerrainRendering.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="aa7caf723eb3ca47ae1caae80827060cc"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"><a href="struct_render_ware_1_1_raster.html" class="m-doc">RenderWare::<wbr />Raster</a>* Terrain::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#aa7caf723eb3ca47ae1caae80827060cc" class="m-doc-self">GetRefractionBuffersRenderTarget</a>(</span><span class="m-doc-wrap">)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_terrain_rendering_8h.html">&lt;Spore/Terrain/TerrainRendering.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="adf2673f10d16331915ec0b672d4f87fa"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">void Terrain::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#adf2673f10d16331915ec0b672d4f87fa" class="m-doc-self">SetRefractionBuffersRenderTargetTexture</a>(</span><span class="m-doc-wrap"><a href="class_graphics_1_1_texture.html" class="m-doc">Graphics::<wbr />Texture</a>* texture)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_terrain_rendering_8h.html">&lt;Spore/Terrain/TerrainRendering.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="a0fd744d39af2cd04bfe8ca5e06bef315"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"><a href="struct_graphics_1_1_render_target_i_d.html" class="m-doc">Graphics::<wbr />RenderTargetID</a>* Terrain::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a0fd744d39af2cd04bfe8ca5e06bef315" class="m-doc-self">GetRefractionBlur1RenderTargetID</a>(</span><span class="m-doc-wrap">)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_terrain_rendering_8h.html">&lt;Spore/Terrain/TerrainRendering.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="adf3bb739aba4b4f5b7352150b94093d5"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"><a href="struct_graphics_1_1_render_target_i_d.html" class="m-doc">Graphics::<wbr />RenderTargetID</a>* Terrain::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#adf3bb739aba4b4f5b7352150b94093d5" class="m-doc-self">GetRefractionBlur2RenderTargetID</a>(</span><span class="m-doc-wrap">)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_terrain_rendering_8h.html">&lt;Spore/Terrain/TerrainRendering.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="a6d0d18c1f97e78b663d4d22523b3fdaa"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"><a href="class_app_1_1c_viewer.html" class="m-doc">App::<wbr />cViewer</a>* Terrain::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a6d0d18c1f97e78b663d4d22523b3fdaa" class="m-doc-self">GetRefractionViewer</a>(</span><span class="m-doc-wrap">)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_terrain_rendering_8h.html">&lt;Spore/Terrain/TerrainRendering.h&gt;</a></div>
+            </h3>
+            <p>Returns the camera configuration used to render the water refraction textures.</p>
+          </div></section>
+          <section class="m-doc-details" id="aa8e25d8d4876f6f393a16e6d3ffc5992"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">void Terrain::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#aa8e25d8d4876f6f393a16e6d3ffc5992" class="m-doc-self">CreateReflectionRTTs</a>(</span><span class="m-doc-wrap">)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_terrain_rendering_8h.html">&lt;Spore/Terrain/TerrainRendering.h&gt;</a></div>
+            </h3>
+            <p>Creates the render target texture used for water reflection.</p>
+<p>Source code: <a href="_source_code-_terrain.html#SourceCode-Terrain-Misc-CreateReflectionRTTs" class="m-doc">CreateReflectionRTTs()</a></p>
+          </div></section>
+          <section class="m-doc-details" id="ad91f95f45b7d0d013b5c917465785992"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">void Terrain::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ad91f95f45b7d0d013b5c917465785992" class="m-doc-self">DisposeReflectionRTTs</a>(</span><span class="m-doc-wrap">)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_terrain_rendering_8h.html">&lt;Spore/Terrain/TerrainRendering.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="a9da5f2874629433463b180b79cc72f71"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"><a href="_texture_8h.html#affea3369120131ed058702d2945a10b4" class="m-doc">TexturePtr</a>&amp; Terrain::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a9da5f2874629433463b180b79cc72f71" class="m-doc-self">GetReflectionTexture</a>(</span><span class="m-doc-wrap">)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_terrain_rendering_8h.html">&lt;Spore/Terrain/TerrainRendering.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="a0e140c97beaaff40663fd88f8eb47006"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"><a href="class_app_1_1c_viewer.html" class="m-doc">App::<wbr />cViewer</a>* Terrain::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a0e140c97beaaff40663fd88f8eb47006" class="m-doc-self">GetReflectionViewer</a>(</span><span class="m-doc-wrap">)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_terrain_rendering_8h.html">&lt;Spore/Terrain/TerrainRendering.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="a9f510ca37e1480aec2e0fbc9027049a5"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">void Terrain::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a9f510ca37e1480aec2e0fbc9027049a5" class="m-doc-self">CreateScatterRTTs</a>(</span><span class="m-doc-wrap">)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_terrain_rendering_8h.html">&lt;Spore/Terrain/TerrainRendering.h&gt;</a></div>
+            </h3>
+            <p>Creates render targets for scatter texture.</p>
+<p>Source code: <a href="_source_code-_terrain.html#SourceCode-Terrain-Misc-CreateScatterRTTs" class="m-doc">CreateScatterRTTs()</a></p>
+          </div></section>
+          <section class="m-doc-details" id="aec9cb163986feb124b36b9707463d7eb"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"><a href="_texture_8h.html#affea3369120131ed058702d2945a10b4" class="m-doc">TexturePtr</a>&amp; Terrain::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#aec9cb163986feb124b36b9707463d7eb" class="m-doc-self">GetBakeInScatterTexture</a>(</span><span class="m-doc-wrap">)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_terrain_rendering_8h.html">&lt;Spore/Terrain/TerrainRendering.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="a18c71f4666e109b1e2084415b3d1bcb9"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"><a href="_texture_8h.html#affea3369120131ed058702d2945a10b4" class="m-doc">TexturePtr</a>&amp; Terrain::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a18c71f4666e109b1e2084415b3d1bcb9" class="m-doc-self">GetScatterTexture</a>(</span><span class="m-doc-wrap">)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_terrain_rendering_8h.html">&lt;Spore/Terrain/TerrainRendering.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="a451ebc575866e83fc791182cc0f73883"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"><a href="class_app_1_1c_viewer.html" class="m-doc">App::<wbr />cViewer</a>* Terrain::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a451ebc575866e83fc791182cc0f73883" class="m-doc-self">GetScatterViewer</a>(</span><span class="m-doc-wrap">)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_terrain_rendering_8h.html">&lt;Spore/Terrain/TerrainRendering.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="a6dc9b0b9f47ead900227dccd4f439cf3"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"><a href="class_graphics_1_1_texture.html" class="m-doc">Graphics::<wbr />Texture</a>** Terrain::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a6dc9b0b9f47ead900227dccd4f439cf3" class="m-doc-self">GetSimDataRenderTargetTextures</a>(</span><span class="m-doc-wrap">)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_terrain_rendering_8h.html">&lt;Spore/Terrain/TerrainRendering.h&gt;</a></div>
+            </h3>
+            <p>Returns an array of 6 render target textures used for &quot;SimData&quot;, which apparently controls planet color for each of the 6 terrain quads.</p>
+          </div></section>
+          <section class="m-doc-details" id="af8987b0d15310db78ad1276ea137c29e"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"><a href="struct_graphics_1_1_render_target_i_d.html" class="m-doc">Graphics::<wbr />RenderTargetID</a>* Terrain::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#af8987b0d15310db78ad1276ea137c29e" class="m-doc-self">GetSimDataRenderTargetIDs</a>(</span><span class="m-doc-wrap">)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_terrain_rendering_8h.html">&lt;Spore/Terrain/TerrainRendering.h&gt;</a></div>
+            </h3>
+            <p>Returns an array of 6 render target textures IDs used for &quot;SimData&quot;.</p>
+          </div></section>
+          <section class="m-doc-details" id="abd71288ad5176291e819966695236ee5"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"><a href="struct_graphics_1_1_render_target_i_d.html" class="m-doc">Graphics::<wbr />RenderTargetID</a>* Terrain::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#abd71288ad5176291e819966695236ee5" class="m-doc-self">GetColorMapID</a>(</span><span class="m-doc-wrap">)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_terrain_rendering_8h.html">&lt;Spore/Terrain/TerrainRendering.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="a21f11ba721bce0d1062c421664632a3a"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"><a href="struct_render_ware_1_1_raster.html" class="m-doc">RenderWare::<wbr />Raster</a>* Terrain::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a21f11ba721bce0d1062c421664632a3a" class="m-doc-self">GetColorMap</a>(</span><span class="m-doc-wrap">)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_terrain_rendering_8h.html">&lt;Spore/Terrain/TerrainRendering.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="a15d95343279d29592cc51a242b4c1b83"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">void Terrain::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a15d95343279d29592cc51a242b4c1b83" class="m-doc-self">SetColorMap</a>(</span><span class="m-doc-wrap"><a href="struct_render_ware_1_1_raster.html" class="m-doc">RenderWare::<wbr />Raster</a>* pRaster)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_terrain_rendering_8h.html">&lt;Spore/Terrain/TerrainRendering.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="a704fa145eb3a9689b91aed8156a1559a"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"><a href="class_app_1_1c_viewer.html" class="m-doc">App::<wbr />cViewer</a>* Terrain::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a704fa145eb3a9689b91aed8156a1559a" class="m-doc-self">GetColorMapViewer</a>(</span><span class="m-doc-wrap">)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_terrain_rendering_8h.html">&lt;Spore/Terrain/TerrainRendering.h&gt;</a></div>
             </h3>
             <p><span></span></p>
           </div></section>

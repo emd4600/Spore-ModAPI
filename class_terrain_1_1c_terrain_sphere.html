@@ -1,0 +1,857 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Terrain::cTerrainSphere class | Spore ModAPI SDK for creating C++ mods for Spore</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,600,600i%7CSource+Code+Pro:400,400i,600" />
+  <link rel="stylesheet" href="m-dark.css" />
+  <link rel="stylesheet" href="m-documentation.css" />
+  <link rel="icon" href="Spore_ModAPI_Icon.png" type="image/png" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#22272e" />
+</head>
+<body>
+<header><nav id="navigation">
+  <div class="m-container">
+    <div class="m-row">
+      <a href="index.html" id="m-navbar-brand" class="m-col-t-8 m-col-m-none m-left-m"><img src="Spore_ModAPI_Icon.png" />Spore ModAPI <span class="m-thin">SDK for creating C++ mods for Spore</span></a>
+      <div class="m-col-t-4 m-hide-m m-text-right m-nopadr">
+        <a href="#search" class="m-doc-search-icon" title="Search" onclick="return showSearch()"><svg style="height: 0.9rem;" viewBox="0 0 16 16">
+          <path id="m-doc-search-icon-path" d="m6 0c-3.31 0-6 2.69-6 6 0 3.31 2.69 6 6 6 1.49 0 2.85-0.541 3.89-1.44-0.0164 0.338 0.147 0.759 0.5 1.15l3.22 3.79c0.552 0.614 1.45 0.665 2 0.115 0.55-0.55 0.499-1.45-0.115-2l-3.79-3.22c-0.392-0.353-0.812-0.515-1.15-0.5 0.895-1.05 1.44-2.41 1.44-3.89 0-3.31-2.69-6-6-6zm0 1.56a4.44 4.44 0 0 1 4.44 4.44 4.44 4.44 0 0 1-4.44 4.44 4.44 4.44 0 0 1-4.44-4.44 4.44 4.44 0 0 1 4.44-4.44z"/>
+        </svg></a>
+        <a id="m-navbar-show" href="#navigation" title="Show navigation"></a>
+        <a id="m-navbar-hide" href="#" title="Hide navigation"></a>
+      </div>
+      <div id="m-navbar-collapse" class="m-col-t-12 m-show-m m-col-m-none m-right-m">
+        <div class="m-row">
+          <ol class="m-col-t-6 m-col-m-none">
+            <li><a href="pages.html">Tutorials</a></li>
+            <li><a href="namespaces.html">Namespaces</a></li>
+          </ol>
+          <ol class="m-col-t-6 m-col-m-none" start="3">
+            <li><a href="annotated.html">Classes</a></li>
+            <li><a href="files.html">Files</a></li>
+            <li class="m-show-m"><a href="#search" class="m-doc-search-icon" title="Search" onclick="return showSearch()"><svg style="height: 0.9rem;" viewBox="0 0 16 16">
+              <use href="#m-doc-search-icon-path" />
+            </svg></a></li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav></header>
+<main><article>
+  <div class="m-container m-container-inflatable">
+    <div class="m-row">
+      <div class="m-col-l-10 m-push-l-1">
+        <h1>
+          <span class="m-breadcrumb"><a href="namespace_terrain.html">Terrain</a>::<wbr/></span>cTerrainSphere <span class="m-thin">class</span>
+          <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="c_terrain_sphere_8h.html">&lt;Spore/Terrain/cTerrainSphere.h&gt;</a></div>
+        </h1>
+        <p><span></span></p>
+        <div class="m-block m-default">
+          <h3>Contents</h3>
+          <ul>
+            <li>
+              Reference
+              <ul>
+                <li><a href="#base-classes">Base classes</a></li>
+                <li><a href="#pub-types">Public types</a></li>
+                <li><a href="#pub-static-methods">Public static functions</a></li>
+                <li><a href="#typeless-methods">Constructors, destructors, conversion operators</a></li>
+                <li><a href="#pub-methods">Public functions</a></li>
+                <li><a href="#pub-attribs">Public variables</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+        <section id="base-classes">
+          <h2><a href="#base-classes">Base classes</a></h2>
+          <dl class="m-doc">
+            <dt>
+              class <a href="class_terrain_1_1_i_terrain.html" class="m-doc">ITerrain</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              class <a href="class_graphics_1_1_i_renderable.html" class="m-doc">Graphics::IRenderable</a>
+            </dt>
+            <dd>This interface defines an object that can be rendered, and whose render method is called on every game loop.</dd>
+            <dt>
+              class <a href="class_app_1_1_i_message_listener.html" class="m-doc">App::IMessageListener</a>
+            </dt>
+            <dd>An interface that can receive messages sent through the app.</dd>
+            <dt>
+              class <a href="class_terrain_1_1unk__class__0x13_f3628.html" class="m-doc">unk_class_0x13F3628</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              class <a href="class_resource_1_1_resource_object.html" class="m-doc">Resource::ResourceObject</a>
+            </dt>
+            <dd>A type of object that is used as a resource.</dd>
+          </dl>
+        </section>
+        <section id="pub-types">
+          <h2><a href="#pub-types">Public types</a></h2>
+          <dl class="m-doc">
+            <dt>
+              struct <a href="struct_terrain_1_1c_terrain_sphere_1_1_terrain_modification.html" class="m-doc">TerrainModification</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              class <a href="class_terrain_1_1c_terrain_sphere_1_1_texture_container.html" class="m-doc">TextureContainer</a>
+            </dt>
+            <dd><span></span></dd>
+          </dl>
+        </section>
+        <section id="pub-static-methods">
+          <h2><a href="#pub-static-methods">Public static functions</a></h2>
+          <dl class="m-doc">
+            <dt id="abb4dfc6009ea91aff050c5dd244ec068">
+              <span class="m-doc-wrap-bumper">static auto <a href="#abb4dfc6009ea91aff050c5dd244ec068" class="m-doc-self">Create</a>(</span><span class="m-doc-wrap">) -&gt; <a href="class_terrain_1_1c_terrain_sphere.html" class="m-doc">cTerrainSphere</a>*</span>
+            </dt>
+            <dd><span></span></dd>
+          </dl>
+        </section>
+        <section id="typeless-methods">
+          <h2><a href="#typeless-methods">Constructors, destructors, conversion operators</a></h2>
+          <dl class="m-doc">
+            <dt id="a1cd26c2457007020d1e58cf24a63ef1e">
+              <span class="m-doc-wrap-bumper"><a href="#a1cd26c2457007020d1e58cf24a63ef1e" class="m-doc-self">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_terrain_1_1c_terrain_sphere_1_1_texture_container.html" class="m-doc">TextureContainer</a>,
+              0x44)</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a778e3585417f988b5e4f602cc075cc42">
+              <span class="m-doc-wrap-bumper"><a href="#a778e3585417f988b5e4f602cc075cc42" class="m-doc-self">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="struct_terrain_1_1c_terrain_sphere_1_1_terrain_modification.html" class="m-doc">TerrainModification</a>,
+              0xAC)</span>
+            </dt>
+            <dd><span></span></dd>
+          </dl>
+        </section>
+        <section id="pub-methods">
+          <h2><a href="#pub-methods">Public functions</a></h2>
+          <dl class="m-doc">
+            <dt id="a34c18b52496559271eaa843b0b3981f9">
+              <span class="m-doc-wrap-bumper">void <a href="#a34c18b52496559271eaa843b0b3981f9" class="m-doc-self">Generate</a>(</span><span class="m-doc-wrap">int* unused0 = nullptr,
+              int* unused1 = nullptr,
+              bool = false,
+              bool generateSingleStep = false,
+              float generateTimeLimit = 10.0f)</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a7b1680a22c472453d7e92b6081879384">
+              <span class="m-doc-wrap-bumper">void <a href="#a7b1680a22c472453d7e92b6081879384" class="m-doc-self">PrepareShaderData</a>(</span><span class="m-doc-wrap">)</span>
+            </dt>
+            <dd>Updates the fields in the class related with shader data, such as <code>mTerrainState</code></dd>
+            <dt id="ae3f004a97635254ef31a382a469fd0d5">
+              <span class="m-doc-wrap-bumper">void <a href="#ae3f004a97635254ef31a382a469fd0d5" class="m-doc-self">RenderTerrainLand</a>(</span><span class="m-doc-wrap"><a href="struct_graphics_1_1_render_statistics.html" class="m-doc">Graphics::<wbr />RenderStatistics</a>&amp; stats,
+              int flags)</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a5e64f4f192d0c0205a7d7f8b54f152ec">
+              <span class="m-doc-wrap-bumper">void <a href="#a5e64f4f192d0c0205a7d7f8b54f152ec" class="m-doc-self">RenderTerrainSeabedAsLand</a>(</span><span class="m-doc-wrap"><a href="class_app_1_1c_viewer.html" class="m-doc">App::<wbr />cViewer</a>* pViewer,
+              <a href="struct_graphics_1_1_render_statistics.html" class="m-doc">Graphics::<wbr />RenderStatistics</a>&amp; stats)</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="aae01e63c97aa9581d8c383cd0dad5446">
+              <span class="m-doc-wrap-bumper">void <a href="#aae01e63c97aa9581d8c383cd0dad5446" class="m-doc-self">RenderTerrainWater</a>(</span><span class="m-doc-wrap"><a href="struct_graphics_1_1_render_statistics.html" class="m-doc">Graphics::<wbr />RenderStatistics</a>&amp; stats,
+              int flags)</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="adc8a56bd5871c952478f5b1396660447">
+              <span class="m-doc-wrap-bumper">void <a href="#adc8a56bd5871c952478f5b1396660447" class="m-doc-self">RenderTerrainDecals</a>(</span><span class="m-doc-wrap"><a href="struct_graphics_1_1_render_statistics.html" class="m-doc">Graphics::<wbr />RenderStatistics</a>&amp; stats,
+              int flags)</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a1514430feda04dbea5e5e0f608b919a5">
+              <span class="m-doc-wrap-bumper">void <a href="#a1514430feda04dbea5e5e0f608b919a5" class="m-doc-self">RenderTerrainRibbons</a>(</span><span class="m-doc-wrap"><a href="struct_graphics_1_1_render_statistics.html" class="m-doc">Graphics::<wbr />RenderStatistics</a>&amp; stats,
+              int flags)</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a956da95eacbcb16932bcd15fffc522bf">
+              <span class="m-doc-wrap-bumper">void <a href="#a956da95eacbcb16932bcd15fffc522bf" class="m-doc-self">RenderTerrainAtmosphere</a>(</span><span class="m-doc-wrap"><a href="struct_graphics_1_1_render_statistics.html" class="m-doc">Graphics::<wbr />RenderStatistics</a>&amp; stats,
+              int flags)</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">void <a href="#a40765c28e0ddec00f12c94ce544d2353" class="m-doc">MainRenderPass</a>(</span><span class="m-doc-wrap"><a href="class_app_1_1c_viewer.html" class="m-doc">App::<wbr />cViewer</a>** ppViewer,
+              <a href="struct_graphics_1_1_render_statistics.html" class="m-doc">Graphics::<wbr />RenderStatistics</a>&amp; stats,
+              int flags)</span>
+            </dt>
+            <dd>Called on the <a href="namespace_graphics.html#a4cb0a7db6c6e82b951c0a1fe02c559f2a4ccfea7a25fae3c1d31555f0856d2b42" class="m-doc">Graphics::<wbr />RenderLayers::<wbr />Terrain</a> layer, calls all the <a href="class_terrain_1_1c_terrain_sphere.html#ae3f004a97635254ef31a382a469fd0d5" class="m-doc">RenderTerrainLand()</a> etc methods.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">void <a href="#a87f6f266572c907d38eb7b267b4e94e6" class="m-doc">RenderWaterReflectionAndRefraction</a>(</span><span class="m-doc-wrap">)</span>
+            </dt>
+            <dd>This is called on the <a href="namespace_graphics.html#a4cb0a7db6c6e82b951c0a1fe02c559f2aef82c94236471f84aefff94eba649794" class="m-doc">Graphics::<wbr />RenderLayers::<wbr />TerrainRTT</a> layer, before the planet itself is rendered; this function renders the water reflection and refraction textures that are later used in rendering water.</dd>
+            <dt id="a9e735e439173a9712841169f8aad387e">
+              <span class="m-doc-wrap-bumper">void <a href="#a9e735e439173a9712841169f8aad387e" class="m-doc-self">RenderWaterRefraction</a>(</span><span class="m-doc-wrap">)</span>
+            </dt>
+            <dd>Renders the water refraction texture, called by <a href="class_terrain_1_1c_terrain_sphere.html#a87f6f266572c907d38eb7b267b4e94e6" class="m-doc">RenderWaterReflectionAndRefraction()</a></dd>
+            <dt id="a5aad71566950fc921a0d466ffe351bff">
+              <span class="m-doc-wrap-bumper">void <a href="#a5aad71566950fc921a0d466ffe351bff" class="m-doc-self">RenderWaterReflection</a>(</span><span class="m-doc-wrap">)</span>
+            </dt>
+            <dd>Renders the water reflection texture, called by <a href="class_terrain_1_1c_terrain_sphere.html#a87f6f266572c907d38eb7b267b4e94e6" class="m-doc">RenderWaterReflectionAndRefraction()</a></dd>
+            <dt id="a3c689a67b3b3dcd80285a07433ce1b35">
+              <span class="m-doc-wrap-bumper">auto <a href="#a3c689a67b3b3dcd80285a07433ce1b35" class="m-doc-self">GetQuadNormalMap</a>(</span><span class="m-doc-wrap">int quadIndex) -&gt; <a href="struct_render_ware_1_1_raster.html" class="m-doc">RenderWare::<wbr />Raster</a>*</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a3ad44d93a73d879d77ab6c99f0b92c73">
+              <span class="m-doc-wrap-bumper">auto <a href="#a3ad44d93a73d879d77ab6c99f0b92c73" class="m-doc-self">GetQuadHeightMap</a>(</span><span class="m-doc-wrap">int quadIndex) -&gt; <a href="struct_render_ware_1_1_raster.html" class="m-doc">RenderWare::<wbr />Raster</a>*</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a7acc20aaa64b5bf8d46192afd2cc3c04">
+              <span class="m-doc-wrap-bumper">auto <a href="#a7acc20aaa64b5bf8d46192afd2cc3c04" class="m-doc-self">GetQuadControlMap</a>(</span><span class="m-doc-wrap">int quadIndex) -&gt; <a href="struct_render_ware_1_1_raster.html" class="m-doc">RenderWare::<wbr />Raster</a>*</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#af495161a3a05ca016bdbc8e47d64ad41" class="m-doc">GetSimDataRTT</a>(</span><span class="m-doc-wrap">int quadIndex) -&gt; <a href="struct_render_ware_1_1_raster.html" class="m-doc">RenderWare::<wbr />Raster</a>*</span>
+            </dt>
+            <dd>Returns the <code>SimDataRTT</code> texture for the specified terrain quad.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">void <a href="#af7e1e548c606680eb73a05c2d83d58be" class="m-doc">CreateRTTs</a>(</span><span class="m-doc-wrap">)</span>
+            </dt>
+            <dd>Creates some of the render target textures used by planets: the &#x27;SimData&#x27; textures, &#x27;ColorMap&#x27;, scatter, and reflection.</dd>
+          </dl>
+        </section>
+        <section id="pub-attribs">
+          <h2><a href="#pub-attribs">Public variables</a></h2>
+          <dl class="m-doc">
+            <dt id="a952b530da64ffa9ee4422b1db9cdafe5">
+              int <a href="#a952b530da64ffa9ee4422b1db9cdafe5" class="m-doc-self">field_24</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a641dc953f3145cf7d37bfeeb7cadbfe6">
+              <a href="_property_list_8h.html#ae757f1639ff739ff0282dd91f3e39f0a" class="m-doc">PropertyListPtr</a> <a href="#a641dc953f3145cf7d37bfeeb7cadbfe6" class="m-doc-self">mpPropList</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="aa41e8b453dfda18ff468f8493e40213f">
+              <a href="c_terrain_map_set_8h.html#aaa9be5e5a00bdd75915c5755ffebfedc" class="m-doc">cTerrainMapSetPtr</a> <a href="#aa41e8b453dfda18ff468f8493e40213f" class="m-doc-self">mpTerrainMapSet</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="ade9a1c65df256b86f0c7567dcef28673">
+              <a href="class_terrain_1_1c_terrain_sphere_1_1_texture_container.html" class="m-doc">TextureContainer</a> <a href="#ade9a1c65df256b86f0c7567dcef28673" class="m-doc-self">field_30</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="ae81105c706c948d25b934b1f64c4caa0">
+              <a href="class_terrain_1_1c_terrain_sphere_1_1_texture_container.html" class="m-doc">TextureContainer</a> <a href="#ae81105c706c948d25b934b1f64c4caa0" class="m-doc-self">field_74</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a3cef7f3e12ccab189e02a4bb5e7b3133">
+              <a href="class_terrain_1_1c_terrain_sphere_1_1_texture_container.html" class="m-doc">TextureContainer</a> <a href="#a3cef7f3e12ccab189e02a4bb5e7b3133" class="m-doc-self">field_B8</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a21b0bf0bd3a8f59bf3bfc7fc5d0fbf80">
+              <a href="class_terrain_1_1c_terrain_sphere_1_1_texture_container.html" class="m-doc">TextureContainer</a>* <a href="#a21b0bf0bd3a8f59bf3bfc7fc5d0fbf80" class="m-doc-self">mpLoader</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a4e227c3b826dc475f70fe19391e18f73">
+              <a href="class_terrain_1_1_i_terrain.html#a4da653c06dd601298e7f18acefaa883a" class="m-doc">ITerrain::<wbr />OnLoadFinish_t</a> <a href="#a4e227c3b826dc475f70fe19391e18f73" class="m-doc-self">mOnLoadFinish</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="ae3cb7b900ae927669c73d663039b2d31">
+              void* <a href="#ae3cb7b900ae927669c73d663039b2d31" class="m-doc-self">mOnLoadFinishObject</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a4e1fc606ec01e6c1d2704033b122b51f">
+              bool <a href="#a4e1fc606ec01e6c1d2704033b122b51f" class="m-doc-self">mTerrainGenerateSingleStep</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a0ad3ab01e882582d174db603592a51c8">
+              float <a href="#a0ad3ab01e882582d174db603592a51c8" class="m-doc-self">mTerrainGenerateTimeLimit</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a29e330816b3c6b111fe37aa954a0741a">
+              bool <a href="#a29e330816b3c6b111fe37aa954a0741a" class="m-doc-self">field_110</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a0bb8d9d84317f6ca5bae1c982201663f">
+              bool <a href="#a0bb8d9d84317f6ca5bae1c982201663f" class="m-doc-self">field_111</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a1c67637b1b766dec3fe47ba6ec7d1d1e">
+              int <a href="#a1c67637b1b766dec3fe47ba6ec7d1d1e" class="m-doc-self">field_114</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a94449c93d395791a56aa39f4795178df">
+              <a href="class_terrain_1_1c_terrain_sphere_quad.html" class="m-doc">cTerrainSphereQuad</a>* <a href="#a94449c93d395791a56aa39f4795178df" class="m-doc-self">mFullResQuads</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a8b8d3c1a7e82a9df0ddf776ac80adb6e">
+              <a href="class_terrain_1_1c_terrain_sphere_quad.html" class="m-doc">cTerrainSphereQuad</a>* <a href="#a8b8d3c1a7e82a9df0ddf776ac80adb6e" class="m-doc-self">mLowResQuads</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a51accfa702197e11fd15f529ae6556ba">
+              <a href="_texture_8h.html#affea3369120131ed058702d2945a10b4" class="m-doc">TexturePtr</a> <a href="#a51accfa702197e11fd15f529ae6556ba" class="m-doc-self">mTerrainNormalMaps</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a866c178a9aeac5bf43b58b33fd1d3263">
+              <a href="_texture_8h.html#affea3369120131ed058702d2945a10b4" class="m-doc">TexturePtr</a> <a href="#a866c178a9aeac5bf43b58b33fd1d3263" class="m-doc-self">mTerrainHeightMaps</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="aafdfcbb68e6d7b76a3be8f1dfc2bf69a">
+              <a href="_texture_8h.html#affea3369120131ed058702d2945a10b4" class="m-doc">TexturePtr</a> <a href="#aafdfcbb68e6d7b76a3be8f1dfc2bf69a" class="m-doc-self">mTerrainControlMaps</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="ac7f617609fea752536859ef7d0de355c">
+              vector&lt;<a href="struct_terrain_1_1c_terrain_sphere_rendering_chunk.html" class="m-doc">cTerrainSphereRenderingChunk</a>&gt; <a href="#ac7f617609fea752536859ef7d0de355c" class="m-doc-self">mLandRenderingChunks</a>
+            </dt>
+            <dd>The terrain land quads that have to be rendered.</dd>
+            <dt id="a1f4817036506025628718c5f5bf25de5">
+              vector&lt;int&gt; <a href="#a1f4817036506025628718c5f5bf25de5" class="m-doc-self">field_1A4</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a87911dcab28c1e22efe69657d694cff8">
+              vector&lt;int&gt; <a href="#a87911dcab28c1e22efe69657d694cff8" class="m-doc-self">field_1B8</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="aa29ffb2f4d45c062dc7be09c9fc8390c">
+              uint32_t <a href="#aa29ffb2f4d45c062dc7be09c9fc8390c" class="m-doc-self">mSeed</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="aff3323c2077d6ebb9530c49b5a16feef">
+              int <a href="#aff3323c2077d6ebb9530c49b5a16feef" class="m-doc-self">field_1D0</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="abdb428cbfd19c5934eee3a51b63fd396">
+              int <a href="#abdb428cbfd19c5934eee3a51b63fd396" class="m-doc-self">mPlanetLODChunkRes</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a8701f36be9f65c4ba8f9efbd8f88c1b4">
+              float <a href="#a8701f36be9f65c4ba8f9efbd8f88c1b4" class="m-doc-self">mPlanetUnderwaterCullRadius</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a9d960dbb183a3f506f8bece5376dd8bf">
+              float <a href="#a9d960dbb183a3f506f8bece5376dd8bf" class="m-doc-self">mPlanetUnderwaterLargeCullRadius</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a3687b13a92f00ccb5bc59d2dbcb8f069">
+              float <a href="#a3687b13a92f00ccb5bc59d2dbcb8f069" class="m-doc-self">mPlanetUnderwaterCullRadiusMultiplier</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="aaf916a3d57fcfcf287e5ef019301815f">
+              float <a href="#aaf916a3d57fcfcf287e5ef019301815f" class="m-doc-self">field_1E4</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="aa2ef85e44e3a5b724a93ef5b1f3a6b9c">
+              bool <a href="#aa2ef85e44e3a5b724a93ef5b1f3a6b9c" class="m-doc-self">field_1E8</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a3d9bc1cb1579af03b4eca9ed9ab5eede">
+              float <a href="#a3d9bc1cb1579af03b4eca9ed9ab5eede" class="m-doc-self">field_1EC</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a739a86b6ae42904fee7846cbc12d4156">
+              float <a href="#a739a86b6ae42904fee7846cbc12d4156" class="m-doc-self">field_1F0</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a6572c9487e6cf76370781d58ed1d0283">
+              float <a href="#a6572c9487e6cf76370781d58ed1d0283" class="m-doc-self">field_1F4</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a83e4d5f338939db918a02b9dbedfa180">
+              float <a href="#a83e4d5f338939db918a02b9dbedfa180" class="m-doc-self">field_1F8</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a79645f6445c2cd714f4fd7e1bd1dd87f">
+              float <a href="#a79645f6445c2cd714f4fd7e1bd1dd87f" class="m-doc-self">field_1FC</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a0eee7bf702598ec83b90dabaf1b172c7">
+              float <a href="#a0eee7bf702598ec83b90dabaf1b172c7" class="m-doc-self">field_200</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a759b63c75ca3ae79b7510e40c938caaa">
+              float <a href="#a759b63c75ca3ae79b7510e40c938caaa" class="m-doc-self">field_204</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a5d108e5d80fa18df7a86f605ad260744">
+              float <a href="#a5d108e5d80fa18df7a86f605ad260744" class="m-doc-self">field_208</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a3cffdeb4ffad2823f08a3b7c36ee8b2f">
+              <a href="struct_terrain_1_1c_terrain_state_mgr.html" class="m-doc">cTerrainStateMgr</a>* <a href="#a3cffdeb4ffad2823f08a3b7c36ee8b2f" class="m-doc-self">mpTerrainStateMgr</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a06b8f096c7cb2dffd1bf3ef2cb9d0833">
+              <a href="c_weather_manager_8h.html#acb27aec14643b0a97a79fe2d67d6e13f" class="m-doc">cWeatherManagerPtr</a> <a href="#a06b8f096c7cb2dffd1bf3ef2cb9d0833" class="m-doc-self">mpWeatherManager</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="adb8a0addd325d4ba88694c481ba74782">
+              int <a href="#adb8a0addd325d4ba88694c481ba74782" class="m-doc-self">field_214</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="af597788a09910d96f85023ba6b48ae65">
+              vector&lt;int&gt; <a href="#af597788a09910d96f85023ba6b48ae65" class="m-doc-self">field_218</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a0f3d3ba595e5959e806c930073abc2c5">
+              vector&lt;int&gt; <a href="#a0f3d3ba595e5959e806c930073abc2c5" class="m-doc-self">field_22C</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a7a81512c0b3e1e1fbc0e974a66462c9c">
+              vector&lt;int&gt; <a href="#a7a81512c0b3e1e1fbc0e974a66462c9c" class="m-doc-self">field_240</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="acb5c1edf3d9dd5a24b2dd0bd0b928b7c">
+              vector&lt;int&gt; <a href="#acb5c1edf3d9dd5a24b2dd0bd0b928b7c" class="m-doc-self">field_254</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a4eec3022b2bf1120a3901a2e8c74828c">
+              vector&lt;int&gt; <a href="#a4eec3022b2bf1120a3901a2e8c74828c" class="m-doc-self">field_268</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a22b73416826294383872f6c4eaccd811">
+              vector&lt;int&gt; <a href="#a22b73416826294383872f6c4eaccd811" class="m-doc-self">field_27C</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a970f5721185727767b72c0b036560484">
+              vector&lt;int&gt; <a href="#a970f5721185727767b72c0b036560484" class="m-doc-self">field_290</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a56c2699a4496c3c7dbe50f4dc019c300">
+              vector&lt;int&gt; <a href="#a56c2699a4496c3c7dbe50f4dc019c300" class="m-doc-self">field_2A4</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="abe37b10617716c3344dcc050ba4501eb">
+              vector&lt;int&gt; <a href="#abe37b10617716c3344dcc050ba4501eb" class="m-doc-self">field_2B8</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="acfe63045c3ec31749b3c606a49e16ff7">
+              vector&lt;int&gt; <a href="#acfe63045c3ec31749b3c606a49e16ff7" class="m-doc-self">field_2CC</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a9147f3946eba8262e69dd948a5848ff0">
+              vector&lt;int&gt; <a href="#a9147f3946eba8262e69dd948a5848ff0" class="m-doc-self">field_2E0</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="ac82912657a212a5a3e4ffd201fefb3af">
+              vector&lt;int&gt; <a href="#ac82912657a212a5a3e4ffd201fefb3af" class="m-doc-self">field_2F4</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a190344ee1bb7b44c8da6e8f9b63c291f">
+              <a href="_texture_8h.html#affea3369120131ed058702d2945a10b4" class="m-doc">TexturePtr</a> <a href="#a190344ee1bb7b44c8da6e8f9b63c291f" class="m-doc-self">field_308</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="acdef4c82655f26b570d005b3bdc99d9d">
+              <a href="struct_math_1_1_vector4.html" class="m-doc">Vector4</a> <a href="#acdef4c82655f26b570d005b3bdc99d9d" class="m-doc-self">mCameraPos</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="ae1ca94cadb57204e8290a4505fd8bde9">
+              <a href="struct_math_1_1_vector4.html" class="m-doc">Vector4</a> <a href="#ae1ca94cadb57204e8290a4505fd8bde9" class="m-doc-self">mCameraDir</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="ab848ff13706dce1865018f73c116a276">
+              <a href="struct_math_1_1_vector4.html" class="m-doc">Vector4</a> <a href="#ab848ff13706dce1865018f73c116a276" class="m-doc-self">mSunDir</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="ad15ae4d25cdc8bc7c312f4a81b6b4dc6">
+              bool <a href="#ad15ae4d25cdc8bc7c312f4a81b6b4dc6" class="m-doc-self">field_33C</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="aa69e47a27d88576849c0f9d103227cf0">
+              bool <a href="#aa69e47a27d88576849c0f9d103227cf0" class="m-doc-self">field_33D</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a5691b775709b69f7edcf3362aa16477c">
+              int <a href="#a5691b775709b69f7edcf3362aa16477c" class="m-doc-self">field_340</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="aebbf0a458267248675893a3964aa839d">
+              int <a href="#aebbf0a458267248675893a3964aa839d" class="m-doc-self">field_344</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a098b0eb47eaab800f48303d8564b3c52">
+              bool <a href="#a098b0eb47eaab800f48303d8564b3c52" class="m-doc-self">field_348</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a053b4c3d50d76eb8c75a28ebaa955bfb">
+              float <a href="#a053b4c3d50d76eb8c75a28ebaa955bfb" class="m-doc-self">mMungeHeightMapScale</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a68af91300d44d923efb054801b929abb">
+              float <a href="#a68af91300d44d923efb054801b929abb" class="m-doc-self">mMungeWindMapScale</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a5aebc06837a8ad4b54d52bde308f6c7e">
+              float <a href="#a5aebc06837a8ad4b54d52bde308f6c7e" class="m-doc-self">mMungeTempMapScale</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a2061634c076b2d4e20a280f4f75a4cd8">
+              float <a href="#a2061634c076b2d4e20a280f4f75a4cd8" class="m-doc-self">mMungeLatMapScale</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="ad2f51475f81dfbfa13f64a06f6fcc4f1">
+              float <a href="#ad2f51475f81dfbfa13f64a06f6fcc4f1" class="m-doc-self">mMungeAlphaNoiseStrength</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a115c1d502aab54d908e7feb2fad986c3">
+              float <a href="#a115c1d502aab54d908e7feb2fad986c3" class="m-doc-self">field_360</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a800285a4cf60a56c43700f5ed558c3ca">
+              float <a href="#a800285a4cf60a56c43700f5ed558c3ca" class="m-doc-self">field_364</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a4723ec766561bfd12d117f3fa2f04b2d">
+              int8_t <a href="#a4723ec766561bfd12d117f3fa2f04b2d" class="m-doc-self">field_368</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="aaba19e60d695f2dfcbed5cf69383e214">
+              int <a href="#aaba19e60d695f2dfcbed5cf69383e214" class="m-doc-self">field_36C</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a9004ca4c2b132c36537dda0b1ae23f65">
+              bool <a href="#a9004ca4c2b132c36537dda0b1ae23f65" class="m-doc-self">field_370</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a920d1783f7fd7fb26dd53a588c7533ce">
+              char <a href="#a920d1783f7fd7fb26dd53a588c7533ce" class="m-doc-self">padding_374</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a9f12f8714d05e386ee0f5df01e873045">
+              <a href="struct_math_1_1_vector4.html" class="m-doc">Vector4</a> <a href="#a9f12f8714d05e386ee0f5df01e873045" class="m-doc-self">field_494</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a3d96f8c01745c0d07ecc6de0c1919012">
+              bool <a href="#a3d96f8c01745c0d07ecc6de0c1919012" class="m-doc-self">field_4F4</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a91eef9dcaee10c0b5b32a95fa23ab89b">
+              bool <a href="#a91eef9dcaee10c0b5b32a95fa23ab89b" class="m-doc-self">field_4F5</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a2894a8d6bddba4560d911a5dd2051e32">
+              <a href="struct_terrain_1_1_terrain_state.html" class="m-doc">TerrainState</a> <a href="#a2894a8d6bddba4560d911a5dd2051e32" class="m-doc-self">mTerrainState</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a1e6bf0245f6d525d64415c2bc8f72d97">
+              <a href="struct_math_1_1_vector4.html" class="m-doc">Vector4</a> <a href="#a1e6bf0245f6d525d64415c2bc8f72d97" class="m-doc-self">mTramp</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a08993787fbf7bdaa10674317a45525fa">
+              <a href="struct_math_1_1_vector4.html" class="m-doc">Vector4</a> <a href="#a08993787fbf7bdaa10674317a45525fa" class="m-doc-self">field_6B8</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a101e6a771cfd9fbd64dd7d3ad0e5536e">
+              <a href="struct_math_1_1_vector4.html" class="m-doc">Vector4</a> <a href="#a101e6a771cfd9fbd64dd7d3ad0e5536e" class="m-doc-self">field_6C8</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <a href="struct_math_1_1_vector4.html" class="m-doc">Vector4</a> <a href="#a9d66180a9706966516712dd7de39b3b3" class="m-doc">field_6D8</a>
+            </dt>
+            <dd></dd>
+            <dt id="a3e4e54cc3bf66ab499db81c61b5b27ce">
+              vector&lt;int&gt; <a href="#a3e4e54cc3bf66ab499db81c61b5b27ce" class="m-doc-self">field_758</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a004b261005e813487753a76d483c347e">
+              bool <a href="#a004b261005e813487753a76d483c347e" class="m-doc-self">mAssetsLoaded</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="acc45f0b242850cf221231d658e4e63e4">
+              vector&lt;<a href="struct_terrain_1_1c_terrain_sphere_1_1_terrain_modification.html" class="m-doc">TerrainModification</a>&gt; <a href="#acc45f0b242850cf221231d658e4e63e4" class="m-doc-self">mModelFootprints</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a8b442e20be3c35c381024df60899b1fd">
+              vector&lt;<a href="struct_terrain_1_1c_terrain_sphere_1_1_terrain_modification.html" class="m-doc">TerrainModification</a>&gt; <a href="#a8b442e20be3c35c381024df60899b1fd" class="m-doc-self">mModelNeedRelevel</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="aaa14c0612dc5e3f1487f66d36a80e860">
+              vector&lt;<a href="struct_terrain_1_1c_terrain_sphere_1_1_terrain_modification.html" class="m-doc">TerrainModification</a>&gt; <a href="#aaa14c0612dc5e3f1487f66d36a80e860" class="m-doc-self">mPlayerEffects</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="ac49ab72bdcbe985b1670f6c8884ed6c6">
+              int <a href="#ac49ab72bdcbe985b1670f6c8884ed6c6" class="m-doc-self">mNumModels</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a4c6e53cd34b41f916680c7bd44ee3e59">
+              vector&lt;<a href="struct_resource_key.html" class="m-doc">ResourceKey</a>&gt; <a href="#a4c6e53cd34b41f916680c7bd44ee3e59" class="m-doc-self">mModelKeys</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a2548eff945455bf4c2c011ef1a8506b8">
+              vector&lt;<a href="class_transform.html" class="m-doc">Transform</a>&gt; <a href="#a2548eff945455bf4c2c011ef1a8506b8" class="m-doc-self">mModelTransforms</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a7121219332dddc037b0fa8cad36c1e7a">
+              vector&lt;<a href="_model_asset_8h.html#a4695930ef0d84e11d31379e623af5732" class="m-doc">ModelPtr</a>&gt; <a href="#a7121219332dddc037b0fa8cad36c1e7a" class="m-doc-self">mModels</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a897875a479b3b4cf6474e02446a581d9">
+              vector&lt;<a href="_i_effect_8h.html#adc433612d1d4c8a3a401b5c1dc2d4eba" class="m-doc">IEffectPtr</a>&gt; <a href="#a897875a479b3b4cf6474e02446a581d9" class="m-doc-self">mAmbientEffects</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a34abfec1a4445add396a4d6c6fb2049c">
+              vector&lt;<a href="_i_effect_8h.html#adc433612d1d4c8a3a401b5c1dc2d4eba" class="m-doc">IEffectPtr</a>&gt; <a href="#a34abfec1a4445add396a4d6c6fb2049c" class="m-doc-self">mAmbientSoundEffects</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a313e961ee9b0815a5951948460fa1abb">
+              int <a href="#a313e961ee9b0815a5951948460fa1abb" class="m-doc-self">mPlayerModCount</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a3dec641926116898a2404be88a124db3">
+              int <a href="#a3dec641926116898a2404be88a124db3" class="m-doc-self">field_818</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a04968376e1bd64905a24cdbfebfdc782">
+              int <a href="#a04968376e1bd64905a24cdbfebfdc782" class="m-doc-self">field_81C</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a347fea43c1a08f7aebf066815ebdb070">
+              char <a href="#a347fea43c1a08f7aebf066815ebdb070" class="m-doc-self">padding_820</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a7a9625fede828bdf375878b99c061b54">
+              bool <a href="#a7a9625fede828bdf375878b99c061b54" class="m-doc-self">field_880</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="afc2005b30f6dc672bdc232c6ff77e95e">
+              int <a href="#afc2005b30f6dc672bdc232c6ff77e95e" class="m-doc-self">field_884</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="ac6b39dbc68f96543f1b4a655ba4787af">
+              int <a href="#ac6b39dbc68f96543f1b4a655ba4787af" class="m-doc-self">field_888</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="ae94f29ca0aa46ef29f52c85ed19d3a98">
+              int <a href="#ae94f29ca0aa46ef29f52c85ed19d3a98" class="m-doc-self">field_88C</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="ad130ebf669bb2f33a89ae433b8c22488">
+              int <a href="#ad130ebf669bb2f33a89ae433b8c22488" class="m-doc-self">field_890</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a3f74a72b76e7dcfdb7ca7bdec7dc0ce8">
+              int <a href="#a3f74a72b76e7dcfdb7ca7bdec7dc0ce8" class="m-doc-self">field_894</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a41fe17b01dd42bcf0f71df9760ed290f">
+              int <a href="#a41fe17b01dd42bcf0f71df9760ed290f" class="m-doc-self">field_898</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="af8fcc3ac7530ab3d264d535000a501f2">
+              int <a href="#af8fcc3ac7530ab3d264d535000a501f2" class="m-doc-self">field_89C</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a5b793241898859d0fd7ba6751a8bcae3">
+              void* <a href="#a5b793241898859d0fd7ba6751a8bcae3" class="m-doc-self">mpImpostorJob</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="aca5c503e6a994e30b16723ad361fb4b5">
+              int <a href="#aca5c503e6a994e30b16723ad361fb4b5" class="m-doc-self">field_8A4</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a2463cb1fe79c9685eb2ea0f36e755041">
+              int <a href="#a2463cb1fe79c9685eb2ea0f36e755041" class="m-doc-self">field_8A8</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a52974eb1f971d6daf79944c2c7b2ca0d">
+              bool <a href="#a52974eb1f971d6daf79944c2c7b2ca0d" class="m-doc-self">mAllowUnderwaterObjects</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="ae61b886790ab0895df8ea88f60121264">
+              vector&lt;pair&lt;<a href="_i_model_world_8h.html#ac806a1f42e226576db417e69309943f5" class="m-doc">IModelWorldPtr</a>, int&gt;&gt; <a href="#ae61b886790ab0895df8ea88f60121264" class="m-doc-self">mUnderwaterModelWorlds</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a24f862172e5dd1ad489946ef4eaaed51">
+              vector&lt;pair&lt;<a href="_i_anim_world_8h.html#a9ff522673dfc4e748545440d74e45410" class="m-doc">IAnimWorldPtr</a>, int&gt;&gt; <a href="#a24f862172e5dd1ad489946ef4eaaed51" class="m-doc-self">mUnderwaterAnimWorlds</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="af8fa4775a3d463f78d4d2586578e10a9">
+              <a href="_i_effect_world_8h.html#a03a4adbe3eb0e10e2c62e72c9f246095" class="m-doc">IEffectWorldPtr</a> <a href="#af8fa4775a3d463f78d4d2586578e10a9" class="m-doc-self">mpUnderWaterEffectWorld</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a9b8fdd5ede6c64ec06643777d490143d">
+              int <a href="#a9b8fdd5ede6c64ec06643777d490143d" class="m-doc-self">field_8DC</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a55b99e14e4b1f5e71845f9add8c4b040">
+              int <a href="#a55b99e14e4b1f5e71845f9add8c4b040" class="m-doc-self">field_8E0</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="acddbc596df47108f84acee35bfb05785">
+              <a href="class_app_1_1c_viewer.html" class="m-doc">App::<wbr />cViewer</a>* <a href="#acddbc596df47108f84acee35bfb05785" class="m-doc-self">mpTerrainViewer</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a2177f368ca9997dc2750b467a856d4c1">
+              <a href="class_transform.html" class="m-doc">Transform</a> <a href="#a2177f368ca9997dc2750b467a856d4c1" class="m-doc-self">field_8E8</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a7e40875fbd4efb451380b8cb13ba4a4f">
+              int <a href="#a7e40875fbd4efb451380b8cb13ba4a4f" class="m-doc-self">field_920</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="ab1e212db90f4f28da7ccfd6f48f3f7e0">
+              void* <a href="#ab1e212db90f4f28da7ccfd6f48f3f7e0" class="m-doc-self">mpDecalManager</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a6e39588c65ea0340f07ca88cfe9ad0df">
+              void* <a href="#a6e39588c65ea0340f07ca88cfe9ad0df" class="m-doc-self">mpTerrainDraw</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a6cd73010e1fe5436dbb64f9d932c7df5">
+              char <a href="#a6cd73010e1fe5436dbb64f9d932c7df5" class="m-doc-self">padding_92C</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="ae71ad3c2cc16bf8d2f08f3bad80be31f">
+              float <a href="#ae71ad3c2cc16bf8d2f08f3bad80be31f" class="m-doc-self">field_A1C</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a917a714906d0af4225f982dfa47afbb8">
+              float <a href="#a917a714906d0af4225f982dfa47afbb8" class="m-doc-self">field_A20</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a268960ac244e692af59ad68fc039c87e">
+              float <a href="#a268960ac244e692af59ad68fc039c87e" class="m-doc-self">field_A24</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a2b0ae5c2019f147542af221b7b2a3dee">
+              float <a href="#a2b0ae5c2019f147542af221b7b2a3dee" class="m-doc-self">field_A28</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a7244f01d63bcb93c59fe4dc3ffbc32e8">
+              float <a href="#a7244f01d63bcb93c59fe4dc3ffbc32e8" class="m-doc-self">field_A2C</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a499cb4f0562dd5b9d24dfa794964c475">
+              float <a href="#a499cb4f0562dd5b9d24dfa794964c475" class="m-doc-self">field_A30</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a1ff8fee318ff38d36551caa4e2ee5ed0">
+              float <a href="#a1ff8fee318ff38d36551caa4e2ee5ed0" class="m-doc-self">field_A34</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a9dbafecb39bb125718526a88aa857d53">
+              <a href="struct_math_1_1_color_r_g_b_a.html" class="m-doc">ColorRGBA</a> <a href="#a9dbafecb39bb125718526a88aa857d53" class="m-doc-self">field_A38</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="ad71bbfd451636ab6336a3767ebc36c6e">
+              int <a href="#ad71bbfd451636ab6336a3767ebc36c6e" class="m-doc-self">field_A48</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="adb58d4da6f9260e9a06113e4de803ada">
+              void* <a href="#adb58d4da6f9260e9a06113e4de803ada" class="m-doc-self">mpQuadBuffersPool</a>
+            </dt>
+            <dd><span></span></dd>
+          </dl>
+        </section>
+        <section>
+          <h2>Function documentation</h2>
+          <section class="m-doc-details" id="a40765c28e0ddec00f12c94ce544d2353"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">void Terrain::<wbr />cTerrainSphere::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a40765c28e0ddec00f12c94ce544d2353" class="m-doc-self">MainRenderPass</a>(</span><span class="m-doc-wrap"><a href="class_app_1_1c_viewer.html" class="m-doc">App::<wbr />cViewer</a>** ppViewer,
+              <a href="struct_graphics_1_1_render_statistics.html" class="m-doc">Graphics::<wbr />RenderStatistics</a>&amp; stats,
+              int flags)</span></span>
+            </h3>
+            <p>Called on the <a href="namespace_graphics.html#a4cb0a7db6c6e82b951c0a1fe02c559f2a4ccfea7a25fae3c1d31555f0856d2b42" class="m-doc">Graphics::<wbr />RenderLayers::<wbr />Terrain</a> layer, calls all the <a href="class_terrain_1_1c_terrain_sphere.html#ae3f004a97635254ef31a382a469fd0d5" class="m-doc">RenderTerrainLand()</a> etc methods.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">ppViewer</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>stats</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>flags</td>
+                  <td></td>
+                </tr>
+              </tbody>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="a87f6f266572c907d38eb7b267b4e94e6"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">void Terrain::<wbr />cTerrainSphere::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a87f6f266572c907d38eb7b267b4e94e6" class="m-doc-self">RenderWaterReflectionAndRefraction</a>(</span><span class="m-doc-wrap">)</span></span>
+            </h3>
+            <p>This is called on the <a href="namespace_graphics.html#a4cb0a7db6c6e82b951c0a1fe02c559f2aef82c94236471f84aefff94eba649794" class="m-doc">Graphics::<wbr />RenderLayers::<wbr />TerrainRTT</a> layer, before the planet itself is rendered; this function renders the water reflection and refraction textures that are later used in rendering water.</p>
+<p>This calls <a href="class_terrain_1_1c_terrain_sphere.html#a9e735e439173a9712841169f8aad387e" class="m-doc">RenderWaterRefraction()</a> and <a href="class_terrain_1_1c_terrain_sphere.html#a5aad71566950fc921a0d466ffe351bff" class="m-doc">RenderWaterReflection()</a></p>
+          </div></section>
+          <section class="m-doc-details" id="af495161a3a05ca016bdbc8e47d64ad41"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"><a href="struct_render_ware_1_1_raster.html" class="m-doc">RenderWare::<wbr />Raster</a>* Terrain::<wbr />cTerrainSphere::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#af495161a3a05ca016bdbc8e47d64ad41" class="m-doc-self">GetSimDataRTT</a>(</span><span class="m-doc-wrap">int quadIndex)</span></span>
+            </h3>
+            <p>Returns the <code>SimDataRTT</code> texture for the specified terrain quad.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">quadIndex</td>
+                  <td></td>
+                </tr>
+              </tbody>
+            </table>
+<p>This map is used to control the color of the planet at each point.</p>
+          </div></section>
+          <section class="m-doc-details" id="af7e1e548c606680eb73a05c2d83d58be"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">void Terrain::<wbr />cTerrainSphere::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#af7e1e548c606680eb73a05c2d83d58be" class="m-doc-self">CreateRTTs</a>(</span><span class="m-doc-wrap">)</span></span>
+            </h3>
+            <p>Creates some of the render target textures used by planets: the &#x27;SimData&#x27; textures, &#x27;ColorMap&#x27;, scatter, and reflection.</p>
+<p>Source code: <a href="_source_code-_terrain.html#SourceCode-Terrain-cTerrainSphere-CreateRTTs" class="m-doc">cTerrainSphere::<wbr />CreateRTTs()</a></p>
+          </div></section>
+        </section>
+        <section>
+          <h2>Variable documentation</h2>
+          <section class="m-doc-details" id="a9d66180a9706966516712dd7de39b3b3"><div>
+            <h3>
+              <a href="struct_math_1_1_vector4.html" class="m-doc">Vector4</a> Terrain::<wbr />cTerrainSphere::<wbr /><a href="#a9d66180a9706966516712dd7de39b3b3" class="m-doc-self">field_6D8</a>
+            </h3>
+<ul><li>6D8h *&zwj;/ <a href="struct_terrain_1_1_terrain_lighting.html" class="m-doc">TerrainLighting</a> mTerrainLighting;</li></ul>
+          </div></section>
+        </section>
+      </div>
+    </div>
+  </div>
+</article></main>
+<div class="m-doc-search" id="search">
+  <a href="#!" onclick="return hideSearch()"></a>
+  <div class="m-container">
+    <div class="m-row">
+      <div class="m-col-m-8 m-push-m-2">
+        <div class="m-doc-search-header m-text m-small">
+          <div><span class="m-label m-default">Tab</span> / <span class="m-label m-default">T</span> to search, <span class="m-label m-default">Esc</span> to close</div>
+          <div id="search-symbolcount">&hellip;</div>
+        </div>
+        <div class="m-doc-search-content">
+          <form>
+            <input type="search" name="q" id="search-input" placeholder="Loading &hellip;" disabled="disabled" autofocus="autofocus" autocomplete="off" spellcheck="false" />
+          </form>
+          <noscript class="m-text m-danger m-text-center">Unlike everything else in the docs, the search functionality <em>requires</em> JavaScript.</noscript>
+          <div id="search-help" class="m-text m-dim m-text-center">
+            <p class="m-noindent">Search for symbols, directories, files, pages or
+            modules. You can omit any prefix from the symbol or file path; adding a
+            <code>:</code> or <code>/</code> suffix lists all members of given symbol or
+            directory.</p>
+            <p class="m-noindent">Use <span class="m-label m-dim">&darr;</span>
+            / <span class="m-label m-dim">&uarr;</span> to navigate through the list,
+            <span class="m-label m-dim">Enter</span> to go.
+            <span class="m-label m-dim">Tab</span> autocompletes common prefix, you can
+            copy a link to the result using <span class="m-label m-dim">⌘</span>
+            <span class="m-label m-dim">L</span> while <span class="m-label m-dim">⌘</span>
+            <span class="m-label m-dim">M</span> produces a Markdown link.</p>
+          </div>
+          <div id="search-notfound" class="m-text m-warning m-text-center">Sorry, nothing was found.</div>
+          <ul id="search-results"></ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="search-v1.js"></script>
+<script src="searchdata-v1.js" async="async"></script>
+<footer><nav>
+  <div class="m-container">
+    <div class="m-row">
+      <div class="m-col-l-10 m-push-l-1">
+        <p>Spore ModAPI SDK for creating C++ mods for Spore. Created with <a href="https://doxygen.org/">Doxygen</a> 1.8.16 and <a href="https://mcss.mosra.cz/">m.css</a>.</p>
+      </div>
+    </div>
+  </div>
+</nav></footer>
+</body>
+</html>

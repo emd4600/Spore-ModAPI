@@ -48,7 +48,7 @@
           <span class="m-breadcrumb"><a href="namespace_graphics.html">Graphics</a>::<wbr/></span>Texture <span class="m-thin">class</span>
           <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_texture_8h.html">&lt;Spore/Graphics/Texture.h&gt;</a></div>
         </h1>
-        <p><span></span></p>
+        <p>High level representation of a game texture.</p>
         <div class="m-block m-default">
           <h3>Contents</h3>
           <ul>
@@ -62,6 +62,7 @@
             </li>
           </ul>
         </div>
+<p>Interaction with this class is done through the TextureManager; textures are identified using an instance ID and group ID (there is also type ID, but it is often defaulted to <code>.raster</code> and ignored). The low level equivalent is <a href="struct_render_ware_1_1_raster.html" class="m-doc">RenderWare::<wbr />Raster</a>, which can be used to load the texture into shaders and materials.</p>
         <section id="derived-classes">
           <h2><a href="#derived-classes">Derived classes</a></h2>
           <dl class="m-doc">
@@ -82,21 +83,29 @@
               <span class="m-doc-wrap-bumper">auto <a href="#ad40bd113e7fd9a4cbd56bdfdc7b950a2" class="m-doc-self">Release</a>(</span><span class="m-doc-wrap">) -&gt; int</span>
             </dt>
             <dd><span></span></dd>
-            <dt id="af47fef7aece66a3d36f8e11984cb8f54">
-              <span class="m-doc-wrap-bumper">auto <a href="#af47fef7aece66a3d36f8e11984cb8f54" class="m-doc-self">GetRaster</a>(</span><span class="m-doc-wrap">) -&gt; <a href="struct_render_ware_1_1_raster.html" class="m-doc">Raster</a>*</span>
+            <dt id="a72005666472d1ee24839dec1d601eadd">
+              <span class="m-doc-wrap-bumper">auto <a href="#a72005666472d1ee24839dec1d601eadd" class="m-doc-self">GetRaster</a>(</span><span class="m-doc-wrap">) -&gt; <a href="struct_render_ware_1_1_raster.html" class="m-doc">RenderWare::<wbr />Raster</a>*</span>
             </dt>
-            <dd><span></span></dd>
+            <dd>Returns the underlying raster of this texture, which can be used to load it into shaders and materials.</dd>
+            <dt id="a8725c648c0e7686a2926bd8630b28f3d">
+              <span class="m-doc-wrap-bumper">auto <a href="#a8725c648c0e7686a2926bd8630b28f3d" class="m-doc-self">GetLoadedRaster</a>(</span><span class="m-doc-wrap">) -&gt; <a href="struct_render_ware_1_1_raster.html" class="m-doc">RenderWare::<wbr />Raster</a>*</span>
+            </dt>
+            <dd>Returns the underlying raster of this texture, waiting until the texture finishes loading if it is still loading asynchronously (so this will always return the final raster, and not temporary ones).</dd>
+            <dt id="a2bdb52920094ed0ad42fa1b911db5396">
+              <span class="m-doc-wrap-bumper">auto <a href="#a2bdb52920094ed0ad42fa1b911db5396" class="m-doc-self">IsLoaded</a>(</span><span class="m-doc-wrap">) -&gt; bool</span>
+            </dt>
+            <dd>Returns true if the texture is fully loaded, false if it is still loading.</dd>
           </dl>
         </section>
         <section id="pro-attribs">
           <h2><a href="#pro-attribs">Protected variables</a></h2>
           <dl class="m-doc">
-            <dt id="af44de51f6f36cd5bd5da039d36e24224">
-              <a href="struct_render_ware_1_1_raster.html" class="m-doc">Raster</a>* <a href="#af44de51f6f36cd5bd5da039d36e24224" class="m-doc-self">mpRaster</a>
+            <dt id="a30db240a8aa766c3fcfc42424d33b7f6">
+              <a href="struct_render_ware_1_1_raster.html" class="m-doc">RenderWare::<wbr />Raster</a>* <a href="#a30db240a8aa766c3fcfc42424d33b7f6" class="m-doc-self">mpRaster</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="a0c16827475e09388361c160e6727663d">
-              int <a href="#a0c16827475e09388361c160e6727663d" class="m-doc-self">mnFlags</a>
+            <dt id="a90fbbd94ebaaf5e81b3efaa2c051535b">
+              int <a href="#a90fbbd94ebaaf5e81b3efaa2c051535b" class="m-doc-self">mFlags</a>
             </dt>
             <dd><span></span></dd>
             <dt id="a3f7f8dbafee40dcee9f38ee500bbbbf2">
@@ -109,6 +118,10 @@
             <dd><span></span></dd>
             <dt id="ab12f45ff90b0d660cb7e52ef2c58ef28">
               <a href="struct_resource_key.html" class="m-doc">ResourceKey</a> <a href="#ab12f45ff90b0d660cb7e52ef2c58ef28" class="m-doc-self">mName</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a4401ed0ae903e551fd3406484942ee39">
+              <a href="c_rw_direct_resource_8h.html#a9e5d68617d2b56c7000abd584e5dd288" class="m-doc">cRwRasterDirectResourcePtr</a> <a href="#a4401ed0ae903e551fd3406484942ee39" class="m-doc-self">mpResource</a>
             </dt>
             <dd><span></span></dd>
           </dl>

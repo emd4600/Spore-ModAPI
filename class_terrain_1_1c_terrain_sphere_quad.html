@@ -46,7 +46,7 @@
       <div class="m-col-l-10 m-push-l-1">
         <h1>
           <span class="m-breadcrumb"><a href="namespace_terrain.html">Terrain</a>::<wbr/></span>cTerrainSphereQuad <span class="m-thin">class</span>
-          <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="c_terrain_sphere_quad_8h.html">&lt;Spore/Terrain/Sphere/cTerrainSphereQuad.h&gt;</a></div>
+          <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="c_terrain_sphere_quad_8h.html">&lt;Spore/Terrain/cTerrainSphereQuad.h&gt;</a></div>
         </h1>
         <p><span></span></p>
         <div class="m-block m-default">
@@ -55,31 +55,408 @@
             <li>
               Reference
               <ul>
+                <li><a href="#pub-methods">Public functions</a></li>
                 <li><a href="#pub-attribs">Public variables</a></li>
               </ul>
             </li>
           </ul>
         </div>
+        <section id="pub-methods">
+          <h2><a href="#pub-methods">Public functions</a></h2>
+          <dl class="m-doc">
+            <dt id="a73c56b3981e47e608f4bec0e4c2ac735">
+              <span class="m-doc-wrap-bumper">void <a href="#a73c56b3981e47e608f4bec0e4c2ac735" class="m-doc-self">Initialize</a>(</span><span class="m-doc-wrap"><a href="class_terrain_1_1c_terrain_sphere.html" class="m-doc">cTerrainSphere</a>* pSphere,
+              int,
+              int index,
+              const <a href="struct_math_1_1_vector2.html" class="m-doc">Math::<wbr />Vector2</a>&amp; coord0,
+              const <a href="struct_math_1_1_vector2.html" class="m-doc">Math::<wbr />Vector2</a>&amp; coord1,
+              int)</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">void <a href="#ae6afe78661aa96c6497c2374abc9da67" class="m-doc">LoadTerrainTransform</a>(</span><span class="m-doc-wrap"><a href="class_app_1_1c_viewer.html" class="m-doc">App::<wbr />cViewer</a>* pViewer)</span>
+            </dt>
+            <dd>Loads the <code>mTerrainTransform</code> field into the shader data <code>terrainTransform</code>, it also loads the shader data <code>pcaTexture</code>.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">void <a href="#a740ffd31bcd11e563cb9641fdad50c1f" class="m-doc">Draw</a>(</span><span class="m-doc-wrap"><a href="struct_render_ware_1_1_vertex_buffer.html" class="m-doc">RenderWare::<wbr />VertexBuffer</a>* pVertices,
+              <a href="struct_render_ware_1_1_index_buffer.html" class="m-doc">RenderWare::<wbr />IndexBuffer</a>* pIndices,
+              int startIndex,
+              int indicesCount)</span>
+            </dt>
+            <dd>Draws the sphere quad mesh, this does not change any materials.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">void <a href="#aee26148cdf6bb1a1819bdd81dd4c27cb" class="m-doc">RenderLand</a>(</span><span class="m-doc-wrap"><a href="class_app_1_1c_viewer.html" class="m-doc">App::<wbr />cViewer</a>* pViewer,
+              <a href="struct_graphics_1_1_render_statistics.html" class="m-doc">Graphics::<wbr />RenderStatistics</a>&amp; stats)</span>
+            </dt>
+            <dd>Called by <a href="class_terrain_1_1c_terrain_sphere.html#ae3f004a97635254ef31a382a469fd0d5" class="m-doc">Terrain::<wbr />cTerrainSphere::<wbr />RenderTerrainLand()</a>.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">void <a href="#a7be5283ceb10c2ee4c567ac4e8bdb55f" class="m-doc">RenderSeabedAsLand</a>(</span><span class="m-doc-wrap"><a href="class_app_1_1c_viewer.html" class="m-doc">App::<wbr />cViewer</a>* pViewer,
+              <a href="struct_graphics_1_1_render_statistics.html" class="m-doc">Graphics::<wbr />RenderStatistics</a>&amp; stats)</span>
+            </dt>
+            <dd>Called by <a href="class_terrain_1_1c_terrain_sphere.html#a5e64f4f192d0c0205a7d7f8b54f152ec" class="m-doc">Terrain::<wbr />cTerrainSphere::<wbr />RenderTerrainSeabedAsLand()</a>.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">void <a href="#a6d6b651cde335bd8775118888b560a8d" class="m-doc">RenderWater</a>(</span><span class="m-doc-wrap"><a href="class_app_1_1c_viewer.html" class="m-doc">App::<wbr />cViewer</a>* pViewer,
+              <a href="struct_graphics_1_1_render_statistics.html" class="m-doc">Graphics::<wbr />RenderStatistics</a>&amp; stats,
+              <a href="namespace_terrain.html#add21c184ae1ef9ab03185dbcbc8400b2" class="m-doc">TerrainMaterialIndex</a> material,
+              int flags)</span>
+            </dt>
+            <dd>Called by <a href="class_terrain_1_1c_terrain_sphere.html#aae01e63c97aa9581d8c383cd0dad5446" class="m-doc">Terrain::<wbr />cTerrainSphere::<wbr />RenderTerrainWater()</a>.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">void <a href="#abb4acbf0a399aec8464d9aa7e7a6371d" class="m-doc">RenderAtmosphere</a>(</span><span class="m-doc-wrap"><a href="class_app_1_1c_viewer.html" class="m-doc">App::<wbr />cViewer</a>* pViewer,
+              <a href="struct_graphics_1_1_render_statistics.html" class="m-doc">Graphics::<wbr />RenderStatistics</a>&amp; stats)</span>
+            </dt>
+            <dd>Called by <a href="class_terrain_1_1c_terrain_sphere.html#a956da95eacbcb16932bcd15fffc522bf" class="m-doc">Terrain::<wbr />cTerrainSphere::<wbr />RenderTerrainAtmosphere()</a>.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">void <a href="#a60c4871596d043d6f8d825499c47b6b0" class="m-doc">RenderDecals</a>(</span><span class="m-doc-wrap"><a href="class_app_1_1c_viewer.html" class="m-doc">App::<wbr />cViewer</a>* pViewer,
+              <a href="struct_graphics_1_1_render_statistics.html" class="m-doc">Graphics::<wbr />RenderStatistics</a>&amp; stats)</span>
+            </dt>
+            <dd>Called by <a href="class_terrain_1_1c_terrain_sphere.html#adc8a56bd5871c952478f5b1396660447" class="m-doc">Terrain::<wbr />cTerrainSphere::<wbr />RenderTerrainDecals()</a>.</dd>
+            <dt id="a9cf0ac9b88582a094503921c20b37281">
+              <span class="m-doc-wrap-bumper">void <a href="#a9cf0ac9b88582a094503921c20b37281" class="m-doc-self">UpdateBuffers</a>(</span><span class="m-doc-wrap">)</span>
+            </dt>
+            <dd>Recalculates the geometry of the terrain quad only if needed, calling <a href="class_terrain_1_1c_terrain_sphere_quad.html#a9c9f0023b7269a37586353766799ba40" class="m-doc">UpdateVertexBuffer()</a> and UpdateIndexBuffer accordingly.</dd>
+            <dt id="a9c9f0023b7269a37586353766799ba40">
+              <span class="m-doc-wrap-bumper">void <a href="#a9c9f0023b7269a37586353766799ba40" class="m-doc-self">UpdateVertexBuffer</a>(</span><span class="m-doc-wrap">)</span>
+            </dt>
+            <dd>Recalculates the vertex buffer of the terrain quad, and sets <code>mMustUpdateVertexBuffer</code> to false.</dd>
+            <dt id="aec733f71ab293c84102b8fc79a1c218c">
+              <span class="m-doc-wrap-bumper">void <a href="#aec733f71ab293c84102b8fc79a1c218c" class="m-doc-self">UpdateIndexBuffer</a>(</span><span class="m-doc-wrap">)</span>
+            </dt>
+            <dd>Recalculates the index buffer of the terrain quad, and sets <code>mMustUpdateIndexBuffer</code> to false.</dd>
+          </dl>
+        </section>
         <section id="pub-attribs">
           <h2><a href="#pub-attribs">Public variables</a></h2>
           <dl class="m-doc">
             <dt id="abbb53dd2e306d7215a74e6376da8bafc">
-              cTerrainSphere* <a href="#abbb53dd2e306d7215a74e6376da8bafc" class="m-doc-self">mpSphere</a>
+              <a href="class_terrain_1_1c_terrain_sphere.html" class="m-doc">cTerrainSphere</a>* <a href="#abbb53dd2e306d7215a74e6376da8bafc" class="m-doc-self">mpSphere</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="a445feb0543daf954a200649d79d71c52">
-              <a href="struct_terrain_1_1_terrain_quad_mesh.html" class="m-doc">TerrainQuadMesh</a>* <a href="#a445feb0543daf954a200649d79d71c52" class="m-doc-self">mesh</a>
+            <dt id="a34d27593ec678db8af484730e4b3a9c7">
+              int <a href="#a34d27593ec678db8af484730e4b3a9c7" class="m-doc-self">field_4</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="a42fe61d982ee0d61c0132c4484caf4ea">
-              int <a href="#a42fe61d982ee0d61c0132c4484caf4ea" class="m-doc-self">indicesCount</a>
+            <dt id="aa75aee4f215df625ca9c89067a3712bf">
+              int <a href="#aa75aee4f215df625ca9c89067a3712bf" class="m-doc-self">field_8</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="aa4ab0df734b7c652b772b7884f4f96c2">
-              <a href="struct_terrain_1_1_terrain_transform.html" class="m-doc">TerrainTransform</a> <a href="#aa4ab0df734b7c652b772b7884f4f96c2" class="m-doc-self">terrainTransform</a>
+            <dt id="a4afd2cf8f399ebec2825bf10aa6320b9">
+              int <a href="#a4afd2cf8f399ebec2825bf10aa6320b9" class="m-doc-self">field_C</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="aa0e012976ee7268cb7da81cb50e7fe50">
+              int <a href="#aa0e012976ee7268cb7da81cb50e7fe50" class="m-doc-self">field_10</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a8229b686c1ba4315045baa6710e8bcb0">
+              int <a href="#a8229b686c1ba4315045baa6710e8bcb0" class="m-doc-self">field_14</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a43d0932cabaa9e2aa75367b0db56fa1c">
+              int <a href="#a43d0932cabaa9e2aa75367b0db56fa1c" class="m-doc-self">mPlanetLODChunkRes</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a5cc21b6654b20ccff8a0268898a0f1be">
+              int <a href="#a5cc21b6654b20ccff8a0268898a0f1be" class="m-doc-self">mIndex</a>
+            </dt>
+            <dd>Index of sphere quad, from 0 to 5.</dd>
+            <dt id="a525dcf27592c93fb42d6bb1cf28e548a">
+              <a href="struct_math_1_1_vector2.html" class="m-doc">Math::<wbr />Vector2</a> <a href="#a525dcf27592c93fb42d6bb1cf28e548a" class="m-doc-self">field_20</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a953440adb9102a25f034d4c1938aac07">
+              <a href="struct_math_1_1_vector2.html" class="m-doc">Math::<wbr />Vector2</a> <a href="#a953440adb9102a25f034d4c1938aac07" class="m-doc-self">field_28</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a2c277cc451d0f1a29280900f238bd963">
+              float <a href="#a2c277cc451d0f1a29280900f238bd963" class="m-doc-self">field_30</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a45ce64a903b590642c993a13df10831d">
+              <a href="struct_math_1_1_vector3.html" class="m-doc">Math::<wbr />Vector3</a> <a href="#a45ce64a903b590642c993a13df10831d" class="m-doc-self">field_34</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="ab12ebd2f53c00f36a5e9468a20e4acd9">
+              char <a href="#ab12ebd2f53c00f36a5e9468a20e4acd9" class="m-doc-self">padding_40</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="ae7b3154bc05c6bf2d3070feb8c256f80">
+              float <a href="#ae7b3154bc05c6bf2d3070feb8c256f80" class="m-doc-self">field_64</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a6d8d2dd153fb1963b50673b940c90a2f">
+              float <a href="#a6d8d2dd153fb1963b50673b940c90a2f" class="m-doc-self">field_68</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="add641218ac44a2aae7579959fb0c6f06">
+              bool <a href="#add641218ac44a2aae7579959fb0c6f06" class="m-doc-self">mIsLowRes</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a4c116618ab17b4c1ff6b18d0116b17d1">
+              <a href="struct_math_1_1_vector3.html" class="m-doc">Math::<wbr />Vector3</a> <a href="#a4c116618ab17b4c1ff6b18d0116b17d1" class="m-doc-self">field_70</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="ae0364e51c60b2220b821861a1c19d4d1">
+              <a href="struct_math_1_1_vector3.html" class="m-doc">Math::<wbr />Vector3</a> <a href="#ae0364e51c60b2220b821861a1c19d4d1" class="m-doc-self">field_7C</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a38faf892515e6637d6b5633c4593952e">
+              float <a href="#a38faf892515e6637d6b5633c4593952e" class="m-doc-self">field_88</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a8c0fbe7ddb206d23e2459a50138aa257">
+              float <a href="#a8c0fbe7ddb206d23e2459a50138aa257" class="m-doc-self">field_8C</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="ae24c45bd81472664f9bcaf872cc91ab1">
+              bool <a href="#ae24c45bd81472664f9bcaf872cc91ab1" class="m-doc-self">mMustUpdateVertexBuffer</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a57c45a43a2c55d3a69dd4cbbb4c8b083">
+              bool <a href="#a57c45a43a2c55d3a69dd4cbbb4c8b083" class="m-doc-self">mMustUpdateIndexBuffer</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a539553deee61f53c9a71b95263c5c89f">
+              <a href="struct_terrain_1_1_terrain_quad_mesh.html" class="m-doc">TerrainQuadMesh</a>* <a href="#a539553deee61f53c9a71b95263c5c89f" class="m-doc-self">mpMesh</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a3359141fbbb92e25912da83b52892254">
+              int <a href="#a3359141fbbb92e25912da83b52892254" class="m-doc-self">mIndicesCount</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="ad664c17dbd8a852dc2b522780d67e7d2">
+              int <a href="#ad664c17dbd8a852dc2b522780d67e7d2" class="m-doc-self">mWaterIndicesCount</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a1202932cee6cccd2df4233128d6bebe1">
+              int <a href="#a1202932cee6cccd2df4233128d6bebe1" class="m-doc-self">mWaterIndicesStart</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a28c950bb9401056cd79c6a35eb51019b">
+              <a href="struct_terrain_1_1_terrain_transform.html" class="m-doc">TerrainTransform</a> <a href="#a28c950bb9401056cd79c6a35eb51019b" class="m-doc-self">mTerrainTransform</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a2f6476d3700fa271fb9db74bf08cab5d">
+              eastl::vector&lt;int&gt; <a href="#a2f6476d3700fa271fb9db74bf08cab5d" class="m-doc-self">field_154</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="aefecdede246288346a9359d9ce067077">
+              int <a href="#aefecdede246288346a9359d9ce067077" class="m-doc-self">field_168</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a30f1a6cedc7d42e35f629c8c64c406ba">
+              int <a href="#a30f1a6cedc7d42e35f629c8c64c406ba" class="m-doc-self">field_16C</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a3d138ba9f91edf52c15e5f401eb9d24d">
+              int <a href="#a3d138ba9f91edf52c15e5f401eb9d24d" class="m-doc-self">field_170</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a16892b707ee1dcf1df411ecb15529490">
+              void* <a href="#a16892b707ee1dcf1df411ecb15529490" class="m-doc-self">mAboveBelowMap</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a031f39c7cedeb9a9f2dc4141c4cd5f9d">
+              int <a href="#a031f39c7cedeb9a9f2dc4141c4cd5f9d" class="m-doc-self">field_178</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a6677035cf1c74248d6305349c27c3f4d">
+              <a href="struct_math_1_1_vector2.html" class="m-doc">Math::<wbr />Vector2</a> <a href="#a6677035cf1c74248d6305349c27c3f4d" class="m-doc-self">field_17C</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a8636bf749d5f7f08f5567c6a92a4b841">
+              <a href="struct_math_1_1_vector2.html" class="m-doc">Math::<wbr />Vector2</a> <a href="#a8636bf749d5f7f08f5567c6a92a4b841" class="m-doc-self">field_184</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a2bdba27200035bf0967474dd730f473e">
+              eastl::vector&lt;int&gt; <a href="#a2bdba27200035bf0967474dd730f473e" class="m-doc-self">field_18C</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a31d572953ffd9f17f0dbbb7e8368bd36">
+              eastl::vector&lt;int&gt; <a href="#a31d572953ffd9f17f0dbbb7e8368bd36" class="m-doc-self">field_1A0</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="addcf89782d0301d823c702d55de8c73f">
+              int <a href="#addcf89782d0301d823c702d55de8c73f" class="m-doc-self">field_1B4</a>
             </dt>
             <dd><span></span></dd>
           </dl>
+        </section>
+        <section>
+          <h2>Function documentation</h2>
+          <section class="m-doc-details" id="ae6afe78661aa96c6497c2374abc9da67"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">void Terrain::<wbr />cTerrainSphereQuad::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ae6afe78661aa96c6497c2374abc9da67" class="m-doc-self">LoadTerrainTransform</a>(</span><span class="m-doc-wrap"><a href="class_app_1_1c_viewer.html" class="m-doc">App::<wbr />cViewer</a>* pViewer)</span></span>
+            </h3>
+            <p>Loads the <code>mTerrainTransform</code> field into the shader data <code>terrainTransform</code>, it also loads the shader data <code>pcaTexture</code>.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">pViewer</td>
+                  <td></td>
+                </tr>
+              </tbody>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="a740ffd31bcd11e563cb9641fdad50c1f"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">void Terrain::<wbr />cTerrainSphereQuad::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a740ffd31bcd11e563cb9641fdad50c1f" class="m-doc-self">Draw</a>(</span><span class="m-doc-wrap"><a href="struct_render_ware_1_1_vertex_buffer.html" class="m-doc">RenderWare::<wbr />VertexBuffer</a>* pVertices,
+              <a href="struct_render_ware_1_1_index_buffer.html" class="m-doc">RenderWare::<wbr />IndexBuffer</a>* pIndices,
+              int startIndex,
+              int indicesCount)</span></span>
+            </h3>
+            <p>Draws the sphere quad mesh, this does not change any materials.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">pVertices</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>pIndices</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>startIndex</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>indicesCount</td>
+                  <td></td>
+                </tr>
+              </tbody>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="aee26148cdf6bb1a1819bdd81dd4c27cb"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">void Terrain::<wbr />cTerrainSphereQuad::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#aee26148cdf6bb1a1819bdd81dd4c27cb" class="m-doc-self">RenderLand</a>(</span><span class="m-doc-wrap"><a href="class_app_1_1c_viewer.html" class="m-doc">App::<wbr />cViewer</a>* pViewer,
+              <a href="struct_graphics_1_1_render_statistics.html" class="m-doc">Graphics::<wbr />RenderStatistics</a>&amp; stats)</span></span>
+            </h3>
+            <p>Called by <a href="class_terrain_1_1c_terrain_sphere.html#ae3f004a97635254ef31a382a469fd0d5" class="m-doc">Terrain::<wbr />cTerrainSphere::<wbr />RenderTerrainLand()</a>.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">pViewer</td>
+                  <td>Camera and viewport configuration</td>
+                </tr>
+                <tr>
+                  <td>stats</td>
+                  <td>Structure used to write rendering statistics</td>
+                </tr>
+              </tbody>
+            </table>
+<p>Source code: <a href="_source_code-_terrain.html#SourceCode-Terrain-cTerrainSphereQuad-RenderLand" class="m-doc">cTerrainSphereQuad::<wbr />RenderLand()</a></p>
+          </div></section>
+          <section class="m-doc-details" id="a7be5283ceb10c2ee4c567ac4e8bdb55f"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">void Terrain::<wbr />cTerrainSphereQuad::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a7be5283ceb10c2ee4c567ac4e8bdb55f" class="m-doc-self">RenderSeabedAsLand</a>(</span><span class="m-doc-wrap"><a href="class_app_1_1c_viewer.html" class="m-doc">App::<wbr />cViewer</a>* pViewer,
+              <a href="struct_graphics_1_1_render_statistics.html" class="m-doc">Graphics::<wbr />RenderStatistics</a>&amp; stats)</span></span>
+            </h3>
+            <p>Called by <a href="class_terrain_1_1c_terrain_sphere.html#a5e64f4f192d0c0205a7d7f8b54f152ec" class="m-doc">Terrain::<wbr />cTerrainSphere::<wbr />RenderTerrainSeabedAsLand()</a>.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">pViewer</td>
+                  <td>Camera and viewport configuration</td>
+                </tr>
+                <tr>
+                  <td>stats</td>
+                  <td>Structure used to write rendering statistics</td>
+                </tr>
+              </tbody>
+            </table>
+<p>Source code: <a href="_source_code-_terrain.html#SourceCode-Terrain-cTerrainSphereQuad-RenderSeabedAsLand" class="m-doc">cTerrainSphereQuad::<wbr />RenderSeabedAsLand()</a></p>
+          </div></section>
+          <section class="m-doc-details" id="a6d6b651cde335bd8775118888b560a8d"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">void Terrain::<wbr />cTerrainSphereQuad::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a6d6b651cde335bd8775118888b560a8d" class="m-doc-self">RenderWater</a>(</span><span class="m-doc-wrap"><a href="class_app_1_1c_viewer.html" class="m-doc">App::<wbr />cViewer</a>* pViewer,
+              <a href="struct_graphics_1_1_render_statistics.html" class="m-doc">Graphics::<wbr />RenderStatistics</a>&amp; stats,
+              <a href="namespace_terrain.html#add21c184ae1ef9ab03185dbcbc8400b2" class="m-doc">TerrainMaterialIndex</a> material,
+              int flags)</span></span>
+            </h3>
+            <p>Called by <a href="class_terrain_1_1c_terrain_sphere.html#aae01e63c97aa9581d8c383cd0dad5446" class="m-doc">Terrain::<wbr />cTerrainSphere::<wbr />RenderTerrainWater()</a>.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">pViewer</td>
+                  <td>Camera and viewport configuration</td>
+                </tr>
+                <tr>
+                  <td>stats</td>
+                  <td>Structure used to write rendering statistics</td>
+                </tr>
+                <tr>
+                  <td>material</td>
+                  <td>Material that must be used to render the water (e.g. ice, lava, water, etc)</td>
+                </tr>
+                <tr>
+                  <td>flags</td>
+                  <td>Additional rendering flags, not used.</td>
+                </tr>
+              </tbody>
+            </table>
+<p>Source code: <a href="_source_code-_terrain.html#SourceCode-Terrain-cTerrainSphereQuad-RenderWater" class="m-doc">cTerrainSphereQuad::<wbr />RenderWater()</a></p>
+          </div></section>
+          <section class="m-doc-details" id="abb4acbf0a399aec8464d9aa7e7a6371d"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">void Terrain::<wbr />cTerrainSphereQuad::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#abb4acbf0a399aec8464d9aa7e7a6371d" class="m-doc-self">RenderAtmosphere</a>(</span><span class="m-doc-wrap"><a href="class_app_1_1c_viewer.html" class="m-doc">App::<wbr />cViewer</a>* pViewer,
+              <a href="struct_graphics_1_1_render_statistics.html" class="m-doc">Graphics::<wbr />RenderStatistics</a>&amp; stats)</span></span>
+            </h3>
+            <p>Called by <a href="class_terrain_1_1c_terrain_sphere.html#a956da95eacbcb16932bcd15fffc522bf" class="m-doc">Terrain::<wbr />cTerrainSphere::<wbr />RenderTerrainAtmosphere()</a>.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">pViewer</td>
+                  <td>Camera and viewport configuration</td>
+                </tr>
+                <tr>
+                  <td>stats</td>
+                  <td>Structure used to write rendering statistics</td>
+                </tr>
+              </tbody>
+            </table>
+<p>Source code: <a href="_source_code-_terrain.html#SourceCode-Terrain-cTerrainSphereQuad-RenderAtmosphere" class="m-doc">cTerrainSphereQuad::<wbr />RenderAtmosphere()</a></p>
+          </div></section>
+          <section class="m-doc-details" id="a60c4871596d043d6f8d825499c47b6b0"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">void Terrain::<wbr />cTerrainSphereQuad::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a60c4871596d043d6f8d825499c47b6b0" class="m-doc-self">RenderDecals</a>(</span><span class="m-doc-wrap"><a href="class_app_1_1c_viewer.html" class="m-doc">App::<wbr />cViewer</a>* pViewer,
+              <a href="struct_graphics_1_1_render_statistics.html" class="m-doc">Graphics::<wbr />RenderStatistics</a>&amp; stats)</span></span>
+            </h3>
+            <p>Called by <a href="class_terrain_1_1c_terrain_sphere.html#adc8a56bd5871c952478f5b1396660447" class="m-doc">Terrain::<wbr />cTerrainSphere::<wbr />RenderTerrainDecals()</a>.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">pViewer</td>
+                  <td>Camera and viewport configuration</td>
+                </tr>
+                <tr>
+                  <td>stats</td>
+                  <td>Structure used to write rendering statistics</td>
+                </tr>
+              </tbody>
+            </table>
+          </div></section>
         </section>
       </div>
     </div>

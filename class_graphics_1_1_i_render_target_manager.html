@@ -74,10 +74,10 @@
         <section id="pub-static-methods">
           <h2><a href="#pub-static-methods">Public static functions</a></h2>
           <dl class="m-doc">
-            <dt>
-              <span class="m-doc-wrap-bumper">static auto <a href="#a5c0c91471c1f5f73c98b41c5f3c0ddc1" class="m-doc">Get</a>(</span><span class="m-doc-wrap">) -&gt; <a href="class_graphics_1_1_i_render_target_manager.html" class="m-doc">IRenderTargetManager</a>*</span>
+            <dt id="a5c0c91471c1f5f73c98b41c5f3c0ddc1">
+              <span class="m-doc-wrap-bumper">static auto <a href="#a5c0c91471c1f5f73c98b41c5f3c0ddc1" class="m-doc-self">Get</a>(</span><span class="m-doc-wrap">) -&gt; <a href="class_graphics_1_1_i_render_target_manager.html" class="m-doc">IRenderTargetManager</a>*</span>
             </dt>
-            <dd></dd>
+            <dd><span></span></dd>
           </dl>
         </section>
         <section id="pub-methods">
@@ -99,33 +99,172 @@
               <span class="m-doc-wrap-bumper">auto <a href="#a9148e6e57241019d278ac15c10a85a39" class="m-doc-self">Dispose</a>(</span><span class="m-doc-wrap">) -&gt; bool <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
             <dd><span></span></dd>
-            <dt id="a2de2ec2ed9ee8c78ae5116982ad3944e">
-              <span class="m-doc-wrap-bumper">auto <a href="#a2de2ec2ed9ee8c78ae5116982ad3944e" class="m-doc-self">func10h</a>(</span><span class="m-doc-wrap">int width,
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a1eb1fa147412bfc6d9a0ca0bc0e28892" class="m-doc">CreateRenderTarget</a>(</span><span class="m-doc-wrap">int width,
               int height,
               D3DFORMAT format,
               int flags = 0,
-              int = -1,
-              int = 0) -&gt; class <a href="class_resource_i_d.html" class="m-doc">ResourceID</a> <span class="m-label m-flat m-warning">pure virtual</span></span>
+              uint32_t instanceID = 0xFFFFFFFF,
+              int = 0) -&gt; struct <a href="struct_graphics_1_1_render_target_i_d.html" class="m-doc">RenderTargetID</a> <span class="m-label m-flat m-warning">pure virtual</span></span>
+            </dt>
+            <dd>Creates a new render target manager.</dd>
+            <dt id="a1dce963bb33385f8a6685ab0f30d6ba6">
+              <span class="m-doc-wrap-bumper">auto <a href="#a1dce963bb33385f8a6685ab0f30d6ba6" class="m-doc-self">ReleaseRenderTarget</a>(</span><span class="m-doc-wrap">struct <a href="struct_graphics_1_1_render_target_i_d.html" class="m-doc">RenderTargetID</a> index) -&gt; bool <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
             <dd><span></span></dd>
-            <dt id="add33034ee6233df38ca46a102de35929">
-              <span class="m-doc-wrap-bumper">auto <a href="#add33034ee6233df38ca46a102de35929" class="m-doc-self">func14h</a>(</span><span class="m-doc-wrap">) -&gt; int <span class="m-label m-flat m-warning">pure virtual</span></span>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#acb755c1281358a2c36bc88d974cfe0b6" class="m-doc">GetRaster</a>(</span><span class="m-doc-wrap">struct <a href="struct_graphics_1_1_render_target_i_d.html" class="m-doc">RenderTargetID</a> index) const -&gt; <a href="struct_render_ware_1_1_raster.html" class="m-doc">RenderWare::<wbr />Raster</a>* <span class="m-label m-flat m-warning">pure virtual</span></span>
+            </dt>
+            <dd>Returns the render target raster stored with the given index.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#ab80a2f2008f6746d9aed1cb19ea924f8" class="m-doc">GetTexture</a>(</span><span class="m-doc-wrap">struct <a href="struct_graphics_1_1_render_target_i_d.html" class="m-doc">RenderTargetID</a> index) const -&gt; <a href="class_graphics_1_1_texture.html" class="m-doc">Texture</a>* <span class="m-label m-flat m-warning">pure virtual</span></span>
+            </dt>
+            <dd>Returns the render target texture stored with the given index.</dd>
+            <dt id="a5b0ecd77fb61a6f0d633dbf1a977dc3f">
+              <span class="m-doc-wrap-bumper">auto <a href="#a5b0ecd77fb61a6f0d633dbf1a977dc3f" class="m-doc-self">GetRegionViewport</a>(</span><span class="m-doc-wrap">struct <a href="struct_graphics_1_1_render_target_i_d.html" class="m-doc">RenderTargetID</a> index,
+              <a href="struct_math_1_1_int_rectangle.html" class="m-doc">Math::<wbr />IntRectangle</a>&amp; dst) -&gt; bool <span class="m-label m-flat m-warning">virtual</span></span>
             </dt>
             <dd><span></span></dd>
-            <dt id="a2bdfb1744419dfde1692fc172d0ab216">
-              <span class="m-doc-wrap-bumper">auto <a href="#a2bdfb1744419dfde1692fc172d0ab216" class="m-doc-self">GetRTT</a>(</span><span class="m-doc-wrap">int index,
-              int = 0) const -&gt; <a href="namespace_graphics.html#a4b5aceaf4fd34329ddd1d19abadc5faf" class="m-doc">RenderTargetTexture</a>* <span class="m-label m-flat m-warning">pure virtual</span></span>
+            <dt id="a90964525f74bd1ff09c3ed777d6a53a1">
+              <span class="m-doc-wrap-bumper">auto <a href="#a90964525f74bd1ff09c3ed777d6a53a1" class="m-doc-self">GetRegionViewport2</a>(</span><span class="m-doc-wrap">struct <a href="struct_graphics_1_1_render_target_i_d.html" class="m-doc">RenderTargetID</a> index,
+              int&amp; dst_x1,
+              int&amp; dst_y1,
+              int&amp; dst_width,
+              int&amp; dst_height) -&gt; bool <span class="m-label m-flat m-warning">virtual</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a90a8bb5104159a62e213770cc2726fb9">
+              <span class="m-doc-wrap-bumper">auto <a href="#a90a8bb5104159a62e213770cc2726fb9" class="m-doc-self">GetRasterTotalDimensions</a>(</span><span class="m-doc-wrap">int index,
+              int&amp; dst_width,
+              int&amp; dst_height) -&gt; bool <span class="m-label m-flat m-warning">virtual</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a5f05851a978eb86008b222d1ac7f43d3">
+              <span class="m-doc-wrap-bumper">auto <a href="#a5f05851a978eb86008b222d1ac7f43d3" class="m-doc-self">GetRegionUVCoords</a>(</span><span class="m-doc-wrap">struct <a href="struct_graphics_1_1_render_target_i_d.html" class="m-doc">RenderTargetID</a> index,
+              <a href="struct_math_1_1_vector2.html" class="m-doc">Vector2</a>&amp; dstTopLeft,
+              <a href="struct_math_1_1_vector2.html" class="m-doc">Vector2</a>&amp; dstBottomRight) -&gt; bool <span class="m-label m-flat m-warning">virtual</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a296863d3da74cd22a26465390406a4f6">
+              <span class="m-doc-wrap-bumper">void <a href="#a296863d3da74cd22a26465390406a4f6" class="m-doc-self">GetRenderTargetData</a>(</span><span class="m-doc-wrap">struct <a href="struct_graphics_1_1_render_target_i_d.html" class="m-doc">RenderTargetID</a> index,
+              void*&amp; pDstData) <span class="m-label m-flat m-warning">virtual</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="abe6a5b9cfc6152c73bd930c18ed0a5d3">
+              <span class="m-doc-wrap-bumper">void <a href="#abe6a5b9cfc6152c73bd930c18ed0a5d3" class="m-doc-self">func34h</a>(</span><span class="m-doc-wrap">class <a href="class_resource_i_d.html" class="m-doc">ResourceID</a> index,
+              int,
+              int) <span class="m-label m-flat m-warning">virtual</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a2f18cb30343d941c345d33c2d9a5faf9">
+              <span class="m-doc-wrap-bumper">void <a href="#a2f18cb30343d941c345d33c2d9a5faf9" class="m-doc-self">func38h</a>(</span><span class="m-doc-wrap">int,
+              int) <span class="m-label m-flat m-warning">virtual</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="aaf843ede21e9213ab7d27de4a941ed79">
+              <span class="m-doc-wrap-bumper">auto <a href="#aaf843ede21e9213ab7d27de4a941ed79" class="m-doc-self">func3Ch</a>(</span><span class="m-doc-wrap">) -&gt; bool <span class="m-label m-flat m-warning">virtual</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a30a852b4b0ea7ea8f813417dd74ab56f">
+              <span class="m-doc-wrap-bumper">auto <a href="#a30a852b4b0ea7ea8f813417dd74ab56f" class="m-doc-self">func40h</a>(</span><span class="m-doc-wrap">int,
+              int,
+              int,
+              int) -&gt; bool <span class="m-label m-flat m-warning">virtual</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a95ca1420abcd003fc58d703a23fe987e">
+              <span class="m-doc-wrap-bumper">void <a href="#a95ca1420abcd003fc58d703a23fe987e" class="m-doc-self">func44h</a>(</span><span class="m-doc-wrap">) <span class="m-label m-flat m-warning">virtual</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a4925ca6898db333eee3af294524260b9">
+              <span class="m-doc-wrap-bumper">void <a href="#a4925ca6898db333eee3af294524260b9" class="m-doc-self">SetRenderTargetName</a>(</span><span class="m-doc-wrap">struct <a href="struct_graphics_1_1_render_target_i_d.html" class="m-doc">RenderTargetID</a> index,
+              const char* pName) <span class="m-label m-flat m-warning">virtual</span></span>
             </dt>
             <dd><span></span></dd>
           </dl>
         </section>
         <section>
           <h2>Function documentation</h2>
-          <section class="m-doc-details" id="a5c0c91471c1f5f73c98b41c5f3c0ddc1"><div>
+          <section class="m-doc-details" id="a1eb1fa147412bfc6d9a0ca0bc0e28892"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">static <a href="class_graphics_1_1_i_render_target_manager.html" class="m-doc">IRenderTargetManager</a>* Graphics::<wbr />IRenderTargetManager::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a5c0c91471c1f5f73c98b41c5f3c0ddc1" class="m-doc-self">Get</a>(</span><span class="m-doc-wrap">)</span></span>
+              <span class="m-doc-wrap-bumper">struct <a href="struct_graphics_1_1_render_target_i_d.html" class="m-doc">RenderTargetID</a> Graphics::<wbr />IRenderTargetManager::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a1eb1fa147412bfc6d9a0ca0bc0e28892" class="m-doc-self">CreateRenderTarget</a>(</span><span class="m-doc-wrap">int width,
+              int height,
+              D3DFORMAT format,
+              int flags = 0,
+              uint32_t instanceID = 0xFFFFFFFF,
+              int = 0) <span class="m-label m-warning">pure virtual</span></span></span>
             </h3>
-<ul><li>1C8h <em>&zwj;/ virtual <a href="class_graphics_1_1_texture.html" class="m-doc">Texture</a></em> GetRTT(int index, int = 0) const = 0;</li></ul>
+            <p>Creates a new render target manager.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">width</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>height</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>format</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>flags</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>instanceID</td>
+                  <td></td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>Returns</th>
+                  <td>Index and regionIndex of the new RTT</td>
+                </tr>
+              </tfoot>
+            </table>
+<p>It returns the index and regionIndex that can be used to access that render target. This will also create a new texture using the <a href="class_graphics_1_1_i_texture_manager.html" class="m-doc">ITextureManager</a>, with the given <code>instanceID</code> as name (or autogenerated if not specified).</p>
+          </div></section>
+          <section class="m-doc-details" id="acb755c1281358a2c36bc88d974cfe0b6"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"><a href="struct_render_ware_1_1_raster.html" class="m-doc">RenderWare::<wbr />Raster</a>* Graphics::<wbr />IRenderTargetManager::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#acb755c1281358a2c36bc88d974cfe0b6" class="m-doc-self">GetRaster</a>(</span><span class="m-doc-wrap">struct <a href="struct_graphics_1_1_render_target_i_d.html" class="m-doc">RenderTargetID</a> index) const <span class="m-label m-warning">pure virtual</span></span></span>
+            </h3>
+            <p>Returns the render target raster stored with the given index.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">index</td>
+                  <td></td>
+                </tr>
+              </tbody>
+            </table>
+<p>Region index is ignored</p>
+          </div></section>
+          <section class="m-doc-details" id="ab80a2f2008f6746d9aed1cb19ea924f8"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"><a href="class_graphics_1_1_texture.html" class="m-doc">Texture</a>* Graphics::<wbr />IRenderTargetManager::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ab80a2f2008f6746d9aed1cb19ea924f8" class="m-doc-self">GetTexture</a>(</span><span class="m-doc-wrap">struct <a href="struct_graphics_1_1_render_target_i_d.html" class="m-doc">RenderTargetID</a> index) const <span class="m-label m-warning">pure virtual</span></span></span>
+            </h3>
+            <p>Returns the render target texture stored with the given index.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">index</td>
+                  <td></td>
+                </tr>
+              </tbody>
+            </table>
+<p>Region index is ignored</p>
           </div></section>
         </section>
       </div>

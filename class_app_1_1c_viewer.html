@@ -48,7 +48,7 @@
           <span class="m-breadcrumb"><a href="namespace_app.html">App</a>::<wbr/></span>cViewer <span class="m-thin">class</span>
           <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="c_viewer_8h.html">&lt;Spore/App/cViewer.h&gt;</a></div>
         </h1>
-        <p><span></span></p>
+        <p>This class represents all the camera and viewport configuration used to render a scene.</p>
         <div class="m-block m-default">
           <h3>Contents</h3>
           <ul>
@@ -62,6 +62,7 @@
             </li>
           </ul>
         </div>
+<p>This includes the FOV, projection matrix, view matrix (i.e. camera orientation and position), as well as the color and depth buffers where the scene will be rendered into. It also has the &quot;renderType&quot; variable, a specific thing to Spore, which is used in shader selection.</p>
         <section id="pub-types">
           <h2><a href="#pub-types">Public types</a></h2>
           <dl class="m-doc">
@@ -85,6 +86,10 @@
               <span class="m-doc-wrap-bumper">auto <a href="#a651e8b1df5c28571191dbc45ec41f174" class="m-doc-self">Initialize</a>(</span><span class="m-doc-wrap">bool isParallelProjection = false) -&gt; bool</span>
             </dt>
             <dd><span></span></dd>
+            <dt id="a815edf7e3eaecb99ce755b6f5bcc32c6">
+              <span class="m-doc-wrap-bumper">void <a href="#a815edf7e3eaecb99ce755b6f5bcc32c6" class="m-doc-self">Dispose</a>(</span><span class="m-doc-wrap">)</span>
+            </dt>
+            <dd><span></span></dd>
             <dt>
               <span class="m-doc-wrap-bumper">auto <a href="#a9b6d029d12b316ee69eea34074ca5381" class="m-doc">ClearScene</a>(</span><span class="m-doc-wrap">int8_t flags) -&gt; bool</span>
             </dt>
@@ -92,7 +97,7 @@
             <dt id="a869c772cbea23b46dd9664c9b485e1aa">
               <span class="m-doc-wrap-bumper">auto <a href="#a869c772cbea23b46dd9664c9b485e1aa" class="m-doc-self">LoadTransformations</a>(</span><span class="m-doc-wrap">) -&gt; bool</span>
             </dt>
-            <dd><span></span></dd>
+            <dd>Call before rendering, loads all the viewer data into the renderer system.</dd>
             <dt>
               <span class="m-doc-wrap-bumper">void <a href="#a3b3a400f3961bc4202d284baa17330e5" class="m-doc">SetBackgroundColor</a>(</span><span class="m-doc-wrap">const <a href="struct_math_1_1_color_r_g_b_a.html" class="m-doc">Math::<wbr />ColorRGBA</a>&amp; color)</span>
             </dt>
@@ -105,16 +110,37 @@
               <span class="m-doc-wrap-bumper">auto <a href="#a149af22c36865fdcc298637380a6f656" class="m-doc-self">GetFarPlane</a>(</span><span class="m-doc-wrap">) const -&gt; float</span>
             </dt>
             <dd><span></span></dd>
-            <dt id="a18d2367b8692af9bd3e0632feeabb986">
-              <span class="m-doc-wrap-bumper">void <a href="#a18d2367b8692af9bd3e0632feeabb986" class="m-doc-self">SetNearPlane</a>(</span><span class="m-doc-wrap">float fValue)</span>
+            <dt id="a42303530e3c8f3bebe12d0a464b77375">
+              <span class="m-doc-wrap-bumper">void <a href="#a42303530e3c8f3bebe12d0a464b77375" class="m-doc-self">SetNearPlane</a>(</span><span class="m-doc-wrap">float nearPlane)</span>
             </dt>
             <dd><span></span></dd>
-            <dt id="a361f06f13b8e54a8111c83b80f141175">
-              <span class="m-doc-wrap-bumper">void <a href="#a361f06f13b8e54a8111c83b80f141175" class="m-doc-self">SetFarPlane</a>(</span><span class="m-doc-wrap">float fValue)</span>
+            <dt id="a0926c78509bd64a6144e8fb2a2011dae">
+              <span class="m-doc-wrap-bumper">void <a href="#a0926c78509bd64a6144e8fb2a2011dae" class="m-doc-self">SetFarPlane</a>(</span><span class="m-doc-wrap">float farPlane)</span>
             </dt>
             <dd><span></span></dd>
-            <dt id="afe65084cae2e4d9b75c0b078a909a436">
-              <span class="m-doc-wrap-bumper">void <a href="#afe65084cae2e4d9b75c0b078a909a436" class="m-doc-self">SetAspectRatio</a>(</span><span class="m-doc-wrap">float fValue)</span>
+            <dt id="a5b7a3e2ad10a455c435ac4bc46054d5b">
+              <span class="m-doc-wrap-bumper">void <a href="#a5b7a3e2ad10a455c435ac4bc46054d5b" class="m-doc-self">SetAspectRatio</a>(</span><span class="m-doc-wrap">float aspectRatio)</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a98c4c30df86e2347c34f53fc0a727bd3">
+              <span class="m-doc-wrap-bumper">void <a href="#a98c4c30df86e2347c34f53fc0a727bd3" class="m-doc-self">SetPerspectiveProjection</a>(</span><span class="m-doc-wrap">float fovDegrees)</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a808fdf7018f3fc9d8a3ea712c3001866">
+              <span class="m-doc-wrap-bumper">void <a href="#a808fdf7018f3fc9d8a3ea712c3001866" class="m-doc-self">SetParallelProjection</a>(</span><span class="m-doc-wrap">float viewWindowX,
+              float viewWindowY)</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a5ffe2f2ee1c7f222ff2a76e09d5621cd">
+              <span class="m-doc-wrap-bumper">void <a href="#a5ffe2f2ee1c7f222ff2a76e09d5621cd" class="m-doc-self">SetViewport</a>(</span><span class="m-doc-wrap">const <a href="struct_math_1_1_int_rectangle.html" class="m-doc">IntRectangle</a>&amp; viewport)</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="ab3033591e379fc498cba852020eff233">
+              <span class="m-doc-wrap-bumper">void <a href="#ab3033591e379fc498cba852020eff233" class="m-doc-self">SetViewWindow</a>(</span><span class="m-doc-wrap">const <a href="struct_math_1_1_vector2.html" class="m-doc">Vector2</a>&amp; window)</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a12d0617d2e5046bd1294f6e3a47c6111">
+              <span class="m-doc-wrap-bumper">void <a href="#a12d0617d2e5046bd1294f6e3a47c6111" class="m-doc-self">SetViewOffset</a>(</span><span class="m-doc-wrap">const <a href="struct_math_1_1_vector2.html" class="m-doc">Vector2</a>&amp; offset)</span>
             </dt>
             <dd><span></span></dd>
             <dt id="a2b21d6f9a593b31cb2355b3c67c9c0ea">
@@ -130,6 +156,14 @@
               bool = 0)</span>
             </dt>
             <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">void <a href="#aa5880376bba11e5a211eadf56e6c007c" class="m-doc">SetTargetRaster</a>(</span><span class="m-doc-wrap"><a href="struct_render_ware_1_1_raster.html" class="m-doc">RenderWare::<wbr />Raster</a>* raster)</span>
+            </dt>
+            <dd>Sets the target raster where the scene will be painted.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">void <a href="#a1a90e733e2f71399db81e71508825612" class="m-doc">SetTargetZBuffer</a>(</span><span class="m-doc-wrap"><a href="struct_render_ware_1_1_raster.html" class="m-doc">RenderWare::<wbr />Raster</a>* raster)</span>
+            </dt>
+            <dd>Sets the target raster where the scene depth buffer will be painted.</dd>
             <dt>
               <span class="m-doc-wrap-bumper">void <a href="#a3d1b54ae620a79e7f935bab3d3adc174" class="m-doc">SetCameraTransform</a>(</span><span class="m-doc-wrap">const <a href="class_transform.html" class="m-doc">Transform</a>&amp; transform)</span>
             </dt>
@@ -256,6 +290,40 @@
               </tbody>
             </table>
 <p>More exactly, this is the color used to clear the scene.</p>
+          </div></section>
+          <section class="m-doc-details" id="aa5880376bba11e5a211eadf56e6c007c"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">void App::<wbr />cViewer::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#aa5880376bba11e5a211eadf56e6c007c" class="m-doc-self">SetTargetRaster</a>(</span><span class="m-doc-wrap"><a href="struct_render_ware_1_1_raster.html" class="m-doc">RenderWare::<wbr />Raster</a>* raster)</span></span>
+            </h3>
+            <p>Sets the target raster where the scene will be painted.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">raster</td>
+                  <td></td>
+                </tr>
+              </tbody>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="a1a90e733e2f71399db81e71508825612"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">void App::<wbr />cViewer::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a1a90e733e2f71399db81e71508825612" class="m-doc-self">SetTargetZBuffer</a>(</span><span class="m-doc-wrap"><a href="struct_render_ware_1_1_raster.html" class="m-doc">RenderWare::<wbr />Raster</a>* raster)</span></span>
+            </h3>
+            <p>Sets the target raster where the scene depth buffer will be painted.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">raster</td>
+                  <td></td>
+                </tr>
+              </tbody>
+            </table>
           </div></section>
           <section class="m-doc-details" id="a3d1b54ae620a79e7f935bab3d3adc174"><div>
             <h3>

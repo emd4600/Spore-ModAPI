@@ -63,7 +63,7 @@
             </li>
           </ul>
         </div>
-<p>This namespace includes classes related to graphics rendering in the game. Some things included are models, textures and materials.</p>
+<p>This namespace includes classes related to graphics rendering in the game. Some things included are models, textures and materials.</p><p>This namespace is deeply related with the <a href="namespace_render_ware.html" class="m-doc">RenderWare</a> namespace; elements in <a href="namespace_graphics.html" class="m-doc">Graphics</a> are high-level representations, easy to use, whereas <a href="namespace_render_ware.html" class="m-doc">RenderWare</a> elements are low-level representations which are not needed to modify in most cases.</p><ul><li><a href="class_graphics_1_1_model.html" class="m-doc">Graphics::<wbr />Model</a> represents a 3D model made of triangulated meshes. It uses objects like <a href="struct_render_ware_1_1_vertex_buffer.html" class="m-doc">RenderWare::<wbr />VertexBuffer</a>, <a href="struct_render_ware_1_1_index_buffer.html" class="m-doc">RenderWare::<wbr />IndexBuffer</a>, <a href="struct_render_ware_1_1_animations.html" class="m-doc">RenderWare::<wbr />Animations</a>,...</li><li><a href="class_graphics_1_1_texture.html" class="m-doc">Graphics::<wbr />Texture</a> represents a game texture, which can be 2D or 3D (cube textures). It uses <a href="struct_render_ware_1_1_raster.html" class="m-doc">RenderWare::<wbr />Raster</a>.</li><li><a href="class_graphics_1_1_material.html" class="m-doc">Graphics::<wbr />Material</a> contains the information of how a model mesh must be painted, that is, which shaders and textures it uses. It uses <a href="struct_render_ware_1_1_compiled_state.html" class="m-doc">RenderWare::<wbr />CompiledState</a></li></ul>
         <section id="namespaces">
           <h2><a href="#namespaces">Namespaces</a></h2>
           <dl class="m-doc">
@@ -78,6 +78,18 @@
           <dl class="m-doc">
             <dt>
               class <a href="class_graphics_1_1_animations.html" class="m-doc">Animations</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              class <a href="class_graphics_1_1c_buffer_draw.html" class="m-doc">cBufferDraw</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              class <a href="class_graphics_1_1c_image_data.html" class="m-doc">cImageData</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              class <a href="class_graphics_1_1c_image_data_raw.html" class="m-doc">cImageDataRaw</a>
             </dt>
             <dd><span></span></dd>
             <dt>
@@ -107,6 +119,11 @@
             <dd><span></span></dd>
             <dt>
               class <a href="class_graphics_1_1c_render_target_manager.html" class="m-doc">cRenderTargetManager</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <div class="m-doc-template">template&lt;typename ObjClass, uint32_t TYPE_ID&gt;</div>
+              class <a href="class_graphics_1_1c_rw_direct_resource.html" class="m-doc">cRwDirectResource</a>
             </dt>
             <dd><span></span></dd>
             <dt>
@@ -235,6 +252,14 @@
             </dt>
             <dd><span></span></dd>
             <dt>
+              struct <a href="struct_graphics_1_1_render_statistics.html" class="m-doc">RenderStatistics</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              struct <a href="struct_graphics_1_1_render_target_i_d.html" class="m-doc">RenderTargetID</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
               class <a href="class_graphics_1_1_sequence_renderable.html" class="m-doc">SequenceRenderable</a>
             </dt>
             <dd>An implementation of <a href="class_graphics_1_1_i_renderable.html" class="m-doc">IRenderable</a> that renders a sequence of IRenderables.</dd>
@@ -273,7 +298,7 @@
             <dt>
               class <a href="class_graphics_1_1_texture.html" class="m-doc">Texture</a>
             </dt>
-            <dd><span></span></dd>
+            <dd>High level representation of a game texture.</dd>
             <dt>
               class <a href="class_graphics_1_1_texture_container.html" class="m-doc">TextureContainer</a>
             </dt>
@@ -335,6 +360,33 @@
             </dt>
             <dd>The available layer indices that can be used for adding renderers.</dd>
             <dt>
+              <span class="m-doc-wrap-bumper">enum class <a href="#aadd384f262067b6a01ef854b7ad6f94e" class="m-doc">LayerIndices2</a> { </span><span class="m-doc-wrap"><a href="#aadd384f262067b6a01ef854b7ad6f94eadc30bc0c7914db5918da4263fce93ad2" class="m-doc">Clear</a> = 1,
+              <a href="#aadd384f262067b6a01ef854b7ad6f94ea99ba20386716528ab0c0ace69a1420f5" class="m-doc">Unk3</a> = 3,
+              <a href="#aadd384f262067b6a01ef854b7ad6f94eabf875f6167c1cc5b644352bc42c007ca" class="m-doc">Unk4</a> = 4,
+              <a href="#aadd384f262067b6a01ef854b7ad6f94eac0d4a5a0eb2b05fa7073761d345aa09f" class="m-doc">Unk5</a> = 5,
+              <a href="#aadd384f262067b6a01ef854b7ad6f94eaef7c34bbaaa4b36d9c7e9b7fc54c0079" class="m-doc">Unk6</a> = 6,
+              <a href="#aadd384f262067b6a01ef854b7ad6f94eaef82c94236471f84aefff94eba649794" class="m-doc">TerrainRTT</a> = 7,
+              <a href="#aadd384f262067b6a01ef854b7ad6f94ea4ccfea7a25fae3c1d31555f0856d2b42" class="m-doc">Terrain</a> = 8,
+              <a href="#aadd384f262067b6a01ef854b7ad6f94ea55fc3f7d39ed2919a3187bb5f1683023" class="m-doc">PlanetNationalBoundaries</a> = 9,
+              <a href="#aadd384f262067b6a01ef854b7ad6f94ea1073b7c2c1e6c2996ae4fa5d8accc966" class="m-doc">UnkA</a> = 0xA,
+              <a href="#aadd384f262067b6a01ef854b7ad6f94ea836515fe3c895a4159ce23a422604421" class="m-doc">BlobShadows</a> = 0xB,
+              <a href="#aadd384f262067b6a01ef854b7ad6f94eadcbded2f3e79b8317f469e9112cf27fe" class="m-doc">UnkC</a> = 0xC,
+              <a href="#aadd384f262067b6a01ef854b7ad6f94eab377a91f694e8510cabbadc811a86f83" class="m-doc">UnkD</a> = 0xD,
+              <a href="#aadd384f262067b6a01ef854b7ad6f94ea453539af651c098e41290f5938da5e3d" class="m-doc">UnkE</a> = 0xE,
+              <a href="#aadd384f262067b6a01ef854b7ad6f94eaeebe11504ed883b88594f065ec0ad407" class="m-doc">UnkF</a> = 0x0F,
+              <a href="#aadd384f262067b6a01ef854b7ad6f94ea5c36a398f22555e1ba0ca4693fb0b3ef" class="m-doc">Unk11</a> = 0x11,
+              <a href="#aadd384f262067b6a01ef854b7ad6f94ea09d5006efc42124e95a388ff48c60175" class="m-doc">Unk12</a> = 0x12,
+              <a href="#aadd384f262067b6a01ef854b7ad6f94ea679cc87c36e9fc572d263583f5370237" class="m-doc">Unk14</a> = 0x14,
+              <a href="#aadd384f262067b6a01ef854b7ad6f94eabddd5d6ee30f21694061a2128e507563" class="m-doc">Unk15</a> = 0x15,
+              <a href="#aadd384f262067b6a01ef854b7ad6f94eaf85ffcad1cbd34a5a1366e45de02911c" class="m-doc">Unk16</a> = 0x16,
+              <a href="#aadd384f262067b6a01ef854b7ad6f94ead56ba2bec45489b49ac914c6a12886ae" class="m-doc">PlanetTradeRoutes</a> = 0x19,
+              <a href="#aadd384f262067b6a01ef854b7ad6f94ea4d601fd1534d771d18339a65b3dda069" class="m-doc">Unk1A</a> = 0x1A,
+              <a href="#aadd384f262067b6a01ef854b7ad6f94ea0f6ea8286597464a358a97edce7510d1" class="m-doc">Unk1E</a> = 0x1E,
+              <a href="#aadd384f262067b6a01ef854b7ad6f94ea128a50be2ddca09014dd3650e832934c" class="m-doc">Unk20</a> = 0x20,
+              <a href="#aadd384f262067b6a01ef854b7ad6f94ea8b665c1a63d807f06b73064604b82e27" class="m-doc">Unk21</a> = 0x21 }</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
               <span class="m-doc-wrap-bumper">enum class <a href="#a9b4742f9ae4c621450b08b65bd9dd9da" class="m-doc">CollisionMode</a>: uint8_t { </span><span class="m-doc-wrap"><a href="#a9b4742f9ae4c621450b08b65bd9dd9daab96da744287618055e5d086d53f42660" class="m-doc">BoundingBox</a> = 0,
               <a href="#a9b4742f9ae4c621450b08b65bd9dd9daacfaea1acd5a4cd60e50888bfb668a4f1" class="m-doc">TightBoundingBox</a> = 1,
               <a href="#a9b4742f9ae4c621450b08b65bd9dd9daa677de30c8ea2f3d31a1e2d21db5966f3" class="m-doc">HullKDTree</a> = 2,
@@ -342,14 +394,21 @@
             </dt>
             <dd><span></span></dd>
             <dt>
-              <span class="m-doc-wrap-bumper">enum <a href="#aefc7522ff3825675ee3cc730ab96cb18" class="m-doc">(anonymous)</a> { </span><span class="m-doc-wrap"><a href="#aefc7522ff3825675ee3cc730ab96cb18a67714109b28b4942dc96b13136f20ba6" class="m-doc">kModelFlagUseColor</a> = 0x2,
-              <a href="#aefc7522ff3825675ee3cc730ab96cb18ae6ee2ef9b57e55721a05bc19183167b5" class="m-doc">kModelFlagObjectTypeColor</a> = 0x8,
-              <a href="#aefc7522ff3825675ee3cc730ab96cb18a06e9414d4e29ab930191c234e525c611" class="m-doc">kModelFlagOverrideRaycastMode</a> = 0x100,
-              <a href="#aefc7522ff3825675ee3cc730ab96cb18ae8126b97a58029f99739a19522b5a19a" class="m-doc">kModelFlagHighRes</a> = 0x2000,
-              <a href="#aefc7522ff3825675ee3cc730ab96cb18a712326a32a798759b2548daf75e8da43" class="m-doc">kModelFlagVisible</a> = 0x8000,
-              <a href="#aefc7522ff3825675ee3cc730ab96cb18a282f8e861168694308ecad124d903a6f" class="m-doc">kModelFlagOverrideBoundingBox</a> = 0x10000,
-              <a href="#aefc7522ff3825675ee3cc730ab96cb18a0c9e2214af3610d935ef791db7b80655" class="m-doc">kModelFlagOverrideBoundingRadius</a> = 0x20000,
-              <a href="#aefc7522ff3825675ee3cc730ab96cb18acc48a579a9e1672f7672b554e18037cd" class="m-doc">kModelFlagNeedsBake</a> = 0x40000 }</span>
+              <span class="m-doc-wrap-bumper">enum <a href="#a936cca97eca11e988649742457ee4809" class="m-doc">(anonymous)</a> { </span><span class="m-doc-wrap"><a href="#a936cca97eca11e988649742457ee4809a67714109b28b4942dc96b13136f20ba6" class="m-doc">kModelFlagUseColor</a> = 0x2,
+              <a href="#a936cca97eca11e988649742457ee4809ae6ee2ef9b57e55721a05bc19183167b5" class="m-doc">kModelFlagObjectTypeColor</a> = 0x8,
+              <a href="#a936cca97eca11e988649742457ee4809a06e9414d4e29ab930191c234e525c611" class="m-doc">kModelFlagOverrideRaycastMode</a> = 0x100,
+              <a href="#a936cca97eca11e988649742457ee4809ae8126b97a58029f99739a19522b5a19a" class="m-doc">kModelFlagHighRes</a> = 0x2000,
+              <a href="#a936cca97eca11e988649742457ee4809a712326a32a798759b2548daf75e8da43" class="m-doc">kModelFlagVisible</a> = 0x8000,
+              <a href="#a936cca97eca11e988649742457ee4809a282f8e861168694308ecad124d903a6f" class="m-doc">kModelFlagOverrideBoundingBox</a> = 0x10000,
+              <a href="#a936cca97eca11e988649742457ee4809a0c9e2214af3610d935ef791db7b80655" class="m-doc">kModelFlagOverrideBoundingRadius</a> = 0x20000,
+              <a href="#a936cca97eca11e988649742457ee4809acc48a579a9e1672f7672b554e18037cd" class="m-doc">kModelFlagNeedsBake</a> = 0x40000 }</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">enum <a href="#a1e913a119b08b155f3ba2f14a105e196" class="m-doc">TextureFlags</a> { </span><span class="m-doc-wrap"><a href="#a1e913a119b08b155f3ba2f14a105e196ac3e0f3ef0e2aefabf647f7cf56759963" class="m-doc">kTextureFlagIsLoading</a> = 1,
+              <a href="#a1e913a119b08b155f3ba2f14a105e196af37cfcad9dc85ff9d9edf42793f3ed20" class="m-doc">kTextureFlagForceLoad</a> = 2,
+              <a href="#a1e913a119b08b155f3ba2f14a105e196afff1a886306c82aaf6c0c5719a026245" class="m-doc">kTextureFlagSetLOD</a> = 4,
+              <a href="#a1e913a119b08b155f3ba2f14a105e196a5869dee060db6397860de09274c8b851" class="m-doc">kTextureFlagModified</a> = 8 }</span>
             </dt>
             <dd><span></span></dd>
           </dl>
@@ -366,19 +425,11 @@
             </dt>
             <dd><span></span></dd>
             <dt>
+              using <a href="#a3c3e095395f48c343caccf5b59a2f7cc" class="m-doc">cRwRasterDirectResource</a> = <a href="class_graphics_1_1c_rw_direct_resource.html" class="m-doc">cRwDirectResource</a>&lt;<a href="struct_render_ware_1_1_raster.html" class="m-doc">RenderWare::<wbr />Raster</a>, 0x2F4E681C&gt;
+            </dt>
+            <dd><span></span></dd>
+            <dt>
               using <a href="#ac354d1c41dc1dd5d2c9fab246990be72" class="m-doc">ModelPredicate_t</a> = bool(*)(Model*, void*)
-            </dt>
-            <dd><span></span></dd>
-            <dt>
-              using <a href="#a4b5aceaf4fd34329ddd1d19abadc5faf" class="m-doc">RenderTargetTexture</a> = <a href="struct_render_ware_1_1_raster.html" class="m-doc">RenderWare::<wbr />Raster</a>
-            </dt>
-            <dd><span></span></dd>
-            <dt>
-              using <a href="#a3c548300798e9385956948d634f9b5e9" class="m-doc">RTT</a> = <a href="namespace_graphics.html#a4b5aceaf4fd34329ddd1d19abadc5faf" class="m-doc">RenderTargetTexture</a>
-            </dt>
-            <dd><span></span></dd>
-            <dt>
-              using <a href="#a4bc253444d109bb22ccfc44f613e4eb7" class="m-doc">TextureVector_t</a> = vector&lt;intrusive_ptr&lt;<a href="class_graphics_1_1_texture.html" class="m-doc">Texture</a>&gt;&gt;
             </dt>
             <dd><span></span></dd>
           </dl>
@@ -386,6 +437,25 @@
         <section id="func-members">
           <h2><a href="#func-members">Functions</a></h2>
           <dl class="m-doc">
+            <dt>
+              <span class="m-doc-wrap-bumper"><a href="#af88e5ada7fc6f027fc7536ed379a82a7" class="m-doc">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_graphics_1_1c_buffer_draw.html" class="m-doc">cBufferDraw</a>,
+              0x1B4)</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a0e4064e7b8132dae02fbf5466f85ba5c" class="m-doc">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_graphics_1_1c_buffer_draw.html" class="m-doc">cBufferDraw</a>) -&gt; namespace</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper"><a href="#a3efdb3b06b691193377b3491ee1060bf" class="m-doc">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_graphics_1_1c_image_data.html" class="m-doc">cImageData</a>,
+              0x14)</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper"><a href="#ab4525f79d9f173096e2e90bad14ca75e" class="m-doc">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_graphics_1_1c_image_data_raw.html" class="m-doc">cImageDataRaw</a>,
+              0x2C)</span>
+            </dt>
+            <dd><span></span></dd>
             <dt>
               <span class="m-doc-wrap-bumper"><a href="#abff62a7b52dee9b9474944bb858e2e84" class="m-doc">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_graphics_1_1c_material_info.html" class="m-doc">cMaterialInfo</a>,
               0x1C)</span>
@@ -472,11 +542,11 @@
             </dt>
             <dd><span></span></dd>
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#ae7647f1b5ed8a987d30cf069ea79f5ce" class="m-doc">GetMainColorRTT</a>(</span><span class="m-doc-wrap">) -&gt; <a href="namespace_graphics.html#a4b5aceaf4fd34329ddd1d19abadc5faf" class="m-doc">RenderTargetTexture</a>*</span>
+              <span class="m-doc-wrap-bumper">auto <a href="#ad396146c3d21bd23a01f218e568eef61" class="m-doc">GetMainColorRTT</a>(</span><span class="m-doc-wrap">) -&gt; <a href="struct_render_ware_1_1_raster.html" class="m-doc">RenderWare::<wbr />Raster</a>*</span>
             </dt>
             <dd><span></span></dd>
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#ab455ae49864f3a5929cac47841a828b6" class="m-doc">GetMainDepthRTT</a>(</span><span class="m-doc-wrap">) -&gt; <a href="namespace_graphics.html#a4b5aceaf4fd34329ddd1d19abadc5faf" class="m-doc">RenderTargetTexture</a>*</span>
+              <span class="m-doc-wrap-bumper">auto <a href="#ab0d3574b5c0a56761c5c399544db48bd" class="m-doc">GetMainDepthRTT</a>(</span><span class="m-doc-wrap">) -&gt; <a href="struct_render_ware_1_1_raster.html" class="m-doc">RenderWare::<wbr />Raster</a>*</span>
             </dt>
             <dd><span></span></dd>
             <dt>
@@ -511,6 +581,11 @@
             <dd><span></span></dd>
             <dt>
               <span class="m-doc-wrap-bumper">auto <a href="#ac38126dbb208f4e83c4504fd05963c57" class="m-doc">Addresses</a>(</span><span class="m-doc-wrap">Renderer) -&gt; namespace</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper"><a href="#a5a8bccef10e63864b12c7e0968b65e47" class="m-doc">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="struct_graphics_1_1_render_statistics.html" class="m-doc">RenderStatistics</a>,
+              0x2C)</span>
             </dt>
             <dd><span></span></dd>
             <dt>
@@ -552,6 +627,162 @@
             <p>The available layer indices that can be used for adding renderers.</p>
 <p>Most of these have been copied from Darkspore globals.lua, so they might not match for Spore.</p>
           </div></section>
+          <section class="m-doc-details" id="aadd384f262067b6a01ef854b7ad6f94e"><div>
+            <h3>
+              enum class Graphics::<wbr /><a href="#aadd384f262067b6a01ef854b7ad6f94e" class="m-doc-self">LayerIndices2</a>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_i_render_manager_8h.html">&lt;Spore/Graphics/IRenderManager.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+            <table class="m-table m-fullwidth m-flat m-doc">
+              <thead><tr><th style="width: 1%">Enumerators</th><th></th></tr></thead>
+              <tbody>
+                <tr>
+                  <td><a href="#aadd384f262067b6a01ef854b7ad6f94eadc30bc0c7914db5918da4263fce93ad2" class="m-doc-self" id="aadd384f262067b6a01ef854b7ad6f94eadc30bc0c7914db5918da4263fce93ad2">Clear</a></td>
+                  <td>
+                  <p><span></span></p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#aadd384f262067b6a01ef854b7ad6f94ea99ba20386716528ab0c0ace69a1420f5" class="m-doc-self" id="aadd384f262067b6a01ef854b7ad6f94ea99ba20386716528ab0c0ace69a1420f5">Unk3</a></td>
+                  <td>
+                  <p><span></span></p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#aadd384f262067b6a01ef854b7ad6f94eabf875f6167c1cc5b644352bc42c007ca" class="m-doc-self" id="aadd384f262067b6a01ef854b7ad6f94eabf875f6167c1cc5b644352bc42c007ca">Unk4</a></td>
+                  <td>
+                  <p><span></span></p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#aadd384f262067b6a01ef854b7ad6f94eac0d4a5a0eb2b05fa7073761d345aa09f" class="m-doc-self" id="aadd384f262067b6a01ef854b7ad6f94eac0d4a5a0eb2b05fa7073761d345aa09f">Unk5</a></td>
+                  <td>
+                  <p><span></span></p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#aadd384f262067b6a01ef854b7ad6f94eaef7c34bbaaa4b36d9c7e9b7fc54c0079" class="m-doc-self" id="aadd384f262067b6a01ef854b7ad6f94eaef7c34bbaaa4b36d9c7e9b7fc54c0079">Unk6</a></td>
+                  <td>
+                  <p><span></span></p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#aadd384f262067b6a01ef854b7ad6f94eaef82c94236471f84aefff94eba649794" class="m-doc-self" id="aadd384f262067b6a01ef854b7ad6f94eaef82c94236471f84aefff94eba649794">TerrainRTT</a></td>
+                  <td>
+                  <p>Renders RTTs used by the planet: water reflection &amp; refraction and scatter map.</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#aadd384f262067b6a01ef854b7ad6f94ea4ccfea7a25fae3c1d31555f0856d2b42" class="m-doc-self" id="aadd384f262067b6a01ef854b7ad6f94ea4ccfea7a25fae3c1d31555f0856d2b42">Terrain</a></td>
+                  <td>
+                  <p>Renders planet land, water, atmosphere, etc. <a href="class_terrain_1_1c_terrain_sphere.html" class="m-doc">Terrain::<wbr />cTerrainSphere</a>.</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#aadd384f262067b6a01ef854b7ad6f94ea55fc3f7d39ed2919a3187bb5f1683023" class="m-doc-self" id="aadd384f262067b6a01ef854b7ad6f94ea55fc3f7d39ed2919a3187bb5f1683023">PlanetNationalBoundaries</a></td>
+                  <td>
+                  <p>Renders the national boundaries in a planet. Used by <code>PlanetRibbonGfx</code> (part of <a href="class_simulator_1_1c_planet_model.html" class="m-doc">Simulator::<wbr />cPlanetModel</a>).</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#aadd384f262067b6a01ef854b7ad6f94ea1073b7c2c1e6c2996ae4fa5d8accc966" class="m-doc-self" id="aadd384f262067b6a01ef854b7ad6f94ea1073b7c2c1e6c2996ae4fa5d8accc966">UnkA</a></td>
+                  <td>
+                  <p><span></span></p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#aadd384f262067b6a01ef854b7ad6f94ea836515fe3c895a4159ce23a422604421" class="m-doc-self" id="aadd384f262067b6a01ef854b7ad6f94ea836515fe3c895a4159ce23a422604421">BlobShadows</a></td>
+                  <td>
+                  <p>Used by <a href="namespace_simulator.html" class="m-doc">Simulator</a> BlobShadowManager.</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#aadd384f262067b6a01ef854b7ad6f94eadcbded2f3e79b8317f469e9112cf27fe" class="m-doc-self" id="aadd384f262067b6a01ef854b7ad6f94eadcbded2f3e79b8317f469e9112cf27fe">UnkC</a></td>
+                  <td>
+                  <p><span></span></p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#aadd384f262067b6a01ef854b7ad6f94eab377a91f694e8510cabbadc811a86f83" class="m-doc-self" id="aadd384f262067b6a01ef854b7ad6f94eab377a91f694e8510cabbadc811a86f83">UnkD</a></td>
+                  <td>
+                  <p><span></span></p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#aadd384f262067b6a01ef854b7ad6f94ea453539af651c098e41290f5938da5e3d" class="m-doc-self" id="aadd384f262067b6a01ef854b7ad6f94ea453539af651c098e41290f5938da5e3d">UnkE</a></td>
+                  <td>
+                  <p><span></span></p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#aadd384f262067b6a01ef854b7ad6f94eaeebe11504ed883b88594f065ec0ad407" class="m-doc-self" id="aadd384f262067b6a01ef854b7ad6f94eaeebe11504ed883b88594f065ec0ad407">UnkF</a></td>
+                  <td>
+                  <p><span></span></p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#aadd384f262067b6a01ef854b7ad6f94ea5c36a398f22555e1ba0ca4693fb0b3ef" class="m-doc-self" id="aadd384f262067b6a01ef854b7ad6f94ea5c36a398f22555e1ba0ca4693fb0b3ef">Unk11</a></td>
+                  <td>
+                  <p><span></span></p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#aadd384f262067b6a01ef854b7ad6f94ea09d5006efc42124e95a388ff48c60175" class="m-doc-self" id="aadd384f262067b6a01ef854b7ad6f94ea09d5006efc42124e95a388ff48c60175">Unk12</a></td>
+                  <td>
+                  <p><span></span></p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#aadd384f262067b6a01ef854b7ad6f94ea679cc87c36e9fc572d263583f5370237" class="m-doc-self" id="aadd384f262067b6a01ef854b7ad6f94ea679cc87c36e9fc572d263583f5370237">Unk14</a></td>
+                  <td>
+                  <p><span></span></p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#aadd384f262067b6a01ef854b7ad6f94eabddd5d6ee30f21694061a2128e507563" class="m-doc-self" id="aadd384f262067b6a01ef854b7ad6f94eabddd5d6ee30f21694061a2128e507563">Unk15</a></td>
+                  <td>
+                  <p><span></span></p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#aadd384f262067b6a01ef854b7ad6f94eaf85ffcad1cbd34a5a1366e45de02911c" class="m-doc-self" id="aadd384f262067b6a01ef854b7ad6f94eaf85ffcad1cbd34a5a1366e45de02911c">Unk16</a></td>
+                  <td>
+                  <p><span></span></p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#aadd384f262067b6a01ef854b7ad6f94ead56ba2bec45489b49ac914c6a12886ae" class="m-doc-self" id="aadd384f262067b6a01ef854b7ad6f94ead56ba2bec45489b49ac914c6a12886ae">PlanetTradeRoutes</a></td>
+                  <td>
+                  <p>Renders the trade route ribbons in a planet. Used by <code>PlanetRibbonGfx</code> (part of <a href="class_simulator_1_1c_planet_model.html" class="m-doc">Simulator::<wbr />cPlanetModel</a>).</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#aadd384f262067b6a01ef854b7ad6f94ea4d601fd1534d771d18339a65b3dda069" class="m-doc-self" id="aadd384f262067b6a01ef854b7ad6f94ea4d601fd1534d771d18339a65b3dda069">Unk1A</a></td>
+                  <td>
+                  <p><span></span></p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#aadd384f262067b6a01ef854b7ad6f94ea0f6ea8286597464a358a97edce7510d1" class="m-doc-self" id="aadd384f262067b6a01ef854b7ad6f94ea0f6ea8286597464a358a97edce7510d1">Unk1E</a></td>
+                  <td>
+                  <p><span></span></p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#aadd384f262067b6a01ef854b7ad6f94ea128a50be2ddca09014dd3650e832934c" class="m-doc-self" id="aadd384f262067b6a01ef854b7ad6f94ea128a50be2ddca09014dd3650e832934c">Unk20</a></td>
+                  <td>
+                  <p><span></span></p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#aadd384f262067b6a01ef854b7ad6f94ea8b665c1a63d807f06b73064604b82e27" class="m-doc-self" id="aadd384f262067b6a01ef854b7ad6f94ea8b665c1a63d807f06b73064604b82e27">Unk21</a></td>
+                  <td>
+                  <p><span></span></p>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div></section>
           <section class="m-doc-details" id="a9b4742f9ae4c621450b08b65bd9dd9da"><div>
             <h3>
               enum class Graphics::<wbr /><a href="#a9b4742f9ae4c621450b08b65bd9dd9da" class="m-doc-self">CollisionMode</a>: uint8_t
@@ -588,12 +819,48 @@
               </tbody>
             </table>
           </div></section>
-          <section class="m-doc-details" id="aefc7522ff3825675ee3cc730ab96cb18"><div>
+          <section class="m-doc-details" id="a936cca97eca11e988649742457ee4809"><div>
             <h3>
-              enum Graphics::<wbr /><a href="#aefc7522ff3825675ee3cc730ab96cb18" class="m-doc-self">(anonymous)</a>
+              enum Graphics::<wbr /><a href="#a936cca97eca11e988649742457ee4809" class="m-doc-self">(anonymous)</a>
               <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_model_asset_8h.html">&lt;Spore/Graphics/ModelAsset.h&gt;</a></div>
             </h3>
             <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="a1e913a119b08b155f3ba2f14a105e196"><div>
+            <h3>
+              enum Graphics::<wbr /><a href="#a1e913a119b08b155f3ba2f14a105e196" class="m-doc-self">TextureFlags</a>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_texture_8h.html">&lt;Spore/Graphics/Texture.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+            <table class="m-table m-fullwidth m-flat m-doc">
+              <thead><tr><th style="width: 1%">Enumerators</th><th></th></tr></thead>
+              <tbody>
+                <tr>
+                  <td><a href="#a1e913a119b08b155f3ba2f14a105e196ac3e0f3ef0e2aefabf647f7cf56759963" class="m-doc-self" id="a1e913a119b08b155f3ba2f14a105e196ac3e0f3ef0e2aefabf647f7cf56759963">kTextureFlagIsLoading</a></td>
+                  <td>
+                  <p>Tells the texture is still loading.</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a1e913a119b08b155f3ba2f14a105e196af37cfcad9dc85ff9d9edf42793f3ed20" class="m-doc-self" id="a1e913a119b08b155f3ba2f14a105e196af37cfcad9dc85ff9d9edf42793f3ed20">kTextureFlagForceLoad</a></td>
+                  <td>
+                  <p>Forces the texture to load. If no .raster exists, this will look for rw4 as well.</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a1e913a119b08b155f3ba2f14a105e196afff1a886306c82aaf6c0c5719a026245" class="m-doc-self" id="a1e913a119b08b155f3ba2f14a105e196afff1a886306c82aaf6c0c5719a026245">kTextureFlagSetLOD</a></td>
+                  <td>
+                  <p>If enabled, SetLOD() will be called to the texture with the current level of detail.</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a1e913a119b08b155f3ba2f14a105e196a5869dee060db6397860de09274c8b851" class="m-doc-self" id="a1e913a119b08b155f3ba2f14a105e196a5869dee060db6397860de09274c8b851">kTextureFlagModified</a></td>
+                  <td>
+                  <p>Tells that the texture has been modified and the changes have not been saved.</p>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
           </div></section>
         </section>
         <section>
@@ -612,6 +879,13 @@
             </h3>
             <p><span></span></p>
           </div></section>
+          <section class="m-doc-details" id="a3c3e095395f48c343caccf5b59a2f7cc"><div>
+            <h3>
+              typedef <a href="class_graphics_1_1c_rw_direct_resource.html" class="m-doc">cRwDirectResource</a>&lt;<a href="struct_render_ware_1_1_raster.html" class="m-doc">RenderWare::<wbr />Raster</a>, 0x2F4E681C&gt; Graphics::<wbr /><a href="#a3c3e095395f48c343caccf5b59a2f7cc" class="m-doc-self">cRwRasterDirectResource</a>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="c_rw_direct_resource_8h.html">&lt;Spore/Graphics/cRwDirectResource.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
           <section class="m-doc-details" id="ac354d1c41dc1dd5d2c9fab246990be72"><div>
             <h3>
               typedef bool(*Graphics::<wbr /><a href="#ac354d1c41dc1dd5d2c9fab246990be72" class="m-doc-self">ModelPredicate_t</a>)(Model*, void*)
@@ -619,30 +893,40 @@
             </h3>
             <p><span></span></p>
           </div></section>
-          <section class="m-doc-details" id="a4b5aceaf4fd34329ddd1d19abadc5faf"><div>
-            <h3>
-              typedef <a href="struct_render_ware_1_1_raster.html" class="m-doc">RenderWare::<wbr />Raster</a> Graphics::<wbr /><a href="#a4b5aceaf4fd34329ddd1d19abadc5faf" class="m-doc-self">RenderTargetTexture</a>
-              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_i_render_target_manager_8h.html">&lt;Spore/Graphics/IRenderTargetManager.h&gt;</a></div>
-            </h3>
-            <p><span></span></p>
-          </div></section>
-          <section class="m-doc-details" id="a3c548300798e9385956948d634f9b5e9"><div>
-            <h3>
-              typedef <a href="namespace_graphics.html#a4b5aceaf4fd34329ddd1d19abadc5faf" class="m-doc">RenderTargetTexture</a> Graphics::<wbr /><a href="#a3c548300798e9385956948d634f9b5e9" class="m-doc-self">RTT</a>
-              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_i_render_target_manager_8h.html">&lt;Spore/Graphics/IRenderTargetManager.h&gt;</a></div>
-            </h3>
-            <p><span></span></p>
-          </div></section>
-          <section class="m-doc-details" id="a4bc253444d109bb22ccfc44f613e4eb7"><div>
-            <h3>
-              typedef vector&lt;intrusive_ptr&lt;<a href="class_graphics_1_1_texture.html" class="m-doc">Texture</a>&gt;&gt; Graphics::<wbr /><a href="#a4bc253444d109bb22ccfc44f613e4eb7" class="m-doc-self">TextureVector_t</a>
-              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_texture_8h.html">&lt;Spore/Graphics/Texture.h&gt;</a></div>
-            </h3>
-            <p><span></span></p>
-          </div></section>
         </section>
         <section>
           <h2>Function documentation</h2>
+          <section class="m-doc-details" id="af88e5ada7fc6f027fc7536ed379a82a7"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"> Graphics::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#af88e5ada7fc6f027fc7536ed379a82a7" class="m-doc-self">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_graphics_1_1c_buffer_draw.html" class="m-doc">cBufferDraw</a>,
+              0x1B4)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_buffer_draw_8h.html">&lt;Spore/Graphics/BufferDraw.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="a0e4064e7b8132dae02fbf5466f85ba5c"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">namespace Graphics::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a0e4064e7b8132dae02fbf5466f85ba5c" class="m-doc-self">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_graphics_1_1c_buffer_draw.html" class="m-doc">cBufferDraw</a>)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_buffer_draw_8h.html">&lt;Spore/Graphics/BufferDraw.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="a3efdb3b06b691193377b3491ee1060bf"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"> Graphics::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a3efdb3b06b691193377b3491ee1060bf" class="m-doc-self">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_graphics_1_1c_image_data.html" class="m-doc">cImageData</a>,
+              0x14)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="c_image_data_raw_8h.html">&lt;Spore/Graphics/cImageDataRaw.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="ab4525f79d9f173096e2e90bad14ca75e"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"> Graphics::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ab4525f79d9f173096e2e90bad14ca75e" class="m-doc-self">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_graphics_1_1c_image_data_raw.html" class="m-doc">cImageDataRaw</a>,
+              0x2C)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="c_image_data_raw_8h.html">&lt;Spore/Graphics/cImageDataRaw.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
           <section class="m-doc-details" id="abff62a7b52dee9b9474944bb858e2e84"><div>
             <h3>
               <span class="m-doc-wrap-bumper"> Graphics::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#abff62a7b52dee9b9474944bb858e2e84" class="m-doc-self">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_graphics_1_1c_material_info.html" class="m-doc">cMaterialInfo</a>,
@@ -788,16 +1072,16 @@
             </h3>
             <p><span></span></p>
           </div></section>
-          <section class="m-doc-details" id="ae7647f1b5ed8a987d30cf069ea79f5ce"><div>
+          <section class="m-doc-details" id="ad396146c3d21bd23a01f218e568eef61"><div>
             <h3>
-              <span class="m-doc-wrap-bumper"><a href="namespace_graphics.html#a4b5aceaf4fd34329ddd1d19abadc5faf" class="m-doc">RenderTargetTexture</a>* Graphics::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ae7647f1b5ed8a987d30cf069ea79f5ce" class="m-doc-self">GetMainColorRTT</a>(</span><span class="m-doc-wrap">)</span></span>
+              <span class="m-doc-wrap-bumper"><a href="struct_render_ware_1_1_raster.html" class="m-doc">RenderWare::<wbr />Raster</a>* Graphics::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ad396146c3d21bd23a01f218e568eef61" class="m-doc-self">GetMainColorRTT</a>(</span><span class="m-doc-wrap">)</span></span>
               <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_i_render_target_manager_8h.html">&lt;Spore/Graphics/IRenderTargetManager.h&gt;</a></div>
             </h3>
             <p><span></span></p>
           </div></section>
-          <section class="m-doc-details" id="ab455ae49864f3a5929cac47841a828b6"><div>
+          <section class="m-doc-details" id="ab0d3574b5c0a56761c5c399544db48bd"><div>
             <h3>
-              <span class="m-doc-wrap-bumper"><a href="namespace_graphics.html#a4b5aceaf4fd34329ddd1d19abadc5faf" class="m-doc">RenderTargetTexture</a>* Graphics::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ab455ae49864f3a5929cac47841a828b6" class="m-doc-self">GetMainDepthRTT</a>(</span><span class="m-doc-wrap">)</span></span>
+              <span class="m-doc-wrap-bumper"><a href="struct_render_ware_1_1_raster.html" class="m-doc">RenderWare::<wbr />Raster</a>* Graphics::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ab0d3574b5c0a56761c5c399544db48bd" class="m-doc-self">GetMainDepthRTT</a>(</span><span class="m-doc-wrap">)</span></span>
               <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_i_render_target_manager_8h.html">&lt;Spore/Graphics/IRenderTargetManager.h&gt;</a></div>
             </h3>
             <p><span></span></p>
@@ -857,6 +1141,14 @@
             <h3>
               <span class="m-doc-wrap-bumper">namespace Graphics::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ac38126dbb208f4e83c4504fd05963c57" class="m-doc-self">Addresses</a>(</span><span class="m-doc-wrap">Renderer)</span></span>
               <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_renderer_8h.html">&lt;Spore/Graphics/Renderer.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="a5a8bccef10e63864b12c7e0968b65e47"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"> Graphics::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a5a8bccef10e63864b12c7e0968b65e47" class="m-doc-self">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="struct_graphics_1_1_render_statistics.html" class="m-doc">RenderStatistics</a>,
+              0x2C)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_render_statistics_8h.html">&lt;Spore/Graphics/RenderStatistics.h&gt;</a></div>
             </h3>
             <p><span></span></p>
           </div></section>

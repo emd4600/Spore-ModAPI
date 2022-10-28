@@ -90,6 +90,11 @@
               <span class="m-doc-wrap-bumper">static auto <a href="#ad202d67afbcd8948880ceaa72698882d" class="m-doc-self">GenerateTerrainKey</a>(</span><span class="m-doc-wrap">) -&gt; <a href="struct_resource_key.html" class="m-doc">ResourceKey</a></span>
             </dt>
             <dd>Generates a <code>.prop</code> file <a href="struct_resource_key.html" class="m-doc">ResourceKey</a> that is currently unused in game packages, so that the planet terrain can be saved there.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">static auto <a href="#aee7e926a67700bea470da20f3c341ce6" class="m-doc">GetPerihelion</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_planet_record.html" class="m-doc">cPlanetRecord</a>* pRecord,
+              <a href="namespace_simulator.html#a3e0de1170096e1e818aa72b20caabc69" class="m-doc">MoonPerihelionType</a> moonType) -&gt; float</span>
+            </dt>
+            <dd>Returns the distance of the perihelion, which is the planet&#x27;s closest point to the parent object in its orbit (the parent object is either a sun, or another planet if this planet is a moon).</dd>
             <dt id="afebfb955ab65eef6333106aba3e15545">
               <span class="m-doc-wrap-bumper">static void <a href="#afebfb955ab65eef6333106aba3e15545" class="m-doc-self">Create</a>(</span><span class="m-doc-wrap"><a href="struct_simulator_1_1_planet_i_d.html" class="m-doc">PlanetID</a> planetId,
               <a href="c_planet_record_8h.html#a682e62ad9640c48598962d9ffc2c2893" class="m-doc">cPlanetRecordPtr</a>&amp; dst)</span>
@@ -254,6 +259,31 @@
             </dt>
             <dd><span></span></dd>
           </dl>
+        </section>
+        <section>
+          <h2>Function documentation</h2>
+          <section class="m-doc-details" id="aee7e926a67700bea470da20f3c341ce6"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">static float Simulator::<wbr />cPlanetRecord::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#aee7e926a67700bea470da20f3c341ce6" class="m-doc-self">GetPerihelion</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_planet_record.html" class="m-doc">cPlanetRecord</a>* pRecord,
+              <a href="namespace_simulator.html#a3e0de1170096e1e818aa72b20caabc69" class="m-doc">MoonPerihelionType</a> moonType)</span></span>
+            </h3>
+            <p>Returns the distance of the perihelion, which is the planet&#x27;s closest point to the parent object in its orbit (the parent object is either a sun, or another planet if this planet is a moon).</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">pRecord</td>
+                  <td>The planet</td>
+                </tr>
+                <tr>
+                  <td>moonType</td>
+                  <td>Only used for moons (planets orbiting other planets), determines how the perihelion is calculated</td>
+                </tr>
+              </tbody>
+            </table>
+          </div></section>
         </section>
       </div>
     </div>

@@ -56,7 +56,6 @@
               Reference
               <ul>
                 <li><a href="#derived-classes">Derived classes</a></li>
-                <li><a href="#pub-types">Public types</a></li>
                 <li><a href="#pub-static-methods">Public static functions</a></li>
                 <li><a href="#typeless-methods">Constructors, destructors, conversion operators</a></li>
                 <li><a href="#pub-methods">Public functions</a></li>
@@ -71,16 +70,6 @@
               class <a href="class_graphics_1_1c_texture_manager.html" class="m-doc">cTextureManager</a>
             </dt>
             <dd>The implementation of <a href="class_graphics_1_1_i_texture_manager.html" class="m-doc">ITextureManager</a>; this should only be used for extending and detouring.</dd>
-          </dl>
-        </section>
-        <section id="pub-types">
-          <h2><a href="#pub-types">Public types</a></h2>
-          <dl class="m-doc">
-            <dt>
-              <span class="m-doc-wrap-bumper">enum <a href="#a18a73275124cc19fbb732ceea7d7a2a0" class="m-doc">(anonymous)</a> { </span><span class="m-doc-wrap"><a href="#a18a73275124cc19fbb732ceea7d7a2a0a7b326794b0cb45dd4ce0c6337ce641ff" class="m-doc">kForceLoad</a> = 2,
-              <a href="#a18a73275124cc19fbb732ceea7d7a2a0a0146ecaada21dc50ed7c5942d2abf97c" class="m-doc">kSetLOD</a> = 4 }</span>
-            </dt>
-            <dd><span></span></dd>
           </dl>
         </section>
         <section id="pub-static-methods">
@@ -116,12 +105,12 @@
               <span class="m-doc-wrap-bumper">auto <a href="#a35166bd2cec8f4bb44514c1e8894cfa6" class="m-doc-self">Initialize</a>(</span><span class="m-doc-wrap">) -&gt; bool <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
             <dd><span></span></dd>
-            <dt id="a960ddbd6e74be55d669fa310d3d52e35">
-              <span class="m-doc-wrap-bumper">auto <a href="#a960ddbd6e74be55d669fa310d3d52e35" class="m-doc-self">func10h</a>(</span><span class="m-doc-wrap">) -&gt; bool <span class="m-label m-flat m-warning">pure virtual</span></span>
+            <dt id="a814e5eeab9ee53ce61cfa6bd53efd32b">
+              <span class="m-doc-wrap-bumper">auto <a href="#a814e5eeab9ee53ce61cfa6bd53efd32b" class="m-doc-self">Dispose</a>(</span><span class="m-doc-wrap">) -&gt; bool <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
             <dd><span></span></dd>
-            <dt id="a9af6c6f1c7c27edae6edb586a0e541ac">
-              <span class="m-doc-wrap-bumper">void <a href="#a9af6c6f1c7c27edae6edb586a0e541ac" class="m-doc-self">func14h</a>(</span><span class="m-doc-wrap">) <span class="m-label m-flat m-warning">pure virtual</span></span>
+            <dt id="a3700140a5f2840163d137c839d838251">
+              <span class="m-doc-wrap-bumper">void <a href="#a3700140a5f2840163d137c839d838251" class="m-doc-self">Update</a>(</span><span class="m-doc-wrap">) <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
             <dd><span></span></dd>
             <dt id="a4512b74131abd0cf53ad6d99ce8e3ea7">
@@ -152,104 +141,104 @@
               <span class="m-doc-wrap-bumper">auto <a href="#a2125d62e4112b83d477caa09ade4311e" class="m-doc">GetTextureName</a>(</span><span class="m-doc-wrap">const <a href="class_graphics_1_1_texture.html" class="m-doc">Texture</a>* pTexture) const -&gt; <a href="struct_resource_key.html" class="m-doc">ResourceKey</a> <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
             <dd>Returns the <a href="struct_resource_key.html" class="m-doc">ResourceKey</a> name of the given <a href="class_graphics_1_1_texture.html" class="m-doc">Texture</a>.</dd>
-            <dt id="a12ea6eda9f38c16ded8641d67f66533f">
-              <span class="m-doc-wrap-bumper">auto <a href="#a12ea6eda9f38c16ded8641d67f66533f" class="m-doc-self">func30h</a>(</span><span class="m-doc-wrap"><a href="class_graphics_1_1_texture.html" class="m-doc">Texture</a>* texture) -&gt; int <span class="m-label m-flat m-warning">pure virtual</span></span>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#acfa2bb42f3e85ad617eb9dd31bba4a7b" class="m-doc">GetRasterResource</a>(</span><span class="m-doc-wrap"><a href="class_graphics_1_1_texture.html" class="m-doc">Texture</a>* texture) -&gt; RasterResourceObject* <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
-            <dd><span></span></dd>
-            <dt id="a41fadcc35e8db9ffee3ffa7cd57a1aee">
-              <span class="m-doc-wrap-bumper">auto <a href="#a41fadcc35e8db9ffee3ffa7cd57a1aee" class="m-doc-self">func34h</a>(</span><span class="m-doc-wrap"><a href="class_graphics_1_1_texture.html" class="m-doc">Texture</a>* texture) -&gt; bool <span class="m-label m-flat m-warning">pure virtual</span></span>
+            <dd>Returns the resource object for a given texture, which can be used to read and write the texture into a file.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a9fbe0ec4de9b455e234584dc374db79a" class="m-doc">WaitForLoadInternal</a>(</span><span class="m-doc-wrap"><a href="class_graphics_1_1_texture.html" class="m-doc">Texture</a>* texture) -&gt; bool <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
-            <dd><span></span></dd>
-            <dt id="a143ff0778d98d3c3b933d16ac1554c3d">
-              <span class="m-doc-wrap-bumper">auto <a href="#a143ff0778d98d3c3b933d16ac1554c3d" class="m-doc-self">func38h</a>(</span><span class="m-doc-wrap"><a href="class_graphics_1_1_texture.html" class="m-doc">Texture</a>* texture,
-              void* arg_4) -&gt; bool <span class="m-label m-flat m-warning">pure virtual</span></span>
+            <dd>Waits (blocks execution) until a texture has completely loaded.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a4ebf0800fbb9adf17c1288abf3d99cdf" class="m-doc">AddTextureLoadDependency</a>(</span><span class="m-doc-wrap"><a href="class_graphics_1_1_texture.html" class="m-doc">Texture</a>* texture,
+              App::cJob* job) -&gt; bool <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
-            <dd><span></span></dd>
-            <dt id="a8bc669d3b722ccadbc56a1da1737cc9e">
-              <span class="m-doc-wrap-bumper">auto <a href="#a8bc669d3b722ccadbc56a1da1737cc9e" class="m-doc-self">CreateTexture</a>(</span><span class="m-doc-wrap">uint32_t intanceID,
+            <dd>For textures that have to be loaded asynchronously, adds the texture loading as a dependency for a job (that is, the job won&#x27;t execute until the texture finishes loading).</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a810972b0106e6fbf005693516b89e322" class="m-doc">CreateTexture</a>(</span><span class="m-doc-wrap">uint32_t intanceID,
               uint32_t groupID,
               int width,
               int height,
               int mipmapLevels,
               int flags,
               D3DFORMAT format,
+              int = 0) -&gt; <a href="class_graphics_1_1_texture.html" class="m-doc">Texture</a>* <span class="m-label m-flat m-warning">pure virtual</span></span>
+            </dt>
+            <dd>Creates a new raster texture and adds it to the raster manager, referenced by the given group and instance IDs.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a96cb80fbfd658cbd99aa9c2ea3a4c5e0" class="m-doc">CreateTextureAutoKey</a>(</span><span class="m-doc-wrap">int width,
+              int height,
+              int mipmapLevels,
+              int flags,
+              D3DFORMAT format,
               int) -&gt; <a href="class_graphics_1_1_texture.html" class="m-doc">Texture</a>* <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
-            <dd><span></span></dd>
-            <dt id="a3a9b48d207feb0576981b50b67f83684">
-              <span class="m-doc-wrap-bumper">auto <a href="#a3a9b48d207feb0576981b50b67f83684" class="m-doc-self">func40h</a>(</span><span class="m-doc-wrap">int,
-              int,
-              int,
-              int,
-              int,
-              int) -&gt; int <span class="m-label m-flat m-warning">pure virtual</span></span>
+            <dd>Generates an automatic instance ID for group ID 0x40002200 and type ID <code>.raster</code>, then creates a new raster texture and adds it to the raster manager, referenced by the given group and instance IDs.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a3bdc53227095e799484d197839291072" class="m-doc">WriteTexture</a>(</span><span class="m-doc-wrap"><a href="class_graphics_1_1_texture.html" class="m-doc">Texture</a>* texture,
+              <a href="namespace_resource.html#ab12e5000d7ef0108f3200a644b54a682" class="m-doc">Resource::<wbr />DBPF</a>* pDBPF,
+              bool async) -&gt; bool <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
-            <dd><span></span></dd>
-            <dt id="af48340189bf7c81be7bc31ee8b703373">
-              <span class="m-doc-wrap-bumper">auto <a href="#af48340189bf7c81be7bc31ee8b703373" class="m-doc-self">func44h</a>(</span><span class="m-doc-wrap"><a href="class_graphics_1_1_texture.html" class="m-doc">Texture</a>* texture,
-              int,
-              int) -&gt; bool <span class="m-label m-flat m-warning">pure virtual</span></span>
+            <dd>Saves a texture into the given <a href="namespace_resource.html#ab12e5000d7ef0108f3200a644b54a682" class="m-doc">Resource::<wbr />DBPF</a> package, as a <code>.raster</code> file (it will use the <code>.raster</code> type ID regardless of the texture key)</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a3c09f69ccd0ea24b43b3b23e368e6c21" class="m-doc">AddRasterAutoKey</a>(</span><span class="m-doc-wrap"><a href="struct_render_ware_1_1_raster.html" class="m-doc">RenderWare::<wbr />Raster</a>* pRaster,
+              int flags = 0) -&gt; <a href="class_graphics_1_1_texture.html" class="m-doc">Texture</a>* <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
-            <dd><span></span></dd>
-            <dt id="aad218772bbbe81146ca380192d377c01">
-              <span class="m-doc-wrap-bumper">auto <a href="#aad218772bbbe81146ca380192d377c01" class="m-doc-self">func48h</a>(</span><span class="m-doc-wrap">int,
-              int) -&gt; int <span class="m-label m-flat m-warning">pure virtual</span></span>
-            </dt>
-            <dd><span></span></dd>
-            <dt id="a59fb9838e7df6a2432dae5b80d564a98">
-              <span class="m-doc-wrap-bumper">auto <a href="#a59fb9838e7df6a2432dae5b80d564a98" class="m-doc-self">AddTextureFromRaster</a>(</span><span class="m-doc-wrap">uint32_t instanceID,
+            <dd>Generates an automatic instance ID for group ID 0x40002200 and type ID <code>.raster</code>, then adds the given raster with that name to the manager.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#aedc196223fcc97e676a3b931d9cdae00" class="m-doc">AddRaster</a>(</span><span class="m-doc-wrap">uint32_t instanceID,
               uint32_t groupID,
-              <a href="struct_render_ware_1_1_raster.html" class="m-doc">Raster</a>* pRaster,
-              int) -&gt; <a href="class_graphics_1_1_texture.html" class="m-doc">Texture</a>* <span class="m-label m-flat m-warning">pure virtual</span></span>
+              <a href="struct_render_ware_1_1_raster.html" class="m-doc">RenderWare::<wbr />Raster</a>* pRaster,
+              int flags = 0) -&gt; <a href="class_graphics_1_1_texture.html" class="m-doc">Texture</a>* <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
-            <dd><span></span></dd>
-            <dt id="a9e05e3758503d5860ba9cc30819623e1">
-              <span class="m-doc-wrap-bumper">auto <a href="#a9e05e3758503d5860ba9cc30819623e1" class="m-doc-self">func50h</a>(</span><span class="m-doc-wrap">int,
-              int,
-              int,
-              int) -&gt; int <span class="m-label m-flat m-warning">pure virtual</span></span>
+            <dd>Adds the given raster to the manager, where it can be obtained again using the group and instance IDs specified.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a1af49123a2b66082a2268b5e30ffbca9" class="m-doc">CopyTextureAsReference</a>(</span><span class="m-doc-wrap">uint32_t instanceID,
+              uint32_t groupID,
+              <a href="class_graphics_1_1_texture.html" class="m-doc">Texture</a>* pTexture,
+              int flags = 0) -&gt; <a href="class_graphics_1_1_texture.html" class="m-doc">Texture</a>* <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
-            <dd><span></span></dd>
-            <dt id="a1dfb12e63b11acb07d6ca37d5a48b173">
-              <span class="m-doc-wrap-bumper">void <a href="#a1dfb12e63b11acb07d6ca37d5a48b173" class="m-doc-self">func54h</a>(</span><span class="m-doc-wrap"><a href="class_graphics_1_1_texture.html" class="m-doc">Texture</a>* texture,
-              bool) <span class="m-label m-flat m-warning">pure virtual</span></span>
+            <dd>Creates a new <a href="class_graphics_1_1_texture.html" class="m-doc">Texture</a> that references the same underlying <a href="struct_render_ware_1_1_raster.html" class="m-doc">RenderWare::<wbr />Raster</a> as the given texture.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">void <a href="#ad9176cb532f28051ad1ddaf6bdc52151" class="m-doc">SetTextureModified</a>(</span><span class="m-doc-wrap"><a href="class_graphics_1_1_texture.html" class="m-doc">Texture</a>* texture,
+              bool modified) <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
-            <dd><span></span></dd>
-            <dt id="aeb5356c1376a7c3faea12f3bf5ed91bc">
-              <span class="m-doc-wrap-bumper">auto <a href="#aeb5356c1376a7c3faea12f3bf5ed91bc" class="m-doc-self">func58h</a>(</span><span class="m-doc-wrap">int,
-              int,
-              int,
-              int) -&gt; bool <span class="m-label m-flat m-warning">pure virtual</span></span>
+            <dd>Marks the given texture as (not) modified.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a0e8fa9d0a5b2012887002228ffe500f8" class="m-doc">ExtractTextureRaster</a>(</span><span class="m-doc-wrap"><a href="struct_render_ware_1_1_raster.html" class="m-doc">RenderWare::<wbr />Raster</a>* pRaster,
+              <a href="c_image_data_raw_8h.html#a73cd6a0f8f095f4d7a965ce461347d4c" class="m-doc">cImageDataRawPtr</a>&amp; dst,
+              bool async,
+              uint32_t messageID = 0) -&gt; bool <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
-            <dd><span></span></dd>
-            <dt id="ab181cbbcf4f803af6b4520715936b6b1">
-              <span class="m-doc-wrap-bumper">auto <a href="#ab181cbbcf4f803af6b4520715936b6b1" class="m-doc-self">func5Ch</a>(</span><span class="m-doc-wrap"><a href="class_graphics_1_1_texture.html" class="m-doc">Texture</a>* texture,
-              int,
-              int,
-              int) -&gt; bool <span class="m-label m-flat m-warning">pure virtual</span></span>
+            <dd>Extracts the raw contents of a raster texture.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#ab407798db54610f4ea9c5a1d9526d83e" class="m-doc">ExtractTexture</a>(</span><span class="m-doc-wrap"><a href="class_graphics_1_1_texture.html" class="m-doc">Texture</a>* texture,
+              <a href="c_image_data_raw_8h.html#a73cd6a0f8f095f4d7a965ce461347d4c" class="m-doc">cImageDataRawPtr</a>&amp; dst,
+              bool async,
+              uint32_t messageID = 0) -&gt; bool <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
-            <dd><span></span></dd>
-            <dt id="a14c4d26f27e42703c7762fd23c29a7d6">
-              <span class="m-doc-wrap-bumper">auto <a href="#a14c4d26f27e42703c7762fd23c29a7d6" class="m-doc-self">func60h</a>(</span><span class="m-doc-wrap">const struct <a href="struct_resource_key.html" class="m-doc">ResourceKey</a> name) -&gt; bool <span class="m-label m-flat m-warning">pure virtual</span></span>
+            <dd>Extracts the raw contents of a texture.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a3f384bdea18f20724f1785035e78bf54" class="m-doc">ReloadTextureByKey</a>(</span><span class="m-doc-wrap">const struct <a href="struct_resource_key.html" class="m-doc">ResourceKey</a> name) -&gt; bool <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
-            <dd><span></span></dd>
-            <dt id="ac1d56e1611bfdbe29c0e008cfb9e1e35">
-              <span class="m-doc-wrap-bumper">auto <a href="#ac1d56e1611bfdbe29c0e008cfb9e1e35" class="m-doc-self">func64h</a>(</span><span class="m-doc-wrap">uint32_t instanceID,
+            <dd>Calls <a href="class_graphics_1_1_i_texture_manager.html#af545fe0e99498d92af0f0bccf68910af" class="m-doc">ReloadTexture()</a> for the texture with the given key (type ID is ignored).</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#adc1bfe843fd01ff9b4bdfbeb2ab556ef" class="m-doc">ReloadTextureByID</a>(</span><span class="m-doc-wrap">uint32_t instanceID,
               uint32_t groupID) -&gt; bool <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
-            <dd><span></span></dd>
-            <dt id="a98d9f099261c065b787ca8eb644fe6c6">
-              <span class="m-doc-wrap-bumper">auto <a href="#a98d9f099261c065b787ca8eb644fe6c6" class="m-doc-self">func68h</a>(</span><span class="m-doc-wrap"><a href="class_graphics_1_1_texture.html" class="m-doc">Texture</a>* texture) -&gt; bool <span class="m-label m-flat m-warning">pure virtual</span></span>
+            <dd>Calls <a href="class_graphics_1_1_i_texture_manager.html#af545fe0e99498d92af0f0bccf68910af" class="m-doc">ReloadTexture()</a> for the texture with the given group and instance IDs.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#af545fe0e99498d92af0f0bccf68910af" class="m-doc">ReloadTexture</a>(</span><span class="m-doc-wrap"><a href="class_graphics_1_1_texture.html" class="m-doc">Texture</a>* texture) -&gt; bool <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
-            <dd><span></span></dd>
-            <dt id="a7421973109b1c492602339cbb284dc6d">
-              <span class="m-doc-wrap-bumper">void <a href="#a7421973109b1c492602339cbb284dc6d" class="m-doc-self">func6Ch</a>(</span><span class="m-doc-wrap">int) <span class="m-label m-flat m-warning">pure virtual</span></span>
+            <dd>Reloads the texture by reading it from its file again.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">void <a href="#aed71c7d24f7e204795199fae7a4b3380" class="m-doc">RegisterRenderWareContents</a>(</span><span class="m-doc-wrap"><a href="class_render_ware_1_1_render_ware_file.html" class="m-doc">RenderWare::<wbr />RenderWareFile</a>* pRenderWare) <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
-            <dd><span></span></dd>
-            <dt id="a6edbcb4e7a8a0f95dd3f2a4e897d4e9d">
-              <span class="m-doc-wrap-bumper">void <a href="#a6edbcb4e7a8a0f95dd3f2a4e897d4e9d" class="m-doc-self">func70h</a>(</span><span class="m-doc-wrap">int) <span class="m-label m-flat m-warning">pure virtual</span></span>
+            <dd>Adds all the textures from the given RW4 file (all the <a href="struct_render_ware_1_1_raster.html" class="m-doc">RenderWare::<wbr />Raster</a> sections).</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">void <a href="#ae4931fd2ef78be12e2463441af333483" class="m-doc">UnregisterRenderWareContents</a>(</span><span class="m-doc-wrap"><a href="class_render_ware_1_1_render_ware_file.html" class="m-doc">RenderWare::<wbr />RenderWareFile</a>* pRenderWare) <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
-            <dd><span></span></dd>
+            <dd>Removes all the textures that are contained in the given RW4 file.</dd>
             <dt id="a4ac521bdfdc1a13e369de4f2c54b7c93">
               <span class="m-doc-wrap-bumper">auto <a href="#a4ac521bdfdc1a13e369de4f2c54b7c93" class="m-doc-self">func74h</a>(</span><span class="m-doc-wrap">) -&gt; int <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
@@ -259,32 +248,6 @@
             </dt>
             <dd><span></span></dd>
           </dl>
-        </section>
-        <section>
-          <h2>Enum documentation</h2>
-          <section class="m-doc-details" id="a18a73275124cc19fbb732ceea7d7a2a0"><div>
-            <h3>
-              enum Graphics::<wbr />ITextureManager::<wbr /><a href="#a18a73275124cc19fbb732ceea7d7a2a0" class="m-doc-self">(anonymous)</a>
-            </h3>
-            <p><span></span></p>
-            <table class="m-table m-fullwidth m-flat m-doc">
-              <thead><tr><th style="width: 1%">Enumerators</th><th></th></tr></thead>
-              <tbody>
-                <tr>
-                  <td><a href="#a18a73275124cc19fbb732ceea7d7a2a0a7b326794b0cb45dd4ce0c6337ce641ff" class="m-doc-self" id="a18a73275124cc19fbb732ceea7d7a2a0a7b326794b0cb45dd4ce0c6337ce641ff">kForceLoad</a></td>
-                  <td>
-                  <p>Forces the texture to load. If no .raster exists, this will look for rw4 as well.</p>
-                  </td>
-                </tr>
-                <tr>
-                  <td><a href="#a18a73275124cc19fbb732ceea7d7a2a0a0146ecaada21dc50ed7c5942d2abf97c" class="m-doc-self" id="a18a73275124cc19fbb732ceea7d7a2a0a0146ecaada21dc50ed7c5942d2abf97c">kSetLOD</a></td>
-                  <td>
-                  <p>If enabled, SetLOD() will be called to the texture with the current level of detail.</p>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-          </div></section>
         </section>
         <section>
           <h2>Function documentation</h2>
@@ -394,6 +357,469 @@
               </tbody>
             </table>
 <p>The type ID might be irrelevant.</p>
+          </div></section>
+          <section class="m-doc-details" id="acfa2bb42f3e85ad617eb9dd31bba4a7b"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">RasterResourceObject* Graphics::<wbr />ITextureManager::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#acfa2bb42f3e85ad617eb9dd31bba4a7b" class="m-doc-self">GetRasterResource</a>(</span><span class="m-doc-wrap"><a href="class_graphics_1_1_texture.html" class="m-doc">Texture</a>* texture) <span class="m-label m-warning">pure virtual</span></span></span>
+            </h3>
+            <p>Returns the resource object for a given texture, which can be used to read and write the texture into a file.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">texture</td>
+                  <td></td>
+                </tr>
+              </tbody>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="a9fbe0ec4de9b455e234584dc374db79a"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">bool Graphics::<wbr />ITextureManager::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a9fbe0ec4de9b455e234584dc374db79a" class="m-doc-self">WaitForLoadInternal</a>(</span><span class="m-doc-wrap"><a href="class_graphics_1_1_texture.html" class="m-doc">Texture</a>* texture) <span class="m-label m-warning">pure virtual</span></span></span>
+            </h3>
+            <p>Waits (blocks execution) until a texture has completely loaded.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">texture</td>
+                  <td></td>
+                </tr>
+              </tbody>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="a4ebf0800fbb9adf17c1288abf3d99cdf"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">bool Graphics::<wbr />ITextureManager::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a4ebf0800fbb9adf17c1288abf3d99cdf" class="m-doc-self">AddTextureLoadDependency</a>(</span><span class="m-doc-wrap"><a href="class_graphics_1_1_texture.html" class="m-doc">Texture</a>* texture,
+              App::cJob* job) <span class="m-label m-warning">pure virtual</span></span></span>
+            </h3>
+            <p>For textures that have to be loaded asynchronously, adds the texture loading as a dependency for a job (that is, the job won&#x27;t execute until the texture finishes loading).</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">texture</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>job</td>
+                  <td></td>
+                </tr>
+              </tbody>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="a810972b0106e6fbf005693516b89e322"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"><a href="class_graphics_1_1_texture.html" class="m-doc">Texture</a>* Graphics::<wbr />ITextureManager::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a810972b0106e6fbf005693516b89e322" class="m-doc-self">CreateTexture</a>(</span><span class="m-doc-wrap">uint32_t intanceID,
+              uint32_t groupID,
+              int width,
+              int height,
+              int mipmapLevels,
+              int flags,
+              D3DFORMAT format,
+              int = 0) <span class="m-label m-warning">pure virtual</span></span></span>
+            </h3>
+            <p>Creates a new raster texture and adds it to the raster manager, referenced by the given group and instance IDs.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">intanceID</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>groupID</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>width</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>height</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>mipmapLevels</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>flags</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>format</td>
+                  <td></td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>Returns</th>
+                  <td>The new created texture.</td>
+                </tr>
+              </tfoot>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="a96cb80fbfd658cbd99aa9c2ea3a4c5e0"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"><a href="class_graphics_1_1_texture.html" class="m-doc">Texture</a>* Graphics::<wbr />ITextureManager::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a96cb80fbfd658cbd99aa9c2ea3a4c5e0" class="m-doc-self">CreateTextureAutoKey</a>(</span><span class="m-doc-wrap">int width,
+              int height,
+              int mipmapLevels,
+              int flags,
+              D3DFORMAT format,
+              int) <span class="m-label m-warning">pure virtual</span></span></span>
+            </h3>
+            <p>Generates an automatic instance ID for group ID 0x40002200 and type ID <code>.raster</code>, then creates a new raster texture and adds it to the raster manager, referenced by the given group and instance IDs.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">width</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>height</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>mipmapLevels</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>flags</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>format</td>
+                  <td></td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>Returns</th>
+                  <td>The new created texture.</td>
+                </tr>
+              </tfoot>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="a3bdc53227095e799484d197839291072"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">bool Graphics::<wbr />ITextureManager::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a3bdc53227095e799484d197839291072" class="m-doc-self">WriteTexture</a>(</span><span class="m-doc-wrap"><a href="class_graphics_1_1_texture.html" class="m-doc">Texture</a>* texture,
+              <a href="namespace_resource.html#ab12e5000d7ef0108f3200a644b54a682" class="m-doc">Resource::<wbr />DBPF</a>* pDBPF,
+              bool async) <span class="m-label m-warning">pure virtual</span></span></span>
+            </h3>
+            <p>Saves a texture into the given <a href="namespace_resource.html#ab12e5000d7ef0108f3200a644b54a682" class="m-doc">Resource::<wbr />DBPF</a> package, as a <code>.raster</code> file (it will use the <code>.raster</code> type ID regardless of the texture key)</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">texture</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>pDBPF</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>async</td>
+                  <td>If true, texture will be saved asynchronously<br /></td>
+                </tr>
+              </tbody>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="a3c09f69ccd0ea24b43b3b23e368e6c21"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"><a href="class_graphics_1_1_texture.html" class="m-doc">Texture</a>* Graphics::<wbr />ITextureManager::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a3c09f69ccd0ea24b43b3b23e368e6c21" class="m-doc-self">AddRasterAutoKey</a>(</span><span class="m-doc-wrap"><a href="struct_render_ware_1_1_raster.html" class="m-doc">RenderWare::<wbr />Raster</a>* pRaster,
+              int flags = 0) <span class="m-label m-warning">pure virtual</span></span></span>
+            </h3>
+            <p>Generates an automatic instance ID for group ID 0x40002200 and type ID <code>.raster</code>, then adds the given raster with that name to the manager.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">pRaster</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>flags</td>
+                  <td></td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>Returns</th>
+                  <td>The <a href="class_graphics_1_1_texture.html" class="m-doc">Texture</a> object for the raster</td>
+                </tr>
+              </tfoot>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="aedc196223fcc97e676a3b931d9cdae00"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"><a href="class_graphics_1_1_texture.html" class="m-doc">Texture</a>* Graphics::<wbr />ITextureManager::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#aedc196223fcc97e676a3b931d9cdae00" class="m-doc-self">AddRaster</a>(</span><span class="m-doc-wrap">uint32_t instanceID,
+              uint32_t groupID,
+              <a href="struct_render_ware_1_1_raster.html" class="m-doc">RenderWare::<wbr />Raster</a>* pRaster,
+              int flags = 0) <span class="m-label m-warning">pure virtual</span></span></span>
+            </h3>
+            <p>Adds the given raster to the manager, where it can be obtained again using the group and instance IDs specified.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">instanceID</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>groupID</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>pRaster</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>flags</td>
+                  <td></td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>Returns</th>
+                  <td>The <a href="class_graphics_1_1_texture.html" class="m-doc">Texture</a> object for the raster</td>
+                </tr>
+              </tfoot>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="a1af49123a2b66082a2268b5e30ffbca9"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"><a href="class_graphics_1_1_texture.html" class="m-doc">Texture</a>* Graphics::<wbr />ITextureManager::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a1af49123a2b66082a2268b5e30ffbca9" class="m-doc-self">CopyTextureAsReference</a>(</span><span class="m-doc-wrap">uint32_t instanceID,
+              uint32_t groupID,
+              <a href="class_graphics_1_1_texture.html" class="m-doc">Texture</a>* pTexture,
+              int flags = 0) <span class="m-label m-warning">pure virtual</span></span></span>
+            </h3>
+            <p>Creates a new <a href="class_graphics_1_1_texture.html" class="m-doc">Texture</a> that references the same underlying <a href="struct_render_ware_1_1_raster.html" class="m-doc">RenderWare::<wbr />Raster</a> as the given texture.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">instanceID</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>groupID</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>pTexture</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>flags</td>
+                  <td></td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>Returns</th>
+                  <td>The new <a href="class_graphics_1_1_texture.html" class="m-doc">Texture</a> object</td>
+                </tr>
+              </tfoot>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="ad9176cb532f28051ad1ddaf6bdc52151"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">void Graphics::<wbr />ITextureManager::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ad9176cb532f28051ad1ddaf6bdc52151" class="m-doc-self">SetTextureModified</a>(</span><span class="m-doc-wrap"><a href="class_graphics_1_1_texture.html" class="m-doc">Texture</a>* texture,
+              bool modified) <span class="m-label m-warning">pure virtual</span></span></span>
+            </h3>
+            <p>Marks the given texture as (not) modified.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">texture</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>modified</td>
+                  <td></td>
+                </tr>
+              </tbody>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="a0e8fa9d0a5b2012887002228ffe500f8"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">bool Graphics::<wbr />ITextureManager::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a0e8fa9d0a5b2012887002228ffe500f8" class="m-doc-self">ExtractTextureRaster</a>(</span><span class="m-doc-wrap"><a href="struct_render_ware_1_1_raster.html" class="m-doc">RenderWare::<wbr />Raster</a>* pRaster,
+              <a href="c_image_data_raw_8h.html#a73cd6a0f8f095f4d7a965ce461347d4c" class="m-doc">cImageDataRawPtr</a>&amp; dst,
+              bool async,
+              uint32_t messageID = 0) <span class="m-label m-warning">pure virtual</span></span></span>
+            </h3>
+            <p>Extracts the raw contents of a raster texture.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">pRaster</td>
+                  <td>The source texture</td>
+                </tr>
+                <tr>
+                  <td>dst</td>
+                  <td>Pointer where the extracted data will be created</td>
+                </tr>
+                <tr>
+                  <td>async</td>
+                  <td>If true, extract asynchronously, in the background; if false, block the execution until extraction is complete.</td>
+                </tr>
+                <tr>
+                  <td>messageID</td>
+                  <td>For async extraction, ID of message sent when extraction has finished (defaults to <code>0x522264D</code>)</td>
+                </tr>
+              </tbody>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="ab407798db54610f4ea9c5a1d9526d83e"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">bool Graphics::<wbr />ITextureManager::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ab407798db54610f4ea9c5a1d9526d83e" class="m-doc-self">ExtractTexture</a>(</span><span class="m-doc-wrap"><a href="class_graphics_1_1_texture.html" class="m-doc">Texture</a>* texture,
+              <a href="c_image_data_raw_8h.html#a73cd6a0f8f095f4d7a965ce461347d4c" class="m-doc">cImageDataRawPtr</a>&amp; dst,
+              bool async,
+              uint32_t messageID = 0) <span class="m-label m-warning">pure virtual</span></span></span>
+            </h3>
+            <p>Extracts the raw contents of a texture.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">texture</td>
+                  <td>The source texture</td>
+                </tr>
+                <tr>
+                  <td>dst</td>
+                  <td>Pointer where the extracted data will be created</td>
+                </tr>
+                <tr>
+                  <td>async</td>
+                  <td>If true, extract asynchronously, in the background; if false, block the execution until extraction is complete.</td>
+                </tr>
+                <tr>
+                  <td>messageID</td>
+                  <td>For async extraction, ID of message sent when extraction has finished (defaults to <code>0x522264D</code>)</td>
+                </tr>
+              </tbody>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="a3f384bdea18f20724f1785035e78bf54"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">bool Graphics::<wbr />ITextureManager::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a3f384bdea18f20724f1785035e78bf54" class="m-doc-self">ReloadTextureByKey</a>(</span><span class="m-doc-wrap">const struct <a href="struct_resource_key.html" class="m-doc">ResourceKey</a> name) <span class="m-label m-warning">pure virtual</span></span></span>
+            </h3>
+            <p>Calls <a href="class_graphics_1_1_i_texture_manager.html#af545fe0e99498d92af0f0bccf68910af" class="m-doc">ReloadTexture()</a> for the texture with the given key (type ID is ignored).</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">name</td>
+                  <td></td>
+                </tr>
+              </tbody>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="adc1bfe843fd01ff9b4bdfbeb2ab556ef"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">bool Graphics::<wbr />ITextureManager::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#adc1bfe843fd01ff9b4bdfbeb2ab556ef" class="m-doc-self">ReloadTextureByID</a>(</span><span class="m-doc-wrap">uint32_t instanceID,
+              uint32_t groupID) <span class="m-label m-warning">pure virtual</span></span></span>
+            </h3>
+            <p>Calls <a href="class_graphics_1_1_i_texture_manager.html#af545fe0e99498d92af0f0bccf68910af" class="m-doc">ReloadTexture()</a> for the texture with the given group and instance IDs.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">instanceID</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>groupID</td>
+                  <td></td>
+                </tr>
+              </tbody>
+            </table>
+<p>It actually calls <a href="class_graphics_1_1_i_texture_manager.html#a3f384bdea18f20724f1785035e78bf54" class="m-doc">ReloadTextureByKey()</a> with a <code>.raster</code> typeID, but that function ignores typeID, so it doesn&#x27;t matter.</p>
+          </div></section>
+          <section class="m-doc-details" id="af545fe0e99498d92af0f0bccf68910af"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">bool Graphics::<wbr />ITextureManager::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#af545fe0e99498d92af0f0bccf68910af" class="m-doc-self">ReloadTexture</a>(</span><span class="m-doc-wrap"><a href="class_graphics_1_1_texture.html" class="m-doc">Texture</a>* texture) <span class="m-label m-warning">pure virtual</span></span></span>
+            </h3>
+            <p>Reloads the texture by reading it from its file again.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">texture</td>
+                  <td></td>
+                </tr>
+              </tbody>
+            </table>
+<p>Removes the RasterResourceObject of the given texture and loads it from the resource manager again, using the same <a href="struct_resource_key.html" class="m-doc">ResourceKey</a>.</p>
+          </div></section>
+          <section class="m-doc-details" id="aed71c7d24f7e204795199fae7a4b3380"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">void Graphics::<wbr />ITextureManager::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#aed71c7d24f7e204795199fae7a4b3380" class="m-doc-self">RegisterRenderWareContents</a>(</span><span class="m-doc-wrap"><a href="class_render_ware_1_1_render_ware_file.html" class="m-doc">RenderWare::<wbr />RenderWareFile</a>* pRenderWare) <span class="m-label m-warning">pure virtual</span></span></span>
+            </h3>
+            <p>Adds all the textures from the given RW4 file (all the <a href="struct_render_ware_1_1_raster.html" class="m-doc">RenderWare::<wbr />Raster</a> sections).</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">pRenderWare</td>
+                  <td></td>
+                </tr>
+              </tbody>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="ae4931fd2ef78be12e2463441af333483"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">void Graphics::<wbr />ITextureManager::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ae4931fd2ef78be12e2463441af333483" class="m-doc-self">UnregisterRenderWareContents</a>(</span><span class="m-doc-wrap"><a href="class_render_ware_1_1_render_ware_file.html" class="m-doc">RenderWare::<wbr />RenderWareFile</a>* pRenderWare) <span class="m-label m-warning">pure virtual</span></span></span>
+            </h3>
+            <p>Removes all the textures that are contained in the given RW4 file.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">pRenderWare</td>
+                  <td></td>
+                </tr>
+              </tbody>
+            </table>
           </div></section>
         </section>
       </div>

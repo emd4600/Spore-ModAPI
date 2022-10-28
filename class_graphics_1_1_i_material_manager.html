@@ -183,8 +183,8 @@
             </dt>
             <dd>Puts the ID of all the materials specified into the given array.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">void <a href="#a36da613c69ae89ec722d5d362dac11cc" class="m-doc">GetTextures</a>(</span><span class="m-doc-wrap">const <a href="class_graphics_1_1_material.html" class="m-doc">Material</a>* pMaterial,
-              <a href="namespace_graphics.html#a4bc253444d109bb22ccfc44f613e4eb7" class="m-doc">TextureVector_<wbr />t</a>&amp; dst,
+              <span class="m-doc-wrap-bumper">void <a href="#a1af26cc3c2c713e0437b2c474afc59b9" class="m-doc">GetTextures</a>(</span><span class="m-doc-wrap">const <a href="class_graphics_1_1_material.html" class="m-doc">Material</a>* pMaterial,
+              vector&lt;<a href="_texture_8h.html#affea3369120131ed058702d2945a10b4" class="m-doc">TexturePtr</a>&gt;&amp; dst,
               bool(*)(<a href="class_graphics_1_1_texture.html" class="m-doc">Texture</a>*) filterFunction = nullptr) const <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
             <dd>Gets the textures used by a certain material.</dd>
@@ -383,10 +383,10 @@
               </tbody>
             </table>
           </div></section>
-          <section class="m-doc-details" id="a36da613c69ae89ec722d5d362dac11cc"><div>
+          <section class="m-doc-details" id="a1af26cc3c2c713e0437b2c474afc59b9"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">void Graphics::<wbr />IMaterialManager::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a36da613c69ae89ec722d5d362dac11cc" class="m-doc-self">GetTextures</a>(</span><span class="m-doc-wrap">const <a href="class_graphics_1_1_material.html" class="m-doc">Material</a>* pMaterial,
-              <a href="namespace_graphics.html#a4bc253444d109bb22ccfc44f613e4eb7" class="m-doc">TextureVector_<wbr />t</a>&amp; dst,
+              <span class="m-doc-wrap-bumper">void Graphics::<wbr />IMaterialManager::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a1af26cc3c2c713e0437b2c474afc59b9" class="m-doc-self">GetTextures</a>(</span><span class="m-doc-wrap">const <a href="class_graphics_1_1_material.html" class="m-doc">Material</a>* pMaterial,
+              vector&lt;<a href="_texture_8h.html#affea3369120131ed058702d2945a10b4" class="m-doc">TexturePtr</a>&gt;&amp; dst,
               bool(*)(<a href="class_graphics_1_1_texture.html" class="m-doc">Texture</a>*) filterFunction = nullptr) const <span class="m-label m-warning">pure virtual</span></span></span>
             </h3>
             <p>Gets the textures used by a certain material.</p>
@@ -401,7 +401,7 @@
                 </tr>
                 <tr>
                   <td>dst&nbsp;<span class="m-label m-flat m-warning">out</span></td>
-                  <td>A TextureVector_t where the textures will be output.</td>
+                  <td>A vector where the textures will be output.</td>
                 </tr>
                 <tr>
                   <td>filterFunction&nbsp;<span class="m-label m-flat m-info">in</span></td>

@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Graphics::cBufferDraw class | Spore ModAPI SDK for creating C++ mods for Spore</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,600,600i%7CSource+Code+Pro:400,400i,600" />
+  <link rel="stylesheet" href="m-dark.css" />
+  <link rel="stylesheet" href="m-documentation.css" />
+  <link rel="icon" href="Spore_ModAPI_Icon.png" type="image/png" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#22272e" />
+</head>
+<body>
+<header><nav id="navigation">
+  <div class="m-container">
+    <div class="m-row">
+      <a href="index.html" id="m-navbar-brand" class="m-col-t-8 m-col-m-none m-left-m"><img src="Spore_ModAPI_Icon.png" />Spore ModAPI <span class="m-thin">SDK for creating C++ mods for Spore</span></a>
+      <div class="m-col-t-4 m-hide-m m-text-right m-nopadr">
+        <a href="#search" class="m-doc-search-icon" title="Search" onclick="return showSearch()"><svg style="height: 0.9rem;" viewBox="0 0 16 16">
+          <path id="m-doc-search-icon-path" d="m6 0c-3.31 0-6 2.69-6 6 0 3.31 2.69 6 6 6 1.49 0 2.85-0.541 3.89-1.44-0.0164 0.338 0.147 0.759 0.5 1.15l3.22 3.79c0.552 0.614 1.45 0.665 2 0.115 0.55-0.55 0.499-1.45-0.115-2l-3.79-3.22c-0.392-0.353-0.812-0.515-1.15-0.5 0.895-1.05 1.44-2.41 1.44-3.89 0-3.31-2.69-6-6-6zm0 1.56a4.44 4.44 0 0 1 4.44 4.44 4.44 4.44 0 0 1-4.44 4.44 4.44 4.44 0 0 1-4.44-4.44 4.44 4.44 0 0 1 4.44-4.44z"/>
+        </svg></a>
+        <a id="m-navbar-show" href="#navigation" title="Show navigation"></a>
+        <a id="m-navbar-hide" href="#" title="Hide navigation"></a>
+      </div>
+      <div id="m-navbar-collapse" class="m-col-t-12 m-show-m m-col-m-none m-right-m">
+        <div class="m-row">
+          <ol class="m-col-t-6 m-col-m-none">
+            <li><a href="pages.html">Tutorials</a></li>
+            <li><a href="namespaces.html">Namespaces</a></li>
+          </ol>
+          <ol class="m-col-t-6 m-col-m-none" start="3">
+            <li><a href="annotated.html">Classes</a></li>
+            <li><a href="files.html">Files</a></li>
+            <li class="m-show-m"><a href="#search" class="m-doc-search-icon" title="Search" onclick="return showSearch()"><svg style="height: 0.9rem;" viewBox="0 0 16 16">
+              <use href="#m-doc-search-icon-path" />
+            </svg></a></li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav></header>
+<main><article>
+  <div class="m-container m-container-inflatable">
+    <div class="m-row">
+      <div class="m-col-l-10 m-push-l-1">
+        <h1>
+          <span class="m-breadcrumb"><a href="namespace_graphics.html">Graphics</a>::<wbr/></span>cBufferDraw <span class="m-thin">class</span>
+          <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_buffer_draw_8h.html">&lt;Spore/Graphics/BufferDraw.h&gt;</a></div>
+        </h1>
+        <p><span></span></p>
+        <div class="m-block m-default">
+          <h3>Contents</h3>
+          <ul>
+            <li>
+              Reference
+              <ul>
+                <li><a href="#pub-types">Public types</a></li>
+                <li><a href="#pub-static-attribs">Public static variables</a></li>
+                <li><a href="#pub-static-methods">Public static functions</a></li>
+                <li><a href="#pub-attribs">Public variables</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+        <section id="pub-types">
+          <h2><a href="#pub-types">Public types</a></h2>
+          <dl class="m-doc">
+            <dt id="ab8ce51d16472b7c9b2e2c3cdc6c28ac0">
+              <span class="m-doc-wrap-bumper">enum class <a href="#ab8ce51d16472b7c9b2e2c3cdc6c28ac0" class="m-doc-self">VertexType</a> { </span><span class="m-doc-wrap"><a href="#ab8ce51d16472b7c9b2e2c3cdc6c28ac0a3eb5824a02e4fabac94f5608e20b9c70" class="m-doc">V3FC4B</a> = 0,
+              <a href="#ab8ce51d16472b7c9b2e2c3cdc6c28ac0a6ea6a1f40ce3d31b5ebc3415d981741a" class="m-doc">V3FT2F</a> = 1,
+              <a href="#ab8ce51d16472b7c9b2e2c3cdc6c28ac0a64cc53687934cf961d3047ce5ec76d13" class="m-doc">V3FC4BT2F</a> = 2,
+              <a href="#ab8ce51d16472b7c9b2e2c3cdc6c28ac0ad2e1497a1104a27184696df963e0cccf" class="m-doc">V3FC4BT3F</a> = 3,
+              <a href="#ab8ce51d16472b7c9b2e2c3cdc6c28ac0aa2b3f987e03559d0248e2949e85eab69" class="m-doc">V3FN3FC4BT2F</a> = 4,
+              <a href="#ab8ce51d16472b7c9b2e2c3cdc6c28ac0ad8a0d44ec7a46ef536931e77d13df59a" class="m-doc">V3FC4BP1F</a> = 5,
+              <a href="#ab8ce51d16472b7c9b2e2c3cdc6c28ac0a208383bc1dab2d1a9fc81b0cc32a431c" class="m-doc">V4FN4FC4BT2F</a> = 6,
+              <a href="#ab8ce51d16472b7c9b2e2c3cdc6c28ac0af9a1dbc7caa27e00bfb1d1b146e809da" class="m-doc">V4FN4FC4BC4B</a> = 7,
+              <a href="#ab8ce51d16472b7c9b2e2c3cdc6c28ac0a7a9471fa27b89746a7cd2ff0bd809969" class="m-doc">V4FN4FG3FC4BC4B</a> = 8,
+              <a href="#ab8ce51d16472b7c9b2e2c3cdc6c28ac0a1c2ed4f465f8af475d112c9436cf4df9" class="m-doc">V4FN3FC4BT4FT4FT4FT4FT4F</a> = 9,
+              <a href="#ab8ce51d16472b7c9b2e2c3cdc6c28ac0a499d74a47b7f9159e2d0b500e9993d86" class="m-doc">V3FC4BT2FT2FT2F</a> = 10,
+              <a href="#ab8ce51d16472b7c9b2e2c3cdc6c28ac0abe1c9cf0b04fbb049d3d27c99c668ce6" class="m-doc">V4FN4FC4BC4BT4B</a> = 11 }</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a33992626fb30f65902454601efcd42be">
+              <span class="m-doc-wrap-bumper">enum class <a href="#a33992626fb30f65902454601efcd42be" class="m-doc-self">IndexType</a> { </span><span class="m-doc-wrap"><a href="#a33992626fb30f65902454601efcd42bea1a18ff71b3df3e362a2489eef4b30003" class="m-doc">PointList</a> = 0,
+              <a href="#a33992626fb30f65902454601efcd42bea596e1b7afe8925f3f578c716d5af8fef" class="m-doc">LineList</a> = 1,
+              <a href="#a33992626fb30f65902454601efcd42beaef2fa15d6631ffac726234bc024158c6" class="m-doc">TriangleList2</a> = 2,
+              <a href="#a33992626fb30f65902454601efcd42beaf5beeab7a1f452e5b0e9b03b44f0de92" class="m-doc">TriangleList</a> = 3,
+              <a href="#a33992626fb30f65902454601efcd42bea1da0b9ead8b051940a89214bae22831c" class="m-doc">TriangleStrip</a> = 4,
+              <a href="#a33992626fb30f65902454601efcd42bea18d58fde618e4a30e2dfdc122e693047" class="m-doc">TriangleFan</a> = 5 }</span>
+            </dt>
+            <dd><span></span></dd>
+          </dl>
+        </section>
+        <section id="pub-static-attribs">
+          <h2><a href="#pub-static-attribs">Public static variables</a></h2>
+          <dl class="m-doc">
+            <dt id="a5970d58cfa934c51912e14621b741a4a">
+              static const int <a href="#a5970d58cfa934c51912e14621b741a4a" class="m-doc-self">MAX_VERTICES</a>
+            </dt>
+            <dd><span></span></dd>
+          </dl>
+        </section>
+        <section id="pub-static-methods">
+          <h2><a href="#pub-static-methods">Public static functions</a></h2>
+          <dl class="m-doc">
+            <dt id="a4590ef3b34c7198b67a12ef59583ef74">
+              <span class="m-doc-wrap-bumper">static auto <a href="#a4590ef3b34c7198b67a12ef59583ef74" class="m-doc-self">LockVertexBuffer</a>(</span><span class="m-doc-wrap"><a href="class_graphics_1_1c_buffer_draw.html#ab8ce51d16472b7c9b2e2c3cdc6c28ac0" class="m-doc">VertexType</a> vertexType,
+              int numVertices,
+              void*&amp; pDstData,
+              int&amp; dstStride) -&gt; bool</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a6febc6e6bc577a8b10a7298f746e5ab5">
+              <span class="m-doc-wrap-bumper">static auto <a href="#a6febc6e6bc577a8b10a7298f746e5ab5" class="m-doc-self">UnlockVertexBuffer</a>(</span><span class="m-doc-wrap">) -&gt; bool</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a5198990c6ea153ee1af587465424e761">
+              <span class="m-doc-wrap-bumper">static void <a href="#a5198990c6ea153ee1af587465424e761" class="m-doc-self">UnlockAndDrawMaterial1Texture</a>(</span><span class="m-doc-wrap"><a href="class_graphics_1_1c_buffer_draw.html#a33992626fb30f65902454601efcd42be" class="m-doc">IndexType</a> indexType,
+              <a href="class_graphics_1_1_material.html" class="m-doc">Material</a>* pMaterial,
+              <a href="class_graphics_1_1_texture.html" class="m-doc">Texture</a>* pTexture,
+              const <a href="struct_graphics_1_1_render_statistics.html" class="m-doc">RenderStatistics</a>&amp; stats)</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a0be0c2c568861ed4e6765aff6841052c">
+              <span class="m-doc-wrap-bumper">static void <a href="#a0be0c2c568861ed4e6765aff6841052c" class="m-doc-self">UnlockAndDrawMaterial</a>(</span><span class="m-doc-wrap"><a href="class_graphics_1_1c_buffer_draw.html#a33992626fb30f65902454601efcd42be" class="m-doc">IndexType</a> indexType,
+              <a href="class_graphics_1_1_material.html" class="m-doc">Material</a>* pMaterial,
+              const <a href="struct_graphics_1_1_render_statistics.html" class="m-doc">RenderStatistics</a>&amp; stats)</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a69ad8b406a5c05caef06dc8d41427017">
+              <span class="m-doc-wrap-bumper">static void <a href="#a69ad8b406a5c05caef06dc8d41427017" class="m-doc-self">UnlockAndDrawNoMaterial</a>(</span><span class="m-doc-wrap"><a href="class_graphics_1_1c_buffer_draw.html#a33992626fb30f65902454601efcd42be" class="m-doc">IndexType</a> indexType,
+              const <a href="struct_graphics_1_1_render_statistics.html" class="m-doc">RenderStatistics</a>&amp; stats)</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a34cee9aa871d3dc7520549260cddf6c2">
+              <span class="m-doc-wrap-bumper">static auto <a href="#a34cee9aa871d3dc7520549260cddf6c2" class="m-doc-self">Get</a>(</span><span class="m-doc-wrap">) -&gt; <a href="class_graphics_1_1c_buffer_draw.html" class="m-doc">cBufferDraw</a>*</span>
+            </dt>
+            <dd><span></span></dd>
+          </dl>
+        </section>
+        <section id="pub-attribs">
+          <h2><a href="#pub-attribs">Public variables</a></h2>
+          <dl class="m-doc">
+            <dt id="a71091d8671e948e129108a232cb5c0b8">
+              <a href="struct_render_ware_1_1_vertex_buffer.html" class="m-doc">RenderWare::<wbr />VertexBuffer</a>* <a href="#a71091d8671e948e129108a232cb5c0b8" class="m-doc-self">mVertexBuffers</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="aede9ef8ed118102e1c7184eb26387d54">
+              <a href="struct_render_ware_1_1_index_buffer.html" class="m-doc">RenderWare::<wbr />IndexBuffer</a>* <a href="#aede9ef8ed118102e1c7184eb26387d54" class="m-doc-self">mpIndexBuffer</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a58ee90187f83ae1f89d6988aca9ff87a">
+              <a href="struct_render_ware_1_1_vertex_description_base.html" class="m-doc">RenderWare::<wbr />VertexDescriptionBase</a>* <a href="#a58ee90187f83ae1f89d6988aca9ff87a" class="m-doc-self">mVertexDescriptions</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a977d589aca39c07ce06eef125197133a">
+              int <a href="#a977d589aca39c07ce06eef125197133a" class="m-doc-self">field_64</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a2396442f21702d360352bbacaf093551">
+              int <a href="#a2396442f21702d360352bbacaf093551" class="m-doc-self">field_68</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a5dd71b8fc838a24646bacd929bb9b794">
+              int <a href="#a5dd71b8fc838a24646bacd929bb9b794" class="m-doc-self">field_6C</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a0653931c86ff08563a932b22f112b183">
+              int <a href="#a0653931c86ff08563a932b22f112b183" class="m-doc-self">mFirstFreeVertex</a>
+            </dt>
+            <dd>Index to first free vertex for each vertex type.</dd>
+            <dt id="a7dd47947409da4fde65b9df65d3e7329">
+              int <a href="#a7dd47947409da4fde65b9df65d3e7329" class="m-doc-self">mLastVertex</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="ac0164585835ed17508c495d7351efa4d">
+              int <a href="#ac0164585835ed17508c495d7351efa4d" class="m-doc-self">field_D0</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a4219b8522e125fa026c76349474f3560">
+              void* <a href="#a4219b8522e125fa026c76349474f3560" class="m-doc-self">field_100</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="ab79e6dd1243c64c349005efdcadbd7a3">
+              int <a href="#ab79e6dd1243c64c349005efdcadbd7a3" class="m-doc-self">field_130</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a72c7e2748604b1f0fbae05283e211653">
+              int <a href="#a72c7e2748604b1f0fbae05283e211653" class="m-doc-self">field_160</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="aee056089fa9ece044c2b49f4008b8302">
+              bool <a href="#aee056089fa9ece044c2b49f4008b8302" class="m-doc-self">mIsLocked</a>
+            </dt>
+            <dd>True if a vertex buffer is locked.</dd>
+            <dt id="aaaa354269d159bb84b7588f09eeb321a">
+              int <a href="#aaaa354269d159bb84b7588f09eeb321a" class="m-doc-self">field_194</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a21da4b9af983b4962b5fc4a77db4ef6f">
+              int <a href="#a21da4b9af983b4962b5fc4a77db4ef6f" class="m-doc-self">field_198</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a4e4ff7e448fecebdb052735e0395df6f">
+              bool <a href="#a4e4ff7e448fecebdb052735e0395df6f" class="m-doc-self">field_19C</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a257233b29dfae80a380c5a5eafb87b88">
+              int <a href="#a257233b29dfae80a380c5a5eafb87b88" class="m-doc-self">mCurrentIndex</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a67542515b532c8e6a7b0df597fe31989">
+              int <a href="#a67542515b532c8e6a7b0df597fe31989" class="m-doc-self">field_1A4</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="abefd6e0029fe62945878825779e95f5d">
+              int <a href="#abefd6e0029fe62945878825779e95f5d" class="m-doc-self">field_1A8</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a334b72556a2549c717f12fae89c58445">
+              int <a href="#a334b72556a2549c717f12fae89c58445" class="m-doc-self">field_1AC</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a83a6fc5d44151475531f22953a275913">
+              int <a href="#a83a6fc5d44151475531f22953a275913" class="m-doc-self">field_1B0</a>
+            </dt>
+            <dd><span></span></dd>
+          </dl>
+        </section>
+      </div>
+    </div>
+  </div>
+</article></main>
+<div class="m-doc-search" id="search">
+  <a href="#!" onclick="return hideSearch()"></a>
+  <div class="m-container">
+    <div class="m-row">
+      <div class="m-col-m-8 m-push-m-2">
+        <div class="m-doc-search-header m-text m-small">
+          <div><span class="m-label m-default">Tab</span> / <span class="m-label m-default">T</span> to search, <span class="m-label m-default">Esc</span> to close</div>
+          <div id="search-symbolcount">&hellip;</div>
+        </div>
+        <div class="m-doc-search-content">
+          <form>
+            <input type="search" name="q" id="search-input" placeholder="Loading &hellip;" disabled="disabled" autofocus="autofocus" autocomplete="off" spellcheck="false" />
+          </form>
+          <noscript class="m-text m-danger m-text-center">Unlike everything else in the docs, the search functionality <em>requires</em> JavaScript.</noscript>
+          <div id="search-help" class="m-text m-dim m-text-center">
+            <p class="m-noindent">Search for symbols, directories, files, pages or
+            modules. You can omit any prefix from the symbol or file path; adding a
+            <code>:</code> or <code>/</code> suffix lists all members of given symbol or
+            directory.</p>
+            <p class="m-noindent">Use <span class="m-label m-dim">&darr;</span>
+            / <span class="m-label m-dim">&uarr;</span> to navigate through the list,
+            <span class="m-label m-dim">Enter</span> to go.
+            <span class="m-label m-dim">Tab</span> autocompletes common prefix, you can
+            copy a link to the result using <span class="m-label m-dim">⌘</span>
+            <span class="m-label m-dim">L</span> while <span class="m-label m-dim">⌘</span>
+            <span class="m-label m-dim">M</span> produces a Markdown link.</p>
+          </div>
+          <div id="search-notfound" class="m-text m-warning m-text-center">Sorry, nothing was found.</div>
+          <ul id="search-results"></ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="search-v1.js"></script>
+<script src="searchdata-v1.js" async="async"></script>
+<footer><nav>
+  <div class="m-container">
+    <div class="m-row">
+      <div class="m-col-l-10 m-push-l-1">
+        <p>Spore ModAPI SDK for creating C++ mods for Spore. Created with <a href="https://doxygen.org/">Doxygen</a> 1.8.16 and <a href="https://mcss.mosra.cz/">m.css</a>.</p>
+      </div>
+    </div>
+  </div>
+</nav></footer>
+</body>
+</html>
