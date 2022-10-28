@@ -177,4 +177,8 @@ auto_STATIC_METHOD(Simulator, bool, IsBinaryStar,
 auto_STATIC_METHOD(Simulator, bool, IsNotStarOrBinaryStar,
 	Args(Simulator::StarType starType), Args(starType));
 
+float* Simulator::GetPrecalculatedSolarStarRadius() {
+	return (float*)GetAddress(Simulator, PrecalculatedSolarStarRadius_ptr);
+}
+
 #endif

@@ -89,5 +89,5 @@ namespace Addresses(Simulator)
 	DeclareAddress(GetPlanetTemperatureType);  // 0xFC26B0 0xFC1F90
 	DeclareAddress(IsBinaryStar);  // 0xC8A770 0xC8B5E0
 	DeclareAddress(IsNotStarOrBinaryStar);  // 0xC8A840 0xC8B6B0
-	DeclareAddress(PrecalculatedSolarStarRadius_ptr);  // 0x157DCF0 TODO
+	DeclareAddress(PrecalculatedSolarStarRadius_ptr);  // 0x157DCF0 0x1579D10
 }
