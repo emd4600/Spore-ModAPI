@@ -57,6 +57,8 @@
               <ul>
                 <li><a href="#base-classes">Base classes</a></li>
                 <li><a href="#pub-static-attribs">Public static variables</a></li>
+                <li><a href="#typeless-methods">Constructors, destructors, conversion operators</a></li>
+                <li><a href="#pub-methods">Public functions</a></li>
                 <li><a href="#pub-attribs">Public variables</a></li>
               </ul>
             </li>
@@ -81,6 +83,48 @@
             <dd><span></span></dd>
             <dt id="ae205cb37ffddc106222118c98a035c24">
               static const uint32_t <a href="#ae205cb37ffddc106222118c98a035c24" class="m-doc-self">NOUN_ID</a>
+            </dt>
+            <dd><span></span></dd>
+          </dl>
+        </section>
+        <section id="typeless-methods">
+          <h2><a href="#typeless-methods">Constructors, destructors, conversion operators</a></h2>
+          <dl class="m-doc">
+            <dt id="ab291ba0b9d8f5771f28f44ec5d46b4c5">
+              <span class="m-doc-wrap-bumper"><a href="#ab291ba0b9d8f5771f28f44ec5d46b4c5" class="m-doc-self">cCelestialBody</a>(</span><span class="m-doc-wrap"><a href="namespace_simulator.html#ac97cf1223a774e6ec987032dbcfa6c33" class="m-doc">cCelestialBodyType</a> type)</span>
+            </dt>
+            <dd><span></span></dd>
+          </dl>
+        </section>
+        <section id="pub-methods">
+          <h2><a href="#pub-methods">Public functions</a></h2>
+          <dl class="m-doc">
+            <dt id="a5283dffb8be131caafb6247d61d0ffe2">
+              <span class="m-doc-wrap-bumper">auto <a href="#a5283dffb8be131caafb6247d61d0ffe2" class="m-doc-self">Cast</a>(</span><span class="m-doc-wrap">uint32_t typeID) const -&gt; void* <span class="m-label m-flat m-warning">override</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a0cc844b77bc289c39b0cfea638505574">
+              <span class="m-doc-wrap-bumper">auto <a href="#a0cc844b77bc289c39b0cfea638505574" class="m-doc-self">GetNounID</a>(</span><span class="m-doc-wrap">) const -&gt; uint32_t <span class="m-label m-flat m-warning">override</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a486268e6766547f91f1a4194eae1abd9">
+              <span class="m-doc-wrap-bumper">auto <a href="#a486268e6766547f91f1a4194eae1abd9" class="m-doc-self">Write</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1_i_serializer_stream.html" class="m-doc">ISerializerStream</a>* stream) -&gt; bool <span class="m-label m-flat m-warning">override</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a06af43f5da897aaf7551a9a33445493f">
+              <span class="m-doc-wrap-bumper">auto <a href="#a06af43f5da897aaf7551a9a33445493f" class="m-doc-self">Read</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1_i_serializer_stream.html" class="m-doc">ISerializerStream</a>* stream) -&gt; bool <span class="m-label m-flat m-warning">override</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="ad8b113c4841a0a69fa69aad25a9a0268">
+              <span class="m-doc-wrap-bumper">auto <a href="#ad8b113c4841a0a69fa69aad25a9a0268" class="m-doc-self">WriteToXML</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1_xml_serializer.html" class="m-doc">XmlSerializer</a>*) -&gt; bool <span class="m-label m-flat m-warning">override</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="adee59aa1821538db81b2ee9094f8182f">
+              <span class="m-doc-wrap-bumper">auto <a href="#adee59aa1821538db81b2ee9094f8182f" class="m-doc-self">GetCastID</a>(</span><span class="m-doc-wrap">) const -&gt; uint32_t <span class="m-label m-flat m-warning">override</span></span>
+            </dt>
+            <dd>Returns the TYPE field of the class, that is used for object casting.</dd>
+            <dt id="a8e1d59405b69f8a6d78cbf742e4da332">
+              <span class="m-doc-wrap-bumper">void <a href="#a8e1d59405b69f8a6d78cbf742e4da332" class="m-doc-self">RemoveOwner</a>(</span><span class="m-doc-wrap">) <span class="m-label m-flat m-warning">override</span></span>
             </dt>
             <dd><span></span></dd>
           </dl>
