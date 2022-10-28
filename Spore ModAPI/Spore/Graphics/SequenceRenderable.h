@@ -20,7 +20,7 @@ namespace Graphics
 		
 		int AddRef() override;
 		int Release() override;
-		void Render(int flags, int layerIndex, App::cViewer**, void*) override;
+		void Render(int flags, int layerIndex, App::cViewer**, RenderStatistics&) override;
 
 	private:
 		struct Entry {

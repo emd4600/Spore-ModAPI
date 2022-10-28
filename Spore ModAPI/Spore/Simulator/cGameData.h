@@ -52,7 +52,7 @@ namespace Simulator
 		/* 10h */	virtual bool Write(ISerializerStream* stream) = 0;  //PLACEHOLDER
 		/* 14h */	virtual bool Read(ISerializerStream* stream) override;
 		/* 18h */	virtual bool ISimulatorSerializable_func18h() override;
-		/* 1Ch */	virtual bool WriteToXML(XmlSerializer*) override;  // write as text?
+		/* 1Ch */	virtual bool WriteToXML(XmlSerializer*) override;
 		// GetNounID is not implemented
 
 		/// arg0->field_4 is definition ID, field_C is prop, field_0 is noun ID

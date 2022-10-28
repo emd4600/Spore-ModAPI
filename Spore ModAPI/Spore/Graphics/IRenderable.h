@@ -20,6 +20,7 @@
 #pragma once
 
 #include <Spore\App\cViewer.h>
+#include <Spore\Graphics\RenderStatistics.h>
 
 #define IRenderablePtr eastl::intrusive_ptr<Graphics::IRenderable>
 
@@ -39,6 +40,8 @@ namespace Graphics
 		///
 		/// @param flags The flags this renderable was registered with, combined with the global render flags.
 		/// @param layerIndex The layer index this renderable was registered with.
-		virtual void Render(int flags, int layerIndex, App::cViewer**, void*) = 0;
+		/// @param arg_8
+		/// @param statistics
+		virtual void Render(int flags, int layerIndex, App::cViewer** arg_8, RenderStatistics& statistics) = 0;
 	};
 }

@@ -8,7 +8,7 @@ namespace Simulator
 	/// Used to obtain the individual star types of each of the two stars in a binary system.
 	/// @param binaryType Type of the system, which should be a binary system.
 	/// @param[out] star1 Type of the first star.
-	/// @param[out] star1 Type of the second star.
+	/// @param[out] star2 Type of the second star.
 	void GetBinarySystemStarTypes(StarType binaryType, StarType& star1, StarType& star2);
 
 	/// Returns the radius that is used as a base for calculating planet orbits in a binary-star system.
@@ -73,6 +73,8 @@ namespace Simulator
 	/// @param starType
 	/// @returns
 	bool IsNotStarOrBinaryStar(StarType starType);
+
+	float* GetPrecalculatedSolarStarRadius();
 }
 
 namespace Addresses(Simulator)
@@ -87,4 +89,5 @@ namespace Addresses(Simulator)
 	DeclareAddress(GetPlanetTemperatureType);  // 0xFC26B0 0xFC1F90
 	DeclareAddress(IsBinaryStar);  // 0xC8A770 0xC8B5E0
 	DeclareAddress(IsNotStarOrBinaryStar);  // 0xC8A840 0xC8B6B0
+	DeclareAddress(PrecalculatedSolarStarRadius_ptr);  // 0x157DCF0 TODO
 }

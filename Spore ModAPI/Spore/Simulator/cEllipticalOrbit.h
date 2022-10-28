@@ -55,6 +55,9 @@ namespace Simulator
 		/* 20h */	float mPeriod;
 		/* 24h */	OrbitCache mCache;
 
+		/// Creates a null orbit (`mbNullOrbit` equals true, all other fields are not initialized).
+		cEllipticalOrbit();
+
 		/// Calculates all the valeus in `mCache` using the rest of parameters in this class.
 		/// This must be called every time a parameter is changed.
 		void Precalculate();
@@ -66,4 +69,8 @@ namespace Simulator
 	{
 		DeclareAddress(Precalculate);  // 0xFE8C10
 	}
+
+	inline cEllipticalOrbit::cEllipticalOrbit()
+		: mbNullOrbit(true)
+	{}
 }

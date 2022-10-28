@@ -50,7 +50,7 @@ namespace Graphics
 		return mnRefCount;
 	}
 
-	void LambdaRenderable::Render(int arg_0, int arg_4, App::cViewer** arg_8, void* arg_C)
+	void LambdaRenderable::Render(int arg_0, int arg_4, App::cViewer** arg_8, RenderStatistics& arg_C)
 	{
 		mFunction(arg_0, arg_4, arg_8, arg_C);
 	}
@@ -91,7 +91,7 @@ namespace Graphics
 		}
 	}
 
-	void SequenceRenderable::Render(int, int, App::cViewer** arg_8, void* arg_C)
+	void SequenceRenderable::Render(int, int, App::cViewer** arg_8, RenderStatistics& arg_C)
 	{
 		for (auto& entry : mEntries) {
 			entry.pRenderable->Render(entry.flags, entry.layer, arg_8, arg_C);

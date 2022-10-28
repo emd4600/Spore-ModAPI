@@ -15,6 +15,7 @@
 #include <Spore\Graphics\cMaterialManager.h>
 #include <Spore\Graphics\ShaderDataUniform.h>
 #include <Spore\Graphics\GlobalState.h>
+#include <Spore\Graphics\BufferDraw.h>
 
 namespace Addresses(Graphics)
 {
@@ -149,6 +150,16 @@ namespace Graphics
 		DefineAddress(SetTransform, SelectAddress(0x5295C0, , 0x5291F0));
 		DefineAddress(renderStates_ptr, SelectAddress(0x01700510, , 0x16F91E0));
 		DefineAddress(renderStateDirty_ptr, SelectAddress(0x017016BC, , 0x16FA38C));
+	}
+
+	namespace Addresses(cBufferDraw)
+	{
+		DefineAddress(ptr, SelectAddress(0x160B998, , 0x1607728));
+		DefineAddress(LockVertexBuffer, SelectAddress(0x6DE220, , 0x6DDD40));
+		DefineAddress(UnlockVertexBuffer, SelectAddress(0x6DE440, , 0x6DDF60));
+		DefineAddress(UnlockAndDrawMaterial1Texture, SelectAddress(0x6DE2E0, , 0x6DDE00));
+		DefineAddress(UnlockAndDrawMaterial, SelectAddress(0x6DE2A0, , 0x6DDDC0));
+		DefineAddress(UnlockAndDrawNoMaterial, SelectAddress(0x6DE270, , 0x6DDD90));
 	}
 }
 #endif

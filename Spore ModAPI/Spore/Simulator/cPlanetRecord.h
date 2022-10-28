@@ -22,7 +22,7 @@
 #include <Spore\Simulator\cEllipticalOrbit.h>
 #include <Spore\Simulator\SimulatorEnums.h>
 #include <Spore\Resource\ResourceObject.h>
-#include <Spore\App\ResourceKeyGenerator.h>
+#include <Spore\App\IDGenerator.h>
 #include <Spore\MathUtils.h>
 #include <EASTL\string.h>
 #include <EASTL\vector.h>
@@ -176,6 +176,13 @@ namespace Simulator
 		/// @returns
 		static ResourceKey GenerateTerrainKey();
 
+		/// Returns the distance of the perihelion, which is the planet's closest point to the parent object
+		/// in its orbit (the parent object is either a sun, or another planet if this planet is a moon).
+		/// @param pRecord The planet
+		/// @param moonType Only used for moons (planets orbiting other planets), determines how the perihelion is calculated
+		/// @returns
+		static float GetPerihelion(cPlanetRecord* pRecord, MoonPerihelionType moonType);
+
 		static void Create(PlanetID planetId, cPlanetRecordPtr& dst);
 
 	public:
@@ -229,11 +236,12 @@ namespace Simulator
 	namespace Addresses(cPlanetRecord)
 	{
 		DeclareAddress(Create);  // 0xBA5920, 0xBA6300
+		DeclareAddress(GetPerihelion);  // 0xC70190 0xC70FC0
 	}
 
 	inline ResourceKey cPlanetRecord::GenerateTerrainKey()
 	{
-		return ResourceKeyGenerator.Generate(0x00B1B104, 0x84, 0, 0xAF, 0);
+		return IDGenerator.Generate(0x00B1B104, 0x84, 0, 0xAF, 0);
 	}
 
 	inline void cPlanetRecord::SetGeneratedTerrainKey(const ResourceKey& key)

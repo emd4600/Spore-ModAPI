@@ -49,5 +49,13 @@ namespace App
 	auto_METHOD_const(cViewer, bool, GetCameraToMouse, Args(Vector3& dst1, Vector3& dst2), Args(dst1, dst2));
 
 	auto_METHOD_const(cViewer, bool, GetCameraToPoint, Args(float x, float y, Vector3& dst1, Vector3& dst2), Args(x, y, dst1, dst2));
+
+	auto_METHOD_VOID_(cViewer, Dispose);
+
+	auto_METHOD_VOID(cViewer, SetPerspectiveProjection, Args(float arg), Args(arg));
+	auto_METHOD_VOID(cViewer, SetParallelProjection, Args(float arg, float arg2), Args(arg, arg2));
+	auto_METHOD_VOID(cViewer, SetViewport, Args(const IntRectangle& arg), Args(arg));
+	auto_METHOD_VOID(cViewer, SetViewWindow, Args(const Vector2& arg), Args(arg));
+	auto_METHOD_VOID(cViewer, SetViewOffset, Args(const Vector2& arg), Args(arg));
 }
 #endif

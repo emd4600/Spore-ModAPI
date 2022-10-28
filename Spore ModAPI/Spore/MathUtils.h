@@ -331,6 +331,28 @@ namespace Math
 		}
 	};
 
+	/// Represents a rectangular space, defined by two points or by the four edges. Equivalent to Rectangle, but with integers.
+	/// (x1, y1) represents the point on the top-left corner; (x2, y2) represents the point on the bottom-right corner.
+	struct IntRectangle
+	{
+		int x1;
+		int y1;
+		int x2;
+		int y2;
+
+		IntRectangle(int x1, int y1, int x2, int y2);
+		IntRectangle();
+
+		/// Returns the width of the rectangle.
+		inline int GetWidth() const {
+			return x2 - x1;
+		}
+		/// Returns the height of the rectangle.
+		inline int GetHeight() const {
+			return y2 - y1;
+		}
+	};
+
 	/// A pair of two float values that represents the dimensions of an image (width, height).
 	struct Dimensions {
 		float width;
@@ -686,6 +708,10 @@ namespace Math
 		x1(_x1), y1(_y1), x2(_x2), y2(_y2)
 	{
 	}
+	inline IntRectangle::IntRectangle(int _x1, int _y1, int _x2, int _y2) :
+		x1(_x1), y1(_y1), x2(_x2), y2(_y2)
+	{
+	}
 	inline Point::Point(float _x, float _y) :
 		x(_x), y(_y)
 	{
@@ -715,6 +741,7 @@ namespace Math
 	inline Vector4::Vector4() : x(0), y(0), z(0), w(0) {}
 	inline Quaternion::Quaternion() : Vector4(0, 0, 0, 1.0f) {}
 	inline Rectangle::Rectangle() : x1(0), y1(0), x2(0), y2(0) {}
+	inline IntRectangle::IntRectangle() : x1(0), y1(0), x2(0), y2(0) {}
 	inline Point::Point() : x(0), y(0) {}
 	inline Dimensions::Dimensions() : width(0), height(0) {}
 	inline IntDimensions::IntDimensions() : width(0), height(0) {}

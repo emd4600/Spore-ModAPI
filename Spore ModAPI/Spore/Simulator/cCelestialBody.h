@@ -40,6 +40,16 @@ namespace Simulator
 		static const uint32_t TYPE = 0x38CFB68;
 		static const uint32_t NOUN_ID = 0x38CFB6B;
 
+		cCelestialBody(cCelestialBodyType type);
+
+		virtual void* Cast(uint32_t typeID) const override;
+		virtual uint32_t GetNounID() const override;
+		virtual bool Write(ISerializerStream* stream) override;
+		virtual bool Read(ISerializerStream* stream) override;
+		virtual bool WriteToXML(XmlSerializer*) override;
+		virtual uint32_t GetCastID() const override;
+		virtual void RemoveOwner() override;
+
 	public:
 		/* 34h */	cCelestialBodyType mType;
 		/* 38h */	cEllipticalOrbit mOrbit;
@@ -53,10 +63,13 @@ namespace Simulator
 		/// Probably used to detect the mouse.
 		/* C8h */	float mfHitSphereSize;  // 1.0
 	};
+	ASSERT_SIZE(cCelestialBody, 0xCC);
 
-	/////////////////////////////////
-	//// INTERNAL IMPLEMENTATION ////
-	/////////////////////////////////
-
-	static_assert(sizeof(cCelestialBody) == 0xCC, "sizeof(cCelestialBody) != CCh");
+	namespace Addresses(cCelestialBody)
+	{
+		DeclareAddress(Write);  // 0xBD56B0 0xBD6380
+		DeclareAddress(Read);  // 0xBD5720 0xBD63F0
+		DeclareAddress(WriteToXML);  // 0xBD5960 0xBD6630
+		DeclareAddress(RemoveOwner);  // 0xBD5640 0xBD6310
+	}
 }

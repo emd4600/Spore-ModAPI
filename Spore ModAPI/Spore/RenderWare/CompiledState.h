@@ -27,6 +27,9 @@ namespace RenderWare
 {
 	struct CompiledState;
 
+	/// Structure used to configure textures in a CompiledState. 
+	/// The benefit of this structure is that it keeps track of the previous of the state,
+	/// and restores it once the TextureSlot object is destroyed.
 	struct TextureSlot
 	{
 		/* 00h */	CompiledState* compiledState;
@@ -34,9 +37,20 @@ namespace RenderWare
 		/* 08h */	Raster* raster;
 		/* 0Ch */	Raster* originalRaster;
 
+		TextureSlot();
+		~TextureSlot();
+
+		/// Sets one texture of a compiled state, storing the previous texture in this slot so it
+		/// can be restored later. `slotIndex` is the number used to reference the texture inside the shader.
+		/// @param compiledState
+		/// @param slotIndex
+		/// @param raster
 		void SetTexture(CompiledState* compiledState, int slotIndex, Raster* raster);
 	};
 
+	/// This structure contains properties that tells the renderer how to draw a certain object.
+	/// This is often called "materials" in other games, as this decides the shader and some of its parameters,
+	/// the textures that will be used, etc. 
 	struct CompiledState
 	{
 		enum class Flags : uint32_t
@@ -64,6 +78,7 @@ namespace RenderWare
 		/* 14h */	int hardStateDelta;
 		/* 18h */	Graphics::MaterialShader* shader;
 
+		/// Sends the data of this compiled state into the renderer's active material state.
 		void Load();
 
 		Raster* GetRaster(size_t nSlotIndex);

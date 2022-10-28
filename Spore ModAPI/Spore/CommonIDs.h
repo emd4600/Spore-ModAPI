@@ -205,6 +205,8 @@ namespace GroupIDs
 
 		CivicThumbs = 0x65928944,
 
-		AssetBrowserGraphics = 0xCA14DE92
+		AssetBrowserGraphics = 0xCA14DE92,
+
+		terrainSystem_gameAsset = 0x40A02200
 	};
 }

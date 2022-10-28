@@ -32,7 +32,8 @@ namespace Simulator
 
 	//sizeof 0x13208
 	class cPlanetModel
-		: public cStrategy
+		: public App::IMessageListener
+		, public cStrategy
 	{
 	public:
 		//TODO PLACEHOLDER
@@ -61,6 +62,7 @@ namespace Simulator
 		static cPlanetModel* Get();
 
 	public:
+		//TODO
 		/* 1Ch */	int field_1C;  // not initialized
 		// one of these is cTerrainSphere*?
 		/* 20h */	ITerrainPtr mpTerrain;
@@ -69,6 +71,11 @@ namespace Simulator
 		/* 2Ch */	ResourceKey mPlanetKey;
 		/* 38h */	string16 field_38;
 		/* 48h */	bool mbAddedMessageListeners;
+		/* 4Ch */	void* mpPlanetAStarInfo;
+
+		/* 7Ch */	void* mpPlanetObstacles;
+
+		/* A8h */	void* mpPlanetRibbonGfx;
 		//PLACEHODER more things
 	};
 

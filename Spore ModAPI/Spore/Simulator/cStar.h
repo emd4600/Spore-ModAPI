@@ -41,6 +41,12 @@ namespace Simulator
 		/// @returns
 		cSolarSystem* GetSolarSystem();
 
+		StarType GetStarType();
+		bool IsBinaryStar();
+		bool IsStarOrBinaryStar();
+
+		string16& GetName();
+
 	public:
 		/// For binary systems, type of the first star.
 		/* 34h */	StarType mPrimaryType;
@@ -62,5 +68,15 @@ namespace Simulator
 	namespace Addresses(cStar)
 	{
 		DeclareAddress(GetSolarSystem);  // 0xC8AA90  0xC8B900
+		DeclareAddress(IsBinaryStar);  // 0xC8AB00 0xC8B970
+		DeclareAddress(IsStarOrBinaryStar);  // 0xC8AB20 0xC8B990
+	}
+
+	inline StarType cStar::GetStarType() {
+		return mpStarRecord->mType;
+	}
+
+	inline string16& cStar::GetName() {
+		return mpStarRecord->mName;
 	}
 }

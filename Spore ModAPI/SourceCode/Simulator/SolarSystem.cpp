@@ -20,6 +20,7 @@
 #include <Spore\Simulator\cHitSphere.h>
 #include <Spore\Simulator\cStarRecord.h>
 #include <Spore\Simulator\cSolarSystem.h>
+#include <Spore\Simulator\cStar.h>
 
 namespace Simulator
 {
@@ -30,6 +31,8 @@ namespace Simulator
 	}
 
 	auto_METHOD_VOID(cSolarSystem, Load, Args(cStar* pStar), Args(pStar));
+	auto_METHOD_VOID_(cSolarSystem, LoadBinaryStar);
+	auto_METHOD_VOID_(cSolarSystem, LoadAsteroids);
 	auto_METHOD_VOID(cSolarSystem, GenerateGraphics, Args(bool create), Args(create));
 	auto_METHOD_VOID(cSolarSystem, GenerateCelestialBodiesEffects, 
 		Args(bool create, float scale), Args(create, scale));
@@ -37,5 +40,44 @@ namespace Simulator
 	auto_STATIC_METHOD_VOID(cSolarSystem, CreateStarEffect,
 		Args(IEffectPtr& dst, Swarm::IEffectWorld* pEffectWorld, StarType starType),
 		Args(dst, pEffectWorld, starType));
+
+
+	auto_METHOD_(cStar, cSolarSystem*, GetSolarSystem);
+	auto_METHOD_(cStar, bool, IsBinaryStar);
+	auto_METHOD_(cStar, bool, IsStarOrBinaryStar);
+
+
+	auto_METHOD_VIRTUAL(cCelestialBody, ISimulatorSerializable, bool, Write, Args(ISerializerStream* arg), Args(arg));
+	auto_METHOD_VIRTUAL(cCelestialBody, ISimulatorSerializable, bool, Read, Args(ISerializerStream* arg), Args(arg));
+	auto_METHOD_VIRTUAL(cCelestialBody, cGameData, bool, WriteToXML, Args(XmlSerializer* arg), Args(arg));
+	auto_METHOD_VIRTUAL_VOID_(cCelestialBody, cGameData, RemoveOwner);
+
+	void* cCelestialBody::Cast(uint32_t typeID) const
+	{
+		if (typeID == TYPE) return (cCelestialBody*)this;
+		else return cGameData::Cast(typeID);
+	}
+
+	uint32_t cCelestialBody::GetNounID() const
+	{
+		return NOUN_ID;
+	}
+
+	uint32_t cCelestialBody::GetCastID() const
+	{
+		return TYPE;
+	}
+
+	cCelestialBody::cCelestialBody(cCelestialBodyType type)
+		: mType(type)
+		, mOrbit()
+		, mPosition()
+		, mfRotationRate()
+		, mName()
+		, mpEffect()
+		, mpHitSphere()
+		, mfHitSphereSize(1.0f)
+	{
+	}
 }
 #endif

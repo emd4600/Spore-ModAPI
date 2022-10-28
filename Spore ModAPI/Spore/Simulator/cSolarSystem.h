@@ -55,8 +55,15 @@ namespace Simulator
 		/// By default, this generates `mpStar1` (and `mpStar2` if it's a binary system),
 		/// the asteroids, and the planets. This does not any visual effects yet, it only sets up the
 		/// Simulator classes (cCelestialBody and cPlanet).
+		/// Source code: @ref SourceCode-Simulator-cSolarSystem-Load
 		/// @param pStar
 		void Load(cStar* pStar);
+
+		/// Called by Load() only in binary systems, generates the two individual star celestial bodies.
+		void LoadBinaryStar();
+
+		/// Called by Load(), generates the asteroids celestial bodies.
+		void LoadAsteroids();
 
 		/// Loads/unloads the effects and graphics of this solar system. 
 		/// If `create` is true it must generate them, if it is false it must destroy them instead.
@@ -69,6 +76,7 @@ namespace Simulator
 		/// By default, these are the effects used:
 		/// - Comets: `0x3D6F8D8`
 		/// - Stars: check CreateStarEffect()
+		/// Source code: @ref SourceCode-Simulator-cSolarSystem-GenerateCelestialBodiesEffects
 		/// @param create If true, create and load the graphics, if false, destroy them.
 		/// @param scale The scale that will be applied to the effects.
 		void GenerateCelestialBodiesEffects(bool create, float scale);
@@ -105,6 +113,8 @@ namespace Simulator
 	namespace Addresses(cSolarSystem)
 	{
 		DeclareAddress(Load);  // 0xC85AC0  0xC868F0
+		DeclareAddress(LoadBinaryStar);  // 0xC848A0  0xC856D0
+		DeclareAddress(LoadAsteroids);  // 0xC84D90  0xC85BC0
 		DeclareAddress(GenerateGraphics);  // 0xC85FD0 0xC86E00
 		DeclareAddress(CreateStarEffect);  // 0xC82FF0 0xC83E80
 		DeclareAddress(GenerateCelestialBodiesEffects);

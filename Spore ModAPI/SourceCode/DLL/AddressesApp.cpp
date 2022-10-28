@@ -20,7 +20,7 @@
 #include <Spore\App\Thumbnail_cImportExport.h>
 #include <Spore\App\cLocaleManager.h>
 #include <Spore\App\AppData.h>
-#include <Spore\App\ResourceKeyGenerator.h>
+#include <Spore\App\IDGenerator.h>
 
 namespace Addresses(App)
 {
@@ -183,6 +183,12 @@ namespace App
 		DefineAddress(SetRenderType, SelectAddress(0x7C4380, 0x7C3D50, 0x7C3DB0));
 		DefineAddress(GetCameraToMouse, SelectAddress(0x7C4FA0, 0x7C4970, 0x7C49D0));
 		DefineAddress(GetCameraToPoint, SelectAddress(0x7C4DD0, 0x7C47A0, 0x7C4800));
+		DefineAddress(SetViewWindow, SelectAddress(0x7C51A0, , 0x7C4BD0));
+		DefineAddress(SetViewOffset, SelectAddress(0x7C5170, , 0x7C4BA0));
+		DefineAddress(SetViewport, SelectAddress(0x7C5100, , 0x7C4B30));
+		DefineAddress(SetPerspectiveProjection, SelectAddress(0x7C5A50, , 0x7C5480));
+		DefineAddress(SetParallelProjection, SelectAddress(0x7C5AC0, , 0x7C54F0));
+		DefineAddress(Dispose, SelectAddress(0x7C4240, , 0x7C3C70));
 	}
 
 	namespace Addresses(DirectPropertyList)
@@ -370,6 +376,11 @@ namespace App
 	}
 
 	namespace Addresses(cResourceKeyGenerator)
+	{
+		DefineAddress(Get, SelectAddress(0x67DF80, , 0x67DE20));
+	}
+
+	namespace Addresses(cIDGenerator)
 	{
 		DefineAddress(Get, SelectAddress(0x67DF80, , 0x67DE20));
 	}

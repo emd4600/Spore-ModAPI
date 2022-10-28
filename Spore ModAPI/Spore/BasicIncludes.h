@@ -29,6 +29,7 @@
 #include <Spore\Simulator.h>
 #include <Spore\UserInterface.h>
 #include <Spore\IO.h>
+#include <Spore\Terrain.h>
 
 #include <Spore\Editors\Editor.h>
 #include <Spore\Editors\EditorRequest.h>
@@ -39,9 +40,6 @@
 #include <Spore\App\cLocaleManager.h>
 
 #include <Spore\Audio\AudioSystem.h>
-
-#include <Spore\Terrain\ITerrain.h>
-#include <Spore\Terrain\ITerrainResourceManager.h>
 
 #include <Spore\Anim\IAnimManager.h>
 #include <Spore\Anim\AnimatedCreature.h>

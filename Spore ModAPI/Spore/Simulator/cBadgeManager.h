@@ -17,6 +17,12 @@ namespace Simulator
 	public:
 		static const uint32_t TYPE = 0x2CB0EDE;
 
+		/// Changes the progress of a badge, adding `addedValue` to the existing progress of the badge.
+		/// This will send a `0x38CF2FB` message.
+		/// @param badge
+		/// @param addedValue
+		void AddToBadgeProgress(BadgeManagerEvent badge, int addedValue);
+
 	public:
 		/// Maps the file ID to the PropertyList, for each badge in space_badges~ (0x2CB089D)
 		/* 10h */	map<uint32_t, PropertyListPtr> mBadges;
@@ -32,4 +38,9 @@ namespace Simulator
 		/* ACh */	LocalizedString field_AC;
 	};
 	ASSERT_SIZE(cBadgeManager, 0xC0);
+
+	namespace Addresses(cBadgeManager)
+	{
+		DeclareAddress(AddToBadgeProgress);  // 0xFE5BF0 0xFE52C0
+	}
 }

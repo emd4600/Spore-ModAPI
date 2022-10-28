@@ -43,10 +43,10 @@ namespace Graphics
 
 		/* 08h */	int field_08;
 		/* 0Ch */	bool field_0C;
-		/* 10h */	int field_10;
-		/* 14h */	int field_14;
-		/* 18h */	int field_18;
-		/* 1Ch */	int field_1C;
+		/* 10h */	RenderWare::Raster* mpDebugRaster;
+		/* 14h */	RenderWare::Raster* mpLoadingRaster;
+		/* 18h */	TexturePtr mpPlaceHolderNormalMap;
+		/* 1Ch */	TexturePtr mpPlaceholderSpecGlossMap;
 		/* 20h */	Mutex mTexturesMutex;
 		/* 50h */	intrusive_list<TextureContainer> field_50;
 		/* 58h */	hash_map<ResourceKey, TextureContainer*> mTextures;
@@ -55,6 +55,6 @@ namespace Graphics
 		/* C8h */	int field_C8;  // 0x0A
 		/* CCh */	int mnMipLOD;
 		/* D0h */	int field_D0;
-		/* D4h */	//TODO: sub_7AC660
+		/* D4h */	//TODO: sub_7AC660 loadqueue
 	};
 }

@@ -22,17 +22,10 @@
 #include <Spore\Simulator\cStar.h>
 #include <Spore\Simulator\cPlanet.h>
 #include <Spore\Simulator\SubSystem\cRelationshipManager.h>
+#include <Spore\Simulator\SimulatorEnums.h>
 
 namespace Simulator
 {
-	enum SpaceContext
-	{
-		kSpaceContextNone = -1,
-		kSpaceContextPlanet = 0,
-		kSpaceContextSolarSystem = 1,
-		kSpaceContextGalaxy = 2
-	};
-
 	cStar* GetActiveStar();
 	cStarRecord* GetActiveStarRecord();
 

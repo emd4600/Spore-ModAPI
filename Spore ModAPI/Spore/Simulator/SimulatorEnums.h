@@ -121,6 +121,14 @@ namespace Simulator
 		kPlaceableEffect = 0x7B38BA7
 	};
 
+	enum class SpaceContext : int
+	{
+		None = -1,
+		Planet = 0,
+		SolarSystem = 1,
+		Galaxy = 2
+	};
+
 	/// Technology level of a planet.
 	enum class TechLevel : int
 	{
@@ -183,6 +191,19 @@ namespace Simulator
 		Star = 0,
 		/// Uses effect `0x3D6F8D8`
 		Comet = 2
+	};
+
+	/// Used by function cPlanetRecord::GetPerihelion()
+	enum class MoonPerihelionType : int
+	{
+		/// The returned value is the parent perihelion minus the moon perihelion
+		DifferenceWithParent = 0,
+		/// The returned value is the parent perihelion
+		Parent = 1,
+		/// The returned value is the parent perihelion plus the moon perihelion
+		SumWithParent = 2,
+		/// The returned value is the moon perihelion within its orbit, so relative to the parent planet
+		RelativeToParent = 3,
 	};
 
 	/// Used by Simulator::cCommEvent.

@@ -63,7 +63,7 @@ namespace Simulator
 		/// Creates a planet ID combining the given star ID and index of the planet within that solar system 
 		/// (where 0 is the closest to the sun, 1 the second closest, etc).
 		/// @param starID ID of the star system where this planet is.
-		/// @param starIndex Index of planet within the star system, between 0 and 255.
+		/// @param planetIndex Index of planet within the star system, between 0 and 255.
 		inline PlanetID(StarID starID, unsigned int planetIndex)
 		{
 			internalValue = ((planetIndex & 0xFF) << 24) | (starID.internalValue & 0x00FFFFFF);

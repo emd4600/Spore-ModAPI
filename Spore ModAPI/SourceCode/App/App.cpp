@@ -1,7 +1,7 @@
 #ifndef MODAPI_DLL_EXPORT
 #include <Spore\App\Thumbnail_cImportExport.h>
 #include <Spore\App\AppData.h>
-#include <Spore\App\ResourceKeyGenerator.h>
+#include <Spore\App\IDGenerator.h>
 
 namespace App
 {
@@ -24,6 +24,6 @@ namespace App
 		Args(uint32_t arg, Resource::DBPF* package, bool b), Args(arg, package, b));
 
 
-	auto_STATIC_METHOD_(cResourceKeyGenerator, cResourceKeyGenerator*, Get);
+	auto_STATIC_METHOD_(cIDGenerator, cIDGenerator*, Get);
 }
 #endif

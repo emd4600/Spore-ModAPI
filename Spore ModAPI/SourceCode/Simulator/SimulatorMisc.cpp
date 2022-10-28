@@ -1,6 +1,7 @@
 #ifndef MODAPI_DLL_EXPORT
 #include <Spore\Simulator\cHerd.h>
 #include <Spore\Simulator\cSpaceNames.h>
+#include <Spore\Simulator\cBadgeManager.h>
 
 namespace Simulator
 {
@@ -28,5 +29,9 @@ namespace Simulator
 			Args(cSpaceNames*, string16&, SpaceNamesType), Args(this, dst, arg));
 		return dst;
 	}
+
+
+	auto_METHOD_VOID(cBadgeManager, AddToBadgeProgress,
+		Args(BadgeManagerEvent badge, int addedValue), Args(badge, addedValue));
 }
 #endif

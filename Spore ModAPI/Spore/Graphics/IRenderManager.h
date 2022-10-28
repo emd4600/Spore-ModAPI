@@ -57,6 +57,7 @@ namespace Graphics
 		ClearScene = 0,
 
 		// These two are used by cTerrainSphere, but not sure if it's for this
+		//TODO not true? I think 7 is water reflection/refraction, 8 is planet terrain; planet rings just use effects
 		Planets = 7,
 		PlanetRings = 8,
 		// It is used by a class called PlanetRibbonGfx
@@ -83,12 +84,110 @@ namespace Graphics
 		UI = 30
 	};
 
+
+	/* Used in editor 
+	/// Renders the background model world without shadows.
+	kRenderLayerBackground = 0xC,
+	/// Renders the creation and the pedestal (with shadows) 
+	kRenderLayerPedestalCreation = 0xD,
+	// 0x0F  only for paint mode
+	// 0x11  pedestal
+	// 0x14
+	// 0x1A
+	*/
+	/* Used in effect rendering?
+	0x12,
+	0x3,
+	0x20,
+	0x16
+	*/
+	/* Used by UI Layer Manager
+	0x1E,
+	*/
+	/* Used by Simulator BlobShadowManager
+	0xB,
+	*/
+	/* Used by GGE sub_DDC370
+	0x14, 
+	0x1A,
+	0xD
+	*/
+	/* Used by GameViewManager
+	0xC,
+	0xD,
+	0x14,
+	0x1A,
+	0xF,
+	// These two are for the anim world
+	0xE,
+	0x15,
+	*/
+	/* Related with SpaceGfx 
+	5,
+	0xD,
+	4,
+	6,
+	*/
+	/* Used by cTerrainSphere
+	7,  // water reflection & refraction
+	8,  // renders land, water, atmosphere, etc
+	0x21,  // used by TerrainEditor? 
+	0xA,  // modelworld 0x3FBAE24
+	*/
+	/* Used by Simulator::cPlanetModel
+	9,
+	0x19
+	*/
+	/* Used by ShadowManager
+	1 ? added every frame it seems, sub_77FF80
+	*/
+	//TODO either 5 or 0x12 is clouds, called by cTerrainSphere::RenderWaterReflection
+	enum class LayerIndices2
+	{
+		Clear = 1,
+
+		Unk3 = 3,  // used in effect rendering?
+		Unk4 = 4,  // related with SpaceGfx 
+		Unk5 = 5,  // related with SpaceGfx 
+		Unk6 = 6,  // related with SpaceGfx 
+		/// Renders RTTs used by the planet: water reflection & refraction and scatter map
+		TerrainRTT = 7,
+		/// Renders planet land, water, atmosphere, etc. Terrain::cTerrainSphere
+		Terrain = 8,  
+		/// Renders the national boundaries in a planet. Used by `PlanetRibbonGfx` (part of Simulator::cPlanetModel).
+		PlanetNationalBoundaries = 9,
+		UnkA = 0xA,  // cTerrainSphere, modelworld 0x3FBAE24
+		/// Used by Simulator BlobShadowManager
+		BlobShadows = 0xB,
+		UnkC = 0xC,  // used by: editor, renders the background model world without shadows; GameViewManager
+		UnkD = 0xD,  // used by: editor, renders the creation and the pedestal (with shadows); GGE sub_DDC370; GameViewManager; related with SpaceGfx 
+		UnkE = 0xE,  // used by: GameViewManager, anim world
+		UnkF = 0x0F,  // used by: editor, only for paint mode; GameViewManager
+
+		Unk11 = 0x11,  // used by editor, pedestal
+		Unk12 = 0x12,  // used in effect rendering?
+
+		Unk14 = 0x14,  // used by: editor; GGE sub_DDC370; GameViewManager
+		Unk15 = 0x15, // used by: GameViewManager, anim world
+		Unk16 = 0x16,  // used in effect rendering?
+
+		/// Renders the trade route ribbons in a planet. Used by `PlanetRibbonGfx` (part of Simulator::cPlanetModel).
+		PlanetTradeRoutes = 0x19,
+		Unk1A = 0x1A,  // used by: editor; GGE sub_DDC370; GameViewManager
+
+		Unk1E = 0x1E,  // used in UI Layer Manager
+
+		Unk20 = 0x20,  // used in effect rendering?
+		Unk21 = 0x21,  // cTerrainSphere, TerrainEditor?
+	};
+
 	///
 	/// This class manages the rendering process in the game. It can be used to add IRenderable objects to the render queue.
 	/// When added, an index in the queue must be specified; this index is important since defines at which moment the object is
 	/// rendered. The minimum index is defined as Graphics::kRenderQueueMain; lower indices are used to render the user interface
 	/// and might cause problems.
 	///
+	/// //TODO Real name: Renderer
 	class IRenderManager
 	{
 	public:
@@ -163,6 +262,8 @@ namespace Graphics
 		/* 68h */	virtual int GetRenderablesCount() const = 0;
 		/* 6Ch */	virtual IRenderable* GetRenderableAt(int index) = 0;
 		/* 70h */	virtual RenderLayer& GetRenderLayerAt(int index) = 0;
+
+		//TODO 78h AddPreRenderJob
 
 		// 80h update?
 

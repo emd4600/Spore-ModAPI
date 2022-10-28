@@ -31,6 +31,8 @@ namespace Graphics
 
 		/* 5E8h */	Clock field_5E8;
 
+		/* 608h */	RenderStatistics mStatistics;
+
 		// 638h is Gamma?
 	};
 }

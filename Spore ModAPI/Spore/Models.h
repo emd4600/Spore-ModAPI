@@ -28,6 +28,12 @@
 ///
 /// This namespace includes classes related to graphics rendering in the game. Some things included are models, textures and
 /// materials.
+/// 
+/// This namespace is deeply related with the RenderWare namespace; elements in Graphics are high-level representations,
+/// easy to use, whereas RenderWare elements are low-level representations which are not needed to modify in most cases.
+/// - Graphics::Model represents a 3D model made of triangulated meshes. It uses objects like RenderWare::VertexBuffer, RenderWare::IndexBuffer, RenderWare::Animations,...
+/// - Graphics::Texture represents a game texture, which can be 2D or 3D (cube textures). It uses RenderWare::Raster.
+/// - Graphics::Material contains the information of how a model mesh must be painted, that is, which shaders and textures it uses. It uses RenderWare::CompiledState
 
 /// @namespace RenderWare
 ///
@@ -43,3 +49,4 @@
 #include <Spore\Graphics\ITextureManager.h>
 #include <Spore\Graphics\Renderer.h>
 #include <Spore\Graphics\GlobalState.h>
+#include <Spore\Graphics\BufferDraw.h>

@@ -12,7 +12,7 @@ namespace Simulator
 	public:
 		/* 00h */	virtual ~IGameDataView() = 0;
 
-		/* 04h */	virtual void Úpdate(int deltaTime, int deltaGameTime) = 0;
+		/* 04h */	virtual void Update(int deltaTime, int deltaGameTime) = 0;
 
 		/// Creates an game data view instance for the given object.
 		/// This should only be called on the master instance (which is cGameViewManager responsability).

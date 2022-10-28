@@ -31,7 +31,12 @@
 
 #include <EASTL\vector.h>
 
+/// Easy access to Simulator::cSimulatorSpaceGame
 #define SimulatorSpaceGame (*Simulator::cSimulatorSpaceGame::Get())
+
+/// Easy access to Simulator::cBadgeManager
+#define BadgeManager (*SimulatorSpaceGame.mpBadgeManager.get())
+
 #define cSimulatorSpaceGamePtr intrusive_ptr<Simulator::cSimulatorSpaceGame>
 
 namespace Simulator

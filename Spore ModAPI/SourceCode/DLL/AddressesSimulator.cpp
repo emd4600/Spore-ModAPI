@@ -2,8 +2,10 @@
 #include "stdafx.h"
 #include <Spore\Simulator\cAbductToolStrategy.h>
 #include <Spore\Simulator\cArtilleryWeaponStrategy.h>
+#include <Spore\Simulator\cBadgeManager.h>
 #include <Spore\Simulator\cCity.h>
 #include <Spore\Simulator\cCombatant.h>
+#include <Spore\Simulator\cCelestialBody.h>
 #include <Spore\Simulator\cCreatureAbility.h>
 #include <Spore\Simulator\cCreatureAnimal.h>
 #include <Spore\Simulator\cCreatureBase.h>
@@ -646,6 +648,8 @@ namespace Simulator
 	namespace Addresses(cSolarSystem)
 	{
 		DefineAddress(Load, SelectAddress(0xC85AC0, , 0xC868F0));
+		DefineAddress(LoadBinaryStar, SelectAddress(0xC848A0, , 0xC856D0));
+		DefineAddress(LoadAsteroids, SelectAddress(0xC84D90, , 0xC85BC0));
 		DefineAddress(GenerateGraphics, SelectAddress(0xC85FD0, , 0xC86E00));
 		DefineAddress(CreateStarEffect, SelectAddress(0xC82FF0, , 0xC83E80));
 		DefineAddress(GenerateCelestialBodiesEffects, SelectAddress(0xC83920, , 0xC847B0));
@@ -654,6 +658,8 @@ namespace Simulator
 	namespace Addresses(cStar)
 	{
 		DefineAddress(GetSolarSystem, SelectAddress(0xC8AA90, , 0xC8B900));
+		DefineAddress(IsBinaryStar, SelectAddress(0xC8AB00, , 0xC8B970));
+		DefineAddress(IsStarOrBinaryStar, SelectAddress(0xC8AB20, , 0xC8B990));
 	}
 
 	namespace Addresses(cScenarioEditHistory)
@@ -731,6 +737,7 @@ namespace Simulator
 	namespace Addresses(cPlanetRecord)
 	{
 		DefineAddress(Create, SelectAddress(0xBA5920, , 0xBA6300));
+		DefineAddress(GetPerihelion, SelectAddress(0xC70190, , 0xC70FC0));
 	}
 
 	namespace Addresses(cSpaceGfx)
@@ -738,6 +745,19 @@ namespace Simulator
 		DefineAddress(Get, SelectAddress(0xB3D3D0, , 0xB3D570));
 		DefineAddress(InitializeInternal, SelectAddress(0x10367E0, , 0x1035910));
 		DefineAddress(DisposeInternal, SelectAddress(0x1038190, , 0x10372C0));
+	}
+
+	namespace Addresses(cBadgeManager)
+	{
+		DefineAddress(AddToBadgeProgress, SelectAddress(0xFE5BF0, , 0xFE52C0));
+	}
+
+	namespace Addresses(cCelestialBody)
+	{
+		DefineAddress(Write, SelectAddress(0xBD56B0, , 0xBD6380));
+		DefineAddress(Read, SelectAddress(0xBD5720, , 0xBD63F0));
+		DefineAddress(WriteToXML, SelectAddress(0xBD5960, , 0xBD6630));
+		DefineAddress(RemoveOwner, SelectAddress(0xBD5640, , 0xBD6310));
 	}
 }
 #endif

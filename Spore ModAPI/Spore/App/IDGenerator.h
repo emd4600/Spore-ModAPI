@@ -3,16 +3,16 @@
 #include <Spore\ResourceKey.h>
 #include <EASTL\map.h>
 
-#define ResourceKeyGenerator (*App::cResourceKeyGenerator::Get())
+#define IDGenerator (*App::cIDGenerator::Get())
 
 namespace App
 {
-	class cResourceKeyGenerator
+	class cIDGenerator
 	{
 	public:
-		static cResourceKeyGenerator* Get();
+		static cIDGenerator* Get();
 
-		/* 00h */	virtual ~cResourceKeyGenerator();
+		/* 00h */	virtual ~cIDGenerator();
 
 		/// Generates a ResourceKey that uses the given type ID, autogenerating an instance ID
 		/// that does not conflict with any existing file. The group ID is calculated from all the other parameters like this:
@@ -39,9 +39,13 @@ namespace App
 		/* 08h */	eastl::map<int, int> field_8;
 		/* 28h */	eastl::map<int, int> field_24;
 	};
-	ASSERT_SIZE(cResourceKeyGenerator, 0x40);
+	ASSERT_SIZE(cIDGenerator, 0x40);
 
 	namespace Addresses(cResourceKeyGenerator)
+	{
+		DeclareAddress(Get);  // 0x67DF80, 0x67DE20
+	}
+	namespace Addresses(cIDGenerator)
 	{
 		DeclareAddress(Get);  // 0x67DF80, 0x67DE20
 	}

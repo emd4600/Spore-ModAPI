@@ -80,9 +80,9 @@ namespace Editors
 	enum EditorRenderLayers
 	{
 		/// Renders the background model world without shadows.
-		kRenderLayerBackground = 12,
+		kRenderLayerBackground = 0xC,
 		/// Renders the creation and the pedestal (with shadows) 
-		kRenderLayerPedestalCreation = 13
+		kRenderLayerPedestalCreation = 0xD,
 		// 0x0F  only for paint mode
 		// 0x11  pedestal
 		// 0x14

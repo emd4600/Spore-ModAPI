@@ -25,15 +25,14 @@
 
 namespace RenderWare
 {
-	///
-	/// A structure that contains information for a texture.
+	/// Low-level representation of a game texture. Its high-level equivalent is Graphics::Texture.
+	/// Rasters can be loaded into shaders and materials using the TextureSlot structure.
 	/// For more information, check the official Direct3D 9 documentation: 
 	/// - [IDirect3DTexture9 interface](https://msdn.microsoft.com/en-us/library/windows/desktop/bb205909.aspx)
 	/// - [IDirect3DDevice9::CreateTexture method](https://msdn.microsoft.com/en-us/library/windows/desktop/bb174363.aspx)
-	///
 	struct Raster
 	{
-		enum : uint16_t {
+		enum Flags : uint16_t {
 			/*kTypeTexture = 8,
 			kTypeCubeTextureRTT = 9,
 			kTypeTextureRTT = 10,

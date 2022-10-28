@@ -24,6 +24,13 @@
 
 namespace RenderWare
 {
+	enum RWBufferLockFlags
+	{
+		kBufferLockReadOnly = 2,
+		kBufferLockDiscard = 4,
+		kBufferLockNoOverwrite = 8
+	};
+
 	///
 	/// A buffer that contains all the vertices data.
 	/// For more information, check the official Direct3D 9 documentation: 

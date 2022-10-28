@@ -28,13 +28,13 @@ namespace Graphics
 		: public IRenderable
 	{
 	public:
-		typedef eastl::function<void(int, int, App::cViewer**, void*)> Render_t;
+		typedef eastl::function<void(int, int, App::cViewer**, RenderStatistics&)> Render_t;
 
 		LambdaRenderable(Render_t);
 
 		virtual int AddRef() override;
 		virtual int Release() override;
-		virtual void Render(int, int, App::cViewer**, void*) override;
+		virtual void Render(int, int, App::cViewer**, RenderStatistics&) override;
 
 	protected:
 		int mnRefCount;

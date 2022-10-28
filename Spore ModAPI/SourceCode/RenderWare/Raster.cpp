@@ -1,6 +1,7 @@
 #ifndef MODAPI_DLL_EXPORT
 #include <Spore\Graphics\Renderer.h>
 #include <Spore\RenderWare\Raster.h>
+#include <Spore\RenderWare\CompiledState.h> 
 
 namespace RenderWare
 {
@@ -36,5 +37,20 @@ namespace RenderWare
 	auto_STATIC_METHOD(Raster, Raster*, CreateRaster,
 		Args(Raster*& pDst, uint16_t width, uint16_t height, uint8_t levels, int flagsDepth, D3DFORMAT format),
 		Args(pDst, width, height, levels, flagsDepth, format));
+
+
+	TextureSlot::TextureSlot() 
+		: compiledState(nullptr)
+		, slotIndex(0)
+		, raster(nullptr)
+		, originalRaster(nullptr)
+	{}
+
+	TextureSlot::~TextureSlot()
+	{
+		if (compiledState) {
+			compiledState->SetRaster(slotIndex, originalRaster);
+		}
+	}
 }
 #endif

@@ -76,8 +76,8 @@ namespace Terrain
 			/* 1F8h */	float kP1ScaleDensity;
 			/* 1FCh */	float kP2ScaleDensity;
 			/* 200h */	float kP3ScaleDensity;
-			/* 204h */	ResourceObjectPtr field_204;  // 5359C50, 8bit image
-			/* 208h */	ResourceObjectPtr mAtmosphereMap;  // depends on mAtmosphereType, bit image
+			/* 204h */	ResourceObjectPtr mAtmosphereMap;  // depends on mAtmosphereType, 5359C50, 8bit image
+			/* 208h */	ResourceObjectPtr field_208;  // bit image
 			/* 20Ch */	ResourceObjectPtr field_20C;  // 8bit image
 			/* 210h */	ResourceObjectPtr field_210;  // 8bit image
 			/* 214h */	Vector3 kP1Phase;
@@ -113,28 +113,50 @@ namespace Terrain
 		{
 			TerrainTextures();
 
-			/* 00h */	TexturePtr field_00;
-			/* 04h */	TexturePtr field_04;
-			/* 08h */	TexturePtr field_08;
-			/* 0Ch */	TexturePtr pTextureAboveDetail2;
-			/* 10h */	TexturePtr pTextureBelow;
-			/* 14h */	TexturePtr field_14;
-			/* 18h */	TexturePtr field_18;
-			/* 1Ch */	TexturePtr field_1C;
-			/* 20h */	TexturePtr field_20;
-			/* 24h */	TexturePtr field_24;
-			/* 28h */	TexturePtr pTextureBeach;
-			/* 2Ch */	TexturePtr pTextureCliff;
-			/* 30h */	TexturePtr field_30;
-			/* 34h */	TexturePtr field_34;
-			/* 38h */	ResourceObjectPtr field_38;  // 8 bit image?
+			/// From texture `0x9D8D0398.rw4`
+			/* 00h */	TexturePtr mpWaterFoamCutMap;
+			/// From texture `0x11B5EE6F.rw4`
+			/* 04h */	TexturePtr mpWaterPCAComponent0;
+			/// From texture `0x11B5EE6E.rw4`
+			/* 08h */	TexturePtr mpWaterPCAComponent1;
+			/// From texture `0x84613AC8.rw4`
+			/* 0Ch */	TexturePtr mpTextureAboveDetail2;
+			/// From texture `0xC66C3FCD.rw4`
+			/* 10h */	TexturePtr mpTextureBelow;
+			/// From texture `lava_detail.rw4`
+			/* 14h */	TexturePtr mpLavaDetail;
+			/// From texture `lava_ramp.rw4`
+			/* 18h */	TexturePtr mpLavaRamp;
+			/// From texture `0xA5AB24F5.rw4`
+			/* 1Ch */	TexturePtr mpIceDetailNear;
+			/// From texture `0x3CEF83D5.rw4`
+			/* 20h */	TexturePtr mpIceDetailMid;
+			/// From texture `ice_ramp.rw4`
+			/* 24h */	TexturePtr mpIceRamp;
+			/// From texture `0x9D64F524.rw4`
+			/* 28h */	TexturePtr mpTextureBeach;
+			/// From texture `0x3F05C913.rw4`
+			/* 2Ch */	TexturePtr mpTextureCliff;
+			/// From texture `atmosphere_packed_curves.rw4`
+			/* 30h */	TexturePtr mpAtmospherePackedCurves;
+			/// Texture created in code with ID `AboveColorRamp`
+			/* 34h */	TexturePtr mpAboveColorRamp;
+			/// From bitmap `0xC5D262E4.8bitImage`
+			/* 38h */	ResourceObjectPtr field_38;
+			/// From bitmap `0x362AC39E.32bitImage`
 			/* 3Ch */	ResourceObjectPtr field_3C;
+			/// From bitmap `0x2EC45F93.32bitImage`
 			/* 40h */	ResourceObjectPtr field_40;
+			/// From bitmap `0x7C6B9FD9.32bitImage`
 			/* 44h */	ResourceObjectPtr field_44;
+			/// From bitmap `0x88566056.32bitImage`
 			/* 48h */	ResourceObjectPtr field_48;
+			/// From bitmap `0xF30D0A76.32bitImage`
 			/* 4Ch */	ResourceObjectPtr field_4C;
+			/// From bitmap `0xC71EF96A.32bitImage`
 			/* 50h */	ResourceObjectPtr field_50;
-			/* 54h */	ResourceObjectPtr field_54;  // pcaw file?
+			/// `pcawater.pcaw`
+			/* 54h */	ResourceObjectPtr field_54;
 			/* 58h */	ColorRGBA nightLightTint;
 			/* 68h */	ColorRGBA dayLightColor;
 			/* 78h */	ColorRGBA duskLightColor;
@@ -154,7 +176,47 @@ namespace Terrain
 			/* 1D8h */	Vector4 camParms;
 			/* 1E8h */	Vector4 illumParms;
 			/* 1F8h */	Vector4 fogParms;
-			/* 208h */	char padding_208[0xB0];
+			/* 208h */	int field_208;
+			/* 20Ch */	int field_20C;
+			/* 210h */	int field_210;
+			/* 214h */	int field_214;
+			/* 218h */	int field_218;
+			/* 21Ch */	int field_21C;
+			/* 220h */	int field_220;
+			/* 224h */	int field_224;
+			/* 228h */	int field_228;
+			/* 22Ch */	int field_22C;
+			/* 230h */	int field_230;
+			/* 234h */	int field_234;
+			/* 238h */	int field_238;
+			/* 23Ch */	int field_23C;
+			/* 240h */	int field_240;
+			/* 244h */	int field_244;
+			/* 248h */	int field_248;
+			/* 24Ch */	int field_24C;
+			/* 250h */	int field_250;
+			/* 254h */	int field_254;
+			/* 258h */	int field_258;
+			/* 25Ch */	int field_25C;
+			/* 260h */	int field_260;
+			/* 264h */	int field_264;
+			/* 268h */	int field_268;
+			/* 26Ch */	int field_26C;
+			/* 270h */	int field_270;
+			/* 274h */	int field_274;
+			/* 278h */	int field_278;
+			/* 27Ch */	int field_27C;
+			/* 280h */	int field_280;
+			/* 284h */	int field_284;
+			/* 288h */	int field_288;
+			/* 28Ch */	int field_28C;
+			/* 290h */	int field_290;
+			/* 294h */	int field_294;
+			/* 298h */	int field_298;
+			/* 29Ch */	int field_29C;
+			/* 2A0h */	int field_2A0;
+			/* 2A4h */	int field_2A4;
+			/* 2A8h */	Vector4 field_2A8;
 		};
 		ASSERT_SIZE(TerrainTextures, 0x2B8);
 

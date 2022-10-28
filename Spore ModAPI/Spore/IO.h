@@ -22,6 +22,18 @@
 /// @file IO.h
 /// This file includes all the necessary headers in order to work with file input/output.
 
+/// @namespace IO
+///
+/// @brief Classes to work with file input/output, that is, reading and writing data into files.
+///
+/// The main concept of this namespace is that of "streams", which are objects where data can be read form/written into.
+/// It's abstract representation is IO::IStream, which defines all the operations you can do to a stream.
+/// There are several subclasses to it, depending on the type of stream: use IO::FileStream if you want to write a
+/// disk file.
+/// Before you can use a stream, you have to call IO::IStream::Open() with the appropriate parameters (it depends on whether you
+/// want to create a new file, read or write, etc). AFter you are finished writing, call IO::IStream::Close() so the
+/// system releases the stream resources.
+
 #include <Spore\IO\IStream.h>
 #include <Spore\IO\FileStream.h>
 #include <Spore\IO\StreamAdapter.h>

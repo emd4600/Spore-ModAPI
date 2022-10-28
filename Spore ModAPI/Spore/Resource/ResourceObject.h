@@ -52,6 +52,7 @@ namespace Resource
 		/* 04h */	int mnRefCount;
 		/* 08h */	ResourceKey		mNameKey;
 	};
+	ASSERT_SIZE(ResourceObject, 0x14);
 
 
 	class SpecialResourceObject : public ResourceObject

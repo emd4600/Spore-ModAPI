@@ -28,12 +28,19 @@ using namespace Math;
 
 namespace App
 {
+	/// This class represents all the camera and viewport configuration used to render a scene.
+	/// This includes the FOV, projection matrix, view matrix (i.e. camera orientation and position),
+	/// as well as the color and depth buffers where the scene will be rendered into.
+	/// It also has the "renderType" variable, a specific thing to Spore, which is used in shader 
+	/// selection.
 	class cViewer
 	{
 	public:
 		struct Camera;
 
 		bool Initialize(bool isParallelProjection = false);
+
+		void Dispose();
 
 		///
 		/// Clears one or more surfaces such as the render target, the depth buffer or the stencil buffer.
@@ -43,6 +50,8 @@ namespace App
 		/// @returns true If the operation was carried out successfully.
 		bool ClearScene(int8_t flags);
 
+		/// Call before rendering, loads all the viewer data into the renderer system.
+		/// @returns
 		bool LoadTransformations();
 
 		///
@@ -54,15 +63,29 @@ namespace App
 		float GetNearPlane() const;
 		float GetFarPlane() const;
 
-		void SetNearPlane(float fValue);
-		void SetFarPlane(float fValue);
+		void SetNearPlane(float nearPlane);
+		void SetFarPlane(float farPlane);
 
-		void SetAspectRatio(float fValue);
+		void SetAspectRatio(float aspectRatio);
+
+		void SetPerspectiveProjection(float fovDegrees);
+		void SetParallelProjection(float viewWindowX, float viewWindowY);
+		void SetViewport(const IntRectangle& viewport);
+		void SetViewWindow(const Vector2& window);
+		void SetViewOffset(const Vector2& offset);
 
 		void SetCameraMaterialLODs(const Vector4& values);
 		Vector4 GetCameraMaterialLODs() const;
 
 		void SetRenderType(int renderType, bool = 0);
+
+		/// Sets the target raster where the scene will be painted.
+		/// @param raster
+		void SetTargetRaster(RenderWare::Raster* raster);  //TODO
+
+		/// Sets the target raster where the scene depth buffer will be painted.
+		/// @param raster
+		void SetTargetZBuffer(RenderWare::Raster* raster);  //TODO
 
 		/// Sets the camera position and direction.
 		/// @param transform The transform applied to the camera.
@@ -102,8 +125,8 @@ namespace App
 		{
 		public:
 			/* 00h */	Matrix4 transform;  // worldToCameraTranspose
-			/* 40h */	Graphics::RTT* rasters[4];
-			/* 50h */	Graphics::RTT* zbuffer;
+			/* 40h */	RenderWare::Raster* rasters[4];
+			/* 50h */	RenderWare::Raster* zbuffer;
 			/* 54h */	Vector2 viewOffset;
 			/* 5Ch */	Vector2 viewWindow;
 			/* 64h */	Vector2 recipViewWindow;  // scale?
@@ -166,5 +189,11 @@ namespace App
 		DeclareAddress(SetRenderType);
 		DeclareAddress(GetCameraToMouse);
 		DeclareAddress(GetCameraToPoint);
+		DeclareAddress(SetViewWindow);  // 0x7C51A0 0x7C4BD0
+		DeclareAddress(SetViewOffset);  // 0x7C5170 0x7C4BA0
+		DeclareAddress(SetViewport);  // 0x7C5100 0x7C4B30
+		DeclareAddress(SetPerspectiveProjection);  // 0x7C5A50 0x7C5480
+		DeclareAddress(SetParallelProjection);  // 0x7C5AC0 0x7C54F0
+		DeclareAddress(Dispose);  // 0x7C4240 0x7C3C70
 	}
 }

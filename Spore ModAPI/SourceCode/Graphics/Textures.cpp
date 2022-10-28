@@ -22,4 +22,12 @@
 namespace Graphics
 {
 	auto_STATIC_METHOD_(ITextureManager, ITextureManager*, Get);
+
+	RenderWare::Raster* Texture::GetLoadedRaster()
+	{
+		if (!IsLoaded()) {
+			TextureManager.WaitForLoadInternal(this);
+		}
+		return mpRaster;
+	}
 }

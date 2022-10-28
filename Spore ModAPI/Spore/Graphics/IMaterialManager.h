@@ -46,6 +46,9 @@ namespace Graphics
 	class Material
 	{
 	public:
+		inline RenderWare::CompiledState* GetState() { return states[0]; }
+
+	public:
 		/* 00h */	uint8_t statesCount;
 		/* 04h */	RenderWare::CompiledState* states[4];
 	private:
@@ -133,10 +136,10 @@ namespace Graphics
 		///
 		/// Gets the textures used by a certain material. Optionally, a filter function can be specified to get only certain textures.
 		/// @param[in] pMaterial The Material whose textures will be returned.
-		/// @param[out] dst A TextureVector_t where the textures will be output.
+		/// @param[out] dst A vector where the textures will be output.
 		/// @param[in] filterFunction [Optional] A filter function that takes a Texture* as a parameter and returns a bool, whether the texture must be added or not.
 		///
-		/* 3Ch */	virtual void GetTextures(const Material* pMaterial, TextureVector_t& dst, bool(*filterFunction)(Texture*) = nullptr) const = 0;
+		/* 3Ch */	virtual void GetTextures(const Material* pMaterial, vector<TexturePtr>& dst, bool(*filterFunction)(Texture*) = nullptr) const = 0;
 
 		// returns a material ID?
 		/* 40h */	virtual uint32_t AssignRWMaterial(RenderWare::CompiledState*, RenderWare::RenderWareFile*) = 0;

@@ -53,6 +53,9 @@ namespace Simulator
 
 	auto_STATIC_METHOD_VOID(cPlanetRecord, Create, Args(PlanetID planetId, cPlanetRecordPtr& dst), Args(planetId, dst));
 
+	auto_STATIC_METHOD(cPlanetRecord, float, GetPerihelion,
+		Args(cPlanetRecord* pRecord, MoonPerihelionType moonType), Args(pRecord, moonType));
+
 	auto_METHOD(cPlanet, uint32_t, GetRingEffect, Args(bool isFromPlanet), Args(isFromPlanet));
 }
 #endif
