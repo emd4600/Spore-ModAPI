@@ -158,7 +158,7 @@ namespace Simulator
 	/// Planet records are uniquely identified with a PlanetID, which can be retrieved using GetID().
 	/// You can get the record from an ID using cStarManager::GetPlanetRecord().
 	class cPlanetRecord
-		: public Resource::SpecialResourceObject
+		: public Resource::CachedResourceObject
 	{
 	public:
 		static const uint32_t TYPE = 0x3E434E1;

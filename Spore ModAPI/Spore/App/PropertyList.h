@@ -45,7 +45,7 @@ namespace App
 	/// PropertyList inherits from ResourceObject, and therefore, is uniquely identified using a ResourceKey. 
 	/// Use the class PropertyManager to get specific lists.
 	///
-	class PropertyList : public Resource::SpecialResourceObject
+	class PropertyList : public Resource::CachedResourceObject
 	{
 
 	public:

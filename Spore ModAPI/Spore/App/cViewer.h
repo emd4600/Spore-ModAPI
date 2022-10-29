@@ -50,9 +50,14 @@ namespace App
 		/// @returns true If the operation was carried out successfully.
 		bool ClearScene(int8_t flags);
 
-		/// Call before rendering, loads all the viewer data into the renderer system.
+		/// Call before rendering, loads all the viewer data into the renderer system;
+		/// must be paired with a EndUpdate() call
 		/// @returns
-		bool LoadTransformations();
+		bool BeginUpdate();
+
+		/// Call after finished rendering, has to be paired with a BeginUpdate() call
+		/// @returns
+		bool EndUpdate();
 
 		///
 		/// Sets the background color that is shown in the background of the scene.
@@ -195,5 +200,7 @@ namespace App
 		DeclareAddress(SetPerspectiveProjection);  // 0x7C5A50 0x7C5480
 		DeclareAddress(SetParallelProjection);  // 0x7C5AC0 0x7C54F0
 		DeclareAddress(Dispose);  // 0x7C4240 0x7C3C70
+		DeclareAddress(BeginUpdate);
+		DeclareAddress(EndUpdate); // 0x7C42B0 0x7C3CE0
 	}
 }

@@ -118,7 +118,7 @@ namespace Resource
 		/* 64h */	virtual bool func64h(int, int, int) override;
 		/* 68h */	virtual IResourceMap* GetResourceCache(ResourceKey& name) const override;
 		/* 6Ch */	virtual bool func6Ch(int, int) override;
-		/* 70h */	virtual void func70h(IResourceMap*, SpecialResourceObject*) override;
+		/* 70h */	virtual void func70h(IResourceMap*, CachedResourceObject*) override;
 		/* 74h */	virtual size_t GetResourceCaches(list<IResourceMap*>& dst) const override;
 		/* 78h */	virtual bool AddFileName(const char16_t* pFileName) override;
 		/* 7Ch */	virtual void GetFileName(const ResourceKey& resourceKey, string16& dst) const override;

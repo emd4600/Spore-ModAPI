@@ -55,10 +55,17 @@ namespace Resource
 	ASSERT_SIZE(ResourceObject, 0x14);
 
 
-	class SpecialResourceObject : public ResourceObject
+	class cIReleaseCallback
 	{
 	public:
-		SpecialResourceObject();
+		virtual void Delete(ResourceObject* object) = 0;
+	};
+
+
+	class CachedResourceObject : public ResourceObject
+	{
+	public:
+		CachedResourceObject();
 
 		virtual int AddRef();
 		virtual int Release();
@@ -67,16 +74,8 @@ namespace Resource
 
 		static const uint32_t TYPE = 0x355D6F5;
 
-	protected:
-		// I have no idea of what this is
-		class Manager
-		{
-		public:
-			virtual void Delete(ResourceObject* object) = 0;
-		};
-
-	protected:
-		/* 14h */	Manager*		mpManager;
+	public:
+		/* 14h */	cIReleaseCallback* mpFinalReleaseCallback;
 	};
 
 	class AsyncResource
@@ -101,7 +100,7 @@ namespace Resource
 
 	}
 
-	inline SpecialResourceObject::SpecialResourceObject()
+	inline CachedResourceObject::CachedResourceObject()
 		: mpManager(nullptr)
 	{
 

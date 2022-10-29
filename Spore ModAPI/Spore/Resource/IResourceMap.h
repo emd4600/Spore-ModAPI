@@ -41,6 +41,6 @@ namespace Resource
 		/* 1Ch */	virtual bool func1Ch(int, int) = 0;
 		/* 20h */	virtual bool func20h(int) = 0;
 		/* 24h */	virtual size_t func24h(int, int) = 0;
-		/* 28h */	virtual void func28h(SpecialResourceObject*) = 0;
+		/* 28h */	virtual void func28h(CachedResourceObject*) = 0;
 	};
 }

@@ -200,6 +200,7 @@ namespace Graphics
 		/// Ensures the given model is loaded and all its parameters are updated.
 		/// @param pModel
 		///
+		/// //TODO StallUntilLoaded
 		/* 58h */	virtual void UpdateModel(const Model* pModel) = 0;
 
 		///

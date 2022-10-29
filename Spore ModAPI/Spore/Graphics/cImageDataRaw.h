@@ -24,7 +24,7 @@ namespace Graphics
 	ASSERT_SIZE(cImageData, 0x14);
 
 	class cImageDataRaw
-		: public Resource::SpecialResourceObject
+		: public Resource::CachedResourceObject
 		, public cImageData
 	{
 	};

@@ -189,6 +189,8 @@ namespace App
 		DefineAddress(SetPerspectiveProjection, SelectAddress(0x7C5A50, , 0x7C5480));
 		DefineAddress(SetParallelProjection, SelectAddress(0x7C5AC0, , 0x7C54F0));
 		DefineAddress(Dispose, SelectAddress(0x7C4240, , 0x7C3C70));
+		DefineAddress(BeginUpdate, SelectAddress(0x7C5650, , 0x7C5080));
+		DefineAddress(EndUpdate, SelectAddress(0x7C42B0, , 0x7C3CE0));
 	}
 
 	namespace Addresses(DirectPropertyList)

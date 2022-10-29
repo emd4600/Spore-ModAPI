@@ -146,7 +146,8 @@ namespace Graphics
 	{
 		Clear = 1,
 
-		Unk3 = 3,  // used in effect rendering?
+		/// Used by effects renderer
+		EffectsBackground = 3,
 		Unk4 = 4,  // related with SpaceGfx 
 		Unk5 = 5,  // related with SpaceGfx 
 		Unk6 = 6,  // related with SpaceGfx 
@@ -169,7 +170,8 @@ namespace Graphics
 
 		Unk14 = 0x14,  // used by: editor; GGE sub_DDC370; GameViewManager
 		Unk15 = 0x15, // used by: GameViewManager, anim world
-		Unk16 = 0x16,  // used in effect rendering?
+		/// Used by effects renderer, renders foreground screen effects
+		EffectsForeground = 0x16,
 
 		/// Renders the trade route ribbons in a planet. Used by `PlanetRibbonGfx` (part of Simulator::cPlanetModel).
 		PlanetTradeRoutes = 0x19,

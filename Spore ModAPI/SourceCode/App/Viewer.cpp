@@ -26,7 +26,8 @@ namespace App
 	auto_METHOD(cViewer, bool, Initialize, Args(bool arg_0), Args(arg_0));
 
 	auto_METHOD(cViewer, bool, ClearScene, Args(int8_t flags), Args(flags));
-	auto_METHOD_(cViewer, bool, LoadTransformations);
+	auto_METHOD_(cViewer, bool, BeginUpdate);
+	auto_METHOD_(cViewer, bool, EndUpdate);
 
 	auto_METHOD_VOID(cViewer, SetBackgroundColor, Args(const Math::ColorRGBA& color), Args(color));
 

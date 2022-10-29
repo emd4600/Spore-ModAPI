@@ -112,13 +112,13 @@ int ResourceObject::GetReferenceCount()
 
 //// ResourceObject ////
 
-int SpecialResourceObject::AddRef()
+int CachedResourceObject::AddRef()
 {
 	mnRefCount += 2;
 	return mnRefCount / 2;
 }
 
-int SpecialResourceObject::Release()
+int CachedResourceObject::Release()
 {
 	mnRefCount -= 2;
 	if (mnRefCount == 0)
@@ -135,15 +135,15 @@ int SpecialResourceObject::Release()
 	return mnRefCount;
 }
 
-void* SpecialResourceObject::Cast(uint32_t typeID) const
+void* CachedResourceObject::Cast(uint32_t typeID) const
 {
 	if (typeID == Object::TYPE)
 	{
 		return (Object*) this;
 	}
-	else if (typeID == SpecialResourceObject::TYPE)
+	else if (typeID == CachedResourceObject::TYPE)
 	{
-		return (SpecialResourceObject*) this;
+		return (CachedResourceObject*) this;
 	}
 	else if (typeID == ResourceObject::TYPE)
 	{
@@ -155,12 +155,12 @@ void* SpecialResourceObject::Cast(uint32_t typeID) const
 	}
 }
 
-int SpecialResourceObject::GetReferenceCount()
+int CachedResourceObject::GetReferenceCount()
 {
 	return mnRefCount / 2;
 }
 
-static_assert(sizeof(SpecialResourceObject) == 0x18, "sizeof(ResourceObject) must be 18h");
+static_assert(sizeof(CachedResourceObject) == 0x18, "sizeof(ResourceObject) must be 18h");
 
 int MultithreadObject::AddRef()
 {

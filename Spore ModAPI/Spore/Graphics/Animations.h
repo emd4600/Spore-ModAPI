@@ -10,6 +10,7 @@ namespace Graphics
 	using namespace eastl;
 
 	// Theorically inside ModelManager, but it's used by Model so...
+	//TODO cModelInstanceAnimations
 	class Animations
 	{
 	public:

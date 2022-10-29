@@ -74,6 +74,7 @@ namespace Graphics
 		kModelFlagNeedsBake = 0x40000
 	};
 
+	// cMWModel
 	class Model
 	{
 	public:
@@ -121,6 +122,7 @@ namespace Graphics
 		/* 90h */	intrusive_ptr<App::PropertyList> mpPropList;
 	};
 
+	//TODO cMWModelInternal
 	class ModelAsset : public intrusive_list_node, public Model
 	{
 	public:

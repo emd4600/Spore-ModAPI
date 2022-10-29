@@ -14,6 +14,7 @@
 
 namespace Graphics
 {
+	//TODO cModelInstance
 	class ModelMesh
 	{
 	public:

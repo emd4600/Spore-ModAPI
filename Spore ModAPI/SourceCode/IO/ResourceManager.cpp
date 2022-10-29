@@ -53,7 +53,7 @@ namespace Resource
 	auto_METHOD_VIRTUAL(cResourceManager, cResourceManager, bool, func64h, Args(int arg_0, int arg_4, int arg_8), Args(arg_0, arg_4, arg_8));
 	auto_METHOD_VIRTUAL_const(cResourceManager, cResourceManager, IResourceMap*, GetResourceCache, Args(ResourceKey& name), Args(name));
 	auto_METHOD_VIRTUAL(cResourceManager, cResourceManager, bool, func6Ch, Args(int arg_0, int arg_4), Args(arg_0, arg_4));
-	auto_METHOD_VIRTUAL_VOID(cResourceManager, cResourceManager, func70h, Args(IResourceMap* arg_0, SpecialResourceObject* arg_4), Args(arg_0, arg_4));
+	auto_METHOD_VIRTUAL_VOID(cResourceManager, cResourceManager, func70h, Args(IResourceMap* arg_0, CachedResourceObject* arg_4), Args(arg_0, arg_4));
 	auto_METHOD_VIRTUAL_const(cResourceManager, cResourceManager, size_t, GetResourceCaches, Args(list<IResourceMap*>& dst), Args(dst));
 	auto_METHOD_VIRTUAL(cResourceManager, cResourceManager, bool, AddFileName, Args(const char16_t* pFileName), Args(pFileName));
 	auto_METHOD_VIRTUAL_VOID_const(cResourceManager, cResourceManager, GetFileName, Args(const ResourceKey& resourceKey, string16& dst), Args(resourceKey, dst));

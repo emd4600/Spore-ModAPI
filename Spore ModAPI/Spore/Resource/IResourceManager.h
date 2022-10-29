@@ -263,7 +263,7 @@ namespace Resource
 		/* 68h */	virtual IResourceMap* GetResourceCache(ResourceKey& name) const = 0;
 
 		/* 6Ch */	virtual bool func6Ch(int, int) = 0;
-		/* 70h */	virtual void func70h(IResourceMap*, SpecialResourceObject*) = 0;
+		/* 70h */	virtual void func70h(IResourceMap*, CachedResourceObject*) = 0;
 
 		///
 		/// Puts all the resource caches used in this manager into the given list.
