@@ -33,7 +33,7 @@
 #include <Spore\Graphics\Animations.h>
 
 #define ModelPtr intrusive_ptr<Graphics::Model>
-#define ModelAssetPtr intrusive_ptr<Graphics::ModelAsset>
+#define cMWModelInternalPtr intrusive_ptr<Graphics::cMWModelInternal>
 
 using namespace eastl;
 
@@ -119,11 +119,11 @@ namespace Graphics
 		/* 70h */	Math::BoundingBox mDefaultBBox;
 		/* 88h */	float field_88;  // FLOAT_MAX
 		/* 8Ch */	float field_8C;  // FLOAT_MAX  // distance from camera?
-		/* 90h */	intrusive_ptr<App::PropertyList> mpPropList;
+		/* 90h */	PropertyListPtr mpPropList;
 	};
+	ASSERT_SIZE(Model, 0x94);
 
-	//TODO cMWModelInternal
-	class ModelAsset : public intrusive_list_node, public Model
+	class cMWModelInternal : public intrusive_list_node, public Model
 	{
 	public:
 		struct EffectInstance
@@ -133,6 +133,7 @@ namespace Graphics
 			/* 0Ch */	Transform mTransform;
 			/* 44h */	bool mEnabled;  // true
 		};
+		ASSERT_SIZE(EffectInstance, 0x48);
 		// size depends on light count
 		struct ModelLights {
 			/* 00h */	int count;
@@ -169,14 +170,7 @@ namespace Graphics
 		/* 134h */	int field_134;  // PLACEHOLDER sunDirAndCelStrength
 		/* 138h */	int field_138;  // flags   0x10000000 fixed lod?  0x20000000 no effect range
 	};
-
-	/////////////////////////////////
-	//// INTERNAL IMPLEMENTATION ////
-	/////////////////////////////////
-
-	static_assert(sizeof(ModelAsset::EffectInstance) == 0x48, "sizeof(ModelAsset::EffectInstance) != 48h");
-	static_assert(sizeof(ModelAsset) == 0x13C, "sizeof(ModelAsset) != 13Ch");
-	static_assert(sizeof(Model) == 0x94, "sizeof(Model) != 94h");
+	ASSERT_SIZE(cMWModelInternal, 0x13C);
 
 	inline int Model::AddRef()
 	{

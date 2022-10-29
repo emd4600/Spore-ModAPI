@@ -22,7 +22,7 @@
 #include <cstdint>
 
 #include <Spore\Swarm\IEffectWorld.h>
-#include <Spore\Graphics\ModelAsset.h>
+#include <Spore\Graphics\Model.h>
 #include <Spore\Graphics\IRenderable.h>
 #include <Spore\Graphics\ILightingWorld.h>
 #include <Spore\App\PropertyList.h>
@@ -307,7 +307,7 @@ namespace Graphics
 		/* D8h */	virtual int funcD8h() = 0;
 		/* DCh */	virtual int funcDCh() = 0;
 		/* E0h */	virtual int funcE0h() = 0;
-		// Uses ModelAsset mTransform
+		// Uses cMWModelInternal mTransform
 		/* E4h */	virtual void GetHullBoundingBox(const Model* pModel, BoundingBox& dst) const = 0;
 		// returns count
 		/* E8h */	virtual int GetMorphHandles(const Model* pModel, MorphHandleInfo* dst, int count) = 0;
@@ -376,10 +376,10 @@ namespace Graphics
 		/* 17Ch */	virtual void func17Ch() = 0;  // related with collisions
 
 	protected:
-		void LoadModelProperties(const App::PropertyList* pPropList, ModelAsset* pAsset, int nFlags, int arg_C);
+		void LoadModelProperties(const App::PropertyList* pPropList, cMWModelInternal* pAsset, int nFlags, int arg_C);
 
 		// 18h modelmanager
-		// /* 19Ch */	intrusive_list<ModelAsset> ??
+		// /* 19Ch */	intrusive_list<cMWModelInternal> ??
 
 		// 2ECh vector?
 		// 300h vector

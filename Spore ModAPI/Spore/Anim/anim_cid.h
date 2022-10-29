@@ -1,7 +1,7 @@
 #pragma once
 
 #include <Spore\Anim\anim_csd.h>
-#include <Spore\Graphics\ModelAsset.h>
+#include <Spore\Graphics\Model.h>
 #include <EASTL\intrusive_ptr.h>
 #include <EASTL\map.h>
 

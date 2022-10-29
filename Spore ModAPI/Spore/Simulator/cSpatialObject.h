@@ -22,7 +22,7 @@
 #include <Spore\Object.h>
 #include <Spore\MathUtils.h>
 
-#include <Spore\Graphics\ModelAsset.h>
+#include <Spore\Graphics\Model.h>
 #include <Spore\Graphics\IModelWorld.h>
 
 #include <Spore\Simulator\Serialization.h>

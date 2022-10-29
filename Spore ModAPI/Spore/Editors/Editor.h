@@ -37,7 +37,7 @@
 #include <Spore\Editors\EditorLimits.h>
 #include <Spore\Editors\INameableEntity.h>
 
-#include <Spore\Graphics\ModelAsset.h>
+#include <Spore\Graphics\Model.h>
 #include <Spore\Graphics\IRenderable.h>
 #include <Spore\Graphics\ILightingWorld.h>
 #include <Spore\Graphics\IModelWorld.h>

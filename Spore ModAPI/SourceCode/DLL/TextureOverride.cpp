@@ -3,7 +3,7 @@
 #include "TextureOverride.h"
 #include <Spore\Cheats.h>
 #include <Spore\CommonIDs.h>
-#include <Spore\Graphics\ModelAsset.h>
+#include <Spore\Graphics\Model.h>
 #include <Spore\Graphics\ModelMesh.h>
 #include <Spore\Graphics\ITextureManager.h>
 #include <Spore\RenderWare\RenderWareFile.h>
@@ -80,7 +80,7 @@ Graphics::ModelMesh* CopyMesh(Graphics::ModelMesh* mesh) {
 	return copy;
 }
 
-bool ApplyOverride(Graphics::ModelAsset* asset, ModelMeshPtr& mesh, int lod) {
+bool ApplyOverride(Graphics::cMWModelInternal* asset, ModelMeshPtr& mesh, int lod) {
 	auto propList = asset->mpPropList.get();
 	uint32_t propertyID = kOverridePropertyIDs[lod + 1];
 	uint32_t propertyKeysID = kOverrideKeysPropertyIDs[lod + 1];
@@ -183,7 +183,7 @@ bool ApplyOverride(Graphics::ModelAsset* asset, ModelMeshPtr& mesh, int lod) {
 
 bool ApplyOverride(Graphics::Model* pModel) {
 	if (pModel && pModel->mpPropList) {
-		auto asset = static_cast<Graphics::ModelAsset*>(pModel);
+		auto asset = static_cast<Graphics::cMWModelInternal*>(pModel);
 		for (int i = 0; i < 4; ++i) {
 			if (!ApplyOverride(asset, asset->mMeshLods[i], i)) {
 				return false;
@@ -203,7 +203,7 @@ member_detour(SetModel__detour, Unk, int(Graphics::Model**)) {
 		int result = original_function(this, ppModel);
 
 		if (!ApplyOverride(model)) {
-			auto asset = static_cast<Graphics::ModelAsset*>(model);
+			auto asset = static_cast<Graphics::cMWModelInternal*>(model);
 			asset->mMeshLods[0] = nullptr;
 			asset->mMeshLods[1] = nullptr;
 			asset->mMeshLods[2] = nullptr;
@@ -216,14 +216,14 @@ member_detour(SetModel__detour, Unk, int(Graphics::Model**)) {
 	}
 };
 
-member_detour(SetModel2__detour, Unk, void(App::PropertyList*, Graphics::ModelAsset*, int)) {
-	void detoured(App::PropertyList* propList, Graphics::ModelAsset* pAsset, int flags) {
+member_detour(SetModel2__detour, Unk, void(App::PropertyList*, Graphics::cMWModelInternal*, int)) {
+	void detoured(App::PropertyList* propList, Graphics::cMWModelInternal* pAsset, int flags) {
 		Graphics::Model* model = static_cast<Graphics::Model*>(pAsset);
 
 		original_function(this, propList, pAsset, flags);
 
 		if (!ApplyOverride(model)) {
-			auto asset = static_cast<Graphics::ModelAsset*>(model);
+			auto asset = static_cast<Graphics::cMWModelInternal*>(model);
 			asset->mMeshLods[0] = nullptr;
 			asset->mMeshLods[1] = nullptr;
 			asset->mMeshLods[2] = nullptr;

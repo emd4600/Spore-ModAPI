@@ -19,7 +19,7 @@
 #pragma once
 
 #include <Spore\Internal.h>
-#include <Spore\Graphics\ModelAsset.h>
+#include <Spore\Graphics\Model.h>
 #include <Spore\Anim\anim_cid.h>
 #include <Spore\Anim\SPAnimation.h>
 

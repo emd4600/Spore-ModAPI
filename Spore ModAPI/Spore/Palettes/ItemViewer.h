@@ -24,7 +24,7 @@
 #include <Spore\Object.h>
 #include <Spore\UTFWin\IWindow.h>
 #include <Spore\App\IMessageListener.h>
-#include <Spore\Graphics\ModelAsset.h>
+#include <Spore\Graphics\Model.h>
 #include <Spore\UI\cSPUILayeredObject.h>
 #include <Spore\Anim\AnimatedCreature.h>
 
