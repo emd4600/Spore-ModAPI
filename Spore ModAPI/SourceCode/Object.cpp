@@ -127,9 +127,9 @@ int CachedResourceObject::Release()
 		delete this;
 		return 0;
 	}
-	else if (mnRefCount == 3 && mpManager)
+	else if (mnRefCount == 3 && mpFinalReleaseCallback)
 	{
-		mpManager->Delete(this);
+		mpFinalReleaseCallback->Delete(this);
 	}
 
 	return mnRefCount;

@@ -101,7 +101,7 @@ namespace Resource
 	}
 
 	inline CachedResourceObject::CachedResourceObject()
-		: mpManager(nullptr)
+		: mpFinalReleaseCallback(nullptr)
 	{
 
 	}
