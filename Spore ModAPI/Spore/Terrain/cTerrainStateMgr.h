@@ -1,7 +1,7 @@
 #pragma once
 
 #include <Spore\App\PropertyList.h>
-#include <Spore\Swarm\IEffectWorld.h>
+#include <Spore\Swarm\IEffectsWorld.h>
 #include <Spore\Graphics\Texture.h>
 #include <Spore\MathUtils.h>
 #include <EASTL\vector.h>
@@ -237,7 +237,7 @@ namespace Terrain
 		/* 5C8h */	Vector4 field_5C8;
 		/* 5D8h */	Vector4 field_5D8;
 		/* 5E8h */	Vector4 field_5E8;
-		/* 5F8h */	IEffectWorldPtr field_5F8;
+		/* 5F8h */	IEffectsWorldPtr field_5F8;
 		/* 5FCh */	int field_5FC;
 		/* 600h */	float field_600;  // -1
 		/* 604h */	float mWaterLevel;  // 0.5

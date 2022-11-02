@@ -19,7 +19,7 @@
 
 #pragma once
 
-#include <Spore\Swarm\IEffectWorld.h>
+#include <Spore\Swarm\IEffectsWorld.h>
 #include <Spore\Swarm\ISwarmManager.h>
 #include <Spore\Swarm\SwarmManagerStruct.h>
 #include <Spore\Object.h>
@@ -31,10 +31,10 @@ namespace Swarm
 {
 
 	// TODO: Uncompleted
-	class cEffectWorld : public IEffectWorld, public IVirtual
+	class cEffectsWorld : public IEffectsWorld, public IVirtual
 	{
 	public:
-		cEffectWorld(ISwarmManager* pManager, SwarmManagerStruct*);
+		cEffectsWorld(ISwarmManager* pManager, SwarmManagerStruct*);
 
 	protected:
 		/* 08h */	int mnRefCount;
@@ -65,5 +65,5 @@ namespace Swarm
 		/* 14h */	virtual void SetLOD(float value, int) = 0;
 	};
 
-	static_assert(sizeof(cEffectWorld) == 0xA4, "sizeof(cEffectWorld) != A4h");
+	static_assert(sizeof(cEffectsWorld) == 0xA4, "sizeof(cEffectsWorld) != A4h");
 }

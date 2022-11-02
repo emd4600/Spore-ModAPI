@@ -38,7 +38,7 @@ namespace Simulator
 		Args(bool create, float scale), Args(create, scale));
 
 	auto_STATIC_METHOD_VOID(cSolarSystem, CreateStarEffect,
-		Args(IEffectPtr& dst, Swarm::IEffectWorld* pEffectWorld, StarType starType),
+		Args(IEffectPtr& dst, Swarm::IEffectsWorld* pEffectWorld, StarType starType),
 		Args(dst, pEffectWorld, starType));
 
 

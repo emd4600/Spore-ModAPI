@@ -82,8 +82,8 @@ namespace Swarm
 		/* 218h */	int field_218;
 		/* 21Ch */	int field_21C;
 		/* 220h */	int field_220;
-		/* 224h */	hash_map<uint32_t, intrusive_ptr<IEffectWorld>> mWorlds;
-		/* 244h */	intrusive_ptr<IEffectWorld> mpActiveWorld;
+		/* 224h */	hash_map<uint32_t, intrusive_ptr<IEffectsWorld>> mWorlds;
+		/* 244h */	intrusive_ptr<IEffectsWorld> mpActiveWorld;
 		/* 248h */	string field_248;
 
 		// 74h	int mnLive;

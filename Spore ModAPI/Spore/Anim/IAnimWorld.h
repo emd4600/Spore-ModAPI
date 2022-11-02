@@ -2,7 +2,7 @@
 
 #include <Spore\Graphics\IRenderable.h>
 #include <Spore\Graphics\IModelWorld.h>
-#include <Spore\Swarm\IEffectWorld.h>
+#include <Spore\Swarm\IEffectsWorld.h>
 #include <Spore\Anim\AnimatedCreature.h>
 #include <Spore\Object.h>
 
@@ -23,7 +23,7 @@ namespace Anim
 		// second argument is function, sub_B36750 for planets and sub_572BE0 for editor
 		/* 10h */	virtual void func10h(bool, AnimFunction, void* object) = 0;
 		/* 14h */	virtual void func14h(bool) = 0;
-		/* 18h */	virtual void SetEffectWorld(Swarm::IEffectWorld*) = 0;
+		/* 18h */	virtual void SetEffectWorld(Swarm::IEffectsWorld*) = 0;
 		// arg_8 is ignored
 		// arg_4 does something with model when loading creature
 		/* 1Ch */	virtual bool SetModelWorld(Graphics::IModelWorld*, bool = true, int = 1, bool = true, bool = false) = 0;

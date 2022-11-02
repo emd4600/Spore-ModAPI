@@ -20,7 +20,7 @@
 #pragma once
 
 #include <Spore\Swarm\IEffect.h>
-#include <Spore\Swarm\IEffectWorld.h>
+#include <Spore\Swarm\IEffectsWorld.h>
 #include <Spore\Swarm\IEffectMap.h>
 #include <Spore\Swarm\ISurface.h>
 #include <Spore\Object.h>
@@ -35,7 +35,7 @@
 namespace Swarm
 {
 	/// This class is the main manager of the Swarm effects system. It allows to create instances of effects. 
-	/// The manager also can be used to create IEffectWorld, which are the objects that contain the effects. 
+	/// The manager also can be used to create IEffectsWorld, which are the objects that contain the effects. 
 	/// The manager creates instances of effects using the currently active effect world.
 	class IEffectsManager
 	{
@@ -87,36 +87,36 @@ namespace Swarm
 		/* 48h */	virtual void ResetState() = 0;
 
 		///
-		/// Creates a new IEffectWorld mapped to the given ID.
+		/// Creates a new IEffectsWorld mapped to the given ID.
 		/// @param worldID The ID the world will be mapped to.
 		///
-		/* 4Ch */	virtual IEffectWorld* CreateWorld(uint32_t worldID, int=0) = 0;
+		/* 4Ch */	virtual IEffectsWorld* CreateWorld(uint32_t worldID, int=0) = 0;
 		
 		///
-		/// Removes the IEffectWorld mapped to the given ID from this manager. If the ID is not mapped, this method
+		/// Removes the IEffectsWorld mapped to the given ID from this manager. If the ID is not mapped, this method
 		/// does nothing.
 		/// @param worldID The ID the world to remove is mapped to.
 		///
 		/* 50h */	virtual void RemoveWorld(uint32_t worldID) = 0;
 
 		/// 
-		/// Returns the IEffectWorld mapped to the given ID, or nullptr if the ID is not mapped.
+		/// Returns the IEffectsWorld mapped to the given ID, or nullptr if the ID is not mapped.
 		/// An ID of 0 returns the default world.
 		/// @param worldID The ID the world is mapped to.
 		///
-		/* 54h */	virtual IEffectWorld* World(uint32_t worldID) = 0;
+		/* 54h */	virtual IEffectsWorld* World(uint32_t worldID) = 0;
 
 		///
 		/// Sets the given effect world to be the default one; it does not need to be mapped.
 		/// If the world is nullptr, the default world will be set as active.
 		/// @param pWorld The world that will be set as active, or nullptr to set the default world.
 		///
-		/* 58h */	virtual void SetDefaultWorld(IEffectWorld* pWorld) = 0;
+		/* 58h */	virtual void SetDefaultWorld(IEffectsWorld* pWorld) = 0;
 
 		///
 		/// Returns the active effect world.
 		///
-		/* 5Ch */	virtual IEffectWorld* DefaultWorld() = 0;
+		/* 5Ch */	virtual IEffectsWorld* DefaultWorld() = 0;
 
 		/* 60h */	virtual void GetWorldIDs(vector<uint32_t>& dst) = 0;
 

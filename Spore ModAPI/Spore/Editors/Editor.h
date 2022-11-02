@@ -44,7 +44,7 @@
 #include <Spore\Graphics\IShadowManager.h>
 #include <Spore\Graphics\ShaderData.h>
 
-#include <Spore\Swarm\IEffectWorld.h>
+#include <Spore\Swarm\IEffectsWorld.h>
 
 #include <Spore\UI\HintManager.h>
 #include <Spore\UI\EditorNamePanel.h>
@@ -212,7 +212,7 @@ namespace Editors
 		/// The model world that contains the background model.
 		/* 8Ch */	IModelWorldPtr mpBackgroundModelWorld;
 		/* 90h */	int field_90;  // related with havok world?
-		/* 94h */	IEffectWorldPtr mpEffectWorld;
+		/* 94h */	IEffectsWorldPtr mpEffectWorld;
 
 		// use appropiate container!
 		// you can get it with virtual function 40h

@@ -93,7 +93,7 @@ namespace Simulator
 		/// @param dst The effect must be created into this variable.
 		/// @param pEffectWorld Effect world where the effect must be created.
 		/// @param starType The kind of star, except binary stars.
-		static void CreateStarEffect(IEffectPtr& dst, Swarm::IEffectWorld* pEffectWorld, StarType starType);
+		static void CreateStarEffect(IEffectPtr& dst, Swarm::IEffectsWorld* pEffectWorld, StarType starType);
 
 	public:
 		/* 0Ch */	intrusive_ptr<cStar> mpOwnerStar;

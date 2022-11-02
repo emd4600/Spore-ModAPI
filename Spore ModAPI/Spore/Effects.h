@@ -24,7 +24,7 @@
 
 #include <Spore\Swarm\ISwarmManager.h>
 #include <Spore\Swarm\IEffect.h>
-#include <Spore\Swarm\IEffectWorld.h>
+#include <Spore\Swarm\IEffectsWorld.h>
 
 /// @namespace Swarm
 ///

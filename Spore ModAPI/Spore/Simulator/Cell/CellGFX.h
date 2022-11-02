@@ -24,7 +24,7 @@
 #include <Spore\Graphics\IModelWorld.h>
 #include <Spore\Graphics\ILightingWorld.h>
 #include <Spore\Graphics\Texture.h>
-#include <Spore\Swarm\IEffectWorld.h>
+#include <Spore\Swarm\IEffectsWorld.h>
 
 namespace Simulator
 {
@@ -60,7 +60,7 @@ namespace Simulator
 			/* 44h */	int field_44;
 			/* 48h */	int field_48;
 			/* 4Ch */	int field_4C;  // not initialized
-			/* 50h */	IEffectWorldPtr mpPreloadedEffectWorld;
+			/* 50h */	IEffectsWorldPtr mpPreloadedEffectWorld;
 			/* 54h */	IModelWorldPtr mpPreloadedModelWorld;
 			/* 58h */	int mpPreloadedAnimWorld;
 			/* 5Ch */	int field_5C[0x40];
@@ -79,17 +79,17 @@ namespace Simulator
 			/* 161A0h */	ILightingWorldPtr mpLightingWorld;
 			/* 161A4h */	int field_161A4;
 			/* 161A8h */	IModelWorldPtr mpBeachModelWorld;
-			/* 161ACh */	IEffectWorldPtr mpBeachEffectWorld;
+			/* 161ACh */	IEffectsWorldPtr mpBeachEffectWorld;
 			/* 161B0h */	int field_161B0;
-			/* 161B4h */	IEffectWorldPtr mpSkyboxEffectWorld;
+			/* 161B4h */	IEffectsWorldPtr mpSkyboxEffectWorld;
 			/* 161B8h */	int field_161B8;
-			/* 161BCh */	IEffectWorldPtr mpBackgroundEffectWorld;
+			/* 161BCh */	IEffectsWorldPtr mpBackgroundEffectWorld;
 			/* 161C0h */	IModelWorldPtr mpBackgroundModelWorld;
 			/* 161C4h */	int mpBackgroundAnimWorld;
-			/* 161C8h */	IEffectWorldPtr mpEffectWorld;
+			/* 161C8h */	IEffectsWorldPtr mpEffectWorld;
 			/* 161CCh */	IModelWorldPtr mpModelWorld;
 			/* 161D0h */	int mpAnimWorld;
-			/* 161D4h */	IEffectWorldPtr mpForegroundEffectWorld;
+			/* 161D4h */	IEffectsWorldPtr mpForegroundEffectWorld;
 			/* 161D8h */	int field_161D8;
 			/* 161DCh */	int field_161DC;
 			/* 161E0h */	int field_161E0;

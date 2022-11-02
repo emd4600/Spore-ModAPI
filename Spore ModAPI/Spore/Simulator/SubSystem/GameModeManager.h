@@ -22,7 +22,7 @@
 #include <Spore\Object.h>
 #include <Spore\Simulator\cGameData.h>
 #include <Spore\Simulator\SubSystem\cStrategy.h>
-#include <Spore\Swarm\IEffectWorld.h>
+#include <Spore\Swarm\IEffectsWorld.h>
 #include <Spore\App\IMessageListener.h>
 #include <Spore\App\PropertyList.h>
 #include <Spore\CommonIDs.h>
@@ -66,7 +66,7 @@ namespace Simulator
 		/* 28h */	bool field_28;
 		/* 29h */	bool field_29;
 		/* 2Ch */	int field_2C;
-		/* 30h */	intrusive_ptr<Swarm::IEffectWorld> mpTransitionEffectWorld;
+		/* 30h */	intrusive_ptr<Swarm::IEffectsWorld> mpTransitionEffectWorld;
 		/* 34h */	int field_34;
 		/* 38h */	int mpTransitionBlockingWin;  // cTransitionBlockingWin PLACEHOLDER
 		// Access with gameModeID - kGameModeBase

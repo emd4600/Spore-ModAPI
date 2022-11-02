@@ -14,7 +14,7 @@ namespace Anim
 
 		/* 44h */	IModelWorldPtr mpModelWorld;
 
-		/* 4Ch */	IEffectWorldPtr	mpEffectWorld;
+		/* 4Ch */	IEffectsWorldPtr	mpEffectWorld;
 
 
 	};

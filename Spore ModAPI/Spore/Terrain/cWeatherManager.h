@@ -38,7 +38,7 @@ namespace Terrain
 			int operationsCount;
 		};
 
-		/* 0Ch */	IEffectWorldPtr mpEffectWorld;
+		/* 0Ch */	IEffectsWorldPtr mpEffectWorld;
 		/* 10h */	int field_10;
 		/* 14h */	IEffectPtr mpLowAtmoEffect;
 		/* 18h */	IEffectPtr mpMidAtmoEffect;

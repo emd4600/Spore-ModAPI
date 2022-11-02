@@ -2,7 +2,7 @@
 
 #include <Spore\Simulator\SubSystem\cStrategy.h>
 #include <Spore\Simulator\SimulatorEnums.h>
-#include <Spore\Swarm\IEffectWorld.h>
+#include <Spore\Swarm\IEffectsWorld.h>
 #include <Spore\App\PropertyList.h>
 #include <EASTL\map.h>
 
@@ -66,21 +66,21 @@ namespace Simulator
 		/* 8Ch */	ObjectPtr field_8C;
 		/* 90h */	ObjectPtr field_90;
 		/// ID `0x17F40C7`
-		/* 94h */	IEffectWorldPtr field_94;
+		/* 94h */	IEffectsWorldPtr field_94;
 		/// ID `0x17F40C8`, only unsuspended in solar system view
-		/* 98h */	IEffectWorldPtr mpSolarSystemEffectWorld;
+		/* 98h */	IEffectsWorldPtr mpSolarSystemEffectWorld;
 		/// ID `0x26F8FCB`, used for planet atmosphere?
-		/* 9Ch */	IEffectWorldPtr field_9C;
+		/* 9Ch */	IEffectsWorldPtr field_9C;
 		// sub_6EEF90
 		/* A0h */	ObjectPtr field_A0;
 		/// ID `0x284E479`
-		/* A4h */	IEffectWorldPtr field_A4;
+		/* A4h */	IEffectsWorldPtr field_A4;
 		// sub_6EEF90
 		/* A8h */	ObjectPtr field_A8;
 		/// ID `0x17F40C9`, only unsuspended in galaxy view
-		/* ACh */	IEffectWorldPtr mpGalaxyEffectWorld;
+		/* ACh */	IEffectsWorldPtr mpGalaxyEffectWorld;
 		/// ID `0x67247E6`
-		/* B0h */	IEffectWorldPtr field_B0;
+		/* B0h */	IEffectsWorldPtr field_B0;
 		// sub_6EEF90
 		/* B4h */	ObjectPtr field_B4;
 		/* B8h */	ObjectPtr field_B8;

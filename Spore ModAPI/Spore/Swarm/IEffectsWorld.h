@@ -22,7 +22,7 @@
 #include <EASTL\intrusive_ptr.h>
 #include <Spore\Swarm\IEffect.h>
 
-#define IEffectWorldPtr intrusive_ptr<Swarm::IEffectWorld>
+#define IEffectsWorldPtr intrusive_ptr<Swarm::IEffectsWorld>
 
 using namespace eastl;
 
@@ -33,7 +33,7 @@ namespace Swarm
 	/// An effect world is a space in the game which contains effects. The equivalent in models would be Graphics::IModelWorld.
 	/// Effects in a certain world do not interact with effects of other worlds.
 	///
-	class IEffectWorld
+	class IEffectsWorld
 	{
 	public:
 		/* 00h */	virtual int AddRef() = 0;

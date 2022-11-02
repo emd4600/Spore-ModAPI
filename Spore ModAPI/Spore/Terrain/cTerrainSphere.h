@@ -246,7 +246,7 @@ namespace Terrain
 		// int are flags for renderable
 		/* 8B0h */	vector<pair<IModelWorldPtr, int>> mUnderwaterModelWorlds;
 		/* 8C4h */	vector<pair<IAnimWorldPtr, int>> mUnderwaterAnimWorlds;
-		/* 8D8h */	IEffectWorldPtr mpUnderWaterEffectWorld;
+		/* 8D8h */	IEffectsWorldPtr mpUnderWaterEffectWorld;
 		/* 8DCh */	int field_8DC;
 		/* 8E0h */	int field_8E0;
 		/* 8E4h */	App::cViewer* mpTerrainViewer;

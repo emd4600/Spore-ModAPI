@@ -21,7 +21,7 @@
 
 #include <cstdint>
 
-#include <Spore\Swarm\IEffectWorld.h>
+#include <Spore\Swarm\IEffectsWorld.h>
 #include <Spore\Graphics\Model.h>
 #include <Spore\Graphics\cMeshData.h>
 #include <Spore\Graphics\IRenderable.h>
@@ -504,9 +504,9 @@ namespace Graphics
 
 		/* 144h */	virtual ILightingWorld* GetLightingWorld(int indexDrawSet) = 0;
 
-		/* 148h */	virtual int SetEffectsWorld(Swarm::IEffectWorld*) = 0;
+		/* 148h */	virtual int SetEffectsWorld(Swarm::IEffectsWorld*) = 0;
 
-		/* 14Ch */	virtual Swarm::IEffectWorld* GetEffectsWorld() = 0;
+		/* 14Ch */	virtual Swarm::IEffectsWorld* GetEffectsWorld() = 0;
 
 		/* 150h */	virtual void SetWorldBounds(const BoundingBox& bbox, float, float) = 0;
 
@@ -545,7 +545,7 @@ namespace Graphics
 
 		// 2ECh vector?
 		// 300h vector
-		// 5C8h		IEffectWorldPtr
+		// 5C8h		IEffectsWorldPtr
 
 	};
 
