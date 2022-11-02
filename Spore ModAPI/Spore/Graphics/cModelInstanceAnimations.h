@@ -5,13 +5,11 @@
 #include <Spore\RenderWare\KeyframeAnim.h>
 #include <Spore\RenderWare\SkeletonsInK.h>
 
+#define cModelInstanceAnimationsPtr eastl::intrusive_ptr<Graphics::cModelInstanceAnimations>
+
 namespace Graphics
 {
-	using namespace eastl;
-
-	// Theorically inside ModelManager, but it's used by Model so...
-	//TODO cModelInstanceAnimations
-	class Animations
+	class cModelInstanceAnimations
 	{
 	public:
 		enum Flags
@@ -19,7 +17,7 @@ namespace Graphics
 			kFlagMultiblenderEnabled = 0x20
 		};
 
-		virtual ~Animations();
+		virtual ~cModelInstanceAnimations();
 
 		int AddRef();
 		int Release();
@@ -42,30 +40,29 @@ namespace Graphics
 		/* 08h */	int mFlags;
 		/* 0Ch */	int field_C;
 		/* 10h */	int field_10;
-		/* 14h */	vector<int> field_14;
+		/* 14h */	eastl::vector<int> mAnimationGroups;  //TODO cAnimGroupInfo
 		// related with SkinsInK, 08h is SkinsInK*
-		/* 28h */	vector<int> field_28;
+		/* 28h */	eastl::vector<int> field_28;
 		// related with SkeletonsInK
-		/* 3Ch */	vector<InternalRenderWareData> mSkeletonsInK;
-		/* 50h */	vector<InternalRenderWareData> mBlendShapeConfig;
+		/* 3Ch */	eastl::vector<InternalRenderWareData> mSkeletonsInK;  //TODO cAnimInfo
+		/* 50h */	eastl::vector<InternalRenderWareData> mBlendShapeConfig;
 		// related with SkeletonsInK, used to process animations
-		/* 64h */	vector<int> field_64;
+		/* 64h */	eastl::vector<int> field_64;
 		// related with morph handles
-		/* 78h */	vector<pair<uint32_t, RenderWare::KeyframeAnim>> mAnimNames;
+		/* 78h */	eastl::vector<eastl::pair<uint32_t, RenderWare::KeyframeAnim>> mAnimNames;
 		/* 8Ch */	int field_8C;
 		/* 90h */	int field_90;
 		/* 94h */	int field_94;
-		/* 98h */	intrusive_ptr<RenderWare::RenderWareFile> mpRenderWare;
+		/* 98h */	RenderWareFilePtr mpRenderWare;
 		/* 9Ch */	int field_9C;  // not initialized
 	};
+	ASSERT_SIZE(cModelInstanceAnimations, 0xA0);
 
-	static_assert(sizeof(Animations) == 0xA0, "sizeof(Animations) != A0h");
-
-	inline int Animations::AddRef() {
+	inline int cModelInstanceAnimations::AddRef() {
 		++mnRefCount;
 		return mnRefCount;
 	}
-	inline int Animations::Release() {
+	inline int cModelInstanceAnimations::Release() {
 		--mnRefCount;
 		if (mnRefCount == 0) {
 			mnRefCount = 1;

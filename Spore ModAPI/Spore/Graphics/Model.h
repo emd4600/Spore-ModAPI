@@ -30,7 +30,7 @@
 #include <Spore\Swarm\IEffect.h>
 #include <Spore\Graphics\cMaterialInfo.h>
 #include <Spore\Graphics\ModelMesh.h>
-#include <Spore\Graphics\Animations.h>
+#include <Spore\Graphics\cModelInstanceAnimations.h>
 
 #define ModelPtr intrusive_ptr<Graphics::Model>
 #define cMWModelInternalPtr intrusive_ptr<Graphics::cMWModelInternal>
@@ -66,7 +66,7 @@ namespace Graphics
 		kModelFlagOverrideRaycastMode = 0x100,
 
 		kModelFlagHighRes = 0x2000,
-
+		kModelFlagIsLoaded = 0x4000,
 		kModelFlagVisible = 0x8000,
 
 		kModelFlagOverrideBoundingBox = 0x10000,
@@ -149,9 +149,9 @@ namespace Graphics
 		/* 9Ch */	ModelMeshPtr mMeshLods[4];
 		/* ACh */	ModelMeshPtr mMeshHull;
 		/* B0h */	ModelMeshPtr mMeshLodHi;
-		/* B4h */	intrusive_ptr<Animations> mAnimationLods[4];
-		/* C4h */	intrusive_ptr<Animations> mAnimationHull;
-		/* C8h */	intrusive_ptr<Animations> mAnimationLodHi;
+		/* B4h */	cModelInstanceAnimationsPtr mAnimationLods[4];
+		/* C4h */	cModelInstanceAnimationsPtr mAnimationHull;
+		/* C8h */	cModelInstanceAnimationsPtr mAnimationLodHi;
 		/* CCh */	int field_CC;  // -1
 		/* D0h */	short field_D0;  // -1
 		/* D4h */	float* mLodDistances;
@@ -159,7 +159,7 @@ namespace Graphics
 		/* DCh */	EffectInstance* mEffects;
 		/* E0h */	ModelLights* mLights;
 		/* E4h */	Transform mTransform;  // The transformation stored in the prop file
-		/* 11Ch */	float field_11C;  // 1.0f
+		/* 11Ch */	float mTimeScale;  // 1.0f
 		/* 120h */	int field_120;
 		/* 124h */	float mEffectRange;
 		/* 128h */	int8_t mLodIndex;

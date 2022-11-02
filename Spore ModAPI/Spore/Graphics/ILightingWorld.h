@@ -43,37 +43,51 @@ namespace Graphics
 		
 		virtual ~ILightingWorld() {};
 
-		/* 0Ch */	virtual int func0Ch(int, int, int, int) = 0;
-		/* 10h */	virtual int func10h(int, int) = 0;
-		/* 14h */	virtual void func14h(int) = 0;
-		/* 18h */	virtual int GetSunDirAndCelStrength(float boundingRadius, const Vector3& position) = 0;
-		/* 1Ch */	virtual void func1Ch(float, int, int) = 0;
+		/* 0Ch */	virtual int AddLight(const Vector3& position, const ColorRGB& color, float, float) = 0;
+
+		/* 10h */	virtual void UpdateLightPosition(int index, const Vector3&) = 0;
+
+		/* 14h */	virtual void RemoveLight(int index) = 0;
+
+		/* 18h */	virtual void* CreateLightingInfo(float boundingRadius, const Vector3& position) = 0;
+
+		/* 1Ch */	virtual void UpdateLightingInfo(float, const Vector3&, void* pLightingInfo) = 0;
+
 		// related with sunDirAndCelStrength, called when changing lighting world, setting model invisible or destroying model
-		/* 20h */	virtual void func20h(int) = 0;
+		//TODO param is cLightingInfo*
+		/* 20h */	virtual void DestroyLightingInfo(void* pLightingInfo) = 0;
+
 		// Called every time in ModelWorld::Render
-		/* 24h */	virtual void PrepareRender(App::cViewer*) = 0;
-		/* 28h */	virtual void SetWorldTransform(const Transform&) = 0;
-		/* 2Ch */	virtual Transform GetWorldTransform() = 0;
+		/* 24h */	virtual void ApplyGlobalState(App::cViewer* viewer) = 0;
+
+		/// Sets the transform for this lighting world.
+		/// @param transform
+		/* 28h */	virtual void SetTransform(const Transform& transform) = 0;
+
+		/* 2Ch */	virtual Transform GetTransform() = 0;
 
 		///
 		/// Sets this lighting world to use the given configuration. The ID is the instance ID of a .prop
 		/// lighting configuration file located in the 0x40200100 (lighting_properties~) folder.
 		/// @param configID The instance ID of the configuration file.
 		///
-		/* 30h */	virtual void SetConfiguration(uint32_t configID) = 0;
+		/* 30h */	virtual void SetLightingState(uint32_t configID) = 0;
 
 		///
 		/// Returns the instance ID of the configuration file used to define this lighting world.
 		///
-		/* 34h */	virtual uint32_t GetConfigurationID() = 0;
+		/* 34h */	virtual uint32_t GetLightingState() = 0;
 
 		///
-		/// Returns the configuration file (as a PropertyList) used to define this lighting world.
+		/// Returns the configuration file (as a App::PropertyList) used to define this lighting world.
 		///
-		/* 38h */	virtual App::PropertyList* GetPropertyList() = 0;
+		/* 38h */	virtual App::PropertyList* GetLightingStateConfig() = 0;
 
-		/* 3Ch */	virtual void func3Ch(int) = 0;
-		/* 40h */	virtual void func40h(int, int) = 0;
+		// parameter is Swarm::cIDecalManager>
+		/* 3Ch */	virtual void SetLightDecalManager(Object*) = 0;
+
+		// parameter is tLightingWorldType
+		/* 40h */	virtual void SetWorldType(int worldType, const BoundingBox& bbox) = 0;
 
 	private:
 		// 0Ch LightingManager

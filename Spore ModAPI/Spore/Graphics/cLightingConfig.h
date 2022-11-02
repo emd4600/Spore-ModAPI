@@ -21,13 +21,11 @@
 #include <Spore\App\PropertyList.h>
 #include <EASTL\vector.h>
 
-using namespace eastl;
-
 namespace Graphics
 {
 
 	// off_17008A4: baked lighting for shaders
-	class LightingProperties
+	class cLightingConfig
 	{
 	public:
 		enum Flags
@@ -43,7 +41,7 @@ namespace Graphics
 		};
 
 	public:
-		/* 00h */	intrusive_ptr<App::PropertyList> mpPropList;
+		/* 00h */	PropertyListPtr mpPropList;
 		/* 04h */	int mFlags;
 		/* 08h */	DirectionalLight dirLightSun;
 		/* 24h */	DirectionalLight dirLightSky;
@@ -55,8 +53,8 @@ namespace Graphics
 		/* 8Ch */	Vector3 mPointLightPos;
 		/* 98h */	ColorRGB mSkylight;
 		/* A4h */	bool mbCameraSpaceLighting;
-		/* A8h */	vector<int> field_A8;
-		/* BCh */	vector<int> field_BC;
+		/* A8h */	eastl::vector<int> field_A8;
+		/* BCh */	eastl::vector<int> field_BC;
 		/// Global planet lighting multiplier -- 0 = off.
 		/* D0h */	float mPlanetAtmosphere;
 		/* D4h */	float field_D4;  // 1.0
@@ -79,6 +77,5 @@ namespace Graphics
 		/* 13Ch */	float field_13C;  // 40.0
 		/* 140h */	float field_140;
 	};
-
-	static_assert(sizeof(LightingProperties) == 0x144, "sizeof(LightingProperties) != 144h");
+	ASSERT_SIZE(cLightingConfig, 0x144);
 }

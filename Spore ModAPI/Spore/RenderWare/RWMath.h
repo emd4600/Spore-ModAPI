@@ -24,7 +24,7 @@
 namespace RenderWare
 {
 	// D3D9SkinMatrix
-	struct Matrix3x4 {
+	struct cMDBoneTransform {
 		union {
 			struct {
 				float        _11, _12, _13, _14;
@@ -38,7 +38,7 @@ namespace RenderWare
 
 	struct SkinTransform
 	{
-		Matrix3x4 mAbsBindPose;
+		cMDBoneTransform mAbsBindPose;
 		Math::Vector3 mInvPoseTranslation;
 		int field_3C;
 	};

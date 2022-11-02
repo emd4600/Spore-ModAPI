@@ -30,7 +30,7 @@ namespace RenderWare
 	{
 		SkinMatrixBuffer();
 
-		/* 00h */	Matrix3x4* mpData;
+		/* 00h */	cMDBoneTransform* mpData;
 		/* 04h */	size_t mnCount;
 		/* 08h */	int field_08;
 		/* 0Ch */	int field_0C;

@@ -25,6 +25,7 @@
 
 namespace RenderWare
 {
+	// Actually it's named cArenaResource
 	class RenderWareFile : public Resource::ResourceObject
 	{
 	public:
