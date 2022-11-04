@@ -103,7 +103,7 @@ namespace Graphics
 	/// In order for the model world to render, you must add it to the render queue. This step is not necessary
 	/// if the IRenderable::Render() method is called directly from another renderer. For example:
 	/// ~~~~~~~~~~~~~~{.cpp}
-	/// RenderManager.AddRenderable(modelWorld->ToRenderable(), Graphics::kRenderQueueMain);
+	/// Renderer.AddRenderable(modelWorld->ToRenderable(), Graphics::kRenderQueueMain);
 	/// ~~~~~~~~~~~~~~
 	/// You might use greater render queue indices, like Graphics::kRenderQueueMain + 1. An example of this would be 
 	/// having a model world for translucid objects, which need to be rendered last. 

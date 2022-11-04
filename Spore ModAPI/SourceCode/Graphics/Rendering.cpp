@@ -18,16 +18,16 @@
 * along with this program.  If not, see <http://www.gnu.org/licenses/>.
 ****************************************************************************/
 
-#include <Spore\Graphics\IRenderManager.h>
+#include <Spore\Graphics\IRenderer.h>
 #include <Spore\Graphics\LambdaRenderable.h>
 #include <Spore\Graphics\SequenceRenderable.h>
-#include <Spore\Graphics\Renderer.h>
+#include <Spore\Graphics\RenderUtils.h>
 #include <Spore\Graphics\GlobalState.h>
 
 namespace Graphics
 {
 
-	auto_STATIC_METHOD_(IRenderManager, IRenderManager*, Get);
+	auto_STATIC_METHOD_(IRenderer, IRenderer*, Get);
 
 	LambdaRenderable::LambdaRenderable(LambdaRenderable::Render_t function)
 		: mnRefCount(0)
@@ -100,16 +100,16 @@ namespace Graphics
 
 
 
-	auto_STATIC_METHOD_VOID(Renderer, SetShaderData, 
+	auto_STATIC_METHOD_VOID(RenderUtils, SetShaderData,
 		Args(short index, void* value, bool overrideIfEqual), Args(index, value, overrideIfEqual));
 
-	auto_STATIC_METHOD(Renderer, int, GetShaderDataSize, Args(short index), Args(index));
+	auto_STATIC_METHOD(RenderUtils, int, GetShaderDataSize, Args(short index), Args(index));
 
-	auto_STATIC_METHOD(Renderer, void, RegisterShaderData,
+	auto_STATIC_METHOD(RenderUtils, void, RegisterShaderData,
 		Args(short index, ShaderDataInformation::UnfixCB arg_4, ShaderDataInformation::RefixCB arg_8, ShaderDataInformation::FixupCB arg_C, ShaderDataInformation::UploadCB loadFunction),
 		Args(index, arg_4, arg_8, arg_C, loadFunction));
 
-	auto_STATIC_METHOD_VOID(Renderer, SetTexture, Args(int slotIndex, RenderWare::Raster* raster), Args(slotIndex, raster));
+	auto_STATIC_METHOD_VOID(RenderUtils, SetTexture, Args(int slotIndex, RenderWare::Raster* raster), Args(slotIndex, raster));
 
 
 	namespace GlobalState

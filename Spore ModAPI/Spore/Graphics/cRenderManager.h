@@ -1,6 +1,6 @@
 #pragma once
 
-#include <Spore\Graphics\IRenderManager.h>
+#include <Spore\Graphics\IRenderer.h>
 #include <Spore\App\IMessageManager.h>
 #include <Spore\Object.h>
 #include <Spore\Mutex.h>
@@ -13,7 +13,7 @@ namespace Graphics
 	using namespace eastl;
 
 	class cRenderManager
-		: public IRenderManager
+		: public IRenderer
 		, public IVirtual
 	{
 	protected:

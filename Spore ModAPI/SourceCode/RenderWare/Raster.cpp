@@ -1,5 +1,5 @@
 #ifndef MODAPI_DLL_EXPORT
-#include <Spore\Graphics\Renderer.h>
+#include <Spore\Graphics\RenderUtils.h>
 #include <Spore\RenderWare\Raster.h>
 #include <Spore\RenderWare\CompiledState.h> 
 
@@ -27,7 +27,7 @@ namespace RenderWare
 	auto_METHOD_VOID_(Raster, Create);
 
 	HRESULT Raster::CreateTexture(DWORD usage, D3DPOOL pool) {
-		return Graphics::Renderer::GetDevice()->CreateTexture(width, height, levels, usage,
+		return Graphics::RenderUtils::GetDevice()->CreateTexture(width, height, levels, usage,
 			format, pool, &pTexture, NULL);
 	}
 

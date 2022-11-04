@@ -23,7 +23,7 @@
 #include <Spore\RenderWare\VertexDescription.h>
 #include <Spore\RenderWare\Mesh.h>
 #include <Spore\RenderWare\Raster.h>
-#include <Spore\Graphics\Renderer.h>
+#include <Spore\Graphics\RenderUtils.h>
 
 namespace RenderWare
 {
@@ -48,7 +48,7 @@ namespace RenderWare
 	}
 
 	void IndexBuffer::CreateDirectX() {
-		auto device = Graphics::Renderer::GetDevice();
+		auto device = Graphics::RenderUtils::GetDevice();
 		int size = (format == D3DFMT_INDEX16 ? 2 : 4) * indicesCount;
 		device->CreateIndexBuffer(size, D3DUSAGE_DYNAMIC | D3DUSAGE_WRITEONLY, format, D3DPOOL_DEFAULT,
 			&this->pDXBuffer, NULL);
@@ -73,7 +73,7 @@ namespace RenderWare
 	}
 
 	void VertexBuffer::CreateDirectX() {
-		auto device = Graphics::Renderer::GetDevice();
+		auto device = Graphics::RenderUtils::GetDevice();
 		device->CreateVertexBuffer(vertexCount*stride, D3DUSAGE_DYNAMIC | D3DUSAGE_WRITEONLY, NULL, D3DPOOL_DEFAULT, 
 			&this->pDXBuffer, NULL);
 	}

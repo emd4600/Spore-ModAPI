@@ -41,12 +41,12 @@
 
 
 #include <Spore\Graphics\IModelManager.h>
-#include <Spore\Graphics\IRenderManager.h>
+#include <Spore\Graphics\IRenderer.h>
 #include <Spore\Graphics\ILightingManager.h>
 #include <Spore\Graphics\IModelWorld.h>
 #include <Spore\Graphics\Model.h>
 #include <Spore\Graphics\Texture.h>
 #include <Spore\Graphics\ITextureManager.h>
-#include <Spore\Graphics\Renderer.h>
+#include <Spore\Graphics\RenderUtils.h>
 #include <Spore\Graphics\GlobalState.h>
 #include <Spore\Graphics\BufferDraw.h>

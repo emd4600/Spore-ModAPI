@@ -26,14 +26,12 @@
 
 
 /// Access the active render manager.
-#define RenderManager (*Graphics::IRenderManager::Get())
+#define Renderer (*Graphics::IRenderer::Get())
 
-#define IRenderManagerPtr intrusive_ptr<Graphics::IRenderManager>
+#define IRendererPtr eastl::intrusive_ptr<Graphics::IRenderer>
 
 namespace Graphics
 {
-	using namespace eastl;
-
 	struct RenderererParams
 	{
 		/* 00h */	int width;
@@ -190,7 +188,7 @@ namespace Graphics
 	/// and might cause problems.
 	///
 	/// //TODO Real name: Renderer
-	class IRenderManager
+	class IRenderer
 	{
 	public:
 
@@ -207,7 +205,7 @@ namespace Graphics
 
 		virtual int AddRef() = 0;
 		virtual int Release() = 0;
-		virtual ~IRenderManager() = 0;
+		virtual ~IRenderer() = 0;
 
 		//TODO this is totally incomplete!
 		/* 0Ch */	virtual bool Initialize() = 0;
@@ -276,11 +274,11 @@ namespace Graphics
 		///
 		/// Gets the active render manager.
 		///
-		static IRenderManager* Get();
+		static IRenderer* Get();
 	};
 
 	inline void GetMousePosition(int& mouseX, int& mouseY) {
-		auto params = RenderManager.GetParameters();
+		auto params = Renderer.GetParameters();
 		mouseX = params.mouseX;
 		mouseY = params.mouseY;
 	}
@@ -290,6 +288,10 @@ namespace Graphics
 	/////////////////////////////////
 
 	namespace Addresses(IRenderManager)
+	{
+		DeclareAddress(Get);
+	}
+	namespace Addresses(IRenderer)
 	{
 		DeclareAddress(Get);
 	}

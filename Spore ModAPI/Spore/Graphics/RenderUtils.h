@@ -26,12 +26,30 @@ namespace Graphics
 
 		DeclareAddress(SetTexture);
 	}
+	namespace Addresses(RenderUtils) {
+		DeclareAddress(D3D_ptr);
+		DeclareAddress(Device_ptr);
+		DeclareAddress(ShaderData_ptr);
+		DeclareAddress(MaterialShader_ptr);
+		DeclareAddress(ModelToWorld_ptr);
+		DeclareAddress(ModelToWorldTransposed_ptr);
+		DeclareAddress(PresentationParameters_ptr);
+
+		DeclareAddress(SetShaderData);
+		DeclareAddress(GetShaderDataSize);
+		DeclareAddress(RegisterShaderData);
+
+		DeclareAddress(SetPresentationParameters);
+		DeclareAddress(CreateDevice);
+
+		DeclareAddress(SetTexture);
+	}
 
 	/// 
 	/// This namespace contains most internal stuff related with rendering, such as 
 	/// Direct3D Device and shaders, shader data, etc
 	///
-	namespace Renderer
+	namespace RenderUtils
 	{
 		struct DeviceParameters
 		{
@@ -55,50 +73,50 @@ namespace Graphics
 		};
 
 		inline IDirect3D9* GetDirect3D() {
-			return *(IDirect3D9**)(GetAddress(Renderer, D3D_ptr));
+			return *(IDirect3D9**)(GetAddress(RenderUtils, D3D_ptr));
 		}
 
 		/// Returns the Direct3D Device used for all rendering operations in the game.
 		inline IDirect3DDevice9* GetDevice() {
-			return *(IDirect3DDevice9**)(GetAddress(Renderer, Device_ptr));
+			return *(IDirect3DDevice9**)(GetAddress(RenderUtils, Device_ptr));
 		}
 
 		/// Returns a pointer to the array that contains the values of shader data. 
 		/// For example, you can do GetShaderData()[ShaderData::skinWeights];
 		inline void** GetShaderData() {
-			return (void**)(GetAddress(Renderer, ShaderData_ptr));
+			return (void**)(GetAddress(RenderUtils, ShaderData_ptr));
 		}
 
 		/// Returns the current MaterialShader object which is being used to render.
 		/// This can either be a ShaderBuilder or an StandardShader.
 		inline MaterialShader* GetMaterialShader() {
-			return *(MaterialShader**)(GetAddress(Renderer, MaterialShader_ptr));
+			return *(MaterialShader**)(GetAddress(RenderUtils, MaterialShader_ptr));
 		}
 
 		/// Returns the 'modelToWorld' matrix.
 		inline D3DMATRIX* GetModelToWorld() {
-			return *(D3DMATRIX**)(GetAddress(Renderer, ModelToWorld_ptr));
+			return *(D3DMATRIX**)(GetAddress(RenderUtils, ModelToWorld_ptr));
 		}
 
 		/// Sets the 'modelToWorld' matrix.
 		/// @param value
 		inline void SetModelMatrix(D3DMATRIX* value) {
-			*(D3DMATRIX**)(GetAddress(Renderer, ModelToWorld_ptr)) = value;
+			*(D3DMATRIX**)(GetAddress(RenderUtils, ModelToWorld_ptr)) = value;
 		}
 
 		/// Returns the 'modelToWorld' matrix, transposed.
 		inline D3DMATRIX* GetModelToWorldTransposed() {
-			return *(D3DMATRIX**)(GetAddress(Renderer, ModelToWorldTransposed_ptr));
+			return *(D3DMATRIX**)(GetAddress(RenderUtils, ModelToWorldTransposed_ptr));
 		}
 
 		/// Sets the 'modelToWorld' matrix, transposed.
 		/// @param value
 		inline void SetModelToWorldTransposed(D3DMATRIX* value) {
-			*(D3DMATRIX**)(GetAddress(Renderer, ModelToWorldTransposed_ptr)) = value;
+			*(D3DMATRIX**)(GetAddress(RenderUtils, ModelToWorldTransposed_ptr)) = value;
 		}
 
 		inline D3DPRESENT_PARAMETERS& GetPresentationParameters() {
-			return *(D3DPRESENT_PARAMETERS*)(GetAddress(Renderer, PresentationParameters_ptr));
+			return *(D3DPRESENT_PARAMETERS*)(GetAddress(RenderUtils, PresentationParameters_ptr));
 		}
 
 		void SetShaderData(short index, void* value, bool overrideIfEqual = false);

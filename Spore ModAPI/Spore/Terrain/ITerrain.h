@@ -23,7 +23,7 @@
 #include <Spore\Terrain\cWeatherManager.h>
 #include <Spore\Terrain\TerrainShaderData.h>
 #include <Spore\App\PropertyList.h>
-#include <Spore\Graphics\IRenderManager.h>
+#include <Spore\Graphics\IRenderer.h>
 #include <Spore\Anim\IAnimWorld.h>
 #include <Spore\Graphics\IModelWorld.h>
 
@@ -94,9 +94,9 @@ namespace Terrain
 		/* 80h */	virtual void func80h() = 0;  // related with player effects
 		/* 84h */	virtual void func84h() = 0;
 		/* 88h */	virtual void func88h() = 0;
-		/* 8Ch */	virtual bool AddToRender(Graphics::IRenderManager*) = 0;
-		/* 90h */	virtual void RemoveFromRender(Graphics::IRenderManager*) = 0;
-		/* 94h */	virtual bool IsAddedToRender(Graphics::IRenderManager*) = 0;
+		/* 8Ch */	virtual bool AddToRender(Graphics::IRenderer*) = 0;
+		/* 90h */	virtual void RemoveFromRender(Graphics::IRenderer*) = 0;
+		/* 94h */	virtual bool IsAddedToRender(Graphics::IRenderer*) = 0;
 		/* 98h */	virtual void SetVisible(bool visible) = 0;
 		/* 9Ch */	virtual void Update(App::cViewer* pViewer, int deltaTime) = 0;
 		/* A0h */	virtual void funcA0h() = 0;  //PLACEHOLDER adds effect surfaces?

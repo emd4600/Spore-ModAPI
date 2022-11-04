@@ -23,7 +23,7 @@
 #include <Spore\Graphics\StandardShader.h>
 #include <Spore\Graphics\ShaderBuilder.h>
 #include <Spore\Graphics\ITextureManager.h>
-#include <Spore\Graphics\Renderer.h>
+#include <Spore\Graphics\RenderUtils.h>
 #include <Spore\RenderWare\CompiledState.h>
 #include <Spore\Resource\IResourceManager.h>
 
@@ -274,7 +274,7 @@ namespace Graphics
 			if (size) {
 				char* data = new char[size];
 				pStream->Read(data, size);
-				Renderer::GetDevice()->CreateVertexShader((DWORD*)data, &shader.mpDXShader);
+				RenderUtils::GetDevice()->CreateVertexShader((DWORD*)data, &shader.mpDXShader);
 			}
 
 			IO::ReadInt32(pStream, &shader.mDataCount);
@@ -319,7 +319,7 @@ namespace Graphics
 			if (size) {
 				char* data = new char[size];
 				pStream->Read(data, size);
-				Renderer::GetDevice()->CreatePixelShader((DWORD*)data, &shader.mpDXShader);
+				RenderUtils::GetDevice()->CreatePixelShader((DWORD*)data, &shader.mpDXShader);
 			}
 
 			IO::ReadInt32(pStream, &shader.mDataCount);
