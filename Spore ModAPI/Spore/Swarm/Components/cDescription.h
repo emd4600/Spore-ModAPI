@@ -21,49 +21,43 @@
 
 namespace Swarm
 {
-	namespace Components
+	class cDescription
 	{
-		class IEffectComponent
-		{
-		public:
-			IEffectComponent();
-			IEffectComponent(const IEffectComponent& other);
-			virtual ~IEffectComponent() {};
+	public:
+		cDescription();
+		cDescription(const cDescription& other);
+		virtual ~cDescription() {};
 
-			void AddRef();
-			void Release();
+		void AddRef();
+		void Release();
 
 
-		protected:
-			int mnRefCount;
-		};
+	protected:
+		int mnRefCount;
+	};
 
-		typedef IEffectComponent IEffectDescription;
+	inline cDescription::cDescription()
+		: mnRefCount(0)
+	{
 
-		inline IEffectComponent::IEffectComponent()
-			: mnRefCount(0)
-		{
-
-		}
-
-		// We do nothing here; we don't want to copy the ref count!
-		inline IEffectComponent::IEffectComponent(const IEffectComponent& other)
-			: mnRefCount(0)
-		{
-
-		}
-
-		inline void IEffectComponent::AddRef()
-		{
-			mnRefCount++;
-		}
-		inline void IEffectComponent::Release()
-		{
-			if (mnRefCount-- == 0)
-			{
-				delete this;
-			}
-		}
 	}
 
+	// We do nothing here; we don't want to copy the ref count!
+	inline cDescription::cDescription(const cDescription& other)
+		: mnRefCount(0)
+	{
+
+	}
+
+	inline void cDescription::AddRef()
+	{
+		mnRefCount++;
+	}
+	inline void cDescription::Release()
+	{
+		if (mnRefCount-- == 0)
+		{
+			delete this;
+		}
+	}
 }

@@ -27,9 +27,8 @@ namespace Swarm
 {
 	namespace Components
 	{
-		class RandomWalk
+		struct RandomWalk
 		{
-		public:
 			RandomWalk();
 
 			/* 00h */	float time[2];
@@ -40,12 +39,7 @@ namespace Swarm
 			/* 1Ch */	vector<float> offsets;
 			/* 30h */	char loopType;
 		};
-
-		/////////////////////////////////
-		//// INTERNAL IMPLEMENTATION ////
-		/////////////////////////////////
-
-		static_assert(sizeof(RandomWalk) == 0x34, "sizeof(RandomWalk) != 34h");
+		ASSERT_SIZE(RandomWalk, 0x34);
 
 		inline RandomWalk::RandomWalk()
 			:

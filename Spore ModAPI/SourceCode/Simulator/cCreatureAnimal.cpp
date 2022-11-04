@@ -41,39 +41,39 @@ namespace Simulator
 
 	auto_METHOD_(cCreatureBase, cCreatureAnimal*, GetAnimalTarget);
 
-	auto_METHOD(cCreatureBase, Swarm::IEffect*, CreateEffectForPool1Renamed,
+	auto_METHOD(cCreatureBase, Swarm::IVisualEffect*, CreateEffectForPool1Renamed,
 		Args(uint32_t effectId, uint32_t poolId),
 		Args(effectId, poolId));
 
-	auto_METHOD(cCreatureBase, Swarm::IEffect*, CreateEffectForPool1,
+	auto_METHOD(cCreatureBase, Swarm::IVisualEffect*, CreateEffectForPool1,
 		Args(uint32_t effectId),
 		Args(effectId));
 
-	auto_METHOD(cCreatureBase, Swarm::IEffect*, CreateAndStartEffectForPool1Renamed,
+	auto_METHOD(cCreatureBase, Swarm::IVisualEffect*, CreateAndStartEffectForPool1Renamed,
 		Args(uint32_t effectId, uint32_t poolId),
 		Args(effectId, poolId));
 
-	auto_METHOD(cCreatureBase, Swarm::IEffect*, CreateAndStartEffectForPool1,
+	auto_METHOD(cCreatureBase, Swarm::IVisualEffect*, CreateAndStartEffectForPool1,
 		Args(uint32_t effectId),
 		Args(effectId));
 
-	auto_METHOD(cCreatureBase, Swarm::IEffect*, CreateEffectForPool2Renamed,
+	auto_METHOD(cCreatureBase, Swarm::IVisualEffect*, CreateEffectForPool2Renamed,
 		Args(uint32_t effectId, uint32_t poolId),
 		Args(effectId, poolId));
 
-	auto_METHOD(cCreatureBase, Swarm::IEffect*, StartOrStopEffectFromPool1,
+	auto_METHOD(cCreatureBase, Swarm::IVisualEffect*, StartOrStopEffectFromPool1,
 		Args(bool create, uint32_t effectId, uint32_t poolId),
 		Args(create, effectId, poolId));
 
-	auto_METHOD(cCreatureBase, Swarm::IEffect*, StartOrStopEffectFromPool2,
+	auto_METHOD(cCreatureBase, Swarm::IVisualEffect*, StartOrStopEffectFromPool2,
 		Args(bool create, uint32_t effectId, uint32_t poolId),
 		Args(create, effectId, poolId));
 
-	auto_METHOD(cCreatureBase, Swarm::IEffect*, GetEffectFromPools,
+	auto_METHOD(cCreatureBase, Swarm::IVisualEffect*, GetEffectFromPools,
 		Args(uint32_t effectId),
 		Args(effectId));
 
-	auto_METHOD(cCreatureBase, Swarm::IEffect*, StopEffectFromPools,
+	auto_METHOD(cCreatureBase, Swarm::IVisualEffect*, StopEffectFromPools,
 		Args(uint32_t effectId, int hardStop),
 		Args(effectId, hardStop));
 

@@ -20,68 +20,52 @@
 #pragma once
 
 #include <Spore\MathUtils.h>
-#include <Spore\Swarm\Components\IEffectComponent.h>
+#include <Spore\Swarm\cSurfaceInfo.h>
+#include <Spore\Swarm\Components\cDescription.h>
 #include <Spore\Swarm\Components\TextureSlot.h>
 #include <Spore\Swarm\Components\Wiggle.h>
-#include <Spore\Swarm\Components\Surface.h>
 #include <Spore\Swarm\Components\RandomWalk.h>
 #include <Spore\Swarm\Components\Attractor.h>
 #include <Spore\Swarm\Components\PathPoint.h>
 
 #include <EASTL\vector.h>
 
-using namespace eastl;
-using namespace Math;
-
 namespace Swarm
 {
 	namespace Components
 	{
-
-		class ParticleEffect : public IEffectComponent
+		class ParticleEffect
+			: public cDescription
 		{
 		public:
-			ParticleEffect() = delete;
-			//{
-				// VOID_THISCALL(SelectAddress(0xAA3780, 0, 0), this);
-			//}
-
 			/* 08h */	int flags;
 			/* 0Ch */	int unkFlags;
 			/* 10h */	float life[2];
 			/* 18h */	float prerollTime;
 			/* 1Ch */	float emitDelay[2];
 			/* 24h */	float emitRetrigger[2];
-			/* 2Ch */	Vector3 emitDirectionBBMin;
-			/* 38h */	Vector3 emitDirectionBBMax;
+			/* 2Ch */	Math::Vector3 emitDirectionBBMin;
+			/* 38h */	Math::Vector3 emitDirectionBBMax;
 			/* 44h */	float emitSpeed[2];
-			/* 4Ch */	Vector3 emitVolumeBBMin;
-			/* 58h */	Vector3 emitVolumeBBMax;
+			/* 4Ch */	Math::Vector3 emitVolumeBBMin;
+			/* 58h */	Math::Vector3 emitVolumeBBMax;
 			/* 64h */	float torusWidth;
-
 			/* 68h */	vector<float> rate;
 			/* 7Ch */	float rateLoop;
 			/* 80h */	int rateCurveCycles;
 			/* 84h */	float rateSpeedScale;
-
 			/* 88h */	vector<float> size;
 			/* 9Ch */	float sizeVary;
-
 			/* A0h */	vector<float> aspectRatio;
 			/* B4h */	float aspectRatioVary;
-
 			/* B8h */	vector<float> rotation;
 			/* CCh */	float rotationVary;
 			/* D0h */	float rotationOffset;
-
-			/* D4h */	vector<ColorRGB> color;
-			/* E8h */	ColorRGB colorVary;
-
+			/* D4h */	vector<Math::ColorRGB> color;
+			/* E8h */	Math::ColorRGB colorVary;
 			/* F4h */	vector<float> alpha;
 			/* 108h */	float alphaVary;
-
-			int field_10C;
-
+			/* 10Ch */	int field_10C;
 			/* 110h */	TextureSlot texture;
 			/* 130h */	char physicsType;
 			/* 131h */	char overrideSet;
@@ -91,28 +75,22 @@ namespace Swarm
 			/* 136h */	char frameCount;
 			/* 137h */	char frameRandom;
 			/* 138h */	float frameSpeed;
-
-			/* 13Ch */	Vector3 directionalForcesSum;
+			/* 13Ch */	Math::Vector3 directionalForcesSum;
 			/* 148h */	float windStrength;
 			/* 14Ch */	float gravityStrength;
 			/* 150h */	float radialForce;
-			/* 154h */	Vector3 radialForceLocation;
+			/* 154h */	Math::Vector3 radialForceLocation;
 			/* 160h */	float drag;
 			/* 164h */	float velocityStrength;
 			/* 168h */	float screwRate;
-
 			/* 16Ch */	vector<Wiggle> wiggles;
-
-			/* 180h */	unsigned char screenBloomAlphaRate;
-			/* 181h */	unsigned char screenBloomAlphaBase;
-			/* 182h */	unsigned char screenBloomScaleRate;
-			/* 183h */	unsigned char screenBloomScaleBase;
-
-			/* 184h */	vector<ColorRGB> loopBoxColor;
+			/* 180h */	uint8_t screenBloomAlphaRate;
+			/* 181h */	uint8_t screenBloomAlphaBase;
+			/* 182h */	uint8_t screenBloomScaleRate;
+			/* 183h */	uint8_t screenBloomScaleBase;
+			/* 184h */	vector<Math::ColorRGB> loopBoxColor;
 			/* 198h */	vector<float> loopBoxAlpha;
-
-			/* 1ACh */	vector<Surface> surfaces;
-
+			/* 1ACh */	vector<cSurfaceInfo> surfaces;
 			/* 1C0h */	float mapBounce;
 			/* 1C4h */	float mapRepulseHeight;
 			/* 1C8h */	float mapRepulseStrength;
@@ -121,21 +99,15 @@ namespace Swarm
 			/* 1D4h */	float mapRepulseKillHeight;
 			/* 1D8h */	float probabilityDeath;
 			/* 1DCh */	float altitudeRange[2];
-
-			int field_1E4;
-
+			/* 1E4h */	int field_1E4;
 			/* 1E8h */	ResourceID forceMapID;
 			/* 1F0h */	ResourceID emitRateMapID;
 			/* 1F8h */	ResourceID emitColorMap;
-
 			/* 200h */	RandomWalk randomWalk;
-
-			/* 234h */	Vector3 attractorOrigin;
+			/* 234h */	Math::Vector3 attractorOrigin;
 			/* 240h */	Attractor attractor;
-
 			/* 25Ch */	vector<PathPoint> pathPoints;
 		};
-
-		static_assert(sizeof(ParticleEffect) == 0x270, "sizeof(ParticleEffect) != 270h");
+		ASSERT_SIZE(ParticleEffect, 0x270);
 	}
 }

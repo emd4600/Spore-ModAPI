@@ -23,7 +23,7 @@
 
 namespace Swarm
 {
-	class SwarmManagerStruct
+	class cGlobalParams
 	{
 	protected:
 		/* 00h */	float field_0;  // 1.0f
@@ -71,6 +71,5 @@ namespace Swarm
 		/* 11Bh */	bool field_11B;  // true
 		/* 11Ch */	bool field_11C;  // true
 	};
-
-	static_assert(sizeof(SwarmManagerStruct) == 0x120, "sizeof(SwarmManagerStruct) != 120h");
+	ASSERT_SIZE(cGlobalParams, 0x120);
 }

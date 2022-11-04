@@ -22,7 +22,7 @@
 #include <Spore\Simulator\SimulatorEnums.h>
 #include <Spore\Simulator\cEllipticalOrbit.h>
 #include <Spore\Simulator\cSolarHitSphere.h>
-#include <Spore\Swarm\IEffect.h>
+#include <Spore\Swarm\IVisualEffect.h>
 #include <Spore\MathUtils.h>
 #include <EASTL\string.h>
 
@@ -58,7 +58,7 @@ namespace Simulator
 		/// Name of the celestial body, shown in a tooltip when hovering it with the mouse.
 		/* B0h */	string16 mName;
 		/// Effect `0x3D6F8D8` for type Comet
-		/* C0h */	IEffectPtr mpEffect;
+		/* C0h */	IVisualEffectPtr mpEffect;
 		/* C4h */	cSolarHitSpherePtr mpHitSphere;
 		/// Probably used to detect the mouse.
 		/* C8h */	float mfHitSphereSize;  // 1.0

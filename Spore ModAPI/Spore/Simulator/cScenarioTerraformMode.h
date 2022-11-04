@@ -55,7 +55,7 @@ namespace Simulator
 		/// Determines base atmosphere color
 		/* F0h */	int mAtmosphereType;  // not initialized
 		/* F4h */	ResourceKey mVisualStyleId;
-		/* 100h */	IEffectPtr mpVisualStyleEffect;
+		/* 100h */	IVisualEffectPtr mpVisualStyleEffect;
 		/// Related with colors
 		/* 104h */	bool mTerrainOverrideMode;  // true
 		/* 108h */	vector<ColorRGB> mTerrainColors;

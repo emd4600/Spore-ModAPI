@@ -225,8 +225,8 @@ namespace Terrain
 		/* 7B0h */	vector<ResourceKey> mModelKeys;
 		/* 7C4h */	vector<Transform> mModelTransforms;
 		/* 7D8h */	vector<ModelPtr> mModels;
-		/* 7ECh */	vector<IEffectPtr> mAmbientEffects;
-		/* 800h */	vector<IEffectPtr> mAmbientSoundEffects;
+		/* 7ECh */	vector<IVisualEffectPtr> mAmbientEffects;
+		/* 800h */	vector<IVisualEffectPtr> mAmbientSoundEffects;
 		/* 814h */	int mPlayerModCount;
 		/* 818h */	int field_818;
 		/* 81Ch */	int field_81C;

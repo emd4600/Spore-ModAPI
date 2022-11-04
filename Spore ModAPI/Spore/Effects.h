@@ -22,8 +22,8 @@
 /// @file Effects.h
 /// This file includes all the necessary headers to use the Swarm effect system in Spore.
 
-#include <Spore\Swarm\ISwarmManager.h>
-#include <Spore\Swarm\IEffect.h>
+#include <Spore\Swarm\IEffectsManager.h>
+#include <Spore\Swarm\IVisualEffect.h>
 #include <Spore\Swarm\IEffectsWorld.h>
 
 /// @namespace Swarm

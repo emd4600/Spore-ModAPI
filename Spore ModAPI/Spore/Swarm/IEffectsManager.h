@@ -19,10 +19,11 @@
 
 #pragma once
 
-#include <Spore\Swarm\IEffect.h>
+#include <Spore\Swarm\IVisualEffect.h>
 #include <Spore\Swarm\IEffectsWorld.h>
 #include <Spore\Swarm\IEffectMap.h>
 #include <Spore\Swarm\ISurface.h>
+#include <Spore\Swarm\cGlobalParams.h>
 #include <Spore\Object.h>
 #include <Spore\Internal.h>
 #include <EASTL\vector.h>
@@ -30,7 +31,7 @@
 /// Access the active effects manager.
 #define EffectsManager (*Swarm::IEffectsManager::Get())
 
-#define IEffectsManagerPtr intrusive_ptr<Swarm::ISwarmManager>
+#define IEffectsManagerPtr eastl::intrusive_ptr<Swarm::IEffectsManager>
 
 namespace Swarm
 {
@@ -71,7 +72,7 @@ namespace Swarm
 		/// @param[out] dst An uninitialized intrusive_ptr<IEffect> where the effect will be put.
 		/// @returns True if the effect was found and returned, false otherwise.
 		///
-		/* 2Ch */	virtual bool CreateVisualEffect(uint32_t instanceID, uint32_t groupID, IEffectPtr& dst) = 0;
+		/* 2Ch */	virtual bool CreateVisualEffect(uint32_t instanceID, uint32_t groupID, IVisualEffectPtr& dst) = 0;
 
 		/* 30h */	virtual void SetState(SwarmState state) = 0;
 		/* 34h */	virtual SwarmState State() = 0;
@@ -86,36 +87,29 @@ namespace Swarm
 
 		/* 48h */	virtual void ResetState() = 0;
 
-		///
 		/// Creates a new IEffectsWorld mapped to the given ID.
 		/// @param worldID The ID the world will be mapped to.
-		///
+		/// @returns
 		/* 4Ch */	virtual IEffectsWorld* CreateWorld(uint32_t worldID, int=0) = 0;
 		
-		///
 		/// Removes the IEffectsWorld mapped to the given ID from this manager. If the ID is not mapped, this method
 		/// does nothing.
 		/// @param worldID The ID the world to remove is mapped to.
-		///
 		/* 50h */	virtual void RemoveWorld(uint32_t worldID) = 0;
 
-		/// 
 		/// Returns the IEffectsWorld mapped to the given ID, or nullptr if the ID is not mapped.
 		/// An ID of 0 returns the default world.
 		/// @param worldID The ID the world is mapped to.
-		///
+		/// @returns
 		/* 54h */	virtual IEffectsWorld* World(uint32_t worldID) = 0;
 
-		///
 		/// Sets the given effect world to be the default one; it does not need to be mapped.
 		/// If the world is nullptr, the default world will be set as active.
 		/// @param pWorld The world that will be set as active, or nullptr to set the default world.
-		///
 		/* 58h */	virtual void SetDefaultWorld(IEffectsWorld* pWorld) = 0;
 
-		///
 		/// Returns the active effect world.
-		///
+		/// @returns
 		/* 5Ch */	virtual IEffectsWorld* DefaultWorld() = 0;
 
 		/* 60h */	virtual void GetWorldIDs(vector<uint32_t>& dst) = 0;
@@ -126,17 +120,13 @@ namespace Swarm
 		/* 70h */	virtual int GetComponentDescription(int, int, int) = 0;
 		/* 74h */	virtual int GetAuxiliaryDescription(int, int, int) = 0;
 
-		///
 		/// Maps the given ISurface to the specified ID. 
 		/// @param surfaceID The ID of the surface.
 		/// @param pSurface
-		///
 		/* 78h */	virtual void RegisterSurface(class ResourceID surfaceID, ISurface* pSurface) = 0;
 
-		///
 		/// Gets the ISurface mapped to the specified ID, or nullptr if none is mapped to that ID.
 		/// @param surfaceID The ID of the surface.
-		///
 		/* 7Ch */	virtual ISurface* Surface(class ResourceID surfaceID) = 0;
 
 		/* 80h */	virtual void RegisterSurfaceName(const char* pName, class ResourceID surfaceID, void* callback) = 0;
@@ -148,17 +138,14 @@ namespace Swarm
 		/* 90h */	virtual void RegisterMapName(const char* pName, class ResourceID mapID) = 0;
 		/* 94h */	virtual ResourceID MapID(int) = 0;
 
-		///
 		/// Set the given application flag.
 		/// @param flag The flag to set.
 		/// @param bValue The new value of the flag.
-		///
 		/* 98h */	virtual void SetAppFlag(int flag, bool bValue) = 0;
 		/* 9Ch */	virtual bool AppFlag(int flag) = 0;
 
-		//TODO returns cGlobalParams
-		/* A0h */	virtual void* GlobalParams() = 0;
-		/* A4h */	virtual void* GlobalParams2() = 0;
+		/* A0h */	virtual cGlobalParams& GlobalParams() = 0;
+		/* A4h */	virtual cGlobalParams& GlobalParams2() = 0;
 
 		/* A8h */	virtual void UpdateProperties(void*) = 0;
 
@@ -168,9 +155,8 @@ namespace Swarm
 
 		/* B4h */	virtual void GetActiveEffectInfo(int, int, int infoLevel) = 0;
 
-		//TODO parameter is cEffectInfo
-		/* B8h */	virtual bool GetEffectInfo(void* pDst, const char* pName) = 0;
-		/* BCh */	virtual bool GetEffectInfo2(vector<int>& dst, const char* pName) = 0;
+		/* B8h */	virtual bool GetEffectInfo(cEffectInfo& dst, const char* pName) = 0;
+		/* BCh */	virtual bool GetEffectInfo2(vector<cEffectInfo>& dst, const char* pName) = 0;
 		/* C0h */	virtual bool OpenEffectFile(const char* pName) = 0;
 		/* C4h */	virtual bool GetEffectDebugName(uint32_t instanceID, uint32_t groupID, int) = 0;
 

@@ -25,27 +25,13 @@ namespace Swarm
 {
 	namespace Components
 	{
-		class PathPoint
+		struct PathPoint
 		{
-		public:
-			PathPoint();
-
 			/* 00h */	Math::Vector3 position;
 			/* 0Ch */	Math::Vector3 velocity;
 			/* 18h */	float time;
 		};
-
-		/////////////////////////////////
-		//// INTERNAL IMPLEMENTATION ////
-		/////////////////////////////////
-
-		static_assert(sizeof(PathPoint) == 0x1C, "sizeof(PathPoint) != 1Ch");
-
-		inline PathPoint::PathPoint()
-			:
-			position(), velocity(), time(0)
-		{
-		}
+		ASSERT_SIZE(PathPoint, 0x1C);
 	}
 
 }

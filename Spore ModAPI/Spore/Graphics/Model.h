@@ -27,7 +27,7 @@
 #include <Spore\ResourceID.h>
 #include <Spore\MathUtils.h>
 #include <Spore\Transform.h>
-#include <Spore\Swarm\IEffect.h>
+#include <Spore\Swarm\IVisualEffect.h>
 #include <Spore\Graphics\cMaterialInfo.h>
 #include <Spore\Graphics\ModelMesh.h>
 #include <Spore\Graphics\cModelInstanceAnimations.h>
@@ -129,7 +129,7 @@ namespace Graphics
 		struct EffectInstance
 		{
 			/* 00h */	ResourceID mResourceID;
-			/* 08h */	IEffectPtr mpEffect;
+			/* 08h */	IVisualEffectPtr mpEffect;
 			/* 0Ch */	Transform mTransform;
 			/* 44h */	bool mEnabled;  // true
 		};

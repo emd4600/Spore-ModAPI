@@ -5,44 +5,59 @@
 #include <Spore\Internal.h>
 
 /// Access the active shadow manager.
-#define ShadowManager (*Graphics::IShadowManager::Get())
+#define ShadowWorld (*Graphics::IShadowWorld::Get())
 
-#define IShadowManagerPtr intrusive_ptr<Graphics::IShadowManager>
+#define IShadowWorldPtr eastl::intrusive_ptr<Graphics::IShadowWorld>
 
 namespace Graphics
 {
-	class IShadowManager
+	class IShadowWorld
 	{
 	public:
 		/* 00h */	virtual int AddRef() = 0;
 		/* 04h */	virtual int Release() = 0;
-		/* 08h */	virtual ~IShadowManager() = 0;
+		/* 08h */	virtual ~IShadowWorld() = 0;
+
 		/* 0Ch */	virtual void Update() = 0;
+
 		/* 10h */	virtual void SetLightingWorld(ILightingWorld* world) = 0;
-		/* 14h */	virtual void func14h(int) = 0;
+
+		/* 14h */	virtual void SetShadowMapLayer(int) = 0;
+
 		// 11D00 extra flags are added
 		/* 18h */	virtual void AddModelWorld(IModelWorld* world, int flags = 0) = 0;
-		/* 1Ch */	virtual void func1Ch(int, int flags = 0) = 0;
-		/* 20h */	virtual void AddRenderable(IRenderable* renderable, int flags = 0) = 0;
+
+		/* 1Ch */	virtual void AddEffects(void* pEffectsRenderer, int flags = 0) = 0;
+
+		/* 20h */	virtual void AddLayer(IRenderable* renderable, int flags = 0) = 0;
+
 		// removes lighting world and renderables
-		/* 24h */	virtual void ClearData() = 0;
-		/* 28h */	virtual void func28h(bool) = 0;  // set use shadow curve?
-		/* 2Ch */	virtual bool func2Ch() = 0;  // returns field_0C
-		/* 30h */	virtual void SetSunDirection(const Vector3& direction) = 0;
-		/* 34h */	virtual Vector3 GetSunDirection() = 0;
-		/* 38h */	virtual void func38h(const Vector3&, const Vector3&) = 0;
-		/* 3Ch */	virtual Vector3 func3Ch() = 0;
-		/* 40h */	virtual void func40h() = 0;
-		/* 44h */	virtual void func44h() = 0;
-		/* 48h */	virtual void func48h(uint32_t) = 0;
-		/* 4Ch */	virtual uint32_t func4Ch() = 0;
+		/* 24h */	virtual void Reset() = 0;
+
+		/* 28h */	virtual void SetActive(bool active) = 0;  // set use shadow curve?
+
+		/* 2Ch */	virtual bool IsActive() = 0;
+
+		/* 30h */	virtual void SetDirection(const Vector3& direction) = 0;
+		/* 34h */	virtual Vector3 GetDirection() = 0;
+
+		/* 38h */	virtual void SetCentreOfInterest(const Vector3&, const Vector3&) = 0;
+
+		/* 3Ch */	virtual void SetEffectiveViewer(const Vector3&) = 0;
+
+		/* 40h */	virtual void PushState() = 0;
+		/* 44h */	virtual void PopState() = 0;
+
+		/* 48h */	virtual void SetActiveID(uint32_t) = 0;
+		/* 4Ch */	virtual uint32_t GetActiveID() = 0;
+
 		/// Loads all the shadow data into the renderer.
-		/* 50h */	virtual void PrepareRender(ILightingWorld* world) = 0;
+		/* 50h */	virtual void ApplyGlobalState(ILightingWorld* world) = 0;
 
 		///
 		/// Returns the active shadow manager.
 		///
-		static IShadowManager* Get();
+		static IShadowWorld* Get();
 
 		// Actual shadow manager vftable starts at 08h
 
@@ -71,6 +86,10 @@ namespace Graphics
 	/////////////////////////////////
 
 	namespace Addresses(IShadowManager)
+	{
+		DeclareAddress(Get);
+	}
+	namespace Addresses(IShadowWorld)
 	{
 		DeclareAddress(Get);
 	}

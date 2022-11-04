@@ -20,10 +20,10 @@
 
 #pragma once
 
-#include <Spore\Graphics\IShadowManager.h>
+#include <Spore\Graphics\IShadowWorld.h>
 
 namespace Graphics
 {
-	auto_STATIC_METHOD_(IShadowManager, IShadowManager*, Get);
+	auto_STATIC_METHOD_(IShadowWorld, IShadowWorld*, Get);
 }
 #endif

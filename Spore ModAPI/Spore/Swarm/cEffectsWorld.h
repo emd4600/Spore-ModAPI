@@ -20,8 +20,7 @@
 #pragma once
 
 #include <Spore\Swarm\IEffectsWorld.h>
-#include <Spore\Swarm\ISwarmManager.h>
-#include <Spore\Swarm\SwarmManagerStruct.h>
+#include <Spore\Swarm\IEffectsManager.h>
 #include <Spore\Object.h>
 
 #include <EASTL\vector.h>
@@ -34,20 +33,20 @@ namespace Swarm
 	class cEffectsWorld : public IEffectsWorld, public IVirtual
 	{
 	public:
-		cEffectsWorld(ISwarmManager* pManager, SwarmManagerStruct*);
+		cEffectsWorld(IEffectsManager* pManager, cGlobalParams* pGlobalParams);
 
 	protected:
 		/* 08h */	int mnRefCount;
 		/* 0Ch */	bool field_0C;
 		/* 10h */	int field_10;
-		/* 14h */	ISwarmManager* mpManager;
-		/* 18h */	SwarmManagerStruct* field_18;  // it's a copy of the one in the constructor
+		/* 14h */	IEffectsManager* mpManager;
+		/* 18h */	cGlobalParams* mpGlobalParams;  // it's a copy of the one in the constructor
 		/* 1Ch */	int field_1C;
 		/* 20h */	SwarmState mState;
 		/* 24h */	bool field_24;
 		/* 28h */	int field_28;  // 1
 		/* 2Ch */	int field_2C;
-		/* 30h */	vector<IEffect> field_30;
+		/* 30h */	vector<IVisualEffectPtr> field_30;
 		/* 44h */	vector<int> field_44;  // indices to field_30
 		/* 58h */	vector<int> field_58;
 		/* 6Ch */	vector<int> field_6C;

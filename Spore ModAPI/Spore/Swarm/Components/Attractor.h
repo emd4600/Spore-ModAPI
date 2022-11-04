@@ -21,27 +21,19 @@
 
 #include <EASTL\vector.h>
 
-using namespace eastl;
-
 namespace Swarm
 {
 	namespace Components
 	{
-		class Attractor
+		struct Attractor
 		{
-		public:
 			Attractor();
 
-			/* 00h */	vector<float> strength;
+			/* 00h */	eastl::vector<float> strength;
 			/* 14h */	float range;
 			/* 18h */	float killRange;
 		};
-
-		/////////////////////////////////
-		//// INTERNAL IMPLEMENTATION ////
-		/////////////////////////////////
-
-		static_assert(sizeof(Attractor) == 0x1C, "sizeof(Attractor) != 1Ch");
+		ASSERT_SIZE(Attractor, 0x1C);
 
 		inline Attractor::Attractor()
 			:

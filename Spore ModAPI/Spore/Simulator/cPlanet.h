@@ -82,7 +82,7 @@ namespace Simulator
 		/* 15Ch */	string16 mImpostorModel;
 		/* 16Ch */	uint32_t mEffectScript;  // not initialized
 		/// Effects created by cVisiblePlanet such as clouds, planet rings,...
-		/* 170h */	vector<IEffectPtr> mPlanetEffects;
+		/* 170h */	vector<IVisualEffectPtr> mPlanetEffects;
 		/* 184h */	float mPlanetScale;
 		/* 188h */	cSolarHitSpherePtr mpSolarHitSphere;
 		/* 18Ch */	cVisiblePlanetPtr mpVisiblePlanet;

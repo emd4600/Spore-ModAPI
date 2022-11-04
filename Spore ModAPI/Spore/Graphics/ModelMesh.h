@@ -5,7 +5,7 @@
 #include <Spore\Transform.h>
 #include <Spore\Graphics\IMaterialManager.h>
 #include <Spore\Graphics\cMaterialInfo.h>
-#include <Spore\Graphics\Animations.h>
+#include <Spore\Graphics\cModelInstanceAnimations.h>
 #include <Spore\RenderWare\RenderWareFile.h>
 #include <EASTL\vector.h>
 #include <EASTL\vector_map.h>
@@ -42,7 +42,7 @@ namespace Graphics
 		/* D0h */	int** field_D0;
 		/* D4h */	BoundingBox field_D4;  // possibly? uses min and max float
 		/* ECh */	ObjectPtr field_EC;
-		/* F0h */	intrusive_ptr<Animations> mpAnimations;
+		/* F0h */	cModelInstanceAnimationsPtr mpAnimations;
 		/* F4h */	int field_F4;  // not initialized
 		/* F8h */	int field_F8;  // -1
 		/* FCh */	int field_FC;  // -1

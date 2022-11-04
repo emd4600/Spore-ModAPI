@@ -138,7 +138,7 @@ namespace Graphics
 	9,
 	0x19
 	*/
-	/* Used by ShadowManager
+	/* Used by IShadowWorld
 	1 ? added every frame it seems, sub_77FF80
 	*/
 	//TODO either 5 or 0x12 is clouds, called by cTerrainSphere::RenderWaterReflection

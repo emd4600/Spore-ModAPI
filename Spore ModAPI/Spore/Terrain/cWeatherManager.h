@@ -3,7 +3,7 @@
 #include <Spore\App\IMessageListener.h>
 #include <Spore\App\ICameraManager.h>
 #include <Spore\App\PropertyList.h>
-#include <Spore\Swarm\ISwarmManager.h>
+#include <Spore\Swarm\IEffectsManager.h>
 #include <Spore\Graphics\IModelWorld.h>
 
 #define cWeatherManagerPtr intrusive_ptr<Terrain::cWeatherManager>
@@ -40,15 +40,15 @@ namespace Terrain
 
 		/* 0Ch */	IEffectsWorldPtr mpEffectWorld;
 		/* 10h */	int field_10;
-		/* 14h */	IEffectPtr mpLowAtmoEffect;
-		/* 18h */	IEffectPtr mpMidAtmoEffect;
-		/* 1Ch */	IEffectPtr mpHighAtmoEffect;
-		/* 20h */	IEffectPtr mpLoopBoxAtmoEffect;
-		/* 24h */	IEffectPtr mpLoopBoxGroundEffect;
-		/* 28h */	IEffectPtr field_28;
-		/* 2Ch */	IEffectPtr field_2C;
-		/* 30h */	IEffectPtr field_30;
-		/* 34h */	IEffectPtr field_34;
+		/* 14h */	IVisualEffectPtr mpLowAtmoEffect;
+		/* 18h */	IVisualEffectPtr mpMidAtmoEffect;
+		/* 1Ch */	IVisualEffectPtr mpHighAtmoEffect;
+		/* 20h */	IVisualEffectPtr mpLoopBoxAtmoEffect;
+		/* 24h */	IVisualEffectPtr mpLoopBoxGroundEffect;
+		/* 28h */	IVisualEffectPtr field_28;
+		/* 2Ch */	IVisualEffectPtr field_2C;
+		/* 30h */	IVisualEffectPtr field_30;
+		/* 34h */	IVisualEffectPtr field_34;
 		/* 38h */	uint32_t mLowAtmoEffectID;
 		/* 3Ch */	uint32_t mMidAtmoEffectID;
 		/* 40h */	uint32_t mHighAtmoEffectID;
@@ -84,7 +84,7 @@ namespace Terrain
 		/* C0h */	PropertyContainer<bool> mWeatherOn;
 		/* D0h */	int field_D0;
 		/* D4h */	IModelWorldPtr mpModelWorld;
-		/* D8h */	ISwarmManagerPtr mpSwarmMgr;
+		/* D8h */	IEffectsManagerPtr mpEffectsMgr;
 		/* DCh */	ICameraManagerPtr mpCameraMgr;
 		/* E0h */	ITerrain* mpTerrain;
 		/* E4h */	cTerrainStateMgr* mpTerrainStateMgr;
@@ -112,7 +112,7 @@ namespace Terrain
 		/* 168h */	int field_168;
 		/* 16Ch */	bool field_16C;  // not initialized
 		/* 16Dh */	bool field_16D;  // not initialized
-		/* 170h */	vector<IEffectPtr> field_170;
+		/* 170h */	vector<IVisualEffectPtr> field_170;
 		/* 184h */	RandomNumberGenerator mRNG;
 		/* 188h */	PropertyListPtr mpPropList;
 		/* 18Ch */	int mPropOpCount;  // -1

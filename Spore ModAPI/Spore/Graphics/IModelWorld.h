@@ -405,7 +405,7 @@ namespace Graphics
 		/// @param count
 		/// @param instanceID [Optional] If not 0, only effects with this ID will be changed.
 		/// @returns 
-		/* C8h */	virtual bool SetFloatParams(Model* model, Swarm::IEffect::FloatParams param, const float* data, int count, uint32_t instanceID = 0) const = 0;
+		/* C8h */	virtual bool SetFloatParams(Model* model, Swarm::FloatParams param, const float* data, int count, uint32_t instanceID = 0) const = 0;
 
 		/// Changes parameters of effects in a model.
 		/// @param model
@@ -414,7 +414,7 @@ namespace Graphics
 		/// @param count
 		/// @param instanceID [Optional] If not 0, only effects with this ID will be changed.
 		/// @returns 
-		/* CCh */	virtual bool SetIntParams(Model* model, Swarm::IEffect::IntParams param, const int* data, int count, uint32_t instanceID = 0) const = 0;
+		/* CCh */	virtual bool SetIntParams(Model* model, Swarm::IntParams param, const int* data, int count, uint32_t instanceID = 0) const = 0;
 
 		/// Changes parameters of effects in a model.
 		/// @param model
@@ -423,7 +423,7 @@ namespace Graphics
 		/// @param count
 		/// @param instanceID [Optional] If not 0, only effects with this ID will be changed.
 		/// @returns 
-		/* D0h */	virtual bool SetUnknownParams(Model* model, Swarm::IEffect::ObjectParams param, Object* data, uint32_t instanceID = 0) const = 0;
+		/* D0h */	virtual bool SetUnknownParams(Model* model, Swarm::ObjectParams param, Object* data, uint32_t instanceID = 0) const = 0;
 
 		/* D4h */	virtual void SetExternalEffectsTransform(Model* model, const Transform* pTransform = nullptr, uint32_t instanceID = 0) = 0;
 

@@ -42,7 +42,7 @@ namespace Simulator
 
 	class CreatureEffectPool
 	{
-		/* 00h */	hash_map<uint32_t, IEffectPtr> mEffectMap;
+		/* 00h */	hash_map<uint32_t, IVisualEffectPtr> mEffectMap;
 		/* 20h */	char field_0[0x80];
 	};
 
@@ -128,51 +128,51 @@ namespace Simulator
 		/// @param effectId ID of the effect to create
 		/// @param poolId ID used to identify this new effect within the pool, must be used to access it in related methods.
 		/// @returns The created effect, or null if the effect id is not valid.
-		Swarm::IEffect* CreateEffectForPool1Renamed(uint32_t effectId, uint32_t poolId);
+		Swarm::IVisualEffect* CreateEffectForPool1Renamed(uint32_t effectId, uint32_t poolId);
 
 		/// Creates an effect on the creature effect pool 1.
 		/// The effect will be returned in its default state, positioned in the creature, without having started.
 		/// @param effectId ID of the effect to create
 		/// @returns The created effect, or null if the effect id is not valid.
-		Swarm::IEffect* CreateEffectForPool1(uint32_t effectId);
+		Swarm::IVisualEffect* CreateEffectForPool1(uint32_t effectId);
 
 		/// Creates and starts an effect on the creature effect pool 1, storing it with a different ID than the effect ID.
 		/// The effect will be returned in its default state, positioned in the creature, but starting it with `hardStart=0`.
 		/// @param effectId ID of the effect to create
 		/// @param poolId ID used to identify this new effect within the pool, must be used to access it in related methods.
 		/// @returns The created effect, or null if the effect id is not valid.
-		Swarm::IEffect* CreateAndStartEffectForPool1Renamed(uint32_t effectId, uint32_t poolId);
+		Swarm::IVisualEffect* CreateAndStartEffectForPool1Renamed(uint32_t effectId, uint32_t poolId);
 
 		/// Creates and starts an effect on the creature effect pool 1.
 		/// The effect will be returned in its default state, positioned in the creature, but starting it with `hardStart=0`.
 		/// @param effectId ID of the effect to create
 		/// @returns The created effect, or null if the effect id is not valid.
-		Swarm::IEffect* CreateAndStartEffectForPool1(uint32_t effectId);
+		Swarm::IVisualEffect* CreateAndStartEffectForPool1(uint32_t effectId);
 
 		/// Creates an effect on the creature effect pool 2, storing it with a different ID than the effect ID.
 		/// The effect will be returned in its default state, positioned in the creature, without having started.
 		/// @param effectId ID of the effect to create
 		/// @param poolId ID used to identify this new effect within the pool, must be used to access it in related methods.
 		/// @returns The created effect, or null if the effect id is not valid.
-		Swarm::IEffect* CreateEffectForPool2Renamed(uint32_t effectId, uint32_t poolId);
+		Swarm::IVisualEffect* CreateEffectForPool2Renamed(uint32_t effectId, uint32_t poolId);
 
 
-		Swarm::IEffect* StartOrStopEffectFromPool1(bool create, uint32_t effectId, uint32_t poolId);
+		Swarm::IVisualEffect* StartOrStopEffectFromPool1(bool create, uint32_t effectId, uint32_t poolId);
 
-		Swarm::IEffect* StartOrStopEffectFromPool2(bool create, uint32_t effectId, uint32_t poolId);
+		Swarm::IVisualEffect* StartOrStopEffectFromPool2(bool create, uint32_t effectId, uint32_t poolId);
 
 		/// Gets an active effect from one of the effect pools of the creature. The effect is referenced with the ID
 		/// that was given at its creation, which usually is the effect ID.
 		/// @param poolId
 		/// @returns
-		Swarm::IEffect* GetEffectFromPools(uint32_t poolId);
+		Swarm::IVisualEffect* GetEffectFromPools(uint32_t poolId);
 
 		/// Stops an effect from one of the effect pools of the creature. The effect is referenced with the ID
 		/// that was given at its creation, which usually is the effect ID.
 		/// @param poolId
 		/// @param hardStop
 		/// @returns
-		Swarm::IEffect* StopEffectFromPools(uint32_t poolId, int hardStop = 0);
+		Swarm::IVisualEffect* StopEffectFromPools(uint32_t poolId, int hardStop = 0);
 
 		/// Plays a voice file on the creature (only sound, creature does not animate accordingly).
 		/// Example usage: `PlayVoice("vcode_baby_born_cry", 2, 0)`

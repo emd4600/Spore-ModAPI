@@ -57,7 +57,7 @@ namespace Simulator
 
 	public:
 		/* 34h */	intrusive_ptr<cPlanet> mpPlanet;
-		/* 38h */	vector<IEffectPtr> field_38;
+		/* 38h */	vector<IVisualEffectPtr> field_38;
 		/* 4Ch */	vector<int> field_4C;
 		/* 60h */	int field_60;
 		/* 64h */	int field_64;

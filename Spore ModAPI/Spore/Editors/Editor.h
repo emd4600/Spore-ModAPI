@@ -41,7 +41,7 @@
 #include <Spore\Graphics\IRenderable.h>
 #include <Spore\Graphics\ILightingWorld.h>
 #include <Spore\Graphics\IModelWorld.h>
-#include <Spore\Graphics\IShadowManager.h>
+#include <Spore\Graphics\IShadowWorld.h>
 #include <Spore\Graphics\ShaderData.h>
 
 #include <Spore\Swarm\IEffectsWorld.h>
@@ -343,7 +343,7 @@ namespace Editors
 		/* 288h */	float field_288;  // 1.2
 		/* 28Ch */	int field_28C;
 		/* 290h */	int field_290;
-		/* 294h */	IShadowManagerPtr mpShadowManager;
+		/* 294h */	IShadowWorldPtr mpShadowWorld;
 		/* 298h */	Graphics::ShadowMapInfo* mpShadowMapInfo;
 		/* 29Ch */	int field_29C;
 		/* 2A0h */	int field_2A0;
