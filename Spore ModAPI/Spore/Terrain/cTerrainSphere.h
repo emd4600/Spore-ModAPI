@@ -23,7 +23,7 @@
 #include <Spore\MathUtils.h>
 #include <Spore\Resource\ResourceObject.h>
 #include <Spore\App\IMessageListener.h>
-#include <Spore\Graphics\IRenderable.h>
+#include <Spore\Graphics\ILayer.h>
 #include <Spore\Graphics\Texture.h>
 #include <Spore\ResourceID.h>
 #include <EASTL\vector.h>
@@ -54,7 +54,7 @@ namespace Terrain
 
 	class cTerrainSphere
 		: public ITerrain
-		, public Graphics::IRenderable
+		, public Graphics::ILayer
 		, public App::IMessageListener
 		, public unk_class_0x13F3628
 		, public Resource::ResourceObject

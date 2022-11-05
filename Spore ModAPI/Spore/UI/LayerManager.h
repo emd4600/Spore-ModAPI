@@ -20,7 +20,7 @@
 
 #include <EASTL\vector.h>
 #include <EASTL\fixed_vector.h>
-#include <Spore\Graphics\IRenderable.h>
+#include <Spore\Graphics\ILayer.h>
 #include <Spore\Graphics\IModelWorld.h>
 #include <Spore\Object.h>
 #include <Spore\UI\cSPUILayeredObject.h>
@@ -31,7 +31,7 @@
 namespace UI 
 {
 	class cLayerManager 
-		: public Graphics::IRenderable
+		: public Graphics::ILayer
 		, DefaultRefCounted
 	{
 	public:

@@ -78,7 +78,7 @@ namespace Graphics
 		return mnRefCount;
 	}
 
-	void SequenceRenderable::Add(IRenderable* renderable, int layer, int flags) 
+	void SequenceRenderable::Add(ILayer* renderable, int layer, int flags) 
 	{
 		auto it = mEntries.begin();
 		while (it != mEntries.end() && layer > it->layer) ++it;
@@ -91,10 +91,10 @@ namespace Graphics
 		}
 	}
 
-	void SequenceRenderable::Render(int, int, App::cViewer** arg_8, RenderStatistics& arg_C)
+	void SequenceRenderable::DrawLayer(int, int, App::cViewer** arg_8, RenderStatistics& arg_C)
 	{
 		for (auto& entry : mEntries) {
-			entry.pRenderable->Render(entry.flags, entry.layer, arg_8, arg_C);
+			entry.pRenderable->DrawLayer(entry.flags, entry.layer, arg_8, arg_C);
 		}
 	}
 

@@ -29,7 +29,7 @@ namespace Graphics
 
 		/* 1Ch */	virtual void AddEffects(void* pEffectsRenderer, int flags = 0) = 0;
 
-		/* 20h */	virtual void AddLayer(IRenderable* renderable, int flags = 0) = 0;
+		/* 20h */	virtual void AddLayer(ILayer* layer, int flags = 0) = 0;
 
 		// removes lighting world and renderables
 		/* 24h */	virtual void Reset() = 0;

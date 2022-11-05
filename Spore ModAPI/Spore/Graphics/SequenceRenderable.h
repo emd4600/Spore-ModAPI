@@ -1,6 +1,6 @@
 #pragma once
 
-#include <Spore\Graphics\IRenderable.h>
+#include <Spore\Graphics\ILayer.h>
 #include <Spore\Object.h>
 #include <EASTL\vector.h>
 
@@ -8,23 +8,23 @@
 
 namespace Graphics
 {
-	/// An implementation of IRenderable that renders a sequence of IRenderables
+	/// An implementation of ILayer that renders a sequence of layers
 	class SequenceRenderable
-		: public IRenderable
+		: public ILayer
 		, public IVirtual
 	{
 	public:
 		SequenceRenderable();
 
-		void Add(IRenderable* renderable, int layer, int flags);
+		void Add(ILayer* layer, int layerIndex, int flags);
 		
 		int AddRef() override;
 		int Release() override;
-		void Render(int flags, int layerIndex, App::cViewer**, RenderStatistics&) override;
+		void DrawLayer(int flags, int layerIndex, App::cViewer**, RenderStatistics&) override;
 
 	private:
 		struct Entry {
-			IRenderablePtr pRenderable;
+			ILayerPtr pRenderable;
 			int layer;
 			int flags;
 		};

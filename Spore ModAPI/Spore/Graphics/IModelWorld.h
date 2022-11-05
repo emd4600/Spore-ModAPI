@@ -24,7 +24,7 @@
 #include <Spore\Swarm\IEffectsWorld.h>
 #include <Spore\Graphics\Model.h>
 #include <Spore\Graphics\cMeshData.h>
-#include <Spore\Graphics\IRenderable.h>
+#include <Spore\Graphics\ILayer.h>
 #include <Spore\Graphics\ILightingWorld.h>
 #include <Spore\Graphics\cFrustumCull.h>
 #include <Spore\App\PropertyList.h>
@@ -101,11 +101,11 @@ namespace Graphics
 	/// a default lighting is used.
 	///
 	/// In order for the model world to render, you must add it to the render queue. This step is not necessary
-	/// if the IRenderable::Render() method is called directly from another renderer. For example:
+	/// if the ILayer::Render() method is called directly from another renderer. For example:
 	/// ~~~~~~~~~~~~~~{.cpp}
-	/// Renderer.AddRenderable(modelWorld->ToRenderable(), Graphics::kRenderQueueMain);
+	/// Renderer.AddLayer(modelWorld->AsLayer(), 8);
 	/// ~~~~~~~~~~~~~~
-	/// You might use greater render queue indices, like Graphics::kRenderQueueMain + 1. An example of this would be 
+	/// You might use greater render layer indices, like Graphics::kRenderQueueMain + 1. An example of this would be 
 	/// having a model world for translucid objects, which need to be rendered last. 
 	///
 	class IModelWorld
@@ -495,9 +495,9 @@ namespace Graphics
 		/* 138h */	virtual bool GetActive() = 0;
 
 		///
-		/// Returns the IRenderable object that can be used to render this model world.
+		/// Returns the ILayer object that can be used to render this model world.
 		///
-		/* 13Ch */	virtual IRenderable* AsLayer() = 0;
+		/* 13Ch */	virtual ILayer* AsLayer() = 0;
 
 		// saves boolean at 1D0, world ad 1CC, bool is related with shadows
 		/* 140h */	virtual int SetLightingWorld(ILightingWorld* pWorld, int indexDrawSet, bool drawShadows) = 0;

@@ -1,7 +1,7 @@
 #pragma once
 
 #include <Spore\Graphics\IRenderTargetManager.h>
-#include <Spore\Graphics\IRenderable.h>
+#include <Spore\Graphics\ILayer.h>
 #include <Spore\Graphics\Texture.h>
 #include <Spore\Object.h>
 #include <EASTL\string.h>
@@ -19,7 +19,7 @@ namespace Graphics
 
 		/* 08h */	float mRadius;  // not initialized
 		/* 0Ch */	int field_C;  // not initialized
-		/* 10h */	IRenderablePtr mpRenderable;
+		/* 10h */	ILayerPtr mpRenderable;
 		/* 14h */	TexturePtr mpTexture;
 		/* 18h */	string mName;
 		/// ID of message sent when the image finishes rendering

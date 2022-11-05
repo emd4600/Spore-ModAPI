@@ -38,7 +38,7 @@
 #include <Spore\Editors\INameableEntity.h>
 
 #include <Spore\Graphics\Model.h>
-#include <Spore\Graphics\IRenderable.h>
+#include <Spore\Graphics\ILayer.h>
 #include <Spore\Graphics\ILightingWorld.h>
 #include <Spore\Graphics\IModelWorld.h>
 #include <Spore\Graphics\IShadowWorld.h>
@@ -118,7 +118,7 @@ namespace Editors
 	/// editors (except the Adventure editor, that one uses App::cScenarioMode); you can access it with the Editor macro.
 	class cEditor 
 		: public App::IGameMode
-		, public Graphics::IRenderable
+		, public Graphics::ILayer
 		, public UI::IHintConditioner
 		, public INameableEntity
 		, public App::IMessageListener

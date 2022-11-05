@@ -20,7 +20,7 @@
 #pragma once
 
 #include <Spore\Anim\IAnimWorld.h>
-#include <Spore\Graphics\IRenderable.h>
+#include <Spore\Graphics\ILayer.h>
 #include <Spore\Graphics\ILightingWorld.h>
 #include <Spore\Graphics\IModelWorld.h>
 #include <Spore\App\IMessageListener.h>
@@ -49,7 +49,7 @@ namespace Simulator
 	class cCombatant;
 
 	class cGameViewManager
-		: public Graphics::IRenderable
+		: public Graphics::ILayer
 		, public App::IMessageListener
 		, public cStrategy
 	{

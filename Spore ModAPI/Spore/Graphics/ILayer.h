@@ -22,26 +22,24 @@
 #include <Spore\App\cViewer.h>
 #include <Spore\Graphics\RenderStatistics.h>
 
-#define IRenderablePtr eastl::intrusive_ptr<Graphics::IRenderable>
+#define ILayerPtr eastl::intrusive_ptr<Graphics::ILayer>
 
 namespace Graphics
 {
-	///
-	/// This interface defines an object that can be rendered, and whose render method is called on every game loop.
-	///
-	class IRenderable
+	/// This interfaces defines a layer that is rendered every game loop, by callings its ILayer::DrawLayer() method.
+	/// Layers are rendered by the IRenderer in an ordered way, on top of each other.
+	class ILayer
 	{
 	public:
 		virtual int AddRef() = 0;
 		virtual int Release() = 0;
-		virtual ~IRenderable() {};
+		virtual ~ILayer() {};
 
-		// arg_8 is a pointer to a pointer to a cViewer
-		///
-		/// @param flags The flags this renderable was registered with, combined with the global render flags.
-		/// @param layerIndex The layer index this renderable was registered with.
-		/// @param arg_8
+		/// Renders this layer.
+		/// @param flags The flags this layer was registered with, combined with the global render flags.
+		/// @param layerIndex The layer index this layer was registered with.
+		/// @param viewers
 		/// @param statistics
-		virtual void Render(int flags, int layerIndex, App::cViewer** arg_8, RenderStatistics& statistics) = 0;
+		virtual void DrawLayer(int flags, int layerIndex, App::cViewer** viewers, RenderStatistics& statistics) = 0;
 	};
 }

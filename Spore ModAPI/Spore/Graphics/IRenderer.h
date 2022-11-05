@@ -21,8 +21,9 @@
 
 #include <EASTL\intrusive_ptr.h>
 #include <Spore\Internal.h>
-#include <Spore\Graphics\IRenderable.h>
+#include <Spore\Graphics\ILayer.h>
 #include <Spore\Graphics\LambdaRenderable.h>
+#include <Spore\App\cJob.h>
 
 
 /// Access the active render manager.
@@ -32,7 +33,23 @@
 
 namespace Graphics
 {
-	struct RenderererParams
+	struct cRenderJobInfo
+	{
+		/* 00h */	int field_0;
+		/* 04h */	int field_4;
+		/* 08h */	int field_8;
+		/* 0Ch */	int field_C;
+		/* 10h */	int field_10;
+		/* 14h */	int field_14;
+		/* 18h */	int field_18;
+		/* 1Ch */	int field_1C;
+		/* 20h */	int field_20;
+		/* 24h */	int field_24;
+		/* 28h */	int field_28;
+	};
+	ASSERT_SIZE(cRenderJobInfo, 11 * 4);
+
+	struct cScreenInfo
 	{
 		/* 00h */	int width;
 		/* 04h */	int height;
@@ -192,9 +209,9 @@ namespace Graphics
 	{
 	public:
 
-		struct RenderLayer
+		struct cLayerInfo
 		{
-			IRenderablePtr mpRenderable;
+			ILayerPtr mpRenderable;
 			int mIndex;
 			int mFlags;
 			int field_0C;  // 1 by default,  0x10000 means rendered?
@@ -210,75 +227,107 @@ namespace Graphics
 		//TODO this is totally incomplete!
 		/* 0Ch */	virtual bool Initialize() = 0;
 		/* 10h */	virtual bool Dispose() = 0;
-		/* 14h */	virtual int func14h() = 0;
-		/* 18h */	virtual int func18h() = 0;
-		/* 1Ch */	virtual RenderererParams& GetParameters() = 0;
-		/* 20h */	virtual int GetAdapterCount() = 0;
-		/* 24h */	virtual int func24h() = 0;
-		/* 28h */	virtual int func28h() = 0;
-		/* 2Ch */	virtual int func2Ch() = 0;
-		/* 30h */	virtual int func30h() = 0;
-		/* 34h */	virtual int func34h() = 0;
-		/* 38h */	virtual int func38h() = 0;
-		// Called in the GraphicsSystem Update method
-		/* 3Ch */	virtual int func3Ch() = 0;  // calls device Present(), then begins scene and renders everything
-		/* 40h */	virtual int RenderLayers(int, int startLayer, int endLayer, int, bool, int flags) = 0;  // renders all objects?
-		/* 44h */	virtual int func44h() = 0;
-		/* 48h */	virtual int func48h() = 0;
 
-		/// Adds a IRenderable object to the specified queue index; the same renderable can be assigned to multiple layers.
+		/* 14h */	virtual bool Start(int windowWidth, int windowHeight, bool, int) = 0;
+
+		/* 18h */	virtual void Flip(bool, int, int, int) = 0;
+
+		/* 1Ch */	virtual cScreenInfo& GetScreenInfo() = 0;
+
+		/* 20h */	virtual int GetNumDisplays() = 0;
+
+		/* 24h */	virtual void* func24h() = 0;
+		/* 28h */	virtual int func28h(int adapter) = 0;
+
+		/* 2Ch */	virtual void SetViewer(int viewerType, App::cViewer* viewer) = 0;
+		/* 30h */	virtual App::cViewer* GetViewer(int viewerType) = 0;
+
+		/* 34h */	virtual void Update(int) = 0;
+
+		/* 38h */	virtual void func38h(bool) = 0;
+
+		// Called in the GraphicsSystem Update method
+		/* 3Ch */	virtual void Render(int) = 0;  // calls device Present(), then begins scene and renders everything
+
+		/* 40h */	virtual void SubRender(const RenderStatistics& stats, int startLayer, int endLayer, App::cViewer** viewers, bool, int flags) = 0;  // renders all objects?
+
+		/* 44h */	virtual int func44h() = 0;
+
+		/* 48h */	virtual RenderStatistics GetRenderStats() = 0;
+
+		/// Adds an ILayer object to the specified layer index; the same renderable can be assigned to multiple layers.
 		/// If there already was a renderable there, it will get removed.
-		/// @param object Pointer to the renderable object
+		/// @param layer Pointer to the renderable layer object
 		/// @param layerIndex The index of the layer the given object renders.
 		/// @param flags
-		/* 4Ch */	virtual void AddRenderable(IRenderable* object, int layerIndex, int flags = 0) = 0;
+		/* 4Ch */	virtual void RegisterLayer(ILayer* layer, int layerIndex, int flags = 0) = 0;
 
-		/// Adds a renderable function to the specified queue index; the same renderable can be assigned to multiple layers.
+		/// Adds a renderable function to the specified layer index; the same renderable can be assigned to multiple layers.
 		/// If there already was a renderable there, it will get removed.
 		/// @param renderFunction Renderable function, can be a lambdas
 		/// @param layerIndex The index of the layer the given object renders.
 		/// @param flags
-		inline void AddRenderable(LambdaRenderable::Render_t renderFunction, int layerIndex, int flags = 0)
+		inline void RegisterLayer(LambdaRenderable::Render_t renderFunction, int layerIndex, int flags = 0)
 		{
-			AddRenderable(new LambdaRenderable(renderFunction), layerIndex, flags);
+			RegisterLayer(new LambdaRenderable(renderFunction), layerIndex, flags);
 		}
 
 		///
-		/// Removes the IRenderable object assigned to the specified queue index.
-		/// @param nQueueIndex
+		/// Removes the IRenderable object assigned to the specified layer index.
+		/// @param layerIndex
 		///
-		/* 50h */	virtual bool RemoveRenderable(int nQueueIndex) = 0;
+		/* 50h */	virtual bool UnregisterLayer(int layerIndex) = 0;
 
 		/// Removes all renderables from the manager.
-		/* 54h */	virtual void ClearRenderables() = 0;
+		/* 54h */	virtual void ClearAllLayers() = 0;
 
 		/// Returns the renderable assigned to the given layer, or nullptr if there is none.
 		/// @param layerIndex 
-		/* 58h */	virtual IRenderable* GetRenderable(int layerIndex) = 0;
+		/* 58h */	virtual ILayer* Layer(int layerIndex) = 0;
 
-		/* 5Ch */	virtual int AddRenderableExtraFlags(int layerIndex, int flags) = 0;  // changes field_0C
-		/* 60h */	virtual int RemoveRenderableExtraFlags(int layerIndex, int flags) = 0;  // changes field_0C
-		/* 64h */	virtual int GetRenderableExtraFlags(int layerIndex) = 0;
-		/* 68h */	virtual int GetRenderablesCount() const = 0;
-		/* 6Ch */	virtual IRenderable* GetRenderableAt(int index) = 0;
-		/* 70h */	virtual RenderLayer& GetRenderLayerAt(int index) = 0;
+		/* 5Ch */	virtual int SetInfoFlags(int layerIndex, int flags) = 0;  // changes field_0C
+		/* 60h */	virtual int ClearInfoFlags(int layerIndex, int flags) = 0;  // changes field_0C
+		/* 64h */	virtual int InfoFlags(int layerIndex) = 0;
 
-		//TODO 78h AddPreRenderJob
+		/* 68h */	virtual int NumLayers() const = 0;
+		/* 6Ch */	virtual ILayer* LayerAtIndex(int index) = 0;
+		/* 70h */	virtual cLayerInfo& LayerInfoAtIndex(int index) = 0;
 
-		// 80h update?
+		/// Creates a job that renders the given layer after all layers have been rendered.
+		/// @param layer
+		/// @param arg
+		/// @param jobInfo
+		/// @returns ID of the created job
+		/* 74h */	virtual uint32_t AddPostRenderJob(ILayer* layer, int arg = 0, const cRenderJobInfo& jobInfo = cRenderJobInfo()) = 0;
+
+		/// Creates a job that renders the given layer before any layers have been rendered.
+		/// @param layer
+		/// @param arg
+		/// @param jobInfo
+		/// @returns ID of the created job
+		/* 78h */	virtual uint32_t AddPreRenderJob(ILayer* layer, int arg = 0, const cRenderJobInfo& jobInfo = cRenderJobInfo()) = 0;
+
+		/* 7Ch */	virtual void RemovePreRenderJob(uint32_t jobID) = 0;
+
+		/* 80h */	virtual void RemovePostRenderJob(uint32_t jobID) = 0;
+
+		/* 84h */	virtual void BoostRenderJobBudget(int budget) = 0;
+
+		/* 88h */	virtual void func88h() = 0;
+		/* 8Ch */	virtual void func8Ch() = 0;
 
 		// 88h, 8Ch used to lock scene, used by sub_F97DF0
 
 		// field 33Ch cViewer
 
 		///
-		/// Gets the active render manager.
+		/// Gets the active renderer.
 		///
 		static IRenderer* Get();
 	};
 
 	inline void GetMousePosition(int& mouseX, int& mouseY) {
-		auto params = Renderer.GetParameters();
+		auto params = Renderer.GetScreenInfo();
 		mouseX = params.mouseX;
 		mouseY = params.mouseY;
 	}

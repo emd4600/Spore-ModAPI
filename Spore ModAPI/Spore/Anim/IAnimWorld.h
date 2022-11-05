@@ -1,6 +1,6 @@
 #pragma once
 
-#include <Spore\Graphics\IRenderable.h>
+#include <Spore\Graphics\ILayer.h>
 #include <Spore\Graphics\IModelWorld.h>
 #include <Spore\Swarm\IEffectsWorld.h>
 #include <Spore\Anim\AnimatedCreature.h>
@@ -13,12 +13,12 @@ namespace Anim
 	typedef float(*AnimFunction)(void* object, AnimatedCreature* creature, const Quaternion&, Vector3* dstNormal, bool, bool);
 
 	class IAnimWorld
-		: public Graphics::IRenderable
+		: public Graphics::ILayer
 		, public DefaultRefCounted
 	{
 	public:
-		using IRenderable::AddRef;
-		using IRenderable::Release;
+		using ILayer::AddRef;
+		using ILayer::Release;
 
 		// second argument is function, sub_B36750 for planets and sub_572BE0 for editor
 		/* 10h */	virtual void func10h(bool, AnimFunction, void* object) = 0;
