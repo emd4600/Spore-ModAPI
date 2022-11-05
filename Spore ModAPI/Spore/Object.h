@@ -25,13 +25,11 @@
 
 #include <cstddef>
 
-#define ObjectPtr intrusive_ptr<Object>
-#define DefaultRefCountedPtr intrusive_ptr<DefaultRefCounted>
+#define ObjectPtr eastl::intrusive_ptr<Object>
+#define DefaultRefCountedPtr eastl::intrusive_ptr<DefaultRefCounted>
 
 #define CLASS_CAST(c) if (type == c::TYPE) return (c*)this
 #define PARENT_CAST(c) if (void* temp = c::Cast(type)) return temp;
-
-using namespace eastl;
 
 ///
 /// A default interface that provides a virtual destructor, it should only be used internally.
@@ -148,9 +146,35 @@ protected:
 	int mnRefCount;
 };
 
+class RefCountTemplate
+{
+public:
+	virtual ~RefCountTemplate();
+
+	int AddRef();
+	int Release();
+
+protected:
+	int mnRefCount;
+};
+
 ///////////////////////////////////
 //// INTERNAL IMPLEMENENTATION ////
 ///////////////////////////////////
+
+inline int RefCountTemplate::AddRef()
+{
+	mnRefCount++;
+	return mnRefCount;
+}
+inline int RefCountTemplate::Release()
+{
+	if (mnRefCount-- == 0)
+	{
+		delete this;
+	}
+	return mnRefCount;
+}
 
 inline MultithreadObject::MultithreadObject()
 	: mnRefCount(0)

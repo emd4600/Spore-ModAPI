@@ -19,45 +19,11 @@
 
 #pragma once
 
+#include <Spore\Object.h>
+
 namespace Swarm
 {
-	class cDescription
+	class cDescription : public RefCountTemplate
 	{
-	public:
-		cDescription();
-		cDescription(const cDescription& other);
-		virtual ~cDescription() {};
-
-		void AddRef();
-		void Release();
-
-
-	protected:
-		int mnRefCount;
 	};
-
-	inline cDescription::cDescription()
-		: mnRefCount(0)
-	{
-
-	}
-
-	// We do nothing here; we don't want to copy the ref count!
-	inline cDescription::cDescription(const cDescription& other)
-		: mnRefCount(0)
-	{
-
-	}
-
-	inline void cDescription::AddRef()
-	{
-		mnRefCount++;
-	}
-	inline void cDescription::Release()
-	{
-		if (mnRefCount-- == 0)
-		{
-			delete this;
-		}
-	}
 }

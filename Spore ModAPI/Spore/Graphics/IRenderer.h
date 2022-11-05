@@ -181,7 +181,7 @@ namespace Graphics
 		UnkF = 0x0F,  // used by: editor, only for paint mode; GameViewManager
 
 		Unk11 = 0x11,  // used by editor, pedestal
-		Unk12 = 0x12,  // used in effect rendering?
+		Unk12 = 0x12,  // used in effect rendering? also called by cShadowEffectsLayer
 
 		Unk14 = 0x14,  // used by: editor; GGE sub_DDC370; GameViewManager
 		Unk15 = 0x15, // used by: GameViewManager, anim world
@@ -191,11 +191,14 @@ namespace Graphics
 		/// Renders the trade route ribbons in a planet. Used by `PlanetRibbonGfx` (part of Simulator::cPlanetModel).
 		PlanetTradeRoutes = 0x19,
 		Unk1A = 0x1A,  // used by: editor; GGE sub_DDC370; GameViewManager
+		Unk1B = 0x1B,  // used by cMovieSystem
 
 		Unk1E = 0x1E,  // used in UI Layer Manager
 
 		Unk20 = 0x20,  // used in effect rendering?
 		Unk21 = 0x21,  // cTerrainSphere, TerrainEditor?
+
+		Unk25 = 0x25,  // used by cMovieSystem
 	};
 
 	///

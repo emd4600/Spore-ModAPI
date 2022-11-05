@@ -29,4 +29,10 @@ namespace Swarm
 		/* 38h */	virtual int AddRef() = 0;
 		/* 3Ch */	virtual int Release() = 0;
 	};
+
+	class cComponentBase
+		: public IComponent
+		, public RefCountTemplate
+	{
+	};
 }

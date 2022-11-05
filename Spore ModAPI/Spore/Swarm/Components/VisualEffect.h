@@ -28,11 +28,8 @@ namespace Swarm
 {
 	namespace Components
 	{
-		class VisualEffect
+		struct cVisualEffectDescription
 		{
-		public:
-			VisualEffect();
-
 			/* 00h */	int flags;
 			/* 04h */	int componentAppFlagsMask;
 			/* 08h */	unsigned long notifyMessageID;
@@ -41,11 +38,10 @@ namespace Swarm
 			/* 18h */	char cursorButton;
 			/* 1Ch */	vector<float> lodDistances;
 			/* 30h */	float extendedLodWeights[3];
-			float field_3C;
+			/* 3Ch */	float field_3C;
 			/* 40h */	int seed;
 			/* 44h */	vector<VisualEffectBlock> blocks;
 		};
-
-		static_assert(sizeof(VisualEffect) == 0x58, "sizeof(VisualEffect) == 58h");
+		ASSERT_SIZE(cVisualEffectDescription, 0x58);
 	}
 }
