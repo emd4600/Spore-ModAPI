@@ -13,6 +13,8 @@
 #include <Spore\App\IMessageManager.h>
 #include <Spore\App\IPropManager.h>
 #include <Spore\App\IClassManager.h>
+#include <Spore\App\JobManager.h>
+#include <Spore\App\cJob.h>
 //#include <Spore\App\IStateManager.h>
 #include <Spore\App\Property.h>
 #include <Spore\App\PropertyList.h>
@@ -385,6 +387,24 @@ namespace App
 	namespace Addresses(cIDGenerator)
 	{
 		DefineAddress(Get, SelectAddress(0x67DF80, , 0x67DE20));
+	}
+
+	namespace Addresses(IJobManager)
+	{
+		DefineAddress(Get, SelectAddress(0x68F980, , 0x68F490));
+	}
+
+	namespace Addresses(cJob)
+	{
+		DefineAddress(AddRef, SelectAddress(0x68FE20, , 0x68F910));
+		DefineAddress(Release, SelectAddress(0x690540, , 0x6900E0));
+		DefineAddress(AddDependency, SelectAddress(0x6915D0, , 0x691340));
+		DefineAddress(AddWeakDependency, SelectAddress(0x691610, , 0x691380));
+		DefineAddress(Wait, SelectAddress(0x692900, , 0x692670));
+		DefineAddress(Cancel, SelectAddress(0x692650, , 0x6923C0));
+		DefineAddress(Resume, SelectAddress(0x690DD0, , 0x690970));
+		DefineAddress(Continuation, SelectAddress(0x68FE80, , 0x68F9B0));
+		DefineAddress(GetStatus, SelectAddress(0x68FE40, , 0x68F930));
 	}
 }
 #endif

@@ -51,7 +51,7 @@ public:
 Graphics::cModelInstance* CopyMesh(Graphics::cModelInstance* mesh) {
 	Graphics::cModelInstance* copy = new Graphics::cModelInstance();
 	copy->mMeshes = mesh->mMeshes;
-	copy->field_1C = mesh->field_1C;
+	copy->mBoneRanges = mesh->mBoneRanges;
 	copy->mMaterialInfos = mesh->mMaterialInfos;
 	copy->mRegionMaterialInfos = mesh->mRegionMaterialInfos;
 	copy->field_70 = mesh->field_70;

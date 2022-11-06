@@ -150,7 +150,7 @@ protected:
 class RefCountTemplate
 {
 public:
-	virtual ~RefCountTemplate();
+	virtual ~RefCountTemplate() {};
 
 	int AddRef();
 	int Release();
@@ -162,7 +162,7 @@ protected:
 class RefCountTemplateAtomic
 {
 public:
-	virtual ~RefCountTemplateAtomic();
+	virtual ~RefCountTemplateAtomic() {};
 
 	int AddRef();
 	int Release();
