@@ -6,7 +6,7 @@
 #include <Spore\Swarm\IEffectsManager.h>
 #include <Spore\Graphics\IModelWorld.h>
 
-#define cWeatherManagerPtr intrusive_ptr<Terrain::cWeatherManager>
+#define cWeatherManagerPtr eastl::intrusive_ptr<Terrain::cWeatherManager>
 
 namespace Terrain
 {

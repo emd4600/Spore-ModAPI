@@ -112,7 +112,7 @@ namespace Swarm
 		/// @returns
 		/* 5Ch */	virtual IEffectsWorld* DefaultWorld() = 0;
 
-		/* 60h */	virtual void GetWorldIDs(vector<uint32_t>& dst) = 0;
+		/* 60h */	virtual void GetWorldIDs(eastl::vector<uint32_t>& dst) = 0;
 
 		/* 64h */	virtual bool AddCollection(void*) = 0;
 		/* 68h */	virtual bool RemoveCollection(void*) = 0;
@@ -156,7 +156,7 @@ namespace Swarm
 		/* B4h */	virtual void GetActiveEffectInfo(int, int, int infoLevel) = 0;
 
 		/* B8h */	virtual bool GetEffectInfo(cEffectInfo& dst, const char* pName) = 0;
-		/* BCh */	virtual bool GetEffectInfo2(vector<cEffectInfo>& dst, const char* pName) = 0;
+		/* BCh */	virtual bool GetEffectInfo2(eastl::vector<cEffectInfo>& dst, const char* pName) = 0;
 		/* C0h */	virtual bool OpenEffectFile(const char* pName) = 0;
 		/* C4h */	virtual bool GetEffectDebugName(uint32_t instanceID, uint32_t groupID, int) = 0;
 

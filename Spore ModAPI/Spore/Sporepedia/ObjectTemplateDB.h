@@ -16,7 +16,7 @@ namespace Sporepedia
 			/* 14h */	virtual int GetAMTuningVersion() const = 0;
 			/* 18h */	virtual int GetAssetTypesCount() const = 0;
 			/* 1Ch */	virtual uint32_t GetAssetType(int index) const = 0;
-			/* 20h */	virtual bool SetParameters(const ResourceKey& key, vector<Parameter>& dst) = 0;
+			/* 20h */	virtual bool SetParameters(const ResourceKey& key, eastl::vector<Parameter>& dst) = 0;
 		};
 
 		class cObjectTemplateDB
@@ -30,7 +30,7 @@ namespace Sporepedia
 			/* 20h */	virtual void func20h();
 			/* 24h */	virtual bool func24h(int, int, int);
 			/* 28h */	virtual bool func28h(int, int, int);
-			/* 2Ch */	virtual void FindObjects(vector<ResourceKey>& dst, const vector<QueryParameter>& parameters);
+			/* 2Ch */	virtual void FindObjects(eastl::vector<ResourceKey>& dst, const eastl::vector<QueryParameter>& parameters);
 			//TODO thse functions are placeholders
 			/* 30h */	virtual int func30h();
 			/* 34h */	virtual int func34h();

@@ -21,7 +21,7 @@
 #include <Spore\Resource\ResourceObject.h>
 #include <Spore\Swarm\EffectDirectory.h>
 
-#define CollectionResourcePtr intrusive_ptr<Swarm::CollectionResource>
+#define CollectionResourcePtr eastl::intrusive_ptr<Swarm::CollectionResource>
 
 namespace Swarm
 {

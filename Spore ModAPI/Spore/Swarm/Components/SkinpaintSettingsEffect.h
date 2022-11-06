@@ -40,8 +40,16 @@ namespace Swarm
 		: public cComponentBase
 	{
 	public:
+		virtual void ApplyEffect(float, float, cComponentStats*) override;
+
+	public:
 		/* 0Ch */	cSkinpaintSettingsDescription* mpDescription;
 		/* 10h */	bool field_10;
 	};
 	ASSERT_SIZE(cSkinpaintSettingsEffect, 0x14);
+
+	namespace Addresses(cSkinpaintSettingsEffect)
+	{
+		DeclareAddress(ApplyEffect);  // 0x52EAC0 TODO
+	}
 }

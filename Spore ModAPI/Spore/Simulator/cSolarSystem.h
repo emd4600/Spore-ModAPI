@@ -24,7 +24,7 @@
 #include <Spore\Simulator\cStarRecord.h>
 #include <EASTL\vector.h>
 
-#define cSolarSystemPtr intrusive_ptr<Simulator::cSolarSystem>
+#define cSolarSystemPtr eastl::intrusive_ptr<Simulator::cSolarSystem>
 
 namespace Simulator
 {

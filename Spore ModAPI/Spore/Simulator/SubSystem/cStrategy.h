@@ -22,8 +22,8 @@
 #include <Spore\Simulator\Serialization.h>
 #include <Spore\Simulator\SubSystem\cSavedGameHeader.h>
 
-#define ISimulatorStrategyPtr intrusive_ptr<Simulator::ISimulatorStrategy>
-#define cStrategyPtr intrusive_ptr<Simulator::cStrategy>
+#define ISimulatorStrategyPtr eastl::intrusive_ptr<Simulator::ISimulatorStrategy>
+#define cStrategyPtr eastl::intrusive_ptr<Simulator::cStrategy>
 
 namespace Simulator
 {

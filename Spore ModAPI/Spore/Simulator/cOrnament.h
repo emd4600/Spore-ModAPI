@@ -24,7 +24,7 @@
 #include <Spore\Simulator\cBehaviorList.h>
 #include <Spore\Simulator\cScenarioPowerup.h>
 
-#define cOrnamentPtr intrusive_ptr<Simulator::cOrnament>
+#define cOrnamentPtr eastl::intrusive_ptr<Simulator::cOrnament>
 
 namespace Simulator
 {

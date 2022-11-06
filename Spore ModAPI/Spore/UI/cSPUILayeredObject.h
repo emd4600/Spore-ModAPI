@@ -5,7 +5,7 @@
 #include <Spore\App\cViewer.h>
 #include <Spore\UTFWin\IWinProc.h>
 
-#define cSPUILayeredObjectPtr intrusive_ptr<UI::cSPUILayeredObject>
+#define cSPUILayeredObjectPtr eastl::intrusive_ptr<UI::cSPUILayeredObject>
 
 namespace UI
 {

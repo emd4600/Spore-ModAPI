@@ -26,7 +26,7 @@
 #include <EASTL\intrusive_ptr.h>
 #include <EASTL\vector.h>
 
-#define TexturePtr intrusive_ptr<Graphics::Texture>
+#define TexturePtr eastl::intrusive_ptr<Graphics::Texture>
 
 namespace Graphics
 {

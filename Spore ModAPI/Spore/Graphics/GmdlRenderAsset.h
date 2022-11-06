@@ -5,6 +5,7 @@
 
 namespace Graphics
 {
+	//TODO cGameModelResource
 	class GmdlRenderAsset
 		: public Resource::ResourceObject
 	{

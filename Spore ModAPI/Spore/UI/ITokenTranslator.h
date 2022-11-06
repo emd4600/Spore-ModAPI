@@ -21,7 +21,7 @@
 #include <Spore\Object.h>
 #include <EASTL\string.h>
 
-#define ITokenTranslatorPtr intrusive_ptr<UI::ITokenTranslator>
+#define ITokenTranslatorPtr eastl::intrusive_ptr<UI::ITokenTranslator>
 
 namespace UI
 {

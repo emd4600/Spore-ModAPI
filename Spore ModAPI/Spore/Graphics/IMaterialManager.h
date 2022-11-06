@@ -33,8 +33,8 @@
 using namespace eastl;
 using Resource::DatabasePackedFile;
 
-#define MaterialPtr intrusive_ptr<Graphics::Material>
-#define IMaterialManagerPtr intrusive_ptr<Graphics::IMaterialManager>
+#define MaterialPtr eastl::intrusive_ptr<Graphics::Material>
+#define IMaterialManagerPtr eastl::intrusive_ptr<Graphics::IMaterialManager>
 
 namespace Graphics
 {

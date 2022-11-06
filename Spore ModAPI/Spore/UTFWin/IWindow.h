@@ -28,7 +28,7 @@
 #include <EASTL\intrusive_list.h>
 #include <EASTL\vector.h>
 
-#define IWindowPtr intrusive_ptr<UTFWin::IWindow>
+#define IWindowPtr eastl::intrusive_ptr<UTFWin::IWindow>
 
 using namespace Math;
 using namespace eastl;

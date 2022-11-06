@@ -22,7 +22,7 @@
 #include <Spore\Simulator\cScenarioPowerup.h>
 #include <Spore\Simulator\cCombatant.h>
 
-#define cInteractiveOrnamentPtr intrusive_ptr<Simulator::cInteractiveOrnament>
+#define cInteractiveOrnamentPtr eastl::intrusive_ptr<Simulator::cInteractiveOrnament>
 
 namespace Simulator
 {

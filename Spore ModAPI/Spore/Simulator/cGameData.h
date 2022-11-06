@@ -26,7 +26,7 @@
 #include <Spore\Simulator\IGameDataView.h>
 #include <EASTL\intrusive_list.h>
 
-#define cGameDataPtr intrusive_ptr<Simulator::cGameData>
+#define cGameDataPtr eastl::intrusive_ptr<Simulator::cGameData>
 
 namespace Simulator
 {

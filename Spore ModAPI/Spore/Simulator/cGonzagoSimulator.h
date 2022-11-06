@@ -21,7 +21,7 @@
 #include <Spore\Object.h>
 #include <Spore\Simulator\ISimulatorSerializable.h>
 
-#define cGonzagoSimulatorPtr intrusive_ptr<Simulator::cGonzagoSimulator>
+#define cGonzagoSimulatorPtr eastl::intrusive_ptr<Simulator::cGonzagoSimulator>
 
 namespace Simulator
 {

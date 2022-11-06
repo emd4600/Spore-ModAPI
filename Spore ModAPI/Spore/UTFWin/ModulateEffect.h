@@ -21,7 +21,7 @@
 
 #include <Spore\UTFWin\Effect.h>
 
-#define IModulateEffectPtr intrusive_ptr<UTFWin::IModulateEffect>
+#define IModulateEffectPtr eastl::intrusive_ptr<UTFWin::IModulateEffect>
 
 namespace UTFWin
 {

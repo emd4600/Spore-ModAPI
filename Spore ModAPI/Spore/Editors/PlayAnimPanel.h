@@ -23,7 +23,7 @@
 
 #include <EASTL\vector.h>
 
-#define PlayAnimPanelPtr intrusive_ptr<Editors::PlayAnimPanel>
+#define PlayAnimPanelPtr eastl::intrusive_ptr<Editors::PlayAnimPanel>
 
 using namespace eastl;
 

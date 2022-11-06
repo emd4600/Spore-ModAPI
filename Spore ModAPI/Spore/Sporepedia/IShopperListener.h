@@ -23,6 +23,6 @@ namespace Sporepedia
 	class IMultiShopperListener
 	{
 	public:
-		virtual void OnShopperAccept(const vector<ResourceKey>& selection) = 0;
+		virtual void OnShopperAccept(const eastl::vector<ResourceKey>& selection) = 0;
 	};
 }

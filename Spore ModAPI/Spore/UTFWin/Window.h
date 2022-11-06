@@ -32,7 +32,7 @@
 #include <EASTL\list.h>
 #include <EASTL\hash_map.h>
 
-#define WindowPtr intrusive_ptr<UTFWin::Window>
+#define WindowPtr eastl::intrusive_ptr<UTFWin::Window>
 
 using namespace eastl;
 

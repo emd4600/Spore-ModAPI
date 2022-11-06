@@ -21,7 +21,7 @@ namespace Graphics
 		/* 0Ch */	int field_C;  // not initialized
 		/* 10h */	ILayerPtr mpRenderable;
 		/* 14h */	TexturePtr mpTexture;
-		/* 18h */	string mName;
+		/* 18h */	eastl::string mName;
 		/// ID of message sent when the image finishes rendering
 		/* 28h */	uint32_t mMessageID;
 	};

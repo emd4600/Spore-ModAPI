@@ -22,7 +22,7 @@
 #include <Spore\UTFWin\IDrawable.h>
 #include <Spore\UTFWin\Image.h>
 
-#define IScrollbarDrawablePtr intrusive_ptr<UTFWin::IScrollbarDrawable>
+#define IScrollbarDrawablePtr eastl::intrusive_ptr<UTFWin::IScrollbarDrawable>
 
 namespace UTFWin
 {

@@ -30,7 +30,7 @@
 /// Access the active resource manager.
 #define ResourceManager (*Resource::IResourceManager::Get())
 
-#define IResourceManagerPtr intrusive_ptr<Resource::IResourceManager>
+#define IResourceManagerPtr eastl::intrusive_ptr<Resource::IResourceManager>
 
 using namespace eastl;
 

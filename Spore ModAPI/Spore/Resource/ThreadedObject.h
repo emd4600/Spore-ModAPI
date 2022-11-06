@@ -22,7 +22,7 @@
 #include <EASTL\internal\thread_support.h>
 #include <Spore\IO\EAIOZoneObject.h>
 
-#define ThreadedObjectPtr intrusive_ptr<Resource::ThreadedObject>
+#define ThreadedObjectPtr eastl::intrusive_ptr<Resource::ThreadedObject>
 
 namespace Resource
 {

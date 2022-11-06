@@ -20,7 +20,7 @@
 
 #include <Spore\Simulator\cDefaultBeamTool.h>
 
-#define cMindEraseToolStrategyPtr intrusive_ptr<Simulator::cMindEraseToolStrategy>
+#define cMindEraseToolStrategyPtr eastl::intrusive_ptr<Simulator::cMindEraseToolStrategy>
 
 namespace Simulator
 {

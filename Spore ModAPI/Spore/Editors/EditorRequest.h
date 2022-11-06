@@ -25,7 +25,7 @@
 #include <EASTL\string.h>
 #include <EASTL\vector.h>
 
-#define EditorRequestPtr intrusive_ptr<Editors::EditorRequest>
+#define EditorRequestPtr eastl::intrusive_ptr<Editors::EditorRequest>
 
 namespace Editors
 {
@@ -128,11 +128,10 @@ namespace Editors
 		/* 88h */	int field_88;
 		/* 8Ch */	int field_8C;
 		/* 90h */	uint32_t field_90;
-		/* 94h */	intrusive_ptr<Object> field_94;
-		/* 98h */	intrusive_ptr<EditorRequest> next;
+		/* 94h */	ObjectPtr field_94;
+		/* 98h */	EditorRequestPtr next;
 	};
-
-	static_assert(sizeof(EditorRequest) == 0x9C, "sizeof(EditorRequest) != 9Ch");
+	ASSERT_SIZE(EditorRequest, 0x9C);
 
 	inline void EditorRequest::SetDefaultValidation() {
 		editableTests = ContentValidation::ValidationEditableTests();

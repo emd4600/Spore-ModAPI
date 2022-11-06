@@ -24,22 +24,6 @@ namespace Swarm
 {
 	namespace Components
 	{
-		VisualEffect::VisualEffect()
-			: flags(0)
-			, componentAppFlagsMask(0)
-			, notifyMessageID(0)
-			, screenSizeRange()
-			, cursorActiveDistance(0)
-			, cursorButton(0)
-			, lodDistances()
-			, extendedLodWeights()
-			, field_3C(0)
-			, seed(0)
-			, blocks()
-		{
-
-		}
-
 		VisualEffectBlock::VisualEffectBlock()
 			: blockType(0)
 			, flags(kVEBlockFlagRigid)

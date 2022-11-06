@@ -31,7 +31,7 @@
 #include <EASTL\vector.h>
 #include <EASTL\string.h>
 
-#define cSpatialObjectPtr intrusive_ptr<Simulator::cSpatialObject>
+#define cSpatialObjectPtr eastl::intrusive_ptr<Simulator::cSpatialObject>
 
 namespace Simulator
 {

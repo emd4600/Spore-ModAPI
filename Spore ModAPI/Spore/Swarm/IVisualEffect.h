@@ -26,7 +26,7 @@
 #include <EASTL\intrusive_ptr.h>
 #include <EASTL\utility.h>
 
-#define IVisualEffectPtr intrusive_ptr<Swarm::IVisualEffect>
+#define IVisualEffectPtr eastl::intrusive_ptr<Swarm::IVisualEffect>
 
 namespace Swarm
 {

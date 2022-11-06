@@ -20,7 +20,7 @@
 
 #include <Spore\Simulator\cToolStrategy.h>
 
-#define cArtilleryWeaponStrategyPtr intrusive_ptr<Simulator::cArtilleryWeaponStrategy>
+#define cArtilleryWeaponStrategyPtr eastl::intrusive_ptr<Simulator::cArtilleryWeaponStrategy>
 
 namespace Simulator
 {

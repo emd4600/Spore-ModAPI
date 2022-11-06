@@ -28,7 +28,7 @@
 #include <Spore\Simulator\cDefaultBeamProjectile.h>
 #include <Spore\LocalizedString.h>
 
-#define cSpaceToolDataPtr intrusive_ptr<Simulator::cSpaceToolData>
+#define cSpaceToolDataPtr eastl::intrusive_ptr<Simulator::cSpaceToolData>
 
 namespace Simulator
 {

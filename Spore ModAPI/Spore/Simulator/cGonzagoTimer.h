@@ -20,7 +20,7 @@
 
 #include <Spore\Object.h>
 
-#define cGonzagoTimerPtr intrusive_ptr<Simulator::cGonzagoTimer>
+#define cGonzagoTimerPtr eastl::intrusive_ptr<Simulator::cGonzagoTimer>
 
 namespace Simulator
 {

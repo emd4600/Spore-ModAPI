@@ -3,7 +3,7 @@
 #include <Spore\Resource\ResourceObject.h>
 #include <Spore\RenderWare\Raster.h>
 
-#define cRwRasterDirectResourcePtr intrusive_ptr<Graphics::cRwRasterDirectResource>
+#define cRwRasterDirectResourcePtr eastl::intrusive_ptr<Graphics::cRwRasterDirectResource>
 
 namespace Graphics
 {

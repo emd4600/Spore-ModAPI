@@ -27,7 +27,7 @@
 #include <Spore\Anim\IAnimWorld.h>
 #include <Spore\Graphics\IModelWorld.h>
 
-#define ITerrainPtr intrusive_ptr<Terrain::ITerrain>
+#define ITerrainPtr eastl::intrusive_ptr<Terrain::ITerrain>
 
 namespace Terrain
 {

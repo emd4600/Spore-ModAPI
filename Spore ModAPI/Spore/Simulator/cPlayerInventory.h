@@ -22,7 +22,7 @@
 #include <Spore\Simulator\cSpaceInventoryItem.h>
 #include <Spore\Simulator\cSpaceToolData.h>
 
-#define cPlayerInventoryPtr intrusive_ptr<Simulator::cPlayerInventory>
+#define cPlayerInventoryPtr eastl::intrusive_ptr<Simulator::cPlayerInventory>
 
 namespace Simulator
 {

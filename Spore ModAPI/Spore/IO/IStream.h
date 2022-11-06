@@ -44,7 +44,7 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #include <Spore\IO\Allocator.h>
 #include <stdint.h>
 
-#define IStreamPtr intrusive_ptr<IO::IStream>
+#define IStreamPtr eastl::intrusive_ptr<IO::IStream>
 
 namespace IO
 {

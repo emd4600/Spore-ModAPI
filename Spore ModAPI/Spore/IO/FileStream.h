@@ -39,7 +39,7 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 #pragma once
 
-#define FileStreamPtr intrusive_ptr<IO::FileStream>
+#define FileStreamPtr eastl::intrusive_ptr<IO::FileStream>
 
 #include "IStream.h"
 

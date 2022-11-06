@@ -21,7 +21,7 @@
 
 #include <Spore\UTFWin\Effect.h>
 
-#define IPerspectiveEffectPtr intrusive_ptr<UTFWin::IPerspectiveEffect>
+#define IPerspectiveEffectPtr eastl::intrusive_ptr<UTFWin::IPerspectiveEffect>
 
 namespace UTFWin
 {

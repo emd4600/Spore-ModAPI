@@ -42,7 +42,7 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #include <Spore\IO\IStream.h>
 #include <EASTL\intrusive_ptr.h>
 
-#define StreamBufferPtr intrusive_ptr<IO::StreamBuffer>
+#define StreamBufferPtr eastl::intrusive_ptr<IO::StreamBuffer>
 
 using namespace eastl;
 

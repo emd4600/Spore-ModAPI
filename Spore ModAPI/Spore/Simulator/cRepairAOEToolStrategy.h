@@ -20,7 +20,7 @@
 
 #include <Spore\Simulator\cToolStrategy.h>
 
-#define cRepairAOEToolStrategyPtr intrusive_ptr<Simulator::cRepairAOEToolStrategy>
+#define cRepairAOEToolStrategyPtr eastl::intrusive_ptr<Simulator::cRepairAOEToolStrategy>
 
 namespace Simulator
 {

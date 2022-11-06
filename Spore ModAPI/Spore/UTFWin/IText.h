@@ -4,7 +4,7 @@
 #include <Spore\UTFWin\UTFWinObject.h>
 #include <Spore\UTFWin\OutlineFormat.h>
 
-#define ITextPtr intrusive_ptr<UTFWin::IText>
+#define ITextPtr eastl::intrusive_ptr<UTFWin::IText>
 
 namespace UTFWin
 {

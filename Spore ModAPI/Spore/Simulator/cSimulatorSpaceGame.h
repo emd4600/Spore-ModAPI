@@ -37,7 +37,7 @@
 /// Easy access to Simulator::cBadgeManager
 #define BadgeManager (*SimulatorSpaceGame.mpBadgeManager.get())
 
-#define cSimulatorSpaceGamePtr intrusive_ptr<Simulator::cSimulatorSpaceGame>
+#define cSimulatorSpaceGamePtr eastl::intrusive_ptr<Simulator::cSimulatorSpaceGame>
 
 namespace Simulator
 {

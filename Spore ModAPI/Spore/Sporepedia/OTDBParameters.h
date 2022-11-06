@@ -35,7 +35,7 @@ namespace Sporepedia
 			static const uint32_t RESOURCE_TYPE = 0x2D5C9AF;  // .summary
 
 			/* 14h */	int field_14;
-			/* 18h */	vector<Parameter> mParameters;
+			/* 18h */	eastl::vector<Parameter> mParameters;
 		};
 		ASSERT_SIZE(ParameterResource, 0x2C);
 
@@ -53,7 +53,7 @@ namespace Sporepedia
 					/* 0Ch */	int imaxValue;
 				};
 			};
-			/* 10h */	vector<QueryParameter> field_10;
+			/* 10h */	eastl::vector<QueryParameter> mParameters;
 
 			static QueryParameter Int(uint32_t paramID, int minValue, int maxValue);
 			static QueryParameter Float(uint32_t paramID, float minValue, float maxValue);

@@ -196,3 +196,36 @@ int BasicLockRefCounted::Release()
 	}
 	return refCount;
 }
+
+
+int RefCountTemplate::AddRef()
+{
+	mnRefCount++;
+	return mnRefCount;
+}
+int RefCountTemplate::Release()
+{
+	if (mnRefCount-- == 0)
+	{
+		delete this;
+		return 0;
+	}
+	else {
+		return mnRefCount;
+	}
+}
+
+int RefCountTemplateAtomic::AddRef()
+{
+	return eastl::Internal::atomic_increment(&mnRefCount);
+}
+
+int RefCountTemplateAtomic::Release()
+{
+	if (eastl::Internal::atomic_decrement(&mnRefCount) == 0)
+	{
+		delete this;
+		return 0;
+	}
+	return mnRefCount;
+}

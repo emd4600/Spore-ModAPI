@@ -25,7 +25,7 @@
 
 #include <EASTL\vector.h>
 
-#define PlayAnimButtonPtr intrusive_ptr<Editors::PlayAnimButton>
+#define PlayAnimButtonPtr eastl::intrusive_ptr<Editors::PlayAnimButton>
 
 namespace Editors
 {

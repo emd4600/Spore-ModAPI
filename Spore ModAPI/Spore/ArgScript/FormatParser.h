@@ -30,7 +30,7 @@
 #include <EASTL\intrusive_ptr.h>
 #include <EASTL\string.h>
 
-#define FormatParserPtr intrusive_ptr<ArgScript::FormatParser>
+#define FormatParserPtr eastl::intrusive_ptr<ArgScript::FormatParser>
 
 using namespace eastl;
 

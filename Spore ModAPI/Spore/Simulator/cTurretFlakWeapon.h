@@ -20,7 +20,7 @@
 
 #include <Spore\Simulator\cToolStrategy.h>
 
-#define cTurretFlakWeaponPtr intrusive_ptr<Simulator::cTurretFlakWeapon>
+#define cTurretFlakWeaponPtr eastl::intrusive_ptr<Simulator::cTurretFlakWeapon>
 
 namespace Simulator
 {

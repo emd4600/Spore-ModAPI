@@ -25,7 +25,7 @@
 
 #include <EASTL\intrusive_ptr.h>
 
-#define IResourceFactoryPtr intrusive_ptr<Resource::IResourceFactory>
+#define IResourceFactoryPtr eastl::intrusive_ptr<Resource::IResourceFactory>
 
 using namespace eastl;
 

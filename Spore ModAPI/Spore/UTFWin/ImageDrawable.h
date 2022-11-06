@@ -25,8 +25,8 @@
 #include <Spore\UTFWin\ILayoutElement.h>
 #include <Spore\UTFWin\Image.h>
 
-#define IImageDrawablePtr intrusive_ptr<UTFWin::IImageDrawable>
-#define ImageDrawablePtr intrusive_ptr<UTFWin::ImageDrawable>
+#define IImageDrawablePtr eastl::intrusive_ptr<UTFWin::IImageDrawable>
+#define ImageDrawablePtr eastl::intrusive_ptr<UTFWin::ImageDrawable>
 
 namespace UTFWin
 {

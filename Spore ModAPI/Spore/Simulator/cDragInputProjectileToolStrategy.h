@@ -20,7 +20,7 @@
 
 #include <Spore\Simulator\cToolStrategy.h>
 
-#define cDragInputProjectileToolStrategyPtr intrusive_ptr<Simulator::cDragInputProjectileToolStrategy>
+#define cDragInputProjectileToolStrategyPtr eastl::intrusive_ptr<Simulator::cDragInputProjectileToolStrategy>
 
 namespace Simulator
 {

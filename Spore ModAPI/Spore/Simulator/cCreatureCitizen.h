@@ -3,7 +3,7 @@
 #include <Spore\Simulator\cCreatureBase.h>
 #include <Spore\Simulator\cHitSphere.h>
 
-#define cCreatureCitizenPtr intrusive_ptr<Simulator::cCreatureCitizen>
+#define cCreatureCitizenPtr eastl::intrusive_ptr<Simulator::cCreatureCitizen>
 
 namespace Simulator
 {

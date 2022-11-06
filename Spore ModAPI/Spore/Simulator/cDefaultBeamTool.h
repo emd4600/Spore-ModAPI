@@ -20,7 +20,7 @@
 
 #include <Spore\Simulator\cToolStrategy.h>
 
-#define cDefaultBeamToolPtr intrusive_ptr<Simulator::cDefaultBeamTool>
+#define cDefaultBeamToolPtr eastl::intrusive_ptr<Simulator::cDefaultBeamTool>
 
 namespace Simulator
 {

@@ -25,7 +25,7 @@
 #include <Spore\Simulator\cSolarHitSphere.h>
 #include <Spore\Simulator\cPlanetRecord.h>
 
-#define cPlanetPtr intrusive_ptr<Simulator::cPlanet>
+#define cPlanetPtr eastl::intrusive_ptr<Simulator::cPlanet>
 
 namespace Simulator
 {

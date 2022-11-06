@@ -20,7 +20,7 @@
 
 #include <Spore\Simulator\cDefaultProjectileWeapon.h>
 
-#define cCropCirclesToolStrategyPtr intrusive_ptr<Simulator::cCropCirclesToolStrategy>
+#define cCropCirclesToolStrategyPtr eastl::intrusive_ptr<Simulator::cCropCirclesToolStrategy>
 
 namespace Simulator
 {

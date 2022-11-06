@@ -6,7 +6,7 @@
 #include <Spore\App\IMessageListener.h>
 #include <Spore\App\StandardMessage.h>
 
-#define PaletteSubcategoriesUIPtr intrusive_ptr<Palettes::PaletteSubcategoriesUI>
+#define PaletteSubcategoriesUIPtr eastl::intrusive_ptr<Palettes::PaletteSubcategoriesUI>
 
 namespace Palettes
 {

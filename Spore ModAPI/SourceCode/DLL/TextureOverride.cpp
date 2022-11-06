@@ -4,7 +4,7 @@
 #include <Spore\Cheats.h>
 #include <Spore\CommonIDs.h>
 #include <Spore\Graphics\Model.h>
-#include <Spore\Graphics\ModelMesh.h>
+#include <Spore\Graphics\cModelInstance.h>
 #include <Spore\Graphics\ITextureManager.h>
 #include <Spore\RenderWare\RenderWareFile.h>
 #include <Spore\App\PropertyList.h>
@@ -33,11 +33,11 @@ bool UsesOverride(RenderWare::RenderWareFile* renderWare) {
 	return false;
 }
 
-class ReplacedModelMesh
-	: public Graphics::ModelMesh
+class ReplacedModelInstance
+	: public Graphics::cModelInstance
 {
 public:
-	~ReplacedModelMesh() {
+	~ReplacedModelInstance() {
 		for (auto m : mMaterials) {
 			for (int i = 0; i < m->statesCount; ++i) {
 				_aligned_free(m->states[i]);
@@ -48,8 +48,8 @@ public:
 	}
 };
 
-Graphics::ModelMesh* CopyMesh(Graphics::ModelMesh* mesh) {
-	Graphics::ModelMesh* copy = new Graphics::ModelMesh();
+Graphics::cModelInstance* CopyMesh(Graphics::cModelInstance* mesh) {
+	Graphics::cModelInstance* copy = new Graphics::cModelInstance();
 	copy->mMeshes = mesh->mMeshes;
 	copy->field_1C = mesh->field_1C;
 	copy->mMaterialInfos = mesh->mMaterialInfos;
@@ -80,7 +80,7 @@ Graphics::ModelMesh* CopyMesh(Graphics::ModelMesh* mesh) {
 	return copy;
 }
 
-bool ApplyOverride(Graphics::cMWModelInternal* asset, ModelMeshPtr& mesh, int lod) {
+bool ApplyOverride(Graphics::cMWModelInternal* asset, cModelInstancePtr& mesh, int lod) {
 	auto propList = asset->mpPropList.get();
 	uint32_t propertyID = kOverridePropertyIDs[lod + 1];
 	uint32_t propertyKeysID = kOverrideKeysPropertyIDs[lod + 1];
@@ -134,7 +134,7 @@ bool ApplyOverride(Graphics::cMWModelInternal* asset, ModelMeshPtr& mesh, int lo
 		}
 
 		// We don't know if the detoured method might be called more than once for the same model,
-		// so maybe the ModelMesh here has already been altered and we don't need to duplicate it
+		// so maybe the cModelInstance here has already been altered and we don't need to duplicate it
 		bool meshCopied = false;
 
 

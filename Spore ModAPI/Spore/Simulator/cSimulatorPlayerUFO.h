@@ -26,7 +26,7 @@
 
 #define SimulatorPlayerUFO (*Simulator::cSimulatorPlayerUFO::Get())
 
-#define cSimulatorPlayerUFOPtr intrusive_ptr<Simulator::cSimulatorPlayerUFO>
+#define cSimulatorPlayerUFOPtr eastl::intrusive_ptr<Simulator::cSimulatorPlayerUFO>
 
 namespace Simulator
 {

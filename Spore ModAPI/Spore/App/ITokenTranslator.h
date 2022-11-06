@@ -11,7 +11,7 @@ namespace App
 		: public DefaultRefCounted
 	{
 	public:
-		virtual bool TranslateToken(const char16_t* pToken, string16& dst) = 0;
+		virtual bool TranslateToken(const char16_t* pToken, eastl::string16& dst) = 0;
 		virtual void func14h(int) {};
 	};
 }

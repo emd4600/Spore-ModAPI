@@ -31,7 +31,7 @@
 #include <Spore\Palettes\PaletteSubcategoriesUI.h>
 #include <Spore\Palettes\PaletteInfo.h>
 
-#define PaletteCategoryUIPtr intrusive_ptr<Palettes::PaletteCategoryUI>
+#define PaletteCategoryUIPtr eastl::intrusive_ptr<Palettes::PaletteCategoryUI>
 
 namespace Palettes
 {

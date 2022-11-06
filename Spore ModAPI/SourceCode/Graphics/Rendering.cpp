@@ -19,8 +19,8 @@
 ****************************************************************************/
 
 #include <Spore\Graphics\IRenderer.h>
-#include <Spore\Graphics\LambdaRenderable.h>
-#include <Spore\Graphics\SequenceRenderable.h>
+#include <Spore\Graphics\LambdaLayer.h>
+#include <Spore\Graphics\cLayerGroup.h>
 #include <Spore\Graphics\RenderUtils.h>
 #include <Spore\Graphics\GlobalState.h>
 
@@ -29,18 +29,18 @@ namespace Graphics
 
 	auto_STATIC_METHOD_(IRenderer, IRenderer*, Get);
 
-	LambdaRenderable::LambdaRenderable(LambdaRenderable::Render_t function)
+	LambdaLayer::LambdaLayer(LambdaLayer::Render_t function)
 		: mnRefCount(0)
 		, mFunction(function)
 	{}
 
-	int LambdaRenderable::AddRef()
+	int LambdaLayer::AddRef()
 	{
 		++mnRefCount;
 		return mnRefCount;
 	}
 
-	int LambdaRenderable::Release()
+	int LambdaLayer::Release()
 	{
 		--mnRefCount;
 		if (mnRefCount == 0) {
@@ -50,25 +50,25 @@ namespace Graphics
 		return mnRefCount;
 	}
 
-	void LambdaRenderable::Render(int arg_0, int arg_4, App::cViewer** arg_8, RenderStatistics& arg_C)
+	void LambdaLayer::DrawLayer(int arg_0, int arg_4, App::cViewer** arg_8, RenderStatistics& arg_C)
 	{
 		mFunction(arg_0, arg_4, arg_8, arg_C);
 	}
 
 
 
-	SequenceRenderable::SequenceRenderable()
+	cLayerGroup::cLayerGroup()
 		: mnRefCount(0)
 		, mEntries()
 	{}
 
-	int SequenceRenderable::AddRef()
+	int cLayerGroup::AddRef()
 	{
 		++mnRefCount;
 		return mnRefCount;
 	}
 
-	int SequenceRenderable::Release()
+	int cLayerGroup::Release()
 	{
 		--mnRefCount;
 		if (mnRefCount == 0) {
@@ -78,7 +78,7 @@ namespace Graphics
 		return mnRefCount;
 	}
 
-	void SequenceRenderable::Add(ILayer* renderable, int layer, int flags) 
+	void cLayerGroup::Add(ILayer* renderable, int layer, int flags)
 	{
 		auto it = mEntries.begin();
 		while (it != mEntries.end() && layer > it->layer) ++it;
@@ -91,7 +91,7 @@ namespace Graphics
 		}
 	}
 
-	void SequenceRenderable::DrawLayer(int, int, App::cViewer** arg_8, RenderStatistics& arg_C)
+	void cLayerGroup::DrawLayer(int, int, App::cViewer** arg_8, RenderStatistics& arg_C)
 	{
 		for (auto& entry : mEntries) {
 			entry.pRenderable->DrawLayer(entry.flags, entry.layer, arg_8, arg_C);

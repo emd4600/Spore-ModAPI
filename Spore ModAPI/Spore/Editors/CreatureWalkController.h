@@ -4,7 +4,7 @@
 #include <Spore\Anim\AnimatedCreature.h>
 #include <Spore\Graphics\IModelWorld.h>
 
-#define CreatureWalkControllerPtr intrusive_ptr<Editors::CreatureWalkController>
+#define CreatureWalkControllerPtr eastl::intrusive_ptr<Editors::CreatureWalkController>
 
 namespace Editors
 {

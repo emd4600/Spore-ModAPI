@@ -22,7 +22,7 @@
 #include <Spore\Simulator\cSpatialObject.h>
 #include <Spore\Simulator\cOrnament.h>
 
-#define cCityWallsPtr intrusive_ptr<Simulator::cCityWalls>
+#define cCityWallsPtr eastl::intrusive_ptr<Simulator::cCityWalls>
 
 namespace Simulator
 {

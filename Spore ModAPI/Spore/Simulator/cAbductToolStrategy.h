@@ -20,7 +20,7 @@
 
 #include <Spore\Simulator\cDefaultBeamTool.h>
 
-#define cAbductToolStrategyPtr intrusive_ptr<Simulator::cAbductToolStrategy>
+#define cAbductToolStrategyPtr eastl::intrusive_ptr<Simulator::cAbductToolStrategy>
 
 namespace Simulator
 {

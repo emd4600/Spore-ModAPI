@@ -23,7 +23,7 @@
 
 #include <EASTL\string.h>
 
-#define ITextEditPtr intrusive_ptr<UTFWin::ITextEdit>
+#define ITextEditPtr eastl::intrusive_ptr<UTFWin::ITextEdit>
 
 namespace UTFWin
 {

@@ -59,7 +59,7 @@ namespace App
 		/* 38h */	Mutex field_38;
 		/* 68h */	int field_68;
 		/* 6Ch */	int field_6C;
-		/* 70h */	hash_map<uint32_t, list<IMessageListener*>> mListeners;
+		/* 70h */	eastl::hash_map<uint32_t, eastl::list<IMessageListener*>> mListeners;
 		/* 90h */	Mutex mListenersMutex;
 		/* C0h */	bool field_C0[6];
 	};

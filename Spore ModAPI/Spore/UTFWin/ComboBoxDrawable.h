@@ -23,7 +23,7 @@
 #include <Spore\UTFWin\ILayoutElement.h>
 #include <Spore\UTFWin\Image.h>
 
-#define IComboBoxDrawablePtr intrusive_ptr<UTFWin::IComboBoxDrawable>
+#define IComboBoxDrawablePtr eastl::intrusive_ptr<UTFWin::IComboBoxDrawable>
 
 namespace UTFWin
 {

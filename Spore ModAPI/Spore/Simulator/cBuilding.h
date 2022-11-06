@@ -27,7 +27,7 @@
 
 #include <EASTL\initializer_list.h>
 
-#define cBuildingPtr intrusive_ptr<Simulator::cBuilding>
+#define cBuildingPtr eastl::intrusive_ptr<Simulator::cBuilding>
 
 namespace Simulator
 {

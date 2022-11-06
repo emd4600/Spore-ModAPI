@@ -20,7 +20,7 @@
 
 #include <Spore\Object.h>
 
-#define cPlaceableStructurePtr intrusive_ptr<Simulator::cPlaceableStructure>
+#define cPlaceableStructurePtr eastl::intrusive_ptr<Simulator::cPlaceableStructure>
 
 namespace Simulator
 {

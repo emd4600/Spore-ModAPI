@@ -2,7 +2,7 @@
 
 #include <Spore\UTFWin\SliderDrawable.h>
 
-#define ISliderPtr intrusive_ptr<UTFWin::ISlider>
+#define ISliderPtr eastl::intrusive_ptr<UTFWin::ISlider>
 
 namespace UTFWin
 {

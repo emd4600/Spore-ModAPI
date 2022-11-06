@@ -26,7 +26,7 @@
 
 #define ModelManager (*Graphics::IModelManager::Get())
 
-#define IModelManagerPtr intrusive_ptr<Graphics::IModelManager>
+#define IModelManagerPtr eastl::intrusive_ptr<Graphics::IModelManager>
 
 namespace Graphics
 {

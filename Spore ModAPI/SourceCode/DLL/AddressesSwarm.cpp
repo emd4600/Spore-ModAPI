@@ -1,7 +1,7 @@
 #ifdef MODAPI_DLL_EXPORT
 #include "stdafx.h"
-#include <Spore\Swarm\cSwarmManager.h>
-#include <Spore\Swarm\ISwarmManager.h>
+#include <Spore\Swarm\cEffectsManager.h>
+#include <Spore\Swarm\IEffectsManager.h>
 
 namespace Swarm
 {
@@ -9,7 +9,10 @@ namespace Swarm
 	{
 		DefineAddress(GetDirectoryAndEffectIndex, SelectAddress(0xA6D920, 0xA6D730, 0xA6D750));
 	}
-
+	namespace Addresses(cEffectsManager)
+	{
+		DefineAddress(GetDirectoryAndEffectIndex, SelectAddress(0xA6D920, 0xA6D730, 0xA6D750));
+	}
 
 	namespace Addresses(ISwarmManager)
 	{

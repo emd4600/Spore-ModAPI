@@ -39,7 +39,7 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 #pragma once
 
-#define StreamChildPtr intrusive_ptr<IO::StreamChild>
+#define StreamChildPtr eastl::intrusive_ptr<IO::StreamChild>
 
 #include "IStream.h"
 

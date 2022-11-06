@@ -25,7 +25,7 @@
 #include <EASTL\string.h>
 #include <EASTL\intrusive_ptr.h>
 
-#define IBlockPtr intrusive_ptr<ArgScript::IBlock>
+#define IBlockPtr eastl::intrusive_ptr<ArgScript::IBlock>
 
 using namespace eastl;
 

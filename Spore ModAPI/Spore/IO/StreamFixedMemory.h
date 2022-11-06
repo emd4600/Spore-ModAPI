@@ -41,7 +41,7 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 #include "IStream.h"
 
-#define FixedMemoryStreamPtr intrusive_ptr<IO::FixedMemoryStream>
+#define FixedMemoryStreamPtr eastl::intrusive_ptr<IO::FixedMemoryStream>
 
 namespace IO
 {

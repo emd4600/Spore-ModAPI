@@ -21,7 +21,7 @@
 
 #include <Spore\UTFWin\Effect.h>
 
-#define IRotateEffectPtr intrusive_ptr<UTFWin::IRotateEffect>
+#define IRotateEffectPtr eastl::intrusive_ptr<UTFWin::IRotateEffect>
 
 namespace UTFWin
 {

@@ -22,6 +22,7 @@
 #include <Spore\Internal.h>
 #include <Spore\ResourceKey.h>
 #include <EASTL\intrusive_ptr.h>
+#include <EASTL\internal\thread_support.h>
 
 #include <cstddef>
 
@@ -96,7 +97,7 @@ public:
 template <class Type, class CallerType>
 inline Type* object_cast(const CallerType pObject)
 {
-	return pObject ? (Type*) pObject->Cast(Type::TYPE) : nullptr;
+	return pObject ? (Type*)pObject->Cast(Type::TYPE) : nullptr;
 }
 
 
@@ -158,23 +159,21 @@ protected:
 	int mnRefCount;
 };
 
+class RefCountTemplateAtomic
+{
+public:
+	virtual ~RefCountTemplateAtomic();
+
+	int AddRef();
+	int Release();
+
+protected:
+	int mnRefCount;
+};
+
 ///////////////////////////////////
 //// INTERNAL IMPLEMENENTATION ////
 ///////////////////////////////////
-
-inline int RefCountTemplate::AddRef()
-{
-	mnRefCount++;
-	return mnRefCount;
-}
-inline int RefCountTemplate::Release()
-{
-	if (mnRefCount-- == 0)
-	{
-		delete this;
-	}
-	return mnRefCount;
-}
 
 inline MultithreadObject::MultithreadObject()
 	: mnRefCount(0)

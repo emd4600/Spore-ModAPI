@@ -30,7 +30,7 @@
 #include <Spore\App\PropertyList.h>
 #include <Spore\RenderWare\RWMath.h>
 
-#define IModelWorldPtr intrusive_ptr<Graphics::IModelWorld>
+#define IModelWorldPtr eastl::intrusive_ptr<Graphics::IModelWorld>
 
 namespace Graphics
 {

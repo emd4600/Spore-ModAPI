@@ -20,7 +20,7 @@
 
 #include <Spore\Simulator\cToolStrategy.h>
 
-#define cDefaultAoEToolPtr intrusive_ptr<Simulator::cDefaultAoETool>
+#define cDefaultAoEToolPtr eastl::intrusive_ptr<Simulator::cDefaultAoETool>
 
 namespace Simulator
 {

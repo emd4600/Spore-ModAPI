@@ -24,7 +24,7 @@
 #include <Spore\MathUtils.h>
 #include <Spore\ResourceKey.h>
 
-#define ImagePtr intrusive_ptr<UTFWin::Image>
+#define ImagePtr eastl::intrusive_ptr<UTFWin::Image>
 
 namespace UTFWin
 {

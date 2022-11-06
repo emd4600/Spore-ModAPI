@@ -21,7 +21,7 @@
 #include <Spore\Terrain\cTerrainMap.h>
 #include <Spore\MathUtils.h>
 
-#define cTerrainMapSetPtr intrusive_ptr<Terrain::cTerrainMapSet>
+#define cTerrainMapSetPtr eastl::intrusive_ptr<Terrain::cTerrainMapSet>
 
 namespace Terrain
 {

@@ -27,7 +27,7 @@
 #include <EASTL\string.h>
 #include <EASTL\vector.h>
 
-#define cPlanetRecordPtr intrusive_ptr<Simulator::cPlanetRecord>
+#define cPlanetRecordPtr eastl::intrusive_ptr<Simulator::cPlanetRecord>
 
 namespace Simulator
 {
@@ -79,12 +79,12 @@ namespace Simulator
 		/* 34h */	int mVehicleSpecialty;  //TODO
 		/* 38h */	uint32_t mCaptureID;
 		/* 3Ch */	float mCapturePercent;
-		/* 40h */	string16 mName;
-		/* 50h */	string16 mDescription;
+		/* 40h */	eastl::string16 mName;
+		/* 50h */	eastl::string16 mDescription;
 		/* 60h */	int16_t field_60[14];
-		/* 7Ch */	vector<cBuildingData> mBuilding;
-		/* 90h */	vector<cOrnamentData> mOrnament;
-		/* A4h */	vector<cWallData> mWall;
+		/* 7Ch */	eastl::vector<cBuildingData> mBuilding;
+		/* 90h */	eastl::vector<cOrnamentData> mOrnament;
+		/* A4h */	eastl::vector<cWallData> mWall;
 		/* B8h */	uint32_t mWallStyle;
 		/* BCh */	uint32_t mLevelHandle;
 		/* C0h */	uint32_t mTextureHandle;
@@ -101,14 +101,14 @@ namespace Simulator
 
 	struct cCivData
 	{
-		/* 00h */	vector<ResourceKey> mModelKeys;
+		/* 00h */	eastl::vector<ResourceKey> mModelKeys;
 		/* 14h */	uint32_t mPoliticalID;
 		/* 18h */	uint32_t mColorID;
 		/* 1Ch */	float mWealth;
 		/* 20h */	int mNumTurrets;
 		/* 24h */	int mNumBuildings;
-		/* 28h */	vector<cVehicleData*> mVehicles;
-		/* 3Ch */	vector<cCityData*> mCities;
+		/* 28h */	eastl::vector<cVehicleData*> mVehicles;
+		/* 3Ch */	eastl::vector<cCityData*> mCities;
 	};
 	ASSERT_SIZE(cCivData, 0x50);
 
@@ -186,7 +186,7 @@ namespace Simulator
 		static void Create(PlanetID planetId, cPlanetRecordPtr& dst);
 
 	public:
-		/* 18h */	string16 mName;
+		/* 18h */	eastl::string16 mName;
 		/// The type of the planet, which determines whether it is a gas giant, asteroid belt, or regular rocky planet.
 		/* 28h */	PlanetType mType;  // -1
 		// dictates whether or not a planet is destroyed - giving this flag to a planet turns it into a ball of lava, stops you visiting it and makes it vanish completely once you go to another system. And removing this flag makes the planet normal again.
@@ -205,33 +205,32 @@ namespace Simulator
 		/* B4h */	float mTemperatureScore;  // -1.0
 		/* B8h */	float mWaterScore;  // -1.0
 		/// IDs of the plant species that inhabit this planet.
-		/* BCh */	vector<ResourceKey> mPlantSpecies;
+		/* BCh */	eastl::vector<ResourceKey> mPlantSpecies;
 		/// IDs of the animal species that inhabit this planet.
-		/* D0h */	vector<ResourceKey> mAnimalSpecies;
-		/* E4h */	vector<cCommodityNodeData*> mCommodityNodes;
-		/* F8h */	vector<int> field_F8;
+		/* D0h */	eastl::vector<ResourceKey> mAnimalSpecies;
+		/* E4h */	eastl::vector<cCommodityNodeData*> mCommodityNodes;
+		/* F8h */	eastl::vector<int> field_F8;
 		/* 10Ch */	int field_10C;  // not initialized
-		/* 110h */	vector<int> field_110;
+		/* 110h */	eastl::vector<int> field_110;
 		/* 124h */	int mNumDefenderUFOs;
 		/* 128h */	float mTimeLastBuiltUFOs;
 		/* 12Ch */	float mTimeCalledReinforcements;
 		/* 130h */	bool mbHomeWorld;
-		/* 134h */	vector<cPlanetObjectData> mPlanetObjects;
-		/* 148h */	vector<uint32_t> mTerrainStampsToRemove;
-		/* 15Ch */	vector<cCivData*> mCivData;
-		/* 170h */	vector<cTribeData*> mTribeData;
+		/* 134h */	eastl::vector<cPlanetObjectData> mPlanetObjects;
+		/* 148h */	eastl::vector<uint32_t> mTerrainStampsToRemove;
+		/* 15Ch */	eastl::vector<cCivData*> mCivData;
+		/* 170h */	eastl::vector<cTribeData*> mTribeData;
 		/* 184h */	PlanetID mKey;
 		/* 188h */	ResourceKey field_188;
 		/* 194h */	TechLevel mTechLevel;
 		/* 198h */	ResourceKey mSpiceGen;
 		/* 1A4h */	ResourceKey mGeneratedTerrainKey;
 	};
+	ASSERT_SIZE(cPlanetRecord, 0x1B0);
 
 	/////////////////////////////////
 	//// INTERNAL IMPLEMENTATION ////
 	/////////////////////////////////
-
-	static_assert(sizeof(cPlanetRecord) == 0x1B0, "sizeof(cPlanetRecord) != 1B0h");
 
 	namespace Addresses(cPlanetRecord)
 	{

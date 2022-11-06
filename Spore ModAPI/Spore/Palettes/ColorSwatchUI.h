@@ -24,7 +24,7 @@
 #include <Spore\Object.h>
 #include <Spore\Clock.h>
 
-#define ColorSwatchUIPtr intrusive_ptr<Palettes::ColorSwatchUI>
+#define ColorSwatchUIPtr eastl::intrusive_ptr<Palettes::ColorSwatchUI>
 
 namespace Palettes
 {

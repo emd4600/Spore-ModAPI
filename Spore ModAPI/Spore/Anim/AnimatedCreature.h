@@ -34,7 +34,7 @@
 
 // vftable 58h: GetCurrentAnimationID?
 
-#define AnimatedCreaturePtr intrusive_ptr<Anim::AnimatedCreature>
+#define AnimatedCreaturePtr eastl::intrusive_ptr<Anim::AnimatedCreature>
 
 namespace Anim
 {

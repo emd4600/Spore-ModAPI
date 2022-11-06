@@ -21,7 +21,7 @@
 
 #include <Spore\UTFWin\Effect.h>
 
-#define IGlideEffectPtr intrusive_ptr<UTFWin::IGlideEffect>
+#define IGlideEffectPtr eastl::intrusive_ptr<UTFWin::IGlideEffect>
 
 namespace UTFWin
 {

@@ -26,7 +26,7 @@
 #include <Spore\MathUtils.h>
 #include <EASTL\string.h>
 
-#define cCelestialBodyPtr intrusive_ptr<Simulator::cCelestialBody>
+#define cCelestialBodyPtr eastl::intrusive_ptr<Simulator::cCelestialBody>
 
 namespace Simulator
 {

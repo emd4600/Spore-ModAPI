@@ -24,7 +24,7 @@
 #include <Spore\Object.h>
 #include <Spore\Palettes\PalettePage.h>
 
-#define PaletteCategoryPtr intrusive_ptr<Palettes::PaletteCategory>
+#define PaletteCategoryPtr eastl::intrusive_ptr<Palettes::PaletteCategory>
 
 namespace Palettes {
 

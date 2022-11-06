@@ -26,7 +26,7 @@
 #include <Spore\Simulator\SimulatorEnums.h>
 #include <Spore\Simulator\ISimulatorSerializable.h>
 
-#define cSpaceInventoryItemPtr intrusive_ptr<Simulator::cSpaceInventoryItem>
+#define cSpaceInventoryItemPtr eastl::intrusive_ptr<Simulator::cSpaceInventoryItem>
 
 namespace Simulator
 {

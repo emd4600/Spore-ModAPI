@@ -22,26 +22,21 @@
 #include "VisualEffectBlock.h"
 #include <EASTL\vector.h>
 
-using namespace eastl;
-
 namespace Swarm
 {
-	namespace Components
+	struct cVisualEffectDescription
 	{
-		struct cVisualEffectDescription
-		{
-			/* 00h */	int flags;
-			/* 04h */	int componentAppFlagsMask;
-			/* 08h */	unsigned long notifyMessageID;
-			/* 0Ch */	float screenSizeRange[2];
-			/* 14h */	float cursorActiveDistance;
-			/* 18h */	char cursorButton;
-			/* 1Ch */	vector<float> lodDistances;
-			/* 30h */	float extendedLodWeights[3];
-			/* 3Ch */	float field_3C;
-			/* 40h */	int seed;
-			/* 44h */	vector<VisualEffectBlock> blocks;
-		};
-		ASSERT_SIZE(cVisualEffectDescription, 0x58);
-	}
+		/* 00h */	int flags;
+		/* 04h */	int componentAppFlagsMask;
+		/* 08h */	unsigned long notifyMessageID;
+		/* 0Ch */	float screenSizeRange[2];
+		/* 14h */	float cursorActiveDistance;
+		/* 18h */	char cursorButton;
+		/* 1Ch */	eastl::vector<float> lodDistances;
+		/* 30h */	float extendedLodWeights[3];
+		/* 3Ch */	float field_3C;
+		/* 40h */	int seed;
+		/* 44h */	eastl::vector<Components::VisualEffectBlock> blocks;
+	};
+	ASSERT_SIZE(cVisualEffectDescription, 0x58);
 }

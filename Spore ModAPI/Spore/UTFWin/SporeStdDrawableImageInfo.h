@@ -25,7 +25,7 @@
 #include <Spore\MathUtils.h>
 #include <Spore\Object.h>
 
-#define SporeStdDrawableImageInfoPtr intrusive_ptr<UTFWin::SporeStdDrawableImageInfo>
+#define SporeStdDrawableImageInfoPtr eastl::intrusive_ptr<UTFWin::SporeStdDrawableImageInfo>
 
 using namespace Math;
 

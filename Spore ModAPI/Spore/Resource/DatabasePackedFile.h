@@ -32,7 +32,7 @@
 #include <EASTL\string.h>
 #include <EASTL\map.h>
 
-#define DatabasePackedFilePtr intrusive_ptr<Resource::DatabasePackedFile>
+#define DatabasePackedFilePtr eastl::intrusive_ptr<Resource::DatabasePackedFile>
 
 using namespace eastl;
 

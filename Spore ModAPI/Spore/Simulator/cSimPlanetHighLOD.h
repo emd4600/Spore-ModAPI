@@ -5,7 +5,7 @@
 #include <Spore\Simulator\cCity.h>
 #include <Spore\MathUtils.h>
 
-#define cSimPlanetHighLODPtr intrusive_ptr<Simulator::cSimPlanetHighLOD>
+#define cSimPlanetHighLODPtr eastl::intrusive_ptr<Simulator::cSimPlanetHighLOD>
 
 namespace Simulator
 {

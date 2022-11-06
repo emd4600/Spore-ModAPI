@@ -29,11 +29,11 @@
 #include <Spore\Transform.h>
 #include <Spore\Swarm\IVisualEffect.h>
 #include <Spore\Graphics\cMaterialInfo.h>
-#include <Spore\Graphics\ModelMesh.h>
+#include <Spore\Graphics\cModelInstance.h>
 #include <Spore\Graphics\cModelInstanceAnimations.h>
 
-#define ModelPtr intrusive_ptr<Graphics::Model>
-#define cMWModelInternalPtr intrusive_ptr<Graphics::cMWModelInternal>
+#define ModelPtr eastl::intrusive_ptr<Graphics::Model>
+#define cMWModelInternalPtr eastl::intrusive_ptr<Graphics::cMWModelInternal>
 
 using namespace eastl;
 
@@ -143,12 +143,9 @@ namespace Graphics
 			/* 10h */	Vector3 lightOffset;
 		};
 
-		// The object, at 30h, has vector<Material*>
-		// this objects have the pointers to mesh, etc
-		// constructor at sub_741AD0
-		/* 9Ch */	ModelMeshPtr mMeshLods[4];
-		/* ACh */	ModelMeshPtr mMeshHull;
-		/* B0h */	ModelMeshPtr mMeshLodHi;
+		/* 9Ch */	cModelInstancePtr mMeshLods[4];
+		/* ACh */	cModelInstancePtr mMeshHull;
+		/* B0h */	cModelInstancePtr mMeshLodHi;
 		/* B4h */	cModelInstanceAnimationsPtr mAnimationLods[4];
 		/* C4h */	cModelInstanceAnimationsPtr mAnimationHull;
 		/* C8h */	cModelInstanceAnimationsPtr mAnimationLodHi;

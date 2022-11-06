@@ -22,7 +22,7 @@
 #include <EASTL\vector.h>
 #include <EASTL\map.h>
 
-#define cBehaviorBasePtr intrusive_ptr<Simulator::cBehaviorBase>
+#define cBehaviorBasePtr eastl::intrusive_ptr<Simulator::cBehaviorBase>
 
 using namespace eastl;
 

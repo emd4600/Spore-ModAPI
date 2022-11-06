@@ -6,7 +6,7 @@
 #include <Spore\Anim\AnimatedCreature.h>
 #include <Spore\Object.h>
 
-#define IAnimWorldPtr intrusive_ptr<Anim::IAnimWorld>
+#define IAnimWorldPtr eastl::intrusive_ptr<Anim::IAnimWorld>
 
 namespace Anim
 {

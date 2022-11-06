@@ -22,7 +22,7 @@
 #include <Spore\UTFWin\UTFWinObject.h>
 #include <Spore\UTFWin\Serialization.h>
 
-#define ILayoutElementPtr intrusive_ptr<UTFWin::ILayoutElement>
+#define ILayoutElementPtr eastl::intrusive_ptr<UTFWin::ILayoutElement>
 
 namespace UTFWin
 {

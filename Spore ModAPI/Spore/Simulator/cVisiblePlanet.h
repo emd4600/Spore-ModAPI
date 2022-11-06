@@ -21,7 +21,7 @@
 #include <Spore\Simulator\cSpatialObject.h>
 #include <Spore\Simulator\cGameData.h>
 
-#define cVisiblePlanetPtr intrusive_ptr<Simulator::cVisiblePlanet>
+#define cVisiblePlanetPtr eastl::intrusive_ptr<Simulator::cVisiblePlanet>
 
 namespace Simulator
 {

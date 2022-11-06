@@ -4,7 +4,7 @@
 #include <Spore\UTFWin\ScrollBarDrawable.h>
 #include <EASTL\string.h>
 
-#define IComboBoxPtr intrusive_ptr<UTFWin::IComboBox>
+#define IComboBoxPtr eastl::intrusive_ptr<UTFWin::IComboBox>
 
 namespace UTFWin
 {

@@ -21,7 +21,7 @@
 
 #include <Spore\ArgScript\IParser.h>
 
-#define ICommandPtr intrusive_ptr<ArgScript::ICommand>
+#define ICommandPtr eastl::intrusive_ptr<ArgScript::ICommand>
 
 namespace ArgScript
 {

@@ -21,7 +21,7 @@
 
 #include <Spore\UTFWin\IWinProc.h>
 
-#define ILayoutStylePtr intrusive_ptr<UTFWin::ILayoutStyle>
+#define ILayoutStylePtr eastl::intrusive_ptr<UTFWin::ILayoutStyle>
 
 namespace UTFWin
 {

@@ -56,31 +56,14 @@ namespace Graphics
 
 
 	cMaterialInfo::~cMaterialInfo() {
-		for (auto t : field_8) {
+		for (auto t : mData) {
 			if (t) delete t;
 		}
 	}
 
-	int cMaterialInfo::AddRef()
-	{
-		return eastl::Internal::atomic_increment(&mnRefCount);
-	}
-
-	int cMaterialInfo::Release()
-	{
-		int refCount = eastl::Internal::atomic_decrement(&mnRefCount);
-		if (refCount == 0)
-		{
-			mnRefCount = 1;
-			delete this;
-		}
-		return refCount;
-	}
-
-	ModelMesh::ModelMesh()
-		: mnRefCount(0)
-		, mMeshes()
-		, field_1C()
+	cModelInstance::cModelInstance()
+		: mMeshes()
+		, mBoneRanges()
 		, mMaterials()
 		, mMaterialInfos()
 		, mRegionMaterialInfos()
@@ -99,7 +82,7 @@ namespace Graphics
 	{
 	}
 
-	ModelMesh::~ModelMesh() {
+	cModelInstance::~cModelInstance() {
 		if (field_D0) {
 			if (*field_D0) {
 				delete *field_D0;

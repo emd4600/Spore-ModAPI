@@ -22,7 +22,7 @@
 // it contains useful enums for handling events
 #include <Spore\UTFWin\Message.h>
 
-#define IGameModePtr intrusive_ptr<App::IGameMode>
+#define IGameModePtr eastl::intrusive_ptr<App::IGameMode>
 
 namespace App
 {

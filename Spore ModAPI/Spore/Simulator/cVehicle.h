@@ -28,7 +28,7 @@
 #include <Spore\Simulator\cHitSphere.h>
 #include <Spore\CommonIDs.h>
 
-#define cVehiclePtr intrusive_ptr<Simulator::cVehicle>
+#define cVehiclePtr eastl::intrusive_ptr<Simulator::cVehicle>
 
 namespace Simulator
 {

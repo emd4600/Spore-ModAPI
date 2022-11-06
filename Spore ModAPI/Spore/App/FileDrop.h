@@ -4,7 +4,7 @@
 #include <EASTL\string.h>
 #include <EASTL\intrusive_ptr.h>
 
-#define FileDropMessagePtr intrusive_ptr<App::FileDropMessage>
+#define FileDropMessagePtr eastl::intrusive_ptr<App::FileDropMessage>
 
 namespace App
 {

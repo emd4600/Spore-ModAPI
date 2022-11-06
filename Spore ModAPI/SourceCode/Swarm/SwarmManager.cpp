@@ -18,13 +18,13 @@
 * along with this program.  If not, see <http://www.gnu.org/licenses/>.
 ****************************************************************************/
 
-#include <Spore\Swarm\ISwarmManager.h>
-#include <Spore\Swarm\cSwarmManager.h>
+#include <Spore\Swarm\IEffectsManager.h>
+#include <Spore\Swarm\cEffectsManager.h>
 
 namespace Swarm
 {
-	auto_STATIC_METHOD_(ISwarmManager, ISwarmManager*, Get);
+	auto_STATIC_METHOD_(IEffectsManager, IEffectsManager*, Get);
 
-	auto_METHOD(cSwarmManager, int, GetDirectoryAndEffectIndex, Args(uint32_t arg0, uint32_t arg1), Args(arg0, arg1));
+	auto_METHOD(cEffectsManager, int, GetDirectoryAndEffectIndex, Args(uint32_t arg0, uint32_t arg1), Args(arg0, arg1));
 }
 #endif

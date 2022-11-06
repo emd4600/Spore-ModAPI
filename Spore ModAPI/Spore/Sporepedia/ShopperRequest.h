@@ -48,13 +48,12 @@ namespace Sporepedia
 		/// Pointer to an object that will be called when the user accepts the selection.
 		/* 38h */	IShopperListener* pListener;
 		/* 3Ch */	IMultiShopperListener* pMultiListener;
-		/* 40h */	intrusive_ptr<Editors::EditorRequest> pEditorRequest;
-		/* 44h */	intrusive_ptr<Editors::EditorRequest> field_44;
+		/* 40h */	EditorRequestPtr pEditorRequest;
+		/* 44h */	EditorRequestPtr field_44;
 	};
+	ASSERT_SIZE(ShopperRequest, 0x48);
 
 	namespace Addresses(ShopperRequest) {
 		DeclareAddress(Show);
 	}
-
-	static_assert(sizeof(ShopperRequest) == 0x48, "sizeof(ShopperRequest)");
 }

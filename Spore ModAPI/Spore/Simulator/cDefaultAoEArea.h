@@ -23,7 +23,7 @@
 #include <Spore\Simulator\cProjectile.h>
 #include <Spore\Simulator\cGonzagoTimer.h>
 
-#define cDefaultAoEAreaPtr intrusive_ptr<Simulator::cDefaultAoEArea>
+#define cDefaultAoEAreaPtr eastl::intrusive_ptr<Simulator::cDefaultAoEArea>
 
 namespace Simulator
 {

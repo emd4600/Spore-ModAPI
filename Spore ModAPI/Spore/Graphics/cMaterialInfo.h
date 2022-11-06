@@ -4,23 +4,19 @@
 #include <Spore\Graphics\cMITextureSet.h>
 #include <EASTL\vector.h>
 
-#define cMaterialInfoPtr intrusive_ptr<Graphics::cMaterialInfo>
+#define cMaterialInfoPtr eastl::intrusive_ptr<Graphics::cMaterialInfo>
 
 namespace Graphics
 {
 	class cMaterialInfo
+		: public RefCountTemplateAtomic
 	{
 	public:
 		virtual ~cMaterialInfo();
 
-		int AddRef();
-		int Release();
-
-	protected:
-		int mnRefCount;
-
 	public:
-		vector<cMITextureSet*> field_8;
+		//TODO this is actually just generic data, can be anything
+		vector<cMITextureSet*> mData;
 	};
 
 	ASSERT_SIZE(cMaterialInfo, 0x1C);

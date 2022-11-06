@@ -20,7 +20,7 @@
 
 #include <Spore\Simulator\cBehaviorBase.h>
 
-#define cBehaviorListPtr intrusive_ptr<Simulator::cBehaviorList>
+#define cBehaviorListPtr eastl::intrusive_ptr<Simulator::cBehaviorList>
 
 namespace Simulator
 {

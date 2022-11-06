@@ -20,8 +20,9 @@
 #pragma once
 
 #include <Spore\IO\IStream.h>
-#include <Spore\Swarm\Components\IEffectComponent.h>
+#include <Spore\Swarm\IComponent.h>
 #include <Spore\Swarm\Components\VisualEffect.h>
+#include <Spore\Swarm\Components\cDescription.h>
 #include <Spore\ResourceID.h>
 
 #include <EASTL\vector.h>
@@ -29,7 +30,7 @@
 #include <EASTL\hash_map.h>
 #include <EASTL\intrusive_ptr.h>
 
-#define EffectDirectoryPtr intrusive_ptr<Swarm::EffectDirectory>
+#define EffectDirectoryPtr eastl::intrusive_ptr<Swarm::EffectDirectory>
 
 using namespace eastl;
 
@@ -94,40 +95,40 @@ namespace Swarm
 		/* 14h */	virtual void func14h() = 0;
 
 		// returns the index
-		/* 18h */	virtual int AddVisualEffect(Components::VisualEffect* effect) = 0;
+		/* 18h */	virtual int AddVisualEffect(cVisualEffectDescription* effect) = 0;
 
 		///
-		/// Adds the given IEffectComponent to this directory. The component will be stored in a list
+		/// Adds the given IComponent to this directory. The component will be stored in a list
 		/// of the specified type.
 		/// @param type The type of the component, in the enum Swarm::kEffectType... values.
-		/// @param pComponent The IEffectComponent to add.
+		/// @param pComponent The IComponent to add.
 		/// @returns The index of the component in the list of the appropiate type.
 		///
-		/* 1Ch */	virtual int AddComponent(int type, Components::IEffectComponent* pComponent) = 0;
+		/* 1Ch */	virtual int AddComponent(int type, IComponent* pComponent) = 0;
 
 		///
-		/// Gets the IEffectComponent that is in the given index in the list of the specified type.
+		/// Gets the IComponent that is in the given index in the list of the specified type.
 		/// @param index The index of the component (e.g. the one returned by AddComponent()).
 		/// @param type The type of the component, in the enum Swarm::kEffectType... values.
-		/// @returns The IEffectComponent at that index.
+		/// @returns The IComponent at that index.
 		///
-		/* 20h */	virtual Components::IEffectComponent* GetComponent(int index, int type) = 0;
+		/* 20h */	virtual IComponent* GetComponent(int index, int type) = 0;
 
 		///
-		/// Adds the given IEffectDescription to this directory. The component will be stored in a list
+		/// Adds the given cDescription to this directory. The component will be stored in a list
 		/// of the specified type.
 		/// @param type The type of the component, in the enum Swarm::kDescType... values.
-		/// @param pDescription The IEffectDescription to add.
+		/// @param pDescription The cDescription to add.
 		/// @returns The index of the component in the list of the appropiate type.
 		///
-		/* 24h */	virtual int AddDescription(int type, Components::IEffectDescription* pDescription) = 0;
+		/* 24h */	virtual int AddDescription(int type, cDescription* pDescription) = 0;
 		///
-		/// Gets the IEffectDescription that is in the given index in the list of the specified type.
+		/// Gets the cDescription that is in the given index in the list of the specified type.
 		/// @param index The index of the component (e.g. the one returned by AddDescription()).
 		/// @param type The type of the component, in the enum Swarm::kDescType... values.
-		/// @returns The IEffectDescription at that index.
+		/// @returns The cDescription at that index.
 		///
-		/* 28h */	virtual Components::IEffectDescription* GetDescription(int index, int type) = 0;
+		/* 28h */	virtual cDescription* GetDescription(int index, int type) = 0;
 
 		// Get resource names?
 		/* 2Ch */	virtual size_t func2Ch(int index, int pDst, int) = 0;
@@ -169,24 +170,25 @@ namespace Swarm
 		///
 		/* 40h */	virtual void GetEffectNames(vector<string>& dst, const char* pPattern = nullptr) = 0;
 
-		Components::VisualEffect* GetVisualEffect(size_t index);
+		cVisualEffectDescription* GetVisualEffect(size_t index);
 
 		int GetEffectIndex(uint32_t instanceID, uint32_t groupID);
 
 	protected:
 		/* 08h */	int mnRefCount;
-		/* 0Ch */	vector<vector<intrusive_ptr<Components::IEffectComponent>>> mComponents;
-		/* 20h */	vector<vector<intrusive_ptr<Components::IEffectDescription>>> mDescriptions;
-		/* 34h */	vector<Components::VisualEffect> mVisualEffects;
+		/* 0Ch */	vector<vector<intrusive_ptr<IComponent>>> mComponents;
+		/* 20h */	vector<vector<intrusive_ptr<cDescription>>> mDescriptions;
+		/* 34h */	vector<cVisualEffectDescription> mVisualEffects;
 		/* 48h */	hash_map<string, size_t> mEffectNames;  // maps a string to the VisualEffect index
 		// /* 68h */	hash_map<uint32_t, int> mEffectIDs;  // maps an ID to the VisualEffect index
 		/* 68h */	hash_map<ResourceID, size_t> mEffectIDs;  // maps an ID to the VisualEffect index
 		/* 88h */	vector<ResourceID> mImports;
 	};
+	ASSERT_SIZE(EffectDirectory, 0x9C);
 
 	static_assert(sizeof(EffectDirectory) == 0x9C, "sizeof(EffectDirectory) != 9Ch");
 
-	inline Components::VisualEffect* EffectDirectory::GetVisualEffect(size_t index)
+	inline cVisualEffectDescription* EffectDirectory::GetVisualEffect(size_t index)
 	{
 		if (index >= mVisualEffects.size()) return nullptr;
 		return &mVisualEffects[index];

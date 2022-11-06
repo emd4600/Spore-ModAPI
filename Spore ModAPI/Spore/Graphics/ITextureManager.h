@@ -29,7 +29,7 @@
 /// Easy access to Graphics::ITextureManager
 #define TextureManager (*Graphics::ITextureManager::Get())
 
-#define ITextureManagerPtr intrusive_ptr<Graphics::ITextureManager>
+#define ITextureManagerPtr eastl::intrusive_ptr<Graphics::ITextureManager>
 
 namespace Graphics
 {

@@ -21,7 +21,7 @@
 #include <Spore\Simulator\cGameData.h>
 #include <Spore\Simulator\cSpatialObject.h>
 
-#define cGameTerrainCursorPtr intrusive_ptr<Simulator::cGameTerrainCursor>
+#define cGameTerrainCursorPtr eastl::intrusive_ptr<Simulator::cGameTerrainCursor>
 
 namespace Simulator
 {

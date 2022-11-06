@@ -27,7 +27,7 @@ using namespace eastl;
 /// Access the active property manager.
 #define PropManager (*App::IPropManager::Get())
 
-#define IPropManagerPtr intrusive_ptr<App::IPropManager>
+#define IPropManagerPtr eastl::intrusive_ptr<App::IPropManager>
 
 namespace App
 {

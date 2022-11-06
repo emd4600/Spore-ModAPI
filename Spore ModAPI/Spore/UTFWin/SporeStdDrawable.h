@@ -22,7 +22,7 @@
 #include <Spore\UTFWin\SporeStdDrawableImageInfo.h>
 #include <Spore\UTFWin\StdDrawable.h>
 
-#define SporeStdDrawablePtr intrusive_ptr<UTFWin::SporeStdDrawable>
+#define SporeStdDrawablePtr eastl::intrusive_ptr<UTFWin::SporeStdDrawable>
 
 namespace UTFWin
 {

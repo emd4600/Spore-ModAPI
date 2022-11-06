@@ -24,7 +24,7 @@
 #include <Spore\Simulator\cBehaviorList.h>
 #include <Spore\Simulator\cGonzagoTimer.h>
 
-#define cDefaultBeamProjectilePtr intrusive_ptr<Simulator::cDefaultBeamProjectile>
+#define cDefaultBeamProjectilePtr eastl::intrusive_ptr<Simulator::cDefaultBeamProjectile>
 
 namespace Simulator
 {

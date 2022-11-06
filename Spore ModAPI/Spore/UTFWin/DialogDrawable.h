@@ -23,7 +23,7 @@
 #include <Spore\UTFWin\ILayoutElement.h>
 #include <Spore\UTFWin\Image.h>
 
-#define IDialogDrawablePtr intrusive_ptr<UTFWin::IDialogDrawable>
+#define IDialogDrawablePtr eastl::intrusive_ptr<UTFWin::IDialogDrawable>
 
 namespace UTFWin
 {

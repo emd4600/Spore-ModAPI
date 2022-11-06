@@ -23,7 +23,7 @@
 #include <Spore\App\cViewer.h>
 #include <Spore\Transform.h>
 
-#define ILightingWorldPtr intrusive_ptr<Graphics::ILightingWorld>
+#define ILightingWorldPtr eastl::intrusive_ptr<Graphics::ILightingWorld>
 
 namespace Graphics
 {

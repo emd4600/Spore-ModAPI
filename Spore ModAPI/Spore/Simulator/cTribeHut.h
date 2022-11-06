@@ -6,7 +6,7 @@
 #include <Spore\Simulator\cCombatant.h>
 #include <Spore\Simulator\cHitSphere.h>
 
-#define cTribeHutPtr intrusive_ptr<Simulator::cTribeHut>
+#define cTribeHutPtr eastl::intrusive_ptr<Simulator::cTribeHut>
 
 namespace Simulator
 {

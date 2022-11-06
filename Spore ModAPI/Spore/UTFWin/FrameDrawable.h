@@ -22,7 +22,7 @@
 #include <Spore\UTFWin\ILayoutElement.h>
 #include <Spore\UTFWin\IDrawable.h>
 
-#define FrameDrawablePtr intrusive_ptr<UTFWin::FrameDrawable>
+#define FrameDrawablePtr eastl::intrusive_ptr<UTFWin::FrameDrawable>
 
 namespace UTFWin
 {

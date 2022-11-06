@@ -30,7 +30,7 @@
 #include <Spore\App\IMessageListener.h>
 #include <Spore\CommonIDs.h>
 
-#define cCityPtr intrusive_ptr<Simulator::cCity>
+#define cCityPtr eastl::intrusive_ptr<Simulator::cCity>
 
 namespace Simulator
 {

@@ -31,7 +31,7 @@
 // Access the active game camera manager.
 #define CameraManager (*App::IGameModeManager::Get()->GetCameraManager())
 
-#define IGameModeManagerPtr intrusive_ptr<App::IGameModeManager>
+#define IGameModeManagerPtr eastl::intrusive_ptr<App::IGameModeManager>
 
 namespace App
 {

@@ -21,7 +21,7 @@
 #include <Spore\Simulator\cSpatialObject.h>
 #include <EASTL\fixed_vector.h>
 
-#define cLocomotiveObjectPtr intrusive_ptr<Simulator::cLocomotiveObject>
+#define cLocomotiveObjectPtr eastl::intrusive_ptr<Simulator::cLocomotiveObject>
 
 namespace Simulator
 {

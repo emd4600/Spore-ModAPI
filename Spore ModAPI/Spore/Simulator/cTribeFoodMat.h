@@ -3,7 +3,7 @@
 #include <Spore\Simulator\cGameData.h>
 #include <Spore\Simulator\cSpatialObject.h>
 
-#define cTribeFoodMatPtr intrusive_ptr<Simulator::cTribeFoodMat>
+#define cTribeFoodMatPtr eastl::intrusive_ptr<Simulator::cTribeFoodMat>
 
 namespace Simulator
 {

@@ -25,7 +25,8 @@
 #include <Spore\Simulator\cGonzagoTimer.h>
 #include <EASTL\functional.h>
 
-#define IMessageListenerPtr intrusive_ptr<App::IMessageListener>
+#define IMessageListenerPtr eastl::intrusive_ptr<App::IMessageListener>
+#define IUpdatablePtr eastl::intrusive_ptr<App::IUpdatable>
 
 namespace App
 {
@@ -135,7 +136,7 @@ namespace App
 
 	protected:
 		VoidFunction_T mFunction;
-		intrusive_ptr<IUpdatable> mpUpdatable;
+		IUpdatablePtr mpUpdatable;
 	};
 
 	/// A message listener that, listening to Update messages, executes the given task after a certain

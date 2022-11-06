@@ -25,7 +25,7 @@
 #include <Spore\App\IMessageListener.h>
 #include <Spore\Input.h>
 
-#define EditorCameraPtr intrusive_ptr<Editors::EditorCamera>
+#define EditorCameraPtr eastl::intrusive_ptr<Editors::EditorCamera>
 
 namespace Editors
 {

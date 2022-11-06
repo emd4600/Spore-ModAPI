@@ -22,7 +22,7 @@
 #include <EASTL\intrusive_ptr.h>
 #include <Spore\Internal.h>
 #include <Spore\Graphics\ILayer.h>
-#include <Spore\Graphics\LambdaRenderable.h>
+#include <Spore\Graphics\LambdaLayer.h>
 #include <Spore\App\cJob.h>
 
 
@@ -270,9 +270,9 @@ namespace Graphics
 		/// @param renderFunction Renderable function, can be a lambdas
 		/// @param layerIndex The index of the layer the given object renders.
 		/// @param flags
-		inline void RegisterLayer(LambdaRenderable::Render_t renderFunction, int layerIndex, int flags = 0)
+		inline void RegisterLayer(LambdaLayer::Render_t renderFunction, int layerIndex, int flags = 0)
 		{
-			RegisterLayer(new LambdaRenderable(renderFunction), layerIndex, flags);
+			RegisterLayer(new LambdaLayer(renderFunction), layerIndex, flags);
 		}
 
 		///

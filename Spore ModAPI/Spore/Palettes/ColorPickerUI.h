@@ -24,7 +24,7 @@
 #include <Spore\UTFWin\IWindow.h>
 #include <Spore\Palettes\ColorSwatchUI.h>
 
-#define ColorPickerUIPtr intrusive_ptr<Palettes::ColorPickerUI>
+#define ColorPickerUIPtr eastl::intrusive_ptr<Palettes::ColorPickerUI>
 
 namespace Palettes
 {

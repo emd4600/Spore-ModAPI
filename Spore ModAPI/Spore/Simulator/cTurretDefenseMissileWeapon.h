@@ -20,7 +20,7 @@
 
 #include <Spore\Simulator\cToolStrategy.h>
 
-#define cTurretDefenseMissileWeaponPtr intrusive_ptr<Simulator::cTurretDefenseMissileWeapon>
+#define cTurretDefenseMissileWeaponPtr eastl::intrusive_ptr<Simulator::cTurretDefenseMissileWeapon>
 
 namespace Simulator
 {

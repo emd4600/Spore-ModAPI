@@ -28,6 +28,10 @@
 /// Access the active message manager.
 #define MessageManager (*App::IMessageManager::Get())
 
+#define ScheduledTaskListenerPtr eastl::intrusive_ptr<App::ScheduledTaskListener>
+#define SimScheduledTaskListenerPtr eastl::intrusive_ptr<Simulator::ScheduledTaskListener>
+#define UpdateMessageListenerPtr eastl::intrusive_ptr<App::UpdateMessageListener>
+
 namespace App
 {
 	using namespace eastl;
@@ -254,7 +258,7 @@ namespace App
 	///
 	/// @param function A void function with no parameters, that will be executed every frame.
 	/// @param scheduleTime The time that has to pass, in seconds, since the task is scheduled for it to be executed.
-	inline intrusive_ptr<ScheduledTaskListener> ScheduleTask(const VoidFunction_T& function, float scheduleTime) {
+	inline ScheduledTaskListenerPtr ScheduleTask(const VoidFunction_T& function, float scheduleTime) {
 		auto listener = new ScheduledTaskListener(function, scheduleTime, 0.0f);
 		MessageManager.AddListener(listener, kMsgAppUpdate);
 		listener->StartClock();
@@ -276,7 +280,7 @@ namespace App
 	/// @param method A void method with no parameters, that will be executed every frame.
 	/// @param scheduleTime The time that has to pass, in seconds, since the task is scheduled for it to be executed.
 	template <class T>
-	inline intrusive_ptr<ScheduledTaskListener> ScheduleTask(T* object, VoidMethod_T<T> method, float scheduleTime) {
+	inline ScheduledTaskListenerPtr ScheduleTask(T* object, VoidMethod_T<T> method, float scheduleTime) {
 		return ScheduleTask([object, method]() {
 			(object->*method)();
 		}, scheduleTime);
@@ -297,7 +301,7 @@ namespace App
 	/// @param function A void function with no parameters, that will be executed every frame.
 	/// @param scheduleTime The time that has to pass, in seconds, since the task is scheduled for it to be executed.
 	/// @param repeatRate How many seconds have to pass between every execution of the task.
-	inline intrusive_ptr<ScheduledTaskListener> ScheduleRepeatedTask(const VoidFunction_T& function, float scheduleTime, float repeatRate) {
+	inline ScheduledTaskListenerPtr ScheduleRepeatedTask(const VoidFunction_T& function, float scheduleTime, float repeatRate) {
 		auto listener = new ScheduledTaskListener(function, scheduleTime, repeatRate);
 		MessageManager.AddListener(listener, kMsgAppUpdate);
 		listener->StartClock();
@@ -321,7 +325,7 @@ namespace App
 	/// @param scheduleTime The time that has to pass, in seconds, since the task is scheduled for it to be executed.
 	/// @param repeatRate How many seconds have to pass between every execution of the task.
 	template <class T>
-	inline intrusive_ptr<ScheduledTaskListener> ScheduleRepeatedTask(T* object, VoidMethod_T<T> method, float scheduleTime, float repeatRate) {
+	inline ScheduledTaskListenerPtr ScheduleRepeatedTask(T* object, VoidMethod_T<T> method, float scheduleTime, float repeatRate) {
 		return ScheduleRepeatedTask([object, method]() {
 			(object->*method)();
 		}, scheduleTime, repeatRate);
@@ -331,7 +335,7 @@ namespace App
 		return MessageManager.RemoveListener(updateListener.get(), kMsgAppUpdate);
 	}
 
-	inline bool RemoveScheduledTask(intrusive_ptr<ScheduledTaskListener>& taskListener) {
+	inline bool RemoveScheduledTask(ScheduledTaskListenerPtr& taskListener) {
 		return MessageManager.RemoveListener(taskListener.get(), kMsgAppUpdate);
 	}
 
@@ -361,7 +365,7 @@ namespace Simulator
 	///
 	/// @param function A void function with no parameters, that will be executed every frame.
 	/// @param scheduleTime The time that has to pass, in seconds, since the task is scheduled for it to be executed.
-	inline intrusive_ptr<ScheduledTaskListener> ScheduleTask(const App::VoidFunction_T& function, float scheduleTime) {
+	inline SimScheduledTaskListenerPtr ScheduleTask(const App::VoidFunction_T& function, float scheduleTime) {
 		auto listener = new ScheduledTaskListener(function, scheduleTime, 0.0f);
 		MessageManager.AddListener(listener, App::kMsgAppUpdate);
 		listener->StartClock();
@@ -383,7 +387,7 @@ namespace Simulator
 	/// @param method A void method with no parameters, that will be executed every frame.
 	/// @param scheduleTime The time that has to pass, in seconds, since the task is scheduled for it to be executed.
 	template <class T>
-	inline intrusive_ptr<ScheduledTaskListener> ScheduleTask(T* object, App::VoidMethod_T<T> method, float scheduleTime) {
+	inline ScheduledTaskListenerPtr ScheduleTask(T* object, App::VoidMethod_T<T> method, float scheduleTime) {
 		return ScheduleTask([object, method]() {
 			(object->*method)();
 		}, scheduleTime);
@@ -404,7 +408,7 @@ namespace Simulator
 	/// @param function A void function with no parameters, that will be executed every frame.
 	/// @param scheduleTime The time that has to pass, in seconds, since the task is scheduled for it to be executed.
 	/// @param repeatRate How many seconds have to pass between every execution of the task.
-	inline intrusive_ptr<ScheduledTaskListener> ScheduleRepeatedTask(const App::VoidFunction_T& function, float scheduleTime, float repeatRate) {
+	inline SimScheduledTaskListenerPtr ScheduleRepeatedTask(const App::VoidFunction_T& function, float scheduleTime, float repeatRate) {
 		auto listener = new ScheduledTaskListener(function, scheduleTime, repeatRate);
 		MessageManager.AddListener(listener, App::kMsgAppUpdate);
 		listener->StartClock();
@@ -428,13 +432,13 @@ namespace Simulator
 	/// @param scheduleTime The time that has to pass, in seconds, since the task is scheduled for it to be executed.
 	/// @param repeatRate How many seconds have to pass between every execution of the task.
 	template <class T>
-	inline intrusive_ptr<ScheduledTaskListener> ScheduleRepeatedTask(T* object, App::VoidMethod_T<T> method, float scheduleTime, float repeatRate) {
+	inline ScheduledTaskListenerPtr ScheduleRepeatedTask(T* object, App::VoidMethod_T<T> method, float scheduleTime, float repeatRate) {
 		return ScheduleRepeatedTask([object, method]() {
 			(object->*method)();
 		}, scheduleTime, repeatRate);
 	}
 
-	inline bool RemoveScheduledTask(intrusive_ptr<ScheduledTaskListener>& taskListener) {
+	inline bool RemoveScheduledTask(ScheduledTaskListenerPtr& taskListener) {
 		return MessageManager.RemoveListener(taskListener.get(), App::kMsgAppUpdate);
 	}
 }
