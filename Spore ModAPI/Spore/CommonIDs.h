@@ -98,7 +98,11 @@ namespace TypeIDs
 {
 	enum Names : uint32_t
 	{
+		jpeg = 0x2F7D0002,
 		png = 0x2F7D0004,
+		bmp = 0x2F7D0005,
+		tga = 0x2F7D0006,
+		gif = 0x2F7D0007,
 		/// App::PropertyList files.
 		prop = 0x00B1B104,
 		/// Most textures and models.
@@ -115,11 +119,15 @@ namespace TypeIDs
 		ufo = 0x476A98C7,
 		/// Flora.
 		flr = 0x438F6347,
+		/// City Music Planner (Anthems)
+		cmp = 0x04F684A4,
+		/// Binary Editor Model
+		bem = 0x1A99B06B,
 		/// Spore Materials
 		smt = 0x0469A3F7,
-		/// Creation textures
+		/// Game-generated textures
 		raster = 0x2F4E681C,
-		/// Creation models
+		/// Game-generated models
 		gmdl = 0x00E6BCE5,
 		/// Effect directory
 		effdir = 0xEA5118B0,
@@ -148,6 +156,7 @@ namespace GroupIDs
 
 		/// Where editor configuration .prop files are stored
 		EditorSetup = 0x40600100,
+		EditorConfig = 0x40600100,
 
 		/// Where part models are stored
 		EditorRigblocks = 0x40606000,
@@ -156,6 +165,7 @@ namespace GroupIDs
 
 		/// Contains the palette files loaded by Palettes::PaletteMain
 		Palettes = 0x406B6A00,
+		PaletteDefinitions = 0x406B6A00,
 
 		/// Where adventure props are stored
 		PaletteItems = 0xD87454E6,
@@ -176,7 +186,11 @@ namespace GroupIDs
 		TribeAbilities = 0xC85C1F8B,
 		TribePlans = 0x72D02C25,
 
+		Abilities = 0x01B68DB4,
 		CreatureAbilities = 0xDD91AC58,
+		TribeAbilities = 0xC85C1F8B,
+		AbilityTemplates = 0xD2FCB262,
+		TribeAbilityTemplates = 0x57C90330,
 
 		/// Where cell .cll files are stored
 		CellModels = 0x40616200,
@@ -190,22 +204,43 @@ namespace GroupIDs
 		VehicleModels = 0x40646200,
 		/// Where vehicle .ufo files are stored
 		UfoModels = 0x40656200,
+		UFOModels = 0x40656200,
 		/// Where flora .flr files are stored
 		FloraModels = 0x40666200,
+		/// Where city music .cmp files are stored
+		CityMusic = 0x40C0C200,
 
 		CivicObjects = 0x9430ADD7,
 
 		/// The main folder that contains planet scripts. The rest of the folders can be obtained by adding 0x100, 0x200,..., 0xF00
 		PlanetScripts = 0x4184A100,
 
-		/// This folder contains popups used in Space stage that can be used with UIEventLog.
+		/// This folder contains popups used in Space stage that can be used with UIEventLog. The hash is FNV of 'Data/Events/Space'.
 		SpacePopups = 0x131A9F54,
-		/// This folder contains popups used in Civilization stage that can be used with UIEventLog.
+		SpaceEvents = 0x131A9F54,
+		/// This folder contains popups used in Civilization stage that can be used with UIEventLog. The hash is FNV of 'Data/Events/CityCiv'.
 		CivPopups = 0xAA9A8ED7,
+		CivEvents = 0xAA9A8ED7,
+		/// This folder contains popups used in Tribe stage that can be used with UIEventLog. The hash is FNV of 'Data/Events/Tribe'.
+		TribePopups = 0x182CD6CE,
+		TribeEvents = 0x182CD6CE,
 
 		CivicThumbs = 0x65928944,
+		PlannerThumbnails = 0x65928944,
 
+		AssetBrowserData = 0x851D4139,
+		AssetBrowserConfig = 0x9A74416B,
+		AssetBrowserFeedLists = 0x6EDC12D4,
+		AssetBrowserFeedCategories = 0x06B38241,
+		AssetBrowserFeedItems = 0x4E5892EB,
+		AssetBrowserFilter = 0xCC489C6F,
+		AssetBrowserSort = 0xC5296FA9,
 		AssetBrowserGraphics = 0xCA14DE92,
+
+		Achievements = 0x05BEFD27,
+		AchievementImages = 0x260EB59C,
+
+		Cursors = 0x02393C07,
 
 		terrainSystem_gameAsset = 0x40A02200
 	};
