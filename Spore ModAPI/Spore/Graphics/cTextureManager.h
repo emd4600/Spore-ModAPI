@@ -26,18 +26,20 @@
 #include <EASTL\intrusive_list.h>
 #include <EASTL\hash_map.h>
 
-using namespace eastl;
-
 namespace Graphics
 {
-	class TextureContainer : public intrusive_list_node, public Texture
+	class TextureContainer 
+		: public intrusive_list_node
+		, public Texture
 	{
 	};
 
 	///
 	/// The implementation of ITextureManager; this should only be used for extending and detouring.
 	///
-	class cTextureManager : public ITextureManager, public IVirtual
+	class cTextureManager 
+		: public ITextureManager
+		, public IVirtual
 	{
 	public:
 
@@ -48,9 +50,9 @@ namespace Graphics
 		/* 18h */	TexturePtr mpPlaceHolderNormalMap;
 		/* 1Ch */	TexturePtr mpPlaceholderSpecGlossMap;
 		/* 20h */	Mutex mTexturesMutex;
-		/* 50h */	intrusive_list<TextureContainer> field_50;
-		/* 58h */	hash_map<ResourceKey, TextureContainer*> mTextures;
-		/* 78h */	hash_map<int, int> field_78;
+		/* 50h */	eastl::intrusive_list<TextureContainer> field_50;
+		/* 58h */	eastl::hash_map<ResourceKey, TextureContainer*> mTextures;
+		/* 78h */	eastl::hash_map<int, int> field_78;
 		/* 98h */	Mutex field_98;
 		/* C8h */	int field_C8;  // 0x0A
 		/* CCh */	int mnMipLOD;

@@ -20,6 +20,7 @@
 #pragma once
 
 #include <stdint.h>
+#include <Spore\Internal.h>
 #include <EASTL\functional.h>
 
 ///
@@ -37,16 +38,8 @@ public:
 	uint32_t instanceID;
 
 	bool ResourceID::operator ==(const ResourceID &b) const;
-
 };
-
-
-///////////////////////////////////
-//// INTERNAL IMPLEMENENTATION ////
-///////////////////////////////////
-
-static_assert(sizeof(ResourceID) == 0x8, "sizeof(ResourceID) must be 8h");
-
+ASSERT_SIZE(ResourceID, 0x8);
 
 inline ResourceID::ResourceID(uint32_t _instanceID, uint32_t _groupID)
 	: instanceID(_instanceID)

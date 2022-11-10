@@ -40,14 +40,9 @@ namespace Simulator
 		using Object::Release;
 
 	public:
-		/* 108h */	intrusive_ptr<cPlanet> mpPlanet;
+		/* 108h */	eastl::intrusive_ptr<cPlanet> mpPlanet;
 	};
-
-	/////////////////////////////////
-	//// INTERNAL IMPLEMENTATION ////
-	/////////////////////////////////
-
-	static_assert(sizeof(cVisiblePlanet) == 0x10C, "sizeof(cVisiblePlanet) != 10Ch");
+	ASSERT_SIZE(cVisiblePlanet, 0x10C);
 
 	class cPlanetGfx
 		: public cSpatialObjectView
@@ -56,9 +51,9 @@ namespace Simulator
 		static const uint32_t VIEW_ID = cVisiblePlanet::NOUN_ID;
 
 	public:
-		/* 34h */	intrusive_ptr<cPlanet> mpPlanet;
-		/* 38h */	vector<IVisualEffectPtr> field_38;
-		/* 4Ch */	vector<int> field_4C;
+		/* 34h */	eastl::intrusive_ptr<cPlanet> mpPlanet;
+		/* 38h */	eastl::vector<IVisualEffectPtr> field_38;
+		/* 4Ch */	eastl::vector<int> field_4C;
 		/* 60h */	int field_60;
 		/* 64h */	int field_64;
 	};

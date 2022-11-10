@@ -95,12 +95,7 @@ namespace RenderWare
 
 		static const uint32_t TYPE = 0x2000B;
 	};
-
-	/////////////////////////////////
-	//// INTERnAL IMPLEMENTATION ////
-	/////////////////////////////////
-
-	static_assert(sizeof(TextureSlot) == 0x10, "sizeof(TextureSlot) != 10h");
+	ASSERT_SIZE(TextureSlot, 0x10);
 
 	namespace Addresses(TextureSlot)
 	{

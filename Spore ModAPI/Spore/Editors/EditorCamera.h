@@ -63,7 +63,7 @@ namespace Editors
 
 	public:
 		/* 0Ch */	int mnRefCount;
-		/* 10h */	intrusive_ptr<App::PropertyList> mpPropList;
+		/* 10h */	PropertyListPtr mpPropList;
 		/* 14h */	float mfZoomScale;  // 1.0
 		/* 18h */	float mfTranslateScale;  // 1.0
 		/* 1Ch */	float mfRotateScale;  // 1.0
@@ -98,13 +98,7 @@ namespace Editors
 		/* A0h */	GameInput mInput;
 		/* E8h */	App::cViewer* mpViewer;
 	};
-
-
-	/////////////////////////////////
-	//// INTERNAL IMPLEMENTATION ////
-	/////////////////////////////////
-
-	static_assert(sizeof(EditorCamera) == 0xEC, "sizeof(EditorCamera) != 0xEC");
+	ASSERT_SIZE(EditorCamera, 0xEC);
 
 	namespace Addresses(EditorCamera)
 	{

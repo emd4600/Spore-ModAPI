@@ -39,12 +39,12 @@ namespace Simulator
 		/* 190h */	int field_190;  // not initialized
 		/* 194h */	int field_194;  // not initialized
 		/* 198h */	int field_198;  // not initialized
-		/* 19Ch */	vector<int> field_19C;
+		/* 19Ch */	eastl::vector<int> field_19C;
 		/* 1B0h */	DefaultRefCountedPtr field_1B0;
 		/* 1B4h */	bool field_1B4;
 		/* 1B8h */	int field_1B8;
 		/* 1BCh */	ObjectPtr field_1BC;
-		/* 1C0h */	map<int, ObjectPtr> field_1C0;
+		/* 1C0h */	eastl::map<int, ObjectPtr> field_1C0;
 		/* 1DCh	*/	ObjectPtr field_1DC;
 		/* 1E0h */	bool field_1E0;
 		/* 1E4h */	void* field_1E4;

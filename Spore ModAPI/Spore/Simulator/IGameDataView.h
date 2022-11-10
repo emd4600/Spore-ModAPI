@@ -7,7 +7,8 @@ namespace Simulator
 {
 	class cGameData;
 
-	class IGameDataView : public intrusive_list_node
+	class IGameDataView 
+		: public eastl::intrusive_list_node
 	{
 	public:
 		/* 00h */	virtual ~IGameDataView() = 0;

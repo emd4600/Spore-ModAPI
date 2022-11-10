@@ -33,29 +33,29 @@ namespace ArgScript
 	public:
 		///
 		/// Calls this function expecting a float value to be returned. 
-		/// The received string contains the arguments with no processing, with the parenthesis included; 
+		/// The received eastl::string contains the arguments with no processing, with the parenthesis included; 
 		/// the variables are replaced, however. 
 		/// Boolean functions might throw an exception here.
-		/// @param ppString The string that contains the parameters, for example '(1.0, "Vista")'.
+		/// @param ppString The eastl::string that contains the parameters, for example '(1.0, "Vista")'.
 		/// @param lexer The lexer that can be used for parsing the parameters.
 		///
 		/* 00h */	virtual float GetFloat(LexerString& ppString, Lexer& lexer) = 0;
 
 		///
 		/// Calls this function expecting an int value to be returned. 
-		/// The received string contains the arguments with no processing, with the parenthesis included; 
+		/// The received eastl::string contains the arguments with no processing, with the parenthesis included; 
 		/// the variables are replaced, however. 
 		/// Boolean functions can use this function as well, returning 1 for true and 0 for false.
-		/// @param ppString The string that contains the parameters, for example '(1.0, "Vista")'.
+		/// @param ppString The eastl::string that contains the parameters, for example '(1.0, "Vista")'.
 		/// @param lexer The lexer that can be used for parsing the parameters.
 		///
 		/* 04h */	virtual int GetInt(LexerString& ppString, Lexer& lexer) = 0;
 
 		///
 		/// Calls this function expecting a bool value to be returned. 
-		/// The received string contains the arguments with no processing, with the parenthesis included; 
+		/// The received eastl::string contains the arguments with no processing, with the parenthesis included; 
 		/// the variables are replaced, however. 
-		/// @param ppString The string that contains the parameters, for example '(1.0, "Vista")'.
+		/// @param ppString The eastl::string that contains the parameters, for example '(1.0, "Vista")'.
 		/// @param lexer The lexer that can be used for parsing the parameters.
 		///
 		/* 08h */	virtual bool GetBool(LexerString& ppString, Lexer& lexer) { return GetInt(ppString, lexer) == 0 ? false : true; };

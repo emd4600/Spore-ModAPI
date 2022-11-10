@@ -31,8 +31,6 @@
 
 #define ICheatManagerPtr eastl::intrusive_ptr<App::ICheatManager>
 
-using namespace eastl;
-
 namespace App
 {
 
@@ -97,7 +95,7 @@ namespace App
 		/// @param dst A const char* vector where the keywords will be added.
 		/// @returns The number of keywords added.
 		///
-		/* 2Ch */	virtual size_t GetKeywords(const char* pPattern, vector<const char*> dst) = 0;
+		/* 2Ch */	virtual size_t GetKeywords(const char* pPattern, eastl::vector<const char*> dst) = 0;
 
 		/* 30h */	virtual void func30h(Object*) = 0;
 		/* 34h */	virtual void func34h(Object*) = 0;
@@ -118,12 +116,10 @@ namespace App
 		/// Returns the active cheat manager.
 		///
 		static ICheatManager* Get();
-
-
 	};
 
 	///
-	/// An utility method that returns the active console stream, and that can be used to print strings to the console.
+	/// An utility method that returns the active console stream, and that can be used to print eastl::strings to the console.
 	/// This is the equivalent to ICheatManager::Get()->GetArgScript()
 	///
 	inline ArgScript::FormatParser* GetConsoleStream()
@@ -135,10 +131,6 @@ namespace App
 	{
 		ArgScript::PrintF(GetConsoleStream(), str, args...);
 	}
-
-	/////////////////////////////////
-//// INTERNAL IMPLEMENTATION ////
-/////////////////////////////////
 
 	namespace Addresses(ICheatManager)
 	{

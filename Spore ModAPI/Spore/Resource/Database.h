@@ -21,17 +21,18 @@
 
 #include <Spore\Resource\IResourceFilter.h>
 #include <Spore\Resource\IRecord.h>
+#include <Spore\Resource\RecordInfo.h>
 #include <Spore\IO\EAIOZoneObject.h>
 #include <Spore\IO\IStream.h>
 #include <Spore\ICoreAllocator.h>
 #include <Spore\Object.h>
 #include <EASTL\vector.h>
 
+#define DatabasePtr eastl::intrusive_ptr<Resource::Database>
+
 namespace Resource
 {
 	class IResourceManager;
-	class IPFRecord;
-	struct DBPFItem;
 
 	class Database 
 		: public IO::EAIOZoneObject
@@ -56,7 +57,7 @@ namespace Resource
 			IO::AccessFlags desiredAccess = IO::AccessFlags::Read, 
 			IO::CD createDisposition = IO::CD::Default,
 			bool arg_10 = true,
-			DBPFItem* pDstInfo = nullptr) = 0;
+			RecordInfo* pDstInfo = nullptr) = 0;
 		/* 38h */	virtual int GetOpenCount(const ResourceKey& key) = 0;
 		/* 3Ch */	virtual bool CloseRecord(IRecord* pRecord) = 0;
 		/* 40h */	virtual bool DeleteRecord(const ResourceKey& name) = 0;

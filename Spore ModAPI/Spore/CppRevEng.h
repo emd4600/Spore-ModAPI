@@ -38,7 +38,7 @@ Also, use the `public:` keyword when defining the detoured method.
 
 All macros take at least two parameters: 
  - `name`: A unique name to identify the detour object. You will use it to attach the detour.
- - `declaration`: The type and parameter types of the function. Examples: `void(int)`, `bool()`, `const float&(const vector<int>, int**)`
+ - `declaration`: The type and parameter types of the function. Examples: `void(int)`, `bool()`, `const float&(const eastl::vector<int>, int**)`
 
 ## Detouring static functions
 
@@ -65,7 +65,7 @@ You would do it like this:
 // A class declaration, the method belongs to this class
 class ClassManager {
 protected:
-	vector<void*> mObjects;
+	eastl::vector<void*> mObjects;
 }
 
 member_detour(MyDetour2, ClassManager, void()) {

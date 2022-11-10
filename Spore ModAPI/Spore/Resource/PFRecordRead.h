@@ -21,6 +21,7 @@
 
 #include <Spore\ResourceKey.h>
 #include <Spore\IO\StreamMemory.h>
+#include <Spore\Resource\RecordInfo.h>
 #include <Spore\Resource\PFRecordBase.h>
 #include <Spore\Resource\PFIndexModifiable.h>
 #include <Spore\Resource\ThreadedObject.h>
@@ -39,14 +40,14 @@ namespace Resource
 		static const uint32_t kType = 0x12E4A891;
 
 	public:
-		PFRecordRead(DBPFItem& itemInfo, const ResourceKey& name, DatabasePackedFile* pParentDBPF);
+		PFRecordRead(RecordInfo& itemInfo, const ResourceKey& name, DatabasePackedFile* pParentDBPF);
 		PFRecordRead(PFRecordRead* pOther, const ResourceKey& name, DatabasePackedFile* pParentDBPF);
 
 		virtual ~PFRecordRead();
 		virtual int AddRef() override;
 		virtual int Release() override;
 
-		//// IPFRecord ////
+		//// IRecord ////
 
 		/* 10h */	virtual const ResourceKey&	GetKey() override;
 		/* 14h */	virtual void				SetKey(const ResourceKey& name) override;
@@ -64,7 +65,7 @@ namespace Resource
 		/* 0Ch */	virtual uint32_t	GetType() const override;
 		/* 10h */	virtual IO::AccessFlags	GetAccessFlags() const override;
 		/* 14h */	virtual IO::FileError	GetState() const override;
-		// /* 18h */	virtual bool		Close() override;  // already overriden with IPFRecord
+		// /* 18h */	virtual bool		Close() override;  // already overriden with IRecord
 
 		/* 1Ch */	virtual IO::size_type	GetSize() const override;
 		/* 20h */	virtual bool		SetSize(IO::size_type size) override;  // does nothing
@@ -83,7 +84,7 @@ namespace Resource
 		/* 24h */	int field_24;
 		/* 28h */	int field_28;  // -1
 		/* 2Ch */	IO::MemoryStream mInternalBuffer;
-		/* 50h */	DBPFItem mDBPFItem;
+		/* 50h */	RecordInfo mDBPFItem;
 		/* 60h */	size_t mnOffset;
 		/* 64h */	size_t mnSize;
 		/* 68h */	char mnFlags;  // if & 2, use internal stream?

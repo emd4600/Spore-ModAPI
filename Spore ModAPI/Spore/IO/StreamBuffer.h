@@ -44,8 +44,6 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 #define StreamBufferPtr eastl::intrusive_ptr<IO::StreamBuffer>
 
-using namespace eastl;
-
 namespace IO
 {
 	///
@@ -103,7 +101,7 @@ namespace IO
 		bool        FlushWriteBuffer();
 
 	protected:
-		/* 04h */	intrusive_ptr<IStream>            mpStream;                      /// The stream that we are buffering.
+		/* 04h */	IStreamPtr          mpStream;                      /// The stream that we are buffering.
 		/* 08h */	int                 mnRefCount;                    /// The reference count, which may or may not be used.
 		/* 0Ch */	size_type           mnPositionExternal;            /// This is the position of the the file pointer as the the user sees it. It is where the next byte read or write will come from or go to.
 		/* 10h */	size_type           mnPositionInternal;            /// This is the position of the the file pointer as the owned stream sees it.
@@ -118,14 +116,7 @@ namespace IO
 		/* 2Ch */	size_type           mnWriteBufferStartPosition;    /// This is where in the file the beginning the write buffer corresponds to.
 		/* 30h */	size_type           mnWriteBufferUsed;             /// This is the count of bytes in the write buffer that are valid.
 	};
-
-
-	///////////////////////////////////
-	//// INTERNAL IMPLEMENENTATION ////
-	///////////////////////////////////
-
-	static_assert(sizeof(StreamBuffer) == 0x34, "sizeof(StreamBuffer) != 34h");
-
+	ASSERT_SIZE(StreamBuffer, 0x34);
 
 	namespace Addresses(StreamBuffer)
 	{

@@ -22,8 +22,6 @@
 #include <Spore\ResourceID.h>
 #include <Spore\App\PropertyList.h>
 
-using namespace eastl;
-
 /// Access the active property manager.
 #define PropManager (*App::IPropManager::Get())
 
@@ -111,17 +109,17 @@ namespace App
 
 		/* 38h */	virtual void* func38h(int arg_0) = 0;
 		/* 3Ch */	virtual void* func3Ch(int arg_0, int arg_4) = 0;
-		/* 40h */	virtual void* func40h(int arg_0, int arg_4, const vector<uint32_t>& instanceIDs) = 0;
+		/* 40h */	virtual void* func40h(int arg_0, int arg_4, const eastl::vector<uint32_t>& instanceIDs) = 0;
 
 		// Get used lists?
-		/* 44h */	virtual bool func44h(size_t nCount, const vector<ResourceKey>& names) = 0;
+		/* 44h */	virtual bool func44h(size_t nCount, const eastl::vector<ResourceKey>& names) = 0;
 
 		///
 		/// Gets the instance IDs of all the PropertyList objects contained in the specified group.
 		/// @param groupID The ID of the group where the lists are (i.e. the folder)
 		/// @param[out] result A uint32_t vector that will receive the instance IDs.
 		/// @returns
-		/* 48h */	virtual bool GetAllListIDs(uint32_t groupID, vector<uint32_t>& result) const = 0;
+		/* 48h */	virtual bool GetAllListIDs(uint32_t groupID, eastl::vector<uint32_t>& result) const = 0;
 
 		/* 4Ch */	virtual void* func4Ch(int arg_0, int arg_4) = 0;
 

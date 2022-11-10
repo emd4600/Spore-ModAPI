@@ -46,15 +46,9 @@ protected:
 	int field_18;
 	int field_1C;
 };
+ASSERT_SIZE(FixedPoolAllocator, 0x20);
 
 typedef CoreAllocatorAdapter<FixedPoolAllocator> FixedPoolAllocatorAdapter;
-
-
-///////////////////////////////////
-//// INTERNAL IMPLEMENENTATION ////
-///////////////////////////////////
-
-static_assert(sizeof(FixedPoolAllocator) == 0x20, "sizeof(FixedPoolAllocator) != 20h");
 
 namespace Addresses(FixedPoolAllocator)
 {

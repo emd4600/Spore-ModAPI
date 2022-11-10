@@ -87,13 +87,13 @@
 /// 
 /// ## Literals and parenthesis
 /// All the words in a line are separated when whitespaces are found. Sometimes, however, one might be interested in having an argument
-/// that has whitespaces inside; in that case, string literals surrounded by "" can be used. For example:
+/// that has whitespaces inside; in that case, eastl::string literals surrounded by "" can be used. For example:
 /// ~~~~~~~~~~~~~
 /// text "Problem solved!"
 /// ~~~~~~~~~~~~~
 /// In that example, *Problem solved!* will be a single argument.
 ///
-/// Parenthesis have the same effect as string literals; for convention, string literals are only used for things that are actually
+/// Parenthesis have the same effect as eastl::string literals; for convention, eastl::string literals are only used for things that are actually
 /// text; for everything else, parenthesis are preferred. For example:
 /// ~~~~~~~~~~~~~
 /// model MyCube -color (0.2, 0, 1.0)
@@ -131,7 +131,7 @@
 /// ~~~~~~~~~~~~~
 ///
 /// These are the commands for settings variables:
-/// - **set VariableName Value**: strings. For example *set name "My name"*
+/// - **set VariableName Value**: eastl::strings. For example *set name "My name"*
 /// - **setb VariableName Value**: booleans. For example *setb render false*
 /// - **seti VariableName Value**: integers. For exmaple *seti kMaxInt (2^31)*
 /// - **setf VariableName Value**: floats. For example *setf kMaxScale 10.0*
@@ -241,8 +241,8 @@
 /// - **varExists(name)**: Returns true if the given variable exists (has a value).
 /// - **commandExists(name)**: Returns true if the given command exists.
 /// - **defExists(name)**: Returns true if the given definition exists.
-/// - **eq(string1, string2)**: Compares two strings.
-/// - **match(string, pattern)**: Returns true if the string matches the wildcard pattern (which supports special characters * and ?).
+/// - **eq(eastl::string1, eastl::string2)**: Compares two eastl::strings.
+/// - **match(eastl::string, pattern)**: Returns true if the eastl::string matches the wildcard pattern (which supports special characters * and ?).
 /// - **minVersion()**: Returns minimum accepted script version.
 /// - **maxVersion()**: Returns maximum accepted script version.
 ///

@@ -109,8 +109,7 @@ namespace RenderWare
 
 		static const uint32_t TYPE = 0x20003;
 	};
-
-	static_assert(sizeof(Raster) == 0x20, "sizeof(Raster) != 20h");
+	ASSERT_SIZE(Raster, 0x20);
 
 	namespace Addresses(Raster)
 	{

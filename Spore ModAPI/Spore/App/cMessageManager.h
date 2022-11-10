@@ -25,14 +25,13 @@
 #include <EASTL\hash_map.h>
 #include <EASTL\list.h>
 
-using namespace eastl;
-
 namespace App
 {
 	///
 	/// The implementation of IMessageManager; this should only be used for extending and detouring.
 	///
-	class cMessageManager : public IMessageManager
+	class cMessageManager 
+		: public IMessageManager
 	{
 	public:
 		virtual bool Initialize() override;
@@ -54,7 +53,7 @@ namespace App
 		virtual void AddEntry(const IMessageManager::Entry& entry, uint32_t messageID) override;
 		virtual bool RemoveEntry(void* pMessageObject, uint32_t messageID, int nPriority) override;
 
-	protected:
+	public:
 		/* 04h */	char field_04[0x34];
 		/* 38h */	Mutex field_38;
 		/* 68h */	int field_68;
@@ -63,12 +62,7 @@ namespace App
 		/* 90h */	Mutex mListenersMutex;
 		/* C0h */	bool field_C0[6];
 	};
-
-	/////////////////////////////////
-	//// INTERNAL IMPLEMENTATION ////
-	/////////////////////////////////
-
-	static_assert(sizeof(cMessageManager) == 0xC8, "sizeof(cMessageManager) != C8h");
+	ASSERT_SIZE(cMessageManager, 0xC8);
 
 	namespace Addresses(cMessageManager)
 	{

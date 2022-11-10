@@ -29,7 +29,7 @@ namespace UI
 		: public DefaultRefCounted
 	{
 	public:
-		virtual bool TranslateToken(uint32_t tokenID, string16& dst) = 0;
+		virtual bool TranslateToken(uint32_t tokenID, eastl::string16& dst) = 0;
 		virtual void func14h(int) = 0;
 	};
 }

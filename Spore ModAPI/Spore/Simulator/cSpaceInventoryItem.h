@@ -47,7 +47,7 @@ namespace Simulator
 		/* 18h */	virtual const ResourceKey& GetItemID();
 		/* 1Ch */	virtual uint32_t GetItemInstanceID();
 		/* 20h */	virtual bool IsCargoType();
-		/* 24h */	virtual intrusive_ptr<cSpaceInventoryItem> Duplicate();
+		/* 24h */	virtual cSpaceInventoryItemPtr Duplicate();
 		/* 28h */	virtual const char16_t* GetDescription();
 		/* 2Ch */	virtual const char16_t* GetDetailDescription();
 		/* 30h */	virtual ResourceKey GetImageID();

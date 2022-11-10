@@ -17,7 +17,7 @@ void LoadMaterials() {
 	filter.groupID = IMaterialManager::kShadersGroupID;
 	filter.typeID = TypeIDs::smt;
 
-	vector<ResourceKey> keys;
+	eastl::vector<ResourceKey> keys;
 	if (ResourceManager.GetFileKeys(keys, &filter)) {
 		for (const ResourceKey& key : keys) {
 			// Don't read the Spore ones, from 0 to 3
@@ -54,9 +54,9 @@ void LoadMaterials() {
 
 namespace ModAPI
 {
-	fixed_vector<InitFunction, MAX_MODS> initFunctions;
-	fixed_vector<InitFunction, MAX_MODS> postInitFunctions;
-	fixed_vector<InitFunction, MAX_MODS> disposeFunctions;
+	eastl::fixed_vector<InitFunction, MAX_MODS> initFunctions;
+	eastl::fixed_vector<InitFunction, MAX_MODS> postInitFunctions;
+	eastl::fixed_vector<InitFunction, MAX_MODS> disposeFunctions;
 	fixed_map<uint32_t, intrusive_ptr<Simulator::ISimulatorStrategy>, MAX_MODS> simulatorStrategies;
 
 	uint32_t CRC_TABLE[256];
@@ -153,8 +153,8 @@ namespace ModAPI
 
 		if (s->GetAvailable() < count*12) return false;
 
-		vector<uint32_t> ids(count);
-		vector<int> sizes(count);
+		eastl::vector<uint32_t> ids(count);
+		eastl::vector<int> sizes(count);
 		for (int i = 0; i < count; ++i) {
 			IO::ReadUInt32(s, &ids[i]);
 			IO::ReadInt32(s, &sizes[i]);
@@ -187,8 +187,8 @@ namespace ModAPI
 
 		int originalOffset = s->GetPosition();
 
-		vector<uint32_t> ids(count);
-		vector<int> sizes(count);
+		eastl::vector<uint32_t> ids(count);
+		eastl::vector<int> sizes(count);
 		for (int i = 0; i < count; ++i) {
 			IO::WriteUInt32(s, &ids[i]);
 			IO::WriteInt32(s, &sizes[i]);
@@ -217,7 +217,7 @@ namespace ModAPI
 		return true;
 	}
 
-	void EmptyReadText(const string& str, void* dst) {
+	void EmptyReadText(const eastl::string& str, void* dst) {
 	}
 	void EmptyWriteText(char* buf, void* src) {
 		buf[0] = '\0';

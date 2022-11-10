@@ -79,12 +79,7 @@ namespace UTFWin
 		/* 148h */	Math::Rectangle field_148;
 		/* 158h */	Vector2 field_158;
 	};
-
-	/////////////////////////////////
-	//// INTERNAL IMPLEMENTATION ////
-	/////////////////////////////////
-
-	static_assert(sizeof(SporeStdDrawable) == 0x160, "sizeof(SporeStdDrawable) != 160h");
+	ASSERT_SIZE(SporeStdDrawable, 0x160);
 
 	namespace Addresses(SporeStdDrawable)
 	{

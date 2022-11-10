@@ -114,7 +114,7 @@ bool ApplyOverride(Graphics::cMWModelInternal* asset, cModelInstancePtr& mesh, i
 			return false;
 		}
 
-		string8* overrideNames;
+		eastl::string8* overrideNames;
 		size_t overrideCount;
 		App::Property::GetArrayString8(propList, propertyID, overrideCount, overrideNames);
 
@@ -128,7 +128,7 @@ bool ApplyOverride(Graphics::cMWModelInternal* asset, cModelInstancePtr& mesh, i
 			return false;
 		}
 
-		map<string, ResourceKey> overrides;
+		eastl::map<eastl::string, ResourceKey> overrides;
 		for (size_t i = 0; i < overrideCount; ++i) {
 			overrides[overrideNames[i]] = overrideKeys[i];
 		}
@@ -157,7 +157,7 @@ bool ApplyOverride(Graphics::cMWModelInternal* asset, cModelInstancePtr& mesh, i
 
 						char* name = ((char*)raster) + 4;
 
-						auto it = overrides.find(string(name));
+						auto it = overrides.find(eastl::string(name));
 						if (it == overrides.end()) {
 							App::ConsolePrintF("0x%x!0x%x.prop LOD%i error: no override found for texture slot \"%s\"",
 								propList->GetResourceKey().groupID, propList->GetResourceKey().instanceID, lod, name);

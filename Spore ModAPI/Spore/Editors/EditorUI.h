@@ -125,12 +125,7 @@ namespace Editors
 		// loc_5DCD86 -> disable undo button?
 
 	};
-
-	/////////////////////////////////
-	//// INTERNAL IMPLEMENTATION ////
-	/////////////////////////////////
-
-	static_assert(sizeof(EditorUI) == 0x12C, "sizeof(EditorUI) must be 0x20C!");
+	ASSERT_SIZE(EditorUI, 0x12C);
 
 	namespace Addresses(EditorUI)
 	{

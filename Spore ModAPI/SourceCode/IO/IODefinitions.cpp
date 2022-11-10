@@ -227,7 +227,7 @@ namespace Resource
 	auto_METHOD_VIRTUAL_const_(DatabasePackedFile, DatabasePackedFile, const char16_t*, GetLocation);
 	auto_METHOD_VIRTUAL(DatabasePackedFile, DatabasePackedFile, bool, SetLocation, Args(const char16_t* path), Args(path));
 	auto_METHOD_VIRTUAL(DatabasePackedFile, DatabasePackedFile, size_t, GetKeyList, Args(eastl::vector<ResourceKey>& dstVector, IResourceFilter* filter), Args(dstVector, filter));
-	auto_METHOD_VIRTUAL(DatabasePackedFile, DatabasePackedFile, bool, OpenRecord, Args(const ResourceKey& name, IRecord** pDst, IO::AccessFlags nDesiredAccess, IO::CD nCreateDisposition, bool arg_10, DBPFItem* pDstInfo), Args(name, pDst, nDesiredAccess, nCreateDisposition, arg_10, pDstInfo));
+	auto_METHOD_VIRTUAL(DatabasePackedFile, DatabasePackedFile, bool, OpenRecord, Args(const ResourceKey& name, IRecord** pDst, IO::AccessFlags nDesiredAccess, IO::CD nCreateDisposition, bool arg_10, RecordInfo* pDstInfo), Args(name, pDst, nDesiredAccess, nCreateDisposition, arg_10, pDstInfo));
 	auto_METHOD_VIRTUAL(DatabasePackedFile, DatabasePackedFile, int, GetOpenCount, Args(const ResourceKey& name), Args(name));
 	auto_METHOD_VIRTUAL(DatabasePackedFile, DatabasePackedFile, bool, CloseRecord, Args(IRecord* pRecord), Args(pRecord));
 	auto_METHOD_VIRTUAL(DatabasePackedFile, DatabasePackedFile, bool, DeleteRecord, Args(const ResourceKey& name), Args(name));
@@ -236,7 +236,7 @@ namespace Resource
 	auto_METHOD_VIRTUAL_(DatabasePackedFile, DatabasePackedFile, IO::IStream*, GetStream);
 	auto_METHOD_VIRTUAL(DatabasePackedFile, DatabasePackedFile, bool, SetStream, Args(IO::IStream* pStream), Args(pStream));
 
-	auto_METHOD_VIRTUAL(DatabasePackedFile, DatabasePackedFile, PFRecordRead*, CreateRecordRead, Args(IO::AccessFlags nDesiredAccess, DBPFItem* info, ResourceKey& key), Args(nDesiredAccess, info, key));
+	auto_METHOD_VIRTUAL(DatabasePackedFile, DatabasePackedFile, PFRecordRead*, CreateRecordRead, Args(IO::AccessFlags nDesiredAccess, RecordInfo* info, ResourceKey& key), Args(nDesiredAccess, info, key));
 	auto_METHOD_VIRTUAL(DatabasePackedFile, DatabasePackedFile, PFRecordRead*, CreateRecordReadCopy, Args(IO::AccessFlags nDesiredAccess, PFRecordRead* pOther, ResourceKey& key), Args(nDesiredAccess, pOther, key));
 	auto_METHOD_VIRTUAL(DatabasePackedFile, DatabasePackedFile, PFRecordWrite*, CreateRecordWriteData, Args(IO::AccessFlags nDesiredAccess, void* pData, size_t nSize, ResourceKey& key), Args(nDesiredAccess, pData, nSize, key));
 	auto_METHOD_VIRTUAL(DatabasePackedFile, DatabasePackedFile, PFRecordWrite*, CreateRecordWrite, Args(IO::AccessFlags nDesiredAccess, size_t nChunkOffset, size_t nSize, ResourceKey& key), Args(nDesiredAccess, nChunkOffset, nSize, key));
@@ -262,7 +262,7 @@ namespace Resource
 	//// PFRecordRead.h ////
 	////////////////////////
 
-	PFRecordRead::PFRecordRead(DBPFItem& itemInfo, const ResourceKey& name, DatabasePackedFile* pParentDBPF)
+	PFRecordRead::PFRecordRead(RecordInfo& itemInfo, const ResourceKey& name, DatabasePackedFile* pParentDBPF)
 		: PFRecordBase(PFRecordRead::kType, name, pParentDBPF, IO::AccessFlags::Read)
 		, field_24(0)
 		, field_28(-1)
@@ -275,14 +275,14 @@ namespace Resource
 	{
 		mInternalBuffer.AddRef();
 
-		if (mDBPFItem.mFlags == 0)
+		if (mDBPFItem.flags == 0)
 		{
-			mnSize = mDBPFItem.mnCompressedSize;
+			mnSize = mDBPFItem.compressedSize;
 			if (mnSize <= 512) mnFlags = kPFRRDataFitsBuffer;
 		}
 		else
 		{
-			mnSize = mDBPFItem.mnMemorySize;
+			mnSize = mDBPFItem.memorySize;
 			mnFlags = kPFRRDataFitsBuffer;
 		}
 	}
@@ -482,9 +482,9 @@ namespace Resource
 	auto_METHOD(PFIndexModifiable, size_t, GetAllFiles, Args(eastl::vector<ResourceKey>& dstVector), Args(dstVector));
 	auto_METHOD(PFIndexModifiable, bool, func24h, Args(int arg_0, size_t fileDataBegin, size_t fileDataEnd), Args(arg_0, fileDataBegin, fileDataEnd));
 
-	auto_METHOD(PFIndexModifiable, DBPFItem*, GetFileInfo, Args(const ResourceKey& fileName), Args(fileName));
-	auto_METHOD(PFIndexModifiable, DBPFItem&, PutFileInfo, Args(const ResourceKey& fileName, DBPFItem& info), Args(fileName, info));
-	auto_METHOD(PFIndexModifiable, bool, RemoveFile, Args(const ResourceKey& fileName, DBPFItem& dstInfo), Args(fileName, dstInfo));
+	auto_METHOD(PFIndexModifiable, RecordInfo*, GetFileInfo, Args(const ResourceKey& fileName), Args(fileName));
+	auto_METHOD(PFIndexModifiable, RecordInfo&, PutFileInfo, Args(const ResourceKey& fileName, RecordInfo& info), Args(fileName, info));
+	auto_METHOD(PFIndexModifiable, bool, RemoveFile, Args(const ResourceKey& fileName, RecordInfo& dstInfo), Args(fileName, dstInfo));
 
 	auto_METHOD(PFIndexModifiable, bool, Read, Args(void* pIndexData, size_t nIndexSize, size_t nIndexCount, bool arg_C), Args(pIndexData, nIndexSize, nIndexCount, arg_C));
 	auto_METHOD(PFIndexModifiable, bool, Write, Args(void*& pDstIndexData, size_t& nDstIndexSize, size_t nIndexCount, bool arg_C), Args(pDstIndexData, nDstIndexSize, nIndexCount, arg_C));
@@ -535,7 +535,7 @@ namespace Resource
 	//auto_METHOD_VIRTUAL_const_(DatabaseDirectoryFiles, DatabaseDirectoryFiles, char16_t*, GetLocation);
 	auto_METHOD_VIRTUAL(DatabaseDirectoryFiles, DatabaseDirectoryFiles, bool, SetLocation, Args(const char16_t* path), Args(path));
 	auto_METHOD_VIRTUAL(DatabaseDirectoryFiles, DatabaseDirectoryFiles, size_t, GetKeyList, Args(eastl::vector<ResourceKey>& dstVector, IResourceFilter* filter), Args(dstVector, filter));
-	auto_METHOD_VIRTUAL(DatabaseDirectoryFiles, DatabaseDirectoryFiles, bool, OpenRecord, Args(const ResourceKey& name, IRecord** pDst, IO::AccessFlags nDesiredAccess, IO::CD nCreateDisposition, bool arg_10, DBPFItem* pDstInfo), Args(name, pDst, nDesiredAccess, nCreateDisposition, arg_10, pDstInfo));
+	auto_METHOD_VIRTUAL(DatabaseDirectoryFiles, DatabaseDirectoryFiles, bool, OpenRecord, Args(const ResourceKey& name, IRecord** pDst, IO::AccessFlags nDesiredAccess, IO::CD nCreateDisposition, bool arg_10, RecordInfo* pDstInfo), Args(name, pDst, nDesiredAccess, nCreateDisposition, arg_10, pDstInfo));
 	auto_METHOD_VIRTUAL(DatabaseDirectoryFiles, DatabaseDirectoryFiles, int, GetOpenCount, Args(const ResourceKey& name), Args(name));
 	auto_METHOD_VIRTUAL(DatabaseDirectoryFiles, DatabaseDirectoryFiles, bool, CloseRecord, Args(IRecord* pRecord), Args(pRecord));
 	auto_METHOD_VIRTUAL(DatabaseDirectoryFiles, DatabaseDirectoryFiles, bool, DeleteRecord, Args(const ResourceKey& name), Args(name));
@@ -627,8 +627,8 @@ namespace Resource
 		, mLocation()
 		, mExtensionMapAllocator(mpAllocator, 0x20, 0x24)
 		, mRecordListDataMapAllocator(mpAllocator, 0x80, 0x48)
-		, mExtensionMap(CoreAllocatorAdapter<FixedPoolAllocator>(nullptr, &mExtensionMapAllocator))
-		, mRecordListDataMap(CoreAllocatorAdapter<FixedPoolAllocator>(nullptr, &mRecordListDataMapAllocator))
+		, mExtensionMap(FixedPoolAllocatorAdapter(nullptr, &mExtensionMapAllocator))
+		, mRecordListDataMap(FixedPoolAllocatorAdapter(nullptr, &mRecordListDataMapAllocator))
 		, mDefaultGroupID(0)
 		, mpResourceManager()
 		, mFileNameToKeyConverter()

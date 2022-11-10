@@ -1,7 +1,6 @@
 #pragma once
 
 #include <Spore\Resource\ThreadedObject.h>
-#include <Spore\Resource\Database.h>
 #include <Spore\IO\IStream.h>
 #include <Spore\ResourceKey.h>
 
@@ -9,6 +8,8 @@
 
 namespace Resource
 {
+	class Database;
+
 	/// Represents a file in a Database; records are identified by a ResourceKey (which specifies group, instance and type IDs),
 	/// and have an underlying IO::IStream that is used to read/write data.
 	class IRecord

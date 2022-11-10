@@ -73,12 +73,7 @@ namespace UTFWin
 
 		char padding_68[0x50];
 	};
-
-	static_assert(sizeof(InflateEffect) == 0xB8, "sizeof(InflateEffect) != B8h");
-
-	/////////////////////////////////
-	//// INTERNAL IMPLEMENTATION ////
-	/////////////////////////////////
+	ASSERT_SIZE(InflateEffect, 0xB8);
 
 	namespace Addresses(InflateEffect)
 	{

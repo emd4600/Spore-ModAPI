@@ -44,7 +44,7 @@ struct ResourceKey {
 	/// The groupID and typeID can be ommited, however; if that happens, they will be replaced with the optional parameters
 	/// nDefaultGroupID and nDefaultTypeID respectively.
 	///
-	/// The resulting uint32_ts will be the hashes of the strings separated by the '!' and '.' signs. The typeID can have a special treatment,
+	/// The resulting uint32_ts will be the hashes of the eastl::strings separated by the '!' and '.' signs. The typeID can have a special treatment,
 	/// however: before hashing it, it will check if there's a mapping for that extension in the ResourceManager class.
 	///
 	/// Examples:
@@ -53,10 +53,10 @@ struct ResourceKey {
 	/// Parse(dstKey, "CreatureGame!DifficultyTunning.prop");
 	///
 	/// @param[out] dst The ResourceKey that will be filled with the parsed information.
-	/// @param[in] pString The string to parse.
+	/// @param[in] pString The eastl::string to parse.
 	/// @param[in] defaultTypeID [Optional] The typeID that will be used if no extension is specified in the text.
 	/// @param[in] defaultGroupID [Optional] The groupID that will be used if no group is specified in the text.
-	/// @returns True if the text was successfully parsed, false if the given string was nullptr.
+	/// @returns True if the text was successfully parsed, false if the given eastl::string was nullptr.
 	///
 	static bool Parse(ResourceKey& dst, const char16_t* pString, uint32_t defaultTypeID = 0, uint32_t defaultGroupID = 0);
 
@@ -66,13 +66,7 @@ struct ResourceKey {
 	bool ResourceKey::operator <(const ResourceKey &b) const;
 	bool ResourceKey::operator >(const ResourceKey &b) const;
 };
-
-
-/////////////////////////////////
-//// INTERNAL IMPLEMENTATION ////
-/////////////////////////////////
-
-static_assert(sizeof(ResourceKey) == 0x0C, "sizeof(ResourceKey) != 0Ch");
+ASSERT_SIZE(ResourceKey, 0xC);
 
 #define instance_id(id) ResourceKey(id, 0, 0)
 #define type_id(id) ResourceKey(0, id, 0)

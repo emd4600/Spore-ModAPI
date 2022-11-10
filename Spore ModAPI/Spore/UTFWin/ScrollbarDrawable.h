@@ -85,7 +85,7 @@ namespace UTFWin
 		virtual void SetImage(int index, Image* pImage) override;
 
 	protected:
-		/* 10h */	intrusive_ptr<Image> mpImages[7];
+		/* 10h */	ImagePtr mpImages[7];
 	};
 
 	/////////////////////////////////
@@ -105,8 +105,7 @@ namespace UTFWin
 		DeclareAddress(ToDrawable);
 		DeclareAddress(SetImage);
 	}
-
-	static_assert(sizeof(ScrollbarDrawable) == 0x2C, "sizeof(ScrollbarDrawable) != 2Ch");
+	ASSERT_SIZE(ScrollbarDrawable, 0x2C);
 
 	inline ScrollbarDrawable::ScrollbarDrawable()
 		: mpImages()

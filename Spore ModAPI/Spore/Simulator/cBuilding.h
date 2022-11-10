@@ -85,14 +85,14 @@ namespace Simulator
 	public:
 		/// Used by scenario buildings?
 		/* 1ECh */	cSpaceInventoryPtr mpSpaceInventory;
-		/* 1F0h */	intrusive_ptr<cCity> mpOwnerCity;
+		/* 1F0h */	eastl::intrusive_ptr<cCity> mpOwnerCity;
 		/* 1F4h */	bool mbIsOn;  // true
 		/* 1F8h */	_Unknown1 mEvents;
 		/* 224h */	ResourceKey mNormalModelKey;
 		/* 230h */	bool mbIrradiated;
 		/* 238h */	cGonzagoTimer mAttackTimer;
 		/* 258h */	cGonzagoTimer mDestroyTimer;
-		/* 278h */	string16 field_278;
+		/* 278h */	eastl::string16 field_278;
 		/* 288h */	bool field_288;  // true
 		/* 289h */	bool mbConnected;  // true
 		/* 28Ch */	int mEffectiveness;
@@ -100,19 +100,14 @@ namespace Simulator
 		/* 294h */	int mMoneyCount;
 		/* 298h */	int mHappyCount;
 		/* 29Ch */	int mUnhappyCount;
-		/* 2A0h */	vector<int> field_2A0;
-		/* 2B4h */	vector<int> field_2B4;
-		/* 2C8h */	vector<int> field_2C8;
-		/* 2DCh */	vector<int> field_2DC;
+		/* 2A0h */	eastl::vector<int> field_2A0;
+		/* 2B4h */	eastl::vector<int> field_2B4;
+		/* 2C8h */	eastl::vector<int> field_2C8;
+		/* 2DCh */	eastl::vector<int> field_2DC;
 		/* 2F0h */	bool field_2F0;
-		/* 2F4h */	vector<int> field_2F4;
-		/* 308h */	vector<int> field_308;
+		/* 2F4h */	eastl::vector<int> field_2F4;
+		/* 308h */	eastl::vector<int> field_308;
 		/* 320h */	cGonzagoTimer field_320;
 	};
-
-	/////////////////////////////////
-	//// INTERNAL IMPLEMENTATION ////
-	/////////////////////////////////
-
-	static_assert(sizeof(cBuilding) == 0x340, "sizeof(cBuilding) != 340h");
+	ASSERT_SIZE(cBuilding, 0x340);
 }

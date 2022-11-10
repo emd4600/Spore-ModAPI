@@ -22,8 +22,6 @@
 
 #include <EASTL\intrusive_ptr.h>
 
-using namespace eastl;
-
 namespace IO
 {
 	///
@@ -93,7 +91,7 @@ namespace IO
 		/* 14h */	virtual bool EndProcessingInstruction();
 
 		///
-		/// Append a string attribute to the most recently written element or processing instruction,
+		/// Append a eastl::string attribute to the most recently written element or processing instruction,
 		/// assuming that it has not been closed.
 		/// This should be called before any character data or child elements are written.
 		/// XML special characters in the attribute value will be escaped as entities.
@@ -110,16 +108,16 @@ namespace IO
 		/* 1Ch */	virtual bool AppendAttributeF(const char16_t* pAttrName, const char16_t* pAttrValueFmt, ...);
 
 		///
-		/// Write a string of character data. XML special characters will be escaped as entities.
-		/// @param pCharData The string of characters.
+		/// Write a eastl::string of character data. XML special characters will be escaped as entities.
+		/// @param pCharData The eastl::string of characters.
 		///
 		/* 20h */	virtual bool WriteCharData(const char16_t* pCharData);
 
 		///
-		/// Write a string of unencoded character data. Consecutive calls to WriteCDATA will be
+		/// Write a eastl::string of unencoded character data. Consecutive calls to WriteCDATA will be
 		/// merged into a single CDATA block.
-		/// It is an error to include the string "]]>" in the character data.
-		/// @param pCharData The string of characters.
+		/// It is an error to include the eastl::string "]]>" in the character data.
+		/// @param pCharData The eastl::string of characters.
 		///
 		/* 24h */	virtual bool WriteCDATA(const char16_t* pCharData);
 
@@ -133,15 +131,15 @@ namespace IO
 		/* 28h */	virtual bool WriteComment(const char16_t* pCommentText, bool bNewlineBefore = true);
 
 		///
-		/// Writes a C-string as a piece of raw text.
-		/// @param pString The null-terminated string to write.
+		/// Writes a C-eastl::string as a piece of raw text.
+		/// @param pString The null-terminated eastl::string to write.
 		/// 
 		/* 2Ch */	virtual bool WriteName(const char16_t* pString);
 
 		///
 		/// Write a piece of raw text.
-		/// @param pString The string to write.
-		/// @param nLength The length of the string.
+		/// @param pString The eastl::string to write.
+		/// @param nLength The length of the eastl::string.
 		///
 		/* 30h */	virtual bool WriteText(const char16_t* pString, size_t nLength);
 
@@ -161,10 +159,9 @@ namespace IO
 		/* 10h */	size_t            mnIndentLevel;    /// Level of indentation. Starts at zero, increases by one for each indentation.
 		/* 14h */	size_t            mnIndentSpaces;   /// Number of space chars per indent. Total indent at any time = mnIndentLevel * mnIndentSpaces.
 		/* 18h */	LineEnd           mLineEnd;         /// Defines whether we use Windows or standard indentation.
-		/* 1Ch */	intrusive_ptr<IStream> mpStream;
+		/* 1Ch */	IStreamPtr		  mpStream;
 	};
-
-	static_assert(sizeof(XmlWriter) == 0x20, "sizeof(XmlWriter) != 20h");
+	ASSERT_SIZE(XmlWriter, 0x20);
 
 	namespace Addresses(XmlWriter)
 	{

@@ -39,10 +39,10 @@ namespace UTFWin
 		/* 10h */	int field_10;
 		/* 14h */	int field_14;
 		/* 18h */	int field_18;
-		/* 1Ch */	hash_map<int, int> field_1C;
-		/* 3Ch */	hash_map<int, int> field_3C;
-		/* 5Ch */	vector<ILayoutElementPtr> mRootComponents;  // root components?
-		/* 70h */	string16 field_70;
+		/* 1Ch */	eastl::hash_map<int, int> field_1C;
+		/* 3Ch */	eastl::hash_map<int, int> field_3C;
+		/* 5Ch */	eastl::vector<ILayoutElementPtr> mRootComponents;  // root components?
+		/* 70h */	eastl::string16 field_70;
 	};
 	ASSERT_SIZE(LayoutObjectsContainer, 0x80);
 

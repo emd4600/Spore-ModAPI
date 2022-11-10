@@ -39,16 +39,11 @@
 #include <Spore\Resource\IResourceFilter.h>
 #include <Spore\Resource\IResourceMap.h>
 #include <Spore\Resource\IResourceManager.h>
+#include <Spore\Resource\Database.h>
 #include <Spore\FixedPoolAllocator.h>
-
-using namespace eastl;
 
 namespace Resource
 {
-
-	class DatabasePackedFile;
-	typedef DatabasePackedFile DBPF;
-
 	///
 	/// The implementation of IResourceManager; this should only be used for extending and detouring 
 	///
@@ -57,7 +52,7 @@ namespace Resource
 
 	public:
 
-		typedef list<DatabasePackedFile*, CoreAllocatorAdapter<ICoreAllocator>> DBPFList;
+		typedef eastl::list<DatabasePackedFile*, CoreAllocatorAdapter<ICoreAllocator>> DBPFList;
 
 
 		virtual bool Initialize() override;
@@ -81,7 +76,7 @@ namespace Resource
 			IResourceFactory* pFactory = nullptr, 
 			const ResourceKey* pAlternativeName = nullptr) override;
 
-		/* 14h */	virtual bool GetCachedResource(const ResourceKey& name, intrusive_ptr<ResourceObject>* pDst) override;
+		/* 14h */	virtual bool GetCachedResource(const ResourceKey& name, ResourceObjectPtr* pDst) override;
 		/* 18h */	virtual bool func18h(int arg_0, int arg_4, int arg_8, int arg_C, int arg_10) override;
 		/* 1Ch */	virtual bool ReadResource(
 			const ResourceKey& name,
@@ -99,17 +94,17 @@ namespace Resource
 			const ResourceKey* pNameKey = nullptr) override;
 
 		/* 24h */	virtual void SetTypeRemap(uint32_t nTypeID, uint32_t* pnTypes, size_t nCount) override;
-		/* 28h */	virtual size_t GetTypeRemap(vector<uint32_t>& dst, uint32_t nTypeID) const override;
+		/* 28h */	virtual size_t GetTypeRemap(eastl::vector<uint32_t>& dst, uint32_t nTypeID) const override;
 		/* 2Ch */	virtual uint32_t GetGeneralTypeID(uint32_t nSubtypeID) const override;
 		/* 30h */	virtual DBPF* GetRealFileKey(const ResourceKey& nameKey, ResourceKey* pDst=nullptr, DBPF* pDBPF=nullptr) const override;
-		/* 34h */	virtual size_t func34h(vector<ResourceKey>& pDst, int arg_4) override;
-		/* 38h */	virtual size_t GetFileKeys(vector<ResourceKey>& dst, IResourceFilter* request, vector<DBPF*>* pDstDBPFs=nullptr) const override;
+		/* 34h */	virtual size_t func34h(eastl::vector<ResourceKey>& pDst, int arg_4) override;
+		/* 38h */	virtual size_t GetFileKeys(eastl::vector<ResourceKey>& dst, IResourceFilter* request, eastl::vector<DBPF*>* pDstDBPFs=nullptr) const override;
 		/* 3Ch */	virtual int func3Ch(int, int, int) override;
 		/* 40h */	virtual bool func40h(int, int, int, int, int) override;
 		/* 44h */	virtual bool SetResourceFactory(bool bRemove, IResourceFactory* pFactory, uint32_t arg_8) override;
 		/* 48h */	virtual IResourceFactory* GetResourceFactory(uint32_t nTypeID, uint32_t nSubTypeID = ResourceKey::kWildcardID) const override;
-		/* 4Ch */	virtual size_t GetResourceFactories(list<IResourceFactory*>& dst, uint32_t nTypeID = ResourceKey::kWildcardID) const override;
-		/* 50h */	virtual bool AddDBPF(bool, DatabasePackedFile* pDBPF, int nPriority) override;
+		/* 4Ch */	virtual size_t GetResourceFactories(eastl::list<IResourceFactory*>& dst, uint32_t nTypeID = ResourceKey::kWildcardID) const override;
+		/* 50h */	virtual bool AddDBPF(bool, Database* pDBPF, int nPriority) override;
 		/* 54h */	virtual bool GetPriority(DatabasePackedFile* pDBPF, int* pDst = nullptr) const override;
 		/* 58h */	virtual DatabasePackedFile* GetDBPF(const ResourceKey& name) const override;
 		/* 5Ch */	virtual size_t GetAllDBPFs(DBPFList& dst, const ResourceKey* pFileKey = nullptr) override;
@@ -118,9 +113,9 @@ namespace Resource
 		/* 68h */	virtual IResourceMap* GetResourceCache(ResourceKey& name) const override;
 		/* 6Ch */	virtual bool func6Ch(int, int) override;
 		/* 70h */	virtual void func70h(IResourceMap*, CachedResourceObject*) override;
-		/* 74h */	virtual size_t GetResourceCaches(list<IResourceMap*>& dst) const override;
+		/* 74h */	virtual size_t GetResourceCaches(eastl::list<IResourceMap*>& dst) const override;
 		/* 78h */	virtual bool AddFileName(const char16_t* pFileName) override;
-		/* 7Ch */	virtual void GetFileName(const ResourceKey& resourceKey, string16& dst) const override;
+		/* 7Ch */	virtual void GetFileName(const ResourceKey& resourceKey, eastl::string16& dst) const override;
 		/* 80h */	virtual bool SetFileName(const ResourceKey& resourceKey, const char16_t* pFileName) override;
 		/* 84h */	virtual bool RemoveFileName(const ResourceKey& resourceKey) override;
 		/* 88h */	virtual uint32_t GetTypeID(const char16_t* pExtension) const override;
@@ -130,16 +125,16 @@ namespace Resource
 
 
 	protected:
-		typedef hash_map<uint32_t, vector<pair<IResourceFactoryPtr, uint32_t>>, ICoreAllocatorAdapter> FactoriesMap_t;
-		typedef hash_map<uint32_t, vector<uint32_t>, ICoreAllocatorAdapter> TypesMap_t;
-		typedef hash_map<uint32_t, uint32_t, ICoreAllocatorAdapter> SubtypesMap_t;
-		typedef hash_map<uint32_t, string16, ICoreAllocatorAdapter> ExtensionsMap_t;
-		typedef hash_map<ResourceKey, string16, FixedPoolAllocatorAdapter> FilenamesMap_t;
-		typedef vector<pair<IResourceMap*, int>> CacheVector_t;
+		typedef eastl::hash_map<uint32_t, eastl::vector<eastl::pair<IResourceFactoryPtr, uint32_t>>, ICoreAllocatorAdapter> FactoriesMap_t;
+		typedef eastl::hash_map<uint32_t, eastl::vector<uint32_t>, ICoreAllocatorAdapter> TypesMap_t;
+		typedef eastl::hash_map<uint32_t, uint32_t, ICoreAllocatorAdapter> SubtypesMap_t;
+		typedef eastl::hash_map<uint32_t, eastl::string16, ICoreAllocatorAdapter> ExtensionsMap_t;
+		typedef eastl::hash_map<ResourceKey, eastl::string16, FixedPoolAllocatorAdapter> FilenamesMap_t;
+		typedef eastl::vector<eastl::pair<IResourceMap*, int>> CacheVector_t;
 
 		/* 04h */	bool mbNeedsToRelease;
 		/* 08h */	ICoreAllocator* mpAllocator;
-		/* 0Ch */	map<int, int, less<ResourceKey>, ICoreAllocatorAdapter> field_0C;
+		/* 0Ch */	eastl::map<int, int, eastl::less<ResourceKey>, ICoreAllocatorAdapter> field_0C;
 		/* 2Ch */	void* field_2C;  // pointer to DBList
 		/* 30h */	FactoriesMap_t		mResourceFactories;
 		/* 54h */	TypesMap_t			mTypesRemapping;  // used to get multiple typeIDs from a single one
@@ -151,13 +146,7 @@ namespace Resource
 		/* 118h */	Mutex field_118;  // used for extension mapping
 		/* 148h */	Mutex field_148;
 	};
-
-
-	///////////////////////////////////
-	//// INTERNAL IMPLEMENENTATION ////
-	///////////////////////////////////
-
-	static_assert(sizeof(cResourceManager) == 0x178, "sizeof(cResourceManager) != 178h");
+	ASSERT_SIZE(cResourceManager, 0x178);
 
 	namespace Addresses(cResourceManager)
 	{

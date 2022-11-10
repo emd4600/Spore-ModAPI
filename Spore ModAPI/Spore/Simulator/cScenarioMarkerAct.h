@@ -33,13 +33,8 @@ namespace Simulator
 		/* 00h */	float mfWanderRadius;
 		/* 04h */	Vector3 mPatrolPositionDEPRECATED;
 		/* 10h */	Vector3 mTeleportPositionDEPRECATED;
-		/* 14h */	vector<Vector3> mPatrolPath;
+		/* 14h */	eastl::vector<Vector3> mPatrolPath;
 		/* 30h */	int mPatrolStyle;
 	};
-
-	/////////////////////////////////
-	//// INTERNAL IMPLEMENTATION ////
-	/////////////////////////////////
-
-	static_assert(sizeof(cScenarioMarkerAct) == 0x34, "sizeof(cScenarioMarker) != 0x34");
+	ASSERT_SIZE(cScenarioMarkerAct, 0x34);
 }

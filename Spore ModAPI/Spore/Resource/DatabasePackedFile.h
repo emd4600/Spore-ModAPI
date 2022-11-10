@@ -98,7 +98,7 @@ namespace Resource
 			IO::AccessFlags desiredAccess = IO::AccessFlags::Read, 
 			IO::CD createDisposition = IO::CD::Default,
 			bool arg_10 = true,
-			DBPFItem* pDstInfo = nullptr) override;
+			RecordInfo* pDstInfo = nullptr) override;
 		/* 38h */	virtual int GetOpenCount(const ResourceKey& key) override;
 		/* 3Ch */	virtual bool CloseRecord(IRecord* pRecord) override;
 		/* 40h */	virtual bool DeleteRecord(const ResourceKey& name) override;
@@ -109,7 +109,7 @@ namespace Resource
 		/* 50h */	virtual bool SetStream(IO::IStream* pStream);
 
 	public:
-		/* 54h */	virtual PFRecordRead* CreateRecordRead(IO::AccessFlags desiredAccess, DBPFItem* info, ResourceKey& key);
+		/* 54h */	virtual PFRecordRead* CreateRecordRead(IO::AccessFlags desiredAccess, RecordInfo* info, ResourceKey& key);
 		/* 58h */	virtual PFRecordRead* CreateRecordReadCopy(IO::AccessFlags desiredAccess, PFRecordRead* pOther, ResourceKey& key);
 		/* 5Ch */	virtual PFRecordWrite* CreateRecordWriteData(IO::AccessFlags desiredAccess, void* pData, size_t nSize, ResourceKey& key);
 		/* 60h */	virtual PFRecordWrite* CreateRecordWrite(IO::AccessFlags desiredAccess, size_t nChunkOffset, size_t nSize, ResourceKey& key);
@@ -153,7 +153,7 @@ namespace Resource
 		/* 2DCh */	int field_2DC;
 		/* 2E0h */	bool field_2E0;
 		/* 2E4h */	float field_2E4;
-		/* 2E8h */	eastl::map<ResourceKey, IPFRecord*, eastl::less<ResourceKey>, ICoreAllocatorAdapter> field_2E8;
+		/* 2E8h */	eastl::map<ResourceKey, PFRecordBase*, eastl::less<ResourceKey>, ICoreAllocatorAdapter> field_2E8;
 		/* 308h */	int field_308;
 		/* 30Ch */	int field_30C;
 		/* 310h */	int field_310;

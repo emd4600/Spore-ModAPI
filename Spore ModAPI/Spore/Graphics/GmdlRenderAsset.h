@@ -11,6 +11,6 @@ namespace Graphics
 	{
 		static const uint32_t TYPE = 0xE6BCE5;  // gmdl
 
-		/* F4h */	vector<intrusive_ptr<cMaterialInfo>> mMaterialInfos;
+		/* F4h */	eastl::vector<intrusive_ptr<cMaterialInfo>> mMaterialInfos;
 	};
 }

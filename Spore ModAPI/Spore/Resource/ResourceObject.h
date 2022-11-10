@@ -77,6 +77,7 @@ namespace Resource
 	public:
 		/* 14h */	cIReleaseCallback* mpFinalReleaseCallback;
 	};
+	ASSERT_SIZE(CachedResourceObject, 0x18);
 
 	class AsyncResource
 		: public Object

@@ -27,8 +27,6 @@
 
 #define IResourceFactoryPtr eastl::intrusive_ptr<Resource::IResourceFactory>
 
-using namespace eastl;
-
 namespace Resource
 {
 	///
@@ -36,7 +34,8 @@ namespace Resource
 	/// IResourceManager so that when a resource is accessed the correct object is returned (e.g. if you access a .png
 	/// file, you get the Texture object directly). The resources created must inherit from ResourceObject.
 	///
-	class IResourceFactory : public ThreadedObject
+	class IResourceFactory 
+		: public ThreadedObject
 	{
 	public:
 
@@ -51,7 +50,7 @@ namespace Resource
 		/// @param typeID The type ID of the file to read, which might be used to differentiate between different file formats or resource types.
 		///
 		/* 1Ch */	virtual bool CreateResource(IRecord* pRecord, ResourceObjectPtr& pDst, int, uint32_t typeID) = 0;
-		/* 20h */	virtual bool AsyncAccess(IRecord** ppDst, int, DBPF* pDBPF, int, int, int) = 0;  // ? renamed this to avoid name collisions in cPropManager...
+		/* 20h */	virtual bool AsyncAccess(IRecord** ppDst, int, Database* pDBPF, int, int, int) = 0;  // ? renamed this to avoid name collisions in cPropManager...
 
 		///
 		/// Reads the data into the resource given.

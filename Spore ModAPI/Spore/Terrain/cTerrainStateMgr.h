@@ -8,9 +8,6 @@
 
 namespace Terrain
 {
-	using namespace eastl;
-	using namespace Math;
-
 	class ITerrain;
 	class cTerrainMapSet;
 
@@ -35,37 +32,37 @@ namespace Terrain
 			/* 44h */	float kMaxCliffGradient;
 			/* 48h */	char padding_48[0x30];  // not initialized
 			/* 78h */	uint32_t mLightingState;
-			/* 7Ch */	Vector2 kEffectAtmosphereLowRange;
-			/* 84h */	Vector2 kEffectAtmosphereMedRange;
-			/* 8Ch */	Vector2 kEffectAtmosphereHighRange;
-			/* 94h */	Vector2 kEffectTemperatureLowRange;
-			/* 9Ch */	Vector2 kEffectTemperatureMedRange;
-			/* A4h */	Vector2 kEffectTemperatureHighRange;
-			/* ACh */	Vector4 kNightLightingTint;  // last value is kNightLumBlend
+			/* 7Ch */	Math::Vector2 kEffectAtmosphereLowRange;
+			/* 84h */	Math::Vector2 kEffectAtmosphereMedRange;
+			/* 8Ch */	Math::Vector2 kEffectAtmosphereHighRange;
+			/* 94h */	Math::Vector2 kEffectTemperatureLowRange;
+			/* 9Ch */	Math::Vector2 kEffectTemperatureMedRange;
+			/* A4h */	Math::Vector2 kEffectTemperatureHighRange;
+			/* ACh */	Math::Vector4 kNightLightingTint;  // last value is kNightLumBlend
 			/* BCh */	int field_BC;  // not initialized
-			/* C0h */	Vector3 kDayLightColor;
-			/* CCh */	Vector3 kDayShadowColor;
-			/* D8h */	Vector3 kDuskLightColor;
-			/* E4h */	Vector3 kDuskShadowColor;
-			/* F0h */	Vector3 kNightLightColor;
-			/* FCh */	Vector3 kNightShadowColor;
-			/* 108h */	Vector4 kDuskDawnStartEnd;
+			/* C0h */	Math::Vector3 kDayLightColor;
+			/* CCh */	Math::Vector3 kDayShadowColor;
+			/* D8h */	Math::Vector3 kDuskLightColor;
+			/* E4h */	Math::Vector3 kDuskShadowColor;
+			/* F0h */	Math::Vector3 kNightLightColor;
+			/* FCh */	Math::Vector3 kNightShadowColor;
+			/* 108h */	Math::Vector4 kDuskDawnStartEnd;
 			/* 118h */	float kAboveColorRampSeaScaleBaseVal;
 			/* 11Ch */	float kAboveColorRampSeaScaleScaleVal;
-			/* 120h */	vector<Vector2> kAtmThicknessByAtmosphereScore;
-			/* 134h */	Vector2 kAtmLuminenceRange;
+			/* 120h */	eastl::vector<Math::Vector2> kAtmThicknessByAtmosphereScore;
+			/* 134h */	Math::Vector2 kAtmLuminenceRange;
 			/* 13Ch */	float kAboveDetailLowTiling;
 			/* 140h */	float kAboveDetailHighTiling;
 			/* 144h */	float kFogMinDensity;
 			/* 148h */	float kFogMaxDensity;
 			/* 14Ch */	float kFogMinDistance;
-			/* 150h */	vector<Vector3> kFogByElevCreature;
-			/* 164h */	vector<Vector3> kFogByElevTribe;
-			/* 178h */	vector<Vector3> kFogByElevCiv;
-			/* 18Ch */	vector<Vector3> kFogByElevSpace;
-			/* 1A0h */	vector<Vector2> kFogDistBiasByTimeOfDay;
-			/* 1B4h */	vector<Vector3> kFogDistBiasByAtmosphereScore;
-			/* 1C8h */	vector<Vector2> kFogBiasByElev;
+			/* 150h */	eastl::vector<Math::Vector3> kFogByElevCreature;
+			/* 164h */	eastl::vector<Math::Vector3> kFogByElevTribe;
+			/* 178h */	eastl::vector<Math::Vector3> kFogByElevCiv;
+			/* 18Ch */	eastl::vector<Math::Vector3> kFogByElevSpace;
+			/* 1A0h */	eastl::vector<Math::Vector2> kFogDistBiasByTimeOfDay;
+			/* 1B4h */	eastl::vector<Math::Vector3> kFogDistBiasByAtmosphereScore;
+			/* 1C8h */	eastl::vector<Math::Vector2> kFogBiasByElev;
 			/* 1DCh */	int field_1DC;  // not initialized
 			/* 1E0h */	float kWaterFogMaxDepth;
 			/* 1E4h */	float kWaterPCAAnimationFPS;
@@ -80,19 +77,19 @@ namespace Terrain
 			/* 208h */	ResourceObjectPtr field_208;  // bit image
 			/* 20Ch */	ResourceObjectPtr field_20C;  // 8bit image
 			/* 210h */	ResourceObjectPtr field_210;  // 8bit image
-			/* 214h */	Vector3 kP1Phase;
-			/* 220h */	Vector3 kP1Brightness;
-			/* 22Ch */	Vector3 kP2Phase;
-			/* 238h */	Vector3 kP2Brightness;
-			/* 244h */	Vector3 kP3Phase;
-			/* 250h */	Vector3 kP3Brightness;
+			/* 214h */	Math::Vector3 kP1Phase;
+			/* 220h */	Math::Vector3 kP1Brightness;
+			/* 22Ch */	Math::Vector3 kP2Phase;
+			/* 238h */	Math::Vector3 kP2Brightness;
+			/* 244h */	Math::Vector3 kP3Phase;
+			/* 250h */	Math::Vector3 kP3Brightness;
 			/* 25Ch */	bool userColorBeachEnabled;  // not initialized
-			/* 260h */	ColorRGB factoredTerrainUserColorBeach;  // not initialized
-			/* 26Ch */	ColorRGB factoredTerrainUserColorCliff;  // not initialized
-			/* 278h */	ColorRGB factoredTerrainUserColorWater;  // not initialized
-			/* 284h */	ColorRGB factoredTerrainUserColorAtmosphere;  // not initialized
-			/* 290h */	vector<float> factoredTerrainUserColorElevations;
-			/* 2A4h */	vector<ColorRGB> factoredTerrainUserColorElevationColors;
+			/* 260h */	Math::ColorRGB factoredTerrainUserColorBeach;  // not initialized
+			/* 26Ch */	Math::ColorRGB factoredTerrainUserColorCliff;  // not initialized
+			/* 278h */	Math::ColorRGB factoredTerrainUserColorWater;  // not initialized
+			/* 284h */	Math::ColorRGB factoredTerrainUserColorAtmosphere;  // not initialized
+			/* 290h */	eastl::vector<float> factoredTerrainUserColorElevations;
+			/* 2A4h */	eastl::vector<Math::ColorRGB> factoredTerrainUserColorElevationColors;
 			/* 2B8h */	float terrainUserColorRockSaturationFactor;
 			/* 2BCh */	float terrainUserColorBeachSaturationFactor;
 			/* 2C0h */	float terrainUserColorCliffSaturationFactor;
@@ -157,25 +154,25 @@ namespace Terrain
 			/* 50h */	ResourceObjectPtr field_50;
 			/// `pcawater.pcaw`
 			/* 54h */	ResourceObjectPtr field_54;
-			/* 58h */	ColorRGBA nightLightTint;
-			/* 68h */	ColorRGBA dayLightColor;
-			/* 78h */	ColorRGBA duskLightColor;
-			/* 88h */	ColorRGBA nightLightColor;
-			/* 98h */	ColorRGBA dayShadowColor;
-			/* A8h */	ColorRGBA duskShadowColor;
-			/* B8h */	ColorRGBA nightShadowColor;
-			/* C8h */	Vector4 duskDawnStartEnd;
+			/* 58h */	Math::ColorRGBA nightLightTint;
+			/* 68h */	Math::ColorRGBA dayLightColor;
+			/* 78h */	Math::ColorRGBA duskLightColor;
+			/* 88h */	Math::ColorRGBA nightLightColor;
+			/* 98h */	Math::ColorRGBA dayShadowColor;
+			/* A8h */	Math::ColorRGBA duskShadowColor;
+			/* B8h */	Math::ColorRGBA nightShadowColor;
+			/* C8h */	Math::Vector4 duskDawnStartEnd;
 			/* D8h */	char padding_D8[0x60];
-			/* 138h */	Vector4 waterColor;
-			/* 148h */	Vector4 innerParms;
-			/* 158h */	Vector4 field_158;
-			/* 168h */	Vector4 field_168;
-			/* 178h */	Vector4 sunDir;
-			/* 188h */	Matrix4 viewTransform;
-			/* 1C8h */	Vector4 sphereParms;
-			/* 1D8h */	Vector4 camParms;
-			/* 1E8h */	Vector4 illumParms;
-			/* 1F8h */	Vector4 fogParms;
+			/* 138h */	Math::Vector4 waterColor;
+			/* 148h */	Math::Vector4 innerParms;
+			/* 158h */	Math::Vector4 field_158;
+			/* 168h */	Math::Vector4 field_168;
+			/* 178h */	Math::Vector4 sunDir;
+			/* 188h */	Math::Matrix4 viewTransform;
+			/* 1C8h */	Math::Vector4 sphereParms;
+			/* 1D8h */	Math::Vector4 camParms;
+			/* 1E8h */	Math::Vector4 illumParms;
+			/* 1F8h */	Math::Vector4 fogParms;
 			/* 208h */	int field_208;
 			/* 20Ch */	int field_20C;
 			/* 210h */	int field_210;
@@ -216,7 +213,7 @@ namespace Terrain
 			/* 29Ch */	int field_29C;
 			/* 2A0h */	int field_2A0;
 			/* 2A4h */	int field_2A4;
-			/* 2A8h */	Vector4 field_2A8;
+			/* 2A8h */	Math::Vector4 field_2A8;
 		};
 		ASSERT_SIZE(TerrainTextures, 0x2B8);
 
@@ -234,9 +231,9 @@ namespace Terrain
 		/* 5BCh */	int field_5BC;  // not initialized
 		/* 5C0h */	int mAtmosphereType;
 		/* 5C4h */	int mWaterType;
-		/* 5C8h */	Vector4 field_5C8;
-		/* 5D8h */	Vector4 field_5D8;
-		/* 5E8h */	Vector4 field_5E8;
+		/* 5C8h */	Math::Vector4 field_5C8;
+		/* 5D8h */	Math::Vector4 field_5D8;
+		/* 5E8h */	Math::Vector4 field_5E8;
 		/* 5F8h */	IEffectsWorldPtr field_5F8;
 		/* 5FCh */	int field_5FC;
 		/* 600h */	float field_600;  // -1

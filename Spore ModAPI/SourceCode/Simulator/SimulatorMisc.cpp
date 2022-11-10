@@ -22,11 +22,11 @@ namespace Simulator
 
 	auto_STATIC_METHOD_(cSpaceNames, cSpaceNames*, Get);
 
-	string16 cSpaceNames::GenerateRandomName(SpaceNamesType arg)
+	eastl::string16 cSpaceNames::GenerateRandomName(SpaceNamesType arg)
 	{
-		string16 dst;
+		eastl::string16 dst;
 		CALL(GetAddress(cSpaceNames, GenerateRandomName), void, 
-			Args(cSpaceNames*, string16&, SpaceNamesType), Args(this, dst, arg));
+			Args(cSpaceNames*, eastl::string16&, SpaceNamesType), Args(this, dst, arg));
 		return dst;
 	}
 

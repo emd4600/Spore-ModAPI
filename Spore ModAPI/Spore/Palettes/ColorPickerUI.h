@@ -28,8 +28,6 @@
 
 namespace Palettes
 {
-	using namespace eastl;
-
 	///
 	/// This class holds all information related with the color picker in editor categories and its user interface.
 	/// A color picker is made of multiple color buttons, represented by the Palettes::ColorSwatchUI class.
@@ -50,7 +48,7 @@ namespace Palettes
 		/// @param pColors [Optional] A list of the colors that must be generated. If it is not present, the list will be taken
 		/// from the property 'colorpickerColors' of the .prop file.
 		///
-		bool Load(UTFWin::IWindow* pWindow, uint32_t propID, uint32_t regionFilter, vector<ColorRGB>* pColors = nullptr);
+		bool Load(UTFWin::IWindow* pWindow, uint32_t propID, uint32_t regionFilter, eastl::vector<ColorRGB>* pColors = nullptr);
 
 		///
 		/// Toggles the visibility of this color picker. If bVisible is true, the color picker UI will be brought to the front
@@ -89,7 +87,7 @@ namespace Palettes
 		/// The index of the button for setting the default color, only used if the property 'colorpickerAddDefaultColor' is true.
 		/* 2Ch */	int mDefaultColorIndex;  // -1
 		/// The user interfaces of the multiple color swatches that are shown in the color picker.
-		/* 30h */	vector<ColorSwatchUIPtr> mpColorUIs;
+		/* 30h */	eastl::vector<ColorSwatchUIPtr> mpColorUIs;
 		/// The number of color buttons that fit into the picker layout.
 		/* 44h */	size_t mColorsCount;
 		/// The PROP file that contains the configuration for this color picker.
@@ -102,12 +100,7 @@ namespace Palettes
 	public:
 		const static uint32_t TYPE = 0xD0D22119;
 	};
-
-	/////////////////////////////////
-	//// INTERNAL IMPLEMENTATION ////
-	/////////////////////////////////
-
-	static_assert(sizeof(ColorPickerUI) == 0x50, "sizeof(ColorPickerUI) != 50h");
+	ASSERT_SIZE(ColorPickerUI, 0x50);
 
 	namespace Addresses(ColorPickerUI)
 	{

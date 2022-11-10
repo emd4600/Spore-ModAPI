@@ -56,12 +56,7 @@ namespace Simulator
 		/* 18h */	bool mbRunning;
 		/* 1Ch */	TimeFunction_t mpTimeFunction;
 	};
-
-	/////////////////////////////////
-	//// INTERNAL IMPLEMENTATION ////
-	/////////////////////////////////
-
-	static_assert(sizeof(cGonzagoTimer) == 0x20, "sizeof(cGonzagoTimer) != 20h");
+	ASSERT_SIZE(cGonzagoTimer, 0x20);
 
 	namespace Addresses(cGonzagoTimer) {
 		DeclareAddress(GetSimulatorTime_ptr);

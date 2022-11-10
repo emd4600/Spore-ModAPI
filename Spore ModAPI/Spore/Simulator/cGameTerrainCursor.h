@@ -33,7 +33,7 @@ namespace Simulator
 		static const uint32_t TYPE = 0x14A4EDC;
 		static const uint32_t NOUN_ID = 0x18C40BC;
 
-		typedef vector<cSpatialObjectPtr> SpatialObjects;
+		typedef eastl::vector<cSpatialObjectPtr> SpatialObjects;
 
 		using Object::Cast;
 		using Object::AddRef;

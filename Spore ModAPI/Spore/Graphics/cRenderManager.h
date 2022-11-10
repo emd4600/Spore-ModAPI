@@ -10,8 +10,6 @@
 
 namespace Graphics
 {
-	using namespace eastl;
-
 	class cRenderManager
 		: public IRenderer
 		, public IVirtual
@@ -25,9 +23,9 @@ namespace Graphics
 
 		/* 74h */	float mDisplayAspectRatio;
 
-		/* 8Ch */	vector<RenderLayer> mRenderLayers;
+		/* 8Ch */	eastl::vector<RenderLayer> mRenderLayers;
 
-		// /* 34Ch */	vector<RenderLayer> mRenderLayers;
+		// /* 34Ch */	eastl::vector<RenderLayer> mRenderLayers;
 
 		/* 5E8h */	Clock field_5E8;
 

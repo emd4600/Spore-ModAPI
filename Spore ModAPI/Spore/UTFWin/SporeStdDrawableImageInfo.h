@@ -113,8 +113,8 @@ namespace UTFWin
 		virtual uint32_t GetProxyID() const override;
 
 	protected:
-		/* 0Ch */	intrusive_ptr<Image> mpBackgroundImage;
-		/* 10h */	intrusive_ptr<Image> mpIconImage;
+		/* 0Ch */	ImagePtr mpBackgroundImage;
+		/* 10h */	ImagePtr mpIconImage;
 		/* 14h */	Color mBackgroundColor;
 		/* 18h */	Color mIconColor;
 		/* 1Ch */	IconDrawModes mIconDrawMode;
@@ -127,12 +127,7 @@ namespace UTFWin
 		/* 48h */	OutlineFormat mStrokeShadow;
 		/* 70h */	OutlineFormat mHaloShadow;
 	};
-
-	/////////////////////////////////
-	//// INTERNAL IMPLEMENTATION ////
-	/////////////////////////////////
-
-	static_assert(sizeof(SporeStdDrawableImageInfo) == 0x98, "sizeof(SporeStdDrawableImageInfo) != 98h");
+	ASSERT_SIZE(SporeStdDrawableImageInfo, 0x98);
 
 	namespace Addresses(SporeStdDrawableImageInfo)
 	{

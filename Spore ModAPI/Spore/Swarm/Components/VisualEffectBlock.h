@@ -23,8 +23,6 @@
 
 #include <EASTL\vector.h>
 
-using namespace eastl;
-
 namespace Swarm
 {
 	namespace Components
@@ -47,7 +45,7 @@ namespace Swarm
 			/* 08h */	Transform transform;
 			/* 40h */	char lodBegin;
 			/* 41h */	char lodEnd;
-			/* 44h */	vector<LODScale> lodScales;
+			/* 44h */	eastl::vector<LODScale> lodScales;
 			/* 58h */	float emitScaleBegin;
 			/* 5Ch */	float emitScaleEnd;
 			/* 60h */	float sizeScaleBegin;
@@ -71,8 +69,7 @@ namespace Swarm
 				kVEBlockFlagRigid = 0x40,
 			};
 		};
-
-		static_assert(sizeof(VisualEffectBlock) == 0x84, "sizeof(VisualEffectBlock) == 84h");
+		ASSERT_SIZE(VisualEffectBlock, 0x84);
 	}
 }
 

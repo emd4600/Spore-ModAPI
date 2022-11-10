@@ -93,13 +93,7 @@ namespace IO
 		/* 224h */	mutable int       mnLastError;                /// Used for error reporting.
 		/* 228h */	mutable size_type mnSize;                     /// Used for caching the file size, which is sometimes useful. 
 	};
-
-
-	///////////////////////////////////
-	//// INTERNAL IMPLEMENENTATION ////
-	///////////////////////////////////
-
-	static_assert(sizeof(FileStream) == 0x22C, "sizeof(FileStream) != 22Ch");
+	ASSERT_SIZE(FileStream, 0x22C);
 
 	namespace Addresses(FileStream)
 	{

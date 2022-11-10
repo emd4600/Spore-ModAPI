@@ -34,8 +34,6 @@
 
 namespace App
 {
-	using namespace eastl;
-
 	enum {
 		/// Sent when all the systems in the game have finished initializing, except for the Simulator ones.
 		/// Does not use message data.
@@ -221,7 +219,7 @@ namespace App
 	/// to the kMsgAppUpdate message.
 	///
 	/// @param function A void function with no parameters, that will be executed every frame.
-	inline intrusive_ptr<UpdateMessageListener> AddUpdateFunction(const VoidFunction_T& function) {
+	inline eastl::intrusive_ptr<UpdateMessageListener> AddUpdateFunction(const VoidFunction_T& function) {
 		auto listener = new UpdateMessageListener(function);
 		MessageManager.AddListener(listener, kMsgAppUpdate);
 		return listener;
@@ -239,7 +237,7 @@ namespace App
 	/// to the kMsgAppUpdate message.
 	///
 	/// @param updatable An object with an Update method, that will be executed every frame.
-	inline intrusive_ptr<UpdateMessageListener> AddUpdateFunction(IUpdatable* updatable) {
+	inline eastl::intrusive_ptr<UpdateMessageListener> AddUpdateFunction(IUpdatable* updatable) {
 		auto listener = new UpdateMessageListener(updatable);
 		MessageManager.AddListener(listener, kMsgAppUpdate);
 		return listener;
@@ -331,7 +329,7 @@ namespace App
 		}, scheduleTime, repeatRate);
 	}
 
-	inline bool RemoveUpdateFunction(intrusive_ptr<UpdateMessageListener>& updateListener) {
+	inline bool RemoveUpdateFunction(eastl::intrusive_ptr<UpdateMessageListener>& updateListener) {
 		return MessageManager.RemoveListener(updateListener.get(), kMsgAppUpdate);
 	}
 

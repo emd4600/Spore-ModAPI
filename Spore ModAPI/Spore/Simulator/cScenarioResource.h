@@ -71,13 +71,13 @@ namespace Simulator
 		/* 170h */	float mAvatarHealthMultiplier;
 		/* 174h */	bool mbAvatarIsInvulnerable;
 		/* 175h */	bool mbAvatarLocked;
-		/* 178h */	vector<cScenarioPosseMember> mInitialPosseMembers;
+		/* 178h */	eastl::vector<cScenarioPosseMember> mInitialPosseMembers;
 		/* 190h */	cScenarioPosseMember mInitialPosseMembers_[3];
 		/* 238h */	int mNumAllowedPosseMembers;
-		/* 23Ch */	fixed_vector<cScenarioAct, 8> mActs;
-		/* 2BF4h */	vector_map<int, cScenarioClass> mClasses;
+		/* 23Ch */	eastl::fixed_vector<cScenarioAct, 8> mActs;
+		/* 2BF4h */	eastl::vector_map<int, cScenarioClass> mClasses;
 		/* 2C0Ch */	int mClassIDCounter;  // 1024
-		/* 2C10h */	vector_map<int, cScenarioMarker> mMarkers;
+		/* 2C10h */	eastl::vector_map<int, cScenarioMarker> mMarkers;
 		/* 2C28h */	int field_2C28; 
 		/* 2C2Ch */	bool mbIsMission;
 		/* 2C2Dh */	bool field_2C2D;  // true
@@ -85,19 +85,14 @@ namespace Simulator
 		/* 2C3Ch */	Quaternion mCameraOrientation;
 		/* 2C4Ch */	float mfCameraDistance;
 		/* 2C50h */	int mMarkerPositioningVersion;
-		/* 2C54h */	vector<uint32_t> mUsedAppPackIds;
-		/* 2C6Ch */	vector<cScenarioClass> mClassesOld;
-		/* 2C80h */	vector<ResourceKey> mInitialPosseMemberKeysDEPRECATED;
+		/* 2C54h */	eastl::vector<uint32_t> mUsedAppPackIds;
+		/* 2C6Ch */	eastl::vector<cScenarioClass> mClassesOld;
+		/* 2C80h */	eastl::vector<ResourceKey> mInitialPosseMemberKeysDEPRECATED;
 		/* 2C94h */	ResourceKey mAvatarAssetKeyDEPRECATED;
 		/* 2CA0h */	uint64_t mAvatarServerIDDEPRECATED;
 		/* 2CA8h */	int mVersion;  // 0x11
 	};
-
-	/////////////////////////////////
-	//// INTERNAL IMPLEMENTATION ////
-	/////////////////////////////////
-
-	static_assert(sizeof(cScenarioResource) == 0x2CB0, "sizeof(cScenarioResource) != 0x2CB0");
+	ASSERT_SIZE(cScenarioResource, 0x2CB0);
 
 	namespace Addresses(cScenarioResource)
 	{

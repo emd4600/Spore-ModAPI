@@ -20,6 +20,7 @@
 #pragma once
 
 #include <Windows.h>
+#include <Spore\Internal.h>
 
 class Mutex
 {
@@ -31,6 +32,7 @@ public:
 		bool bUseCriticalSection;
 		char mutexName[15];
 	};
+	ASSERT_SIZE(MutexInfo , 0x10);
 
 	Mutex(MutexInfo* pInfo, bool bUseCriticalSection);
 	~Mutex();
@@ -55,10 +57,4 @@ protected:
 	/* 28h */	int field_28;
 	/* 2Ch */	int field_2C;
 };
-
-///////////////////////////////////
-//// INTERNAL IMPLEMENENTATION ////
-///////////////////////////////////
-
-static_assert(sizeof(Mutex) == 0x30, "sizeof(Mutex) != 30h");
-static_assert(sizeof(Mutex::MutexInfo) == 0x10, "sizeof(Mutex::MutexInfo) != 10h");
+ASSERT_SIZE(Mutex, 0x30);

@@ -68,7 +68,7 @@ namespace Graphics
 		static IRenderTargetManager* Get();
 		
 	protected:
-		// /* 18h */	vector<>
+		// /* 18h */	eastl::vector<>
 	};
 
 	namespace Addresses(IRenderTargetManager) {

@@ -74,12 +74,7 @@ namespace UTFWin
 	protected:
 		/* 10h */	float mfNearPlane;
 	};
-
-	static_assert(sizeof(PerspectiveEffect) == 0x14, "sizeof(PerspectiveEffect) != 14h");
-
-	/////////////////////////////////
-	//// INTERNAL IMPLEMENTATION ////
-	/////////////////////////////////
+	ASSERT_SIZE(PerspectiveEffect, 0x14);
 
 	namespace Addresses(PerspectiveEffect)
 	{

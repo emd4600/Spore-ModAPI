@@ -44,11 +44,11 @@ namespace Simulator
 		/* 93h */	bool mFirstMinerals;
 		/* 94h */	bool mFirstBudget;
 		/* 98h */	float mWealth;
-		/* 9Ch */	vector<cCityPtr> mCities;
-		/* B0h */	vector<cVehiclePtr> mVehicles;
+		/* 9Ch */	eastl::vector<cCityPtr> mCities;
+		/* B0h */	eastl::vector<cVehiclePtr> mVehicles;
 		/* C4h */	ColorRGB mPrimaryColor;
 		/* D0h */	uint32_t mCultureId;
-		/* D4h */	vector<cSpatialObjectPtr> mSelectableObjectVector;
+		/* D4h */	eastl::vector<cSpatialObjectPtr> mSelectableObjectVector;
 		/* E8h */	cGonzagoTimer mHumanAttackTimer;
 		/* 108h */	cGonzagoTimer mHumanProposeTimer;
 		/* 128h */	cGonzagoTimer mProposeRouteTimer;
@@ -63,8 +63,8 @@ namespace Simulator
 		/* 248h */	cGonzagoTimer mNemesisTimer;
 		/* 268h */	ResourceKey mSpeciesKey;
 		/* 274h */	ICityMusicPtr mCityMusic;
-		/* 278h */	string16 mName;
-		/* 288h */	string16 mDescription;
+		/* 278h */	eastl::string16 mName;
+		/* 288h */	eastl::string16 mDescription;
 		/* 298h */	int mVehicleTechLevel;
 		/* 29Ch */	int mCommRelPanelSlot;
 		/* 2A0h */	uint32_t mCurrentCommEventId;
@@ -88,7 +88,7 @@ namespace Simulator
 		/* 3C8h */	cGonzagoTimer field_3C8;
 		/* 3E8h */	bool field_3E8;
 		/* 3F0h */	cGonzagoTimer field_3F0;
-		/* 410h */	map<cCityPtr, float> mDistanceToCityMap;
+		/* 410h */	eastl::map<cCityPtr, float> mDistanceToCityMap;
 		/* 42Ch */	int field_42C;
 		/* 430h */	bool field_430;
 		/* 431h */	bool field_431;
@@ -107,11 +107,11 @@ namespace Simulator
 		/* 464h */	cCommodityNodePtr mExpansionMineral;
 		/* 468h */	cCommodityNodePtr mClaimMineral;
 		/* 46Ch */	cCivilizationPtr mNemesisCiv;
-		/* 470h */	vector<DefaultRefCounted> field_470;
+		/* 470h */	eastl::vector<DefaultRefCounted> field_470;
 		/* 484h */	int field_484;
 		/* 488h */	int field_488;
 		/* 48Ch */	int field_48C;
-		/* 490h */	vector<cGonzagoTimer> mSuperweaponCooldown;
+		/* 490h */	eastl::vector<cGonzagoTimer> mSuperweaponCooldown;
 		/* 4A4h */	ObjectPtr field_4A4;
 		/* 4A8h */	int field_4A8;  // -1
 		/* 4ACh */	float mDomesticBudget;

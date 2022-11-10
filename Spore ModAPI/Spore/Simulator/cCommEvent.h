@@ -32,14 +32,14 @@ namespace Simulator
 		/* 34h */	PlanetID mPlanetKey;  // -1
 		/* 38h */	uint32_t mFileID;  // -1
 		/* 3Ch */	uint32_t mDialogID;  // -1
-		/* 40h */	intrusive_ptr<cMission> mpMission;
+		/* 40h */	eastl::intrusive_ptr<cMission> mpMission;
 		/* 44h */	int mPriority;  // -1
 		/* 48h */	unsigned int mDuration;
 		/* 4Ch */	unsigned int mElapsedTime;
-		/* 50h */	vector<int> mDynamicResponses;  //PLACEHOLDER struct
-		/* 64h */	vector<int> field_64;
-		/* 78h */	vector<int> field_78;
-		/* 8Ch */	vector<int> field_8C;
+		/* 50h */	eastl::vector<int> mDynamicResponses;  //PLACEHOLDER struct
+		/* 64h */	eastl::vector<int> field_64;
+		/* 78h */	eastl::vector<int> field_78;
+		/* 8Ch */	eastl::vector<int> field_8C;
 	};
 	ASSERT_SIZE(cCommEvent, 0xA0);
 }

@@ -45,16 +45,17 @@ namespace Simulator
 		/* 24h */	int field_24;  // not initialized
 		/* 28h */	bool field_28;
 		/* 2Ch */	Quaternion field_2C;
-		/* 3Ch */	vector<int> field_3C;
-		/* 50h */	vector<int> field_50;
+		/* 3Ch */	eastl::vector<int> field_3C;
+		/* 50h */	eastl::vector<int> field_50;
 	};
+	ASSERT_SIZE(UnkCityClass, 0x64);
 
 	class cCity;
 
 	struct cCityPartner
 	{
 		/* 00h */	cInterCityRoadPtr mpInterCityRoad;
-		/* 04h */	intrusive_ptr<cCity> mpPartnerCity;
+		/* 04h */	cCityPtr mpPartnerCity;
 		/* 08h */	int field_08;
 	};
 	ASSERT_SIZE(cCityPartner, 0xC);
@@ -85,7 +86,7 @@ namespace Simulator
 		cVehicle* SpawnVehicle(VehiclePurpose speciality, VehicleLocomotion locomotion, struct ResourceKey key, bool isSpaceStage);
 
 	public:
-		/* 210h */	string16 field_210;
+		/* 210h */	eastl::string16 field_210;
 		/* 220h */	float field_220;
 		/* 224h */	int field_224;
 		/* 228h */	int field_228;
@@ -98,8 +99,8 @@ namespace Simulator
 		/* 298h */	int field_298;  // intrusive_ptr with release at C0h cSpatialObject/cPlanet
 		/* 29Ch */	int field_29C;
 		/* 2A0h */	int field_2A0;
-		/* 2A4h */	vector<int> field_2A4;
-		/* 2B8h */	vector<int> field_2B8;
+		/* 2A4h */	eastl::vector<int> field_2A4;
+		/* 2B8h */	eastl::vector<int> field_2B8;
 		/* 2CCh */	int field_2CC;
 		/* 2D0h */	int field_2D0;
 		/* 2D4h */	char _padding_2D4[0xC];
@@ -118,7 +119,7 @@ namespace Simulator
 		/* 2FCh */	bool field_2FC;
 		/* 300h */	int field_300;  // not initialized
 		/* 304h */	int field_304;  // not initialized
-		/* 308h */	vector<cOrnamentPtr> mCivicObjects;
+		/* 308h */	eastl::vector<cOrnamentPtr> mCivicObjects;
 		/* 31Ch */	int mHousingAmount;  // not initialized
 		/* 320h */	cBuildingPtr mpCityHall;
 		/* 324h */	cCityWallsPtr mpCityWalls;
@@ -126,8 +127,8 @@ namespace Simulator
 		/* 32Ch */	Math::Vector3 field_32C;
 		/* 338h */	float mFrameRate;  // 10.0
 		/* 33Ch */	bool mbIsPlayerCity;  // not initialized
-		/* 340h */	vector<cBuildingPtr> mBuildings;
-		/* 354h */	int mTurrets;  // points to _field_36C  // vector<cTurret>
+		/* 340h */	eastl::vector<cBuildingPtr> mBuildings;
+		/* 354h */	int mTurrets;  // points to _field_36C  // eastl::vector<cTurret>
 		/* 358h */	int field_358;  // points to _field_36C
 		/* 35Ch */	int field_35C;  // points to end of _field_36C
 		/* 360h */	int field_360;  // not initialized
@@ -142,24 +143,24 @@ namespace Simulator
 		/* 51Ch */	int field_51C;  // not initialized
 		/* 520h */	int field_520;  // not initialized
 		/* 524h */	int field_524;  // not initialized
-		/* 528h */	vector<int> field_528;
+		/* 528h */	eastl::vector<int> field_528;
 		/* 53Ch */	float mWaterFraction;
 		/* 540h */	int mVehicleSpecialty;  // -1
 		/* 544h */	int field_544;  // not initialized
-		/* 548h */	vector<int> field_548;
-		/* 55Ch */	vector<cCityPartner> mTradePartners;
-		/* 570h */	map<int, int> field_570;
+		/* 548h */	eastl::vector<int> field_548;
+		/* 55Ch */	eastl::vector<cCityPartner> mTradePartners;
+		/* 570h */	eastl::map<int, int> field_570;
 		/* 58Ch */	bool field_58C;
-		/* 590h */	intrusive_ptr<cCivilization> mpCivilization;
+		/* 590h */	eastl::intrusive_ptr<cCivilization> mpCivilization;
 		/* 594h */	int mBuildingPlacementAngleDelta;  // 45
 		/* 598h */	float mBuildingPlacementRadius;
 		/* 59Ch */	int mAngle;
-		/* 5A0h */	map<int, int> mAllegianceBucket;
-		/* 5BCh */	map<int, int> mAllegianceConversionDeltas;
-		/* 5D8h */	map<int, int> mAllegianceUnconversionDeltas;
+		/* 5A0h */	eastl::map<int, int> mAllegianceBucket;
+		/* 5BCh */	eastl::map<int, int> mAllegianceConversionDeltas;
+		/* 5D8h */	eastl::map<int, int> mAllegianceUnconversionDeltas;
 		/* 5F8h */	cGonzagoTimer field_5F8;
-		/* 618h */	vector<int> mCultureTargetInfo;  // tCultureTargetInfo
-		/* 62Ch */	vector<int> mCulturalTargets;  // cCulturalTarget
+		/* 618h */	eastl::vector<int> mCultureTargetInfo;  // tCultureTargetInfo
+		/* 62Ch */	eastl::vector<int> mCulturalTargets;  // cCulturalTarget
 		/* 640h */	int field_640;  // not initialized
 		/* 644h */	int field_644;  // not initialized
 		/* 648h */	int field_648;  // not initialized
@@ -175,7 +176,7 @@ namespace Simulator
 		/* 678h */	int mFinalIncome;
 		/* 67Ch */	int mUnused3;
 		/* 680h */	int mUnused4;
-		/* 684h */	vector<int> field_684;
+		/* 684h */	eastl::vector<int> field_684;
 		/* 698h */	bool mbPartyOn;
 		/* 6A0h */	cGonzagoTimer field_6A0;
 		/* 6C0h */	bool mbRiotOn;
@@ -198,22 +199,16 @@ namespace Simulator
 		/* 790h */	cGonzagoTimer field_790;
 		/* 7B0h */	int field_7B0;  // not initialized
 		/* 7B4h */	int field_7B4;  // not initialized
-		/* 7B8h */	map<int, int> field_7B8;
+		/* 7B8h */	eastl::map<int, int> field_7B8;
 		/* 7D4h */	int field_7D4;
 		/* 7D8h */	char _padding_7D8[0x18];
 		/* 7F0h */	int field_7F0;
 		/* 7F4h */	int mNpcBuildingAlignment;  // not initialized
-		/* 7F8h */	vector<int> mDeferredEvents;  // tDeferredEvent
+		/* 7F8h */	eastl::vector<int> mDeferredEvents;  // tDeferredEvent
 		/* 80Ch */	bool field_80C;
 		/* 810h */	int field_810;
 	};
-
-	/////////////////////////////////
-	//// INTERNAL IMPLEMENTATION ////
-	/////////////////////////////////
-
 	ASSERT_SIZE(cCity, 0x818);
-	ASSERT_SIZE(UnkCityClass, 0x64);
 
 	namespace Addresses(cCity) 
 	{

@@ -24,8 +24,6 @@
 
 #define cBehaviorBasePtr eastl::intrusive_ptr<Simulator::cBehaviorBase>
 
-using namespace eastl;
-
 namespace Simulator
 {
 	class cBehaviorBase
@@ -39,27 +37,22 @@ namespace Simulator
 		using Object::Release;
 		using Object::Cast;
 
-		// function 14h returns description string?
+		// function 14h returns description eastl::string?
 		// 34h bool IsSupported(cBehaviorAgent*);
 
 	public:
 		/* 08h */	int mnRefCount;
-		/* 0Ch */	vector<int> field_C;
+		/* 0Ch */	eastl::vector<int> field_C;
 		/* 20h */	int field_20;  // 0x7F
 		/* 24h */	int field_24;  // 0x3FFFFFFF
 		/* 28h */	int field_28;  // 0x3FFFFFFF
-		/* 2Ch */	vector<int> field_2C;
+		/* 2Ch */	eastl::vector<int> field_2C;
 		/* 40h */	int field_40;  // 0x7F
 		/* 44h */	int field_44;  // 0x3FFFFFFF
 		/* 48h */	int field_48;  // 0x3FFFFFFF
-		/* 4Ch */	map<int, int> field_4C;
+		/* 4Ch */	eastl::map<int, int> field_4C;
 		/* 68h */	int field_68;
 		/* 6Ch */	int field_6C;
 	};
-
-	/////////////////////////////////
-	//// INTERNAL IMPLEMENTATION ////
-	/////////////////////////////////
-
-	static_assert(sizeof(cBehaviorBase) == 0x74, "sizeof(cBehaviorBase) != 74h");
+	ASSERT_SIZE(cBehaviorBase, 0x74);
 }

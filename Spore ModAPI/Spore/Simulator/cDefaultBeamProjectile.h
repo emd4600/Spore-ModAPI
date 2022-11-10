@@ -46,8 +46,8 @@ namespace Simulator
 		using Object::Cast;
 
 	public:
-		/* 134h */	intrusive_ptr<cSpaceToolData> mpTool;
-		/* 138h */	intrusive_ptr<cCombatant> mpSource;
+		/* 134h */	eastl::intrusive_ptr<cSpaceToolData> mpTool;
+		/* 138h */	eastl::intrusive_ptr<cCombatant> mpSource;
 		/* 13Ch */	Vector3 mTargetPosition;
 		/* 148h */	Vector3 mHitPosition;
 		/* 154h */	bool field_154;
@@ -69,13 +69,8 @@ namespace Simulator
 		/* 1A4h */	Vector3 mCurrentOffset;
 		/* 1B0h */	Vector4 mGroundHitOrientation;
 		/* 1C0h */	cGonzagoTimer mLifeTimer;
-		/* 1E0h */	intrusive_ptr<cGameData> mpTargetedCombatant;
-		/* 1E4h */	vector<Vector3> mPath;
+		/* 1E0h */	cGameDataPtr mpTargetedCombatant;
+		/* 1E4h */	eastl::vector<Vector3> mPath;
 	};
-
-	/////////////////////////////////
-	//// INTERNAL IMPLEMENTATION ////
-	/////////////////////////////////
-
-	static_assert(sizeof(cDefaultBeamProjectile) == 0x1F8, "sizeof(cDefaultBeamProjectile) != 0x1F8");
+	ASSERT_SIZE(cDefaultBeamProjectile, 0x1F8);
 }

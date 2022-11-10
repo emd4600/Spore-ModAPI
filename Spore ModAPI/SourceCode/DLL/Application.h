@@ -21,9 +21,9 @@ virtual_detour(ShaderFragments_detour, cMaterialManager, IMaterialManager, bool(
 namespace ModAPI
 {
 	const int MAX_MODS = 2048;
-	extern fixed_vector<InitFunction, MAX_MODS> initFunctions;
-	extern fixed_vector<InitFunction, MAX_MODS> postInitFunctions;
-	extern fixed_vector<InitFunction, MAX_MODS> disposeFunctions;
+	extern eastl::fixed_vector<InitFunction, MAX_MODS> initFunctions;
+	extern eastl::fixed_vector<InitFunction, MAX_MODS> postInitFunctions;
+	extern eastl::fixed_vector<InitFunction, MAX_MODS> disposeFunctions;
 
 	extern fixed_map<uint32_t, intrusive_ptr<Simulator::ISimulatorStrategy>, MAX_MODS> simulatorStrategies;
 

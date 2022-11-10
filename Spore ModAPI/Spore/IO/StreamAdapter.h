@@ -137,7 +137,7 @@ namespace IO
 	bool ReadResourceID(IStream* pIS, ResourceID* value, size_type count = 1, Endian endianSource = Endian::Big);
 
 	///
-	/// Reads a null-terminated string from the source IStream
+	/// Reads a null-terminated eastl::string from the source IStream
 	/// This will read bytes until a \\x00 byte is found.
 	///
 	IStream* ReadCString(IStream* pIS, eastl::string8& str);
@@ -150,7 +150,7 @@ namespace IO
 	/// The returned line does not end with line terminator characters.
 	/// The returned line -does- end with a terminating zero.
 	///
-	/// The return value is the strlen (string length) of the expected line or 
+	/// The return value is the strlen (eastl::string length) of the expected line or 
 	/// kSizeTypeError upon error. A return value of kSizeTypeDone means there 
 	/// were no more lines to read. This is different from the return value of 
 	/// the IStream::Read function because of the possibility of empty lines.
@@ -250,7 +250,7 @@ namespace IO
 	bool WriteResourceID(IStream* pOS, const ResourceID* value, size_type count = 1, Endian endianDestination = Endian::Big);
 
 	///
-	/// Reads a null-terminated string from the source IStream
+	/// Reads a null-terminated eastl::string from the source IStream
 	/// This will read bytes until a \\x00 byte is found.
 	///
 	void WriteCString(IStream* pOS, eastl::string8& str);

@@ -25,7 +25,7 @@ namespace Editors
 		void SwitchBackground();
 		void DisableBackground();
 
-		/* 04h */	vector<intrusive_ptr<EditorPlayModeBackground>> mBackgrounds;
+		/* 04h */	eastl::vector<eastl::intrusive_ptr<EditorPlayModeBackground>> mBackgrounds;
 		/* 18h */	int mCurrentIndex;
 		/* 1Ch */	int mTargetIndex;
 		/* 20h */	uint32_t mCurrentEntryEffectID;

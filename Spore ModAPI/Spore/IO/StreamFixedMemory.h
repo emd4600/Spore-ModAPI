@@ -87,12 +87,7 @@ namespace IO
 		/* 10h */	size_type      mnCapacity;          /// The size of the memory buffer, in bytes.
 		/* 14h */	size_type      mnPosition;          /// Current position within memory block.
 	};
-
-	///////////////////////////////////
-	//// INTERNAL IMPLEMENENTATION ////
-	///////////////////////////////////
-
-	static_assert(sizeof(FixedMemoryStream) == 0x18, "sizeof(FixedMemoryStream) != 18h");
+	ASSERT_SIZE(FixedMemoryStream, 0x18);
 
 	namespace Addresses(FixedMemoryStream)
 	{

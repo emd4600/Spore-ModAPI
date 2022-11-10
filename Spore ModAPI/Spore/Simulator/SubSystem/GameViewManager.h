@@ -93,7 +93,7 @@ namespace Simulator
 		/// @param filter An optional filter function that decides which models are considered.
 		/// @param filterObject An object that is passed to the filter function.
 		/// @returns `true` if any object was found, `false` otherwise.
-		/* 48h */	virtual bool IntersectSphere(const Vector3& center, float radius, vector<cSpatialObjectPtr>& dst, 
+		/* 48h */	virtual bool IntersectSphere(const Vector3& center, float radius, eastl::vector<cSpatialObjectPtr>& dst, 
 			bool useModelCollisionMode = false, Graphics::ModelPredicate_t filter = nullptr, void* filterObject = nullptr);
 
 		/// Finds all the cSpatialObject objects that intersect with the segment between `point1` and `point2`.
@@ -108,7 +108,7 @@ namespace Simulator
 		/// @param useModelCollisionMode If true, the collision mode specified by each model will be used.
 		/// @returns `true` if any object was found, `false` otherwise.
 		/* 4Ch */	virtual bool RaycastAll(const Vector3& point1, const Vector3& point2, 
-			vector<cSpatialObjectPtr>& dst, bool useModelCollisionMode = false);
+			eastl::vector<cSpatialObjectPtr>& dst, bool useModelCollisionMode = false);
 
 		/// Finds the first cGameData object that intersects with the segment between `point1` and `point2`.
 		/// Only models that pass the filter function are considered.
@@ -129,18 +129,18 @@ namespace Simulator
 		/* 54h */	virtual IGameDataView GetObjectView(cGameData* pObject);
 
 	public:
-		/* 24h */	intrusive_list<IGameDataView> mViews;
-		/* 2Ch */	fixed_vector<ModelPtr, 16> mGrassTrampModels;
+		/* 24h */	eastl::intrusive_list<IGameDataView> mViews;
+		/* 2Ch */	eastl::fixed_vector<ModelPtr, 16> mGrassTrampModels;
 		/* 84h */	uint32_t mGameModeID;  // -1
 		/* 88h */	cGameDataPtr field_88;
-		/* 8Ch */	hash_map<int, int> field_8C;
-		/* ACh */	vector<int> field_AC;
+		/* 8Ch */	eastl::hash_map<int, int> field_8C;
+		/* ACh */	eastl::vector<int> field_AC;
 		/* C0h */	bool field_C0;
 		/* C1h */	bool field_C1;  // visible?
-		/* C4h */	intrusive_ptr<int> field_C4;  // release at 8
-		/* C8h */	map<int, int> field_C8;  // actually might be a set, of object TYPEs that are not visible?
+		/* C4h */	eastl::intrusive_ptr<int> field_C4;  // release at 8
+		/* C8h */	eastl::map<int, int> field_C8;  // actually might be a set, of object TYPEs that are not visible?
 		/* E4h */	IModelWorldPtr field_E4;  // IModelWorld?
-		/* E8h */	intrusive_ptr<Object> field_E8;
+		/* E8h */	ObjectPtr field_E8;
 		/* ECh */	App::cViewer* field_EC;  // with hologram render type
 		/* F0h */	int field_F0;  // not initialized, ResourceKey?
 		/* F4h */	int field_F4;  // not initialized
@@ -152,23 +152,17 @@ namespace Simulator
 		/* 10Ch */	bool mbSuperHighResVehicles;
 		/* 10Dh */	bool mbSuperHighResIgnoreCount;
 		/* 10Eh */	bool mbSuperHighResBuildings;
-		/* 110h */	fixed_vector<int, 32> field_110;  // ?
+		/* 110h */	eastl::fixed_vector<int, 32> field_110;  // ?
 
 	public:
 		/// Gets the active game view manager.
 		static cGameViewManager* Get();
 	};
+	ASSERT_SIZE(cGameViewManager, 0x1A8);
 
 	inline Graphics::ILightingWorld* GetLightingWorld() {
 		return *(Graphics::ILightingWorld**)(GetAddress(Simulator, LightingWorld_ptr));
 	}
-
-
-	/////////////////////////////////
-	//// INTERNAL IMPLEMENTATION ////
-	/////////////////////////////////
-
-	static_assert(sizeof(cGameViewManager) == 0x1A8, "sizeof(cGameViewManager) != 1A8h");
 
 	namespace Addresses(cGameViewManager)
 	{

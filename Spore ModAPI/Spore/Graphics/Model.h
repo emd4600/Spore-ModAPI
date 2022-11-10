@@ -35,8 +35,6 @@
 #define ModelPtr eastl::intrusive_ptr<Graphics::Model>
 #define cMWModelInternalPtr eastl::intrusive_ptr<Graphics::cMWModelInternal>
 
-using namespace eastl;
-
 namespace Graphics
 {
 	enum class CollisionMode : uint8_t {
@@ -88,8 +86,8 @@ namespace Graphics
 
 		App::PropertyList* GetPropList() const;
 
-		ColorRGBA GetColor() const;
-		void SetColor(const ColorRGBA& color);
+		Math::ColorRGBA GetColor() const;
+		void SetColor(const Math::ColorRGBA& color);
 
 		///
 		/// Assigns the required flags to this model depending on the groupID specified.
@@ -123,7 +121,9 @@ namespace Graphics
 	};
 	ASSERT_SIZE(Model, 0x94);
 
-	class cMWModelInternal : public intrusive_list_node, public Model
+	class cMWModelInternal 
+		: public eastl::intrusive_list_node
+		, public Model
 	{
 	public:
 		struct EffectInstance
@@ -138,9 +138,9 @@ namespace Graphics
 		struct ModelLights {
 			/* 00h */	int count;
 			/* 04h */	float* lightStrength;
-			/* 08h */	ColorRGB* lightColor;
+			/* 08h */	Math::ColorRGB* lightColor;
 			/* 0Ch */	float* lightSize;
-			/* 10h */	Vector3 lightOffset;
+			/* 10h */	Math::Vector3 lightOffset;
 		};
 
 		/* 9Ch */	cModelInstancePtr mMeshLods[4];

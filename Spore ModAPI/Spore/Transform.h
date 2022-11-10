@@ -72,18 +72,13 @@ protected:
 	/* 10h */	float	mfScale;
 	/* 14h */	Matrix3 mRotation;
 };
-
-/////////////////////////////////
-//// INTERNAL IMPLEMENTATION ////
-/////////////////////////////////
+ASSERT_SIZE(Transform, 0x38);
 
 namespace Addresses(Transform)
 {
 	DeclareAddress(ToMatrix4);
 	DeclareAddress(assign);  // This name is wrong, it's actually multiply operation
 }
-
-static_assert(sizeof(Transform) == 0x38, "sizeof(Transform) != 38h");
 
 inline const Vector3& Transform::GetOffset() const
 {

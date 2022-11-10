@@ -20,4 +20,4 @@
 
 // 10108h civ game
 // 0x1248 in difficulty
-// 0x1184 vector<PlanetIndex> visitedPlanets
+// 0x1184 eastl::vector<PlanetIndex> visitedPlanets

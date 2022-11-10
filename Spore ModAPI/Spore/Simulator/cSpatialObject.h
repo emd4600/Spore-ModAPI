@@ -35,7 +35,7 @@
 
 namespace Simulator
 {
-	using namespace Math;
+	class cCombatant;
 
 	/// A 3D model in the Simulator. This class is inherit by all classes that have a visual representation,
 	/// and therefore need a position, orientation, and scale in 3D space. Models are identified by a 
@@ -64,17 +64,17 @@ namespace Simulator
 
 		/* 24h */	virtual bool IsRolledOver();
 		/* 28h */	virtual void SetIsRolledOver(bool bValue);
-		/* 2Ch */	virtual const Vector3& GetPosition();
-		/* 30h */	virtual const Quaternion& GetOrientation();
+		/* 2Ch */	virtual const Math::Vector3& GetPosition();
+		/* 30h */	virtual const Math::Quaternion& GetOrientation();
 		/* 34h */	virtual float GetScale();
-		/* 38h */	virtual void SetPosition(const Vector3& value);
-		/* 3Ch */	virtual void SetOrientation(const Quaternion& value);
+		/* 38h */	virtual void SetPosition(const Math::Vector3& value);
+		/* 3Ch */	virtual void SetOrientation(const Math::Quaternion& value);
 		/* 40h */	virtual void SetScale(float fValue);
 		/// Changes the position and orientation of the object recalculating its physics.
 		/// For example, it can be used to teleport creatures (using SetOffset() manually just moves them back to their original position)
 		/// @param position
 		/// @param orientation
-		/* 44h */	virtual void Teleport(const Vector3& position, const Quaternion& orientation); 
+		/* 44h */	virtual void Teleport(const Math::Vector3& position, const Math::Quaternion& orientation);
 		/* 48h */	virtual bool IsOnView();
 		/* 4Ch */	virtual void SetIsOnView(bool bValue);
 		/* 50h */	virtual bool IsSelected();
@@ -83,17 +83,17 @@ namespace Simulator
 
 		/// Returns the local Y axis of this spatial object
 		/// @returns
-		/* 5Ch */	virtual Vector3 GetDirection();
+		/* 5Ch */	virtual Math::Vector3 GetDirection();
 
-		/* 60h */	virtual Vector3 cSpatialObject_func60h();
-		/* 64h */	virtual void SetLocalExtents(const BoundingBox& localExtents, float fScale);
-		/* 68h */	virtual const BoundingBox& GetLocalExtents();
+		/* 60h */	virtual Math::Vector3 cSpatialObject_func60h();
+		/* 64h */	virtual void SetLocalExtents(const Math::BoundingBox& localExtents, float fScale);
+		/* 68h */	virtual const Math::BoundingBox& GetLocalExtents();
 		/* 6Ch */	virtual int cSpatialObject_func6Ch(int);
 		/* 70h */	virtual float GetBoundingRadius();
 		/* 74h */	virtual float GetFootprintRadius();
 		/* 78h */	virtual float GetMaxZ();
 		// Something related with screen pos?
-		/* 7Ch */	virtual Point& cSpatialObject_func7Ch(bool, Point& dst);
+		/* 7Ch */	virtual Math::Point& cSpatialObject_func7Ch(bool, Math::Point& dst);
 		// Both methods related with pinning the model to the planet
 		/* 80h */	virtual void cSpatialObject_func80h();
 		/* 84h */	virtual void cSpatialObject_func84h();
@@ -108,17 +108,17 @@ namespace Simulator
 		/* A8h */	virtual void SetModel(Graphics::Model* pModel, Graphics::IModelWorld* pModelWorld);
 		/* ACh */	virtual Graphics::Model* GetModel();
 		/* B0h */	virtual Graphics::IModelWorld* GetModelWorld();
-		/* B4h */	virtual void cSpatialObject_funcB4h(string& dst);
+		/* B4h */	virtual void cSpatialObject_funcB4h(eastl::string& dst);
 		/* B8h */	virtual void* Cast(uint32_t type);
 		/* BCh */	virtual int AddRef() = 0;
 		/* C0h */	virtual int Release() = 0;
 
 	public:
 
-		/* 04h */	Vector3 mPosition;
-		/* 10h */	Quaternion mOrientation;
-		/* 20h */	BoundingBox mOriginalLocalExtents;
-		/* 38h */	BoundingBox mLocalExtents;
+		/* 04h */	Math::Vector3 mPosition;
+		/* 10h */	Math::Quaternion mOrientation;
+		/* 20h */	Math::BoundingBox mOriginalLocalExtents;
+		/* 38h */	Math::BoundingBox mLocalExtents;
 		/* 50h */	uint32_t mFlags;   // kPickupEnabled = 0x200 belongs here, not in cInteractiveOrnament
 		/* 54h */	uint32_t mMaterialType;
 		/* 58h */	float field_58;  // material type?
@@ -147,8 +147,8 @@ namespace Simulator
 		/* 88h */	float field_88;
 		/* 8Ch */	float field_8C;
 		/* 90h */	ResourceKey mModelKey;
-		/* 9Ch */	intrusive_ptr<Graphics::Model> mpModel;
-		/* A0h */	intrusive_ptr<Graphics::IModelWorld> mpModelWorld;
+		/* 9Ch */	ModelPtr mpModel;
+		/* A0h */	IModelWorldPtr mpModelWorld;
 		/* A4h */	bool field_A4;
 		/* A5h */	bool field_A5;
 		/* A6h */	bool mbKeepPinnedToPlanet;
@@ -159,7 +159,7 @@ namespace Simulator
 		/* B4h */	float field_B4;
 		/* B8h */	int field_B8;
 		/* BCh */	int field_BC;
-		/* C0h */	vector<int> field_C0;
+		/* C0h */	eastl::vector<int> field_C0;
 
 	};
 	ASSERT_SIZE(cSpatialObject, 0xD4);
@@ -173,7 +173,7 @@ namespace Simulator
 
 	public:
 		/* 0Ch */	cSpatialObjectPtr mpObject;
-		/* 10h */	intrusive_ptr<cCombatant> field_10;
+		/* 10h */	eastl::intrusive_ptr<cCombatant> field_10;
 		/* 14h */	bool field_14;
 		/* 18h */	ColorRGB field_18;
 		/* 24h */	int field_24;

@@ -54,7 +54,7 @@ namespace UTFWin
 		/* 3Ch */	virtual void func15();
 		/* 40h */	virtual void func16();
 
-		/* 44h */	virtual IWindow* GetWindowAtPosition(const Point& point);
+		/* 44h */	virtual IWindow* GetWindowAtPosition(const Math::Point& point);
 		/* 48h */	virtual IWindow* GetMainWindowIndex(int index);
 
 		/* 4Ch */	virtual void func4Ch();

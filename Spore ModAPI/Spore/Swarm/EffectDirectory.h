@@ -32,8 +32,6 @@
 
 #define EffectDirectoryPtr eastl::intrusive_ptr<Swarm::EffectDirectory>
 
-using namespace eastl;
-
 namespace Swarm
 {
 	enum
@@ -154,21 +152,21 @@ namespace Swarm
 
 		///
 		/// Tells whether an effect with this name is contained in this directory. If it is, 
-		/// the name will be written into the given string.
-		/// @param[out] dst The destination string where the name will be written.
+		/// the name will be written into the given eastl::string.
+		/// @param[out] dst The destination eastl::string where the name will be written.
 		/// @param pName The name of the effect to find.
 		/// @returns True if the effect exists, false otherwise.
 		///
-		/* 3Ch */	virtual bool HasEffectName(string& dst, const char* pName) = 0;
+		/* 3Ch */	virtual bool HasEffectName(eastl::string& dst, const char* pName) = 0;
 
 		///
 		/// Puts all the effect names contained in this directory into the given vector. Note that not all effects use names;
 		/// inf act, most of them use IDs. Optionally, a pattern can be specified to only get certain names. The pattern uses the character 
 		/// '?' to allow any character, and '*' to allow any sequence of characters.
-		/// @param dst A string vector where the names will be output.
+		/// @param dst A eastl::string vector where the names will be output.
 		/// @param pPattern [Optional] The pattern names must match in order to be added to the list.
 		///
-		/* 40h */	virtual void GetEffectNames(vector<string>& dst, const char* pPattern = nullptr) = 0;
+		/* 40h */	virtual void GetEffectNames(eastl::vector<eastl::string>& dst, const char* pPattern = nullptr) = 0;
 
 		cVisualEffectDescription* GetVisualEffect(size_t index);
 
@@ -176,17 +174,15 @@ namespace Swarm
 
 	protected:
 		/* 08h */	int mnRefCount;
-		/* 0Ch */	vector<vector<intrusive_ptr<IComponent>>> mComponents;
-		/* 20h */	vector<vector<intrusive_ptr<cDescription>>> mDescriptions;
-		/* 34h */	vector<cVisualEffectDescription> mVisualEffects;
-		/* 48h */	hash_map<string, size_t> mEffectNames;  // maps a string to the VisualEffect index
-		// /* 68h */	hash_map<uint32_t, int> mEffectIDs;  // maps an ID to the VisualEffect index
-		/* 68h */	hash_map<ResourceID, size_t> mEffectIDs;  // maps an ID to the VisualEffect index
-		/* 88h */	vector<ResourceID> mImports;
+		/* 0Ch */	eastl::vector<eastl::vector<eastl::intrusive_ptr<IComponent>>> mComponents;
+		/* 20h */	eastl::vector<eastl::vector<eastl::intrusive_ptr<cDescription>>> mDescriptions;
+		/* 34h */	eastl::vector<cVisualEffectDescription> mVisualEffects;
+		/* 48h */	eastl::hash_map<eastl::string, size_t> mEffectNames;  // maps a eastl::string to the VisualEffect index
+		// /* 68h */	eastl::hash_map<uint32_t, int> mEffectIDs;  // maps an ID to the VisualEffect index
+		/* 68h */	eastl::hash_map<ResourceID, size_t> mEffectIDs;  // maps an ID to the VisualEffect index
+		/* 88h */	eastl::vector<ResourceID> mImports;
 	};
 	ASSERT_SIZE(EffectDirectory, 0x9C);
-
-	static_assert(sizeof(EffectDirectory) == 0x9C, "sizeof(EffectDirectory) != 9Ch");
 
 	inline cVisualEffectDescription* EffectDirectory::GetVisualEffect(size_t index)
 	{

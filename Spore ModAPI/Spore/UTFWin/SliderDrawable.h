@@ -81,14 +81,9 @@ namespace UTFWin
 		virtual void SetImage(int index, Image* pImage) override;
 
 	protected:
-		/* 10h */	intrusive_ptr<Image> mpImages[3];
+		/* 10h */	ImagePtr mpImages[3];
 	};
-
-	/////////////////////////////////
-	//// INTERNAL IMPLEMENTATION ////
-	/////////////////////////////////
-
-	static_assert(sizeof(SliderDrawable) == 0x1C, "sizeof(SliderDrawable) != 1Ch");
+	ASSERT_SIZE(SliderDrawable, 0x1C);
 
 	namespace Addresses(SliderDrawable)
 	{

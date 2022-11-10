@@ -39,7 +39,7 @@ namespace Simulator
 		/* 18h */	virtual int AddRef() = 0;
 
 	public:
-		/* 04h */	vector<intrusive_ptr<cBehaviorBase>> mData;
+		/* 04h */	eastl::vector<cBehaviorBasePtr> mData;
 	};
 	ASSERT_SIZE(cBehaviorList, 0x18);
 }

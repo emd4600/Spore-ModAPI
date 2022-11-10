@@ -201,6 +201,5 @@ namespace UTFWin
 	//	
 	//	/* 118h */	virtual METHOD_(SelectAddress(0x1065680, 0), IWindow, char*, GetComponentName);
 	};
-
-	static_assert(sizeof(WinButton) == 0x888, "sizeof(WinButton) != 888h");
+	ASSERT_SIZE(WinButton, 0x888);
 }

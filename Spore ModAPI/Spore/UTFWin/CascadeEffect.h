@@ -91,11 +91,7 @@ namespace UTFWin
 		/* 3Ch */	int field_3C;  // not initialized
 
 	};
-
-	static_assert(sizeof(CascadeEffect) == 0x40, "sizeof(CascadeEffect) != 40h");
-
-
-	//// INTERNAL IMPLEMENTATION ////
+	ASSERT_SIZE(CascadeEffect, 0x40);
 
 	namespace Addresses(CascadeEffect)
 	{

@@ -76,12 +76,7 @@ namespace IO
 	protected:
 		/* 04h */	int mnRefCount;
 	};
-
-	///////////////////////////////////
-	//// INTERNAL IMPLEMENENTATION ////
-	///////////////////////////////////
-
-	static_assert(sizeof(StreamNull) == 0x8, "sizeof(StreamNull) != 08h");
+	ASSERT_SIZE(StreamNull, 0x8);
 
 	namespace Addresses(StreamNull)
 	{

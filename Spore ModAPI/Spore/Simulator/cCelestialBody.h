@@ -56,7 +56,7 @@ namespace Simulator
 		/* A0h */	Math::Vector3 mPosition;
 		/* ACh */	float mfRotationRate;
 		/// Name of the celestial body, shown in a tooltip when hovering it with the mouse.
-		/* B0h */	string16 mName;
+		/* B0h */	eastl::string16 mName;
 		/// Effect `0x3D6F8D8` for type Comet
 		/* C0h */	IVisualEffectPtr mpEffect;
 		/* C4h */	cSolarHitSpherePtr mpHitSphere;

@@ -21,9 +21,9 @@ namespace Simulator
 		using Object::Cast;
 
 	public:
-		/* 108h */	vector<int> field_108;
-		/* 11Ch */	vector<int> mSegments;
-		/* 130h */	vector<Math::ColorRGB> mSegmentColors;
+		/* 108h */	eastl::vector<int> field_108;
+		/* 11Ch */	eastl::vector<int> mSegments;
+		/* 130h */	eastl::vector<Math::ColorRGB> mSegmentColors;
 		/// Default value is 5
 		/* 144h */	int mTotalPossibleSegments;
 		/// Default value is true

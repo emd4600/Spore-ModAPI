@@ -121,14 +121,14 @@ namespace UI
 		/* 238h */	cPlayerInventoryPtr mpPlayerInventory;
 		/* 23Ch */	uint32_t mActivePaletteID;
 		/// A list of all available IDs of tool palettes (obtained from the `spaceToolPaletteID` property).
-		/* 240h */	vector<uint32_t> mToolPaletteIDs;
+		/* 240h */	eastl::vector<uint32_t> mToolPaletteIDs;
 		/// `0x46FED9C8.spui`, a layout that contains all space tools icons
 		/* 254h */	UILayoutPtr mInventoryItemIcons;
 		/* 258h */	UILayoutPtr mpCaptainDialogLayout;
 		// paletteID to panel; I'm not sure about this, each palette can have more than one panel
-		/* 25Ch */	hash_map<uint32_t, SpaceToolPanelUIPtr> mPalettePanels;
+		/* 25Ch */	eastl::hash_map<uint32_t, SpaceToolPanelUIPtr> mPalettePanels;
 		//TODO Not exactly a vector, field_290 is also part of it
-		/* 27Ch */	vector<uint32_t> mFoodwebPaletteIDs;
+		/* 27Ch */	eastl::vector<uint32_t> mFoodwebPaletteIDs;
 		/* 290h */	int field_290;  // not initialized
 		/* 294h */	SpaceToolPanelUIPtr mpCargoPalettePanel;
 		/// Shown over the spaceship thumbnail
@@ -136,15 +136,15 @@ namespace UI
 		// actually a subclass; uses spacetoolui~!0xFB82BCBA.prop
 		/* 29Ch */	SpaceToolPanelUIPtr field_29C;
 		// panelID -> ?
-		/* 2A0h */	hash_map<uint32_t, int> field_2A0;
-		/* 2C0h */	vector<int> field_2C0;
-		/* 2D4h */	hash_map<int, int> field_2D4;
+		/* 2A0h */	eastl::hash_map<uint32_t, int> field_2A0;
+		/* 2C0h */	eastl::vector<int> field_2C0;
+		/* 2D4h */	eastl::hash_map<int, int> field_2D4;
 		/* 2F4h */	uint32_t field_2F4;  // 0x68E0210
 		/* 2F8h */	int field_2F8;  // -1
 		/* 2FCh */	ObjectPtr field_2FC;
 		/* 300h */	ObjectPtr field_300;
 		/* 304h */	ObjectPtr field_304;
-		/* 308h */	vector<int> field_308;
+		/* 308h */	eastl::vector<int> field_308;
 		/* 31Ch */	MinimapPtr mpMinimap;
 		/* 320h */	int field_320;  // not initialized
 		/* 324h */	LocalizedString mTextSmallPlantSlot;
@@ -171,11 +171,11 @@ namespace UI
 		/* 4C8h */	LocalizedString mTextTerraformLevel;
 		/* 4DCh */	LocalizedString mTextImproveTerraformToUnlock;
 		/* 4F0h */	LocalizedString mTextColonySlot;
-		/* 504h */	vector<LocalizedString> field_504;
-		/* 518h */	vector<LocalizedString> field_518;
+		/* 504h */	eastl::vector<LocalizedString> field_504;
+		/* 518h */	eastl::vector<LocalizedString> field_518;
 		/* 52Ch */	float field_52C;  // 1.0
 		/// The slots shown in the terraform panel (on the minimap) that represents the plants and animals
-		/* 530h */	vector<TerraformEcosystemSlot> mTerraformEcosystemSlots;
+		/* 530h */	eastl::vector<TerraformEcosystemSlot> mTerraformEcosystemSlots;
 		/* 544h */	TerraformColors mTerraformColors;
 		/* 568h */	int field_568;  // UI Animator?
 		/* 56Ch */	App::MessageListenerData mMessageListenerData;
@@ -184,7 +184,7 @@ namespace UI
 		/* 588h */	ObjectPtr field_588;
 		/* 58Ch */	ObjectPtr field_58C;
 		/* 590h */	ObjectPtr field_590;
-		/* 594h */	intrusive_ptr<Object> field_594;
+		/* 594h */	ObjectPtr field_594;
 		/* 598h */	IWindowPtr mpSpaceStarRollover;
 		/* 59Ch */	IWindowPtr mpSpaceStarTooltip;
 		/* 5A0h */	ObjectPtr mpSpacePlanetTooltip;
@@ -206,21 +206,16 @@ namespace UI
 		/* 5D3h */	bool field_5D3;
 		/* 5D4h */	bool field_5D4;
 		/* 5D5h */	bool field_5D5;  // true
-		/* 5D8h */	vector<int> field_5D8;
+		/* 5D8h */	eastl::vector<int> field_5D8;
 		/* 5ECh */	char _padding_5EC[0x2C];  // map?
 		/* 618h */	int field_618;
 		/* 61Ch */	ObjectPtr mpFlashWindowManager;
 		/* 620h */	TiledScrollPanel field_620;
 		/* 690h */	int field_690;  // not initialized
 		/* 694h	*/	ObjectPtr field_694;
-		/* 698h	*/	vector<ObjectPtr> field_698;
+		/* 698h	*/	eastl::vector<ObjectPtr> field_698;
 	};
-
-	/////////////////////////////////
-	//// INTERNAL IMPLEMENTATION ////
-	/////////////////////////////////
-
-	static_assert(sizeof(SpaceGameUI) == 0x6AC, "sizeof(SpaceGameUI) != 6ACh");
+	ASSERT_SIZE(SpaceGameUI, 0x6AC);
 
 	namespace Addresses(SpaceGameUI)
 	{

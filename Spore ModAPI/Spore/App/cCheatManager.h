@@ -31,12 +31,12 @@
 
 namespace App
 {
-	using namespace eastl;
-
 	///
 	/// The implementation of ICheatManager; this should only be used for extending and detouring. 
 	///
-	class cCheatManager : public ICheatManager, public IVirtual
+	class cCheatManager 
+		: public ICheatManager
+		, public IVirtual
 	{
 		cCheatManager();
 		virtual ~cCheatManager() {};
@@ -54,7 +54,7 @@ namespace App
 		virtual bool ProcessLine(const char* pString) override;
 		virtual int func24h() override;
 		virtual ArgScript::ICommand* GetCheat(const char* pKeyword) override;
-		virtual size_t GetKeywords(const char* pPattern, vector<const char*> dst) override;
+		virtual size_t GetKeywords(const char* pPattern, eastl::vector<const char*> dst) override;
 		virtual void func30h(Object*) override;
 		virtual void func34h(Object*) override;
 		virtual ArgScript::FormatParser* GetArgScript() override;
@@ -65,24 +65,17 @@ namespace App
 		virtual void func4Ch(bool) override;
 
 
-	protected:
+	public:
+		typedef eastl::map<eastl::string, eastl::intrusive_ptr<ArgScript::IParser>> CheatMap_t;
 
-		typedef map<string, intrusive_ptr<ArgScript::IParser>> CheatMap_t;
-
-	protected:
 		/* 08h */	int mnRefCount;
 		/* 0Ch */	CheatMap_t mCheats;
-		/* 28h */	set<string> mNotifyCheats;
+		/* 28h */	eastl::set<eastl::string> mNotifyCheats;
 		/* 44h */	ArgScript::FormatParser* mpArgScript;
-		/* 48h */	set<intrusive_ptr<Object>> field_48;  // UIs?
+		/* 48h */	eastl::set<ObjectPtr> field_48;  // UIs?
 		/* 64h */	bool field_68;  // true
 	};
-
-	/////////////////////////////////
-	//// INTERNAL IMPLEMENTATION ////
-	/////////////////////////////////
-
-	static_assert(sizeof(cCheatManager) == 0x68, "sizeof(cCheatManager) != 68h");
+	ASSERT_SIZE(cCheatManager, 0x68);
 
 	namespace Addresses(cCheatManager)
 	{

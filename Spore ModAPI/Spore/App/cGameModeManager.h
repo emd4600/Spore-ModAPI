@@ -26,14 +26,15 @@
 #include <EASTL\string.h>
 #include <EASTL\vector.h>
 
-using namespace eastl;
-
 namespace App
 {
 	///
 	/// The implementation of IGameModeManager; this should only be used for extending and detouring.
 	///
-	class cGameModeManager : public IGameModeManager, public IMessageListener, public IVirtual
+	class cGameModeManager 
+		: public IGameModeManager
+		, public IMessageListener
+		, public IVirtual
 	{
 	public:
 
@@ -68,28 +69,22 @@ namespace App
 		virtual void SetViewer(cViewer* scene) override;
 		virtual cViewer* GetViewer() override;
 
-	protected:
+	public:
 		struct ModeEntry
 		{
-			intrusive_ptr<IGameMode> mpMode;
+			IGameModePtr mpMode;
 			uint32_t mModeID;
-			string mpName;
+			eastl::string mpName;
 		};
 
-	protected:
 		/* 0Ch */	int mnRefCount;
 		/* 10h */	bool field_10;
-		/* 14h */	vector<ModeEntry> mEntries;
+		/* 14h */	eastl::vector<ModeEntry> mEntries;
 		/* 28h */	int mnActiveIndex;
-		/* 2Ch */	intrusive_ptr<ICameraManager> mpCameraMgr;
+		/* 2Ch */	ICameraManagerPtr mpCameraMgr;
 		/* 30h */	cViewer* mpViewer;
 	};
-
-	/////////////////////////////////
-	//// INTERNAL IMPLEMENTATION ////
-	/////////////////////////////////
-
-	static_assert(sizeof(cGameModeManager) == 0x34, "sizeof(cGameModeManager) != 34h");
+	ASSERT_SIZE(cGameModeManager, 0x34);
 
 	namespace Addresses(cGameModeManager)
 	{

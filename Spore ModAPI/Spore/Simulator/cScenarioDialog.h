@@ -29,10 +29,5 @@ namespace Simulator
 		/* 04h */	cScenarioString mText;
 		/* 40h */	int mAnimType;
 	};
-
-	/////////////////////////////////
-	//// INTERNAL IMPLEMENTATION ////
-	/////////////////////////////////
-
-	static_assert(sizeof(cScenarioDialog) == 0x44, "sizeof(cScenarioDialog) != 0x44");
+	ASSERT_SIZE(cScenarioDialog, 0x44);
 }

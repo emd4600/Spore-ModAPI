@@ -29,7 +29,7 @@
 #include <Spore\Resource\DatabaseDirectoryFiles.h>
 #include <Spore\Resource\Database.h>
 #include <Spore\Resource\Paths.h>
-#include <Spore\Resource\IPFRecord.h>
+#include <Spore\Resource\IRecord.h>
 
 /// @namespace Resource
 ///

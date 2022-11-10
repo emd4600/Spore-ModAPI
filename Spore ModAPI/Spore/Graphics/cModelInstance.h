@@ -22,11 +22,11 @@ namespace Graphics
 		virtual ~cModelInstance();
 
 	public:
-		/* 08h */	vector<RenderWare::Mesh*> mMeshes;
-		/* 1Ch */	vector<int> mBoneRanges;  // cBoneRange
-		/* 30h */	vector<Material*> mMaterials;
-		/* 44h */	vector<cMaterialInfoPtr> mMaterialInfos;
-		/* 58h */	vector_map<int, cMaterialInfoPtr> mRegionMaterialInfos;
+		/* 08h */	eastl::vector<RenderWare::Mesh*> mMeshes;
+		/* 1Ch */	eastl::vector<int> mBoneRanges;  // cBoneRange
+		/* 30h */	eastl::vector<Material*> mMaterials;
+		/* 44h */	eastl::vector<cMaterialInfoPtr> mMaterialInfos;
+		/* 58h */	eastl::vector_map<int, cMaterialInfoPtr> mRegionMaterialInfos;
 		/* 70h */	Transform field_70;
 		/* A8h */	BoundingBox mBoundingBox;
 		/* C0h */	float mBoundingRadius;

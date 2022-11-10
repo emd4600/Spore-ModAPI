@@ -1,10 +1,12 @@
 #pragma once
 
-#include <Spore\Resource\IPFRecord.h>
+#include <Spore\Resource\IRecord.h>
+#include <Spore\Object.h>
 
 namespace Simulator
 {
-	class ISerializerStream : public Object
+	class ISerializerStream 
+		: public Object
 	{
 	public:
 		static const uint32_t TYPE = 0x179CD60;
@@ -13,7 +15,7 @@ namespace Simulator
 		/* 14h */	virtual bool func14h() = 0;
 		/* 18h */	virtual bool func18h() = 0;
 		/* 1Ch */	virtual bool func1Ch() = 0;
-		/* 20h */	virtual Resource::IPFRecord* GetRecord() const = 0;
+		/* 20h */	virtual Resource::IRecord* GetRecord() const = 0;
 		/* 24h */	virtual int func24h() const = 0;
 		/* 28h */	virtual bool func28h(uint32_t nounID, int, int) = 0;
 		/* 2Ch */	virtual bool func2Ch(int, int) = 0;
@@ -31,7 +33,7 @@ namespace Simulator
 	//protected:
 	//	/* 0Ch */	bool field_0C;
 	//	/* 10h */	int field_10;
-	//	/* 14h */	Resource::IPFRecord* mpRecord;
+	//	/* 14h */	Resource::IRecord* mpRecord;
 	//	/* 18h */	int field_18;
 	//};
 
@@ -45,7 +47,7 @@ namespace Simulator
 	typedef bool(*WriteFunction_t)(ISerializerStream*, void*);
 
 	/// The type of function used to read attribute data, which is expressed in text. 
-	/// The parameters are the text string and the address of memory where the data must be read.
+	/// The parameters are the text eastl::string and the address of memory where the data must be read.
 	typedef void(*ReadTextFunction_t)(const eastl::string&, void*);
 	/// The type of function used to write attribute data, which is expressed in text. 
 	/// The parameters are the destination text buffer and the address of memory where the data is.

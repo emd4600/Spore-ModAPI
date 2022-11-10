@@ -68,7 +68,7 @@ namespace Simulator
 	auto_METHOD(cStarManager, uint32_t, NextPoliticalID, Args(bool arg), Args(arg));
 	auto_METHOD(cStarManager, cEmpire*, GetEmpireForStar, Args(cStarRecord* arg), Args(arg));
 
-	auto_METHOD_VOID(cStarManager, RecordToPlanet, Args(cPlanetRecord* record, intrusive_ptr<cPlanet>& dst),
+	auto_METHOD_VOID(cStarManager, RecordToPlanet, Args(cPlanetRecord* record, cPlanetPtr& dst),
 		Args(record, dst));
 
 
@@ -94,7 +94,7 @@ namespace Simulator
 		Args(const Vector3& coords, const StarRequestFilter& filter), Args(coords, filter));
 
 	auto_METHOD_VOID(cStarManager, FindStars,
-		Args(const Vector3& coords, const StarRequestFilter& filter, vector<cStarRecordPtr>& dst),
+		Args(const Vector3& coords, const StarRequestFilter& filter, eastl::vector<cStarRecordPtr>& dst),
 		Args(coords, filter, dst));
 
 	auto_METHOD_VOID(cStarManager, CalculatePlanetScores,

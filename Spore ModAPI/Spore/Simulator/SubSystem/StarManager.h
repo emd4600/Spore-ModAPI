@@ -87,12 +87,12 @@ namespace Simulator
 		bool HasTradeRoute(StarID star, uint32_t empireID);
 
 	public:
-		/* 04h */	map<int, cTradeRouteData> mTradeRoutes;
+		/* 04h */	eastl::map<int, cTradeRouteData> mTradeRoutes;
 		/* 20h */	int field_20;
 	};
 	ASSERT_SIZE(cSpaceTradeRouteManager, 0x24);
 
-	typedef map<uint32_t, intrusive_ptr<cEmpire>> EmpiresMap;
+	typedef eastl::map<uint32_t, cEmpirePtr> EmpiresMap;
 
 	/// This class controls most stuff related with the galaxy, stars, planets and empires.
 	/// Use StarManager to access it, like `StarManager.GetSol()`
@@ -192,7 +192,7 @@ namespace Simulator
 		/// @param coords The reference coordinates.
 		/// @param filter A filter that describes which kind of stars are accepted.
 		/// @param dst A vector where all found stars will be added.
-		void FindStars(const Vector3& coords, const StarRequestFilter& filter, vector<cStarRecordPtr>& dst);
+		void FindStars(const Vector3& coords, const StarRequestFilter& filter, eastl::vector<cStarRecordPtr>& dst);
 
 		/// Calculates the `mAtmosphereScore`, `mTemperatureScore` and `mWaterScore` of a cPlanetRecord depending on the planet type and
 		/// the generated terrain key. If planet type is PlanetType::Unset, this method will also set it to the corresponding
@@ -263,32 +263,32 @@ namespace Simulator
 		static bool StarGenerationMessageHandler(uint32_t messageId, Swarm::Components::DistributeEffectMessageData* pDistributeData, StarType starType);
 
 	public:
-		/* 20h */	map<int, int> field_20;
-		/* 3Ch */	vector<int> field_3C;
-		/* 50h */	vector<cPlanetPtr> field_50;
+		/* 20h */	eastl::map<int, int> field_20;
+		/* 3Ch */	eastl::vector<int> field_3C;
+		/* 50h */	eastl::vector<cPlanetPtr> field_50;
 		/* 64h */	bool field_64;
 		/* 68h */	int field_68;  // not initialized
-		/* 6Ch */	string16 field_6C;
+		/* 6Ch */	eastl::string16 field_6C;
 		/* 7Ch */	char _padding_7C[0x24];  // not initialized;
 		/// List of all instance IDs of files in `StarterWorlds` folder, only the ones that aren't already used
-		/* A0h */	vector<uint32_t> mAvailableStarterWorlds;
+		/* A0h */	eastl::vector<uint32_t> mAvailableStarterWorlds;
 		/* B4h */	App::MessageListenerData mMessageListenerData;
 		/// All star records of the galaxy, organized in a grid of 64x64 different blocks. First index is "y" index of the grid,
 		/// second index is "x" index of the grid. You can get x, y for certain coordinates with the GetStarGridPosition() method
-		/* C8h */	vector<vector<cStarRecordPtr>> mStarRecordGrid;
-		/* DCh */	vector<cStarRecordPtr> mStarterStarRecords;
-		/* F0h */	vector<cStarRecordPtr> mSavedGameStarRecords;
-		/* 104h */	vector<cStarRecordPtr> mBlackHoles;
-		/* 118h */	vector<cStarRecordPtr> mPossibleStartLocations;
+		/* C8h */	eastl::vector<eastl::vector<cStarRecordPtr>> mStarRecordGrid;
+		/* DCh */	eastl::vector<cStarRecordPtr> mStarterStarRecords;
+		/* F0h */	eastl::vector<cStarRecordPtr> mSavedGameStarRecords;
+		/* 104h */	eastl::vector<cStarRecordPtr> mBlackHoles;
+		/* 118h */	eastl::vector<cStarRecordPtr> mPossibleStartLocations;
 		/// Maps empire political IDs to their home star cStarRecord
-		/* 12Ch	*/	map<uint32_t, cStarRecordPtr> mEmpireHomeStarRecords;
+		/* 12Ch	*/	eastl::map<uint32_t, cStarRecordPtr> mEmpireHomeStarRecords;
 		/* 148h */	cStarRecordPtr mSol;
 		/// A star record used in contexts where a real one is not available, such as playing an adventure from the create menu.
 		/* 14Ch */	cStarRecordPtr mpTempStar;
 		/* 150h	*/	EmpiresMap mEmpires;
-		/* 16Ch */	vector<string16> mEmpireNamesInUse;
+		/* 16Ch */	eastl::vector<eastl::string16> mEmpireNamesInUse;
 		/* 180h */	int field_180;  // not initialized
-		/* 184h */	map<PlanetID, uint32_t> mAdventureIDs;  //TODO
+		/* 184h */	eastl::map<PlanetID, uint32_t> mAdventureIDs;  //TODO
 		///`gametuning~!SpaceSolarSystem.prop`
 		/* 1A0h */	PropertyListPtr mpSolarSystemPropList;
 		///`gametuning~!SpaceGalacticConstants.prop`
@@ -309,11 +309,11 @@ namespace Simulator
 		/* 1D8h */	uint32_t mGrobID;  // -1
 		/* 1DCh */	cStarRecordPtr mpScenarioStar;
 		/* 1E0h */	cSpaceTradeRouteManager mTradeRouteManager;
-		/* 204h */	intrusive_ptr<cRelationshipManager> mpRelationshipManager;
+		/* 204h */	eastl::intrusive_ptr<cRelationshipManager> mpRelationshipManager;
 		//TODO
-		/* 208h */	vector<string> mTransactionLog;
+		/* 208h */	eastl::vector<eastl::string> mTransactionLog;
 		/* 21Ch */	bool field_21C;  // true
-		/* 220h */	intrusive_ptr<Object> mpGlobalCLGItems;  //TODO cCollectableItems
+		/* 220h */	ObjectPtr mpGlobalCLGItems;  //TODO cCollectableItems
 		/// `planetRecords.pkt`
 		/* 224h */	DatabasePackedFilePtr mpPlanetRecordsTempDBPF;
 		/// `planetRecords.pkp`

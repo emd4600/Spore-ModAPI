@@ -88,8 +88,8 @@
     <DisplayString Condition="mnFlags &amp; App::Property::kPropertyFlagArray &amp;&amp; mnType == App::PropertyType::UInt64">uint64s [{mnItemCount} items]</DisplayString>
     <DisplayString Condition="mnFlags &amp; App::Property::kPropertyFlagArray &amp;&amp; mnType == App::PropertyType::Float">floats [{mnItemCount} items]</DisplayString>
     <DisplayString Condition="mnFlags &amp; App::Property::kPropertyFlagArray &amp;&amp; mnType == App::PropertyType::Double">doubles [{mnItemCount} items]</DisplayString>
-    <DisplayString Condition="mnFlags &amp; App::Property::kPropertyFlagArray &amp;&amp; mnType == App::PropertyType::String8">string8s [{mnItemCount} items]</DisplayString>
-    <DisplayString Condition="mnFlags &amp; App::Property::kPropertyFlagArray &amp;&amp; mnType == App::PropertyType::String16">string16s [{mnItemCount} items]</DisplayString>
+    <DisplayString Condition="mnFlags &amp; App::Property::kPropertyFlagArray &amp;&amp; mnType == App::PropertyType::String8">eastl::string8s [{mnItemCount} items]</DisplayString>
+    <DisplayString Condition="mnFlags &amp; App::Property::kPropertyFlagArray &amp;&amp; mnType == App::PropertyType::String16">eastl::string16s [{mnItemCount} items]</DisplayString>
     <DisplayString Condition="mnFlags &amp; App::Property::kPropertyFlagArray &amp;&amp; mnType == App::PropertyType::Key">keys [{mnItemCount} items]</DisplayString>
     <DisplayString Condition="mnFlags &amp; App::Property::kPropertyFlagArray &amp;&amp; mnType == App::PropertyType::Vector2">vector2s [{mnItemCount} items]</DisplayString>
     <DisplayString Condition="mnFlags &amp; App::Property::kPropertyFlagArray &amp;&amp; mnType == App::PropertyType::Vector3">vector3s [{mnItemCount} items]</DisplayString>
@@ -109,8 +109,8 @@
     <DisplayString Condition="mnType == App::PropertyType::UInt64">uint64 {*(uint64_t*)&amp;mpData}</DisplayString>
     <DisplayString Condition="mnType == App::PropertyType::Float">float {mValueFloat}</DisplayString>
     <DisplayString Condition="mnType == App::PropertyType::Double">double {*(double*)&amp;mpData}</DisplayString>
-    <DisplayString Condition="mnType == App::PropertyType::String8">string8 {mValueString8.mpBegin, s}</DisplayString>
-    <DisplayString Condition="mnType == App::PropertyType::String16">string16 {mValueString16.mpBegin, su}</DisplayString>
+    <DisplayString Condition="mnType == App::PropertyType::String8">eastl::string8 {mValueString8.mpBegin, s}</DisplayString>
+    <DisplayString Condition="mnType == App::PropertyType::String16">eastl::string16 {mValueString16.mpBegin, su}</DisplayString>
     <DisplayString Condition="mnType == App::PropertyType::Key">key {mValueKey}</DisplayString>
     <DisplayString Condition="mnType == App::PropertyType::Vector2">vector2 {mValueVector2}</DisplayString>
     <DisplayString Condition="mnType == App::PropertyType::Vector3">vector3 {mValueVector3}</DisplayString>

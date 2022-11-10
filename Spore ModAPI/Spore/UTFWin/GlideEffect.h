@@ -36,13 +36,13 @@ namespace UTFWin
 		///
 		/// Get the direction and distance to displace the window when hidden.
 		///
-		/* 14h */	virtual const Point& GetOffset() const = 0;
+		/* 14h */	virtual const Math::Point& GetOffset() const = 0;
 
 		///
 		/// Set the direction and distance to displace the window when hidden.
 		/// @param offset
 		///
-		/* 18h */	virtual void SetOffset(const Point& offset) = 0;
+		/* 18h */	virtual void SetOffset(const Math::Point& offset) = 0;
 
 		static const uint32_t TYPE = 0xEF2B293B;
 	};
@@ -64,23 +64,18 @@ namespace UTFWin
 		virtual uint32_t GetProxyID() const override;
 
 		/* 10h */	virtual IWinProc* ToWinProc() override;
-		/* 14h */	virtual const Point& GetOffset() const override;
-		/* 18h */	virtual void SetOffset(const Point& offset) override;
+		/* 14h */	virtual const Math::Point& GetOffset() const override;
+		/* 18h */	virtual void SetOffset(const Math::Point& offset) override;
 
 		virtual int func80h() override;
 		virtual void func88h(int, int, int) override;
 
 	protected:
-		/* 64h */	Point mOffset;
+		/* 64h */	Math::Point mOffset;
 		/* 6Ch */	int field_6C;  // not initialized
 
 	};
-
-	static_assert(sizeof(GlideEffect) == 0x70, "sizeof(GlideEffect) != 70h");
-
-	/////////////////////////////////
-	//// INTERNAL IMPLEMENTATION ////
-	/////////////////////////////////
+	ASSERT_SIZE(GlideEffect, 0x70);
 
 	namespace Addresses(GlideEffect)
 	{

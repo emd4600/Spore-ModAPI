@@ -141,8 +141,8 @@ namespace eastl
 
 	/// GetRehashRequired
 	/// Finds the smallest prime p such that alpha p > nElementCount + nElementAdd.
-	/// If p > nBucketCount, return pair<bool, uint32_t>(true, p); otherwise return
-	/// pair<bool, uint32_t>(false, 0). In principle this isn't very different from GetBucketCount.
+	/// If p > nBucketCount, return eastl::pair<bool, uint32_t>(true, p); otherwise return
+	/// eastl::pair<bool, uint32_t>(false, 0). In principle this isn't very different from GetBucketCount.
 	/// This function has a side effect of updating mnNextResize.
 	///
 	eastl::pair<bool, uint32_t>

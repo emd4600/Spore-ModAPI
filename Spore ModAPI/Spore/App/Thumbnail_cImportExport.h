@@ -16,7 +16,7 @@ namespace App
 	///
 	/// It can be used to get the path to the My Spore Creations folder:
 	/// ~~~~~~~~{.cpp}
-	/// string16 path;
+	/// eastl::string16 path;
 	/// ThumbnailImportExport.GetFolderPath(TypeIDs::crt, path);
 	/// // Now path is something like 'C:\Users\...\My Documents\My Spore Creations\Creatures'
 	/// ~~~~~~~~
@@ -28,7 +28,7 @@ namespace App
 	public:
 		/// Gets the filepath of the folder where the .PNGs of the creation type are stored.
 		/// @param creationType One of the types in TypeIDs, such as 'crt', 'bld',...
-		/// @param[out] dst The string where the path will be written.
+		/// @param[out] dst The eastl::string where the path will be written.
 		bool GetFolderPath(uint32_t creationType, eastl::string16& dst);
 
 		/// Used to obtain a path from a locale file, by default `0x19F76D11.locale`, similar to the one that would
@@ -61,7 +61,7 @@ namespace App
 		/* 48h */	eastl::hash_map<int, int> field_48;
 		/* 68h */	eastl::hash_map<int, int> field_68;
 
-		// other fields are string16 with the creation paths
+		// other fields are eastl::string16 with the creation paths
 	};
 
 	namespace Addresses(Thumbnail_cImportExport)

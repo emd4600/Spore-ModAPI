@@ -168,13 +168,7 @@ namespace UTFWin
 		/* 5Ch */	int field_5C;  // not initialized
 
 	};
-
-	static_assert(sizeof(BiStateEffect) == 0x60, "sizeof(BiStateEffect) != 60h");
-
-
-	/////////////////////////////////
-	//// INTERNAL IMPLEMENTATION ////
-	/////////////////////////////////
+	ASSERT_SIZE(BiStateEffect, 0x60);
 
 	namespace Addresses(BiStateEffect)
 	{

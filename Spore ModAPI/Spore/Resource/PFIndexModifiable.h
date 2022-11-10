@@ -30,23 +30,6 @@
 namespace Resource
 {
 	///
-	/// A structure that contains the metadata of a file stored in a DBPF, such as the offset in the package file and the size.
-	///
-	struct DBPFItem
-	{
-		/// The offset, in bytes, of the file data inside the package file.
-		size_t mnChunkOffset;
-		/// The size, in bytes, that this file occupies inside the package file.
-		size_t mnCompressedSize;
-		/// The size, in bytes, that this file occupies in memory, once uncompressed.
-		size_t mnMemorySize;
-		/// 0 -> no compression, -1 -> compressed
-		short mFlags;  // 0xFFFF for compressed
-		/// Whether this item has been saved and written into the package.
-		bool mIsSaved;
-	};
-
-	///
 	/// This class stores the metadata of all the files contained in a DBPF file. It is used for indexing and accessing
 	/// files.
 	///
@@ -55,7 +38,7 @@ namespace Resource
 	{
 	public:
 		
-		typedef eastl::hash_map<ResourceKey, DBPFItem, ICoreAllocatorAdapter> ItemsMap;
+		typedef eastl::hash_map<ResourceKey, RecordInfo, ICoreAllocatorAdapter> ItemsMap;
 
 		PFIndexModifiable(ICoreAllocator* pAllocator);
 		virtual ~PFIndexModifiable() {};
@@ -110,13 +93,13 @@ namespace Resource
 		///
 		/// Returns the DBPFItem for the given file name, or NULL if the PFIndex does not contain that file.
 		///
-		/* 28h */	virtual DBPFItem* GetFileInfo(const ResourceKey& fileName);
+		/* 28h */	virtual RecordInfo* GetFileInfo(const ResourceKey& fileName);
 
 		///
 		/// Assigns the given file info to the specified file name.
 		/// If the PFIndex does not contain a file with that name, a new entry will be created.
 		///
-		/* 2Ch */	virtual DBPFItem& PutFileInfo(const ResourceKey& fileName, DBPFItem& info);
+		/* 2Ch */	virtual RecordInfo& PutFileInfo(const ResourceKey& fileName, RecordInfo& info);
 
 		/// 
 		/// Removes the specified file from this PFIndex, if it exists.
@@ -124,7 +107,7 @@ namespace Resource
 		/// @param[out] dstInfo The destination DBPFItem that will be filled with the old information of the file, if it existed.
 		/// @returns True if the file was removed successfully, false if the file did not exist.
 		///
-		/* 30h */	virtual bool RemoveFile(const ResourceKey& fileName, DBPFItem& dstInfo);
+		/* 30h */	virtual bool RemoveFile(const ResourceKey& fileName, RecordInfo& dstInfo);
 
 		///
 		/// Reads the index items from the given buffer. It will be read according to the DBPF format. 
@@ -166,12 +149,7 @@ namespace Resource
 		/* 28h */	ItemsMap			mItemsMap;
 
 	};
-
-	///////////////////////////////////
-	//// INTERNAL IMPLEMENENTATION ////
-	///////////////////////////////////
-
-	static_assert(sizeof(PFIndexModifiable) == 0x4C, "sizeof(PFIndexModifiable) != 4Ch");
+	ASSERT_SIZE(PFIndexModifiable, 0x4C);
 
 	namespace Addresses(PFIndexModifiable)
 	{

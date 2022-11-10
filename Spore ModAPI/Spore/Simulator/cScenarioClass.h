@@ -43,19 +43,14 @@ namespace Simulator
 		/* 28h */	cScenarioAsset mGameplayObjectGfxOverrideAsset;
 		/* 48h */	ScenarioGfxOverrideType mGfxOverideTypeSecondary;
 		/* 50h */	cScenarioAsset mGameplayObjectGfxOverrideAsset_Secondary;
-		/* 70h */	fixed_vector<cScenarioClassAct, 8> mActs;
+		/* 70h */	eastl::fixed_vector<cScenarioClassAct, 8> mActs;
 		/* 2788h */	cScenarioString mCastName;
 		/* 27C4h */	ResourceKey mAssetKeyDEPRECATED;
 		/* 27D0h */	int field_27D0;
 		/* 27D4h */	uint32_t mModelTypeDEPRECATED;  // not initialized
 		/* 27D8h */	uint64_t mServerIDDEPRECATED;
 	};
-
-	/////////////////////////////////
-	//// INTERNAL IMPLEMENTATION ////
-	/////////////////////////////////
-
-	static_assert(sizeof(cScenarioClass) == 0x27E0, "sizeof(cScenarioClass) != 0x27E0");
+	ASSERT_SIZE(cScenarioClass, 0x27E0);
 
 	namespace Addresses(cScenarioClass)
 	{

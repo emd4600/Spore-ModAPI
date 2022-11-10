@@ -67,7 +67,7 @@ namespace Simulator
 
 		/* 78h */	virtual bool RemoveItem(cSpaceInventoryItem* pItem);  // also sets pItem->mpCargoSlot = nullptr
 																		  // Transfer ammo? If it's a tool substracts count from items[index] and sets dst.count = count
-		/* 7Ch */	virtual bool func7Ch(size_t index, intrusive_ptr<cSpaceInventoryItem>& dst, int count);
+		/* 7Ch */	virtual bool func7Ch(size_t index, cSpaceInventoryItemPtr& dst, int count);
 
 		///
 		/// Adds the given item to the inventory. If it already exists, it returns false. If it does not exist
@@ -105,13 +105,8 @@ namespace Simulator
 
 	public:
 
-		/* 34h */	vector<cSpaceInventoryItemPtr> mInventoryItems;
+		/* 34h */	eastl::vector<cSpaceInventoryItemPtr> mInventoryItems;
 		/* 48h */	int mMaxItemCountPerItem;  // -1
 	};
-
-	/////////////////////////////////
-	//// INTERNAL IMPLEMENTATION ////
-	/////////////////////////////////
-
-	static_assert(sizeof(cSpaceInventory) == 0x4C, "sizeof(cSpaceInventory) != 0x4C");
+	ASSERT_SIZE(cSpaceInventory, 0x4C);
 }

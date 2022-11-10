@@ -52,12 +52,12 @@ namespace UTFWin
 
 	//	char _padding_528[0x5C];
 
-	//	/* 584h */	intrusive_ptr<IDrawable> hScrollbarDrawable;
+	//	/* 584h */	IDrawablePtr hScrollbarDrawable;
 	//	/* 588h */	ScrollbarEnDis hScrollbarEnabled;
 
 	//	char _padding_58C[0xC];
 
-	//	/* 598h */	intrusive_ptr<IDrawable> vScrollbarDrawable;
+	//	/* 598h */	IDrawablePtr vScrollbarDrawable;
 	//	/* 59Ch */	ScrollbarEnDis vScrollbarEnabled;
 
 	//	char _padding_5A0[0x30];

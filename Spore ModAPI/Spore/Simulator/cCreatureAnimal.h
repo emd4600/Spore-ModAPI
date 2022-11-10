@@ -47,14 +47,14 @@ namespace Simulator
 		/* 1004h */	ResourceKey mNextSpecies; 
 		/* 1010h */	ColorRGB mColor;
 		/* 101Ch */	int field_101C;
-		/* 1020h */	vector<int> field_1020;
-		/* 1034h */	deque<int> field_1034;
-		/* 1060h */ deque<int> field_1060;
-		/* 108Ch */	fixed_vector<int, 32> field_108C;
-		/* 1124h */	fixed_vector<int, 128> field_1124;
-		/* 133Ch */	fixed_vector<int, 32> field_133C;
-		/* 13D4h */	fixed_vector<int, 8> field_13D4;
-		/* 140Ch */	fixed_vector<int, 128> field_140C;
+		/* 1020h */	eastl::vector<int> field_1020;
+		/* 1034h */	eastl::deque<int> field_1034;
+		/* 1060h */ eastl::deque<int> field_1060;
+		/* 108Ch */	eastl::fixed_vector<int, 32> field_108C;
+		/* 1124h */	eastl::fixed_vector<int, 128> field_1124;
+		/* 133Ch */	eastl::fixed_vector<int, 32> field_133C;
+		/* 13D4h */	eastl::fixed_vector<int, 8> field_13D4;
+		/* 140Ch */	eastl::fixed_vector<int, 128> field_140C;
 		/* 1624h */	int field_1624;  // cAIMemory
 		/* 1628h */	cGonzagoTimer field_1628;
 		//TODO struct related with adventures, check sub_D98AC0
@@ -68,7 +68,7 @@ namespace Simulator
 		/* 166Ch */	bool field_166C;  // not initialized
 		/* 166Dh */	bool field_166D;
 		/* 1670h */	int field_1670;
-		/* 1674h */	intrusive_ptr<cHerd> mHerd;  // cHerd ?
+		/* 1674h */	eastl::intrusive_ptr<cHerd> mHerd;  // cHerd ?
 		/* 1678h */	int mPregnantEggs;
 		/* 167Ch */	float mUntargetDistanceTime;
 		/* 1680h */	uint32_t mOwnerMissionID;
@@ -77,15 +77,10 @@ namespace Simulator
 		/* 168Ch */	float field_168C;
 		/* 1690h */	float field_1690;
 		/* 1694h */	float mCharmDamage;
-		/* 1698h */	intrusive_ptr<cCombatant> mpCharmer;
+		/* 1698h */	cCombatantPtr mpCharmer;
 		/* 169Ch */	float mCharmTime;
 	};
-
-	/////////////////////////////////
-	//// INTERNAL IMPLEMENTATION ////
-	/////////////////////////////////
-
-	static_assert(sizeof(cCreatureAnimal) == 0x16A0, "sizeof(cCreatureAnimal) != 16A0h");
+	ASSERT_SIZE(cCreatureAnimal, 0x16A0);
 
 	namespace Addresses(cCreatureAnimal) {
 		DeclareAddress(Create);

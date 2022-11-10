@@ -34,10 +34,9 @@ namespace Swarm
 		EffectDirectory* GetCollection();
 
 	protected:
-		/* 14h */	intrusive_ptr<EffectDirectory> mpCollection;
+		/* 14h */	eastl::intrusive_ptr<EffectDirectory> mpCollection;
 	};
-
-	static_assert(sizeof(CollectionResource) == 0x18, "sizeof(CollectionResource) != 18h");
+	ASSERT_SIZE(CollectionResource, 0x18);
 
 	inline EffectDirectory* CollectionResource::GetCollection()
 	{

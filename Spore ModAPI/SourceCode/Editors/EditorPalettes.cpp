@@ -356,11 +356,11 @@ namespace Palettes
 		, field_BC()
 		, field_C0()
 		, field_C4()
-		, field_C8()
-		, field_CC(1.0f, 1.0f, 1.0f)
-		, field_D8(1.0f, 1.0f, 1.0f)
-		, field_E4(true)
-		, field_E5(true)
+		, mPaintID()
+		, mPrimaryColor(1.0f, 1.0f, 1.0f)
+		, mSecondaryColor(1.0f, 1.0f, 1.0f)
+		, mPrimaryIsDefault(true)
+		, mSecondaryIsDefault(true)
 		, field_E8()
 	{
 	}

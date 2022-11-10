@@ -13,7 +13,7 @@ namespace Editors
 	auto_METHOD_VOID_(cEditor, Redo);
 
 	auto_METHOD_VOID_(EditorModel, Dispose);
-	auto_METHOD_const_(EditorModel, string16&, GetCreationName);
+	auto_METHOD_const_(EditorModel, eastl::string16&, GetCreationName);
 	auto_METHOD_VOID(EditorModel, SetColor, Args(int index, struct ColorRGB color), Args(index, color));
 	auto_METHOD_VOID(EditorModel, Load, Args(cEditorResource* pResource), Args(pResource));
 	auto_METHOD_VOID(EditorModel, Save, Args(cEditorResource* pResource), Args(pResource));

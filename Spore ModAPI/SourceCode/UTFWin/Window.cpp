@@ -334,9 +334,9 @@ namespace UTFWin
 		return WindowProcedures(this);
 	}
 
-	intrusive_ptr<IWinProc> IWindow::AddWinProc(HandleUILambda_t pFunction, int eventFlags, int priority)
+	IWinProcPtr IWindow::AddWinProc(HandleUILambda_t pFunction, int eventFlags, int priority)
 	{
-		intrusive_ptr<IWinProc> ptr = new LambdaProc(pFunction, eventFlags, priority);
+		IWinProcPtr ptr = new LambdaProc(pFunction, eventFlags, priority);
 		AddWinProc(ptr.get());
 		return ptr;
 	}
@@ -378,7 +378,7 @@ namespace UTFWin
 	}
 
 
-	intrusive_ptr<IWinProc> IWindow::AddWinProcFilter(HandleUILambda_t pFunction, const vector<MessageType> types, int priority)
+	IWinProcPtr IWindow::AddWinProcFilter(HandleUILambda_t pFunction, const eastl::vector<MessageType> types, int priority)
 	{
 		// Get the event flags
 		int flags = 0;
@@ -388,12 +388,12 @@ namespace UTFWin
 			flags |= GetEventFlags(type);
 		}
 
-		intrusive_ptr<IWinProc> ptr = new LambdaFilterProc(pFunction, flags, priority, types);
+		IWinProcPtr ptr = new LambdaFilterProc(pFunction, flags, priority, types);
 		AddWinProc(ptr.get());
 		return ptr;
 	}
 
-	LambdaFilterProc::LambdaFilterProc(HandleUILambda_t pFunction, int eventFlags, int priority, const vector<MessageType>& types)
+	LambdaFilterProc::LambdaFilterProc(HandleUILambda_t pFunction, int eventFlags, int priority, const eastl::vector<MessageType>& types)
 		: LambdaProc(pFunction, eventFlags, priority)
 	{
 		for (MessageType type : types)

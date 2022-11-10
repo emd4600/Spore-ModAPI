@@ -20,7 +20,7 @@
 #pragma once
 
 #include <Spore\Graphics\Texture.h>
-#include <Spore\Resource\DatabasePackedFile.h>
+#include <Spore\Resource\Database.h>
 #include <Spore\RenderWare\CompiledState.h>
 #include <Spore\RenderWare\RenderWareFile.h>
 
@@ -29,9 +29,6 @@
 
 /// Access the active material manager.
 #define MaterialManager (*Graphics::IMaterialManager::Get())
-
-using namespace eastl;
-using Resource::DatabasePackedFile;
 
 #define MaterialPtr eastl::intrusive_ptr<Graphics::Material>
 #define IMaterialManagerPtr eastl::intrusive_ptr<Graphics::IMaterialManager>
@@ -56,14 +53,13 @@ namespace Graphics
 	public:
 		/* 18h */	uint32_t materialID;
 		/* 1Ch */	int field_1C;  // RenderAsset ? RenderWareFile?
-		/* 20h */	vector<intrusive_ptr<Texture>>  textures;
+		/* 20h */	eastl::vector<TexturePtr>  textures;
 		/* 34h */	char field_34[0x14];  // ?
 
 		int AddRef();
 		int Release();
 	};
-
-	static_assert(sizeof(Material) == 0x48, "sizeof(Material) != 48h");
+	ASSERT_SIZE(Material, 0x48);
 
 	///
 	/// This manager stores the information of materials, which are used to control the visual appearance of game objects.
@@ -139,7 +135,7 @@ namespace Graphics
 		/// @param[out] dst A vector where the textures will be output.
 		/// @param[in] filterFunction [Optional] A filter function that takes a Texture* as a parameter and returns a bool, whether the texture must be added or not.
 		///
-		/* 3Ch */	virtual void GetTextures(const Material* pMaterial, vector<TexturePtr>& dst, bool(*filterFunction)(Texture*) = nullptr) const = 0;
+		/* 3Ch */	virtual void GetTextures(const Material* pMaterial, eastl::vector<TexturePtr>& dst, bool(*filterFunction)(Texture*) = nullptr) const = 0;
 
 		// returns a material ID?
 		/* 40h */	virtual uint32_t AssignRWMaterial(RenderWare::CompiledState*, RenderWare::RenderWareFile*) = 0;
@@ -149,16 +145,16 @@ namespace Graphics
 		/* 50h */	virtual void func50h(int) = 0;
 		/* 54h */	virtual void func54h(int) = 0;
 		/* 58h */	virtual void func58h(int, int, int, int, int) = 0;
-		/* 5Ch */	virtual bool WriteMaterials(DatabasePackedFile* pDBPF) = 0;
-		/* 60h */	virtual bool WriteShaderFragments(DatabasePackedFile* pDBPF) = 0;
-		/* 64h */	virtual bool WriteShaders(DatabasePackedFile* pDBPF) = 0;
+		/* 5Ch */	virtual bool WriteMaterials(Resource::Database* database) = 0;
+		/* 60h */	virtual bool WriteShaderFragments(Resource::Database* database) = 0;
+		/* 64h */	virtual bool WriteShaders(Resource::Database* database) = 0;
 		/* 68h */	virtual void func68h() = 0;
 		/* 6Ch */	virtual void func6Ch() = 0;
 		/* 70h */	virtual int func70h() = 0;
 		/* 74h */	virtual void func74h(int) = 0;
-		/* 78h */	virtual bool ReadMaterials(DatabasePackedFile* pDBPF) = 0;
-		/* 7Ch */	virtual bool ReadShaderFragments(DatabasePackedFile* pDBPF) = 0;
-		/* 80h */	virtual bool ReadShaders(DatabasePackedFile* pDBPF) = 0;
+		/* 78h */	virtual bool ReadMaterials(Resource::Database* database) = 0;
+		/* 7Ch */	virtual bool ReadShaderFragments(Resource::Database* database) = 0;
+		/* 80h */	virtual bool ReadShaders(Resource::Database* database) = 0;
 
 		///
 		/// Gets the active material manager.

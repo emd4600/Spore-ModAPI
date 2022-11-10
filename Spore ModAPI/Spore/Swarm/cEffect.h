@@ -26,9 +26,6 @@
 
 #include <EASTL\intrusive_ptr.h>
 
-using namespace eastl;
-using namespace Math;
-
 namespace Swarm
 {
 	class ISwarmManager;
@@ -69,9 +66,9 @@ namespace Swarm
 		// my own addition
 		void GetIndex(size_t& dstDirectoryIndex, size_t& dstEffectIndex) const;
 
-		Components::VisualEffect* GetVisualEffect();
+		cVisualEffectDescription* GetVisualEffect();
 
-	protected:
+	public:
 		enum
 		{
 			kFlagTransformed = 4
@@ -82,25 +79,25 @@ namespace Swarm
 		int field_0Ch;
 
 		/* 10h */	int mnRefCount;
-		/* 14h */	intrusive_ptr<ISwarmManager> mpManager;
+		/* 14h */	eastl::intrusive_ptr<ISwarmManager> mpManager;
 		/* 18h */	uint32_t mnInstanceID;
 		/* 1Ch */	uint32_t mnGroupID;
 		/* 20h */	uint32_t mnEffectIndex;  // & 0xFF000000 is the EffectDirectory index
 		/* 24h */	int field_24;
-		/* 28h */	Components::VisualEffect* mpVisualEffect;
+		/* 28h */	cVisualEffectDescription* mpVisualEffect;
 		/* 2Ch */	int mnFlags;
-		/* 30h */	Vector3 field_30;
-		/* 3Ch */	Vector3 field_3C;
+		/* 30h */	Math::Vector3 field_30;
+		/* 3Ch */	Math::Vector3 field_3C;
 		/* 48h */	int field_48;
 		/* 4Ch */	float field_4C;
-		/* 50h */	Vector3 field_50;
+		/* 50h */	Math::Vector3 field_50;
 		/* 5Ch */	uint32_t mNotifyMessageID;
 		/* 60h */	int field_60;
 		/* 64h */	Transform field_64;
 		/* 9Ch */	Transform mTransform;
 		/* D4h */	Transform field_D4;
 		/* 10Ch */	Transform field_10C;
-		/* 144h */	vector<int> field_144;
+		/* 144h */	eastl::vector<int> field_144;
 		/* 158h */	int field_158;
 		/* 15Ch */	int field_15C;
 		/* 160h */	int field_160;
@@ -122,7 +119,7 @@ namespace Swarm
 		dstEffectIndex = mnEffectIndex & 0x00FFFFFF;
 	}
 
-	inline Components::VisualEffect* cEffect::GetVisualEffect()
+	inline cVisualEffectDescription* cEffect::GetVisualEffect()
 	{
 		return mpVisualEffect;
 	}

@@ -106,12 +106,7 @@ namespace Simulator
 	public:
 		static cGameInputManager* Get();
 	};
-
-	/////////////////////////////////
-	//// INTERNAL IMPLEMENTATION ////
-	/////////////////////////////////
-
-	static_assert(sizeof(cGameInputManager) == 0x114, "sizeof(cGameInputManager) != 114h");
+	ASSERT_SIZE(cGameInputManager, 0x114);
 
 	namespace Addresses(cGameInputManager)
 	{

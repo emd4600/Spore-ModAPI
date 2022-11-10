@@ -96,7 +96,7 @@ namespace Simulator
 		static cGameNounManager* Get();
 			
 	public:
-		/* 20h */	hash_map<int, int> field_20;
+		/* 20h */	eastl::hash_map<int, int> field_20;
 		/* 40h */	int field_40;
 		/* 44h */	int field_44;
 		/* 48h */	int field_48;
@@ -104,18 +104,18 @@ namespace Simulator
 		/* 50h */	int field_50;
 		/* 54h */	cCreatureAnimalPtr mpAvatar;
 		/* 58h */	cHerdPtr mpAvatarHerd;
-		/* 5Ch */	vector<cCreatureAnimalPtr> mPosseMembers;
+		/* 5Ch */	eastl::vector<cCreatureAnimalPtr> mPosseMembers;
 		/* 70h */	cTribePtr mpPlayerTribe;
 		/* 74h */	ObjectPtr mpPlayer;  // cPlayer
-		/* 78h */	intrusive_list<cGameData> mNouns;
-		/* 80h */	vector<ObjectPtr> field_80;  // objects that haven't been updated since last call to UpdateModels?
+		/* 78h */	eastl::intrusive_list<cGameData> mNouns;
+		/* 80h */	eastl::vector<ObjectPtr> field_80;  // objects that haven't been updated since last call to UpdateModels?
 		/* 94h */	int field_94;
-		/* 98h */	map<uint32_t, tGameDataVectorT<cGameDataPtr>> mNounMap;
-		/* B4h */	map<int, int> mPoliticalMap;
-		/* D0h */	map<int, ObjectPtr> field_D0;
-		/* ECh */	map<int, ObjectPtr> field_EC;
+		/* 98h */	eastl::map<uint32_t, tGameDataVectorT<cGameDataPtr>> mNounMap;
+		/* B4h */	eastl::map<int, int> mPoliticalMap;
+		/* D0h */	eastl::map<int, ObjectPtr> field_D0;
+		/* ECh */	eastl::map<int, ObjectPtr> field_EC;
 		/* 108h */	int field_108;
-		/* 10Ch */	list<cGameDataPtr> mObjects;
+		/* 10Ch */	eastl::list<cGameDataPtr> mObjects;
 		/* 118h */	int field_118;
 	};
 	ASSERT_SIZE(cGameNounManager, 0x11C);

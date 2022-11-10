@@ -38,7 +38,10 @@ namespace UTFWin
 		int mnRefCount;
 	};
 
-	class TreeNode : public ILayoutElement, public ITreeNode, public intrusive_list_node
+	class TreeNode 
+		: public ILayoutElement
+		, public ITreeNode
+		, public eastl::intrusive_list_node
 	{
 	public:
 		static const uint32_t TYPE = 0xD02AFC2B;
@@ -80,22 +83,17 @@ namespace UTFWin
 	protected:
 		/* 14h */	WinTreeView* mpTreeView;
 		/* 18h */	TreeNode* mpParent;
-		/* 1Ch */	intrusive_list<TreeNode> mChildren;
+		/* 1Ch */	eastl::intrusive_list<TreeNode> mChildren;
 		/* 24h */	int field_24;
 		/* 28h */	int mnNodeFlags;  // 2
 		/* 2Ch */	uint32_t mTextStyleID;
 		/* 30h */	int field_30;
-		/* 34h */	string16 mCaption;
+		/* 34h */	eastl::string16 mCaption;
 		/* 44h */	uint32_t mNodeID;
-		/* 48h */	intrusive_ptr<IDrawable> mpIcon;
-		/* 4Ch */	intrusive_ptr<Object> field_4C;
+		/* 48h */	IDrawablePtr mpIcon;
+		/* 4Ch */	ObjectPtr field_4C;
 	};
-
-	/////////////////////////////////
-	//// INTERNAL IMPLEMENTATION ////
-	/////////////////////////////////
-
-	static_assert(sizeof(TreeNode) == 0x50, "sizeof(TreeNode) != 50h");
+	ASSERT_SIZE(TreeNode, 0x50);
 
 	namespace Addresses(TreeNode)
 	{

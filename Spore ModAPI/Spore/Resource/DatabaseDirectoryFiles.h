@@ -49,7 +49,7 @@ namespace Resource
 			IO::AccessFlags desiredAccess = IO::AccessFlags::Read, 
 			IO::CD createDisposition = IO::CD::Default,
 			bool arg_10 = true,
-			DBPFItem* pDstInfo = nullptr) override;
+			RecordInfo* pDstInfo = nullptr) override;
 		/* 38h */	virtual int GetOpenCount(const ResourceKey& key) override;
 		/* 3Ch */	virtual bool CloseRecord(IRecord* pRecord) override;
 		/* 40h */	virtual bool DeleteRecord(const ResourceKey& name) override;
@@ -84,8 +84,8 @@ namespace Resource
 		/* 1Ch */	eastl::string16 mLocation;
 		/* 2Ch */	FixedPoolAllocator mExtensionMapAllocator;
 		/* 4Ch */	FixedPoolAllocator mRecordListDataMapAllocator;
-		/* 6Ch */	eastl::map<eastl::string16, uint32_t, eastl::less<eastl::string16>, CoreAllocatorAdapter<FixedPoolAllocator>> mExtensionMap;
-		/* 8Ch */	eastl::map<ResourceKey, int, eastl::less<ResourceKey>, CoreAllocatorAdapter<FixedPoolAllocator>> mRecordListDataMap;  // actually the type is DDFRecordListData
+		/* 6Ch */	eastl::map<eastl::string16, uint32_t, eastl::less<eastl::string16>, FixedPoolAllocatorAdapter> mExtensionMap;
+		/* 8Ch */	eastl::map<ResourceKey, int, eastl::less<ResourceKey>, FixedPoolAllocatorAdapter> mRecordListDataMap;  // actually the type is DDFRecordListData
 		/* ACh */	uint32_t mDefaultGroupID;
 		/* B0h */	IResourceManager* mpResourceManager;
 		/* B4h */	FileNameToKeyConverter_t mFileNameToKeyConverter;

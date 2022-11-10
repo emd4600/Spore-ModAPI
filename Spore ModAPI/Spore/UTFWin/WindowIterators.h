@@ -28,10 +28,10 @@ namespace UTFWin
 	class ChildrenIterator
 	{
 	public:
-		intrusive_list_node* mpNode;
+		eastl::intrusive_list_node* mpNode;
 
 	public:
-		ChildrenIterator(intrusive_list_node* pWindow);
+		ChildrenIterator(eastl::intrusive_list_node* pWindow);
 
 		Pointer operator*() const;
 		Pointer operator->() const;
@@ -49,7 +49,7 @@ namespace UTFWin
 	};
 
 	template<typename Pointer, typename Reference>
-	inline ChildrenIterator<Pointer, Reference>::ChildrenIterator(intrusive_list_node* pNode)
+	inline ChildrenIterator<Pointer, Reference>::ChildrenIterator(eastl::intrusive_list_node* pNode)
 		: mpNode(pNode)
 	{
 	}

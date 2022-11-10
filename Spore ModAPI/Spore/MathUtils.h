@@ -19,7 +19,6 @@
 
 #pragma once
 
-#include <stdint.h>
 #include <cmath>
 #include <Spore\Internal.h>
 
@@ -75,7 +74,7 @@ namespace Math
 		static const Color WHITE;
 		static const Color BLACK;
 	};
-	static_assert(sizeof(Color) == 0x4, "sizeof(Color) != 04h");
+	ASSERT_SIZE(Color, 0x4);
 
 	/// A vector of 2 float values (x, y).
 	struct Vector2 {
@@ -1215,6 +1214,16 @@ namespace Math
 		return radians * (180.0f / PI);
 	}
 
+	template <typename T>
+	inline T min_(T a, T b) {
+		return a < b ? a : b;
+	}
+
+	template <typename T>
+	inline T max_(T a, T b) {
+		return a > b ? a : b;
+	}
+
 	/// Ensures that the given number stays in the range `[a, b]`, included; `a <= b`.
 	/// If `value > b`, it returns b; if `value < a`, it returns `a`.
 	/// @param value The value to clamp
@@ -1222,7 +1231,7 @@ namespace Math
 	/// @param b The maximum value
 	template <typename T>
 	inline T clamp(T value, T a, T b) {
-		return min(max(value, a), b);
+		return min_(max_(value, a), b);
 	}
 
 	/// Linear interpolation between two values, which can be integers, floats, vectors or colors.

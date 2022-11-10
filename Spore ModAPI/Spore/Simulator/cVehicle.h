@@ -76,15 +76,15 @@ namespace Simulator
 		/* B20h */	VehiclePurpose mPurpose;
 		/* B24h */	uint32_t mStance;
 		/* B28h */	uint32_t mCargoType;
-		/* B2Ch */	deque<int> mEvents;
+		/* B2Ch */	eastl::deque<int> mEvents;
 		/* B58h */	float mCargoUnits;
-		/* B5Ch */	intrusive_ptr<cCity> mpNearestCity;
-		/* B60h */	intrusive_ptr<cSpaceToolData> mpWeapon;
+		/* B5Ch */	eastl::intrusive_ptr<cCity> mpNearestCity;
+		/* B60h */	eastl::intrusive_ptr<cSpaceToolData> mpWeapon;
 		/* B64h */	int field_B64;  // also cSpaceToolData?
-		/* B68h */	vector<int> mOrders;  //TODO PLACEHOLDER tVehicleOrders
-		/* B7Ch */	intrusive_ptr<cSpatialObject> mpChaseTarget;
+		/* B68h */	eastl::vector<int> mOrders;  //TODO PLACEHOLDER tVehicleOrders
+		/* B7Ch */	cSpatialObjectPtr mpChaseTarget;
 		/* B80h */	Vector3 mIdlePosition;
-		/* B8Ch */	vector<intrusive_ptr<cCombatant>> mHostileUnits;
+		/* B8Ch */	eastl::vector<cCombatantPtr> mHostileUnits;
 		/* BA0h */	cGonzagoTimer mParkingTimer;
 		/* BC0h */	int field_BC0;
 		/* BC4h */	int field_BC4;
@@ -107,14 +107,14 @@ namespace Simulator
 		/* C58h */	float mSpeedStat;  // 0.33
 		/* C5Ch */	float mDamageMultiplier;  // 1.0
 		/* C60h */	float field_C60;  // 1.0
-		/* C64h */	vector<int> mWeapons;  //TODO PLACEHOLDER tWeaponInfo
+		/* C64h */	eastl::vector<int> mWeapons;  //TODO PLACEHOLDER tWeaponInfo
 		/* C78h */	int mActiveWeaponIndex;
 		/* C7Ch */	unsigned int mDefaultWeaponCycleTimeMS;
 		/* C80h */	int mTimeToCycleWeaponMS;
 		/* C84h */	unsigned int mTimeSinceLastWeaponFireMS;
 		/* C88h */	cGonzagoTimer mCombatStatusTimer;
 		/* CA8h */	cGonzagoTimer mCombatVoxTimer;
-		/* CC8h */	string16 field_CC8;
+		/* CC8h */	eastl::string16 field_CC8;
 		/* CD8h */	cGonzagoTimer field_CD8;
 		/* CF8h */	int field_CF8;  // not initialized
 		/* CFCh */	cHitSpherePtr mpHitSphere;
@@ -123,7 +123,7 @@ namespace Simulator
 		/* D08h */	int field_D08;
 		/* D0Ch */	int field_D0C;
 		/* D10h */	bool field_D10;
-		/* D14h */	string field_D14;
+		/* D14h */	eastl::string field_D14;
 		/* D24h */	int field_D24;
 		/* D28h */	int field_D28;  // not initialized
 		/* D2Ch */	float field_D2C;
@@ -146,12 +146,7 @@ namespace Simulator
 		/* D90h */	float field_D90;
 		/* D94h */	int field_D94;
 	};
-
-	/////////////////////////////////
-	//// INTERNAL IMPLEMENTATION ////
-	/////////////////////////////////
-
-	static_assert(sizeof(cVehicle) == 0xD98, "sizeof(cVehicle) != D98h");
+	ASSERT_SIZE(cVehicle, 0xD98);
 
 	namespace Addresses(cVehicle)
 	{

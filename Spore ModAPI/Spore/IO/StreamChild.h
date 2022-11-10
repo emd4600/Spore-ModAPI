@@ -90,12 +90,7 @@ namespace IO
 		/* 14h */	size_type   mnPosition;
 		/* 18h */	size_type   mnSize;
 	};
-
-	///////////////////////////////////
-	//// INTERNAL IMPLEMENENTATION ////
-	///////////////////////////////////
-
-	static_assert(sizeof(StreamChild) == 0x1C, "sizeof(StreamChild) != 1Ch");
+	ASSERT_SIZE(StreamChild, 0x1C);
 
 	namespace Addresses(StreamChild)
 	{

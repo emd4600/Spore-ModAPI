@@ -36,13 +36,13 @@ namespace UTFWin
 		///
 		/// Get rotation axis (need not be normalized).
 		///
-		/* 14h */	virtual const Vector3& GetRotationAxis() const = 0;
+		/* 14h */	virtual const Math::Vector3& GetRotationAxis() const = 0;
 
 		///
 		/// Set rotation axis (need not be normalized).
 		/// @param axis
 		///
-		/* 18h */	virtual void SetRotationAxis(const Vector3& axis) = 0;
+		/* 18h */	virtual void SetRotationAxis(const Math::Vector3& axis) = 0;
 
 		///
 		/// Get angle to rotate by clockwise (in degrees).
@@ -75,8 +75,8 @@ namespace UTFWin
 		virtual uint32_t GetProxyID() const override;
 
 		/* 10h */	virtual IWinProc* ToWinProc() override;
-		/* 14h */	virtual const Vector3& GetRotationAxis() const override;
-		/* 18h */	virtual void SetRotationAxis(const Vector3& axis) override;
+		/* 14h */	virtual const Math::Vector3& GetRotationAxis() const override;
+		/* 18h */	virtual void SetRotationAxis(const Math::Vector3& axis) override;
 		/* 1Ch */	virtual float GetRotationAngle() const override;
 		/* 20h */	virtual void SetRotationAngle(float angle) override;
 
@@ -84,16 +84,11 @@ namespace UTFWin
 		virtual void func88h(int, int, int) override;
 
 	protected:
-		/* 64h */	Vector3 mRotAxis;
+		/* 64h */	Math::Vector3 mRotAxis;
 		/* 70h */	float mfRotAngle;
 		/* 74h */	float field_74;
 	};
-
-	static_assert(sizeof(RotateEffect) == 0x78, "sizeof(RotateEffect) != 78h");
-
-	/////////////////////////////////
-	//// INTERNAL IMPLEMENTATION ////
-	/////////////////////////////////
+	ASSERT_SIZE(RotateEffect, 0x78);
 
 	namespace Addresses(RotateEffect)
 	{

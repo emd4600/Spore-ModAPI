@@ -105,8 +105,7 @@ namespace IO
 		/* 10h */	uint8_t*    mpData;
 		/* 14h */	bool        mbFreeData; // If true, we free the data when done.
 	};
-
-	static_assert(sizeof(SharedPointer) == 0x18, "sizeof(SharedPointer) != 18h");
+	ASSERT_SIZE(SharedPointer, 0x18);
 
 	///
 	/// Implements an memory-based stream that supports the IStream interface.
@@ -178,13 +177,7 @@ namespace IO
 		/* 1Ch */	float          mfResizeFactor;      /// Specifies how capacity is increased.
 		/* 20h */	int            mnResizeIncrement;   /// Specifies how capacity is increased.
 	};
-
-
-	///////////////////////////////////
-	//// INTERNAL IMPLEMENENTATION ////
-	///////////////////////////////////
-
-	static_assert(sizeof(MemoryStream) == 0x24, "sizeof(MemoryStream) != 24h");
+	ASSERT_SIZE(MemoryStream, 0x24);
 
 	namespace Addresses(MemoryStream)
 	{

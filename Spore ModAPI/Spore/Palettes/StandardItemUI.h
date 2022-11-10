@@ -28,9 +28,9 @@
 
 namespace Palettes
 {
-	using namespace eastl;
-
-	class StandardItemUI : public DefaultRefCounted, public UTFWin::IWinProc
+	class StandardItemUI
+		: public DefaultRefCounted
+		, public UTFWin::IWinProc
 	{
 	public:
 		StandardItemUI();
@@ -40,18 +40,13 @@ namespace Palettes
 		using DefaultRefCounted::Release;
 
 	public:
-		/* 0Ch */	intrusive_ptr<PaletteItem> mpItem;
+		/* 0Ch */	PaletteItemPtr mpItem;
 		/* 10h */	int field_10;
-		/* 14h */	intrusive_ptr<ItemViewer> mpViewer;
+		/* 14h */	ItemViewerPtr mpViewer;
 		/* 18h */	IWindowPtr field_18;
 		/* 1Ch */	bool field_1C;
 	};
-
-	/////////////////////////////////
-	//// INTERNAL IMPLEMENTATION ////
-	/////////////////////////////////
-
-	static_assert(sizeof(StandardItemUI) == 0x20, "sizeof(StandardItemUI) != 20h");
+	ASSERT_SIZE(StandardItemUI, 0x20);
 
 	namespace Addresses(StandardItemUI)
 	{

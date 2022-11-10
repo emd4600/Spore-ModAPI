@@ -69,7 +69,7 @@ namespace Simulator
 		/* 24h */	Terrain::ITerrain* mpTerrain2;
 		/* 28h */	float field_28;
 		/* 2Ch */	ResourceKey mPlanetKey;
-		/* 38h */	string16 field_38;
+		/* 38h */	eastl::string16 field_38;
 		/* 48h */	bool mbAddedMessageListeners;
 		/* 4Ch */	void* mpPlanetAStarInfo;
 

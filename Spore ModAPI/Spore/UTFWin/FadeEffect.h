@@ -39,12 +39,7 @@ namespace UTFWin
 		virtual void func84h(int, float) override;
 
 	};
-
-	static_assert(sizeof(FadeEffect) == 0x60, "sizeof(FadeEffect) != 60h");
-
-	/////////////////////////////////
-	//// INTERNAL IMPLEMENTATION ////
-	/////////////////////////////////
+	ASSERT_SIZE(FadeEffect, 0x60);
 
 	namespace Addresses(FadeEffect)
 	{

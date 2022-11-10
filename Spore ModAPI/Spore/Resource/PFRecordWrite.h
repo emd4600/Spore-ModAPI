@@ -44,7 +44,7 @@ namespace Resource
 		virtual int AddRef() override;
 		virtual int Release() override;
 
-		//// IPFRecord ////
+		//// IRecord ////
 
 		/* 10h */	virtual const ResourceKey&	GetKey() override;
 		/* 14h */	virtual void			SetKey(const ResourceKey& name) override;
@@ -62,7 +62,7 @@ namespace Resource
 		/* 0Ch */	virtual uint32_t	GetType() const override;
 		/* 10h */	virtual IO::AccessFlags	GetAccessFlags() const override;
 		/* 14h */	virtual IO::FileError	GetState() const override;
-		// /* 18h */	virtual bool		Close() override;  // already overriden with IPFRecord
+		// /* 18h */	virtual bool		Close() override;  // already overriden with IRecord
 
 		/* 1Ch */	virtual IO::size_type	GetSize() const override;
 		/* 20h */	virtual bool		SetSize(IO::size_type size) override;  // does nothing
@@ -80,13 +80,7 @@ namespace Resource
 		/* 274h */	bool field_274;
 		/* 278h */	int mnStreamRefCount;  // decreased when calling Close()
 	};
-
-	///////////////////////////////////
-	//// INTERNAL IMPLEMENENTATION ////
-	///////////////////////////////////
-
-	static_assert(sizeof(PFRecordWrite) == 0x27C, "sizeof(PFRecordWrite) != 27Ch");
-
+	ASSERT_SIZE(PFRecordWrite, 0x27C);
 	
 	namespace Addresses(PFRecordWrite)
 	{

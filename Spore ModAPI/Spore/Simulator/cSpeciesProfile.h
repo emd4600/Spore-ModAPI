@@ -24,8 +24,6 @@
 #include <Spore\ResourceKey.h>
 #include <Spore\Simulator\cCreatureAbility.h>
 
-using namespace eastl;
-
 namespace Simulator
 {
 	class cSpeciesProfile
@@ -33,12 +31,12 @@ namespace Simulator
 	public:
 		char padding[0xA18];
 
-		//PLACEHOLDER 6D4h vector<intrusive_ptr<cCreatureAbility>>
+		//PLACEHOLDER 6D4h eastl::vector<intrusive_ptr<cCreatureAbility>>
 
 		/* 504h */	ResourceKey mSpeciesKey;  //TODO this is the main key?
 		/* 510h */	ResourceKey field_510;
-		/* 51Ch */	string16 field_51C;
-		/* 52Ch */	string16 field_52C;
+		/* 51Ch */	eastl::string16 field_51C;
+		/* 52Ch */	eastl::string16 field_52C;
 		/* 53Ch */	ResourceKey mProfileSeq;
 		/* 548h */	float field_548;
 		/* 54Ch */	float field_54C;
@@ -119,19 +117,19 @@ namespace Simulator
 		/* 6ACh */	int field_6AC;
 		/* 6B0h */	float field_6B0;
 		/* 6B4h */	int field_6B4;
-		/* 6B8h */	vector<int> field_6B8;
+		/* 6B8h */	eastl::vector<int> field_6B8;
 		/* 6CCh */	bool field_6CC;
 		/* 6D0h */	int field_6D0;
-		/* 6D4h */	fixed_vector<cCreatureAbility*, 20> mAbilities;  //TODO abilities
-		/* 73Ch */	fixed_vector<int, 20> field_73C;
-		/* 7A4h */	fixed_vector<int, 20> field_7A4;
+		/* 6D4h */	eastl::fixed_vector<cCreatureAbility*, 20> mAbilities;  //TODO abilities
+		/* 73Ch */	eastl::fixed_vector<int, 20> field_73C;
+		/* 7A4h */	eastl::fixed_vector<int, 20> field_7A4;
 		/* 80Ch */	bool field_80C;
 		/* 80Dh */	bool field_80D;
-		/* 810h */	fixed_vector<int, 20> field_810;
-		/* 878h */	fixed_vector<int, 20> field_878;
-		/* 8E0h */	fixed_vector<int, 20> field_8E0;
-		/* 948h */	fixed_vector<int, 20> field_948;
-		/* 9B0h */	fixed_vector<int, 20> field_9B0;
+		/* 810h */	eastl::fixed_vector<int, 20> field_810;
+		/* 878h */	eastl::fixed_vector<int, 20> field_878;
+		/* 8E0h */	eastl::fixed_vector<int, 20> field_8E0;
+		/* 948h */	eastl::fixed_vector<int, 20> field_948;
+		/* 9B0h */	eastl::fixed_vector<int, 20> field_9B0;
 	};
 
 	/////////////////////////////////

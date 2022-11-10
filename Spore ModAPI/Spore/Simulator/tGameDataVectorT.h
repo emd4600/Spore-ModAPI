@@ -30,15 +30,15 @@ namespace Simulator
 	class tGameDataVectorT
 	{
 	public:
-		typedef intrusive_ptr<T> PtrT;
+		typedef eastl::intrusive_ptr<T> PtrT;
 
 		tGameDataVectorT();
 
 		bool needsUpdate;
-		vector<intrusive_ptr<T>> data;
+		eastl::vector<eastl::intrusive_ptr<T>> data;
 
-		intrusive_ptr<T>& operator[] (const int index);
-		const intrusive_ptr<T>& operator[] (const int index) const;
+		eastl::intrusive_ptr<T>& operator[] (const int index);
+		const eastl::intrusive_ptr<T>& operator[] (const int index) const;
 
 		inline size_t size() const {
 			return data.size();
@@ -48,12 +48,12 @@ namespace Simulator
 			return data.empty();
 		};
 
-		inline typename vector<PtrT>::iterator begin() { return data.begin(); };
-		inline typename vector<PtrT>::const_iterator begin() const { return data.begin(); };
-		inline typename vector<PtrT>::const_iterator cbegin() const { return data.cbegin(); };
-		inline typename vector<PtrT>::iterator end() { return data.end(); };
-		inline typename vector<PtrT>::const_iterator end() const { return data.end(); };
-		inline typename vector<PtrT>::const_iterator cend() const { return data.cend(); };
+		inline typename eastl::vector<PtrT>::iterator begin() { return data.begin(); };
+		inline typename eastl::vector<PtrT>::const_iterator begin() const { return data.begin(); };
+		inline typename eastl::vector<PtrT>::const_iterator cbegin() const { return data.cbegin(); };
+		inline typename eastl::vector<PtrT>::iterator end() { return data.end(); };
+		inline typename eastl::vector<PtrT>::const_iterator end() const { return data.end(); };
+		inline typename eastl::vector<PtrT>::const_iterator cend() const { return data.cend(); };
 	};
 
 	template <class T>
@@ -63,12 +63,12 @@ namespace Simulator
 	{}
 
 	template <class T>
-	inline intrusive_ptr<T>& tGameDataVectorT<T>::operator[] (const int index) {
+	inline eastl::intrusive_ptr<T>& tGameDataVectorT<T>::operator[] (const int index) {
 		return data[index];
 	}
 
 	template <class T>
-	inline const intrusive_ptr<T>& tGameDataVectorT<T>::operator[] (const int index) const {
+	inline const eastl::intrusive_ptr<T>& tGameDataVectorT<T>::operator[] (const int index) const {
 		return data[index];
 	}
 }

@@ -32,7 +32,7 @@ namespace App
 	auto_METHOD_VIRTUAL(cCheatManager, cCheatManager, bool, ProcessLine, Args(const char* pString), Args(pString));
 	auto_METHOD_VIRTUAL_(cCheatManager, cCheatManager, int, func24h);
 	auto_METHOD_VIRTUAL(cCheatManager, cCheatManager, ArgScript::ICommand*, GetCheat, Args(const char* pKeyword), Args(pKeyword));
-	auto_METHOD_VIRTUAL(cCheatManager, cCheatManager, size_t, GetKeywords, Args(const char* pPattern, vector<const char*> dst), Args(pPattern, dst));
+	auto_METHOD_VIRTUAL(cCheatManager, cCheatManager, size_t, GetKeywords, Args(const char* pPattern, eastl::vector<const char*> dst), Args(pPattern, dst));
 	auto_METHOD_VIRTUAL_VOID(cCheatManager, cCheatManager, func30h, Args(Object* arg_0), Args(arg_0));
 	auto_METHOD_VIRTUAL_VOID(cCheatManager, cCheatManager, func34h, Args(Object* arg_0), Args(arg_0));
 	auto_METHOD_VIRTUAL_(cCheatManager, cCheatManager, ArgScript::FormatParser*, GetArgScript);

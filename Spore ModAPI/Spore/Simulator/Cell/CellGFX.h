@@ -30,8 +30,6 @@ namespace Simulator
 {
 	namespace Cell
 	{
-		using namespace eastl;
-
 		class CellGFX
 		{
 		public:
@@ -52,9 +50,9 @@ namespace Simulator
 
 		public:
 
-			/* 00h */	vector<ModelPtr> mPreloadedModels;
-			/* 14h */	vector<TexturePtr> mPreloadedTextures;
-			/* 28h */	vector<int> field_28;
+			/* 00h */	eastl::vector<ModelPtr> mPreloadedModels;
+			/* 14h */	eastl::vector<TexturePtr> mPreloadedTextures;
+			/* 28h */	eastl::vector<int> field_28;
 			/* 3Ch */	int field_3C;
 			/* 40h */	int field_40;
 			/* 44h */	int field_44;
@@ -96,12 +94,6 @@ namespace Simulator
 			/* 161E4h */	int field_161E4;
 			/* 161E8h */	char padding_161E8[0x74];  // not initialized
 		};
-
-
-		/////////////////////////////////
-		//// INTERNAL IMPLEMENTATION ////
-		/////////////////////////////////
-
-		static_assert(sizeof(CellGFX) == 0x1625C, "sizeof(CellGFX) == 1625Ch");
+		ASSERT_SIZE(CellGFX, 0x1625C);
 	}
 }

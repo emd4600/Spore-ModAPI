@@ -72,12 +72,7 @@ namespace Simulator
 			/* 09h */	bool field_09;
 			/* 0Ah */	bool field_0A;
 		};
-
-		/////////////////////////////////
-		//// INTERNAL IMPLEMENTATION ////
-		/////////////////////////////////
-
-		static_assert(sizeof(GameModeCell) == 0x0C, "sizeof(GameModeCell) != 0Ch");
+		ASSERT_SIZE(GameModeCell, 0xC);
 
 		inline GoalCard* GetGoalCards() {
 			return (GoalCard*)GetAddress(Cell, GoalCards_ptr);

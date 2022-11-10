@@ -136,14 +136,9 @@ namespace UTFWin
 	protected:
 		/* 10h */	Color mBackgroundFillColor;
 		/* 14h */	BackgroundTiling mBackgroundTiling;
-		/* 18h */	intrusive_ptr<Image> mpImages[10];
+		/* 18h */	ImagePtr mpImages[10];
 	};
-
-	/////////////////////////////////
-	//// INTERNAL IMPLEMENTATION ////
-	/////////////////////////////////
-
-	static_assert(sizeof(DialogDrawable) == 0x40, "sizeof(DialogDrawable) != 40h");
+	ASSERT_SIZE(DialogDrawable, 0x40);
 
 	namespace Addresses(DialogDrawable)
 	{

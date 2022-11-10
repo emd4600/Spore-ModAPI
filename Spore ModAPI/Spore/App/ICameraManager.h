@@ -84,7 +84,7 @@ namespace App
 		/// A name can also be optionally specified.
 		/// @param cameraID The ID that uniquely identifices the camera.
 		/// @param pCamera The new ICamera.
-		/// @param pName [Optional] A string that identifies the camera.
+		/// @param pName [Optional] A eastl::string that identifies the camera.
 		///
 		/* 24h */	virtual void PutCamera(uint32_t cameraID, ICamera* pCamera, const char16_t* pName = nullptr) = 0;
 
@@ -101,10 +101,10 @@ namespace App
 		/* 2Ch */	virtual void Update(int nDeltaTime) = 0;
 
 		///
-		/// Sets the active camera to the one that matches the given key string. Only the instance ID will be used,
-		/// the rest will be ignored. The string will be parsed using ResourceKey::Parse(). 
+		/// Sets the active camera to the one that matches the given key eastl::string. Only the instance ID will be used,
+		/// the rest will be ignored. The eastl::string will be parsed using ResourceKey::Parse(). 
 		/// This will call SetActiveCameraByID(uint32_t).
-		/// @param pKeyString The string representation of a ResourceKey.
+		/// @param pKeyString The eastl::string representation of a ResourceKey.
 		/// @returns True if the active camera was changed, false otherwise.
 		///
 		/* 30h */	virtual bool SetActiveCameraByKey(const char16_t* pKeyString) = 0;
@@ -135,7 +135,7 @@ namespace App
 
 		///
 		/// Returns the ID of the camera mapped to the given name, or 0 if there is no ID mapped to that name.
-		/// @param pName A char c-string.
+		/// @param pName A char c-eastl::string.
 		///
 		/* 44h */	virtual uint32_t GetCameraID(const char* pName) = 0;
 

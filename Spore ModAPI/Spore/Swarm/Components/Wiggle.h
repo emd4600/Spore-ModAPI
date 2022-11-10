@@ -34,12 +34,7 @@ namespace Swarm
 			/* 04h */	Math::Vector3 rateDirection;
 			/* 10h */	Math::Vector3 wiggleDirection;
 		};
-
-		/////////////////////////////////
-		//// INTERNAL IMPLEMENTATION ////
-		/////////////////////////////////
-
-		static_assert(sizeof(Wiggle) == 0x1C, "sizeof(ParticleWiggle) != 1Ch");
+		ASSERT_SIZE(Wiggle, 0x1C);
 
 		inline Wiggle::Wiggle()
 			:

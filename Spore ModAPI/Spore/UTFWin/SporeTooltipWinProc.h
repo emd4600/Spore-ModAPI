@@ -27,8 +27,6 @@
 
 namespace UTFWin
 {
-	using namespace eastl;
-
 	enum class TooltipBehaviour : uint32_t
 	{
 		Default = 0,
@@ -68,15 +66,15 @@ namespace UTFWin
 
 	public:
 		/// Filename of the layout which contains tooltip window, by default "Tooltips".
-		/* 0Ch */	string16 mLayoutName;
+		/* 0Ch */	eastl::string16 mLayoutName;
 		/// Control ID of tooltip window, by default 0x3754E6C.
 		/* 1Ch */	uint32_t mControlID;  // 0x3754E6C
 		/// Control ID of detailed tooltip window, by default 0x3754E6C.
 		/* 20h */	uint32_t mDetailControlID;  // 0x3754E6C
 		/// Text to display in tooltip.
-		/* 24h */	string16 mText;
+		/* 24h */	eastl::string16 mText;
 		/// Detailed text to display in tooltip after extended hover.
-		/* 34h */	string16 mDetailedText;
+		/* 34h */	eastl::string16 mDetailedText;
 		/// The offset of the tooltip window relative to the cursor, by default (0, 30).
 		/* 44h */	Math::Point mOffsetPosition;  // (0, 30)
 		/* 4Ch */	int field_4C;
@@ -111,12 +109,7 @@ namespace UTFWin
 		return new SporeTooltipWinProc(pLayoutName, controlID, pText, Math::Point(0, 30.0f), TooltipBehaviour::Default,
 			pDetailedText, detailControlID);
 	}
-
-	/////////////////////////////////
-	//// INTERNAL IMPLEMENTATION ////
-	/////////////////////////////////
-
-	static_assert(sizeof(SporeTooltipWinProc) == 0x68, "sizeof(SporeTooltipWinProc) != 68h");
+	ASSERT_SIZE(SporeTooltipWinProc, 0x68);
 
 	namespace Addresses(SporeTooltipWinProc)
 	{

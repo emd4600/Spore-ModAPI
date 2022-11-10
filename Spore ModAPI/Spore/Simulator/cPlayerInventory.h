@@ -39,20 +39,15 @@ namespace Simulator
 		cSpaceToolData* GetUnlockableTool(const ResourceKey& id) const;
 
 	public:
-		/* 4Ch */	vector<cSpaceInventoryItemPtr> mUnlockableTools;
-		/* 60h */	vector<int> field_60;
-		/* 74h */	vector<ResourceKey> mUpgradedToolIds;
+		/* 4Ch */	eastl::vector<cSpaceInventoryItemPtr> mUnlockableTools;
+		/* 60h */	eastl::vector<int> field_60;
+		/* 74h */	eastl::vector<ResourceKey> mUpgradedToolIds;
 		/* 88h */	cSpaceToolDataPtr mpDropCargoTool;
 		/* 8Ch */	cSpaceToolDataPtr mpActiveTool;
 		/* 90h */	cSpaceInventoryItemPtr mpActiveCargoItem;
 		/* 94h */	bool mbHasAddedItem;
 	};
-
-	/////////////////////////////////
-	//// INTERNAL IMPLEMENTATION ////
-	/////////////////////////////////
-
-	static_assert(sizeof(cPlayerInventory) == 0x98, "sizeof(cPlayerInventory) != 0x98");
+	ASSERT_SIZE(cPlayerInventory, 0x98);
 
 	namespace Addresses(cPlayerInventory)
 	{

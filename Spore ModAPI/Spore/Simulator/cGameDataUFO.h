@@ -84,31 +84,31 @@ namespace Simulator
 		/* 740h */	Vector3 mOffsetFromPosition;
 		/* 74Ch */	bool mbAtDestination;
 		/* 750h */	Vector3 mDestination;
-		/* 75Ch */	intrusive_ptr<cPlanet> mDestinationPlanet;
-		/* 760h */	intrusive_ptr<cPlanet> mPreviousPlanet;
+		/* 75Ch */	cPlanetPtr mDestinationPlanet;
+		/* 760h */	cPlanetPtr mPreviousPlanet;
 		/* 764h */	int field_764;
 		/* 768h */	float mZoomAltitude;  // 1000.0
 		/* 76Ch */	int field_76C;
-		/* 770h */	list<int> field_770;
+		/* 770h */	eastl::list<int> field_770;
 		/* 77Ch */	bool mbDesiredVisible;  // true
 		/* 77Dh */	bool field_77D;
 		/* 77Eh */	bool field_77E;
 		/* 780h */	ResourceKey mDesiredModelKey;
 		/* 78Ch */	bool field_78C;  // true
 		/* 78Dh */	bool field_78D;
-		/* 790h */	intrusive_ptr<cSpaceToolData> mpNPCWeapon;
-		/* 794h */	intrusive_ptr<cSpaceToolData> mpNPCGroundWeapon;
-		/* 798h */	intrusive_ptr<cSpaceToolData> mpNPCNearAirWeapon;
-		/* 79Ch */	intrusive_ptr<cSpaceToolData> mpNPCMediumAirWeapon;
-		/* 7A0h */	intrusive_ptr<cSpaceToolData> mpNPCFarAirWeapon;
-		/* 7A4h */	intrusive_ptr<cSpaceToolData> mpNPCAbductWeapon;
+		/* 790h */	cSpaceToolDataPtr mpNPCWeapon;
+		/* 794h */	cSpaceToolDataPtr mpNPCGroundWeapon;
+		/* 798h */	cSpaceToolDataPtr mpNPCNearAirWeapon;
+		/* 79Ch */	cSpaceToolDataPtr mpNPCMediumAirWeapon;
+		/* 7A0h */	cSpaceToolDataPtr mpNPCFarAirWeapon;
+		/* 7A4h */	cSpaceToolDataPtr mpNPCAbductWeapon;
 		/* 7A8h */	int field_7A8;
 		/* 7ACh */	int field_7AC;
 		/* 7B0h */	int field_7B0;
 		/* 7B8h */	cGonzagoTimer field_7B8;
 		/* 7D8h */	int field_7D8;
 		/* 7DCh */	int field_7DC;
-		/* 7E0h */	string16 field_7E0;  // "UNINITIALIZED UFO NAME"
+		/* 7E0h */	eastl::string16 field_7E0;  // "UNINITIALIZED UFO NAME"
 		/* 7F0h */	int field_7F0;
 		/* 7F4h */	float mEnergy;
 		/* 7F8h */	float mMaxEnergy;
@@ -120,12 +120,7 @@ namespace Simulator
 		/* 810h */	int field_810;
 		/* 814h */	int field_814;
 	};
-
-	/////////////////////////////////
-	//// INTERNAL IMPLEMENTATION ////
-	/////////////////////////////////
-
-	static_assert(sizeof(cGameDataUFO) == 0x818, "sizeof(cGameDataUFO) != 818h");
+	ASSERT_SIZE(cGameDataUFO, 0x818);
 
 	namespace Addresses(cGameDataUFO)
 	{

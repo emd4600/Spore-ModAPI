@@ -164,13 +164,13 @@ namespace UTFWin
 	protected:
 		class Scrollbar
 		{
-			/* 00h */	intrusive_ptr<IDrawable> mpDrawable;
+			/* 00h */	IDrawablePtr mpDrawable;
 			/* 04h */	int mnDisplayPolicy;
 			/* 08h */	int field_08;  // not initialized
 			/* 0Ch */	int field_0C;  // not initialized
-			/* 10h */	intrusive_ptr<Object> field_10;
+			/* 10h */	ObjectPtr field_10;
 		};
-		static_assert(sizeof(WinTreeView::Scrollbar) == 0x14, "sizeof(WinTreeView) != 14h");
+		ASSERT_SIZE(Scrollbar, 0x14);
 
 		/* 210h */	bool field_210;
 		/* 214h */	TreeNode mRootNode;
@@ -179,19 +179,19 @@ namespace UTFWin
 		/* 284h */	int mTreeViewFlags;  // 0x0B
 		/* 288h */	Color mColors[9];
 		/* 2ACh */	size_t mnItemHeight;
-		/* 2B0h */	intrusive_ptr<IDrawable> mpDefaultIcon;
-		/* 2B4h */	intrusive_ptr<IDrawable> mpExpanderDrawable;
+		/* 2B0h */	IDrawablePtr mpDefaultIcon;
+		/* 2B4h */	IDrawablePtr mpExpanderDrawable;
 		/* 2B8h */	size_t mnIndentWidth;  // 0x18
 		/* 2BCh */	size_t mnLineWidth;  // 2
 		/* 2C0h */	size_t mnLineIndent;  // 8
 		/* 2C4h */	size_t mnIconSpacing;  // 4
 		/* 2C8h */	Math::Dimensions mExpanderDimensions;
 		/* 2D0h */	float field_2D0;
-		/* 2D4h */	vector<int> field_2D4;
+		/* 2D4h */	eastl::vector<int> field_2D4;
 		/* 2E8h */	int field_2E8;
 		/* 2ECh */	TreeNode* field_2EC;  // selected TreeNode?
 		/* 2F0h */	int field_2F0;
-		/* 2F4h */	intrusive_ptr<Object> field_2F4;
+		/* 2F4h */	ObjectPtr field_2F4;
 		/* 2F8h */	Scrollbar field_2F8;
 		/* 30Ch */	Scrollbar field_30C;
 		char padding_320[0x10];
@@ -200,8 +200,7 @@ namespace UTFWin
 		/* 360h */	float field_360;
 		/* 364h */	int field_364;  // not initialized
 	};
-
-	static_assert(sizeof(WinTreeView) == 0x368, "sizeof(WinTreeView) != 368h");
+	ASSERT_SIZE(WinTreeView, 0x368);
 
 	inline TreeNode* WinTreeView::GetSelectedNode()
 	{

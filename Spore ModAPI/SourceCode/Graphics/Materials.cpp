@@ -75,7 +75,7 @@ namespace Graphics
 
 		if (!dbpf) return false;
 
-		IPFRecord* record;
+		IRecord* record;
 		if (!dbpf->OpenRecord(fileKey, &record)) return false;
 
 		return ReadCompiledShaders(record->GetStream());
@@ -165,7 +165,7 @@ namespace Graphics
 
 		auto dbpf = ResourceManager.GetDBPF(rwKey);
 
-		IPFRecord* record;
+		IRecord* record;
 		if (!dbpf->OpenRecord(ResourceKey(instanceID, IMaterialManager::kSporeMaterialTypeID, IMaterialManager::kCompiledStatesLinkGroupID), &record)) {
 			return false;
 		}

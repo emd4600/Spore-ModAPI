@@ -121,7 +121,7 @@ namespace UTFWin
 		/* 4Ch */	virtual int GetTextEditFlags() const = 0;
 		/* 50h */	virtual int GetTextLength() const = 0;
 		/* 54h */	virtual const char16_t* GetText() const = 0;
-		/* 58h */	virtual int GetTextFragment(string16& dst, int startIndex, int length) const = 0;
+		/* 58h */	virtual int GetTextFragment(eastl::string16& dst, int startIndex, int length) const = 0;
 		/* 5Ch */	virtual int GetTextFragment(char16_t* dst, int startIndex, int length) const = 0;
 		/* 60h */	virtual int SetText(const char16_t* pText, int arg_4) = 0;
 		/* 64h */	virtual int GetMaxTextLength() const = 0;

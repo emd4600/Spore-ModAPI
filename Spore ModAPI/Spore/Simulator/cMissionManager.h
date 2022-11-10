@@ -16,8 +16,8 @@ namespace Simulator
 	{
 		/* 00h */	int field_0;
 		/* 04h */	int field_4;
-		/* 08h */	vector<int> field_8;
-		/* 1Ch */	vector<int> field_1C;
+		/* 08h */	eastl::vector<int> field_8;
+		/* 1Ch */	eastl::vector<int> field_1C;
 		/* 30h */	int field_30;
 		/* 34h */	int field_34;
 	};
@@ -106,21 +106,21 @@ namespace Simulator
 		/* 17h */	bool mbFlightSchoolFinished;
 		/* 18h */	bool mbMission201Finished;
 		/* 1Ch */	uint32_t mNextMissionType;
-		/* 20h */	vector<UnkMissionManagerStruct> field_20;
-		/* 34h */	vector<UnkMissionManagerStruct> field_34;
-		/* 48h */	vector<UnkMissionManagerStruct> field_48;
-		/* 5Ch */	map<uint32_t, MissionState> mTutorialMissionStates;
+		/* 20h */	eastl::vector<UnkMissionManagerStruct> field_20;
+		/* 34h */	eastl::vector<UnkMissionManagerStruct> field_34;
+		/* 48h */	eastl::vector<UnkMissionManagerStruct> field_48;
+		/* 5Ch */	eastl::map<uint32_t, MissionState> mTutorialMissionStates;
 		/* 78h */	PropertyListPtr mpGeneratorConfigPropList;
 		/* 7Ch */	PropertyListPtr mpConfigPropList;
-		/* 80h */	vector<uint32_t> mTutorialTargetPlanetKeys;
-		/* 94h */	vector<uint32_t> mTutorialSpeciesIDs;
-		/* A8h */	vector<cMissionPtr> mTrackedMissions;
+		/* 80h */	eastl::vector<uint32_t> mTutorialTargetPlanetKeys;
+		/* 94h */	eastl::vector<uint32_t> mTutorialSpeciesIDs;
+		/* A8h */	eastl::vector<cMissionPtr> mTrackedMissions;
 		/* BCh */	int field_BC;
 		// Related with tracked missions?
 		/* C0h */	cMissionPtr field_C0;
 		/* C4h */	cMissionPtr field_C4;
-		/* C8h */	list<MissionManagerTimerEntry> mRecentNPCMissions;
-		/* D4h */	list<MissionManagerTimerEntry> mRecentColonyMissions;
+		/* C8h */	eastl::list<MissionManagerTimerEntry> mRecentNPCMissions;
+		/* D4h */	eastl::list<MissionManagerTimerEntry> mRecentColonyMissions;
 		/* E0h */	int mMaxNumMissions;
 		/// In milliseconds.
 		/* E4h */	int mGapBetweenNPCMissions;
@@ -129,9 +129,9 @@ namespace Simulator
 		/* ECh */	int mMinEmpireSizeForArchetypeMissions;
 		/* F0h */	ResourceKey mDefaultMissionIcon;
 		/* FCh */	ResourceKey mDefaultDisasterIcon;
-		/* 108h */	vector<uint32_t> mTeachingInteractMissions;
-		/* 11Ch */	vector<uint32_t> mTeachingExpandMissions;
-		/* 130h */	vector<uint32_t> mTeachingExploreMissions;
+		/* 108h */	eastl::vector<uint32_t> mTeachingInteractMissions;
+		/* 11Ch */	eastl::vector<uint32_t> mTeachingExpandMissions;
+		/* 130h */	eastl::vector<uint32_t> mTeachingExploreMissions;
 	};
 
 	/////////////////////////////////

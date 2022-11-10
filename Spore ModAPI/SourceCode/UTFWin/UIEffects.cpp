@@ -177,8 +177,8 @@ namespace UTFWin
 	auto_METHOD_VIRTUAL_const_(GlideEffect, ILayoutElement, uint32_t, GetProxyID);
 
 	auto_METHOD_VIRTUAL_(GlideEffect, IGlideEffect, IWinProc*, ToWinProc);
-	auto_METHOD_VIRTUAL_const_(GlideEffect, IGlideEffect, const Point&, GetOffset);
-	auto_METHOD_VIRTUAL_VOID(GlideEffect, IGlideEffect, SetOffset, Args(const Point& offset), Args(offset));
+	auto_METHOD_VIRTUAL_const_(GlideEffect, IGlideEffect, const Math::Point&, GetOffset);
+	auto_METHOD_VIRTUAL_VOID(GlideEffect, IGlideEffect, SetOffset, Args(const Math::Point& offset), Args(offset));
 
 	auto_METHOD_VIRTUAL_(GlideEffect, BiStateEffect, int, func80h);
 	auto_METHOD_VIRTUAL_VOID(GlideEffect, BiStateEffect, func88h, Args(int arg_0, int arg_4, int arg_8), Args(arg_0, arg_4, arg_8));
@@ -264,8 +264,8 @@ namespace UTFWin
 	auto_METHOD_VIRTUAL_const_(ModulateEffect, ILayoutElement, uint32_t, GetProxyID);
 
 	auto_METHOD_VIRTUAL_(ModulateEffect, IModulateEffect, IWinProc*, ToWinProc);
-	auto_METHOD_VIRTUAL_const(ModulateEffect, IModulateEffect, void, GetColors, Args(Color& c1, Color& c2), Args(c1, c2));
-	auto_METHOD_VIRTUAL_VOID(ModulateEffect, IModulateEffect, SetColors, Args(Color c1, Color c2), Args(c1, c2));
+	auto_METHOD_VIRTUAL_const(ModulateEffect, IModulateEffect, void, GetColors, Args(Math::Color& c1, Math::Color& c2), Args(c1, c2));
+	auto_METHOD_VIRTUAL_VOID(ModulateEffect, IModulateEffect, SetColors, Args(Math::Color c1, Math::Color c2), Args(c1, c2));
 
 	auto_METHOD_VIRTUAL_VOID(ModulateEffect, BiStateEffect, func84h, Args(int arg_0, float arg_4), Args(arg_0, arg_4));
 
@@ -349,8 +349,8 @@ namespace UTFWin
 	auto_METHOD_VIRTUAL_const_(RotateEffect, ILayoutElement, uint32_t, GetProxyID);
 
 	auto_METHOD_VIRTUAL_(RotateEffect, IRotateEffect, IWinProc*, ToWinProc);
-	auto_METHOD_VIRTUAL_const_(RotateEffect, IRotateEffect, const Vector3&, GetRotationAxis);
-	auto_METHOD_VIRTUAL_VOID(RotateEffect, IRotateEffect, SetRotationAxis, Args(const Vector3& delay), Args(delay));
+	auto_METHOD_VIRTUAL_const_(RotateEffect, IRotateEffect, const Math::Vector3&, GetRotationAxis);
+	auto_METHOD_VIRTUAL_VOID(RotateEffect, IRotateEffect, SetRotationAxis, Args(const Math::Vector3& delay), Args(delay));
 	auto_METHOD_VIRTUAL_const_(RotateEffect, IRotateEffect, float, GetRotationAngle);
 	auto_METHOD_VIRTUAL_VOID(RotateEffect, IRotateEffect, SetRotationAngle, Args(float delay), Args(delay));
 

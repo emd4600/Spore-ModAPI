@@ -36,10 +36,5 @@ namespace Simulator
 		/* 10h */	BehaviorTarget mActionTarget;
 		/* 18h */	BehaviorTarget mActionSecondaryTarget;
 	};
-
-	/////////////////////////////////
-	//// INTERNAL IMPLEMENTATION ////
-	/////////////////////////////////
-
-	static_assert(sizeof(cBehaviorEntry) == 0x20, "sizeof(cBehaviorEntry) != 0x20");
+	ASSERT_SIZE(cBehaviorEntry, 0x20);
 }

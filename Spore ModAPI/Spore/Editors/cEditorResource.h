@@ -86,7 +86,7 @@ namespace Editors
 	public:
 		/* 18h */	Properties mProperties;
 		/* 5Ch */	char padding_5C[0x98 - 0x5C];
-		/* 98h */	vector<cEditorResourceBlock> mBlocks;
+		/* 98h */	eastl::vector<cEditorResourceBlock> mBlocks;
 	};
 
 }

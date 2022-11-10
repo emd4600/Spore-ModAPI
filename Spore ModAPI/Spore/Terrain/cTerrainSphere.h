@@ -33,9 +33,6 @@
 #include <Spore\Terrain\TerrainShaderData.h>
 #include <Spore\Terrain\cTerrainSphereQuad.h>
 
-using namespace eastl;
-using namespace Math;
-
 namespace Terrain
 {
 	// related with ambient occlusion??
@@ -116,8 +113,8 @@ namespace Terrain
 			/* 0Ch */	int field_C;
 			/* 10h */	float field_10;
 			/* 14h */	int field_14;
-			/* 18h */	vector<TexturePtr> field_18;
-			/* 2Ch */	vector<LARGE_INTEGER> mLoadTimes;
+			/* 18h */	eastl::vector<TexturePtr> field_18;
+			/* 2Ch */	eastl::vector<LARGE_INTEGER> mLoadTimes;
 			/* 40h */	int field_40;
 		};
 		ASSERT_SIZE(TextureContainer, 0x44);
@@ -152,9 +149,9 @@ namespace Terrain
 		/* 160h */	TexturePtr mTerrainHeightMaps[6];
 		/* 178h */	TexturePtr mTerrainControlMaps[6];
 		/// The terrain land quads that have to be rendered
-		/* 190h	*/	vector<cTerrainSphereRenderingChunk> mLandRenderingChunks;
-		/* 1A4h */	vector<int> field_1A4;
-		/* 1B8h */	vector<int> field_1B8;
+		/* 190h	*/	eastl::vector<cTerrainSphereRenderingChunk> mLandRenderingChunks;
+		/* 1A4h */	eastl::vector<int> field_1A4;
+		/* 1B8h */	eastl::vector<int> field_1B8;
 		/* 1CCh */	uint32_t mSeed;
 		/* 1D0h */	int field_1D0;  // 4
 		/* 1D4h */	int mPlanetLODChunkRes;  // 16
@@ -174,22 +171,22 @@ namespace Terrain
 		/* 20Ch */	cTerrainStateMgr* mpTerrainStateMgr;
 		/* 210h */	cWeatherManagerPtr mpWeatherManager;
 		/* 214h */	int field_214;
-		/* 218h */	vector<int> field_218;
-		/* 22Ch */	vector<int> field_22C;
-		/* 240h */	vector<int> field_240;
-		/* 254h */	vector<int> field_254;
-		/* 268h */	vector<int> field_268;
-		/* 27Ch */	vector<int> field_27C;
-		/* 290h */	vector<int> field_290;
-		/* 2A4h */	vector<int> field_2A4;
-		/* 2B8h */	vector<int> field_2B8;
-		/* 2CCh */	vector<int> field_2CC;
-		/* 2E0h */	vector<int> field_2E0;
-		/* 2F4h */	vector<int> field_2F4;
+		/* 218h */	eastl::vector<int> field_218;
+		/* 22Ch */	eastl::vector<int> field_22C;
+		/* 240h */	eastl::vector<int> field_240;
+		/* 254h */	eastl::vector<int> field_254;
+		/* 268h */	eastl::vector<int> field_268;
+		/* 27Ch */	eastl::vector<int> field_27C;
+		/* 290h */	eastl::vector<int> field_290;
+		/* 2A4h */	eastl::vector<int> field_2A4;
+		/* 2B8h */	eastl::vector<int> field_2B8;
+		/* 2CCh */	eastl::vector<int> field_2CC;
+		/* 2E0h */	eastl::vector<int> field_2E0;
+		/* 2F4h */	eastl::vector<int> field_2F4;
 		/* 308h */	TexturePtr field_308;  // PLACEHOLDER 0xE5230445
-		/* 30Ch */	Vector4 mCameraPos;
-		/* 31Ch */	Vector4 mCameraDir;
-		/* 32Ch */	Vector4 mSunDir;
+		/* 30Ch */	Math::Vector4 mCameraPos;
+		/* 31Ch */	Math::Vector4 mCameraDir;
+		/* 32Ch */	Math::Vector4 mSunDir;
 		/* 33Ch */	bool field_33C;
 		/* 33Dh */	bool field_33D;
 		/* 340h */	int field_340;
@@ -207,26 +204,26 @@ namespace Terrain
 		/* 370h */	bool field_370;
 		// something here is indexed by 36C
 		/* 374h */	char padding_374[0x120];  // floats?
-		/* 494h */	Vector4 field_494[6];
+		/* 494h */	Math::Vector4 field_494[6];
 		/* 4F4h */	bool field_4F4;  // ready to render?
 		/* 4F5h */	bool field_4F5;  // true  visible?
 		/* 4F8h */	TerrainState mTerrainState;
-		/* 638h */	Vector4 mTramp[8];
-		/* 6B8h */	Vector4 field_6B8;
-		/* 6C8h */	Vector4 field_6C8;
+		/* 638h */	Math::Vector4 mTramp[8];
+		/* 6B8h */	Math::Vector4 field_6B8;
+		/* 6C8h */	Math::Vector4 field_6C8;
 		///* 6D8h */	TerrainLighting mTerrainLighting;
-		/* 6D8h */	Vector4 field_6D8[8];  //PLACEHODER what is really this?
-		/* 758h */	vector<int> field_758;
+		/* 6D8h */	Math::Vector4 field_6D8[8];  //PLACEHODER what is really this?
+		/* 758h */	eastl::vector<int> field_758;
 		/* 76Ch */	bool mAssetsLoaded;  // ambient effects and models
-		/* 770h */	vector<TerrainModification> mModelFootprints;
-		/* 784h */	vector<TerrainModification> mModelNeedRelevel;
-		/* 798h */	vector<TerrainModification> mPlayerEffects;
+		/* 770h */	eastl::vector<TerrainModification> mModelFootprints;
+		/* 784h */	eastl::vector<TerrainModification> mModelNeedRelevel;
+		/* 798h */	eastl::vector<TerrainModification> mPlayerEffects;
 		/* 7ACh */	int mNumModels;  // a count of something for 7B0
-		/* 7B0h */	vector<ResourceKey> mModelKeys;
-		/* 7C4h */	vector<Transform> mModelTransforms;
-		/* 7D8h */	vector<ModelPtr> mModels;
-		/* 7ECh */	vector<IVisualEffectPtr> mAmbientEffects;
-		/* 800h */	vector<IVisualEffectPtr> mAmbientSoundEffects;
+		/* 7B0h */	eastl::vector<ResourceKey> mModelKeys;
+		/* 7C4h */	eastl::vector<Transform> mModelTransforms;
+		/* 7D8h */	eastl::vector<ModelPtr> mModels;
+		/* 7ECh */	eastl::vector<IVisualEffectPtr> mAmbientEffects;
+		/* 800h */	eastl::vector<IVisualEffectPtr> mAmbientSoundEffects;
 		/* 814h */	int mPlayerModCount;
 		/* 818h */	int field_818;
 		/* 81Ch */	int field_81C;
@@ -244,8 +241,8 @@ namespace Terrain
 		/* 8A8h */	int field_8A8;
 		/* 8ACh */	bool mAllowUnderwaterObjects;
 		// int are flags for renderable
-		/* 8B0h */	vector<pair<IModelWorldPtr, int>> mUnderwaterModelWorlds;
-		/* 8C4h */	vector<pair<IAnimWorldPtr, int>> mUnderwaterAnimWorlds;
+		/* 8B0h */	eastl::vector<eastl::pair<IModelWorldPtr, int>> mUnderwaterModelWorlds;
+		/* 8C4h */	eastl::vector<eastl::pair<IAnimWorldPtr, int>> mUnderwaterAnimWorlds;
 		/* 8D8h */	IEffectsWorldPtr mpUnderWaterEffectWorld;
 		/* 8DCh */	int field_8DC;
 		/* 8E0h */	int field_8E0;
@@ -262,18 +259,13 @@ namespace Terrain
 		/* A2Ch */	float field_A2C;
 		/* A30h */	float field_A30;
 		/* A34h */	float field_A34;
-		/* A38h */	ColorRGBA field_A38;
+		/* A38h */	Math::ColorRGBA field_A38;
 		/* A48h */	int field_A48;
 		/* A4Ch */	void* mpQuadBuffersPool;  //PLACEHODLER cQuadBuffersPool
 
 	public:
 		static cTerrainSphere* Create();  //PLACEHOLDER method
 	};
-
-	/////////////////////////////////
-	//// INTERNAL IMPLEMENTATION ////
-	/////////////////////////////////
-
 	ASSERT_SIZE(cTerrainSphere, 0xA50);
 
 	namespace Addresses(cTerrainSphere)

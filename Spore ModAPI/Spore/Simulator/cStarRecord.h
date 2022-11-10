@@ -79,7 +79,7 @@ namespace Simulator
 		/// Returns a reference to the planet records of this star, loading them if they are not loaded.
 		/// It is preferrable to use this instead of `mPlanets`.
 		/// @returns A read only vector of the planet records in this star.
-		vector<cPlanetRecordPtr>& GetPlanetRecords();
+		eastl::vector<cPlanetRecordPtr>& GetPlanetRecords();
 
 	public:
 		/* 0Ch */	int mLastObservedTime;
@@ -94,22 +94,16 @@ namespace Simulator
 		/* 58h */	uint32_t mStarterWorldID;
 		//TODO 1 << 4 (16) is visited? sub_BB8B50
 		/* 5Ch */	int mFlags;
-		/* 60h */	string16 mName;
+		/* 60h */	eastl::string16 mName;
 		/* 70h */	StarID mKey;  // not initialized
 		/* 74h */	ResourceKey mCitizenSpeciesKey;
 		/* 80h */	cSpeciesProfile* mpSpeciesProfile;
-		/* 84h */	vector<cPlanetRecordPtr> mPlanets;
+		/* 84h */	eastl::vector<cPlanetRecordPtr> mPlanets;
 		/// Subset of mPlanets, only those with a specific flag set
-		/* 98h */	vector<cPlanetRecordPtr> field_98;
+		/* 98h */	eastl::vector<cPlanetRecordPtr> field_98;
 		/* ACh */	char mPlanetCount;
-
 	};
-
-	/////////////////////////////////
-	//// INTERNAL IMPLEMENTATION ////
-	/////////////////////////////////
-
-	static_assert(sizeof(cStarRecord) == 0xB0, "sizeof(cStarRecord) != B0h");
+	ASSERT_SIZE(cStarRecord, 0xB0);
 
 	namespace Addresses(cStarRecord)
 	{

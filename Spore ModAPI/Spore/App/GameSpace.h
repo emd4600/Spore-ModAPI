@@ -17,7 +17,7 @@ namespace App
 	public:
 		/* 24h */	bool field_24;
 		/* 25h */	char _padding_25[0x68 - 0x25];
-		/* 68h */	vector<int> field_68;
+		/* 68h */	eastl::vector<int> field_68;
 		/* 7Ch */	int field_7C;
 		/* 80h */	int field_80;
 		/* 84h */	int field_84;
@@ -39,7 +39,7 @@ namespace App
 		/* 138h */	int field_138;  // not initialized
 		/* 13Ch */	int field_13C;  // not initialized
 		/* 140h */	int field_140;
-		/* 144h */	vector<int> field_144;
+		/* 144h */	eastl::vector<int> field_144;
 		/* 158h */	bool field_158;
 		/* 15Ch */	cSimulatorSpaceGamePtr mpSimulator;
 		/* 160h */	int field_160;
@@ -48,8 +48,8 @@ namespace App
 		/* 169h */	bool field_169;
 		/* 16Ah */	bool field_16A;  // true
 		/* 16Ch */	int field_16C;
-		/* 170h */	list<int> field_170;
-		/* 17Ch */	list<int> field_17C;
+		/* 170h */	eastl::list<int> field_170;
+		/* 17Ch */	eastl::list<int> field_17C;
 		/* 188h */	ObjectPtr mEmpireGrowthSim;
 		/* 18Ch */	bool field_18C;
 		/* 18Dh */	bool field_18D;

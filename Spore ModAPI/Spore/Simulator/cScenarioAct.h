@@ -31,12 +31,7 @@ namespace Simulator
 		/* 78h */	int mTimeLimitSecs;
 		/* 7Ch */	bool mbTimeVisible;
 		/* 80h */	uint32_t mActMusicID;
-		/* 84h */	fixed_vector<cScenarioGoal, 3> mGoals;
+		/* 84h */	eastl::fixed_vector<cScenarioGoal, 3> mGoals;
 	};
-
-	/////////////////////////////////
-	//// INTERNAL IMPLEMENTATION ////
-	/////////////////////////////////
-
-	static_assert(sizeof(cScenarioAct) == 0x534, "sizeof(cScenarioAct) != 0x534");
+	ASSERT_SIZE(cScenarioAct, 0x534);
 }

@@ -31,10 +31,5 @@ namespace Simulator
 		/* 24h */	ResourceKey mAssetKeyDEPRECATED;
 		/* 30h */	uint64_t mServerIDDEPRECATED;
 	};
-
-	/////////////////////////////////
-	//// INTERNAL IMPLEMENTATION ////
-	/////////////////////////////////
-
-	static_assert(sizeof(cScenarioPosseMember) == 0x38, "sizeof(cScenarioPosseMember) != 0x38");
+	ASSERT_SIZE(cScenarioPosseMember, 0x38);
 }

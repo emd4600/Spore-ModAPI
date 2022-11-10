@@ -92,11 +92,11 @@ namespace UTFWin
 	class LambdaFilterProc : public LambdaProc
 	{
 	public:
-		LambdaFilterProc(HandleUILambda_t pFunction, int eventFlags, int priority, const vector<MessageType>& types);
+		LambdaFilterProc(HandleUILambda_t pFunction, int eventFlags, int priority, const eastl::vector<MessageType>& types);
 
 		virtual bool HandleUIMessage(IWindow* pWindow, const Message& message) override;
 
 	protected:
-		vector<MessageType> mTypes;
+		eastl::vector<MessageType> mTypes;
 	};
 };

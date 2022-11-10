@@ -31,7 +31,7 @@ namespace ArgScript
 	class IFunction;
 
 	///
-	/// A standard ArgScript exception, which is just a string.
+	/// A standard ArgScript exception, which is just a eastl::string.
 	///
 	typedef eastl::string& ArgScriptException;
 

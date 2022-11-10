@@ -24,8 +24,8 @@ namespace Anim
 			/* 14h */	int field_14;
 		};
 
-		/* 00h */ char padding_0[0x28];
-		/* 28h */	vector<model_unk> models;
+		/* 00h */	char padding_0[0x28];
+		/* 28h */	eastl::vector<model_unk> models;
 	};
 
 	struct anim_block

@@ -53,7 +53,7 @@ namespace UTFWin
 	//	int field_244;
 
 	//	// WARNING: I think UTFWin classes actually use other memory functions, so 'spore_allocator' might be wrong
-	//	/* 248h */	vector<string16> valueList;
+	//	/* 248h */	eastl::vector<eastl::string16> valueList;
 	//	/* 25Ch */	intrusive_ptr<IScrollbarDrawable> scrollbarDrawable;
 
 	//	char _padding_260[0x58];

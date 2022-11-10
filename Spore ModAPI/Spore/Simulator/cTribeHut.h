@@ -38,7 +38,7 @@ namespace Simulator
 		/* 224h */	int field_224;  // not initialized
 		/* 228h */	int field_228;
 		/* 22Ch */	int field_22C;
-		/* 230h */	intrusive_ptr<cTribe> mpTribe;
+		/* 230h */	eastl::intrusive_ptr<cTribe> mpTribe;
 		/* 234h */	cHitSpherePtr mpHitSphere;
 		/* 238h */	int field_238;
 		/* 240h */	cGonzagoTimer field_240;

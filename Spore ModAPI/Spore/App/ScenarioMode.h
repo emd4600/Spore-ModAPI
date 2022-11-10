@@ -97,12 +97,7 @@ namespace App
 		/// Returns the ScenarioMode instance.
 		static cScenarioMode* Get();
 	};
-
-	/////////////////////////////////
-	//// INTERNAL IMPLEMENTATION ////
-	/////////////////////////////////
-
-	static_assert(sizeof(cScenarioMode) == 0xE0, "sizeof(ScenarioMode) != E0h");
+	ASSERT_SIZE(cScenarioMode, 0xE0);
 
 	namespace Addresses(cScenarioMode) {
 		DeclareAddress(ptr);

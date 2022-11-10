@@ -17,9 +17,9 @@ namespace IO
 	const size_type kSizeTypeDone = (size_type)-2;
 
 
-	/// Defines a value to be used for string conversion functions which means
-	/// that the string length is specified by a wherever the terminating null
-	/// character is. For the copying or converting of strings, the terminating
+	/// Defines a value to be used for eastl::string conversion functions which means
+	/// that the eastl::string length is specified by a wherever the terminating null
+	/// character is. For the copying or converting of eastl::strings, the terminating
 	/// null character is also copied to the destination.
 	const size_t kLengthNull = (size_t)-1;
 

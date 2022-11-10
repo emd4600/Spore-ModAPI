@@ -102,6 +102,7 @@ namespace Simulator
 		/// to override the simulator system.
 		static cSimulatorSystem* Create();
 	};
+	ASSERT_SIZE(cSimulatorSystem, 0x70);
 
 	/// Initializes certain Simulator systems so that most things can be used without being in a star or planet.
 	/// This method does:
@@ -110,12 +111,6 @@ namespace Simulator
 	/// - Calls the PrepareSimulator() method in GameViewManager so that the simulator objects are displayed
 	/// on the screen.
 	void InitializeWithoutPlanet();
-
-	/////////////////////////////////
-	//// INTERNAL IMPLEMENTATION ////
-	/////////////////////////////////
-
-	static_assert(sizeof(cSimulatorSystem) == 0x70, "sizeof(cSimulatorSystem) != 70h");
 
 	namespace Addresses(cSimulatorSystem)
 	{

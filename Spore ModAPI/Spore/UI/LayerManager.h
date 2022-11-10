@@ -41,19 +41,18 @@ namespace UI
 		};
 	
 	public:
-		/* 0Ch */	vector<cSPUILayeredObjectPtr> mLayeredObjects;
-		/* 20h */	vector<DefaultRefCountedPtr> field_20;
+		/* 0Ch */	eastl::vector<cSPUILayeredObjectPtr> mLayeredObjects;
+		/* 20h */	eastl::vector<DefaultRefCountedPtr> field_20;
 		/* 34h */	bool field_34;
 		/* 38h */	int field_38;  // -1
-		/* 3Ch */	intrusive_ptr<Object> field_3C;
-		/* 40h */	fixed_vector<IModelWorldPtr, 15> field_40;
+		/* 3Ch */	ObjectPtr field_3C;
+		/* 40h */	eastl::fixed_vector<IModelWorldPtr, 15> field_40;
 		/* 94h */	bool field_94;
 
 	public:
 		static cLayerManager* Get();
 	};
-
-	static_assert(sizeof(cLayerManager) == 0x98, "sizeof() != 98h");
+	ASSERT_SIZE(cLayerManager, 0x98);
 
 	namespace Addresses(cLayerManager) {
 		DeclareAddress(Get);

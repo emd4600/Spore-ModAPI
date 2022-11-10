@@ -36,15 +36,15 @@ namespace Simulator
 	public:
 		/* 0Ch */	PropertyListPtr mpPropList;
 		/* 10h */	cScenarioTerraformEconomyPtr mpEconomy;
-		/* 14h */	vector<uint32_t> mTerrainScriptEffects;
-		/* 28h */	vector<Transform> mTerrainScriptEffectTransforms;
-		/* 3Ch */	vector<float> mTerrainScriptEffectIntensities;
-		/* 50h */	vector<float> mTerrainScriptEffectTimes;
-		/* 64h */	vector<float> mTerrainScriptEffectSeeds;
-		/* 78h */	vector<int> field_78;
-		/* 8Ch */	vector<float> mTerrainScriptEffectWaterLevels;
-		/* A0h */	vector<ResourceKey> mTerrainScriptModels;
-		/* B4h */	vector<Transform> mTerrainScriptModelTransforms;
+		/* 14h */	eastl::vector<uint32_t> mTerrainScriptEffects;
+		/* 28h */	eastl::vector<Transform> mTerrainScriptEffectTransforms;
+		/* 3Ch */	eastl::vector<float> mTerrainScriptEffectIntensities;
+		/* 50h */	eastl::vector<float> mTerrainScriptEffectTimes;
+		/* 64h */	eastl::vector<float> mTerrainScriptEffectSeeds;
+		/* 78h */	eastl::vector<int> field_78;
+		/* 8Ch */	eastl::vector<float> mTerrainScriptEffectWaterLevels;
+		/* A0h */	eastl::vector<ResourceKey> mTerrainScriptModels;
+		/* B4h */	eastl::vector<Transform> mTerrainScriptModelTransforms;
 		/* C8h */	Vector3 mTerrainScriptWTALevels;  // not initialized
 		/// First value is percentage of day
 		/* D4h */	Vector3 mTerrainScriptERLLevels;  // not initialized
@@ -58,22 +58,22 @@ namespace Simulator
 		/* 100h */	IVisualEffectPtr mpVisualStyleEffect;
 		/// Related with colors
 		/* 104h */	bool mTerrainOverrideMode;  // true
-		/* 108h */	vector<ColorRGB> mTerrainColors;
-		/* 11Ch */	vector<float> mTerrainColorsElevations;
+		/* 108h */	eastl::vector<ColorRGB> mTerrainColors;
+		/* 11Ch */	eastl::vector<float> mTerrainColorsElevations;
 		/* 130h */	ColorRGB mBeachColor;  // not initialized
 		/* 13Ch */	ColorRGB mCliffColor;  // not initialized
 		/* 148h */	ColorRGB mWaterColor;  // not initialized
 		/* 154h */	ColorRGB mAtmosphereColor;  // not initialized
 		/* 160h */	uint32_t mGroundEffectId;  // not initialized
 		/// Points of no flora in the planet. x,y,z are the position, w is the radius in which flora is removed
-		/* 164h */	vector<Vector4> mClearFloraAround;
+		/* 164h */	eastl::vector<Vector4> mClearFloraAround;
 		/* 178h */	App::MessageListenerData mMessageListenerData;
 		/* 18Ch */	bool field_18C;  // not initialized
 		/* 18Dh */	bool mTerrainHazardsEnable;  // true
 		/* 190h */	Terrain::ITerrain* mpTerrain;
 		/* 194h */	Terrain::cTerrainStateMgr* mpTerrainStateMgr;
 		/* 198h */	cScenarioData* mpScenarioData;  // not initialized
-		/* 19Ch */	vector<int> field_19C;  // cGameDataPtr, Vector3?, related with terrain effect handles?
+		/* 19Ch */	eastl::vector<int> field_19C;  // cGameDataPtr, Vector3?, related with terrain effect handles?
 		/* 1B0h */	int field_1B0;
 		/* 1B4h */	int field_1B4;  // not initialized
 		/* 1B8h */	bool field_1B8;

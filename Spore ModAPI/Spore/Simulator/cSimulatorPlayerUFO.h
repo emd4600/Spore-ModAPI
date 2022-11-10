@@ -52,7 +52,7 @@ namespace Simulator
 		/* 34h */	int field_34;
 		/* 38h */	int field_38;
 		/* 3Ch */	int field_3C;
-		/* 40h */	intrusive_ptr<cGameDataUFO> mpPlayerUFO;
+		/* 40h */	eastl::intrusive_ptr<cGameDataUFO> mpPlayerUFO;
 		/* 44h */	int field_44;
 		/* 48h */	float mMaxDistance;
 		/* 4Ch */	float mMaxScanDistance;
@@ -60,9 +60,9 @@ namespace Simulator
 		/* 54h */	bool field_54;
 		/* 54h */	bool field_55;
 		/* 54h */	bool field_56; // true
-		/* 58h */	vector<int> field_58;
+		/* 58h */	eastl::vector<int> field_58;
 		/* 6Ch */	int field_6C;
-		/* 70h */	list<uint32_t> mPosseUFOList;
+		/* 70h */	eastl::list<uint32_t> mPosseUFOList;
 		/* 80h */	cGonzagoTimer field_80;
 		/* A0h */	int field_A0;
 		/* A4h */	int field_A4;
@@ -84,12 +84,11 @@ namespace Simulator
 	public:
 		static cSimulatorPlayerUFO* Get();
 	};
+	ASSERT_SIZE(cSimulatorPlayerUFO, 0xE0);
 
 	inline cGameDataUFO* GetPlayerUFO() {
 		return cSimulatorPlayerUFO::Get()->GetUFO();
 	}
-
-	static_assert(sizeof(cSimulatorPlayerUFO) == 0xE0, "sizeof(cSimulatorPlayerUFO) != 0xE0");
 
 	namespace Addresses(cSimulatorPlayerUFO)
 	{

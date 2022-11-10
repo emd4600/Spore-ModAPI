@@ -37,7 +37,7 @@ namespace Resource
 		/* 0Ch */	virtual uint32_t GetType() = 0;
 		/* 10h */	virtual int func10h() = 0;
 		/* 14h */	virtual void func14h(int) = 0;
-		/* 18h */	virtual bool GetResource(ResourceKey& key, intrusive_ptr<ResourceObject>* dst = nullptr) = 0;
+		/* 18h */	virtual bool GetResource(ResourceKey& key, ResourceObjectPtr* dst = nullptr) = 0;
 		/* 1Ch */	virtual bool func1Ch(int, int) = 0;
 		/* 20h */	virtual bool func20h(int) = 0;
 		/* 24h */	virtual size_t func24h(int, int) = 0;

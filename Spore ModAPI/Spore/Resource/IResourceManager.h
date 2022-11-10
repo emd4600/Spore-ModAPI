@@ -49,7 +49,7 @@ namespace Resource
 	/// already exists. The ReadResource method can be used instead of GetResource to forcibly create a new resource even if it's already
 	/// in the cache.
 	/// 
-	/// This manager provides additional functionality relating files. It keeps a map of ResourceKey - string16 values, which can be used
+	/// This manager provides additional functionality relating files. It keeps a map of ResourceKey - eastl::string16 values, which can be used
 	/// to store the original name of certain resources. For example:
 	/// ~~~~~~~~~~~~~~~~~~~~~~{.cpp}
 	/// ResourceManager.SetFileName(ResourceKey(0x00000000, 0x40212002, 0x0469A3F7), u"ShaderFragments!LowQuality.graphics");
@@ -57,7 +57,7 @@ namespace Resource
 	/// ResourceManager.GetFileName(dstKey, u"ShaderFragments!LowQuality.graphics");
 	/// ~~~~~~~~~~~~~~~~~~~~~~
 	///
-	/// Additionally, the manager also keeps a map of typeID - string16 values, which allows to map extension strings to certain typeIDs.
+	/// Additionally, the manager also keeps a map of typeID - eastl::string16 values, which allows to map extension eastl::strings to certain typeIDs.
 	/// For example:
 	/// ~~~~~~~~~~~~~~~~~~~~~~{.cpp}
 	/// // for example, we could have the mappings on a file and load it on startup
@@ -71,7 +71,7 @@ namespace Resource
 
 	public:
 
-		typedef list<DatabasePackedFile*, CoreAllocatorAdapter<ICoreAllocator>> DBPFList;
+		typedef eastl::list<DatabasePackedFile*, CoreAllocatorAdapter<ICoreAllocator>> DBPFList;
 
 		/* 00h */	virtual ~IResourceManager();
 		/* 04h */	virtual bool Initialize() = 0;
@@ -166,7 +166,7 @@ namespace Resource
 		/// Gets all the alternative typeIDs mapped to nTypeID.
 		/// @returns The number of alternative typeIDs mapped.
 		///
-		/* 28h */	virtual size_t GetTypeRemap(vector<uint32_t>& dst, uint32_t nTypeID) const = 0;
+		/* 28h */	virtual size_t GetTypeRemap(eastl::vector<uint32_t>& dst, uint32_t nTypeID) const = 0;
 
 		///
 		/// Gets the typeID that nSubtypeId is assigned to.
@@ -182,7 +182,7 @@ namespace Resource
 		///
 		/* 30h */	virtual DBPF* GetRealFileKey(const ResourceKey& nameKey, ResourceKey* pDst = nullptr, DBPF* pDBPF = nullptr) const = 0;
 
-		/* 34h */	virtual size_t func34h(vector<ResourceKey>& pDst, int arg_4) = 0;
+		/* 34h */	virtual size_t func34h(eastl::vector<ResourceKey>& pDst, int arg_4) = 0;
 
 		///
 		/// Gets all the file keys in this manager that match the criteria specified by the given request. If request is nullptr,
@@ -192,7 +192,7 @@ namespace Resource
 		/// @param[out] pDstDBPFs [Optional] A vector where all the DatabasePackedFile objects that contained the files will be added.
 		/// @returns The number of file keys that matched the criteria.
 		///
-		/* 38h */	virtual size_t GetFileKeys(vector<ResourceKey>& dst, IResourceFilter* request, vector<DBPF*>* pDstDBPFs = nullptr) const = 0;
+		/* 38h */	virtual size_t GetFileKeys(eastl::vector<ResourceKey>& dst, IResourceFilter* request, eastl::vector<DBPF*>* pDstDBPFs = nullptr) const = 0;
 
 		/* 3Ch */	virtual int func3Ch(int, int, int) = 0;
 		/* 40h */	virtual bool func40h(int, int, int, int, int) = 0;
@@ -220,7 +220,7 @@ namespace Resource
 		/// If \c typeID is ResourceKey::kWildcardID, all the factories in this manager will be added.
 		/// @returns The number of factories found.
 		///
-		/* 4Ch */	virtual size_t GetResourceFactories(list<IResourceFactory*>& dst, uint32_t typeID = ResourceKey::kWildcardID) const = 0;
+		/* 4Ch */	virtual size_t GetResourceFactories(eastl::list<IResourceFactory*>& dst, uint32_t typeID = ResourceKey::kWildcardID) const = 0;
 
 		///
 		/// Adds the given DatabasePackedFile to this manager, using the priority specified.
@@ -269,7 +269,7 @@ namespace Resource
 		/// Puts all the resource caches used in this manager into the given list.
 		/// @returns the number of caches added.
 		///
-		/* 74h */	virtual size_t GetResourceCaches(list<IResourceMap*>& dst) const = 0;
+		/* 74h */	virtual size_t GetResourceCaches(eastl::list<IResourceMap*>& dst) const = 0;
 
 		///
 		/// Adds this file name to the list, so that it can be accessed using the corresponding ResourceKey.
@@ -284,10 +284,10 @@ namespace Resource
 		/// The file name will be in the format "groupID!instanceID.typeID".
 		/// The file name can be parsed to a key again using the ResourceKey::Parse method.
 		/// A file name wil be generated even if it's not mapped; when that happens, the ResourceKey members are displayed in hexadecimal format.
-		/// @param[in] resourceKey The ResourceKey that will be represented as a string.
-		/// @param[out] dst A string16 that will contain the resulting text. 
+		/// @param[in] resourceKey The ResourceKey that will be represented as a eastl::string.
+		/// @param[out] dst A eastl::string16 that will contain the resulting text. 
 		///
-		/* 7Ch */	virtual void GetFileName(const ResourceKey& resourceKey, string16& dst) const = 0;
+		/* 7Ch */	virtual void GetFileName(const ResourceKey& resourceKey, eastl::string16& dst) const = 0;
 
 		///
 		/// Maps the given ResourceKey to the file name specified, which is in the format "groupID!instanceID.typeID".
@@ -314,7 +314,7 @@ namespace Resource
 		/* 8Ch */	virtual char16_t* GetExtension(uint32_t typeID) const = 0;
 
 		///
-		/// Maps the given typeID (as a uint32_t hash) to the specified extension string. 
+		/// Maps the given typeID (as a uint32_t hash) to the specified extension eastl::string. 
 		/// @returns True if the extension was successfully mapped or already existed, false if the typeID was mapped to a different extension.
 		///
 		/* 90h */	virtual bool AddExtensionMapping(uint32_t typeID, const char16_t* pExtension) = 0;

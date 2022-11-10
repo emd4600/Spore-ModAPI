@@ -26,18 +26,16 @@
 
 namespace Simulator
 {
-	using namespace eastl;
-
 	// Maybe SpecialReosurceObject?
-	class cConversation : public Resource::ResourceObject
+	class cConversation 
+		: public Resource::ResourceObject
 	{
 	public:
 		/* 14h */	int field_14;
-		/* 18h */	map<int, int> field_18;
-		/* 34h */	map<int, int> field_34;
-		/* 50h */	map<int, int> field_50;
-		/* 6Ch */	vector<int> field_6C;
+		/* 18h */	eastl::map<int, int> field_18;
+		/* 34h */	eastl::map<int, int> field_34;
+		/* 50h */	eastl::map<int, int> field_50;
+		/* 6Ch */	eastl::vector<int> field_6C;
 	};
-
-	static_assert(sizeof(cConversation) == 0x80, "sizeof(cConversation) != 80h");
+	ASSERT_SIZE(cConversation, 0x80);
 }

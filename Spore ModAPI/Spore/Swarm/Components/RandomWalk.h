@@ -21,8 +21,6 @@
 
 #include <EASTL\vector.h>
 
-using namespace eastl;
-
 namespace Swarm
 {
 	namespace Components
@@ -36,7 +34,7 @@ namespace Swarm
 			/* 10h */	float turnRange;
 			/* 14h */	float turnOffset;
 			/* 18h */	float mix;
-			/* 1Ch */	vector<float> offsets;
+			/* 1Ch */	eastl::vector<float> offsets;
 			/* 30h */	char loopType;
 		};
 		ASSERT_SIZE(RandomWalk, 0x34);

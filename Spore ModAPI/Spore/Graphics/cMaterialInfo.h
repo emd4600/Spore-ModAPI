@@ -16,8 +16,7 @@ namespace Graphics
 
 	public:
 		//TODO this is actually just generic data, can be anything
-		vector<cMITextureSet*> mData;
+		eastl::vector<cMITextureSet*> mData;
 	};
-
 	ASSERT_SIZE(cMaterialInfo, 0x1C);
 }

@@ -88,15 +88,9 @@ namespace UTFWin
 		virtual void SetImage(int index, Image* pImage) override;
 
 	protected:
-		/* 10h */	intrusive_ptr<Image> mpImages[3];
-
+		/* 10h */	ImagePtr mpImages[3];
 	};
-
-	/////////////////////////////////
-	//// INTERNAL IMPLEMENTATION ////
-	/////////////////////////////////
-
-	static_assert(sizeof(ComboBoxDrawable) == 0x1C, "sizeof(ComboBoxDrawable) != 1Ch");
+	ASSERT_SIZE(ComboBoxDrawable, 0x1C);
 
 	namespace Addresses(ComboBoxDrawable)
 	{

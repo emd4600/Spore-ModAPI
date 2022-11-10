@@ -174,13 +174,7 @@ namespace Simulator
 		/// Gets the active relationship manager, which depends on the current game stage.
 		static cRelationshipManager* Get();
 	};
-
-
-	/////////////////////////////////
-	//// INTERNAL IMPLEMENTATION ////
-	/////////////////////////////////
-
-	static_assert(sizeof(cRelationshipManager) == 0x100, "sizeof(cRelationshipManager) != 100h");
+	ASSERT_SIZE(cRelationshipManager, 0x100);
 
 	namespace Addresses(cRelationshipManager)
 	{

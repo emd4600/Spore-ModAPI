@@ -38,6 +38,8 @@ namespace Palettes
 		, public DefaultRefCounted
 	{
 	public:
+		const static uint32_t TYPE = 0x03B26CA5;
+
 		ColorSwatchUI();
 		virtual ~ColorSwatchUI() {};
 		
@@ -71,7 +73,7 @@ namespace Palettes
 		void GenerateExpansionArea(bool bFitWindow = false);
 
 		///
-		/// Adds a tooltip to this swatch, using the localized string with the given instance ID (the tableID is 'editor').
+		/// Adds a tooltip to this swatch, using the localized eastl::string with the given instance ID (the tableID is 'editor').
 		/// @param instanceID The instance ID of the tooltip text, inside the 'editor' locale table.
 		///
 		void AddTooltip(uint32_t instanceID);
@@ -137,7 +139,7 @@ namespace Palettes
 		/// An object necessary to do the swatch expansion; generally this is the color picker.
 		/* 64h */	ObjectPtr mpExpansionObject;
 		/// All the color swatch UIs that are shown in the expansion panel of this swatch.
-		/* 68h */	vector<ColorSwatchUIPtr> mExpansionSwatches;
+		/* 68h */	eastl::vector<ColorSwatchUIPtr> mExpansionSwatches;
 		/// The PROP file used to configurate the color picker.
 		/* 7Ch */	PropertyListPtr mpConfigProp;
 		/// A milliseconds clock used to measure click time.
@@ -149,16 +151,8 @@ namespace Palettes
 		/// The index of this color inside the color picker.
 		/* A0h */	int mColorIndex;  // -1
 		/* A4h */	int field_A4;  // not initialized  // set to -1 in Load
-
-	public:
-		const static uint32_t TYPE = 0x03B26CA5;
 	};
-
-	/////////////////////////////////
-	//// INTERNAL IMPLEMENTATION ////
-	/////////////////////////////////
-
-	static_assert(sizeof(ColorSwatchUI) == 0xA8, "sizeof(ColorSwatchUI) != A8h");
+	ASSERT_SIZE(ColorSwatchUI, 0xA8);
 
 	namespace Addresses(ColorSwatchUI)
 	{

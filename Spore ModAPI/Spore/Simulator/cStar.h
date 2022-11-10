@@ -45,7 +45,7 @@ namespace Simulator
 		bool IsBinaryStar();
 		bool IsStarOrBinaryStar();
 
-		string16& GetName();
+		eastl::string16& GetName();
 
 	public:
 		/// For binary systems, type of the first star.
@@ -58,12 +58,7 @@ namespace Simulator
 		/* 48h */	cStarRecordPtr mpStarRecord;
 		/* 4Ch */	uint32_t mKey;  // -1
 	};
-
-	/////////////////////////////////
-	//// INTERNAL IMPLEMENTATION ////
-	/////////////////////////////////
-
-	static_assert(sizeof(cStar) == 0x50, "sizeof(cStar) != 50h");
+	ASSERT_SIZE(cStar, 0x50);
 
 	namespace Addresses(cStar)
 	{
@@ -76,7 +71,7 @@ namespace Simulator
 		return mpStarRecord->mType;
 	}
 
-	inline string16& cStar::GetName() {
+	inline eastl::string16& cStar::GetName() {
 		return mpStarRecord->mName;
 	}
 }

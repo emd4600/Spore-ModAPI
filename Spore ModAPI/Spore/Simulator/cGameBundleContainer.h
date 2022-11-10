@@ -33,15 +33,10 @@ namespace Simulator
 		virtual ~cGameBundleContainer();
 
 	public:
-		/* 04h */	vector<cGameBundle> mBundleList;
-		/* 18h */	intrusive_ptr<cGameData> mpOwner;
+		/* 04h */	eastl::vector<cGameBundle> mBundleList;
+		/* 18h */	cGameDataPtr mpOwner;
 		/* 1Ch */	int mContainerCapacity;
 		/* 20h */	int mBundleCapacity;
 	};
-
-	/////////////////////////////////
-	//// INTERNAL IMPLEMENTATION ////
-	/////////////////////////////////
-
-	static_assert(sizeof(cGameBundleContainer) == 0x24, "sizeof(cGameBundleContainer) != 24h");
+	ASSERT_SIZE(cGameBundleContainer, 0x24);
 }

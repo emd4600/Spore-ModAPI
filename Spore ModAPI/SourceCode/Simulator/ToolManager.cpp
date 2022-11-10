@@ -21,7 +21,7 @@
 
 namespace Simulator
 {
-	auto_METHOD(cToolManager, bool, LoadTool, Args(const ResourceKey& id, intrusive_ptr<cSpaceToolData>& dst),
+	auto_METHOD(cToolManager, bool, LoadTool, Args(const ResourceKey& id, cSpaceToolDataPtr& dst),
 		Args(id, dst));
 
 	auto_STATIC_METHOD_(cToolManager, cToolManager*, Get);

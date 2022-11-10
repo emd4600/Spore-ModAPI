@@ -35,7 +35,7 @@ namespace Simulator
 		/* 10h */	Quaternion mOrientation;  // 0, 0, 0, 1.0
 		/* 20h */	float mfScale;  // 0.5
 		/* 24h */	float mfRelativeScaleToDefault;  // 1.0
-		/* 28h */	fixed_vector<cScenarioMarkerAct, 8> mActs;
+		/* 28h */	eastl::fixed_vector<cScenarioMarkerAct, 8> mActs;
 		/* 1E0h */	float mfPitch;
 		/* 1E4h */	float mfGain;
 		/* 1E8h */	Vector3 mTeleportPosition;
@@ -43,17 +43,12 @@ namespace Simulator
 		/* 204h */	float mfTeleportScale;
 		/* 208h */	bool field_208;
 		/* 209h */	bool field_209;
-		/* 20Ch */	vector<float> mOldDistances;
+		/* 20Ch */	eastl::vector<float> mOldDistances;
 		/* 220h */	float mfElevation;
 		/* 224h */	int mFlags;
 		/* 228h */	int field_228;  // -1
 		/* 22Ch */	int field_22C;  // -1
 		/* 230h */	int field_230;  // -1
 	};
-
-	/////////////////////////////////
-	//// INTERNAL IMPLEMENTATION ////
-	/////////////////////////////////
-
-	static_assert(sizeof(cScenarioMarker) == 0x234, "sizeof(cScenarioMarker) != 0x234");
+	ASSERT_SIZE(cScenarioMarker, 0x234);
 }

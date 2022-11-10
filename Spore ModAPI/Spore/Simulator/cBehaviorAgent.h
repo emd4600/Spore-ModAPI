@@ -57,24 +57,19 @@ namespace Simulator
 		/* 48h */	virtual void func48h();
 		/* 4Ch */	virtual void func4Ch(bool);
 		/* 50h */	virtual bool func50h();
-		/* 54h */	virtual void func54h(string& dst);
-		/* 58h */	virtual void func58h(string& dst);
+		/* 54h */	virtual void func54h(eastl::string& dst);
+		/* 58h */	virtual void func58h(eastl::string& dst);
 		/* 5Ch */	virtual int Release();
 		/* 60h */	virtual int AddRef();
 		/* 64h */	virtual int func64h();
 
 	public:
 		/* 04h */	bool field_4;
-		/* 08h */	deque<int> mInteractionHistory;
-		/* 34h */	deque<cBehaviorBasePtr> mInteractionStack;
+		/* 08h */	eastl::deque<int> mInteractionHistory;
+		/* 34h */	eastl::deque<cBehaviorBasePtr> mInteractionStack;
 		/* 60h */	int field_60;  // not initialized
 		/* 64h */	bool field_64;
 		/* 65h */	bool field_65;  // true
 	};
-
-	/////////////////////////////////
-	//// INTERNAL IMPLEMENTATION ////
-	/////////////////////////////////
-
-	static_assert(sizeof(cBehaviorAgent) == 0x68, "sizeof(cBehaviorAgent) != 68h");
+	ASSERT_SIZE(cBehaviorAgent, 0x68);
 }

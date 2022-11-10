@@ -117,7 +117,7 @@ namespace ArgScript
 	auto_METHOD_VOID(Lexer, AddFunction, Args(const char* pFunctionName, IFunction* pFunction), Args(pFunctionName, pFunction));
 	auto_METHOD_VOID(Lexer, ExpectChar, Args(LexerString& lexerString, char c), Args(lexerString, c));
 	auto_METHOD(Lexer, bool, OptionalExpectChar, Args(LexerString& lexerString, char c), Args(lexerString, c));
-	auto_METHOD_VOID(Lexer, NextParameter, Args(LexerString& lexerString, string& dst), Args(lexerString, dst));
+	auto_METHOD_VOID(Lexer, NextParameter, Args(LexerString& lexerString, eastl::string& dst), Args(lexerString, dst));
 
 	void ISpecialBlock::SetData(FormatParser* pFormatParser, void* pData)
 	{

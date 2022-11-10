@@ -43,10 +43,5 @@ namespace Simulator
 		/* 110h */	bool field_110;
 		/* 111h */	bool field_111;
 	};
-
-	/////////////////////////////////
-	//// INTERNAL IMPLEMENTATION ////
-	/////////////////////////////////
-
-	static_assert(sizeof(cCityTerritory) == 0x114, "sizeof(cCityTerritory) != 114h");
+	ASSERT_SIZE(cCityTerritory, 0x114);
 }

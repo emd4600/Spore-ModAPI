@@ -148,22 +148,17 @@ namespace UTFWin
 
 	protected:
 
-		/* 10h */	intrusive_ptr<Image> mpImages[8];
+		/* 10h */	ImagePtr mpImages[8];
 
 		/* 30h */	Scaling			mScaleType;
 		/* 34h */	Math::Rectangle mScaleArea;
 		/* 44h */	Math::Vector2	mScaleFactor;
-		/* 4Ch */	intrusive_ptr<Object> mpHitMask;
+		/* 4Ch */	ObjectPtr mpHitMask;
 		/* 50h */	float property_0F3C000E;
 
 		/* 54h */	OutlineFormat mImageOutline;
 	};
-
-	/////////////////////////////////
-	//// INTERNAL IMPLEMENTATION ////
-	/////////////////////////////////
-
-	static_assert(sizeof(StdDrawable) == 0x7C, "sizeof(StdDrawable) != 7Ch");
+	ASSERT_SIZE(StdDrawable, 0x7C);
 
 	namespace Addresses(StdDrawable)
 	{

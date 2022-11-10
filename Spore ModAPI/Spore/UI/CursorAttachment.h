@@ -26,7 +26,7 @@ namespace UI
 		/* 0Ch */	UTFWin::UILayout mLayout;
 		/* 24h */	uint32_t mLayoutInstanceID;  // -1
 		/* 28h */	uint32_t mLayoutGroupID;  // -1
-		/* 2Ch */	vector_map<int, int> field_2C;  // The structure is int, ObjectPtr, Property ?
+		/* 2Ch */	eastl::vector_map<int, int> field_2C;  // The structure is int, ObjectPtr, Property ?
 		/* 44h */	bool field_44;
 		/// Control ID of the main window in the layout
 		/* 48h */	uint32_t mMainWindowID;

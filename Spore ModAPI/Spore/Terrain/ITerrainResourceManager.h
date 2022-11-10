@@ -2,6 +2,7 @@
 
 #include <Spore\Internal.h>
 #include <Spore\App\PropertyList.h>
+#include <Spore\Resource\Database.h>
 #include <Spore\Terrain\ITerrain.h>
 
 #define TerrainResourceManager (*Terrain::ITerrainResourceManager::Get())
@@ -39,12 +40,12 @@ namespace Terrain
 		/* 04h */	int vftable_4;
 		/* 08h */	int field_8;
 		/* 0Ch */	bool mIsInitialized;
-		/* 10h */	vector<ResourceKey> field_10;
-		/* 24h */	vector<ResourceKey> field_24;
-		/* 38h */	vector<ResourceKey> field_38;
-		/* 4Ch */	vector<ResourceKey> field_4C;
+		/* 10h */	eastl::vector<ResourceKey> field_10;
+		/* 24h */	eastl::vector<ResourceKey> field_24;
+		/* 38h */	eastl::vector<ResourceKey> field_38;
+		/* 4Ch */	eastl::vector<ResourceKey> field_4C;
 		/* 60h */	bool field_60;
-		/* 64h */	DatabasePackedFilePtr field_64;
+		/* 64h */	DatabasePtr field_64;
 	};
 	ASSERT_SIZE(ITerrainResourceManager, 0x68);
 

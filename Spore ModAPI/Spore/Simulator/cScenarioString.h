@@ -21,23 +21,16 @@
 #include <Spore\LocalizedString.h>
 #include <EASTL\string.h>
 
-using namespace eastl;
-
 namespace Simulator
 {
 	class cScenarioString
 	{
 	public:
 		/* 00h */	LocalizedString mString;
-		/* 14h */	string16 mNonLocalizedString;
+		/* 14h */	eastl::string16 mNonLocalizedString;
 		/* 24h */	uint32_t mLocalizedStringTableID;
 		/* 28h */	uint32_t mLocalizedStringInstanceID;
-		/* 2Ch */	string16 mComments;
+		/* 2Ch */	eastl::string16 mComments;
 	};
-
-	/////////////////////////////////
-	//// INTERNAL IMPLEMENTATION ////
-	/////////////////////////////////
-
-	static_assert(sizeof(cScenarioString) == 0x3C, "sizeof(cScenarioString) != 0x3C");
+	ASSERT_SIZE(cScenarioString, 0x3C);
 }

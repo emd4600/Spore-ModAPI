@@ -110,12 +110,7 @@ namespace Simulator
 		/// 
 		/* 44h */	virtual int ProcessCost(int useCost);
 	};
-
-	/////////////////////////////////
-	//// INTERNAL IMPLEMENTATION ////
-	/////////////////////////////////
-
-	static_assert(sizeof(cToolStrategy) == 0x0C, "sizeof(cToolStrategy) != 0x0C");
+	ASSERT_SIZE(cToolStrategy, 0xC);
 
 	namespace Addresses(cToolStrategy)
 	{

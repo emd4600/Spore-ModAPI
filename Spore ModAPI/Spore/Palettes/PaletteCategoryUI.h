@@ -35,8 +35,6 @@
 
 namespace Palettes
 {
-	using namespace eastl;
-
 	class PageArrowsUI;
 	/// Deprecated, only for internal implementation.
 	class UnkPageArrowsUI;
@@ -74,9 +72,10 @@ namespace Palettes
 			kControlColorPickersPanel = 0x5D3F56B,
 		};
 
-	public:
+		const static uint32_t TYPE = 0x72DEED41;
+
 		struct PageUIContainer {
-			intrusive_ptr<PalettePageUI> page;
+			PalettePageUIPtr page;
 			bool isEnabled;
 			bool field_5;
 			bool dontUpdate;
@@ -134,10 +133,10 @@ namespace Palettes
 		/* 2Ch */	IWindowPtr mpPageFrame;
 		/// The UI of the color picker buttons.
 		/// It is generated and added to the Palettes::PaletteCategoryUI::ControlIDs::kControlColorPicker window.
-		/* 30h */	intrusive_ptr<ColorPickerUI> mpColorPickerUI;
+		/* 30h */	ColorPickerUIPtr mpColorPickerUI;
 		/// The UI of the secondary color picker buttons (like in the building editor).
 		/// It is generated and added to the Palettes::PaletteCategoryUI::ControlIDs::kControlColorPicker2 window.
-		/* 34h */	intrusive_ptr<ColorPickerUI> mpColorPickerUI2;
+		/* 34h */	ColorPickerUIPtr mpColorPickerUI2;
 		/// The area occupied by the color picker UI.
 		/* 38h */	Math::Rectangle mColorPickerArea;
 		/// The area occupied by the secondary color picker UI. If it doesn't exist, it's the same as the primary one.
@@ -147,11 +146,11 @@ namespace Palettes
 		/* 58h */	Math::Rectangle mTotalColorPickerArea;
 		/* 68h */	int field_68;
 		/// The Palettes::PaletteCategory that this UI displays.
-		/* 6Ch */	intrusive_ptr<PaletteCategory> mpCategory;
+		/* 6Ch */	PaletteCategoryPtr mpCategory;
 		/// The class that manages the piece of UI that displays the page number and the turn page buttons.
-		/* 70h */	intrusive_ptr<PageArrowsUI> mpPageArrowsUI;
-		/* 74h */	vector<int> field_74;
-		/* 88h */	vector<PageUIContainer> mPageUIs;
+		/* 70h */	eastl::intrusive_ptr<PageArrowsUI> mpPageArrowsUI;
+		/* 74h */	eastl::vector<int> field_74;
+		/* 88h */	eastl::vector<PageUIContainer> mPageUIs;
 		/* 9Ch */	PaletteSubcategoriesUIPtr mpSubcategoriesUI;
 		/* A0h */	int field_A0;  // current page index?
 		/* A4h */	int field_A4;
@@ -163,16 +162,14 @@ namespace Palettes
 		/* BCh */	int field_BC;
 		/* C0h */	int field_C0;
 		/* C4h */	int field_C4;
-		/* C8h */	int field_C8;
-		/* CCh */	Math::ColorRGB field_CC;
-		/* D8h */	Math::ColorRGB field_D8;
-		/* E4h */	bool field_E4;  // true
-		/* E5h */	bool field_E5;  // true
-		/* E8h */	vector<int> field_E8;
-
-	public:
-		const static uint32_t TYPE = 0x72DEED41;
+		/* C8h */	uint32_t mPaintID;
+		/* CCh */	Math::ColorRGB mPrimaryColor;
+		/* D8h */	Math::ColorRGB mSecondaryColor;
+		/* E4h */	bool mPrimaryIsDefault;  // true
+		/* E5h */	bool mSecondaryIsDefault;  // true
+		/* E8h */	eastl::vector<int> field_E8;
 	};
+	ASSERT_SIZE(PaletteCategoryUI, 0xFC);
 
 
 	class UnkPageArrowsUI
@@ -204,7 +201,8 @@ namespace Palettes
 			kControlTurnForwardBtn = 0x92DF6FD6,
 		};
 
-	public:
+		static const uint32_t TYPE = 0xF345E898;
+
 		PageArrowsUI();
 		virtual ~PageArrowsUI() {};
 
@@ -238,7 +236,7 @@ namespace Palettes
 		/// The UI layout of this panel.
 		/* 10h */	UILayoutPtr mpLayout;
 		/// The UI of the palette category whose page numbers are being displayed by this class.
-		/* 14h */	intrusive_ptr<PaletteCategoryUI> mpCategoryUI;
+		/* 14h */	PaletteCategoryUIPtr mpCategoryUI;
 		/// The window (something meant to display text) that shows the page number.
 		/// It corresponds to the Editors::PaletteCategoryUI::ControlIDs::PageArrowsUI::TODO window.
 		/* 18h */	IWindowPtr mpPageNumberPanel;  // a WinText, the page number?
@@ -247,10 +245,8 @@ namespace Palettes
 		/* 1Ch */	IWindowPtr mpMainWindow;
 		/* 20h */	int field_20;  // -1
 		/* 24h */	int field_24;  // -1
-
-	public:
-		static const uint32_t TYPE = 0xF345E898;
 	};
+	ASSERT_SIZE(PageArrowsUI, 0x28);
 
 	class SubcategoryChangedMessage
 		: public App::StandardMessage
@@ -262,14 +258,6 @@ namespace Palettes
 
 		uint32_t GetCategoryID() const;
 	};
-
-	/////////////////////////////////
-	//// INTERNAL IMPLEMENTATION ////
-	/////////////////////////////////
-
-	static_assert(sizeof(PaletteCategoryUI) == 0xFC, "sizeof(PaletteCategoryUI) != FCh");
-
-	static_assert(sizeof(PageArrowsUI) == 0x28, "sizeof(PaletteCategoryUI::PageArrowsUI) != 28h");
 
 	namespace Addresses(PaletteCategoryUI)
 	{

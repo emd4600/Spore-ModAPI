@@ -19,6 +19,8 @@
 
 #pragma once
 
+#include <Spore\Internal.h>
+
 namespace Simulator
 {
 	class GoalCard
@@ -29,10 +31,5 @@ namespace Simulator
 		/* 88h */	float mPriority;
 		char _padding_8C[0xC];
 	};
-
-	/////////////////////////////////
-	//// INTERNAL IMPLEMENTATION ////
-	/////////////////////////////////
-
-	static_assert(sizeof(GoalCard) == 0x98, "sizeof(GoalCard) == 98h");
+	ASSERT_SIZE(GoalCard, 0x98);
 }

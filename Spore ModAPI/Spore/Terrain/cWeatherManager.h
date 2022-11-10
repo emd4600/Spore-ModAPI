@@ -112,7 +112,7 @@ namespace Terrain
 		/* 168h */	int field_168;
 		/* 16Ch */	bool field_16C;  // not initialized
 		/* 16Dh */	bool field_16D;  // not initialized
-		/* 170h */	vector<IVisualEffectPtr> field_170;
+		/* 170h */	eastl::vector<IVisualEffectPtr> field_170;
 		/* 184h */	RandomNumberGenerator mRNG;
 		/* 188h */	PropertyListPtr mpPropList;
 		/* 18Ch */	int mPropOpCount;  // -1

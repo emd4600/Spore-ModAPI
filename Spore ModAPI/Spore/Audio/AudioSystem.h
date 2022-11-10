@@ -86,7 +86,7 @@ namespace Audio
 	/// @param position
 	void PlayProceduralAudio(uint32_t audioID, AudioTrack track, const Math::Vector3& position);
 
-	/// Sets a string property for the given track.
+	/// Sets a eastl::string property for the given track.
 	/// @param track
 	/// @param propertyID
 	/// @param pValue

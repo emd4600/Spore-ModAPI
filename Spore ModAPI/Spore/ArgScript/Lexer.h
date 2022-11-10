@@ -25,8 +25,6 @@
 #include <EASTL\hash_map.h>
 #include <EASTL\string.h>
 
-using namespace eastl;
-
 namespace ArgScript
 {
 	///
@@ -44,32 +42,32 @@ namespace ArgScript
 		void AddFunction(const char* pFunctionName, IFunction* pFunction);
 
 		///
-		/// Reads one character in the lexer string, which is expected to be the one specified. If it is not, 
+		/// Reads one character in the lexer eastl::string, which is expected to be the one specified. If it is not, 
 		/// an exception is thrown.
-		/// @throws ArgScriptException If the current character in the string is not the one required.
-		/// @param lexerString The string pointer where the character will be read.
+		/// @throws ArgScriptException If the current character in the eastl::string is not the one required.
+		/// @param lexerString The eastl::string pointer where the character will be read.
 		/// @param c The character expected.
 		///
 		void ExpectChar(LexerString& lexerString, char c);
 
 		/// 
-		/// Reads one character in the lexer string, only if the end of the string has not been reached.
+		/// Reads one character in the lexer eastl::string, only if the end of the eastl::string has not been reached.
 		/// The character is expected to be the one specified, otherwise an exception is thrown.
-		/// @throws ArgScriptException If the current character in the string is not the one required.
-		/// @param lexerString The string pointer where the character will be read.
+		/// @throws ArgScriptException If the current character in the eastl::string is not the one required.
+		/// @param lexerString The eastl::string pointer where the character will be read.
 		/// @param c The character expected.
-		/// @returns True if the character was read, false if the end of the string was reached.
+		/// @returns True if the character was read, false if the end of the eastl::string was reached.
 		bool OptionalExpectChar(LexerString& lexerString, char c);
 
 		///
-		/// Reads the next parameter in the string, which is all the characters until a comma, a space, or a closing parenthesis is found.
+		/// Reads the next parameter in the eastl::string, which is all the characters until a comma, a space, or a closing parenthesis is found.
 		/// A parameter can also be surrounded by parenthesis.
 		/// @throws ArgScriptException If the format is incorrect (i.e. '(' with no ')', '"' with no closing '"', etc).
 		///
-		void NextParameter(LexerString& lexerString, string& dst);
+		void NextParameter(LexerString& lexerString, eastl::string& dst);
 
 	protected:
-		hash_map<string, IFunction*> mFunctions;
+		eastl::hash_map<eastl::string, IFunction*> mFunctions;
 	};
 
 	namespace Addresses(Lexer)

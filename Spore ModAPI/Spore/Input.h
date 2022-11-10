@@ -39,7 +39,7 @@ union KeyModifiers
 		int IsAltDown : 1;
 	};
 };
-static_assert(sizeof(KeyModifiers) == 4, "Invalid flags");
+ASSERT_SIZE(KeyModifiers, 4);
 
 
 enum MouseStateFlags
@@ -63,7 +63,7 @@ union MouseState
 		int IsRightButtonDown : 1;
 	};
 };
-static_assert(sizeof(MouseState) == 4, "Invalid flags");
+ASSERT_SIZE(MouseState, 4);
 
 enum MouseButton
 {
@@ -128,13 +128,7 @@ struct GameInput
 	/// The amount of positions the mouse wheel is.
 	/* 44h */	int mouseWheel;
 };
-
-
-/////////////////////////////////
-//// INTERNAL IMPLEMENTATION ////
-/////////////////////////////////
-
-static_assert(sizeof(GameInput) == 0x48, "sizeof(GameInput) == 48h");
+ASSERT_SIZE(GameInput, 0x48);
 
 inline GameInput::GameInput()
 	: keys()

@@ -156,7 +156,7 @@ namespace Palettes
 	}
 
 	auto_METHOD(ColorPickerUI, bool, Load, 
-		Args(UTFWin::IWindow* pWindow, uint32_t propID, uint32_t nRegionFilter, vector<ColorRGB>* pColors),
+		Args(UTFWin::IWindow* pWindow, uint32_t propID, uint32_t nRegionFilter, eastl::vector<Math::ColorRGB>* pColors),
 		Args(pWindow, propID, nRegionFilter, pColors));
 
 	auto_METHOD_VOID(ColorPickerUI, SetVisible, Args(bool bVisible), Args(bVisible));

@@ -51,12 +51,7 @@ namespace UTFWin
 		///
 		void SetSize(int size);
 	};
-
-	/////////////////////////////////
-	//// INTERNAL IMPLEMENTATION ////
-	/////////////////////////////////
-
-	static_assert(sizeof(OutlineFormat) == 0x28, "sizeof(OutlineFormat) != 28h");
+	ASSERT_SIZE(OutlineFormat, 0x28);
 
 	inline OutlineFormat::OutlineFormat()
 		: size(0)

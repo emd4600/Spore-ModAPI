@@ -27,8 +27,6 @@
 
 #define IBlockPtr eastl::intrusive_ptr<ArgScript::IBlock>
 
-using namespace eastl;
-
 namespace ArgScript
 {
 	///
@@ -60,22 +58,17 @@ namespace ArgScript
 
 		///
 		/// Gets the IParser that is mapped to the given keyword.
-		/// @param pKeyword The keyword string.
+		/// @param pKeyword The keyword eastl::string.
 		///
 		/* 1Ch */	virtual IParser* GetParser(const char* pKeyword);
 
 		virtual ~IBlock() {};
 
 	protected:
-		hash_map<string, intrusive_ptr<IParser>> mParsers;
+		eastl::hash_map<eastl::string, IParserPtr> mParsers;
 		void* field_30;
 	};
-
-	/////////////////////////////////
-	//// INTERNAL IMPLEMENTATION ////
-	/////////////////////////////////
-
-	static_assert(sizeof(IBlock) == 0x34, "sizeof(IBlock) != 34h");
+	ASSERT_SIZE(IBlock, 0x34);
 
 	inline void IBlock::SetData(FormatParser* formatParser, void* data)
 	{

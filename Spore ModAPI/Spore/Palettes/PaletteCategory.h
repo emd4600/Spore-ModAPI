@@ -26,10 +26,8 @@
 
 #define PaletteCategoryPtr eastl::intrusive_ptr<Palettes::PaletteCategory>
 
-namespace Palettes {
-
-	using namespace eastl;
-
+namespace Palettes 
+{
 	///
 	/// A category in an editor palette contains pages. Pages can be grouped in subcategories (like in the paint region
 	/// category: base, coat, detail) and in DLC groups.
@@ -78,12 +76,12 @@ namespace Palettes {
 
 	public:
 		/// The pages contained in this category.
-		/* 0Ch */	vector<intrusive_ptr<PalettePage>> mPages;
+		/* 0Ch */	eastl::vector<PalettePagePtr> mPages;
 		/// The IDs of the DLC groups that divide the pages in the category.
-		/* 20h */	vector<uint32_t> mDLCGroups;
+		/* 20h */	eastl::vector<uint32_t> mDLCGroups;
 		/// Subcategories contained in this category. Subcategories are, for example, the different regions that can
 		/// be painted inside the Paint Region category.
-		/* 34h */	vector<intrusive_ptr<PaletteCategory>> mChildren;
+		/* 34h */	eastl::vector<PaletteCategoryPtr> mChildren;
 
 		/// The instance ID of the user interface layout file used by the category. The layout is expected to have:
 		/// - A window that can contain the DLC group buttons (i.e. creepy & Cute, base game, GA)
@@ -125,12 +123,7 @@ namespace Palettes {
 	public:
 		static const uint32_t TYPE = 0x32C9B8C8;
 	};
-
-	/////////////////////////////////
-	//// INTERNAL IMPLEMENTATION ////
-	/////////////////////////////////
-
-	static_assert(sizeof(PaletteCategory) == 0x90, "sizeof(PaletteCategory) != 90h");
+	ASSERT_SIZE(PaletteCategory, 0x90);
 
 	namespace Addresses(PaletteCategory)
 	{

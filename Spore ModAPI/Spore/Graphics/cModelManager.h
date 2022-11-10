@@ -25,30 +25,25 @@
 #include <EASTL\vector.h>
 #include <EASTL\map.h>
 
-using namespace eastl;
-
 namespace Graphics
 {
 
 	///
 	/// The implementation of IModelManager; this should only be used for extending and detouring.
 	///
-	class cModelManager : public IModelManager, public IVirtual
+	class cModelManager 
+		: public IModelManager
+		, public IVirtual
 	{
 	public:
 
 	protected:
 		/* 08h */	int mnRefCount;
-		/* 0Ch */	map<uint32_t, intrusive_ptr<IModelWorld>> mModelWorlds;
-		/* 28h */	map<int, int> field_28;
+		/* 0Ch */	eastl::map<uint32_t, IModelWorldPtr> mModelWorlds;
+		/* 28h */	eastl::map<int, int> field_28;
 		/* 44h */	int field_44;
-		/* 48h */	intrusive_ptr<Object> field_48;
-		/* 4Ch */	vector<int> field_4C;
+		/* 48h */	ObjectPtr field_48;
+		/* 4Ch */	eastl::vector<int> field_4C;
 	};
-
-	/////////////////////////////////
-	//// INTERNAL IMPLEMENTATION ////
-	/////////////////////////////////
-
-	static_assert(sizeof(cModelManager) == 0x60, "sizeof(cModelManager) != 60h");
+	ASSERT_SIZE(cModelManager, 0x60);
 }

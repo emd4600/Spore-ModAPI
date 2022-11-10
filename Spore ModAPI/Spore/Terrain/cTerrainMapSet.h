@@ -90,8 +90,7 @@ namespace Terrain
 		/* 54h */	float field_54;  // -1.0
 		/* 58h */	cHeightRanges* mpHeightRanges;
 	};
-
-	static_assert(sizeof(cTerrainMapSet) == 0x5C, "sizeof(cTerrainMapSet) != 5Ch");
+	ASSERT_SIZE(cTerrainMapSet, 0x5C);
 
 	namespace Addresses(cTerrainMapSet) {
 		DeclareAddress(GetHeight);
