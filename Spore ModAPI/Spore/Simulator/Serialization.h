@@ -46,7 +46,7 @@ namespace Simulator
 
 	/// The type of function used to read attribute data, which is expressed in text. 
 	/// The parameters are the text string and the address of memory where the data must be read.
-	typedef void(*ReadTextFunction_t)(const string&, void*);
+	typedef void(*ReadTextFunction_t)(const eastl::string&, void*);
 	/// The type of function used to write attribute data, which is expressed in text. 
 	/// The parameters are the destination text buffer and the address of memory where the data is.
 	typedef void(*WriteTextFunction_t)(char*, void*);

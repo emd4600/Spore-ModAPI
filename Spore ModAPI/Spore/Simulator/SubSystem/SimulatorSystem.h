@@ -84,7 +84,7 @@ namespace Simulator
 		/* 1Ch */	int field_1C;
 		// list of UIs that can be updated?
 		// for example, city rollover, only appears when mouse over city
-		/* 20h */	list<intrusive_ptr<ISimulatorUIGraphic>> field_20;
+		/* 20h */	eastl::list<eastl::intrusive_ptr<ISimulatorUIGraphic>> field_20;
 		/* 2Ch */	bool field_2C;
 		/* 30h */	int field_30;
 		/* 34h */	int field_34;
@@ -93,7 +93,7 @@ namespace Simulator
 		/* 40h */	int field_40;
 		/* 44h */	int field_44;
 		/* 48h */	App::MessageListenerData mMessageData;
-		/* 5Ch */	vector<ISimulatorStrategyPtr> mSubSystems;
+		/* 5Ch */	eastl::vector<ISimulatorStrategyPtr> mSubSystems;
 
 	public:
 		static cSimulatorSystem* Get();

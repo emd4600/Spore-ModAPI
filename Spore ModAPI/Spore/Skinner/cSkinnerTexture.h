@@ -21,7 +21,12 @@ namespace Skinner
 
 	public:
 		/* 00h */	App::cViewer* mpViewer;
-		/* 04h */	char padding_4[0x50 - 4];
+		/* 04h */	uint32_t mMaterialID;
+		/* 08h */	int mFlags;
+		/* 0Ch */	Math::ColorRGBA field_C;
+		/* 1Ch */	char padding_1C[0x20];
+		/* 3Ch */	RenderWare::Raster* field_3C[1];  //TODO how many?
+		/* 40h */	char padding_40[0x50 - 0x40];
 		/* 50h */	Graphics::RenderTargetID mRenderTargetID;
 		/* 58h */	int mWidth;
 		/* 5Ch */	int mHeight;

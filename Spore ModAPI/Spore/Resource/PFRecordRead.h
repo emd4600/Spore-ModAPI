@@ -21,7 +21,7 @@
 
 #include <Spore\ResourceKey.h>
 #include <Spore\IO\StreamMemory.h>
-#include <Spore\Resource\IPFRecord.h>
+#include <Spore\Resource\PFRecordBase.h>
 #include <Spore\Resource\PFIndexModifiable.h>
 #include <Spore\Resource\ThreadedObject.h>
 
@@ -33,11 +33,9 @@ namespace Resource
 	/// This class is used to read the data of a file contained inside a DBPF. Use PFRecordRead::GetStream() to get the
 	/// IStream that can be used to read the file. If the file is compressed, it will be decompressed before reading it.
 	///
-	class PFRecordRead : public IPFRecord, IO::IStream
+	class PFRecordRead : public PFRecordBase, IO::IStream
 	{
 	public:
-		friend class DatabasePackedFile;
-
 		static const uint32_t kType = 0x12E4A891;
 
 	public:
@@ -50,38 +48,38 @@ namespace Resource
 
 		//// IPFRecord ////
 
-		/* 10h */	virtual ResourceKey&	GetName() override;
-		/* 14h */	virtual void			SetName(const ResourceKey& name) override;
+		/* 10h */	virtual const ResourceKey&	GetKey() override;
+		/* 14h */	virtual void				SetKey(const ResourceKey& name) override;
 
 		/* 18h */	virtual IStream* GetStream() override;
 
-		/* 1Ch */	virtual DatabasePackedFile* GetParentDBPF() const override;
+		/* 1Ch */	virtual Database* GetDatabase() override;
 
-		/* 20h */	virtual bool Open() override;
-		/* 24h */	virtual bool Close() override;
-		/* 28h */	virtual int func28h() override;
+		/* 20h */	virtual bool RecordOpen() override;
+		/* 24h */	virtual bool RecordClose() override;
+		/* 28h */	virtual int DoPostClose() override;
 
 		//// IStream ////
 
 		/* 0Ch */	virtual uint32_t	GetType() const override;
-		/* 10h */	virtual int			GetAccessFlags() const override;
+		/* 10h */	virtual IO::AccessFlags	GetAccessFlags() const override;
 		/* 14h */	virtual IO::FileError	GetState() const override;
 		// /* 18h */	virtual bool		Close() override;  // already overriden with IPFRecord
 
 		/* 1Ch */	virtual IO::size_type	GetSize() const override;
 		/* 20h */	virtual bool		SetSize(IO::size_type size) override;  // does nothing
-		/* 24h */	virtual int			GetPosition(IO::PositionType positionType = IO::kPositionTypeBegin) const override;
-		/* 28h */	virtual bool		SetPosition(int distance, IO::PositionType positionType = IO::kPositionTypeBegin) override;
+		/* 24h */	virtual int			GetPosition(IO::PositionType positionType = IO::PositionType::Begin) const override;
+		/* 28h */	virtual bool		SetPosition(int distance, IO::PositionType positionType = IO::PositionType::Begin) override;
 		/* 2Ch */	virtual int			GetAvailable() const override;
 
 		/* 30h */	virtual int		Read(void* pData, size_t nSize) override;
 		/* 34h */	virtual bool	Flush() override;  // does nothing
 		/* 38h */	virtual int		Write(const void* pData, size_t nSize) override;  // does nothing
 
-	protected:
+	public:
 		void ReadData();
 
-	protected:
+	public:
 		/* 24h */	int field_24;
 		/* 28h */	int field_28;  // -1
 		/* 2Ch */	IO::MemoryStream mInternalBuffer;
@@ -97,13 +95,7 @@ namespace Resource
 			kPFRRDataFitsBuffer = 1,
 		};
 	};
-
-	///////////////////////////////////
-	//// INTERNAL IMPLEMENENTATION ////
-	///////////////////////////////////
-
-	static_assert(sizeof(PFRecordRead) == 0x70, "sizeof(PFRecordRead) != 70h");
-
+	ASSERT_SIZE(PFRecordRead, 0x70);
 
 	namespace Addresses(PFRecordRead)
 	{
@@ -130,5 +122,12 @@ namespace Resource
 
 
 		DeclareAddress(ReadData);
+
+		DeclareAddress(GetKey);
+		DeclareAddress(SetKey);
+		DeclareAddress(GetDatabase);
+		DeclareAddress(RecordOpen);
+		DeclareAddress(RecordClose);
+		DeclareAddress(DoPostClose);
 	}
 }

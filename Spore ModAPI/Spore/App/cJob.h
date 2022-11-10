@@ -1,5 +1,9 @@
 #pragma once
 
+#include <Spore\Internal.h>
+
+#define cJobPtr eastl::intrusive_ptr<App::cJob>
+
 namespace App
 {
 	class cJob;

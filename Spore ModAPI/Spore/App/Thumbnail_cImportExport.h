@@ -29,11 +29,11 @@ namespace App
 		/// Gets the filepath of the folder where the .PNGs of the creation type are stored.
 		/// @param creationType One of the types in TypeIDs, such as 'crt', 'bld',...
 		/// @param[out] dst The string where the path will be written.
-		bool GetFolderPath(uint32_t creationType, string16& dst);
+		bool GetFolderPath(uint32_t creationType, eastl::string16& dst);
 
 		/// Used to obtain a path from a locale file, by default `0x19F76D11.locale`, similar to the one that would
 		/// return GetFolderPath()
-		bool FolderPathFromLocale(uint32_t instanceID, string16& dst, uint32_t tableID = 0xFFFFFFFF);
+		bool FolderPathFromLocale(uint32_t instanceID, eastl::string16& dst, uint32_t tableID = 0xFFFFFFFF);
 
 		/// Encodes the given resource into a `.png` image and saves it, both in the given package and in the
 		/// "My Spore Creations" in the user Documents folder. 
@@ -55,11 +55,11 @@ namespace App
 
 		// Not finished yet, but it's not important
 	private:
-		/* 04h */	hash_map<int, int> field_04;
-		/* 24h */	hash_map<int, int> field_24;
+		/* 04h */	eastl::hash_map<int, int> field_04;
+		/* 24h */	eastl::hash_map<int, int> field_24;
 		/* 44h */	int field_44;  // not initialized
-		/* 48h */	hash_map<int, int> field_48;
-		/* 68h */	hash_map<int, int> field_68;
+		/* 48h */	eastl::hash_map<int, int> field_48;
+		/* 68h */	eastl::hash_map<int, int> field_68;
 
 		// other fields are string16 with the creation paths
 	};

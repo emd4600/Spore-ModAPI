@@ -35,6 +35,9 @@ namespace RenderWare
 		DefineAddress(Delete, SelectAddress(0x11F26E0, , 0x11EFFB0));
 		DefineAddress(CreateRaster, SelectAddress(0x11F2630, , 0x11EFF00));
 		DefineAddress(D3D9AddToUnmanagedList, SelectAddress(0x11F1E90, , 0x11EF760));
+		DefineAddress(Extract, SelectAddress(0x11F2BC0, , 0x11F0490));
+		DefineAddress(Fill, SelectAddress(0x11F29F0, , 0x11F02C0));
+		DefineAddress(D3D9GetStreamedMipLevelSize, SelectAddress(0x11F2780, , 0x11F0050));
 	};
 
 	namespace Addresses(RWHeader)

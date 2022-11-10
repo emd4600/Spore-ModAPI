@@ -66,14 +66,14 @@ namespace IO
 		/* 08h */	virtual int	Release() override;
 
 		/* 0Ch */	virtual uint32_t	GetType() const override;
-		/* 10h */	virtual int			GetAccessFlags() const override;
+		/* 10h */	virtual AccessFlags	GetAccessFlags() const override;
 		/* 14h */	virtual FileError	GetState() const override;
 		/* 18h */	virtual bool		Close() override;
 
 		/* 1Ch */	virtual size_type	GetSize() const override;
 		/* 20h */	virtual bool		SetSize(size_type size) override;
-		/* 24h */	virtual int			GetPosition(PositionType positionType = kPositionTypeBegin) const override;
-		/* 28h */	virtual bool		SetPosition(int distance, PositionType positionType = kPositionTypeBegin) override;
+		/* 24h */	virtual int			GetPosition(PositionType positionType = PositionType::Begin) const override;
+		/* 28h */	virtual bool		SetPosition(int distance, PositionType positionType = PositionType::Begin) override;
 		/* 2Ch */	virtual int			GetAvailable() const override;
 
 		/* 30h */	virtual int		Read(void* pData, size_t nSize) override;
@@ -84,7 +84,7 @@ namespace IO
 
 	protected:
 		/* 04h */	int         mnRefCount;
-		/* 08h */	int         mnAccessFlags;
+		/* 08h */	AccessFlags mnAccessFlags;
 		/* 0Ch */	IStream*    mpStreamParent;
 		/* 10h */	size_type   mnPositionParent;
 		/* 14h */	size_type   mnPosition;

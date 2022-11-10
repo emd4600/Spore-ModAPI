@@ -19,21 +19,21 @@
 
 #pragma once
 
-#include <Spore\Resource\IResourceContainer.h>
 #include <Spore\Resource\ResourceObject.h>
 
 #include <EASTL\intrusive_ptr.h>
-
-using namespace eastl;
 
 namespace Resource
 {
 	///
 	/// An interface that is used to store resources in the cache.
 	///
-	class IResourceMap : public IResourceContainer
+	class IResourceMap
 	{
 	public:
+		/* 00h */	virtual ~IResourceMap() = 0;
+		/* 04h */	virtual bool Initialize() = 0;
+		/* 08h */	virtual bool Dispose() = 0;
 		/* 0Ch */	virtual uint32_t GetType() = 0;
 		/* 10h */	virtual int func10h() = 0;
 		/* 14h */	virtual void func14h(int) = 0;

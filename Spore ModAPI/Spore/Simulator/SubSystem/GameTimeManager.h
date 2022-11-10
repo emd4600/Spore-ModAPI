@@ -167,9 +167,9 @@ namespace Simulator
 		/// A combination of current PauseFlags. If 0, game is unpaused; otherwise, use logical AND with PauseFlags
 		/* 48h */	int mFlags;  // & 1 paused
 		/// Maps each TimeManagerIdentifier to its index in `mPauseTypes`.
-		/* 4Ch */	map<TimeManagerPause, int> mPauseMaps;
+		/* 4Ch */	eastl::map<TimeManagerPause, int> mPauseMaps;
 		/// Keeps track of the different pause types
-		/* 68h */	vector<PauseType> mPauseTypes;
+		/* 68h */	eastl::vector<PauseType> mPauseTypes;
 	};
 	ASSERT_SIZE(cGameTimeManager, 0x80);
 

@@ -39,7 +39,7 @@ namespace Graphics
 	///
 	class cTextureManager : public ITextureManager, public IVirtual
 	{
-	protected:
+	public:
 
 		/* 08h */	int field_08;
 		/* 0Ch */	bool field_0C;

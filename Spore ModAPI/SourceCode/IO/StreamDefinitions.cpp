@@ -70,8 +70,8 @@ namespace IO
 	FileStream::FileStream(const char* pPath8)
 		: mhFile(reinterpret_cast<void*>(-1)),
 		mnRefCount(0),
-		mnAccessFlags(0),
-		mnCD(0),
+		mnAccessFlags(AccessFlags::None),
+		mnCD((CD)0),
 		mnSharing(0),
 		mnUsageHints(kUsageHintNone),
 		mnLastError(0),
@@ -85,8 +85,8 @@ namespace IO
 	FileStream::FileStream(const char16_t* pPath16)
 		: mhFile(reinterpret_cast<void*>(-1)),
 		mnRefCount(0),
-		mnAccessFlags(0),
-		mnCD(0),
+		mnAccessFlags(AccessFlags::None),
+		mnCD((CD)0),
 		mnSharing(0),
 		mnUsageHints(kUsageHintNone),
 		mnLastError(0),
@@ -105,7 +105,7 @@ namespace IO
 	auto_METHOD_(FileStream, int, Release);
 
 	auto_METHOD_const_(FileStream, uint32_t, GetType);
-	auto_METHOD_const_(FileStream, int, GetAccessFlags);
+	auto_METHOD_const_(FileStream, AccessFlags, GetAccessFlags);
 	auto_METHOD_const_(FileStream, FileError, GetState);
 	auto_METHOD_(FileStream, bool, Close);
 
@@ -123,7 +123,7 @@ namespace IO
 	auto_METHOD_VOID(FileStream, SetPathCString, Args(const char* pPath8), Args(pPath8));
 	auto_METHOD(FileStream, size_t, GetPath, Args(char16_t* pPath16, size_t nPathLength), Args(pPath16, nPathLength));
 	auto_METHOD(FileStream, size_t, GetPathCString, Args(char* pPath8, size_t nPathLength), Args(pPath8, nPathLength));
-	auto_METHOD(FileStream, bool, Open, Args(int nAccessFlags, int nCreationDisposition, int nSharing, int nUsageHints), Args(nAccessFlags, nCreationDisposition, nSharing, nUsageHints));
+	auto_METHOD(FileStream, bool, Open, Args(AccessFlags nAccessFlags, CD nCreationDisposition, int nSharing, int nUsageHints), Args(nAccessFlags, nCreationDisposition, nSharing, nUsageHints));
 
 
 	//////////////////////
@@ -143,7 +143,7 @@ namespace IO
 	auto_METHOD_(StreamBuffer, int, Release);
 
 	auto_METHOD_const_(StreamBuffer, uint32_t, GetType);
-	auto_METHOD_const_(StreamBuffer, int, GetAccessFlags);
+	auto_METHOD_const_(StreamBuffer, AccessFlags, GetAccessFlags);
 	auto_METHOD_const_(StreamBuffer, FileError, GetState);
 	auto_METHOD_(StreamBuffer, bool, Close);
 
@@ -212,7 +212,7 @@ namespace IO
 
 	StreamChild::StreamChild(IStream* pStreamParent, size_type nPosition, size_type nSize) :
 		mnRefCount(0),
-		mnAccessFlags(0),
+		mnAccessFlags(AccessFlags::None),
 		mpStreamParent(0),
 		mnPositionParent(0),
 		mnPosition(0),
@@ -229,7 +229,7 @@ namespace IO
 	auto_METHOD_(StreamChild, int, Release);
 
 	auto_METHOD_const_(StreamChild, uint32_t, GetType);
-	auto_METHOD_const_(StreamChild, int, GetAccessFlags);
+	auto_METHOD_const_(StreamChild, AccessFlags, GetAccessFlags);
 	auto_METHOD_const_(StreamChild, FileError, GetState);
 	auto_METHOD_(StreamChild, bool, Close);
 
@@ -257,7 +257,7 @@ namespace IO
 	auto_METHOD_(FixedMemoryStream, int, Release);
 
 	auto_METHOD_const_(FixedMemoryStream, uint32_t, GetType);
-	auto_METHOD_const_(FixedMemoryStream, int, GetAccessFlags);
+	auto_METHOD_const_(FixedMemoryStream, AccessFlags, GetAccessFlags);
 	auto_METHOD_const_(FixedMemoryStream, FileError, GetState);
 	auto_METHOD_(FixedMemoryStream, bool, Close);
 
@@ -346,7 +346,7 @@ namespace IO
 	auto_METHOD_(MemoryStream, int, Release);
 
 	auto_METHOD_const_(MemoryStream, uint32_t, GetType);
-	auto_METHOD_const_(MemoryStream, int, GetAccessFlags);
+	auto_METHOD_const_(MemoryStream, AccessFlags, GetAccessFlags);
 	auto_METHOD_const_(MemoryStream, FileError, GetState);
 	auto_METHOD_(MemoryStream, bool, Close);
 
@@ -380,7 +380,7 @@ namespace IO
 	auto_METHOD_(StreamNull, int, Release);
 
 	auto_METHOD_const_(StreamNull, uint32_t, GetType);
-	auto_METHOD_const_(StreamNull, int, GetAccessFlags);
+	auto_METHOD_const_(StreamNull, AccessFlags, GetAccessFlags);
 	auto_METHOD_const_(StreamNull, FileError, GetState);
 	auto_METHOD_(StreamNull, bool, Close);
 

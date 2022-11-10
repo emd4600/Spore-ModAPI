@@ -35,7 +35,6 @@
 #include <Spore\Mutex.h>
 
 #include <Spore\IO\IStream.h>
-#include <Spore\Resource\IResourceContainer.h>
 #include <Spore\Resource\IResourceFactory.h>
 #include <Spore\Resource\IResourceFilter.h>
 #include <Spore\Resource\IResourceMap.h>
@@ -61,8 +60,8 @@ namespace Resource
 		typedef list<DatabasePackedFile*, CoreAllocatorAdapter<ICoreAllocator>> DBPFList;
 
 
-		virtual bool NeedsToRelease() override;
-		virtual bool ReleaseResources() override;
+		virtual bool Initialize() override;
+		virtual bool Dispose() override;
 
 		/* 0Ch */	virtual bool GetResource(
 			const ResourceKey& name,
@@ -201,6 +200,8 @@ namespace Resource
 		DeclareAddress(AddExtensionMapping);
 		DeclareAddress(RemoveExtensionMapping);
 
+		DeclareAddress(Initialize);
+		DeclareAddress(Dispose);
 	}
 
 }

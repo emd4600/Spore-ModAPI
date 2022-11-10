@@ -34,6 +34,7 @@
 /// want to create a new file, read or write, etc). AFter you are finished writing, call IO::IStream::Close() so the
 /// system releases the stream resources.
 
+#include <Spore\IO\Constants.h>
 #include <Spore\IO\IStream.h>
 #include <Spore\IO\FileStream.h>
 #include <Spore\IO\StreamAdapter.h>

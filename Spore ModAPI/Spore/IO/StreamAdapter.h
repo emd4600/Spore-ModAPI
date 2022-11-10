@@ -82,9 +82,9 @@ namespace IO
 	/// Upon return the output value will be in local (a.k.a. native) endian-ness.
 	/// The return value is true if the value could be entirely read. 
 	/// If false, you can use IStream::GetState to determine the error.
-	/// The default number of values is 1, and the default endian-ness is kEndianBig.
+	/// The default number of values is 1, and the default endian-ness is Endian::Big.
 	///
-	bool ReadInt16(IStream* pIS, int16_t* value, size_type count = 1, Endian endianSource = kEndianBig);
+	bool ReadInt16(IStream* pIS, int16_t* value, size_type count = 1, Endian endianSource = Endian::Big);
 
 	///
 	/// Reads a single uint16_t value or an array of uint16_t from the stream.
@@ -92,9 +92,9 @@ namespace IO
 	/// Upon return the output value will be in local (a.k.a. native) endian-ness.
 	/// The return value is true if the value could be entirely read. 
 	/// If false, you can use IStream::GetState to determine the error.
-	/// The default number of values is 1, and the default endian-ness is kEndianBig.
+	/// The default number of values is 1, and the default endian-ness is Endian::Big.
 	///
-	bool ReadUInt16(IStream* pIS, uint16_t* value, size_type count = 1, Endian endianSource = kEndianBig);
+	bool ReadUInt16(IStream* pIS, uint16_t* value, size_type count = 1, Endian endianSource = Endian::Big);
 
 	///
 	/// Reads a single int32_t value or an array of int32_t from the stream.
@@ -102,9 +102,9 @@ namespace IO
 	/// Upon return the output value will be in local (a.k.a. native) endian-ness.
 	/// The return value is true if the value could be entirely read. 
 	/// If false, you can use IStream::GetState to determine the error.
-	/// The default number of values is 1, and the default endian-ness is kEndianBig.
+	/// The default number of values is 1, and the default endian-ness is Endian::Big.
 	///
-	bool ReadInt32(IStream* pIS, int32_t* value, size_type count = 1, Endian endianSource = kEndianBig);
+	bool ReadInt32(IStream* pIS, int32_t* value, size_type count = 1, Endian endianSource = Endian::Big);
 
 	///
 	/// Reads a single uint32_t value or an array of uint32_t from the stream.
@@ -112,9 +112,9 @@ namespace IO
 	/// Upon return the output value will be in local (a.k.a. native) endian-ness.
 	/// The return value is true if the value could be entirely read. 
 	/// If false, you can use IStream::GetState to determine the error.
-	/// The default number of values is 1, and the default endian-ness is kEndianBig.
+	/// The default number of values is 1, and the default endian-ness is Endian::Big.
 	///
-	bool ReadUInt32(IStream* pIS, uint32_t* value, size_type count = 1, Endian endianSource = kEndianBig);
+	bool ReadUInt32(IStream* pIS, uint32_t* value, size_type count = 1, Endian endianSource = Endian::Big);
 
 	///
 	/// Reads a single float value or an array of float from the stream.
@@ -122,9 +122,9 @@ namespace IO
 	/// Upon return the output value will be in local (a.k.a. native) endian-ness.
 	/// The return value is true if the value could be entirely read. 
 	/// If false, you can use IStream::GetState to determine the error.
-	/// The default number of values is 1, and the default endian-ness is kEndianBig.
+	/// The default number of values is 1, and the default endian-ness is Endian::Big.
 	///
-	bool ReadFloat(IStream* pIS, float* value, size_type count = 1, Endian endianSource = kEndianBig);
+	bool ReadFloat(IStream* pIS, float* value, size_type count = 1, Endian endianSource = Endian::Big);
 
 	///
 	/// Reads a single ResourceID value or an array of ResourceID from the stream.
@@ -132,9 +132,9 @@ namespace IO
 	/// Upon return the output value will be in local (a.k.a. native) endian-ness.
 	/// The return value is true if the value could be entirely read. 
 	/// If false, you can use IStream::GetState to determine the error.
-	/// The default number of values is 1, and the default endian-ness is kEndianBig.
+	/// The default number of values is 1, and the default endian-ness is Endian::Big.
 	///
-	bool ReadResourceID(IStream* pIS, ResourceID* value, size_type count = 1, Endian endianSource = kEndianBig);
+	bool ReadResourceID(IStream* pIS, ResourceID* value, size_type count = 1, Endian endianSource = Endian::Big);
 
 	///
 	/// Reads a null-terminated string from the source IStream
@@ -204,50 +204,50 @@ namespace IO
 	/// Writes a single int16_t value or an array of int16_t numerical values to the output stream with the given destination endian-ness.
 	/// The return value is true if the value could be successfully completely written. 
 	/// If false, you can use IStream::GetState to determine the error.
-	/// The default number of values is 1, and the default endian-ness is kEndianBig.
+	/// The default number of values is 1, and the default endian-ness is Endian::Big.
 	///
-	bool WriteInt16(IStream* pOS, const int16_t* value, size_type count = 1, Endian endianDestination = kEndianBig);
+	bool WriteInt16(IStream* pOS, const int16_t* value, size_type count = 1, Endian endianDestination = Endian::Big);
 
 	///
 	/// Writes a single uint16_t value or an array of uint16_t numerical values to the output stream with the given destination endian-ness.
 	/// The return value is true if the value could be successfully completely written. 
 	/// If false, you can use IStream::GetState to determine the error.
-	/// The default number of values is 1, and the default endian-ness is kEndianBig.
+	/// The default number of values is 1, and the default endian-ness is Endian::Big.
 	///
-	bool WriteUInt16(IStream* pOS, const uint16_t* value, size_type count = 1, Endian endianDestination = kEndianBig);
+	bool WriteUInt16(IStream* pOS, const uint16_t* value, size_type count = 1, Endian endianDestination = Endian::Big);
 
 	/// WriteInt32
 	///
 	/// Writes a single int32_t value or an array of int32_t numerical values to the output stream with the given destination endian-ness.
 	/// The return value is true if the value could be successfully completely written. 
 	/// If false, you can use IStream::GetState to determine the error.
-	/// The default number of values is 1, and the default endian-ness is kEndianBig.
+	/// The default number of values is 1, and the default endian-ness is Endian::Big.
 	///
-	bool WriteInt32(IStream* pOS, const int32_t* src, size_type count = 1, Endian endianDestination = kEndianBig);
+	bool WriteInt32(IStream* pOS, const int32_t* src, size_type count = 1, Endian endianDestination = Endian::Big);
 
 	///
 	/// Writes a single uint32_t value or an array of uint32_t numerical values to the output stream with the given destination endian-ness.
 	/// The return value is true if the value could be successfully completely written. 
 	/// If false, you can use IStream::GetState to determine the error.
-	/// The default number of values is 1, and the default endian-ness is kEndianBig.
+	/// The default number of values is 1, and the default endian-ness is Endian::Big.
 	///
-	bool WriteUInt32(IStream* pOS, const uint32_t* value, size_type count = 1, Endian endianDestination = kEndianBig);
+	bool WriteUInt32(IStream* pOS, const uint32_t* value, size_type count = 1, Endian endianDestination = Endian::Big);
 
 	///
 	/// Writes a single float value or an array of float numerical values to the output stream with the given destination endian-ness.
 	/// The return value is true if the value could be successfully completely written. 
 	/// If false, you can use IStream::GetState to determine the error.
-	/// The default number of values is 1, and the default endian-ness is kEndianBig.
+	/// The default number of values is 1, and the default endian-ness is Endian::Big.
 	///
-	bool WriteFloat(IStream* pOS, const float* value, size_type count = 1, Endian endianDestination = kEndianBig);
+	bool WriteFloat(IStream* pOS, const float* value, size_type count = 1, Endian endianDestination = Endian::Big);
 
 	///
 	/// Writes a single ResourceID value or an array of ResourceID values to the output stream with the given destination endian-ness.
 	/// The return value is true if the value could be successfully completely written. 
 	/// If false, you can use IStream::GetState to determine the error.
-	/// The default number of values is 1, and the default endian-ness is kEndianBig.
+	/// The default number of values is 1, and the default endian-ness is Endian::Big.
 	///
-	bool WriteResourceID(IStream* pOS, const ResourceID* value, size_type count = 1, Endian endianDestination = kEndianBig);
+	bool WriteResourceID(IStream* pOS, const ResourceID* value, size_type count = 1, Endian endianDestination = Endian::Big);
 
 	///
 	/// Reads a null-terminated string from the source IStream
@@ -272,7 +272,7 @@ namespace IO
 	/// If false, you can use IStream::GetState to determine the error, as this function
 	/// generates no errors beyond those related to IStream errors.
 	///
-	bool WriteLine(IStream* pOS, const char8_t* pLineSource, size_type nLineLength, LineEnd lineEndToUse = kLineEndAuto);
+	bool WriteLine(IStream* pOS, const char8_t* pLineSource, size_type nLineLength, LineEnd lineEndToUse = LineEnd::Auto);
 
 
 	///////////////////////////////////

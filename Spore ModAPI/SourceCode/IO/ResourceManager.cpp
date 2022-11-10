@@ -26,8 +26,8 @@ namespace Resource
 	auto_STATIC_METHOD_(IResourceManager, IResourceManager*, Get);
 
 #ifndef MODAPI_DLL_EXPORT
-	auto_METHOD_VIRTUAL_(cResourceManager, cResourceManager, bool, NeedsToRelease);
-	auto_METHOD_VIRTUAL_(cResourceManager, cResourceManager, bool, ReleaseResources);
+	auto_METHOD_VIRTUAL_(cResourceManager, cResourceManager, bool, Initialize);
+	auto_METHOD_VIRTUAL_(cResourceManager, cResourceManager, bool, Dispose);
 	auto_METHOD_VIRTUAL(cResourceManager, cResourceManager, bool, GetResource, Args(const ResourceKey& name, ResourceObjectPtr* ppDst, int arg_8, DBPF* pDBPF, IResourceFactory* pFactory, const ResourceKey* pCacheName), Args(name, ppDst, arg_8, pDBPF, pFactory, pCacheName));
 	auto_METHOD_VIRTUAL(cResourceManager, cResourceManager, bool, GetAsyncResource, Args(const ResourceKey& name, ResourceObjectPtr* ppDst, AsyncResourcePtr* arg_8, void* arg_C, void* arg_10, DBPF* pDBPF, IResourceFactory* pFactory, const ResourceKey* pAlternativeName), Args(name, ppDst, arg_8, arg_C, arg_10, pDBPF, pFactory, pAlternativeName));
 	auto_METHOD_VIRTUAL(cResourceManager, cResourceManager, bool, GetCachedResource, Args(const ResourceKey& name, intrusive_ptr<ResourceObject>* pDst), Args(name, pDst));

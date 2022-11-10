@@ -19,7 +19,6 @@
 
 #pragma once
 
-#include <Spore\Resource\IResourceContainer.h>
 #include <Spore\Resource\IResourceFactory.h>
 #include <Spore\Resource\IResourceFilter.h>
 #include <Spore\Resource\IResourceMap.h>
@@ -31,8 +30,6 @@
 #define ResourceManager (*Resource::IResourceManager::Get())
 
 #define IResourceManagerPtr eastl::intrusive_ptr<Resource::IResourceManager>
-
-using namespace eastl;
 
 namespace Resource
 {
@@ -69,13 +66,16 @@ namespace Resource
 	/// ResourceManager.GetFileName(dstKey, u"MyImages!EditorUIFrame.png");
 	/// ~~~~~~~~~~~~~~~~~~~~~~
 	///
-	class IResourceManager : public IResourceContainer
+	class IResourceManager
 	{
 
 	public:
 
 		typedef list<DatabasePackedFile*, CoreAllocatorAdapter<ICoreAllocator>> DBPFList;
 
+		/* 00h */	virtual ~IResourceManager();
+		/* 04h */	virtual bool Initialize() = 0;
+		/* 08h */	virtual bool Dispose() = 0;
 
 		///
 		/// Gets the resource that has the given ResourceKey name. 
@@ -229,7 +229,7 @@ namespace Resource
 		/// most priority will be chosen.
 		/// The usage of the first argument is unknown, but it is usually 'true'.
 		///
-		/* 50h */	virtual bool AddDBPF(bool, DatabasePackedFile* pDBPF, int nPriority) = 0;
+		/* 50h */	virtual bool AddDBPF(bool, Database* pDBPF, int nPriority) = 0;
 
 		///
 		/// Gets the priority of the given DatabasePackedFile if it is contained in this ResourceManager.

@@ -50,7 +50,8 @@ namespace Resource
 	/// This class stores the metadata of all the files contained in a DBPF file. It is used for indexing and accessing
 	/// files.
 	///
-	class PFIndexModifiable : public IO::EAIOZoneObject
+	class PFIndexModifiable 
+		: public IO::EAIOZoneObject
 	{
 	public:
 		

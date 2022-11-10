@@ -26,6 +26,9 @@
 #include <Spore\Resource\IResourceManager.h>
 #include <Spore\Resource\IResourceFilter.h>
 #include <Spore\Resource\DatabasePackedFile.h>
+#include <Spore\Resource\DatabaseDirectoryFiles.h>
+#include <Spore\Resource\Database.h>
+#include <Spore\Resource\Paths.h>
 #include <Spore\Resource\IPFRecord.h>
 
 /// @namespace Resource

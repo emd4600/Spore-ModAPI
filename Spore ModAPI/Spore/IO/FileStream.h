@@ -59,14 +59,14 @@ namespace IO
 		/* 08h */	virtual int Release();
 
 		/* 0Ch */	virtual uint32_t	GetType() const;  // ?
-		/* 10h */	virtual int			GetAccessFlags() const;
+		/* 10h */	virtual AccessFlags	GetAccessFlags() const;
 		/* 14h */	virtual FileError	GetState() const;
 		/* 18h */	virtual bool		Close();
 
 		/* 1Ch */	virtual size_type GetSize() const;
 		/* 20h */	virtual bool	SetSize(size_type size);
-		/* 24h */	virtual int		GetPosition(PositionType positionType = kPositionTypeBegin) const;
-		/* 28h */	virtual bool	SetPosition(int distance, PositionType positionType = kPositionTypeBegin);
+		/* 24h */	virtual int		GetPosition(PositionType positionType = PositionType::Begin) const;
+		/* 28h */	virtual bool	SetPosition(int distance, PositionType positionType = PositionType::Begin);
 		/* 2Ch */	virtual int		GetAvailable() const;
 
 		/* 30h */	virtual int		Read(void* pData, size_t nSize);
@@ -78,7 +78,7 @@ namespace IO
 		/* 44h */	virtual size_t  GetPath(char16_t* pPath16, size_t nPathLength);
 		/* 48h */	virtual size_t  GetPathCString(char* pPath8, size_t nPathLength);
 
-		/* 4Ch */	virtual bool	Open(int nAccessFlags = kAccessFlagRead, int nCreationDisposition = kCDDefault, int nSharing = kShareRead, int nUsageHints = kUsageHintNone);
+		/* 4Ch */	virtual bool	Open(AccessFlags accessFlags = AccessFlags::Read, CD creationDisposition = CD::Default, int nSharing = kShareRead, int nUsageHints = kUsageHintNone);
 
 		static const uint32_t kType = 0x34722300;
 
@@ -86,8 +86,8 @@ namespace IO
 		/* 04h */	void*             mhFile;                     /// We defined as void* instead of HANDLE in order to simplify header includes. HANDLE is typedef'd to (void *) on all Windows platforms.
 		/* 08h */	char16_t          mpPath16[kMaxPathLength];   /// Path for the file.
 		/* 210h */	int               mnRefCount;                 /// Reference count, which may or may not be in use.
-		/* 214h */	int               mnAccessFlags;              /// See enum AccessFlags.
-		/* 218h */	int               mnCD;                       /// See enum CD (creation disposition).
+		/* 214h */	AccessFlags       mnAccessFlags;              /// See enum AccessFlags.
+		/* 218h */	CD                mnCD;                       /// See enum CD (creation disposition).
 		/* 21Ch */	int               mnSharing;                  /// See enum Share.
 		/* 220h */	int               mnUsageHints;               /// See enum UsageHints.
 		/* 224h */	mutable int       mnLastError;                /// Used for error reporting.

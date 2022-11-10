@@ -12,7 +12,7 @@ namespace Simulator
 	public:
 		/* 0Ch */	uint32_t mFileVersionMajor;
 		/* 10h */	uint32_t mFileVersionMinor;
-		/* 14h */	map<uint32_t, int> mObjectCountMap;
+		/* 14h */	eastl::map<uint32_t, int> mObjectCountMap;
 		/* 30h */	int mTimeStamp[9];
 		/* 54h */	uint32_t mGameMode;
 		/* 58h */	bool mbSnapshot;

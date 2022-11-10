@@ -3,6 +3,7 @@
 #include <Spore\IO\Allocator.h>
 #include <Spore\IO\EAIOZoneObject.h>
 #include <Spore\IO\FileStream.h>
+#include <Spore\IO\Constants.h>
 #include <Spore\IO\StreamAdapter.h>
 #include <Spore\IO\StreamBuffer.h>
 #include <Spore\IO\StreamChild.h>
@@ -49,6 +50,10 @@ namespace Addresses(IO)
 	DefineAddress(WriteResourceID, SelectAddress(0x93B040, 0x93AA80, 0x93AA80));
 
 	DefineAddress(WriteLine, SelectAddress(0x93B100, 0x93AB40, 0x93AB40));
+
+
+	DefineAddress(EnsureTrailingPathSeparator, SelectAddress(0x931CC0, , 0x931740));
+	DefineAddress(ConcatenatePathComponents, SelectAddress(0x930200, , 0x9300D0));
 }
 
 namespace IO
@@ -200,6 +205,20 @@ namespace IO
 		DefineAddress(WriteComment, SelectAddress(0x902340, 0x901F00, 0x901F00));
 		DefineAddress(WriteName, SelectAddress(0x902010, 0x901BD0, 0x901BD0));
 		DefineAddress(WriteText, SelectAddress(0x902470, 0x902030, 0x902030));
+	}
+
+	namespace Addresses(File)
+	{
+		DefineAddress(Exists, SelectAddress(0x9324E0, , 0x931F70));
+		DefineAddress(Remove, SelectAddress(0x932510, , 0x931FA0));
+		DefineAddress(GetSize, SelectAddress(0x9325A0, , 0x932030));
+	}
+
+	namespace Addresses(Directory)
+	{
+		DefineAddress(Create, SelectAddress(0x932EA0, , 0x932930));
+		DefineAddress(Exists, SelectAddress(0x9327F0, , 0x932280));
+		DefineAddress(Remove, SelectAddress(0x932510, , 0x932860));
 	}
 }
 #endif

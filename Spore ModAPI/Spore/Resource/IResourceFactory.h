@@ -20,7 +20,7 @@
 #pragma once
 
 #include <Spore\Resource\ThreadedObject.h>
-#include <Spore\Resource\IPFRecord.h>
+#include <Spore\Resource\IRecord.h>
 #include <Spore\Resource\ResourceObject.h>
 
 #include <EASTL\intrusive_ptr.h>
@@ -50,8 +50,8 @@ namespace Resource
 		/// @param[out] pDst A pointer where the ResourceObject created must be written.
 		/// @param typeID The type ID of the file to read, which might be used to differentiate between different file formats or resource types.
 		///
-		/* 1Ch */	virtual bool CreateResource(IPFRecord* pRecord, ResourceObjectPtr& pDst, int, uint32_t typeID) = 0;
-		/* 20h */	virtual bool AsyncAccess(IPFRecord** ppDst, int, DBPF* pDBPF, int, int, int) = 0;  // ? renamed this to avoid name collisions in cPropManager...
+		/* 1Ch */	virtual bool CreateResource(IRecord* pRecord, ResourceObjectPtr& pDst, int, uint32_t typeID) = 0;
+		/* 20h */	virtual bool AsyncAccess(IRecord** ppDst, int, DBPF* pDBPF, int, int, int) = 0;  // ? renamed this to avoid name collisions in cPropManager...
 
 		///
 		/// Reads the data into the resource given.
@@ -59,7 +59,7 @@ namespace Resource
 		/// @param pResource The ResourceObject where the data must be loaded.
 		/// @param typeID The type ID of the file to read, which might be used to differentiate between different file formats.
 		///
-		/* 24h */	virtual bool Read(IPFRecord* pRecord, ResourceObject* pResource, int, uint32_t typeID) = 0;
+		/* 24h */	virtual bool Read(IRecord* pRecord, ResourceObject* pResource, int, uint32_t typeID) = 0;
 
 		///
 		/// Reads the resource into the file given.
@@ -67,7 +67,7 @@ namespace Resource
 		/// @param pRecord The IPFRecord that points to the file that must be written.
 		/// @param typeID The type ID of the file to write, which might be used to differentiate between different file formats.
 		///
-		/* 28h */	virtual bool Write(ResourceObject* pResource, IPFRecord* pRecord, int, uint32_t typeID) = 0;
+		/* 28h */	virtual bool Write(ResourceObject* pResource, IRecord* pRecord, int, uint32_t typeID) = 0;
 
 		///
 		/// This method must tell all the type IDs that are accepted by this factory. The method must return how many type IDs
