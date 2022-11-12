@@ -40,7 +40,7 @@ void Initialize()
 
 	// The render system works with layers, each layer has a renderable assigned.
 	// If you add the renderable to an already used layer, the previous one will disappear
-	RenderManager.AddRenderable(new MyRenderable(), 38);
+	Renderer.RegisterLayer(new MyRenderable(), 38);
 
 	// This allows you to create instances of the custom simulator object
 	// WARNING: Games that contain a custom simulator object will require the mod to work, otherwise the game will crash on that save

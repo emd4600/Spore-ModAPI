@@ -29,7 +29,7 @@
 #include <Spore\App\ICheatManager.h>
 #include <Spore\Editors\BakeManager.h>
 #include <Spore\Graphics\IRenderTargetManager.h>
-#include <Spore\Swarm\ISwarmManager.h>
+#include <Spore\Swarm\IEffectsManager.h>
 
 template <typename T> void AddDebugCheat(const char* name, int size, int address) {
 	void* data = new char[size];
@@ -68,10 +68,10 @@ void AddCheats()
 
 	AddDebugCheat_("devApp", 0xE8, Address(ModAPI::ChooseAddress(0x7EA7D0, 0x7EA3C0)));
 
-	AddDebugCheat<Swarm::ISwarmManager>(
+	AddDebugCheat<Swarm::IEffectsManager>(
 		"devEffects", 0x100, Address(ModAPI::ChooseAddress(0xA74070, 0xA73C10)));
 
-	AddDebugCheat<Swarm::ISwarmManager>(
+	AddDebugCheat<Swarm::IEffectsManager>(
 		"devEffect", 0x1A4, Address(ModAPI::ChooseAddress(0xA742F0, 0xA73EA0)));
 
 	AddressCheat::AddCheat(Address(ModAPI::ChooseAddress(0x1499558, 0x1494F70)), "devTerraform");

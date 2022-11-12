@@ -8,7 +8,7 @@
 
 namespace Graphics
 {
-	namespace Addresses(Renderer) {
+	namespace Renderer_addresses {
 		DeclareAddress(D3D_ptr);
 		DeclareAddress(Device_ptr);
 		DeclareAddress(ShaderData_ptr);

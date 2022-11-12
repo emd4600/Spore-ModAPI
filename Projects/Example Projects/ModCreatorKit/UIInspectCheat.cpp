@@ -72,7 +72,7 @@ void FindWindow(UTFWin::IWindow* window, float x, float y, float& area, IWindowP
 
 bool UIInspectCheat::HandleUIMessage(UTFWin::IWindow* pWindow, const UTFWin::Message& message) {
 	if (message.IsType(UTFWin::kMsgKeyUp)) {
-		auto& params = RenderManager.GetParameters();
+		auto& params = Renderer.GetScreenInfo();
 		auto mainWindow = WindowManager.GetMainWindow();
 
 		IWindowPtr window;

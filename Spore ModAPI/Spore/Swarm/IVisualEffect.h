@@ -33,12 +33,12 @@ namespace Swarm
 	/// An enum to represent the current state of an effect world and the Swarm manager.
 	enum class SwarmState
 	{
-		kStateActive = 0,
-		kStatePaused = 1,
-		kStateSuspended = 2,
-		kStateHidden = 3,
-		kStateManual = 4,
-		kStateShutdown = 5,
+		Active = 0,
+		Paused = 1,
+		Suspended = 2,
+		Hidden = 3,
+		Manual = 4,
+		Shutdown = 5,
 	};
 
 	// <= 10

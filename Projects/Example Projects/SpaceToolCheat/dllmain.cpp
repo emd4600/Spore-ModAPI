@@ -23,7 +23,7 @@ public:
 		if (mNamesMap.empty()) {
 			vector<ResourceKey> keys;
 			// This gives us the keys of all the files in the spacetools~ folder.
-			ResourceManager.GetFileKeys(keys, 
+			ResourceManager.GetRecordKeyList(keys, 
 				&Resource::StandardFileFilter(ResourceKey::kWildcardID, GroupIDs::SpaceTools, ResourceKey::kWildcardID));
 
 			for (auto& key : keys) {

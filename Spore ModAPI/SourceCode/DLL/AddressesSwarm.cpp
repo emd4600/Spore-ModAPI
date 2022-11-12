@@ -18,5 +18,9 @@ namespace Swarm
 	{
 		DefineAddress(Get, SelectAddress(0x67DEF0, 0x67DD90, 0x67DD90));
 	}
+	namespace Addresses(IEffectsManager)
+	{
+		DefineAddress(Get, SelectAddress(0x67DEF0, 0x67DD90, 0x67DD90));
+	}
 }
 #endif

@@ -22,4 +22,4 @@
 #include <Spore\Resource\DatabasePackedFile.h>
 
 member_detour(DBPF_detour, Resource::DatabasePackedFile,
-	bool(const ResourceKey&, Resource::IPFRecord**, int, int, bool, Resource::DBPFItem*)) {};
+	bool(const ResourceKey&, Resource::IRecord**, IO::AccessFlags, IO::CD, bool, Resource::RecordInfo*)) {};

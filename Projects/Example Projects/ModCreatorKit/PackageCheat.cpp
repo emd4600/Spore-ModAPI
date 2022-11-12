@@ -11,11 +11,11 @@ PackageCheat::~PackageCheat()
 }
 
 void PrintPackages() {
-	Resource::IResourceManager::DBPFList packages;
-	int count = ResourceManager.GetAllDBPFs(packages);
-	App::ConsolePrintF("----- %d packages:", count);
-	for (auto dbpf : packages) {
-		App::ConsolePrintF("ls", dbpf->GetPath());
+	Resource::IResourceManager::DatabaseList databases;
+	int count = ResourceManager.GetDatabaseList(databases);
+	App::ConsolePrintF("----- %d databases:", count);
+	for (auto database : databases) {
+		App::ConsolePrintF("ls", database->GetLocation());
 	}
 	App::ConsolePrintF("-----");
 }
@@ -24,7 +24,7 @@ void PrintPackages() {
 bool ParseKey(string name, ResourceKey& dst) {
 	auto dotIndex = name.find('.');
 	if (dotIndex != string::npos) {
-		dst.typeID = ResourceManager.GetTypeID(string16(string16::CtorConvert(), name.substr(dotIndex + 1)).c_str());
+		dst.typeID = ResourceManager.GetTypeFromTypename(string16(string16::CtorConvert(), name.substr(dotIndex + 1)).c_str());
 		
 	} else {
 		dotIndex = name.size();
@@ -44,9 +44,9 @@ void PackageCheat::ParseLine(const ArgScript::Line& line)
 			App::ConsolePrintF("Incorrect file name");
 			return;
 		}
-		auto dbpf = ResourceManager.GetDBPF(name);
-		if (dbpf) {
-			App::ConsolePrintF("File found in: %ls", dbpf->GetPath());
+		auto database = ResourceManager.FindDatabase(name);
+		if (database) {
+			App::ConsolePrintF("File found in: %ls", database->GetLocation());
 		}
 		else {
 			App::ConsolePrintF("File not found.");

@@ -38,5 +38,5 @@ public:
 protected:
 	string16 mDebugPath;
 	hash_map<ResourceKey, string16> mFileNames;
-	intrusive_ptr<App::PropertyList> mpPropList;
+	PropertyListPtr mpPropList;
 };

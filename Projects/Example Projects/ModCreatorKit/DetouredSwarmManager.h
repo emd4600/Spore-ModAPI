@@ -19,9 +19,9 @@
 #pragma once
 
 #include <Spore\ModAPI.h>
-#include <Spore\Swarm\cSwarmManager.h>
+#include <Spore\Swarm\cEffectsManager.h>
 
-member_detour(SwarmManager_detour, Swarm::cSwarmManager,
+member_detour(cEffectsManager_detour, Swarm::cEffectsManager,
 	int(uint32_t, uint32_t)) 
 {
 	static int directoryIndex;

@@ -109,7 +109,7 @@ namespace Graphics
 		DefineAddress(Release, SelectAddress(0x40F2C0, 0x40F360, 0x40F360));
 	}
 
-	namespace Addresses(Renderer) 
+	namespace Renderer_addresses
 	{
 		DefineAddress(D3D_ptr, SelectAddress(0x16FFCF8, , 0x16F89C8));
 		DefineAddress(Device_ptr, SelectAddress(0x016FFD00, 0x16F99D0, 0x16F89D0));

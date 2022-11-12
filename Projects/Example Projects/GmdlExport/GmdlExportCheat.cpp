@@ -56,78 +56,78 @@ const char* GmdlExportCheat::GetDescription(ArgScript::DescriptionMode mode) con
 void GetTextureNames(IO::IStream* stream, map<int, ResourceKey>& textures)
 {
 	int version, count, meshCount;
-	IO::ReadInt32(stream, &version, 1, IO::kEndianLittle);
-	IO::ReadInt32(stream, &count, 1, IO::kEndianBig);
-	stream->SetPosition(count * 12, IO::kPositionTypeCurrent);
+	IO::ReadInt32(stream, &version, 1, IO::Endian::Little);
+	IO::ReadInt32(stream, &count, 1, IO::Endian::Big);
+	stream->SetPosition(count * 12, IO::PositionType::Current);
 
-	IO::ReadInt32(stream, &meshCount, 1, IO::kEndianLittle);
+	IO::ReadInt32(stream, &meshCount, 1, IO::Endian::Little);
 
-	stream->SetPosition(28, IO::kPositionTypeCurrent);
+	stream->SetPosition(28, IO::PositionType::Current);
 
-	IO::ReadInt32(stream, &count, 1, IO::kEndianLittle);
+	IO::ReadInt32(stream, &count, 1, IO::Endian::Little);
 	for (int i = 0; i < count; ++i)
 	{  // TriangleBuffer
-		stream->SetPosition(12, IO::kPositionTypeCurrent);
+		stream->SetPosition(12, IO::PositionType::Current);
 		int bufferSize;
-		IO::ReadInt32(stream, &bufferSize, 1, IO::kEndianLittle);
-		stream->SetPosition(bufferSize, IO::kPositionTypeCurrent);
+		IO::ReadInt32(stream, &bufferSize, 1, IO::Endian::Little);
+		stream->SetPosition(bufferSize, IO::PositionType::Current);
 	}
 
-	IO::ReadInt32(stream, &count, 1, IO::kEndianLittle);
+	IO::ReadInt32(stream, &count, 1, IO::Endian::Little);
 	for (int i = 0; i < count; ++i)
 	{  // VertexFormat
 		int elementCount;
-		IO::ReadInt32(stream, &elementCount, 1, IO::kEndianLittle);
-		stream->SetPosition(12 * elementCount, IO::kPositionTypeCurrent);
+		IO::ReadInt32(stream, &elementCount, 1, IO::Endian::Little);
+		stream->SetPosition(12 * elementCount, IO::PositionType::Current);
 	}
 
-	IO::ReadInt32(stream, &count, 1, IO::kEndianLittle);
+	IO::ReadInt32(stream, &count, 1, IO::Endian::Little);
 	for (int i = 0; i < count; ++i)
 	{  // VertexBuffer
-		stream->SetPosition(8, IO::kPositionTypeCurrent);
+		stream->SetPosition(8, IO::PositionType::Current);
 		int bufferSize;
-		IO::ReadInt32(stream, &bufferSize, 1, IO::kEndianLittle);
-		stream->SetPosition(bufferSize, IO::kPositionTypeCurrent);
+		IO::ReadInt32(stream, &bufferSize, 1, IO::Endian::Little);
+		stream->SetPosition(bufferSize, IO::PositionType::Current);
 	}
 
-	stream->SetPosition(meshCount * 12, IO::kPositionTypeCurrent);
+	stream->SetPosition(meshCount * 12, IO::PositionType::Current);
 	int pos = stream->GetPosition();
 
-	IO::ReadInt32(stream, &count, 1, IO::kEndianLittle);
+	IO::ReadInt32(stream, &count, 1, IO::Endian::Little);
 	if (count != 0) {
 		App::ConsolePrintF("Warning: Special model, cannot extract textures.");
 	}
 
-	IO::ReadInt32(stream, &count, 1, IO::kEndianLittle);
+	IO::ReadInt32(stream, &count, 1, IO::Endian::Little);
 	for (int i = 0; i < count; ++i)
 	{  // Materials
 		int flags;
-		IO::ReadInt32(stream, &flags, 1, IO::kEndianBig);
+		IO::ReadInt32(stream, &flags, 1, IO::Endian::Big);
 		if (flags == 0) continue;
 
 		int dataCount;
-		IO::ReadInt32(stream, &dataCount, 1, IO::kEndianLittle);
+		IO::ReadInt32(stream, &dataCount, 1, IO::Endian::Little);
 		for (int j = 0; j < dataCount; ++j) {
 			int shData;
-			IO::ReadInt32(stream, &shData, 1, IO::kEndianLittle);
+			IO::ReadInt32(stream, &shData, 1, IO::Endian::Little);
 
 			if (shData == 0x20D) {
 				int textureCount, samplerIndex;
-				IO::ReadInt32(stream, &textureCount, 1, IO::kEndianLittle);
+				IO::ReadInt32(stream, &textureCount, 1, IO::Endian::Little);
 				for (int t = 0; t < textureCount; ++t) 
 				{
-					IO::ReadInt32(stream, &samplerIndex, 1, IO::kEndianLittle);
-					stream->SetPosition(12, IO::kPositionTypeCurrent);
+					IO::ReadInt32(stream, &samplerIndex, 1, IO::Endian::Little);
+					stream->SetPosition(12, IO::PositionType::Current);
 
 					ResourceKey textureName;
 					textureName.typeID = TypeIDs::raster;
-					IO::ReadUInt32(stream, &textureName.instanceID, 1, IO::kEndianLittle);
-					IO::ReadUInt32(stream, &textureName.groupID, 1, IO::kEndianLittle);
+					IO::ReadUInt32(stream, &textureName.instanceID, 1, IO::Endian::Little);
+					IO::ReadUInt32(stream, &textureName.groupID, 1, IO::Endian::Little);
 					textures[samplerIndex] = textureName;
 				}
 			}
 			else {
-				stream->SetPosition(Graphics::Renderer::GetShaderDataSize(shData), IO::kPositionTypeCurrent);
+				stream->SetPosition(Graphics::RenderUtils::GetShaderDataSize(shData), IO::PositionType::Current);
 			}
 		}
 	}
@@ -160,9 +160,9 @@ void GmdlExportCheat::OnShopperAccept(const ResourceKey& selection)
 
 	// Now we need to get the .gmdl
 	// To get the raw contents of a file, first we need to get the .package and then the file
-	Resource::IPFRecord* pRecord;
-	auto dbpf = ResourceManager.GetDBPF(gmdlName);
-	if (!dbpf || !dbpf->GetFile(gmdlName, &pRecord)) {
+	Resource::IRecord* pRecord;
+	auto database = ResourceManager.FindDatabase(gmdlName);
+	if (!database || !database->OpenRecord(gmdlName, &pRecord)) {
 		App::ConsolePrintF("Error: The creation is not baked. Preview it in the Sporepedia before exporting it.");
 		return;
 	}
@@ -185,12 +185,12 @@ void GmdlExportCheat::OnShopperAccept(const ResourceKey& selection)
 	auto size = pRecord->GetStream()->GetSize();
 	char* buffer = new char[size];
 	pRecord->GetStream()->Read(buffer, size);
-	pRecord->Close();
+	pRecord->RecordClose();
 
 	string16 path;
 	path.sprintf(u"%ls%ls.gmdl", creationFolder.c_str(), creationName.c_str());
 	intrusive_ptr<IO::FileStream> outputStream = new IO::FileStream(path.c_str());
-	outputStream->Open(IO::kAccessFlagReadWrite, IO::kCDCreateAlways);
+	outputStream->Open(IO::AccessFlags::ReadWrite, IO::CD::CreateAlways);
 	outputStream->Write(buffer, size);
 	outputStream->Close();
 	delete[] buffer;
@@ -198,7 +198,7 @@ void GmdlExportCheat::OnShopperAccept(const ResourceKey& selection)
 	// Now, extract the textures
 	// Spore sues the .raster format, so we wil use DirectX to convert them to .tga
 	for (const auto& textureID : textureIDs) {
-		auto texture = TextureManager.GetTexture(textureID.second, Graphics::ITextureManager::kForceLoad);
+		auto texture = TextureManager.GetTexture(textureID.second, Graphics::kTextureFlagForceLoad);
 		auto raster = texture->GetRaster();
 		string16 textureEnding;
 		bool splitNSpec = false;
@@ -233,7 +233,7 @@ void GmdlExportCheat::OnShopperAccept(const ResourceKey& selection)
 			raster->pTexture->LockRect(0, &sourceLockedRect, NULL, 0);
 				
 			IDirect3DTexture9* specTexture;
-			if (Graphics::Renderer::GetDevice()->CreateTexture(raster->width, raster->height, 1, 0,
+			if (Graphics::RenderUtils::GetDevice()->CreateTexture(raster->width, raster->height, 1, 0,
 				D3DFORMAT::D3DFMT_A8R8G8B8, D3DPOOL_MANAGED, &specTexture, NULL) != D3D_OK)
 			{
 				App::ConsolePrintF("Warning: The specular texture could not be separated.");

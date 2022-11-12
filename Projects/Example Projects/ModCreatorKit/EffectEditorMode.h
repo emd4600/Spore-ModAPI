@@ -62,8 +62,8 @@ private:
 	void UpdateFileTime();
 	
 protected:
-	intrusive_ptr<IEffectWorld> mpEffectWorld;
-	intrusive_ptr<IEffect> mpEffect;
+	IEffectsWorldPtr mpEffectWorld;
+	IVisualEffectPtr mpEffect;
 
 	Clock mClock;
 	ULARGE_INTEGER mnLastCheckTime;

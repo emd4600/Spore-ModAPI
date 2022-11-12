@@ -112,20 +112,20 @@ bool AnimEditorMode::Dispose()
 bool AnimEditorMode::OnEnter()
 {
 	mpModelWorld = ModelManager.CreateWorld(MODE_ID);
-	mpLightingWorld = LightingManager.CreateWorld(MODE_ID);
-	mpEffectWorld = SwarmManager.CreateWorld(MODE_ID);
-	SwarmManager.SetActiveWorld(mpEffectWorld.get());
+	mpLightingWorld = LightingManager.CreateLightingWorld(MODE_ID);
+	mpEffectWorld = EffectsManager.CreateWorld(MODE_ID);
+	EffectsManager.SetDefaultWorld(mpEffectWorld.get());
 	mpAnimWorld = AnimManager.CreateWorld(u"AnimEditorMode");
 
 	mpAnimWorld->SetEffectWorld(mpEffectWorld.get());
 	mpAnimWorld->SetModelWorld(mpModelWorld.get());
 
-	mpLightingWorld->SetConfiguration(id("CreatureEditor"));
-	mpModelWorld->AddLightingWorld(mpLightingWorld.get(), 0, false);
-	mpModelWorld->SetVisible(true);
+	mpLightingWorld->SetLightingState(id("CreatureEditor"));
+	mpModelWorld->SetLightingWorld(mpLightingWorld.get(), 0, false);
+	mpModelWorld->SetActive(true);
 
-	RenderManager.AddRenderable(mpModelWorld->ToRenderable(), 8);
-	RenderManager.AddRenderable(mpAnimWorld.get(), 9);
+	Renderer.RegisterLayer(mpModelWorld->AsLayer(), 8);
+	Renderer.RegisterLayer(mpAnimWorld.get(), 9);
 
 	CameraManager.SetActiveCameraByID(id("EffectEditorCamera"));
 
@@ -137,10 +137,10 @@ bool AnimEditorMode::OnEnter()
 	mpBlocks->GenerateMesh(mCreatures[0]->p_cid);*/
 
 	DebugInformation* pDebugInformation = nullptr;
-	Resource::DBPF* pDBPF = nullptr;
+	Resource::Database* pDBPF = nullptr;
 	ResourceKey name = { id("_SporeModder_AnimEditor"), TypeIDs::animation, GroupIDs::Global };
 
-	pDBPF = ResourceManager.GetDBPF(name);
+	pDBPF = ResourceManager.FindDatabase(name);
 
 	if (!Debugging::Get()->GetDebugInformation(pDBPF, &pDebugInformation)
 		|| !pDebugInformation->GetFilePath(name, &mPath))
@@ -151,7 +151,7 @@ bool AnimEditorMode::OnEnter()
 	UpdateFileTime();
 	App::ConsolePrintF("%ls", mPath.c_str());
 
-	RenderManager.AddRenderable(this, 10);
+	Renderer.RegisterLayer(this, 10);
 
 	/*mpUI = new AnimEditorUI();
 	mpUI->Load();*/
@@ -170,7 +170,7 @@ void AnimEditorMode::OnExit()
 		mpAnimWorld = nullptr;
 	}
 	if (mpEffectWorld) {
-		SwarmManager.RemoveWorld(MODE_ID);
+		EffectsManager.RemoveWorld(MODE_ID);
 		mpEffectWorld = nullptr;
 	}
 	if (mpModelWorld) {
@@ -178,7 +178,7 @@ void AnimEditorMode::OnExit()
 		mpModelWorld = nullptr;
 	}
 	if (mpLightingWorld) {
-		LightingManager.DisposeWorld(MODE_ID);
+		LightingManager.RemoveLightingWorld(MODE_ID);
 		mpLightingWorld = nullptr;
 	}
 }
@@ -268,7 +268,7 @@ void AnimEditorMode::Update(float dt, float delta2)
 	}
 }
 
-void AnimEditorMode::Render(int flags, int layerIndex, App::cViewer** pViewers, void*)
+void AnimEditorMode::DrawLayer(int flags, int layerIndex, App::cViewer** pViewers, Graphics::RenderStatistics&)
 {
 	/*if (mpBlocks) {
 		CameraManager.GetViewer()->LoadTransformations();
@@ -300,8 +300,8 @@ void AnimEditorMode::AddCreature(const ResourceKey& selection)
 		mCreatures.push_back(creature);
 		mCreatureKeys.push_back(selection);
 		mAnimIndices.push_back(-1);
-		mpModelWorld->UpdateModel(creature->GetModel());
-		mpModelWorld->SetModelVisible(creature->GetModel(), true);
+		mpModelWorld->StallUntilLoaded(creature->GetModel());
+		mpModelWorld->SetInWorld(creature->GetModel(), true);
 
 		int index = mCreatures.size() - 1;
 

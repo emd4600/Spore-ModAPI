@@ -30,9 +30,9 @@ public:
 	Debugging();
 	~Debugging();
 
-	/// Gets the debug information for the given DBPF.
-	/// Returns true if the DBPF has debug information, false otherwise.
-	bool GetDebugInformation(const Resource::DBPF* pDBPF, DebugInformation** pDst = nullptr) const;
+	/// Gets the debug information for the given database.
+	/// Returns true if the database has debug information, false otherwise.
+	bool GetDebugInformation(Resource::Database* database, DebugInformation** pDst = nullptr) const;
 
 	/// Detours all the functions related with file debugging.
 	static long AttachDetour();
@@ -49,7 +49,7 @@ protected:
 
 protected:
 	/// Maps every package to the debug information
-	map<const Resource::DBPF*, intrusive_ptr<DebugInformation>> mPackageMap;
+	map<Resource::Database*, intrusive_ptr<DebugInformation>> mPackageMap;
 
 
 private:

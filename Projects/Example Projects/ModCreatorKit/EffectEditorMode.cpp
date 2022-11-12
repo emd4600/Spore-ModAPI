@@ -60,7 +60,7 @@ bool EffectEditorMode::Initialize(App::IGameModeManager*)
 
 bool EffectEditorMode::Dispose()
 {
-	SwarmManager.RemoveWorld(kWorldID);
+	EffectsManager.RemoveWorld(kWorldID);
 	return true;
 }
 
@@ -69,10 +69,10 @@ void EffectEditorMode::CreateEffect()
 	if (mpEffect) mpEffect->Stop(1);
 
 	// We want it to stop and start inmediately, so we will really kill all particles
-	SwarmManager.GetActiveWorld()->SetState(Swarm::kStateShutdown);
-	SwarmManager.GetActiveWorld()->SetState(Swarm::kStateActive);
+	EffectsManager.DefaultWorld()->SetState(Swarm::SwarmState::Shutdown);
+	EffectsManager.DefaultWorld()->SetState(Swarm::SwarmState::Active);
 
-	if (SwarmManager.CreateEffect(id("_effect_editor"), 0, mpEffect)) {
+	if (EffectsManager.CreateVisualEffect(id("_effect_editor"), 0, mpEffect)) {
 		// This will only be executed if the effect existed and a new instance was created
 		mpEffect->Start(1);
 	}
@@ -103,18 +103,17 @@ bool EffectEditorMode::OnEnter()
 {
 	// Get the handle of the main.effdir file
 
-	mpEffectWorld = SwarmManager.CreateWorld(kWorldID);
+	mpEffectWorld = EffectsManager.CreateWorld(kWorldID);
 
-	SwarmManager.SetActiveWorld(mpEffectWorld.get());
+	EffectsManager.SetDefaultWorld(mpEffectWorld.get());
 
 	DebugInformation* pDebugInformation = nullptr;
-	Resource::DBPF* pDBPF = nullptr;
 	ResourceKey name = { id("main"), TypeIDs::effdir, id("_SporeModder_EffectEditor") };
 	string16 path;
 
-	pDBPF = ResourceManager.GetDBPF(name);
+	Resource::Database* database = ResourceManager.FindDatabase(name);
 
-	if (Debugging::Get()->GetDebugInformation(pDBPF, &pDebugInformation)
+	if (Debugging::Get()->GetDebugInformation(database, &pDebugInformation)
 		&& pDebugInformation->GetFilePath(name, &path))
 	{
 		mpPath = path.c_str();
@@ -135,7 +134,7 @@ bool EffectEditorMode::OnEnter()
 
 void EffectEditorMode::OnExit()
 {
-	SwarmManager.RemoveWorld(kWorldID);
+	EffectsManager.RemoveWorld(kWorldID);
 }
 
 // The use of this function is unknown.

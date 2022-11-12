@@ -22,7 +22,7 @@ int MyRenderable::Release()
 }
 
 
-void MyRenderable::Render(int flags, int layerIndex, App::cViewer**, void*)
+void MyRenderable::DrawLayer(int flags, int layerIndex, App::cViewer**, Graphics::RenderStatistics& stats)
 {
 	// Do your rendering.
 }

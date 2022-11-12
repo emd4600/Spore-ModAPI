@@ -28,12 +28,12 @@
 using namespace Resource;
 
 bool DBPF_detour::DETOUR(
-	const ResourceKey& name, IPFRecord** ppDst, int nDesiredAccess, int nCreateDisposition, bool arg_10, DBPFItem* pDstInfo)
+	const ResourceKey& name, IRecord** ppDst, IO::AccessFlags nDesiredAccess, IO::CD nCreateDisposition, bool arg_10, RecordInfo* pDstInfo)
 {
 	DebugInformation* pDebugInformation = nullptr;
 	string16 filePath;
 
-	if (nDesiredAccess == IO::kAccessFlagRead  // we only accept reading
+	if (nDesiredAccess == IO::AccessFlags::Read  // we only accept reading
 		&& ppDst != nullptr  // no point on doing this if we are not going to get the file
 		&& Debugging::Get()
 		&& Debugging::Get()->GetDebugInformation(this, &pDebugInformation)  // if we have debug information
@@ -42,7 +42,7 @@ bool DBPF_detour::DETOUR(
 		if (App::ICheatManager::Get())  // It's possible that the console does not exist yet, don't take risks
 		{
 			string16 dstName;
-			ResourceManager.GetFileName(name, dstName);
+			ResourceManager.GetNameFromKey(name, dstName);
 			App::ConsolePrintF("File %ls accessed.", dstName.c_str());
 		}
 
@@ -51,14 +51,14 @@ bool DBPF_detour::DETOUR(
 
 		mIndexMutex.Lock(Mutex::kDefaultWait);
 
-		DBPFItem* info = mpIndex->GetFileInfo(name);
+		RecordInfo* info = mpIndex->GetFileInfo(name);
 		if (info != nullptr)
 		{
 			if (pDstInfo != nullptr) *pDstInfo = *info;
 
-			if (nCreateDisposition == IO::kCDDefault)
+			if (nCreateDisposition == IO::CD::Default)
 			{
-				nCreateDisposition = IO::kCDOpenExisting;
+				nCreateDisposition = IO::CD::OpenExisting;
 			}
 
 
@@ -80,7 +80,7 @@ bool DBPF_detour::DETOUR(
 				pRecord->SetPath(filePath.c_str());
 				pRecord->AddRef();
 
-				if (mnFileAccess & IO::kAccessFlagWrite) {
+				if ((int)mAccessFlags & (int)IO::AccessFlags::Write) {
 					field_2E8[name] = pRecord;
 				}
 			}

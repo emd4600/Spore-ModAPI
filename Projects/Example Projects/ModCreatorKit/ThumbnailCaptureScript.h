@@ -21,7 +21,7 @@
 #include <Spore\UTFWin\IWinProc.h>
 #include <Spore\Cheats.h>
 #include <Spore\Palettes\ItemViewer.h>
-#include <Spore\Graphics\IRenderable.h>
+#include <Spore\Graphics\ILayer.h>
 #include <Spore\Messaging.h>
 #include <EASTL\hash_map.h>
 
@@ -31,7 +31,7 @@ class ThumbnailCaptureScript
 	: public IWinProc
 	, public ArgScript::ICommand
 	, public DefaultObject
-	, public Graphics::IRenderable
+	, public Graphics::ILayer
 	, public App::IMessageListener
 {
 public:
@@ -48,7 +48,7 @@ public:
 	void ParseLine(const ArgScript::Line& line) override;
 	const char* GetDescription(ArgScript::DescriptionMode mode) const override;
 
-	void Render(int flags, int layerIndex, App::cViewer**, void*) override;
+	void DrawLayer(int flags, int layerIndex, App::cViewer**, Graphics::RenderStatistics& statistics) override;
 
 	bool HandleMessage(uint32_t messageID, void* pMessage) override;
 
@@ -57,7 +57,7 @@ public:
 private:
 
 	void CaptureImage();
-	Vector3 CalculateOffset(const Graphics::Model* model);
+	Vector3 CalculateOffset(Graphics::Model* model);
 
 	void InjectListeners();
 	void RemoveListeners();
