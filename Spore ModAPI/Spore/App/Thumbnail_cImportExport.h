@@ -3,7 +3,7 @@
 #include <Spore\Internal.h>
 #include <Spore\App\IMessageListener.h>
 #include <Spore\Resource\ResourceObject.h>
-#include <Spore\Resource\DatabasePackedFile.h>
+#include <Spore\Resource\Database.h>
 #include <Spore\RenderWare\Raster.h>
 #include <EASTL\hash_map.h>
 #include <EASTL\string.h>
@@ -44,11 +44,11 @@ namespace App
 		/// 
 		/// @param pResource The resource object to encode inside the PNG. It will be encoded using the appropriate Resource::IResourceFactory
 		/// @param pImage The raster that is written as the image
-		/// @param pDBPF The DBPF taht contains the pollen metadata, and where the PNG will be saved
+		/// @param database The Database taht contains the pollen metadata, and where the PNG will be saved
 		/// @param forceReplace [Optional] If false (by default), if the `.png` already exists in the folder, it will try writing variants like `(1)`, `(2)`,...
 		/// @param disableSteganography [Optional] If false (by default), the data in the `.png` will be stored in a special way meant to save space.
 		/// @returns `true` on success, `false` if something failed.
-		bool SavePNG(Resource::ResourceObject* pResource, RenderWare::Raster* pImage, Resource::DBPF* pDBPF, 
+		bool SavePNG(Resource::ResourceObject* pResource, RenderWare::Raster* pImage, Resource::Database* database, 
 			bool forceReplace = false, bool disableSteganography = false);
 
 		static Thumbnail_cImportExport* Get();

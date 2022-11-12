@@ -14,7 +14,7 @@ namespace App
 		Args(uint32_t instanceID, eastl::string16& dst, uint32_t tableID), Args(instanceID, dst, tableID));
 
 	auto_METHOD(Thumbnail_cImportExport, bool, SavePNG,
-		Args(Resource::ResourceObject* pResource, RenderWare::Raster* pImage, Resource::DBPF* pDBPF,
+		Args(Resource::ResourceObject* pResource, RenderWare::Raster* pImage, Resource::Database* pDBPF,
 			bool forceReplace, bool disableSteganography),
 		Args(pResource, pImage, pDBPF, forceReplace, disableSteganography));
 

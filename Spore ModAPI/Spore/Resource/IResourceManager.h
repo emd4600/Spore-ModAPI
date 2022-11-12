@@ -46,8 +46,8 @@ namespace Resource
 	/// for example, `.raster` and `.rw4` are assigned to the same resource type.
 	///
 	/// You can assign your own factories or delete existing ones, but if that is not an option, ResourceManager provides a method to find
-	/// the DatabasePackedFile that contains a certain file. This way, ResourceManager can always be used to get files, either via the GetResource
-	/// method or the GetDBPF one. The DBPFs are stored in the resource manager according to their priority.
+	/// the Database that contains a certain file. This way, ResourceManager can always be used to get files, either via the GetResource
+	/// method or the FindDatabase one. The databases are stored in the resource manager according to their priority.
 	///
 	/// The manager contains a list of ICache instances that is used to avoid repeteadly creating new instances of a resource that
 	/// already exists. The IResourceManager::GetPrivateResource() method can be used instead of IResourceManager::GetResource() to forcibly create a new resource even if it's already
@@ -84,7 +84,7 @@ namespace Resource
 		/// Gets the resource that has the given ResourceKey name. 
 		/// If the resource is contained in the cache, that will be used.
 		/// The name will be modified to use the correct types, according to the mappings in this manager.
-		/// The resource will be seached in all the DBPF files in this manager, unless a specific one is specified.
+		/// The resource will be seached in all the databases in this manager, unless a specific one is specified.
 		/// Once the file is found, the correct factory will be used to generate the appropiate resource, unless
 		/// a specific IResourceFactory is specified.
 		///
@@ -155,10 +155,10 @@ namespace Resource
 			IResourceFactory* pFactory = nullptr,
 			const ResourceKey* pCacheName = nullptr) = 0;
 
-		/// Writes the given resource to a package file. If the DBPF is specified in this method, a new file will
-		/// always be created on it even if it does not exist yet; however, if no DBPF is specified, the resource
-		/// will be written in the first DBPF that contains a file with the given name.
-		/// If there is a problem while writing the resource, the file on the DBPF will be deleted.
+		/// Writes the given resource to a package file. If the database is specified in this method, a new file will
+		/// always be created on it even if it does not exist yet; however, if no database is specified, the resource
+		/// will be written in the first database that contains a file with the given name.
+		/// If there is a problem while writing the resource, the file on the database will be deleted.
 		///
 		/// @param pResource[in] The ResourceObject to write. It will be written according to the IResourceFactory specified or the one that corresponds to the typeID.
 		/// @param pFactoryData[in] [Optional] Additional data that is passed to the resource factory, usually null.
@@ -243,7 +243,7 @@ namespace Resource
 		/* 4Ch */	virtual size_t GetFactoryList(eastl::list<IResourceFactory*>& dst, uint32_t resourceTypeID = ResourceKey::kWildcardID) = 0;
 
 		/// Adds/removes the given DatabasePackedFile to this manager, using the priority specified.
-		/// The priority of a DBPF is used when getting files from the resource manager;
+		/// The priority of a database is used when getting files from the resource manager;
 		/// since a certain file name can be contained in multiple packages, the one with the
 		/// most priority will be chosen.
 		/// The usage of the first argument is unknown, but it is usually 'true'.
@@ -256,7 +256,7 @@ namespace Resource
 		/// Checks if a database is already registered in this manager, and optionally gets its priority.
 		/// @param[in] pDatabase The database
 		/// @param[out] dstPriority [Optional] A pointer to an integer that will contain the priority. This parameter can be nullptr.
-		/// @returns True if the manager contained the DBPF, false otherwise.
+		/// @returns True if the manager contained the database, false otherwise.
 		///
 		/* 54h */	virtual bool IsDatabaseRegistered(Database* pDatabase, int* dstPriority = nullptr) = 0;
 

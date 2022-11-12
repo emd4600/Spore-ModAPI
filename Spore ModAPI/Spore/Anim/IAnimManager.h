@@ -2,7 +2,7 @@
 
 #include <Spore\Anim\IAnimWorld.h>
 #include <Spore\Anim\TLSA.h>
-#include <Spore\Resource\DatabasePackedFile.h>
+#include <Spore\Resource\Database.h>
 
 #define AnimManager (*Anim::IAnimManager::Get())
 
@@ -34,10 +34,10 @@ namespace Anim
 		/* 44h */	virtual void LoadRequiredAnimations(uint32_t animID) = 0;  // reads .animation
 		/* 48h */	virtual int func48h() = 0;
 		/* 4Ch */	virtual int func4Ch() = 0;
-		/* 50h */	virtual bool SaveTlsa(Resource::DBPF* pDBPF) = 0;
-		/* 54h */	virtual bool SavePctp(Resource::DBPF* pDBPF) = 0;
-		/* 58h */	virtual bool SaveGait(Resource::DBPF* pDBPF) = 0;
-		/* 58h */	virtual bool SaveAnimation(Resource::DBPF* pDBPF, int) = 0;
+		/* 50h */	virtual bool SaveTlsa(Resource::Database* database) = 0;
+		/* 54h */	virtual bool SavePctp(Resource::Database* database) = 0;
+		/* 58h */	virtual bool SaveGait(Resource::Database* database) = 0;
+		/* 58h */	virtual bool SaveAnimation(Resource::Database* database, int) = 0;
 		/* 5Ch */	virtual int func5Ch(int, int) = 0;
 
 		static IAnimManager* Get();

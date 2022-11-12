@@ -5,7 +5,7 @@
 namespace Resource
 {
 	///
-	/// A structure that contains the metadata of a file stored in a DBPF, such as the offset in the package file and the size.
+	/// A structure that contains the metadata of a file stored in a database, such as the offset in the package file and the size.
 	///
 	struct RecordInfo
 	{

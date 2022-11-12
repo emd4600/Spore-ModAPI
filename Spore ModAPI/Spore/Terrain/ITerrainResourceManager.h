@@ -21,7 +21,7 @@ namespace Terrain
 
 		/// Creates a property list and saves it to a file with key `outputKey`,
 		/// copying to it the terrain script identified with `groupID!instanceID`.
-		/// This will also rewrite the DBPF that stores the planet property lists.
+		/// This will also rewrite the database that stores the planet property lists.
 		/// @param outputKey
 		/// @param instanceID
 		/// @param groupID

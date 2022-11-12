@@ -37,5 +37,7 @@
 ///
 /// This namespace contains all the necessary classes needed for working with file resources stored in .package files.
 /// The main class is the IResourceManager, which can be used to get resources from the file system.
-/// The DatabasePackedFile represents a .package file that contains resources.
+/// The resource manager contains a list of Database objects, which can be one of these two:
+///  - The DatabasePackedFile represents a .package file that contains resources.
+///  - The DatabaseDirectoryFiles represents a plain disk folder, such as the `Games/Game0` folder
 ///

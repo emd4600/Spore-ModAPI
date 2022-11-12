@@ -24,7 +24,7 @@
 #include <Spore\Simulator\SubSystem\cRelationshipManager.h>
 #include <Spore\Simulator\cStarRecord.h>
 #include <Spore\Simulator\cPlanet.h>
-#include <Spore\Resource\DatabasePackedFile.h>
+#include <Spore\Resource\Database.h>
 #include <Spore\Swarm\Components\DistributeEffect.h>
 #include <Spore\App\IMessageListener.h>
 #include <Spore\App\MessageListenerData.h>
@@ -315,9 +315,9 @@ namespace Simulator
 		/* 21Ch */	bool field_21C;  // true
 		/* 220h */	ObjectPtr mpGlobalCLGItems;  //TODO cCollectableItems
 		/// `planetRecords.pkt`
-		/* 224h */	DatabasePackedFilePtr mpPlanetRecordsTempDBPF;
+		/* 224h */	DatabasePtr mpPlanetRecordsTempDatabase;
 		/// `planetRecords.pkp`
-		/* 228h */	DatabasePackedFilePtr mpPlanetRecordsDBPF;
+		/* 228h */	DatabasePtr mpPlanetRecordsDatabase;
 
 	public:
 		/// Returns the active Simulator star manager, used for most things in space stage.
