@@ -20,27 +20,26 @@
 #pragma once
 
 #include <Spore\Resource\ResourceObject.h>
-
+#include <Spore\Resource\IKeyFilter.h>
 #include <EASTL\intrusive_ptr.h>
+#include <EASTL\list.h>
 
 namespace Resource
 {
-	///
-	/// An interface that is used to store resources in the cache.
-	///
-	class IResourceMap
+	/// An interface that is used to cache loaded resources for fast access.
+	class ICache
 	{
 	public:
-		/* 00h */	virtual ~IResourceMap() = 0;
+		/* 00h */	virtual ~ICache() = 0;
 		/* 04h */	virtual bool Initialize() = 0;
 		/* 08h */	virtual bool Dispose() = 0;
-		/* 0Ch */	virtual uint32_t GetType() = 0;
-		/* 10h */	virtual int func10h() = 0;
-		/* 14h */	virtual void func14h(int) = 0;
+		/* 0Ch */	virtual uint32_t GetCacheType() = 0;
+		/* 10h */	virtual IKeyFilter* GetKeyFilter() = 0;
+		/* 14h */	virtual void SetKeyFilter(IKeyFilter* filter) = 0;
 		/* 18h */	virtual bool GetResource(ResourceKey& key, ResourceObjectPtr* dst = nullptr) = 0;
-		/* 1Ch */	virtual bool func1Ch(int, int) = 0;
-		/* 20h */	virtual bool func20h(int) = 0;
-		/* 24h */	virtual size_t func24h(int, int) = 0;
-		/* 28h */	virtual void func28h(CachedResourceObject*) = 0;
+		/* 1Ch */	virtual bool CacheResource(ResourceObject* resource, bool) = 0;
+		/* 20h */	virtual bool CanCacheResource(ResourceObject* resource) = 0;
+		/* 24h */	virtual size_t GetResourceList(eastl::list<ResourceObjectPtr>& dst, IKeyFilter* filter) = 0;
+		/* 28h */	virtual void Flush(IKeyFilter* filter) = 0;
 	};
 }

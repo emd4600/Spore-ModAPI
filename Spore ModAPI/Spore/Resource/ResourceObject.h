@@ -22,7 +22,7 @@
 #include <Spore\Object.h>
 
 #define ResourceObjectPtr eastl::intrusive_ptr<Resource::ResourceObject>
-#define AsyncResourcePtr eastl::intrusive_ptr<Resource::AsyncResource>
+#define IAsyncRequestPtr eastl::intrusive_ptr<Resource::IAsyncRequest>
 
 namespace Resource
 {
@@ -79,7 +79,7 @@ namespace Resource
 	};
 	ASSERT_SIZE(CachedResourceObject, 0x18);
 
-	class AsyncResource
+	class IAsyncRequest
 		: public Object
 	{
 	public:

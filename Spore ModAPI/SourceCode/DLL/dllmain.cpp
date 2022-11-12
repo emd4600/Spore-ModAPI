@@ -2,7 +2,6 @@
 // dllmain.cpp : Defines the entry point for the DLL application.
 #include "stdafx.h"
 
-#include <eastl::string>
 #include <Spore\Internal.h>
 #include <Spore\ModAPI.h>
 #include "Application.h"

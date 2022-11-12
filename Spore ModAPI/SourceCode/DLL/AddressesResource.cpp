@@ -3,7 +3,7 @@
 #include <Spore\Resource\cResourceManager.h>
 #include <Spore\Resource\DatabasePackedFile.h>
 #include <Spore\Resource\DatabaseDirectoryFiles.h>
-#include <Spore\Resource\IResourceFilter.h>
+#include <Spore\Resource\IKeyFilter.h>
 #include <Spore\Resource\IResourceManager.h>
 #include <Spore\Resource\PFIndexModifiable.h>
 #include <Spore\Resource\PFRecordRead.h>
@@ -14,9 +14,9 @@ namespace Resource
 {
 	namespace Addresses(cResourceManager)
 	{
-		
-		DefineAddress(GetResource, SelectAddress(0x8DF7E0, 0x8DF6FDefineAddress(NeedsToRelease, SelectAddress(0x8DE6D0, 0x8DE520, 0x8DE530));
-		DefineAddress(ReleaseResources, SelectAddress(0x8E1CC0, 0x8E19C0, 0x8E19D0));0, 0x8DF700));
+		DefineAddress(GetResource, SelectAddress(0x8DF7E0, 0x8DF6F0, 0x8DF700)); 
+		DefineAddress(ReleaseResources, SelectAddress(0x8E1CC0, 0x8E19C0, 0x8E19D0));
+		DefineAddress(NeedsToRelease, SelectAddress(0x8DE6D0, 0x8DE520, 0x8DE530));
 		DefineAddress(func10h, SelectAddress(0x8DF810, 0x8DF720, 0x8DF730));
 		const uintptr_t GetAsyncResource = func10h;
 		DefineAddress(GetCachedResource, SelectAddress(0x8DE730, 0x8DE580, 0x8DE590));
@@ -53,8 +53,41 @@ namespace Resource
 		DefineAddress(AddExtensionMapping, SelectAddress(0x8E1B20, 0x8E1820, 0x8E1830));
 		DefineAddress(RemoveExtensionMapping, SelectAddress(0x8E1BD0, 0x8E18D0, 0x8E18E0));
 
-		DefineAddress(Initialize, SelectAddress(0x8DE6D0, 0x8DE520, 0x8DE530));
 		DefineAddress(Dispose, SelectAddress(0x8E1CC0, 0x8E19C0, 0x8E19D0));
+		DefineAddress(Initialize, SelectAddress(0x8DE6D0, 0x8DE520, 0x8DE530));
+		DefineAddress(GetResourceAsync, SelectAddress(0x8DF810, 0x8DF720, 0x8DF730));
+		DefineAddress(GetLoadedResource, SelectAddress(0x8DE730, 0x8DE580, 0x8DE590));
+		DefineAddress(ReloadResource, SelectAddress(0x8DFB50, 0x8DFA60, 0x8DFA70));
+		DefineAddress(GetPrivateResource, SelectAddress(0x8DFCF0, 0x8DFC00, 0x8DFC10));
+		DefineAddress(SetTypeMapping, SelectAddress(0x8E1EF0, 0x8E1BF0, 0x8E1C00));
+		DefineAddress(GetRecordTypesFromResourceType, SelectAddress(0x8E0E70, 0x8E0B80, 0x8E0B90));
+		DefineAddress(GetTypeMapping, SelectAddress(0x8DFD20, 0x8DFC30, 0x8DFC40));
+		DefineAddress(FindRecord, SelectAddress(0x8DFD60, 0x8DFC70, 0x8DFC80));
+		DefineAddress(GetResourceKeyList, SelectAddress(0x8E0F00, 0x8E0C10, 0x8E0C20));
+		DefineAddress(GetRecordKeyList, SelectAddress(0x8E0FF0, 0x8E0CF0, 0x8E0D00));
+		DefineAddress(GetRecordKeyList2, SelectAddress(0x8E11D0, 0x8E0ED0, 0x8E0EE0));
+		DefineAddress(RegisterChangeNotification, SelectAddress(0x8E0A50, 0x8E0760, 0x8E0770));
+		DefineAddress(RegisterFactory, SelectAddress(0x8E2010, 0x8E1D10, 0x8E1D20));
+		DefineAddress(FindFactory, SelectAddress(0x8DFED0, 0x8DFDE0, 0x8DFDF0));
+		DefineAddress(GetFactoryList, SelectAddress(0x8E03D0, 0x8E01F0, 0x8E0200));
+		DefineAddress(RegisterDatabase, SelectAddress(0x8E12F0, 0x8E0FF0, 0x8E1000));
+		DefineAddress(IsDatabaseRegistered, SelectAddress(0x8DE780, 0x8DE5D0, 0x8DE5E0));
+		DefineAddress(FindDatabase, SelectAddress(0x8DE7C0, 0x8DE610, 0x8DE620));
+		DefineAddress(GetDatabaseList, SelectAddress(0x8E0550, 0x8E0370, 0x8E0380));
+		DefineAddress(DoDatabaseChanged, SelectAddress(0x8DEFB0, 0x8DEEB0, 0x8DEEC0));
+		DefineAddress(RegisterCache, SelectAddress(0x8E2310, 0x8E2010, 0x8E2020));
+		DefineAddress(FindCache, SelectAddress(0x8DE810, 0x8DE660, 0x8DE670));
+		DefineAddress(CacheResource, SelectAddress(0x8DE860, 0x8DE6B0, 0x8DE6C0));
+		DefineAddress(FlushCache, SelectAddress(0x8DE8B0, 0x8DE700, 0x8DE710));
+		DefineAddress(GetCacheList, SelectAddress(0x8E05E0, 0x8E0400, 0x8E0410));
+		DefineAddress(GetKeyFromName, SelectAddress(0x8DE6E0, 0x8DE530, 0x8DE540));
+		DefineAddress(GetNameFromKey, SelectAddress(0x8E0660, 0x8E0480, 0x8E0490));
+		DefineAddress(SetKeyName, SelectAddress(0x8E1A40, 0x8E1740, 0x8E1750));
+		DefineAddress(ForgetKeyName, SelectAddress(0x8E1AA0, 0x8E17A0, 0x8E17B0));
+		DefineAddress(GetTypeFromTypename, SelectAddress(0x8DFF50, 0x8DFE60, 0x8DFE70));
+		DefineAddress(GetTypenameFromType, SelectAddress(0x8E0010, 0x8DFF20, 0x8DFF30));
+		DefineAddress(SetTypename, SelectAddress(0x8E1B20, 0x8E1820, 0x8E1830));
+		DefineAddress(ResetTypename, SelectAddress(0x8E1BD0, 0x8E18D0, 0x8E18E0));
 	}
 
 	namespace Addresses(DatabasePackedFile)
@@ -184,6 +217,14 @@ namespace Resource
 
 
 		DefineAddress(ReadData, SelectAddress(0x8DCA40, 0x6C03F0, 0x8DC820));
+
+
+		DefineAddress(GetKey, SelectAddress(0x6C07B0, 0x8DCA90, 0x8DCAA0));
+		DefineAddress(SetKey, SelectAddress(0x8DCCC0, 0x6B4250, 0x6B4250));
+		DefineAddress(GetDatabase, SelectAddress(0xFC8510, 0x6C0230, 0x6C0230));
+		DefineAddress(RecordOpen, SelectAddress(0x8DCFD0, 0x6C0810, 0x8DCD60));
+		DefineAddress(RecordClose, SelectAddress(0x8DCFF0, 0x6C0830, 0x8DCD80));
+		DefineAddress(DoPostClose, SelectAddress(0x8DCF80, 0x6C07C0, 0x8DCD10));
 	}
 
 	namespace Addresses(PFRecordWrite)
@@ -208,6 +249,13 @@ namespace Resource
 		DefineAddress(Read, SelectAddress(0x8DCDA0, 0x6C0510, 0x6C0510));
 		DefineAddress(Flush, SelectAddress(0x8DCDE0, 0x6C0550, 0x6C0550));
 		DefineAddress(Write, SelectAddress(0x6C0AF0, 0x6C0580, 0x6C0580));
+
+		DefineAddress(GetKey, SelectAddress(0x6C07B0, 0x8DCA90, 0x8DCAA0));
+		DefineAddress(SetKey, SelectAddress(0x8DCCC0, 0x6B4250, 0x6B4250));
+		DefineAddress(GetDatabase, SelectAddress(0xFC8510, 0x6C0230, 0x6C0230));
+		DefineAddress(RecordOpen, SelectAddress(0x8DD170, 0x8DCF50, 0x8DCF60));
+		DefineAddress(RecordClose, SelectAddress(0x6C0F80, 0x6C09B0, 0x6C09B0));
+		DefineAddress(DoPostClose, SelectAddress(0x6C0F20, 0x8DCEF0, 0x8DCF00));
 	}
 
 	namespace Addresses(Paths)

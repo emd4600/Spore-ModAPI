@@ -24,7 +24,7 @@
 /// This file includes all the necessary headers to use the resource system in Spore, which includes accessing .package files.
 
 #include <Spore\Resource\IResourceManager.h>
-#include <Spore\Resource\IResourceFilter.h>
+#include <Spore\Resource\IKeyFilter.h>
 #include <Spore\Resource\DatabasePackedFile.h>
 #include <Spore\Resource\DatabaseDirectoryFiles.h>
 #include <Spore\Resource\Database.h>

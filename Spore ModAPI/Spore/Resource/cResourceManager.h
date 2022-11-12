@@ -36,8 +36,8 @@
 
 #include <Spore\IO\IStream.h>
 #include <Spore\Resource\IResourceFactory.h>
-#include <Spore\Resource\IResourceFilter.h>
-#include <Spore\Resource\IResourceMap.h>
+#include <Spore\Resource\IKeyFilter.h>
+#include <Spore\Resource\ICache.h>
 #include <Spore\Resource\IResourceManager.h>
 #include <Spore\Resource\Database.h>
 #include <Spore\FixedPoolAllocator.h>
@@ -52,7 +52,7 @@ namespace Resource
 
 	public:
 
-		typedef eastl::list<DatabasePackedFile*, CoreAllocatorAdapter<ICoreAllocator>> DBPFList;
+		typedef eastl::list<Database*, CoreAllocatorAdapter<ICoreAllocator>> DatabaseList;
 
 
 		virtual bool Initialize() override;
@@ -61,84 +61,88 @@ namespace Resource
 		/* 0Ch */	virtual bool GetResource(
 			const ResourceKey& name,
 			ResourceObjectPtr* ppDst = nullptr, 
-			int arg_8 = 0, 
-			DBPF* pDBPF = nullptr,
+			void* arg_8 = 0, 
+			Database* pDatabase = nullptr,
 			IResourceFactory* pFactory = nullptr, 
 			const ResourceKey* pCacheName = nullptr) override;
 
-		/* 10h */	virtual bool GetAsyncResource(
+		/* 10h */	virtual bool GetResourceAsync(
 			const ResourceKey& name,
 			ResourceObjectPtr* ppDst = nullptr,
-			AsyncResourcePtr* arg_8 = nullptr, 
+			IAsyncRequestPtr* arg_8 = nullptr, 
 			void* arg_C = nullptr, 
 			void* arg_10 = nullptr, 
-			DBPF* pDBPF = nullptr, 
+			Database* pDatabase = nullptr, 
 			IResourceFactory* pFactory = nullptr, 
 			const ResourceKey* pAlternativeName = nullptr) override;
 
-		/* 14h */	virtual bool GetCachedResource(const ResourceKey& name, ResourceObjectPtr* pDst) override;
-		/* 18h */	virtual bool func18h(int arg_0, int arg_4, int arg_8, int arg_C, int arg_10) override;
-		/* 1Ch */	virtual bool ReadResource(
+		/* 14h */	virtual bool GetLoadedResource(const ResourceKey& name, ResourceObjectPtr* pDst) override;
+		/* 18h */	virtual bool ReloadResource(const ResourceKey& name,
+			ResourceObject* pResource,
+			void* pFactoryData = nullptr,
+			Database* pDatabase = nullptr,
+			IResourceFactory* pFactory = nullptr) override;
+		/* 1Ch */	virtual bool GetPrivateResource(
 			const ResourceKey& name,
 			ResourceObjectPtr* ppDst = nullptr,
-			int arg_8 = 0,
-			DBPF* pDBPF = nullptr,
+			void* arg_8 = 0,
+			Database* pDatabase = nullptr,
 			IResourceFactory* pFactory = nullptr,
 			const ResourceKey* pCacheName = nullptr) override;
 
 		/* 20h */	virtual bool WriteResource(
 			const ResourceObject* pResource,
-			int arg_4 = 0, 
-			DBPF* pDBPF = nullptr, 
+			void* arg_4 = 0,
+			Database* pDatabase = nullptr, 
 			IResourceFactory* pFactory = nullptr, 
 			const ResourceKey* pNameKey = nullptr) override;
 
-		/* 24h */	virtual void SetTypeRemap(uint32_t nTypeID, uint32_t* pnTypes, size_t nCount) override;
-		/* 28h */	virtual size_t GetTypeRemap(eastl::vector<uint32_t>& dst, uint32_t nTypeID) const override;
-		/* 2Ch */	virtual uint32_t GetGeneralTypeID(uint32_t nSubtypeID) const override;
-		/* 30h */	virtual DBPF* GetRealFileKey(const ResourceKey& nameKey, ResourceKey* pDst=nullptr, DBPF* pDBPF=nullptr) const override;
-		/* 34h */	virtual size_t func34h(eastl::vector<ResourceKey>& pDst, int arg_4) override;
-		/* 38h */	virtual size_t GetFileKeys(eastl::vector<ResourceKey>& dst, IResourceFilter* request, eastl::vector<DBPF*>* pDstDBPFs=nullptr) const override;
-		/* 3Ch */	virtual int func3Ch(int, int, int) override;
-		/* 40h */	virtual bool func40h(int, int, int, int, int) override;
-		/* 44h */	virtual bool SetResourceFactory(bool bRemove, IResourceFactory* pFactory, uint32_t arg_8) override;
-		/* 48h */	virtual IResourceFactory* GetResourceFactory(uint32_t nTypeID, uint32_t nSubTypeID = ResourceKey::kWildcardID) const override;
-		/* 4Ch */	virtual size_t GetResourceFactories(eastl::list<IResourceFactory*>& dst, uint32_t nTypeID = ResourceKey::kWildcardID) const override;
-		/* 50h */	virtual bool AddDBPF(bool, Database* pDBPF, int nPriority) override;
-		/* 54h */	virtual bool GetPriority(DatabasePackedFile* pDBPF, int* pDst = nullptr) const override;
-		/* 58h */	virtual DatabasePackedFile* GetDBPF(const ResourceKey& name) const override;
-		/* 5Ch */	virtual size_t GetAllDBPFs(DBPFList& dst, const ResourceKey* pFileKey = nullptr) override;
-		/* 60h */	virtual int func60h(int, int) override;
-		/* 64h */	virtual bool func64h(int, int, int) override;
-		/* 68h */	virtual IResourceMap* GetResourceCache(ResourceKey& name) const override;
-		/* 6Ch */	virtual bool func6Ch(int, int) override;
-		/* 70h */	virtual void func70h(IResourceMap*, CachedResourceObject*) override;
-		/* 74h */	virtual size_t GetResourceCaches(eastl::list<IResourceMap*>& dst) const override;
-		/* 78h */	virtual bool AddFileName(const char16_t* pFileName) override;
-		/* 7Ch */	virtual void GetFileName(const ResourceKey& resourceKey, eastl::string16& dst) const override;
-		/* 80h */	virtual bool SetFileName(const ResourceKey& resourceKey, const char16_t* pFileName) override;
-		/* 84h */	virtual bool RemoveFileName(const ResourceKey& resourceKey) override;
-		/* 88h */	virtual uint32_t GetTypeID(const char16_t* pExtension) const override;
-		/* 8Ch */	virtual char16_t* GetExtension(uint32_t nTypeID) const override;
-		/* 90h */	virtual bool AddExtensionMapping(uint32_t nTypeID, const char16_t* pExtension) override;
-		/* 94h */	virtual bool RemoveExtensionMapping(uint32_t nTypeID) override;
+		/* 24h */	virtual void SetTypeMapping(uint32_t nTypeID, uint32_t* pnTypes, size_t nCount) override;
+		/* 28h */	virtual size_t GetRecordTypesFromResourceType(eastl::vector<uint32_t>& dst, uint32_t nTypeID) override;
+		/* 2Ch */	virtual uint32_t GetTypeMapping(uint32_t nSubtypeID) override;
+		/* 30h */	virtual Database* FindRecord(const ResourceKey& nameKey, ResourceKey* pDst=nullptr, Database* pDatabase=nullptr) override;
+		/* 34h */	virtual size_t GetResourceKeyList(eastl::vector<ResourceKey>& pDst, IKeyFilter* filter) override;
+		/* 38h */	virtual size_t GetRecordKeyList(eastl::vector<ResourceKey>& dst, IKeyFilter* request, eastl::vector<Database*>* pDstDatabases=nullptr) override;
+		/* 3Ch */	virtual size_t GetRecordKeyList2(eastl::vector<ResourceKey>& dst, IKeyFilter* filter, bool cached) override;
+		/* 40h */	virtual bool RegisterChangeNotification(bool, ChangeNotificationCallback_t callback, void* data, IKeyFilter* filter, int) override;
+		/* 44h */	virtual bool RegisterFactory(bool bRemove, IResourceFactory* pFactory, uint32_t arg_8) override;
+		/* 48h */	virtual IResourceFactory* FindFactory(uint32_t nTypeID, uint32_t nSubTypeID = ResourceKey::kWildcardID) override;
+		/* 4Ch */	virtual size_t GetFactoryList(eastl::list<IResourceFactory*>& dst, uint32_t nTypeID = ResourceKey::kWildcardID) override;
+		/* 50h */	virtual bool RegisterDatabase(bool, Database* pDatabase, int nPriority) override;
+		/* 54h */	virtual bool IsDatabaseRegistered(Database* pDatabase, int* pDst = nullptr) override;
+		/* 58h */	virtual Database* FindDatabase(const ResourceKey& name) override;
+		/* 5Ch */	virtual size_t GetDatabaseList(DatabaseList& dst, const ResourceKey* pFileKey = nullptr) override;
+		/* 60h */	virtual void DoDatabaseChanged(Database* pDatabase, eastl::vector<ResourceKey>& keys) override;
+		/* 64h */	virtual bool RegisterCache(bool add, ICache* pCache, int) override;
+		/* 68h */	virtual ICache* FindCache(const ResourceKey& name) override;
+		/* 6Ch */	virtual bool CacheResource(ResourceObject* pResource, bool) override;
+		/* 70h */	virtual void FlushCache(ICache*, IKeyFilter*) override;
+		/* 74h */	virtual size_t GetCacheList(eastl::list<ICache*>& dst) override;
+		/* 78h */	virtual ResourceKey GetKeyFromName(const char16_t* pFileName, uint32_t defaultTypeID = 0, uint32_t defaultGroupID = 0) override;
+		/* 7Ch */	virtual void GetNameFromKey(const ResourceKey& resourceKey, eastl::string16& dst) override;
+		/* 80h */	virtual bool SetKeyName(const ResourceKey& resourceKey, const char16_t* pFileName) override;
+		/* 84h */	virtual bool ForgetKeyName(const ResourceKey& resourceKey) override;
+		/* 88h */	virtual uint32_t GetTypeFromTypename(const char16_t* pExtension) override;
+		/* 8Ch */	virtual const char16_t* GetTypenameFromType(uint32_t nTypeID) override;
+		/* 90h */	virtual bool SetTypename(uint32_t nTypeID, const char16_t* pExtension) override;
+		/* 94h */	virtual bool ResetTypename(uint32_t nTypeID) override;
 
 
 	protected:
 		typedef eastl::hash_map<uint32_t, eastl::vector<eastl::pair<IResourceFactoryPtr, uint32_t>>, ICoreAllocatorAdapter> FactoriesMap_t;
-		typedef eastl::hash_map<uint32_t, eastl::vector<uint32_t>, ICoreAllocatorAdapter> TypesMap_t;
-		typedef eastl::hash_map<uint32_t, uint32_t, ICoreAllocatorAdapter> SubtypesMap_t;
+		typedef eastl::hash_map<uint32_t, eastl::vector<uint32_t>, ICoreAllocatorAdapter> ResourceTypeToRecordTypeMap_t;
+		typedef eastl::hash_map<uint32_t, uint32_t, ICoreAllocatorAdapter> RecordTypeToResourceTypeMap_t;
 		typedef eastl::hash_map<uint32_t, eastl::string16, ICoreAllocatorAdapter> ExtensionsMap_t;
 		typedef eastl::hash_map<ResourceKey, eastl::string16, FixedPoolAllocatorAdapter> FilenamesMap_t;
-		typedef eastl::vector<eastl::pair<IResourceMap*, int>> CacheVector_t;
+		typedef eastl::vector<eastl::pair<ICache*, int>> CacheVector_t;
 
 		/* 04h */	bool mbNeedsToRelease;
 		/* 08h */	ICoreAllocator* mpAllocator;
-		/* 0Ch */	eastl::map<int, int, eastl::less<ResourceKey>, ICoreAllocatorAdapter> field_0C;
+		/* 0Ch */	eastl::map<int, int, eastl::less<ResourceKey>, ICoreAllocatorAdapter> mChangeNotifications;
 		/* 2Ch */	void* field_2C;  // pointer to DBList
 		/* 30h */	FactoriesMap_t		mResourceFactories;
-		/* 54h */	TypesMap_t			mTypesRemapping;  // used to get multiple typeIDs from a single one
-		/* 78h */	SubtypesMap_t		mSubtypesMap;  // subtype to typeID, inverse of mTypesRemapping
+		/* 54h */	ResourceTypeToRecordTypeMap_t mResourceTypeToRecordType;  // used to get multiple typeIDs from a single one
+		/* 78h */	RecordTypeToResourceTypeMap_t mRecordTypeToResourceType;  // subtype to typeID, inverse of mTypesRemapping
 		/* 9Ch */	CacheVector_t		mCacheVector;
 		/* B0h */	ExtensionsMap_t		mExtensionMappings;
 		/* D4h */	FixedPoolAllocator	field_D4;
@@ -170,10 +174,10 @@ namespace Resource
 		DeclareAddress(SetResourceFactory);
 		DeclareAddress(GetResourceFactory);
 		DeclareAddress(GetResourceFactories);
-		DeclareAddress(AddDBPF);
+		DeclareAddress(AddDatabase);
 		DeclareAddress(GetPriority);
-		DeclareAddress(GetDBPF);
-		DeclareAddress(GetAllDBPFs);
+		DeclareAddress(GetDatabase);
+		DeclareAddress(GetAllDatabases);
 		DeclareAddress(func60h);
 		DeclareAddress(func64h);
 		DeclareAddress(GetResourceCache);
@@ -191,6 +195,41 @@ namespace Resource
 
 		DeclareAddress(Initialize);
 		DeclareAddress(Dispose);
+		//DeclareAddress(GetResource);
+		DeclareAddress(GetResourceAsync);
+		DeclareAddress(GetLoadedResource);
+		DeclareAddress(ReloadResource);
+		DeclareAddress(GetPrivateResource);
+		//DeclareAddress(WriteResource);
+		DeclareAddress(SetTypeMapping);
+		DeclareAddress(GetRecordTypesFromResourceType);
+		DeclareAddress(GetTypeMapping);
+		DeclareAddress(FindRecord);
+		DeclareAddress(GetResourceKeyList);
+		DeclareAddress(GetRecordKeyList);
+		DeclareAddress(GetRecordKeyList2);
+		DeclareAddress(RegisterChangeNotification);
+		DeclareAddress(RegisterFactory);
+		DeclareAddress(FindFactory);
+		DeclareAddress(GetFactoryList);
+		DeclareAddress(RegisterDatabase);
+		DeclareAddress(IsDatabaseRegistered);
+		DeclareAddress(FindDatabase);
+		DeclareAddress(GetDatabaseList);
+		DeclareAddress(DoDatabaseChanged);
+		DeclareAddress(RegisterCache);
+		DeclareAddress(FindCache);
+		DeclareAddress(CacheResource);
+		DeclareAddress(FlushCache);
+		DeclareAddress(GetCacheList);
+		DeclareAddress(GetKeyFromName);
+		DeclareAddress(GetNameFromKey);
+		DeclareAddress(SetKeyName);
+		DeclareAddress(ForgetKeyName);
+		DeclareAddress(GetTypeFromTypename);
+		DeclareAddress(GetTypenameFromType);
+		DeclareAddress(SetTypename);
+		DeclareAddress(ResetTypename);
 	}
 
 }

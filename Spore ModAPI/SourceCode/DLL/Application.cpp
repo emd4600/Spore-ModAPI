@@ -4,25 +4,25 @@
 #include <Spore\ArgScript\FormatParser.h>
 #include <Spore\IO.h>
 
-bool ShaderFragments_detour::DETOUR(DatabasePackedFile* pDBPF)
+bool ShaderFragments_detour::DETOUR(Resource::Database* pDBPF)
 {
-	pDBPF = ResourceManager.GetDBPF(
+	pDBPF = ResourceManager.FindDatabase(
 		ResourceKey(mShaderPath, Graphics::IMaterialManager::kSporeMaterialTypeID, Graphics::IMaterialManager::kShaderFragmentsGroupID));
 
 	return original_function(this, pDBPF);
 }
 
 void LoadMaterials() {
-	StandardFileFilter filter;
-	filter.groupID = IMaterialManager::kShadersGroupID;
+	Resource::StandardFileFilter filter;
+	filter.groupID = Graphics::IMaterialManager::kShadersGroupID;
 	filter.typeID = TypeIDs::smt;
 
 	eastl::vector<ResourceKey> keys;
-	if (ResourceManager.GetFileKeys(keys, &filter)) {
+	if (ResourceManager.GetRecordKeyList(keys, &filter)) {
 		for (const ResourceKey& key : keys) {
 			// Don't read the Spore ones, from 0 to 3
 			if (key.instanceID > 3) {
-				if (IMaterialManager::ReadCompiledShaders(key.instanceID)) {
+				if (Graphics::IMaterialManager::ReadCompiledShaders(key.instanceID)) {
 					App::ConsolePrintF("Loaded shaders 0x%x", key.instanceID);
 				}
 				else {
@@ -34,14 +34,14 @@ void LoadMaterials() {
 
 	keys.clear();
 
-	filter.groupID = IMaterialManager::kCompiledStatesLinkGroupID;
+	filter.groupID = Graphics::IMaterialManager::kCompiledStatesLinkGroupID;
 	filter.typeID = TypeIDs::smt;
 
-	if (ResourceManager.GetFileKeys(keys, &filter)) {
+	if (ResourceManager.GetRecordKeyList(keys, &filter)) {
 		for (const ResourceKey& key : keys) {
 			// Don't read the Spore ones, from 0 to 3
 			if (key.instanceID > 3) {
-				if (IMaterialManager::ReadMaterials(key.instanceID)) {
+				if (Graphics::IMaterialManager::ReadMaterials(key.instanceID)) {
 					App::ConsolePrintF("Loaded materials 0x%x", key.instanceID);
 				}
 				else {
@@ -57,7 +57,7 @@ namespace ModAPI
 	eastl::fixed_vector<InitFunction, MAX_MODS> initFunctions;
 	eastl::fixed_vector<InitFunction, MAX_MODS> postInitFunctions;
 	eastl::fixed_vector<InitFunction, MAX_MODS> disposeFunctions;
-	fixed_map<uint32_t, intrusive_ptr<Simulator::ISimulatorStrategy>, MAX_MODS> simulatorStrategies;
+	eastl::fixed_map<uint32_t, ISimulatorStrategyPtr, MAX_MODS> simulatorStrategies;
 
 	uint32_t CRC_TABLE[256];
 
@@ -91,7 +91,7 @@ namespace ModAPI
 		GenerateCRCTable();
 
 		long result = 0;
-		result |= ShaderFragments_detour::attach(GetAddress(cMaterialManager, ReadShaderFragments));
+		result |= ShaderFragments_detour::attach(GetAddress(Graphics::cMaterialManager, ReadShaderFragments));
 		result |= sub_7E6C60_detour::attach(Address(SelectAddress(0x7E6C60, 0x7E67E0, 0x7E6850)));
 		result |= AppInit_detour::attach(Address(SelectAddress(0xF48230, , 0xF47E90)));
 		result |= AppShutdown_detour::attach(Address(SelectAddress(0xF47950, , 0xF475A0)));
@@ -167,7 +167,7 @@ namespace ModAPI
 			auto it = simulatorStrategies.find(ids[i]);
 			if (it == simulatorStrategies.end() || !it->second)
 			{
-				s->SetPosition(sizes[i], IO::kPositionTypeCurrent);
+				s->SetPosition(sizes[i], IO::PositionType::Current);
 			}
 			else
 			{

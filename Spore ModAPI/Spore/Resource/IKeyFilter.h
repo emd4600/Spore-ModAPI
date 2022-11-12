@@ -24,13 +24,11 @@
 
 namespace Resource
 {
-	///
 	/// A generic interface used to filter ResourceKey objects. 
-	///
-	class IResourceFilter
+	class IKeyFilter
 	{
 	public:
-		virtual ~IResourceFilter() {};
+		virtual ~IKeyFilter() {};
 
 		/// A method used to determine whether a file with this ResourceKey name is accepted.
 		/// @param name
@@ -44,7 +42,7 @@ namespace Resource
 	/// instanceIDs, typeIDs or groupIDs, allowing to use wildcardss (i.e. accept all) on each of them.
 	/// Additionally, a mask can be specified for groupIDs, so only certain parts of the groupID are required to match.
 	///
-	class StandardFileFilter : public IResourceFilter
+	class StandardFileFilter : public IKeyFilter
 	{
 	public:
 		StandardFileFilter(

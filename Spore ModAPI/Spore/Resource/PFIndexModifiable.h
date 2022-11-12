@@ -22,7 +22,7 @@
 #include <EASTL\hash_map.h>
 #include <EASTL\vector.h>
 #include <Spore\ResourceKey.h>
-#include <Spore\Resource\IResourceFilter.h>
+#include <Spore\Resource\IKeyFilter.h>
 #include <Spore\FixedPoolAllocator.h>
 #include <Spore\CoreAllocatorAdapter.h>
 #include <Spore\IO\EAIOZoneObject.h>
@@ -79,7 +79,7 @@ namespace Resource
 		/// @param filter The RequestFilter used to decide which file names must be added into the vector.
 		/// @returns The number of file names added to the vector.
 		///
-		/* 1Ch */	virtual size_t GetFiles(eastl::vector<ResourceKey>& dstVector, IResourceFilter* filter = nullptr);
+		/* 1Ch */	virtual size_t GetFiles(eastl::vector<ResourceKey>& dstVector, IKeyFilter* filter = nullptr);
 
 		/// 
 		/// Adds all the file names (as ResourceKeys) in this PFIndex to the given vector.

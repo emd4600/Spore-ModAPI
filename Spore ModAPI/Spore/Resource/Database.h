@@ -19,7 +19,7 @@
 
 #pragma once
 
-#include <Spore\Resource\IResourceFilter.h>
+#include <Spore\Resource\IKeyFilter.h>
 #include <Spore\Resource\IRecord.h>
 #include <Spore\Resource\RecordInfo.h>
 #include <Spore\IO\EAIOZoneObject.h>
@@ -50,7 +50,7 @@ namespace Resource
 		/* 24h */	virtual bool Flush() = 0;
 		/* 28h */	virtual const char16_t* GetLocation() const = 0;
 		/* 2Ch */	virtual bool SetLocation(const char16_t* path) = 0;
-		/* 30h */	virtual size_t GetKeyList(eastl::vector<ResourceKey>& dstVector, IResourceFilter* filter = nullptr) = 0;
+		/* 30h */	virtual size_t GetKeyList(eastl::vector<ResourceKey>& dstVector, IKeyFilter* filter = nullptr) = 0;
 		/* 34h */	virtual bool OpenRecord(
 			const ResourceKey& name,
 			IRecord** ppDst,

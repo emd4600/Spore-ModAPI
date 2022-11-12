@@ -41,7 +41,7 @@ namespace Resource
 
 		/* 10h */	virtual bool Initialize() = 0;
 		/* 14h */	virtual bool Dispose() = 0;
-		/* 18h */	virtual uint32_t GetType() = 0;
+		/* 18h */	virtual uint32_t GetFactoryType() = 0;
 
 		///
 		/// Creates a new resource of the specified type, using the file record given.
@@ -49,8 +49,9 @@ namespace Resource
 		/// @param[out] pDst A pointer where the ResourceObject created must be written.
 		/// @param typeID The type ID of the file to read, which might be used to differentiate between different file formats or resource types.
 		///
-		/* 1Ch */	virtual bool CreateResource(IRecord* pRecord, ResourceObjectPtr& pDst, int, uint32_t typeID) = 0;
-		/* 20h */	virtual bool AsyncAccess(IRecord** ppDst, int, Database* pDBPF, int, int, int) = 0;  // ? renamed this to avoid name collisions in cPropManager...
+		/* 1Ch */	virtual bool CreateResource(IRecord* pRecord, ResourceObjectPtr& pDst, void* extraData, uint32_t typeID) = 0;
+
+		/* 20h */	virtual bool CreateResourceAsync(IAsyncRequestPtr* ppDst, int16_t, IRecord* pRecord, void* extraData, uint32_t typeID, int) = 0;
 
 		///
 		/// Reads the data into the resource given.
@@ -58,7 +59,7 @@ namespace Resource
 		/// @param pResource The ResourceObject where the data must be loaded.
 		/// @param typeID The type ID of the file to read, which might be used to differentiate between different file formats.
 		///
-		/* 24h */	virtual bool Read(IRecord* pRecord, ResourceObject* pResource, int, uint32_t typeID) = 0;
+		/* 24h */	virtual bool ReadResource(IRecord* pRecord, ResourceObject* pResource, void* extraData, uint32_t typeID) = 0;
 
 		///
 		/// Reads the resource into the file given.
@@ -66,7 +67,7 @@ namespace Resource
 		/// @param pRecord The IPFRecord that points to the file that must be written.
 		/// @param typeID The type ID of the file to write, which might be used to differentiate between different file formats.
 		///
-		/* 28h */	virtual bool Write(ResourceObject* pResource, IRecord* pRecord, int, uint32_t typeID) = 0;
+		/* 28h */	virtual bool WriteResource(ResourceObject* pResource, IRecord* pRecord, void* extraData, uint32_t typeID) = 0;
 
 		///
 		/// This method must tell all the type IDs that are accepted by this factory. The method must return how many type IDs
@@ -83,6 +84,6 @@ namespace Resource
 		/// @param typeID
 		/// @param subTypeID
 		///
-		/* 30h */	virtual bool IsValid(uint32_t typeID, uint32_t subTypeID) = 0;
+		/* 30h */	virtual bool CanConvert(uint32_t typeID, uint32_t subTypeID) = 0;
 	};
 }

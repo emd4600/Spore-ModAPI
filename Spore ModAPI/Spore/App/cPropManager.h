@@ -21,10 +21,9 @@
 
 #include <EASTL\vector.h>
 #include <EASTL\hash_map.h>
+#include <EASTL\map.h>
 #include <EASTL\string.h>
 #include <EASTL\intrusive_ptr.h>
-
-
 #include <Spore\App\IPropManager.h>
 #include <Spore\App\IMessageListener.h>
 #include <Spore\Resource\IResourceManager.h>
@@ -37,7 +36,10 @@ namespace App
 	///
 	/// The implementation of IPropManager; this should only be used for extending and detouring.
 	///
-	class cPropManager : public IPropManager, public Resource::IResourceFactory, public IMessageListener
+	class cPropManager 
+		: public IPropManager
+		, public Resource::IResourceFactory
+		, public IMessageListener
 	{
 	public:
 		cPropManager();
@@ -47,13 +49,13 @@ namespace App
 
 		virtual bool HandleMessage(uint32_t messageID, void* pMessage) override;
 
-		virtual uint32_t GetType() override;
-		virtual bool CreateResource(Resource::IRecord* pRecord, ResourceObjectPtr& pDst, int, uint32_t nTypeID) override;
-		virtual bool AsyncAccess(Resource::IRecord** ppDst, int, Resource::Database* database, int, int, int) override;
-		virtual bool Read(Resource::IRecord* pRecord, Resource::ResourceObject* pResource, int, uint32_t nTypeID) override;
-		virtual bool Write(Resource::ResourceObject* pResource, Resource::IRecord* pRecord, int, uint32_t nTypeID) override;
+		virtual uint32_t GetFactoryType() override;
+		virtual bool CreateResource(Resource::IRecord* pRecord, ResourceObjectPtr& pDst, void*, uint32_t nTypeID) override;
+		virtual bool CreateResourceAsync(IAsyncRequestPtr* ppDst, int16_t, Resource::IRecord* pRecord, void* extraData, uint32_t typeID, int) override;
+		virtual bool ReadResource(Resource::IRecord* pRecord, Resource::ResourceObject* pResource, void*, uint32_t nTypeID) override;
+		virtual bool WriteResource(Resource::ResourceObject* pResource, Resource::IRecord* pRecord, void*, uint32_t nTypeID) override;
 		virtual size_t GetSupportedTypes(uint32_t* pDstTypes, size_t nCount) const override;
-		virtual bool IsValid(uint32_t nTypeID, uint32_t nSubTypeID) override;
+		virtual bool CanConvert(uint32_t nTypeID, uint32_t nSubTypeID) override;
 
 		virtual int AddRef() override;
 		virtual int Release() override;
@@ -80,7 +82,7 @@ namespace App
 		virtual bool GetPropertyGroupIDAt(size_t nIndex, uint32_t& dst) const override;
 
 
-	protected:
+	public:
 		/* 10h */	int field_10;
 		/* 14h */	bool mbIsInitialized;
 		/* 15h */	bool field_15;
@@ -144,6 +146,10 @@ namespace App
 		DeclareAddress(GetPropertyGroupsCount);
 		DeclareAddress(GetPropertyGroupIDAt);
 
-
+		DeclareAddress(GetFactoryType);
+		DeclareAddress(CreateResourceAsync);
+		DeclareAddress(ReadResource);
+		DeclareAddress(WriteResource);
+		DeclareAddress(CanConvert);
 	}
 }

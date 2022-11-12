@@ -71,12 +71,12 @@ namespace Graphics
 		using namespace Resource;
 
 		auto fileKey = ResourceKey(instanceID, IMaterialManager::kSporeMaterialTypeID, IMaterialManager::kShadersGroupID);
-		auto dbpf = ResourceManager.GetDBPF(fileKey);
+		auto database = ResourceManager.FindDatabase(fileKey);
 
-		if (!dbpf) return false;
+		if (!database) return false;
 
 		IRecord* record;
-		if (!dbpf->OpenRecord(fileKey, &record)) return false;
+		if (!database->OpenRecord(fileKey, &record)) return false;
 
 		return ReadCompiledShaders(record->GetStream());
 	}
@@ -163,10 +163,10 @@ namespace Graphics
 		auto rwKey = ResourceKey(instanceID, RenderWareFile::TYPE, IMaterialManager::kCompiledStatesGroupID);
 		if (!ResourceManager.GetResource(rwKey, &pRenderWare)) return false;
 
-		auto dbpf = ResourceManager.GetDBPF(rwKey);
+		auto database = ResourceManager.FindDatabase(rwKey);
 
 		IRecord* record;
-		if (!dbpf->OpenRecord(ResourceKey(instanceID, IMaterialManager::kSporeMaterialTypeID, IMaterialManager::kCompiledStatesLinkGroupID), &record)) {
+		if (!database->OpenRecord(ResourceKey(instanceID, IMaterialManager::kSporeMaterialTypeID, IMaterialManager::kCompiledStatesLinkGroupID), &record)) {
 			return false;
 		}
 

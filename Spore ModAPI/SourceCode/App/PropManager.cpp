@@ -54,13 +54,13 @@ namespace App
 
 	auto_METHOD_VIRTUAL(cPropManager, IMessageListener, bool, HandleMessage, Args(uint32_t messageID, void* pMessage), Args(messageID, pMessage));
 
-	auto_METHOD_VIRTUAL_(cPropManager, IResourceFactory, uint32_t, GetType);
-	auto_METHOD_VIRTUAL(cPropManager, IResourceFactory, bool, CreateResource, Args(Resource::IRecord* pRecord, ResourceObjectPtr& pDst, int arg_8, uint32_t nTypeID), Args(pRecord, pDst, arg_8, nTypeID));
-	auto_METHOD_VIRTUAL(cPropManager, IResourceFactory, bool, AsyncAccess, Args(Resource::IRecord** arg_0, int arg_4, Resource::Database* arg_8, int arg_c, int arg_10, int arg_14), Args(arg_0, arg_4, arg_8, arg_c, arg_10, arg_14));
-	auto_METHOD_VIRTUAL(cPropManager, IResourceFactory, bool, Read, Args(Resource::IRecord* pRecord, Resource::ResourceObject* pResource, int arg_8, uint32_t nTypeID), Args(pRecord, pResource, arg_8, nTypeID));
-	auto_METHOD_VIRTUAL(cPropManager, IResourceFactory, bool, Write, Args(Resource::ResourceObject* pResource, Resource::IRecord* pRecord, int arg_8, uint32_t nTypeID), Args(pResource, pRecord, arg_8, nTypeID));
+	auto_METHOD_VIRTUAL_(cPropManager, IResourceFactory, uint32_t, GetFactoryType);
+	auto_METHOD_VIRTUAL(cPropManager, IResourceFactory, bool, CreateResource, Args(Resource::IRecord* pRecord, ResourceObjectPtr& pDst, void* arg_8, uint32_t nTypeID), Args(pRecord, pDst, arg_8, nTypeID));
+	auto_METHOD_VIRTUAL(cPropManager, IResourceFactory, bool, CreateResourceAsync, Args(IAsyncRequestPtr* arg_0, int16_t arg_4, Resource::IRecord* arg_8, void* arg_c, uint32_t arg_10, int arg_14), Args(arg_0, arg_4, arg_8, arg_c, arg_10, arg_14));
+	auto_METHOD_VIRTUAL(cPropManager, IResourceFactory, bool, ReadResource, Args(Resource::IRecord* pRecord, Resource::ResourceObject* pResource, void* arg_8, uint32_t nTypeID), Args(pRecord, pResource, arg_8, nTypeID));
+	auto_METHOD_VIRTUAL(cPropManager, IResourceFactory, bool, WriteResource, Args(Resource::ResourceObject* pResource, Resource::IRecord* pRecord, void* arg_8, uint32_t nTypeID), Args(pResource, pRecord, arg_8, nTypeID));
 	auto_METHOD_VIRTUAL_const(cPropManager, IResourceFactory, size_t, GetSupportedTypes, Args(uint32_t* pDstTypes, size_t nCount), Args(pDstTypes, nCount));
-	auto_METHOD_VIRTUAL(cPropManager, IResourceFactory, bool, IsValid, Args(uint32_t nTypeID, uint32_t nSubTypeID), Args(nTypeID, nSubTypeID));
+	auto_METHOD_VIRTUAL(cPropManager, IResourceFactory, bool, CanConvert, Args(uint32_t nTypeID, uint32_t nSubTypeID), Args(nTypeID, nSubTypeID));
 
 	auto_METHOD_VIRTUAL_(cPropManager, IPropManager, int, AddRef);
 	auto_METHOD_VIRTUAL_(cPropManager, IPropManager, int, Release);

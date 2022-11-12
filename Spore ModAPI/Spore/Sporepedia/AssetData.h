@@ -142,8 +142,8 @@ namespace Sporepedia
 		/* 3Ch */	ObjectPtr field_3C;
 		/* 40h */	eastl::fixed_vector<int, 5> field_40;
 		/* 6Ch */	int field_6C;
-		/* 70h */	AsyncResourcePtr mpAsyncMetadata;
-		/* 74h */	AsyncResourcePtr mpAsyncSummary;
+		/* 70h */	IAsyncRequestPtr mpAsyncMetadata;
+		/* 74h */	IAsyncRequestPtr mpAsyncSummary;
 	};
 	ASSERT_SIZE(cSPAssetDataOTDB, 0x78);
 

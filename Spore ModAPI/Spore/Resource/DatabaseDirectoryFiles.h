@@ -42,7 +42,7 @@ namespace Resource
 		/* 24h */	virtual bool Flush() override;
 		/* 28h */	virtual const char16_t* GetLocation() const override;
 		/* 2Ch */	virtual bool SetLocation(const char16_t* path) override;
-		/* 30h */	virtual size_t GetKeyList(eastl::vector<ResourceKey>& dstVector, IResourceFilter* filter = nullptr) override;
+		/* 30h */	virtual size_t GetKeyList(eastl::vector<ResourceKey>& dstVector, IKeyFilter* filter = nullptr) override;
 		/* 34h */	virtual bool OpenRecord(
 			const ResourceKey& name,
 			IRecord** ppDst,

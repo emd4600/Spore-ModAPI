@@ -165,6 +165,13 @@ namespace App
 		DefineAddress(GetPropertyDefinition, SelectAddress(0x6A3F70, 0x6A3D60, 0x6A3D60));
 		DefineAddress(GetPropertyGroupsCount, SelectAddress(0x6A3C30, 0x6A39B0, 0x6A39B0));
 		DefineAddress(GetPropertyGroupIDAt, SelectAddress(0x6A3C60, 0x6A39E0, 0x6A39E0));
+
+
+		DefineAddress(GetFactoryType, SelectAddress(0x1065680, 0xE31100, 0xE310C0));
+		DefineAddress(CreateResourceAsync, SelectAddress(0x4BB8E0, 0x4BC560, 0x4BC5B0));
+		DefineAddress(ReadResource, SelectAddress(0x6AB2B0, 0x6AB150, 0x6AB150));
+		DefineAddress(WriteResource, SelectAddress(0x6AA2C0, 0x6AA160, 0x6AA160));
+		DefineAddress(CanConvert, SelectAddress(0x4CBDE0, 0x7F9BF0, 0x7F9CA0));
 	}
 
 	namespace Addresses(cViewer)

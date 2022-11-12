@@ -226,7 +226,7 @@ namespace Resource
 	auto_METHOD_VIRTUAL_(DatabasePackedFile, DatabasePackedFile, bool, Flush);
 	auto_METHOD_VIRTUAL_const_(DatabasePackedFile, DatabasePackedFile, const char16_t*, GetLocation);
 	auto_METHOD_VIRTUAL(DatabasePackedFile, DatabasePackedFile, bool, SetLocation, Args(const char16_t* path), Args(path));
-	auto_METHOD_VIRTUAL(DatabasePackedFile, DatabasePackedFile, size_t, GetKeyList, Args(eastl::vector<ResourceKey>& dstVector, IResourceFilter* filter), Args(dstVector, filter));
+	auto_METHOD_VIRTUAL(DatabasePackedFile, DatabasePackedFile, size_t, GetKeyList, Args(eastl::vector<ResourceKey>& dstVector, IKeyFilter* filter), Args(dstVector, filter));
 	auto_METHOD_VIRTUAL(DatabasePackedFile, DatabasePackedFile, bool, OpenRecord, Args(const ResourceKey& name, IRecord** pDst, IO::AccessFlags nDesiredAccess, IO::CD nCreateDisposition, bool arg_10, RecordInfo* pDstInfo), Args(name, pDst, nDesiredAccess, nCreateDisposition, arg_10, pDstInfo));
 	auto_METHOD_VIRTUAL(DatabasePackedFile, DatabasePackedFile, int, GetOpenCount, Args(const ResourceKey& name), Args(name));
 	auto_METHOD_VIRTUAL(DatabasePackedFile, DatabasePackedFile, bool, CloseRecord, Args(IRecord* pRecord), Args(pRecord));
@@ -478,7 +478,7 @@ namespace Resource
 	auto_METHOD_(PFIndexModifiable, bool, Reset);
 	auto_METHOD_(PFIndexModifiable, size_t, GetTotalDiskSize);
 	auto_METHOD_(PFIndexModifiable, size_t, GetDataEnd);
-	auto_METHOD(PFIndexModifiable, size_t, GetFiles, Args(eastl::vector<ResourceKey>& dstVector, IResourceFilter* filter), Args(dstVector, filter));
+	auto_METHOD(PFIndexModifiable, size_t, GetFiles, Args(eastl::vector<ResourceKey>& dstVector, IKeyFilter* filter), Args(dstVector, filter));
 	auto_METHOD(PFIndexModifiable, size_t, GetAllFiles, Args(eastl::vector<ResourceKey>& dstVector), Args(dstVector));
 	auto_METHOD(PFIndexModifiable, bool, func24h, Args(int arg_0, size_t fileDataBegin, size_t fileDataEnd), Args(arg_0, fileDataBegin, fileDataEnd));
 
@@ -534,7 +534,7 @@ namespace Resource
 	auto_METHOD_VIRTUAL_(DatabaseDirectoryFiles, DatabaseDirectoryFiles, bool, Flush);
 	//auto_METHOD_VIRTUAL_const_(DatabaseDirectoryFiles, DatabaseDirectoryFiles, char16_t*, GetLocation);
 	auto_METHOD_VIRTUAL(DatabaseDirectoryFiles, DatabaseDirectoryFiles, bool, SetLocation, Args(const char16_t* path), Args(path));
-	auto_METHOD_VIRTUAL(DatabaseDirectoryFiles, DatabaseDirectoryFiles, size_t, GetKeyList, Args(eastl::vector<ResourceKey>& dstVector, IResourceFilter* filter), Args(dstVector, filter));
+	auto_METHOD_VIRTUAL(DatabaseDirectoryFiles, DatabaseDirectoryFiles, size_t, GetKeyList, Args(eastl::vector<ResourceKey>& dstVector, IKeyFilter* filter), Args(dstVector, filter));
 	auto_METHOD_VIRTUAL(DatabaseDirectoryFiles, DatabaseDirectoryFiles, bool, OpenRecord, Args(const ResourceKey& name, IRecord** pDst, IO::AccessFlags nDesiredAccess, IO::CD nCreateDisposition, bool arg_10, RecordInfo* pDstInfo), Args(name, pDst, nDesiredAccess, nCreateDisposition, arg_10, pDstInfo));
 	auto_METHOD_VIRTUAL(DatabaseDirectoryFiles, DatabaseDirectoryFiles, int, GetOpenCount, Args(const ResourceKey& name), Args(name));
 	auto_METHOD_VIRTUAL(DatabaseDirectoryFiles, DatabaseDirectoryFiles, bool, CloseRecord, Args(IRecord* pRecord), Args(pRecord));
