@@ -172,6 +172,18 @@ namespace App
 		DefineAddress(ReadResource, SelectAddress(0x6AB2B0, 0x6AB150, 0x6AB150));
 		DefineAddress(WriteResource, SelectAddress(0x6AA2C0, 0x6AA160, 0x6AA160));
 		DefineAddress(CanConvert, SelectAddress(0x4CBDE0, 0x7F9BF0, 0x7F9CA0));
+
+		DefineAddress(SetDevMode, SelectAddress(0x6A3550, 0x6A3300, 0x6A3300));
+		DefineAddress(GetIDFromName, SelectAddress(0x6A6100, 0x6A5FA0, 0x6A5FA0));
+		DefineAddress(GetNameFromID, SelectAddress(0x6A5B00, 0x6A59A0, 0x6A59A0));
+		DefineAddress(GetPropertyGroupIDFromName, SelectAddress(0x6A6160, 0x6A6000, 0x6A6000));
+		DefineAddress(GetNameFromPropertyGroupID, SelectAddress(0x6A5B40, 0x6A59E0, 0x6A59E0));
+		DefineAddress(AddPropertyList, SelectAddress(0x6A6350, 0x6A61F0, 0x6A61F0));
+		DefineAddress(RemovePropertyList, SelectAddress(0x6A5B80, 0x6A5A20, 0x6A5A20));
+		DefineAddress(RemovePropertyLists, SelectAddress(0x6A5D10, 0x6A5BB0, 0x6A5BB0));
+		DefineAddress(RemovePropertyLists2, SelectAddress(0x6A5C20, 0x6A5AC0, 0x6A5AC0));
+		DefineAddress(AreAnyPropertyListsReferenced, SelectAddress(0x6A4490, 0x6A4300, 0x6A4300));
+		DefineAddress(GetPropertyListIDs, SelectAddress(0x6AAAA0, 0x6AA940, 0x6AA940));
 	}
 
 	namespace Addresses(cViewer)

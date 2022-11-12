@@ -49,25 +49,25 @@ namespace Resource
 	/// the DatabasePackedFile that contains a certain file. This way, ResourceManager can always be used to get files, either via the GetResource
 	/// method or the GetDBPF one. The DBPFs are stored in the resource manager according to their priority.
 	///
-	/// The manager contains a cache of IResourceMap instances that is used to avoid repeteadly creating new instances of a resource that
-	/// already exists. The ReadResource method can be used instead of GetResource to forcibly create a new resource even if it's already
+	/// The manager contains a list of ICache instances that is used to avoid repeteadly creating new instances of a resource that
+	/// already exists. The IResourceManager::GetPrivateResource() method can be used instead of IResourceManager::GetResource() to forcibly create a new resource even if it's already
 	/// in the cache.
 	/// 
 	/// This manager provides additional functionality relating files. It keeps a map of ResourceKey - eastl::string16 values, which can be used
 	/// to store the original name of certain resources. For example:
 	/// ~~~~~~~~~~~~~~~~~~~~~~{.cpp}
-	/// ResourceManager.SetFileName(ResourceKey(0x00000000, 0x40212002, 0x0469A3F7), u"ShaderFragments!LowQuality.graphics");
+	/// ResourceManager.SetKeyName(ResourceKey(0x00000000, 0x40212002, 0x0469A3F7), u"ShaderFragments!LowQuality.graphics");
 	/// // Now you can access this file using the name we assigned instead of the original name, which had special IDs
-	/// ResourceManager.GetFileName(dstKey, u"ShaderFragments!LowQuality.graphics");
+	/// ResourceKey dstKey = ResourceManager.GetKeyFromName(u"ShaderFragments!LowQuality.graphics");
 	/// ~~~~~~~~~~~~~~~~~~~~~~
 	///
 	/// Additionally, the manager also keeps a map of typeID - eastl::string16 values, which allows to map extension eastl::strings to certain typeIDs.
 	/// For example:
 	/// ~~~~~~~~~~~~~~~~~~~~~~{.cpp}
 	/// // for example, we could have the mappings on a file and load it on startup
-	/// ResourceManager.AddExtensionMapping(0x2F7D0004, u"png");
+	/// ResourceManager.SetTypename(0x2F7D0004, u"png");
 	/// // now, if we try to use the .png extension, we will receive the correct typeID, instead of using the FNV hash of "png" (which is not 0x2F7D0004)
-	/// ResourceManager.GetFileName(dstKey, u"MyImages!EditorUIFrame.png");
+	/// ResourceKey dstKey = ResourceManager.GetFileName(u"MyImages!EditorUIFrame.png");
 	/// ~~~~~~~~~~~~~~~~~~~~~~
 	///
 	class IResourceManager

@@ -167,7 +167,7 @@ member_detour(CreatureWalkUpdate__detour, Editors::CreatureWalkController, void(
 			// "intersection" will be the point where the "ray" hit the ground, so it's Z coordinate is the height of the terrain
 			// at the creature position.
 			Vector3 intersection;
-			auto raycastedModel = mpModelWorld->Raycast(
+			auto raycastedModel = mpModelWorld->FindFirstModelAlongLine(
 				point, point - Vector3(0, 0, 1000.0f), nullptr, &intersection, nullptr, settings);
 
 			SporeDebugPrint("intersection: %f, %f, %f", intersection.x, intersection.y, intersection.z);

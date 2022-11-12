@@ -59,33 +59,33 @@ namespace App
 
 		virtual int AddRef() override;
 		virtual int Release() override;
-		virtual void func08h(bool value) override;
+		virtual void SetDevMode(bool value) override;
 		virtual bool Initialize() override;
 		virtual void PreloadPropertyLists() override;
 		virtual bool Dispose() override;
-		virtual bool GetPropertyID(const char* pPropertyName, uint32_t& result) const override;
-		virtual const char* GetPropertyName(uint32_t propertyID) const override;
-		virtual void* func20h(int arg_0, int arg_4) override;
-		virtual const char* GetPropertyGroupName(uint32_t propertyGroupID) const override;
-		virtual bool HasPropertyList(uint32_t instanceID, uint32_t groupID) const override;
-		virtual bool GetPropertyList(uint32_t instanceID, uint32_t groupID, PropertyListPtr& pDst) const override;
+		virtual bool GetIDFromName(const char* pPropertyName, uint32_t& result) override;
+		virtual const char* GetNameFromID(uint32_t propertyID) override;
+		virtual bool GetPropertyGroupIDFromName(const char* name, uint32_t& result) override;
+		virtual const char* GetNameFromPropertyGroupID(uint32_t propertyGroupID) override;
+		virtual bool HasPropertyList(uint32_t instanceID, uint32_t groupID) override;
+		virtual bool GetPropertyList(uint32_t instanceID, uint32_t groupID, PropertyListPtr& pDst) override;
 		virtual bool GetGlobalPropertyList(uint32_t instanceID, PropertyListPtr& pDst) override;
-		virtual void SetPropertyList(PropertyList* pList, uint32_t instanceID, uint32_t groupID) override;
-		virtual void* func38h(int arg_0) override;
-		virtual void* func3Ch(int arg_0, int arg_4) override;
-		virtual void* func40h(int arg_0, int arg_4, const eastl::vector<uint32_t>& instanceIDs) override;
-		virtual bool func44h(size_t nCount, const eastl::vector<ResourceKey>& names) override;
-		virtual bool GetAllListIDs(uint32_t groupID, eastl::vector<uint32_t>& result) const override;
+		virtual void AddPropertyList(PropertyList* pList, uint32_t instanceID, uint32_t groupID) override;
+		virtual void RemovePropertyList(PropertyList* pList) override;
+		virtual void RemovePropertyLists(int count, const ResourceKey* keys) override;
+		virtual void RemovePropertyLists2(uint32_t groupID, int count, uint32_t* instanceIDs) override;
+		virtual bool AreAnyPropertyListsReferenced(int count, const ResourceKey* keys) override;
+		virtual bool GetPropertyListIDs(uint32_t groupID, eastl::vector<uint32_t>& result) override;
 		virtual void* func4Ch(int arg_0, int arg_4) override;
-		virtual const Property* GetPropertyDefinition(uint32_t propertyID) const override;
-		virtual size_t GetPropertyGroupsCount() const override;
-		virtual bool GetPropertyGroupIDAt(size_t nIndex, uint32_t& dst) const override;
+		virtual const Property* GetPropertyDefinition(uint32_t propertyID) override;
+		virtual size_t GetPropertyGroupsCount() override;
+		virtual bool GetPropertyGroupIDAt(size_t nIndex, uint32_t& dst) override;
 
 
 	public:
 		/* 10h */	int field_10;
 		/* 14h */	bool mbIsInitialized;
-		/* 15h */	bool field_15;
+		/* 15h */	bool mIsDevMode;
 		/* 18h */	Resource::IResourceManager* mpResourceMgr;
 		/* 1Ch */	bool field_1C;
 		/* 20h */	eastl::map<uint32_t, Property> field_20;
@@ -94,7 +94,7 @@ namespace App
 		/* 74h */	eastl::hash_map<ResourceID, PropertyListPtr> mPropertyLists;
 		/* 94h */	eastl::hash_map<eastl::string, uint32_t> mNamesToPropertyIDs;
 		/* B4h */	eastl::hash_map<uint32_t, eastl::string> mPropertyIDsToNames;
-		/* D4h */	eastl::hash_map<eastl::string, int> field_D4;
+		/* D4h */	eastl::hash_map<eastl::string, int> mPropertyGroupNamesToIDs;
 		/* F4h */	eastl::hash_map<uint32_t, eastl::string> mPropertyGroupNames;
 		/* 114h */	eastl::vector<uint32_t> mPropertyGroupIDs;
 		/* 128h */	eastl::hash_map<int, int> field_128;
@@ -151,5 +151,17 @@ namespace App
 		DeclareAddress(ReadResource);
 		DeclareAddress(WriteResource);
 		DeclareAddress(CanConvert);
+
+		DeclareAddress(SetDevMode);
+		DeclareAddress(GetIDFromName);
+		DeclareAddress(GetNameFromID);
+		DeclareAddress(GetPropertyGroupIDFromName);
+		DeclareAddress(GetNameFromPropertyGroupID);
+		DeclareAddress(AddPropertyList);
+		DeclareAddress(RemovePropertyList);
+		DeclareAddress(RemovePropertyLists);
+		DeclareAddress(RemovePropertyLists2);
+		DeclareAddress(AreAnyPropertyListsReferenced);
+		DeclareAddress(GetPropertyListIDs);
 	}
 }
