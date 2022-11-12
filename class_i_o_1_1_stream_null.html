@@ -107,7 +107,7 @@
             </dt>
             <dd>Returns the type of the stream, which is different for each Stream subclass.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#a2d63b885ae21ac5bc0d9f935cf46324a" class="m-doc">GetAccessFlags</a>(</span><span class="m-doc-wrap">) const -&gt; int <span class="m-label m-flat m-warning">override</span></span>
+              <span class="m-doc-wrap-bumper">auto <a href="#a408fc33d4d130ce69ae9b7cc668fe0b9" class="m-doc">GetAccessFlags</a>(</span><span class="m-doc-wrap">) const -&gt; <a href="namespace_i_o.html#ab7db8d079d037a7b288d7d79b2d052db" class="m-doc">AccessFlags</a> <span class="m-label m-flat m-warning">override</span></span>
             </dt>
             <dd>Returns one of enum AccessFlags.</dd>
             <dt>
@@ -127,12 +127,12 @@
             </dt>
             <dd>Sets the size of the stream, if possible.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#a8ce8b7df06fbbd20202ab7f9cbbf4b26" class="m-doc">GetPosition</a>(</span><span class="m-doc-wrap"><a href="namespace_i_o.html#ae8092ef26cdcadafcb368e9914fce400" class="m-doc">PositionType</a> positionType = <a href="namespace_i_o.html#ae8092ef26cdcadafcb368e9914fce400aec274c84c558b69dfc1858338c38b7cc" class="m-doc">kPositionTypeBegin</a>) const -&gt; int <span class="m-label m-flat m-warning">override</span></span>
+              <span class="m-doc-wrap-bumper">auto <a href="#afb64210945cc7b04bf5fe9b9be3d2278" class="m-doc">GetPosition</a>(</span><span class="m-doc-wrap"><a href="namespace_i_o.html#a3548a9e9ef60c2653c6cdba408e817fc" class="m-doc">PositionType</a> positionType = <a href="namespace_i_o.html#a3548a9e9ef60c2653c6cdba408e817fca1a06729125544cab7cee73195fc044f0" class="m-doc">PositionType::<wbr />Begin</a>) const -&gt; int <span class="m-label m-flat m-warning">override</span></span>
             </dt>
             <dd>Gets the current read/write position within the stream.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#ab0eb87d9f1c61abcebf8c668c465e9e3" class="m-doc">SetPosition</a>(</span><span class="m-doc-wrap">int distance,
-              <a href="namespace_i_o.html#ae8092ef26cdcadafcb368e9914fce400" class="m-doc">PositionType</a> positionType = <a href="namespace_i_o.html#ae8092ef26cdcadafcb368e9914fce400aec274c84c558b69dfc1858338c38b7cc" class="m-doc">kPositionTypeBegin</a>) -&gt; bool <span class="m-label m-flat m-warning">override</span></span>
+              <span class="m-doc-wrap-bumper">auto <a href="#a9dbc555c84a94927cc1d5f110946558f" class="m-doc">SetPosition</a>(</span><span class="m-doc-wrap">int distance,
+              <a href="namespace_i_o.html#a3548a9e9ef60c2653c6cdba408e817fc" class="m-doc">PositionType</a> positionType = <a href="namespace_i_o.html#a3548a9e9ef60c2653c6cdba408e817fca1a06729125544cab7cee73195fc044f0" class="m-doc">PositionType::<wbr />Begin</a>) -&gt; bool <span class="m-label m-flat m-warning">override</span></span>
             </dt>
             <dd>Sets the read/write position of the stream.</dd>
             <dt>
@@ -173,9 +173,9 @@
             <p>Returns the type of the stream, which is different for each Stream subclass.</p>
 <p>This function can be used for run-time type identification. A type of zero means the type is unknown or invalid.</p>
           </div></section>
-          <section class="m-doc-details" id="a2d63b885ae21ac5bc0d9f935cf46324a"><div>
+          <section class="m-doc-details" id="a408fc33d4d130ce69ae9b7cc668fe0b9"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">int IO::<wbr />StreamNull::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a2d63b885ae21ac5bc0d9f935cf46324a" class="m-doc-self">GetAccessFlags</a>(</span><span class="m-doc-wrap">) const <span class="m-label m-warning">override</span></span></span>
+              <span class="m-doc-wrap-bumper"><a href="namespace_i_o.html#ab7db8d079d037a7b288d7d79b2d052db" class="m-doc">AccessFlags</a> IO::<wbr />StreamNull::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a408fc33d4d130ce69ae9b7cc668fe0b9" class="m-doc-self">GetAccessFlags</a>(</span><span class="m-doc-wrap">) const <span class="m-label m-warning">override</span></span></span>
             </h3>
             <p>Returns one of enum AccessFlags.</p>
 <p>This function also tells you if the stream is open, as a return value of zero means the stream is not open. It is not allowed that a stream<br />be open with no type of access.</p>
@@ -219,9 +219,9 @@
             </table>
 <p>It is debatable whether this function should be present in <a href="class_i_o_1_1_i_stream.html" class="m-doc">IStream</a> or only in suclasses of StreamBase which are writable. For consistency with GetSize, we put the function here. But also consider that a SetSize function is not necessarily a data writing function, depending on the stream implementation.</p>
           </div></section>
-          <section class="m-doc-details" id="a8ce8b7df06fbbd20202ab7f9cbbf4b26"><div>
+          <section class="m-doc-details" id="afb64210945cc7b04bf5fe9b9be3d2278"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">int IO::<wbr />StreamNull::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a8ce8b7df06fbbd20202ab7f9cbbf4b26" class="m-doc-self">GetPosition</a>(</span><span class="m-doc-wrap"><a href="namespace_i_o.html#ae8092ef26cdcadafcb368e9914fce400" class="m-doc">PositionType</a> positionType = <a href="namespace_i_o.html#ae8092ef26cdcadafcb368e9914fce400aec274c84c558b69dfc1858338c38b7cc" class="m-doc">kPositionTypeBegin</a>) const <span class="m-label m-warning">override</span></span></span>
+              <span class="m-doc-wrap-bumper">int IO::<wbr />StreamNull::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#afb64210945cc7b04bf5fe9b9be3d2278" class="m-doc-self">GetPosition</a>(</span><span class="m-doc-wrap"><a href="namespace_i_o.html#a3548a9e9ef60c2653c6cdba408e817fc" class="m-doc">PositionType</a> positionType = <a href="namespace_i_o.html#a3548a9e9ef60c2653c6cdba408e817fca1a06729125544cab7cee73195fc044f0" class="m-doc">PositionType::<wbr />Begin</a>) const <span class="m-label m-warning">override</span></span></span>
             </h3>
             <p>Gets the current read/write position within the stream.</p>
             <table class="m-table m-fullwidth m-flat">
@@ -237,10 +237,10 @@
             </table>
 <p>The read and write positions of a stream must be the same value; you cannot have a read position that is different from a write position. However, a Stream subclass can provide such functionality if needed. Returns -1 upon error.</p>
           </div></section>
-          <section class="m-doc-details" id="ab0eb87d9f1c61abcebf8c668c465e9e3"><div>
+          <section class="m-doc-details" id="a9dbc555c84a94927cc1d5f110946558f"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">bool IO::<wbr />StreamNull::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ab0eb87d9f1c61abcebf8c668c465e9e3" class="m-doc-self">SetPosition</a>(</span><span class="m-doc-wrap">int distance,
-              <a href="namespace_i_o.html#ae8092ef26cdcadafcb368e9914fce400" class="m-doc">PositionType</a> positionType = <a href="namespace_i_o.html#ae8092ef26cdcadafcb368e9914fce400aec274c84c558b69dfc1858338c38b7cc" class="m-doc">kPositionTypeBegin</a>) <span class="m-label m-warning">override</span></span></span>
+              <span class="m-doc-wrap-bumper">bool IO::<wbr />StreamNull::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a9dbc555c84a94927cc1d5f110946558f" class="m-doc-self">SetPosition</a>(</span><span class="m-doc-wrap">int distance,
+              <a href="namespace_i_o.html#a3548a9e9ef60c2653c6cdba408e817fc" class="m-doc">PositionType</a> positionType = <a href="namespace_i_o.html#a3548a9e9ef60c2653c6cdba408e817fca1a06729125544cab7cee73195fc044f0" class="m-doc">PositionType::<wbr />Begin</a>) <span class="m-label m-warning">override</span></span></span>
             </h3>
             <p>Sets the read/write position of the stream.</p>
             <table class="m-table m-fullwidth m-flat">

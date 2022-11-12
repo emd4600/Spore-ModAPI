@@ -92,8 +92,8 @@
               <span class="m-doc-wrap-bumper">auto <a href="#ad6719697e1ff5a23af9751692e51fc81" class="m-doc-self">Release</a>(</span><span class="m-doc-wrap">) -&gt; int <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
             <dd><span></span></dd>
-            <dt id="a4f0f582758e9e68c97587dab6fb8d7ce">
-              <span class="m-doc-wrap-bumper">void <a href="#a4f0f582758e9e68c97587dab6fb8d7ce" class="m-doc-self">func08h</a>(</span><span class="m-doc-wrap">bool value) <span class="m-label m-flat m-warning">pure virtual</span></span>
+            <dt id="a697a42d217aafad72544ad13c14ddb2c">
+              <span class="m-doc-wrap-bumper">void <a href="#a697a42d217aafad72544ad13c14ddb2c" class="m-doc-self">SetDevMode</a>(</span><span class="m-doc-wrap">bool value) <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
             <dd><span></span></dd>
             <dt id="a847015e46337dcb462561e7da8c28e44">
@@ -109,32 +109,32 @@
             </dt>
             <dd><span></span></dd>
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#a29ddbd6a3b4a0278c64c6d91c0906e71" class="m-doc">GetPropertyID</a>(</span><span class="m-doc-wrap">const char* propertyName,
-              uint32_t&amp; result) const -&gt; bool <span class="m-label m-flat m-warning">pure virtual</span></span>
+              <span class="m-doc-wrap-bumper">auto <a href="#aa419ae65307e879d7e8f2659aa9fd9ed" class="m-doc">GetIDFromName</a>(</span><span class="m-doc-wrap">const char* propertyName,
+              uint32_t&amp; result) -&gt; bool <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
             <dd>Gets the ID that corresponds to the given property name.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#a2b63e388974884bf2a99a15021165731" class="m-doc">GetPropertyName</a>(</span><span class="m-doc-wrap">uint32_t propertyID) const -&gt; const char* <span class="m-label m-flat m-warning">pure virtual</span></span>
+              <span class="m-doc-wrap-bumper">auto <a href="#a6c5aefa6e9a97d51c90a980136d8dea9" class="m-doc">GetNameFromID</a>(</span><span class="m-doc-wrap">uint32_t propertyID) -&gt; const char* <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
             <dd>Gets the name that is mapped to the given propertyID.</dd>
-            <dt id="a9f7b74170be707f70fae28b93ec1c834">
-              <span class="m-doc-wrap-bumper">auto <a href="#a9f7b74170be707f70fae28b93ec1c834" class="m-doc-self">func20h</a>(</span><span class="m-doc-wrap">int arg_0,
-              int arg_4) -&gt; void* <span class="m-label m-flat m-warning">pure virtual</span></span>
+            <dt id="ab76f45703886cad42ff43847a156a4ac">
+              <span class="m-doc-wrap-bumper">auto <a href="#ab76f45703886cad42ff43847a156a4ac" class="m-doc-self">GetPropertyGroupIDFromName</a>(</span><span class="m-doc-wrap">const char* name,
+              uint32_t&amp; result) -&gt; bool <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
             <dd><span></span></dd>
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#a9414325fc995c0975716a2b14d8af843" class="m-doc">GetPropertyGroupName</a>(</span><span class="m-doc-wrap">uint32_t propertyGroupID) const -&gt; const char* <span class="m-label m-flat m-warning">pure virtual</span></span>
+              <span class="m-doc-wrap-bumper">auto <a href="#a2072bf720d788e0814c63fbc632a77f3" class="m-doc">GetNameFromPropertyGroupID</a>(</span><span class="m-doc-wrap">uint32_t propertyGroupID) -&gt; const char* <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
             <dd>Gets the name assigned to the given property group ID.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#a22b8dac8c0a5a380c111112c09338bdb" class="m-doc">HasPropertyList</a>(</span><span class="m-doc-wrap">uint32_t instanceID,
-              uint32_t groupID) const -&gt; bool <span class="m-label m-flat m-warning">pure virtual</span></span>
+              <span class="m-doc-wrap-bumper">auto <a href="#a0f5c8b60fcfeaca952e70f2353fad812" class="m-doc">HasPropertyList</a>(</span><span class="m-doc-wrap">uint32_t instanceID,
+              uint32_t groupID) -&gt; bool <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
             <dd>Tells whether a <a href="class_app_1_1_property_list.html" class="m-doc">PropertyList</a> with the given instanceID and groupID is contained in this manager.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#a4aac63376b87c823a36164452c69b450" class="m-doc">GetPropertyList</a>(</span><span class="m-doc-wrap">uint32_t instanceID,
+              <span class="m-doc-wrap-bumper">auto <a href="#a25dfe22237c065bf1fa5dd3f053dd12f" class="m-doc">GetPropertyList</a>(</span><span class="m-doc-wrap">uint32_t instanceID,
               uint32_t groupID,
-              <a href="_property_list_8h.html#ae757f1639ff739ff0282dd91f3e39f0a" class="m-doc">PropertyListPtr</a>&amp; pDst) const -&gt; bool <span class="m-label m-flat m-warning">pure virtual</span></span>
+              <a href="_property_list_8h.html#ae757f1639ff739ff0282dd91f3e39f0a" class="m-doc">PropertyListPtr</a>&amp; pDst) -&gt; bool <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
             <dd>Gets the <a href="class_app_1_1_property_list.html" class="m-doc">PropertyList</a> stored in the given group and with the given instanceID.</dd>
             <dt>
@@ -143,34 +143,34 @@
             </dt>
             <dd>Gets the <a href="class_app_1_1_property_list.html" class="m-doc">PropertyList</a> stored in the global (0x00000000) folder and with the given instanceID.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">void <a href="#a8e0f44adb239195268166bf5a378927b" class="m-doc">SetPropertyList</a>(</span><span class="m-doc-wrap"><a href="class_app_1_1_property_list.html" class="m-doc">PropertyList</a>* pList,
+              <span class="m-doc-wrap-bumper">void <a href="#adf48fd34415030461ac27e4402c81ca8" class="m-doc">AddPropertyList</a>(</span><span class="m-doc-wrap"><a href="class_app_1_1_property_list.html" class="m-doc">PropertyList</a>* pList,
               uint32_t instanceID,
               uint32_t groupID) <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
             <dd>Adds this property list with the given instance and group ID, or replaces the existing one.</dd>
-            <dt id="a303fb3223d6477a368822b11ca0c46e2">
-              <span class="m-doc-wrap-bumper">auto <a href="#a303fb3223d6477a368822b11ca0c46e2" class="m-doc-self">func38h</a>(</span><span class="m-doc-wrap">int arg_0) -&gt; void* <span class="m-label m-flat m-warning">pure virtual</span></span>
+            <dt id="a05e855e2b88d71dacbfb76d98df16921">
+              <span class="m-doc-wrap-bumper">void <a href="#a05e855e2b88d71dacbfb76d98df16921" class="m-doc-self">RemovePropertyList</a>(</span><span class="m-doc-wrap"><a href="class_app_1_1_property_list.html" class="m-doc">PropertyList</a>* pList) <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
             <dd><span></span></dd>
-            <dt id="ab9aad77d1e3c0ec73a5f39cb022c141c">
-              <span class="m-doc-wrap-bumper">auto <a href="#ab9aad77d1e3c0ec73a5f39cb022c141c" class="m-doc-self">func3Ch</a>(</span><span class="m-doc-wrap">int arg_0,
-              int arg_4) -&gt; void* <span class="m-label m-flat m-warning">pure virtual</span></span>
+            <dt id="a0703be0ad5f96d1cb4a5ac93ec1b8a8d">
+              <span class="m-doc-wrap-bumper">void <a href="#a0703be0ad5f96d1cb4a5ac93ec1b8a8d" class="m-doc-self">RemovePropertyLists</a>(</span><span class="m-doc-wrap">int count,
+              const <a href="struct_resource_key.html" class="m-doc">ResourceKey</a>* keys) <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
             <dd><span></span></dd>
-            <dt id="aba72c8a45c9ceb774a7125456c0dee63">
-              <span class="m-doc-wrap-bumper">auto <a href="#aba72c8a45c9ceb774a7125456c0dee63" class="m-doc-self">func40h</a>(</span><span class="m-doc-wrap">int arg_0,
-              int arg_4,
-              const vector&lt;uint32_t&gt;&amp; instanceIDs) -&gt; void* <span class="m-label m-flat m-warning">pure virtual</span></span>
+            <dt id="aabb55f2df56e20836e11de8e4de2af63">
+              <span class="m-doc-wrap-bumper">void <a href="#aabb55f2df56e20836e11de8e4de2af63" class="m-doc-self">RemovePropertyLists2</a>(</span><span class="m-doc-wrap">uint32_t groupID,
+              int count,
+              uint32_t* instanceIDs) <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
             <dd><span></span></dd>
-            <dt id="adb1dce7af882616ef608c1300ba85a43">
-              <span class="m-doc-wrap-bumper">auto <a href="#adb1dce7af882616ef608c1300ba85a43" class="m-doc-self">func44h</a>(</span><span class="m-doc-wrap">size_t nCount,
-              const vector&lt;<a href="struct_resource_key.html" class="m-doc">ResourceKey</a>&gt;&amp; names) -&gt; bool <span class="m-label m-flat m-warning">pure virtual</span></span>
+            <dt id="a6ae6a45e70363d2f6657b50b0d5bfbd2">
+              <span class="m-doc-wrap-bumper">auto <a href="#a6ae6a45e70363d2f6657b50b0d5bfbd2" class="m-doc-self">AreAnyPropertyListsReferenced</a>(</span><span class="m-doc-wrap">int count,
+              const <a href="struct_resource_key.html" class="m-doc">ResourceKey</a>* keys) -&gt; bool <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
             <dd><span></span></dd>
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#a3014f003f8c4038b023660df191e0367" class="m-doc">GetAllListIDs</a>(</span><span class="m-doc-wrap">uint32_t groupID,
-              vector&lt;uint32_t&gt;&amp; result) const -&gt; bool <span class="m-label m-flat m-warning">pure virtual</span></span>
+              <span class="m-doc-wrap-bumper">auto <a href="#a2f81f3fb3a9ef3a6fbb27a51f27c9970" class="m-doc">GetPropertyListIDs</a>(</span><span class="m-doc-wrap">uint32_t groupID,
+              eastl::vector&lt;uint32_t&gt;&amp; result) -&gt; bool <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
             <dd>Gets the instance IDs of all the <a href="class_app_1_1_property_list.html" class="m-doc">PropertyList</a> objects contained in the specified group.</dd>
             <dt id="a61eb5fdbfef60b543e3cb507e47da1be">
@@ -179,26 +179,26 @@
             </dt>
             <dd><span></span></dd>
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#a12d83bb4ba2ef10c1866e7d1b82ad8ef" class="m-doc">GetPropertyDefinition</a>(</span><span class="m-doc-wrap">uint32_t propertyID) const -&gt; const <a href="class_app_1_1_property.html" class="m-doc">Property</a>* <span class="m-label m-flat m-warning">pure virtual</span></span>
+              <span class="m-doc-wrap-bumper">auto <a href="#af6daba30934bf8085d19a81b6ae40d2d" class="m-doc">GetPropertyDefinition</a>(</span><span class="m-doc-wrap">uint32_t propertyID) -&gt; const <a href="class_app_1_1_property.html" class="m-doc">Property</a>* <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
             <dd>Gets the property definition of the property with the given ID.</dd>
-            <dt id="a45645d001e5f2270e3e829f174f43d03">
-              <span class="m-doc-wrap-bumper">auto <a href="#a45645d001e5f2270e3e829f174f43d03" class="m-doc-self">GetPropertyGroupsCount</a>(</span><span class="m-doc-wrap">) const -&gt; size_t <span class="m-label m-flat m-warning">pure virtual</span></span>
+            <dt id="aac6cb7c65c9cf5d5d49375509712cd5f">
+              <span class="m-doc-wrap-bumper">auto <a href="#aac6cb7c65c9cf5d5d49375509712cd5f" class="m-doc-self">GetPropertyGroupsCount</a>(</span><span class="m-doc-wrap">) -&gt; size_t <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
             <dd>Gets the number of property groups contained in this manager.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#acfb186a8c3642eb3796616ddb96ca44d" class="m-doc">GetPropertyGroupIDAt</a>(</span><span class="m-doc-wrap">size_t index,
-              uint32_t&amp; dst) const -&gt; bool <span class="m-label m-flat m-warning">pure virtual</span></span>
+              <span class="m-doc-wrap-bumper">auto <a href="#a99320db1e9c644ae1a2f801146eb5b64" class="m-doc">GetPropertyGroupIDAt</a>(</span><span class="m-doc-wrap">size_t index,
+              uint32_t&amp; dst) -&gt; bool <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
             <dd>Gets the ID of the property group at the given index.</dd>
           </dl>
         </section>
         <section>
           <h2>Function documentation</h2>
-          <section class="m-doc-details" id="a29ddbd6a3b4a0278c64c6d91c0906e71"><div>
+          <section class="m-doc-details" id="aa419ae65307e879d7e8f2659aa9fd9ed"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">bool App::<wbr />IPropManager::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a29ddbd6a3b4a0278c64c6d91c0906e71" class="m-doc-self">GetPropertyID</a>(</span><span class="m-doc-wrap">const char* propertyName,
-              uint32_t&amp; result) const <span class="m-label m-warning">pure virtual</span></span></span>
+              <span class="m-doc-wrap-bumper">bool App::<wbr />IPropManager::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#aa419ae65307e879d7e8f2659aa9fd9ed" class="m-doc-self">GetIDFromName</a>(</span><span class="m-doc-wrap">const char* propertyName,
+              uint32_t&amp; result) <span class="m-label m-warning">pure virtual</span></span></span>
             </h3>
             <p>Gets the ID that corresponds to the given property name.</p>
             <table class="m-table m-fullwidth m-flat">
@@ -224,9 +224,9 @@
             </table>
 <p>This function will only work for those names that are mapped in this manager.</p>
           </div></section>
-          <section class="m-doc-details" id="a2b63e388974884bf2a99a15021165731"><div>
+          <section class="m-doc-details" id="a6c5aefa6e9a97d51c90a980136d8dea9"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">const char* App::<wbr />IPropManager::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a2b63e388974884bf2a99a15021165731" class="m-doc-self">GetPropertyName</a>(</span><span class="m-doc-wrap">uint32_t propertyID) const <span class="m-label m-warning">pure virtual</span></span></span>
+              <span class="m-doc-wrap-bumper">const char* App::<wbr />IPropManager::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a6c5aefa6e9a97d51c90a980136d8dea9" class="m-doc-self">GetNameFromID</a>(</span><span class="m-doc-wrap">uint32_t propertyID) <span class="m-label m-warning">pure virtual</span></span></span>
             </h3>
             <p>Gets the name that is mapped to the given propertyID.</p>
             <table class="m-table m-fullwidth m-flat">
@@ -248,9 +248,9 @@
             </table>
 <p>This function will only work for those names that are mapped in this manager.</p>
           </div></section>
-          <section class="m-doc-details" id="a9414325fc995c0975716a2b14d8af843"><div>
+          <section class="m-doc-details" id="a2072bf720d788e0814c63fbc632a77f3"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">const char* App::<wbr />IPropManager::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a9414325fc995c0975716a2b14d8af843" class="m-doc-self">GetPropertyGroupName</a>(</span><span class="m-doc-wrap">uint32_t propertyGroupID) const <span class="m-label m-warning">pure virtual</span></span></span>
+              <span class="m-doc-wrap-bumper">const char* App::<wbr />IPropManager::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a2072bf720d788e0814c63fbc632a77f3" class="m-doc-self">GetNameFromPropertyGroupID</a>(</span><span class="m-doc-wrap">uint32_t propertyGroupID) <span class="m-label m-warning">pure virtual</span></span></span>
             </h3>
             <p>Gets the name assigned to the given property group ID.</p>
             <table class="m-table m-fullwidth m-flat">
@@ -272,10 +272,10 @@
             </table>
 <p>This function will only work if that group is mapped in this manager.</p>
           </div></section>
-          <section class="m-doc-details" id="a22b8dac8c0a5a380c111112c09338bdb"><div>
+          <section class="m-doc-details" id="a0f5c8b60fcfeaca952e70f2353fad812"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">bool App::<wbr />IPropManager::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a22b8dac8c0a5a380c111112c09338bdb" class="m-doc-self">HasPropertyList</a>(</span><span class="m-doc-wrap">uint32_t instanceID,
-              uint32_t groupID) const <span class="m-label m-warning">pure virtual</span></span></span>
+              <span class="m-doc-wrap-bumper">bool App::<wbr />IPropManager::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a0f5c8b60fcfeaca952e70f2353fad812" class="m-doc-self">HasPropertyList</a>(</span><span class="m-doc-wrap">uint32_t instanceID,
+              uint32_t groupID) <span class="m-label m-warning">pure virtual</span></span></span>
             </h3>
             <p>Tells whether a <a href="class_app_1_1_property_list.html" class="m-doc">PropertyList</a> with the given instanceID and groupID is contained in this manager.</p>
             <table class="m-table m-fullwidth m-flat">
@@ -300,11 +300,11 @@
               </tfoot>
             </table>
           </div></section>
-          <section class="m-doc-details" id="a4aac63376b87c823a36164452c69b450"><div>
+          <section class="m-doc-details" id="a25dfe22237c065bf1fa5dd3f053dd12f"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">bool App::<wbr />IPropManager::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a4aac63376b87c823a36164452c69b450" class="m-doc-self">GetPropertyList</a>(</span><span class="m-doc-wrap">uint32_t instanceID,
+              <span class="m-doc-wrap-bumper">bool App::<wbr />IPropManager::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a25dfe22237c065bf1fa5dd3f053dd12f" class="m-doc-self">GetPropertyList</a>(</span><span class="m-doc-wrap">uint32_t instanceID,
               uint32_t groupID,
-              <a href="_property_list_8h.html#ae757f1639ff739ff0282dd91f3e39f0a" class="m-doc">PropertyListPtr</a>&amp; pDst) const <span class="m-label m-warning">pure virtual</span></span></span>
+              <a href="_property_list_8h.html#ae757f1639ff739ff0282dd91f3e39f0a" class="m-doc">PropertyListPtr</a>&amp; pDst) <span class="m-label m-warning">pure virtual</span></span></span>
             </h3>
             <p>Gets the <a href="class_app_1_1_property_list.html" class="m-doc">PropertyList</a> stored in the given group and with the given instanceID.</p>
             <table class="m-table m-fullwidth m-flat">
@@ -361,9 +361,9 @@
               </tfoot>
             </table>
           </div></section>
-          <section class="m-doc-details" id="a8e0f44adb239195268166bf5a378927b"><div>
+          <section class="m-doc-details" id="adf48fd34415030461ac27e4402c81ca8"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">void App::<wbr />IPropManager::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a8e0f44adb239195268166bf5a378927b" class="m-doc-self">SetPropertyList</a>(</span><span class="m-doc-wrap"><a href="class_app_1_1_property_list.html" class="m-doc">PropertyList</a>* pList,
+              <span class="m-doc-wrap-bumper">void App::<wbr />IPropManager::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#adf48fd34415030461ac27e4402c81ca8" class="m-doc-self">AddPropertyList</a>(</span><span class="m-doc-wrap"><a href="class_app_1_1_property_list.html" class="m-doc">PropertyList</a>* pList,
               uint32_t instanceID,
               uint32_t groupID) <span class="m-label m-warning">pure virtual</span></span></span>
             </h3>
@@ -388,10 +388,10 @@
               </tbody>
             </table>
           </div></section>
-          <section class="m-doc-details" id="a3014f003f8c4038b023660df191e0367"><div>
+          <section class="m-doc-details" id="a2f81f3fb3a9ef3a6fbb27a51f27c9970"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">bool App::<wbr />IPropManager::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a3014f003f8c4038b023660df191e0367" class="m-doc-self">GetAllListIDs</a>(</span><span class="m-doc-wrap">uint32_t groupID,
-              vector&lt;uint32_t&gt;&amp; result) const <span class="m-label m-warning">pure virtual</span></span></span>
+              <span class="m-doc-wrap-bumper">bool App::<wbr />IPropManager::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a2f81f3fb3a9ef3a6fbb27a51f27c9970" class="m-doc-self">GetPropertyListIDs</a>(</span><span class="m-doc-wrap">uint32_t groupID,
+              eastl::vector&lt;uint32_t&gt;&amp; result) <span class="m-label m-warning">pure virtual</span></span></span>
             </h3>
             <p>Gets the instance IDs of all the <a href="class_app_1_1_property_list.html" class="m-doc">PropertyList</a> objects contained in the specified group.</p>
             <table class="m-table m-fullwidth m-flat">
@@ -410,9 +410,9 @@
               </tbody>
             </table>
           </div></section>
-          <section class="m-doc-details" id="a12d83bb4ba2ef10c1866e7d1b82ad8ef"><div>
+          <section class="m-doc-details" id="af6daba30934bf8085d19a81b6ae40d2d"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">const <a href="class_app_1_1_property.html" class="m-doc">Property</a>* App::<wbr />IPropManager::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a12d83bb4ba2ef10c1866e7d1b82ad8ef" class="m-doc-self">GetPropertyDefinition</a>(</span><span class="m-doc-wrap">uint32_t propertyID) const <span class="m-label m-warning">pure virtual</span></span></span>
+              <span class="m-doc-wrap-bumper">const <a href="class_app_1_1_property.html" class="m-doc">Property</a>* App::<wbr />IPropManager::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#af6daba30934bf8085d19a81b6ae40d2d" class="m-doc-self">GetPropertyDefinition</a>(</span><span class="m-doc-wrap">uint32_t propertyID) <span class="m-label m-warning">pure virtual</span></span></span>
             </h3>
             <p>Gets the property definition of the property with the given ID.</p>
             <table class="m-table m-fullwidth m-flat">
@@ -434,10 +434,10 @@
             </table>
 <p>The definition is a <a href="class_app_1_1_property.html" class="m-doc">Property</a> object that contains the type and default value of the property. Definitions are stored in the Properties.txt, AppProperties.txt, etc files.</p>
           </div></section>
-          <section class="m-doc-details" id="acfb186a8c3642eb3796616ddb96ca44d"><div>
+          <section class="m-doc-details" id="a99320db1e9c644ae1a2f801146eb5b64"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">bool App::<wbr />IPropManager::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#acfb186a8c3642eb3796616ddb96ca44d" class="m-doc-self">GetPropertyGroupIDAt</a>(</span><span class="m-doc-wrap">size_t index,
-              uint32_t&amp; dst) const <span class="m-label m-warning">pure virtual</span></span></span>
+              <span class="m-doc-wrap-bumper">bool App::<wbr />IPropManager::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a99320db1e9c644ae1a2f801146eb5b64" class="m-doc-self">GetPropertyGroupIDAt</a>(</span><span class="m-doc-wrap">size_t index,
+              uint32_t&amp; dst) <span class="m-label m-warning">pure virtual</span></span></span>
             </h3>
             <p>Gets the ID of the property group at the given index.</p>
             <table class="m-table m-fullwidth m-flat">

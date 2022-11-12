@@ -69,17 +69,15 @@
           <dl class="m-doc">
             <dt>namespace <a href="namespace_graphics_1_1_global_state.html" class="m-doc">GlobalState</a></dt>
             <dd><span></span></dd>
-            <dt>namespace <a href="namespace_graphics_1_1_renderer.html" class="m-doc">Renderer</a></dt>
+            <dt>namespace <a href="namespace_graphics_1_1_renderer__addresses.html" class="m-doc">Renderer_addresses</a></dt>
+            <dd><span></span></dd>
+            <dt>namespace <a href="namespace_graphics_1_1_render_utils.html" class="m-doc">RenderUtils</a></dt>
             <dd>This namespace contains most internal stuff related with rendering, such as Direct3D Device and shaders, shader data, etc.</dd>
           </dl>
         </section>
         <section id="nested-classes">
           <h2><a href="#nested-classes">Classes</a></h2>
           <dl class="m-doc">
-            <dt>
-              class <a href="class_graphics_1_1_animations.html" class="m-doc">Animations</a>
-            </dt>
-            <dd><span></span></dd>
             <dt>
               class <a href="class_graphics_1_1c_buffer_draw.html" class="m-doc">cBufferDraw</a>
             </dt>
@@ -93,6 +91,14 @@
             </dt>
             <dd><span></span></dd>
             <dt>
+              class <a href="class_graphics_1_1c_layer_group.html" class="m-doc">cLayerGroup</a>
+            </dt>
+            <dd>An implementation of <a href="class_graphics_1_1_i_layer.html" class="m-doc">ILayer</a> that renders a sequence of layers.</dd>
+            <dt>
+              class <a href="class_graphics_1_1c_lighting_config.html" class="m-doc">cLightingConfig</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
               class <a href="class_graphics_1_1c_material_info.html" class="m-doc">cMaterialInfo</a>
             </dt>
             <dd><span></span></dd>
@@ -101,7 +107,19 @@
             </dt>
             <dd>The implementation of <a href="class_graphics_1_1_i_material_manager.html" class="m-doc">IMaterialManager</a>; this should only be used for extending and detouring.</dd>
             <dt>
+              class <a href="class_graphics_1_1c_mesh_data.html" class="m-doc">cMeshData</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
               class <a href="class_graphics_1_1c_m_i_texture_set.html" class="m-doc">cMITextureSet</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              class <a href="class_graphics_1_1c_model_instance.html" class="m-doc">cModelInstance</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              class <a href="class_graphics_1_1c_model_instance_animations.html" class="m-doc">cModelInstanceAnimations</a>
             </dt>
             <dd><span></span></dd>
             <dt>
@@ -109,8 +127,24 @@
             </dt>
             <dd>The implementation of <a href="class_graphics_1_1_i_model_manager.html" class="m-doc">IModelManager</a>; this should only be used for extending and detouring.</dd>
             <dt>
+              struct <a href="struct_graphics_1_1c_m_w_hull.html" class="m-doc">cMWHull</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              class <a href="class_graphics_1_1c_m_w_model_internal.html" class="m-doc">cMWModelInternal</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              struct <a href="struct_graphics_1_1c_m_w_transformed_hull.html" class="m-doc">cMWTransformedHull</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
               <div class="m-doc-template">template&lt;typename T&gt;</div>
               class <a href="class_graphics_1_1_compiled_shader.html" class="m-doc">CompiledShader</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              struct <a href="struct_graphics_1_1c_render_job_info.html" class="m-doc">cRenderJobInfo</a>
             </dt>
             <dd><span></span></dd>
             <dt>
@@ -124,6 +158,10 @@
             <dt>
               <div class="m-doc-template">template&lt;typename ObjClass, uint32_t TYPE_ID&gt;</div>
               class <a href="class_graphics_1_1c_rw_direct_resource.html" class="m-doc">cRwDirectResource</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              struct <a href="struct_graphics_1_1c_screen_info.html" class="m-doc">cScreenInfo</a>
             </dt>
             <dd><span></span></dd>
             <dt>
@@ -147,6 +185,10 @@
               class <a href="class_graphics_1_1_i_graphics_manager.html" class="m-doc">IGraphicsManager</a>
             </dt>
             <dd><span></span></dd>
+            <dt>
+              class <a href="class_graphics_1_1_i_layer.html" class="m-doc">ILayer</a>
+            </dt>
+            <dd>This interfaces defines a layer that is rendered every game loop, by callings its <a href="class_graphics_1_1_i_layer.html#ae4812c7ed39d6dcaf98088c7ae5211b0" class="m-doc">ILayer::<wbr />DrawLayer()</a> method.</dd>
             <dt>
               class <a href="class_graphics_1_1_i_lighting_manager.html" class="m-doc">ILightingManager</a>
             </dt>
@@ -172,11 +214,7 @@
             </dt>
             <dd><span></span></dd>
             <dt>
-              class <a href="class_graphics_1_1_i_renderable.html" class="m-doc">IRenderable</a>
-            </dt>
-            <dd>This interface defines an object that can be rendered, and whose render method is called on every game loop.</dd>
-            <dt>
-              class <a href="class_graphics_1_1_i_render_manager.html" class="m-doc">IRenderManager</a>
+              class <a href="class_graphics_1_1_i_renderer.html" class="m-doc">IRenderer</a>
             </dt>
             <dd>This class manages the rendering process in the game.</dd>
             <dt>
@@ -184,7 +222,7 @@
             </dt>
             <dd><span></span></dd>
             <dt>
-              class <a href="class_graphics_1_1_i_shadow_manager.html" class="m-doc">IShadowManager</a>
+              class <a href="class_graphics_1_1_i_shadow_world.html" class="m-doc">IShadowWorld</a>
             </dt>
             <dd><span></span></dd>
             <dt>
@@ -196,15 +234,11 @@
             </dt>
             <dd><span></span></dd>
             <dt>
-              class <a href="class_graphics_1_1_lambda_renderable.html" class="m-doc">LambdaRenderable</a>
+              class <a href="class_graphics_1_1_lambda_layer.html" class="m-doc">LambdaLayer</a>
             </dt>
             <dd><span></span></dd>
             <dt>
               struct <a href="struct_graphics_1_1_light.html" class="m-doc">Light</a>
-            </dt>
-            <dd><span></span></dd>
-            <dt>
-              class <a href="class_graphics_1_1_lighting_properties.html" class="m-doc">LightingProperties</a>
             </dt>
             <dd><span></span></dd>
             <dt>
@@ -217,14 +251,6 @@
             <dd><span></span></dd>
             <dt>
               class <a href="class_graphics_1_1_model.html" class="m-doc">Model</a>
-            </dt>
-            <dd><span></span></dd>
-            <dt>
-              class <a href="class_graphics_1_1_model_asset.html" class="m-doc">ModelAsset</a>
-            </dt>
-            <dd><span></span></dd>
-            <dt>
-              class <a href="class_graphics_1_1_model_mesh.html" class="m-doc">ModelMesh</a>
             </dt>
             <dd><span></span></dd>
             <dt>
@@ -248,10 +274,6 @@
             </dt>
             <dd><span></span></dd>
             <dt>
-              struct <a href="struct_graphics_1_1_rendererer_params.html" class="m-doc">RenderererParams</a>
-            </dt>
-            <dd><span></span></dd>
-            <dt>
               struct <a href="struct_graphics_1_1_render_statistics.html" class="m-doc">RenderStatistics</a>
             </dt>
             <dd><span></span></dd>
@@ -259,10 +281,6 @@
               struct <a href="struct_graphics_1_1_render_target_i_d.html" class="m-doc">RenderTargetID</a>
             </dt>
             <dd><span></span></dd>
-            <dt>
-              class <a href="class_graphics_1_1_sequence_renderable.html" class="m-doc">SequenceRenderable</a>
-            </dt>
-            <dd>An implementation of <a href="class_graphics_1_1_i_renderable.html" class="m-doc">IRenderable</a> that renders a sequence of IRenderables.</dd>
             <dt>
               class <a href="class_graphics_1_1_shader_builder.html" class="m-doc">ShaderBuilder</a>
             </dt>
@@ -361,7 +379,7 @@
             <dd>The available layer indices that can be used for adding renderers.</dd>
             <dt>
               <span class="m-doc-wrap-bumper">enum class <a href="#aadd384f262067b6a01ef854b7ad6f94e" class="m-doc">LayerIndices2</a> { </span><span class="m-doc-wrap"><a href="#aadd384f262067b6a01ef854b7ad6f94eadc30bc0c7914db5918da4263fce93ad2" class="m-doc">Clear</a> = 1,
-              <a href="#aadd384f262067b6a01ef854b7ad6f94ea99ba20386716528ab0c0ace69a1420f5" class="m-doc">Unk3</a> = 3,
+              <a href="#aadd384f262067b6a01ef854b7ad6f94eae14d2e23eeb1c064daf8d9f89ad69340" class="m-doc">EffectsBackground</a> = 3,
               <a href="#aadd384f262067b6a01ef854b7ad6f94eabf875f6167c1cc5b644352bc42c007ca" class="m-doc">Unk4</a> = 4,
               <a href="#aadd384f262067b6a01ef854b7ad6f94eac0d4a5a0eb2b05fa7073761d345aa09f" class="m-doc">Unk5</a> = 5,
               <a href="#aadd384f262067b6a01ef854b7ad6f94eaef7c34bbaaa4b36d9c7e9b7fc54c0079" class="m-doc">Unk6</a> = 6,
@@ -378,12 +396,14 @@
               <a href="#aadd384f262067b6a01ef854b7ad6f94ea09d5006efc42124e95a388ff48c60175" class="m-doc">Unk12</a> = 0x12,
               <a href="#aadd384f262067b6a01ef854b7ad6f94ea679cc87c36e9fc572d263583f5370237" class="m-doc">Unk14</a> = 0x14,
               <a href="#aadd384f262067b6a01ef854b7ad6f94eabddd5d6ee30f21694061a2128e507563" class="m-doc">Unk15</a> = 0x15,
-              <a href="#aadd384f262067b6a01ef854b7ad6f94eaf85ffcad1cbd34a5a1366e45de02911c" class="m-doc">Unk16</a> = 0x16,
+              <a href="#aadd384f262067b6a01ef854b7ad6f94ea2bfd4f113156d8939a4e83b875ca8cef" class="m-doc">EffectsForeground</a> = 0x16,
               <a href="#aadd384f262067b6a01ef854b7ad6f94ead56ba2bec45489b49ac914c6a12886ae" class="m-doc">PlanetTradeRoutes</a> = 0x19,
               <a href="#aadd384f262067b6a01ef854b7ad6f94ea4d601fd1534d771d18339a65b3dda069" class="m-doc">Unk1A</a> = 0x1A,
+              <a href="#aadd384f262067b6a01ef854b7ad6f94ea83cd07901e48f94c17989a2fcd1c8135" class="m-doc">Unk1B</a> = 0x1B,
               <a href="#aadd384f262067b6a01ef854b7ad6f94ea0f6ea8286597464a358a97edce7510d1" class="m-doc">Unk1E</a> = 0x1E,
               <a href="#aadd384f262067b6a01ef854b7ad6f94ea128a50be2ddca09014dd3650e832934c" class="m-doc">Unk20</a> = 0x20,
-              <a href="#aadd384f262067b6a01ef854b7ad6f94ea8b665c1a63d807f06b73064604b82e27" class="m-doc">Unk21</a> = 0x21 }</span>
+              <a href="#aadd384f262067b6a01ef854b7ad6f94ea8b665c1a63d807f06b73064604b82e27" class="m-doc">Unk21</a> = 0x21,
+              <a href="#aadd384f262067b6a01ef854b7ad6f94ea7d04175cc3bfa58a403db81b97af577b" class="m-doc">Unk25</a> = 0x25 }</span>
             </dt>
             <dd><span></span></dd>
             <dt>
@@ -398,6 +418,7 @@
               <a href="#a936cca97eca11e988649742457ee4809ae6ee2ef9b57e55721a05bc19183167b5" class="m-doc">kModelFlagObjectTypeColor</a> = 0x8,
               <a href="#a936cca97eca11e988649742457ee4809a06e9414d4e29ab930191c234e525c611" class="m-doc">kModelFlagOverrideRaycastMode</a> = 0x100,
               <a href="#a936cca97eca11e988649742457ee4809ae8126b97a58029f99739a19522b5a19a" class="m-doc">kModelFlagHighRes</a> = 0x2000,
+              <a href="#a936cca97eca11e988649742457ee4809a80ba571eef214e6f52eace650eab7975" class="m-doc">kModelFlagIsLoaded</a> = 0x4000,
               <a href="#a936cca97eca11e988649742457ee4809a712326a32a798759b2548daf75e8da43" class="m-doc">kModelFlagVisible</a> = 0x8000,
               <a href="#a936cca97eca11e988649742457ee4809a282f8e861168694308ecad124d903a6f" class="m-doc">kModelFlagOverrideBoundingBox</a> = 0x10000,
               <a href="#a936cca97eca11e988649742457ee4809a0c9e2214af3610d935ef791db7b80655" class="m-doc">kModelFlagOverrideBoundingRadius</a> = 0x20000,
@@ -432,6 +453,10 @@
               using <a href="#ac354d1c41dc1dd5d2c9fab246990be72" class="m-doc">ModelPredicate_t</a> = bool(*)(Model*, void*)
             </dt>
             <dd><span></span></dd>
+            <dt>
+              using <a href="#a782e42e2e8449b0ca093efdf483a1fb6" class="m-doc">BoneCallback_t</a> = void(*)(int, Matrix4&amp;, Vector3&amp;, void*)
+            </dt>
+            <dd><span></span></dd>
           </dl>
         </section>
         <section id="func-members">
@@ -457,12 +482,27 @@
             </dt>
             <dd><span></span></dd>
             <dt>
+              <span class="m-doc-wrap-bumper"><a href="#aab722dd79e9d799ba0259f13dcc6eff7" class="m-doc">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_graphics_1_1c_layer_group.html" class="m-doc">cLayerGroup</a>,
+              0x20)</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper"><a href="#a0b1ad8c1a2910d18aef2dd3b616b4e25" class="m-doc">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_graphics_1_1c_lighting_config.html" class="m-doc">cLightingConfig</a>,
+              0x144)</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
               <span class="m-doc-wrap-bumper"><a href="#abff62a7b52dee9b9474944bb858e2e84" class="m-doc">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_graphics_1_1c_material_info.html" class="m-doc">cMaterialInfo</a>,
               0x1C)</span>
             </dt>
             <dd><span></span></dd>
             <dt>
               <span class="m-doc-wrap-bumper">auto <a href="#ab4215be04a13cc09a7747a5adfe09074" class="m-doc">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_graphics_1_1c_material_manager.html" class="m-doc">cMaterialManager</a>) -&gt; namespace</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper"><a href="#a9b6e9b88fbaa512baecbf4c753bffefb" class="m-doc">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_graphics_1_1c_mesh_data.html" class="m-doc">cMeshData</a>,
+              0x58)</span>
             </dt>
             <dd><span></span></dd>
             <dt>
@@ -476,15 +516,35 @@
             </dt>
             <dd><span></span></dd>
             <dt>
+              <span class="m-doc-wrap-bumper"><a href="#ad4d8954e3e3c531403483ec94247148b" class="m-doc">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_graphics_1_1c_model_instance.html" class="m-doc">cModelInstance</a>,
+              0x100)</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper"><a href="#aca5797ca39ff85fe30a76c67c47a3033" class="m-doc">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_graphics_1_1c_model_instance_animations.html" class="m-doc">cModelInstanceAnimations</a>,
+              0xA0)</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper"><a href="#a3c3d8bef388e2ae9296566098b0ebf05" class="m-doc">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_graphics_1_1c_model_manager.html" class="m-doc">cModelManager</a>,
+              0x60)</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper"><a href="#a5ef0a6cf842e14b3d37c459a829c74a7" class="m-doc">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="namespace_graphics.html#a2fbff200e72a71153ff9239f663a569f" class="m-doc">PixelShader</a>,
+              0x130)</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
               <span class="m-doc-wrap-bumper">auto <a href="#ab2e63f660082c969616432e8336295f9" class="m-doc">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_graphics_1_1_compiled_shader.html" class="m-doc">CompiledShader</a>) -&gt; namespace</span>
             </dt>
             <dd><span></span></dd>
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#ae0dad68851fa09e43ef5c77dccec8567" class="m-doc">GetVertexShaders</a>(</span><span class="m-doc-wrap">) -&gt; vector&lt;<a href="namespace_graphics.html#acc86058dec20eb5cffabbc37f65941b8" class="m-doc">VertexShader</a>&gt;&amp;</span>
+              <span class="m-doc-wrap-bumper">auto <a href="#ac43770432de08eab1704a9f680973c12" class="m-doc">GetVertexShaders</a>(</span><span class="m-doc-wrap">) -&gt; eastl::vector&lt;<a href="namespace_graphics.html#acc86058dec20eb5cffabbc37f65941b8" class="m-doc">VertexShader</a>&gt;&amp;</span>
             </dt>
             <dd><span></span></dd>
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#a1023889e8775c054164727b2800e773d" class="m-doc">GetPixelShaders</a>(</span><span class="m-doc-wrap">) -&gt; vector&lt;<a href="namespace_graphics.html#a2fbff200e72a71153ff9239f663a569f" class="m-doc">PixelShader</a>&gt;&amp;</span>
+              <span class="m-doc-wrap-bumper">auto <a href="#ac40722b8e59c94f8f463110dfc600e55" class="m-doc">GetPixelShaders</a>(</span><span class="m-doc-wrap">) -&gt; eastl::vector&lt;<a href="namespace_graphics.html#a2fbff200e72a71153ff9239f663a569f" class="m-doc">PixelShader</a>&gt;&amp;</span>
             </dt>
             <dd><span></span></dd>
             <dt>
@@ -493,6 +553,11 @@
             <dd><span></span></dd>
             <dt>
               <span class="m-doc-wrap-bumper">void <a href="#a08fa601204066dd12bc7f2dcfbc03394" class="m-doc">ReadCompiledPixelShaders</a>(</span><span class="m-doc-wrap"><a href="class_i_o_1_1_i_stream.html" class="m-doc">IO::<wbr />IStream</a>* pStream)</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper"><a href="#ae1d92abe50706e4462534c630d00eb2e" class="m-doc">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_graphics_1_1c_render_target_manager.html" class="m-doc">cRenderTargetManager</a>,
+              0x2C)</span>
             </dt>
             <dd><span></span></dd>
             <dt>
@@ -512,11 +577,26 @@
             </dt>
             <dd><span></span></dd>
             <dt>
+              <span class="m-doc-wrap-bumper"><a href="#a051da5497fe47c683b0144912060da2e" class="m-doc">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_graphics_1_1_material.html" class="m-doc">Material</a>,
+              0x48)</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
               <span class="m-doc-wrap-bumper">auto <a href="#a1a297b69f98751159cdd8819b88968f9" class="m-doc">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_graphics_1_1_i_material_manager.html" class="m-doc">IMaterialManager</a>) -&gt; namespace</span>
             </dt>
             <dd><span></span></dd>
             <dt>
               <span class="m-doc-wrap-bumper">auto <a href="#aa2c68397da86c3c18c69b9088c4ec62d" class="m-doc">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_graphics_1_1_i_model_manager.html" class="m-doc">IModelManager</a>) -&gt; namespace</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper"><a href="#ae05fde94bd3e9bca09a84ccab6866e79" class="m-doc">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="struct_graphics_1_1c_m_w_hull.html" class="m-doc">cMWHull</a>,
+              0x1C)</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper"><a href="#a2d2e9192e98a9eecb45e4a32398d7f5d" class="m-doc">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="struct_graphics_1_1c_m_w_transformed_hull.html" class="m-doc">cMWTransformedHull</a>,
+              0x28)</span>
             </dt>
             <dd><span></span></dd>
             <dt>
@@ -529,12 +609,21 @@
             </dt>
             <dd><span></span></dd>
             <dt>
+              <span class="m-doc-wrap-bumper"><a href="#a1ed0eaf5bf5e87b5e57aefc629ae0fe9" class="m-doc">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="struct_graphics_1_1c_render_job_info.html" class="m-doc">cRenderJobInfo</a>,
+              11* 4)</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
               <span class="m-doc-wrap-bumper">void <a href="#a1859b10e266de12e9893d8e195b288ab" class="m-doc">GetMousePosition</a>(</span><span class="m-doc-wrap">int&amp; mouseX,
               int&amp; mouseY)</span>
             </dt>
             <dd><span></span></dd>
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#a9b0fa5c2261978ed37a1b59bea38f2b3" class="m-doc">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_graphics_1_1_i_render_manager.html" class="m-doc">IRenderManager</a>) -&gt; namespace</span>
+              <span class="m-doc-wrap-bumper">auto <a href="#a9b0fa5c2261978ed37a1b59bea38f2b3" class="m-doc">Addresses</a>(</span><span class="m-doc-wrap">IRenderManager) -&gt; namespace</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a6ad995159c0701c0e00335efa376090e" class="m-doc">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_graphics_1_1_i_renderer.html" class="m-doc">IRenderer</a>) -&gt; namespace</span>
             </dt>
             <dd><span></span></dd>
             <dt>
@@ -550,7 +639,11 @@
             </dt>
             <dd><span></span></dd>
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#a23487aec7d3a08e67aef09e25c495ef5" class="m-doc">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_graphics_1_1_i_shadow_manager.html" class="m-doc">IShadowManager</a>) -&gt; namespace</span>
+              <span class="m-doc-wrap-bumper">auto <a href="#a23487aec7d3a08e67aef09e25c495ef5" class="m-doc">Addresses</a>(</span><span class="m-doc-wrap">IShadowManager) -&gt; namespace</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a1b0f157d230ace53a92febc663e694ad" class="m-doc">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_graphics_1_1_i_shadow_world.html" class="m-doc">IShadowWorld</a>) -&gt; namespace</span>
             </dt>
             <dd><span></span></dd>
             <dt>
@@ -567,20 +660,26 @@
             </dt>
             <dd><span></span></dd>
             <dt>
+              <span class="m-doc-wrap-bumper"><a href="#a7e17b31ce34ad92c15252de92c48a605" class="m-doc">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_graphics_1_1_material_shader.html" class="m-doc">MaterialShader</a>,
+              0x48)</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
               <span class="m-doc-wrap-bumper">auto <a href="#a55ecbcbbf16136935d77d2e825780ebe" class="m-doc">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_graphics_1_1_material_shader.html" class="m-doc">MaterialShader</a>) -&gt; namespace</span>
             </dt>
             <dd><span></span></dd>
             <dt>
+              <span class="m-doc-wrap-bumper"><a href="#a6ef3c060f4c24ba340c2b0ddb4f86f67" class="m-doc">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_graphics_1_1_model.html" class="m-doc">Model</a>,
+              0x94)</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper"><a href="#a3ad6aaf4358afdcdb528391fe4b96925" class="m-doc">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_graphics_1_1c_m_w_model_internal.html" class="m-doc">cMWModelInternal</a>,
+              0x13C)</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
               <span class="m-doc-wrap-bumper">auto <a href="#ab6f35ba812eb3bf5fae5594bf3abd58e" class="m-doc">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_graphics_1_1_model.html" class="m-doc">Model</a>) -&gt; namespace</span>
-            </dt>
-            <dd><span></span></dd>
-            <dt>
-              <span class="m-doc-wrap-bumper"><a href="#a80e9049debe066f4fffef2358844123d" class="m-doc">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_graphics_1_1_model_mesh.html" class="m-doc">ModelMesh</a>,
-              0x100)</span>
-            </dt>
-            <dd><span></span></dd>
-            <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#ac38126dbb208f4e83c4504fd05963c57" class="m-doc">Addresses</a>(</span><span class="m-doc-wrap">Renderer) -&gt; namespace</span>
             </dt>
             <dd><span></span></dd>
             <dt>
@@ -589,12 +688,21 @@
             </dt>
             <dd><span></span></dd>
             <dt>
-              <span class="m-doc-wrap-bumper"><a href="#acc1c63f511e9885e193c632323d0b1cb" class="m-doc">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_graphics_1_1_sequence_renderable.html" class="m-doc">SequenceRenderable</a>,
-              0x20)</span>
+              <span class="m-doc-wrap-bumper">auto <a href="#a85e3277e169f2f4a2e6197ee2c6a572d" class="m-doc">Addresses</a>(</span><span class="m-doc-wrap">RenderUtils) -&gt; namespace</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper"><a href="#af5508987843e887db7fd0feb3b3a0c27" class="m-doc">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_graphics_1_1_shader_builder.html" class="m-doc">ShaderBuilder</a>,
+              0x2C8)</span>
             </dt>
             <dd><span></span></dd>
             <dt>
               <span class="m-doc-wrap-bumper">auto <a href="#a8562606c2bc7f0233794bf89c2e01b47" class="m-doc">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_graphics_1_1_shader_builder.html" class="m-doc">ShaderBuilder</a>) -&gt; namespace</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper"><a href="#ad43bd9975c40df2e5302f46ef70184b5" class="m-doc">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_graphics_1_1_standard_shader.html" class="m-doc">StandardShader</a>,
+              0x348)</span>
             </dt>
             <dd><span></span></dd>
             <dt>
@@ -615,14 +723,14 @@
           <section class="m-doc-details" id="a3dcd02aa5a247b3d6096420a0787ce4c"><div>
             <h3>
               enum Graphics::<wbr /><a href="#a3dcd02aa5a247b3d6096420a0787ce4c" class="m-doc-self">(anonymous)</a>
-              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_i_render_manager_8h.html">&lt;Spore/Graphics/IRenderManager.h&gt;</a></div>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_i_renderer_8h.html">&lt;Spore/Graphics/IRenderer.h&gt;</a></div>
             </h3>
             <p><span></span></p>
           </div></section>
           <section class="m-doc-details" id="a4cb0a7db6c6e82b951c0a1fe02c559f2"><div>
             <h3>
               enum class Graphics::<wbr /><a href="#a4cb0a7db6c6e82b951c0a1fe02c559f2" class="m-doc-self">LayerIndices</a>
-              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_i_render_manager_8h.html">&lt;Spore/Graphics/IRenderManager.h&gt;</a></div>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_i_renderer_8h.html">&lt;Spore/Graphics/IRenderer.h&gt;</a></div>
             </h3>
             <p>The available layer indices that can be used for adding renderers.</p>
 <p>Most of these have been copied from Darkspore globals.lua, so they might not match for Spore.</p>
@@ -630,7 +738,7 @@
           <section class="m-doc-details" id="aadd384f262067b6a01ef854b7ad6f94e"><div>
             <h3>
               enum class Graphics::<wbr /><a href="#aadd384f262067b6a01ef854b7ad6f94e" class="m-doc-self">LayerIndices2</a>
-              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_i_render_manager_8h.html">&lt;Spore/Graphics/IRenderManager.h&gt;</a></div>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_i_renderer_8h.html">&lt;Spore/Graphics/IRenderer.h&gt;</a></div>
             </h3>
             <p><span></span></p>
             <table class="m-table m-fullwidth m-flat m-doc">
@@ -643,9 +751,9 @@
                   </td>
                 </tr>
                 <tr>
-                  <td><a href="#aadd384f262067b6a01ef854b7ad6f94ea99ba20386716528ab0c0ace69a1420f5" class="m-doc-self" id="aadd384f262067b6a01ef854b7ad6f94ea99ba20386716528ab0c0ace69a1420f5">Unk3</a></td>
+                  <td><a href="#aadd384f262067b6a01ef854b7ad6f94eae14d2e23eeb1c064daf8d9f89ad69340" class="m-doc-self" id="aadd384f262067b6a01ef854b7ad6f94eae14d2e23eeb1c064daf8d9f89ad69340">EffectsBackground</a></td>
                   <td>
-                  <p><span></span></p>
+                  <p>Used by effects renderer.</p>
                   </td>
                 </tr>
                 <tr>
@@ -745,9 +853,9 @@
                   </td>
                 </tr>
                 <tr>
-                  <td><a href="#aadd384f262067b6a01ef854b7ad6f94eaf85ffcad1cbd34a5a1366e45de02911c" class="m-doc-self" id="aadd384f262067b6a01ef854b7ad6f94eaf85ffcad1cbd34a5a1366e45de02911c">Unk16</a></td>
+                  <td><a href="#aadd384f262067b6a01ef854b7ad6f94ea2bfd4f113156d8939a4e83b875ca8cef" class="m-doc-self" id="aadd384f262067b6a01ef854b7ad6f94ea2bfd4f113156d8939a4e83b875ca8cef">EffectsForeground</a></td>
                   <td>
-                  <p><span></span></p>
+                  <p>Used by effects renderer, renders foreground screen effects.</p>
                   </td>
                 </tr>
                 <tr>
@@ -758,6 +866,12 @@
                 </tr>
                 <tr>
                   <td><a href="#aadd384f262067b6a01ef854b7ad6f94ea4d601fd1534d771d18339a65b3dda069" class="m-doc-self" id="aadd384f262067b6a01ef854b7ad6f94ea4d601fd1534d771d18339a65b3dda069">Unk1A</a></td>
+                  <td>
+                  <p><span></span></p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#aadd384f262067b6a01ef854b7ad6f94ea83cd07901e48f94c17989a2fcd1c8135" class="m-doc-self" id="aadd384f262067b6a01ef854b7ad6f94ea83cd07901e48f94c17989a2fcd1c8135">Unk1B</a></td>
                   <td>
                   <p><span></span></p>
                   </td>
@@ -780,13 +894,19 @@
                   <p><span></span></p>
                   </td>
                 </tr>
+                <tr>
+                  <td><a href="#aadd384f262067b6a01ef854b7ad6f94ea7d04175cc3bfa58a403db81b97af577b" class="m-doc-self" id="aadd384f262067b6a01ef854b7ad6f94ea7d04175cc3bfa58a403db81b97af577b">Unk25</a></td>
+                  <td>
+                  <p><span></span></p>
+                  </td>
+                </tr>
               </tbody>
             </table>
           </div></section>
           <section class="m-doc-details" id="a9b4742f9ae4c621450b08b65bd9dd9da"><div>
             <h3>
               enum class Graphics::<wbr /><a href="#a9b4742f9ae4c621450b08b65bd9dd9da" class="m-doc-self">CollisionMode</a>: uint8_t
-              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_model_asset_8h.html">&lt;Spore/Graphics/ModelAsset.h&gt;</a></div>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_model_8h.html">&lt;Spore/Graphics/Model.h&gt;</a></div>
             </h3>
             <p><span></span></p>
             <table class="m-table m-fullwidth m-flat m-doc">
@@ -822,7 +942,7 @@
           <section class="m-doc-details" id="a936cca97eca11e988649742457ee4809"><div>
             <h3>
               enum Graphics::<wbr /><a href="#a936cca97eca11e988649742457ee4809" class="m-doc-self">(anonymous)</a>
-              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_model_asset_8h.html">&lt;Spore/Graphics/ModelAsset.h&gt;</a></div>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_model_8h.html">&lt;Spore/Graphics/Model.h&gt;</a></div>
             </h3>
             <p><span></span></p>
           </div></section>
@@ -893,6 +1013,13 @@
             </h3>
             <p><span></span></p>
           </div></section>
+          <section class="m-doc-details" id="a782e42e2e8449b0ca093efdf483a1fb6"><div>
+            <h3>
+              typedef void(*Graphics::<wbr /><a href="#a782e42e2e8449b0ca093efdf483a1fb6" class="m-doc-self">BoneCallback_t</a>)(int, Matrix4&amp;, Vector3&amp;, void*)
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_i_model_world_8h.html">&lt;Spore/Graphics/IModelWorld.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
         </section>
         <section>
           <h2>Function documentation</h2>
@@ -927,6 +1054,22 @@
             </h3>
             <p><span></span></p>
           </div></section>
+          <section class="m-doc-details" id="aab722dd79e9d799ba0259f13dcc6eff7"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"> Graphics::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#aab722dd79e9d799ba0259f13dcc6eff7" class="m-doc-self">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_graphics_1_1c_layer_group.html" class="m-doc">cLayerGroup</a>,
+              0x20)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="c_layer_group_8h.html">&lt;Spore/Graphics/cLayerGroup.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="a0b1ad8c1a2910d18aef2dd3b616b4e25"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"> Graphics::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a0b1ad8c1a2910d18aef2dd3b616b4e25" class="m-doc-self">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_graphics_1_1c_lighting_config.html" class="m-doc">cLightingConfig</a>,
+              0x144)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="c_lighting_config_8h.html">&lt;Spore/Graphics/cLightingConfig.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
           <section class="m-doc-details" id="abff62a7b52dee9b9474944bb858e2e84"><div>
             <h3>
               <span class="m-doc-wrap-bumper"> Graphics::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#abff62a7b52dee9b9474944bb858e2e84" class="m-doc-self">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_graphics_1_1c_material_info.html" class="m-doc">cMaterialInfo</a>,
@@ -939,6 +1082,14 @@
             <h3>
               <span class="m-doc-wrap-bumper">namespace Graphics::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ab4215be04a13cc09a7747a5adfe09074" class="m-doc-self">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_graphics_1_1c_material_manager.html" class="m-doc">cMaterialManager</a>)</span></span>
               <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="c_material_manager_8h.html">&lt;Spore/Graphics/cMaterialManager.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="a9b6e9b88fbaa512baecbf4c753bffefb"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"> Graphics::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a9b6e9b88fbaa512baecbf4c753bffefb" class="m-doc-self">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_graphics_1_1c_mesh_data.html" class="m-doc">cMeshData</a>,
+              0x58)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="c_mesh_data_8h.html">&lt;Spore/Graphics/cMeshData.h&gt;</a></div>
             </h3>
             <p><span></span></p>
           </div></section>
@@ -958,6 +1109,38 @@
             </h3>
             <p><span></span></p>
           </div></section>
+          <section class="m-doc-details" id="ad4d8954e3e3c531403483ec94247148b"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"> Graphics::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ad4d8954e3e3c531403483ec94247148b" class="m-doc-self">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_graphics_1_1c_model_instance.html" class="m-doc">cModelInstance</a>,
+              0x100)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="c_model_instance_8h.html">&lt;Spore/Graphics/cModelInstance.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="aca5797ca39ff85fe30a76c67c47a3033"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"> Graphics::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#aca5797ca39ff85fe30a76c67c47a3033" class="m-doc-self">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_graphics_1_1c_model_instance_animations.html" class="m-doc">cModelInstanceAnimations</a>,
+              0xA0)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="c_model_instance_animations_8h.html">&lt;Spore/Graphics/cModelInstanceAnimations.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="a3c3d8bef388e2ae9296566098b0ebf05"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"> Graphics::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a3c3d8bef388e2ae9296566098b0ebf05" class="m-doc-self">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_graphics_1_1c_model_manager.html" class="m-doc">cModelManager</a>,
+              0x60)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="c_model_manager_8h.html">&lt;Spore/Graphics/cModelManager.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="a5ef0a6cf842e14b3d37c459a829c74a7"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"> Graphics::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a5ef0a6cf842e14b3d37c459a829c74a7" class="m-doc-self">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="namespace_graphics.html#a2fbff200e72a71153ff9239f663a569f" class="m-doc">PixelShader</a>,
+              0x130)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_compiled_shader_8h.html">&lt;Spore/Graphics/CompiledShader.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
           <section class="m-doc-details" id="ab2e63f660082c969616432e8336295f9"><div>
             <h3>
               <span class="m-doc-wrap-bumper">namespace Graphics::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ab2e63f660082c969616432e8336295f9" class="m-doc-self">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_graphics_1_1_compiled_shader.html" class="m-doc">CompiledShader</a>)</span></span>
@@ -965,16 +1148,16 @@
             </h3>
             <p><span></span></p>
           </div></section>
-          <section class="m-doc-details" id="ae0dad68851fa09e43ef5c77dccec8567"><div>
+          <section class="m-doc-details" id="ac43770432de08eab1704a9f680973c12"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">vector&lt;<a href="namespace_graphics.html#acc86058dec20eb5cffabbc37f65941b8" class="m-doc">VertexShader</a>&gt;&amp; Graphics::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ae0dad68851fa09e43ef5c77dccec8567" class="m-doc-self">GetVertexShaders</a>(</span><span class="m-doc-wrap">)</span></span>
+              <span class="m-doc-wrap-bumper">eastl::vector&lt;<a href="namespace_graphics.html#acc86058dec20eb5cffabbc37f65941b8" class="m-doc">VertexShader</a>&gt;&amp; Graphics::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ac43770432de08eab1704a9f680973c12" class="m-doc-self">GetVertexShaders</a>(</span><span class="m-doc-wrap">)</span></span>
               <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_compiled_shader_8h.html">&lt;Spore/Graphics/CompiledShader.h&gt;</a></div>
             </h3>
             <p><span></span></p>
           </div></section>
-          <section class="m-doc-details" id="a1023889e8775c054164727b2800e773d"><div>
+          <section class="m-doc-details" id="ac40722b8e59c94f8f463110dfc600e55"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">vector&lt;<a href="namespace_graphics.html#a2fbff200e72a71153ff9239f663a569f" class="m-doc">PixelShader</a>&gt;&amp; Graphics::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a1023889e8775c054164727b2800e773d" class="m-doc-self">GetPixelShaders</a>(</span><span class="m-doc-wrap">)</span></span>
+              <span class="m-doc-wrap-bumper">eastl::vector&lt;<a href="namespace_graphics.html#a2fbff200e72a71153ff9239f663a569f" class="m-doc">PixelShader</a>&gt;&amp; Graphics::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ac40722b8e59c94f8f463110dfc600e55" class="m-doc-self">GetPixelShaders</a>(</span><span class="m-doc-wrap">)</span></span>
               <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_compiled_shader_8h.html">&lt;Spore/Graphics/CompiledShader.h&gt;</a></div>
             </h3>
             <p><span></span></p>
@@ -990,6 +1173,14 @@
             <h3>
               <span class="m-doc-wrap-bumper">void Graphics::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a08fa601204066dd12bc7f2dcfbc03394" class="m-doc-self">ReadCompiledPixelShaders</a>(</span><span class="m-doc-wrap"><a href="class_i_o_1_1_i_stream.html" class="m-doc">IO::<wbr />IStream</a>* pStream)</span></span>
               <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_compiled_shader_8h.html">&lt;Spore/Graphics/CompiledShader.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="ae1d92abe50706e4462534c630d00eb2e"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"> Graphics::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ae1d92abe50706e4462534c630d00eb2e" class="m-doc-self">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_graphics_1_1c_render_target_manager.html" class="m-doc">cRenderTargetManager</a>,
+              0x2C)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="c_render_target_manager_8h.html">&lt;Spore/Graphics/cRenderTargetManager.h&gt;</a></div>
             </h3>
             <p><span></span></p>
           </div></section>
@@ -1021,6 +1212,14 @@
             </h3>
             <p><span></span></p>
           </div></section>
+          <section class="m-doc-details" id="a051da5497fe47c683b0144912060da2e"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"> Graphics::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a051da5497fe47c683b0144912060da2e" class="m-doc-self">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_graphics_1_1_material.html" class="m-doc">Material</a>,
+              0x48)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_i_material_manager_8h.html">&lt;Spore/Graphics/IMaterialManager.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
           <section class="m-doc-details" id="a1a297b69f98751159cdd8819b88968f9"><div>
             <h3>
               <span class="m-doc-wrap-bumper">namespace Graphics::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a1a297b69f98751159cdd8819b88968f9" class="m-doc-self">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_graphics_1_1_i_material_manager.html" class="m-doc">IMaterialManager</a>)</span></span>
@@ -1032,6 +1231,22 @@
             <h3>
               <span class="m-doc-wrap-bumper">namespace Graphics::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#aa2c68397da86c3c18c69b9088c4ec62d" class="m-doc-self">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_graphics_1_1_i_model_manager.html" class="m-doc">IModelManager</a>)</span></span>
               <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_i_model_manager_8h.html">&lt;Spore/Graphics/IModelManager.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="ae05fde94bd3e9bca09a84ccab6866e79"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"> Graphics::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ae05fde94bd3e9bca09a84ccab6866e79" class="m-doc-self">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="struct_graphics_1_1c_m_w_hull.html" class="m-doc">cMWHull</a>,
+              0x1C)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_i_model_world_8h.html">&lt;Spore/Graphics/IModelWorld.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="a2d2e9192e98a9eecb45e4a32398d7f5d"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"> Graphics::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a2d2e9192e98a9eecb45e4a32398d7f5d" class="m-doc-self">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="struct_graphics_1_1c_m_w_transformed_hull.html" class="m-doc">cMWTransformedHull</a>,
+              0x28)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_i_model_world_8h.html">&lt;Spore/Graphics/IModelWorld.h&gt;</a></div>
             </h3>
             <p><span></span></p>
           </div></section>
@@ -1050,18 +1265,33 @@
             </h3>
             <p><span></span></p>
           </div></section>
+          <section class="m-doc-details" id="a1ed0eaf5bf5e87b5e57aefc629ae0fe9"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"> Graphics::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a1ed0eaf5bf5e87b5e57aefc629ae0fe9" class="m-doc-self">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="struct_graphics_1_1c_render_job_info.html" class="m-doc">cRenderJobInfo</a>,
+              11* 4)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_i_renderer_8h.html">&lt;Spore/Graphics/IRenderer.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
           <section class="m-doc-details" id="a1859b10e266de12e9893d8e195b288ab"><div>
             <h3>
               <span class="m-doc-wrap-bumper">void Graphics::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a1859b10e266de12e9893d8e195b288ab" class="m-doc-self">GetMousePosition</a>(</span><span class="m-doc-wrap">int&amp; mouseX,
               int&amp; mouseY)</span></span>
-              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_i_render_manager_8h.html">&lt;Spore/Graphics/IRenderManager.h&gt;</a></div>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_i_renderer_8h.html">&lt;Spore/Graphics/IRenderer.h&gt;</a></div>
             </h3>
             <p><span></span></p>
           </div></section>
           <section class="m-doc-details" id="a9b0fa5c2261978ed37a1b59bea38f2b3"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">namespace Graphics::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a9b0fa5c2261978ed37a1b59bea38f2b3" class="m-doc-self">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_graphics_1_1_i_render_manager.html" class="m-doc">IRenderManager</a>)</span></span>
-              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_i_render_manager_8h.html">&lt;Spore/Graphics/IRenderManager.h&gt;</a></div>
+              <span class="m-doc-wrap-bumper">namespace Graphics::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a9b0fa5c2261978ed37a1b59bea38f2b3" class="m-doc-self">Addresses</a>(</span><span class="m-doc-wrap">IRenderManager)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_i_renderer_8h.html">&lt;Spore/Graphics/IRenderer.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="a6ad995159c0701c0e00335efa376090e"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">namespace Graphics::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a6ad995159c0701c0e00335efa376090e" class="m-doc-self">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_graphics_1_1_i_renderer.html" class="m-doc">IRenderer</a>)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_i_renderer_8h.html">&lt;Spore/Graphics/IRenderer.h&gt;</a></div>
             </h3>
             <p><span></span></p>
           </div></section>
@@ -1088,8 +1318,15 @@
           </div></section>
           <section class="m-doc-details" id="a23487aec7d3a08e67aef09e25c495ef5"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">namespace Graphics::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a23487aec7d3a08e67aef09e25c495ef5" class="m-doc-self">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_graphics_1_1_i_shadow_manager.html" class="m-doc">IShadowManager</a>)</span></span>
-              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_i_shadow_manager_8h.html">&lt;Spore/Graphics/IShadowManager.h&gt;</a></div>
+              <span class="m-doc-wrap-bumper">namespace Graphics::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a23487aec7d3a08e67aef09e25c495ef5" class="m-doc-self">Addresses</a>(</span><span class="m-doc-wrap">IShadowManager)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_i_shadow_world_8h.html">&lt;Spore/Graphics/IShadowWorld.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="a1b0f157d230ace53a92febc663e694ad"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">namespace Graphics::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a1b0f157d230ace53a92febc663e694ad" class="m-doc-self">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_graphics_1_1_i_shadow_world.html" class="m-doc">IShadowWorld</a>)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_i_shadow_world_8h.html">&lt;Spore/Graphics/IShadowWorld.h&gt;</a></div>
             </h3>
             <p><span></span></p>
           </div></section>
@@ -1115,6 +1352,14 @@
             </h3>
             <p><span></span></p>
           </div></section>
+          <section class="m-doc-details" id="a7e17b31ce34ad92c15252de92c48a605"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"> Graphics::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a7e17b31ce34ad92c15252de92c48a605" class="m-doc-self">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_graphics_1_1_material_shader.html" class="m-doc">MaterialShader</a>,
+              0x48)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_material_shader_8h.html">&lt;Spore/Graphics/MaterialShader.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
           <section class="m-doc-details" id="a55ecbcbbf16136935d77d2e825780ebe"><div>
             <h3>
               <span class="m-doc-wrap-bumper">namespace Graphics::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a55ecbcbbf16136935d77d2e825780ebe" class="m-doc-self">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_graphics_1_1_material_shader.html" class="m-doc">MaterialShader</a>)</span></span>
@@ -1122,25 +1367,26 @@
             </h3>
             <p><span></span></p>
           </div></section>
+          <section class="m-doc-details" id="a6ef3c060f4c24ba340c2b0ddb4f86f67"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"> Graphics::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a6ef3c060f4c24ba340c2b0ddb4f86f67" class="m-doc-self">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_graphics_1_1_model.html" class="m-doc">Model</a>,
+              0x94)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_model_8h.html">&lt;Spore/Graphics/Model.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="a3ad6aaf4358afdcdb528391fe4b96925"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"> Graphics::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a3ad6aaf4358afdcdb528391fe4b96925" class="m-doc-self">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_graphics_1_1c_m_w_model_internal.html" class="m-doc">cMWModelInternal</a>,
+              0x13C)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_model_8h.html">&lt;Spore/Graphics/Model.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
           <section class="m-doc-details" id="ab6f35ba812eb3bf5fae5594bf3abd58e"><div>
             <h3>
               <span class="m-doc-wrap-bumper">namespace Graphics::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ab6f35ba812eb3bf5fae5594bf3abd58e" class="m-doc-self">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_graphics_1_1_model.html" class="m-doc">Model</a>)</span></span>
-              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_model_asset_8h.html">&lt;Spore/Graphics/ModelAsset.h&gt;</a></div>
-            </h3>
-            <p><span></span></p>
-          </div></section>
-          <section class="m-doc-details" id="a80e9049debe066f4fffef2358844123d"><div>
-            <h3>
-              <span class="m-doc-wrap-bumper"> Graphics::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a80e9049debe066f4fffef2358844123d" class="m-doc-self">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_graphics_1_1_model_mesh.html" class="m-doc">ModelMesh</a>,
-              0x100)</span></span>
-              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_model_mesh_8h.html">&lt;Spore/Graphics/ModelMesh.h&gt;</a></div>
-            </h3>
-            <p><span></span></p>
-          </div></section>
-          <section class="m-doc-details" id="ac38126dbb208f4e83c4504fd05963c57"><div>
-            <h3>
-              <span class="m-doc-wrap-bumper">namespace Graphics::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ac38126dbb208f4e83c4504fd05963c57" class="m-doc-self">Addresses</a>(</span><span class="m-doc-wrap">Renderer)</span></span>
-              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_renderer_8h.html">&lt;Spore/Graphics/Renderer.h&gt;</a></div>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_model_8h.html">&lt;Spore/Graphics/Model.h&gt;</a></div>
             </h3>
             <p><span></span></p>
           </div></section>
@@ -1152,11 +1398,18 @@
             </h3>
             <p><span></span></p>
           </div></section>
-          <section class="m-doc-details" id="acc1c63f511e9885e193c632323d0b1cb"><div>
+          <section class="m-doc-details" id="a85e3277e169f2f4a2e6197ee2c6a572d"><div>
             <h3>
-              <span class="m-doc-wrap-bumper"> Graphics::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#acc1c63f511e9885e193c632323d0b1cb" class="m-doc-self">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_graphics_1_1_sequence_renderable.html" class="m-doc">SequenceRenderable</a>,
-              0x20)</span></span>
-              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_sequence_renderable_8h.html">&lt;Spore/Graphics/SequenceRenderable.h&gt;</a></div>
+              <span class="m-doc-wrap-bumper">namespace Graphics::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a85e3277e169f2f4a2e6197ee2c6a572d" class="m-doc-self">Addresses</a>(</span><span class="m-doc-wrap">RenderUtils)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_render_utils_8h.html">&lt;Spore/Graphics/RenderUtils.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="af5508987843e887db7fd0feb3b3a0c27"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"> Graphics::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#af5508987843e887db7fd0feb3b3a0c27" class="m-doc-self">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_graphics_1_1_shader_builder.html" class="m-doc">ShaderBuilder</a>,
+              0x2C8)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_shader_builder_8h.html">&lt;Spore/Graphics/ShaderBuilder.h&gt;</a></div>
             </h3>
             <p><span></span></p>
           </div></section>
@@ -1164,6 +1417,14 @@
             <h3>
               <span class="m-doc-wrap-bumper">namespace Graphics::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a8562606c2bc7f0233794bf89c2e01b47" class="m-doc-self">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_graphics_1_1_shader_builder.html" class="m-doc">ShaderBuilder</a>)</span></span>
               <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_shader_builder_8h.html">&lt;Spore/Graphics/ShaderBuilder.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="ad43bd9975c40df2e5302f46ef70184b5"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"> Graphics::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ad43bd9975c40df2e5302f46ef70184b5" class="m-doc-self">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_graphics_1_1_standard_shader.html" class="m-doc">StandardShader</a>,
+              0x348)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_standard_shader_8h.html">&lt;Spore/Graphics/StandardShader.h&gt;</a></div>
             </h3>
             <p><span></span></p>
           </div></section>

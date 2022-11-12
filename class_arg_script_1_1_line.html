@@ -64,7 +64,7 @@
             </li>
           </ul>
         </div>
-<p>A line is made up by a keyword, multiple or none arguments, and multiple or none options. For example: &quot;keyword argument1 argument2 -option1 -option2 optionArgument&quot;. All the elements in a line are separated by whitespaces; string literals that require whitespaces can be surrounded by &quot;&quot; or (). The first element is always considered the keyword; the words that follow it are arguments. If a word is preceded by &#x27;-&#x27;, it is considered an option (for example, the option &quot;-scale 1.2&quot;). Options can be followed by arguments; if an option does not have any argument, it is considered a &#x27;flag&#x27;.</p>
+<p>A line is made up by a keyword, multiple or none arguments, and multiple or none options. For example: &quot;keyword argument1 argument2 -option1 -option2 optionArgument&quot;. All the elements in a line are separated by whitespaces; eastl::string literals that require whitespaces can be surrounded by &quot;&quot; or (). The first element is always considered the keyword; the words that follow it are arguments. If a word is preceded by &#x27;-&#x27;, it is considered an option (for example, the option &quot;-scale 1.2&quot;). Options can be followed by arguments; if an option does not have any argument, it is considered a &#x27;flag&#x27;.</p>
         <section id="pub-static-attribs">
           <h2><a href="#pub-static-attribs">Public static variables</a></h2>
           <dl class="m-doc">
@@ -79,15 +79,15 @@
           <dl class="m-doc">
             <dt>
               <span class="m-doc-wrap-bumper">static auto <a href="#a565c664adda373d4c39c7183e4552cb5" class="m-doc">GetEnum</a>(</span><span class="m-doc-wrap">const char* valueString,
-              const <a href="namespace_arg_script.html#a262b38c859c03eea3023a50999db2e7d" class="m-doc">EnumValue</a>* pEnum) -&gt; int</span>
+              const <a href="namespace_arg_script.html#a3a28e3a6ce242ee8b31d1c09d4d4da96" class="m-doc">EnumValue</a>* pEnum) -&gt; int</span>
             </dt>
-            <dd>Gets the integer value that corresponds to the given string in the specified enum.</dd>
+            <dd>Gets the integer value that corresponds to the given eastl::string in the specified enum.</dd>
             <dt>
               <span class="m-doc-wrap-bumper">static auto <a href="#a3dfb37b6b2e8587766e90e9b161c51aa" class="m-doc">GetOptionalEnum</a>(</span><span class="m-doc-wrap">const char* valueString,
-              const <a href="namespace_arg_script.html#a262b38c859c03eea3023a50999db2e7d" class="m-doc">EnumValue</a>* pEnum,
+              const <a href="namespace_arg_script.html#a3a28e3a6ce242ee8b31d1c09d4d4da96" class="m-doc">EnumValue</a>* pEnum,
               int&amp; dst) -&gt; bool</span>
             </dt>
-            <dd>Gets the integer value that corresponds to the given string in the specified enum.</dd>
+            <dd>Gets the integer value that corresponds to the given eastl::string in the specified enum.</dd>
           </dl>
         </section>
         <section id="typeless-methods">
@@ -153,16 +153,16 @@
         <section id="pro-attribs">
           <h2><a href="#pro-attribs">Protected variables</a></h2>
           <dl class="m-doc">
-            <dt id="abc0c5e882230e30ca648eece69f54ec9">
-              vector&lt;char&gt; <a href="#abc0c5e882230e30ca648eece69f54ec9" class="m-doc-self">mBuffer</a>
+            <dt id="aeb6dd9ad913f318789bd2907431832ff">
+              eastl::vector&lt;char&gt; <a href="#aeb6dd9ad913f318789bd2907431832ff" class="m-doc-self">mBuffer</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="a6c797ef6e92a389e2d21d51c114dedcf">
-              vector&lt;char*&gt; <a href="#a6c797ef6e92a389e2d21d51c114dedcf" class="m-doc-self">mArguments</a>
+            <dt id="a32041f0753c3936db9e6297cbcab49a6">
+              eastl::vector&lt;char*&gt; <a href="#a32041f0753c3936db9e6297cbcab49a6" class="m-doc-self">mArguments</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="a2a1f4c0bedb5f0d8159b65b52f60c6ed">
-              vector&lt;<a href="struct_arg_script_1_1_line_option.html" class="m-doc">LineOption</a>&gt; <a href="#a2a1f4c0bedb5f0d8159b65b52f60c6ed" class="m-doc-self">mOptions</a>
+            <dt id="a26ebcd8bb6ac946241ef69b523378ff8">
+              eastl::vector&lt;<a href="struct_arg_script_1_1_line_option.html" class="m-doc">LineOption</a>&gt; <a href="#a26ebcd8bb6ac946241ef69b523378ff8" class="m-doc-self">mOptions</a>
             </dt>
             <dd><span></span></dd>
             <dt id="ab8a1951f4342da67ae471b74253e4efc">
@@ -180,9 +180,9 @@
           <section class="m-doc-details" id="a565c664adda373d4c39c7183e4552cb5"><div>
             <h3>
               <span class="m-doc-wrap-bumper">static int ArgScript::<wbr />Line::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a565c664adda373d4c39c7183e4552cb5" class="m-doc-self">GetEnum</a>(</span><span class="m-doc-wrap">const char* valueString,
-              const <a href="namespace_arg_script.html#a262b38c859c03eea3023a50999db2e7d" class="m-doc">EnumValue</a>* pEnum)</span></span>
+              const <a href="namespace_arg_script.html#a3a28e3a6ce242ee8b31d1c09d4d4da96" class="m-doc">EnumValue</a>* pEnum)</span></span>
             </h3>
-            <p>Gets the integer value that corresponds to the given string in the specified enum.</p>
+            <p>Gets the integer value that corresponds to the given eastl::string in the specified enum.</p>
             <table class="m-table m-fullwidth m-flat">
               <thead>
                 <tr><th colspan="2">Parameters</th></tr>
@@ -190,11 +190,11 @@
               <tbody>
                 <tr>
                   <td style="width: 1%">valueString</td>
-                  <td>The string value of the enumeration.</td>
+                  <td>The eastl::string value of the enumeration.</td>
                 </tr>
                 <tr>
                   <td>pEnum</td>
-                  <td>An array of pair&lt;const char*, int&gt; objects where the values will be checked.</td>
+                  <td>An array of eastl::pair&lt;const char*, int&gt; objects where the values will be checked.</td>
                 </tr>
               </tbody>
               <tfoot>
@@ -204,15 +204,15 @@
                 </tr>
               </tfoot>
             </table>
-<p>If the enum does not have any value assigned to that string, an exception will be thrown.</p>
+<p>If the enum does not have any value assigned to that eastl::string, an exception will be thrown.</p>
           </div></section>
           <section class="m-doc-details" id="a3dfb37b6b2e8587766e90e9b161c51aa"><div>
             <h3>
               <span class="m-doc-wrap-bumper">static bool ArgScript::<wbr />Line::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a3dfb37b6b2e8587766e90e9b161c51aa" class="m-doc-self">GetOptionalEnum</a>(</span><span class="m-doc-wrap">const char* valueString,
-              const <a href="namespace_arg_script.html#a262b38c859c03eea3023a50999db2e7d" class="m-doc">EnumValue</a>* pEnum,
+              const <a href="namespace_arg_script.html#a3a28e3a6ce242ee8b31d1c09d4d4da96" class="m-doc">EnumValue</a>* pEnum,
               int&amp; dst)</span></span>
             </h3>
-            <p>Gets the integer value that corresponds to the given string in the specified enum.</p>
+            <p>Gets the integer value that corresponds to the given eastl::string in the specified enum.</p>
             <table class="m-table m-fullwidth m-flat">
               <thead>
                 <tr><th colspan="2">Parameters</th></tr>
@@ -220,11 +220,11 @@
               <tbody>
                 <tr>
                   <td style="width: 1%">valueString</td>
-                  <td>The string value of the enumeration.</td>
+                  <td>The eastl::string value of the enumeration.</td>
                 </tr>
                 <tr>
                   <td>pEnum</td>
-                  <td>An array of pair&lt;const char*, int&gt; objects where the values will be checked.</td>
+                  <td>An array of eastl::pair&lt;const char*, int&gt; objects where the values will be checked.</td>
                 </tr>
                 <tr>
                   <td>dst</td>
@@ -238,7 +238,7 @@
                 </tr>
               </tfoot>
             </table>
-<p>This method does not throw an exception if the enumeration does not have any value assigned to that string.</p>
+<p>This method does not throw an exception if the enumeration does not have any value assigned to that eastl::string.</p>
           </div></section>
           <section class="m-doc-details" id="a0867eb7503343da87e9395362c32269c"><div>
             <h3>
@@ -265,7 +265,7 @@
               <tfoot>
                 <tr>
                   <th>Returns</th>
-                  <td>An array of char* strings.</td>
+                  <td>An array of char* eastl::strings.</td>
                 </tr>
               </tfoot>
             </table>
@@ -299,7 +299,7 @@
               <tfoot>
                 <tr>
                   <th>Returns</th>
-                  <td>An array of char* strings.</td>
+                  <td>An array of char* eastl::strings.</td>
                 </tr>
               </tfoot>
             </table>
@@ -353,7 +353,7 @@
               <tfoot>
                 <tr>
                   <th>Returns</th>
-                  <td>An array of char* strings.</td>
+                  <td>An array of char* eastl::strings.</td>
                 </tr>
               </tfoot>
             </table>
@@ -392,7 +392,7 @@
               <tfoot>
                 <tr>
                   <th>Returns</th>
-                  <td>An array of char* strings.</td>
+                  <td>An array of char* eastl::strings.</td>
                 </tr>
               </tfoot>
             </table>

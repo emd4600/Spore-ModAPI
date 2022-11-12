@@ -66,8 +66,6 @@
         <section id="namespaces">
           <h2><a href="#namespaces">Namespaces</a></h2>
           <dl class="m-doc">
-            <dt>namespace <a href="namespace_app_1_1_app_data.html" class="m-doc">AppData</a></dt>
-            <dd><span></span></dd>
             <dt>namespace <a href="namespace_app_1_1_scenario_mode__addresses.html" class="m-doc">ScenarioMode_addresses</a></dt>
             <dd><span></span></dd>
             <dt>namespace <a href="namespace_app_1_1_s_p_property_i_ds.html" class="m-doc">SPPropertyIDs</a></dt>
@@ -91,6 +89,10 @@
             <dd>The implementation of <a href="class_app_1_1_i_game_mode_manager.html" class="m-doc">IGameModeManager</a>; this should only be used for extending and detouring.</dd>
             <dt>
               class <a href="class_app_1_1c_i_d_generator.html" class="m-doc">cIDGenerator</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              class <a href="class_app_1_1c_job.html" class="m-doc">cJob</a>
             </dt>
             <dd><span></span></dd>
             <dt>
@@ -169,6 +171,10 @@
               class <a href="class_app_1_1_i_game_mode_object.html" class="m-doc">IGameModeObject</a>
             </dt>
             <dd>Same as <a href="class_app_1_1_i_game_mode.html" class="m-doc">App::<wbr />IGameMode</a>, but this one includes a Cast method similar to the one in the <a href="class_object.html" class="m-doc">Object</a> class.</dd>
+            <dt>
+              class <a href="class_app_1_1_i_job_manager.html" class="m-doc">IJobManager</a>
+            </dt>
+            <dd><span></span></dd>
             <dt>
               class <a href="class_app_1_1_i_message_listener.html" class="m-doc">IMessageListener</a>
             </dt>
@@ -299,6 +305,10 @@
           <h2><a href="#typedef-members">Typedefs</a></h2>
           <dl class="m-doc">
             <dt>
+              using <a href="#addad4105280a274626612693fc8f6623" class="m-doc">cJobCallback</a> = bool(*)(cJob*, void*)
+            </dt>
+            <dd><span></span></dd>
+            <dt>
               using <a href="#a8e7a2854f38ce8e2b76e6f03989cc9e0" class="m-doc">CameraFactoryFunction_t</a> = <a href="class_app_1_1_i_camera.html" class="m-doc">ICamera</a>*(*)(PropertyList*pPropList)
             </dt>
             <dd>Camera types need a static function that creates the correct camera instance.</dd>
@@ -321,7 +331,17 @@
             </dt>
             <dd><span></span></dd>
             <dt>
+              <span class="m-doc-wrap-bumper"><a href="#a2b5fdbdbe2af26de64ed63dc4515d41a" class="m-doc">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_app_1_1c_camera_manager.html" class="m-doc">cCameraManager</a>,
+              0xB4)</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
               <span class="m-doc-wrap-bumper">auto <a href="#aa35043a6c54e3b05aada833acb708849" class="m-doc">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_app_1_1c_camera_manager.html" class="m-doc">cCameraManager</a>) -&gt; namespace</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper"><a href="#a7e39b97e2056a526024d6ecd3eb36f5a" class="m-doc">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_app_1_1c_cheat_manager.html" class="m-doc">cCheatManager</a>,
+              0x68)</span>
             </dt>
             <dd><span></span></dd>
             <dt>
@@ -329,7 +349,16 @@
             </dt>
             <dd><span></span></dd>
             <dt>
+              <span class="m-doc-wrap-bumper"><a href="#ae20f7977f2ef2c80bde171ad2f0581ab" class="m-doc">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_app_1_1c_game_mode_manager.html" class="m-doc">cGameModeManager</a>,
+              0x34)</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
               <span class="m-doc-wrap-bumper">auto <a href="#ab79a4bd9bde318bbf9a4317662695088" class="m-doc">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_app_1_1c_game_mode_manager.html" class="m-doc">cGameModeManager</a>) -&gt; namespace</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a7a1c89e97eb16e290b4f70dd8ecd25b7" class="m-doc">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_app_1_1c_job.html" class="m-doc">cJob</a>) -&gt; namespace</span>
             </dt>
             <dd><span></span></dd>
             <dt>
@@ -337,7 +366,17 @@
             </dt>
             <dd><span></span></dd>
             <dt>
+              <span class="m-doc-wrap-bumper"><a href="#a943ef1ecb52e877a234be0d010364bfd" class="m-doc">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_app_1_1c_message_manager.html" class="m-doc">cMessageManager</a>,
+              0xC8)</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
               <span class="m-doc-wrap-bumper">auto <a href="#a2bce90be67948b03d46f22f63a6bd7b2" class="m-doc">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_app_1_1c_message_manager.html" class="m-doc">cMessageManager</a>) -&gt; namespace</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper"><a href="#afb04bfa1cfd75cdab5886b4d57fbe1ff" class="m-doc">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_app_1_1c_prop_manager.html" class="m-doc">cPropManager</a>,
+              0x1EC)</span>
             </dt>
             <dd><span></span></dd>
             <dt>
@@ -359,6 +398,11 @@
             </dt>
             <dd><span></span></dd>
             <dt>
+              <span class="m-doc-wrap-bumper"><a href="#afc8eb7381e5db0efa4a9182a34195c2b" class="m-doc">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_app_1_1_direct_property_list.html" class="m-doc">DirectPropertyList</a>,
+              0x54)</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
               <span class="m-doc-wrap-bumper">auto <a href="#a3bbac691e628e0e576d5a2778d599b77" class="m-doc">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_app_1_1_direct_property_list.html" class="m-doc">DirectPropertyList</a>) -&gt; namespace</span>
             </dt>
             <dd><span></span></dd>
@@ -370,7 +414,7 @@
             <dt>
               <span class="m-doc-wrap-bumper">auto <a href="#ae39e55a9d9306ac26f8a7f0a7de11b50" class="m-doc">GetConsoleStream</a>(</span><span class="m-doc-wrap">) -&gt; <a href="class_arg_script_1_1_format_parser.html" class="m-doc">ArgScript::<wbr />FormatParser</a>*</span>
             </dt>
-            <dd>An utility method that returns the active console stream, and that can be used to print strings to the console.</dd>
+            <dd>An utility method that returns the active console stream, and that can be used to print eastl::strings to the console.</dd>
             <dt>
               <div class="m-doc-template">template&lt;typename... Args&gt;</div>
               <span class="m-doc-wrap-bumper">void <a href="#a5cfc09513c296a1468b99530df311f4f" class="m-doc">ConsolePrintF</a>(</span><span class="m-doc-wrap">const char* str,
@@ -407,45 +451,45 @@
             </dt>
             <dd><span></span></dd>
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#af7a55b14a341654f29945d7d38ace77f" class="m-doc">AddUpdateFunction</a>(</span><span class="m-doc-wrap">const <a href="namespace_app.html#a0792416baaa2251d68963db97d021cda" class="m-doc">VoidFunction_<wbr />T</a>&amp; function) -&gt; intrusive_ptr&lt;<a href="class_app_1_1_update_message_listener.html" class="m-doc">UpdateMessageListener</a>&gt;</span>
+              <span class="m-doc-wrap-bumper">auto <a href="#a315261b584f0a704631ea7173e078d5e" class="m-doc">AddUpdateFunction</a>(</span><span class="m-doc-wrap">const <a href="namespace_app.html#a0792416baaa2251d68963db97d021cda" class="m-doc">VoidFunction_<wbr />T</a>&amp; function) -&gt; eastl::intrusive_ptr&lt;<a href="class_app_1_1_update_message_listener.html" class="m-doc">UpdateMessageListener</a>&gt;</span>
             </dt>
             <dd>Adds an &quot;Update&quot; function that is called once every game frame.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#a12d9bbc8eec3931c5677bf1b87a62456" class="m-doc">AddUpdateFunction</a>(</span><span class="m-doc-wrap"><a href="class_app_1_1_i_updatable.html" class="m-doc">IUpdatable</a>* updatable) -&gt; intrusive_ptr&lt;<a href="class_app_1_1_update_message_listener.html" class="m-doc">UpdateMessageListener</a>&gt;</span>
+              <span class="m-doc-wrap-bumper">auto <a href="#aab1891cfb3bf16ca84c161b9a3fb6774" class="m-doc">AddUpdateFunction</a>(</span><span class="m-doc-wrap"><a href="class_app_1_1_i_updatable.html" class="m-doc">IUpdatable</a>* updatable) -&gt; eastl::intrusive_ptr&lt;<a href="class_app_1_1_update_message_listener.html" class="m-doc">UpdateMessageListener</a>&gt;</span>
             </dt>
             <dd>Adds a class with an Update method that is called once every game frame.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#adcc5d350caddc3ec5a0caae192f8d778" class="m-doc">ScheduleTask</a>(</span><span class="m-doc-wrap">const <a href="namespace_app.html#a0792416baaa2251d68963db97d021cda" class="m-doc">VoidFunction_<wbr />T</a>&amp; function,
-              float scheduleTime) -&gt; intrusive_ptr&lt;<a href="class_app_1_1_scheduled_task_listener.html" class="m-doc">ScheduledTaskListener</a>&gt;</span>
+              <span class="m-doc-wrap-bumper">auto <a href="#a778b2559fcebca6822273e61cb19019d" class="m-doc">ScheduleTask</a>(</span><span class="m-doc-wrap">const <a href="namespace_app.html#a0792416baaa2251d68963db97d021cda" class="m-doc">VoidFunction_<wbr />T</a>&amp; function,
+              float scheduleTime) -&gt; <a href="_i_message_manager_8h.html#a8398855010ed2cf21fa27d1c29cf64e9" class="m-doc">ScheduledTaskListenerPtr</a></span>
             </dt>
             <dd>Executes a function after a certain time (measured in seconds) has passed from ths call.</dd>
             <dt>
               <div class="m-doc-template">template&lt;class T&gt;</div>
-              <span class="m-doc-wrap-bumper">auto <a href="#ac75571a567ec26d7e148e41a83d56b54" class="m-doc">ScheduleTask</a>(</span><span class="m-doc-wrap">T* object,
+              <span class="m-doc-wrap-bumper">auto <a href="#aa61da6efea014433d0876a4ec80005b0" class="m-doc">ScheduleTask</a>(</span><span class="m-doc-wrap">T* object,
               <a href="namespace_app.html#adf650d2c1852a6bd9fa7e8d49af6fae4" class="m-doc">VoidMethod_<wbr />T</a>&lt;T&gt; method,
-              float scheduleTime) -&gt; intrusive_ptr&lt;<a href="class_app_1_1_scheduled_task_listener.html" class="m-doc">ScheduledTaskListener</a>&gt;</span>
+              float scheduleTime) -&gt; <a href="_i_message_manager_8h.html#a8398855010ed2cf21fa27d1c29cf64e9" class="m-doc">ScheduledTaskListenerPtr</a></span>
             </dt>
             <dd>Executes a class method after a certain time (measured in seconds) has passed from ths call.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#afc7a9a0cdd2045e547698c4285445663" class="m-doc">ScheduleRepeatedTask</a>(</span><span class="m-doc-wrap">const <a href="namespace_app.html#a0792416baaa2251d68963db97d021cda" class="m-doc">VoidFunction_<wbr />T</a>&amp; function,
+              <span class="m-doc-wrap-bumper">auto <a href="#abb247ce86a07e289885ac6db8e0235fc" class="m-doc">ScheduleRepeatedTask</a>(</span><span class="m-doc-wrap">const <a href="namespace_app.html#a0792416baaa2251d68963db97d021cda" class="m-doc">VoidFunction_<wbr />T</a>&amp; function,
               float scheduleTime,
-              float repeatRate) -&gt; intrusive_ptr&lt;<a href="class_app_1_1_scheduled_task_listener.html" class="m-doc">ScheduledTaskListener</a>&gt;</span>
+              float repeatRate) -&gt; <a href="_i_message_manager_8h.html#a8398855010ed2cf21fa27d1c29cf64e9" class="m-doc">ScheduledTaskListenerPtr</a></span>
             </dt>
             <dd>Executes a function after a certain time (measured in seconds) has passed from this call, and then keeps repeating it after a certain period (defined by the repeatRate parameter) parameter.</dd>
             <dt>
               <div class="m-doc-template">template&lt;class T&gt;</div>
-              <span class="m-doc-wrap-bumper">auto <a href="#aaf9613d0c383c31be6067537c6960dcc" class="m-doc">ScheduleRepeatedTask</a>(</span><span class="m-doc-wrap">T* object,
+              <span class="m-doc-wrap-bumper">auto <a href="#aa0db44eda1db9d311f1efaf99714211e" class="m-doc">ScheduleRepeatedTask</a>(</span><span class="m-doc-wrap">T* object,
               <a href="namespace_app.html#adf650d2c1852a6bd9fa7e8d49af6fae4" class="m-doc">VoidMethod_<wbr />T</a>&lt;T&gt; method,
               float scheduleTime,
-              float repeatRate) -&gt; intrusive_ptr&lt;<a href="class_app_1_1_scheduled_task_listener.html" class="m-doc">ScheduledTaskListener</a>&gt;</span>
+              float repeatRate) -&gt; <a href="_i_message_manager_8h.html#a8398855010ed2cf21fa27d1c29cf64e9" class="m-doc">ScheduledTaskListenerPtr</a></span>
             </dt>
             <dd>Executes a function after a certain time (measured in seconds) has passed from this call, and then keeps repeating it after a certain period (defined by the repeatRate parameter) parameter.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#adaff0d514088627ec69f23c35bb914fb" class="m-doc">RemoveUpdateFunction</a>(</span><span class="m-doc-wrap">intrusive_ptr&lt;<a href="class_app_1_1_update_message_listener.html" class="m-doc">UpdateMessageListener</a>&gt;&amp; updateListener) -&gt; bool</span>
+              <span class="m-doc-wrap-bumper">auto <a href="#aa30628dae139b37efa7207bba7655be5" class="m-doc">RemoveUpdateFunction</a>(</span><span class="m-doc-wrap">eastl::intrusive_ptr&lt;<a href="class_app_1_1_update_message_listener.html" class="m-doc">UpdateMessageListener</a>&gt;&amp; updateListener) -&gt; bool</span>
             </dt>
             <dd><span></span></dd>
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#aefdd84f7ca367c3e875acbbe1129a076" class="m-doc">RemoveScheduledTask</a>(</span><span class="m-doc-wrap">intrusive_ptr&lt;<a href="class_app_1_1_scheduled_task_listener.html" class="m-doc">ScheduledTaskListener</a>&gt;&amp; taskListener) -&gt; bool</span>
+              <span class="m-doc-wrap-bumper">auto <a href="#a2384cabbf8b5652ddb8fc54bda4a0115" class="m-doc">RemoveScheduledTask</a>(</span><span class="m-doc-wrap"><a href="_i_message_manager_8h.html#a8398855010ed2cf21fa27d1c29cf64e9" class="m-doc">ScheduledTaskListenerPtr</a>&amp; taskListener) -&gt; bool</span>
             </dt>
             <dd><span></span></dd>
             <dt>
@@ -465,7 +509,16 @@
             </dt>
             <dd><span></span></dd>
             <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a7dc2edf71559bc4fbb447a01f3d46f79" class="m-doc">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_app_1_1_i_job_manager.html" class="m-doc">IJobManager</a>) -&gt; namespace</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
               <span class="m-doc-wrap-bumper"><a href="#a469532e054e84631bf8aa1bc7144601c" class="m-doc">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="struct_app_1_1_message_listener_data.html" class="m-doc">MessageListenerData</a>,
+              0x14)</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper"><a href="#a3d3bfe7b931291c54b7d1114b82f5bf5" class="m-doc">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_app_1_1_property.html" class="m-doc">Property</a>,
               0x14)</span>
             </dt>
             <dd><span></span></dd>
@@ -989,7 +1042,17 @@
             </dt>
             <dd><span></span></dd>
             <dt>
+              <span class="m-doc-wrap-bumper"><a href="#ab3079df4090a1af3c5e45cf783123831" class="m-doc">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_app_1_1_property_list.html" class="m-doc">PropertyList</a>,
+              0x38)</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
               <span class="m-doc-wrap-bumper">auto <a href="#a3f193042b088b170e6b1f0d07934f62d" class="m-doc">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_app_1_1_property_list.html" class="m-doc">PropertyList</a>) -&gt; namespace</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper"><a href="#a1624d70ae8f9b3a3af0062e30fa63035" class="m-doc">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_app_1_1c_scenario_mode.html" class="m-doc">cScenarioMode</a>,
+              0xE0)</span>
             </dt>
             <dd><span></span></dd>
             <dt>
@@ -1079,6 +1142,13 @@
         </section>
         <section>
           <h2>Typedef documentation</h2>
+          <section class="m-doc-details" id="addad4105280a274626612693fc8f6623"><div>
+            <h3>
+              typedef bool(*App::<wbr /><a href="#addad4105280a274626612693fc8f6623" class="m-doc-self">cJobCallback</a>)(cJob*, void*)
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="c_job_8h.html">&lt;Spore/App/cJob.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
           <section class="m-doc-details" id="a8e7a2854f38ce8e2b76e6f03989cc9e0"><div>
             <h3>
               typedef <a href="class_app_1_1_i_camera.html" class="m-doc">ICamera</a>*(*App::<wbr /><a href="#a8e7a2854f38ce8e2b76e6f03989cc9e0" class="m-doc-self">CameraFactoryFunction_t</a>)(PropertyList*pPropList)
@@ -1114,10 +1184,26 @@
             </h3>
             <p><span></span></p>
           </div></section>
+          <section class="m-doc-details" id="a2b5fdbdbe2af26de64ed63dc4515d41a"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"> App::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a2b5fdbdbe2af26de64ed63dc4515d41a" class="m-doc-self">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_app_1_1c_camera_manager.html" class="m-doc">cCameraManager</a>,
+              0xB4)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="c_camera_manager_8h.html">&lt;Spore/App/cCameraManager.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
           <section class="m-doc-details" id="aa35043a6c54e3b05aada833acb708849"><div>
             <h3>
               <span class="m-doc-wrap-bumper">namespace App::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#aa35043a6c54e3b05aada833acb708849" class="m-doc-self">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_app_1_1c_camera_manager.html" class="m-doc">cCameraManager</a>)</span></span>
               <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="c_camera_manager_8h.html">&lt;Spore/App/cCameraManager.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="a7e39b97e2056a526024d6ecd3eb36f5a"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"> App::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a7e39b97e2056a526024d6ecd3eb36f5a" class="m-doc-self">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_app_1_1c_cheat_manager.html" class="m-doc">cCheatManager</a>,
+              0x68)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="c_cheat_manager_8h.html">&lt;Spore/App/cCheatManager.h&gt;</a></div>
             </h3>
             <p><span></span></p>
           </div></section>
@@ -1128,10 +1214,25 @@
             </h3>
             <p><span></span></p>
           </div></section>
+          <section class="m-doc-details" id="ae20f7977f2ef2c80bde171ad2f0581ab"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"> App::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ae20f7977f2ef2c80bde171ad2f0581ab" class="m-doc-self">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_app_1_1c_game_mode_manager.html" class="m-doc">cGameModeManager</a>,
+              0x34)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="c_game_mode_manager_8h.html">&lt;Spore/App/cGameModeManager.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
           <section class="m-doc-details" id="ab79a4bd9bde318bbf9a4317662695088"><div>
             <h3>
               <span class="m-doc-wrap-bumper">namespace App::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ab79a4bd9bde318bbf9a4317662695088" class="m-doc-self">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_app_1_1c_game_mode_manager.html" class="m-doc">cGameModeManager</a>)</span></span>
               <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="c_game_mode_manager_8h.html">&lt;Spore/App/cGameModeManager.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="a7a1c89e97eb16e290b4f70dd8ecd25b7"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">namespace App::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a7a1c89e97eb16e290b4f70dd8ecd25b7" class="m-doc-self">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_app_1_1c_job.html" class="m-doc">cJob</a>)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="c_job_8h.html">&lt;Spore/App/cJob.h&gt;</a></div>
             </h3>
             <p><span></span></p>
           </div></section>
@@ -1142,10 +1243,26 @@
             </h3>
             <p><span></span></p>
           </div></section>
+          <section class="m-doc-details" id="a943ef1ecb52e877a234be0d010364bfd"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"> App::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a943ef1ecb52e877a234be0d010364bfd" class="m-doc-self">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_app_1_1c_message_manager.html" class="m-doc">cMessageManager</a>,
+              0xC8)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="c_message_manager_8h.html">&lt;Spore/App/cMessageManager.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
           <section class="m-doc-details" id="a2bce90be67948b03d46f22f63a6bd7b2"><div>
             <h3>
               <span class="m-doc-wrap-bumper">namespace App::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a2bce90be67948b03d46f22f63a6bd7b2" class="m-doc-self">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_app_1_1c_message_manager.html" class="m-doc">cMessageManager</a>)</span></span>
               <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="c_message_manager_8h.html">&lt;Spore/App/cMessageManager.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="afb04bfa1cfd75cdab5886b4d57fbe1ff"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"> App::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#afb04bfa1cfd75cdab5886b4d57fbe1ff" class="m-doc-self">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_app_1_1c_prop_manager.html" class="m-doc">cPropManager</a>,
+              0x1EC)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="c_prop_manager_8h.html">&lt;Spore/App/cPropManager.h&gt;</a></div>
             </h3>
             <p><span></span></p>
           </div></section>
@@ -1179,6 +1296,14 @@
             </h3>
             <p><span></span></p>
           </div></section>
+          <section class="m-doc-details" id="afc8eb7381e5db0efa4a9182a34195c2b"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"> App::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#afc8eb7381e5db0efa4a9182a34195c2b" class="m-doc-self">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_app_1_1_direct_property_list.html" class="m-doc">DirectPropertyList</a>,
+              0x54)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_direct_property_list_8h.html">&lt;Spore/App/DirectPropertyList.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
           <section class="m-doc-details" id="a3bbac691e628e0e576d5a2778d599b77"><div>
             <h3>
               <span class="m-doc-wrap-bumper">namespace App::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a3bbac691e628e0e576d5a2778d599b77" class="m-doc-self">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_app_1_1_direct_property_list.html" class="m-doc">DirectPropertyList</a>)</span></span>
@@ -1199,7 +1324,7 @@
               <span class="m-doc-wrap-bumper"><a href="class_arg_script_1_1_format_parser.html" class="m-doc">ArgScript::<wbr />FormatParser</a>* App::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ae39e55a9d9306ac26f8a7f0a7de11b50" class="m-doc-self">GetConsoleStream</a>(</span><span class="m-doc-wrap">)</span></span>
               <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_i_cheat_manager_8h.html">&lt;Spore/App/ICheatManager.h&gt;</a></div>
             </h3>
-            <p>An utility method that returns the active console stream, and that can be used to print strings to the console.</p>
+            <p>An utility method that returns the active console stream, and that can be used to print eastl::strings to the console.</p>
 <p>This is the equivalent to <a href="class_app_1_1_i_cheat_manager.html#ab756691bc925b01764f9ba30f54dd680" class="m-doc">ICheatManager::<wbr />Get()</a>-&gt;GetArgScript()</p>
           </div></section>
           <section class="m-doc-details" id="a5cfc09513c296a1468b99530df311f4f"><div>
@@ -1263,9 +1388,9 @@
             </h3>
             <p><span></span></p>
           </div></section>
-          <section class="m-doc-details" id="af7a55b14a341654f29945d7d38ace77f"><div>
+          <section class="m-doc-details" id="a315261b584f0a704631ea7173e078d5e"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">intrusive_ptr&lt;<a href="class_app_1_1_update_message_listener.html" class="m-doc">UpdateMessageListener</a>&gt; App::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#af7a55b14a341654f29945d7d38ace77f" class="m-doc-self">AddUpdateFunction</a>(</span><span class="m-doc-wrap">const <a href="namespace_app.html#a0792416baaa2251d68963db97d021cda" class="m-doc">VoidFunction_<wbr />T</a>&amp; function)</span></span>
+              <span class="m-doc-wrap-bumper">eastl::intrusive_ptr&lt;<a href="class_app_1_1_update_message_listener.html" class="m-doc">UpdateMessageListener</a>&gt; App::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a315261b584f0a704631ea7173e078d5e" class="m-doc-self">AddUpdateFunction</a>(</span><span class="m-doc-wrap">const <a href="namespace_app.html#a0792416baaa2251d68963db97d021cda" class="m-doc">VoidFunction_<wbr />T</a>&amp; function)</span></span>
               <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_i_message_manager_8h.html">&lt;Spore/App/IMessageManager.h&gt;</a></div>
             </h3>
             <p>Adds an &quot;Update&quot; function that is called once every game frame.</p>
@@ -1282,9 +1407,9 @@
             </table>
 <p>The time between frames is not constant, but you can use the <a href="class_clock.html" class="m-doc">Clock</a> and <a href="class_simulator_1_1c_gonzago_timer.html" class="m-doc">Simulator::<wbr />cGonzagoTimer</a> classes to measure elapsed time.</p><p>The method returns the object that holds the update function. If you want to remove the function so it is not called, anymore, you can do it by calling App::RemoveUpdateFunction(...) with the returned object as parameter.</p><p>Internally, this is implemented just by adding a message listener that listens to the kMsgAppUpdate message.</p>
           </div></section>
-          <section class="m-doc-details" id="a12d9bbc8eec3931c5677bf1b87a62456"><div>
+          <section class="m-doc-details" id="aab1891cfb3bf16ca84c161b9a3fb6774"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">intrusive_ptr&lt;<a href="class_app_1_1_update_message_listener.html" class="m-doc">UpdateMessageListener</a>&gt; App::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a12d9bbc8eec3931c5677bf1b87a62456" class="m-doc-self">AddUpdateFunction</a>(</span><span class="m-doc-wrap"><a href="class_app_1_1_i_updatable.html" class="m-doc">IUpdatable</a>* updatable)</span></span>
+              <span class="m-doc-wrap-bumper">eastl::intrusive_ptr&lt;<a href="class_app_1_1_update_message_listener.html" class="m-doc">UpdateMessageListener</a>&gt; App::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#aab1891cfb3bf16ca84c161b9a3fb6774" class="m-doc-self">AddUpdateFunction</a>(</span><span class="m-doc-wrap"><a href="class_app_1_1_i_updatable.html" class="m-doc">IUpdatable</a>* updatable)</span></span>
               <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_i_message_manager_8h.html">&lt;Spore/App/IMessageManager.h&gt;</a></div>
             </h3>
             <p>Adds a class with an Update method that is called once every game frame.</p>
@@ -1301,9 +1426,9 @@
             </table>
 <p>The time between frames is not constant, but you can use the <a href="class_clock.html" class="m-doc">Clock</a> and <a href="class_simulator_1_1c_gonzago_timer.html" class="m-doc">Simulator::<wbr />cGonzagoTimer</a> classes to measure elapsed time.</p><p>The method returns the object that holds the updatable class. If you want to remove the function so it is not called, anymore, you can do it by calling App::RemoveUpdateFunction(...) with the returned object as parameter.</p><p>Internally, this is implemented just by adding a message listener that listens to the kMsgAppUpdate message.</p>
           </div></section>
-          <section class="m-doc-details" id="adcc5d350caddc3ec5a0caae192f8d778"><div>
+          <section class="m-doc-details" id="a778b2559fcebca6822273e61cb19019d"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">intrusive_ptr&lt;<a href="class_app_1_1_scheduled_task_listener.html" class="m-doc">ScheduledTaskListener</a>&gt; App::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#adcc5d350caddc3ec5a0caae192f8d778" class="m-doc-self">ScheduleTask</a>(</span><span class="m-doc-wrap">const <a href="namespace_app.html#a0792416baaa2251d68963db97d021cda" class="m-doc">VoidFunction_<wbr />T</a>&amp; function,
+              <span class="m-doc-wrap-bumper"><a href="_i_message_manager_8h.html#a8398855010ed2cf21fa27d1c29cf64e9" class="m-doc">ScheduledTaskListenerPtr</a> App::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a778b2559fcebca6822273e61cb19019d" class="m-doc-self">ScheduleTask</a>(</span><span class="m-doc-wrap">const <a href="namespace_app.html#a0792416baaa2251d68963db97d021cda" class="m-doc">VoidFunction_<wbr />T</a>&amp; function,
               float scheduleTime)</span></span>
               <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_i_message_manager_8h.html">&lt;Spore/App/IMessageManager.h&gt;</a></div>
             </h3>
@@ -1325,13 +1450,13 @@
             </table>
 <p>The function is executed only once, and the time starts counting since this ScheduleTask method has been called.</p><p>The method returns the object that holds the scheduled task. If you want to remove the task before it is called, you can do it by calling App::RemoveScheduledTask(...) with the returned object as parameter.</p><p>Internally, this is implemented by adding a message listener that listens to the kMsgAppUpdate message. Every frame uses a <a href="class_clock.html" class="m-doc">Clock</a> object to compare the elapsed time since this task as scheduled. The listener is removed once the task has finished executing.</p>
           </div></section>
-          <section class="m-doc-details" id="ac75571a567ec26d7e148e41a83d56b54"><div>
+          <section class="m-doc-details" id="aa61da6efea014433d0876a4ec80005b0"><div>
             <h3>
               <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="_i_message_manager_8h.html">&lt;Spore/App/IMessageManager.h&gt;</a></div>
               <div class="m-doc-template">
                 template&lt;class T&gt;
               </div>
-              <span class="m-doc-wrap-bumper">intrusive_ptr&lt;<a href="class_app_1_1_scheduled_task_listener.html" class="m-doc">ScheduledTaskListener</a>&gt; App::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ac75571a567ec26d7e148e41a83d56b54" class="m-doc-self">ScheduleTask</a>(</span><span class="m-doc-wrap">T* object,
+              <span class="m-doc-wrap-bumper"><a href="_i_message_manager_8h.html#a8398855010ed2cf21fa27d1c29cf64e9" class="m-doc">ScheduledTaskListenerPtr</a> App::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#aa61da6efea014433d0876a4ec80005b0" class="m-doc-self">ScheduleTask</a>(</span><span class="m-doc-wrap">T* object,
               <a href="namespace_app.html#adf650d2c1852a6bd9fa7e8d49af6fae4" class="m-doc">VoidMethod_<wbr />T</a>&lt;T&gt; method,
               float scheduleTime)</span></span>
             </h3>
@@ -1357,9 +1482,9 @@
             </table>
 <p>The method is executed only once, and the time starts counting since this ScheduleTask method has been called.</p><p>The method returns the object that holds the scheduled task. If you want to remove the task before it is called, you can do it by calling App::RemoveScheduledTask(...) with the returned object as parameter.</p><p>Internally, this is implemented by adding a message listener that listens to the kMsgAppUpdate message. Every frame uses a <a href="class_clock.html" class="m-doc">Clock</a> object to compare the elapsed time since this task as scheduled. The listener is removed once the task has finished executing.</p>
           </div></section>
-          <section class="m-doc-details" id="afc7a9a0cdd2045e547698c4285445663"><div>
+          <section class="m-doc-details" id="abb247ce86a07e289885ac6db8e0235fc"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">intrusive_ptr&lt;<a href="class_app_1_1_scheduled_task_listener.html" class="m-doc">ScheduledTaskListener</a>&gt; App::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#afc7a9a0cdd2045e547698c4285445663" class="m-doc-self">ScheduleRepeatedTask</a>(</span><span class="m-doc-wrap">const <a href="namespace_app.html#a0792416baaa2251d68963db97d021cda" class="m-doc">VoidFunction_<wbr />T</a>&amp; function,
+              <span class="m-doc-wrap-bumper"><a href="_i_message_manager_8h.html#a8398855010ed2cf21fa27d1c29cf64e9" class="m-doc">ScheduledTaskListenerPtr</a> App::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#abb247ce86a07e289885ac6db8e0235fc" class="m-doc-self">ScheduleRepeatedTask</a>(</span><span class="m-doc-wrap">const <a href="namespace_app.html#a0792416baaa2251d68963db97d021cda" class="m-doc">VoidFunction_<wbr />T</a>&amp; function,
               float scheduleTime,
               float repeatRate)</span></span>
               <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_i_message_manager_8h.html">&lt;Spore/App/IMessageManager.h&gt;</a></div>
@@ -1386,13 +1511,13 @@
             </table>
 <p>The function is executed only once, and the time starts counting since this ScheduleTask method has been called.</p><p>The method returns the object that holds the scheduled task. If you want to remove the task so it does not execute anymore, you can do it by calling App::RemoveScheduledTask(...) with the returned object as parameter.</p><p>Internally, this is implemented by adding a message listener that listens to the kMsgAppUpdate message. Every frame uses a <a href="class_clock.html" class="m-doc">Clock</a> object to compare the elapsed time since this task as scheduled. The listener is removed once the task has finished executing.</p>
           </div></section>
-          <section class="m-doc-details" id="aaf9613d0c383c31be6067537c6960dcc"><div>
+          <section class="m-doc-details" id="aa0db44eda1db9d311f1efaf99714211e"><div>
             <h3>
               <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="_i_message_manager_8h.html">&lt;Spore/App/IMessageManager.h&gt;</a></div>
               <div class="m-doc-template">
                 template&lt;class T&gt;
               </div>
-              <span class="m-doc-wrap-bumper">intrusive_ptr&lt;<a href="class_app_1_1_scheduled_task_listener.html" class="m-doc">ScheduledTaskListener</a>&gt; App::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#aaf9613d0c383c31be6067537c6960dcc" class="m-doc-self">ScheduleRepeatedTask</a>(</span><span class="m-doc-wrap">T* object,
+              <span class="m-doc-wrap-bumper"><a href="_i_message_manager_8h.html#a8398855010ed2cf21fa27d1c29cf64e9" class="m-doc">ScheduledTaskListenerPtr</a> App::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#aa0db44eda1db9d311f1efaf99714211e" class="m-doc-self">ScheduleRepeatedTask</a>(</span><span class="m-doc-wrap">T* object,
               <a href="namespace_app.html#adf650d2c1852a6bd9fa7e8d49af6fae4" class="m-doc">VoidMethod_<wbr />T</a>&lt;T&gt; method,
               float scheduleTime,
               float repeatRate)</span></span>
@@ -1423,16 +1548,16 @@
             </table>
 <p>The function is executed only once, and the time starts counting since this ScheduleTask method has been called.</p><p>The method returns the object that holds the scheduled task. If you want to remove the task so it does not execute anymore, you can do it by calling App::RemoveScheduledTask(...) with the returned object as parameter.</p><p>Internally, this is implemented by adding a message listener that listens to the kMsgAppUpdate message. Every frame uses a <a href="class_clock.html" class="m-doc">Clock</a> object to compare the elapsed time since this task as scheduled. The listener is removed once the task has finished executing.</p>
           </div></section>
-          <section class="m-doc-details" id="adaff0d514088627ec69f23c35bb914fb"><div>
+          <section class="m-doc-details" id="aa30628dae139b37efa7207bba7655be5"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">bool App::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#adaff0d514088627ec69f23c35bb914fb" class="m-doc-self">RemoveUpdateFunction</a>(</span><span class="m-doc-wrap">intrusive_ptr&lt;<a href="class_app_1_1_update_message_listener.html" class="m-doc">UpdateMessageListener</a>&gt;&amp; updateListener)</span></span>
+              <span class="m-doc-wrap-bumper">bool App::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#aa30628dae139b37efa7207bba7655be5" class="m-doc-self">RemoveUpdateFunction</a>(</span><span class="m-doc-wrap">eastl::intrusive_ptr&lt;<a href="class_app_1_1_update_message_listener.html" class="m-doc">UpdateMessageListener</a>&gt;&amp; updateListener)</span></span>
               <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_i_message_manager_8h.html">&lt;Spore/App/IMessageManager.h&gt;</a></div>
             </h3>
             <p><span></span></p>
           </div></section>
-          <section class="m-doc-details" id="aefdd84f7ca367c3e875acbbe1129a076"><div>
+          <section class="m-doc-details" id="a2384cabbf8b5652ddb8fc54bda4a0115"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">bool App::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#aefdd84f7ca367c3e875acbbe1129a076" class="m-doc-self">RemoveScheduledTask</a>(</span><span class="m-doc-wrap">intrusive_ptr&lt;<a href="class_app_1_1_scheduled_task_listener.html" class="m-doc">ScheduledTaskListener</a>&gt;&amp; taskListener)</span></span>
+              <span class="m-doc-wrap-bumper">bool App::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a2384cabbf8b5652ddb8fc54bda4a0115" class="m-doc-self">RemoveScheduledTask</a>(</span><span class="m-doc-wrap"><a href="_i_message_manager_8h.html#a8398855010ed2cf21fa27d1c29cf64e9" class="m-doc">ScheduledTaskListenerPtr</a>&amp; taskListener)</span></span>
               <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_i_message_manager_8h.html">&lt;Spore/App/IMessageManager.h&gt;</a></div>
             </h3>
             <p><span></span></p>
@@ -1465,11 +1590,26 @@
             </h3>
             <p><span></span></p>
           </div></section>
+          <section class="m-doc-details" id="a7dc2edf71559bc4fbb447a01f3d46f79"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">namespace App::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a7dc2edf71559bc4fbb447a01f3d46f79" class="m-doc-self">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_app_1_1_i_job_manager.html" class="m-doc">IJobManager</a>)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_job_manager_8h.html">&lt;Spore/App/JobManager.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
           <section class="m-doc-details" id="a469532e054e84631bf8aa1bc7144601c"><div>
             <h3>
               <span class="m-doc-wrap-bumper"> App::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a469532e054e84631bf8aa1bc7144601c" class="m-doc-self">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="struct_app_1_1_message_listener_data.html" class="m-doc">MessageListenerData</a>,
               0x14)</span></span>
               <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_message_listener_data_8h.html">&lt;Spore/App/MessageListenerData.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="a3d3bfe7b931291c54b7d1114b82f5bf5"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"> App::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a3d3bfe7b931291c54b7d1114b82f5bf5" class="m-doc-self">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_app_1_1_property.html" class="m-doc">Property</a>,
+              0x14)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_property_8h.html">&lt;Spore/App/Property.h&gt;</a></div>
             </h3>
             <p><span></span></p>
           </div></section>
@@ -2208,10 +2348,26 @@
             </h3>
             <p><span></span></p>
           </div></section>
+          <section class="m-doc-details" id="ab3079df4090a1af3c5e45cf783123831"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"> App::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ab3079df4090a1af3c5e45cf783123831" class="m-doc-self">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_app_1_1_property_list.html" class="m-doc">PropertyList</a>,
+              0x38)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_property_list_8h.html">&lt;Spore/App/PropertyList.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
           <section class="m-doc-details" id="a3f193042b088b170e6b1f0d07934f62d"><div>
             <h3>
               <span class="m-doc-wrap-bumper">namespace App::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a3f193042b088b170e6b1f0d07934f62d" class="m-doc-self">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_app_1_1_property_list.html" class="m-doc">PropertyList</a>)</span></span>
               <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_property_list_8h.html">&lt;Spore/App/PropertyList.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="a1624d70ae8f9b3a3af0062e30fa63035"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"> App::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a1624d70ae8f9b3a3af0062e30fa63035" class="m-doc-self">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_app_1_1c_scenario_mode.html" class="m-doc">cScenarioMode</a>,
+              0xE0)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_scenario_mode_8h.html">&lt;Spore/App/ScenarioMode.h&gt;</a></div>
             </h3>
             <p><span></span></p>
           </div></section>

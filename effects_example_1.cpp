@@ -6,11 +6,11 @@ class GasTestCheat
 public:
 	void ParseLine(const ArgScript::Line& line) override {
 		for (int i = 0; i < 12; ++i) {
-			IEffectPtr effect;
+			IVisualEffectPtr effect;
 			// 0x03F54A4F is SG_gasGiant_01~
-			if (SwarmManager.CreateEffect(0x03F54A4F + i, 0, effect)) {
+			if (EffectsManager.CreateVisualEffect(0x03F54A4F + i, 0, effect)) {
 				// X and Y can go negative, but we will only use positive Z so it doesn't go below the ground
-				effect->SetTransform(Transform()
+				effect->SetSourceTransform(Transform()
 					.SetOffset(Math::randf(-7, 7), Math::randf(-7, 7), Math::randf(0, 7))
 					.SetScale(0.08f));
 				effect->Start();

@@ -60,9 +60,6 @@
                 <li><a href="#typeless-methods">Constructors, destructors, conversion operators</a></li>
                 <li><a href="#pub-methods">Public functions</a></li>
                 <li><a href="#pub-attribs">Public variables</a></li>
-                <li><a href="#pro-types">Protected types</a></li>
-                <li><a href="#pro-methods">Protected functions</a></li>
-                <li><a href="#pro-attribs">Protected variables</a></li>
               </ul>
             </li>
           </ul>
@@ -72,20 +69,16 @@
           <h2><a href="#base-classes">Base classes</a></h2>
           <dl class="m-doc">
             <dt>
-              class <a href="class_resource_1_1_i_resource_container.html" class="m-doc">IResourceContainer</a>
+              class <a href="class_resource_1_1_database.html" class="m-doc">Database</a>
             </dt>
             <dd><span></span></dd>
-            <dt>
-              class <a href="class_object.html" class="m-doc">Object</a>
-            </dt>
-            <dd>This class represents a basic reference counted object.</dd>
           </dl>
         </section>
         <section id="pub-static-attribs">
           <h2><a href="#pub-static-attribs">Public static variables</a></h2>
           <dl class="m-doc">
-            <dt id="a48ed39122241e68b295923368346a67c">
-              static const uint32_t <a href="#a48ed39122241e68b295923368346a67c" class="m-doc-self">kDefaultType</a>
+            <dt id="a0bfc4140bb3d17087d92dd0576b4bd62">
+              static const uint32_t <a href="#a0bfc4140bb3d17087d92dd0576b4bd62" class="m-doc-self">DATABASE_TYPE</a>
             </dt>
             <dd><span></span></dd>
             <dt id="ad366521cb04b4707874a1643d7d887a5">
@@ -97,9 +90,9 @@
         <section id="typeless-methods">
           <h2><a href="#typeless-methods">Constructors, destructors, conversion operators</a></h2>
           <dl class="m-doc">
-            <dt id="a1dd90a999505ad8528b9092a81cb1f8c">
-              <span class="m-doc-wrap-bumper"><a href="#a1dd90a999505ad8528b9092a81cb1f8c" class="m-doc-self">DatabasePackedFile</a>(</span><span class="m-doc-wrap">const char16_t* pPath,
-              <a href="class_i_core_allocator.html" class="m-doc">ICoreAllocator</a>* pAllocator)</span>
+            <dt id="a1407ac42ab8f19fd8004702225632c48">
+              <span class="m-doc-wrap-bumper"><a href="#a1407ac42ab8f19fd8004702225632c48" class="m-doc-self">DatabasePackedFile</a>(</span><span class="m-doc-wrap">const char16_t* location,
+              <a href="class_i_core_allocator.html" class="m-doc">ICoreAllocator</a>* allocator = nullptr)</span>
             </dt>
             <dd><span></span></dd>
             <dt id="a66a378948ec83a5e63f54bfc7f185def">
@@ -111,98 +104,90 @@
         <section id="pub-methods">
           <h2><a href="#pub-methods">Public functions</a></h2>
           <dl class="m-doc">
-            <dt id="ae548bbc1ba1e83b1ec53d9da14b86342">
-              <span class="m-doc-wrap-bumper">auto <a href="#ae548bbc1ba1e83b1ec53d9da14b86342" class="m-doc-self">AddRef</a>(</span><span class="m-doc-wrap">) -&gt; int <span class="m-label m-flat m-warning">override</span></span>
-            </dt>
-            <dd><span></span></dd>
-            <dt id="a5b844b40fa331bbc43be01380c461dae">
-              <span class="m-doc-wrap-bumper">auto <a href="#a5b844b40fa331bbc43be01380c461dae" class="m-doc-self">Release</a>(</span><span class="m-doc-wrap">) -&gt; int <span class="m-label m-flat m-warning">override</span></span>
-            </dt>
-            <dd><span></span></dd>
             <dt id="a0ee3939e531c9b0dc97fa1d22930c2d3">
               <span class="m-doc-wrap-bumper">auto <a href="#a0ee3939e531c9b0dc97fa1d22930c2d3" class="m-doc-self">Cast</a>(</span><span class="m-doc-wrap">uint32_t type) const -&gt; void* <span class="m-label m-flat m-warning">override</span></span>
             </dt>
             <dd><span></span></dd>
-            <dt id="a873f17dd7028fb59a15bee8ab2f909f7">
-              <span class="m-doc-wrap-bumper">auto <a href="#a873f17dd7028fb59a15bee8ab2f909f7" class="m-doc-self">NeedsToRelease</a>(</span><span class="m-doc-wrap">) -&gt; bool <span class="m-label m-flat m-warning">virtual</span></span>
+            <dt id="a5479b52b95bf7c9cd4954d718eecab9b">
+              <span class="m-doc-wrap-bumper">auto <a href="#a5479b52b95bf7c9cd4954d718eecab9b" class="m-doc-self">Initialize</a>(</span><span class="m-doc-wrap">) -&gt; bool <span class="m-label m-flat m-warning">override</span></span>
             </dt>
             <dd><span></span></dd>
-            <dt id="afa17701d9424b25fee244cd208192b18">
-              <span class="m-doc-wrap-bumper">auto <a href="#afa17701d9424b25fee244cd208192b18" class="m-doc-self">ReleaseResources</a>(</span><span class="m-doc-wrap">) -&gt; bool <span class="m-label m-flat m-warning">virtual</span></span>
+            <dt id="a78b13d5969d0842df6b304dad6a0c1a6">
+              <span class="m-doc-wrap-bumper">auto <a href="#a78b13d5969d0842df6b304dad6a0c1a6" class="m-doc-self">Dispose</a>(</span><span class="m-doc-wrap">) -&gt; bool <span class="m-label m-flat m-warning">override</span></span>
             </dt>
             <dd><span></span></dd>
-            <dt id="abdceefca1195ccbf4d5b6edc63433092">
-              <span class="m-doc-wrap-bumper">auto <a href="#abdceefca1195ccbf4d5b6edc63433092" class="m-doc-self">GetType</a>(</span><span class="m-doc-wrap">) const -&gt; uint32_t <span class="m-label m-flat m-warning">virtual</span></span>
+            <dt id="a398c9af2244284fd706c1bca6db546bf">
+              <span class="m-doc-wrap-bumper">auto <a href="#a398c9af2244284fd706c1bca6db546bf" class="m-doc-self">GetDatabaseType</a>(</span><span class="m-doc-wrap">) const -&gt; uint32_t <span class="m-label m-flat m-warning">override</span></span>
             </dt>
             <dd><span></span></dd>
-            <dt id="a06c1a2165f84f2eedb2e434ca77c7f69">
-              <span class="m-doc-wrap-bumper">auto <a href="#a06c1a2165f84f2eedb2e434ca77c7f69" class="m-doc-self">GetReferenceCount</a>(</span><span class="m-doc-wrap">) const -&gt; int <span class="m-label m-flat m-warning">virtual</span></span>
+            <dt id="a22c6dd813a3da5e497477434825edbe2">
+              <span class="m-doc-wrap-bumper">auto <a href="#a22c6dd813a3da5e497477434825edbe2" class="m-doc-self">GetRefCount</a>(</span><span class="m-doc-wrap">) const -&gt; int <span class="m-label m-flat m-warning">override</span></span>
             </dt>
             <dd><span></span></dd>
-            <dt id="a79d666c6b66e616e2eda9c0f5e0b65d6">
-              <span class="m-doc-wrap-bumper">auto <a href="#a79d666c6b66e616e2eda9c0f5e0b65d6" class="m-doc-self">UseIndexMutex</a>(</span><span class="m-doc-wrap">bool bLock) -&gt; int <span class="m-label m-flat m-warning">virtual</span></span>
+            <dt id="a3c158a426e856885dad16acaf6ae8f62">
+              <span class="m-doc-wrap-bumper">void <a href="#a3c158a426e856885dad16acaf6ae8f62" class="m-doc-self">Lock</a>(</span><span class="m-doc-wrap">bool lock) <span class="m-label m-flat m-warning">override</span></span>
             </dt>
             <dd><span></span></dd>
-            <dt id="a990eed73f5d9ac286a8bf4990dc6ff1f">
-              <span class="m-doc-wrap-bumper">auto <a href="#a990eed73f5d9ac286a8bf4990dc6ff1f" class="m-doc-self">Load</a>(</span><span class="m-doc-wrap">int nDesiredAccess = <a href="namespace_i_o.html#a6ebdfc60f23a884f4aecd2455972ff02ac5b43555635940d9a558028143f3c4d2" class="m-doc">IO::<wbr />kAccessFlagRead</a>,
-              int nCreateDisposition = <a href="namespace_i_o.html#a45057374e91a07d3a7a80f09ca20b83aa816845f0193dc6789d88c7749b6dcfb9" class="m-doc">IO::<wbr />kCDDefault</a>,
-              bool arg_8 = false) -&gt; bool <span class="m-label m-flat m-warning">virtual</span></span>
+            <dt id="afd7621759a663fa68067a8226a9d1971">
+              <span class="m-doc-wrap-bumper">auto <a href="#afd7621759a663fa68067a8226a9d1971" class="m-doc-self">Open</a>(</span><span class="m-doc-wrap"><a href="namespace_i_o.html#ab7db8d079d037a7b288d7d79b2d052db" class="m-doc">IO::<wbr />AccessFlags</a> desiredAccess = <a href="namespace_i_o.html#ab7db8d079d037a7b288d7d79b2d052dba7a1a5f3e79fdc91edf2f5ead9d66abb4" class="m-doc">IO::<wbr />AccessFlags::<wbr />Read</a>,
+              <a href="namespace_i_o.html#abf6e95eb7addeab6fd4137b076cabbfa" class="m-doc">IO::<wbr />CD</a> createDisposition = <a href="namespace_i_o.html#abf6e95eb7addeab6fd4137b076cabbfaa7a1920d61156abc05a60135aefe8bc67" class="m-doc">IO::<wbr />CD::<wbr />Default</a>,
+              bool arg_8 = false) -&gt; bool <span class="m-label m-flat m-warning">override</span></span>
             </dt>
             <dd><span></span></dd>
-            <dt id="a6c7f86bc9007f692dbebdda0230c6e85">
-              <span class="m-doc-wrap-bumper">auto <a href="#a6c7f86bc9007f692dbebdda0230c6e85" class="m-doc-self">Save</a>(</span><span class="m-doc-wrap">) -&gt; bool <span class="m-label m-flat m-warning">virtual</span></span>
+            <dt id="ae4e546fb78a038c55bafa0c564ad6a60">
+              <span class="m-doc-wrap-bumper">auto <a href="#ae4e546fb78a038c55bafa0c564ad6a60" class="m-doc-self">Close</a>(</span><span class="m-doc-wrap">) -&gt; bool <span class="m-label m-flat m-warning">override</span></span>
             </dt>
             <dd><span></span></dd>
-            <dt id="aa20fd792c00b5551655d0221b1aafe2a">
-              <span class="m-doc-wrap-bumper">auto <a href="#aa20fd792c00b5551655d0221b1aafe2a" class="m-doc-self">GetAccessFlags</a>(</span><span class="m-doc-wrap">) const -&gt; int <span class="m-label m-flat m-warning">virtual</span></span>
+            <dt id="a65474a2015d7f32a6063b0ec7a5a58b2">
+              <span class="m-doc-wrap-bumper">auto <a href="#a65474a2015d7f32a6063b0ec7a5a58b2" class="m-doc-self">GetAccessFlags</a>(</span><span class="m-doc-wrap">) const -&gt; <a href="namespace_i_o.html#ab7db8d079d037a7b288d7d79b2d052db" class="m-doc">IO::<wbr />AccessFlags</a> <span class="m-label m-flat m-warning">override</span></span>
             </dt>
             <dd><span></span></dd>
-            <dt id="aeaa749c242641bc68f0aca4d5212f68b">
-              <span class="m-doc-wrap-bumper">auto <a href="#aeaa749c242641bc68f0aca4d5212f68b" class="m-doc-self">Write</a>(</span><span class="m-doc-wrap">) -&gt; bool <span class="m-label m-flat m-warning">virtual</span></span>
+            <dt id="a80c42cf685667b91b5a0c9d10938f1c7">
+              <span class="m-doc-wrap-bumper">auto <a href="#a80c42cf685667b91b5a0c9d10938f1c7" class="m-doc-self">Flush</a>(</span><span class="m-doc-wrap">) -&gt; bool <span class="m-label m-flat m-warning">override</span></span>
             </dt>
             <dd><span></span></dd>
-            <dt id="a2c04a083c7f728e3ead4f8fab93644e3">
-              <span class="m-doc-wrap-bumper">auto <a href="#a2c04a083c7f728e3ead4f8fab93644e3" class="m-doc-self">GetPath</a>(</span><span class="m-doc-wrap">) const -&gt; char16_t* <span class="m-label m-flat m-warning">virtual</span></span>
+            <dt id="a9cde3e5012826092d7555a4602a780c2">
+              <span class="m-doc-wrap-bumper">auto <a href="#a9cde3e5012826092d7555a4602a780c2" class="m-doc-self">GetLocation</a>(</span><span class="m-doc-wrap">) const -&gt; const char16_t* <span class="m-label m-flat m-warning">override</span></span>
             </dt>
             <dd><span></span></dd>
-            <dt id="a8a086b4e3d71d2d6b48a374df608559f">
-              <span class="m-doc-wrap-bumper">auto <a href="#a8a086b4e3d71d2d6b48a374df608559f" class="m-doc-self">SetPath</a>(</span><span class="m-doc-wrap">const char16_t* path) -&gt; bool <span class="m-label m-flat m-warning">virtual</span></span>
+            <dt id="a4259be0954e30be313b2584bb544d8fe">
+              <span class="m-doc-wrap-bumper">auto <a href="#a4259be0954e30be313b2584bb544d8fe" class="m-doc-self">SetLocation</a>(</span><span class="m-doc-wrap">const char16_t* path) -&gt; bool <span class="m-label m-flat m-warning">override</span></span>
             </dt>
             <dd><span></span></dd>
-            <dt id="a77ea400456306b89e182666e997daa99">
-              <span class="m-doc-wrap-bumper">auto <a href="#a77ea400456306b89e182666e997daa99" class="m-doc-self">GetFiles</a>(</span><span class="m-doc-wrap">vector&lt;<a href="struct_resource_key.html" class="m-doc">ResourceKey</a>&gt;&amp; dstVector,
-              <a href="class_resource_1_1_i_resource_filter.html" class="m-doc">IResourceFilter</a>* filter = nullptr) -&gt; size_t <span class="m-label m-flat m-warning">virtual</span></span>
+            <dt id="a445643fab7add7fbaa54da0c722870d0">
+              <span class="m-doc-wrap-bumper">auto <a href="#a445643fab7add7fbaa54da0c722870d0" class="m-doc-self">GetKeyList</a>(</span><span class="m-doc-wrap">eastl::vector&lt;<a href="struct_resource_key.html" class="m-doc">ResourceKey</a>&gt;&amp; dstVector,
+              <a href="class_resource_1_1_i_key_filter.html" class="m-doc">IKeyFilter</a>* filter = nullptr) -&gt; size_t <span class="m-label m-flat m-warning">override</span></span>
             </dt>
             <dd><span></span></dd>
-            <dt id="a9b72a342fa6e4a0b11bc273ae99d9216">
-              <span class="m-doc-wrap-bumper">auto <a href="#a9b72a342fa6e4a0b11bc273ae99d9216" class="m-doc-self">GetFile</a>(</span><span class="m-doc-wrap">const <a href="struct_resource_key.html" class="m-doc">ResourceKey</a>&amp; name,
-              <a href="class_resource_1_1_i_p_f_record.html" class="m-doc">IPFRecord</a>** ppDst,
-              int nDesiredAccess = <a href="namespace_i_o.html#a6ebdfc60f23a884f4aecd2455972ff02ac5b43555635940d9a558028143f3c4d2" class="m-doc">IO::<wbr />kAccessFlagRead</a>,
-              int nCreateDisposition = <a href="namespace_i_o.html#a45057374e91a07d3a7a80f09ca20b83aa816845f0193dc6789d88c7749b6dcfb9" class="m-doc">IO::<wbr />kCDDefault</a>,
+            <dt id="add548183b68771ebd7bdfaf4f6538cf0">
+              <span class="m-doc-wrap-bumper">auto <a href="#add548183b68771ebd7bdfaf4f6538cf0" class="m-doc-self">OpenRecord</a>(</span><span class="m-doc-wrap">const <a href="struct_resource_key.html" class="m-doc">ResourceKey</a>&amp; name,
+              <a href="class_resource_1_1_i_record.html" class="m-doc">IRecord</a>** ppDst,
+              <a href="namespace_i_o.html#ab7db8d079d037a7b288d7d79b2d052db" class="m-doc">IO::<wbr />AccessFlags</a> desiredAccess = <a href="namespace_i_o.html#ab7db8d079d037a7b288d7d79b2d052dba7a1a5f3e79fdc91edf2f5ead9d66abb4" class="m-doc">IO::<wbr />AccessFlags::<wbr />Read</a>,
+              <a href="namespace_i_o.html#abf6e95eb7addeab6fd4137b076cabbfa" class="m-doc">IO::<wbr />CD</a> createDisposition = <a href="namespace_i_o.html#abf6e95eb7addeab6fd4137b076cabbfaa7a1920d61156abc05a60135aefe8bc67" class="m-doc">IO::<wbr />CD::<wbr />Default</a>,
               bool arg_10 = true,
-              <a href="struct_resource_1_1_d_b_p_f_item.html" class="m-doc">DBPFItem</a>* pDstInfo = nullptr) -&gt; bool <span class="m-label m-flat m-warning">virtual</span></span>
+              <a href="struct_resource_1_1_record_info.html" class="m-doc">RecordInfo</a>* pDstInfo = nullptr) -&gt; bool <span class="m-label m-flat m-warning">override</span></span>
             </dt>
             <dd><span></span></dd>
-            <dt id="a6e4ba0889bd41c193356c2550b15427e">
-              <span class="m-doc-wrap-bumper">auto <a href="#a6e4ba0889bd41c193356c2550b15427e" class="m-doc-self">func38h</a>(</span><span class="m-doc-wrap">int) -&gt; int <span class="m-label m-flat m-warning">virtual</span></span>
+            <dt id="aea352d6bc326891c7b88b67a0f834a28">
+              <span class="m-doc-wrap-bumper">auto <a href="#aea352d6bc326891c7b88b67a0f834a28" class="m-doc-self">GetOpenCount</a>(</span><span class="m-doc-wrap">const <a href="struct_resource_key.html" class="m-doc">ResourceKey</a>&amp; key) -&gt; int <span class="m-label m-flat m-warning">override</span></span>
             </dt>
             <dd><span></span></dd>
-            <dt id="a2ccaa14f4502be96c0d60e2bc4e9c04c">
-              <span class="m-doc-wrap-bumper">auto <a href="#a2ccaa14f4502be96c0d60e2bc4e9c04c" class="m-doc-self">func3Ch</a>(</span><span class="m-doc-wrap"><a href="class_resource_1_1_i_p_f_record.html" class="m-doc">IPFRecord</a>* pRecord) -&gt; bool <span class="m-label m-flat m-warning">virtual</span></span>
+            <dt id="a1ec6dbc85b19db7c4932ffe2f0f91821">
+              <span class="m-doc-wrap-bumper">auto <a href="#a1ec6dbc85b19db7c4932ffe2f0f91821" class="m-doc-self">CloseRecord</a>(</span><span class="m-doc-wrap"><a href="class_resource_1_1_i_record.html" class="m-doc">IRecord</a>* pRecord) -&gt; bool <span class="m-label m-flat m-warning">override</span></span>
             </dt>
             <dd><span></span></dd>
-            <dt id="a497436c62b1824d87083d10a868a2392">
-              <span class="m-doc-wrap-bumper">auto <a href="#a497436c62b1824d87083d10a868a2392" class="m-doc-self">RemoveFile</a>(</span><span class="m-doc-wrap"><a href="struct_resource_key.html" class="m-doc">ResourceKey</a>&amp; name) -&gt; bool <span class="m-label m-flat m-warning">virtual</span></span>
+            <dt id="aefe71dd700fe355b76b6607bd9966705">
+              <span class="m-doc-wrap-bumper">auto <a href="#aefe71dd700fe355b76b6607bd9966705" class="m-doc-self">DeleteRecord</a>(</span><span class="m-doc-wrap">const <a href="struct_resource_key.html" class="m-doc">ResourceKey</a>&amp; name) -&gt; bool <span class="m-label m-flat m-warning">override</span></span>
             </dt>
             <dd><span></span></dd>
-            <dt id="abc6c12f0749b11637dc41054c1eff1f2">
-              <span class="m-doc-wrap-bumper">auto <a href="#abc6c12f0749b11637dc41054c1eff1f2" class="m-doc-self">SetResourceManager</a>(</span><span class="m-doc-wrap">bool,
-              <a href="class_resource_1_1c_resource_manager.html" class="m-doc">cResourceManager</a>* pResourceMan,
-              bool) -&gt; bool <span class="m-label m-flat m-warning">virtual</span></span>
+            <dt id="a6e60182111697504c884a3015f00b15d">
+              <span class="m-doc-wrap-bumper">auto <a href="#a6e60182111697504c884a3015f00b15d" class="m-doc-self">Attach</a>(</span><span class="m-doc-wrap">bool,
+              <a href="class_resource_1_1_i_resource_manager.html" class="m-doc">IResourceManager</a>* pResourceMan,
+              bool) -&gt; bool <span class="m-label m-flat m-warning">override</span></span>
             </dt>
             <dd><span></span></dd>
-            <dt id="a95ef6f47c3ec3ab462760ad33017ef16">
-              <span class="m-doc-wrap-bumper">auto <a href="#a95ef6f47c3ec3ab462760ad33017ef16" class="m-doc-self">GetAllocator</a>(</span><span class="m-doc-wrap">) const -&gt; <a href="class_i_core_allocator.html" class="m-doc">ICoreAllocator</a>* <span class="m-label m-flat m-warning">virtual</span></span>
+            <dt id="af16709140f9d2a95c22859934d38c74f">
+              <span class="m-doc-wrap-bumper">auto <a href="#af16709140f9d2a95c22859934d38c74f" class="m-doc-self">GetAllocator</a>(</span><span class="m-doc-wrap">) const -&gt; <a href="class_i_core_allocator.html" class="m-doc">ICoreAllocator</a>* <span class="m-label m-flat m-warning">override</span></span>
             </dt>
             <dd><span></span></dd>
             <dt id="a32a837893d2570afad4864a1d94fad02">
@@ -213,73 +198,50 @@
               <span class="m-doc-wrap-bumper">auto <a href="#a3bcc3b3124f944d666d6fc6cc27c11d3" class="m-doc-self">SetStream</a>(</span><span class="m-doc-wrap"><a href="class_i_o_1_1_i_stream.html" class="m-doc">IO::<wbr />IStream</a>* pStream) -&gt; bool <span class="m-label m-flat m-warning">virtual</span></span>
             </dt>
             <dd><span></span></dd>
-          </dl>
-        </section>
-        <section id="pub-attribs">
-          <h2><a href="#pub-attribs">Public variables</a></h2>
-          <dl class="m-doc">
-            <dt id="ad65bedfb1bc0b7cfbe193875e63c07d0">
-               <a href="#ad65bedfb1bc0b7cfbe193875e63c07d0" class="m-doc-self">EAIOZoneObject_AMBIGOUS_DECLARATION</a>
-            </dt>
-            <dd><span></span></dd>
-          </dl>
-        </section>
-        <section id="pro-types">
-          <h2><a href="#pro-types">Protected types</a></h2>
-          <dl class="m-doc">
-            <dt>
-              struct <a href="struct_resource_1_1_database_packed_file_1_1_unknown.html" class="m-doc">Unknown</a>
-            </dt>
-            <dd><span></span></dd>
-          </dl>
-        </section>
-        <section id="pro-methods">
-          <h2><a href="#pro-methods">Protected functions</a></h2>
-          <dl class="m-doc">
-            <dt id="a3236d34d7e0bb7eebed1abaf625a1ce3">
-              <span class="m-doc-wrap-bumper">auto <a href="#a3236d34d7e0bb7eebed1abaf625a1ce3" class="m-doc-self">CreatePFRecordRead</a>(</span><span class="m-doc-wrap">int nDesiredAccess,
-              <a href="struct_resource_1_1_d_b_p_f_item.html" class="m-doc">DBPFItem</a>* info,
+            <dt id="a6ffcceea7614e9b21e39ee46d503796f">
+              <span class="m-doc-wrap-bumper">auto <a href="#a6ffcceea7614e9b21e39ee46d503796f" class="m-doc-self">CreateRecordRead</a>(</span><span class="m-doc-wrap"><a href="namespace_i_o.html#ab7db8d079d037a7b288d7d79b2d052db" class="m-doc">IO::<wbr />AccessFlags</a> desiredAccess,
+              <a href="struct_resource_1_1_record_info.html" class="m-doc">RecordInfo</a>* info,
               <a href="struct_resource_key.html" class="m-doc">ResourceKey</a>&amp; key) -&gt; <a href="class_resource_1_1_p_f_record_read.html" class="m-doc">PFRecordRead</a>* <span class="m-label m-flat m-warning">virtual</span></span>
             </dt>
             <dd><span></span></dd>
-            <dt id="a02dc52e230787bfc414839d5ea7fde33">
-              <span class="m-doc-wrap-bumper">auto <a href="#a02dc52e230787bfc414839d5ea7fde33" class="m-doc-self">CreatePFRecordReadCopy</a>(</span><span class="m-doc-wrap">int nDesiredAccess,
+            <dt id="a6bd74bfdbac054ee17e371c03a431d85">
+              <span class="m-doc-wrap-bumper">auto <a href="#a6bd74bfdbac054ee17e371c03a431d85" class="m-doc-self">CreateRecordReadCopy</a>(</span><span class="m-doc-wrap"><a href="namespace_i_o.html#ab7db8d079d037a7b288d7d79b2d052db" class="m-doc">IO::<wbr />AccessFlags</a> desiredAccess,
               <a href="class_resource_1_1_p_f_record_read.html" class="m-doc">PFRecordRead</a>* pOther,
               <a href="struct_resource_key.html" class="m-doc">ResourceKey</a>&amp; key) -&gt; <a href="class_resource_1_1_p_f_record_read.html" class="m-doc">PFRecordRead</a>* <span class="m-label m-flat m-warning">virtual</span></span>
             </dt>
             <dd><span></span></dd>
-            <dt id="ab08dc7036d52f6c1761492c0c37e1946">
-              <span class="m-doc-wrap-bumper">auto <a href="#ab08dc7036d52f6c1761492c0c37e1946" class="m-doc-self">CreatePFRecordWriteData</a>(</span><span class="m-doc-wrap">int nDesiredAccess,
+            <dt id="a64f10bae9e7860b84bc5ea11b2896dbf">
+              <span class="m-doc-wrap-bumper">auto <a href="#a64f10bae9e7860b84bc5ea11b2896dbf" class="m-doc-self">CreateRecordWriteData</a>(</span><span class="m-doc-wrap"><a href="namespace_i_o.html#ab7db8d079d037a7b288d7d79b2d052db" class="m-doc">IO::<wbr />AccessFlags</a> desiredAccess,
               void* pData,
               size_t nSize,
               <a href="struct_resource_key.html" class="m-doc">ResourceKey</a>&amp; key) -&gt; <a href="class_resource_1_1_p_f_record_write.html" class="m-doc">PFRecordWrite</a>* <span class="m-label m-flat m-warning">virtual</span></span>
             </dt>
             <dd><span></span></dd>
-            <dt id="a480902f48da1b4f6182ad98d2942abbd">
-              <span class="m-doc-wrap-bumper">auto <a href="#a480902f48da1b4f6182ad98d2942abbd" class="m-doc-self">CreatePFRecordWrite</a>(</span><span class="m-doc-wrap">int nDesiredAccess,
+            <dt id="adb5b270471684d12f00e3a3c39b92d86">
+              <span class="m-doc-wrap-bumper">auto <a href="#adb5b270471684d12f00e3a3c39b92d86" class="m-doc-self">CreateRecordWrite</a>(</span><span class="m-doc-wrap"><a href="namespace_i_o.html#ab7db8d079d037a7b288d7d79b2d052db" class="m-doc">IO::<wbr />AccessFlags</a> desiredAccess,
               size_t nChunkOffset,
               size_t nSize,
               <a href="struct_resource_key.html" class="m-doc">ResourceKey</a>&amp; key) -&gt; <a href="class_resource_1_1_p_f_record_write.html" class="m-doc">PFRecordWrite</a>* <span class="m-label m-flat m-warning">virtual</span></span>
             </dt>
             <dd><span></span></dd>
-            <dt id="a2053256747a88fa623290a17e94f82eb">
-              <span class="m-doc-wrap-bumper">auto <a href="#a2053256747a88fa623290a17e94f82eb" class="m-doc-self">Read</a>(</span><span class="m-doc-wrap">) -&gt; bool <span class="m-label m-flat m-warning">virtual</span></span>
+            <dt id="ad8d274d4b2e665c25106141085e44f14">
+              <span class="m-doc-wrap-bumper">auto <a href="#ad8d274d4b2e665c25106141085e44f14" class="m-doc-self">ReadHeaders</a>(</span><span class="m-doc-wrap">) -&gt; bool <span class="m-label m-flat m-warning">virtual</span></span>
             </dt>
             <dd><span></span></dd>
-            <dt id="af719c02228ec9a0579de63d98f825a79">
-              <span class="m-doc-wrap-bumper">auto <a href="#af719c02228ec9a0579de63d98f825a79" class="m-doc-self">ReadHeader</a>(</span><span class="m-doc-wrap">) -&gt; bool <span class="m-label m-flat m-warning">virtual</span></span>
+            <dt id="ae03f8a55d78a8bcf6bc2474896cdc957">
+              <span class="m-doc-wrap-bumper">auto <a href="#ae03f8a55d78a8bcf6bc2474896cdc957" class="m-doc-self">ReadHeaderRecord</a>(</span><span class="m-doc-wrap">) -&gt; bool <span class="m-label m-flat m-warning">virtual</span></span>
             </dt>
             <dd><span></span></dd>
-            <dt id="a4f7891184b8d9e993e1e7cecffd55eb1">
-              <span class="m-doc-wrap-bumper">auto <a href="#a4f7891184b8d9e993e1e7cecffd55eb1" class="m-doc-self">Reset</a>(</span><span class="m-doc-wrap">) -&gt; bool <span class="m-label m-flat m-warning">virtual</span></span>
+            <dt id="aacb5c5a5eae4e820f990e9410c723de6">
+              <span class="m-doc-wrap-bumper">auto <a href="#aacb5c5a5eae4e820f990e9410c723de6" class="m-doc-self">WriteEmptyHeaderRecord</a>(</span><span class="m-doc-wrap">) -&gt; bool <span class="m-label m-flat m-warning">virtual</span></span>
             </dt>
             <dd><span></span></dd>
-            <dt id="a7e4c457de54a2216cd4456d01d1fb3f6">
-              <span class="m-doc-wrap-bumper">auto <a href="#a7e4c457de54a2216cd4456d01d1fb3f6" class="m-doc-self">IsReadyForWrite</a>(</span><span class="m-doc-wrap">) -&gt; bool <span class="m-label m-flat m-warning">virtual</span></span>
+            <dt id="a0c0cd433a6d3f61f258bc3881ed6ae22">
+              <span class="m-doc-wrap-bumper">auto <a href="#a0c0cd433a6d3f61f258bc3881ed6ae22" class="m-doc-self">WriteHeaderRecord</a>(</span><span class="m-doc-wrap">) -&gt; bool <span class="m-label m-flat m-warning">virtual</span></span>
             </dt>
             <dd><span></span></dd>
-            <dt id="acb01b00409b22111ebabc26e8d4cd482">
-              <span class="m-doc-wrap-bumper">auto <a href="#acb01b00409b22111ebabc26e8d4cd482" class="m-doc-self">IsValidHeader</a>(</span><span class="m-doc-wrap">char* header) -&gt; bool <span class="m-label m-flat m-warning">virtual</span></span>
+            <dt id="a5b2a3408e6ec15adc5571f9972081514">
+              <span class="m-doc-wrap-bumper">auto <a href="#a5b2a3408e6ec15adc5571f9972081514" class="m-doc-self">VerifyHeaderRecordIntegrity</a>(</span><span class="m-doc-wrap">char* header) -&gt; bool <span class="m-label m-flat m-warning">virtual</span></span>
             </dt>
             <dd><span></span></dd>
             <dt id="a1cbd10de61f0239d0402b0e4ae2881c2">
@@ -290,24 +252,24 @@
               <span class="m-doc-wrap-bumper">auto <a href="#a15afd58c687fd0155a0eb36de65aeba2" class="m-doc-self">WriteIndex</a>(</span><span class="m-doc-wrap">) -&gt; bool <span class="m-label m-flat m-warning">virtual</span></span>
             </dt>
             <dd><span></span></dd>
-            <dt id="a9e763d4143d4ab0c80572fb01506e845">
-              <span class="m-doc-wrap-bumper">auto <a href="#a9e763d4143d4ab0c80572fb01506e845" class="m-doc-self">StreamCanContainFileData</a>(</span><span class="m-doc-wrap">) -&gt; bool <span class="m-label m-flat m-warning">virtual</span></span>
-            </dt>
-            <dd>Tells whether the file stream has enough space to fit the data of the index files.</dd>
-            <dt id="a4f52d6770b53abe44988412360589adc">
-              <span class="m-doc-wrap-bumper">auto <a href="#a4f52d6770b53abe44988412360589adc" class="m-doc-self">CreatePFIndexModifiable</a>(</span><span class="m-doc-wrap">int nDesiredAccess = <a href="namespace_i_o.html#a6ebdfc60f23a884f4aecd2455972ff02a67d81b416712e26c4099d1f01c1493ba" class="m-doc">IO::<wbr />kAccessFlagReadWrite</a>) -&gt; <a href="class_resource_1_1_p_f_index_modifiable.html" class="m-doc">PFIndexModifiable</a>* <span class="m-label m-flat m-warning">virtual</span></span>
+            <dt id="a606072116e18d949a3e6b43e1cd03097">
+              <span class="m-doc-wrap-bumper">auto <a href="#a606072116e18d949a3e6b43e1cd03097" class="m-doc-self">VerifyIndexRecordIntegrity</a>(</span><span class="m-doc-wrap">) -&gt; bool <span class="m-label m-flat m-warning">virtual</span></span>
             </dt>
             <dd><span></span></dd>
-            <dt id="a5f1d430ae3e457f1e76c328efdaedaf7">
-              <span class="m-doc-wrap-bumper">void <a href="#a5f1d430ae3e457f1e76c328efdaedaf7" class="m-doc-self">ReleaseObject</a>(</span><span class="m-doc-wrap"><a href="class_i_o_1_1_e_a_i_o_zone_object.html" class="m-doc">IO::<wbr />EAIOZoneObject</a>* pObject) <span class="m-label m-flat m-warning">virtual</span></span>
+            <dt id="aad0226da842de86588034ebdc5e4c8ec">
+              <span class="m-doc-wrap-bumper">auto <a href="#aad0226da842de86588034ebdc5e4c8ec" class="m-doc-self">CreateIndex</a>(</span><span class="m-doc-wrap"><a href="namespace_i_o.html#ab7db8d079d037a7b288d7d79b2d052db" class="m-doc">IO::<wbr />AccessFlags</a> desiredAccess = <a href="namespace_i_o.html#ab7db8d079d037a7b288d7d79b2d052dba70a2a84088d405a2e3f1e3accaa16723" class="m-doc">IO::<wbr />AccessFlags::<wbr />ReadWrite</a>) -&gt; <a href="class_resource_1_1_p_f_index_modifiable.html" class="m-doc">PFIndexModifiable</a>* <span class="m-label m-flat m-warning">virtual</span></span>
             </dt>
             <dd><span></span></dd>
-            <dt id="a25af75b29821d3cb657f7cd82682c89a">
-              <span class="m-doc-wrap-bumper">void <a href="#a25af75b29821d3cb657f7cd82682c89a" class="m-doc-self">RenovateIndex</a>(</span><span class="m-doc-wrap">) <span class="m-label m-flat m-warning">virtual</span></span>
+            <dt id="a1414bfffc2d0f8ffb71ba0794ee17ac3">
+              <span class="m-doc-wrap-bumper">void <a href="#a1414bfffc2d0f8ffb71ba0794ee17ac3" class="m-doc-self">DestroyIndex</a>(</span><span class="m-doc-wrap"><a href="class_i_o_1_1_e_a_i_o_zone_object.html" class="m-doc">IO::<wbr />EAIOZoneObject</a>* pObject) <span class="m-label m-flat m-warning">virtual</span></span>
             </dt>
-            <dd>Creates a new index that has the same information as the current one, which will be deleted.</dd>
-            <dt id="ac2ccd9b3c7c0caa6d6c946fd9da6442f">
-              <span class="m-doc-wrap-bumper">auto <a href="#ac2ccd9b3c7c0caa6d6c946fd9da6442f" class="m-doc-self">func90h</a>(</span><span class="m-doc-wrap">) -&gt; bool <span class="m-label m-flat m-warning">virtual</span></span>
+            <dd><span></span></dd>
+            <dt id="a6d834ad067c00483a4b1aee42819873c">
+              <span class="m-doc-wrap-bumper">void <a href="#a6d834ad067c00483a4b1aee42819873c" class="m-doc-self">MakeIndexModifiable</a>(</span><span class="m-doc-wrap">) <span class="m-label m-flat m-warning">virtual</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="ac9d908002960080ac83ebe0c3e454043">
+              <span class="m-doc-wrap-bumper">auto <a href="#ac9d908002960080ac83ebe0c3e454043" class="m-doc-self">InitializeHoleTable</a>(</span><span class="m-doc-wrap">) -&gt; bool <span class="m-label m-flat m-warning">virtual</span></span>
             </dt>
             <dd><span></span></dd>
             <dt id="a8f98c9dfbc57f4b35f4ce57587257fff">
@@ -323,23 +285,23 @@
             <dd><span></span></dd>
           </dl>
         </section>
-        <section id="pro-attribs">
-          <h2><a href="#pro-attribs">Protected variables</a></h2>
+        <section id="pub-attribs">
+          <h2><a href="#pub-attribs">Public variables</a></h2>
           <dl class="m-doc">
-            <dt id="a5e577b53d86ad922c45719a26da37643">
-              int <a href="#a5e577b53d86ad922c45719a26da37643" class="m-doc-self">mnRefCount</a>
+            <dt id="ad65bedfb1bc0b7cfbe193875e63c07d0">
+               <a href="#ad65bedfb1bc0b7cfbe193875e63c07d0" class="m-doc-self">EAIOZoneObject_AMBIGOUS_DECLARATION</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="a031869107258a8acfb7127b106cffa4a">
-              bool <a href="#a031869107258a8acfb7127b106cffa4a" class="m-doc-self">mbNeedsToRelease</a>
+            <dt id="a42ae9dae83d0d91ec98c1e7717eba0b6">
+              bool <a href="#a42ae9dae83d0d91ec98c1e7717eba0b6" class="m-doc-self">mIsInitialized</a>
             </dt>
             <dd><span></span></dd>
             <dt id="aecba1ae3f8225bc982e6a6bdcbbe8e0e">
               <a href="class_i_core_allocator.html" class="m-doc">ICoreAllocator</a>* <a href="#aecba1ae3f8225bc982e6a6bdcbbe8e0e" class="m-doc-self">mpAllocator</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="ad5512d2cdb441adf1b58cdb769bc3b97">
-              int <a href="#ad5512d2cdb441adf1b58cdb769bc3b97" class="m-doc-self">mnFileAccess</a>
+            <dt id="acef2f1a5f851dddb369726dbc217f9f0">
+              <a href="namespace_i_o.html#ab7db8d079d037a7b288d7d79b2d052db" class="m-doc">IO::<wbr />AccessFlags</a> <a href="#acef2f1a5f851dddb369726dbc217f9f0" class="m-doc-self">mAccessFlags</a>
             </dt>
             <dd><span></span></dd>
             <dt id="a1271a3c493a69098061ea22848fdc041">
@@ -354,8 +316,8 @@
               bool <a href="#a585470bfcb1a34dbf87d12b44e1e598b" class="m-doc-self">field_1D</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="a7faa877864f7ea6f4bba8cd4a4b2f0db">
-              string16 <a href="#a7faa877864f7ea6f4bba8cd4a4b2f0db" class="m-doc-self">mFilePath</a>
+            <dt id="adb59dc5a4acadefb4d79f83e88fe4eab">
+              eastl::string16 <a href="#adb59dc5a4acadefb4d79f83e88fe4eab" class="m-doc-self">mFilePath</a>
             </dt>
             <dd><span></span></dd>
             <dt id="a325dace748506ac155c3548420dfe9e6">
@@ -366,8 +328,8 @@
               size_t <a href="#afbdcf4511a8a3506beae316e50f49799" class="m-doc-self">mFileOffset</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="a458cb44ab2500418377b4e706e30dbec">
-              intrusive_ptr&lt;<a href="class_i_o_1_1_i_stream.html" class="m-doc">IO::<wbr />IStream</a>&gt; <a href="#a458cb44ab2500418377b4e706e30dbec" class="m-doc-self">mpCurrentStream</a>
+            <dt id="a36c0c639f6339e5f1d6b574857a54ce8">
+              eastl::intrusive_ptr&lt;<a href="class_i_o_1_1_i_stream.html" class="m-doc">IO::<wbr />IStream</a>&gt; <a href="#a36c0c639f6339e5f1d6b574857a54ce8" class="m-doc-self">mpCurrentStream</a>
             </dt>
             <dd><span></span></dd>
             <dt id="af2b922e17a89e242c46017ef538b5adb">
@@ -414,8 +376,8 @@
               float <a href="#ae3b8a7a32294be73d02ce488fa1f38af" class="m-doc-self">field_2E4</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="a31dfaed0a9a8e0524d9e58a59a60a9e0">
-              map&lt;<a href="struct_resource_key.html" class="m-doc">ResourceKey</a>, <a href="class_resource_1_1_i_p_f_record.html" class="m-doc">IPFRecord</a>*, less&lt;<a href="struct_resource_key.html" class="m-doc">ResourceKey</a>&gt;, <a href="_i_core_allocator_8h.html#a752d1217e82fc75218d2c66d7fd51dc7" class="m-doc">ICoreAllocatorAdapter</a>&gt; <a href="#a31dfaed0a9a8e0524d9e58a59a60a9e0" class="m-doc-self">field_2E8</a>
+            <dt id="ab1ee529a7eb64c13acad75ea705f12a9">
+              eastl::map&lt;<a href="struct_resource_key.html" class="m-doc">ResourceKey</a>, <a href="class_resource_1_1_p_f_record_base.html" class="m-doc">PFRecordBase</a>*, eastl::less&lt;<a href="struct_resource_key.html" class="m-doc">ResourceKey</a>&gt;, <a href="_i_core_allocator_8h.html#a752d1217e82fc75218d2c66d7fd51dc7" class="m-doc">ICoreAllocatorAdapter</a>&gt; <a href="#ab1ee529a7eb64c13acad75ea705f12a9" class="m-doc-self">field_2E8</a>
             </dt>
             <dd><span></span></dd>
             <dt id="aae03f1cf5eaa0869d6f2df8707b6002b">
@@ -470,12 +432,12 @@
               float <a href="#a2df349e0ec725bb53b529940b320b68f" class="m-doc-self">field_338</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="ad91ef7b7091446d92d5140ceea3b9cfa">
-              <a href="struct_resource_1_1_database_packed_file_1_1_unknown.html" class="m-doc">Unknown</a> <a href="#ad91ef7b7091446d92d5140ceea3b9cfa" class="m-doc-self">field_33C</a>
+            <dt id="adeb7350b91dda5f490649db2135eb767">
+              <a href="struct_resource_1_1_p_f_hole_table.html" class="m-doc">PFHoleTable</a> <a href="#adeb7350b91dda5f490649db2135eb767" class="m-doc-self">field_33C</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="a8318e1a567397090b916271ddde2acf5">
-              <a href="struct_resource_1_1_database_packed_file_1_1_unknown.html" class="m-doc">Unknown</a> <a href="#a8318e1a567397090b916271ddde2acf5" class="m-doc-self">field_35C</a>
+            <dt id="ae474bab3cde464fd34d13ba8371ec0db">
+              <a href="struct_resource_1_1_p_f_hole_table.html" class="m-doc">PFHoleTable</a> <a href="#ae474bab3cde464fd34d13ba8371ec0db" class="m-doc-self">field_35C</a>
             </dt>
             <dd><span></span></dd>
             <dt id="ad0f6812b442cf3bdcee3dc5c0838164b">

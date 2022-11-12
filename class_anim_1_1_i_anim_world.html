@@ -66,9 +66,9 @@
           <h2><a href="#base-classes">Base classes</a></h2>
           <dl class="m-doc">
             <dt>
-              class <a href="class_graphics_1_1_i_renderable.html" class="m-doc">Graphics::IRenderable</a>
+              class <a href="class_graphics_1_1_i_layer.html" class="m-doc">Graphics::ILayer</a>
             </dt>
-            <dd>This interface defines an object that can be rendered, and whose render method is called on every game loop.</dd>
+            <dd>This interfaces defines a layer that is rendered every game loop, by callings its <a href="class_graphics_1_1_i_layer.html#ae4812c7ed39d6dcaf98088c7ae5211b0" class="m-doc">ILayer::<wbr />DrawLayer()</a> method.</dd>
             <dt>
               class <a href="class_default_ref_counted.html" class="m-doc">DefaultRefCounted</a>
             </dt>
@@ -97,8 +97,8 @@
               <span class="m-doc-wrap-bumper">void <a href="#ad21d1cde8f22798768277edf26231a0d" class="m-doc-self">func14h</a>(</span><span class="m-doc-wrap">bool) <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
             <dd><span></span></dd>
-            <dt id="a426a4b34afad4594366a81967b32ced9">
-              <span class="m-doc-wrap-bumper">void <a href="#a426a4b34afad4594366a81967b32ced9" class="m-doc-self">SetEffectWorld</a>(</span><span class="m-doc-wrap"><a href="class_swarm_1_1_i_effect_world.html" class="m-doc">Swarm::<wbr />IEffectWorld</a>*) <span class="m-label m-flat m-warning">pure virtual</span></span>
+            <dt id="ae2eeff2e29daec42d81ea0751e6c8922">
+              <span class="m-doc-wrap-bumper">void <a href="#ae2eeff2e29daec42d81ea0751e6c8922" class="m-doc-self">SetEffectWorld</a>(</span><span class="m-doc-wrap"><a href="class_swarm_1_1_i_effects_world.html" class="m-doc">Swarm::<wbr />IEffectsWorld</a>*) <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
             <dd><span></span></dd>
             <dt id="a64a381e20f5becf7eee70139da7d053f">
@@ -163,8 +163,8 @@
               bool) -&gt; int <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
             <dd><span></span></dd>
-            <dt id="af7211625ec52c4819a6ada6c3a296888">
-              <span class="m-doc-wrap-bumper">auto <a href="#af7211625ec52c4819a6ada6c3a296888" class="m-doc-self">GetCreatures</a>(</span><span class="m-doc-wrap">) const -&gt; const vector&lt;<a href="class_anim_1_1_animated_creature.html" class="m-doc">AnimatedCreature</a>*&gt;&amp; <span class="m-label m-flat m-warning">pure virtual</span></span>
+            <dt id="aef3b33fae67dd65c0dbd7c28c0439464">
+              <span class="m-doc-wrap-bumper">auto <a href="#aef3b33fae67dd65c0dbd7c28c0439464" class="m-doc-self">GetCreatures</a>(</span><span class="m-doc-wrap">) const -&gt; const eastl::vector&lt;<a href="class_anim_1_1_animated_creature.html" class="m-doc">AnimatedCreature</a>*&gt;&amp; <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
             <dd><span></span></dd>
             <dt id="aacd735ebae0b57460d75b8f27658e181">

@@ -54,6 +54,7 @@
             <li>
               Reference
               <ul>
+                <li><a href="#namespaces">Namespaces</a></li>
                 <li><a href="#nested-classes">Classes</a></li>
                 <li><a href="#enum-members">Enums</a></li>
                 <li><a href="#typedef-members">Typedefs</a></li>
@@ -63,7 +64,16 @@
             </li>
           </ul>
         </div>
-<p>The main concept of this namespace is that of &quot;streams&quot;, which are objects where data can be read form/written into. It&#x27;s abstract representation is <a href="class_i_o_1_1_i_stream.html" class="m-doc">IO::<wbr />IStream</a>, which defines all the operations you can do to a stream. There are several subclasses to it, depending on the type of stream: use <a href="class_i_o_1_1_file_stream.html" class="m-doc">IO::<wbr />FileStream</a> if you want to write a disk file. Before you can use a stream, you have to call IO::IStream::Open() with the appropriate parameters (it depends on whether you want to create a new file, read or write, etc). AFter you are finished writing, call <a href="class_i_o_1_1_i_stream.html#a3f896a0b8394f1e5f97652aa6541eea5" class="m-doc">IO::<wbr />IStream::<wbr />Close()</a> so the system releases the stream resources.</p><p>The <a href="namespace_i_o.html" class="m-doc">IO</a> namespace contains classes used to work with file input/output. The <a href="class_i_o_1_1_i_stream.html" class="m-doc">IStream</a> interfaces defines the methods needed to read/write a file (not all IStreams support reading/writing). Then there are specific implementations, the most notable of which are:</p><ul><li><a href="class_i_o_1_1_file_stream.html" class="m-doc">FileStream</a>: Used for reading files in the file system.</li><li><a href="class_i_o_1_1_memory_stream.html" class="m-doc">MemoryStream</a>: Used for reading files from the memory.</li></ul><p>The <a href="namespace_i_o.html" class="m-doc">IO</a> namespace itself also contains several methods for reading/writing specific types of data, for example <a href="namespace_i_o.html#a79ba71ddf8915bc4b4ad0f5b8b9494d6" class="m-doc">IO::<wbr />ReadInt32()</a>, IO::WriteUInt(),...</p><p>There&#x27;s also a class called <a href="class_i_o_1_1_xml_writer.html" class="m-doc">XmlWriter</a> which can be used to easily write simple files in the XML format.</p>
+<p>The main concept of this namespace is that of &quot;streams&quot;, which are objects where data can be read form/written into. It&#x27;s abstract representation is <a href="class_i_o_1_1_i_stream.html" class="m-doc">IO::<wbr />IStream</a>, which defines all the operations you can do to a stream. There are several subclasses to it, depending on the type of stream: use <a href="class_i_o_1_1_file_stream.html" class="m-doc">IO::<wbr />FileStream</a> if you want to write a disk file. Before you can use a stream, you have to call IO::IStream::Open() with the appropriate parameters (it depends on whether you want to create a new file, read or write, etc). AFter you are finished writing, call <a href="class_i_o_1_1_i_stream.html#a3f896a0b8394f1e5f97652aa6541eea5" class="m-doc">IO::<wbr />IStream::<wbr />Close()</a> so the system releases the stream resources.</p><p>The <a href="namespace_i_o.html" class="m-doc">IO</a> namespace contains classes used to work with file input/output. The <a href="class_i_o_1_1_i_stream.html" class="m-doc">IStream</a> interfaces defines the methods needed to read/write a file (not all IStreams support reading/writing). Then there are specific implementations, the most notable of which are:</p><ul><li><a href="class_i_o_1_1_file_stream.html" class="m-doc">FileStream</a>: Used for reading files in the file system.</li><li><a href="class_i_o_1_1_memory_stream.html" class="m-doc">MemoryStream</a>: Used for reading files from the memory.</li></ul><p>The <a href="namespace_i_o.html" class="m-doc">IO</a> namespace itself also contains several methods for reading/writing specific types of data, for example <a href="namespace_i_o.html#a5689d253c3c310483aa396c3a1d2d972" class="m-doc">IO::<wbr />ReadInt32()</a>, IO::WriteUInt(),...</p><p>There&#x27;s also a class called <a href="class_i_o_1_1_xml_writer.html" class="m-doc">XmlWriter</a> which can be used to easily write simple files in the XML format.</p>
+        <section id="namespaces">
+          <h2><a href="#namespaces">Namespaces</a></h2>
+          <dl class="m-doc">
+            <dt>namespace <a href="namespace_i_o_1_1_directory.html" class="m-doc">Directory</a></dt>
+            <dd><span></span></dd>
+            <dt>namespace <a href="namespace_i_o_1_1_file.html" class="m-doc">File</a></dt>
+            <dd><span></span></dd>
+          </dl>
+        </section>
         <section id="nested-classes">
           <h2><a href="#nested-classes">Classes</a></h2>
           <dl class="m-doc">
@@ -127,33 +137,33 @@
             </dt>
             <dd><span></span></dd>
             <dt>
-              <span class="m-doc-wrap-bumper">enum <a href="#a6ebdfc60f23a884f4aecd2455972ff02" class="m-doc">AccessFlags</a> { </span><span class="m-doc-wrap"><a href="#a6ebdfc60f23a884f4aecd2455972ff02aa71886f915278fa853591a353024b13c" class="m-doc">kAccessFlagNone</a> = 0x00,
-              <a href="#a6ebdfc60f23a884f4aecd2455972ff02ac5b43555635940d9a558028143f3c4d2" class="m-doc">kAccessFlagRead</a> = 0x01,
-              <a href="#a6ebdfc60f23a884f4aecd2455972ff02afe23d1a1154584f561230df4810619d1" class="m-doc">kAccessFlagWrite</a> = 0x02,
-              <a href="#a6ebdfc60f23a884f4aecd2455972ff02a67d81b416712e26c4099d1f01c1493ba" class="m-doc">kAccessFlagReadWrite</a> = 0x03 }</span>
+              <span class="m-doc-wrap-bumper">enum class <a href="#ab7db8d079d037a7b288d7d79b2d052db" class="m-doc">AccessFlags</a>: int { </span><span class="m-doc-wrap"><a href="#ab7db8d079d037a7b288d7d79b2d052dba6adf97f83acf6453d4a6a4b1070f3754" class="m-doc">None</a> = 0x00,
+              <a href="#ab7db8d079d037a7b288d7d79b2d052dba7a1a5f3e79fdc91edf2f5ead9d66abb4" class="m-doc">Read</a> = 0x01,
+              <a href="#ab7db8d079d037a7b288d7d79b2d052dba1129c0e4d43f2d121652a7302712cff6" class="m-doc">Write</a> = 0x02,
+              <a href="#ab7db8d079d037a7b288d7d79b2d052dba70a2a84088d405a2e3f1e3accaa16723" class="m-doc">ReadWrite</a> = 0x03 }</span>
             </dt>
             <dd>Defines stream access flags, much like file access flags.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">enum <a href="#a45057374e91a07d3a7a80f09ca20b83a" class="m-doc">CD</a> { </span><span class="m-doc-wrap"><a href="#a45057374e91a07d3a7a80f09ca20b83aabb8d53716fb6408b413e4d16b7b9c2fb" class="m-doc">kCDCreateNew</a> = 1,
-              <a href="#a45057374e91a07d3a7a80f09ca20b83aaeab37bc3a7ed8fba645543e329873101" class="m-doc">kCDCreateAlways</a> = 2,
-              <a href="#a45057374e91a07d3a7a80f09ca20b83aa7899f8d2038cd523d6556f497b042821" class="m-doc">kCDOpenExisting</a> = 3,
-              <a href="#a45057374e91a07d3a7a80f09ca20b83aac01639cc08296654ac63957389791c87" class="m-doc">kCDOpenAlways</a> = 4,
-              <a href="#a45057374e91a07d3a7a80f09ca20b83aa40fda0bcb8ba90bb08b89e789afa1ba7" class="m-doc">kCDTruncateExisting</a> = 5,
-              <a href="#a45057374e91a07d3a7a80f09ca20b83aa816845f0193dc6789d88c7749b6dcfb9" class="m-doc">kCDDefault</a> = 6 }</span>
+              <span class="m-doc-wrap-bumper">enum class <a href="#abf6e95eb7addeab6fd4137b076cabbfa" class="m-doc">CD</a>: int { </span><span class="m-doc-wrap"><a href="#abf6e95eb7addeab6fd4137b076cabbfaa16aad4508a33afcd497d9cb37480722f" class="m-doc">CreateNew</a> = 1,
+              <a href="#abf6e95eb7addeab6fd4137b076cabbfaa5007129116ac317941eafb99b92b62d7" class="m-doc">CreateAlways</a> = 2,
+              <a href="#abf6e95eb7addeab6fd4137b076cabbfaa31e4ddcb0bdd2cb84245a1b4337dc4f0" class="m-doc">OpenExisting</a> = 3,
+              <a href="#abf6e95eb7addeab6fd4137b076cabbfaa05b613cd54f885812936f4186b159bdf" class="m-doc">OpenAlways</a> = 4,
+              <a href="#abf6e95eb7addeab6fd4137b076cabbfaa15ef87a1ec51975b50b651c1cce8f5b7" class="m-doc">TruncateExisting</a> = 5,
+              <a href="#abf6e95eb7addeab6fd4137b076cabbfaa7a1920d61156abc05a60135aefe8bc67" class="m-doc">Default</a> = 6 }</span>
             </dt>
             <dd>Creation disposition. Specifies aspects of how to create or not create a file during opening of it.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">enum <a href="#ae8092ef26cdcadafcb368e9914fce400" class="m-doc">PositionType</a> { </span><span class="m-doc-wrap"><a href="#ae8092ef26cdcadafcb368e9914fce400aec274c84c558b69dfc1858338c38b7cc" class="m-doc">kPositionTypeBegin</a> = 0,
-              <a href="#ae8092ef26cdcadafcb368e9914fce400a160bacce30de7d6cff3a2ad15c5e9d20" class="m-doc">kPositionTypeCurrent</a> = 1,
-              <a href="#ae8092ef26cdcadafcb368e9914fce400ab372fe5768fce085be62a9b80601617d" class="m-doc">kPositionTypeEnd</a> = 2 }</span>
+              <span class="m-doc-wrap-bumper">enum class <a href="#a3548a9e9ef60c2653c6cdba408e817fc" class="m-doc">PositionType</a>: int { </span><span class="m-doc-wrap"><a href="#a3548a9e9ef60c2653c6cdba408e817fca1a06729125544cab7cee73195fc044f0" class="m-doc">Begin</a> = 0,
+              <a href="#a3548a9e9ef60c2653c6cdba408e817fca222a267cc5778206b253be35ee3ddab5" class="m-doc">Current</a> = 1,
+              <a href="#a3548a9e9ef60c2653c6cdba408e817fca87557f11575c0ad78e4e28abedc13b6e" class="m-doc">End</a> = 2 }</span>
             </dt>
             <dd>Defines the positional basis for a user GetPosition or SetPosition action.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">enum <a href="#a442029c9a063d8c6f0125230ead48d8b" class="m-doc">LineEnd</a> { </span><span class="m-doc-wrap"><a href="#a442029c9a063d8c6f0125230ead48d8ba8f64f61e414962160729a4c6fd15d8df" class="m-doc">kLineEndNone</a> = 0,
-              <a href="#a442029c9a063d8c6f0125230ead48d8ba7aca10b9a27676b9a7a7a0344d09cfd3" class="m-doc">kLineEndAuto</a> = 1,
-              <a href="#a442029c9a063d8c6f0125230ead48d8ba85a614e688428ff7a503f2fd2385949e" class="m-doc">kLineEndNewline</a> = 2,
-              <a href="#a442029c9a063d8c6f0125230ead48d8ba26db1d681983c1781dc31afd3a0efe2c" class="m-doc">kLineEndUnix</a> = 2,
-              <a href="#a442029c9a063d8c6f0125230ead48d8bae7a960815349f93f2cac1ab99cc4829f" class="m-doc">kLineEndWindows</a> = 3 }</span>
+              <span class="m-doc-wrap-bumper">enum class <a href="#aab0e63c6a8a794a735b0ef83f221338e" class="m-doc">LineEnd</a>: int { </span><span class="m-doc-wrap"><a href="#aab0e63c6a8a794a735b0ef83f221338ea6adf97f83acf6453d4a6a4b1070f3754" class="m-doc">None</a> = 0,
+              <a href="#aab0e63c6a8a794a735b0ef83f221338ea06b9281e396db002010bde1de57262eb" class="m-doc">Auto</a> = 1,
+              <a href="#aab0e63c6a8a794a735b0ef83f221338ea755fee300780823fcf4df98383331745" class="m-doc">Newline</a> = 2,
+              <a href="#aab0e63c6a8a794a735b0ef83f221338ea6ec1bd1ea6a5d67a63b20c8f6172bddd" class="m-doc">Unix</a> = 2,
+              <a href="#aab0e63c6a8a794a735b0ef83f221338eaaea23489ce3aa9b6406ebb28e0cda430" class="m-doc">Windows</a> = 3 }</span>
             </dt>
             <dd>Defines textual line ending property types.</dd>
             <dt>
@@ -176,9 +186,9 @@
             </dt>
             <dd>Defines state values or function return values.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">enum <a href="#ae3521782097881f06dd3acb06ebfaa28" class="m-doc">Endian</a> { </span><span class="m-doc-wrap"><a href="#ae3521782097881f06dd3acb06ebfaa28a53ea6d94063df2bf84714769355cdcc4" class="m-doc">kEndianBig</a> = 0,
-              <a href="#ae3521782097881f06dd3acb06ebfaa28a5c86d057afc78658ff0b21eade891e30" class="m-doc">kEndianLittle</a> = 1,
-              <a href="#ae3521782097881f06dd3acb06ebfaa28a331fefcdb95c7032ece7aa1f2e97b98b" class="m-doc">kEndianLocal</a> = kEndianLittle }</span>
+              <span class="m-doc-wrap-bumper">enum class <a href="#ad94ca491ff4f9233f937843131a213f2" class="m-doc">Endian</a>: int { </span><span class="m-doc-wrap"><a href="#ad94ca491ff4f9233f937843131a213f2ad491538da818a2ba11a3195ba035cfd3" class="m-doc">Big</a> = 0,
+              <a href="#ad94ca491ff4f9233f937843131a213f2a0f9197b3e286a7522984831949087332" class="m-doc">Little</a> = 1,
+              <a href="#ad94ca491ff4f9233f937843131a213f2a509820290d57f333403f490dde7316f4" class="m-doc">Local</a> = Little }</span>
             </dt>
             <dd>Defines endian-ness. This is appropriate for working with binary numerical data.</dd>
           </dl>
@@ -200,7 +210,30 @@
             </dt>
             <dd><span></span></dd>
             <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a53787bbc3b3ee700ae231bf5625e74e1" class="m-doc">EnsureTrailingPathSeparator</a>(</span><span class="m-doc-wrap">eastl::string16&amp; path) -&gt; bool</span>
+            </dt>
+            <dd>Ensures the given path finishes with a path separator (&#x27;/&#x27; or &#x27;\&#x27; depending on the OS), modifying it if necessary.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a99deaa2374f063b3b98dd61cf8cdb87c" class="m-doc">ConcatenatePathComponents</a>(</span><span class="m-doc-wrap">char16_t* dstPath,
+              const char16_t* component1,
+              const char16_t* component2) -&gt; int</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a278ffd0a90191ef45fd3eea85d01e602" class="m-doc">Addresses</a>(</span><span class="m-doc-wrap">File) -&gt; namespace</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#abea3b00a5a87ad03c2824f804b62bc20" class="m-doc">Addresses</a>(</span><span class="m-doc-wrap">Directory) -&gt; namespace</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
               <span class="m-doc-wrap-bumper">auto <a href="#a3c9fbd193e7db8fda33e6582daa45343" class="m-doc">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_i_o_1_1_e_a_i_o_zone_object.html" class="m-doc">EAIOZoneObject</a>) -&gt; namespace</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper"><a href="#a3306f58746a04c0c54a8ebeed9a8e9e9" class="m-doc">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_i_o_1_1_file_stream.html" class="m-doc">FileStream</a>,
+              0x22C)</span>
             </dt>
             <dd><span></span></dd>
             <dt>
@@ -225,52 +258,52 @@
             </dt>
             <dd>Reads a single uint8_t value or an array of uint8_t from the stream.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#a84ffddcf39f92523f8fbdb96f533a89d" class="m-doc">ReadInt16</a>(</span><span class="m-doc-wrap"><a href="class_i_o_1_1_i_stream.html" class="m-doc">IStream</a>* pIS,
+              <span class="m-doc-wrap-bumper">auto <a href="#ab3e1a6dd3dfb522693c6647ecbf7de0a" class="m-doc">ReadInt16</a>(</span><span class="m-doc-wrap"><a href="class_i_o_1_1_i_stream.html" class="m-doc">IStream</a>* pIS,
               int16_t* value,
               <a href="namespace_i_o.html#a93e482d5d18014e9184bfabe5a1a6e07" class="m-doc">size_<wbr />type</a> count = 1,
-              <a href="namespace_i_o.html#ae3521782097881f06dd3acb06ebfaa28" class="m-doc">Endian</a> endianSource = <a href="namespace_i_o.html#ae3521782097881f06dd3acb06ebfaa28a53ea6d94063df2bf84714769355cdcc4" class="m-doc">kEndianBig</a>) -&gt; bool</span>
+              <a href="namespace_i_o.html#ad94ca491ff4f9233f937843131a213f2" class="m-doc">Endian</a> endianSource = <a href="namespace_i_o.html#ad94ca491ff4f9233f937843131a213f2ad491538da818a2ba11a3195ba035cfd3" class="m-doc">Endian::<wbr />Big</a>) -&gt; bool</span>
             </dt>
             <dd>Reads a single int16_t value or an array of int16_t from the stream.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#ac1e61e13a23b2a7a04265fec7ba4dc93" class="m-doc">ReadUInt16</a>(</span><span class="m-doc-wrap"><a href="class_i_o_1_1_i_stream.html" class="m-doc">IStream</a>* pIS,
+              <span class="m-doc-wrap-bumper">auto <a href="#a1d8fc2871bb5db795c0aa01402989181" class="m-doc">ReadUInt16</a>(</span><span class="m-doc-wrap"><a href="class_i_o_1_1_i_stream.html" class="m-doc">IStream</a>* pIS,
               uint16_t* value,
               <a href="namespace_i_o.html#a93e482d5d18014e9184bfabe5a1a6e07" class="m-doc">size_<wbr />type</a> count = 1,
-              <a href="namespace_i_o.html#ae3521782097881f06dd3acb06ebfaa28" class="m-doc">Endian</a> endianSource = <a href="namespace_i_o.html#ae3521782097881f06dd3acb06ebfaa28a53ea6d94063df2bf84714769355cdcc4" class="m-doc">kEndianBig</a>) -&gt; bool</span>
+              <a href="namespace_i_o.html#ad94ca491ff4f9233f937843131a213f2" class="m-doc">Endian</a> endianSource = <a href="namespace_i_o.html#ad94ca491ff4f9233f937843131a213f2ad491538da818a2ba11a3195ba035cfd3" class="m-doc">Endian::<wbr />Big</a>) -&gt; bool</span>
             </dt>
             <dd>Reads a single uint16_t value or an array of uint16_t from the stream.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#a79ba71ddf8915bc4b4ad0f5b8b9494d6" class="m-doc">ReadInt32</a>(</span><span class="m-doc-wrap"><a href="class_i_o_1_1_i_stream.html" class="m-doc">IStream</a>* pIS,
+              <span class="m-doc-wrap-bumper">auto <a href="#a5689d253c3c310483aa396c3a1d2d972" class="m-doc">ReadInt32</a>(</span><span class="m-doc-wrap"><a href="class_i_o_1_1_i_stream.html" class="m-doc">IStream</a>* pIS,
               int32_t* value,
               <a href="namespace_i_o.html#a93e482d5d18014e9184bfabe5a1a6e07" class="m-doc">size_<wbr />type</a> count = 1,
-              <a href="namespace_i_o.html#ae3521782097881f06dd3acb06ebfaa28" class="m-doc">Endian</a> endianSource = <a href="namespace_i_o.html#ae3521782097881f06dd3acb06ebfaa28a53ea6d94063df2bf84714769355cdcc4" class="m-doc">kEndianBig</a>) -&gt; bool</span>
+              <a href="namespace_i_o.html#ad94ca491ff4f9233f937843131a213f2" class="m-doc">Endian</a> endianSource = <a href="namespace_i_o.html#ad94ca491ff4f9233f937843131a213f2ad491538da818a2ba11a3195ba035cfd3" class="m-doc">Endian::<wbr />Big</a>) -&gt; bool</span>
             </dt>
             <dd>Reads a single int32_t value or an array of int32_t from the stream.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#a3146e04c009f97dcd534a070621aa442" class="m-doc">ReadUInt32</a>(</span><span class="m-doc-wrap"><a href="class_i_o_1_1_i_stream.html" class="m-doc">IStream</a>* pIS,
+              <span class="m-doc-wrap-bumper">auto <a href="#a3265fc1272dffcad369389d759f92805" class="m-doc">ReadUInt32</a>(</span><span class="m-doc-wrap"><a href="class_i_o_1_1_i_stream.html" class="m-doc">IStream</a>* pIS,
               uint32_t* value,
               <a href="namespace_i_o.html#a93e482d5d18014e9184bfabe5a1a6e07" class="m-doc">size_<wbr />type</a> count = 1,
-              <a href="namespace_i_o.html#ae3521782097881f06dd3acb06ebfaa28" class="m-doc">Endian</a> endianSource = <a href="namespace_i_o.html#ae3521782097881f06dd3acb06ebfaa28a53ea6d94063df2bf84714769355cdcc4" class="m-doc">kEndianBig</a>) -&gt; bool</span>
+              <a href="namespace_i_o.html#ad94ca491ff4f9233f937843131a213f2" class="m-doc">Endian</a> endianSource = <a href="namespace_i_o.html#ad94ca491ff4f9233f937843131a213f2ad491538da818a2ba11a3195ba035cfd3" class="m-doc">Endian::<wbr />Big</a>) -&gt; bool</span>
             </dt>
             <dd>Reads a single uint32_t value or an array of uint32_t from the stream.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#a27e0573e46dd0ee523738545ee594f13" class="m-doc">ReadFloat</a>(</span><span class="m-doc-wrap"><a href="class_i_o_1_1_i_stream.html" class="m-doc">IStream</a>* pIS,
+              <span class="m-doc-wrap-bumper">auto <a href="#a6fcaf385f832363e3c787be5f07be65c" class="m-doc">ReadFloat</a>(</span><span class="m-doc-wrap"><a href="class_i_o_1_1_i_stream.html" class="m-doc">IStream</a>* pIS,
               float* value,
               <a href="namespace_i_o.html#a93e482d5d18014e9184bfabe5a1a6e07" class="m-doc">size_<wbr />type</a> count = 1,
-              <a href="namespace_i_o.html#ae3521782097881f06dd3acb06ebfaa28" class="m-doc">Endian</a> endianSource = <a href="namespace_i_o.html#ae3521782097881f06dd3acb06ebfaa28a53ea6d94063df2bf84714769355cdcc4" class="m-doc">kEndianBig</a>) -&gt; bool</span>
+              <a href="namespace_i_o.html#ad94ca491ff4f9233f937843131a213f2" class="m-doc">Endian</a> endianSource = <a href="namespace_i_o.html#ad94ca491ff4f9233f937843131a213f2ad491538da818a2ba11a3195ba035cfd3" class="m-doc">Endian::<wbr />Big</a>) -&gt; bool</span>
             </dt>
             <dd>Reads a single float value or an array of float from the stream.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#a178b697c92587085d309e7239f9e76b0" class="m-doc">ReadResourceID</a>(</span><span class="m-doc-wrap"><a href="class_i_o_1_1_i_stream.html" class="m-doc">IStream</a>* pIS,
+              <span class="m-doc-wrap-bumper">auto <a href="#aebf5a2c564a69fad8fdaec4be2138d65" class="m-doc">ReadResourceID</a>(</span><span class="m-doc-wrap"><a href="class_i_o_1_1_i_stream.html" class="m-doc">IStream</a>* pIS,
               <a href="class_resource_i_d.html" class="m-doc">ResourceID</a>* value,
               <a href="namespace_i_o.html#a93e482d5d18014e9184bfabe5a1a6e07" class="m-doc">size_<wbr />type</a> count = 1,
-              <a href="namespace_i_o.html#ae3521782097881f06dd3acb06ebfaa28" class="m-doc">Endian</a> endianSource = <a href="namespace_i_o.html#ae3521782097881f06dd3acb06ebfaa28a53ea6d94063df2bf84714769355cdcc4" class="m-doc">kEndianBig</a>) -&gt; bool</span>
+              <a href="namespace_i_o.html#ad94ca491ff4f9233f937843131a213f2" class="m-doc">Endian</a> endianSource = <a href="namespace_i_o.html#ad94ca491ff4f9233f937843131a213f2ad491538da818a2ba11a3195ba035cfd3" class="m-doc">Endian::<wbr />Big</a>) -&gt; bool</span>
             </dt>
             <dd>Reads a single <a href="class_resource_i_d.html" class="m-doc">ResourceID</a> value or an array of <a href="class_resource_i_d.html" class="m-doc">ResourceID</a> from the stream.</dd>
             <dt>
               <span class="m-doc-wrap-bumper">auto <a href="#a0f6b1092fcd7d602b029ee45ba753fe0" class="m-doc">ReadCString</a>(</span><span class="m-doc-wrap"><a href="class_i_o_1_1_i_stream.html" class="m-doc">IStream</a>* pIS,
               eastl::string8&amp; str) -&gt; <a href="class_i_o_1_1_i_stream.html" class="m-doc">IStream</a>*</span>
             </dt>
-            <dd>Reads a null-terminated string from the source <a href="class_i_o_1_1_i_stream.html" class="m-doc">IStream</a> This will read bytes until a \x00 byte is found.</dd>
+            <dd>Reads a null-terminated eastl::string from the source <a href="class_i_o_1_1_i_stream.html" class="m-doc">IStream</a> This will read bytes until a \x00 byte is found.</dd>
             <dt>
               <span class="m-doc-wrap-bumper">auto <a href="#a380a4f25c21ae985a041c278a655ad8f" class="m-doc">ReadLine</a>(</span><span class="m-doc-wrap"><a href="class_i_o_1_1_i_stream.html" class="m-doc">IStream</a>* pIS,
               char* pLine,
@@ -295,61 +328,71 @@
             </dt>
             <dd>Writes a single uint8_t value or an array of uint8_t numerical values to the output stream.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#a7757ce10faa44c141bba14f6c313a734" class="m-doc">WriteInt16</a>(</span><span class="m-doc-wrap"><a href="class_i_o_1_1_i_stream.html" class="m-doc">IStream</a>* pOS,
+              <span class="m-doc-wrap-bumper">auto <a href="#ac7a7b95d52f245996bccc3e9d7bff738" class="m-doc">WriteInt16</a>(</span><span class="m-doc-wrap"><a href="class_i_o_1_1_i_stream.html" class="m-doc">IStream</a>* pOS,
               const int16_t* value,
               <a href="namespace_i_o.html#a93e482d5d18014e9184bfabe5a1a6e07" class="m-doc">size_<wbr />type</a> count = 1,
-              <a href="namespace_i_o.html#ae3521782097881f06dd3acb06ebfaa28" class="m-doc">Endian</a> endianDestination = <a href="namespace_i_o.html#ae3521782097881f06dd3acb06ebfaa28a53ea6d94063df2bf84714769355cdcc4" class="m-doc">kEndianBig</a>) -&gt; bool</span>
+              <a href="namespace_i_o.html#ad94ca491ff4f9233f937843131a213f2" class="m-doc">Endian</a> endianDestination = <a href="namespace_i_o.html#ad94ca491ff4f9233f937843131a213f2ad491538da818a2ba11a3195ba035cfd3" class="m-doc">Endian::<wbr />Big</a>) -&gt; bool</span>
             </dt>
             <dd>Writes a single int16_t value or an array of int16_t numerical values to the output stream with the given destination endian-ness.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#a5fe4f61dccd23d19beea5a17f0cb50be" class="m-doc">WriteUInt16</a>(</span><span class="m-doc-wrap"><a href="class_i_o_1_1_i_stream.html" class="m-doc">IStream</a>* pOS,
+              <span class="m-doc-wrap-bumper">auto <a href="#a18f3fa7ea4dd4a144299f9ce71bc0837" class="m-doc">WriteUInt16</a>(</span><span class="m-doc-wrap"><a href="class_i_o_1_1_i_stream.html" class="m-doc">IStream</a>* pOS,
               const uint16_t* value,
               <a href="namespace_i_o.html#a93e482d5d18014e9184bfabe5a1a6e07" class="m-doc">size_<wbr />type</a> count = 1,
-              <a href="namespace_i_o.html#ae3521782097881f06dd3acb06ebfaa28" class="m-doc">Endian</a> endianDestination = <a href="namespace_i_o.html#ae3521782097881f06dd3acb06ebfaa28a53ea6d94063df2bf84714769355cdcc4" class="m-doc">kEndianBig</a>) -&gt; bool</span>
+              <a href="namespace_i_o.html#ad94ca491ff4f9233f937843131a213f2" class="m-doc">Endian</a> endianDestination = <a href="namespace_i_o.html#ad94ca491ff4f9233f937843131a213f2ad491538da818a2ba11a3195ba035cfd3" class="m-doc">Endian::<wbr />Big</a>) -&gt; bool</span>
             </dt>
             <dd>Writes a single uint16_t value or an array of uint16_t numerical values to the output stream with the given destination endian-ness.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#ae91b5a5643ebfbdfde81bc645a718edc" class="m-doc">WriteInt32</a>(</span><span class="m-doc-wrap"><a href="class_i_o_1_1_i_stream.html" class="m-doc">IStream</a>* pOS,
+              <span class="m-doc-wrap-bumper">auto <a href="#a90f3a58ab2852b17e14a3ba56fb8e745" class="m-doc">WriteInt32</a>(</span><span class="m-doc-wrap"><a href="class_i_o_1_1_i_stream.html" class="m-doc">IStream</a>* pOS,
               const int32_t* src,
               <a href="namespace_i_o.html#a93e482d5d18014e9184bfabe5a1a6e07" class="m-doc">size_<wbr />type</a> count = 1,
-              <a href="namespace_i_o.html#ae3521782097881f06dd3acb06ebfaa28" class="m-doc">Endian</a> endianDestination = <a href="namespace_i_o.html#ae3521782097881f06dd3acb06ebfaa28a53ea6d94063df2bf84714769355cdcc4" class="m-doc">kEndianBig</a>) -&gt; bool</span>
+              <a href="namespace_i_o.html#ad94ca491ff4f9233f937843131a213f2" class="m-doc">Endian</a> endianDestination = <a href="namespace_i_o.html#ad94ca491ff4f9233f937843131a213f2ad491538da818a2ba11a3195ba035cfd3" class="m-doc">Endian::<wbr />Big</a>) -&gt; bool</span>
             </dt>
             <dd>WriteInt32.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#a0c2b7255e19df5bc523d1d37ebddc0df" class="m-doc">WriteUInt32</a>(</span><span class="m-doc-wrap"><a href="class_i_o_1_1_i_stream.html" class="m-doc">IStream</a>* pOS,
+              <span class="m-doc-wrap-bumper">auto <a href="#a364f31feb8040ff6904e01f245cf3080" class="m-doc">WriteUInt32</a>(</span><span class="m-doc-wrap"><a href="class_i_o_1_1_i_stream.html" class="m-doc">IStream</a>* pOS,
               const uint32_t* value,
               <a href="namespace_i_o.html#a93e482d5d18014e9184bfabe5a1a6e07" class="m-doc">size_<wbr />type</a> count = 1,
-              <a href="namespace_i_o.html#ae3521782097881f06dd3acb06ebfaa28" class="m-doc">Endian</a> endianDestination = <a href="namespace_i_o.html#ae3521782097881f06dd3acb06ebfaa28a53ea6d94063df2bf84714769355cdcc4" class="m-doc">kEndianBig</a>) -&gt; bool</span>
+              <a href="namespace_i_o.html#ad94ca491ff4f9233f937843131a213f2" class="m-doc">Endian</a> endianDestination = <a href="namespace_i_o.html#ad94ca491ff4f9233f937843131a213f2ad491538da818a2ba11a3195ba035cfd3" class="m-doc">Endian::<wbr />Big</a>) -&gt; bool</span>
             </dt>
             <dd>Writes a single uint32_t value or an array of uint32_t numerical values to the output stream with the given destination endian-ness.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#a948f7f790c1f0f9875d3b10b094e3b05" class="m-doc">WriteFloat</a>(</span><span class="m-doc-wrap"><a href="class_i_o_1_1_i_stream.html" class="m-doc">IStream</a>* pOS,
+              <span class="m-doc-wrap-bumper">auto <a href="#af08ee20e4866ff411834c5f57047720a" class="m-doc">WriteFloat</a>(</span><span class="m-doc-wrap"><a href="class_i_o_1_1_i_stream.html" class="m-doc">IStream</a>* pOS,
               const float* value,
               <a href="namespace_i_o.html#a93e482d5d18014e9184bfabe5a1a6e07" class="m-doc">size_<wbr />type</a> count = 1,
-              <a href="namespace_i_o.html#ae3521782097881f06dd3acb06ebfaa28" class="m-doc">Endian</a> endianDestination = <a href="namespace_i_o.html#ae3521782097881f06dd3acb06ebfaa28a53ea6d94063df2bf84714769355cdcc4" class="m-doc">kEndianBig</a>) -&gt; bool</span>
+              <a href="namespace_i_o.html#ad94ca491ff4f9233f937843131a213f2" class="m-doc">Endian</a> endianDestination = <a href="namespace_i_o.html#ad94ca491ff4f9233f937843131a213f2ad491538da818a2ba11a3195ba035cfd3" class="m-doc">Endian::<wbr />Big</a>) -&gt; bool</span>
             </dt>
             <dd>Writes a single float value or an array of float numerical values to the output stream with the given destination endian-ness.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#ad6f27b9211627c743f66ee82eee64bb7" class="m-doc">WriteResourceID</a>(</span><span class="m-doc-wrap"><a href="class_i_o_1_1_i_stream.html" class="m-doc">IStream</a>* pOS,
+              <span class="m-doc-wrap-bumper">auto <a href="#a2da9f66a3165921b7576c9496b92404f" class="m-doc">WriteResourceID</a>(</span><span class="m-doc-wrap"><a href="class_i_o_1_1_i_stream.html" class="m-doc">IStream</a>* pOS,
               const <a href="class_resource_i_d.html" class="m-doc">ResourceID</a>* value,
               <a href="namespace_i_o.html#a93e482d5d18014e9184bfabe5a1a6e07" class="m-doc">size_<wbr />type</a> count = 1,
-              <a href="namespace_i_o.html#ae3521782097881f06dd3acb06ebfaa28" class="m-doc">Endian</a> endianDestination = <a href="namespace_i_o.html#ae3521782097881f06dd3acb06ebfaa28a53ea6d94063df2bf84714769355cdcc4" class="m-doc">kEndianBig</a>) -&gt; bool</span>
+              <a href="namespace_i_o.html#ad94ca491ff4f9233f937843131a213f2" class="m-doc">Endian</a> endianDestination = <a href="namespace_i_o.html#ad94ca491ff4f9233f937843131a213f2ad491538da818a2ba11a3195ba035cfd3" class="m-doc">Endian::<wbr />Big</a>) -&gt; bool</span>
             </dt>
             <dd>Writes a single <a href="class_resource_i_d.html" class="m-doc">ResourceID</a> value or an array of <a href="class_resource_i_d.html" class="m-doc">ResourceID</a> values to the output stream with the given destination endian-ness.</dd>
             <dt>
               <span class="m-doc-wrap-bumper">void <a href="#a6ec42b89ee1f737c869344b1f084f58f" class="m-doc">WriteCString</a>(</span><span class="m-doc-wrap"><a href="class_i_o_1_1_i_stream.html" class="m-doc">IStream</a>* pOS,
               eastl::string8&amp; str)</span>
             </dt>
-            <dd>Reads a null-terminated string from the source <a href="class_i_o_1_1_i_stream.html" class="m-doc">IStream</a> This will read bytes until a \x00 byte is found.</dd>
+            <dd>Reads a null-terminated eastl::string from the source <a href="class_i_o_1_1_i_stream.html" class="m-doc">IStream</a> This will read bytes until a \x00 byte is found.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#afd5d24062ebf2880c6a72a11a583007a" class="m-doc">WriteLine</a>(</span><span class="m-doc-wrap"><a href="class_i_o_1_1_i_stream.html" class="m-doc">IStream</a>* pOS,
+              <span class="m-doc-wrap-bumper">auto <a href="#a6c8b5a733b042c3d222171eed2d6ba76" class="m-doc">WriteLine</a>(</span><span class="m-doc-wrap"><a href="class_i_o_1_1_i_stream.html" class="m-doc">IStream</a>* pOS,
               const char8_t* pLineSource,
               <a href="namespace_i_o.html#a93e482d5d18014e9184bfabe5a1a6e07" class="m-doc">size_<wbr />type</a> nLineLength,
-              <a href="namespace_i_o.html#a442029c9a063d8c6f0125230ead48d8b" class="m-doc">LineEnd</a> lineEndToUse = <a href="namespace_i_o.html#a442029c9a063d8c6f0125230ead48d8ba7aca10b9a27676b9a7a7a0344d09cfd3" class="m-doc">kLineEndAuto</a>) -&gt; bool</span>
+              <a href="namespace_i_o.html#aab0e63c6a8a794a735b0ef83f221338e" class="m-doc">LineEnd</a> lineEndToUse = <a href="namespace_i_o.html#aab0e63c6a8a794a735b0ef83f221338ea06b9281e396db002010bde1de57262eb" class="m-doc">LineEnd::<wbr />Auto</a>) -&gt; bool</span>
             </dt>
             <dd>Writes a line of text to a destination <a href="class_i_o_1_1_i_stream.html" class="m-doc">IStream</a>.</dd>
             <dt>
+              <span class="m-doc-wrap-bumper"><a href="#a11375a01d5245090eebcf03b8fdb2851" class="m-doc">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_i_o_1_1_stream_buffer.html" class="m-doc">StreamBuffer</a>,
+              0x34)</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
               <span class="m-doc-wrap-bumper">auto <a href="#aa7638155ee9974b2ca1e6d7c07a61a81" class="m-doc">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_i_o_1_1_stream_buffer.html" class="m-doc">StreamBuffer</a>) -&gt; namespace</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper"><a href="#ae0d81d06235400b7dd55cf90321f5e5e" class="m-doc">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_i_o_1_1_stream_child.html" class="m-doc">StreamChild</a>,
+              0x1C)</span>
             </dt>
             <dd><span></span></dd>
             <dt>
@@ -357,7 +400,22 @@
             </dt>
             <dd><span></span></dd>
             <dt>
+              <span class="m-doc-wrap-bumper"><a href="#aca9bc8589b7d49696f5ac4592d968bd3" class="m-doc">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_i_o_1_1_fixed_memory_stream.html" class="m-doc">FixedMemoryStream</a>,
+              0x18)</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
               <span class="m-doc-wrap-bumper">auto <a href="#aa1d6c81d2e9ad22b84506e93c610da79" class="m-doc">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_i_o_1_1_fixed_memory_stream.html" class="m-doc">FixedMemoryStream</a>) -&gt; namespace</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper"><a href="#a25d6105ee5a9d221f97443114d6fef8e" class="m-doc">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_i_o_1_1_shared_pointer.html" class="m-doc">SharedPointer</a>,
+              0x18)</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper"><a href="#a4e9500b6becb1dbb62a3f49a69f73232" class="m-doc">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_i_o_1_1_memory_stream.html" class="m-doc">MemoryStream</a>,
+              0x24)</span>
             </dt>
             <dd><span></span></dd>
             <dt>
@@ -365,7 +423,17 @@
             </dt>
             <dd><span></span></dd>
             <dt>
+              <span class="m-doc-wrap-bumper"><a href="#a33384342c3938565353650cc66d2cf08" class="m-doc">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_i_o_1_1_stream_null.html" class="m-doc">StreamNull</a>,
+              0x8)</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
               <span class="m-doc-wrap-bumper">auto <a href="#a56baa1dfb472ae39387d1b2a11d1e689" class="m-doc">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_i_o_1_1_stream_null.html" class="m-doc">StreamNull</a>) -&gt; namespace</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper"><a href="#ac932a0e44a1772da95e16c72532c2cdd" class="m-doc">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_i_o_1_1_xml_writer.html" class="m-doc">XmlWriter</a>,
+              0x20)</span>
             </dt>
             <dd><span></span></dd>
             <dt>
@@ -378,10 +446,6 @@
           <h2><a href="#var-members">Variables</a></h2>
           <dl class="m-doc">
             <dt>
-              const int <a href="#a1ede66e0687429074d7d035b01f207e1" class="m-doc">kMaxPathLength</a>
-            </dt>
-            <dd><span></span></dd>
-            <dt>
               const <a href="namespace_i_o.html#a93e482d5d18014e9184bfabe5a1a6e07" class="m-doc">size_<wbr />type</a> <a href="#a295ef89f7f866028f6c54b0db7c5f990" class="m-doc">kSizeTypeError</a>
             </dt>
             <dd>Used to designate an error condition for many functions that return size_type.</dd>
@@ -392,7 +456,11 @@
             <dt>
               const size_t <a href="#a8ebd534375854be01844a27de762b518" class="m-doc">kLengthNull</a>
             </dt>
-            <dd>Defines a value to be used for string conversion functions which means that the string length is specified by a wherever the terminating null character is.</dd>
+            <dd>Defines a value to be used for eastl::string conversion functions which means that the eastl::string length is specified by a wherever the terminating null character is.</dd>
+            <dt>
+              const int <a href="#a1ede66e0687429074d7d035b01f207e1" class="m-doc">kMaxPathLength</a>
+            </dt>
+            <dd><span></span></dd>
           </dl>
         </section>
         <section>
@@ -400,161 +468,161 @@
           <section class="m-doc-details" id="a5e58fc53b7c9d1ef2c2c8f0ce59d659d"><div>
             <h3>
               enum class IO::<wbr /><a href="#a5e58fc53b7c9d1ef2c2c8f0ce59d659d" class="m-doc-self">FileError</a>: uint32_t
-              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_i_stream_8h.html">&lt;Spore/IO/IStream.h&gt;</a></div>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_i_o_2_constants_8h.html">&lt;Spore/IO/Constants.h&gt;</a></div>
             </h3>
             <p><span></span></p>
           </div></section>
-          <section class="m-doc-details" id="a6ebdfc60f23a884f4aecd2455972ff02"><div>
+          <section class="m-doc-details" id="ab7db8d079d037a7b288d7d79b2d052db"><div>
             <h3>
-              enum IO::<wbr /><a href="#a6ebdfc60f23a884f4aecd2455972ff02" class="m-doc-self">AccessFlags</a>
-              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_i_stream_8h.html">&lt;Spore/IO/IStream.h&gt;</a></div>
+              enum class IO::<wbr /><a href="#ab7db8d079d037a7b288d7d79b2d052db" class="m-doc-self">AccessFlags</a>: int
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_i_o_2_constants_8h.html">&lt;Spore/IO/Constants.h&gt;</a></div>
             </h3>
             <p>Defines stream access flags, much like file access flags.</p>
             <table class="m-table m-fullwidth m-flat m-doc">
               <thead><tr><th style="width: 1%">Enumerators</th><th></th></tr></thead>
               <tbody>
                 <tr>
-                  <td><a href="#a6ebdfc60f23a884f4aecd2455972ff02aa71886f915278fa853591a353024b13c" class="m-doc-self" id="a6ebdfc60f23a884f4aecd2455972ff02aa71886f915278fa853591a353024b13c">kAccessFlagNone</a></td>
-                  <td>
-                  <p><span></span></p>
-                  </td>
-                </tr>
-                <tr>
-                  <td><a href="#a6ebdfc60f23a884f4aecd2455972ff02ac5b43555635940d9a558028143f3c4d2" class="m-doc-self" id="a6ebdfc60f23a884f4aecd2455972ff02ac5b43555635940d9a558028143f3c4d2">kAccessFlagRead</a></td>
+                  <td><a href="#ab7db8d079d037a7b288d7d79b2d052dba6adf97f83acf6453d4a6a4b1070f3754" class="m-doc-self" id="ab7db8d079d037a7b288d7d79b2d052dba6adf97f83acf6453d4a6a4b1070f3754">None</a></td>
                   <td>
                   <p>No specified flags. Also used to indicate that a given <a href="namespace_i_o.html" class="m-doc">IO</a> stream is closed.</p>
                   </td>
                 </tr>
                 <tr>
-                  <td><a href="#a6ebdfc60f23a884f4aecd2455972ff02afe23d1a1154584f561230df4810619d1" class="m-doc-self" id="a6ebdfc60f23a884f4aecd2455972ff02afe23d1a1154584f561230df4810619d1">kAccessFlagWrite</a></td>
+                  <td><a href="#ab7db8d079d037a7b288d7d79b2d052dba7a1a5f3e79fdc91edf2f5ead9d66abb4" class="m-doc-self" id="ab7db8d079d037a7b288d7d79b2d052dba7a1a5f3e79fdc91edf2f5ead9d66abb4">Read</a></td>
                   <td>
                   <p>Used for identifying read access to an entity.</p>
                   </td>
                 </tr>
                 <tr>
-                  <td><a href="#a6ebdfc60f23a884f4aecd2455972ff02a67d81b416712e26c4099d1f01c1493ba" class="m-doc-self" id="a6ebdfc60f23a884f4aecd2455972ff02a67d81b416712e26c4099d1f01c1493ba">kAccessFlagReadWrite</a></td>
+                  <td><a href="#ab7db8d079d037a7b288d7d79b2d052dba1129c0e4d43f2d121652a7302712cff6" class="m-doc-self" id="ab7db8d079d037a7b288d7d79b2d052dba1129c0e4d43f2d121652a7302712cff6">Write</a></td>
                   <td>
                   <p>Used for identifying write access to an entity.</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#ab7db8d079d037a7b288d7d79b2d052dba70a2a84088d405a2e3f1e3accaa16723" class="m-doc-self" id="ab7db8d079d037a7b288d7d79b2d052dba70a2a84088d405a2e3f1e3accaa16723">ReadWrite</a></td>
+                  <td>
+                  <p>Used for identifying both read and write access to an entity.</p>
                   </td>
                 </tr>
               </tbody>
             </table>
           </div></section>
-          <section class="m-doc-details" id="a45057374e91a07d3a7a80f09ca20b83a"><div>
+          <section class="m-doc-details" id="abf6e95eb7addeab6fd4137b076cabbfa"><div>
             <h3>
-              enum IO::<wbr /><a href="#a45057374e91a07d3a7a80f09ca20b83a" class="m-doc-self">CD</a>
-              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_i_stream_8h.html">&lt;Spore/IO/IStream.h&gt;</a></div>
+              enum class IO::<wbr /><a href="#abf6e95eb7addeab6fd4137b076cabbfa" class="m-doc-self">CD</a>: int
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_i_o_2_constants_8h.html">&lt;Spore/IO/Constants.h&gt;</a></div>
             </h3>
             <p>Creation disposition. Specifies aspects of how to create or not create a file during opening of it.</p>
             <table class="m-table m-fullwidth m-flat m-doc">
               <thead><tr><th style="width: 1%">Enumerators</th><th></th></tr></thead>
               <tbody>
                 <tr>
-                  <td><a href="#a45057374e91a07d3a7a80f09ca20b83aabb8d53716fb6408b413e4d16b7b9c2fb" class="m-doc-self" id="a45057374e91a07d3a7a80f09ca20b83aabb8d53716fb6408b413e4d16b7b9c2fb">kCDCreateNew</a></td>
-                  <td>
-                  <p><span></span></p>
-                  </td>
-                </tr>
-                <tr>
-                  <td><a href="#a45057374e91a07d3a7a80f09ca20b83aaeab37bc3a7ed8fba645543e329873101" class="m-doc-self" id="a45057374e91a07d3a7a80f09ca20b83aaeab37bc3a7ed8fba645543e329873101">kCDCreateAlways</a></td>
+                  <td><a href="#abf6e95eb7addeab6fd4137b076cabbfaa16aad4508a33afcd497d9cb37480722f" class="m-doc-self" id="abf6e95eb7addeab6fd4137b076cabbfaa16aad4508a33afcd497d9cb37480722f">CreateNew</a></td>
                   <td>
                   <p>Fails if file already exists.</p>
                   </td>
                 </tr>
                 <tr>
-                  <td><a href="#a45057374e91a07d3a7a80f09ca20b83aa7899f8d2038cd523d6556f497b042821" class="m-doc-self" id="a45057374e91a07d3a7a80f09ca20b83aa7899f8d2038cd523d6556f497b042821">kCDOpenExisting</a></td>
+                  <td><a href="#abf6e95eb7addeab6fd4137b076cabbfaa5007129116ac317941eafb99b92b62d7" class="m-doc-self" id="abf6e95eb7addeab6fd4137b076cabbfaa5007129116ac317941eafb99b92b62d7">CreateAlways</a></td>
                   <td>
                   <p>Never fails, always opens or creates and truncates to 0.</p>
                   </td>
                 </tr>
                 <tr>
-                  <td><a href="#a45057374e91a07d3a7a80f09ca20b83aac01639cc08296654ac63957389791c87" class="m-doc-self" id="a45057374e91a07d3a7a80f09ca20b83aac01639cc08296654ac63957389791c87">kCDOpenAlways</a></td>
+                  <td><a href="#abf6e95eb7addeab6fd4137b076cabbfaa31e4ddcb0bdd2cb84245a1b4337dc4f0" class="m-doc-self" id="abf6e95eb7addeab6fd4137b076cabbfaa31e4ddcb0bdd2cb84245a1b4337dc4f0">OpenExisting</a></td>
                   <td>
                   <p>Fails if file doesn&#x27;t exist, keeps contents.</p>
                   </td>
                 </tr>
                 <tr>
-                  <td><a href="#a45057374e91a07d3a7a80f09ca20b83aa40fda0bcb8ba90bb08b89e789afa1ba7" class="m-doc-self" id="a45057374e91a07d3a7a80f09ca20b83aa40fda0bcb8ba90bb08b89e789afa1ba7">kCDTruncateExisting</a></td>
+                  <td><a href="#abf6e95eb7addeab6fd4137b076cabbfaa05b613cd54f885812936f4186b159bdf" class="m-doc-self" id="abf6e95eb7addeab6fd4137b076cabbfaa05b613cd54f885812936f4186b159bdf">OpenAlways</a></td>
                   <td>
                   <p>Never fails, creates if doesn&#x27;t exist, keeps contents.</p>
                   </td>
                 </tr>
                 <tr>
-                  <td><a href="#a45057374e91a07d3a7a80f09ca20b83aa816845f0193dc6789d88c7749b6dcfb9" class="m-doc-self" id="a45057374e91a07d3a7a80f09ca20b83aa816845f0193dc6789d88c7749b6dcfb9">kCDDefault</a></td>
+                  <td><a href="#abf6e95eb7addeab6fd4137b076cabbfaa15ef87a1ec51975b50b651c1cce8f5b7" class="m-doc-self" id="abf6e95eb7addeab6fd4137b076cabbfaa15ef87a1ec51975b50b651c1cce8f5b7">TruncateExisting</a></td>
                   <td>
                   <p>Fails if file doesn&#x27;t exist, but truncates to 0 if it does.</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#abf6e95eb7addeab6fd4137b076cabbfaa7a1920d61156abc05a60135aefe8bc67" class="m-doc-self" id="abf6e95eb7addeab6fd4137b076cabbfaa7a1920d61156abc05a60135aefe8bc67">Default</a></td>
+                  <td>
+                  <p>Default (implementation-specific) disposition.</p>
                   </td>
                 </tr>
               </tbody>
             </table>
           </div></section>
-          <section class="m-doc-details" id="ae8092ef26cdcadafcb368e9914fce400"><div>
+          <section class="m-doc-details" id="a3548a9e9ef60c2653c6cdba408e817fc"><div>
             <h3>
-              enum IO::<wbr /><a href="#ae8092ef26cdcadafcb368e9914fce400" class="m-doc-self">PositionType</a>
-              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_i_stream_8h.html">&lt;Spore/IO/IStream.h&gt;</a></div>
+              enum class IO::<wbr /><a href="#a3548a9e9ef60c2653c6cdba408e817fc" class="m-doc-self">PositionType</a>: int
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_i_o_2_constants_8h.html">&lt;Spore/IO/Constants.h&gt;</a></div>
             </h3>
             <p>Defines the positional basis for a user GetPosition or SetPosition action.</p>
             <table class="m-table m-fullwidth m-flat m-doc">
               <thead><tr><th style="width: 1%">Enumerators</th><th></th></tr></thead>
               <tbody>
                 <tr>
-                  <td><a href="#ae8092ef26cdcadafcb368e9914fce400aec274c84c558b69dfc1858338c38b7cc" class="m-doc-self" id="ae8092ef26cdcadafcb368e9914fce400aec274c84c558b69dfc1858338c38b7cc">kPositionTypeBegin</a></td>
-                  <td>
-                  <p><span></span></p>
-                  </td>
-                </tr>
-                <tr>
-                  <td><a href="#ae8092ef26cdcadafcb368e9914fce400a160bacce30de7d6cff3a2ad15c5e9d20" class="m-doc-self" id="ae8092ef26cdcadafcb368e9914fce400a160bacce30de7d6cff3a2ad15c5e9d20">kPositionTypeCurrent</a></td>
+                  <td><a href="#a3548a9e9ef60c2653c6cdba408e817fca1a06729125544cab7cee73195fc044f0" class="m-doc-self" id="a3548a9e9ef60c2653c6cdba408e817fca1a06729125544cab7cee73195fc044f0">Begin</a></td>
                   <td>
                   <p>For GetPosition refers to absolute index of next byte to read; always positive. For SetPosition, refers to absolute index of next byte to be written; always positive.</p>
                   </td>
                 </tr>
                 <tr>
-                  <td><a href="#ae8092ef26cdcadafcb368e9914fce400ab372fe5768fce085be62a9b80601617d" class="m-doc-self" id="ae8092ef26cdcadafcb368e9914fce400ab372fe5768fce085be62a9b80601617d">kPositionTypeEnd</a></td>
+                  <td><a href="#a3548a9e9ef60c2653c6cdba408e817fca222a267cc5778206b253be35ee3ddab5" class="m-doc-self" id="a3548a9e9ef60c2653c6cdba408e817fca222a267cc5778206b253be35ee3ddab5">Current</a></td>
                   <td>
                   <p>For GetPosition always returns zero. For SetPosition, refers to position relative to current position; can be positive or negative.</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a3548a9e9ef60c2653c6cdba408e817fca87557f11575c0ad78e4e28abedc13b6e" class="m-doc-self" id="a3548a9e9ef60c2653c6cdba408e817fca87557f11575c0ad78e4e28abedc13b6e">End</a></td>
+                  <td>
+                  <p>For GetPosition returns to position relative to end (i.e. the negative of bytes left to read); always negative. For SetPosition, refers to position relative to end; can be positive or negative.</p>
                   </td>
                 </tr>
               </tbody>
             </table>
           </div></section>
-          <section class="m-doc-details" id="a442029c9a063d8c6f0125230ead48d8b"><div>
+          <section class="m-doc-details" id="aab0e63c6a8a794a735b0ef83f221338e"><div>
             <h3>
-              enum IO::<wbr /><a href="#a442029c9a063d8c6f0125230ead48d8b" class="m-doc-self">LineEnd</a>
-              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_i_stream_8h.html">&lt;Spore/IO/IStream.h&gt;</a></div>
+              enum class IO::<wbr /><a href="#aab0e63c6a8a794a735b0ef83f221338e" class="m-doc-self">LineEnd</a>: int
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_i_o_2_constants_8h.html">&lt;Spore/IO/Constants.h&gt;</a></div>
             </h3>
             <p>Defines textual line ending property types.</p>
             <table class="m-table m-fullwidth m-flat m-doc">
               <thead><tr><th style="width: 1%">Enumerators</th><th></th></tr></thead>
               <tbody>
                 <tr>
-                  <td><a href="#a442029c9a063d8c6f0125230ead48d8ba8f64f61e414962160729a4c6fd15d8df" class="m-doc-self" id="a442029c9a063d8c6f0125230ead48d8ba8f64f61e414962160729a4c6fd15d8df">kLineEndNone</a></td>
-                  <td>
-                  <p><span></span></p>
-                  </td>
-                </tr>
-                <tr>
-                  <td><a href="#a442029c9a063d8c6f0125230ead48d8ba7aca10b9a27676b9a7a7a0344d09cfd3" class="m-doc-self" id="a442029c9a063d8c6f0125230ead48d8ba7aca10b9a27676b9a7a7a0344d09cfd3">kLineEndAuto</a></td>
+                  <td><a href="#aab0e63c6a8a794a735b0ef83f221338ea6adf97f83acf6453d4a6a4b1070f3754" class="m-doc-self" id="aab0e63c6a8a794a735b0ef83f221338ea6adf97f83acf6453d4a6a4b1070f3754">None</a></td>
                   <td>
                   <p>Refers to no line termination. When writing, it means to append nothing.</p>
                   </td>
                 </tr>
                 <tr>
-                  <td><a href="#a442029c9a063d8c6f0125230ead48d8ba85a614e688428ff7a503f2fd2385949e" class="m-doc-self" id="a442029c9a063d8c6f0125230ead48d8ba85a614e688428ff7a503f2fd2385949e">kLineEndNewline</a></td>
+                  <td><a href="#aab0e63c6a8a794a735b0ef83f221338ea06b9281e396db002010bde1de57262eb" class="m-doc-self" id="aab0e63c6a8a794a735b0ef83f221338ea06b9281e396db002010bde1de57262eb">Auto</a></td>
                   <td>
                   <p>Refers to automatic line termination. When writing, it means to append kLineTerminationNewline if there isn&#x27;t one already.</p>
                   </td>
                 </tr>
                 <tr>
-                  <td><a href="#a442029c9a063d8c6f0125230ead48d8ba26db1d681983c1781dc31afd3a0efe2c" class="m-doc-self" id="a442029c9a063d8c6f0125230ead48d8ba26db1d681983c1781dc31afd3a0efe2c">kLineEndUnix</a></td>
+                  <td><a href="#aab0e63c6a8a794a735b0ef83f221338ea755fee300780823fcf4df98383331745" class="m-doc-self" id="aab0e63c6a8a794a735b0ef83f221338ea755fee300780823fcf4df98383331745">Newline</a></td>
                   <td>
                   <p>Refers to &quot;\n&quot; line termination. When writing, it means to append a newline always.</p>
                   </td>
                 </tr>
                 <tr>
-                  <td><a href="#a442029c9a063d8c6f0125230ead48d8bae7a960815349f93f2cac1ab99cc4829f" class="m-doc-self" id="a442029c9a063d8c6f0125230ead48d8bae7a960815349f93f2cac1ab99cc4829f">kLineEndWindows</a></td>
+                  <td><a href="#aab0e63c6a8a794a735b0ef83f221338ea6ec1bd1ea6a5d67a63b20c8f6172bddd" class="m-doc-self" id="aab0e63c6a8a794a735b0ef83f221338ea6ec1bd1ea6a5d67a63b20c8f6172bddd">Unix</a></td>
                   <td>
-                  <p>Same as kLineEndNewline.</p>
+                  <p>Same as Newline.</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#aab0e63c6a8a794a735b0ef83f221338eaaea23489ce3aa9b6406ebb28e0cda430" class="m-doc-self" id="aab0e63c6a8a794a735b0ef83f221338eaaea23489ce3aa9b6406ebb28e0cda430">Windows</a></td>
+                  <td>
+                  <p>Refers to &quot;\r\n&quot; line termination. When writing, it means to append a newline always.</p>
                   </td>
                 </tr>
               </tbody>
@@ -563,7 +631,7 @@
           <section class="m-doc-details" id="a5051c8a01530b70415e421977c84d79c"><div>
             <h3>
               enum IO::<wbr /><a href="#a5051c8a01530b70415e421977c84d79c" class="m-doc-self">Share</a>
-              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_i_stream_8h.html">&lt;Spore/IO/IStream.h&gt;</a></div>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_i_o_2_constants_8h.html">&lt;Spore/IO/Constants.h&gt;</a></div>
             </h3>
             <p><span></span></p>
             <table class="m-table m-fullwidth m-flat m-doc">
@@ -572,25 +640,25 @@
                 <tr>
                   <td><a href="#a5051c8a01530b70415e421977c84d79cab53fae75ed0205004bf1c2ab9fee907e" class="m-doc-self" id="a5051c8a01530b70415e421977c84d79cab53fae75ed0205004bf1c2ab9fee907e">kShareNone</a></td>
                   <td>
-                  <p><span></span></p>
+                  <p>No sharing.</p>
                   </td>
                 </tr>
                 <tr>
                   <td><a href="#a5051c8a01530b70415e421977c84d79cabb69b01692f99a56e7224db3e5fc3013" class="m-doc-self" id="a5051c8a01530b70415e421977c84d79cabb69b01692f99a56e7224db3e5fc3013">kShareRead</a></td>
                   <td>
-                  <p>No sharing.</p>
+                  <p>Allow sharing for reading.</p>
                   </td>
                 </tr>
                 <tr>
                   <td><a href="#a5051c8a01530b70415e421977c84d79caf405c76be14643a928ed9abe9d368e05" class="m-doc-self" id="a5051c8a01530b70415e421977c84d79caf405c76be14643a928ed9abe9d368e05">kShareWrite</a></td>
                   <td>
-                  <p>Allow sharing for reading.</p>
+                  <p>Allow sharing for writing.</p>
                   </td>
                 </tr>
                 <tr>
                   <td><a href="#a5051c8a01530b70415e421977c84d79ca73ab964a24644c9f46cc8c9491364e55" class="m-doc-self" id="a5051c8a01530b70415e421977c84d79ca73ab964a24644c9f46cc8c9491364e55">kShareDelete</a></td>
                   <td>
-                  <p>Allow sharing for writing.</p>
+                  <p>Allow sharing for deletion.</p>
                   </td>
                 </tr>
               </tbody>
@@ -599,43 +667,43 @@
           <section class="m-doc-details" id="a87c1d3677aa777dd9327ea13ac76d549"><div>
             <h3>
               enum IO::<wbr /><a href="#a87c1d3677aa777dd9327ea13ac76d549" class="m-doc-self">UsageHints</a>
-              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_i_stream_8h.html">&lt;Spore/IO/IStream.h&gt;</a></div>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_i_o_2_constants_8h.html">&lt;Spore/IO/Constants.h&gt;</a></div>
             </h3>
             <p><span></span></p>
           </div></section>
           <section class="m-doc-details" id="a718312f88f2448f7faed6d9ea081d96d"><div>
             <h3>
               enum IO::<wbr /><a href="#a718312f88f2448f7faed6d9ea081d96d" class="m-doc-self">State</a>
-              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_i_stream_8h.html">&lt;Spore/IO/IStream.h&gt;</a></div>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_i_o_2_constants_8h.html">&lt;Spore/IO/Constants.h&gt;</a></div>
             </h3>
             <p>Defines state values or function return values.</p>
 <p>Zero means success and non-zero means failure in general. Note that various stream types may define their own errors in addition to these generic errors.</p>
           </div></section>
-          <section class="m-doc-details" id="ae3521782097881f06dd3acb06ebfaa28"><div>
+          <section class="m-doc-details" id="ad94ca491ff4f9233f937843131a213f2"><div>
             <h3>
-              enum IO::<wbr /><a href="#ae3521782097881f06dd3acb06ebfaa28" class="m-doc-self">Endian</a>
-              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_i_stream_8h.html">&lt;Spore/IO/IStream.h&gt;</a></div>
+              enum class IO::<wbr /><a href="#ad94ca491ff4f9233f937843131a213f2" class="m-doc-self">Endian</a>: int
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_i_o_2_constants_8h.html">&lt;Spore/IO/Constants.h&gt;</a></div>
             </h3>
             <p>Defines endian-ness. This is appropriate for working with binary numerical data.</p>
             <table class="m-table m-fullwidth m-flat m-doc">
               <thead><tr><th style="width: 1%">Enumerators</th><th></th></tr></thead>
               <tbody>
                 <tr>
-                  <td><a href="#ae3521782097881f06dd3acb06ebfaa28a53ea6d94063df2bf84714769355cdcc4" class="m-doc-self" id="ae3521782097881f06dd3acb06ebfaa28a53ea6d94063df2bf84714769355cdcc4">kEndianBig</a></td>
-                  <td>
-                  <p><span></span></p>
-                  </td>
-                </tr>
-                <tr>
-                  <td><a href="#ae3521782097881f06dd3acb06ebfaa28a5c86d057afc78658ff0b21eade891e30" class="m-doc-self" id="ae3521782097881f06dd3acb06ebfaa28a5c86d057afc78658ff0b21eade891e30">kEndianLittle</a></td>
+                  <td><a href="#ad94ca491ff4f9233f937843131a213f2ad491538da818a2ba11a3195ba035cfd3" class="m-doc-self" id="ad94ca491ff4f9233f937843131a213f2ad491538da818a2ba11a3195ba035cfd3">Big</a></td>
                   <td>
                   <p>Big endian.</p>
                   </td>
                 </tr>
                 <tr>
-                  <td><a href="#ae3521782097881f06dd3acb06ebfaa28a331fefcdb95c7032ece7aa1f2e97b98b" class="m-doc-self" id="ae3521782097881f06dd3acb06ebfaa28a331fefcdb95c7032ece7aa1f2e97b98b">kEndianLocal</a></td>
+                  <td><a href="#ad94ca491ff4f9233f937843131a213f2a0f9197b3e286a7522984831949087332" class="m-doc-self" id="ad94ca491ff4f9233f937843131a213f2a0f9197b3e286a7522984831949087332">Little</a></td>
                   <td>
                   <p>Little endian.</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#ad94ca491ff4f9233f937843131a213f2a509820290d57f333403f490dde7316f4" class="m-doc-self" id="ad94ca491ff4f9233f937843131a213f2a509820290d57f333403f490dde7316f4">Local</a></td>
+                  <td>
+                  <p>Whatever endian is native to the machine.</p>
                   </td>
                 </tr>
               </tbody>
@@ -647,7 +715,7 @@
           <section class="m-doc-details" id="a93e482d5d18014e9184bfabe5a1a6e07"><div>
             <h3>
               typedef size_t IO::<wbr /><a href="#a93e482d5d18014e9184bfabe5a1a6e07" class="m-doc-self">size_type</a>
-              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_i_stream_8h.html">&lt;Spore/IO/IStream.h&gt;</a></div>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_i_o_2_constants_8h.html">&lt;Spore/IO/Constants.h&gt;</a></div>
             </h3>
             <p><span></span></p>
           </div></section>
@@ -661,10 +729,59 @@
             </h3>
             <p><span></span></p>
           </div></section>
+          <section class="m-doc-details" id="a53787bbc3b3ee700ae231bf5625e74e1"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">bool IO::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a53787bbc3b3ee700ae231bf5625e74e1" class="m-doc-self">EnsureTrailingPathSeparator</a>(</span><span class="m-doc-wrap">eastl::string16&amp; path)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_i_o_2_constants_8h.html">&lt;Spore/IO/Constants.h&gt;</a></div>
+            </h3>
+            <p>Ensures the given path finishes with a path separator (&#x27;/&#x27; or &#x27;\&#x27; depending on the OS), modifying it if necessary.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">path</td>
+                  <td></td>
+                </tr>
+              </tbody>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="a99deaa2374f063b3b98dd61cf8cdb87c"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">int IO::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a99deaa2374f063b3b98dd61cf8cdb87c" class="m-doc-self">ConcatenatePathComponents</a>(</span><span class="m-doc-wrap">char16_t* dstPath,
+              const char16_t* component1,
+              const char16_t* component2)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_i_o_2_constants_8h.html">&lt;Spore/IO/Constants.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="a278ffd0a90191ef45fd3eea85d01e602"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">namespace IO::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a278ffd0a90191ef45fd3eea85d01e602" class="m-doc-self">Addresses</a>(</span><span class="m-doc-wrap">File)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_i_o_2_constants_8h.html">&lt;Spore/IO/Constants.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="abea3b00a5a87ad03c2824f804b62bc20"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">namespace IO::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#abea3b00a5a87ad03c2824f804b62bc20" class="m-doc-self">Addresses</a>(</span><span class="m-doc-wrap">Directory)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_i_o_2_constants_8h.html">&lt;Spore/IO/Constants.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
           <section class="m-doc-details" id="a3c9fbd193e7db8fda33e6582daa45343"><div>
             <h3>
               <span class="m-doc-wrap-bumper">namespace IO::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a3c9fbd193e7db8fda33e6582daa45343" class="m-doc-self">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_i_o_1_1_e_a_i_o_zone_object.html" class="m-doc">EAIOZoneObject</a>)</span></span>
               <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_e_a_i_o_zone_object_8h.html">&lt;Spore/IO/EAIOZoneObject.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="a3306f58746a04c0c54a8ebeed9a8e9e9"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"> IO::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a3306f58746a04c0c54a8ebeed9a8e9e9" class="m-doc-self">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_i_o_1_1_file_stream.html" class="m-doc">FileStream</a>,
+              0x22C)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_file_stream_8h.html">&lt;Spore/IO/FileStream.h&gt;</a></div>
             </h3>
             <p><span></span></p>
           </div></section>
@@ -704,71 +821,71 @@
             <p>Reads a single uint8_t value or an array of uint8_t from the stream.</p>
 <p>Input &#x27;endianSource&#x27; refers to the endian-ness of the values in the stream. Upon return the output value will be in local (a.k.a. native) endian-ness. The return value is true if the value could be entirely read. If false, you can use <a href="class_i_o_1_1_i_stream.html#aa1bcbedfc21d71aadd005d3ff42642f5" class="m-doc">IStream::<wbr />GetState</a> to determine the error. The default number of values is 1.</p>
           </div></section>
-          <section class="m-doc-details" id="a84ffddcf39f92523f8fbdb96f533a89d"><div>
+          <section class="m-doc-details" id="ab3e1a6dd3dfb522693c6647ecbf7de0a"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">bool IO::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a84ffddcf39f92523f8fbdb96f533a89d" class="m-doc-self">ReadInt16</a>(</span><span class="m-doc-wrap"><a href="class_i_o_1_1_i_stream.html" class="m-doc">IStream</a>* pIS,
+              <span class="m-doc-wrap-bumper">bool IO::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ab3e1a6dd3dfb522693c6647ecbf7de0a" class="m-doc-self">ReadInt16</a>(</span><span class="m-doc-wrap"><a href="class_i_o_1_1_i_stream.html" class="m-doc">IStream</a>* pIS,
               int16_t* value,
               <a href="namespace_i_o.html#a93e482d5d18014e9184bfabe5a1a6e07" class="m-doc">size_<wbr />type</a> count = 1,
-              <a href="namespace_i_o.html#ae3521782097881f06dd3acb06ebfaa28" class="m-doc">Endian</a> endianSource = <a href="namespace_i_o.html#ae3521782097881f06dd3acb06ebfaa28a53ea6d94063df2bf84714769355cdcc4" class="m-doc">kEndianBig</a>)</span></span>
+              <a href="namespace_i_o.html#ad94ca491ff4f9233f937843131a213f2" class="m-doc">Endian</a> endianSource = <a href="namespace_i_o.html#ad94ca491ff4f9233f937843131a213f2ad491538da818a2ba11a3195ba035cfd3" class="m-doc">Endian::<wbr />Big</a>)</span></span>
               <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_stream_adapter_8h.html">&lt;Spore/IO/StreamAdapter.h&gt;</a></div>
             </h3>
             <p>Reads a single int16_t value or an array of int16_t from the stream.</p>
-<p>Input &#x27;endianSource&#x27; refers to the endian-ness of the values in the stream. Upon return the output value will be in local (a.k.a. native) endian-ness. The return value is true if the value could be entirely read. If false, you can use <a href="class_i_o_1_1_i_stream.html#aa1bcbedfc21d71aadd005d3ff42642f5" class="m-doc">IStream::<wbr />GetState</a> to determine the error. The default number of values is 1, and the default endian-ness is kEndianBig.</p>
+<p>Input &#x27;endianSource&#x27; refers to the endian-ness of the values in the stream. Upon return the output value will be in local (a.k.a. native) endian-ness. The return value is true if the value could be entirely read. If false, you can use <a href="class_i_o_1_1_i_stream.html#aa1bcbedfc21d71aadd005d3ff42642f5" class="m-doc">IStream::<wbr />GetState</a> to determine the error. The default number of values is 1, and the default endian-ness is <a href="namespace_i_o.html#ad94ca491ff4f9233f937843131a213f2ad491538da818a2ba11a3195ba035cfd3" class="m-doc">Endian::<wbr />Big</a>.</p>
           </div></section>
-          <section class="m-doc-details" id="ac1e61e13a23b2a7a04265fec7ba4dc93"><div>
+          <section class="m-doc-details" id="a1d8fc2871bb5db795c0aa01402989181"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">bool IO::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ac1e61e13a23b2a7a04265fec7ba4dc93" class="m-doc-self">ReadUInt16</a>(</span><span class="m-doc-wrap"><a href="class_i_o_1_1_i_stream.html" class="m-doc">IStream</a>* pIS,
+              <span class="m-doc-wrap-bumper">bool IO::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a1d8fc2871bb5db795c0aa01402989181" class="m-doc-self">ReadUInt16</a>(</span><span class="m-doc-wrap"><a href="class_i_o_1_1_i_stream.html" class="m-doc">IStream</a>* pIS,
               uint16_t* value,
               <a href="namespace_i_o.html#a93e482d5d18014e9184bfabe5a1a6e07" class="m-doc">size_<wbr />type</a> count = 1,
-              <a href="namespace_i_o.html#ae3521782097881f06dd3acb06ebfaa28" class="m-doc">Endian</a> endianSource = <a href="namespace_i_o.html#ae3521782097881f06dd3acb06ebfaa28a53ea6d94063df2bf84714769355cdcc4" class="m-doc">kEndianBig</a>)</span></span>
+              <a href="namespace_i_o.html#ad94ca491ff4f9233f937843131a213f2" class="m-doc">Endian</a> endianSource = <a href="namespace_i_o.html#ad94ca491ff4f9233f937843131a213f2ad491538da818a2ba11a3195ba035cfd3" class="m-doc">Endian::<wbr />Big</a>)</span></span>
               <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_stream_adapter_8h.html">&lt;Spore/IO/StreamAdapter.h&gt;</a></div>
             </h3>
             <p>Reads a single uint16_t value or an array of uint16_t from the stream.</p>
-<p>Input &#x27;endianSource&#x27; refers to the endian-ness of the values in the stream. Upon return the output value will be in local (a.k.a. native) endian-ness. The return value is true if the value could be entirely read. If false, you can use <a href="class_i_o_1_1_i_stream.html#aa1bcbedfc21d71aadd005d3ff42642f5" class="m-doc">IStream::<wbr />GetState</a> to determine the error. The default number of values is 1, and the default endian-ness is kEndianBig.</p>
+<p>Input &#x27;endianSource&#x27; refers to the endian-ness of the values in the stream. Upon return the output value will be in local (a.k.a. native) endian-ness. The return value is true if the value could be entirely read. If false, you can use <a href="class_i_o_1_1_i_stream.html#aa1bcbedfc21d71aadd005d3ff42642f5" class="m-doc">IStream::<wbr />GetState</a> to determine the error. The default number of values is 1, and the default endian-ness is <a href="namespace_i_o.html#ad94ca491ff4f9233f937843131a213f2ad491538da818a2ba11a3195ba035cfd3" class="m-doc">Endian::<wbr />Big</a>.</p>
           </div></section>
-          <section class="m-doc-details" id="a79ba71ddf8915bc4b4ad0f5b8b9494d6"><div>
+          <section class="m-doc-details" id="a5689d253c3c310483aa396c3a1d2d972"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">bool IO::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a79ba71ddf8915bc4b4ad0f5b8b9494d6" class="m-doc-self">ReadInt32</a>(</span><span class="m-doc-wrap"><a href="class_i_o_1_1_i_stream.html" class="m-doc">IStream</a>* pIS,
+              <span class="m-doc-wrap-bumper">bool IO::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a5689d253c3c310483aa396c3a1d2d972" class="m-doc-self">ReadInt32</a>(</span><span class="m-doc-wrap"><a href="class_i_o_1_1_i_stream.html" class="m-doc">IStream</a>* pIS,
               int32_t* value,
               <a href="namespace_i_o.html#a93e482d5d18014e9184bfabe5a1a6e07" class="m-doc">size_<wbr />type</a> count = 1,
-              <a href="namespace_i_o.html#ae3521782097881f06dd3acb06ebfaa28" class="m-doc">Endian</a> endianSource = <a href="namespace_i_o.html#ae3521782097881f06dd3acb06ebfaa28a53ea6d94063df2bf84714769355cdcc4" class="m-doc">kEndianBig</a>)</span></span>
+              <a href="namespace_i_o.html#ad94ca491ff4f9233f937843131a213f2" class="m-doc">Endian</a> endianSource = <a href="namespace_i_o.html#ad94ca491ff4f9233f937843131a213f2ad491538da818a2ba11a3195ba035cfd3" class="m-doc">Endian::<wbr />Big</a>)</span></span>
               <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_stream_adapter_8h.html">&lt;Spore/IO/StreamAdapter.h&gt;</a></div>
             </h3>
             <p>Reads a single int32_t value or an array of int32_t from the stream.</p>
-<p>Input &#x27;endianSource&#x27; refers to the endian-ness of the values in the stream. Upon return the output value will be in local (a.k.a. native) endian-ness. The return value is true if the value could be entirely read. If false, you can use <a href="class_i_o_1_1_i_stream.html#aa1bcbedfc21d71aadd005d3ff42642f5" class="m-doc">IStream::<wbr />GetState</a> to determine the error. The default number of values is 1, and the default endian-ness is kEndianBig.</p>
+<p>Input &#x27;endianSource&#x27; refers to the endian-ness of the values in the stream. Upon return the output value will be in local (a.k.a. native) endian-ness. The return value is true if the value could be entirely read. If false, you can use <a href="class_i_o_1_1_i_stream.html#aa1bcbedfc21d71aadd005d3ff42642f5" class="m-doc">IStream::<wbr />GetState</a> to determine the error. The default number of values is 1, and the default endian-ness is <a href="namespace_i_o.html#ad94ca491ff4f9233f937843131a213f2ad491538da818a2ba11a3195ba035cfd3" class="m-doc">Endian::<wbr />Big</a>.</p>
           </div></section>
-          <section class="m-doc-details" id="a3146e04c009f97dcd534a070621aa442"><div>
+          <section class="m-doc-details" id="a3265fc1272dffcad369389d759f92805"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">bool IO::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a3146e04c009f97dcd534a070621aa442" class="m-doc-self">ReadUInt32</a>(</span><span class="m-doc-wrap"><a href="class_i_o_1_1_i_stream.html" class="m-doc">IStream</a>* pIS,
+              <span class="m-doc-wrap-bumper">bool IO::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a3265fc1272dffcad369389d759f92805" class="m-doc-self">ReadUInt32</a>(</span><span class="m-doc-wrap"><a href="class_i_o_1_1_i_stream.html" class="m-doc">IStream</a>* pIS,
               uint32_t* value,
               <a href="namespace_i_o.html#a93e482d5d18014e9184bfabe5a1a6e07" class="m-doc">size_<wbr />type</a> count = 1,
-              <a href="namespace_i_o.html#ae3521782097881f06dd3acb06ebfaa28" class="m-doc">Endian</a> endianSource = <a href="namespace_i_o.html#ae3521782097881f06dd3acb06ebfaa28a53ea6d94063df2bf84714769355cdcc4" class="m-doc">kEndianBig</a>)</span></span>
+              <a href="namespace_i_o.html#ad94ca491ff4f9233f937843131a213f2" class="m-doc">Endian</a> endianSource = <a href="namespace_i_o.html#ad94ca491ff4f9233f937843131a213f2ad491538da818a2ba11a3195ba035cfd3" class="m-doc">Endian::<wbr />Big</a>)</span></span>
               <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_stream_adapter_8h.html">&lt;Spore/IO/StreamAdapter.h&gt;</a></div>
             </h3>
             <p>Reads a single uint32_t value or an array of uint32_t from the stream.</p>
-<p>Input &#x27;endianSource&#x27; refers to the endian-ness of the values in the stream. Upon return the output value will be in local (a.k.a. native) endian-ness. The return value is true if the value could be entirely read. If false, you can use <a href="class_i_o_1_1_i_stream.html#aa1bcbedfc21d71aadd005d3ff42642f5" class="m-doc">IStream::<wbr />GetState</a> to determine the error. The default number of values is 1, and the default endian-ness is kEndianBig.</p>
+<p>Input &#x27;endianSource&#x27; refers to the endian-ness of the values in the stream. Upon return the output value will be in local (a.k.a. native) endian-ness. The return value is true if the value could be entirely read. If false, you can use <a href="class_i_o_1_1_i_stream.html#aa1bcbedfc21d71aadd005d3ff42642f5" class="m-doc">IStream::<wbr />GetState</a> to determine the error. The default number of values is 1, and the default endian-ness is <a href="namespace_i_o.html#ad94ca491ff4f9233f937843131a213f2ad491538da818a2ba11a3195ba035cfd3" class="m-doc">Endian::<wbr />Big</a>.</p>
           </div></section>
-          <section class="m-doc-details" id="a27e0573e46dd0ee523738545ee594f13"><div>
+          <section class="m-doc-details" id="a6fcaf385f832363e3c787be5f07be65c"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">bool IO::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a27e0573e46dd0ee523738545ee594f13" class="m-doc-self">ReadFloat</a>(</span><span class="m-doc-wrap"><a href="class_i_o_1_1_i_stream.html" class="m-doc">IStream</a>* pIS,
+              <span class="m-doc-wrap-bumper">bool IO::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a6fcaf385f832363e3c787be5f07be65c" class="m-doc-self">ReadFloat</a>(</span><span class="m-doc-wrap"><a href="class_i_o_1_1_i_stream.html" class="m-doc">IStream</a>* pIS,
               float* value,
               <a href="namespace_i_o.html#a93e482d5d18014e9184bfabe5a1a6e07" class="m-doc">size_<wbr />type</a> count = 1,
-              <a href="namespace_i_o.html#ae3521782097881f06dd3acb06ebfaa28" class="m-doc">Endian</a> endianSource = <a href="namespace_i_o.html#ae3521782097881f06dd3acb06ebfaa28a53ea6d94063df2bf84714769355cdcc4" class="m-doc">kEndianBig</a>)</span></span>
+              <a href="namespace_i_o.html#ad94ca491ff4f9233f937843131a213f2" class="m-doc">Endian</a> endianSource = <a href="namespace_i_o.html#ad94ca491ff4f9233f937843131a213f2ad491538da818a2ba11a3195ba035cfd3" class="m-doc">Endian::<wbr />Big</a>)</span></span>
               <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_stream_adapter_8h.html">&lt;Spore/IO/StreamAdapter.h&gt;</a></div>
             </h3>
             <p>Reads a single float value or an array of float from the stream.</p>
-<p>Input &#x27;endianSource&#x27; refers to the endian-ness of the values in the stream. Upon return the output value will be in local (a.k.a. native) endian-ness. The return value is true if the value could be entirely read. If false, you can use <a href="class_i_o_1_1_i_stream.html#aa1bcbedfc21d71aadd005d3ff42642f5" class="m-doc">IStream::<wbr />GetState</a> to determine the error. The default number of values is 1, and the default endian-ness is kEndianBig.</p>
+<p>Input &#x27;endianSource&#x27; refers to the endian-ness of the values in the stream. Upon return the output value will be in local (a.k.a. native) endian-ness. The return value is true if the value could be entirely read. If false, you can use <a href="class_i_o_1_1_i_stream.html#aa1bcbedfc21d71aadd005d3ff42642f5" class="m-doc">IStream::<wbr />GetState</a> to determine the error. The default number of values is 1, and the default endian-ness is <a href="namespace_i_o.html#ad94ca491ff4f9233f937843131a213f2ad491538da818a2ba11a3195ba035cfd3" class="m-doc">Endian::<wbr />Big</a>.</p>
           </div></section>
-          <section class="m-doc-details" id="a178b697c92587085d309e7239f9e76b0"><div>
+          <section class="m-doc-details" id="aebf5a2c564a69fad8fdaec4be2138d65"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">bool IO::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a178b697c92587085d309e7239f9e76b0" class="m-doc-self">ReadResourceID</a>(</span><span class="m-doc-wrap"><a href="class_i_o_1_1_i_stream.html" class="m-doc">IStream</a>* pIS,
+              <span class="m-doc-wrap-bumper">bool IO::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#aebf5a2c564a69fad8fdaec4be2138d65" class="m-doc-self">ReadResourceID</a>(</span><span class="m-doc-wrap"><a href="class_i_o_1_1_i_stream.html" class="m-doc">IStream</a>* pIS,
               <a href="class_resource_i_d.html" class="m-doc">ResourceID</a>* value,
               <a href="namespace_i_o.html#a93e482d5d18014e9184bfabe5a1a6e07" class="m-doc">size_<wbr />type</a> count = 1,
-              <a href="namespace_i_o.html#ae3521782097881f06dd3acb06ebfaa28" class="m-doc">Endian</a> endianSource = <a href="namespace_i_o.html#ae3521782097881f06dd3acb06ebfaa28a53ea6d94063df2bf84714769355cdcc4" class="m-doc">kEndianBig</a>)</span></span>
+              <a href="namespace_i_o.html#ad94ca491ff4f9233f937843131a213f2" class="m-doc">Endian</a> endianSource = <a href="namespace_i_o.html#ad94ca491ff4f9233f937843131a213f2ad491538da818a2ba11a3195ba035cfd3" class="m-doc">Endian::<wbr />Big</a>)</span></span>
               <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_stream_adapter_8h.html">&lt;Spore/IO/StreamAdapter.h&gt;</a></div>
             </h3>
             <p>Reads a single <a href="class_resource_i_d.html" class="m-doc">ResourceID</a> value or an array of <a href="class_resource_i_d.html" class="m-doc">ResourceID</a> from the stream.</p>
-<p>Input &#x27;endianSource&#x27; refers to the endian-ness of the values in the stream. Upon return the output value will be in local (a.k.a. native) endian-ness. The return value is true if the value could be entirely read. If false, you can use <a href="class_i_o_1_1_i_stream.html#aa1bcbedfc21d71aadd005d3ff42642f5" class="m-doc">IStream::<wbr />GetState</a> to determine the error. The default number of values is 1, and the default endian-ness is kEndianBig.</p>
+<p>Input &#x27;endianSource&#x27; refers to the endian-ness of the values in the stream. Upon return the output value will be in local (a.k.a. native) endian-ness. The return value is true if the value could be entirely read. If false, you can use <a href="class_i_o_1_1_i_stream.html#aa1bcbedfc21d71aadd005d3ff42642f5" class="m-doc">IStream::<wbr />GetState</a> to determine the error. The default number of values is 1, and the default endian-ness is <a href="namespace_i_o.html#ad94ca491ff4f9233f937843131a213f2ad491538da818a2ba11a3195ba035cfd3" class="m-doc">Endian::<wbr />Big</a>.</p>
           </div></section>
           <section class="m-doc-details" id="a0f6b1092fcd7d602b029ee45ba753fe0"><div>
             <h3>
@@ -776,7 +893,7 @@
               eastl::string8&amp; str)</span></span>
               <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_stream_adapter_8h.html">&lt;Spore/IO/StreamAdapter.h&gt;</a></div>
             </h3>
-            <p>Reads a null-terminated string from the source <a href="class_i_o_1_1_i_stream.html" class="m-doc">IStream</a> This will read bytes until a \x00 byte is found.</p>
+            <p>Reads a null-terminated eastl::string from the source <a href="class_i_o_1_1_i_stream.html" class="m-doc">IStream</a> This will read bytes until a \x00 byte is found.</p>
           </div></section>
           <section class="m-doc-details" id="a380a4f25c21ae985a041c278a655ad8f"><div>
             <h3>
@@ -786,7 +903,7 @@
               <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_stream_adapter_8h.html">&lt;Spore/IO/StreamAdapter.h&gt;</a></div>
             </h3>
             <p>Reads a line of text from the source <a href="class_i_o_1_1_i_stream.html" class="m-doc">IStream</a>.</p>
-<p>A line is defined as a sequence ending with &quot;\n&quot; or &quot;\r\n&quot;. A line may be empty, as would be the case with a &quot;\n\n&quot; sequence. The returned line does not end with line terminator characters. The returned line -does- end with a terminating zero.</p><p>The return value is the strlen (string length) of the expected line or kSizeTypeError upon error. A return value of kSizeTypeDone means there were no more lines to read. This is different from the return value of the <a href="class_i_o_1_1_i_stream.html#ad9f4f51ed4821e5e3285a6f5cd3be215" class="m-doc">IStream::<wbr />Read</a> function because of the possibility of empty lines. Note that the return value is the <em>expected</em> strlen, which may be &gt;= the nLineCapacity. In any case, the returned line will always be nul-terminated if it has any capacity.</p><p>Upon return, the stream will be positioned at the beginning of the next line, even if input nLineCapacity was not enough to hold the entire line. The input nLineCapacity is max number of characters to write, including the terminating zero. The input pLine can be NULL, in which case it will not be written to and the return value will merely indicate its required size.</p><p>Example usage: char buffer[256]; size_type size; while((size = EA::IO::ReadLine(&amp;fileStream, buffer, 256)) &lt; kSizeTypeDone) // While there there were more lines... ; // do something</p>
+<p>A line is defined as a sequence ending with &quot;\n&quot; or &quot;\r\n&quot;. A line may be empty, as would be the case with a &quot;\n\n&quot; sequence. The returned line does not end with line terminator characters. The returned line -does- end with a terminating zero.</p><p>The return value is the strlen (eastl::string length) of the expected line or kSizeTypeError upon error. A return value of kSizeTypeDone means there were no more lines to read. This is different from the return value of the <a href="class_i_o_1_1_i_stream.html#ad9f4f51ed4821e5e3285a6f5cd3be215" class="m-doc">IStream::<wbr />Read</a> function because of the possibility of empty lines. Note that the return value is the <em>expected</em> strlen, which may be &gt;= the nLineCapacity. In any case, the returned line will always be nul-terminated if it has any capacity.</p><p>Upon return, the stream will be positioned at the beginning of the next line, even if input nLineCapacity was not enough to hold the entire line. The input nLineCapacity is max number of characters to write, including the terminating zero. The input pLine can be NULL, in which case it will not be written to and the return value will merely indicate its required size.</p><p>Example usage: char buffer[256]; size_type size; while((size = EA::IO::ReadLine(&amp;fileStream, buffer, 256)) &lt; kSizeTypeDone) // While there there were more lines... ; // do something</p>
           </div></section>
           <section class="m-doc-details" id="a5e0f3b9b5dc626f3a3b01bafdafe0496"><div>
             <h3>
@@ -817,71 +934,71 @@
             <p>Writes a single uint8_t value or an array of uint8_t numerical values to the output stream.</p>
 <p>The return value is true if the value could be successfully completely written. If false, you can use <a href="class_i_o_1_1_i_stream.html#aa1bcbedfc21d71aadd005d3ff42642f5" class="m-doc">IStream::<wbr />GetState</a> to determine the error. The default number of values is 1.</p>
           </div></section>
-          <section class="m-doc-details" id="a7757ce10faa44c141bba14f6c313a734"><div>
+          <section class="m-doc-details" id="ac7a7b95d52f245996bccc3e9d7bff738"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">bool IO::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a7757ce10faa44c141bba14f6c313a734" class="m-doc-self">WriteInt16</a>(</span><span class="m-doc-wrap"><a href="class_i_o_1_1_i_stream.html" class="m-doc">IStream</a>* pOS,
+              <span class="m-doc-wrap-bumper">bool IO::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ac7a7b95d52f245996bccc3e9d7bff738" class="m-doc-self">WriteInt16</a>(</span><span class="m-doc-wrap"><a href="class_i_o_1_1_i_stream.html" class="m-doc">IStream</a>* pOS,
               const int16_t* value,
               <a href="namespace_i_o.html#a93e482d5d18014e9184bfabe5a1a6e07" class="m-doc">size_<wbr />type</a> count = 1,
-              <a href="namespace_i_o.html#ae3521782097881f06dd3acb06ebfaa28" class="m-doc">Endian</a> endianDestination = <a href="namespace_i_o.html#ae3521782097881f06dd3acb06ebfaa28a53ea6d94063df2bf84714769355cdcc4" class="m-doc">kEndianBig</a>)</span></span>
+              <a href="namespace_i_o.html#ad94ca491ff4f9233f937843131a213f2" class="m-doc">Endian</a> endianDestination = <a href="namespace_i_o.html#ad94ca491ff4f9233f937843131a213f2ad491538da818a2ba11a3195ba035cfd3" class="m-doc">Endian::<wbr />Big</a>)</span></span>
               <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_stream_adapter_8h.html">&lt;Spore/IO/StreamAdapter.h&gt;</a></div>
             </h3>
             <p>Writes a single int16_t value or an array of int16_t numerical values to the output stream with the given destination endian-ness.</p>
-<p>The return value is true if the value could be successfully completely written. If false, you can use <a href="class_i_o_1_1_i_stream.html#aa1bcbedfc21d71aadd005d3ff42642f5" class="m-doc">IStream::<wbr />GetState</a> to determine the error. The default number of values is 1, and the default endian-ness is kEndianBig.</p>
+<p>The return value is true if the value could be successfully completely written. If false, you can use <a href="class_i_o_1_1_i_stream.html#aa1bcbedfc21d71aadd005d3ff42642f5" class="m-doc">IStream::<wbr />GetState</a> to determine the error. The default number of values is 1, and the default endian-ness is <a href="namespace_i_o.html#ad94ca491ff4f9233f937843131a213f2ad491538da818a2ba11a3195ba035cfd3" class="m-doc">Endian::<wbr />Big</a>.</p>
           </div></section>
-          <section class="m-doc-details" id="a5fe4f61dccd23d19beea5a17f0cb50be"><div>
+          <section class="m-doc-details" id="a18f3fa7ea4dd4a144299f9ce71bc0837"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">bool IO::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a5fe4f61dccd23d19beea5a17f0cb50be" class="m-doc-self">WriteUInt16</a>(</span><span class="m-doc-wrap"><a href="class_i_o_1_1_i_stream.html" class="m-doc">IStream</a>* pOS,
+              <span class="m-doc-wrap-bumper">bool IO::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a18f3fa7ea4dd4a144299f9ce71bc0837" class="m-doc-self">WriteUInt16</a>(</span><span class="m-doc-wrap"><a href="class_i_o_1_1_i_stream.html" class="m-doc">IStream</a>* pOS,
               const uint16_t* value,
               <a href="namespace_i_o.html#a93e482d5d18014e9184bfabe5a1a6e07" class="m-doc">size_<wbr />type</a> count = 1,
-              <a href="namespace_i_o.html#ae3521782097881f06dd3acb06ebfaa28" class="m-doc">Endian</a> endianDestination = <a href="namespace_i_o.html#ae3521782097881f06dd3acb06ebfaa28a53ea6d94063df2bf84714769355cdcc4" class="m-doc">kEndianBig</a>)</span></span>
+              <a href="namespace_i_o.html#ad94ca491ff4f9233f937843131a213f2" class="m-doc">Endian</a> endianDestination = <a href="namespace_i_o.html#ad94ca491ff4f9233f937843131a213f2ad491538da818a2ba11a3195ba035cfd3" class="m-doc">Endian::<wbr />Big</a>)</span></span>
               <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_stream_adapter_8h.html">&lt;Spore/IO/StreamAdapter.h&gt;</a></div>
             </h3>
             <p>Writes a single uint16_t value or an array of uint16_t numerical values to the output stream with the given destination endian-ness.</p>
-<p>The return value is true if the value could be successfully completely written. If false, you can use <a href="class_i_o_1_1_i_stream.html#aa1bcbedfc21d71aadd005d3ff42642f5" class="m-doc">IStream::<wbr />GetState</a> to determine the error. The default number of values is 1, and the default endian-ness is kEndianBig.</p>
+<p>The return value is true if the value could be successfully completely written. If false, you can use <a href="class_i_o_1_1_i_stream.html#aa1bcbedfc21d71aadd005d3ff42642f5" class="m-doc">IStream::<wbr />GetState</a> to determine the error. The default number of values is 1, and the default endian-ness is <a href="namespace_i_o.html#ad94ca491ff4f9233f937843131a213f2ad491538da818a2ba11a3195ba035cfd3" class="m-doc">Endian::<wbr />Big</a>.</p>
           </div></section>
-          <section class="m-doc-details" id="ae91b5a5643ebfbdfde81bc645a718edc"><div>
+          <section class="m-doc-details" id="a90f3a58ab2852b17e14a3ba56fb8e745"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">bool IO::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ae91b5a5643ebfbdfde81bc645a718edc" class="m-doc-self">WriteInt32</a>(</span><span class="m-doc-wrap"><a href="class_i_o_1_1_i_stream.html" class="m-doc">IStream</a>* pOS,
+              <span class="m-doc-wrap-bumper">bool IO::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a90f3a58ab2852b17e14a3ba56fb8e745" class="m-doc-self">WriteInt32</a>(</span><span class="m-doc-wrap"><a href="class_i_o_1_1_i_stream.html" class="m-doc">IStream</a>* pOS,
               const int32_t* src,
               <a href="namespace_i_o.html#a93e482d5d18014e9184bfabe5a1a6e07" class="m-doc">size_<wbr />type</a> count = 1,
-              <a href="namespace_i_o.html#ae3521782097881f06dd3acb06ebfaa28" class="m-doc">Endian</a> endianDestination = <a href="namespace_i_o.html#ae3521782097881f06dd3acb06ebfaa28a53ea6d94063df2bf84714769355cdcc4" class="m-doc">kEndianBig</a>)</span></span>
+              <a href="namespace_i_o.html#ad94ca491ff4f9233f937843131a213f2" class="m-doc">Endian</a> endianDestination = <a href="namespace_i_o.html#ad94ca491ff4f9233f937843131a213f2ad491538da818a2ba11a3195ba035cfd3" class="m-doc">Endian::<wbr />Big</a>)</span></span>
               <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_stream_adapter_8h.html">&lt;Spore/IO/StreamAdapter.h&gt;</a></div>
             </h3>
             <p>WriteInt32.</p>
-<p>Writes a single int32_t value or an array of int32_t numerical values to the output stream with the given destination endian-ness. The return value is true if the value could be successfully completely written. If false, you can use <a href="class_i_o_1_1_i_stream.html#aa1bcbedfc21d71aadd005d3ff42642f5" class="m-doc">IStream::<wbr />GetState</a> to determine the error. The default number of values is 1, and the default endian-ness is kEndianBig.</p>
+<p>Writes a single int32_t value or an array of int32_t numerical values to the output stream with the given destination endian-ness. The return value is true if the value could be successfully completely written. If false, you can use <a href="class_i_o_1_1_i_stream.html#aa1bcbedfc21d71aadd005d3ff42642f5" class="m-doc">IStream::<wbr />GetState</a> to determine the error. The default number of values is 1, and the default endian-ness is <a href="namespace_i_o.html#ad94ca491ff4f9233f937843131a213f2ad491538da818a2ba11a3195ba035cfd3" class="m-doc">Endian::<wbr />Big</a>.</p>
           </div></section>
-          <section class="m-doc-details" id="a0c2b7255e19df5bc523d1d37ebddc0df"><div>
+          <section class="m-doc-details" id="a364f31feb8040ff6904e01f245cf3080"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">bool IO::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a0c2b7255e19df5bc523d1d37ebddc0df" class="m-doc-self">WriteUInt32</a>(</span><span class="m-doc-wrap"><a href="class_i_o_1_1_i_stream.html" class="m-doc">IStream</a>* pOS,
+              <span class="m-doc-wrap-bumper">bool IO::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a364f31feb8040ff6904e01f245cf3080" class="m-doc-self">WriteUInt32</a>(</span><span class="m-doc-wrap"><a href="class_i_o_1_1_i_stream.html" class="m-doc">IStream</a>* pOS,
               const uint32_t* value,
               <a href="namespace_i_o.html#a93e482d5d18014e9184bfabe5a1a6e07" class="m-doc">size_<wbr />type</a> count = 1,
-              <a href="namespace_i_o.html#ae3521782097881f06dd3acb06ebfaa28" class="m-doc">Endian</a> endianDestination = <a href="namespace_i_o.html#ae3521782097881f06dd3acb06ebfaa28a53ea6d94063df2bf84714769355cdcc4" class="m-doc">kEndianBig</a>)</span></span>
+              <a href="namespace_i_o.html#ad94ca491ff4f9233f937843131a213f2" class="m-doc">Endian</a> endianDestination = <a href="namespace_i_o.html#ad94ca491ff4f9233f937843131a213f2ad491538da818a2ba11a3195ba035cfd3" class="m-doc">Endian::<wbr />Big</a>)</span></span>
               <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_stream_adapter_8h.html">&lt;Spore/IO/StreamAdapter.h&gt;</a></div>
             </h3>
             <p>Writes a single uint32_t value or an array of uint32_t numerical values to the output stream with the given destination endian-ness.</p>
-<p>The return value is true if the value could be successfully completely written. If false, you can use <a href="class_i_o_1_1_i_stream.html#aa1bcbedfc21d71aadd005d3ff42642f5" class="m-doc">IStream::<wbr />GetState</a> to determine the error. The default number of values is 1, and the default endian-ness is kEndianBig.</p>
+<p>The return value is true if the value could be successfully completely written. If false, you can use <a href="class_i_o_1_1_i_stream.html#aa1bcbedfc21d71aadd005d3ff42642f5" class="m-doc">IStream::<wbr />GetState</a> to determine the error. The default number of values is 1, and the default endian-ness is <a href="namespace_i_o.html#ad94ca491ff4f9233f937843131a213f2ad491538da818a2ba11a3195ba035cfd3" class="m-doc">Endian::<wbr />Big</a>.</p>
           </div></section>
-          <section class="m-doc-details" id="a948f7f790c1f0f9875d3b10b094e3b05"><div>
+          <section class="m-doc-details" id="af08ee20e4866ff411834c5f57047720a"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">bool IO::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a948f7f790c1f0f9875d3b10b094e3b05" class="m-doc-self">WriteFloat</a>(</span><span class="m-doc-wrap"><a href="class_i_o_1_1_i_stream.html" class="m-doc">IStream</a>* pOS,
+              <span class="m-doc-wrap-bumper">bool IO::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#af08ee20e4866ff411834c5f57047720a" class="m-doc-self">WriteFloat</a>(</span><span class="m-doc-wrap"><a href="class_i_o_1_1_i_stream.html" class="m-doc">IStream</a>* pOS,
               const float* value,
               <a href="namespace_i_o.html#a93e482d5d18014e9184bfabe5a1a6e07" class="m-doc">size_<wbr />type</a> count = 1,
-              <a href="namespace_i_o.html#ae3521782097881f06dd3acb06ebfaa28" class="m-doc">Endian</a> endianDestination = <a href="namespace_i_o.html#ae3521782097881f06dd3acb06ebfaa28a53ea6d94063df2bf84714769355cdcc4" class="m-doc">kEndianBig</a>)</span></span>
+              <a href="namespace_i_o.html#ad94ca491ff4f9233f937843131a213f2" class="m-doc">Endian</a> endianDestination = <a href="namespace_i_o.html#ad94ca491ff4f9233f937843131a213f2ad491538da818a2ba11a3195ba035cfd3" class="m-doc">Endian::<wbr />Big</a>)</span></span>
               <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_stream_adapter_8h.html">&lt;Spore/IO/StreamAdapter.h&gt;</a></div>
             </h3>
             <p>Writes a single float value or an array of float numerical values to the output stream with the given destination endian-ness.</p>
-<p>The return value is true if the value could be successfully completely written. If false, you can use <a href="class_i_o_1_1_i_stream.html#aa1bcbedfc21d71aadd005d3ff42642f5" class="m-doc">IStream::<wbr />GetState</a> to determine the error. The default number of values is 1, and the default endian-ness is kEndianBig.</p>
+<p>The return value is true if the value could be successfully completely written. If false, you can use <a href="class_i_o_1_1_i_stream.html#aa1bcbedfc21d71aadd005d3ff42642f5" class="m-doc">IStream::<wbr />GetState</a> to determine the error. The default number of values is 1, and the default endian-ness is <a href="namespace_i_o.html#ad94ca491ff4f9233f937843131a213f2ad491538da818a2ba11a3195ba035cfd3" class="m-doc">Endian::<wbr />Big</a>.</p>
           </div></section>
-          <section class="m-doc-details" id="ad6f27b9211627c743f66ee82eee64bb7"><div>
+          <section class="m-doc-details" id="a2da9f66a3165921b7576c9496b92404f"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">bool IO::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ad6f27b9211627c743f66ee82eee64bb7" class="m-doc-self">WriteResourceID</a>(</span><span class="m-doc-wrap"><a href="class_i_o_1_1_i_stream.html" class="m-doc">IStream</a>* pOS,
+              <span class="m-doc-wrap-bumper">bool IO::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a2da9f66a3165921b7576c9496b92404f" class="m-doc-self">WriteResourceID</a>(</span><span class="m-doc-wrap"><a href="class_i_o_1_1_i_stream.html" class="m-doc">IStream</a>* pOS,
               const <a href="class_resource_i_d.html" class="m-doc">ResourceID</a>* value,
               <a href="namespace_i_o.html#a93e482d5d18014e9184bfabe5a1a6e07" class="m-doc">size_<wbr />type</a> count = 1,
-              <a href="namespace_i_o.html#ae3521782097881f06dd3acb06ebfaa28" class="m-doc">Endian</a> endianDestination = <a href="namespace_i_o.html#ae3521782097881f06dd3acb06ebfaa28a53ea6d94063df2bf84714769355cdcc4" class="m-doc">kEndianBig</a>)</span></span>
+              <a href="namespace_i_o.html#ad94ca491ff4f9233f937843131a213f2" class="m-doc">Endian</a> endianDestination = <a href="namespace_i_o.html#ad94ca491ff4f9233f937843131a213f2ad491538da818a2ba11a3195ba035cfd3" class="m-doc">Endian::<wbr />Big</a>)</span></span>
               <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_stream_adapter_8h.html">&lt;Spore/IO/StreamAdapter.h&gt;</a></div>
             </h3>
             <p>Writes a single <a href="class_resource_i_d.html" class="m-doc">ResourceID</a> value or an array of <a href="class_resource_i_d.html" class="m-doc">ResourceID</a> values to the output stream with the given destination endian-ness.</p>
-<p>The return value is true if the value could be successfully completely written. If false, you can use <a href="class_i_o_1_1_i_stream.html#aa1bcbedfc21d71aadd005d3ff42642f5" class="m-doc">IStream::<wbr />GetState</a> to determine the error. The default number of values is 1, and the default endian-ness is kEndianBig.</p>
+<p>The return value is true if the value could be successfully completely written. If false, you can use <a href="class_i_o_1_1_i_stream.html#aa1bcbedfc21d71aadd005d3ff42642f5" class="m-doc">IStream::<wbr />GetState</a> to determine the error. The default number of values is 1, and the default endian-ness is <a href="namespace_i_o.html#ad94ca491ff4f9233f937843131a213f2ad491538da818a2ba11a3195ba035cfd3" class="m-doc">Endian::<wbr />Big</a>.</p>
           </div></section>
           <section class="m-doc-details" id="a6ec42b89ee1f737c869344b1f084f58f"><div>
             <h3>
@@ -889,23 +1006,39 @@
               eastl::string8&amp; str)</span></span>
               <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_stream_adapter_8h.html">&lt;Spore/IO/StreamAdapter.h&gt;</a></div>
             </h3>
-            <p>Reads a null-terminated string from the source <a href="class_i_o_1_1_i_stream.html" class="m-doc">IStream</a> This will read bytes until a \x00 byte is found.</p>
+            <p>Reads a null-terminated eastl::string from the source <a href="class_i_o_1_1_i_stream.html" class="m-doc">IStream</a> This will read bytes until a \x00 byte is found.</p>
           </div></section>
-          <section class="m-doc-details" id="afd5d24062ebf2880c6a72a11a583007a"><div>
+          <section class="m-doc-details" id="a6c8b5a733b042c3d222171eed2d6ba76"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">bool IO::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#afd5d24062ebf2880c6a72a11a583007a" class="m-doc-self">WriteLine</a>(</span><span class="m-doc-wrap"><a href="class_i_o_1_1_i_stream.html" class="m-doc">IStream</a>* pOS,
+              <span class="m-doc-wrap-bumper">bool IO::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a6c8b5a733b042c3d222171eed2d6ba76" class="m-doc-self">WriteLine</a>(</span><span class="m-doc-wrap"><a href="class_i_o_1_1_i_stream.html" class="m-doc">IStream</a>* pOS,
               const char8_t* pLineSource,
               <a href="namespace_i_o.html#a93e482d5d18014e9184bfabe5a1a6e07" class="m-doc">size_<wbr />type</a> nLineLength,
-              <a href="namespace_i_o.html#a442029c9a063d8c6f0125230ead48d8b" class="m-doc">LineEnd</a> lineEndToUse = <a href="namespace_i_o.html#a442029c9a063d8c6f0125230ead48d8ba7aca10b9a27676b9a7a7a0344d09cfd3" class="m-doc">kLineEndAuto</a>)</span></span>
+              <a href="namespace_i_o.html#aab0e63c6a8a794a735b0ef83f221338e" class="m-doc">LineEnd</a> lineEndToUse = <a href="namespace_i_o.html#aab0e63c6a8a794a735b0ef83f221338ea06b9281e396db002010bde1de57262eb" class="m-doc">LineEnd::<wbr />Auto</a>)</span></span>
               <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_stream_adapter_8h.html">&lt;Spore/IO/StreamAdapter.h&gt;</a></div>
             </h3>
             <p>Writes a line of text to a destination <a href="class_i_o_1_1_i_stream.html" class="m-doc">IStream</a>.</p>
 <p>The source line is not expected to end in a line delimiter (e.g. &#x27;<br />&#x27;); a appropriate line delimiter (defined by the lineEndToUse parameter) will be written to the stream by this function. The source line is not expected to end with a nul-terminator; if it has such a terminator, the nSourceLineLength value should not include that terminator.</p><p>If input nLineLength is kLengthNull, then the line is expected to be nul-terminated and the length written is the strlen of pSourceLine. The pLineSource value must be non-NULL unless nLineLength is zero.</p><p>The return value is true if the line could be successfully completely written. If false, you can use <a href="class_i_o_1_1_i_stream.html#aa1bcbedfc21d71aadd005d3ff42642f5" class="m-doc">IStream::<wbr />GetState</a> to determine the error, as this function generates no errors beyond those related to <a href="class_i_o_1_1_i_stream.html" class="m-doc">IStream</a> errors.</p>
           </div></section>
+          <section class="m-doc-details" id="a11375a01d5245090eebcf03b8fdb2851"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"> IO::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a11375a01d5245090eebcf03b8fdb2851" class="m-doc-self">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_i_o_1_1_stream_buffer.html" class="m-doc">StreamBuffer</a>,
+              0x34)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_stream_buffer_8h.html">&lt;Spore/IO/StreamBuffer.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
           <section class="m-doc-details" id="aa7638155ee9974b2ca1e6d7c07a61a81"><div>
             <h3>
               <span class="m-doc-wrap-bumper">namespace IO::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#aa7638155ee9974b2ca1e6d7c07a61a81" class="m-doc-self">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_i_o_1_1_stream_buffer.html" class="m-doc">StreamBuffer</a>)</span></span>
               <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_stream_buffer_8h.html">&lt;Spore/IO/StreamBuffer.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="ae0d81d06235400b7dd55cf90321f5e5e"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"> IO::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ae0d81d06235400b7dd55cf90321f5e5e" class="m-doc-self">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_i_o_1_1_stream_child.html" class="m-doc">StreamChild</a>,
+              0x1C)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_stream_child_8h.html">&lt;Spore/IO/StreamChild.h&gt;</a></div>
             </h3>
             <p><span></span></p>
           </div></section>
@@ -916,10 +1049,34 @@
             </h3>
             <p><span></span></p>
           </div></section>
+          <section class="m-doc-details" id="aca9bc8589b7d49696f5ac4592d968bd3"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"> IO::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#aca9bc8589b7d49696f5ac4592d968bd3" class="m-doc-self">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_i_o_1_1_fixed_memory_stream.html" class="m-doc">FixedMemoryStream</a>,
+              0x18)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_stream_fixed_memory_8h.html">&lt;Spore/IO/StreamFixedMemory.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
           <section class="m-doc-details" id="aa1d6c81d2e9ad22b84506e93c610da79"><div>
             <h3>
               <span class="m-doc-wrap-bumper">namespace IO::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#aa1d6c81d2e9ad22b84506e93c610da79" class="m-doc-self">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_i_o_1_1_fixed_memory_stream.html" class="m-doc">FixedMemoryStream</a>)</span></span>
               <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_stream_fixed_memory_8h.html">&lt;Spore/IO/StreamFixedMemory.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="a25d6105ee5a9d221f97443114d6fef8e"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"> IO::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a25d6105ee5a9d221f97443114d6fef8e" class="m-doc-self">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_i_o_1_1_shared_pointer.html" class="m-doc">SharedPointer</a>,
+              0x18)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_stream_memory_8h.html">&lt;Spore/IO/StreamMemory.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="a4e9500b6becb1dbb62a3f49a69f73232"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"> IO::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a4e9500b6becb1dbb62a3f49a69f73232" class="m-doc-self">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_i_o_1_1_memory_stream.html" class="m-doc">MemoryStream</a>,
+              0x24)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_stream_memory_8h.html">&lt;Spore/IO/StreamMemory.h&gt;</a></div>
             </h3>
             <p><span></span></p>
           </div></section>
@@ -930,10 +1087,26 @@
             </h3>
             <p><span></span></p>
           </div></section>
+          <section class="m-doc-details" id="a33384342c3938565353650cc66d2cf08"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"> IO::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a33384342c3938565353650cc66d2cf08" class="m-doc-self">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_i_o_1_1_stream_null.html" class="m-doc">StreamNull</a>,
+              0x8)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_stream_null_8h.html">&lt;Spore/IO/StreamNull.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
           <section class="m-doc-details" id="a56baa1dfb472ae39387d1b2a11d1e689"><div>
             <h3>
               <span class="m-doc-wrap-bumper">namespace IO::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a56baa1dfb472ae39387d1b2a11d1e689" class="m-doc-self">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_i_o_1_1_stream_null.html" class="m-doc">StreamNull</a>)</span></span>
               <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_stream_null_8h.html">&lt;Spore/IO/StreamNull.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="ac932a0e44a1772da95e16c72532c2cdd"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"> IO::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ac932a0e44a1772da95e16c72532c2cdd" class="m-doc-self">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_i_o_1_1_xml_writer.html" class="m-doc">XmlWriter</a>,
+              0x20)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_xml_writer_8h.html">&lt;Spore/IO/XmlWriter.h&gt;</a></div>
             </h3>
             <p><span></span></p>
           </div></section>
@@ -947,24 +1120,17 @@
         </section>
         <section>
           <h2>Variable documentation</h2>
-          <section class="m-doc-details" id="a1ede66e0687429074d7d035b01f207e1"><div>
-            <h3>
-              const int IO::<wbr /><a href="#a1ede66e0687429074d7d035b01f207e1" class="m-doc-self">kMaxPathLength</a>
-              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_file_stream_8h.html">&lt;Spore/IO/FileStream.h&gt;</a></div>
-            </h3>
-            <p><span></span></p>
-          </div></section>
           <section class="m-doc-details" id="a295ef89f7f866028f6c54b0db7c5f990"><div>
             <h3>
               const <a href="namespace_i_o.html#a93e482d5d18014e9184bfabe5a1a6e07" class="m-doc">size_<wbr />type</a> IO::<wbr /><a href="#a295ef89f7f866028f6c54b0db7c5f990" class="m-doc-self">kSizeTypeError</a>
-              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_i_stream_8h.html">&lt;Spore/IO/IStream.h&gt;</a></div>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_i_o_2_constants_8h.html">&lt;Spore/IO/Constants.h&gt;</a></div>
             </h3>
             <p>Used to designate an error condition for many functions that return size_type.</p>
           </div></section>
           <section class="m-doc-details" id="aa31abc36ddbf311481c02f3fc9899445"><div>
             <h3>
               const <a href="namespace_i_o.html#a93e482d5d18014e9184bfabe5a1a6e07" class="m-doc">size_<wbr />type</a> IO::<wbr /><a href="#aa31abc36ddbf311481c02f3fc9899445" class="m-doc-self">kSizeTypeDone</a>
-              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_i_stream_8h.html">&lt;Spore/IO/IStream.h&gt;</a></div>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_i_o_2_constants_8h.html">&lt;Spore/IO/Constants.h&gt;</a></div>
             </h3>
             <p>Used to designate the condition whereby a requested operation is complete and no more processing can be done.</p>
 <p>Only applicable to functions that document the use of kSizeTypeDone.</p>
@@ -972,10 +1138,17 @@
           <section class="m-doc-details" id="a8ebd534375854be01844a27de762b518"><div>
             <h3>
               const size_t IO::<wbr /><a href="#a8ebd534375854be01844a27de762b518" class="m-doc-self">kLengthNull</a>
-              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_i_stream_8h.html">&lt;Spore/IO/IStream.h&gt;</a></div>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_i_o_2_constants_8h.html">&lt;Spore/IO/Constants.h&gt;</a></div>
             </h3>
-            <p>Defines a value to be used for string conversion functions which means that the string length is specified by a wherever the terminating null character is.</p>
-<p>For the copying or converting of strings, the terminating null character is also copied to the destination.</p>
+            <p>Defines a value to be used for eastl::string conversion functions which means that the eastl::string length is specified by a wherever the terminating null character is.</p>
+<p>For the copying or converting of eastl::strings, the terminating null character is also copied to the destination.</p>
+          </div></section>
+          <section class="m-doc-details" id="a1ede66e0687429074d7d035b01f207e1"><div>
+            <h3>
+              const int IO::<wbr /><a href="#a1ede66e0687429074d7d035b01f207e1" class="m-doc-self">kMaxPathLength</a>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_file_stream_8h.html">&lt;Spore/IO/FileStream.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
           </div></section>
         </section>
       </div>

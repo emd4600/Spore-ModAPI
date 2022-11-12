@@ -132,7 +132,7 @@
             <dt>
               <span class="m-doc-wrap-bumper">auto <a href="#ac171a5c734abeea70670d90de59a7538" class="m-doc">SetActiveCameraByKey</a>(</span><span class="m-doc-wrap">const char16_t* pKeyString) -&gt; bool <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
-            <dd>Sets the active camera to the one that matches the given key string.</dd>
+            <dd>Sets the active camera to the one that matches the given key eastl::string.</dd>
             <dt>
               <span class="m-doc-wrap-bumper">auto <a href="#a833b8046cf2924e0d9504e54c4fdf71b" class="m-doc">SetActiveCameraByID</a>(</span><span class="m-doc-wrap">uint32_t cameraID) -&gt; bool <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
@@ -243,7 +243,7 @@
                 </tr>
                 <tr>
                   <td>pName</td>
-                  <td>[Optional] A string that identifies the camera.</td>
+                  <td>[Optional] A eastl::string that identifies the camera.</td>
                 </tr>
               </tbody>
             </table>
@@ -271,7 +271,7 @@
             <h3>
               <span class="m-doc-wrap-bumper">bool App::<wbr />ICameraManager::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ac171a5c734abeea70670d90de59a7538" class="m-doc-self">SetActiveCameraByKey</a>(</span><span class="m-doc-wrap">const char16_t* pKeyString) <span class="m-label m-warning">pure virtual</span></span></span>
             </h3>
-            <p>Sets the active camera to the one that matches the given key string.</p>
+            <p>Sets the active camera to the one that matches the given key eastl::string.</p>
             <table class="m-table m-fullwidth m-flat">
               <thead>
                 <tr><th colspan="2">Parameters</th></tr>
@@ -279,7 +279,7 @@
               <tbody>
                 <tr>
                   <td style="width: 1%">pKeyString</td>
-                  <td>The string representation of a <a href="struct_resource_key.html" class="m-doc">ResourceKey</a>.</td>
+                  <td>The eastl::string representation of a <a href="struct_resource_key.html" class="m-doc">ResourceKey</a>.</td>
                 </tr>
               </tbody>
               <tfoot>
@@ -289,7 +289,7 @@
                 </tr>
               </tfoot>
             </table>
-<p>Only the instance ID will be used, the rest will be ignored. The string will be parsed using <a href="struct_resource_key.html#a1435cf8c86ce36755f85c921081604cf" class="m-doc">ResourceKey::<wbr />Parse()</a>. This will call <a href="class_app_1_1_i_camera_manager.html#a833b8046cf2924e0d9504e54c4fdf71b" class="m-doc">SetActiveCameraByID(uint32_<wbr />t)</a>.</p>
+<p>Only the instance ID will be used, the rest will be ignored. The eastl::string will be parsed using <a href="struct_resource_key.html#a1435cf8c86ce36755f85c921081604cf" class="m-doc">ResourceKey::<wbr />Parse()</a>. This will call <a href="class_app_1_1_i_camera_manager.html#a833b8046cf2924e0d9504e54c4fdf71b" class="m-doc">SetActiveCameraByID(uint32_<wbr />t)</a>.</p>
           </div></section>
           <section class="m-doc-details" id="a833b8046cf2924e0d9504e54c4fdf71b"><div>
             <h3>
@@ -344,7 +344,7 @@
               <tbody>
                 <tr>
                   <td style="width: 1%">pName</td>
-                  <td>A char c-string.</td>
+                  <td>A char c-eastl::string.</td>
                 </tr>
               </tbody>
             </table>

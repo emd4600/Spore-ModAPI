@@ -57,6 +57,7 @@
               <ul>
                 <li><a href="#base-classes">Base classes</a></li>
                 <li><a href="#pub-types">Public types</a></li>
+                <li><a href="#typeless-methods">Constructors, destructors, conversion operators</a></li>
                 <li><a href="#pub-methods">Public functions</a></li>
                 <li><a href="#pro-types">Protected types</a></li>
                 <li><a href="#pro-attribs">Protected variables</a></li>
@@ -80,10 +81,20 @@
         <section id="pub-types">
           <h2><a href="#pub-types">Public types</a></h2>
           <dl class="m-doc">
-            <dt id="a048836d9cabc09b3607c37e91479d423">
-              <span class="m-doc-wrap-bumper">enum <a href="#a048836d9cabc09b3607c37e91479d423" class="m-doc-self">(anonymous)</a> { </span><span class="m-doc-wrap"><a href="#a048836d9cabc09b3607c37e91479d423abcb889048b7ce0e8207a03161966da93" class="m-doc">kScrollbarNever</a> = 0,
-              <a href="#a048836d9cabc09b3607c37e91479d423a5d0cafacc3bc7f15e2df80c7daba6fdd" class="m-doc">kScrollbarAsNeeded</a> = 1,
-              <a href="#a048836d9cabc09b3607c37e91479d423a14f2451d541e8b268b3e590d40255df5" class="m-doc">kScrollbarAlways</a> = 2 }</span>
+            <dt id="a7402bf06fca1b3f92eb646720a8d2abb">
+              <span class="m-doc-wrap-bumper">enum <a href="#a7402bf06fca1b3f92eb646720a8d2abb" class="m-doc-self">(anonymous)</a> { </span><span class="m-doc-wrap"><a href="#a7402bf06fca1b3f92eb646720a8d2abbabcb889048b7ce0e8207a03161966da93" class="m-doc">kScrollbarNever</a> = 0,
+              <a href="#a7402bf06fca1b3f92eb646720a8d2abba5d0cafacc3bc7f15e2df80c7daba6fdd" class="m-doc">kScrollbarAsNeeded</a> = 1,
+              <a href="#a7402bf06fca1b3f92eb646720a8d2abba14f2451d541e8b268b3e590d40255df5" class="m-doc">kScrollbarAlways</a> = 2 }</span>
+            </dt>
+            <dd><span></span></dd>
+          </dl>
+        </section>
+        <section id="typeless-methods">
+          <h2><a href="#typeless-methods">Constructors, destructors, conversion operators</a></h2>
+          <dl class="m-doc">
+            <dt id="aec5872c9750f8cd63b638cc617572c2f">
+              <span class="m-doc-wrap-bumper"><a href="#aec5872c9750f8cd63b638cc617572c2f" class="m-doc-self">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_u_t_f_win_1_1_win_tree_view_1_1_scrollbar.html" class="m-doc">Scrollbar</a>,
+              0x14) <span class="m-label m-flat m-warning">protected</span></span>
             </dt>
             <dd><span></span></dd>
           </dl>
@@ -137,12 +148,12 @@
               size_t <a href="#acc1274dbaada49ac53c06ba4bafe0f06" class="m-doc-self">mnItemHeight</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="adac192b7a4c9d66e92167e6de877cc39">
-              intrusive_ptr&lt;<a href="class_u_t_f_win_1_1_i_drawable.html" class="m-doc">IDrawable</a>&gt; <a href="#adac192b7a4c9d66e92167e6de877cc39" class="m-doc-self">mpDefaultIcon</a>
+            <dt id="a7d091f474393dbf9e775a21d6943a5cc">
+              <a href="_i_drawable_8h.html#a9cf5c13e728197e7799270eba9a9700e" class="m-doc">IDrawablePtr</a> <a href="#a7d091f474393dbf9e775a21d6943a5cc" class="m-doc-self">mpDefaultIcon</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="a1a9d469ac31c5f59c83159172b823e0e">
-              intrusive_ptr&lt;<a href="class_u_t_f_win_1_1_i_drawable.html" class="m-doc">IDrawable</a>&gt; <a href="#a1a9d469ac31c5f59c83159172b823e0e" class="m-doc-self">mpExpanderDrawable</a>
+            <dt id="a03022950920a81c8189a30126de4d586">
+              <a href="_i_drawable_8h.html#a9cf5c13e728197e7799270eba9a9700e" class="m-doc">IDrawablePtr</a> <a href="#a03022950920a81c8189a30126de4d586" class="m-doc-self">mpExpanderDrawable</a>
             </dt>
             <dd><span></span></dd>
             <dt id="a83282f6d603f2febb39348c73265fbad">
@@ -169,8 +180,8 @@
               float <a href="#a2c618b6f497f247b8f68a1ee5e67a25b" class="m-doc-self">field_2D0</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="a16ae676180fff5f16b3edb5249e7c031">
-              vector&lt;int&gt; <a href="#a16ae676180fff5f16b3edb5249e7c031" class="m-doc-self">field_2D4</a>
+            <dt id="a8f4eab77b800f18d9e86d10340fd3714">
+              eastl::vector&lt;int&gt; <a href="#a8f4eab77b800f18d9e86d10340fd3714" class="m-doc-self">field_2D4</a>
             </dt>
             <dd><span></span></dd>
             <dt id="a2a03b78b9fbe69a6d927223ad0534dcc">
@@ -185,8 +196,8 @@
               int <a href="#aba83105d2ad2de7abbdbfa9954870ee5" class="m-doc-self">field_2F0</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="a762ef7dbe0f9f9641843c1df8000c23b">
-              intrusive_ptr&lt;<a href="class_object.html" class="m-doc">Object</a>&gt; <a href="#a762ef7dbe0f9f9641843c1df8000c23b" class="m-doc-self">field_2F4</a>
+            <dt id="a699b9dbce8723b1113fdfe08aeabf925">
+              <a href="_object_8h.html#a364c2967a9338c07ddc9a3d507389b5d" class="m-doc">ObjectPtr</a> <a href="#a699b9dbce8723b1113fdfe08aeabf925" class="m-doc-self">field_2F4</a>
             </dt>
             <dd><span></span></dd>
             <dt id="a41b37e108e697dcadaabf4006d504896">

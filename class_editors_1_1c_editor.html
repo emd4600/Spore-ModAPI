@@ -71,9 +71,9 @@
             </dt>
             <dd>An interface that represents a mode in the game, that can receive mouse/keyboard input and update every frame.</dd>
             <dt>
-              class <a href="class_graphics_1_1_i_renderable.html" class="m-doc">Graphics::IRenderable</a>
+              class <a href="class_graphics_1_1_i_layer.html" class="m-doc">Graphics::ILayer</a>
             </dt>
-            <dd>This interface defines an object that can be rendered, and whose render method is called on every game loop.</dd>
+            <dd>This interfaces defines a layer that is rendered every game loop, by callings its <a href="class_graphics_1_1_i_layer.html#ae4812c7ed39d6dcaf98088c7ae5211b0" class="m-doc">ILayer::<wbr />DrawLayer()</a> method.</dd>
             <dt>
               class <a href="class_u_i_1_1_i_hint_conditioner.html" class="m-doc">UI::IHintConditioner</a>
             </dt>
@@ -260,8 +260,8 @@
               int <a href="#a2ec6fda8e3d46ca5e0e982d4c44e6fd8" class="m-doc-self">field_90</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="a7faebcda6463e9e3d24ca74f8209e674">
-              <a href="_i_effect_world_8h.html#a03a4adbe3eb0e10e2c62e72c9f246095" class="m-doc">IEffectWorldPtr</a> <a href="#a7faebcda6463e9e3d24ca74f8209e674" class="m-doc-self">mpEffectWorld</a>
+            <dt id="ac69dd0ebd3d4e78eee883cc986ecc925">
+              <a href="_i_effects_world_8h.html#a68216f3c3fb8e63842f27d7b2a364b61" class="m-doc">IEffectsWorldPtr</a> <a href="#ac69dd0ebd3d4e78eee883cc986ecc925" class="m-doc-self">mpEffectWorld</a>
             </dt>
             <dd><span></span></dd>
             <dt id="acb04aef9f9986afb5035815887eceb8c">
@@ -273,23 +273,23 @@
             </dt>
             <dd><span></span></dd>
             <dt id="a192691f0907f9b14894b2410b9148c98">
-              <a href="_model_asset_8h.html#a4695930ef0d84e11d31379e623af5732" class="m-doc">ModelPtr</a> <a href="#a192691f0907f9b14894b2410b9148c98" class="m-doc-self">mpPedestalModel</a>
+              <a href="_model_8h.html#a4695930ef0d84e11d31379e623af5732" class="m-doc">ModelPtr</a> <a href="#a192691f0907f9b14894b2410b9148c98" class="m-doc-self">mpPedestalModel</a>
             </dt>
             <dd>The model to be used for the pedestal in the editor. It belongs to mpPedestalModelWorld.</dd>
             <dt id="a9060840b346157353b9c3924342efdb2">
-              <a href="_model_asset_8h.html#a4695930ef0d84e11d31379e623af5732" class="m-doc">ModelPtr</a> <a href="#a9060840b346157353b9c3924342efdb2" class="m-doc-self">mpTestEnvironmentModel</a>
+              <a href="_model_8h.html#a4695930ef0d84e11d31379e623af5732" class="m-doc">ModelPtr</a> <a href="#a9060840b346157353b9c3924342efdb2" class="m-doc-self">mpTestEnvironmentModel</a>
             </dt>
             <dd>The model to be used for the test environment in the editor. It belongs mpPedestalModelWorld.</dd>
             <dt id="a468619196ae2b4eff1ecd1267e4afcc4">
-              <a href="_model_asset_8h.html#a4695930ef0d84e11d31379e623af5732" class="m-doc">ModelPtr</a> <a href="#a468619196ae2b4eff1ecd1267e4afcc4" class="m-doc-self">mpBackgroundModel</a>
+              <a href="_model_8h.html#a4695930ef0d84e11d31379e623af5732" class="m-doc">ModelPtr</a> <a href="#a468619196ae2b4eff1ecd1267e4afcc4" class="m-doc-self">mpBackgroundModel</a>
             </dt>
             <dd>The model to be used for the background in the editor. It belongs to mpBackgroundModelWorld.</dd>
             <dt id="ae1920d2b913de8f68b186b087b42814c">
-              <a href="_model_asset_8h.html#a4695930ef0d84e11d31379e623af5732" class="m-doc">ModelPtr</a> <a href="#ae1920d2b913de8f68b186b087b42814c" class="m-doc-self">mpAccBackgroundModel</a>
+              <a href="_model_8h.html#a4695930ef0d84e11d31379e623af5732" class="m-doc">ModelPtr</a> <a href="#ae1920d2b913de8f68b186b087b42814c" class="m-doc-self">mpAccBackgroundModel</a>
             </dt>
             <dd>A background model used in accessories editors. It belongs to mpBackgroundModelWorld.</dd>
-            <dt id="a75d76a5e59eb12a2dcce00815b85f66a">
-              string16 <a href="#a75d76a5e59eb12a2dcce00815b85f66a" class="m-doc-self">field_B0</a>
+            <dt id="aa6bdf2a5e65edf020bfb6c871100d5bb">
+              eastl::string16 <a href="#aa6bdf2a5e65edf020bfb6c871100d5bb" class="m-doc-self">field_B0</a>
             </dt>
             <dd><span></span></dd>
             <dt id="a879548895b550183d4dce55ab9426a20">
@@ -384,8 +384,8 @@
               int <a href="#af59624591d7cd0d0e7e0224aaf6a81aa" class="m-doc-self">field_14C</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="a118d82cd5f49fb78188007c290947b24">
-              intrusive_ptr&lt;<a href="class_object.html" class="m-doc">Object</a>&gt; <a href="#a118d82cd5f49fb78188007c290947b24" class="m-doc-self">field_150</a>
+            <dt id="a119a0c02ee371a1f87969e43c7361b04">
+              <a href="_object_8h.html#a364c2967a9338c07ddc9a3d507389b5d" class="m-doc">ObjectPtr</a> <a href="#a119a0c02ee371a1f87969e43c7361b04" class="m-doc-self">field_150</a>
             </dt>
             <dd><span></span></dd>
             <dt id="ad36536ff1646aafba8b32ce59042e903">
@@ -400,12 +400,12 @@
               int <a href="#a885e4930808c0526308302e9fb8279b8" class="m-doc-self">field_15C</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="a1ec31b65a1dbe4c731a93fd0e241e1f4">
-              vector&lt;intrusive_ptr&lt;<a href="class_editors_1_1_editor_state_edit_history.html" class="m-doc">EditorStateEditHistory</a>&gt;&gt; <a href="#a1ec31b65a1dbe4c731a93fd0e241e1f4" class="m-doc-self">mStateEditHistory</a>
+            <dt id="a82027dc4e78a179c6e357698f0407ead">
+              eastl::vector&lt;eastl::intrusive_ptr&lt;<a href="class_editors_1_1_editor_state_edit_history.html" class="m-doc">EditorStateEditHistory</a>&gt;&gt; <a href="#a82027dc4e78a179c6e357698f0407ead" class="m-doc-self">mStateEditHistory</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="a28061319e85c05853a7a547deb49f72d">
-              vector&lt;<a href="c_editor_resource_8h.html#a1f685087c2852276013d7a85ff47ea4d" class="m-doc">cEditorResourcePtr</a>&gt; <a href="#a28061319e85c05853a7a547deb49f72d" class="m-doc-self">mEditHistory</a>
+            <dt id="a6d1fed371132a4342d8108d8e1eba62f">
+              eastl::vector&lt;<a href="c_editor_resource_8h.html#a1f685087c2852276013d7a85ff47ea4d" class="m-doc">cEditorResourcePtr</a>&gt; <a href="#a6d1fed371132a4342d8108d8e1eba62f" class="m-doc-self">mEditHistory</a>
             </dt>
             <dd><span></span></dd>
             <dt id="ad1c195d57809f3c90a66da64133537f7">
@@ -452,8 +452,8 @@
               int <a href="#a6c19a00d23caf1746a917415a6db37aa" class="m-doc-self">field_1AC</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="a11327d0d07429fb827d4920bcf4c0f42">
-              map&lt;uint32_t, uint32_t&gt; <a href="#a11327d0d07429fb827d4920bcf4c0f42" class="m-doc-self">mDefaultEditors</a>
+            <dt id="a6ca81b965c4a12091a4c612a3c2c594b">
+              eastl::map&lt;uint32_t, uint32_t&gt; <a href="#a6ca81b965c4a12091a4c612a3c2c594b" class="m-doc-self">mDefaultEditors</a>
             </dt>
             <dd>Maps a creation format extension to its default editor. For example, &#x27;crt&#x27; is mapped to &#x27;CreatureEditorExtraLarge&#x27;.</dd>
             <dt id="a386bbe3cc880c609bdc7917abcf29520">
@@ -464,8 +464,8 @@
               <a href="struct_resource_key.html" class="m-doc">ResourceKey</a> <a href="#a8a0241a623aae32b56acb72cff90c434" class="m-doc-self">mParentAssetKey</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="a680a984e38768c6025fe37a6654ba8ba">
-              string16 <a href="#a680a984e38768c6025fe37a6654ba8ba" class="m-doc-self">field_1DC</a>
+            <dt id="ae398c5fbd3a20302a853a3b6e32611e1">
+              eastl::string16 <a href="#ae398c5fbd3a20302a853a3b6e32611e1" class="m-doc-self">field_1DC</a>
             </dt>
             <dd><span></span></dd>
             <dt id="a247762a8a6423c189bf8b89aeaf6ad60">
@@ -636,8 +636,8 @@
               int <a href="#af2771bf9daa4782413f81672741c0d8e" class="m-doc-self">field_290</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="aeff9bea32f500999d1e89e7c7b597899">
-              <a href="_i_shadow_manager_8h.html#a4c501d10015687f82181c441fbd781dd" class="m-doc">IShadowManagerPtr</a> <a href="#aeff9bea32f500999d1e89e7c7b597899" class="m-doc-self">mpShadowManager</a>
+            <dt id="af57b13603080d2c21f4d7aa5643940f3">
+              <a href="_i_shadow_world_8h.html#a972d381f11bfbd8cc73f91b9602b559a" class="m-doc">IShadowWorldPtr</a> <a href="#af57b13603080d2c21f4d7aa5643940f3" class="m-doc-self">mpShadowWorld</a>
             </dt>
             <dd><span></span></dd>
             <dt id="ac986f39676658c6276756fffb59c2bfa">
@@ -824,12 +824,12 @@
               <a href="namespace_editors.html#ac58a0d836dc46427d3c2128f87430edd" class="m-doc">Mode</a> <a href="#a566ad999bcf395b7601b06a18b3033d3" class="m-doc-self">mMode</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="a2a8be3c4e4ffd875d37a01c3f16cdb40">
-              vector&lt;uint32_t&gt; <a href="#a2a8be3c4e4ffd875d37a01c3f16cdb40" class="m-doc-self">mEnabledManipulators</a>
+            <dt id="a8e7e840efc9d1ef082e4d90467b4693c">
+              eastl::vector&lt;uint32_t&gt; <a href="#a8e7e840efc9d1ef082e4d90467b4693c" class="m-doc-self">mEnabledManipulators</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="a8942af28633d7fcc5dcc148526ab1e9c">
-              vector&lt;uint32_t&gt; <a href="#a8942af28633d7fcc5dcc148526ab1e9c" class="m-doc-self">mModelTypes</a>
+            <dt id="a428926a6ea16b9eb751987df72079753">
+              eastl::vector&lt;uint32_t&gt; <a href="#a428926a6ea16b9eb751987df72079753" class="m-doc-self">mModelTypes</a>
             </dt>
             <dd>The list of model types that this editor supports, ie. VehicleMilitaryAir, VehicleEconomicLand, BuildingIndustry, BuildingHouse, etc.</dd>
             <dt id="a26c02c553b4f915ffe46693d80eca910">
@@ -868,8 +868,8 @@
               int <a href="#aacb4f00908e7419d9b948e607a37844d" class="m-doc-self">field_368</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="a895e3f25cce0b9519949a54c96f9c993">
-              vector&lt;int&gt; <a href="#a895e3f25cce0b9519949a54c96f9c993" class="m-doc-self">field_36C</a>
+            <dt id="ae559186a737b5efa1c9b71b6acc3e632">
+              eastl::vector&lt;int&gt; <a href="#ae559186a737b5efa1c9b71b6acc3e632" class="m-doc-self">field_36C</a>
             </dt>
             <dd><span></span></dd>
             <dt id="a9ca5d0cd0f95b8a7dc1bf5b3ebf35a11">
@@ -924,8 +924,8 @@
               bool <a href="#adc8cbf991cdf672272167c981674ab95" class="m-doc-self">field_39A</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="a541fe8650bcddceac5799229ab1f37f3">
-              vector&lt;int&gt; <a href="#a541fe8650bcddceac5799229ab1f37f3" class="m-doc-self">field_39C</a>
+            <dt id="a665533a911c6156d56b171d89893f01c">
+              eastl::vector&lt;int&gt; <a href="#a665533a911c6156d56b171d89893f01c" class="m-doc-self">field_39C</a>
             </dt>
             <dd><span></span></dd>
             <dt id="ace0f63e808e2e0205839480b033493e4">
@@ -1100,8 +1100,8 @@
               int <a href="#a5f09ba1763fda536bfee46dff1b4a2aa" class="m-doc-self">field_450</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="a54e277d3b868e5415215a4f1cbd6be5a">
-              map&lt;int, int&gt; <a href="#a54e277d3b868e5415215a4f1cbd6be5a" class="m-doc-self">field_454</a>
+            <dt id="aaf0ad5e58b6790b4d42434fbd64f1aa8">
+              eastl::map&lt;int, int&gt; <a href="#aaf0ad5e58b6790b4d42434fbd64f1aa8" class="m-doc-self">field_454</a>
             </dt>
             <dd><span></span></dd>
             <dt id="aaab3e05bc2cd91c44702051830506b47">
@@ -1264,28 +1264,28 @@
               int <a href="#aa2f77627561ef07ed63625c4b35b3500" class="m-doc-self">field_4E4</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="a56df47f6cc0ace3e883a0fe798e7feae">
-              vector&lt;int&gt; <a href="#a56df47f6cc0ace3e883a0fe798e7feae" class="m-doc-self">field_508</a>
+            <dt id="a9086c8c241530b73d18595a85757f2b1">
+              eastl::vector&lt;int&gt; <a href="#a9086c8c241530b73d18595a85757f2b1" class="m-doc-self">field_508</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="aa04bc772cb498b588f3bfe18baa2df33">
-              vector&lt;int&gt; <a href="#aa04bc772cb498b588f3bfe18baa2df33" class="m-doc-self">field_51C</a>
+            <dt id="a2a320f50ff2d88d75c2cd4daf0584a03">
+              eastl::vector&lt;int&gt; <a href="#a2a320f50ff2d88d75c2cd4daf0584a03" class="m-doc-self">field_51C</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="ab9302d15e384f8447e8c99adb0be15ed">
-              vector&lt;int&gt; <a href="#ab9302d15e384f8447e8c99adb0be15ed" class="m-doc-self">field_530</a>
+            <dt id="aa644af7c1d3061be6d3b37f397d34b36">
+              eastl::vector&lt;int&gt; <a href="#aa644af7c1d3061be6d3b37f397d34b36" class="m-doc-self">field_530</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="a38d2b52a0d3e951e48df04790c365c95">
-              vector&lt;int&gt; <a href="#a38d2b52a0d3e951e48df04790c365c95" class="m-doc-self">field_544</a>
+            <dt id="a642dda8eb9a24aa4c6477ea63b7b7ccc">
+              eastl::vector&lt;int&gt; <a href="#a642dda8eb9a24aa4c6477ea63b7b7ccc" class="m-doc-self">field_544</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="ae4fb4cd086cb9240734ee79e66b17af2">
-              vector&lt;int&gt; <a href="#ae4fb4cd086cb9240734ee79e66b17af2" class="m-doc-self">field_558</a>
+            <dt id="a60d7818b486a1b7f43c2a25691411356">
+              eastl::vector&lt;int&gt; <a href="#a60d7818b486a1b7f43c2a25691411356" class="m-doc-self">field_558</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="af5c1f2579b38cb4832018b2d3c7e8db8">
-              vector&lt;int&gt; <a href="#af5c1f2579b38cb4832018b2d3c7e8db8" class="m-doc-self">field_56C</a>
+            <dt id="a7364771720e18dfc01cfb8351c8260a3">
+              eastl::vector&lt;int&gt; <a href="#a7364771720e18dfc01cfb8351c8260a3" class="m-doc-self">field_56C</a>
             </dt>
             <dd><span></span></dd>
             <dt id="aa1c417d8ff380cba676bd53c2dea3d29">
@@ -1296,8 +1296,8 @@
               int <a href="#af02ecc1b813f6a5f42d85055b21a4e30" class="m-doc-self">field_584</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="a39fcd5996c0dd750a59e88fae969a2af">
-              vector&lt;int&gt; <a href="#a39fcd5996c0dd750a59e88fae969a2af" class="m-doc-self">field_588</a>
+            <dt id="acbae324c5ef042cca4a8357cbdcd1071">
+              eastl::vector&lt;int&gt; <a href="#acbae324c5ef042cca4a8357cbdcd1071" class="m-doc-self">field_588</a>
             </dt>
             <dd><span></span></dd>
             <dt id="af95356667c7f3b57cb36db567ed7fcc2">
@@ -1448,7 +1448,7 @@
               int Editors::<wbr />cEditor::<wbr /><a href="#a31f08dd41e52ddb7a74a0a8431764d0f" class="m-doc-self">field_158</a>
             </h3>
             <p>just guesses, apparently it calls DefaultRefCounted.Unuse()</p>
-<ul><li>158h <em>&zwj;/ <a href="class_default_ref_counted.html" class="m-doc">DefaultRefCounted</a></em> field_158;</li><li>15Ch <em>&zwj;/ <a href="class_default_ref_counted.html" class="m-doc">DefaultRefCounted</a></em> field_15C; // something related with &quot;UTFWin/RWTextureResource&quot; ?</li><li>160h <em>&zwj;/ vector&lt;<a href="class_default_ref_counted.html" class="m-doc">DefaultRefCounted</a></em>&gt; field_160; // we only know it calls the DefaultRefCounted* destructor</li></ul>
+<ul><li>158h <em>&zwj;/ <a href="class_default_ref_counted.html" class="m-doc">DefaultRefCounted</a></em> field_158;</li><li>15Ch <em>&zwj;/ <a href="class_default_ref_counted.html" class="m-doc">DefaultRefCounted</a></em> field_15C; // something related with &quot;UTFWin/RWTextureResource&quot; ?</li><li>160h <em>&zwj;/ eastl::vector&lt;<a href="class_default_ref_counted.html" class="m-doc">DefaultRefCounted</a></em>&gt; field_160; // we only know it calls the DefaultRefCounted* destructor</li></ul>
           </div></section>
         </section>
       </div>

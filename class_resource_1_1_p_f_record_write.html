@@ -69,9 +69,9 @@
           <h2><a href="#base-classes">Base classes</a></h2>
           <dl class="m-doc">
             <dt>
-              class <a href="class_resource_1_1_i_p_f_record.html" class="m-doc">IPFRecord</a>
+              class <a href="class_resource_1_1_p_f_record_base.html" class="m-doc">PFRecordBase</a>
             </dt>
-            <dd>This interface defines the methods required to access the data of a file contained in a DBPF.</dd>
+            <dd>Base implementation for records in a <code>.package</code> file (<a href="class_resource_1_1_database_packed_file.html" class="m-doc">DatabasePackedFile</a>).</dd>
           </dl>
         </section>
         <section id="pub-static-attribs">
@@ -119,32 +119,32 @@
               <span class="m-doc-wrap-bumper">auto <a href="#a23273423d232f04f808af9665f482a16" class="m-doc-self">Release</a>(</span><span class="m-doc-wrap">) -&gt; int <span class="m-label m-flat m-warning">override</span></span>
             </dt>
             <dd><span></span></dd>
-            <dt id="af596f9b8e4e694f8ca554dcdfc7f0cdb">
-              <span class="m-doc-wrap-bumper">auto <a href="#af596f9b8e4e694f8ca554dcdfc7f0cdb" class="m-doc-self">GetName</a>(</span><span class="m-doc-wrap">) -&gt; <a href="struct_resource_key.html" class="m-doc">ResourceKey</a>&amp; <span class="m-label m-flat m-warning">override</span></span>
+            <dt id="a02cb3d29db4bbca9fae222e53275976f">
+              <span class="m-doc-wrap-bumper">auto <a href="#a02cb3d29db4bbca9fae222e53275976f" class="m-doc-self">GetKey</a>(</span><span class="m-doc-wrap">) -&gt; const <a href="struct_resource_key.html" class="m-doc">ResourceKey</a>&amp; <span class="m-label m-flat m-warning">override</span></span>
             </dt>
             <dd>Gets the <a href="struct_resource_key.html" class="m-doc">ResourceKey</a> name that identifies this record.</dd>
-            <dt id="af6dc592177d2d0978b110b2390fdc210">
-              <span class="m-doc-wrap-bumper">void <a href="#af6dc592177d2d0978b110b2390fdc210" class="m-doc-self">SetName</a>(</span><span class="m-doc-wrap">const <a href="struct_resource_key.html" class="m-doc">ResourceKey</a>&amp; name) <span class="m-label m-flat m-warning">override</span></span>
+            <dt>
+              <span class="m-doc-wrap-bumper">void <a href="#ad6d150dd7160feab9734bd6a6a0ac1f1" class="m-doc">SetKey</a>(</span><span class="m-doc-wrap">const <a href="struct_resource_key.html" class="m-doc">ResourceKey</a>&amp; key) <span class="m-label m-flat m-warning">override</span></span>
             </dt>
             <dd>Sets the <a href="struct_resource_key.html" class="m-doc">ResourceKey</a> name that identifies this record.</dd>
-            <dt id="ad800fd12712cfbdacc767d9ab78039d0">
-              <span class="m-doc-wrap-bumper">auto <a href="#ad800fd12712cfbdacc767d9ab78039d0" class="m-doc-self">GetStream</a>(</span><span class="m-doc-wrap">) -&gt; <a href="class_i_o_1_1_i_stream.html" class="m-doc">IO::<wbr />IStream</a>* <span class="m-label m-flat m-warning">override</span></span>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#ad800fd12712cfbdacc767d9ab78039d0" class="m-doc">GetStream</a>(</span><span class="m-doc-wrap">) -&gt; <a href="class_i_o_1_1_i_stream.html" class="m-doc">IO::<wbr />IStream</a>* <span class="m-label m-flat m-warning">override</span></span>
             </dt>
             <dd>Returns the IStream used to access this record data.</dd>
-            <dt id="adba72e92071e32bb0b17b489beb1030d">
-              <span class="m-doc-wrap-bumper">auto <a href="#adba72e92071e32bb0b17b489beb1030d" class="m-doc-self">GetParentDBPF</a>(</span><span class="m-doc-wrap">) const -&gt; <a href="class_resource_1_1_database_packed_file.html" class="m-doc">DatabasePackedFile</a>* <span class="m-label m-flat m-warning">override</span></span>
+            <dt id="a82fd4ecf1bed5c4b3acb7ce2cd0a6582">
+              <span class="m-doc-wrap-bumper">auto <a href="#a82fd4ecf1bed5c4b3acb7ce2cd0a6582" class="m-doc-self">GetDatabase</a>(</span><span class="m-doc-wrap">) -&gt; <a href="class_resource_1_1_database.html" class="m-doc">Database</a>* <span class="m-label m-flat m-warning">override</span></span>
             </dt>
-            <dd>Returns the <a href="class_resource_1_1_database_packed_file.html" class="m-doc">DatabasePackedFile</a> that this record belongs to.</dd>
-            <dt id="a6eb4520b953a7aa0102d5e6c485a7c60">
-              <span class="m-doc-wrap-bumper">auto <a href="#a6eb4520b953a7aa0102d5e6c485a7c60" class="m-doc-self">Open</a>(</span><span class="m-doc-wrap">) -&gt; bool <span class="m-label m-flat m-warning">override</span></span>
+            <dd>Returns the database that this record belongs to.</dd>
+            <dt id="ace1299c32321f111d9ccd6a677cb44ba">
+              <span class="m-doc-wrap-bumper">auto <a href="#ace1299c32321f111d9ccd6a677cb44ba" class="m-doc-self">RecordOpen</a>(</span><span class="m-doc-wrap">) -&gt; bool <span class="m-label m-flat m-warning">override</span></span>
             </dt>
-            <dd><span></span></dd>
-            <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#a552e5c2b320a9903bcd48bb6aef67120" class="m-doc">Close</a>(</span><span class="m-doc-wrap">) -&gt; bool <span class="m-label m-flat m-warning">override</span></span>
+            <dd>Opens this record, allowing its data to be used.</dd>
+            <dt id="aefd715c549c380015eb8b0722b3a7139">
+              <span class="m-doc-wrap-bumper">auto <a href="#aefd715c549c380015eb8b0722b3a7139" class="m-doc-self">RecordClose</a>(</span><span class="m-doc-wrap">) -&gt; bool <span class="m-label m-flat m-warning">override</span></span>
             </dt>
-            <dd>Closes the stream and releases resouces associated with it.</dd>
-            <dt id="a6fa5ddea592a1e74639cb9b1ef242844">
-              <span class="m-doc-wrap-bumper">auto <a href="#a6fa5ddea592a1e74639cb9b1ef242844" class="m-doc-self">func28h</a>(</span><span class="m-doc-wrap">) -&gt; int <span class="m-label m-flat m-warning">override</span></span>
+            <dd>Closes this record, forbidding any use of its data.</dd>
+            <dt id="a552b0928e5cdd771ae7d80b0f48cd073">
+              <span class="m-doc-wrap-bumper">auto <a href="#a552b0928e5cdd771ae7d80b0f48cd073" class="m-doc-self">DoPostClose</a>(</span><span class="m-doc-wrap">) -&gt; int <span class="m-label m-flat m-warning">override</span></span>
             </dt>
             <dd><span></span></dd>
             <dt>
@@ -152,7 +152,7 @@
             </dt>
             <dd>Returns the type of the stream, which is different for each Stream subclass.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#a36782205a61789ddbcb9969eeab12d5e" class="m-doc">GetAccessFlags</a>(</span><span class="m-doc-wrap">) const -&gt; int <span class="m-label m-flat m-warning">override</span></span>
+              <span class="m-doc-wrap-bumper">auto <a href="#aad6d50b85a1fde43577df8d20de06e5d" class="m-doc">GetAccessFlags</a>(</span><span class="m-doc-wrap">) const -&gt; <a href="namespace_i_o.html#ab7db8d079d037a7b288d7d79b2d052db" class="m-doc">IO::<wbr />AccessFlags</a> <span class="m-label m-flat m-warning">override</span></span>
             </dt>
             <dd>Returns one of enum AccessFlags.</dd>
             <dt>
@@ -168,12 +168,12 @@
             </dt>
             <dd>Sets the size of the stream, if possible.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#a1488491e3754d1410dfb8b9372035fed" class="m-doc">GetPosition</a>(</span><span class="m-doc-wrap"><a href="namespace_i_o.html#ae8092ef26cdcadafcb368e9914fce400" class="m-doc">IO::<wbr />PositionType</a> positionType = <a href="namespace_i_o.html#ae8092ef26cdcadafcb368e9914fce400aec274c84c558b69dfc1858338c38b7cc" class="m-doc">IO::<wbr />kPositionTypeBegin</a>) const -&gt; int <span class="m-label m-flat m-warning">override</span></span>
+              <span class="m-doc-wrap-bumper">auto <a href="#a2f77d677c1fe75a057d5cc06c17542cc" class="m-doc">GetPosition</a>(</span><span class="m-doc-wrap"><a href="namespace_i_o.html#a3548a9e9ef60c2653c6cdba408e817fc" class="m-doc">IO::<wbr />PositionType</a> positionType = <a href="namespace_i_o.html#a3548a9e9ef60c2653c6cdba408e817fca1a06729125544cab7cee73195fc044f0" class="m-doc">IO::<wbr />PositionType::<wbr />Begin</a>) const -&gt; int <span class="m-label m-flat m-warning">override</span></span>
             </dt>
             <dd>Gets the current read/write position within the stream.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#a0fb07d5ac90da695f8d36b707a8fa610" class="m-doc">SetPosition</a>(</span><span class="m-doc-wrap">int distance,
-              <a href="namespace_i_o.html#ae8092ef26cdcadafcb368e9914fce400" class="m-doc">IO::<wbr />PositionType</a> positionType = <a href="namespace_i_o.html#ae8092ef26cdcadafcb368e9914fce400aec274c84c558b69dfc1858338c38b7cc" class="m-doc">IO::<wbr />kPositionTypeBegin</a>) -&gt; bool <span class="m-label m-flat m-warning">override</span></span>
+              <span class="m-doc-wrap-bumper">auto <a href="#a0ef95f7b7dc2ffd548b443c952b4dc69" class="m-doc">SetPosition</a>(</span><span class="m-doc-wrap">int distance,
+              <a href="namespace_i_o.html#a3548a9e9ef60c2653c6cdba408e817fc" class="m-doc">IO::<wbr />PositionType</a> positionType = <a href="namespace_i_o.html#a3548a9e9ef60c2653c6cdba408e817fca1a06729125544cab7cee73195fc044f0" class="m-doc">IO::<wbr />PositionType::<wbr />Begin</a>) -&gt; bool <span class="m-label m-flat m-warning">override</span></span>
             </dt>
             <dd>Sets the read/write position of the stream.</dd>
             <dt>
@@ -219,12 +219,36 @@
         </section>
         <section>
           <h2>Function documentation</h2>
-          <section class="m-doc-details" id="a552e5c2b320a9903bcd48bb6aef67120"><div>
+          <section class="m-doc-details" id="ad6d150dd7160feab9734bd6a6a0ac1f1"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">bool Resource::<wbr />PFRecordWrite::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a552e5c2b320a9903bcd48bb6aef67120" class="m-doc-self">Close</a>(</span><span class="m-doc-wrap">) <span class="m-label m-warning">override</span></span></span>
+              <span class="m-doc-wrap-bumper">void Resource::<wbr />PFRecordWrite::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ad6d150dd7160feab9734bd6a6a0ac1f1" class="m-doc-self">SetKey</a>(</span><span class="m-doc-wrap">const <a href="struct_resource_key.html" class="m-doc">ResourceKey</a>&amp; key) <span class="m-label m-warning">override</span></span></span>
             </h3>
-            <p>Closes the stream and releases resouces associated with it.</p>
-<p>Returns true upon success, else false. If the return value is false, GetState will give the error code. If an IStream encounters an error during operations on an open stream, it is guaranteed that you can safely call the Close function on the stream.</p>
+            <p>Sets the <a href="struct_resource_key.html" class="m-doc">ResourceKey</a> name that identifies this record.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">key</td>
+                  <td></td>
+                </tr>
+              </tbody>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="ad800fd12712cfbdacc767d9ab78039d0"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"><a href="class_i_o_1_1_i_stream.html" class="m-doc">IO::<wbr />IStream</a>* Resource::<wbr />PFRecordWrite::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ad800fd12712cfbdacc767d9ab78039d0" class="m-doc-self">GetStream</a>(</span><span class="m-doc-wrap">) <span class="m-label m-warning">override</span></span></span>
+            </h3>
+            <p>Returns the IStream used to access this record data.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <tfoot>
+                <tr>
+                  <th style="width: 1%">Returns</th>
+                  <td><br /></td>
+                </tr>
+              </tfoot>
+            </table>
           </div></section>
           <section class="m-doc-details" id="ab961509009737c6f2c41fe9a8c60a2dd"><div>
             <h3>
@@ -233,9 +257,9 @@
             <p>Returns the type of the stream, which is different for each Stream subclass.</p>
 <p>This function can be used for run-time type identification. A type of zero means the type is unknown or invalid.</p>
           </div></section>
-          <section class="m-doc-details" id="a36782205a61789ddbcb9969eeab12d5e"><div>
+          <section class="m-doc-details" id="aad6d50b85a1fde43577df8d20de06e5d"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">int Resource::<wbr />PFRecordWrite::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a36782205a61789ddbcb9969eeab12d5e" class="m-doc-self">GetAccessFlags</a>(</span><span class="m-doc-wrap">) const <span class="m-label m-warning">override</span></span></span>
+              <span class="m-doc-wrap-bumper"><a href="namespace_i_o.html#ab7db8d079d037a7b288d7d79b2d052db" class="m-doc">IO::<wbr />AccessFlags</a> Resource::<wbr />PFRecordWrite::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#aad6d50b85a1fde43577df8d20de06e5d" class="m-doc-self">GetAccessFlags</a>(</span><span class="m-doc-wrap">) const <span class="m-label m-warning">override</span></span></span>
             </h3>
             <p>Returns one of enum AccessFlags.</p>
 <p>This function also tells you if the stream is open, as a return value of zero means the stream is not open. It is not allowed that a stream<br />be open with no type of access.</p>
@@ -272,9 +296,9 @@
             </table>
 <p>It is debatable whether this function should be present in IStream or only in suclasses of StreamBase which are writable. For consistency with GetSize, we put the function here. But also consider that a SetSize function is not necessarily a data writing function, depending on the stream implementation.</p>
           </div></section>
-          <section class="m-doc-details" id="a1488491e3754d1410dfb8b9372035fed"><div>
+          <section class="m-doc-details" id="a2f77d677c1fe75a057d5cc06c17542cc"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">int Resource::<wbr />PFRecordWrite::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a1488491e3754d1410dfb8b9372035fed" class="m-doc-self">GetPosition</a>(</span><span class="m-doc-wrap"><a href="namespace_i_o.html#ae8092ef26cdcadafcb368e9914fce400" class="m-doc">IO::<wbr />PositionType</a> positionType = <a href="namespace_i_o.html#ae8092ef26cdcadafcb368e9914fce400aec274c84c558b69dfc1858338c38b7cc" class="m-doc">IO::<wbr />kPositionTypeBegin</a>) const <span class="m-label m-warning">override</span></span></span>
+              <span class="m-doc-wrap-bumper">int Resource::<wbr />PFRecordWrite::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a2f77d677c1fe75a057d5cc06c17542cc" class="m-doc-self">GetPosition</a>(</span><span class="m-doc-wrap"><a href="namespace_i_o.html#a3548a9e9ef60c2653c6cdba408e817fc" class="m-doc">IO::<wbr />PositionType</a> positionType = <a href="namespace_i_o.html#a3548a9e9ef60c2653c6cdba408e817fca1a06729125544cab7cee73195fc044f0" class="m-doc">IO::<wbr />PositionType::<wbr />Begin</a>) const <span class="m-label m-warning">override</span></span></span>
             </h3>
             <p>Gets the current read/write position within the stream.</p>
             <table class="m-table m-fullwidth m-flat">
@@ -290,10 +314,10 @@
             </table>
 <p>The read and write positions of a stream must be the same value; you cannot have a read position that is different from a write position. However, a Stream subclass can provide such functionality if needed. Returns -1 upon error.</p>
           </div></section>
-          <section class="m-doc-details" id="a0fb07d5ac90da695f8d36b707a8fa610"><div>
+          <section class="m-doc-details" id="a0ef95f7b7dc2ffd548b443c952b4dc69"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">bool Resource::<wbr />PFRecordWrite::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a0fb07d5ac90da695f8d36b707a8fa610" class="m-doc-self">SetPosition</a>(</span><span class="m-doc-wrap">int distance,
-              <a href="namespace_i_o.html#ae8092ef26cdcadafcb368e9914fce400" class="m-doc">IO::<wbr />PositionType</a> positionType = <a href="namespace_i_o.html#ae8092ef26cdcadafcb368e9914fce400aec274c84c558b69dfc1858338c38b7cc" class="m-doc">IO::<wbr />kPositionTypeBegin</a>) <span class="m-label m-warning">override</span></span></span>
+              <span class="m-doc-wrap-bumper">bool Resource::<wbr />PFRecordWrite::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a0ef95f7b7dc2ffd548b443c952b4dc69" class="m-doc-self">SetPosition</a>(</span><span class="m-doc-wrap">int distance,
+              <a href="namespace_i_o.html#a3548a9e9ef60c2653c6cdba408e817fc" class="m-doc">IO::<wbr />PositionType</a> positionType = <a href="namespace_i_o.html#a3548a9e9ef60c2653c6cdba408e817fca1a06729125544cab7cee73195fc044f0" class="m-doc">IO::<wbr />PositionType::<wbr />Begin</a>) <span class="m-label m-warning">override</span></span></span>
             </h3>
             <p>Sets the read/write position of the stream.</p>
             <table class="m-table m-fullwidth m-flat">

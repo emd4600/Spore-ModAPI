@@ -115,7 +115,7 @@
             </dt>
             <dd>Returns the type of the stream, which is different for each Stream subclass.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#a359bcfc46e98bda4b66002e036cfb6a5" class="m-doc">GetAccessFlags</a>(</span><span class="m-doc-wrap">) const -&gt; int <span class="m-label m-flat m-warning">virtual</span></span>
+              <span class="m-doc-wrap-bumper">auto <a href="#a5c5ffac400b94f9454d970ec712e860a" class="m-doc">GetAccessFlags</a>(</span><span class="m-doc-wrap">) const -&gt; <a href="namespace_i_o.html#ab7db8d079d037a7b288d7d79b2d052db" class="m-doc">AccessFlags</a> <span class="m-label m-flat m-warning">virtual</span></span>
             </dt>
             <dd>Returns one of enum AccessFlags.</dd>
             <dt>
@@ -135,12 +135,12 @@
             </dt>
             <dd>Sets the size of the stream, if possible.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#a47ed98e1074fd6677cd5a8c039f929d8" class="m-doc">GetPosition</a>(</span><span class="m-doc-wrap"><a href="namespace_i_o.html#ae8092ef26cdcadafcb368e9914fce400" class="m-doc">PositionType</a> positionType = <a href="namespace_i_o.html#ae8092ef26cdcadafcb368e9914fce400aec274c84c558b69dfc1858338c38b7cc" class="m-doc">kPositionTypeBegin</a>) const -&gt; int <span class="m-label m-flat m-warning">virtual</span></span>
+              <span class="m-doc-wrap-bumper">auto <a href="#ab8f7029e73338219356454ee87eb7de0" class="m-doc">GetPosition</a>(</span><span class="m-doc-wrap"><a href="namespace_i_o.html#a3548a9e9ef60c2653c6cdba408e817fc" class="m-doc">PositionType</a> positionType = <a href="namespace_i_o.html#a3548a9e9ef60c2653c6cdba408e817fca1a06729125544cab7cee73195fc044f0" class="m-doc">PositionType::<wbr />Begin</a>) const -&gt; int <span class="m-label m-flat m-warning">virtual</span></span>
             </dt>
             <dd>Gets the current read/write position within the stream.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#aad8118c1136c4a07598de1b2c8738e9b" class="m-doc">SetPosition</a>(</span><span class="m-doc-wrap">int distance,
-              <a href="namespace_i_o.html#ae8092ef26cdcadafcb368e9914fce400" class="m-doc">PositionType</a> positionType = <a href="namespace_i_o.html#ae8092ef26cdcadafcb368e9914fce400aec274c84c558b69dfc1858338c38b7cc" class="m-doc">kPositionTypeBegin</a>) -&gt; bool <span class="m-label m-flat m-warning">virtual</span></span>
+              <span class="m-doc-wrap-bumper">auto <a href="#a97b9b40a936916eb15387003d10a995e" class="m-doc">SetPosition</a>(</span><span class="m-doc-wrap">int distance,
+              <a href="namespace_i_o.html#a3548a9e9ef60c2653c6cdba408e817fc" class="m-doc">PositionType</a> positionType = <a href="namespace_i_o.html#a3548a9e9ef60c2653c6cdba408e817fca1a06729125544cab7cee73195fc044f0" class="m-doc">PositionType::<wbr />Begin</a>) -&gt; bool <span class="m-label m-flat m-warning">virtual</span></span>
             </dt>
             <dd>Sets the read/write position of the stream.</dd>
             <dt>
@@ -179,9 +179,9 @@
               size_t nPathLength) -&gt; size_t <span class="m-label m-flat m-warning">virtual</span></span>
             </dt>
             <dd><span></span></dd>
-            <dt id="ab5883c17067b181a2821accf6ba88b8b">
-              <span class="m-doc-wrap-bumper">auto <a href="#ab5883c17067b181a2821accf6ba88b8b" class="m-doc-self">Open</a>(</span><span class="m-doc-wrap">int nAccessFlags = <a href="namespace_i_o.html#a6ebdfc60f23a884f4aecd2455972ff02ac5b43555635940d9a558028143f3c4d2" class="m-doc">kAccessFlagRead</a>,
-              int nCreationDisposition = <a href="namespace_i_o.html#a45057374e91a07d3a7a80f09ca20b83aa816845f0193dc6789d88c7749b6dcfb9" class="m-doc">kCDDefault</a>,
+            <dt id="a4a3c2496e3d31299926035e1fbe7c36f">
+              <span class="m-doc-wrap-bumper">auto <a href="#a4a3c2496e3d31299926035e1fbe7c36f" class="m-doc-self">Open</a>(</span><span class="m-doc-wrap"><a href="namespace_i_o.html#ab7db8d079d037a7b288d7d79b2d052db" class="m-doc">AccessFlags</a> accessFlags = <a href="namespace_i_o.html#ab7db8d079d037a7b288d7d79b2d052dba7a1a5f3e79fdc91edf2f5ead9d66abb4" class="m-doc">AccessFlags::<wbr />Read</a>,
+              <a href="namespace_i_o.html#abf6e95eb7addeab6fd4137b076cabbfa" class="m-doc">CD</a> creationDisposition = <a href="namespace_i_o.html#abf6e95eb7addeab6fd4137b076cabbfaa7a1920d61156abc05a60135aefe8bc67" class="m-doc">CD::<wbr />Default</a>,
               int nSharing = <a href="namespace_i_o.html#a5051c8a01530b70415e421977c84d79cabb69b01692f99a56e7224db3e5fc3013" class="m-doc">kShareRead</a>,
               int nUsageHints = <a href="namespace_i_o.html#a87c1d3677aa777dd9327ea13ac76d549a450570fbc3abeda3b654e16681444f49" class="m-doc">kUsageHintNone</a>) -&gt; bool <span class="m-label m-flat m-warning">virtual</span></span>
             </dt>
@@ -203,12 +203,12 @@
               int <a href="#adad0ef1b8fa04436098d141d6f5c859d" class="m-doc-self">mnRefCount</a>
             </dt>
             <dd>Path for the file.</dd>
-            <dt id="ae3bf496cb9b83b3ba519d70044d05289">
-              int <a href="#ae3bf496cb9b83b3ba519d70044d05289" class="m-doc-self">mnAccessFlags</a>
+            <dt id="afdcdb55e98660eb98f162dd28fb6c195">
+              <a href="namespace_i_o.html#ab7db8d079d037a7b288d7d79b2d052db" class="m-doc">AccessFlags</a> <a href="#afdcdb55e98660eb98f162dd28fb6c195" class="m-doc-self">mnAccessFlags</a>
             </dt>
             <dd>Reference count, which may or may not be in use.</dd>
-            <dt id="ab3f88ec3cfd39f038d451502d44c38b8">
-              int <a href="#ab3f88ec3cfd39f038d451502d44c38b8" class="m-doc-self">mnCD</a>
+            <dt id="ac3a3656dd7d76d22c671243755107c4d">
+              <a href="namespace_i_o.html#abf6e95eb7addeab6fd4137b076cabbfa" class="m-doc">CD</a> <a href="#ac3a3656dd7d76d22c671243755107c4d" class="m-doc-self">mnCD</a>
             </dt>
             <dd>See enum AccessFlags.</dd>
             <dt id="ad5eff172f371d7626d8e0779c1bf3018">
@@ -238,9 +238,9 @@
             <p>Returns the type of the stream, which is different for each Stream subclass.</p>
 <p>This function can be used for run-time type identification. A type of zero means the type is unknown or invalid.</p>
           </div></section>
-          <section class="m-doc-details" id="a359bcfc46e98bda4b66002e036cfb6a5"><div>
+          <section class="m-doc-details" id="a5c5ffac400b94f9454d970ec712e860a"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">int IO::<wbr />FileStream::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a359bcfc46e98bda4b66002e036cfb6a5" class="m-doc-self">GetAccessFlags</a>(</span><span class="m-doc-wrap">) const <span class="m-label m-warning">virtual</span></span></span>
+              <span class="m-doc-wrap-bumper"><a href="namespace_i_o.html#ab7db8d079d037a7b288d7d79b2d052db" class="m-doc">AccessFlags</a> IO::<wbr />FileStream::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a5c5ffac400b94f9454d970ec712e860a" class="m-doc-self">GetAccessFlags</a>(</span><span class="m-doc-wrap">) const <span class="m-label m-warning">virtual</span></span></span>
             </h3>
             <p>Returns one of enum AccessFlags.</p>
 <p>This function also tells you if the stream is open, as a return value of zero means the stream is not open. It is not allowed that a stream<br />be open with no type of access.</p>
@@ -284,9 +284,9 @@
             </table>
 <p>It is debatable whether this function should be present in <a href="class_i_o_1_1_i_stream.html" class="m-doc">IStream</a> or only in suclasses of StreamBase which are writable. For consistency with GetSize, we put the function here. But also consider that a SetSize function is not necessarily a data writing function, depending on the stream implementation.</p>
           </div></section>
-          <section class="m-doc-details" id="a47ed98e1074fd6677cd5a8c039f929d8"><div>
+          <section class="m-doc-details" id="ab8f7029e73338219356454ee87eb7de0"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">int IO::<wbr />FileStream::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a47ed98e1074fd6677cd5a8c039f929d8" class="m-doc-self">GetPosition</a>(</span><span class="m-doc-wrap"><a href="namespace_i_o.html#ae8092ef26cdcadafcb368e9914fce400" class="m-doc">PositionType</a> positionType = <a href="namespace_i_o.html#ae8092ef26cdcadafcb368e9914fce400aec274c84c558b69dfc1858338c38b7cc" class="m-doc">kPositionTypeBegin</a>) const <span class="m-label m-warning">virtual</span></span></span>
+              <span class="m-doc-wrap-bumper">int IO::<wbr />FileStream::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ab8f7029e73338219356454ee87eb7de0" class="m-doc-self">GetPosition</a>(</span><span class="m-doc-wrap"><a href="namespace_i_o.html#a3548a9e9ef60c2653c6cdba408e817fc" class="m-doc">PositionType</a> positionType = <a href="namespace_i_o.html#a3548a9e9ef60c2653c6cdba408e817fca1a06729125544cab7cee73195fc044f0" class="m-doc">PositionType::<wbr />Begin</a>) const <span class="m-label m-warning">virtual</span></span></span>
             </h3>
             <p>Gets the current read/write position within the stream.</p>
             <table class="m-table m-fullwidth m-flat">
@@ -302,10 +302,10 @@
             </table>
 <p>The read and write positions of a stream must be the same value; you cannot have a read position that is different from a write position. However, a Stream subclass can provide such functionality if needed. Returns -1 upon error.</p>
           </div></section>
-          <section class="m-doc-details" id="aad8118c1136c4a07598de1b2c8738e9b"><div>
+          <section class="m-doc-details" id="a97b9b40a936916eb15387003d10a995e"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">bool IO::<wbr />FileStream::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#aad8118c1136c4a07598de1b2c8738e9b" class="m-doc-self">SetPosition</a>(</span><span class="m-doc-wrap">int distance,
-              <a href="namespace_i_o.html#ae8092ef26cdcadafcb368e9914fce400" class="m-doc">PositionType</a> positionType = <a href="namespace_i_o.html#ae8092ef26cdcadafcb368e9914fce400aec274c84c558b69dfc1858338c38b7cc" class="m-doc">kPositionTypeBegin</a>) <span class="m-label m-warning">virtual</span></span></span>
+              <span class="m-doc-wrap-bumper">bool IO::<wbr />FileStream::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a97b9b40a936916eb15387003d10a995e" class="m-doc-self">SetPosition</a>(</span><span class="m-doc-wrap">int distance,
+              <a href="namespace_i_o.html#a3548a9e9ef60c2653c6cdba408e817fc" class="m-doc">PositionType</a> positionType = <a href="namespace_i_o.html#a3548a9e9ef60c2653c6cdba408e817fca1a06729125544cab7cee73195fc044f0" class="m-doc">PositionType::<wbr />Begin</a>) <span class="m-label m-warning">virtual</span></span></span>
             </h3>
             <p>Sets the read/write position of the stream.</p>
             <table class="m-table m-fullwidth m-flat">

@@ -46,7 +46,7 @@
       <div class="m-col-l-10 m-push-l-1">
         <h1>
           <span class="m-breadcrumb"><a href="namespace_resource.html">Resource</a>::<wbr/></span>StandardFileFilter <span class="m-thin">class</span>
-          <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_i_resource_filter_8h.html">&lt;Spore/Resource/IResourceFilter.h&gt;</a></div>
+          <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_i_key_filter_8h.html">&lt;Spore/Resource/IKeyFilter.h&gt;</a></div>
         </h1>
         <p>The standard file filter which filters resources depending on the <a href="struct_resource_key.html" class="m-doc">ResourceKey</a>.</p>
         <div class="m-block m-default">
@@ -68,7 +68,7 @@
           <h2><a href="#base-classes">Base classes</a></h2>
           <dl class="m-doc">
             <dt>
-              class <a href="class_resource_1_1_i_resource_filter.html" class="m-doc">IResourceFilter</a>
+              class <a href="class_resource_1_1_i_key_filter.html" class="m-doc">IKeyFilter</a>
             </dt>
             <dd>A generic interface used to filter <a href="struct_resource_key.html" class="m-doc">ResourceKey</a> objects.</dd>
           </dl>
@@ -127,9 +127,18 @@
             </h3>
             <p>A method used to determine whether a file with this <a href="struct_resource_key.html" class="m-doc">ResourceKey</a> name is accepted.</p>
             <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">name</td>
+                  <td></td>
+                </tr>
+              </tbody>
               <tfoot>
                 <tr>
-                  <th style="width: 1%">Returns</th>
+                  <th>Returns</th>
                   <td>True if the file is accepted, false otherwise.</td>
                 </tr>
               </tfoot>

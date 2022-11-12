@@ -58,7 +58,7 @@
                 <li><a href="#base-classes">Base classes</a></li>
                 <li><a href="#typeless-methods">Constructors, destructors, conversion operators</a></li>
                 <li><a href="#pub-methods">Public functions</a></li>
-                <li><a href="#pro-attribs">Protected variables</a></li>
+                <li><a href="#pub-attribs">Public variables</a></li>
               </ul>
             </li>
           </ul>
@@ -139,7 +139,7 @@
             <dt>
               <span class="m-doc-wrap-bumper">auto <a href="#a51e7d52f298d39640b7e19727632c45b" class="m-doc">SetActiveCameraByKey</a>(</span><span class="m-doc-wrap">const char16_t* pKeyString) -&gt; bool <span class="m-label m-flat m-warning">override</span></span>
             </dt>
-            <dd>Sets the active camera to the one that matches the given key string.</dd>
+            <dd>Sets the active camera to the one that matches the given key eastl::string.</dd>
             <dt>
               <span class="m-doc-wrap-bumper">auto <a href="#a7fe6fab18594fd26641aa227b57a9047" class="m-doc">SetActiveCameraByID</a>(</span><span class="m-doc-wrap">uint32_t cameraID) -&gt; bool <span class="m-label m-flat m-warning">override</span></span>
             </dt>
@@ -186,8 +186,8 @@
             <dd>Removes all the cameras and their mappings from this manager.</dd>
           </dl>
         </section>
-        <section id="pro-attribs">
-          <h2><a href="#pro-attribs">Protected variables</a></h2>
+        <section id="pub-attribs">
+          <h2><a href="#pub-attribs">Public variables</a></h2>
           <dl class="m-doc">
             <dt id="a1a3844b65d2d41af615b51d032c15ce0">
               int <a href="#a1a3844b65d2d41af615b51d032c15ce0" class="m-doc-self">mnRefCount</a>
@@ -197,28 +197,28 @@
               bool <a href="#a8a351886ede99f25b37642d8273f296b" class="m-doc-self">field_0C</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="a8dab55da537e59dd23eea37d1fea5640">
-              string <a href="#a8dab55da537e59dd23eea37d1fea5640" class="m-doc-self">mCheatKeyword</a>
+            <dt id="ad3d19db4eaac1e38cb8e09a50352dc5a">
+              eastl::string <a href="#ad3d19db4eaac1e38cb8e09a50352dc5a" class="m-doc-self">mCheatKeyword</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="a25382928bec4f8b22d18de811d3c98b8">
-              hash_map&lt;string16, int&gt; <a href="#a25382928bec4f8b22d18de811d3c98b8" class="m-doc-self">field_20</a>
+            <dt id="aabbe8daa2848521755f7514ef404befb">
+              eastl::hash_map&lt;eastl::string16, int&gt; <a href="#aabbe8daa2848521755f7514ef404befb" class="m-doc-self">field_20</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="ab3c5951dc5c7cb181ffe8aede97adc73">
-              hash_map&lt;uint32_t, <a href="namespace_app.html#a8e7a2854f38ce8e2b76e6f03989cc9e0" class="m-doc">CameraFactoryFunction_<wbr />t</a>&gt; <a href="#ab3c5951dc5c7cb181ffe8aede97adc73" class="m-doc-self">mTypeFactories</a>
+            <dt id="acf18cdf8f723a20917c057706317eaa9">
+              eastl::hash_map&lt;uint32_t, <a href="namespace_app.html#a8e7a2854f38ce8e2b76e6f03989cc9e0" class="m-doc">CameraFactoryFunction_<wbr />t</a>&gt; <a href="#acf18cdf8f723a20917c057706317eaa9" class="m-doc-self">mTypeFactories</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="a744a42094e92685ed49e287be1fea92c">
-              hash_map&lt;uint32_t, size_t&gt; <a href="#a744a42094e92685ed49e287be1fea92c" class="m-doc-self">mCameraIndices</a>
+            <dt id="abcbde4b9d930aea350313ae18d4df17d">
+              eastl::hash_map&lt;uint32_t, size_t&gt; <a href="#abcbde4b9d930aea350313ae18d4df17d" class="m-doc-self">mCameraIndices</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="ae2456593d82f0cb6e1c495a8bcad762b">
-              vector&lt;intrusive_ptr&lt;<a href="class_app_1_1_i_camera.html" class="m-doc">ICamera</a>&gt;&gt; <a href="#ae2456593d82f0cb6e1c495a8bcad762b" class="m-doc-self">mpCameras</a>
+            <dt id="a6c709df7b57241c7c6f7d25e5ba17648">
+              eastl::vector&lt;<a href="_i_camera_8h.html#a1cf152bd6210cb3ca6e8cb6f6e5d219b" class="m-doc">ICameraPtr</a>&gt; <a href="#a6c709df7b57241c7c6f7d25e5ba17648" class="m-doc-self">mpCameras</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="a0d5204b04771fed580b4084e6fea4347">
-              vector&lt;string16&gt; <a href="#a0d5204b04771fed580b4084e6fea4347" class="m-doc-self">mCameraNames</a>
+            <dt id="ada424a06ce3359d0222783566b360edc">
+              eastl::vector&lt;eastl::string16&gt; <a href="#ada424a06ce3359d0222783566b360edc" class="m-doc-self">mCameraNames</a>
             </dt>
             <dd><span></span></dd>
             <dt id="a96a4d29e652d8410ba526408c2c75ce0">
@@ -328,7 +328,7 @@
                 </tr>
                 <tr>
                   <td>pName</td>
-                  <td>[Optional] A string that identifies the camera.</td>
+                  <td>[Optional] A eastl::string that identifies the camera.</td>
                 </tr>
               </tbody>
             </table>
@@ -356,7 +356,7 @@
             <h3>
               <span class="m-doc-wrap-bumper">bool App::<wbr />cCameraManager::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a51e7d52f298d39640b7e19727632c45b" class="m-doc-self">SetActiveCameraByKey</a>(</span><span class="m-doc-wrap">const char16_t* pKeyString) <span class="m-label m-warning">override</span></span></span>
             </h3>
-            <p>Sets the active camera to the one that matches the given key string.</p>
+            <p>Sets the active camera to the one that matches the given key eastl::string.</p>
             <table class="m-table m-fullwidth m-flat">
               <thead>
                 <tr><th colspan="2">Parameters</th></tr>
@@ -364,7 +364,7 @@
               <tbody>
                 <tr>
                   <td style="width: 1%">pKeyString</td>
-                  <td>The string representation of a <a href="struct_resource_key.html" class="m-doc">ResourceKey</a>.</td>
+                  <td>The eastl::string representation of a <a href="struct_resource_key.html" class="m-doc">ResourceKey</a>.</td>
                 </tr>
               </tbody>
               <tfoot>
@@ -374,7 +374,7 @@
                 </tr>
               </tfoot>
             </table>
-<p>Only the instance ID will be used, the rest will be ignored. The string will be parsed using <a href="struct_resource_key.html#a1435cf8c86ce36755f85c921081604cf" class="m-doc">ResourceKey::<wbr />Parse()</a>. This will call <a href="class_app_1_1c_camera_manager.html#a7fe6fab18594fd26641aa227b57a9047" class="m-doc">SetActiveCameraByID(uint32_<wbr />t)</a>.</p>
+<p>Only the instance ID will be used, the rest will be ignored. The eastl::string will be parsed using <a href="struct_resource_key.html#a1435cf8c86ce36755f85c921081604cf" class="m-doc">ResourceKey::<wbr />Parse()</a>. This will call <a href="class_app_1_1c_camera_manager.html#a7fe6fab18594fd26641aa227b57a9047" class="m-doc">SetActiveCameraByID(uint32_<wbr />t)</a>.</p>
           </div></section>
           <section class="m-doc-details" id="a7fe6fab18594fd26641aa227b57a9047"><div>
             <h3>
@@ -429,7 +429,7 @@
               <tbody>
                 <tr>
                   <td style="width: 1%">pName</td>
-                  <td>A char c-string.</td>
+                  <td>A char c-eastl::string.</td>
                 </tr>
               </tbody>
             </table>

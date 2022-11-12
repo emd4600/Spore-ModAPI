@@ -100,45 +100,45 @@
               <span class="m-doc-wrap-bumper">auto <a href="#abdf119925d346feef1bf8f49147a1bb7" class="m-doc-self">Dispose</a>(</span><span class="m-doc-wrap">) -&gt; bool <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
             <dd><span></span></dd>
-            <dt id="a7c8ae06f862c17346ba755dc3253df33">
-              <span class="m-doc-wrap-bumper">void <a href="#a7c8ae06f862c17346ba755dc3253df33" class="m-doc-self">func14h</a>(</span><span class="m-doc-wrap">int) <span class="m-label m-flat m-warning">pure virtual</span></span>
+            <dt id="a5598909a17fd24c4966a9391c6189e6a">
+              <span class="m-doc-wrap-bumper">void <a href="#a5598909a17fd24c4966a9391c6189e6a" class="m-doc-self">Update</a>(</span><span class="m-doc-wrap">int) <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
             <dd><span></span></dd>
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#a17365a826c7667a44f35f7125e70011c" class="m-doc">CreateWorld</a>(</span><span class="m-doc-wrap">uint32_t worldID,
+              <span class="m-doc-wrap-bumper">auto <a href="#aa873af8845b3dd0acd67e1bcfd6d58e4" class="m-doc">CreateLightingWorld</a>(</span><span class="m-doc-wrap">uint32_t worldID,
               const char* pName = nullptr,
               uint32_t configID = 0) -&gt; <a href="class_graphics_1_1_i_lighting_world.html" class="m-doc">ILightingWorld</a>* <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
             <dd>Creates a new <a href="class_graphics_1_1_i_lighting_world.html" class="m-doc">ILightingWorld</a> and maps it to the specified ID.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#a2fc9dbec789546384fec2ca6af6bf47b" class="m-doc">GetWorld</a>(</span><span class="m-doc-wrap">uint32_t worldID) -&gt; <a href="class_graphics_1_1_i_lighting_world.html" class="m-doc">ILightingWorld</a>* <span class="m-label m-flat m-warning">pure virtual</span></span>
+              <span class="m-doc-wrap-bumper">auto <a href="#a9eeabe1fd57c385e88a8f54082eb3665" class="m-doc">GetLightingWorld</a>(</span><span class="m-doc-wrap">uint32_t worldID) -&gt; <a href="class_graphics_1_1_i_lighting_world.html" class="m-doc">ILightingWorld</a>* <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
             <dd>Returns the <a href="class_graphics_1_1_i_lighting_world.html" class="m-doc">ILightingWorld</a> previously mapped with the given ID, or nullptr if the ID is not mapped.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">void <a href="#a77fa9380d73d442a02750a95fc7fc824" class="m-doc">DisposeWorld</a>(</span><span class="m-doc-wrap">uint32_t worldID) <span class="m-label m-flat m-warning">pure virtual</span></span>
+              <span class="m-doc-wrap-bumper">void <a href="#aee71a3fc90147e1f4312036f986ccbb7" class="m-doc">RemoveLightingWorld</a>(</span><span class="m-doc-wrap">uint32_t worldID) <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
             <dd>Disposes the lighting world with the given ID, and removes it from this manager.</dd>
-            <dt id="a4f1e89439ada295441a0449105d2319a">
-              <span class="m-doc-wrap-bumper">auto <a href="#a4f1e89439ada295441a0449105d2319a" class="m-doc-self">func24h</a>(</span><span class="m-doc-wrap">) -&gt; <a href="struct_math_1_1_vector3.html" class="m-doc">Math::<wbr />Vector3</a> <span class="m-label m-flat m-warning">pure virtual</span></span>
+            <dt id="abdf844a20dbb680552ae78b38a9647bf">
+              <span class="m-doc-wrap-bumper">auto <a href="#abdf844a20dbb680552ae78b38a9647bf" class="m-doc-self">GetSunDir</a>(</span><span class="m-doc-wrap">) -&gt; <a href="struct_math_1_1_vector3.html" class="m-doc">Math::<wbr />Vector3</a> <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
             <dd><span></span></dd>
-            <dt id="ad9b7574a60843aa1868e15f035bed9c7">
-              <span class="m-doc-wrap-bumper">void <a href="#ad9b7574a60843aa1868e15f035bed9c7" class="m-doc-self">func28h</a>(</span><span class="m-doc-wrap">const <a href="struct_math_1_1_vector3.html" class="m-doc">Math::<wbr />Vector3</a>&amp;,
+            <dt id="a7b200395e03e8acedf33ba75d08196a8">
+              <span class="m-doc-wrap-bumper">void <a href="#a7b200395e03e8acedf33ba75d08196a8" class="m-doc-self">SetAtmosphereModel</a>(</span><span class="m-doc-wrap">const <a href="struct_math_1_1_vector3.html" class="m-doc">Math::<wbr />Vector3</a>&amp;,
               int,
-              int) <span class="m-label m-flat m-warning">pure virtual</span></span>
+              const <a href="struct_math_1_1_vector4.html" class="m-doc">Math::<wbr />Vector4</a>*) <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
             <dd><span></span></dd>
-            <dt id="a2feb1c4c4e52c46c1c0f8a817917d83f">
-              <span class="m-doc-wrap-bumper">void <a href="#a2feb1c4c4e52c46c1c0f8a817917d83f" class="m-doc-self">func2Ch</a>(</span><span class="m-doc-wrap">int) <span class="m-label m-flat m-warning">pure virtual</span></span>
+            <dt id="a2da6c79ff1a0fa44fb1a22f2f3cd383d">
+              <span class="m-doc-wrap-bumper">void <a href="#a2da6c79ff1a0fa44fb1a22f2f3cd383d" class="m-doc-self">SetExtendedFogging</a>(</span><span class="m-doc-wrap">int) <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
             <dd><span></span></dd>
           </dl>
         </section>
         <section>
           <h2>Function documentation</h2>
-          <section class="m-doc-details" id="a17365a826c7667a44f35f7125e70011c"><div>
+          <section class="m-doc-details" id="aa873af8845b3dd0acd67e1bcfd6d58e4"><div>
             <h3>
-              <span class="m-doc-wrap-bumper"><a href="class_graphics_1_1_i_lighting_world.html" class="m-doc">ILightingWorld</a>* Graphics::<wbr />ILightingManager::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a17365a826c7667a44f35f7125e70011c" class="m-doc-self">CreateWorld</a>(</span><span class="m-doc-wrap">uint32_t worldID,
+              <span class="m-doc-wrap-bumper"><a href="class_graphics_1_1_i_lighting_world.html" class="m-doc">ILightingWorld</a>* Graphics::<wbr />ILightingManager::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#aa873af8845b3dd0acd67e1bcfd6d58e4" class="m-doc-self">CreateLightingWorld</a>(</span><span class="m-doc-wrap">uint32_t worldID,
               const char* pName = nullptr,
               uint32_t configID = 0) <span class="m-label m-warning">pure virtual</span></span></span>
             </h3>
@@ -164,9 +164,9 @@
             </table>
 <p>The instance ID of the configuration file can optionally be specified, to load the lighting configuration.</p>
           </div></section>
-          <section class="m-doc-details" id="a2fc9dbec789546384fec2ca6af6bf47b"><div>
+          <section class="m-doc-details" id="a9eeabe1fd57c385e88a8f54082eb3665"><div>
             <h3>
-              <span class="m-doc-wrap-bumper"><a href="class_graphics_1_1_i_lighting_world.html" class="m-doc">ILightingWorld</a>* Graphics::<wbr />ILightingManager::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a2fc9dbec789546384fec2ca6af6bf47b" class="m-doc-self">GetWorld</a>(</span><span class="m-doc-wrap">uint32_t worldID) <span class="m-label m-warning">pure virtual</span></span></span>
+              <span class="m-doc-wrap-bumper"><a href="class_graphics_1_1_i_lighting_world.html" class="m-doc">ILightingWorld</a>* Graphics::<wbr />ILightingManager::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a9eeabe1fd57c385e88a8f54082eb3665" class="m-doc-self">GetLightingWorld</a>(</span><span class="m-doc-wrap">uint32_t worldID) <span class="m-label m-warning">pure virtual</span></span></span>
             </h3>
             <p>Returns the <a href="class_graphics_1_1_i_lighting_world.html" class="m-doc">ILightingWorld</a> previously mapped with the given ID, or nullptr if the ID is not mapped.</p>
             <table class="m-table m-fullwidth m-flat">
@@ -181,9 +181,9 @@
               </tbody>
             </table>
           </div></section>
-          <section class="m-doc-details" id="a77fa9380d73d442a02750a95fc7fc824"><div>
+          <section class="m-doc-details" id="aee71a3fc90147e1f4312036f986ccbb7"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">void Graphics::<wbr />ILightingManager::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a77fa9380d73d442a02750a95fc7fc824" class="m-doc-self">DisposeWorld</a>(</span><span class="m-doc-wrap">uint32_t worldID) <span class="m-label m-warning">pure virtual</span></span></span>
+              <span class="m-doc-wrap-bumper">void Graphics::<wbr />ILightingManager::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#aee71a3fc90147e1f4312036f986ccbb7" class="m-doc-self">RemoveLightingWorld</a>(</span><span class="m-doc-wrap">uint32_t worldID) <span class="m-label m-warning">pure virtual</span></span></span>
             </h3>
             <p>Disposes the lighting world with the given ID, and removes it from this manager.</p>
             <table class="m-table m-fullwidth m-flat">
@@ -197,7 +197,7 @@
                 </tr>
               </tbody>
             </table>
-<p>This method should be paired with the <a href="class_graphics_1_1_i_lighting_manager.html#a17365a826c7667a44f35f7125e70011c" class="m-doc">CreateWorld()</a> method; call it when the model world won&#x27;t be used anymore.</p>
+<p>This method should be paired with the CreateWorld() method; call it when the model world won&#x27;t be used anymore.</p>
           </div></section>
         </section>
       </div>

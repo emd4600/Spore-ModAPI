@@ -151,7 +151,7 @@
             <dd>Waits (blocks execution) until a texture has completely loaded.</dd>
             <dt>
               <span class="m-doc-wrap-bumper">auto <a href="#a4ebf0800fbb9adf17c1288abf3d99cdf" class="m-doc">AddTextureLoadDependency</a>(</span><span class="m-doc-wrap"><a href="class_graphics_1_1_texture.html" class="m-doc">Texture</a>* texture,
-              App::cJob* job) -&gt; bool <span class="m-label m-flat m-warning">pure virtual</span></span>
+              <a href="class_app_1_1c_job.html" class="m-doc">App::<wbr />cJob</a>* job) -&gt; bool <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
             <dd>For textures that have to be loaded asynchronously, adds the texture loading as a dependency for a job (that is, the job won&#x27;t execute until the texture finishes loading).</dd>
             <dt>
@@ -175,11 +175,11 @@
             </dt>
             <dd>Generates an automatic instance ID for group ID 0x40002200 and type ID <code>.raster</code>, then creates a new raster texture and adds it to the raster manager, referenced by the given group and instance IDs.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#a3bdc53227095e799484d197839291072" class="m-doc">WriteTexture</a>(</span><span class="m-doc-wrap"><a href="class_graphics_1_1_texture.html" class="m-doc">Texture</a>* texture,
-              <a href="namespace_resource.html#ab12e5000d7ef0108f3200a644b54a682" class="m-doc">Resource::<wbr />DBPF</a>* pDBPF,
+              <span class="m-doc-wrap-bumper">auto <a href="#ac458c9d3d4c86dd9416b28fea3ceb574" class="m-doc">WriteTexture</a>(</span><span class="m-doc-wrap"><a href="class_graphics_1_1_texture.html" class="m-doc">Texture</a>* texture,
+              <a href="class_resource_1_1_database.html" class="m-doc">Resource::<wbr />Database</a>* database,
               bool async) -&gt; bool <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
-            <dd>Saves a texture into the given <a href="namespace_resource.html#ab12e5000d7ef0108f3200a644b54a682" class="m-doc">Resource::<wbr />DBPF</a> package, as a <code>.raster</code> file (it will use the <code>.raster</code> type ID regardless of the texture key)</dd>
+            <dd>Saves a texture into the given database (package or folder), as a <code>.raster</code> file (it will use the <code>.raster</code> type ID regardless of the texture key)</dd>
             <dt>
               <span class="m-doc-wrap-bumper">auto <a href="#a3c09f69ccd0ea24b43b3b23e368e6c21" class="m-doc">AddRasterAutoKey</a>(</span><span class="m-doc-wrap"><a href="struct_render_ware_1_1_raster.html" class="m-doc">RenderWare::<wbr />Raster</a>* pRaster,
               int flags = 0) -&gt; <a href="class_graphics_1_1_texture.html" class="m-doc">Texture</a>* <span class="m-label m-flat m-warning">pure virtual</span></span>
@@ -395,7 +395,7 @@
           <section class="m-doc-details" id="a4ebf0800fbb9adf17c1288abf3d99cdf"><div>
             <h3>
               <span class="m-doc-wrap-bumper">bool Graphics::<wbr />ITextureManager::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a4ebf0800fbb9adf17c1288abf3d99cdf" class="m-doc-self">AddTextureLoadDependency</a>(</span><span class="m-doc-wrap"><a href="class_graphics_1_1_texture.html" class="m-doc">Texture</a>* texture,
-              App::cJob* job) <span class="m-label m-warning">pure virtual</span></span></span>
+              <a href="class_app_1_1c_job.html" class="m-doc">App::<wbr />cJob</a>* job) <span class="m-label m-warning">pure virtual</span></span></span>
             </h3>
             <p>For textures that have to be loaded asynchronously, adds the texture loading as a dependency for a job (that is, the job won&#x27;t execute until the texture finishes loading).</p>
             <table class="m-table m-fullwidth m-flat">
@@ -512,13 +512,13 @@
               </tfoot>
             </table>
           </div></section>
-          <section class="m-doc-details" id="a3bdc53227095e799484d197839291072"><div>
+          <section class="m-doc-details" id="ac458c9d3d4c86dd9416b28fea3ceb574"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">bool Graphics::<wbr />ITextureManager::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a3bdc53227095e799484d197839291072" class="m-doc-self">WriteTexture</a>(</span><span class="m-doc-wrap"><a href="class_graphics_1_1_texture.html" class="m-doc">Texture</a>* texture,
-              <a href="namespace_resource.html#ab12e5000d7ef0108f3200a644b54a682" class="m-doc">Resource::<wbr />DBPF</a>* pDBPF,
+              <span class="m-doc-wrap-bumper">bool Graphics::<wbr />ITextureManager::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ac458c9d3d4c86dd9416b28fea3ceb574" class="m-doc-self">WriteTexture</a>(</span><span class="m-doc-wrap"><a href="class_graphics_1_1_texture.html" class="m-doc">Texture</a>* texture,
+              <a href="class_resource_1_1_database.html" class="m-doc">Resource::<wbr />Database</a>* database,
               bool async) <span class="m-label m-warning">pure virtual</span></span></span>
             </h3>
-            <p>Saves a texture into the given <a href="namespace_resource.html#ab12e5000d7ef0108f3200a644b54a682" class="m-doc">Resource::<wbr />DBPF</a> package, as a <code>.raster</code> file (it will use the <code>.raster</code> type ID regardless of the texture key)</p>
+            <p>Saves a texture into the given database (package or folder), as a <code>.raster</code> file (it will use the <code>.raster</code> type ID regardless of the texture key)</p>
             <table class="m-table m-fullwidth m-flat">
               <thead>
                 <tr><th colspan="2">Parameters</th></tr>
@@ -529,7 +529,7 @@
                   <td></td>
                 </tr>
                 <tr>
-                  <td>pDBPF</td>
+                  <td>database</td>
                   <td></td>
                 </tr>
                 <tr>

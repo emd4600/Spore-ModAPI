@@ -93,7 +93,6 @@
           <li class="m-doc-collapsible">
             <a href="#" onclick="return toggle(this)">namespace</a> <a href="namespace_app.html" class="m-doc">App</a> <span class="m-doc"></span>
             <ul class="m-doc">
-              <li>namespace <a href="namespace_app_1_1_app_data.html" class="m-doc">AppData</a> <span class="m-doc"><span></span></span></li>
               <li>namespace <a href="namespace_app_1_1_scenario_mode__addresses.html" class="m-doc">ScenarioMode_addresses</a> <span class="m-doc"><span></span></span></li>
               <li>namespace <a href="namespace_app_1_1_s_p_property_i_ds.html" class="m-doc">SPPropertyIDs</a> <span class="m-doc">This namespace only contains property IDs to be used in the AppProperties module.</span></li>
               <li>class <a href="class_app_1_1c_camera_manager.html" class="m-doc">cCameraManager</a> <span class="m-doc">The implementation of <a href="class_app_1_1_i_camera_manager.html" class="m-doc">ICameraManager</a>; this should only be used for extending and detouring.</span></li>
@@ -105,6 +104,7 @@
                 </ul>
               </li>
               <li>class <a href="class_app_1_1c_i_d_generator.html" class="m-doc">cIDGenerator</a> <span class="m-doc"><span></span></span></li>
+              <li>class <a href="class_app_1_1c_job.html" class="m-doc">cJob</a> <span class="m-doc"><span></span></span></li>
               <li>class <a href="class_app_1_1c_locale_manager.html" class="m-doc">cLocaleManager</a> <span class="m-doc"><span></span></span></li>
               <li>class <a href="class_app_1_1c_message_manager.html" class="m-doc">cMessageManager</a> <span class="m-doc">The implementation of <a href="class_app_1_1_i_message_manager.html" class="m-doc">IMessageManager</a>; this should only be used for extending and detouring.</span></li>
               <li>class <a href="class_app_1_1c_prop_manager.html" class="m-doc">cPropManager</a> <span class="m-doc">The implementation of <a href="class_app_1_1_i_prop_manager.html" class="m-doc">IPropManager</a>; this should only be used for extending and detouring.</span></li>
@@ -134,6 +134,7 @@
               <li>class <a href="class_app_1_1_i_game_mode.html" class="m-doc">IGameMode</a> <span class="m-doc">An interface that represents a mode in the game, that can receive mouse/keyboard input and update every frame.</span></li>
               <li>class <a href="class_app_1_1_i_game_mode_manager.html" class="m-doc">IGameModeManager</a> <span class="m-doc">A manager that takes care of game modes; check <a href="class_app_1_1_i_game_mode.html" class="m-doc">IGameMode</a> for more information.</span></li>
               <li>class <a href="class_app_1_1_i_game_mode_object.html" class="m-doc">IGameModeObject</a> <span class="m-doc">Same as <a href="class_app_1_1_i_game_mode.html" class="m-doc">App::<wbr />IGameMode</a>, but this one includes a Cast method similar to the one in the <a href="class_object.html" class="m-doc">Object</a> class.</span></li>
+              <li>class <a href="class_app_1_1_i_job_manager.html" class="m-doc">IJobManager</a> <span class="m-doc"><span></span></span></li>
               <li>class <a href="class_app_1_1_i_message_listener.html" class="m-doc">IMessageListener</a> <span class="m-doc">An interface that can receive messages sent through the app.</span></li>
               <li class="m-doc-collapsible collapsed">
                 <a href="#" onclick="return toggle(this)">class</a> <a href="class_app_1_1_i_message_manager.html" class="m-doc">IMessageManager</a> <span class="m-doc">This manager defines a messaging system, that allows communication between different parts of the code.</span>
@@ -231,7 +232,6 @@
               <li>class <a href="class_editors_1_1_i_editor_limits.html" class="m-doc">IEditorLimits</a> <span class="m-doc"><span></span></span></li>
               <li>class <a href="class_editors_1_1_i_nameable_entity.html" class="m-doc">INameableEntity</a> <span class="m-doc"><span></span></span></li>
               <li>class <a href="class_editors_1_1_i_ref_counted.html" class="m-doc">IRefCounted</a> <span class="m-doc"><span></span></span></li>
-              <li>class <a href="class_editors_1_1_paint_mode_category.html" class="m-doc">PaintModeCategory</a> <span class="m-doc"><span></span></span></li>
               <li>class <a href="class_editors_1_1_play_anim_button.html" class="m-doc">PlayAnimButton</a> <span class="m-doc"><span></span></span></li>
               <li>class <a href="class_editors_1_1_play_anim_panel.html" class="m-doc">PlayAnimPanel</a> <span class="m-doc"><span></span></span></li>
               <li class="m-doc-collapsible collapsed">
@@ -264,31 +264,56 @@
             <a href="#" onclick="return toggle(this)">namespace</a> <a href="namespace_graphics.html" class="m-doc">Graphics</a> <span class="m-doc">All the graphics system: rendering, shaders, models, lighting, textures,...</span>
             <ul class="m-doc">
               <li>namespace <a href="namespace_graphics_1_1_global_state.html" class="m-doc">GlobalState</a> <span class="m-doc"><span></span></span></li>
+              <li>namespace <a href="namespace_graphics_1_1_renderer__addresses.html" class="m-doc">Renderer_addresses</a> <span class="m-doc"><span></span></span></li>
               <li class="m-doc-collapsible collapsed">
-                <a href="#" onclick="return toggle(this)">namespace</a> <a href="namespace_graphics_1_1_renderer.html" class="m-doc">Renderer</a> <span class="m-doc">This namespace contains most internal stuff related with rendering, such as Direct3D Device and shaders, shader data, etc.</span>
+                <a href="#" onclick="return toggle(this)">namespace</a> <a href="namespace_graphics_1_1_render_utils.html" class="m-doc">RenderUtils</a> <span class="m-doc">This namespace contains most internal stuff related with rendering, such as Direct3D Device and shaders, shader data, etc.</span>
                 <ul class="m-doc">
-                  <li>struct <a href="struct_graphics_1_1_renderer_1_1_device_parameters.html" class="m-doc">DeviceParameters</a> <span class="m-doc"><span></span></span></li>
-                </ul>
-              </li>
-              <li class="m-doc-collapsible collapsed">
-                <a href="#" onclick="return toggle(this)">class</a> <a href="class_graphics_1_1_animations.html" class="m-doc">Animations</a> <span class="m-doc"><span></span></span>
-                <ul class="m-doc">
-                  <li>struct <a href="struct_graphics_1_1_animations_1_1_internal_render_ware_data.html" class="m-doc">InternalRenderWareData</a> <span class="m-doc"><span></span></span></li>
+                  <li>struct <a href="struct_graphics_1_1_render_utils_1_1_device_parameters.html" class="m-doc">DeviceParameters</a> <span class="m-doc"><span></span></span></li>
                 </ul>
               </li>
               <li>class <a href="class_graphics_1_1c_buffer_draw.html" class="m-doc">cBufferDraw</a> <span class="m-doc"><span></span></span></li>
               <li>class <a href="class_graphics_1_1c_image_data.html" class="m-doc">cImageData</a> <span class="m-doc"><span></span></span></li>
               <li>class <a href="class_graphics_1_1c_image_data_raw.html" class="m-doc">cImageDataRaw</a> <span class="m-doc"><span></span></span></li>
+              <li class="m-doc-collapsible collapsed">
+                <a href="#" onclick="return toggle(this)">class</a> <a href="class_graphics_1_1c_layer_group.html" class="m-doc">cLayerGroup</a> <span class="m-doc">An implementation of <a href="class_graphics_1_1_i_layer.html" class="m-doc">ILayer</a> that renders a sequence of layers.</span>
+                <ul class="m-doc">
+                  <li>struct <a href="struct_graphics_1_1c_layer_group_1_1c_layer_info.html" class="m-doc">cLayerInfo</a> <span class="m-doc"><span></span></span></li>
+                </ul>
+              </li>
+              <li class="m-doc-collapsible collapsed">
+                <a href="#" onclick="return toggle(this)">class</a> <a href="class_graphics_1_1c_lighting_config.html" class="m-doc">cLightingConfig</a> <span class="m-doc"><span></span></span>
+                <ul class="m-doc">
+                  <li>struct <a href="struct_graphics_1_1c_lighting_config_1_1_directional_light.html" class="m-doc">DirectionalLight</a> <span class="m-doc"><span></span></span></li>
+                </ul>
+              </li>
               <li>class <a href="class_graphics_1_1c_material_info.html" class="m-doc">cMaterialInfo</a> <span class="m-doc"><span></span></span></li>
               <li>class <a href="class_graphics_1_1c_material_manager.html" class="m-doc">cMaterialManager</a> <span class="m-doc">The implementation of <a href="class_graphics_1_1_i_material_manager.html" class="m-doc">IMaterialManager</a>; this should only be used for extending and detouring.</span></li>
+              <li>class <a href="class_graphics_1_1c_mesh_data.html" class="m-doc">cMeshData</a> <span class="m-doc"><span></span></span></li>
               <li class="m-doc-collapsible collapsed">
                 <a href="#" onclick="return toggle(this)">class</a> <a href="class_graphics_1_1c_m_i_texture_set.html" class="m-doc">cMITextureSet</a> <span class="m-doc"><span></span></span>
                 <ul class="m-doc">
                   <li>struct <a href="struct_graphics_1_1c_m_i_texture_set_1_1_entry.html" class="m-doc">Entry</a> <span class="m-doc"><span></span></span></li>
                 </ul>
               </li>
+              <li>class <a href="class_graphics_1_1c_model_instance.html" class="m-doc">cModelInstance</a> <span class="m-doc"><span></span></span></li>
+              <li class="m-doc-collapsible collapsed">
+                <a href="#" onclick="return toggle(this)">class</a> <a href="class_graphics_1_1c_model_instance_animations.html" class="m-doc">cModelInstanceAnimations</a> <span class="m-doc"><span></span></span>
+                <ul class="m-doc">
+                  <li>struct <a href="struct_graphics_1_1c_model_instance_animations_1_1_internal_render_ware_data.html" class="m-doc">InternalRenderWareData</a> <span class="m-doc"><span></span></span></li>
+                </ul>
+              </li>
               <li>class <a href="class_graphics_1_1c_model_manager.html" class="m-doc">cModelManager</a> <span class="m-doc">The implementation of <a href="class_graphics_1_1_i_model_manager.html" class="m-doc">IModelManager</a>; this should only be used for extending and detouring.</span></li>
+              <li>struct <a href="struct_graphics_1_1c_m_w_hull.html" class="m-doc">cMWHull</a> <span class="m-doc"><span></span></span></li>
+              <li class="m-doc-collapsible collapsed">
+                <a href="#" onclick="return toggle(this)">class</a> <a href="class_graphics_1_1c_m_w_model_internal.html" class="m-doc">cMWModelInternal</a> <span class="m-doc"><span></span></span>
+                <ul class="m-doc">
+                  <li>struct <a href="struct_graphics_1_1c_m_w_model_internal_1_1_effect_instance.html" class="m-doc">EffectInstance</a> <span class="m-doc"><span></span></span></li>
+                  <li>struct <a href="struct_graphics_1_1c_m_w_model_internal_1_1_model_lights.html" class="m-doc">ModelLights</a> <span class="m-doc"><span></span></span></li>
+                </ul>
+              </li>
+              <li>struct <a href="struct_graphics_1_1c_m_w_transformed_hull.html" class="m-doc">cMWTransformedHull</a> <span class="m-doc"><span></span></span></li>
               <li>class <a href="class_graphics_1_1_compiled_shader.html" class="m-doc">CompiledShader</a> <span class="m-doc"><span></span></span></li>
+              <li>struct <a href="struct_graphics_1_1c_render_job_info.html" class="m-doc">cRenderJobInfo</a> <span class="m-doc"><span></span></span></li>
               <li>class <a href="class_graphics_1_1c_render_manager.html" class="m-doc">cRenderManager</a> <span class="m-doc"><span></span></span></li>
               <li class="m-doc-collapsible collapsed">
                 <a href="#" onclick="return toggle(this)">class</a> <a href="class_graphics_1_1c_render_target_manager.html" class="m-doc">cRenderTargetManager</a> <span class="m-doc"><span></span></span>
@@ -298,61 +323,41 @@
                 </ul>
               </li>
               <li>class <a href="class_graphics_1_1c_rw_direct_resource.html" class="m-doc">cRwDirectResource</a> <span class="m-doc"><span></span></span></li>
+              <li>struct <a href="struct_graphics_1_1c_screen_info.html" class="m-doc">cScreenInfo</a> <span class="m-doc"><span></span></span></li>
               <li>class <a href="class_graphics_1_1c_texture_manager.html" class="m-doc">cTextureManager</a> <span class="m-doc">The implementation of <a href="class_graphics_1_1_i_texture_manager.html" class="m-doc">ITextureManager</a>; this should only be used for extending and detouring.</span></li>
               <li>struct <a href="struct_graphics_1_1_filter_settings.html" class="m-doc">FilterSettings</a> <span class="m-doc"><span></span></span></li>
               <li>class <a href="class_graphics_1_1_generated_mesh.html" class="m-doc">GeneratedMesh</a> <span class="m-doc"><span></span></span></li>
               <li>class <a href="class_graphics_1_1_gmdl_render_asset.html" class="m-doc">GmdlRenderAsset</a> <span class="m-doc"><span></span></span></li>
               <li>class <a href="class_graphics_1_1_i_graphics_manager.html" class="m-doc">IGraphicsManager</a> <span class="m-doc"><span></span></span></li>
+              <li>class <a href="class_graphics_1_1_i_layer.html" class="m-doc">ILayer</a> <span class="m-doc">This interfaces defines a layer that is rendered every game loop, by callings its <a href="class_graphics_1_1_i_layer.html#ae4812c7ed39d6dcaf98088c7ae5211b0" class="m-doc">ILayer::<wbr />DrawLayer()</a> method.</span></li>
               <li>class <a href="class_graphics_1_1_i_lighting_manager.html" class="m-doc">ILightingManager</a> <span class="m-doc">This manager handles the lighting configurations in the game.</span></li>
               <li>class <a href="class_graphics_1_1_i_lighting_world.html" class="m-doc">ILightingWorld</a> <span class="m-doc">A lighting world is a space with a specific lighting configuration.</span></li>
               <li>class <a href="class_graphics_1_1_i_material_manager.html" class="m-doc">IMaterialManager</a> <span class="m-doc">This manager stores the information of materials, which are used to control the visual appearance of game objects.</span></li>
               <li>class <a href="class_graphics_1_1_i_model_manager.html" class="m-doc">IModelManager</a> <span class="m-doc">This manager stores the model worlds in the game; for more info, check the <a href="class_graphics_1_1_i_model_world.html" class="m-doc">IModelWorld</a> class.</span></li>
               <li>class <a href="class_graphics_1_1_i_model_world.html" class="m-doc">IModelWorld</a> <span class="m-doc">A model world is a space where models can be rendered in the game.</span></li>
               <li>class <a href="class_graphics_1_1_i_raw_image.html" class="m-doc">IRawImage</a> <span class="m-doc"><span></span></span></li>
-              <li>class <a href="class_graphics_1_1_i_renderable.html" class="m-doc">IRenderable</a> <span class="m-doc">This interface defines an object that can be rendered, and whose render method is called on every game loop.</span></li>
               <li class="m-doc-collapsible collapsed">
-                <a href="#" onclick="return toggle(this)">class</a> <a href="class_graphics_1_1_i_render_manager.html" class="m-doc">IRenderManager</a> <span class="m-doc">This class manages the rendering process in the game.</span>
+                <a href="#" onclick="return toggle(this)">class</a> <a href="class_graphics_1_1_i_renderer.html" class="m-doc">IRenderer</a> <span class="m-doc">This class manages the rendering process in the game.</span>
                 <ul class="m-doc">
-                  <li>struct <a href="struct_graphics_1_1_i_render_manager_1_1_render_layer.html" class="m-doc">RenderLayer</a> <span class="m-doc"><span></span></span></li>
+                  <li>struct <a href="struct_graphics_1_1_i_renderer_1_1c_layer_info.html" class="m-doc">cLayerInfo</a> <span class="m-doc"><span></span></span></li>
                 </ul>
               </li>
               <li>class <a href="class_graphics_1_1_i_render_target_manager.html" class="m-doc">IRenderTargetManager</a> <span class="m-doc"><span></span></span></li>
-              <li>class <a href="class_graphics_1_1_i_shadow_manager.html" class="m-doc">IShadowManager</a> <span class="m-doc"><span></span></span></li>
+              <li>class <a href="class_graphics_1_1_i_shadow_world.html" class="m-doc">IShadowWorld</a> <span class="m-doc"><span></span></span></li>
               <li>class <a href="class_graphics_1_1_i_texture_manager.html" class="m-doc">ITextureManager</a> <span class="m-doc"><span></span></span></li>
               <li>class <a href="class_graphics_1_1_i_thumbnail_manager.html" class="m-doc">IThumbnailManager</a> <span class="m-doc"><span></span></span></li>
-              <li>class <a href="class_graphics_1_1_lambda_renderable.html" class="m-doc">LambdaRenderable</a> <span class="m-doc"><span></span></span></li>
+              <li>class <a href="class_graphics_1_1_lambda_layer.html" class="m-doc">LambdaLayer</a> <span class="m-doc"><span></span></span></li>
               <li>struct <a href="struct_graphics_1_1_light.html" class="m-doc">Light</a> <span class="m-doc"><span></span></span></li>
-              <li class="m-doc-collapsible collapsed">
-                <a href="#" onclick="return toggle(this)">class</a> <a href="class_graphics_1_1_lighting_properties.html" class="m-doc">LightingProperties</a> <span class="m-doc"><span></span></span>
-                <ul class="m-doc">
-                  <li>struct <a href="struct_graphics_1_1_lighting_properties_1_1_directional_light.html" class="m-doc">DirectionalLight</a> <span class="m-doc"><span></span></span></li>
-                </ul>
-              </li>
               <li>class <a href="class_graphics_1_1_material.html" class="m-doc">Material</a> <span class="m-doc">Represents a material that controls the visual appearance of game objects.</span></li>
               <li>class <a href="class_graphics_1_1_material_shader.html" class="m-doc">MaterialShader</a> <span class="m-doc"><span></span></span></li>
               <li>class <a href="class_graphics_1_1_model.html" class="m-doc">Model</a> <span class="m-doc"><span></span></span></li>
-              <li class="m-doc-collapsible collapsed">
-                <a href="#" onclick="return toggle(this)">class</a> <a href="class_graphics_1_1_model_asset.html" class="m-doc">ModelAsset</a> <span class="m-doc"><span></span></span>
-                <ul class="m-doc">
-                  <li>struct <a href="struct_graphics_1_1_model_asset_1_1_effect_instance.html" class="m-doc">EffectInstance</a> <span class="m-doc"><span></span></span></li>
-                  <li>struct <a href="struct_graphics_1_1_model_asset_1_1_model_lights.html" class="m-doc">ModelLights</a> <span class="m-doc"><span></span></span></li>
-                </ul>
-              </li>
-              <li>class <a href="class_graphics_1_1_model_mesh.html" class="m-doc">ModelMesh</a> <span class="m-doc"><span></span></span></li>
               <li>struct <a href="struct_graphics_1_1_morph_handle_info.html" class="m-doc">MorphHandleInfo</a> <span class="m-doc"><span></span></span></li>
               <li>struct <a href="struct_graphics_1_1_named_shader_data_uniform.html" class="m-doc">NamedShaderDataUniform</a> <span class="m-doc"><span></span></span></li>
               <li>class <a href="class_graphics_1_1_planet_thumbnail_request.html" class="m-doc">PlanetThumbnailRequest</a> <span class="m-doc"><span></span></span></li>
               <li>struct <a href="struct_graphics_1_1_pos_normal_vertex.html" class="m-doc">PosNormalVertex</a> <span class="m-doc"><span></span></span></li>
               <li>struct <a href="struct_graphics_1_1_pos_uv_vertex.html" class="m-doc">PosUvVertex</a> <span class="m-doc"><span></span></span></li>
-              <li>struct <a href="struct_graphics_1_1_rendererer_params.html" class="m-doc">RenderererParams</a> <span class="m-doc"><span></span></span></li>
               <li>struct <a href="struct_graphics_1_1_render_statistics.html" class="m-doc">RenderStatistics</a> <span class="m-doc"><span></span></span></li>
               <li>struct <a href="struct_graphics_1_1_render_target_i_d.html" class="m-doc">RenderTargetID</a> <span class="m-doc"><span></span></span></li>
-              <li class="m-doc-collapsible collapsed">
-                <a href="#" onclick="return toggle(this)">class</a> <a href="class_graphics_1_1_sequence_renderable.html" class="m-doc">SequenceRenderable</a> <span class="m-doc">An implementation of <a href="class_graphics_1_1_i_renderable.html" class="m-doc">IRenderable</a> that renders a sequence of IRenderables.</span>
-                <ul class="m-doc">
-                  <li>struct <a href="struct_graphics_1_1_sequence_renderable_1_1_entry.html" class="m-doc">Entry</a> <span class="m-doc"><span></span></span></li>
-                </ul>
-              </li>
               <li>class <a href="class_graphics_1_1_shader_builder.html" class="m-doc">ShaderBuilder</a> <span class="m-doc"><span></span></span></li>
               <li>struct <a href="struct_graphics_1_1_shader_builder_entry.html" class="m-doc">ShaderBuilderEntry</a> <span class="m-doc"><span></span></span></li>
               <li>struct <a href="struct_graphics_1_1_shader_data_information.html" class="m-doc">ShaderDataInformation</a> <span class="m-doc"><span></span></span></li>
@@ -370,6 +375,8 @@
           <li class="m-doc-collapsible">
             <a href="#" onclick="return toggle(this)">namespace</a> <a href="namespace_i_o.html" class="m-doc">IO</a> <span class="m-doc">Classes to work with file input/output, that is, reading and writing data into files.</span>
             <ul class="m-doc">
+              <li>namespace <a href="namespace_i_o_1_1_directory.html" class="m-doc">Directory</a> <span class="m-doc"><span></span></span></li>
+              <li>namespace <a href="namespace_i_o_1_1_file.html" class="m-doc">File</a> <span class="m-doc"><span></span></span></li>
               <li>class <a href="class_i_o_1_1_e_a_i_o_zone_object.html" class="m-doc">EAIOZoneObject</a> <span class="m-doc">A class derived from <a href="class_i_o_1_1_e_a_i_o_zone_object.html" class="m-doc">EAIOZoneObject</a> is able to be allocated from different heaps without the owner of the object needing to know or care which heap the object came from or even what kind of allocator the object is using.</span></li>
               <li>class <a href="class_i_o_1_1_file_stream.html" class="m-doc">FileStream</a> <span class="m-doc"><span></span></span></li>
               <li>class <a href="class_i_o_1_1_fixed_memory_stream.html" class="m-doc">FixedMemoryStream</a> <span class="m-doc">Implements an memory-based stream that supports the <a href="class_i_o_1_1_i_stream.html" class="m-doc">IStream</a> interface.</span></li>
@@ -463,6 +470,7 @@
               <li>struct <a href="struct_render_ware_1_1_animations.html" class="m-doc">Animations</a> <span class="m-doc"><span></span></span></li>
               <li>struct <a href="struct_render_ware_1_1_animation_skin.html" class="m-doc">AnimationSkin</a> <span class="m-doc">A structure that contains the bind pose transformations of all bones.</span></li>
               <li>struct <a href="struct_render_ware_1_1_anim_channel.html" class="m-doc">AnimChannel</a> <span class="m-doc">A channel is the group of keyframes that modify a bone.</span></li>
+              <li>struct <a href="struct_render_ware_1_1c_m_d_bone_transform.html" class="m-doc">cMDBoneTransform</a> <span class="m-doc"><span></span></span></li>
               <li>struct <a href="struct_render_ware_1_1_compiled_state.html" class="m-doc">CompiledState</a> <span class="m-doc">This structure contains properties that tells the renderer how to draw a certain object.</span></li>
               <li>struct <a href="struct_render_ware_1_1_index_buffer.html" class="m-doc">IndexBuffer</a> <span class="m-doc">A buffer that contains all the indices (so triangles) data.</span></li>
               <li>struct <a href="struct_render_ware_1_1_keyframe_anim.html" class="m-doc">KeyframeAnim</a> <span class="m-doc">A structure that represents an animation made of multiple keyframes.</span></li>
@@ -472,7 +480,6 @@
                   <li>struct <a href="struct_render_ware_1_1_keyframe_data_1_1___loc_rot_scale.html" class="m-doc">_LocRotScale</a> <span class="m-doc"><span></span></span></li>
                 </ul>
               </li>
-              <li>struct <a href="struct_render_ware_1_1_matrix3x4.html" class="m-doc">Matrix3x4</a> <span class="m-doc"><span></span></span></li>
               <li>struct <a href="struct_render_ware_1_1_mesh.html" class="m-doc">Mesh</a> <span class="m-doc">A structure that represents a basic mesh, made up of vertices and triangles.</span></li>
               <li>struct <a href="struct_render_ware_1_1_mesh__.html" class="m-doc">Mesh_</a> <span class="m-doc"><span></span></span></li>
               <li>struct <a href="struct_render_ware_1_1_mesh_compiled_state_link.html" class="m-doc">MeshCompiledStateLink</a> <span class="m-doc">This structure links one or more compiled states (that is, materials) to a mesh.</span></li>
@@ -498,31 +505,36 @@
           <li class="m-doc-collapsible">
             <a href="#" onclick="return toggle(this)">namespace</a> <a href="namespace_resource.html" class="m-doc">Resource</a> <span class="m-doc">The system for accessing file resources stored in .package files.</span>
             <ul class="m-doc">
-              <li>class <a href="class_resource_1_1_async_resource.html" class="m-doc">AsyncResource</a> <span class="m-doc"><span></span></span></li>
+              <li>namespace <a href="namespace_resource_1_1_paths.html" class="m-doc">Paths</a> <span class="m-doc"><span></span></span></li>
+              <li>class <a href="class_resource_1_1_cached_resource_object.html" class="m-doc">CachedResourceObject</a> <span class="m-doc"><span></span></span></li>
+              <li>class <a href="class_resource_1_1c_i_release_callback.html" class="m-doc">cIReleaseCallback</a> <span class="m-doc"><span></span></span></li>
               <li>class <a href="class_resource_1_1c_resource_manager.html" class="m-doc">cResourceManager</a> <span class="m-doc">The implementation of <a href="class_resource_1_1_i_resource_manager.html" class="m-doc">IResourceManager</a>; this should only be used for extending and detouring.</span></li>
+              <li>class <a href="class_resource_1_1_database.html" class="m-doc">Database</a> <span class="m-doc"><span></span></span></li>
               <li class="m-doc-collapsible collapsed">
-                <a href="#" onclick="return toggle(this)">class</a> <a href="class_resource_1_1_database_packed_file.html" class="m-doc">DatabasePackedFile</a> <span class="m-doc">A <a href="class_resource_1_1_database_packed_file.html" class="m-doc">DatabasePackedFile</a> is a type of file used in Spore to store and index multiple files inside a single container (usually in the .package extension).</span>
+                <a href="#" onclick="return toggle(this)">class</a> <a href="class_resource_1_1_database_directory_files.html" class="m-doc">DatabaseDirectoryFiles</a> <span class="m-doc"><span></span></span>
                 <ul class="m-doc">
-                  <li>struct <a href="struct_resource_1_1_database_packed_file_1_1_unknown.html" class="m-doc">Unknown</a> <span class="m-doc"><span></span></span></li>
+                  <li>struct <a href="struct_resource_1_1_database_directory_files_1_1_d_d_f_record_list_data.html" class="m-doc">DDFRecordListData</a> <span class="m-doc"><span></span></span></li>
                 </ul>
               </li>
-              <li>struct <a href="struct_resource_1_1_d_b_p_f_item.html" class="m-doc">DBPFItem</a> <span class="m-doc">A structure that contains the metadata of a file stored in a DBPF, such as the offset in the package file and the size.</span></li>
-              <li>class <a href="class_resource_1_1_i_p_f_record.html" class="m-doc">IPFRecord</a> <span class="m-doc">This interface defines the methods required to access the data of a file contained in a DBPF.</span></li>
-              <li>class <a href="class_resource_1_1_i_resource_container.html" class="m-doc">IResourceContainer</a> <span class="m-doc"><span></span></span></li>
+              <li>class <a href="class_resource_1_1_database_packed_file.html" class="m-doc">DatabasePackedFile</a> <span class="m-doc">A <a href="class_resource_1_1_database_packed_file.html" class="m-doc">DatabasePackedFile</a> is a type of file used in Spore to store and index multiple files inside a single container (usually in the .package extension).</span></li>
+              <li>class <a href="class_resource_1_1_i_async_request.html" class="m-doc">IAsyncRequest</a> <span class="m-doc"><span></span></span></li>
+              <li>class <a href="class_resource_1_1_i_cache.html" class="m-doc">ICache</a> <span class="m-doc">An interface that is used to cache loaded resources for fast access.</span></li>
+              <li>class <a href="class_resource_1_1_i_key_filter.html" class="m-doc">IKeyFilter</a> <span class="m-doc">A generic interface used to filter <a href="struct_resource_key.html" class="m-doc">ResourceKey</a> objects.</span></li>
+              <li>class <a href="class_resource_1_1_i_record.html" class="m-doc">IRecord</a> <span class="m-doc">Represents a file in a <a href="class_resource_1_1_database.html" class="m-doc">Database</a>; records are identified by a <a href="struct_resource_key.html" class="m-doc">ResourceKey</a> (which specifies group, instance and type IDs), and have an underlying <a href="class_i_o_1_1_i_stream.html" class="m-doc">IO::<wbr />IStream</a> that is used to read/write data.</span></li>
               <li>class <a href="class_resource_1_1_i_resource_factory.html" class="m-doc">IResourceFactory</a> <span class="m-doc">An interface that can be used to create resources of certain types.</span></li>
-              <li>class <a href="class_resource_1_1_i_resource_filter.html" class="m-doc">IResourceFilter</a> <span class="m-doc">A generic interface used to filter <a href="struct_resource_key.html" class="m-doc">ResourceKey</a> objects.</span></li>
               <li>class <a href="class_resource_1_1_i_resource_manager.html" class="m-doc">IResourceManager</a> <span class="m-doc"><a href="class_resource_1_1_i_resource_manager.html" class="m-doc">IResourceManager</a> is a singleton class used to access resources in Spore&#x27;s file system.</span></li>
-              <li>class <a href="class_resource_1_1_i_resource_map.html" class="m-doc">IResourceMap</a> <span class="m-doc">An interface that is used to store resources in the cache.</span></li>
+              <li class="m-doc-collapsible collapsed">
+                <a href="#" onclick="return toggle(this)">struct</a> <a href="struct_resource_1_1_p_f_hole_table.html" class="m-doc">PFHoleTable</a> <span class="m-doc"><span></span></span>
+                <ul class="m-doc">
+                  <li>struct <a href="struct_resource_1_1_p_f_hole_table_1_1_hole_record.html" class="m-doc">HoleRecord</a> <span class="m-doc"><span></span></span></li>
+                </ul>
+              </li>
               <li>class <a href="class_resource_1_1_p_f_index_modifiable.html" class="m-doc">PFIndexModifiable</a> <span class="m-doc">This class stores the metadata of all the files contained in a DBPF file.</span></li>
+              <li>class <a href="class_resource_1_1_p_f_record_base.html" class="m-doc">PFRecordBase</a> <span class="m-doc">Base implementation for records in a <code>.package</code> file (<a href="class_resource_1_1_database_packed_file.html" class="m-doc">DatabasePackedFile</a>).</span></li>
               <li>class <a href="class_resource_1_1_p_f_record_read.html" class="m-doc">PFRecordRead</a> <span class="m-doc">This class is used to read the data of a file contained inside a DBPF.</span></li>
               <li>class <a href="class_resource_1_1_p_f_record_write.html" class="m-doc">PFRecordWrite</a> <span class="m-doc">This class is used to write data to a file contained inside a DBPF.</span></li>
+              <li>struct <a href="struct_resource_1_1_record_info.html" class="m-doc">RecordInfo</a> <span class="m-doc">A structure that contains the metadata of a file stored in a database, such as the offset in the package file and the size.</span></li>
               <li>class <a href="class_resource_1_1_resource_object.html" class="m-doc">ResourceObject</a> <span class="m-doc">A type of object that is used as a resource.</span></li>
-              <li class="m-doc-collapsible collapsed">
-                <a href="#" onclick="return toggle(this)">class</a> <a href="class_resource_1_1_special_resource_object.html" class="m-doc">SpecialResourceObject</a> <span class="m-doc"><span></span></span>
-                <ul class="m-doc">
-                  <li>class <a href="class_resource_1_1_special_resource_object_1_1_manager.html" class="m-doc">Manager</a> <span class="m-doc"><span></span></span></li>
-                </ul>
-              </li>
               <li>class <a href="class_resource_1_1_standard_file_filter.html" class="m-doc">StandardFileFilter</a> <span class="m-doc">The standard file filter which filters resources depending on the <a href="struct_resource_key.html" class="m-doc">ResourceKey</a>.</span></li>
               <li>class <a href="class_resource_1_1_threaded_object.html" class="m-doc">ThreadedObject</a> <span class="m-doc"><span></span></span></li>
             </ul>
@@ -544,13 +556,13 @@
                 <ul class="m-doc">
                   <li>struct <a href="struct_simulator_1_1_serialization_types_1_1_serialized_type.html" class="m-doc">SerializedType</a> <span class="m-doc"><span></span></span></li>
                   <li>struct <a href="struct_simulator_1_1_serialization_types_1_1_serialized_type_3_01bool_01_4.html" class="m-doc">SerializedType&lt;bool&gt;</a> <span class="m-doc"><span></span></span></li>
+                  <li>struct <a href="struct_simulator_1_1_serialization_types_1_1_serialized_type_3_01eastl_1_1string_01_4.html" class="m-doc">SerializedType&lt;eastl::string&gt;</a> <span class="m-doc"><span></span></span></li>
+                  <li>struct <a href="struct_simulator_1_1_serialization_types_1_1_serialized_type_3_01eastl_1_1string16_01_4.html" class="m-doc">SerializedType&lt;eastl::string16&gt;</a> <span class="m-doc"><span></span></span></li>
+                  <li>struct <a href="struct_simulator_1_1_serialization_types_1_1_serialized_type_3_01eastl_1_1vector_3_01_t_01_4_01_4.html" class="m-doc">SerializedType&lt;eastl::vector&lt;T&gt;&gt;</a> <span class="m-doc"><span></span></span></li>
                   <li>struct <a href="struct_simulator_1_1_serialization_types_1_1_serialized_type_3_01float_01_4.html" class="m-doc">SerializedType&lt;float&gt;</a> <span class="m-doc"><span></span></span></li>
                   <li>struct <a href="struct_simulator_1_1_serialization_types_1_1_serialized_type_3_01int_01_4.html" class="m-doc">SerializedType&lt;int&gt;</a> <span class="m-doc"><span></span></span></li>
                   <li>struct <a href="struct_simulator_1_1_serialization_types_1_1_serialized_type_3_01_resource_key_01_4.html" class="m-doc">SerializedType&lt;ResourceKey&gt;</a> <span class="m-doc"><span></span></span></li>
-                  <li>struct <a href="struct_simulator_1_1_serialization_types_1_1_serialized_type_3_01string_01_4.html" class="m-doc">SerializedType&lt;string&gt;</a> <span class="m-doc"><span></span></span></li>
-                  <li>struct <a href="struct_simulator_1_1_serialization_types_1_1_serialized_type_3_01string16_01_4.html" class="m-doc">SerializedType&lt;string16&gt;</a> <span class="m-doc"><span></span></span></li>
                   <li>struct <a href="struct_simulator_1_1_serialization_types_1_1_serialized_type_3_01uint32__t_01_4.html" class="m-doc">SerializedType&lt;uint32_t&gt;</a> <span class="m-doc"><span></span></span></li>
-                  <li>struct <a href="struct_simulator_1_1_serialization_types_1_1_serialized_type_3_01vector_3_01_t_01_4_01_4.html" class="m-doc">SerializedType&lt;vector&lt;T&gt;&gt;</a> <span class="m-doc"><span></span></span></li>
                 </ul>
               </li>
               <li>namespace <a href="namespace_simulator_1_1_space_input_strategy.html" class="m-doc">SpaceInputStrategy</a> <span class="m-doc"><span></span></span></li>
@@ -825,6 +837,14 @@
             </ul>
           </li>
           <li class="m-doc-collapsible">
+            <a href="#" onclick="return toggle(this)">namespace</a> <a href="namespace_skinner.html" class="m-doc">Skinner</a> <span class="m-doc"><span></span></span>
+            <ul class="m-doc">
+              <li>class <a href="class_skinner_1_1c_paint_system.html" class="m-doc">cPaintSystem</a> <span class="m-doc"><span></span></span></li>
+              <li>class <a href="class_skinner_1_1c_skinner_texture.html" class="m-doc">cSkinnerTexture</a> <span class="m-doc"><span></span></span></li>
+              <li>class <a href="class_skinner_1_1c_skin_painter.html" class="m-doc">cSkinPainter</a> <span class="m-doc"><span></span></span></li>
+            </ul>
+          </li>
+          <li class="m-doc-collapsible">
             <a href="#" onclick="return toggle(this)">namespace</a> <a href="namespace_sporepedia.html" class="m-doc">Sporepedia</a> <span class="m-doc"><span></span></span>
             <ul class="m-doc">
               <li class="m-doc-collapsible collapsed">
@@ -854,20 +874,17 @@
               <li class="m-doc-collapsible collapsed">
                 <a href="#" onclick="return toggle(this)">namespace</a> <a href="namespace_swarm_1_1_components.html" class="m-doc">Components</a> <span class="m-doc"><span></span></span>
                 <ul class="m-doc">
-                  <li>class <a href="class_swarm_1_1_components_1_1_attractor.html" class="m-doc">Attractor</a> <span class="m-doc"><span></span></span></li>
+                  <li>struct <a href="struct_swarm_1_1_components_1_1_attractor.html" class="m-doc">Attractor</a> <span class="m-doc"><span></span></span></li>
                   <li class="m-doc-collapsible collapsed">
                     <a href="#" onclick="return toggle(this)">struct</a> <a href="struct_swarm_1_1_components_1_1_distribute_effect_message_data.html" class="m-doc">DistributeEffectMessageData</a> <span class="m-doc"><span></span></span>
                     <ul class="m-doc">
                       <li>struct <a href="struct_swarm_1_1_components_1_1_distribute_effect_message_data_1_1_distributed_object.html" class="m-doc">DistributedObject</a> <span class="m-doc"><span></span></span></li>
                     </ul>
                   </li>
-                  <li>class <a href="class_swarm_1_1_components_1_1_i_effect_component.html" class="m-doc">IEffectComponent</a> <span class="m-doc"><span></span></span></li>
                   <li>class <a href="class_swarm_1_1_components_1_1_particle_effect.html" class="m-doc">ParticleEffect</a> <span class="m-doc"><span></span></span></li>
-                  <li>class <a href="class_swarm_1_1_components_1_1_path_point.html" class="m-doc">PathPoint</a> <span class="m-doc"><span></span></span></li>
-                  <li>class <a href="class_swarm_1_1_components_1_1_random_walk.html" class="m-doc">RandomWalk</a> <span class="m-doc"><span></span></span></li>
-                  <li>class <a href="class_swarm_1_1_components_1_1_surface.html" class="m-doc">Surface</a> <span class="m-doc"><span></span></span></li>
+                  <li>struct <a href="struct_swarm_1_1_components_1_1_path_point.html" class="m-doc">PathPoint</a> <span class="m-doc"><span></span></span></li>
+                  <li>struct <a href="struct_swarm_1_1_components_1_1_random_walk.html" class="m-doc">RandomWalk</a> <span class="m-doc"><span></span></span></li>
                   <li>class <a href="class_swarm_1_1_components_1_1_texture_slot.html" class="m-doc">TextureSlot</a> <span class="m-doc"><span></span></span></li>
-                  <li>class <a href="class_swarm_1_1_components_1_1_visual_effect.html" class="m-doc">VisualEffect</a> <span class="m-doc"><span></span></span></li>
                   <li class="m-doc-collapsible collapsed">
                     <a href="#" onclick="return toggle(this)">class</a> <a href="class_swarm_1_1_components_1_1_visual_effect_block.html" class="m-doc">VisualEffectBlock</a> <span class="m-doc"><span></span></span>
                     <ul class="m-doc">
@@ -877,18 +894,37 @@
                   <li>class <a href="class_swarm_1_1_components_1_1_wiggle.html" class="m-doc">Wiggle</a> <span class="m-doc"><span></span></span></li>
                 </ul>
               </li>
+              <li>class <a href="class_swarm_1_1c_component_base.html" class="m-doc">cComponentBase</a> <span class="m-doc"><span></span></span></li>
+              <li>class <a href="class_swarm_1_1c_description.html" class="m-doc">cDescription</a> <span class="m-doc"><span></span></span></li>
               <li>class <a href="class_swarm_1_1c_effect.html" class="m-doc">cEffect</a> <span class="m-doc"><span></span></span></li>
-              <li>class <a href="class_swarm_1_1c_effect_world.html" class="m-doc">cEffectWorld</a> <span class="m-doc"><span></span></span></li>
+              <li>struct <a href="struct_swarm_1_1c_effect_info.html" class="m-doc">cEffectInfo</a> <span class="m-doc"><span></span></span></li>
+              <li>class <a href="class_swarm_1_1c_effects_manager.html" class="m-doc">cEffectsManager</a> <span class="m-doc"><span></span></span></li>
+              <li>class <a href="class_swarm_1_1c_effects_world.html" class="m-doc">cEffectsWorld</a> <span class="m-doc"><span></span></span></li>
+              <li>class <a href="class_swarm_1_1c_global_params.html" class="m-doc">cGlobalParams</a> <span class="m-doc"><span></span></span></li>
               <li>class <a href="class_swarm_1_1_collection_resource.html" class="m-doc">CollectionResource</a> <span class="m-doc">A <a href="namespace_resource.html" class="m-doc">Resource</a> object used to retrieve an effect collection (that is, an <a href="class_swarm_1_1_effect_directory.html" class="m-doc">EffectDirectory</a>, .effdir file).</span></li>
-              <li>class <a href="class_swarm_1_1c_swarm_manager.html" class="m-doc">cSwarmManager</a> <span class="m-doc"><span></span></span></li>
+              <li>class <a href="class_swarm_1_1c_skinpaint_distribute_description.html" class="m-doc">cSkinpaintDistributeDescription</a> <span class="m-doc"><span></span></span></li>
+              <li>class <a href="class_swarm_1_1c_skinpaint_distribute_effect.html" class="m-doc">cSkinpaintDistributeEffect</a> <span class="m-doc"><span></span></span></li>
+              <li class="m-doc-collapsible collapsed">
+                <a href="#" onclick="return toggle(this)">class</a> <a href="class_swarm_1_1c_skinpaint_particle_description.html" class="m-doc">cSkinpaintParticleDescription</a> <span class="m-doc"><span></span></span>
+                <ul class="m-doc">
+                  <li>struct <a href="struct_swarm_1_1c_skinpaint_particle_description_1_1_data.html" class="m-doc">Data</a> <span class="m-doc"><span></span></span></li>
+                  <li>struct <a href="struct_swarm_1_1c_skinpaint_particle_description_1_1_variable.html" class="m-doc">Variable</a> <span class="m-doc"><span></span></span></li>
+                  <li>struct <a href="struct_swarm_1_1c_skinpaint_particle_description_1_1_var_modifier.html" class="m-doc">VarModifier</a> <span class="m-doc"><span></span></span></li>
+                </ul>
+              </li>
+              <li>class <a href="class_swarm_1_1c_skinpaint_particle_effect.html" class="m-doc">cSkinpaintParticleEffect</a> <span class="m-doc"><span></span></span></li>
+              <li>class <a href="class_swarm_1_1c_skinpaint_settings_description.html" class="m-doc">cSkinpaintSettingsDescription</a> <span class="m-doc"><span></span></span></li>
+              <li>class <a href="class_swarm_1_1c_skinpaint_settings_effect.html" class="m-doc">cSkinpaintSettingsEffect</a> <span class="m-doc"><span></span></span></li>
+              <li>struct <a href="struct_swarm_1_1c_surface_info.html" class="m-doc">cSurfaceInfo</a> <span class="m-doc"><span></span></span></li>
+              <li>struct <a href="struct_swarm_1_1c_visual_effect_description.html" class="m-doc">cVisualEffectDescription</a> <span class="m-doc"><span></span></span></li>
               <li>class <a href="class_swarm_1_1_effect_directory.html" class="m-doc">EffectDirectory</a> <span class="m-doc">An <a href="class_swarm_1_1_effect_directory.html" class="m-doc">EffectDirectory</a> is a file that contains one or multiple effect declarations.</span></li>
-              <li>class <a href="class_swarm_1_1_i_effect.html" class="m-doc">IEffect</a> <span class="m-doc">An instance of an effect in the game.</span></li>
+              <li>class <a href="class_swarm_1_1_i_component.html" class="m-doc">IComponent</a> <span class="m-doc"><span></span></span></li>
               <li>class <a href="class_swarm_1_1_i_effect_directory.html" class="m-doc">IEffectDirectory</a> <span class="m-doc"><span></span></span></li>
               <li>class <a href="class_swarm_1_1_i_effect_map.html" class="m-doc">IEffectMap</a> <span class="m-doc"><span></span></span></li>
-              <li>class <a href="class_swarm_1_1_i_effect_world.html" class="m-doc">IEffectWorld</a> <span class="m-doc">An effect world is a space in the game which contains effects.</span></li>
+              <li>class <a href="class_swarm_1_1_i_effects_manager.html" class="m-doc">IEffectsManager</a> <span class="m-doc">This class is the main manager of the <a href="namespace_swarm.html" class="m-doc">Swarm</a> effects system.</span></li>
+              <li>class <a href="class_swarm_1_1_i_effects_world.html" class="m-doc">IEffectsWorld</a> <span class="m-doc">An effects world is a space in the game which contains effects.</span></li>
               <li>class <a href="class_swarm_1_1_i_surface.html" class="m-doc">ISurface</a> <span class="m-doc"><span></span></span></li>
-              <li>class <a href="class_swarm_1_1_i_swarm_manager.html" class="m-doc">ISwarmManager</a> <span class="m-doc">This class is the main manager of the <a href="namespace_swarm.html" class="m-doc">Swarm</a> effects system.</span></li>
-              <li>class <a href="class_swarm_1_1_swarm_manager_struct.html" class="m-doc">SwarmManagerStruct</a> <span class="m-doc"><span></span></span></li>
+              <li>class <a href="class_swarm_1_1_i_visual_effect.html" class="m-doc">IVisualEffect</a> <span class="m-doc">An instance of an effect in the game.</span></li>
             </ul>
           </li>
           <li class="m-doc-collapsible">
@@ -1099,7 +1135,7 @@
           <li>class <a href="class_i_core_allocator.html" class="m-doc">ICoreAllocator</a> <span class="m-doc"><a href="class_i_core_allocator.html" class="m-doc">ICoreAllocator</a> is the base level abstract interface for allocating and deallocating memory.</span></li>
           <li>class <a href="class_i_virtual.html" class="m-doc">IVirtual</a> <span class="m-doc">A default interface that provides a virtual destructor, it should only be used internally.</span></li>
           <li>union <a href="union_key_modifiers.html" class="m-doc">KeyModifiers</a> <span class="m-doc"><span></span></span></li>
-          <li>class <a href="class_localized_string.html" class="m-doc">LocalizedString</a> <span class="m-doc">This class is used to store a string16 that is localized; that is, it depends on the current language of the game.</span></li>
+          <li>class <a href="class_localized_string.html" class="m-doc">LocalizedString</a> <span class="m-doc">This class is used to store a eastl::string16 that is localized; that is, it depends on the current language of the game.</span></li>
           <li>class <a href="classmember__detour__.html" class="m-doc">member_detour_</a> <span class="m-doc"><span></span></span></li>
           <li>struct <a href="structmember__detour___3_01_detour_class_00_01_base_class_00_01_virtual_class_00_01_result_07_arguments_8_8_8_08_4.html" class="m-doc">member_detour_&lt;DetourClass, BaseClass, VirtualClass, Result(Arguments...)&gt;</a> <span class="m-doc"></span></li>
           <li>union <a href="union_mouse_state.html" class="m-doc">MouseState</a> <span class="m-doc"><span></span></span></li>
@@ -1111,6 +1147,8 @@
             </ul>
           </li>
           <li>class <a href="class_object.html" class="m-doc">Object</a> <span class="m-doc">This class represents a basic reference counted object.</span></li>
+          <li>class <a href="class_ref_count_template.html" class="m-doc">RefCountTemplate</a> <span class="m-doc"><span></span></span></li>
+          <li>class <a href="class_ref_count_template_atomic.html" class="m-doc">RefCountTemplateAtomic</a> <span class="m-doc"><span></span></span></li>
           <li>class <a href="class_resource_i_d.html" class="m-doc">ResourceID</a> <span class="m-doc">Class similar to <a href="struct_resource_key.html" class="m-doc">ResourceKey</a>, but this one is only formed up by an instanceID and a groupID.</span></li>
           <li>struct <a href="struct_resource_key.html" class="m-doc">ResourceKey</a> <span class="m-doc">A structure used to point a resource in the game, made by three IDs: instance, group and type.</span></li>
           <li>class <a href="classstatic__detour__.html" class="m-doc">static_detour_</a> <span class="m-doc"><span></span></span></li>

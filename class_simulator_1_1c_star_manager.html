@@ -63,7 +63,7 @@
             </li>
           </ul>
         </div>
-<p>Use StarManager to access it, like <code>StarManager.GetSol()</code></p><p>Stars and planets are organized in &quot;records&quot;: <a href="class_simulator_1_1c_star_record.html" class="m-doc">cStarRecord</a> and <a href="class_simulator_1_1c_planet_record.html" class="m-doc">cPlanetRecord</a>. Those contain all the data that is saved into the save games database, and is loaded every time you open the game. A star record is anything you can click on the galaxy view: stars but also black holes, proto-planterary disks, binary star systems, and the galaxy core. The star records keeps a field of StarType to differentiate them.</p><p>The galaxy is divided in a 64x64 grid of star sectors, each star sector can have at most 4096 stars. This is only used to quickly access stars, and it doesn&#x27;t seem to have any impact on the game.</p><p>The galaxy is generated using the <code>0x035DD6E7</code> (<code>SG_galaxy_messages~</code>) effect. This effect is a bunch of <code>distribute</code> effects, one for each star type, which generate random positions depending on a map (with the shape of the galaxy); then a message is emmited (check SimulatorMessages::kMsgGalaxyGenerateBlackHole and similars) which is handled by the <a href="class_simulator_1_1c_star_manager.html#a1293118166c9b6681119c971f35a1fcf" class="m-doc">cStarManager::<wbr />StarGenerationMessageHandler()</a> method.</p><p>After the galaxy has been generated it is recommended to not add any new star records; if you want to make special stars, you can instead use <a href="class_simulator_1_1c_star_manager.html#a3e514bdbaae7aab64cfb80a79dc7b521" class="m-doc">cStarManager::<wbr />FindClosestStar()</a> to get the star you want, then make whatever changes you need. This is what <a href="class_simulator_1_1c_star_manager.html#a9299c9a9ae62cdcbaf6aa44c2c93b7e1" class="m-doc">cStarManager::<wbr />GenerateSolSystem()</a> does (we recommend you detour that method since it is executed before saving the star database).</p><p>Galaxy generation generates the star records, but NOT the planets. Planet records are only created when a star system is first visited (or a bit earlier, for example if a mission has to know a planet from a star) by calling <a href="class_simulator_1_1c_star_manager.html#ad767bd400b3db443142ba18e33b5070f" class="m-doc">cStarManager::<wbr />RequirePlanetsForStar()</a>. This means that most theoretical planets in the galaxy never actually exist, since their stars are never visited. Even when planets are generated, <a href="class_simulator_1_1c_star_record.html#a8f150740692496e76b78170fb768932e" class="m-doc">cStarRecord::<wbr />mPlanets</a> might be empty, as it is only loaded when needed; use <a href="class_simulator_1_1c_star_record.html#a2826761aef5fe3fe79537a500f245c3b" class="m-doc">cStarRecord::<wbr />GetPlanetRecords()</a> instead. If you want to change how planets are generated for a star, detour <a href="class_simulator_1_1c_star_manager.html#aa9320237a6d6083b1a638305573cd0fa" class="m-doc">cStarManager::<wbr />GeneratePlanetsForStar()</a>.</p>
+<p>Use StarManager to access it, like <code>StarManager.GetSol()</code></p><p>Stars and planets are organized in &quot;records&quot;: <a href="class_simulator_1_1c_star_record.html" class="m-doc">cStarRecord</a> and <a href="class_simulator_1_1c_planet_record.html" class="m-doc">cPlanetRecord</a>. Those contain all the data that is saved into the save games database, and is loaded every time you open the game. A star record is anything you can click on the galaxy view: stars but also black holes, proto-planterary disks, binary star systems, and the galaxy core. The star records keeps a field of StarType to differentiate them.</p><p>The galaxy is divided in a 64x64 grid of star sectors, each star sector can have at most 4096 stars. This is only used to quickly access stars, and it doesn&#x27;t seem to have any impact on the game.</p><p>The galaxy is generated using the <code>0x035DD6E7</code> (<code>SG_galaxy_messages~</code>) effect. This effect is a bunch of <code>distribute</code> effects, one for each star type, which generate random positions depending on a map (with the shape of the galaxy); then a message is emmited (check SimulatorMessages::kMsgGalaxyGenerateBlackHole and similars) which is handled by the <a href="class_simulator_1_1c_star_manager.html#a1293118166c9b6681119c971f35a1fcf" class="m-doc">cStarManager::<wbr />StarGenerationMessageHandler()</a> method.</p><p>After the galaxy has been generated it is recommended to not add any new star records; if you want to make special stars, you can instead use <a href="class_simulator_1_1c_star_manager.html#a3e514bdbaae7aab64cfb80a79dc7b521" class="m-doc">cStarManager::<wbr />FindClosestStar()</a> to get the star you want, then make whatever changes you need. This is what <a href="class_simulator_1_1c_star_manager.html#a9299c9a9ae62cdcbaf6aa44c2c93b7e1" class="m-doc">cStarManager::<wbr />GenerateSolSystem()</a> does (we recommend you detour that method since it is executed before saving the star database).</p><p>Galaxy generation generates the star records, but NOT the planets. Planet records are only created when a star system is first visited (or a bit earlier, for example if a mission has to know a planet from a star) by calling <a href="class_simulator_1_1c_star_manager.html#ad767bd400b3db443142ba18e33b5070f" class="m-doc">cStarManager::<wbr />RequirePlanetsForStar()</a>. This means that most theoretical planets in the galaxy never actually exist, since their stars are never visited. Even when planets are generated, <a href="class_simulator_1_1c_star_record.html#adfa57c09eca3a364ab7ee81cbeb88bb5" class="m-doc">cStarRecord::<wbr />mPlanets</a> might be empty, as it is only loaded when needed; use <a href="class_simulator_1_1c_star_record.html#a9ddf33d42c190b705531d47a0bd940ce" class="m-doc">cStarRecord::<wbr />GetPlanetRecords()</a> instead. If you want to change how planets are generated for a star, detour <a href="class_simulator_1_1c_star_manager.html#aa9320237a6d6083b1a638305573cd0fa" class="m-doc">cStarManager::<wbr />GeneratePlanetsForStar()</a>.</p>
         <section id="base-classes">
           <h2><a href="#base-classes">Base classes</a></h2>
           <dl class="m-doc">
@@ -108,7 +108,7 @@
             </dt>
             <dd>Returns the planet recor assigned to the specified id.</dd>
             <dt id="aeb3ebeae42e3ac9bb4b76fdc104a7ae0">
-              <span class="m-doc-wrap-bumper">auto <a href="#aeb3ebeae42e3ac9bb4b76fdc104a7ae0" class="m-doc-self">GetEmpires</a>(</span><span class="m-doc-wrap">) -&gt; <a href="namespace_simulator.html#a5dd5d2f2fefe02ca780bfd6aa130f41a" class="m-doc">EmpiresMap</a>&amp;</span>
+              <span class="m-doc-wrap-bumper">auto <a href="#aeb3ebeae42e3ac9bb4b76fdc104a7ae0" class="m-doc-self">GetEmpires</a>(</span><span class="m-doc-wrap">) -&gt; <a href="namespace_simulator.html#a9f9b342da8dc70a34302a67a113cab47" class="m-doc">EmpiresMap</a>&amp;</span>
             </dt>
             <dd><span></span></dd>
             <dt id="adbf1e7124888964f13d23cd656f5b12b">
@@ -142,9 +142,9 @@
             </dt>
             <dd>Returns the record for the star closest to the given coords.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">void <a href="#a46769b4458f705ab0e42b6184f9bd88c" class="m-doc">FindStars</a>(</span><span class="m-doc-wrap">const <a href="struct_math_1_1_vector3.html" class="m-doc">Vector3</a>&amp; coords,
+              <span class="m-doc-wrap-bumper">void <a href="#afe7519d6f275f2d6082611fa638fc282" class="m-doc">FindStars</a>(</span><span class="m-doc-wrap">const <a href="struct_math_1_1_vector3.html" class="m-doc">Vector3</a>&amp; coords,
               const <a href="struct_simulator_1_1_star_request_filter.html" class="m-doc">StarRequestFilter</a>&amp; filter,
-              vector&lt;<a href="c_star_record_8h.html#a45bf5963088a11c31f2b96f32be43662" class="m-doc">cStarRecordPtr</a>&gt;&amp; dst)</span>
+              eastl::vector&lt;<a href="c_star_record_8h.html#a45bf5963088a11c31f2b96f32be43662" class="m-doc">cStarRecordPtr</a>&gt;&amp; dst)</span>
             </dt>
             <dd>Finds all the stars that match the given star filter.</dd>
             <dt>
@@ -196,16 +196,16 @@
         <section id="pub-attribs">
           <h2><a href="#pub-attribs">Public variables</a></h2>
           <dl class="m-doc">
-            <dt id="a59df0ca2d195afb281b74fd6598fa390">
-              map&lt;int, int&gt; <a href="#a59df0ca2d195afb281b74fd6598fa390" class="m-doc-self">field_20</a>
+            <dt id="a40e5bc822bdbce3fce922d06c4475d51">
+              eastl::map&lt;int, int&gt; <a href="#a40e5bc822bdbce3fce922d06c4475d51" class="m-doc-self">field_20</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="a87871408ccbdf1deda628e7e044b93c8">
-              vector&lt;int&gt; <a href="#a87871408ccbdf1deda628e7e044b93c8" class="m-doc-self">field_3C</a>
+            <dt id="a9c80f8bbfbd373e40e459f9a95999222">
+              eastl::vector&lt;int&gt; <a href="#a9c80f8bbfbd373e40e459f9a95999222" class="m-doc-self">field_3C</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="a6b1c3997a6c6c28233757382ffe797e7">
-              vector&lt;<a href="c_planet_8h.html#a9cf4bb12f2504ebf5ba5f6c28ffda8aa" class="m-doc">cPlanetPtr</a>&gt; <a href="#a6b1c3997a6c6c28233757382ffe797e7" class="m-doc-self">field_50</a>
+            <dt id="a737c53ccf4d9ad12ec58f7333b519562">
+              eastl::vector&lt;<a href="c_planet_8h.html#a9cf4bb12f2504ebf5ba5f6c28ffda8aa" class="m-doc">cPlanetPtr</a>&gt; <a href="#a737c53ccf4d9ad12ec58f7333b519562" class="m-doc-self">field_50</a>
             </dt>
             <dd><span></span></dd>
             <dt id="af8b60252345d8ed640894a72a3de9fac">
@@ -216,16 +216,16 @@
               int <a href="#a25cd33f2ea738a6aee43f9962dec28a6" class="m-doc-self">field_68</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="abc8ed6a305e683ebe844f7664108e1c1">
-              string16 <a href="#abc8ed6a305e683ebe844f7664108e1c1" class="m-doc-self">field_6C</a>
+            <dt id="a7802f72072a198c414a6d533b961b906">
+              eastl::string16 <a href="#a7802f72072a198c414a6d533b961b906" class="m-doc-self">field_6C</a>
             </dt>
             <dd><span></span></dd>
             <dt id="ad2b6a3048c13f6c79014bb2a8428bca8">
               char <a href="#ad2b6a3048c13f6c79014bb2a8428bca8" class="m-doc-self">_padding_7C</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="a87ad07ddf8f6e170e570647a44c4a0a0">
-              vector&lt;uint32_t&gt; <a href="#a87ad07ddf8f6e170e570647a44c4a0a0" class="m-doc-self">mAvailableStarterWorlds</a>
+            <dt id="ac29496e88a85dbf379f0522df9ee9054">
+              eastl::vector&lt;uint32_t&gt; <a href="#ac29496e88a85dbf379f0522df9ee9054" class="m-doc-self">mAvailableStarterWorlds</a>
             </dt>
             <dd>List of all instance IDs of files in <code>StarterWorlds</code> folder, only the ones that aren&#x27;t already used.</dd>
             <dt id="a98df088a47a02b368f924181d102512a">
@@ -233,27 +233,27 @@
             </dt>
             <dd><span></span></dd>
             <dt>
-              vector&lt;vector&lt;<a href="c_star_record_8h.html#a45bf5963088a11c31f2b96f32be43662" class="m-doc">cStarRecordPtr</a>&gt;&gt; <a href="#a568813055af2f04f109ff6c2e6b8c12d" class="m-doc">mStarRecordGrid</a>
+              eastl::vector&lt;eastl::vector&lt;<a href="c_star_record_8h.html#a45bf5963088a11c31f2b96f32be43662" class="m-doc">cStarRecordPtr</a>&gt;&gt; <a href="#a6417a39580192a222df92593ef4170ac" class="m-doc">mStarRecordGrid</a>
             </dt>
             <dd>All star records of the galaxy, organized in a grid of 64x64 different blocks.</dd>
-            <dt id="a290aa71ba2584f8a68ef0c5f681787f4">
-              vector&lt;<a href="c_star_record_8h.html#a45bf5963088a11c31f2b96f32be43662" class="m-doc">cStarRecordPtr</a>&gt; <a href="#a290aa71ba2584f8a68ef0c5f681787f4" class="m-doc-self">mStarterStarRecords</a>
+            <dt id="aab446a91e7b1fffb8b70dbe0f16ae6d6">
+              eastl::vector&lt;<a href="c_star_record_8h.html#a45bf5963088a11c31f2b96f32be43662" class="m-doc">cStarRecordPtr</a>&gt; <a href="#aab446a91e7b1fffb8b70dbe0f16ae6d6" class="m-doc-self">mStarterStarRecords</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="a509d15623248e3be4099cbdc5f43fe4c">
-              vector&lt;<a href="c_star_record_8h.html#a45bf5963088a11c31f2b96f32be43662" class="m-doc">cStarRecordPtr</a>&gt; <a href="#a509d15623248e3be4099cbdc5f43fe4c" class="m-doc-self">mSavedGameStarRecords</a>
+            <dt id="a4d2ecf1316c92b4c2bcc575a7f166596">
+              eastl::vector&lt;<a href="c_star_record_8h.html#a45bf5963088a11c31f2b96f32be43662" class="m-doc">cStarRecordPtr</a>&gt; <a href="#a4d2ecf1316c92b4c2bcc575a7f166596" class="m-doc-self">mSavedGameStarRecords</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="ac21731fd817c3bc6164864007d89fd02">
-              vector&lt;<a href="c_star_record_8h.html#a45bf5963088a11c31f2b96f32be43662" class="m-doc">cStarRecordPtr</a>&gt; <a href="#ac21731fd817c3bc6164864007d89fd02" class="m-doc-self">mBlackHoles</a>
+            <dt id="a1b89e43bd5bcf2677711890479856486">
+              eastl::vector&lt;<a href="c_star_record_8h.html#a45bf5963088a11c31f2b96f32be43662" class="m-doc">cStarRecordPtr</a>&gt; <a href="#a1b89e43bd5bcf2677711890479856486" class="m-doc-self">mBlackHoles</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="a2b7b7008e7914cfc1e3d6d0a25b36b7f">
-              vector&lt;<a href="c_star_record_8h.html#a45bf5963088a11c31f2b96f32be43662" class="m-doc">cStarRecordPtr</a>&gt; <a href="#a2b7b7008e7914cfc1e3d6d0a25b36b7f" class="m-doc-self">mPossibleStartLocations</a>
+            <dt id="a3848fe8780fdf28a6a22083403e8c7b5">
+              eastl::vector&lt;<a href="c_star_record_8h.html#a45bf5963088a11c31f2b96f32be43662" class="m-doc">cStarRecordPtr</a>&gt; <a href="#a3848fe8780fdf28a6a22083403e8c7b5" class="m-doc-self">mPossibleStartLocations</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="a03a51e7066ea7fd0646956cd93566c0f">
-              map&lt;uint32_t, <a href="c_star_record_8h.html#a45bf5963088a11c31f2b96f32be43662" class="m-doc">cStarRecordPtr</a>&gt; <a href="#a03a51e7066ea7fd0646956cd93566c0f" class="m-doc-self">mEmpireHomeStarRecords</a>
+            <dt id="ad40b4e3d215afb31a60c25f627c1ad4f">
+              eastl::map&lt;uint32_t, <a href="c_star_record_8h.html#a45bf5963088a11c31f2b96f32be43662" class="m-doc">cStarRecordPtr</a>&gt; <a href="#ad40b4e3d215afb31a60c25f627c1ad4f" class="m-doc-self">mEmpireHomeStarRecords</a>
             </dt>
             <dd>Maps empire political IDs to their home star <a href="class_simulator_1_1c_star_record.html" class="m-doc">cStarRecord</a>.</dd>
             <dt id="a36a6bde7f6fc99efeb5ab49b86946a6d">
@@ -265,19 +265,19 @@
             </dt>
             <dd>A star record used in contexts where a real one is not available, such as playing an adventure from the create menu.</dd>
             <dt id="a007be6631397235e6abce09d20de16d5">
-              <a href="namespace_simulator.html#a5dd5d2f2fefe02ca780bfd6aa130f41a" class="m-doc">EmpiresMap</a> <a href="#a007be6631397235e6abce09d20de16d5" class="m-doc-self">mEmpires</a>
+              <a href="namespace_simulator.html#a9f9b342da8dc70a34302a67a113cab47" class="m-doc">EmpiresMap</a> <a href="#a007be6631397235e6abce09d20de16d5" class="m-doc-self">mEmpires</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="aabc38df662946598c541deae8d9d0716">
-              vector&lt;string16&gt; <a href="#aabc38df662946598c541deae8d9d0716" class="m-doc-self">mEmpireNamesInUse</a>
+            <dt id="a2d1a83f92f7e25720696b3e35884f3cc">
+              eastl::vector&lt;eastl::string16&gt; <a href="#a2d1a83f92f7e25720696b3e35884f3cc" class="m-doc-self">mEmpireNamesInUse</a>
             </dt>
             <dd><span></span></dd>
             <dt id="a6bb58536e7d5b1a333d8ed0fa9e27bbf">
               int <a href="#a6bb58536e7d5b1a333d8ed0fa9e27bbf" class="m-doc-self">field_180</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="aeeffc143c1fc5676186dab9f8703f495">
-              map&lt;<a href="struct_simulator_1_1_planet_i_d.html" class="m-doc">PlanetID</a>, uint32_t&gt; <a href="#aeeffc143c1fc5676186dab9f8703f495" class="m-doc-self">mAdventureIDs</a>
+            <dt id="a22a881fa267f300dab8b91bf22cefaa5">
+              eastl::map&lt;<a href="struct_simulator_1_1_planet_i_d.html" class="m-doc">PlanetID</a>, uint32_t&gt; <a href="#a22a881fa267f300dab8b91bf22cefaa5" class="m-doc-self">mAdventureIDs</a>
             </dt>
             <dd><span></span></dd>
             <dt id="a371aedc8e934fc8a0b6906001b749828">
@@ -344,28 +344,28 @@
               <a href="class_simulator_1_1c_space_trade_route_manager.html" class="m-doc">cSpaceTradeRouteManager</a> <a href="#a5203adb20d0d30894e308548c1a4e846" class="m-doc-self">mTradeRouteManager</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="afcface465004b58429472cc261ff1202">
-              intrusive_ptr&lt;<a href="class_simulator_1_1c_relationship_manager.html" class="m-doc">cRelationshipManager</a>&gt; <a href="#afcface465004b58429472cc261ff1202" class="m-doc-self">mpRelationshipManager</a>
+            <dt id="ae346f40cdec9ee5be4993a8b78f03f83">
+              eastl::intrusive_ptr&lt;<a href="class_simulator_1_1c_relationship_manager.html" class="m-doc">cRelationshipManager</a>&gt; <a href="#ae346f40cdec9ee5be4993a8b78f03f83" class="m-doc-self">mpRelationshipManager</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="a37fdecfed237fc6a59c659d3ffe2520f">
-              vector&lt;string&gt; <a href="#a37fdecfed237fc6a59c659d3ffe2520f" class="m-doc-self">mTransactionLog</a>
+            <dt id="a9af56b8c90720e075a36f25307529e2a">
+              eastl::vector&lt;eastl::string&gt; <a href="#a9af56b8c90720e075a36f25307529e2a" class="m-doc-self">mTransactionLog</a>
             </dt>
             <dd><span></span></dd>
             <dt id="aa7e01c33251f65d3c1957456cec46feb">
               bool <a href="#aa7e01c33251f65d3c1957456cec46feb" class="m-doc-self">field_21C</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="a13dc252b13921678f607be9d69719c6f">
-              intrusive_ptr&lt;<a href="class_object.html" class="m-doc">Object</a>&gt; <a href="#a13dc252b13921678f607be9d69719c6f" class="m-doc-self">mpGlobalCLGItems</a>
+            <dt id="af1bf2856dc18d95fab37aa61d62b0ca4">
+              <a href="_object_8h.html#a364c2967a9338c07ddc9a3d507389b5d" class="m-doc">ObjectPtr</a> <a href="#af1bf2856dc18d95fab37aa61d62b0ca4" class="m-doc-self">mpGlobalCLGItems</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="a30ed9508d6d3293b52b0227108ba2dcb">
-              <a href="_database_packed_file_8h.html#aea85ff0f3bdb65a4f52af0bb89a050d6" class="m-doc">DatabasePackedFilePtr</a> <a href="#a30ed9508d6d3293b52b0227108ba2dcb" class="m-doc-self">mpPlanetRecordsTempDBPF</a>
+            <dt id="a3283e02f1069ba5f9097bda17c83b457">
+              <a href="_database_8h.html#aba233c5052dd6bf451ef883b840a9fce" class="m-doc">DatabasePtr</a> <a href="#a3283e02f1069ba5f9097bda17c83b457" class="m-doc-self">mpPlanetRecordsTempDatabase</a>
             </dt>
             <dd><code>planetRecords.pkt</code></dd>
-            <dt id="adbc2a75c2cc7b9bb64aeb2f3aeebe29e">
-              <a href="_database_packed_file_8h.html#aea85ff0f3bdb65a4f52af0bb89a050d6" class="m-doc">DatabasePackedFilePtr</a> <a href="#adbc2a75c2cc7b9bb64aeb2f3aeebe29e" class="m-doc-self">mpPlanetRecordsDBPF</a>
+            <dt id="af8b3981a6132c34c1a3180edffd98251">
+              <a href="_database_8h.html#aba233c5052dd6bf451ef883b840a9fce" class="m-doc">DatabasePtr</a> <a href="#af8b3981a6132c34c1a3180edffd98251" class="m-doc-self">mpPlanetRecordsDatabase</a>
             </dt>
             <dd><code>planetRecords.pkp</code></dd>
           </dl>
@@ -534,11 +534,11 @@
             </table>
 <p>The Z coordinate is not considered when calculating distances between stars. A <a href="struct_simulator_1_1_star_request_filter.html" class="m-doc">StarRequestFilter</a> can be passed to accept only certain stars (with a certain type, at a minimum distance, etc)</p>
           </div></section>
-          <section class="m-doc-details" id="a46769b4458f705ab0e42b6184f9bd88c"><div>
+          <section class="m-doc-details" id="afe7519d6f275f2d6082611fa638fc282"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">void Simulator::<wbr />cStarManager::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a46769b4458f705ab0e42b6184f9bd88c" class="m-doc-self">FindStars</a>(</span><span class="m-doc-wrap">const <a href="struct_math_1_1_vector3.html" class="m-doc">Vector3</a>&amp; coords,
+              <span class="m-doc-wrap-bumper">void Simulator::<wbr />cStarManager::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#afe7519d6f275f2d6082611fa638fc282" class="m-doc-self">FindStars</a>(</span><span class="m-doc-wrap">const <a href="struct_math_1_1_vector3.html" class="m-doc">Vector3</a>&amp; coords,
               const <a href="struct_simulator_1_1_star_request_filter.html" class="m-doc">StarRequestFilter</a>&amp; filter,
-              vector&lt;<a href="c_star_record_8h.html#a45bf5963088a11c31f2b96f32be43662" class="m-doc">cStarRecordPtr</a>&gt;&amp; dst)</span></span>
+              eastl::vector&lt;<a href="c_star_record_8h.html#a45bf5963088a11c31f2b96f32be43662" class="m-doc">cStarRecordPtr</a>&gt;&amp; dst)</span></span>
             </h3>
             <p>Finds all the stars that match the given star filter.</p>
             <table class="m-table m-fullwidth m-flat">
@@ -752,9 +752,9 @@
         </section>
         <section>
           <h2>Variable documentation</h2>
-          <section class="m-doc-details" id="a568813055af2f04f109ff6c2e6b8c12d"><div>
+          <section class="m-doc-details" id="a6417a39580192a222df92593ef4170ac"><div>
             <h3>
-              vector&lt;vector&lt;<a href="c_star_record_8h.html#a45bf5963088a11c31f2b96f32be43662" class="m-doc">cStarRecordPtr</a>&gt;&gt; Simulator::<wbr />cStarManager::<wbr /><a href="#a568813055af2f04f109ff6c2e6b8c12d" class="m-doc-self">mStarRecordGrid</a>
+              eastl::vector&lt;eastl::vector&lt;<a href="c_star_record_8h.html#a45bf5963088a11c31f2b96f32be43662" class="m-doc">cStarRecordPtr</a>&gt;&gt; Simulator::<wbr />cStarManager::<wbr /><a href="#a6417a39580192a222df92593ef4170ac" class="m-doc-self">mStarRecordGrid</a>
             </h3>
             <p>All star records of the galaxy, organized in a grid of 64x64 different blocks.</p>
 <p>First index is &quot;y&quot; index of the grid, second index is &quot;x&quot; index of the grid. You can get x, y for certain coordinates with the <a href="class_simulator_1_1c_star_manager.html#a77ebb425b623f5ac2ece830539538ecb" class="m-doc">GetStarGridPosition()</a> method</p>

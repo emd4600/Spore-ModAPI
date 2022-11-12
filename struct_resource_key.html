@@ -160,7 +160,7 @@
                 </tr>
                 <tr>
                   <td>pString&nbsp;<span class="m-label m-flat m-info">in</span></td>
-                  <td>The string to parse.</td>
+                  <td>The eastl::string to parse.</td>
                 </tr>
                 <tr>
                   <td>defaultTypeID&nbsp;<span class="m-label m-flat m-info">in</span></td>
@@ -174,11 +174,11 @@
               <tfoot>
                 <tr>
                   <th>Returns</th>
-                  <td>True if the text was successfully parsed, false if the given string was nullptr.</td>
+                  <td>True if the text was successfully parsed, false if the given eastl::string was nullptr.</td>
                 </tr>
               </tfoot>
             </table>
-<p>The groupID and typeID can be ommited, however; if that happens, they will be replaced with the optional parameters nDefaultGroupID and nDefaultTypeID respectively.</p><p>The resulting uint32_ts will be the hashes of the strings separated by the &#x27;!&#x27; and &#x27;.&#x27; signs. The typeID can have a special treatment, however: before hashing it, it will check if there&#x27;s a mapping for that extension in the ResourceManager class.</p><p>Examples: Parse(dstKey, &quot;Properties.txt&quot;); // this will be in the global (0x00000000) folder, with the appropiate mapping for the .txt extension) Parse(dstKey, &quot;CreatureEditorBackground.rw4&quot;, 0, 0x40606000); // this will search in the editor_rigblocks~ (0x40606000) folder. Parse(dstKey, &quot;CreatureGame!DifficultyTunning.prop&quot;);</p>
+<p>The groupID and typeID can be ommited, however; if that happens, they will be replaced with the optional parameters nDefaultGroupID and nDefaultTypeID respectively.</p><p>The resulting uint32_ts will be the hashes of the eastl::strings separated by the &#x27;!&#x27; and &#x27;.&#x27; signs. The typeID can have a special treatment, however: before hashing it, it will check if there&#x27;s a mapping for that extension in the ResourceManager class.</p><p>Examples: Parse(dstKey, &quot;Properties.txt&quot;); // this will be in the global (0x00000000) folder, with the appropiate mapping for the .txt extension) Parse(dstKey, &quot;CreatureEditorBackground.rw4&quot;, 0, 0x40606000); // this will search in the editor_rigblocks~ (0x40606000) folder. Parse(dstKey, &quot;CreatureGame!DifficultyTunning.prop&quot;);</p>
           </div></section>
         </section>
       </div>

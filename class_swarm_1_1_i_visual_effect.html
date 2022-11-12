@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Swarm::IVisualEffect class | Spore ModAPI SDK for creating C++ mods for Spore</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,600,600i%7CSource+Code+Pro:400,400i,600" />
+  <link rel="stylesheet" href="m-dark.css" />
+  <link rel="stylesheet" href="m-documentation.css" />
+  <link rel="icon" href="Spore_ModAPI_Icon.png" type="image/png" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#22272e" />
+</head>
+<body>
+<header><nav id="navigation">
+  <div class="m-container">
+    <div class="m-row">
+      <a href="index.html" id="m-navbar-brand" class="m-col-t-8 m-col-m-none m-left-m"><img src="Spore_ModAPI_Icon.png" />Spore ModAPI <span class="m-thin">SDK for creating C++ mods for Spore</span></a>
+      <div class="m-col-t-4 m-hide-m m-text-right m-nopadr">
+        <a href="#search" class="m-doc-search-icon" title="Search" onclick="return showSearch()"><svg style="height: 0.9rem;" viewBox="0 0 16 16">
+          <path id="m-doc-search-icon-path" d="m6 0c-3.31 0-6 2.69-6 6 0 3.31 2.69 6 6 6 1.49 0 2.85-0.541 3.89-1.44-0.0164 0.338 0.147 0.759 0.5 1.15l3.22 3.79c0.552 0.614 1.45 0.665 2 0.115 0.55-0.55 0.499-1.45-0.115-2l-3.79-3.22c-0.392-0.353-0.812-0.515-1.15-0.5 0.895-1.05 1.44-2.41 1.44-3.89 0-3.31-2.69-6-6-6zm0 1.56a4.44 4.44 0 0 1 4.44 4.44 4.44 4.44 0 0 1-4.44 4.44 4.44 4.44 0 0 1-4.44-4.44 4.44 4.44 0 0 1 4.44-4.44z"/>
+        </svg></a>
+        <a id="m-navbar-show" href="#navigation" title="Show navigation"></a>
+        <a id="m-navbar-hide" href="#" title="Hide navigation"></a>
+      </div>
+      <div id="m-navbar-collapse" class="m-col-t-12 m-show-m m-col-m-none m-right-m">
+        <div class="m-row">
+          <ol class="m-col-t-6 m-col-m-none">
+            <li><a href="pages.html">Tutorials</a></li>
+            <li><a href="namespaces.html">Namespaces</a></li>
+          </ol>
+          <ol class="m-col-t-6 m-col-m-none" start="3">
+            <li><a href="annotated.html">Classes</a></li>
+            <li><a href="files.html">Files</a></li>
+            <li class="m-show-m"><a href="#search" class="m-doc-search-icon" title="Search" onclick="return showSearch()"><svg style="height: 0.9rem;" viewBox="0 0 16 16">
+              <use href="#m-doc-search-icon-path" />
+            </svg></a></li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav></header>
+<main><article>
+  <div class="m-container m-container-inflatable">
+    <div class="m-row">
+      <div class="m-col-l-10 m-push-l-1">
+        <h1>
+          <span class="m-breadcrumb"><a href="namespace_swarm.html">Swarm</a>::<wbr/></span>IVisualEffect <span class="m-thin">class</span>
+          <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_i_visual_effect_8h.html">&lt;Spore/Swarm/IVisualEffect.h&gt;</a></div>
+        </h1>
+        <p>An instance of an effect in the game.</p>
+        <div class="m-block m-default">
+          <h3>Contents</h3>
+          <ul>
+            <li>
+              Reference
+              <ul>
+                <li><a href="#pub-methods">Public functions</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+<p>The effect can receive transformations. Use <a href="class_swarm_1_1_i_visual_effect.html#a3d260522112f3409bb42747686187ad6" class="m-doc">Start()</a> to activate the instance and <a href="class_swarm_1_1_i_visual_effect.html#a2dde2bf703a20683cbfd308be90c691b" class="m-doc">Stop()</a> to destroy the effect.</p>
+        <section id="pub-methods">
+          <h2><a href="#pub-methods">Public functions</a></h2>
+          <dl class="m-doc">
+            <dt id="ae55c72e5cc89e455e2a2dbdbf188ff5d">
+              <span class="m-doc-wrap-bumper">auto <a href="#ae55c72e5cc89e455e2a2dbdbf188ff5d" class="m-doc-self">AddRef</a>(</span><span class="m-doc-wrap">) -&gt; int <span class="m-label m-flat m-warning">pure virtual</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="adca2d5ea2338fe3a9ef76b5bbaf14ef1">
+              <span class="m-doc-wrap-bumper">auto <a href="#adca2d5ea2338fe3a9ef76b5bbaf14ef1" class="m-doc-self">Release</a>(</span><span class="m-doc-wrap">) -&gt; int <span class="m-label m-flat m-warning">pure virtual</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a3d260522112f3409bb42747686187ad6">
+              <span class="m-doc-wrap-bumper">void <a href="#a3d260522112f3409bb42747686187ad6" class="m-doc-self">Start</a>(</span><span class="m-doc-wrap">int hardStart = 1) <span class="m-label m-flat m-warning">pure virtual</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a2dde2bf703a20683cbfd308be90c691b">
+              <span class="m-doc-wrap-bumper">auto <a href="#a2dde2bf703a20683cbfd308be90c691b" class="m-doc-self">Stop</a>(</span><span class="m-doc-wrap">int hardStop = 1) -&gt; int <span class="m-label m-flat m-warning">pure virtual</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="ab474c21e810779eefe3084c1e5c23598">
+              <span class="m-doc-wrap-bumper">auto <a href="#ab474c21e810779eefe3084c1e5c23598" class="m-doc-self">IsRunning</a>(</span><span class="m-doc-wrap">) -&gt; int <span class="m-label m-flat m-warning">pure virtual</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a19915f3cfdb8ee41ed35cba94341575f">
+              <span class="m-doc-wrap-bumper">void <a href="#a19915f3cfdb8ee41ed35cba94341575f" class="m-doc-self">SetRigidTransform</a>(</span><span class="m-doc-wrap">const <a href="class_transform.html" class="m-doc">Transform</a>&amp;) <span class="m-label m-flat m-warning">pure virtual</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a6851a2a9907c006352de0235709e404c">
+              <span class="m-doc-wrap-bumper">void <a href="#a6851a2a9907c006352de0235709e404c" class="m-doc-self">SetSourceTransform</a>(</span><span class="m-doc-wrap">const <a href="class_transform.html" class="m-doc">Transform</a>&amp; transform) <span class="m-label m-flat m-warning">pure virtual</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="af17bf61247361259db81995a10d3df70">
+              <span class="m-doc-wrap-bumper">auto <a href="#af17bf61247361259db81995a10d3df70" class="m-doc-self">GetRigidTransform</a>(</span><span class="m-doc-wrap">) const -&gt; <a href="class_transform.html" class="m-doc">Transform</a> <span class="m-label m-flat m-warning">pure virtual</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="ae2f607f4dd1bc95f05843b91566ffe72">
+              <span class="m-doc-wrap-bumper">auto <a href="#ae2f607f4dd1bc95f05843b91566ffe72" class="m-doc-self">GetSourceTransform</a>(</span><span class="m-doc-wrap">) const -&gt; <a href="class_transform.html" class="m-doc">Transform</a> <span class="m-label m-flat m-warning">pure virtual</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a9eaaf329d894605d5ea8d28c06496e93">
+              <span class="m-doc-wrap-bumper">void <a href="#a9eaaf329d894605d5ea8d28c06496e93" class="m-doc-self">SetBone</a>(</span><span class="m-doc-wrap">void* pBone,
+              int boneType) <span class="m-label m-flat m-warning">pure virtual</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="ab01f910d73f4cf54155d723564620daa">
+              <span class="m-doc-wrap-bumper">auto <a href="#ab01f910d73f4cf54155d723564620daa" class="m-doc-self">GetBone</a>(</span><span class="m-doc-wrap">int boneType) -&gt; void* <span class="m-label m-flat m-warning">pure virtual</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">void <a href="#a7bf15b8575c0fb5a4b18d2d3f57d66a4" class="m-doc">SetIsPaused</a>(</span><span class="m-doc-wrap">bool paused) <span class="m-label m-flat m-warning">pure virtual</span></span>
+            </dt>
+            <dd>If true, pauses the effect; if false, it unpauses it.</dd>
+            <dt id="aa49656f95decf48b13a3f7778d032140">
+              <span class="m-doc-wrap-bumper">void <a href="#aa49656f95decf48b13a3f7778d032140" class="m-doc-self">SetIsHidden</a>(</span><span class="m-doc-wrap">bool hidden) <span class="m-label m-flat m-warning">pure virtual</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a63ba6936dea749b60b13647a4d6259f6">
+              <span class="m-doc-wrap-bumper">auto <a href="#a63ba6936dea749b60b13647a4d6259f6" class="m-doc-self">GetIsPaused</a>(</span><span class="m-doc-wrap">) -&gt; bool <span class="m-label m-flat m-warning">pure virtual</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a17d071bd487028261f73644cac6d27ff">
+              <span class="m-doc-wrap-bumper">auto <a href="#a17d071bd487028261f73644cac6d27ff" class="m-doc-self">GetIsHidden</a>(</span><span class="m-doc-wrap">) -&gt; bool <span class="m-label m-flat m-warning">pure virtual</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="adc48e96660eb0a62e6caa7bee7e7f016">
+              <span class="m-doc-wrap-bumper">void <a href="#adc48e96660eb0a62e6caa7bee7e7f016" class="m-doc-self">SetSeed</a>(</span><span class="m-doc-wrap">int32_t seed) <span class="m-label m-flat m-warning">pure virtual</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="ac61bdf341e57d64647d3ab296d8222a6">
+              <span class="m-doc-wrap-bumper">auto <a href="#ac61bdf341e57d64647d3ab296d8222a6" class="m-doc-self">SetVectorParams</a>(</span><span class="m-doc-wrap"><a href="namespace_swarm.html#a60d10256ed2fabe0ec861b9c819ec4e9" class="m-doc">FloatParams</a> param,
+              const <a href="struct_math_1_1_vector3.html" class="m-doc">Vector3</a>* data,
+              int count) -&gt; bool <span class="m-label m-flat m-warning">pure virtual</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a7a7a2ed0bc3c78df47727db47277b25e">
+              <span class="m-doc-wrap-bumper">auto <a href="#a7a7a2ed0bc3c78df47727db47277b25e" class="m-doc-self">SetFloatParams</a>(</span><span class="m-doc-wrap"><a href="namespace_swarm.html#a60d10256ed2fabe0ec861b9c819ec4e9" class="m-doc">FloatParams</a> param,
+              const float* data,
+              int count) -&gt; bool <span class="m-label m-flat m-warning">pure virtual</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a92d997c202ae7f0e69762e0f069a6c11">
+              <span class="m-doc-wrap-bumper">auto <a href="#a92d997c202ae7f0e69762e0f069a6c11" class="m-doc-self">SetIntParams</a>(</span><span class="m-doc-wrap"><a href="namespace_swarm.html#a9ac38fc69759078415264c658a4cf0d5" class="m-doc">IntParams</a> param,
+              const int* data,
+              int count) -&gt; bool <span class="m-label m-flat m-warning">pure virtual</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="afad356bbaa2e212af5615fcf9169b02d">
+              <span class="m-doc-wrap-bumper">auto <a href="#afad356bbaa2e212af5615fcf9169b02d" class="m-doc-self">SetUnknownParam</a>(</span><span class="m-doc-wrap"><a href="namespace_swarm.html#a42540da906ab90e418c67ff88ff26535" class="m-doc">ObjectParams</a> param,
+              <a href="class_object.html" class="m-doc">Object</a>* data) -&gt; bool <span class="m-label m-flat m-warning">pure virtual</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="aa198f5d12e3ad96738832fe657705b11">
+              <span class="m-doc-wrap-bumper">auto <a href="#aa198f5d12e3ad96738832fe657705b11" class="m-doc-self">GetVectorParams</a>(</span><span class="m-doc-wrap"><a href="namespace_swarm.html#a60d10256ed2fabe0ec861b9c819ec4e9" class="m-doc">FloatParams</a> param,
+              int* dstCount = nullptr) -&gt; const <a href="struct_math_1_1_vector3.html" class="m-doc">Vector3</a>&amp; <span class="m-label m-flat m-warning">pure virtual</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a6d0a2f8dfd26dbb1611a42651e67b43e">
+              <span class="m-doc-wrap-bumper">auto <a href="#a6d0a2f8dfd26dbb1611a42651e67b43e" class="m-doc-self">GetFloatParams</a>(</span><span class="m-doc-wrap"><a href="namespace_swarm.html#a60d10256ed2fabe0ec861b9c819ec4e9" class="m-doc">FloatParams</a> params,
+              int* dstCount = nullptr) -&gt; const float* <span class="m-label m-flat m-warning">pure virtual</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a62f91d4d8f5ea87bed04bcb809419924">
+              <span class="m-doc-wrap-bumper">auto <a href="#a62f91d4d8f5ea87bed04bcb809419924" class="m-doc-self">GetIntParams</a>(</span><span class="m-doc-wrap"><a href="namespace_swarm.html#a9ac38fc69759078415264c658a4cf0d5" class="m-doc">IntParams</a> param,
+              int* dstCount = nullptr) -&gt; const int* <span class="m-label m-flat m-warning">pure virtual</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a6f684c7936be4098dc2d4f32f86b8ba2">
+              <span class="m-doc-wrap-bumper">auto <a href="#a6f684c7936be4098dc2d4f32f86b8ba2" class="m-doc-self">GetUnknownParam</a>(</span><span class="m-doc-wrap"><a href="namespace_swarm.html#a42540da906ab90e418c67ff88ff26535" class="m-doc">ObjectParams</a> params) -&gt; <a href="class_object.html" class="m-doc">Object</a>* <span class="m-label m-flat m-warning">pure virtual</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a920f6f7b03ef36c3eac1e555ce0d437b">
+              <span class="m-doc-wrap-bumper">auto <a href="#a920f6f7b03ef36c3eac1e555ce0d437b" class="m-doc-self">GetEffectID</a>(</span><span class="m-doc-wrap">) -&gt; <a href="class_resource_i_d.html" class="m-doc">ResourceID</a> <span class="m-label m-flat m-warning">pure virtual</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="adbd0665b30d9ea8d7f6fa1c0925cd7b9">
+              <span class="m-doc-wrap-bumper">void <a href="#adbd0665b30d9ea8d7f6fa1c0925cd7b9" class="m-doc-self">SetNotifyMessage</a>(</span><span class="m-doc-wrap">int,
+              int) <span class="m-label m-flat m-warning">pure virtual</span></span>
+            </dt>
+            <dd><span></span></dd>
+          </dl>
+        </section>
+        <section>
+          <h2>Function documentation</h2>
+          <section class="m-doc-details" id="a7bf15b8575c0fb5a4b18d2d3f57d66a4"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">void Swarm::<wbr />IVisualEffect::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a7bf15b8575c0fb5a4b18d2d3f57d66a4" class="m-doc-self">SetIsPaused</a>(</span><span class="m-doc-wrap">bool paused) <span class="m-label m-warning">pure virtual</span></span></span>
+            </h3>
+            <p>If true, pauses the effect; if false, it unpauses it.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">paused</td>
+                  <td></td>
+                </tr>
+              </tbody>
+            </table>
+          </div></section>
+        </section>
+      </div>
+    </div>
+  </div>
+</article></main>
+<div class="m-doc-search" id="search">
+  <a href="#!" onclick="return hideSearch()"></a>
+  <div class="m-container">
+    <div class="m-row">
+      <div class="m-col-m-8 m-push-m-2">
+        <div class="m-doc-search-header m-text m-small">
+          <div><span class="m-label m-default">Tab</span> / <span class="m-label m-default">T</span> to search, <span class="m-label m-default">Esc</span> to close</div>
+          <div id="search-symbolcount">&hellip;</div>
+        </div>
+        <div class="m-doc-search-content">
+          <form>
+            <input type="search" name="q" id="search-input" placeholder="Loading &hellip;" disabled="disabled" autofocus="autofocus" autocomplete="off" spellcheck="false" />
+          </form>
+          <noscript class="m-text m-danger m-text-center">Unlike everything else in the docs, the search functionality <em>requires</em> JavaScript.</noscript>
+          <div id="search-help" class="m-text m-dim m-text-center">
+            <p class="m-noindent">Search for symbols, directories, files, pages or
+            modules. You can omit any prefix from the symbol or file path; adding a
+            <code>:</code> or <code>/</code> suffix lists all members of given symbol or
+            directory.</p>
+            <p class="m-noindent">Use <span class="m-label m-dim">&darr;</span>
+            / <span class="m-label m-dim">&uarr;</span> to navigate through the list,
+            <span class="m-label m-dim">Enter</span> to go.
+            <span class="m-label m-dim">Tab</span> autocompletes common prefix, you can
+            copy a link to the result using <span class="m-label m-dim">⌘</span>
+            <span class="m-label m-dim">L</span> while <span class="m-label m-dim">⌘</span>
+            <span class="m-label m-dim">M</span> produces a Markdown link.</p>
+          </div>
+          <div id="search-notfound" class="m-text m-warning m-text-center">Sorry, nothing was found.</div>
+          <ul id="search-results"></ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="search-v1.js"></script>
+<script src="searchdata-v1.js" async="async"></script>
+<footer><nav>
+  <div class="m-container">
+    <div class="m-row">
+      <div class="m-col-l-10 m-push-l-1">
+        <p>Spore ModAPI SDK for creating C++ mods for Spore. Created with <a href="https://doxygen.org/">Doxygen</a> 1.8.16 and <a href="https://mcss.mosra.cz/">m.css</a>.</p>
+      </div>
+    </div>
+  </div>
+</nav></footer>
+</body>
+</html>

@@ -1601,7 +1601,7 @@
             </dt>
             <dd>The type of function used to write binary attribute data.</dd>
             <dt>
-              using <a href="#a1eacca95708d239cb585b607a202d1f7" class="m-doc">ReadTextFunction_t</a> = void(*)(const string&amp;, void*)
+              using <a href="#ae61a7dd908086961aab0ebc83bdacc22" class="m-doc">ReadTextFunction_t</a> = void(*)(const eastl::string&amp;, void*)
             </dt>
             <dd>The type of function used to read attribute data, which is expressed in text.</dd>
             <dt>
@@ -1640,7 +1640,7 @@
             </dt>
             <dd>Used to decide which game objects go to the vector and which do not.</dd>
             <dt>
-              using <a href="#a5dd5d2f2fefe02ca780bfd6aa130f41a" class="m-doc">EmpiresMap</a> = map&lt;uint32_t, intrusive_ptr&lt;<a href="class_simulator_1_1c_empire.html" class="m-doc">cEmpire</a>&gt;&gt;
+              using <a href="#a9f9b342da8dc70a34302a67a113cab47" class="m-doc">EmpiresMap</a> = eastl::map&lt;uint32_t, <a href="c_empire_8h.html#af8ca66b45d5d36ab090e9c1ed9dc9af0" class="m-doc">cEmpirePtr</a>&gt;
             </dt>
             <dd><span></span></dd>
           </dl>
@@ -1649,33 +1649,33 @@
           <h2><a href="#func-members">Functions</a></h2>
           <dl class="m-doc">
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#a1aa47d221f048c0e9601f38df93110f7" class="m-doc">ScheduleTask</a>(</span><span class="m-doc-wrap">const <a href="namespace_app.html#a0792416baaa2251d68963db97d021cda" class="m-doc">App::<wbr />VoidFunction_T</a>&amp; function,
-              float scheduleTime) -&gt; intrusive_ptr&lt;<a href="class_simulator_1_1_scheduled_task_listener.html" class="m-doc">ScheduledTaskListener</a>&gt;</span>
+              <span class="m-doc-wrap-bumper">auto <a href="#a33d69759c539bd7ea17c92f3e8142ee7" class="m-doc">ScheduleTask</a>(</span><span class="m-doc-wrap">const <a href="namespace_app.html#a0792416baaa2251d68963db97d021cda" class="m-doc">App::<wbr />VoidFunction_T</a>&amp; function,
+              float scheduleTime) -&gt; <a href="_i_message_manager_8h.html#a386ef1464a4a3bb2289b0844c570d9cc" class="m-doc">SimScheduledTaskListenerPtr</a></span>
             </dt>
             <dd>Executes a function after a certain time (measured in seconds) has passed from ths call.</dd>
             <dt>
               <div class="m-doc-template">template&lt;class T&gt;</div>
-              <span class="m-doc-wrap-bumper">auto <a href="#a2cab591ed2d9caaa1a8cec93d8d1fdf7" class="m-doc">ScheduleTask</a>(</span><span class="m-doc-wrap">T* object,
+              <span class="m-doc-wrap-bumper">auto <a href="#a0daf36898034fa02224bb9c9e544d45f" class="m-doc">ScheduleTask</a>(</span><span class="m-doc-wrap">T* object,
               <a href="namespace_app.html#adf650d2c1852a6bd9fa7e8d49af6fae4" class="m-doc">App::<wbr />VoidMethod_T</a>&lt;T&gt; method,
-              float scheduleTime) -&gt; intrusive_ptr&lt;<a href="class_simulator_1_1_scheduled_task_listener.html" class="m-doc">ScheduledTaskListener</a>&gt;</span>
+              float scheduleTime) -&gt; <a href="_i_message_manager_8h.html#a8398855010ed2cf21fa27d1c29cf64e9" class="m-doc">ScheduledTaskListenerPtr</a></span>
             </dt>
             <dd>Executes a class method after a certain time (measured in seconds) has passed from ths call.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#aa7982c6383bbaa719b5f814d85e55ec9" class="m-doc">ScheduleRepeatedTask</a>(</span><span class="m-doc-wrap">const <a href="namespace_app.html#a0792416baaa2251d68963db97d021cda" class="m-doc">App::<wbr />VoidFunction_T</a>&amp; function,
+              <span class="m-doc-wrap-bumper">auto <a href="#ab9d02dd6a6abfbd218f448740d888e59" class="m-doc">ScheduleRepeatedTask</a>(</span><span class="m-doc-wrap">const <a href="namespace_app.html#a0792416baaa2251d68963db97d021cda" class="m-doc">App::<wbr />VoidFunction_T</a>&amp; function,
               float scheduleTime,
-              float repeatRate) -&gt; intrusive_ptr&lt;<a href="class_simulator_1_1_scheduled_task_listener.html" class="m-doc">ScheduledTaskListener</a>&gt;</span>
+              float repeatRate) -&gt; <a href="_i_message_manager_8h.html#a386ef1464a4a3bb2289b0844c570d9cc" class="m-doc">SimScheduledTaskListenerPtr</a></span>
             </dt>
             <dd>Executes a function after a certain time (measured in seconds) has passed from this call, and then keeps repeating it after a certain period (defined by the repeatRate parameter) parameter.</dd>
             <dt>
               <div class="m-doc-template">template&lt;class T&gt;</div>
-              <span class="m-doc-wrap-bumper">auto <a href="#a7f93f5e7e0ce89c722c2621c4f955d71" class="m-doc">ScheduleRepeatedTask</a>(</span><span class="m-doc-wrap">T* object,
+              <span class="m-doc-wrap-bumper">auto <a href="#ae8dfa3d0417c9255251b98aa431bc9de" class="m-doc">ScheduleRepeatedTask</a>(</span><span class="m-doc-wrap">T* object,
               <a href="namespace_app.html#adf650d2c1852a6bd9fa7e8d49af6fae4" class="m-doc">App::<wbr />VoidMethod_T</a>&lt;T&gt; method,
               float scheduleTime,
-              float repeatRate) -&gt; intrusive_ptr&lt;<a href="class_simulator_1_1_scheduled_task_listener.html" class="m-doc">ScheduledTaskListener</a>&gt;</span>
+              float repeatRate) -&gt; <a href="_i_message_manager_8h.html#a8398855010ed2cf21fa27d1c29cf64e9" class="m-doc">ScheduledTaskListenerPtr</a></span>
             </dt>
             <dd>Executes a function after a certain time (measured in seconds) has passed from this call, and then keeps repeating it after a certain period (defined by the repeatRate parameter) parameter.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#a0a41fae1cde510185d211f0bbbcb6992" class="m-doc">RemoveScheduledTask</a>(</span><span class="m-doc-wrap">intrusive_ptr&lt;<a href="class_simulator_1_1_scheduled_task_listener.html" class="m-doc">ScheduledTaskListener</a>&gt;&amp; taskListener) -&gt; bool</span>
+              <span class="m-doc-wrap-bumper">auto <a href="#a59d2cb6ccd81c7f54f84ad804ae70ca0" class="m-doc">RemoveScheduledTask</a>(</span><span class="m-doc-wrap"><a href="_i_message_manager_8h.html#a8398855010ed2cf21fa27d1c29cf64e9" class="m-doc">ScheduledTaskListenerPtr</a>&amp; taskListener) -&gt; bool</span>
             </dt>
             <dd><span></span></dd>
             <dt>
@@ -1701,8 +1701,28 @@
             </dt>
             <dd><span></span></dd>
             <dt>
+              <span class="m-doc-wrap-bumper"><a href="#ad60ae67ea9e54f777c328384200fd621" class="m-doc">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_behavior_agent.html" class="m-doc">cBehaviorAgent</a>,
+              0x68)</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper"><a href="#a45e64888a9bc1d076d058e7a16b2a93a" class="m-doc">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_behavior_base.html" class="m-doc">cBehaviorBase</a>,
+              0x74)</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper"><a href="#a4f4aae9d5767856713f408e31dea2994" class="m-doc">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_behavior_entry.html" class="m-doc">cBehaviorEntry</a>,
+              0x20)</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
               <span class="m-doc-wrap-bumper"><a href="#a05c6f27df0f3214322d704bf8ed3fe8e" class="m-doc">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_behavior_list.html" class="m-doc">cBehaviorList</a>,
               0x18)</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper"><a href="#ab5186824567b2da10c2a1e57b9501b7a" class="m-doc">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_building.html" class="m-doc">cBuilding</a>,
+              0x340)</span>
             </dt>
             <dd><span></span></dd>
             <dt>
@@ -1740,6 +1760,11 @@
             </dt>
             <dd><span></span></dd>
             <dt>
+              <span class="m-doc-wrap-bumper"><a href="#a4049cd3a57d08b78d2684462c5f8080c" class="m-doc">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="struct_simulator_1_1_unk_city_class.html" class="m-doc">UnkCityClass</a>,
+              0x64)</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
               <span class="m-doc-wrap-bumper"><a href="#a3b522742b40a40383106ec43cdb5966a" class="m-doc">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="struct_simulator_1_1c_city_partner.html" class="m-doc">cCityPartner</a>,
               0xC)</span>
             </dt>
@@ -1750,17 +1775,27 @@
             </dt>
             <dd><span></span></dd>
             <dt>
-              <span class="m-doc-wrap-bumper"><a href="#a4049cd3a57d08b78d2684462c5f8080c" class="m-doc">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="struct_simulator_1_1_unk_city_class.html" class="m-doc">UnkCityClass</a>,
-              0x64)</span>
+              <span class="m-doc-wrap-bumper">auto <a href="#aaa01d6fdfc284d320bd387989e849106" class="m-doc">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_city.html" class="m-doc">cCity</a>) -&gt; namespace</span>
             </dt>
             <dd><span></span></dd>
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#aaa01d6fdfc284d320bd387989e849106" class="m-doc">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_city.html" class="m-doc">cCity</a>) -&gt; namespace</span>
+              <span class="m-doc-wrap-bumper"><a href="#a74a39219807a605d656c6002f76f0a74" class="m-doc">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_city_territory.html" class="m-doc">cCityTerritory</a>,
+              0x114)</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper"><a href="#abe246397fe303d105d98bfdfb6be95c7" class="m-doc">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_city_walls.html" class="m-doc">cCityWalls</a>,
+              0x358)</span>
             </dt>
             <dd><span></span></dd>
             <dt>
               <span class="m-doc-wrap-bumper"><a href="#a52b3aebef4d7b06c670ab34b01161194" class="m-doc">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_civilization.html" class="m-doc">cCivilization</a>,
               0x4D8)</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper"><a href="#a282b673376f5f9c78ebc436ac5f02d4d" class="m-doc">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_combatant.html" class="m-doc">cCombatant</a>,
+              0xC8)</span>
             </dt>
             <dd><span></span></dd>
             <dt>
@@ -1783,11 +1818,41 @@
             </dt>
             <dd><span></span></dd>
             <dt>
+              <span class="m-doc-wrap-bumper"><a href="#a31c5c694b6da08d41ae0c4aea9acfb81" class="m-doc">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_community.html" class="m-doc">cCommunity</a>,
+              0x120)</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper"><a href="#a4cb2bbff19467f09897489c02aa8deed" class="m-doc">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_conversation.html" class="m-doc">cConversation</a>,
+              0x80)</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper"><a href="#a70c90abd3af50154c9acd542c6328752" class="m-doc">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_creature_ability.html" class="m-doc">cCreatureAbility</a>,
+              0x13C)</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
               <span class="m-doc-wrap-bumper">auto <a href="#ae71cc693337a91d2a5ecf47bef0db930" class="m-doc">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_creature_ability.html" class="m-doc">cCreatureAbility</a>) -&gt; namespace</span>
             </dt>
             <dd><span></span></dd>
             <dt>
+              <span class="m-doc-wrap-bumper"><a href="#ab97ebf0a1f8153d55aa2f7220624aad2" class="m-doc">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_creature_animal.html" class="m-doc">cCreatureAnimal</a>,
+              0x16A0)</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
               <span class="m-doc-wrap-bumper">auto <a href="#a39798460a2e68bc7040c3223bdd4e90e" class="m-doc">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_creature_animal.html" class="m-doc">cCreatureAnimal</a>) -&gt; namespace</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper"><a href="#a4dac161427ed69ff871353619fc10b2c" class="m-doc">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1_unknown_creature_class.html" class="m-doc">UnknownCreatureClass</a>,
+              0x4A0)</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper"><a href="#ac507b1e2844474619283d4c0fe8d5459" class="m-doc">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_creature_base.html" class="m-doc">cCreatureBase</a>,
+              0xFC0)</span>
             </dt>
             <dd><span></span></dd>
             <dt>
@@ -1808,7 +1873,17 @@
             </dt>
             <dd><span></span></dd>
             <dt>
+              <span class="m-doc-wrap-bumper"><a href="#ac5c4df33e93ab94a8bc8d687995e3f4d" class="m-doc">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_default_ao_e_area.html" class="m-doc">cDefaultAoEArea</a>,
+              0x170)</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
               <span class="m-doc-wrap-bumper">auto <a href="#ac0c425a828c41233a65aec3b88a3db2e" class="m-doc">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_default_ao_e_tool.html" class="m-doc">cDefaultAoETool</a>) -&gt; namespace</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper"><a href="#a5acca6fd05ef0e87dc510f69bfbfb6f2" class="m-doc">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_default_beam_projectile.html" class="m-doc">cDefaultBeamProjectile</a>,
+              0x1F8)</span>
             </dt>
             <dd><span></span></dd>
             <dt>
@@ -1851,6 +1926,11 @@
             </dt>
             <dd><span></span></dd>
             <dt>
+              <span class="m-doc-wrap-bumper"><a href="#a686c26413e9ffbe5ec522fe5f9ed4485" class="m-doc">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_empire.html" class="m-doc">cEmpire</a>,
+              0x158)</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
               <span class="m-doc-wrap-bumper">auto <a href="#aeb9f170545691f46c2cd1d7ac143c4d9" class="m-doc">GetArchetypeRelationshipsID</a>(</span><span class="m-doc-wrap">int archetype,
               int difficulty) -&gt; uint32_t</span>
             </dt>
@@ -1864,7 +1944,22 @@
             </dt>
             <dd><span></span></dd>
             <dt>
+              <span class="m-doc-wrap-bumper"><a href="#a289192d2119976de14f10c4a291e3537" class="m-doc">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_game_bundle_container.html" class="m-doc">cGameBundleContainer</a>,
+              0x24)</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper"><a href="#a0f50ef5677354f20e5e4b69a416c35a5" class="m-doc">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_game_data.html" class="m-doc">cGameData</a>,
+              0x34)</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
               <span class="m-doc-wrap-bumper">auto <a href="#a2b8594562afd81ab65b16d1cc8c80904" class="m-doc">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_game_data.html" class="m-doc">cGameData</a>) -&gt; namespace</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper"><a href="#abfd71eaa9136ad342a43999028d65391" class="m-doc">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_game_data_u_f_o.html" class="m-doc">cGameDataUFO</a>,
+              0x818)</span>
             </dt>
             <dd><span></span></dd>
             <dt>
@@ -1903,6 +1998,11 @@
             </dt>
             <dd><span></span></dd>
             <dt>
+              <span class="m-doc-wrap-bumper"><a href="#a36fe2394cb3df5c5792d1f36d8e401d9" class="m-doc">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_gonzago_timer.html" class="m-doc">cGonzagoTimer</a>,
+              0x20)</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
               <span class="m-doc-wrap-bumper">auto <a href="#a841efd0a6d6d608e9d05ae52dd635029" class="m-doc">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_gonzago_timer.html" class="m-doc">cGonzagoTimer</a>) -&gt; namespace</span>
             </dt>
             <dd><span></span></dd>
@@ -1921,8 +2021,28 @@
             </dt>
             <dd><span></span></dd>
             <dt>
+              <span class="m-doc-wrap-bumper"><a href="#a8a589fec6a13abce000d724e275f8031" class="m-doc">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_identity_colorable.html" class="m-doc">cIdentityColorable</a>,
+              0x30)</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper"><a href="#a6f8db4255290c6dd33b911b483b5b33d" class="m-doc">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_interactable_object.html" class="m-doc">cInteractableObject</a>,
+              0x130)</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper"><a href="#ac6943791730b9cb2b1a28a0cc965df45" class="m-doc">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_interactive_ornament.html" class="m-doc">cInteractiveOrnament</a>,
+              0x260)</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
               <span class="m-doc-wrap-bumper"><a href="#a5fc92b96a0e3f79da6c8b2072374161d" class="m-doc">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_inter_city_road.html" class="m-doc">cInterCityRoad</a>,
               0x140)</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper"><a href="#aeaaf0acc37a3965cf82a32860ce89fa6" class="m-doc">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_locomotive_object.html" class="m-doc">cLocomotiveObject</a>,
+              0x4D0)</span>
             </dt>
             <dd><span></span></dd>
             <dt>
@@ -1968,11 +2088,21 @@
             </dt>
             <dd><span></span></dd>
             <dt>
+              <span class="m-doc-wrap-bumper"><a href="#a9ee619b779bfee1e65718a87a0c9c10e" class="m-doc">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_ornament.html" class="m-doc">cOrnament</a>,
+              0x238)</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
               <span class="m-doc-wrap-bumper">auto <a href="#abd872d0d4f2b6edb555736a19fc299e0" class="m-doc">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_place_colony_tool_strategy.html" class="m-doc">cPlaceColonyToolStrategy</a>) -&gt; namespace</span>
             </dt>
             <dd><span></span></dd>
             <dt>
               <span class="m-doc-wrap-bumper">auto <a href="#a5473f275fe69929c7d4eb9aaa36122c0" class="m-doc">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_place_object_tool_strategy.html" class="m-doc">cPlaceObjectToolStrategy</a>) -&gt; namespace</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper"><a href="#ae9c46ac69bf89665949a2a82652fab1b" class="m-doc">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_planet.html" class="m-doc">cPlanet</a>,
+              0x1C8)</span>
             </dt>
             <dd><span></span></dd>
             <dt>
@@ -2025,12 +2155,22 @@
             </dt>
             <dd><span></span></dd>
             <dt>
+              <span class="m-doc-wrap-bumper"><a href="#ac7492cd6cf05490ef782764ee38f7773" class="m-doc">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_planet_record.html" class="m-doc">cPlanetRecord</a>,
+              0x1B0)</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
               <span class="m-doc-wrap-bumper">auto <a href="#a5e49a65684404743d95bdbc75f83299a" class="m-doc">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_planet_record.html" class="m-doc">cPlanetRecord</a>) -&gt; namespace</span>
             </dt>
             <dd><span></span></dd>
             <dt>
               <span class="m-doc-wrap-bumper"><a href="#a4b92c5c5970cc4894eb687fbcd8d6a1f" class="m-doc">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_plant_cargo_info.html" class="m-doc">cPlantCargoInfo</a>,
               0xA4)</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper"><a href="#af03386da2ecede895f75cbfec43a90e9" class="m-doc">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_player_inventory.html" class="m-doc">cPlayerInventory</a>,
+              0x98)</span>
             </dt>
             <dd><span></span></dd>
             <dt>
@@ -2059,7 +2199,27 @@
             </dt>
             <dd><span></span></dd>
             <dt>
+              <span class="m-doc-wrap-bumper"><a href="#acc14af3655fad858e0ee4ee0c56c44ca" class="m-doc">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_scenario_act.html" class="m-doc">cScenarioAct</a>,
+              0x534)</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper"><a href="#adf91ffda83c40e6f91da7e1d28d694de" class="m-doc">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_scenario_asset.html" class="m-doc">cScenarioAsset</a>,
+              0x20)</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper"><a href="#ae338f5937ae7cde6acc9468de9cae2b1" class="m-doc">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_scenario_class.html" class="m-doc">cScenarioClass</a>,
+              0x27E0)</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
               <span class="m-doc-wrap-bumper">auto <a href="#a5e12235de176ec29c8f829185678b2d5" class="m-doc">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_scenario_class.html" class="m-doc">cScenarioClass</a>) -&gt; namespace</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper"><a href="#a0987f79e0c893874fd3cea1130032b71" class="m-doc">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_scenario_class_act.html" class="m-doc">cScenarioClassAct</a>,
+              0x4E0)</span>
             </dt>
             <dd><span></span></dd>
             <dt>
@@ -2069,6 +2229,11 @@
             <dd><span></span></dd>
             <dt>
               <span class="m-doc-wrap-bumper">auto <a href="#a13580134e5e0cacc738744e1a6f38fcf" class="m-doc">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_scenario_data.html" class="m-doc">cScenarioData</a>) -&gt; namespace</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper"><a href="#afb185cd02b45f775235d39047708b52e" class="m-doc">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_scenario_dialog.html" class="m-doc">cScenarioDialog</a>,
+              0x44)</span>
             </dt>
             <dd><span></span></dd>
             <dt>
@@ -2101,6 +2266,21 @@
             </dt>
             <dd><span></span></dd>
             <dt>
+              <span class="m-doc-wrap-bumper"><a href="#a43973801c5bb7caa2f95714fe1bdcabe" class="m-doc">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_scenario_goal.html" class="m-doc">cScenarioGoal</a>,
+              0x188)</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper"><a href="#a93c9466c6403a8d6355aaf46ad3fd020" class="m-doc">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_scenario_marker.html" class="m-doc">cScenarioMarker</a>,
+              0x234)</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper"><a href="#a8a213ef26729c364be30001634ed624c" class="m-doc">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_scenario_marker_act.html" class="m-doc">cScenarioMarkerAct</a>,
+              0x34)</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
               <span class="m-doc-wrap-bumper"><a href="#aec995abc6f64dffbceabf85a2a15ed12" class="m-doc">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_scenario_play_mode_goal.html" class="m-doc">cScenarioPlayModeGoal</a>,
               0x1AC)</span>
             </dt>
@@ -2120,7 +2300,22 @@
             </dt>
             <dd><span></span></dd>
             <dt>
+              <span class="m-doc-wrap-bumper"><a href="#a5cc1e52bfc971f8103bb46a3b7ac6f3e" class="m-doc">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_scenario_posse_member.html" class="m-doc">cScenarioPosseMember</a>,
+              0x38)</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper"><a href="#a20a23f93c6ec67fee6c48df7fe3aee66" class="m-doc">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_scenario_powerup.html" class="m-doc">cScenarioPowerup</a>,
+              0x3C)</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
               <span class="m-doc-wrap-bumper">auto <a href="#a6b0426fa90e5c754317b29fb688fe76f" class="m-doc">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_scenario_powerup.html" class="m-doc">cScenarioPowerup</a>) -&gt; namespace</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper"><a href="#a09e59d9c8d8fc9f1940f993befa6a691" class="m-doc">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_scenario_resource.html" class="m-doc">cScenarioResource</a>,
+              0x2CB0)</span>
             </dt>
             <dd><span></span></dd>
             <dt>
@@ -2129,6 +2324,11 @@
             <dd><span></span></dd>
             <dt>
               <span class="m-doc-wrap-bumper">auto <a href="#a833a29830975286ad924f3a54996985a" class="m-doc">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_scenario_simulator.html" class="m-doc">cScenarioSimulator</a>) -&gt; namespace</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper"><a href="#a3a5ea7144096dae90c70ab9c041a7207" class="m-doc">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_scenario_string.html" class="m-doc">cScenarioString</a>,
+              0x3C)</span>
             </dt>
             <dd><span></span></dd>
             <dt>
@@ -2150,11 +2350,21 @@
             </dt>
             <dd><span></span></dd>
             <dt>
+              <span class="m-doc-wrap-bumper"><a href="#a3843c2450527f457d88317bc36a67de8" class="m-doc">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_simulator_player_u_f_o.html" class="m-doc">cSimulatorPlayerUFO</a>,
+              0xE0)</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
               <span class="m-doc-wrap-bumper">auto <a href="#af08fe67cf13ff1fa602042adc749b2c0" class="m-doc">GetPlayerUFO</a>(</span><span class="m-doc-wrap">) -&gt; <a href="class_simulator_1_1c_game_data_u_f_o.html" class="m-doc">cGameDataUFO</a>*</span>
             </dt>
             <dd><span></span></dd>
             <dt>
               <span class="m-doc-wrap-bumper">auto <a href="#a6f250d226cba800cdf56a58c234715a4" class="m-doc">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_simulator_player_u_f_o.html" class="m-doc">cSimulatorPlayerUFO</a>) -&gt; namespace</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper"><a href="#a54a292d5620a42fee5985c38559c049b" class="m-doc">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_simulator_space_game.html" class="m-doc">cSimulatorSpaceGame</a>,
+              0xF0)</span>
             </dt>
             <dd><span></span></dd>
             <dt>
@@ -2167,7 +2377,17 @@
             </dt>
             <dd><span></span></dd>
             <dt>
+              <span class="m-doc-wrap-bumper"><a href="#a44ba8865661416b1594e00bde2d55727" class="m-doc">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_solar_system.html" class="m-doc">cSolarSystem</a>,
+              0x54)</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
               <span class="m-doc-wrap-bumper">auto <a href="#ac37ae2f917426d48f2a8b40408b69d23" class="m-doc">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_solar_system.html" class="m-doc">cSolarSystem</a>) -&gt; namespace</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper"><a href="#af295ac24114e40cba0e082e686d56665" class="m-doc">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_space_inventory.html" class="m-doc">cSpaceInventory</a>,
+              0x4C)</span>
             </dt>
             <dd><span></span></dd>
             <dt>
@@ -2189,6 +2409,11 @@
             </dt>
             <dd><span></span></dd>
             <dt>
+              <span class="m-doc-wrap-bumper"><a href="#a4b0af780755c4254860d7246637d1dae" class="m-doc">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_space_tool_data.html" class="m-doc">cSpaceToolData</a>,
+              0x2A0)</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
               <span class="m-doc-wrap-bumper">auto <a href="#a9360e0dd4778a64b69505e310927bc65" class="m-doc">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_space_tool_data.html" class="m-doc">cSpaceToolData</a>) -&gt; namespace</span>
             </dt>
             <dd><span></span></dd>
@@ -2203,7 +2428,17 @@
             </dt>
             <dd><span></span></dd>
             <dt>
+              <span class="m-doc-wrap-bumper"><a href="#a497200f6f487f66374eb5edaf862db11" class="m-doc">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_star.html" class="m-doc">cStar</a>,
+              0x50)</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
               <span class="m-doc-wrap-bumper">auto <a href="#a4555000c2ecc163338465a78d65d7c38" class="m-doc">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_star.html" class="m-doc">cStar</a>) -&gt; namespace</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper"><a href="#acab3ff7e838e47db1c918c5692b544cb" class="m-doc">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_star_record.html" class="m-doc">cStarRecord</a>,
+              0xB0)</span>
             </dt>
             <dd><span></span></dd>
             <dt>
@@ -2217,6 +2452,11 @@
             <dd><span></span></dd>
             <dt>
               <span class="m-doc-wrap-bumper">auto <a href="#a003c3b7539f8eb0a1b0fc1599a90cd89" class="m-doc">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_time_of_day.html" class="m-doc">cTimeOfDay</a>) -&gt; namespace</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper"><a href="#a08c3b2c11c8b5e77998bb2288dd261ad" class="m-doc">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_tool_strategy.html" class="m-doc">cToolStrategy</a>,
+              0xC)</span>
             </dt>
             <dd><span></span></dd>
             <dt>
@@ -2281,12 +2521,27 @@
             </dt>
             <dd><span></span></dd>
             <dt>
+              <span class="m-doc-wrap-bumper"><a href="#a632dbcdf48326e9f0e81a1d4c23b422e" class="m-doc">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_vehicle.html" class="m-doc">cVehicle</a>,
+              0xD98)</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
               <span class="m-doc-wrap-bumper">auto <a href="#aae6305095b9266421f4f3c816397c08b" class="m-doc">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_vehicle.html" class="m-doc">cVehicle</a>) -&gt; namespace</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper"><a href="#aae2601be55c98534fe851eef80954f9e" class="m-doc">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_visible_planet.html" class="m-doc">cVisiblePlanet</a>,
+              0x10C)</span>
             </dt>
             <dd><span></span></dd>
             <dt>
               <span class="m-doc-wrap-bumper"><a href="#a70c4558da2b98020e46619eb7029cf13" class="m-doc">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_planet_gfx.html" class="m-doc">cPlanetGfx</a>,
               0x68)</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper"><a href="#afbb8cbf637e75a420e1d6a6b0cc42d69" class="m-doc">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1_goal_card.html" class="m-doc">GoalCard</a>,
+              0x98)</span>
             </dt>
             <dd><span></span></dd>
             <dt>
@@ -2384,12 +2639,22 @@
             </dt>
             <dd><span></span></dd>
             <dt>
+              <span class="m-doc-wrap-bumper"><a href="#a84a121741dba02505b4fe37810abc111" class="m-doc">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_relationship_manager.html" class="m-doc">cRelationshipManager</a>,
+              0x100)</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
               <span class="m-doc-wrap-bumper">auto <a href="#a22cbc6d64f5cf57fecb265f1bfb3f4f8" class="m-doc">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_relationship_manager.html" class="m-doc">cRelationshipManager</a>) -&gt; namespace</span>
             </dt>
             <dd><span></span></dd>
             <dt>
               <span class="m-doc-wrap-bumper"><a href="#ab765c0b2679fc09e3d7428bc2e230a87" class="m-doc">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_saved_game_header.html" class="m-doc">cSavedGameHeader</a>,
               0x68)</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper"><a href="#aec351348ffa4319f0bc4027cbfbdf994" class="m-doc">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_strategy.html" class="m-doc">cStrategy</a>,
+              0x1C)</span>
             </dt>
             <dd><span></span></dd>
             <dt>
@@ -2402,7 +2667,17 @@
             </dt>
             <dd><span></span></dd>
             <dt>
+              <span class="m-doc-wrap-bumper"><a href="#aab4e8af30c534f1aaa75bec10be4c287" class="m-doc">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_game_input_manager.html" class="m-doc">cGameInputManager</a>,
+              0x114)</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
               <span class="m-doc-wrap-bumper">auto <a href="#a044be0f212dbcdd44e4791ccc468df1b" class="m-doc">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_game_input_manager.html" class="m-doc">cGameInputManager</a>) -&gt; namespace</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper"><a href="#a5bc596abedeb316b8f378c46847ca644" class="m-doc">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_game_mode_manager.html" class="m-doc">cGameModeManager</a>,
+              0x9C)</span>
             </dt>
             <dd><span></span></dd>
             <dt>
@@ -2479,6 +2754,11 @@
             </dt>
             <dd><span></span></dd>
             <dt>
+              <span class="m-doc-wrap-bumper"><a href="#aed122598f20df7ce5c72ea2b93751121" class="m-doc">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_game_view_manager.html" class="m-doc">cGameViewManager</a>,
+              0x1A8)</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
               <span class="m-doc-wrap-bumper">auto <a href="#ac8baff6a9a145c44e8e46647ebdc0ecc" class="m-doc">GetLightingWorld</a>(</span><span class="m-doc-wrap">) -&gt; <a href="class_graphics_1_1_i_lighting_world.html" class="m-doc">Graphics::<wbr />ILightingWorld</a>*</span>
             </dt>
             <dd><span></span></dd>
@@ -2502,6 +2782,11 @@
             <dt>
               <span class="m-doc-wrap-bumper"><a href="#a83db08634551fd62e5cf18d69871b11f" class="m-doc">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_sim_ticker.html" class="m-doc">cSimTicker</a>,
               0x44)</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper"><a href="#a1203d485b8291e8c059df1f9ead53fa2" class="m-doc">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_simulator_system.html" class="m-doc">cSimulatorSystem</a>,
+              0x70)</span>
             </dt>
             <dd><span></span></dd>
             <dt>
@@ -2592,7 +2877,17 @@
             </dt>
             <dd>Converts the parsec distance and angle into the 3D coordinates used in the galaxy map and in functions like <a href="class_simulator_1_1c_star_manager.html#a3e514bdbaae7aab64cfb80a79dc7b521" class="m-doc">cStarManager::<wbr />FindClosestStar()</a>.</dd>
             <dt>
+              <span class="m-doc-wrap-bumper"><a href="#a6bf5af7ea9d981f3bd0d12e5bd8db8ff" class="m-doc">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_terraforming_manager.html" class="m-doc">cTerraformingManager</a>,
+              0x94)</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
               <span class="m-doc-wrap-bumper">auto <a href="#af189652b3c7f4d58328b18200025581a" class="m-doc">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_terraforming_manager.html" class="m-doc">cTerraformingManager</a>) -&gt; namespace</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper"><a href="#aae929fc08bdefc2b5ad37cd7114009e4" class="m-doc">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_tool_manager.html" class="m-doc">cToolManager</a>,
+              0x29C)</span>
             </dt>
             <dd><span></span></dd>
             <dt>
@@ -2611,11 +2906,6 @@
             <dd><span></span></dd>
             <dt>
               <span class="m-doc-wrap-bumper">auto <a href="#a51e42b1bf6a0850f8b3cef5be32b8e2a" class="m-doc">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_u_i_event_log.html" class="m-doc">cUIEventLog</a>) -&gt; namespace</span>
-            </dt>
-            <dd><span></span></dd>
-            <dt>
-              <span class="m-doc-wrap-bumper"><a href="#a4dac161427ed69ff871353619fc10b2c" class="m-doc">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1_unknown_creature_class.html" class="m-doc">UnknownCreatureClass</a>,
-              0x4A0)</span>
             </dt>
             <dd><span></span></dd>
           </dl>
@@ -3576,13 +3866,13 @@
             <p>The type of function used to write binary attribute data.</p>
 <p>The parameters are the data serializer and the address of memory where the data is.</p>
           </div></section>
-          <section class="m-doc-details" id="a1eacca95708d239cb585b607a202d1f7"><div>
+          <section class="m-doc-details" id="ae61a7dd908086961aab0ebc83bdacc22"><div>
             <h3>
-              typedef void(*Simulator::<wbr /><a href="#a1eacca95708d239cb585b607a202d1f7" class="m-doc-self">ReadTextFunction_t</a>)(const string&amp;, void*)
+              typedef void(*Simulator::<wbr /><a href="#ae61a7dd908086961aab0ebc83bdacc22" class="m-doc-self">ReadTextFunction_t</a>)(const eastl::string&amp;, void*)
               <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_simulator_2_serialization_8h.html">&lt;Spore/Simulator/Serialization.h&gt;</a></div>
             </h3>
             <p>The type of function used to read attribute data, which is expressed in text.</p>
-<p>The parameters are the text string and the address of memory where the data must be read.</p>
+<p>The parameters are the text eastl::string and the address of memory where the data must be read.</p>
           </div></section>
           <section class="m-doc-details" id="aafe2f715acd88725b79dd7da5a4500be"><div>
             <h3>
@@ -3652,9 +3942,9 @@
             <p>Used to decide which game objects go to the vector and which do not.</p>
 <p>It receives the object to evaluate and the game noun ID passed to the GetData function.</p>
           </div></section>
-          <section class="m-doc-details" id="a5dd5d2f2fefe02ca780bfd6aa130f41a"><div>
+          <section class="m-doc-details" id="a9f9b342da8dc70a34302a67a113cab47"><div>
             <h3>
-              typedef map&lt;uint32_t, intrusive_ptr&lt;<a href="class_simulator_1_1c_empire.html" class="m-doc">cEmpire</a>&gt;&gt; Simulator::<wbr /><a href="#a5dd5d2f2fefe02ca780bfd6aa130f41a" class="m-doc-self">EmpiresMap</a>
+              typedef eastl::map&lt;uint32_t, <a href="c_empire_8h.html#af8ca66b45d5d36ab090e9c1ed9dc9af0" class="m-doc">cEmpirePtr</a>&gt; Simulator::<wbr /><a href="#a9f9b342da8dc70a34302a67a113cab47" class="m-doc-self">EmpiresMap</a>
               <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_star_manager_8h.html">&lt;Spore/Simulator/SubSystem/StarManager.h&gt;</a></div>
             </h3>
             <p><span></span></p>
@@ -3662,9 +3952,9 @@
         </section>
         <section>
           <h2>Function documentation</h2>
-          <section class="m-doc-details" id="a1aa47d221f048c0e9601f38df93110f7"><div>
+          <section class="m-doc-details" id="a33d69759c539bd7ea17c92f3e8142ee7"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">intrusive_ptr&lt;<a href="class_simulator_1_1_scheduled_task_listener.html" class="m-doc">ScheduledTaskListener</a>&gt; Simulator::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a1aa47d221f048c0e9601f38df93110f7" class="m-doc-self">ScheduleTask</a>(</span><span class="m-doc-wrap">const <a href="namespace_app.html#a0792416baaa2251d68963db97d021cda" class="m-doc">App::<wbr />VoidFunction_T</a>&amp; function,
+              <span class="m-doc-wrap-bumper"><a href="_i_message_manager_8h.html#a386ef1464a4a3bb2289b0844c570d9cc" class="m-doc">SimScheduledTaskListenerPtr</a> Simulator::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a33d69759c539bd7ea17c92f3e8142ee7" class="m-doc-self">ScheduleTask</a>(</span><span class="m-doc-wrap">const <a href="namespace_app.html#a0792416baaa2251d68963db97d021cda" class="m-doc">App::<wbr />VoidFunction_T</a>&amp; function,
               float scheduleTime)</span></span>
               <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_i_message_manager_8h.html">&lt;Spore/App/IMessageManager.h&gt;</a></div>
             </h3>
@@ -3686,13 +3976,13 @@
             </table>
 <p>The function is executed only once, and the time starts counting since this ScheduleTask method has been called.</p><p>The method returns the object that holds the scheduled task. If you want to remove the task before it is called, you can do it by calling Simulator::RemoveScheduledTask(...) with the returned object as parameter.</p><p>Internally, this is implemented by adding a message listener that listens to the kMsgAppUpdate message. Every frame uses a <a href="class_simulator_1_1c_gonzago_timer.html" class="m-doc">cGonzagoTimer</a> object to compare the elapsed time since this task as scheduled. The listener is removed once the task has finished executing.</p>
           </div></section>
-          <section class="m-doc-details" id="a2cab591ed2d9caaa1a8cec93d8d1fdf7"><div>
+          <section class="m-doc-details" id="a0daf36898034fa02224bb9c9e544d45f"><div>
             <h3>
               <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="_i_message_manager_8h.html">&lt;Spore/App/IMessageManager.h&gt;</a></div>
               <div class="m-doc-template">
                 template&lt;class T&gt;
               </div>
-              <span class="m-doc-wrap-bumper">intrusive_ptr&lt;<a href="class_simulator_1_1_scheduled_task_listener.html" class="m-doc">ScheduledTaskListener</a>&gt; Simulator::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a2cab591ed2d9caaa1a8cec93d8d1fdf7" class="m-doc-self">ScheduleTask</a>(</span><span class="m-doc-wrap">T* object,
+              <span class="m-doc-wrap-bumper"><a href="_i_message_manager_8h.html#a8398855010ed2cf21fa27d1c29cf64e9" class="m-doc">ScheduledTaskListenerPtr</a> Simulator::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a0daf36898034fa02224bb9c9e544d45f" class="m-doc-self">ScheduleTask</a>(</span><span class="m-doc-wrap">T* object,
               <a href="namespace_app.html#adf650d2c1852a6bd9fa7e8d49af6fae4" class="m-doc">App::<wbr />VoidMethod_T</a>&lt;T&gt; method,
               float scheduleTime)</span></span>
             </h3>
@@ -3718,9 +4008,9 @@
             </table>
 <p>The method is executed only once, and the time starts counting since this ScheduleTask method has been called.</p><p>The method returns the object that holds the scheduled task. If you want to remove the task before it is called, you can do it by calling Simulator::RemoveScheduledTask(...) with the returned object as parameter.</p><p>Internally, this is implemented by adding a message listener that listens to the kMsgAppUpdate message. Every frame uses a <a href="class_simulator_1_1c_gonzago_timer.html" class="m-doc">cGonzagoTimer</a> object to compare the elapsed time since this task as scheduled. The listener is removed once the task has finished executing.</p>
           </div></section>
-          <section class="m-doc-details" id="aa7982c6383bbaa719b5f814d85e55ec9"><div>
+          <section class="m-doc-details" id="ab9d02dd6a6abfbd218f448740d888e59"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">intrusive_ptr&lt;<a href="class_simulator_1_1_scheduled_task_listener.html" class="m-doc">ScheduledTaskListener</a>&gt; Simulator::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#aa7982c6383bbaa719b5f814d85e55ec9" class="m-doc-self">ScheduleRepeatedTask</a>(</span><span class="m-doc-wrap">const <a href="namespace_app.html#a0792416baaa2251d68963db97d021cda" class="m-doc">App::<wbr />VoidFunction_T</a>&amp; function,
+              <span class="m-doc-wrap-bumper"><a href="_i_message_manager_8h.html#a386ef1464a4a3bb2289b0844c570d9cc" class="m-doc">SimScheduledTaskListenerPtr</a> Simulator::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ab9d02dd6a6abfbd218f448740d888e59" class="m-doc-self">ScheduleRepeatedTask</a>(</span><span class="m-doc-wrap">const <a href="namespace_app.html#a0792416baaa2251d68963db97d021cda" class="m-doc">App::<wbr />VoidFunction_T</a>&amp; function,
               float scheduleTime,
               float repeatRate)</span></span>
               <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_i_message_manager_8h.html">&lt;Spore/App/IMessageManager.h&gt;</a></div>
@@ -3747,13 +4037,13 @@
             </table>
 <p>The function is executed only once, and the time starts counting since this ScheduleTask method has been called.</p><p>The method returns the object that holds the scheduled task. If you want to remove the task so it does not execute anymore, you can do it by calling Simulator::RemoveScheduledTask(...) with the returned object as parameter.</p><p>Internally, this is implemented by adding a message listener that listens to the kMsgAppUpdate message. Every frame uses a <a href="class_simulator_1_1c_gonzago_timer.html" class="m-doc">cGonzagoTimer</a> object to compare the elapsed time since this task as scheduled. The listener is removed once the task has finished executing.</p>
           </div></section>
-          <section class="m-doc-details" id="a7f93f5e7e0ce89c722c2621c4f955d71"><div>
+          <section class="m-doc-details" id="ae8dfa3d0417c9255251b98aa431bc9de"><div>
             <h3>
               <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="_i_message_manager_8h.html">&lt;Spore/App/IMessageManager.h&gt;</a></div>
               <div class="m-doc-template">
                 template&lt;class T&gt;
               </div>
-              <span class="m-doc-wrap-bumper">intrusive_ptr&lt;<a href="class_simulator_1_1_scheduled_task_listener.html" class="m-doc">ScheduledTaskListener</a>&gt; Simulator::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a7f93f5e7e0ce89c722c2621c4f955d71" class="m-doc-self">ScheduleRepeatedTask</a>(</span><span class="m-doc-wrap">T* object,
+              <span class="m-doc-wrap-bumper"><a href="_i_message_manager_8h.html#a8398855010ed2cf21fa27d1c29cf64e9" class="m-doc">ScheduledTaskListenerPtr</a> Simulator::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ae8dfa3d0417c9255251b98aa431bc9de" class="m-doc-self">ScheduleRepeatedTask</a>(</span><span class="m-doc-wrap">T* object,
               <a href="namespace_app.html#adf650d2c1852a6bd9fa7e8d49af6fae4" class="m-doc">App::<wbr />VoidMethod_T</a>&lt;T&gt; method,
               float scheduleTime,
               float repeatRate)</span></span>
@@ -3784,9 +4074,9 @@
             </table>
 <p>The function is executed only once, and the time starts counting since this ScheduleTask method has been called.</p><p>The method returns the object that holds the scheduled task. If you want to remove the task so it does not execute anymore, you can do it by calling Simulator::RemoveScheduledTask(...) with the returned object as parameter.</p><p>Internally, this is implemented by adding a message listener that listens to the kMsgAppUpdate message. Every frame uses a <a href="class_simulator_1_1c_gonzago_timer.html" class="m-doc">cGonzagoTimer</a> object to compare the elapsed time since this task as scheduled. The listener is removed once the task has finished executing.</p>
           </div></section>
-          <section class="m-doc-details" id="a0a41fae1cde510185d211f0bbbcb6992"><div>
+          <section class="m-doc-details" id="a59d2cb6ccd81c7f54f84ad804ae70ca0"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">bool Simulator::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a0a41fae1cde510185d211f0bbbcb6992" class="m-doc-self">RemoveScheduledTask</a>(</span><span class="m-doc-wrap">intrusive_ptr&lt;<a href="class_simulator_1_1_scheduled_task_listener.html" class="m-doc">ScheduledTaskListener</a>&gt;&amp; taskListener)</span></span>
+              <span class="m-doc-wrap-bumper">bool Simulator::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a59d2cb6ccd81c7f54f84ad804ae70ca0" class="m-doc-self">RemoveScheduledTask</a>(</span><span class="m-doc-wrap"><a href="_i_message_manager_8h.html#a8398855010ed2cf21fa27d1c29cf64e9" class="m-doc">ScheduledTaskListenerPtr</a>&amp; taskListener)</span></span>
               <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_i_message_manager_8h.html">&lt;Spore/App/IMessageManager.h&gt;</a></div>
             </h3>
             <p><span></span></p>
@@ -3828,11 +4118,43 @@
             </h3>
             <p><span></span></p>
           </div></section>
+          <section class="m-doc-details" id="ad60ae67ea9e54f777c328384200fd621"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"> Simulator::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ad60ae67ea9e54f777c328384200fd621" class="m-doc-self">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_behavior_agent.html" class="m-doc">cBehaviorAgent</a>,
+              0x68)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="c_behavior_agent_8h.html">&lt;Spore/Simulator/cBehaviorAgent.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="a45e64888a9bc1d076d058e7a16b2a93a"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"> Simulator::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a45e64888a9bc1d076d058e7a16b2a93a" class="m-doc-self">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_behavior_base.html" class="m-doc">cBehaviorBase</a>,
+              0x74)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="c_behavior_base_8h.html">&lt;Spore/Simulator/cBehaviorBase.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="a4f4aae9d5767856713f408e31dea2994"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"> Simulator::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a4f4aae9d5767856713f408e31dea2994" class="m-doc-self">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_behavior_entry.html" class="m-doc">cBehaviorEntry</a>,
+              0x20)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="c_behavior_entry_8h.html">&lt;Spore/Simulator/cBehaviorEntry.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
           <section class="m-doc-details" id="a05c6f27df0f3214322d704bf8ed3fe8e"><div>
             <h3>
               <span class="m-doc-wrap-bumper"> Simulator::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a05c6f27df0f3214322d704bf8ed3fe8e" class="m-doc-self">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_behavior_list.html" class="m-doc">cBehaviorList</a>,
               0x18)</span></span>
               <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="c_behavior_list_8h.html">&lt;Spore/Simulator/cBehaviorList.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="ab5186824567b2da10c2a1e57b9501b7a"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"> Simulator::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ab5186824567b2da10c2a1e57b9501b7a" class="m-doc-self">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_building.html" class="m-doc">cBuilding</a>,
+              0x340)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="c_building_8h.html">&lt;Spore/Simulator/cBuilding.h&gt;</a></div>
             </h3>
             <p><span></span></p>
           </div></section>
@@ -3891,6 +4213,14 @@
             </h3>
             <p><span></span></p>
           </div></section>
+          <section class="m-doc-details" id="a4049cd3a57d08b78d2684462c5f8080c"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"> Simulator::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a4049cd3a57d08b78d2684462c5f8080c" class="m-doc-self">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="struct_simulator_1_1_unk_city_class.html" class="m-doc">UnkCityClass</a>,
+              0x64)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="c_city_8h.html">&lt;Spore/Simulator/cCity.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
           <section class="m-doc-details" id="a3b522742b40a40383106ec43cdb5966a"><div>
             <h3>
               <span class="m-doc-wrap-bumper"> Simulator::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a3b522742b40a40383106ec43cdb5966a" class="m-doc-self">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="struct_simulator_1_1c_city_partner.html" class="m-doc">cCityPartner</a>,
@@ -3907,18 +4237,26 @@
             </h3>
             <p><span></span></p>
           </div></section>
-          <section class="m-doc-details" id="a4049cd3a57d08b78d2684462c5f8080c"><div>
-            <h3>
-              <span class="m-doc-wrap-bumper"> Simulator::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a4049cd3a57d08b78d2684462c5f8080c" class="m-doc-self">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="struct_simulator_1_1_unk_city_class.html" class="m-doc">UnkCityClass</a>,
-              0x64)</span></span>
-              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="c_city_8h.html">&lt;Spore/Simulator/cCity.h&gt;</a></div>
-            </h3>
-            <p><span></span></p>
-          </div></section>
           <section class="m-doc-details" id="aaa01d6fdfc284d320bd387989e849106"><div>
             <h3>
               <span class="m-doc-wrap-bumper">namespace Simulator::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#aaa01d6fdfc284d320bd387989e849106" class="m-doc-self">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_city.html" class="m-doc">cCity</a>)</span></span>
               <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="c_city_8h.html">&lt;Spore/Simulator/cCity.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="a74a39219807a605d656c6002f76f0a74"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"> Simulator::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a74a39219807a605d656c6002f76f0a74" class="m-doc-self">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_city_territory.html" class="m-doc">cCityTerritory</a>,
+              0x114)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="c_city_territory_8h.html">&lt;Spore/Simulator/cCityTerritory.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="abe246397fe303d105d98bfdfb6be95c7"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"> Simulator::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#abe246397fe303d105d98bfdfb6be95c7" class="m-doc-self">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_city_walls.html" class="m-doc">cCityWalls</a>,
+              0x358)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="c_city_walls_8h.html">&lt;Spore/Simulator/cCityWalls.h&gt;</a></div>
             </h3>
             <p><span></span></p>
           </div></section>
@@ -3927,6 +4265,14 @@
               <span class="m-doc-wrap-bumper"> Simulator::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a52b3aebef4d7b06c670ab34b01161194" class="m-doc-self">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_civilization.html" class="m-doc">cCivilization</a>,
               0x4D8)</span></span>
               <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="c_civilization_8h.html">&lt;Spore/Simulator/cCivilization.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="a282b673376f5f9c78ebc436ac5f02d4d"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"> Simulator::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a282b673376f5f9c78ebc436ac5f02d4d" class="m-doc-self">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_combatant.html" class="m-doc">cCombatant</a>,
+              0xC8)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="c_combatant_8h.html">&lt;Spore/Simulator/cCombatant.h&gt;</a></div>
             </h3>
             <p><span></span></p>
           </div></section>
@@ -3961,6 +4307,30 @@
             </h3>
             <p><span></span></p>
           </div></section>
+          <section class="m-doc-details" id="a31c5c694b6da08d41ae0c4aea9acfb81"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"> Simulator::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a31c5c694b6da08d41ae0c4aea9acfb81" class="m-doc-self">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_community.html" class="m-doc">cCommunity</a>,
+              0x120)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="c_community_8h.html">&lt;Spore/Simulator/cCommunity.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="a4cb2bbff19467f09897489c02aa8deed"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"> Simulator::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a4cb2bbff19467f09897489c02aa8deed" class="m-doc-self">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_conversation.html" class="m-doc">cConversation</a>,
+              0x80)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="c_conversation_8h.html">&lt;Spore/Simulator/cConversation.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="a70c90abd3af50154c9acd542c6328752"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"> Simulator::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a70c90abd3af50154c9acd542c6328752" class="m-doc-self">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_creature_ability.html" class="m-doc">cCreatureAbility</a>,
+              0x13C)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="c_creature_ability_8h.html">&lt;Spore/Simulator/cCreatureAbility.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
           <section class="m-doc-details" id="ae71cc693337a91d2a5ecf47bef0db930"><div>
             <h3>
               <span class="m-doc-wrap-bumper">namespace Simulator::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ae71cc693337a91d2a5ecf47bef0db930" class="m-doc-self">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_creature_ability.html" class="m-doc">cCreatureAbility</a>)</span></span>
@@ -3968,10 +4338,34 @@
             </h3>
             <p><span></span></p>
           </div></section>
+          <section class="m-doc-details" id="ab97ebf0a1f8153d55aa2f7220624aad2"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"> Simulator::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ab97ebf0a1f8153d55aa2f7220624aad2" class="m-doc-self">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_creature_animal.html" class="m-doc">cCreatureAnimal</a>,
+              0x16A0)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="c_creature_animal_8h.html">&lt;Spore/Simulator/cCreatureAnimal.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
           <section class="m-doc-details" id="a39798460a2e68bc7040c3223bdd4e90e"><div>
             <h3>
               <span class="m-doc-wrap-bumper">namespace Simulator::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a39798460a2e68bc7040c3223bdd4e90e" class="m-doc-self">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_creature_animal.html" class="m-doc">cCreatureAnimal</a>)</span></span>
               <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="c_creature_animal_8h.html">&lt;Spore/Simulator/cCreatureAnimal.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="a4dac161427ed69ff871353619fc10b2c"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"> Simulator::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a4dac161427ed69ff871353619fc10b2c" class="m-doc-self">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1_unknown_creature_class.html" class="m-doc">UnknownCreatureClass</a>,
+              0x4A0)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="c_creature_base_8h.html">&lt;Spore/Simulator/cCreatureBase.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="ac507b1e2844474619283d4c0fe8d5459"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"> Simulator::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ac507b1e2844474619283d4c0fe8d5459" class="m-doc-self">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_creature_base.html" class="m-doc">cCreatureBase</a>,
+              0xFC0)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="c_creature_base_8h.html">&lt;Spore/Simulator/cCreatureBase.h&gt;</a></div>
             </h3>
             <p><span></span></p>
           </div></section>
@@ -4004,10 +4398,26 @@
             </h3>
             <p><span></span></p>
           </div></section>
+          <section class="m-doc-details" id="ac5c4df33e93ab94a8bc8d687995e3f4d"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"> Simulator::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ac5c4df33e93ab94a8bc8d687995e3f4d" class="m-doc-self">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_default_ao_e_area.html" class="m-doc">cDefaultAoEArea</a>,
+              0x170)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="c_default_ao_e_area_8h.html">&lt;Spore/Simulator/cDefaultAoEArea.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
           <section class="m-doc-details" id="ac0c425a828c41233a65aec3b88a3db2e"><div>
             <h3>
               <span class="m-doc-wrap-bumper">namespace Simulator::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ac0c425a828c41233a65aec3b88a3db2e" class="m-doc-self">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_default_ao_e_tool.html" class="m-doc">cDefaultAoETool</a>)</span></span>
               <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="c_default_ao_e_tool_8h.html">&lt;Spore/Simulator/cDefaultAoETool.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="a5acca6fd05ef0e87dc510f69bfbfb6f2"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"> Simulator::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a5acca6fd05ef0e87dc510f69bfbfb6f2" class="m-doc-self">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_default_beam_projectile.html" class="m-doc">cDefaultBeamProjectile</a>,
+              0x1F8)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="c_default_beam_projectile_8h.html">&lt;Spore/Simulator/cDefaultBeamProjectile.h&gt;</a></div>
             </h3>
             <p><span></span></p>
           </div></section>
@@ -4077,6 +4487,14 @@
             </h3>
             <p><span></span></p>
           </div></section>
+          <section class="m-doc-details" id="a686c26413e9ffbe5ec522fe5f9ed4485"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"> Simulator::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a686c26413e9ffbe5ec522fe5f9ed4485" class="m-doc-self">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_empire.html" class="m-doc">cEmpire</a>,
+              0x158)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="c_empire_8h.html">&lt;Spore/Simulator/cEmpire.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
           <section class="m-doc-details" id="aeb9f170545691f46c2cd1d7ac143c4d9"><div>
             <h3>
               <span class="m-doc-wrap-bumper">uint32_t Simulator::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#aeb9f170545691f46c2cd1d7ac143c4d9" class="m-doc-self">GetArchetypeRelationshipsID</a>(</span><span class="m-doc-wrap">int archetype,
@@ -4114,10 +4532,34 @@
             </h3>
             <p><span></span></p>
           </div></section>
+          <section class="m-doc-details" id="a289192d2119976de14f10c4a291e3537"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"> Simulator::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a289192d2119976de14f10c4a291e3537" class="m-doc-self">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_game_bundle_container.html" class="m-doc">cGameBundleContainer</a>,
+              0x24)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="c_game_bundle_container_8h.html">&lt;Spore/Simulator/cGameBundleContainer.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="a0f50ef5677354f20e5e4b69a416c35a5"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"> Simulator::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a0f50ef5677354f20e5e4b69a416c35a5" class="m-doc-self">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_game_data.html" class="m-doc">cGameData</a>,
+              0x34)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="c_game_data_8h.html">&lt;Spore/Simulator/cGameData.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
           <section class="m-doc-details" id="a2b8594562afd81ab65b16d1cc8c80904"><div>
             <h3>
               <span class="m-doc-wrap-bumper">namespace Simulator::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a2b8594562afd81ab65b16d1cc8c80904" class="m-doc-self">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_game_data.html" class="m-doc">cGameData</a>)</span></span>
               <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="c_game_data_8h.html">&lt;Spore/Simulator/cGameData.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="abfd71eaa9136ad342a43999028d65391"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"> Simulator::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#abfd71eaa9136ad342a43999028d65391" class="m-doc-self">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_game_data_u_f_o.html" class="m-doc">cGameDataUFO</a>,
+              0x818)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="c_game_data_u_f_o_8h.html">&lt;Spore/Simulator/cGameDataUFO.h&gt;</a></div>
             </h3>
             <p><span></span></p>
           </div></section>
@@ -4180,6 +4622,14 @@
             </h3>
             <p><span></span></p>
           </div></section>
+          <section class="m-doc-details" id="a36fe2394cb3df5c5792d1f36d8e401d9"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"> Simulator::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a36fe2394cb3df5c5792d1f36d8e401d9" class="m-doc-self">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_gonzago_timer.html" class="m-doc">cGonzagoTimer</a>,
+              0x20)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="c_gonzago_timer_8h.html">&lt;Spore/Simulator/cGonzagoTimer.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
           <section class="m-doc-details" id="a841efd0a6d6d608e9d05ae52dd635029"><div>
             <h3>
               <span class="m-doc-wrap-bumper">namespace Simulator::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a841efd0a6d6d608e9d05ae52dd635029" class="m-doc-self">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_gonzago_timer.html" class="m-doc">cGonzagoTimer</a>)</span></span>
@@ -4210,11 +4660,43 @@
             </h3>
             <p><span></span></p>
           </div></section>
+          <section class="m-doc-details" id="a8a589fec6a13abce000d724e275f8031"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"> Simulator::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a8a589fec6a13abce000d724e275f8031" class="m-doc-self">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_identity_colorable.html" class="m-doc">cIdentityColorable</a>,
+              0x30)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="c_identity_colorable_8h.html">&lt;Spore/Simulator/cIdentityColorable.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="a6f8db4255290c6dd33b911b483b5b33d"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"> Simulator::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a6f8db4255290c6dd33b911b483b5b33d" class="m-doc-self">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_interactable_object.html" class="m-doc">cInteractableObject</a>,
+              0x130)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="c_interactable_object_8h.html">&lt;Spore/Simulator/cInteractableObject.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="ac6943791730b9cb2b1a28a0cc965df45"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"> Simulator::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ac6943791730b9cb2b1a28a0cc965df45" class="m-doc-self">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_interactive_ornament.html" class="m-doc">cInteractiveOrnament</a>,
+              0x260)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="c_interactive_ornament_8h.html">&lt;Spore/Simulator/cInteractiveOrnament.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
           <section class="m-doc-details" id="a5fc92b96a0e3f79da6c8b2072374161d"><div>
             <h3>
               <span class="m-doc-wrap-bumper"> Simulator::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a5fc92b96a0e3f79da6c8b2072374161d" class="m-doc-self">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_inter_city_road.html" class="m-doc">cInterCityRoad</a>,
               0x140)</span></span>
               <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="c_inter_city_road_8h.html">&lt;Spore/Simulator/cInterCityRoad.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="aeaaf0acc37a3965cf82a32860ce89fa6"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"> Simulator::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#aeaaf0acc37a3965cf82a32860ce89fa6" class="m-doc-self">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_locomotive_object.html" class="m-doc">cLocomotiveObject</a>,
+              0x4D0)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="c_locomotive_object_8h.html">&lt;Spore/Simulator/cLocomotiveObject.h&gt;</a></div>
             </h3>
             <p><span></span></p>
           </div></section>
@@ -4287,6 +4769,14 @@
             </h3>
             <p><span></span></p>
           </div></section>
+          <section class="m-doc-details" id="a9ee619b779bfee1e65718a87a0c9c10e"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"> Simulator::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a9ee619b779bfee1e65718a87a0c9c10e" class="m-doc-self">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_ornament.html" class="m-doc">cOrnament</a>,
+              0x238)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="c_ornament_8h.html">&lt;Spore/Simulator/cOrnament.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
           <section class="m-doc-details" id="abd872d0d4f2b6edb555736a19fc299e0"><div>
             <h3>
               <span class="m-doc-wrap-bumper">namespace Simulator::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#abd872d0d4f2b6edb555736a19fc299e0" class="m-doc-self">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_place_colony_tool_strategy.html" class="m-doc">cPlaceColonyToolStrategy</a>)</span></span>
@@ -4298,6 +4788,14 @@
             <h3>
               <span class="m-doc-wrap-bumper">namespace Simulator::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a5473f275fe69929c7d4eb9aaa36122c0" class="m-doc-self">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_place_object_tool_strategy.html" class="m-doc">cPlaceObjectToolStrategy</a>)</span></span>
               <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="c_place_object_tool_strategy_8h.html">&lt;Spore/Simulator/cPlaceObjectToolStrategy.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="ae9c46ac69bf89665949a2a82652fab1b"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"> Simulator::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ae9c46ac69bf89665949a2a82652fab1b" class="m-doc-self">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_planet.html" class="m-doc">cPlanet</a>,
+              0x1C8)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="c_planet_8h.html">&lt;Spore/Simulator/cPlanet.h&gt;</a></div>
             </h3>
             <p><span></span></p>
           </div></section>
@@ -4380,6 +4878,14 @@
             </h3>
             <p><span></span></p>
           </div></section>
+          <section class="m-doc-details" id="ac7492cd6cf05490ef782764ee38f7773"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"> Simulator::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ac7492cd6cf05490ef782764ee38f7773" class="m-doc-self">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_planet_record.html" class="m-doc">cPlanetRecord</a>,
+              0x1B0)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="c_planet_record_8h.html">&lt;Spore/Simulator/cPlanetRecord.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
           <section class="m-doc-details" id="a5e49a65684404743d95bdbc75f83299a"><div>
             <h3>
               <span class="m-doc-wrap-bumper">namespace Simulator::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a5e49a65684404743d95bdbc75f83299a" class="m-doc-self">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_planet_record.html" class="m-doc">cPlanetRecord</a>)</span></span>
@@ -4392,6 +4898,14 @@
               <span class="m-doc-wrap-bumper"> Simulator::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a4b92c5c5970cc4894eb687fbcd8d6a1f" class="m-doc-self">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_plant_cargo_info.html" class="m-doc">cPlantCargoInfo</a>,
               0xA4)</span></span>
               <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="c_plant_cargo_info_8h.html">&lt;Spore/Simulator/cPlantCargoInfo.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="af03386da2ecede895f75cbfec43a90e9"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"> Simulator::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#af03386da2ecede895f75cbfec43a90e9" class="m-doc-self">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_player_inventory.html" class="m-doc">cPlayerInventory</a>,
+              0x98)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="c_player_inventory_8h.html">&lt;Spore/Simulator/cPlayerInventory.h&gt;</a></div>
             </h3>
             <p><span></span></p>
           </div></section>
@@ -4438,10 +4952,42 @@
             </h3>
             <p><span></span></p>
           </div></section>
+          <section class="m-doc-details" id="acc14af3655fad858e0ee4ee0c56c44ca"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"> Simulator::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#acc14af3655fad858e0ee4ee0c56c44ca" class="m-doc-self">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_scenario_act.html" class="m-doc">cScenarioAct</a>,
+              0x534)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="c_scenario_act_8h.html">&lt;Spore/Simulator/cScenarioAct.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="adf91ffda83c40e6f91da7e1d28d694de"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"> Simulator::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#adf91ffda83c40e6f91da7e1d28d694de" class="m-doc-self">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_scenario_asset.html" class="m-doc">cScenarioAsset</a>,
+              0x20)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="c_scenario_asset_8h.html">&lt;Spore/Simulator/cScenarioAsset.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="ae338f5937ae7cde6acc9468de9cae2b1"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"> Simulator::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ae338f5937ae7cde6acc9468de9cae2b1" class="m-doc-self">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_scenario_class.html" class="m-doc">cScenarioClass</a>,
+              0x27E0)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="c_scenario_class_8h.html">&lt;Spore/Simulator/cScenarioClass.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
           <section class="m-doc-details" id="a5e12235de176ec29c8f829185678b2d5"><div>
             <h3>
               <span class="m-doc-wrap-bumper">namespace Simulator::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a5e12235de176ec29c8f829185678b2d5" class="m-doc-self">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_scenario_class.html" class="m-doc">cScenarioClass</a>)</span></span>
               <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="c_scenario_class_8h.html">&lt;Spore/Simulator/cScenarioClass.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="a0987f79e0c893874fd3cea1130032b71"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"> Simulator::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a0987f79e0c893874fd3cea1130032b71" class="m-doc-self">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_scenario_class_act.html" class="m-doc">cScenarioClassAct</a>,
+              0x4E0)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="c_scenario_class_act_8h.html">&lt;Spore/Simulator/cScenarioClassAct.h&gt;</a></div>
             </h3>
             <p><span></span></p>
           </div></section>
@@ -4457,6 +5003,14 @@
             <h3>
               <span class="m-doc-wrap-bumper">namespace Simulator::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a13580134e5e0cacc738744e1a6f38fcf" class="m-doc-self">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_scenario_data.html" class="m-doc">cScenarioData</a>)</span></span>
               <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="c_scenario_data_8h.html">&lt;Spore/Simulator/cScenarioData.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="afb185cd02b45f775235d39047708b52e"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"> Simulator::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#afb185cd02b45f775235d39047708b52e" class="m-doc-self">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_scenario_dialog.html" class="m-doc">cScenarioDialog</a>,
+              0x44)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="c_scenario_dialog_8h.html">&lt;Spore/Simulator/cScenarioDialog.h&gt;</a></div>
             </h3>
             <p><span></span></p>
           </div></section>
@@ -4507,6 +5061,30 @@
             </h3>
             <p><span></span></p>
           </div></section>
+          <section class="m-doc-details" id="a43973801c5bb7caa2f95714fe1bdcabe"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"> Simulator::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a43973801c5bb7caa2f95714fe1bdcabe" class="m-doc-self">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_scenario_goal.html" class="m-doc">cScenarioGoal</a>,
+              0x188)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="c_scenario_goal_8h.html">&lt;Spore/Simulator/cScenarioGoal.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="a93c9466c6403a8d6355aaf46ad3fd020"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"> Simulator::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a93c9466c6403a8d6355aaf46ad3fd020" class="m-doc-self">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_scenario_marker.html" class="m-doc">cScenarioMarker</a>,
+              0x234)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="c_scenario_marker_8h.html">&lt;Spore/Simulator/cScenarioMarker.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="a8a213ef26729c364be30001634ed624c"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"> Simulator::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a8a213ef26729c364be30001634ed624c" class="m-doc-self">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_scenario_marker_act.html" class="m-doc">cScenarioMarkerAct</a>,
+              0x34)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="c_scenario_marker_act_8h.html">&lt;Spore/Simulator/cScenarioMarkerAct.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
           <section class="m-doc-details" id="aec995abc6f64dffbceabf85a2a15ed12"><div>
             <h3>
               <span class="m-doc-wrap-bumper"> Simulator::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#aec995abc6f64dffbceabf85a2a15ed12" class="m-doc-self">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_scenario_play_mode_goal.html" class="m-doc">cScenarioPlayModeGoal</a>,
@@ -4538,10 +5116,34 @@
             </h3>
             <p><span></span></p>
           </div></section>
+          <section class="m-doc-details" id="a5cc1e52bfc971f8103bb46a3b7ac6f3e"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"> Simulator::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a5cc1e52bfc971f8103bb46a3b7ac6f3e" class="m-doc-self">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_scenario_posse_member.html" class="m-doc">cScenarioPosseMember</a>,
+              0x38)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="c_scenario_posse_member_8h.html">&lt;Spore/Simulator/cScenarioPosseMember.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="a20a23f93c6ec67fee6c48df7fe3aee66"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"> Simulator::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a20a23f93c6ec67fee6c48df7fe3aee66" class="m-doc-self">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_scenario_powerup.html" class="m-doc">cScenarioPowerup</a>,
+              0x3C)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="c_scenario_powerup_8h.html">&lt;Spore/Simulator/cScenarioPowerup.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
           <section class="m-doc-details" id="a6b0426fa90e5c754317b29fb688fe76f"><div>
             <h3>
               <span class="m-doc-wrap-bumper">namespace Simulator::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a6b0426fa90e5c754317b29fb688fe76f" class="m-doc-self">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_scenario_powerup.html" class="m-doc">cScenarioPowerup</a>)</span></span>
               <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="c_scenario_powerup_8h.html">&lt;Spore/Simulator/cScenarioPowerup.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="a09e59d9c8d8fc9f1940f993befa6a691"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"> Simulator::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a09e59d9c8d8fc9f1940f993befa6a691" class="m-doc-self">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_scenario_resource.html" class="m-doc">cScenarioResource</a>,
+              0x2CB0)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="c_scenario_resource_8h.html">&lt;Spore/Simulator/cScenarioResource.h&gt;</a></div>
             </h3>
             <p><span></span></p>
           </div></section>
@@ -4556,6 +5158,14 @@
             <h3>
               <span class="m-doc-wrap-bumper">namespace Simulator::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a833a29830975286ad924f3a54996985a" class="m-doc-self">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_scenario_simulator.html" class="m-doc">cScenarioSimulator</a>)</span></span>
               <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="c_scenario_simulator_8h.html">&lt;Spore/Simulator/cScenarioSimulator.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="a3a5ea7144096dae90c70ab9c041a7207"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"> Simulator::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a3a5ea7144096dae90c70ab9c041a7207" class="m-doc-self">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_scenario_string.html" class="m-doc">cScenarioString</a>,
+              0x3C)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="c_scenario_string_8h.html">&lt;Spore/Simulator/cScenarioString.h&gt;</a></div>
             </h3>
             <p><span></span></p>
           </div></section>
@@ -4589,6 +5199,14 @@
             </h3>
             <p><span></span></p>
           </div></section>
+          <section class="m-doc-details" id="a3843c2450527f457d88317bc36a67de8"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"> Simulator::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a3843c2450527f457d88317bc36a67de8" class="m-doc-self">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_simulator_player_u_f_o.html" class="m-doc">cSimulatorPlayerUFO</a>,
+              0xE0)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="c_simulator_player_u_f_o_8h.html">&lt;Spore/Simulator/cSimulatorPlayerUFO.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
           <section class="m-doc-details" id="af08fe67cf13ff1fa602042adc749b2c0"><div>
             <h3>
               <span class="m-doc-wrap-bumper"><a href="class_simulator_1_1c_game_data_u_f_o.html" class="m-doc">cGameDataUFO</a>* Simulator::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#af08fe67cf13ff1fa602042adc749b2c0" class="m-doc-self">GetPlayerUFO</a>(</span><span class="m-doc-wrap">)</span></span>
@@ -4600,6 +5218,14 @@
             <h3>
               <span class="m-doc-wrap-bumper">namespace Simulator::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a6f250d226cba800cdf56a58c234715a4" class="m-doc-self">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_simulator_player_u_f_o.html" class="m-doc">cSimulatorPlayerUFO</a>)</span></span>
               <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="c_simulator_player_u_f_o_8h.html">&lt;Spore/Simulator/cSimulatorPlayerUFO.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="a54a292d5620a42fee5985c38559c049b"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"> Simulator::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a54a292d5620a42fee5985c38559c049b" class="m-doc-self">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_simulator_space_game.html" class="m-doc">cSimulatorSpaceGame</a>,
+              0xF0)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="c_simulator_space_game_8h.html">&lt;Spore/Simulator/cSimulatorSpaceGame.h&gt;</a></div>
             </h3>
             <p><span></span></p>
           </div></section>
@@ -4618,10 +5244,26 @@
             </h3>
             <p><span></span></p>
           </div></section>
+          <section class="m-doc-details" id="a44ba8865661416b1594e00bde2d55727"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"> Simulator::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a44ba8865661416b1594e00bde2d55727" class="m-doc-self">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_solar_system.html" class="m-doc">cSolarSystem</a>,
+              0x54)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="c_solar_system_8h.html">&lt;Spore/Simulator/cSolarSystem.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
           <section class="m-doc-details" id="ac37ae2f917426d48f2a8b40408b69d23"><div>
             <h3>
               <span class="m-doc-wrap-bumper">namespace Simulator::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ac37ae2f917426d48f2a8b40408b69d23" class="m-doc-self">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_solar_system.html" class="m-doc">cSolarSystem</a>)</span></span>
               <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="c_solar_system_8h.html">&lt;Spore/Simulator/cSolarSystem.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="af295ac24114e40cba0e082e686d56665"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"> Simulator::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#af295ac24114e40cba0e082e686d56665" class="m-doc-self">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_space_inventory.html" class="m-doc">cSpaceInventory</a>,
+              0x4C)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="c_space_inventory_8h.html">&lt;Spore/Simulator/cSpaceInventory.h&gt;</a></div>
             </h3>
             <p><span></span></p>
           </div></section>
@@ -4655,6 +5297,14 @@
             </h3>
             <p><span></span></p>
           </div></section>
+          <section class="m-doc-details" id="a4b0af780755c4254860d7246637d1dae"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"> Simulator::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a4b0af780755c4254860d7246637d1dae" class="m-doc-self">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_space_tool_data.html" class="m-doc">cSpaceToolData</a>,
+              0x2A0)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="c_space_tool_data_8h.html">&lt;Spore/Simulator/cSpaceToolData.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
           <section class="m-doc-details" id="a9360e0dd4778a64b69505e310927bc65"><div>
             <h3>
               <span class="m-doc-wrap-bumper">namespace Simulator::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a9360e0dd4778a64b69505e310927bc65" class="m-doc-self">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_space_tool_data.html" class="m-doc">cSpaceToolData</a>)</span></span>
@@ -4678,10 +5328,26 @@
             </h3>
             <p><span></span></p>
           </div></section>
+          <section class="m-doc-details" id="a497200f6f487f66374eb5edaf862db11"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"> Simulator::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a497200f6f487f66374eb5edaf862db11" class="m-doc-self">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_star.html" class="m-doc">cStar</a>,
+              0x50)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="c_star_8h.html">&lt;Spore/Simulator/cStar.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
           <section class="m-doc-details" id="a4555000c2ecc163338465a78d65d7c38"><div>
             <h3>
               <span class="m-doc-wrap-bumper">namespace Simulator::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a4555000c2ecc163338465a78d65d7c38" class="m-doc-self">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_star.html" class="m-doc">cStar</a>)</span></span>
               <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="c_star_8h.html">&lt;Spore/Simulator/cStar.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="acab3ff7e838e47db1c918c5692b544cb"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"> Simulator::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#acab3ff7e838e47db1c918c5692b544cb" class="m-doc-self">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_star_record.html" class="m-doc">cStarRecord</a>,
+              0xB0)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="c_star_record_8h.html">&lt;Spore/Simulator/cStarRecord.h&gt;</a></div>
             </h3>
             <p><span></span></p>
           </div></section>
@@ -4704,6 +5370,14 @@
             <h3>
               <span class="m-doc-wrap-bumper">namespace Simulator::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a003c3b7539f8eb0a1b0fc1599a90cd89" class="m-doc-self">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_time_of_day.html" class="m-doc">cTimeOfDay</a>)</span></span>
               <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="c_time_of_day_8h.html">&lt;Spore/Simulator/cTimeOfDay.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="a08c3b2c11c8b5e77998bb2288dd261ad"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"> Simulator::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a08c3b2c11c8b5e77998bb2288dd261ad" class="m-doc-self">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_tool_strategy.html" class="m-doc">cToolStrategy</a>,
+              0xC)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="c_tool_strategy_8h.html">&lt;Spore/Simulator/cToolStrategy.h&gt;</a></div>
             </h3>
             <p><span></span></p>
           </div></section>
@@ -4807,10 +5481,26 @@
             </h3>
             <p><span></span></p>
           </div></section>
+          <section class="m-doc-details" id="a632dbcdf48326e9f0e81a1d4c23b422e"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"> Simulator::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a632dbcdf48326e9f0e81a1d4c23b422e" class="m-doc-self">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_vehicle.html" class="m-doc">cVehicle</a>,
+              0xD98)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="c_vehicle_8h.html">&lt;Spore/Simulator/cVehicle.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
           <section class="m-doc-details" id="aae6305095b9266421f4f3c816397c08b"><div>
             <h3>
               <span class="m-doc-wrap-bumper">namespace Simulator::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#aae6305095b9266421f4f3c816397c08b" class="m-doc-self">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_vehicle.html" class="m-doc">cVehicle</a>)</span></span>
               <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="c_vehicle_8h.html">&lt;Spore/Simulator/cVehicle.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="aae2601be55c98534fe851eef80954f9e"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"> Simulator::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#aae2601be55c98534fe851eef80954f9e" class="m-doc-self">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_visible_planet.html" class="m-doc">cVisiblePlanet</a>,
+              0x10C)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="c_visible_planet_8h.html">&lt;Spore/Simulator/cVisiblePlanet.h&gt;</a></div>
             </h3>
             <p><span></span></p>
           </div></section>
@@ -4819,6 +5509,14 @@
               <span class="m-doc-wrap-bumper"> Simulator::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a70c4558da2b98020e46619eb7029cf13" class="m-doc-self">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_planet_gfx.html" class="m-doc">cPlanetGfx</a>,
               0x68)</span></span>
               <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="c_visible_planet_8h.html">&lt;Spore/Simulator/cVisiblePlanet.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="afbb8cbf637e75a420e1d6a6b0cc42d69"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"> Simulator::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#afbb8cbf637e75a420e1d6a6b0cc42d69" class="m-doc-self">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1_goal_card.html" class="m-doc">GoalCard</a>,
+              0x98)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_goal_card_8h.html">&lt;Spore/Simulator/GoalCard.h&gt;</a></div>
             </h3>
             <p><span></span></p>
           </div></section>
@@ -5085,6 +5783,14 @@
             </h3>
             <p><span></span></p>
           </div></section>
+          <section class="m-doc-details" id="a84a121741dba02505b4fe37810abc111"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"> Simulator::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a84a121741dba02505b4fe37810abc111" class="m-doc-self">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_relationship_manager.html" class="m-doc">cRelationshipManager</a>,
+              0x100)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="c_relationship_manager_8h.html">&lt;Spore/Simulator/SubSystem/cRelationshipManager.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
           <section class="m-doc-details" id="a22cbc6d64f5cf57fecb265f1bfb3f4f8"><div>
             <h3>
               <span class="m-doc-wrap-bumper">namespace Simulator::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a22cbc6d64f5cf57fecb265f1bfb3f4f8" class="m-doc-self">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_relationship_manager.html" class="m-doc">cRelationshipManager</a>)</span></span>
@@ -5097,6 +5803,14 @@
               <span class="m-doc-wrap-bumper"> Simulator::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ab765c0b2679fc09e3d7428bc2e230a87" class="m-doc-self">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_saved_game_header.html" class="m-doc">cSavedGameHeader</a>,
               0x68)</span></span>
               <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="c_saved_game_header_8h.html">&lt;Spore/Simulator/SubSystem/cSavedGameHeader.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="aec351348ffa4319f0bc4027cbfbdf994"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"> Simulator::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#aec351348ffa4319f0bc4027cbfbdf994" class="m-doc-self">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_strategy.html" class="m-doc">cStrategy</a>,
+              0x1C)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="c_strategy_8h.html">&lt;Spore/Simulator/SubSystem/cStrategy.h&gt;</a></div>
             </h3>
             <p><span></span></p>
           </div></section>
@@ -5115,10 +5829,26 @@
             </h3>
             <p><span></span></p>
           </div></section>
+          <section class="m-doc-details" id="aab4e8af30c534f1aaa75bec10be4c287"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"> Simulator::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#aab4e8af30c534f1aaa75bec10be4c287" class="m-doc-self">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_game_input_manager.html" class="m-doc">cGameInputManager</a>,
+              0x114)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_game_input_manager_8h.html">&lt;Spore/Simulator/SubSystem/GameInputManager.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
           <section class="m-doc-details" id="a044be0f212dbcdd44e4791ccc468df1b"><div>
             <h3>
               <span class="m-doc-wrap-bumper">namespace Simulator::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a044be0f212dbcdd44e4791ccc468df1b" class="m-doc-self">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_game_input_manager.html" class="m-doc">cGameInputManager</a>)</span></span>
               <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_game_input_manager_8h.html">&lt;Spore/Simulator/SubSystem/GameInputManager.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="a5bc596abedeb316b8f378c46847ca644"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"> Simulator::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a5bc596abedeb316b8f378c46847ca644" class="m-doc-self">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_game_mode_manager.html" class="m-doc">cGameModeManager</a>,
+              0x9C)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_game_mode_manager_8h.html">&lt;Spore/Simulator/SubSystem/GameModeManager.h&gt;</a></div>
             </h3>
             <p><span></span></p>
           </div></section>
@@ -5255,6 +5985,14 @@
             </h3>
             <p><span></span></p>
           </div></section>
+          <section class="m-doc-details" id="aed122598f20df7ce5c72ea2b93751121"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"> Simulator::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#aed122598f20df7ce5c72ea2b93751121" class="m-doc-self">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_game_view_manager.html" class="m-doc">cGameViewManager</a>,
+              0x1A8)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_game_view_manager_8h.html">&lt;Spore/Simulator/SubSystem/GameViewManager.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
           <section class="m-doc-details" id="ac8baff6a9a145c44e8e46647ebdc0ecc"><div>
             <h3>
               <span class="m-doc-wrap-bumper"><a href="class_graphics_1_1_i_lighting_world.html" class="m-doc">Graphics::<wbr />ILightingWorld</a>* Simulator::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ac8baff6a9a145c44e8e46647ebdc0ecc" class="m-doc-self">GetLightingWorld</a>(</span><span class="m-doc-wrap">)</span></span>
@@ -5296,6 +6034,14 @@
               <span class="m-doc-wrap-bumper"> Simulator::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a83db08634551fd62e5cf18d69871b11f" class="m-doc-self">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_sim_ticker.html" class="m-doc">cSimTicker</a>,
               0x44)</span></span>
               <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_sim_ticker_8h.html">&lt;Spore/Simulator/SubSystem/SimTicker.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="a1203d485b8291e8c059df1f9ead53fa2"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"> Simulator::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a1203d485b8291e8c059df1f9ead53fa2" class="m-doc-self">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_simulator_system.html" class="m-doc">cSimulatorSystem</a>,
+              0x70)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_simulator_system_8h.html">&lt;Spore/Simulator/SubSystem/SimulatorSystem.h&gt;</a></div>
             </h3>
             <p><span></span></p>
           </div></section>
@@ -5479,10 +6225,26 @@
             </table>
 <p>The Z coordinate will be 0.</p>
           </div></section>
+          <section class="m-doc-details" id="a6bf5af7ea9d981f3bd0d12e5bd8db8ff"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"> Simulator::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a6bf5af7ea9d981f3bd0d12e5bd8db8ff" class="m-doc-self">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_terraforming_manager.html" class="m-doc">cTerraformingManager</a>,
+              0x94)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_terraforming_manager_8h.html">&lt;Spore/Simulator/SubSystem/TerraformingManager.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
           <section class="m-doc-details" id="af189652b3c7f4d58328b18200025581a"><div>
             <h3>
               <span class="m-doc-wrap-bumper">namespace Simulator::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#af189652b3c7f4d58328b18200025581a" class="m-doc-self">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_terraforming_manager.html" class="m-doc">cTerraformingManager</a>)</span></span>
               <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_terraforming_manager_8h.html">&lt;Spore/Simulator/SubSystem/TerraformingManager.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="aae929fc08bdefc2b5ad37cd7114009e4"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"> Simulator::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#aae929fc08bdefc2b5ad37cd7114009e4" class="m-doc-self">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_tool_manager.html" class="m-doc">cToolManager</a>,
+              0x29C)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_tool_manager_8h.html">&lt;Spore/Simulator/SubSystem/ToolManager.h&gt;</a></div>
             </h3>
             <p><span></span></p>
           </div></section>
@@ -5513,14 +6275,6 @@
             <h3>
               <span class="m-doc-wrap-bumper">namespace Simulator::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a51e42b1bf6a0850f8b3cef5be32b8e2a" class="m-doc-self">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_u_i_event_log.html" class="m-doc">cUIEventLog</a>)</span></span>
               <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_u_i_event_log_8h.html">&lt;Spore/Simulator/SubSystem/UIEventLog.h&gt;</a></div>
-            </h3>
-            <p><span></span></p>
-          </div></section>
-          <section class="m-doc-details" id="a4dac161427ed69ff871353619fc10b2c"><div>
-            <h3>
-              <span class="m-doc-wrap-bumper"> Simulator::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a4dac161427ed69ff871353619fc10b2c" class="m-doc-self">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1_unknown_creature_class.html" class="m-doc">UnknownCreatureClass</a>,
-              0x4A0)</span></span>
-              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_unknown_creature_class_8h.html">&lt;Spore/Simulator/UnknownCreatureClass.h&gt;</a></div>
             </h3>
             <p><span></span></p>
           </div></section>

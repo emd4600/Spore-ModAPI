@@ -63,7 +63,7 @@
             </li>
           </ul>
         </div>
-<p>This does not represent the star visually (that is the <a href="class_simulator_1_1c_planet.html" class="m-doc">Simulator::<wbr />cPlanet</a> class), this is just information about the planet that will be stored in the galaxy database in the saved games folder.</p><p>This class represents any element in the galaxy view, so it is also used by binary stars, black holes, proto-planteary disks and the galaxy center.</p><p>Star records are uniquely identified with a <a href="struct_simulator_1_1_star_i_d.html" class="m-doc">StarID</a>, which can be retrieved using <a href="class_simulator_1_1c_star_record.html#ab6f84a77249bea9d566c5dbf8aacc08a" class="m-doc">GetID()</a>. You can get the record from an ID using <a href="struct_simulator_1_1_star_i_d.html#acd8e2e72b8dacf5b3b74ba49dbb7a6df" class="m-doc">StarID::<wbr />GetRecord()</a>.</p><p>The vector <code>mPlanets</code> only gets loaded when it is needed, so sometimes it might be empty even if this star has planets. To force it to load, use <a href="class_simulator_1_1c_star_record.html#a2826761aef5fe3fe79537a500f245c3b" class="m-doc">cStarRecord::<wbr />GetPlanetRecords()</a> to access the vector instead.</p><p>You can create a star record using <code>(cStarRecord*)ClassManager.Create(cStarRecord::CLASS_ID)</code></p>
+<p>This does not represent the star visually (that is the <a href="class_simulator_1_1c_planet.html" class="m-doc">Simulator::<wbr />cPlanet</a> class), this is just information about the planet that will be stored in the galaxy database in the saved games folder.</p><p>This class represents any element in the galaxy view, so it is also used by binary stars, black holes, proto-planteary disks and the galaxy center.</p><p>Star records are uniquely identified with a <a href="struct_simulator_1_1_star_i_d.html" class="m-doc">StarID</a>, which can be retrieved using <a href="class_simulator_1_1c_star_record.html#ab6f84a77249bea9d566c5dbf8aacc08a" class="m-doc">GetID()</a>. You can get the record from an ID using <a href="struct_simulator_1_1_star_i_d.html#acd8e2e72b8dacf5b3b74ba49dbb7a6df" class="m-doc">StarID::<wbr />GetRecord()</a>.</p><p>The vector <code>mPlanets</code> only gets loaded when it is needed, so sometimes it might be empty even if this star has planets. To force it to load, use <a href="class_simulator_1_1c_star_record.html#a9ddf33d42c190b705531d47a0bd940ce" class="m-doc">cStarRecord::<wbr />GetPlanetRecords()</a> to access the vector instead.</p><p>You can create a star record using <code>(cStarRecord*)ClassManager.Create(cStarRecord::CLASS_ID)</code></p>
         <section id="base-classes">
           <h2><a href="#base-classes">Base classes</a></h2>
           <dl class="m-doc">
@@ -110,7 +110,7 @@
             </dt>
             <dd>Returns the planet record information at the given orbit index (0 - planet closest to the sun, 1 - second planet, etc)</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#a2826761aef5fe3fe79537a500f245c3b" class="m-doc">GetPlanetRecords</a>(</span><span class="m-doc-wrap">) -&gt; vector&lt;<a href="c_planet_record_8h.html#a682e62ad9640c48598962d9ffc2c2893" class="m-doc">cPlanetRecordPtr</a>&gt;&amp;</span>
+              <span class="m-doc-wrap-bumper">auto <a href="#a9ddf33d42c190b705531d47a0bd940ce" class="m-doc">GetPlanetRecords</a>(</span><span class="m-doc-wrap">) -&gt; eastl::vector&lt;<a href="c_planet_record_8h.html#a682e62ad9640c48598962d9ffc2c2893" class="m-doc">cPlanetRecordPtr</a>&gt;&amp;</span>
             </dt>
             <dd>Returns a reference to the planet records of this star, loading them if they are not loaded.</dd>
             <dt id="a3a9c8996c8e1adc7cfec11f8f09b51c8">
@@ -174,8 +174,8 @@
               int <a href="#a032de06673843c64f887f50355ada1ed" class="m-doc-self">mFlags</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="ab73731e826df1be2b6843cf759ffd30b">
-              string16 <a href="#ab73731e826df1be2b6843cf759ffd30b" class="m-doc-self">mName</a>
+            <dt id="a59954e0991ec00b9022b241489bf2a57">
+              eastl::string16 <a href="#a59954e0991ec00b9022b241489bf2a57" class="m-doc-self">mName</a>
             </dt>
             <dd><span></span></dd>
             <dt id="a045a3073e2128c9e9260c2d86b591bd3">
@@ -190,12 +190,12 @@
               <a href="class_simulator_1_1c_species_profile.html" class="m-doc">cSpeciesProfile</a>* <a href="#a1a8834974e35fd47d230be9039fc0b06" class="m-doc-self">mpSpeciesProfile</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="a8f150740692496e76b78170fb768932e">
-              vector&lt;<a href="c_planet_record_8h.html#a682e62ad9640c48598962d9ffc2c2893" class="m-doc">cPlanetRecordPtr</a>&gt; <a href="#a8f150740692496e76b78170fb768932e" class="m-doc-self">mPlanets</a>
+            <dt id="adfa57c09eca3a364ab7ee81cbeb88bb5">
+              eastl::vector&lt;<a href="c_planet_record_8h.html#a682e62ad9640c48598962d9ffc2c2893" class="m-doc">cPlanetRecordPtr</a>&gt; <a href="#adfa57c09eca3a364ab7ee81cbeb88bb5" class="m-doc-self">mPlanets</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="a024016ae18a42970ed55263a038cafb1">
-              vector&lt;<a href="c_planet_record_8h.html#a682e62ad9640c48598962d9ffc2c2893" class="m-doc">cPlanetRecordPtr</a>&gt; <a href="#a024016ae18a42970ed55263a038cafb1" class="m-doc-self">field_98</a>
+            <dt id="a19be5d75994260d072dde27665d62610">
+              eastl::vector&lt;<a href="c_planet_record_8h.html#a682e62ad9640c48598962d9ffc2c2893" class="m-doc">cPlanetRecordPtr</a>&gt; <a href="#a19be5d75994260d072dde27665d62610" class="m-doc-self">field_98</a>
             </dt>
             <dd>Subset of mPlanets, only those with a specific flag set.</dd>
             <dt id="ada1612b86754c1105b16de2f848ee7b6">
@@ -206,9 +206,9 @@
         </section>
         <section>
           <h2>Function documentation</h2>
-          <section class="m-doc-details" id="a2826761aef5fe3fe79537a500f245c3b"><div>
+          <section class="m-doc-details" id="a9ddf33d42c190b705531d47a0bd940ce"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">vector&lt;<a href="c_planet_record_8h.html#a682e62ad9640c48598962d9ffc2c2893" class="m-doc">cPlanetRecordPtr</a>&gt;&amp; Simulator::<wbr />cStarRecord::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a2826761aef5fe3fe79537a500f245c3b" class="m-doc-self">GetPlanetRecords</a>(</span><span class="m-doc-wrap">)</span></span>
+              <span class="m-doc-wrap-bumper">eastl::vector&lt;<a href="c_planet_record_8h.html#a682e62ad9640c48598962d9ffc2c2893" class="m-doc">cPlanetRecordPtr</a>&gt;&amp; Simulator::<wbr />cStarRecord::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a9ddf33d42c190b705531d47a0bd940ce" class="m-doc-self">GetPlanetRecords</a>(</span><span class="m-doc-wrap">)</span></span>
             </h3>
             <p>Returns a reference to the planet records of this star, loading them if they are not loaded.</p>
             <table class="m-table m-fullwidth m-flat">

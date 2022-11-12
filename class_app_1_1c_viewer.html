@@ -94,10 +94,14 @@
               <span class="m-doc-wrap-bumper">auto <a href="#a9b6d029d12b316ee69eea34074ca5381" class="m-doc">ClearScene</a>(</span><span class="m-doc-wrap">int8_t flags) -&gt; bool</span>
             </dt>
             <dd>Clears one or more surfaces such as the render target, the depth buffer or the stencil buffer.</dd>
-            <dt id="a869c772cbea23b46dd9664c9b485e1aa">
-              <span class="m-doc-wrap-bumper">auto <a href="#a869c772cbea23b46dd9664c9b485e1aa" class="m-doc-self">LoadTransformations</a>(</span><span class="m-doc-wrap">) -&gt; bool</span>
+            <dt id="ab44d8451e930947cf03a10e5d743785f">
+              <span class="m-doc-wrap-bumper">auto <a href="#ab44d8451e930947cf03a10e5d743785f" class="m-doc-self">BeginUpdate</a>(</span><span class="m-doc-wrap">) -&gt; bool</span>
             </dt>
-            <dd>Call before rendering, loads all the viewer data into the renderer system.</dd>
+            <dd>Call before rendering, loads all the viewer data into the renderer system; must be paired with a <a href="class_app_1_1c_viewer.html#ab8c4de4961360f728cb4634a0f9d0530" class="m-doc">EndUpdate()</a> call.</dd>
+            <dt id="ab8c4de4961360f728cb4634a0f9d0530">
+              <span class="m-doc-wrap-bumper">auto <a href="#ab8c4de4961360f728cb4634a0f9d0530" class="m-doc-self">EndUpdate</a>(</span><span class="m-doc-wrap">) -&gt; bool</span>
+            </dt>
+            <dd>Call after finished rendering, has to be paired with a <a href="class_app_1_1c_viewer.html#ab44d8451e930947cf03a10e5d743785f" class="m-doc">BeginUpdate()</a> call.</dd>
             <dt>
               <span class="m-doc-wrap-bumper">void <a href="#a3b3a400f3961bc4202d284baa17330e5" class="m-doc">SetBackgroundColor</a>(</span><span class="m-doc-wrap">const <a href="struct_math_1_1_color_r_g_b_a.html" class="m-doc">Math::<wbr />ColorRGBA</a>&amp; color)</span>
             </dt>

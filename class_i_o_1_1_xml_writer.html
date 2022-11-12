@@ -135,7 +135,7 @@
               <span class="m-doc-wrap-bumper">auto <a href="#a24849b3ef2a827d26f8d59c384b7d95f" class="m-doc">AppendAttribute</a>(</span><span class="m-doc-wrap">const char16_t* pAttrName,
               const char16_t* pAttrValue) -&gt; bool <span class="m-label m-flat m-warning">virtual</span></span>
             </dt>
-            <dd>Append a string attribute to the most recently written element or processing instruction, assuming that it has not been closed.</dd>
+            <dd>Append a eastl::string attribute to the most recently written element or processing instruction, assuming that it has not been closed.</dd>
             <dt>
               <span class="m-doc-wrap-bumper">auto <a href="#abad7a011da602195c1d87645b52ccfaf" class="m-doc">AppendAttributeF</a>(</span><span class="m-doc-wrap">const char16_t* pAttrName,
               const char16_t* pAttrValueFmt,
@@ -145,11 +145,11 @@
             <dt>
               <span class="m-doc-wrap-bumper">auto <a href="#a03b7dbb6738257748931e23efc7c277c" class="m-doc">WriteCharData</a>(</span><span class="m-doc-wrap">const char16_t* pCharData) -&gt; bool <span class="m-label m-flat m-warning">virtual</span></span>
             </dt>
-            <dd>Write a string of character data.</dd>
+            <dd>Write a eastl::string of character data.</dd>
             <dt>
               <span class="m-doc-wrap-bumper">auto <a href="#a1552b1eaef608afe8261785eabf2b0a6" class="m-doc">WriteCDATA</a>(</span><span class="m-doc-wrap">const char16_t* pCharData) -&gt; bool <span class="m-label m-flat m-warning">virtual</span></span>
             </dt>
-            <dd>Write a string of unencoded character data.</dd>
+            <dd>Write a eastl::string of unencoded character data.</dd>
             <dt>
               <span class="m-doc-wrap-bumper">auto <a href="#a22503f06ae25e92a441f1e309a07ca59" class="m-doc">WriteComment</a>(</span><span class="m-doc-wrap">const char16_t* pCommentText,
               bool bNewlineBefore = true) -&gt; bool <span class="m-label m-flat m-warning">virtual</span></span>
@@ -158,7 +158,7 @@
             <dt>
               <span class="m-doc-wrap-bumper">auto <a href="#ae1093501a5eab6e8af4a8e1fd3ce4aa6" class="m-doc">WriteName</a>(</span><span class="m-doc-wrap">const char16_t* pString) -&gt; bool <span class="m-label m-flat m-warning">virtual</span></span>
             </dt>
-            <dd>Writes a C-string as a piece of raw text.</dd>
+            <dd>Writes a C-eastl::string as a piece of raw text.</dd>
             <dt>
               <span class="m-doc-wrap-bumper">auto <a href="#a70bc6cdb08037fc273f03cc4e5efbc8c" class="m-doc">WriteText</a>(</span><span class="m-doc-wrap">const char16_t* pString,
               size_t nLength) -&gt; bool <span class="m-label m-flat m-warning">virtual</span></span>
@@ -209,8 +209,8 @@
               <a href="class_i_o_1_1_xml_writer.html#ad5e7c1b2456141367833e42684b3ec3a" class="m-doc">LineEnd</a> <a href="#a0892cb92ae249d4c4c3df9e3287e96d4" class="m-doc-self">mLineEnd</a>
             </dt>
             <dd>Number of space chars per indent. Total indent at any time = mnIndentLevel * mnIndentSpaces.</dd>
-            <dt id="af62e4a874a32751eb552c49f714df58e">
-              intrusive_ptr&lt;<a href="class_i_o_1_1_i_stream.html" class="m-doc">IStream</a>&gt; <a href="#af62e4a874a32751eb552c49f714df58e" class="m-doc-self">mpStream</a>
+            <dt id="aaae26a39900d2d29ec16bbdc21e04e5f">
+              <a href="_i_stream_8h.html#a0228333674e6e89ba6fda76a2c0dff36" class="m-doc">IStreamPtr</a> <a href="#aaae26a39900d2d29ec16bbdc21e04e5f" class="m-doc-self">mpStream</a>
             </dt>
             <dd>Defines whether we use Windows or standard indentation.</dd>
           </dl>
@@ -302,7 +302,7 @@
               <span class="m-doc-wrap-bumper">bool IO::<wbr />XmlWriter::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a24849b3ef2a827d26f8d59c384b7d95f" class="m-doc-self">AppendAttribute</a>(</span><span class="m-doc-wrap">const char16_t* pAttrName,
               const char16_t* pAttrValue) <span class="m-label m-warning">virtual</span></span></span>
             </h3>
-            <p>Append a string attribute to the most recently written element or processing instruction, assuming that it has not been closed.</p>
+            <p>Append a eastl::string attribute to the most recently written element or processing instruction, assuming that it has not been closed.</p>
             <table class="m-table m-fullwidth m-flat">
               <thead>
                 <tr><th colspan="2">Parameters</th></tr>
@@ -347,7 +347,7 @@
             <h3>
               <span class="m-doc-wrap-bumper">bool IO::<wbr />XmlWriter::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a03b7dbb6738257748931e23efc7c277c" class="m-doc-self">WriteCharData</a>(</span><span class="m-doc-wrap">const char16_t* pCharData) <span class="m-label m-warning">virtual</span></span></span>
             </h3>
-            <p>Write a string of character data.</p>
+            <p>Write a eastl::string of character data.</p>
             <table class="m-table m-fullwidth m-flat">
               <thead>
                 <tr><th colspan="2">Parameters</th></tr>
@@ -355,7 +355,7 @@
               <tbody>
                 <tr>
                   <td style="width: 1%">pCharData</td>
-                  <td>The string of characters.</td>
+                  <td>The eastl::string of characters.</td>
                 </tr>
               </tbody>
             </table>
@@ -365,7 +365,7 @@
             <h3>
               <span class="m-doc-wrap-bumper">bool IO::<wbr />XmlWriter::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a1552b1eaef608afe8261785eabf2b0a6" class="m-doc-self">WriteCDATA</a>(</span><span class="m-doc-wrap">const char16_t* pCharData) <span class="m-label m-warning">virtual</span></span></span>
             </h3>
-            <p>Write a string of unencoded character data.</p>
+            <p>Write a eastl::string of unencoded character data.</p>
             <table class="m-table m-fullwidth m-flat">
               <thead>
                 <tr><th colspan="2">Parameters</th></tr>
@@ -373,11 +373,11 @@
               <tbody>
                 <tr>
                   <td style="width: 1%">pCharData</td>
-                  <td>The string of characters.</td>
+                  <td>The eastl::string of characters.</td>
                 </tr>
               </tbody>
             </table>
-<p>Consecutive calls to WriteCDATA will be merged into a single CDATA block. It is an error to include the string &quot;]]&gt;&quot; in the character data.</p>
+<p>Consecutive calls to WriteCDATA will be merged into a single CDATA block. It is an error to include the eastl::string &quot;]]&gt;&quot; in the character data.</p>
           </div></section>
           <section class="m-doc-details" id="a22503f06ae25e92a441f1e309a07ca59"><div>
             <h3>
@@ -406,7 +406,7 @@
             <h3>
               <span class="m-doc-wrap-bumper">bool IO::<wbr />XmlWriter::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ae1093501a5eab6e8af4a8e1fd3ce4aa6" class="m-doc-self">WriteName</a>(</span><span class="m-doc-wrap">const char16_t* pString) <span class="m-label m-warning">virtual</span></span></span>
             </h3>
-            <p>Writes a C-string as a piece of raw text.</p>
+            <p>Writes a C-eastl::string as a piece of raw text.</p>
             <table class="m-table m-fullwidth m-flat">
               <thead>
                 <tr><th colspan="2">Parameters</th></tr>
@@ -414,7 +414,7 @@
               <tbody>
                 <tr>
                   <td style="width: 1%">pString</td>
-                  <td>The null-terminated string to write.</td>
+                  <td>The null-terminated eastl::string to write.</td>
                 </tr>
               </tbody>
             </table>
@@ -432,11 +432,11 @@
               <tbody>
                 <tr>
                   <td style="width: 1%">pString</td>
-                  <td>The string to write.</td>
+                  <td>The eastl::string to write.</td>
                 </tr>
                 <tr>
                   <td>nLength</td>
-                  <td>The length of the string.</td>
+                  <td>The length of the eastl::string.</td>
                 </tr>
               </tbody>
             </table>

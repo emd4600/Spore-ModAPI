@@ -58,7 +58,7 @@
                 <li><a href="#base-classes">Base classes</a></li>
                 <li><a href="#typeless-methods">Constructors, destructors, conversion operators</a></li>
                 <li><a href="#pub-methods">Public functions</a></li>
-                <li><a href="#pro-attribs">Protected variables</a></li>
+                <li><a href="#pub-attribs">Public variables</a></li>
               </ul>
             </li>
           </ul>
@@ -101,37 +101,37 @@
               void* msg) -&gt; bool <span class="m-label m-flat m-warning">override</span></span>
             </dt>
             <dd>Called every time a message is received.</dd>
-            <dt id="ae933d3c4b6935907c75c8e2fc0cef514">
-              <span class="m-doc-wrap-bumper">auto <a href="#ae933d3c4b6935907c75c8e2fc0cef514" class="m-doc-self">GetType</a>(</span><span class="m-doc-wrap">) -&gt; uint32_t <span class="m-label m-flat m-warning">override</span></span>
+            <dt id="a1025538856427f91037ff567bd78871c">
+              <span class="m-doc-wrap-bumper">auto <a href="#a1025538856427f91037ff567bd78871c" class="m-doc-self">GetFactoryType</a>(</span><span class="m-doc-wrap">) -&gt; uint32_t <span class="m-label m-flat m-warning">override</span></span>
             </dt>
             <dd><span></span></dd>
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#afb3dfe7d79602075b393cb0d9344e755" class="m-doc">CreateResource</a>(</span><span class="m-doc-wrap"><a href="class_resource_1_1_i_p_f_record.html" class="m-doc">Resource::<wbr />IPFRecord</a>* pRecord,
+              <span class="m-doc-wrap-bumper">auto <a href="#aa0ee951c22f8f5efdec9f493207ac90e" class="m-doc">CreateResource</a>(</span><span class="m-doc-wrap"><a href="class_resource_1_1_i_record.html" class="m-doc">Resource::<wbr />IRecord</a>* pRecord,
               <a href="_resource_object_8h.html#a1545ff2e1aa08f1935f251e338e72e33" class="m-doc">ResourceObjectPtr</a>&amp; pDst,
-              int,
+              void* extraData,
               uint32_t typeID) -&gt; bool <span class="m-label m-flat m-warning">override</span></span>
             </dt>
             <dd>Creates a new resource of the specified type, using the file record given.</dd>
-            <dt id="a1e4f3888eede905ad20f0edc9a25fe57">
-              <span class="m-doc-wrap-bumper">auto <a href="#a1e4f3888eede905ad20f0edc9a25fe57" class="m-doc-self">AsyncAccess</a>(</span><span class="m-doc-wrap"><a href="class_resource_1_1_i_p_f_record.html" class="m-doc">Resource::<wbr />IPFRecord</a>** ppDst,
-              int,
-              <a href="namespace_resource.html#ab12e5000d7ef0108f3200a644b54a682" class="m-doc">Resource::<wbr />DBPF</a>* pDBPF,
-              int,
-              int,
+            <dt id="a7b0477aa517cf1c5b5bc4a200d95f372">
+              <span class="m-doc-wrap-bumper">auto <a href="#a7b0477aa517cf1c5b5bc4a200d95f372" class="m-doc-self">CreateResourceAsync</a>(</span><span class="m-doc-wrap"><a href="_resource_object_8h.html#a901a98f0b0d1da971894b1011acc8495" class="m-doc">IAsyncRequestPtr</a>* ppDst,
+              int16_t,
+              <a href="class_resource_1_1_i_record.html" class="m-doc">Resource::<wbr />IRecord</a>* pRecord,
+              void* extraData,
+              uint32_t typeID,
               int) -&gt; bool <span class="m-label m-flat m-warning">override</span></span>
             </dt>
             <dd><span></span></dd>
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#a6df85f9d25ecac752d0b6afb131916db" class="m-doc">Read</a>(</span><span class="m-doc-wrap"><a href="class_resource_1_1_i_p_f_record.html" class="m-doc">Resource::<wbr />IPFRecord</a>* pRecord,
+              <span class="m-doc-wrap-bumper">auto <a href="#a8a4e43f6a303f32757246e77c0af9164" class="m-doc">ReadResource</a>(</span><span class="m-doc-wrap"><a href="class_resource_1_1_i_record.html" class="m-doc">Resource::<wbr />IRecord</a>* pRecord,
               <a href="class_resource_1_1_resource_object.html" class="m-doc">Resource::<wbr />ResourceObject</a>* pResource,
-              int,
+              void* extraData,
               uint32_t typeID) -&gt; bool <span class="m-label m-flat m-warning">override</span></span>
             </dt>
             <dd>Reads the data into the resource given.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#a0f7ff6f16350a2e27b7740bb13c96b74" class="m-doc">Write</a>(</span><span class="m-doc-wrap"><a href="class_resource_1_1_resource_object.html" class="m-doc">Resource::<wbr />ResourceObject</a>* pResource,
-              <a href="class_resource_1_1_i_p_f_record.html" class="m-doc">Resource::<wbr />IPFRecord</a>* pRecord,
-              int,
+              <span class="m-doc-wrap-bumper">auto <a href="#a31c4069f3311cb451c92e61e225086d8" class="m-doc">WriteResource</a>(</span><span class="m-doc-wrap"><a href="class_resource_1_1_resource_object.html" class="m-doc">Resource::<wbr />ResourceObject</a>* pResource,
+              <a href="class_resource_1_1_i_record.html" class="m-doc">Resource::<wbr />IRecord</a>* pRecord,
+              void* extraData,
               uint32_t typeID) -&gt; bool <span class="m-label m-flat m-warning">override</span></span>
             </dt>
             <dd>Reads the resource into the file given.</dd>
@@ -141,7 +141,7 @@
             </dt>
             <dd>This method must tell all the type IDs that are accepted by this factory.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#ab23430c8d03b2c6be3a6278c757a49e1" class="m-doc">IsValid</a>(</span><span class="m-doc-wrap">uint32_t typeID,
+              <span class="m-doc-wrap-bumper">auto <a href="#a4c0b7b0571ecdbe848153100a789c5d7" class="m-doc">CanConvert</a>(</span><span class="m-doc-wrap">uint32_t typeID,
               uint32_t subTypeID) -&gt; bool <span class="m-label m-flat m-warning">override</span></span>
             </dt>
             <dd>This method must tell whether this type ID (which might be a generic one, e.g.</dd>
@@ -153,8 +153,8 @@
               <span class="m-doc-wrap-bumper">auto <a href="#ac8d441e38b04dec6b91971925c36458f" class="m-doc-self">Release</a>(</span><span class="m-doc-wrap">) -&gt; int <span class="m-label m-flat m-warning">override</span></span>
             </dt>
             <dd><span></span></dd>
-            <dt id="a49a692f9ed0781650eacd64db508d981">
-              <span class="m-doc-wrap-bumper">void <a href="#a49a692f9ed0781650eacd64db508d981" class="m-doc-self">func08h</a>(</span><span class="m-doc-wrap">bool value) <span class="m-label m-flat m-warning">override</span></span>
+            <dt id="a8ecb5ec71fd2931f1ddf01dd11a40caf">
+              <span class="m-doc-wrap-bumper">void <a href="#a8ecb5ec71fd2931f1ddf01dd11a40caf" class="m-doc-self">SetDevMode</a>(</span><span class="m-doc-wrap">bool value) <span class="m-label m-flat m-warning">override</span></span>
             </dt>
             <dd><span></span></dd>
             <dt id="a1c11c7d923b8ffc9e5eabd4b82154037">
@@ -170,32 +170,32 @@
             </dt>
             <dd><span></span></dd>
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#a0344c3c1332ec6dad4689a42719e880d" class="m-doc">GetPropertyID</a>(</span><span class="m-doc-wrap">const char* propertyName,
-              uint32_t&amp; result) const -&gt; bool <span class="m-label m-flat m-warning">override</span></span>
+              <span class="m-doc-wrap-bumper">auto <a href="#a674d446800e13fb97daf4e080a1a9bc7" class="m-doc">GetIDFromName</a>(</span><span class="m-doc-wrap">const char* propertyName,
+              uint32_t&amp; result) -&gt; bool <span class="m-label m-flat m-warning">override</span></span>
             </dt>
             <dd>Gets the ID that corresponds to the given property name.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#a92a5124af586ab598271afa30f2e877a" class="m-doc">GetPropertyName</a>(</span><span class="m-doc-wrap">uint32_t propertyID) const -&gt; const char* <span class="m-label m-flat m-warning">override</span></span>
+              <span class="m-doc-wrap-bumper">auto <a href="#a1600f4f0fb4f515a7f195ded5929d548" class="m-doc">GetNameFromID</a>(</span><span class="m-doc-wrap">uint32_t propertyID) -&gt; const char* <span class="m-label m-flat m-warning">override</span></span>
             </dt>
             <dd>Gets the name that is mapped to the given propertyID.</dd>
-            <dt id="ac73c698862dd5ca21392f1229e2aba12">
-              <span class="m-doc-wrap-bumper">auto <a href="#ac73c698862dd5ca21392f1229e2aba12" class="m-doc-self">func20h</a>(</span><span class="m-doc-wrap">int arg_0,
-              int arg_4) -&gt; void* <span class="m-label m-flat m-warning">override</span></span>
+            <dt id="af22a7d8ea23cb128cdb9ee0a02a9a803">
+              <span class="m-doc-wrap-bumper">auto <a href="#af22a7d8ea23cb128cdb9ee0a02a9a803" class="m-doc-self">GetPropertyGroupIDFromName</a>(</span><span class="m-doc-wrap">const char* name,
+              uint32_t&amp; result) -&gt; bool <span class="m-label m-flat m-warning">override</span></span>
             </dt>
             <dd><span></span></dd>
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#a01e07b9321de01753a8e1358f97e7848" class="m-doc">GetPropertyGroupName</a>(</span><span class="m-doc-wrap">uint32_t propertyGroupID) const -&gt; const char* <span class="m-label m-flat m-warning">override</span></span>
+              <span class="m-doc-wrap-bumper">auto <a href="#acd6b2eb72b91f8b82b7f5a1f4e8dbfdc" class="m-doc">GetNameFromPropertyGroupID</a>(</span><span class="m-doc-wrap">uint32_t propertyGroupID) -&gt; const char* <span class="m-label m-flat m-warning">override</span></span>
             </dt>
             <dd>Gets the name assigned to the given property group ID.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#aa3f9f2d896c84f6c3c0236f5209277d4" class="m-doc">HasPropertyList</a>(</span><span class="m-doc-wrap">uint32_t instanceID,
-              uint32_t groupID) const -&gt; bool <span class="m-label m-flat m-warning">override</span></span>
+              <span class="m-doc-wrap-bumper">auto <a href="#a9aa15fe80aa5a19544984d4ab3b3d597" class="m-doc">HasPropertyList</a>(</span><span class="m-doc-wrap">uint32_t instanceID,
+              uint32_t groupID) -&gt; bool <span class="m-label m-flat m-warning">override</span></span>
             </dt>
             <dd>Tells whether a <a href="class_app_1_1_property_list.html" class="m-doc">PropertyList</a> with the given instanceID and groupID is contained in this manager.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#ac866bfe7b73360674cdf0f2eed0d50f0" class="m-doc">GetPropertyList</a>(</span><span class="m-doc-wrap">uint32_t instanceID,
+              <span class="m-doc-wrap-bumper">auto <a href="#a302138e29aea13fc4ce26577ff6c1f1a" class="m-doc">GetPropertyList</a>(</span><span class="m-doc-wrap">uint32_t instanceID,
               uint32_t groupID,
-              <a href="_property_list_8h.html#ae757f1639ff739ff0282dd91f3e39f0a" class="m-doc">PropertyListPtr</a>&amp; pDst) const -&gt; bool <span class="m-label m-flat m-warning">override</span></span>
+              <a href="_property_list_8h.html#ae757f1639ff739ff0282dd91f3e39f0a" class="m-doc">PropertyListPtr</a>&amp; pDst) -&gt; bool <span class="m-label m-flat m-warning">override</span></span>
             </dt>
             <dd>Gets the <a href="class_app_1_1_property_list.html" class="m-doc">PropertyList</a> stored in the given group and with the given instanceID.</dd>
             <dt>
@@ -204,34 +204,34 @@
             </dt>
             <dd>Gets the <a href="class_app_1_1_property_list.html" class="m-doc">PropertyList</a> stored in the global (0x00000000) folder and with the given instanceID.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">void <a href="#ab7a693cacee48c347270c078b97173df" class="m-doc">SetPropertyList</a>(</span><span class="m-doc-wrap"><a href="class_app_1_1_property_list.html" class="m-doc">PropertyList</a>* pList,
+              <span class="m-doc-wrap-bumper">void <a href="#ac1d9567e3e0b620aee3b8b8051c40b13" class="m-doc">AddPropertyList</a>(</span><span class="m-doc-wrap"><a href="class_app_1_1_property_list.html" class="m-doc">PropertyList</a>* pList,
               uint32_t instanceID,
               uint32_t groupID) <span class="m-label m-flat m-warning">override</span></span>
             </dt>
             <dd>Adds this property list with the given instance and group ID, or replaces the existing one.</dd>
-            <dt id="a46f393fb432670c1e820b9fb3aabcbe2">
-              <span class="m-doc-wrap-bumper">auto <a href="#a46f393fb432670c1e820b9fb3aabcbe2" class="m-doc-self">func38h</a>(</span><span class="m-doc-wrap">int arg_0) -&gt; void* <span class="m-label m-flat m-warning">override</span></span>
+            <dt id="a75aaad6612c8fd8a75696264157c4a4a">
+              <span class="m-doc-wrap-bumper">void <a href="#a75aaad6612c8fd8a75696264157c4a4a" class="m-doc-self">RemovePropertyList</a>(</span><span class="m-doc-wrap"><a href="class_app_1_1_property_list.html" class="m-doc">PropertyList</a>* pList) <span class="m-label m-flat m-warning">override</span></span>
             </dt>
             <dd><span></span></dd>
-            <dt id="ab40d5ab3afa8cb8477bd7d2d6273368e">
-              <span class="m-doc-wrap-bumper">auto <a href="#ab40d5ab3afa8cb8477bd7d2d6273368e" class="m-doc-self">func3Ch</a>(</span><span class="m-doc-wrap">int arg_0,
-              int arg_4) -&gt; void* <span class="m-label m-flat m-warning">override</span></span>
+            <dt id="a00b9658bbc945061baa59d9b63f7d08a">
+              <span class="m-doc-wrap-bumper">void <a href="#a00b9658bbc945061baa59d9b63f7d08a" class="m-doc-self">RemovePropertyLists</a>(</span><span class="m-doc-wrap">int count,
+              const <a href="struct_resource_key.html" class="m-doc">ResourceKey</a>* keys) <span class="m-label m-flat m-warning">override</span></span>
             </dt>
             <dd><span></span></dd>
-            <dt id="aba55e9718bcb4f4a1142ca3fdc6d00f5">
-              <span class="m-doc-wrap-bumper">auto <a href="#aba55e9718bcb4f4a1142ca3fdc6d00f5" class="m-doc-self">func40h</a>(</span><span class="m-doc-wrap">int arg_0,
-              int arg_4,
-              const vector&lt;uint32_t&gt;&amp; instanceIDs) -&gt; void* <span class="m-label m-flat m-warning">override</span></span>
+            <dt id="a723e22cff8a22d3a8b579900eb2f314a">
+              <span class="m-doc-wrap-bumper">void <a href="#a723e22cff8a22d3a8b579900eb2f314a" class="m-doc-self">RemovePropertyLists2</a>(</span><span class="m-doc-wrap">uint32_t groupID,
+              int count,
+              uint32_t* instanceIDs) <span class="m-label m-flat m-warning">override</span></span>
             </dt>
             <dd><span></span></dd>
-            <dt id="a09924cc5abb1339f19a9b90fc316fb81">
-              <span class="m-doc-wrap-bumper">auto <a href="#a09924cc5abb1339f19a9b90fc316fb81" class="m-doc-self">func44h</a>(</span><span class="m-doc-wrap">size_t nCount,
-              const vector&lt;<a href="struct_resource_key.html" class="m-doc">ResourceKey</a>&gt;&amp; names) -&gt; bool <span class="m-label m-flat m-warning">override</span></span>
+            <dt id="af882c7d468e4fd399473c1ea0ea2e4d3">
+              <span class="m-doc-wrap-bumper">auto <a href="#af882c7d468e4fd399473c1ea0ea2e4d3" class="m-doc-self">AreAnyPropertyListsReferenced</a>(</span><span class="m-doc-wrap">int count,
+              const <a href="struct_resource_key.html" class="m-doc">ResourceKey</a>* keys) -&gt; bool <span class="m-label m-flat m-warning">override</span></span>
             </dt>
             <dd><span></span></dd>
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#adbf511aae3a3b6f2ca921e284f7a0946" class="m-doc">GetAllListIDs</a>(</span><span class="m-doc-wrap">uint32_t groupID,
-              vector&lt;uint32_t&gt;&amp; result) const -&gt; bool <span class="m-label m-flat m-warning">override</span></span>
+              <span class="m-doc-wrap-bumper">auto <a href="#a82e0525bf02a7905e96a5501ad4965eb" class="m-doc">GetPropertyListIDs</a>(</span><span class="m-doc-wrap">uint32_t groupID,
+              eastl::vector&lt;uint32_t&gt;&amp; result) -&gt; bool <span class="m-label m-flat m-warning">override</span></span>
             </dt>
             <dd>Gets the instance IDs of all the <a href="class_app_1_1_property_list.html" class="m-doc">PropertyList</a> objects contained in the specified group.</dd>
             <dt id="a73c2e8e82d480efd8625253ae737e501">
@@ -240,22 +240,22 @@
             </dt>
             <dd><span></span></dd>
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#a077151a7147163f9995c6f2965e70358" class="m-doc">GetPropertyDefinition</a>(</span><span class="m-doc-wrap">uint32_t propertyID) const -&gt; const <a href="class_app_1_1_property.html" class="m-doc">Property</a>* <span class="m-label m-flat m-warning">override</span></span>
+              <span class="m-doc-wrap-bumper">auto <a href="#a26c36cbd5ac6577f34a0f283e56c69eb" class="m-doc">GetPropertyDefinition</a>(</span><span class="m-doc-wrap">uint32_t propertyID) -&gt; const <a href="class_app_1_1_property.html" class="m-doc">Property</a>* <span class="m-label m-flat m-warning">override</span></span>
             </dt>
             <dd>Gets the property definition of the property with the given ID.</dd>
-            <dt id="ade04803ed667fc64d25c04903e1ca9d6">
-              <span class="m-doc-wrap-bumper">auto <a href="#ade04803ed667fc64d25c04903e1ca9d6" class="m-doc-self">GetPropertyGroupsCount</a>(</span><span class="m-doc-wrap">) const -&gt; size_t <span class="m-label m-flat m-warning">override</span></span>
+            <dt id="ac55c03aea645082c9caac23caf62bfe2">
+              <span class="m-doc-wrap-bumper">auto <a href="#ac55c03aea645082c9caac23caf62bfe2" class="m-doc-self">GetPropertyGroupsCount</a>(</span><span class="m-doc-wrap">) -&gt; size_t <span class="m-label m-flat m-warning">override</span></span>
             </dt>
             <dd>Gets the number of property groups contained in this manager.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#a9dd8c727c2b2543a943cf8a2d4abb2a2" class="m-doc">GetPropertyGroupIDAt</a>(</span><span class="m-doc-wrap">size_t index,
-              uint32_t&amp; dst) const -&gt; bool <span class="m-label m-flat m-warning">override</span></span>
+              <span class="m-doc-wrap-bumper">auto <a href="#aca9e2fd79ff487e0f927567e2768fc3c" class="m-doc">GetPropertyGroupIDAt</a>(</span><span class="m-doc-wrap">size_t index,
+              uint32_t&amp; dst) -&gt; bool <span class="m-label m-flat m-warning">override</span></span>
             </dt>
             <dd>Gets the ID of the property group at the given index.</dd>
           </dl>
         </section>
-        <section id="pro-attribs">
-          <h2><a href="#pro-attribs">Protected variables</a></h2>
+        <section id="pub-attribs">
+          <h2><a href="#pub-attribs">Public variables</a></h2>
           <dl class="m-doc">
             <dt id="a004bbf192969ee12811ea1d5f3674384">
               int <a href="#a004bbf192969ee12811ea1d5f3674384" class="m-doc-self">field_10</a>
@@ -265,8 +265,8 @@
               bool <a href="#a84fa5ae3b0b6694cd0306c0d263e1275" class="m-doc-self">mbIsInitialized</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="a8018c3ceb0be7fc4b9ce5d2aba84b1ed">
-              bool <a href="#a8018c3ceb0be7fc4b9ce5d2aba84b1ed" class="m-doc-self">field_15</a>
+            <dt id="ae44faa22fd3821a1a164b2b9f37c89a4">
+              bool <a href="#ae44faa22fd3821a1a164b2b9f37c89a4" class="m-doc-self">mIsDevMode</a>
             </dt>
             <dd><span></span></dd>
             <dt id="a2cf72b88c149283fdcf497a8b9f0f9c6">
@@ -277,60 +277,60 @@
               bool <a href="#a9778ccdf4be182c96c00f7a319a845c2" class="m-doc-self">field_1C</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="a34ffaecb4bbd115968a8c11e063479e4">
-              map&lt;uint32_t, <a href="class_app_1_1_property.html" class="m-doc">Property</a>&gt; <a href="#a34ffaecb4bbd115968a8c11e063479e4" class="m-doc-self">field_20</a>
+            <dt id="a90a84a54b0fd80db8980e3fe4e7b3d9d">
+              eastl::map&lt;uint32_t, <a href="class_app_1_1_property.html" class="m-doc">Property</a>&gt; <a href="#a90a84a54b0fd80db8980e3fe4e7b3d9d" class="m-doc-self">field_20</a>
             </dt>
             <dd><span></span></dd>
             <dt id="a8d2e66630ba8c375745dfa4558832466">
               <a href="class_app_1_1_property_list.html" class="m-doc">PropertyList</a> <a href="#a8d2e66630ba8c375745dfa4558832466" class="m-doc-self">mPropertyDefinitions</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="a86523020bacb08ddd20a9b27428561be">
-              hash_map&lt;<a href="class_resource_i_d.html" class="m-doc">ResourceID</a>, <a href="_property_list_8h.html#ae757f1639ff739ff0282dd91f3e39f0a" class="m-doc">PropertyListPtr</a>&gt; <a href="#a86523020bacb08ddd20a9b27428561be" class="m-doc-self">mPropertyLists</a>
+            <dt id="a498f8620aea733b5ed0b77820d0ec496">
+              eastl::hash_map&lt;<a href="class_resource_i_d.html" class="m-doc">ResourceID</a>, <a href="_property_list_8h.html#ae757f1639ff739ff0282dd91f3e39f0a" class="m-doc">PropertyListPtr</a>&gt; <a href="#a498f8620aea733b5ed0b77820d0ec496" class="m-doc-self">mPropertyLists</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="a26482fdea1adaae3f738c57358554b01">
-              hash_map&lt;string, uint32_t&gt; <a href="#a26482fdea1adaae3f738c57358554b01" class="m-doc-self">mNamesToPropertyIDs</a>
+            <dt id="a7c1e11ef55a988ffd52371f4983b59e5">
+              eastl::hash_map&lt;eastl::string, uint32_t&gt; <a href="#a7c1e11ef55a988ffd52371f4983b59e5" class="m-doc-self">mNamesToPropertyIDs</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="a95ecbfff333ca3b81ceb7dacf8d9fc40">
-              hash_map&lt;uint32_t, string&gt; <a href="#a95ecbfff333ca3b81ceb7dacf8d9fc40" class="m-doc-self">mPropertyIDsToNames</a>
+            <dt id="a7dce7e5ca40bd43b5cabd9677ec04c9e">
+              eastl::hash_map&lt;uint32_t, eastl::string&gt; <a href="#a7dce7e5ca40bd43b5cabd9677ec04c9e" class="m-doc-self">mPropertyIDsToNames</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="a4b7e8179d8f6420a5a41ae1a3a6f4ee7">
-              hash_map&lt;string, int&gt; <a href="#a4b7e8179d8f6420a5a41ae1a3a6f4ee7" class="m-doc-self">field_D4</a>
+            <dt id="ab37d84ca3114722a3ccd6696f559270e">
+              eastl::hash_map&lt;eastl::string, int&gt; <a href="#ab37d84ca3114722a3ccd6696f559270e" class="m-doc-self">mPropertyGroupNamesToIDs</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="acef0da64d75e59d30d062a1aac28c159">
-              hash_map&lt;uint32_t, string&gt; <a href="#acef0da64d75e59d30d062a1aac28c159" class="m-doc-self">mPropertyGroupNames</a>
+            <dt id="a123776f43985e7fb78cbf5aea53a191a">
+              eastl::hash_map&lt;uint32_t, eastl::string&gt; <a href="#a123776f43985e7fb78cbf5aea53a191a" class="m-doc-self">mPropertyGroupNames</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="a0568292e8a0409512135e66bc72a2cbe">
-              vector&lt;uint32_t&gt; <a href="#a0568292e8a0409512135e66bc72a2cbe" class="m-doc-self">mPropertyGroupIDs</a>
+            <dt id="a8d72d0a2d675a58f869a75d567ab0697">
+              eastl::vector&lt;uint32_t&gt; <a href="#a8d72d0a2d675a58f869a75d567ab0697" class="m-doc-self">mPropertyGroupIDs</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="a4db7a62b8daba7362e534c9dcfcf1bc9">
-              hash_map&lt;int, int&gt; <a href="#a4db7a62b8daba7362e534c9dcfcf1bc9" class="m-doc-self">field_128</a>
+            <dt id="a72249cc0ed2407bdaf297bcda8003e8a">
+              eastl::hash_map&lt;int, int&gt; <a href="#a72249cc0ed2407bdaf297bcda8003e8a" class="m-doc-self">field_128</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="af649a9abb71eb9f8224bb6cfdc0b2c0d">
-              hash_map&lt;int, int&gt; <a href="#af649a9abb71eb9f8224bb6cfdc0b2c0d" class="m-doc-self">field_148</a>
+            <dt id="a22b0ad828c5343fc4497075283aa5b27">
+              eastl::hash_map&lt;int, int&gt; <a href="#a22b0ad828c5343fc4497075283aa5b27" class="m-doc-self">field_148</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="a291b2e177e586d7915592138aab94cfb">
-              string <a href="#a291b2e177e586d7915592138aab94cfb" class="m-doc-self">mCurrentPropertyName</a>
+            <dt id="a3e8ef8348eec425836b2880bcd44999f">
+              eastl::string <a href="#a3e8ef8348eec425836b2880bcd44999f" class="m-doc-self">mCurrentPropertyName</a>
             </dt>
             <dd><span></span></dd>
             <dt id="a76709e1669b09a8b14afe6ba6d9860c2">
               int <a href="#a76709e1669b09a8b14afe6ba6d9860c2" class="m-doc-self">field_178</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="aee6581670fa5899d316a144ed3db3227">
-              intrusive_ptr&lt;<a href="class_arg_script_1_1_format_parser.html" class="m-doc">ArgScript::<wbr />FormatParser</a>&gt; <a href="#aee6581670fa5899d316a144ed3db3227" class="m-doc-self">field_17C</a>
+            <dt id="a109365f077d93255f72540211a3eebb9">
+              eastl::intrusive_ptr&lt;<a href="class_arg_script_1_1_format_parser.html" class="m-doc">ArgScript::<wbr />FormatParser</a>&gt; <a href="#a109365f077d93255f72540211a3eebb9" class="m-doc-self">field_17C</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="a31c5ba6933c1594254126b5773c4d573">
-              string <a href="#a31c5ba6933c1594254126b5773c4d573" class="m-doc-self">field_180</a>
+            <dt id="aad10f4d54fe66a0d9e6ee0c249f1fa5e">
+              eastl::string <a href="#aad10f4d54fe66a0d9e6ee0c249f1fa5e" class="m-doc-self">field_180</a>
             </dt>
             <dd><span></span></dd>
             <dt id="a26496a782bf2c74f9e8bf38af1546122">
@@ -341,8 +341,8 @@
               int <a href="#a3be2b1665b10804a60f6e019a7bb167f" class="m-doc-self">field_1D4</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="a93345dc641ef5f148eb09c91c16b8298">
-              string <a href="#a93345dc641ef5f148eb09c91c16b8298" class="m-doc-self">field_1D8</a>
+            <dt id="ad97453fa5a590839fdd0dfca1559a429">
+              eastl::string <a href="#ad97453fa5a590839fdd0dfca1559a429" class="m-doc-self">field_1D8</a>
             </dt>
             <dd><span></span></dd>
             <dt id="aadb47cf2d22616886b655edd354c146a">
@@ -382,11 +382,11 @@
             </table>
 <p>Only the messages with an ID this listened signed up for will call this event.</p>
           </div></section>
-          <section class="m-doc-details" id="afb3dfe7d79602075b393cb0d9344e755"><div>
+          <section class="m-doc-details" id="aa0ee951c22f8f5efdec9f493207ac90e"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">bool App::<wbr />cPropManager::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#afb3dfe7d79602075b393cb0d9344e755" class="m-doc-self">CreateResource</a>(</span><span class="m-doc-wrap"><a href="class_resource_1_1_i_p_f_record.html" class="m-doc">Resource::<wbr />IPFRecord</a>* pRecord,
+              <span class="m-doc-wrap-bumper">bool App::<wbr />cPropManager::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#aa0ee951c22f8f5efdec9f493207ac90e" class="m-doc-self">CreateResource</a>(</span><span class="m-doc-wrap"><a href="class_resource_1_1_i_record.html" class="m-doc">Resource::<wbr />IRecord</a>* pRecord,
               <a href="_resource_object_8h.html#a1545ff2e1aa08f1935f251e338e72e33" class="m-doc">ResourceObjectPtr</a>&amp; pDst,
-              int,
+              void* extraData,
               uint32_t typeID) <span class="m-label m-warning">override</span></span></span>
             </h3>
             <p>Creates a new resource of the specified type, using the file record given.</p>
@@ -404,17 +404,21 @@
                   <td>A pointer where the ResourceObject created must be written.</td>
                 </tr>
                 <tr>
+                  <td>extraData</td>
+                  <td></td>
+                </tr>
+                <tr>
                   <td>typeID</td>
                   <td>The type ID of the file to read, which might be used to differentiate between different file formats or resource types.</td>
                 </tr>
               </tbody>
             </table>
           </div></section>
-          <section class="m-doc-details" id="a6df85f9d25ecac752d0b6afb131916db"><div>
+          <section class="m-doc-details" id="a8a4e43f6a303f32757246e77c0af9164"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">bool App::<wbr />cPropManager::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a6df85f9d25ecac752d0b6afb131916db" class="m-doc-self">Read</a>(</span><span class="m-doc-wrap"><a href="class_resource_1_1_i_p_f_record.html" class="m-doc">Resource::<wbr />IPFRecord</a>* pRecord,
+              <span class="m-doc-wrap-bumper">bool App::<wbr />cPropManager::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a8a4e43f6a303f32757246e77c0af9164" class="m-doc-self">ReadResource</a>(</span><span class="m-doc-wrap"><a href="class_resource_1_1_i_record.html" class="m-doc">Resource::<wbr />IRecord</a>* pRecord,
               <a href="class_resource_1_1_resource_object.html" class="m-doc">Resource::<wbr />ResourceObject</a>* pResource,
-              int,
+              void* extraData,
               uint32_t typeID) <span class="m-label m-warning">override</span></span></span>
             </h3>
             <p>Reads the data into the resource given.</p>
@@ -432,17 +436,21 @@
                   <td>The ResourceObject where the data must be loaded.</td>
                 </tr>
                 <tr>
+                  <td>extraData</td>
+                  <td></td>
+                </tr>
+                <tr>
                   <td>typeID</td>
                   <td>The type ID of the file to read, which might be used to differentiate between different file formats.</td>
                 </tr>
               </tbody>
             </table>
           </div></section>
-          <section class="m-doc-details" id="a0f7ff6f16350a2e27b7740bb13c96b74"><div>
+          <section class="m-doc-details" id="a31c4069f3311cb451c92e61e225086d8"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">bool App::<wbr />cPropManager::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a0f7ff6f16350a2e27b7740bb13c96b74" class="m-doc-self">Write</a>(</span><span class="m-doc-wrap"><a href="class_resource_1_1_resource_object.html" class="m-doc">Resource::<wbr />ResourceObject</a>* pResource,
-              <a href="class_resource_1_1_i_p_f_record.html" class="m-doc">Resource::<wbr />IPFRecord</a>* pRecord,
-              int,
+              <span class="m-doc-wrap-bumper">bool App::<wbr />cPropManager::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a31c4069f3311cb451c92e61e225086d8" class="m-doc-self">WriteResource</a>(</span><span class="m-doc-wrap"><a href="class_resource_1_1_resource_object.html" class="m-doc">Resource::<wbr />ResourceObject</a>* pResource,
+              <a href="class_resource_1_1_i_record.html" class="m-doc">Resource::<wbr />IRecord</a>* pRecord,
+              void* extraData,
               uint32_t typeID) <span class="m-label m-warning">override</span></span></span>
             </h3>
             <p>Reads the resource into the file given.</p>
@@ -458,6 +466,10 @@
                 <tr>
                   <td>pRecord</td>
                   <td>The IPFRecord that points to the file that must be written.</td>
+                </tr>
+                <tr>
+                  <td>extraData</td>
+                  <td></td>
                 </tr>
                 <tr>
                   <td>typeID</td>
@@ -495,9 +507,9 @@
             </table>
 <p>The method must return how many type IDs are supported.</p>
           </div></section>
-          <section class="m-doc-details" id="ab23430c8d03b2c6be3a6278c757a49e1"><div>
+          <section class="m-doc-details" id="a4c0b7b0571ecdbe848153100a789c5d7"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">bool App::<wbr />cPropManager::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ab23430c8d03b2c6be3a6278c757a49e1" class="m-doc-self">IsValid</a>(</span><span class="m-doc-wrap">uint32_t typeID,
+              <span class="m-doc-wrap-bumper">bool App::<wbr />cPropManager::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a4c0b7b0571ecdbe848153100a789c5d7" class="m-doc-self">CanConvert</a>(</span><span class="m-doc-wrap">uint32_t typeID,
               uint32_t subTypeID) <span class="m-label m-warning">override</span></span></span>
             </h3>
             <p>This method must tell whether this type ID (which might be a generic one, e.g.</p>
@@ -518,10 +530,10 @@
             </table>
 <p>.image) and the sub type ID (e.g. .png) are accepted by this factory. The subtypeID might be 0, in which case only the type ID matters.</p>
           </div></section>
-          <section class="m-doc-details" id="a0344c3c1332ec6dad4689a42719e880d"><div>
+          <section class="m-doc-details" id="a674d446800e13fb97daf4e080a1a9bc7"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">bool App::<wbr />cPropManager::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a0344c3c1332ec6dad4689a42719e880d" class="m-doc-self">GetPropertyID</a>(</span><span class="m-doc-wrap">const char* propertyName,
-              uint32_t&amp; result) const <span class="m-label m-warning">override</span></span></span>
+              <span class="m-doc-wrap-bumper">bool App::<wbr />cPropManager::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a674d446800e13fb97daf4e080a1a9bc7" class="m-doc-self">GetIDFromName</a>(</span><span class="m-doc-wrap">const char* propertyName,
+              uint32_t&amp; result) <span class="m-label m-warning">override</span></span></span>
             </h3>
             <p>Gets the ID that corresponds to the given property name.</p>
             <table class="m-table m-fullwidth m-flat">
@@ -547,9 +559,9 @@
             </table>
 <p>This function will only work for those names that are mapped in this manager.</p>
           </div></section>
-          <section class="m-doc-details" id="a92a5124af586ab598271afa30f2e877a"><div>
+          <section class="m-doc-details" id="a1600f4f0fb4f515a7f195ded5929d548"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">const char* App::<wbr />cPropManager::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a92a5124af586ab598271afa30f2e877a" class="m-doc-self">GetPropertyName</a>(</span><span class="m-doc-wrap">uint32_t propertyID) const <span class="m-label m-warning">override</span></span></span>
+              <span class="m-doc-wrap-bumper">const char* App::<wbr />cPropManager::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a1600f4f0fb4f515a7f195ded5929d548" class="m-doc-self">GetNameFromID</a>(</span><span class="m-doc-wrap">uint32_t propertyID) <span class="m-label m-warning">override</span></span></span>
             </h3>
             <p>Gets the name that is mapped to the given propertyID.</p>
             <table class="m-table m-fullwidth m-flat">
@@ -571,9 +583,9 @@
             </table>
 <p>This function will only work for those names that are mapped in this manager.</p>
           </div></section>
-          <section class="m-doc-details" id="a01e07b9321de01753a8e1358f97e7848"><div>
+          <section class="m-doc-details" id="acd6b2eb72b91f8b82b7f5a1f4e8dbfdc"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">const char* App::<wbr />cPropManager::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a01e07b9321de01753a8e1358f97e7848" class="m-doc-self">GetPropertyGroupName</a>(</span><span class="m-doc-wrap">uint32_t propertyGroupID) const <span class="m-label m-warning">override</span></span></span>
+              <span class="m-doc-wrap-bumper">const char* App::<wbr />cPropManager::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#acd6b2eb72b91f8b82b7f5a1f4e8dbfdc" class="m-doc-self">GetNameFromPropertyGroupID</a>(</span><span class="m-doc-wrap">uint32_t propertyGroupID) <span class="m-label m-warning">override</span></span></span>
             </h3>
             <p>Gets the name assigned to the given property group ID.</p>
             <table class="m-table m-fullwidth m-flat">
@@ -595,10 +607,10 @@
             </table>
 <p>This function will only work if that group is mapped in this manager.</p>
           </div></section>
-          <section class="m-doc-details" id="aa3f9f2d896c84f6c3c0236f5209277d4"><div>
+          <section class="m-doc-details" id="a9aa15fe80aa5a19544984d4ab3b3d597"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">bool App::<wbr />cPropManager::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#aa3f9f2d896c84f6c3c0236f5209277d4" class="m-doc-self">HasPropertyList</a>(</span><span class="m-doc-wrap">uint32_t instanceID,
-              uint32_t groupID) const <span class="m-label m-warning">override</span></span></span>
+              <span class="m-doc-wrap-bumper">bool App::<wbr />cPropManager::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a9aa15fe80aa5a19544984d4ab3b3d597" class="m-doc-self">HasPropertyList</a>(</span><span class="m-doc-wrap">uint32_t instanceID,
+              uint32_t groupID) <span class="m-label m-warning">override</span></span></span>
             </h3>
             <p>Tells whether a <a href="class_app_1_1_property_list.html" class="m-doc">PropertyList</a> with the given instanceID and groupID is contained in this manager.</p>
             <table class="m-table m-fullwidth m-flat">
@@ -623,11 +635,11 @@
               </tfoot>
             </table>
           </div></section>
-          <section class="m-doc-details" id="ac866bfe7b73360674cdf0f2eed0d50f0"><div>
+          <section class="m-doc-details" id="a302138e29aea13fc4ce26577ff6c1f1a"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">bool App::<wbr />cPropManager::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ac866bfe7b73360674cdf0f2eed0d50f0" class="m-doc-self">GetPropertyList</a>(</span><span class="m-doc-wrap">uint32_t instanceID,
+              <span class="m-doc-wrap-bumper">bool App::<wbr />cPropManager::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a302138e29aea13fc4ce26577ff6c1f1a" class="m-doc-self">GetPropertyList</a>(</span><span class="m-doc-wrap">uint32_t instanceID,
               uint32_t groupID,
-              <a href="_property_list_8h.html#ae757f1639ff739ff0282dd91f3e39f0a" class="m-doc">PropertyListPtr</a>&amp; pDst) const <span class="m-label m-warning">override</span></span></span>
+              <a href="_property_list_8h.html#ae757f1639ff739ff0282dd91f3e39f0a" class="m-doc">PropertyListPtr</a>&amp; pDst) <span class="m-label m-warning">override</span></span></span>
             </h3>
             <p>Gets the <a href="class_app_1_1_property_list.html" class="m-doc">PropertyList</a> stored in the given group and with the given instanceID.</p>
             <table class="m-table m-fullwidth m-flat">
@@ -684,9 +696,9 @@
               </tfoot>
             </table>
           </div></section>
-          <section class="m-doc-details" id="ab7a693cacee48c347270c078b97173df"><div>
+          <section class="m-doc-details" id="ac1d9567e3e0b620aee3b8b8051c40b13"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">void App::<wbr />cPropManager::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ab7a693cacee48c347270c078b97173df" class="m-doc-self">SetPropertyList</a>(</span><span class="m-doc-wrap"><a href="class_app_1_1_property_list.html" class="m-doc">PropertyList</a>* pList,
+              <span class="m-doc-wrap-bumper">void App::<wbr />cPropManager::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ac1d9567e3e0b620aee3b8b8051c40b13" class="m-doc-self">AddPropertyList</a>(</span><span class="m-doc-wrap"><a href="class_app_1_1_property_list.html" class="m-doc">PropertyList</a>* pList,
               uint32_t instanceID,
               uint32_t groupID) <span class="m-label m-warning">override</span></span></span>
             </h3>
@@ -711,10 +723,10 @@
               </tbody>
             </table>
           </div></section>
-          <section class="m-doc-details" id="adbf511aae3a3b6f2ca921e284f7a0946"><div>
+          <section class="m-doc-details" id="a82e0525bf02a7905e96a5501ad4965eb"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">bool App::<wbr />cPropManager::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#adbf511aae3a3b6f2ca921e284f7a0946" class="m-doc-self">GetAllListIDs</a>(</span><span class="m-doc-wrap">uint32_t groupID,
-              vector&lt;uint32_t&gt;&amp; result) const <span class="m-label m-warning">override</span></span></span>
+              <span class="m-doc-wrap-bumper">bool App::<wbr />cPropManager::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a82e0525bf02a7905e96a5501ad4965eb" class="m-doc-self">GetPropertyListIDs</a>(</span><span class="m-doc-wrap">uint32_t groupID,
+              eastl::vector&lt;uint32_t&gt;&amp; result) <span class="m-label m-warning">override</span></span></span>
             </h3>
             <p>Gets the instance IDs of all the <a href="class_app_1_1_property_list.html" class="m-doc">PropertyList</a> objects contained in the specified group.</p>
             <table class="m-table m-fullwidth m-flat">
@@ -733,9 +745,9 @@
               </tbody>
             </table>
           </div></section>
-          <section class="m-doc-details" id="a077151a7147163f9995c6f2965e70358"><div>
+          <section class="m-doc-details" id="a26c36cbd5ac6577f34a0f283e56c69eb"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">const <a href="class_app_1_1_property.html" class="m-doc">Property</a>* App::<wbr />cPropManager::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a077151a7147163f9995c6f2965e70358" class="m-doc-self">GetPropertyDefinition</a>(</span><span class="m-doc-wrap">uint32_t propertyID) const <span class="m-label m-warning">override</span></span></span>
+              <span class="m-doc-wrap-bumper">const <a href="class_app_1_1_property.html" class="m-doc">Property</a>* App::<wbr />cPropManager::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a26c36cbd5ac6577f34a0f283e56c69eb" class="m-doc-self">GetPropertyDefinition</a>(</span><span class="m-doc-wrap">uint32_t propertyID) <span class="m-label m-warning">override</span></span></span>
             </h3>
             <p>Gets the property definition of the property with the given ID.</p>
             <table class="m-table m-fullwidth m-flat">
@@ -757,10 +769,10 @@
             </table>
 <p>The definition is a <a href="class_app_1_1_property.html" class="m-doc">Property</a> object that contains the type and default value of the property. Definitions are stored in the Properties.txt, AppProperties.txt, etc files.</p>
           </div></section>
-          <section class="m-doc-details" id="a9dd8c727c2b2543a943cf8a2d4abb2a2"><div>
+          <section class="m-doc-details" id="aca9e2fd79ff487e0f927567e2768fc3c"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">bool App::<wbr />cPropManager::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a9dd8c727c2b2543a943cf8a2d4abb2a2" class="m-doc-self">GetPropertyGroupIDAt</a>(</span><span class="m-doc-wrap">size_t index,
-              uint32_t&amp; dst) const <span class="m-label m-warning">override</span></span></span>
+              <span class="m-doc-wrap-bumper">bool App::<wbr />cPropManager::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#aca9e2fd79ff487e0f927567e2768fc3c" class="m-doc-self">GetPropertyGroupIDAt</a>(</span><span class="m-doc-wrap">size_t index,
+              uint32_t&amp; dst) <span class="m-label m-warning">override</span></span></span>
             </h3>
             <p>Gets the ID of the property group at the given index.</p>
             <table class="m-table m-fullwidth m-flat">

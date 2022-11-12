@@ -55,13 +55,22 @@
             <li>
               Reference
               <ul>
+                <li><a href="#pub-types">Public types</a></li>
                 <li><a href="#pub-methods">Public functions</a></li>
-                <li><a href="#pro-types">Protected types</a></li>
-                <li><a href="#pro-attribs">Protected variables</a></li>
+                <li><a href="#pub-attribs">Public variables</a></li>
               </ul>
             </li>
           </ul>
         </div>
+        <section id="pub-types">
+          <h2><a href="#pub-types">Public types</a></h2>
+          <dl class="m-doc">
+            <dt id="a7535b2ebc74428ca69518cbcc2ad6f87">
+              <span class="m-doc-wrap-bumper">enum <a href="#a7535b2ebc74428ca69518cbcc2ad6f87" class="m-doc-self">(anonymous)</a> { </span><span class="m-doc-wrap"><a href="#a7535b2ebc74428ca69518cbcc2ad6f87ac735fc208edee03159a4c99caccaa69a" class="m-doc">kFlagTransformed</a> = 4 }</span>
+            </dt>
+            <dd><span></span></dd>
+          </dl>
+        </section>
         <section id="pub-methods">
           <h2><a href="#pub-methods">Public functions</a></h2>
           <dl class="m-doc">
@@ -174,23 +183,14 @@
               size_t&amp; dstEffectIndex) const</span>
             </dt>
             <dd><span></span></dd>
-            <dt id="af79a6fe97805a702ee03572bb3f3bae6">
-              <span class="m-doc-wrap-bumper">auto <a href="#af79a6fe97805a702ee03572bb3f3bae6" class="m-doc-self">GetVisualEffect</a>(</span><span class="m-doc-wrap">) -&gt; <a href="class_swarm_1_1_components_1_1_visual_effect.html" class="m-doc">Components::<wbr />VisualEffect</a>*</span>
+            <dt id="a7b87653d3450a59a66741b8cd0d0a5cc">
+              <span class="m-doc-wrap-bumper">auto <a href="#a7b87653d3450a59a66741b8cd0d0a5cc" class="m-doc-self">GetVisualEffect</a>(</span><span class="m-doc-wrap">) -&gt; <a href="struct_swarm_1_1c_visual_effect_description.html" class="m-doc">cVisualEffectDescription</a>*</span>
             </dt>
             <dd><span></span></dd>
           </dl>
         </section>
-        <section id="pro-types">
-          <h2><a href="#pro-types">Protected types</a></h2>
-          <dl class="m-doc">
-            <dt id="a7535b2ebc74428ca69518cbcc2ad6f87">
-              <span class="m-doc-wrap-bumper">enum <a href="#a7535b2ebc74428ca69518cbcc2ad6f87" class="m-doc-self">(anonymous)</a> { </span><span class="m-doc-wrap"><a href="#a7535b2ebc74428ca69518cbcc2ad6f87ac735fc208edee03159a4c99caccaa69a" class="m-doc">kFlagTransformed</a> = 4 }</span>
-            </dt>
-            <dd><span></span></dd>
-          </dl>
-        </section>
-        <section id="pro-attribs">
-          <h2><a href="#pro-attribs">Protected variables</a></h2>
+        <section id="pub-attribs">
+          <h2><a href="#pub-attribs">Public variables</a></h2>
           <dl class="m-doc">
             <dt id="a46fb67270b1e1f7ab3592952bfc6d0ec">
               int <a href="#a46fb67270b1e1f7ab3592952bfc6d0ec" class="m-doc-self">vftable_04h</a>
@@ -208,8 +208,8 @@
               int <a href="#ae6a25fd3de1a7c3968b8b83cb4077341" class="m-doc-self">mnRefCount</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="af1c7e959f2bdf69a9ffa45e49d00af40">
-              intrusive_ptr&lt;<a href="class_swarm_1_1_i_swarm_manager.html" class="m-doc">ISwarmManager</a>&gt; <a href="#af1c7e959f2bdf69a9ffa45e49d00af40" class="m-doc-self">mpManager</a>
+            <dt id="ad936775451f7aabfff787dd227372b6b">
+              eastl::intrusive_ptr&lt;ISwarmManager&gt; <a href="#ad936775451f7aabfff787dd227372b6b" class="m-doc-self">mpManager</a>
             </dt>
             <dd><span></span></dd>
             <dt id="a1b63b2333f2e4e6534431853844d799c">
@@ -228,20 +228,20 @@
               int <a href="#a169023b1098dcb89e2504062e503a65b" class="m-doc-self">field_24</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="ac5a1ea27f615c0af958b401dbd06e5d6">
-              <a href="class_swarm_1_1_components_1_1_visual_effect.html" class="m-doc">Components::<wbr />VisualEffect</a>* <a href="#ac5a1ea27f615c0af958b401dbd06e5d6" class="m-doc-self">mpVisualEffect</a>
+            <dt id="aaa4804804db5821d275a0d03c2d3f256">
+              <a href="struct_swarm_1_1c_visual_effect_description.html" class="m-doc">cVisualEffectDescription</a>* <a href="#aaa4804804db5821d275a0d03c2d3f256" class="m-doc-self">mpVisualEffect</a>
             </dt>
             <dd><span></span></dd>
             <dt id="a5157bbf918a1a12bb01cc006611e0f96">
               int <a href="#a5157bbf918a1a12bb01cc006611e0f96" class="m-doc-self">mnFlags</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="a605064c5d898cda13cfc83c62c145c5d">
-              <a href="struct_math_1_1_vector3.html" class="m-doc">Vector3</a> <a href="#a605064c5d898cda13cfc83c62c145c5d" class="m-doc-self">field_30</a>
+            <dt id="aa57452007d3a32c65daa38289b63fef3">
+              <a href="struct_math_1_1_vector3.html" class="m-doc">Math::<wbr />Vector3</a> <a href="#aa57452007d3a32c65daa38289b63fef3" class="m-doc-self">field_30</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="a9398e6faa5b32f86eb8c1e867a4f55a6">
-              <a href="struct_math_1_1_vector3.html" class="m-doc">Vector3</a> <a href="#a9398e6faa5b32f86eb8c1e867a4f55a6" class="m-doc-self">field_3C</a>
+            <dt id="ad69b2e74b407580085b661eed58615d4">
+              <a href="struct_math_1_1_vector3.html" class="m-doc">Math::<wbr />Vector3</a> <a href="#ad69b2e74b407580085b661eed58615d4" class="m-doc-self">field_3C</a>
             </dt>
             <dd><span></span></dd>
             <dt id="acb4d1aba62665f02f646fdadd9f5487a">
@@ -252,8 +252,8 @@
               float <a href="#a00a876453f8d46433cf60df87c08d628" class="m-doc-self">field_4C</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="a81916d1768dee816cde08e0dc09da805">
-              <a href="struct_math_1_1_vector3.html" class="m-doc">Vector3</a> <a href="#a81916d1768dee816cde08e0dc09da805" class="m-doc-self">field_50</a>
+            <dt id="a58ceb35a98428075a91dde7fa360d6e2">
+              <a href="struct_math_1_1_vector3.html" class="m-doc">Math::<wbr />Vector3</a> <a href="#a58ceb35a98428075a91dde7fa360d6e2" class="m-doc-self">field_50</a>
             </dt>
             <dd><span></span></dd>
             <dt id="a0c97a6af6afa456609d4288b20657853">
@@ -280,8 +280,8 @@
               <a href="class_transform.html" class="m-doc">Transform</a> <a href="#a7efeb2a8b028b4d59826483930165ca6" class="m-doc-self">field_10C</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="af85b7d4fa4aac22ed47401b2faba67ed">
-              vector&lt;int&gt; <a href="#af85b7d4fa4aac22ed47401b2faba67ed" class="m-doc-self">field_144</a>
+            <dt id="aab9653647b2dbdc3ac2d4ef0392e3015">
+              eastl::vector&lt;int&gt; <a href="#aab9653647b2dbdc3ac2d4ef0392e3015" class="m-doc-self">field_144</a>
             </dt>
             <dd><span></span></dd>
             <dt id="a4bd50f4191b31579fa3a82b8e42adf60">

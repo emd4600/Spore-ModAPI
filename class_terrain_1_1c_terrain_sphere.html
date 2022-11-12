@@ -73,9 +73,9 @@
             </dt>
             <dd><span></span></dd>
             <dt>
-              class <a href="class_graphics_1_1_i_renderable.html" class="m-doc">Graphics::IRenderable</a>
+              class <a href="class_graphics_1_1_i_layer.html" class="m-doc">Graphics::ILayer</a>
             </dt>
-            <dd>This interface defines an object that can be rendered, and whose render method is called on every game loop.</dd>
+            <dd>This interfaces defines a layer that is rendered every game loop, by callings its <a href="class_graphics_1_1_i_layer.html#ae4812c7ed39d6dcaf98088c7ae5211b0" class="m-doc">ILayer::<wbr />DrawLayer()</a> method.</dd>
             <dt>
               class <a href="class_app_1_1_i_message_listener.html" class="m-doc">App::IMessageListener</a>
             </dt>
@@ -291,16 +291,16 @@
               <a href="_texture_8h.html#affea3369120131ed058702d2945a10b4" class="m-doc">TexturePtr</a> <a href="#aafdfcbb68e6d7b76a3be8f1dfc2bf69a" class="m-doc-self">mTerrainControlMaps</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="ac7f617609fea752536859ef7d0de355c">
-              vector&lt;<a href="struct_terrain_1_1c_terrain_sphere_rendering_chunk.html" class="m-doc">cTerrainSphereRenderingChunk</a>&gt; <a href="#ac7f617609fea752536859ef7d0de355c" class="m-doc-self">mLandRenderingChunks</a>
+            <dt id="a48c2bfd47d9bf459b9d292006ae131b3">
+              eastl::vector&lt;<a href="struct_terrain_1_1c_terrain_sphere_rendering_chunk.html" class="m-doc">cTerrainSphereRenderingChunk</a>&gt; <a href="#a48c2bfd47d9bf459b9d292006ae131b3" class="m-doc-self">mLandRenderingChunks</a>
             </dt>
             <dd>The terrain land quads that have to be rendered.</dd>
-            <dt id="a1f4817036506025628718c5f5bf25de5">
-              vector&lt;int&gt; <a href="#a1f4817036506025628718c5f5bf25de5" class="m-doc-self">field_1A4</a>
+            <dt id="a41426bce7e30eeaf3fd80a0aeeecc730">
+              eastl::vector&lt;int&gt; <a href="#a41426bce7e30eeaf3fd80a0aeeecc730" class="m-doc-self">field_1A4</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="a87911dcab28c1e22efe69657d694cff8">
-              vector&lt;int&gt; <a href="#a87911dcab28c1e22efe69657d694cff8" class="m-doc-self">field_1B8</a>
+            <dt id="a355313d9fb8b00c3998629e24a88f853">
+              eastl::vector&lt;int&gt; <a href="#a355313d9fb8b00c3998629e24a88f853" class="m-doc-self">field_1B8</a>
             </dt>
             <dd><span></span></dd>
             <dt id="aa29ffb2f4d45c062dc7be09c9fc8390c">
@@ -379,68 +379,68 @@
               int <a href="#adb8a0addd325d4ba88694c481ba74782" class="m-doc-self">field_214</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="af597788a09910d96f85023ba6b48ae65">
-              vector&lt;int&gt; <a href="#af597788a09910d96f85023ba6b48ae65" class="m-doc-self">field_218</a>
+            <dt id="ae2c662d05277c952a78c440f113dad62">
+              eastl::vector&lt;int&gt; <a href="#ae2c662d05277c952a78c440f113dad62" class="m-doc-self">field_218</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="a0f3d3ba595e5959e806c930073abc2c5">
-              vector&lt;int&gt; <a href="#a0f3d3ba595e5959e806c930073abc2c5" class="m-doc-self">field_22C</a>
+            <dt id="a099ba97e9be775f52a33bbf77b5a29c8">
+              eastl::vector&lt;int&gt; <a href="#a099ba97e9be775f52a33bbf77b5a29c8" class="m-doc-self">field_22C</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="a7a81512c0b3e1e1fbc0e974a66462c9c">
-              vector&lt;int&gt; <a href="#a7a81512c0b3e1e1fbc0e974a66462c9c" class="m-doc-self">field_240</a>
+            <dt id="a32e7d2472ee036ee4fd13c172e6290ae">
+              eastl::vector&lt;int&gt; <a href="#a32e7d2472ee036ee4fd13c172e6290ae" class="m-doc-self">field_240</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="acb5c1edf3d9dd5a24b2dd0bd0b928b7c">
-              vector&lt;int&gt; <a href="#acb5c1edf3d9dd5a24b2dd0bd0b928b7c" class="m-doc-self">field_254</a>
+            <dt id="a783f63170851c0231063f3224147e492">
+              eastl::vector&lt;int&gt; <a href="#a783f63170851c0231063f3224147e492" class="m-doc-self">field_254</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="a4eec3022b2bf1120a3901a2e8c74828c">
-              vector&lt;int&gt; <a href="#a4eec3022b2bf1120a3901a2e8c74828c" class="m-doc-self">field_268</a>
+            <dt id="a89a7118b98013d27507cf53b3a6e935a">
+              eastl::vector&lt;int&gt; <a href="#a89a7118b98013d27507cf53b3a6e935a" class="m-doc-self">field_268</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="a22b73416826294383872f6c4eaccd811">
-              vector&lt;int&gt; <a href="#a22b73416826294383872f6c4eaccd811" class="m-doc-self">field_27C</a>
+            <dt id="a205a575fdd9a88045f8add836c2510bd">
+              eastl::vector&lt;int&gt; <a href="#a205a575fdd9a88045f8add836c2510bd" class="m-doc-self">field_27C</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="a970f5721185727767b72c0b036560484">
-              vector&lt;int&gt; <a href="#a970f5721185727767b72c0b036560484" class="m-doc-self">field_290</a>
+            <dt id="aa48cf659227ed9293829b1a7320e41f6">
+              eastl::vector&lt;int&gt; <a href="#aa48cf659227ed9293829b1a7320e41f6" class="m-doc-self">field_290</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="a56c2699a4496c3c7dbe50f4dc019c300">
-              vector&lt;int&gt; <a href="#a56c2699a4496c3c7dbe50f4dc019c300" class="m-doc-self">field_2A4</a>
+            <dt id="a5e7c4498ae0262fddbc83dca149611a3">
+              eastl::vector&lt;int&gt; <a href="#a5e7c4498ae0262fddbc83dca149611a3" class="m-doc-self">field_2A4</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="abe37b10617716c3344dcc050ba4501eb">
-              vector&lt;int&gt; <a href="#abe37b10617716c3344dcc050ba4501eb" class="m-doc-self">field_2B8</a>
+            <dt id="ae31ef6ee6f84f65a58425eb9ed4bc307">
+              eastl::vector&lt;int&gt; <a href="#ae31ef6ee6f84f65a58425eb9ed4bc307" class="m-doc-self">field_2B8</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="acfe63045c3ec31749b3c606a49e16ff7">
-              vector&lt;int&gt; <a href="#acfe63045c3ec31749b3c606a49e16ff7" class="m-doc-self">field_2CC</a>
+            <dt id="a351e941e8ec4e8736da202ddd3ce52ff">
+              eastl::vector&lt;int&gt; <a href="#a351e941e8ec4e8736da202ddd3ce52ff" class="m-doc-self">field_2CC</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="a9147f3946eba8262e69dd948a5848ff0">
-              vector&lt;int&gt; <a href="#a9147f3946eba8262e69dd948a5848ff0" class="m-doc-self">field_2E0</a>
+            <dt id="a0a6d49411eea9a6247aba6db07162c64">
+              eastl::vector&lt;int&gt; <a href="#a0a6d49411eea9a6247aba6db07162c64" class="m-doc-self">field_2E0</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="ac82912657a212a5a3e4ffd201fefb3af">
-              vector&lt;int&gt; <a href="#ac82912657a212a5a3e4ffd201fefb3af" class="m-doc-self">field_2F4</a>
+            <dt id="ab106745f8b83a05121524751bd4b174e">
+              eastl::vector&lt;int&gt; <a href="#ab106745f8b83a05121524751bd4b174e" class="m-doc-self">field_2F4</a>
             </dt>
             <dd><span></span></dd>
             <dt id="a190344ee1bb7b44c8da6e8f9b63c291f">
               <a href="_texture_8h.html#affea3369120131ed058702d2945a10b4" class="m-doc">TexturePtr</a> <a href="#a190344ee1bb7b44c8da6e8f9b63c291f" class="m-doc-self">field_308</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="acdef4c82655f26b570d005b3bdc99d9d">
-              <a href="struct_math_1_1_vector4.html" class="m-doc">Vector4</a> <a href="#acdef4c82655f26b570d005b3bdc99d9d" class="m-doc-self">mCameraPos</a>
+            <dt id="ac4435219881cefcb85b85f550f9d3d4b">
+              <a href="struct_math_1_1_vector4.html" class="m-doc">Math::<wbr />Vector4</a> <a href="#ac4435219881cefcb85b85f550f9d3d4b" class="m-doc-self">mCameraPos</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="ae1ca94cadb57204e8290a4505fd8bde9">
-              <a href="struct_math_1_1_vector4.html" class="m-doc">Vector4</a> <a href="#ae1ca94cadb57204e8290a4505fd8bde9" class="m-doc-self">mCameraDir</a>
+            <dt id="a977ec12c60dd49df5a196e8ecd480e67">
+              <a href="struct_math_1_1_vector4.html" class="m-doc">Math::<wbr />Vector4</a> <a href="#a977ec12c60dd49df5a196e8ecd480e67" class="m-doc-self">mCameraDir</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="ab848ff13706dce1865018f73c116a276">
-              <a href="struct_math_1_1_vector4.html" class="m-doc">Vector4</a> <a href="#ab848ff13706dce1865018f73c116a276" class="m-doc-self">mSunDir</a>
+            <dt id="aa598e7abada22737df0a7a5d2b560bc7">
+              <a href="struct_math_1_1_vector4.html" class="m-doc">Math::<wbr />Vector4</a> <a href="#aa598e7abada22737df0a7a5d2b560bc7" class="m-doc-self">mSunDir</a>
             </dt>
             <dd><span></span></dd>
             <dt id="ad15ae4d25cdc8bc7c312f4a81b6b4dc6">
@@ -507,8 +507,8 @@
               char <a href="#a920d1783f7fd7fb26dd53a588c7533ce" class="m-doc-self">padding_374</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="a9f12f8714d05e386ee0f5df01e873045">
-              <a href="struct_math_1_1_vector4.html" class="m-doc">Vector4</a> <a href="#a9f12f8714d05e386ee0f5df01e873045" class="m-doc-self">field_494</a>
+            <dt id="a96011df19212bbeb7a7ae80dcf6fafdc">
+              <a href="struct_math_1_1_vector4.html" class="m-doc">Math::<wbr />Vector4</a> <a href="#a96011df19212bbeb7a7ae80dcf6fafdc" class="m-doc-self">field_494</a>
             </dt>
             <dd><span></span></dd>
             <dt id="a3d96f8c01745c0d07ecc6de0c1919012">
@@ -523,64 +523,64 @@
               <a href="struct_terrain_1_1_terrain_state.html" class="m-doc">TerrainState</a> <a href="#a2894a8d6bddba4560d911a5dd2051e32" class="m-doc-self">mTerrainState</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="a1e6bf0245f6d525d64415c2bc8f72d97">
-              <a href="struct_math_1_1_vector4.html" class="m-doc">Vector4</a> <a href="#a1e6bf0245f6d525d64415c2bc8f72d97" class="m-doc-self">mTramp</a>
+            <dt id="a5be6101037f0bb50ca4af9995e795e7a">
+              <a href="struct_math_1_1_vector4.html" class="m-doc">Math::<wbr />Vector4</a> <a href="#a5be6101037f0bb50ca4af9995e795e7a" class="m-doc-self">mTramp</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="a08993787fbf7bdaa10674317a45525fa">
-              <a href="struct_math_1_1_vector4.html" class="m-doc">Vector4</a> <a href="#a08993787fbf7bdaa10674317a45525fa" class="m-doc-self">field_6B8</a>
+            <dt id="a225abe18f99c5e3df8578c6af94501f3">
+              <a href="struct_math_1_1_vector4.html" class="m-doc">Math::<wbr />Vector4</a> <a href="#a225abe18f99c5e3df8578c6af94501f3" class="m-doc-self">field_6B8</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="a101e6a771cfd9fbd64dd7d3ad0e5536e">
-              <a href="struct_math_1_1_vector4.html" class="m-doc">Vector4</a> <a href="#a101e6a771cfd9fbd64dd7d3ad0e5536e" class="m-doc-self">field_6C8</a>
+            <dt id="aa4f0f3991b3bb5126118217f02e7eba6">
+              <a href="struct_math_1_1_vector4.html" class="m-doc">Math::<wbr />Vector4</a> <a href="#aa4f0f3991b3bb5126118217f02e7eba6" class="m-doc-self">field_6C8</a>
             </dt>
             <dd><span></span></dd>
             <dt>
-              <a href="struct_math_1_1_vector4.html" class="m-doc">Vector4</a> <a href="#a9d66180a9706966516712dd7de39b3b3" class="m-doc">field_6D8</a>
+              <a href="struct_math_1_1_vector4.html" class="m-doc">Math::<wbr />Vector4</a> <a href="#ab309cbadda4c86c9281c15a5bb66f2e9" class="m-doc">field_6D8</a>
             </dt>
             <dd></dd>
-            <dt id="a3e4e54cc3bf66ab499db81c61b5b27ce">
-              vector&lt;int&gt; <a href="#a3e4e54cc3bf66ab499db81c61b5b27ce" class="m-doc-self">field_758</a>
+            <dt id="ac05dd9e827c446e554e09af32094ed67">
+              eastl::vector&lt;int&gt; <a href="#ac05dd9e827c446e554e09af32094ed67" class="m-doc-self">field_758</a>
             </dt>
             <dd><span></span></dd>
             <dt id="a004b261005e813487753a76d483c347e">
               bool <a href="#a004b261005e813487753a76d483c347e" class="m-doc-self">mAssetsLoaded</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="acc45f0b242850cf221231d658e4e63e4">
-              vector&lt;<a href="struct_terrain_1_1c_terrain_sphere_1_1_terrain_modification.html" class="m-doc">TerrainModification</a>&gt; <a href="#acc45f0b242850cf221231d658e4e63e4" class="m-doc-self">mModelFootprints</a>
+            <dt id="a1eec3fedb1842c89c9b6a0c5dc38bf2c">
+              eastl::vector&lt;<a href="struct_terrain_1_1c_terrain_sphere_1_1_terrain_modification.html" class="m-doc">TerrainModification</a>&gt; <a href="#a1eec3fedb1842c89c9b6a0c5dc38bf2c" class="m-doc-self">mModelFootprints</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="a8b442e20be3c35c381024df60899b1fd">
-              vector&lt;<a href="struct_terrain_1_1c_terrain_sphere_1_1_terrain_modification.html" class="m-doc">TerrainModification</a>&gt; <a href="#a8b442e20be3c35c381024df60899b1fd" class="m-doc-self">mModelNeedRelevel</a>
+            <dt id="aa12ab3fb363e40f0d5bce3b17db1464c">
+              eastl::vector&lt;<a href="struct_terrain_1_1c_terrain_sphere_1_1_terrain_modification.html" class="m-doc">TerrainModification</a>&gt; <a href="#aa12ab3fb363e40f0d5bce3b17db1464c" class="m-doc-self">mModelNeedRelevel</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="aaa14c0612dc5e3f1487f66d36a80e860">
-              vector&lt;<a href="struct_terrain_1_1c_terrain_sphere_1_1_terrain_modification.html" class="m-doc">TerrainModification</a>&gt; <a href="#aaa14c0612dc5e3f1487f66d36a80e860" class="m-doc-self">mPlayerEffects</a>
+            <dt id="a99bd06f8c6039468b606ebde85520bae">
+              eastl::vector&lt;<a href="struct_terrain_1_1c_terrain_sphere_1_1_terrain_modification.html" class="m-doc">TerrainModification</a>&gt; <a href="#a99bd06f8c6039468b606ebde85520bae" class="m-doc-self">mPlayerEffects</a>
             </dt>
             <dd><span></span></dd>
             <dt id="ac49ab72bdcbe985b1670f6c8884ed6c6">
               int <a href="#ac49ab72bdcbe985b1670f6c8884ed6c6" class="m-doc-self">mNumModels</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="a4c6e53cd34b41f916680c7bd44ee3e59">
-              vector&lt;<a href="struct_resource_key.html" class="m-doc">ResourceKey</a>&gt; <a href="#a4c6e53cd34b41f916680c7bd44ee3e59" class="m-doc-self">mModelKeys</a>
+            <dt id="a92bc80b5e8bda89dbce05c18a9a5ee0b">
+              eastl::vector&lt;<a href="struct_resource_key.html" class="m-doc">ResourceKey</a>&gt; <a href="#a92bc80b5e8bda89dbce05c18a9a5ee0b" class="m-doc-self">mModelKeys</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="a2548eff945455bf4c2c011ef1a8506b8">
-              vector&lt;<a href="class_transform.html" class="m-doc">Transform</a>&gt; <a href="#a2548eff945455bf4c2c011ef1a8506b8" class="m-doc-self">mModelTransforms</a>
+            <dt id="abbfcf2fee15f12023f7ea99274e3ffe2">
+              eastl::vector&lt;<a href="class_transform.html" class="m-doc">Transform</a>&gt; <a href="#abbfcf2fee15f12023f7ea99274e3ffe2" class="m-doc-self">mModelTransforms</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="a7121219332dddc037b0fa8cad36c1e7a">
-              vector&lt;<a href="_model_asset_8h.html#a4695930ef0d84e11d31379e623af5732" class="m-doc">ModelPtr</a>&gt; <a href="#a7121219332dddc037b0fa8cad36c1e7a" class="m-doc-self">mModels</a>
+            <dt id="a91227c3d308f51ead4b8346801a5b00f">
+              eastl::vector&lt;<a href="_model_8h.html#a4695930ef0d84e11d31379e623af5732" class="m-doc">ModelPtr</a>&gt; <a href="#a91227c3d308f51ead4b8346801a5b00f" class="m-doc-self">mModels</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="a897875a479b3b4cf6474e02446a581d9">
-              vector&lt;<a href="_i_effect_8h.html#adc433612d1d4c8a3a401b5c1dc2d4eba" class="m-doc">IEffectPtr</a>&gt; <a href="#a897875a479b3b4cf6474e02446a581d9" class="m-doc-self">mAmbientEffects</a>
+            <dt id="ada3b4f98957aae964318f9698ec5b93f">
+              eastl::vector&lt;<a href="_i_visual_effect_8h.html#af513d4705ba3d0bdec5c20e45aee71fd" class="m-doc">IVisualEffectPtr</a>&gt; <a href="#ada3b4f98957aae964318f9698ec5b93f" class="m-doc-self">mAmbientEffects</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="a34abfec1a4445add396a4d6c6fb2049c">
-              vector&lt;<a href="_i_effect_8h.html#adc433612d1d4c8a3a401b5c1dc2d4eba" class="m-doc">IEffectPtr</a>&gt; <a href="#a34abfec1a4445add396a4d6c6fb2049c" class="m-doc-self">mAmbientSoundEffects</a>
+            <dt id="a3a9c2fbc2aa34aa7a6b4245685c982ef">
+              eastl::vector&lt;<a href="_i_visual_effect_8h.html#af513d4705ba3d0bdec5c20e45aee71fd" class="m-doc">IVisualEffectPtr</a>&gt; <a href="#a3a9c2fbc2aa34aa7a6b4245685c982ef" class="m-doc-self">mAmbientSoundEffects</a>
             </dt>
             <dd><span></span></dd>
             <dt id="a313e961ee9b0815a5951948460fa1abb">
@@ -647,16 +647,16 @@
               bool <a href="#a52974eb1f971d6daf79944c2c7b2ca0d" class="m-doc-self">mAllowUnderwaterObjects</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="ae61b886790ab0895df8ea88f60121264">
-              vector&lt;pair&lt;<a href="_i_model_world_8h.html#ac806a1f42e226576db417e69309943f5" class="m-doc">IModelWorldPtr</a>, int&gt;&gt; <a href="#ae61b886790ab0895df8ea88f60121264" class="m-doc-self">mUnderwaterModelWorlds</a>
+            <dt id="ae42dbd1c8b297350ae5118e1b9092475">
+              eastl::vector&lt;eastl::pair&lt;<a href="_i_model_world_8h.html#ac806a1f42e226576db417e69309943f5" class="m-doc">IModelWorldPtr</a>, int&gt;&gt; <a href="#ae42dbd1c8b297350ae5118e1b9092475" class="m-doc-self">mUnderwaterModelWorlds</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="a24f862172e5dd1ad489946ef4eaaed51">
-              vector&lt;pair&lt;<a href="_i_anim_world_8h.html#a9ff522673dfc4e748545440d74e45410" class="m-doc">IAnimWorldPtr</a>, int&gt;&gt; <a href="#a24f862172e5dd1ad489946ef4eaaed51" class="m-doc-self">mUnderwaterAnimWorlds</a>
+            <dt id="a33913acdd828532583e37b518219192e">
+              eastl::vector&lt;eastl::pair&lt;<a href="_i_anim_world_8h.html#a9ff522673dfc4e748545440d74e45410" class="m-doc">IAnimWorldPtr</a>, int&gt;&gt; <a href="#a33913acdd828532583e37b518219192e" class="m-doc-self">mUnderwaterAnimWorlds</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="af8fa4775a3d463f78d4d2586578e10a9">
-              <a href="_i_effect_world_8h.html#a03a4adbe3eb0e10e2c62e72c9f246095" class="m-doc">IEffectWorldPtr</a> <a href="#af8fa4775a3d463f78d4d2586578e10a9" class="m-doc-self">mpUnderWaterEffectWorld</a>
+            <dt id="ae570512b6b4a9c5641e30f89a0ea2581">
+              <a href="_i_effects_world_8h.html#a68216f3c3fb8e63842f27d7b2a364b61" class="m-doc">IEffectsWorldPtr</a> <a href="#ae570512b6b4a9c5641e30f89a0ea2581" class="m-doc-self">mpUnderWaterEffectWorld</a>
             </dt>
             <dd><span></span></dd>
             <dt id="a9b8fdd5ede6c64ec06643777d490143d">
@@ -719,8 +719,8 @@
               float <a href="#a1ff8fee318ff38d36551caa4e2ee5ed0" class="m-doc-self">field_A34</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="a9dbafecb39bb125718526a88aa857d53">
-              <a href="struct_math_1_1_color_r_g_b_a.html" class="m-doc">ColorRGBA</a> <a href="#a9dbafecb39bb125718526a88aa857d53" class="m-doc-self">field_A38</a>
+            <dt id="a120e95d962e5654046dba20cd9a9bee0">
+              <a href="struct_math_1_1_color_r_g_b_a.html" class="m-doc">Math::<wbr />ColorRGBA</a> <a href="#a120e95d962e5654046dba20cd9a9bee0" class="m-doc-self">field_A38</a>
             </dt>
             <dd><span></span></dd>
             <dt id="ad71bbfd451636ab6336a3767ebc36c6e">
@@ -797,9 +797,9 @@
         </section>
         <section>
           <h2>Variable documentation</h2>
-          <section class="m-doc-details" id="a9d66180a9706966516712dd7de39b3b3"><div>
+          <section class="m-doc-details" id="ab309cbadda4c86c9281c15a5bb66f2e9"><div>
             <h3>
-              <a href="struct_math_1_1_vector4.html" class="m-doc">Vector4</a> Terrain::<wbr />cTerrainSphere::<wbr /><a href="#a9d66180a9706966516712dd7de39b3b3" class="m-doc-self">field_6D8</a>
+              <a href="struct_math_1_1_vector4.html" class="m-doc">Math::<wbr />Vector4</a> Terrain::<wbr />cTerrainSphere::<wbr /><a href="#ab309cbadda4c86c9281c15a5bb66f2e9" class="m-doc-self">field_6D8</a>
             </h3>
 <ul><li>6D8h *&zwj;/ <a href="struct_terrain_1_1_terrain_lighting.html" class="m-doc">TerrainLighting</a> mTerrainLighting;</li></ul>
           </div></section>

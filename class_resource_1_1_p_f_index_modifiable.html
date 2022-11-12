@@ -77,8 +77,8 @@
         <section id="pub-types">
           <h2><a href="#pub-types">Public types</a></h2>
           <dl class="m-doc">
-            <dt id="a17424dc4d7250b565333f0dcd8911ec0">
-              using <a href="#a17424dc4d7250b565333f0dcd8911ec0" class="m-doc-self">ItemsMap</a> = eastl::hash_map&lt;<a href="struct_resource_key.html" class="m-doc">ResourceKey</a>, <a href="struct_resource_1_1_d_b_p_f_item.html" class="m-doc">DBPFItem</a>, <a href="_i_core_allocator_8h.html#a752d1217e82fc75218d2c66d7fd51dc7" class="m-doc">ICoreAllocatorAdapter</a>&gt;
+            <dt id="ab5e9ec8d066973734260671216a42c6f">
+              using <a href="#ab5e9ec8d066973734260671216a42c6f" class="m-doc-self">ItemsMap</a> = eastl::hash_map&lt;<a href="struct_resource_key.html" class="m-doc">ResourceKey</a>, <a href="struct_resource_1_1_record_info.html" class="m-doc">RecordInfo</a>, <a href="_i_core_allocator_8h.html#a752d1217e82fc75218d2c66d7fd51dc7" class="m-doc">ICoreAllocatorAdapter</a>&gt;
             </dt>
             <dd><span></span></dd>
           </dl>
@@ -124,12 +124,12 @@
             </dt>
             <dd>Returns the offset of the file where the data of this PFIndex&#x27; files ends.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#a9d94d3c02a9b7f92178cb05a784a1ece" class="m-doc">GetFiles</a>(</span><span class="m-doc-wrap">vector&lt;<a href="struct_resource_key.html" class="m-doc">ResourceKey</a>&gt;&amp; dstVector,
-              <a href="class_resource_1_1_i_resource_filter.html" class="m-doc">IResourceFilter</a>* filter = nullptr) -&gt; size_t <span class="m-label m-flat m-warning">virtual</span></span>
+              <span class="m-doc-wrap-bumper">auto <a href="#a100d18bd598eaad65224e8a3cfb58833" class="m-doc">GetFiles</a>(</span><span class="m-doc-wrap">eastl::vector&lt;<a href="struct_resource_key.html" class="m-doc">ResourceKey</a>&gt;&amp; dstVector,
+              <a href="class_resource_1_1_i_key_filter.html" class="m-doc">IKeyFilter</a>* filter = nullptr) -&gt; size_t <span class="m-label m-flat m-warning">virtual</span></span>
             </dt>
             <dd>Adds all the files that match the criteria to the given vector.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#ab8f9384e87386cadee29a9f5c2167d43" class="m-doc">GetAllFiles</a>(</span><span class="m-doc-wrap">vector&lt;<a href="struct_resource_key.html" class="m-doc">ResourceKey</a>&gt;&amp; dstVector) -&gt; size_t <span class="m-label m-flat m-warning">virtual</span></span>
+              <span class="m-doc-wrap-bumper">auto <a href="#adfe6c8f379fa90c3b5c7b445a1fb0f04" class="m-doc">GetAllFiles</a>(</span><span class="m-doc-wrap">eastl::vector&lt;<a href="struct_resource_key.html" class="m-doc">ResourceKey</a>&gt;&amp; dstVector) -&gt; size_t <span class="m-label m-flat m-warning">virtual</span></span>
             </dt>
             <dd>Adds all the file names (as ResourceKeys) in this PFIndex to the given vector.</dd>
             <dt id="a73e14e4648ffb5c4f1d4a0acf106e6a5">
@@ -138,18 +138,18 @@
               size_t fileDataEnd) -&gt; bool <span class="m-label m-flat m-warning">virtual</span></span>
             </dt>
             <dd><span></span></dd>
-            <dt id="a84629babdd56682a3fa43e1f0fb44378">
-              <span class="m-doc-wrap-bumper">auto <a href="#a84629babdd56682a3fa43e1f0fb44378" class="m-doc-self">GetFileInfo</a>(</span><span class="m-doc-wrap">const <a href="struct_resource_key.html" class="m-doc">ResourceKey</a>&amp; fileName) -&gt; <a href="struct_resource_1_1_d_b_p_f_item.html" class="m-doc">DBPFItem</a>* <span class="m-label m-flat m-warning">virtual</span></span>
+            <dt id="a05692651251b3520763885e9f5ec3bc3">
+              <span class="m-doc-wrap-bumper">auto <a href="#a05692651251b3520763885e9f5ec3bc3" class="m-doc-self">GetFileInfo</a>(</span><span class="m-doc-wrap">const <a href="struct_resource_key.html" class="m-doc">ResourceKey</a>&amp; fileName) -&gt; <a href="struct_resource_1_1_record_info.html" class="m-doc">RecordInfo</a>* <span class="m-label m-flat m-warning">virtual</span></span>
             </dt>
-            <dd>Returns the <a href="struct_resource_1_1_d_b_p_f_item.html" class="m-doc">DBPFItem</a> for the given file name, or NULL if the PFIndex does not contain that file.</dd>
+            <dd>Returns the DBPFItem for the given file name, or NULL if the PFIndex does not contain that file.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#a02ea4daf2040ef58e8961dbd5e7695b5" class="m-doc">PutFileInfo</a>(</span><span class="m-doc-wrap">const <a href="struct_resource_key.html" class="m-doc">ResourceKey</a>&amp; fileName,
-              <a href="struct_resource_1_1_d_b_p_f_item.html" class="m-doc">DBPFItem</a>&amp; info) -&gt; <a href="struct_resource_1_1_d_b_p_f_item.html" class="m-doc">DBPFItem</a>&amp; <span class="m-label m-flat m-warning">virtual</span></span>
+              <span class="m-doc-wrap-bumper">auto <a href="#a497aca3b4b3db95112070845e46c1ce6" class="m-doc">PutFileInfo</a>(</span><span class="m-doc-wrap">const <a href="struct_resource_key.html" class="m-doc">ResourceKey</a>&amp; fileName,
+              <a href="struct_resource_1_1_record_info.html" class="m-doc">RecordInfo</a>&amp; info) -&gt; <a href="struct_resource_1_1_record_info.html" class="m-doc">RecordInfo</a>&amp; <span class="m-label m-flat m-warning">virtual</span></span>
             </dt>
             <dd>Assigns the given file info to the specified file name.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#a99a89f2f20cf06853f19e9fa96a3707b" class="m-doc">RemoveFile</a>(</span><span class="m-doc-wrap">const <a href="struct_resource_key.html" class="m-doc">ResourceKey</a>&amp; fileName,
-              <a href="struct_resource_1_1_d_b_p_f_item.html" class="m-doc">DBPFItem</a>&amp; dstInfo) -&gt; bool <span class="m-label m-flat m-warning">virtual</span></span>
+              <span class="m-doc-wrap-bumper">auto <a href="#a2c7968f58b6efe1410405c5e2856aaf0" class="m-doc">RemoveFile</a>(</span><span class="m-doc-wrap">const <a href="struct_resource_key.html" class="m-doc">ResourceKey</a>&amp; fileName,
+              <a href="struct_resource_1_1_record_info.html" class="m-doc">RecordInfo</a>&amp; dstInfo) -&gt; bool <span class="m-label m-flat m-warning">virtual</span></span>
             </dt>
             <dd>Removes the specified file from this PFIndex, if it exists.</dd>
             <dt>
@@ -194,7 +194,7 @@
             </dt>
             <dd><span></span></dd>
             <dt id="a6d1cde0392c677d243fe5d2ed5325801">
-              <a href="class_resource_1_1_p_f_index_modifiable.html#a17424dc4d7250b565333f0dcd8911ec0" class="m-doc">ItemsMap</a> <a href="#a6d1cde0392c677d243fe5d2ed5325801" class="m-doc-self">mItemsMap</a>
+              <a href="class_resource_1_1_p_f_index_modifiable.html#ab5e9ec8d066973734260671216a42c6f" class="m-doc">ItemsMap</a> <a href="#a6d1cde0392c677d243fe5d2ed5325801" class="m-doc-self">mItemsMap</a>
             </dt>
             <dd><span></span></dd>
           </dl>
@@ -215,10 +215,10 @@
             <p>Removes all the files from this PFIndex.</p>
 <p>This only deletes the files&#x27; metadata, not the file content.</p>
           </div></section>
-          <section class="m-doc-details" id="a9d94d3c02a9b7f92178cb05a784a1ece"><div>
+          <section class="m-doc-details" id="a100d18bd598eaad65224e8a3cfb58833"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">size_t Resource::<wbr />PFIndexModifiable::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a9d94d3c02a9b7f92178cb05a784a1ece" class="m-doc-self">GetFiles</a>(</span><span class="m-doc-wrap">vector&lt;<a href="struct_resource_key.html" class="m-doc">ResourceKey</a>&gt;&amp; dstVector,
-              <a href="class_resource_1_1_i_resource_filter.html" class="m-doc">IResourceFilter</a>* filter = nullptr) <span class="m-label m-warning">virtual</span></span></span>
+              <span class="m-doc-wrap-bumper">size_t Resource::<wbr />PFIndexModifiable::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a100d18bd598eaad65224e8a3cfb58833" class="m-doc-self">GetFiles</a>(</span><span class="m-doc-wrap">eastl::vector&lt;<a href="struct_resource_key.html" class="m-doc">ResourceKey</a>&gt;&amp; dstVector,
+              <a href="class_resource_1_1_i_key_filter.html" class="m-doc">IKeyFilter</a>* filter = nullptr) <span class="m-label m-warning">virtual</span></span></span>
             </h3>
             <p>Adds all the files that match the criteria to the given vector.</p>
             <table class="m-table m-fullwidth m-flat">
@@ -244,9 +244,9 @@
             </table>
 <p>The given filter will be applied on all the file names contained in this PFIndex. If a file matches the criteria, its name (as a <a href="struct_resource_key.html" class="m-doc">ResourceKey</a>) will be added to the vector.</p>
           </div></section>
-          <section class="m-doc-details" id="ab8f9384e87386cadee29a9f5c2167d43"><div>
+          <section class="m-doc-details" id="adfe6c8f379fa90c3b5c7b445a1fb0f04"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">size_t Resource::<wbr />PFIndexModifiable::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ab8f9384e87386cadee29a9f5c2167d43" class="m-doc-self">GetAllFiles</a>(</span><span class="m-doc-wrap">vector&lt;<a href="struct_resource_key.html" class="m-doc">ResourceKey</a>&gt;&amp; dstVector) <span class="m-label m-warning">virtual</span></span></span>
+              <span class="m-doc-wrap-bumper">size_t Resource::<wbr />PFIndexModifiable::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#adfe6c8f379fa90c3b5c7b445a1fb0f04" class="m-doc-self">GetAllFiles</a>(</span><span class="m-doc-wrap">eastl::vector&lt;<a href="struct_resource_key.html" class="m-doc">ResourceKey</a>&gt;&amp; dstVector) <span class="m-label m-warning">virtual</span></span></span>
             </h3>
             <p>Adds all the file names (as ResourceKeys) in this PFIndex to the given vector.</p>
             <table class="m-table m-fullwidth m-flat">
@@ -267,18 +267,18 @@
               </tfoot>
             </table>
           </div></section>
-          <section class="m-doc-details" id="a02ea4daf2040ef58e8961dbd5e7695b5"><div>
+          <section class="m-doc-details" id="a497aca3b4b3db95112070845e46c1ce6"><div>
             <h3>
-              <span class="m-doc-wrap-bumper"><a href="struct_resource_1_1_d_b_p_f_item.html" class="m-doc">DBPFItem</a>&amp; Resource::<wbr />PFIndexModifiable::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a02ea4daf2040ef58e8961dbd5e7695b5" class="m-doc-self">PutFileInfo</a>(</span><span class="m-doc-wrap">const <a href="struct_resource_key.html" class="m-doc">ResourceKey</a>&amp; fileName,
-              <a href="struct_resource_1_1_d_b_p_f_item.html" class="m-doc">DBPFItem</a>&amp; info) <span class="m-label m-warning">virtual</span></span></span>
+              <span class="m-doc-wrap-bumper"><a href="struct_resource_1_1_record_info.html" class="m-doc">RecordInfo</a>&amp; Resource::<wbr />PFIndexModifiable::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a497aca3b4b3db95112070845e46c1ce6" class="m-doc-self">PutFileInfo</a>(</span><span class="m-doc-wrap">const <a href="struct_resource_key.html" class="m-doc">ResourceKey</a>&amp; fileName,
+              <a href="struct_resource_1_1_record_info.html" class="m-doc">RecordInfo</a>&amp; info) <span class="m-label m-warning">virtual</span></span></span>
             </h3>
             <p>Assigns the given file info to the specified file name.</p>
 <p>If the PFIndex does not contain a file with that name, a new entry will be created.</p>
           </div></section>
-          <section class="m-doc-details" id="a99a89f2f20cf06853f19e9fa96a3707b"><div>
+          <section class="m-doc-details" id="a2c7968f58b6efe1410405c5e2856aaf0"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">bool Resource::<wbr />PFIndexModifiable::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a99a89f2f20cf06853f19e9fa96a3707b" class="m-doc-self">RemoveFile</a>(</span><span class="m-doc-wrap">const <a href="struct_resource_key.html" class="m-doc">ResourceKey</a>&amp; fileName,
-              <a href="struct_resource_1_1_d_b_p_f_item.html" class="m-doc">DBPFItem</a>&amp; dstInfo) <span class="m-label m-warning">virtual</span></span></span>
+              <span class="m-doc-wrap-bumper">bool Resource::<wbr />PFIndexModifiable::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a2c7968f58b6efe1410405c5e2856aaf0" class="m-doc-self">RemoveFile</a>(</span><span class="m-doc-wrap">const <a href="struct_resource_key.html" class="m-doc">ResourceKey</a>&amp; fileName,
+              <a href="struct_resource_1_1_record_info.html" class="m-doc">RecordInfo</a>&amp; dstInfo) <span class="m-label m-warning">virtual</span></span></span>
             </h3>
             <p>Removes the specified file from this PFIndex, if it exists.</p>
             <table class="m-table m-fullwidth m-flat">
@@ -292,7 +292,7 @@
                 </tr>
                 <tr>
                   <td>dstInfo&nbsp;<span class="m-label m-flat m-warning">out</span></td>
-                  <td>The destination <a href="struct_resource_1_1_d_b_p_f_item.html" class="m-doc">DBPFItem</a> that will be filled with the old information of the file, if it existed.</td>
+                  <td>The destination DBPFItem that will be filled with the old information of the file, if it existed.</td>
                 </tr>
               </tbody>
               <tfoot>

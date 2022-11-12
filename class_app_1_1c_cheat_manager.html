@@ -56,8 +56,8 @@
               Reference
               <ul>
                 <li><a href="#base-classes">Base classes</a></li>
-                <li><a href="#pro-types">Protected types</a></li>
-                <li><a href="#pro-attribs">Protected variables</a></li>
+                <li><a href="#pub-types">Public types</a></li>
+                <li><a href="#pub-attribs">Public variables</a></li>
                 <li><a href="#pri-methods">Private functions</a></li>
               </ul>
             </li>
@@ -76,36 +76,36 @@
             <dd>A default interface that provides a virtual destructor, it should only be used internally.</dd>
           </dl>
         </section>
-        <section id="pro-types">
-          <h2><a href="#pro-types">Protected types</a></h2>
+        <section id="pub-types">
+          <h2><a href="#pub-types">Public types</a></h2>
           <dl class="m-doc">
-            <dt id="a84465a1af620113fede16592cf79cb04">
-              using <a href="#a84465a1af620113fede16592cf79cb04" class="m-doc-self">CheatMap_t</a> = map&lt;string, intrusive_ptr&lt;<a href="class_arg_script_1_1_i_parser.html" class="m-doc">ArgScript::<wbr />IParser</a>&gt;&gt;
+            <dt id="a6a80f704f21dcabd203a986e2bbd1fd9">
+              using <a href="#a6a80f704f21dcabd203a986e2bbd1fd9" class="m-doc-self">CheatMap_t</a> = eastl::map&lt;eastl::string, eastl::intrusive_ptr&lt;<a href="class_arg_script_1_1_i_parser.html" class="m-doc">ArgScript::<wbr />IParser</a>&gt;&gt;
             </dt>
             <dd><span></span></dd>
           </dl>
         </section>
-        <section id="pro-attribs">
-          <h2><a href="#pro-attribs">Protected variables</a></h2>
+        <section id="pub-attribs">
+          <h2><a href="#pub-attribs">Public variables</a></h2>
           <dl class="m-doc">
             <dt id="a00c194d719e8a3403100713e0554e555">
               int <a href="#a00c194d719e8a3403100713e0554e555" class="m-doc-self">mnRefCount</a>
             </dt>
             <dd><span></span></dd>
             <dt id="a8d24358c53801fcc314f579ff78f946e">
-              <a href="class_app_1_1c_cheat_manager.html#a84465a1af620113fede16592cf79cb04" class="m-doc">CheatMap_<wbr />t</a> <a href="#a8d24358c53801fcc314f579ff78f946e" class="m-doc-self">mCheats</a>
+              <a href="class_app_1_1c_cheat_manager.html#a6a80f704f21dcabd203a986e2bbd1fd9" class="m-doc">CheatMap_<wbr />t</a> <a href="#a8d24358c53801fcc314f579ff78f946e" class="m-doc-self">mCheats</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="afe7da9628b44ce9298ff417932043260">
-              set&lt;string&gt; <a href="#afe7da9628b44ce9298ff417932043260" class="m-doc-self">mNotifyCheats</a>
+            <dt id="a1114dfc2010558b47f37de931d740c33">
+              eastl::set&lt;eastl::string&gt; <a href="#a1114dfc2010558b47f37de931d740c33" class="m-doc-self">mNotifyCheats</a>
             </dt>
             <dd><span></span></dd>
             <dt id="aa55e551e0a01d480fe05795a4e32a7ec">
               <a href="class_arg_script_1_1_format_parser.html" class="m-doc">ArgScript::<wbr />FormatParser</a>* <a href="#aa55e551e0a01d480fe05795a4e32a7ec" class="m-doc-self">mpArgScript</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="a40412729b494b1be4ff4e095788612c2">
-              set&lt;intrusive_ptr&lt;<a href="class_object.html" class="m-doc">Object</a>&gt;&gt; <a href="#a40412729b494b1be4ff4e095788612c2" class="m-doc-self">field_48</a>
+            <dt id="a6b2cda90562c809a7bcea84c086ca0f2">
+              eastl::set&lt;<a href="_object_8h.html#a364c2967a9338c07ddc9a3d507389b5d" class="m-doc">ObjectPtr</a>&gt; <a href="#a6b2cda90562c809a7bcea84c086ca0f2" class="m-doc-self">field_48</a>
             </dt>
             <dd><span></span></dd>
             <dt id="ac58abf56f9e2a49d9a0e961a3be2cd06">
@@ -164,8 +164,8 @@
             </dt>
             <dd>Returns the <a href="class_arg_script_1_1_i_command.html" class="m-doc">ArgScript::<wbr />ICommand</a> that is operating behind the requested cheat.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#aacba00b9c4ba2a20dc62b51646c9abeb" class="m-doc">GetKeywords</a>(</span><span class="m-doc-wrap">const char* pPattern,
-              vector&lt;const char*&gt; dst) -&gt; size_t <span class="m-label m-flat m-warning">override</span></span>
+              <span class="m-doc-wrap-bumper">auto <a href="#aa7b76ba295eb6a8e5ee7351bba2e6cf7" class="m-doc">GetKeywords</a>(</span><span class="m-doc-wrap">const char* pPattern,
+              eastl::vector&lt;const char*&gt; dst) -&gt; size_t <span class="m-label m-flat m-warning">override</span></span>
             </dt>
             <dd>Gets all the cheat keywords in this manager that match the given pattern.</dd>
             <dt id="a1b4ecb3ddee6e4104fd92e78f4087b28">
@@ -289,10 +289,10 @@
               </tbody>
             </table>
           </div></section>
-          <section class="m-doc-details" id="aacba00b9c4ba2a20dc62b51646c9abeb"><div>
+          <section class="m-doc-details" id="aa7b76ba295eb6a8e5ee7351bba2e6cf7"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">size_t App::<wbr />cCheatManager::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#aacba00b9c4ba2a20dc62b51646c9abeb" class="m-doc-self">GetKeywords</a>(</span><span class="m-doc-wrap">const char* pPattern,
-              vector&lt;const char*&gt; dst) <span class="m-label m-warning">override</span> <span class="m-label m-danger">private</span></span></span>
+              <span class="m-doc-wrap-bumper">size_t App::<wbr />cCheatManager::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#aa7b76ba295eb6a8e5ee7351bba2e6cf7" class="m-doc-self">GetKeywords</a>(</span><span class="m-doc-wrap">const char* pPattern,
+              eastl::vector&lt;const char*&gt; dst) <span class="m-label m-warning">override</span> <span class="m-label m-danger">private</span></span></span>
             </h3>
             <p>Gets all the cheat keywords in this manager that match the given pattern.</p>
             <table class="m-table m-fullwidth m-flat">

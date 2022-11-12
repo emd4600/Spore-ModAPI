@@ -68,9 +68,9 @@
           <h2><a href="#base-classes">Base classes</a></h2>
           <dl class="m-doc">
             <dt>
-              class <a href="class_graphics_1_1_i_renderable.html" class="m-doc">Graphics::IRenderable</a>
+              class <a href="class_graphics_1_1_i_layer.html" class="m-doc">Graphics::ILayer</a>
             </dt>
-            <dd>This interface defines an object that can be rendered, and whose render method is called on every game loop.</dd>
+            <dd>This interfaces defines a layer that is rendered every game loop, by callings its <a href="class_graphics_1_1_i_layer.html#ae4812c7ed39d6dcaf98088c7ae5211b0" class="m-doc">ILayer::<wbr />DrawLayer()</a> method.</dd>
             <dt>
               class <a href="class_app_1_1_i_message_listener.html" class="m-doc">App::IMessageListener</a>
             </dt>
@@ -165,18 +165,18 @@
             </dt>
             <dd><span></span></dd>
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#a861ab9370778fd9b02d2072a5b3a52c4" class="m-doc">IntersectSphere</a>(</span><span class="m-doc-wrap">const <a href="struct_math_1_1_vector3.html" class="m-doc">Vector3</a>&amp; center,
+              <span class="m-doc-wrap-bumper">auto <a href="#a8b03777986d25dffa5e5e354b62dfa31" class="m-doc">IntersectSphere</a>(</span><span class="m-doc-wrap">const <a href="struct_math_1_1_vector3.html" class="m-doc">Vector3</a>&amp; center,
               float radius,
-              vector&lt;<a href="c_spatial_object_8h.html#ae656c09ec3111878660768d156088bc9" class="m-doc">cSpatialObjectPtr</a>&gt;&amp; dst,
+              eastl::vector&lt;<a href="c_spatial_object_8h.html#ae656c09ec3111878660768d156088bc9" class="m-doc">cSpatialObjectPtr</a>&gt;&amp; dst,
               bool useModelCollisionMode = false,
               <a href="namespace_graphics.html#ac354d1c41dc1dd5d2c9fab246990be72" class="m-doc">Graphics::<wbr />ModelPredicate_t</a> filter = nullptr,
               void* filterObject = nullptr) -&gt; bool <span class="m-label m-flat m-warning">virtual</span></span>
             </dt>
             <dd>Finds all the <a href="class_simulator_1_1c_spatial_object.html" class="m-doc">cSpatialObject</a> objects that intersect with the sphere with <code>center</code> and <code>radius</code>.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#a977d395a6db78fc1d5bf7643ae292312" class="m-doc">RaycastAll</a>(</span><span class="m-doc-wrap">const <a href="struct_math_1_1_vector3.html" class="m-doc">Vector3</a>&amp; point1,
+              <span class="m-doc-wrap-bumper">auto <a href="#ae94bad2e865eef131ab0006b437e3368" class="m-doc">RaycastAll</a>(</span><span class="m-doc-wrap">const <a href="struct_math_1_1_vector3.html" class="m-doc">Vector3</a>&amp; point1,
               const <a href="struct_math_1_1_vector3.html" class="m-doc">Vector3</a>&amp; point2,
-              vector&lt;<a href="c_spatial_object_8h.html#ae656c09ec3111878660768d156088bc9" class="m-doc">cSpatialObjectPtr</a>&gt;&amp; dst,
+              eastl::vector&lt;<a href="c_spatial_object_8h.html#ae656c09ec3111878660768d156088bc9" class="m-doc">cSpatialObjectPtr</a>&gt;&amp; dst,
               bool useModelCollisionMode = false) -&gt; bool <span class="m-label m-flat m-warning">virtual</span></span>
             </dt>
             <dd>Finds all the <a href="class_simulator_1_1c_spatial_object.html" class="m-doc">cSpatialObject</a> objects that intersect with the segment between <code>point1</code> and <code>point2</code>.</dd>
@@ -198,12 +198,12 @@
         <section id="pub-attribs">
           <h2><a href="#pub-attribs">Public variables</a></h2>
           <dl class="m-doc">
-            <dt id="aaa9be0fae7b04de461f025aca72ab407">
-              intrusive_list&lt;<a href="class_simulator_1_1_i_game_data_view.html" class="m-doc">IGameDataView</a>&gt; <a href="#aaa9be0fae7b04de461f025aca72ab407" class="m-doc-self">mViews</a>
+            <dt id="ae953737ad3274f53f6ab6ad4df15a2ce">
+              eastl::intrusive_list&lt;<a href="class_simulator_1_1_i_game_data_view.html" class="m-doc">IGameDataView</a>&gt; <a href="#ae953737ad3274f53f6ab6ad4df15a2ce" class="m-doc-self">mViews</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="a98f7adb6027764aea9b8e482354a4b0a">
-              fixed_vector&lt;<a href="_model_asset_8h.html#a4695930ef0d84e11d31379e623af5732" class="m-doc">ModelPtr</a>, 16&gt; <a href="#a98f7adb6027764aea9b8e482354a4b0a" class="m-doc-self">mGrassTrampModels</a>
+            <dt id="a7be3d629b36f3672d52d438b21292750">
+              eastl::fixed_vector&lt;<a href="_model_8h.html#a4695930ef0d84e11d31379e623af5732" class="m-doc">ModelPtr</a>, 16&gt; <a href="#a7be3d629b36f3672d52d438b21292750" class="m-doc-self">mGrassTrampModels</a>
             </dt>
             <dd><span></span></dd>
             <dt id="a9761f580809ec5ed1cdd9b3f25e1d491">
@@ -214,12 +214,12 @@
               <a href="c_game_data_8h.html#a16ee71c4f398f8560845728987775f11" class="m-doc">cGameDataPtr</a> <a href="#adfe8e62705d054f05494af6233df6654" class="m-doc-self">field_88</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="a6ebee0ea5aed925afe5f0a9748485834">
-              hash_map&lt;int, int&gt; <a href="#a6ebee0ea5aed925afe5f0a9748485834" class="m-doc-self">field_8C</a>
+            <dt id="a02184f5b04fb854a93416d9af827e434">
+              eastl::hash_map&lt;int, int&gt; <a href="#a02184f5b04fb854a93416d9af827e434" class="m-doc-self">field_8C</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="a60dd0f7013e96835854ae21e9e06158f">
-              vector&lt;int&gt; <a href="#a60dd0f7013e96835854ae21e9e06158f" class="m-doc-self">field_AC</a>
+            <dt id="a6ef34355f8ae9133ed2593782390d32e">
+              eastl::vector&lt;int&gt; <a href="#a6ef34355f8ae9133ed2593782390d32e" class="m-doc-self">field_AC</a>
             </dt>
             <dd><span></span></dd>
             <dt id="a59ca5c81d61c02c8a81aadca722e56e6">
@@ -230,20 +230,20 @@
               bool <a href="#a1eb057ab433693e36f43a436ae0c2d2c" class="m-doc-self">field_C1</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="a92bab44005489c28ad9017ecdc376fad">
-              intrusive_ptr&lt;int&gt; <a href="#a92bab44005489c28ad9017ecdc376fad" class="m-doc-self">field_C4</a>
+            <dt id="a5881fd64a976e7d881f06e4d54b73288">
+              eastl::intrusive_ptr&lt;int&gt; <a href="#a5881fd64a976e7d881f06e4d54b73288" class="m-doc-self">field_C4</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="a2aed6407e9ea6ef0fcef04438cf976a0">
-              map&lt;int, int&gt; <a href="#a2aed6407e9ea6ef0fcef04438cf976a0" class="m-doc-self">field_C8</a>
+            <dt id="a55df74a89b3220f278823037a5f4c233">
+              eastl::map&lt;int, int&gt; <a href="#a55df74a89b3220f278823037a5f4c233" class="m-doc-self">field_C8</a>
             </dt>
             <dd><span></span></dd>
             <dt id="ab64ce28391f55c4ccc80b5149f78dcc2">
               <a href="_i_model_world_8h.html#ac806a1f42e226576db417e69309943f5" class="m-doc">IModelWorldPtr</a> <a href="#ab64ce28391f55c4ccc80b5149f78dcc2" class="m-doc-self">field_E4</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="a5437ec5cb7318771b737d0e6bd1b6eb3">
-              intrusive_ptr&lt;<a href="class_object.html" class="m-doc">Object</a>&gt; <a href="#a5437ec5cb7318771b737d0e6bd1b6eb3" class="m-doc-self">field_E8</a>
+            <dt id="a8411fc789de760e7266a0c9219760ea2">
+              <a href="_object_8h.html#a364c2967a9338c07ddc9a3d507389b5d" class="m-doc">ObjectPtr</a> <a href="#a8411fc789de760e7266a0c9219760ea2" class="m-doc-self">field_E8</a>
             </dt>
             <dd><span></span></dd>
             <dt id="a8cc44d70823b3c2aa0f67ab6ba689bce">
@@ -290,19 +290,19 @@
               bool <a href="#a603ac14f2a0d68e9f11ae0f2264524dc" class="m-doc-self">mbSuperHighResBuildings</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="ab51a62d672c0e7f7197072c8756fa023">
-              fixed_vector&lt;int, 32&gt; <a href="#ab51a62d672c0e7f7197072c8756fa023" class="m-doc-self">field_110</a>
+            <dt id="a932cbc255b866eefcdcafd68f3cdf759">
+              eastl::fixed_vector&lt;int, 32&gt; <a href="#a932cbc255b866eefcdcafd68f3cdf759" class="m-doc-self">field_110</a>
             </dt>
             <dd><span></span></dd>
           </dl>
         </section>
         <section>
           <h2>Function documentation</h2>
-          <section class="m-doc-details" id="a861ab9370778fd9b02d2072a5b3a52c4"><div>
+          <section class="m-doc-details" id="a8b03777986d25dffa5e5e354b62dfa31"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">bool Simulator::<wbr />cGameViewManager::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a861ab9370778fd9b02d2072a5b3a52c4" class="m-doc-self">IntersectSphere</a>(</span><span class="m-doc-wrap">const <a href="struct_math_1_1_vector3.html" class="m-doc">Vector3</a>&amp; center,
+              <span class="m-doc-wrap-bumper">bool Simulator::<wbr />cGameViewManager::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a8b03777986d25dffa5e5e354b62dfa31" class="m-doc-self">IntersectSphere</a>(</span><span class="m-doc-wrap">const <a href="struct_math_1_1_vector3.html" class="m-doc">Vector3</a>&amp; center,
               float radius,
-              vector&lt;<a href="c_spatial_object_8h.html#ae656c09ec3111878660768d156088bc9" class="m-doc">cSpatialObjectPtr</a>&gt;&amp; dst,
+              eastl::vector&lt;<a href="c_spatial_object_8h.html#ae656c09ec3111878660768d156088bc9" class="m-doc">cSpatialObjectPtr</a>&gt;&amp; dst,
               bool useModelCollisionMode = false,
               <a href="namespace_graphics.html#ac354d1c41dc1dd5d2c9fab246990be72" class="m-doc">Graphics::<wbr />ModelPredicate_t</a> filter = nullptr,
               void* filterObject = nullptr) <span class="m-label m-warning">virtual</span></span></span>
@@ -347,11 +347,11 @@
             </table>
 <p>The objects will be added to <code>dst</code>. <code>filter</code> is an optional filter function that receives a Model and <code>filterObject</code>, and returns whether the model is considered or not.</p><p>The collision is only checked with the bounding box, so it is not a precise model collision. If the <code>useModelCollisionMode</code> param is true, then the collision mode specified by each model will be used.</p>
           </div></section>
-          <section class="m-doc-details" id="a977d395a6db78fc1d5bf7643ae292312"><div>
+          <section class="m-doc-details" id="ae94bad2e865eef131ab0006b437e3368"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">bool Simulator::<wbr />cGameViewManager::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a977d395a6db78fc1d5bf7643ae292312" class="m-doc-self">RaycastAll</a>(</span><span class="m-doc-wrap">const <a href="struct_math_1_1_vector3.html" class="m-doc">Vector3</a>&amp; point1,
+              <span class="m-doc-wrap-bumper">bool Simulator::<wbr />cGameViewManager::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ae94bad2e865eef131ab0006b437e3368" class="m-doc-self">RaycastAll</a>(</span><span class="m-doc-wrap">const <a href="struct_math_1_1_vector3.html" class="m-doc">Vector3</a>&amp; point1,
               const <a href="struct_math_1_1_vector3.html" class="m-doc">Vector3</a>&amp; point2,
-              vector&lt;<a href="c_spatial_object_8h.html#ae656c09ec3111878660768d156088bc9" class="m-doc">cSpatialObjectPtr</a>&gt;&amp; dst,
+              eastl::vector&lt;<a href="c_spatial_object_8h.html#ae656c09ec3111878660768d156088bc9" class="m-doc">cSpatialObjectPtr</a>&gt;&amp; dst,
               bool useModelCollisionMode = false) <span class="m-label m-warning">virtual</span></span></span>
             </h3>
             <p>Finds all the <a href="class_simulator_1_1c_spatial_object.html" class="m-doc">cSpatialObject</a> objects that intersect with the segment between <code>point1</code> and <code>point2</code>.</p>

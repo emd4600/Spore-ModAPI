@@ -62,7 +62,7 @@
             </li>
           </ul>
         </div>
-<p>This namespace contains all the necessary classes needed for working with the <a href="namespace_swarm.html" class="m-doc">Swarm</a> effect system. The main class is the <a href="class_swarm_1_1_i_swarm_manager.html" class="m-doc">Swarm::<wbr />ISwarmManager</a>, which is used to control everything related with the system. <a href="class_swarm_1_1_i_effect.html" class="m-doc">Swarm::<wbr />IEffect</a> classes are instances of the effects which can be sued to display and transform effects in the game.</p>
+<p>This namespace contains all the necessary classes needed for working with the <a href="namespace_swarm.html" class="m-doc">Swarm</a> effect system. The main class is the Swarm::ISwarmManager, which is used to control everything related with the system. Swarm::IEffect classes are instances of the effects which can be sued to display and transform effects in the game.</p>
         <section id="namespaces">
           <h2><a href="#namespaces">Namespaces</a></h2>
           <dl class="m-doc">
@@ -74,11 +74,31 @@
           <h2><a href="#nested-classes">Classes</a></h2>
           <dl class="m-doc">
             <dt>
+              class <a href="class_swarm_1_1c_component_base.html" class="m-doc">cComponentBase</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              class <a href="class_swarm_1_1c_description.html" class="m-doc">cDescription</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
               class <a href="class_swarm_1_1c_effect.html" class="m-doc">cEffect</a>
             </dt>
             <dd><span></span></dd>
             <dt>
-              class <a href="class_swarm_1_1c_effect_world.html" class="m-doc">cEffectWorld</a>
+              struct <a href="struct_swarm_1_1c_effect_info.html" class="m-doc">cEffectInfo</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              class <a href="class_swarm_1_1c_effects_manager.html" class="m-doc">cEffectsManager</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              class <a href="class_swarm_1_1c_effects_world.html" class="m-doc">cEffectsWorld</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              class <a href="class_swarm_1_1c_global_params.html" class="m-doc">cGlobalParams</a>
             </dt>
             <dd><span></span></dd>
             <dt>
@@ -86,7 +106,35 @@
             </dt>
             <dd>A <a href="namespace_resource.html" class="m-doc">Resource</a> object used to retrieve an effect collection (that is, an <a href="class_swarm_1_1_effect_directory.html" class="m-doc">EffectDirectory</a>, .effdir file).</dd>
             <dt>
-              class <a href="class_swarm_1_1c_swarm_manager.html" class="m-doc">cSwarmManager</a>
+              class <a href="class_swarm_1_1c_skinpaint_distribute_description.html" class="m-doc">cSkinpaintDistributeDescription</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              class <a href="class_swarm_1_1c_skinpaint_distribute_effect.html" class="m-doc">cSkinpaintDistributeEffect</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              class <a href="class_swarm_1_1c_skinpaint_particle_description.html" class="m-doc">cSkinpaintParticleDescription</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              class <a href="class_swarm_1_1c_skinpaint_particle_effect.html" class="m-doc">cSkinpaintParticleEffect</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              class <a href="class_swarm_1_1c_skinpaint_settings_description.html" class="m-doc">cSkinpaintSettingsDescription</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              class <a href="class_swarm_1_1c_skinpaint_settings_effect.html" class="m-doc">cSkinpaintSettingsEffect</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              struct <a href="struct_swarm_1_1c_surface_info.html" class="m-doc">cSurfaceInfo</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              struct <a href="struct_swarm_1_1c_visual_effect_description.html" class="m-doc">cVisualEffectDescription</a>
             </dt>
             <dd><span></span></dd>
             <dt>
@@ -94,9 +142,9 @@
             </dt>
             <dd>An <a href="class_swarm_1_1_effect_directory.html" class="m-doc">EffectDirectory</a> is a file that contains one or multiple effect declarations.</dd>
             <dt>
-              class <a href="class_swarm_1_1_i_effect.html" class="m-doc">IEffect</a>
+              class <a href="class_swarm_1_1_i_component.html" class="m-doc">IComponent</a>
             </dt>
-            <dd>An instance of an effect in the game.</dd>
+            <dd><span></span></dd>
             <dt>
               class <a href="class_swarm_1_1_i_effect_directory.html" class="m-doc">IEffectDirectory</a>
             </dt>
@@ -106,21 +154,21 @@
             </dt>
             <dd><span></span></dd>
             <dt>
-              class <a href="class_swarm_1_1_i_effect_world.html" class="m-doc">IEffectWorld</a>
+              class <a href="class_swarm_1_1_i_effects_manager.html" class="m-doc">IEffectsManager</a>
             </dt>
-            <dd>An effect world is a space in the game which contains effects.</dd>
+            <dd>This class is the main manager of the <a href="namespace_swarm.html" class="m-doc">Swarm</a> effects system.</dd>
+            <dt>
+              class <a href="class_swarm_1_1_i_effects_world.html" class="m-doc">IEffectsWorld</a>
+            </dt>
+            <dd>An effects world is a space in the game which contains effects.</dd>
             <dt>
               class <a href="class_swarm_1_1_i_surface.html" class="m-doc">ISurface</a>
             </dt>
             <dd><span></span></dd>
             <dt>
-              class <a href="class_swarm_1_1_i_swarm_manager.html" class="m-doc">ISwarmManager</a>
+              class <a href="class_swarm_1_1_i_visual_effect.html" class="m-doc">IVisualEffect</a>
             </dt>
-            <dd>This class is the main manager of the <a href="namespace_swarm.html" class="m-doc">Swarm</a> effects system.</dd>
-            <dt>
-              class <a href="class_swarm_1_1_swarm_manager_struct.html" class="m-doc">SwarmManagerStruct</a>
-            </dt>
-            <dd><span></span></dd>
+            <dd>An instance of an effect in the game.</dd>
           </dl>
         </section>
         <section id="enum-members">
@@ -158,56 +206,183 @@
             </dt>
             <dd><span></span></dd>
             <dt>
-              <span class="m-doc-wrap-bumper">enum <a href="#a61d7ecd01597e0d234a992097b0ce614" class="m-doc">(anonymous)</a> { </span><span class="m-doc-wrap"><a href="#a61d7ecd01597e0d234a992097b0ce614a8dcc88b9a33e9c9edb0f896bce770bde" class="m-doc">kEffectTypeParticles</a> = 0x01,
-              <a href="#a61d7ecd01597e0d234a992097b0ce614ab8bc37654f2891efe99abbdac05fc7eb" class="m-doc">kEffectTypeMetaParticles</a> = 0x02,
-              <a href="#a61d7ecd01597e0d234a992097b0ce614a25ffc3d8aa82632e2133a7f575e05368" class="m-doc">kEffectTypeDecal</a> = 0x03,
-              <a href="#a61d7ecd01597e0d234a992097b0ce614abbc329d8ba59a33b058a088c200f3b85" class="m-doc">kEffectTypeSequence</a> = 0x04,
-              <a href="#a61d7ecd01597e0d234a992097b0ce614aec003e406f8003634c1f90efe9c38c4b" class="m-doc">kEffectTypeSound</a> = 0x05,
-              <a href="#a61d7ecd01597e0d234a992097b0ce614a3ad7aa30db80c3948e41f378642d29fb" class="m-doc">kEffectTypeShake</a> = 0x06,
-              <a href="#a61d7ecd01597e0d234a992097b0ce614ade7504288a758d849b7090e465115251" class="m-doc">kEffectTypeCamera</a> = 0x07,
-              <a href="#a61d7ecd01597e0d234a992097b0ce614a5cb54b815387deb162bcd7371e5341d6" class="m-doc">kEffectTypeModel</a> = 0x08,
-              <a href="#a61d7ecd01597e0d234a992097b0ce614ab7392ffb39b8f82c31f05654f749fe05" class="m-doc">kEffectTypeScreen</a> = 0x09,
-              <a href="#a61d7ecd01597e0d234a992097b0ce614aa1794d173c6e943933782cab545c0759" class="m-doc">kEffectTypeLight</a> = 0x0A,
-              <a href="#a61d7ecd01597e0d234a992097b0ce614a01371ef395d904838c39f96e955b68dd" class="m-doc">kEffectTypeGame</a> = 0x0B,
-              <a href="#a61d7ecd01597e0d234a992097b0ce614a0084851ef0f6f2a001c7b8ac7d79360d" class="m-doc">kEffectTypeFastParticle</a> = 0x0C,
-              <a href="#a61d7ecd01597e0d234a992097b0ce614abea7d2c5bee092482fbff1ce538503a0" class="m-doc">kEffectTypeDistribute</a> = 0x0D,
-              <a href="#a61d7ecd01597e0d234a992097b0ce614a06df98ac8ff9db4925a57c062954f7c2" class="m-doc">kEffectTypeRibbon</a> = 0x0E,
-              <a href="#a61d7ecd01597e0d234a992097b0ce614a4499d176cb790dac2e271508ba1b13c3" class="m-doc">kEffectTypeBrush</a> = 0x20,
-              <a href="#a61d7ecd01597e0d234a992097b0ce614a51f12be86cd253b5d58165bb4200f556" class="m-doc">kEffectTypeTerrainScript</a> = 0x21,
-              <a href="#a61d7ecd01597e0d234a992097b0ce614ab7f0997359f658ae93ae83fcc4f303d1" class="m-doc">kEffectTypeSkinpaintSettings</a> = 0x22,
-              <a href="#a61d7ecd01597e0d234a992097b0ce614a8155bd453ba59dc3fe86a771e9b84ee5" class="m-doc">kEffectTypeSkinpaintDistribute</a> = 0x23,
-              <a href="#a61d7ecd01597e0d234a992097b0ce614aade4190656f8f12279ac40c9f4bd2e87" class="m-doc">kEffectTypeGamemodel</a> = 0x25,
-              <a href="#a61d7ecd01597e0d234a992097b0ce614ae72b8196d1771dcca4ee3cac99d66c68" class="m-doc">kEffectTypeSkinpaintParticle</a> = 0x26,
-              <a href="#a61d7ecd01597e0d234a992097b0ce614ab86504a83549ffc12e8ffc66c3cfb28e" class="m-doc">kEffectTypeSkinpaintFlood</a> = 0x27,
-              <a href="#a61d7ecd01597e0d234a992097b0ce614a3fd2b2dfac6d730e145ffab311dd0810" class="m-doc">kEffectTypeVolume</a> = 0x28,
-              <a href="#a61d7ecd01597e0d234a992097b0ce614a17aa8f32f05db366983ea412943132eb" class="m-doc">kEffectTypeSplitController</a> = 0x29,
-              <a href="#a61d7ecd01597e0d234a992097b0ce614a8cbea71ec3c7e756e35db833ecd511cd" class="m-doc">kEffectTypeTerrainDistribute</a> = 0x2A,
-              <a href="#a61d7ecd01597e0d234a992097b0ce614a8df85dcb2d63a28c1132fb21fd75516c" class="m-doc">kEffectTypeCloud</a> = 0x2B,
-              <a href="#a61d7ecd01597e0d234a992097b0ce614a30ebf367b1dd57c98507cffbd443aa41" class="m-doc">kEffectTypeGroundCover</a> = 0x2C,
-              <a href="#a61d7ecd01597e0d234a992097b0ce614a43062fc5c884d9953545787e00b556dc" class="m-doc">kEffectTypeMixEvent</a> = 0x2D,
-              <a href="#a61d7ecd01597e0d234a992097b0ce614afc67a7453fcfd2ce15102e6cdd0a648b" class="m-doc">kEffectTypeText</a> = 0x2F }</span>
+              <span class="m-doc-wrap-bumper">enum <a href="#a2cf0589bf9ac625893369360389ad2d4" class="m-doc">(anonymous)</a> { </span><span class="m-doc-wrap"><a href="#a2cf0589bf9ac625893369360389ad2d4a8dcc88b9a33e9c9edb0f896bce770bde" class="m-doc">kEffectTypeParticles</a> = 0x01,
+              <a href="#a2cf0589bf9ac625893369360389ad2d4ab8bc37654f2891efe99abbdac05fc7eb" class="m-doc">kEffectTypeMetaParticles</a> = 0x02,
+              <a href="#a2cf0589bf9ac625893369360389ad2d4a25ffc3d8aa82632e2133a7f575e05368" class="m-doc">kEffectTypeDecal</a> = 0x03,
+              <a href="#a2cf0589bf9ac625893369360389ad2d4abbc329d8ba59a33b058a088c200f3b85" class="m-doc">kEffectTypeSequence</a> = 0x04,
+              <a href="#a2cf0589bf9ac625893369360389ad2d4aec003e406f8003634c1f90efe9c38c4b" class="m-doc">kEffectTypeSound</a> = 0x05,
+              <a href="#a2cf0589bf9ac625893369360389ad2d4a3ad7aa30db80c3948e41f378642d29fb" class="m-doc">kEffectTypeShake</a> = 0x06,
+              <a href="#a2cf0589bf9ac625893369360389ad2d4ade7504288a758d849b7090e465115251" class="m-doc">kEffectTypeCamera</a> = 0x07,
+              <a href="#a2cf0589bf9ac625893369360389ad2d4a5cb54b815387deb162bcd7371e5341d6" class="m-doc">kEffectTypeModel</a> = 0x08,
+              <a href="#a2cf0589bf9ac625893369360389ad2d4ab7392ffb39b8f82c31f05654f749fe05" class="m-doc">kEffectTypeScreen</a> = 0x09,
+              <a href="#a2cf0589bf9ac625893369360389ad2d4aa1794d173c6e943933782cab545c0759" class="m-doc">kEffectTypeLight</a> = 0x0A,
+              <a href="#a2cf0589bf9ac625893369360389ad2d4a01371ef395d904838c39f96e955b68dd" class="m-doc">kEffectTypeGame</a> = 0x0B,
+              <a href="#a2cf0589bf9ac625893369360389ad2d4a0084851ef0f6f2a001c7b8ac7d79360d" class="m-doc">kEffectTypeFastParticle</a> = 0x0C,
+              <a href="#a2cf0589bf9ac625893369360389ad2d4abea7d2c5bee092482fbff1ce538503a0" class="m-doc">kEffectTypeDistribute</a> = 0x0D,
+              <a href="#a2cf0589bf9ac625893369360389ad2d4a06df98ac8ff9db4925a57c062954f7c2" class="m-doc">kEffectTypeRibbon</a> = 0x0E,
+              <a href="#a2cf0589bf9ac625893369360389ad2d4a4499d176cb790dac2e271508ba1b13c3" class="m-doc">kEffectTypeBrush</a> = 0x20,
+              <a href="#a2cf0589bf9ac625893369360389ad2d4a51f12be86cd253b5d58165bb4200f556" class="m-doc">kEffectTypeTerrainScript</a> = 0x21,
+              <a href="#a2cf0589bf9ac625893369360389ad2d4ab7f0997359f658ae93ae83fcc4f303d1" class="m-doc">kEffectTypeSkinpaintSettings</a> = 0x22,
+              <a href="#a2cf0589bf9ac625893369360389ad2d4a8155bd453ba59dc3fe86a771e9b84ee5" class="m-doc">kEffectTypeSkinpaintDistribute</a> = 0x23,
+              <a href="#a2cf0589bf9ac625893369360389ad2d4aade4190656f8f12279ac40c9f4bd2e87" class="m-doc">kEffectTypeGamemodel</a> = 0x25,
+              <a href="#a2cf0589bf9ac625893369360389ad2d4ae72b8196d1771dcca4ee3cac99d66c68" class="m-doc">kEffectTypeSkinpaintParticle</a> = 0x26,
+              <a href="#a2cf0589bf9ac625893369360389ad2d4ab86504a83549ffc12e8ffc66c3cfb28e" class="m-doc">kEffectTypeSkinpaintFlood</a> = 0x27,
+              <a href="#a2cf0589bf9ac625893369360389ad2d4a3fd2b2dfac6d730e145ffab311dd0810" class="m-doc">kEffectTypeVolume</a> = 0x28,
+              <a href="#a2cf0589bf9ac625893369360389ad2d4a17aa8f32f05db366983ea412943132eb" class="m-doc">kEffectTypeSplitController</a> = 0x29,
+              <a href="#a2cf0589bf9ac625893369360389ad2d4a8cbea71ec3c7e756e35db833ecd511cd" class="m-doc">kEffectTypeTerrainDistribute</a> = 0x2A,
+              <a href="#a2cf0589bf9ac625893369360389ad2d4a8df85dcb2d63a28c1132fb21fd75516c" class="m-doc">kEffectTypeCloud</a> = 0x2B,
+              <a href="#a2cf0589bf9ac625893369360389ad2d4a30ebf367b1dd57c98507cffbd443aa41" class="m-doc">kEffectTypeGroundCover</a> = 0x2C,
+              <a href="#a2cf0589bf9ac625893369360389ad2d4a43062fc5c884d9953545787e00b556dc" class="m-doc">kEffectTypeMixEvent</a> = 0x2D,
+              <a href="#a2cf0589bf9ac625893369360389ad2d4afc67a7453fcfd2ce15102e6cdd0a648b" class="m-doc">kEffectTypeText</a> = 0x2F }</span>
             </dt>
             <dd><span></span></dd>
             <dt>
-              <span class="m-doc-wrap-bumper">enum class <a href="#ae16361599ce4f01e8b6d7915b5861fc5" class="m-doc">SwarmState</a> { </span><span class="m-doc-wrap"><a href="#ae16361599ce4f01e8b6d7915b5861fc5ac4a8abf9f6a91623038e45de01d34dd1" class="m-doc">kStateActive</a> = 0,
-              <a href="#ae16361599ce4f01e8b6d7915b5861fc5a85909adef092b2504bc535e0bdae3f14" class="m-doc">kStatePaused</a> = 1,
-              <a href="#ae16361599ce4f01e8b6d7915b5861fc5ab48a28e3dc63ade0fa1468bdbaeb0896" class="m-doc">kStateSuspended</a> = 2,
-              <a href="#ae16361599ce4f01e8b6d7915b5861fc5a8c114c3f5a54eaf6d44c8fa263060cd9" class="m-doc">kStateHidden</a> = 3,
-              <a href="#ae16361599ce4f01e8b6d7915b5861fc5a971917c0c7be137a57db67ce60b508ab" class="m-doc">kStateManual</a> = 4,
-              <a href="#ae16361599ce4f01e8b6d7915b5861fc5a69dbf3c086815a1c11fe2189942d69c1" class="m-doc">kStateShutdown</a> = 5 }</span>
+              <span class="m-doc-wrap-bumper">enum class <a href="#ae16361599ce4f01e8b6d7915b5861fc5" class="m-doc">SwarmState</a> { </span><span class="m-doc-wrap"><a href="#ae16361599ce4f01e8b6d7915b5861fc5a4d3d769b812b6faa6b76e1a8abaece2d" class="m-doc">Active</a> = 0,
+              <a href="#ae16361599ce4f01e8b6d7915b5861fc5ae99180abf47a8b3a856e0bcb2656990a" class="m-doc">Paused</a> = 1,
+              <a href="#ae16361599ce4f01e8b6d7915b5861fc5a8bf906833cc7aea8084f552217ed9c1d" class="m-doc">Suspended</a> = 2,
+              <a href="#ae16361599ce4f01e8b6d7915b5861fc5a7acdf85c69cc3c5305456a293524386e" class="m-doc">Hidden</a> = 3,
+              <a href="#ae16361599ce4f01e8b6d7915b5861fc5ae1ba155a9f2e8c3be94020eef32a0301" class="m-doc">Manual</a> = 4,
+              <a href="#ae16361599ce4f01e8b6d7915b5861fc5a1a4ebb180ba59b067782515ffee6e975" class="m-doc">Shutdown</a> = 5 }</span>
             </dt>
             <dd>An enum to represent the current state of an effect world and the <a href="namespace_swarm.html" class="m-doc">Swarm</a> manager.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">enum <a href="#a9ac38fc69759078415264c658a4cf0d5" class="m-doc">IntParams</a> { </span><span class="m-doc-wrap"><a href="#a9ac38fc69759078415264c658a4cf0d5ac072189e80182cd9a972e611bfa56cf6" class="m-doc">kParamModelOverride</a> = 0,
+              <a href="#a9ac38fc69759078415264c658a4cf0d5afe21ca44cc9c9bffe770f0c8bade0ae1" class="m-doc">kParamTextureOverride</a> = 1,
+              <a href="#a9ac38fc69759078415264c658a4cf0d5a35a2729e25824de892ee84f146bd1f32" class="m-doc">kParamSelectFrame</a> = 2,
+              <a href="#a9ac38fc69759078415264c658a4cf0d5a75a9b32d89ac19e6a8a0f19a82b72e99" class="m-doc">kParamSelectState</a> = 3,
+              <a href="#a9ac38fc69759078415264c658a4cf0d5a0cb1568e2cddb9696a5d3d05dd59efc5" class="m-doc">kParamDistID</a> = 4,
+              <a href="#a9ac38fc69759078415264c658a4cf0d5a13913af30b763df2e4ec53189e093337" class="m-doc">kParamDistUpdate</a> = 5,
+              <a href="#a9ac38fc69759078415264c658a4cf0d5aa505e577cfc6c5a940ad0e069263d7f6" class="m-doc">kParamIntUser1</a> = 6,
+              <a href="#a9ac38fc69759078415264c658a4cf0d5a15637e542af48ceae75b4e31a9c2d764" class="m-doc">kParamIntUser2</a> = 7,
+              <a href="#a9ac38fc69759078415264c658a4cf0d5aee50398d51c90571b450ba1844eecf12" class="m-doc">kParamIntUser3</a> = 8,
+              <a href="#a9ac38fc69759078415264c658a4cf0d5aa9de2ca06e72ac54d8e80254799cf74b" class="m-doc">kParamIntUser4</a> = 9 }</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">enum <a href="#a60d10256ed2fabe0ec861b9c819ec4e9" class="m-doc">FloatParams</a> { </span><span class="m-doc-wrap"><a href="#a60d10256ed2fabe0ec861b9c819ec4e9a3bbf260f379f4f14bb761a42adcef86d" class="m-doc">kParamEmitStrength</a> = 0,
+              <a href="#a60d10256ed2fabe0ec861b9c819ec4e9a9f6a2cfc3bb6bc6f5bb82476f9c34e6c" class="m-doc">kParamParticleSizeScale</a> = 1,
+              <a href="#a60d10256ed2fabe0ec861b9c819ec4e9a6baaf98c49ee9c270e5143b24fd25191" class="m-doc">kParamParticleLifeScale</a> = 2,
+              <a href="#a60d10256ed2fabe0ec861b9c819ec4e9ab24d6afde96e4a0adc939964e3f8aa15" class="m-doc">kParamEmitScale</a> = 3,
+              <a href="#a60d10256ed2fabe0ec861b9c819ec4e9add1f404aa6f817bd14b24799992cfb97" class="m-doc">kParamTransparency</a> = 4,
+              <a href="#a60d10256ed2fabe0ec861b9c819ec4e9a02d0b37451f2ce2cfa4eb3bd9a10ad74" class="m-doc">kParamColor</a> = 5,
+              <a href="#a60d10256ed2fabe0ec861b9c819ec4e9a5b5efbc1beddf18e4e1eb0da7df6c202" class="m-doc">kParamColorList</a> = 6,
+              <a href="#a60d10256ed2fabe0ec861b9c819ec4e9ac828ac6d4654506d16ead442b41e21ba" class="m-doc">kParamTargetPoint</a> = 7,
+              <a href="#a60d10256ed2fabe0ec861b9c819ec4e9ae198a8fe42502a6ae85585ac209e6014" class="m-doc">kParamExplosionLocation</a> = 8,
+              <a href="#a60d10256ed2fabe0ec861b9c819ec4e9ac6c7c54967cc9b261af8f586da97ee97" class="m-doc">kParamAttractorLocation</a> = 9,
+              <a href="#a60d10256ed2fabe0ec861b9c819ec4e9a33ed0e8dbb47c7f6467a06e3960befc7" class="m-doc">kParamAttractorIntensity</a> = 10,
+              <a href="#a60d10256ed2fabe0ec861b9c819ec4e9ab246ca839012fc35e871a6062712efd2" class="m-doc">kParamViewRay</a> = 11,
+              <a href="#a60d10256ed2fabe0ec861b9c819ec4e9a56308b2be19dd1c2045899bf3d5c7438" class="m-doc">kParamEmissionVolume</a> = 12,
+              <a href="#a60d10256ed2fabe0ec861b9c819ec4e9a589ef25a891a26ff497b0117e9d69c4f" class="m-doc">kParamPath</a> = 13,
+              <a href="#a60d10256ed2fabe0ec861b9c819ec4e9ae24774677715e50f5af03feb278b5ad5" class="m-doc">kParamShaderParams</a> = 14,
+              <a href="#a60d10256ed2fabe0ec861b9c819ec4e9af6ac37db23a2f2b1c997ec337e7bc53b" class="m-doc">kParamVolume</a> = 15,
+              <a href="#a60d10256ed2fabe0ec861b9c819ec4e9a42e10fc93fda079bfb80bb9b4bd1802b" class="m-doc">kParamHeightRange</a> = 16,
+              <a href="#a60d10256ed2fabe0ec861b9c819ec4e9a405c1cb29af59ec3cf8d5cf87229ee4f" class="m-doc">kParamSubdivWindow</a> = 17,
+              <a href="#a60d10256ed2fabe0ec861b9c819ec4e9a70d33f7b9af49c7ac45087b26eab3004" class="m-doc">kParamMapForceScale</a> = 18,
+              <a href="#a60d10256ed2fabe0ec861b9c819ec4e9ace050ed32364ff6ee72eb43cafc99bcc" class="m-doc">kParamLodDistanceScale</a> = 19,
+              <a href="#a60d10256ed2fabe0ec861b9c819ec4e9a3c69a8c4839bab41ac9c017444376e05" class="m-doc">kParamDistributeSizeScale</a> = 20,
+              <a href="#a60d10256ed2fabe0ec861b9c819ec4e9a0b20c1b0b80e0f0ae03874ddb3c63b01" class="m-doc">kParamFloatUser1</a> = 21,
+              <a href="#a60d10256ed2fabe0ec861b9c819ec4e9afbf8225ee066279e1604b990255e467b" class="m-doc">kParamFloatUser2</a> = 22,
+              <a href="#a60d10256ed2fabe0ec861b9c819ec4e9ae8ca4c50bc37c28bb562e18ec22673e0" class="m-doc">kParamFloatUser3</a> = 23,
+              <a href="#a60d10256ed2fabe0ec861b9c819ec4e9a8ebe8e673094e13826a727e4fe943373" class="m-doc">kParamFloatUser4</a> = 24 }</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">enum <a href="#a42540da906ab90e418c67ff88ff26535" class="m-doc">ObjectParams</a> { </span><span class="m-doc-wrap"> }</span>
+            </dt>
+            <dd><span></span></dd>
           </dl>
         </section>
         <section id="func-members">
           <h2><a href="#func-members">Functions</a></h2>
           <dl class="m-doc">
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#a7457d7cd4ef1fc892bc12fc134d29cc2" class="m-doc">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_swarm_1_1c_swarm_manager.html" class="m-doc">cSwarmManager</a>) -&gt; namespace</span>
+              <span class="m-doc-wrap-bumper"><a href="#a9afb30cf56d9640ba89cec832d33fb5e" class="m-doc">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_swarm_1_1c_effects_manager.html" class="m-doc">cEffectsManager</a>,
+              0x258)</span>
             </dt>
             <dd><span></span></dd>
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#a711c6a318c0d573c5be2243d72c5986c" class="m-doc">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_swarm_1_1_i_swarm_manager.html" class="m-doc">ISwarmManager</a>) -&gt; namespace</span>
+              <span class="m-doc-wrap-bumper">auto <a href="#a7457d7cd4ef1fc892bc12fc134d29cc2" class="m-doc">Addresses</a>(</span><span class="m-doc-wrap">cSwarmManager) -&gt; namespace</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a61fb12ab7ac71827ceb115d9e7c41826" class="m-doc">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_swarm_1_1c_effects_manager.html" class="m-doc">cEffectsManager</a>) -&gt; namespace</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper"><a href="#adcc899aa51b0219edac8749392f9a734" class="m-doc">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_swarm_1_1c_effects_world.html" class="m-doc">cEffectsWorld</a>,
+              0xA4)</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper"><a href="#a470ca465afdfcf7d0b24ebc4730a4582" class="m-doc">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_swarm_1_1c_global_params.html" class="m-doc">cGlobalParams</a>,
+              0x120)</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper"><a href="#aff4e2223b81a40375b64827e76ccaeef" class="m-doc">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_swarm_1_1_collection_resource.html" class="m-doc">CollectionResource</a>,
+              0x18)</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper"><a href="#a6d089b5c18e17a8b746e637b7373ed0f" class="m-doc">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_swarm_1_1c_skinpaint_distribute_description.html" class="m-doc">cSkinpaintDistributeDescription</a>,
+              0x54)</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper"><a href="#accdb4af1d9bfcbee804c6a7e0704a719" class="m-doc">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_swarm_1_1c_skinpaint_distribute_effect.html" class="m-doc">cSkinpaintDistributeEffect</a>,
+              0x30)</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper"><a href="#af2ed3bb834b6cc4a4dd8c65ffb473d7b" class="m-doc">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_swarm_1_1c_skinpaint_particle_description.html" class="m-doc">cSkinpaintParticleDescription</a>,
+              0xB8)</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper"><a href="#a45147931538aec76e04f5fac755ccf44" class="m-doc">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_swarm_1_1c_skinpaint_particle_effect.html" class="m-doc">cSkinpaintParticleEffect</a>,
+              0x50)</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper"><a href="#ae32fdbb3b37435de96528e7466fa7ecc" class="m-doc">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_swarm_1_1c_skinpaint_settings_description.html" class="m-doc">cSkinpaintSettingsDescription</a>,
+              0x70)</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper"><a href="#af9cbf82723ceb474fb8b66182adfe9a8" class="m-doc">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_swarm_1_1c_skinpaint_settings_effect.html" class="m-doc">cSkinpaintSettingsEffect</a>,
+              0x14)</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a3b0ba7c7be7602ef875d8cdd8922c07b" class="m-doc">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_swarm_1_1c_skinpaint_settings_effect.html" class="m-doc">cSkinpaintSettingsEffect</a>) -&gt; namespace</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper"><a href="#a1135be1bf0ac8a3eb27a025fcdf05650" class="m-doc">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="struct_swarm_1_1c_visual_effect_description.html" class="m-doc">cVisualEffectDescription</a>,
+              0x58)</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper"><a href="#aa465c832e57f0d9cb087a84f4e396990" class="m-doc">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="struct_swarm_1_1c_surface_info.html" class="m-doc">cSurfaceInfo</a>,
+              0x58)</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper"><a href="#ae3415a1d5271c7aa6fd239042b0a454d" class="m-doc">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_swarm_1_1_effect_directory.html" class="m-doc">EffectDirectory</a>,
+              0x9C)</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a711c6a318c0d573c5be2243d72c5986c" class="m-doc">Addresses</a>(</span><span class="m-doc-wrap">ISwarmManager) -&gt; namespace</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a0a147913c2a91192428725a35d335d32" class="m-doc">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_swarm_1_1_i_effects_manager.html" class="m-doc">IEffectsManager</a>) -&gt; namespace</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper"><a href="#a16ff8e96e22eaf438ea6522cdfa64667" class="m-doc">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="struct_swarm_1_1c_effect_info.html" class="m-doc">cEffectInfo</a>,
+              0x24)</span>
             </dt>
             <dd><span></span></dd>
           </dl>
@@ -221,9 +396,9 @@
             </h3>
             <p><span></span></p>
           </div></section>
-          <section class="m-doc-details" id="a61d7ecd01597e0d234a992097b0ce614"><div>
+          <section class="m-doc-details" id="a2cf0589bf9ac625893369360389ad2d4"><div>
             <h3>
-              enum Swarm::<wbr /><a href="#a61d7ecd01597e0d234a992097b0ce614" class="m-doc-self">(anonymous)</a>
+              enum Swarm::<wbr /><a href="#a2cf0589bf9ac625893369360389ad2d4" class="m-doc-self">(anonymous)</a>
               <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_effect_directory_8h.html">&lt;Spore/Swarm/EffectDirectory.h&gt;</a></div>
             </h3>
             <p><span></span></p>
@@ -231,24 +406,398 @@
           <section class="m-doc-details" id="ae16361599ce4f01e8b6d7915b5861fc5"><div>
             <h3>
               enum class Swarm::<wbr /><a href="#ae16361599ce4f01e8b6d7915b5861fc5" class="m-doc-self">SwarmState</a>
-              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_i_effect_8h.html">&lt;Spore/Swarm/IEffect.h&gt;</a></div>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_i_visual_effect_8h.html">&lt;Spore/Swarm/IVisualEffect.h&gt;</a></div>
             </h3>
             <p>An enum to represent the current state of an effect world and the <a href="namespace_swarm.html" class="m-doc">Swarm</a> manager.</p>
+          </div></section>
+          <section class="m-doc-details" id="a9ac38fc69759078415264c658a4cf0d5"><div>
+            <h3>
+              enum Swarm::<wbr /><a href="#a9ac38fc69759078415264c658a4cf0d5" class="m-doc-self">IntParams</a>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_i_visual_effect_8h.html">&lt;Spore/Swarm/IVisualEffect.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+            <table class="m-table m-fullwidth m-flat m-doc">
+              <thead><tr><th style="width: 1%">Enumerators</th><th></th></tr></thead>
+              <tbody>
+                <tr>
+                  <td><a href="#a9ac38fc69759078415264c658a4cf0d5ac072189e80182cd9a972e611bfa56cf6" class="m-doc-self" id="a9ac38fc69759078415264c658a4cf0d5ac072189e80182cd9a972e611bfa56cf6">kParamModelOverride</a></td>
+                  <td>
+                  <p>Set an override model. This requires two parameters: <code>int overrideSet</code> and <code>uint32_t name</code></p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a9ac38fc69759078415264c658a4cf0d5afe21ca44cc9c9bffe770f0c8bade0ae1" class="m-doc-self" id="a9ac38fc69759078415264c658a4cf0d5afe21ca44cc9c9bffe770f0c8bade0ae1">kParamTextureOverride</a></td>
+                  <td>
+                  <p>Set an override texture. This requires two parameters: <code>int overrideSet</code> and <code>uint32_t name</code></p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a9ac38fc69759078415264c658a4cf0d5a35a2729e25824de892ee84f146bd1f32" class="m-doc-self" id="a9ac38fc69759078415264c658a4cf0d5a35a2729e25824de892ee84f146bd1f32">kParamSelectFrame</a></td>
+                  <td>
+                  <p>Select the given particle texture frame.</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a9ac38fc69759078415264c658a4cf0d5a75a9b32d89ac19e6a8a0f19a82b72e99" class="m-doc-self" id="a9ac38fc69759078415264c658a4cf0d5a75a9b32d89ac19e6a8a0f19a82b72e99">kParamSelectState</a></td>
+                  <td>
+                  <p>Select the given effect state (<a href="namespace_swarm.html#ae16361599ce4f01e8b6d7915b5861fc5" class="m-doc">Swarm::<wbr />SwarmState</a>)</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a9ac38fc69759078415264c658a4cf0d5a0cb1568e2cddb9696a5d3d05dd59efc5" class="m-doc-self" id="a9ac38fc69759078415264c658a4cf0d5a0cb1568e2cddb9696a5d3d05dd59efc5">kParamDistID</a></td>
+                  <td>
+                  <p>Used in Distribute effects, expects a ResourceID*.</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a9ac38fc69759078415264c658a4cf0d5a13913af30b763df2e4ec53189e093337" class="m-doc-self" id="a9ac38fc69759078415264c658a4cf0d5a13913af30b763df2e4ec53189e093337">kParamDistUpdate</a></td>
+                  <td>
+                  <p><span></span></p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a9ac38fc69759078415264c658a4cf0d5aa505e577cfc6c5a940ad0e069263d7f6" class="m-doc-self" id="a9ac38fc69759078415264c658a4cf0d5aa505e577cfc6c5a940ad0e069263d7f6">kParamIntUser1</a></td>
+                  <td>
+                  <p><span></span></p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a9ac38fc69759078415264c658a4cf0d5a15637e542af48ceae75b4e31a9c2d764" class="m-doc-self" id="a9ac38fc69759078415264c658a4cf0d5a15637e542af48ceae75b4e31a9c2d764">kParamIntUser2</a></td>
+                  <td>
+                  <p><span></span></p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a9ac38fc69759078415264c658a4cf0d5aee50398d51c90571b450ba1844eecf12" class="m-doc-self" id="a9ac38fc69759078415264c658a4cf0d5aee50398d51c90571b450ba1844eecf12">kParamIntUser3</a></td>
+                  <td>
+                  <p><span></span></p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a9ac38fc69759078415264c658a4cf0d5aa9de2ca06e72ac54d8e80254799cf74b" class="m-doc-self" id="a9ac38fc69759078415264c658a4cf0d5aa9de2ca06e72ac54d8e80254799cf74b">kParamIntUser4</a></td>
+                  <td>
+                  <p><span></span></p>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="a60d10256ed2fabe0ec861b9c819ec4e9"><div>
+            <h3>
+              enum Swarm::<wbr /><a href="#a60d10256ed2fabe0ec861b9c819ec4e9" class="m-doc-self">FloatParams</a>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_i_visual_effect_8h.html">&lt;Spore/Swarm/IVisualEffect.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+            <table class="m-table m-fullwidth m-flat m-doc">
+              <thead><tr><th style="width: 1%">Enumerators</th><th></th></tr></thead>
+              <tbody>
+                <tr>
+                  <td><a href="#a60d10256ed2fabe0ec861b9c819ec4e9a3bbf260f379f4f14bb761a42adcef86d" class="m-doc-self" id="a60d10256ed2fabe0ec861b9c819ec4e9a3bbf260f379f4f14bb761a42adcef86d">kParamEmitStrength</a></td>
+                  <td>
+                  <p><span></span></p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a60d10256ed2fabe0ec861b9c819ec4e9a9f6a2cfc3bb6bc6f5bb82476f9c34e6c" class="m-doc-self" id="a60d10256ed2fabe0ec861b9c819ec4e9a9f6a2cfc3bb6bc6f5bb82476f9c34e6c">kParamParticleSizeScale</a></td>
+                  <td>
+                  <p><span></span></p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a60d10256ed2fabe0ec861b9c819ec4e9a6baaf98c49ee9c270e5143b24fd25191" class="m-doc-self" id="a60d10256ed2fabe0ec861b9c819ec4e9a6baaf98c49ee9c270e5143b24fd25191">kParamParticleLifeScale</a></td>
+                  <td>
+                  <p><span></span></p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a60d10256ed2fabe0ec861b9c819ec4e9ab24d6afde96e4a0adc939964e3f8aa15" class="m-doc-self" id="a60d10256ed2fabe0ec861b9c819ec4e9ab24d6afde96e4a0adc939964e3f8aa15">kParamEmitScale</a></td>
+                  <td>
+                  <p><span></span></p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a60d10256ed2fabe0ec861b9c819ec4e9add1f404aa6f817bd14b24799992cfb97" class="m-doc-self" id="a60d10256ed2fabe0ec861b9c819ec4e9add1f404aa6f817bd14b24799992cfb97">kParamTransparency</a></td>
+                  <td>
+                  <p><span></span></p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a60d10256ed2fabe0ec861b9c819ec4e9a02d0b37451f2ce2cfa4eb3bd9a10ad74" class="m-doc-self" id="a60d10256ed2fabe0ec861b9c819ec4e9a02d0b37451f2ce2cfa4eb3bd9a10ad74">kParamColor</a></td>
+                  <td>
+                  <p>Expects a ColorRGB.</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a60d10256ed2fabe0ec861b9c819ec4e9a5b5efbc1beddf18e4e1eb0da7df6c202" class="m-doc-self" id="a60d10256ed2fabe0ec861b9c819ec4e9a5b5efbc1beddf18e4e1eb0da7df6c202">kParamColorList</a></td>
+                  <td>
+                  <p>Expects a list of ColorRGBs.</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a60d10256ed2fabe0ec861b9c819ec4e9ac828ac6d4654506d16ead442b41e21ba" class="m-doc-self" id="a60d10256ed2fabe0ec861b9c819ec4e9ac828ac6d4654506d16ead442b41e21ba">kParamTargetPoint</a></td>
+                  <td>
+                  <p>Expects a Vector3.</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a60d10256ed2fabe0ec861b9c819ec4e9ae198a8fe42502a6ae85585ac209e6014" class="m-doc-self" id="a60d10256ed2fabe0ec861b9c819ec4e9ae198a8fe42502a6ae85585ac209e6014">kParamExplosionLocation</a></td>
+                  <td>
+                  <p>Expects a Vector3.</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a60d10256ed2fabe0ec861b9c819ec4e9ac6c7c54967cc9b261af8f586da97ee97" class="m-doc-self" id="a60d10256ed2fabe0ec861b9c819ec4e9ac6c7c54967cc9b261af8f586da97ee97">kParamAttractorLocation</a></td>
+                  <td>
+                  <p>Expects a Vector3.</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a60d10256ed2fabe0ec861b9c819ec4e9a33ed0e8dbb47c7f6467a06e3960befc7" class="m-doc-self" id="a60d10256ed2fabe0ec861b9c819ec4e9a33ed0e8dbb47c7f6467a06e3960befc7">kParamAttractorIntensity</a></td>
+                  <td>
+                  <p><span></span></p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a60d10256ed2fabe0ec861b9c819ec4e9ab246ca839012fc35e871a6062712efd2" class="m-doc-self" id="a60d10256ed2fabe0ec861b9c819ec4e9ab246ca839012fc35e871a6062712efd2">kParamViewRay</a></td>
+                  <td>
+                  <p>Expects two Vector3s: position and direction.</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a60d10256ed2fabe0ec861b9c819ec4e9a56308b2be19dd1c2045899bf3d5c7438" class="m-doc-self" id="a60d10256ed2fabe0ec861b9c819ec4e9a56308b2be19dd1c2045899bf3d5c7438">kParamEmissionVolume</a></td>
+                  <td>
+                  <p><span></span></p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a60d10256ed2fabe0ec861b9c819ec4e9a589ef25a891a26ff497b0117e9d69c4f" class="m-doc-self" id="a60d10256ed2fabe0ec861b9c819ec4e9a589ef25a891a26ff497b0117e9d69c4f">kParamPath</a></td>
+                  <td>
+                  <p>Expects a list of Vector3s.</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a60d10256ed2fabe0ec861b9c819ec4e9ae24774677715e50f5af03feb278b5ad5" class="m-doc-self" id="a60d10256ed2fabe0ec861b9c819ec4e9ae24774677715e50f5af03feb278b5ad5">kParamShaderParams</a></td>
+                  <td>
+                  <p><span></span></p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a60d10256ed2fabe0ec861b9c819ec4e9af6ac37db23a2f2b1c997ec337e7bc53b" class="m-doc-self" id="a60d10256ed2fabe0ec861b9c819ec4e9af6ac37db23a2f2b1c997ec337e7bc53b">kParamVolume</a></td>
+                  <td>
+                  <p>Controls the volume of sound effects.</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a60d10256ed2fabe0ec861b9c819ec4e9a42e10fc93fda079bfb80bb9b4bd1802b" class="m-doc-self" id="a60d10256ed2fabe0ec861b9c819ec4e9a42e10fc93fda079bfb80bb9b4bd1802b">kParamHeightRange</a></td>
+                  <td>
+                  <p>Expects two floats.</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a60d10256ed2fabe0ec861b9c819ec4e9a405c1cb29af59ec3cf8d5cf87229ee4f" class="m-doc-self" id="a60d10256ed2fabe0ec861b9c819ec4e9a405c1cb29af59ec3cf8d5cf87229ee4f">kParamSubdivWindow</a></td>
+                  <td>
+                  <p><span></span></p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a60d10256ed2fabe0ec861b9c819ec4e9a70d33f7b9af49c7ac45087b26eab3004" class="m-doc-self" id="a60d10256ed2fabe0ec861b9c819ec4e9a70d33f7b9af49c7ac45087b26eab3004">kParamMapForceScale</a></td>
+                  <td>
+                  <p><span></span></p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a60d10256ed2fabe0ec861b9c819ec4e9ace050ed32364ff6ee72eb43cafc99bcc" class="m-doc-self" id="a60d10256ed2fabe0ec861b9c819ec4e9ace050ed32364ff6ee72eb43cafc99bcc">kParamLodDistanceScale</a></td>
+                  <td>
+                  <p><span></span></p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a60d10256ed2fabe0ec861b9c819ec4e9a3c69a8c4839bab41ac9c017444376e05" class="m-doc-self" id="a60d10256ed2fabe0ec861b9c819ec4e9a3c69a8c4839bab41ac9c017444376e05">kParamDistributeSizeScale</a></td>
+                  <td>
+                  <p><span></span></p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a60d10256ed2fabe0ec861b9c819ec4e9a0b20c1b0b80e0f0ae03874ddb3c63b01" class="m-doc-self" id="a60d10256ed2fabe0ec861b9c819ec4e9a0b20c1b0b80e0f0ae03874ddb3c63b01">kParamFloatUser1</a></td>
+                  <td>
+                  <p><span></span></p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a60d10256ed2fabe0ec861b9c819ec4e9afbf8225ee066279e1604b990255e467b" class="m-doc-self" id="a60d10256ed2fabe0ec861b9c819ec4e9afbf8225ee066279e1604b990255e467b">kParamFloatUser2</a></td>
+                  <td>
+                  <p><span></span></p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a60d10256ed2fabe0ec861b9c819ec4e9ae8ca4c50bc37c28bb562e18ec22673e0" class="m-doc-self" id="a60d10256ed2fabe0ec861b9c819ec4e9ae8ca4c50bc37c28bb562e18ec22673e0">kParamFloatUser3</a></td>
+                  <td>
+                  <p><span></span></p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a60d10256ed2fabe0ec861b9c819ec4e9a8ebe8e673094e13826a727e4fe943373" class="m-doc-self" id="a60d10256ed2fabe0ec861b9c819ec4e9a8ebe8e673094e13826a727e4fe943373">kParamFloatUser4</a></td>
+                  <td>
+                  <p><span></span></p>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="a42540da906ab90e418c67ff88ff26535"><div>
+            <h3>
+              enum Swarm::<wbr /><a href="#a42540da906ab90e418c67ff88ff26535" class="m-doc-self">ObjectParams</a>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_i_visual_effect_8h.html">&lt;Spore/Swarm/IVisualEffect.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
           </div></section>
         </section>
         <section>
           <h2>Function documentation</h2>
+          <section class="m-doc-details" id="a9afb30cf56d9640ba89cec832d33fb5e"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"> Swarm::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a9afb30cf56d9640ba89cec832d33fb5e" class="m-doc-self">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_swarm_1_1c_effects_manager.html" class="m-doc">cEffectsManager</a>,
+              0x258)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="c_effects_manager_8h.html">&lt;Spore/Swarm/cEffectsManager.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
           <section class="m-doc-details" id="a7457d7cd4ef1fc892bc12fc134d29cc2"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">namespace Swarm::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a7457d7cd4ef1fc892bc12fc134d29cc2" class="m-doc-self">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_swarm_1_1c_swarm_manager.html" class="m-doc">cSwarmManager</a>)</span></span>
-              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="c_swarm_manager_8h.html">&lt;Spore/Swarm/cSwarmManager.h&gt;</a></div>
+              <span class="m-doc-wrap-bumper">namespace Swarm::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a7457d7cd4ef1fc892bc12fc134d29cc2" class="m-doc-self">Addresses</a>(</span><span class="m-doc-wrap">cSwarmManager)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="c_effects_manager_8h.html">&lt;Spore/Swarm/cEffectsManager.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="a61fb12ab7ac71827ceb115d9e7c41826"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">namespace Swarm::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a61fb12ab7ac71827ceb115d9e7c41826" class="m-doc-self">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_swarm_1_1c_effects_manager.html" class="m-doc">cEffectsManager</a>)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="c_effects_manager_8h.html">&lt;Spore/Swarm/cEffectsManager.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="adcc899aa51b0219edac8749392f9a734"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"> Swarm::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#adcc899aa51b0219edac8749392f9a734" class="m-doc-self">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_swarm_1_1c_effects_world.html" class="m-doc">cEffectsWorld</a>,
+              0xA4)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="c_effects_world_8h.html">&lt;Spore/Swarm/cEffectsWorld.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="a470ca465afdfcf7d0b24ebc4730a4582"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"> Swarm::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a470ca465afdfcf7d0b24ebc4730a4582" class="m-doc-self">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_swarm_1_1c_global_params.html" class="m-doc">cGlobalParams</a>,
+              0x120)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="c_global_params_8h.html">&lt;Spore/Swarm/cGlobalParams.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="aff4e2223b81a40375b64827e76ccaeef"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"> Swarm::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#aff4e2223b81a40375b64827e76ccaeef" class="m-doc-self">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_swarm_1_1_collection_resource.html" class="m-doc">CollectionResource</a>,
+              0x18)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_collection_resource_8h.html">&lt;Spore/Swarm/CollectionResource.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="a6d089b5c18e17a8b746e637b7373ed0f"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"> Swarm::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a6d089b5c18e17a8b746e637b7373ed0f" class="m-doc-self">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_swarm_1_1c_skinpaint_distribute_description.html" class="m-doc">cSkinpaintDistributeDescription</a>,
+              0x54)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_skinpaint_distribute_effect_8h.html">&lt;Spore/Swarm/Components/SkinpaintDistributeEffect.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="accdb4af1d9bfcbee804c6a7e0704a719"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"> Swarm::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#accdb4af1d9bfcbee804c6a7e0704a719" class="m-doc-self">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_swarm_1_1c_skinpaint_distribute_effect.html" class="m-doc">cSkinpaintDistributeEffect</a>,
+              0x30)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_skinpaint_distribute_effect_8h.html">&lt;Spore/Swarm/Components/SkinpaintDistributeEffect.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="af2ed3bb834b6cc4a4dd8c65ffb473d7b"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"> Swarm::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#af2ed3bb834b6cc4a4dd8c65ffb473d7b" class="m-doc-self">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_swarm_1_1c_skinpaint_particle_description.html" class="m-doc">cSkinpaintParticleDescription</a>,
+              0xB8)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_skinpaint_particle_effect_8h.html">&lt;Spore/Swarm/Components/SkinpaintParticleEffect.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="a45147931538aec76e04f5fac755ccf44"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"> Swarm::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a45147931538aec76e04f5fac755ccf44" class="m-doc-self">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_swarm_1_1c_skinpaint_particle_effect.html" class="m-doc">cSkinpaintParticleEffect</a>,
+              0x50)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_skinpaint_particle_effect_8h.html">&lt;Spore/Swarm/Components/SkinpaintParticleEffect.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="ae32fdbb3b37435de96528e7466fa7ecc"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"> Swarm::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ae32fdbb3b37435de96528e7466fa7ecc" class="m-doc-self">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_swarm_1_1c_skinpaint_settings_description.html" class="m-doc">cSkinpaintSettingsDescription</a>,
+              0x70)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_skinpaint_settings_effect_8h.html">&lt;Spore/Swarm/Components/SkinpaintSettingsEffect.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="af9cbf82723ceb474fb8b66182adfe9a8"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"> Swarm::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#af9cbf82723ceb474fb8b66182adfe9a8" class="m-doc-self">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_swarm_1_1c_skinpaint_settings_effect.html" class="m-doc">cSkinpaintSettingsEffect</a>,
+              0x14)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_skinpaint_settings_effect_8h.html">&lt;Spore/Swarm/Components/SkinpaintSettingsEffect.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="a3b0ba7c7be7602ef875d8cdd8922c07b"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">namespace Swarm::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a3b0ba7c7be7602ef875d8cdd8922c07b" class="m-doc-self">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_swarm_1_1c_skinpaint_settings_effect.html" class="m-doc">cSkinpaintSettingsEffect</a>)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_skinpaint_settings_effect_8h.html">&lt;Spore/Swarm/Components/SkinpaintSettingsEffect.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="a1135be1bf0ac8a3eb27a025fcdf05650"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"> Swarm::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a1135be1bf0ac8a3eb27a025fcdf05650" class="m-doc-self">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="struct_swarm_1_1c_visual_effect_description.html" class="m-doc">cVisualEffectDescription</a>,
+              0x58)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_visual_effect_8h.html">&lt;Spore/Swarm/Components/VisualEffect.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="aa465c832e57f0d9cb087a84f4e396990"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"> Swarm::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#aa465c832e57f0d9cb087a84f4e396990" class="m-doc-self">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="struct_swarm_1_1c_surface_info.html" class="m-doc">cSurfaceInfo</a>,
+              0x58)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="c_surface_info_8h.html">&lt;Spore/Swarm/cSurfaceInfo.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="ae3415a1d5271c7aa6fd239042b0a454d"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"> Swarm::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ae3415a1d5271c7aa6fd239042b0a454d" class="m-doc-self">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_swarm_1_1_effect_directory.html" class="m-doc">EffectDirectory</a>,
+              0x9C)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_effect_directory_8h.html">&lt;Spore/Swarm/EffectDirectory.h&gt;</a></div>
             </h3>
             <p><span></span></p>
           </div></section>
           <section class="m-doc-details" id="a711c6a318c0d573c5be2243d72c5986c"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">namespace Swarm::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a711c6a318c0d573c5be2243d72c5986c" class="m-doc-self">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_swarm_1_1_i_swarm_manager.html" class="m-doc">ISwarmManager</a>)</span></span>
-              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_i_swarm_manager_8h.html">&lt;Spore/Swarm/ISwarmManager.h&gt;</a></div>
+              <span class="m-doc-wrap-bumper">namespace Swarm::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a711c6a318c0d573c5be2243d72c5986c" class="m-doc-self">Addresses</a>(</span><span class="m-doc-wrap">ISwarmManager)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_i_effects_manager_8h.html">&lt;Spore/Swarm/IEffectsManager.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="a0a147913c2a91192428725a35d335d32"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">namespace Swarm::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a0a147913c2a91192428725a35d335d32" class="m-doc-self">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_swarm_1_1_i_effects_manager.html" class="m-doc">IEffectsManager</a>)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_i_effects_manager_8h.html">&lt;Spore/Swarm/IEffectsManager.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="a16ff8e96e22eaf438ea6522cdfa64667"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"> Swarm::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a16ff8e96e22eaf438ea6522cdfa64667" class="m-doc-self">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="struct_swarm_1_1c_effect_info.html" class="m-doc">cEffectInfo</a>,
+              0x24)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_i_effects_world_8h.html">&lt;Spore/Swarm/IEffectsWorld.h&gt;</a></div>
             </h3>
             <p><span></span></p>
           </div></section>

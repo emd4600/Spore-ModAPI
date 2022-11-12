@@ -183,8 +183,8 @@
             </dt>
             <dd>Puts the ID of all the materials specified into the given array.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">void <a href="#a1af26cc3c2c713e0437b2c474afc59b9" class="m-doc">GetTextures</a>(</span><span class="m-doc-wrap">const <a href="class_graphics_1_1_material.html" class="m-doc">Material</a>* pMaterial,
-              vector&lt;<a href="_texture_8h.html#affea3369120131ed058702d2945a10b4" class="m-doc">TexturePtr</a>&gt;&amp; dst,
+              <span class="m-doc-wrap-bumper">void <a href="#a13b1ec6774d6d123ec7f29b0376fb0c9" class="m-doc">GetTextures</a>(</span><span class="m-doc-wrap">const <a href="class_graphics_1_1_material.html" class="m-doc">Material</a>* pMaterial,
+              eastl::vector&lt;<a href="_texture_8h.html#affea3369120131ed058702d2945a10b4" class="m-doc">TexturePtr</a>&gt;&amp; dst,
               bool(*)(<a href="class_graphics_1_1_texture.html" class="m-doc">Texture</a>*) filterFunction = nullptr) const <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
             <dd>Gets the textures used by a certain material.</dd>
@@ -231,16 +231,16 @@
               int) <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
             <dd><span></span></dd>
-            <dt id="aa5053db11a54afa98064888cbf8b848d">
-              <span class="m-doc-wrap-bumper">auto <a href="#aa5053db11a54afa98064888cbf8b848d" class="m-doc-self">WriteMaterials</a>(</span><span class="m-doc-wrap"><a href="class_resource_1_1_database_packed_file.html" class="m-doc">DatabasePackedFile</a>* pDBPF) -&gt; bool <span class="m-label m-flat m-warning">pure virtual</span></span>
+            <dt id="ab8ee394e751387c6aa8aa4368480bb1d">
+              <span class="m-doc-wrap-bumper">auto <a href="#ab8ee394e751387c6aa8aa4368480bb1d" class="m-doc-self">WriteMaterials</a>(</span><span class="m-doc-wrap"><a href="class_resource_1_1_database.html" class="m-doc">Resource::<wbr />Database</a>* database) -&gt; bool <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
             <dd><span></span></dd>
-            <dt id="a787f0518742308f48fecfc71b375d39d">
-              <span class="m-doc-wrap-bumper">auto <a href="#a787f0518742308f48fecfc71b375d39d" class="m-doc-self">WriteShaderFragments</a>(</span><span class="m-doc-wrap"><a href="class_resource_1_1_database_packed_file.html" class="m-doc">DatabasePackedFile</a>* pDBPF) -&gt; bool <span class="m-label m-flat m-warning">pure virtual</span></span>
+            <dt id="a5bf33384d5d6c94c289147deac11f343">
+              <span class="m-doc-wrap-bumper">auto <a href="#a5bf33384d5d6c94c289147deac11f343" class="m-doc-self">WriteShaderFragments</a>(</span><span class="m-doc-wrap"><a href="class_resource_1_1_database.html" class="m-doc">Resource::<wbr />Database</a>* database) -&gt; bool <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
             <dd><span></span></dd>
-            <dt id="a8b5b18a6332b3ba773562800547fe959">
-              <span class="m-doc-wrap-bumper">auto <a href="#a8b5b18a6332b3ba773562800547fe959" class="m-doc-self">WriteShaders</a>(</span><span class="m-doc-wrap"><a href="class_resource_1_1_database_packed_file.html" class="m-doc">DatabasePackedFile</a>* pDBPF) -&gt; bool <span class="m-label m-flat m-warning">pure virtual</span></span>
+            <dt id="ad39533c1599cd5961927a2bd8c4d91ab">
+              <span class="m-doc-wrap-bumper">auto <a href="#ad39533c1599cd5961927a2bd8c4d91ab" class="m-doc-self">WriteShaders</a>(</span><span class="m-doc-wrap"><a href="class_resource_1_1_database.html" class="m-doc">Resource::<wbr />Database</a>* database) -&gt; bool <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
             <dd><span></span></dd>
             <dt id="aab931fe065b795ff531dfc8bb50f1b7e">
@@ -259,16 +259,16 @@
               <span class="m-doc-wrap-bumper">void <a href="#ae2b8453c082e87f8ffdd62a885646ae3" class="m-doc-self">func74h</a>(</span><span class="m-doc-wrap">int) <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
             <dd><span></span></dd>
-            <dt id="a74264718fcd0af8dd772c4481505688a">
-              <span class="m-doc-wrap-bumper">auto <a href="#a74264718fcd0af8dd772c4481505688a" class="m-doc-self">ReadMaterials</a>(</span><span class="m-doc-wrap"><a href="class_resource_1_1_database_packed_file.html" class="m-doc">DatabasePackedFile</a>* pDBPF) -&gt; bool <span class="m-label m-flat m-warning">pure virtual</span></span>
+            <dt id="a671ec808e2fc0863deee67a7702095ba">
+              <span class="m-doc-wrap-bumper">auto <a href="#a671ec808e2fc0863deee67a7702095ba" class="m-doc-self">ReadMaterials</a>(</span><span class="m-doc-wrap"><a href="class_resource_1_1_database.html" class="m-doc">Resource::<wbr />Database</a>* database) -&gt; bool <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
             <dd><span></span></dd>
-            <dt id="ae3c80d3566c8dcfa76ac704ef6609ead">
-              <span class="m-doc-wrap-bumper">auto <a href="#ae3c80d3566c8dcfa76ac704ef6609ead" class="m-doc-self">ReadShaderFragments</a>(</span><span class="m-doc-wrap"><a href="class_resource_1_1_database_packed_file.html" class="m-doc">DatabasePackedFile</a>* pDBPF) -&gt; bool <span class="m-label m-flat m-warning">pure virtual</span></span>
+            <dt id="a365e2ccb2e8ee586512ca6d43d8f5d01">
+              <span class="m-doc-wrap-bumper">auto <a href="#a365e2ccb2e8ee586512ca6d43d8f5d01" class="m-doc-self">ReadShaderFragments</a>(</span><span class="m-doc-wrap"><a href="class_resource_1_1_database.html" class="m-doc">Resource::<wbr />Database</a>* database) -&gt; bool <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
             <dd><span></span></dd>
-            <dt id="a6afaa799dfdcf6adee711e2f8862ac08">
-              <span class="m-doc-wrap-bumper">auto <a href="#a6afaa799dfdcf6adee711e2f8862ac08" class="m-doc-self">ReadShaders</a>(</span><span class="m-doc-wrap"><a href="class_resource_1_1_database_packed_file.html" class="m-doc">DatabasePackedFile</a>* pDBPF) -&gt; bool <span class="m-label m-flat m-warning">pure virtual</span></span>
+            <dt id="a71199cb24d4a4052612b41bb9537e55a">
+              <span class="m-doc-wrap-bumper">auto <a href="#a71199cb24d4a4052612b41bb9537e55a" class="m-doc-self">ReadShaders</a>(</span><span class="m-doc-wrap"><a href="class_resource_1_1_database.html" class="m-doc">Resource::<wbr />Database</a>* database) -&gt; bool <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
             <dd><span></span></dd>
           </dl>
@@ -383,10 +383,10 @@
               </tbody>
             </table>
           </div></section>
-          <section class="m-doc-details" id="a1af26cc3c2c713e0437b2c474afc59b9"><div>
+          <section class="m-doc-details" id="a13b1ec6774d6d123ec7f29b0376fb0c9"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">void Graphics::<wbr />IMaterialManager::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a1af26cc3c2c713e0437b2c474afc59b9" class="m-doc-self">GetTextures</a>(</span><span class="m-doc-wrap">const <a href="class_graphics_1_1_material.html" class="m-doc">Material</a>* pMaterial,
-              vector&lt;<a href="_texture_8h.html#affea3369120131ed058702d2945a10b4" class="m-doc">TexturePtr</a>&gt;&amp; dst,
+              <span class="m-doc-wrap-bumper">void Graphics::<wbr />IMaterialManager::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a13b1ec6774d6d123ec7f29b0376fb0c9" class="m-doc-self">GetTextures</a>(</span><span class="m-doc-wrap">const <a href="class_graphics_1_1_material.html" class="m-doc">Material</a>* pMaterial,
+              eastl::vector&lt;<a href="_texture_8h.html#affea3369120131ed058702d2945a10b4" class="m-doc">TexturePtr</a>&gt;&amp; dst,
               bool(*)(<a href="class_graphics_1_1_texture.html" class="m-doc">Texture</a>*) filterFunction = nullptr) const <span class="m-label m-warning">pure virtual</span></span></span>
             </h3>
             <p>Gets the textures used by a certain material.</p>

@@ -138,6 +138,24 @@
               <span class="m-doc-wrap-bumper">void <a href="#a4448eb4827b92d62509094b5a9a521e7" class="m-doc-self">D3D9AddToUnmanagedList</a>(</span><span class="m-doc-wrap">)</span>
             </dt>
             <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a3f6cfedbb7b80d1b78d2edd2d4e36a34" class="m-doc">D3D9GetStreamedMipLevelSize</a>(</span><span class="m-doc-wrap">int mipLevel = 0) -&gt; int</span>
+            </dt>
+            <dd>Returns how many bytes are needed to store one raw mip level of the raster.</dd>
+            <dt id="a21acc61dd201072bc3b1bdd66a46c500">
+              <span class="m-doc-wrap-bumper">auto <a href="#a21acc61dd201072bc3b1bdd66a46c500" class="m-doc-self">CopyRaster</a>(</span><span class="m-doc-wrap"><a href="struct_render_ware_1_1_raster.html" class="m-doc">Raster</a>* other) -&gt; bool</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a9a21e679320ad9acf16a883934f65109" class="m-doc">Fill</a>(</span><span class="m-doc-wrap">int8_t* data,
+              int mipLevel = 0) -&gt; bool</span>
+            </dt>
+            <dd>Sets the raw contents of a mip level of the raster.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#ac548ec3c5cfa3b0e92a727bfbcd52359" class="m-doc">Extract</a>(</span><span class="m-doc-wrap">int8_t* dstData,
+              int mipLevel = 0) -&gt; bool</span>
+            </dt>
+            <dd>Extracts the raw contents of a mip level of the raster, and saves it in a byte array.</dd>
           </dl>
         </section>
         <section id="pub-attribs">
@@ -208,6 +226,71 @@
             </dt>
             <dd><span></span></dd>
           </dl>
+        </section>
+        <section>
+          <h2>Function documentation</h2>
+          <section class="m-doc-details" id="a3f6cfedbb7b80d1b78d2edd2d4e36a34"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">int RenderWare::<wbr />Raster::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a3f6cfedbb7b80d1b78d2edd2d4e36a34" class="m-doc-self">D3D9GetStreamedMipLevelSize</a>(</span><span class="m-doc-wrap">int mipLevel = 0)</span></span>
+            </h3>
+            <p>Returns how many bytes are needed to store one raw mip level of the raster.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">mipLevel</td>
+                  <td></td>
+                </tr>
+              </tbody>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="a9a21e679320ad9acf16a883934f65109"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">bool RenderWare::<wbr />Raster::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a9a21e679320ad9acf16a883934f65109" class="m-doc-self">Fill</a>(</span><span class="m-doc-wrap">int8_t* data,
+              int mipLevel = 0)</span></span>
+            </h3>
+            <p>Sets the raw contents of a mip level of the raster.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">data</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>mipLevel</td>
+                  <td></td>
+                </tr>
+              </tbody>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="ac548ec3c5cfa3b0e92a727bfbcd52359"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">bool RenderWare::<wbr />Raster::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ac548ec3c5cfa3b0e92a727bfbcd52359" class="m-doc-self">Extract</a>(</span><span class="m-doc-wrap">int8_t* dstData,
+              int mipLevel = 0)</span></span>
+            </h3>
+            <p>Extracts the raw contents of a mip level of the raster, and saves it in a byte array.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">dstData&nbsp;<span class="m-label m-flat m-warning">out</span></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>mipLevel</td>
+                  <td></td>
+                </tr>
+              </tbody>
+            </table>
+<p>The byte array must be of size returned by <a href="struct_render_ware_1_1_raster.html#a3f6cfedbb7b80d1b78d2edd2d4e36a34" class="m-doc">D3D9GetStreamedMipLevelSize()</a></p>
+          </div></section>
         </section>
       </div>
     </div>

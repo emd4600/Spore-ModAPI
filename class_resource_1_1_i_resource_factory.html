@@ -96,37 +96,37 @@
               <span class="m-doc-wrap-bumper">auto <a href="#a8b8d93d12a5d6d42c25af6c778d738c9" class="m-doc-self">Dispose</a>(</span><span class="m-doc-wrap">) -&gt; bool <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
             <dd><span></span></dd>
-            <dt id="ab4d95d65645fd0848958961e5e10d07e">
-              <span class="m-doc-wrap-bumper">auto <a href="#ab4d95d65645fd0848958961e5e10d07e" class="m-doc-self">GetType</a>(</span><span class="m-doc-wrap">) -&gt; uint32_t <span class="m-label m-flat m-warning">pure virtual</span></span>
+            <dt id="ab21e5d9afa2d32a2e1f99aa99d49ada7">
+              <span class="m-doc-wrap-bumper">auto <a href="#ab21e5d9afa2d32a2e1f99aa99d49ada7" class="m-doc-self">GetFactoryType</a>(</span><span class="m-doc-wrap">) -&gt; uint32_t <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
             <dd><span></span></dd>
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#ac46d9b0460fffaf96004d41b02390c7d" class="m-doc">CreateResource</a>(</span><span class="m-doc-wrap"><a href="class_resource_1_1_i_p_f_record.html" class="m-doc">IPFRecord</a>* pRecord,
+              <span class="m-doc-wrap-bumper">auto <a href="#ac916cb6a4148ee506823a1b7aae6cf06" class="m-doc">CreateResource</a>(</span><span class="m-doc-wrap"><a href="class_resource_1_1_i_record.html" class="m-doc">IRecord</a>* pRecord,
               <a href="_resource_object_8h.html#a1545ff2e1aa08f1935f251e338e72e33" class="m-doc">ResourceObjectPtr</a>&amp; pDst,
-              int,
+              void* extraData,
               uint32_t typeID) -&gt; bool <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
             <dd>Creates a new resource of the specified type, using the file record given.</dd>
-            <dt id="a0b76403e59fbb3e44b2c9a1f9b7a2a5e">
-              <span class="m-doc-wrap-bumper">auto <a href="#a0b76403e59fbb3e44b2c9a1f9b7a2a5e" class="m-doc-self">AsyncAccess</a>(</span><span class="m-doc-wrap"><a href="class_resource_1_1_i_p_f_record.html" class="m-doc">IPFRecord</a>** ppDst,
-              int,
-              <a href="namespace_resource.html#ab12e5000d7ef0108f3200a644b54a682" class="m-doc">DBPF</a>* pDBPF,
-              int,
-              int,
+            <dt id="ab31d66f6379a3efcb8a54fa74009773c">
+              <span class="m-doc-wrap-bumper">auto <a href="#ab31d66f6379a3efcb8a54fa74009773c" class="m-doc-self">CreateResourceAsync</a>(</span><span class="m-doc-wrap"><a href="_resource_object_8h.html#a901a98f0b0d1da971894b1011acc8495" class="m-doc">IAsyncRequestPtr</a>* ppDst,
+              int16_t,
+              <a href="class_resource_1_1_i_record.html" class="m-doc">IRecord</a>* pRecord,
+              void* extraData,
+              uint32_t typeID,
               int) -&gt; bool <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
             <dd><span></span></dd>
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#accfaab523118d6a8ee41eef257f8fe4c" class="m-doc">Read</a>(</span><span class="m-doc-wrap"><a href="class_resource_1_1_i_p_f_record.html" class="m-doc">IPFRecord</a>* pRecord,
+              <span class="m-doc-wrap-bumper">auto <a href="#ad1cc72fdb868e04a40f078e7b37d8499" class="m-doc">ReadResource</a>(</span><span class="m-doc-wrap"><a href="class_resource_1_1_i_record.html" class="m-doc">IRecord</a>* pRecord,
               <a href="class_resource_1_1_resource_object.html" class="m-doc">ResourceObject</a>* pResource,
-              int,
+              void* extraData,
               uint32_t typeID) -&gt; bool <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
             <dd>Reads the data into the resource given.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#a107b60d615848925fde45286170cb6ba" class="m-doc">Write</a>(</span><span class="m-doc-wrap"><a href="class_resource_1_1_resource_object.html" class="m-doc">ResourceObject</a>* pResource,
-              <a href="class_resource_1_1_i_p_f_record.html" class="m-doc">IPFRecord</a>* pRecord,
-              int,
+              <span class="m-doc-wrap-bumper">auto <a href="#a17c3bf793d6bc9038c4f1a699e1b38a6" class="m-doc">WriteResource</a>(</span><span class="m-doc-wrap"><a href="class_resource_1_1_resource_object.html" class="m-doc">ResourceObject</a>* pResource,
+              <a href="class_resource_1_1_i_record.html" class="m-doc">IRecord</a>* pRecord,
+              void* extraData,
               uint32_t typeID) -&gt; bool <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
             <dd>Reads the resource into the file given.</dd>
@@ -136,7 +136,7 @@
             </dt>
             <dd>This method must tell all the type IDs that are accepted by this factory.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#a0407a79d40e7986511c391dfb93a70fd" class="m-doc">IsValid</a>(</span><span class="m-doc-wrap">uint32_t typeID,
+              <span class="m-doc-wrap-bumper">auto <a href="#a4a760af2f219bdaeea2c384239d7b0b5" class="m-doc">CanConvert</a>(</span><span class="m-doc-wrap">uint32_t typeID,
               uint32_t subTypeID) -&gt; bool <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
             <dd>This method must tell whether this type ID (which might be a generic one, e.g.</dd>
@@ -144,11 +144,11 @@
         </section>
         <section>
           <h2>Function documentation</h2>
-          <section class="m-doc-details" id="ac46d9b0460fffaf96004d41b02390c7d"><div>
+          <section class="m-doc-details" id="ac916cb6a4148ee506823a1b7aae6cf06"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">bool Resource::<wbr />IResourceFactory::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ac46d9b0460fffaf96004d41b02390c7d" class="m-doc-self">CreateResource</a>(</span><span class="m-doc-wrap"><a href="class_resource_1_1_i_p_f_record.html" class="m-doc">IPFRecord</a>* pRecord,
+              <span class="m-doc-wrap-bumper">bool Resource::<wbr />IResourceFactory::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ac916cb6a4148ee506823a1b7aae6cf06" class="m-doc-self">CreateResource</a>(</span><span class="m-doc-wrap"><a href="class_resource_1_1_i_record.html" class="m-doc">IRecord</a>* pRecord,
               <a href="_resource_object_8h.html#a1545ff2e1aa08f1935f251e338e72e33" class="m-doc">ResourceObjectPtr</a>&amp; pDst,
-              int,
+              void* extraData,
               uint32_t typeID) <span class="m-label m-warning">pure virtual</span></span></span>
             </h3>
             <p>Creates a new resource of the specified type, using the file record given.</p>
@@ -159,11 +159,15 @@
               <tbody>
                 <tr>
                   <td style="width: 1%">pRecord</td>
-                  <td>The <a href="class_resource_1_1_i_p_f_record.html" class="m-doc">IPFRecord</a> that points to the file used by the resource (either for reading or for writing).</td>
+                  <td>The IPFRecord that points to the file used by the resource (either for reading or for writing).</td>
                 </tr>
                 <tr>
                   <td>pDst&nbsp;<span class="m-label m-flat m-warning">out</span></td>
                   <td>A pointer where the <a href="class_resource_1_1_resource_object.html" class="m-doc">ResourceObject</a> created must be written.</td>
+                </tr>
+                <tr>
+                  <td>extraData</td>
+                  <td></td>
                 </tr>
                 <tr>
                   <td>typeID</td>
@@ -172,11 +176,11 @@
               </tbody>
             </table>
           </div></section>
-          <section class="m-doc-details" id="accfaab523118d6a8ee41eef257f8fe4c"><div>
+          <section class="m-doc-details" id="ad1cc72fdb868e04a40f078e7b37d8499"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">bool Resource::<wbr />IResourceFactory::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#accfaab523118d6a8ee41eef257f8fe4c" class="m-doc-self">Read</a>(</span><span class="m-doc-wrap"><a href="class_resource_1_1_i_p_f_record.html" class="m-doc">IPFRecord</a>* pRecord,
+              <span class="m-doc-wrap-bumper">bool Resource::<wbr />IResourceFactory::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ad1cc72fdb868e04a40f078e7b37d8499" class="m-doc-self">ReadResource</a>(</span><span class="m-doc-wrap"><a href="class_resource_1_1_i_record.html" class="m-doc">IRecord</a>* pRecord,
               <a href="class_resource_1_1_resource_object.html" class="m-doc">ResourceObject</a>* pResource,
-              int,
+              void* extraData,
               uint32_t typeID) <span class="m-label m-warning">pure virtual</span></span></span>
             </h3>
             <p>Reads the data into the resource given.</p>
@@ -187,11 +191,15 @@
               <tbody>
                 <tr>
                   <td style="width: 1%">pRecord</td>
-                  <td>The <a href="class_resource_1_1_i_p_f_record.html" class="m-doc">IPFRecord</a> that points to the file that must be read.</td>
+                  <td>The IPFRecord that points to the file that must be read.</td>
                 </tr>
                 <tr>
                   <td>pResource</td>
                   <td>The <a href="class_resource_1_1_resource_object.html" class="m-doc">ResourceObject</a> where the data must be loaded.</td>
+                </tr>
+                <tr>
+                  <td>extraData</td>
+                  <td></td>
                 </tr>
                 <tr>
                   <td>typeID</td>
@@ -200,11 +208,11 @@
               </tbody>
             </table>
           </div></section>
-          <section class="m-doc-details" id="a107b60d615848925fde45286170cb6ba"><div>
+          <section class="m-doc-details" id="a17c3bf793d6bc9038c4f1a699e1b38a6"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">bool Resource::<wbr />IResourceFactory::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a107b60d615848925fde45286170cb6ba" class="m-doc-self">Write</a>(</span><span class="m-doc-wrap"><a href="class_resource_1_1_resource_object.html" class="m-doc">ResourceObject</a>* pResource,
-              <a href="class_resource_1_1_i_p_f_record.html" class="m-doc">IPFRecord</a>* pRecord,
-              int,
+              <span class="m-doc-wrap-bumper">bool Resource::<wbr />IResourceFactory::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a17c3bf793d6bc9038c4f1a699e1b38a6" class="m-doc-self">WriteResource</a>(</span><span class="m-doc-wrap"><a href="class_resource_1_1_resource_object.html" class="m-doc">ResourceObject</a>* pResource,
+              <a href="class_resource_1_1_i_record.html" class="m-doc">IRecord</a>* pRecord,
+              void* extraData,
               uint32_t typeID) <span class="m-label m-warning">pure virtual</span></span></span>
             </h3>
             <p>Reads the resource into the file given.</p>
@@ -219,7 +227,11 @@
                 </tr>
                 <tr>
                   <td>pRecord</td>
-                  <td>The <a href="class_resource_1_1_i_p_f_record.html" class="m-doc">IPFRecord</a> that points to the file that must be written.</td>
+                  <td>The IPFRecord that points to the file that must be written.</td>
+                </tr>
+                <tr>
+                  <td>extraData</td>
+                  <td></td>
                 </tr>
                 <tr>
                   <td>typeID</td>
@@ -257,9 +269,9 @@
             </table>
 <p>The method must return how many type IDs are supported.</p>
           </div></section>
-          <section class="m-doc-details" id="a0407a79d40e7986511c391dfb93a70fd"><div>
+          <section class="m-doc-details" id="a4a760af2f219bdaeea2c384239d7b0b5"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">bool Resource::<wbr />IResourceFactory::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a0407a79d40e7986511c391dfb93a70fd" class="m-doc-self">IsValid</a>(</span><span class="m-doc-wrap">uint32_t typeID,
+              <span class="m-doc-wrap-bumper">bool Resource::<wbr />IResourceFactory::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a4a760af2f219bdaeea2c384239d7b0b5" class="m-doc-self">CanConvert</a>(</span><span class="m-doc-wrap">uint32_t typeID,
               uint32_t subTypeID) <span class="m-label m-warning">pure virtual</span></span></span>
             </h3>
             <p>This method must tell whether this type ID (which might be a generic one, e.g.</p>

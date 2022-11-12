@@ -45,7 +45,7 @@
     <div class="m-row">
       <div class="m-col-l-10 m-push-l-1">
         <h1>
-          <span class="m-breadcrumb"><a href="namespace_graphics.html">Graphics</a>::<wbr/></span>Renderer <span class="m-thin">namespace</span>
+          Graphics::Renderer <span class="m-thin">namespace</span>
         </h1>
         <p>This namespace contains most internal stuff related with rendering, such as Direct3D Device and shaders, shader data, etc.</p>
         <div class="m-block m-default">
@@ -72,12 +72,12 @@
         <section id="func-members">
           <h2><a href="#func-members">Functions</a></h2>
           <dl class="m-doc">
-            <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#a8b05db9d9c75b59ae785638a32724e4e" class="m-doc">GetDirect3D</a>(</span><span class="m-doc-wrap">) -&gt; IDirect3D9*</span>
+            <dt id="a8b05db9d9c75b59ae785638a32724e4e">
+              <span class="m-doc-wrap-bumper">auto <a href="#a8b05db9d9c75b59ae785638a32724e4e" class="m-doc-self">GetDirect3D</a>(</span><span class="m-doc-wrap">) -&gt; IDirect3D9*</span>
             </dt>
             <dd><span></span></dd>
-            <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#a3973835ef1aa212f6afe1f832708c7d0" class="m-doc">GetDevice</a>(</span><span class="m-doc-wrap">) -&gt; IDirect3DDevice9*</span>
+            <dt id="a3973835ef1aa212f6afe1f832708c7d0">
+              <span class="m-doc-wrap-bumper">auto <a href="#a3973835ef1aa212f6afe1f832708c7d0" class="m-doc-self">GetDevice</a>(</span><span class="m-doc-wrap">) -&gt; IDirect3DDevice9*</span>
             </dt>
             <dd>Returns the Direct3D Device used for all rendering operations in the game.</dd>
             <dt>
@@ -88,38 +88,38 @@
               <span class="m-doc-wrap-bumper">auto <a href="#ade659b310a2923375dc913888a5264aa" class="m-doc">GetMaterialShader</a>(</span><span class="m-doc-wrap">) -&gt; <a href="class_graphics_1_1_material_shader.html" class="m-doc">MaterialShader</a>*</span>
             </dt>
             <dd>Returns the current <a href="class_graphics_1_1_material_shader.html" class="m-doc">MaterialShader</a> object which is being used to render.</dd>
-            <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#abc2ad123b2791d1051fa4e865591510d" class="m-doc">GetModelToWorld</a>(</span><span class="m-doc-wrap">) -&gt; D3DMATRIX*</span>
+            <dt id="abc2ad123b2791d1051fa4e865591510d">
+              <span class="m-doc-wrap-bumper">auto <a href="#abc2ad123b2791d1051fa4e865591510d" class="m-doc-self">GetModelToWorld</a>(</span><span class="m-doc-wrap">) -&gt; D3DMATRIX*</span>
             </dt>
             <dd>Returns the &#x27;modelToWorld&#x27; matrix.</dd>
             <dt>
               <span class="m-doc-wrap-bumper">void <a href="#a8e43abe85b13d658225d3b8d10bb97f1" class="m-doc">SetModelMatrix</a>(</span><span class="m-doc-wrap">D3DMATRIX* value)</span>
             </dt>
             <dd>Sets the &#x27;modelToWorld&#x27; matrix.</dd>
-            <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#a7bfb18375cc391301e8e9e45c6494d3b" class="m-doc">GetModelToWorldTransposed</a>(</span><span class="m-doc-wrap">) -&gt; D3DMATRIX*</span>
+            <dt id="a7bfb18375cc391301e8e9e45c6494d3b">
+              <span class="m-doc-wrap-bumper">auto <a href="#a7bfb18375cc391301e8e9e45c6494d3b" class="m-doc-self">GetModelToWorldTransposed</a>(</span><span class="m-doc-wrap">) -&gt; D3DMATRIX*</span>
             </dt>
             <dd>Returns the &#x27;modelToWorld&#x27; matrix, transposed.</dd>
             <dt>
               <span class="m-doc-wrap-bumper">void <a href="#ad1248e156c2f10f5938034c7d06f6200" class="m-doc">SetModelToWorldTransposed</a>(</span><span class="m-doc-wrap">D3DMATRIX* value)</span>
             </dt>
             <dd>Sets the &#x27;modelToWorld&#x27; matrix, transposed.</dd>
-            <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#ae67ecbe222580a85189c5a52fa0cff0c" class="m-doc">GetPresentationParameters</a>(</span><span class="m-doc-wrap">) -&gt; D3DPRESENT_PARAMETERS&amp;</span>
+            <dt id="ae67ecbe222580a85189c5a52fa0cff0c">
+              <span class="m-doc-wrap-bumper">auto <a href="#ae67ecbe222580a85189c5a52fa0cff0c" class="m-doc-self">GetPresentationParameters</a>(</span><span class="m-doc-wrap">) -&gt; D3DPRESENT_PARAMETERS&amp;</span>
             </dt>
             <dd><span></span></dd>
-            <dt>
-              <span class="m-doc-wrap-bumper">void <a href="#a2ee0ef85961cef87f85f87552f12e521" class="m-doc">SetShaderData</a>(</span><span class="m-doc-wrap">short index,
+            <dt id="a2ee0ef85961cef87f85f87552f12e521">
+              <span class="m-doc-wrap-bumper">void <a href="#a2ee0ef85961cef87f85f87552f12e521" class="m-doc-self">SetShaderData</a>(</span><span class="m-doc-wrap">short index,
               void* value,
               bool overrideIfEqual = false)</span>
             </dt>
             <dd><span></span></dd>
-            <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#aa23825483bf6db0bbe90ea9014959bff" class="m-doc">GetShaderDataSize</a>(</span><span class="m-doc-wrap">short index) -&gt; int</span>
+            <dt id="aa23825483bf6db0bbe90ea9014959bff">
+              <span class="m-doc-wrap-bumper">auto <a href="#aa23825483bf6db0bbe90ea9014959bff" class="m-doc-self">GetShaderDataSize</a>(</span><span class="m-doc-wrap">short index) -&gt; int</span>
             </dt>
             <dd><span></span></dd>
-            <dt>
-              <span class="m-doc-wrap-bumper">void <a href="#a051f5085f4d93e526e4e0e38d830c316" class="m-doc">RegisterShaderData</a>(</span><span class="m-doc-wrap">short id,
+            <dt id="a051f5085f4d93e526e4e0e38d830c316">
+              <span class="m-doc-wrap-bumper">void <a href="#a051f5085f4d93e526e4e0e38d830c316" class="m-doc-self">RegisterShaderData</a>(</span><span class="m-doc-wrap">short id,
               <a href="struct_graphics_1_1_shader_data_information.html#a358b4e3def263559fc7a333890a7cc9f" class="m-doc">ShaderDataInformation::<wbr />UnfixCB</a>,
               <a href="struct_graphics_1_1_shader_data_information.html#ae1f616583fbe253181c8f8b389f6a2db" class="m-doc">ShaderDataInformation::<wbr />RefixCB</a>,
               <a href="struct_graphics_1_1_shader_data_information.html#a3f4b6aa293f3971ebf1d9280b87a820a" class="m-doc">ShaderDataInformation::<wbr />FixupCB</a>,
@@ -148,24 +148,9 @@
         </section>
         <section>
           <h2>Function documentation</h2>
-          <section class="m-doc-details" id="a8b05db9d9c75b59ae785638a32724e4e"><div>
-            <h3>
-              <span class="m-doc-wrap-bumper">IDirect3D9* Graphics::<wbr />Renderer::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a8b05db9d9c75b59ae785638a32724e4e" class="m-doc-self">GetDirect3D</a>(</span><span class="m-doc-wrap">)</span></span>
-              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_renderer_8h.html">&lt;Spore/Graphics/Renderer.h&gt;</a></div>
-            </h3>
-            <p><span></span></p>
-          </div></section>
-          <section class="m-doc-details" id="a3973835ef1aa212f6afe1f832708c7d0"><div>
-            <h3>
-              <span class="m-doc-wrap-bumper">IDirect3DDevice9* Graphics::<wbr />Renderer::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a3973835ef1aa212f6afe1f832708c7d0" class="m-doc-self">GetDevice</a>(</span><span class="m-doc-wrap">)</span></span>
-              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_renderer_8h.html">&lt;Spore/Graphics/Renderer.h&gt;</a></div>
-            </h3>
-            <p>Returns the Direct3D Device used for all rendering operations in the game.</p>
-          </div></section>
           <section class="m-doc-details" id="af5e06d4dc7eb5faaeed212f48e438de6"><div>
             <h3>
               <span class="m-doc-wrap-bumper">void** Graphics::<wbr />Renderer::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#af5e06d4dc7eb5faaeed212f48e438de6" class="m-doc-self">GetShaderData</a>(</span><span class="m-doc-wrap">)</span></span>
-              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_renderer_8h.html">&lt;Spore/Graphics/Renderer.h&gt;</a></div>
             </h3>
             <p>Returns a pointer to the array that contains the values of shader data.</p>
 <p>For example, you can do <a href="namespace_graphics_1_1_renderer.html#af5e06d4dc7eb5faaeed212f48e438de6" class="m-doc">GetShaderData()</a>[ShaderData::skinWeights];</p>
@@ -173,22 +158,13 @@
           <section class="m-doc-details" id="ade659b310a2923375dc913888a5264aa"><div>
             <h3>
               <span class="m-doc-wrap-bumper"><a href="class_graphics_1_1_material_shader.html" class="m-doc">MaterialShader</a>* Graphics::<wbr />Renderer::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ade659b310a2923375dc913888a5264aa" class="m-doc-self">GetMaterialShader</a>(</span><span class="m-doc-wrap">)</span></span>
-              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_renderer_8h.html">&lt;Spore/Graphics/Renderer.h&gt;</a></div>
             </h3>
             <p>Returns the current <a href="class_graphics_1_1_material_shader.html" class="m-doc">MaterialShader</a> object which is being used to render.</p>
 <p>This can either be a <a href="class_graphics_1_1_shader_builder.html" class="m-doc">ShaderBuilder</a> or an <a href="class_graphics_1_1_standard_shader.html" class="m-doc">StandardShader</a>.</p>
           </div></section>
-          <section class="m-doc-details" id="abc2ad123b2791d1051fa4e865591510d"><div>
-            <h3>
-              <span class="m-doc-wrap-bumper">D3DMATRIX* Graphics::<wbr />Renderer::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#abc2ad123b2791d1051fa4e865591510d" class="m-doc-self">GetModelToWorld</a>(</span><span class="m-doc-wrap">)</span></span>
-              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_renderer_8h.html">&lt;Spore/Graphics/Renderer.h&gt;</a></div>
-            </h3>
-            <p>Returns the &#x27;modelToWorld&#x27; matrix.</p>
-          </div></section>
           <section class="m-doc-details" id="a8e43abe85b13d658225d3b8d10bb97f1"><div>
             <h3>
               <span class="m-doc-wrap-bumper">void Graphics::<wbr />Renderer::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a8e43abe85b13d658225d3b8d10bb97f1" class="m-doc-self">SetModelMatrix</a>(</span><span class="m-doc-wrap">D3DMATRIX* value)</span></span>
-              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_renderer_8h.html">&lt;Spore/Graphics/Renderer.h&gt;</a></div>
             </h3>
             <p>Sets the &#x27;modelToWorld&#x27; matrix.</p>
             <table class="m-table m-fullwidth m-flat">
@@ -203,17 +179,9 @@
               </tbody>
             </table>
           </div></section>
-          <section class="m-doc-details" id="a7bfb18375cc391301e8e9e45c6494d3b"><div>
-            <h3>
-              <span class="m-doc-wrap-bumper">D3DMATRIX* Graphics::<wbr />Renderer::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a7bfb18375cc391301e8e9e45c6494d3b" class="m-doc-self">GetModelToWorldTransposed</a>(</span><span class="m-doc-wrap">)</span></span>
-              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_renderer_8h.html">&lt;Spore/Graphics/Renderer.h&gt;</a></div>
-            </h3>
-            <p>Returns the &#x27;modelToWorld&#x27; matrix, transposed.</p>
-          </div></section>
           <section class="m-doc-details" id="ad1248e156c2f10f5938034c7d06f6200"><div>
             <h3>
               <span class="m-doc-wrap-bumper">void Graphics::<wbr />Renderer::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ad1248e156c2f10f5938034c7d06f6200" class="m-doc-self">SetModelToWorldTransposed</a>(</span><span class="m-doc-wrap">D3DMATRIX* value)</span></span>
-              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_renderer_8h.html">&lt;Spore/Graphics/Renderer.h&gt;</a></div>
             </h3>
             <p>Sets the &#x27;modelToWorld&#x27; matrix, transposed.</p>
             <table class="m-table m-fullwidth m-flat">
@@ -228,44 +196,9 @@
               </tbody>
             </table>
           </div></section>
-          <section class="m-doc-details" id="ae67ecbe222580a85189c5a52fa0cff0c"><div>
-            <h3>
-              <span class="m-doc-wrap-bumper">D3DPRESENT_PARAMETERS&amp; Graphics::<wbr />Renderer::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ae67ecbe222580a85189c5a52fa0cff0c" class="m-doc-self">GetPresentationParameters</a>(</span><span class="m-doc-wrap">)</span></span>
-              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_renderer_8h.html">&lt;Spore/Graphics/Renderer.h&gt;</a></div>
-            </h3>
-            <p><span></span></p>
-          </div></section>
-          <section class="m-doc-details" id="a2ee0ef85961cef87f85f87552f12e521"><div>
-            <h3>
-              <span class="m-doc-wrap-bumper">void Graphics::<wbr />Renderer::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a2ee0ef85961cef87f85f87552f12e521" class="m-doc-self">SetShaderData</a>(</span><span class="m-doc-wrap">short index,
-              void* value,
-              bool overrideIfEqual = false)</span></span>
-              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_renderer_8h.html">&lt;Spore/Graphics/Renderer.h&gt;</a></div>
-            </h3>
-            <p><span></span></p>
-          </div></section>
-          <section class="m-doc-details" id="aa23825483bf6db0bbe90ea9014959bff"><div>
-            <h3>
-              <span class="m-doc-wrap-bumper">int Graphics::<wbr />Renderer::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#aa23825483bf6db0bbe90ea9014959bff" class="m-doc-self">GetShaderDataSize</a>(</span><span class="m-doc-wrap">short index)</span></span>
-              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_renderer_8h.html">&lt;Spore/Graphics/Renderer.h&gt;</a></div>
-            </h3>
-            <p><span></span></p>
-          </div></section>
-          <section class="m-doc-details" id="a051f5085f4d93e526e4e0e38d830c316"><div>
-            <h3>
-              <span class="m-doc-wrap-bumper">void Graphics::<wbr />Renderer::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a051f5085f4d93e526e4e0e38d830c316" class="m-doc-self">RegisterShaderData</a>(</span><span class="m-doc-wrap">short id,
-              <a href="struct_graphics_1_1_shader_data_information.html#a358b4e3def263559fc7a333890a7cc9f" class="m-doc">ShaderDataInformation::<wbr />UnfixCB</a>,
-              <a href="struct_graphics_1_1_shader_data_information.html#ae1f616583fbe253181c8f8b389f6a2db" class="m-doc">ShaderDataInformation::<wbr />RefixCB</a>,
-              <a href="struct_graphics_1_1_shader_data_information.html#a3f4b6aa293f3971ebf1d9280b87a820a" class="m-doc">ShaderDataInformation::<wbr />FixupCB</a>,
-              <a href="struct_graphics_1_1_shader_data_information.html#a49758be908d25408fb2670f178a5e131" class="m-doc">ShaderDataInformation::<wbr />UploadCB</a>)</span></span>
-              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_renderer_8h.html">&lt;Spore/Graphics/Renderer.h&gt;</a></div>
-            </h3>
-            <p><span></span></p>
-          </div></section>
           <section class="m-doc-details" id="a555d6aea46bd655fdc1cccf9dc7966ba"><div>
             <h3>
               <span class="m-doc-wrap-bumper">int Graphics::<wbr />Renderer::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a555d6aea46bd655fdc1cccf9dc7966ba" class="m-doc-self">SetPresentationParameters</a>(</span><span class="m-doc-wrap">const <a href="struct_graphics_1_1_renderer_1_1_device_parameters.html" class="m-doc">DeviceParameters</a>&amp; parameters)</span></span>
-              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_renderer_8h.html">&lt;Spore/Graphics/Renderer.h&gt;</a></div>
             </h3>
             <p>Assigns the presentation parameters that will be used by the DirectX device.</p>
             <table class="m-table m-fullwidth m-flat">
@@ -284,7 +217,6 @@
           <section class="m-doc-details" id="a541a0bbb5861f3cc50bbe0bd6f5d6ad7"><div>
             <h3>
               <span class="m-doc-wrap-bumper">int Graphics::<wbr />Renderer::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a541a0bbb5861f3cc50bbe0bd6f5d6ad7" class="m-doc-self">CreateDevice</a>(</span><span class="m-doc-wrap"><a href="struct_graphics_1_1_renderer_1_1_device_parameters.html" class="m-doc">DeviceParameters</a>&amp; parameters)</span></span>
-              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_renderer_8h.html">&lt;Spore/Graphics/Renderer.h&gt;</a></div>
             </h3>
             <p>Creates the Direct3D device.</p>
             <table class="m-table m-fullwidth m-flat">
@@ -304,7 +236,6 @@
             <h3>
               <span class="m-doc-wrap-bumper">void Graphics::<wbr />Renderer::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a30306f762243d68fd2886df034c818f6" class="m-doc-self">SetTexture</a>(</span><span class="m-doc-wrap">int slotIndex,
               <a href="struct_render_ware_1_1_raster.html" class="m-doc">RenderWare::<wbr />Raster</a>* raster)</span></span>
-              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_renderer_8h.html">&lt;Spore/Graphics/Renderer.h&gt;</a></div>
             </h3>
             <p>Sends the given raster to the Direct3D device.</p>
             <table class="m-table m-fullwidth m-flat">
@@ -327,7 +258,6 @@
             <h3>
               <span class="m-doc-wrap-bumper">HRESULT Graphics::<wbr />Renderer::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a3d450d4c82c0ceafbb802a74e87d05df" class="m-doc-self">SetRenderTarget</a>(</span><span class="m-doc-wrap">int index,
               <a href="struct_render_ware_1_1_raster.html" class="m-doc">RenderWare::<wbr />Raster</a>* raster)</span></span>
-              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_renderer_8h.html">&lt;Spore/Graphics/Renderer.h&gt;</a></div>
             </h3>
             <p>Sets the given raster to be the active Direct3D render target for the given index.</p>
             <table class="m-table m-fullwidth m-flat">

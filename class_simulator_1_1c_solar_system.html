@@ -95,8 +95,8 @@
           <h2><a href="#pub-static-methods">Public static functions</a></h2>
           <dl class="m-doc">
             <dt>
-              <span class="m-doc-wrap-bumper">static void <a href="#a7b08d9e04edfe27c97d6b513c51d1b8e" class="m-doc">CreateStarEffect</a>(</span><span class="m-doc-wrap"><a href="_i_effect_8h.html#adc433612d1d4c8a3a401b5c1dc2d4eba" class="m-doc">IEffectPtr</a>&amp; dst,
-              <a href="class_swarm_1_1_i_effect_world.html" class="m-doc">Swarm::<wbr />IEffectWorld</a>* pEffectWorld,
+              <span class="m-doc-wrap-bumper">static void <a href="#a7d61c760d4ba34da7f467499a2ebaaf5" class="m-doc">CreateStarEffect</a>(</span><span class="m-doc-wrap"><a href="_i_visual_effect_8h.html#af513d4705ba3d0bdec5c20e45aee71fd" class="m-doc">IVisualEffectPtr</a>&amp; dst,
+              <a href="class_swarm_1_1_i_effects_world.html" class="m-doc">Swarm::<wbr />IEffectsWorld</a>* pEffectWorld,
               <a href="namespace_simulator.html#abe57cfb0b8f7d0b95e69aec0cbc46497" class="m-doc">StarType</a> starType)</span>
             </dt>
             <dd>Instantiates the effect of a star in the solar system view.</dd>
@@ -143,16 +143,16 @@
         <section id="pub-attribs">
           <h2><a href="#pub-attribs">Public variables</a></h2>
           <dl class="m-doc">
-            <dt id="a2f22aac89eac1b996e9e95067e722934">
-              intrusive_ptr&lt;<a href="class_simulator_1_1c_star.html" class="m-doc">cStar</a>&gt; <a href="#a2f22aac89eac1b996e9e95067e722934" class="m-doc-self">mpOwnerStar</a>
+            <dt id="acdcb54cb95b9d3aba2717047e1b99bd2">
+              eastl::intrusive_ptr&lt;<a href="class_simulator_1_1c_star.html" class="m-doc">cStar</a>&gt; <a href="#acdcb54cb95b9d3aba2717047e1b99bd2" class="m-doc-self">mpOwnerStar</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="ae814b1d6e76e889c354e53881cf97d91">
-              vector&lt;<a href="c_planet_8h.html#a9cf4bb12f2504ebf5ba5f6c28ffda8aa" class="m-doc">cPlanetPtr</a>&gt; <a href="#ae814b1d6e76e889c354e53881cf97d91" class="m-doc-self">mPlanets</a>
+            <dt id="a5151ba6893db62cd70eb05abe51a49d1">
+              eastl::vector&lt;<a href="c_planet_8h.html#a9cf4bb12f2504ebf5ba5f6c28ffda8aa" class="m-doc">cPlanetPtr</a>&gt; <a href="#a5151ba6893db62cd70eb05abe51a49d1" class="m-doc-self">mPlanets</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="a1fe250f1798f747f9ce5d0cd255f143c">
-              vector&lt;<a href="c_celestial_body_8h.html#ab856f3dc39eaaaa859da05c47f954183" class="m-doc">cCelestialBodyPtr</a>&gt; <a href="#a1fe250f1798f747f9ce5d0cd255f143c" class="m-doc-self">mCelestialBodies</a>
+            <dt id="aa7532b02d8bed07dfb0568b054c6a813">
+              eastl::vector&lt;<a href="c_celestial_body_8h.html#ab856f3dc39eaaaa859da05c47f954183" class="m-doc">cCelestialBodyPtr</a>&gt; <a href="#aa7532b02d8bed07dfb0568b054c6a813" class="m-doc-self">mCelestialBodies</a>
             </dt>
             <dd><span></span></dd>
             <dt id="a6c0f0237f12c664bd247e0094d8267bd">
@@ -163,18 +163,18 @@
               <a href="c_celestial_body_8h.html#ab856f3dc39eaaaa859da05c47f954183" class="m-doc">cCelestialBodyPtr</a> <a href="#aae2be50e0f0f78b3c6217cfb0ec77ae3" class="m-doc-self">mpStar2</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="afcb92b959c36839ff6ee86eaa7198a3a">
-              vector&lt;<a href="_model_asset_8h.html#a4695930ef0d84e11d31379e623af5732" class="m-doc">ModelPtr</a>&gt; <a href="#afcb92b959c36839ff6ee86eaa7198a3a" class="m-doc-self">field_40</a>
+            <dt id="a5837bb90e9165cf511c99d05609ff3dd">
+              eastl::vector&lt;<a href="_model_8h.html#a4695930ef0d84e11d31379e623af5732" class="m-doc">ModelPtr</a>&gt; <a href="#a5837bb90e9165cf511c99d05609ff3dd" class="m-doc-self">field_40</a>
             </dt>
             <dd><span></span></dd>
           </dl>
         </section>
         <section>
           <h2>Function documentation</h2>
-          <section class="m-doc-details" id="a7b08d9e04edfe27c97d6b513c51d1b8e"><div>
+          <section class="m-doc-details" id="a7d61c760d4ba34da7f467499a2ebaaf5"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">static void Simulator::<wbr />cSolarSystem::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a7b08d9e04edfe27c97d6b513c51d1b8e" class="m-doc-self">CreateStarEffect</a>(</span><span class="m-doc-wrap"><a href="_i_effect_8h.html#adc433612d1d4c8a3a401b5c1dc2d4eba" class="m-doc">IEffectPtr</a>&amp; dst,
-              <a href="class_swarm_1_1_i_effect_world.html" class="m-doc">Swarm::<wbr />IEffectWorld</a>* pEffectWorld,
+              <span class="m-doc-wrap-bumper">static void Simulator::<wbr />cSolarSystem::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a7d61c760d4ba34da7f467499a2ebaaf5" class="m-doc-self">CreateStarEffect</a>(</span><span class="m-doc-wrap"><a href="_i_visual_effect_8h.html#af513d4705ba3d0bdec5c20e45aee71fd" class="m-doc">IVisualEffectPtr</a>&amp; dst,
+              <a href="class_swarm_1_1_i_effects_world.html" class="m-doc">Swarm::<wbr />IEffectsWorld</a>* pEffectWorld,
               <a href="namespace_simulator.html#abe57cfb0b8f7d0b95e69aec0cbc46497" class="m-doc">StarType</a> starType)</span></span>
             </h3>
             <p>Instantiates the effect of a star in the solar system view.</p>
@@ -256,7 +256,7 @@
                 </tr>
               </tbody>
             </table>
-<p>This method generates the effect of the star (or black hole/planetary disk etc) and comets. By default, these are the effects used:</p><ul><li>Comets: <code>0x3D6F8D8</code></li><li>Stars: check <a href="class_simulator_1_1c_solar_system.html#a7b08d9e04edfe27c97d6b513c51d1b8e" class="m-doc">CreateStarEffect()</a> Source code: <a href="_source_code-_simulator.html#SourceCode-Simulator-cSolarSystem-GenerateCelestialBodiesEffects" class="m-doc">cSolarSystem::<wbr />GenerateCelestialBodiesEffects()</a></li></ul>
+<p>This method generates the effect of the star (or black hole/planetary disk etc) and comets. By default, these are the effects used:</p><ul><li>Comets: <code>0x3D6F8D8</code></li><li>Stars: check <a href="class_simulator_1_1c_solar_system.html#a7d61c760d4ba34da7f467499a2ebaaf5" class="m-doc">CreateStarEffect()</a> Source code: <a href="_source_code-_simulator.html#SourceCode-Simulator-cSolarSystem-GenerateCelestialBodiesEffects" class="m-doc">cSolarSystem::<wbr />GenerateCelestialBodiesEffects()</a></li></ul>
           </div></section>
         </section>
       </div>

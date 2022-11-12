@@ -74,24 +74,24 @@
               <span class="m-doc-wrap-bumper">void <a href="#a1d4837fb367740840bb199d561412fe6" class="m-doc">ExpectChar</a>(</span><span class="m-doc-wrap"><a href="namespace_arg_script.html#af41cc52a6781a4b36908270912f0e1af" class="m-doc">LexerString</a>&amp; lexerString,
               char c)</span>
             </dt>
-            <dd>Reads one character in the lexer string, which is expected to be the one specified.</dd>
+            <dd>Reads one character in the lexer eastl::string, which is expected to be the one specified.</dd>
             <dt>
               <span class="m-doc-wrap-bumper">auto <a href="#add6b1815c769b8fca2f061b9f82002ec" class="m-doc">OptionalExpectChar</a>(</span><span class="m-doc-wrap"><a href="namespace_arg_script.html#af41cc52a6781a4b36908270912f0e1af" class="m-doc">LexerString</a>&amp; lexerString,
               char c) -&gt; bool</span>
             </dt>
-            <dd>Reads one character in the lexer string, only if the end of the string has not been reached.</dd>
+            <dd>Reads one character in the lexer eastl::string, only if the end of the eastl::string has not been reached.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">void <a href="#ac2e51f26b77274771b05ee9cf36f016c" class="m-doc">NextParameter</a>(</span><span class="m-doc-wrap"><a href="namespace_arg_script.html#af41cc52a6781a4b36908270912f0e1af" class="m-doc">LexerString</a>&amp; lexerString,
-              string&amp; dst)</span>
+              <span class="m-doc-wrap-bumper">void <a href="#a9d5749c03d808e725ee1986248ea7d83" class="m-doc">NextParameter</a>(</span><span class="m-doc-wrap"><a href="namespace_arg_script.html#af41cc52a6781a4b36908270912f0e1af" class="m-doc">LexerString</a>&amp; lexerString,
+              eastl::string&amp; dst)</span>
             </dt>
-            <dd>Reads the next parameter in the string, which is all the characters until a comma, a space, or a closing parenthesis is found.</dd>
+            <dd>Reads the next parameter in the eastl::string, which is all the characters until a comma, a space, or a closing parenthesis is found.</dd>
           </dl>
         </section>
         <section id="pro-attribs">
           <h2><a href="#pro-attribs">Protected variables</a></h2>
           <dl class="m-doc">
-            <dt id="a8302302ba1f8de6c853c36681943474e">
-              hash_map&lt;string, <a href="class_arg_script_1_1_i_function.html" class="m-doc">IFunction</a>*&gt; <a href="#a8302302ba1f8de6c853c36681943474e" class="m-doc-self">mFunctions</a>
+            <dt id="a83eb5868601e940d0fdd0e4631440714">
+              eastl::hash_map&lt;eastl::string, <a href="class_arg_script_1_1_i_function.html" class="m-doc">IFunction</a>*&gt; <a href="#a83eb5868601e940d0fdd0e4631440714" class="m-doc-self">mFunctions</a>
             </dt>
             <dd><span></span></dd>
           </dl>
@@ -125,7 +125,7 @@
               <span class="m-doc-wrap-bumper">void ArgScript::<wbr />Lexer::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a1d4837fb367740840bb199d561412fe6" class="m-doc-self">ExpectChar</a>(</span><span class="m-doc-wrap"><a href="namespace_arg_script.html#af41cc52a6781a4b36908270912f0e1af" class="m-doc">LexerString</a>&amp; lexerString,
               char c)</span></span>
             </h3>
-            <p>Reads one character in the lexer string, which is expected to be the one specified.</p>
+            <p>Reads one character in the lexer eastl::string, which is expected to be the one specified.</p>
             <table class="m-table m-fullwidth m-flat">
               <thead>
                 <tr><th colspan="2">Parameters</th></tr>
@@ -133,7 +133,7 @@
               <tbody>
                 <tr>
                   <td style="width: 1%">lexerString</td>
-                  <td>The string pointer where the character will be read.</td>
+                  <td>The eastl::string pointer where the character will be read.</td>
                 </tr>
                 <tr>
                   <td>c</td>
@@ -146,7 +146,7 @@
               <tbody>
                 <tr>
                   <td>ArgScriptException</td>
-                  <td>If the current character in the string is not the one required.</td>
+                  <td>If the current character in the eastl::string is not the one required.</td>
                 </tr>
               </tbody>
             </table>
@@ -157,7 +157,7 @@
               <span class="m-doc-wrap-bumper">bool ArgScript::<wbr />Lexer::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#add6b1815c769b8fca2f061b9f82002ec" class="m-doc-self">OptionalExpectChar</a>(</span><span class="m-doc-wrap"><a href="namespace_arg_script.html#af41cc52a6781a4b36908270912f0e1af" class="m-doc">LexerString</a>&amp; lexerString,
               char c)</span></span>
             </h3>
-            <p>Reads one character in the lexer string, only if the end of the string has not been reached.</p>
+            <p>Reads one character in the lexer eastl::string, only if the end of the eastl::string has not been reached.</p>
             <table class="m-table m-fullwidth m-flat">
               <thead>
                 <tr><th colspan="2">Parameters</th></tr>
@@ -165,7 +165,7 @@
               <tbody>
                 <tr>
                   <td style="width: 1%">lexerString</td>
-                  <td>The string pointer where the character will be read.</td>
+                  <td>The eastl::string pointer where the character will be read.</td>
                 </tr>
                 <tr>
                   <td>c</td>
@@ -175,7 +175,7 @@
               <thead>
                 <tr>
                   <th>Returns</th>
-                  <td>True if the character was read, false if the end of the string was reached.</td>
+                  <td>True if the character was read, false if the end of the eastl::string was reached.</td>
                 </tr>
               </thead>
               <thead>
@@ -184,18 +184,18 @@
               <tbody>
                 <tr>
                   <td>ArgScriptException</td>
-                  <td>If the current character in the string is not the one required.</td>
+                  <td>If the current character in the eastl::string is not the one required.</td>
                 </tr>
               </tbody>
             </table>
 <p>The character is expected to be the one specified, otherwise an exception is thrown.</p>
           </div></section>
-          <section class="m-doc-details" id="ac2e51f26b77274771b05ee9cf36f016c"><div>
+          <section class="m-doc-details" id="a9d5749c03d808e725ee1986248ea7d83"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">void ArgScript::<wbr />Lexer::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ac2e51f26b77274771b05ee9cf36f016c" class="m-doc-self">NextParameter</a>(</span><span class="m-doc-wrap"><a href="namespace_arg_script.html#af41cc52a6781a4b36908270912f0e1af" class="m-doc">LexerString</a>&amp; lexerString,
-              string&amp; dst)</span></span>
+              <span class="m-doc-wrap-bumper">void ArgScript::<wbr />Lexer::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a9d5749c03d808e725ee1986248ea7d83" class="m-doc-self">NextParameter</a>(</span><span class="m-doc-wrap"><a href="namespace_arg_script.html#af41cc52a6781a4b36908270912f0e1af" class="m-doc">LexerString</a>&amp; lexerString,
+              eastl::string&amp; dst)</span></span>
             </h3>
-            <p>Reads the next parameter in the string, which is all the characters until a comma, a space, or a closing parenthesis is found.</p>
+            <p>Reads the next parameter in the eastl::string, which is all the characters until a comma, a space, or a closing parenthesis is found.</p>
             <table class="m-table m-fullwidth m-flat">
               <thead>
                 <tr><th colspan="2">Exceptions</th></tr>

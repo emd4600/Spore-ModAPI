@@ -102,19 +102,19 @@
             <dd>Adds the given <a href="class_arg_script_1_1_i_parser.html" class="m-doc">IParser</a> to this format; it will be used when a line with the specified keyword is found.</dd>
             <dt id="ab87ace1b54758878ebebe0d2eec431d4">
               <span class="m-doc-wrap-bumper">void <a href="#ab87ace1b54758878ebebe0d2eec431d4" class="m-doc-self">AddParser</a>(</span><span class="m-doc-wrap">const char* pKeyword,
-              <a href="namespace_arg_script.html#a5705084542134dab972e72148b25aff2" class="m-doc">ParseLine_<wbr />t</a> pParseLine)</span>
+              <a href="namespace_arg_script.html#a993827080e6fc75698c572f52852564e" class="m-doc">ParseLine_<wbr />t</a> pParseLine)</span>
             </dt>
             <dd><span></span></dd>
             <dt id="a22d1e99e588f498ae26f7f4b7f7b4294">
               <span class="m-doc-wrap-bumper">void <a href="#a22d1e99e588f498ae26f7f4b7f7b4294" class="m-doc-self">AddParser</a>(</span><span class="m-doc-wrap">const char* pKeyword,
-              <a href="namespace_arg_script.html#a5705084542134dab972e72148b25aff2" class="m-doc">ParseLine_<wbr />t</a> pParseLine,
-              <a href="namespace_arg_script.html#ad4cbdb6a809f1a31a5f7c57e9b010e69" class="m-doc">GetDescription_<wbr />t</a> pGetDescription)</span>
+              <a href="namespace_arg_script.html#a993827080e6fc75698c572f52852564e" class="m-doc">ParseLine_<wbr />t</a> pParseLine,
+              <a href="namespace_arg_script.html#aa3ad5a2493e83670d6719c3fc331154b" class="m-doc">GetDescription_<wbr />t</a> pGetDescription)</span>
             </dt>
             <dd><span></span></dd>
             <dt id="a7350b8e6316d27e058ab8e37974e4352">
               <span class="m-doc-wrap-bumper">void <a href="#a7350b8e6316d27e058ab8e37974e4352" class="m-doc-self">AddParser</a>(</span><span class="m-doc-wrap">const char* pKeyword,
-              <a href="namespace_arg_script.html#a5705084542134dab972e72148b25aff2" class="m-doc">ParseLine_<wbr />t</a> pParseLine,
-              <a href="namespace_arg_script.html#ac1b8e1ba0d3175f667ef518bd32558ae" class="m-doc">SetData_<wbr />t</a> pSetData)</span>
+              <a href="namespace_arg_script.html#a993827080e6fc75698c572f52852564e" class="m-doc">ParseLine_<wbr />t</a> pParseLine,
+              <a href="namespace_arg_script.html#ae232eefb3cd8115a0cf3e63276a2c588" class="m-doc">SetData_<wbr />t</a> pSetData)</span>
             </dt>
             <dd><span></span></dd>
             <dt>
@@ -162,7 +162,7 @@
             <dt>
               <span class="m-doc-wrap-bumper">void <a href="#aec7a581274e7b54e56ad35c52f794690" class="m-doc">ProcessLine</a>(</span><span class="m-doc-wrap">const char* pString) <span class="m-label m-flat m-warning">virtual</span></span>
             </dt>
-            <dd>Converts the given string into a <a href="class_arg_script_1_1_line.html" class="m-doc">ArgScript::<wbr />Line</a> and it process it using the correct <a href="class_arg_script_1_1_i_parser.html" class="m-doc">IParser</a>, determined by the keyword (the first word in the line).</dd>
+            <dd>Converts the given eastl::string into a <a href="class_arg_script_1_1_line.html" class="m-doc">ArgScript::<wbr />Line</a> and it process it using the correct <a href="class_arg_script_1_1_i_parser.html" class="m-doc">IParser</a>, determined by the keyword (the first word in the line).</dd>
             <dt>
               <span class="m-doc-wrap-bumper">void <a href="#ac70c0ec2f55c25f6cd6c7f2d74b9507f" class="m-doc">CreateDefinition</a>(</span><span class="m-doc-wrap">const char* pName,
               const <a href="class_arg_script_1_1_line.html" class="m-doc">Line</a>&amp; argumentsLine) <span class="m-label m-flat m-warning">virtual</span></span>
@@ -179,7 +179,7 @@
             <dt>
               <span class="m-doc-wrap-bumper">auto <a href="#a0d1cda471b50d1eb1bcdf1c2c959adfb" class="m-doc">ProcessLineSafe</a>(</span><span class="m-doc-wrap">const char* pString) -&gt; bool <span class="m-label m-flat m-warning">virtual</span></span>
             </dt>
-            <dd>Converts the given string into a <a href="class_arg_script_1_1_line.html" class="m-doc">ArgScript::<wbr />Line</a> and it process it using the correct <a href="class_arg_script_1_1_i_parser.html" class="m-doc">IParser</a>, determined by the keyword (the first word in the line), without throwing any exceptions.</dd>
+            <dd>Converts the given eastl::string into a <a href="class_arg_script_1_1_line.html" class="m-doc">ArgScript::<wbr />Line</a> and it process it using the correct <a href="class_arg_script_1_1_i_parser.html" class="m-doc">IParser</a>, determined by the keyword (the first word in the line), without throwing any exceptions.</dd>
             <dt>
               <span class="m-doc-wrap-bumper">auto <a href="#a6ce1aa6a16e45af58bc0d2206342319f" class="m-doc">CreateDefinitionSafe</a>(</span><span class="m-doc-wrap">const char* pName,
               const <a href="class_arg_script_1_1_line.html" class="m-doc">Line</a>&amp; argumentsLine) -&gt; bool <span class="m-label m-flat m-warning">virtual</span></span>
@@ -214,7 +214,7 @@
             <dt>
               <span class="m-doc-wrap-bumper">auto <a href="#a9b877a901343204e2ed6970f2840f3d6" class="m-doc">GetVariable</a>(</span><span class="m-doc-wrap">const char* pVariableName) -&gt; const char* <span class="m-label m-flat m-warning">virtual</span></span>
             </dt>
-            <dd>Returns the string value of the specified variable, or nullptr if the variable is not mapped.</dd>
+            <dd>Returns the eastl::string value of the specified variable, or nullptr if the variable is not mapped.</dd>
             <dt>
               <span class="m-doc-wrap-bumper">void <a href="#aeaba4d31b725f8b6989d2069d1d8d32b" class="m-doc">SetGlobalVariable</a>(</span><span class="m-doc-wrap">const char* pName,
               const char* pValue) <span class="m-label m-flat m-warning">virtual</span></span>
@@ -239,7 +239,7 @@
             <dt>
               <span class="m-doc-wrap-bumper">auto <a href="#a250cc011a706a76ca2610aa42563a32a" class="m-doc">GetCurrentScope</a>(</span><span class="m-doc-wrap">) const -&gt; const char* <span class="m-label m-flat m-warning">virtual</span></span>
             </dt>
-            <dd>Returns the string used by the current scope, for example, &#x27;<a href="namespace_app.html" class="m-doc">App</a>:&#x27;.</dd>
+            <dd>Returns the eastl::string used by the current scope, for example, &#x27;<a href="namespace_app.html" class="m-doc">App</a>:&#x27;.</dd>
             <dt>
               <span class="m-doc-wrap-bumper">void <a href="#a1c283c792e9240fc92540e53fb9f2439" class="m-doc">AddBlock</a>(</span><span class="m-doc-wrap"><a href="class_arg_script_1_1_i_block.html" class="m-doc">IBlock</a>* pBlock) <span class="m-label m-flat m-warning">virtual</span></span>
             </dt>
@@ -252,15 +252,15 @@
             <dt>
               <span class="m-doc-wrap-bumper">auto <a href="#a2bd97252f53ccee18fa44b43348695be" class="m-doc">ParseBool</a>(</span><span class="m-doc-wrap">const char* pString) const -&gt; bool <span class="m-label m-flat m-warning">virtual</span></span>
             </dt>
-            <dd>Converts the specified string representation of a logical expression to its bool equivalent.</dd>
+            <dd>Converts the specified eastl::string representation of a logical expression to its bool equivalent.</dd>
             <dt>
               <span class="m-doc-wrap-bumper">auto <a href="#af7dfb5ea2a91c3ff0a22e23629fa7338" class="m-doc">ParseFloat</a>(</span><span class="m-doc-wrap">const char* pString) const -&gt; float <span class="m-label m-flat m-warning">virtual</span></span>
             </dt>
-            <dd>Converts the specified string representation of a real number expression to its float equivalent.</dd>
+            <dd>Converts the specified eastl::string representation of a real number expression to its float equivalent.</dd>
             <dt>
               <span class="m-doc-wrap-bumper">auto <a href="#ae51baf1ca88493f63dd4a385abdc5b99" class="m-doc">ParseInt</a>(</span><span class="m-doc-wrap">const char* pString) const -&gt; int <span class="m-label m-flat m-warning">virtual</span></span>
             </dt>
-            <dd>Converts the specified string representation of an integer number expression to its int equivalent.</dd>
+            <dd>Converts the specified eastl::string representation of an integer number expression to its int equivalent.</dd>
             <dt>
               <span class="m-doc-wrap-bumper">auto <a href="#a6eb98597bf282287f4c1eeb271215d0d" class="m-doc">ParseUInt</a>(</span><span class="m-doc-wrap">const char* pString) const -&gt; unsigned int <span class="m-label m-flat m-warning">virtual</span></span>
             </dt>
@@ -326,8 +326,8 @@
               int <a href="#a2c6d00e94c3c67d7f6897c9f32b4d94a" class="m-doc-self">mnFlags</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="ae08ef2dff2c656e7657b25addb8de1e9">
-              intrusive_ptr&lt;<a href="class_arg_script_1_1_i_trace_stream.html" class="m-doc">ITraceStream</a>&gt; <a href="#ae08ef2dff2c656e7657b25addb8de1e9" class="m-doc-self">mpTraceStream</a>
+            <dt id="acd48b666cb44ba14ccc33f6e192c2cec">
+              eastl::intrusive_ptr&lt;<a href="class_arg_script_1_1_i_trace_stream.html" class="m-doc">ITraceStream</a>&gt; <a href="#acd48b666cb44ba14ccc33f6e192c2cec" class="m-doc-self">mpTraceStream</a>
             </dt>
             <dd><span></span></dd>
             <dt id="a140b03cc864c9812e5a30ca3d8ca2aaf">
@@ -350,68 +350,68 @@
               void* <a href="#a423a3c10c908e2c069b075bd8dd22073" class="m-doc-self">mpData</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="ac0edf803178e40c9749308f27e0d9c6c">
-              hash_map&lt;string, intrusive_ptr&lt;<a href="class_arg_script_1_1_i_parser.html" class="m-doc">IParser</a>&gt;&gt; <a href="#ac0edf803178e40c9749308f27e0d9c6c" class="m-doc-self">mParsers</a>
+            <dt id="a96d4decec40963be8925b0c2dc45d64a">
+              eastl::hash_map&lt;eastl::string, eastl::intrusive_ptr&lt;<a href="class_arg_script_1_1_i_parser.html" class="m-doc">IParser</a>&gt;&gt; <a href="#a96d4decec40963be8925b0c2dc45d64a" class="m-doc-self">mParsers</a>
             </dt>
             <dd><span></span></dd>
             <dt id="a74b1a7cbc5abb990ff09407f24d3eb5f">
               <a href="class_arg_script_1_1_lexer.html" class="m-doc">Lexer</a> <a href="#a74b1a7cbc5abb990ff09407f24d3eb5f" class="m-doc-self">mLexer</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="a0dea059f81b18f74b3c5970ab6b48def">
-              hash_map&lt;string, int&gt; <a href="#a0dea059f81b18f74b3c5970ab6b48def" class="m-doc-self">mDefinitions</a>
+            <dt id="afddb1989fbb2a49bfabc0547d0ac9167">
+              eastl::hash_map&lt;eastl::string, int&gt; <a href="#afddb1989fbb2a49bfabc0547d0ac9167" class="m-doc-self">mDefinitions</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="ab91439ba6f372ef61e3b90fe1e466c72">
-              hash_map&lt;string, string&gt; <a href="#ab91439ba6f372ef61e3b90fe1e466c72" class="m-doc-self">mVariables</a>
+            <dt id="af01f523df624071eefbf08cb8dfa2af2">
+              eastl::hash_map&lt;eastl::string, eastl::string&gt; <a href="#af01f523df624071eefbf08cb8dfa2af2" class="m-doc-self">mVariables</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="ae5061aa8ce4f30cb40e6cae06a3c5d44">
-              hash_map&lt;string, string&gt; <a href="#ae5061aa8ce4f30cb40e6cae06a3c5d44" class="m-doc-self">mGlobalVariables</a>
+            <dt id="aae7000b9452c4ffa861e0b0d9f267665">
+              eastl::hash_map&lt;eastl::string, eastl::string&gt; <a href="#aae7000b9452c4ffa861e0b0d9f267665" class="m-doc-self">mGlobalVariables</a>
             </dt>
             <dd><span></span></dd>
             <dt id="a235babd5c80917a70c35acbb5bc60cd0">
               int <a href="#a235babd5c80917a70c35acbb5bc60cd0" class="m-doc-self">field_CC</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="ae14196189880a88f7b5789fca85fda9a">
-              string <a href="#ae14196189880a88f7b5789fca85fda9a" class="m-doc-self">field_D0</a>
+            <dt id="a9c739292cb65c856b8b919044934c41f">
+              eastl::string <a href="#a9c739292cb65c856b8b919044934c41f" class="m-doc-self">field_D0</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="ade92a68bae37981137aae3706781a3c4">
-              string <a href="#ade92a68bae37981137aae3706781a3c4" class="m-doc-self">field_E0</a>
+            <dt id="aca84e75ca84b56e473a70d483f8b39f3">
+              eastl::string <a href="#aca84e75ca84b56e473a70d483f8b39f3" class="m-doc-self">field_E0</a>
             </dt>
             <dd><span></span></dd>
             <dt id="a093f210d5f1ee1d999b878854affc21d">
               int <a href="#a093f210d5f1ee1d999b878854affc21d" class="m-doc-self">field_F0</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="a1dd88bd2b6743ba34392589a26411ceb">
-              string <a href="#a1dd88bd2b6743ba34392589a26411ceb" class="m-doc-self">field_F4</a>
+            <dt id="aa38ea3cc19903683ee5291e46f25f4ca">
+              eastl::string <a href="#aa38ea3cc19903683ee5291e46f25f4ca" class="m-doc-self">field_F4</a>
             </dt>
             <dd><span></span></dd>
             <dt id="a62510c495d0cc0dc09718b5cf298e985">
               int <a href="#a62510c495d0cc0dc09718b5cf298e985" class="m-doc-self">field_104</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="aa34f405ffa4252002d8a23737d127922">
-              vector&lt;<a href="class_arg_script_1_1_i_block.html" class="m-doc">IBlock</a>*&gt; <a href="#aa34f405ffa4252002d8a23737d127922" class="m-doc-self">mBlocks</a>
+            <dt id="a57b44c41c5bfb739668a7d9a98659103">
+              eastl::vector&lt;<a href="class_arg_script_1_1_i_block.html" class="m-doc">IBlock</a>*&gt; <a href="#a57b44c41c5bfb739668a7d9a98659103" class="m-doc-self">mBlocks</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="a2c94f23e97b3a96ccec567cb6a180c23">
-              vector&lt;pair&lt;<a href="class_arg_script_1_1_i_special_block.html" class="m-doc">ISpecialBlock</a>*, const char*&gt;&gt; <a href="#a2c94f23e97b3a96ccec567cb6a180c23" class="m-doc-self">mSpecialBlocks</a>
+            <dt id="a5f48a81527aaf75d1df8e47fccc9f9af">
+              eastl::vector&lt;eastl::pair&lt;<a href="class_arg_script_1_1_i_special_block.html" class="m-doc">ISpecialBlock</a>*, const char*&gt;&gt; <a href="#a5f48a81527aaf75d1df8e47fccc9f9af" class="m-doc-self">mSpecialBlocks</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="a318ff8114820318c094dac8a1be0ab78">
-              string <a href="#a318ff8114820318c094dac8a1be0ab78" class="m-doc-self">mCurrentScope</a>
+            <dt id="adcf85e2a1fb56458fe906895e1a0b141">
+              eastl::string <a href="#adcf85e2a1fb56458fe906895e1a0b141" class="m-doc-self">mCurrentScope</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="a54632e3f68a313fd02e759e9d23e9b9a">
-              vector&lt;size_t&gt; <a href="#a54632e3f68a313fd02e759e9d23e9b9a" class="m-doc-self">mScopeLenghts</a>
+            <dt id="af06a06182248720b4acaaedb645be06d">
+              eastl::vector&lt;size_t&gt; <a href="#af06a06182248720b4acaaedb645be06d" class="m-doc-self">mScopeLenghts</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="a9a6747f7ac905b33a31c514e04278570">
-              string <a href="#a9a6747f7ac905b33a31c514e04278570" class="m-doc-self">field_154</a>
+            <dt id="a40e8ddecd417eac18f034150a9937e08">
+              eastl::string <a href="#a40e8ddecd417eac18f034150a9937e08" class="m-doc-self">field_154</a>
             </dt>
             <dd><span></span></dd>
             <dt id="ad9950852756ec86bc018ce8c3ebbc2b1">
@@ -426,8 +426,8 @@
               <a href="class_arg_script_1_1_line.html" class="m-doc">ArgScript::<wbr />Line</a> <a href="#a73ea2b6cbc447b43356f9b2d2e266b40" class="m-doc-self">mTempLine</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="a56a2bfdbdda9b6662159e74744954e33">
-              string <a href="#a56a2bfdbdda9b6662159e74744954e33" class="m-doc-self">mTempString</a>
+            <dt id="adac9e184ea61faedc6946b415d7c15d3">
+              eastl::string <a href="#adac9e184ea61faedc6946b415d7c15d3" class="m-doc-self">mTempString</a>
             </dt>
             <dd><span></span></dd>
           </dl>
@@ -609,7 +609,7 @@
             <h3>
               <span class="m-doc-wrap-bumper">void ArgScript::<wbr />FormatParser::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#aec7a581274e7b54e56ad35c52f794690" class="m-doc-self">ProcessLine</a>(</span><span class="m-doc-wrap">const char* pString) <span class="m-label m-warning">virtual</span></span></span>
             </h3>
-            <p>Converts the given string into a <a href="class_arg_script_1_1_line.html" class="m-doc">ArgScript::<wbr />Line</a> and it process it using the correct <a href="class_arg_script_1_1_i_parser.html" class="m-doc">IParser</a>, determined by the keyword (the first word in the line).</p>
+            <p>Converts the given eastl::string into a <a href="class_arg_script_1_1_line.html" class="m-doc">ArgScript::<wbr />Line</a> and it process it using the correct <a href="class_arg_script_1_1_i_parser.html" class="m-doc">IParser</a>, determined by the keyword (the first word in the line).</p>
             <table class="m-table m-fullwidth m-flat">
               <thead>
                 <tr><th colspan="2">Parameters</th></tr>
@@ -617,7 +617,7 @@
               <tbody>
                 <tr>
                   <td style="width: 1%">pString</td>
-                  <td>The input line string.</td>
+                  <td>The input line eastl::string.</td>
                 </tr>
               </tbody>
               <thead>
@@ -732,7 +732,7 @@
             <h3>
               <span class="m-doc-wrap-bumper">bool ArgScript::<wbr />FormatParser::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a0d1cda471b50d1eb1bcdf1c2c959adfb" class="m-doc-self">ProcessLineSafe</a>(</span><span class="m-doc-wrap">const char* pString) <span class="m-label m-warning">virtual</span></span></span>
             </h3>
-            <p>Converts the given string into a <a href="class_arg_script_1_1_line.html" class="m-doc">ArgScript::<wbr />Line</a> and it process it using the correct <a href="class_arg_script_1_1_i_parser.html" class="m-doc">IParser</a>, determined by the keyword (the first word in the line), without throwing any exceptions.</p>
+            <p>Converts the given eastl::string into a <a href="class_arg_script_1_1_line.html" class="m-doc">ArgScript::<wbr />Line</a> and it process it using the correct <a href="class_arg_script_1_1_i_parser.html" class="m-doc">IParser</a>, determined by the keyword (the first word in the line), without throwing any exceptions.</p>
             <table class="m-table m-fullwidth m-flat">
               <thead>
                 <tr><th colspan="2">Parameters</th></tr>
@@ -740,7 +740,7 @@
               <tbody>
                 <tr>
                   <td style="width: 1%">pString</td>
-                  <td>The input line string.</td>
+                  <td>The input line eastl::string.</td>
                 </tr>
               </tbody>
               <tfoot>
@@ -844,17 +844,17 @@
                 </tr>
                 <tr>
                   <td>pValue</td>
-                  <td>The c-string value of the variable.</td>
+                  <td>The c-eastl::string value of the variable.</td>
                 </tr>
               </tbody>
             </table>
-<p>The value is always a string, which can contain other variables, referencing them with $ (and usually {} too; for example, to get the value of variable &#x27;version&#x27;, one would use &#x27;${version}&#x27; or &#x27;$version&#x27;). This variable will be added to the current scope.</p>
+<p>The value is always a eastl::string, which can contain other variables, referencing them with $ (and usually {} too; for example, to get the value of variable &#x27;version&#x27;, one would use &#x27;${version}&#x27; or &#x27;$version&#x27;). This variable will be added to the current scope.</p>
           </div></section>
           <section class="m-doc-details" id="a9b877a901343204e2ed6970f2840f3d6"><div>
             <h3>
               <span class="m-doc-wrap-bumper">const char* ArgScript::<wbr />FormatParser::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a9b877a901343204e2ed6970f2840f3d6" class="m-doc-self">GetVariable</a>(</span><span class="m-doc-wrap">const char* pVariableName) <span class="m-label m-warning">virtual</span></span></span>
             </h3>
-            <p>Returns the string value of the specified variable, or nullptr if the variable is not mapped.</p>
+            <p>Returns the eastl::string value of the specified variable, or nullptr if the variable is not mapped.</p>
             <table class="m-table m-fullwidth m-flat">
               <thead>
                 <tr><th colspan="2">Parameters</th></tr>
@@ -885,11 +885,11 @@
                 </tr>
                 <tr>
                   <td>pValue</td>
-                  <td>The c-string value of the variable.</td>
+                  <td>The c-eastl::string value of the variable.</td>
                 </tr>
               </tbody>
             </table>
-<p>The value is always a string, which can contain other variables, referencing them with $ (and usually {} too; for example, to get the value of variable &#x27;version&#x27;, one would use &#x27;${version}&#x27; or &#x27;$version&#x27;). To access global variables, their name must be prefixed with &#x27;:&#x27;. For example, to get the global variable &#x27;build&#x27;, one would use &#x27;$:build&#x27;.</p>
+<p>The value is always a eastl::string, which can contain other variables, referencing them with $ (and usually {} too; for example, to get the value of variable &#x27;version&#x27;, one would use &#x27;${version}&#x27; or &#x27;$version&#x27;). To access global variables, their name must be prefixed with &#x27;:&#x27;. For example, to get the global variable &#x27;build&#x27;, one would use &#x27;$:build&#x27;.</p>
           </div></section>
           <section class="m-doc-details" id="af57ed0d6ea6dcf395fa0629056d61228"><div>
             <h3>
@@ -940,8 +940,8 @@
             <h3>
               <span class="m-doc-wrap-bumper">const char* ArgScript::<wbr />FormatParser::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a250cc011a706a76ca2610aa42563a32a" class="m-doc-self">GetCurrentScope</a>(</span><span class="m-doc-wrap">) const <span class="m-label m-warning">virtual</span></span></span>
             </h3>
-            <p>Returns the string used by the current scope, for example, &#x27;<a href="namespace_app.html" class="m-doc">App</a>:&#x27;.</p>
-<p>The string is made by appending &#x27;:&#x27; after all the scope parents and the scope name. Variable names are the result of appending this string with the variable name.</p>
+            <p>Returns the eastl::string used by the current scope, for example, &#x27;<a href="namespace_app.html" class="m-doc">App</a>:&#x27;.</p>
+<p>The eastl::string is made by appending &#x27;:&#x27; after all the scope parents and the scope name. Variable names are the result of appending this eastl::string with the variable name.</p>
           </div></section>
           <section class="m-doc-details" id="a1c283c792e9240fc92540e53fb9f2439"><div>
             <h3>
@@ -988,7 +988,7 @@
             <h3>
               <span class="m-doc-wrap-bumper">bool ArgScript::<wbr />FormatParser::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a2bd97252f53ccee18fa44b43348695be" class="m-doc-self">ParseBool</a>(</span><span class="m-doc-wrap">const char* pString) const <span class="m-label m-warning">virtual</span></span></span>
             </h3>
-            <p>Converts the specified string representation of a logical expression to its bool equivalent.</p>
+            <p>Converts the specified eastl::string representation of a logical expression to its bool equivalent.</p>
             <table class="m-table m-fullwidth m-flat">
               <thead>
                 <tr><th colspan="2">Parameters</th></tr>
@@ -996,7 +996,7 @@
               <tbody>
                 <tr>
                   <td style="width: 1%">pString</td>
-                  <td>The string to parse.</td>
+                  <td>The eastl::string to parse.</td>
                 </tr>
               </tbody>
               <thead>
@@ -1015,7 +1015,7 @@
             <h3>
               <span class="m-doc-wrap-bumper">float ArgScript::<wbr />FormatParser::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#af7dfb5ea2a91c3ff0a22e23629fa7338" class="m-doc-self">ParseFloat</a>(</span><span class="m-doc-wrap">const char* pString) const <span class="m-label m-warning">virtual</span></span></span>
             </h3>
-            <p>Converts the specified string representation of a real number expression to its float equivalent.</p>
+            <p>Converts the specified eastl::string representation of a real number expression to its float equivalent.</p>
             <table class="m-table m-fullwidth m-flat">
               <thead>
                 <tr><th colspan="2">Parameters</th></tr>
@@ -1023,7 +1023,7 @@
               <tbody>
                 <tr>
                   <td style="width: 1%">pString</td>
-                  <td>The string to parse.</td>
+                  <td>The eastl::string to parse.</td>
                 </tr>
               </tbody>
               <thead>
@@ -1042,7 +1042,7 @@
             <h3>
               <span class="m-doc-wrap-bumper">int ArgScript::<wbr />FormatParser::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ae51baf1ca88493f63dd4a385abdc5b99" class="m-doc-self">ParseInt</a>(</span><span class="m-doc-wrap">const char* pString) const <span class="m-label m-warning">virtual</span></span></span>
             </h3>
-            <p>Converts the specified string representation of an integer number expression to its int equivalent.</p>
+            <p>Converts the specified eastl::string representation of an integer number expression to its int equivalent.</p>
             <table class="m-table m-fullwidth m-flat">
               <thead>
                 <tr><th colspan="2">Parameters</th></tr>
@@ -1050,7 +1050,7 @@
               <tbody>
                 <tr>
                   <td style="width: 1%">pString</td>
-                  <td>The string to parse.</td>
+                  <td>The eastl::string to parse.</td>
                 </tr>
               </tbody>
               <thead>
@@ -1077,7 +1077,7 @@
               <tbody>
                 <tr>
                   <td style="width: 1%">pString</td>
-                  <td>The string to parse.</td>
+                  <td>The eastl::string to parse.</td>
                 </tr>
               </tbody>
               <thead>
@@ -1103,7 +1103,7 @@
               <tbody>
                 <tr>
                   <td style="width: 1%">pString</td>
-                  <td>The string to parse.</td>
+                  <td>The eastl::string to parse.</td>
                 </tr>
               </tbody>
               <thead>
@@ -1116,7 +1116,7 @@
                 </tr>
               </tbody>
             </table>
-<p>The numbers are parsed using the ParseFloat(const char*) function. If only one number is specified, the vector will be filled with that number.</p><p>Examples:</p><ul><li>string &#x27;3.4, sqr(4)&#x27; will return Vector2(3.4, 16).</li><li>string &#x27;8&#x27; will return Vector2(8.0, 8.0).</li></ul>
+<p>The numbers are parsed using the ParseFloat(const char*) function. If only one number is specified, the vector will be filled with that number.</p><p>Examples:</p><ul><li>eastl::string &#x27;3.4, sqr(4)&#x27; will return Vector2(3.4, 16).</li><li>eastl::string &#x27;8&#x27; will return Vector2(8.0, 8.0).</li></ul>
           </div></section>
           <section class="m-doc-details" id="ae23ca4730e3a0b474f306b5b95812dbd"><div>
             <h3>
@@ -1130,7 +1130,7 @@
               <tbody>
                 <tr>
                   <td style="width: 1%">pString</td>
-                  <td>The string to parse.</td>
+                  <td>The eastl::string to parse.</td>
                 </tr>
               </tbody>
               <thead>
@@ -1143,7 +1143,7 @@
                 </tr>
               </tbody>
             </table>
-<p>The numbers are parsed using the ParseFloat(const char*) function. If only one number is specified, the vector will be filled with that number.</p><p>Examples:</p><ul><li>string &#x27;3.4, sqr(4), 1.0 + 2&#x27; will return Vector3(3.4, 16.0, 3.0).</li><li>string &#x27;8&#x27; will return Vector3(8.0, 8.0, 8.0).</li></ul>
+<p>The numbers are parsed using the ParseFloat(const char*) function. If only one number is specified, the vector will be filled with that number.</p><p>Examples:</p><ul><li>eastl::string &#x27;3.4, sqr(4), 1.0 + 2&#x27; will return Vector3(3.4, 16.0, 3.0).</li><li>eastl::string &#x27;8&#x27; will return Vector3(8.0, 8.0, 8.0).</li></ul>
           </div></section>
           <section class="m-doc-details" id="a48afc8677b8ecf91a9cae0aa0420aab7"><div>
             <h3>
@@ -1157,7 +1157,7 @@
               <tbody>
                 <tr>
                   <td style="width: 1%">pString</td>
-                  <td>The string to parse.</td>
+                  <td>The eastl::string to parse.</td>
                 </tr>
               </tbody>
               <thead>
@@ -1170,7 +1170,7 @@
                 </tr>
               </tbody>
             </table>
-<p>The numbers are parsed using the ParseFloat(const char*) function. If only one number is specified, the vector will be filled with that number.</p><p>Examples:</p><ul><li>string &#x27;3.4, sqr(4), 1.0 + 2, 0&#x27; will return Vector4(3.4, 16.0, 3.0, 0.0).</li><li>string &#x27;8&#x27; will return Vector4(8.0, 8.0, 8.0, 8.0).</li></ul>
+<p>The numbers are parsed using the ParseFloat(const char*) function. If only one number is specified, the vector will be filled with that number.</p><p>Examples:</p><ul><li>eastl::string &#x27;3.4, sqr(4), 1.0 + 2, 0&#x27; will return Vector4(3.4, 16.0, 3.0, 0.0).</li><li>eastl::string &#x27;8&#x27; will return Vector4(8.0, 8.0, 8.0, 8.0).</li></ul>
           </div></section>
           <section class="m-doc-details" id="a09198b218471da7f806e72c0d6b753ac"><div>
             <h3>
@@ -1184,7 +1184,7 @@
               <tbody>
                 <tr>
                   <td style="width: 1%">pString</td>
-                  <td>The string to parse.</td>
+                  <td>The eastl::string to parse.</td>
                 </tr>
               </tbody>
               <thead>
@@ -1197,7 +1197,7 @@
                 </tr>
               </tbody>
             </table>
-<p>The numbers are parsed using the ParseFloat(const char*) function. If only one number is specified, the color values will be filled with that number. This is equivalent to ParseVector3(const char*). Color numbers are usually in the range [0.0, 1.0].</p><p>Examples:</p><ul><li>string &#x27;0.4, sqr(0.5), 0.5 * 2&#x27; will return ColorRGB(0.4, 0.25, 1.0).</li><li>string &#x27;0.2&#x27; will return ColorRGB(0.2, 0.2, 0.2).</li></ul>
+<p>The numbers are parsed using the ParseFloat(const char*) function. If only one number is specified, the color values will be filled with that number. This is equivalent to ParseVector3(const char*). Color numbers are usually in the range [0.0, 1.0].</p><p>Examples:</p><ul><li>eastl::string &#x27;0.4, sqr(0.5), 0.5 * 2&#x27; will return ColorRGB(0.4, 0.25, 1.0).</li><li>eastl::string &#x27;0.2&#x27; will return ColorRGB(0.2, 0.2, 0.2).</li></ul>
           </div></section>
           <section class="m-doc-details" id="ae8da218711a4845f506d60b89b5c5dce"><div>
             <h3>
@@ -1211,7 +1211,7 @@
               <tbody>
                 <tr>
                   <td style="width: 1%">pString</td>
-                  <td>The string to parse.</td>
+                  <td>The eastl::string to parse.</td>
                 </tr>
               </tbody>
               <thead>
@@ -1224,7 +1224,7 @@
                 </tr>
               </tbody>
             </table>
-<p>The numbers are parsed using the ParseFloat(const char*) function. If only three numbers are specified, the alpha value will be assigned to 1.0. Color numbers are usually in the range [0.0, 1.0].</p><p>Examples:</p><ul><li>string &#x27;0.4, sqr(0.5), 0.5 * 2&#x27; will return ColorRGB(0.4, 0.25, 1.0, 1.0).</li></ul>
+<p>The numbers are parsed using the ParseFloat(const char*) function. If only three numbers are specified, the alpha value will be assigned to 1.0. Color numbers are usually in the range [0.0, 1.0].</p><p>Examples:</p><ul><li>eastl::string &#x27;0.4, sqr(0.5), 0.5 * 2&#x27; will return ColorRGB(0.4, 0.25, 1.0, 1.0).</li></ul>
           </div></section>
           <section class="m-doc-details" id="ae71b14a6b4f726e9c5d200123ccf27e4"><div>
             <h3>

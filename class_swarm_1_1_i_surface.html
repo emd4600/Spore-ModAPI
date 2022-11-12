@@ -49,6 +49,98 @@
           <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_i_surface_8h.html">&lt;Spore/Swarm/ISurface.h&gt;</a></div>
         </h1>
         <p><span></span></p>
+        <div class="m-block m-default">
+          <h3>Contents</h3>
+          <ul>
+            <li>
+              Reference
+              <ul>
+                <li><a href="#pub-methods">Public functions</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+        <section id="pub-methods">
+          <h2><a href="#pub-methods">Public functions</a></h2>
+          <dl class="m-doc">
+            <dt id="ac8fcb8adc1ada6645db5828e1b3b17b3">
+              <span class="m-doc-wrap-bumper">auto <a href="#ac8fcb8adc1ada6645db5828e1b3b17b3" class="m-doc-self">Release</a>(</span><span class="m-doc-wrap">) -&gt; int <span class="m-label m-flat m-warning">pure virtual</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a1ecc3682ac4734cc5a779c557cb3b397">
+              <span class="m-doc-wrap-bumper">auto <a href="#a1ecc3682ac4734cc5a779c557cb3b397" class="m-doc-self">AddRef</a>(</span><span class="m-doc-wrap">) -&gt; int <span class="m-label m-flat m-warning">pure virtual</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a9a8da4f9e27ae84421fb05f8750cc230">
+              <span class="m-doc-wrap-bumper">auto <a href="#a9a8da4f9e27ae84421fb05f8750cc230" class="m-doc-self">ApplySurface</a>(</span><span class="m-doc-wrap">float,
+              const <a href="struct_math_1_1_vector3.html" class="m-doc">Vector3</a>&amp;,
+              <a href="struct_math_1_1_vector3.html" class="m-doc">Vector3</a>&amp;,
+              <a href="struct_math_1_1_vector3.html" class="m-doc">Vector3</a>&amp;,
+              void*,
+              void*) -&gt; bool <span class="m-label m-flat m-warning">pure virtual</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="abb50b408dd282081b95a75e66c92c0e1">
+              <span class="m-doc-wrap-bumper">auto <a href="#abb50b408dd282081b95a75e66c92c0e1" class="m-doc-self">DistanceFromSurface</a>(</span><span class="m-doc-wrap">const <a href="struct_math_1_1_vector3.html" class="m-doc">Vector3</a>&amp; srcPoint,
+              void*,
+              void*) -&gt; float <span class="m-label m-flat m-warning">pure virtual</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a0d4316c497ffb4f7b4f090a7d4d5fb18">
+              <span class="m-doc-wrap-bumper">auto <a href="#a0d4316c497ffb4f7b4f090a7d4d5fb18" class="m-doc-self">FindClosestSurfacePoint</a>(</span><span class="m-doc-wrap">const <a href="struct_math_1_1_vector3.html" class="m-doc">Vector3</a>&amp; srcPoint,
+              <a href="struct_math_1_1_vector3.html" class="m-doc">Vector3</a>&amp;,
+              <a href="struct_math_1_1_vector3.html" class="m-doc">Vector3</a>*,
+              <a href="struct_math_1_1_quaternion.html" class="m-doc">Quaternion</a>*,
+              void*,
+              void*) -&gt; bool <span class="m-label m-flat m-warning">pure virtual</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="acde3fece013d3fad2260d071c87ef85d">
+              <span class="m-doc-wrap-bumper">auto <a href="#acde3fece013d3fad2260d071c87ef85d" class="m-doc-self">MovePointAlongSurface</a>(</span><span class="m-doc-wrap">const <a href="struct_math_1_1_vector3.html" class="m-doc">Vector3</a>&amp; srcPoint,
+              <a href="struct_math_1_1_vector3.html" class="m-doc">Vector3</a>&amp;,
+              <a href="struct_math_1_1_vector3.html" class="m-doc">Vector3</a>*,
+              <a href="struct_math_1_1_quaternion.html" class="m-doc">Quaternion</a>*,
+              void*,
+              void*) -&gt; bool <span class="m-label m-flat m-warning">pure virtual</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="aa1c07d3ffe688e29c3de67ee794c4ddc">
+              <span class="m-doc-wrap-bumper">void <a href="#aa1c07d3ffe688e29c3de67ee794c4ddc" class="m-doc-self">func18h</a>(</span><span class="m-doc-wrap">int,
+              int,
+              int) <span class="m-label m-flat m-warning">pure virtual</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="ad4a4d65600d358027481d88ec0e7ca90">
+              <span class="m-doc-wrap-bumper">auto <a href="#ad4a4d65600d358027481d88ec0e7ca90" class="m-doc-self">NumStateBytes</a>(</span><span class="m-doc-wrap">) -&gt; int <span class="m-label m-flat m-warning">pure virtual</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a2b65f6a3c52d3018bd839ace040fd668">
+              <span class="m-doc-wrap-bumper">void <a href="#a2b65f6a3c52d3018bd839ace040fd668" class="m-doc-self">InitStateData</a>(</span><span class="m-doc-wrap"><a href="struct_swarm_1_1c_surface_info.html" class="m-doc">cSurfaceInfo</a>* surfaceInfo,
+              const <a href="class_transform.html" class="m-doc">Transform</a>&amp;,
+              const <a href="class_transform.html" class="m-doc">Transform</a>&amp;,
+              void* data) <span class="m-label m-flat m-warning">pure virtual</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a392316cfcfca29d87123dfe9f102662a">
+              <span class="m-doc-wrap-bumper">void <a href="#a392316cfcfca29d87123dfe9f102662a" class="m-doc-self">ReleaseStateData</a>(</span><span class="m-doc-wrap">void*) <span class="m-label m-flat m-warning">pure virtual</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="ae2a985998ae6a396f09058720d793d17">
+              <span class="m-doc-wrap-bumper">auto <a href="#ae2a985998ae6a396f09058720d793d17" class="m-doc-self">NumParticleBytes</a>(</span><span class="m-doc-wrap">) -&gt; int <span class="m-label m-flat m-warning">pure virtual</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a2a00f2b4bd0655837917e70bbcf8d0f7">
+              <span class="m-doc-wrap-bumper">void <a href="#a2a00f2b4bd0655837917e70bbcf8d0f7" class="m-doc-self">InitParticleData</a>(</span><span class="m-doc-wrap"><a href="struct_swarm_1_1c_surface_info.html" class="m-doc">cSurfaceInfo</a>* surfaceInfo,
+              void* data,
+              <a href="class_swarm_1_1_i_visual_effect.html" class="m-doc">IVisualEffect</a>* effect) <span class="m-label m-flat m-warning">pure virtual</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="ac9e7be71729f9533542691b0d03633d1">
+              <span class="m-doc-wrap-bumper">void <a href="#ac9e7be71729f9533542691b0d03633d1" class="m-doc-self">ReleaseParticleData</a>(</span><span class="m-doc-wrap">void*) <span class="m-label m-flat m-warning">pure virtual</span></span>
+            </dt>
+            <dd><span></span></dd>
+          </dl>
+        </section>
       </div>
     </div>
   </div>
