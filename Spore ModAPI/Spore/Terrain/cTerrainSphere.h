@@ -25,6 +25,7 @@
 #include <Spore\App\IMessageListener.h>
 #include <Spore\Graphics\ILayer.h>
 #include <Spore\Graphics\Texture.h>
+#include <Spore\Graphics\IAmbientOccluder.h>
 #include <Spore\ResourceID.h>
 #include <EASTL\vector.h>
 
@@ -35,11 +36,6 @@
 
 namespace Terrain
 {
-	// related with ambient occlusion??
-	class unk_class_0x13F3628 {
-		virtual void unk() = 0;
-	};
-
 	struct cTerrainSphereRenderingChunk
 	{
 		/* 00h */	cTerrainSphereQuad* mpQuad;
@@ -53,7 +49,7 @@ namespace Terrain
 		: public ITerrain
 		, public Graphics::ILayer
 		, public App::IMessageListener
-		, public unk_class_0x13F3628
+		, public Graphics::IAmbientOccluder
 		, public Resource::ResourceObject
 	{
 	public:

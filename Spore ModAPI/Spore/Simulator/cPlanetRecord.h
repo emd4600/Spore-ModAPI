@@ -240,7 +240,9 @@ namespace Simulator
 
 	inline ResourceKey cPlanetRecord::GenerateTerrainKey()
 	{
-		return IDGenerator.Generate(0x00B1B104, 0x84, 0, 0xAF, 0);
+		ResourceKey dst;
+		IDGenerator.Generate(dst, 0x00B1B104, 0x84, 0, 0xAF, 0);
+		return dst;
 	}
 
 	inline void cPlanetRecord::SetGeneratedTerrainKey(const ResourceKey& key)

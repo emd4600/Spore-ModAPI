@@ -36,6 +36,7 @@
 #include <Spore\Editors\EditorRequest.h>
 #include <Spore\Editors\EditorLimits.h>
 #include <Spore\Editors\INameableEntity.h>
+#include <Spore\Editors\cEditorSkin.h>
 
 #include <Spore\Graphics\Model.h>
 #include <Spore\Graphics\ILayer.h>
@@ -262,7 +263,7 @@ namespace Editors
 		/* 144h */	bool field_144;  // true
 		/* 148h */	ObjectPtr field_148;
 		/* 14Ch */	int field_14C; // vertebra? only present in creature-like editor
-		/* 150h */	ObjectPtr field_150;  // something related with painting?  uses sub_4C3E70 to return something that parts also use
+		/* 150h */	cEditorSkinPtr mpEditorSkin;  // something related with painting?  uses sub_4C3E70 to return something that parts also use
 		/* 154h */	int field_154;
 
 		//// just guesses, apparently it calls DefaultRefCounted.Unuse()
@@ -341,7 +342,7 @@ namespace Editors
 		/* 280h */	uint32_t mSkyBoxEffectID;
 		/* 284h */	int field_284;
 		/* 288h */	float field_288;  // 1.2
-		/* 28Ch */	int field_28C;
+		/* 28Ch */	TexturePtr mpThumbnailTexture;
 		/* 290h */	int field_290;
 		/* 294h */	IShadowWorldPtr mpShadowWorld;
 		/* 298h */	Graphics::ShadowMapInfo* mpShadowMapInfo;
@@ -350,7 +351,7 @@ namespace Editors
 		/* 2A4h */	int field_2A4;
 		/// The save extension key which will be parsed both into a key and a three letter extension.
 		/* 2A8h */	uint32_t mSaveExtension;
-		/// The save directory key.
+		/// The save directory key, Resource::SaveAreaID
 		/* 2ACh */	uint32_t mSaveDirectory;
 		/* 2B0h */	bool mIsActive;
 		/* 2B1h */	char field_2B1;  // not initialized

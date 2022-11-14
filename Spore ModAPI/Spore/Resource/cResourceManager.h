@@ -174,10 +174,10 @@ namespace Resource
 		DeclareAddress(SetResourceFactory);
 		DeclareAddress(GetResourceFactory);
 		DeclareAddress(GetResourceFactories);
-		DeclareAddress(AddDatabase);
+		DeclareAddress(AddDBPF);
 		DeclareAddress(GetPriority);
-		DeclareAddress(GetDatabase);
-		DeclareAddress(GetAllDatabases);
+		DeclareAddress(GetDBPF);
+		DeclareAddress(GetAllDBPFs);
 		DeclareAddress(func60h);
 		DeclareAddress(func64h);
 		DeclareAddress(GetResourceCache);

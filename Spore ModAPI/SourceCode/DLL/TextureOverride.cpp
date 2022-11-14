@@ -73,8 +73,8 @@ Graphics::cModelInstance* CopyMesh(Graphics::cModelInstance* mesh) {
 			int size = material->states[0]->instancedSize;
 			void* buffer = _aligned_malloc(size, 16);
 			memcpy_s(buffer, size, material->states[0], size);
-			uint32_t id = MaterialManager.AssignRWMaterial((RenderWare::CompiledState*)buffer, mesh->mpRenderWare.get());
-			copy->mMaterials.push_back(MaterialManager.GetMaterial(id));
+			uint32_t id = MaterialManager.GetIDFromCompiledState((RenderWare::CompiledState*)buffer, mesh->mpRenderWare.get());
+			copy->mMaterials.push_back(MaterialManager.GetMaterialInstance(id));
 		}
 	}
 	return copy;

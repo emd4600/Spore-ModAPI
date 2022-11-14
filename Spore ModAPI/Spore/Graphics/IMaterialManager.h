@@ -82,26 +82,27 @@ namespace Graphics
 		/* 04h */	virtual void Release() = 0;
 		/* 08h */	virtual ~IMaterialManager() = 0;
 
-		/* 0Ch */	virtual bool func0Ch() = 0;
-		/* 10h */	virtual bool func10h() = 0;
-		/* 14h */	virtual bool func14h() = 0;
-		/* 18h */	virtual void func18h(int) = 0;  // parse smt file?
-		/* 1Ch */	virtual bool func1Ch() = 0;
-		/* 20h */	virtual void func20h(int, int) = 0;
+		/* 0Ch */	virtual bool Initialize() = 0;
+		/* 10h */	virtual bool Dispose() = 0;
+		/* 14h */	virtual bool Update() = 0;
+		/* 18h */	virtual void SetScriptFile(const char*) = 0;
+		/* 1Ch */	virtual bool LoadMaterials() = 0;
+
+		/* 20h */	virtual void HasMaterial2(uint32_t instanceID, uint32_t groupID) = 0;
 
 		///
 		/// Tells whether a material with this materialID is valid (that is, it has at least one compiled state). 
 		/// If the materialID wasn't assigned to any material, it will return false.
 		/// @param materialID The ID the material is assigned to.
 		///
-		/* 24h */	virtual bool IsValidMaterial(uint32_t materialID) = 0;
+		/* 24h */	virtual bool HasMaterial(uint32_t materialID) = 0;
 
 		///
 		/// Gets the material assigned to the given ID. If no material exists with that ID, a new one will be created;
 		/// therefore, this method always returns an object.
 		/// @param materialID The ID the material is assigned to.
 		///
-		/* 28h */	virtual Material* GetMaterial(uint32_t materialID) = 0;
+		/* 28h */	virtual Material* GetMaterialInstance(uint32_t materialID) = 0;
 		
 		///
 		/// Gets all the materials assigned to the IDs specified. If a certain ID does not have any material assigned,
@@ -110,7 +111,7 @@ namespace Graphics
 		/// @param[in] pMaterialIDs The IDs of the materials to get.
 		/// @param[out] pDst A Material* array of nCount elements where the Material pointers will be written.
 		///
-		/* 2Ch */	virtual void GetMaterials(size_t count, const uint32_t* pMaterialIDs, Material** pDst) = 0;
+		/* 2Ch */	virtual void GetMaterialInstances(size_t count, const uint32_t* pMaterialIDs, Material** pDst) = 0;
 
 
 		/* 30h */	virtual Material* func30h(uint32_t, int) = 0;
@@ -119,15 +120,13 @@ namespace Graphics
 		/// Returns the ID of the given material.
 		/// @param pMaterial
 		///
-		/* 34h */	virtual uint32_t GetMaterialID(const Material* pMaterial) const = 0;
+		/* 34h */	virtual uint32_t GetIDFromMaterial(const Material* pMaterial) const = 0;
 
-		///
 		/// Puts the ID of all the materials specified into the given array.
 		/// @param[in] count The number of elements in the materials array.
 		/// @param[in] pMaterials The materials whose ID will be got.
 		/// @param[out] pDst A uint32_t array of nCount elements where the IDs will be written.
-		///
-		/* 38h */	virtual void GetMaterialsID(size_t count, const Material* const* pMaterials, uint32_t* pDst) const = 0;
+		/* 38h */	virtual void GetIDsFromMaterials(size_t count, const Material* const* pMaterials, uint32_t* pDst) const = 0;
 
 		///
 		/// Gets the textures used by a certain material. Optionally, a filter function can be specified to get only certain textures.
@@ -135,25 +134,29 @@ namespace Graphics
 		/// @param[out] dst A vector where the textures will be output.
 		/// @param[in] filterFunction [Optional] A filter function that takes a Texture* as a parameter and returns a bool, whether the texture must be added or not.
 		///
-		/* 3Ch */	virtual void GetTextures(const Material* pMaterial, eastl::vector<TexturePtr>& dst, bool(*filterFunction)(Texture*) = nullptr) const = 0;
+		/* 3Ch */	virtual void GetTexturesFromMaterial(const Material* pMaterial, eastl::vector<TexturePtr>& dst, bool(*filterFunction)(Texture*) = nullptr) const = 0;
 
 		// returns a material ID?
-		/* 40h */	virtual uint32_t AssignRWMaterial(RenderWare::CompiledState*, RenderWare::RenderWareFile*) = 0;
-		/* 44h */	virtual int func44h(int, int, int, int) = 0;
-		/* 48h */	virtual int func48h(int, int, int, int, int) = 0;
-		/* 4Ch */	virtual int func4Ch(int, int, int, int) = 0;
+		/* 40h */	virtual uint32_t GetIDFromCompiledState(RenderWare::CompiledState*, RenderWare::RenderWareFile*) = 0;
+
+		/* 44h */	virtual int WriteExternalReferences(int count, int* indices, IO::IStream* stream, eastl::vector<ResourceKey>* dstKeys) = 0;
+
+		/* 48h */	virtual int ReadExternalReferences(IO::IStream* stream, int count, uint32_t* materialIDs, void** dstAutoListRC, const ResourceKey*) = 0;
+
+		/* 4Ch */	virtual int GetExternalReferenceKeys(int count, int* indices, eastl::vector<ResourceKey>*& dstKeys, const ResourceKey*) = 0;
+
 		/* 50h */	virtual void func50h(int) = 0;
-		/* 54h */	virtual void func54h(int) = 0;
+		/* 54h */	virtual void UnregisterArenaContents(int) = 0;
 		/* 58h */	virtual void func58h(int, int, int, int, int) = 0;
 		/* 5Ch */	virtual bool WriteMaterials(Resource::Database* database) = 0;
-		/* 60h */	virtual bool WriteShaderFragments(Resource::Database* database) = 0;
+		/* 60h */	virtual bool WriteFragments(Resource::Database* database) = 0;
 		/* 64h */	virtual bool WriteShaders(Resource::Database* database) = 0;
-		/* 68h */	virtual void func68h() = 0;
-		/* 6Ch */	virtual void func6Ch() = 0;
-		/* 70h */	virtual int func70h() = 0;
-		/* 74h */	virtual void func74h(int) = 0;
+		/* 68h */	virtual void ReleaseShaders() = 0;
+		/* 6Ch */	virtual void RecreateShaders() = 0;
+		/* 70h */	virtual void* GetScriptParser() = 0;
+		/* 74h */	virtual void DumpNextFrame(int) = 0;
 		/* 78h */	virtual bool ReadMaterials(Resource::Database* database) = 0;
-		/* 7Ch */	virtual bool ReadShaderFragments(Resource::Database* database) = 0;
+		/* 7Ch */	virtual bool ReadFragments(Resource::Database* database) = 0;
 		/* 80h */	virtual bool ReadShaders(Resource::Database* database) = 0;
 
 		///

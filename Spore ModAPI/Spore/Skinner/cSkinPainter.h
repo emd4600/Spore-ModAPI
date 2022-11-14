@@ -1,6 +1,6 @@
 #pragma once
 
-#include <Spore\Skinner\cSkinnerTexture.h>
+#include <Spore\Skinner\cSkinnerTexturePainter.h>
 #include <Spore\RenderWare\VertexDescription.h>
 #include <Spore\RenderWare\VertexBuffer.h>
 #include <Spore\Object.h>
@@ -16,9 +16,9 @@ namespace Skinner
 	public:
 		/* 08h */	void* field_8;
 		/* 0Ch */	void* field_C;
-		/* 10h */	cSkinnerTexture* mpDiffuse;
-		/* 14h */	cSkinnerTexture* mpSpecBump;
-		/* 18h */	cSkinnerTexture* field_18;
+		/* 10h */	cSkinnerTexturePainter* mpTexture0;
+		/* 14h */	cSkinnerTexturePainter* mpTexture1;
+		/* 18h */	cSkinnerTexturePainter* mpTexture2;  // normal map?
 		/* 1Ch */	int mTextureSize;
 		/* 20h */	float mGloss;  // 0.5
 		/* 24h */	float mPhong;  // 1.0
@@ -33,6 +33,6 @@ namespace Skinner
 
 	namespace Addresses(cSkinPainter)
 	{
-		DeclareAddress(CreateTextures);  // 0x5061D0 TODO
+		DeclareAddress(CreateTextures);  // 0x5061D0 0x506630
 	}
 }

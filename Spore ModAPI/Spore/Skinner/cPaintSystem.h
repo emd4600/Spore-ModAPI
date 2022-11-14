@@ -1,6 +1,7 @@
 #pragma once
 
 #include <Spore\Skinner\cSkinPainter.h>
+#include <Spore\Editors\cEditorSkinMesh.h>
 #include <Spore\App\IMessageListener.h>
 #include <Spore\App\cJob.h>
 #include <Spore\MathUtils.h>
@@ -17,12 +18,16 @@ namespace Skinner
 	public:
 		static cPaintSystem* Get();
 
+		cSkinPainter* GetPainter();
+
+		Editors::cEditorSkinMesh* GetSkinMesh();
+
 		/* 0Ch */	cSkinPainter* mpPainter;
 		/* 10h */	int field_10;
 		/* 14h */	int mpMeshAORender;
 		/* 18h */	int field_18;
 		/* 1Ch */	int field_1C;
-		/* 20h */	int field_20;  // not initialized
+		/* 20h */	Editors::cEditorSkinMesh* mpSkinMesh;  // not initialized
 		/* 24h */	Math::BoundingBox field_24;
 		/* 3Ch */	eastl::vector<int> field_3C;
 		/* 50h */	char padding_50[0x80 - 0x50];
@@ -40,6 +45,16 @@ namespace Skinner
 
 	namespace Addresses(cPaintSystem)
 	{
-		DeclareAddress(Get);  // 0x401080 TODO
+		DeclareAddress(Get);  // 0x401080 0x401080
+	}
+
+	inline cSkinPainter* cPaintSystem::GetPainter()
+	{
+		return mpPainter;
+	}
+
+	inline Editors::cEditorSkinMesh* cPaintSystem::GetSkinMesh()
+	{
+		return mpSkinMesh;
 	}
 }
