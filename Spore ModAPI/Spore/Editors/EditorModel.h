@@ -69,7 +69,7 @@ namespace Editors
 
 	public:
 		/* 0Ch */	ResourceKey mKey;
-		/* 18h */	eastl::vector<EditorRigblockPtr> mParts;
+		/* 18h */	eastl::vector<EditorRigblockPtr> mRigblocks;
 		/* 2Ch */	bool field_2C;
 		/* 30h */	int field_30;  // intrusive_ptr, but not to an Object
 		/* 34h */	bool field_34;
@@ -113,10 +113,10 @@ namespace Editors
 	}
 
 	inline int EditorModel::GetPartsCount() const {
-		return mParts.size();
+		return mRigblocks.size();
 	}
 	inline EditorRigblock* EditorModel::GetPart(int index) {
-		return mParts[index].get();
+		return mRigblocks[index].get();
 	}
 }
 

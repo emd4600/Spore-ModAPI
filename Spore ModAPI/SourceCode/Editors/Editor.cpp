@@ -53,7 +53,7 @@ namespace Editors
 	EditorModel::EditorModel()
 		: mnRefCount(0)
 		, mKey()
-		, mParts()
+		, mRigblocks()
 		, field_2C()
 		, field_30()
 		, field_34()
@@ -105,5 +105,10 @@ namespace Editors
 	cEditorResource::~cEditorResource()
 	{}
 
+	void* cEditorResource::Cast(uint32_t type) const
+	{
+		if (type == cEditorResource::TYPE) return (cEditorResource*)this;
+		else return Resource::ResourceObject::Cast(type);
+	}
 }
 #endif

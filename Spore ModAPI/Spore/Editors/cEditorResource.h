@@ -80,6 +80,8 @@ namespace Editors
 
 		static const uint32_t TYPE = 0x3C609F8;
 
+		virtual void* Cast(uint32_t type) const override;
+
 		cEditorResource();
 		~cEditorResource();
 
