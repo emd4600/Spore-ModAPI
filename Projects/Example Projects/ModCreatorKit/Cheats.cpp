@@ -78,4 +78,14 @@ void AddCheats()
 	AddressCheat::AddCheat(Address(ModAPI::ChooseAddress(0x14648AC, 0x1460514)), "devViewMgr");
 	AddressCheat::AddCheat(Address(ModAPI::ChooseAddress(0x146A29C, 0x1465EF4)), "devStarMgr");
 	AddressCheat::AddCheat(Address(ModAPI::ChooseAddress(0x147CC5C, 0x147889C)), "devGtn");
+	AddressCheat::AddCheat(Address(ModAPI::ChooseAddress(0x13F7690, 0x13F4678)), "devOTDB");
+
+	// Special cheat: is also an IUnmanagedMessageListener, so we need to replace two vftables
+	auto pollenCheat = new int[6];
+	pollenCheat[0] = Address(ModAPI::ChooseAddress(0x13FF02C, 0x13FB894));
+	pollenCheat[1] = 0;
+	pollenCheat[2] = 0;
+	pollenCheat[4] = Address(ModAPI::ChooseAddress(0x13FF024, 0x13FB88C));
+	pollenCheat[5] = 0;
+	CheatManager.AddCheat("devPollen", (ArgScript::ICommand*)pollenCheat);
 }
