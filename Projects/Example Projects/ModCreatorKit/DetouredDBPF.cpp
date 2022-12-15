@@ -37,6 +37,7 @@ bool DBPF_detour::DETOUR(
 		&& ppDst != nullptr  // no point on doing this if we are not going to get the file
 		&& Debugging::Get()
 		&& Debugging::Get()->GetDebugInformation(this, &pDebugInformation)  // if we have debug information
+		&& pDebugInformation->DebugPathExists()
 		&& pDebugInformation->GetFilePath(name, &filePath))  // if this file has a path to debug
 	{
 		if (App::ICheatManager::Get())  // It's possible that the console does not exist yet, don't take risks

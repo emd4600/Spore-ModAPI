@@ -41,7 +41,9 @@ bool ResourceManager_detour::DETOUR(
 	if (pDBPF != nullptr)
 	{
 		//return CallOriginal(GetResource, name, ppDst, arg_8, pDBPF, pFactory, pCacheName);
-		if (Debugging::Get() && Debugging::Get()->GetDebugInformation(pDBPF, &pDebugInformation)
+		if (Debugging::Get() 
+			&& Debugging::Get()->GetDebugInformation(pDBPF, &pDebugInformation)
+			&& pDebugInformation->DebugPathExists()
 			&& pDebugInformation->GetFilePath(realKey))
 		{
 			return this->GetPrivateResource(name, ppDst, arg_8, pDBPF, pFactory, pCacheName);

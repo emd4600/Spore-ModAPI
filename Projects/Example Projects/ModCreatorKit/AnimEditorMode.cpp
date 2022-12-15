@@ -151,7 +151,7 @@ bool AnimEditorMode::OnEnter()
 	UpdateFileTime();
 	App::ConsolePrintF("%ls", mPath.c_str());
 
-	Renderer.RegisterLayer(this, 10);
+	//Renderer.RegisterLayer(this, 10);
 
 	/*mpUI = new AnimEditorUI();
 	mpUI->Load();*/
@@ -249,23 +249,28 @@ bool AnimEditorMode::OnMouseWheel(int wheelDelta, float mouseX, float mouseY, Mo
 
 
 //// UPDATE FUNCTION ////
+bool hasUpdated = false;
+float updatedTime = 0.0f;
 
 void AnimEditorMode::Update(float dt, float delta2)
 {
-	if (mpAnimWorld) {
+	if (mpAnimWorld && !hasUpdated) {
 		mpAnimWorld->Update(dt);
+		updatedTime += dt;
+		SporeDebugPrint("Update time: %f", updatedTime);
+		//hasUpdated = true;
 	}
 
-	// Update every second
-	if (mCurrentAnimID == ANIM_ID && mClock.GetElapsed() >= 1.0f)
-	{
-		ULARGE_INTEGER oldTime = mLastCheckTime;
-		UpdateFileTime();
+	//// Update every second
+	//if (mCurrentAnimID == ANIM_ID && mClock.GetElapsed() >= 1.0f)
+	//{
+	//	ULARGE_INTEGER oldTime = mLastCheckTime;
+	//	UpdateFileTime();
 
-		if (mLastCheckTime.QuadPart > oldTime.QuadPart) {
-			PlayAnimation(ANIM_ID, mCurrentAnimMode);
-		}
-	}
+	//	if (mLastCheckTime.QuadPart > oldTime.QuadPart) {
+	//		PlayAnimation(ANIM_ID, mCurrentAnimMode);
+	//	}
+	//}
 }
 
 void AnimEditorMode::DrawLayer(int flags, int layerIndex, App::cViewer** pViewers, Graphics::RenderStatistics&)
@@ -297,6 +302,7 @@ void AnimEditorMode::AddCreature(const ResourceKey& selection)
 		}
 
 		creature->mPosition = position;
+		creature->mOrientation = Quaternion();
 		mCreatures.push_back(creature);
 		mCreatureKeys.push_back(selection);
 		mAnimIndices.push_back(-1);

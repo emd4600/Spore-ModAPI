@@ -72,3 +72,8 @@ bool DebugInformation::Read(uint32_t instanceID, uint32_t groupID)
 
 	return false;
 }
+
+bool DebugInformation::DebugPathExists()
+{
+	return IO::Directory::Exists(mDebugPath.c_str());
+}
