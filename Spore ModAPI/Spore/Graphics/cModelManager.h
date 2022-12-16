@@ -36,11 +36,9 @@ namespace Graphics
 		, public IVirtual
 	{
 	public:
-
-	protected:
 		/* 08h */	int mnRefCount;
 		/* 0Ch */	eastl::map<uint32_t, IModelWorldPtr> mModelWorlds;
-		/* 28h */	eastl::map<int, int> field_28;
+		/* 28h */	eastl::map<uint32_t, int> mGroupFlags;
 		/* 44h */	int field_44;
 		/* 48h */	ObjectPtr field_48;
 		/* 4Ch */	eastl::vector<int> field_4C;

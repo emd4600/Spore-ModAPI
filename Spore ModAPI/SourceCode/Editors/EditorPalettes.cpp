@@ -83,7 +83,7 @@ namespace Palettes
 		, mnSequenceNumber()
 		, mbPaintByNumber()
 		, mRegionFilterID(0xFFFFFFFF)
-		, mnSkinPaintIndex(0xFFFFFFFF)
+		, mSkinPaintIndex(0xFFFFFFFF)
 		, mCategoryName()
 		, mbForceHasPages()
 		, mCategoryID()
@@ -235,7 +235,7 @@ namespace Palettes
 		, field_48()
 		, field_5C()
 		, field_60()
-		, field_64()
+		, mpActiveCategory()
 		, field_68()
 		, field_69()
 	{

@@ -74,10 +74,11 @@ namespace Editors
 		/* 28h */	bool field_28;
 		/* 29h */	bool field_29;
 		/* 2Ch */	EditorRigblock* field_2C;
-		/* 30h */	int field_30;
+		/* 30h */	int mIndex;
 	};
 	ASSERT_SIZE(UnkEditorRigblockStruct1, 0x34);
 
+	//TODO related with display? check SetShadedDisplay()
 	struct UnkEditorRigblockStruct2
 	{
 		/* 00h */	bool field_0;
@@ -97,7 +98,7 @@ namespace Editors
 		kEditorRigblockModelIsPlantRoot = 8,
 		kEditorRigblockModelOverrideBounds = 9,
 		kEditorRigblockModelUseSkin = 0xA,
-		kEditorRigblockModelHasSocketAndBallConnector = 0xA,  //????
+		kEditorRigblockModelHasSocketAndBallConnector = 0xA,  //???? TODO maybe has morph handles? check when sub_43C190 is called
 
 		kEditorRigblockIsSnapped = 0xC,
 		kEditorRigblockHasLeftModel = 0xD,
@@ -160,11 +161,16 @@ namespace Editors
 
 		virtual ~EditorRigblock() = 0;
 
+		/// For build mode only, sets whether the rigblock is shown with a bit of shading
+		/// (used when hovering over rigblocks).
+		/// @param isShaded
+		void SetShadedDisplay(bool isShaded);
+
 		//// _ZN14EditorRigblock8SetScaleEfii
 		//// not sure, apparently there are more methods
 		//void* SetScale(float scale, int arg_4, int arg_8);  // sub_440670
 
-		//void* ParseProp(unsigned long instanceID, unsigned long groupID, int, int, int, int, int, int);  // sub_441590
+		//void* ParseProp(unsigned long instanceID, unsigned long groupID, IModelWorld*, int, int, int, int, int);  // sub_441590
 
 		//// causes flora editor crash
 		//static void* sub_49FF50(EditorRigblock* part, eastl::vector<void*>& dst, bool arg_8);
@@ -194,7 +200,7 @@ namespace Editors
 
 	public:
 		/* 0Ch */	PropertyListPtr mpPropList;
-		/* 10h */	ModelPtr field_10;
+		/* 10h */	ModelPtr mpModel;
 		/* 14h */	ModelPtr field_14;
 		/* 18h */	IModelWorldPtr mpModelWorld;
 		// 10h ModelPtr
@@ -240,9 +246,9 @@ namespace Editors
 		/* 1A9h */	bool field_1A9;
 		/* 1ACh */	int field_1AC;  // not initialized
 		/* 1B0h */	int field_1B0;  // not initialized
-		/* 1B4h */	int field_1B4;  // -1
-		/* 1B8h */	int field_1B8;  // -1
-		/* 1BCh */	int field_1BC;  // -1
+		/* 1B4h */	int mDeformBoneEndJointIndex;  // -1
+		/* 1B8h */	int mDeformBoneBaseJointIndex;  // -1
+		/* 1BCh */	int mDeformBoneMiddleIndex;  // -1
 		/* 1C0h */	int field_1C0;  // -2
 		/* 1C4h */	int field_1C4;  // 1
 		/* 1C8h */	int field_1C8;  // 1
@@ -294,7 +300,7 @@ namespace Editors
 		/* 3D8h */	int field_3D8;  // -1
 		/* 3DCh */	int field_3DC;
 		/* 3E0h */	EditorRigblockPtr mpSymmetricRigblock;
-		/* 3E4h */	EditorRigblockPtr mpSymmetricRigblock2;
+		/* 3E4h */	EditorRigblockPtr mpAsymmetricRigblock;
 		/* 3E8h */	bool field_3E8;
 		/* 3ECh */	EditorBaseHandlePtr mpBallConnectorHandle;  //TODO BallConnectorHandle type, sub_47F410
 		/* 3F0h */	ModelPtr mpSocketConnectorModel;
@@ -360,4 +366,9 @@ namespace Editors
 		/* DD0h */	UnkEditorRigblockStruct1 field_DD0;
 	};
 	ASSERT_SIZE(EditorRigblock, 0xE08);
+
+	namespace Addresses(EditorRigblock)
+	{
+		DeclareAddress(SetShadedDisplay);  // 0x43A980 0x43ACF0
+	}
 }

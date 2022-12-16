@@ -20,6 +20,7 @@
 #pragma once
 
 #include <Spore\Internal.h>
+#include <Spore\App\IMessageRC.h>
 #include <Spore\App\IMessageListener.h>
 #include <EASTL\vector.h>
 #include <EASTL\initializer_list.h>
@@ -101,10 +102,11 @@ namespace App
 		/// @param pMessage Data related to the message, not all messages need to use this.
 		/// @param pListener [Optional] The IMessageListener that will receive this message. If this is specified, no other listener will be notified.
 		///
-		/* 14h */	virtual void PostMSG(uint32_t messageID, void* pMessage, IMessageListener* pListener = nullptr) = 0;
+		/* 14h */	virtual void MessageSend(uint32_t messageID, void* pMessage, IUnmanagedMessageListener* pListener = nullptr) = 0;
 
-		/* 18h */	virtual void func18h(int, int, int) = 0;
-		/* 1Ch */	virtual void func1Ch(int, int, int, int, int) = 0;
+		/* 18h */	virtual void MessagePost(uint32_t messageID, IMessageRC* pMessage, IMessageListener* pListener = nullptr) = 0;
+
+		/* 1Ch */	virtual void MessagePostFunction(uint32_t messageID, IMessageRC* pMessage, int, MessageHandler_t handler, void*) = 0;
 
 		///
 		/// Adds a message listener to this manager, that will be notified of messages with the specified ID.
@@ -155,7 +157,7 @@ namespace App
 		/// @param nPriority [Optional] The priority the listener must have to be removed. If it's -9999 (by default), it will be ignored.
 		/// @returns Whether the handler was removed or not.
 		///
-		/* 2Ch */	virtual bool RemoveListener(IMessageListener* pListener, uint32_t messageID, int nPriority = -9999) = 0;
+		/* 2Ch */	virtual bool RemoveListener(IUnmanagedMessageListener* pListener, uint32_t messageID, int nPriority = -9999) = 0;
 
 		///
 		/// Makes the handler stop listening to the specified message ID. Optionally, a priority can be specified;
@@ -167,16 +169,17 @@ namespace App
 		///
 		/* 30h */	virtual bool RemoveHandler(MessageHandler_t pFunction, uint32_t messageID, int nPriority = -9999) = 0;
 
-		/* 34h */	virtual int func34h(int, int, int) = 0;
-		/* 38h */	virtual int func38h() = 0;
-		/* 3Ch */	virtual int func3Ch() = 0;  // returns pointer to this+0Ch
+		/* 34h */	virtual int ProcessQueue(int, int, int) = 0;
+		/* 38h */	virtual int ProcessQueue2() = 0;
+
+		/* 3Ch */	virtual int GetMessageQueue() = 0;  // returns pointer to this+0Ch
 
 		///
 		/// Locks or unlocks the mutexs in this manager, allowing to safely interact with this manager in different threads.
 		/// If kOptionAllowLock is not true, this won't do anything.
 		/// @param bLock True -> Lock; False -> Unlock
 		///
-		/* 40h */	virtual int UseMutex(bool bLock) = 0;
+		/* 40h */	virtual int Lock(bool bLock) = 0;
 
 	protected:
 

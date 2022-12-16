@@ -72,6 +72,8 @@ namespace Palettes
 
 		void Update(int msTime);
 
+		void SetActiveCategory(int categoryIndex);
+
 
 		//// OVERRIDES ////
 
@@ -103,7 +105,7 @@ namespace Palettes
 		/* 48h */	eastl::vector<int> field_48;  // intrusive_ptrs too, but it's never used?
 		/* 5Ch */	int field_5C;
 		/* 60h */	int field_60;
-		/* 64h */	int field_64;
+		/* 64h */	PaletteCategoryUIPtr mpActiveCategory;
 		/* 68h */	bool field_68;
 		/* 69h */	bool field_69;
 
@@ -118,5 +120,6 @@ namespace Palettes
 		DeclareAddress(Update);
 		DeclareAddress(Unload);
 		DeclareAddress(HandleUIMessage);
+		DeclareAddress(SetActiveCategory);  // 0x5CAE20 0x5CB330
 	}
 }

@@ -20,6 +20,7 @@
 #pragma once
 
 #include <Spore\Resource\ResourceObject.h>
+#include <Spore\Editors\cEditorResourceProperties.h>
 #include <Spore\MathUtils.h>
 #include <EASTL\vector.h>
 
@@ -59,25 +60,9 @@ namespace Editors
 	/// Resource of a saved creation, represents a `.crt`, `.bld`, `.vcl`, etc file.
 	/// This can be used in an editor by loading it into an EditorModel.
 	class cEditorResource 
-		: public Resource::ResourceObject
+		: public Resource::CachedResourceObject
 	{
 	public:
-		struct Properties
-		{
-			/* 00h */	uint32_t mModelType;
-			/* 04h */	int mZCorpScore;
-			/* 08h */	uint32_t mSkinEffectID1;
-			/* 0Ch */	uint32_t mSkinEffectID2;
-			/* 10h */	uint32_t mSkinEffectID3;
-			/* 14h */	unsigned int mSkinEffectSeed1;
-			/* 18h */	unsigned int mSkinEffectSeed2;
-			/* 1Ch */	unsigned int mSkinEffectSeed3;
-			/* 20h */	Math::ColorRGB mSkinColor1;
-			/* 2Ch */	Math::ColorRGB mSkinColor2;
-			/* 38h */	Math::ColorRGB mSkinColor3;
-		};
-		ASSERT_SIZE(Properties, 0x44);
-
 		static const uint32_t TYPE = 0x3C609F8;
 
 		virtual void* Cast(uint32_t type) const override;
@@ -86,9 +71,9 @@ namespace Editors
 		~cEditorResource();
 
 	public:
-		/* 18h */	Properties mProperties;
-		/* 5Ch */	char padding_5C[0x98 - 0x5C];
+		/* 18h */	cEditorResourceProperties mProperties;
 		/* 98h */	eastl::vector<cEditorResourceBlock> mBlocks;
 	};
+	ASSERT_SIZE(cEditorResource, 0xAC);
 
 }

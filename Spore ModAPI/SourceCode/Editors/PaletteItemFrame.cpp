@@ -70,7 +70,7 @@ namespace Palettes
 		message.frameTypeID = mFrameTypeID;
 		message.field_20 = object_cast<Object>(GetPaletteItem());
 
-		MessageManager.PostMSG(message.messageID, &message);
+		MessageManager.MessageSend(message.messageID, &message);
 	}
 
 	void DefaultItemFrameUI::Update(int dt) {
@@ -81,14 +81,14 @@ namespace Palettes
 		message[0] = (int)static_cast<UTFWin::IWinProc*>(this);
 		message[2] = 0x522F9CD;
 
-		MessageManager.PostMSG(message[2], message);
+		MessageManager.MessageSend(message[2], message);
 	}
 	void DefaultItemFrameUI::OnMouseLeave() {
 		int message[4];
 		message[0] = (int)static_cast<UTFWin::IWinProc*>(this);
 		message[2] = 0x522F9CE;
 
-		MessageManager.PostMSG(message[2], message);
+		MessageManager.MessageSend(message[2], message);
 	}
 
 	void DefaultItemFrameUI::OnMouseDown() {

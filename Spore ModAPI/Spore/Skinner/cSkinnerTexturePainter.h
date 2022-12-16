@@ -49,7 +49,9 @@ namespace Skinner
 		/// @param alpha
 		void SetColorWriteEnable(bool red, bool green, bool blue, bool alpha);
 
-		void AddCustomParam(int index, const Math::ColorRGBA& param);
+		void SetMaterial(uint32_t materialID);
+
+		void AddCustomParams(int index, const Math::ColorRGBA& param);
 		void AddRaster(int index, RenderWare::Raster* raster);
 
 		/// Removes all contents of this texture and replaces them with a clear background of the specified color.
@@ -59,12 +61,16 @@ namespace Skinner
 
 		void PaintRegion(const Vector2& uv1, const Vector2& uv2, int index = -1);
 
+		/// Returns the underlying raster of this texture.
+		/// @returns
+		RenderWare::Raster* GetRaster();
+
 	public:
 		/* 00h */	App::cViewer* mpViewer;
 		/* 04h */	uint32_t mMaterialID;
 		/* 08h */	int mFlags;
 		/* 0Ch */	Math::ColorRGBA mCustomParams[3];
-		/* 3Ch */	RenderWare::Raster* mRasters[2];
+		/* 3Ch */	RenderWare::Raster* mSrcRasters[2];
 		/* 44h */	int mNumParams;
 		/* 48h */	int mNumRasters;
 		/* 4Ch */	int field_4C;
@@ -74,6 +80,14 @@ namespace Skinner
 		/* 60h */	RenderWare::Raster* mpRaster;
 	};
 	ASSERT_SIZE(cSkinnerTexturePainter, 0x64);
+
+	inline void cSkinnerTexturePainter::SetMaterial(uint32_t materialID) {
+		mMaterialID = materialID;
+	}
+
+	inline RenderWare::Raster* cSkinnerTexturePainter::GetRaster() {
+		return mpRaster;
+	}
 
 	namespace Addresses(cSkinnerTexturePainter)
 	{

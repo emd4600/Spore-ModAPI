@@ -62,5 +62,6 @@ namespace Editors
 		/* 3Ch */	ResourceKey mDefaultOverdrawModel;
 		/* 48h */	bool mHasOverdraw;
 		/* 4Ch */	float mDefaultScale;
+		//TODO uncompleted, 8Ch is animation ID? 11Ch is string stretchSound?
 	};
 }

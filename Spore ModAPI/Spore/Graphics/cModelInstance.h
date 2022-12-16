@@ -27,7 +27,7 @@ namespace Graphics
 		/* 30h */	eastl::vector<Material*> mMaterials;
 		/* 44h */	eastl::vector<cMaterialInfoPtr> mMaterialInfos;
 		/* 58h */	eastl::vector_map<int, cMaterialInfoPtr> mRegionMaterialInfos;
-		/* 70h */	Transform field_70;
+		/* 70h */	Transform mModelToWorldTransform;
 		/* A8h */	BoundingBox mBoundingBox;
 		/* C0h */	float mBoundingRadius;
 		/* C4h */	RenderWareFilePtr mpRenderWare;

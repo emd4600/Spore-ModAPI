@@ -37,6 +37,8 @@
 #include <Spore\Editors\EditorLimits.h>
 #include <Spore\Editors\INameableEntity.h>
 #include <Spore\Editors\cEditorSkin.h>
+#include <Spore\Editors\cEditorAnimEvent.h>
+#include <Spore\Editors\cEditorAnimWorld.h>
 
 #include <Spore\Graphics\Model.h>
 #include <Spore\Graphics\ILayer.h>
@@ -128,6 +130,8 @@ namespace Editors
 	{
 	public:
 
+		virtual bool HandleMessage(uint32_t messageID, void* msg) override;
+
 		//PLACEHOLDER virtual method 54h -> reads temporary database
 		//PLACEHOLDER virtual method 58h -> wrties temporary database
 
@@ -152,11 +156,24 @@ namespace Editors
 		/// @returns
 		bool IsMode(Mode mode) const;
 
+		void SetActiveMode(Mode mode, bool);
+
 		/// Returns true if the editor is currently active.
 		/// @returns
 		bool IsActive() const;
 
+		/// Returns the camera used to navigate and view the editor.
+		/// @returns
 		EditorCamera* GetCamera();
+
+		/// Returns the editor skin, which is the model and texture generating system for creations that use
+		/// skinpaints and metaballs (i.e. creatures and flora). For the rest of creation types, this returns nullptr.
+		/// @returns
+		cEditorSkin* GetSkin();
+
+		/// Returns the class that manages the creature animations in the editor.
+		/// @returns
+		cEditorAnimWorld* GetAnimWorld();
 
 		// _ZN6Editor9ScalePartEP14EditorRigblockii
 		// Editor::ScalePart(EditorRigblock *, int, int)
@@ -169,6 +186,12 @@ namespace Editors
 
 		void RemovePart(EditorRigblock* part);  //PLACEHOLDER
 
+		/// Emits a `cEditorAnimEvent` with ID `0x6581B78E`, which makes the creature (if any) stop
+		/// its current animation and return to the neutral, motionless pose.
+		void SetCreatureToNeutralPose();
+
+		bool AddCreature(int, const ResourceKey* key = nullptr);
+
 	public:
 
 		int vftable_1C;
@@ -179,7 +202,7 @@ namespace Editors
 		/* 24h */	PropertyListPtr		mpPropList;
 
 		/// The current position of the cursor in the editor.
-		/* 28h */	Math::Point mCursor;
+		/* 28h */	Math::Point mMousePosition;
 		/* 30h */	int mMouseFlags;
 		/* 34h */	MouseState mMouseState;
 
@@ -195,7 +218,7 @@ namespace Editors
 		/* 5Ch */	int field_5C;
 		/* 60h */	int field_60;
 		/* 64h */	int field_64;
-		/* 68h */	float field_68;  // Set to 0 when mouse click
+		/* 68h */	float field_68;  // Set to 0 when mouse click, and when changing mode
 		/// Time to wait before starting animated creature (in milliseconds).
 		/* 6Ch */	float mCreatureIdleActivationTime;
 		/* 70h */	float field_70;
@@ -207,8 +230,8 @@ namespace Editors
 		/* 7Ch */	EditorPlayMode* mpPlayMode;  // TODO intrusive_ptr
 		/// THe light to be used by the editor.
 		/* 80h */	ILightingWorldPtr mpLightingWorld;
-		/// The model world that contains the pedestal and test environment model.
-		/* 84h */	IModelWorldPtr mpPedestalModelWorld;
+		/// The model world that contains the pedestal and test environment model, and also editor rigblocks
+		/* 84h */	IModelWorldPtr mpMainModelWorld;
 		/* 88h */	IModelWorldPtr field_88;
 		/// The model world that contains the background model.
 		/* 8Ch */	IModelWorldPtr mpBackgroundModelWorld;
@@ -217,7 +240,7 @@ namespace Editors
 
 		// use appropiate container!
 		// you can get it with virtual function 40h
-		/* 98h */	EditorModel* mpEditorModel;	// something containing the parts ? -> sub_4ACB70 get aprt?
+		/* 98h */	EditorModel* mpEditorModel;	// TODO is it intrusive_ptr?
 
 		/* 9Ch */	int field_9C;  // another editor model?
 		/// The model to be used for the pedestal in the editor. It belongs to mpPedestalModelWorld.
@@ -240,9 +263,8 @@ namespace Editors
 		/* CCh */	EditorRigblockPtr mpActivePart;
 		/* D0h */	EditorRigblockPtr mpMovingPart;  // the part that is being moved, only when mouse is being clicked
 		/* D4h */	EditorRigblockPtr mpSelectedPart;  // also valid for spines
-
-		/* D8h */	DefaultRefCountedPtr field_D8;
-		/* DCh */	DefaultRefCountedPtr field_DC;
+		/* D8h */	EditorRigblockPtr field_D8;
+		/* DCh */	EditorRigblockPtr field_DC;
 		/* E0h */	bool field_E0;
 		/* E4h */	EditorBaseHandle* mpActiveHandle;  // morph handles
 		/// Is the mouse over the skin of the creature?
@@ -264,7 +286,7 @@ namespace Editors
 		/* 148h */	ObjectPtr field_148;
 		/* 14Ch */	int field_14C; // vertebra? only present in creature-like editor
 		/* 150h */	cEditorSkinPtr mpEditorSkin;  // something related with painting?  uses sub_4C3E70 to return something that parts also use
-		/* 154h */	int field_154;
+		/* 154h */	cEditorSkinPtr field_154;
 
 		//// just guesses, apparently it calls DefaultRefCounted.Unuse()
 		///* 158h */	DefaultRefCounted* field_158;
@@ -420,11 +442,13 @@ namespace Editors
 		/* 354h	*/	int field_354;
 		/* 358h	*/	EditorNamePanelPtr mpEditorNamePanel;
 		/* 35Ch	*/	int field_35C;
-		/* 360h	*/	int field_360;  // contains a renderable at 38h: the anim world
-		/* 364h	*/	int field_364;
+		/* 360h	*/	cEditorAnimWorldPtr mpEditorAnimWorld;
+		/// ID used in `mpEditorAnimWorld` for the current editing creature
+		/* 364h	*/	int mCurrentCreatureID;
 		/* 368h	*/	int field_368;
-		/* 36Ch	*/	eastl::vector<int> field_36C;
-		/* 380h */	DefaultRefCountedPtr field_380;
+		/* 36Ch	*/	eastl::vector<int> field_36C;  //TODO vector of creatures? Check sub_629130
+		/// Anim event that will be played on the creature on the next Update() call
+		/* 380h */	cEditorAnimEventPtr mpAnimEvent;
 		/* 384h */	bool field_384;
 		/* 385h */	bool field_385;
 		/* 388h */	int field_388;  // not initialized
@@ -437,8 +461,8 @@ namespace Editors
 		/* 398h */	bool field_398;  // true
 		/* 399h */	bool field_399;  // true
 		/* 39Ah */	bool field_39A;  // true
-		/* 39Ch */	eastl::vector<int> field_39C;
-		/* 3B0h */	float field_3B0;  // not initialized
+		/* 39Ch */	eastl::vector<EditorRigblockPtr> field_39C;
+		/* 3B0h */	int field_3B0;  // not initialized, a paint region for building/vehicle parts
 		/* 3B4h */	int field_3B4;  // not initialized
 		/* 3B8h */	PaletteMainPtr mpPartsPalette;
 		/* 3BCh */	PaletteUIPtr mpPartsPaletteUI;
@@ -453,7 +477,7 @@ namespace Editors
 		/* 3D8h */	App::cViewer* field_3D8;  // not initialized
 		/* 3DCh */	App::cViewer* field_3DC;  // not initialized
 
-		/* 3E0h */	bool field_3E0;
+		/* 3E0h */	bool mIsRecordingGIF;
 		/* 3E1h */	bool field_3E1;
 		/* 3E4h */	int field_3E4;
 		/* 3E8h */	int field_3E8;  // 5
@@ -583,6 +607,11 @@ namespace Editors
 		DeclareAddress(CommitEditHistory);  // 0x5860E0, 0x586410
 		DeclareAddress(Undo);  // 0x58A270, 0x58A5A0
 		DeclareAddress(Redo);  // 0x58A620, 0x58A950
+		DeclareAddress(SetActiveMode);  // 0x586F40 0x587270
+		DeclareAddress(SetCreatureToNeutralPose);  // 0x573860 0x573970
+		DeclareAddress(AddCreature);  // 0x582D00 0x582FE0
+
+		DeclareAddress(HandleMessage);  // 0x591C80 0x591FA0
 	}
 
 	/// Returns the Editor instance (there can only be one at a time).
@@ -607,5 +636,15 @@ namespace Editors
 	inline EditorModel* cEditor::GetEditorModel() const
 	{
 		return mpEditorModel;
+	}
+
+	inline cEditorSkin* cEditor::GetSkin()
+	{
+		return mpEditorSkin.get();
+	}
+
+	inline cEditorAnimWorld* cEditor::GetAnimWorld()
+	{
+		return mpEditorAnimWorld.get();
 	}
 }

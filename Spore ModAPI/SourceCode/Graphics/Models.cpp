@@ -24,6 +24,17 @@
 
 namespace Graphics
 {
+	void FilterSettings::SetRequiredGroup(uint32_t group)
+	{
+		int flags = ModelManager.GetGroupFlag(group);
+		requiredGroupFlags |= 1i64 << flags;
+	}
+	void FilterSettings::SetExcludedGroup(uint32_t group)
+	{
+		int flags = ModelManager.GetGroupFlag(group);
+		excludedGroupFlags &= ~(1i64 << flags);
+	}
+
 	void Model::AddGroup(uint32_t groupID)
 	{
 		int flags = ModelManager.GetGroupFlag(groupID);
@@ -67,7 +78,7 @@ namespace Graphics
 		, mMaterials()
 		, mMaterialInfos()
 		, mRegionMaterialInfos()
-		, field_70()
+		, mModelToWorldTransform()
 		, mBoundingBox()
 		, mBoundingRadius(1.0f)
 		, mpRenderWare()

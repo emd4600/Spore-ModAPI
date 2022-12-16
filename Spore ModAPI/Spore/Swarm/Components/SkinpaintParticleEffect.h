@@ -71,7 +71,7 @@ namespace Swarm
 	{
 	public:
 		/* 0Ch */	Transform mTransform;
-		/* 44h */	bool field_44;  // not initialized
+		/* 44h */	bool mIsExecuted;  // not initialized
 		/* 48h */	cSkinpaintParticleDescription* mpDescription;
 		/* 4Ch */	int field_4C;
 	};

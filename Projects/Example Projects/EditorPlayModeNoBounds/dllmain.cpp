@@ -19,7 +19,7 @@ void Dispose()
 
 
 // SetTargetPos() is called when you click at some point in the editor, making the creature walk there
-member_detour(SetTargetPosition__detour, Editors::CreatureWalkController, void(const Vector3&, bool, bool))
+member_detour(SetTargetPosition__detour, Editors::EditorCreatureController, void(const Vector3&, bool, bool))
 {
 	void detoured(const Vector3 & pos, bool applyNow, bool ignoreZ)
 	{
@@ -47,7 +47,7 @@ Vector3 Vector2PointsMaxLength(const Vector3& p1, const Vector3& p2, float maxLe
 // This is the tricky part. Update() is called every frame and it updates the creature position as it walks.
 // It checks that it is not walking out of bounds at the middle of the function, which means we have to 
 // replicate the whole function
-member_detour(CreatureWalkUpdate__detour, Editors::CreatureWalkController, void(int))
+member_detour(CreatureWalkUpdate__detour, Editors::EditorCreatureController, void(int))
 {
 	// Parameter is "delta time", how many milliseconds since last update
 	void detoured(int dt_ms)
@@ -202,8 +202,8 @@ void AttachDetours()
 {
 	// Call the attach() method on any detours you want to add
 	
-	CreatureWalkUpdate__detour::attach(GetAddress(Editors::CreatureWalkController, Update));
-	SetTargetPosition__detour::attach(GetAddress(Editors::CreatureWalkController, SetTargetPosition));
+	CreatureWalkUpdate__detour::attach(GetAddress(Editors::EditorCreatureController, Update));
+	SetTargetPosition__detour::attach(GetAddress(Editors::EditorCreatureController, SetTargetPosition));
 }
 
 

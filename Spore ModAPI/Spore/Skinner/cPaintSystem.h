@@ -11,6 +11,21 @@
 
 namespace Skinner
 {
+	struct cSkinpaintInfo
+	{
+		/* 00h */	Math::Vector3 field_0;
+		/* 0Ch */	Math::Vector3 field_C;
+		/* 18h */	float field_18;
+		/* 1Ch */	int field_1C;
+		/* 20h */	int mDelay;
+		/* 24h */	int mLife;
+		/* 28h */	uint32_t mSeed;
+		/* 2Ch */	ObjectPtr mData;
+		/* 30h */	int field_30;
+		/* 34h */	int field_34;
+	};
+	ASSERT_SIZE(cSkinpaintInfo, 0x38);
+
 	class cPaintSystem
 		: public App::IMessageListener
 		, public RefCountTemplate
@@ -29,8 +44,8 @@ namespace Skinner
 		/* 1Ch */	int field_1C;
 		/* 20h */	Editors::cEditorSkinMesh* mpSkinMesh;  // not initialized
 		/* 24h */	Math::BoundingBox field_24;
-		/* 3Ch */	eastl::vector<int> field_3C;
-		/* 50h */	char padding_50[0x80 - 0x50];
+		/* 3Ch */	eastl::vector<cSkinpaintInfo> mSkinpaintInfos;
+		/* 50h */	char padding_50[0x80 - 0x50]; //TODO 54h is RNG?  //TODO 7Dh ambient occlusion run?
 		/* 80h */	eastl::vector<int> field_80;
 		/* 94h */	eastl::fixed_vector<int, 16> field_94;
 		/* ECh */	int field_EC;  // not initialized

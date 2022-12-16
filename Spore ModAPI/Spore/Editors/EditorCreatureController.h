@@ -4,15 +4,15 @@
 #include <Spore\Anim\AnimatedCreature.h>
 #include <Spore\Graphics\IModelWorld.h>
 
-#define CreatureWalkControllerPtr eastl::intrusive_ptr<Editors::CreatureWalkController>
+#define EditorCreatureControllerPtr eastl::intrusive_ptr<Editors::EditorCreatureController>
 
 namespace Editors
 {
-	class CreatureWalkController
+	class EditorCreatureController
 	{
 	public:
-		CreatureWalkController();
-		virtual ~CreatureWalkController() {};
+		EditorCreatureController();
+		virtual ~EditorCreatureController() {};
 
 		int AddRef();
 		int Release();
@@ -39,7 +39,7 @@ namespace Editors
 		/* 10h */	int field_10;
 		/* 14h */	int field_14;
 		/* 18h */	int field_18;
-		/* 1Ch */	int field_1C;
+		/* 1Ch */	uint32_t mCurrentAnimID;
 		/* 20h */	Math::Vector3 mRealTargetPosition;
 		/* 2Ch */	Math::Vector3 mTargetPosition;
 		/* 38h */	Math::Vector3 mCurrentPosition;
@@ -58,8 +58,13 @@ namespace Editors
 		/* 80h */	float field_80;  // 0.5
 		/* 84h */	bool mSmoothLookAt;
 	};
-	ASSERT_SIZE(CreatureWalkController, 0x88);
+	ASSERT_SIZE(EditorCreatureController, 0x88);
 
+	namespace Addresses(EditorCreatureController)
+	{
+		DeclareAddress(Update);
+		DeclareAddress(SetTargetPosition);
+	}
 	namespace Addresses(CreatureWalkController)
 	{
 		DeclareAddress(Update);

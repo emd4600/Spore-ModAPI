@@ -48,5 +48,7 @@ namespace Editors
 		/* 80h */	char padding_80[0x3588 - 0x80];
 		/* 3588h */	PlayModeAnimations mAnimations;
 		/* 3618h */	PlayModeBackgrounds mBackgrounds;
+		//TODO 3614h is Editor
+		//TODO 36D0h mNumAdditionalActors
 	};
 }

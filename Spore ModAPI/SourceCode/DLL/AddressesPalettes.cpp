@@ -101,6 +101,7 @@ namespace Palettes
 		DefineAddress(Update, SelectAddress(0x5CA590, 0x5CAA40, 0x5CAA70));
 		DefineAddress(Unload, SelectAddress(0x5CB670, , 0x5CBB80));
 		DefineAddress(HandleUIMessage, SelectAddress(0x5CB080, 0x5CB560, 0x5CB590));
+		DefineAddress(SetActiveCategory, SelectAddress(0x5CAE20, , 0x5CB330));
 	}
 
 	namespace Addresses(StandardItemUI)

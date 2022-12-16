@@ -6,13 +6,19 @@
 #include <Spore\Editors\EditorModel.h>
 #include <Spore\Editors\EditorCamera.h>
 #include <Spore\Editors\EditorRequest.h>
+#include <Spore\Editors\EditorRigblock.h>
 #include <Spore\Editors\EditorUI.h>
+#include <Spore\Editors\cEditorSkin.h>
 #include <Spore\Editors\TuningSpine.h>
 #include <Spore\Editors\PlayModeAnimations.h>
 #include <Spore\Editors\SpeciesManager.h>
-#include <Spore\Editors\CreatureWalkController.h>
+#include <Spore\Editors\EditorCreatureController.h>
 #include <Spore\Editors\PlayModeActor.h>
 #include <Spore\Editors\PlayModeBackgrounds.h>
+#include <Spore\Editors\cEditorAnimEvent.h>
+#include <Spore\Editors\cEditorAnimWorld.h>
+#include <Spore\Editors\cEditorSkinMesh.h>
+#include <Spore\Editors\cCreatureDataResource.h>
 
 namespace Editors
 {
@@ -52,6 +58,11 @@ namespace Editors
 		DefineAddress(CommitEditHistory, SelectAddress(0x5860E0, , 0x586410));
 		DefineAddress(Undo, SelectAddress(0x58A270, , 0x58A5A0));
 		DefineAddress(Redo, SelectAddress(0x58A620, , 0x58A950));
+		DefineAddress(SetActiveMode, SelectAddress(0x586F40, , 0x587270));
+		DefineAddress(SetCreatureToNeutralPose, SelectAddress(0x573860, , 0x573970));
+		DefineAddress(AddCreature, SelectAddress(0x582D00, , 0x582FE0));
+
+		DefineAddress(HandleMessage, SelectAddress(0x591C80, , 0x591FA0));
 	}
 
 	namespace Addresses(EditorCamera)
@@ -119,6 +130,12 @@ namespace Editors
 		DefineAddress(Dispose, SelectAddress(0x4AD1F0, , 0x4AD850));
 	}
 
+	namespace Addresses(EditorCreatureController)
+	{
+		DefineAddress(Update, SelectAddress(0x59B190, , 0x59B4B0));
+		DefineAddress(SetTargetPosition, SelectAddress(0x59ADD0, , 0x59B0F0));
+	}
+
 	namespace Addresses(CreatureWalkController)
 	{
 		DefineAddress(Update, SelectAddress(0x59B190, , 0x59B4B0));
@@ -134,6 +151,44 @@ namespace Editors
 	{
 		DefineAddress(SwitchBackground, SelectAddress(0x62F5F0, , 0x62F640));
 		DefineAddress(DisableBackground, SelectAddress(0x62F900, , 0x62F950));
+	}
+
+	namespace Addresses(cEditorSkin)
+	{
+		DefineAddress(GetMesh, SelectAddress(0x4C4280, , 0x4C4A50));
+		DefineAddress(HasFinishedPainting, SelectAddress(0x4C5170, , 0x4C5920));
+		DefineAddress(PaintSkin, SelectAddress(0x4C4AA0, , 0x4C5270));
+	}
+
+	namespace Addresses(cEditorAnimEvent)
+	{
+		DefineAddress(MessageSend, SelectAddress(0x59D610, , 0x59D8B0));
+		DefineAddress(MessagePost, SelectAddress(0x59D5A0, , 0x59D840));
+	}
+
+	namespace Addresses(cEditorAnimWorld)
+	{
+		DefineAddress(GetCreatureController, SelectAddress(0x59C820, , 0x59CAC0));
+		DefineAddress(GetAnimatedCreature, SelectAddress(0x59C7D0, , 0x59CA70));
+		DefineAddress(DestroyCreature, SelectAddress(0x59C440, , 0x59C6E0));
+		DefineAddress(SetTargetPosition, SelectAddress(0x59CC60, , 0x59CF00));
+		DefineAddress(SetTargetAngle, SelectAddress(0x59CC00, , 0x59CEA0));
+	}
+
+	namespace Addresses(cCreatureDataResource)
+	{
+		DefineAddress(Read, SelectAddress(0x4BECA0, , 0x4BF970));
+		DefineAddress(Write, SelectAddress(0x4BEFE0, , 0x4BFCB0));
+	}
+
+	namespace Addresses(EditorRigblock)
+	{
+		DefineAddress(SetShadedDisplay, SelectAddress(0x43A980, , 0x43ACF0));
+	}
+
+	namespace Addresses(cEditorSkinMeshBase)
+	{
+		DefineAddress(FromRigblocks, SelectAddress(0x4C6E90, , 0x4C7460));
 	}
 }
 #endif

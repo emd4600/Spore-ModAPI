@@ -331,7 +331,7 @@ namespace Graphics
 		mColors.push_back({ 1.0f, 1.0f, 1.0f, 1.0f });
 		mTransforms.push_back(Math::Matrix4().SetIdentity());
 
-		mMaterials.push_back(MaterialManager.GetMaterial(materialID));
+		mMaterials.push_back(MaterialManager.GetMaterialInstance(materialID));
 
 		return mMeshes.size() - 1;
 	}

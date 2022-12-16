@@ -1,7 +1,7 @@
 #pragma once
 
 #include <Spore\Object.h>
-#include <Spore\Editors\CreatureWalkController.h>
+#include <Spore\Editors\EditorCreatureController.h>
 #include <EASTL\vector.h>
 
 namespace Editors
@@ -30,7 +30,7 @@ namespace Editors
 
 		/* 08h */	AnimatedCreaturePtr mpCreature;
 		/* 0Ch */	int field_0C;
-		/* 10h */	CreatureWalkControllerPtr mpWalkController;
+		/* 10h */	EditorCreatureControllerPtr mpWalkController;
 		/* 14h */	int field_14;  // not initialized
 		/* 18h */	eastl::intrusive_ptr<DefaultRefCounted> field_18;
 		/* 1Ch */	int mActorID;  // -1

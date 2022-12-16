@@ -33,6 +33,11 @@
 
 namespace Graphics
 {
+	enum
+	{
+		kMsgTextureExtractCompleted = 0x522264D
+	};
+
 	class ITextureManager
 	{
 	public:
@@ -154,11 +159,11 @@ namespace Graphics
 
 		/// Extracts the raw contents of a raster texture.
 		/// @param pRaster The source texture
-		/// @param dst Pointer where the extracted data will be created
+		/// @param[out] dst Pointer where the extracted data will be created
 		/// @param async If true, extract asynchronously, in the background; if false, block the execution until extraction is complete.
 		/// @param messageID For async extraction, ID of message sent when extraction has finished (defaults to `0x522264D`)
 		/// @returns
-		/* 58h */	virtual bool ExtractTextureRaster(RenderWare::Raster* pRaster, cImageDataRawPtr& dst, bool async, uint32_t messageID = 0) = 0;
+		/* 58h */	virtual bool ExtractTextureRaster(RenderWare::Raster* pRaster, cImageDataRawPtr* dst, bool async, uint32_t messageID = 0) = 0;
 
 		/// Extracts the raw contents of a texture.
 		/// @param texture The source texture

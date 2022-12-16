@@ -18,7 +18,13 @@
 ****************************************************************************/
 
 #include <Spore\Internal.h>
+#include <Spore\GeneralAllocator.h>
 #include <memory>
+
+GeneralAllocator* GeneralAllocator::Get()
+{
+	return *(GeneralAllocator**)GetAddress(Internal, Allocator_ptr);
+}
 
 // EASTL expects us to define these, see allocator.h line 194
 void* operator new[](size_t size, const char* pName,

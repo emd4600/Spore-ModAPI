@@ -128,6 +128,14 @@ namespace App
 		DefineAddress(UseMutex, SelectAddress(0x8845A0, 0x883B60, 0x883BA0));
 		DefineAddress(AddEntry, SelectAddress(0x885920, 0x884D30, 0x884D70));
 		DefineAddress(RemoveEntry, SelectAddress(0x885270, 0x884680, 0x8846C0));
+
+		DefineAddress(MessageSend, SelectAddress(0x885F10, 0x885460, 0x8854A0));
+		DefineAddress(MessagePost, SelectAddress(0x8863F0, 0x885940, 0x885980));
+		DefineAddress(MessagePostFunction, SelectAddress(0x886490, 0x8859E0, 0x885A20));
+		DefineAddress(ProcessQueue, SelectAddress(0x884C30, 0x8841B0, 0x8841F0));
+		DefineAddress(ProcessQueue2, SelectAddress(0x8853A0, 0x8847B0, 0x8847F0));
+		DefineAddress(GetMessageQueue, SelectAddress(0x98F7F0, 0x98F4D0, 0x98F4D0));
+		DefineAddress(Lock, SelectAddress(0x8845A0, 0x883B60, 0x883BA0));
 	}
 
 	namespace Addresses(cPropManager)

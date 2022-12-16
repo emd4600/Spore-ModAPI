@@ -15,6 +15,8 @@ namespace Palettes
 	public:
 		static const uint32_t TYPE = 0x3349C94;
 
+		static const uint32_t ONCLICK_MESSAGE_ID = 0xB2E18705;
+
 		struct Message
 		{
 			inline static const Message& Get(const UTFWin::Message& msg) {

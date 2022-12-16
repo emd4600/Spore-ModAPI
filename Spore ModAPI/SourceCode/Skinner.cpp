@@ -14,7 +14,7 @@ namespace Skinner
 	auto_METHOD_VOID(cSkinnerTexturePainter, SetColorWriteEnable, 
 		Args(bool a1, bool a2, bool a3, bool a4), Args(a1, a2, a3, a4));
 
-	void cSkinnerTexturePainter::AddCustomParam(int index, const Math::ColorRGBA& param)
+	void cSkinnerTexturePainter::AddCustomParams(int index, const Math::ColorRGBA& param)
 	{
 		if (mNumParams <= index)
 		{
@@ -28,7 +28,7 @@ namespace Skinner
 		{
 			mNumRasters = index + 1;
 		}
-		mRasters[index] = raster;
+		mSrcRasters[index] = raster;
 	}
 }
 

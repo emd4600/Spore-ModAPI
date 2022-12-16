@@ -44,7 +44,8 @@ namespace Graphics
 		/// Check intersection with the hull mesh
 		HullKDTree = 2,
 		/// Check intersection with the LOD0 mesh
-		Lod0KDTree = 3
+		Lod0KDTree = 3,
+		Unk4 = 4
 	};
 
 	class IModelWorld;

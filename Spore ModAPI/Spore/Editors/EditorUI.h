@@ -28,6 +28,8 @@
 
 namespace Editors
 {
+	enum class Mode;
+
 	class cEditor;
 	
 	class _EditorUI_interface {
@@ -52,6 +54,8 @@ namespace Editors
 		virtual bool HandleMessage(uint32_t messageID, void* pMessage) override;
 
 		virtual bool HandleUIMessage(UTFWin::IWindow* pWindow, const UTFWin::Message& message) override;
+
+		void SetActiveMode(Mode mode);
 
 	public:
 
@@ -134,5 +138,7 @@ namespace Editors
 		DeclareAddress(HandleUIMessage);
 
 		DeclareAddress(Load);
+
+		DeclareAddress(SetActiveMode);  // 0x5DD910 TODO
 	}
 };

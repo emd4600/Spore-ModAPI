@@ -13,6 +13,10 @@ namespace Skinner
 	public:
 		void CreateTextures(int textureSize);
 
+		cSkinnerTexturePainter* GetTexture0();
+		cSkinnerTexturePainter* GetTexture1();
+		cSkinnerTexturePainter* GetTexture2();
+
 	public:
 		/* 08h */	void* field_8;
 		/* 0Ch */	void* field_C;
@@ -30,6 +34,16 @@ namespace Skinner
 		/* 3Ch */	char padding_3C[0x414 - 0x3C];
 	};
 	ASSERT_SIZE(cSkinPainter, 0x414);
+
+	inline cSkinnerTexturePainter* cSkinPainter::GetTexture0() {
+		return mpTexture0;
+	}
+	inline cSkinnerTexturePainter* cSkinPainter::GetTexture1() {
+		return mpTexture1;
+	}
+	inline cSkinnerTexturePainter* cSkinPainter::GetTexture2() {
+		return mpTexture2;
+	}
 
 	namespace Addresses(cSkinPainter)
 	{

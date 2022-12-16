@@ -96,7 +96,7 @@ namespace Palettes
 		/// For paint categories: the instance ID of a file that defines which region is painted in partial styles.
 		/// This is only for block-paint editors, such as the building editor. The file is assumed to be in the folder with group ID 0x406A6F00.
 		/* 54h */	uint32_t mRegionFilterID;
-		/* 58h */	uint32_t mnSkinPaintIndex;
+		/* 58h */	uint32_t mSkinPaintIndex;
 		/// The text that is displayed when the category icon is hovered.
 		/* 5Ch */	LocalizedString mCategoryName;
 		/* 70h */	bool mbForceHasPages;

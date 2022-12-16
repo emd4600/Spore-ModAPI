@@ -38,18 +38,18 @@ namespace App
 		virtual bool Dispose() override;
 		virtual bool GetOption(Options option) override;
 		virtual void SetOption(Options option, bool bValue) override;
-		virtual void PostMSG(uint32_t messageID, void* pMessage, IMessageListener* pListener) override;
-		virtual void func18h(int, int, int) override;
-		virtual void func1Ch(int, int, int, int, int) override;
+		virtual void MessageSend(uint32_t messageID, void* pMessage, IUnmanagedMessageListener* pListener) override;
+		virtual void MessagePost(uint32_t messageID, IMessageRC* pMessage, IMessageListener* pListener) override;
+		virtual void MessagePostFunction(uint32_t messageID, IMessageRC* pMessage, int, MessageHandler_t handler, void*) override;
 		virtual void AddListener(IMessageListener* pListener, uint32_t messageID) override;
 		virtual void AddUnmanagedListener(IUnmanagedMessageListener* pListener, uint32_t messageID) override;
 		virtual void AddHandler(IMessageManager::MessageHandler_t pFunction, void* pObject, uint32_t messageID, bool bRefCounted, int nPriority) override;
-		virtual bool RemoveListener(IMessageListener* pListener, uint32_t messageID, int nPriority) override;
+		virtual bool RemoveListener(IUnmanagedMessageListener* pListener, uint32_t messageID, int nPriority) override;
 		virtual bool RemoveHandler(IMessageManager::MessageHandler_t pFunction, uint32_t messageID, int nPriority) override;
-		virtual int func34h(int, int, int) override;
-		virtual int func38h() override;
-		virtual int func3Ch() override;
-		virtual int UseMutex(bool bLock) override;
+		virtual int ProcessQueue(int, int, int) override;
+		virtual int ProcessQueue2() override;
+		virtual int GetMessageQueue() override;
+		virtual int Lock(bool bLock) override;
 		virtual void AddEntry(const IMessageManager::Entry& entry, uint32_t messageID) override;
 		virtual bool RemoveEntry(void* pMessageObject, uint32_t messageID, int nPriority) override;
 
@@ -85,5 +85,12 @@ namespace App
 		DeclareAddress(AddEntry);
 		DeclareAddress(RemoveEntry);
 
+		DeclareAddress(MessageSend);
+		DeclareAddress(MessagePost);
+		DeclareAddress(MessagePostFunction);
+		DeclareAddress(ProcessQueue);
+		DeclareAddress(ProcessQueue2);
+		DeclareAddress(GetMessageQueue);
+		DeclareAddress(Lock);
 	}
 }

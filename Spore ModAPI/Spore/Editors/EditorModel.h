@@ -61,8 +61,8 @@ namespace Editors
 
 		ColorRGB GetColor(int index) const;
 
-		int GetPartsCount() const;
-		EditorRigblock* GetPart(int index);
+		int GetRigblocksCount() const;
+		EditorRigblock* GetRigblock(int index);
 
 	protected:
 		/* 08h */	int mnRefCount;
@@ -81,7 +81,7 @@ namespace Editors
 		/* 4Ch */	bool field_4C;
 		/* 4Dh */	bool field_4D;
 		/* 4Eh */	bool field_4E;  // true
-		/* 4Fh */	bool field_4F;
+		/* 4Fh */	bool field_4F;  //TODO allows symmetry?
 		/* 50h */	bool field_50;
 		/* 51h */	bool field_51;
 		/* 54h */	int mTranslationOptions;
@@ -112,10 +112,10 @@ namespace Editors
 		return mColors[index];
 	}
 
-	inline int EditorModel::GetPartsCount() const {
+	inline int EditorModel::GetRigblocksCount() const {
 		return mRigblocks.size();
 	}
-	inline EditorRigblock* EditorModel::GetPart(int index) {
+	inline EditorRigblock* EditorModel::GetRigblock(int index) {
 		return mRigblocks[index].get();
 	}
 }

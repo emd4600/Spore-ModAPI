@@ -18,6 +18,14 @@ namespace Editors
 		static const uint32_t TYPE = 0xCFEB4C03;
 		// ctor sub_4C2460
 
+		cEditorSkinMesh* GetMesh(int hq = 1);
+
+		/// Returns whether the skinpaint has finished generating.
+		/// @returns
+		bool HasFinishedPainting();
+
+		bool PaintSkin(EditorModel* editorModel);
+
 	public:
 
 		/* 0Ch */	cEditor* mpEditor;
@@ -41,4 +49,11 @@ namespace Editors
 		/* 84h */	int field_84;
 	};
 	ASSERT_SIZE(cEditorSkin, 0x88);
+
+	namespace Addresses(cEditorSkin)
+	{
+		DeclareAddress(GetMesh);  // 0x4C4280 0x4C4A50
+		DeclareAddress(HasFinishedPainting);  // 0x4C5170 0x4C5920
+		DeclareAddress(PaintSkin);  // 0x4C4AA0 0x4C5270
+	}
 }

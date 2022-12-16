@@ -78,8 +78,11 @@ namespace Graphics
 
 		FilterSettings();
 
+		void SetRequiredGroup(uint32_t group);
+		void SetExcludedGroup(uint32_t group);
+
 		/* 00h */	uint64_t requiredGroupFlags;
-		/* 08h */	uint64_t bannedGroupFlags;
+		/* 08h */	uint64_t excludedGroupFlags;
 		/* 10h */	FilterModel_t filterFunction;
 		/* 14h */	CollisionMode collisionMode;
 		/* 15h */	uint8_t flags;
@@ -87,7 +90,7 @@ namespace Graphics
 
 	inline FilterSettings::FilterSettings()
 		: requiredGroupFlags()
-		, bannedGroupFlags()
+		, excludedGroupFlags()
 		, filterFunction(nullptr)
 		, collisionMode(CollisionMode::Lod0KDTree)
 		, flags(kUseModelCollisionMode)
@@ -396,7 +399,7 @@ namespace Graphics
 		/// @param model
 		/// @param enable If true, effects will be enabled
 		/// @param instanceID [Optional] If not 0, only effects with this ID will be changed.
-		/* C4h */	virtual void SetEffectsRunning(Model* model, bool enable, uint32_t instanceID = 0) const = 0;
+		/* C4h */	virtual void SetEffectsRunning(Model* model, bool enable, bool startStop, uint32_t instanceID = 0) const = 0;
 
 		/// Changes parameters of effects in a model.
 		/// @param model

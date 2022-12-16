@@ -21,8 +21,8 @@ namespace Anim
 			/* 08h */	int field_8;
 			/* 0Ch */	ModelPtr pModel;
 			/* 10h */	int field_10;
-			/* 14h */	int field_14;
 		};
+		ASSERT_SIZE(model_unk, 0x14);
 
 		/* 00h */	char padding_0[0x28];
 		/* 28h */	eastl::vector<model_unk> models;
@@ -62,7 +62,10 @@ namespace Anim
 		/* 04h */	eastl::intrusive_ptr<AnimatedCreature> pCreature;
 		/* 08h */	char padding_8[0xC];
 		/* 14h */	int refCount;
-		/* 18h */	char padding_18[0x2C0 - 0x18];
+		/* 18h */	char padding_18[0x3c - 0x18];
+		/* 3Ch */	Quaternion field_3C;
+		/* 4Ch */	char padding_4C[0x2C0 - 0x4C];
+		// 3Ch is a Quaternion
 		// Contains the models?
 		/* 2C0h */	anim_cid_unk* field_2C0;
 		/* 2C4h */	char padding_2C4[0x2E4 - 0x2C4];
