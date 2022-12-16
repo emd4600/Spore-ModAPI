@@ -127,6 +127,10 @@
             </dt>
             <dd>The implementation of <a href="class_graphics_1_1_i_model_manager.html" class="m-doc">IModelManager</a>; this should only be used for extending and detouring.</dd>
             <dt>
+              class <a href="class_graphics_1_1c_model_world.html" class="m-doc">cModelWorld</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
               struct <a href="struct_graphics_1_1c_m_w_hull.html" class="m-doc">cMWHull</a>
             </dt>
             <dd><span></span></dd>
@@ -179,6 +183,10 @@
             <dd><span></span></dd>
             <dt>
               class <a href="class_graphics_1_1_gmdl_render_asset.html" class="m-doc">GmdlRenderAsset</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              class <a href="class_graphics_1_1_i_ambient_occluder.html" class="m-doc">IAmbientOccluder</a>
             </dt>
             <dd><span></span></dd>
             <dt>
@@ -355,7 +363,7 @@
             </dt>
             <dd><span></span></dd>
             <dt>
-              <span class="m-doc-wrap-bumper">enum <a href="#a3dcd02aa5a247b3d6096420a0787ce4c" class="m-doc">(anonymous)</a> { </span><span class="m-doc-wrap"><a href="#a3dcd02aa5a247b3d6096420a0787ce4cabe828be9aa9033cacef10bef145e82ef" class="m-doc">kRenderQueueMain</a> = 8 }</span>
+              <span class="m-doc-wrap-bumper">enum <a href="#a936cca97eca11e988649742457ee4809" class="m-doc">(anonymous)</a> { </span><span class="m-doc-wrap"><a href="#a936cca97eca11e988649742457ee4809abe828be9aa9033cacef10bef145e82ef" class="m-doc">kRenderQueueMain</a> = 8 }</span>
             </dt>
             <dd><span></span></dd>
             <dt>
@@ -407,22 +415,27 @@
             </dt>
             <dd><span></span></dd>
             <dt>
-              <span class="m-doc-wrap-bumper">enum class <a href="#a9b4742f9ae4c621450b08b65bd9dd9da" class="m-doc">CollisionMode</a>: uint8_t { </span><span class="m-doc-wrap"><a href="#a9b4742f9ae4c621450b08b65bd9dd9daab96da744287618055e5d086d53f42660" class="m-doc">BoundingBox</a> = 0,
-              <a href="#a9b4742f9ae4c621450b08b65bd9dd9daacfaea1acd5a4cd60e50888bfb668a4f1" class="m-doc">TightBoundingBox</a> = 1,
-              <a href="#a9b4742f9ae4c621450b08b65bd9dd9daa677de30c8ea2f3d31a1e2d21db5966f3" class="m-doc">HullKDTree</a> = 2,
-              <a href="#a9b4742f9ae4c621450b08b65bd9dd9daa7d133ec71dee479f57048f7ff000d7ca" class="m-doc">Lod0KDTree</a> = 3 }</span>
+              <span class="m-doc-wrap-bumper">enum <a href="#aefc7522ff3825675ee3cc730ab96cb18" class="m-doc">(anonymous)</a> { </span><span class="m-doc-wrap"><a href="#aefc7522ff3825675ee3cc730ab96cb18a267476807478e8445fade7752328b309" class="m-doc">kMsgTextureExtractCompleted</a> = 0x522264D }</span>
             </dt>
             <dd><span></span></dd>
             <dt>
-              <span class="m-doc-wrap-bumper">enum <a href="#a936cca97eca11e988649742457ee4809" class="m-doc">(anonymous)</a> { </span><span class="m-doc-wrap"><a href="#a936cca97eca11e988649742457ee4809a67714109b28b4942dc96b13136f20ba6" class="m-doc">kModelFlagUseColor</a> = 0x2,
-              <a href="#a936cca97eca11e988649742457ee4809ae6ee2ef9b57e55721a05bc19183167b5" class="m-doc">kModelFlagObjectTypeColor</a> = 0x8,
-              <a href="#a936cca97eca11e988649742457ee4809a06e9414d4e29ab930191c234e525c611" class="m-doc">kModelFlagOverrideRaycastMode</a> = 0x100,
-              <a href="#a936cca97eca11e988649742457ee4809ae8126b97a58029f99739a19522b5a19a" class="m-doc">kModelFlagHighRes</a> = 0x2000,
-              <a href="#a936cca97eca11e988649742457ee4809a80ba571eef214e6f52eace650eab7975" class="m-doc">kModelFlagIsLoaded</a> = 0x4000,
-              <a href="#a936cca97eca11e988649742457ee4809a712326a32a798759b2548daf75e8da43" class="m-doc">kModelFlagVisible</a> = 0x8000,
-              <a href="#a936cca97eca11e988649742457ee4809a282f8e861168694308ecad124d903a6f" class="m-doc">kModelFlagOverrideBoundingBox</a> = 0x10000,
-              <a href="#a936cca97eca11e988649742457ee4809a0c9e2214af3610d935ef791db7b80655" class="m-doc">kModelFlagOverrideBoundingRadius</a> = 0x20000,
-              <a href="#a936cca97eca11e988649742457ee4809acc48a579a9e1672f7672b554e18037cd" class="m-doc">kModelFlagNeedsBake</a> = 0x40000 }</span>
+              <span class="m-doc-wrap-bumper">enum class <a href="#a9b4742f9ae4c621450b08b65bd9dd9da" class="m-doc">CollisionMode</a>: uint8_t { </span><span class="m-doc-wrap"><a href="#a9b4742f9ae4c621450b08b65bd9dd9daab96da744287618055e5d086d53f42660" class="m-doc">BoundingBox</a> = 0,
+              <a href="#a9b4742f9ae4c621450b08b65bd9dd9daacfaea1acd5a4cd60e50888bfb668a4f1" class="m-doc">TightBoundingBox</a> = 1,
+              <a href="#a9b4742f9ae4c621450b08b65bd9dd9daa677de30c8ea2f3d31a1e2d21db5966f3" class="m-doc">HullKDTree</a> = 2,
+              <a href="#a9b4742f9ae4c621450b08b65bd9dd9daa7d133ec71dee479f57048f7ff000d7ca" class="m-doc">Lod0KDTree</a> = 3,
+              <a href="#a9b4742f9ae4c621450b08b65bd9dd9daabf875f6167c1cc5b644352bc42c007ca" class="m-doc">Unk4</a> = 4 }</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">enum <a href="#a7ef1a9f5e33705728101a1ec82822bde" class="m-doc">(anonymous)</a> { </span><span class="m-doc-wrap"><a href="#a7ef1a9f5e33705728101a1ec82822bdea67714109b28b4942dc96b13136f20ba6" class="m-doc">kModelFlagUseColor</a> = 0x2,
+              <a href="#a7ef1a9f5e33705728101a1ec82822bdeae6ee2ef9b57e55721a05bc19183167b5" class="m-doc">kModelFlagObjectTypeColor</a> = 0x8,
+              <a href="#a7ef1a9f5e33705728101a1ec82822bdea06e9414d4e29ab930191c234e525c611" class="m-doc">kModelFlagOverrideRaycastMode</a> = 0x100,
+              <a href="#a7ef1a9f5e33705728101a1ec82822bdeae8126b97a58029f99739a19522b5a19a" class="m-doc">kModelFlagHighRes</a> = 0x2000,
+              <a href="#a7ef1a9f5e33705728101a1ec82822bdea80ba571eef214e6f52eace650eab7975" class="m-doc">kModelFlagIsLoaded</a> = 0x4000,
+              <a href="#a7ef1a9f5e33705728101a1ec82822bdea712326a32a798759b2548daf75e8da43" class="m-doc">kModelFlagVisible</a> = 0x8000,
+              <a href="#a7ef1a9f5e33705728101a1ec82822bdea282f8e861168694308ecad124d903a6f" class="m-doc">kModelFlagOverrideBoundingBox</a> = 0x10000,
+              <a href="#a7ef1a9f5e33705728101a1ec82822bdea0c9e2214af3610d935ef791db7b80655" class="m-doc">kModelFlagOverrideBoundingRadius</a> = 0x20000,
+              <a href="#a7ef1a9f5e33705728101a1ec82822bdeacc48a579a9e1672f7672b554e18037cd" class="m-doc">kModelFlagNeedsBake</a> = 0x40000 }</span>
             </dt>
             <dd><span></span></dd>
             <dt>
@@ -528,6 +541,10 @@
             <dt>
               <span class="m-doc-wrap-bumper"><a href="#a3c3d8bef388e2ae9296566098b0ebf05" class="m-doc">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_graphics_1_1c_model_manager.html" class="m-doc">cModelManager</a>,
               0x60)</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#ab71c6a5f149814f225bb2ba6b7d20a46" class="m-doc">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_graphics_1_1c_model_world.html" class="m-doc">cModelWorld</a>) -&gt; namespace</span>
             </dt>
             <dd><span></span></dd>
             <dt>
@@ -720,9 +737,9 @@
             </h3>
             <p><span></span></p>
           </div></section>
-          <section class="m-doc-details" id="a3dcd02aa5a247b3d6096420a0787ce4c"><div>
+          <section class="m-doc-details" id="a936cca97eca11e988649742457ee4809"><div>
             <h3>
-              enum Graphics::<wbr /><a href="#a3dcd02aa5a247b3d6096420a0787ce4c" class="m-doc-self">(anonymous)</a>
+              enum Graphics::<wbr /><a href="#a936cca97eca11e988649742457ee4809" class="m-doc-self">(anonymous)</a>
               <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_i_renderer_8h.html">&lt;Spore/Graphics/IRenderer.h&gt;</a></div>
             </h3>
             <p><span></span></p>
@@ -903,6 +920,13 @@
               </tbody>
             </table>
           </div></section>
+          <section class="m-doc-details" id="aefc7522ff3825675ee3cc730ab96cb18"><div>
+            <h3>
+              enum Graphics::<wbr /><a href="#aefc7522ff3825675ee3cc730ab96cb18" class="m-doc-self">(anonymous)</a>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_i_texture_manager_8h.html">&lt;Spore/Graphics/ITextureManager.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
           <section class="m-doc-details" id="a9b4742f9ae4c621450b08b65bd9dd9da"><div>
             <h3>
               enum class Graphics::<wbr /><a href="#a9b4742f9ae4c621450b08b65bd9dd9da" class="m-doc-self">CollisionMode</a>: uint8_t
@@ -936,12 +960,18 @@
                   <p>Check intersection with the LOD0 mesh.</p>
                   </td>
                 </tr>
+                <tr>
+                  <td><a href="#a9b4742f9ae4c621450b08b65bd9dd9daabf875f6167c1cc5b644352bc42c007ca" class="m-doc-self" id="a9b4742f9ae4c621450b08b65bd9dd9daabf875f6167c1cc5b644352bc42c007ca">Unk4</a></td>
+                  <td>
+                  <p><span></span></p>
+                  </td>
+                </tr>
               </tbody>
             </table>
           </div></section>
-          <section class="m-doc-details" id="a936cca97eca11e988649742457ee4809"><div>
+          <section class="m-doc-details" id="a7ef1a9f5e33705728101a1ec82822bde"><div>
             <h3>
-              enum Graphics::<wbr /><a href="#a936cca97eca11e988649742457ee4809" class="m-doc-self">(anonymous)</a>
+              enum Graphics::<wbr /><a href="#a7ef1a9f5e33705728101a1ec82822bde" class="m-doc-self">(anonymous)</a>
               <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_model_8h.html">&lt;Spore/Graphics/Model.h&gt;</a></div>
             </h3>
             <p><span></span></p>
@@ -1130,6 +1160,13 @@
               <span class="m-doc-wrap-bumper"> Graphics::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a3c3d8bef388e2ae9296566098b0ebf05" class="m-doc-self">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_graphics_1_1c_model_manager.html" class="m-doc">cModelManager</a>,
               0x60)</span></span>
               <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="c_model_manager_8h.html">&lt;Spore/Graphics/cModelManager.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="ab71c6a5f149814f225bb2ba6b7d20a46"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">namespace Graphics::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ab71c6a5f149814f225bb2ba6b7d20a46" class="m-doc-self">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_graphics_1_1c_model_world.html" class="m-doc">cModelWorld</a>)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="c_model_world_8h.html">&lt;Spore/Graphics/cModelWorld.h&gt;</a></div>
             </h3>
             <p><span></span></p>
           </div></section>

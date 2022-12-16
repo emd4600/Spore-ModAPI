@@ -55,6 +55,7 @@
             <li>
               Reference
               <ul>
+                <li><a href="#derived-classes">Derived classes</a></li>
                 <li><a href="#pub-types">Public types</a></li>
                 <li><a href="#typeless-methods">Constructors, destructors, conversion operators</a></li>
                 <li><a href="#pub-methods">Public functions</a></li>
@@ -63,7 +64,16 @@
             </li>
           </ul>
         </div>
-<p><a href="class_graphics_1_1_model.html" class="m-doc">Model</a> worlds keep track of all the models loaded in order to render them when the model world itself is rendered. A world can also contain multiple lighting worlds; for more information, check the <a href="class_graphics_1_1_i_lighting_world.html" class="m-doc">ILightingWorld</a> interface. When no lighting worlds are added a default lighting is used.</p><p>In order for the model world to render, you must add it to the render queue. This step is not necessary if the ILayer::Render() method is called directly from another renderer. For example: <code class="m-code"><span class="n">Renderer</span><span class="p">.</span><span class="n">AddLayer</span><span class="p">(</span><span class="n">modelWorld</span><span class="o">-&gt;</span><span class="n">AsLayer</span><span class="p">(),</span><span class="w"> </span><span class="mi">8</span><span class="p">);</span><span class="w"></span></code> You might use greater render layer indices, like <a href="namespace_graphics.html#a3dcd02aa5a247b3d6096420a0787ce4cabe828be9aa9033cacef10bef145e82ef" class="m-doc">Graphics::<wbr />kRenderQueueMain</a> + 1. An example of this would be having a model world for translucid objects, which need to be rendered last.</p>
+<p><a href="class_graphics_1_1_model.html" class="m-doc">Model</a> worlds keep track of all the models loaded in order to render them when the model world itself is rendered. A world can also contain multiple lighting worlds; for more information, check the <a href="class_graphics_1_1_i_lighting_world.html" class="m-doc">ILightingWorld</a> interface. When no lighting worlds are added a default lighting is used.</p><p>In order for the model world to render, you must add it to the render queue. This step is not necessary if the ILayer::Render() method is called directly from another renderer. For example: <code class="m-code"><span class="n">Renderer</span><span class="p">.</span><span class="n">AddLayer</span><span class="p">(</span><span class="n">modelWorld</span><span class="o">-&gt;</span><span class="n">AsLayer</span><span class="p">(),</span><span class="w"> </span><span class="mi">8</span><span class="p">);</span><span class="w"></span></code> You might use greater render layer indices, like <a href="namespace_graphics.html#a936cca97eca11e988649742457ee4809abe828be9aa9033cacef10bef145e82ef" class="m-doc">Graphics::<wbr />kRenderQueueMain</a> + 1. An example of this would be having a model world for translucid objects, which need to be rendered last.</p>
+        <section id="derived-classes">
+          <h2><a href="#derived-classes">Derived classes</a></h2>
+          <dl class="m-doc">
+            <dt>
+              class <a href="class_graphics_1_1c_model_world.html" class="m-doc">cModelWorld</a>
+            </dt>
+            <dd><span></span></dd>
+          </dl>
+        </section>
         <section id="pub-types">
           <h2><a href="#pub-types">Public types</a></h2>
           <dl class="m-doc">
@@ -370,8 +380,9 @@
             </dt>
             <dd><span></span></dd>
             <dt>
-              <span class="m-doc-wrap-bumper">void <a href="#a8e66490bb9e6ae2bf16ac8bfb429c79e" class="m-doc">SetEffectsRunning</a>(</span><span class="m-doc-wrap"><a href="class_graphics_1_1_model.html" class="m-doc">Model</a>* model,
+              <span class="m-doc-wrap-bumper">void <a href="#a934a4c6b3ad4741f736b89fe53d1caa7" class="m-doc">SetEffectsRunning</a>(</span><span class="m-doc-wrap"><a href="class_graphics_1_1_model.html" class="m-doc">Model</a>* model,
               bool enable,
+              bool startStop,
               uint32_t instanceID = 0) const <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
             <dd>Enables or disables the effects in the model.</dd>
@@ -1600,10 +1611,11 @@
             </table>
 <p>If the value is negative, effect range will be ignored, so effects in this model will be displayed at any distance. Otherwise, the value is ignored, and the effect range is loaded from the model <code>.prop</code> file.</p>
           </div></section>
-          <section class="m-doc-details" id="a8e66490bb9e6ae2bf16ac8bfb429c79e"><div>
+          <section class="m-doc-details" id="a934a4c6b3ad4741f736b89fe53d1caa7"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">void Graphics::<wbr />IModelWorld::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a8e66490bb9e6ae2bf16ac8bfb429c79e" class="m-doc-self">SetEffectsRunning</a>(</span><span class="m-doc-wrap"><a href="class_graphics_1_1_model.html" class="m-doc">Model</a>* model,
+              <span class="m-doc-wrap-bumper">void Graphics::<wbr />IModelWorld::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a934a4c6b3ad4741f736b89fe53d1caa7" class="m-doc-self">SetEffectsRunning</a>(</span><span class="m-doc-wrap"><a href="class_graphics_1_1_model.html" class="m-doc">Model</a>* model,
               bool enable,
+              bool startStop,
               uint32_t instanceID = 0) const <span class="m-label m-warning">pure virtual</span></span></span>
             </h3>
             <p>Enables or disables the effects in the model.</p>
@@ -1619,6 +1631,10 @@
                 <tr>
                   <td>enable</td>
                   <td>If true, effects will be enabled</td>
+                </tr>
+                <tr>
+                  <td>startStop</td>
+                  <td></td>
                 </tr>
                 <tr>
                   <td>instanceID</td>

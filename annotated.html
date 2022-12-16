@@ -57,7 +57,7 @@
                   <li>struct <a href="struct_anim_1_1anim__cid__unk_1_1model__unk.html" class="m-doc">model_unk</a> <span class="m-doc"><span></span></span></li>
                 </ul>
               </li>
-              <li>struct <a href="struct_anim_1_1anim__csd.html" class="m-doc">anim_csd</a> <span class="m-doc"><span></span></span></li>
+              <li>struct <a href="struct_anim_1_1anim__csd.html" class="m-doc">anim_csd</a> <span class="m-doc">Creature Skinning Data.</span></li>
               <li>struct <a href="struct_anim_1_1anim__qb.html" class="m-doc">anim_qb</a> <span class="m-doc"><span></span></span></li>
               <li class="m-doc-collapsible collapsed">
                 <a href="#" onclick="return toggle(this)">struct</a> <a href="struct_anim_1_1anim__query.html" class="m-doc">anim_query</a> <span class="m-doc"><span></span></span>
@@ -142,6 +142,7 @@
                   <li>struct <a href="struct_app_1_1_i_message_manager_1_1_entry.html" class="m-doc">Entry</a> <span class="m-doc"><span></span></span></li>
                 </ul>
               </li>
+              <li>class <a href="class_app_1_1_i_message_r_c.html" class="m-doc">IMessageRC</a> <span class="m-doc"><span></span></span></li>
               <li>class <a href="class_app_1_1_i_prop_manager.html" class="m-doc">IPropManager</a> <span class="m-doc">A manager that stores all the property lists in the game, used for most configurations.</span></li>
               <li>class <a href="class_app_1_1_i_s_p_class_factory.html" class="m-doc">ISPClassFactory</a> <span class="m-doc"><span></span></span></li>
               <li>class <a href="class_app_1_1_i_state_manager.html" class="m-doc">IStateManager</a> <span class="m-doc"><span></span></span></li>
@@ -204,21 +205,30 @@
             <ul class="m-doc">
               <li>class <a href="class_editors_1_1___editor_u_i__interface.html" class="m-doc">_EditorUI_interface</a> <span class="m-doc"><span></span></span></li>
               <li>struct <a href="struct_editors_1_1_bake_parameters.html" class="m-doc">BakeParameters</a> <span class="m-doc"><span></span></span></li>
-              <li>class <a href="class_editors_1_1c_editor.html" class="m-doc">cEditor</a> <span class="m-doc">Main class for editors.</span></li>
               <li class="m-doc-collapsible collapsed">
-                <a href="#" onclick="return toggle(this)">class</a> <a href="class_editors_1_1c_editor_resource.html" class="m-doc">cEditorResource</a> <span class="m-doc"><a href="namespace_resource.html" class="m-doc">Resource</a> of a saved creation, represents a <code>.crt</code>, <code>.bld</code>, <code>.vcl</code>, etc file.</span>
+                <a href="#" onclick="return toggle(this)">class</a> <a href="class_editors_1_1c_creature_data_resource.html" class="m-doc">cCreatureDataResource</a> <span class="m-doc"><span></span></span>
                 <ul class="m-doc">
-                  <li>struct <a href="struct_editors_1_1c_editor_resource_1_1_properties.html" class="m-doc">Properties</a> <span class="m-doc"><span></span></span></li>
+                  <li>struct <a href="struct_editors_1_1c_creature_data_resource_1_1_capability_tag.html" class="m-doc">CapabilityTag</a> <span class="m-doc"><span></span></span></li>
+                  <li>struct <a href="struct_editors_1_1c_creature_data_resource_1_1_rigblock_data.html" class="m-doc">RigblockData</a> <span class="m-doc"><span></span></span></li>
                 </ul>
               </li>
+              <li>class <a href="class_editors_1_1c_editor.html" class="m-doc">cEditor</a> <span class="m-doc">Main class for editors.</span></li>
+              <li>class <a href="class_editors_1_1c_editor_anim_event.html" class="m-doc">cEditorAnimEvent</a> <span class="m-doc"><span></span></span></li>
+              <li>class <a href="class_editors_1_1c_editor_anim_world.html" class="m-doc">cEditorAnimWorld</a> <span class="m-doc"><span></span></span></li>
+              <li>class <a href="class_editors_1_1c_editor_resource.html" class="m-doc">cEditorResource</a> <span class="m-doc"><a href="namespace_resource.html" class="m-doc">Resource</a> of a saved creation, represents a <code>.crt</code>, <code>.bld</code>, <code>.vcl</code>, etc file.</span></li>
               <li>struct <a href="struct_editors_1_1c_editor_resource_block.html" class="m-doc">cEditorResourceBlock</a> <span class="m-doc"><span></span></span></li>
+              <li>struct <a href="struct_editors_1_1c_editor_resource_properties.html" class="m-doc">cEditorResourceProperties</a> <span class="m-doc"><span></span></span></li>
+              <li>class <a href="class_editors_1_1c_editor_skin.html" class="m-doc">cEditorSkin</a> <span class="m-doc"><span></span></span></li>
+              <li>class <a href="class_editors_1_1c_editor_skin_mesh.html" class="m-doc">cEditorSkinMesh</a> <span class="m-doc"><span></span></span></li>
+              <li>class <a href="class_editors_1_1c_editor_skin_mesh_base.html" class="m-doc">cEditorSkinMeshBase</a> <span class="m-doc"><span></span></span></li>
               <li>class <a href="class_editors_1_1_color_changed_message.html" class="m-doc">ColorChangedMessage</a> <span class="m-doc">A message sent every time the user changes the color of the creation in the editor.</span></li>
               <li>struct <a href="struct_editors_1_1_content_validation.html" class="m-doc">ContentValidation</a> <span class="m-doc"><span></span></span></li>
-              <li>class <a href="class_editors_1_1_creature_walk_controller.html" class="m-doc">CreatureWalkController</a> <span class="m-doc"><span></span></span></li>
               <li>class <a href="class_editors_1_1c_species_manager.html" class="m-doc">cSpeciesManager</a> <span class="m-doc"><span></span></span></li>
               <li>class <a href="class_editors_1_1c_tuning_spine.html" class="m-doc">cTuningSpine</a> <span class="m-doc"><span></span></span></li>
+              <li>class <a href="class_editors_1_1_editor_animations.html" class="m-doc">EditorAnimations</a> <span class="m-doc"><span></span></span></li>
               <li>class <a href="class_editors_1_1_editor_base_handle.html" class="m-doc">EditorBaseHandle</a> <span class="m-doc"><span></span></span></li>
               <li>class <a href="class_editors_1_1_editor_camera.html" class="m-doc">EditorCamera</a> <span class="m-doc"><span></span></span></li>
+              <li>class <a href="class_editors_1_1_editor_creature_controller.html" class="m-doc">EditorCreatureController</a> <span class="m-doc"><span></span></span></li>
               <li>class <a href="class_editors_1_1_editor_model.html" class="m-doc">EditorModel</a> <span class="m-doc">Represents the state of a creation in an editor.</span></li>
               <li>class <a href="class_editors_1_1_editor_play_mode.html" class="m-doc">EditorPlayMode</a> <span class="m-doc"><span></span></span></li>
               <li>class <a href="class_editors_1_1_editor_play_mode_background.html" class="m-doc">EditorPlayModeBackground</a> <span class="m-doc"><span></span></span></li>
@@ -303,6 +313,7 @@
                 </ul>
               </li>
               <li>class <a href="class_graphics_1_1c_model_manager.html" class="m-doc">cModelManager</a> <span class="m-doc">The implementation of <a href="class_graphics_1_1_i_model_manager.html" class="m-doc">IModelManager</a>; this should only be used for extending and detouring.</span></li>
+              <li>class <a href="class_graphics_1_1c_model_world.html" class="m-doc">cModelWorld</a> <span class="m-doc"><span></span></span></li>
               <li>struct <a href="struct_graphics_1_1c_m_w_hull.html" class="m-doc">cMWHull</a> <span class="m-doc"><span></span></span></li>
               <li class="m-doc-collapsible collapsed">
                 <a href="#" onclick="return toggle(this)">class</a> <a href="class_graphics_1_1c_m_w_model_internal.html" class="m-doc">cMWModelInternal</a> <span class="m-doc"><span></span></span>
@@ -328,6 +339,7 @@
               <li>struct <a href="struct_graphics_1_1_filter_settings.html" class="m-doc">FilterSettings</a> <span class="m-doc"><span></span></span></li>
               <li>class <a href="class_graphics_1_1_generated_mesh.html" class="m-doc">GeneratedMesh</a> <span class="m-doc"><span></span></span></li>
               <li>class <a href="class_graphics_1_1_gmdl_render_asset.html" class="m-doc">GmdlRenderAsset</a> <span class="m-doc"><span></span></span></li>
+              <li>class <a href="class_graphics_1_1_i_ambient_occluder.html" class="m-doc">IAmbientOccluder</a> <span class="m-doc"><span></span></span></li>
               <li>class <a href="class_graphics_1_1_i_graphics_manager.html" class="m-doc">IGraphicsManager</a> <span class="m-doc"><span></span></span></li>
               <li>class <a href="class_graphics_1_1_i_layer.html" class="m-doc">ILayer</a> <span class="m-doc">This interfaces defines a layer that is rendered every game loop, by callings its <a href="class_graphics_1_1_i_layer.html#ae4812c7ed39d6dcaf98088c7ae5211b0" class="m-doc">ILayer::<wbr />DrawLayer()</a> method.</span></li>
               <li>class <a href="class_graphics_1_1_i_lighting_manager.html" class="m-doc">ILightingManager</a> <span class="m-doc">This manager handles the lighting configurations in the game.</span></li>
@@ -473,6 +485,7 @@
               <li>struct <a href="struct_render_ware_1_1c_m_d_bone_transform.html" class="m-doc">cMDBoneTransform</a> <span class="m-doc"><span></span></span></li>
               <li>struct <a href="struct_render_ware_1_1_compiled_state.html" class="m-doc">CompiledState</a> <span class="m-doc">This structure contains properties that tells the renderer how to draw a certain object.</span></li>
               <li>struct <a href="struct_render_ware_1_1_index_buffer.html" class="m-doc">IndexBuffer</a> <span class="m-doc">A buffer that contains all the indices (so triangles) data.</span></li>
+              <li>class <a href="class_render_ware_1_1_i_rw_resource.html" class="m-doc">IRwResource</a> <span class="m-doc"><span></span></span></li>
               <li>struct <a href="struct_render_ware_1_1_keyframe_anim.html" class="m-doc">KeyframeAnim</a> <span class="m-doc">A structure that represents an animation made of multiple keyframes.</span></li>
               <li class="m-doc-collapsible collapsed">
                 <a href="#" onclick="return toggle(this)">union</a> <a href="union_render_ware_1_1_keyframe_data.html" class="m-doc">KeyframeData</a> <span class="m-doc"><span></span></span>
@@ -840,8 +853,15 @@
             <a href="#" onclick="return toggle(this)">namespace</a> <a href="namespace_skinner.html" class="m-doc">Skinner</a> <span class="m-doc"><span></span></span>
             <ul class="m-doc">
               <li>class <a href="class_skinner_1_1c_paint_system.html" class="m-doc">cPaintSystem</a> <span class="m-doc"><span></span></span></li>
-              <li>class <a href="class_skinner_1_1c_skinner_texture.html" class="m-doc">cSkinnerTexture</a> <span class="m-doc"><span></span></span></li>
+              <li>class <a href="class_skinner_1_1c_skinner_texture_painter.html" class="m-doc">cSkinnerTexturePainter</a> <span class="m-doc"><span></span></span></li>
               <li>class <a href="class_skinner_1_1c_skin_painter.html" class="m-doc">cSkinPainter</a> <span class="m-doc"><span></span></span></li>
+              <li>class <a href="class_skinner_1_1c_skin_painter_job.html" class="m-doc">cSkinPainterJob</a> <span class="m-doc">Base class for tasks executed in the process of generating a skinpaint texture.</span></li>
+              <li>class <a href="class_skinner_1_1c_skin_painter_job_apply_parts_textures.html" class="m-doc">cSkinPainterJobApplyPartsTextures</a> <span class="m-doc">Applies the diffuse, bumpSpec and tintMask maps of all rigblocks.</span></li>
+              <li>class <a href="class_skinner_1_1c_skin_painter_job_bump_to_normal.html" class="m-doc">cSkinPainterJobBumpToNormal</a> <span class="m-doc">Transforms a bump map in skinner texture 0 into a normal map in skinner texture 2.</span></li>
+              <li>class <a href="class_skinner_1_1c_skin_painter_job_copy_tex1_alpha_to_tex0.html" class="m-doc">cSkinPainterJobCopyTex1AlphaToTex0</a> <span class="m-doc">Copies the alpha channel of skinner texture 1 into the alpha channel of skinner texture 0.</span></li>
+              <li>class <a href="class_skinner_1_1c_skin_painter_pipeline.html" class="m-doc">cSkinPainterPipeline</a> <span class="m-doc"><span></span></span></li>
+              <li>struct <a href="struct_skinner_1_1c_skinpaint_info.html" class="m-doc">cSkinpaintInfo</a> <span class="m-doc"><span></span></span></li>
+              <li>struct <a href="struct_skinner_1_1_unk.html" class="m-doc">Unk</a> <span class="m-doc"><span></span></span></li>
             </ul>
           </li>
           <li class="m-doc-collapsible">
@@ -969,7 +989,6 @@
               <li>struct <a href="struct_terrain_1_1_terrain_quad_mesh.html" class="m-doc">TerrainQuadMesh</a> <span class="m-doc"><span></span></span></li>
               <li>struct <a href="struct_terrain_1_1_terrain_state.html" class="m-doc">TerrainState</a> <span class="m-doc"><span></span></span></li>
               <li>struct <a href="struct_terrain_1_1_terrain_transform.html" class="m-doc">TerrainTransform</a> <span class="m-doc"><span></span></span></li>
-              <li>class <a href="class_terrain_1_1unk__class__0x13_f3628.html" class="m-doc">unk_class_0x13F3628</a> <span class="m-doc"><span></span></span></li>
               <li>class <a href="class_terrain_1_1_unk_weather_manager.html" class="m-doc">UnkWeatherManager</a> <span class="m-doc"><span></span></span></li>
             </ul>
           </li>
@@ -1132,6 +1151,14 @@
           <li>class <a href="class_fixed_pool_allocator.html" class="m-doc">FixedPoolAllocator</a> <span class="m-doc"><span></span></span></li>
           <li>struct <a href="struct_game_input.html" class="m-doc">GameInput</a> <span class="m-doc">This structure keeps track of all the input in the game, such as keys pressed/released, the mouse position, etc.</span></li>
           <li>class <a href="class_gas_test_cheat.html" class="m-doc">GasTestCheat</a> <span class="m-doc"><span></span></span></li>
+          <li class="m-doc-collapsible collapsed">
+            <a href="#" onclick="return toggle(this)">struct</a> <a href="struct_general_allocator.html" class="m-doc">GeneralAllocator</a> <span class="m-doc"><span></span></span>
+            <ul class="m-doc">
+              <li>struct <a href="struct_general_allocator_1_1allocator__mutex.html" class="m-doc">allocator_mutex</a> <span class="m-doc"><span></span></span></li>
+              <li>struct <a href="struct_general_allocator_1_1_chunk.html" class="m-doc">Chunk</a> <span class="m-doc"><span></span></span></li>
+              <li>struct <a href="struct_general_allocator_1_1_skip_list_chunk.html" class="m-doc">SkipListChunk</a> <span class="m-doc"><span></span></span></li>
+            </ul>
+          </li>
           <li>class <a href="class_i_core_allocator.html" class="m-doc">ICoreAllocator</a> <span class="m-doc"><a href="class_i_core_allocator.html" class="m-doc">ICoreAllocator</a> is the base level abstract interface for allocating and deallocating memory.</span></li>
           <li>class <a href="class_i_virtual.html" class="m-doc">IVirtual</a> <span class="m-doc">A default interface that provides a virtual destructor, it should only be used internally.</span></li>
           <li>union <a href="union_key_modifiers.html" class="m-doc">KeyModifiers</a> <span class="m-doc"><span></span></span></li>

@@ -87,7 +87,7 @@
             <dt id="a23f3c448b7d6b5b9acc15c6300f8ab7c">
               using <a href="#a23f3c448b7d6b5b9acc15c6300f8ab7c" class="m-doc-self">MessageHandler_t</a> = void(*)(uint32_t messageID, void*pData, void*pObject)
             </dt>
-            <dd>A static message handler. This is the equivalent to the <a href="class_app_1_1_i_message_listener.html#a8c353fd4fa8edf6e4a55232f1c022289" class="m-doc">IMessageListener::<wbr />HandleMessage()</a> function.</dd>
+            <dd>A static message handler. This is the equivalent to the <a href="class_app_1_1_i_unmanaged_message_listener.html#a4fac1753a183438befade93a77fc57ed" class="m-doc">IMessageListener::<wbr />HandleMessage()</a> function.</dd>
           </dl>
         </section>
         <section id="pub-static-methods">
@@ -129,23 +129,23 @@
             </dt>
             <dd>Sets the boolean value of the specified option, in the <a href="class_app_1_1_i_message_manager.html#a58c10a120017b7176587273f7a765ce0" class="m-doc">IMessageManager::<wbr />Options</a> enum.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">void <a href="#af773ed64c466eb213089b306f44edc1b" class="m-doc">PostMSG</a>(</span><span class="m-doc-wrap">uint32_t messageID,
+              <span class="m-doc-wrap-bumper">void <a href="#a1e46a8bf1e34cdc9131704d57a5f2079" class="m-doc">MessageSend</a>(</span><span class="m-doc-wrap">uint32_t messageID,
               void* pMessage,
-              <a href="class_app_1_1_i_message_listener.html" class="m-doc">IMessageListener</a>* pListener = nullptr) <span class="m-label m-flat m-warning">pure virtual</span></span>
+              <a href="class_app_1_1_i_unmanaged_message_listener.html" class="m-doc">IUnmanagedMessageListener</a>* pListener = nullptr) <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
             <dd>Sends a message in this manager, notifying all the interfaces listening for the specified message ID.</dd>
-            <dt id="a4f3966c389ebff8cab87604bee4f903b">
-              <span class="m-doc-wrap-bumper">void <a href="#a4f3966c389ebff8cab87604bee4f903b" class="m-doc-self">func18h</a>(</span><span class="m-doc-wrap">int,
-              int,
-              int) <span class="m-label m-flat m-warning">pure virtual</span></span>
+            <dt id="a19a71802ed682890e039e17d6ff4f4ac">
+              <span class="m-doc-wrap-bumper">void <a href="#a19a71802ed682890e039e17d6ff4f4ac" class="m-doc-self">MessagePost</a>(</span><span class="m-doc-wrap">uint32_t messageID,
+              <a href="class_app_1_1_i_message_r_c.html" class="m-doc">IMessageRC</a>* pMessage,
+              <a href="class_app_1_1_i_message_listener.html" class="m-doc">IMessageListener</a>* pListener = nullptr) <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
             <dd><span></span></dd>
-            <dt id="ae5512ebb7528683e54d3444be785f41d">
-              <span class="m-doc-wrap-bumper">void <a href="#ae5512ebb7528683e54d3444be785f41d" class="m-doc-self">func1Ch</a>(</span><span class="m-doc-wrap">int,
+            <dt id="aa25dcb94f48384795e813383109737fc">
+              <span class="m-doc-wrap-bumper">void <a href="#aa25dcb94f48384795e813383109737fc" class="m-doc-self">MessagePostFunction</a>(</span><span class="m-doc-wrap">uint32_t messageID,
+              <a href="class_app_1_1_i_message_r_c.html" class="m-doc">IMessageRC</a>* pMessage,
               int,
-              int,
-              int,
-              int) <span class="m-label m-flat m-warning">pure virtual</span></span>
+              <a href="class_app_1_1_i_message_manager.html#a23f3c448b7d6b5b9acc15c6300f8ab7c" class="m-doc">MessageHandler_<wbr />t</a> handler,
+              void*) <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
             <dd><span></span></dd>
             <dt>
@@ -172,7 +172,7 @@
             </dt>
             <dd>Adds a static handler function to this manager, that will be notified of messages with the specified ID.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#a9a81916fd500f372d3c741b3361d6df5" class="m-doc">RemoveListener</a>(</span><span class="m-doc-wrap"><a href="class_app_1_1_i_message_listener.html" class="m-doc">IMessageListener</a>* pListener,
+              <span class="m-doc-wrap-bumper">auto <a href="#a1b3577e18ae868980e8e6e4b82c9b674" class="m-doc">RemoveListener</a>(</span><span class="m-doc-wrap"><a href="class_app_1_1_i_unmanaged_message_listener.html" class="m-doc">IUnmanagedMessageListener</a>* pListener,
               uint32_t messageID,
               int nPriority = -9999) -&gt; bool <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
@@ -183,22 +183,22 @@
               int nPriority = -9999) -&gt; bool <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
             <dd>Makes the handler stop listening to the specified message ID.</dd>
-            <dt id="ae63d20d1e3978d70c481e0f78b12eefd">
-              <span class="m-doc-wrap-bumper">auto <a href="#ae63d20d1e3978d70c481e0f78b12eefd" class="m-doc-self">func34h</a>(</span><span class="m-doc-wrap">int,
+            <dt id="a60d9be0418aecec61ee1926215939b75">
+              <span class="m-doc-wrap-bumper">auto <a href="#a60d9be0418aecec61ee1926215939b75" class="m-doc-self">ProcessQueue</a>(</span><span class="m-doc-wrap">int,
               int,
               int) -&gt; int <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
             <dd><span></span></dd>
-            <dt id="ab9dfcdc9b23b51f0ac26c1876e49077d">
-              <span class="m-doc-wrap-bumper">auto <a href="#ab9dfcdc9b23b51f0ac26c1876e49077d" class="m-doc-self">func38h</a>(</span><span class="m-doc-wrap">) -&gt; int <span class="m-label m-flat m-warning">pure virtual</span></span>
+            <dt id="a85f31d8db4af69fb25214d00305d2f5d">
+              <span class="m-doc-wrap-bumper">auto <a href="#a85f31d8db4af69fb25214d00305d2f5d" class="m-doc-self">ProcessQueue2</a>(</span><span class="m-doc-wrap">) -&gt; int <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
             <dd><span></span></dd>
-            <dt id="af535c7b219d56d981878ff61851266fc">
-              <span class="m-doc-wrap-bumper">auto <a href="#af535c7b219d56d981878ff61851266fc" class="m-doc-self">func3Ch</a>(</span><span class="m-doc-wrap">) -&gt; int <span class="m-label m-flat m-warning">pure virtual</span></span>
+            <dt id="a96957cac93452411ebbe1566dc2b9a2b">
+              <span class="m-doc-wrap-bumper">auto <a href="#a96957cac93452411ebbe1566dc2b9a2b" class="m-doc-self">GetMessageQueue</a>(</span><span class="m-doc-wrap">) -&gt; int <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
             <dd><span></span></dd>
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#a83889a55ffad9ab7c18de2392105e470" class="m-doc">UseMutex</a>(</span><span class="m-doc-wrap">bool bLock) -&gt; int <span class="m-label m-flat m-warning">pure virtual</span></span>
+              <span class="m-doc-wrap-bumper">auto <a href="#a84c8276cd345c317bde848d225540a53" class="m-doc">Lock</a>(</span><span class="m-doc-wrap">bool bLock) -&gt; int <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
             <dd>Locks or unlocks the mutexs in this manager, allowing to safely interact with this manager in different threads.</dd>
           </dl>
@@ -241,7 +241,7 @@
                 <tr>
                   <td><a href="#a58c10a120017b7176587273f7a765ce0ac40284bd14a476534fcd942b0860b6ea" class="m-doc-self" id="a58c10a120017b7176587273f7a765ce0ac40284bd14a476534fcd942b0860b6ea">kOptionAllowLock</a></td>
                   <td>
-                  <p>If true, this manager uses mutexs to work with threads. Additionally, the user can use the function <a href="class_app_1_1_i_message_manager.html#a83889a55ffad9ab7c18de2392105e470" class="m-doc">IMessageManager::<wbr />UseMutex(bool)</a>.</p>
+                  <p>If true, this manager uses mutexs to work with threads. Additionally, the user can use the function IMessageManager::UseMutex(bool).</p>
                   </td>
                 </tr>
                 <tr>
@@ -295,11 +295,11 @@
               </tbody>
             </table>
           </div></section>
-          <section class="m-doc-details" id="af773ed64c466eb213089b306f44edc1b"><div>
+          <section class="m-doc-details" id="a1e46a8bf1e34cdc9131704d57a5f2079"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">void App::<wbr />IMessageManager::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#af773ed64c466eb213089b306f44edc1b" class="m-doc-self">PostMSG</a>(</span><span class="m-doc-wrap">uint32_t messageID,
+              <span class="m-doc-wrap-bumper">void App::<wbr />IMessageManager::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a1e46a8bf1e34cdc9131704d57a5f2079" class="m-doc-self">MessageSend</a>(</span><span class="m-doc-wrap">uint32_t messageID,
               void* pMessage,
-              <a href="class_app_1_1_i_message_listener.html" class="m-doc">IMessageListener</a>* pListener = nullptr) <span class="m-label m-warning">pure virtual</span></span></span>
+              <a href="class_app_1_1_i_unmanaged_message_listener.html" class="m-doc">IUnmanagedMessageListener</a>* pListener = nullptr) <span class="m-label m-warning">pure virtual</span></span></span>
             </h3>
             <p>Sends a message in this manager, notifying all the interfaces listening for the specified message ID.</p>
             <table class="m-table m-fullwidth m-flat">
@@ -428,9 +428,9 @@
             </table>
 <p>The same handler can be added multiple times using different priorities.</p>
           </div></section>
-          <section class="m-doc-details" id="a9a81916fd500f372d3c741b3361d6df5"><div>
+          <section class="m-doc-details" id="a1b3577e18ae868980e8e6e4b82c9b674"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">bool App::<wbr />IMessageManager::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a9a81916fd500f372d3c741b3361d6df5" class="m-doc-self">RemoveListener</a>(</span><span class="m-doc-wrap"><a href="class_app_1_1_i_message_listener.html" class="m-doc">IMessageListener</a>* pListener,
+              <span class="m-doc-wrap-bumper">bool App::<wbr />IMessageManager::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a1b3577e18ae868980e8e6e4b82c9b674" class="m-doc-self">RemoveListener</a>(</span><span class="m-doc-wrap"><a href="class_app_1_1_i_unmanaged_message_listener.html" class="m-doc">IUnmanagedMessageListener</a>* pListener,
               uint32_t messageID,
               int nPriority = -9999) <span class="m-label m-warning">pure virtual</span></span></span>
             </h3>
@@ -496,9 +496,9 @@
             </table>
 <p>Optionally, a priority can be specified; if so, only if the handler with that priority will be removed.</p>
           </div></section>
-          <section class="m-doc-details" id="a83889a55ffad9ab7c18de2392105e470"><div>
+          <section class="m-doc-details" id="a84c8276cd345c317bde848d225540a53"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">int App::<wbr />IMessageManager::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a83889a55ffad9ab7c18de2392105e470" class="m-doc-self">UseMutex</a>(</span><span class="m-doc-wrap">bool bLock) <span class="m-label m-warning">pure virtual</span></span></span>
+              <span class="m-doc-wrap-bumper">int App::<wbr />IMessageManager::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a84c8276cd345c317bde848d225540a53" class="m-doc-self">Lock</a>(</span><span class="m-doc-wrap">bool bLock) <span class="m-label m-warning">pure virtual</span></span></span>
             </h3>
             <p>Locks or unlocks the mutexs in this manager, allowing to safely interact with this manager in different threads.</p>
             <table class="m-table m-fullwidth m-flat">

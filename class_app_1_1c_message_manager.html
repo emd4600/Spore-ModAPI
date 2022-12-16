@@ -92,23 +92,23 @@
             </dt>
             <dd>Sets the boolean value of the specified option, in the <a href="class_app_1_1_i_message_manager.html#a58c10a120017b7176587273f7a765ce0" class="m-doc">IMessageManager::<wbr />Options</a> enum.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">void <a href="#a47f82f406f85fc358e441970a1d2ff3a" class="m-doc">PostMSG</a>(</span><span class="m-doc-wrap">uint32_t messageID,
+              <span class="m-doc-wrap-bumper">void <a href="#a0aa6f5603d5dacc230911502ea0b2e02" class="m-doc">MessageSend</a>(</span><span class="m-doc-wrap">uint32_t messageID,
               void* pMessage,
-              <a href="class_app_1_1_i_message_listener.html" class="m-doc">IMessageListener</a>* pListener) <span class="m-label m-flat m-warning">override</span></span>
+              <a href="class_app_1_1_i_unmanaged_message_listener.html" class="m-doc">IUnmanagedMessageListener</a>* pListener) <span class="m-label m-flat m-warning">override</span></span>
             </dt>
             <dd>Sends a message in this manager, notifying all the interfaces listening for the specified message ID.</dd>
-            <dt id="ade823d9bd67b6878787e6c4d3ad26f4f">
-              <span class="m-doc-wrap-bumper">void <a href="#ade823d9bd67b6878787e6c4d3ad26f4f" class="m-doc-self">func18h</a>(</span><span class="m-doc-wrap">int,
-              int,
-              int) <span class="m-label m-flat m-warning">override</span></span>
+            <dt id="af63cb5fec31e69302d800957eb2d87e9">
+              <span class="m-doc-wrap-bumper">void <a href="#af63cb5fec31e69302d800957eb2d87e9" class="m-doc-self">MessagePost</a>(</span><span class="m-doc-wrap">uint32_t messageID,
+              <a href="class_app_1_1_i_message_r_c.html" class="m-doc">IMessageRC</a>* pMessage,
+              <a href="class_app_1_1_i_message_listener.html" class="m-doc">IMessageListener</a>* pListener) <span class="m-label m-flat m-warning">override</span></span>
             </dt>
             <dd><span></span></dd>
-            <dt id="ab3f377ac1e05d817770139c8ea9159c9">
-              <span class="m-doc-wrap-bumper">void <a href="#ab3f377ac1e05d817770139c8ea9159c9" class="m-doc-self">func1Ch</a>(</span><span class="m-doc-wrap">int,
+            <dt id="a75d7c4c705e66b4c97e53ccfa921e4ca">
+              <span class="m-doc-wrap-bumper">void <a href="#a75d7c4c705e66b4c97e53ccfa921e4ca" class="m-doc-self">MessagePostFunction</a>(</span><span class="m-doc-wrap">uint32_t messageID,
+              <a href="class_app_1_1_i_message_r_c.html" class="m-doc">IMessageRC</a>* pMessage,
               int,
-              int,
-              int,
-              int) <span class="m-label m-flat m-warning">override</span></span>
+              <a href="class_app_1_1_i_message_manager.html#a23f3c448b7d6b5b9acc15c6300f8ab7c" class="m-doc">MessageHandler_<wbr />t</a> handler,
+              void*) <span class="m-label m-flat m-warning">override</span></span>
             </dt>
             <dd><span></span></dd>
             <dt>
@@ -130,7 +130,7 @@
             </dt>
             <dd>Adds a static handler function to this manager, that will be notified of messages with the specified ID.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#a42a53914b892d0b573bc99fd45670588" class="m-doc">RemoveListener</a>(</span><span class="m-doc-wrap"><a href="class_app_1_1_i_message_listener.html" class="m-doc">IMessageListener</a>* pListener,
+              <span class="m-doc-wrap-bumper">auto <a href="#a7d390c907bb74c11d7e6c4626aa20fc8" class="m-doc">RemoveListener</a>(</span><span class="m-doc-wrap"><a href="class_app_1_1_i_unmanaged_message_listener.html" class="m-doc">IUnmanagedMessageListener</a>* pListener,
               uint32_t messageID,
               int nPriority) -&gt; bool <span class="m-label m-flat m-warning">override</span></span>
             </dt>
@@ -141,22 +141,22 @@
               int nPriority) -&gt; bool <span class="m-label m-flat m-warning">override</span></span>
             </dt>
             <dd>Makes the handler stop listening to the specified message ID.</dd>
-            <dt id="a1d84a02a58ae4f954d4c20f97d41c3ce">
-              <span class="m-doc-wrap-bumper">auto <a href="#a1d84a02a58ae4f954d4c20f97d41c3ce" class="m-doc-self">func34h</a>(</span><span class="m-doc-wrap">int,
+            <dt id="adee155e72b339def789e06f0610c7cea">
+              <span class="m-doc-wrap-bumper">auto <a href="#adee155e72b339def789e06f0610c7cea" class="m-doc-self">ProcessQueue</a>(</span><span class="m-doc-wrap">int,
               int,
               int) -&gt; int <span class="m-label m-flat m-warning">override</span></span>
             </dt>
             <dd><span></span></dd>
-            <dt id="a1da43caa7fab614a8f00991b330ee51a">
-              <span class="m-doc-wrap-bumper">auto <a href="#a1da43caa7fab614a8f00991b330ee51a" class="m-doc-self">func38h</a>(</span><span class="m-doc-wrap">) -&gt; int <span class="m-label m-flat m-warning">override</span></span>
+            <dt id="afa8a78f06bff432a8859ca69099d39ec">
+              <span class="m-doc-wrap-bumper">auto <a href="#afa8a78f06bff432a8859ca69099d39ec" class="m-doc-self">ProcessQueue2</a>(</span><span class="m-doc-wrap">) -&gt; int <span class="m-label m-flat m-warning">override</span></span>
             </dt>
             <dd><span></span></dd>
-            <dt id="a9e68951d9248de32fb73db8bad46738c">
-              <span class="m-doc-wrap-bumper">auto <a href="#a9e68951d9248de32fb73db8bad46738c" class="m-doc-self">func3Ch</a>(</span><span class="m-doc-wrap">) -&gt; int <span class="m-label m-flat m-warning">override</span></span>
+            <dt id="a7979efdc1f7c169285a6225c877f8d18">
+              <span class="m-doc-wrap-bumper">auto <a href="#a7979efdc1f7c169285a6225c877f8d18" class="m-doc-self">GetMessageQueue</a>(</span><span class="m-doc-wrap">) -&gt; int <span class="m-label m-flat m-warning">override</span></span>
             </dt>
             <dd><span></span></dd>
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#a5442be06e9b192c1b4f1d6d4c519fc67" class="m-doc">UseMutex</a>(</span><span class="m-doc-wrap">bool bLock) -&gt; int <span class="m-label m-flat m-warning">override</span></span>
+              <span class="m-doc-wrap-bumper">auto <a href="#a03286c47850eab7db9280567cd5f8529" class="m-doc">Lock</a>(</span><span class="m-doc-wrap">bool bLock) -&gt; int <span class="m-label m-flat m-warning">override</span></span>
             </dt>
             <dd>Locks or unlocks the mutexs in this manager, allowing to safely interact with this manager in different threads.</dd>
             <dt>
@@ -246,11 +246,11 @@
               </tbody>
             </table>
           </div></section>
-          <section class="m-doc-details" id="a47f82f406f85fc358e441970a1d2ff3a"><div>
+          <section class="m-doc-details" id="a0aa6f5603d5dacc230911502ea0b2e02"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">void App::<wbr />cMessageManager::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a47f82f406f85fc358e441970a1d2ff3a" class="m-doc-self">PostMSG</a>(</span><span class="m-doc-wrap">uint32_t messageID,
+              <span class="m-doc-wrap-bumper">void App::<wbr />cMessageManager::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a0aa6f5603d5dacc230911502ea0b2e02" class="m-doc-self">MessageSend</a>(</span><span class="m-doc-wrap">uint32_t messageID,
               void* pMessage,
-              <a href="class_app_1_1_i_message_listener.html" class="m-doc">IMessageListener</a>* pListener) <span class="m-label m-warning">override</span></span></span>
+              <a href="class_app_1_1_i_unmanaged_message_listener.html" class="m-doc">IUnmanagedMessageListener</a>* pListener) <span class="m-label m-warning">override</span></span></span>
             </h3>
             <p>Sends a message in this manager, notifying all the interfaces listening for the specified message ID.</p>
             <table class="m-table m-fullwidth m-flat">
@@ -356,9 +356,9 @@
             </table>
 <p>The same handler can be added multiple times using different priorities.</p>
           </div></section>
-          <section class="m-doc-details" id="a42a53914b892d0b573bc99fd45670588"><div>
+          <section class="m-doc-details" id="a7d390c907bb74c11d7e6c4626aa20fc8"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">bool App::<wbr />cMessageManager::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a42a53914b892d0b573bc99fd45670588" class="m-doc-self">RemoveListener</a>(</span><span class="m-doc-wrap"><a href="class_app_1_1_i_message_listener.html" class="m-doc">IMessageListener</a>* pListener,
+              <span class="m-doc-wrap-bumper">bool App::<wbr />cMessageManager::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a7d390c907bb74c11d7e6c4626aa20fc8" class="m-doc-self">RemoveListener</a>(</span><span class="m-doc-wrap"><a href="class_app_1_1_i_unmanaged_message_listener.html" class="m-doc">IUnmanagedMessageListener</a>* pListener,
               uint32_t messageID,
               int nPriority) <span class="m-label m-warning">override</span></span></span>
             </h3>
@@ -424,9 +424,9 @@
             </table>
 <p>Optionally, a priority can be specified; if so, only if the handler with that priority will be removed.</p>
           </div></section>
-          <section class="m-doc-details" id="a5442be06e9b192c1b4f1d6d4c519fc67"><div>
+          <section class="m-doc-details" id="a03286c47850eab7db9280567cd5f8529"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">int App::<wbr />cMessageManager::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a5442be06e9b192c1b4f1d6d4c519fc67" class="m-doc-self">UseMutex</a>(</span><span class="m-doc-wrap">bool bLock) <span class="m-label m-warning">override</span></span></span>
+              <span class="m-doc-wrap-bumper">int App::<wbr />cMessageManager::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a03286c47850eab7db9280567cd5f8529" class="m-doc-self">Lock</a>(</span><span class="m-doc-wrap">bool bLock) <span class="m-label m-warning">override</span></span></span>
             </h3>
             <p>Locks or unlocks the mutexs in this manager, allowing to safely interact with this manager in different threads.</p>
             <table class="m-table m-fullwidth m-flat">

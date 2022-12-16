@@ -205,8 +205,8 @@
             </dt>
             <dd>Marks the given texture as (not) modified.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#a0e8fa9d0a5b2012887002228ffe500f8" class="m-doc">ExtractTextureRaster</a>(</span><span class="m-doc-wrap"><a href="struct_render_ware_1_1_raster.html" class="m-doc">RenderWare::<wbr />Raster</a>* pRaster,
-              <a href="c_image_data_raw_8h.html#a73cd6a0f8f095f4d7a965ce461347d4c" class="m-doc">cImageDataRawPtr</a>&amp; dst,
+              <span class="m-doc-wrap-bumper">auto <a href="#a62e759024c71035530a53623f7ed98e5" class="m-doc">ExtractTextureRaster</a>(</span><span class="m-doc-wrap"><a href="struct_render_ware_1_1_raster.html" class="m-doc">RenderWare::<wbr />Raster</a>* pRaster,
+              <a href="c_image_data_raw_8h.html#a73cd6a0f8f095f4d7a965ce461347d4c" class="m-doc">cImageDataRawPtr</a>* dst,
               bool async,
               uint32_t messageID = 0) -&gt; bool <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
@@ -665,10 +665,10 @@
               </tbody>
             </table>
           </div></section>
-          <section class="m-doc-details" id="a0e8fa9d0a5b2012887002228ffe500f8"><div>
+          <section class="m-doc-details" id="a62e759024c71035530a53623f7ed98e5"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">bool Graphics::<wbr />ITextureManager::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a0e8fa9d0a5b2012887002228ffe500f8" class="m-doc-self">ExtractTextureRaster</a>(</span><span class="m-doc-wrap"><a href="struct_render_ware_1_1_raster.html" class="m-doc">RenderWare::<wbr />Raster</a>* pRaster,
-              <a href="c_image_data_raw_8h.html#a73cd6a0f8f095f4d7a965ce461347d4c" class="m-doc">cImageDataRawPtr</a>&amp; dst,
+              <span class="m-doc-wrap-bumper">bool Graphics::<wbr />ITextureManager::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a62e759024c71035530a53623f7ed98e5" class="m-doc-self">ExtractTextureRaster</a>(</span><span class="m-doc-wrap"><a href="struct_render_ware_1_1_raster.html" class="m-doc">RenderWare::<wbr />Raster</a>* pRaster,
+              <a href="c_image_data_raw_8h.html#a73cd6a0f8f095f4d7a965ce461347d4c" class="m-doc">cImageDataRawPtr</a>* dst,
               bool async,
               uint32_t messageID = 0) <span class="m-label m-warning">pure virtual</span></span></span>
             </h3>
@@ -683,7 +683,7 @@
                   <td>The source texture</td>
                 </tr>
                 <tr>
-                  <td>dst</td>
+                  <td>dst&nbsp;<span class="m-label m-flat m-warning">out</span></td>
                   <td>Pointer where the extracted data will be created</td>
                 </tr>
                 <tr>

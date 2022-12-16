@@ -99,6 +99,10 @@
         <section id="pub-methods">
           <h2><a href="#pub-methods">Public functions</a></h2>
           <dl class="m-doc">
+            <dt>
+              <span class="m-doc-wrap-bumper">void <a href="#a5da6fe685840fc03916d7ad26952c281" class="m-doc">SetShadedDisplay</a>(</span><span class="m-doc-wrap">bool isShaded)</span>
+            </dt>
+            <dd>For build mode only, sets whether the rigblock is shown with a bit of shading (used when hovering over rigblocks).</dd>
             <dt id="a7f83eee02844e20b59c13dfe6ef2a46a">
               <span class="m-doc-wrap-bumper">auto <a href="#a7f83eee02844e20b59c13dfe6ef2a46a" class="m-doc-self">AddRef</a>(</span><span class="m-doc-wrap">) -&gt; int</span>
             </dt>
@@ -116,8 +120,8 @@
               <a href="_property_list_8h.html#ae757f1639ff739ff0282dd91f3e39f0a" class="m-doc">PropertyListPtr</a> <a href="#a2d2a52043ba14366511052edd578f708" class="m-doc-self">mpPropList</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="ac96765a22d9e37ebba90aeab54dd9b8b">
-              <a href="_model_8h.html#a4695930ef0d84e11d31379e623af5732" class="m-doc">ModelPtr</a> <a href="#ac96765a22d9e37ebba90aeab54dd9b8b" class="m-doc-self">field_10</a>
+            <dt id="a559670b57d3bf7ccd369037c8fbb1bca">
+              <a href="_model_8h.html#a4695930ef0d84e11d31379e623af5732" class="m-doc">ModelPtr</a> <a href="#a559670b57d3bf7ccd369037c8fbb1bca" class="m-doc-self">mpModel</a>
             </dt>
             <dd><span></span></dd>
             <dt id="ab66d76a83fe699c57fd979e42cd0ff65">
@@ -280,16 +284,16 @@
               int <a href="#a1482d5445e7034cea5a23e9adf9cbf90" class="m-doc-self">field_1B0</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="aaaaf66c681760926e37206c67f1aad04">
-              int <a href="#aaaaf66c681760926e37206c67f1aad04" class="m-doc-self">field_1B4</a>
+            <dt id="a74723e4325752c0e4971e87cbee46681">
+              int <a href="#a74723e4325752c0e4971e87cbee46681" class="m-doc-self">mDeformBoneEndJointIndex</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="a1c7b3b2f34977dfea26e1bd593a039eb">
-              int <a href="#a1c7b3b2f34977dfea26e1bd593a039eb" class="m-doc-self">field_1B8</a>
+            <dt id="a9525339745847f733aa76097f07d0fd7">
+              int <a href="#a9525339745847f733aa76097f07d0fd7" class="m-doc-self">mDeformBoneBaseJointIndex</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="a3d5a353d8c91c14620f2eac4537d80cd">
-              int <a href="#a3d5a353d8c91c14620f2eac4537d80cd" class="m-doc-self">field_1BC</a>
+            <dt id="aefb9b0b9a7a63164b6fca0090081ce6f">
+              int <a href="#aefb9b0b9a7a63164b6fca0090081ce6f" class="m-doc-self">mDeformBoneMiddleIndex</a>
             </dt>
             <dd><span></span></dd>
             <dt id="a0cea8f1c3dcc6f9d18ef67966446a404">
@@ -480,8 +484,8 @@
               <a href="_editor_rigblock_8h.html#ac23466b995d482a0e4ba9c16fb9b3ac7" class="m-doc">EditorRigblockPtr</a> <a href="#a01a43bf51fba20a663ca21c8ae2cc295" class="m-doc-self">mpSymmetricRigblock</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="a9f914432790aea46f20e08b9aadb1d6c">
-              <a href="_editor_rigblock_8h.html#ac23466b995d482a0e4ba9c16fb9b3ac7" class="m-doc">EditorRigblockPtr</a> <a href="#a9f914432790aea46f20e08b9aadb1d6c" class="m-doc-self">mpSymmetricRigblock2</a>
+            <dt id="add09a569059a90310ec472a33ccf6815">
+              <a href="_editor_rigblock_8h.html#ac23466b995d482a0e4ba9c16fb9b3ac7" class="m-doc">EditorRigblockPtr</a> <a href="#add09a569059a90310ec472a33ccf6815" class="m-doc-self">mpAsymmetricRigblock</a>
             </dt>
             <dd><span></span></dd>
             <dt id="a118ebecd16b453e19e1a56fcf05aa90c">
@@ -713,6 +717,26 @@
             </dt>
             <dd><span></span></dd>
           </dl>
+        </section>
+        <section>
+          <h2>Function documentation</h2>
+          <section class="m-doc-details" id="a5da6fe685840fc03916d7ad26952c281"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">void Editors::<wbr />EditorRigblock::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a5da6fe685840fc03916d7ad26952c281" class="m-doc-self">SetShadedDisplay</a>(</span><span class="m-doc-wrap">bool isShaded)</span></span>
+            </h3>
+            <p>For build mode only, sets whether the rigblock is shown with a bit of shading (used when hovering over rigblocks).</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">isShaded</td>
+                  <td></td>
+                </tr>
+              </tbody>
+            </table>
+          </div></section>
         </section>
       </div>
     </div>

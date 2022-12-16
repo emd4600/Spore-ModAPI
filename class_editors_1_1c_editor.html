@@ -96,6 +96,11 @@
           <h2><a href="#pub-methods">Public functions</a></h2>
           <dl class="m-doc">
             <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a12799b1bdbda0d233801f32d2badaf8d" class="m-doc">HandleMessage</a>(</span><span class="m-doc-wrap">uint32_t messageID,
+              void* msg) -&gt; bool <span class="m-label m-flat m-warning">override</span></span>
+            </dt>
+            <dd>Called every time a message is received.</dd>
+            <dt>
               <span class="m-doc-wrap-bumper">void <a href="#a6f0d4dbdf72ee42c218148a816c93a91" class="m-doc">SetEditorModel</a>(</span><span class="m-doc-wrap"><a href="class_editors_1_1_editor_model.html" class="m-doc">EditorModel</a>* pEditorModel)</span>
             </dt>
             <dd>Changes the current editor model, updating the creation with the parts and paints of the new editor model.</dd>
@@ -121,6 +126,11 @@
               <span class="m-doc-wrap-bumper">auto <a href="#a10153c2328478f95228f7699ecf8240e" class="m-doc">IsMode</a>(</span><span class="m-doc-wrap"><a href="namespace_editors.html#ac58a0d836dc46427d3c2128f87430edd" class="m-doc">Mode</a> mode) const -&gt; bool</span>
             </dt>
             <dd>Returns true if the editor is currently in the given mode.</dd>
+            <dt id="aee6019b4646776051096defdd6d03392">
+              <span class="m-doc-wrap-bumper">void <a href="#aee6019b4646776051096defdd6d03392" class="m-doc-self">SetActiveMode</a>(</span><span class="m-doc-wrap"><a href="namespace_editors.html#ac58a0d836dc46427d3c2128f87430edd" class="m-doc">Mode</a> mode,
+              bool)</span>
+            </dt>
+            <dd><span></span></dd>
             <dt id="a11269d1a03d0f037954c58109a70fe72">
               <span class="m-doc-wrap-bumper">auto <a href="#a11269d1a03d0f037954c58109a70fe72" class="m-doc-self">IsActive</a>(</span><span class="m-doc-wrap">) const -&gt; bool</span>
             </dt>
@@ -128,7 +138,15 @@
             <dt id="a795e1d769123ed9567b489b20fab056f">
               <span class="m-doc-wrap-bumper">auto <a href="#a795e1d769123ed9567b489b20fab056f" class="m-doc-self">GetCamera</a>(</span><span class="m-doc-wrap">) -&gt; <a href="class_editors_1_1_editor_camera.html" class="m-doc">EditorCamera</a>*</span>
             </dt>
-            <dd><span></span></dd>
+            <dd>Returns the camera used to navigate and view the editor.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a77845b4e1ecb23b46a229d383f480a05" class="m-doc">GetSkin</a>(</span><span class="m-doc-wrap">) -&gt; <a href="class_editors_1_1c_editor_skin.html" class="m-doc">cEditorSkin</a>*</span>
+            </dt>
+            <dd>Returns the editor skin, which is the model and texture generating system for creations that use skinpaints and metaballs (i.e.</dd>
+            <dt id="af99bf30857acfe8fa5d34e9a948196db">
+              <span class="m-doc-wrap-bumper">auto <a href="#af99bf30857acfe8fa5d34e9a948196db" class="m-doc-self">GetAnimWorld</a>(</span><span class="m-doc-wrap">) -&gt; <a href="class_editors_1_1c_editor_anim_world.html" class="m-doc">cEditorAnimWorld</a>*</span>
+            </dt>
+            <dd>Returns the class that manages the creature animations in the editor.</dd>
             <dt id="aaa4932bd6b6ea3544f661923630eaba3">
               <span class="m-doc-wrap-bumper">auto <a href="#aaa4932bd6b6ea3544f661923630eaba3" class="m-doc-self">sub_581F70</a>(</span><span class="m-doc-wrap"><a href="class_editors_1_1_editor_rigblock.html" class="m-doc">EditorRigblock</a>* part,
               void* activeHandle,
@@ -137,6 +155,15 @@
             <dd><span></span></dd>
             <dt id="acdbecb9fe695975e5824a0041fa86ad9">
               <span class="m-doc-wrap-bumper">void <a href="#acdbecb9fe695975e5824a0041fa86ad9" class="m-doc-self">RemovePart</a>(</span><span class="m-doc-wrap"><a href="class_editors_1_1_editor_rigblock.html" class="m-doc">EditorRigblock</a>* part)</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a6a7f71ad2ba348117cf14a3bb1b5bd05">
+              <span class="m-doc-wrap-bumper">void <a href="#a6a7f71ad2ba348117cf14a3bb1b5bd05" class="m-doc-self">SetCreatureToNeutralPose</a>(</span><span class="m-doc-wrap">)</span>
+            </dt>
+            <dd>Emits a <code><a href="class_editors_1_1c_editor_anim_event.html" class="m-doc">cEditorAnimEvent</a></code> with ID <code>0x6581B78E</code>, which makes the creature (if any) stop its current animation and return to the neutral, motionless pose.</dd>
+            <dt id="aa925c8fc1e47505cf8937091fbd7ba88">
+              <span class="m-doc-wrap-bumper">auto <a href="#aa925c8fc1e47505cf8937091fbd7ba88" class="m-doc-self">AddCreature</a>(</span><span class="m-doc-wrap">int,
+              const <a href="struct_resource_key.html" class="m-doc">ResourceKey</a>* key = nullptr) -&gt; bool</span>
             </dt>
             <dd><span></span></dd>
           </dl>
@@ -156,8 +183,8 @@
               <a href="_property_list_8h.html#ae757f1639ff739ff0282dd91f3e39f0a" class="m-doc">PropertyListPtr</a> <a href="#af05d3b4adf191595893c62f9db776eb7" class="m-doc-self">mpPropList</a>
             </dt>
             <dd>The <a href="class_app_1_1_property_list.html" class="m-doc">App::<wbr />PropertyList</a> that contains the configuration of the current editor.</dd>
-            <dt id="aaace79a64b0da8bdce81379b9ced2d3e">
-              <a href="struct_math_1_1_point.html" class="m-doc">Math::<wbr />Point</a> <a href="#aaace79a64b0da8bdce81379b9ced2d3e" class="m-doc-self">mCursor</a>
+            <dt id="a17c4a7fb702276d3bc3d66c148a5204b">
+              <a href="struct_math_1_1_point.html" class="m-doc">Math::<wbr />Point</a> <a href="#a17c4a7fb702276d3bc3d66c148a5204b" class="m-doc-self">mMousePosition</a>
             </dt>
             <dd>The current position of the cursor in the editor.</dd>
             <dt id="ae8867a3328ee89f93b82ff061dff0bf9">
@@ -244,10 +271,10 @@
               <a href="_i_lighting_world_8h.html#a8c8bd51c9f04e4c39accaa196c0cac41" class="m-doc">ILightingWorldPtr</a> <a href="#a5764afb361ab6849b1ba402215bc5f5c" class="m-doc-self">mpLightingWorld</a>
             </dt>
             <dd>THe light to be used by the editor.</dd>
-            <dt id="aabcc5edda279399b1541429e22d1c080">
-              <a href="_i_model_world_8h.html#ac806a1f42e226576db417e69309943f5" class="m-doc">IModelWorldPtr</a> <a href="#aabcc5edda279399b1541429e22d1c080" class="m-doc-self">mpPedestalModelWorld</a>
+            <dt id="a682c05334e63c614cb0d58479b9e4068">
+              <a href="_i_model_world_8h.html#ac806a1f42e226576db417e69309943f5" class="m-doc">IModelWorldPtr</a> <a href="#a682c05334e63c614cb0d58479b9e4068" class="m-doc-self">mpMainModelWorld</a>
             </dt>
-            <dd>The model world that contains the pedestal and test environment model.</dd>
+            <dd>The model world that contains the pedestal and test environment model, and also editor rigblocks.</dd>
             <dt id="ac090c3e8022f20c4cc0c97cbad39c12d">
               <a href="_i_model_world_8h.html#ac806a1f42e226576db417e69309943f5" class="m-doc">IModelWorldPtr</a> <a href="#ac090c3e8022f20c4cc0c97cbad39c12d" class="m-doc-self">field_88</a>
             </dt>
@@ -316,12 +343,12 @@
               <a href="_editor_rigblock_8h.html#ac23466b995d482a0e4ba9c16fb9b3ac7" class="m-doc">EditorRigblockPtr</a> <a href="#a0a25eb9a3753c57681e8ca4fd6270240" class="m-doc-self">mpSelectedPart</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="a367ce6e3d304a5ba37a8872ac9191b4c">
-              <a href="_object_8h.html#a0ea2b8888d2f409fc73033686f57c456" class="m-doc">DefaultRefCountedPtr</a> <a href="#a367ce6e3d304a5ba37a8872ac9191b4c" class="m-doc-self">field_D8</a>
+            <dt id="aefd7a19f1360e4e5f9049541ee7308b5">
+              <a href="_editor_rigblock_8h.html#ac23466b995d482a0e4ba9c16fb9b3ac7" class="m-doc">EditorRigblockPtr</a> <a href="#aefd7a19f1360e4e5f9049541ee7308b5" class="m-doc-self">field_D8</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="afc483116d6ad2f8960a159d7839f0e77">
-              <a href="_object_8h.html#a0ea2b8888d2f409fc73033686f57c456" class="m-doc">DefaultRefCountedPtr</a> <a href="#afc483116d6ad2f8960a159d7839f0e77" class="m-doc-self">field_DC</a>
+            <dt id="ae46a67948e5c091daa833a328e18f0af">
+              <a href="_editor_rigblock_8h.html#ac23466b995d482a0e4ba9c16fb9b3ac7" class="m-doc">EditorRigblockPtr</a> <a href="#ae46a67948e5c091daa833a328e18f0af" class="m-doc-self">field_DC</a>
             </dt>
             <dd><span></span></dd>
             <dt id="a85a6d608593d4ef24261010b17f49eea">
@@ -384,12 +411,12 @@
               int <a href="#af59624591d7cd0d0e7e0224aaf6a81aa" class="m-doc-self">field_14C</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="a119a0c02ee371a1f87969e43c7361b04">
-              <a href="_object_8h.html#a364c2967a9338c07ddc9a3d507389b5d" class="m-doc">ObjectPtr</a> <a href="#a119a0c02ee371a1f87969e43c7361b04" class="m-doc-self">field_150</a>
+            <dt id="a59e8111c44794eec1716603b1fb736cb">
+              <a href="c_editor_skin_8h.html#a06c27ac0ff6979f3cfd234fe506bae4d" class="m-doc">cEditorSkinPtr</a> <a href="#a59e8111c44794eec1716603b1fb736cb" class="m-doc-self">mpEditorSkin</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="ad36536ff1646aafba8b32ce59042e903">
-              int <a href="#ad36536ff1646aafba8b32ce59042e903" class="m-doc-self">field_154</a>
+            <dt id="a93be95fcbaca2e3bbffa857f5de1eba5">
+              <a href="c_editor_skin_8h.html#a06c27ac0ff6979f3cfd234fe506bae4d" class="m-doc">cEditorSkinPtr</a> <a href="#a93be95fcbaca2e3bbffa857f5de1eba5" class="m-doc-self">field_154</a>
             </dt>
             <dd><span></span></dd>
             <dt>
@@ -628,8 +655,8 @@
               float <a href="#a027f0ec82ba7ac279c4be91d3b84b0d8" class="m-doc-self">field_288</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="aff551747271d2bb21744f9770f7de692">
-              int <a href="#aff551747271d2bb21744f9770f7de692" class="m-doc-self">field_28C</a>
+            <dt id="a5dc163175ad17393a9a3c9bf6e2274e0">
+              <a href="_texture_8h.html#affea3369120131ed058702d2945a10b4" class="m-doc">TexturePtr</a> <a href="#a5dc163175ad17393a9a3c9bf6e2274e0" class="m-doc-self">mpThumbnailTexture</a>
             </dt>
             <dd><span></span></dd>
             <dt id="af2771bf9daa4782413f81672741c0d8e">
@@ -663,7 +690,7 @@
             <dt id="a3a76f7992f20ba76b0e4d72e98197b62">
               uint32_t <a href="#a3a76f7992f20ba76b0e4d72e98197b62" class="m-doc-self">mSaveDirectory</a>
             </dt>
-            <dd>The save directory key.</dd>
+            <dd>The save directory key, <a href="namespace_resource.html#ae5fc2be2c995477d7286fb634653ddd8" class="m-doc">Resource::<wbr />SaveAreaID</a>.</dd>
             <dt id="add5e13bbeb6d5a99d2d0f9e74207fd03">
               bool <a href="#add5e13bbeb6d5a99d2d0f9e74207fd03" class="m-doc-self">mIsActive</a>
             </dt>
@@ -856,14 +883,14 @@
               int <a href="#a0031beb9469c6bbea96f6c57d894979a" class="m-doc-self">field_35C</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="a7206c0caf546c5869548427bb328757a">
-              int <a href="#a7206c0caf546c5869548427bb328757a" class="m-doc-self">field_360</a>
+            <dt id="a021e05e4140fbe84eae57aa4eea3bb79">
+              <a href="c_editor_anim_world_8h.html#ac00fb74d10355ecc73e9537047de9091" class="m-doc">cEditorAnimWorldPtr</a> <a href="#a021e05e4140fbe84eae57aa4eea3bb79" class="m-doc-self">mpEditorAnimWorld</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="a791e1a0272e8aef2574fd8af94b881b2">
-              int <a href="#a791e1a0272e8aef2574fd8af94b881b2" class="m-doc-self">field_364</a>
+            <dt id="a7c11e30571ed9642f5453560d9250550">
+              int <a href="#a7c11e30571ed9642f5453560d9250550" class="m-doc-self">mCurrentCreatureID</a>
             </dt>
-            <dd><span></span></dd>
+            <dd>ID used in <code>mpEditorAnimWorld</code> for the current editing creature.</dd>
             <dt id="aacb4f00908e7419d9b948e607a37844d">
               int <a href="#aacb4f00908e7419d9b948e607a37844d" class="m-doc-self">field_368</a>
             </dt>
@@ -872,10 +899,10 @@
               eastl::vector&lt;int&gt; <a href="#ae559186a737b5efa1c9b71b6acc3e632" class="m-doc-self">field_36C</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="a9ca5d0cd0f95b8a7dc1bf5b3ebf35a11">
-              <a href="_object_8h.html#a0ea2b8888d2f409fc73033686f57c456" class="m-doc">DefaultRefCountedPtr</a> <a href="#a9ca5d0cd0f95b8a7dc1bf5b3ebf35a11" class="m-doc-self">field_380</a>
+            <dt id="a7499bec2eeab2fa1274192da4b323775">
+              <a href="c_editor_anim_event_8h.html#ae583a0f8c82779499c83ef7017c4b9a3" class="m-doc">cEditorAnimEventPtr</a> <a href="#a7499bec2eeab2fa1274192da4b323775" class="m-doc-self">mpAnimEvent</a>
             </dt>
-            <dd><span></span></dd>
+            <dd><a href="namespace_anim.html" class="m-doc">Anim</a> event that will be played on the creature on the next <a href="class_app_1_1_i_game_mode.html#aeaf8bd8f53a4c5342f4ba5c38fe6da57" class="m-doc">Update()</a> call.</dd>
             <dt id="a20a094af164ef4c94bca6d56dab883d0">
               bool <a href="#a20a094af164ef4c94bca6d56dab883d0" class="m-doc-self">field_384</a>
             </dt>
@@ -924,12 +951,12 @@
               bool <a href="#adc8cbf991cdf672272167c981674ab95" class="m-doc-self">field_39A</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="a665533a911c6156d56b171d89893f01c">
-              eastl::vector&lt;int&gt; <a href="#a665533a911c6156d56b171d89893f01c" class="m-doc-self">field_39C</a>
+            <dt id="ada1fd4fb15805e87a33c6e6414f3c3b9">
+              eastl::vector&lt;<a href="_editor_rigblock_8h.html#ac23466b995d482a0e4ba9c16fb9b3ac7" class="m-doc">EditorRigblockPtr</a>&gt; <a href="#ada1fd4fb15805e87a33c6e6414f3c3b9" class="m-doc-self">field_39C</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="ace0f63e808e2e0205839480b033493e4">
-              float <a href="#ace0f63e808e2e0205839480b033493e4" class="m-doc-self">field_3B0</a>
+            <dt id="a06a70ac17202e28a3debc097e5e5ae06">
+              int <a href="#a06a70ac17202e28a3debc097e5e5ae06" class="m-doc-self">field_3B0</a>
             </dt>
             <dd><span></span></dd>
             <dt id="a97bf694a9329e4da9ebd91e869796957">
@@ -980,8 +1007,8 @@
               <a href="class_app_1_1c_viewer.html" class="m-doc">App::<wbr />cViewer</a>* <a href="#ac9012337161c069ce95a678b6544d058" class="m-doc-self">field_3DC</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="a6e10b90cdbb1bb45602c6f1806ce575a">
-              bool <a href="#a6e10b90cdbb1bb45602c6f1806ce575a" class="m-doc-self">field_3E0</a>
+            <dt id="a508b8f7d59d34a99aefbba3d62ea237f">
+              bool <a href="#a508b8f7d59d34a99aefbba3d62ea237f" class="m-doc-self">mIsRecordingGIF</a>
             </dt>
             <dd><span></span></dd>
             <dt id="a00da2f55c0eb3427b7e9382eab7c459e">
@@ -1384,6 +1411,35 @@
         </section>
         <section>
           <h2>Function documentation</h2>
+          <section class="m-doc-details" id="a12799b1bdbda0d233801f32d2badaf8d"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">bool Editors::<wbr />cEditor::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a12799b1bdbda0d233801f32d2badaf8d" class="m-doc-self">HandleMessage</a>(</span><span class="m-doc-wrap">uint32_t messageID,
+              void* msg) <span class="m-label m-warning">override</span></span></span>
+            </h3>
+            <p>Called every time a message is received.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">messageID</td>
+                  <td>The ID of the message received.</td>
+                </tr>
+                <tr>
+                  <td>msg</td>
+                  <td>The data of the message received, it might be nullptr.</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>Returns</th>
+                  <td>Whether the message was handled or not.</td>
+                </tr>
+              </tfoot>
+            </table>
+<p>Only the messages with an ID this listener signed up for will call this event.</p>
+          </div></section>
           <section class="m-doc-details" id="a6f0d4dbdf72ee42c218148a816c93a91"><div>
             <h3>
               <span class="m-doc-wrap-bumper">void Editors::<wbr />cEditor::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a6f0d4dbdf72ee42c218148a816c93a91" class="m-doc-self">SetEditorModel</a>(</span><span class="m-doc-wrap"><a href="class_editors_1_1_editor_model.html" class="m-doc">EditorModel</a>* pEditorModel)</span></span>
@@ -1439,6 +1495,13 @@
                 </tr>
               </tbody>
             </table>
+          </div></section>
+          <section class="m-doc-details" id="a77845b4e1ecb23b46a229d383f480a05"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"><a href="class_editors_1_1c_editor_skin.html" class="m-doc">cEditorSkin</a>* Editors::<wbr />cEditor::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a77845b4e1ecb23b46a229d383f480a05" class="m-doc-self">GetSkin</a>(</span><span class="m-doc-wrap">)</span></span>
+            </h3>
+            <p>Returns the editor skin, which is the model and texture generating system for creations that use skinpaints and metaballs (i.e.</p>
+<p>creatures and flora). For the rest of creation types, this returns nullptr.</p>
           </div></section>
         </section>
         <section>

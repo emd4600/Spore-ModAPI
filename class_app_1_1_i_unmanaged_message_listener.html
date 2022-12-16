@@ -70,6 +70,10 @@
             </dt>
             <dd><span></span></dd>
             <dt>
+              class <a href="class_app_1_1_i_message_listener.html" class="m-doc">IMessageListener</a>
+            </dt>
+            <dd>An interface that can receive messages sent through the app.</dd>
+            <dt>
               class <a href="class_app_1_1_thumbnail__c_import_export.html" class="m-doc">Thumbnail_cImportExport</a>
             </dt>
             <dd>A class related with the .PNG files of creations.</dd>
@@ -136,18 +140,18 @@
           <h2><a href="#pub-methods">Public functions</a></h2>
           <dl class="m-doc">
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#a5b1d0bc164b1effd857da911300ab977" class="m-doc">HandleMessage</a>(</span><span class="m-doc-wrap">uint32_t messageID,
-              void* pMessage) -&gt; bool <span class="m-label m-flat m-warning">pure virtual</span></span>
+              <span class="m-doc-wrap-bumper">auto <a href="#a4fac1753a183438befade93a77fc57ed" class="m-doc">HandleMessage</a>(</span><span class="m-doc-wrap">uint32_t messageID,
+              void* msg) -&gt; bool <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
             <dd>Called every time a message is received.</dd>
           </dl>
         </section>
         <section>
           <h2>Function documentation</h2>
-          <section class="m-doc-details" id="a5b1d0bc164b1effd857da911300ab977"><div>
+          <section class="m-doc-details" id="a4fac1753a183438befade93a77fc57ed"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">bool App::<wbr />IUnmanagedMessageListener::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a5b1d0bc164b1effd857da911300ab977" class="m-doc-self">HandleMessage</a>(</span><span class="m-doc-wrap">uint32_t messageID,
-              void* pMessage) <span class="m-label m-warning">pure virtual</span></span></span>
+              <span class="m-doc-wrap-bumper">bool App::<wbr />IUnmanagedMessageListener::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a4fac1753a183438befade93a77fc57ed" class="m-doc-self">HandleMessage</a>(</span><span class="m-doc-wrap">uint32_t messageID,
+              void* msg) <span class="m-label m-warning">pure virtual</span></span></span>
             </h3>
             <p>Called every time a message is received.</p>
             <table class="m-table m-fullwidth m-flat">
@@ -160,7 +164,7 @@
                   <td>The ID of the message received.</td>
                 </tr>
                 <tr>
-                  <td>pMessage</td>
+                  <td>msg</td>
                   <td>The data of the message received, it might be nullptr.</td>
                 </tr>
               </tbody>
@@ -171,7 +175,7 @@
                 </tr>
               </tfoot>
             </table>
-<p>Only the messages with an ID this listened signed up for will call this event.</p>
+<p>Only the messages with an ID this listener signed up for will call this event.</p>
           </div></section>
         </section>
       </div>

@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>GeneralAllocator struct | Spore ModAPI SDK for creating C++ mods for Spore</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,600,600i%7CSource+Code+Pro:400,400i,600" />
+  <link rel="stylesheet" href="m-dark.css" />
+  <link rel="stylesheet" href="m-documentation.css" />
+  <link rel="icon" href="Spore_ModAPI_Icon.png" type="image/png" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#22272e" />
+</head>
+<body>
+<header><nav id="navigation">
+  <div class="m-container">
+    <div class="m-row">
+      <a href="index.html" id="m-navbar-brand" class="m-col-t-8 m-col-m-none m-left-m"><img src="Spore_ModAPI_Icon.png" />Spore ModAPI <span class="m-thin">SDK for creating C++ mods for Spore</span></a>
+      <div class="m-col-t-4 m-hide-m m-text-right m-nopadr">
+        <a href="#search" class="m-doc-search-icon" title="Search" onclick="return showSearch()"><svg style="height: 0.9rem;" viewBox="0 0 16 16">
+          <path id="m-doc-search-icon-path" d="m6 0c-3.31 0-6 2.69-6 6 0 3.31 2.69 6 6 6 1.49 0 2.85-0.541 3.89-1.44-0.0164 0.338 0.147 0.759 0.5 1.15l3.22 3.79c0.552 0.614 1.45 0.665 2 0.115 0.55-0.55 0.499-1.45-0.115-2l-3.79-3.22c-0.392-0.353-0.812-0.515-1.15-0.5 0.895-1.05 1.44-2.41 1.44-3.89 0-3.31-2.69-6-6-6zm0 1.56a4.44 4.44 0 0 1 4.44 4.44 4.44 4.44 0 0 1-4.44 4.44 4.44 4.44 0 0 1-4.44-4.44 4.44 4.44 0 0 1 4.44-4.44z"/>
+        </svg></a>
+        <a id="m-navbar-show" href="#navigation" title="Show navigation"></a>
+        <a id="m-navbar-hide" href="#" title="Hide navigation"></a>
+      </div>
+      <div id="m-navbar-collapse" class="m-col-t-12 m-show-m m-col-m-none m-right-m">
+        <div class="m-row">
+          <ol class="m-col-t-6 m-col-m-none">
+            <li><a href="pages.html">Tutorials</a></li>
+            <li><a href="namespaces.html">Namespaces</a></li>
+          </ol>
+          <ol class="m-col-t-6 m-col-m-none" start="3">
+            <li><a href="annotated.html">Classes</a></li>
+            <li><a href="files.html">Files</a></li>
+            <li class="m-show-m"><a href="#search" class="m-doc-search-icon" title="Search" onclick="return showSearch()"><svg style="height: 0.9rem;" viewBox="0 0 16 16">
+              <use href="#m-doc-search-icon-path" />
+            </svg></a></li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav></header>
+<main><article>
+  <div class="m-container m-container-inflatable">
+    <div class="m-row">
+      <div class="m-col-l-10 m-push-l-1">
+        <h1>
+          GeneralAllocator <span class="m-thin">struct</span>
+          <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_general_allocator_8h.html">&lt;Spore/GeneralAllocator.h&gt;</a></div>
+        </h1>
+        <p><span></span></p>
+        <div class="m-block m-default">
+          <h3>Contents</h3>
+          <ul>
+            <li>
+              Reference
+              <ul>
+                <li><a href="#pub-types">Public types</a></li>
+                <li><a href="#pub-static-attribs">Public static variables</a></li>
+                <li><a href="#pub-static-methods">Public static functions</a></li>
+                <li><a href="#typeless-methods">Constructors, destructors, conversion operators</a></li>
+                <li><a href="#pub-methods">Public functions</a></li>
+                <li><a href="#pub-attribs">Public variables</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+        <section id="pub-types">
+          <h2><a href="#pub-types">Public types</a></h2>
+          <dl class="m-doc">
+            <dt>
+              struct <a href="struct_general_allocator_1_1allocator__mutex.html" class="m-doc">allocator_mutex</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              struct <a href="struct_general_allocator_1_1_chunk.html" class="m-doc">Chunk</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              struct <a href="struct_general_allocator_1_1_skip_list_chunk.html" class="m-doc">SkipListChunk</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="ace7ad9a8009387a81e58253bcad4e3aa">
+              using <a href="#ace7ad9a8009387a81e58253bcad4e3aa" class="m-doc-self">MallocFailureFunction_t</a> = bool(*)(GeneralAllocator*, unsigned int, unsigned int, int)
+            </dt>
+            <dd><span></span></dd>
+          </dl>
+        </section>
+        <section id="pub-static-attribs">
+          <h2><a href="#pub-static-attribs">Public static variables</a></h2>
+          <dl class="m-doc">
+            <dt id="a9c25e8f2c52ab4b310b085107eab4980">
+              static const int <a href="#a9c25e8f2c52ab4b310b085107eab4980" class="m-doc-self">NUM_FAST_BINS</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="ab58b128d85eb466fbab0bb851460116a">
+              static const int <a href="#ab58b128d85eb466fbab0bb851460116a" class="m-doc-self">NUM_BINS</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a846a8bfe46f14ed068a31a69ba66e542">
+              static const int <a href="#a846a8bfe46f14ed068a31a69ba66e542" class="m-doc-self">MIN_SIZE</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="ad7e6c01313a12bea411abc237ccbb348">
+              static const int <a href="#ad7e6c01313a12bea411abc237ccbb348" class="m-doc-self">BIN_MAP_SIZE</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="af7187ac1d33e4c56bb53b0c0eb7cf3c5">
+              static const int <a href="#af7187ac1d33e4c56bb53b0c0eb7cf3c5" class="m-doc-self">INUSE_FLAG</a>
+            </dt>
+            <dd><span></span></dd>
+          </dl>
+        </section>
+        <section id="pub-static-methods">
+          <h2><a href="#pub-static-methods">Public static functions</a></h2>
+          <dl class="m-doc">
+            <dt id="ad301a59e2f3e0876bc3201461918d34d">
+              <span class="m-doc-wrap-bumper">static auto <a href="#ad301a59e2f3e0876bc3201461918d34d" class="m-doc-self">Get</a>(</span><span class="m-doc-wrap">) -&gt; <a href="struct_general_allocator.html" class="m-doc">GeneralAllocator</a>*</span>
+            </dt>
+            <dd><span></span></dd>
+          </dl>
+        </section>
+        <section id="typeless-methods">
+          <h2><a href="#typeless-methods">Constructors, destructors, conversion operators</a></h2>
+          <dl class="m-doc">
+            <dt id="a387e5c7e75e3beea03976c8d9261fc95">
+              <span class="m-doc-wrap-bumper"><a href="#a387e5c7e75e3beea03976c8d9261fc95" class="m-doc-self">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="struct_general_allocator_1_1allocator__mutex.html" class="m-doc">allocator_<wbr />mutex</a>,
+              0x1C)</span>
+            </dt>
+            <dd><span></span></dd>
+          </dl>
+        </section>
+        <section id="pub-methods">
+          <h2><a href="#pub-methods">Public functions</a></h2>
+          <dl class="m-doc">
+            <dt id="af37ab434336ebd1f37b0024f43852f32">
+              <span class="m-doc-wrap-bumper">auto <a href="#af37ab434336ebd1f37b0024f43852f32" class="m-doc-self">GetFastBinIndexFromChunkSize</a>(</span><span class="m-doc-wrap">unsigned int chunkSize) -&gt; int</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a9d432fdf271283952e3e7f307914d7bc">
+              <span class="m-doc-wrap-bumper">auto <a href="#a9d432fdf271283952e3e7f307914d7bc" class="m-doc-self">GetSmallBinIndexFromChunkSize</a>(</span><span class="m-doc-wrap">unsigned int chunkSize) -&gt; int</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a6918f992176b60ee6eec70a4f7fc46be">
+              <span class="m-doc-wrap-bumper">auto <a href="#a6918f992176b60ee6eec70a4f7fc46be" class="m-doc-self">GetLargeBinIndexFromChunkSize</a>(</span><span class="m-doc-wrap">unsigned int chunkSize) -&gt; int</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a14712c3480ff137373d50cc03d368e3c">
+              <span class="m-doc-wrap-bumper">auto <a href="#a14712c3480ff137373d50cc03d368e3c" class="m-doc-self">GetFastBinChunksExist</a>(</span><span class="m-doc-wrap">) -&gt; bool</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a81bb1c3824511702f744e91f1603112d">
+              <span class="m-doc-wrap-bumper">auto <a href="#a81bb1c3824511702f744e91f1603112d" class="m-doc-self">GetBin</a>(</span><span class="m-doc-wrap">int index) -&gt; <a href="struct_general_allocator_1_1_skip_list_chunk.html" class="m-doc">SkipListChunk</a>*</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a3f40fb3f6e7afa11d21d52f66345b1af">
+              <span class="m-doc-wrap-bumper">auto <a href="#a3f40fb3f6e7afa11d21d52f66345b1af" class="m-doc-self">GetUnsortedBin</a>(</span><span class="m-doc-wrap">) -&gt; <a href="struct_general_allocator_1_1_skip_list_chunk.html" class="m-doc">SkipListChunk</a>*</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a7e710537dededdbe212233e16de6fff5">
+              <span class="m-doc-wrap-bumper">auto <a href="#a7e710537dededdbe212233e16de6fff5" class="m-doc-self">GetNextBin</a>(</span><span class="m-doc-wrap"><a href="struct_general_allocator_1_1_skip_list_chunk.html" class="m-doc">SkipListChunk</a>* bin) -&gt; <a href="struct_general_allocator_1_1_skip_list_chunk.html" class="m-doc">SkipListChunk</a>*</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a67013a12d414d79c28f25dbe191956b1">
+              <span class="m-doc-wrap-bumper">auto <a href="#a67013a12d414d79c28f25dbe191956b1" class="m-doc-self">GetFirstChunkInBin</a>(</span><span class="m-doc-wrap"><a href="struct_general_allocator_1_1_skip_list_chunk.html" class="m-doc">SkipListChunk</a>* bin) -&gt; <a href="struct_general_allocator_1_1_chunk.html" class="m-doc">Chunk</a>*</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a98615bc65355b92c1233d7d3c92bc6a1">
+              <span class="m-doc-wrap-bumper">auto <a href="#a98615bc65355b92c1233d7d3c92bc6a1" class="m-doc-self">GetLastChunkInBin</a>(</span><span class="m-doc-wrap"><a href="struct_general_allocator_1_1_skip_list_chunk.html" class="m-doc">SkipListChunk</a>* bin) -&gt; <a href="struct_general_allocator_1_1_chunk.html" class="m-doc">Chunk</a>*</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a4497f585e58c18cd163b96e2cc78f5ec">
+              <span class="m-doc-wrap-bumper">auto <a href="#a4497f585e58c18cd163b96e2cc78f5ec" class="m-doc-self">ChunkMatchesLowHigh</a>(</span><span class="m-doc-wrap">bool,
+              <a href="struct_general_allocator_1_1_chunk.html" class="m-doc">Chunk</a>* chunk,
+              int offset) -&gt; bool</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a8162a02fdc4f8cf728f32fa342522c5b">
+              <span class="m-doc-wrap-bumper">auto <a href="#a8162a02fdc4f8cf728f32fa342522c5b" class="m-doc-self">GetDataPtrFromChunkPtr</a>(</span><span class="m-doc-wrap"><a href="struct_general_allocator_1_1_chunk.html" class="m-doc">Chunk</a>* chunk) -&gt; void*</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a8fb93167a2f80c02628789e37957a2d5">
+              <span class="m-doc-wrap-bumper">auto <a href="#a8fb93167a2f80c02628789e37957a2d5" class="m-doc-self">GetChunkSize</a>(</span><span class="m-doc-wrap"><a href="struct_general_allocator_1_1_chunk.html" class="m-doc">Chunk</a>* chunk) -&gt; unsigned int</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="acf0af0fb14a03d2cc5615fc50dca8cd4">
+              <span class="m-doc-wrap-bumper">void <a href="#acf0af0fb14a03d2cc5615fc50dca8cd4" class="m-doc-self">SetChunkSize</a>(</span><span class="m-doc-wrap"><a href="struct_general_allocator_1_1_chunk.html" class="m-doc">Chunk</a>* chunk,
+              unsigned int size)</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a859b2f76d566c6f520a92a43f9f2a2d1">
+              <span class="m-doc-wrap-bumper">void <a href="#a859b2f76d566c6f520a92a43f9f2a2d1" class="m-doc-self">SetNextChunkPrevSize</a>(</span><span class="m-doc-wrap"><a href="struct_general_allocator_1_1_chunk.html" class="m-doc">Chunk</a>* chunk,
+              unsigned int size)</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a162ada6e782648740cccad55db97b044">
+              <span class="m-doc-wrap-bumper">auto <a href="#a162ada6e782648740cccad55db97b044" class="m-doc-self">GetChunkAtOffset</a>(</span><span class="m-doc-wrap"><a href="struct_general_allocator_1_1_chunk.html" class="m-doc">Chunk</a>* chunk,
+              unsigned int offset) -&gt; <a href="struct_general_allocator_1_1_chunk.html" class="m-doc">Chunk</a>*</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a637847f6f2d00ecc5277be6dde9c6a7f">
+              <span class="m-doc-wrap-bumper">auto <a href="#a637847f6f2d00ecc5277be6dde9c6a7f" class="m-doc-self">GetPrevChunkIsInUse</a>(</span><span class="m-doc-wrap"><a href="struct_general_allocator_1_1_chunk.html" class="m-doc">Chunk</a>* chunk) -&gt; bool</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a9afb6e93e5729ef387ac6e0b080c1740">
+              <span class="m-doc-wrap-bumper">auto <a href="#a9afb6e93e5729ef387ac6e0b080c1740" class="m-doc-self">GetChunkIsLargeBin</a>(</span><span class="m-doc-wrap"><a href="struct_general_allocator_1_1_chunk.html" class="m-doc">Chunk</a>* chunk) -&gt; bool</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a2ec07919f503c739ce89bd0a2f4e30a8">
+              <span class="m-doc-wrap-bumper">auto <a href="#a2ec07919f503c739ce89bd0a2f4e30a8" class="m-doc-self">SizeIsWithinSmallBinRange</a>(</span><span class="m-doc-wrap">int size) -&gt; bool</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a4b633bca3465d232257f6358f435114b">
+              <span class="m-doc-wrap-bumper">void <a href="#a4b633bca3465d232257f6358f435114b" class="m-doc-self">SetChunkInUseOffset</a>(</span><span class="m-doc-wrap"><a href="struct_general_allocator_1_1_chunk.html" class="m-doc">Chunk</a>* chunk,
+              unsigned int offset)</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="abd70b16f134216aa8393c4aa944d0731">
+              <span class="m-doc-wrap-bumper">void <a href="#abd70b16f134216aa8393c4aa944d0731" class="m-doc-self">LinkChunk</a>(</span><span class="m-doc-wrap"><a href="struct_general_allocator_1_1_chunk.html" class="m-doc">Chunk</a>* chunk,
+              <a href="struct_general_allocator_1_1_chunk.html" class="m-doc">Chunk</a>* bck,
+              <a href="struct_general_allocator_1_1_chunk.html" class="m-doc">Chunk</a>* fwd)</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="abf79991679f47b91c1599c77e8dda72a">
+              <span class="m-doc-wrap-bumper">void <a href="#abf79991679f47b91c1599c77e8dda72a" class="m-doc-self">UnlinkChunk</a>(</span><span class="m-doc-wrap"><a href="struct_general_allocator_1_1_chunk.html" class="m-doc">Chunk</a>* chunk)</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="aecd850ac5d4da5161dece5d18c594d0f">
+              <span class="m-doc-wrap-bumper">void <a href="#aecd850ac5d4da5161dece5d18c594d0f" class="m-doc-self">SplitChunkTail</a>(</span><span class="m-doc-wrap"><a href="struct_general_allocator_1_1_chunk.html" class="m-doc">Chunk</a>* victim,
+              unsigned int requestedSize,
+              bool isSmallBin)</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a1c114d1b07fdb6401d6728c70d8b3165">
+              <span class="m-doc-wrap-bumper">void <a href="#a1c114d1b07fdb6401d6728c70d8b3165" class="m-doc-self">AdjustTopChunk</a>(</span><span class="m-doc-wrap"><a href="struct_general_allocator_1_1_chunk.html" class="m-doc">Chunk</a>* chunk,
+              unsigned int size)</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a15f8c67d3ef5c88c7c4dbf33b2194238">
+              <span class="m-doc-wrap-bumper">void <a href="#a15f8c67d3ef5c88c7c4dbf33b2194238" class="m-doc-self">AdjustHighFence</a>(</span><span class="m-doc-wrap">)</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a3756e4f38ad034bc68118c2a67f40030">
+              <span class="m-doc-wrap-bumper">auto <a href="#a3756e4f38ad034bc68118c2a67f40030" class="m-doc-self">GetBinBitmapWordFromBinIndex</a>(</span><span class="m-doc-wrap">unsigned int index) -&gt; unsigned int</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="aa444ac12c99677fc6d38ab568a5be1e4">
+              <span class="m-doc-wrap-bumper">auto <a href="#aa444ac12c99677fc6d38ab568a5be1e4" class="m-doc-self">GetBinBitmapBitFromBinIndex</a>(</span><span class="m-doc-wrap">unsigned int index) -&gt; unsigned int</span>
+            </dt>
+            <dd><span></span></dd>
+          </dl>
+        </section>
+        <section id="pub-attribs">
+          <h2><a href="#pub-attribs">Public variables</a></h2>
+          <dl class="m-doc">
+            <dt id="a10407c35989d6aa98d4db41a8c720782">
+              int <a href="#a10407c35989d6aa98d4db41a8c720782" class="m-doc-self">field_0</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="ae67dd150350fefbfe70e22b4091a02a8">
+              unsigned int <a href="#ae67dd150350fefbfe70e22b4091a02a8" class="m-doc-self">max_fastbin_size</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a89d720f5b56dd4eac064431811a0b9da">
+              <a href="struct_general_allocator_1_1_chunk.html" class="m-doc">Chunk</a>* <a href="#a89d720f5b56dd4eac064431811a0b9da" class="m-doc-self">fastbins</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a3e6843b8acc5ead9f24a3ed04aa72ca6">
+              <a href="struct_general_allocator_1_1_chunk.html" class="m-doc">Chunk</a>* <a href="#a3e6843b8acc5ead9f24a3ed04aa72ca6" class="m-doc-self">field_28</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a659441d7da20f80a8ec5b4e2f7c8646f">
+              <a href="struct_general_allocator_1_1_chunk.html" class="m-doc">Chunk</a>* <a href="#a659441d7da20f80a8ec5b4e2f7c8646f" class="m-doc-self">field_2C</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="ae00748b2899a56592106696d1a62ce2a">
+              <a href="struct_general_allocator_1_1_chunk.html" class="m-doc">Chunk</a>* <a href="#ae00748b2899a56592106696d1a62ce2a" class="m-doc-self">bins</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              unsigned int <a href="#a16365276cc0cb828c8836e553615c0df" class="m-doc">binmap</a>
+            </dt>
+            <dd></dd>
+            <dt id="a45b09042cc75b2c579dcafb0537bc9e9">
+              <a href="struct_general_allocator_1_1_chunk.html" class="m-doc">Chunk</a>* <a href="#a45b09042cc75b2c579dcafb0537bc9e9" class="m-doc-self">top</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a6b5e2a26abab2673cbf4a6a7317dcee7">
+              <a href="struct_general_allocator_1_1_chunk.html" class="m-doc">Chunk</a>* <a href="#a6b5e2a26abab2673cbf4a6a7317dcee7" class="m-doc-self">last_remainder</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="ab112593efe60c73d9965b55f797489ca">
+              int <a href="#ab112593efe60c73d9965b55f797489ca" class="m-doc-self">field_448</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="ae1b54f87f62b395fd8825f12d53c096e">
+              int <a href="#ae1b54f87f62b395fd8825f12d53c096e" class="m-doc-self">field_44C</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a6b7aa06337afaf38f316f40e4732786e">
+              int <a href="#a6b7aa06337afaf38f316f40e4732786e" class="m-doc-self">field_450</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a39c80a6d78f65381624b0713df137c05">
+              int <a href="#a39c80a6d78f65381624b0713df137c05" class="m-doc-self">field_454</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a6780d642791ed308aa2d14abb93200d7">
+              int <a href="#a6780d642791ed308aa2d14abb93200d7" class="m-doc-self">field_458</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="aaa6403a349dda66a9b32881cfbfe76fd">
+              int <a href="#aaa6403a349dda66a9b32881cfbfe76fd" class="m-doc-self">field_45C</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a30598344f8f479aee7de07f41b068b3d">
+              int <a href="#a30598344f8f479aee7de07f41b068b3d" class="m-doc-self">field_460</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="ae5fb5672c880a3ff98c65acc8cab6b97">
+              int <a href="#ae5fb5672c880a3ff98c65acc8cab6b97" class="m-doc-self">field_464</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a515dcfdf83a8fc15c0b7978f48dfe39e">
+              <a href="struct_general_allocator_1_1_chunk.html" class="m-doc">Chunk</a>* <a href="#a515dcfdf83a8fc15c0b7978f48dfe39e" class="m-doc-self">field_468</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a94135fc2a7c3391009d9f9b057ef2233">
+              bool <a href="#a94135fc2a7c3391009d9f9b057ef2233" class="m-doc-self">field_46C</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="aeb887296171cb6bec860ffd2f396114c">
+              bool <a href="#aeb887296171cb6bec860ffd2f396114c" class="m-doc-self">field_46D</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="aa1fe6b8942c13118198d58dabc7d591d">
+              int <a href="#aa1fe6b8942c13118198d58dabc7d591d" class="m-doc-self">field_470</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="ac8f6cdb40e00b6a7d6d77bd92bf3d79c">
+              char <a href="#ac8f6cdb40e00b6a7d6d77bd92bf3d79c" class="m-doc-self">padding_474</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="ad28673d88fe621d4e294e833077abeb1">
+              int <a href="#ad28673d88fe621d4e294e833077abeb1" class="m-doc-self">field_488</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a5d54b648ab24979f3bf70d24467bd82c">
+              int <a href="#a5d54b648ab24979f3bf70d24467bd82c" class="m-doc-self">field_48C</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="abc0d0a5ecb0787b37ebd98272373975e">
+              int <a href="#abc0d0a5ecb0787b37ebd98272373975e" class="m-doc-self">field_490</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a626c9d516d61f8e838ddbc1eb7b15524">
+              unsigned int <a href="#a626c9d516d61f8e838ddbc1eb7b15524" class="m-doc-self">field_494</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="aaaa1b00a0f52bacb25a510ad6f1fc7ad">
+              int <a href="#aaaa1b00a0f52bacb25a510ad6f1fc7ad" class="m-doc-self">field_498</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="aee119a366934afecba4593c9ca7561a5">
+              int <a href="#aee119a366934afecba4593c9ca7561a5" class="m-doc-self">field_49C</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="ab316c6605276c1da25936393af78a207">
+              int <a href="#ab316c6605276c1da25936393af78a207" class="m-doc-self">field_4A0</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="aca3a7695fdab0f7f0e0d9c63104f920a">
+              int <a href="#aca3a7695fdab0f7f0e0d9c63104f920a" class="m-doc-self">field_4A4</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a9b2502a1711843cfabf63c5aeca0d8d2">
+              int <a href="#a9b2502a1711843cfabf63c5aeca0d8d2" class="m-doc-self">field_4A8</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="ad6ec3ff2f1b4f1b224850c12aca57fff">
+              <a href="struct_general_allocator.html#ace7ad9a8009387a81e58253bcad4e3aa" class="m-doc">MallocFailureFunction_<wbr />t</a> <a href="#ad6ec3ff2f1b4f1b224850c12aca57fff" class="m-doc-self">malloc_failure_function</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a73fb9e47151a616120ade2966bdc542e">
+              int <a href="#a73fb9e47151a616120ade2966bdc542e" class="m-doc-self">field_4B0</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a79a61d0a3792371314cbe0582048251e">
+              int <a href="#a79a61d0a3792371314cbe0582048251e" class="m-doc-self">field_4B4</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="af562982be90d3bf9efbe3c3916265a00">
+              char <a href="#af562982be90d3bf9efbe3c3916265a00" class="m-doc-self">field_4B8</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a6b58f657dadca8d2a518d75671024264">
+              <a href="struct_general_allocator_1_1allocator__mutex.html" class="m-doc">allocator_<wbr />mutex</a>* <a href="#a6b58f657dadca8d2a518d75671024264" class="m-doc-self">field_4E4</a>
+            </dt>
+            <dd><span></span></dd>
+          </dl>
+        </section>
+        <section>
+          <h2>Variable documentation</h2>
+          <section class="m-doc-details" id="a16365276cc0cb828c8836e553615c0df"><div>
+            <h3>
+              unsigned int GeneralAllocator::<wbr /><a href="#a16365276cc0cb828c8836e553615c0df" class="m-doc-self">binmap</a>
+            </h3>
+<ul><li>430h *&zwj;/ eastl::bitset&lt;128&gt; binmap; //TODO how many?</li></ul>
+          </div></section>
+        </section>
+      </div>
+    </div>
+  </div>
+</article></main>
+<div class="m-doc-search" id="search">
+  <a href="#!" onclick="return hideSearch()"></a>
+  <div class="m-container">
+    <div class="m-row">
+      <div class="m-col-m-8 m-push-m-2">
+        <div class="m-doc-search-header m-text m-small">
+          <div><span class="m-label m-default">Tab</span> / <span class="m-label m-default">T</span> to search, <span class="m-label m-default">Esc</span> to close</div>
+          <div id="search-symbolcount">&hellip;</div>
+        </div>
+        <div class="m-doc-search-content">
+          <form>
+            <input type="search" name="q" id="search-input" placeholder="Loading &hellip;" disabled="disabled" autofocus="autofocus" autocomplete="off" spellcheck="false" />
+          </form>
+          <noscript class="m-text m-danger m-text-center">Unlike everything else in the docs, the search functionality <em>requires</em> JavaScript.</noscript>
+          <div id="search-help" class="m-text m-dim m-text-center">
+            <p class="m-noindent">Search for symbols, directories, files, pages or
+            modules. You can omit any prefix from the symbol or file path; adding a
+            <code>:</code> or <code>/</code> suffix lists all members of given symbol or
+            directory.</p>
+            <p class="m-noindent">Use <span class="m-label m-dim">&darr;</span>
+            / <span class="m-label m-dim">&uarr;</span> to navigate through the list,
+            <span class="m-label m-dim">Enter</span> to go.
+            <span class="m-label m-dim">Tab</span> autocompletes common prefix, you can
+            copy a link to the result using <span class="m-label m-dim">⌘</span>
+            <span class="m-label m-dim">L</span> while <span class="m-label m-dim">⌘</span>
+            <span class="m-label m-dim">M</span> produces a Markdown link.</p>
+          </div>
+          <div id="search-notfound" class="m-text m-warning m-text-center">Sorry, nothing was found.</div>
+          <ul id="search-results"></ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="search-v1.js"></script>
+<script src="searchdata-v1.js" async="async"></script>
+<footer><nav>
+  <div class="m-container">
+    <div class="m-row">
+      <div class="m-col-l-10 m-push-l-1">
+        <p>Spore ModAPI SDK for creating C++ mods for Spore. Created with <a href="https://doxygen.org/">Doxygen</a> 1.8.16 and <a href="https://mcss.mosra.cz/">m.css</a>.</p>
+      </div>
+    </div>
+  </div>
+</nav></footer>
+</body>
+</html>

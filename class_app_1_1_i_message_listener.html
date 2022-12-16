@@ -55,14 +55,23 @@
             <li>
               Reference
               <ul>
+                <li><a href="#base-classes">Base classes</a></li>
                 <li><a href="#derived-classes">Derived classes</a></li>
-                <li><a href="#typeless-methods">Constructors, destructors, conversion operators</a></li>
                 <li><a href="#pub-methods">Public functions</a></li>
               </ul>
             </li>
           </ul>
         </div>
 <p>Using the <a href="class_app_1_1_i_message_manager.html" class="m-doc">App::<wbr />IMessageManager</a>, listeners sign up to receive certain message IDs.</p>
+        <section id="base-classes">
+          <h2><a href="#base-classes">Base classes</a></h2>
+          <dl class="m-doc">
+            <dt>
+              class <a href="class_app_1_1_i_unmanaged_message_listener.html" class="m-doc">IUnmanagedMessageListener</a>
+            </dt>
+            <dd>Same as <a href="class_app_1_1_i_message_listener.html" class="m-doc">App::<wbr />IMessageListener</a>, but this one does not use ref-counting.</dd>
+          </dl>
+        </section>
         <section id="derived-classes">
           <h2><a href="#derived-classes">Derived classes</a></h2>
           <dl class="m-doc">
@@ -212,23 +221,9 @@
             <dd>User interface for the Space game. The main SPUI is <code>0x1e453b88.spui</code></dd>
           </dl>
         </section>
-        <section id="typeless-methods">
-          <h2><a href="#typeless-methods">Constructors, destructors, conversion operators</a></h2>
-          <dl class="m-doc">
-            <dt id="a7df8918b9e984291c1f97906b97cdaf6">
-              <span class="m-doc-wrap-bumper"><a href="#a7df8918b9e984291c1f97906b97cdaf6" class="m-doc-self">~IMessageListener</a>(</span><span class="m-doc-wrap">) <span class="m-label m-flat m-warning">virtual</span></span>
-            </dt>
-            <dd><span></span></dd>
-          </dl>
-        </section>
         <section id="pub-methods">
           <h2><a href="#pub-methods">Public functions</a></h2>
           <dl class="m-doc">
-            <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#a8c353fd4fa8edf6e4a55232f1c022289" class="m-doc">HandleMessage</a>(</span><span class="m-doc-wrap">uint32_t messageID,
-              void* msg) -&gt; bool <span class="m-label m-flat m-warning">pure virtual</span></span>
-            </dt>
-            <dd>Called every time a message is received.</dd>
             <dt id="a1cde6ad50ac7210728c11343739f6771">
               <span class="m-doc-wrap-bumper">auto <a href="#a1cde6ad50ac7210728c11343739f6771" class="m-doc-self">AddRef</a>(</span><span class="m-doc-wrap">) -&gt; int <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
@@ -238,38 +233,6 @@
             </dt>
             <dd><span></span></dd>
           </dl>
-        </section>
-        <section>
-          <h2>Function documentation</h2>
-          <section class="m-doc-details" id="a8c353fd4fa8edf6e4a55232f1c022289"><div>
-            <h3>
-              <span class="m-doc-wrap-bumper">bool App::<wbr />IMessageListener::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a8c353fd4fa8edf6e4a55232f1c022289" class="m-doc-self">HandleMessage</a>(</span><span class="m-doc-wrap">uint32_t messageID,
-              void* msg) <span class="m-label m-warning">pure virtual</span></span></span>
-            </h3>
-            <p>Called every time a message is received.</p>
-            <table class="m-table m-fullwidth m-flat">
-              <thead>
-                <tr><th colspan="2">Parameters</th></tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td style="width: 1%">messageID</td>
-                  <td>The ID of the message received.</td>
-                </tr>
-                <tr>
-                  <td>msg</td>
-                  <td></td>
-                </tr>
-              </tbody>
-              <tfoot>
-                <tr>
-                  <th>Returns</th>
-                  <td>Whether the message was handled or not.</td>
-                </tr>
-              </tfoot>
-            </table>
-<p>Only the messages with an ID this listened signed up for will call this event.</p>
-          </div></section>
         </section>
       </div>
     </div>

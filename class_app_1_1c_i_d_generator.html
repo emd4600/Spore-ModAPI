@@ -85,16 +85,18 @@
           <h2><a href="#pub-methods">Public functions</a></h2>
           <dl class="m-doc">
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#a0d8cdb7bceb02d9ecc484989f8fd5504" class="m-doc">Generate</a>(</span><span class="m-doc-wrap">uint32_t typeID,
+              <span class="m-doc-wrap-bumper">void <a href="#a9af8741bb8897d72e658e0a109c75b6e" class="m-doc">Generate</a>(</span><span class="m-doc-wrap"><a href="struct_resource_key.html" class="m-doc">ResourceKey</a>&amp; dst,
+              uint32_t typeID,
               uint8_t poolID,
               uint8_t highBits,
               uint8_t lowBits8,
-              uint8_t lowBits0) -&gt; <a href="struct_resource_key.html" class="m-doc">ResourceKey</a> <span class="m-label m-flat m-warning">virtual</span></span>
+              uint8_t lowBits0) <span class="m-label m-flat m-warning">virtual</span></span>
             </dt>
             <dd>Generates a <a href="struct_resource_key.html" class="m-doc">ResourceKey</a> that uses the given type ID, autogenerating an instance ID that does not conflict with any existing file.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#ac829b774f4c3a7507b0ab25137d3e2fe" class="m-doc">GenerateForGroup</a>(</span><span class="m-doc-wrap">uint32_t typeID,
-              uint32_t groupID) -&gt; <a href="struct_resource_key.html" class="m-doc">ResourceKey</a> <span class="m-label m-flat m-warning">virtual</span></span>
+              <span class="m-doc-wrap-bumper">void <a href="#ad1f5dc5dd973a4f36978afa36831696a" class="m-doc">GenerateForGroup</a>(</span><span class="m-doc-wrap"><a href="struct_resource_key.html" class="m-doc">ResourceKey</a>&amp; dst,
+              uint32_t typeID,
+              uint32_t groupID) <span class="m-label m-flat m-warning">virtual</span></span>
             </dt>
             <dd>Generates a <a href="struct_resource_key.html" class="m-doc">ResourceKey</a> that uses the given type and group IDs, autogenerating an instance ID that does not conflict with any existing file.</dd>
           </dl>
@@ -118,9 +120,10 @@
         </section>
         <section>
           <h2>Function documentation</h2>
-          <section class="m-doc-details" id="a0d8cdb7bceb02d9ecc484989f8fd5504"><div>
+          <section class="m-doc-details" id="a9af8741bb8897d72e658e0a109c75b6e"><div>
             <h3>
-              <span class="m-doc-wrap-bumper"><a href="struct_resource_key.html" class="m-doc">ResourceKey</a> App::<wbr />cIDGenerator::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a0d8cdb7bceb02d9ecc484989f8fd5504" class="m-doc-self">Generate</a>(</span><span class="m-doc-wrap">uint32_t typeID,
+              <span class="m-doc-wrap-bumper">void App::<wbr />cIDGenerator::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a9af8741bb8897d72e658e0a109c75b6e" class="m-doc-self">Generate</a>(</span><span class="m-doc-wrap"><a href="struct_resource_key.html" class="m-doc">ResourceKey</a>&amp; dst,
+              uint32_t typeID,
               uint8_t poolID,
               uint8_t highBits,
               uint8_t lowBits8,
@@ -133,7 +136,11 @@
               </thead>
               <tbody>
                 <tr>
-                  <td style="width: 1%">typeID</td>
+                  <td style="width: 1%">dst</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>typeID</td>
                   <td></td>
                 </tr>
                 <tr>
@@ -156,9 +163,10 @@
             </table>
 <p>The group ID is calculated from all the other parameters like this: <code>highBits|0x40 poolID lowBits8 lowBits0</code>, from highest to lowest bits. <code>poolID</code> determines the &quot;generation pool&quot; where instance IDs are generated (there is one for creatures, one for planets, etc).</p>
           </div></section>
-          <section class="m-doc-details" id="ac829b774f4c3a7507b0ab25137d3e2fe"><div>
+          <section class="m-doc-details" id="ad1f5dc5dd973a4f36978afa36831696a"><div>
             <h3>
-              <span class="m-doc-wrap-bumper"><a href="struct_resource_key.html" class="m-doc">ResourceKey</a> App::<wbr />cIDGenerator::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ac829b774f4c3a7507b0ab25137d3e2fe" class="m-doc-self">GenerateForGroup</a>(</span><span class="m-doc-wrap">uint32_t typeID,
+              <span class="m-doc-wrap-bumper">void App::<wbr />cIDGenerator::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ad1f5dc5dd973a4f36978afa36831696a" class="m-doc-self">GenerateForGroup</a>(</span><span class="m-doc-wrap"><a href="struct_resource_key.html" class="m-doc">ResourceKey</a>&amp; dst,
+              uint32_t typeID,
               uint32_t groupID) <span class="m-label m-warning">virtual</span></span></span>
             </h3>
             <p>Generates a <a href="struct_resource_key.html" class="m-doc">ResourceKey</a> that uses the given type and group IDs, autogenerating an instance ID that does not conflict with any existing file.</p>
@@ -168,7 +176,11 @@
               </thead>
               <tbody>
                 <tr>
-                  <td style="width: 1%">typeID</td>
+                  <td style="width: 1%">dst</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>typeID</td>
                   <td></td>
                 </tr>
                 <tr>
