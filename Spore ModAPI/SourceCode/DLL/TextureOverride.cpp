@@ -54,7 +54,7 @@ Graphics::cModelInstance* CopyMesh(Graphics::cModelInstance* mesh) {
 	copy->mBoneRanges = mesh->mBoneRanges;
 	copy->mMaterialInfos = mesh->mMaterialInfos;
 	copy->mRegionMaterialInfos = mesh->mRegionMaterialInfos;
-	copy->field_70 = mesh->field_70;
+	copy->mModelToWorldTransform = mesh->mModelToWorldTransform;
 	copy->mBoundingBox = mesh->mBoundingBox;
 	copy->mBoundingRadius = mesh->mBoundingRadius;
 	copy->mpRenderWare = mesh->mpRenderWare;
