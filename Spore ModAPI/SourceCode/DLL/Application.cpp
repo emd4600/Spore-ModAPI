@@ -92,12 +92,12 @@ namespace ModAPI
 
 		long result = 0;
 		result |= ShaderFragments_detour::attach(GetAddress(Graphics::cMaterialManager, ReadShaderFragments));
-		result |= sub_7E6C60_detour::attach(Address(SelectAddress(0x7E6C60, 0x7E67E0, 0x7E6850)));
-		result |= AppInit_detour::attach(Address(SelectAddress(0xF48230, , 0xF47E90)));
-		result |= AppShutdown_detour::attach(Address(SelectAddress(0xF47950, , 0xF475A0)));
+		result |= sub_7E6C60_detour::attach(Address(SelectAddress(0x7E6C60, 0x7E6850)));
+		result |= AppInit_detour::attach(Address(SelectAddress(0xF48230, 0xF47E90)));
+		result |= AppShutdown_detour::attach(Address(SelectAddress(0xF47950, 0xF475A0)));
 
-		result |= PersistanceMan_Write_detour::attach(Address(SelectAddress(0xB26670, , 0xB267E0)));
-		result |= PersistanceMan_Read_detour::attach(Address(SelectAddress(0xB266B0, , 0xB26820)));
+		result |= PersistanceMan_Write_detour::attach(Address(SelectAddress(0xB26670, 0xB267E0)));
+		result |= PersistanceMan_Read_detour::attach(Address(SelectAddress(0xB266B0, 0xB26820)));
 
 		return result;
 	}

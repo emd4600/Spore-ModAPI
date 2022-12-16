@@ -187,9 +187,9 @@ namespace Editors
 		//TODO this doesn't belong here!
 		//static long AttachDetour();
 
-		//virtual METHOD_(SelectAddress(0x456F60, 0x54B6C0, 0x54B6C0), Object, int, AddRef);
-		//virtual METHOD_(SelectAddress(0x54B590, 0x54B6D0, 0x54B6D0), Object, int, Release);
-		//virtual METHOD(SelectAddress(0x435B20, 0x435E70, 0x435E70), Object, void*, Cast, Args(uint32_t typeID), Args(typeID));
+		//virtual METHOD_(SelectAddress(0x456F60, 0x54B6C0), Object, int, AddRef);
+		//virtual METHOD_(SelectAddress(0x54B590, 0x54B6D0), Object, int, Release);
+		//virtual METHOD(SelectAddress(0x435B20, 0x435E70), Object, void*, Cast, Args(uint32_t typeID), Args(typeID));
 
 	//private:
 	//	static void* (*sub_49FF50_ptr)(EditorRigblock* part, eastl::vector<void*>& dst, bool arg_8);

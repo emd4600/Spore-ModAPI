@@ -43,12 +43,12 @@ namespace UTFWin
 
 	//	static inline WinSlider* New() {
 	//		// __stdcall because it's cleanup by callee
-	//		return (WinSlider*)((IWindow*(__stdcall*)(void*, void*)) SelectAddress(0x985D90, 0x985AC0, 0x985AC0))(nullptr, nullptr);
+	//		return (WinSlider*)((IWindow*(__stdcall*)(void*, void*)) SelectAddress(0x985D90, 0x985AC0))(nullptr, nullptr);
 	//	}
 
-	//	virtual METHOD_(SelectAddress(0x98F5C0, 0x95F8F0, 0x95F8F0), ILayoutElement, int, AddRef);
-	//	virtual METHOD_(SelectAddress(0x96B700, 0x95F900, 0x95F900), ILayoutElement, int, Release);
-	//	virtual METHOD(SelectAddress(0x983DB0, 0x983A70, 0x983A70), ILayoutElement, void*, Cast, Args(uint32_t typeID), Args(typeID));
+	//	virtual METHOD_(SelectAddress(0x98F5C0, 0x95F8F0), ILayoutElement, int, AddRef);
+	//	virtual METHOD_(SelectAddress(0x96B700, 0x95F900), ILayoutElement, int, Release);
+	//	virtual METHOD(SelectAddress(0x983DB0, 0x983A70), ILayoutElement, void*, Cast, Args(uint32_t typeID), Args(typeID));
 	//};
 
 	//static_assert(sizeof(WinSlider) == 0x258, "sizeof(WinSlider) != 258h");

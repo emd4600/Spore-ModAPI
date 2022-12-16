@@ -22,7 +22,7 @@ BOOL APIENTRY DllMain(HMODULE hModule,
 		case DLL_PROCESS_ATTACH:
 			baseAddress = (uintptr_t)GetModuleHandleA(NULL);
 
-			ArgScript::PrintF = (ArgScript::PrintF_ptr)Address(SelectAddress(0x8418C0, 0x841050, 0x8410D0));
+			ArgScript::PrintF = (ArgScript::PrintF_ptr)Address(SelectAddress(0x8418C0, 0x8410D0));
 			PrepareDetours(hModule);
 			ModAPI::AttachDetour();
 			TextureOverride::AttachDetour();

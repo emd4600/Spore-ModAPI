@@ -5,7 +5,7 @@ namespace Pollinator
 {
 	namespace Addresses(cAssetMetadata)
 	{
-		DefineAddress(Set, SelectAddress(0x5511D0, , 0x551240));
+		DefineAddress(Set, SelectAddress(0x5511D0, 0x551240));
 	}
 }
 #endif

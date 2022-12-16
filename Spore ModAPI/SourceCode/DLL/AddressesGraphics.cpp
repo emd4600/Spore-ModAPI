@@ -10,6 +10,7 @@
 #include <Spore\Graphics\IRenderer.h>
 #include <Spore\Graphics\ITextureManager.h>
 #include <Spore\Graphics\IShadowWorld.h>
+#include <Spore\Graphics\cModelWorld.h>
 #include <Spore\Graphics\RenderUtils.h>
 #include <Spore\Graphics\IRenderTargetManager.h>
 #include <Spore\Graphics\cMaterialManager.h>
@@ -19,27 +20,27 @@
 
 namespace Addresses(Graphics)
 {
-	DefineAddress(VertexShaderDataUniforms_ptr, SelectAddress(0x162CE14, , 0x1628BA4));
-	DefineAddress(PixelShaderDataUniforms_ptr, SelectAddress(0x1624020, , 0x161FDB4));
+	DefineAddress(VertexShaderDataUniforms_ptr, SelectAddress(0x162CE14, 0x1628BA4));
+	DefineAddress(PixelShaderDataUniforms_ptr, SelectAddress(0x1624020, 0x161FDB4));
 }
 
 namespace Graphics
 {
 	namespace Addresses(cMaterialManager)
 	{
-		DefineAddress(ReadShaderFragments, SelectAddress(0x70F7E0, , 0x70F010));
+		DefineAddress(ReadShaderFragments, SelectAddress(0x70F7E0, 0x70F010));
 	};
 
 	namespace Addresses(CompiledShader) {
-		//DefineAddress(ReadCompiledVertexShaders, SelectAddress(0x6FF950, , 0x6FF480));
-		//DefineAddress(ReadCompiledPixelShaders, SelectAddress(0x6FC5C0, , 0x6FC280));
+		//DefineAddress(ReadCompiledVertexShaders, SelectAddress(0x6FF950, 0x6FF480));
+		//DefineAddress(ReadCompiledPixelShaders, SelectAddress(0x6FC5C0, 0x6FC280));
 
-		DefineAddress(VertexShaders_ptr, SelectAddress(0x162CE90, , 0x1628C20));
-		DefineAddress(PixelShaders_ptr, SelectAddress(0x161DA88, , 0x16198A0));
+		DefineAddress(VertexShaders_ptr, SelectAddress(0x162CE90, 0x1628C20));
+		DefineAddress(PixelShaders_ptr, SelectAddress(0x161DA88, 0x16198A0));
 	}
 
 	namespace Addresses(IThumbnailManager) {
-		DefineAddress(Get, SelectAddress(0x67DED0, , 0x67DD70));
+		DefineAddress(Get, SelectAddress(0x67DED0, 0x67DD70));
 	}
 
 	namespace Addresses(IGraphicsManager) {
@@ -48,146 +49,152 @@ namespace Graphics
 
 	namespace Addresses(ILightingManager)
 	{
-		DefineAddress(Get, SelectAddress(0x67DEB0, 0x67DD50, 0x67DD50));
+		DefineAddress(Get, SelectAddress(0x67DEB0, 0x67DD50));
 	}
 
 	namespace Addresses(IMaterialManager)
 	{
-		DefineAddress(Get, SelectAddress(0x67DE90, 0x67DD30, 0x67DD30));
+		DefineAddress(Get, SelectAddress(0x67DE90, 0x67DD30));
 	}
 
 	namespace Addresses(IModelManager)
 	{
-		DefineAddress(Get, SelectAddress(0x67DEA0, 0x67DD40, 0x67DD40));
+		DefineAddress(Get, SelectAddress(0x67DEA0, 0x67DD40));
 	}
 
 	namespace Addresses(IModelWorld)
 	{
-		DefineAddress(LoadModelProperties, SelectAddress(0x74C5D0, 0x74B7D0, 0x74B7D0));
+		DefineAddress(LoadModelProperties, SelectAddress(0x74C5D0, 0x74B7D0));
 	}
 
 	namespace Addresses(IRenderManager)
 	{
-		DefineAddress(Get, SelectAddress(0x67DE70, 0x67DD10, 0x67DD10));
+		DefineAddress(Get, SelectAddress(0x67DE70, 0x67DD10));
 	}
 	namespace Addresses(IRenderer)
 	{
-		DefineAddress(Get, SelectAddress(0x67DE70, 0x67DD10, 0x67DD10));
+		DefineAddress(Get, SelectAddress(0x67DE70, 0x67DD10));
 	}
 
 	namespace Addresses(IRenderTargetManager) {
-		DefineAddress(Get, SelectAddress(0x67DEC0, , 0x67DD60));
+		DefineAddress(Get, SelectAddress(0x67DEC0, 0x67DD60));
 	}
 
-	DefineAddress(MainColorRTT_ptr, SelectAddress(0x15D4AC8, , 0x15D0838));
-	DefineAddress(MainDepthRTT_ptr, SelectAddress(0x15D4ACC, , 0x15D083C));
+	DefineAddress(MainColorRTT_ptr, SelectAddress(0x15D4AC8, 0x15D0838));
+	DefineAddress(MainDepthRTT_ptr, SelectAddress(0x15D4ACC, 0x15D083C));
 
 	namespace Addresses(ITextureManager)
 	{
-		DefineAddress(Get, SelectAddress(0x67DE80, 0x67DD20, 0x67DD20));
+		DefineAddress(Get, SelectAddress(0x67DE80, 0x67DD20));
 	}
 
 	namespace Addresses(IShadowManager)
 	{
-		DefineAddress(Get, SelectAddress(0x67DEE0, , 0x67DD80));
+		DefineAddress(Get, SelectAddress(0x67DEE0, 0x67DD80));
 	}
 
 	namespace Addresses(IShadowWorld)
 	{
-		DefineAddress(Get, SelectAddress(0x67DEE0, , 0x67DD80));
+		DefineAddress(Get, SelectAddress(0x67DEE0, 0x67DD80));
 	}
 
 	namespace Addresses(MaterialShader) 
 	{
-		DefineAddress(Reset, SelectAddress(0x6E62F0, , 0x6E5C40));
-		DefineAddress(Initialize, SelectAddress(0x11F6B90, 0x11F4470, 0x11F4470));
-		DefineAddress(GetMaterialShader, SelectAddress(0x11FC770, 0x11FA030, 0x11FA030));
+		DefineAddress(Reset, SelectAddress(0x6E62F0, 0x6E5C40));
+		DefineAddress(Initialize, SelectAddress(0x11F6B90, 0x11F4470));
+		DefineAddress(GetMaterialShader, SelectAddress(0x11FC770, 0x11FA030));
 	}
 
 	namespace Addresses(Model)
 	{
-		DefineAddress(Release, SelectAddress(0x40F2C0, 0x40F360, 0x40F360));
+		DefineAddress(Release, SelectAddress(0x40F2C0, 0x40F360));
 	}
 
 	namespace Renderer_addresses
 	{
-		DefineAddress(D3D_ptr, SelectAddress(0x16FFCF8, , 0x16F89C8));
-		DefineAddress(Device_ptr, SelectAddress(0x016FFD00, 0x16F99D0, 0x16F89D0));
-		DefineAddress(ShaderData_ptr, SelectAddress(0x016FD8D8, 0x16F75A8, 0x16F65A8));
-		DefineAddress(MaterialShader_ptr, SelectAddress(0x016FD898, 0x16F7568, 0x16F6568));
-		DefineAddress(ModelToWorld_ptr, SelectAddress(0x016FF8DC, 0x16F95AC, 0x16F85AC));
-		DefineAddress(ModelToWorldTransposed_ptr, SelectAddress(0x1700024, 0x16F9CF4, 0x16F8CF4));
-		DefineAddress(PresentationParameters_ptr, SelectAddress(0x16FFECC,, 0x16F8B9C));
+		DefineAddress(D3D_ptr, SelectAddress(0x16FFCF8, 0x16F89C8));
+		DefineAddress(Device_ptr, SelectAddress(0x016FFD00, 0x16F89D0));
+		DefineAddress(ShaderData_ptr, SelectAddress(0x016FD8D8, 0x16F65A8));
+		DefineAddress(MaterialShader_ptr, SelectAddress(0x016FD898, 0x16F6568));
+		DefineAddress(ModelToWorld_ptr, SelectAddress(0x016FF8DC, 0x16F85AC));
+		DefineAddress(ModelToWorldTransposed_ptr, SelectAddress(0x1700024, 0x16F8CF4));
+		DefineAddress(PresentationParameters_ptr, SelectAddress(0x16FFECC, 0x16F8B9C));
 
-		DefineAddress(SetShaderData, SelectAddress(0x7786E0, 0x777B50, 0x777B50));
-		DefineAddress(GetShaderDataSize, SelectAddress(0x778C50, , 0x7780C0));
-		DefineAddress(RegisterShaderData, SelectAddress(0x11F69C0, , 0x11F42A0));
+		DefineAddress(SetShaderData, SelectAddress(0x7786E0, 0x777B50));
+		DefineAddress(GetShaderDataSize, SelectAddress(0x778C50, 0x7780C0));
+		DefineAddress(RegisterShaderData, SelectAddress(0x11F69C0, 0x11F42A0));
 
-		DefineAddress(SetPresentationParameters, SelectAddress(0x11FA450, , 0x11F7D30));
-		DefineAddress(CreateDevice, SelectAddress(0x11FADF0, , 0x11F86B0));
+		DefineAddress(SetPresentationParameters, SelectAddress(0x11FA450, 0x11F7D30));
+		DefineAddress(CreateDevice, SelectAddress(0x11FADF0, 0x11F86B0));
 
-		DefineAddress(SetTexture, SelectAddress(0x11F39D0, , 0x11F12A0));
+		DefineAddress(SetTexture, SelectAddress(0x11F39D0, 0x11F12A0));
 	}
 	namespace Addresses(RenderUtils)
 	{
-		DefineAddress(D3D_ptr, SelectAddress(0x16FFCF8, , 0x16F89C8));
-		DefineAddress(Device_ptr, SelectAddress(0x016FFD00, 0x16F99D0, 0x16F89D0));
-		DefineAddress(ShaderData_ptr, SelectAddress(0x016FD8D8, 0x16F75A8, 0x16F65A8));
-		DefineAddress(MaterialShader_ptr, SelectAddress(0x016FD898, 0x16F7568, 0x16F6568));
-		DefineAddress(ModelToWorld_ptr, SelectAddress(0x016FF8DC, 0x16F95AC, 0x16F85AC));
-		DefineAddress(ModelToWorldTransposed_ptr, SelectAddress(0x1700024, 0x16F9CF4, 0x16F8CF4));
-		DefineAddress(PresentationParameters_ptr, SelectAddress(0x16FFECC, , 0x16F8B9C));
+		DefineAddress(D3D_ptr, SelectAddress(0x16FFCF8, 0x16F89C8));
+		DefineAddress(Device_ptr, SelectAddress(0x016FFD00, 0x16F89D0));
+		DefineAddress(ShaderData_ptr, SelectAddress(0x016FD8D8, 0x16F65A8));
+		DefineAddress(MaterialShader_ptr, SelectAddress(0x016FD898, 0x16F6568));
+		DefineAddress(ModelToWorld_ptr, SelectAddress(0x016FF8DC, 0x16F85AC));
+		DefineAddress(ModelToWorldTransposed_ptr, SelectAddress(0x1700024, 0x16F8CF4));
+		DefineAddress(PresentationParameters_ptr, SelectAddress(0x16FFECC, 0x16F8B9C));
 
-		DefineAddress(SetShaderData, SelectAddress(0x7786E0, 0x777B50, 0x777B50));
-		DefineAddress(GetShaderDataSize, SelectAddress(0x778C50, , 0x7780C0));
-		DefineAddress(RegisterShaderData, SelectAddress(0x11F69C0, , 0x11F42A0));
+		DefineAddress(SetShaderData, SelectAddress(0x7786E0, 0x777B50));
+		DefineAddress(GetShaderDataSize, SelectAddress(0x778C50, 0x7780C0));
+		DefineAddress(RegisterShaderData, SelectAddress(0x11F69C0, 0x11F42A0));
 
-		DefineAddress(SetPresentationParameters, SelectAddress(0x11FA450, , 0x11F7D30));
-		DefineAddress(CreateDevice, SelectAddress(0x11FADF0, , 0x11F86B0));
+		DefineAddress(SetPresentationParameters, SelectAddress(0x11FA450, 0x11F7D30));
+		DefineAddress(CreateDevice, SelectAddress(0x11FADF0, 0x11F86B0));
 
-		DefineAddress(SetTexture, SelectAddress(0x11F39D0, , 0x11F12A0));
+		DefineAddress(SetTexture, SelectAddress(0x11F39D0, 0x11F12A0));
 	}
 
 	namespace Addresses(ShaderBuilder) 
 	{
-		DefineAddress(ctor, SelectAddress(0x6FD630, , 0x6FD310));
-		DefineAddress(Read, SelectAddress(0x6FD980, , 0x6FD660));
-		DefineAddress(Release, SelectAddress(0x6FD6B0, , 0x6FD390));
+		DefineAddress(ctor, SelectAddress(0x6FD630, 0x6FD310));
+		DefineAddress(Read, SelectAddress(0x6FD980, 0x6FD660));
+		DefineAddress(Release, SelectAddress(0x6FD6B0, 0x6FD390));
 
-		DefineAddress(Load, SelectAddress(0x6FDB80, , 0x6FD860));
+		DefineAddress(Load, SelectAddress(0x6FDB80, 0x6FD860));
 	}
 
 	namespace Addresses(StandardShader) 
 	{
-		DefineAddress(ctor, SelectAddress(0x6E5EF0, , 0x6E5840));
-		DefineAddress(Read, SelectAddress(0x6E6470, , 0x6E5DC0));
-		DefineAddress(Reset, SelectAddress(0x6E62F0, , 0x6E5C40));
-		DefineAddress(Release, SelectAddress(0x6E5EC0, , 0x6E5810));
+		DefineAddress(ctor, SelectAddress(0x6E5EF0, 0x6E5840));
+		DefineAddress(Read, SelectAddress(0x6E6470, 0x6E5DC0));
+		DefineAddress(Reset, SelectAddress(0x6E62F0, 0x6E5C40));
+		DefineAddress(Release, SelectAddress(0x6E5EC0, 0x6E5810));
 
-		DefineAddress(Load, SelectAddress(0x6E5C30, , 0x6E5590));
+		DefineAddress(Load, SelectAddress(0x6E5C30, 0x6E5590));
 	}
 
 	namespace Addresses(GlobalState)
 	{
-		DefineAddress(D3D9Sync, SelectAddress(0x11F48F0, , 0x11F21D0));
-		DefineAddress(Dispatch, SelectAddress(0x11F4370, , 0x11F1C40));
-		DefineAddress(transform_ptr, SelectAddress(0x17016B0, , 0x16FA380));
-		DefineAddress(transformType_ptr, SelectAddress(0x17009D0, , 0x16F96A0));
-		DefineAddress(color_ptr, SelectAddress(0x17009D8, , 0x16F96A8));
-		DefineAddress(softStateDirty_ptr, SelectAddress(0x1700858, , 0x16F9528));
-		DefineAddress(SetTransform, SelectAddress(0x5295C0, , 0x5291F0));
-		DefineAddress(renderStates_ptr, SelectAddress(0x01700510, , 0x16F91E0));
-		DefineAddress(renderStateDirty_ptr, SelectAddress(0x017016BC, , 0x16FA38C));
+		DefineAddress(D3D9Sync, SelectAddress(0x11F48F0, 0x11F21D0));
+		DefineAddress(Dispatch, SelectAddress(0x11F4370, 0x11F1C40));
+		DefineAddress(transform_ptr, SelectAddress(0x17016B0, 0x16FA380));
+		DefineAddress(transformType_ptr, SelectAddress(0x17009D0, 0x16F96A0));
+		DefineAddress(color_ptr, SelectAddress(0x17009D8, 0x16F96A8));
+		DefineAddress(softStateDirty_ptr, SelectAddress(0x1700858, 0x16F9528));
+		DefineAddress(SetTransform, SelectAddress(0x5295C0, 0x5291F0));
+		DefineAddress(renderStates_ptr, SelectAddress(0x01700510, 0x16F91E0));
+		DefineAddress(renderStateDirty_ptr, SelectAddress(0x017016BC, 0x16FA38C));
 	}
 
 	namespace Addresses(cBufferDraw)
 	{
-		DefineAddress(ptr, SelectAddress(0x160B998, , 0x1607728));
-		DefineAddress(LockVertexBuffer, SelectAddress(0x6DE220, , 0x6DDD40));
-		DefineAddress(UnlockVertexBuffer, SelectAddress(0x6DE440, , 0x6DDF60));
-		DefineAddress(UnlockAndDrawMaterial1Texture, SelectAddress(0x6DE2E0, , 0x6DDE00));
-		DefineAddress(UnlockAndDrawMaterial, SelectAddress(0x6DE2A0, , 0x6DDDC0));
-		DefineAddress(UnlockAndDrawNoMaterial, SelectAddress(0x6DE270, , 0x6DDD90));
+		DefineAddress(ptr, SelectAddress(0x160B998, 0x1607728));
+		DefineAddress(LockVertexBuffer, SelectAddress(0x6DE220, 0x6DDD40));
+		DefineAddress(UnlockVertexBuffer, SelectAddress(0x6DE440, 0x6DDF60));
+		DefineAddress(UnlockAndDrawMaterial1Texture, SelectAddress(0x6DE2E0, 0x6DDE00));
+		DefineAddress(UnlockAndDrawMaterial, SelectAddress(0x6DE2A0, 0x6DDDC0));
+		DefineAddress(UnlockAndDrawNoMaterial, SelectAddress(0x6DE270, 0x6DDD90));
+	}
+
+	namespace Addresses(cModelWorld)
+	{
+		DefineAddress(FinishBackgroundLoad, SelectAddress(0x7523E0, 0x7515D0));
+		DefineAddress(UpdateWithLODMeshes, SelectAddress(0x74B7C0, 0x74A990));
 	}
 }
 #endif

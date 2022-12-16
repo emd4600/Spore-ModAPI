@@ -49,7 +49,7 @@ namespace GalaxyGameEntry
 
 	//	static GlobalGGEUI* GetGlobalGGEUI()
 	//	{
-	//		return *(GlobalGGEUI**)SelectAddress(0x16A55C4, 0x16A2324, 0x16A1344);
+	//		return *(GlobalGGEUI**)SelectAddress(0x16A55C4, 0x16A1344);
 	//	}
 	//};
 	//PLACEHOLDER don't we need a Get method?

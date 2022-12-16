@@ -142,12 +142,12 @@ namespace UTFWin
 	public:
 		static inline WinButton* New() {
 			// __stdcall because it's cleanup by callee
-			return (WinButton*)((IWindow*(__stdcall*)(void*, void*)) SelectAddress(0x967420, 0x9670A0, 0x9670A0))(nullptr, nullptr);
+			return (WinButton*)((IWindow*(__stdcall*)(void*, void*)) SelectAddress(0x967420, 0x9670A0))(nullptr, nullptr);
 		}
 
-		virtual METHOD_(SelectAddress(0x951FF0, 0x95F8F0, 0x963E30), ILayoutElement, int, AddRef);
-		virtual METHOD_(SelectAddress(0x95FE40, 0x95F900, 0x963E40), ILayoutElement, int, Release);
-		virtual METHOD(SelectAddress(0x9641E0, 0x963E50, 0x963E50), ILayoutElement, void*, Cast, Args(uint32_t typeID), Args(typeID));
+		virtual METHOD_(SelectAddress(0x951FF0, 0x963E30), ILayoutElement, int, AddRef);
+		virtual METHOD_(SelectAddress(0x95FE40, 0x963E40), ILayoutElement, int, Release);
+		virtual METHOD(SelectAddress(0x9641E0, 0x963E50), ILayoutElement, void*, Cast, Args(uint32_t typeID), Args(typeID));
 
 	//	virtual METHOD_(SelectAddress(0x98F5C0, 0), ILayoutElement, int, AddRef);
 	//	virtual METHOD_(SelectAddress(0x96B700, 0), ILayoutElement, int, Release);

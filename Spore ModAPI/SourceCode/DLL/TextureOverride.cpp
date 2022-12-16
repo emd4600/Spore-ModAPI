@@ -5,6 +5,7 @@
 #include <Spore\CommonIDs.h>
 #include <Spore\Graphics\Model.h>
 #include <Spore\Graphics\cModelInstance.h>
+#include <Spore\Graphics\cModelWorld.h>
 #include <Spore\Graphics\ITextureManager.h>
 #include <Spore\RenderWare\RenderWareFile.h>
 #include <Spore\App\PropertyList.h>
@@ -195,12 +196,11 @@ bool ApplyOverride(Graphics::Model* pModel) {
 }
 
 
-class Unk {};
-member_detour(SetModel__detour, Unk, int(Graphics::Model**)) {
-	int detoured(Graphics::Model** ppModel) {
+member_detour(FinishBackgroundLoad__detour, Graphics::cModelWorld, void(Graphics::Model**)) {
+	void detoured(Graphics::Model** ppModel) {
 		Graphics::Model* model = *ppModel;
 		
-		int result = original_function(this, ppModel);
+		original_function(this, ppModel);
 
 		if (!ApplyOverride(model)) {
 			auto asset = static_cast<Graphics::cMWModelInternal*>(model);
@@ -211,12 +211,10 @@ member_detour(SetModel__detour, Unk, int(Graphics::Model**)) {
 			asset->mMeshLodHi = nullptr;
 			asset->mMeshHull = nullptr;
 		}
-
-		return result;
 	}
 };
 
-member_detour(SetModel2__detour, Unk, void(App::PropertyList*, Graphics::cMWModelInternal*, int)) {
+member_detour(UpdateWithLODMeshes__detour, Graphics::cModelWorld, void(App::PropertyList*, Graphics::cMWModelInternal*, int)) {
 	void detoured(App::PropertyList* propList, Graphics::cMWModelInternal* pAsset, int flags) {
 		Graphics::Model* model = static_cast<Graphics::Model*>(pAsset);
 
@@ -236,8 +234,8 @@ member_detour(SetModel2__detour, Unk, void(App::PropertyList*, Graphics::cMWMode
 
 long TextureOverride::AttachDetour() {
 	long result = 0;
-	result |= SetModel__detour::attach(Address(SelectAddress(0x7523E0, , 0x7515D0)));
-	result |= SetModel2__detour::attach(Address(SelectAddress(0x74B7C0, , 0x74A990)));
+	result |= FinishBackgroundLoad__detour::attach(GetAddress(Graphics::cModelWorld, FinishBackgroundLoad));
+	result |= UpdateWithLODMeshes__detour::attach(GetAddress(Graphics::cModelWorld, UpdateWithLODMeshes));
 	return result;
 }
 

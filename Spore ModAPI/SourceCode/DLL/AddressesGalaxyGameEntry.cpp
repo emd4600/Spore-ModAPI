@@ -6,10 +6,10 @@ namespace GalaxyGameEntry
 {
 	namespace Addresses(GlobalGGEUI)
 	{
-		DefineAddress(Initialize, SelectAddress(0xDE9290, 0xDEA200, 0xDEA1B0));
-		DefineAddress(InitializeUI, SelectAddress(0xDE49E0, 0xDE5950, 0xDE5900));
+		DefineAddress(Initialize, SelectAddress(0xDE9290, 0xDEA1B0));
+		DefineAddress(InitializeUI, SelectAddress(0xDE49E0, 0xDE5900));
 
-		DefineAddress(ptr, SelectAddress(0x16A55C4, 0x16A2324, 0x16A1344));
+		DefineAddress(ptr, SelectAddress(0x16A55C4, 0x16A1344));
 	}
 }
 #endif

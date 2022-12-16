@@ -61,12 +61,12 @@ namespace UTFWin
 	//public:
 	//	static inline WinComboBox* New() {
 	//		// __stdcall because it's cleanup by callee
-	//		return (WinComboBox*)((IWindow*(__stdcall*)(void*, void*)) SelectAddress(0x969BB0, 0x9697E0, 0x9697E0))(nullptr, nullptr);
+	//		return (WinComboBox*)((IWindow*(__stdcall*)(void*, void*)) SelectAddress(0x969BB0, 0x9697E0))(nullptr, nullptr);
 	//	}
 
-	//	virtual METHOD_(SelectAddress(0x98F5C0, 0x95F8F0, 0x95F8F0), ILayoutElement, int, AddRef);
-	//	virtual METHOD_(SelectAddress(0x96B700, 0x95F900, 0x95F900), ILayoutElement, int, Release);
-	//	virtual METHOD(SelectAddress(0x967CD0, 0x967940, 0x967940), ILayoutElement, void*, Cast, Args(uint32_t typeID), Args(typeID));
+	//	virtual METHOD_(SelectAddress(0x98F5C0, 0x95F8F0), ILayoutElement, int, AddRef);
+	//	virtual METHOD_(SelectAddress(0x96B700, 0x95F900), ILayoutElement, int, Release);
+	//	virtual METHOD(SelectAddress(0x967CD0, 0x967940), ILayoutElement, void*, Cast, Args(uint32_t typeID), Args(typeID));
 	//};
 
 	//static_assert(sizeof(WinComboBox) == 0x2B8, "sizeof(WinComboBox) != 2B8h");
