@@ -1,10 +1,17 @@
 import os
 import clang.cindex as cindex
+from ghidra_xml import GhidraToXmlWriter
 
 
 def check_node(node, expected_kind):
     """Returns false if the node is None or is not of the expected kind"""
     return node is not None and node.kind == expected_kind
+
+
+def traverse_print(node, level):
+    print("\t" * level + f'{node.displayname} {node.mangled_name} [{node.kind}] [{node.location}]')
+    for c in node.get_children():
+        traverse_print(c, level + 1)
         
         
 class AddressesCollection:
@@ -65,58 +72,64 @@ class AddressesCollection:
         if node.kind == cindex.CursorKind.NAMESPACE:
             self.current_namespace.pop()
         
-        
-def traverse_print(node, level):
-    print("\t" * level + f'Found {node.displayname} {node.mangled_name} [{node.kind}] [{node.location}]')
-    for c in node.get_children():
-        traverse_print(c, level + 1)
-
-# # #path = r'E:\Eric\Spore ModAPI SDK\Spore ModAPI\SourceCode\DLL\AddressesApp.cpp'
-# path = r'test.cpp'
-# index = cindex.Index.create()
-# # tu = index.parse(path, args=[
-# #     '-DMODAPI_DLL_EXPORT',
-# #     '-DAddresses(name)=name##_addresses'
-# #     ])
-# tu = index.parse(path)
-# print('Translation unit:', tu.spelling)
-# #find_typerefs(tu.cursor, sys.argv[2])
-# print(tu.cursor.get_children())
-
-# addresses = AddressesCollection()
-# addresses.find_addresses(tu.cursor, 0)
-        
-
-# path = r'ResourceKey.h'
-# tu = cindex.TranslationUnit.from_source(path, args=['-x', 'c++'])
-
-# for diag in tu.diagnostics:
-#     print(diag)
 
 class FunctionProcessor:
-    def __init__(self, addresses: dict, output_file) -> None:
+    def __init__(self, addresses: dict, xml_writer: GhidraToXmlWriter, sdk_path: str) -> None:
         self.current_namespace = []
         self.structs_stack = []
         self.addresses = addresses
-        self.output_file = output_file
+        self.xml_writer = xml_writer
+        self.sdk_path = sdk_path
         
     def build_full_var_name(self, var_name):
-        return '::'.join(self.current_namespace) + '::' + var_name
+        return '::'.join(self.current_namespace) + '::' + var_name if self.current_namespace else var_name
+    
+    def is_in_sdk(self, node):
+        return node.location.file.name.startswith(self.sdk_path)
     
     def process(self, node):
+        is_empty = next(node.get_children(), None) is None
+        
         if node.kind == cindex.CursorKind.NAMESPACE:
             self.current_namespace.append(node.displayname)
-        elif node.kind in [cindex.CursorKind.STRUCT_DECL, cindex.CursorKind.CLASS_DECL]:
+            
+        elif node.kind == cindex.CursorKind.UNION_DECL:
+            return  #TODO
+            
+        elif not is_empty and node.kind in [cindex.CursorKind.STRUCT_DECL, cindex.CursorKind.CLASS_DECL]:
+            fullname = self.build_full_var_name(node.displayname)
+            is_in_sdk = self.is_in_sdk(node)
             self.structs_stack.append(node.displayname)
             self.current_namespace.append(node.displayname)
-            print(f"Structure {self.build_full_var_name(node.displayname)}")
+            print(f"Structure {fullname}   IN SDK? {is_in_sdk}   EMPTY? {is_empty}")
+            if node.displayname == '':
+                print(f'EMPTY STRUCTURE DISPLAYNAME: [{node.location}]')
+            
+            #if fullname == 'App::cScenarioMode::cScenarioMode':
+            if fullname in ['Terrain::cTerrainMap', 'Swarm::ISurface'] or fullname.startswith('Math::'):
+            #if True:
+                self.xml_writer.add_structure(fullname, node)
+                
+            if is_in_sdk:
+                for base in node.get_children():
+                    if base.kind not in [cindex.CursorKind.CXX_METHOD, cindex.CursorKind.FIELD_DECL]:
+                        print(f'    CHILD {base.displayname}    {base.spelling}    {base.kind}')
+                
+        elif not is_empty and node.kind == cindex.CursorKind.ENUM_DECL:
+            if node.displayname == '':
+                print(f'EMPTY ENUM DISPLAYNAME: [{node.location}]')
+            fullname = self.build_full_var_name(node.displayname)
+            is_in_sdk = self.is_in_sdk(node)
+            if is_in_sdk:
+                self.xml_writer.add_enum(fullname, node)
+            
         elif node.kind == cindex.CursorKind.CXX_METHOD:
             method_full_name = self.build_full_var_name(node.spelling)
-            address = self.addresses.get(method_full_name, None)
-            if address is not None:
-                return_type = node.result_type.spelling
-                arg_types = [arg.type.spelling for arg in node.get_arguments()]
-                self.output_file.write(f'{method_full_name} {address[0]} {address[1]} {return_type}({", ".join(arg_types)})')
+            # address = self.addresses.get(method_full_name, None)
+            # if address is not None:
+            #     fullname = node.result_type.spelling
+            #     arg_types = [arg.type.spelling for arg in node.get_arguments()]
+            #     #self.output_file.write(f'{method_full_name} {address[0]} {address[1]} {fullname}({", ".join(arg_types)})\n')
             
         # Recurse for children of this node
         for c in node.get_children():
@@ -124,7 +137,7 @@ class FunctionProcessor:
             
         if node.kind == cindex.CursorKind.NAMESPACE:
             self.current_namespace.pop()
-        elif node.kind in [cindex.CursorKind.STRUCT_DECL, cindex.CursorKind.CLASS_DECL]:
+        elif not is_empty and node.kind in [cindex.CursorKind.STRUCT_DECL, cindex.CursorKind.CLASS_DECL]:
             self.current_namespace.pop()
             self.structs_stack.pop()
     
@@ -149,10 +162,27 @@ def extract_includes(input_file, output_file):
     return includes        
 
 
+if __name__ == '__main__222':
+    tu = cindex.TranslationUnit.from_source('test.cpp', args=[
+        '-x', 'c++',
+        #'-target', 'x86_64-PC-Win32-MSVC',
+        r'-IE:\Eric\Spore ModAPI SDK\Spore ModAPI'
+        ])
+
+    for diag in tu.diagnostics:
+        print(diag)
+    
+    xml_writer = GhidraToXmlWriter()
+    function_processor = FunctionProcessor(None, xml_writer, 'E:\Eric\Spore ModAPI SDK\Spore ModAPI')
+    function_processor.process(tu.cursor)
+    
+    xml_writer.write('output.xml')
+
+
 if __name__ == '__main__':
-    sdk_path = '..\\'
-    path = os.path.join(sdk_path, r'Spore ModAPI\SourceCode\DLL\AddressesApp.cpp')
-    include_path = os.path.join(sdk_path, r'Spore ModAPI')
+    #sdk_path = '..\\'
+    include_path = r'E:\Eric\Spore ModAPI SDK\Spore ModAPI'
+    path = os.path.join(include_path, r'SourceCode\DLL\AddressesApp.cpp')
     temp_path = 'temp.cpp'
     
     # First we want to extract the addresses, then the function signatures
@@ -180,14 +210,17 @@ if __name__ == '__main__':
     with open(temp_path, 'w') as output_file:
         output_file.writelines(includes)
         
-    with open('output.txt', 'w') as output_file:
-        tu = cindex.TranslationUnit.from_source(temp_path, args=[
-            '-x', 'c++',
-            r'-IE:\Eric\Spore ModAPI SDK\Spore ModAPI'
-            ])
+    tu = cindex.TranslationUnit.from_source(temp_path, args=[
+        '-x', 'c++',
+        #'-target', 'x86_64-PC-Win32-MSVC',
+        r'-IE:\Eric\Spore ModAPI SDK\Spore ModAPI'
+        ])
 
-        for diag in tu.diagnostics:
-            print(diag)
-        
-        function_processor = FunctionProcessor(addresses.addresses, output_file)
-        function_processor.process(tu.cursor)
+    for diag in tu.diagnostics:
+        print(diag)
+    
+    xml_writer = GhidraToXmlWriter()
+    function_processor = FunctionProcessor(addresses.addresses, xml_writer, include_path)
+    function_processor.process(tu.cursor)
+    
+    xml_writer.write('output.xml')
