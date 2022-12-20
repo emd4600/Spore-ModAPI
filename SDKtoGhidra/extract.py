@@ -74,54 +74,60 @@ class AddressesCollection:
         
 
 class FunctionProcessor:
-    def __init__(self, addresses: dict, xml_writer: GhidraToXmlWriter, sdk_path: str) -> None:
+    def __init__(self, addresses: dict, xml_writer: GhidraToXmlWriter) -> None:
         self.current_namespace = []
-        self.structs_stack = []
         self.addresses = addresses
         self.xml_writer = xml_writer
-        self.sdk_path = sdk_path
+        # Only files in these paths will be exported
+        self.exportable_paths = []
         
     def build_full_var_name(self, var_name):
         return '::'.join(self.current_namespace) + '::' + var_name if self.current_namespace else var_name
     
-    def is_in_sdk(self, node):
-        return node.location.file.name.startswith(self.sdk_path)
+    def must_be_exported(self, node):
+        if node.location is None or node.location.file is None:
+            return True
+        abs_name = os.path.abspath(node.location.file.name)
+        return any(abs_name.startswith(path) for path in self.exportable_paths)
     
     def process(self, node):
+        if not self.must_be_exported(node):
+            return
+        
         is_empty = next(node.get_children(), None) is None
+        must_pop_namespace = False
         
         if node.kind == cindex.CursorKind.NAMESPACE:
             self.current_namespace.append(node.displayname)
+            must_pop_namespace = True
             
         elif node.kind == cindex.CursorKind.UNION_DECL:
             return  #TODO
             
         elif not is_empty and node.kind in [cindex.CursorKind.STRUCT_DECL, cindex.CursorKind.CLASS_DECL]:
             fullname = self.build_full_var_name(node.displayname)
-            is_in_sdk = self.is_in_sdk(node)
-            self.structs_stack.append(node.displayname)
             self.current_namespace.append(node.displayname)
-            print(f"Structure {fullname}   IN SDK? {is_in_sdk}   EMPTY? {is_empty}")
+            must_pop_namespace = True
+            print(f'Adding struct\t{fullname}')
+            if fullname == 'UTFWin::Window_intrusive_list_node':
+                print(node.is_definition())
             if node.displayname == '':
                 print(f'EMPTY STRUCTURE DISPLAYNAME: [{node.location}]')
-            
-            #if fullname == 'App::cScenarioMode::cScenarioMode':
-            if fullname in ['Terrain::cTerrainMap', 'Swarm::ISurface'] or fullname.startswith('Math::'):
-            #if True:
-                self.xml_writer.add_structure(fullname, node)
+        
+            self.xml_writer.add_structure(fullname, node)
                 
-            if is_in_sdk:
-                for base in node.get_children():
-                    if base.kind not in [cindex.CursorKind.CXX_METHOD, cindex.CursorKind.FIELD_DECL]:
-                        print(f'    CHILD {base.displayname}    {base.spelling}    {base.kind}')
+        elif not is_empty and node.kind == cindex.CursorKind.CLASS_TEMPLATE:
+            fullname = self.build_full_var_name(node.spelling)
+            self.current_namespace.append(node.spelling)
+            must_pop_namespace = True
+            self.xml_writer.add_template_node(fullname, node) 
                 
         elif not is_empty and node.kind == cindex.CursorKind.ENUM_DECL:
+            fullname = self.build_full_var_name(node.displayname)
+            print(f'Adding enum\t{fullname}')
             if node.displayname == '':
                 print(f'EMPTY ENUM DISPLAYNAME: [{node.location}]')
-            fullname = self.build_full_var_name(node.displayname)
-            is_in_sdk = self.is_in_sdk(node)
-            if is_in_sdk:
-                self.xml_writer.add_enum(fullname, node)
+            self.xml_writer.add_enum(fullname, node)
             
         elif node.kind == cindex.CursorKind.CXX_METHOD:
             method_full_name = self.build_full_var_name(node.spelling)
@@ -135,11 +141,8 @@ class FunctionProcessor:
         for c in node.get_children():
             self.process(c)
             
-        if node.kind == cindex.CursorKind.NAMESPACE:
+        if must_pop_namespace:
             self.current_namespace.pop()
-        elif not is_empty and node.kind in [cindex.CursorKind.STRUCT_DECL, cindex.CursorKind.CLASS_DECL]:
-            self.current_namespace.pop()
-            self.structs_stack.pop()
     
 
 # with open('output.txt', 'w') as output_file:
@@ -162,7 +165,7 @@ def extract_includes(input_file, output_file):
     return includes        
 
 
-if __name__ == '__main__222':
+if __name__ == '__main__':
     tu = cindex.TranslationUnit.from_source('test.cpp', args=[
         '-x', 'c++',
         #'-target', 'x86_64-PC-Win32-MSVC',
@@ -173,13 +176,14 @@ if __name__ == '__main__222':
         print(diag)
     
     xml_writer = GhidraToXmlWriter()
-    function_processor = FunctionProcessor(None, xml_writer, 'E:\Eric\Spore ModAPI SDK\Spore ModAPI')
+    function_processor = FunctionProcessor(None, xml_writer)
+    function_processor.exportable_paths.append(r'E:\Eric\Spore ModAPI SDK')
     function_processor.process(tu.cursor)
     
     xml_writer.write('output.xml')
 
 
-if __name__ == '__main__':
+if __name__ == '__main__222':
     #sdk_path = '..\\'
     include_path = r'E:\Eric\Spore ModAPI SDK\Spore ModAPI'
     path = os.path.join(include_path, r'SourceCode\DLL\AddressesApp.cpp')
@@ -207,6 +211,7 @@ if __name__ == '__main__':
         print(i)
         
     # Now create a file only with the includes, then process its structures
+    includes.insert(0, '#include "eastl_include.h"\n')
     with open(temp_path, 'w') as output_file:
         output_file.writelines(includes)
         
@@ -220,7 +225,8 @@ if __name__ == '__main__':
         print(diag)
     
     xml_writer = GhidraToXmlWriter()
-    function_processor = FunctionProcessor(addresses.addresses, xml_writer, include_path)
+    function_processor = FunctionProcessor(addresses.addresses, xml_writer)
+    function_processor.exportable_paths.append(r'E:\Eric\Spore ModAPI SDK')
     function_processor.process(tu.cursor)
     
     xml_writer.write('output.xml')

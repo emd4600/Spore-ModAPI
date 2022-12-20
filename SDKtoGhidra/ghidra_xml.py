@@ -1,6 +1,13 @@
 from xml.etree.ElementTree import indent, Element, SubElement, ElementTree
 import copy
+import re
 import clang.cindex as cindex
+
+
+SPORE_NAMESPACE = '/Spore/'
+VFTABLE_FIELD_PREFIX = '_vftable'
+VFTABLE_TYPE_SUFFIX = '__vftable'
+VDTOR_SUFFIX = '_virtual_dtor'
 
 
 def align(value, alignment):
@@ -13,15 +20,14 @@ def fix_type_string(type_string: str):
     return type_string.replace('&', '*')
 
 
+def remove_name_templates(name: str):
+    """Returns the given string until the first '<' character, removing any trailing template generics"""
+    return name.split('<')[0]
+
+
 # Careful! This method requires that the function explicitly uses "override"
 def method_is_override(method_node):
     return any(child.kind == cindex.CursorKind.CXX_OVERRIDE_ATTR for child in method_node.get_children())
-
-
-SPORE_NAMESPACE = '/Spore/'
-VFTABLE_FIELD_PREFIX = '_vftable'
-VFTABLE_TYPE_SUFFIX = '__vftable'
-VDTOR_SUFFIX = '_virtual_dtor'
 
 
 def get_ghidra_namespace(fullname, include_last_name=False):
@@ -40,6 +46,13 @@ class StructureInfo:
         self.size = 0
         self.alignment = 0
         self.xml_element = None
+        
+
+class TemplateStructureInfo:
+    def __init__(self, node) -> None:
+        self.parameters = []
+        self.default_values = dict()
+        self.node = node
 
 
 class GhidraToXmlWriter:
@@ -56,8 +69,9 @@ class GhidraToXmlWriter:
         self.datatypes_root = Element('DATATYPES')
         self.root.append(self.datatypes_root)
         
-        self.structures = dict()
-        self.vftables = dict()
+        self.structures = dict()  # name -> StructureInfo
+        self.vftables = dict()  # name -> vftable xml element
+        self.template_infos = dict()  # name -> TemplateStructureInfo
         
     def write(self, path):
         with open(path, 'wb') as output_file:
@@ -66,22 +80,89 @@ class GhidraToXmlWriter:
             output_file.write(bytes('<?xml version="1.0" standalone="yes"?>\n<?program_dtd version="1"?>\n', 'utf-8'))
             tree.write(output_file)
             
-    def get_type_size(self, var_type):
-        if var_type.spelling[-1] == '*' or var_type.spelling[-1] == '&':
-            return 4
-        elif var_type.spelling == 'void':
-            return 0
-        else:
-            size = var_type.get_size()
-            if size > 0:
-                return size
+    def add_template_node(self, fullname, template_node):
+        template_info = TemplateStructureInfo(template_node)
+        self.template_infos[fullname] = template_info
+        
+        for child in template_node.get_children():
+            if child.kind == cindex.CursorKind.TEMPLATE_TYPE_PARAMETER:
+                template_info.parameters.append(child.spelling)
+                
+        for child in template_node.get_children():
+            if child.kind == cindex.CursorKind.VAR_DECL and child.spelling.startswith('_DEFAULT_'):
+                parameter_name = child.spelling[len('_DEFAULT_'):]
+                template_info.default_values[parameter_name] = child.type
             
-            struct = self.structures.get(var_type.spelling, None)
+    def get_type_size(self, type_obj, template_args):
+        if type_obj.spelling[-1] == '*' or type_obj.spelling[-1] == '&':
+            return 4
+        elif type_obj.spelling == 'void':
+            return 0
+        elif type_obj.get_size() > 0:
+            return type_obj.get_size()
+        else:
+            replaced_type = template_args.get(type_obj.spelling, None) if template_args is not None else None
+            if replaced_type is not None and replaced_type.get_size() > 0:
+                return replaced_type.get_size()
+            
+            spelling = self.get_type_spelling(type_obj, template_args)
+            struct = self.structures.get(spelling, None)
             if struct is None:
-                raise SyntaxError(f'Trying to get size of undefined type "{var_type.spelling}"')
+                raise SyntaxError(f'Trying to get size of undefined type "{spelling}"')
             return struct.size
+        
+    def get_type_alignment(self, type_obj, template_args):
+        if type_obj.spelling[-1] == '*' or type_obj.spelling[-1] == '&':
+            return 4
+        elif type_obj.get_align() > 0:
+            return type_obj.get_align()
+        else:
+            replaced_type = template_args.get(type_obj.spelling, None) if template_args is not None else None
+            if replaced_type is not None:
+                return replaced_type.get_align()
+            else:
+                spelling = self.get_type_spelling(type_obj, template_args)
+                struct = self.structures.get(spelling, None)
+                if struct is None:
+                    raise SyntaxError(f'Trying to get alignment of undefined type "{spelling}"')
+                return struct.alignment   
+
+    def get_type_spelling(self, type_obj, template_args):
+        if template_args is None:
+            return type_obj.spelling
+        
+        spelling = type_obj.spelling
+        for source, dest in template_args.items():
+            spelling = re.sub(fr'\b({source})\b', dest.spelling, spelling)
+        return spelling
     
-    def add_structure(self, fullname, structure_node):
+    def generate_template_structures(self, type_obj):
+        """Generates specialized structures for all templated types contained within the given type."""
+        if type_obj.spelling not in self.structures:
+            if type_obj.kind in [cindex.TypeKind.POINTER, cindex.TypeKind.LVALUEREFERENCE]:
+                self.generate_template_structures(type_obj.get_pointee())
+            elif type_obj.get_num_template_arguments() > 0:
+                for i in range(type_obj.get_num_template_arguments()):
+                    self.generate_template_structures(type_obj.get_template_argument_type(i))
+                    
+                untemplated_name = remove_name_templates(type_obj.spelling)
+                template_info = self.template_infos.get(untemplated_name, None)
+                if template_info is None:
+                    raise SyntaxError(f'Unable to get template structure {untemplated_name} from type {type_obj.spelling}')
+                
+                template_args = dict()
+                for i, param in enumerate(template_info.parameters):
+                    if i < type_obj.get_num_template_arguments():
+                        template_args[param] = type_obj.get_template_argument_type(i)
+                    elif param in template_info.default_values:
+                        template_args[param] = template_info.default_values[param]
+                    else:
+                        raise SyntaxError(f'No value specified for template parameter {param} in specialized type {type_obj.spelling}')
+                        
+                self.add_structure(type_obj.spelling, template_info.node, template_args)
+                
+    
+    def add_structure(self, fullname, structure_node, template_args=None):
         # We need to collect all the sizes and alignments first, because
         # the first offset depends on the final alignment if there are virtual tables
         if fullname in self.structures:
@@ -97,17 +178,18 @@ class GhidraToXmlWriter:
         virtual_functions = []
         for child in structure_node.get_children():
             if child.kind == cindex.CursorKind.FIELD_DECL:
-                field_alignment = child.type.get_align()
+                self.generate_template_structures(child.type)
+                field_alignment = self.get_type_alignment(child.type, template_args)
                 struct_alignment = max(struct_alignment, field_alignment)
                 fields.append(child)
-                sizes.append(self.get_type_size(child.type))
+                sizes.append(self.get_type_size(child.type, template_args))
                 alignments.append(field_alignment)
                 
             elif child.kind == cindex.CursorKind.CXX_METHOD:
                 if child.is_virtual_method() and not method_is_override(child):
                     struct_info.has_vftable = True
                     virtual_functions.append(child)
-                    self.add_function_def(f'{fullname}::{child.spelling}', child, fullname)
+                    self.add_function_def(f'{fullname}::{child.spelling}', child, fullname, template_args)
                     
             elif child.kind == cindex.CursorKind.DESTRUCTOR:
                 # In destructors we never use "override", so we just have to check
@@ -231,30 +313,33 @@ class GhidraToXmlWriter:
         structure_xml.set('NAME', fullname)
         structure_xml.set('NAMESPACE', get_ghidra_namespace(fullname))
         structure_xml.set('SIZE', f'0x{struct_size:x}')
-        self.datatypes_root.append(structure_xml)
                 
         for field, offset, size, alignment in zip(fields, offsets, sizes, alignments):
             field_xml = Element('MEMBER')
             field_xml.set('OFFSET', f'0x{offset:x}')
-            field_xml.set('DATATYPE', field.type.spelling)
+            field_xml.set('DATATYPE', self.get_type_spelling(field.type, template_args))
             field_xml.set('DATATYPE_NAMESPACE', get_type_ghidra_namespace(field.type))
             field_xml.set('NAME', field.spelling)
             field_xml.set('SIZE', str(size))
             structure_xml.append(field_xml)
             
+        # Add it at the end, as we might need to generate new structures (for template types) before
+        self.datatypes_root.append(structure_xml)
+            
     def add_vftable(self):
         pass
     
-    def add_function_def(self, fullname, function_node, struct_name):
+    def add_function_def(self, fullname, function_node, struct_name, template_args=None):
         function_xml = Element('FUNCTION_DEF')
         function_xml.set('NAME', fullname)
         function_xml.set('NAMESPACE', get_ghidra_namespace(fullname))
         self.datatypes_root.append(function_xml)
         
+        self.generate_template_structures(function_node.result_type)
         return_xml = Element('RETURN_TYPE')
-        return_xml.set('DATATYPE', function_node.result_type.spelling)
+        return_xml.set('DATATYPE', self.get_type_spelling(function_node.result_type, template_args))
         return_xml.set('DATATYPE_NAMESPACE', get_type_ghidra_namespace(function_node.result_type))
-        return_xml.set('SIZE', str(self.get_type_size(function_node.result_type)))
+        return_xml.set('SIZE', str(self.get_type_size(function_node.result_type, template_args)))
         function_xml.append(return_xml)
         index = 0
         
@@ -268,12 +353,13 @@ class GhidraToXmlWriter:
             function_xml.append(parameter_xml)
         
         for arg in function_node.get_arguments():
+            self.generate_template_structures(arg.type)
             parameter_xml = Element('PARAMETER')
             parameter_xml.set('ORDINAL', str(index))
-            parameter_xml.set('DATATYPE', fix_type_string(arg.type.spelling))
+            parameter_xml.set('DATATYPE', fix_type_string(self.get_type_spelling(arg.type, template_args)))
             parameter_xml.set('DATATYPE_NAMESPACE', get_type_ghidra_namespace(arg.type))
             parameter_xml.set('NAME', arg.spelling if arg.spelling else f'param_{index+1}')
-            parameter_xml.set('SIZE', str(max(self.get_type_size(arg.type), 4)))
+            parameter_xml.set('SIZE', str(max(self.get_type_size(arg.type, template_args), 4)))
             function_xml.append(parameter_xml)
             
     def add_virtual_dtor_function_def(self, fullname, struct_fullname):
