@@ -158,6 +158,8 @@ class GhidraToXmlWriter:
         #     # return '/windows_vs12_32/stdint.h'
         #     return '/stdint.h'
         
+        #print(f'{type_obj.spelling}   {type_obj.get_canonical().spelling}    {type_obj.kind}')
+        
         base_name = self.get_type_spelling(type_obj, template_args, False)  # replace any inner template parameters
         #base_name = type_obj.spelling
         
@@ -246,22 +248,41 @@ class GhidraToXmlWriter:
                 return struct.alignment   
 
     def get_type_spelling(self, type_obj, template_args, remove_namespaces = True):
-        # We don't use the namespaces in the name, as Ghidra doesn't support that in the XML
-        spelling:str = split_in_namespaces(type_obj.spelling)[-1] if remove_namespaces else type_obj.spelling
-        # We don't to remove namespaces inside < > template parameters, but we do on the rest on the name, so we separate it
-        if '<' not in spelling:
-            spelling1 = spelling
-            spelling2 = ''
+        # We cannot always use .get_canonical(), as in types like 'pair<Key, T>' it removes those parameter names
+        if type_obj.kind in [cindex.TypeKind.TYPEDEF, cindex.TypeKind.ELABORATED]:
+            # This ensures that the types within template parameters are canonically named (i.e with namespaces, no typedefs)
+            return self.get_type_spelling(type_obj.get_canonical(), template_args, remove_namespaces)
+            
+        elif type_obj.kind in [cindex.TypeKind.POINTER, cindex.TypeKind.LVALUEREFERENCE]:
+            return self.get_type_spelling(type_obj.get_pointee(), template_args, remove_namespaces) + " *"
+            
+        # elif type_obj.get_array_element_type().kind != cindex.TypeKind.INVALID:
+        #     self.generate_template_structures(type_obj.get_array_element_type(), namespace_list, parent_template_args)
+            
+        # elif type_obj.get_num_template_arguments() > 0 and type_obj.spelling not in self.structures:
+        
+        if type_obj.kind == cindex.TypeKind.UNEXPOSED:
+            # We don't use the namespaces in the name, as Ghidra doesn't support that in the XML
+            spelling = split_in_namespaces(type_obj.spelling)[-1] if remove_namespaces else type_obj.spelling
+            # We don't to remove namespaces inside < > template parameters, but we do on the rest on the name, so we separate it
+            if '<' not in spelling:
+                spelling1 = spelling
+                spelling2 = ''
+            else:
+                index = spelling.index('<')
+                spelling1 = spelling[:index]
+                spelling2 = spelling[index:]
+            if template_args is not None:
+                for source, dest in template_args.items():
+                    # We call .get_canonical() to ensure we don't have typedefs and we have the full namespaces, which is what is done in generate_template_structures
+                    spelling1 = re.sub(fr'\b({source})\b', str(dest) if type(dest) == int else self.get_type_spelling(dest.get_canonical(), None, True), spelling1)
+                    spelling2 = re.sub(fr'\b({source})\b', str(dest) if type(dest) == int else self.get_type_spelling(dest.get_canonical(), None, False), spelling2)
+            spelling = spelling1 + spelling2
+            
         else:
-            index = spelling.index('<')
-            spelling1 = spelling[:index]
-            spelling2 = spelling[index:]
-        if template_args is not None:
-            for source, dest in template_args.items():
-                spelling1 = re.sub(fr'\b({source})\b', str(dest) if type(dest) == int else self.get_type_spelling(dest, None, True), spelling1)
-                spelling2 = re.sub(fr'\b({source})\b', str(dest) if type(dest) == int else self.get_type_spelling(dest, None, False), spelling2)
+            type_obj = type_obj.get_canonical()
+            spelling = split_in_namespaces(type_obj.spelling)[-1] if remove_namespaces else type_obj.spelling
                 
-        spelling = spelling1 + spelling2
         spelling = re.sub(fr'\b(long long)\b', 'longlong', spelling)
         spelling = re.sub(fr'\b(char16_t)\b', 'wchar16', spelling)
         # In Ghidra, unsigned int is uint, etc
@@ -277,6 +298,7 @@ class GhidraToXmlWriter:
     def generate_template_structures(self, type_obj, namespace_list: list, parent_template_args):
         """Generates specialized structures for all templated types contained within the given type."""
         if type_obj.kind in [cindex.TypeKind.TYPEDEF, cindex.TypeKind.ELABORATED]:
+            # This ensures that the types within template parameters are canonically named (i.e with namespaces, no typedefs)
             self.generate_template_structures(type_obj.get_canonical(), namespace_list, parent_template_args)
             
         elif type_obj.kind in [cindex.TypeKind.POINTER, cindex.TypeKind.LVALUEREFERENCE]:
