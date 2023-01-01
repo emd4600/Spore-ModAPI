@@ -84,7 +84,7 @@ class FunctionProcessor:
         abs_name = os.path.abspath(node.location.file.name)
         return any(abs_name.startswith(path) for path in self.exportable_paths)
     
-    def process(self, node):
+    def process(self, node, forced_name=None):
         if not self.must_be_exported(node):
             return
         
@@ -92,30 +92,28 @@ class FunctionProcessor:
         process_children = True
         must_pop_namespace = False
         
+        node_name = node.displayname if forced_name is None else forced_name
+        
         if node.kind == cindex.CursorKind.NAMESPACE:
-            self.current_namespace.append(node.displayname)
+            self.current_namespace.append(node_name)
             must_pop_namespace = True
             
         elif node.kind == cindex.CursorKind.UNION_DECL:
-            return  #TODO
+            self.current_namespace.append(node_name)
+            must_pop_namespace = True
+            process_children = False
             
         elif not is_empty and node.kind in [cindex.CursorKind.STRUCT_DECL, cindex.CursorKind.CLASS_DECL]:
             if node.displayname == '':
                 print(f'EMPTY STRUCTURE DISPLAYNAME: [{node.location}]')
-                
-            #print(build_full_name(self.current_namespace, node.displayname))
-            for c in node.get_children():
-                if c.kind == cindex.CursorKind.FIELD_DECL:
-                    pass
-                    #print(f'    {c.type.spelling} {c.displayname}')
         
-            self.current_namespace.append(node.displayname)
+            self.current_namespace.append(node_name)
             must_pop_namespace = True
             
         elif node.kind == cindex.CursorKind.TYPEDEF_DECL:
-            fullname = build_full_name(self.current_namespace, node.displayname)
+            fullname = build_full_name(self.current_namespace, node_name)
             #print(f'Adding typedef\t{fullname}')
-            self.xml_writer.add_typedef(self.current_namespace, node.displayname, node)
+            self.xml_writer.add_typedef(self.current_namespace, node_name, node)
                 
         elif not is_empty and node.kind == cindex.CursorKind.CLASS_TEMPLATE:
             fullname = build_full_name(self.current_namespace, node.spelling)
@@ -127,11 +125,11 @@ class FunctionProcessor:
             process_children = False
                 
         elif not is_empty and node.kind == cindex.CursorKind.ENUM_DECL:
-            fullname = build_full_name(self.current_namespace, node.displayname)
+            fullname = build_full_name(self.current_namespace, node_name)
             #print(f'Adding enum\t{fullname}')
             if node.displayname == '':
                 print(f'EMPTY ENUM DISPLAYNAME: [{node.location}]')
-            self.xml_writer.add_enum(self.current_namespace, node.displayname, node)
+            self.xml_writer.add_enum(self.current_namespace, node_name, node)
             
         elif node.kind == cindex.CursorKind.CXX_METHOD:
             pass
@@ -152,9 +150,13 @@ class FunctionProcessor:
             
         # We process it AFTER its children, as there might be classes inside
         if not is_empty and node.kind in [cindex.CursorKind.STRUCT_DECL, cindex.CursorKind.CLASS_DECL]:
-            fullname = build_full_name(self.current_namespace, node.displayname)
+            fullname = build_full_name(self.current_namespace, node_name)
             #print(f'Adding struct\t{fullname}')
-            self.xml_writer.add_structure(self.current_namespace, node.displayname, node)
+            self.xml_writer.add_structure(self.current_namespace, node_name, node)
+            
+        # If the union does not have a name then it is a field, and is handled by add_structure()
+        elif not is_empty and node.kind == cindex.CursorKind.UNION_DECL and node.displayname:
+            self.xml_writer.add_union(self.current_namespace, node_name, node)
     
 
 # with open('output.txt', 'w') as output_file:

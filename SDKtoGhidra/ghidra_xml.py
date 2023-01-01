@@ -92,7 +92,7 @@ def method_is_override(method_node):
     return any(child.kind == cindex.CursorKind.CXX_OVERRIDE_ATTR for child in method_node.get_children())
 
 
-def get_ghidra_namespace(namespace_list):
+def get_spore_ghidra_namespace(namespace_list):
     namespace = SPORE_NAMESPACE + '/'.join(namespace_list)
     return namespace[:-1] if namespace.endswith('/') else namespace
 
@@ -135,6 +135,7 @@ class GhidraToXmlWriter:
         self.template_infos = dict()  # name -> TemplateStructureInfo
         self.typedef_namespaces = dict()
         self.enum_namespaces = dict()
+        self.union_namespaces = dict()
         
     def write(self, path):
         with open(path, 'wb') as output_file:
@@ -174,6 +175,10 @@ class GhidraToXmlWriter:
             return namespace
         
         namespace, fullname = try_namespace_list(self.enum_namespaces, base_name, namespace_list)
+        if namespace is not None:
+            return namespace
+        
+        namespace, fullname = try_namespace_list(self.union_namespaces, base_name, namespace_list)
         if namespace is not None:
             return namespace
             
@@ -356,7 +361,7 @@ class GhidraToXmlWriter:
         self.generate_template_structures(underlying_type, namespace_list, None)
         
         fullname = build_full_name(namespace_list, obj_name)
-        ghidra_namespace = get_ghidra_namespace(namespace_list)
+        ghidra_namespace = get_spore_ghidra_namespace(namespace_list)
         if fullname in self.typedef_namespaces:
             raise SyntaxError(f'Typedef {fullname} is being redefined')
         self.typedef_namespaces[fullname] = ghidra_namespace
@@ -384,7 +389,13 @@ class GhidraToXmlWriter:
         bases_with_vftables = []
         bases_without_vftables = []
         virtual_functions = []
+        skip_next_child = False
+        unnamed_union_index = 0
+        union_names = dict()
         for child in structure_node.get_children():
+            if skip_next_child:
+                skip_next_child = False
+                continue
             if child.kind == cindex.CursorKind.FIELD_DECL:
                 self.generate_template_structures(child.type, functions_namespace_list, template_args)
                 field_alignment = self.get_type_alignment(child.type, template_args, functions_namespace_list)
@@ -401,7 +412,7 @@ class GhidraToXmlWriter:
                     
             elif child.kind == cindex.CursorKind.DESTRUCTOR:
                 # In destructors we never use "override", so we just have to check
-                if not bases_with_vftables:
+                if child.is_virtual_method() and not bases_with_vftables:
                     struct_info.has_vftable = True
                     virtual_functions.append(child)
                     vdtor_name = f'{structure_node.spelling}{VDTOR_SUFFIX}'
@@ -419,6 +430,28 @@ class GhidraToXmlWriter:
                     bases_with_vftables.append(base_structure)
                 else:
                     bases_without_vftables.append(base_structure)
+                    
+            elif child.kind == cindex.CursorKind.UNION_DECL and not child.displayname:
+                # Unnamed unions act as fields
+                # If the union field has a name, add the union with that name; otherwise, generate a name
+                iterator = structure_node.get_children()
+                while next(iterator) != child:
+                    pass
+                # Try to get the next item to see if it's a field
+                next_child = next(iterator, None)
+                if next_child is not None and next_child.kind == cindex.CursorKind.FIELD_DECL:
+                    union_name = next_child.displayname
+                    skip_next_child = True
+                else:
+                    union_name = f'_unnamed_{unnamed_union_index}'
+                    unnamed_union_index += 1
+                    
+                self.add_union(functions_namespace_list, union_name, child)
+                
+                union_names[child.type.spelling] = union_name
+                fields.append(child)
+                sizes.append(child.type.get_size())
+                alignments.append(child.type.get_align())
                    
         # Calculate offset of fields
         offset = 0
@@ -443,7 +476,7 @@ class GhidraToXmlWriter:
                     
         if virtual_functions:
             # Create a structure for the virtual function table
-            class_namespace = get_ghidra_namespace(namespace_list + [obj_name])
+            class_namespace = get_spore_ghidra_namespace(namespace_list + [obj_name])
             vftable_typename = f'{obj_name}{VFTABLE_TYPE_SUFFIX}'
             vftable_xml = Element('STRUCTURE')
             self.datatypes_root.append(vftable_xml)
@@ -522,20 +555,31 @@ class GhidraToXmlWriter:
         struct_info.alignment = struct_alignment
                 
         structure_xml.set('NAME', obj_name)
-        structure_xml.set('NAMESPACE', get_ghidra_namespace(namespace_list))
+        structure_xml.set('NAMESPACE', get_spore_ghidra_namespace(namespace_list))
         structure_xml.set('SIZE', f'0x{struct_size:x}')
                 
         for field, offset, size, alignment in zip(fields, offsets, sizes, alignments):
+            if field.kind == cindex.CursorKind.UNION_DECL:
+                field_name = union_names[field.type.spelling]
+                datatype = union_names[field.type.spelling]
+                datatype_namespace = get_spore_ghidra_namespace(functions_namespace_list)
+            else:
+                field_name = field.spelling
+                datatype = self.get_type_spelling(field.type, template_args)
+                datatype_namespace = self.get_type_ghidra_namespace(field.type, template_args, namespace_list)
+            
             field_xml = Element('MEMBER')
             field_xml.set('OFFSET', f'0x{offset:x}')
-            field_xml.set('DATATYPE', self.get_type_spelling(field.type, template_args))
-            field_xml.set('DATATYPE_NAMESPACE', self.get_type_ghidra_namespace(field.type, template_args, namespace_list))
-            field_xml.set('NAME', field.spelling)
-            field_xml.set('SIZE', str(size))
+            field_xml.set('DATATYPE', datatype)
+            field_xml.set('DATATYPE_NAMESPACE', datatype_namespace)
+            field_xml.set('NAME', field_name)
+            field_xml.set('SIZE', f'0x{size:x}')
             structure_xml.append(field_xml)
             
         # Add it at the end, as we might need to generate new structures (for template types) before
         self.datatypes_root.append(structure_xml)
+        
+        return struct_info
             
     def add_vftable(self):
         pass
@@ -543,7 +587,7 @@ class GhidraToXmlWriter:
     def add_function_def(self, namespace_list, function_node, template_args=None):
         function_xml = Element('FUNCTION_DEF')
         function_xml.set('NAME', function_node.spelling)
-        function_xml.set('NAMESPACE', get_ghidra_namespace(namespace_list))
+        function_xml.set('NAMESPACE', get_spore_ghidra_namespace(namespace_list))
         
         self.generate_template_structures(function_node.result_type, namespace_list, template_args)
         return_xml = Element('RETURN_TYPE')
@@ -558,7 +602,7 @@ class GhidraToXmlWriter:
             parameter_xml = Element('PARAMETER')
             parameter_xml.set('ORDINAL', str(index))
             parameter_xml.set('DATATYPE', f'{namespace_list[-1]}*')
-            parameter_xml.set('DATATYPE_NAMESPACE', get_ghidra_namespace(namespace_list[:-1]))  # the namespace list also contains the class name
+            parameter_xml.set('DATATYPE_NAMESPACE', get_spore_ghidra_namespace(namespace_list[:-1]))  # the namespace list also contains the class name
             parameter_xml.set('NAME', 'this')
             parameter_xml.set('SIZE', '4')
             function_xml.append(parameter_xml)
@@ -581,7 +625,7 @@ class GhidraToXmlWriter:
     def add_virtual_dtor_function_def(self, namespace_list, function_name):
         function_xml = Element('FUNCTION_DEF')
         function_xml.set('NAME', function_name)
-        function_xml.set('NAMESPACE', get_ghidra_namespace(namespace_list))
+        function_xml.set('NAMESPACE', get_spore_ghidra_namespace(namespace_list))
         self.datatypes_root.append(function_xml)
         
         return_xml = Element('RETURN_TYPE')
@@ -594,7 +638,7 @@ class GhidraToXmlWriter:
         parameter_xml.set('ORDINAL', '0')
         # the namespace list also contains the class name
         parameter_xml.set('DATATYPE', f'{namespace_list[-1]}*')
-        parameter_xml.set('DATATYPE_NAMESPACE', get_ghidra_namespace(namespace_list[:-1]))
+        parameter_xml.set('DATATYPE_NAMESPACE', get_spore_ghidra_namespace(namespace_list[:-1]))
         parameter_xml.set('NAME', 'this')
         parameter_xml.set('SIZE', '4')
         function_xml.append(parameter_xml)
@@ -609,7 +653,7 @@ class GhidraToXmlWriter:
             
     def add_enum(self, namespace_list, obj_name, enum_node):
         fullname = build_full_name(namespace_list, obj_name)
-        ghidra_namespace = get_ghidra_namespace(namespace_list)
+        ghidra_namespace = get_spore_ghidra_namespace(namespace_list)
         if fullname in self.enum_namespaces:
             raise SyntaxError(f'Enum {fullname} is being redefined')
         self.enum_namespaces[fullname] = ghidra_namespace
@@ -626,4 +670,128 @@ class GhidraToXmlWriter:
             entry_xml.set('NAME', child.spelling)
             entry_xml.set('VALUE', f'0x{child.enum_value:x}')
             enum_xml.append(entry_xml)
+            
+    def add_union(self, namespace_list, obj_name, union_node):
+        def add_union_member(name, size, datatype, datatype_namespace):
+            field_xml = Element('MEMBER')
+            field_xml.set('OFFSET', f'0')
+            field_xml.set('DATATYPE', datatype)
+            field_xml.set('DATATYPE_NAMESPACE', datatype_namespace)
+            field_xml.set('NAME', name)
+            field_xml.set('SIZE', str(size))
+            union_xml.append(field_xml)
+        
+        fullname = build_full_name(namespace_list, obj_name)
+        ghidra_namespace = get_spore_ghidra_namespace(namespace_list)
+        if fullname in self.union_namespaces:
+            raise SyntaxError(f'Union {fullname} is being redefined')
+        self.union_namespaces[fullname] = ghidra_namespace
+        complete_namespace_list = namespace_list + [obj_name]
+        members_ghidra_namespace = get_spore_ghidra_namespace(complete_namespace_list)
+        
+        union_xml = Element('UNION')
+        union_xml.set('NAME', obj_name)
+        union_xml.set('NAMESPACE', ghidra_namespace)
+        union_xml.set('SIZE', f'{union_node.type.get_size():x}')
+        self.datatypes_root.append(union_xml)
+                
+        # Inside a union there are three possible cases:
+        # - Named structure, in this case the 'member' has the name of the structure
+        # - Unnamed structure but named field, then the structure should have the name of the field
+        # - Unnamed structure and field, we must generate a name for this
+        # We don't support structures inside of structures inside of unions
+        
+        last_structure = None
+        unnamed_index = 0
+        inner_structures = dict()
+        inner_structures_names = dict()
+        for c in union_node.get_children():
+            if last_structure is not None:
+                if c.kind == cindex.CursorKind.FIELD_DECL:
+                    field_name = c.displayname
+                else:
+                    # We had a structure followed by something else, this counts as a field
+                    if last_structure.displayname:
+                        # Named structure, in this case the 'member' uses the name of the structure
+                        field_name = c.displayname
+                    else:
+                        # Unnamed structure and field, we must generate a name for this
+                        field_name = f'_unnamed_{unnamed_index}'
+                        unnamed_index += 1
+                        
+                # Add the structure, if it doesn't have a name use the field name
+                structure_name = last_structure.displayname
+                if not structure_name:
+                    structure_name = field_name
+                struct_info = self.add_structure(complete_namespace_list, structure_name, last_structure)
+                inner_structures[c.type.spelling] = struct_info
+                inner_structures_names[c.type.spelling] = structure_name
+                        
+                add_union_member(field_name, struct_info.size, structure_name, members_ghidra_namespace)
+                last_structure = None
+                
+            elif c.kind == cindex.CursorKind.FIELD_DECL:
+                # Only look at fields regularly if they are not from a struct
+                struct_info = inner_structures.get(c.type.spelling, None)
+                if struct_info is None:
+                    self.generate_template_structures(c.type, complete_namespace_list, None)
+                    add_union_member(c.displayname, 
+                                    self.get_type_size(c.type, None, complete_namespace_list), 
+                                    self.get_type_spelling(c.type, None),
+                                    self.get_type_ghidra_namespace(c.type, None, complete_namespace_list))
+                else:
+                    add_union_member(c.displayname, struct_info.size, inner_structures_names[c.type.spelling], members_ghidra_namespace)
+            
+            if c.kind in [cindex.CursorKind.STRUCT_DECL, cindex.CursorKind.CLASS_DECL]:
+                last_structure = c
+            
+        
+        # last_structure = None
+        # unnamed_index = 0
+        # for c in union_node.get_children():
+        #     if c.kind in [cindex.CursorKind.STRUCT_DECL, cindex.CursorKind.CLASS_DECL]:
+        #         if last_unnamed_structure is not None:
+        #             # Unnamed structure and field, we must generate a name for this
+        #             self.process(last_unnamed_structure, f'_unnamed_{unnamed_index}')
+        #             unnamed_index += 1
+                    
+        #         if c.displayname == '':
+        #             last_unnamed_structure = c
+        #         else:
+        #             # Named structure, in this case the 'member' has the name of the structure
+        #             self.add_structure()
+        #             last_unnamed_structure = None
+            
+        #     elif c.kind == cindex.CursorKind.FIELD_DECL:
+        #         if last_unnamed_structure is not None:
+        #             # Unnamed structure but named field, then the structure should have the name of the field
+        #             self.process(last_unnamed_structure, c.spelling)
+        #         last_unnamed_structure = None
+                
+        # if last_unnamed_structure is not None:
+        #     # Unnamed structure and field, we must generate a name for this
+        #     self.process(last_unnamed_structure, f'_unnamed_{unnamed_index}')
+        #     unnamed_index += 1
+        
+        print(f'UNION {fullname}')
+        for child in union_node.get_children():
+            print(f'    {child.spelling}  {child.kind}  {child.type.spelling}')
+            # if child.kind == cindex.CursorKind.FIELD_DECL:
+            #     self.generate_template_structures(child.type, functions_namespace_list, template_args)
+                
+            #     field_xml = Element('MEMBER')
+            #     field_xml.set('OFFSET', f'0x{offset:x}')
+            #     field_xml.set('DATATYPE', self.get_type_spelling(field.type, template_args))
+            #     field_xml.set('DATATYPE_NAMESPACE', self.get_type_ghidra_namespace(field.type, template_args, namespace_list))
+            #     field_xml.set('NAME', field.spelling)
+            #     field_xml.set('SIZE', str(size))
+            #     union_xml.append(field_xml)
+                
+                # self.generate_template_structures(child.type, functions_namespace_list, template_args)
+                # field_alignment = self.get_type_alignment(child.type, template_args, functions_namespace_list)
+                # struct_alignment = max(struct_alignment, field_alignment)
+                # fields.append(child)
+                # sizes.append(self.get_type_size(child.type, template_args, functions_namespace_list))
+                # alignments.append(field_alignment)
+        print()
         
