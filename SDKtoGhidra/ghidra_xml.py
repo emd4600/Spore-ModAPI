@@ -133,6 +133,7 @@ class GhidraToXmlWriter:
         self.structures = dict()  # name -> StructureInfo
         self.vftables = dict()  # name -> vftable xml element
         self.template_infos = dict()  # name -> TemplateStructureInfo
+        self.structure_namespaces = dict()
         self.typedef_namespaces = dict()
         self.enum_namespaces = dict()
         self.union_namespaces = dict()
@@ -162,13 +163,10 @@ class GhidraToXmlWriter:
         #print(f'{type_obj.spelling}   {type_obj.get_canonical().spelling}    {type_obj.kind}')
         
         base_name = self.get_type_spelling(type_obj, template_args, False)  # replace any inner template parameters
-        #base_name = type_obj.spelling
-        
-        struct, fullname = try_namespace_list(self.structures, base_name, namespace_list)
-        if struct is not None:
-            splits = split_in_namespaces(fullname)
-            namespace = SPORE_NAMESPACE + '/'.join(splits[:-1])
-            return namespace[:-1] if namespace.endswith('/') else namespace
+
+        namespace, fullname = try_namespace_list(self.structure_namespaces, base_name, namespace_list)
+        if namespace is not None:
+            return namespace
         
         namespace, fullname = try_namespace_list(self.typedef_namespaces, base_name, namespace_list)
         if namespace is not None:
@@ -290,13 +288,15 @@ class GhidraToXmlWriter:
                 
         spelling = re.sub(fr'\b(long long)\b', 'longlong', spelling)
         spelling = re.sub(fr'\b(char16_t)\b', 'wchar16', spelling)
+        
+        if spelling.startswith('const'):
+            spelling = spelling[len('const '):]
+            
         # In Ghidra, unsigned int is uint, etc
         if spelling.startswith('unsigned '):
             spelling = spelling.replace('unsigned ', 'u', 1)
             
-        if spelling.startswith('const'):
-            spelling = spelling[len('const '):]
-        spelling = spelling.replace('&', '*')
+        spelling = spelling.replace('&', ' *')
             
         return spelling
     
@@ -553,9 +553,12 @@ class GhidraToXmlWriter:
         struct_info.xml_element = structure_xml
         struct_info.size = struct_size
         struct_info.alignment = struct_alignment
+        
+        ghidra_namespace = get_spore_ghidra_namespace(namespace_list)
+        self.structure_namespaces[fullname] = ghidra_namespace
                 
         structure_xml.set('NAME', obj_name)
-        structure_xml.set('NAMESPACE', get_spore_ghidra_namespace(namespace_list))
+        structure_xml.set('NAMESPACE', ghidra_namespace)
         structure_xml.set('SIZE', f'0x{struct_size:x}')
                 
         for field, offset, size, alignment in zip(fields, offsets, sizes, alignments):
@@ -601,7 +604,7 @@ class GhidraToXmlWriter:
         if not function_node.is_static_method():
             parameter_xml = Element('PARAMETER')
             parameter_xml.set('ORDINAL', str(index))
-            parameter_xml.set('DATATYPE', f'{namespace_list[-1]}*')
+            parameter_xml.set('DATATYPE', f'{namespace_list[-1]} *')
             parameter_xml.set('DATATYPE_NAMESPACE', get_spore_ghidra_namespace(namespace_list[:-1]))  # the namespace list also contains the class name
             parameter_xml.set('NAME', 'this')
             parameter_xml.set('SIZE', '4')
@@ -612,7 +615,7 @@ class GhidraToXmlWriter:
             self.generate_template_structures(arg.type, namespace_list, template_args)
             parameter_xml = Element('PARAMETER')
             parameter_xml.set('ORDINAL', str(index))
-            parameter_xml.set('DATATYPE', fix_type_string(self.get_type_spelling(arg.type, template_args)))
+            parameter_xml.set('DATATYPE', self.get_type_spelling(arg.type, template_args))
             parameter_xml.set('DATATYPE_NAMESPACE', self.get_type_ghidra_namespace(arg.type, template_args, namespace_list))
             parameter_xml.set('NAME', arg.spelling if arg.spelling else f'param_{name_index}')
             parameter_xml.set('SIZE', str(max(self.get_type_size(arg.type, template_args, namespace_list), 4)))
@@ -744,54 +747,3 @@ class GhidraToXmlWriter:
             
             if c.kind in [cindex.CursorKind.STRUCT_DECL, cindex.CursorKind.CLASS_DECL]:
                 last_structure = c
-            
-        
-        # last_structure = None
-        # unnamed_index = 0
-        # for c in union_node.get_children():
-        #     if c.kind in [cindex.CursorKind.STRUCT_DECL, cindex.CursorKind.CLASS_DECL]:
-        #         if last_unnamed_structure is not None:
-        #             # Unnamed structure and field, we must generate a name for this
-        #             self.process(last_unnamed_structure, f'_unnamed_{unnamed_index}')
-        #             unnamed_index += 1
-                    
-        #         if c.displayname == '':
-        #             last_unnamed_structure = c
-        #         else:
-        #             # Named structure, in this case the 'member' has the name of the structure
-        #             self.add_structure()
-        #             last_unnamed_structure = None
-            
-        #     elif c.kind == cindex.CursorKind.FIELD_DECL:
-        #         if last_unnamed_structure is not None:
-        #             # Unnamed structure but named field, then the structure should have the name of the field
-        #             self.process(last_unnamed_structure, c.spelling)
-        #         last_unnamed_structure = None
-                
-        # if last_unnamed_structure is not None:
-        #     # Unnamed structure and field, we must generate a name for this
-        #     self.process(last_unnamed_structure, f'_unnamed_{unnamed_index}')
-        #     unnamed_index += 1
-        
-        print(f'UNION {fullname}')
-        for child in union_node.get_children():
-            print(f'    {child.spelling}  {child.kind}  {child.type.spelling}')
-            # if child.kind == cindex.CursorKind.FIELD_DECL:
-            #     self.generate_template_structures(child.type, functions_namespace_list, template_args)
-                
-            #     field_xml = Element('MEMBER')
-            #     field_xml.set('OFFSET', f'0x{offset:x}')
-            #     field_xml.set('DATATYPE', self.get_type_spelling(field.type, template_args))
-            #     field_xml.set('DATATYPE_NAMESPACE', self.get_type_ghidra_namespace(field.type, template_args, namespace_list))
-            #     field_xml.set('NAME', field.spelling)
-            #     field_xml.set('SIZE', str(size))
-            #     union_xml.append(field_xml)
-                
-                # self.generate_template_structures(child.type, functions_namespace_list, template_args)
-                # field_alignment = self.get_type_alignment(child.type, template_args, functions_namespace_list)
-                # struct_alignment = max(struct_alignment, field_alignment)
-                # fields.append(child)
-                # sizes.append(self.get_type_size(child.type, template_args, functions_namespace_list))
-                # alignments.append(field_alignment)
-        print()
-        

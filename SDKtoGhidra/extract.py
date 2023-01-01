@@ -1,6 +1,6 @@
 import os
 import clang.cindex as cindex
-from ghidra_xml import GhidraToXmlWriter, build_full_name
+from ghidra_xml import GhidraToXmlWriter, build_full_name, get_spore_ghidra_namespace
 
 
 def check_node(node, expected_kind):
@@ -103,10 +103,15 @@ class FunctionProcessor:
             must_pop_namespace = True
             process_children = False
             
-        elif not is_empty and node.kind in [cindex.CursorKind.STRUCT_DECL, cindex.CursorKind.CLASS_DECL]:
+        elif node.kind in [cindex.CursorKind.STRUCT_DECL, cindex.CursorKind.CLASS_DECL]:
             if node.displayname == '':
                 print(f'EMPTY STRUCTURE DISPLAYNAME: [{node.location}]')
-        
+            
+            # Even if the structure is empty (i.e. it's a forward declaration) we need to register it so we can know its namespace
+            ghidra_namespace = get_spore_ghidra_namespace(self.current_namespace)
+            fullname = build_full_name(self.current_namespace, node_name)
+            self.xml_writer.structure_namespaces[fullname] = ghidra_namespace
+            
             self.current_namespace.append(node_name)
             must_pop_namespace = True
             
