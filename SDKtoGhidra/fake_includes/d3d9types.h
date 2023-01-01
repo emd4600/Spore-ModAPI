@@ -1793,7 +1793,7 @@ struct D3DRECTPATCH_INFO
     D3DDEGREETYPE       Degree;
 } ;
 
-struct _D3DTRIPATCH_INFO
+struct D3DTRIPATCH_INFO
 {
     UINT                StartVertexOffset;
     UINT                NumVertices;
