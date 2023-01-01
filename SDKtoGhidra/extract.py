@@ -1,6 +1,6 @@
 import os
 import clang.cindex as cindex
-from ghidra_xml import GhidraToXmlWriter
+from ghidra_xml import GhidraToXmlWriter, build_full_name
 
 
 def check_node(node, expected_kind):
@@ -18,9 +18,6 @@ class AddressesCollection:
     def __init__(self):
         self.addresses = dict()  # Maps name to (disk, march2017) addresses
         self.current_namespace = []
-        
-    def build_full_var_name(self, var_name):
-        return '::'.join(self.current_namespace) + '::' + var_name
         
     def parse_select_address(self, node):
         # It should have two children INTEGER_LITERAL nodes
@@ -63,7 +60,7 @@ class AddressesCollection:
             self.current_namespace.append(node.displayname.removesuffix('_addresses'))
             
         elif node.kind == cindex.CursorKind.VAR_DECL:
-            self.addresses[self.build_full_var_name(node.displayname)] = self.parse_var_addresses(node)
+            self.addresses[build_full_name(self.current_namespace, node.displayname)] = self.parse_var_addresses(node)
         
         # Recurse for children of this node)
         for c in node.get_children():
@@ -80,9 +77,6 @@ class FunctionProcessor:
         self.xml_writer = xml_writer
         # Only files in these paths will be exported
         self.exportable_paths = []
-        
-    def build_full_var_name(self, var_name):
-        return '::'.join(self.current_namespace) + '::' + var_name if self.current_namespace else var_name
     
     def must_be_exported(self, node):
         if node.location is None or node.location.file is None:
@@ -95,6 +89,7 @@ class FunctionProcessor:
             return
         
         is_empty = next(node.get_children(), None) is None
+        process_children = True
         must_pop_namespace = False
         
         if node.kind == cindex.CursorKind.NAMESPACE:
@@ -105,32 +100,42 @@ class FunctionProcessor:
             return  #TODO
             
         elif not is_empty and node.kind in [cindex.CursorKind.STRUCT_DECL, cindex.CursorKind.CLASS_DECL]:
-            fullname = self.build_full_var_name(node.displayname)
-            self.current_namespace.append(node.displayname)
-            must_pop_namespace = True
-            print(f'Adding struct\t{fullname}')
-            if fullname == 'UTFWin::Window_intrusive_list_node':
-                print(node.is_definition())
             if node.displayname == '':
                 print(f'EMPTY STRUCTURE DISPLAYNAME: [{node.location}]')
+                
+            #print(build_full_name(self.current_namespace, node.displayname))
+            for c in node.get_children():
+                if c.kind == cindex.CursorKind.FIELD_DECL:
+                    pass
+                    #print(f'    {c.type.spelling} {c.displayname}')
         
-            self.xml_writer.add_structure(fullname, node)
+            self.current_namespace.append(node.displayname)
+            must_pop_namespace = True
+            
+        elif node.kind == cindex.CursorKind.TYPEDEF_DECL:
+            fullname = build_full_name(self.current_namespace, node.displayname)
+            #print(f'Adding typedef\t{fullname}')
+            self.xml_writer.add_typedef(self.current_namespace, node.displayname, node)
                 
         elif not is_empty and node.kind == cindex.CursorKind.CLASS_TEMPLATE:
-            fullname = self.build_full_var_name(node.spelling)
+            fullname = build_full_name(self.current_namespace, node.spelling)
+
+            self.xml_writer.add_template_node(fullname, node) 
             self.current_namespace.append(node.spelling)
             must_pop_namespace = True
-            self.xml_writer.add_template_node(fullname, node) 
+            # We don't want to process typedefs, inner structs, etc inside the template, as they won't be specialized
+            process_children = False
                 
         elif not is_empty and node.kind == cindex.CursorKind.ENUM_DECL:
-            fullname = self.build_full_var_name(node.displayname)
-            print(f'Adding enum\t{fullname}')
+            fullname = build_full_name(self.current_namespace, node.displayname)
+            #print(f'Adding enum\t{fullname}')
             if node.displayname == '':
                 print(f'EMPTY ENUM DISPLAYNAME: [{node.location}]')
-            self.xml_writer.add_enum(fullname, node)
+            self.xml_writer.add_enum(self.current_namespace, node.displayname, node)
             
         elif node.kind == cindex.CursorKind.CXX_METHOD:
-            method_full_name = self.build_full_var_name(node.spelling)
+            pass
+            #method_full_name = self.build_full_var_name(node.spelling)
             # address = self.addresses.get(method_full_name, None)
             # if address is not None:
             #     fullname = node.result_type.spelling
@@ -138,11 +143,18 @@ class FunctionProcessor:
             #     #self.output_file.write(f'{method_full_name} {address[0]} {address[1]} {fullname}({", ".join(arg_types)})\n')
             
         # Recurse for children of this node
-        for c in node.get_children():
-            self.process(c)
+        if process_children:
+            for c in node.get_children():
+                self.process(c)
             
         if must_pop_namespace:
             self.current_namespace.pop()
+            
+        # We process it AFTER its children, as there might be classes inside
+        if not is_empty and node.kind in [cindex.CursorKind.STRUCT_DECL, cindex.CursorKind.CLASS_DECL]:
+            fullname = build_full_name(self.current_namespace, node.displayname)
+            #print(f'Adding struct\t{fullname}')
+            self.xml_writer.add_structure(self.current_namespace, node.displayname, node)
     
 
 # with open('output.txt', 'w') as output_file:
@@ -165,7 +177,7 @@ def extract_includes(input_file, output_file):
     return includes        
 
 
-if __name__ == '__main__':
+if __name__ == '__main__22':
     tu = cindex.TranslationUnit.from_source('test.cpp', args=[
         '-x', 'c++',
         #'-target', 'x86_64-PC-Win32-MSVC',
@@ -183,7 +195,7 @@ if __name__ == '__main__':
     xml_writer.write('output.xml')
 
 
-if __name__ == '__main__222':
+if __name__ == '__main__':
     #sdk_path = '..\\'
     include_path = r'E:\Eric\Spore ModAPI SDK\Spore ModAPI'
     path = os.path.join(include_path, r'SourceCode\DLL\AddressesApp.cpp')
@@ -210,15 +222,23 @@ if __name__ == '__main__222':
     for i in addresses.addresses.items():
         print(i)
         
+    #includes.clear()
+    #includes.append('#include "test_file.h"\n')
     # Now create a file only with the includes, then process its structures
+    includes.insert(0, '#include <Spore\CppRevEngBase.h>\n')
     includes.insert(0, '#include "eastl_include.h"\n')
     with open(temp_path, 'w') as output_file:
         output_file.writelines(includes)
         
     tu = cindex.TranslationUnit.from_source(temp_path, args=[
         '-x', 'c++',
-        #'-target', 'x86_64-PC-Win32-MSVC',
-        r'-IE:\Eric\Spore ModAPI SDK\Spore ModAPI'
+        '-target', 'x86_64-PC-Win32-MSVC',
+        '-m32',
+        '-DSDK_TO_GHIDRA',
+        '-fdeclspec',
+        '-Wignored-attributes',
+        r'-IE:\Eric\Spore ModAPI SDK\Spore ModAPI',
+        r'-IE:\Eric\Spore ModAPI SDK\SDKtoGhidra\fake_includes'
         ])
 
     for diag in tu.diagnostics:

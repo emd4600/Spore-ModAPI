@@ -1,13 +1,33 @@
 // Simplified version of EASTL structures
 
+#ifndef ASSERT_SIZE
+#define ASSERT_SIZE(name, size) static_assert(sizeof(name) == size, "sizeof " #name " != " #size);
+#endif
+
+typedef unsigned int uintptr_t;
+typedef char        int8_t;
+typedef short              int16_t;
+typedef int                int32_t;
+typedef long long          int64_t __attribute__ ((aligned (8)));
+typedef unsigned char      uint8_t;
+typedef unsigned short     uint16_t;
+typedef unsigned int       uint32_t;
+typedef unsigned long long uint64_t __attribute__ ((aligned (8)));
+typedef unsigned int     size_t;
+
+#define NULL 0
+
 namespace eastl
 {
+    ASSERT_SIZE(int*, 4);
+    static_assert(alignof(int64_t) == 8, "alignof(int64_t) != 8");
+
     struct allocator
     {
         void* padding;
     };
 
-    template <typename T, typename _Allocator=allocator>
+    template <typename T, typename _Allocator = allocator>
     struct vector
     {
         static allocator _DEFAULT__Allocator;
@@ -19,11 +39,32 @@ namespace eastl
         int _garbage;
     };
 
+    /*template <typename T1, typename T2=int>
+    //template <typename T1>
+	struct vector
+	{
+		T1 field_1;
+		//_T2 field_2;
+	};*/
+
     template <typename T1, typename T2>
     struct pair
     {
         T1 first;
         T2 second;
+    };
+
+    template <typename Key, typename T, typename _Allocator = allocator>
+    struct vector_map
+    {
+        static allocator _DEFAULT__Allocator;
+        
+        pair<Key, T>* mpBegin;
+        pair<Key, T>* mpEnd;
+        pair<Key, T>* mpCapacity;
+        _Allocator mAllocator;
+        int _garbage;
+        int mValueCompare;
     };
 
     template <typename T>
@@ -39,6 +80,7 @@ namespace eastl
         char* mpCapacity;
         int mAllocator;
     };
+    ASSERT_SIZE(string, 0x10);
 
     struct string8
     {
@@ -113,6 +155,7 @@ namespace eastl
         int mnNextResize;
         _Allocator mAllocator;
     };
+    static_assert(sizeof(hash_map<int,int>) == 0x20, "sizeof(hash_map<int,int>) == 0x20");
 
     struct rbtree_node_base
     {
@@ -128,13 +171,14 @@ namespace eastl
         T mValue;
     };
 
+    template <typename T>
     struct less
     {};
 
-    template <typename Key, typename T, typename _Compare=less, typename _Allocator=allocator>
+    template <typename Key, typename T, typename _Compare=less<Key>, typename _Allocator=allocator>
     struct map
     {
-        static less _DEFAULT__Compare;
+        static less<Key> _DEFAULT__Compare;
         static allocator _DEFAULT__Allocator;
 
         void* mCompare;
@@ -142,17 +186,18 @@ namespace eastl
         unsigned int mnSize;
         _Allocator mAllocator;
     };
+    static_assert(sizeof(map<int,int>) == 0x1c, "sizeof(map<int,int>) == 0x1c");
 
-    template <typename T, typename _Compare=less, typename _Allocator=allocator>
+    template <typename T, typename _Compare=less<T>, typename _Allocator=allocator>
     struct set
     {
-        static less _DEFAULT__Compare;
+        static less<T> _DEFAULT__Compare;
         static allocator _DEFAULT__Allocator;
 
         void* mCompare;
         rbtree_node_base mAnchor;
         unsigned int mnSize;
-        _Allocator mAllocator,
+        _Allocator mAllocator;
     };
 
     struct fixed_vector_allocator
@@ -169,7 +214,7 @@ namespace eastl
         T* mpCapacity;
         fixed_vector_allocator mAllocator;
         int _garbage;
-        T[nodeCount] mBuffer;
+        T mBuffer[nodeCount];
     };
 
     struct intrusive_list_node
@@ -179,14 +224,48 @@ namespace eastl
     };
 
     template <typename T>
-    struct intrusive_ptr
-    {
-        T* ptr;
-    };
-
-    template <typename T>
     struct intrusive_list_iterator
     {
         T* mpNode;
     };
+
+    template <typename T>
+    struct intrusive_list
+    {
+        typedef intrusive_list_iterator<T> iterator;
+
+        T mAnchor;
+    };
+
+    template <typename T>
+    struct intrusive_ptr
+    {
+        T* ptr;
+
+        intrusive_ptr();
+        intrusive_ptr(T*);
+        T* get() const;
+
+        T& operator *() const;
+		T* operator ->() const;
+    };
+
+// Python eval() can't do the ? :, so we will just assume the 0 case never happens
+//#define BITSET_WORD_COUNT(N) (N == 0 ? 1 : ((N - 1) / (8 * 4) + 1))
+#define BITSET_WORD_COUNT(N) ((N - 1) / (8 * 4) + 1)
+
+    template <int count>
+    struct bitset
+    {
+        int words[BITSET_WORD_COUNT(count)];
+    };
 }
+
+namespace App
+{
+    struct Test
+    {
+        eastl::vector<int> test;
+    };
+}
+//static_assert(sizeof(App::Test) == )
