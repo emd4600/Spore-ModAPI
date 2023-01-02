@@ -34,9 +34,9 @@ struct IDirect3DVolume9;
 DECLARE_INTERFACE_(IDirect3D9, IUnknown)
 {
     /*** IUnknown methods ***/
-    STDMETHOD(QueryInterface)(THIS_ REFIID riid, void** ppvObj) PURE;
-    STDMETHOD_(ULONG,AddRef)(THIS) PURE;
-    STDMETHOD_(ULONG,Release)(THIS) PURE;
+    STDMETHOD(QueryInterface)(THIS_ REFIID riid, void** ppvObj) override PURE;
+    STDMETHOD_(ULONG,AddRef)(THIS) override PURE;
+    STDMETHOD_(ULONG,Release)(THIS) override PURE;
 
     /*** IDirect3D9 methods ***/
     STDMETHOD(RegisterSoftwareDevice)(THIS_ void* pInitializeFunction) PURE;
@@ -58,9 +58,9 @@ DECLARE_INTERFACE_(IDirect3D9, IUnknown)
 DECLARE_INTERFACE_(IDirect3DDevice9, IUnknown)
 {
     /*** IUnknown methods ***/
-    STDMETHOD(QueryInterface)(THIS_ REFIID riid, void** ppvObj) PURE;
-    STDMETHOD_(ULONG,AddRef)(THIS) PURE;
-    STDMETHOD_(ULONG,Release)(THIS) PURE;
+    STDMETHOD(QueryInterface)(THIS_ REFIID riid, void** ppvObj) override PURE;
+    STDMETHOD_(ULONG,AddRef)(THIS) override PURE;
+    STDMETHOD_(ULONG,Release)(THIS) override PURE;
 
     /*** IDirect3DDevice9 methods ***/
     STDMETHOD(TestCooperativeLevel)(THIS) PURE;
@@ -184,9 +184,9 @@ DECLARE_INTERFACE_(IDirect3DDevice9, IUnknown)
 DECLARE_INTERFACE_(IDirect3DStateBlock9, IUnknown)
 {
     /*** IUnknown methods ***/
-    STDMETHOD(QueryInterface)(THIS_ REFIID riid, void** ppvObj) PURE;
-    STDMETHOD_(ULONG,AddRef)(THIS) PURE;
-    STDMETHOD_(ULONG,Release)(THIS) PURE;
+    STDMETHOD(QueryInterface)(THIS_ REFIID riid, void** ppvObj) override PURE;
+    STDMETHOD_(ULONG,AddRef)(THIS) override PURE;
+    STDMETHOD_(ULONG,Release)(THIS) override PURE;
 
     /*** IDirect3DStateBlock9 methods ***/
     STDMETHOD(GetDevice)(THIS_ IDirect3DDevice9** ppDevice) PURE;
@@ -204,9 +204,9 @@ typedef struct IDirect3DStateBlock9 *LPDIRECT3DSTATEBLOCK9, *PDIRECT3DSTATEBLOCK
 DECLARE_INTERFACE_(IDirect3DSwapChain9, IUnknown)
 {
     /*** IUnknown methods ***/
-    STDMETHOD(QueryInterface)(THIS_ REFIID riid, void** ppvObj) PURE;
-    STDMETHOD_(ULONG,AddRef)(THIS) PURE;
-    STDMETHOD_(ULONG,Release)(THIS) PURE;
+    STDMETHOD(QueryInterface)(THIS_ REFIID riid, void** ppvObj) override PURE;
+    STDMETHOD_(ULONG,AddRef)(THIS) override PURE;
+    STDMETHOD_(ULONG,Release)(THIS) override PURE;
 
     /*** IDirect3DSwapChain9 methods ***/
     STDMETHOD(Present)(THIS_ CONST RECT* pSourceRect,CONST RECT* pDestRect,HWND hDestWindowOverride,CONST RGNDATA* pDirtyRegion,DWORD dwFlags) PURE;
@@ -229,9 +229,9 @@ typedef struct IDirect3DSwapChain9 *LPDIRECT3DSWAPCHAIN9, *PDIRECT3DSWAPCHAIN9;
 DECLARE_INTERFACE_(IDirect3DResource9, IUnknown)
 {
     /*** IUnknown methods ***/
-    STDMETHOD(QueryInterface)(THIS_ REFIID riid, void** ppvObj) PURE;
-    STDMETHOD_(ULONG,AddRef)(THIS) PURE;
-    STDMETHOD_(ULONG,Release)(THIS) PURE;
+    STDMETHOD(QueryInterface)(THIS_ REFIID riid, void** ppvObj) override PURE;
+    STDMETHOD_(ULONG,AddRef)(THIS) override PURE;
+    STDMETHOD_(ULONG,Release)(THIS) override PURE;
 
     /*** IDirect3DResource9 methods ***/
     STDMETHOD(GetDevice)(THIS_ IDirect3DDevice9** ppDevice) PURE;
@@ -250,9 +250,9 @@ typedef struct IDirect3DResource9 *LPDIRECT3DRESOURCE9, *PDIRECT3DRESOURCE9;
 DECLARE_INTERFACE_(IDirect3DVertexDeclaration9, IUnknown)
 {
     /*** IUnknown methods ***/
-    STDMETHOD(QueryInterface)(THIS_ REFIID riid, void** ppvObj) PURE;
-    STDMETHOD_(ULONG,AddRef)(THIS) PURE;
-    STDMETHOD_(ULONG,Release)(THIS) PURE;
+    STDMETHOD(QueryInterface)(THIS_ REFIID riid, void** ppvObj) override PURE;
+    STDMETHOD_(ULONG,AddRef)(THIS) override PURE;
+    STDMETHOD_(ULONG,Release)(THIS) override PURE;
 
     /*** IDirect3DVertexDeclaration9 methods ***/
     STDMETHOD(GetDevice)(THIS_ IDirect3DDevice9** ppDevice) PURE;
@@ -268,9 +268,9 @@ typedef struct IDirect3DVertexDeclaration9 *LPDIRECT3DVERTEXDECLARATION9, *PDIRE
 DECLARE_INTERFACE_(IDirect3DVertexShader9, IUnknown)
 {
     /*** IUnknown methods ***/
-    STDMETHOD(QueryInterface)(THIS_ REFIID riid, void** ppvObj) PURE;
-    STDMETHOD_(ULONG,AddRef)(THIS) PURE;
-    STDMETHOD_(ULONG,Release)(THIS) PURE;
+    STDMETHOD(QueryInterface)(THIS_ REFIID riid, void** ppvObj) override PURE;
+    STDMETHOD_(ULONG,AddRef)(THIS) override PURE;
+    STDMETHOD_(ULONG,Release)(THIS) override PURE;
 
     /*** IDirect3DVertexShader9 methods ***/
     STDMETHOD(GetDevice)(THIS_ IDirect3DDevice9** ppDevice) PURE;
@@ -287,9 +287,9 @@ typedef struct IDirect3DVertexShader9 *LPDIRECT3DVERTEXSHADER9, *PDIRECT3DVERTEX
 DECLARE_INTERFACE_(IDirect3DPixelShader9, IUnknown)
 {
     /*** IUnknown methods ***/
-    STDMETHOD(QueryInterface)(THIS_ REFIID riid, void** ppvObj) PURE;
-    STDMETHOD_(ULONG,AddRef)(THIS) PURE;
-    STDMETHOD_(ULONG,Release)(THIS) PURE;
+    STDMETHOD(QueryInterface)(THIS_ REFIID riid, void** ppvObj) override PURE;
+    STDMETHOD_(ULONG,AddRef)(THIS) override PURE;
+    STDMETHOD_(ULONG,Release)(THIS) override PURE;
 
     /*** IDirect3DPixelShader9 methods ***/
     STDMETHOD(GetDevice)(THIS_ IDirect3DDevice9** ppDevice) PURE;
@@ -306,19 +306,19 @@ typedef struct IDirect3DPixelShader9 *LPDIRECT3DPIXELSHADER9, *PDIRECT3DPIXELSHA
 DECLARE_INTERFACE_(IDirect3DBaseTexture9, IDirect3DResource9)
 {
     /*** IUnknown methods ***/
-    STDMETHOD(QueryInterface)(THIS_ REFIID riid, void** ppvObj) PURE;
-    STDMETHOD_(ULONG,AddRef)(THIS) PURE;
-    STDMETHOD_(ULONG,Release)(THIS) PURE;
+    STDMETHOD(QueryInterface)(THIS_ REFIID riid, void** ppvObj) override PURE;
+    STDMETHOD_(ULONG,AddRef)(THIS) override PURE;
+    STDMETHOD_(ULONG,Release)(THIS) override PURE;
 
     /*** IDirect3DResource9 methods ***/
-    STDMETHOD(GetDevice)(THIS_ IDirect3DDevice9** ppDevice) PURE;
-    STDMETHOD(SetPrivateData)(THIS_ REFGUID refguid,CONST void* pData,DWORD SizeOfData,DWORD Flags) PURE;
-    STDMETHOD(GetPrivateData)(THIS_ REFGUID refguid,void* pData,DWORD* pSizeOfData) PURE;
-    STDMETHOD(FreePrivateData)(THIS_ REFGUID refguid) PURE;
-    STDMETHOD_(DWORD, SetPriority)(THIS_ DWORD PriorityNew) PURE;
-    STDMETHOD_(DWORD, GetPriority)(THIS) PURE;
-    STDMETHOD_(void, PreLoad)(THIS) PURE;
-    STDMETHOD_(D3DRESOURCETYPE, GetType)(THIS) PURE;
+    STDMETHOD(GetDevice)(THIS_ IDirect3DDevice9** ppDevice) override PURE;
+    STDMETHOD(SetPrivateData)(THIS_ REFGUID refguid,CONST void* pData,DWORD SizeOfData,DWORD Flags) override PURE;
+    STDMETHOD(GetPrivateData)(THIS_ REFGUID refguid,void* pData,DWORD* pSizeOfData) override PURE;
+    STDMETHOD(FreePrivateData)(THIS_ REFGUID refguid) override PURE;
+    STDMETHOD_(DWORD, SetPriority)(THIS_ DWORD PriorityNew) override PURE;
+    STDMETHOD_(DWORD, GetPriority)(THIS) override PURE;
+    STDMETHOD_(void, PreLoad)(THIS) override PURE;
+    STDMETHOD_(D3DRESOURCETYPE, GetType)(THIS) override PURE;
     STDMETHOD_(DWORD, SetLOD)(THIS_ DWORD LODNew) PURE;
     STDMETHOD_(DWORD, GetLOD)(THIS) PURE;
     STDMETHOD_(DWORD, GetLevelCount)(THIS) PURE;
@@ -332,25 +332,25 @@ typedef struct IDirect3DBaseTexture9 *LPDIRECT3DBASETEXTURE9, *PDIRECT3DBASETEXT
 DECLARE_INTERFACE_(IDirect3DTexture9, IDirect3DBaseTexture9)
 {
     /*** IUnknown methods ***/
-    STDMETHOD(QueryInterface)(THIS_ REFIID riid, void** ppvObj) PURE;
-    STDMETHOD_(ULONG,AddRef)(THIS) PURE;
-    STDMETHOD_(ULONG,Release)(THIS) PURE;
+    STDMETHOD(QueryInterface)(THIS_ REFIID riid, void** ppvObj) override PURE;
+    STDMETHOD_(ULONG,AddRef)(THIS) override PURE;
+    STDMETHOD_(ULONG,Release)(THIS) override PURE;
 
     /*** IDirect3DBaseTexture9 methods ***/
-    STDMETHOD(GetDevice)(THIS_ IDirect3DDevice9** ppDevice) PURE;
-    STDMETHOD(SetPrivateData)(THIS_ REFGUID refguid,CONST void* pData,DWORD SizeOfData,DWORD Flags) PURE;
-    STDMETHOD(GetPrivateData)(THIS_ REFGUID refguid,void* pData,DWORD* pSizeOfData) PURE;
-    STDMETHOD(FreePrivateData)(THIS_ REFGUID refguid) PURE;
-    STDMETHOD_(DWORD, SetPriority)(THIS_ DWORD PriorityNew) PURE;
-    STDMETHOD_(DWORD, GetPriority)(THIS) PURE;
-    STDMETHOD_(void, PreLoad)(THIS) PURE;
-    STDMETHOD_(D3DRESOURCETYPE, GetType)(THIS) PURE;
-    STDMETHOD_(DWORD, SetLOD)(THIS_ DWORD LODNew) PURE;
-    STDMETHOD_(DWORD, GetLOD)(THIS) PURE;
-    STDMETHOD_(DWORD, GetLevelCount)(THIS) PURE;
-    STDMETHOD(SetAutoGenFilterType)(THIS_ D3DTEXTUREFILTERTYPE FilterType) PURE;
-    STDMETHOD_(D3DTEXTUREFILTERTYPE, GetAutoGenFilterType)(THIS) PURE;
-    STDMETHOD_(void, GenerateMipSubLevels)(THIS) PURE;
+    STDMETHOD(GetDevice)(THIS_ IDirect3DDevice9** ppDevice) override PURE;
+    STDMETHOD(SetPrivateData)(THIS_ REFGUID refguid,CONST void* pData,DWORD SizeOfData,DWORD Flags) override PURE;
+    STDMETHOD(GetPrivateData)(THIS_ REFGUID refguid,void* pData,DWORD* pSizeOfData) override PURE;
+    STDMETHOD(FreePrivateData)(THIS_ REFGUID refguid) override PURE;
+    STDMETHOD_(DWORD, SetPriority)(THIS_ DWORD PriorityNew) override PURE;
+    STDMETHOD_(DWORD, GetPriority)(THIS) override PURE;
+    STDMETHOD_(void, PreLoad)(THIS) override PURE;
+    STDMETHOD_(D3DRESOURCETYPE, GetType)(THIS) override PURE;
+    STDMETHOD_(DWORD, SetLOD)(THIS_ DWORD LODNew) override PURE;
+    STDMETHOD_(DWORD, GetLOD)(THIS) override PURE;
+    STDMETHOD_(DWORD, GetLevelCount)(THIS) override PURE;
+    STDMETHOD(SetAutoGenFilterType)(THIS_ D3DTEXTUREFILTERTYPE FilterType) override PURE;
+    STDMETHOD_(D3DTEXTUREFILTERTYPE, GetAutoGenFilterType)(THIS) override PURE;
+    STDMETHOD_(void, GenerateMipSubLevels)(THIS) override PURE;
     STDMETHOD(GetLevelDesc)(THIS_ UINT Level,D3DSURFACE_DESC *pDesc) PURE;
     STDMETHOD(GetSurfaceLevel)(THIS_ UINT Level,IDirect3DSurface9** ppSurfaceLevel) PURE;
     STDMETHOD(LockRect)(THIS_ UINT Level,D3DLOCKED_RECT* pLockedRect,CONST RECT* pRect,DWORD Flags) PURE;
@@ -378,25 +378,25 @@ typedef struct IDirect3DTexture9 *LPDIRECT3DTEXTURE9, *PDIRECT3DTEXTURE9;
 DECLARE_INTERFACE_(IDirect3DVolumeTexture9, IDirect3DBaseTexture9)
 {
     /*** IUnknown methods ***/
-    STDMETHOD(QueryInterface)(THIS_ REFIID riid, void** ppvObj) PURE;
-    STDMETHOD_(ULONG,AddRef)(THIS) PURE;
-    STDMETHOD_(ULONG,Release)(THIS) PURE;
+    STDMETHOD(QueryInterface)(THIS_ REFIID riid, void** ppvObj) override PURE;
+    STDMETHOD_(ULONG,AddRef)(THIS) override PURE;
+    STDMETHOD_(ULONG,Release)(THIS) override PURE;
 
     /*** IDirect3DBaseTexture9 methods ***/
-    STDMETHOD(GetDevice)(THIS_ IDirect3DDevice9** ppDevice) PURE;
-    STDMETHOD(SetPrivateData)(THIS_ REFGUID refguid,CONST void* pData,DWORD SizeOfData,DWORD Flags) PURE;
-    STDMETHOD(GetPrivateData)(THIS_ REFGUID refguid,void* pData,DWORD* pSizeOfData) PURE;
-    STDMETHOD(FreePrivateData)(THIS_ REFGUID refguid) PURE;
-    STDMETHOD_(DWORD, SetPriority)(THIS_ DWORD PriorityNew) PURE;
-    STDMETHOD_(DWORD, GetPriority)(THIS) PURE;
-    STDMETHOD_(void, PreLoad)(THIS) PURE;
-    STDMETHOD_(D3DRESOURCETYPE, GetType)(THIS) PURE;
-    STDMETHOD_(DWORD, SetLOD)(THIS_ DWORD LODNew) PURE;
-    STDMETHOD_(DWORD, GetLOD)(THIS) PURE;
-    STDMETHOD_(DWORD, GetLevelCount)(THIS) PURE;
-    STDMETHOD(SetAutoGenFilterType)(THIS_ D3DTEXTUREFILTERTYPE FilterType) PURE;
-    STDMETHOD_(D3DTEXTUREFILTERTYPE, GetAutoGenFilterType)(THIS) PURE;
-    STDMETHOD_(void, GenerateMipSubLevels)(THIS) PURE;
+    STDMETHOD(GetDevice)(THIS_ IDirect3DDevice9** ppDevice) override PURE;
+    STDMETHOD(SetPrivateData)(THIS_ REFGUID refguid,CONST void* pData,DWORD SizeOfData,DWORD Flags) override PURE;
+    STDMETHOD(GetPrivateData)(THIS_ REFGUID refguid,void* pData,DWORD* pSizeOfData) override PURE;
+    STDMETHOD(FreePrivateData)(THIS_ REFGUID refguid) override PURE;
+    STDMETHOD_(DWORD, SetPriority)(THIS_ DWORD PriorityNew) override PURE;
+    STDMETHOD_(DWORD, GetPriority)(THIS) override PURE;
+    STDMETHOD_(void, PreLoad)(THIS) override PURE;
+    STDMETHOD_(D3DRESOURCETYPE, GetType)(THIS) override PURE;
+    STDMETHOD_(DWORD, SetLOD)(THIS_ DWORD LODNew) override PURE;
+    STDMETHOD_(DWORD, GetLOD)(THIS) override PURE;
+    STDMETHOD_(DWORD, GetLevelCount)(THIS) override PURE;
+    STDMETHOD(SetAutoGenFilterType)(THIS_ D3DTEXTUREFILTERTYPE FilterType) override PURE;
+    STDMETHOD_(D3DTEXTUREFILTERTYPE, GetAutoGenFilterType)(THIS) override PURE;
+    STDMETHOD_(void, GenerateMipSubLevels)(THIS) override PURE;
     STDMETHOD(GetLevelDesc)(THIS_ UINT Level,D3DVOLUME_DESC *pDesc) PURE;
     STDMETHOD(GetVolumeLevel)(THIS_ UINT Level,IDirect3DVolume9** ppVolumeLevel) PURE;
     STDMETHOD(LockBox)(THIS_ UINT Level,D3DLOCKED_BOX* pLockedVolume,CONST D3DBOX* pBox,DWORD Flags) PURE;
@@ -425,25 +425,25 @@ typedef struct IDirect3DVolumeTexture9 *LPDIRECT3DVOLUMETEXTURE9, *PDIRECT3DVOLU
 DECLARE_INTERFACE_(IDirect3DCubeTexture9, IDirect3DBaseTexture9)
 {
     /*** IUnknown methods ***/
-    STDMETHOD(QueryInterface)(THIS_ REFIID riid, void** ppvObj) PURE;
-    STDMETHOD_(ULONG,AddRef)(THIS) PURE;
-    STDMETHOD_(ULONG,Release)(THIS) PURE;
+    STDMETHOD(QueryInterface)(THIS_ REFIID riid, void** ppvObj) override PURE;
+    STDMETHOD_(ULONG,AddRef)(THIS) override PURE;
+    STDMETHOD_(ULONG,Release)(THIS) override PURE;
 
     /*** IDirect3DBaseTexture9 methods ***/
-    STDMETHOD(GetDevice)(THIS_ IDirect3DDevice9** ppDevice) PURE;
-    STDMETHOD(SetPrivateData)(THIS_ REFGUID refguid,CONST void* pData,DWORD SizeOfData,DWORD Flags) PURE;
-    STDMETHOD(GetPrivateData)(THIS_ REFGUID refguid,void* pData,DWORD* pSizeOfData) PURE;
-    STDMETHOD(FreePrivateData)(THIS_ REFGUID refguid) PURE;
-    STDMETHOD_(DWORD, SetPriority)(THIS_ DWORD PriorityNew) PURE;
-    STDMETHOD_(DWORD, GetPriority)(THIS) PURE;
-    STDMETHOD_(void, PreLoad)(THIS) PURE;
-    STDMETHOD_(D3DRESOURCETYPE, GetType)(THIS) PURE;
-    STDMETHOD_(DWORD, SetLOD)(THIS_ DWORD LODNew) PURE;
-    STDMETHOD_(DWORD, GetLOD)(THIS) PURE;
-    STDMETHOD_(DWORD, GetLevelCount)(THIS) PURE;
-    STDMETHOD(SetAutoGenFilterType)(THIS_ D3DTEXTUREFILTERTYPE FilterType) PURE;
-    STDMETHOD_(D3DTEXTUREFILTERTYPE, GetAutoGenFilterType)(THIS) PURE;
-    STDMETHOD_(void, GenerateMipSubLevels)(THIS) PURE;
+    STDMETHOD(GetDevice)(THIS_ IDirect3DDevice9** ppDevice) override PURE;
+    STDMETHOD(SetPrivateData)(THIS_ REFGUID refguid,CONST void* pData,DWORD SizeOfData,DWORD Flags) override PURE;
+    STDMETHOD(GetPrivateData)(THIS_ REFGUID refguid,void* pData,DWORD* pSizeOfData) override PURE;
+    STDMETHOD(FreePrivateData)(THIS_ REFGUID refguid) override PURE;
+    STDMETHOD_(DWORD, SetPriority)(THIS_ DWORD PriorityNew) override PURE;
+    STDMETHOD_(DWORD, GetPriority)(THIS) override PURE;
+    STDMETHOD_(void, PreLoad)(THIS) override PURE;
+    STDMETHOD_(D3DRESOURCETYPE, GetType)(THIS) override PURE;
+    STDMETHOD_(DWORD, SetLOD)(THIS_ DWORD LODNew) override PURE;
+    STDMETHOD_(DWORD, GetLOD)(THIS) override PURE;
+    STDMETHOD_(DWORD, GetLevelCount)(THIS) override PURE;
+    STDMETHOD(SetAutoGenFilterType)(THIS_ D3DTEXTUREFILTERTYPE FilterType) override PURE;
+    STDMETHOD_(D3DTEXTUREFILTERTYPE, GetAutoGenFilterType)(THIS) override PURE;
+    STDMETHOD_(void, GenerateMipSubLevels)(THIS) override PURE;
     STDMETHOD(GetLevelDesc)(THIS_ UINT Level,D3DSURFACE_DESC *pDesc) PURE;
     STDMETHOD(GetCubeMapSurface)(THIS_ D3DCUBEMAP_FACES FaceType,UINT Level,IDirect3DSurface9** ppCubeMapSurface) PURE;
     STDMETHOD(LockRect)(THIS_ D3DCUBEMAP_FACES FaceType,UINT Level,D3DLOCKED_RECT* pLockedRect,CONST RECT* pRect,DWORD Flags) PURE;
@@ -471,19 +471,19 @@ typedef struct IDirect3DCubeTexture9 *LPDIRECT3DCUBETEXTURE9, *PDIRECT3DCUBETEXT
 DECLARE_INTERFACE_(IDirect3DVertexBuffer9, IDirect3DResource9)
 {
     /*** IUnknown methods ***/
-    STDMETHOD(QueryInterface)(THIS_ REFIID riid, void** ppvObj) PURE;
-    STDMETHOD_(ULONG,AddRef)(THIS) PURE;
-    STDMETHOD_(ULONG,Release)(THIS) PURE;
+    STDMETHOD(QueryInterface)(THIS_ REFIID riid, void** ppvObj) override PURE;
+    STDMETHOD_(ULONG,AddRef)(THIS) override PURE;
+    STDMETHOD_(ULONG,Release)(THIS) override PURE;
 
     /*** IDirect3DResource9 methods ***/
-    STDMETHOD(GetDevice)(THIS_ IDirect3DDevice9** ppDevice) PURE;
-    STDMETHOD(SetPrivateData)(THIS_ REFGUID refguid,CONST void* pData,DWORD SizeOfData,DWORD Flags) PURE;
-    STDMETHOD(GetPrivateData)(THIS_ REFGUID refguid,void* pData,DWORD* pSizeOfData) PURE;
-    STDMETHOD(FreePrivateData)(THIS_ REFGUID refguid) PURE;
-    STDMETHOD_(DWORD, SetPriority)(THIS_ DWORD PriorityNew) PURE;
-    STDMETHOD_(DWORD, GetPriority)(THIS) PURE;
-    STDMETHOD_(void, PreLoad)(THIS) PURE;
-    STDMETHOD_(D3DRESOURCETYPE, GetType)(THIS) PURE;
+    STDMETHOD(GetDevice)(THIS_ IDirect3DDevice9** ppDevice) override PURE;
+    STDMETHOD(SetPrivateData)(THIS_ REFGUID refguid,CONST void* pData,DWORD SizeOfData,DWORD Flags) override PURE;
+    STDMETHOD(GetPrivateData)(THIS_ REFGUID refguid,void* pData,DWORD* pSizeOfData) override PURE;
+    STDMETHOD(FreePrivateData)(THIS_ REFGUID refguid) override PURE;
+    STDMETHOD_(DWORD, SetPriority)(THIS_ DWORD PriorityNew) override PURE;
+    STDMETHOD_(DWORD, GetPriority)(THIS) override PURE;
+    STDMETHOD_(void, PreLoad)(THIS) override PURE;
+    STDMETHOD_(D3DRESOURCETYPE, GetType)(THIS) override PURE;
     STDMETHOD(Lock)(THIS_ UINT OffsetToLock,UINT SizeToLock,void** ppbData,DWORD Flags) PURE;
     STDMETHOD(Unlock)(THIS) PURE;
     STDMETHOD(GetDesc)(THIS_ D3DVERTEXBUFFER_DESC *pDesc) PURE;
@@ -505,19 +505,19 @@ typedef struct IDirect3DVertexBuffer9 *LPDIRECT3DVERTEXBUFFER9, *PDIRECT3DVERTEX
 DECLARE_INTERFACE_(IDirect3DIndexBuffer9, IDirect3DResource9)
 {
     /*** IUnknown methods ***/
-    STDMETHOD(QueryInterface)(THIS_ REFIID riid, void** ppvObj) PURE;
-    STDMETHOD_(ULONG,AddRef)(THIS) PURE;
-    STDMETHOD_(ULONG,Release)(THIS) PURE;
+    STDMETHOD(QueryInterface)(THIS_ REFIID riid, void** ppvObj) override PURE;
+    STDMETHOD_(ULONG,AddRef)(THIS) override PURE;
+    STDMETHOD_(ULONG,Release)(THIS) override PURE;
 
     /*** IDirect3DResource9 methods ***/
-    STDMETHOD(GetDevice)(THIS_ IDirect3DDevice9** ppDevice) PURE;
-    STDMETHOD(SetPrivateData)(THIS_ REFGUID refguid,CONST void* pData,DWORD SizeOfData,DWORD Flags) PURE;
-    STDMETHOD(GetPrivateData)(THIS_ REFGUID refguid,void* pData,DWORD* pSizeOfData) PURE;
-    STDMETHOD(FreePrivateData)(THIS_ REFGUID refguid) PURE;
-    STDMETHOD_(DWORD, SetPriority)(THIS_ DWORD PriorityNew) PURE;
-    STDMETHOD_(DWORD, GetPriority)(THIS) PURE;
-    STDMETHOD_(void, PreLoad)(THIS) PURE;
-    STDMETHOD_(D3DRESOURCETYPE, GetType)(THIS) PURE;
+    STDMETHOD(GetDevice)(THIS_ IDirect3DDevice9** ppDevice) override PURE;
+    STDMETHOD(SetPrivateData)(THIS_ REFGUID refguid,CONST void* pData,DWORD SizeOfData,DWORD Flags) override PURE;
+    STDMETHOD(GetPrivateData)(THIS_ REFGUID refguid,void* pData,DWORD* pSizeOfData) override PURE;
+    STDMETHOD(FreePrivateData)(THIS_ REFGUID refguid) override PURE;
+    STDMETHOD_(DWORD, SetPriority)(THIS_ DWORD PriorityNew) override PURE;
+    STDMETHOD_(DWORD, GetPriority)(THIS) override PURE;
+    STDMETHOD_(void, PreLoad)(THIS) override PURE;
+    STDMETHOD_(D3DRESOURCETYPE, GetType)(THIS) override PURE;
     STDMETHOD(Lock)(THIS_ UINT OffsetToLock,UINT SizeToLock,void** ppbData,DWORD Flags) PURE;
     STDMETHOD(Unlock)(THIS) PURE;
     STDMETHOD(GetDesc)(THIS_ D3DINDEXBUFFER_DESC *pDesc) PURE;
@@ -539,19 +539,19 @@ typedef struct IDirect3DIndexBuffer9 *LPDIRECT3DINDEXBUFFER9, *PDIRECT3DINDEXBUF
 DECLARE_INTERFACE_(IDirect3DSurface9, IDirect3DResource9)
 {
     /*** IUnknown methods ***/
-    STDMETHOD(QueryInterface)(THIS_ REFIID riid, void** ppvObj) PURE;
-    STDMETHOD_(ULONG,AddRef)(THIS) PURE;
-    STDMETHOD_(ULONG,Release)(THIS) PURE;
+    STDMETHOD(QueryInterface)(THIS_ REFIID riid, void** ppvObj) override PURE;
+    STDMETHOD_(ULONG,AddRef)(THIS) override PURE;
+    STDMETHOD_(ULONG,Release)(THIS) override PURE;
 
     /*** IDirect3DResource9 methods ***/
-    STDMETHOD(GetDevice)(THIS_ IDirect3DDevice9** ppDevice) PURE;
-    STDMETHOD(SetPrivateData)(THIS_ REFGUID refguid,CONST void* pData,DWORD SizeOfData,DWORD Flags) PURE;
-    STDMETHOD(GetPrivateData)(THIS_ REFGUID refguid,void* pData,DWORD* pSizeOfData) PURE;
-    STDMETHOD(FreePrivateData)(THIS_ REFGUID refguid) PURE;
-    STDMETHOD_(DWORD, SetPriority)(THIS_ DWORD PriorityNew) PURE;
-    STDMETHOD_(DWORD, GetPriority)(THIS) PURE;
-    STDMETHOD_(void, PreLoad)(THIS) PURE;
-    STDMETHOD_(D3DRESOURCETYPE, GetType)(THIS) PURE;
+    STDMETHOD(GetDevice)(THIS_ IDirect3DDevice9** ppDevice) override PURE;
+    STDMETHOD(SetPrivateData)(THIS_ REFGUID refguid,CONST void* pData,DWORD SizeOfData,DWORD Flags) override PURE;
+    STDMETHOD(GetPrivateData)(THIS_ REFGUID refguid,void* pData,DWORD* pSizeOfData) override PURE;
+    STDMETHOD(FreePrivateData)(THIS_ REFGUID refguid) override PURE;
+    STDMETHOD_(DWORD, SetPriority)(THIS_ DWORD PriorityNew) override PURE;
+    STDMETHOD_(DWORD, GetPriority)(THIS) override PURE;
+    STDMETHOD_(void, PreLoad)(THIS) override PURE;
+    STDMETHOD_(D3DRESOURCETYPE, GetType)(THIS) override PURE;
     STDMETHOD(GetContainer)(THIS_ REFIID riid,void** ppContainer) PURE;
     STDMETHOD(GetDesc)(THIS_ D3DSURFACE_DESC *pDesc) PURE;
     STDMETHOD(LockRect)(THIS_ D3DLOCKED_RECT* pLockedRect,CONST RECT* pRect,DWORD Flags) PURE;
@@ -580,9 +580,9 @@ typedef struct IDirect3DSurface9 *LPDIRECT3DSURFACE9, *PDIRECT3DSURFACE9;
 DECLARE_INTERFACE_(IDirect3DVolume9, IUnknown)
 {
     /*** IUnknown methods ***/
-    STDMETHOD(QueryInterface)(THIS_ REFIID riid, void** ppvObj) PURE;
-    STDMETHOD_(ULONG,AddRef)(THIS) PURE;
-    STDMETHOD_(ULONG,Release)(THIS) PURE;
+    STDMETHOD(QueryInterface)(THIS_ REFIID riid, void** ppvObj) override PURE;
+    STDMETHOD_(ULONG,AddRef)(THIS) override PURE;
+    STDMETHOD_(ULONG,Release)(THIS) override PURE;
 
     /*** IDirect3DVolume9 methods ***/
     STDMETHOD(GetDevice)(THIS_ IDirect3DDevice9** ppDevice) PURE;
@@ -612,9 +612,9 @@ typedef struct IDirect3DVolume9 *LPDIRECT3DVOLUME9, *PDIRECT3DVOLUME9;
 DECLARE_INTERFACE_(IDirect3DQuery9, IUnknown)
 {
     /*** IUnknown methods ***/
-    STDMETHOD(QueryInterface)(THIS_ REFIID riid, void** ppvObj) PURE;
-    STDMETHOD_(ULONG,AddRef)(THIS) PURE;
-    STDMETHOD_(ULONG,Release)(THIS) PURE;
+    STDMETHOD(QueryInterface)(THIS_ REFIID riid, void** ppvObj) override PURE;
+    STDMETHOD_(ULONG,AddRef)(THIS) override PURE;
+    STDMETHOD_(ULONG,Release)(THIS) override PURE;
 
     /*** IDirect3DQuery9 methods ***/
     STDMETHOD(GetDevice)(THIS_ IDirect3DDevice9** ppDevice) PURE;

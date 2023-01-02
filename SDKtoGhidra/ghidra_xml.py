@@ -285,7 +285,9 @@ class GhidraToXmlWriter:
             element_spelling = self.get_type_spelling(type_obj.get_array_element_type(), template_args, namespace_list, remove_namespaces)
             return f'{element_spelling}[{element_count}]'
         
-        if type_obj.kind == cindex.TypeKind.UNEXPOSED:
+        if type_obj.kind == cindex.TypeKind.UNEXPOSED or (
+            type_obj.kind == cindex.TypeKind.ELABORATED and type_obj.get_canonical().kind == cindex.TypeKind.UNEXPOSED
+        ):
             # We don't use the namespaces in the name, as Ghidra doesn't support that in the XML
             spelling = split_in_namespaces(type_obj.spelling)[-1] if remove_namespaces else type_obj.spelling
             # We don't to remove namespaces inside < > template parameters, but we do on the rest on the name, so we separate it
