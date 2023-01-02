@@ -32,7 +32,7 @@ namespace UTFWin
 	class IScrollbarDrawable : public UTFWinObject
 	{
 	public:
-		enum
+		enum ImageIndices
 		{
 			kImageBackground = 0,
 			kImageDecrementButton = 1,

@@ -614,6 +614,7 @@ namespace Editors
 		DeclareAddress(HandleMessage);  // 0x591C80 0x591FA0
 	}
 
+#ifndef SDK_TO_GHIDRA
 	/// Returns the Editor instance (there can only be one at a time).
 	inline cEditor* GetEditor()
 	{
@@ -647,4 +648,5 @@ namespace Editors
 	{
 		return mpEditorAnimWorld.get();
 	}
+#endif
 }

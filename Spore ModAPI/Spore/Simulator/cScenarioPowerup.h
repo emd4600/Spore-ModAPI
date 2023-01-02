@@ -26,15 +26,13 @@
 
 namespace Simulator
 {
-	class IGameData;
-	
 	class cScenarioPowerup
 	{
 	public:
 		static const uint32_t TYPE = 0x8367427;
 		
 		/* 00h */	virtual ~cScenarioPowerup();
-		/* 04h */	virtual IGameData* ToGameData() = 0;
+		/* 04h */	virtual cGameData* ToGameData() = 0;
 		/* 08h */	virtual cSpatialObject* ToSpatialObject() = 0;
 
 		/// Called when an object (creatures, and maybe other kinds of objects too?) gets inside the range of activation

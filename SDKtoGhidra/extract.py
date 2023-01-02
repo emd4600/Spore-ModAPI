@@ -175,7 +175,7 @@ def extract_includes(input_file, output_file):
     The #include lines are returned in a list.
     """
     includes = []
-    output_file.write('#include "address_include.h"')
+    output_file.write('#include "address_include.h"\n')
     for line in input_file.readlines():
         if line.startswith('#include'):
             includes.append(line)
@@ -205,14 +205,20 @@ if __name__ == '__main__22':
 if __name__ == '__main__':
     #sdk_path = '..\\'
     include_path = r'E:\Eric\Spore ModAPI SDK\Spore ModAPI'
-    path = os.path.join(include_path, r'SourceCode\DLL\AddressesApp.cpp')
+    #path = os.path.join(include_path, r'SourceCode\DLL\AddressesApp.cpp')
     temp_path = 'temp.cpp'
+    folder_path = os.path.join(include_path, r'SourceCode\DLL')
+    addresses_files = [name for name in os.listdir(folder_path) if name.startswith('Addresses') and name.endswith('.cpp')]
+    includes = []
     
+    print('Extracting includes...')
     # First we want to extract the addresses, then the function signatures
     # For the addresses, it's simpler to ignore the includes
-    with open(path, 'r') as input_file, open(temp_path, 'w') as output_file:
-        includes = extract_includes(input_file, output_file)
+    for file_name in addresses_files:
+        with open(os.path.join(folder_path, file_name), 'r') as input_file, open(temp_path, 'w') as output_file:
+            includes.extend(extract_includes(input_file, output_file))
 
+    print('Parsing addrseses file...')
     index = cindex.Index.create()
     tu = index.parse(temp_path, args=[
         '-DMODAPI_DLL_EXPORT',
@@ -223,17 +229,27 @@ if __name__ == '__main__':
     for diag in tu.diagnostics:
         print(diag)
         
+    print('Extracting addresses...')
     addresses = AddressesCollection()
-    addresses.find_addresses(tu.cursor, 0)
+    # addresses.find_addresses(tu.cursor, 0)
     
     for i in addresses.addresses.items():
         print(i)
+        
+    print('Parsing SDK files...')
+    includes.clear()
+    for root, dirs, files in os.walk(os.path.join(include_path, 'Spore')):
+        for file in files:
+            if file.endswith('.h'):
+                complete_path = os.path.join(os.path.relpath(root, include_path), file)
+                includes.append(f'#include <{complete_path}>\n')
         
     #includes.clear()
     #includes.append('#include "test_file.h"\n')
     # Now create a file only with the includes, then process its structures
     includes.insert(0, '#include <Spore\CppRevEngBase.h>\n')
     includes.insert(0, '#include "eastl_include.h"\n')
+    includes.insert(0, '#include <wintypes.h>\n')
     with open(temp_path, 'w') as output_file:
         output_file.writelines(includes)
         
@@ -251,6 +267,7 @@ if __name__ == '__main__':
     for diag in tu.diagnostics:
         print(diag)
     
+    print('Extracting SDK data...')
     xml_writer = GhidraToXmlWriter()
     function_processor = FunctionProcessor(addresses.addresses, xml_writer)
     function_processor.exportable_paths.append(r'E:\Eric\Spore ModAPI SDK')

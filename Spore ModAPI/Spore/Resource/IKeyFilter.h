@@ -70,7 +70,9 @@ namespace Resource
 		DeclareAddress(IsValid);
 	}
 
+#ifndef SDK_TO_GHIDRA
 	inline auto_METHOD(StandardFileFilter, bool, IsValid, Args(const ResourceKey& name), Args(name));
+#endif
 
 	inline StandardFileFilter::StandardFileFilter(
 		uint32_t nInstanceID,

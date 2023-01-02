@@ -21,8 +21,6 @@
 
 #include "MathUtils.h"
 
-using namespace Math;
-
 ///
 /// A class that represents a 3D transformation; it can store the same information as a 4x4 matrix, but it's easier to use.
 /// This class stores the location, scale and rotation (as a 3x3 matrix) separately, making it a lot easier to use than a matrix.
@@ -41,21 +39,21 @@ public:
 		kTransformFlagOffset = 4,
 	};
 
-	const Vector3& GetOffset() const;
-	Transform& SetOffset(const Vector3& value);
+	const Math::Vector3& GetOffset() const;
+	Transform& SetOffset(const Math::Vector3& value);
 	Transform& SetOffset(float x, float y, float z);
 
 	float GetScale() const;
 	Transform& SetScale(float value);
 
-	const Matrix3& GetRotation() const;
-	Transform& SetRotation(const Matrix3& value);
-	Transform& SetRotation(const Vector3& euler);
-	Transform& SetRotation(const Quaternion& value);
+	const Math::Matrix3& GetRotation() const;
+	Transform& SetRotation(const Math::Matrix3& value);
+	Transform& SetRotation(const Math::Vector3& euler);
+	Transform& SetRotation(const Math::Quaternion& value);
 
 	/// Returns the 4x4 matrix that represents this transform. This matrix
 	/// can be used to apply the transform to vectors, by just multiplying.
-	Matrix4 ToMatrix4() const;
+	Math::Matrix4 ToMatrix4() const;
 
 	/// Applies another transform into this transform.
 	/// @param other
@@ -68,9 +66,9 @@ public:
 protected:
 	/* 00h */	int16_t	mnFlags;
 	/* 02h */	int16_t	mnTransformCount;  // ?
-	/* 04h */	Vector3 mOffset;
+	/* 04h */	Math::Vector3 mOffset;
 	/* 10h */	float	mfScale;
-	/* 14h */	Matrix3 mRotation;
+	/* 14h */	Math::Matrix3 mRotation;
 };
 ASSERT_SIZE(Transform, 0x38);
 
@@ -80,11 +78,11 @@ namespace Addresses(Transform)
 	DeclareAddress(assign);  // This name is wrong, it's actually multiply operation
 }
 
-inline const Vector3& Transform::GetOffset() const
+inline const Math::Vector3& Transform::GetOffset() const
 {
 	return mOffset;
 }
-inline Transform& Transform::SetOffset(const Vector3& value)
+inline Transform& Transform::SetOffset(const Math::Vector3& value)
 {
 	mOffset = value;
 	mnFlags |= kTransformFlagOffset;
@@ -111,11 +109,11 @@ inline Transform& Transform::SetScale(float value)
 	return *this;
 }
 
-inline const Matrix3& Transform::GetRotation() const
+inline const Math::Matrix3& Transform::GetRotation() const
 {
 	return mRotation;
 }
-inline Transform& Transform::SetRotation(const Matrix3& value)
+inline Transform& Transform::SetRotation(const Math::Matrix3& value)
 {
 	mRotation = value;
 	mnFlags |= kTransformFlagRotation;
@@ -123,7 +121,7 @@ inline Transform& Transform::SetRotation(const Matrix3& value)
 	return *this;
 }
 
-inline Transform& Transform::SetRotation(const Vector3& euler)
+inline Transform& Transform::SetRotation(const Math::Vector3& euler)
 {
 	mRotation = Math::Matrix3::FromEuler(euler);
 	mnFlags |= kTransformFlagRotation;
@@ -131,7 +129,7 @@ inline Transform& Transform::SetRotation(const Vector3& euler)
 	return *this;
 }
 
-inline Transform& Transform::SetRotation(const Quaternion& value)
+inline Transform& Transform::SetRotation(const Math::Quaternion& value)
 {
 	mRotation = value.ToMatrix();
 	mnFlags |= kTransformFlagRotation;
@@ -139,7 +137,9 @@ inline Transform& Transform::SetRotation(const Quaternion& value)
 	return *this;
 }
 
+#ifndef SDK_TO_GHIDRA
 inline Transform& Transform::Multiply(const Transform& other)
 {
 	return CALL(GetAddress(Transform, assign), Transform&, Args(Transform*, const Transform&), Args(this, other));
 }
+#endif

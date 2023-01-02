@@ -6,7 +6,7 @@ namespace UTFWin
 	/// and whether they are loaded depend on the current context of the game.
 	namespace BasicCursorIDs
 	{
-		enum
+		enum Cursors
 		{
 			/// STD_None
 			StdNone = 0x1001,

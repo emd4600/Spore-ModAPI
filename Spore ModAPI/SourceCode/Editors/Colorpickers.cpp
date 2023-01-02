@@ -168,6 +168,6 @@ namespace Palettes
 		return rect;
 	}
 
-	auto_METHOD_VOID(ColorPickerUI, SetColor, Args(const ColorRGB& color), Args(color));
+	auto_METHOD_VOID(ColorPickerUI, SetColor, Args(const Math::ColorRGB& color), Args(color));
 }
 #endif

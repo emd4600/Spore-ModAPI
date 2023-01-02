@@ -49,7 +49,7 @@ namespace UTFWin
 	class IImageDrawable : public UTFWinObject
 	{
 	public:
-		enum
+		enum Flags
 		{
 			/// Preserves the original width of the image
 			kFlagFixedWidth = 1,

@@ -28,13 +28,13 @@ namespace Graphics
 		/* 44h */	eastl::vector<cMaterialInfoPtr> mMaterialInfos;
 		/* 58h */	eastl::vector_map<int, cMaterialInfoPtr> mRegionMaterialInfos;
 		/* 70h */	Transform mModelToWorldTransform;
-		/* A8h */	BoundingBox mBoundingBox;
+		/* A8h */	Math::BoundingBox mBoundingBox;
 		/* C0h */	float mBoundingRadius;
 		/* C4h */	RenderWareFilePtr mpRenderWare;
 		/* C8h */	short field_C8;
 		/* CCh */	ObjectPtr field_CC;  // related with TriangleKDTreeProcedural
 		/* D0h */	int** field_D0;
-		/* D4h */	BoundingBox field_D4;  // possibly? uses min and max float
+		/* D4h */	Math::BoundingBox field_D4;  // possibly? uses min and max float
 		/* ECh */	ObjectPtr field_EC;  //TODO cIDynamicDraw
 		/* F0h */	cModelInstanceAnimationsPtr mpAnimations;
 		/* F4h */	int field_F4;  // not initialized

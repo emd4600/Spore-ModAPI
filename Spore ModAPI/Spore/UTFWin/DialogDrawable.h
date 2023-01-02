@@ -45,7 +45,7 @@ namespace UTFWin
 	class IDialogDrawable : public UTFWinObject
 	{
 	public:
-		enum
+		enum Indices
 		{
 			kImageBackground = 0,
 			kImageTitleBar = 1,

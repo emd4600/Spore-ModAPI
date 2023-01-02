@@ -109,6 +109,7 @@ namespace RenderWare
 		DeclareAddress(SetRaster);
 	}
 
+#ifndef SDK_TO_GHIDRA
 	inline auto_METHOD_VOID_(CompiledState, Load);
 
 	inline auto_METHOD(CompiledState, Raster*, GetRaster, Args(size_t slotIndex), Args(slotIndex));
@@ -116,4 +117,5 @@ namespace RenderWare
 
 
 	inline auto_METHOD_VOID(TextureSlot, SetTexture, Args(CompiledState* compiledState, int slotIndex, Raster* raster), Args(compiledState, slotIndex, raster));
+#endif
 }

@@ -108,6 +108,7 @@ namespace Editors
 		DeclareAddress(Dispose);  // 0x4AD1F0, 0x4AD850
 	}
 
+#ifndef SDK_TO_GHIDRA
 	inline ColorRGB EditorModel::GetColor(int index) const {
 		return mColors[index];
 	}
@@ -118,5 +119,6 @@ namespace Editors
 	inline EditorRigblock* EditorModel::GetRigblock(int index) {
 		return mRigblocks[index].get();
 	}
+#endif
 }
 

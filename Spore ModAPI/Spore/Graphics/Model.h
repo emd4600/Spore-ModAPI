@@ -56,7 +56,7 @@ namespace Graphics
 	//  sub_73FA40 -> create Matrix4 from transform
 	//  sub_740AC0 -> possible draw function?
 
-	enum
+	enum ModelFlags
 	{
 		kModelFlagUseColor = 0x2,  // actually 4?
 
@@ -188,11 +188,11 @@ namespace Graphics
 		return mpPropList.get();
 	}
 
-	inline ColorRGBA Model::GetColor() const {
+	inline Math::ColorRGBA Model::GetColor() const {
 		return mColor;
 	}
 
-	inline void Model::SetColor(const ColorRGBA& color) {
+	inline void Model::SetColor(const Math::ColorRGBA& color) {
 		mColor = color;
 	}
 

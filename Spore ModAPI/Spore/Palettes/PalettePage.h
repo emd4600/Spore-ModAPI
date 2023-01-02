@@ -148,9 +148,11 @@ namespace Palettes
 		DeclareAddress(ReadItemsModule);
 	}
 
+#ifndef SDK_TO_GHIDRA
 	inline PaletteItem* PalettePage::GetItemAt(size_t nIndex)
 	{
 		return mItems[nIndex].get();
 	}
+#endif
 }
 

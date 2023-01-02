@@ -9,6 +9,7 @@
 #include <Spore\MathUtils.h>
 #include <EASTL\vector.h>
 
+#ifndef SDK_TO_GHIDRA
 #define GeneratedMeshPtr(T) eastl::intrusive_ptr<Graphics::GeneratedMesh<T>>
 
 namespace Graphics
@@ -451,3 +452,4 @@ namespace Graphics
 		mVertexBuffer.ReleaseDirectX();
 	}
 }
+#endif

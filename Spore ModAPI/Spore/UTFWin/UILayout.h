@@ -92,7 +92,7 @@ namespace UTFWin
 
 
 
-		enum
+		enum Defaults
 		{
 			kDefaultGroup = 0x40464100,
 			kDefaultType = 0x510A95B,

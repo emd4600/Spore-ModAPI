@@ -19,37 +19,37 @@
 
 #pragma once
 
-#include "Window.h"
-#include "SliderDrawable.h"
-
-#error "Not implemented yet; use ISlider"
-
-namespace UTFWin
-{
-
-	//class WinSlider : public Window, public ISlider
-	//{
-
-	//private:
-	//	/* 210h */	int field_210;
-	//	/* 214h */	int value;
-	//	/* 218h */	int minValue;
-	//	/* 21Ch */	int maxValue;
-	//	/* 220h */	Orientation orientation;
-	//	
-	//	char _padding_224[0x34];
-
-	//public:
-
-	//	static inline WinSlider* New() {
-	//		// __stdcall because it's cleanup by callee
-	//		return (WinSlider*)((IWindow*(__stdcall*)(void*, void*)) SelectAddress(0x985D90, 0x985AC0))(nullptr, nullptr);
-	//	}
-
-	//	virtual METHOD_(SelectAddress(0x98F5C0, 0x95F8F0), ILayoutElement, int, AddRef);
-	//	virtual METHOD_(SelectAddress(0x96B700, 0x95F900), ILayoutElement, int, Release);
-	//	virtual METHOD(SelectAddress(0x983DB0, 0x983A70), ILayoutElement, void*, Cast, Args(uint32_t typeID), Args(typeID));
-	//};
-
-	//static_assert(sizeof(WinSlider) == 0x258, "sizeof(WinSlider) != 258h");
-}
+//#include "Window.h"
+//#include "SliderDrawable.h"
+//
+//#error "Not implemented yet; use ISlider"
+//
+//namespace UTFWin
+//{
+//
+//	//class WinSlider : public Window, public ISlider
+//	//{
+//
+//	//private:
+//	//	/* 210h */	int field_210;
+//	//	/* 214h */	int value;
+//	//	/* 218h */	int minValue;
+//	//	/* 21Ch */	int maxValue;
+//	//	/* 220h */	Orientation orientation;
+//	//	
+//	//	char _padding_224[0x34];
+//
+//	//public:
+//
+//	//	static inline WinSlider* New() {
+//	//		// __stdcall because it's cleanup by callee
+//	//		return (WinSlider*)((IWindow*(__stdcall*)(void*, void*)) SelectAddress(0x985D90, 0x985AC0))(nullptr, nullptr);
+//	//	}
+//
+//	//	virtual METHOD_(SelectAddress(0x98F5C0, 0x95F8F0), ILayoutElement, int, AddRef);
+//	//	virtual METHOD_(SelectAddress(0x96B700, 0x95F900), ILayoutElement, int, Release);
+//	//	virtual METHOD(SelectAddress(0x983DB0, 0x983A70), ILayoutElement, void*, Cast, Args(uint32_t typeID), Args(typeID));
+//	//};
+//
+//	//static_assert(sizeof(WinSlider) == 0x258, "sizeof(WinSlider) != 258h");
+//}

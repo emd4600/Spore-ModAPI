@@ -35,7 +35,7 @@ namespace Simulator
 		/// Pauses game, not effects nor audio
 		Tutorial = 0x64BEB65,
 		/// Pauses game, not effects nor audio
-		Editor = 0x4BF38A6,
+		Editor_ = 0x4BF38A6,
 		/// Pauses game and effects, not audio
 		CommScreen = 0x4D02E35,
 		/// Pauses game, not effects nor audio

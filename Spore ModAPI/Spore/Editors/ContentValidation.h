@@ -18,10 +18,12 @@ namespace Editors
 		DeclareAddress(ValidationEditableTests_ptr);
 	}
 
+#ifndef SDK_TO_GHIDRA
 	inline eastl::string16& ContentValidation::IllegalCharacters() {
 		return *(eastl::string16*)GetAddress(ContentValidation, IllegalCharacters_ptr);
 	}
 	inline ContentValidation& ContentValidation::ValidationEditableTests() {
 		return *(ContentValidation*)GetAddress(ContentValidation, ValidationEditableTests_ptr);
 	}
+#endif
 }

@@ -29,8 +29,8 @@ namespace UTFWin
 		FadeEffect() {}
 		virtual ~FadeEffect() {}
 
-		virtual int AddRef();
-		virtual int Release();
+		virtual int AddRef() override;
+		virtual int Release() override;
 		virtual void* Cast(uint32_t typeID) const override;
 
 		virtual void SetSerializer(Serializer& dst) override;

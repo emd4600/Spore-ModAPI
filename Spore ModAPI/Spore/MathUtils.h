@@ -511,7 +511,11 @@ namespace Math
 		/// @param other The other bounding box to intersect with.
 		/// @param[out] dst [Optional] Where the intersection will be written. Points inside this bbox are contained in both bbox.
 		/// @return `true` if the bounding boxes intersect, `false` otherwise.
+#ifdef SDK_TO_GHIDRA
+		bool Intersect(const BoundingBox& other, BoundingBox& dst/* = BoundingBox()*/) const;  // commented the default parameter as it doesn't work in GCC
+#else
 		bool Intersect(const BoundingBox& other, BoundingBox& dst = BoundingBox()) const;
+#endif
 	};
 
 	struct PlaneEquation {
@@ -599,6 +603,7 @@ namespace Math
 		int32_t seed;
 	};
 
+#ifndef SDK_TO_GHIDRA
 	/// Returns the generic random number generator.
 	inline RandomNumberGenerator& GetRNG() {
 		return *(RandomNumberGenerator*)(GetAddress(Math, RandomNumberGenerator_ptr));
@@ -624,6 +629,7 @@ namespace Math
 	inline float randf(float minValue, float maxValue) {
 		return GetRNG().RandomFloat() * (maxValue - minValue) + minValue;
 	}
+#endif
 
 	namespace Addresses(RandomNumberGenerator) {
 		DeclareAddress(RandomInt);
@@ -664,10 +670,12 @@ namespace Math
 	inline Color ColorRGBA::ToIntColor()
 	{
 		Math::Color dstColor;
+#ifndef SDK_TO_GHIDRA
 		dstColor.r = (uint8_t)roundf(r * 255.0f);
 		dstColor.g = (uint8_t)roundf(g * 255.0f);
 		dstColor.b = (uint8_t)roundf(b * 255.0f);
 		dstColor.a = (uint8_t)roundf(a * 255.0f);
+#endif
 
 		return dstColor;
 	}
@@ -675,10 +683,12 @@ namespace Math
 	inline Color ColorRGB::ToIntColor()
 	{
 		Math::Color dstColor;
+#ifndef SDK_TO_GHIDRA
 		dstColor.r = (uint8_t)roundf(r * 255.0f);
 		dstColor.g = (uint8_t)roundf(g * 255.0f);
 		dstColor.b = (uint8_t)roundf(b * 255.0f);
 		dstColor.a = 255;
+#endif
 
 		return dstColor;
 	}
@@ -945,9 +955,11 @@ namespace Math
 		return b * a;
 	}
 
+#ifndef SDK_TO_GHIDRA
 	inline float Vector2::Length() const {
 		return sqrtf(x * x + y * y);
 	}
+#endif
 
 	inline Vector2 Vector2::Normalized() const {
 		return *this / Length();
@@ -1029,10 +1041,11 @@ namespace Math
 		return b * a;
 	}
 
-
+#ifndef SDK_TO_GHIDRA
 	inline float Vector3::Length() const {
 		return sqrtf(x * x + y * y + z * z);
 	}
+#endif
 
 	inline float Vector3::SquaredLength() const {
 		return x * x + y * y + z * z;
@@ -1133,10 +1146,11 @@ namespace Math
 		return b * a;
 	}
 
-
+#ifndef SDK_TO_GHIDRA
 	inline float Vector4::Length() const {
 		return sqrtf(x * x + y * y + z * z + w * w);
 	}
+#endif
 
 	inline Vector4 Vector4::Normalized() const {
 		return *this / Length();

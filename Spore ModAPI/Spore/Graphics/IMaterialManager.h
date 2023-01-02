@@ -61,6 +61,8 @@ namespace Graphics
 	};
 	ASSERT_SIZE(Material, 0x48);
 
+	typedef bool(*TextureFilterCallback_t)(Texture*);
+
 	///
 	/// This manager stores the information of materials, which are used to control the visual appearance of game objects.
 	/// Materials are mapped in this manager using an ID, and they link to one or multiple CompiledState and Texture objects.
@@ -69,15 +71,6 @@ namespace Graphics
 	class IMaterialManager
 	{
 	public:
-		enum
-		{
-			kCompiledStatesLinkGroupID = 0x40212000,
-			kCompiledStatesGroupID = 0x40212001,
-			kShaderFragmentsGroupID = 0x40212002,
-			kShadersGroupID = 0x40212004,
-			kSporeMaterialTypeID = 0x0469A3F7
-		};
-
 		/* 00h */	virtual void AddRef() = 0;
 		/* 04h */	virtual void Release() = 0;
 		/* 08h */	virtual ~IMaterialManager() = 0;
@@ -134,7 +127,7 @@ namespace Graphics
 		/// @param[out] dst A vector where the textures will be output.
 		/// @param[in] filterFunction [Optional] A filter function that takes a Texture* as a parameter and returns a bool, whether the texture must be added or not.
 		///
-		/* 3Ch */	virtual void GetTexturesFromMaterial(const Material* pMaterial, eastl::vector<TexturePtr>& dst, bool(*filterFunction)(Texture*) = nullptr) const = 0;
+		/* 3Ch */	virtual void GetTexturesFromMaterial(const Material* pMaterial, eastl::vector<TexturePtr>& dst, TextureFilterCallback_t = nullptr) const = 0;
 
 		// returns a material ID?
 		/* 40h */	virtual uint32_t GetIDFromCompiledState(RenderWare::CompiledState*, RenderWare::RenderWareFile*) = 0;

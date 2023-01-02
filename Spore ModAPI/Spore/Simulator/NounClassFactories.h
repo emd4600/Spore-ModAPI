@@ -14,9 +14,11 @@ namespace Simulator
 		: public App::ISPClassFactory
 	{
 	public:
+#ifndef SDK_TO_GHIDRA
 		inline NounCreateFunction& operator[](uint32_t key) {
 			return classMap[key];
 		}
+#endif
 
 	protected:
 		eastl::hash_map<uint32_t, NounCreateFunction> classMap;

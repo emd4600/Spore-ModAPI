@@ -132,8 +132,10 @@ namespace Palettes
 		DeclareAddress(HasCategory);
 	}
 
+#ifndef SDK_TO_GHIDRA
 	inline PalettePage* PaletteCategory::GetPageAt(size_t nIndex)
 	{
 		return mPages[nIndex].get();
 	}
+#endif
 }

@@ -56,8 +56,8 @@ namespace UTFWin
 		ModulateEffect();
 		virtual ~ModulateEffect() {}
 
-		virtual int AddRef();
-		virtual int Release();
+		virtual int AddRef() override;
+		virtual int Release() override;
 		virtual void* Cast(uint32_t typeID) const override;
 
 		/* 14h */	virtual int GetEventFlags() const override;

@@ -23,8 +23,14 @@
 
 namespace Simulator
 {
-	//PLACEHOLDER
-	class cGameBundle;
+#ifdef SDK_TO_GHIDRA
+	class cGameBundle
+	{
+		int todo;
+	};
+#else
+	class cGameBundle;  //TODO
+#endif
 
 	class cGameBundleContainer
 	{

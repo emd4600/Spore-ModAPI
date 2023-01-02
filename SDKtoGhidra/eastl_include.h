@@ -39,14 +39,6 @@ namespace eastl
         int _garbage;
     };
 
-    /*template <typename T1, typename T2=int>
-    //template <typename T1>
-	struct vector
-	{
-		T1 field_1;
-		//_T2 field_2;
-	};*/
-
     template <typename T1, typename T2>
     struct pair
     {
@@ -96,6 +88,17 @@ namespace eastl
         char16_t* mpEnd;
         char16_t* mpCapacity;
         int mAllocator;
+    };
+
+    template <typename T, int count>
+    struct fixed_string
+    {
+        T* mpBegin;
+        T* mpEnd;
+        T* mpCapacity;
+        int mAllocator1;
+        int mAllocator2;
+        T mBuffer[count];
     };
 
     template <typename T, typename _Allocator=allocator>
@@ -234,7 +237,7 @@ namespace eastl
     {
         typedef intrusive_list_iterator<T> iterator;
 
-        T mAnchor;
+        intrusive_list_node mAnchor;
     };
 
     template <typename T>
@@ -248,7 +251,7 @@ namespace eastl
 
         T& operator *() const;
 		T* operator ->() const;
-    };
+    };    
 
 // Python eval() can't do the ? :, so we will just assume the 0 case never happens
 //#define BITSET_WORD_COUNT(N) (N == 0 ? 1 : ((N - 1) / (8 * 4) + 1))
@@ -259,13 +262,12 @@ namespace eastl
     {
         int words[BITSET_WORD_COUNT(count)];
     };
-}
 
-namespace App
-{
-    struct Test
+    namespace Internal
     {
-        eastl::vector<int> test;
-    };
+        struct mutex
+        {
+            uint32_t mMutexBuffer[6]; // CRITICAL_SECTION is 24 bytes on Win32.
+        };
+    }
 }
-//static_assert(sizeof(App::Test) == )

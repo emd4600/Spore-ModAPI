@@ -29,7 +29,12 @@
 
 namespace Simulator
 {
-	class cSimPlanetLowLOD;  //TODO PLACEHOLDER
+#ifdef SDK_TO_GHIDRA
+	class cSimPlanetLowLOD { int todo; };
+#else
+	class cSimPlanetLowLOD;  //TODO
+#endif
+
 	class cEmpire;
 	
 

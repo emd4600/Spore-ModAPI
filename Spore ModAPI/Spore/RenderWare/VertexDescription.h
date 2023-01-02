@@ -73,7 +73,7 @@ namespace RenderWare
 		RWDECL_VERTEX2_BLENDWEIGHTS2 = 0x80000000,  // invented
 	};
 
-	constexpr int RWDECL_VERTEX2[] = {
+	constexpr unsigned int RWDECL_VERTEX2[] = {
 		RWDECL_VERTEX2_POSITION,
 		0,
 		RWDECL_VERTEX2_NORMAL,

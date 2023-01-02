@@ -81,6 +81,14 @@ namespace UTFWin
 		CheckedActive = 7
 	};
 
+	enum class Sides
+	{
+		Left = 0,
+		Top = 1,
+		Right = 2,
+		Bottom = 3
+	};
+
 	///
 	/// This class represents an element that is part of a user interfaces. All ILayoutElement classes are able to implement a
 	/// Serializer, allowing it to be saved and loaded from SPUI files.
@@ -96,15 +104,6 @@ namespace UTFWin
 		virtual uint32_t GetProxyID() const = 0;
 
 		static const uint32_t TYPE = 0xEEC58382;
-
-		enum
-		{
-			kLeft = 0,
-			kTop = 1,
-			kRight = 2,
-			kBottom = 3
-		};
-
 	};
 
 	///

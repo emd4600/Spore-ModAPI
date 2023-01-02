@@ -65,7 +65,7 @@ namespace Sporepedia
 
 		namespace Parameters
 		{
-			enum : uint32_t
+			enum Parameters : uint32_t
 			{
 				type = 0x2DD90AF,
 				subtype = 0x2DC9D1E,

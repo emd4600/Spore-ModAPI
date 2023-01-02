@@ -272,13 +272,14 @@ namespace IO
 	/// If false, you can use IStream::GetState to determine the error, as this function
 	/// generates no errors beyond those related to IStream errors.
 	///
-	bool WriteLine(IStream* pOS, const char8_t* pLineSource, size_type nLineLength, LineEnd lineEndToUse = LineEnd::Auto);
+	bool WriteLine(IStream* pOS, const char* pLineSource, size_type nLineLength, LineEnd lineEndToUse = LineEnd::Auto);
 
 
 	///////////////////////////////////
 	//// INTERNAL IMPLEMENENTATION ////
 	///////////////////////////////////
 
+#ifndef SDK_TO_GHIDRA
 	inline bool IO::WriteBool8(IStream* pOS, const bool* value)
 	{
 		int8_t src = value ? 1 : 0;
@@ -291,7 +292,7 @@ namespace IO
 		pOS->Write(str.c_str(), str.length());
 		pOS->Write(&terminator, 1);
 	}
-
+#endif
 }
 
 namespace Addresses(IO)

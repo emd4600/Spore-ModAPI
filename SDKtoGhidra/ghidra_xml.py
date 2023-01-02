@@ -165,7 +165,7 @@ class GhidraToXmlWriter:
             return self.get_type_ghidra_namespace(array_type, template_args, namespace_list)
         
         if template_args is not None and type_obj.spelling in template_args:
-            type_obj = template_args[type_obj.spelling]
+            return self.get_type_ghidra_namespace(template_args[type_obj.spelling], template_args, namespace_list)
         
         # if type_obj.spelling in ['int8_t', 'uint8_t', 'int16_t', 'uint16_t', 'int32_t', 'uint32_t', 'int64_t', 'uint64_t']:
         #     # return '/windows_vs12_32/stdint.h'
@@ -173,7 +173,7 @@ class GhidraToXmlWriter:
         
         #print(f'{type_obj.spelling}   {type_obj.get_canonical().spelling}    {type_obj.kind}')
         
-        base_name = self.get_type_spelling(type_obj, template_args, False)  # replace any inner template parameters
+        base_name = self.get_type_spelling(type_obj, template_args, namespace_list, False)  # replace any inner template parameters
 
         namespace, fullname = try_namespace_list(self.structure_namespaces, base_name, namespace_list)
         if namespace is not None:
@@ -206,8 +206,12 @@ class GhidraToXmlWriter:
                 template_info.default_values[parameter_name] = child.type
             
     def get_type_size(self, type_obj, template_args, namespace_list):
-        if type_obj.kind in [cindex.TypeKind.TYPEDEF, cindex.TypeKind.ELABORATED]:
+        if type_obj.kind in [cindex.TypeKind.TYPEDEF, cindex.TypeKind.ELABORATED] and type_obj.get_canonical().kind != cindex.TypeKind.UNEXPOSED:
             return self.get_type_size(type_obj.get_canonical(), template_args, namespace_list)
+        
+        elif type_obj.kind == cindex.TypeKind.CONSTANTARRAY:
+            element_size = self.get_type_size(type_obj.get_array_element_type(), template_args, namespace_list)
+            return element_size * type_obj.get_array_size()
         
         elif type_obj.kind == cindex.TypeKind.DEPENDENTSIZEDARRAY:
             element_size = self.get_type_size(type_obj.get_array_element_type(), template_args, namespace_list)
@@ -219,7 +223,6 @@ class GhidraToXmlWriter:
         elif type_obj.spelling == 'void':
             return 0
         
-        # cindex.TypeKind.CONSTANTARRAY is in this case, it returns the corret size
         elif type_obj.get_size() > 0:
             return type_obj.get_size()
         
@@ -228,14 +231,14 @@ class GhidraToXmlWriter:
             if replaced_type is not None and replaced_type.get_size() > 0:
                 return replaced_type.get_size()
             
-            spelling = self.get_type_spelling(type_obj, template_args, False)
+            spelling = self.get_type_spelling(type_obj, template_args, namespace_list, False)
             struct, _ = try_namespace_list(self.structures, spelling, namespace_list)
             if struct is None:
                 raise SyntaxError(f'Trying to get size of undefined type "{spelling}"')
             return struct.size
         
     def get_type_alignment(self, type_obj, template_args, namespace_list):
-        if type_obj.kind in [cindex.TypeKind.TYPEDEF, cindex.TypeKind.ELABORATED]:
+        if type_obj.kind in [cindex.TypeKind.TYPEDEF, cindex.TypeKind.ELABORATED] and type_obj.get_canonical().kind != cindex.TypeKind.UNEXPOSED:
             return self.get_type_alignment(type_obj.get_canonical(), template_args, namespace_list)
         elif type_obj.kind in [cindex.TypeKind.CONSTANTARRAY, cindex.TypeKind.DEPENDENTSIZEDARRAY]:
             return self.get_type_alignment(type_obj.get_array_element_type(), template_args, namespace_list)
@@ -248,32 +251,38 @@ class GhidraToXmlWriter:
             if replaced_type is not None:
                 return replaced_type.get_align()
             else:
-                spelling = self.get_type_spelling(type_obj, template_args, False)
+                spelling = self.get_type_spelling(type_obj, template_args, namespace_list, False)
                 struct, _ = try_namespace_list(self.structures, spelling, namespace_list)
                 if struct is None:
                     raise SyntaxError(f'Trying to get alignment of undefined type "{spelling}"')
                 return struct.alignment   
 
-    def get_type_spelling(self, type_obj, template_args, remove_namespaces = True):
+    def get_type_spelling(self, type_obj, template_args, namespace_list, remove_namespaces = True):
+        # When referencing a typedef with its full name, such as 'Graphics::ModelPredicate_t', it is considered ELABORATED
+        # and the canonical is already the POINTER. So lets try to see if this is a typedef first
+        typedef_namespace, typedef_fullname = try_namespace_list(self.typedef_namespaces, type_obj.spelling, namespace_list)
+        if typedef_namespace is not None:
+            return split_in_namespaces(type_obj.spelling)[-1] if remove_namespaces else typedef_fullname
+        
         # We cannot always use .get_canonical(), as in types like 'pair<Key, T>' it removes those parameter names
         #if type_obj.kind in [cindex.TypeKind.TYPEDEF, cindex.TypeKind.ELABORATED]:
-        if type_obj.kind == cindex.TypeKind.ELABORATED:
+        if type_obj.kind == cindex.TypeKind.ELABORATED and type_obj.get_canonical().kind != cindex.TypeKind.UNEXPOSED:
             # This ensures that the types within template parameters are canonically named (i.e with namespaces, no typedefs)
-            return self.get_type_spelling(type_obj.get_canonical(), template_args, remove_namespaces)
+            return self.get_type_spelling(type_obj.get_canonical(), template_args, namespace_list, remove_namespaces)
             
         elif type_obj.kind in [cindex.TypeKind.POINTER, cindex.TypeKind.LVALUEREFERENCE]:
-            return self.get_type_spelling(type_obj.get_pointee(), template_args, remove_namespaces) + " *"
+            return self.get_type_spelling(type_obj.get_pointee(), template_args, namespace_list, remove_namespaces) + " *"
         
         elif type_obj.kind == cindex.TypeKind.DEPENDENTSIZEDARRAY:
             # We don't want a name like 'items[count / 2]', we want 'items[18]'
             element_count = get_dependent_array_count(type_obj, template_args)
-            element_spelling = self.get_type_spelling(type_obj.get_array_element_type(), template_args, remove_namespaces)
+            element_spelling = self.get_type_spelling(type_obj.get_array_element_type(), template_args, namespace_list, remove_namespaces)
             return f'{element_spelling}[{element_count}]'
         
         elif type_obj.kind == cindex.TypeKind.CONSTANTARRAY:
             # We want typedef arrays to stay that way
             element_count = type_obj.get_array_size()
-            element_spelling = self.get_type_spelling(type_obj.get_array_element_type(), template_args, remove_namespaces)
+            element_spelling = self.get_type_spelling(type_obj.get_array_element_type(), template_args, namespace_list, remove_namespaces)
             return f'{element_spelling}[{element_count}]'
         
         if type_obj.kind == cindex.TypeKind.UNEXPOSED:
@@ -290,8 +299,8 @@ class GhidraToXmlWriter:
             if template_args is not None:
                 for source, dest in template_args.items():
                     # We call .get_canonical() to ensure we don't have typedefs and we have the full namespaces, which is what is done in generate_template_structures
-                    spelling1 = re.sub(fr'\b({source})\b', str(dest) if type(dest) == int else self.get_type_spelling(dest.get_canonical(), None, True), spelling1)
-                    spelling2 = re.sub(fr'\b({source})\b', str(dest) if type(dest) == int else self.get_type_spelling(dest.get_canonical(), None, False), spelling2)
+                    spelling1 = re.sub(fr'\b({source})\b', str(dest) if type(dest) == int else self.get_type_spelling(dest.get_canonical(), None, namespace_list, True), spelling1)
+                    spelling2 = re.sub(fr'\b({source})\b', str(dest) if type(dest) == int else self.get_type_spelling(dest.get_canonical(), None, namespace_list, False), spelling2)
             spelling = spelling1 + spelling2
             
         elif type_obj.kind == cindex.TypeKind.TYPEDEF:
@@ -317,7 +326,9 @@ class GhidraToXmlWriter:
     
     def generate_template_structures(self, type_obj, namespace_list: list, parent_template_args):
         """Generates specialized structures for all templated types contained within the given type."""
-        if type_obj.kind in [cindex.TypeKind.TYPEDEF, cindex.TypeKind.ELABORATED]:
+        # if type_obj.kind == cindex.TypeKind.ELABORATED:
+        #     print(f'ELABORATED {type_obj.spelling}   {type_obj.get_canonical().spelling}   {type_obj.get_canonical().kind}')
+        if type_obj.kind in [cindex.TypeKind.TYPEDEF, cindex.TypeKind.ELABORATED] and type_obj.get_canonical().kind != cindex.TypeKind.UNEXPOSED:
             # This ensures that the types within template parameters are canonically named (i.e with namespaces, no typedefs)
             self.generate_template_structures(type_obj.get_canonical(), namespace_list, parent_template_args)
             
@@ -364,7 +375,7 @@ class GhidraToXmlWriter:
             #         last_name = re.sub(fr'\b({source})\b', dest.spelling, last_name)
             
             template_full_name_splits = split_in_namespaces(template_full_name)
-            last_name = self.get_type_spelling(type_obj, parent_template_args, True)
+            last_name = self.get_type_spelling(type_obj, parent_template_args, namespace_list, True)
                 
             fullname = build_full_name(template_full_name_splits[:-1], last_name)
             if fullname not in self.structures:
@@ -397,7 +408,7 @@ class GhidraToXmlWriter:
             datatype = obj_name + " *"
             datatype_namespace = get_spore_ghidra_namespace(namespace_list + [obj_name])
         else:
-            datatype = self.get_type_spelling(underlying_type, None)
+            datatype = self.get_type_spelling(underlying_type, None, namespace_list)
             datatype_namespace = self.get_type_ghidra_namespace(underlying_type, None, namespace_list)
         
         typedef_xml = Element('TYPE_DEF')
@@ -413,7 +424,7 @@ class GhidraToXmlWriter:
         fullname = build_full_name(namespace_list, obj_name)
         if fullname in self.structures:
             raise SyntaxError(f'Structure {fullname} is being redefined')
-        functions_namespace_list = namespace_list + [obj_name]
+        full_namespace_list = namespace_list + [obj_name]
         struct_info = StructureInfo()
         self.structures[fullname] = struct_info
         struct_alignment = 4
@@ -431,18 +442,18 @@ class GhidraToXmlWriter:
                 skip_next_child = False
                 continue
             if child.kind == cindex.CursorKind.FIELD_DECL:
-                self.generate_template_structures(child.type, functions_namespace_list, template_args)
-                field_alignment = self.get_type_alignment(child.type, template_args, functions_namespace_list)
+                self.generate_template_structures(child.type, full_namespace_list, template_args)
+                field_alignment = self.get_type_alignment(child.type, template_args, full_namespace_list)
                 struct_alignment = max(struct_alignment, field_alignment)
                 fields.append(child)
-                sizes.append(self.get_type_size(child.type, template_args, functions_namespace_list))
+                sizes.append(self.get_type_size(child.type, template_args, full_namespace_list))
                 alignments.append(field_alignment)
                 
             elif child.kind == cindex.CursorKind.CXX_METHOD:
                 if child.is_virtual_method() and not method_is_override(child):
                     struct_info.has_vftable = True
                     virtual_functions.append(child)
-                    self.add_function_def_from_node(functions_namespace_list, child, template_args)
+                    self.add_function_def_from_node(full_namespace_list, child, template_args)
                     
             elif child.kind == cindex.CursorKind.DESTRUCTOR:
                 # In destructors we never use "override", so we just have to check
@@ -450,7 +461,7 @@ class GhidraToXmlWriter:
                     struct_info.has_vftable = True
                     virtual_functions.append(child)
                     vdtor_name = f'{structure_node.spelling}{VDTOR_SUFFIX}'
-                    self.add_virtual_dtor_function_def(functions_namespace_list, vdtor_name)  # ignore the ~ prefix
+                    self.add_virtual_dtor_function_def(full_namespace_list, vdtor_name)  # ignore the ~ prefix
                 
             elif child.kind == cindex.CursorKind.CXX_BASE_SPECIFIER:
                 # The displayname has 'class ' at the beginning
@@ -480,7 +491,7 @@ class GhidraToXmlWriter:
                     union_name = f'_unnamed_{unnamed_union_index}'
                     unnamed_union_index += 1
                     
-                self.add_union(functions_namespace_list, union_name, child)
+                self.add_union(full_namespace_list, union_name, child)
                 
                 union_names[child.type.spelling] = union_name
                 fields.append(child)
@@ -510,7 +521,7 @@ class GhidraToXmlWriter:
                     
         if virtual_functions:
             # Create a structure for the virtual function table
-            class_namespace = get_spore_ghidra_namespace(namespace_list + [obj_name])
+            class_namespace = get_spore_ghidra_namespace(full_namespace_list)
             vftable_typename = f'{obj_name}{VFTABLE_TYPE_SUFFIX}'
             vftable_xml = Element('STRUCTURE')
             self.datatypes_root.append(vftable_xml)
@@ -565,14 +576,6 @@ class GhidraToXmlWriter:
                 copy_xml.set('OFFSET', str(offset + int(copy_xml.get('OFFSET'), 0)))
                 structure_xml.append(copy_xml)
             offset += base.size
-                
-        for base in bases_without_vftables:
-            offset = align(offset, base.alignment)
-            for child_xml in base.xml_element:
-                copy_xml = copy.deepcopy(child_xml)
-                copy_xml.set('OFFSET', str(offset + int(copy_xml.get('OFFSET'), 0)))
-                structure_xml.append(copy_xml)
-            offset += base.size
          
         offsets = []
         for field, size, alignment in zip(fields, sizes, alignments):
@@ -599,11 +602,11 @@ class GhidraToXmlWriter:
             if field.kind == cindex.CursorKind.UNION_DECL:
                 field_name = union_names[field.type.spelling]
                 datatype = union_names[field.type.spelling]
-                datatype_namespace = get_spore_ghidra_namespace(functions_namespace_list)
+                datatype_namespace = get_spore_ghidra_namespace(full_namespace_list)
             else:
                 field_name = field.spelling
-                datatype = self.get_type_spelling(field.type, template_args)
-                datatype_namespace = self.get_type_ghidra_namespace(field.type, template_args, namespace_list)
+                datatype = self.get_type_spelling(field.type, template_args, full_namespace_list)
+                datatype_namespace = self.get_type_ghidra_namespace(field.type, template_args, full_namespace_list)
             
             field_xml = Element('MEMBER')
             field_xml.set('OFFSET', f'0x{offset:x}')
@@ -625,7 +628,7 @@ class GhidraToXmlWriter:
         
         self.generate_template_structures(return_type, namespace_list, template_args)
         return_xml = Element('RETURN_TYPE')
-        return_xml.set('DATATYPE', self.get_type_spelling(return_type, template_args))
+        return_xml.set('DATATYPE', self.get_type_spelling(return_type, template_args, namespace_list))
         return_xml.set('DATATYPE_NAMESPACE', self.get_type_ghidra_namespace(return_type, template_args, namespace_list))
         return_xml.set('SIZE', str(self.get_type_size(return_type, template_args, namespace_list)))
         function_xml.append(return_xml)
@@ -646,7 +649,7 @@ class GhidraToXmlWriter:
             self.generate_template_structures(param_type, namespace_list, template_args)
             parameter_xml = Element('PARAMETER')
             parameter_xml.set('ORDINAL', str(index))
-            parameter_xml.set('DATATYPE', self.get_type_spelling(param_type, template_args))
+            parameter_xml.set('DATATYPE', self.get_type_spelling(param_type, template_args, namespace_list))
             parameter_xml.set('DATATYPE_NAMESPACE', self.get_type_ghidra_namespace(param_type, template_args, namespace_list))
             parameter_xml.set('NAME', param_name if param_name else f'param_{name_index}')
             parameter_xml.set('SIZE', str(max(self.get_type_size(param_type, template_args, namespace_list), 4)))
@@ -785,7 +788,7 @@ class GhidraToXmlWriter:
                     self.generate_template_structures(c.type, complete_namespace_list, None)
                     add_union_member(c.displayname, 
                                     self.get_type_size(c.type, None, complete_namespace_list), 
-                                    self.get_type_spelling(c.type, None),
+                                    self.get_type_spelling(c.type, None, namespace_list),
                                     self.get_type_ghidra_namespace(c.type, None, complete_namespace_list))
                 else:
                     add_union_member(c.displayname, struct_info.size, inner_structures_names[c.type.spelling], members_ghidra_namespace)

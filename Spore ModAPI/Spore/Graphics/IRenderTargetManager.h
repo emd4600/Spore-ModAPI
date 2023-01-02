@@ -1,7 +1,7 @@
 #pragma once
 
 #include <Spore\Internal.h>
-#include <Spore\resourceID.h>
+#include <Spore\ResourceID.h>
 #include <Spore\MathUtils.h>
 #include <Spore\RenderWare\Raster.h>
 
@@ -81,6 +81,7 @@ namespace Addresses(Graphics) {
 	DeclareAddress(MainDepthRTT_ptr);
 }
 
+#ifndef SDK_TO_GHIDRA
 namespace Graphics
 {
 	inline RenderWare::Raster* GetMainColorRTT() {
@@ -91,3 +92,4 @@ namespace Graphics
 		return *(RenderWare::Raster**)(GetAddress(Graphics, MainDepthRTT_ptr));
 	}
 }
+#endif

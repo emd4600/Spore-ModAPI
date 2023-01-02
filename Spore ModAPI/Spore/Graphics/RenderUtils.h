@@ -72,6 +72,7 @@ namespace Graphics
 			/* 38h */	UINT NumFramesToBuffer;  // 2
 		};
 
+#ifndef SDK_TO_GHIDRA
 		inline IDirect3D9* GetDirect3D() {
 			return *(IDirect3D9**)(GetAddress(RenderUtils, D3D_ptr));
 		}
@@ -118,6 +119,7 @@ namespace Graphics
 		inline D3DPRESENT_PARAMETERS& GetPresentationParameters() {
 			return *(D3DPRESENT_PARAMETERS*)(GetAddress(RenderUtils, PresentationParameters_ptr));
 		}
+#endif
 
 		void SetShaderData(short index, void* value, bool overrideIfEqual = false);
 
@@ -142,6 +144,7 @@ namespace Graphics
 		/// @param raster
 		void SetTexture(int slotIndex, RenderWare::Raster* raster);
 
+#ifndef SDK_TO_GHIDRA
 		/// Sets the given raster to be the active Direct3D render target for the given index.
 		/// Only works if the Raster is a surface.
 		/// @param index The render target index
@@ -149,5 +152,6 @@ namespace Graphics
 		inline HRESULT SetRenderTarget(int index, RenderWare::Raster* raster) {
 			return GetDevice()->SetRenderTarget(0, raster->pSurface);
 		}
+#endif
 	}
 }

@@ -170,6 +170,19 @@ namespace Graphics
 		/* 20h */	virtual void* CreateGroup(int, void*&) = 0;
 
 
+#ifdef SDK_TO_GHIDRA
+		/* 24h */	virtual Model* FindFirstModelAlongLine(const Vector3& point1, const Vector3& point2, float* factorDst, Vector3* dstIntersectionPoint, Vector3*, FilterSettings& settings, int*, int*) = 0;
+		/* 28h */	virtual Model* FindFirstModelAlongLine2(const Vector3& point1, const Vector3& point2, float* factorDst, FilterSettings& settings) = 0;
+		/* 2Ch */	virtual bool FindModels(eastl::vector<Model*>& dst, FilterSettings& settings) = 0;
+		/* 30h */	virtual bool FindModelsAlongLineOrdered(const Vector3& point1, const Vector3& point2, eastl::vector<eastl::pair<Model*, float>>& result, FilterSettings& settings, float) = 0;
+		/* 34h */	virtual bool FindModelsAlongLine(const Vector3& point1, const Vector3& point2, eastl::vector<Model*>& result, FilterSettings& settings, float) = 0;
+		/* 38h */	virtual bool FindModelsInSphere(const Vector3& center, float radius, eastl::vector<Model*> result, FilterSettings& settings) = 0;
+		/* 3Ch */	virtual bool FindModelsInBox(const BoundingBox& bbox, eastl::vector<Model*>& result, FilterSettings& settings) = 0;
+		/* 40h */	virtual bool FindModelsInFrustum(const cFrustumCull& frustum, eastl::vector<Model*> result, FilterSettings& settings) = 0;
+		/* 44h */	virtual bool PickAgainstModel(const Vector3& linePoint1, const Vector3& linePoint2, Model* model, float& dstFactor, FilterSettings& settings) = 0;
+		/* 48h */	virtual bool SphereIntersectsModel(const Vector3& center, float radius, Model* model, FilterSettings& settings) = 0;
+		/* 4Ch */	virtual bool BoxIntersectsModel(const BoundingBox& bbox, Model* model, FilterSettings& settings) = 0;
+#else
 		/// Gets the first model that is intersected with the segment between `point1` and `point2`.
 		/// @returns The closest model that intersected, or nullptr if no model intersected the ray.
 		/* 24h */	virtual Model* FindFirstModelAlongLine(const Vector3& point1, const Vector3& point2, float* factorDst = nullptr, Vector3* dstIntersectionPoint = nullptr, Vector3* = nullptr, FilterSettings& settings = FilterSettings(), int* = nullptr, int* = nullptr) = 0;
@@ -244,7 +257,8 @@ namespace Graphics
 		/// @param settings Settings that decide which models are valid and which collision mode is used.
 		/// @returns True if the model intersects with the bbox, false otherwise.
 		/* 4Ch */	virtual bool BoxIntersectsModel(const BoundingBox& bbox, Model* model, FilterSettings& settings = FilterSettings()) = 0;
-		
+#endif
+
 		///
 		/// Used to get the instance and group ID of the given model.
 		/// @param model The model.

@@ -40,11 +40,13 @@ namespace Graphics
 		// shifted by 7, the first render state
 		eastl::bitset<203>& GetRenderStateDirty();
 
+#ifndef SDK_TO_GHIDRA
 		inline void SetRenderState(D3DRENDERSTATETYPE state, int value) 
 		{
 			GetRenderStates()[state] = value;
 			GetRenderStateDirty().set(state - 7, true);
 		}
+#endif
 	}
 
 	namespace Addresses(GlobalState)

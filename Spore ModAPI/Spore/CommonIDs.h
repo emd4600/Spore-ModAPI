@@ -207,6 +207,11 @@ namespace GroupIDs
 
 		AssetBrowserGraphics = 0xCA14DE92,
 
-		terrainSystem_gameAsset = 0x40A02200
+		terrainSystem_gameAsset = 0x40A02200,
+
+		CompiledStatesLink = 0x40212000,
+		CompiledStates = 0x40212001,
+		ShaderFragments = 0x40212002,
+		Shaders = 0x40212004,
 	};
 }

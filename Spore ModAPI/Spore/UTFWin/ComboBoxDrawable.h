@@ -33,7 +33,7 @@ namespace UTFWin
 	class IComboBoxDrawable : public UTFWinObject
 	{
 	public:
-		enum
+		enum ImageIndices
 		{
 			kImageBackground = 0,
 			kImageSelectionBackground = 1,

@@ -112,7 +112,11 @@ RedirectMethod_noargs_const(Window, GetParent, Window*);
 //     DeclareAddress(OpenStream, 0x45e500);
 // };
 // Modified in the ModAPI
+#ifdef SDK_TO_GHIDRA
+#define DeclareAddress(name)
+#else
 #define DeclareAddress(name) extern MODAPI const uintptr_t name
+#endif
 #define DefineAddress(name, value) const uintptr_t name = value - 0x400000
 
 // Returns the address stored with a DeclareAddress() in the given addresses namespace.

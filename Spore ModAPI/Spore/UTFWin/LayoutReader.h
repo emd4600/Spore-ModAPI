@@ -29,7 +29,7 @@ namespace UTFWin
 	class LayoutReader : public Object
 	{
 	public:
-		enum
+		enum MessageIDs
 		{
 			kResultSuccessXML = 0x2FC50001,
 			kResultSuccess = 0x2FC50006

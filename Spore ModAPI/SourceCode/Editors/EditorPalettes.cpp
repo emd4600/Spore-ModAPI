@@ -294,7 +294,7 @@ namespace Palettes
 	int PageArrowsUI::AddRef() { return DefaultRefCounted::AddRef(); }
 	int PageArrowsUI::Release() { return DefaultRefCounted::Release(); }
 
-	void* PageArrowsUI::Cast(uint32_t type)
+	void* PageArrowsUI::Cast(uint32_t type) const
 	{
 		if (type == Object::TYPE)
 		{

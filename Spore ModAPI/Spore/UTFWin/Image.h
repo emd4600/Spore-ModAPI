@@ -37,7 +37,7 @@ namespace UTFWin
 	class Image : public ILayoutElement
 	{
 	public:
-		enum
+		enum ImageTypeIDs
 		{
 			kTypePNG = 0x2F7D0004
 		};
@@ -111,6 +111,7 @@ namespace UTFWin
 		DeclareAddress(SetBackgroundByKey);
 	}
 
+#ifndef SDK_TO_GHIDRA
 	inline Image::Image()
 		: mpImage(nullptr), mnRefCount(0)
 	{
@@ -118,6 +119,7 @@ namespace UTFWin
 	inline Image::~Image()
 	{
 	}
+#endif
 
 	inline const Math::Rectangle& Image::GetTexCoords() const
 	{

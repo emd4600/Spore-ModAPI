@@ -26,6 +26,7 @@ namespace Simulator
 {
 	class cGameData;
 
+#ifndef SDK_TO_GHIDRA
 	template <class T>
 	class tGameDataVectorT
 	{
@@ -71,4 +72,18 @@ namespace Simulator
 	inline const eastl::intrusive_ptr<T>& tGameDataVectorT<T>::operator[] (const int index) const {
 		return data[index];
 	}
+#else
+	// The original class has nested template parameters, it is too complex for our script to handle
+	template <class T>
+	class tGameDataVectorT
+	{
+	public:
+		bool needsUpdate;
+		eastl::intrusive_ptr<T>* mpBegin;
+		eastl::intrusive_ptr<T>* mpEnd;
+		eastl::intrusive_ptr<T>* mpCapacity;
+		int mGarbage;
+		eastl::allocator mAllocator;
+	};
+#endif
 }

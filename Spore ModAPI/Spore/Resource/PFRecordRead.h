@@ -90,7 +90,7 @@ namespace Resource
 		/* 68h */	char mnFlags;  // if & 2, use internal stream?
 		/* 6Ch */	int mnStreamRefCount;  // decreased when calling Close()
 
-		enum
+		enum Flags
 		{
 			kPFRRBufferReady = 2,
 			kPFRRDataFitsBuffer = 1,
