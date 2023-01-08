@@ -11,8 +11,8 @@
 #ifdef _68K_
 #define STDMETHODCALLTYPE       __cdecl
 #else
-//#define STDMETHODCALLTYPE       __stdcall
-#define STDMETHODCALLTYPE       
+#define STDMETHODCALLTYPE       __stdcall
+//#define STDMETHODCALLTYPE       
 #endif
 #define STDMETHODVCALLTYPE      __cdecl
 

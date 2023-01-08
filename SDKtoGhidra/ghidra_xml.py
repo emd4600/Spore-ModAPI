@@ -128,7 +128,7 @@ class TemplateStructureInfo:
 
 
 class GhidraToXmlWriter:
-    def __init__(self) -> None:
+    def __init__(self, addresses_dict) -> None:
         self.root = Element('PROGRAM')
         self.root.set('NAME', 'Spore')
         
@@ -141,6 +141,18 @@ class GhidraToXmlWriter:
         self.datatypes_root = Element('DATATYPES')
         self.root.append(self.datatypes_root)
         
+        self.symbols_root = [Element('SYMBOL_TABLE'), Element('SYMBOL_TABLE')]
+        # self.root.append(self.symbols_root)
+        
+        self.defined_data_root = [Element('DEFINED_DATA'), Element('DEFINED_DATA')]
+        # self.root.append(self.defined_data_root)
+        
+        self.function_addresses_root = [Element('FUNCTION_ADDRESSES'), Element('FUNCTION_ADDRESSES')]
+        # self.root.append(self.function_addresses_root)
+        
+        self.addresses_dict = addresses_dict   # fullname -> [address_disk, address_march2017]
+        self.added_address_names = set()
+        self.added_address_values = [set(), set()]
         self.structures = dict()  # name -> StructureInfo
         self.vftables = dict()  # name -> vftable xml element
         self.template_infos = dict()  # name -> TemplateStructureInfo
@@ -148,13 +160,23 @@ class GhidraToXmlWriter:
         self.typedef_namespaces = dict()
         self.enum_namespaces = dict()
         self.union_namespaces = dict()
+        # Special enum: it is made of the TYPE static fields on classes, as it is useful for Cast() operations
+        self.type_enum_values = []
         
-    def write(self, path):
+    def write(self, path, address_set_index):
+        self.root.append(self.symbols_root[address_set_index])
+        self.root.append(self.defined_data_root[address_set_index])
+        self.root.append(self.function_addresses_root[address_set_index])
+        
         with open(path, 'wb') as output_file:
             tree = ElementTree(self.root)
             indent(tree, space='\t', level=0)
             output_file.write(bytes('<?xml version="1.0" standalone="yes"?>\n<?program_dtd version="1"?>\n', 'utf-8'))
             tree.write(output_file)
+            
+        self.root.remove(self.symbols_root[address_set_index])
+        self.root.remove(self.defined_data_root[address_set_index])
+        self.root.remove(self.function_addresses_root[address_set_index])
             
     def get_type_ghidra_namespace(self, type_obj, template_args, namespace_list):
         if type_obj.kind in [cindex.TypeKind.POINTER, cindex.TypeKind.LVALUEREFERENCE]:
@@ -383,15 +405,21 @@ class GhidraToXmlWriter:
             if fullname not in self.structures:
                 self.add_structure(template_full_name_splits[:-1], last_name, template_info.node, template_args)
             
-    def add_typedef(self, namespace_list, obj_name, typedef_node):
-        underlying_type = typedef_node.underlying_typedef_type.get_canonical()
-        self.generate_template_structures(underlying_type, namespace_list, None)
-        
+    def add_typedef(self, namespace_list, obj_name, typedef_node):    
         fullname = build_full_name(namespace_list, obj_name)
-        ghidra_namespace = get_spore_ghidra_namespace(namespace_list)
         if fullname in self.typedef_namespaces:
             raise SyntaxError(f'Typedef {fullname} is being redefined')
+            
+        ghidra_namespace_list = namespace_list
+        # We don't apply this to the fullname, so that it can still be found in the get_type_... methods
+        if str(typedef_node.location.file).endswith('d3d9.h') or str(typedef_node.location.file).endswith('d3d9types.h'):
+            ghidra_namespace_list = ['Direct3D'] + ghidra_namespace_list
+            
+        ghidra_namespace = get_spore_ghidra_namespace(ghidra_namespace_list)
         self.typedef_namespaces[fullname] = ghidra_namespace
+            
+        underlying_type = typedef_node.underlying_typedef_type.get_canonical()
+        self.generate_template_structures(underlying_type, namespace_list, None)
         
         if underlying_type.get_pointee().kind == cindex.TypeKind.FUNCTIONPROTO:
             function_pointer = underlying_type.get_pointee()
@@ -405,10 +433,11 @@ class GhidraToXmlWriter:
                                   param_types,
                                   param_names,
                                   True,
-                                  namespace_list + [obj_name],
+                                  ghidra_namespace_list + [obj_name],
+                                  None,
                                   None)
             datatype = obj_name + " *"
-            datatype_namespace = get_spore_ghidra_namespace(namespace_list + [obj_name])
+            datatype_namespace = get_spore_ghidra_namespace(ghidra_namespace_list + [obj_name])
         else:
             datatype = self.get_type_spelling(underlying_type, None, namespace_list)
             datatype_namespace = self.get_type_ghidra_namespace(underlying_type, None, namespace_list)
@@ -426,7 +455,14 @@ class GhidraToXmlWriter:
         fullname = build_full_name(namespace_list, obj_name)
         if fullname in self.structures:
             raise SyntaxError(f'Structure {fullname} is being redefined')
+        
+        ghidra_namespace_list = namespace_list
+        # We don't apply this to the fullname, so that it can still be found in the get_type_... methods
+        if str(structure_node.location.file).endswith('d3d9.h') or str(structure_node.location.file).endswith('d3d9types.h'):
+            ghidra_namespace_list = ['Direct3D'] + ghidra_namespace_list
+              
         full_namespace_list = namespace_list + [obj_name]
+        full_ghidra_namespace_list = ghidra_namespace_list + [obj_name]
         struct_info = StructureInfo()
         self.structures[fullname] = struct_info
         struct_alignment = 4
@@ -455,7 +491,13 @@ class GhidraToXmlWriter:
                 if child.is_virtual_method() and not method_is_override(child):
                     struct_info.has_vftable = True
                     virtual_functions.append(child)
-                    self.add_function_def_from_node(full_namespace_list, child, template_args)
+                    self.add_function_def_from_node(full_ghidra_namespace_list, child, child.is_static_method(), template_args)
+                
+                else:
+                    function_fullname = build_full_name(full_namespace_list, child.spelling)
+                    if function_fullname in self.addresses_dict:
+                        self.add_function_def_from_node(full_ghidra_namespace_list, child, child.is_static_method(), template_args)
+                        #self.add_function_address(self.addresses_dict[function_fullname], function_fullname, child.displayname, full_ghidra_namespace_list) 
                     
             elif child.kind == cindex.CursorKind.DESTRUCTOR:
                 # In destructors we never use "override", so we just have to check
@@ -463,7 +505,7 @@ class GhidraToXmlWriter:
                     struct_info.has_vftable = True
                     virtual_functions.append(child)
                     vdtor_name = f'{structure_node.spelling}{VDTOR_SUFFIX}'
-                    self.add_virtual_dtor_function_def(full_namespace_list, vdtor_name)  # ignore the ~ prefix
+                    self.add_virtual_dtor_function_def(full_ghidra_namespace_list, vdtor_name)  # ignore the ~ prefix
                 
             elif child.kind == cindex.CursorKind.CXX_BASE_SPECIFIER:
                 # The displayname has 'class ' at the beginning
@@ -474,6 +516,7 @@ class GhidraToXmlWriter:
                 
                 struct_alignment = max(struct_alignment, base_structure.alignment)
                 if base_structure.has_vftable:
+                    struct_info.has_vftable = True
                     bases_with_vftables.append(base_structure)
                 else:
                     bases_without_vftables.append(base_structure)
@@ -499,6 +542,8 @@ class GhidraToXmlWriter:
                 fields.append(child)
                 sizes.append(child.type.get_size())
                 alignments.append(child.type.get_align())
+               
+            #TODO VAR_DECL for TYPE enum 
                    
         # Calculate offset of fields
         offset = 0
@@ -523,7 +568,7 @@ class GhidraToXmlWriter:
                     
         if virtual_functions:
             # Create a structure for the virtual function table
-            class_namespace = get_spore_ghidra_namespace(full_namespace_list)
+            class_namespace = get_spore_ghidra_namespace(full_ghidra_namespace_list)
             vftable_typename = f'{obj_name}{VFTABLE_TYPE_SUFFIX}'
             vftable_xml = Element('STRUCTURE')
             self.datatypes_root.append(vftable_xml)
@@ -593,7 +638,7 @@ class GhidraToXmlWriter:
         struct_info.size = struct_size
         struct_info.alignment = struct_alignment
         
-        ghidra_namespace = get_spore_ghidra_namespace(namespace_list)
+        ghidra_namespace = get_spore_ghidra_namespace(ghidra_namespace_list)
         self.structure_namespaces[fullname] = ghidra_namespace
                 
         structure_xml.set('NAME', obj_name)
@@ -604,7 +649,7 @@ class GhidraToXmlWriter:
             if field.kind == cindex.CursorKind.UNION_DECL:
                 field_name = union_names[field.type.spelling]
                 datatype = union_names[field.type.spelling]
-                datatype_namespace = get_spore_ghidra_namespace(full_namespace_list)
+                datatype_namespace = get_spore_ghidra_namespace(full_ghidra_namespace_list)
             else:
                 field_name = field.spelling
                 datatype = self.get_type_spelling(field.type, template_args, full_namespace_list)
@@ -623,16 +668,34 @@ class GhidraToXmlWriter:
         
         return struct_info
     
-    def add_function_def(self, function_name, return_type, parameter_types, parameter_names, is_static, namespace_list, template_args):
+    def add_function_def(self, function_name, return_type, parameter_types, parameter_names, is_static, namespace_list, template_args, calling_convention):
         function_xml = Element('FUNCTION_DEF')
         function_xml.set('NAME', function_name)
         function_xml.set('NAMESPACE', get_spore_ghidra_namespace(namespace_list))
         
+        if not calling_convention and not is_static:
+            calling_convention = 'thiscall'
+            
+        if calling_convention:
+            function_xml.set('CONVENTION', calling_convention)
+            
+        return_type_fullname = self.get_type_spelling(return_type, template_args, namespace_list, False)
+        return_is_first_parameter = False
+        if return_type_fullname in self.structures:
+            # When returning structs that are bigger than 8 bytes, we are actually getting a reference as first parameter and returning a pointer to it
+            #TODO actually, ResourceID is returned as eax:edx, but Vector2 is not (because it has floats)
+            return_is_first_parameter = self.structures[return_type_fullname].size >= 8
+        
         self.generate_template_structures(return_type, namespace_list, template_args)
         return_xml = Element('RETURN_TYPE')
-        return_xml.set('DATATYPE', self.get_type_spelling(return_type, template_args, namespace_list))
-        return_xml.set('DATATYPE_NAMESPACE', self.get_type_ghidra_namespace(return_type, template_args, namespace_list))
-        return_xml.set('SIZE', str(self.get_type_size(return_type, template_args, namespace_list)))
+        if return_is_first_parameter:
+            return_xml.set('DATATYPE', self.get_type_spelling(return_type, template_args, namespace_list) + " *")
+            return_xml.set('DATATYPE_NAMESPACE', self.get_type_ghidra_namespace(return_type, template_args, namespace_list))
+            return_xml.set('SIZE', '4')
+        else:
+            return_xml.set('DATATYPE', self.get_type_spelling(return_type, template_args, namespace_list))
+            return_xml.set('DATATYPE_NAMESPACE', self.get_type_ghidra_namespace(return_type, template_args, namespace_list))
+            return_xml.set('SIZE', str(self.get_type_size(return_type, template_args, namespace_list)))
         function_xml.append(return_xml)
         index = 0
         name_index = 1
@@ -643,6 +706,16 @@ class GhidraToXmlWriter:
             parameter_xml.set('DATATYPE', f'{namespace_list[-1]} *')
             parameter_xml.set('DATATYPE_NAMESPACE', get_spore_ghidra_namespace(namespace_list[:-1]))  # the namespace list also contains the class name
             parameter_xml.set('NAME', 'this')
+            parameter_xml.set('SIZE', '4')
+            function_xml.append(parameter_xml)
+            index += 1
+            
+        if return_is_first_parameter:
+            parameter_xml = Element('PARAMETER')
+            parameter_xml.set('ORDINAL', str(index))
+            parameter_xml.set('DATATYPE', self.get_type_spelling(return_type, template_args, namespace_list) + " *")
+            parameter_xml.set('DATATYPE_NAMESPACE', self.get_type_ghidra_namespace(return_type, template_args, namespace_list))  # the namespace list also contains the class name
+            parameter_xml.set('NAME', 'auto_return_dst')
             parameter_xml.set('SIZE', '4')
             function_xml.append(parameter_xml)
             index += 1
@@ -660,8 +733,25 @@ class GhidraToXmlWriter:
             name_index += 1
             
         self.datatypes_root.append(function_xml)
+        
+        # Add address if necessary
+        fullname = build_full_name(namespace_list, function_name)
+        if fullname in self.addresses_dict:
+            self.add_function_address(fullname, function_name, get_spore_ghidra_namespace(namespace_list))
     
-    def add_function_def_from_node(self, namespace_list, function_node, template_args=None):
+    def add_function_def_from_node(self, namespace_list, function_node, is_static, template_args=None):
+        type_spelling = function_node.type.spelling
+        if '__attribute__((stdcall))' in type_spelling:
+            calling_convention = 'stdcall'
+        elif '__attribute__((cdecl))' in type_spelling:
+            calling_convention = 'cdecl'
+        elif '__attribute__((thiscall))' in type_spelling:
+            calling_convention = 'thiscall'
+        elif '__attribute__((fastcall))' in type_spelling:
+            calling_convention = 'fastcall'
+        else:
+            calling_convention = None
+        
         param_names = []
         param_types = []
         for arg in function_node.get_arguments():
@@ -671,9 +761,10 @@ class GhidraToXmlWriter:
                               function_node.result_type,
                               param_types,
                               param_names,
-                              function_node.is_static_method(),
+                              is_static,
                               namespace_list,
-                              template_args)
+                              template_args,
+                              calling_convention)
             
     def add_virtual_dtor_function_def(self, namespace_list, function_name):
         function_xml = Element('FUNCTION_DEF')
@@ -706,9 +797,15 @@ class GhidraToXmlWriter:
             
     def add_enum(self, namespace_list, obj_name, enum_node):
         fullname = build_full_name(namespace_list, obj_name)
-        ghidra_namespace = get_spore_ghidra_namespace(namespace_list)
         if fullname in self.enum_namespaces:
             raise SyntaxError(f'Enum {fullname} is being redefined')
+        
+        ghidra_namespace_list = namespace_list
+        # We don't apply this to the fullname, so that it can still be found in the get_type_... methods
+        if str(enum_node.location.file).endswith('d3d9.h') or str(enum_node.location.file).endswith('d3d9types.h'):
+            ghidra_namespace_list = ['Direct3D'] + ghidra_namespace_list
+            
+        ghidra_namespace = get_spore_ghidra_namespace(ghidra_namespace_list)
         self.enum_namespaces[fullname] = ghidra_namespace
         
         enum_xml = Element('ENUM')
@@ -735,12 +832,18 @@ class GhidraToXmlWriter:
             union_xml.append(field_xml)
         
         fullname = build_full_name(namespace_list, obj_name)
-        ghidra_namespace = get_spore_ghidra_namespace(namespace_list)
         if fullname in self.union_namespaces:
             raise SyntaxError(f'Union {fullname} is being redefined')
+        
+        ghidra_namespace_list = namespace_list
+        # We don't apply this to the fullname, so that it can still be found in the get_type_... methods
+        if str(union_node.location.file).endswith('d3d9.h') or str(union_node.location.file).endswith('d3d9types.h'):
+            ghidra_namespace_list = ['Direct3D'] + ghidra_namespace_list
+        
+        ghidra_namespace = get_spore_ghidra_namespace(ghidra_namespace_list)
         self.union_namespaces[fullname] = ghidra_namespace
         complete_namespace_list = namespace_list + [obj_name]
-        members_ghidra_namespace = get_spore_ghidra_namespace(complete_namespace_list)
+        members_ghidra_namespace = get_spore_ghidra_namespace(ghidra_namespace_list + [obj_name])
         
         union_xml = Element('UNION')
         union_xml.set('NAME', obj_name)
@@ -797,3 +900,54 @@ class GhidraToXmlWriter:
             
             if c.kind in [cindex.CursorKind.STRUCT_DECL, cindex.CursorKind.CLASS_DECL]:
                 last_structure = c
+                
+    def add_symbol_address(self, fullname, namespace_list, var_type):
+        address = self.addresses_dict[fullname]
+        self.added_address_names.add(fullname)
+        
+        for i, addr in enumerate(address):
+            self.added_address_values[i].add(addr)
+            # <SYMBOL ADDRESS="01570b50" NAME="cStarRecord__attributes" NAMESPACE="" TYPE="global" SOURCE_TYPE="USER_DEFINED" PRIMARY="y" />
+            symbol_xml = Element('SYMBOL')
+            symbol_xml.set('ADDRESS', f'{addr:08x}')
+            symbol_xml.set('NAME', fullname)
+            symbol_xml.set('NAMESPACE', '')
+            symbol_xml.set('TYPE', 'GLOBAL')
+            symbol_xml.set('SOURCE_TYPE', 'IMPORTED')
+            symbol_xml.set('PRIMARY', 'y')
+            self.symbols_root[i].append(symbol_xml)
+            
+            # <DEFINED_DATA ADDRESS="01570b50" DATATYPE="Attribute[14]" DATATYPE_NAMESPACE="/Spore/Simulator" SIZE="0x348" />
+            data_xml = Element('DEFINED_DATA')
+            data_xml.set('ADDDRESS', f'{addr:08x}')
+            data_xml.set('DATATYPE', self.get_type_spelling(var_type, None, namespace_list))
+            data_xml.set('DATATYPE_NAMESPACE', self.get_type_ghidra_namespace(var_type, None, namespace_list))
+            data_xml.set('SIZE', f'0x{self.get_type_size(var_type, None, namespace_list):x}')
+            self.defined_data_root[i].append(data_xml) 
+            
+    def add_single_symbol_address(self, fullname, addr, address_set_index):
+        self.added_address_values[address_set_index].add(addr)
+        # <SYMBOL ADDRESS="01570b50" NAME="cStarRecord__attributes" NAMESPACE="" TYPE="global" SOURCE_TYPE="USER_DEFINED" PRIMARY="y" />
+        symbol_xml = Element('SYMBOL')
+        symbol_xml.set('ADDRESS', f'{addr:08x}')
+        symbol_xml.set('NAME', fullname)
+        symbol_xml.set('NAMESPACE', '')
+        symbol_xml.set('TYPE', 'GLOBAL')
+        symbol_xml.set('SOURCE_TYPE', 'IMPORTED')
+        symbol_xml.set('PRIMARY', 'y')
+        self.symbols_root[address_set_index].append(symbol_xml)
+        
+    def add_function_address(self, fullname, datatype, datatype_namespace):
+        address = self.addresses_dict[fullname]
+        self.added_address_names.add(fullname)
+        
+        for i, addr in enumerate(address):
+            self.added_address_values[i].add(addr)
+            function_xml = Element('FUNCTION')
+            function_xml.set('ADDRESS', f'{addr:08x}')
+            function_xml.set('NAME', fullname)
+            function_xml.set('NAMESPACE', '')
+            function_xml.set('DATATYPE', datatype)
+            function_xml.set('DATATYPE_NAMESPACE', datatype_namespace)
+            self.function_addresses_root[i].append(function_xml)
+        
