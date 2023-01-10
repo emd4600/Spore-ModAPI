@@ -136,14 +136,22 @@ def extract_TYPE_value(var_decl_node, template_args):
 
 def get_this_type_list_for_function(structure_info, function_name):
     """Finds the first base class that contains a virtual function with that name, then returns the 'namespace list' of that class"""
-    for vf in structure_info.virtual_functions_no_overrides:
-        if vf.spelling == function_name:
-            return structure_info.full_namespace_list
-    for base in structure_info.bases_with_vftables:
-        result = get_this_type_list_for_function(base, function_name)
-        if result is not None:
-            return result
-    return None
+    def inner(struct, name):
+        is_first = True
+        for vf in struct.virtual_functions_no_overrides:
+            if vf.spelling == name:
+                return struct.full_namespace_list, is_first
+        for base in struct.bases_with_vftables:
+            result, was_first = inner(base, name)
+            if result is not None:
+                return result, was_first and is_first
+            is_first = False 
+        return None, False   
+            
+    fullname, is_first = inner(structure_info, function_name)
+    
+    # Virtual functions on the first base are not offseted, so we can use the original class
+    return structure_info.full_namespace_list if is_first else fullname
     
 
 class StructureInfo:
