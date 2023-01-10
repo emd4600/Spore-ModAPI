@@ -39,6 +39,8 @@ namespace Palettes
 		using DefaultRefCounted::AddRef;
 		using DefaultRefCounted::Release;
 
+		virtual bool HandleUIMessage(UTFWin::IWindow* pWindow, const UTFWin::Message& message) override;
+
 	public:
 		/* 0Ch */	PaletteItemPtr mpItem;
 		/* 10h */	int field_10;

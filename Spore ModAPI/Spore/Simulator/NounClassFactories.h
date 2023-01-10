@@ -28,6 +28,10 @@ namespace Simulator
 
 	// When we add them it has already been added to the class manager
 	//NounCreateMap& GetNounCreateMap();
+
+#ifdef SDK_TO_GHIDRA
+	NounCreateMap& GetNounCreateMap();
+#endif
 }
 
 namespace Addresses(Simulator) {

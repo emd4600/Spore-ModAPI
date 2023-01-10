@@ -51,6 +51,11 @@ namespace Simulator
 	/// Used to decide which game objects go to the vector and which do not. It receives the object to
 	/// evaluate and the game noun ID passed to the GetData function.
 	using ContainerFilterCallback_t = bool(*)(cGameData* pObject, uint32_t gameNounID);
+#else
+	typedef tGameDataVectorT<cGameData>*(*ContainerCreateCallback_t)();
+	typedef void(*ContainerClearCallback_t)(tGameDataVectorT<cGameData>* pVector);
+	typedef void(*ContainerAddCallback_t)(tGameDataVectorT<cGameData>* pVector, cGameData* pObject);
+	typedef bool(*ContainerFilterCallback_t)(cGameData* pObject, uint32_t gameNounID);
 #endif
 
 	/// The class that manages game objects, known in Spore code as 'nouns'. Use this class to create or destroy
@@ -64,11 +69,15 @@ namespace Simulator
 		, public cStrategy
 	{
 	public:
+#ifndef SDK_TO_GHIDRA
 		/// Creates an instance of a simulator object of the given type. The noun ID is one of
 		/// the values in the Simulator::GameNounIDs enum.
 		/// @param nounID The ID of the object to create.
 		/// @returns The created object, as a Simulator::cGameData*.
 		cGameData* CreateInstance(uint32_t nounID);
+#else
+		cGameData* CreateInstance(GameNounIDs nounID);
+#endif
 
 		void DestroyInstance(cGameData* pInstance);
 
@@ -86,6 +95,13 @@ namespace Simulator
 				ContainerAddCallback_t<T>, ContainerFilterCallback_t, uint32_t)) (GetAddress(cGameNounManager, GetData)))(
 					this, pCreate, pClear, pAdd, pFilter, nounID);
 		}
+#else
+		tGameDataVectorT<cGameData>& GetData(
+			ContainerCreateCallback_t pCreateCallback, 
+			ContainerClearCallback_t pClearCallback,
+			ContainerAddCallback_t pAddCallback,
+			ContainerFilterCallback_t pFilterCallback,
+			uint32_t nounID);
 #endif
 
 		cCreatureAnimal* GetAvatar();

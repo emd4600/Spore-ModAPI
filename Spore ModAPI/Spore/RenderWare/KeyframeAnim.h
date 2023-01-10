@@ -58,6 +58,6 @@ namespace RenderWare
 		// field_C and flags are used to find something...
 
 
-		static const uint32_t TYPE = 0x70001;
+		static const uint32_t RW_TYPE = 0x70001;
 	};
 }

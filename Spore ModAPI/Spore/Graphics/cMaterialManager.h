@@ -67,6 +67,8 @@ namespace Graphics
 		bool ReadCompiledShadersImpl(IO::IStream* pStream);
 		bool ReadMaterialsImpl(IO::IStream* pLinkStream, RenderWare::RenderWareFile* pRenderWare);
 
+		bool ReadShaderFragments(Resource::Database* pDatabase);
+
 	public:
 
 		/* 08h */	int mnRefCount;

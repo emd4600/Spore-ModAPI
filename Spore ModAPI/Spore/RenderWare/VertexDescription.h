@@ -127,7 +127,7 @@ namespace RenderWare
 
 	struct VertexDescriptionBase
 	{
-		static const uint32_t TYPE = 0x20004;
+		static const uint32_t RW_TYPE = 0x20004;
 
 		VertexDescriptionBase();
 
@@ -147,6 +147,8 @@ namespace RenderWare
 		void ReleaseDirectX();
 
 		void SetElement(int index, const VertexElement& element);
+
+		void D3D9VertexDescriptorAddToList(VertexDescriptionBase*);
 
 		/* 00h */	VertexDescriptionBase* pNextParent;
 		/* 04h */	VertexDescriptionBase* pNextSibling;
@@ -195,6 +197,7 @@ namespace RenderWare
 	{
 		DeclareAddress(LoadDeclaration);
 		DeclareAddress(Process);
+		DeclareAddress(D3D9VertexDescriptorAddToList);
 	}
 
 	template <uint16_t nVertexElements>

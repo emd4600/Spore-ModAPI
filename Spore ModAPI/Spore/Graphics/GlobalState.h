@@ -47,6 +47,15 @@ namespace Graphics
 			GetRenderStateDirty().set(state - 7, true);
 		}
 #endif
+
+#ifdef SDK_TO_GHIDRA
+		Math::Matrix4* sTransform;
+		MatrixType sTransformType;
+		Math::ColorRGBA sColor;
+		int sSoftStateDirty;
+		int sRenderStates[210];
+		eastl::bitset<203> sRenderStateDirty;
+#endif
 	}
 
 	namespace Addresses(GlobalState)

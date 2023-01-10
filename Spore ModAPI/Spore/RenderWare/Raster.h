@@ -107,7 +107,7 @@ namespace RenderWare
 		/* 18h */	void* pSwapChain;
 		/* 1Ch */	void* pTextureData;
 
-		static const uint32_t TYPE = 0x20003;
+		static const uint32_t RW_TYPE = 0x20003;
 	};
 	ASSERT_SIZE(Raster, 0x20);
 

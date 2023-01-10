@@ -49,6 +49,8 @@ namespace App
 	{
 		return *(DirectPropertyList**)(GetAddress(App, AppProperties_ptr));
 	}
+#else
+	DirectPropertyList* sAppProperties;
 #endif
 
 	/// 

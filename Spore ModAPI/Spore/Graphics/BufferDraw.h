@@ -83,4 +83,8 @@ namespace Graphics
 		DeclareAddress(UnlockAndDrawMaterial);  // 0x6DE2A0 0x6DDDC0
 		DeclareAddress(UnlockAndDrawNoMaterial);  // 0x6DE270 0x6DDD90
 	}
+
+#ifdef SDK_TO_GHIDRA
+	cBufferDraw* sBufferDraw;
+#endif
 }

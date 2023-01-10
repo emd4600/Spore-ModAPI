@@ -557,6 +557,11 @@ void Transform::Invert()
 	mOffset = mRotation * (-mfScale * mOffset);
 }
 
+Transform& Transform::PreTransformBy(const Transform& other)
+{
+	return CALL(GetAddress(Transform, PreTransformBy), Transform&, Args(Transform*, const Transform&), Args(this, other));
+}
+
 
 namespace Math
 {

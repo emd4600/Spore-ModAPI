@@ -17,11 +17,13 @@ namespace Editors
 
 		inline ColorChangedMessage(Math::Color color, Object* object, uint32_t regionFilter, bool isDefaultColor, int colorIndex)
 		{
+#ifndef SDK_TO_GHIDRA
 			params[0].uint32 = color.value;
 			SetObject(1, object);
 			params[2].uint32 = regionFilter;
 			params[3].boolean = isDefaultColor;
 			params[4].int32 = colorIndex;
+#endif
 		}
 
 		/// Returns the color selected by the user.

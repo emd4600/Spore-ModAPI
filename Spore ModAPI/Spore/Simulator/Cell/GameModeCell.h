@@ -73,6 +73,8 @@ namespace Simulator
 		inline GoalCard* GetGoalCards() {
 			return (GoalCard*)GetAddress(Cell, GoalCards_ptr);
 		}
+#else
+		GoalCard sGoalCards[0x76];
 #endif
 
 		namespace Addresses(GameModeCell)

@@ -168,4 +168,8 @@ namespace GalaxyGameEntry
 		/* 270h */	bool field_270;
 		/* 271h */	bool mbScenarioStarEffectsEnabled;
 	};
+
+#ifdef SDK_TO_GHIDRA
+	GlobalGGEUI* sGlobalGGEUI;
+#endif
 }

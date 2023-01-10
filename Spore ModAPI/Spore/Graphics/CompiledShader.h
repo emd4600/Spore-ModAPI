@@ -47,6 +47,9 @@ namespace Graphics
 	inline eastl::vector<PixelShader>& GetPixelShaders() {
 		return *(eastl::vector<PixelShader>*)(GetAddress(CompiledShader, PixelShaders_ptr));
 	}
+#else
+	eastl::vector<VertexShader> sVertexShaders;
+	eastl::vector<PixelShader> sPixelShaders;
 #endif
 
 	void ReadCompiledVertexShaders(IO::IStream* pStream);

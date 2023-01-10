@@ -45,10 +45,20 @@ namespace RenderWare
 		DefineAddress(GetRWObject, SelectAddress(0x11E5060, 0x11E2920));
 	}
 
+#ifndef SDK_TO_GHIDRA
 	namespace Addresses(VertexDescription)
 	{
 		DefineAddress(LoadDeclaration, SelectAddress(0x011F5310, 0x11F2BF0));
 		DefineAddress(Process, SelectAddress(0x11F5350, 0x11F2C30));
+		DefineAddress(D3D9VertexDescriptorAddToList, SelectAddress(0x11F5350, 0x11F2C30));
 	}
+#else
+	namespace Addresses(VertexDescriptionBase)
+	{
+		DefineAddress(LoadDeclaration, SelectAddress(0x011F5310, 0x11F2BF0));
+		DefineAddress(Process, SelectAddress(0x11F5350, 0x11F2C30));
+		DefineAddress(D3D9VertexDescriptorAddToList, SelectAddress(0x11F5350, 0x11F2C30));
+	}
+#endif
 }
 #endif

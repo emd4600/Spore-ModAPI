@@ -62,4 +62,8 @@ namespace Simulator
 	namespace Addresses(cGonzagoTimer) {
 		DeclareAddress(GetSimulatorTime_ptr);
 	}
+
+#ifdef SDK_TO_GHIDRA
+	LARGE_INTEGER TimeAtStartOfFrame();
+#endif
 }

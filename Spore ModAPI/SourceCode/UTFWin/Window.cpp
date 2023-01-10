@@ -169,16 +169,16 @@ namespace UTFWin
 	}
 	Point Window::ToGlobalCoordinates(struct Point arg_0) {
 		Point p;
-		CALL(GetAddress(Window, func48), Point*, Args(IWindow*, Point*, struct Point), Args(this, &p, arg_0));
+		CALL(GetAddress(Window, ToGlobalCoordinates), Point*, Args(IWindow*, Point*, struct Point), Args(this, &p, arg_0));
 		return p;
 	}
 	Point Window::ToLocalCoordinates(struct Point arg_0) {
 		Point p;
-		CALL(GetAddress(Window, func49), Point*, Args(IWindow*, Point*, struct Point), Args(this, &p, arg_0));
+		CALL(GetAddress(Window, ToLocalCoordinates), Point*, Args(IWindow*, Point*, struct Point), Args(this, &p, arg_0));
 		return p;
 	}
 	bool Window::ToLocalCoordinates2(struct Point p, Point& dst) {
-		return CALL(GetAddress(Window, func50), bool, Args(IWindow*, struct Point, Point&), Args(this, p, dst));
+		return CALL(GetAddress(Window, ToLocalCoordinates2), bool, Args(IWindow*, struct Point, Point&), Args(this, p, dst));
 	}
 
 	// Specials

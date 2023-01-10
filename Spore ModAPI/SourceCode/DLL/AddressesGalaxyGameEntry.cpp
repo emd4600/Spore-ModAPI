@@ -12,4 +12,12 @@ namespace GalaxyGameEntry
 		DefineAddress(ptr, SelectAddress(0x16A55C4, 0x16A1344));
 	}
 }
+
+#ifdef SDK_TO_GHIDRA
+namespace Addresses(GalaxyGameEntry)
+{
+	DefineAddress(sGlobalGGEUI, SelectAddress(0x16A55C4, 0x16A1344));
+}
+#endif
+
 #endif

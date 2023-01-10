@@ -35,6 +35,6 @@ namespace RenderWare
 		/* 08h */	int field_08;
 		/* 0Ch */	int field_0C;
 
-		static const uint32_t TYPE = 0x70003;
+		static const uint32_t RW_TYPE = 0x70003;
 	};
 }

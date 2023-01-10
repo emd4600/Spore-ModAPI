@@ -149,7 +149,7 @@ class FunctionProcessor:
             fullname = build_full_name(self.current_namespace, node.spelling)
             address = self.xml_writer.addresses_dict.get(fullname, None)
             if address is not None and fullname not in self.xml_writer.added_address_names:
-                self.xml_writer.add_function_def_from_node(self.current_namespace, node, True)
+                self.xml_writer.add_function_def_from_node(self.current_namespace, node, None)
             
         elif node.kind == cindex.CursorKind.VAR_DECL:
             fullname = build_full_name(self.current_namespace, node.spelling)
@@ -200,7 +200,7 @@ def extract_includes(input_file, output_file):
 def load_additional_addresses(file_path):
     with open(file_path, 'r') as f:
         result = [line.split('=', 1) for line in f.readlines()]
-        return [(int(r[0], 0), r[1]) for r in result]
+        return [(int(r[0], 0), r[1].strip()) for r in result]
     
 
 def main():
@@ -280,6 +280,7 @@ def main():
     function_processor = FunctionProcessor(xml_writer)
     function_processor.exportable_paths.append(r'E:\Eric\Spore ModAPI SDK')
     function_processor.process(tu.cursor)
+    xml_writer.create_objecttype_enum()
     
     print(f'Added {len(xml_writer.added_address_names)} addresses. Remaining:')
     for address_name in addresses.name_to_address.keys():
@@ -287,10 +288,12 @@ def main():
             print(address_name)
     
     print('Loading additional addresses...')
+    with open('excluded_names.txt') as f:
+        excluded_names = [line.strip() for line in f.readlines()]
     for i in range(2):
-        additional_addresses = load_additional_addresses(["additional_disk.txt", "additional_march2017.txt"][i])
+        additional_addresses = load_additional_addresses(['additional_disk.txt', 'additional_march2017.txt'][i])
         for addr_value, addr_name in additional_addresses:
-            if addr_value not in xml_writer.added_address_values[i]:
+            if addr_name not in excluded_names and addr_value not in xml_writer.added_address_values[i]:
                 xml_writer.add_single_symbol_address(addr_name, addr_value, i)
     
     xml_writer.write('SporeGhidra_disk.xml', 0)

@@ -55,13 +55,13 @@ public:
 	/// can be used to apply the transform to vectors, by just multiplying.
 	Math::Matrix4 ToMatrix4() const;
 
-	/// Applies another transform into this transform.
-	/// @param other
-	Transform& Multiply(const Transform& other);
-
 	/// Inverts this transform, so that now it will do exactly the opposite transformation.
 	/// A transform multiplied by its inverse results in the identity transform, which doesn't change anything.
 	void Invert();
+
+	/// Applies another transform into this transform.
+	/// @param other
+	Transform& PreTransformBy(const Transform& other);
 
 protected:
 	/* 00h */	int16_t	mnFlags;
@@ -76,6 +76,7 @@ namespace Addresses(Transform)
 {
 	DeclareAddress(ToMatrix4);
 	DeclareAddress(assign);  // This name is wrong, it's actually multiply operation
+	DeclareAddress(PreTransformBy);
 }
 
 inline const Math::Vector3& Transform::GetOffset() const
@@ -136,10 +137,3 @@ inline Transform& Transform::SetRotation(const Math::Quaternion& value)
 
 	return *this;
 }
-
-#ifndef SDK_TO_GHIDRA
-inline Transform& Transform::Multiply(const Transform& other)
-{
-	return CALL(GetAddress(Transform, assign), Transform&, Args(Transform*, const Transform&), Args(this, other));
-}
-#endif

@@ -76,6 +76,13 @@ struct GeneralAllocator
 	unsigned int GetBinBitmapWordFromBinIndex(unsigned int index);
 	unsigned int GetBinBitmapBitFromBinIndex(unsigned int index);
 
+#ifdef SDK_TO_GHIDRA
+	static GeneralAllocator* sInstance;
+	static void* new_(size_t size, const char* pName, int flags, unsigned debugFlags, const char* file, int line);
+	static void delete_(void* p);
+#endif
+
+
 	/* 00h */	int field_0;
 	/* 04h */	unsigned int max_fastbin_size;
 	/* 08h */	Chunk* fastbins[NUM_FAST_BINS];

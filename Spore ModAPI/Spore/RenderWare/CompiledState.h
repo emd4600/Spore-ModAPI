@@ -93,7 +93,7 @@ namespace RenderWare
 			return (char*)(((int)thisp + 0x2B) & ~15);
 		}
 
-		static const uint32_t TYPE = 0x2000B;
+		static const uint32_t RW_TYPE = 0x2000B;
 	};
 	ASSERT_SIZE(TextureSlot, 0x10);
 

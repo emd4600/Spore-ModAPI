@@ -132,6 +132,19 @@ namespace Editors
 
 		virtual bool HandleMessage(uint32_t messageID, void* msg) override;
 
+		/* 10h */	virtual bool Initialize(App::IGameModeManager* pManager) override;
+		/* 14h */	virtual bool Dispose() override;
+		/* 18h */	virtual bool OnEnter() override;
+		/* 1Ch */	virtual void OnExit() override;
+		/* 24h */	virtual bool OnKeyDown(int virtualKey, KeyModifiers modifiers) override;
+		/* 28h */	virtual bool OnKeyUp(int virtualKey, KeyModifiers modifiers) override;
+		/* 2Ch */	virtual bool OnMouseDown(MouseButton mouseButton, float mouseX, float mouseY, MouseState mouseState) override;
+		/* 30h */	virtual bool OnMouseUp(MouseButton mouseButton, float mouseX, float mouseY, MouseState mouseState) override;
+		/* 34h */	virtual bool OnMouseMove(float mouseX, float mouseY, MouseState mouseState) override;
+		/* 38h */	virtual bool OnMouseWheel(int wheelDelta, float mouseX, float mouseY, MouseState mouseState) override;
+		/* 3Ch */	virtual void Update(float delta1, float delta2) override;
+
+
 		//PLACEHOLDER virtual method 54h -> reads temporary database
 		//PLACEHOLDER virtual method 58h -> wrties temporary database
 
@@ -613,6 +626,10 @@ namespace Editors
 
 		DeclareAddress(HandleMessage);  // 0x591C80 0x591FA0
 	}
+
+#ifdef SDK_TO_GHIDRA
+	cEditor* sEditor;
+#endif
 
 #ifndef SDK_TO_GHIDRA
 	/// Returns the Editor instance (there can only be one at a time).

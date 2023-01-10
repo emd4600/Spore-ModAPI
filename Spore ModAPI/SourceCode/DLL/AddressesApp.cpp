@@ -26,7 +26,11 @@
 
 namespace Addresses(App)
 {
+#ifndef SDK_TO_GHIDRA
 	DefineAddress(AppProperties_ptr, SelectAddress(0x1601BA0, 0x15FD918));
+#else 
+	DefineAddress(sAppProperties, SelectAddress(0x1601BA0, 0x15FD918));
+#endif
 }
 
 namespace App
@@ -434,4 +438,12 @@ namespace App
 		DefineAddress(GetStatus, SelectAddress(0x68FE40, 0x68F930));
 	}
 }
+
+#ifdef SDK_TO_GHIDRA
+namespace Addresses(App)
+{
+	DefineAddress(sScenarioMode, SelectAddress(0x16CBD24, 0x16C7AA4));
+}
+#endif
+
 #endif

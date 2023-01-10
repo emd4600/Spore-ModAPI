@@ -14,6 +14,6 @@ namespace RenderWare
 		/* 10h */	Skeleton* mpSkeleton;
 		/* 14h */	int mStatesCount;
 
-		static const uint32_t TYPE = 0x7000B;
+		static const uint32_t RW_TYPE = 0x7000B;
 	};
 }

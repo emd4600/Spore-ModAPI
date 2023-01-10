@@ -66,6 +66,8 @@ namespace Palettes
 
 		void SetColor(const Math::ColorRGB& color);
 
+		void Update(long deltaMS);
+
 		//// OVERRIDES ////
 
 		virtual int AddRef() override;

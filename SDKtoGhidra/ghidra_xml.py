@@ -10,6 +10,12 @@ VFTABLE_TYPE_SUFFIX = '__vftable'
 VDTOR_SUFFIX = '_virtual_dtor'
 
 
+def traverse_print(node, level):
+    print("\t" * level + f'{node.displayname} {node.mangled_name} [{node.kind}] [{node.location}]')
+    for c in node.get_children():
+        traverse_print(c, level + 1)
+
+
 def try_namespace_list(search_list, search_name, namespace_list):
     namespace_str = ''
     for s in namespace_list:
@@ -112,12 +118,44 @@ def get_dependent_array_count(type_obj, template_args):
     return evaluated_count
 
 
+def extract_TYPE_value(var_decl_node, template_args):
+    integer_literal = None
+    for c in var_decl_node.get_children():
+        if c.kind == cindex.CursorKind.INTEGER_LITERAL:
+            integer_literal = next(c.get_tokens()).spelling
+        elif c.kind == cindex.CursorKind.UNEXPOSED_EXPR:
+            integer_literal = next(next(c.get_children()).get_tokens()).spelling
+        elif c.kind == cindex.CursorKind.DECL_REF_EXPR:
+            integer_literal = c.spelling
+            if template_args is not None and integer_literal in template_args:
+                integer_literal = template_args[integer_literal]
+        
+    assert(integer_literal)
+    return int(integer_literal, 0) if type(integer_literal) == str else integer_literal
+
+
+def get_this_type_list_for_function(structure_info, function_name):
+    """Finds the first base class that contains a virtual function with that name, then returns the 'namespace list' of that class"""
+    for vf in structure_info.virtual_functions_no_overrides:
+        if vf.spelling == function_name:
+            return structure_info.full_namespace_list
+    for base in structure_info.bases_with_vftables:
+        result = get_this_type_list_for_function(base, function_name)
+        if result is not None:
+            return result
+    return None
+    
+
 class StructureInfo:
     def __init__(self) -> None:
         self.has_vftable = False
         self.size = 0
         self.alignment = 0
         self.xml_element = None
+        self.full_namespace_list = None
+        self.bases_with_vftables = []
+        self.bases_without_vftables = []
+        self.virtual_functions_no_overrides = []
         
 
 class TemplateStructureInfo:
@@ -161,7 +199,7 @@ class GhidraToXmlWriter:
         self.enum_namespaces = dict()
         self.union_namespaces = dict()
         # Special enum: it is made of the TYPE static fields on classes, as it is useful for Cast() operations
-        self.type_enum_values = []
+        self.objecttype_enum_values = []
         
     def write(self, path, address_set_index):
         self.root.append(self.symbols_root[address_set_index])
@@ -432,7 +470,7 @@ class GhidraToXmlWriter:
                                   function_pointer.get_result(),
                                   param_types,
                                   param_names,
-                                  True,
+                                  None,
                                   ghidra_namespace_list + [obj_name],
                                   None,
                                   None)
@@ -464,13 +502,12 @@ class GhidraToXmlWriter:
         full_namespace_list = namespace_list + [obj_name]
         full_ghidra_namespace_list = ghidra_namespace_list + [obj_name]
         struct_info = StructureInfo()
+        struct_info.full_namespace_list = full_ghidra_namespace_list
         self.structures[fullname] = struct_info
         struct_alignment = 4
         fields = []
         sizes = []
         alignments = []
-        bases_with_vftables = []
-        bases_without_vftables = []
         virtual_functions = []
         skip_next_child = False
         unnamed_union_index = 0
@@ -490,18 +527,26 @@ class GhidraToXmlWriter:
             elif child.kind == cindex.CursorKind.CXX_METHOD:
                 if child.is_virtual_method() and not method_is_override(child):
                     struct_info.has_vftable = True
+                    struct_info.virtual_functions_no_overrides.append(child)
                     virtual_functions.append(child)
-                    self.add_function_def_from_node(full_ghidra_namespace_list, child, child.is_static_method(), template_args)
+                    this_type_namespace_list = None if child.is_static_method() else full_ghidra_namespace_list 
+                    self.add_function_def_from_node(full_ghidra_namespace_list, child, this_type_namespace_list, template_args)
                 
                 else:
                     function_fullname = build_full_name(full_namespace_list, child.spelling)
                     if function_fullname in self.addresses_dict:
-                        self.add_function_def_from_node(full_ghidra_namespace_list, child, child.is_static_method(), template_args)
-                        #self.add_function_address(self.addresses_dict[function_fullname], function_fullname, child.displayname, full_ghidra_namespace_list) 
+                        if child.is_virtual_method():
+                            this_type_namespace_list = get_this_type_list_for_function(struct_info, child.spelling)
+                        elif child.is_static_method():
+                            this_type_namespace_list = None
+                        else:
+                            this_type_namespace_list = full_ghidra_namespace_list
+                            
+                        self.add_function_def_from_node(full_ghidra_namespace_list, child, this_type_namespace_list, template_args)
                     
             elif child.kind == cindex.CursorKind.DESTRUCTOR:
                 # In destructors we never use "override", so we just have to check
-                if child.is_virtual_method() and not bases_with_vftables:
+                if child.is_virtual_method() and not struct_info.bases_with_vftables:
                     struct_info.has_vftable = True
                     virtual_functions.append(child)
                     vdtor_name = f'{structure_node.spelling}{VDTOR_SUFFIX}'
@@ -517,9 +562,9 @@ class GhidraToXmlWriter:
                 struct_alignment = max(struct_alignment, base_structure.alignment)
                 if base_structure.has_vftable:
                     struct_info.has_vftable = True
-                    bases_with_vftables.append(base_structure)
+                    struct_info.bases_with_vftables.append(base_structure)
                 else:
-                    bases_without_vftables.append(base_structure)
+                    struct_info.bases_without_vftables.append(base_structure)
                     
             elif child.kind == cindex.CursorKind.UNION_DECL and not child.displayname:
                 # Unnamed unions act as fields
@@ -542,8 +587,9 @@ class GhidraToXmlWriter:
                 fields.append(child)
                 sizes.append(child.type.get_size())
                 alignments.append(child.type.get_align())
-               
-            #TODO VAR_DECL for TYPE enum 
+
+            elif child.kind == cindex.CursorKind.VAR_DECL and child.spelling == 'TYPE':
+                self.objecttype_enum_values.append((fullname, extract_TYPE_value(child, template_args)))
                    
         # Calculate offset of fields
         offset = 0
@@ -555,7 +601,7 @@ class GhidraToXmlWriter:
         #  FIELDS
         vftable_index = 0
         
-        for base in bases_with_vftables:
+        for base in struct_info.bases_with_vftables:
             offset = align(offset, base.alignment)
             for child_xml in base.xml_element:
                 copy_xml = copy.deepcopy(child_xml)
@@ -577,7 +623,7 @@ class GhidraToXmlWriter:
             vftable_size = len(virtual_functions)*4
             
             # Add offset for the virtual function table, only if there are no vftables yet
-            if not bases_with_vftables:
+            if not struct_info.bases_with_vftables:
                 vftable_element = Element('MEMBER')
                 vftable_element.set('OFFSET', f'0x{offset:x}')
                 vftable_element.set('DATATYPE', f'{vftable_typename} *')
@@ -616,7 +662,7 @@ class GhidraToXmlWriter:
                 vftable_xml.append(function_xml)
                 vftable_offset += 4
                 
-        for base in bases_without_vftables:
+        for base in struct_info.bases_without_vftables:
             offset = align(offset, base.alignment)
             for child_xml in base.xml_element:
                 copy_xml = copy.deepcopy(child_xml)
@@ -668,12 +714,14 @@ class GhidraToXmlWriter:
         
         return struct_info
     
-    def add_function_def(self, function_name, return_type, parameter_types, parameter_names, is_static, namespace_list, template_args, calling_convention):
+    def add_function_def(self, function_name, return_type, parameter_types, parameter_names, this_type_list, namespace_list, template_args, calling_convention):
+        # this_type_list: None if is static function, 
+        
         function_xml = Element('FUNCTION_DEF')
         function_xml.set('NAME', function_name)
         function_xml.set('NAMESPACE', get_spore_ghidra_namespace(namespace_list))
         
-        if not calling_convention and not is_static:
+        if not calling_convention and this_type_list is not None:
             calling_convention = 'thiscall'
             
         if calling_convention:
@@ -700,11 +748,11 @@ class GhidraToXmlWriter:
         index = 0
         name_index = 1
         
-        if not is_static:
+        if this_type_list is not None:
             parameter_xml = Element('PARAMETER')
             parameter_xml.set('ORDINAL', str(index))
-            parameter_xml.set('DATATYPE', f'{namespace_list[-1]} *')
-            parameter_xml.set('DATATYPE_NAMESPACE', get_spore_ghidra_namespace(namespace_list[:-1]))  # the namespace list also contains the class name
+            parameter_xml.set('DATATYPE', f'{this_type_list[-1]} *')
+            parameter_xml.set('DATATYPE_NAMESPACE', get_spore_ghidra_namespace(this_type_list[:-1]))
             parameter_xml.set('NAME', 'this')
             parameter_xml.set('SIZE', '4')
             function_xml.append(parameter_xml)
@@ -719,18 +767,31 @@ class GhidraToXmlWriter:
             parameter_xml.set('SIZE', '4')
             function_xml.append(parameter_xml)
             index += 1
-        
-        for param_type, param_name in zip(parameter_types, parameter_names):
-            self.generate_template_structures(param_type, namespace_list, template_args)
+            
+        # Special case: we consider Cast() operations as if they had an ObjectTYPE argument,
+        # which is the enum we build from the TYPE static variables in classes
+        # This is more useful than seeing the raw integer
+        if function_name == 'Cast' and this_type_list is not None and len(parameter_types) == 1 and parameter_types[0].spelling == 'uint32_t':
             parameter_xml = Element('PARAMETER')
             parameter_xml.set('ORDINAL', str(index))
-            parameter_xml.set('DATATYPE', self.get_type_spelling(param_type, template_args, namespace_list))
-            parameter_xml.set('DATATYPE_NAMESPACE', self.get_type_ghidra_namespace(param_type, template_args, namespace_list))
-            parameter_xml.set('NAME', param_name if param_name else f'param_{name_index}')
-            parameter_xml.set('SIZE', str(max(self.get_type_size(param_type, template_args, namespace_list), 4)))
+            parameter_xml.set('DATATYPE', 'ObjectTYPE')
+            parameter_xml.set('DATATYPE_NAMESPACE', '/Spore')
+            parameter_xml.set('NAME', 'typeID')
+            parameter_xml.set('SIZE', '4')
             function_xml.append(parameter_xml)
-            index += 1
-            name_index += 1
+        
+        else:
+            for param_type, param_name in zip(parameter_types, parameter_names):
+                self.generate_template_structures(param_type, namespace_list, template_args)
+                parameter_xml = Element('PARAMETER')
+                parameter_xml.set('ORDINAL', str(index))
+                parameter_xml.set('DATATYPE', self.get_type_spelling(param_type, template_args, namespace_list))
+                parameter_xml.set('DATATYPE_NAMESPACE', self.get_type_ghidra_namespace(param_type, template_args, namespace_list))
+                parameter_xml.set('NAME', param_name if param_name else f'param_{name_index}')
+                parameter_xml.set('SIZE', str(max(self.get_type_size(param_type, template_args, namespace_list), 4)))
+                function_xml.append(parameter_xml)
+                index += 1
+                name_index += 1
             
         self.datatypes_root.append(function_xml)
         
@@ -739,7 +800,7 @@ class GhidraToXmlWriter:
         if fullname in self.addresses_dict:
             self.add_function_address(fullname, function_name, get_spore_ghidra_namespace(namespace_list))
     
-    def add_function_def_from_node(self, namespace_list, function_node, is_static, template_args=None):
+    def add_function_def_from_node(self, namespace_list, function_node, this_type_list, template_args=None):
         type_spelling = function_node.type.spelling
         if '__attribute__((stdcall))' in type_spelling:
             calling_convention = 'stdcall'
@@ -761,7 +822,7 @@ class GhidraToXmlWriter:
                               function_node.result_type,
                               param_types,
                               param_names,
-                              is_static,
+                              this_type_list,
                               namespace_list,
                               template_args,
                               calling_convention)
@@ -818,7 +879,7 @@ class GhidraToXmlWriter:
             assert(child.kind == cindex.CursorKind.ENUM_CONSTANT_DECL)
             entry_xml = Element('ENUM_ENTRY')
             entry_xml.set('NAME', child.spelling)
-            entry_xml.set('VALUE', f'0x{child.enum_value:x}')
+            entry_xml.set('VALUE', f'0x{child.enum_value & 0xFFFFFFFF:x}')
             enum_xml.append(entry_xml)
             
     def add_union(self, namespace_list, obj_name, union_node):
@@ -950,4 +1011,16 @@ class GhidraToXmlWriter:
             function_xml.set('DATATYPE', datatype)
             function_xml.set('DATATYPE_NAMESPACE', datatype_namespace)
             self.function_addresses_root[i].append(function_xml)
+            
+    def create_objecttype_enum(self):
+        enum_xml = Element('ENUM')
+        enum_xml.set('NAME', 'ObjectTYPE')
+        enum_xml.set('NAMESPACE', '/Spore')
+        enum_xml.set('SIZE', '4')
+        self.datatypes_root.append(enum_xml)
         
+        for name, value in self.objecttype_enum_values:
+            entry_xml = Element('ENUM_ENTRY')
+            entry_xml.set('NAME', name)
+            entry_xml.set('VALUE', f'0x{value:x}')
+            enum_xml.append(entry_xml)

@@ -93,7 +93,7 @@ namespace Editors
 	};
 	ASSERT_SIZE(PlayModeAnimations, 0x90);
 
-	namespace Addresses(PlayAnimButton)
+	namespace Addresses(PlayModeAnimations)
 	{
 		DeclareAddress(ReadAnimations);
 		DeclareAddress(ReadPanel);

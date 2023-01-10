@@ -164,6 +164,8 @@ namespace Simulator
 	inline Graphics::ILightingWorld* GetLightingWorld() {
 		return *(Graphics::ILightingWorld**)(GetAddress(Simulator, LightingWorld_ptr));
 	}
+#else
+	Graphics::ILightingWorld* sLightingWorld;
 #endif
 
 	namespace Addresses(cGameViewManager)

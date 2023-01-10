@@ -84,8 +84,6 @@ namespace Addresses(Simulator)
 {
 	DefineAddress(GetArchetypeRelationshipsID, SelectAddress(0xC30530, 0xC30E20));
 
-	DefineAddress(LightingWorld_ptr, SelectAddress(0x1682CD4, 0x167EA54));
-
 	DefineAddress(GetActiveStar, SelectAddress(0x10222B0, 0x10210E0));
 	DefineAddress(GetActiveStarRecord, SelectAddress(0x10222C0, 0x10210F0));
 
@@ -110,7 +108,14 @@ namespace Addresses(Simulator)
 	DefineAddress(GetPlanetTemperatureType, SelectAddress(0xFC26B0, 0xFC1F90));
 	DefineAddress(IsBinaryStar, SelectAddress(0xC8A770, 0xC8B5E0));
 	DefineAddress(IsNotStarOrBinaryStar, SelectAddress(0xC8A840, 0xC8B6B0));
+	
+#ifndef SDK_TO_GHIDRA
+	DefineAddress(LightingWorld_ptr, SelectAddress(0x1682CD4, 0x167EA54));
 	DefineAddress(PrecalculatedSolarStarRadius_ptr, SelectAddress(0x157DCF0, 0x1579D10));
+#else
+	DefineAddress(sLightingWorld, SelectAddress(0x1682CD4, 0x167EA54));
+	DefineAddress(sPrecalculatedSolarStarRadius, SelectAddress(0x157DCF0, 0x1579D10));
+#endif
 }
 
 namespace Simulator
@@ -221,7 +226,11 @@ namespace Simulator
 
 	namespace Addresses(Cell) 
 	{
+#ifndef SDK_TO_GHIDRA
 		DefineAddress(GoalCards_ptr, SelectAddress(0x16B8068, 0x16B3DE8));
+#else
+		DefineAddress(sGoalCards, SelectAddress(0x16B8068, 0x16B3DE8));
+#endif
 	}
 
 	namespace Cell
@@ -633,7 +642,7 @@ namespace Simulator
 	namespace Addresses(cPlantSpeciesManager)
 	{
 		DefineAddress(Get, SelectAddress(0xB3D380, 0xB3D520));
-		DefineAddress(CreateAnimalItem, SelectAddress(0xB8FEF0, 0xB90560));
+		DefineAddress(CreatePlantItem, SelectAddress(0xB8FEF0, 0xB90560));
 	}
 
 	namespace Addresses(cSpaceInventoryItem)
@@ -761,4 +770,14 @@ namespace Simulator
 		DefineAddress(RemoveOwner, SelectAddress(0xBD5640, 0xBD6310));
 	}
 }
+
+#ifdef SDK_TO_GHIDRA
+namespace Addresses(Simulator)
+{
+	DefineAddress(sSpacePlayerData, SelectAddress(0x16E1D0C, 0x16DDA8C));
+	DefineAddress(sScenarioEditHistory, SelectAddress(0x160A850, 0x16065D8));
+	DefineAddress(TimeAtStartOfFrame, SelectAddress(0xB63580, 0xB63980));
+}
+#endif
+
 #endif

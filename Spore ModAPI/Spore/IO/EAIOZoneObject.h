@@ -101,6 +101,11 @@ namespace IO
 		static void* operator new(size_t n, ICoreAllocator* pAllocator, const char* pName);
 
 		static void* operator new(size_t n);
+
+#ifdef SDK_TO_GHIDRA
+		static void* new_(size_t n, ICoreAllocator* pAllocator, const char* pName);
+		static void delete_(void* p, ICoreAllocator* pAllocator, const char* pName);
+#endif
 	};
 
 	namespace Addresses(EAIOZoneObject)

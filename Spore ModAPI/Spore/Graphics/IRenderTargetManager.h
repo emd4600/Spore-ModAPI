@@ -81,9 +81,9 @@ namespace Addresses(Graphics) {
 	DeclareAddress(MainDepthRTT_ptr);
 }
 
-#ifndef SDK_TO_GHIDRA
 namespace Graphics
 {
+#ifndef SDK_TO_GHIDRA
 	inline RenderWare::Raster* GetMainColorRTT() {
 		return *(RenderWare::Raster**)(GetAddress(Graphics, MainColorRTT_ptr));
 	}
@@ -91,5 +91,8 @@ namespace Graphics
 	inline RenderWare::Raster* GetMainDepthRTT() {
 		return *(RenderWare::Raster**)(GetAddress(Graphics, MainDepthRTT_ptr));
 	}
-}
+#else
+	RenderWare::Raster* sMainColorRTT;
+	RenderWare::Raster* sMainDepthRTT;
 #endif
+}

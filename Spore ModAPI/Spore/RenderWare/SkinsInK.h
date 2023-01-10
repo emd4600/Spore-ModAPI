@@ -40,6 +40,6 @@ namespace RenderWare
 		/* 0Ch */	Skeleton* mpSkeleton;
 		/* 10h */	AnimationSkin* mpAnimationSkin;
 
-		static const uint32_t TYPE = 0x7000C;
+		static const uint32_t RW_TYPE = 0x7000C;
 	};
 }
