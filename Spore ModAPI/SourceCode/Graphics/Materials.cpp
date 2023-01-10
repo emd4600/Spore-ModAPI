@@ -214,7 +214,7 @@ namespace Graphics
 				for (int i = 0; i < material.statesCount; ++i) {
 					RWObjectQuery query;
 					pRenderWare->mpHeader->GetRWObject(index, query);
-					if (query.typeCode == CompiledState::TYPE) {
+					if (query.typeCode == CompiledState::RW_TYPE) {
 						material.states[i] = (CompiledState*)query.pData;
 					}
 					++index;
