@@ -15,7 +15,7 @@ void PrintPackages() {
 	int count = ResourceManager.GetDatabaseList(databases);
 	App::ConsolePrintF("----- %d databases:", count);
 	for (auto database : databases) {
-		App::ConsolePrintF("ls", database->GetLocation());
+		App::ConsolePrintF("%ls", database->GetLocation());
 	}
 	App::ConsolePrintF("-----");
 }
