@@ -57,6 +57,7 @@ namespace Simulator
 		//TODO check sub_F1EFC0
 		
 		void SetCurrentAct(int actIndex, bool = false);
+		void JumpToAct(int actIndex);
 
 	public:
 		/* 0Ch */	cScenarioPlaySummary mSummary;
