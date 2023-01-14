@@ -741,6 +741,7 @@ namespace Simulator
 
 	namespace Addresses(cScenarioPlayMode)
 	{
+		DefineAddress(Initialize, SelectAddress(0xF1F450, 0xF1F060));
 		DefineAddress(SetCurrentAct, SelectAddress(0xF1F260, 0xF1EE70));
 		DefineAddress(JumpToAct, SelectAddress(0xF1F7B0, 0xF1F3C0));
 	}
