@@ -52,5 +52,25 @@ namespace RenderWare
 			compiledState->SetRaster(slotIndex, originalRaster);
 		}
 	}
+
+
+	auto_METHOD(Raster, int, D3D9GetStreamedMipLevelSize, Args(int arg), Args(arg));
+	auto_METHOD(Raster, bool, Fill, Args(int8_t* data, int mip), Args(data, mip));
+	auto_METHOD(Raster, bool, Extract, Args(int8_t* data, int mip), Args(data, mip));
+
+	bool Raster::CopyRaster(Raster* other)
+	{
+		if (!Raster::CreateRaster(other, width, height, levels, 0, format))
+			return false;
+
+		auto data = new int8_t[D3D9GetStreamedMipLevelSize()];
+		if (!Extract(data))
+			return false;
+
+		if (!other->Fill(data))
+			return false;
+
+		return true;
+	}
 }
 #endif

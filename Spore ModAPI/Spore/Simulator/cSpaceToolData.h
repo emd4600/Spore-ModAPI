@@ -128,16 +128,16 @@ namespace Simulator
 		/* A8h */	cGonzagoTimer mAutoFireTimer;
 		/* C8h */	cGonzagoTimer mChargeTimer;
 		/* E8h */	cGonzagoTimer mMissCheckTimer;
-		/* 108h */	intrusive_ptr<Object> field_108;
-		/* 10Ch */	intrusive_ptr<Object> field_10C;
-		/* 110h */	intrusive_ptr<Object> field_110;
-		/* 114h */	intrusive_ptr<cSpatialObject> mpToolOwner;
-		/* 118h */	intrusive_ptr<cSpatialObject> mpToolTarget;
+		/* 108h */	ObjectPtr field_108;
+		/* 10Ch */	ObjectPtr field_10C;
+		/* 110h */	ObjectPtr field_110;
+		/* 114h */	cSpatialObjectPtr mpToolOwner;
+		/* 118h */	cSpatialObjectPtr mpToolTarget;
 		/* 11Ch */	int mTargetDamagePointId;
-		/* 120h */	intrusive_ptr<cDefaultAoEArea> mpArea;
-		/* 124h */	intrusive_ptr<cDefaultBeamProjectile> mpBeam;
+		/* 120h */	cDefaultAoEAreaPtr mpArea;
+		/* 124h */	cDefaultBeamProjectilePtr mpBeam;
 		/* 128h */	int field_128;
-		/* 12Ch */	intrusive_ptr<Object> mpAppTarget;  // it really is object
+		/* 12Ch */	ObjectPtr mpAppTarget;  // it really is object
 		/* 130h */	char padding_130[0xC];  // 134h cSpaceToolDAta
 		/* 13Ch */	bool mbInterruptedByDamage;
 		/* 140h */	int field_140;  // effect?
@@ -282,12 +282,7 @@ namespace Simulator
 		/* 29Ch */	int field_29C;  // not initialized
 
 	};
-
-	/////////////////////////////////
-	//// INTERNAL IMPLEMENTATION ////
-	/////////////////////////////////
-
-	static_assert(sizeof(cSpaceToolData) == 0x2A0, "sizeof(cSpaceToolData) != 0x2A0");
+	ASSERT_SIZE(cSpaceToolData, 0x2A0);
 
 	namespace Addresses(cSpaceToolData)
 	{

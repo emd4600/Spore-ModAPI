@@ -86,7 +86,7 @@ namespace Simulator
 		/* 75h */	bool field_75;  // true
 		/* 76h */	bool field_76;
 		/* 77h */	bool field_77;
-		/* 78h */	vector<int> mNPC_UFOs;  //TODO
+		/* 78h */	eastl::vector<int> mNPC_UFOs;  //TODO
 		/* 90h */	cGonzagoTimer mTimeSinceStartedSpaceGame;
 		/// Current star ID??
 		/* B0h */	StarID field_B0;
@@ -95,16 +95,13 @@ namespace Simulator
 		/* BCh */	int mpSimulatorWalkAround;  //TODO cSimulatorWalkAround
 		/* C0h */	int mpSimulatorUniverse;  //TODO cSimulatorUniverse
 		/* C4h */	int field_C4;
-		/* C8h */	vector<int> field_C8;
-		/* DCh */	vector<int> mPlanetsToUplift;  // TODO
+		/* C8h */	eastl::vector<int> field_C8;
+		/* DCh */	eastl::vector<int> mPlanetsToUplift;  // TODO
 
 	public:
 		static cSimulatorSpaceGame* Get();
 	};
-
-	/////////////////////////////////
-	//// INTERNAL IMPLEMENTATION ////
-	/////////////////////////////////
+	ASSERT_SIZE(cSimulatorSpaceGame, 0xF0);
 
 	inline cSimPlanetHighLOD* cSimulatorSpaceGame::GetPlanetHighLOD() {
 		return mpHighLODPlanetSim.get();
@@ -113,8 +110,6 @@ namespace Simulator
 	inline UI::SpaceGameUI* cSimulatorSpaceGame::GetUI() {
 		return mpUI.get();
 	}
-
-	static_assert(sizeof(cSimulatorSpaceGame) == 0xF0, "sizeof(cSimulatorSpaceGame) != 0xF0");
 
 	namespace Addresses(cSimulatorSpaceGame)
 	{

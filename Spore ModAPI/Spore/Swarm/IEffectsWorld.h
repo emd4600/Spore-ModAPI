@@ -39,6 +39,8 @@ namespace Swarm
 	};
 	ASSERT_SIZE(cEffectInfo, 0x24);
 
+	typedef void(*VisualEffectCallback_t)(IVisualEffect*, void*);
+
 	/// An effects world is a space in the game which contains effects. The equivalent in models would be Graphics::IModelWorld.
 	/// Effects in a certain world do not interact with effects of other worlds.
 	class IEffectsWorld
@@ -88,7 +90,7 @@ namespace Swarm
 		/* 40h */	virtual void ResetState() = 0;
 
 		/* 44h */	virtual void GetActiveEffectInfo(eastl::vector<cEffectInfo>& dst, const char* pPattern, int infoLevel) = 0;
-		/* 48h */	virtual void ApplyToActiveEffects(void(*callback)(IVisualEffect*, void*), void*, int infoLevel) = 0;
+		/* 48h */	virtual void ApplyToActiveEffects(VisualEffectCallback_t callback, void*, int infoLevel) = 0;
 
 		/* 4Ch */	virtual bool Initialize() = 0;
 		/* 50h */	virtual bool Dispose() = 0;

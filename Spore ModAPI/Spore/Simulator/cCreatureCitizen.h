@@ -33,10 +33,10 @@ namespace Simulator
 		/* 1000h */	bool mAffectedByRecruiting;
 		/* 1001h */	bool field_1001;  // not initialized
 		/* 1002h */	bool field_1002;  // true
-		/* 1004h */	Vector3 field_1004;
-		/* 1010h */	intrusive_ptr<cCity> mpOwnerCity;
-		/* 1014h */	intrusive_ptr<cTribe> mpOwnerTribe;
-		/* 1018h */	vector<ObjectPtr> field_1018;
+		/* 1004h */	Math::Vector3 field_1004;
+		/* 1010h */	eastl::intrusive_ptr<cCity> mpOwnerCity;
+		/* 1014h */	eastl::intrusive_ptr<cTribe> mpOwnerTribe;
+		/* 1018h */	eastl::vector<ObjectPtr> field_1018;
 		/* 102Ch */	int mSpecializedTool;
 		/* 1030h */	cHitSpherePtr mpHitSphere;
 	};

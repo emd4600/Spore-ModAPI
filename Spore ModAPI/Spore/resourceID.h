@@ -20,6 +20,7 @@
 #pragma once
 
 #include <stdint.h>
+#include <Spore\Internal.h>
 #include <EASTL\functional.h>
 
 ///
@@ -35,18 +36,12 @@ public:
 
 	uint32_t groupID;
 	uint32_t instanceID;
-
+	
+#ifndef SDK_TO_GHIDRA
 	bool ResourceID::operator ==(const ResourceID &b) const;
-
+#endif
 };
-
-
-///////////////////////////////////
-//// INTERNAL IMPLEMENENTATION ////
-///////////////////////////////////
-
-static_assert(sizeof(ResourceID) == 0x8, "sizeof(ResourceID) must be 8h");
-
+ASSERT_SIZE(ResourceID, 0x8);
 
 inline ResourceID::ResourceID(uint32_t _instanceID, uint32_t _groupID)
 	: instanceID(_instanceID)
@@ -60,6 +55,7 @@ inline ResourceID::ResourceID()
 {
 }
 
+#ifndef SDK_TO_GHIDRA
 inline bool ResourceID::operator ==(const ResourceID &b) const
 {
 	return groupID == b.groupID && instanceID == b.instanceID;
@@ -73,3 +69,4 @@ namespace eastl
 		size_t operator()(const ResourceID& val) const { return static_cast<size_t>(val.groupID); }
 	};
 }
+#endif

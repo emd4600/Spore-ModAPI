@@ -28,9 +28,11 @@
 #include <Spore\Simulator\cCombatant.h>
 #include <Spore\Simulator\UnknownCreatureClass.h>
 #include <Spore\Anim\AnimatedCreature.h>
-#include <Spore\resourceID.h>
+#include <Spore\Swarm\IVisualEffect.h>
+#include <Spore\ResourceID.h>
 #include <EASTL\vector.h>
 #include <EASTL\list.h>
+#include <EASTL\hash_map.h>
 #include <EASTL\bitset.h>
 #include <EASTL\queue.h>
 
@@ -38,11 +40,9 @@
 
 namespace Simulator
 {
-	
-
 	class CreatureEffectPool
 	{
-		/* 00h */	hash_map<uint32_t, IVisualEffectPtr> mEffectMap;
+		/* 00h */	eastl::hash_map<uint32_t, IVisualEffectPtr> mEffectMap;
 		/* 20h */	char field_0[0x80];
 	};
 
@@ -85,7 +85,7 @@ namespace Simulator
 	public:
 		static const uint32_t TYPE = 0xCE9F6639;
 
-		enum
+		enum SpeedType
 		{
 			kStandardSpeed = 2
 		};
@@ -235,10 +235,10 @@ namespace Simulator
 		/* B24h */	uint32_t mProfileSeq;
 		/* B28h */	ResourceKey mSpeciesKey;
 		/* B34h */	int mAge;  // 1
-		/* B38h */	string16 mCreatureName;
+		/* B38h */	eastl::string16 mCreatureName;
 		/* B48h */	int field_B48;
 		/* B4Ch */	int field_B4C;  //TODO cBehaviorTreeData
-		/* B50h */	intrusive_ptr<cCreatureBase> mpWhoIsInteractingWithMe;
+		/* B50h */	cCreatureBasePtr mpWhoIsInteractingWithMe;
 		/* B54h */	AnimatedCreaturePtr mpAnimatedCreature;
 		/* B58h */	int mGeneralFlags;  // 0x200 IsPlayerAvatar, 0x100 hasHunger?
 		/* B5Ch */	bool field_B5C;
@@ -278,8 +278,8 @@ namespace Simulator
 		/* BD8h */	int field_BD8;  // not initialized
 		/* BDCh */	int field_BDC;  // not initialized
 		/* BE0h */	Vector3 field_BE0;
-		/* BECh */	bitset<88> mInUseAbilityBits;
-		/* BF8h */	bitset<88> mRechargingAbilityBits;
+		/* BECh */	eastl::bitset<88> mInUseAbilityBits;
+		/* BF8h */	eastl::bitset<88> mRechargingAbilityBits;
 		/* C04h */	int field_C04;
 		/* C08h */	int field_C08;
 		/* C0Ch */	int field_C0C;
@@ -287,16 +287,16 @@ namespace Simulator
 		/* C18h */	uint64_t DEPRECATED_mRechargingAbilityBits;  // not initialized
 		/* C20h */	int field_C20;  // not initialized
 		/* C24h */	int field_C24;  // not initialized
-		/* C28h */	fixed_vector<cAbilityState, 8> mAbilityStates;
+		/* C28h */	eastl::fixed_vector<cAbilityState, 8> mAbilityStates;
 		/* CC0h */	CreatureMotive mLastMotiveState;
 		/* CC4h */	uint32_t mLastInteractionEffect;
 		/* CC8h */	CreatureEffectPool mEffectPool1;
 		/* D68h */	CreatureEffectPool mEffectPool2;
-		/* E08h */	map<int, int> field_E08;  // related with audio
-		/* E24h */	vector<int> field_E24;
+		/* E08h */	eastl::map<int, int> field_E08;  // related with audio
+		/* E24h */	eastl::vector<int> field_E24;
 		/* E38h */	bool field_E38;
 		/* E3Ch */	int field_E3C;  // -1
-		/* E40h */	vector<cCreatureItem> mItemInventory;
+		/* E40h */	eastl::vector<cCreatureItem> mItemInventory;
 		/* E54h */	int field_E54;
 		/// For adventurer creatures, their current energy.
 		/* E58h */	float mEnergy;
@@ -320,7 +320,7 @@ namespace Simulator
 		/* E8Ch */	uint32_t mCurrentAttackIdx;  // -1
 		/* E90h */	uint32_t mCurrentAttackAnimId;  // -1
 		/* E94h */	float field_E94;
-		/* E98h */	vector<int> field_E98;
+		/* E98h */	eastl::vector<int> field_E98;
 		/* EACh */	int field_EAC;
 		/* EB0h */	int field_EB0[10];  // not initialized, ?? (only EB4 initialized)
 		/* ED8h */	int field_ED8;
@@ -345,7 +345,7 @@ namespace Simulator
 		/* F78h	*/	int field_F78;
 		/* F7Ch	*/	int field_F7C;
 		/* F80h	*/	int field_F80;
-		/* F84h */	list<int> field_F84;
+		/* F84h */	eastl::list<int> field_F84;
 		/* F90h */	bool field_F90;  // true
 		/* F94h */	int field_F94;
 		/* F98h */	int mSpeedState;
@@ -358,13 +358,8 @@ namespace Simulator
 		/* FB4h */	float field_FB4;  // speed?
 		/* FB8h */	char padding_FB8[8];
 	};
-
-	/////////////////////////////////
-	//// INTERNAL IMPLEMENTATION ////
-	/////////////////////////////////
-
-	static_assert(sizeof(UnknownCreatureClass) == 0x4A0, "sizeof(UnknownCreatureClass) != 4A0h");
-	static_assert(sizeof(cCreatureBase) == 0xFC0, "sizeof(cCreatureBase) != FC0h");
+	ASSERT_SIZE(UnknownCreatureClass, 0x4A0);
+	ASSERT_SIZE(cCreatureBase, 0xFC0);
 
 	namespace Addresses(cCreatureBase)
 	{

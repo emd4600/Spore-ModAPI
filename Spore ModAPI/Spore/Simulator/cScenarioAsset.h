@@ -31,10 +31,5 @@ namespace Simulator
 		/* 18h */	uint32_t mModelType;
 		/* 1Ch */	bool field_1C;
 	};
-
-	/////////////////////////////////
-	//// INTERNAL IMPLEMENTATION ////
-	/////////////////////////////////
-
-	static_assert(sizeof(cScenarioAsset) == 0x20, "sizeof(cScenarioAsset) != 0x20");
+	ASSERT_SIZE(cScenarioAsset, 0x20);
 }

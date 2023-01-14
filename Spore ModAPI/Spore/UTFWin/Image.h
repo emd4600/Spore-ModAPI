@@ -37,7 +37,7 @@ namespace UTFWin
 	class Image : public ILayoutElement
 	{
 	public:
-		enum
+		enum ImageTypeIDs
 		{
 			kTypePNG = 0x2F7D0004
 		};
@@ -92,7 +92,7 @@ namespace UTFWin
 		static bool SetBackgroundByKey(IWindow* pWindow, const ResourceKey& imageName, int imageIndex = -1);
 		
 	protected:
-		/* 04h */	intrusive_ptr<Object> mpImage;
+		/* 04h */	ObjectPtr mpImage;
 		/* 08h */	int field_08;
 		/* 0Ch */	Math::Rectangle mTexCoords;
 		/* 1Ch */	Math::Dimensions mDimensions;
@@ -100,12 +100,7 @@ namespace UTFWin
 		/* 28h */	int mnRefCount;
 
 	};
-
-	/////////////////////////////////
-	//// INTERNAL IMPLEMENTATION ////
-	/////////////////////////////////
-
-	static_assert(sizeof(Image) == 0x2C, "sizeof(Image) must be 0x2C!");
+	ASSERT_SIZE(Image, 0x2C);
 
 	namespace Addresses(Image)
 	{
@@ -116,6 +111,7 @@ namespace UTFWin
 		DeclareAddress(SetBackgroundByKey);
 	}
 
+#ifndef SDK_TO_GHIDRA
 	inline Image::Image()
 		: mpImage(nullptr), mnRefCount(0)
 	{
@@ -123,6 +119,7 @@ namespace UTFWin
 	inline Image::~Image()
 	{
 	}
+#endif
 
 	inline const Math::Rectangle& Image::GetTexCoords() const
 	{

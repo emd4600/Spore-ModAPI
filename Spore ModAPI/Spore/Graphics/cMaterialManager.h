@@ -32,9 +32,6 @@
 #include <EASTL\vector.h>
 #include <EASTL\string.h>
 
-using namespace eastl;
-using RenderWare::CompiledState;
-
 namespace Graphics
 {
 	class UnkMatManager
@@ -42,20 +39,20 @@ namespace Graphics
 	protected:
 		/* 00h */	int field_00;
 		/* 04h */	int field_04;
-		/* 08h */	hash_map<int, int> field_08;
-		/* 28h */	hash_map<int, int> field_28;
-		/* 48h */	hash_map<int, int> field_48;
-		/* 68h */	hash_map<int, int> field_68;
-		/* 88h */	vector<intrusive_ptr<StandardShader>> mStandardShaders;
-		/* 9Ch */	hash_map<int, int> field_9C;
+		/* 08h */	eastl::hash_map<int, int> field_08;
+		/* 28h */	eastl::hash_map<int, int> field_28;
+		/* 48h */	eastl::hash_map<int, int> field_48;
+		/* 68h */	eastl::hash_map<int, int> field_68;
+		/* 88h */	eastl::vector<eastl::intrusive_ptr<StandardShader>> mStandardShaders;
+		/* 9Ch */	eastl::hash_map<int, int> field_9C;
 		// They are only added here if they are outside the 0x70000000 - 0x80000000 range
-		/* BCh */	hash_map<uint32_t, intrusive_ptr<StandardShader>> mStandardShadersMap;
-		/* DCh */	vector<intrusive_ptr<ShaderBuilder>> mShaderBuilders;
+		/* BCh */	eastl::hash_map<uint32_t, eastl::intrusive_ptr<StandardShader>> mStandardShadersMap;
+		/* DCh */	eastl::vector<eastl::intrusive_ptr<ShaderBuilder>> mShaderBuilders;
 		// They are only added here if they are outside the 0x70000000 - 0x80000000 range
-		/* F0h */	hash_map<uint32_t, intrusive_ptr<ShaderBuilder>> mShaderBuildersMap;
-		/* 110h */	string field_110;
+		/* F0h */	eastl::hash_map<uint32_t, eastl::intrusive_ptr<ShaderBuilder>> mShaderBuildersMap;
+		/* 110h */	eastl::string field_110;
 		/* 120h */	char field_120[0x1C];  // not initialized
-		/* 13Ch */	hash_map<int, int> field_13C;
+		/* 13Ch */	eastl::hash_map<int, int> field_13C;
 
 		friend class cMaterialManager;
 	};
@@ -70,6 +67,8 @@ namespace Graphics
 		bool ReadCompiledShadersImpl(IO::IStream* pStream);
 		bool ReadMaterialsImpl(IO::IStream* pLinkStream, RenderWare::RenderWareFile* pRenderWare);
 
+		bool ReadShaderFragments(Resource::Database* pDatabase);
+
 	public:
 
 		/* 08h */	int mnRefCount;
@@ -77,17 +76,17 @@ namespace Graphics
 		/* 10h */	UnkMatManager field_10;
 		/* 16Ch */	int field_16C;  // not initialized
 		/* 170h */	int field_170;  // not initialized
-		/* 174h */	hash_map<uint32_t, Material> mMaterials;
-		/* 194h */	hash_map<CompiledState*, uint32_t> field_194;
-		/* 1B4h */	CompiledState* mpDefaultCompiledState;
+		/* 174h */	eastl::hash_map<uint32_t, Material> mMaterials;
+		/* 194h */	eastl::hash_map<RenderWare::CompiledState*, uint32_t> field_194;
+		/* 1B4h */	RenderWare::CompiledState* mpDefaultCompiledState;
 		/* 1B8h */	bool field_1B8;
 		/* 1BCh */	int _padding_1BC[4];
 		/* 1CCh */	int field_1CC;  // 1
 		/* 1D0h */	int field_1D0;  // -1
 		/* 1D4h */	int field_1D4; 
-		/* 1D8h */	fixed_vector<int, 4> field_1D8;
+		/* 1D8h */	eastl::fixed_vector<int, 4> field_1D8;
 		/* 200h */	int mShaderPath;
-		/* 204h */	intrusive_ptr<RenderWare::RenderWareFile> mpCompiledStatesFile;
+		/* 204h */	eastl::intrusive_ptr<RenderWare::RenderWareFile> mpCompiledStatesFile;
 		/* 208h */	Clock field_208;
 		/* 220h */	int field_220;
 		/* 224h */	int field_224;
@@ -98,7 +97,7 @@ namespace Graphics
 		/* 238h */	int field_238;
 		/* 23Ch */	bool field_23C;
 		/* 240h */	int field_240;  // 0x200
-		/* 244h */	vector<intrusive_ptr<Material>> mTexturedMaterials;
+		/* 244h */	eastl::vector<MaterialPtr> mTexturedMaterials;
 		/* 258h */	Mutex mMaterialsMutex;
 	};
 	

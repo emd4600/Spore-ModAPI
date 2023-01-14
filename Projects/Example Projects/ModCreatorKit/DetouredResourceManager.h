@@ -24,4 +24,4 @@
 using namespace Resource;
 
 member_detour(ResourceManager_detour, Resource::cResourceManager,
-	bool(const ResourceKey&, ResourceObjectPtr*, int, DBPF*, IResourceFactory*, const ResourceKey*)) {};
+	bool(const ResourceKey&, ResourceObjectPtr*, void*, Database*, IResourceFactory*, const ResourceKey*)) {};

@@ -64,7 +64,7 @@ namespace Sporepedia
 	auto_METHOD_VIRTUAL_(cSPAssetDataOTDB, IAssetData, const char16_t*, GetDescription);
 	RedirectVirtualMethod_noargs_structret(cSPAssetDataOTDB, IAssetData, GetImageKey, ResourceKey);
 	RedirectVirtualMethod_noargs_structret(cSPAssetDataOTDB, IAssetData, GetBackgroundImageKey, ResourceKey);
-	auto_METHOD_VIRTUAL_VOID(cSPAssetDataOTDB, IAssetData, GetTags, Args(string16& dst), Args(dst));
+	auto_METHOD_VIRTUAL_VOID(cSPAssetDataOTDB, IAssetData, GetTags, Args(eastl::string16& dst), Args(dst));
 
 	uint32_t cSPAssetDataOTDB::GetAssetSubtype() {
 		return mSubtype;
@@ -127,7 +127,7 @@ namespace Sporepedia
 		return field_6C;
 	}
 
-	auto_METHOD_VIRTUAL(cSPAssetDataOTDB, IAssetData, bool, GetConsequenceTraits, Args(vector<uint32_t>& dst), Args(dst));
+	auto_METHOD_VIRTUAL(cSPAssetDataOTDB, IAssetData, bool, GetConsequenceTraits, Args(eastl::vector<uint32_t>& dst), Args(dst));
 	auto_METHOD_VIRTUAL(cSPAssetDataOTDB, IAssetData, bool, GetAssetID, Args(uint64_t& dst), Args(dst));
 	auto_METHOD_VIRTUAL_(cSPAssetDataOTDB, IAssetData, int64_t, GetTimeDownloaded);
 

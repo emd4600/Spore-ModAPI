@@ -21,7 +21,7 @@ namespace Simulator
 		/// How many of the tasks in this goal have been completed
 		/* 04h */	int mCount;
 		/// Maps cGameData ID to ??
-		/* 08h */	map<uint32_t, int> field_8;
+		/* 08h */	eastl::map<uint32_t, int> field_8;
 		/* 24h */	cScenarioGoal mGoal;
 	};
 	ASSERT_SIZE(cScenarioPlayModeGoal, 0x1AC);
@@ -60,9 +60,9 @@ namespace Simulator
 
 	public:
 		/* 0Ch */	cScenarioPlaySummary mSummary;
-		/* 54h */	string16 mFailReason;
+		/* 54h */	eastl::string16 mFailReason;
 		/// Goals for the current act
-		/* 64h */	vector<cScenarioPlayModeGoal> mCurrentGoals;
+		/* 64h */	eastl::vector<cScenarioPlayModeGoal> mCurrentGoals;
 		/* 78h */	int field_78;  // not initialized
 		/* 7Ch */	App::MessageListenerData mMessageListenerData;
 		/* 90h */	int field_90;  // not initialized, current state? fail reason?

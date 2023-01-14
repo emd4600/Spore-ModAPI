@@ -58,11 +58,6 @@ namespace Graphics
 		// more things
 	};
 
-	enum
-	{
-		kRenderQueueMain = 8  // ?
-	};
-
 	/// The available layer indices that can be used for adding renderers.
 	/// Most of these have been copied from Darkspore globals.lua, so they might not match for Spore.
 	enum class LayerIndices {

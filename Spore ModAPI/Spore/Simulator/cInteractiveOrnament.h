@@ -53,12 +53,7 @@ namespace Simulator
 		/* 240h */	int mLifetime;  // -1
 		/* 244h */	int mFadeTimer;
 		/* 248h */	int field_248;  // -1
-		/* 24Ch */	vector<int> field_24C;  // only 2 items, destructed models?
+		/* 24Ch */	eastl::vector<int> field_24C;  // only 2 items, destructed models?
 	};
-
-	/////////////////////////////////
-	//// INTERNAL IMPLEMENTATION ////
-	/////////////////////////////////
-
-	static_assert(sizeof(cInteractiveOrnament) == 0x260, "sizeof(cInteractiveOrnament) != 260h");
+	ASSERT_SIZE(cInteractiveOrnament, 0x260);
 }

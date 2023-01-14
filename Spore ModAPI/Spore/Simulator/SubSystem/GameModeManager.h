@@ -58,7 +58,7 @@ namespace Simulator
 
 	public:
 		struct DifficultyTuning {
-			intrusive_ptr<App::PropertyList> values[3];
+			PropertyListPtr values[3];
 		};
 
 		/* 20h */	uint32_t mActiveModeID;  // -1
@@ -66,17 +66,18 @@ namespace Simulator
 		/* 28h */	bool field_28;
 		/* 29h */	bool field_29;
 		/* 2Ch */	int field_2C;
-		/* 30h */	intrusive_ptr<Swarm::IEffectsWorld> mpTransitionEffectWorld;
+		/* 30h */	IEffectsWorldPtr mpTransitionEffectWorld;
 		/* 34h */	int field_34;
 		/* 38h */	int mpTransitionBlockingWin;  // cTransitionBlockingWin PLACEHOLDER
 		// Access with gameModeID - kGameModeBase
 		/* 3Ch */	DifficultyTuning mDifficultyTuning[7];
-		/* 90h */	intrusive_ptr<App::PropertyList> mScenarioTuning[3];  // one for each difficulty, related with Scenario
+		/* 90h */	PropertyListPtr mScenarioTuning[3];  // one for each difficulty, related with Scenario
 
 	public:
 		/// Returns the active Simulator game mode manager. 
 		static cGameModeManager* Get();
 	};
+	ASSERT_SIZE(cGameModeManager, 0x9C);
 
 	/// Returns the ID of the current game mode. You can compare it to the values in the GameModeIDs enum.
 	uint32_t GetGameModeID();
@@ -120,12 +121,6 @@ namespace Simulator
 	inline bool IsLoadingGameMode() {
 		return GetGameModeID() == kLoadGameMode;
 	}
-
-	/////////////////////////////////
-	//// INTERNAL IMPLEMENTATION ////
-	/////////////////////////////////
-
-	static_assert(sizeof(cGameModeManager) == 0x9C, "sizeof(cGameModeManager) != 9Ch");
 
 	namespace Addresses(cGameModeManager)
 	{

@@ -38,14 +38,14 @@ namespace UTFWin
 		/// @param[out] color1
 		/// @param[out] color2
 		///
-		/* 14h */	virtual void GetColors(Color& color1, Color& color2) const = 0;
+		/* 14h */	virtual void GetColors(Math::Color& color1, Math::Color& color2) const = 0;
 
 		///
 		/// Set first and second modulation color.
 		/// @param color1
 		/// @param color2
 		///
-		/* 18h */	virtual void SetColors(Color color1, Color color2) = 0;
+		/* 18h */	virtual void SetColors(Math::Color color1, Math::Color color2) = 0;
 
 		static const uint32_t TYPE = 0x8F8BBAD8;
 	};
@@ -56,8 +56,8 @@ namespace UTFWin
 		ModulateEffect();
 		virtual ~ModulateEffect() {}
 
-		virtual int AddRef();
-		virtual int Release();
+		virtual int AddRef() override;
+		virtual int Release() override;
 		virtual void* Cast(uint32_t typeID) const override;
 
 		/* 14h */	virtual int GetEventFlags() const override;
@@ -67,23 +67,18 @@ namespace UTFWin
 		virtual uint32_t GetProxyID() const override;
 
 		/* 10h */	virtual IWinProc* ToWinProc() override;
-		/* 14h */	virtual void GetColors(Color& color1, Color& color2) const override;
-		/* 18h */	virtual void SetColors(Color color1, Color color2) override;
+		/* 14h */	virtual void GetColors(Math::Color& color1, Math::Color& color2) const override;
+		/* 18h */	virtual void SetColors(Math::Color color1, Math::Color color2) override;
 
 		virtual void func84h(int, float) override;
 
 	protected:
-		/* 64h */	Color mColor1;
-		/* 68h */	Color mColor2;
+		/* 64h */	Math::Color mColor1;
+		/* 68h */	Math::Color mColor2;
 		/* 6Ch */	int field_6C;  // not initialized
 
 	};
-
-	static_assert(sizeof(ModulateEffect) == 0x70, "sizeof(ModulateEffect) != 70h");
-
-	/////////////////////////////////
-	//// INTERNAL IMPLEMENTATION ////
-	/////////////////////////////////
+	ASSERT_SIZE(ModulateEffect, 0x70);
 
 	namespace Addresses(ModulateEffect)
 	{

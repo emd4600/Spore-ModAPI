@@ -72,6 +72,8 @@ namespace Palettes
 
 		void Update(int msTime);
 
+		void SetActiveCategory(int categoryIndex);
+
 
 		//// OVERRIDES ////
 
@@ -99,23 +101,18 @@ namespace Palettes
 		/* 2Ch */	PaletteMainPtr mpPalette;
 		/* 30h */	PaletteInfoPtr mpPaletteInfo;
 		/// The UI objects for all categories contained in the palette. They are in the same order as the PaletteMain::mCategories field.
-		/* 34h */	vector<PaletteCategoryUIPtr> mCategories;
-		/* 48h */	vector<int> field_48;  // intrusive_ptrs too, but it's never used?
+		/* 34h */	eastl::vector<PaletteCategoryUIPtr> mCategories;
+		/* 48h */	eastl::vector<int> field_48;  // intrusive_ptrs too, but it's never used?
 		/* 5Ch */	int field_5C;
 		/* 60h */	int field_60;
-		/* 64h */	int field_64;
+		/* 64h */	PaletteCategoryUIPtr mpActiveCategory;
 		/* 68h */	bool field_68;
 		/* 69h */	bool field_69;
 
 	public:
 		const static uint32_t TYPE = 0x52DEED23;
 	};
-
-	/////////////////////////////////
-	//// INTERNAL IMPLEMENTATION ////
-	/////////////////////////////////
-
-	static_assert(sizeof(PaletteUI) == 0x6C, "sizeof(PaletteUI) != 6Ch");
+	ASSERT_SIZE(PaletteUI, 0x6C);
 
 	namespace Addresses(PaletteUI)
 	{
@@ -123,5 +120,6 @@ namespace Palettes
 		DeclareAddress(Update);
 		DeclareAddress(Unload);
 		DeclareAddress(HandleUIMessage);
+		DeclareAddress(SetActiveCategory);  // 0x5CAE20 0x5CB330
 	}
 }

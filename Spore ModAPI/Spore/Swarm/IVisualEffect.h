@@ -33,12 +33,12 @@ namespace Swarm
 	/// An enum to represent the current state of an effect world and the Swarm manager.
 	enum class SwarmState
 	{
-		kStateActive = 0,
-		kStatePaused = 1,
-		kStateSuspended = 2,
-		kStateHidden = 3,
-		kStateManual = 4,
-		kStateShutdown = 5,
+		Active = 0,
+		Paused = 1,
+		Suspended = 2,
+		Hidden = 3,
+		Manual = 4,
+		Shutdown = 5,
 	};
 
 	// <= 10
@@ -103,7 +103,7 @@ namespace Swarm
 
 	enum ObjectParams
 	{
-
+		kParamNone = 0,  // we leave at least one parameter to avoid problems with SDK-to-Ghidra script
 	};
 
 	///
@@ -137,11 +137,11 @@ namespace Swarm
 		/* 38h */	virtual bool GetIsHidden() = 0;
 
 		/* 3Ch */	virtual void SetSeed(int32_t seed) = 0;
-		/* 40h */	virtual bool SetVectorParams(FloatParams param, const Vector3* data, int count) = 0;
+		/* 40h */	virtual bool SetVectorParams(FloatParams param, const Math::Vector3* data, int count) = 0;
 		/* 44h */	virtual bool SetFloatParams(FloatParams param, const float* data, int count) = 0;
 		/* 48h */	virtual bool SetIntParams(IntParams param, const int* data, int count) = 0;
 		/* 4Ch */	virtual bool SetUnknownParam(ObjectParams param, Object* data) = 0;
-		/* 50h */	virtual const Vector3& GetVectorParams(FloatParams param, int* dstCount = nullptr) = 0;
+		/* 50h */	virtual const Math::Vector3& GetVectorParams(FloatParams param, int* dstCount = nullptr) = 0;
 		/* 54h */	virtual const float* GetFloatParams(FloatParams params, int* dstCount = nullptr) = 0;
 		/* 58h */	virtual const int* GetIntParams(IntParams param, int* dstCount = nullptr) = 0;
 		/* 5Ch */	virtual Object* GetUnknownParam(ObjectParams params) = 0;

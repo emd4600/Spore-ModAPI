@@ -97,11 +97,11 @@ namespace Simulator
 		/* 44h */	int field_44;
 		/* 48h */	int field_48;
 		/// Whenever the name is changed (use the SetName() method) it sends a `0x7AA519DC` message
-		/* 4Ch */	string16 mName;
+		/* 4Ch */	eastl::string16 mName;
 		/// Whenever the description is changed (use the SetDescription() method) it sends a `0x14418C3F` message
-		/* 5Ch */	string16 mDescription;
+		/* 5Ch */	eastl::string16 mDescription;
 		/// Whenever the tags are changed (use the SetTags() method) it sends a `0x73127E6` message
-		/* 6Ch */	string16 mTags;
+		/* 6Ch */	eastl::string16 mTags;
 		/* 7Ch */	ScenarioGenre mGenre;  // ScenarioUnset
 		/* 80h */	int field_80;
 		/// Set by the SetGenre() function when the genre changes
@@ -111,9 +111,9 @@ namespace Simulator
 		/* 88h */	int field_88;  // not initialized
 		/* 8Ch */	cScenarioMarker* mpAvatarMarker;
 		/// Maps to each scenario marker (its index) its instantiated cGameData object
-		/* 90h */	hash_map<cGameData*, int> mObjectsToMarkersMap;  // maybe it's a cGameDataPtr but compiler complains
+		/* 90h */	eastl::hash_map<cGameData*, int> mObjectsToMarkersMap;  // maybe it's a cGameDataPtr but compiler complains
 		/// Maps each scenario marker (its index) to its instantiated cGameData object
-		/* B0h */	hash_map<int, cGameDataPtr> mMarkersToObjectsMap;
+		/* B0h */	eastl::hash_map<int, cGameDataPtr> mMarkersToObjectsMap;
 		/* D0h */	cScenarioDataEconomyPtr mpEconomy;
 		/* D4h */	App::MessageListenerData field_D4;  // some container
 		/* E8h */	int field_E8;
@@ -132,13 +132,13 @@ namespace Simulator
 		/* 11Ch */	int field_11C;
 		/* 120h */	int field_120;
 		/* 124h */	bool mHasLoaded;
-		/* 128h */	vector<int> field_128;
-		/* 13Ch */	hash_map<int, int> field_13C;
-		/* 15Ch */	hash_map<int, int> field_15C;
-		/* 17Ch */	hash_map<int, int> field_17C;
-		/* 19Ch */	hash_map<int, int> field_19C;
-		/* 1BCh */	hash_map<int, int> field_1BC;
-		/* 1DCh */	hash_map<int, int> field_1DC;
+		/* 128h */	eastl::vector<int> field_128;
+		/* 13Ch */	eastl::hash_map<int, int> field_13C;
+		/* 15Ch */	eastl::hash_map<int, int> field_15C;
+		/* 17Ch */	eastl::hash_map<int, int> field_17C;
+		/* 19Ch */	eastl::hash_map<int, int> field_19C;
+		/* 1BCh */	eastl::hash_map<int, int> field_1BC;
+		/* 1DCh */	eastl::hash_map<int, int> field_1DC;
 	};
 	ASSERT_SIZE(cScenarioData, 0x1FC);
 

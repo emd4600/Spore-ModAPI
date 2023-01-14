@@ -64,8 +64,8 @@ namespace UTFWin
 		CascadeEffect();
 		virtual ~CascadeEffect() {};
 
-		virtual int AddRef();
-		virtual int Release();
+		virtual int AddRef() override;
+		virtual int Release() override;
 		virtual void* Cast(uint32_t typeID) const override;
 
 		/* 14h */	virtual int GetEventFlags() const override;
@@ -91,11 +91,7 @@ namespace UTFWin
 		/* 3Ch */	int field_3C;  // not initialized
 
 	};
-
-	static_assert(sizeof(CascadeEffect) == 0x40, "sizeof(CascadeEffect) != 40h");
-
-
-	//// INTERNAL IMPLEMENTATION ////
+	ASSERT_SIZE(CascadeEffect, 0x40);
 
 	namespace Addresses(CascadeEffect)
 	{

@@ -21,8 +21,8 @@
 
 #include <EASTL\internal\thread_support.h>
 
-FilePFRecord::FilePFRecord(DBPFItem& itemInfo, const ResourceKey& name, DatabasePackedFile* pParentDBPF)
-	: IPFRecord(FilePFRecord::kType, name, pParentDBPF, IO::kAccessFlagRead)
+FilePFRecord::FilePFRecord(RecordInfo& itemInfo, const ResourceKey& name, DatabasePackedFile* pParentDBPF)
+	: PFRecordBase(FilePFRecord::kType, name, pParentDBPF, IO::AccessFlags::Read)
 	, mFileStream()
 	, mnStreamRefCount(1)
 	, mItemInfo(itemInfo)
@@ -33,7 +33,7 @@ FilePFRecord::FilePFRecord(DBPFItem& itemInfo, const ResourceKey& name, Database
 
 
 FilePFRecord::FilePFRecord(FilePFRecord* pOther, const ResourceKey& name, DatabasePackedFile* pParentDBPF)
-	: IPFRecord(FilePFRecord::kType, name, pParentDBPF, IO::kAccessFlagRead)
+	: PFRecordBase(FilePFRecord::kType, name, pParentDBPF, IO::AccessFlags::Read)
 	, mFileStream()
 	, mnStreamRefCount(1)
 	, mItemInfo(pOther->mItemInfo)
@@ -45,20 +45,20 @@ FilePFRecord::FilePFRecord(FilePFRecord* pOther, const ResourceKey& name, Databa
 
 FilePFRecord::~FilePFRecord()
 {
-	if (mnFileAccess != IO::kAccessFlagNone)
+	if (mFileAccess != IO::AccessFlags::None)
 	{
-		mpParentDBPF->func3Ch(this);
+		mpParentDBPF->CloseRecord(this);
 		mFileStream.Close();
-		mnFileAccess = IO::kAccessFlagNone;
+		mFileAccess = IO::AccessFlags::None;
 	}
 }
 
-ResourceKey& FilePFRecord::GetName()
+ResourceKey& FilePFRecord::GetKey()
 {
 	return this->mNameKey;
 }
 
-void FilePFRecord::SetName(const ResourceKey& name)
+void FilePFRecord::SetKey(const ResourceKey& name)
 {
 	this->mNameKey = name;
 }
@@ -67,21 +67,21 @@ IO::IStream* FilePFRecord::GetStream()
 {
 	if (!mbStreamOpened)
 	{
-		mbStreamOpened = mFileStream.Open(mnFileAccess, IO::kCDOpenExisting);
+		mbStreamOpened = mFileStream.Open(mFileAccess, IO::CD::OpenExisting);
 	}
 	return this;
 }
 
-DatabasePackedFile* FilePFRecord::GetParentDBPF() const
+Database* FilePFRecord::GetDatabase()
 {
 	return mpParentDBPF;
 }
 
-bool FilePFRecord::Open()
+bool FilePFRecord::RecordOpen()
 {
 	if (!mbStreamOpened)
 	{
-		mbStreamOpened = mFileStream.Open(mnFileAccess, IO::kCDOpenExisting);
+		mbStreamOpened = mFileStream.Open(mFileAccess, IO::CD::OpenExisting);
 	}
 
 	eastl::Internal::atomic_increment(&mnStreamRefCount);
@@ -89,22 +89,37 @@ bool FilePFRecord::Open()
 	return mbStreamOpened;
 }
 
-bool FilePFRecord::Close()
+bool FilePFRecord::RecordClose()
 {
 	if (eastl::Internal::atomic_decrement(&mnStreamRefCount) == 0)
 	{
-		if (mnFileAccess != IO::kAccessFlagNone)
+		if (mFileAccess != IO::AccessFlags::None)
 		{
-			mpParentDBPF->func3Ch(this);
+			mpParentDBPF->CloseRecord(this);
 			mFileStream.Close();
-			mnFileAccess = IO::kAccessFlagNone;
+			mFileAccess = IO::AccessFlags::None;
 		}
 	}
 
 	return true;
 }
 
-int FilePFRecord::func28h()
+bool FilePFRecord::Close()
+{
+	if (eastl::Internal::atomic_decrement(&mnStreamRefCount) == 0)
+	{
+		if (mFileAccess != IO::AccessFlags::None)
+		{
+			mpParentDBPF->CloseRecord(this);
+			mFileStream.Close();
+			mFileAccess = IO::AccessFlags::None;
+		}
+	}
+
+	return true;
+}
+
+int FilePFRecord::DoPostClose()
 {
 	mnStreamRefCount = 0;  // ?
 	return mnStreamRefCount;
@@ -117,12 +132,12 @@ void FilePFRecord::SetPath(const char16_t* pPath)
 
 uint32_t FilePFRecord::GetType() const
 {
-	return mnType;
+	return mType;
 }
 
-int FilePFRecord::GetAccessFlags() const
+IO::AccessFlags FilePFRecord::GetAccessFlags() const
 {
-	return mnFileAccess;
+	return mFileAccess;
 }
 
 IO::FileError FilePFRecord::GetState() const

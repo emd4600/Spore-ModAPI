@@ -3,8 +3,6 @@
 #include <Spore\Graphics\MaterialShader.h>
 #include <EASTL\vector.h>
 
-using namespace eastl;
-
 namespace Graphics
 {
 	struct ShaderBuilderEntry
@@ -33,11 +31,10 @@ namespace Graphics
 		static BOOL Load(RenderWare::Mesh* mesh);
 
 	protected:
-		/* 48h */	vector<ShaderBuilderEntry> mVertexShaders[16];
-		/* 188h */	vector<ShaderBuilderEntry> mPixelShaders[16];
+		/* 48h */	eastl::vector<ShaderBuilderEntry> mVertexShaders[16];
+		/* 188h */	eastl::vector<ShaderBuilderEntry> mPixelShaders[16];
 	};
-
-	static_assert(sizeof(ShaderBuilder) == 0x2C8, "sizeof(ShaderBuilder) != 0x2C8");
+	ASSERT_SIZE(ShaderBuilder, 0x2C8);
 
 	namespace Addresses(ShaderBuilder) {
 		DeclareAddress(ctor);

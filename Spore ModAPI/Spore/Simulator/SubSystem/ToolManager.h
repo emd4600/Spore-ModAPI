@@ -75,7 +75,7 @@ namespace Simulator
 			kMsgToolDeactivated = 0x61DAE65
 		};
 
-		bool LoadTool(const ResourceKey& id, intrusive_ptr<cSpaceToolData>& dst);
+		bool LoadTool(const ResourceKey& id, cSpaceToolDataPtr& dst);
 
 		cToolStrategy* GetStrategy(uint32_t strategyID);
 		void AddStrategy(cToolStrategy* pStrategy, uint32_t id);
@@ -95,8 +95,8 @@ namespace Simulator
 		/* 24h */	int field_24;
 		/* 28h */	int field_28;
 		/* 2Ch */	Math::Vector3 field_2C;
-		/* 38h */	hash_map<uint32_t, intrusive_ptr<cToolStrategy>> mStrategies;
-		/* 58h */	map<int, int> field_58;
+		/* 38h */	eastl::hash_map<uint32_t, cToolStrategyPtr> mStrategies;
+		/* 58h */	eastl::map<int, int> field_58;
 		/* 74h */	LocalizedString mToolFailTexts[26];
 		/* 27Ch */	int field_27C;
 		/* 280h */	int field_280;
@@ -109,12 +109,7 @@ namespace Simulator
 		/// Returns the active Simulator tool manager.
 		static cToolManager* Get();
 	};
-
-	/////////////////////////////////
-	//// INTERNAL IMPLEMENTATION ////
-	/////////////////////////////////
-
-	static_assert(sizeof(cToolManager) == 0x29C, "sizeof(cToolManager) != 29Ch");
+	ASSERT_SIZE(cToolManager, 0x29C);
 
 	namespace Addresses(cToolManager)
 	{

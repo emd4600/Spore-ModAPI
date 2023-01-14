@@ -23,6 +23,7 @@
 #include <Spore\Graphics\cLayerGroup.h>
 #include <Spore\Graphics\RenderUtils.h>
 #include <Spore\Graphics\GlobalState.h>
+#include <Spore\Graphics\ActiveState.h>
 
 namespace Graphics
 {
@@ -109,8 +110,6 @@ namespace Graphics
 		Args(short index, ShaderDataInformation::UnfixCB arg_4, ShaderDataInformation::RefixCB arg_8, ShaderDataInformation::FixupCB arg_C, ShaderDataInformation::UploadCB loadFunction),
 		Args(index, arg_4, arg_8, arg_C, loadFunction));
 
-	auto_STATIC_METHOD_VOID(RenderUtils, SetTexture, Args(int slotIndex, RenderWare::Raster* raster), Args(slotIndex, raster));
-
 
 	namespace GlobalState
 	{
@@ -146,6 +145,39 @@ namespace Graphics
 		}
 		eastl::bitset<203>& GetRenderStateDirty() {
 			return *(eastl::bitset<203>*)GetAddress(GlobalState, renderStateDirty_ptr);
+		}
+	}
+
+	namespace ActiveState
+	{
+		auto_STATIC_METHOD_VOID(ActiveState, SetTexture, Args(int slotIndex, RenderWare::Raster* raster), Args(slotIndex, raster));
+
+		void** GetShaderData() {
+			return (void**)(GetAddress(ActiveState, sShaderData));
+		}
+
+		MaterialShader* GetMaterialShader() {
+			return *(MaterialShader**)(GetAddress(ActiveState, sShader));
+		}
+
+		D3DMATRIX* GetTransform() {
+			return *(D3DMATRIX**)(GetAddress(ActiveState, sTransform));
+		}
+
+		void SetTransform(D3DMATRIX* value) {
+			*(D3DMATRIX**)(GetAddress(ActiveState, sTransform)) = value;
+		}
+
+		D3DMATRIX* GetTransposedTransform() {
+			return *(D3DMATRIX**)(GetAddress(ActiveState, sTransposedTransform));
+		}
+
+		void SetTransposedTransform(D3DMATRIX* value) {
+			*(D3DMATRIX**)(GetAddress(ActiveState, sTransposedTransform)) = value;
+		}
+
+		D3DPRESENT_PARAMETERS& GetPresentParams() {
+			return *(D3DPRESENT_PARAMETERS*)(GetAddress(ActiveState, sPresentParams));
 		}
 	}
 }

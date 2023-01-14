@@ -106,7 +106,7 @@ void Dispose()
 void AttachDetours()
 {
 	Debugging::AttachDetour();
-	SwarmManager_detour::attach(GetAddress(Swarm::cSwarmManager, GetDirectoryAndEffectIndex));
+	cEffectsManager_detour::attach(GetAddress(Swarm::cSwarmManager, GetDirectoryAndEffectIndex));
 	AnimLogCheat::AttachDetour();
 	UILogCheat::AttachDetour();
 }

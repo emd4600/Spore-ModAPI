@@ -34,7 +34,7 @@ Mutex::Mutex(MutexInfo* pInfo, bool bUseCriticalSection)
 	, field_28(NULL)
 	// field_2C is not initialized
 {
-	if (pInfo == nullptr || !bUseCriticalSection)
+	if (pInfo != nullptr || !bUseCriticalSection)
 	{
 		Initialize(pInfo);
 	}

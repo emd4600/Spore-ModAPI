@@ -23,6 +23,13 @@
 
 namespace RenderWare
 {
+	enum RWBufferLockFlags
+	{
+		kBufferLockReadOnly = 2,
+		kBufferLockDiscard = 4,
+		kBufferLockNoOverwrite = 8
+	};
+
 	// D3D9SkinMatrix
 	struct cMDBoneTransform {
 		union {

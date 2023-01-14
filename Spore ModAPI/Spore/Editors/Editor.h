@@ -36,6 +36,9 @@
 #include <Spore\Editors\EditorRequest.h>
 #include <Spore\Editors\EditorLimits.h>
 #include <Spore\Editors\INameableEntity.h>
+#include <Spore\Editors\cEditorSkin.h>
+#include <Spore\Editors\cEditorAnimEvent.h>
+#include <Spore\Editors\cEditorAnimWorld.h>
 
 #include <Spore\Graphics\Model.h>
 #include <Spore\Graphics\ILayer.h>
@@ -127,6 +130,21 @@ namespace Editors
 	{
 	public:
 
+		virtual bool HandleMessage(uint32_t messageID, void* msg) override;
+
+		/* 10h */	virtual bool Initialize(App::IGameModeManager* pManager) override;
+		/* 14h */	virtual bool Dispose() override;
+		/* 18h */	virtual bool OnEnter() override;
+		/* 1Ch */	virtual void OnExit() override;
+		/* 24h */	virtual bool OnKeyDown(int virtualKey, KeyModifiers modifiers) override;
+		/* 28h */	virtual bool OnKeyUp(int virtualKey, KeyModifiers modifiers) override;
+		/* 2Ch */	virtual bool OnMouseDown(MouseButton mouseButton, float mouseX, float mouseY, MouseState mouseState) override;
+		/* 30h */	virtual bool OnMouseUp(MouseButton mouseButton, float mouseX, float mouseY, MouseState mouseState) override;
+		/* 34h */	virtual bool OnMouseMove(float mouseX, float mouseY, MouseState mouseState) override;
+		/* 38h */	virtual bool OnMouseWheel(int wheelDelta, float mouseX, float mouseY, MouseState mouseState) override;
+		/* 3Ch */	virtual void Update(float delta1, float delta2) override;
+
+
 		//PLACEHOLDER virtual method 54h -> reads temporary database
 		//PLACEHOLDER virtual method 58h -> wrties temporary database
 
@@ -151,11 +169,24 @@ namespace Editors
 		/// @returns
 		bool IsMode(Mode mode) const;
 
+		void SetActiveMode(Mode mode, bool);
+
 		/// Returns true if the editor is currently active.
 		/// @returns
 		bool IsActive() const;
 
+		/// Returns the camera used to navigate and view the editor.
+		/// @returns
 		EditorCamera* GetCamera();
+
+		/// Returns the editor skin, which is the model and texture generating system for creations that use
+		/// skinpaints and metaballs (i.e. creatures and flora). For the rest of creation types, this returns nullptr.
+		/// @returns
+		cEditorSkin* GetSkin();
+
+		/// Returns the class that manages the creature animations in the editor.
+		/// @returns
+		cEditorAnimWorld* GetAnimWorld();
 
 		// _ZN6Editor9ScalePartEP14EditorRigblockii
 		// Editor::ScalePart(EditorRigblock *, int, int)
@@ -168,6 +199,12 @@ namespace Editors
 
 		void RemovePart(EditorRigblock* part);  //PLACEHOLDER
 
+		/// Emits a `cEditorAnimEvent` with ID `0x6581B78E`, which makes the creature (if any) stop
+		/// its current animation and return to the neutral, motionless pose.
+		void SetCreatureToNeutralPose();
+
+		bool AddCreature(int, const ResourceKey* key = nullptr);
+
 	public:
 
 		int vftable_1C;
@@ -178,7 +215,7 @@ namespace Editors
 		/* 24h */	PropertyListPtr		mpPropList;
 
 		/// The current position of the cursor in the editor.
-		/* 28h */	Math::Point mCursor;
+		/* 28h */	Math::Point mMousePosition;
 		/* 30h */	int mMouseFlags;
 		/* 34h */	MouseState mMouseState;
 
@@ -194,7 +231,7 @@ namespace Editors
 		/* 5Ch */	int field_5C;
 		/* 60h */	int field_60;
 		/* 64h */	int field_64;
-		/* 68h */	float field_68;  // Set to 0 when mouse click
+		/* 68h */	float field_68;  // Set to 0 when mouse click, and when changing mode
 		/// Time to wait before starting animated creature (in milliseconds).
 		/* 6Ch */	float mCreatureIdleActivationTime;
 		/* 70h */	float field_70;
@@ -206,8 +243,8 @@ namespace Editors
 		/* 7Ch */	EditorPlayMode* mpPlayMode;  // TODO intrusive_ptr
 		/// THe light to be used by the editor.
 		/* 80h */	ILightingWorldPtr mpLightingWorld;
-		/// The model world that contains the pedestal and test environment model.
-		/* 84h */	IModelWorldPtr mpPedestalModelWorld;
+		/// The model world that contains the pedestal and test environment model, and also editor rigblocks
+		/* 84h */	IModelWorldPtr mpMainModelWorld;
 		/* 88h */	IModelWorldPtr field_88;
 		/// The model world that contains the background model.
 		/* 8Ch */	IModelWorldPtr mpBackgroundModelWorld;
@@ -216,7 +253,7 @@ namespace Editors
 
 		// use appropiate container!
 		// you can get it with virtual function 40h
-		/* 98h */	EditorModel* mpEditorModel;	// something containing the parts ? -> sub_4ACB70 get aprt?
+		/* 98h */	EditorModel* mpEditorModel;	// TODO is it intrusive_ptr?
 
 		/* 9Ch */	int field_9C;  // another editor model?
 		/// The model to be used for the pedestal in the editor. It belongs to mpPedestalModelWorld.
@@ -227,7 +264,7 @@ namespace Editors
 		/* A8h */	ModelPtr mpBackgroundModel;  // used in loc_5874D8
 		/// A background model used in accessories editors. It belongs to mpBackgroundModelWorld.
 		/* ACh */	ModelPtr mpAccBackgroundModel;
-		/* B0h */	string16 field_B0;
+		/* B0h */	eastl::string16 field_B0;
 		// /* B9h */	bool editorShowAbilityIcons;  // might also be 4B6h ?
 
 		/* C0h */	int field_C0;  // not initialized  // lastMouseClick[2] ?
@@ -239,9 +276,8 @@ namespace Editors
 		/* CCh */	EditorRigblockPtr mpActivePart;
 		/* D0h */	EditorRigblockPtr mpMovingPart;  // the part that is being moved, only when mouse is being clicked
 		/* D4h */	EditorRigblockPtr mpSelectedPart;  // also valid for spines
-
-		/* D8h */	DefaultRefCountedPtr field_D8;
-		/* DCh */	DefaultRefCountedPtr field_DC;
+		/* D8h */	EditorRigblockPtr field_D8;
+		/* DCh */	EditorRigblockPtr field_DC;
 		/* E0h */	bool field_E0;
 		/* E4h */	EditorBaseHandle* mpActiveHandle;  // morph handles
 		/// Is the mouse over the skin of the creature?
@@ -262,18 +298,18 @@ namespace Editors
 		/* 144h */	bool field_144;  // true
 		/* 148h */	ObjectPtr field_148;
 		/* 14Ch */	int field_14C; // vertebra? only present in creature-like editor
-		/* 150h */	intrusive_ptr<Object> field_150;  // something related with painting?  uses sub_4C3E70 to return something that parts also use
-		/* 154h */	int field_154;
+		/* 150h */	cEditorSkinPtr mpEditorSkin;  // something related with painting?  uses sub_4C3E70 to return something that parts also use
+		/* 154h */	cEditorSkinPtr field_154;
 
 		//// just guesses, apparently it calls DefaultRefCounted.Unuse()
 		///* 158h */	DefaultRefCounted* field_158;
 		///* 15Ch */	DefaultRefCounted* field_15C;  // something related with "UTFWin/RWTextureResource" ?
-		///* 160h */	vector<DefaultRefCounted*> field_160;  // we only know it calls the DefaultRefCounted* destructor
+		///* 160h */	eastl::vector<DefaultRefCounted*> field_160;  // we only know it calls the DefaultRefCounted* destructor
 
 		/* 158h */	int field_158;
 		/* 15Ch */	int field_15C;
-		/* 160h */	vector<intrusive_ptr<EditorStateEditHistory>> mStateEditHistory;
-		/* 174h */	vector<cEditorResourcePtr> mEditHistory;
+		/* 160h */	eastl::vector<eastl::intrusive_ptr<EditorStateEditHistory>> mStateEditHistory;
+		/* 174h */	eastl::vector<cEditorResourcePtr> mEditHistory;
 		/* 188h */	int mEditHistoryIndex;
 		/// The ID of the .prop configuration file of the current editor.
 		/* 18Ch */	uint32_t mEditorName;  // 0x465C50BA
@@ -287,10 +323,10 @@ namespace Editors
 		/* 1A8h */	int field_1A8;  // 2
 		/* 1ACh */	int field_1AC;
 		/// Maps a creation format extension to its default editor. For example, 'crt' is mapped to 'CreatureEditorExtraLarge'.
-		/* 1B0h */	map<uint32_t, uint32_t> mDefaultEditors;
+		/* 1B0h */	eastl::map<uint32_t, uint32_t> mDefaultEditors;
 		/* 1CCh */	EditorRequestPtr mEditorRequest;	// in 35h there is bool editorAllowNameEdit;
 		/* 1D0h */	ResourceKey mParentAssetKey;
-		/* 1DCh */	string16 field_1DC;
+		/* 1DCh */	eastl::string16 field_1DC;
 		/* 1ECh */	int field_1EC;
 		/* 1F0h	*/	int field_1F0;
 		/* 1F4h	*/	int field_1F4;
@@ -341,7 +377,7 @@ namespace Editors
 		/* 280h */	uint32_t mSkyBoxEffectID;
 		/* 284h */	int field_284;
 		/* 288h */	float field_288;  // 1.2
-		/* 28Ch */	int field_28C;
+		/* 28Ch */	TexturePtr mpThumbnailTexture;
 		/* 290h */	int field_290;
 		/* 294h */	IShadowWorldPtr mpShadowWorld;
 		/* 298h */	Graphics::ShadowMapInfo* mpShadowMapInfo;
@@ -350,7 +386,7 @@ namespace Editors
 		/* 2A4h */	int field_2A4;
 		/// The save extension key which will be parsed both into a key and a three letter extension.
 		/* 2A8h */	uint32_t mSaveExtension;
-		/// The save directory key.
+		/// The save directory key, Resource::SaveAreaID
 		/* 2ACh */	uint32_t mSaveDirectory;
 		/* 2B0h */	bool mIsActive;
 		/* 2B1h */	char field_2B1;  // not initialized
@@ -410,20 +446,22 @@ namespace Editors
 		/* 314h */	float field_314;  // 0.5  //PLACEHOLDER wrong, this is TexturePtr mpThumbnail, 28Ch too
 		/* 318h */	uint32_t field_318;	// property 0x9036D280.instanceID
 		/* 31Ch */	Mode mMode;
-		/* 320h */	vector<uint32_t> mEnabledManipulators;
+		/* 320h */	eastl::vector<uint32_t> mEnabledManipulators;
 		/// The list of model types that this editor supports, ie. VehicleMilitaryAir, VehicleEconomicLand, BuildingIndustry, BuildingHouse, etc
-		/* 334h */	vector<uint32_t> mModelTypes;
+		/* 334h */	eastl::vector<uint32_t> mModelTypes;
 		/* 348h */	int field_348;
 		/* 34Ch */	int mnDefaultBrainLevel;
 		/* 350h	*/	int field_350;	/* 350h -> UI? */
 		/* 354h	*/	int field_354;
 		/* 358h	*/	EditorNamePanelPtr mpEditorNamePanel;
 		/* 35Ch	*/	int field_35C;
-		/* 360h	*/	int field_360;  // contains a renderable at 38h: the anim world
-		/* 364h	*/	int field_364;
+		/* 360h	*/	cEditorAnimWorldPtr mpEditorAnimWorld;
+		/// ID used in `mpEditorAnimWorld` for the current editing creature
+		/* 364h	*/	int mCurrentCreatureID;
 		/* 368h	*/	int field_368;
-		/* 36Ch	*/	vector<int> field_36C;
-		/* 380h */	DefaultRefCountedPtr field_380;
+		/* 36Ch	*/	eastl::vector<int> field_36C;  //TODO vector of creatures? Check sub_629130
+		/// Anim event that will be played on the creature on the next Update() call
+		/* 380h */	cEditorAnimEventPtr mpAnimEvent;
 		/* 384h */	bool field_384;
 		/* 385h */	bool field_385;
 		/* 388h */	int field_388;  // not initialized
@@ -436,8 +474,8 @@ namespace Editors
 		/* 398h */	bool field_398;  // true
 		/* 399h */	bool field_399;  // true
 		/* 39Ah */	bool field_39A;  // true
-		/* 39Ch */	vector<int> field_39C;
-		/* 3B0h */	float field_3B0;  // not initialized
+		/* 39Ch */	eastl::vector<EditorRigblockPtr> field_39C;
+		/* 3B0h */	int field_3B0;  // not initialized, a paint region for building/vehicle parts
 		/* 3B4h */	int field_3B4;  // not initialized
 		/* 3B8h */	PaletteMainPtr mpPartsPalette;
 		/* 3BCh */	PaletteUIPtr mpPartsPaletteUI;
@@ -452,7 +490,7 @@ namespace Editors
 		/* 3D8h */	App::cViewer* field_3D8;  // not initialized
 		/* 3DCh */	App::cViewer* field_3DC;  // not initialized
 
-		/* 3E0h */	bool field_3E0;
+		/* 3E0h */	bool mIsRecordingGIF;
 		/* 3E1h */	bool field_3E1;
 		/* 3E4h */	int field_3E4;
 		/* 3E8h */	int field_3E8;  // 5
@@ -482,7 +520,7 @@ namespace Editors
 		/* 448h */	int field_448;
 		/* 44Ch */	int field_44C;
 		/* 450h */	int field_450;  // 1
-		/* 454h */	map<int, int> field_454;
+		/* 454h */	eastl::map<int, int> field_454;
 		/* 470h */	bool field_470;  // property 0x46082CA
 		/// Tells the editor whether or not to show the bone length handle.
 		/* 471h */	bool mbShowBoneLengthHandles;
@@ -528,15 +566,15 @@ namespace Editors
 		/* 4DCh */	int field_4DC;
 		/* 4E0h */	int field_4E0;
 		/* 4E4h */	int field_4E4[9];
-		/* 508h */	vector<int> field_508;
-		/* 51Ch */	vector<int> field_51C;
-		/* 530h */	vector<int> field_530;
-		/* 544h */	vector<int> field_544;
-		/* 558h */	vector<int> field_558;
-		/* 56Ch */	vector<int> field_56C;
+		/* 508h */	eastl::vector<int> field_508;
+		/* 51Ch */	eastl::vector<int> field_51C;
+		/* 530h */	eastl::vector<int> field_530;
+		/* 544h */	eastl::vector<int> field_544;
+		/* 558h */	eastl::vector<int> field_558;
+		/* 56Ch */	eastl::vector<int> field_56C;
 		/* 580h */	int field_580;  // not initialized
 		/* 584h */	int field_584;  // not initialized
-		/* 588h */	vector<int> field_588;
+		/* 588h */	eastl::vector<int> field_588;
 		/// Used by audio system to play different footsteps based on type of material used in the dais construction.
 		/* 59Ch */	uint32_t mDaisType;
 		/// Used by audio system to determine if foot is on dais or floor.
@@ -560,8 +598,7 @@ namespace Editors
 		/* 5F8h */	int field_5F8;
 		/* 5FCh */	int field_5FC;  // not initialized
 	};
-
-	static_assert(sizeof(cEditor) == 0x600, "sizeof(cEditor) must be 0x600!");
+	ASSERT_SIZE(cEditor, 0x600);
 
 	namespace Addresses(cEditor) {
 		DeclareAddress(sub_581F70);
@@ -583,8 +620,18 @@ namespace Editors
 		DeclareAddress(CommitEditHistory);  // 0x5860E0, 0x586410
 		DeclareAddress(Undo);  // 0x58A270, 0x58A5A0
 		DeclareAddress(Redo);  // 0x58A620, 0x58A950
+		DeclareAddress(SetActiveMode);  // 0x586F40 0x587270
+		DeclareAddress(SetCreatureToNeutralPose);  // 0x573860 0x573970
+		DeclareAddress(AddCreature);  // 0x582D00 0x582FE0
+
+		DeclareAddress(HandleMessage);  // 0x591C80 0x591FA0
 	}
 
+#ifdef SDK_TO_GHIDRA
+	cEditor* sEditor;
+#endif
+
+#ifndef SDK_TO_GHIDRA
 	/// Returns the Editor instance (there can only be one at a time).
 	inline cEditor* GetEditor()
 	{
@@ -608,4 +655,15 @@ namespace Editors
 	{
 		return mpEditorModel;
 	}
+
+	inline cEditorSkin* cEditor::GetSkin()
+	{
+		return mpEditorSkin.get();
+	}
+
+	inline cEditorAnimWorld* cEditor::GetAnimWorld()
+	{
+		return mpEditorAnimWorld.get();
+	}
+#endif
 }

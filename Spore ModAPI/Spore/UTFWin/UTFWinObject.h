@@ -33,6 +33,12 @@ namespace UTFWin
 		static void* operator new(size_t n, size_t align, const char* pName, ICoreAllocator* pAllocator = UTFWin::GetAllocator());
 
 		static void* operator new(size_t n);
+
+#ifdef SDK_TO_GHIDRA
+		static UTFWinObject* new_(size_t n, size_t align, const char* pName, ICoreAllocator* pAllocator = UTFWin::GetAllocator());
+
+		static void delete_(void* p);
+#endif
 	};
 
 	namespace Addresses(UTFWinObject)

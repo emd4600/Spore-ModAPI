@@ -30,9 +30,6 @@
 
 #define IWindowPtr eastl::intrusive_ptr<UTFWin::IWindow>
 
-using namespace Math;
-using namespace eastl;
-
 namespace UTFWin
 {
 	class IDrawable;
@@ -61,7 +58,7 @@ namespace UTFWin
 		kWinFlagIgnoreMouseChildren = 0x1000,
 	};
 
-	enum
+	enum WindowStates
 	{
 		kStateEnabled = 1,
 		kStateClicked = 2,
@@ -70,21 +67,23 @@ namespace UTFWin
 	};
 
 	// Just so it can be used by the debuggger natvis
-	struct Window_intrusive_list_node : public intrusive_list_node {};
+	struct Window_intrusive_list_node : public eastl::intrusive_list_node {};
 
 	//typedef intrusive_list<IWindow> IWindowList_t;
 	// Otherwise children() won't work
-	typedef intrusive_list<Window_intrusive_list_node> IWindowList_t;
+	typedef eastl::intrusive_list<Window_intrusive_list_node> IWindowList_t;
 
 	class IWindow;
-	typedef function<bool(IWindow*, const Message&)> HandleUILambda_t;
+	typedef bool(*HandleUILambda_t)(IWindow*, const Message&);
 
 	///
 	/// An interface that represents a component in the user interface. Windows occupy a rectangle in the screen and
 	/// are fit inside a hierarchy: a window can have multiple children and only one parent. For more information,
 	/// check the @ref ui "User Interface page".
 	///
-	class IWindow : public UTFWinObject, public Window_intrusive_list_node
+	class IWindow 
+		: public UTFWinObject
+		, public Window_intrusive_list_node
 	{
 	public:
 
@@ -200,7 +199,7 @@ namespace UTFWin
 		/// Returns the color modulation value. This color acts as a tint: after the window is painted, it gets multiplied by this color.
 		/// @param color The color to use as the 'shadeColor' property.
 		///
-		/* 5Ch */	virtual void SetShadeColor(Color color) = 0;
+		/* 5Ch */	virtual void SetShadeColor(Math::Color color) = 0;
 
 		///
 		/// Sets the rectangular extent of this window. Note that this will only affect the 'area' property of the window;
@@ -306,7 +305,7 @@ namespace UTFWin
 		/// the area will be filled with the fill color and then the fill drawable will be drawn on top of it.
 		/// @returns The integer color representation of the value of the 'fillColor' property.
 		///
-		/* A4h */	virtual Color GetFillColor() const = 0;
+		/* A4h */	virtual Math::Color GetFillColor() const = 0;
 		
 		///
 		/// Returns the fill drawable of this window. When rendering the window,
@@ -320,7 +319,7 @@ namespace UTFWin
 		/// the area will be filled with the fill color and then the fill drawable will be drawn on top of it.
 		/// @param color The color to use as the 'fillColor' property.
 		///
-		/* ACh */	virtual void SetFillColor(Color color) = 0;
+		/* ACh */	virtual void SetFillColor(Math::Color color) = 0;
 
 		///
 		/// Sets the fill drawable of this window. When rendering the window,
@@ -330,10 +329,10 @@ namespace UTFWin
 
 		/* B4h */	virtual int func45(int) = 0;
 		/* B8h */	virtual int func46(int, int) = 0;
-		/* BCh */	virtual bool ContainsPoint(struct Point localCoords) = 0;
-		/* C0h */	virtual Point ToGlobalCoordinates(struct Point localCoords) = 0;
-		/* C4h */	virtual Point ToLocalCoordinates(struct Point globalPos) = 0;
-		/* C8h */	virtual bool ToLocalCoordinates2(struct Point globalPos, Point& dstLocal) = 0;
+		/* BCh */	virtual bool ContainsPoint(struct Math::Point localCoords) = 0;
+		/* C0h */	virtual Math::Point ToGlobalCoordinates(struct Math::Point localCoords) = 0;
+		/* C4h */	virtual Math::Point ToLocalCoordinates(struct Math::Point globalPos) = 0;
+		/* C8h */	virtual bool ToLocalCoordinates2(struct Math::Point globalPos, Math::Point& dstLocal) = 0;
 
 		///
 		/// Returns the begin iterator of the list of children windows contained in this window. 
@@ -475,7 +474,7 @@ namespace UTFWin
 		///
 		/* 118h */	virtual const char* GetComponentName() const = 0;
 		
-
+#ifndef SDK_TO_GHIDRA
 		///
 		/// Returns an structure that allows to iterate through the children of this window. Example usage:
 		/// ~~~~~~~~~~~~~~~~~~~~{.cpp}
@@ -501,6 +500,7 @@ namespace UTFWin
 		/// ~~~~~~~~~~~~~~~~~~~~
 		///
 		WindowProcedures procedures();
+#endif
 
 		///
 		/// Adds an event listener, defined using a lambda function or by referencing a static function. 
@@ -514,7 +514,7 @@ namespace UTFWin
 		/// @param priority [Optional] The priority of this event listener.
 		/// @returns The generated IWinProc object, that can be used to remove this listener.
 		///
-		intrusive_ptr<IWinProc> AddWinProc(HandleUILambda_t pFunction, int eventFlags = kEventFlagBasicInput | kEventFlagAdvanced, int priority = 0);
+		eastl::intrusive_ptr<IWinProc> AddWinProc(HandleUILambda_t pFunction, int eventFlags = kEventFlagBasicInput | kEventFlagAdvanced, int priority = 0);
 
 		///
 		/// Adds an even listener that only handles the specified message types. The listener is defined using a lambda function
@@ -526,7 +526,7 @@ namespace UTFWin
 		/// @param types A vector of message types that this procedure receives.
 		/// @param priority [Optional] The priority of this event listener.
 		/// @returns The generated IWinProc object, that can be used to remove this listener.
-		intrusive_ptr<IWinProc> AddWinProcFilter(HandleUILambda_t function, const vector<MessageType> types, int priority = 0);
+		eastl::intrusive_ptr<IWinProc> AddWinProcFilter(HandleUILambda_t function, const eastl::vector<MessageType> types, int priority = 0);
 
 		///
 		/// Tells whether the window is visible. This is equivalent to GetFlags() & kWinFlagVisible.

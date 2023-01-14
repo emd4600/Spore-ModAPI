@@ -88,8 +88,8 @@ namespace Simulator
 			/* 2Ch */	bool field_2C;
 		};
 
-		/* 2Ch */	map<int, int> field_2C;
-		/* 48h */	map<int, int> field_48;
+		/* 2Ch */	eastl::map<int, int> field_2C;
+		/* 48h */	eastl::map<int, int> field_48;
 		/* 60h */	int field_60;
 		/* 64h */	int field_64;
 		/* 68h */	float mMouseX;
@@ -98,20 +98,15 @@ namespace Simulator
 		/* 74h */	InputUnknown field_74;
 		/* 90h */	InputUnknown2 field_90;
 		/* C0h */	InputUnknown field_C0;
-		/* DCh */	string field_DC;
-		/* ECh */	string field_EC;
-		/* FCh */	vector<int> field_FC;
+		/* DCh */	eastl::string field_DC;
+		/* ECh */	eastl::string field_EC;
+		/* FCh */	eastl::vector<int> field_FC;
 		/* 110h */	int field_110;
 
 	public:
 		static cGameInputManager* Get();
 	};
-
-	/////////////////////////////////
-	//// INTERNAL IMPLEMENTATION ////
-	/////////////////////////////////
-
-	static_assert(sizeof(cGameInputManager) == 0x114, "sizeof(cGameInputManager) != 114h");
+	ASSERT_SIZE(cGameInputManager, 0x114);
 
 	namespace Addresses(cGameInputManager)
 	{

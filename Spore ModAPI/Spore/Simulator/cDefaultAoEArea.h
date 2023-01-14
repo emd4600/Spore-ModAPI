@@ -43,7 +43,7 @@ namespace Simulator
 		using Object::Cast;
 
 	public:
-		/* 11Ch */	intrusive_ptr<cSpaceToolData> mpTool;
+		/* 11Ch */	eastl::intrusive_ptr<cSpaceToolData> mpTool;
 		/* 120h */	Vector3 mSourceOffset;  // 1, 1, 1
 		/* 12Ch */	float mDamageRadius;
 		/* 130h */	bool mbStopArea;
@@ -52,10 +52,5 @@ namespace Simulator
 		/* 160h */	int64_t mCulturalProjectileTime;
 		/* 168h */	int64_t mLastUpdate;
 	};
-
-	/////////////////////////////////
-	//// INTERNAL IMPLEMENTATION ////
-	/////////////////////////////////
-
-	static_assert(sizeof(cDefaultAoEArea) == 0x170, "sizeof(cDefaultAoEArea) != 170h");
+	ASSERT_SIZE(cDefaultAoEArea, 0x170);
 }

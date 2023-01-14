@@ -25,9 +25,6 @@
 
 namespace Editors
 {
-
-	using namespace eastl;
-	
 	class cEditor;
 
 	// uses amimation ID in 62E587
@@ -63,7 +60,7 @@ namespace Editors
 		/* 04h */	cEditor* mpEditor;  // not initialized
 		/* 08h */	int field_08;  // not initialized
 		/// All the PlayAnimPanel objects, ordered by the 'mnAnimPanelOrder' field.
-		/* 0Ch */	vector<intrusive_ptr<PlayAnimPanel>> mPanels;
+		/* 0Ch */	eastl::vector<eastl::intrusive_ptr<PlayAnimPanel>> mPanels;
 
 		/* 20h */	int field_20;
 		/* 24h */	int field_24;  // not initialized
@@ -94,14 +91,9 @@ namespace Editors
 		/* 88h */	int field_88;
 		/* 8Ch */	int field_8C;  // not initialized
 	};
+	ASSERT_SIZE(PlayModeAnimations, 0x90);
 
-	/////////////////////////////////
-	//// INTERNAL IMPLEMENTATION ////
-	/////////////////////////////////
-
-	static_assert(sizeof(PlayModeAnimations) == 0x90, "sizeof(PlayModeAnimations) != 90h");
-
-	namespace Addresses(PlayAnimButton)
+	namespace Addresses(PlayModeAnimations)
 	{
 		DeclareAddress(ReadAnimations);
 		DeclareAddress(ReadPanel);

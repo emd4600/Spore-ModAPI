@@ -22,7 +22,7 @@
 #include <Spore\Object.h>
 
 #define ResourceObjectPtr eastl::intrusive_ptr<Resource::ResourceObject>
-#define AsyncResourcePtr eastl::intrusive_ptr<Resource::AsyncResource>
+#define IAsyncRequestPtr eastl::intrusive_ptr<Resource::IAsyncRequest>
 
 namespace Resource
 {
@@ -67,18 +67,19 @@ namespace Resource
 	public:
 		CachedResourceObject();
 
-		virtual int AddRef();
-		virtual int Release();
-		virtual void* Cast(uint32_t typeID) const;
-		virtual int GetReferenceCount();
+		virtual int AddRef() override;
+		virtual int Release() override;
+		virtual void* Cast(uint32_t typeID) const override;
+		virtual int GetReferenceCount() override;
 
 		static const uint32_t TYPE = 0x355D6F5;
 
 	public:
 		/* 14h */	cIReleaseCallback* mpFinalReleaseCallback;
 	};
+	ASSERT_SIZE(CachedResourceObject, 0x18);
 
-	class AsyncResource
+	class IAsyncRequest
 		: public Object
 	{
 	public:

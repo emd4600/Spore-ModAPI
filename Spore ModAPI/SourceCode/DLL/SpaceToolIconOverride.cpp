@@ -51,7 +51,7 @@ void ReadModdedPNGs()
 {
 	eastl::vector<ResourceKey> toolIconKeys;
 
-	ResourceManager.GetFileKeys(toolIconKeys,
+	ResourceManager.GetRecordKeyList(toolIconKeys,
 		&Resource::StandardFileFilter(
 			ResourceKey::kWildcardID,
 			0x3064CB38, // ufotools~

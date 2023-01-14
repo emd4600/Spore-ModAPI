@@ -24,7 +24,7 @@ namespace Simulator
 	{
 		const char* const TriggerFile = "TriggerConfigScenarioMode";
 
-		enum
+		enum Actions
 		{
 			kActJump = 0x00000007,
 			kActSprint = 0x00000008,

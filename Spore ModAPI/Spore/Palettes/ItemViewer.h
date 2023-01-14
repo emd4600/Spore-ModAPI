@@ -32,8 +32,6 @@
 
 namespace Palettes
 {
-	using namespace eastl;
-
 	class ItemViewer 
 		: public UTFWin::IWinProc
 		, public DefaultRefCounted
@@ -80,7 +78,7 @@ namespace Palettes
 	public:
 		/* 10h */	bool field_10;
 		/* 14h */	cSPUILayeredObjectPtr mpLayeredObject;
-		/* 18h */	vector<ModelPtr> field_18;
+		/* 18h */	eastl::vector<ModelPtr> field_18;
 		/* 2Ch */	AnimatedCreaturePtr field_2C;
 		/* 30h */	ObjectPtr field_30;
 		/* 34h */	ObjectPtr field_34;
@@ -122,12 +120,12 @@ namespace Palettes
 		/* FCh */	bool field_FC;  // true
 		/* FDh */	bool field_FD;
 		/* 100h */	uint32_t field_100;  // 0x71FA7D3F ('drag')
-		/* 104h */	vector<ModelPtr> field_104;
+		/* 104h */	eastl::vector<ModelPtr> field_104;
 		/* 118h */	ModelPtr mpModel;
-		/* 11Ch */	vector<ModelPtr> field_11C;
-		/* 130h */	vector<Transform> field_130;
+		/* 11Ch */	eastl::vector<ModelPtr> field_11C;
+		/* 130h */	eastl::vector<Transform> field_130;
 		/* 144h */	ObjectPtr field_144;
-		/* 148h */	vector<int> field_148;
+		/* 148h */	eastl::vector<int> field_148;
 		/* 15Ch */	float field_15C;
 		/* 160h */	bool mbViewerInitialized;
 		/* 161h */	bool field_161;
@@ -148,12 +146,7 @@ namespace Palettes
 		/* 174h */	uint32_t mThumbnailCameraID;
 		/* 178h */	int field_178;  // index?
 	};
-
-	/////////////////////////////////
-	//// INTERNAL IMPLEMENTATION ////
-	/////////////////////////////////
-
-	static_assert(sizeof(ItemViewer) == 0x17C, "sizeof(ItemViewer) != 17Ch");
+	ASSERT_SIZE(ItemViewer, 0x17C);
 
 	namespace Addresses(ItemViewer)
 	{

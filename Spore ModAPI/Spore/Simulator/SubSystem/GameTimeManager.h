@@ -19,6 +19,7 @@
 #pragma once
 
 #include <Spore\Simulator\SubSystem\cStrategy.h>
+#include <EASTL\vector.h>
 
 /// Accesses the current instance of Simulator::cGameTimeManager
 #define GameTimeManager (*Simulator::cGameTimeManager::Get())
@@ -34,7 +35,7 @@ namespace Simulator
 		/// Pauses game, not effects nor audio
 		Tutorial = 0x64BEB65,
 		/// Pauses game, not effects nor audio
-		Editor = 0x4BF38A6,
+		Editor_ = 0x4BF38A6,
 		/// Pauses game and effects, not audio
 		CommScreen = 0x4D02E35,
 		/// Pauses game, not effects nor audio
@@ -167,9 +168,9 @@ namespace Simulator
 		/// A combination of current PauseFlags. If 0, game is unpaused; otherwise, use logical AND with PauseFlags
 		/* 48h */	int mFlags;  // & 1 paused
 		/// Maps each TimeManagerIdentifier to its index in `mPauseTypes`.
-		/* 4Ch */	map<TimeManagerPause, int> mPauseMaps;
+		/* 4Ch */	eastl::map<TimeManagerPause, int> mPauseMaps;
 		/// Keeps track of the different pause types
-		/* 68h */	vector<PauseType> mPauseTypes;
+		/* 68h */	eastl::vector<PauseType> mPauseTypes;
 	};
 	ASSERT_SIZE(cGameTimeManager, 0x80);
 

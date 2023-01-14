@@ -28,6 +28,8 @@
 
 namespace Editors
 {
+	enum class Mode;
+
 	class cEditor;
 	
 	class _EditorUI_interface {
@@ -52,6 +54,8 @@ namespace Editors
 		virtual bool HandleMessage(uint32_t messageID, void* pMessage) override;
 
 		virtual bool HandleUIMessage(UTFWin::IWindow* pWindow, const UTFWin::Message& message) override;
+
+		void SetActiveMode(Mode mode);
 
 	public:
 
@@ -125,12 +129,7 @@ namespace Editors
 		// loc_5DCD86 -> disable undo button?
 
 	};
-
-	/////////////////////////////////
-	//// INTERNAL IMPLEMENTATION ////
-	/////////////////////////////////
-
-	static_assert(sizeof(EditorUI) == 0x12C, "sizeof(EditorUI) must be 0x20C!");
+	ASSERT_SIZE(EditorUI, 0x12C);
 
 	namespace Addresses(EditorUI)
 	{
@@ -139,5 +138,7 @@ namespace Editors
 		DeclareAddress(HandleUIMessage);
 
 		DeclareAddress(Load);
+
+		DeclareAddress(SetActiveMode);  // 0x5DD910 TODO
 	}
 };

@@ -52,7 +52,7 @@ namespace Simulator
 		/* 00h */	float mValue;
 		// Flag 0x1 is at war, 0x2 allied?
 		/* 04h */	int mFlags;
-		/* 08h */	map<uint32_t, float> mRelationshipEvents;
+		/* 08h */	eastl::map<uint32_t, float> mRelationshipEvents;
 	};
 
 	/// Handles relationships between political entities.
@@ -74,6 +74,7 @@ namespace Simulator
 		/// @param pEmpire2
 		bool IsAtWar(cEmpire* pEmpire1, cEmpire* pEmpire2);
 
+#ifndef SDK_TO_GHIDRA
 		/// Returns true if the two political entities are currently at war, or false otherwise.
 		/// The order of the parameters is irrelevant.
 		/// @param politicalID1
@@ -85,6 +86,10 @@ namespace Simulator
 		/// @param pEmpire1
 		/// @param pEmpire2
 		bool IsAllied(cEmpire* pEmpire1, cEmpire* pEmpire2);
+#else
+		bool IsAtWar2(uint32_t politicalID1, uint32_t politicalID2);
+		bool IsAllied2(cEmpire* pEmpire1, cEmpire* pEmpire2);
+#endif
 
 		/// Returns true if there is an alliance between the two political entities, or false otherwise.
 		/// The order of the parameters is irrelevant.
@@ -150,37 +155,31 @@ namespace Simulator
 		/* 18h */	float field_18;
 		/* 1Ch */	float field_1C;
 		/* 20h */	bool mbIsInitialized;
-		/* 24h */	map<pair<uint32_t, uint32_t>, cRelationshipData> mRelationships;  // map of maps?
+		/* 24h */	eastl::map<eastl::pair<uint32_t, uint32_t>, cRelationshipData> mRelationships;  // map of maps?
 		/* 40h */	int field_40;
 		/* 44h */	int field_44;
-		/* 48h */	vector<int> field_48;
+		/* 48h */	eastl::vector<int> field_48;
 		/* 5Ch */	int field_5C;  // not initialized
-		/* 60h */	vector<uint32_t> mEmpiresToDecayPending;
+		/* 60h */	eastl::vector<uint32_t> mEmpiresToDecayPending;
 		/* 74h */	int field_74;  // not initialized
 		/* 78h */	int field_78;
 		/* 7Ch */	int field_7C;  // not initialized
 		/* 80h */	int field_80;
 		/* 84h */	int field_84;
 		/* 88h */	App::MessageListenerData mMessageData;
-		/* 9Ch */	vector<int> field_9C;  // vector of maps? Similar to relationships, but for non-empires
+		/* 9Ch */	eastl::vector<int> field_9C;  // vector of maps? Similar to relationships, but for non-empires
 		/* B0h */	int field_B0;  // not initialized
-		/* B4h */	vector<int> field_B4;
+		/* B4h */	eastl::vector<int> field_B4;
 		/* C8h */	int field_C8;  // not initialized
-		/* CCh */	vector<int> field_CC;
+		/* CCh */	eastl::vector<int> field_CC;
 		/* E0h */	int field_E0;  // not initialized
-		/* E4h */	map<int, int> field_E4;
+		/* E4h */	eastl::map<int, int> field_E4;
 
 	public:
 		/// Gets the active relationship manager, which depends on the current game stage.
 		static cRelationshipManager* Get();
 	};
-
-
-	/////////////////////////////////
-	//// INTERNAL IMPLEMENTATION ////
-	/////////////////////////////////
-
-	static_assert(sizeof(cRelationshipManager) == 0x100, "sizeof(cRelationshipManager) != 100h");
+	ASSERT_SIZE(cRelationshipManager, 0x100);
 
 	namespace Addresses(cRelationshipManager)
 	{

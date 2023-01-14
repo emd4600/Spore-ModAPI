@@ -21,6 +21,7 @@
 
 
 #include <Spore\MathUtils.h>
+#include <Spore\ArgScript\ISpecialBlock.h>
 #include <Spore\ArgScript\Line.h>
 #include <Spore\ArgScript\Lexer.h>
 #include <Spore\ArgScript\ASDeclarations.h>
@@ -32,15 +33,13 @@
 
 #define FormatParserPtr eastl::intrusive_ptr<ArgScript::FormatParser>
 
-using namespace eastl;
-
 namespace ArgScript
 {
 	class FormatParser;
 
-	typedef function<void(const Line&, FormatParser*)> ParseLine_t;
-	typedef function<const char*(DescriptionMode)> GetDescription_t;
-	typedef function<void(FormatParser*, void*)> SetData_t;
+	typedef void(*ParseLine_t)(const Line&, FormatParser*);
+	typedef const char*(*GetDescription_t)(DescriptionMode);
+	typedef void(*SetData_t)(FormatParser*, void*);
 
 	class ITraceStream
 	{
@@ -138,10 +137,10 @@ namespace ArgScript
 		/* 3Ch */	virtual void ProcessStream(IO::IStream* pInputStream);
 
 		///
-		/// Converts the given string into a ArgScript::Line and it process it using the correct IParser,
+		/// Converts the given eastl::string into a ArgScript::Line and it process it using the correct IParser,
 		/// determined by the keyword (the first word in the line). If the keyword is not mapped to any parser,
 		/// an exception will be thrown.
-		/// @param pString The input line string.
+		/// @param pString The input line eastl::string.
 		/// @throws ArgScriptException If the keyword is not mapped.
 		/// @throws ArgScriptException If the format is not correct.
 		///
@@ -176,10 +175,10 @@ namespace ArgScript
 		/* 4Ch */	virtual bool ProcessStreamSafe(IO::IStream* pStream);
 
 		///
-		/// Converts the given string into a ArgScript::Line and it process it using the correct IParser,
+		/// Converts the given eastl::string into a ArgScript::Line and it process it using the correct IParser,
 		/// determined by the keyword (the first word in the line), without throwing any exceptions.
 		/// This calls ProcessLine(const char*) inside a try-catch block.
-		/// @param pString The input line string.
+		/// @param pString The input line eastl::string.
 		/// @returns True if no exceptions were thrown, false otherwise.
 		///
 		/* 50h */	virtual bool ProcessLineSafe(const char* pString);
@@ -213,16 +212,16 @@ namespace ArgScript
 		/* 68h */	virtual bool HasDefinition(const char* pName) const;
 
 		///
-		/// Sets the value of a variable. The value is always a string, which can contain other variables, referencing them with
+		/// Sets the value of a variable. The value is always a eastl::string, which can contain other variables, referencing them with
 		/// $ (and usually {} too; for example, to get the value of variable 'version', one would use '${version}' or '$version').
 		/// This variable will be added to the current scope.
 		/// @param pName The name of the variable.
-		/// @param pValue The c-string value of the variable.
+		/// @param pValue The c-eastl::string value of the variable.
 		///
 		/* 6Ch */	virtual void SetVariable(const char* pName, const char* pValue);
 
 		///
-		/// Returns the string value of the specified variable, or nullptr if the variable is not mapped.
+		/// Returns the eastl::string value of the specified variable, or nullptr if the variable is not mapped.
 		/// The variable is searched within the current scope and its parent scopes, unless another scope is specified (for example, Intel:card1 would
 		/// search 'card1' inside the 'Intel' scope).
 		/// If the name is prefixed with ':', the variable will be searched as a global variable first.
@@ -231,12 +230,12 @@ namespace ArgScript
 		/* 70h */	virtual const char* GetVariable(const char* pVariableName);
 
 		///
-		/// Sets the value of a global variable. The value is always a string, which can contain other variables, referencing them with
+		/// Sets the value of a global variable. The value is always a eastl::string, which can contain other variables, referencing them with
 		/// $ (and usually {} too; for example, to get the value of variable 'version', one would use '${version}' or '$version').
 		/// To access global variables, their name must be prefixed with ':'. For example, to get the global variable 'build', 
 		/// one would use '$:build'.
 		/// @param pName The name of the variable.
-		/// @param pValue The c-string value of the variable.
+		/// @param pValue The c-eastl::string value of the variable.
 		///
 		/* 74h */	virtual void SetGlobalVariable(const char* pName, const char* pValue);
 
@@ -263,9 +262,9 @@ namespace ArgScript
 		/* 84h */	virtual void PurgeScope(const char* pScope);
 
 		///
-		/// Returns the string used by the current scope, for example, 'App:'. The string is made by 
+		/// Returns the eastl::string used by the current scope, for example, 'App:'. The eastl::string is made by 
 		/// appending ':' after all the scope parents and the scope name. Variable names are the result of
-		/// appending this string with the variable name.
+		/// appending this eastl::string with the variable name.
 		///
 		/* 88h */	virtual const char* GetCurrentScope() const;
 
@@ -285,16 +284,16 @@ namespace ArgScript
 		/* 90h */	virtual int AddSpecialBlock(ISpecialBlock* pSpecialBlock, const char* pEndKeyword);
 
 		///
-		/// Converts the specified string representation of a logical expression to its bool equivalent.
+		/// Converts the specified eastl::string representation of a logical expression to its bool equivalent.
 		/// Values 'true', 'on' and '1' are evaluated as true, and 'false', 'off' and '0' are evaluated as false.
 		/// Logical operators 'or', 'and', 'not' are allowed, as well as the use of boolean functions.
-		/// @param pString The string to parse.
+		/// @param pString The eastl::string to parse.
 		/// @throws ArgScriptException If the boolean expression is not valid.
 		///
 		/* 94h */	virtual bool ParseBool(const char* pString) const;
 
 		///
-		/// Converts the specified string representation of a real number expression to its float equivalent.
+		/// Converts the specified eastl::string representation of a real number expression to its float equivalent.
 		/// Numerical expressions like + - * /, % (modulus), ^ (power) can be used, as well as the 'pi' constant.
 		/// These functions are also supported:
 		/// - sqrt(x): Returns the square root of the x.
@@ -310,27 +309,27 @@ namespace ArgScript
 		/// - atan2(x, y): Returns the arctangent of the quotient of its arguments, in radians.
 		/// - datan2(x, y): Returns the arctangent of the quotient of its arguments, in degrees.
 		/// - Any other function mapped in the lexer.
-		/// @param pString The string to parse.
+		/// @param pString The eastl::string to parse.
 		/// @throws ArgScriptException If the real expression is not valid.
 		///
 		/* 98h */	virtual float ParseFloat(const char* pString) const;
 
 		///
-		/// Converts the specified string representation of an integer number expression to its int equivalent.
+		/// Converts the specified eastl::string representation of an integer number expression to its int equivalent.
 		/// The integer operator + - * / % ^ can be used, as well as some functions from ParseFloat(const char*):
 		/// 'abs', 'floor', 'ceil', 'sqr' and any function mapped in the lexer. The function 'round(x)' which rounds 
 		/// the real number x to the closest integer is also supported.
 		/// All the supported functions can take real expressions (the ones used in ParseFloat(const char*)).
 		/// Hexadecimal numbers, prefixed by 0x, are also supported.
 		/// 'true' and 'on' are interpreted as 1, 'false' and 'off' are interpreted as 0.
-		/// @param pString The string to parse.
+		/// @param pString The eastl::string to parse.
 		/// @throws ArgScriptException If the integer expression is not valid.
 		/// 
 		/* 9Ch */	virtual int	ParseInt(const char* pString) const;
 
 		///
 		/// Same as ParseInt(const char*).
-		/// @param pString The string to parse.
+		/// @param pString The eastl::string to parse.
 		/// @throws ArgScriptException If the integer expression is not valid.
 		///
 		/* A0h */	virtual unsigned int ParseUInt(const char* pString) const;
@@ -341,9 +340,9 @@ namespace ArgScript
 		/// If only one number is specified, the vector will be filled with that number.
 		///
 		/// Examples:
-		/// - string '3.4, sqr(4)' will return Vector2(3.4, 16).
-		/// - string '8' will return Vector2(8.0, 8.0).
-		/// @param pString The string to parse.
+		/// - eastl::string '3.4, sqr(4)' will return Vector2(3.4, 16).
+		/// - eastl::string '8' will return Vector2(8.0, 8.0).
+		/// @param pString The eastl::string to parse.
 		/// @throws ArgScriptException If the real expression is not valid.
 		///
 		/* A4h */	virtual Math::Vector2 ParseVector2(const char* pString) const;
@@ -354,9 +353,9 @@ namespace ArgScript
 		/// If only one number is specified, the vector will be filled with that number.
 		///
 		/// Examples:
-		/// - string '3.4, sqr(4), 1.0 + 2' will return Vector3(3.4, 16.0, 3.0).
-		/// - string '8' will return Vector3(8.0, 8.0, 8.0).
-		/// @param pString The string to parse.
+		/// - eastl::string '3.4, sqr(4), 1.0 + 2' will return Vector3(3.4, 16.0, 3.0).
+		/// - eastl::string '8' will return Vector3(8.0, 8.0, 8.0).
+		/// @param pString The eastl::string to parse.
 		/// @throws ArgScriptException If the real expression is not valid or only two numbers are specified.
 		///
 		/* A8h */	virtual Math::Vector3 ParseVector3(const char* pString) const;
@@ -367,9 +366,9 @@ namespace ArgScript
 		/// If only one number is specified, the vector will be filled with that number.
 		///
 		/// Examples:
-		/// - string '3.4, sqr(4), 1.0 + 2, 0' will return Vector4(3.4, 16.0, 3.0, 0.0).
-		/// - string '8' will return Vector4(8.0, 8.0, 8.0, 8.0).
-		/// @param pString The string to parse.
+		/// - eastl::string '3.4, sqr(4), 1.0 + 2, 0' will return Vector4(3.4, 16.0, 3.0, 0.0).
+		/// - eastl::string '8' will return Vector4(8.0, 8.0, 8.0, 8.0).
+		/// @param pString The eastl::string to parse.
 		/// @throws ArgScriptException If the real expression is not valid or only two or three numbers are specified.
 		///
 		/* ACh */	virtual Math::Vector4 ParseVector4(const char* pString) const;
@@ -382,9 +381,9 @@ namespace ArgScript
 		/// Color numbers are usually in the range [0.0, 1.0].
 		///
 		/// Examples:
-		/// - string '0.4, sqr(0.5), 0.5 * 2' will return ColorRGB(0.4, 0.25, 1.0).
-		/// - string '0.2' will return ColorRGB(0.2, 0.2, 0.2).
-		/// @param pString The string to parse.
+		/// - eastl::string '0.4, sqr(0.5), 0.5 * 2' will return ColorRGB(0.4, 0.25, 1.0).
+		/// - eastl::string '0.2' will return ColorRGB(0.2, 0.2, 0.2).
+		/// @param pString The eastl::string to parse.
 		/// @throws ArgScriptException If the real expression is not valid or only two numbers are specified.
 		///
 		/* B0h */	virtual Math::ColorRGB ParseColorRGB(const char* pString) const;
@@ -396,8 +395,8 @@ namespace ArgScript
 		/// Color numbers are usually in the range [0.0, 1.0].
 		///
 		/// Examples:
-		/// - string '0.4, sqr(0.5), 0.5 * 2' will return ColorRGB(0.4, 0.25, 1.0, 1.0).
-		/// @param pString The string to parse.
+		/// - eastl::string '0.4, sqr(0.5), 0.5 * 2' will return ColorRGB(0.4, 0.25, 1.0, 1.0).
+		/// @param pString The eastl::string to parse.
 		/// @throws ArgScriptException If the real expression is not valid or only one or two numbers are specified.
 		///
 		/* B4h */	virtual Math::ColorRGBA ParseColorRGBA(const char* pString) const;
@@ -430,33 +429,34 @@ namespace ArgScript
 		/* 08h */	int mnRefCount;
 		/* 0Ch */	bool field_0C;
 		/* 10h */	int mnFlags;
-		/* 14h */	intrusive_ptr<ITraceStream> mpTraceStream;
+		/* 14h */	eastl::intrusive_ptr<ITraceStream> mpTraceStream;
 		/* 18h */	int field_18;
 		/* 1Ch */	int mnMinVersion;  // -1
 		/* 20h */	int mnMaxVersion;  // -1
 		/* 24h */	int mnVersion;  // -1
 		/* 28h */	void* mpData;
-		/* 2Ch */	hash_map<string, intrusive_ptr<IParser>> mParsers;
+		/* 2Ch */	eastl::hash_map<eastl::string, eastl::intrusive_ptr<IParser>> mParsers;
 		/* 4Ch */	Lexer mLexer;
-		/* 6Ch */	hash_map<string, int> mDefinitions;
-		/* 8Ch */	hash_map<string, string> mVariables;
-		/* ACh */	hash_map<string, string> mGlobalVariables;
+		/* 6Ch */	eastl::hash_map<eastl::string, int> mDefinitions;
+		/* 8Ch */	eastl::hash_map<eastl::string, eastl::string> mVariables;
+		/* ACh */	eastl::hash_map<eastl::string, eastl::string> mGlobalVariables;
 		/* CCh */	int field_CC;
-		/* D0h */	string field_D0;
-		/* E0h */	string field_E0;
+		/* D0h */	eastl::string field_D0;
+		/* E0h */	eastl::string field_E0;
 		/* F0h */	int field_F0;
-		/* F4h */	string field_F4;
+		/* F4h */	eastl::string field_F4;
 		/* 104h */	int field_104;
-		/* 108h */	vector<IBlock*> mBlocks;
-		/* 11Ch */	vector<pair<ISpecialBlock*, const char*>> mSpecialBlocks;
-		/* 130h */	string mCurrentScope;  // the string of the current scope, for example, 'App:'
-		/* 140h */	vector<size_t> mScopeLenghts;  // the length each scope uses in the mCurrentScope string
-		/* 154h */	string field_154;
+		/* 108h */	eastl::vector<IBlock*> mBlocks;
+		/* 11Ch */	eastl::vector<eastl::pair<ISpecialBlock*, const char*>> mSpecialBlocks;
+		/* 130h */	eastl::string mCurrentScope;  // the eastl::string of the current scope, for example, 'App:'
+		/* 140h */	eastl::vector<size_t> mScopeLenghts;  // the length each scope uses in the mCurrentScope eastl::string
+		/* 154h */	eastl::string field_154;
 		/* 164h */	bool field_164;
 		/* 168h */	int field_168;
 		/* 16Ch */	ArgScript::Line mTempLine;
-		/* 1B0h */	string mTempString;  // used when adding parsers
+		/* 1B0h */	eastl::string mTempString;  // used when adding parsers
 	};
+	ASSERT_SIZE(FormatParser, 0x1C0);
 
 	typedef void* (*PrintF_ptr)(FormatParser* object, const char* str, ...);
 
@@ -470,12 +470,6 @@ namespace ArgScript
 	///
 	extern FormatParser* CreateStream();
 
-
-	/////////////////////////////////
-	//// INTERNAL IMPLEMENTATION ////
-	/////////////////////////////////
-
-	static_assert(sizeof(FormatParser) == 0x1C0, "sizeof(FormatParser) != 1C0h");
 
 	namespace Addresses(FormatParser)
 	{

@@ -13,11 +13,11 @@ namespace eastl
 
 	/// gEmptyString
 	///
-	/// gEmptyString is used for empty strings. This allows us to avoid allocating
-	/// memory for empty strings without having to add null pointer checks. 
-	/// The downside of this technique is that all empty strings share this same
+	/// gEmptyString is used for empty eastl::strings. This allows us to avoid allocating
+	/// memory for empty eastl::strings without having to add null pointer checks. 
+	/// The downside of this technique is that all empty eastl::strings share this same
 	/// value and if any code makes an error and writes to this value with non-zero,
-	/// then all existing empty strings will be wrecked and not just the one that
+	/// then all existing empty eastl::strings will be wrecked and not just the one that
 	/// was incorrectly overwritten.
 	EASTL_API EmptyString gEmptyString = { 0 };
 
@@ -268,8 +268,8 @@ namespace eastl
 	// Sets result to 0xffff in the case that the input UTF8 sequence is bad.
 	// The effect of converting UTF8 codepoints > 0xffff to UCS2 (char16_t) is to set all
 	// such codepoints to 0xffff. EASTL doesn't have a concept of setting or maintaining 
-	// error state for string conversions, though it does have a policy of converting 
-	// impossible values to something without generating invalid strings or throwing exceptions.
+	// error state for eastl::string conversions, though it does have a policy of converting 
+	// impossible values to something without generating invalid eastl::strings or throwing exceptions.
 	bool UTF8ToUCS2(const char8_t*& p, const char8_t* pEnd, uint16_t& result)
 	{
 		uint32_t u32;

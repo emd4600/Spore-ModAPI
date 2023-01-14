@@ -49,10 +49,5 @@ namespace Simulator
 		/* 22Ch */	uint32_t mModelID;
 		/* 230h */	bool field_230;  // true
 	};
-
-	/////////////////////////////////
-	//// INTERNAL IMPLEMENTATION ////
-	/////////////////////////////////
-
-	static_assert(sizeof(cOrnament) == 0x238, "sizeof(cOrnament) != 238h");
+	ASSERT_SIZE(cOrnament, 0x238);
 }

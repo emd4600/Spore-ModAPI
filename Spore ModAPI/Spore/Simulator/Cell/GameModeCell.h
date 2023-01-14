@@ -31,11 +31,6 @@ namespace Simulator
 
 	namespace Cell
 	{
-		enum
-		{
-			kGameModeID = 0x1654C00
-		};
-
 		class GameModeCell
 			: public App::IGameMode
 			, public App::IUnmanagedMessageListener
@@ -72,16 +67,15 @@ namespace Simulator
 			/* 09h */	bool field_09;
 			/* 0Ah */	bool field_0A;
 		};
+		ASSERT_SIZE(GameModeCell, 0xC);
 
-		/////////////////////////////////
-		//// INTERNAL IMPLEMENTATION ////
-		/////////////////////////////////
-
-		static_assert(sizeof(GameModeCell) == 0x0C, "sizeof(GameModeCell) != 0Ch");
-
+#ifndef SDK_TO_GHIDRA
 		inline GoalCard* GetGoalCards() {
 			return (GoalCard*)GetAddress(Cell, GoalCards_ptr);
 		}
+#else
+		GoalCard sGoalCards[0x76];
+#endif
 
 		namespace Addresses(GameModeCell)
 		{

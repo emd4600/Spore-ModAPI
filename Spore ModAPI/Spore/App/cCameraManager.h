@@ -26,14 +26,14 @@
 #include <EASTL\vector.h>
 #include <EASTL\string.h>
 
-using namespace eastl;
-
 namespace App
 {
 	///
 	/// The implementation of ICameraManager; this should only be used for extending and detouring.
 	///
-	class cCameraManager : public ICameraManager, public IVirtual
+	class cCameraManager 
+		: public ICameraManager
+		, public IVirtual
 	{
 	public:
 		cCameraManager();
@@ -63,25 +63,20 @@ namespace App
 		virtual void RemoveCameras() override;
 
 
-	protected:
+	public:
 		/* 08h */	int mnRefCount;
 		/* 0Ch */	bool field_0C;
-		/* 10h */	string mCheatKeyword;
-		/* 20h */	hash_map<string16, int> field_20;
-		/* 40h */	hash_map<uint32_t, CameraFactoryFunction_t> mTypeFactories;
-		/* 60h */	hash_map<uint32_t, size_t> mCameraIndices;
-		/* 80h */	vector<intrusive_ptr<ICamera>> mpCameras;
-		/* 94h */	vector<string16> mCameraNames;
+		/* 10h */	eastl::string mCheatKeyword;
+		/* 20h */	eastl::hash_map<eastl::string16, int> field_20;
+		/* 40h */	eastl::hash_map<uint32_t, CameraFactoryFunction_t> mTypeFactories;
+		/* 60h */	eastl::hash_map<uint32_t, size_t> mCameraIndices;
+		/* 80h */	eastl::vector<ICameraPtr> mpCameras;
+		/* 94h */	eastl::vector<eastl::string16> mCameraNames;
 		/* A8h */	int mnActiveIndex;  // -1
 		/* ACh */	int field_AC;
 		/* B0h */	cViewer* mpViewer;
 	};
-
-	/////////////////////////////////
-	//// INTERNAL IMPLEMENTATION ////
-	/////////////////////////////////
-
-	static_assert(sizeof(cCameraManager) == 0xB4, "sizeof(cCameraManager) != B4h");
+	ASSERT_SIZE(cCameraManager, 0xB4);
 
 	namespace Addresses(cCameraManager)
 	{

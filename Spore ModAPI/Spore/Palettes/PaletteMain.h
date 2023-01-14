@@ -29,9 +29,7 @@
 namespace Palettes
 {
 	// sub_5CB180 generates the category icons
-
-	using namespace eastl;
-
+	
 	///
 	/// This object represents the palette of an editor. An editor can have two palettes, one for build mode and the other
 	/// for paint mode. Palettes contain categories (Palettes::PaletteCategory), which in turn contain pages (Palettes::PalettePage).
@@ -39,6 +37,8 @@ namespace Palettes
 	class PaletteMain : public DefaultRefCounted, public Object
 	{
 	public:
+		static const uint32_t TYPE = 0x12DCA0EA;
+
 		PaletteMain();
 		virtual ~PaletteMain() {} //TODO something else?
 
@@ -100,7 +100,7 @@ namespace Palettes
 
 	public:
 		/// A vector with all the categories used in this palette.
-		/* 0Ch */	vector<intrusive_ptr<PaletteCategory>> mCategories;
+		/* 0Ch */	eastl::vector<PaletteCategoryPtr> mCategories;
 		/// The instance ID of the user interface layout file used by the palette. This layout is the bar at
 		/// the top that displays the category buttons. It must also have a window with ControlID 0x93019DBC that will 
 		/// contain the category page. 
@@ -125,16 +125,8 @@ namespace Palettes
 		/* 38h */	uint32_t mnStartupCategory;
 		/// The type of creature, as an ID, that the editor of this palette is editing (for example, 'creature').
 		/* 3Ch */	uint32_t mCreationTypeID;
-
-	public:
-		static const uint32_t TYPE = 0x12DCA0EA;
 	};
-
-	/////////////////////////////////
-	//// INTERNAL IMPLEMENTATION ////
-	/////////////////////////////////
-
-	static_assert(sizeof(PaletteMain) == 0x40, "sizeof(PaletteMain) != 40h");
+	ASSERT_SIZE(PaletteMain, 0x40);
 
 	namespace Addresses(PaletteMain)
 	{
@@ -144,9 +136,11 @@ namespace Palettes
 		DeclareAddress(Unload);
 	}
 
+#ifndef SDK_TO_GHIDRA
 	inline PaletteCategory* PaletteMain::GetCategoryAt(size_t nIndex)
 	{
 		return mCategories[nIndex].get();
 	}
+#endif
 }
 

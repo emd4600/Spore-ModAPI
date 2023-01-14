@@ -2,7 +2,7 @@
 
 #include <Spore\Simulator\SubSystem\cStrategy.h>
 #include <Spore\Simulator\cPlantCargoInfo.h>
-#include <Spore\Resource\IPFRecord.h>
+#include <Spore\Resource\IRecord.h>
 
 /// Accesses the current instance of Simulator::cPlantSpeciesManager
 #define PlantSpeciesManager (*Simulator::cPlantSpeciesManager::Get())
@@ -19,7 +19,7 @@ namespace Simulator
 
 	public:
 		// some sort of cache?
-		/* 1Ch */	map<ResourceKey, Resource::IPFRecord*, less<ResourceKey>, ICoreAllocatorAdapter> field_1C;
+		/* 1Ch */	eastl::map<ResourceKey, Resource::IRecord*, eastl::less<ResourceKey>, ICoreAllocatorAdapter> field_1C;
 	};
 	ASSERT_SIZE(cPlantSpeciesManager, 0x3C);
 

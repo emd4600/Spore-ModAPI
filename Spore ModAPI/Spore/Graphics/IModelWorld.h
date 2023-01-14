@@ -78,8 +78,11 @@ namespace Graphics
 
 		FilterSettings();
 
+		void SetRequiredGroup(uint32_t group);
+		void SetExcludedGroup(uint32_t group);
+
 		/* 00h */	uint64_t requiredGroupFlags;
-		/* 08h */	uint64_t bannedGroupFlags;
+		/* 08h */	uint64_t excludedGroupFlags;
 		/* 10h */	FilterModel_t filterFunction;
 		/* 14h */	CollisionMode collisionMode;
 		/* 15h */	uint8_t flags;
@@ -87,7 +90,7 @@ namespace Graphics
 
 	inline FilterSettings::FilterSettings()
 		: requiredGroupFlags()
-		, bannedGroupFlags()
+		, excludedGroupFlags()
 		, filterFunction(nullptr)
 		, collisionMode(CollisionMode::Lod0KDTree)
 		, flags(kUseModelCollisionMode)
@@ -167,6 +170,19 @@ namespace Graphics
 		/* 20h */	virtual void* CreateGroup(int, void*&) = 0;
 
 
+#ifdef SDK_TO_GHIDRA
+		/* 24h */	virtual Model* FindFirstModelAlongLine(const Vector3& point1, const Vector3& point2, float* factorDst, Vector3* dstIntersectionPoint, Vector3*, FilterSettings& settings, int*, int*) = 0;
+		/* 28h */	virtual Model* FindFirstModelAlongLine2(const Vector3& point1, const Vector3& point2, float* factorDst, FilterSettings& settings) = 0;
+		/* 2Ch */	virtual bool FindModels(eastl::vector<Model*>& dst, FilterSettings& settings) = 0;
+		/* 30h */	virtual bool FindModelsAlongLineOrdered(const Vector3& point1, const Vector3& point2, eastl::vector<eastl::pair<Model*, float>>& result, FilterSettings& settings, float) = 0;
+		/* 34h */	virtual bool FindModelsAlongLine(const Vector3& point1, const Vector3& point2, eastl::vector<Model*>& result, FilterSettings& settings, float) = 0;
+		/* 38h */	virtual bool FindModelsInSphere(const Vector3& center, float radius, eastl::vector<Model*> result, FilterSettings& settings) = 0;
+		/* 3Ch */	virtual bool FindModelsInBox(const BoundingBox& bbox, eastl::vector<Model*>& result, FilterSettings& settings) = 0;
+		/* 40h */	virtual bool FindModelsInFrustum(const cFrustumCull& frustum, eastl::vector<Model*> result, FilterSettings& settings) = 0;
+		/* 44h */	virtual bool PickAgainstModel(const Vector3& linePoint1, const Vector3& linePoint2, Model* model, float& dstFactor, FilterSettings& settings) = 0;
+		/* 48h */	virtual bool SphereIntersectsModel(const Vector3& center, float radius, Model* model, FilterSettings& settings) = 0;
+		/* 4Ch */	virtual bool BoxIntersectsModel(const BoundingBox& bbox, Model* model, FilterSettings& settings) = 0;
+#else
 		/// Gets the first model that is intersected with the segment between `point1` and `point2`.
 		/// @returns The closest model that intersected, or nullptr if no model intersected the ray.
 		/* 24h */	virtual Model* FindFirstModelAlongLine(const Vector3& point1, const Vector3& point2, float* factorDst = nullptr, Vector3* dstIntersectionPoint = nullptr, Vector3* = nullptr, FilterSettings& settings = FilterSettings(), int* = nullptr, int* = nullptr) = 0;
@@ -177,7 +193,7 @@ namespace Graphics
 		/// @param result The vector where the models will be added.
 		/// @param settings Settings that decide which models are valid.
 		/// @returns True if any model intersected, false otherwise.
-		/* 2Ch */	virtual bool FindModels(vector<Model*>& dst, FilterSettings& settings = FilterSettings()) = 0;
+		/* 2Ch */	virtual bool FindModels(eastl::vector<Model*>& dst, FilterSettings& settings = FilterSettings()) = 0;
 
 		/// Gets all the models that intersect with a segment. It adds them in the vector ordered by distance to `point1`;
 		/// the vector will contains pairs of model and a float, the proportion between the two points where it intersected.
@@ -186,7 +202,7 @@ namespace Graphics
 		/// @param result The vector where the { model, factor } pairs will be added.
 		/// @param settings Settings that decide which models are valid.
 		/// @returns True if any model intersected, false otherwise.
-		/* 30h */	virtual bool FindModelsAlongLineOrdered(const Vector3& point1, const Vector3& point2, vector<pair<Model*, float>>& result, FilterSettings& settings = FilterSettings(), float = 0.0) = 0;
+		/* 30h */	virtual bool FindModelsAlongLineOrdered(const Vector3& point1, const Vector3& point2, eastl::vector<eastl::pair<Model*, float>>& result, FilterSettings& settings = FilterSettings(), float = 0.0) = 0;
 
 		/// Gets all the models that intersect with a segment.
 		/// @param point1 The start of the ray.
@@ -194,7 +210,7 @@ namespace Graphics
 		/// @param result The vector where the models will be added.
 		/// @param settings Settings that decide which models are valid.
 		/// @returns True if any model intersected, false otherwise.
-		/* 34h */	virtual bool FindModelsAlongLine(const Vector3& point1, const Vector3& point2, vector<Model*>& result, FilterSettings& settings = FilterSettings(), float = 0.0) = 0;
+		/* 34h */	virtual bool FindModelsAlongLine(const Vector3& point1, const Vector3& point2, eastl::vector<Model*>& result, FilterSettings& settings = FilterSettings(), float = 0.0) = 0;
 
 		/// Finds all the models that intersect with the sphere with `center` and `radius`.
 		/// @param center The center point of the sphere.
@@ -202,21 +218,21 @@ namespace Graphics
 		/// @param result The vector where the models will be added.
 		/// @param settings Settings that decide which models are valid and which collision mode is used.
 		/// @returns True if any model intersected, false otherwise.
-		/* 38h */	virtual bool FindModelsInSphere(const Vector3& center, float radius, vector<Model*> result, FilterSettings& settings = FilterSettings()) = 0;
+		/* 38h */	virtual bool FindModelsInSphere(const Vector3& center, float radius, eastl::vector<Model*> result, FilterSettings& settings = FilterSettings()) = 0;
 
 		/// Finds all the models that intersect with the given bounding box.
 		/// @param bbox The bounding box to check.
 		/// @param result The vector where the models will be added.
 		/// @param settings Settings that decide which models are valid and which collision mode is used.
 		/// @returns True if any model intersected, false otherwise.
-		/* 3Ch */	virtual bool FindModelsInBox(const BoundingBox& bbox, vector<Model*>& result, FilterSettings& settings = FilterSettings()) = 0;
+		/* 3Ch */	virtual bool FindModelsInBox(const BoundingBox& bbox, eastl::vector<Model*>& result, FilterSettings& settings = FilterSettings()) = 0;
 
 		/// Finds all the models that intersect with the given frustum.
 		/// @param frustum The frustum to check.
 		/// @param result The vector where the models will be added.
 		/// @param settings Settings that decide which models are valid and which collision mode is used.
 		/// @returns True if any model intersected, false otherwise.
-		/* 40h */	virtual bool FindModelsInFrustum(const cFrustumCull& frustum, vector<Model*> result, FilterSettings& settings = FilterSettings()) = 0;
+		/* 40h */	virtual bool FindModelsInFrustum(const cFrustumCull& frustum, eastl::vector<Model*> result, FilterSettings& settings = FilterSettings()) = 0;
 
 		/// Intersects a line segment with a model, and gives the point in the segment that intersected with the model.
 		/// @param linePoint1 Start point of the segment
@@ -241,7 +257,8 @@ namespace Graphics
 		/// @param settings Settings that decide which models are valid and which collision mode is used.
 		/// @returns True if the model intersects with the bbox, false otherwise.
 		/* 4Ch */	virtual bool BoxIntersectsModel(const BoundingBox& bbox, Model* model, FilterSettings& settings = FilterSettings()) = 0;
-		
+#endif
+
 		///
 		/// Used to get the instance and group ID of the given model.
 		/// @param model The model.
@@ -253,7 +270,7 @@ namespace Graphics
 		/// 'region' shader data of the materials in the model.
 		/// @param model
 		/// @param dst
-		/* 54h */	virtual void GetRegionList(Model* model, vector<uint32_t>& dst) = 0;
+		/* 54h */	virtual void GetRegionList(Model* model, eastl::vector<uint32_t>& dst) = 0;
 
 		/// Ensures the given model is loaded and all its parameters are updated.
 		/// @param model
@@ -396,7 +413,7 @@ namespace Graphics
 		/// @param model
 		/// @param enable If true, effects will be enabled
 		/// @param instanceID [Optional] If not 0, only effects with this ID will be changed.
-		/* C4h */	virtual void SetEffectsRunning(Model* model, bool enable, uint32_t instanceID = 0) const = 0;
+		/* C4h */	virtual void SetEffectsRunning(Model* model, bool enable, bool startStop, uint32_t instanceID = 0) const = 0;
 
 		/// Changes parameters of effects in a model.
 		/// @param model
@@ -448,15 +465,15 @@ namespace Graphics
 		/// @return The number of IDs written
 		/* ECh */	virtual int GetDeformationAnimationIDs(Model* model, uint32_t* dst, int animationGroup = 0) = 0;
 
-		/* F0h */	virtual bool GetBakedMeshes(Model* model, vector<cMeshDataPtr>& dst, const Transform& transform) = 0;
+		/* F0h */	virtual bool GetBakedMeshes(Model* model, eastl::vector<cMeshDataPtr>& dst, const Transform& transform) = 0;
 
-		/* F4h */	virtual bool GetBakedMeshes2(Model* model, vector<cMeshDataPtr>& dst) = 0;
+		/* F4h */	virtual bool GetBakedMeshes2(Model* model, eastl::vector<cMeshDataPtr>& dst) = 0;
 
-		/* F8h */	virtual bool GetMeshes(Model* model, vector<cMeshDataPtr>& dst, const Transform& transform) = 0;
+		/* F8h */	virtual bool GetMeshes(Model* model, eastl::vector<cMeshDataPtr>& dst, const Transform& transform) = 0;
 
-		/* FCh */	virtual bool GetBakedMeshesUnscaled(Model* model, vector<cMeshDataPtr>& dst, const Transform& transform) = 0;
+		/* FCh */	virtual bool GetBakedMeshesUnscaled(Model* model, eastl::vector<cMeshDataPtr>& dst, const Transform& transform) = 0;
 
-		/* 100h */	virtual int GetRuntimeMeshes(Model* model, vector<cMeshDataPtr>& dst, RenderWare::RenderWareFile*, void*, void*) = 0;
+		/* 100h */	virtual int GetRuntimeMeshes(Model* model, eastl::vector<cMeshDataPtr>& dst, RenderWare::RenderWareFile*, void*, void*) = 0;
 
 		//TODO cGameModelResource
 		/* 104h */	virtual int GetRuntimeModel(Model* model, void** dst, const ResourceKey& key) = 0;
@@ -474,9 +491,9 @@ namespace Graphics
 
 		/* 118h */	virtual bool GetPickMeshTriPositions(Model* model, int, Vector3& dst1, Vector3& dst2, Vector3& dst3) = 0;
 
-		/* 11Ch */	virtual void SetRenderGroups(const bitset<64>&, const bitset<64>&) = 0;
+		/* 11Ch */	virtual void SetRenderGroups(const eastl::bitset<64>&, const eastl::bitset<64>&) = 0;
 
-		/* 120h */	virtual void GetRenderGroups(bitset<64>& dst1, bitset<64>& dst2) = 0;
+		/* 120h */	virtual void GetRenderGroups(eastl::bitset<64>& dst1, eastl::bitset<64>& dst2) = 0;
 
 		/* 124h */	virtual void SetRenderSetInfo(int indexDrawSet, int info1, int info2) = 0;  // something related with PlanetModelDepthOffset ?
 

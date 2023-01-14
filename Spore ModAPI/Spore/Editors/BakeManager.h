@@ -60,6 +60,8 @@ namespace Editors
 		/* 48h */	virtual void func48h();
 		/* 4Ch */	virtual void func4Ch(const ResourceKey& nameKey, const BakeParameters& params);  // bake?
 
+		// 60h returns IModelWorld
+
 		static IBakeManager* Get();
 	};
 

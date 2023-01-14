@@ -66,8 +66,7 @@ namespace UTFWin
 	protected:
 		int mAnchor;
 	};
-
-	static_assert(sizeof(SimpleLayout) == 0x14, "sizeof(SimpleLayout) != 14h");
+	ASSERT_SIZE(SimpleLayout, 0x14);
 
 	namespace Addresses(SimpleLayout)
 	{

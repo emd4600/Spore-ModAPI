@@ -58,8 +58,7 @@ namespace UTFWin
 		/* 10h */	float mProportions[4];
 
 	};
-
-	static_assert(sizeof(ProportionalLayout) == 0x20, "sizeof(ProportionalLayout) != 20h");
+	ASSERT_SIZE(ProportionalLayout, 0x20);
 
 	namespace Addresses(ProportionalLayout)
 	{

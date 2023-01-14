@@ -19,11 +19,10 @@
 
 #pragma once
 
-#include <Spore\Resource\IResourceContainer.h>
 #include <Spore\Resource\IResourceFactory.h>
-#include <Spore\Resource\IResourceFilter.h>
-#include <Spore\Resource\IResourceMap.h>
-#include <Spore\Resource\DatabasePackedFile.h>
+#include <Spore\Resource\IKeyFilter.h>
+#include <Spore\Resource\ICache.h>
+#include <Spore\Resource\Database.h>
 
 #include <EASTL\list.h>
 
@@ -31,8 +30,6 @@
 #define ResourceManager (*Resource::IResourceManager::Get())
 
 #define IResourceManagerPtr eastl::intrusive_ptr<Resource::IResourceManager>
-
-using namespace eastl;
 
 namespace Resource
 {
@@ -43,300 +40,322 @@ namespace Resource
 	/// IResourceFactory instances, which are assigned to certain typeIDs. When trying to get a resource, those factories will be used
 	/// to generate an instance of the correct class according to the resource type. Therefore, the ResourceManager can only be used for those
 	/// types that have factories assigned to them.
+	/// 
+	/// The manager distinguishes two different kinds of type IDs: the *resource type* and the *record type*. Record types are the type IDs
+	/// you find in files, such as `.rw4`, `.prop`, etc. Resource types are used to differentiate between different kinds of ResourceObject;
+	/// for example, `.raster` and `.rw4` are assigned to the same resource type.
 	///
 	/// You can assign your own factories or delete existing ones, but if that is not an option, ResourceManager provides a method to find
-	/// the DatabasePackedFile that contains a certain file. This way, ResourceManager can always be used to get files, either via the GetResource
-	/// method or the GetDBPF one. The DBPFs are stored in the resource manager according to their priority.
+	/// the Database that contains a certain file. This way, ResourceManager can always be used to get files, either via the GetResource
+	/// method or the FindDatabase one. The databases are stored in the resource manager according to their priority.
 	///
-	/// The manager contains a cache of IResourceMap instances that is used to avoid repeteadly creating new instances of a resource that
-	/// already exists. The ReadResource method can be used instead of GetResource to forcibly create a new resource even if it's already
+	/// The manager contains a list of ICache instances that is used to avoid repeteadly creating new instances of a resource that
+	/// already exists. The IResourceManager::GetPrivateResource() method can be used instead of IResourceManager::GetResource() to forcibly create a new resource even if it's already
 	/// in the cache.
 	/// 
-	/// This manager provides additional functionality relating files. It keeps a map of ResourceKey - string16 values, which can be used
+	/// This manager provides additional functionality relating files. It keeps a map of ResourceKey - eastl::string16 values, which can be used
 	/// to store the original name of certain resources. For example:
 	/// ~~~~~~~~~~~~~~~~~~~~~~{.cpp}
-	/// ResourceManager.SetFileName(ResourceKey(0x00000000, 0x40212002, 0x0469A3F7), u"ShaderFragments!LowQuality.graphics");
+	/// ResourceManager.SetKeyName(ResourceKey(0x00000000, 0x40212002, 0x0469A3F7), u"ShaderFragments!LowQuality.graphics");
 	/// // Now you can access this file using the name we assigned instead of the original name, which had special IDs
-	/// ResourceManager.GetFileName(dstKey, u"ShaderFragments!LowQuality.graphics");
+	/// ResourceKey dstKey = ResourceManager.GetKeyFromName(u"ShaderFragments!LowQuality.graphics");
 	/// ~~~~~~~~~~~~~~~~~~~~~~
 	///
-	/// Additionally, the manager also keeps a map of typeID - string16 values, which allows to map extension strings to certain typeIDs.
+	/// Additionally, the manager also keeps a map of typeID - eastl::string16 values, which allows to map extension eastl::strings to certain typeIDs.
 	/// For example:
 	/// ~~~~~~~~~~~~~~~~~~~~~~{.cpp}
 	/// // for example, we could have the mappings on a file and load it on startup
-	/// ResourceManager.AddExtensionMapping(0x2F7D0004, u"png");
+	/// ResourceManager.SetTypename(0x2F7D0004, u"png");
 	/// // now, if we try to use the .png extension, we will receive the correct typeID, instead of using the FNV hash of "png" (which is not 0x2F7D0004)
-	/// ResourceManager.GetFileName(dstKey, u"MyImages!EditorUIFrame.png");
+	/// ResourceKey dstKey = ResourceManager.GetFileName(u"MyImages!EditorUIFrame.png");
 	/// ~~~~~~~~~~~~~~~~~~~~~~
 	///
-	class IResourceManager : public IResourceContainer
+	class IResourceManager
 	{
 
 	public:
+		typedef void(*ChangeNotificationCallback_t)(Database*, const ResourceKey&, void*);
+		typedef eastl::list<Database*, ICoreAllocatorAdapter> DatabaseList;
 
-		typedef list<DatabasePackedFile*, CoreAllocatorAdapter<ICoreAllocator>> DBPFList;
+		/* 00h */	virtual ~IResourceManager();
+		/* 04h */	virtual bool Initialize() = 0;
+		/* 08h */	virtual bool Dispose() = 0;
 
-
-		///
 		/// Gets the resource that has the given ResourceKey name. 
 		/// If the resource is contained in the cache, that will be used.
 		/// The name will be modified to use the correct types, according to the mappings in this manager.
-		/// The resource will be seached in all the DBPF files in this manager, unless a specific one is specified.
+		/// The resource will be seached in all the databases in this manager, unless a specific one is specified.
 		/// Once the file is found, the correct factory will be used to generate the appropiate resource, unless
 		/// a specific IResourceFactory is specified.
 		///
 		/// @param[in] name The ResourceKey name to find. If the typeID is mapped in the manager to other alternative typeIDs, all them will be tested.
 		/// @param[out] ppDst [Optional] A pointer to a ResourceObject*. It will be assigned with the generated resource.
-		/// @param arg_8 [Optional] Usage unknown, usually 0.
-		/// @param[in] pDBPF [Optional] The DatabasePackedFile where the file will be searched. Use nullptr to search in all DBPFs in this manager.
+		/// @param[in] factoryData [Optional] Additional data that is passed to the resource factory, usually null.
+		/// @param[in] pDatabase [Optional] The Database where the file will be searched. Use nullptr to search in all available databases.
 		/// @param[in] pFactory [Optional] The IResourceFactory used to generate the resource. Use nullptr to use the appropiate factory according to the typeID mapping in this manager.
 		/// @param[in] pCacheName [Optional] The ResourceKey name used to search the resource in the cache.
 		/// @returns True if the resource was found or generated, false otherwise.
-		///
 		/* 0Ch */	virtual bool GetResource(
 			const ResourceKey& name,
 			ResourceObjectPtr* ppDst = nullptr,
-			int arg_8 = 0,
-			DBPF* pDBPF = nullptr,
+			void* factoryData = nullptr,
+			Database* pDatabase = nullptr,
 			IResourceFactory* pFactory = nullptr,
 			const ResourceKey* pCacheName = nullptr) = 0;
 
-		///
-		/// Similar usage to ResourceManager::GetResource . This method allows to get more info,
-		/// but it is unknown what that info is.
-		///
-		/* 10h */	virtual bool GetAsyncResource(
+		/// Similar usage to ResourceManager::GetResource(), but this method returns inmediately and loads the resource 
+		/// asynchronously.
+		/// @param[in] name
+		/// @param[out] ppDst
+		/// @param[out] ppDstAsync
+		/// @param[in] arg_C
+		/// @param[in] factoryData
+		/// @param[in] pDatabase
+		/// @param[in] pFactory
+		/// @param[in] pCacheName
+		/// @returns
+		/* 10h */	virtual bool GetResourceAsync(
 			const ResourceKey& name,
 			ResourceObjectPtr* ppDst = nullptr,
-			AsyncResourcePtr* ppDstAsync = nullptr,
+			IAsyncRequestPtr* ppDstAsync = nullptr,
 			void* arg_C = nullptr,
-			void* arg_10 = nullptr,
-			DBPF* pDBPF = nullptr,
+			void* factoryData = nullptr,
+			Database* pDatabase = nullptr,
 			IResourceFactory* pFactory = nullptr,
-			const ResourceKey* pAlternativeName = nullptr) = 0;
+			const ResourceKey* pCacheName = nullptr) = 0;
 
-		///
 		/// Gets a resource from the resource cache in this manager. If it isn't present in the cache,
 		/// nothing will happen.
+		/// @param name
+		/// @param pDst
 		/// @returns True if the file was present in the cache, false otherwise.
-		///
-		/* 14h */	virtual bool GetCachedResource(const ResourceKey& name, ResourceObjectPtr* pDst) = 0;
+		/* 14h */	virtual bool GetLoadedResource(const ResourceKey& name, ResourceObjectPtr* pDst) = 0;
 
-		/* 18h */	virtual bool func18h(int arg_0, int arg_4, int arg_8, int arg_C, int arg_10) = 0;
+		/* 18h */	virtual bool ReloadResource(
+			const ResourceKey& name, 
+			ResourceObject* pResource, 
+			void* pFactoryData = nullptr, 
+			Database* pDatabase = nullptr,
+			IResourceFactory* pFactory = nullptr) = 0;
 
-		///
 		/// Similar usage to ResourceManager::GetResource . This method does not check the cache, however,
 		/// therefore always generating a new resource.
+		/// @param[in] name The ResourceKey name to find. If the typeID is mapped in the manager to other alternative typeIDs, all them will be tested.
+		/// @param[out] ppDst [Optional] A pointer to a ResourceObject*. It will be assigned with the generated resource.
+		/// @param[in] factoryData [Optional] Additional data that is passed to the resource factory, usually null.
+		/// @param[in] pDatabase [Optional] The Database where the file will be searched. Use nullptr to search in all available databases.
+		/// @param[in] pFactory [Optional] The IResourceFactory used to generate the resource. Use nullptr to use the appropiate factory according to the typeID mapping in this manager.
+		/// @param[in] pCacheName [Optional] The ResourceKey name used to search the resource in the cache.
 		/// @returns True if the resource was successfully generated and read, false otherwise.
-		///
-		/* 1Ch */	virtual bool ReadResource(
+		/* 1Ch */	virtual bool GetPrivateResource(
 			const ResourceKey& name,
 			ResourceObjectPtr* ppDst = nullptr,
-			int arg_8 = 0,
-			DBPF* pDBPF = nullptr,
+			void* pFactoryData = nullptr,
+			Database* pDatabase = nullptr,
 			IResourceFactory* pFactory = nullptr,
 			const ResourceKey* pCacheName = nullptr) = 0;
 
-		///
-		/// Writes the given resource to a package file. If the DBPF is specified in this method, a new file will
-		/// always be created on it even if it does not exist yet; however, if no DBPF is specified, the resource
-		/// will be written in the first DBPF that contains a file with the given name.
-		/// If there is a problem while writing the resource, the file on the DBPF will be deleted.
+		/// Writes the given resource to a package file. If the database is specified in this method, a new file will
+		/// always be created on it even if it does not exist yet; however, if no database is specified, the resource
+		/// will be written in the first database that contains a file with the given name.
+		/// If there is a problem while writing the resource, the file on the database will be deleted.
 		///
 		/// @param pResource[in] The ResourceObject to write. It will be written according to the IResourceFactory specified or the one that corresponds to the typeID.
-		/// @param arg_4 [Optional] Usage unknown, usually 0.
-		/// @param pDBPF[in] [Optional] The DatabasePackedFile where the resource will be written.
+		/// @param pFactoryData[in] [Optional] Additional data that is passed to the resource factory, usually null.
+		/// @param pDatabase[in] [Optional] The Database where the resource will be written.
 		/// @param pFactory[in] [Optional] The IResourceFactory that will be used to write the resource. Use nullptr to use the one that corresponds to the resource's typeID.
 		/// @param pNameKey[in] [Optional] The ResourceKey that must be used as the name. If nullptr, the name of the resource will be used.
 		/// @returns True if the resource was successfuly written, false otherwise.
-		///
 		/* 20h */	virtual bool WriteResource(
 			const ResourceObject* pResource,
-			int arg_4 = 0,
-			DBPF* pDBPF = nullptr,
+			void* pFactoryData = nullptr,
+			Database* pDatabase = nullptr,
 			IResourceFactory* pFactory = nullptr,
 			const ResourceKey* pNameKey = nullptr) = 0;
 
-		///
-		/// Maps all the alternative typeIDs in pnTypes (which has nCount values) to nTypeID.
-		///
-		/* 24h */	virtual void SetTypeRemap(uint32_t nTypeID, uint32_t* pnTypes, size_t nCount) = 0;
+		/// Maps all the record types to the given resource type.
+		/// @param resourceType
+		/// @param recordTypes
+		/// @param count Number of entries in `recordTypes`
+		/* 24h */	virtual void SetTypeMapping(uint32_t resourceType, uint32_t* recordTypes, size_t count) = 0;
 
-		///
-		/// Gets all the alternative typeIDs mapped to nTypeID.
-		/// @returns The number of alternative typeIDs mapped.
-		///
-		/* 28h */	virtual size_t GetTypeRemap(vector<uint32_t>& dst, uint32_t nTypeID) const = 0;
+		/// Gets all the record type IDs mapped to the given
+		/// @param[out] dst
+		/// @param resourceType
+		/// @returns The number of record types mapped.
+		/* 28h */	virtual size_t GetRecordTypesFromResourceType(eastl::vector<uint32_t>& dst, uint32_t resourceType) = 0;
 
-		///
-		/// Gets the typeID that nSubtypeId is assigned to.
-		///
-		/* 2Ch */	virtual uint32_t GetGeneralTypeID(uint32_t nSubtypeID) const = 0;
+		/// Gets the general resource type ID that the given record type is assigned to.
+		/// Record types are the ones found in files, whereas resource types are for ResourceObject
+		/// (for example, `.raster` and `.rw4` are different record types but they all map to the same resource type).
+		/// @param recordType
+		/// @returns 
+		/* 2Ch */	virtual uint32_t GetTypeMapping(uint32_t recordType) = 0;
 
-		///
-		/// Used to get the real name of a file ResourceKey, using the correct type according to the mappings in this manager.
+		/// Finds the real record key of a given resource, as well as the database that contaiend it.
 		/// @param[in] nameKey The original ResourceKey of the file.
 		/// @param[out] pDst [Optional] The ResourceKey where the real key of the file will be put, with the correct typeID.
-		/// @param[in] pDBPF [Optional] The DatabasePackedFile where the file will be searched. If not specified, it will be searched in all the DBPFs in this manager.
-		/// @returns The DatabasePackedFile that contains this file.
+		/// @param[in] pDatabase [Optional] The database where the file will be searched. If not specified, it will be searched in all available databases.
+		/// @returns The database that contains this file, or null if it is not in any database.
 		///
-		/* 30h */	virtual DBPF* GetRealFileKey(const ResourceKey& nameKey, ResourceKey* pDst = nullptr, DBPF* pDBPF = nullptr) const = 0;
+		/* 30h */	virtual Database* FindRecord(const ResourceKey& nameKey, ResourceKey* pDst = nullptr, Database* pDatabase = nullptr) = 0;
 
-		/* 34h */	virtual size_t func34h(vector<ResourceKey>& pDst, int arg_4) = 0;
+		/// Gets a list of the keys of all the loaded resources in this manager.
+		/// @param[out] pDst
+		/// @param filter
+		/// @returns
+		/* 34h */	virtual size_t GetResourceKeyList(eastl::vector<ResourceKey>& pDst, IKeyFilter* filter) = 0;
 
-		///
 		/// Gets all the file keys in this manager that match the criteria specified by the given request. If request is nullptr,
-		/// all the files in the manager will be added.
+		/// all the files in the manager will be given.
 		/// @param[out] dst The vector where all the files ResourceKey names will be added.
-		/// @param[in] request The criteria that the files must match in order to be added to the vector.
-		/// @param[out] pDstDBPFs [Optional] A vector where all the DatabasePackedFile objects that contained the files will be added.
+		/// @param[in] filter The criteria that the files must match in order to be added to the vector.
+		/// @param[out] pDstDatabases [Optional] A vector where all the Database objects that contained the files will be added.
 		/// @returns The number of file keys that matched the criteria.
-		///
-		/* 38h */	virtual size_t GetFileKeys(vector<ResourceKey>& dst, IResourceFilter* request, vector<DBPF*>* pDstDBPFs = nullptr) const = 0;
+		/* 38h */	virtual size_t GetRecordKeyList(eastl::vector<ResourceKey>& dst, IKeyFilter* filter, eastl::vector<Database*>* pDstDatabases = nullptr) = 0;
 
-		/* 3Ch */	virtual int func3Ch(int, int, int) = 0;
-		/* 40h */	virtual bool func40h(int, int, int, int, int) = 0;
+		/* 3Ch */	virtual size_t GetRecordKeyList2(eastl::vector<ResourceKey>& dst, IKeyFilter* filter, bool cached) = 0;
 
-		///
+		/* 40h */	virtual bool RegisterChangeNotification(bool, ChangeNotificationCallback_t callback, void* data, IKeyFilter* filter, int) = 0;
+
 		/// Adds or removes the given IResourceFactory to this manager. Resource factories are used to generate resource objects depending on
 		/// their type. The factory will be assigned to the types returned by IResourceFactory::GetSupportedTypes.
 		/// @param add If true, pFactory will be added to the manager; if false, it will be removed from the manager.
 		/// @param pFactory The IResourceFactory to add to/remove from this manager.
 		/// @param arg_8 Unknown usage, usually 0.
 		/// @returns True if the factory was successfully added/removed, false otherwise.
-		///
-		/* 44h */	virtual bool SetResourceFactory(bool add, IResourceFactory* pFactory, uint32_t arg_8) = 0;
+		/* 44h */	virtual bool RegisterFactory(bool add, IResourceFactory* pFactory, uint32_t arg_8) = 0;
 
-		///
 		/// Returns the IResourceFactory that belongs to the specified \c typeID. 
-		/// If \c subTypeID is ResourceKey::kWildcardID, the first factory assigned to the \c typeID will be returned;
-		/// Otherwise, IResourceFactory::IsValid() will be called on every factory using the types provided here,
+		/// If \c recordTypeID is ResourceKey::kWildcardID, the first factory assigned to the \c resourceTypeID will be returned;
+		/// Otherwise, IResourceFactory::CanConvert() will be called on every factory using the types provided here,
 		/// and the first one that returns true will be returned.
-		///
-		/* 48h */	virtual IResourceFactory* GetResourceFactory(uint32_t typeID, uint32_t subTypeID = ResourceKey::kWildcardID) const = 0;
+		/// @param resourceTypeID
+		/// @param recordTypeID
+		/// @return 
+		/* 48h */	virtual IResourceFactory* FindFactory(uint32_t resourceTypeID, uint32_t recordTypeID = ResourceKey::kWildcardID) = 0;
 
-		///
-		/// Puts all the IResourceFactory instances that are assigned to the specified \c typeID into the given list.
-		/// If \c typeID is ResourceKey::kWildcardID, all the factories in this manager will be added.
+		/// Puts all the IResourceFactory instances that are assigned to the specified \c resourceTypeID into the given list.
+		/// If \c resourceTypeID is ResourceKey::kWildcardID, all the factories in this manager will be added.
+		/// @param[out] dst
+		/// @param[in] resourceTypeID
 		/// @returns The number of factories found.
-		///
-		/* 4Ch */	virtual size_t GetResourceFactories(list<IResourceFactory*>& dst, uint32_t typeID = ResourceKey::kWildcardID) const = 0;
+		/* 4Ch */	virtual size_t GetFactoryList(eastl::list<IResourceFactory*>& dst, uint32_t resourceTypeID = ResourceKey::kWildcardID) = 0;
 
-		///
-		/// Adds the given DatabasePackedFile to this manager, using the priority specified.
-		/// The priority of a DBPF is used when getting files from the resource manager;
+		/// Adds/removes the given DatabasePackedFile to this manager, using the priority specified.
+		/// The priority of a database is used when getting files from the resource manager;
 		/// since a certain file name can be contained in multiple packages, the one with the
 		/// most priority will be chosen.
 		/// The usage of the first argument is unknown, but it is usually 'true'.
+		/// @param add If true, the database is added to the manager; if false, the database is removed from the manager
+		/// @param pDatabase The database to add/remove
+		/// @param priority The priority of this database, this determines in which order files are searched in databases
+		/// @returns Whether the database was registered or not.
+		/* 50h */	virtual bool RegisterDatabase(bool add, Database* pDatabase, int priority = 1000) = 0;
+
+		/// Checks if a database is already registered in this manager, and optionally gets its priority.
+		/// @param[in] pDatabase The database
+		/// @param[out] dstPriority [Optional] A pointer to an integer that will contain the priority. This parameter can be nullptr.
+		/// @returns True if the manager contained the database, false otherwise.
 		///
-		/* 50h */	virtual bool AddDBPF(bool, DatabasePackedFile* pDBPF, int nPriority) = 0;
+		/* 54h */	virtual bool IsDatabaseRegistered(Database* pDatabase, int* dstPriority = nullptr) = 0;
+
+		/// Returns the first database that contains the given file. Databases are searched in descending order of priority.
+		/// @param name
+		/// @returns name
+		/* 58h */	virtual Database* FindDatabase(const ResourceKey& name) = 0;
 
 		///
-		/// Gets the priority of the given DatabasePackedFile if it is contained in this ResourceManager.
-		/// This method can also be used to check if a DBPF is added or not in this list.
-		/// @param[in] pDBPF The DatabasePackedFile from which the priority will be got.
-		/// @param[out] [Optional] A pointer to an integer that will contain the priority. This parameter can be nullptr.
-		/// @returns True if the manager contained the DBPF, false otherwise.
+		/// Gets all the Database objects in this manager and puts it to the dst list. 
+		/// Optionally, a ResourceKey can be specified; in that case, only the databases that contain that file will be added.
+		/// @param[out] dst A list of Database pointers where the databases will be added.
+		/// @param[in] pFileKey [Optional] A ResourceKey that the returned databases must contain, or nullptr if no filtering is wanted.
+		/// @returns The number of databases added to the list.
 		///
-		/* 54h */	virtual bool GetPriority(DatabasePackedFile* pDBPF, int* pDst = nullptr) const = 0;
+		/* 5Ch */	virtual size_t GetDatabaseList(DatabaseList& dst, const ResourceKey* pFileKey = nullptr) = 0;
 
-		///
-		/// Returns the first DatabasePackedFile that contains the given 
-		///
-		/* 58h */	virtual DatabasePackedFile* GetDBPF(const ResourceKey& name) const = 0;
+		/// Calls the registered database change listeners that were added with RegisterChangeNotification()
+		/// @param pDatabase
+		/// @param keys
+		/// 
+		/* 60h */	virtual void DoDatabaseChanged(Database* pDatabase, eastl::vector<ResourceKey>& keys) = 0;
 
-		///
-		/// Gets all the DatabasePackedFile objects in this manager and puts it to the dst list. 
-		/// Optionally, a ResourceKey can be specified; in that case, only the DBPFs that contain that file will be added.
-		/// @param[out] dst A list of DBPF pointers that uses CoreAllocatorAdapter<ICoreAllocator> where the DBPFs will be added.
-		/// @param[in] pFileKey [Optional] A ResourceKey that the DBPFs must contain, or nullptr if no filtering is wanted.
-		/// @returns The number of DBPFs added to the list.
-		///
-		/* 5Ch */	virtual size_t GetAllDBPFs(DBPFList& dst, const ResourceKey* pFileKey = nullptr) = 0;
+		/* 64h */	virtual bool RegisterCache(bool add, ICache* pCache, int) = 0;
 
-		/* 60h */	virtual int func60h(int, int) = 0;
-		/* 64h */	virtual bool func64h(int, int, int) = 0;
+		/// Returns the cache that contains a resource with this name (if any).
+		/// @param name
+		/// @returns
+		/* 68h */	virtual ICache* FindCache(const ResourceKey& name) = 0;
 
-		///
-		/// Returns the IResourceMap cache that contains a resource with this name (if any).
-		///
-		/* 68h */	virtual IResourceMap* GetResourceCache(ResourceKey& name) const = 0;
+		/* 6Ch */	virtual bool CacheResource(ResourceObject* pResource, bool) = 0;
 
-		/* 6Ch */	virtual bool func6Ch(int, int) = 0;
-		/* 70h */	virtual void func70h(IResourceMap*, CachedResourceObject*) = 0;
+		/// Removes certain (or all) elements from a cache.
+		/// @param pCache
+		/// @param pFilter
+		/* 70h */	virtual void FlushCache(ICache* pCache, IKeyFilter* pFilter = nullptr) = 0;
 
-		///
 		/// Puts all the resource caches used in this manager into the given list.
-		/// @returns the number of caches added.
-		///
-		/* 74h */	virtual size_t GetResourceCaches(list<IResourceMap*>& dst) const = 0;
+		/// @returns The number of caches.
+		/* 74h */	virtual size_t GetCacheList(eastl::list<ICache*>& dst) = 0;
 
-		///
 		/// Adds this file name to the list, so that it can be accessed using the corresponding ResourceKey.
 		/// The file name is in the format "groupID!instanceID.typeID", and it will be mapped to the
 		/// key generated using the ResourceKey::Parse function.
+		/// @param fileName
 		/// @returns True if the file name was mapped successfully, false otherwise.
-		///
-		/* 78h */	virtual bool AddFileName(const char16_t* pFileName) = 0;
+		
+		/// Returns the resource key that maps to the given file name.
+		/// @param defaultTypeID [Optional] Type ID used if the file name does not have an extension
+		/// @param defaultGroupID [Optional] Group ID used if the file name does not have a folder
+		/* 78h */	virtual ResourceKey GetKeyFromName(const char16_t* fileName, uint32_t defaultTypeID = 0, uint32_t defaultGroupID = 0) = 0;
 
-		///
 		/// Gets the file name that corresponds to the specified ResourceKey.
 		/// The file name will be in the format "groupID!instanceID.typeID".
-		/// The file name can be parsed to a key again using the ResourceKey::Parse method.
+		/// The file name can be parsed to a key again using the ResourceKey::Parse() method.
 		/// A file name wil be generated even if it's not mapped; when that happens, the ResourceKey members are displayed in hexadecimal format.
-		/// @param[in] resourceKey The ResourceKey that will be represented as a string.
+		/// @param[in] key The ResourceKey that will be represented as a eastl::string.
 		/// @param[out] dst A string16 that will contain the resulting text. 
-		///
-		/* 7Ch */	virtual void GetFileName(const ResourceKey& resourceKey, string16& dst) const = 0;
+		/* 7Ch */	virtual void GetNameFromKey(const ResourceKey& key, eastl::string16& dst) = 0;
 
-		///
 		/// Maps the given ResourceKey to the file name specified, which is in the format "groupID!instanceID.typeID".
 		/// The file name can be parsed to a key again using the ResourceKey::Parse method.
+		/// @param key
+		/// @param fileName
 		/// @returns True if it was successfully mapped.
-		///
-		/* 80h */	virtual bool SetFileName(const ResourceKey& resourceKey, const char16_t* pFileName) = 0;
+		/* 80h */	virtual bool SetKeyName(const ResourceKey& key, const char16_t* fileName) = 0;
 
-		///
 		/// Removes the file name mapped for the given ResourceKey.
 		/// The file name can be parsed to a key again using the ResourceKey::Parse method.
+		/// @param key
 		/// @returns True if the file name mapping was removed, false if it did not exist.
-		///
-		/* 84h */	virtual bool RemoveFileName(const ResourceKey& resourceKey) = 0;
+		/* 84h */	virtual bool ForgetKeyName(const ResourceKey& key) = 0;
 
-		///
-		/// Returns the typeID that has the given extension mapped to it, or (uint32_t)-1 (so 0xFFFFFFFF) if no typeID has this extension mapped.
-		///
-		/* 88h */	virtual uint32_t GetTypeID(const char16_t* pExtension) const = 0;
+		/// Returns the typeID that has the given extension mapped to it, or `0xFFFFFFFF` if no typeID has this extension mapped.
+		/// @param typeName
+		/// @returns
+		/* 88h */	virtual uint32_t GetTypeFromTypename(const char16_t* typeName) = 0;
 
-		///
 		/// Returns the extension that is mapped to the given type ID, or nullptr if there's no mapping.
-		///
-		/* 8Ch */	virtual char16_t* GetExtension(uint32_t typeID) const = 0;
+		/// @param typeID
+		/// @returns
+		/* 8Ch */	virtual const char16_t* GetTypenameFromType(uint32_t typeID) = 0;
 
-		///
-		/// Maps the given typeID (as a uint32_t hash) to the specified extension string. 
+		/// Maps the given typeID to the specified extension string.
+		/// @param typeID
+		/// @param pExtension
 		/// @returns True if the extension was successfully mapped or already existed, false if the typeID was mapped to a different extension.
-		///
-		/* 90h */	virtual bool AddExtensionMapping(uint32_t typeID, const char16_t* pExtension) = 0;
+		/* 90h */	virtual bool SetTypename(uint32_t typeID, const char16_t* pExtension) = 0;
 
-		///
-		/// Removes the given typeID (as a uint32_t hash) and the extension it is mapped to.
+		/// Removes the extension the given typeID it is mapped to.
+		/// @param typeID
 		/// @returns True if the extension existed and was removed, false otherwise.
-		///
-		/* 94h */	virtual bool RemoveExtensionMapping(uint32_t typeID) = 0;
+		/* 94h */	virtual bool ResetTypename(uint32_t typeID) = 0;
 
 
-		///
 		/// Gets the active resource manager.
-		///
+		/// @return
 		static IResourceManager* Get();
-
 	};
-
-	///////////////////////////////////
-	//// INTERNAL IMPLEMENTATION ////
-	///////////////////////////////////
-
 
 	namespace Addresses(IResourceManager)
 	{

@@ -43,7 +43,7 @@ namespace App
 	auto_METHOD_VOID(PropertyList, AddAllPropertiesFrom, Args(const PropertyList* pOther), Args(pOther));
 	auto_METHOD(PropertyList, bool, Read, Args(IO::IStream* pInputStream), Args(pInputStream));
 	auto_METHOD_const(PropertyList, bool, Write, Args(IO::IStream* pOutputStream), Args(pOutputStream));
-	auto_METHOD_VOID_const(PropertyList, GetPropertyIDs, Args(vector<uint32_t>& dst), Args(dst));
+	auto_METHOD_VOID_const(PropertyList, GetPropertyIDs, Args(eastl::vector<uint32_t>& dst), Args(dst));
 	auto_METHOD_VOID_(PropertyList, Clear);
 
 	auto_METHOD_VOID(PropertyList, SetParent, Args(PropertyList* pParent), Args(pParent));
@@ -79,7 +79,7 @@ namespace App
 	auto_METHOD_VOID(DirectPropertyList, AddAllPropertiesFrom, Args(const PropertyList* pOther), Args(pOther));
 	auto_METHOD(DirectPropertyList, bool, Read, Args(IO::IStream* pInputStream), Args(pInputStream));
 	auto_METHOD_const(DirectPropertyList, bool, Write, Args(IO::IStream* pOutputStream), Args(pOutputStream));
-	auto_METHOD_VOID_const(DirectPropertyList, GetPropertyIDs, Args(vector<uint32_t>& dst), Args(dst));
+	auto_METHOD_VOID_const(DirectPropertyList, GetPropertyIDs, Args(eastl::vector<uint32_t>& dst), Args(dst));
 	auto_METHOD_VOID_(DirectPropertyList, Clear);
 
 	Property::Property(const Property& other)

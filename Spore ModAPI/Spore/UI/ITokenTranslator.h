@@ -21,7 +21,7 @@
 #include <Spore\Object.h>
 #include <EASTL\string.h>
 
-#define ITokenTranslatorPtr eastl::intrusive_ptr<UI::ITokenTranslator>
+#define IUITokenTranslatorPtr eastl::intrusive_ptr<UI::ITokenTranslator>
 
 namespace UI
 {
@@ -29,7 +29,7 @@ namespace UI
 		: public DefaultRefCounted
 	{
 	public:
-		virtual bool TranslateToken(uint32_t tokenID, string16& dst) = 0;
+		virtual bool TranslateToken(uint32_t tokenID, eastl::string16& dst) = 0;
 		virtual void func14h(int) = 0;
 	};
 }

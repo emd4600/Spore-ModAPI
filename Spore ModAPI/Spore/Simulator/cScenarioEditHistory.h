@@ -31,9 +31,9 @@ namespace Simulator
 
 	public:
 		/* 0Ch */	PropertyListPtr mpPropList;
-		/* 10h */	vector<int> field_10;
+		/* 10h */	eastl::vector<int> field_10;
 		/* 24h */	PropertyListPtr field_24;
-		/* 28h */	vector<int> field_28;
+		/* 28h */	eastl::vector<int> field_28;
 		/* 3Ch */	cScenarioTerraformMode* mpTerraformMode;  // scenario planet?
 	};
 	ASSERT_SIZE(cScenarioTerraformHistoryEntry, 0x40);
@@ -63,7 +63,7 @@ namespace Simulator
 		static cScenarioEditHistory* Get();
 
 	public:
-		/* 00h */	vector<IScenarioEditHistoryEntryPtr> mEntries;
+		/* 00h */	eastl::vector<IScenarioEditHistoryEntryPtr> mEntries;
 		/// Index that points to the current entry in `mEntries`
 		/* 14h */	int mCurrentIndex;
 		/* 18h */	int field_18;  // some count
@@ -79,4 +79,8 @@ namespace Simulator
 	{
 		DeclareAddress(ptr);
 	}
+
+#ifdef SDK_TO_GHIDRA
+	cScenarioEditHistory sScenarioEditHistory;
+#endif
 }

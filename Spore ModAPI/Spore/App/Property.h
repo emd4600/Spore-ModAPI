@@ -331,14 +331,14 @@ namespace App
 
 		///
 		/// Sets the value of this Property to the given eastl::string8 value.
-		/// This will be a single-valued string8 property.
+		/// This will be a single-valued eastl::string8 property.
 		/// @param value
 		///
 		Property& SetValueString8(const eastl::string8& value);
 
 		///
 		/// Sets the value of this Property to the given eastl::string16 value.
-		/// This will be a single-valued string16 property.
+		/// This will be a single-valued eastl::string16 property.
 		/// @param value
 		///
 		Property& SetValueString16(const eastl::string16& value);
@@ -428,7 +428,7 @@ namespace App
 
 		///
 		/// Sets the value of this Property to the an array of eastl::string8 values.
-		/// This will be an array string8 property of 'nValueCount' values.
+		/// This will be an array eastl::string8 property of 'nValueCount' values.
 		/// @param pValues The array with the values.
 		/// @param nValueCount How many values the array has.
 		///
@@ -436,7 +436,7 @@ namespace App
 
 		///
 		/// Sets the value of this Property to an array of eastl::string16 values.
-		/// This will be an array string16 property of 'nValueCount' values.
+		/// This will be an array eastl::string16 property of 'nValueCount' values.
 		/// @param pValues The array with the values.
 		/// @param nValueCount How many values the array has.
 		///
@@ -653,9 +653,9 @@ namespace App
 		static bool GetText(const PropertyList* pPropertyList, uint32_t propertyID, LocalizedString& dst);
 
 		///
-		/// Gets a single char* ('string8') value from a property with the propertyID specified in the given list.
+		/// Gets a single char* ('eastl::string8') value from a property with the propertyID specified in the given list.
 		/// If it is an array property, it will return the first value in the array.
-		/// The value is a null-terminated char string.
+		/// The value is a null-terminated char eastl::string.
 		/// @param[in] pPropertyList The PropertyList where this property will be searched.
 		/// @param[in] propertyID The unique identifier of the property to find.
 		/// @param[out] dst The destination value that will be assigned with the value found, if any.
@@ -664,9 +664,9 @@ namespace App
 		static bool GetCString8(const PropertyList* pPropertyList, uint32_t propertyID, char*& dst);
 
 		///
-		/// Gets a single char16_t* ('string16') value from a property with the propertyID specified in the given list.
+		/// Gets a single char16_t* ('eastl::string16') value from a property with the propertyID specified in the given list.
 		/// If it is an array property, it will return the first value in the array.
-		/// The value is a null-terminated char16_t string.
+		/// The value is a null-terminated char16_t eastl::string.
 		/// @param[in] pPropertyList The PropertyList where this property will be searched.
 		/// @param[in] propertyID The unique identifier of the property to find.
 		/// @param[out] dst The destination value that will be assigned with the value found, if any.
@@ -675,7 +675,7 @@ namespace App
 		static bool GetCString16(const PropertyList* pPropertyList, uint32_t propertyID, char16_t*& dst);
 
 		///
-		/// Gets a single string8 value from a property with the propertyID specified in the given list.
+		/// Gets a single eastl::string8 value from a property with the propertyID specified in the given list.
 		/// If it is an array property, it will return the first value in the array.
 		/// This does the same as GetCString8, but wrapped inside an eastl::string8 class.
 		/// @param[in] pPropertyList The PropertyList where this property will be searched.
@@ -686,7 +686,7 @@ namespace App
 		static bool GetString8(const PropertyList* pPropertyList, uint32_t propertyID, eastl::string& dst);
 
 		///
-		/// Gets a single string16 value from a property with the propertyID specified in the given list.
+		/// Gets a single eastl::string16 value from a property with the propertyID specified in the given list.
 		/// If it is an array property, it will return the first value in the array.
 		/// This does the same as GetCString16, but wrapped inside an eastl::string16 class.
 		/// @param[in] pPropertyList The PropertyList where this property will be searched.
@@ -796,7 +796,7 @@ namespace App
 		static bool GetArrayKey(const PropertyList* pPropertyList, uint32_t propertyID, size_t& dstCount, ResourceKey*& dst);
 
 		///
-		/// Gets an array of char* ('string8') values from a property with the propertyID specified in the given list.
+		/// Gets an array of char* ('eastl::string8') values from a property with the propertyID specified in the given list.
 		/// If it is not an array property, a pointer to the single value will be returned.
 		/// @param[in] pPropertyList The PropertyList where this property will be searched.
 		/// @param[in] propertyID The unique identifier of the property to find.
@@ -804,10 +804,10 @@ namespace App
 		/// @param[out] dst The destination pointer that will be assigned with the array of values found, if any.
 		/// @returns True if a property of the required type and propertyID was found, false otherwise.
 		///
-		static bool GetArrayString8(const PropertyList* pPropertyList, uint32_t propertyID, size_t& dstCount, string8*& dst);
+		static bool GetArrayString8(const PropertyList* pPropertyList, uint32_t propertyID, size_t& dstCount, eastl::string8*& dst);
 
 		///
-		/// Gets an array of 'string16' values from a property with the propertyID specified in the given list.
+		/// Gets an array of 'eastl::string16' values from a property with the propertyID specified in the given list.
 		/// If it is not an array property, a pointer to the single value will be returned.
 		/// @param[in] pPropertyList The PropertyList where this property will be searched.
 		/// @param[in] propertyID The unique identifier of the property to find.
@@ -815,7 +815,7 @@ namespace App
 		/// @param[out] dst The destination pointer that will be assigned with the array of values found, if any.
 		/// @returns True if a property of the required type and propertyID was found, false otherwise.
 		///
-		static bool GetArrayString16(const PropertyList* pPropertyList, uint32_t propertyID, size_t& dstCount, string16*& dst);
+		static bool GetArrayString16(const PropertyList* pPropertyList, uint32_t propertyID, size_t& dstCount, eastl::string16*& dst);
 
 		///
 		/// Gets an array of EntityTransform values from a property with the propertyID specified in the given list.
@@ -871,12 +871,7 @@ namespace App
 		/* 10h */	short			mnFlags;
 		/* 12h */	PropertyType	mnType;
 	};
-
-	///////////////////////////////////
-	//// INTERNAL IMPLEMENENTATION ////
-	///////////////////////////////////
-
-	static_assert(sizeof(Property) == 0x14, "sizeof(Property) != 14h");
+	ASSERT_SIZE(Property, 0x14);
 
 	namespace Addresses(Property)
 	{
@@ -973,6 +968,8 @@ namespace App
 			Clear(false);
 		}
 	}
+
+#ifndef SDK_TO_GHIDRA
 
 	inline auto_METHOD_VOID(Property, Clear, Args(bool arg_0), Args(arg_0));
 
@@ -1117,4 +1114,6 @@ namespace App
 		Set(PropertyType::ColorRGBA, kPropertyFlagArray, (void*)pValues, sizeof(ColorRGBA), nValueCount);
 		return *this;
 	}
+
+#endif
 }

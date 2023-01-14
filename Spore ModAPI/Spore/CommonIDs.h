@@ -242,6 +242,11 @@ namespace GroupIDs
 
 		Cursors = 0x02393C07,
 
-		terrainSystem_gameAsset = 0x40A02200
+		terrainSystem_gameAsset = 0x40A02200,
+
+		CompiledStatesLink = 0x40212000,
+		CompiledStates = 0x40212001,
+		ShaderFragments = 0x40212002,
+		Shaders = 0x40212004,
 	};
 }

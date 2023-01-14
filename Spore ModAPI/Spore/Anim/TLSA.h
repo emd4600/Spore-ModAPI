@@ -5,26 +5,24 @@
 
 namespace Anim
 {
-	using namespace eastl;
-
 	struct TlsaAnimation
 	{
 		/* 00h */	float durationScale;
 		/* 04h */	float duration;
 		/* 08h */	uint32_t id;
-		/* 0Ch */	string16 name;
+		/* 0Ch */	eastl::string16 name;
 	};
 
 	struct TlsaAnimChoice
 	{
-		vector<TlsaAnimation> animations;
+		eastl::vector<TlsaAnimation> animations;
 		float probabilityThreshold;
 	};
 
 	struct TlsaAnimGroup
 	{
 		/* 00h */	uint32_t id;
-		/* 04h */	string16 name;
+		/* 04h */	eastl::string16 name;
 		/* 14h */	float priorityOverride;
 		/* 18h */	float blendInTime;
 		/* 1Ch */	bool idle;
@@ -33,6 +31,6 @@ namespace Anim
 		/* 20h */	int matchVariantForToolMask;
 		/* 24h */	int disableToolOverlayMask;
 		/* 28h */	int endMode;
-		/* 2Ch */	vector<TlsaAnimChoice> animations;
+		/* 2Ch */	eastl::vector<TlsaAnimChoice> animations;
 	};
 }

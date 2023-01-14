@@ -83,7 +83,7 @@ namespace Palettes
 		, mnSequenceNumber()
 		, mbPaintByNumber()
 		, mRegionFilterID(0xFFFFFFFF)
-		, mnSkinPaintIndex(0xFFFFFFFF)
+		, mSkinPaintIndex(0xFFFFFFFF)
 		, mCategoryName()
 		, mbForceHasPages()
 		, mCategoryID()
@@ -235,7 +235,7 @@ namespace Palettes
 		, field_48()
 		, field_5C()
 		, field_60()
-		, field_64()
+		, mpActiveCategory()
 		, field_68()
 		, field_69()
 	{
@@ -294,7 +294,7 @@ namespace Palettes
 	int PageArrowsUI::AddRef() { return DefaultRefCounted::AddRef(); }
 	int PageArrowsUI::Release() { return DefaultRefCounted::Release(); }
 
-	void* PageArrowsUI::Cast(uint32_t type)
+	void* PageArrowsUI::Cast(uint32_t type) const
 	{
 		if (type == Object::TYPE)
 		{
@@ -356,11 +356,11 @@ namespace Palettes
 		, field_BC()
 		, field_C0()
 		, field_C4()
-		, field_C8()
-		, field_CC(1.0f, 1.0f, 1.0f)
-		, field_D8(1.0f, 1.0f, 1.0f)
-		, field_E4(true)
-		, field_E5(true)
+		, mPaintID()
+		, mPrimaryColor(1.0f, 1.0f, 1.0f)
+		, mSecondaryColor(1.0f, 1.0f, 1.0f)
+		, mPrimaryIsDefault(true)
+		, mSecondaryIsDefault(true)
 		, field_E8()
 	{
 	}

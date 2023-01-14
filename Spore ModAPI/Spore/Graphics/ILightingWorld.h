@@ -95,7 +95,7 @@ namespace Graphics
 		// 14h configurationID
 
 		// 40h ColorRGB mAmbientColor;
-		// 4Ch vector<Light*> mLights;
+		// 4Ch eastl::vector<Light*> mLights;
 		// 60h Light*
 		// 64h Transform
 		

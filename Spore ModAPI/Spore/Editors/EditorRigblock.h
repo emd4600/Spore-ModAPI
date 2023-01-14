@@ -27,6 +27,7 @@
 #include <Spore\App\PropertyList.h>
 #include <Spore\Editors\EditorBaseHandle.h>
 #include <EASTL\bitset.h>
+#include <EASTL\map.h>
 #include <EASTL\fixed_vector.h>
 #include <EASTL\fixed_string.h>
 
@@ -73,10 +74,12 @@ namespace Editors
 		/* 28h */	bool field_28;
 		/* 29h */	bool field_29;
 		/* 2Ch */	EditorRigblock* field_2C;
-		/* 30h */	int field_30;
+		/* 30h */	int mIndex;
+		/* 34h */	int mSymmetricIndex;
 	};
-	ASSERT_SIZE(UnkEditorRigblockStruct1, 0x34);
+	ASSERT_SIZE(UnkEditorRigblockStruct1, 0x38);
 
+	//TODO related with display? check SetShadedDisplay()
 	struct UnkEditorRigblockStruct2
 	{
 		/* 00h */	bool field_0;
@@ -96,7 +99,7 @@ namespace Editors
 		kEditorRigblockModelIsPlantRoot = 8,
 		kEditorRigblockModelOverrideBounds = 9,
 		kEditorRigblockModelUseSkin = 0xA,
-		kEditorRigblockModelHasSocketAndBallConnector = 0xA,  //????
+		kEditorRigblockModelHasSocketAndBallConnector = 0xA,  //???? TODO maybe has morph handles? check when sub_43C190 is called
 
 		kEditorRigblockIsSnapped = 0xC,
 		kEditorRigblockHasLeftModel = 0xD,
@@ -157,11 +160,18 @@ namespace Editors
 		using DefaultRefCounted::AddRef;
 		using DefaultRefCounted::Release;
 
+		virtual ~EditorRigblock() = 0;
+
+		/// For build mode only, sets whether the rigblock is shown with a bit of shading
+		/// (used when hovering over rigblocks).
+		/// @param isShaded
+		void SetShadedDisplay(bool isShaded);
+
 		//// _ZN14EditorRigblock8SetScaleEfii
 		//// not sure, apparently there are more methods
 		//void* SetScale(float scale, int arg_4, int arg_8);  // sub_440670
 
-		//void* ParseProp(unsigned long instanceID, unsigned long groupID, int, int, int, int, int, int);  // sub_441590
+		//void* ParseProp(unsigned long instanceID, unsigned long groupID, IModelWorld*, int, int, int, int, int);  // sub_441590
 
 		//// causes flora editor crash
 		//static void* sub_49FF50(EditorRigblock* part, eastl::vector<void*>& dst, bool arg_8);
@@ -178,9 +188,9 @@ namespace Editors
 		//TODO this doesn't belong here!
 		//static long AttachDetour();
 
-		//virtual METHOD_(SelectAddress(0x456F60, 0x54B6C0, 0x54B6C0), Object, int, AddRef);
-		//virtual METHOD_(SelectAddress(0x54B590, 0x54B6D0, 0x54B6D0), Object, int, Release);
-		//virtual METHOD(SelectAddress(0x435B20, 0x435E70, 0x435E70), Object, void*, Cast, Args(uint32_t typeID), Args(typeID));
+		//virtual METHOD_(SelectAddress(0x456F60, 0x54B6C0), Object, int, AddRef);
+		//virtual METHOD_(SelectAddress(0x54B590, 0x54B6D0), Object, int, Release);
+		//virtual METHOD(SelectAddress(0x435B20, 0x435E70), Object, void*, Cast, Args(uint32_t typeID), Args(typeID));
 
 	//private:
 	//	static void* (*sub_49FF50_ptr)(EditorRigblock* part, eastl::vector<void*>& dst, bool arg_8);
@@ -191,7 +201,7 @@ namespace Editors
 
 	public:
 		/* 0Ch */	PropertyListPtr mpPropList;
-		/* 10h */	ModelPtr field_10;
+		/* 10h */	ModelPtr mpModel;
 		/* 14h */	ModelPtr field_14;
 		/* 18h */	IModelWorldPtr mpModelWorld;
 		// 10h ModelPtr
@@ -237,9 +247,9 @@ namespace Editors
 		/* 1A9h */	bool field_1A9;
 		/* 1ACh */	int field_1AC;  // not initialized
 		/* 1B0h */	int field_1B0;  // not initialized
-		/* 1B4h */	int field_1B4;  // -1
-		/* 1B8h */	int field_1B8;  // -1
-		/* 1BCh */	int field_1BC;  // -1
+		/* 1B4h */	int mDeformBoneEndJointIndex;  // -1
+		/* 1B8h */	int mDeformBoneBaseJointIndex;  // -1
+		/* 1BCh */	int mDeformBoneMiddleIndex;  // -1
 		/* 1C0h */	int field_1C0;  // -2
 		/* 1C4h */	int field_1C4;  // 1
 		/* 1C8h */	int field_1C8;  // 1
@@ -259,7 +269,7 @@ namespace Editors
 		/* 228h */	float mModelReplaceSnapDelta;  // 0.4
 		/* 22Ch */	float mModelSymmetryRotationSnapAngle;  // 0.5
 		/* 230h */	bool field_230;  // true
-		/* 234h */	vector<int> field_234;
+		/* 234h */	eastl::vector<int> field_234;
 		/* 248h */	int mModelNumberOfSnapAxes;  // -1
 		/* 24Ch */	Transform mEffectsBoneTransform1;
 		/* 284h */	Transform mEffectsBoneTransform2;
@@ -271,8 +281,8 @@ namespace Editors
 		/* 330h */	int mCSnapBoneIndex;  // not initialized
 		/* 334h */	int field_334;  // not initialized
 		/* 338h */	int field_338;  // not initialized
-		/* 33Ch */	intrusive_ptr<EditorRigblock> mpParent;
-		/* 340h */	fixed_vector<intrusive_ptr<EditorRigblock>, 8> mChildren;
+		/* 33Ch */	EditorRigblockPtr mpParent;
+		/* 340h */	eastl::fixed_vector<EditorRigblockPtr, 8> mChildren;
 		/* 378h */	int field_378;
 		/* 37Ch */	char _padding_37C[0x3A0 - 0x37C];  // not initialized
 		/* 3A0h */	Vector3 mTriangleDirection;
@@ -290,8 +300,8 @@ namespace Editors
 		/* 3D4h */	int field_3D4;  // not initialized
 		/* 3D8h */	int field_3D8;  // -1
 		/* 3DCh */	int field_3DC;
-		/* 3E0h */	intrusive_ptr<EditorRigblock> mpSymmetricRigblock;
-		/* 3E4h */	intrusive_ptr<EditorRigblock> mpSymmetricRigblock2;
+		/* 3E0h */	EditorRigblockPtr mpSymmetricRigblock;
+		/* 3E4h */	EditorRigblockPtr mpAsymmetricRigblock;
 		/* 3E8h */	bool field_3E8;
 		/* 3ECh */	EditorBaseHandlePtr mpBallConnectorHandle;  //TODO BallConnectorHandle type, sub_47F410
 		/* 3F0h */	ModelPtr mpSocketConnectorModel;
@@ -313,10 +323,10 @@ namespace Editors
 		/* 458h */	ResourceKey* mModelMinMuscleFile;
 		/* 45Ch */	ResourceKey* mModelMaxMuscleFile;
 		/// Name of the sound played when scaling this rigblock, default is `creature_size`
-		/* 460h */	fixed_string<char, 32> mModelSoundScale;
+		/* 460h */	eastl::fixed_string<char, 32> mModelSoundScale;
 		/// Name of the sound played when rotating this rigblock, default is `creature_rotate`
-		/* 494h */	fixed_string<char, 32> mModelSoundRotation;
-		/* 4C8h */	fixed_vector<pair<uint32_t, EditorRigblockPaint>, 8> mPaints;
+		/* 494h */	eastl::fixed_string<char, 32> mModelSoundRotation;
+		/* 4C8h */	eastl::fixed_vector<eastl::pair<uint32_t, EditorRigblockPaint>, 8> mPaints;
 		/* 5E0h */	bool field_5E0;  // not initialized, part of field_4C8
 		/* 5E4h */	int mModelPrice;
 		/* 5E8h */	int mModelComplexityScore;
@@ -328,23 +338,23 @@ namespace Editors
 		/* 608h */	uint32_t mModelShowoffEffect;  // not initialized
 		/* 60Ch */	bool field_60C;
 		/* 610h */	int field_610;
-		/* 614h */	map<int, int> field_614;
-		/* 630h */	fixed_vector<int, 32> field_630;
+		/* 614h */	eastl::map<int, int> field_614;
+		/* 630h */	eastl::fixed_vector<int, 32> field_630;
 		/* 6C8h */	int field_6C8;  // not initialized
 		//TODO 6CCh pointer to array of MorphHandles (at 8Ch is anim ID)
-		/* 6CCh */	fixed_vector<EditorBaseHandlePtr, 8> mMorphHandles;
-		/* 704h */	fixed_vector<float, 8> mMorphHandleWeights;
-		/* 73Ch */	fixed_vector<uint32_t, 8> mMorphHandleChannels;
-		/* 774h */	fixed_vector<ResourceKey, 8> mModelSnapDownTo;
-		/* 7ECh */	fixed_vector<ResourceKey, 8> mModelSnapToParentTypes;
-		/* 864h */	fixed_vector<ResourceKey, 8> mModelStayAbove;
-		/* 8DCh */	fixed_vector<ResourceKey, 8> mModelAlignLateralWith;
-		/* 954h */	fixed_vector<ResourceKey, 8> mModelAlignHeightWith;
-		/* 9CCh */	fixed_vector<ResourceKey, 8> mModelAlignXYWith;
-		/* A44h */	fixed_vector<ResourceKey, 8> mModelTypesToInteractWith;
-		/* ABCh */	fixed_vector<ResourceKey, 8> mModelTypesToSnapReplace;
-		/* B34h */	fixed_vector<ResourceKey, 16> mModelTypesNotToInteractWith;
-		/* C0Ch */	fixed_vector<EditorRigblockCapability, 20> mCapabilities;
+		/* 6CCh */	eastl::fixed_vector<EditorBaseHandlePtr, 8> mMorphHandles;
+		/* 704h */	eastl::fixed_vector<float, 8> mMorphHandleWeights;
+		/* 73Ch */	eastl::fixed_vector<uint32_t, 8> mMorphHandleChannels;
+		/* 774h */	eastl::fixed_vector<ResourceKey, 8> mModelSnapDownTo;
+		/* 7ECh */	eastl::fixed_vector<ResourceKey, 8> mModelSnapToParentTypes;
+		/* 864h */	eastl::fixed_vector<ResourceKey, 8> mModelStayAbove;
+		/* 8DCh */	eastl::fixed_vector<ResourceKey, 8> mModelAlignLateralWith;
+		/* 954h */	eastl::fixed_vector<ResourceKey, 8> mModelAlignHeightWith;
+		/* 9CCh */	eastl::fixed_vector<ResourceKey, 8> mModelAlignXYWith;
+		/* A44h */	eastl::fixed_vector<ResourceKey, 8> mModelTypesToInteractWith;
+		/* ABCh */	eastl::fixed_vector<ResourceKey, 8> mModelTypesToSnapReplace;
+		/* B34h */	eastl::fixed_vector<ResourceKey, 16> mModelTypesNotToInteractWith;
+		/* C0Ch */	eastl::fixed_vector<EditorRigblockCapability, 20> mCapabilities;
 		/// For audio
 		/* DB4h */	uint32_t mFootType;
 		/// For audio
@@ -353,9 +363,13 @@ namespace Editors
 		/* DBCh */	uint32_t mWeaponType;
 		/* DC0h */	int field_DC0;  // not initialized
 		/* DC4h */	int field_DC4;  // not initialized
-		/* DC8h */	bitset<64> mBooleanAttributes;
+		/* DC8h */	eastl::bitset<64> mBooleanAttributes;
 		/* DD0h */	UnkEditorRigblockStruct1 field_DD0;
 	};
+	ASSERT_SIZE(EditorRigblock, 0xE08);
 
-	static_assert(sizeof(EditorRigblock) == 0xE08, "sizeof(EditorRigblock) must be 0xE08!");
+	namespace Addresses(EditorRigblock)
+	{
+		DeclareAddress(SetShadedDisplay);  // 0x43A980 0x43ACF0
+	}
 }

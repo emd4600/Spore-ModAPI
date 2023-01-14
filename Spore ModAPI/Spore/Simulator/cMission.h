@@ -29,8 +29,8 @@ namespace Simulator
 		/// -1 is disabled, 0 is for landmarks that are closer than 2 units, 1 for farther than 2 units, there might be other types
 		/* 00h */	int mType;  // -1
 		/* 04h */	float mDistance;
-		/* 08h */	vector<LandmarkStarType> mLandmarkTypes;
-		/* 0Ch */	vector<cStarRecordPtr> mLandmarkStars;
+		/* 08h */	eastl::vector<LandmarkStarType> mLandmarkTypes;
+		/* 0Ch */	eastl::vector<cStarRecordPtr> mLandmarkStars;
 	};
 
 	struct cPlanetClue
@@ -52,7 +52,7 @@ namespace Simulator
 		using Object::Release;
 		using Object::Cast;
 
-		/// Changes the state of the mission. Sets `mTitle` and `field_15C` to an empty string.
+		/// Changes the state of the mission. Sets `mTitle` and `field_15C` to an empty eastl::string.
 		/// If the new state is MissionState::Active, emits a SimulatorMessages::kMsgMissionUpdate message.
 		/// @param state
 		void SetState(MissionState state);
@@ -121,8 +121,8 @@ namespace Simulator
 		/* 9Ch */	virtual void FailMission();
 
 		/// Returns a description for this mission, usually the `description` property in the prop list.
-		/// @param dst The string where the description will be stored
-		/* A0h */	virtual string16* GetDescription(string16* dst);
+		/// @param dst The eastl::string where the description will be stored
+		/* A0h */	virtual eastl::string16* GetDescription(eastl::string16* dst);
 
 		/// Returns the ID of a `.cnv` conversation file used for the mission.
 		/// If the mission has a parent, it will return the conversation of the parent.
@@ -135,19 +135,19 @@ namespace Simulator
 		/* ACh */	virtual int GetRemainingTime();
 
 		/* B0h */	virtual cSpeciesProfile* GetTargetAnimalSpecies();
-		/* B4h */	virtual void GetTargetAnimalSpeciesNameText(string16& dst);
-		/* B8h */	virtual void GetTitleText(string16& dst);
-		/* BCh */	virtual void GetUIMediumDescText(string16& dst);
-		/* C0h */	virtual void GetUILongDescText(string16& dst);
-		/* C4h */	virtual void funcC4h(string16& dst);  // calls GetUILongDescText
+		/* B4h */	virtual void GetTargetAnimalSpeciesNameText(eastl::string16& dst);
+		/* B8h */	virtual void GetTitleText(eastl::string16& dst);
+		/* BCh */	virtual void GetUIMediumDescText(eastl::string16& dst);
+		/* C0h */	virtual void GetUILongDescText(eastl::string16& dst);
+		/* C4h */	virtual void funcC4h(eastl::string16& dst);  // calls GetUILongDescText
 		/// "Mission" or "Alert" 
-		/* C8h */	virtual void GetAlertTitleText(string16& dst);
-		/* CCh */	virtual void GetStarClueText(int index, string16& dst);
-		/* D0h */	virtual void GetStarClueDistanceText(string16& dst);
-		/* D4h */	virtual void GetStarClueRangeMinText(string16& dst);
-		/* D8h */	virtual void GetStarClueRangeMaxText(string16& dst);
-		/* DCh */	virtual void GetPlanetClueOrbitOrderText(string16& dst);
-		/* E0h */	virtual void GetPlanetClueText(string16& dst);
+		/* C8h */	virtual void GetAlertTitleText(eastl::string16& dst);
+		/* CCh */	virtual void GetStarClueText(int index, eastl::string16& dst);
+		/* D0h */	virtual void GetStarClueDistanceText(eastl::string16& dst);
+		/* D4h */	virtual void GetStarClueRangeMinText(eastl::string16& dst);
+		/* D8h */	virtual void GetStarClueRangeMaxText(eastl::string16& dst);
+		/* DCh */	virtual void GetPlanetClueOrbitOrderText(eastl::string16& dst);
+		/* E0h */	virtual void GetPlanetClueText(eastl::string16& dst);
 		/* E4h */	virtual uint32_t GetStarMapEffectGroup();
 		/* E8h */	virtual uint32_t GetStarMapEffect();
 
@@ -177,7 +177,7 @@ namespace Simulator
 		/// @param tokenID id of the token (the token is a text, this is the FNV hash)
 		/// @param dst Where the token text must be written.
 		/// @returns True if the token was processed, false otherwise.
-		/* 118h */	virtual bool TranslateToken(uint32_t tokenID, string16& dst);
+		/* 118h */	virtual bool TranslateToken(uint32_t tokenID, eastl::string16& dst);
 
 		/// By default, `event_log_return_for_rewards`
 		/* 11Ch */	virtual uint32_t GetCompletedEventLogID();
@@ -277,13 +277,13 @@ namespace Simulator
 		/* F4h */	cPlanetClue mPlanetClue;
 		/* 100h */	uint32_t mStarMapIconEffectID;
 		/* 104h */	int field_104;
-		/* 108h */	vector<int> field_108;
-		/* 11Ch */	vector<ResourceKey> mUnlockToolIDList;
+		/* 108h */	eastl::vector<int> field_108;
+		/* 11Ch */	eastl::vector<ResourceKey> mUnlockToolIDList;
 		/* 130h */	int mFlags;
-		/* 134h */	vector<int> field_134;
+		/* 134h */	eastl::vector<int> field_134;
 		/* 148h */	uint32_t mProgressEventID;  // -1
-		/* 14Ch	*/	string16 mTitle;
-		/* 15Ch	*/	string16 field_15C;
+		/* 14Ch	*/	eastl::string16 mTitle;
+		/* 15Ch	*/	eastl::string16 field_15C;
 		/* 16Ch */	cSpeciesProfile* mTargetAnimalSpecies;
 		/* 170h */	ResourceKey mTargetAnimalSpeciesKey;
 		/* 17Ch */	cMissionPtr mpParentMission;
@@ -292,10 +292,10 @@ namespace Simulator
 		/* 188h */	int mToolCost;
 		/* 18Ch */	bool field_18C;
 		/* 190h */	int mGiveOnAcceptMoney;
-		/* 194h */	vector<ResourceKey> mGiveOnAcceptToolIDs;
-		/* 1A8h */	vector<ResourceKey> mGiveOnAcceptAnimalIDs;
-		/* 1BCh */	vector<ResourceKey> mGiveOnAcceptPlantIDs;
-		/* 1D0h */	vector<uint32_t> field_1D0;
+		/* 194h */	eastl::vector<ResourceKey> mGiveOnAcceptToolIDs;
+		/* 1A8h */	eastl::vector<ResourceKey> mGiveOnAcceptAnimalIDs;
+		/* 1BCh */	eastl::vector<ResourceKey> mGiveOnAcceptPlantIDs;
+		/* 1D0h */	eastl::vector<uint32_t> field_1D0;
 		/* 1E4h */	cCommEventPtr mpGalaxyCommEvent;
 		/* 1E8h */	cPlanetPtr mpTargetPlanet;
 	};

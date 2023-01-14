@@ -1,7 +1,7 @@
 #pragma once
 
 #include <Spore\UTFWin\ComboBoxDrawable.h>
-#include <Spore\UTFWin\ScrollBarDrawable.h>
+#include <Spore\UTFWin\ScrollbarDrawable.h>
 #include <EASTL\string.h>
 
 #define IComboBoxPtr eastl::intrusive_ptr<UTFWin::IComboBox>

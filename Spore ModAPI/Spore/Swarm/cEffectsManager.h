@@ -29,8 +29,6 @@
 #include <EASTL\string.h>
 #include <EASTL\hash_map.h>
 
-using namespace eastl;
-
 namespace Swarm
 {
 	class cEffectsManager 
@@ -67,7 +65,7 @@ namespace Swarm
 		/* 6Ch */	int field_6C;
 		/* 70h */	int field_70;
 		/* 74h */	int8_t field_74[0x4C];
-		/* C0h */	string field_C0;
+		/* C0h */	eastl::string field_C0;
 		/* D0h */	cGlobalParams field_D0;
 		/* 1F0h */	int field_1F0;
 		/* 1F4h */	int field_1F4;
@@ -82,9 +80,9 @@ namespace Swarm
 		/* 218h */	int field_218;
 		/* 21Ch */	int field_21C;
 		/* 220h */	int field_220;
-		/* 224h */	hash_map<uint32_t, intrusive_ptr<IEffectsWorld>> mWorlds;
-		/* 244h */	intrusive_ptr<IEffectsWorld> mpActiveWorld;
-		/* 248h */	string field_248;
+		/* 224h */	eastl::hash_map<uint32_t, IEffectsWorldPtr> mWorlds;
+		/* 244h */	IEffectsWorldPtr mpActiveWorld;
+		/* 248h */	eastl::string field_248;
 
 		// 74h	int mnLive;
 		// 78h	int mnRun;

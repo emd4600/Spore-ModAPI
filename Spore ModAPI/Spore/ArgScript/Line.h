@@ -23,17 +23,15 @@
 
 #include <EASTL\vector.h>
 
-using namespace eastl;
-
 namespace ArgScript
 {
 	///
-	/// A key-value pair (c-string, int) in an enumeration.
+	/// A key-value pair (c-eastl::string, int) in an enumeration.
 	///
-	typedef pair<const char*, int> EnumValue;
+	typedef eastl::pair<const char*, int> EnumValue;
 
 	///
-	/// An array of c-strings that are the arguments of a line or an option.
+	/// An array of c-eastl::strings that are the arguments of a line or an option.
 	///
 	typedef const char* const* Arguments;
 
@@ -51,7 +49,7 @@ namespace ArgScript
 	///
 	/// This class represents a line of ArgScript data. A line is made up by a keyword, multiple or none arguments, and multiple or 
 	/// none options. For example: "keyword argument1 argument2 -option1 -option2 optionArgument".
-	/// All the elements in a line are separated by whitespaces; string literals that require whitespaces can be surrounded by "" or ().
+	/// All the elements in a line are separated by whitespaces; eastl::string literals that require whitespaces can be surrounded by "" or ().
 	/// The first element is always considered the keyword; the words that follow it are arguments. If a word is preceded by '-',
 	/// it is considered an option (for example, the option "-scale 1.2"). Options can be followed by arguments; if an option does
 	/// not have any argument, it is considered a 'flag'.
@@ -81,7 +79,7 @@ namespace ArgScript
 		/// This does not include the keyword.
 		/// If the number of arguments is not equal to the one required, an exception will be thrown.
 		/// @param count The number of arguments this line must have.
-		/// @returns An array of char* strings.
+		/// @returns An array of char* eastl::strings.
 		///
 		Arguments GetArguments(size_t count) const;
 
@@ -99,7 +97,7 @@ namespace ArgScript
 		/// @param dstCount The destination size_t where the number of arguments got will be written, or nullptr.
 		/// @param nMin The minimum number of arguments this line can have.
 		/// @param nMax The maximum number of arguments this line can have.
-		/// @returns An array of char* strings.
+		/// @returns An array of char* eastl::strings.
 		///
 		Arguments GetArgumentsRange(size_t* dstCount, size_t nMin, size_t nMax = kMaxInt) const;
 
@@ -122,7 +120,7 @@ namespace ArgScript
 		/// If the number of arguments is not equal to the one required, an exception will be thrown.
 		/// @param optionName The name of the option. In the line, it must be prefixed with a '-'.
 		/// @param count The number of arguments this line must have.
-		/// @returns An array of char* strings.
+		/// @returns An array of char* eastl::strings.
 		///
 		Arguments GetOption(const char* optionName, size_t count) const;
 
@@ -142,7 +140,7 @@ namespace ArgScript
 		/// @param dstCount The destination size_t where the number of arguments got will be written, or nullptr.
 		/// @param nMin The minimum number of arguments this line can have.
 		/// @param nMax The maximum number of arguments this line can have.
-		/// @returns An array of char* strings.
+		/// @returns An array of char* eastl::strings.
 		///
 		Arguments GetOptionRange(const char* optionName, size_t* dstCount, size_t nMin, size_t nMax = kMaxInt) const;
 
@@ -154,19 +152,19 @@ namespace ArgScript
 
 
 		///
-		/// Gets the integer value that corresponds to the given string in the specified enum.
-		/// If the enum does not have any value assigned to that string, an exception will be thrown.
-		/// @param valueString The string value of the enumeration.
-		/// @param pEnum An array of pair<const char*, int> objects where the values will be checked.
+		/// Gets the integer value that corresponds to the given eastl::string in the specified enum.
+		/// If the enum does not have any value assigned to that eastl::string, an exception will be thrown.
+		/// @param valueString The eastl::string value of the enumeration.
+		/// @param pEnum An array of eastl::pair<const char*, int> objects where the values will be checked.
 		/// @returns The integer value assigned to that enumeration.
 		///
 		static int GetEnum(const char* valueString, const EnumValue* pEnum);
 
 		///
-		/// Gets the integer value that corresponds to the given string in the specified enum.
-		/// This method does not throw an exception if the enumeration does not have any value assigned to that string.
-		/// @param valueString The string value of the enumeration.
-		/// @param pEnum An array of pair<const char*, int> objects where the values will be checked.
+		/// Gets the integer value that corresponds to the given eastl::string in the specified enum.
+		/// This method does not throw an exception if the enumeration does not have any value assigned to that eastl::string.
+		/// @param valueString The eastl::string value of the enumeration.
+		/// @param pEnum An array of eastl::pair<const char*, int> objects where the values will be checked.
 		/// @param dst The integer where the value will be set. If no value is found, it won't be modified.
 		/// @returns Whether a value was found or not.
 		///
@@ -174,19 +172,13 @@ namespace ArgScript
 
 
 	protected:
-		/* 00h */	vector<char>		mBuffer;
-		/* 14h */	vector<char*>		mArguments;
-		/* 28h */	vector<LineOption>	mOptions;
-
+		/* 00h */	eastl::vector<char>		mBuffer;
+		/* 14h */	eastl::vector<char*>		mArguments;
+		/* 28h */	eastl::vector<LineOption>	mOptions;
 		/* 3Ch */	size_t mFirstArgIndex;
 		/* 40h */	size_t mArgumentCount;
 	};
-
-	/////////////////////////////////
-	//// INTERNAL IMPLEMENTATION ////
-	/////////////////////////////////
-
-	static_assert(sizeof(Line), "sizeof(Line) != 44h");
+	ASSERT_SIZE(Line, 0x44);
 
 	namespace Addresses(Line)
 	{

@@ -34,13 +34,15 @@ namespace UTFWin
 	///
 	struct TextChange
 	{
-		char16_t* string;
+		char16_t* str;
 		size_t length;
 
+#ifndef SDK_TO_GHIDRA
 		inline eastl::string16 ToString() const
 		{
-			return eastl::string16(string, length);
+			return eastl::string16(str, length);
 		}
+#endif
 	};
 
 	class Message
@@ -127,7 +129,7 @@ namespace UTFWin
 				inline bool IsRightButton() const {
 					return mouseButton == MouseButton::kMouseButtonRight;
 				}
-				inline Point GetPosition() const {
+				inline Math::Point GetPosition() const {
 					return { mouseX, mouseY };
 				}
 			} Mouse;
@@ -146,7 +148,7 @@ namespace UTFWin
 				/// How much the mouse wheel changed, it is usually a multiple of 120.
 				/* 18h */	int wheelDelta;
 
-				inline Point GetPosition() const {
+				inline Math::Point GetPosition() const {
 					return { mouseX, mouseY };
 				}
 			} MouseWheel;
@@ -275,6 +277,5 @@ namespace UTFWin
 			} TextChanged;
 		};
 	};
-
-	static_assert(sizeof(Message) == 0x1C, "sizeof(Message) == 0x1C)");  // 7 32bit ints
+	ASSERT_SIZE(Message, 0x1C);  // 7 32bit ints
 }

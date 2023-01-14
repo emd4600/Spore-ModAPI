@@ -20,7 +20,7 @@
 #pragma once
 
 #include <Spore\Object.h>
-#include <Spore\App\Propertylist.h>
+#include <Spore\App\PropertyList.h>
 #include <Spore\App\IMessageListener.h>
 #include <Spore\App\IMessageManager.h>
 #include <Spore\Simulator\SimulatorEnums.h>
@@ -47,7 +47,7 @@ namespace Simulator
 		/* 18h */	virtual const ResourceKey& GetItemID();
 		/* 1Ch */	virtual uint32_t GetItemInstanceID();
 		/* 20h */	virtual bool IsCargoType();
-		/* 24h */	virtual intrusive_ptr<cSpaceInventoryItem> Duplicate();
+		/* 24h */	virtual cSpaceInventoryItemPtr Duplicate();
 		/* 28h */	virtual const char16_t* GetDescription();
 		/* 2Ch */	virtual const char16_t* GetDetailDescription();
 		/* 30h */	virtual ResourceKey GetImageID();
@@ -57,7 +57,7 @@ namespace Simulator
 		/// @param dstCount
 		/// @param dst
 		/// @returns 
-		/* 34h */	virtual bool GetImageColors(size_t& dstCount, ColorRGB*& dst);
+		/* 34h */	virtual bool GetImageColors(size_t& dstCount, Math::ColorRGB*& dst);
 
 		/// Returns the key of the panel the tool belongs to. 
 		/// If this item is of cargo type, it returns the cargo panel key.

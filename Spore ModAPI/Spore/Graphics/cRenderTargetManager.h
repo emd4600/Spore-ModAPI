@@ -25,8 +25,8 @@ namespace Graphics
 		ASSERT_SIZE(EntryRegion, 0x20);
 
 		struct Entry {
-			/* 00h */	vector<EntryRegion> mRegions;
-			/* 14h */	vector<int> field_14;
+			/* 00h */	eastl::vector<EntryRegion> mRegions;
+			/* 14h */	eastl::vector<int> field_14;
 			/* 28h */	D3DFORMAT format;
 			/* 2Ch */	int width;
 			/* 30h */	int height;
@@ -37,8 +37,7 @@ namespace Graphics
 
 		/* 10h */	bool mbInitialized;
 		/* 14h */	int field_14;
-		/* 18h */	vector<Entry> mEntries;
+		/* 18h */	eastl::vector<Entry> mEntries;
 	};
-
-	static_assert(sizeof(cRenderTargetManager) == 0x2C, "sizeof(cRenderTargetManager) != 2Ch");
+	ASSERT_SIZE(cRenderTargetManager, 0x2C);
 }

@@ -40,7 +40,7 @@ namespace Simulator
 	struct cLaneInfo
 	{
 		/* 00h */	Math::Vector3 mPosition;
-		/* 0Ch */	vector<int> mConnections;
+		/* 0Ch */	eastl::vector<int> mConnections;
 	};
 
 	///
@@ -75,23 +75,23 @@ namespace Simulator
 		/* 64h */	virtual Vector3& func64h();
 		/* 68h */	virtual void func68h();
 		/* 6Ch */	virtual int func6Ch();  // returns 0
-		/* 70h */	virtual vector<ObjectPtr>& GetPopulation();
+		/* 70h */	virtual eastl::vector<ObjectPtr>& GetPopulation();
 		/* 74h */	virtual int GetPopulationCount();  // returns the count of vector returned by func70h
 		/* 78h */	virtual void func78h(); 
-		/* 7Ch */	virtual string16& GetCommunityName();
+		/* 7Ch */	virtual eastl::string16& GetCommunityName();
 		/* 80h */	virtual void func80h();
 		/* 84h */	virtual void func84h();  // deletes AssemblyBubbles?
 		/* 88h */	virtual void func88h();  // does nothing
 
 	public:
 		/* 38h */	int mCommunitySize;
-		/* 3Ch */	vector<int> field_3C;
+		/* 3Ch */	eastl::vector<int> field_3C;
 		/* 50h */	int field_50;  // not initialized
 		/* 54h */	int field_54;  // not initialized
-		/* 58h */	vector<int> field_58;
+		/* 58h */	eastl::vector<int> field_58;
 		/* 6Ch */	bool field_6C;
-		/* 70h */	vector<cEmptyBubble> mAssemblyBubbles;
-		/* 84h */	vector<cLaneInfo> mLanes;
+		/* 70h */	eastl::vector<cEmptyBubble> mAssemblyBubbles;
+		/* 84h */	eastl::vector<cLaneInfo> mLanes;
 		/* 98h */	int field_98;
 		/* 9Ch */	int field_9C;
 		/* A0h */	int field_A0;
@@ -99,19 +99,14 @@ namespace Simulator
 		/* A8h */	int field_A8;
 		/* ACh */	int field_AC;
 		/* B0h */	cGonzagoTimer field_B0;
-		/* D0h */	vector<cSpatialObjectPtr> field_D0;  // With release at C0h
-		/* E4h */	vector<ObjectPtr> mCommunityMembers;
-		/* F8h */	string16 mName;
-		/* 108h */	string16 mDescription;
+		/* D0h */	eastl::vector<cSpatialObjectPtr> field_D0;  // With release at C0h
+		/* E4h */	eastl::vector<ObjectPtr> mCommunityMembers;
+		/* F8h */	eastl::string16 mName;
+		/* 108h */	eastl::string16 mDescription;
 		/* 118h */	int field_118;  // -1
 		/* 11Ch */	cCreatureBasePtr mpLeader;
 	};
-
-	/////////////////////////////////
-	//// INTERNAL IMPLEMENTATION ////
-	/////////////////////////////////
-
-	static_assert(sizeof(cCommunity) == 0x120, "sizeof(cCommunity) != 120h");
+	ASSERT_SIZE(cCommunity, 0x120);
 
 	cCreatureCitizen* cCommunity::GetLeaderCitizen()
 	{

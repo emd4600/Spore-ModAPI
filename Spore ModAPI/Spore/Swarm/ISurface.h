@@ -30,14 +30,14 @@ namespace Swarm
 		/* 00h */	virtual int Release() = 0;
 		/* 04h */	virtual int AddRef() = 0;
 
-		/* 08h */	virtual bool ApplySurface(float, const Vector3&, Vector3&, Vector3&, void*, void*) = 0;
+		/* 08h */	virtual bool ApplySurface(float, const Math::Vector3&, Math::Vector3&, Math::Vector3&, void*, void*) = 0;
 
-		/* 0Ch */	virtual float DistanceFromSurface(const Vector3& srcPoint, void*, void*) = 0;
+		/* 0Ch */	virtual float DistanceFromSurface(const Math::Vector3& srcPoint, void*, void*) = 0;
 
 		// second-to-last parameter is Transform*?
-		/* 10h */	virtual bool FindClosestSurfacePoint(const Vector3& srcPoint, Vector3&, Vector3*, Quaternion*, void*, void*) = 0;
+		/* 10h */	virtual bool FindClosestSurfacePoint(const Math::Vector3& srcPoint, Math::Vector3&, Math::Vector3*, Math::Quaternion*, void*, void*) = 0;
 
-		/* 14h */	virtual bool MovePointAlongSurface(const Vector3& srcPoint, Vector3&, Vector3*, Quaternion*, void*, void*) = 0;
+		/* 14h */	virtual bool MovePointAlongSurface(const Math::Vector3& srcPoint, Math::Vector3&, Math::Vector3*, Math::Quaternion*, void*, void*) = 0;
 
 		/* 18h */	virtual void func18h(int, int, int) = 0;
 

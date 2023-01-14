@@ -44,8 +44,6 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 #define StreamBufferPtr eastl::intrusive_ptr<IO::StreamBuffer>
 
-using namespace eastl;
-
 namespace IO
 {
 	///
@@ -84,14 +82,14 @@ namespace IO
 		/* 08h */	virtual int	Release() override;
 
 		/* 0Ch */	virtual uint32_t	GetType() const override;
-		/* 10h */	virtual int			GetAccessFlags() const override;
+		/* 10h */	virtual AccessFlags	GetAccessFlags() const override;
 		/* 14h */	virtual FileError	GetState() const override;
 		/* 18h */	virtual bool		Close() override;
 
 		/* 1Ch */	virtual size_type	GetSize() const override;
 		/* 20h */	virtual bool		SetSize(size_type size) override;
-		/* 24h */	virtual int			GetPosition(PositionType positionType = kPositionTypeBegin) const override;
-		/* 28h */	virtual bool		SetPosition(int distance, PositionType positionType = kPositionTypeBegin) override;
+		/* 24h */	virtual int			GetPosition(PositionType positionType = PositionType::Begin) const override;
+		/* 28h */	virtual bool		SetPosition(int distance, PositionType positionType = PositionType::Begin) override;
 		/* 2Ch */	virtual int			GetAvailable() const override;
 
 		/* 30h */	virtual int		Read(void* pData, size_t nSize) override;
@@ -103,7 +101,7 @@ namespace IO
 		bool        FlushWriteBuffer();
 
 	protected:
-		/* 04h */	intrusive_ptr<IStream>            mpStream;                      /// The stream that we are buffering.
+		/* 04h */	IStreamPtr          mpStream;                      /// The stream that we are buffering.
 		/* 08h */	int                 mnRefCount;                    /// The reference count, which may or may not be used.
 		/* 0Ch */	size_type           mnPositionExternal;            /// This is the position of the the file pointer as the the user sees it. It is where the next byte read or write will come from or go to.
 		/* 10h */	size_type           mnPositionInternal;            /// This is the position of the the file pointer as the owned stream sees it.
@@ -118,14 +116,7 @@ namespace IO
 		/* 2Ch */	size_type           mnWriteBufferStartPosition;    /// This is where in the file the beginning the write buffer corresponds to.
 		/* 30h */	size_type           mnWriteBufferUsed;             /// This is the count of bytes in the write buffer that are valid.
 	};
-
-
-	///////////////////////////////////
-	//// INTERNAL IMPLEMENENTATION ////
-	///////////////////////////////////
-
-	static_assert(sizeof(StreamBuffer) == 0x34, "sizeof(StreamBuffer) != 34h");
-
+	ASSERT_SIZE(StreamBuffer, 0x34);
 
 	namespace Addresses(StreamBuffer)
 	{

@@ -4,13 +4,7 @@
 
 namespace App
 {
-	namespace AppData
-	{
-		Resource::DBPF* GetPackageForSaveDirectory(uint32_t directoryID);
-
-		void SetPackageForSaveDirectory(uint32_t directoryID, Resource::DBPF* pPackage, bool = false);
-	}
-
+	// kept here for backwards compatibility
 	namespace Addresses(AppData)
 	{
 		DeclareAddress(GetPackageForSaveDirectory);

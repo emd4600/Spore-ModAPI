@@ -41,13 +41,13 @@ namespace Simulator
 		int CalculateTScore(float atmosphereScore, float temperatureScore);
 
 	public:
-		/* 1Ch */	hash_map<int, int> field_1C;
+		/* 1Ch */	eastl::hash_map<int, int> field_1C;
 		/* 3Ch */	bool field_3C;  // true
 		/* 40h */	int field_40;  // -1
 		/* 44h */	bool field_44;
-		/* 48h */	map<int, int> field_48;
+		/* 48h */	eastl::map<int, int> field_48;
 		/* 64h */	int field_64;
-		/* 68h */	vector<cCommodityNodePtr> mCommodityNodes;
+		/* 68h */	eastl::vector<cCommodityNodePtr> mCommodityNodes;
 		/* 7Ch */	int field_7C;
 		/* 80h */	int field_80;
 		/* 84h */	int field_84;
@@ -58,12 +58,7 @@ namespace Simulator
 	public:
 		static cTerraformingManager* Get();
 	};
-
-	/////////////////////////////////
-	//// INTERNAL IMPLEMENTATION ////
-	/////////////////////////////////
-
-	static_assert(sizeof(cTerraformingManager) == 0x94, "sizeof(cTerraformingManager) != 94h");
+	ASSERT_SIZE(cTerraformingManager, 0x94);
 
 	namespace Addresses(cTerraformingManager)
 	{

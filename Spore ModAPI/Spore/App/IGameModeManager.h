@@ -35,7 +35,7 @@
 
 namespace App
 {
-	enum
+	enum GameModeManagerMessageIDs
 	{
 		kMsgAddRef = 1,
 		kMsgRelease = 2,

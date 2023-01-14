@@ -2,6 +2,7 @@
 
 #include <Spore\Simulator\cGonzagoSimulator.h>
 #include <Spore\MathUtils.h>
+#include <EASTL\vector.h>
 
 /// Accesses (and creates if necessary) the current instance of Simulator::cTimeOfDay
 #define TimeOfDay (*Simulator::cTimeOfDay::Get())
@@ -51,7 +52,7 @@ namespace Simulator
 		inline float ConvertEarthTime(float hours, float minutes);
 
 	public:
-		/* 10h */	vector<float> field_10;  // initialized with one entry, 1440.0
+		/* 10h */	eastl::vector<float> field_10;  // initialized with one entry, 1440.0
 		/// How many seconds it takes to make a day, in seconds. Default value is 86400.0 (24 hours)
 		/* 24h */	float mDayDuration;  // 86400.0
 	};

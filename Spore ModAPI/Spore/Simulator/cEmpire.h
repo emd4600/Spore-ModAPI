@@ -69,7 +69,7 @@ namespace Simulator
 		static void CaptureSystem(cStarRecord* pStarRecord, uint32_t empireID);
 
 	public:
-		/* 3Ch */	string16 mEmpireName;  // "unknown"
+		/* 3Ch */	eastl::string16 mEmpireName;  // "unknown"
 		/* 4Ch */	int mCurrentGameMode;  // not initialized  // uint32_t ?
 		/// EmpireFlags
 		/* 50h */	int mFlags;  // 0x10 -> grox?
@@ -77,11 +77,11 @@ namespace Simulator
 		/* 54h */	EmpireTrait mTrait;
 		/// A member of Archetypes enum, Archetypes::kArchetypePlayerWanderer by default
 		/* 58h */	Archetypes mArchetype;  // kArchetypePlayerWanderer
-		/* 5Ch */	vector<cEmpirePtr> mEnemies;
-		/* 70h */	vector<cEmpirePtr> mAllies;
+		/* 5Ch */	eastl::vector<cEmpirePtr> mEnemies;
+		/* 70h */	eastl::vector<cEmpirePtr> mAllies;
 		/* 84h */	int mPoliticalID;  // -1
-		/* 88h */	vector<cStarRecordPtr> mStars;
-		/* 9Ch */	vector<cStarRecordPtr> mNextStarTowardsHome;
+		/* 88h */	eastl::vector<cStarRecordPtr> mStars;
+		/* 9Ch */	eastl::vector<cStarRecordPtr> mNextStarTowardsHome;
 		/* B0h */	StarID mHomeStar;  // -1
 		/* B4h */	PlanetID mHomePlanet;  // -1
 		/* B8h */	ResourceKey mUFOKey;
@@ -95,13 +95,14 @@ namespace Simulator
 		/* E4h */	float field_E4;
 		/* E8h */	float field_E8;
 		/* ECh */	float field_EC;
-		/* F0h */	vector<int> field_F0;
+		/* F0h */	eastl::vector<int> field_F0;
 		/* 104h */	ICityMusicPtr mpCityMusic;
 		/* 108h */	cCultureSet mCultureSet;
 		/* 128h */	cGonzagoTimer field_128;
-		/* 148h */	list<uint32_t> mAdventureList;
+		/* 148h */	eastl::list<uint32_t> mAdventureList;
 		///* 154h */	int field_154;  // not initialized
 	};
+	ASSERT_SIZE(cEmpire, 0x158);
 
 	///
 	/// Returns the instance ID of the property file that contains the relationship properties used by a certain 
@@ -110,12 +111,6 @@ namespace Simulator
 	/// @param difficulty The current difficulty, in the "kDifficulty..." enum.
 	/// 
 	uint32_t GetArchetypeRelationshipsID(int archetype, int difficulty);
-
-	/////////////////////////////////
-	//// INTERNAL IMPLEMENTATION ////
-	/////////////////////////////////
-
-	static_assert(sizeof(cEmpire) == 0x158, "sizeof(cEmpire) != 158h");
 
 	inline uint32_t cEmpire::GetEmpireID() const
 	{

@@ -43,7 +43,7 @@ namespace Anim
 		/* 3Ch */	virtual void DestroyCreature(AnimatedCreature*) = 0;
 		// int is second argument of func30h too
 		/* 40h */	virtual int func40h(AnimatedCreature*, int, bool) = 0;
-		/* 44h */	virtual const vector<AnimatedCreature*>& GetCreatures() const = 0;
+		/* 44h */	virtual const eastl::vector<AnimatedCreature*>& GetCreatures() const = 0;
 		/* 48h */	virtual void func48h(int index, int) = 0;  // related with lod max
 		/* 4Ch */	virtual int func4Ch(int index) = 0;
 		/* 50h */	virtual void func50h(bool) = 0;

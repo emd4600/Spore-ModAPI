@@ -19,18 +19,14 @@
 
 #pragma once
 
-#include "..\UTFWin\UILayout.h"
-#include "..\UTFWin\IWinProc.h"
-
 #include <Spore\UTFWin\UILayout.h>
+#include <Spore\UTFWin\IWinProc.h>
 
 #include <Spore\App\ICamera.h>
 
 #include <EASTL\vector.h>
 #include <EASTL\map.h>
 #include <EASTL\string.h>
-
-using namespace eastl;
 
 namespace GalaxyGameEntry
 {
@@ -51,21 +47,20 @@ namespace GalaxyGameEntry
 
 	//	static GlobalGGEUI* GetGlobalGGEUI()
 	//	{
-	//		return *(GlobalGGEUI**)SelectAddress(0x16A55C4, 0x16A2324, 0x16A1344);
+	//		return *(GlobalGGEUI**)SelectAddress(0x16A55C4, 0x16A1344);
 	//	}
 	//};
 	//PLACEHOLDER don't we need a Get method?
 
 	struct Unknown
 	{
-		/* 00h */	map<int, int> field_0;
-		/* 1Ch */	map<int, int> field_1C;
-		/* 38h */	map<int, int> field_38;
-		/* 54h */	map<int, int> field_54;
-		/* 70h */	map<int, int> field_70;
+		/* 00h */	eastl::map<int, int> field_0;
+		/* 1Ch */	eastl::map<int, int> field_1C;
+		/* 38h */	eastl::map<int, int> field_38;
+		/* 54h */	eastl::map<int, int> field_54;
+		/* 70h */	eastl::map<int, int> field_70;
 	};
-
-	static_assert(sizeof(Unknown) == 0x8C, "sizeof(Unknown) != 8Ch");
+	ASSERT_SIZE(Unknown, 0x8C);
 
 	namespace Addresses(GlobalGGEUI)
 	{
@@ -83,12 +78,14 @@ namespace GalaxyGameEntry
 		void InitializeUI();
 
 	public:
+#ifndef SDK_TO_GHIDRA
 		static GlobalGGEUI* Get() {
 			return *(GlobalGGEUI**)GetAddress(GlobalGGEUI, ptr);
 		}
+#endif
 
 	public:
-		enum
+		enum Modes
 		{
 			kModeCreate = 2,
 
@@ -102,13 +99,13 @@ namespace GalaxyGameEntry
 		/* 18h */	int field_18;
 		/* 1Ch */	int field_1C;
 		/* 20h */	int field_20;
-		/* 24h */	vector<int, int> field_24;
+		/* 24h */	eastl::vector<int, int> field_24;
 		/* 38h */	int field_38;  // Sporepedia
 		/* 3Ch */	Unknown field_3C;
 		/* C8h */	bool field_C8;  // true
 		/* C9h */	bool field_C9;
 		/* CCh */	int field_CC;
-		/* D0h */	string16 field_D0;
+		/* D0h */	eastl::string16 field_D0;
 		/* E0h */	int field_E0;
 		/* E4h */	bool field_E4;  // true
 		/* E8h */	int field_E8;
@@ -127,17 +124,17 @@ namespace GalaxyGameEntry
 		/* 104h */	bool field_104;
 		/* 108h */	int field_108;
 		/* 10Ch */	int field_10C;  // 8
-		/* 110h */	vector<int, int> field_110;
-		/* 124h */	map<int, int> field_124;
+		/* 110h */	eastl::vector<int, int> field_110;
+		/* 124h */	eastl::map<int, int> field_124;
 		/* 140h */	int field_140;  // not initialized
 		/* 144h */	UTFWin::UILayout mZoomPanelLayout;
-		/* 15Ch */	intrusive_ptr<Object> field_15C;
-		/* 160h */	intrusive_ptr<Object> field_160;
-		/* 164h */	intrusive_ptr<Object> field_164;
-		/* 168h */	intrusive_ptr<Object> field_168;
-		/* 16Ch */	intrusive_ptr<Object> field_16C;
-		/* 170h */	intrusive_ptr<Object> field_170;
-		/* 174h */	intrusive_ptr<Object> field_174;
+		/* 15Ch */	ObjectPtr field_15C;
+		/* 160h */	ObjectPtr field_160;
+		/* 164h */	ObjectPtr field_164;
+		/* 168h */	ObjectPtr field_168;
+		/* 16Ch */	ObjectPtr field_16C;
+		/* 170h */	ObjectPtr field_170;
+		/* 174h */	ObjectPtr field_174;
 		/* 178h */	int field_178;
 		/* 17Ch */	bool field_17C;
 		/* 180h */	int field_180;
@@ -146,15 +143,15 @@ namespace GalaxyGameEntry
 		/* 18Ch */	int field_18C;
 		/* 190h */	int field_190;
 		/* 194h */	float field_194;
-		/* 198h */	intrusive_ptr<App::ICamera> mpCamera;
-		/* 19Ch */	intrusive_ptr<Object> field_19C;
-		/* 1A0h */	intrusive_ptr<Object> field_1A0;
-		/* 1A4h */	intrusive_ptr<Object> field_1A4;
-		/* 1A8h */	intrusive_ptr<Object> field_1A8;
-		/* 1ACh */	intrusive_ptr<Object> field_1AC;
-		/* 1B0h */	intrusive_ptr<Object> field_1B0;
-		/* 1B4h */	intrusive_ptr<Object> field_1B4[9];
-		/* 1D8h */	vector<int, int> field_1D8;
+		/* 198h */	ICameraPtr mpCamera;
+		/* 19Ch */	ObjectPtr field_19C;
+		/* 1A0h */	ObjectPtr field_1A0;
+		/* 1A4h */	ObjectPtr field_1A4;
+		/* 1A8h */	ObjectPtr field_1A8;
+		/* 1ACh */	ObjectPtr field_1AC;
+		/* 1B0h */	ObjectPtr field_1B0;
+		/* 1B4h */	ObjectPtr field_1B4[9];
+		/* 1D8h */	eastl::vector<int, int> field_1D8;
 		/* 1ECh */	int field_1EC;
 		/* 1F0h */	bool field_1F0;
 		/* 1F1h */	bool field_1F1;
@@ -167,8 +164,12 @@ namespace GalaxyGameEntry
 		/* 24Ch */	bool field_24C;
 		/* 24Dh */	bool field_24D;
 		/* 250h	*/	int field_250;
-		/* 254h */	map<int, int> field_254;
+		/* 254h */	eastl::map<int, int> field_254;
 		/* 270h */	bool field_270;
 		/* 271h */	bool mbScenarioStarEffectsEnabled;
 	};
+
+#ifdef SDK_TO_GHIDRA
+	GlobalGGEUI* sGlobalGGEUI;
+#endif
 }

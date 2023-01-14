@@ -23,8 +23,6 @@
 
 #define cIdentityColorablePtr eastl::intrusive_ptr<Simulator::cIdentityColorable>
 
-using namespace eastl;
-
 namespace Simulator
 {
 	///
@@ -51,13 +49,8 @@ namespace Simulator
 
 	public:
 		/* 04h */	uint32_t mIDColorID;  // 0x53DBCF1
-		/* 08h */	map<int, int> field_8;
+		/* 08h */	eastl::map<int, int> field_8;
 		/* 24h */	Math::ColorRGB mCachedColor;
 	};
-
-	/////////////////////////////////
-	//// INTERNAL IMPLEMENTATION ////
-	/////////////////////////////////
-
-	static_assert(sizeof(cIdentityColorable) == 0x30, "sizeof(cIdentityColorable) != 30h");
+	ASSERT_SIZE(cIdentityColorable, 0x30);
 }

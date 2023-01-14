@@ -1,3 +1,14 @@
+#pragma once
+
+#ifdef SDK_TO_GHIDRA
+template<class AllocatorType>
+class CoreAllocatorAdapter
+{
+public:
+	AllocatorType* mpCoreAllocator;
+	int            mnFlags;
+};
+#else
 // This code is from EASTL
 // We have it here because we also have ICoreAllocator here
 /////////////////////////////////////////////////////////////////////////////
@@ -8,8 +19,6 @@
 // Implements an EASTL allocator that uses an ICoreAllocator.
 // However, this header file is not dependent on ICoreAllocator or its package.
 ///////////////////////////////////////////////////////////////////////////////
-
-#pragma once
 
 //#if EASTL_CORE_ALLOCATOR_ENABLED
 
@@ -80,7 +89,7 @@ template<class AllocatorType>
 class CoreAllocatorAdapter
 {
 public:
-	typedef CoreAllocatorAdapter<AllocatorType> this_type;
+	//typedef CoreAllocatorAdapter<AllocatorType> this_type;
 
 public:
 	// To do: Make this constructor explicit, when there is no known code dependent on it being otherwise.
@@ -148,7 +157,7 @@ template <class AllocatorType>
 class CoreDeleterAdapter
 {
 public:
-	typedef CoreDeleterAdapter<AllocatorType> this_type;
+	//typedef CoreDeleterAdapter<AllocatorType> this_type;
 	AllocatorType* mpCoreAllocator;
 
 public:
@@ -342,3 +351,4 @@ inline bool operator!=(const CoreAllocatorAdapter<AllocatorType>& a, const CoreA
 //#endif // EASTL_CORE_ALLOCATOR_ENABLED
 
 // define it again
+#endif

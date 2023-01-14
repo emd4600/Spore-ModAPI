@@ -41,6 +41,7 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 #include <Spore\Internal.h>
 #include <Spore\ICoreAllocator.h>
+#include <Spore\IO\Constants.h>
 #include <Spore\IO\Allocator.h>
 #include <stdint.h>
 
@@ -48,120 +49,9 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 namespace IO
 {
-	typedef size_t size_type;
-
-	/// Used to designate an error condition for many functions that return size_type.
-	const size_type kSizeTypeError = (size_type)-1;
-
-
-	/// Used to designate the condition whereby a requested operation is complete
-	/// and no more processing can be done. Only applicable to functions that 
-	/// document the use of kSizeTypeDone.
-	const size_type kSizeTypeDone = (size_type)-2;
-
-
-	/// Defines a value to be used for string conversion functions which means
-	/// that the string length is specified by a wherever the terminating null
-	/// character is. For the copying or converting of strings, the terminating
-	/// null character is also copied to the destination.
-	const size_t kLengthNull = (size_t)-1;
-
-	enum class FileError : uint32_t
-	{
-		Success = 0,
-		InvalidHandle = 0xFFFFFFFE,
-		OutOfMemory = 0xCFDE0002,  // both OutOfMemory and NotEnoughMemory
-		FileNotFound = 0xCFDE0004,
-		PathNotFound = 0xCFDE0005,  // also INVALID_DRIVE
-		AccessDenied = 0xCFDE0006,
-		CurrentDirectory = 0xCFDE0008,
-		WriteProtect = 0xCFDE0007,
-		NotReady = 0xCFDE000B,
-		CRC = 0xCFDE000C,
-		Other = 0xCFDE000D
-	};
-
-	/// Defines stream access flags, much like file access flags.
-	enum AccessFlags
-	{
-		kAccessFlagNone = 0x00,  /// No specified flags. Also used to indicate that a given IO stream is closed.
-		kAccessFlagRead = 0x01,  /// Used for identifying read access to an entity.
-		kAccessFlagWrite = 0x02,  /// Used for identifying write access to an entity.
-		kAccessFlagReadWrite = 0x03   /// Used for identifying both read and write access to an entity.
-	};
-
-	/// Creation disposition. Specifies aspects of how to create or not create a file during opening of it.
-	enum CD
-	{
-		kCDCreateNew = 1,      /// Fails if file already exists.
-		kCDCreateAlways = 2,      /// Never fails, always opens or creates and truncates to 0.
-		kCDOpenExisting = 3,      /// Fails if file doesn't exist, keeps contents.
-		kCDOpenAlways = 4,      /// Never fails, creates if doesn't exist, keeps contents.
-		kCDTruncateExisting = 5,      /// Fails if file doesn't exist, but truncates to 0 if it does.
-		kCDDefault = 6       /// Default (implementation-specific) disposition
-	};
-
-	/// Defines the positional basis for a user GetPosition or SetPosition action.
-	enum PositionType
-	{
-		kPositionTypeBegin = 0,    /// For GetPosition refers to absolute index of next byte to read; always positive. For SetPosition, refers to absolute index of next byte to be written; always positive.
-		kPositionTypeCurrent = 1,    /// For GetPosition always returns zero. For SetPosition, refers to position relative to current position; can be positive or negative.
-		kPositionTypeEnd = 2     /// For GetPosition returns to position relative to end (i.e. the negative of bytes left to read); always negative. For SetPosition, refers to position relative to end; can be positive or negative.
-	};
-
-	/// Defines textual line ending property types.
-	enum LineEnd
-	{
-		kLineEndNone = 0,     /// Refers to no line termination. When writing, it means to append nothing.
-		kLineEndAuto = 1,     /// Refers to automatic line termination. When writing, it means to append kLineTerminationNewline if there isn't one already.
-		kLineEndNewline = 2,     /// Refers to "\n" line termination. When writing, it means to append a newline always.
-		kLineEndUnix = 2,     /// Same as kLineEndNewline.
-		kLineEndWindows = 3      /// Refers to "\r\n" line termination. When writing, it means to append a newline always.
-	};
-
-	enum Share
-	{
-		kShareNone = 0x00,     /// No sharing.
-		kShareRead = 0x01,     /// Allow sharing for reading.
-		kShareWrite = 0x02,     /// Allow sharing for writing.
-		kShareDelete = 0x04      /// Allow sharing for deletion.
-	};
-
-	enum UsageHints
-	{
-		kUsageHintNone = 0x00,
-		kUsageHintSequential = 0x01,
-		kUsageHintRandom = 0x02
-	};
-
-	/// Defines state values or function return values. Zero means success and non-zero means failure in general.
-	/// Note that various stream types may define their own errors in addition to these generic errors.
-	enum State
-	{
-		kStateSuccess = 0,
-		kStateError = -1,
-		kStateNotOpen = -2
-	};
-
-	/// Defines endian-ness. This is appropriate for working with binary numerical data. 
-	enum Endian
-	{
-
-		kEndianBig = 0,            /// Big endian.
-		kEndianLittle = 1,            /// Little endian.
-#ifdef EA_SYSTEM_BIG_ENDIAN
-		kEndianLocal = kEndianBig    /// Whatever endian is native to the machine.
-#else 
-		kEndianLocal = kEndianLittle /// Whatever endian is native to the machine.
-#endif
-	};
-
 	class IStream
 	{
 	public:
-
-		// off_143AC04 -> vtable
-
 		/* 00h */	virtual ~IStream() {};
 		/* 04h */	virtual int AddRef() = 0;
 		/* 08h */	virtual int Release() = 0;
@@ -175,7 +65,7 @@ namespace IO
 		/// This function also tells you if the stream is open, as a return value 
 		/// of zero means the stream is not open. It is not allowed that a stream  
 		/// be open with no type of access.
-		/* 10h */	virtual int GetAccessFlags() const = 0;
+		/* 10h */	virtual AccessFlags GetAccessFlags() const = 0;
 
 		/// Returns the error state of the stream.
 		/// Returns FileError::Success if OK, else an error code.
@@ -210,7 +100,7 @@ namespace IO
 		/// Stream subclass can provide such functionality if needed. 
 		/// Returns -1 upon error.
 		/// @param positionType
-		/* 24h */	virtual int GetPosition(PositionType positionType = kPositionTypeBegin) const = 0;
+		/* 24h */	virtual int GetPosition(PositionType positionType = PositionType::Begin) const = 0;
 
 		/// Sets the read/write position of the stream. If the specified position is 
 		/// beyond the size of a fixed stream, the position is set to the end of the stream.
@@ -218,7 +108,7 @@ namespace IO
 		/// beyond the end of the stream results in an increase in the stream size.
 		/// @param distance
 		/// @param positionType
-		/* 28h */	virtual bool SetPosition(int distance, PositionType positionType = kPositionTypeBegin) = 0;
+		/* 28h */	virtual bool SetPosition(int distance, PositionType positionType = PositionType::Begin) = 0;
 
 		/// Returns the number of bytes available for reading.
 		/// Returns (size_type)-1 (a.k.a. kSizeTypeError) upon error.

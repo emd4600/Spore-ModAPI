@@ -20,10 +20,13 @@
 
 #include <Spore\IO\Allocator.h>
 #include <Spore\IO\IStream.h>
+#include <Spore\IO\Constants.h>
 #include <Spore\Resource\DatabasePackedFile.h>
+#include <Spore\Resource\DatabaseDirectoryFiles.h>
 #include <Spore\Resource\PFRecordRead.h>
 #include <Spore\Resource\PFRecordWrite.h>
 #include <Spore\Resource\PFIndexModifiable.h>
+#include <Spore\Resource\Paths.h>
 
 namespace IO
 {
@@ -63,19 +66,27 @@ namespace IO
 	}
 
 	//////////////////////////
+
+
+	auto_STATIC_METHOD(Directory, bool, Exists, Args(const char16_t* path), Args(path));
+	auto_STATIC_METHOD(Directory, bool, Create, Args(const char16_t* path), Args(path));
+	auto_STATIC_METHOD(Directory, bool, Remove, Args(const char16_t* path, bool recursive), Args(path, recursive));
+
+	auto_STATIC_METHOD(File, bool, Exists, Args(const char16_t* path), Args(path));
+	auto_STATIC_METHOD(File, bool, Remove, Args(const char16_t* path), Args(path));
+	auto_STATIC_METHOD(File, unsigned int, GetSize, Args(const char16_t* path), Args(path));
 }
 
 namespace Resource
-	{
+{
 	//////////////////////////////
 	//// DatabasePackedFile.h ////
 	//////////////////////////////
 
 	DatabasePackedFile::DatabasePackedFile(const char16_t* pPath, ICoreAllocator* pAllocator)
-		: mnRefCount(0)
-		, mbNeedsToRelease(false)
+		: mIsInitialized(false)
 		, mpAllocator(pAllocator == nullptr ? IO::GetAllocator() : pAllocator)
-		, mnFileAccess(0)
+		, mAccessFlags(IO::AccessFlags::None)
 		, field_18(0)
 		, field_1C(false)
 		, field_1D(true)
@@ -97,7 +108,6 @@ namespace Resource
 		, field_2E0(true)
 		, field_2E4(0.95f)
 		, field_2E8()
-		// , field_304(0)
 		, field_308(0)
 		, field_30C(0)
 		, field_310(0)
@@ -119,30 +129,39 @@ namespace Resource
 		, field_37D(0)
 		, mpResourceMan(nullptr)
 	{
-		if (pPath != nullptr)
+		mFileStream.AddRef();
+
+		if (pPath)
 		{
-			DatabasePackedFile::SetPath(pPath);
+			DatabasePackedFile::SetLocation(pPath);
 		}
+
+		/*CALL(Address(0x8DA560), void,
+			Args(DatabasePackedFile*, const char16_t*, ICoreAllocator *),
+			Args(this, pPath, pAllocator));*/
 	}
 
 	DatabasePackedFile::~DatabasePackedFile()
 	{
-		DatabasePackedFile::ReleaseResources();
+		DatabasePackedFile::Dispose();
 	}
 
-	int DatabasePackedFile::AddRef()
+	int Database::AddRef()
 	{
 		return eastl::Internal::atomic_increment(&mnRefCount);
 	}
 
-	int DatabasePackedFile::Release()
+	int Database::Release()
 	{
 		if (eastl::Internal::atomic_decrement(&mnRefCount) == 0)
 		{
 			mnRefCount = 0;
 			delete (EAIOZoneObject*) this;
+			return 0;
 		}
-		return mnRefCount;
+		else {
+			return mnRefCount;
+		}
 	}
 
 	void* DatabasePackedFile::Cast(uint32_t type) const
@@ -162,17 +181,17 @@ namespace Resource
 	}
 
 
-	DatabasePackedFile::Unknown::Unknown()
+	PFHoleTable::PFHoleTable()
 		: field_0(-1)
-		, field_4()
+		, mRecords()
 	{
 	}
 
-	bool DatabasePackedFile::NeedsToRelease()
+	bool DatabasePackedFile::Initialize()
 	{
-		if (!mbNeedsToRelease)
+		if (!mIsInitialized)
 		{
-			mbNeedsToRelease = true;
+			mIsInitialized = true;
 		}
 
 		return true;
@@ -180,16 +199,16 @@ namespace Resource
 
 	EAIOZoneObject_AMBIGOUS(DatabasePackedFile);
 
-	bool DatabasePackedFile::ReleaseResources()
+	bool DatabasePackedFile::Dispose()
 	{
-		if (!mbNeedsToRelease)
+		if (!mIsInitialized)
 		{
-			if (mnFileAccess != 0)
+			if (mAccessFlags != IO::AccessFlags::None)
 			{
-				Save();
+				Close();
 			}
 
-			ReleaseObject(mpIndex);
+			DestroyIndex(mpIndex);
 			mpIndex = nullptr;
 			mpCurrentStream = nullptr;
 		}
@@ -198,41 +217,41 @@ namespace Resource
 	}
 
 
-	auto_METHOD_VIRTUAL_const_(DatabasePackedFile, DatabasePackedFile, uint32_t, GetType);
-	auto_METHOD_VIRTUAL_const_(DatabasePackedFile, DatabasePackedFile, int, GetReferenceCount);
-	auto_METHOD_VIRTUAL(DatabasePackedFile, DatabasePackedFile, int, UseIndexMutex, Args(bool bLock), Args(bLock));
-	auto_METHOD_VIRTUAL(DatabasePackedFile, DatabasePackedFile, bool, Load, Args(int nDesiredAccess, int nCreateDisposition, bool arg_8), Args(nDesiredAccess, nCreateDisposition, arg_8));
-	auto_METHOD_VIRTUAL_(DatabasePackedFile, DatabasePackedFile, bool, Save);
-	auto_METHOD_VIRTUAL_const_(DatabasePackedFile, DatabasePackedFile, int, GetAccessFlags);
-	auto_METHOD_VIRTUAL_(DatabasePackedFile, DatabasePackedFile, bool, Write);
-	auto_METHOD_VIRTUAL_const_(DatabasePackedFile, DatabasePackedFile, char16_t*, GetPath);
-	auto_METHOD_VIRTUAL(DatabasePackedFile, DatabasePackedFile, bool, SetPath, Args(const char16_t* path), Args(path));
-	auto_METHOD_VIRTUAL(DatabasePackedFile, DatabasePackedFile, size_t, GetFiles, Args(vector<ResourceKey>& dstVector, IResourceFilter* filter), Args(dstVector, filter));
-	auto_METHOD_VIRTUAL(DatabasePackedFile, DatabasePackedFile, bool, GetFile, Args(const ResourceKey& name, IPFRecord** pDst, int nDesiredAccess, int nCreateDisposition, bool arg_10, DBPFItem* pDstInfo), Args(name, pDst, nDesiredAccess, nCreateDisposition, arg_10, pDstInfo));
-	auto_METHOD_VIRTUAL(DatabasePackedFile, DatabasePackedFile, int, func38h, Args(int arg_0), Args(arg_0));
-	auto_METHOD_VIRTUAL(DatabasePackedFile, DatabasePackedFile, bool, func3Ch, Args(IPFRecord* pRecord), Args(pRecord));
-	auto_METHOD_VIRTUAL(DatabasePackedFile, DatabasePackedFile, bool, RemoveFile, Args(ResourceKey& name), Args(name));
-	auto_METHOD_VIRTUAL(DatabasePackedFile, DatabasePackedFile, bool, SetResourceManager, Args(bool arg_0, cResourceManager* pResourceMan, bool arg_8), Args(arg_0, pResourceMan, arg_8));
+	auto_METHOD_VIRTUAL_const_(DatabasePackedFile, DatabasePackedFile, uint32_t, GetDatabaseType);
+	auto_METHOD_VIRTUAL_const_(DatabasePackedFile, DatabasePackedFile, int, GetRefCount);
+	auto_METHOD_VIRTUAL_VOID(DatabasePackedFile, DatabasePackedFile, Lock, Args(bool bLock), Args(bLock));
+	auto_METHOD_VIRTUAL(DatabasePackedFile, DatabasePackedFile, bool, Open, Args(IO::AccessFlags nDesiredAccess, IO::CD nCreateDisposition, bool arg_8), Args(nDesiredAccess, nCreateDisposition, arg_8));
+	auto_METHOD_VIRTUAL_(DatabasePackedFile, DatabasePackedFile, bool, Close);
+	auto_METHOD_VIRTUAL_const_(DatabasePackedFile, DatabasePackedFile, IO::AccessFlags, GetAccessFlags);
+	auto_METHOD_VIRTUAL_(DatabasePackedFile, DatabasePackedFile, bool, Flush);
+	auto_METHOD_VIRTUAL_const_(DatabasePackedFile, DatabasePackedFile, const char16_t*, GetLocation);
+	auto_METHOD_VIRTUAL(DatabasePackedFile, DatabasePackedFile, bool, SetLocation, Args(const char16_t* path), Args(path));
+	auto_METHOD_VIRTUAL(DatabasePackedFile, DatabasePackedFile, size_t, GetKeyList, Args(eastl::vector<ResourceKey>& dstVector, IKeyFilter* filter), Args(dstVector, filter));
+	auto_METHOD_VIRTUAL(DatabasePackedFile, DatabasePackedFile, bool, OpenRecord, Args(const ResourceKey& name, IRecord** pDst, IO::AccessFlags nDesiredAccess, IO::CD nCreateDisposition, bool arg_10, RecordInfo* pDstInfo), Args(name, pDst, nDesiredAccess, nCreateDisposition, arg_10, pDstInfo));
+	auto_METHOD_VIRTUAL(DatabasePackedFile, DatabasePackedFile, int, GetOpenCount, Args(const ResourceKey& name), Args(name));
+	auto_METHOD_VIRTUAL(DatabasePackedFile, DatabasePackedFile, bool, CloseRecord, Args(IRecord* pRecord), Args(pRecord));
+	auto_METHOD_VIRTUAL(DatabasePackedFile, DatabasePackedFile, bool, DeleteRecord, Args(const ResourceKey& name), Args(name));
+	auto_METHOD_VIRTUAL(DatabasePackedFile, DatabasePackedFile, bool, Attach, Args(bool arg_0, IResourceManager* pResourceMan, bool arg_8), Args(arg_0, pResourceMan, arg_8));
 	auto_METHOD_VIRTUAL_const_(DatabasePackedFile, DatabasePackedFile, ICoreAllocator*, GetAllocator);
 	auto_METHOD_VIRTUAL_(DatabasePackedFile, DatabasePackedFile, IO::IStream*, GetStream);
 	auto_METHOD_VIRTUAL(DatabasePackedFile, DatabasePackedFile, bool, SetStream, Args(IO::IStream* pStream), Args(pStream));
 
-	auto_METHOD_VIRTUAL(DatabasePackedFile, DatabasePackedFile, PFRecordRead*, CreatePFRecordRead, Args(int nDesiredAccess, DBPFItem* info, ResourceKey& key), Args(nDesiredAccess, info, key));
-	auto_METHOD_VIRTUAL(DatabasePackedFile, DatabasePackedFile, PFRecordRead*, CreatePFRecordReadCopy, Args(int nDesiredAccess, PFRecordRead* pOther, ResourceKey& key), Args(nDesiredAccess, pOther, key));
-	auto_METHOD_VIRTUAL(DatabasePackedFile, DatabasePackedFile, PFRecordWrite*, CreatePFRecordWriteData, Args(int nDesiredAccess, void* pData, size_t nSize, ResourceKey& key), Args(nDesiredAccess, pData, nSize, key));
-	auto_METHOD_VIRTUAL(DatabasePackedFile, DatabasePackedFile, PFRecordWrite*, CreatePFRecordWrite, Args(int nDesiredAccess, size_t nChunkOffset, size_t nSize, ResourceKey& key), Args(nDesiredAccess, nChunkOffset, nSize, key));
-	auto_METHOD_VIRTUAL_(DatabasePackedFile, DatabasePackedFile, bool, Read);
-	auto_METHOD_VIRTUAL_(DatabasePackedFile, DatabasePackedFile, bool, ReadHeader);
-	auto_METHOD_VIRTUAL_(DatabasePackedFile, DatabasePackedFile, bool, Reset);
-	auto_METHOD_VIRTUAL_(DatabasePackedFile, DatabasePackedFile, bool, IsReadyForWrite);
-	auto_METHOD_VIRTUAL(DatabasePackedFile, DatabasePackedFile, bool, IsValidHeader, Args(char* header), Args(header));
-	auto_METHOD_VIRTUAL_(DatabasePackedFile, DatabasePackedFile, bool, ReadIndex);
-	auto_METHOD_VIRTUAL_(DatabasePackedFile, DatabasePackedFile, bool, WriteIndex);
-	auto_METHOD_VIRTUAL_(DatabasePackedFile, DatabasePackedFile, bool, StreamCanContainFileData);
-	auto_METHOD_VIRTUAL(DatabasePackedFile, DatabasePackedFile, PFIndexModifiable*, CreatePFIndexModifiable, Args(int nDesiredAccess), Args(nDesiredAccess));
-	auto_METHOD_VIRTUAL_VOID(DatabasePackedFile, DatabasePackedFile, ReleaseObject, Args(IO::EAIOZoneObject* pObject), Args(pObject));
-	auto_METHOD_VIRTUAL_VOID_(DatabasePackedFile, DatabasePackedFile, RenovateIndex);
-	auto_METHOD_VIRTUAL_(DatabasePackedFile, DatabasePackedFile, bool, func90h);
+	auto_METHOD_VIRTUAL(DatabasePackedFile, DatabasePackedFile, PFRecordRead*, CreateRecordRead, Args(IO::AccessFlags nDesiredAccess, RecordInfo* info, ResourceKey& key), Args(nDesiredAccess, info, key));
+	auto_METHOD_VIRTUAL(DatabasePackedFile, DatabasePackedFile, PFRecordRead*, CreateRecordReadCopy, Args(IO::AccessFlags nDesiredAccess, PFRecordRead* pOther, ResourceKey& key), Args(nDesiredAccess, pOther, key));
+	auto_METHOD_VIRTUAL(DatabasePackedFile, DatabasePackedFile, PFRecordWrite*, CreateRecordWriteData, Args(IO::AccessFlags nDesiredAccess, void* pData, size_t nSize, ResourceKey& key), Args(nDesiredAccess, pData, nSize, key));
+	auto_METHOD_VIRTUAL(DatabasePackedFile, DatabasePackedFile, PFRecordWrite*, CreateRecordWrite, Args(IO::AccessFlags nDesiredAccess, size_t nChunkOffset, size_t nSize, ResourceKey& key), Args(nDesiredAccess, nChunkOffset, nSize, key));
+	auto_METHOD_VIRTUAL_(DatabasePackedFile, DatabasePackedFile, bool, ReadHeaders);
+	auto_METHOD_VIRTUAL_(DatabasePackedFile, DatabasePackedFile, bool, ReadHeaderRecord);
+	auto_METHOD_VIRTUAL_(DatabasePackedFile, DatabasePackedFile, bool, WriteEmptyHeaderRecord);
+	auto_METHOD_VIRTUAL_(DatabasePackedFile, DatabasePackedFile, bool, WriteHeaderRecord);
+	auto_METHOD_VIRTUAL(DatabasePackedFile, DatabasePackedFile, bool, VerifyHeaderRecordIntegrity, Args(char* header), Args(header));
+	auto_METHOD_VIRTUAL_(DatabasePackedFile, DatabasePackedFile, bool, ReadIndexRecord);
+	auto_METHOD_VIRTUAL_(DatabasePackedFile, DatabasePackedFile, bool, WriteIndexRecord);
+	auto_METHOD_VIRTUAL_(DatabasePackedFile, DatabasePackedFile, bool, VerifyIndexRecordIntegrity);
+	auto_METHOD_VIRTUAL(DatabasePackedFile, DatabasePackedFile, PFIndexModifiable*, CreateIndex, Args(IO::AccessFlags nDesiredAccess), Args(nDesiredAccess));
+	auto_METHOD_VIRTUAL_VOID(DatabasePackedFile, DatabasePackedFile, DestroyIndex, Args(IO::EAIOZoneObject* pObject), Args(pObject));
+	auto_METHOD_VIRTUAL_VOID_(DatabasePackedFile, DatabasePackedFile, MakeIndexModifiable);
+	auto_METHOD_VIRTUAL_(DatabasePackedFile, DatabasePackedFile, bool, InitializeHoleTable);
 
 	auto_METHOD(DatabasePackedFile, int, ReadBytes, Args(void* pDst, size_t nSize), Args(pDst, nSize));
 	auto_METHOD(DatabasePackedFile, bool, ReadData, Args(void* pDst, size_t nChunkOffset, size_t nSize), Args(pDst, nChunkOffset, nSize));
@@ -243,8 +262,8 @@ namespace Resource
 	//// PFRecordRead.h ////
 	////////////////////////
 
-	PFRecordRead::PFRecordRead(DBPFItem& itemInfo, const ResourceKey& name, DatabasePackedFile* pParentDBPF)
-		: IPFRecord(PFRecordRead::kType, name, pParentDBPF, IO::kAccessFlagRead)
+	PFRecordRead::PFRecordRead(RecordInfo& itemInfo, const ResourceKey& name, DatabasePackedFile* pParentDBPF)
+		: PFRecordBase(PFRecordRead::kType, name, pParentDBPF, IO::AccessFlags::Read)
 		, field_24(0)
 		, field_28(-1)
 		, mInternalBuffer("ResourceMan/PFRecordRead")
@@ -256,20 +275,20 @@ namespace Resource
 	{
 		mInternalBuffer.AddRef();
 
-		if (mDBPFItem.mFlags == 0)
+		if (mDBPFItem.flags == 0)
 		{
-			mnSize = mDBPFItem.mnCompressedSize;
+			mnSize = mDBPFItem.compressedSize;
 			if (mnSize <= 512) mnFlags = kPFRRDataFitsBuffer;
 		}
 		else
 		{
-			mnSize = mDBPFItem.mnMemorySize;
+			mnSize = mDBPFItem.memorySize;
 			mnFlags = kPFRRDataFitsBuffer;
 		}
 	}
 
 	PFRecordRead::PFRecordRead(PFRecordRead* pOther, const ResourceKey& name, DatabasePackedFile* pParentDBPF)
-		: IPFRecord(PFRecordRead::kType, name, pParentDBPF, IO::kAccessFlagRead)
+		: PFRecordBase(PFRecordRead::kType, name, pParentDBPF, IO::AccessFlags::Read)
 		, field_24(0)
 		, field_28(-1)
 		, mInternalBuffer("ResourceMan/PFRecordRead")
@@ -290,9 +309,9 @@ namespace Resource
 
 	PFRecordRead::~PFRecordRead()
 	{
-		if (mnFileAccess != 0)
+		if (mFileAccess != IO::AccessFlags::None)
 		{
-			mpParentDBPF->func3Ch(this);
+			mpParentDBPF->CloseRecord(this);
 		}
 	}
 
@@ -306,18 +325,18 @@ namespace Resource
 		return ThreadedObject::Release();
 	}
 
-	auto_METHOD_(PFRecordRead, ResourceKey&, GetName);
-	auto_METHOD_VOID(PFRecordRead, SetName, Args(const ResourceKey& name), Args(name));
+	auto_METHOD_(PFRecordRead, const ResourceKey&, GetKey);
+	auto_METHOD_VOID(PFRecordRead, SetKey, Args(const ResourceKey& name), Args(name));
 	auto_METHOD_(PFRecordRead, IO::IStream*, GetStream);
-	auto_METHOD_const_(PFRecordRead, DatabasePackedFile*, GetParentDBPF);
+	auto_METHOD_(PFRecordRead, Database*, GetDatabase);
 
-	auto_METHOD_(PFRecordRead, bool, Open);
-	auto_METHOD_(PFRecordRead, bool, Close);
-	auto_METHOD_(PFRecordRead, int, func28h);
+	auto_METHOD_(PFRecordRead, bool, RecordOpen);
+	auto_METHOD_(PFRecordRead, bool, RecordClose);
+	auto_METHOD_(PFRecordRead, int, DoPostClose);
 
 
 	auto_METHOD_VIRTUAL_const_(PFRecordRead, IStream, uint32_t, GetType);
-	auto_METHOD_VIRTUAL_const_(PFRecordRead, IStream, int, GetAccessFlags);
+	auto_METHOD_VIRTUAL_const_(PFRecordRead, IStream, IO::AccessFlags, GetAccessFlags);
 	auto_METHOD_VIRTUAL_const_(PFRecordRead, IStream, IO::FileError, GetState);
 	// auto_METHOD_(		PFRecordRead, bool,	Close);  // Already overriden with IPFRecord
 
@@ -338,7 +357,7 @@ namespace Resource
 	/////////////////////////
 
 	PFRecordWrite::PFRecordWrite(void* pData, size_t nSize, bool bUsePointer, ResourceKey& name, DatabasePackedFile* pParentDBPF)
-		: IPFRecord(kType, name, pParentDBPF, IO::kAccessFlagReadWrite)
+		: PFRecordBase(kType, name, pParentDBPF, IO::AccessFlags::ReadWrite)
 		, field_24("ResourceMan/PFRecordWrite")
 		, field_48((const char*)nullptr)
 		, field_274(false)
@@ -354,7 +373,7 @@ namespace Resource
 	}
 
 	PFRecordWrite::PFRecordWrite(size_t nChunkOffset, size_t nSize, bool bUsePointer, ResourceKey& name, DatabasePackedFile* pParentDBPF)
-		: IPFRecord(kType, name, pParentDBPF, IO::kAccessFlagReadWrite)
+		: PFRecordBase(kType, name, pParentDBPF, IO::AccessFlags::ReadWrite)
 		, field_24("ResourceMan/PFRecordWrite")
 		, field_48((const char*)nullptr)
 		, field_274(false)
@@ -385,14 +404,14 @@ namespace Resource
 
 	PFRecordWrite::~PFRecordWrite()
 	{
-		mpParentDBPF->func3Ch(this);
+		mpParentDBPF->CloseRecord(this);
 
 		mpParentDBPF = nullptr;
-		mnFileAccess = 0;
+		mFileAccess = IO::AccessFlags::None;
 		field_274 = false;
 		mnStreamRefCount = 0;
 
-		if (field_48.GetAccessFlags() != 0)
+		if (field_48.GetAccessFlags() != IO::AccessFlags::None)
 		{
 			field_48.Close();
 
@@ -414,18 +433,18 @@ namespace Resource
 	}
 
 
-	auto_METHOD_(PFRecordWrite, ResourceKey&, GetName);
-	auto_METHOD_VOID(PFRecordWrite, SetName, Args(const ResourceKey& name), Args(name));
+	auto_METHOD_(PFRecordWrite, const ResourceKey&, GetKey);
+	auto_METHOD_VOID(PFRecordWrite, SetKey, Args(const ResourceKey& name), Args(name));
 	auto_METHOD_(PFRecordWrite, IO::IStream*, GetStream);
-	auto_METHOD_const_(PFRecordWrite, DatabasePackedFile*, GetParentDBPF);
+	auto_METHOD_(PFRecordWrite, Database*, GetDatabase);
 
-	auto_METHOD_(PFRecordWrite, bool, Open);
-	auto_METHOD_(PFRecordWrite, bool, Close);
-	auto_METHOD_(PFRecordWrite, int, func28h);
+	auto_METHOD_(PFRecordWrite, bool, RecordOpen);
+	auto_METHOD_(PFRecordWrite, bool, RecordClose);
+	auto_METHOD_(PFRecordWrite, int, DoPostClose);
 
 
 	auto_METHOD_const_(PFRecordWrite, uint32_t, GetType);
-	auto_METHOD_const_(PFRecordWrite, int, GetAccessFlags);
+	auto_METHOD_const_(PFRecordWrite, IO::AccessFlags, GetAccessFlags);
 	auto_METHOD_const_(PFRecordWrite, IO::FileError, GetState);
 	// auto_METHOD_(		PFRecordWrite, bool,	Close);  // Already overriden with IPFRecord
 
@@ -459,13 +478,13 @@ namespace Resource
 	auto_METHOD_(PFIndexModifiable, bool, Reset);
 	auto_METHOD_(PFIndexModifiable, size_t, GetTotalDiskSize);
 	auto_METHOD_(PFIndexModifiable, size_t, GetDataEnd);
-	auto_METHOD(PFIndexModifiable, size_t, GetFiles, Args(vector<ResourceKey>& dstVector, IResourceFilter* filter), Args(dstVector, filter));
-	auto_METHOD(PFIndexModifiable, size_t, GetAllFiles, Args(vector<ResourceKey>& dstVector), Args(dstVector));
+	auto_METHOD(PFIndexModifiable, size_t, GetFiles, Args(eastl::vector<ResourceKey>& dstVector, IKeyFilter* filter), Args(dstVector, filter));
+	auto_METHOD(PFIndexModifiable, size_t, GetAllFiles, Args(eastl::vector<ResourceKey>& dstVector), Args(dstVector));
 	auto_METHOD(PFIndexModifiable, bool, func24h, Args(int arg_0, size_t fileDataBegin, size_t fileDataEnd), Args(arg_0, fileDataBegin, fileDataEnd));
 
-	auto_METHOD(PFIndexModifiable, DBPFItem*, GetFileInfo, Args(const ResourceKey& fileName), Args(fileName));
-	auto_METHOD(PFIndexModifiable, DBPFItem&, PutFileInfo, Args(const ResourceKey& fileName, DBPFItem& info), Args(fileName, info));
-	auto_METHOD(PFIndexModifiable, bool, RemoveFile, Args(const ResourceKey& fileName, DBPFItem& dstInfo), Args(fileName, dstInfo));
+	auto_METHOD(PFIndexModifiable, RecordInfo*, GetFileInfo, Args(const ResourceKey& fileName), Args(fileName));
+	auto_METHOD(PFIndexModifiable, RecordInfo&, PutFileInfo, Args(const ResourceKey& fileName, RecordInfo& info), Args(fileName, info));
+	auto_METHOD(PFIndexModifiable, bool, RemoveFile, Args(const ResourceKey& fileName, RecordInfo& dstInfo), Args(fileName, dstInfo));
 
 	auto_METHOD(PFIndexModifiable, bool, Read, Args(void* pIndexData, size_t nIndexSize, size_t nIndexCount, bool arg_C), Args(pIndexData, nIndexSize, nIndexCount, arg_C));
 	auto_METHOD(PFIndexModifiable, bool, Write, Args(void*& pDstIndexData, size_t& nDstIndexSize, size_t nIndexCount, bool arg_C), Args(pDstIndexData, nDstIndexSize, nIndexCount, arg_C));
@@ -477,5 +496,163 @@ namespace Resource
 	/////////////////////////////
 
 
+
+	auto_STATIC_METHOD(Paths, const char16_t*, GetDirFromID, Args(PathID dirID), Args(dirID));
+	auto_STATIC_METHOD(Paths, bool, GetDirectory, Args(PathID dirID, eastl::string16& dst), Args(dirID, dst));
+	auto_STATIC_METHOD_VOID(Paths, RegisterDirectory, Args(PathID dirID, const char16_t* path), Args(dirID, path));
+
+	auto_STATIC_METHOD(Paths, Database*, GetSaveArea,
+		Args(SaveAreaID areaID),
+		Args(areaID));
+
+	auto_STATIC_METHOD_VOID(Paths, RegisterSaveArea, 
+		Args(SaveAreaID areaID, Resource::Database* pDatabase, void* arg), 
+		Args(areaID, pDatabase, arg));
+
+	const char16_t* Paths::GetDataDir() {
+		return GetDirFromID(PathID::Data);
+	}
+	const char16_t* Paths::GetAppDir() {
+		return GetDirFromID(PathID::App);
+	}
+	const char16_t* Paths::GetDebugDir() {
+		return GetDirFromID(PathID::Debug);
+	}
+
+	//////////////////////
+
+	EAIOZoneObject_AMBIGOUS(DatabaseDirectoryFiles);
+
+	//auto_METHOD_VIRTUAL_(DatabaseDirectoryFiles, DatabaseDirectoryFiles, bool, Initialize);
+	auto_METHOD_VIRTUAL_(DatabaseDirectoryFiles, DatabaseDirectoryFiles, bool, Dispose);
+	//auto_METHOD_VIRTUAL_const_(DatabaseDirectoryFiles, DatabaseDirectoryFiles, uint32_t, GetDatabaseType);
+	auto_METHOD_VIRTUAL_const_(DatabaseDirectoryFiles, DatabaseDirectoryFiles, int, GetRefCount);
+	auto_METHOD_VIRTUAL_VOID(DatabaseDirectoryFiles, DatabaseDirectoryFiles, Lock, Args(bool bLock), Args(bLock));
+	auto_METHOD_VIRTUAL(DatabaseDirectoryFiles, DatabaseDirectoryFiles, bool, Open, Args(IO::AccessFlags nDesiredAccess, IO::CD nCreateDisposition, bool arg_8), Args(nDesiredAccess, nCreateDisposition, arg_8));
+	auto_METHOD_VIRTUAL_(DatabaseDirectoryFiles, DatabaseDirectoryFiles, bool, Close);
+	//auto_METHOD_VIRTUAL_const_(DatabaseDirectoryFiles, DatabaseDirectoryFiles, int, GetAccessFlags);
+	auto_METHOD_VIRTUAL_(DatabaseDirectoryFiles, DatabaseDirectoryFiles, bool, Flush);
+	//auto_METHOD_VIRTUAL_const_(DatabaseDirectoryFiles, DatabaseDirectoryFiles, char16_t*, GetLocation);
+	auto_METHOD_VIRTUAL(DatabaseDirectoryFiles, DatabaseDirectoryFiles, bool, SetLocation, Args(const char16_t* path), Args(path));
+	auto_METHOD_VIRTUAL(DatabaseDirectoryFiles, DatabaseDirectoryFiles, size_t, GetKeyList, Args(eastl::vector<ResourceKey>& dstVector, IKeyFilter* filter), Args(dstVector, filter));
+	auto_METHOD_VIRTUAL(DatabaseDirectoryFiles, DatabaseDirectoryFiles, bool, OpenRecord, Args(const ResourceKey& name, IRecord** pDst, IO::AccessFlags nDesiredAccess, IO::CD nCreateDisposition, bool arg_10, RecordInfo* pDstInfo), Args(name, pDst, nDesiredAccess, nCreateDisposition, arg_10, pDstInfo));
+	auto_METHOD_VIRTUAL(DatabaseDirectoryFiles, DatabaseDirectoryFiles, int, GetOpenCount, Args(const ResourceKey& name), Args(name));
+	auto_METHOD_VIRTUAL(DatabaseDirectoryFiles, DatabaseDirectoryFiles, bool, CloseRecord, Args(IRecord* pRecord), Args(pRecord));
+	auto_METHOD_VIRTUAL(DatabaseDirectoryFiles, DatabaseDirectoryFiles, bool, DeleteRecord, Args(const ResourceKey& name), Args(name));
+	auto_METHOD_VIRTUAL(DatabaseDirectoryFiles, DatabaseDirectoryFiles, bool, Attach, Args(bool arg_0, IResourceManager* pResourceMan, bool arg_8), Args(arg_0, pResourceMan, arg_8));
+	//auto_METHOD_VIRTUAL_const_(DatabaseDirectoryFiles, DatabaseDirectoryFiles, ICoreAllocator*, GetAllocator);
+
+	auto_METHOD_VIRTUAL(DatabaseDirectoryFiles, DatabaseDirectoryFiles, bool, AddExtensionMapping,
+		Args(const char16_t* extension, uint32_t typeID), Args(extension, typeID));
+
+	auto_METHOD_VIRTUAL(DatabaseDirectoryFiles, DatabaseDirectoryFiles, int, UpdateRecordData,
+		Args(const char16_t* arg0, eastl::vector<ResourceKey>& keys, int arg2), Args(arg0, keys, arg2));
+
+	auto_METHOD_VIRTUAL(DatabaseDirectoryFiles, DatabaseDirectoryFiles, int, UpdateRecordData2,
+		Args(eastl::vector<ResourceKey>& keys), Args(keys));
+
+	auto_METHOD_VIRTUAL(DatabaseDirectoryFiles, DatabaseDirectoryFiles, uint32_t, GetTypeFromTypename,
+		Args(const char16_t* typeName), Args(typeName));
+
+	auto_METHOD_VIRTUAL(DatabaseDirectoryFiles, DatabaseDirectoryFiles, const char16_t*, GetTypenameFromType,
+		Args(uint32_t typeID), Args(typeID));
+
+	auto_METHOD_VIRTUAL(DatabaseDirectoryFiles, DatabaseDirectoryFiles, bool, GetFileNameFromKey,
+		Args(const ResourceKey& key, char16_t* dst), Args(key, dst));
+
+	auto_METHOD_VIRTUAL(DatabaseDirectoryFiles, DatabaseDirectoryFiles, bool, GetKeyFromFileName,
+		Args(const char16_t* fileName, ResourceKey& dst), Args(fileName, dst));
+
+
+	bool DatabaseDirectoryFiles::Initialize()
+	{
+		if (!mIsInitialized)
+		{
+			mIsInitialized = true;
+		}
+
+		return true;
+	}
+
+	ICoreAllocator* DatabaseDirectoryFiles::GetAllocator() const {
+		return mpAllocator;
+	}
+
+	uint32_t DatabaseDirectoryFiles::GetDatabaseType() const {
+		return DATABASE_TYPE;
+	}
+
+	IO::AccessFlags DatabaseDirectoryFiles::GetAccessFlags() const {
+		return mAccessFlags;
+	}
+
+	const char16_t* DatabaseDirectoryFiles::GetLocation() const {
+		return mLocation.c_str();
+	}
+
+	void DatabaseDirectoryFiles::SetFileNameToKeyConverter(FileNameToKeyConverter_t callback)
+	{
+		mFileNameToKeyConverter = callback;
+	}
+
+	uint32_t DatabaseDirectoryFiles::GetDefaultGroupId() {
+		return mDefaultGroupID;
+	}
+	void DatabaseDirectoryFiles::SetDefaultGroupId(uint32_t groupID) {
+		mDefaultGroupID = groupID;
+	}
+
+	void* DatabaseDirectoryFiles::Cast(uint32_t type) const
+	{
+		if (type == DatabaseDirectoryFiles::TYPE)
+		{
+			return (DatabaseDirectoryFiles*)this;
+		}
+		else if (type == Object::TYPE)
+		{
+			return (Object*)this;
+		}
+		else
+		{
+			return nullptr;
+		}
+	}
+
+	DatabaseDirectoryFiles::DatabaseDirectoryFiles(const char16_t* location, ICoreAllocator* allocator)
+		: mIsInitialized(false)
+		, mpAllocator(allocator == nullptr ? IO::GetAllocator() : allocator)
+		, field_14()
+		, field_15()
+		, mAccessFlags()
+		, mLocation()
+		, mExtensionMapAllocator(mpAllocator, 0x20, 0x24)
+		, mRecordListDataMapAllocator(mpAllocator, 0x80, 0x48)
+		, mExtensionMap(FixedPoolAllocatorAdapter(nullptr, &mExtensionMapAllocator))
+		, mRecordListDataMap(FixedPoolAllocatorAdapter(nullptr, &mRecordListDataMapAllocator))
+		, mDefaultGroupID(0)
+		, mpResourceManager()
+		, mFileNameToKeyConverter()
+		, mMutex(nullptr, true)
+		, field_B8{}
+	{
+		mLocation = location;
+		IO::EnsureTrailingPathSeparator(mLocation);
+	}
+
+	DatabaseDirectoryFiles::~DatabaseDirectoryFiles()
+	{
+		if (mAccessFlags != IO::AccessFlags::None) {
+			Close();
+		}
+	}
 }
+
+auto_STATIC_METHOD(IO, bool, EnsureTrailingPathSeparator, Args(eastl::string16& path), Args(path));
+
+auto_STATIC_METHOD_VOID(Resource, ReadExtensionMappingsFromPropFile,
+	Args(uint32_t instanceID, DatabaseDirectoryFiles* database), Args(instanceID, database));
+
+
+
+
 #endif

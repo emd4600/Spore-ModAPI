@@ -24,8 +24,6 @@
 #include <EASTL\intrusive_ptr.h>
 #include <Spore\RenderWare\Mesh.h>
 
-using namespace eastl;
-
 namespace Graphics
 {
 
@@ -55,7 +53,7 @@ namespace Graphics
 			mpCallback = method;
 		}
 
-	protected:
+	public:
 		/* 00h */	GeometryType mGeomType;
 		/* 04h */	int mFlags;
 		/* 08h */	int mElementTypes;
@@ -85,8 +83,7 @@ namespace Graphics
 		static MaterialShader* GetMaterialShader(uint32_t shaderID);
 
 	};
-
-	static_assert(sizeof(MaterialShader) == 0x48, "sizeof(MaterialShader) != 0x48");
+	ASSERT_SIZE(MaterialShader, 0x48);
 	
 	namespace Addresses(MaterialShader) {
 		DeclareAddress(Reset);

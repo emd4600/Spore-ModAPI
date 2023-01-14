@@ -3,9 +3,7 @@
 #include <Spore\Graphics\MaterialShader.h>
 #include <Spore\Graphics\ShaderDataUniform.h>
 #include <EASTL\vector.h>
-#include <D3D9.h>
-
-using namespace eastl;
+#include <d3d9.h>
 
 namespace Graphics
 {
@@ -26,13 +24,12 @@ namespace Graphics
 		static BOOL Load(RenderWare::Mesh* mesh);
 
 	protected:
-		/* 48h */	intrusive_ptr<IDirect3DVertexShader9> mVertexShaders[16];
-		/* 88h */	intrusive_ptr<IDirect3DPixelShader9> mPixelShaders[16];
-		/* C8h */	vector<ShaderDataUniform> mVertexShaderData[16];
-		/* 208h */	vector<ShaderDataUniform> mPixelShaderData[16];
+		/* 48h */	eastl::intrusive_ptr<IDirect3DVertexShader9> mVertexShaders[16];
+		/* 88h */	eastl::intrusive_ptr<IDirect3DPixelShader9> mPixelShaders[16];
+		/* C8h */	eastl::vector<ShaderDataUniform> mVertexShaderData[16];
+		/* 208h */	eastl::vector<ShaderDataUniform> mPixelShaderData[16];
 	};
-
-	static_assert(sizeof(StandardShader) == 0x348, "sizeof(StandardShader) != 0x348");
+	ASSERT_SIZE(StandardShader, 0x348);
 
 	namespace Addresses(StandardShader) {
 		DeclareAddress(ctor);

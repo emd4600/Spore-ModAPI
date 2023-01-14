@@ -24,7 +24,7 @@ namespace Simulator
 	{
 		const char* const TriggerFile = "TriggerConfigWASD";
 
-		enum
+		enum Actions
 		{
 			kMoveForward = 0x00000001,
 			kMoveBackward = 0x00000002,

@@ -5,6 +5,7 @@
 #include <Spore\CommonIDs.h>
 #include <Spore\Graphics\Model.h>
 #include <Spore\Graphics\cModelInstance.h>
+#include <Spore\Graphics\cModelWorld.h>
 #include <Spore\Graphics\ITextureManager.h>
 #include <Spore\RenderWare\RenderWareFile.h>
 #include <Spore\App\PropertyList.h>
@@ -54,7 +55,7 @@ Graphics::cModelInstance* CopyMesh(Graphics::cModelInstance* mesh) {
 	copy->mBoneRanges = mesh->mBoneRanges;
 	copy->mMaterialInfos = mesh->mMaterialInfos;
 	copy->mRegionMaterialInfos = mesh->mRegionMaterialInfos;
-	copy->field_70 = mesh->field_70;
+	copy->mModelToWorldTransform = mesh->mModelToWorldTransform;
 	copy->mBoundingBox = mesh->mBoundingBox;
 	copy->mBoundingRadius = mesh->mBoundingRadius;
 	copy->mpRenderWare = mesh->mpRenderWare;
@@ -73,8 +74,8 @@ Graphics::cModelInstance* CopyMesh(Graphics::cModelInstance* mesh) {
 			int size = material->states[0]->instancedSize;
 			void* buffer = _aligned_malloc(size, 16);
 			memcpy_s(buffer, size, material->states[0], size);
-			uint32_t id = MaterialManager.AssignRWMaterial((RenderWare::CompiledState*)buffer, mesh->mpRenderWare.get());
-			copy->mMaterials.push_back(MaterialManager.GetMaterial(id));
+			uint32_t id = MaterialManager.GetIDFromCompiledState((RenderWare::CompiledState*)buffer, mesh->mpRenderWare.get());
+			copy->mMaterials.push_back(MaterialManager.GetMaterialInstance(id));
 		}
 	}
 	return copy;
@@ -114,7 +115,7 @@ bool ApplyOverride(Graphics::cMWModelInternal* asset, cModelInstancePtr& mesh, i
 			return false;
 		}
 
-		string8* overrideNames;
+		eastl::string8* overrideNames;
 		size_t overrideCount;
 		App::Property::GetArrayString8(propList, propertyID, overrideCount, overrideNames);
 
@@ -128,7 +129,7 @@ bool ApplyOverride(Graphics::cMWModelInternal* asset, cModelInstancePtr& mesh, i
 			return false;
 		}
 
-		map<string, ResourceKey> overrides;
+		eastl::map<eastl::string, ResourceKey> overrides;
 		for (size_t i = 0; i < overrideCount; ++i) {
 			overrides[overrideNames[i]] = overrideKeys[i];
 		}
@@ -157,7 +158,7 @@ bool ApplyOverride(Graphics::cMWModelInternal* asset, cModelInstancePtr& mesh, i
 
 						char* name = ((char*)raster) + 4;
 
-						auto it = overrides.find(string(name));
+						auto it = overrides.find(eastl::string(name));
 						if (it == overrides.end()) {
 							App::ConsolePrintF("0x%x!0x%x.prop LOD%i error: no override found for texture slot \"%s\"",
 								propList->GetResourceKey().groupID, propList->GetResourceKey().instanceID, lod, name);
@@ -195,12 +196,11 @@ bool ApplyOverride(Graphics::Model* pModel) {
 }
 
 
-class Unk {};
-member_detour(SetModel__detour, Unk, int(Graphics::Model**)) {
-	int detoured(Graphics::Model** ppModel) {
+member_detour(FinishBackgroundLoad__detour, Graphics::cModelWorld, void(Graphics::Model**)) {
+	void detoured(Graphics::Model** ppModel) {
 		Graphics::Model* model = *ppModel;
 		
-		int result = original_function(this, ppModel);
+		original_function(this, ppModel);
 
 		if (!ApplyOverride(model)) {
 			auto asset = static_cast<Graphics::cMWModelInternal*>(model);
@@ -211,12 +211,10 @@ member_detour(SetModel__detour, Unk, int(Graphics::Model**)) {
 			asset->mMeshLodHi = nullptr;
 			asset->mMeshHull = nullptr;
 		}
-
-		return result;
 	}
 };
 
-member_detour(SetModel2__detour, Unk, void(App::PropertyList*, Graphics::cMWModelInternal*, int)) {
+member_detour(UpdateWithLODMeshes__detour, Graphics::cModelWorld, void(App::PropertyList*, Graphics::cMWModelInternal*, int)) {
 	void detoured(App::PropertyList* propList, Graphics::cMWModelInternal* pAsset, int flags) {
 		Graphics::Model* model = static_cast<Graphics::Model*>(pAsset);
 
@@ -236,8 +234,8 @@ member_detour(SetModel2__detour, Unk, void(App::PropertyList*, Graphics::cMWMode
 
 long TextureOverride::AttachDetour() {
 	long result = 0;
-	result |= SetModel__detour::attach(Address(SelectAddress(0x7523E0, , 0x7515D0)));
-	result |= SetModel2__detour::attach(Address(SelectAddress(0x74B7C0, , 0x74A990)));
+	result |= FinishBackgroundLoad__detour::attach(GetAddress(Graphics::cModelWorld, FinishBackgroundLoad));
+	result |= UpdateWithLODMeshes__detour::attach(GetAddress(Graphics::cModelWorld, UpdateWithLODMeshes));
 	return result;
 }
 

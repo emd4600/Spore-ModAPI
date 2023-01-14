@@ -42,7 +42,7 @@ namespace Simulator
 		SpacePlayerData::Get()->mPlayerEmpireID = pRecord->mEmpireID;
 		SpacePlayerData::Get()->mpPlayerEmpire = StarManager.GetEmpireForStar(pRecord);
 
-		intrusive_ptr<cPlanet> planet;
+		cPlanetPtr planet;
 		StarManager.RecordToPlanet(pRecord->GetPlanetRecord(0), planet);
 		SpacePlayerData::Get()->mpActivePlanet = planet.get();
 

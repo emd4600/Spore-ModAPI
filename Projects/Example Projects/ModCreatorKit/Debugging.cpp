@@ -50,9 +50,9 @@ long Debugging::AttachDetour()
 	return result;
 }
 
-bool Debugging::GetDebugInformation(const Resource::DBPF* pDBPF, DebugInformation** ppDst) const
+bool Debugging::GetDebugInformation(Database* database, DebugInformation** ppDst) const
 {
-	auto it = mPackageMap.find(pDBPF);
+	auto it = mPackageMap.find(database);
 	if (it != mPackageMap.end())
 	{
 		if (ppDst) *ppDst = it->second.get();
@@ -77,14 +77,14 @@ void Debugging::DetectDBPFs()
 	uint32_t groupID = id("_SporeModder");
 
 	vector<uint32_t> propNames;
-	if (PropManager.GetAllListIDs(groupID, propNames))
+	if (PropManager.GetPropertyListIDs(groupID, propNames))
 	{
 		for (uint32_t name : propNames) {
 			intrusive_ptr<DebugInformation> pInfo = new DebugInformation();
 			if (pInfo->Read(name, groupID))
 			{
-				DBPF* pDBPF = IResourceManager::Get()->GetDBPF({ name, TypeIDs::prop, groupID });
-				mPackageMap[pDBPF] = pInfo;
+				auto database = ResourceManager.FindDatabase({ name, TypeIDs::prop, groupID });
+				mPackageMap[database] = pInfo;
 			}
 		}
 	}

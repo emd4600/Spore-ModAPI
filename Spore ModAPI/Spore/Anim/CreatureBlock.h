@@ -8,7 +8,7 @@ namespace Anim
 
 	struct CreatureBlock
 	{
-		enum {
+		enum CapFlags {
 			kCapFlagRoot = 1,
 			kCapFlagLimb = 2,
 			kCapFlagFoot = 4,

@@ -3,7 +3,7 @@
 #include <Spore\Internal.h>
 #include <Spore\App\IMessageListener.h>
 #include <Spore\Resource\ResourceObject.h>
-#include <Spore\Resource\DatabasePackedFile.h>
+#include <Spore\Resource\Database.h>
 #include <Spore\RenderWare\Raster.h>
 #include <EASTL\hash_map.h>
 #include <EASTL\string.h>
@@ -16,7 +16,7 @@ namespace App
 	///
 	/// It can be used to get the path to the My Spore Creations folder:
 	/// ~~~~~~~~{.cpp}
-	/// string16 path;
+	/// eastl::string16 path;
 	/// ThumbnailImportExport.GetFolderPath(TypeIDs::crt, path);
 	/// // Now path is something like 'C:\Users\...\My Documents\My Spore Creations\Creatures'
 	/// ~~~~~~~~
@@ -28,12 +28,12 @@ namespace App
 	public:
 		/// Gets the filepath of the folder where the .PNGs of the creation type are stored.
 		/// @param creationType One of the types in TypeIDs, such as 'crt', 'bld',...
-		/// @param[out] dst The string where the path will be written.
-		bool GetFolderPath(uint32_t creationType, string16& dst);
+		/// @param[out] dst The eastl::string where the path will be written.
+		bool GetFolderPath(uint32_t creationType, eastl::string16& dst);
 
 		/// Used to obtain a path from a locale file, by default `0x19F76D11.locale`, similar to the one that would
 		/// return GetFolderPath()
-		bool FolderPathFromLocale(uint32_t instanceID, string16& dst, uint32_t tableID = 0xFFFFFFFF);
+		bool FolderPathFromLocale(uint32_t instanceID, eastl::string16& dst, uint32_t tableID = 0xFFFFFFFF);
 
 		/// Encodes the given resource into a `.png` image and saves it, both in the given package and in the
 		/// "My Spore Creations" in the user Documents folder. 
@@ -44,24 +44,24 @@ namespace App
 		/// 
 		/// @param pResource The resource object to encode inside the PNG. It will be encoded using the appropriate Resource::IResourceFactory
 		/// @param pImage The raster that is written as the image
-		/// @param pDBPF The DBPF taht contains the pollen metadata, and where the PNG will be saved
+		/// @param database The Database taht contains the pollen metadata, and where the PNG will be saved
 		/// @param forceReplace [Optional] If false (by default), if the `.png` already exists in the folder, it will try writing variants like `(1)`, `(2)`,...
 		/// @param disableSteganography [Optional] If false (by default), the data in the `.png` will be stored in a special way meant to save space.
 		/// @returns `true` on success, `false` if something failed.
-		bool SavePNG(Resource::ResourceObject* pResource, RenderWare::Raster* pImage, Resource::DBPF* pDBPF, 
+		bool SavePNG(Resource::ResourceObject* pResource, RenderWare::Raster* pImage, Resource::Database* database, 
 			bool forceReplace = false, bool disableSteganography = false);
 
 		static Thumbnail_cImportExport* Get();
 
 		// Not finished yet, but it's not important
 	private:
-		/* 04h */	hash_map<int, int> field_04;
-		/* 24h */	hash_map<int, int> field_24;
+		/* 04h */	eastl::hash_map<int, int> field_04;
+		/* 24h */	eastl::hash_map<int, int> field_24;
 		/* 44h */	int field_44;  // not initialized
-		/* 48h */	hash_map<int, int> field_48;
-		/* 68h */	hash_map<int, int> field_68;
+		/* 48h */	eastl::hash_map<int, int> field_48;
+		/* 68h */	eastl::hash_map<int, int> field_68;
 
-		// other fields are string16 with the creation paths
+		// other fields are eastl::string16 with the creation paths
 	};
 
 	namespace Addresses(Thumbnail_cImportExport)

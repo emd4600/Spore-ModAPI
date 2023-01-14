@@ -19,7 +19,7 @@
 
 #pragma once
 
-#include <Spore\Resource\IPFRecord.h>
+#include <Spore\Resource\PFRecordBase.h>
 #include <Spore\Resource\DatabasePackedFile.h>
 #include <Spore\IO\FileStream.h>
 #include <Spore\IO\StreamMemory.h>
@@ -32,11 +32,9 @@ namespace Resource
 	/// This class is used to write data to a file contained inside a DBPF. Use PFRecordRead::GetStream() to get the
 	/// IStream that can be used to write the file.
 	///
-	class PFRecordWrite : public IPFRecord, IO::IStream
+	class PFRecordWrite : public PFRecordBase, IO::IStream
 	{
 	public:
-		friend class DatabasePackedFile;
-
 		static const uint32_t kType = 0x12E4A892;
 
 		PFRecordWrite(void* pData, size_t nSize, bool bUsePointer, ResourceKey& name, DatabasePackedFile* pParentDBPF);
@@ -46,30 +44,30 @@ namespace Resource
 		virtual int AddRef() override;
 		virtual int Release() override;
 
-		//// IPFRecord ////
+		//// IRecord ////
 
-		/* 10h */	virtual ResourceKey&	GetName() override;
-		/* 14h */	virtual void			SetName(const ResourceKey& name) override;
+		/* 10h */	virtual const ResourceKey&	GetKey() override;
+		/* 14h */	virtual void			SetKey(const ResourceKey& name) override;
 
 		/* 18h */	virtual IO::IStream* GetStream() override;
 
-		/* 1Ch */	virtual DatabasePackedFile* GetParentDBPF() const override;
+		/* 1Ch */	virtual Database* GetDatabase() override;
 
-		/* 20h */	virtual bool Open() override;
-		/* 24h */	virtual bool Close() override;
-		/* 28h */	virtual int func28h() override;
+		/* 20h */	virtual bool RecordOpen() override;
+		/* 24h */	virtual bool RecordClose() override;
+		/* 28h */	virtual int DoPostClose() override;
 
 		//// IStream ////
 
 		/* 0Ch */	virtual uint32_t	GetType() const override;
-		/* 10h */	virtual int			GetAccessFlags() const override;
+		/* 10h */	virtual IO::AccessFlags	GetAccessFlags() const override;
 		/* 14h */	virtual IO::FileError	GetState() const override;
-		// /* 18h */	virtual bool		Close() override;  // already overriden with IPFRecord
+		// /* 18h */	virtual bool		Close() override;  // already overriden with IRecord
 
 		/* 1Ch */	virtual IO::size_type	GetSize() const override;
 		/* 20h */	virtual bool		SetSize(IO::size_type size) override;  // does nothing
-		/* 24h */	virtual int			GetPosition(IO::PositionType positionType = IO::kPositionTypeBegin) const override;
-		/* 28h */	virtual bool		SetPosition(int distance, IO::PositionType positionType = IO::kPositionTypeBegin) override;
+		/* 24h */	virtual int			GetPosition(IO::PositionType positionType = IO::PositionType::Begin) const override;
+		/* 28h */	virtual bool		SetPosition(int distance, IO::PositionType positionType = IO::PositionType::Begin) override;
 		/* 2Ch */	virtual int			GetAvailable() const override;
 
 		/* 30h */	virtual int		Read(void* pData, size_t nSize) override;
@@ -82,13 +80,7 @@ namespace Resource
 		/* 274h */	bool field_274;
 		/* 278h */	int mnStreamRefCount;  // decreased when calling Close()
 	};
-
-	///////////////////////////////////
-	//// INTERNAL IMPLEMENENTATION ////
-	///////////////////////////////////
-
-	static_assert(sizeof(PFRecordWrite) == 0x27C, "sizeof(PFRecordWrite) != 27Ch");
-
+	ASSERT_SIZE(PFRecordWrite, 0x27C);
 	
 	namespace Addresses(PFRecordWrite)
 	{
@@ -112,6 +104,13 @@ namespace Resource
 		DeclareAddress(Read);
 		DeclareAddress(Flush);
 		DeclareAddress(Write);
+
+		DeclareAddress(GetKey);
+		DeclareAddress(SetKey);
+		DeclareAddress(GetDatabase);
+		DeclareAddress(RecordOpen);
+		DeclareAddress(RecordClose);
+		DeclareAddress(DoPostClose);
 
 	}
 

@@ -96,19 +96,14 @@ namespace Simulator
 		static void CreateStarEffect(IVisualEffectPtr& dst, Swarm::IEffectsWorld* pEffectWorld, StarType starType);
 
 	public:
-		/* 0Ch */	intrusive_ptr<cStar> mpOwnerStar;
-		/* 10h */	vector<cPlanetPtr> mPlanets;
-		/* 24h */	vector<cCelestialBodyPtr> mCelestialBodies;
+		/* 0Ch */	eastl::intrusive_ptr<cStar> mpOwnerStar;
+		/* 10h */	eastl::vector<cPlanetPtr> mPlanets;
+		/* 24h */	eastl::vector<cCelestialBodyPtr> mCelestialBodies;
 		/* 38h */	cCelestialBodyPtr mpStar1;
 		/* 3Ch */	cCelestialBodyPtr mpStar2;
-		/* 40h */	vector<ModelPtr> field_40;
+		/* 40h */	eastl::vector<ModelPtr> field_40;
 	};
-
-	/////////////////////////////////
-	//// INTERNAL IMPLEMENTATION ////
-	/////////////////////////////////
-
-	static_assert(sizeof(cSolarSystem) == 0x54, "sizeof(cSolarSystem) != 54h");
+	ASSERT_SIZE(cSolarSystem, 0x54);
 
 	namespace Addresses(cSolarSystem)
 	{

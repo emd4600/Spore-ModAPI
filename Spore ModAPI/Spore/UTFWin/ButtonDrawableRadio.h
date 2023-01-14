@@ -84,15 +84,10 @@ namespace UTFWin
 		virtual void SetImage(Image* pImage, bool bTileable) override;
 
 	protected:
-		/* 10h */	intrusive_ptr<Image> mpImage;
+		/* 10h */	ImagePtr mpImage;
 		/* 14h */	bool mbTileable;
 	};
-
-	/////////////////////////////////
-	//// INTERNAL IMPLEMENTATION ////
-	/////////////////////////////////
-
-	static_assert(sizeof(ButtonDrawableRadio) == 0x18, "sizeof(ButtonDrawableRadio) != 18h");
+	ASSERT_SIZE(ButtonDrawableRadio, 0x18);
 
 	namespace Addresses(ButtonDrawableRadio)
 	{

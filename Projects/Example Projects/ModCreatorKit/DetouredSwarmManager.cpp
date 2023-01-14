@@ -22,10 +22,10 @@
 #include <Spore\App\ICheatManager.h>
 #include <Spore\Swarm\CollectionResource.h>
 
-int SwarmManager_detour::directoryIndex = -1;
+int cEffectsManager_detour::directoryIndex = -1;
 
 // int GetDirectoryAndEffectIndex(uint32_t instanceID, uint32_t groupID)
-int SwarmManager_detour::DETOUR(uint32_t instanceID, uint32_t groupID)
+int cEffectsManager_detour::DETOUR(uint32_t instanceID, uint32_t groupID)
 {
 	// _effect_editor
 	if (groupID == 0 && instanceID == 0x568EEC19)
@@ -41,14 +41,14 @@ int SwarmManager_detour::DETOUR(uint32_t instanceID, uint32_t groupID)
 
 		Swarm::EffectDirectory* pDirectory = ((Swarm::CollectionResource*)pResource.get())->GetCollection();
 
-		if (SwarmManager_detour::directoryIndex == -1)
+		if (cEffectsManager_detour::directoryIndex == -1)
 		{
 			this->mDirectories.push_back(pDirectory);
-			SwarmManager_detour::directoryIndex = this->mDirectories.size() - 1;
+			cEffectsManager_detour::directoryIndex = this->mDirectories.size() - 1;
 		}
 		else
 		{
-			this->mDirectories[SwarmManager_detour::directoryIndex] = pDirectory;
+			this->mDirectories[cEffectsManager_detour::directoryIndex] = pDirectory;
 		}
 
 		int effectIndex = pDirectory->GetEffectIndex(instanceID, groupID);
@@ -58,7 +58,7 @@ int SwarmManager_detour::DETOUR(uint32_t instanceID, uint32_t groupID)
 			return -1;
 		}
 
-		return SwarmManager_detour::directoryIndex << 24 | (effectIndex & 0xFFFFFF);
+		return cEffectsManager_detour::directoryIndex << 24 | (effectIndex & 0xFFFFFF);
 	}
 	else
 	{

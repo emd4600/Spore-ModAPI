@@ -57,14 +57,14 @@ namespace IO
 		/* 08h */	virtual int	Release() override;
 
 		/* 0Ch */	virtual uint32_t	GetType() const override;
-		/* 10h */	virtual int			GetAccessFlags() const override;
+		/* 10h */	virtual AccessFlags	GetAccessFlags() const override;
 		/* 14h */	virtual FileError	GetState() const override;
 		/* 18h */	virtual bool		Close() override;
 
 		/* 1Ch */	virtual size_type	GetSize() const override;
 		/* 20h */	virtual bool		SetSize(size_type size) override;
-		/* 24h */	virtual int			GetPosition(PositionType positionType = kPositionTypeBegin) const override;
-		/* 28h */	virtual bool		SetPosition(int distance, PositionType positionType = kPositionTypeBegin) override;
+		/* 24h */	virtual int			GetPosition(PositionType positionType = PositionType::Begin) const override;
+		/* 28h */	virtual bool		SetPosition(int distance, PositionType positionType = PositionType::Begin) override;
 		/* 2Ch */	virtual int			GetAvailable() const override;
 
 		/* 30h */	virtual int		Read(void* pData, size_t nSize) override;
@@ -76,12 +76,7 @@ namespace IO
 	protected:
 		/* 04h */	int mnRefCount;
 	};
-
-	///////////////////////////////////
-	//// INTERNAL IMPLEMENENTATION ////
-	///////////////////////////////////
-
-	static_assert(sizeof(StreamNull) == 0x8, "sizeof(StreamNull) != 08h");
+	ASSERT_SIZE(StreamNull, 0x8);
 
 	namespace Addresses(StreamNull)
 	{

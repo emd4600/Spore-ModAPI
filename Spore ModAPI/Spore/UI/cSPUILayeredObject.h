@@ -18,8 +18,8 @@ namespace UI
 	protected:
 		/* 08h */	App::cViewer* mpViewer;
 		/* 0Ch */	int field_C;
-		/* 10h */	intrusive_ptr<UTFWin::IWinProc> mpObjectWindowProc;
-		/* 14h */	vector<int> field_14;
+		/* 10h */	IWinProcPtr mpObjectWindowProc;
+		/* 14h */	eastl::vector<int> field_14;
 		/* 28h */	int field_28;
 		/* 2Ch */	Transform field_2C;
 		/* 64h */	float field_64;
@@ -32,8 +32,7 @@ namespace UI
 		/* 77h */	bool field_77;
 		/* 78h */	bool field_78;  // true
 	};
-
-	static_assert(sizeof(cSPUILayeredObject) == 0x7C, "sizeof(cSPUILayeredObject) != 7Ch");
+	ASSERT_SIZE(cSPUILayeredObject, 0x7C);
 
 	inline App::cViewer* cSPUILayeredObject::GetViewer() const {
 		return mpViewer;

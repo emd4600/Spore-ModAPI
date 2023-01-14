@@ -62,7 +62,7 @@ namespace Swarm
 			/* 14h */	int field_14;
 			/* 18h */	ResourceID field_18;
 
-			enum
+			enum Flags
 			{
 				kFlagLight = 0x1,
 				kFlagNoFog = 0x2,
@@ -74,12 +74,7 @@ namespace Swarm
 				kFlagUser3 = 0x80
 			};
 		};
-
-		/////////////////////////////////
-		//// INTERNAL IMPLEMENTATION ////
-		/////////////////////////////////
-
-		static_assert(sizeof(TextureSlot) == 0x20, "sizeof(TextureSlot) != 20h");
+		ASSERT_SIZE(TextureSlot, 0x20);
 
 		inline TextureSlot::TextureSlot()
 			:

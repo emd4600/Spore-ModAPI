@@ -18,18 +18,18 @@
 ****************************************************************************/
 #pragma once
 
-#include <Spore\Resource\IPFRecord.h>
+#include <Spore\Resource\PFRecordBase.h>
 #include <Spore\Resource\DatabasePackedFile.h>
 #include <Spore\IO\FileStream.h>
 
 using namespace Resource;
 
 class FilePFRecord 
-	: public IPFRecord
+	: public PFRecordBase
 	, IO::IStream
 {
 public:
-	FilePFRecord(DBPFItem& itemInfo, const ResourceKey& name, DatabasePackedFile* pParentDBPF);
+	FilePFRecord(RecordInfo& itemInfo, const ResourceKey& name, DatabasePackedFile* pParentDBPF);
 	FilePFRecord(FilePFRecord* pOther, const ResourceKey& name, DatabasePackedFile* pParentDBPF);
 
 	virtual ~FilePFRecord();
@@ -40,27 +40,28 @@ public:
 
 	//// IPFRecord ////
 
-	/* 10h */	virtual ResourceKey&	GetName() override;
-	/* 14h */	virtual void			SetName(const ResourceKey& name) override;
+	/* 10h */	virtual ResourceKey&	GetKey() override;
+	/* 14h */	virtual void			SetKey(const ResourceKey& name) override;
 
 	/* 18h */	virtual IStream* GetStream() override;
 
-	/* 1Ch */	virtual DatabasePackedFile* GetParentDBPF() const override;
+	/* 1Ch */	virtual Database* GetDatabase() override;
 
-	/* 20h */	virtual bool Open() override;
-	/* 24h */	virtual bool Close() override;
-	/* 28h */	virtual int func28h() override;
+	/* 20h */	virtual bool RecordOpen() override;
+	/* 24h */	virtual bool RecordClose() override;
+	/* 28h */	virtual int DoPostClose() override;
 
 	//// IStream ////
 
+	virtual bool Close() override;
 	/* 0Ch */	virtual uint32_t	GetType() const override;
-	/* 10h */	virtual int			GetAccessFlags() const override;
+	/* 10h */	virtual IO::AccessFlags	GetAccessFlags() const override;
 	/* 14h */	virtual IO::FileError	GetState() const override;
 
 	/* 1Ch */	virtual IO::size_type	GetSize() const override;
 	/* 20h */	virtual bool		SetSize(IO::size_type size) override;  // does nothing
-	/* 24h */	virtual int			GetPosition(IO::PositionType positionType = IO::kPositionTypeBegin) const override;
-	/* 28h */	virtual bool		SetPosition(int distance, IO::PositionType positionType = IO::kPositionTypeBegin) override;
+	/* 24h */	virtual int			GetPosition(IO::PositionType positionType = IO::PositionType::Begin) const override;
+	/* 28h */	virtual bool		SetPosition(int distance, IO::PositionType positionType = IO::PositionType::Begin) override;
 	/* 2Ch */	virtual int			GetAvailable() const override;
 
 	/* 30h */	virtual int		Read(void* pData, size_t nSize) override;
@@ -73,6 +74,6 @@ protected:
 	IO::FileStream mFileStream;
 	int mnStreamRefCount;
 	bool mbStreamOpened;
-	DBPFItem mItemInfo;
+	RecordInfo mItemInfo;
 };
 

@@ -23,7 +23,7 @@
 
 // virtual bool Resource::IResourceManager::GetResource(const ResourceKey& name, ResourceObject** ppDst, int arg_8, DBPF* pDBPF, IResourceFactory* pFactory, const ResourceKey* pCacheName)
 bool ResourceManager_detour::DETOUR(
-	const ResourceKey& name, ResourceObjectPtr* ppDst, int arg_8, DBPF* pDBPF, IResourceFactory* pFactory, const ResourceKey* pCacheName)
+	const ResourceKey& name, ResourceObjectPtr* ppDst, void* arg_8, Database* pDBPF, IResourceFactory* pFactory, const ResourceKey* pCacheName)
 {
 	DebugInformation* pDebugInformation = nullptr;
 
@@ -34,17 +34,19 @@ bool ResourceManager_detour::DETOUR(
 	ResourceKey realKey = name;
 	if (pDBPF == nullptr)
 	{
-		if (pCacheName == nullptr) pDBPF = this->GetRealFileKey(name, &realKey);
-		else pDBPF = this->GetDBPF(name);
+		if (pCacheName == nullptr) pDBPF = this->FindRecord(name, &realKey);
+		else pDBPF = this->FindDatabase(name);
 	}
 
 	if (pDBPF != nullptr)
 	{
 		//return CallOriginal(GetResource, name, ppDst, arg_8, pDBPF, pFactory, pCacheName);
-		if (Debugging::Get() && Debugging::Get()->GetDebugInformation(pDBPF, &pDebugInformation)
+		if (Debugging::Get() 
+			&& Debugging::Get()->GetDebugInformation(pDBPF, &pDebugInformation)
+			&& pDebugInformation->DebugPathExists()
 			&& pDebugInformation->GetFilePath(realKey))
 		{
-			return this->ReadResource(name, ppDst, arg_8, pDBPF, pFactory, pCacheName);
+			return this->GetPrivateResource(name, ppDst, arg_8, pDBPF, pFactory, pCacheName);
 
 		}
 		else

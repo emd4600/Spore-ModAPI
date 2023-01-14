@@ -27,8 +27,6 @@
 
 namespace Palettes
 {
-	using namespace eastl;
-
 	///
 	/// Represents an item inside a palette page. The functionality of the item is not defined here;
 	/// this class only has metadata related to the display of the item itself. Each item has one
@@ -64,6 +62,8 @@ namespace Palettes
 			kItemCityBuilding = 0x81C74DBC
 			//TODO there are missing ones
 		};
+
+		static const uint32_t TYPE = 0x72D44E3A;
 
 		PaletteItem();
 		virtual ~PaletteItem() {}
@@ -106,17 +106,9 @@ namespace Palettes
 		/* 3Ch */	ResourceKey mNotUnlockableLayoutName;
 		/* 48h */	int mnPartPriority;
 		/* 4Ch */	bool mbEnabledLockedRollover;
-		/* 50h */	intrusive_ptr<Object> field_50;
-
-	public:
-		static const uint32_t TYPE = 0x72D44E3A;
+		/* 50h */	ObjectPtr field_50;
 	};
-
-	/////////////////////////////////
-	//// INTERNAL IMPLEMENTATION ////
-	/////////////////////////////////
-
-	static_assert(sizeof(PaletteItem) == 0x54, "sizeof(PaletteItem) != 54h");
+	ASSERT_SIZE(PaletteItem, 0x54);
 
 	namespace Addresses(PaletteItem)
 	{

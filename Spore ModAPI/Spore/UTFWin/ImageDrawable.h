@@ -49,7 +49,7 @@ namespace UTFWin
 	class IImageDrawable : public UTFWinObject
 	{
 	public:
-		enum
+		enum Flags
 		{
 			/// Preserves the original width of the image
 			kFlagFixedWidth = 1,
@@ -194,16 +194,11 @@ namespace UTFWin
 		/* 18h */	ImageTiling mTiling;
 		/* 1Ch */	AlignmentH mAlignmentHorizontal;
 		/* 20h */	AlignmentV mAlignmentVertical;
-		/* 24h */	intrusive_ptr<Image> mpImage;
+		/* 24h */	ImagePtr mpImage;
 		/* 28h */	OutlineFormat mImageOutline;
 
 	};
-
-	/////////////////////////////////
-	//// INTERNAL IMPLEMENTATION ////
-	/////////////////////////////////
-
-	static_assert(sizeof(ImageDrawable) == 0x50, "sizeof(ImageDrawable) must be 50h");
+	ASSERT_SIZE(ImageDrawable, 0x50);
 
 	namespace Addresses(ImageDrawable)
 	{

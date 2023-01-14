@@ -25,7 +25,7 @@ namespace Simulator
 	public:
 		/// Default value is true
 		/* 108h */	bool field_108;
-		/* 10Ch */	intrusive_ptr<cTribe> mpTribe;
+		/* 10Ch */	eastl::intrusive_ptr<cTribe> mpTribe;
 	};
 	ASSERT_SIZE(cTribeFoodMat, 0x110);
 }

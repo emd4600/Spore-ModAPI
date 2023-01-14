@@ -94,7 +94,7 @@ namespace App
 		/* 38h */	virtual void AddAllPropertiesFrom(const PropertyList* pOther) override;
 		/* 3Ch */	virtual bool Read(IO::IStream* pInputStream) override;
 		/* 40h */	virtual bool Write(IO::IStream* pOutputStream) const override;
-		/* 44h */	virtual void GetPropertyIDs(vector<uint32_t>& dst) const override;
+		/* 44h */	virtual void GetPropertyIDs(eastl::vector<uint32_t>& dst) const override;
 		/* 48h */	virtual void Clear() override;
 
 	protected:
@@ -113,12 +113,7 @@ namespace App
 		/* 40h */	Property		mTemporaryProperty;
 
 	};
-
-	///////////////////////////////////
-	//// INTERNAL IMPLEMENENTATION ////
-	///////////////////////////////////
-
-	static_assert(sizeof(DirectPropertyList) == 0x54, "sizeof(DirectPropertyList) must be 54h");
+	ASSERT_SIZE(DirectPropertyList, 0x54);
 
 	namespace Addresses(DirectPropertyList)
 	{

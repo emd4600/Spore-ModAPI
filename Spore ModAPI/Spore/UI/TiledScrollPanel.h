@@ -31,13 +31,13 @@ namespace UI
 		virtual ~TiledScrollPanel();
 		virtual bool func04h(int, int);  // handle message maybe?
 
-	protected:
-		/* 04h */	intrusive_ptr<Object> field_4;
-		/* 08h */	intrusive_ptr<Object> field_8;
+	public:
+		/* 04h */	ObjectPtr field_4;
+		/* 08h */	ObjectPtr field_8;
 		/* 0Ch */	ResourceKey mLayoutName;
-		/* 18h */	vector<intrusive_ptr<DefaultRefCounted>> field_18;
+		/* 18h */	eastl::vector<eastl::intrusive_ptr<DefaultRefCounted>> field_18;
 		/* 2Ch */	int field_2C;  // 1
-		/* 30h */	vector<int> field_30;
+		/* 30h */	eastl::vector<int> field_30;
 		/* 44h */	float field_44;
 		/* 48h */	float field_48;
 		/* 4Ch */	float field_4C;
@@ -50,10 +50,5 @@ namespace UI
 		/* 68h */	int field_68;
 		/* 6Ch */	int field_6C;
 	};
-
-	/////////////////////////////////
-	//// INTERNAL IMPLEMENTATION ////
-	/////////////////////////////////
-
-	static_assert(sizeof(TiledScrollPanel) == 0x70, "sizeof(SpaceGameUI) != 70h");
+	ASSERT_SIZE(TiledScrollPanel, 0x70);
 }

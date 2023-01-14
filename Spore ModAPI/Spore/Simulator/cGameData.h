@@ -35,7 +35,7 @@ namespace Simulator
 	class cGameData 
 		: public ISimulatorSerializable
 		, public DefaultRefCounted
-		, public intrusive_list_node
+		, public eastl::intrusive_list_node
 	{
 	public:
 		static const uint32_t TYPE = 0x17F243B;
@@ -49,7 +49,7 @@ namespace Simulator
 		virtual void* Cast(uint32_t type) const override;
 
 		// ISimulatorSerializable
-		/* 10h */	virtual bool Write(ISerializerStream* stream) = 0;  //PLACEHOLDER
+		/* 10h */	virtual bool Write(ISerializerStream* stream) override = 0;  //PLACEHOLDER
 		/* 14h */	virtual bool Read(ISerializerStream* stream) override;
 		/* 18h */	virtual bool ISimulatorSerializable_func18h() override;
 		/* 1Ch */	virtual bool WriteToXML(XmlSerializer*) override;
@@ -84,15 +84,10 @@ namespace Simulator
 		/* 21h */	bool mbIsDestroyed;
 		/* 24h */	uint32_t mID;  // -1
 		/* 28h */	uint32_t mDefinitionID;
-		/* 2Ch */	intrusive_ptr<cGameData> mpGameDataOwner;
+		/* 2Ch */	cGameDataPtr mpGameDataOwner;
 		/* 30h */	uint32_t mPoliticalID;  // -1
 	};
-
-	/////////////////////////////////
-	//// INTERNAL IMPLEMENTATION ////
-	/////////////////////////////////
-
-	static_assert(sizeof(cGameData) == 0x34, "sizeof(cGameData) != 34h");
+	ASSERT_SIZE(cGameData, 0x34);
 
 	namespace Addresses(cGameData) {
 		DeclareAddress(Write);

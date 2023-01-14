@@ -25,8 +25,6 @@
 
 #define PlayAnimPanelPtr eastl::intrusive_ptr<Editors::PlayAnimPanel>
 
-using namespace eastl;
-
 namespace Editors
 {
 	class PlayAnimButton;
@@ -40,12 +38,7 @@ namespace Editors
 		/* 08h */	int mnAnimPanelOrder;
 		/* 0Ch */	uint32_t mAnimPanelIcon;
 		/* 10h */	uint32_t mAnimPanelIconShadow;
-		/* 14h */	vector<intrusive_ptr<PlayAnimButton>> mButtons;
+		/* 14h */	eastl::vector<eastl::intrusive_ptr<PlayAnimButton>> mButtons;
 	};
-
-	/////////////////////////////////
-	//// INTERNAL IMPLEMENTATION ////
-	/////////////////////////////////
-
-	static_assert(sizeof(PlayAnimPanel) == 0x28, "sizeof(PlayAnimPanel) != 28h");
+	ASSERT_SIZE(PlayAnimPanel, 0x28);
 }

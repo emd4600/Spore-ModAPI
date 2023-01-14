@@ -31,7 +31,7 @@ namespace Editors
 	class StdEditorLimits : public IEditorLimits
 	{
 	public:
-		enum {
+		enum EditorLimitType {
 			kBudget = 0,
 			kComplexity = 1
 		};

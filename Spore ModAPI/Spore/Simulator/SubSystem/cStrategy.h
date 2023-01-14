@@ -86,11 +86,6 @@ namespace Simulator
 		/* 14h */	uint32_t field_14;  // -1
 		/* 18h */	int field_18;
 	};
-
-	/////////////////////////////////
-	//// INTERNAL IMPLEMENTATION ////
-	/////////////////////////////////
-
-	static_assert(sizeof(cStrategy) == 0x1C, "sizeof(cStrategy) != 1Ch");
+	ASSERT_SIZE(cStrategy, 0x1C);
 }
 

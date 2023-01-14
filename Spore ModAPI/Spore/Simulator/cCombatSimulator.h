@@ -19,8 +19,8 @@ namespace Simulator
 		using Object::Cast;
 
 	public:
-		/* 14h */	vector<IProjectilePtr> mProjectiles;
-		/* 28h */	vector<IProjectilePtr> field_28;
+		/* 14h */	eastl::vector<IProjectilePtr> mProjectiles;
+		/* 28h */	eastl::vector<IProjectilePtr> field_28;
 		/* 3Ch */	bool mIsUpdatingProjectiles;
 		/// If true, it collects all IProjectile instances and adds listener for SimulatorMessages::kMsgGameNounStatusChanged
 		/* 3Dh */	bool field_3D;

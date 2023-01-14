@@ -6,7 +6,7 @@ namespace Anim
 {
 	namespace Addresses(IAnimManager)
 	{
-		DefineAddress(Get, SelectAddress(0x67CC70, , 0x67CAE0));
+		DefineAddress(Get, SelectAddress(0x67CC70, 0x67CAE0));
 	}
 }
 

@@ -41,7 +41,7 @@ namespace Simulator
 		using Object::Cast;
 
 	public:
-		/* 108h */	intrusive_ptr<cCreatureBase> mpWhoIsInteractingWithMe;
+		/* 108h */	eastl::intrusive_ptr<cCreatureBase> mpWhoIsInteractingWithMe;
 		/* 10Ch */	int field_10C;
 		/* 110h */	int mType;
 		/* 114h */	int mPhysicsPropertyListId;  // an int, specifies what type of physics to use?
@@ -49,9 +49,5 @@ namespace Simulator
 		/* 12Ch */	bool mbHasAttractorEffects;
 		/* 12Dh */	bool field_12D;
 	};
-	/////////////////////////////////
-	//// INTERNAL IMPLEMENTATION ////
-	/////////////////////////////////
-
-	static_assert(sizeof(cInteractableObject) == 0x130, "sizeof(cOrnament) != 130h");
+	ASSERT_SIZE(cInteractableObject, 0x130);
 }

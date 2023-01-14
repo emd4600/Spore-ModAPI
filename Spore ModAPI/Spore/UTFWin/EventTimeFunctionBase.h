@@ -56,10 +56,5 @@ namespace UTFWin
 		/* 40h */	float field_40;
 		/* 44h */	float field_44;
 	};
-
-	/////////////////////////////////
-	//// INTERNAL IMPLEMENTATION ////
-	/////////////////////////////////
-
-	static_assert(sizeof(EventTimeFunctionBase) == 0x48, "sizeof(EventTimeFunctionBase) != 48h");
+	ASSERT_SIZE(EventTimeFunctionBase, 0x48);
 }

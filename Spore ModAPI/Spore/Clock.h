@@ -100,10 +100,7 @@ protected:
 	float mMeasurePerTick;  // 1.0f
 
 };
-
-/////////////////////////////////
-//// INTERNAL IMPLEMENTATION ////
-/////////////////////////////////
+ASSERT_SIZE(Clock, 0x18);
 
 namespace Addresses(Clock)
 {
@@ -123,6 +120,7 @@ namespace Addresses(Clock)
 	//DeclareAddress(GetTimeParam);
 };
 
+#ifndef SDK_TO_GHIDRA
 inline void Clock::Reset() {
 	mStartTime.QuadPart = 0;
 	mAccumulatedTime.QuadPart = 0;
@@ -151,5 +149,4 @@ inline float Clock::GetElapsed() const
 inline bool Clock::IsRunning() const {
 	return mStartTime.QuadPart != 0;
 }
-
-static_assert(sizeof(Clock) == 0x18, "sizeof(Clock) != 18h");
+#endif

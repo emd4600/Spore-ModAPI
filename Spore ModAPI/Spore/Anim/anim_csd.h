@@ -5,6 +5,7 @@
 
 namespace Anim
 {
+	/// Creature Skinning Data
 	struct anim_csd
 	{
 		/* 00h */	char16_t name[0x100];

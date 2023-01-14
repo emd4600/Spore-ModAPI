@@ -28,10 +28,10 @@ namespace Simulator
 
 	public:
 		/* 20h */	cCommEventPtr mCurrentCommEvent;
-		/* 24h */	vector<cCommEventPtr> mListCommEvents;
+		/* 24h */	eastl::vector<cCommEventPtr> mListCommEvents;
 		/* 38h */	int field_38;  // -1
 		/* 3Ch */	ObjectPtr field_3C;
-		/* 40h */	hash_map<uint32_t, vector<uint32_t>> mTransmissionCancelConditions;
+		/* 40h */	eastl::hash_map<uint32_t, eastl::vector<uint32_t>> mTransmissionCancelConditions;
 		/* 60h */	bool field_60;
 		/* 64h */	int field_64;
 

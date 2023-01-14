@@ -28,7 +28,7 @@ namespace Simulator
 		/* 14h */	int mEventAwardSubCategoryIndex;
 		/* 18h */	float field_18;  // 1.0
 		/* 1Ch */	int field_1C;  // 255
-		/* 20h */	Vector3 field_20;
+		/* 20h */	Math::Vector3 field_20;
 		/* 2Ch */	float field_2C;
 		/* 30h */	int field_30;  // not initialized
 		/* 34h */	float mEventStartFadeTime;  // 10.0
@@ -44,7 +44,7 @@ namespace Simulator
 		/* 5Ch */	int field_5C;
 		/* 60h */	int field_60;
 		/* 64h */	int field_64;
-		/* 68h */	string16 mEventDescription;
+		/* 68h */	eastl::string16 mEventDescription;
 		/* 78h */	UTFWin::UILayout* mpItemLayout;
 		/* 7Ch */	int field_7C;
 		/* 80h */	int field_80[4];  // not initialized
@@ -75,7 +75,7 @@ namespace Simulator
 		/// @param dontAllowDuplicates If the prop file doesn't define `eventAllowDuplicates`, this parameter will be used to know
 		/// if you can't have more than one event of that same prop.
 		/// @param
-		uint32_t ShowEvent(uint32_t instanceID, uint32_t groupID, int=0, Vector3* = nullptr, bool dontAllowDuplicates = true, int=0);
+		uint32_t ShowEvent(uint32_t instanceID, uint32_t groupID, int=0, Math::Vector3* = nullptr, bool dontAllowDuplicates = true, int=0);
 
 		/// Hides an event log, either totally or partially. Hiding it partially (second parameter set to `true`)
 		/// means the icon still shows; if oyu hide it totally, you delete the event completely.
@@ -97,7 +97,7 @@ namespace Simulator
 	public:
 		/* 20h */	int field_20;  // 255
 		/* 24h */	bool field_24;  // true
-		/* 28h */	map<uint32_t, intrusive_ptr<cFeedbackEvent>> mEvents;
+		/* 28h */	eastl::map<uint32_t, eastl::intrusive_ptr<cFeedbackEvent>> mEvents;
 		/* 44h */	int field_44;
 		/* 48h */	float field_48;
 		/* 4Ch */	char padding_4C[0x10];

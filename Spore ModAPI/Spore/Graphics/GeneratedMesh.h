@@ -9,53 +9,51 @@
 #include <Spore\MathUtils.h>
 #include <EASTL\vector.h>
 
-#define GeneratedMeshPtr(T) intrusive_ptr<Graphics::GeneratedMesh<T>>
+#ifndef SDK_TO_GHIDRA
+#define GeneratedMeshPtr(T) eastl::intrusive_ptr<Graphics::GeneratedMesh<T>>
 
 namespace Graphics
 {
-	using namespace eastl;
-	using namespace Math;
-
 	struct PosNormalVertex
 	{
-		Vector3 pos;
-		Vector3 normal;
+		Math::Vector3 pos;
+		Math::Vector3 normal;
 
 		static const RenderWare::VertexElement ELEMENTS[2];
 	};
 
 	struct PosUvVertex
 	{
-		Vector3 pos;
-		Vector2 uv;
+		Math::Vector3 pos;
+		Math::Vector2 uv;
 
 		static const RenderWare::VertexElement ELEMENTS[2];
 	};
 
 	struct StandardVertex
 	{
-		Vector3 pos;
-		Vector2 uv;
-		Vector3 normal;
-		Vector3 tangent;
+		Math::Vector3 pos;
+		Math::Vector2 uv;
+		Math::Vector3 normal;
+		Math::Vector3 tangent;
 
 		static const RenderWare::VertexElement ELEMENTS[4];
 	};
 
 	struct StandardVertexCompact
 	{
-		Vector3 pos;
-		Vector2 uv;
+		Math::Vector3 pos;
+		Math::Vector2 uv;
 		uint8_t normal[4];
 		uint8_t tangent[4];
 
-		inline void SetNormal(Vector3 v) {
+		inline void SetNormal(Math::Vector3 v) {
 			normal[0] = int(roundf(v.x * 127.5f + 127.5f)) & 0xFF;
 			normal[1] = int(roundf(v.y * 127.5f + 127.5f)) & 0xFF;
 			normal[2] = int(roundf(v.z * 127.5f + 127.5f)) & 0xFF;
 			normal[3] = 0;
 		}
-		inline void SetTangent(Vector3 v) {
+		inline void SetTangent(Math::Vector3 v) {
 			tangent[0] = int(roundf(v.x * 127.5f + 127.5f)) & 0xFF;
 			tangent[1] = int(roundf(v.y * 127.5f + 127.5f)) & 0xFF;
 			tangent[2] = int(roundf(v.z * 127.5f + 127.5f)) & 0xFF;
@@ -170,27 +168,27 @@ namespace Graphics
 		/// By default it's the identity, that is, no transform.
 		/// @param materialIndex The index of the material, as returned by AddMaterial().
 		/// @returns The 4x4 matrix transformation
-		const Matrix4& GetTransform(int materialIndex);
+		const Math::Matrix4& GetTransform(int materialIndex);
 
 		/// Sets the 4x4 matrix transformation that gets applied to a certain material of this mesh.
 		/// By default it's the identity, that is, no transform.
 		/// @param materialIndex The index of the material, as returned by AddMaterial().
 		/// @returns The 4x4 matrix transformation
-		void SetTransform(int materialIndex, const Matrix4& transform);
+		void SetTransform(int materialIndex, const Math::Matrix4& transform);
 
 		/// Returns the color that gets applied to a certain material of this mesh.
 		/// By default it's white.
 		/// @param materialIndex The index of the material, as returned by AddMaterial().
 		/// @returns The material color.
-		const ColorRGBA& GetColor(int materialIndex);
+		const Math::ColorRGBA& GetColor(int materialIndex);
 
 		/// Sets the color that gets applied to a certain material of this mesh.
 		/// By default it's white.
 		/// @param materialIndex The index of the material, as returned by AddMaterial().
 		/// @returns The material color.
-		void SetColor(int materialIndex, const ColorRGBA& color);
+		void SetColor(int materialIndex, const Math::ColorRGBA& color);
 
-		BoundingBox GetBoundingBox();
+		Math::BoundingBox GetBoundingBox();
 
 		void SubmitGeometry();
 		void UnloadGeometry();
@@ -202,15 +200,15 @@ namespace Graphics
 		RenderWare::IndexBuffer mIndexBuffer;
 		RenderWare::VertexDescription<sizeof(Vertex::ELEMENTS)/sizeof(RenderWare::VertexElement)> mVertexDesc;
 
-		vector<Vertex> mVertices;
-		vector<uint16_t> mIndices;
+		eastl::vector<Vertex> mVertices;
+		eastl::vector<uint16_t> mIndices;
 
-		vector<RenderWare::Mesh> mMeshes;
-		vector<MaterialPtr> mMaterials;
-		vector<ColorRGBA> mColors;
-		vector<Matrix4> mTransforms;
+		eastl::vector<RenderWare::Mesh> mMeshes;
+		eastl::vector<MaterialPtr> mMaterials;
+		eastl::vector<Math::ColorRGBA> mColors;
+		eastl::vector<Math::Matrix4> mTransforms;
 
-		BoundingBox mBounds;
+		Math::BoundingBox mBounds;
 		bool mBoundsValid;
 	};
 
@@ -332,9 +330,9 @@ namespace Graphics
 
 		mMeshes.push_back(mesh);
 		mColors.push_back({ 1.0f, 1.0f, 1.0f, 1.0f });
-		mTransforms.push_back(Matrix4().SetIdentity());
+		mTransforms.push_back(Math::Matrix4().SetIdentity());
 
-		mMaterials.push_back(MaterialManager.GetMaterial(materialID));
+		mMaterials.push_back(MaterialManager.GetMaterialInstance(materialID));
 
 		return mMeshes.size() - 1;
 	}
@@ -376,29 +374,29 @@ namespace Graphics
 	}
 
 	template <typename Vertex>
-	inline const Matrix4& GeneratedMesh<Vertex>::GetTransform(int materialIndex) {
+	inline const Math::Matrix4& GeneratedMesh<Vertex>::GetTransform(int materialIndex) {
 		if (materialIndex >= mTransforms.size()) return nullptr;
 		return mTransforms[materialIndex];
 	}
 
 	template <typename Vertex>
-	inline void GeneratedMesh<Vertex>::SetTransform(int materialIndex, const Matrix4& transform) {
+	inline void GeneratedMesh<Vertex>::SetTransform(int materialIndex, const Math::Matrix4& transform) {
 		mTransforms[materialIndex] = transform;
 	}
 
 	template <typename Vertex>
-	inline const ColorRGBA& GeneratedMesh<Vertex>::GetColor(int materialIndex) {
+	inline const Math::ColorRGBA& GeneratedMesh<Vertex>::GetColor(int materialIndex) {
 		if (materialIndex >= mColors.size()) return nullptr;
 		return mColors[materialIndex];
 	}
 
 	template <typename Vertex>
-	inline void GeneratedMesh<Vertex>::SetColor(int materialIndex, const ColorRGBA& color) {
+	inline void GeneratedMesh<Vertex>::SetColor(int materialIndex, const Math::ColorRGBA& color) {
 		mColors[materialIndex] = color;
 	}
 
 	template <typename Vertex>
-	BoundingBox GeneratedMesh<Vertex>::GetBoundingBox() {
+	Math::BoundingBox GeneratedMesh<Vertex>::GetBoundingBox() {
 		if (!mBoundsValid) {
 			int offset = 0;
 			for (int i = 0; i < mVertexDesc.elementsCount; ++i) {
@@ -454,3 +452,4 @@ namespace Graphics
 		mVertexBuffer.ReleaseDirectX();
 	}
 }
+#endif

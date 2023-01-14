@@ -16,7 +16,7 @@ namespace Simulator
 		// sub_F30830 struct copy, sub_F30240 constructor?
 
 	public:
-		/* 10h */	vector<int> field_10;
+		/* 10h */	eastl::vector<int> field_10;
 	};
 
 	namespace Addresses(cScenarioSimulator)

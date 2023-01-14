@@ -43,12 +43,12 @@ namespace Simulator
 		/* 00h */	int mMillisecondsSinceLastUpdate;  // not initialized
 		/* 04h */	cPlanetPtr mpActivePlanet;
 		/* 08h */	cStarPtr mpActiveStar;
-		/* 0Ch */	intrusive_ptr<cRelationshipManager> mpTribeCivRelationships;
+		/* 0Ch */	eastl::intrusive_ptr<cRelationshipManager> mpTribeCivRelationships;
 		/* 10h */	SpaceContext mCurrentContext;  // -1
 		/* 14h */	float mfRotationRateFactor;  // 1.0
 		/* 18h */	uint32_t mPlayerEmpireID;  // -1
 		/* 1Ch */	cEmpirePtr mpPlayerEmpire;
-		/* 20h */	vector<cPlanetPtr> mPlayerColonies;
+		/* 20h */	eastl::vector<cPlanetPtr> mPlayerColonies;
 
 		static SpacePlayerData* Get();
 	};
@@ -57,6 +57,10 @@ namespace Simulator
 	{
 		DeclareAddress(ptr);
 	}
+
+#ifdef SDK_TO_GHIDRA
+	SpacePlayerData* sSpacePlayerData;
+#endif
 }
 
 namespace Addresses(Simulator)

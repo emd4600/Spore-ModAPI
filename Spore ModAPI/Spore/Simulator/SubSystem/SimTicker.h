@@ -16,10 +16,10 @@ namespace Simulator
 		// there are two methods more
 
 	public:
-		/* 1Ch */	list<cGonzagoSimulatorPtr> mSimulators;
+		/* 1Ch */	eastl::list<cGonzagoSimulatorPtr> mSimulators;
 		// If it was ticking when simulator was added, it gets added here
-		/* 28h */	list<cGonzagoSimulatorPtr> mToAddSimulators;
-		/* 34h */	list<int> field_34;
+		/* 28h */	eastl::list<cGonzagoSimulatorPtr> mToAddSimulators;
+		/* 34h */	eastl::list<int> field_34;
 		/* 40h */	bool field_40;
 		/* 41h */	bool mIsTicking;
 

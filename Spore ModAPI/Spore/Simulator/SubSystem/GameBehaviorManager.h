@@ -26,7 +26,7 @@ namespace Simulator
 		/* 28h */	virtual void func28h();  // sets field_A0 to true
 		/* 2Ch */	virtual void func2Ch();  // sets field_A0 to false
 		/* 30h */	virtual void func30h();
-		/* 34h */	virtual const vector<cBehaviorAgentPtr>& GetAgents();
+		/* 34h */	virtual const eastl::vector<cBehaviorAgentPtr>& GetAgents();
 		/* 38h */	virtual bool AddAgent(cBehaviorAgent* agent);
 		/* 3Ch */	virtual bool RemoveAgent(cBehaviorAgent* agent);
 		/* 40h */	virtual bool HasAgent(cBehaviorAgent* agent);
@@ -34,15 +34,15 @@ namespace Simulator
 
 	public:
 		/* 20h */	Clock* mpStopwatch;
-		/* 24h */	vector<cBehaviorAgentPtr> mAgents;
-		/* 38h */	list<intrusive_ptr<Object>> field_38;
-		/* 44h */	vector<pair<int, intrusive_ptr<Object>>> field_44;
+		/* 24h */	eastl::vector<cBehaviorAgentPtr> mAgents;
+		/* 38h */	eastl::list<ObjectPtr> field_38;
+		/* 44h */	eastl::vector<eastl::pair<int, ObjectPtr>> field_44;
 		/* 58h */	int field_58;  // -1, index to vector above
 		/* 5Ch */	int field_5C;  // -1
-		/* 60h */	vector<pair<int, intrusive_ptr<Object>>> field_60;
+		/* 60h */	eastl::vector<eastl::pair<int, ObjectPtr>> field_60;
 		/* 74h */	int field_74;  // -1
 		/* 78h */	int field_78;  // -1
-		/* 7Ch */	vector<pair<int, intrusive_ptr<Object>>> field_7C;
+		/* 7Ch */	eastl::vector<eastl::pair<int, ObjectPtr>> field_7C;
 		/* 90h */	int field_90;  // -1
 		/* 94h */	int field_94;  // -1
 		/* 98h */	int field_98;

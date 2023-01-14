@@ -67,8 +67,27 @@ namespace RenderWare
 
 		void D3D9AddToUnmanagedList();
 
+		/// Returns how many bytes are needed to store one raw mip level of the raster.
+		/// @param mipLevel
+		/// @returns
+		int D3D9GetStreamedMipLevelSize(int mipLevel = 0);
+
 		static Raster* CreateRaster(Raster*& pDst, uint16_t width, uint16_t height, uint8_t levels, int flagsDepth, D3DFORMAT format);
 
+		bool CopyRaster(Raster* other);
+
+		/// Sets the raw contents of a mip level of the raster.
+		/// @param data
+		/// @param mipLevel
+		/// @returns
+		bool Fill(int8_t* data, int mipLevel = 0);
+
+		/// Extracts the raw contents of a mip level of the raster, and saves it in a byte array.
+		/// The byte array must be of size returned by D3D9GetStreamedMipLevelSize()
+		/// @param[out] dstData
+		/// @param mipLevel
+		/// @returns
+		bool Extract(int8_t* dstData, int mipLevel = 0);
 
 		/* 00h */	D3DFORMAT format;
 		/* 04h */	uint16_t flags;  // the first byte chooses type
@@ -88,10 +107,9 @@ namespace RenderWare
 		/* 18h */	void* pSwapChain;
 		/* 1Ch */	void* pTextureData;
 
-		static const uint32_t TYPE = 0x20003;
+		static const uint32_t RW_TYPE = 0x20003;
 	};
-
-	static_assert(sizeof(Raster) == 0x20, "sizeof(Raster) != 20h");
+	ASSERT_SIZE(Raster, 0x20);
 
 	namespace Addresses(Raster)
 	{
@@ -99,5 +117,8 @@ namespace RenderWare
 		DeclareAddress(Delete);
 		DeclareAddress(CreateRaster);
 		DeclareAddress(D3D9AddToUnmanagedList);
+		DeclareAddress(Extract);  // 0x11F2BC0 0x11F0490
+		DeclareAddress(Fill);  // 0x11F29F0 0x11F02C0
+		DeclareAddress(D3D9GetStreamedMipLevelSize);  // 0x11F2780 0x11F0050
 	};
 }

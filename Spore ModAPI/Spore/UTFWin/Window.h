@@ -24,6 +24,7 @@
 #include <Spore\UTFWin\IDrawable.h>
 #include <Spore\UTFWin\IWindow.h>
 #include <Spore\UTFWin\Message.h>
+#include <Spore\UTFWin\IWinProc.h>
 
 #include <Spore\FixedPoolAllocator.h>
 #include <Spore\MathUtils.h>
@@ -33,8 +34,6 @@
 #include <EASTL\hash_map.h>
 
 #define WindowPtr eastl::intrusive_ptr<UTFWin::Window>
-
-using namespace eastl;
 
 namespace UTFWin
 {
@@ -101,10 +100,10 @@ namespace UTFWin
 		virtual void SetDrawable(IDrawable* drawable) override;
 		virtual int func45(int) override;
 		virtual int func46(int, int) override;
-		virtual bool ContainsPoint(struct Point) override;
-		virtual Point ToGlobalCoordinates(struct Point) override;
-		virtual Point ToLocalCoordinates(struct Point) override;
-		virtual bool ToLocalCoordinates2(struct Point, Point& dst) override;
+		virtual bool ContainsPoint(struct Math::Point) override;
+		virtual Math::Point ToGlobalCoordinates(struct Math::Point) override;
+		virtual Math::Point ToLocalCoordinates(struct Math::Point) override;
+		virtual bool ToLocalCoordinates2(struct Math::Point, Math::Point& dst) override;
 		virtual IWindowList_t::iterator GetChildrenBegin() override;
 		virtual IWindowList_t::iterator GetChildrenEnd() override;
 		virtual IWindowList_t::iterator LocateChild(const IWindow* pChild) const override;
@@ -150,7 +149,7 @@ namespace UTFWin
 
 	protected:
 
-		typedef list<pair<intrusive_ptr<IWinProc>, int>, FixedPoolAllocatorAdapter> IWinProcList_t;
+		typedef eastl::list<eastl::pair<IWinProcPtr, int>, FixedPoolAllocatorAdapter> IWinProcList_t;
 
 		struct UnkMatrix4 : Math::Matrix4
 		{
@@ -172,7 +171,7 @@ namespace UTFWin
 		/* 30h */	bool field_30;  // actually some flags
 		/* 31h */	int8_t field_31;  // kUseDrawableCollision = 8
 		/* 34h */	IWindowManager* mpWindowManager;
-		/* 38h */	intrusive_ptr<Window> mpParentWindow;
+		/* 38h */	WindowPtr mpParentWindow;
 		/* 3Ch */	IWindowList_t mChildrenWindows;
 		/* 44h */	FixedPoolAllocator mPoolAllocator;
 		/* 64h */	IWinProcList_t mWinProcs;
@@ -185,7 +184,7 @@ namespace UTFWin
 		/* 98h */	Math::Rectangle mArea;
 		/* A8h */	uint32_t mCursorID;
 		/* ACh */	int mnStateFlags;
-		/* B0h */	string16 mCaption;
+		/* B0h */	eastl::string16 mCaption;
 		/* C0h */	uint32_t mTextFontID;
 		/* C4h */	UnkMatrix4 field_C4;
 		/* 108h */	UnkMatrix4 field_108;
@@ -194,17 +193,12 @@ namespace UTFWin
 		/* 1D4h */	int field_1D4;
 		/* 1D8h */	Math::Color mShadeColor;
 		/* 1DCh */	Math::Color mFillColor;
-		/* 1E0h */	intrusive_ptr<IDrawable> mpDrawable;
-		/* 1E4h */	intrusive_ptr<Object> field_1E4;
-		/* 1E8h */	intrusive_ptr<Object> field_1E8;
-		/* 1ECh */	hash_map<int, int> field_1EC;
+		/* 1E0h */	IDrawablePtr mpDrawable;
+		/* 1E4h */	ObjectPtr field_1E4;
+		/* 1E8h */	ObjectPtr field_1E8;
+		/* 1ECh */	eastl::hash_map<int, int> field_1EC;
 	};
-
-	/////////////////////////////////
-	//// INTERNAL IMPLEMENTATION ////
-	/////////////////////////////////
-
-	static_assert(sizeof(Window) == 0x20C, "sizeof(Window) must be 20Ch!");
+	ASSERT_SIZE(Window, 0x20C);
 
 	namespace Addresses(Window)
 	{

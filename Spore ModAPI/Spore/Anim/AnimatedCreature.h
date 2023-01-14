@@ -128,6 +128,7 @@ namespace Anim
 
 		// 3Ch scale?
 
+		// 70h flags?
 		// 74h ColorRGBA that gets copied to model color
 
 		/* 154h */	int field_154;

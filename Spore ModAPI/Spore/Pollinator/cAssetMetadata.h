@@ -31,14 +31,14 @@ namespace Pollinator
 		int64_t GetTimeCreated();
 		int64_t GetTimeDownloaded();
 
-		string16 GetName() const;
-		string16 GetDescription() const;
-		string16 GetAuthor() const;
+		eastl::string16 GetName() const;
+		eastl::string16 GetDescription() const;
+		eastl::string16 GetAuthor() const;
 		int64_t GetAuthorID() const;
-		const vector<string16>& GetAuthors() const;
-		const vector<string16>& GetTags() const;
+		const eastl::vector<eastl::string16>& GetAuthors() const;
+		const eastl::vector<eastl::string16>& GetTags() const;
 
-		const vector<uint32_t>& GetConsequenceTraits() const;
+		const eastl::vector<uint32_t>& GetConsequenceTraits() const;
 
 		bool IsShareable() const;
 		bool IsLocalized() const;
@@ -55,15 +55,15 @@ namespace Pollinator
 		/* 40h */	int64_t mOriginalParentAssetID;  // -1
 		/* 48h */	int64_t mTimeCreated;
 		/* 50h */	int64_t mTimeDownloaded;
-		/* 58h */	string16 mAuthorName;
+		/* 58h */	eastl::string16 mAuthorName;
 		/* 68h */	int64_t mAuthorID;
 		/* 70h */	int mUseLocale;  // 0xFFFFFFFF if not localized, 1 if localized
 		/* 74h */	bool mIsShareable;  // true
-		/* 78h */	string16 mName;
-		/* 88h */	string16 mDescription;
-		/* 98h */	vector<string16> mAuthors;
-		/* ACh */	vector<string16> mTags;
-		/* C0h */	vector<uint32_t> mConsequenceTraits;
+		/* 78h */	eastl::string16 mName;
+		/* 88h */	eastl::string16 mDescription;
+		/* 98h */	eastl::vector<eastl::string16> mAuthors;
+		/* ACh */	eastl::vector<eastl::string16> mTags;
+		/* C0h */	eastl::vector<uint32_t> mConsequenceTraits;
 	};
 
 	ASSERT_SIZE(cAssetMetadata, 0xD8);
@@ -85,14 +85,14 @@ namespace Pollinator
 		return true;
 	}
 
-	inline string16 cAssetMetadata::GetName() const { return mName; }
-	inline string16 cAssetMetadata::GetDescription() const { return mDescription; }
-	inline string16 cAssetMetadata::GetAuthor() const { return mAuthorName; }
+	inline eastl::string16 cAssetMetadata::GetName() const { return mName; }
+	inline eastl::string16 cAssetMetadata::GetDescription() const { return mDescription; }
+	inline eastl::string16 cAssetMetadata::GetAuthor() const { return mAuthorName; }
 	inline int64_t cAssetMetadata::GetAuthorID() const { return mAuthorID; }
-	inline const vector<string16>& cAssetMetadata::GetAuthors() const { return mAuthors; }
-	inline const vector<string16>& cAssetMetadata::GetTags() const { return mTags; }
+	inline const eastl::vector<eastl::string16>& cAssetMetadata::GetAuthors() const { return mAuthors; }
+	inline const eastl::vector<eastl::string16>& cAssetMetadata::GetTags() const { return mTags; }
 
-	inline const vector<uint32_t>& cAssetMetadata::GetConsequenceTraits() const { return mConsequenceTraits; }
+	inline const eastl::vector<uint32_t>& cAssetMetadata::GetConsequenceTraits() const { return mConsequenceTraits; }
 
 	inline bool cAssetMetadata::IsShareable() const { return mIsShareable; }
 	inline bool cAssetMetadata::IsLocalized() const { return mUseLocale == 1; }

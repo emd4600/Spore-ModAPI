@@ -31,29 +31,6 @@
 namespace App
 {
 	///
-	/// An interface that can receive messages sent through the app. 
-	/// Using the App::IMessageManager, listeners sign up to receive certain message IDs.
-	///
-	class IMessageListener
-	{
-	public:
-
-		virtual ~IMessageListener() {};
-
-		///
-		/// Called every time a message is received. Only the messages with an ID this listened
-		/// signed up for will call this event.
-		/// @param messageID The ID of the message received.
-		/// @param pMessage The data of the message received, it might be nullptr.
-		/// @returns Whether the message was handled or not.
-		///
-		virtual bool HandleMessage(uint32_t messageID, void* msg) = 0;
-
-		virtual int AddRef() = 0;
-		virtual int Release() = 0;
-	};
-
-	///
 	/// Same as App::IMessageListener, but this one does not use ref-counting.
 	///
 	class IUnmanagedMessageListener
@@ -63,13 +40,25 @@ namespace App
 		virtual ~IUnmanagedMessageListener() {};
 
 		///
-		/// Called every time a message is received. Only the messages with an ID this listened
+		/// Called every time a message is received. Only the messages with an ID this listener
 		/// signed up for will call this event.
 		/// @param messageID The ID of the message received.
-		/// @param pMessage The data of the message received, it might be nullptr.
+		/// @param msg The data of the message received, it might be nullptr.
 		/// @returns Whether the message was handled or not.
 		///
-		virtual bool HandleMessage(uint32_t messageID, void* pMessage) = 0;
+		virtual bool HandleMessage(uint32_t messageID, void* msg) = 0;
+	};
+
+	///
+	/// An interface that can receive messages sent through the app. 
+	/// Using the App::IMessageManager, listeners sign up to receive certain message IDs.
+	///
+	class IMessageListener
+		: public IUnmanagedMessageListener
+	{
+	public:
+		virtual int AddRef() = 0;
+		virtual int Release() = 0;
 	};
 
 	///

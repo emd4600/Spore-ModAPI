@@ -19,17 +19,17 @@ namespace Editors
 		return action;
 	}
 
-	auto_METHOD_VOID(CreatureWalkController, Update, Args(int dt), Args(dt));
-	auto_METHOD_VOID(CreatureWalkController, SetTargetPosition, Args(const Vector3& a1, bool a2, bool a3), Args(a1, a2, a3));
+	auto_METHOD_VOID(EditorCreatureController, Update, Args(int dt), Args(dt));
+	auto_METHOD_VOID(EditorCreatureController, SetTargetPosition, Args(const Vector3& a1, bool a2, bool a3), Args(a1, a2, a3));
 
-	CreatureWalkController::CreatureWalkController()
+	EditorCreatureController::EditorCreatureController()
 		: mnRefCount()
 		, mpAnimatedCreature()
 		, mpModelWorld()
 		, field_10()
 		, field_14()
 		, field_18()
-		, field_1C()
+		, mCurrentAnimID()
 		, mRealTargetPosition()
 		, mTargetPosition()
 		, mCurrentPosition()
@@ -50,12 +50,12 @@ namespace Editors
 	{
 	}
 
-	int CreatureWalkController::AddRef()
+	int EditorCreatureController::AddRef()
 	{
 		++mnRefCount;
 		return mnRefCount;
 	}
-	int CreatureWalkController::Release()
+	int EditorCreatureController::Release()
 	{
 		--mnRefCount;
 		if (mnRefCount == 0) {
@@ -65,7 +65,7 @@ namespace Editors
 		return mnRefCount;
 	}
 
-	void CreatureWalkController::SetTargetAngle(float angle, bool applyNow)
+	void EditorCreatureController::SetTargetAngle(float angle, bool applyNow)
 	{
 		mTargetAngle = angle;
 		if (applyNow)
@@ -75,28 +75,28 @@ namespace Editors
 		}
 	}
 
-	Anim::AnimatedCreature* CreatureWalkController::GetAnimatedCreature() const
+	Anim::AnimatedCreature* EditorCreatureController::GetAnimatedCreature() const
 	{
 		return mpAnimatedCreature.get();
 	}
-	void CreatureWalkController::SetAnimatedCreature(Anim::AnimatedCreature* pCreature)
+	void EditorCreatureController::SetAnimatedCreature(Anim::AnimatedCreature* pCreature)
 	{
 		mpAnimatedCreature = pCreature;
 	}
 
-	Graphics::IModelWorld* CreatureWalkController::GetGroundModelWorld() const
+	Graphics::IModelWorld* EditorCreatureController::GetGroundModelWorld() const
 	{
 		return mpModelWorld;
 	}
-	void CreatureWalkController::SetGroundModelWorld(Graphics::IModelWorld* modelWorld)
+	void EditorCreatureController::SetGroundModelWorld(Graphics::IModelWorld* modelWorld)
 	{
 		mpModelWorld = modelWorld;
 	}
 
-	Vector3 CreatureWalkController::GetCurrentPosition() const {
+	Vector3 EditorCreatureController::GetCurrentPosition() const {
 		return mCurrentPosition;
 	}
-	float CreatureWalkController::GetCurrentAngle() const {
+	float EditorCreatureController::GetCurrentAngle() const {
 		return mCurrentAngle;
 	}
 }

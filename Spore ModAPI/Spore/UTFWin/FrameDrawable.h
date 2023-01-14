@@ -97,12 +97,7 @@ namespace UTFWin
 		/* 4Ch */	Math::Rectangle mBorderWidth;
 		/* 5Ch */	Color field_5C;
 	};
-
-	/////////////////////////////////
-	//// INTERNAL IMPLEMENTATION ////
-	/////////////////////////////////
-
-	static_assert(sizeof(FrameDrawable) == 0x60, "sizeof(FrameDrawable) != 60h");
+	ASSERT_SIZE(FrameDrawable, 0x60);
 
 	namespace Addresses(FrameDrawable)
 	{

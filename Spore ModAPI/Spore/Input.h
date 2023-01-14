@@ -39,7 +39,7 @@ union KeyModifiers
 		int IsAltDown : 1;
 	};
 };
-static_assert(sizeof(KeyModifiers) == 4, "Invalid flags");
+ASSERT_SIZE(KeyModifiers, 4);
 
 
 enum MouseStateFlags
@@ -63,7 +63,7 @@ union MouseState
 		int IsRightButtonDown : 1;
 	};
 };
-static_assert(sizeof(MouseState) == 4, "Invalid flags");
+ASSERT_SIZE(MouseState, 4);
 
 enum MouseButton
 {
@@ -99,6 +99,7 @@ struct GameInput
 	void OnMouseMove(float mouseX, float mouseY, MouseState state);
 	void OnMouseWheel(int nWheelDelta, float mouseX, float mouseY, MouseState mouseState);
 
+#ifndef SDK_TO_GHIDRA
 	inline bool IsKeyDown(int vkey) const {
 		return keys[vkey];
 	}
@@ -106,6 +107,7 @@ struct GameInput
 	inline bool IsMouseDown(MouseButton button) const {
 		return mouseButtons[static_cast<int>(button) - 1000];
 	}
+#endif
 
 	void Reset();
 
@@ -128,14 +130,9 @@ struct GameInput
 	/// The amount of positions the mouse wheel is.
 	/* 44h */	int mouseWheel;
 };
+ASSERT_SIZE(GameInput, 0x48);
 
-
-/////////////////////////////////
-//// INTERNAL IMPLEMENTATION ////
-/////////////////////////////////
-
-static_assert(sizeof(GameInput) == 0x48, "sizeof(GameInput) == 48h");
-
+#ifndef SDK_TO_GHIDRA
 inline GameInput::GameInput()
 	: keys()
 	, keyModifiers()
@@ -215,3 +212,5 @@ inline auto_METHOD_VOID(GameInput, OnKeyDown, Args(int vkCode, KeyModifiers modi
 inline auto_METHOD_VOID(GameInput, OnKeyUp, Args(int vkCode, KeyModifiers modifiers), Args(vkCode, modifiers));
 
 inline auto_STATIC_METHOD(GameInput, bool, IsMouseButtonDown, Args(MouseButton button), Args(button));
+
+#endif

@@ -169,16 +169,16 @@ namespace UTFWin
 	}
 	Point Window::ToGlobalCoordinates(struct Point arg_0) {
 		Point p;
-		CALL(GetAddress(Window, func48), Point*, Args(IWindow*, Point*, struct Point), Args(this, &p, arg_0));
+		CALL(GetAddress(Window, ToGlobalCoordinates), Point*, Args(IWindow*, Point*, struct Point), Args(this, &p, arg_0));
 		return p;
 	}
 	Point Window::ToLocalCoordinates(struct Point arg_0) {
 		Point p;
-		CALL(GetAddress(Window, func49), Point*, Args(IWindow*, Point*, struct Point), Args(this, &p, arg_0));
+		CALL(GetAddress(Window, ToLocalCoordinates), Point*, Args(IWindow*, Point*, struct Point), Args(this, &p, arg_0));
 		return p;
 	}
 	bool Window::ToLocalCoordinates2(struct Point p, Point& dst) {
-		return CALL(GetAddress(Window, func50), bool, Args(IWindow*, struct Point, Point&), Args(this, p, dst));
+		return CALL(GetAddress(Window, ToLocalCoordinates2), bool, Args(IWindow*, struct Point, Point&), Args(this, p, dst));
 	}
 
 	// Specials
@@ -334,9 +334,9 @@ namespace UTFWin
 		return WindowProcedures(this);
 	}
 
-	intrusive_ptr<IWinProc> IWindow::AddWinProc(HandleUILambda_t pFunction, int eventFlags, int priority)
+	IWinProcPtr IWindow::AddWinProc(HandleUILambda_t pFunction, int eventFlags, int priority)
 	{
-		intrusive_ptr<IWinProc> ptr = new LambdaProc(pFunction, eventFlags, priority);
+		IWinProcPtr ptr = new LambdaProc(pFunction, eventFlags, priority);
 		AddWinProc(ptr.get());
 		return ptr;
 	}
@@ -378,7 +378,7 @@ namespace UTFWin
 	}
 
 
-	intrusive_ptr<IWinProc> IWindow::AddWinProcFilter(HandleUILambda_t pFunction, const vector<MessageType> types, int priority)
+	IWinProcPtr IWindow::AddWinProcFilter(HandleUILambda_t pFunction, const eastl::vector<MessageType> types, int priority)
 	{
 		// Get the event flags
 		int flags = 0;
@@ -388,12 +388,12 @@ namespace UTFWin
 			flags |= GetEventFlags(type);
 		}
 
-		intrusive_ptr<IWinProc> ptr = new LambdaFilterProc(pFunction, flags, priority, types);
+		IWinProcPtr ptr = new LambdaFilterProc(pFunction, flags, priority, types);
 		AddWinProc(ptr.get());
 		return ptr;
 	}
 
-	LambdaFilterProc::LambdaFilterProc(HandleUILambda_t pFunction, int eventFlags, int priority, const vector<MessageType>& types)
+	LambdaFilterProc::LambdaFilterProc(HandleUILambda_t pFunction, int eventFlags, int priority, const eastl::vector<MessageType>& types)
 		: LambdaProc(pFunction, eventFlags, priority)
 	{
 		for (MessageType type : types)

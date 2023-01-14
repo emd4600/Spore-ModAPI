@@ -133,9 +133,11 @@ namespace Editors
 	};
 	ASSERT_SIZE(EditorRequest, 0x9C);
 
+#ifndef SDK_TO_GHIDRA
 	inline void EditorRequest::SetDefaultValidation() {
 		editableTests = ContentValidation::ValidationEditableTests();
 	}
+#endif
 
 	namespace Addresses(EditorRequest) {
 		DeclareAddress(Submit);

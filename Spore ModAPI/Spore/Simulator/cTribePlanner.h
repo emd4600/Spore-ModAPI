@@ -59,7 +59,7 @@ namespace Simulator
 		/* 10h */	int mFoodRequired;
 		/* 14h */	int mFoodAccumulated;
 		/* 18h */	bool mbCheck;
-		/* 1Ch */	fixed_vector<cCreatureCitizenPtr, 8> mWorkers;
+		/* 1Ch */	eastl::fixed_vector<cCreatureCitizenPtr, 8> mWorkers;
 		/* 54h */	cTribePlanProperties* mpProperties;
 	};
 	ASSERT_SIZE(cTribePlan, 0x58);
@@ -78,9 +78,9 @@ namespace Simulator
 	public:
 		/* 10h */	int mpBehaviorTreeData;  //TODO cBehaviorTreeData
 		/// Plans from `TribePlans` folder decide the behavior of the tribe. The plans are selected in the Tribe Archetype file.
-		/* 14h */	vector_map<TribePlanType, vector<cTribePlan>> mPlans;
-		/* 2Ch */	fixed_vector<float, 48 / 4> mTimeBetweenPlanExecutionByType;
-		/* 74h */	intrusive_ptr<cTribe> mpTribe;
+		/* 14h */	eastl::vector_map<TribePlanType, eastl::vector<cTribePlan>> mPlans;
+		/* 2Ch */	eastl::fixed_vector<float, 48 / 4> mTimeBetweenPlanExecutionByType;
+		/* 74h */	eastl::intrusive_ptr<cTribe> mpTribe;
 		/* 78h */	float mAccumulatedDeltaTime;
 	};
 	ASSERT_SIZE(cTribePlanner, 0x7C);

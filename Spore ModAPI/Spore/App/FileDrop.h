@@ -8,8 +8,6 @@
 
 namespace App
 {
-	using namespace eastl;
-
 	class FileDropMessage
 	{
 	public:
@@ -20,7 +18,7 @@ namespace App
 		virtual int Release() = 0;
 
 	public:
-		/* 04h */	vector<string16> files;
+		/* 04h */	eastl::vector<eastl::string16> files;
 		/* 18h */	int field_18;
 		/* 1Ch */	int field_1C;
 	};

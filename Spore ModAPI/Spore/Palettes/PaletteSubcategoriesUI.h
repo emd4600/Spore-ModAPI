@@ -26,11 +26,11 @@ namespace Palettes
 		/* 18h */	float mButtonHeight;
 		/* 1Ch */	float mPageHeight;  // how much of the area is not filled with the category buttons
 		/* 20h */	Math::Rectangle mContainerArea;
-		/* 30h */	vector<UTFWin::IButton*> mTitleButtons;
-		/* 44h */	vector<UTFWin::IWindow*> field_44;
-		/* 58h */	vector<UTFWin::IWindow*> mTitleContainers;
-		/* 6Ch */	vector<intrusive_ptr<PaletteCategoryUI>> mCategoryUIs;
-		/* 80h */	vector<float> mScaleFactors;  // 1 if opened, 0 if not
+		/* 30h */	eastl::vector<UTFWin::IButton*> mTitleButtons;
+		/* 44h */	eastl::vector<UTFWin::IWindow*> field_44;
+		/* 58h */	eastl::vector<UTFWin::IWindow*> mTitleContainers;
+		/* 6Ch */	eastl::vector<eastl::intrusive_ptr<PaletteCategoryUI>> mCategoryUIs;
+		/* 80h */	eastl::vector<float> mScaleFactors;  // 1 if opened, 0 if not
 	};
 	ASSERT_SIZE(PaletteSubcategoriesUI, 0x94);
 }

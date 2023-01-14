@@ -22,7 +22,7 @@
 #include <Spore\Graphics\Texture.h>
 #include <Spore\Graphics\cImageDataRaw.h>
 #include <Spore\RenderWare\RenderWareFile.h>
-#include <Spore\Resource\DatabasePackedFile.h>
+#include <Spore\Resource\Database.h>
 #include <Spore\App\cJob.h>
 #include <Spore\Internal.h>
 
@@ -33,6 +33,11 @@
 
 namespace Graphics
 {
+	enum TextureMessages
+	{
+		kMsgTextureExtractCompleted = 0x522264D
+	};
+
 	class ITextureManager
 	{
 	public:
@@ -117,12 +122,12 @@ namespace Graphics
 		/// @returns The new created texture.
 		/* 40h */	virtual Texture* CreateTextureAutoKey(int width, int height, int mipmapLevels, int flags, D3DFORMAT format, int) = 0;
 		
-		/// Saves a texture into the given Resource::DBPF package, as a `.raster` file (it will use
+		/// Saves a texture into the given database (package or folder), as a `.raster` file (it will use
 		/// the `.raster` type ID regardless of the texture key)
 		/// @param texture
-		/// @param pDBPF
+		/// @param database
 		/// @param async If true, texture will be saved asynchronously 
-		/* 44h */	virtual bool WriteTexture(Texture* texture, Resource::DBPF* pDBPF, bool async) = 0;
+		/* 44h */	virtual bool WriteTexture(Texture* texture, Resource::Database* database, bool async) = 0;
 
 		/// Generates an automatic instance ID for group ID 0x40002200 and type ID `.raster`, then 
 		/// adds the given raster with that name to the manager.
@@ -154,11 +159,11 @@ namespace Graphics
 
 		/// Extracts the raw contents of a raster texture.
 		/// @param pRaster The source texture
-		/// @param dst Pointer where the extracted data will be created
+		/// @param[out] dst Pointer where the extracted data will be created
 		/// @param async If true, extract asynchronously, in the background; if false, block the execution until extraction is complete.
 		/// @param messageID For async extraction, ID of message sent when extraction has finished (defaults to `0x522264D`)
 		/// @returns
-		/* 58h */	virtual bool ExtractTextureRaster(RenderWare::Raster* pRaster, cImageDataRawPtr& dst, bool async, uint32_t messageID = 0) = 0;
+		/* 58h */	virtual bool ExtractTextureRaster(RenderWare::Raster* pRaster, cImageDataRawPtr* dst, bool async, uint32_t messageID = 0) = 0;
 
 		/// Extracts the raw contents of a texture.
 		/// @param texture The source texture

@@ -29,8 +29,8 @@ namespace UTFWin
 		FadeEffect() {}
 		virtual ~FadeEffect() {}
 
-		virtual int AddRef();
-		virtual int Release();
+		virtual int AddRef() override;
+		virtual int Release() override;
 		virtual void* Cast(uint32_t typeID) const override;
 
 		virtual void SetSerializer(Serializer& dst) override;
@@ -39,12 +39,7 @@ namespace UTFWin
 		virtual void func84h(int, float) override;
 
 	};
-
-	static_assert(sizeof(FadeEffect) == 0x60, "sizeof(FadeEffect) != 60h");
-
-	/////////////////////////////////
-	//// INTERNAL IMPLEMENTATION ////
-	/////////////////////////////////
+	ASSERT_SIZE(FadeEffect, 0x60);
 
 	namespace Addresses(FadeEffect)
 	{

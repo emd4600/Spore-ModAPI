@@ -26,15 +26,13 @@
 
 namespace Simulator
 {
-	class IGameData;
-	
 	class cScenarioPowerup
 	{
 	public:
 		static const uint32_t TYPE = 0x8367427;
 		
 		/* 00h */	virtual ~cScenarioPowerup();
-		/* 04h */	virtual IGameData* ToGameData() = 0;
+		/* 04h */	virtual cGameData* ToGameData() = 0;
 		/* 08h */	virtual cSpatialObject* ToSpatialObject() = 0;
 
 		/// Called when an object (creatures, and maybe other kinds of objects too?) gets inside the range of activation
@@ -62,7 +60,7 @@ namespace Simulator
 		/* 08h */	ResourceKey mPowerupModel;
 		/* 14h */	bool field_14;
 		/* 18h */	PropertyListPtr mpPropList;
-		/* 1Ch */	intrusive_ptr<Object> field_1C;
+		/* 1Ch */	ObjectPtr field_1C;
 		/* 20h */	cGameDataPtr field_20;
 		/* 24h */	float field_24;  // not initialized
 		/* 28h */	float field_28;  // not initialized
@@ -72,12 +70,7 @@ namespace Simulator
 		/// When you throw the object, this is the object to whom you throw it to. Only used by grenade.
 		/* 38h */	cGameDataPtr mpThrowObjective;
 	};
-
-	/////////////////////////////////
-	//// INTERNAL IMPLEMENTATION ////
-	/////////////////////////////////
-
-	static_assert(sizeof(cScenarioPowerup) == 0x3C, "sizeof(cScenarioPowerup) != 3Ch");
+	ASSERT_SIZE(cScenarioPowerup, 0x3C);
 
 	namespace Addresses(cScenarioPowerup)
 	{

@@ -22,7 +22,7 @@
 namespace Simulator
 {
 	auto_METHOD(cStarRecord, cPlanetRecord*, GetPlanetRecord, Args(size_t arg), Args(arg));
-	auto_METHOD_(cStarRecord, vector<cPlanetRecordPtr>&, GetPlanetRecords);
+	auto_METHOD_(cStarRecord, eastl::vector<cPlanetRecordPtr>&, GetPlanetRecords);
 
 	StarType cStarRecord::GetType() const {
 		return mType;

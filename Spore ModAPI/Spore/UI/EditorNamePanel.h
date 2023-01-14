@@ -42,7 +42,7 @@ namespace UI
 		/* 18h */	UILayoutPtr mpLayout;
 		/* 1Ch */	Editors::INameableEntity* mpNameableEntity;
 		/* 20h */	uint32_t mRandomNameType;
-		/* 24h */	string16 field_24;
+		/* 24h */	eastl::string16 field_24;
 		/* 34h */	UTFWin::IWindow* mpContainerWindow;
 	};
 	ASSERT_SIZE(EditorNamePanel, 0x38);

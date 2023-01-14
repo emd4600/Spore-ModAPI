@@ -26,8 +26,6 @@
 
 #define cCombatantPtr eastl::intrusive_ptr<Simulator::cCombatant>
 
-using namespace eastl;
-
 namespace Simulator
 {
 	///
@@ -126,10 +124,10 @@ namespace Simulator
 		// WARNING: there's no "field_4". The vfpointer is 8 bytes long because cGonzagoTimer sets alignment to 8!
 		/* 08h */	bool field_8;  // if true, it's ignored when checking mouse position
 		/* 09h */	bool field_9;
-		/* 0Ch */	map<int, int> field_0C;
+		/* 0Ch */	eastl::map<int, int> field_0C;
 		/* 28h */	cCombatantPtr mpLastAttacker;
 		/* 2Ch */	float mMaxHealthPoints;  // 10.0
-		/* 30h */	intrusive_ptr<Object>  field_30;
+		/* 30h */	ObjectPtr field_30;
 		/* 34h */	int field_34;  // if dead, 2
 		/* 38h */	float mHealthPoints;  // 10.0
 		/* 3Ch */	uint32_t mLastAttacker;  // -1
@@ -137,24 +135,19 @@ namespace Simulator
 		/* 44h */	cCombatantPtr field_44;
 		/* 48h */	cCombatantPtr mpTarget;
 		/* 4Ch */	Vector3 field_4C;
-		/* 58h */	vector<Vector3> mAimPoints;
+		/* 58h */	eastl::vector<Vector3> mAimPoints;
 		/* 6Ch */	bool field_6C;  // true, needsToLoadAimPoints?
 		/* 70h */	uint32_t field_70;  // an effect ID
 		/* 74h */	Vector3 field_74;
 		/* 80h */	bool field_80;
 		/* 81h */	bool field_81;
-		/* 84h */	vector<cGonzagoTimer> field_84;
+		/* 84h */	eastl::vector<cGonzagoTimer> field_84;
 		/* 98h */	cGonzagoTimer field_98;
 		/* B8h */	int field_B8;  // not initialized
 		/* BCh */	int field_BC;
-		/* C0h */	intrusive_ptr<Object> field_C0;
-		/* C4h */	intrusive_ptr<Object> field_C4;
+		/* C0h */	ObjectPtr field_C0;
+		/* C4h */	ObjectPtr field_C4;
 	};
-
-	/////////////////////////////////
-	//// INTERNAL IMPLEMENTATION ////
-	/////////////////////////////////
-
-	static_assert(sizeof(cCombatant) == 0xC8, "sizeof(cCombatant) != C8h");
+	ASSERT_SIZE(cCombatant, 0xC8);
 
 }

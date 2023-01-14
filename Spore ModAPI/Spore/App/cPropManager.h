@@ -21,10 +21,9 @@
 
 #include <EASTL\vector.h>
 #include <EASTL\hash_map.h>
+#include <EASTL\map.h>
 #include <EASTL\string.h>
 #include <EASTL\intrusive_ptr.h>
-
-
 #include <Spore\App\IPropManager.h>
 #include <Spore\App\IMessageListener.h>
 #include <Spore\Resource\IResourceManager.h>
@@ -37,7 +36,10 @@ namespace App
 	///
 	/// The implementation of IPropManager; this should only be used for extending and detouring.
 	///
-	class cPropManager : public IPropManager, public Resource::IResourceFactory, public IMessageListener
+	class cPropManager 
+		: public IPropManager
+		, public Resource::IResourceFactory
+		, public IMessageListener
 	{
 	public:
 		cPropManager();
@@ -47,71 +49,66 @@ namespace App
 
 		virtual bool HandleMessage(uint32_t messageID, void* pMessage) override;
 
-		virtual uint32_t GetType() override;
-		virtual bool CreateResource(Resource::IPFRecord* pRecord, ResourceObjectPtr& pDst, int, uint32_t nTypeID) override;
-		virtual bool AsyncAccess(Resource::IPFRecord** ppDst, int, Resource::DBPF* pDBPF, int, int, int) override;
-		virtual bool Read(Resource::IPFRecord* pRecord, Resource::ResourceObject* pResource, int, uint32_t nTypeID) override;
-		virtual bool Write(Resource::ResourceObject* pResource, Resource::IPFRecord* pRecord, int, uint32_t nTypeID) override;
+		virtual uint32_t GetFactoryType() override;
+		virtual bool CreateResource(Resource::IRecord* pRecord, ResourceObjectPtr& pDst, void*, uint32_t nTypeID) override;
+		virtual bool CreateResourceAsync(IAsyncRequestPtr* ppDst, int16_t, Resource::IRecord* pRecord, void* extraData, uint32_t typeID, int) override;
+		virtual bool ReadResource(Resource::IRecord* pRecord, Resource::ResourceObject* pResource, void*, uint32_t nTypeID) override;
+		virtual bool WriteResource(Resource::ResourceObject* pResource, Resource::IRecord* pRecord, void*, uint32_t nTypeID) override;
 		virtual size_t GetSupportedTypes(uint32_t* pDstTypes, size_t nCount) const override;
-		virtual bool IsValid(uint32_t nTypeID, uint32_t nSubTypeID) override;
+		virtual bool CanConvert(uint32_t nTypeID, uint32_t nSubTypeID) override;
 
 		virtual int AddRef() override;
 		virtual int Release() override;
-		virtual void func08h(bool value) override;
+		virtual void SetDevMode(bool value) override;
 		virtual bool Initialize() override;
 		virtual void PreloadPropertyLists() override;
 		virtual bool Dispose() override;
-		virtual bool GetPropertyID(const char* pPropertyName, uint32_t& result) const override;
-		virtual const char* GetPropertyName(uint32_t propertyID) const override;
-		virtual void* func20h(int arg_0, int arg_4) override;
-		virtual const char* GetPropertyGroupName(uint32_t propertyGroupID) const override;
-		virtual bool HasPropertyList(uint32_t instanceID, uint32_t groupID) const override;
-		virtual bool GetPropertyList(uint32_t instanceID, uint32_t groupID, PropertyListPtr& pDst) const override;
+		virtual bool GetIDFromName(const char* pPropertyName, uint32_t& result) override;
+		virtual const char* GetNameFromID(uint32_t propertyID) override;
+		virtual bool GetPropertyGroupIDFromName(const char* name, uint32_t& result) override;
+		virtual const char* GetNameFromPropertyGroupID(uint32_t propertyGroupID) override;
+		virtual bool HasPropertyList(uint32_t instanceID, uint32_t groupID) override;
+		virtual bool GetPropertyList(uint32_t instanceID, uint32_t groupID, PropertyListPtr& pDst) override;
 		virtual bool GetGlobalPropertyList(uint32_t instanceID, PropertyListPtr& pDst) override;
-		virtual void SetPropertyList(PropertyList* pList, uint32_t instanceID, uint32_t groupID) override;
-		virtual void* func38h(int arg_0) override;
-		virtual void* func3Ch(int arg_0, int arg_4) override;
-		virtual void* func40h(int arg_0, int arg_4, const vector<uint32_t>& instanceIDs) override;
-		virtual bool func44h(size_t nCount, const vector<ResourceKey>& names) override;
-		virtual bool GetAllListIDs(uint32_t groupID, vector<uint32_t>& result) const override;
+		virtual void AddPropertyList(PropertyList* pList, uint32_t instanceID, uint32_t groupID) override;
+		virtual void RemovePropertyList(PropertyList* pList) override;
+		virtual void RemovePropertyLists(int count, const ResourceKey* keys) override;
+		virtual void RemovePropertyLists2(uint32_t groupID, int count, uint32_t* instanceIDs) override;
+		virtual bool AreAnyPropertyListsReferenced(int count, const ResourceKey* keys) override;
+		virtual bool GetPropertyListIDs(uint32_t groupID, eastl::vector<uint32_t>& result) override;
 		virtual void* func4Ch(int arg_0, int arg_4) override;
-		virtual const Property* GetPropertyDefinition(uint32_t propertyID) const override;
-		virtual size_t GetPropertyGroupsCount() const override;
-		virtual bool GetPropertyGroupIDAt(size_t nIndex, uint32_t& dst) const override;
+		virtual const Property* GetPropertyDefinition(uint32_t propertyID) override;
+		virtual size_t GetPropertyGroupsCount() override;
+		virtual bool GetPropertyGroupIDAt(size_t nIndex, uint32_t& dst) override;
 
 
-	protected:
+	public:
 		/* 10h */	int field_10;
 		/* 14h */	bool mbIsInitialized;
-		/* 15h */	bool field_15;
+		/* 15h */	bool mIsDevMode;
 		/* 18h */	Resource::IResourceManager* mpResourceMgr;
 		/* 1Ch */	bool field_1C;
-		/* 20h */	map<uint32_t, Property> field_20;
+		/* 20h */	eastl::map<uint32_t, Property> field_20;
 		// only contains appproperties?
 		/* 3Ch */	PropertyList mPropertyDefinitions;  // if !field_1C, used to store default values of properties.trigger?
-		/* 74h */	hash_map<ResourceID, PropertyListPtr> mPropertyLists;
-		/* 94h */	hash_map<string, uint32_t> mNamesToPropertyIDs;
-		/* B4h */	hash_map<uint32_t, string> mPropertyIDsToNames;
-		/* D4h */	hash_map<string, int> field_D4;
-		/* F4h */	hash_map<uint32_t, string> mPropertyGroupNames;
-		/* 114h */	vector<uint32_t> mPropertyGroupIDs;
-		/* 128h */	hash_map<int, int> field_128;
-		/* 148h */	hash_map<int, int> field_148;
-		/* 168h */	string mCurrentPropertyName;  // in lower case, used as temporary
+		/* 74h */	eastl::hash_map<ResourceID, PropertyListPtr> mPropertyLists;
+		/* 94h */	eastl::hash_map<eastl::string, uint32_t> mNamesToPropertyIDs;
+		/* B4h */	eastl::hash_map<uint32_t, eastl::string> mPropertyIDsToNames;
+		/* D4h */	eastl::hash_map<eastl::string, int> mPropertyGroupNamesToIDs;
+		/* F4h */	eastl::hash_map<uint32_t, eastl::string> mPropertyGroupNames;
+		/* 114h */	eastl::vector<uint32_t> mPropertyGroupIDs;
+		/* 128h */	eastl::hash_map<int, int> field_128;
+		/* 148h */	eastl::hash_map<int, int> field_148;
+		/* 168h */	eastl::string mCurrentPropertyName;  // in lower case, used as temporary
 		/* 178h */	int field_178;
-		/* 17Ch */	intrusive_ptr<ArgScript::FormatParser> field_17C;
-		/* 180h */	string field_180;
+		/* 17Ch */	eastl::intrusive_ptr<ArgScript::FormatParser> field_17C;
+		/* 180h */	eastl::string field_180;
 		/* 190h */	ArgScript::Line field_190;
 		/* 1D4h */	int field_1D4;
-		/* 1D8h */	string field_1D8;
+		/* 1D8h */	eastl::string field_1D8;
 		/* 1E8h */	bool mbAddToAppProperties;  // add property to direct property list
 	};
-
-	///////////////////////////////////
-	//// INTERNAL IMPLEMENENTATION ////
-	///////////////////////////////////
-
-	static_assert(sizeof(cPropManager) == 0x1EC, "sizeof(PropManager) must be 1ECh");
+	ASSERT_SIZE(cPropManager, 0x1EC);
 
 	namespace Addresses(cPropManager)
 	{
@@ -149,6 +146,22 @@ namespace App
 		DeclareAddress(GetPropertyGroupsCount);
 		DeclareAddress(GetPropertyGroupIDAt);
 
+		DeclareAddress(GetFactoryType);
+		DeclareAddress(CreateResourceAsync);
+		DeclareAddress(ReadResource);
+		DeclareAddress(WriteResource);
+		DeclareAddress(CanConvert);
 
+		DeclareAddress(SetDevMode);
+		DeclareAddress(GetIDFromName);
+		DeclareAddress(GetNameFromID);
+		DeclareAddress(GetPropertyGroupIDFromName);
+		DeclareAddress(GetNameFromPropertyGroupID);
+		DeclareAddress(AddPropertyList);
+		DeclareAddress(RemovePropertyList);
+		DeclareAddress(RemovePropertyLists);
+		DeclareAddress(RemovePropertyLists2);
+		DeclareAddress(AreAnyPropertyListsReferenced);
+		DeclareAddress(GetPropertyListIDs);
 	}
 }

@@ -93,14 +93,9 @@ namespace RenderWare
 			return (char*)(((int)thisp + 0x2B) & ~15);
 		}
 
-		static const uint32_t TYPE = 0x2000B;
+		static const uint32_t RW_TYPE = 0x2000B;
 	};
-
-	/////////////////////////////////
-	//// INTERnAL IMPLEMENTATION ////
-	/////////////////////////////////
-
-	static_assert(sizeof(TextureSlot) == 0x10, "sizeof(TextureSlot) != 10h");
+	ASSERT_SIZE(TextureSlot, 0x10);
 
 	namespace Addresses(TextureSlot)
 	{
@@ -114,6 +109,7 @@ namespace RenderWare
 		DeclareAddress(SetRaster);
 	}
 
+#ifndef SDK_TO_GHIDRA
 	inline auto_METHOD_VOID_(CompiledState, Load);
 
 	inline auto_METHOD(CompiledState, Raster*, GetRaster, Args(size_t slotIndex), Args(slotIndex));
@@ -121,4 +117,5 @@ namespace RenderWare
 
 
 	inline auto_METHOD_VOID(TextureSlot, SetTexture, Args(CompiledState* compiledState, int slotIndex, Raster* raster), Args(compiledState, slotIndex, raster));
+#endif
 }

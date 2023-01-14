@@ -24,8 +24,6 @@
 #include <EASTL\vector.h>
 #include <Spore\App\PropertyList.h>
 
-using namespace eastl;
-
 namespace Simulator
 {
 	class cCreatureAbility
@@ -56,8 +54,8 @@ namespace Simulator
 		/* 3Ch */	float mDamage;
 		/* 40h */	float mRangedDamage;
 		/* 44h */	float mRazeDamage;
-		/* 48h */	vector<uint32_t> mAnimationIDs;
-		/* 5Ch */	vector<uint32_t> mFollowerAnimationIDs;
+		/* 48h */	eastl::vector<uint32_t> mAnimationIDs;
+		/* 5Ch */	eastl::vector<uint32_t> mFollowerAnimationIDs;
 		/// Animation ID a verb should play to show off the verb icon
 		/* 70h */	uint32_t mVerbIconRepresentativeAnimation;
 		/* 74h */	uint32_t mBabyGameAnimationID;
@@ -77,9 +75,9 @@ namespace Simulator
 		/* ACh */	float mEnergyCost;
 		/* B0h */	float mSpeed;  // 5.0
 		/* B4h */	unsigned int mSpeedGear;
-		/* B8h */	vector<uint32_t> mCombatEffectTypes;
-		/* CCh */	vector<float> mCombatEffectPercentages;
-		/* E0h */	vector<uint32_t> mCombatEffectEffectIds;
+		/* B8h */	eastl::vector<uint32_t> mCombatEffectTypes;
+		/* CCh */	eastl::vector<float> mCombatEffectPercentages;
+		/* E0h */	eastl::vector<uint32_t> mCombatEffectEffectIds;
 		/* F4h */	float mRushingRange;
 		/* F8h */	uint32_t mRushingAnimationID;  // -1
 		/* FCh */	float mRushingSpeed;
@@ -97,12 +95,11 @@ namespace Simulator
 		/* 124h */	uint32_t mReactionDeathAnimation;
 		/* 128h */	uint32_t mReactionLiveAnimation;
 		/* 12Ch */	float mReactionDuration;
-		/* 130h */	intrusive_ptr<App::PropertyList> mpPropList;
+		/* 130h */	PropertyListPtr mpPropList;
 		/* 134h */	float mRangeMin;
 		/* 138h */	float mAvatarRangeMin;
 	};
-
-	static_assert(sizeof(cCreatureAbility) == 0x13C, "sizeof(cCreatureAbility) != 13Ch");
+	ASSERT_SIZE(cCreatureAbility, 0x13C);
 
 	namespace Addresses(cCreatureAbility)
 	{

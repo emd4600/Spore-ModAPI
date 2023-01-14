@@ -46,8 +46,8 @@ namespace Simulator
 		/* 26Ch */	int field_26C;  // -1
 		/* 270h */	cGonzagoTimer mVignetteTimer;
 		/* 290h */	cTribePlannerPtr mpTribePlanner;
-		/* 294h */	vector<int> field_294;
-		/* 2A8h */	vector<int> field_2A8;
+		/* 294h */	eastl::vector<int> field_294;
+		/* 2A8h */	eastl::vector<int> field_2A8;
 		/* 2BCh */	int field_2BC;
 		/* 2C0h */	float mEggPenFoodValue;
 		/* 2C4h */	float mInitialRelationship;
@@ -71,22 +71,22 @@ namespace Simulator
 		/* 304h */	Vector3 mClosestWater;
 		/// Distance from tribe to `mClosestWater`
 		/* 310h */	float mClosestWaterDistance;
-		/* 314h */	vector<Vector3> mClosestForests;
+		/* 314h */	eastl::vector<Vector3> mClosestForests;
 		/* 328h */	int field_328;  // not initialized
 		/* 32Ch */	int mUpgradeLevel;
 		/* 330h */	float mZoningRadius;  // 30.0
 		/* 334h */	bool mbRoboTribe;
 		/* 338h */	int mRoboPopulationCount;
 		/* 33Ch */	bool mbVisualized;
-		/* 340h */	vector<cCreatureCitizenPtr> mTribeMembers;
-		/* 354h */	vector<cSpatialObjectPtr> mSelectableMembers;
+		/* 340h */	eastl::vector<cCreatureCitizenPtr> mTribeMembers;
+		/* 354h */	eastl::vector<cSpatialObjectPtr> mSelectableMembers;
 		/* 368h */	cTribeHutPtr mpHut;
-		/* 36Ch */	vector<cTribeToolPtr> mTools;
-		/* 380h */	vector<cTribeToolPtr> mSocialTools;
-		/* 394h */	hash_map<int, UnkCityClass> field_394;
+		/* 36Ch */	eastl::vector<cTribeToolPtr> mTools;
+		/* 380h */	eastl::vector<cTribeToolPtr> mSocialTools;
+		/* 394h */	eastl::hash_map<int, UnkCityClass> field_394;
 		/* 3B4h */	UnkCityClass field_3B4;
-		/* 418h */	fixed_vector<int, 45> field_418;
-		/* 4E4h */	hash_map<int, deque<ObjectPtr>> field_4E4;
+		/* 418h */	eastl::fixed_vector<int, 45> field_418;
+		/* 4E4h */	eastl::hash_map<int, eastl::deque<ObjectPtr>> field_4E4;
 		/* 504h */	int field_504;  // not initialized
 		/* 508h */	int field_508;  // not initialized
 		/* 50Ch */	int field_50C;  // not initialized
@@ -128,7 +128,7 @@ namespace Simulator
 		/* 18C4h */	int field_18C4;  // not initialized
 		/* 18C8h */	int field_18C8;
 		/* 18CCh */	char field_18CC[0x38];  // 18CC is array of cSpeciesProfile* ?
-		/* 1904h */	fixed_vector<ResourceKey, 14> mSpeciesKeys;
+		/* 1904h */	eastl::fixed_vector<ResourceKey, 14> mSpeciesKeys;
 		/* 19C4h */	cOrnamentPtr mpDomesticatedAnimalsPen;
 		/* 19C8h */ cOrnamentPtr mpEggPen;
 		/* 19CCh */	cGameDataPtr mpDomesticatedAnimalsHerd;  //TODO

@@ -10,7 +10,7 @@
 class AnimEditorMode 
 	: public App::IGameMode
 	, public Sporepedia::IShopperListener
-	, public Graphics::IRenderable
+	, public Graphics::ILayer
 	, public DefaultRefCounted
 {
 public:
@@ -41,7 +41,7 @@ public:
 
 	void OnShopperAccept(const ResourceKey& selection) override;
 
-	void Render(int flags, int layerIndex, App::cViewer**, void*) override;
+	void DrawLayer(int flags, int layerIndex, App::cViewer**, Graphics::RenderStatistics&) override;
 
 
 	void AddCreature(const ResourceKey& key);
@@ -57,7 +57,7 @@ protected:
 
 	IModelWorldPtr mpModelWorld;
 	ILightingWorldPtr mpLightingWorld;
-	IEffectWorldPtr mpEffectWorld;
+	IEffectsWorldPtr mpEffectWorld;
 	IAnimWorldPtr mpAnimWorld;
 	vector<AnimatedCreaturePtr> mCreatures;
 	vector<string16> mNames;

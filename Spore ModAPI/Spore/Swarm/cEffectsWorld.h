@@ -46,23 +46,22 @@ namespace Swarm
 		/* 24h */	bool field_24;
 		/* 28h */	int field_28;  // 1
 		/* 2Ch */	int field_2C;
-		/* 30h */	vector<IVisualEffectPtr> field_30;
-		/* 44h */	vector<int> field_44;  // indices to field_30
-		/* 58h */	vector<int> field_58;
-		/* 6Ch */	vector<int> field_6C;
+		/* 30h */	eastl::vector<IVisualEffectPtr> field_30;
+		/* 44h */	eastl::vector<int> field_44;  // indices to field_30
+		/* 58h */	eastl::vector<int> field_58;
+		/* 6Ch */	eastl::vector<int> field_6C;
 		/* 80h */	int field_80;  // 1
 		/* 84h */	int field_84;  // 1
 		/* 88h */	float field_88;  // 1.0f
 		/* 8Ch */	int field_8C;  // not initialized
 		/* 90h */	int field_90;
-		/* 94h */	string field_94;
+		/* 94h */	eastl::string field_94;
 
 
 		// 20h state
 		// 90h effectCount
 
-		/* 14h */	virtual void SetLOD(float value, int) = 0;
+		/* 14h */	virtual void SetLOD(float value, int) override = 0;
 	};
-
-	static_assert(sizeof(cEffectsWorld) == 0xA4, "sizeof(cEffectsWorld) != A4h");
+	ASSERT_SIZE(cEffectsWorld, 0xA4);
 }

@@ -133,11 +133,11 @@ namespace UTFWin
 
 		/// Gets the caption borders.
 		/// @param[out] dst The Math::Rectangle where the borders will be written.
-		/* 50h */	virtual void GetCaptionBorders(union Math::Rectangle& dst) = 0;
+		/* 50h */	virtual void GetCaptionBorders(struct Math::Rectangle& dst) = 0;
 
 		/// Sets the caption borders
 		/// @param borders The Math::Rectangle that contains the new borders.
-		/* 54h */	virtual void SetCaptionBorders(const union Math::Rectangle& borders) = 0;
+		/* 54h */	virtual void SetCaptionBorders(const struct Math::Rectangle& borders) = 0;
 
 		/// Gets the caption offset to be used when the button is selected/depressed.
 		/// @param[out] dst The Math::Point where the offset will be written.

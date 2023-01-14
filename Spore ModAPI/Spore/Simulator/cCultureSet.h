@@ -22,8 +22,6 @@
 #include <Spore\CommonIDs.h>
 #include <EASTL\map.h>
 
-using namespace eastl;
-
 namespace Simulator
 {
 	/// Contains the IDs of all the creation types of a specific "culture" or civilization/empire. This maps
@@ -47,6 +45,6 @@ namespace Simulator
 		//TODO other methods such as sub_BF89F0, sub_BF8DF0
 
 	protected:
-		map<uint32_t, ResourceKey> mModelTypeToKeyMap;
+		eastl::map<uint32_t, ResourceKey> mModelTypeToKeyMap;
 	};
 }

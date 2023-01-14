@@ -23,7 +23,7 @@ namespace Sporepedia
 		/* 14h */	virtual const char16_t* GetDescription() = 0;
 		/* 18h */	virtual ResourceKey GetImageKey() = 0;
 		/* 1Ch */	virtual ResourceKey GetBackgroundImageKey() = 0;
-		/* 20h */	virtual void GetTags(string16& dst) = 0;
+		/* 20h */	virtual void GetTags(eastl::string16& dst) = 0;
 		/// Returns the asset subtype such as BuildingEntertainment, PlantSmall, VehicleMilitaryWater,...
 		/* 24h */	virtual uint32_t GetAssetSubtype() = 0;
 		/* 28h */	virtual int64_t GetTimeCreated() = 0;
@@ -52,7 +52,7 @@ namespace Sporepedia
 		/* 80h */	virtual bool func80h() = 0;
 		/* 84h */	virtual bool func84h() = 0;
 		/* 88h */	virtual int func88h() = 0;
-		/* 8Ch */	virtual bool GetConsequenceTraits(vector<uint32_t>& dst) = 0;
+		/* 8Ch */	virtual bool GetConsequenceTraits(eastl::vector<uint32_t>& dst) = 0;
 		/* 90h */	virtual bool GetAssetID(uint64_t& dst) = 0;
 		/* 94h */	virtual int64_t GetTimeDownloaded() = 0;
 		/* 98h */	virtual void* func98h() = 0;
@@ -89,7 +89,7 @@ namespace Sporepedia
 		virtual const char16_t* GetDescription() override;
 		virtual ResourceKey GetImageKey() override;
 		virtual ResourceKey GetBackgroundImageKey() override;
-		virtual void GetTags(string16& dst) override;
+		virtual void GetTags(eastl::string16& dst) override;
 		virtual uint32_t GetAssetSubtype() override;
 		virtual int64_t GetTimeCreated() override;
 		virtual bool HasName() override;
@@ -116,7 +116,7 @@ namespace Sporepedia
 		virtual bool func80h() override;
 		virtual bool func84h() override;
 		virtual int func88h() override;
-		virtual bool GetConsequenceTraits(vector<uint32_t>& dst) override;
+		virtual bool GetConsequenceTraits(eastl::vector<uint32_t>& dst) override;
 		virtual bool GetAssetID(uint64_t& dst) override;
 		virtual int64_t GetTimeDownloaded() override;
 		virtual void* func98h() override;
@@ -140,10 +140,10 @@ namespace Sporepedia
 		/* 34h */	float field_34;  // not initialized
 		/* 38h */	float field_38;  // not initialized
 		/* 3Ch */	ObjectPtr field_3C;
-		/* 40h */	fixed_vector<int, 5> field_40;
+		/* 40h */	eastl::fixed_vector<int, 5> field_40;
 		/* 6Ch */	int field_6C;
-		/* 70h */	AsyncResourcePtr mpAsyncMetadata;
-		/* 74h */	AsyncResourcePtr mpAsyncSummary;
+		/* 70h */	IAsyncRequestPtr mpAsyncMetadata;
+		/* 74h */	IAsyncRequestPtr mpAsyncSummary;
 	};
 	ASSERT_SIZE(cSPAssetDataOTDB, 0x78);
 

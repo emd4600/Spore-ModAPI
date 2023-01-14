@@ -27,8 +27,6 @@
 
 #define PropertyListPtr eastl::intrusive_ptr<App::PropertyList>
 
-using namespace eastl;
-
 namespace App
 {
 
@@ -45,7 +43,8 @@ namespace App
 	/// PropertyList inherits from ResourceObject, and therefore, is uniquely identified using a ResourceKey. 
 	/// Use the class PropertyManager to get specific lists.
 	///
-	class PropertyList : public Resource::CachedResourceObject
+	class PropertyList 
+		: public Resource::CachedResourceObject
 	{
 
 	public:
@@ -158,7 +157,7 @@ namespace App
 		/// This does not include the properties contained in the parent.
 		/// @param[out] dst A uint32_t vector where the IDs will be put.
 		///
-		/* 44h */	virtual void GetPropertyIDs(vector<uint32_t>& dst) const;
+		/* 44h */	virtual void GetPropertyIDs(eastl::vector<uint32_t>& dst) const;
 
 		///
 		/// Removes all the properties from this PropertyList.
@@ -172,17 +171,12 @@ namespace App
 		void SetParent(PropertyList* pParent);
 
 	protected:
-		typedef vector_map<uint32_t, Property> PropertyMap;
+		typedef eastl::vector_map<uint32_t, Property> PropertyMap;
 		/* 18h */	PropertyMap		mProperties;
 		/* 30h */	PropertyListPtr	mpParent;
 		/* 34h */	int				mnOperationsDone;  // I don't really know why this is used, but the add, remove, copy etc operations increase this
 	};
-
-	///////////////////////////////////
-	//// INTERNAL IMPLEMENENTATION ////
-	///////////////////////////////////
-
-	static_assert(sizeof(PropertyList) == 0x38, "sizeof(PropertyList) must be 38h");
+	ASSERT_SIZE(PropertyList, 0x38);
 
 	namespace Addresses(PropertyList)
 	{

@@ -37,6 +37,7 @@ namespace Addresses(App)
 
 namespace App
 {
+#ifndef SDK_TO_GHIDRA
 	/// AppProperties is a kind of PropertyList containing globally-accessible properties that control
 	/// the running of the app as a whole.
 	///
@@ -48,6 +49,9 @@ namespace App
 	{
 		return *(DirectPropertyList**)(GetAddress(App, AppProperties_ptr));
 	}
+#else
+	DirectPropertyList* sAppProperties;
+#endif
 
 	/// 
 	/// This namespace only contains property IDs to be used in the AppProperties module. These properties define
@@ -55,7 +59,7 @@ namespace App
 	///
 	namespace SPPropertyIDs
 	{
-		enum
+		enum Properties
 		{
 			kShowFPS = 1,
 			kRenderUI = 2,

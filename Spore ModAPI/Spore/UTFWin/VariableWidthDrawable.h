@@ -74,17 +74,12 @@ namespace UTFWin
 
 
 	protected:
-		/* 0Ch */	intrusive_ptr<Image> mpImage;
+		/* 0Ch */	ImagePtr mpImage;
 		/* 10h */	Color mFillColor;
 	};
+	ASSERT_SIZE(VariableWidthDrawable, 0x14);
 
 	typedef VariableWidthDrawable ProgressBarDrawable;
-
-	/////////////////////////////////
-	//// INTERNAL IMPLEMENTATION ////
-	/////////////////////////////////
-
-	static_assert(sizeof(VariableWidthDrawable) == 0x14, "sizeof(ButtonDrawableRadio) != 14h");
 
 	namespace Addresses(VariableWidthDrawable)
 	{

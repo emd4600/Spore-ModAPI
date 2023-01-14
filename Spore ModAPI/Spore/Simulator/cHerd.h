@@ -42,9 +42,9 @@ namespace Simulator
 
 	public:
 		/* 34h */	Vector3 mInitialPosition;
-		/* 40h */	vector<cCreatureAnimalPtr> mHerd;
-		/* 54h */	vector<cEggPtr> mEggs;
-		/* 68h */	vector<Vector3> mFeedingGrounds;
+		/* 40h */	eastl::vector<cCreatureAnimalPtr> mHerd;
+		/* 54h */	eastl::vector<cEggPtr> mEggs;
+		/* 68h */	eastl::vector<Vector3> mFeedingGrounds;
 		/* 7Ch */	bool mbCheckedForForests;
 		/// Index to `mFeedingGrounds`, maybe? Default is -1
 		/* 80h */	int mCurrentFeedingGrounds;  // -1
@@ -56,7 +56,7 @@ namespace Simulator
 		/* 94h */	float mDNAEvolutionThreshold;
 		/* 98h */	ResourceKey mOwnerSpeciesKey;
 		/* A4h */	cSpeciesProfile* mpSpeciesProfile;
-		/* A8h */	fixed_vector<ResourceKey, 4> mEvolvedSpeciesProfileKeys;
+		/* A8h */	eastl::fixed_vector<ResourceKey, 4> mEvolvedSpeciesProfileKeys;
 		/* F0h */	int mGeneration;
 		/* F4h */	int mTargetHerdSize;
 		/* F8h */	int mInitialShortfall;
@@ -87,8 +87,8 @@ namespace Simulator
 		/* 198h */	bool mbEggsInNest;
 		/* 1A0h */	cGonzagoTimer field_1A0;
 		/* 1C0h */	cGonzagoTimer mChangeFeedingGroundsTimer;
-		/* 1E0h */	vector<int> mValidLocations;
-		/* 1F4h */	vector<int> field_1F4;
+		/* 1E0h */	eastl::vector<int> mValidLocations;
+		/* 1F4h */	eastl::vector<int> field_1F4;
 		/* 208h */	bool mbCheckedForWateringHole;
 		/* 20Ch */	Vector3 mWateringHolePosition;
 		/* 218h */	bool mbEnabled;

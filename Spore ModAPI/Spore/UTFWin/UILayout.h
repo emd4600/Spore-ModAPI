@@ -92,7 +92,7 @@ namespace UTFWin
 
 
 
-		enum
+		enum Defaults
 		{
 			kDefaultGroup = 0x40464100,
 			kDefaultType = 0x510A95B,
@@ -105,14 +105,7 @@ namespace UTFWin
 		/* 08h */	ResourceKey			mResourceKey;
 		/* 14h */	UILayoutObjectsPtr	mpLayoutObjects;
 	};
-
-
-	///////////////////////////////////
-	//// INTERNAL IMPLEMENENTATION ////
-	///////////////////////////////////
-
-	static_assert(sizeof(UILayout) == 0x18, "sizeof(UILayout) must be 18h!");
-
+	ASSERT_SIZE(UILayout, 0x18);
 
 	namespace Addresses(UILayout)
 	{

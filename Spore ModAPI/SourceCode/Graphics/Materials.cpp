@@ -26,7 +26,7 @@
 #include <Spore\Graphics\RenderUtils.h>
 #include <Spore\RenderWare\CompiledState.h>
 #include <Spore\Resource\IResourceManager.h>
-
+#include <Spore\CommonIDs.h>
 #include <Spore\IO\StreamAdapter.h>
 
 namespace Graphics
@@ -70,13 +70,13 @@ namespace Graphics
 	bool IMaterialManager::ReadCompiledShaders(uint32_t instanceID) {
 		using namespace Resource;
 
-		auto fileKey = ResourceKey(instanceID, IMaterialManager::kSporeMaterialTypeID, IMaterialManager::kShadersGroupID);
-		auto dbpf = ResourceManager.GetDBPF(fileKey);
+		auto fileKey = ResourceKey(instanceID, TypeIDs::smt, GroupIDs::Shaders);
+		auto database = ResourceManager.FindDatabase(fileKey);
 
-		if (!dbpf) return false;
+		if (!database) return false;
 
-		IPFRecord* record;
-		if (!dbpf->GetFile(fileKey, &record)) return false;
+		IRecord* record;
+		if (!database->OpenRecord(fileKey, &record)) return false;
 
 		return ReadCompiledShaders(record->GetStream());
 	}
@@ -160,13 +160,13 @@ namespace Graphics
 		using namespace RenderWare;
 
 		ResourceObjectPtr pRenderWare;
-		auto rwKey = ResourceKey(instanceID, RenderWareFile::TYPE, IMaterialManager::kCompiledStatesGroupID);
+		auto rwKey = ResourceKey(instanceID, RenderWareFile::TYPE, GroupIDs::CompiledStates);
 		if (!ResourceManager.GetResource(rwKey, &pRenderWare)) return false;
 
-		auto dbpf = ResourceManager.GetDBPF(rwKey);
+		auto database = ResourceManager.FindDatabase(rwKey);
 
-		IPFRecord* record;
-		if (!dbpf->GetFile(ResourceKey(instanceID, IMaterialManager::kSporeMaterialTypeID, IMaterialManager::kCompiledStatesLinkGroupID), &record)) {
+		IRecord* record;
+		if (!database->OpenRecord(ResourceKey(instanceID, TypeIDs::smt, GroupIDs::CompiledStatesLink), &record)) {
 			return false;
 		}
 
@@ -214,7 +214,7 @@ namespace Graphics
 				for (int i = 0; i < material.statesCount; ++i) {
 					RWObjectQuery query;
 					pRenderWare->mpHeader->GetRWObject(index, query);
-					if (query.typeCode == CompiledState::TYPE) {
+					if (query.typeCode == CompiledState::RW_TYPE) {
 						material.states[i] = (CompiledState*)query.pData;
 					}
 					++index;

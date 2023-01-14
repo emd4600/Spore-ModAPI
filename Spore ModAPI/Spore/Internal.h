@@ -21,7 +21,7 @@
 
 #include <cstdint>
 #include <cctype>
-#include <windows.h>
+#include <Windows.h>
 #include <Spore\CppRevEng.h>
 
 
@@ -35,9 +35,9 @@
 
 #ifdef MODAPI_DLL_EXPORT
 	#if EXECUTABLE_TYPE == 0
-		#define SelectAddress(addressDisk, unused, addressSteamPatched) addressDisk
+		#define SelectAddress(addressDisk, addressSteamPatched) addressDisk
 	#elif EXECUTABLE_TYPE == 2
-		#define SelectAddress(addressDisk, unused, addressSteamPatched) addressSteamPatched
+		#define SelectAddress(addressDisk, addressSteamPatched) addressSteamPatched
 	#endif
 #endif
 

@@ -24,7 +24,7 @@ namespace App
 		/// @param lowBits8
 		/// @param lowBits0
 		/// @returns
-		/* 04h */	virtual ResourceKey Generate(uint32_t typeID, uint8_t poolID, uint8_t highBits, uint8_t lowBits8, uint8_t lowBits0);
+		/* 04h */	virtual void Generate(ResourceKey& dst, uint32_t typeID, uint8_t poolID, uint8_t highBits, uint8_t lowBits8, uint8_t lowBits0);
 
 		/// Generates a ResourceKey that uses the given type and group IDs, autogenerating an instance ID
 		/// that does not conflict with any existing file. The group ID masked with `0x00ff0000` determines
@@ -32,7 +32,7 @@ namespace App
 		/// @param typeID
 		/// @param groupID
 		/// @returns
-		/* 08h */	virtual ResourceKey GenerateForGroup(uint32_t typeID, uint32_t groupID);
+		/* 08h */	virtual void GenerateForGroup(ResourceKey& dst, uint32_t typeID, uint32_t groupID);
 
 	public:
 		/* 04h */	int field_4;  // time?

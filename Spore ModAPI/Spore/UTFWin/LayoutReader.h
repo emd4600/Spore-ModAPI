@@ -24,14 +24,12 @@
 
 #include <EASTL\vector.h>
 
-using namespace eastl;
-
 namespace UTFWin
 {
 	class LayoutReader : public Object
 	{
 	public:
-		enum
+		enum MessageIDs
 		{
 			kResultSuccessXML = 0x2FC50001,
 			kResultSuccess = 0x2FC50006
@@ -39,6 +37,6 @@ namespace UTFWin
 
 		static const uint32_t TYPE = 0xAFC46457;
 
-		virtual int Read(IO::IStream* pInputStream, void* arg_4, int arg_8, vector<int>& arg_C, int arg_10, int arg_14) = 0;
+		virtual int Read(IO::IStream* pInputStream, void* arg_4, int arg_8, eastl::vector<int>& arg_C, int arg_10, int arg_14) = 0;
 	};
 }

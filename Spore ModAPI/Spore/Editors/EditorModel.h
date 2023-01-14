@@ -55,21 +55,21 @@ namespace Editors
 
 		void Dispose();
 
-		string16& GetCreationName() const;
+		eastl::string16& GetCreationName() const;
 
 		void SetColor(int index, struct ColorRGB color);
 
 		ColorRGB GetColor(int index) const;
 
-		int GetPartsCount() const;
-		EditorRigblock* GetPart(int index);
+		int GetRigblocksCount() const;
+		EditorRigblock* GetRigblock(int index);
 
 	protected:
 		/* 08h */	int mnRefCount;
 
 	public:
 		/* 0Ch */	ResourceKey mKey;
-		/* 18h */	vector<EditorRigblockPtr> mParts;
+		/* 18h */	eastl::vector<EditorRigblockPtr> mRigblocks;
 		/* 2Ch */	bool field_2C;
 		/* 30h */	int field_30;  // intrusive_ptr, but not to an Object
 		/* 34h */	bool field_34;
@@ -81,26 +81,21 @@ namespace Editors
 		/* 4Ch */	bool field_4C;
 		/* 4Dh */	bool field_4D;
 		/* 4Eh */	bool field_4E;  // true
-		/* 4Fh */	bool field_4F;
+		/* 4Fh */	bool field_4F;  //TODO allows symmetry?
 		/* 50h */	bool field_50;
 		/* 51h */	bool field_51;
 		/* 54h */	int mTranslationOptions;
 		/* 58h */	uint32_t mModelType;
-		/* 5Ch */	string16 mName;
-		/* 6Ch */	string16 mDescription;  // message 0x14418C3F ?
-		/* 7Ch */	string16 mAcceptedName;  // the name after removing illegal characters
+		/* 5Ch */	eastl::string16 mName;
+		/* 6Ch */	eastl::string16 mDescription;  // message 0x14418C3F ?
+		/* 7Ch */	eastl::string16 mAcceptedName;  // the name after removing illegal characters
 		/* 8Ch */	int mSkinEffectIDs[3];
 		/* 98h */	int mSkinEffectSeeds[3];  // 1234
 		/* A4h */	ColorRGB mColors[3];
-		/* C8h */	vector<BoundingBox> field_C8;
+		/* C8h */	eastl::vector<BoundingBox> field_C8;
 		/* DCh */	int mZCorpScore;  // not initialized
 	};
-
-	/////////////////////////////////
-	//// INTERNAL IMPLEMENTATION ////
-	/////////////////////////////////
-
-	static_assert(sizeof(EditorModel) == 0xE0, "sizeof(cOrnament) != E0h");
+	ASSERT_SIZE(EditorModel, 0xE0);
 
 	namespace Addresses(EditorModel)
 	{
@@ -113,15 +108,17 @@ namespace Editors
 		DeclareAddress(Dispose);  // 0x4AD1F0, 0x4AD850
 	}
 
+#ifndef SDK_TO_GHIDRA
 	inline ColorRGB EditorModel::GetColor(int index) const {
 		return mColors[index];
 	}
 
-	inline int EditorModel::GetPartsCount() const {
-		return mParts.size();
+	inline int EditorModel::GetRigblocksCount() const {
+		return mRigblocks.size();
 	}
-	inline EditorRigblock* EditorModel::GetPart(int index) {
-		return mParts[index].get();
+	inline EditorRigblock* EditorModel::GetRigblock(int index) {
+		return mRigblocks[index].get();
 	}
+#endif
 }
 

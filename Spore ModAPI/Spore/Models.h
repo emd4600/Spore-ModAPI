@@ -49,4 +49,5 @@
 #include <Spore\Graphics\ITextureManager.h>
 #include <Spore\Graphics\RenderUtils.h>
 #include <Spore\Graphics\GlobalState.h>
+#include <Spore\Graphics\ActiveState.h>
 #include <Spore\Graphics\BufferDraw.h>

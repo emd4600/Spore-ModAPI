@@ -20,8 +20,8 @@ namespace UI
 		/* A0h */	LocalizedString mTextThreatToUs;
 		/* B4h */	LocalizedString mTextSoothingSong;
 		/// [0]: Military, [1]: Economic, [2]: Religious
-		/* C8h */	vector<LocalizedString> mTextsYouAreMilitaryNation;
-		/* DCh */	map<int, LocalizedString> mRelationshipTexts;
+		/* C8h */	eastl::vector<LocalizedString> mTextsYouAreMilitaryNation;
+		/* DCh */	eastl::map<int, LocalizedString> mRelationshipTexts;
 		/* F8h */	int field_F8;
 	};
 	ASSERT_SIZE(CivCommCursorAttachment, 0x100);

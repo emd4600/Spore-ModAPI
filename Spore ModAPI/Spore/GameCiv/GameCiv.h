@@ -38,9 +38,9 @@ namespace GameCiv
 		/* 29h */	bool field_29;
 		/* 2Ah */	bool field_2A;
 		/* 2Bh */	bool field_2B;
-		/* 2Ch */	vector<int> field_2C;
-		/* 40h */	vector<int> field_40;
-		/* 54h */	vector<int> field_58;
+		/* 2Ch */	eastl::vector<int> field_2C;
+		/* 40h */	eastl::vector<int> field_40;
+		/* 54h */	eastl::vector<int> field_58;
 		/* 68h */	char field_68[0x48];
 		/* B0h */	bool field_B0;
 		/* B4h */	int field_B4;

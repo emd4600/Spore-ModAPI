@@ -44,9 +44,9 @@ namespace Simulator
 
 	public:
 		/* 108h */	bool field_108;
-		/* 10Ch */	intrusive_ptr<cOrnament> mpDock;
-		/* 110h */	vector<int> field_110;
-		/* 124h */	vector<int> field_124;
+		/* 10Ch */	cOrnamentPtr mpDock;
+		/* 110h */	eastl::vector<int> field_110;
+		/* 124h */	eastl::vector<int> field_124;
 		/* 138h */	int field_138;
 		/* 13Ch */	int field_13C;
 		/* 140h */	int field_140;
@@ -56,22 +56,22 @@ namespace Simulator
 		/* 150h */	int field_150;
 		/* 154h */	int field_154;
 		/* 158h */	int field_158;
-		/* 15Ch */	vector<int> field_15C;
-		/* 170h */	vector<int> field_170;
-		/* 184h */	vector<int> field_184;
-		/* 198h */	vector<int> field_198;
-		/* 1ACh */	vector<int> field_1AC;
-		/* 1C0h */	vector<int> field_1C0;
-		/* 1D4h */	vector<int> field_1D4;
-		/* 1E8h */	vector<int> field_1E8;
-		/* 1FCh */	vector<int> field_1FC;
-		/* 210h */	vector<int> field_210;
+		/* 15Ch */	eastl::vector<int> field_15C;
+		/* 170h */	eastl::vector<int> field_170;
+		/* 184h */	eastl::vector<int> field_184;
+		/* 198h */	eastl::vector<int> field_198;
+		/* 1ACh */	eastl::vector<int> field_1AC;
+		/* 1C0h */	eastl::vector<int> field_1C0;
+		/* 1D4h */	eastl::vector<int> field_1D4;
+		/* 1E8h */	eastl::vector<int> field_1E8;
+		/* 1FCh */	eastl::vector<int> field_1FC;
+		/* 210h */	eastl::vector<int> field_210;
 		/* 224h */	Vector3 field_224[4];
 		/* 254h */	int mWallSize;
 		/* 258h */	float field_258;  // 29
 		/* 25Ch */	float field_25C;  // 37  sphere radius?
 		/* 260h */	float field_260;
-		/* 264h */	intrusive_ptr<cCity> mpCity;
+		/* 264h */	eastl::intrusive_ptr<cCity> mpCity;
 		/* 268h */	Vector3 field_268;  // 1, 1, 1
 		/* 274h */	char field_274[0xC4];  // 14 booleans
 		/* 338h */	Vector3 mCenterAxis;  // not initialized
@@ -81,10 +81,5 @@ namespace Simulator
 		/* 350h */	bool mbAppliedStamp;
 		/* 354h */	int field_354;
 	};
-
-	/////////////////////////////////
-	//// INTERNAL IMPLEMENTATION ////
-	/////////////////////////////////
-
-	static_assert(sizeof(cCityWalls) == 0x358, "sizeof(cCityWalls) != 358h");
+	ASSERT_SIZE(cCityWalls, 0x358);
 }

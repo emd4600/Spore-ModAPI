@@ -26,7 +26,7 @@ namespace Simulator
 	public:
 		/* 120h */	bool mbResetNestEffects;
 		/* 124h */	int mFlags;
-		/* 128h */	intrusive_ptr<cHerd> mpHerd;
+		/* 128h */	eastl::intrusive_ptr<cHerd> mpHerd;
 		/* 12Ch */	int mhFootprint;
 	};
 	ASSERT_SIZE(cNest, 0x130);

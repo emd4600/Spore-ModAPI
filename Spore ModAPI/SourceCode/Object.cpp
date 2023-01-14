@@ -160,7 +160,6 @@ int CachedResourceObject::GetReferenceCount()
 	return mnRefCount / 2;
 }
 
-static_assert(sizeof(CachedResourceObject) == 0x18, "sizeof(ResourceObject) must be 18h");
 
 int MultithreadObject::AddRef()
 {

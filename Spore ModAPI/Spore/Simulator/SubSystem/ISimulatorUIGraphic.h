@@ -22,6 +22,7 @@ namespace Simulator
 {
 	class ISimulatorUIGraphic
 	{
+		int todo;
 		//TODO PLACEHOLDER
 	};
 }

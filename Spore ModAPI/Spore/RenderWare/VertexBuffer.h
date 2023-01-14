@@ -24,13 +24,6 @@
 
 namespace RenderWare
 {
-	enum RWBufferLockFlags
-	{
-		kBufferLockReadOnly = 2,
-		kBufferLockDiscard = 4,
-		kBufferLockNoOverwrite = 8
-	};
-
 	///
 	/// A buffer that contains all the vertices data.
 	/// For more information, check the official Direct3D 9 documentation: 
@@ -75,6 +68,6 @@ namespace RenderWare
 		/// The raw data of the vertices. This is an array of vertices, but the data they contain depends on the VertexDescription.
 		/* 18h */	void* pVertexData;
 
-		static const uint32_t TYPE = 0x20005;
+		static const uint32_t RW_TYPE = 0x20005;
 	};
 }

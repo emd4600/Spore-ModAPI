@@ -459,9 +459,6 @@
     <ClInclude Include="Spore\UTFWin\WinTextEdit.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Spore\Editors\PaintModeCategory.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="Spore\Simulator\cCreatureAbility.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -522,7 +519,7 @@
     <ClInclude Include="Spore\CoreAllocatorAdapter.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Spore\Resource\IResourceContainer.h">
+    <ClInclude Include="Spore\Resource\Database.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Spore\Resource\PFIndexModifiable.h">
@@ -540,7 +537,7 @@
     <ClInclude Include="Spore\Resource\DatabasePackedFile.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Spore\Resource\IPFRecord.h">
+    <ClInclude Include="Spore\Resource\PFRecordBase.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Spore\Resource\IResourceFactory.h">
@@ -549,10 +546,10 @@
     <ClInclude Include="Spore\Resource\ResourceObject.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Spore\Resource\IResourceFilter.h">
+    <ClInclude Include="Spore\Resource\IKeyFilter.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Spore\Resource\IResourceMap.h">
+    <ClInclude Include="Spore\Resource\ICache.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Spore\UTFWin\ILayoutStyle.h">
@@ -852,7 +849,7 @@
     <ClInclude Include="Spore\Swarm\Components\cDescription.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Spore\Swarm\cEffect.h">
+    <ClInclude Include="Spore\Swarm\cVisualEffect.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Spore\Graphics\ILightingWorld.h">
@@ -1599,7 +1596,7 @@
     <ClInclude Include="Spore\Graphics\Light.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Spore\Editors\CreatureWalkController.h">
+    <ClInclude Include="Spore\Editors\EditorCreatureController.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Spore\Anim\cAnimManagerImpl.h">
@@ -1920,13 +1917,109 @@
     <ClInclude Include="Spore\Swarm\Components\SkinpaintSettingsEffect.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Spore\Skinner\cSkinnerTexture.h">
+    <ClInclude Include="Spore\Skinner\cSkinnerTexturePainter.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Spore\Skinner\cSkinPainter.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Spore\App\JobManager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Spore\Swarm\Components\SkinpaintDistributeEffect.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Spore\Swarm\Components\SkinpaintParticleEffect.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Spore\Skinner\cPaintSystem.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Spore\Resource\Paths.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Spore\Resource\DatabaseDirectoryFiles.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Spore\IO\Constants.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Spore\Resource\IRecord.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Spore\Resource\RecordInfo.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Spore\Editors\cCreatureDataResource.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Spore\Editors\cEditorSkinMesh.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Spore\Editors\cEditorSkin.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Spore\Graphics\IAmbientOccluder.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Spore\Skinner\cSkinPainterJob.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Spore\Skinner\cSkinPainterJobBumpToNormal.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Spore\Skinner\cSkinPainterJobCopyTex1AlphaToTex0.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Spore\Skinner\cSkinPainterPipeline.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Spore\Skinner\cSkinPainterJobCopyRigblocksTintMaskAlpha.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Spore\Editors\cEditorAnimEvent.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Spore\App\IMessageRC.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Spore\Editors\cEditorAnimWorld.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Spore\Editors\EditorAnimations.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Spore\Editors\cEditorResourceProperties.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Spore\GeneralAllocator.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Spore\RenderWare\IRwResource.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Spore\Graphics\cModelWorld.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Spore\UTFWin\ITreeView.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Spore\Graphics\ActiveState.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Spore\Skinner\cSkinPainterJobColorDilateRepeat.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Spore\Skinner\cSkinPainterJobExtractTexture.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Spore\Skinner\cSkinPainterJobApplyBrushes.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Spore\Skinner\cSkinPainterJobPaintParts.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Spore\Skinner\cSkinPainterJobAmbientOcclusion.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -2400,6 +2493,12 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="SourceCode\Simulator\Scenario.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SourceCode\DLL\AddressesSkinner.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SourceCode\Skinner.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

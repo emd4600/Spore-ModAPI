@@ -34,13 +34,8 @@ namespace Simulator
 		/* 0Ch */	int mRequiredCount;
 		/* 10h */	bool mbVisibility;
 		/* 14h */	int mFlags;
-		/* 18h */	fixed_vector<cScenarioDialog, 5> mDialogs;
+		/* 18h */	eastl::fixed_vector<cScenarioDialog, 5> mDialogs;
 		/* 184h */	int field_184;  // ?
 	};
-
-	/////////////////////////////////
-	//// INTERNAL IMPLEMENTATION ////
-	/////////////////////////////////
-
-	static_assert(sizeof(cScenarioGoal) == 0x188, "sizeof(cScenarioGoal) != 0x188");
+	ASSERT_SIZE(cScenarioGoal, 0x188);
 }

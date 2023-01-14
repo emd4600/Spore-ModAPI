@@ -38,7 +38,7 @@ namespace Simulator
 		/// `0x45846142`, uses field_94
 		/* 34h */	IVisualEffectPtr field_34;
 		/* 38h */	int field_38;
-		/* 3Ch */	map<int, int> field_3C;
+		/* 3Ch */	eastl::map<int, int> field_3C;
 		/* 58h */	int field_58;  // not initialized
 		/* 5Ch */	int field_5C;  // not initialized
 		/// `0x4CAB5702`, uses field_94

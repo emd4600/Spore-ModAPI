@@ -35,8 +35,10 @@ public:
 
 	bool Read(uint32_t instanceID, uint32_t groupID);
 
+	bool DebugPathExists();
+
 protected:
 	string16 mDebugPath;
 	hash_map<ResourceKey, string16> mFileNames;
-	intrusive_ptr<App::PropertyList> mpPropList;
+	PropertyListPtr mpPropList;
 };

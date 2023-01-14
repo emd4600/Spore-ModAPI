@@ -28,8 +28,6 @@
 
 namespace Palettes
 {
-	using namespace eastl;
-
 	///
 	/// A page in an Palettes palette that contains multiple items (Palettes::PaletteItem).
 	/// Items are laid out in rows/columns of cells; each item has an icon that is displayed on its cell. 
@@ -38,6 +36,8 @@ namespace Palettes
 	class PalettePage : public DefaultRefCounted, public Object
 	{
 	public:
+		static const uint32_t TYPE = 0x32C9B8C8;
+
 		PalettePage();
 		virtual ~PalettePage() {}
 
@@ -137,17 +137,9 @@ namespace Palettes
 		/* 64h */	ResourceKey mParentCategory;
 		/// The items contained in this page, ordered by columns. The index of a certain cell is mnNumRows * column + row.
 		/// If the item is nullptr, the corresponding cell is left blank.
-		/* 70h */	vector<intrusive_ptr<PaletteItem>> mItems;
-
-	public:
-		static const uint32_t TYPE = 0x32C9B8C8;
+		/* 70h */	eastl::vector<PaletteItemPtr> mItems;
 	};
-
-	/////////////////////////////////
-	//// INTERNAL IMPLEMENTATION ////
-	/////////////////////////////////
-
-	static_assert(sizeof(PalettePage) == 0x84, "sizeof(PalettePage) != 84h");
+	ASSERT_SIZE(PalettePage, 0x84);
 
 	namespace Addresses(PalettePage)
 	{
@@ -156,9 +148,11 @@ namespace Palettes
 		DeclareAddress(ReadItemsModule);
 	}
 
+#ifndef SDK_TO_GHIDRA
 	inline PaletteItem* PalettePage::GetItemAt(size_t nIndex)
 	{
 		return mItems[nIndex].get();
 	}
+#endif
 }
 

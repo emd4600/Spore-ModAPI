@@ -29,7 +29,12 @@
 
 namespace Simulator
 {
-	class cSimPlanetLowLOD;  //TODO PLACEHOLDER
+#ifdef SDK_TO_GHIDRA
+	class cSimPlanetLowLOD { int todo; };
+#else
+	class cSimPlanetLowLOD;  //TODO
+#endif
+
 	class cEmpire;
 	
 
@@ -77,12 +82,12 @@ namespace Simulator
 		/* 140h */	uint32_t mPlanetKey;  // not initialized
 		/* 144h */	uint32_t mStarterWorldID;
 		/* 148h */	Math::Vector3 mOrbitedPlanetLastKnownPosition;
-		/* 154h */	intrusive_ptr<cSimPlanetLowLOD> mpPlanetSim;
+		/* 154h */	eastl::intrusive_ptr<cSimPlanetLowLOD> mpPlanetSim;
 		/* 158h */	PlanetRepresentationMode mGraphicRepresentationMode;
-		/* 15Ch */	string16 mImpostorModel;
+		/* 15Ch */	eastl::string16 mImpostorModel;
 		/* 16Ch */	uint32_t mEffectScript;  // not initialized
 		/// Effects created by cVisiblePlanet such as clouds, planet rings,...
-		/* 170h */	vector<IVisualEffectPtr> mPlanetEffects;
+		/* 170h */	eastl::vector<IVisualEffectPtr> mPlanetEffects;
 		/* 184h */	float mPlanetScale;
 		/* 188h */	cSolarHitSpherePtr mpSolarHitSphere;
 		/* 18Ch */	cVisiblePlanetPtr mpVisiblePlanet;
@@ -93,12 +98,7 @@ namespace Simulator
 		/* 1C0h */	cPlanetPtr mpParent;
 		/* 1C4h */	uint32_t mSpaceEconomySpiceColor;  // 0xFFD3D3D3
 	};
-
-	/////////////////////////////////
-	//// INTERNAL IMPLEMENTATION ////
-	/////////////////////////////////
-
-	static_assert(sizeof(cPlanet) == 0x1C8, "sizeof(cPlanet) != 1C8h");
+	ASSERT_SIZE(cPlanet, 0x1C8);
 
 	namespace Addresses(cPlanet) {
 		DeclareAddress(GetTemperatureScore);

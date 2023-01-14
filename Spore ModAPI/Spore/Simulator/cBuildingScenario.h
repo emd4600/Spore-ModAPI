@@ -38,7 +38,7 @@ namespace Simulator
 
 	public:
 		/* 340h */	int field_340;  // not initialized
-		/* 344h */	vector<int> field_344;  // vector of some struct
+		/* 344h */	eastl::vector<int> field_344;  // vector of some struct
 		/* 358h */	char _padding_358[0x30];  // not initialized
 		/* 388h */	Transform field_388;
 		/* 3C0h */	int field_3C0;  // not initialized

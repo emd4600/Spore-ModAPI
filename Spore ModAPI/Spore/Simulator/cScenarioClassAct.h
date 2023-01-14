@@ -32,9 +32,9 @@ namespace Simulator
 		/* 00h */	bool mbVisible;
 		/* 01h */	bool mbInvulnerable;
 		/* 02h */	bool mbIsDead;
-		/* 04h */	fixed_vector<cScenarioDialog, 5> mDialogsChatter;
-		/* 170h */	fixed_vector<cScenarioDialog, 5> mDialogsInspect;
-		/* 2DCh */	fixed_vector<cScenarioDialog, 5> field_2DC;
+		/* 04h */	eastl::fixed_vector<cScenarioDialog, 5> mDialogsChatter;
+		/* 170h */	eastl::fixed_vector<cScenarioDialog, 5> mDialogsInspect;
+		/* 2DCh */	eastl::fixed_vector<cScenarioDialog, 5> field_2DC;
 		/* 448h */	cScenarioString mDescriptionDEPRECATED;
 		/* 484h */	float mfAwareness;
 		/* 488h */	float mfHealth_DEPRECATED;
@@ -58,12 +58,7 @@ namespace Simulator
 		/* 4C0h */	int mGiveTargetClassIndex;
 		/* 4C4h */	int mTrackTargetClassIndex;
 		/* 4C8h */	bool mbCustomBehavior;
-		/* 4CCh */	vector<cBehaviorEntry> mCustomBehaviorEntries;
+		/* 4CCh */	eastl::vector<cBehaviorEntry> mCustomBehaviorEntries;
 	};
-
-	/////////////////////////////////
-	//// INTERNAL IMPLEMENTATION ////
-	/////////////////////////////////
-
-	static_assert(sizeof(cScenarioClassAct) == 0x4E0, "sizeof(cScenarioClassAct) != 0x4E0");
+	ASSERT_SIZE(cScenarioClassAct, 0x4E0);
 }

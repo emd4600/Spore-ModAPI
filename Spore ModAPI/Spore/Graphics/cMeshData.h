@@ -13,10 +13,10 @@ namespace Graphics
 	{
 	public:
 		/* 04h */	int mnRefCount;
-		/* 08h */	vector<int> mElementsArray;  // cMDElementArray
-		/* 1Ch */	vector<int> mSections;  // cMDSection
-		/* 30h */	vector<int> mPrimitives;  // cMDPrimitive
-		/* 44h */	vector<int> field_44;  // ObjectPtr
+		/* 08h */	eastl::vector<int> mElementsArray;  // cMDElementArray
+		/* 1Ch */	eastl::vector<int> mSections;  // cMDSection
+		/* 30h */	eastl::vector<int> mPrimitives;  // cMDPrimitive
+		/* 44h */	eastl::vector<int> field_44;  // ObjectPtr
 	};
 	ASSERT_SIZE(cMeshData, 0x58);
 }

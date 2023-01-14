@@ -32,8 +32,6 @@
 
 namespace Palettes
 {
-	using namespace eastl;
-
 	///
 	/// This class holds all information related with the user interface of a palette page.
 	/// It's the UI representation of a Palettes::PalettePage.
@@ -55,7 +53,8 @@ namespace Palettes
 			kControlItemsPanel = 0x12DF7465,
 		};
 
-	public:
+		const static uint32_t TYPE = 0x72DEED2B;
+
 		PalettePageUI();
 		virtual ~PalettePageUI() {};
 
@@ -82,21 +81,13 @@ namespace Palettes
 		/// The panel that will contain the items.
 		/// It corresponds to the Palettes::PaletteCategoryUI::ControlIDs::kControlItemsPanel window.
 		/* 10h */	UTFWin::IWindow* mpItemsPanel;
-		/* 14h */	intrusive_ptr<PalettePage> mpPage;
+		/* 14h */	PalettePagePtr mpPage;
 		/* 18h */	float field_18;
 		/* 1Ch */	float field_1C;
-		/* 20h */	vector<intrusive_ptr<StandardItemUI>> mStandardItems;
-		/* 34h */	vector<intrusive_ptr<IAdvancedItemUI>> mAdvancedItems;
-
-	public:
-		const static uint32_t TYPE = 0x72DEED2B;
+		/* 20h */	eastl::vector<StandardItemUIPtr> mStandardItems;
+		/* 34h */	eastl::vector<eastl::intrusive_ptr<IAdvancedItemUI>> mAdvancedItems;
 	};
-
-	/////////////////////////////////
-	//// INTERNAL IMPLEMENTATION ////
-	/////////////////////////////////
-
-	static_assert(sizeof(PalettePageUI) == 0x48, "sizeof(PalettePageUI) != 48h");
+	ASSERT_SIZE(PalettePageUI, 0x48);
 
 	namespace Addresses(PalettePageUI)
 	{

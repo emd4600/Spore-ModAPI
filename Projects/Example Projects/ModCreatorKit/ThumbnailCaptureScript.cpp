@@ -21,8 +21,8 @@
 #include <Spore\Cheats.h>
 #include <Spore\GameModes.h>
 #include <Spore\Editors\Editor.h>
-#include <Spore\Graphics\IRenderManager.h>
-#include <Spore\Graphics\Renderer.h>
+#include <Spore\Graphics\IRenderer.h>
+#include <Spore\Graphics\RenderUtils.h>
 #include <d3dx9tex.h>
 
 using namespace Editors;
@@ -58,7 +58,7 @@ bool ThumbnailCaptureScript::HandleUIMessage(IWindow* pWindow, const Message& me
 	return false;
 }
 
-void ThumbnailCaptureScript::Render(int flags, int layerIndex, App::cViewer** arg_8, void* arg_C) {
+void ThumbnailCaptureScript::DrawLayer(int flags, int layerIndex, App::cViewer** arg_8, Graphics::RenderStatistics& stats) {
 	if (mpItemViewer && mpItemViewer->mpModel) {
 
 		auto model = mpItemViewer->mpModel.get();
@@ -78,14 +78,14 @@ void ThumbnailCaptureScript::Render(int flags, int layerIndex, App::cViewer** ar
 
 		model->AddGroup(0x32FAB27);
 
-		modelWorld->UpdateModel(model);
+		modelWorld->StallUntilLoaded(model);
 		mpItemViewer->InitializeViewerCamera();
 		mpItemViewer->RotateModel();
 
 		model->mColor = ColorRGBA(mIdentityColor, 1.0f);
 
-		modelWorld->SetModelVisible(model, true);
-		modelWorld->ToRenderable()->Render(flags, layerIndex, &viewer, arg_C);
+		modelWorld->SetInWorld(model, true);
+		modelWorld->AsLayer()->DrawLayer(flags, layerIndex, &viewer, stats);
 
 		model->RemoveGroup(0x32FAB27);
 
@@ -103,7 +103,7 @@ void ThumbnailCaptureScript::Render(int flags, int layerIndex, App::cViewer** ar
 	}
 }
 
-Vector3 ThumbnailCaptureScript::CalculateOffset(const Graphics::Model* model)
+Vector3 ThumbnailCaptureScript::CalculateOffset(Graphics::Model* model)
 {
 	BoundingBox bbox;
 	auto propList = model->GetPropList();
@@ -120,7 +120,7 @@ Vector3 ThumbnailCaptureScript::CalculateOffset(const Graphics::Model* model)
 }
 
 void ThumbnailCaptureScript::CaptureImage() {
-	auto device = Graphics::Renderer::GetDevice();
+	auto device = Graphics::RenderUtils::GetDevice();
 	HRESULT hr;
 	IDirect3DSurface9* surface;
 	hr = device->GetRenderTarget(0, &surface);
@@ -165,7 +165,7 @@ void ThumbnailCaptureScript::InjectListeners() {
 		}
 	}
 
-	RenderManager.AddRenderable(this, 40);
+	Renderer.RegisterLayer(this, 40);
 }
 
 void ThumbnailCaptureScript::RemoveListeners() {
@@ -181,7 +181,7 @@ void ThumbnailCaptureScript::RemoveListeners() {
 
 	mItemViewers.clear();
 
-	RenderManager.RemoveRenderable(40);
+	Renderer.UnregisterLayer(40);
 }
 
 void ThumbnailCaptureScript::ParseLine(const ArgScript::Line& line) {

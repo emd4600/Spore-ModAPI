@@ -27,7 +27,7 @@ namespace Simulator
 {
 	struct cLocomotionRequest 
 	{
-		/* 00h */	vector<int> field_00;
+		/* 00h */	eastl::vector<int> field_00;
 		/* 14h */	Vector3 dstPos;
 		/* 20h */	float goalStopDistance;
 		/* 24h */	int field_24;
@@ -83,8 +83,8 @@ namespace Simulator
 		void SetVelocity(const Vector3& velocity);
 
 	public:
-		/* DCh */	vector<int> field_DC;
-		/* F0h */	fixed_vector<float, 32> field_F0;
+		/* DCh */	eastl::vector<int> field_DC;
+		/* F0h */	eastl::fixed_vector<float, 32> field_F0;
 		/* 188h */	float field_188;
 		/* 18Ch */	float field_18C;
 		/* 190h */	Vector3 field_190;
@@ -104,7 +104,7 @@ namespace Simulator
 		/* 1F0h */	int mPlanetCorrection;  // 1
 		// This is some kind of struct for movement requests?
 		// size 74h, movement request
-		/* 1F4h */	vector<int> field_1F4;
+		/* 1F4h */	eastl::vector<int> field_1F4;
 		/* 208h */	Vector3 field_208;
 		/* 214h */	float field_214;  // 1.0
 		/* 218h */	int field_218;
@@ -123,15 +123,10 @@ namespace Simulator
 		/* 26Ch */	float mNeighborCheckRadius;  // 20.0
 		/* 270h */	int field_270;
 		/* 274h */	bool field_274;
-		/* 278h */	fixed_vector<intrusive_ptr<cSpatialObject>, 128> mNeighbors;
-		/* 490h */	fixed_vector<int, 4> field_490;
-		/* 4B8h */	vector<int> field_4B8;
+		/* 278h */	eastl::fixed_vector<cSpatialObjectPtr, 128> mNeighbors;
+		/* 490h */	eastl::fixed_vector<int, 4> field_490;
+		/* 4B8h */	eastl::vector<int> field_4B8;
 		/* 4CCh */	int field_4CC;  //PLACEHOLDER important cLomotionStrategy
 	};
-
-	/////////////////////////////////
-	//// INTERNAL IMPLEMENTATION ////
-	/////////////////////////////////
-
-	static_assert(sizeof(cLocomotiveObject) == 0x4D0, "sizeof(cLocomotiveObject) != 4D0h");
+	ASSERT_SIZE(cLocomotiveObject, 0x4D0);
 }

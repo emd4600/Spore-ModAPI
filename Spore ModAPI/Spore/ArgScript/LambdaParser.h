@@ -20,6 +20,7 @@
 #pragma once
 
 #include <Spore\ArgScript\IParser.h>
+#include <Spore\ArgScript\FormatParser.h>
 
 #include <EASTL\functional.h>
 

@@ -9,8 +9,6 @@
 
 namespace Graphics
 {
-	using namespace eastl;
-
 	template <typename T> class CompiledShader
 	{
 	public:
@@ -31,7 +29,7 @@ namespace Graphics
 	typedef CompiledShader<IDirect3DVertexShader9> VertexShader;
 	typedef CompiledShader<IDirect3DPixelShader9> PixelShader;
 
-	static_assert(sizeof(PixelShader) == 0x130, "sizeof(Shader) != 130h");
+	ASSERT_SIZE(PixelShader, 0x130);
 
 	namespace Addresses(CompiledShader) {
 		//DeclareAddress(ReadCompiledVertexShaders);
@@ -41,13 +39,18 @@ namespace Graphics
 		DeclareAddress(PixelShaders_ptr);
 	}
 
-	inline vector<VertexShader>& GetVertexShaders() {
-		return *(vector<VertexShader>*)(GetAddress(CompiledShader, VertexShaders_ptr));
+#ifndef SDK_TO_GHIDRA
+	inline eastl::vector<VertexShader>& GetVertexShaders() {
+		return *(eastl::vector<VertexShader>*)(GetAddress(CompiledShader, VertexShaders_ptr));
 	}
 
-	inline vector<PixelShader>& GetPixelShaders() {
-		return *(vector<PixelShader>*)(GetAddress(CompiledShader, PixelShaders_ptr));
+	inline eastl::vector<PixelShader>& GetPixelShaders() {
+		return *(eastl::vector<PixelShader>*)(GetAddress(CompiledShader, PixelShaders_ptr));
 	}
+#else
+	eastl::vector<VertexShader> sVertexShaders;
+	eastl::vector<PixelShader> sPixelShaders;
+#endif
 
 	void ReadCompiledVertexShaders(IO::IStream* pStream);
 	void ReadCompiledPixelShaders(IO::IStream* pStream);

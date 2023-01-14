@@ -23,8 +23,6 @@
 
 #include <EASTL\vector.h>
 
-using namespace eastl;
-
 namespace UTFWin
 {
 	struct ComponentSerialization;
@@ -152,11 +150,10 @@ namespace UTFWin
 		/* 18h */	virtual int Read(IO::IStream* pStream, int arg_8, int arg_C) = 0;
 
 	protected:
-		/* 04h */	vector<intrusive_ptr<Object>> field_04;
-		/* 18h */	vector<int> field_18;
+		/* 04h */	eastl::vector<ObjectPtr> field_04;
+		/* 18h */	eastl::vector<int> field_18;
 		/* 2Ch */	int field_2C;
 		/* 30h */	int field_30;
 	};
-
-	static_assert(sizeof(SerializationService) == 0x34, "sizeof(SerializationService) != 34h");
+	ASSERT_SIZE(SerializationService, 0x34);
 }

@@ -1,7 +1,7 @@
 #pragma once
 
 #include <Spore\Object.h>
-#include <Spore\Editors\CreatureWalkController.h>
+#include <Spore\Editors\EditorCreatureController.h>
 #include <EASTL\vector.h>
 
 namespace Editors
@@ -30,9 +30,9 @@ namespace Editors
 
 		/* 08h */	AnimatedCreaturePtr mpCreature;
 		/* 0Ch */	int field_0C;
-		/* 10h */	CreatureWalkControllerPtr mpWalkController;
+		/* 10h */	EditorCreatureControllerPtr mpWalkController;
 		/* 14h */	int field_14;  // not initialized
-		/* 18h */	intrusive_ptr<DefaultRefCounted> field_18;
+		/* 18h */	eastl::intrusive_ptr<DefaultRefCounted> field_18;
 		/* 1Ch */	int mActorID;  // -1
 		/* 20h */	float field_20;
 		/* 24h */	bool field_24;
@@ -40,8 +40,8 @@ namespace Editors
 		/* 2Ch */	int field_2C;  // not initialized
 		/* 30h */	int field_30;  // not initialized
 		/* 34h */	float field_34;
-		/* 38h */	intrusive_ptr<DefaultRefCounted> field_38;
-		/* 3Ch */	vector<intrusive_ptr<WalkAction>> mWalkActions;
+		/* 38h */	eastl::intrusive_ptr<DefaultRefCounted> field_38;
+		/* 3Ch */	eastl::vector<eastl::intrusive_ptr<WalkAction>> mWalkActions;
 	};
 	ASSERT_SIZE(PlayModeActor, 0x50);
 	ASSERT_SIZE(PlayModeActor::WalkAction, 0x2C);
