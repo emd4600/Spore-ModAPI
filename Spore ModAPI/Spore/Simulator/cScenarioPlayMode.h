@@ -56,6 +56,7 @@ namespace Simulator
 	public:
 		//TODO check sub_F1EFC0
 		
+		void Initialize();
 		void SetCurrentAct(int actIndex, bool = false);
 		void JumpToAct(int actIndex);
 
@@ -96,6 +97,7 @@ namespace Simulator
 
 	namespace Addresses(cScenarioPlayMode)
 	{
+		DeclareAddress(Initialize);		// 0xF1F450, 0xF1F060
 		DeclareAddress(SetCurrentAct);  // 0xF1F260, 0xF1EE70
 		DeclareAddress(JumpToAct);		// 0xF1F7B0, 0xF1F3C0
 	}
