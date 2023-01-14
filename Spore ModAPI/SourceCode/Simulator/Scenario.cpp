@@ -72,5 +72,6 @@ namespace Simulator
 
 
 	auto_METHOD_VOID(cScenarioPlayMode, SetCurrentAct, Args(int index, bool arg), Args(index, arg));
+	auto_METHOD_VOID(cScenarioPlayMode, JumpToAct, Args(int actIndex), Args(actIndex));
 }
 #endif

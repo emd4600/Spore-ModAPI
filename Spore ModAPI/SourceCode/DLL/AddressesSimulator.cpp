@@ -742,6 +742,7 @@ namespace Simulator
 	namespace Addresses(cScenarioPlayMode)
 	{
 		DefineAddress(SetCurrentAct, SelectAddress(0xF1F260, 0xF1EE70));
+		DefineAddress(JumpToAct, SelectAddress(0xF1F7B0, 0xF1F3C0));
 	}
 
 	namespace Addresses(cPlanetRecord)
