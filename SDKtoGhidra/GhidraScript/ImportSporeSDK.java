@@ -313,7 +313,7 @@ public class ImportSporeSDK extends GhidraScript {
 		CompilerSpec compilerSpec = currentProgram.getCompilerSpec();
 		String conventionName = getCallingConvention(func, signature, compilerSpec);
 
-        func.setCustomVariableStorage​(true);
+        func.setCustomVariableStorage(true);
 		ParameterDefinition[] args = signature.getArguments();
 		List<Parameter> params = createParameters(compilerSpec, conventionName, args);
 
