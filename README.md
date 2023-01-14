@@ -29,12 +29,13 @@ If you want to extend the SDK, or just want to investigate Spore's source code, 
 
 To use them:
  1. Open your project in Ghidra.
- 2. Open `Windows > Script Manager`.
- 3. On the top bar of the new window, click on the `Manage Script Directories` ![](https://i.imgur.com/McdNx46.png)
- 4. On the popup window, click on the `+` button and search the `Spore ModAPI SDK/SDKtoGhidra/GhidraScript` folder in your SDK installation.
- 5. Close that popup and go back to the script manager, find the `ImportSporeSDK.java` script (it's in the `Data` category).
- 6. Execute it: it will ask for a file, select the `Spore ModAPI SDK/SDKtoGhidra/SporeGhidra_march2017.xml` (or `SporeGhidra_disk.xml` if you use a disk Spore installation).
- 7. Wait for it to complete; in the console, you can see all the functions and data types that have been added.
+ 2. If you hadn't done it yet, analyze the executable (this finds all functions).
+ 3. Open `Windows > Script Manager`.
+ 4. On the top bar of the new window, click on the `Manage Script Directories` ![](https://i.imgur.com/McdNx46.png)
+ 5. On the popup window, click on the `+` button and search the `Spore ModAPI SDK/SDKtoGhidra/GhidraScript` folder in your SDK installation.
+ 6. Close that popup and go back to the script manager, find the `ImportSporeSDK.java` script (it's in the `Data` category).
+ 7. Execute it: it will ask for a file, select the `Spore ModAPI SDK/SDKtoGhidra/SporeGhidra_march2017.xml` (or `SporeGhidra_disk.xml` if you use a disk Spore installation).
+ 8. Wait for it to complete; in the console, you can see all the functions and data types that have been added.
 
 Keep in mind that Ghidra's decompiler is only an approximation, and it will not produce code that is directly executable on the SDK. There are several differences to keep in mind, among others:
  - Ghidra data types have no inheritance, so the decompiler isn't aware of superclass/subclass relationships.
