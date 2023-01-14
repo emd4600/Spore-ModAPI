@@ -41,8 +41,10 @@ namespace Sporepedia
 		DefineAddress(IsShareable, SelectAddress(0x641590, 0x6418A0));
 
 		DefineAddress(IsShared, SelectAddress(0x641C80, 0x641F90));
+#ifndef SDK_TO_GHIDRA
 		DefineAddress(func74h, SelectAddress(0xDD4D00, 0x5C0EC0));
 		DefineAddress(func78h, SelectAddress(0x641140, 0x641450));
+#endif
 		DefineAddress(func7Ch, SelectAddress(0x641150, 0x641460));
 		DefineAddress(func80h, SelectAddress(0x641170, 0x641480));
 

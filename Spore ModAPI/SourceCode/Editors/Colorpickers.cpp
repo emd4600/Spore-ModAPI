@@ -96,10 +96,10 @@ namespace Palettes
 		Args(UTFWin::IWindow* pWindow, const UTFWin::Message& message), Args(pWindow, message));
 
 	auto_METHOD_VOID(ColorSwatchUI, Load, 
-		Args(App::PropertyList* pConfigProp, struct Math::ColorRGB color, union Math::Rectangle area, UTFWin::IWindow* pContainerWindow, Object* pExpansionObject),
+		Args(App::PropertyList* pConfigProp, struct Math::ColorRGB color, struct Math::Rectangle area, UTFWin::IWindow* pContainerWindow, Object* pExpansionObject),
 		Args(pConfigProp, color, area, pContainerWindow, pExpansionObject));
 
-	auto_METHOD_VOID(ColorSwatchUI, SetArea, Args(union Math::Rectangle area, bool bUpdateSwatch), Args(area, bUpdateSwatch));
+	auto_METHOD_VOID(ColorSwatchUI, SetArea, Args(struct Math::Rectangle area, bool bUpdateSwatch), Args(area, bUpdateSwatch));
 
 	auto_METHOD_VOID(ColorSwatchUI, GenerateExpansionArea, Args(bool bFitWindow), Args(bFitWindow));
 
@@ -168,6 +168,6 @@ namespace Palettes
 		return rect;
 	}
 
-	auto_METHOD_VOID(ColorPickerUI, SetColor, Args(const ColorRGB& color), Args(color));
+	auto_METHOD_VOID(ColorPickerUI, SetColor, Args(const Math::ColorRGB& color), Args(color));
 }
 #endif

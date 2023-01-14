@@ -97,3 +97,26 @@ namespace Addresses(Terrain)
 	DeclareAddress(TerrainColorMapRTT_ptr);  // 0x16CE0C0 0x16C9E40
 	DeclareAddress(TerrainColorMapViewer_ptr);  // 0x16CE690 0x16CA410
 }
+
+#ifdef SDK_TO_GHIDRA
+namespace Terrain
+{
+	Terrain::TerrainMaterialIndex sCurrentMaterialIndex;
+	int sCurrentQuadIndex;
+	ResourceID sTerrainRefractionBuffersRTT_ID;
+	Graphics::Texture* sTerrainRefractionBuffersRTTTexture;
+	ResourceID sTerrainRefractionBlur1RTT_ID;
+	ResourceID sTerrainRefractionBlur2RTT_ID;
+	App::cViewer sTerrainRefractionViewer;
+	eastl::intrusive_ptr<Graphics::Texture> sTerrainBakeInScatterTexture;
+	eastl::intrusive_ptr<Graphics::Texture> sTerrainScatterTexture;
+	App::cViewer sTerrainScatterViewer;
+	eastl::intrusive_ptr<Graphics::Texture> sTerrainSimDataTextures[6];
+	ResourceID sTerrainSimDataRTTs_ID[6];
+	eastl::intrusive_ptr<Graphics::Texture> sTerrainReflectionTexture;
+	App::cViewer sTerrainReflectionViewer;
+	ResourceID sTerrainColorMapRTT_ID;
+	RenderWare::Raster* sTerrainColorMapRTT;
+	App::cViewer sTerrainColorMapViewer;
+}
+#endif

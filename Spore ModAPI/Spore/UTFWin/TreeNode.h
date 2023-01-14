@@ -110,6 +110,7 @@ namespace UTFWin
 
 	}
 
+#ifndef SDK_TO_GHIDRA
 	inline const char16_t* TreeNode::GetCaption() const
 	{
 		return mCaption.c_str();
@@ -148,4 +149,5 @@ namespace UTFWin
 		pNode->Update();
 		Update();
 	}
+#endif
 }

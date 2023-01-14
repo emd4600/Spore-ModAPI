@@ -75,8 +75,9 @@ namespace Editors
 		/* 29h */	bool field_29;
 		/* 2Ch */	EditorRigblock* field_2C;
 		/* 30h */	int mIndex;
+		/* 34h */	int mSymmetricIndex;
 	};
-	ASSERT_SIZE(UnkEditorRigblockStruct1, 0x34);
+	ASSERT_SIZE(UnkEditorRigblockStruct1, 0x38);
 
 	//TODO related with display? check SetShadedDisplay()
 	struct UnkEditorRigblockStruct2

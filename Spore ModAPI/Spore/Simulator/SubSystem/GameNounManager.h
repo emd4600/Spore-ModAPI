@@ -37,7 +37,7 @@
 
 namespace Simulator
 {
-
+#ifndef SDK_TO_GHIDRA
 	/// Creates the vector game data container.
 	template <class T>
 	using ContainerCreateCallback_t = tGameDataVectorT<T>*(*)();
@@ -51,6 +51,12 @@ namespace Simulator
 	/// Used to decide which game objects go to the vector and which do not. It receives the object to
 	/// evaluate and the game noun ID passed to the GetData function.
 	using ContainerFilterCallback_t = bool(*)(cGameData* pObject, uint32_t gameNounID);
+#else
+	typedef tGameDataVectorT<cGameData>*(*ContainerCreateCallback_t)();
+	typedef void(*ContainerClearCallback_t)(tGameDataVectorT<cGameData>* pVector);
+	typedef void(*ContainerAddCallback_t)(tGameDataVectorT<cGameData>* pVector, cGameData* pObject);
+	typedef bool(*ContainerFilterCallback_t)(cGameData* pObject, uint32_t gameNounID);
+#endif
 
 	/// The class that manages game objects, known in Spore code as 'nouns'. Use this class to create or destroy
 	/// instances of Simulator classes. To create a Simulator object, use simulator_new() (which calls this class).
@@ -63,17 +69,22 @@ namespace Simulator
 		, public cStrategy
 	{
 	public:
+#ifndef SDK_TO_GHIDRA
 		/// Creates an instance of a simulator object of the given type. The noun ID is one of
 		/// the values in the Simulator::GameNounIDs enum.
 		/// @param nounID The ID of the object to create.
 		/// @returns The created object, as a Simulator::cGameData*.
 		cGameData* CreateInstance(uint32_t nounID);
+#else
+		cGameData* CreateInstance(GameNounIDs nounID);
+#endif
 
 		void DestroyInstance(cGameData* pInstance);
 
 		void UpdateModels();
 
 
+#ifndef SDK_TO_GHIDRA
 		/// Gets all the game data objects that use the given game noun ID. To be more specific, first a container is created
 		/// with the pCreate callback; then 
 		template <class T>
@@ -84,7 +95,14 @@ namespace Simulator
 				ContainerAddCallback_t<T>, ContainerFilterCallback_t, uint32_t)) (GetAddress(cGameNounManager, GetData)))(
 					this, pCreate, pClear, pAdd, pFilter, nounID);
 		}
-
+#else
+		tGameDataVectorT<cGameData>& GetData(
+			ContainerCreateCallback_t pCreateCallback, 
+			ContainerClearCallback_t pClearCallback,
+			ContainerAddCallback_t pAddCallback,
+			ContainerFilterCallback_t pFilterCallback,
+			uint32_t nounID);
+#endif
 
 		cCreatureAnimal* GetAvatar();
 
@@ -110,7 +128,7 @@ namespace Simulator
 		/* 78h */	eastl::intrusive_list<cGameData> mNouns;
 		/* 80h */	eastl::vector<ObjectPtr> field_80;  // objects that haven't been updated since last call to UpdateModels?
 		/* 94h */	int field_94;
-		/* 98h */	eastl::map<uint32_t, tGameDataVectorT<cGameDataPtr>> mNounMap;
+		/* 98h */	eastl::map<uint32_t, tGameDataVectorT<cGameData>> mNounMap;
 		/* B4h */	eastl::map<int, int> mPoliticalMap;
 		/* D0h */	eastl::map<int, ObjectPtr> field_D0;
 		/* ECh */	eastl::map<int, ObjectPtr> field_EC;
@@ -135,6 +153,7 @@ namespace Simulator
 		DeclareAddress(SetAvatar);
 	}
 
+#ifndef SDK_TO_GHIDRA
 	/// Gets all the game data objects that use the given game noun ID.
 	/// All the found objects will be casted to the specified type.
 	template <class T>
@@ -185,6 +204,7 @@ namespace Simulator
 			return pObject->Cast(T::TYPE) != nullptr;
 		}, T::TYPE);
 	}
+#endif
 }
 
 template <class T>

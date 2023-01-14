@@ -160,9 +160,13 @@ namespace Simulator
 	};
 	ASSERT_SIZE(cGameViewManager, 0x1A8);
 
+#ifndef SDK_TO_GHIDRA
 	inline Graphics::ILightingWorld* GetLightingWorld() {
 		return *(Graphics::ILightingWorld**)(GetAddress(Simulator, LightingWorld_ptr));
 	}
+#else
+	Graphics::ILightingWorld* sLightingWorld;
+#endif
 
 	namespace Addresses(cGameViewManager)
 	{

@@ -33,9 +33,15 @@ public:
 
 	virtual ~FixedPoolAllocator();
 
-	virtual void *Alloc(size_t size, const char *name, unsigned int flags);
-	virtual void *Alloc(size_t size, const char *name, unsigned int flags, unsigned int align, unsigned int alignOffset = 0);
-	virtual void Free(void *block, size_t size = 0);
+#ifndef SDK_TO_GHIDRA
+	virtual void *Alloc(size_t size, const char *name, unsigned int flags) override;
+	virtual void *Alloc(size_t size, const char *name, unsigned int flags, unsigned int align, unsigned int alignOffset = 0) override;
+#else
+	virtual void *Alloc(size_t size, const char *name, unsigned int flags, unsigned int align, unsigned int alignOffset = 0) override;
+	virtual void* Alloc(size_t size, const char* name, unsigned int flags) override;
+	void* Alloc_(size_t size, const char* name, unsigned int flags);
+#endif
+	virtual void Free(void *block, size_t size = 0) override;
 
 protected:
 	ICoreAllocator* mpAllocator;  // another allocator?

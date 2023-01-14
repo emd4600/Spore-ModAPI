@@ -21,6 +21,7 @@
 
 namespace GameCiv
 {
+#ifndef SDK_TO_GHIDRA
 	enum
 	{
 		0x1A0219E,
@@ -47,4 +48,5 @@ namespace GameCiv
 		0x670ECCD,
 		0x679C40D
 	};
+#endif
 }

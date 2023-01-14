@@ -27,18 +27,18 @@ namespace UTFWin
 		/* 2Ch */	virtual void GetMaxDimensions(float& maxWidth, float& maxHeight) = 0;
 		/* 30h */	virtual void SetMaxDimensions(float maxWidth, float maxHeight) = 0;
 		/* 34h */	virtual int* func34h() = 0;
-		/* 38h */	virtual void GetClientAreaBorder(union Math::Rectangle& dst) = 0;
-		/* 3Ch */	virtual void SetClientAreaBorder(const union Math::Rectangle& border) = 0;
+		/* 38h */	virtual void GetClientAreaBorder(struct Math::Rectangle& dst) = 0;
+		/* 3Ch */	virtual void SetClientAreaBorder(const struct Math::Rectangle& border) = 0;
 		/* 40h */	virtual const char16_t* GetTitleText() = 0;
 		/* 44h */	virtual void SetTitleText(const char16_t* text) = 0;
 		/* 48h */	virtual uint32_t GetTitleTextStyle() = 0;
 		/* 4Ch */	virtual void SetTitleTextStyle(uint32_t styleID) = 0;
 		/* 50h */	virtual Color GetTitleTextColor() = 0;
 		/* 54h */	virtual void SetTitleTextColor(Color color) = 0;
-		/* 58h */	virtual void GetTitleTextBorder(union Math::Rectangle& dst) = 0;
-		/* 5Ch */	virtual void SetTitleTextBorder(const union Math::Rectangle& border) = 0;
-		/* 60h */	virtual void GetCloseButtonBorder(union Math::Rectangle& dst) = 0;
-		/* 64h */	virtual void SetCloseButtonBorder(const union Math::Rectangle& border) = 0;
+		/* 58h */	virtual void GetTitleTextBorder(struct Math::Rectangle& dst) = 0;
+		/* 5Ch */	virtual void SetTitleTextBorder(const struct Math::Rectangle& border) = 0;
+		/* 60h */	virtual void GetCloseButtonBorder(struct Math::Rectangle& dst) = 0;
+		/* 64h */	virtual void SetCloseButtonBorder(const struct Math::Rectangle& border) = 0;
 		/* 68h */	virtual IButtonDrawable* GetCloseButtonDrawable() = 0;
 		/* 6Ch */	virtual void SetCloseButtonDrawable(IButtonDrawable* drawable) = 0;
 

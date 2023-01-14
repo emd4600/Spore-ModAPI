@@ -22,6 +22,7 @@ namespace Simulator
 		void DestroyCity(cCity* pCity, uint32_t agressorEmpireID = -1);
 
 	public:
+		/* 10h */	int field_10;  // 1
 		/* 14h */	bool field_14;
 		/* 18h */	ObjectPtr field_18;
 		/* 1Ch */	ObjectPtr field_1C;

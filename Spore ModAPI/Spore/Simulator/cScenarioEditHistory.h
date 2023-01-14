@@ -79,4 +79,8 @@ namespace Simulator
 	{
 		DeclareAddress(ptr);
 	}
+
+#ifdef SDK_TO_GHIDRA
+	cScenarioEditHistory sScenarioEditHistory;
+#endif
 }

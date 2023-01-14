@@ -61,7 +61,7 @@ namespace Swarm
 		// 20h state
 		// 90h effectCount
 
-		/* 14h */	virtual void SetLOD(float value, int) = 0;
+		/* 14h */	virtual void SetLOD(float value, int) override = 0;
 	};
 	ASSERT_SIZE(cEffectsWorld, 0xA4);
 }

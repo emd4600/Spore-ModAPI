@@ -57,8 +57,13 @@ namespace Simulator
 		/* 1Ch */	TimeFunction_t mpTimeFunction;
 	};
 	ASSERT_SIZE(cGonzagoTimer, 0x20);
+	static_assert(alignof(cGonzagoTimer) == 8, "alignof(cGonzagoTimer) != 8");
 
 	namespace Addresses(cGonzagoTimer) {
 		DeclareAddress(GetSimulatorTime_ptr);
 	}
+
+#ifdef SDK_TO_GHIDRA
+	LARGE_INTEGER TimeAtStartOfFrame();
+#endif
 }

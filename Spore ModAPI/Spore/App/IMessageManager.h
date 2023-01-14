@@ -35,7 +35,7 @@
 
 namespace App
 {
-	enum {
+	enum AppMessageIDs {
 		/// Sent when all the systems in the game have finished initializing, except for the Simulator ones.
 		/// Does not use message data.
 		kMsgAppInitialized = 0x49790B2,
@@ -117,6 +117,7 @@ namespace App
 		///
 		/* 20h */	virtual void AddListener(IMessageListener* pListener, uint32_t messageID) = 0;
 
+#ifndef SDK_TO_GHIDRA
 		///
 		/// Adds a message listener to this manager, that will be notified of messages with the specified ID.
 		/// A single listener can be listening to multiple message IDs.
@@ -130,6 +131,7 @@ namespace App
 				AddListener(listener, messageID);
 			}
 		}
+#endif
 
 		///
 		/// Same as IMessageManager::AddListener(), but this does not call AddRef().

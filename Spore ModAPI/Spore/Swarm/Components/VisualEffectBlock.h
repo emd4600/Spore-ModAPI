@@ -60,7 +60,7 @@ namespace Swarm
 			/* 80h */	int blockIndex;
 
 
-			enum
+			enum Flags
 			{
 				kVisualEffectBlockFlagsMas = 0x1FF,
 				kVEBlockFlagIgnoreLength = 1,

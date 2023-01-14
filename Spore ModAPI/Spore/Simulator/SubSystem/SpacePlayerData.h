@@ -57,6 +57,10 @@ namespace Simulator
 	{
 		DeclareAddress(ptr);
 	}
+
+#ifdef SDK_TO_GHIDRA
+	SpacePlayerData* sSpacePlayerData;
+#endif
 }
 
 namespace Addresses(Simulator)

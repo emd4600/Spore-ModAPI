@@ -969,6 +969,8 @@ namespace App
 		}
 	}
 
+#ifndef SDK_TO_GHIDRA
+
 	inline auto_METHOD_VOID(Property, Clear, Args(bool arg_0), Args(arg_0));
 
 	inline auto_METHOD_(Property, int32_t*, GetValueInt32);
@@ -1112,4 +1114,6 @@ namespace App
 		Set(PropertyType::ColorRGBA, kPropertyFlagArray, (void*)pValues, sizeof(ColorRGBA), nValueCount);
 		return *this;
 	}
+
+#endif
 }

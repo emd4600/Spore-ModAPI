@@ -107,6 +107,10 @@ namespace App
 		DeclareAddress(ptr);
 	}
 
+#ifdef SDK_TO_GHIDRA
+	cScenarioMode* sScenarioMode;
+#endif
+
 	Simulator::cScenarioData* cScenarioMode::GetData()
 	{
 		return mpData.get();

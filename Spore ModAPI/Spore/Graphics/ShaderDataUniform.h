@@ -30,3 +30,11 @@ namespace Addresses(Graphics)
 	DeclareAddress(VertexShaderDataUniforms_ptr);
 	DeclareAddress(PixelShaderDataUniforms_ptr);
 }
+
+#ifdef SDK_TO_GHIDRA
+namespace Graphics
+{
+	NamedShaderDataUniform* sVertexShaderDataUniforms;
+	NamedShaderDataUniform* sPixelShaderDataUniforms;
+}
+#endif

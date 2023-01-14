@@ -50,6 +50,6 @@ namespace Editors
 		/* 38h */	uint32_t field_38;
 		/* 3Ch */	LocalizedString mAnimButtonTooltip;
 	};
-	ASSERT_SIZE(TestModeAnimButton, 0x50);
+	ASSERT_SIZE(PlayAnimButton, 0x50);
 
 }

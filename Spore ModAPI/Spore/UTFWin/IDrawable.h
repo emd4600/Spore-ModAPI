@@ -74,7 +74,7 @@ namespace UTFWin
 	public:
 		static const uint32_t TYPE = 0x6EC581FD;
 
-		enum
+		enum CollisionTypes
 		{
 			kDefaultCollisionType = 0x19C46FB
 		};

@@ -7,8 +7,14 @@ namespace Swarm
 {
 	class IEffectsWorld;
 	class IEffectsManager;
+
+#ifdef SDK_TO_GHIDRA
+	struct cEffectParams { int todo; };
+	struct cComponentStats { int todo; };
+#else
 	struct cEffectParams;  //TODO
 	struct cComponentStats;  //TODO
+#endif
 
 	class IComponent
 	{

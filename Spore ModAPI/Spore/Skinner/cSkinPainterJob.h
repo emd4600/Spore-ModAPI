@@ -37,7 +37,7 @@ namespace Skinner
 
 	namespace Addresses(cSkinPainterJob)
 	{
-		DeclareAddress(DrawLayer);  // 0x5172C0 TODO
-		DeclareAddress(Initialize);  // 0x517420 TODO
+		DeclareAddress(DrawLayer);  // 0x5172C0 0x5171B0
+		DeclareAddress(Initialize);  // 0x517420 0x517310
 	}
 }

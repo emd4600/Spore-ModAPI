@@ -48,7 +48,7 @@ namespace Palettes
 		/// @param pColors [Optional] A list of the colors that must be generated. If it is not present, the list will be taken
 		/// from the property 'colorpickerColors' of the .prop file.
 		///
-		bool Load(UTFWin::IWindow* pWindow, uint32_t propID, uint32_t regionFilter, eastl::vector<ColorRGB>* pColors = nullptr);
+		bool Load(UTFWin::IWindow* pWindow, uint32_t propID, uint32_t regionFilter, eastl::vector<Math::ColorRGB>* pColors = nullptr);
 
 		///
 		/// Toggles the visibility of this color picker. If bVisible is true, the color picker UI will be brought to the front
@@ -64,7 +64,9 @@ namespace Palettes
 		///
 		Math::Rectangle GetSwatchArea(int index, bool=false) const;
 
-		void SetColor(const ColorRGB& color);
+		void SetColor(const Math::ColorRGB& color);
+
+		void Update(long deltaMS);
 
 		//// OVERRIDES ////
 

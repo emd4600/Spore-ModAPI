@@ -19,7 +19,7 @@
 
 #pragma once
 
-#include <Spore\ArgScript\FormatParser.h>
+#include <Spore\ArgScript\ASDeclarations.h>
 #include <Spore\ArgScript\Line.h>
 #include <Spore\Internal.h>
 
@@ -27,6 +27,7 @@
 
 namespace ArgScript
 {
+	class FormatParser;
 
 	///
 	/// This interface represents a command or block that can be parsed in ArgScript. Parsers are mapped to keywords using the

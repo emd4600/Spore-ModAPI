@@ -3,7 +3,7 @@
 #include <Spore\Graphics\MaterialShader.h>
 #include <Spore\Graphics\ShaderDataUniform.h>
 #include <EASTL\vector.h>
-#include <D3D9.h>
+#include <d3d9.h>
 
 namespace Graphics
 {

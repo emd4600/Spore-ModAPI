@@ -3,6 +3,7 @@
 #include "Serialization.h"
 #include <Spore\IO.h>
 
+#ifndef SDK_TO_GHIDRA
 namespace Simulator
 {
 	class ISimulatorSerializable;
@@ -251,3 +252,5 @@ namespace Simulator
 	(Simulator::ReadTextFunction_t)&Simulator::SerializationTypes::ReadText<T>, (Simulator::WriteTextFunction_t)&Simulator::SerializationTypes::WriteText<T>, nullptr)
 
 #define SimAttribute(className, field, index) SimAttribute_(className, field, index, decltype(((className*)0)->field))
+
+#endif

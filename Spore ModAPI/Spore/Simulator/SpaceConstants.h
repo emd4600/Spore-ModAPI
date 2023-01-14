@@ -75,6 +75,10 @@ namespace Simulator
 	bool IsNotStarOrBinaryStar(StarType starType);
 
 	float* GetPrecalculatedSolarStarRadius();
+
+#ifdef SDK_TO_GHIDRA
+	float sPrecalculatedSolarStarRadius[13];
+#endif
 }
 
 namespace Addresses(Simulator)

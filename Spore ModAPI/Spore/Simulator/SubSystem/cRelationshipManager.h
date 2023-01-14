@@ -74,6 +74,7 @@ namespace Simulator
 		/// @param pEmpire2
 		bool IsAtWar(cEmpire* pEmpire1, cEmpire* pEmpire2);
 
+#ifndef SDK_TO_GHIDRA
 		/// Returns true if the two political entities are currently at war, or false otherwise.
 		/// The order of the parameters is irrelevant.
 		/// @param politicalID1
@@ -85,6 +86,10 @@ namespace Simulator
 		/// @param pEmpire1
 		/// @param pEmpire2
 		bool IsAllied(cEmpire* pEmpire1, cEmpire* pEmpire2);
+#else
+		bool IsAtWar2(uint32_t politicalID1, uint32_t politicalID2);
+		bool IsAllied2(cEmpire* pEmpire1, cEmpire* pEmpire2);
+#endif
 
 		/// Returns true if there is an alliance between the two political entities, or false otherwise.
 		/// The order of the parameters is irrelevant.

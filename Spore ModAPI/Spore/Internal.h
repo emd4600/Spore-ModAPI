@@ -21,7 +21,7 @@
 
 #include <cstdint>
 #include <cctype>
-#include <windows.h>
+#include <Windows.h>
 #include <Spore\CppRevEng.h>
 
 

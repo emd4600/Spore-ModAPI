@@ -60,7 +60,7 @@ namespace UTFWin
 	class ITextEdit : public UTFWinObject
 	{
 	public:
-		enum
+		enum Flags
 		{
 			/// If set to true, the text cannot be changed
 			kFlagReadOnly = 0x0001,

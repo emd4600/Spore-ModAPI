@@ -120,6 +120,7 @@ namespace Addresses(Clock)
 	//DeclareAddress(GetTimeParam);
 };
 
+#ifndef SDK_TO_GHIDRA
 inline void Clock::Reset() {
 	mStartTime.QuadPart = 0;
 	mAccumulatedTime.QuadPart = 0;
@@ -148,3 +149,4 @@ inline float Clock::GetElapsed() const
 inline bool Clock::IsRunning() const {
 	return mStartTime.QuadPart != 0;
 }
+#endif

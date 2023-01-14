@@ -136,9 +136,11 @@ namespace Palettes
 		DeclareAddress(Unload);
 	}
 
+#ifndef SDK_TO_GHIDRA
 	inline PaletteCategory* PaletteMain::GetCategoryAt(size_t nIndex)
 	{
 		return mCategories[nIndex].get();
 	}
+#endif
 }
 

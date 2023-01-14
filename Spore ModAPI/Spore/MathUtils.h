@@ -45,6 +45,7 @@ namespace Math
 	/// An ARGB color represented by a 32 bit integer value.
 	struct Color
 	{
+#ifndef SDK_TO_GHIDRA
 		union {
 			uint32_t value;
 			struct
@@ -55,11 +56,18 @@ namespace Math
 				uint8_t a;
 			};
 		};
+#else
+		uint8_t b;
+		uint8_t g;
+		uint8_t r;
+		uint8_t a;
+#endif
 
 		Color();
 		Color(uint32_t color);
 		Color(uint8_t r, uint8_t g, uint8_t b, uint8_t a);
 
+#ifndef SDK_TO_GHIDRA
 		inline bool operator==(const Color& b) const {
 			return value == b.value;
 		}
@@ -67,6 +75,7 @@ namespace Math
 		inline bool operator!=(const Color& b) const {
 			return value != b.value;
 		}
+#endif
 
 		static const Color RED;
 		static const Color BLUE;
@@ -266,24 +275,35 @@ namespace Math
 	/// (x1, y1) represents the point on the top-left corner; (x2, y2) represents the point on the bottom-right corner.
 	/// The variables 'left', 'top', 'right' and 'bottom' can also be used to define the horizontal or vertical coordinates
 	/// where each border is at.
-	union Rectangle {
-		struct
+	struct Rectangle {
+#ifndef SDK_TO_GHIDRA
+		union
 		{
-			float x1;
-			float y1;
-			float x2;
-			float y2;
+			struct
+			{
+				float x1;
+				float y1;
+				float x2;
+				float y2;
+			};
+			struct
+			{
+				float left;
+				float top;
+				float right;
+				float bottom;
+			};
 		};
-		struct
-		{
-			float left;
-			float top;
-			float right;
-			float bottom;
-		};
+#else
+		float left;
+		float top;
+		float right;
+		float bottom;
+#endif
 		Rectangle(float x1, float y1, float x2, float y2);
 		Rectangle();
 
+#ifndef SDK_TO_GHIDRA
 		/// Returns the width of the rectangle.
 		inline float GetWidth() const {
 			return x2 - x1;
@@ -328,6 +348,7 @@ namespace Math
 		inline bool Contains(const Point& p) const {
 			return Contains(p.x, p.y);
 		}
+#endif
 	};
 
 	/// Represents a rectangular space, defined by two points or by the four edges. Equivalent to Rectangle, but with integers.
@@ -380,7 +401,7 @@ namespace Math
 		ColorRGB& Set(float r, float g, float b);
 
 		/// Returns the integer representation of the given color (in the form of a Color value).
-		Color ToIntColor();
+		Color ToIntColor() const;
 
 		bool operator==(const ColorRGB& b) const;
 		bool operator!=(const ColorRGB& b) const;
@@ -391,12 +412,13 @@ namespace Math
 	struct ColorRGBA {
 		ColorRGBA(float r, float g, float b, float a);
 		ColorRGBA(ColorRGB color, float a);
+		ColorRGBA(Color color);
 		ColorRGBA();
 
 		ColorRGBA& Set(float r, float g, float b, float a);
 
 		/// Returns the integer representation of the given color (in the form of a Color value).
-		Color ToIntColor();
+		Color ToIntColor() const;
 
 		bool operator==(const ColorRGBA& b) const;
 		bool operator!=(const ColorRGBA& b) const;
@@ -511,7 +533,11 @@ namespace Math
 		/// @param other The other bounding box to intersect with.
 		/// @param[out] dst [Optional] Where the intersection will be written. Points inside this bbox are contained in both bbox.
 		/// @return `true` if the bounding boxes intersect, `false` otherwise.
+#ifdef SDK_TO_GHIDRA
+		bool Intersect(const BoundingBox& other, BoundingBox& dst/* = BoundingBox()*/) const;  // commented the default parameter as it doesn't work in GCC
+#else
 		bool Intersect(const BoundingBox& other, BoundingBox& dst = BoundingBox()) const;
+#endif
 	};
 
 	struct PlaneEquation {
@@ -599,6 +625,7 @@ namespace Math
 		int32_t seed;
 	};
 
+#ifndef SDK_TO_GHIDRA
 	/// Returns the generic random number generator.
 	inline RandomNumberGenerator& GetRNG() {
 		return *(RandomNumberGenerator*)(GetAddress(Math, RandomNumberGenerator_ptr));
@@ -624,6 +651,9 @@ namespace Math
 	inline float randf(float minValue, float maxValue) {
 		return GetRNG().RandomFloat() * (maxValue - minValue) + minValue;
 	}
+#else
+	RandomNumberGenerator* sMainRNG;
+#endif
 
 	namespace Addresses(RandomNumberGenerator) {
 		DeclareAddress(RandomInt);
@@ -639,6 +669,13 @@ namespace Math
 		r = color.r / 255.0f;
 		g = color.g / 255.0f;
 		b = color.b / 255.0f;
+	}
+	inline ColorRGBA::ColorRGBA(Color color)
+	{
+		r = color.r / 255.0f;
+		g = color.g / 255.0f;
+		b = color.b / 255.0f;
+		a = color.a / 255.0f;
 	}
 
 	inline ColorRGB& ColorRGB::Set(float r, float g, float b) {
@@ -661,32 +698,38 @@ namespace Math
 		return *this;
 	}
 
-	inline Color ColorRGBA::ToIntColor()
+	inline Color ColorRGBA::ToIntColor() const
 	{
 		Math::Color dstColor;
+#ifndef SDK_TO_GHIDRA
 		dstColor.r = (uint8_t)roundf(r * 255.0f);
 		dstColor.g = (uint8_t)roundf(g * 255.0f);
 		dstColor.b = (uint8_t)roundf(b * 255.0f);
 		dstColor.a = (uint8_t)roundf(a * 255.0f);
+#endif
 
 		return dstColor;
 	}
 
-	inline Color ColorRGB::ToIntColor()
+	inline Color ColorRGB::ToIntColor() const
 	{
 		Math::Color dstColor;
+#ifndef SDK_TO_GHIDRA
 		dstColor.r = (uint8_t)roundf(r * 255.0f);
 		dstColor.g = (uint8_t)roundf(g * 255.0f);
 		dstColor.b = (uint8_t)roundf(b * 255.0f);
 		dstColor.a = 255;
+#endif
 
 		return dstColor;
 	}
 
+#ifndef SDK_TO_GHIDRA
 	inline Color::Color() : value(0) {}
 	inline Color::Color(uint32_t color) : value(color) {}
 	inline Color::Color(uint8_t _r, uint8_t _g, uint8_t _b, uint8_t _a)
 		: r(_r), g(_g), b(_b), a(_a) {}
+#endif
 
 	inline Vector2::Vector2(const Point& other) : Vector2(other.x, other.y) {}
 	inline Point::Point(const Vector2& other) : Point(other.x, other.y) {}
@@ -703,6 +746,7 @@ namespace Math
 	inline Quaternion::Quaternion(float _x, float _y, float _z, float _w) : Vector4(_x, _y, _z, _w)
 	{
 	}
+#ifndef SDK_TO_GHIDRA
 	inline Rectangle::Rectangle(float _x1, float _y1, float _x2, float _y2) :
 		x1(_x1), y1(_y1), x2(_x2), y2(_y2)
 	{
@@ -711,6 +755,7 @@ namespace Math
 		x1(_x1), y1(_y1), x2(_x2), y2(_y2)
 	{
 	}
+#endif
 	inline Point::Point(float _x, float _y) :
 		x(_x), y(_y)
 	{
@@ -739,7 +784,9 @@ namespace Math
 	inline Vector3::Vector3() : x(0), y(0), z(0) {}
 	inline Vector4::Vector4() : x(0), y(0), z(0), w(0) {}
 	inline Quaternion::Quaternion() : Vector4(0, 0, 0, 1.0f) {}
+#ifndef SDK_TO_GHIDRA
 	inline Rectangle::Rectangle() : x1(0), y1(0), x2(0), y2(0) {}
+#endif
 	inline IntRectangle::IntRectangle() : x1(0), y1(0), x2(0), y2(0) {}
 	inline Point::Point() : x(0), y(0) {}
 	inline Dimensions::Dimensions() : width(0), height(0) {}
@@ -945,9 +992,11 @@ namespace Math
 		return b * a;
 	}
 
+#ifndef SDK_TO_GHIDRA
 	inline float Vector2::Length() const {
 		return sqrtf(x * x + y * y);
 	}
+#endif
 
 	inline Vector2 Vector2::Normalized() const {
 		return *this / Length();
@@ -1029,10 +1078,11 @@ namespace Math
 		return b * a;
 	}
 
-
+#ifndef SDK_TO_GHIDRA
 	inline float Vector3::Length() const {
 		return sqrtf(x * x + y * y + z * z);
 	}
+#endif
 
 	inline float Vector3::SquaredLength() const {
 		return x * x + y * y + z * z;
@@ -1133,10 +1183,11 @@ namespace Math
 		return b * a;
 	}
 
-
+#ifndef SDK_TO_GHIDRA
 	inline float Vector4::Length() const {
 		return sqrtf(x * x + y * y + z * z + w * w);
 	}
+#endif
 
 	inline Vector4 Vector4::Normalized() const {
 		return *this / Length();
@@ -1307,3 +1358,12 @@ namespace Math
 		return { lerp(a.r, b.r, mix), lerp(a.g, b.g, mix), lerp(a.b, b.b, mix), lerp(a.a, b.a, mix) };
 	}
 }
+
+#ifdef SDK_TO_GHIDRA
+namespace Math
+{
+	Vector3 MultiplyVectorScalar(const Vector3& source, float scalar);
+	Matrix3 EulerToMatrix(const Vector3& euler);
+	Vector3 MatrixToEuler(const Matrix3& source);
+}
+#endif

@@ -16,6 +16,14 @@ namespace Terrain
 		DefineAddress(GetHeight, SelectAddress(0xF92C50, 0xF92760));
 	}
 
+	namespace Sphere
+	{
+		namespace Addresses(cTerrainSphere)
+		{
+			DefineAddress(Create, SelectAddress(0xFA29A0, 0xFA2350));
+			DefineAddress(Generate, SelectAddress(0xF9BF30, 0xF9B860));
+		}
+	}
 	namespace Addresses(cTerrainSphere)
 	{
 		DefineAddress(Create, SelectAddress(0xFA29A0, 0xFA2350));
@@ -48,18 +56,10 @@ namespace Terrain
 		DefineAddress(UpdateVertexBuffer, SelectAddress(0xFB6D20, 0xFB6600));
 		DefineAddress(UpdateIndexBuffer, SelectAddress(0xFB4AE0, 0xFB4380));
 	}
-
-	namespace Sphere
-	{
-		namespace Addresses(cTerrainSphere)
-		{
-			DefineAddress(Create, SelectAddress(0xFA29A0, 0xFA2350));
-			DefineAddress(Generate, SelectAddress(0xF9BF30, 0xF9B860));
-		}
-	}
 }
 namespace Addresses(Terrain)
 {
+#ifndef SDK_TO_GHIDRA
 	DefineAddress(CurrentMaterialIndex_ptr, SelectAddress(0x15B5518, 0x15B1538));
 	DefineAddress(CurrentQuadIndex_ptr, SelectAddress(0x15B551C, 0x15B153C));
 	DefineAddress(TerrainRefractionBuffersRTT_ID_ptr, SelectAddress(0x15B51E0, 0x15B1200));
@@ -72,7 +72,7 @@ namespace Addresses(Terrain)
 	DefineAddress(CreateReflectionRTTs, SelectAddress(0xF9E8F0, 0xF9E240));
 	DefineAddress(DisposeReflectionRTTs, SelectAddress(0xF9E9C0, 0xF9E310));
 	DefineAddress(CreateScatterRTTs, SelectAddress(0xF9E790, 0xF9E0E0));
-	DefineAddress(TerrainBakeInScatterTexture_ptr, SelectAddress(0x16CE1D4, 0x16C9F54));
+	DefineAddress(TerrainBakeInScatterTexture_ptr, SelectAddress(0x16CE1D4, 0x16C9F54));	
 	DefineAddress(TerrainScatterTexture_ptr, SelectAddress(0x16CE1D8, 0x16C9F58));
 	DefineAddress(TerrainScatterViewer_ptr, SelectAddress(0x16CE1E0, 0x16C9F60));
 	DefineAddress(TerrainSimDataTextures_ptr, SelectAddress(0x16CE0C4, 0x16C9E44));
@@ -82,5 +82,29 @@ namespace Addresses(Terrain)
 	DefineAddress(TerrainColorMapRTT_ID_ptr, SelectAddress(0x15B51F8, 0x15B1218));
 	DefineAddress(TerrainColorMapRTT_ptr, SelectAddress(0x16CE0C0, 0x16C9E40));
 	DefineAddress(TerrainColorMapViewer_ptr, SelectAddress(0x16CE690, 0x16CA410));
+#else
+	DefineAddress(sCurrentMaterialIndex, SelectAddress(0x15B5518, 0x15B1538));
+	DefineAddress(sCurrentQuadIndex, SelectAddress(0x15B551C, 0x15B153C));
+	DefineAddress(sTerrainRefractionBuffersRTT_ID, SelectAddress(0x15B51E0, 0x15B1200));
+	DefineAddress(sTerrainRefractionBuffersRTTTexture, SelectAddress(0x16CE0E8, 0x16C9E68));
+	DefineAddress(sTerrainRefractionBlur1RTT_ID, SelectAddress(0x15B51E8, 0x15B1208));
+	DefineAddress(sTerrainRefractionBlur2RTT_ID, SelectAddress(0x15B51F0, 0x15B1214));
+	DefineAddress(sTerrainRefractionViewer, SelectAddress(0x16CE358, 0x16CA0D8));
+	DefineAddress(CreateRefractionRTTs, SelectAddress(0xF97220, 0xF96AE0));
+	DefineAddress(DisposeRefractionRTTs, SelectAddress(0xF97340, 0xF96C00));
+	DefineAddress(CreateReflectionRTTs, SelectAddress(0xF9E8F0, 0xF9E240));
+	DefineAddress(DisposeReflectionRTTs, SelectAddress(0xF9E9C0, 0xF9E310));
+	DefineAddress(CreateScatterRTTs, SelectAddress(0xF9E790, 0xF9E0E0));
+	DefineAddress(sTerrainBakeInScatterTexture, SelectAddress(0x16CE1D4, 0x16C9F54));
+	DefineAddress(sTerrainScatterTexture, SelectAddress(0x16CE1D8, 0x16C9F58));
+	DefineAddress(sTerrainScatterViewer, SelectAddress(0x16CE1E0, 0x16C9F60));
+	DefineAddress(sTerrainSimDataTextures, SelectAddress(0x16CE0C4, 0x16C9E44));
+	DefineAddress(sTerrainSimDataRTTs_ID, SelectAddress(0x16CE654, 0x16CA3D4));
+	DefineAddress(sTerrainReflectionTexture, SelectAddress(0x16CE1DC, 0x16C9F5C));
+	DefineAddress(sTerrainReflectionViewer, SelectAddress(0x16CE4E0, 0x16CA260));
+	DefineAddress(sTerrainColorMapRTT_ID, SelectAddress(0x15B51F8, 0x15B1218));
+	DefineAddress(sTerrainColorMapRTT, SelectAddress(0x16CE0C0, 0x16C9E40));
+	DefineAddress(sTerrainColorMapViewer, SelectAddress(0x16CE690, 0x16CA410));
+#endif
 }
 #endif

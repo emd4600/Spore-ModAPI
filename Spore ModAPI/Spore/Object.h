@@ -97,7 +97,11 @@ public:
 template <class Type, class CallerType>
 inline Type* object_cast(const CallerType pObject)
 {
+#ifndef SDK_TO_GHIDRA
 	return pObject ? (Type*)pObject->Cast(Type::TYPE) : nullptr;
+#else
+	return nullptr;
+#endif
 }
 
 

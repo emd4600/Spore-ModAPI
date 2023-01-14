@@ -33,7 +33,7 @@
 
 namespace Graphics
 {
-	enum
+	enum TextureMessages
 	{
 		kMsgTextureExtractCompleted = 0x522264D
 	};

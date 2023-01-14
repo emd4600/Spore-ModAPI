@@ -32,7 +32,7 @@ namespace UTFWin
 	class ISpinnerDrawable : public UTFWinObject
 	{
 	public:
-		enum
+		enum ImageIndices
 		{
 			kImageBackground = 0,
 			kImageIncrementButton = 1,

@@ -16,12 +16,26 @@
 #include <Spore\Graphics\cMaterialManager.h>
 #include <Spore\Graphics\ShaderDataUniform.h>
 #include <Spore\Graphics\GlobalState.h>
+#include <Spore\Graphics\ActiveState.h>
 #include <Spore\Graphics\BufferDraw.h>
 
 namespace Addresses(Graphics)
 {
+#ifndef SDK_TO_GHIDRA
 	DefineAddress(VertexShaderDataUniforms_ptr, SelectAddress(0x162CE14, 0x1628BA4));
-	DefineAddress(PixelShaderDataUniforms_ptr, SelectAddress(0x1624020, 0x161FDB4));
+	DefineAddress(PixelShaderDataUniforms_ptr, SelectAddress(0x1624020, 0x161FDB4));	
+#else
+	DefineAddress(sVertexShaderDataUniforms, SelectAddress(0x162CE14, 0x1628BA4));
+	DefineAddress(sPixelShaderDataUniforms, SelectAddress(0x1624020, 0x161FDB4));
+#endif
+
+#ifndef SDK_TO_GHIDRA
+	DefineAddress(MainColorRTT_ptr, SelectAddress(0x15D4AC8, 0x15D0838));
+	DefineAddress(MainDepthRTT_ptr, SelectAddress(0x15D4ACC, 0x15D083C));
+#else
+	DefineAddress(sMainColorRTT, SelectAddress(0x15D4AC8, 0x15D0838));
+	DefineAddress(sMainDepthRTT, SelectAddress(0x15D4ACC, 0x15D083C));
+#endif
 }
 
 namespace Graphics
@@ -79,9 +93,6 @@ namespace Graphics
 	namespace Addresses(IRenderTargetManager) {
 		DefineAddress(Get, SelectAddress(0x67DEC0, 0x67DD60));
 	}
-
-	DefineAddress(MainColorRTT_ptr, SelectAddress(0x15D4AC8, 0x15D0838));
-	DefineAddress(MainDepthRTT_ptr, SelectAddress(0x15D4ACC, 0x15D083C));
 
 	namespace Addresses(ITextureManager)
 	{
@@ -147,6 +158,21 @@ namespace Graphics
 		DefineAddress(CreateDevice, SelectAddress(0x11FADF0, 0x11F86B0));
 
 		DefineAddress(SetTexture, SelectAddress(0x11F39D0, 0x11F12A0));
+
+#ifdef SDK_TO_GHIDRA
+		DefineAddress(sD3D, SelectAddress(0x16FFCF8, 0x16F89C8));
+		DefineAddress(sDevice, SelectAddress(0x016FFD00, 0x16F89D0));
+#endif
+	}
+
+	namespace Addresses(ActiveState)
+	{
+		DefineAddress(sShaderData, SelectAddress(0x016FD8D8, 0x16F65A8));
+		DefineAddress(sShader, SelectAddress(0x016FD898, 0x16F6568));
+		DefineAddress(sTransform, SelectAddress(0x016FF8DC, 0x16F85AC));
+		DefineAddress(sTransposedTransform, SelectAddress(0x1700024, 0x16F8CF4));
+		DefineAddress(sPresentParams, SelectAddress(0x16FFECC, 0x16F8B9C));
+		DefineAddress(SetTexture, SelectAddress(0x11F39D0, 0x11F12A0));
 	}
 
 	namespace Addresses(ShaderBuilder) 
@@ -179,6 +205,15 @@ namespace Graphics
 		DefineAddress(SetTransform, SelectAddress(0x5295C0, 0x5291F0));
 		DefineAddress(renderStates_ptr, SelectAddress(0x01700510, 0x16F91E0));
 		DefineAddress(renderStateDirty_ptr, SelectAddress(0x017016BC, 0x16FA38C));
+
+#ifdef SDK_TO_GHIDRA
+		DefineAddress(sTransform, SelectAddress(0x17016B0, 0x16FA380));
+		DefineAddress(sTransformType, SelectAddress(0x17009D0, 0x16F96A0));
+		DefineAddress(sColor, SelectAddress(0x17009D8, 0x16F96A8));
+		DefineAddress(sSoftStateDirty, SelectAddress(0x1700858, 0x16F9528));
+		DefineAddress(sRenderStates, SelectAddress(0x01700510, 0x16F91E0));
+		DefineAddress(sRenderStateDirty, SelectAddress(0x017016BC, 0x16FA38C));
+#endif
 	}
 
 	namespace Addresses(cBufferDraw)
@@ -197,4 +232,14 @@ namespace Graphics
 		DefineAddress(UpdateWithLODMeshes, SelectAddress(0x74B7C0, 0x74A990));
 	}
 }
+
+#ifdef SDK_TO_GHIDRA
+namespace Addresses(Graphics)
+{
+	DefineAddress(sVertexShaders, SelectAddress(0x162CE90, 0x1628C20));
+	DefineAddress(sPixelShaders, SelectAddress(0x161DA88, 0x16198A0));
+	DefineAddress(sBufferDraw, SelectAddress(0x160B998, 0x1607728));
+}
+#endif
+
 #endif

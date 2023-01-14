@@ -40,7 +40,7 @@ namespace UTFWin
 	class cSPUIMessageBox
 	{
 	public:
-		enum
+		enum ControlIDs
 		{
 			kButtonOK = 0xfffffff1,
 			kButton1 = 0x05107b17,

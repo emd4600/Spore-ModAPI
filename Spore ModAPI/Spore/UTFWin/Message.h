@@ -37,10 +37,12 @@ namespace UTFWin
 		char16_t* str;
 		size_t length;
 
+#ifndef SDK_TO_GHIDRA
 		inline eastl::string16 ToString() const
 		{
 			return eastl::string16(str, length);
 		}
+#endif
 	};
 
 	class Message

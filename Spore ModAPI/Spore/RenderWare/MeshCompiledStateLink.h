@@ -36,7 +36,7 @@ namespace RenderWare
 		/* 04h */	size_t mCompiledStatesCount;
 		/* 08h */	CompiledState* mpCompiledStates[1];
 
-		static const uint32_t TYPE = 0x2001a;
+		static const uint32_t RW_TYPE = 0x2001a;
 	};
 
 	template <int nCompiledStates = 1>

@@ -18,7 +18,7 @@ namespace Resource
 		DefineAddress(ReleaseResources, SelectAddress(0x8E1CC0, 0x8E19D0));
 		DefineAddress(NeedsToRelease, SelectAddress(0x8DE6D0, 0x8DE530));
 		DefineAddress(func10h, SelectAddress(0x8DF810, 0x8DF730));
-		const uintptr_t GetAsyncResource = func10h;
+		DefineAddress(GetAsyncResource, SelectAddress(0x8DF810, 0x8DF730));
 		DefineAddress(GetCachedResource, SelectAddress(0x8DE730, 0x8DE590));
 		DefineAddress(func18h, SelectAddress(0x8DFB50, 0x8DFA70));
 		DefineAddress(ReadResource, SelectAddress(0x8DFCF0, 0x8DFC10));

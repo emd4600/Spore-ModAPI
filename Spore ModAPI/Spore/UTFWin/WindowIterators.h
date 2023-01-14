@@ -22,6 +22,7 @@
 #include <Spore\UTFWin\IWindow.h>
 #include <Spore\UTFWin\IWinProc.h>
 
+#ifndef SDK_TO_GHIDRA
 namespace UTFWin
 {
 	template<typename Pointer, typename Reference>
@@ -286,3 +287,4 @@ namespace UTFWin
 		return const_iterator(mpParentWindow, nullptr);
 	}
 }
+#endif

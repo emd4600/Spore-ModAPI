@@ -4,7 +4,7 @@
 #include <Spore\Swarm\IComponent.h>
 #include <Spore\Transform.h>
 #include <Spore\MathUtils.h>
-#include <Spore\resourceID.h>
+#include <Spore\ResourceID.h>
 #include <EASTL\vector.h>
 
 namespace Swarm

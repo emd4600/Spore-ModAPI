@@ -58,7 +58,7 @@ namespace UTFWin
 		kWinFlagIgnoreMouseChildren = 0x1000,
 	};
 
-	enum
+	enum WindowStates
 	{
 		kStateEnabled = 1,
 		kStateClicked = 2,
@@ -74,7 +74,7 @@ namespace UTFWin
 	typedef eastl::intrusive_list<Window_intrusive_list_node> IWindowList_t;
 
 	class IWindow;
-	typedef eastl::function<bool(IWindow*, const Message&)> HandleUILambda_t;
+	typedef bool(*HandleUILambda_t)(IWindow*, const Message&);
 
 	///
 	/// An interface that represents a component in the user interface. Windows occupy a rectangle in the screen and
@@ -474,7 +474,7 @@ namespace UTFWin
 		///
 		/* 118h */	virtual const char* GetComponentName() const = 0;
 		
-
+#ifndef SDK_TO_GHIDRA
 		///
 		/// Returns an structure that allows to iterate through the children of this window. Example usage:
 		/// ~~~~~~~~~~~~~~~~~~~~{.cpp}
@@ -500,6 +500,7 @@ namespace UTFWin
 		/// ~~~~~~~~~~~~~~~~~~~~
 		///
 		WindowProcedures procedures();
+#endif
 
 		///
 		/// Adds an event listener, defined using a lambda function or by referencing a static function. 

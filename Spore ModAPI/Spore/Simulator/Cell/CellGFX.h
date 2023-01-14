@@ -33,7 +33,7 @@ namespace Simulator
 		class CellGFX
 		{
 		public:
-			enum
+			enum WorldIDs
 			{
 				kCellLightingWorldID = 0x4A4D97F,
 				kCellPreloadedModelWorldID = 0x1010050,

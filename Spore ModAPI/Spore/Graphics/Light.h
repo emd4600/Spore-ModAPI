@@ -7,7 +7,9 @@ namespace Graphics
 	struct Light
 	{
 		enum class Type : int {
-
+#ifdef SDK_TO_GHIDRA
+			PLACEHOLDER = 0
+#endif
 		};
 
 		/* 00h */	Type type;

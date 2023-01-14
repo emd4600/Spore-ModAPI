@@ -99,6 +99,7 @@ struct GameInput
 	void OnMouseMove(float mouseX, float mouseY, MouseState state);
 	void OnMouseWheel(int nWheelDelta, float mouseX, float mouseY, MouseState mouseState);
 
+#ifndef SDK_TO_GHIDRA
 	inline bool IsKeyDown(int vkey) const {
 		return keys[vkey];
 	}
@@ -106,6 +107,7 @@ struct GameInput
 	inline bool IsMouseDown(MouseButton button) const {
 		return mouseButtons[static_cast<int>(button) - 1000];
 	}
+#endif
 
 	void Reset();
 
@@ -130,6 +132,7 @@ struct GameInput
 };
 ASSERT_SIZE(GameInput, 0x48);
 
+#ifndef SDK_TO_GHIDRA
 inline GameInput::GameInput()
 	: keys()
 	, keyModifiers()
@@ -209,3 +212,5 @@ inline auto_METHOD_VOID(GameInput, OnKeyDown, Args(int vkCode, KeyModifiers modi
 inline auto_METHOD_VOID(GameInput, OnKeyUp, Args(int vkCode, KeyModifiers modifiers), Args(vkCode, modifiers));
 
 inline auto_STATIC_METHOD(GameInput, bool, IsMouseButtonDown, Args(MouseButton button), Args(button));
+
+#endif

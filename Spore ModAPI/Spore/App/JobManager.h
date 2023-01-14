@@ -7,8 +7,19 @@
 
 namespace App
 {
+#ifdef SDK_TO_GHIDRA
+	class cJobThread
+	{
+		int todo;
+	};
+	class LimitStopwatch
+	{
+		int todo;
+	};
+#else
 	class cJobThread;  //TODO
 	class LimitStopwatch;  //TODO
+#endif
 
 	class IJobManager
 	{

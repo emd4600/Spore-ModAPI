@@ -221,9 +221,9 @@ namespace Palettes
 
 		//// OVERRIDES ////
 
-		virtual int AddRef();
-		virtual int Release();
-		virtual void* Cast(uint32_t);
+		virtual int AddRef() override;
+		virtual int Release() override;
+		virtual void* Cast(uint32_t) const override;
 
 		virtual int GetEventFlags() const override;
 		virtual bool HandleUIMessage(UTFWin::IWindow* pWindow, const UTFWin::Message& message) override;
@@ -277,6 +277,7 @@ namespace Palettes
 		DeclareAddress(Update);
 	}
 
+#ifndef SDK_TO_GHIDRA
 	inline void PageArrowsUI::SetVisible(bool bVisible)
 	{
 		if (mpMainWindow) mpMainWindow->SetFlag(UTFWin::kWinFlagVisible, bVisible);
@@ -291,4 +292,5 @@ namespace Palettes
 	inline uint32_t SubcategoryChangedMessage::GetCategoryID() const {
 		return this->params[0].uint32;
 	}
+#endif
 }

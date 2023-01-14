@@ -24,7 +24,7 @@ namespace Simulator
 	{
 		const char* const TriggerFile = "TriggerConfigSpaceGame";
 
-		enum
+		enum Actions
 		{
 			kZoomIn = 0x00000009,
 			kZoomOut = 0x00000010,

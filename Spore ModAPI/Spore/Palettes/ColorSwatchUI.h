@@ -54,7 +54,7 @@ namespace Palettes
 		/// @param pExpansionObject An object necessary to do the swatch expansion; generally this is the color picker.
 		///
 		void Load(
-			App::PropertyList* pConfigProp, struct Math::ColorRGB color, union Math::Rectangle area, 
+			App::PropertyList* pConfigProp, struct Math::ColorRGB color, struct Math::Rectangle area, 
 			UTFWin::IWindow* pContainerWindow, Object* pExpansionObject);
 
 		///
@@ -62,7 +62,7 @@ namespace Palettes
 		/// @param area The new area for the swatch windows.
 		/// @param bUpdateSwatch [Optional] If true, it changes the Palettes::ColorSwatchUI::mArea field.
 		///
-		void SetArea(union Math::Rectangle area, bool bUpdateSwatch = false);
+		void SetArea(struct Math::Rectangle area, bool bUpdateSwatch = false);
 
 		///
 		/// Calculates and sets the area of the expansion window for this swatch, based on the

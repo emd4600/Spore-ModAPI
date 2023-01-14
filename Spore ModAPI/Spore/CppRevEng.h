@@ -19,7 +19,7 @@
 * along with this program.  If not, see <http://www.gnu.org/licenses/>.
 ****************************************************************************/
 
-
+#ifndef SDK_TO_GHIDRA
 #include "CppRevEngBase.h"
 #include <detours.h>
 
@@ -332,3 +332,5 @@ member_detour_<DetourClass, BaseClass, VirtualClass, Result(Arguments...)>::orig
 /// @param virtualClass The name of the class where the method is declared.
 /// @param declaration The method declaration, with no names. For example, <code>void(int, float)</code>
 #define virtual_detour(name, baseClass, virtualClass, declaration) struct name : public member_detour_< name , baseClass, virtualClass, declaration > 
+
+#endif

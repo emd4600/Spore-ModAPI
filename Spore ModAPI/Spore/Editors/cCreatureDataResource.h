@@ -33,7 +33,7 @@ namespace Editors
 			Vertebra = 5
 		};
 
-		enum
+		enum Flags
 		{
 			kFlagNotUseSkin = 1,
 			//TODO 4 hasBallConnector?

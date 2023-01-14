@@ -245,8 +245,8 @@ namespace Resource
 	auto_METHOD_VIRTUAL_(DatabasePackedFile, DatabasePackedFile, bool, WriteEmptyHeaderRecord);
 	auto_METHOD_VIRTUAL_(DatabasePackedFile, DatabasePackedFile, bool, WriteHeaderRecord);
 	auto_METHOD_VIRTUAL(DatabasePackedFile, DatabasePackedFile, bool, VerifyHeaderRecordIntegrity, Args(char* header), Args(header));
-	auto_METHOD_VIRTUAL_(DatabasePackedFile, DatabasePackedFile, bool, ReadIndex);
-	auto_METHOD_VIRTUAL_(DatabasePackedFile, DatabasePackedFile, bool, WriteIndex);
+	auto_METHOD_VIRTUAL_(DatabasePackedFile, DatabasePackedFile, bool, ReadIndexRecord);
+	auto_METHOD_VIRTUAL_(DatabasePackedFile, DatabasePackedFile, bool, WriteIndexRecord);
 	auto_METHOD_VIRTUAL_(DatabasePackedFile, DatabasePackedFile, bool, VerifyIndexRecordIntegrity);
 	auto_METHOD_VIRTUAL(DatabasePackedFile, DatabasePackedFile, PFIndexModifiable*, CreateIndex, Args(IO::AccessFlags nDesiredAccess), Args(nDesiredAccess));
 	auto_METHOD_VIRTUAL_VOID(DatabasePackedFile, DatabasePackedFile, DestroyIndex, Args(IO::EAIOZoneObject* pObject), Args(pObject));

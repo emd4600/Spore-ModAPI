@@ -55,23 +55,23 @@ namespace IO
 
 		~FileStream();
 
-		/* 04h */	virtual int AddRef();
-		/* 08h */	virtual int Release();
+		/* 04h */	virtual int AddRef() override;
+		/* 08h */	virtual int Release() override;
 
-		/* 0Ch */	virtual uint32_t	GetType() const;  // ?
-		/* 10h */	virtual AccessFlags	GetAccessFlags() const;
-		/* 14h */	virtual FileError	GetState() const;
-		/* 18h */	virtual bool		Close();
+		/* 0Ch */	virtual uint32_t	GetType() const override;  // ?
+		/* 10h */	virtual AccessFlags	GetAccessFlags() const override;
+		/* 14h */	virtual FileError	GetState() const override;
+		/* 18h */	virtual bool		Close() override;
 
-		/* 1Ch */	virtual size_type GetSize() const;
-		/* 20h */	virtual bool	SetSize(size_type size);
-		/* 24h */	virtual int		GetPosition(PositionType positionType = PositionType::Begin) const;
-		/* 28h */	virtual bool	SetPosition(int distance, PositionType positionType = PositionType::Begin);
-		/* 2Ch */	virtual int		GetAvailable() const;
+		/* 1Ch */	virtual size_type GetSize() const override;
+		/* 20h */	virtual bool	SetSize(size_type size) override;
+		/* 24h */	virtual int		GetPosition(PositionType positionType = PositionType::Begin) const override;
+		/* 28h */	virtual bool	SetPosition(int distance, PositionType positionType = PositionType::Begin) override;
+		/* 2Ch */	virtual int		GetAvailable() const override;
 
-		/* 30h */	virtual int		Read(void* pData, size_t nSize);
-		/* 34h */	virtual bool	Flush();
-		/* 38h */	virtual int		Write(const void* pData, size_t nSize);
+		/* 30h */	virtual int		Read(void* pData, size_t nSize) override;
+		/* 34h */	virtual bool	Flush() override;
+		/* 38h */	virtual int		Write(const void* pData, size_t nSize) override;
 
 		/* 3Ch */	virtual void    SetPath(const char16_t* pPath16);
 		/* 40h */	virtual void    SetPathCString(const char* pPath8);

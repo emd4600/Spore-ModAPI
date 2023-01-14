@@ -32,7 +32,7 @@ namespace UTFWin
 	class ISliderDrawable : public UTFWinObject
 	{
 	public:
-		enum
+		enum ImageIndices
 		{
 			kImageBackground = 0,
 			kImageThumb = 1,

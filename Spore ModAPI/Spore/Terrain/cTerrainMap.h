@@ -18,6 +18,7 @@
 ****************************************************************************/
 #pragma once
 
+#include <Spore\Internal.h>
 #include <EASTL\vector.h>
 #include <EASTL\intrusive_ptr.h>
 
@@ -42,6 +43,7 @@ namespace Terrain
 		/* 08h */	int size;
 		/* 0Ch */	int field_0C;
 	};
+	ASSERT_SIZE(cTerrainMap, 0x10);
 
 	class cTerrainMap16
 		: public cTerrainMap

@@ -62,7 +62,7 @@ namespace Swarm
 			/* 14h */	int field_14;
 			/* 18h */	ResourceID field_18;
 
-			enum
+			enum Flags
 			{
 				kFlagLight = 0x1,
 				kFlagNoFog = 0x2,

@@ -28,7 +28,7 @@ namespace Graphics
 		: public ILayer
 	{
 	public:
-		typedef eastl::function<void(int, int, App::cViewer**, RenderStatistics&)> Render_t;
+		typedef void(*Render_t)(int, int, App::cViewer**, RenderStatistics&);
 
 		LambdaLayer(Render_t);
 

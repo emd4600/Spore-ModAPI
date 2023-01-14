@@ -34,7 +34,7 @@
 
 namespace Swarm
 {
-	enum
+	enum EffectTypes
 	{
 		kEffectTypeParticles = 0x01,
 		kEffectTypeMetaParticles = 0x02,
@@ -84,7 +84,7 @@ namespace Swarm
 	class EffectDirectory : public IEffectDirectory, public IVirtual
 	{
 	public:
-		/* 00h */	virtual void AddRef() = 0;
+		/* 00h */	virtual void AddRef() override = 0;
 		/* 04h */	virtual void Release() = 0;
 
 		/* 08h */	virtual bool func08h() = 0;
@@ -184,6 +184,7 @@ namespace Swarm
 	};
 	ASSERT_SIZE(EffectDirectory, 0x9C);
 
+#ifndef SDK_TO_GHIDRA
 	inline cVisualEffectDescription* EffectDirectory::GetVisualEffect(size_t index)
 	{
 		if (index >= mVisualEffects.size()) return nullptr;
@@ -203,4 +204,5 @@ namespace Swarm
 			return -1;
 		}
 	}
+#endif
 }

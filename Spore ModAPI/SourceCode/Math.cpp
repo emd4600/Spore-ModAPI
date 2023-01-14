@@ -549,16 +549,6 @@ Transform::Transform()
 RedirectMethod_noargs_structret_const(Transform, ToMatrix4, Math::Matrix4);
 
 
-RandomNumberGenerator::RandomNumberGenerator(int32_t seed)
-{
-	if (seed == -1) seed = static_cast<int32_t>(time(0));
-	this->seed = seed;
-}
-
-auto_METHOD(RandomNumberGenerator, int, RandomInt, Args(int range), Args(range));
-auto_METHOD_(RandomNumberGenerator, float, RandomFloat);
-
-
 void Transform::Invert()
 {
 	mfScale = 1.0f / mfScale;
@@ -567,55 +557,72 @@ void Transform::Invert()
 	mOffset = mRotation * (-mfScale * mOffset);
 }
 
-
-bool PlaneEquation::IsOnPlane(const Vector3& point, float epsilon) const {
-	return abs(a * point.x + b * point.y + c * point.z + d) <= epsilon;
+Transform& Transform::PreTransformBy(const Transform& other)
+{
+	return CALL(GetAddress(Transform, PreTransformBy), Transform&, Args(Transform*, const Transform&), Args(this, other));
 }
 
-Vector3 PlaneEquation::GetPointOnPlane() const
-{
-	Vector3 pointOnPlane;
-	if (a != 0.0f) pointOnPlane.x = -d / a;
-	else if (b != 0.0f) pointOnPlane.y = -d / b;
-	else if (c != 0.0f) pointOnPlane.z = -d / c;
-	return pointOnPlane;
-}
 
-PlaneEquation::Intersection PlaneEquation::IntersectRay(const Vector3& point, const Vector3& direction, Vector3& dst) const
+namespace Math
 {
-	Vector3 pointOnPlane = GetPointOnPlane();
-	Vector3 normal = { a, b, c };
-	if (normal == Vector3::ZERO) return Intersection::None;  // invalid plane
-
-	float nominator = (pointOnPlane - point).Dot(normal);
-	float denominator = direction.Dot(normal);
-	if (denominator == 0.0f) {
-		// line is parallel, two possible cases
-		if (nominator == 0.0f) return Intersection::InPlane;
-		else return Intersection::None;
+	RandomNumberGenerator::RandomNumberGenerator(int32_t seed)
+	{
+		if (seed == -1) seed = static_cast<int32_t>(time(0));
+		this->seed = seed;
 	}
-	else {
-		float p = nominator / denominator;
-		// We only do intersection with the positive ray
-		if (p < 0.0f) return Intersection::None;
-		
-		dst = point + p * direction;
-		return Intersection::Point;
+
+	auto_METHOD(RandomNumberGenerator, int, RandomInt, Args(int range), Args(range));
+	auto_METHOD_(RandomNumberGenerator, float, RandomFloat);
+
+	bool PlaneEquation::IsOnPlane(const Vector3& point, float epsilon) const {
+		return abs(a * point.x + b * point.y + c * point.z + d) <= epsilon;
 	}
-}
 
-Vector3 PlaneEquation::ProjectPoint(const Vector3& point) const
-{
-	Vector3 pointOnPlane = GetPointOnPlane();
-	Vector3 v = point - pointOnPlane;
-	Vector3 normal = GetNormal();
-	float dist = v.Dot(normal);
-	return point - dist * normal;
-}
+	Vector3 PlaneEquation::GetPointOnPlane() const
+	{
+		Vector3 pointOnPlane;
+		if (a != 0.0f) pointOnPlane.x = -d / a;
+		else if (b != 0.0f) pointOnPlane.y = -d / b;
+		else if (c != 0.0f) pointOnPlane.z = -d / c;
+		return pointOnPlane;
+	}
 
-Vector3 PlaneEquation::ProjectVector(const Vector3& v) const
-{
-	Vector3 normal = GetNormal();
-	float dist = v.Dot(normal);
-	return v - dist * normal;
+	PlaneEquation::Intersection PlaneEquation::IntersectRay(const Vector3& point, const Vector3& direction, Vector3& dst) const
+	{
+		Vector3 pointOnPlane = GetPointOnPlane();
+		Vector3 normal = { a, b, c };
+		if (normal == Vector3::ZERO) return Intersection::None;  // invalid plane
+
+		float nominator = (pointOnPlane - point).Dot(normal);
+		float denominator = direction.Dot(normal);
+		if (denominator == 0.0f) {
+			// line is parallel, two possible cases
+			if (nominator == 0.0f) return Intersection::InPlane;
+			else return Intersection::None;
+		}
+		else {
+			float p = nominator / denominator;
+			// We only do intersection with the positive ray
+			if (p < 0.0f) return Intersection::None;
+
+			dst = point + p * direction;
+			return Intersection::Point;
+		}
+	}
+
+	Vector3 PlaneEquation::ProjectPoint(const Vector3& point) const
+	{
+		Vector3 pointOnPlane = GetPointOnPlane();
+		Vector3 v = point - pointOnPlane;
+		Vector3 normal = GetNormal();
+		float dist = v.Dot(normal);
+		return point - dist * normal;
+	}
+
+	Vector3 PlaneEquation::ProjectVector(const Vector3& v) const
+	{
+		Math::Vector3 normal = GetNormal();
+		float dist = v.Dot(normal);
+		return v - dist * normal;
+	}
 }

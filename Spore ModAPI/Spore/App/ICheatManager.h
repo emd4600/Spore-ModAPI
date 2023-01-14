@@ -21,6 +21,7 @@
 
 
 #include <Spore\ArgScript\FormatParser.h>
+#include <Spore\ArgScript\ICommand.h>
 #include <Spore\Internal.h>
 #include <Spore\Object.h>
 
@@ -41,7 +42,7 @@ namespace App
 	class ICheatManager
 	{
 	public:
-		enum
+		enum MessageIDs
 		{
 			/// A message with no content sent when certain cheats are invoked.
 			kMsgCheatInvoked = 0x4BEF1E3

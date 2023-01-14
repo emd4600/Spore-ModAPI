@@ -35,7 +35,7 @@ namespace UI
 		, DefaultRefCounted
 	{
 	public:
-		enum {
+		enum Messages {
 			/// Message sent when the layer rendering starts (with parameter bool=true) and when it finishes (with parameter bool=false)
 			kLayerRender = 0x24E5E7F
 		};

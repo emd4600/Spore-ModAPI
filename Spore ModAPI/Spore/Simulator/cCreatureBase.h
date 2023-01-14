@@ -29,7 +29,7 @@
 #include <Spore\Simulator\UnknownCreatureClass.h>
 #include <Spore\Anim\AnimatedCreature.h>
 #include <Spore\Swarm\IVisualEffect.h>
-#include <Spore\resourceID.h>
+#include <Spore\ResourceID.h>
 #include <EASTL\vector.h>
 #include <EASTL\list.h>
 #include <EASTL\hash_map.h>
@@ -85,7 +85,7 @@ namespace Simulator
 	public:
 		static const uint32_t TYPE = 0xCE9F6639;
 
-		enum
+		enum SpeedType
 		{
 			kStandardSpeed = 2
 		};

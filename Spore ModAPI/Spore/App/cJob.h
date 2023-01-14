@@ -9,6 +9,7 @@ namespace App
 	class cJob;
 
 	typedef bool(*cJobCallback)(cJob*, void*);
+	typedef void(*cJobVoidCallback)(cJob*, void*);
 
 	class cJob
 	{
@@ -37,7 +38,7 @@ namespace App
 		/// Sets a function that must be executed when the job finishes.
 		/// @param callback Function that will be executed
 		/// @param data Additional data that is passed to the function.
-		void Continuation(void(*callback)(cJob*, void*), void* data);
+		void Continuation(cJobVoidCallback callback, void* data);
 
 		int GetStatus();
 

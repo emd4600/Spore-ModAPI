@@ -497,7 +497,7 @@ namespace UTFWin
 		DefineAddress(GetControlID, SelectAddress(0xF3E580, 0xA02C70));
 		DefineAddress(GetCommandID, SelectAddress(0x95FE90, 0xC2F7E0));
 		DefineAddress(func9, SelectAddress(0x95FEA0, 0x575EA0));
-		const uintptr_t GetCursorID = func9;
+		DefineAddress(GetCursorID, SelectAddress(0x95FEA0, 0x575EA0));
 		DefineAddress(GetFlags, SelectAddress(0xFCE1D0, 0x641760));
 		DefineAddress(GetState, SelectAddress(0xE464D0, 0x98F870));
 		DefineAddress(GetShadeColor, SelectAddress(0x95FEB0, 0x95F940));
@@ -519,7 +519,7 @@ namespace UTFWin
 		DefineAddress(SetLayoutLocation, SelectAddress(0x960440, 0x95FED0));
 		DefineAddress(SetLayoutSize, SelectAddress(0x9604A0, 0x95FF30));
 		DefineAddress(func30, SelectAddress(0x9604F0, 0x95FF80));
-		const uintptr_t SetCursorID = func30;
+		DefineAddress(SetCursorID, SelectAddress(0x9604F0, 0x95FF80));
 		DefineAddress(SetFlag, SelectAddress(0x961B00, 0x9616B0));
 		DefineAddress(SetCaption, SelectAddress(0x962270, 0x961E70));
 		DefineAddress(SetTextFontID, SelectAddress(0x95FF00, 0x95F9A0));
@@ -540,10 +540,10 @@ namespace UTFWin
 		DefineAddress(func48, SelectAddress(0x9605C0, 0x960060));
 		DefineAddress(func49, SelectAddress(0x960640, 0x9600E0));
 		DefineAddress(func50, SelectAddress(0x9615C0, 0x9610B0));
-		const uintptr_t ContainsPoint = func47;
-		const uintptr_t GetGlobalCoordinates = func48;
-		const uintptr_t GetLocalCoordinates = func49;
-		const uintptr_t GetLocalCoordinates2 = func50;
+		DefineAddress(ContainsPoint, SelectAddress(0x961450, 0x960F40));
+		DefineAddress(ToGlobalCoordinates, SelectAddress(0x9605C0, 0x960060));
+		DefineAddress(ToLocalCoordinates, SelectAddress(0x960640, 0x9600E0));
+		DefineAddress(ToLocalCoordinates2, SelectAddress(0x9615C0, 0x9610B0));
 		// DefineAddress(GetChildrenBegin, SelectAddress(0x9616D0, 0x9611C0));
 		// DefineAddress(GetChildrenEnd, SelectAddress(0x9616E0, 0x9611D0));
 		DefineAddress(LocateChild, SelectAddress(0x9606A0, 0x960140));

@@ -118,8 +118,8 @@ namespace Resource
 		/* 6Ch */	virtual bool WriteEmptyHeaderRecord();
 		/* 70h */	virtual bool WriteHeaderRecord();
 		/* 74h */	virtual bool VerifyHeaderRecordIntegrity(char* header);
-		/* 78h */	virtual bool ReadIndex();
-		/* 7Ch */	virtual bool WriteIndex();
+		/* 78h */	virtual bool ReadIndexRecord();
+		/* 7Ch */	virtual bool WriteIndexRecord();
 		/* 80h */	virtual bool VerifyIndexRecordIntegrity();
 		/* 84h */	virtual PFIndexModifiable* CreateIndex(IO::AccessFlags desiredAccess = IO::AccessFlags::ReadWrite);
 		/* 88h */	virtual void DestroyIndex(IO::EAIOZoneObject* pObject);

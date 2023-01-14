@@ -63,6 +63,6 @@ namespace RenderWare
 		/// Usually same as bone count.
 		/* 14h */	int field_14;  // boneCount again?
 
-		static const uint32_t TYPE = 0x70002;
+		static const uint32_t RW_TYPE = 0x70002;
 	};
 }

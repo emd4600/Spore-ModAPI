@@ -20,6 +20,13 @@
 #include <Spore\Editors\cEditorSkinMesh.h>
 #include <Spore\Editors\cCreatureDataResource.h>
 
+#ifdef SDK_TO_GHIDRA
+namespace Editors
+{
+	DefineAddress(sEditor, SelectAddress(0x15E9170, 0x15E4EF0));
+}
+#endif
+
 namespace Editors
 {
 	namespace Addresses(IBakeManager)
@@ -33,14 +40,21 @@ namespace Editors
 	}
 
 	namespace Addresses(ContentValidation) {
+#ifndef SDK_TO_GHIDRA
 		DefineAddress(IllegalCharacters_ptr, SelectAddress(0x15DEA54, 0x15DA7C4));
 		DefineAddress(ValidationEditableTests_ptr, SelectAddress(0x15DEA04, 0x15DA7D4));
+#else
+		DefineAddress(sIllegalCharacters, SelectAddress(0x15DEA54, 0x15DA7C4));
+		DefineAddress(sValidationEditableTests, SelectAddress(0x15DEA04, 0x15DA7D4));
+#endif
 	}
 
 	namespace Addresses(cEditor)
 	{
 		DefineAddress(sub_581F70, SelectAddress(0x581F70, 0x582250));
+#ifndef SDK_TO_GHIDRA
 		DefineAddress(ptr, SelectAddress(0x15E9170, 0x15E4EF0));
+#endif
 
 		DefineAddress(Initialize, SelectAddress(0x583FD0, 0x584300));
 		DefineAddress(Dispose, SelectAddress(0x576B70, 0x576C50));
@@ -111,6 +125,13 @@ namespace Editors
 		DefineAddress(ReadAnimButton, SelectAddress(0x62EC70, 0x62ECC0));
 		DefineAddress(GenerateUI, SelectAddress(0x62E7C0, 0x62E810));
 	}
+	namespace Addresses(PlayModeAnimations)
+	{
+		DefineAddress(ReadAnimations, SelectAddress(0x62F1C0, 0x62F210));
+		DefineAddress(ReadPanel, SelectAddress(0x62EF90, 0x62EFE0));
+		DefineAddress(ReadAnimButton, SelectAddress(0x62EC70, 0x62ECC0));
+		DefineAddress(GenerateUI, SelectAddress(0x62E7C0, 0x62E810));
+	}
 
 	namespace Addresses(cSpeciesManager) 
 	{
@@ -130,13 +151,13 @@ namespace Editors
 		DefineAddress(Dispose, SelectAddress(0x4AD1F0, 0x4AD850));
 	}
 
-	namespace Addresses(EditorCreatureController)
+	namespace Addresses(CreatureWalkController)
 	{
 		DefineAddress(Update, SelectAddress(0x59B190, 0x59B4B0));
 		DefineAddress(SetTargetPosition, SelectAddress(0x59ADD0, 0x59B0F0));
 	}
 
-	namespace Addresses(CreatureWalkController)
+	namespace Addresses(EditorCreatureController)
 	{
 		DefineAddress(Update, SelectAddress(0x59B190, 0x59B4B0));
 		DefineAddress(SetTargetPosition, SelectAddress(0x59ADD0, 0x59B0F0));

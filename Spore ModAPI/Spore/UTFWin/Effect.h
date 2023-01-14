@@ -50,7 +50,9 @@ namespace UTFWin
 	};
 
 
-	typedef InteractiveWinProc Effect;
+	// typedef InteractiveWinProc Effect;
+	// This is better supported by the SDK-to-Ghidra script
+	class Effect : public InteractiveWinProc {};
 
 	class IBiStateEffect : public UTFWinObject
 	{

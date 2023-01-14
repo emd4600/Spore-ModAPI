@@ -60,11 +60,13 @@ struct ResourceKey {
 	///
 	static bool Parse(ResourceKey& dst, const char16_t* pString, uint32_t defaultTypeID = 0, uint32_t defaultGroupID = 0);
 
+#ifndef SDK_TO_GHIDRA
 	bool ResourceKey::operator ==(const ResourceKey &b) const;
 	bool ResourceKey::operator !=(const ResourceKey &b) const;
 
 	bool ResourceKey::operator <(const ResourceKey &b) const;
 	bool ResourceKey::operator >(const ResourceKey &b) const;
+#endif
 };
 ASSERT_SIZE(ResourceKey, 0xC);
 
@@ -86,6 +88,7 @@ inline ResourceKey::ResourceKey(uint32_t _instanceID, uint32_t _typeID, uint32_t
 {
 }
 
+#ifndef SDK_TO_GHIDRA
 inline bool ResourceKey::operator ==(const ResourceKey &b) const
 {
 	return groupID == b.groupID && instanceID == b.instanceID && typeID == b.typeID;
@@ -114,6 +117,7 @@ namespace eastl
 		size_t operator()(const ResourceKey& val) const { return static_cast<size_t>(val.groupID); }
 	};
 }
+#endif
 
 namespace Addresses(ResourceKey)
 {

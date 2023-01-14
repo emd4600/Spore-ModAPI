@@ -14,6 +14,14 @@ namespace Addresses(Internal)
 	DefineAddress(new_, SelectAddress(0xF47650, 0xF47240));
 	DefineAddress(delete_, SelectAddress(0xF47630, 0xF47220));
 }
+#ifdef SDK_TO_GHIDRA
+namespace Addresses(GeneralAllocator)
+{
+	DefineAddress(sInstance, SelectAddress(0x16CCDC4, 0x16C8B44));
+	DefineAddress(new_, SelectAddress(0xF47650, 0xF47240));
+	DefineAddress(delete_, SelectAddress(0xF47630, 0xF47220));
+}
+#endif
 
 namespace Addresses(Clock)
 {
@@ -21,7 +29,7 @@ namespace Addresses(Clock)
 	DefineAddress(SetMode, SelectAddress(0x93A6D0, 0x93A110));
 	DefineAddress(GetElapsedTicks, SelectAddress(0x93A8D0, 0x93A310));
 	DefineAddress(GetElapsedTime, SelectAddress(0x93AB10, 0x93A550));
-	const uintptr_t Pause = Stop;
+	DefineAddress(Pause, SelectAddress(0x93A810, 0x93A250));
 
 
 	// 1 - year
@@ -65,7 +73,11 @@ namespace Addresses(Math)
 	DefineAddress(EulerToMatrix, SelectAddress(0x453AD0, 0x453DF0));
 	DefineAddress(MatrixToEuler, SelectAddress(0x6A3BA0, 0x6A3920));
 
+#ifndef SDK_TO_GHIDRA
 	DefineAddress(RandomNumberGenerator_ptr, SelectAddress(0x16059E8, 0x1601760));
+#else
+	DefineAddress(sMainRNG, SelectAddress(0x16059E8, 0x1601760));
+#endif
 }
 
 namespace Math
@@ -89,5 +101,6 @@ namespace Addresses(Transform)
 {
 	DefineAddress(ToMatrix4, SelectAddress(0x6B9720, 0x6B93F0));
 	DefineAddress(assign, SelectAddress(0x40CC10, 0x40CCB0));
+	DefineAddress(PreTransformBy, SelectAddress(0x40CC10, 0x40CCB0));
 }
 #endif

@@ -19,10 +19,8 @@
 
 #pragma once
 
-#include "..\UTFWin\UILayout.h"
-#include "..\UTFWin\IWinProc.h"
-
 #include <Spore\UTFWin\UILayout.h>
+#include <Spore\UTFWin\IWinProc.h>
 
 #include <Spore\App\ICamera.h>
 
@@ -80,12 +78,14 @@ namespace GalaxyGameEntry
 		void InitializeUI();
 
 	public:
+#ifndef SDK_TO_GHIDRA
 		static GlobalGGEUI* Get() {
 			return *(GlobalGGEUI**)GetAddress(GlobalGGEUI, ptr);
 		}
+#endif
 
 	public:
-		enum
+		enum Modes
 		{
 			kModeCreate = 2,
 
@@ -168,4 +168,8 @@ namespace GalaxyGameEntry
 		/* 270h */	bool field_270;
 		/* 271h */	bool mbScenarioStarEffectsEnabled;
 	};
+
+#ifdef SDK_TO_GHIDRA
+	GlobalGGEUI* sGlobalGGEUI;
+#endif
 }

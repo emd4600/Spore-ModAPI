@@ -24,6 +24,6 @@ namespace RenderWare
 		/* 38h */	float mDefaultTime;
 		/* 3Ch */	KeyframeAnim* mpAnim;
 
-		static const uint32_t TYPE = 0xff0000;
+		static const uint32_t RW_TYPE = 0xff0000;
 	};
 }

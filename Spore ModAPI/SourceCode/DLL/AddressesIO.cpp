@@ -24,10 +24,10 @@ namespace Addresses(IO)
 	DefineAddress(ReadInt16, SelectAddress(0x93AC30, 0x93A670));
 	DefineAddress(ReadUInt16, SelectAddress(0x93AC30, 0x93A670));
 
-	DefineAddress(ReadInt32, SelectAddress(0x93ACB0, 0x93A6F0));
 	DefineAddress(ReadUInt32, SelectAddress(0x93ACB0, 0x93A6F0));
-
 	DefineAddress(ReadFloat, SelectAddress(0x93ACB0, 0x93A6F0));
+	// We want this to be the last one because this is the function we want in SDK-to-Ghidra
+	DefineAddress(ReadInt32, SelectAddress(0x93ACB0, 0x93A6F0));
 
 	DefineAddress(ReadResourceID, SelectAddress(0x93AD30, 0x93A770));
 
@@ -42,10 +42,10 @@ namespace Addresses(IO)
 	DefineAddress(WriteInt16, SelectAddress(0x93AF00, 0x93A940));
 	DefineAddress(WriteUInt16, SelectAddress(0x93AF00, 0x93A940));
 
-	DefineAddress(WriteInt32, SelectAddress(0x93AFA0, 0x93A9E0));
 	DefineAddress(WriteUInt32, SelectAddress(0x93AFA0, 0x93A9E0));
-
 	DefineAddress(WriteFloat, SelectAddress(0x93AFA0, 0x93A9E0));
+	// We want this to be the last one because this is the function we want in SDK-to-Ghidra
+	DefineAddress(WriteInt32, SelectAddress(0x93AFA0, 0x93A9E0));
 
 	DefineAddress(WriteResourceID, SelectAddress(0x93B040, 0x93AA80));
 

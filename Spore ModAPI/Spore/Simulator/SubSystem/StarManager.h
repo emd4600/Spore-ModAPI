@@ -349,6 +349,7 @@ namespace Simulator
 		DeclareAddress(HasTradeRoute);
 	}
 
+#ifndef SDK_TO_GHIDRA
 	inline cStarRecord* cStarManager::GetSol() const {
 		return mSol.get();
 	}
@@ -372,6 +373,7 @@ namespace Simulator
 	}
 
 	inline uint32_t cStarManager::GetGrobEmpireID() { return mGrobID; }
+#endif
 
 
 	///

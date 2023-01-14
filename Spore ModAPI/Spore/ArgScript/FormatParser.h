@@ -21,6 +21,7 @@
 
 
 #include <Spore\MathUtils.h>
+#include <Spore\ArgScript\ISpecialBlock.h>
 #include <Spore\ArgScript\Line.h>
 #include <Spore\ArgScript\Lexer.h>
 #include <Spore\ArgScript\ASDeclarations.h>
@@ -36,9 +37,9 @@ namespace ArgScript
 {
 	class FormatParser;
 
-	typedef eastl::function<void(const Line&, FormatParser*)> ParseLine_t;
-	typedef eastl::function<const char*(DescriptionMode)> GetDescription_t;
-	typedef eastl::function<void(FormatParser*, void*)> SetData_t;
+	typedef void(*ParseLine_t)(const Line&, FormatParser*);
+	typedef const char*(*GetDescription_t)(DescriptionMode);
+	typedef void(*SetData_t)(FormatParser*, void*);
 
 	class ITraceStream
 	{

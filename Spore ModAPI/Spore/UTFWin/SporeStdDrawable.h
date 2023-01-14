@@ -93,6 +93,7 @@ namespace UTFWin
 		DeclareAddress(GetProxyID);
 	}
 
+#ifndef SDK_TO_GHIDRA
 	inline SporeStdDrawableImageInfo* SporeStdDrawable::GetImageInfo(int stateIndex)
 	{
 		if (stateIndex > 7) return &mCurrentInfo;
@@ -112,4 +113,5 @@ namespace UTFWin
 
 		return true;
 	}
+#endif
 }
