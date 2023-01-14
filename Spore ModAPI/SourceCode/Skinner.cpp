@@ -5,6 +5,11 @@ namespace Skinner
 {
 	auto_STATIC_METHOD_(cPaintSystem, cPaintSystem*, Get);
 
+	Math::ColorRGB* GetCurrentColors()
+	{
+		return (Math::ColorRGB*)GetAddress(Skinner, GetCurrentColors);
+	}
+
 	auto_STATIC_METHOD_VOID(cSkinPainter, CreateTextures, Args(int textureSize), Args(textureSize));
 
 	auto_METHOD_VOID_(cSkinnerTexturePainter, StartRender);

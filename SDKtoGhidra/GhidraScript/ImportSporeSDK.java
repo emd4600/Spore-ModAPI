@@ -257,7 +257,7 @@ public class ImportSporeSDK extends GhidraScript {
         if (s == null) {
             // s = SymbolUtilities.createPreferredLabelOrFunctionSymbol(program, addr, scope, name,
             //     sourceType);
-            printf("   Symbol is null");
+            printf("   Symbol is null\n");
         }
         else if (s.getSymbolType() == SymbolType.FUNCTION) {
             Function f = (Function) s.getObject();

@@ -53,7 +53,7 @@ namespace Resource
 
 		virtual ~StandardFileFilter() {}
 
-		virtual bool IsValid(const ResourceKey& name);
+		virtual bool IsValid(const ResourceKey& name) override;
 
 	public:
 		/* 04h */	uint32_t instanceID;

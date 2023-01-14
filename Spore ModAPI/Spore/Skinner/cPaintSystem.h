@@ -11,6 +11,12 @@
 
 namespace Skinner
 {
+#ifndef SDK_TO_GHIDRA
+	Math::ColorRGB* GetCurrentColors();
+#else
+	Math::ColorRGB sCurrentColors[3];
+#endif
+
 	struct cSkinpaintInfo
 	{
 		/* 00h */	Math::Vector3 field_0;
@@ -37,6 +43,7 @@ namespace Skinner
 
 		Editors::cEditorSkinMesh* GetSkinMesh();
 
+	public:
 		/* 0Ch */	cSkinPainter* mpPainter;
 		/* 10h */	int field_10;
 		/* 14h */	int mpMeshAORender;
@@ -72,4 +79,9 @@ namespace Skinner
 	{
 		return mpSkinMesh;
 	}
+}
+
+namespace Addresses(Skinner)
+{
+	DeclareAddress(GetCurrentColors);  // 0x15E3370 0x15DF0F0
 }

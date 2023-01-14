@@ -90,6 +90,8 @@ namespace Graphics
 		Math::ColorRGBA GetColor() const;
 		void SetColor(const Math::ColorRGBA& color);
 
+		bool IsVisible() const;
+
 		///
 		/// Assigns the required flags to this model depending on the groupID specified.
 		/// @param groupID The ID of the model group, in the ModelGroups enum.
@@ -186,6 +188,11 @@ namespace Graphics
 
 	inline App::PropertyList* Model::GetPropList() const {
 		return mpPropList.get();
+	}
+
+	inline bool Model::IsVisible() const
+	{
+		return (mFlags & kModelFlagVisible) != 0;
 	}
 
 	inline Math::ColorRGBA Model::GetColor() const {

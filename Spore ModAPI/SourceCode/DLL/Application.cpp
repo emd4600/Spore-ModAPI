@@ -7,14 +7,14 @@
 bool ShaderFragments_detour::DETOUR(Resource::Database* pDBPF)
 {
 	pDBPF = ResourceManager.FindDatabase(
-		ResourceKey(mShaderPath, Graphics::IMaterialManager::kSporeMaterialTypeID, Graphics::IMaterialManager::kShaderFragmentsGroupID));
+		ResourceKey(mShaderPath, TypeIDs::smt, GroupIDs::ShaderFragments));
 
 	return original_function(this, pDBPF);
 }
 
 void LoadMaterials() {
 	Resource::StandardFileFilter filter;
-	filter.groupID = Graphics::IMaterialManager::kShadersGroupID;
+	filter.groupID = GroupIDs::Shaders;
 	filter.typeID = TypeIDs::smt;
 
 	eastl::vector<ResourceKey> keys;
@@ -34,7 +34,7 @@ void LoadMaterials() {
 
 	keys.clear();
 
-	filter.groupID = Graphics::IMaterialManager::kCompiledStatesLinkGroupID;
+	filter.groupID = GroupIDs::CompiledStatesLink;
 	filter.typeID = TypeIDs::smt;
 
 	if (ResourceManager.GetRecordKeyList(keys, &filter)) {

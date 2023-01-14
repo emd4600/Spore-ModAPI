@@ -401,7 +401,7 @@ namespace Math
 		ColorRGB& Set(float r, float g, float b);
 
 		/// Returns the integer representation of the given color (in the form of a Color value).
-		Color ToIntColor();
+		Color ToIntColor() const;
 
 		bool operator==(const ColorRGB& b) const;
 		bool operator!=(const ColorRGB& b) const;
@@ -412,12 +412,13 @@ namespace Math
 	struct ColorRGBA {
 		ColorRGBA(float r, float g, float b, float a);
 		ColorRGBA(ColorRGB color, float a);
+		ColorRGBA(Color color);
 		ColorRGBA();
 
 		ColorRGBA& Set(float r, float g, float b, float a);
 
 		/// Returns the integer representation of the given color (in the form of a Color value).
-		Color ToIntColor();
+		Color ToIntColor() const;
 
 		bool operator==(const ColorRGBA& b) const;
 		bool operator!=(const ColorRGBA& b) const;
@@ -669,6 +670,13 @@ namespace Math
 		g = color.g / 255.0f;
 		b = color.b / 255.0f;
 	}
+	inline ColorRGBA::ColorRGBA(Color color)
+	{
+		r = color.r / 255.0f;
+		g = color.g / 255.0f;
+		b = color.b / 255.0f;
+		a = color.a / 255.0f;
+	}
 
 	inline ColorRGB& ColorRGB::Set(float r, float g, float b) {
 		this->r = r;
@@ -690,7 +698,7 @@ namespace Math
 		return *this;
 	}
 
-	inline Color ColorRGBA::ToIntColor()
+	inline Color ColorRGBA::ToIntColor() const
 	{
 		Math::Color dstColor;
 #ifndef SDK_TO_GHIDRA
@@ -703,7 +711,7 @@ namespace Math
 		return dstColor;
 	}
 
-	inline Color ColorRGB::ToIntColor()
+	inline Color ColorRGB::ToIntColor() const
 	{
 		Math::Color dstColor;
 #ifndef SDK_TO_GHIDRA

@@ -84,7 +84,7 @@ namespace Swarm
 	class EffectDirectory : public IEffectDirectory, public IVirtual
 	{
 	public:
-		/* 00h */	virtual void AddRef() = 0;
+		/* 00h */	virtual void AddRef() override = 0;
 		/* 04h */	virtual void Release() = 0;
 
 		/* 08h */	virtual bool func08h() = 0;

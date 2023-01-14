@@ -67,10 +67,10 @@ namespace Resource
 	public:
 		CachedResourceObject();
 
-		virtual int AddRef();
-		virtual int Release();
-		virtual void* Cast(uint32_t typeID) const;
-		virtual int GetReferenceCount();
+		virtual int AddRef() override;
+		virtual int Release() override;
+		virtual void* Cast(uint32_t typeID) const override;
+		virtual int GetReferenceCount() override;
 
 		static const uint32_t TYPE = 0x355D6F5;
 

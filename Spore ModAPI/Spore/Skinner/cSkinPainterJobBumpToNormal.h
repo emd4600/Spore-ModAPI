@@ -17,6 +17,6 @@ namespace Skinner
 
 	namespace Addresses(cSkinPainterJobBumpToNormal)
 	{
-		DeclareAddress(Execute);  // 0x518E40 TODO
+		DeclareAddress(Execute);  // 0x518E40 0x518D10
 	}
 }

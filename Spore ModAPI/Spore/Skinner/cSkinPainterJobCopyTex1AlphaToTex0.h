@@ -16,6 +16,6 @@ namespace Skinner
 
 	namespace Addresses(cSkinPainterJobCopyTex1AlphaToTex0)
 	{
-		DeclareAddress(Execute);  // 0x518D40 TODO
+		DeclareAddress(Execute);  // 0x518D40 0x518C10
 	}
 }

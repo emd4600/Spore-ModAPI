@@ -164,6 +164,7 @@ class StructureInfo:
         self.bases_with_vftables = []
         self.bases_without_vftables = []
         self.virtual_functions_no_overrides = []
+        self.virtual_function_names = set()  # used to ensure we have all overrides
         
 
 class TemplateStructureInfo:
@@ -533,9 +534,18 @@ class GhidraToXmlWriter:
                 alignments.append(field_alignment)
                 
             elif child.kind == cindex.CursorKind.CXX_METHOD:
+                if child.is_virtual_method():
+                    struct_info.virtual_function_names.add(child.spelling)
+                
                 if child.is_virtual_method() and not method_is_override(child):
+                    for base in struct_info.bases_with_vftables:
+                            if child.spelling in base.virtual_function_names:
+                                print(f'WARNING: Function {fullname}::{child.spelling} is not marked override')
+                                break
+                    
                     struct_info.has_vftable = True
                     struct_info.virtual_functions_no_overrides.append(child)
+                    struct_info.virtual_function_names.add(child.spelling)
                     virtual_functions.append(child)
                     this_type_namespace_list = None if child.is_static_method() else full_ghidra_namespace_list 
                     self.add_function_def_from_node(full_ghidra_namespace_list, child, this_type_namespace_list, template_args)
