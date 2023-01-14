@@ -74,8 +74,8 @@ namespace Editors
 		/* 28h */	bool field_28;
 		/* 29h */	bool field_29;
 		/* 2Ch */	EditorRigblock* field_2C;
-		/* 30h */	int mIndex;
-		/* 34h */	int mSymmetricIndex;
+		/* 30h */	int field_30;
+		/* 34h */	int mIndex;
 	};
 	ASSERT_SIZE(UnkEditorRigblockStruct1, 0x38);
 

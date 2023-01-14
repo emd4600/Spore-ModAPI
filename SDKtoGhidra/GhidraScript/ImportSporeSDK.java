@@ -238,7 +238,7 @@ public class ImportSporeSDK extends GhidraScript {
 		String name = element.getAttribute("NAME");
         String addrStr = element.getAttribute("ADDRESS");
 
-        printf("Adding function " + name + " at address " + addrStr);
+        printf("Adding function " + name + " at address " + addrStr + "\n");
 
         Address addr = XmlProgramUtilities.parseAddress(currentProgram.getAddressFactory(), addrStr);
         if (addr == null) {
@@ -280,59 +280,6 @@ public class ImportSporeSDK extends GhidraScript {
         }
     }
 
-    // private void findFunctionDefs(XmlPullParser parser, MessageLog log) throws CancelledException, SAXParseException
-    // {
-    //     XmlElement element = parser.next();
-    //     while (true) {
-    //         if (monitor.isCancelled()) {
-    //             throw new CancelledException();
-    //         }
-    //         element = parser.peek();
-    //         if (element.isEnd() && element.getName().equals("DATATYPES")) {
-    //             parser.next();
-    //             break;
-    //         }
-    //         XmlTreeNode root = new XmlTreeNode(parser);
-    //         processDatatypeNode(root, true, log);
-    //     }
-    // }
-
-    // private boolean processDatatypeNode(XmlTreeNode root, boolean firstPass, MessageLog log) {
-	// 	XmlElement element = root.getStartElement();
-	// 	String elementName = element.getName();
-
-	// 	try {
-	// 		if (elementName.equals("FUNCTION_DEF")) {
-                
-    //             //printf("Processing function " + element.getAttribute("NAME") + "  [" + name + "]\n");
-    //             String functionName = element.getAttribute("NAME");
-	// 	        CategoryPath path = getCategoryPath(element);
-    //             //printf(path + "\n");
-
-    //             FunctionDefinition fd = (FunctionDefinition) currentProgram.getDataTypeManager().getDataType(path, functionName);
-    //             if (fd == null) {
-    //                 log.appendMsg("Skipping function " + path + "/" + functionName);
-    //             }
-    //             else {
-    //                 String callingConvention = "unknown";
-    //                 if (element.hasAttribute("CONVENTION")) {
-    //                     callingConvention = element.getAttribute("CONVENTION");
-    //                 }
-    //                 GenericCallingConvention convention = getCallingConvention(callingConvention);
-    //                 if (convention == null)
-    //                 {
-    //                     throw new Exception("Unknown calling convention '" + convention + "' in function " + path + "/" + functionName);
-    //                 }
-    //                 fd.setGenericCallingConvention​(convention);
-    //             }
-	// 		}
-	// 	}
-	// 	catch (Exception e) {
-	// 		log.appendException(e);
-	// 	}
-	// 	return true;
-	// }
-
     private static GenericCallingConvention getCallingConvention(String text) {
         switch (text)
         {
@@ -367,7 +314,6 @@ public class ImportSporeSDK extends GhidraScript {
 		String conventionName = getCallingConvention(func, signature, compilerSpec);
 
         func.setCustomVariableStorage​(true);
-        printf(func.hasCustomVariableStorage() + "\n");
 		ParameterDefinition[] args = signature.getArguments();
 		List<Parameter> params = createParameters(compilerSpec, conventionName, args);
 
