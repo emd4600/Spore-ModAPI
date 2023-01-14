@@ -97,5 +97,6 @@ namespace Simulator
 	namespace Addresses(cScenarioPlayMode)
 	{
 		DeclareAddress(SetCurrentAct);  // 0xF1F260, 0xF1EE70
+		DeclareAddress(JumpToAct);		// 0xF1F7B0, 0xF1F3C0
 	}
 }
