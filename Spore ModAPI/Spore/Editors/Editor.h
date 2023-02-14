@@ -475,8 +475,8 @@ namespace Editors
 		/* 399h */	bool field_399;  // true
 		/* 39Ah */	bool field_39A;  // true
 		/* 39Ch */	eastl::vector<EditorRigblockPtr> field_39C;
-		/* 3B0h */	int field_3B0;  // not initialized, a paint region for building/vehicle parts
-		/* 3B4h */	int field_3B4;  // not initialized
+		/* 3B0h */	int mHoveredPaintRegion;  // not initialized, a paint region for building/vehicle parts
+		/* 3B4h */	int field_3B4;  // not initialized, also a paint region
 		/* 3B8h */	PaletteMainPtr mpPartsPalette;
 		/* 3BCh */	PaletteUIPtr mpPartsPaletteUI;
 		/* 3C0h */	PaletteMainPtr mpPaintPalette;

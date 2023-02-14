@@ -24,7 +24,7 @@
 #include <Spore\App\IMessageListener.h>
 #include <Spore\UTFWin\IWinProc.h>
 #include <Spore\UTFWin\UILayout.h>
-
+#include <Spore\Editors\EditorRigblock.h>
 #include <Spore\Palettes\PaletteCategory.h>
 #include <Spore\Palettes\ColorPickerUI.h>
 #include <Spore\Palettes\PalettePageUI.h>
@@ -96,6 +96,8 @@ namespace Palettes
 		void LayoutPagePanel();
 
 		void Update(int msTime);
+
+		Editors::EditorRigblockPaint GetSelectedRigblockPaint();
 
 		//// OVERRIDES ////
 
@@ -268,6 +270,7 @@ namespace Palettes
 		DeclareAddress(HandleUIMessage);
 		DeclareAddress(Update);
 		DeclareAddress(LayoutPagePanel);
+		DeclareAddress(GetSelectedRigblockPaint);  // 0x5C2D50 0x5C2E20
 	}
 
 	namespace Addresses(PageArrowsUI)

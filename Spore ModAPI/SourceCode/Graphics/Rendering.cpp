@@ -99,11 +99,6 @@ namespace Graphics
 		}
 	}
 
-
-
-	auto_STATIC_METHOD_VOID(RenderUtils, SetShaderData,
-		Args(short index, void* value, bool overrideIfEqual), Args(index, value, overrideIfEqual));
-
 	auto_STATIC_METHOD(RenderUtils, int, GetShaderDataSize, Args(short index), Args(index));
 
 	auto_STATIC_METHOD(RenderUtils, void, RegisterShaderData,
@@ -152,8 +147,18 @@ namespace Graphics
 	{
 		auto_STATIC_METHOD_VOID(ActiveState, SetTexture, Args(int slotIndex, RenderWare::Raster* raster), Args(slotIndex, raster));
 
+		auto_STATIC_METHOD_VOID(ActiveState, SetShaderData, Args(short index, void* value, bool overrideIfEqual), Args(index, value, overrideIfEqual));
+
 		void** GetShaderData() {
 			return (void**)(GetAddress(ActiveState, sShaderData));
+		}
+
+		int GetRasterDelta() {
+			return *(int*)(GetAddress(ActiveState, sRasterDelta));
+		}
+
+		void SetRasterDelta(int delta) {
+			*(int*)(GetAddress(ActiveState, sRasterDelta)) = delta;
 		}
 
 		MaterialShader* GetMaterialShader() {

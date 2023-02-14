@@ -64,6 +64,7 @@ namespace Editors
 	{
 	public:
 		static const uint32_t TYPE = 0x3C609F8;
+		static const uint32_t RESOURCE_TYPE = 0x1A99B06B;  // bem
 
 		virtual void* Cast(uint32_t type) const override;
 

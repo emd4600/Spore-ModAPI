@@ -22,6 +22,7 @@ namespace Skinner
 		DefineAddress(Clear, SelectAddress(0x5296A0, 0x5292D0));
 		DefineAddress(PaintRegion, SelectAddress(0x529A80, 0x5296B0));
 		DefineAddress(SetColorWriteEnable, SelectAddress(0x529650, 0x529280));
+		DefineAddress(LoadMaterial, SelectAddress(0x529770, 0x5293A0));
 	}
 
 	namespace Addresses(cSkinPainter)

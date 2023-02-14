@@ -268,6 +268,15 @@ namespace Palettes
 		return UTFWin::kEventFlagAdvanced | UTFWin::kEventFlagBasicInput;
 	}
 
+	Editors::EditorRigblockPaint PaletteUI::GetSelectedRigblockPaint()
+	{
+		Editors::EditorRigblockPaint paint;
+		CALL(GetAddress(PaletteUI, GetSelectedRigblockPaint), void,
+			Args(PaletteUI*, Editors::EditorRigblockPaint&),
+			Args(this, paint));
+		return paint;
+	}
+
 	auto_METHOD_VOID(PaletteUI, Load, Args(PaletteMain* pPalette, UTFWin::IWindow* pWindow, bool arg_8, PaletteInfo* arg_C),
 		Args(pPalette, pWindow, arg_8, arg_C));
 
@@ -406,6 +415,15 @@ namespace Palettes
 	auto_METHOD_VOID(PaletteCategoryUI, Update, Args(int arg_0), Args(arg_0));
 	
 	auto_METHOD_VIRTUAL(PaletteCategoryUI, UTFWin::IWinProc, bool, HandleUIMessage, Args(UTFWin::IWindow* pWindow, const UTFWin::Message& message), Args(pWindow, message));
+
+	Editors::EditorRigblockPaint PaletteCategoryUI::GetSelectedRigblockPaint()
+	{
+		Editors::EditorRigblockPaint paint;
+		CALL(GetAddress(PaletteCategoryUI, GetSelectedRigblockPaint), void,
+			Args(PaletteCategoryUI*, Editors::EditorRigblockPaint&),
+			Args(this, paint));
+		return paint;
+	}
 
 	//// PALETTE PAGE UI ////
 

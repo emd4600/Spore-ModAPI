@@ -175,7 +175,7 @@ namespace Graphics
 		UnkE = 0xE,  // used by: GameViewManager, anim world
 		UnkF = 0x0F,  // used by: editor, only for paint mode; GameViewManager
 
-		Unk11 = 0x11,  // used by editor, pedestal
+		Unk11 = 0x11,  // used by editor, pedestal; in Editor, renders hovered regions into a texture used by screen effect that displays rollover
 		Unk12 = 0x12,  // used in effect rendering? also called by cShadowEffectsLayer
 
 		Unk14 = 0x14,  // used by: editor; GGE sub_DDC370; GameViewManager

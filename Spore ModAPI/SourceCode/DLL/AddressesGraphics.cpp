@@ -172,7 +172,9 @@ namespace Graphics
 		DefineAddress(sTransform, SelectAddress(0x016FF8DC, 0x16F85AC));
 		DefineAddress(sTransposedTransform, SelectAddress(0x1700024, 0x16F8CF4));
 		DefineAddress(sPresentParams, SelectAddress(0x16FFECC, 0x16F8B9C));
+		DefineAddress(sRasterDelta, SelectAddress(0x16FFE30, 0x16F8B00));
 		DefineAddress(SetTexture, SelectAddress(0x11F39D0, 0x11F12A0));
+		DefineAddress(SetShaderData, SelectAddress(0x7786E0, 0x777B50));
 	}
 
 	namespace Addresses(ShaderBuilder) 

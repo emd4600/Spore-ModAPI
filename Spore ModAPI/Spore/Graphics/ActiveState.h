@@ -13,9 +13,16 @@ namespace Graphics
 		/// @param raster
 		void SetTexture(int slotIndex, RenderWare::Raster* raster);
 
+		int GetRasterDelta();
+
+		void SetRasterDelta(int);
+
 		/// Returns a pointer to the array that contains the values of shader data. 
 		/// For example, you can do GetShaderData()[ShaderData::skinWeights];
 		void** GetShaderData();
+
+		void SetShaderData(short index, void* value, bool overrideIfEqual = false);
+
 		/// Returns the current MaterialShader object which is being used to render.
 		/// This can either be a ShaderBuilder or an StandardShader.
 		MaterialShader* GetMaterialShader();
@@ -42,6 +49,7 @@ namespace Graphics
 		D3DMATRIX* sTransform;
 		D3DMATRIX* sTransposedTransform;
 		D3DPRESENT_PARAMETERS sPresentParams;
+		int sRasterDelta;
 #endif
 
 #ifndef SDK_TO_GHIDRA
@@ -62,6 +70,8 @@ namespace Graphics
 		DeclareAddress(sTransform);
 		DeclareAddress(sTransposedTransform);
 		DeclareAddress(sPresentParams);
+		DeclareAddress(sRasterDelta);  // 0x16FFE30 0x16F8B00
 		DeclareAddress(SetTexture);
+		DeclareAddress(SetShaderData);
 	}
 }

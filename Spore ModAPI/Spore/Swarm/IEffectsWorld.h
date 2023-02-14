@@ -33,9 +33,9 @@ namespace Swarm
 
 	struct cEffectInfo
 	{
-		/* 00h */	eastl::string field_0;
+		/* 00h */	eastl::string mIDString;
 		/* 10h */	eastl::string field_10;
-		/* 20h */	IVisualEffectPtr field_20;
+		/* 20h */	IVisualEffectPtr mpEffect;
 	};
 	ASSERT_SIZE(cEffectInfo, 0x24);
 

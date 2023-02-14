@@ -26,6 +26,7 @@
 #include <Spore\Palettes\PaletteMain.h>
 #include <Spore\Palettes\PaletteCategoryUI.h>
 #include <Spore\Palettes\PaletteInfo.h>
+#include <Spore\Editors\EditorRigblock.h>
 
 #define PaletteUIPtr eastl::intrusive_ptr<Palettes::PaletteUI>
 
@@ -74,6 +75,8 @@ namespace Palettes
 
 		void SetActiveCategory(int categoryIndex);
 
+		Editors::EditorRigblockPaint GetSelectedRigblockPaint();
+
 
 		//// OVERRIDES ////
 
@@ -121,5 +124,6 @@ namespace Palettes
 		DeclareAddress(Unload);
 		DeclareAddress(HandleUIMessage);
 		DeclareAddress(SetActiveCategory);  // 0x5CAE20 0x5CB330
+		DeclareAddress(GetSelectedRigblockPaint);  // 0x5CAD90 0x5CB2A0
 	}
 }

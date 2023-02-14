@@ -60,6 +60,7 @@ namespace Palettes
 		DefineAddress(HandleUIMessage, SelectAddress(0x5C40F0, 0x5C41A0));
 		DefineAddress(Update, SelectAddress(0x5C28D0, 0x5C29A0));
 		DefineAddress(LayoutPagePanel, SelectAddress(0x5C3000, 0x5C30F0));
+		DefineAddress(GetSelectedRigblockPaint, SelectAddress(0x5C2D50, 0x5C2E20));
 	}
 
 	namespace Addresses(PageArrowsUI)
@@ -102,6 +103,7 @@ namespace Palettes
 		DefineAddress(Unload, SelectAddress(0x5CB670, 0x5CBB80));
 		DefineAddress(HandleUIMessage, SelectAddress(0x5CB080, 0x5CB590));
 		DefineAddress(SetActiveCategory, SelectAddress(0x5CAE20, 0x5CB330));
+		DefineAddress(GetSelectedRigblockPaint, SelectAddress(0x5CAD90, 0x5CB2A0));
 	}
 
 	namespace Addresses(StandardItemUI)

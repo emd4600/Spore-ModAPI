@@ -86,8 +86,6 @@ namespace Graphics
 		IDirect3DDevice9* sDevice;
 #endif
 
-		void SetShaderData(short index, void* value, bool overrideIfEqual = false);
-
 		int GetShaderDataSize(short index);
 
 		// max 2048

@@ -16,15 +16,7 @@ namespace Skinner
 		// 0xD9EC39BC uses skpSplatTintShader
 	};
 
-	//TODO check sub_4CBC30
-
-	enum class PainterJobIndex
-	{
-		CopyTex1ToTex0 = 9,
-		PaintTintMasks = 10,
-
-		BumpToNormalMap = 12,
-	};
+	//TODO check sub_4CBC30d
 
 	struct Unk
 	{
@@ -96,5 +88,6 @@ namespace Skinner
 		DeclareAddress(Clear);  // 0x5296A0 0x5292D0
 		DeclareAddress(PaintRegion);  // 0x529A80 0x5296B0
 		DeclareAddress(SetColorWriteEnable);  // 0x529650 0x529280
+		DeclareAddress(LoadMaterial);  // 0x529770 0x5293A0
 	}
 }
