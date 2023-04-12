@@ -3,6 +3,7 @@
 #include <Spore\App\SPPropertyIDs.h>
 #include <Spore\App\cCameraManager.h>
 #include <Spore\App\cCheatManager.h>
+#include <Spore\App\cCreatureModeStrategy.h>
 #include <Spore\App\cGameModeManager.h>
 #include <Spore\App\cMessageManager.h>
 #include <Spore\App\cPropManager.h>
@@ -437,12 +438,18 @@ namespace App
 		DefineAddress(Continuation, SelectAddress(0x68FE80, 0x68F9B0));
 		DefineAddress(GetStatus, SelectAddress(0x68FE40, 0x68F930));
 	}
+
+	namespace Addresses(cCreatureModeStrategy)
+	{
+		DefineAddress(Get, SelectAddress(0xD2D640, 0xD38840));
+	}
 }
 
 #ifdef SDK_TO_GHIDRA
 namespace Addresses(App)
 {
 	DefineAddress(sScenarioMode, SelectAddress(0x16CBD24, 0x16C7AA4));
+	DefineAddress(sCreatureModeStrategy, SelectAddress(0x16A2514, 0x169E294));
 }
 #endif
 

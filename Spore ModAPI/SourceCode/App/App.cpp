@@ -2,6 +2,7 @@
 #include <Spore\App\Thumbnail_cImportExport.h>
 #include <Spore\App\AppData.h>
 #include <Spore\App\IDGenerator.h>
+#include <Spore\App\cCreatureModeStrategy.h>
 
 namespace App
 {
@@ -21,5 +22,7 @@ namespace App
 
 
 	auto_STATIC_METHOD_(cIDGenerator, cIDGenerator*, Get);
+
+	auto_STATIC_METHOD_(cCreatureModeStrategy, cCreatureModeStrategy*, Get);
 }
 #endif

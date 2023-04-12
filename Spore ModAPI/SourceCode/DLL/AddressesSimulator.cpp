@@ -17,6 +17,7 @@
 #include <Spore\Simulator\cDragInputProjectileToolStrategy.h>
 #include <Spore\Simulator\cDropCargoToolStrategy.h>
 #include <Spore\Simulator\Cell\GameModeCell.h>
+#include <Spore\Simulator\cCreatureGameData.h>
 #include <Spore\Simulator\cEmpire.h>
 #include <Spore\Simulator\cEnergyRepairToolStrategy.h>
 #include <Spore\Simulator\cGameDataUFO.h>
@@ -771,6 +772,20 @@ namespace Simulator
 		DefineAddress(WriteToXML, SelectAddress(0xBD5960, 0xBD6630));
 		DefineAddress(RemoveOwner, SelectAddress(0xBD5640, 0xBD6310));
 	}
+
+	namespace Addresses(cCreatureGameData)
+	{
+		DefineAddress(Get, SelectAddress(0xD2D640, 0xD2E340));
+		DefineAddress(GetEvoPointsToNextBrainLevel, SelectAddress(0xD2D680, 0xD2E380));
+		DefineAddress(GetAbilityMode, SelectAddress(0xD2D790, 0xD2E490));
+		DefineAddress(SetAbilityMode, SelectAddress(0xD2D7A0, 0xD2E4A0));
+		DefineAddress(AfterGlideFinish, SelectAddress(0xD2D880, 0xD2E580));
+		DefineAddress(CalculateAvatarNormalizingScale, SelectAddress(0xD2DA20, 0xD2E720));
+		DefineAddress(GetAvatarNormalizingScale, SelectAddress(0xD2DB00, 0xD2E800));
+		DefineAddress(GetEvolutionPoints, SelectAddress(0xD2D650, 0xD2E350));
+		DefineAddress(SetEvolutionPoints, SelectAddress(0xD2D780, 0xD2E480));
+		DefineAddress(AddEvolutionPoints, SelectAddress(0xD2DBA0, 0xD2E8A0));
+	}
 }
 
 #ifdef SDK_TO_GHIDRA
@@ -779,6 +794,7 @@ namespace Addresses(Simulator)
 	DefineAddress(sSpacePlayerData, SelectAddress(0x16E1D0C, 0x16DDA8C));
 	DefineAddress(sScenarioEditHistory, SelectAddress(0x160A850, 0x16065D8));
 	DefineAddress(TimeAtStartOfFrame, SelectAddress(0xB63580, 0xB63980));
+	DefineAddress(cCreatureGameData, SelectAddress(0x16A25F0, 0x169E370));
 }
 #endif
 

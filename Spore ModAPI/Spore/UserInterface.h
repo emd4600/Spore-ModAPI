@@ -37,6 +37,7 @@
 #include <Spore\UTFWin\Message.h>
 #include <Spore\UTFWin\WindowIterators.h>
 #include <Spore\UTFWin\CursorManager.h>
+#include <Spore\UTFWin\SporeTooltipWinProc.h>
 
 ///
 /// @namespace UTFWin

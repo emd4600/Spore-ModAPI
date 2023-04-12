@@ -187,7 +187,8 @@ namespace Simulator
 
 		/// Called when the creature touches land after jumping/hovering in the air.
 		/* 58h */	virtual void OnJumpLand();
-		/* 5Ch */	virtual void func5Ch();
+		/// Called when the creature enters water deep enough to swim.
+		/* 5Ch */	virtual void OnStartSwimming();
 
 		/// Called every frame, parameter is the ellapsed time in milliseconds.
 		/// @param deltaTime

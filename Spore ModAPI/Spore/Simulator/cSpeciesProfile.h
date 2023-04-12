@@ -85,7 +85,7 @@ namespace Simulator
 		/* 610h */	int field_610;
 		/* 614h */	int field_614;
 		/* 618h */	int field_618;  // not initialized
-		/* 61Ch */	int field_61C;
+		/* 61Ch */	int field_61C;  // flight level?
 
 		/* 640h */	float mEnergyRecoveryRate;
 		/* 644h */	float mMaxEnergy;
@@ -121,7 +121,7 @@ namespace Simulator
 		/* 6CCh */	bool field_6CC;
 		/* 6D0h */	int field_6D0;
 		/* 6D4h */	eastl::fixed_vector<cCreatureAbility*, 20> mAbilities;  //TODO abilities
-		/* 73Ch */	eastl::fixed_vector<int, 20> field_73C;
+		/* 73Ch */	eastl::fixed_vector<cCreatureAbility*, 20> field_73C;  // maybe food-related abilities?
 		/* 7A4h */	eastl::fixed_vector<int, 20> field_7A4;
 		/* 80Ch */	bool field_80C;
 		/* 80Dh */	bool field_80D;
