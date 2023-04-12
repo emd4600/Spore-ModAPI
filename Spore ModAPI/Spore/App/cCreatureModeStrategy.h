@@ -6,6 +6,9 @@
 #include <Spore\Clock.h>
 #include <Spore\Simulator\SubSystem\cStrategy.h>
 
+#define cCreatureModeStrategyPtr eastl::intrusive_ptr<App::CreatureModeStrategy>
+#define CreatureModeStrategy (*App::cCreatureModeStrategy::Get())
+
 namespace App
 {
 	class cCreatureModeStrategy

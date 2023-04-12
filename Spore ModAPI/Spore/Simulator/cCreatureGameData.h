@@ -3,6 +3,8 @@
 #include <Spore\Simulator\cCreatureBase.h>
 #include <Spore\MathUtils.h>
 
+#define CreatureGameData (*Simulator::cCreatureGameData::Get())
+
 namespace Simulator
 {
 	class cCreatureGameData
