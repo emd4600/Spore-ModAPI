@@ -136,7 +136,20 @@ namespace TypeIDs
 		/// Data of an adventure
 		adventure = 0x366A930D,
 		/// Type for Pollinator::cAssetMetadata files
-		pollen_metadata = 0x30BDEE3
+		pollen_metadata = 0x30BDEE3,
+
+		backgroundMap = 0x612B3191,
+		effectMap = 0x433FB70C,
+		cell = 0xDFAD9F51,
+		globals = 0x2A3CE5B7,
+		look_algorithm = 0xDBA35AE2,
+		look_table = 0x8C042499,
+		lootTable = 0xD92AF091,
+		populate = 0xDA141C1B,
+		powers = 0x754BE343,
+		random_creature = 0xF9C3D770,
+		structure = 0x4B9EF6DC,
+		world = 0x9B8E862F
 	};
 }
 

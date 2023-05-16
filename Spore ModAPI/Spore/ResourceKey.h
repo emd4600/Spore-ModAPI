@@ -21,6 +21,7 @@
 
 #include "Internal.h"
 #include <EASTL\functional.h>
+#include <Spore\CommonIDs.h>
 #include <Spore\Hash.h>
 
 ///
@@ -35,9 +36,15 @@ struct ResourceKey {
 	ResourceKey();
 	ResourceKey(uint32_t nInstanceID, uint32_t nTypeID, uint32_t nGroupID);
 
+#ifndef SDK_TO_GHIDRA
 	uint32_t instanceID;
 	uint32_t typeID;
 	uint32_t groupID;
+#else
+	uint32_t instanceID;
+	TypeIDs::Names typeID;
+	GroupIDs::Names groupID;
+#endif
 
 	///
 	/// Creates a ResourceKey from the given text, which is in the format "groupID!instanceID.typeID". 
@@ -82,9 +89,15 @@ inline ResourceKey::ResourceKey()
 }
 
 inline ResourceKey::ResourceKey(uint32_t _instanceID, uint32_t _typeID, uint32_t _groupID)
+#ifndef SDK_TO_GHIDRA
 	: instanceID(_instanceID)
 	, typeID(_typeID)
 	, groupID(_groupID)
+#else
+	: instanceID(_instanceID)
+	, typeID((TypeIDs::Names)_typeID)
+	, groupID((GroupIDs::Names)_groupID)
+#endif
 {
 }
 
