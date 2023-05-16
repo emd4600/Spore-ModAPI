@@ -16,7 +16,11 @@
 #include <Spore\Simulator\cDefaultProjectileWeapon.h>
 #include <Spore\Simulator\cDragInputProjectileToolStrategy.h>
 #include <Spore\Simulator\cDropCargoToolStrategy.h>
-#include <Spore\Simulator\Cell\GameModeCell.h>
+#include <Spore\Simulator\Cell\cCellGame.h>
+#include <Spore\Simulator\Cell\cCellGFX.h>
+#include <Spore\Simulator\Cell\cCellObjectData.h>
+#include <Spore\Simulator\Cell\cCelLResource.h>
+#include <Spore\Simulator\Cell\cCellUI.h>
 #include <Spore\Simulator\cCreatureGameData.h>
 #include <Spore\Simulator\cEmpire.h>
 #include <Spore\Simulator\cEnergyRepairToolStrategy.h>
@@ -27,6 +31,7 @@
 #include <Spore\Simulator\cGlobalMindEraseToolStrategy.h>
 #include <Spore\Simulator\cGonzagoTimer.h>
 #include <Spore\Simulator\cMindEraseToolStrategy.h>
+#include <Spore\Simulator\cObjectPool.h>
 #include <Spore\Simulator\cPlaceColonyToolStrategy.h>
 #include <Spore\Simulator\cPlaceObjectToolStrategy.h>
 #include <Spore\Simulator\cPlanet.h>
@@ -234,6 +239,7 @@ namespace Simulator
 #endif
 	}
 
+#ifndef SDK_TO_GHIDRA
 	namespace Cell
 	{
 		namespace Addresses(GameModeCell)
@@ -257,6 +263,7 @@ namespace Simulator
 			DefineAddress(HandleMessage, SelectAddress(0xE5CB90, 0xE62700));
 		}
 	}
+#endif
 
 	namespace Addresses(cEmpire)
 	{
@@ -786,6 +793,73 @@ namespace Simulator
 		DefineAddress(SetEvolutionPoints, SelectAddress(0xD2D780, 0xD2E480));
 		DefineAddress(AddEvolutionPoints, SelectAddress(0xD2DBA0, 0xD2E8A0));
 	}
+
+	namespace Addresses(cObjectPool)
+	{
+		DefineAddress(Initialize, SelectAddress(0xB71A10, 0xB72190));
+		DefineAddress(_dtor, SelectAddress(0xB71A70, 0xB721F0));
+		DefineAddress(Get, SelectAddress(0x0B71BA0, 0xB72320));
+		DefineAddress(Clear, SelectAddress(0xB71AA0, 0xB72220));
+		DefineAddress(CreateObject, SelectAddress(0xB71AF0, 0xB72270));
+		DefineAddress(GetIfNotDeleted, SelectAddress(0xB71B60, 0xB722E0));
+		DefineAddress(DeleteObject, SelectAddress(0xB71BF0, 0xB72370));
+		DefineAddress(Iterate, SelectAddress(0xB71BC0, 0xB72340));
+	}
+
+	namespace Cell
+	{
+		namespace Addresses(cCellGame)
+		{
+			DefineAddress(_ptr, SelectAddress(0x16B7E84, 0x16B3C04));
+			DefineAddress(Initialize, SelectAddress(0xE81130, 0xE80BA0));
+			DefineAddress(CreateCellObject, SelectAddress(0xE74F60, 0xE74A20));
+		}
+
+		namespace Addresses(cCellGFX)
+		{
+			DefineAddress(_ptr, SelectAddress(0x16B7E88, 0x16B3C08));
+			DefineAddress(PreloadResources, SelectAddress(0xE66C90, 0xE666F0));
+			DefineAddress(PreloadCellResource, SelectAddress(0xE66950, 0xE663B0));
+			DefineAddress(PreloadPopulateResource, SelectAddress(0xE66B60, 0xE665C0));
+			DefineAddress(PreloadLootTableResource, SelectAddress(0xE50290, 0xE4FC00));
+			DefineAddress(PreloadCreature, SelectAddress(0xE64F10, 0xE64980));
+			DefineAddress(AddPreloadedEffect, SelectAddress(0xE66820, 0xE66280));
+			DefineAddress(AddPreloadedTexture, SelectAddress(0xE65F10, 0xE65970));
+			DefineAddress(AddPreloadedModel, SelectAddress(0xE659B0, 0xE65410));
+			DefineAddress(AddPreloadedModel2, SelectAddress(0xE65940, 0xE653A0));
+			DefineAddress(Initialize, SelectAddress(0xE5E130, 0xE5DBA0));
+			DefineAddress(StartDisplay, SelectAddress(0xE55780, 0xE55120));
+			DefineAddress(CreateEffect, SelectAddress(0x628470, 0x628480));
+			DefineAddress(LoadEffectMap, SelectAddress(0xE63AF0, 0xE63560));
+		}
+
+		namespace Addresses(cCellUI)
+		{
+			DefineAddress(_ptr, SelectAddress(0x16B7E8C, 0x16B3C0C));
+			DefineAddress(Load, SelectAddress(0xE548B0, 0xE54270));
+		}
+
+		namespace Addresses(cCellSerializableData)
+		{
+			DefineAddress(_ptr, SelectAddress(0x16B8060, 0x16B3DE0));
+		}
+	}
+
+	namespace Addresses(Cell)
+	{
+		DefineAddress(GetData, SelectAddress(0xE4D2A0, 0xE4CBF0));
+		DefineAddress(GetGlobalsData, SelectAddress(0xE4D4A0, 0xE4CE20));
+	}
+
+#ifdef SDK_TO_GHIDRA
+	namespace Addresses(Cell)
+	{
+		DefineAddress(sCellGame, SelectAddress(0x16B7E84, 0x16B3C04));
+		DefineAddress(sCellGFX, SelectAddress(0x16B7E88, 0x16B3C08));
+		DefineAddress(sCellUI, SelectAddress(0x16B7E8C, 0x16B3C0C));
+		DefineAddress(sCellSerializableData, SelectAddress(0x16B8060, 0x16B3DE0));
+	}
+#endif
 }
 
 #ifdef SDK_TO_GHIDRA

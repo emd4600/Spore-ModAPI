@@ -35,7 +35,7 @@ namespace Anim
 		/* 28h */	virtual void UpdateCreatures(float deltaTime, App::cViewer* = nullptr) = 0;
 		/* 2Ch */	virtual void PostUpdateCreatures(float deltaTime, App::cViewer* = nullptr) = 0;
 		// model is not visible by default
-		/* 30h */	virtual AnimatedCreature* LoadCreature(const ResourceKey& key, int = 2, const Vector3& = Vector3(), const Vector3& = Vector3(), bool = true) = 0;
+		/* 30h */	virtual AnimatedCreature* LoadCreature(const ResourceKey& key, int = 2, const Vector3& = Vector3(), const Quaternion& = Quaternion(), bool = true) = 0;
 		/* 34h */	virtual int func34h(int, int, int, int, int) = 0;
 		// Loads a *.blocks file
 		/* 38h */	virtual int LoadCreatureByName(const char*, int, int, int, int, int) = 0;

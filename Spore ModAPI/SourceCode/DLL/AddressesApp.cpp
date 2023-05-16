@@ -4,6 +4,7 @@
 #include <Spore\App\cCameraManager.h>
 #include <Spore\App\cCheatManager.h>
 #include <Spore\App\cCreatureModeStrategy.h>
+#include <Spore\App\cCellModeStrategy.h>
 #include <Spore\App\cGameModeManager.h>
 #include <Spore\App\cMessageManager.h>
 #include <Spore\App\cPropManager.h>
@@ -442,6 +443,27 @@ namespace App
 	namespace Addresses(cCreatureModeStrategy)
 	{
 		DefineAddress(Get, SelectAddress(0xD2D640, 0xD38840));
+	}
+
+	namespace Addresses(cCellModeStrategy)
+	{
+		DefineAddress(AddRef, SelectAddress(0x1098140, 0xDD3CA0));
+		DefineAddress(Release, SelectAddress(0xE1CF40, 0x1154790));
+		DefineAddress(func0Ch, SelectAddress(0xA37650, 0xB1FB30));
+		DefineAddress(Initialize, SelectAddress(0xE82280, 0xE81CF0));
+		DefineAddress(Dispose, SelectAddress(0xE824C0, 0xE81F30));
+		DefineAddress(OnEnter, SelectAddress(0xE55950, 0xE552F0));
+		DefineAddress(OnExit, SelectAddress(0xE80190, 0xE7FC00));
+		DefineAddress(func20h, SelectAddress(0xE515F0, 0xE50FE0));
+		DefineAddress(OnKeyDown, SelectAddress(0xE81E80, 0xE818F0));
+		DefineAddress(OnKeyUp, SelectAddress(0xE51600, 0xE50FF0));
+		DefineAddress(OnMouseDown, SelectAddress(0xE6CDE0, 0xE6C860));
+		DefineAddress(OnMouseUp, SelectAddress(0xE5C6F0, 0xE5C0F0));
+		DefineAddress(OnMouseMove, SelectAddress(0xE51620, 0xE51010));
+		DefineAddress(OnMouseWheel, SelectAddress(0xE7DBC0, 0xE7D660));
+		DefineAddress(Update, SelectAddress(0xE80F10, 0xE80980));
+
+		DefineAddress(HandleMessage, SelectAddress(0xE5CB90, 0xE62700));
 	}
 }
 

@@ -2,6 +2,7 @@
 #include <Spore\Simulator\cHerd.h>
 #include <Spore\Simulator\cSpaceNames.h>
 #include <Spore\Simulator\cBadgeManager.h>
+#include <Spore\Simulator\cObjectPool.h>
 
 namespace Simulator
 {
@@ -33,5 +34,31 @@ namespace Simulator
 
 	auto_METHOD_VOID(cBadgeManager, AddToBadgeProgress,
 		Args(BadgeManagerEvent badge, int addedValue), Args(badge, addedValue));
+
+
+	//// cObjectPool ////
+
+	cObjectPool::cObjectPool()
+		: mpData(nullptr)
+	{}
+
+	cObjectPool::~cObjectPool()
+	{
+		CALL(GetAddress(cObjectPool, _dtor), void, Args(cObjectPool*), Args(this));
+	}
+
+	auto_METHOD_VOID(cObjectPool, Initialize, Args(int objectSize, int numObjects), Args(objectSize, numObjects));
+
+	auto_METHOD_VOID_(cObjectPool, Clear);
+
+	auto_METHOD(cObjectPool, cObjectPoolClass*, Get, Args(cObjectPoolIndex arg), Args(arg));
+
+	auto_METHOD(cObjectPool, cObjectPoolClass*, GetIfNotDeleted, Args(cObjectPoolIndex arg), Args(arg));
+
+	auto_METHOD_(cObjectPool, cObjectPoolIndex, CreateObject);
+
+	auto_METHOD_VOID(cObjectPool, DeleteObject, Args(cObjectPoolIndex arg), Args(arg));
+
+	auto_METHOD_const(cObjectPool, cObjectPoolClass*, Iterate, Args(Iterator& arg), Args(arg));
 }
 #endif
