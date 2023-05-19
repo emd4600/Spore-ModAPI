@@ -25,8 +25,12 @@
 namespace UI
 {
 	class GlobalUIUnkBase1
-		: public App::IMessageListener	
+		: public App::IUnmanagedMessageListener	
 	{
+	public:
+		/* 08h */	virtual bool LoadLayout(const ResourceKey& key);
+		/* 0Ch */	virtual bool func0Ch();
+
 	public:
 		/* 04h */	ObjectPtr field_4;
 		/* 08h */	UILayoutPtr mpLayout;

@@ -94,9 +94,9 @@ namespace Simulator
 		using Object::Release;
 		using Object::Cast;
 
-		Anim::AnimIndex PlayAnimation(uint32_t animationID, int toolIndex = 0xFFFFFFFF, bool disableBlendInTime = false);
+		Anim::AnimIndex PlayAnimation(uint32_t animationID, int blockIndex = 0xFFFFFFFF, bool disableBlendInTime = false);
 
-		Anim::AnimIndex PlayAnimationTo(uint32_t animationID, cSpatialObject* otherObject, int = 0xFFFFFFFF, int toolIndex = 0xFFFFFFFF);
+		Anim::AnimIndex PlayAnimationTo(uint32_t animationID, cSpatialObject* otherObject, int = 0xFFFFFFFF, int blockIndex = 0xFFFFFFFF);
 
 		// sub_C0BEE0 decides the movement animation
 
@@ -318,6 +318,7 @@ namespace Simulator
 		/* E80h */	int mArchetype;
 		/* E84h */	void* field_E84;  // related with hunger
 		/* E88h */	int field_E88;
+		/// Index of current attack ability
 		/* E8Ch */	uint32_t mCurrentAttackIdx;  // -1
 		/* E90h */	uint32_t mCurrentAttackAnimId;  // -1
 		/* E94h */	float field_E94;

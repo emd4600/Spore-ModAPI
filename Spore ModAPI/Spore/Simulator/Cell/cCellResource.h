@@ -1,6 +1,7 @@
 #pragma once
 
 #include <Spore\Resource\ResourceObject.h>
+#include <Spore\MathUtils.h>
 
 #define cCellResourcePtr eastl::intrusive_ptr<Simulator::Cell::cCellResource>
 #define cAdvectResourcePtr eastl::intrusive_ptr<Simulator::Cell::cAdvectResource>

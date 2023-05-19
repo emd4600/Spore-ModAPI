@@ -11,7 +11,9 @@ namespace Simulator
 	{
 		struct cCellObjectData : public cObjectPoolClass
 		{
-			/* 04h */	bool field_4;
+			//TODO 224h 230h 238h are related with chaseTime; check sub_E57E90 
+
+			/* 04h */	bool mIsIdle;
 			/* 08h */	Math::Vector3 mTargetPosition;
 			/* 14h */	Math::Quaternion mTargetOrientation;
 			/* 24h */	char padding_24[0x48 - 0x24];
@@ -61,13 +63,14 @@ namespace Simulator
 			/* 208h */	char padding_208[0x234 - 0x208];
 			/* 234h */	float mSpawnTime;
 			/* 238h */	char padding_238[0x244 - 0x238];
-			/* 244h */	int field_244;
+			/* 244h */	int mHealthPoints;
 			/* 248h */	int field_248;
 			/* 24Ch */	int field_24C;
 			/* 250h */	int field_250;
 			/* 254h */	char padding_254[0x354 - 0x254];
 			/* 354h */	bool field_354;
-			/* 358h */	int field_358;
+			/// Level of the cell, -1 for the player
+			/* 358h */	CellStageScale mScale;
 			/* 35Ch */	int field_35C;
 			/* 360h */	char padding_360[0x368 - 0x360];
 			/* 368h */	float field_368;

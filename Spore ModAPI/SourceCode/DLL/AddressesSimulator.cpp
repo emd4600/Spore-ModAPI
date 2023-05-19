@@ -46,6 +46,7 @@
 #include <Spore\Simulator\cSimulatorSpaceGame.h>
 #include <Spore\Simulator\cSpaceToolData.h>
 #include <Spore\Simulator\cSpaceInventoryItem.h>
+#include <Spore\Simulator\cSpaceNames.h>
 #include <Spore\Simulator\cStarRecord.h>
 #include <Spore\Simulator\cScenarioData.h>
 #include <Spore\Simulator\cScenarioPlayMode.h>
@@ -794,6 +795,12 @@ namespace Simulator
 		DefineAddress(AddEvolutionPoints, SelectAddress(0xD2DBA0, 0xD2E8A0));
 	}
 
+	namespace Addresses(cSpaceNames)
+	{
+		DefineAddress(Get, SelectAddress(0x4010A0, 0x4010A0));
+		DefineAddress(GenerateRandomName, SelectAddress(0x5ECD40, 0x5ED000));
+	}
+
 	namespace Addresses(cObjectPool)
 	{
 		DefineAddress(Initialize, SelectAddress(0xB71A10, 0xB72190));
@@ -813,6 +820,9 @@ namespace Simulator
 			DefineAddress(_ptr, SelectAddress(0x16B7E84, 0x16B3C04));
 			DefineAddress(Initialize, SelectAddress(0xE81130, 0xE80BA0));
 			DefineAddress(CreateCellObject, SelectAddress(0xE74F60, 0xE74A20));
+			DefineAddress(MovePlayerToMousePosition, SelectAddress(0xE5BD90, 0xE5B790));
+			DefineAddress(GetScaleDifferenceWithPlayer, SelectAddress(0xE57940, 0xE57340));
+			DefineAddress(ShouldNotAttack, SelectAddress(0xE57A60, 0xE57460));
 		}
 
 		namespace Addresses(cCellGFX)
@@ -849,6 +859,8 @@ namespace Simulator
 	{
 		DefineAddress(GetData, SelectAddress(0xE4D2A0, 0xE4CBF0));
 		DefineAddress(GetGlobalsData, SelectAddress(0xE4D4A0, 0xE4CE20));
+		DefineAddress(GetCurrentAdvectInfo, SelectAddress(0xE594F0, 0xE58EF0));
+		DefineAddress(GetNextAdvectID, SelectAddress(0xE59430, 0xE58E30));
 	}
 
 #ifdef SDK_TO_GHIDRA

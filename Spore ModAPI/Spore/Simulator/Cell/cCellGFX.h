@@ -20,6 +20,7 @@
 #pragma once
 
 #include <EASTL\vector.h>
+#include <EASTL\fixed_vector.h>
 #include <EASTL\map.h>
 #include <Spore\Anim\IAnimWorld.h>
 #include <Spore\Graphics\IModelWorld.h>

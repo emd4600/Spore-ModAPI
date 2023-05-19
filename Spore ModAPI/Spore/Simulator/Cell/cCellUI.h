@@ -42,7 +42,8 @@ namespace Simulator
 			/* 18h */	float field_18;
 			/* 1Ch */	float field_1C;
 			/* 20h */	float field_20;
-			/* 24h */	int field_24;
+			/// How many seconds until the rollover disappears
+			/* 24h */	float mDisappearTime;
 			/* 28h */	float field_28;
 			/* 2Ch */	float field_2C;
 			/* 30h */	bool field_30;

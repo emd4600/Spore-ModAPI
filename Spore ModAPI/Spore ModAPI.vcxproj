@@ -306,6 +306,8 @@
     <ClInclude Include="Spore\Anim\IAnimWorld.h" />
     <ClInclude Include="Spore\Anim\TLSA.h" />
     <ClInclude Include="Spore\App\AppData.h" />
+    <ClInclude Include="Spore\App\cArithmeticaResource.h" />
+    <ClInclude Include="Spore\App\cCellModeStrategy.h" />
     <ClInclude Include="Spore\App\cJob.h" />
     <ClInclude Include="Spore\App\cLocaleManager.h" />
     <ClInclude Include="Spore\App\cStringDetokenizer.h" />
@@ -318,6 +320,7 @@
     <ClInclude Include="Spore\App\JobManager.h" />
     <ClInclude Include="Spore\App\Thumbnail_cImportExport.h" />
     <ClInclude Include="Spore\BasicIncludes.h" />
+    <ClInclude Include="Spore\Cell.h" />
     <ClInclude Include="Spore\CppRevEng.h" />
     <ClInclude Include="Spore\CppRevEngBase.h" />
     <ClInclude Include="ModAPI\Detouring.h" />
@@ -376,7 +379,10 @@
     <ClInclude Include="Spore\Resource\IRecord.h" />
     <ClInclude Include="Spore\Resource\Paths.h" />
     <ClInclude Include="Spore\Resource\RecordInfo.h" />
+    <ClInclude Include="Spore\Simulator\cAbilityUIMap.h" />
     <ClInclude Include="Spore\Simulator\cAnimalCargoInfo.h" />
+    <ClInclude Include="Spore\Simulator\cBaseDisplayStrategy.h" />
+    <ClInclude Include="Spore\Simulator\AI\cBehaviorTreeData.h" />
     <ClInclude Include="Spore\Simulator\cBuildingEntertainment.h" />
     <ClInclude Include="Spore\Simulator\cBuildingCityHall.h" />
     <ClInclude Include="Spore\Simulator\cBuildingHouse.h" />
@@ -384,9 +390,15 @@
     <ClInclude Include="Spore\Simulator\cCombatSimulator.h" />
     <ClInclude Include="Spore\Simulator\cCommodityNode.h" />
     <ClInclude Include="Spore\Simulator\cCreatureCitizen.h" />
+    <ClInclude Include="Spore\Simulator\cCreatureDisplayStrategy.h" />
     <ClInclude Include="Spore\Simulator\cCreatureGameData.h" />
     <ClInclude Include="Spore\Simulator\cEgg.h" />
     <ClInclude Include="Spore\Simulator\cEllipticalOrbit.h" />
+    <ClInclude Include="Spore\Simulator\Cell\cCellGame.h" />
+    <ClInclude Include="Spore\Simulator\Cell\cCellObjectData.h" />
+    <ClInclude Include="Spore\Simulator\Cell\cCellResource.h" />
+    <ClInclude Include="Spore\Simulator\Cell\cCellScaleInfo.h" />
+    <ClInclude Include="Spore\Simulator\Cell\cCellSerialiazibleData.h" />
     <ClInclude Include="Spore\Simulator\cGamePlant.h" />
     <ClInclude Include="Spore\Simulator\cGameplayMarker.h" />
     <ClInclude Include="Spore\Simulator\cHerd.h" />
@@ -395,6 +407,7 @@
     <ClInclude Include="Spore\Simulator\cMission.h" />
     <ClInclude Include="Spore\Simulator\cNest.h" />
     <ClInclude Include="Spore\Simulator\cObjectInstanceInventoryItem.h" />
+    <ClInclude Include="Spore\Simulator\cObjectPool.h" />
     <ClInclude Include="Spore\Simulator\cPlantCargoInfo.h" />
     <ClInclude Include="Spore\Simulator\cResourceProjectile.h" />
     <ClInclude Include="Spore\Simulator\cScenarioEditHistory.h" />
@@ -542,9 +555,8 @@
     <ClInclude Include="Spore\Simulator\cDefaultProjectileWeapon.h" />
     <ClInclude Include="Spore\Simulator\cDragInputProjectileToolStrategy.h" />
     <ClInclude Include="Spore\Simulator\cDropCargoToolStrategy.h" />
-    <ClInclude Include="Spore\Simulator\Cell\CellGFX.h" />
-    <ClInclude Include="Spore\Simulator\Cell\CellUI.h" />
-    <ClInclude Include="Spore\Simulator\Cell\GameModeCell.h" />
+    <ClInclude Include="Spore\Simulator\Cell\cCellGFX.h" />
+    <ClInclude Include="Spore\Simulator\Cell\cCellUI.h" />
     <ClInclude Include="Spore\Simulator\cEmpire.h" />
     <ClInclude Include="Spore\Simulator\cEnergyRepairToolStrategy.h" />
     <ClInclude Include="Spore\Simulator\cGameBundleContainer.h" />
@@ -929,7 +941,6 @@
     <ClCompile Include="SourceCode\Simulator\cCreatureAbility.cpp" />
     <ClCompile Include="SourceCode\Simulator\cCreatureAnimal.cpp" />
     <ClCompile Include="SourceCode\Simulator\cCultureSet.cpp" />
-    <ClCompile Include="SourceCode\Simulator\CellGame.cpp" />
     <ClCompile Include="SourceCode\Simulator\cEmpire.cpp" />
     <ClCompile Include="SourceCode\Simulator\cGameData.cpp" />
     <ClCompile Include="SourceCode\Simulator\cGameDataUFO.cpp" />
@@ -951,6 +962,7 @@
     <ClCompile Include="SourceCode\Simulator\RelationshipManager.cpp" />
     <ClCompile Include="SourceCode\Simulator\Scenario.cpp" />
     <ClCompile Include="SourceCode\Simulator\Serialization.cpp" />
+    <ClCompile Include="SourceCode\Simulator\SimulatorCell.cpp" />
     <ClCompile Include="SourceCode\Simulator\SimulatorClock.cpp" />
     <ClCompile Include="SourceCode\Simulator\SimulatorMessages.cpp" />
     <ClCompile Include="SourceCode\Editors\EditorPalettes.cpp" />

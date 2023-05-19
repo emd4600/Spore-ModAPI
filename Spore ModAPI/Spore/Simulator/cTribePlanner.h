@@ -3,6 +3,7 @@
 #include <Spore\Simulator\SimulatorEnums.h>
 #include <Spore\Simulator\cGonzagoSimulator.h>
 #include <Spore\Simulator\cCreatureCitizen.h>
+#include <Spore\Simulator\AI\cBehaviorTreeData.h>
 #include <EASTL\fixed_vector.h>
 
 #define cTribePlannerPtr eastl::intrusive_ptr<Simulator::cTribePlanner>
@@ -76,7 +77,7 @@ namespace Simulator
 		using Object::Cast;
 
 	public:
-		/* 10h */	int mpBehaviorTreeData;  //TODO cBehaviorTreeData
+		/* 10h */	AI::cBehaviorTreeData* mpBehaviorTreeData;
 		/// Plans from `TribePlans` folder decide the behavior of the tribe. The plans are selected in the Tribe Archetype file.
 		/* 14h */	eastl::vector_map<TribePlanType, eastl::vector<cTribePlan>> mPlans;
 		/* 2Ch */	eastl::fixed_vector<float, 48 / 4> mTimeBetweenPlanExecutionByType;

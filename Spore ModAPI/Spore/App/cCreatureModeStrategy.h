@@ -5,8 +5,9 @@
 #include <Spore\Input.h>
 #include <Spore\Clock.h>
 #include <Spore\Simulator\SubSystem\cStrategy.h>
+#include <Spore\Simulator\cCreatureDisplayStrategy.h>
 
-#define cCreatureModeStrategyPtr eastl::intrusive_ptr<App::CreatureModeStrategy>
+#define cCreatureModeStrategyPtr eastl::intrusive_ptr<App::cCreatureModeStrategy>
 #define CreatureModeStrategy (*App::cCreatureModeStrategy::Get())
 
 namespace App
@@ -29,7 +30,7 @@ namespace App
 		/* 4Ch */	eastl::vector<int> field_4C;
 		/* 60h */	int field_60;
 		/* 64h */	int field_64;
-		/* 68h */	int field_68;
+		/* 68h */	cCreatureDisplayStrategyPtr mpDisplayStrategy;
 		/* 6Ch */	bool field_6C;
 		/* 70h */	int field_70;
 		/* 74h */	int field_74;

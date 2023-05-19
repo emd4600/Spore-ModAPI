@@ -8,8 +8,18 @@ namespace Simulator
 {
 	auto_STATIC_METHOD_(Cell, Cell::cCellGlobalsResource*, GetGlobalsData);
 
+	auto_STATIC_METHOD(Cell, uint32_t, GetCurrentAdvectInfo,
+		Args(CellStageScale& dst0, float& dstStrength, float& dstVariance, float& dstPeriod),
+		Args(dst0, dstStrength, dstVariance, dstPeriod));
+
+	auto_STATIC_METHOD_(Cell, uint32_t, GetNextAdvectID);
+
 	namespace Cell
 	{
+		GoalCard* GetGoalCards() {
+			return (GoalCard*)GetAddress(Cell, GoalCards_ptr);
+		}
+
 		void cCellDataReference_::AddRef() {
 			mCounter++;
 		}
@@ -29,6 +39,15 @@ namespace Simulator
 		auto_STATIC_METHOD(cCellGame, cObjectPoolIndex, CreateCellObject,
 			Args(int a1, const Math::Vector3& a2, int a3, cCellDataReference<cCellCellResource>* a4, int a5, float a6, float a7, int a8, int a9, int a10),
 			Args(a1, a2, a3, a4, a5, a6, a7, a8, a9, a10));
+
+		auto_STATIC_METHOD_VOID(cCellGame, MovePlayerToMousePosition,
+			Args(float a0), Args(a0));
+
+		auto_STATIC_METHOD(cCellGame, ScaleDifference, GetScaleDifferenceWithPlayer,
+			Args(cCellObjectData* a0), Args(a0));
+
+		auto_STATIC_METHOD(cCellGame, bool, ShouldNotAttack,
+			Args(cCellObjectData* a0, cCellObjectData* a1), Args(a0, a1));
 
 
 		//// cCellGFX ////

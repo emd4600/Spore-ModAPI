@@ -89,12 +89,12 @@ namespace Simulator
 		/* C4h */	ObjectPtr field_C4;
 		/* C8h */	char padding_C8[0x100 - 0xC8];  //TODO cGameEditDisplayStrategy?? seems to be parent of display strategies?
 		/* 100h */	bool mInitialized;
-		/* 104h */	Vector3 field_104;  // not initialized
-		/* 110h */	Vector3 field_110;  // not initialized
-		/* 11Ch */	Vector3 field_11C;  // not initialized
+		/* 104h */	Math::Vector3 field_104;  // not initialized
+		/* 110h */	Math::Vector3 field_110;  // not initialized
+		/* 11Ch */	Math::Vector3 field_11C;  // not initialized
 		/* 128h */	int field_128;  // not initialized
 		/* 12Ch */	unsigned int mGalaxyDustEffectLerpMS;  // not initialized
-		/* 130h */	Vector3 mGalaxyMaxZoomDustColor;  // not initialized
+		/* 130h */	Math::Vector3 mGalaxyMaxZoomDustColor;  // not initialized
 		/// `gametuning~!SpaceGalaxyEffect.prop`
 		/* 13Ch */	PropertyListPtr mpSpaceGalaxyEffectPropList;
 	};

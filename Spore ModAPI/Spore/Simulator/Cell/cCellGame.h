@@ -14,6 +14,20 @@ namespace Simulator
 {
 	namespace Cell
 	{
+		enum class ScaleDifference
+		{
+			/// Cell is 2 or more levels smaller than player cell
+			MuchSmaller = 0,
+			/// Cell is 1 level smaller than player cell
+			Smaller = 1,
+			/// Cell is same level as player cell
+			Equal = 2,
+			/// Cell is 1 level larger than player cell
+			Larger = 3,
+			/// Cell is 2 or more levels larger than player cell
+			MuchLarger = 4
+		};
+
 		class cCellGame
 		{
 		public:
@@ -22,6 +36,27 @@ namespace Simulator
 			static void Initialize();
 
 			static cObjectPoolIndex CreateCellObject(int, const Math::Vector3& position, int, cCellDataReference<cCellCellResource>*, int, float sizeFactor, float cellSize, int, int, int);
+
+
+			static void MovePlayerToMousePosition(float deltaTime);
+
+			/// Returns scale difference between the given cell and the player cell,
+			/// telling whether it is smaller, larger or the same scale (level).
+			/// @param otherCell
+			/// @returns
+			static ScaleDifference GetScaleDifferenceWithPlayer(cCellObjectData* otherCell);
+
+			/// Calculates whether the first cell will or will not attack the second cell.
+			/// This returns false when:
+			/// - The two cells are the same type (the same `.cell` file)
+			/// - `field_112` is true for any of the cells
+			/// - Cell 1 `wontAttackPlayerWhenSmall` is true, cell 2 is player, and the cell is smaller
+			/// - Cell 1 `wontAttackPlayer` is true and cell 2 is player
+			/// - Both cells have the same `friendGroup` and it's not 0
+			/// @param cell1
+			/// @param cell2
+			/// @returns True if cell 1 must not attack cell 2, false if it must attack.
+			static bool ShouldNotAttack(cCellObjectData* cell1, cCellObjectData* cell2);
 
 		public:
 			/* 00h */	cAdvectResourcePtr mpCurrentAdvectionMap;
@@ -67,6 +102,9 @@ namespace Simulator
 			DeclareAddress(_ptr);  // 0x16B7E84 0x16B3C04
 			DeclareAddress(Initialize);  // 0xE81130 0xE80BA0
 			DeclareAddress(CreateCellObject);  // 0xE74F60 0xE74A20
+			DeclareAddress(MovePlayerToMousePosition);  // 0xE5BD90 0xE5B790
+			DeclareAddress(GetScaleDifferenceWithPlayer);  // 0xE57940 0xE57340
+			DeclareAddress(ShouldNotAttack);  // 0xE57A60 0xE57460
 		}
 
 #ifndef SDK_TO_GHIDRA
@@ -91,7 +129,7 @@ namespace Simulator
 
 	namespace Addresses(Cell) {
 		DeclareAddress(GoalCards_ptr);
-		DeclareAddress(GetCurrentAdvectInfo);  // 0xE594F0 TODO
-		DeclareAddress(GetNextAdvectID);  // 0xE59430 TODO
+		DeclareAddress(GetCurrentAdvectInfo);  // 0xE594F0 0xE58EF0
+		DeclareAddress(GetNextAdvectID);  // 0xE59430 0xE58E30
 	}
 }
