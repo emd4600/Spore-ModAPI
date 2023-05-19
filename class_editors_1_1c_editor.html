@@ -101,6 +101,64 @@
             </dt>
             <dd>Called every time a message is received.</dd>
             <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#ac41da9cdb11d1ec74d1019f26a11dad9" class="m-doc">Initialize</a>(</span><span class="m-doc-wrap"><a href="class_app_1_1_i_game_mode_manager.html" class="m-doc">App::<wbr />IGameModeManager</a>* pManager) -&gt; bool <span class="m-label m-flat m-warning">override</span></span>
+            </dt>
+            <dd>This method is called once on every game mode when all modes have been added.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a53086d2695ca76a87aeda94d7eac14a8" class="m-doc">Dispose</a>(</span><span class="m-doc-wrap">) -&gt; bool <span class="m-label m-flat m-warning">override</span></span>
+            </dt>
+            <dd>This method is called once on every game mode when the game closes.</dd>
+            <dt id="a756a9c20f17afaef2ce575f21b51633d">
+              <span class="m-doc-wrap-bumper">auto <a href="#a756a9c20f17afaef2ce575f21b51633d" class="m-doc-self">OnEnter</a>(</span><span class="m-doc-wrap">) -&gt; bool <span class="m-label m-flat m-warning">override</span></span>
+            </dt>
+            <dd>This method is called when the game mode is set as active, and therefore, entered.</dd>
+            <dt id="a2d9d32852efa1c351b90d4ea47ad5886">
+              <span class="m-doc-wrap-bumper">void <a href="#a2d9d32852efa1c351b90d4ea47ad5886" class="m-doc-self">OnExit</a>(</span><span class="m-doc-wrap">) <span class="m-label m-flat m-warning">override</span></span>
+            </dt>
+            <dd>This method is called when a different game mode is set as active, and therefore, this game mode is exited (no longer active).</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a9ee0ef51aa90b34ba2d7ae17ba46e3de" class="m-doc">OnKeyDown</a>(</span><span class="m-doc-wrap">int virtualKey,
+              <a href="union_key_modifiers.html" class="m-doc">KeyModifiers</a> modifiers) -&gt; bool <span class="m-label m-flat m-warning">override</span></span>
+            </dt>
+            <dd>An event listener called every time a key is pressed while this mode is active.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a60e942d144ac0561967287dccf29c29d" class="m-doc">OnKeyUp</a>(</span><span class="m-doc-wrap">int virtualKey,
+              <a href="union_key_modifiers.html" class="m-doc">KeyModifiers</a> modifiers) -&gt; bool <span class="m-label m-flat m-warning">override</span></span>
+            </dt>
+            <dd>An event listener called every time a key is released while this mode is active.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a709cac689fd5a7df6a5d8eea60843b52" class="m-doc">OnMouseDown</a>(</span><span class="m-doc-wrap"><a href="_input_8h.html#ac1ec3647c005eacad401b06e7e18f711" class="m-doc">MouseButton</a> mouseButton,
+              float mouseX,
+              float mouseY,
+              <a href="union_mouse_state.html" class="m-doc">MouseState</a> mouseState) -&gt; bool <span class="m-label m-flat m-warning">override</span></span>
+            </dt>
+            <dd>An event listener called every time a mouse key is pressed while this mode is active.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#ad472f238ef37a29150eb11b53fdad82b" class="m-doc">OnMouseUp</a>(</span><span class="m-doc-wrap"><a href="_input_8h.html#ac1ec3647c005eacad401b06e7e18f711" class="m-doc">MouseButton</a> mouseButton,
+              float mouseX,
+              float mouseY,
+              <a href="union_mouse_state.html" class="m-doc">MouseState</a> mouseState) -&gt; bool <span class="m-label m-flat m-warning">override</span></span>
+            </dt>
+            <dd>An event listener called every time a mouse key is released while this mode is active.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a44ab1c1e592b7c533ade76287521c17e" class="m-doc">OnMouseMove</a>(</span><span class="m-doc-wrap">float mouseX,
+              float mouseY,
+              <a href="union_mouse_state.html" class="m-doc">MouseState</a> mouseState) -&gt; bool <span class="m-label m-flat m-warning">override</span></span>
+            </dt>
+            <dd>An event listener called every time the mouse is moved while this mode is active.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#ac1291353fd815abd87abff068b8e0b24" class="m-doc">OnMouseWheel</a>(</span><span class="m-doc-wrap">int wheelDelta,
+              float mouseX,
+              float mouseY,
+              <a href="union_mouse_state.html" class="m-doc">MouseState</a> mouseState) -&gt; bool <span class="m-label m-flat m-warning">override</span></span>
+            </dt>
+            <dd>An event listener called every time the mouse wheel is moved while this mode is active.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">void <a href="#ab5269e0ee621f84caeb490ef781a10e9" class="m-doc">Update</a>(</span><span class="m-doc-wrap">float delta1,
+              float delta2) <span class="m-label m-flat m-warning">override</span></span>
+            </dt>
+            <dd>An event listener called every game loop.</dd>
+            <dt>
               <span class="m-doc-wrap-bumper">void <a href="#a6f0d4dbdf72ee42c218148a816c93a91" class="m-doc">SetEditorModel</a>(</span><span class="m-doc-wrap"><a href="class_editors_1_1_editor_model.html" class="m-doc">EditorModel</a>* pEditorModel)</span>
             </dt>
             <dd>Changes the current editor model, updating the creation with the parts and paints of the new editor model.</dd>
@@ -902,7 +960,7 @@
             <dt id="a7499bec2eeab2fa1274192da4b323775">
               <a href="c_editor_anim_event_8h.html#ae583a0f8c82779499c83ef7017c4b9a3" class="m-doc">cEditorAnimEventPtr</a> <a href="#a7499bec2eeab2fa1274192da4b323775" class="m-doc-self">mpAnimEvent</a>
             </dt>
-            <dd><a href="namespace_anim.html" class="m-doc">Anim</a> event that will be played on the creature on the next <a href="class_app_1_1_i_game_mode.html#aeaf8bd8f53a4c5342f4ba5c38fe6da57" class="m-doc">Update()</a> call.</dd>
+            <dd><a href="namespace_anim.html" class="m-doc">Anim</a> event that will be played on the creature on the next <a href="class_editors_1_1c_editor.html#ab5269e0ee621f84caeb490ef781a10e9" class="m-doc">Update()</a> call.</dd>
             <dt id="a20a094af164ef4c94bca6d56dab883d0">
               bool <a href="#a20a094af164ef4c94bca6d56dab883d0" class="m-doc-self">field_384</a>
             </dt>
@@ -955,8 +1013,8 @@
               eastl::vector&lt;<a href="_editor_rigblock_8h.html#ac23466b995d482a0e4ba9c16fb9b3ac7" class="m-doc">EditorRigblockPtr</a>&gt; <a href="#ada1fd4fb15805e87a33c6e6414f3c3b9" class="m-doc-self">field_39C</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="a06a70ac17202e28a3debc097e5e5ae06">
-              int <a href="#a06a70ac17202e28a3debc097e5e5ae06" class="m-doc-self">field_3B0</a>
+            <dt id="a016f592f2e0feb67b29aa51344a033ed">
+              int <a href="#a016f592f2e0feb67b29aa51344a033ed" class="m-doc-self">mHoveredPaintRegion</a>
             </dt>
             <dd><span></span></dd>
             <dt id="a97bf694a9329e4da9ebd91e869796957">
@@ -1439,6 +1497,256 @@
               </tfoot>
             </table>
 <p>Only the messages with an ID this listener signed up for will call this event.</p>
+          </div></section>
+          <section class="m-doc-details" id="ac41da9cdb11d1ec74d1019f26a11dad9"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">bool Editors::<wbr />cEditor::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ac41da9cdb11d1ec74d1019f26a11dad9" class="m-doc-self">Initialize</a>(</span><span class="m-doc-wrap"><a href="class_app_1_1_i_game_mode_manager.html" class="m-doc">App::<wbr />IGameModeManager</a>* pManager) <span class="m-label m-warning">override</span></span></span>
+            </h3>
+            <p>This method is called once on every game mode when all modes have been added.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">pManager</td>
+                  <td>The GameModeManager that has called this method.</td>
+                </tr>
+              </tbody>
+            </table>
+<p>This should take care of all initializations and setups that are required.</p>
+          </div></section>
+          <section class="m-doc-details" id="a53086d2695ca76a87aeda94d7eac14a8"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">bool Editors::<wbr />cEditor::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a53086d2695ca76a87aeda94d7eac14a8" class="m-doc-self">Dispose</a>(</span><span class="m-doc-wrap">) <span class="m-label m-warning">override</span></span></span>
+            </h3>
+            <p>This method is called once on every game mode when the game closes.</p>
+<p>This should reverse everything the Initialize method did.</p>
+          </div></section>
+          <section class="m-doc-details" id="a9ee0ef51aa90b34ba2d7ae17ba46e3de"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">bool Editors::<wbr />cEditor::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a9ee0ef51aa90b34ba2d7ae17ba46e3de" class="m-doc-self">OnKeyDown</a>(</span><span class="m-doc-wrap">int virtualKey,
+              <a href="union_key_modifiers.html" class="m-doc">KeyModifiers</a> modifiers) <span class="m-label m-warning">override</span></span></span>
+            </h3>
+            <p>An event listener called every time a key is pressed while this mode is active.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">virtualKey</td>
+                  <td>The VK code of the key.</td>
+                </tr>
+                <tr>
+                  <td>modifiers</td>
+                  <td>The modifiers (Ctrl, Alt and Shift) currently being pressed. They use the enum values UTFWin::kModifier....</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>Returns</th>
+                  <td>Whether the event was handled or not.</td>
+                </tr>
+              </tfoot>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="a60e942d144ac0561967287dccf29c29d"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">bool Editors::<wbr />cEditor::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a60e942d144ac0561967287dccf29c29d" class="m-doc-self">OnKeyUp</a>(</span><span class="m-doc-wrap">int virtualKey,
+              <a href="union_key_modifiers.html" class="m-doc">KeyModifiers</a> modifiers) <span class="m-label m-warning">override</span></span></span>
+            </h3>
+            <p>An event listener called every time a key is released while this mode is active.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">virtualKey</td>
+                  <td>The VK code of the key.</td>
+                </tr>
+                <tr>
+                  <td>modifiers</td>
+                  <td>The modifiers (Ctrl, Alt and Shift) currently being pressed. They use the enum values UTFWin::kModifier....</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>Returns</th>
+                  <td>Whether the event was handled or not.</td>
+                </tr>
+              </tfoot>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="a709cac689fd5a7df6a5d8eea60843b52"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">bool Editors::<wbr />cEditor::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a709cac689fd5a7df6a5d8eea60843b52" class="m-doc-self">OnMouseDown</a>(</span><span class="m-doc-wrap"><a href="_input_8h.html#ac1ec3647c005eacad401b06e7e18f711" class="m-doc">MouseButton</a> mouseButton,
+              float mouseX,
+              float mouseY,
+              <a href="union_mouse_state.html" class="m-doc">MouseState</a> mouseState) <span class="m-label m-warning">override</span></span></span>
+            </h3>
+            <p>An event listener called every time a mouse key is pressed while this mode is active.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">mouseButton</td>
+                  <td>The button that was pressed.</td>
+                </tr>
+                <tr>
+                  <td>mouseX</td>
+                  <td>The X position of the mouse.</td>
+                </tr>
+                <tr>
+                  <td>mouseY</td>
+                  <td>The Y position of the mouse.</td>
+                </tr>
+                <tr>
+                  <td>mouseState</td>
+                  <td>The state of the mouse.</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>Returns</th>
+                  <td>Whether the event was handled or not.</td>
+                </tr>
+              </tfoot>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="ad472f238ef37a29150eb11b53fdad82b"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">bool Editors::<wbr />cEditor::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ad472f238ef37a29150eb11b53fdad82b" class="m-doc-self">OnMouseUp</a>(</span><span class="m-doc-wrap"><a href="_input_8h.html#ac1ec3647c005eacad401b06e7e18f711" class="m-doc">MouseButton</a> mouseButton,
+              float mouseX,
+              float mouseY,
+              <a href="union_mouse_state.html" class="m-doc">MouseState</a> mouseState) <span class="m-label m-warning">override</span></span></span>
+            </h3>
+            <p>An event listener called every time a mouse key is released while this mode is active.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">mouseButton</td>
+                  <td>The button that was released.</td>
+                </tr>
+                <tr>
+                  <td>mouseX</td>
+                  <td>The X position of the mouse.</td>
+                </tr>
+                <tr>
+                  <td>mouseY</td>
+                  <td>The Y position of the mouse.</td>
+                </tr>
+                <tr>
+                  <td>mouseState</td>
+                  <td>The state of the mouse.</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>Returns</th>
+                  <td>Whether the event was handled or not.</td>
+                </tr>
+              </tfoot>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="a44ab1c1e592b7c533ade76287521c17e"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">bool Editors::<wbr />cEditor::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a44ab1c1e592b7c533ade76287521c17e" class="m-doc-self">OnMouseMove</a>(</span><span class="m-doc-wrap">float mouseX,
+              float mouseY,
+              <a href="union_mouse_state.html" class="m-doc">MouseState</a> mouseState) <span class="m-label m-warning">override</span></span></span>
+            </h3>
+            <p>An event listener called every time the mouse is moved while this mode is active.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">mouseX</td>
+                  <td>The X position of the mouse.</td>
+                </tr>
+                <tr>
+                  <td>mouseY</td>
+                  <td>The Y position of the mouse.</td>
+                </tr>
+                <tr>
+                  <td>mouseState</td>
+                  <td>The state of the mouse.</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>Returns</th>
+                  <td>Whether the event was handled or not.</td>
+                </tr>
+              </tfoot>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="ac1291353fd815abd87abff068b8e0b24"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">bool Editors::<wbr />cEditor::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ac1291353fd815abd87abff068b8e0b24" class="m-doc-self">OnMouseWheel</a>(</span><span class="m-doc-wrap">int wheelDelta,
+              float mouseX,
+              float mouseY,
+              <a href="union_mouse_state.html" class="m-doc">MouseState</a> mouseState) <span class="m-label m-warning">override</span></span></span>
+            </h3>
+            <p>An event listener called every time the mouse wheel is moved while this mode is active.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">wheelDelta</td>
+                  <td>The amount of units the wheel moved. This is a multiple of UTFWin::kMouseWheelDelta.</td>
+                </tr>
+                <tr>
+                  <td>mouseX</td>
+                  <td>The X position of the mouse.</td>
+                </tr>
+                <tr>
+                  <td>mouseY</td>
+                  <td>The Y position of the mouse.</td>
+                </tr>
+                <tr>
+                  <td>mouseState</td>
+                  <td>The state of the mouse.</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>Returns</th>
+                  <td>Whether the event was handled or not.</td>
+                </tr>
+              </tfoot>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="ab5269e0ee621f84caeb490ef781a10e9"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">void Editors::<wbr />cEditor::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ab5269e0ee621f84caeb490ef781a10e9" class="m-doc-self">Update</a>(</span><span class="m-doc-wrap">float delta1,
+              float delta2) <span class="m-label m-warning">override</span></span></span>
+            </h3>
+            <p>An event listener called every game loop.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">delta1</td>
+                  <td>The amount of seconds elapsed since this the last update.</td>
+                </tr>
+                <tr>
+                  <td>delta2</td>
+                  <td>Usually the same as delta1.</td>
+                </tr>
+              </tbody>
+            </table>
           </div></section>
           <section class="m-doc-details" id="a6f0d4dbdf72ee42c218148a816c93a91"><div>
             <h3>

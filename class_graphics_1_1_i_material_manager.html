@@ -56,7 +56,6 @@
               Reference
               <ul>
                 <li><a href="#derived-classes">Derived classes</a></li>
-                <li><a href="#pub-types">Public types</a></li>
                 <li><a href="#pub-static-methods">Public static functions</a></li>
                 <li><a href="#typeless-methods">Constructors, destructors, conversion operators</a></li>
                 <li><a href="#pub-methods">Public functions</a></li>
@@ -72,19 +71,6 @@
               class <a href="class_graphics_1_1c_material_manager.html" class="m-doc">cMaterialManager</a>
             </dt>
             <dd>The implementation of <a href="class_graphics_1_1_i_material_manager.html" class="m-doc">IMaterialManager</a>; this should only be used for extending and detouring.</dd>
-          </dl>
-        </section>
-        <section id="pub-types">
-          <h2><a href="#pub-types">Public types</a></h2>
-          <dl class="m-doc">
-            <dt id="a56abc2bc035dbe993746d266beb838bd">
-              <span class="m-doc-wrap-bumper">enum <a href="#a56abc2bc035dbe993746d266beb838bd" class="m-doc-self">(anonymous)</a> { </span><span class="m-doc-wrap"><a href="#a56abc2bc035dbe993746d266beb838bda29a8bf1b3d55c5e6581aa5fee68efe0c" class="m-doc">kCompiledStatesLinkGroupID</a> = 0x40212000,
-              <a href="#a56abc2bc035dbe993746d266beb838bdac8da149194a201c0ba3c60af2fad7a8b" class="m-doc">kCompiledStatesGroupID</a> = 0x40212001,
-              <a href="#a56abc2bc035dbe993746d266beb838bdad00c70ea0c8924f1380cbbfc69ae998b" class="m-doc">kShaderFragmentsGroupID</a> = 0x40212002,
-              <a href="#a56abc2bc035dbe993746d266beb838bda40143fa39ccb72436e28294993d76459" class="m-doc">kShadersGroupID</a> = 0x40212004,
-              <a href="#a56abc2bc035dbe993746d266beb838bda2a9fce46e433477b8aff3d5dcaa066db" class="m-doc">kSporeMaterialTypeID</a> = 0x0469A3F7 }</span>
-            </dt>
-            <dd><span></span></dd>
           </dl>
         </section>
         <section id="pub-static-methods">
@@ -183,9 +169,9 @@
             </dt>
             <dd>Puts the ID of all the materials specified into the given array.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">void <a href="#ac5e7d03943d19ba4b07f25cfff3f15a4" class="m-doc">GetTexturesFromMaterial</a>(</span><span class="m-doc-wrap">const <a href="class_graphics_1_1_material.html" class="m-doc">Material</a>* pMaterial,
+              <span class="m-doc-wrap-bumper">void <a href="#af418bbde6bce1134598fb558ee950441" class="m-doc">GetTexturesFromMaterial</a>(</span><span class="m-doc-wrap">const <a href="class_graphics_1_1_material.html" class="m-doc">Material</a>* pMaterial,
               eastl::vector&lt;<a href="_texture_8h.html#affea3369120131ed058702d2945a10b4" class="m-doc">TexturePtr</a>&gt;&amp; dst,
-              bool(*)(<a href="class_graphics_1_1_texture.html" class="m-doc">Texture</a>*) filterFunction = nullptr) const <span class="m-label m-flat m-warning">pure virtual</span></span>
+              <a href="namespace_graphics.html#a356ed7da27bb4b62411de0849dc42a52" class="m-doc">TextureFilterCallback_<wbr />t</a> = nullptr) const <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
             <dd>Gets the textures used by a certain material.</dd>
             <dt id="a752ceb6a495df3510abba22171d2baf4">
@@ -383,11 +369,11 @@
               </tbody>
             </table>
           </div></section>
-          <section class="m-doc-details" id="ac5e7d03943d19ba4b07f25cfff3f15a4"><div>
+          <section class="m-doc-details" id="af418bbde6bce1134598fb558ee950441"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">void Graphics::<wbr />IMaterialManager::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ac5e7d03943d19ba4b07f25cfff3f15a4" class="m-doc-self">GetTexturesFromMaterial</a>(</span><span class="m-doc-wrap">const <a href="class_graphics_1_1_material.html" class="m-doc">Material</a>* pMaterial,
+              <span class="m-doc-wrap-bumper">void Graphics::<wbr />IMaterialManager::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#af418bbde6bce1134598fb558ee950441" class="m-doc-self">GetTexturesFromMaterial</a>(</span><span class="m-doc-wrap">const <a href="class_graphics_1_1_material.html" class="m-doc">Material</a>* pMaterial,
               eastl::vector&lt;<a href="_texture_8h.html#affea3369120131ed058702d2945a10b4" class="m-doc">TexturePtr</a>&gt;&amp; dst,
-              bool(*)(<a href="class_graphics_1_1_texture.html" class="m-doc">Texture</a>*) filterFunction = nullptr) const <span class="m-label m-warning">pure virtual</span></span></span>
+              <a href="namespace_graphics.html#a356ed7da27bb4b62411de0849dc42a52" class="m-doc">TextureFilterCallback_<wbr />t</a> = nullptr) const <span class="m-label m-warning">pure virtual</span></span></span>
             </h3>
             <p>Gets the textures used by a certain material.</p>
             <table class="m-table m-fullwidth m-flat">
@@ -402,10 +388,6 @@
                 <tr>
                   <td>dst&nbsp;<span class="m-label m-flat m-warning">out</span></td>
                   <td>A vector where the textures will be output.</td>
-                </tr>
-                <tr>
-                  <td>filterFunction&nbsp;<span class="m-label m-flat m-info">in</span></td>
-                  <td>[Optional] A filter function that takes a Texture* as a parameter and returns a bool, whether the texture must be added or not.</td>
                 </tr>
               </tbody>
             </table>

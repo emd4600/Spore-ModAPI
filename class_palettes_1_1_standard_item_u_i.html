@@ -92,6 +92,11 @@
         <section id="pub-methods">
           <h2><a href="#pub-methods">Public functions</a></h2>
           <dl class="m-doc">
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#ae8ebaecc5b662edfb1052e857aa4e96b" class="m-doc">HandleUIMessage</a>(</span><span class="m-doc-wrap"><a href="class_u_t_f_win_1_1_i_window.html" class="m-doc">UTFWin::<wbr />IWindow</a>* pWindow,
+              const <a href="class_u_t_f_win_1_1_message.html" class="m-doc">UTFWin::<wbr />Message</a>&amp; message) -&gt; bool <span class="m-label m-flat m-warning">override</span></span>
+            </dt>
+            <dd>Method called every time a message is received on a window that has this IWinProc added.</dd>
             <dt id="a7f83eee02844e20b59c13dfe6ef2a46a">
               <span class="m-doc-wrap-bumper">auto <a href="#a7f83eee02844e20b59c13dfe6ef2a46a" class="m-doc-self">AddRef</a>(</span><span class="m-doc-wrap">) -&gt; int</span>
             </dt>
@@ -126,6 +131,38 @@
             </dt>
             <dd><span></span></dd>
           </dl>
+        </section>
+        <section>
+          <h2>Function documentation</h2>
+          <section class="m-doc-details" id="ae8ebaecc5b662edfb1052e857aa4e96b"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">bool Palettes::<wbr />StandardItemUI::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ae8ebaecc5b662edfb1052e857aa4e96b" class="m-doc-self">HandleUIMessage</a>(</span><span class="m-doc-wrap"><a href="class_u_t_f_win_1_1_i_window.html" class="m-doc">UTFWin::<wbr />IWindow</a>* pWindow,
+              const <a href="class_u_t_f_win_1_1_message.html" class="m-doc">UTFWin::<wbr />Message</a>&amp; message) <span class="m-label m-warning">override</span></span></span>
+            </h3>
+            <p>Method called every time a message is received on a window that has this IWinProc added.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">pWindow</td>
+                  <td>The window that received this message.</td>
+                </tr>
+                <tr>
+                  <td>message</td>
+                  <td>The message received.</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>Returns</th>
+                  <td>Whether the message was handled or not.</td>
+                </tr>
+              </tfoot>
+            </table>
+<p>This method is responsible of handling (or not) the message. This method receives the IWindow that is currently receiving the message; this way, the same IWinProc can be listening for more than one window. This method returns whether the message was handled or not; if it was handled, no other IWinProcs will be called on that window.</p>
+          </div></section>
         </section>
       </div>
     </div>

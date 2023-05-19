@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Simulator::Cell::cCellGFX class | Spore ModAPI SDK for creating C++ mods for Spore</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,600,600i%7CSource+Code+Pro:400,400i,600" />
+  <link rel="stylesheet" href="m-dark.css" />
+  <link rel="stylesheet" href="m-documentation.css" />
+  <link rel="icon" href="Spore_ModAPI_Icon.png" type="image/png" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#22272e" />
+</head>
+<body>
+<header><nav id="navigation">
+  <div class="m-container">
+    <div class="m-row">
+      <a href="index.html" id="m-navbar-brand" class="m-col-t-8 m-col-m-none m-left-m"><img src="Spore_ModAPI_Icon.png" />Spore ModAPI <span class="m-thin">SDK for creating C++ mods for Spore</span></a>
+      <div class="m-col-t-4 m-hide-m m-text-right m-nopadr">
+        <a href="#search" class="m-doc-search-icon" title="Search" onclick="return showSearch()"><svg style="height: 0.9rem;" viewBox="0 0 16 16">
+          <path id="m-doc-search-icon-path" d="m6 0c-3.31 0-6 2.69-6 6 0 3.31 2.69 6 6 6 1.49 0 2.85-0.541 3.89-1.44-0.0164 0.338 0.147 0.759 0.5 1.15l3.22 3.79c0.552 0.614 1.45 0.665 2 0.115 0.55-0.55 0.499-1.45-0.115-2l-3.79-3.22c-0.392-0.353-0.812-0.515-1.15-0.5 0.895-1.05 1.44-2.41 1.44-3.89 0-3.31-2.69-6-6-6zm0 1.56a4.44 4.44 0 0 1 4.44 4.44 4.44 4.44 0 0 1-4.44 4.44 4.44 4.44 0 0 1-4.44-4.44 4.44 4.44 0 0 1 4.44-4.44z"/>
+        </svg></a>
+        <a id="m-navbar-show" href="#navigation" title="Show navigation"></a>
+        <a id="m-navbar-hide" href="#" title="Hide navigation"></a>
+      </div>
+      <div id="m-navbar-collapse" class="m-col-t-12 m-show-m m-col-m-none m-right-m">
+        <div class="m-row">
+          <ol class="m-col-t-6 m-col-m-none">
+            <li><a href="pages.html">Tutorials</a></li>
+            <li><a href="namespaces.html">Namespaces</a></li>
+          </ol>
+          <ol class="m-col-t-6 m-col-m-none" start="3">
+            <li><a href="annotated.html">Classes</a></li>
+            <li><a href="files.html">Files</a></li>
+            <li class="m-show-m"><a href="#search" class="m-doc-search-icon" title="Search" onclick="return showSearch()"><svg style="height: 0.9rem;" viewBox="0 0 16 16">
+              <use href="#m-doc-search-icon-path" />
+            </svg></a></li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav></header>
+<main><article>
+  <div class="m-container m-container-inflatable">
+    <div class="m-row">
+      <div class="m-col-l-10 m-push-l-1">
+        <h1>
+          <span class="m-breadcrumb"><a href="namespace_simulator.html">Simulator</a>::<wbr/></span><span class="m-breadcrumb"><a href="namespace_simulator_1_1_cell.html">Cell</a>::<wbr/></span>cCellGFX <span class="m-thin">class</span>
+          <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="c_cell_g_f_x_8h.html">&lt;Spore/Simulator/Cell/cCellGFX.h&gt;</a></div>
+        </h1>
+        <p><span></span></p>
+        <div class="m-block m-default">
+          <h3>Contents</h3>
+          <ul>
+            <li>
+              Reference
+              <ul>
+                <li><a href="#pub-types">Public types</a></li>
+                <li><a href="#pub-static-methods">Public static functions</a></li>
+                <li><a href="#pub-methods">Public functions</a></li>
+                <li><a href="#pub-attribs">Public variables</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+        <section id="pub-types">
+          <h2><a href="#pub-types">Public types</a></h2>
+          <dl class="m-doc">
+            <dt id="a8758d9646b9c4ba71c733e1fef4161be">
+              <span class="m-doc-wrap-bumper">enum <a href="#a8758d9646b9c4ba71c733e1fef4161be" class="m-doc-self">WorldIDs</a> { </span><span class="m-doc-wrap"><a href="#a8758d9646b9c4ba71c733e1fef4161beabdcff4a947e34ec20098e4839a925489" class="m-doc">kCellLightingWorldID</a> = 0x4A4D97F,
+              <a href="#a8758d9646b9c4ba71c733e1fef4161bea494d880d609cbf674e8cd6cd641aaf2d" class="m-doc">kCellPreloadedModelWorldID</a> = 0x1010050,
+              <a href="#a8758d9646b9c4ba71c733e1fef4161bea493cf787bf9b7ac0d0ccb0879e56b298" class="m-doc">kCellPreloadedEffectWorldID</a> = 0x1010051,
+              <a href="#a8758d9646b9c4ba71c733e1fef4161beab9888e79c6c184b183738b7ca6469ebf" class="m-doc">kCellSkyboxEffectWorldID</a> = 0x1010000,
+              <a href="#a8758d9646b9c4ba71c733e1fef4161beaf1850fdbdb9a155a0c87eacfe95247fb" class="m-doc">kCellBackgroundEffectWorldID</a> = 0x1010011,
+              <a href="#a8758d9646b9c4ba71c733e1fef4161bea5e80c590c2c4ab63a6b182c5129fe425" class="m-doc">kCellBackgroundModelWorldID</a> = 0x1010010,
+              <a href="#a8758d9646b9c4ba71c733e1fef4161bea4fa32c937459249d99265c4a80e29780" class="m-doc">kCellBeachEffectWorldID</a> = 0x1010016,
+              <a href="#a8758d9646b9c4ba71c733e1fef4161bea637dfef55909a842ddce3992aeb4a589" class="m-doc">kCellBeachModelWorldID</a> = 0x1010015,
+              <a href="#a8758d9646b9c4ba71c733e1fef4161bea3eaf12cfd0b2013c98f670e5dc1ed418" class="m-doc">kCellEffectWorldID</a> = 0x1010021,
+              <a href="#a8758d9646b9c4ba71c733e1fef4161bea9005527d99f413d9fc0b70a58c4cb483" class="m-doc">kCellModelWorldID</a> = 0x1010020,
+              <a href="#a8758d9646b9c4ba71c733e1fef4161bea492130e22ab933ef3fe92f9525c74b73" class="m-doc">kCellForegroundEffectWorldID</a> = 0x1010031,
+              <a href="#a8758d9646b9c4ba71c733e1fef4161bea02aedb820fc640ec5801f6f23370f331" class="m-doc">kCellAnimWorldID</a> = 0x148A084 }</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a1fe31a2fb749e0146af40b5ce0ea4006">
+              using <a href="#a1fe31a2fb749e0146af40b5ce0ea4006" class="m-doc-self">IsPreloadedMap_t</a> = eastl::map&lt;<a href="struct_simulator_1_1_cell_1_1c_cell_data_reference__.html" class="m-doc">cCellDataReference_<wbr /></a>*, int&gt;
+            </dt>
+            <dd><span></span></dd>
+          </dl>
+        </section>
+        <section id="pub-static-methods">
+          <h2><a href="#pub-static-methods">Public static functions</a></h2>
+          <dl class="m-doc">
+            <dt id="aa617374ad7fb8720ead92671090b2e1a">
+              <span class="m-doc-wrap-bumper">static auto <a href="#aa617374ad7fb8720ead92671090b2e1a" class="m-doc-self">Get</a>(</span><span class="m-doc-wrap">) -&gt; <a href="class_simulator_1_1_cell_1_1c_cell_g_f_x.html" class="m-doc">cCellGFX</a>*</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a9405e6990bd8482532cd0186b8396447">
+              <span class="m-doc-wrap-bumper">static void <a href="#a9405e6990bd8482532cd0186b8396447" class="m-doc-self">PreloadResources</a>(</span><span class="m-doc-wrap">)</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a5faf5ff09ac22827f95957ba121071cc">
+              <span class="m-doc-wrap-bumper">static void <a href="#a5faf5ff09ac22827f95957ba121071cc" class="m-doc-self">PreloadCellResource</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1_cell_1_1c_cell_g_f_x.html#a1fe31a2fb749e0146af40b5ce0ea4006" class="m-doc">IsPreloadedMap_<wbr />t</a> preloadedMap,
+              <a href="struct_simulator_1_1_cell_1_1c_cell_data_reference.html" class="m-doc">cCellDataReference</a>&lt;<a href="struct_simulator_1_1_cell_1_1c_cell_cell_resource.html" class="m-doc">cCellCellResource</a>&gt;* resource)</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a45935ae52d0278783776409a4f86205b">
+              <span class="m-doc-wrap-bumper">static void <a href="#a45935ae52d0278783776409a4f86205b" class="m-doc-self">PreloadPopulateResource</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1_cell_1_1c_cell_g_f_x.html#a1fe31a2fb749e0146af40b5ce0ea4006" class="m-doc">IsPreloadedMap_<wbr />t</a> preloadedMap,
+              <a href="struct_simulator_1_1_cell_1_1c_cell_data_reference.html" class="m-doc">cCellDataReference</a>&lt;<a href="struct_simulator_1_1_cell_1_1c_cell_populate_resource.html" class="m-doc">cCellPopulateResource</a>&gt;* resource)</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a05553830032b9ba2df0aa2cfca0ac972">
+              <span class="m-doc-wrap-bumper">static void <a href="#a05553830032b9ba2df0aa2cfca0ac972" class="m-doc-self">PreloadLootTableResource</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1_cell_1_1c_cell_g_f_x.html#a1fe31a2fb749e0146af40b5ce0ea4006" class="m-doc">IsPreloadedMap_<wbr />t</a> preloadedMap,
+              <a href="struct_simulator_1_1_cell_1_1c_cell_data_reference.html" class="m-doc">cCellDataReference</a>&lt;<a href="struct_simulator_1_1_cell_1_1c_cell_loot_table_resource.html" class="m-doc">cCellLootTableResource</a>&gt;* resource)</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="ab8ca4101e6b6b46a27a000e6aba3d6a9">
+              <span class="m-doc-wrap-bumper">static void <a href="#ab8ca4101e6b6b46a27a000e6aba3d6a9" class="m-doc-self">PreloadCreature</a>(</span><span class="m-doc-wrap">uint32_t creatureID)</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="ac7ae4c107bdf1c74a137a145530dc447">
+              <span class="m-doc-wrap-bumper">static void <a href="#ac7ae4c107bdf1c74a137a145530dc447" class="m-doc-self">AddPreloadedEffect</a>(</span><span class="m-doc-wrap">uint32_t instanceID,
+              uint32_t groupID = 0)</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="ae22e27cd0e637ba8d7b9434f7580a358">
+              <span class="m-doc-wrap-bumper">static void <a href="#ae22e27cd0e637ba8d7b9434f7580a358" class="m-doc-self">AddPreloadedModel</a>(</span><span class="m-doc-wrap">uint32_t instanceID,
+              bool waitUntilLoaded)</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="aeee5f1d344074fc5b8871de9944ec30c">
+              <span class="m-doc-wrap-bumper">static void <a href="#aeee5f1d344074fc5b8871de9944ec30c" class="m-doc-self">Initialize</a>(</span><span class="m-doc-wrap">)</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="ae0057539a35ec7dab1e685df7cbe6d3d">
+              <span class="m-doc-wrap-bumper">static void <a href="#ae0057539a35ec7dab1e685df7cbe6d3d" class="m-doc-self">StartDisplay</a>(</span><span class="m-doc-wrap">)</span>
+            </dt>
+            <dd>Adds the renderer layers, sets as visible the effect and model worlds, sets as visible the <a href="namespace_u_i.html" class="m-doc">UI</a>, and starts playing the music.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">static void <a href="#a1eed6f441b0e77aebe0779350bdb32b0" class="m-doc">CreateEffect</a>(</span><span class="m-doc-wrap"><a href="class_swarm_1_1_i_effects_world.html" class="m-doc">Swarm::<wbr />IEffectsWorld</a>* effectsWorld,
+              uint32_t instanceID,
+              uint32_t groupID,
+              <a href="_i_visual_effect_8h.html#af513d4705ba3d0bdec5c20e45aee71fd" class="m-doc">IVisualEffectPtr</a>&amp; dst)</span>
+            </dt>
+            <dd>Creates an instance of an effect; if the effect cannot be loaded, &#x27;cell_bad_effect&#x27; is loaded instead.</dd>
+            <dt id="a1beecd1ca8d28b6ed7dbacb9cb805a6d">
+              <span class="m-doc-wrap-bumper">static void <a href="#a1beecd1ca8d28b6ed7dbacb9cb805a6d" class="m-doc-self">LoadEffectMap</a>(</span><span class="m-doc-wrap">)</span>
+            </dt>
+            <dd>Loads and places all the effects from the <a href="struct_simulator_1_1_cell_1_1c_cell_globals_resource.html#a78338d0c51bd545faf4e7d3aee7781bf" class="m-doc">cCellGlobalsResource::<wbr />effectMapEntry</a> effect map.</dd>
+          </dl>
+        </section>
+        <section id="pub-methods">
+          <h2><a href="#pub-methods">Public functions</a></h2>
+          <dl class="m-doc">
+            <dt id="af8bfd734f5023d38b0c797a05ba69ec4">
+              <span class="m-doc-wrap-bumper">void <a href="#af8bfd734f5023d38b0c797a05ba69ec4" class="m-doc-self">AddPreloadedTexture</a>(</span><span class="m-doc-wrap"><a href="class_graphics_1_1_texture.html" class="m-doc">Graphics::<wbr />Texture</a>* texture)</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a25b6920f89f504d801b08f3b2f930c63">
+              <span class="m-doc-wrap-bumper">void <a href="#a25b6920f89f504d801b08f3b2f930c63" class="m-doc-self">AddPreloadedModel2</a>(</span><span class="m-doc-wrap"><a href="class_graphics_1_1_model.html" class="m-doc">Graphics::<wbr />Model</a>* model)</span>
+            </dt>
+            <dd><span></span></dd>
+          </dl>
+        </section>
+        <section id="pub-attribs">
+          <h2><a href="#pub-attribs">Public variables</a></h2>
+          <dl class="m-doc">
+            <dt id="a7685c3ca964ebb937dccce6f0ac05314">
+              eastl::vector&lt;<a href="_model_8h.html#a4695930ef0d84e11d31379e623af5732" class="m-doc">ModelPtr</a>&gt; <a href="#a7685c3ca964ebb937dccce6f0ac05314" class="m-doc-self">mPreloadedModels</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a320a3b25a7f7d439f5af774601ab0e56">
+              eastl::vector&lt;<a href="_texture_8h.html#affea3369120131ed058702d2945a10b4" class="m-doc">TexturePtr</a>&gt; <a href="#a320a3b25a7f7d439f5af774601ab0e56" class="m-doc-self">mPreloadedTextures</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="abef9309ea7b320aedda78179438f3683">
+              eastl::vector&lt;<a href="class_anim_1_1_animated_creature.html" class="m-doc">Anim::<wbr />AnimatedCreature</a>*&gt; <a href="#abef9309ea7b320aedda78179438f3683" class="m-doc-self">mPreloadedCreatures</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="ac06aadb0935cd72a0e73dce6c465dfe3">
+              int <a href="#ac06aadb0935cd72a0e73dce6c465dfe3" class="m-doc-self">field_3C</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a1e71a716b2b70570f0767c939a6522df">
+              int <a href="#a1e71a716b2b70570f0767c939a6522df" class="m-doc-self">field_40</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a415b650a57fb3cee4f9ebda494f59789">
+              int <a href="#a415b650a57fb3cee4f9ebda494f59789" class="m-doc-self">field_44</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a5d97b6e9a6131ea6d1af0e63f73a2f9c">
+              int <a href="#a5d97b6e9a6131ea6d1af0e63f73a2f9c" class="m-doc-self">field_48</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a50e6a75563edb383b6aca0cf6fac5ea0">
+              int <a href="#a50e6a75563edb383b6aca0cf6fac5ea0" class="m-doc-self">field_4C</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a73468123295e01a00ed304207b9018b8">
+              <a href="_i_effects_world_8h.html#a68216f3c3fb8e63842f27d7b2a364b61" class="m-doc">IEffectsWorldPtr</a> <a href="#a73468123295e01a00ed304207b9018b8" class="m-doc-self">mpPreloadedEffectWorld</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a1e9da501047f3fdb1d22741ffdb338b9">
+              <a href="_i_model_world_8h.html#ac806a1f42e226576db417e69309943f5" class="m-doc">IModelWorldPtr</a> <a href="#a1e9da501047f3fdb1d22741ffdb338b9" class="m-doc-self">mpPreloadedModelWorld</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a9b06866205558ed7106e26e1bb9f8501">
+              <a href="_i_anim_world_8h.html#a9ff522673dfc4e748545440d74e45410" class="m-doc">IAnimWorldPtr</a> <a href="#a9b06866205558ed7106e26e1bb9f8501" class="m-doc-self">mpPreloadedAnimWorld</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a3737313a61a46bda37b43d66cf964e41">
+              <a href="_i_visual_effect_8h.html#af513d4705ba3d0bdec5c20e45aee71fd" class="m-doc">IVisualEffectPtr</a> <a href="#a3737313a61a46bda37b43d66cf964e41" class="m-doc-self">field_5C</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="aaae1642cc534cb3d91a1692e404c5842">
+              int <a href="#aaae1642cc534cb3d91a1692e404c5842" class="m-doc-self">field_15C</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="abc6d8cc7e5d0c95a4c01e68db81d4c10">
+              <a href="_i_visual_effect_8h.html#af513d4705ba3d0bdec5c20e45aee71fd" class="m-doc">IVisualEffectPtr</a> <a href="#abc6d8cc7e5d0c95a4c01e68db81d4c10" class="m-doc-self">mpDoFDistortEffect</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a5de5b8ec22e5aac3a231c36351537705">
+              int <a href="#a5de5b8ec22e5aac3a231c36351537705" class="m-doc-self">field_164</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a424b7076a7a03742fbda763368ac4320">
+              <a href="class_simulator_1_1c_object_pool.html" class="m-doc">cObjectPool</a> <a href="#a424b7076a7a03742fbda763368ac4320" class="m-doc-self">field_168</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a1d67a06ef306882667b21e6334fee2c2">
+              eastl::fixed_vector&lt;int, 22528&gt; <a href="#a1d67a06ef306882667b21e6334fee2c2" class="m-doc-self">field_184</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="af5bd5fdecc230aa8758234a173126959">
+              int <a href="#af5bd5fdecc230aa8758234a173126959" class="m-doc-self">field_1619C</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="ad9f36b572216f30693b8bc0244954705">
+              <a href="_i_lighting_world_8h.html#a8c8bd51c9f04e4c39accaa196c0cac41" class="m-doc">ILightingWorldPtr</a> <a href="#ad9f36b572216f30693b8bc0244954705" class="m-doc-self">mpLightingWorld</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="adad2af8aef222e44f7cad62f72aea684">
+              int <a href="#adad2af8aef222e44f7cad62f72aea684" class="m-doc-self">field_161A4</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a17f1bdf8ae018dbf58def5a217cd802f">
+              <a href="_i_model_world_8h.html#ac806a1f42e226576db417e69309943f5" class="m-doc">IModelWorldPtr</a> <a href="#a17f1bdf8ae018dbf58def5a217cd802f" class="m-doc-self">mpBeachModelWorld</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a81241bbeb457498cc5b6b891820f2fec">
+              <a href="_i_effects_world_8h.html#a68216f3c3fb8e63842f27d7b2a364b61" class="m-doc">IEffectsWorldPtr</a> <a href="#a81241bbeb457498cc5b6b891820f2fec" class="m-doc-self">mpBeachEffectWorld</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="aa65b62104cf815ef1d95ceb0f413fd98">
+              int <a href="#aa65b62104cf815ef1d95ceb0f413fd98" class="m-doc-self">field_161B0</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="ad8bc261df8900228db28ba8c057a5b1b">
+              <a href="_i_effects_world_8h.html#a68216f3c3fb8e63842f27d7b2a364b61" class="m-doc">IEffectsWorldPtr</a> <a href="#ad8bc261df8900228db28ba8c057a5b1b" class="m-doc-self">mpSkyboxEffectWorld</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a679a3d653e555747da2ad6dfa494fcad">
+              int <a href="#a679a3d653e555747da2ad6dfa494fcad" class="m-doc-self">field_161B8</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a3fc605c0ae5f877b2e5ed9f3862e1dca">
+              <a href="_i_effects_world_8h.html#a68216f3c3fb8e63842f27d7b2a364b61" class="m-doc">IEffectsWorldPtr</a> <a href="#a3fc605c0ae5f877b2e5ed9f3862e1dca" class="m-doc-self">mpBackgroundEffectWorld</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a6623810ef8846d692d182fe636fb85a2">
+              <a href="_i_model_world_8h.html#ac806a1f42e226576db417e69309943f5" class="m-doc">IModelWorldPtr</a> <a href="#a6623810ef8846d692d182fe636fb85a2" class="m-doc-self">mpBackgroundModelWorld</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="af0a30f2ddd4d1764902de2d827646c5c">
+              <a href="_i_anim_world_8h.html#a9ff522673dfc4e748545440d74e45410" class="m-doc">IAnimWorldPtr</a> <a href="#af0a30f2ddd4d1764902de2d827646c5c" class="m-doc-self">mpBackgroundAnimWorld</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a1775cd2050dd35c708de87fe987063fe">
+              <a href="_i_effects_world_8h.html#a68216f3c3fb8e63842f27d7b2a364b61" class="m-doc">IEffectsWorldPtr</a> <a href="#a1775cd2050dd35c708de87fe987063fe" class="m-doc-self">mpEffectWorld</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="aeaf65dcc2b8128e2f1fdbc25531528fb">
+              <a href="_i_model_world_8h.html#ac806a1f42e226576db417e69309943f5" class="m-doc">IModelWorldPtr</a> <a href="#aeaf65dcc2b8128e2f1fdbc25531528fb" class="m-doc-self">mpModelWorld</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a5ab3f38f45c66d9b3b24fdeaa0600dee">
+              <a href="_i_anim_world_8h.html#a9ff522673dfc4e748545440d74e45410" class="m-doc">IAnimWorldPtr</a> <a href="#a5ab3f38f45c66d9b3b24fdeaa0600dee" class="m-doc-self">mpAnimWorld</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a5edcf829a8c276d6c294074aa8647e26">
+              <a href="_i_effects_world_8h.html#a68216f3c3fb8e63842f27d7b2a364b61" class="m-doc">IEffectsWorldPtr</a> <a href="#a5edcf829a8c276d6c294074aa8647e26" class="m-doc-self">mpForegroundEffectWorld</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="abf013dc66631e3bcfc9b7c8396bad333">
+              int <a href="#abf013dc66631e3bcfc9b7c8396bad333" class="m-doc-self">field_161D8</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="abbd6a90565a33f60a6a1c4169ef3d24a">
+              int <a href="#abbd6a90565a33f60a6a1c4169ef3d24a" class="m-doc-self">field_161DC</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a2ce25309b9ba0c2d2f845134eb84a1fc">
+              int <a href="#a2ce25309b9ba0c2d2f845134eb84a1fc" class="m-doc-self">field_161E0</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a0d2fb5e14c51972d6027045d4ded21be">
+              int <a href="#a0d2fb5e14c51972d6027045d4ded21be" class="m-doc-self">field_161E4</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="af096252f5234777b2d4fab49f50db13d">
+              char <a href="#af096252f5234777b2d4fab49f50db13d" class="m-doc-self">padding_161E8</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a996dbb39b53c5b9ced9e4321448ede3a">
+              <a href="namespace_audio.html#a5572380a651053d0fc3e4b7b0b5cd468" class="m-doc">Audio::<wbr />AudioTrack</a> <a href="#a996dbb39b53c5b9ced9e4321448ede3a" class="m-doc-self">mCellMotionAudioTrack</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a74671ad5da8405cb8bf9f28000f61ee7">
+              <a href="namespace_audio.html#a5572380a651053d0fc3e4b7b0b5cd468" class="m-doc">Audio::<wbr />AudioTrack</a> <a href="#a74671ad5da8405cb8bf9f28000f61ee7" class="m-doc-self">mCellgameSeedMusicAudioTrack</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a1249b54db945a2681ddc2b0ec694d71c">
+              <a href="namespace_audio.html#a5572380a651053d0fc3e4b7b0b5cd468" class="m-doc">Audio::<wbr />AudioTrack</a> <a href="#a1249b54db945a2681ddc2b0ec694d71c" class="m-doc-self">mCellAmbAudioTrack</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="abef705786cd660d4ebb8f3fe9947b71b">
+              char <a href="#abef705786cd660d4ebb8f3fe9947b71b" class="m-doc-self">padding_16214</a>
+            </dt>
+            <dd><span></span></dd>
+          </dl>
+        </section>
+        <section>
+          <h2>Function documentation</h2>
+          <section class="m-doc-details" id="a1eed6f441b0e77aebe0779350bdb32b0"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">static void Simulator::<wbr />Cell::<wbr />cCellGFX::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a1eed6f441b0e77aebe0779350bdb32b0" class="m-doc-self">CreateEffect</a>(</span><span class="m-doc-wrap"><a href="class_swarm_1_1_i_effects_world.html" class="m-doc">Swarm::<wbr />IEffectsWorld</a>* effectsWorld,
+              uint32_t instanceID,
+              uint32_t groupID,
+              <a href="_i_visual_effect_8h.html#af513d4705ba3d0bdec5c20e45aee71fd" class="m-doc">IVisualEffectPtr</a>&amp; dst)</span></span>
+            </h3>
+            <p>Creates an instance of an effect; if the effect cannot be loaded, &#x27;cell_bad_effect&#x27; is loaded instead.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">effectsWorld</td>
+                  <td>The effects world where the effect will be instantiated</td>
+                </tr>
+                <tr>
+                  <td>instanceID</td>
+                  <td>ID of the effect</td>
+                </tr>
+                <tr>
+                  <td>groupID</td>
+                  <td>Ignored</td>
+                </tr>
+                <tr>
+                  <td>dst</td>
+                  <td><br /></td>
+                </tr>
+              </tbody>
+            </table>
+          </div></section>
+        </section>
+      </div>
+    </div>
+  </div>
+</article></main>
+<div class="m-doc-search" id="search">
+  <a href="#!" onclick="return hideSearch()"></a>
+  <div class="m-container">
+    <div class="m-row">
+      <div class="m-col-m-8 m-push-m-2">
+        <div class="m-doc-search-header m-text m-small">
+          <div><span class="m-label m-default">Tab</span> / <span class="m-label m-default">T</span> to search, <span class="m-label m-default">Esc</span> to close</div>
+          <div id="search-symbolcount">&hellip;</div>
+        </div>
+        <div class="m-doc-search-content">
+          <form>
+            <input type="search" name="q" id="search-input" placeholder="Loading &hellip;" disabled="disabled" autofocus="autofocus" autocomplete="off" spellcheck="false" />
+          </form>
+          <noscript class="m-text m-danger m-text-center">Unlike everything else in the docs, the search functionality <em>requires</em> JavaScript.</noscript>
+          <div id="search-help" class="m-text m-dim m-text-center">
+            <p class="m-noindent">Search for symbols, directories, files, pages or
+            modules. You can omit any prefix from the symbol or file path; adding a
+            <code>:</code> or <code>/</code> suffix lists all members of given symbol or
+            directory.</p>
+            <p class="m-noindent">Use <span class="m-label m-dim">&darr;</span>
+            / <span class="m-label m-dim">&uarr;</span> to navigate through the list,
+            <span class="m-label m-dim">Enter</span> to go.
+            <span class="m-label m-dim">Tab</span> autocompletes common prefix, you can
+            copy a link to the result using <span class="m-label m-dim">⌘</span>
+            <span class="m-label m-dim">L</span> while <span class="m-label m-dim">⌘</span>
+            <span class="m-label m-dim">M</span> produces a Markdown link.</p>
+          </div>
+          <div id="search-notfound" class="m-text m-warning m-text-center">Sorry, nothing was found.</div>
+          <ul id="search-results"></ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="search-v1.js"></script>
+<script src="searchdata-v1.js" async="async"></script>
+<footer><nav>
+  <div class="m-container">
+    <div class="m-row">
+      <div class="m-col-l-10 m-push-l-1">
+        <p>Spore ModAPI SDK for creating C++ mods for Spore. Created with <a href="https://doxygen.org/">Doxygen</a> 1.8.16 and <a href="https://mcss.mosra.cz/">m.css</a>.</p>
+      </div>
+    </div>
+  </div>
+</nav></footer>
+</body>
+</html>

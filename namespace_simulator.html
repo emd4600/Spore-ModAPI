@@ -66,8 +66,10 @@
         <section id="namespaces">
           <h2><a href="#namespaces">Namespaces</a></h2>
           <dl class="m-doc">
-            <dt>namespace <a href="namespace_simulator_1_1_cell.html" class="m-doc">Cell</a></dt>
+            <dt>namespace <a href="namespace_simulator_1_1_a_i.html" class="m-doc">AI</a></dt>
             <dd><span></span></dd>
+            <dt>namespace <a href="namespace_simulator_1_1_cell.html" class="m-doc">Cell</a></dt>
+            <dd><a href="namespace_simulator_1_1_cell.html" class="m-doc">Cell</a> stage functionality.</dd>
             <dt>namespace <a href="namespace_simulator_1_1_scenario_input_strategy.html" class="m-doc">ScenarioInputStrategy</a></dt>
             <dd><span></span></dd>
             <dt>namespace <a href="namespace_simulator_1_1_serialization_types.html" class="m-doc">SerializationTypes</a></dt>
@@ -96,6 +98,10 @@
             </dt>
             <dd><span></span></dd>
             <dt>
+              struct <a href="struct_simulator_1_1c_ability_u_i_map.html" class="m-doc">cAbilityUIMap</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
               class <a href="class_simulator_1_1c_animal_cargo_info.html" class="m-doc">cAnimalCargoInfo</a>
             </dt>
             <dd><span></span></dd>
@@ -109,6 +115,10 @@
             <dd><span></span></dd>
             <dt>
               class <a href="class_simulator_1_1c_badge_manager.html" class="m-doc">cBadgeManager</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              class <a href="class_simulator_1_1c_base_display_strategy.html" class="m-doc">cBaseDisplayStrategy</a>
             </dt>
             <dd><span></span></dd>
             <dt>
@@ -233,6 +243,14 @@
             <dd>The base class for all creatures in the <a href="namespace_simulator.html" class="m-doc">Simulator</a>.</dd>
             <dt>
               class <a href="class_simulator_1_1c_creature_citizen.html" class="m-doc">cCreatureCitizen</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              class <a href="class_simulator_1_1c_creature_display_strategy.html" class="m-doc">cCreatureDisplayStrategy</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              class <a href="class_simulator_1_1c_creature_game_data.html" class="m-doc">cCreatureGameData</a>
             </dt>
             <dd><span></span></dd>
             <dt>
@@ -468,6 +486,14 @@
             </dt>
             <dd><span></span></dd>
             <dt>
+              class <a href="class_simulator_1_1c_object_pool.html" class="m-doc">cObjectPool</a>
+            </dt>
+            <dd>Stores a pool of objects whose memory can be reused efficiently, without need for heap allocations.</dd>
+            <dt>
+              struct <a href="struct_simulator_1_1c_object_pool_class.html" class="m-doc">cObjectPoolClass</a>
+            </dt>
+            <dd>Base class for all objects that are used inside a <a href="class_simulator_1_1c_object_pool.html" class="m-doc">cObjectPool</a>.</dd>
+            <dt>
               class <a href="class_simulator_1_1_combatant_killed_message.html" class="m-doc">CombatantKilledMessage</a>
             </dt>
             <dd>Called when a <a href="class_simulator_1_1c_combatant.html" class="m-doc">cCombatant</a> is killed.</dd>
@@ -665,10 +691,6 @@
             <dd><span></span></dd>
             <dt>
               class <a href="class_simulator_1_1c_sim_planet_high_l_o_d.html" class="m-doc">cSimPlanetHighLOD</a>
-            </dt>
-            <dd><span></span></dd>
-            <dt>
-              class <a href="class_simulator_1_1c_sim_planet_low_l_o_d.html" class="m-doc">cSimPlanetLowLOD</a>
             </dt>
             <dd><span></span></dd>
             <dt>
@@ -1570,7 +1592,7 @@
               <span class="m-doc-wrap-bumper">enum class <a href="#a47f6e1218df34ba12db8ee6946791524" class="m-doc">TimeManagerPause</a> { </span><span class="m-doc-wrap"><a href="#a47f6e1218df34ba12db8ee6946791524adb8abbeda4df662c3ca505163d2d2770" class="m-doc">CinematicAll</a> = 0x600C4AE,
               <a href="#a47f6e1218df34ba12db8ee6946791524a8fce77fd86da3af309c0ad415d8d7952" class="m-doc">Cinematic</a> = 0x4BF38A5,
               <a href="#a47f6e1218df34ba12db8ee6946791524a368fe771261fcb18f7988833c9294a20" class="m-doc">Tutorial</a> = 0x64BEB65,
-              <a href="#a47f6e1218df34ba12db8ee6946791524a344a7f427fb765610ef96eb7bce95257" class="m-doc">Editor</a> = 0x4BF38A6,
+              <a href="#a47f6e1218df34ba12db8ee6946791524a4e90dd0a470e10f6277a557bd04c2d2a" class="m-doc">Editor_</a> = 0x4BF38A6,
               <a href="#a47f6e1218df34ba12db8ee6946791524a93f4f96d7a09885a12208cba1386fc11" class="m-doc">CommScreen</a> = 0x4D02E35,
               <a href="#a47f6e1218df34ba12db8ee6946791524a98446fa38cb1ae7d8c94c346f628dd94" class="m-doc">AdventureDialog</a> = 0x7E9E4B7,
               <a href="#a47f6e1218df34ba12db8ee6946791524aab9cb8aba5e36e02a72894e443ab0d65" class="m-doc">UserToggle</a> = 0x4BF38A8,
@@ -1584,6 +1606,10 @@
         <section id="typedef-members">
           <h2><a href="#typedef-members">Typedefs</a></h2>
           <dl class="m-doc">
+            <dt>
+              using <a href="#ab12c1aef8e3dbcd4556eb52a3460aac6" class="m-doc">cObjectPoolIndex</a> = int
+            </dt>
+            <dd>Identifies objects within a <a href="class_simulator_1_1c_object_pool.html" class="m-doc">cObjectPool</a>.</dd>
             <dt>
               using <a href="#a8f01bb3581881680c1d803b6a0e5ca88" class="m-doc">TimeStamp</a> = int[9]
             </dt>
@@ -1683,6 +1709,15 @@
             </dt>
             <dd><span></span></dd>
             <dt>
+              <span class="m-doc-wrap-bumper"><a href="#a28fed825f038b4de371729aca4edc387" class="m-doc">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="struct_simulator_1_1c_ability_u_i_map.html" class="m-doc">cAbilityUIMap</a>,
+              0xD8)</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a61aa33a19941dbf91438ad9b23f99992" class="m-doc">Addresses</a>(</span><span class="m-doc-wrap"><a href="struct_simulator_1_1c_ability_u_i_map.html" class="m-doc">cAbilityUIMap</a>) -&gt; namespace</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
               <span class="m-doc-wrap-bumper"><a href="#a92c75cb51fdacf41102d2132c07bca11" class="m-doc">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_animal_cargo_info.html" class="m-doc">cAnimalCargoInfo</a>,
               0x80)</span>
             </dt>
@@ -1698,6 +1733,11 @@
             <dd><span></span></dd>
             <dt>
               <span class="m-doc-wrap-bumper">auto <a href="#a8e69da82bd266475264449df81614afa" class="m-doc">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_badge_manager.html" class="m-doc">cBadgeManager</a>) -&gt; namespace</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper"><a href="#a7dbc0d78dcc0d31a2ad8b7ce08c8cb2d" class="m-doc">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_base_display_strategy.html" class="m-doc">cBaseDisplayStrategy</a>,
+              0x38)</span>
             </dt>
             <dd><span></span></dd>
             <dt>
@@ -1862,6 +1902,20 @@
             <dt>
               <span class="m-doc-wrap-bumper"><a href="#a2740e55a47925efb584c9af88cf978ac" class="m-doc">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_creature_citizen.html" class="m-doc">cCreatureCitizen</a>,
               0x1038)</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper"><a href="#a537423b0bbe92c620b36e8a06b1dbed3" class="m-doc">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_creature_display_strategy.html" class="m-doc">cCreatureDisplayStrategy</a>,
+              0x320)</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper"><a href="#ace377bed596afed06f9b576b7bf4de74" class="m-doc">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_creature_game_data.html" class="m-doc">cCreatureGameData</a>,
+              0x50)</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#aabee18ddd79560128a054c6449476f76" class="m-doc">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_creature_game_data.html" class="m-doc">cCreatureGameData</a>) -&gt; namespace</span>
             </dt>
             <dd><span></span></dd>
             <dt>
@@ -2080,6 +2134,15 @@
             <dt>
               <span class="m-doc-wrap-bumper"><a href="#a9e1f1597acb17ca7d7edb318d6959f99" class="m-doc">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_object_instance_inventory_item.html" class="m-doc">cObjectInstanceInventoryItem</a>,
               0x80)</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper"><a href="#a0c0ece7fddcfdb3a96e2158fd9c5bfd4" class="m-doc">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_object_pool.html" class="m-doc">cObjectPool</a>,
+              0x1C)</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#af635486d145db54816c9d308bf9e8e95" class="m-doc">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_object_pool.html" class="m-doc">cObjectPool</a>) -&gt; namespace</span>
             </dt>
             <dd><span></span></dd>
             <dt>
@@ -3789,7 +3852,7 @@
                   </td>
                 </tr>
                 <tr>
-                  <td><a href="#a47f6e1218df34ba12db8ee6946791524a344a7f427fb765610ef96eb7bce95257" class="m-doc-self" id="a47f6e1218df34ba12db8ee6946791524a344a7f427fb765610ef96eb7bce95257">Editor</a></td>
+                  <td><a href="#a47f6e1218df34ba12db8ee6946791524a4e90dd0a470e10f6277a557bd04c2d2a" class="m-doc-self" id="a47f6e1218df34ba12db8ee6946791524a4e90dd0a470e10f6277a557bd04c2d2a">Editor_</a></td>
                   <td>
                   <p>Pauses game, not effects nor audio.</p>
                   </td>
@@ -3836,6 +3899,13 @@
         </section>
         <section>
           <h2>Typedef documentation</h2>
+          <section class="m-doc-details" id="ab12c1aef8e3dbcd4556eb52a3460aac6"><div>
+            <h3>
+              typedef int Simulator::<wbr /><a href="#ab12c1aef8e3dbcd4556eb52a3460aac6" class="m-doc-self">cObjectPoolIndex</a>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="c_object_pool_8h.html">&lt;Spore/Simulator/cObjectPool.h&gt;</a></div>
+            </h3>
+            <p>Identifies objects within a <a href="class_simulator_1_1c_object_pool.html" class="m-doc">cObjectPool</a>.</p>
+          </div></section>
           <section class="m-doc-details" id="a8f01bb3581881680c1d803b6a0e5ca88"><div>
             <h3>
               typedef intSimulator::<wbr /><a href="#a8f01bb3581881680c1d803b6a0e5ca88" class="m-doc-self">TimeStamp</a>[9]
@@ -4088,6 +4158,21 @@
             </h3>
             <p><span></span></p>
           </div></section>
+          <section class="m-doc-details" id="a28fed825f038b4de371729aca4edc387"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"> Simulator::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a28fed825f038b4de371729aca4edc387" class="m-doc-self">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="struct_simulator_1_1c_ability_u_i_map.html" class="m-doc">cAbilityUIMap</a>,
+              0xD8)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="c_ability_u_i_map_8h.html">&lt;Spore/Simulator/cAbilityUIMap.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="a61aa33a19941dbf91438ad9b23f99992"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">namespace Simulator::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a61aa33a19941dbf91438ad9b23f99992" class="m-doc-self">Addresses</a>(</span><span class="m-doc-wrap"><a href="struct_simulator_1_1c_ability_u_i_map.html" class="m-doc">cAbilityUIMap</a>)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="c_ability_u_i_map_8h.html">&lt;Spore/Simulator/cAbilityUIMap.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
           <section class="m-doc-details" id="a92c75cb51fdacf41102d2132c07bca11"><div>
             <h3>
               <span class="m-doc-wrap-bumper"> Simulator::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a92c75cb51fdacf41102d2132c07bca11" class="m-doc-self">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_animal_cargo_info.html" class="m-doc">cAnimalCargoInfo</a>,
@@ -4115,6 +4200,14 @@
             <h3>
               <span class="m-doc-wrap-bumper">namespace Simulator::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a8e69da82bd266475264449df81614afa" class="m-doc-self">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_badge_manager.html" class="m-doc">cBadgeManager</a>)</span></span>
               <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="c_badge_manager_8h.html">&lt;Spore/Simulator/cBadgeManager.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="a7dbc0d78dcc0d31a2ad8b7ce08c8cb2d"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"> Simulator::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a7dbc0d78dcc0d31a2ad8b7ce08c8cb2d" class="m-doc-self">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_base_display_strategy.html" class="m-doc">cBaseDisplayStrategy</a>,
+              0x38)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="c_base_display_strategy_8h.html">&lt;Spore/Simulator/cBaseDisplayStrategy.h&gt;</a></div>
             </h3>
             <p><span></span></p>
           </div></section>
@@ -4384,6 +4477,29 @@
             </h3>
             <p><span></span></p>
           </div></section>
+          <section class="m-doc-details" id="a537423b0bbe92c620b36e8a06b1dbed3"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"> Simulator::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a537423b0bbe92c620b36e8a06b1dbed3" class="m-doc-self">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_creature_display_strategy.html" class="m-doc">cCreatureDisplayStrategy</a>,
+              0x320)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="c_creature_display_strategy_8h.html">&lt;Spore/Simulator/cCreatureDisplayStrategy.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="ace377bed596afed06f9b576b7bf4de74"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"> Simulator::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ace377bed596afed06f9b576b7bf4de74" class="m-doc-self">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_creature_game_data.html" class="m-doc">cCreatureGameData</a>,
+              0x50)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="c_creature_game_data_8h.html">&lt;Spore/Simulator/cCreatureGameData.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="aabee18ddd79560128a054c6449476f76"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">namespace Simulator::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#aabee18ddd79560128a054c6449476f76" class="m-doc-self">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_creature_game_data.html" class="m-doc">cCreatureGameData</a>)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="c_creature_game_data_8h.html">&lt;Spore/Simulator/cCreatureGameData.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
           <section class="m-doc-details" id="a9075feac0cc4d8a6b3cb292f421b14e7"><div>
             <h3>
               <span class="m-doc-wrap-bumper">namespace Simulator::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a9075feac0cc4d8a6b3cb292f421b14e7" class="m-doc-self">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_crop_circles_tool_strategy.html" class="m-doc">cCropCirclesToolStrategy</a>)</span></span>
@@ -4460,7 +4576,7 @@
           <section class="m-doc-details" id="a00c715242e7ff3b6eaa1e43fa3326aac"><div>
             <h3>
               <span class="m-doc-wrap-bumper">namespace Simulator::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a00c715242e7ff3b6eaa1e43fa3326aac" class="m-doc-self">Addresses</a>(</span><span class="m-doc-wrap">Cell)</span></span>
-              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_game_mode_cell_8h.html">&lt;Spore/Simulator/Cell/GameModeCell.h&gt;</a></div>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="c_cell_game_8h.html">&lt;Spore/Simulator/Cell/cCellGame.h&gt;</a></div>
             </h3>
             <p><span></span></p>
           </div></section>
@@ -4758,6 +4874,21 @@
               <span class="m-doc-wrap-bumper"> Simulator::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a9e1f1597acb17ca7d7edb318d6959f99" class="m-doc-self">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_object_instance_inventory_item.html" class="m-doc">cObjectInstanceInventoryItem</a>,
               0x80)</span></span>
               <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="c_object_instance_inventory_item_8h.html">&lt;Spore/Simulator/cObjectInstanceInventoryItem.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="a0c0ece7fddcfdb3a96e2158fd9c5bfd4"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"> Simulator::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a0c0ece7fddcfdb3a96e2158fd9c5bfd4" class="m-doc-self">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_object_pool.html" class="m-doc">cObjectPool</a>,
+              0x1C)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="c_object_pool_8h.html">&lt;Spore/Simulator/cObjectPool.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="af635486d145db54816c9d308bf9e8e95"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">namespace Simulator::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#af635486d145db54816c9d308bf9e8e95" class="m-doc-self">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_object_pool.html" class="m-doc">cObjectPool</a>)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="c_object_pool_8h.html">&lt;Spore/Simulator/cObjectPool.h&gt;</a></div>
             </h3>
             <p><span></span></p>
           </div></section>

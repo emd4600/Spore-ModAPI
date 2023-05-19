@@ -91,22 +91,22 @@
           <h2><a href="#pub-methods">Public functions</a></h2>
           <dl class="m-doc">
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#ad18695a902dbd1947a1200bd408a276b" class="m-doc">Alloc</a>(</span><span class="m-doc-wrap">size_t size,
+              <span class="m-doc-wrap-bumper">auto <a href="#aee932169d6d0f6e01e67dee27a8b8aa6" class="m-doc">Alloc</a>(</span><span class="m-doc-wrap">size_t size,
               const char* name,
-              unsigned int flags) -&gt; void* <span class="m-label m-flat m-warning">virtual</span></span>
+              unsigned int flags) -&gt; void* <span class="m-label m-flat m-warning">override</span></span>
             </dt>
             <dd></dd>
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#a117e4ceb400144c01815e7da8fa0e034" class="m-doc">Alloc</a>(</span><span class="m-doc-wrap">size_t size,
+              <span class="m-doc-wrap-bumper">auto <a href="#ae62cae3c70a7a229fc9e1bed963a4309" class="m-doc">Alloc</a>(</span><span class="m-doc-wrap">size_t size,
               const char* name,
               unsigned int flags,
               unsigned int align,
-              unsigned int alignOffset = 0) -&gt; void* <span class="m-label m-flat m-warning">virtual</span></span>
+              unsigned int alignOffset = 0) -&gt; void* <span class="m-label m-flat m-warning">override</span></span>
             </dt>
             <dd></dd>
             <dt>
-              <span class="m-doc-wrap-bumper">void <a href="#a6144a5dc91c4c2a3426d46d8b1eb82df" class="m-doc">Free</a>(</span><span class="m-doc-wrap">void* block,
-              size_t size = 0) <span class="m-label m-flat m-warning">virtual</span></span>
+              <span class="m-doc-wrap-bumper">void <a href="#a8a6381efd7e5f7aea54d2523f880cda4" class="m-doc">Free</a>(</span><span class="m-doc-wrap">void* block,
+              size_t size = 0) <span class="m-label m-flat m-warning">override</span></span>
             </dt>
             <dd></dd>
           </dl>
@@ -146,11 +146,11 @@
         </section>
         <section>
           <h2>Function documentation</h2>
-          <section class="m-doc-details" id="ad18695a902dbd1947a1200bd408a276b"><div>
+          <section class="m-doc-details" id="aee932169d6d0f6e01e67dee27a8b8aa6"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">void* FixedPoolAllocator::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ad18695a902dbd1947a1200bd408a276b" class="m-doc-self">Alloc</a>(</span><span class="m-doc-wrap">size_t size,
+              <span class="m-doc-wrap-bumper">void* FixedPoolAllocator::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#aee932169d6d0f6e01e67dee27a8b8aa6" class="m-doc-self">Alloc</a>(</span><span class="m-doc-wrap">size_t size,
               const char* name,
-              unsigned int flags) <span class="m-label m-warning">virtual</span></span></span>
+              unsigned int flags) <span class="m-label m-warning">override</span></span></span>
             </h3>
             <table class="m-table m-fullwidth m-flat">
               <thead>
@@ -177,15 +177,15 @@
                 </tr>
               </tfoot>
             </table>
-<aside class="m-note m-default"><h4>Remark</h4><p>The <a href="class_i_core_allocator.html#a857a1d18ed42271390c98cc0d54e592f" class="m-doc">ICoreAllocator::<wbr />Alloc</a> function allocates a memory block of at least size bytes. Depending on the implementation, the block may be larger than size bytes because of space required for alignment and maintenance information. The &#x27;name&#x27; parameter is not guaranteed to be used by the implementation and is very likely to be ignored in a release build. Use the aligned version of Alloc if you want to get a memory block aligned to a particular power-of-2 boundary.</p></aside><aside class="m-note m-default"><h4>Requirements:</h4><p>header: icoreallocator/icoreallocator_interface.h<br /></p></aside><aside class="m-note m-default"><h4>See also</h4><p><a href="class_fixed_pool_allocator.html#a6144a5dc91c4c2a3426d46d8b1eb82df" class="m-doc">Free</a></p></aside>
+<aside class="m-note m-default"><h4>Remark</h4><p>The <a href="class_i_core_allocator.html#a857a1d18ed42271390c98cc0d54e592f" class="m-doc">ICoreAllocator::<wbr />Alloc</a> function allocates a memory block of at least size bytes. Depending on the implementation, the block may be larger than size bytes because of space required for alignment and maintenance information. The &#x27;name&#x27; parameter is not guaranteed to be used by the implementation and is very likely to be ignored in a release build. Use the aligned version of Alloc if you want to get a memory block aligned to a particular power-of-2 boundary.</p></aside><aside class="m-note m-default"><h4>Requirements:</h4><p>header: icoreallocator/icoreallocator_interface.h<br /></p></aside><aside class="m-note m-default"><h4>See also</h4><p><a href="class_fixed_pool_allocator.html#a8a6381efd7e5f7aea54d2523f880cda4" class="m-doc">Free</a></p></aside>
           </div></section>
-          <section class="m-doc-details" id="a117e4ceb400144c01815e7da8fa0e034"><div>
+          <section class="m-doc-details" id="ae62cae3c70a7a229fc9e1bed963a4309"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">void* FixedPoolAllocator::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a117e4ceb400144c01815e7da8fa0e034" class="m-doc-self">Alloc</a>(</span><span class="m-doc-wrap">size_t size,
+              <span class="m-doc-wrap-bumper">void* FixedPoolAllocator::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ae62cae3c70a7a229fc9e1bed963a4309" class="m-doc-self">Alloc</a>(</span><span class="m-doc-wrap">size_t size,
               const char* name,
               unsigned int flags,
               unsigned int align,
-              unsigned int alignOffset = 0) <span class="m-label m-warning">virtual</span></span></span>
+              unsigned int alignOffset = 0) <span class="m-label m-warning">override</span></span></span>
             </h3>
             <table class="m-table m-fullwidth m-flat">
               <thead>
@@ -220,12 +220,12 @@
                 </tr>
               </tfoot>
             </table>
-<aside class="m-note m-default"><h4>Remark</h4><p>This function is the same as <a href="class_fixed_pool_allocator.html#ad18695a902dbd1947a1200bd408a276b" class="m-doc">Alloc(size_<wbr />t, const char *, unsigned int)</a>, but allows for a block to aligned to a specified power-of-2 boundary.</p></aside><aside class="m-note m-default"><h4>Requirements:</h4><p>header: icoreallocator/icoreallocator_interface.h<br /></p></aside><aside class="m-note m-default"><h4>See also</h4><p><a href="class_fixed_pool_allocator.html#a6144a5dc91c4c2a3426d46d8b1eb82df" class="m-doc">Free</a></p></aside>
+<aside class="m-note m-default"><h4>Remark</h4><p>This function is the same as <a href="class_fixed_pool_allocator.html#aee932169d6d0f6e01e67dee27a8b8aa6" class="m-doc">Alloc(size_<wbr />t, const char *, unsigned int)</a>, but allows for a block to aligned to a specified power-of-2 boundary.</p></aside><aside class="m-note m-default"><h4>Requirements:</h4><p>header: icoreallocator/icoreallocator_interface.h<br /></p></aside><aside class="m-note m-default"><h4>See also</h4><p><a href="class_fixed_pool_allocator.html#a8a6381efd7e5f7aea54d2523f880cda4" class="m-doc">Free</a></p></aside>
           </div></section>
-          <section class="m-doc-details" id="a6144a5dc91c4c2a3426d46d8b1eb82df"><div>
+          <section class="m-doc-details" id="a8a6381efd7e5f7aea54d2523f880cda4"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">void FixedPoolAllocator::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a6144a5dc91c4c2a3426d46d8b1eb82df" class="m-doc-self">Free</a>(</span><span class="m-doc-wrap">void* block,
-              size_t size = 0) <span class="m-label m-warning">virtual</span></span></span>
+              <span class="m-doc-wrap-bumper">void FixedPoolAllocator::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a8a6381efd7e5f7aea54d2523f880cda4" class="m-doc-self">Free</a>(</span><span class="m-doc-wrap">void* block,
+              size_t size = 0) <span class="m-label m-warning">override</span></span></span>
             </h3>
             <table class="m-table m-fullwidth m-flat">
               <thead>
@@ -242,7 +242,7 @@
                 </tr>
               </tbody>
             </table>
-<aside class="m-note m-default"><h4>Remark</h4><p><a href="class_i_core_allocator.html#ad070d94dcfbbc32e11b1ce682be5ff10" class="m-doc">ICoreAllocator::<wbr />Free</a> frees a block of memory previously allocated through a call to <a href="class_i_core_allocator.html#a857a1d18ed42271390c98cc0d54e592f" class="m-doc">ICoreAllocator::<wbr />Alloc</a>. The number of bytes freed equals the number of bytes that were allocated. After the call, the memory block pointed to by &quot;block&quot; is invalid and can no longer be used.</p></aside><aside class="m-note m-default"><h4>See also</h4><p><a href="class_fixed_pool_allocator.html#ad18695a902dbd1947a1200bd408a276b" class="m-doc">Alloc</a></p></aside>
+<aside class="m-note m-default"><h4>Remark</h4><p><a href="class_i_core_allocator.html#ad070d94dcfbbc32e11b1ce682be5ff10" class="m-doc">ICoreAllocator::<wbr />Free</a> frees a block of memory previously allocated through a call to <a href="class_i_core_allocator.html#a857a1d18ed42271390c98cc0d54e592f" class="m-doc">ICoreAllocator::<wbr />Alloc</a>. The number of bytes freed equals the number of bytes that were allocated. After the call, the memory block pointed to by &quot;block&quot; is invalid and can no longer be used.</p></aside><aside class="m-note m-default"><h4>See also</h4><p><a href="class_fixed_pool_allocator.html#aee932169d6d0f6e01e67dee27a8b8aa6" class="m-doc">Alloc</a></p></aside>
           </div></section>
         </section>
       </div>

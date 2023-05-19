@@ -114,8 +114,8 @@
         <section id="pub-types">
           <h2><a href="#pub-types">Public types</a></h2>
           <dl class="m-doc">
-            <dt id="acd799fde2a57b0c259d580b594c4a687">
-              <span class="m-doc-wrap-bumper">enum <a href="#acd799fde2a57b0c259d580b594c4a687" class="m-doc-self">(anonymous)</a> { </span><span class="m-doc-wrap"><a href="#acd799fde2a57b0c259d580b594c4a687a9fb9342ac16494e953c632256f8877df" class="m-doc">kStandardSpeed</a> = 2 }</span>
+            <dt id="a433a4b3be34e576e9b642297f4f2ad3c">
+              <span class="m-doc-wrap-bumper">enum <a href="#a433a4b3be34e576e9b642297f4f2ad3c" class="m-doc-self">SpeedType</a> { </span><span class="m-doc-wrap"><a href="#a433a4b3be34e576e9b642297f4f2ad3ca9fb9342ac16494e953c632256f8877df" class="m-doc">kStandardSpeed</a> = 2 }</span>
             </dt>
             <dd><span></span></dd>
           </dl>
@@ -132,17 +132,17 @@
         <section id="pub-methods">
           <h2><a href="#pub-methods">Public functions</a></h2>
           <dl class="m-doc">
-            <dt id="afc7b3a5fc20b24c2f94bee5bb9bba2fc">
-              <span class="m-doc-wrap-bumper">auto <a href="#afc7b3a5fc20b24c2f94bee5bb9bba2fc" class="m-doc-self">PlayAnimation</a>(</span><span class="m-doc-wrap">uint32_t animationID,
-              int toolIndex = 0xFFFFFFFF,
+            <dt id="a0a2ffbac26bc9f6cbab37b034ee30aa8">
+              <span class="m-doc-wrap-bumper">auto <a href="#a0a2ffbac26bc9f6cbab37b034ee30aa8" class="m-doc-self">PlayAnimation</a>(</span><span class="m-doc-wrap">uint32_t animationID,
+              int blockIndex = 0xFFFFFFFF,
               bool disableBlendInTime = false) -&gt; <a href="namespace_anim.html#a3b0f854f8c5f7ea805a07634dc180bc4" class="m-doc">Anim::<wbr />AnimIndex</a></span>
             </dt>
             <dd><span></span></dd>
-            <dt id="a5db2f57bafe31d52a578fcbc7cee9611">
-              <span class="m-doc-wrap-bumper">auto <a href="#a5db2f57bafe31d52a578fcbc7cee9611" class="m-doc-self">PlayAnimationTo</a>(</span><span class="m-doc-wrap">uint32_t animationID,
+            <dt id="a311c5641f942d40d0e349a540821aa91">
+              <span class="m-doc-wrap-bumper">auto <a href="#a311c5641f942d40d0e349a540821aa91" class="m-doc-self">PlayAnimationTo</a>(</span><span class="m-doc-wrap">uint32_t animationID,
               <a href="class_simulator_1_1c_spatial_object.html" class="m-doc">cSpatialObject</a>* otherObject,
               int = 0xFFFFFFFF,
-              int toolIndex = 0xFFFFFFFF) -&gt; <a href="namespace_anim.html#a3b0f854f8c5f7ea805a07634dc180bc4" class="m-doc">Anim::<wbr />AnimIndex</a></span>
+              int blockIndex = 0xFFFFFFFF) -&gt; <a href="namespace_anim.html#a3b0f854f8c5f7ea805a07634dc180bc4" class="m-doc">Anim::<wbr />AnimIndex</a></span>
             </dt>
             <dd><span></span></dd>
             <dt id="a59de553ccde1d6f657f058d02b676d51">
@@ -219,10 +219,10 @@
               <span class="m-doc-wrap-bumper">void <a href="#af37b6457f76702b6ea00e9e388af140e" class="m-doc-self">OnJumpLand</a>(</span><span class="m-doc-wrap">) <span class="m-label m-flat m-warning">virtual</span></span>
             </dt>
             <dd>Called when the creature touches land after jumping/hovering in the air.</dd>
-            <dt id="a3935f947f3c4d79e6cb6ebf96e093e56">
-              <span class="m-doc-wrap-bumper">void <a href="#a3935f947f3c4d79e6cb6ebf96e093e56" class="m-doc-self">func5Ch</a>(</span><span class="m-doc-wrap">) <span class="m-label m-flat m-warning">virtual</span></span>
+            <dt id="a9da1c4399498f5edc8a2f73c47079732">
+              <span class="m-doc-wrap-bumper">void <a href="#a9da1c4399498f5edc8a2f73c47079732" class="m-doc-self">OnStartSwimming</a>(</span><span class="m-doc-wrap">) <span class="m-label m-flat m-warning">virtual</span></span>
             </dt>
-            <dd><span></span></dd>
+            <dd>Called when the creature enters water deep enough to swim.</dd>
             <dt>
               <span class="m-doc-wrap-bumper">void <a href="#abe84f57726f16f0e72ced6955a38510b" class="m-doc">Update</a>(</span><span class="m-doc-wrap">int deltaTime) <span class="m-label m-flat m-warning">virtual</span></span>
             </dt>
@@ -729,7 +729,7 @@
             <dt id="a255193add524676e05b0ab2b83eaf973">
               uint32_t <a href="#a255193add524676e05b0ab2b83eaf973" class="m-doc-self">mCurrentAttackIdx</a>
             </dt>
-            <dd><span></span></dd>
+            <dd>Index of current attack ability.</dd>
             <dt id="aa40a50ba1f53b9fdaf05e084a116a7e9">
               uint32_t <a href="#aa40a50ba1f53b9fdaf05e084a116a7e9" class="m-doc-self">mCurrentAttackAnimId</a>
             </dt>

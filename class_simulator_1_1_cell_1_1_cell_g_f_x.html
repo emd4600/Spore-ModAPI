@@ -45,8 +45,7 @@
     <div class="m-row">
       <div class="m-col-l-10 m-push-l-1">
         <h1>
-          <span class="m-breadcrumb"><a href="namespace_simulator.html">Simulator</a>::<wbr/></span><span class="m-breadcrumb"><a href="namespace_simulator_1_1_cell.html">Cell</a>::<wbr/></span>CellGFX <span class="m-thin">class</span>
-          <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_cell_g_f_x_8h.html">&lt;Spore/Simulator/Cell/CellGFX.h&gt;</a></div>
+          Simulator::Cell::CellGFX <span class="m-thin">class</span>
         </h1>
         <p><span></span></p>
         <div class="m-block m-default">
@@ -64,18 +63,18 @@
         <section id="pub-types">
           <h2><a href="#pub-types">Public types</a></h2>
           <dl class="m-doc">
-            <dt id="add0e6f93e18cef03280c88a6da183efb">
-              <span class="m-doc-wrap-bumper">enum <a href="#add0e6f93e18cef03280c88a6da183efb" class="m-doc-self">(anonymous)</a> { </span><span class="m-doc-wrap"><a href="#add0e6f93e18cef03280c88a6da183efba993f89c483bb745874a95c9215660791" class="m-doc">kCellLightingWorldID</a> = 0x4A4D97F,
-              <a href="#add0e6f93e18cef03280c88a6da183efba53bbc05749bd80cd967d4d0d9c296502" class="m-doc">kCellPreloadedModelWorldID</a> = 0x1010050,
-              <a href="#add0e6f93e18cef03280c88a6da183efba55c9b3b1f70f383f74802349eb183e1b" class="m-doc">kCellPreloadedEffectWorldID</a> = 0x1010051,
-              <a href="#add0e6f93e18cef03280c88a6da183efba324a23d34716a91012b04f011432bc08" class="m-doc">kCellSkyboxEffectWorldID</a> = 0x1010000,
-              <a href="#add0e6f93e18cef03280c88a6da183efbae18355a60769b81dbf402cddfe161d21" class="m-doc">kCellBackgroundEffectWorldID</a> = 0x1010011,
-              <a href="#add0e6f93e18cef03280c88a6da183efbae9e615e50b9476ca0c1f133c68ac5f4f" class="m-doc">kCellBackgroundModelWorldID</a> = 0x1010010,
-              <a href="#add0e6f93e18cef03280c88a6da183efba67619d6cfba1487ac1bcfc7f04e23e32" class="m-doc">kCellBeachEffectWorldID</a> = 0x1010016,
-              <a href="#add0e6f93e18cef03280c88a6da183efbac766ea78df2fbf7b5ebc724fb5622507" class="m-doc">kCellBeachModelWorldID</a> = 0x1010015,
-              <a href="#add0e6f93e18cef03280c88a6da183efbada82b8acf484847f5cf540d571647faa" class="m-doc">kCellEffectWorldID</a> = 0x1010021,
-              <a href="#add0e6f93e18cef03280c88a6da183efba0f4ec8e55a501b0ab47cd1d7563ce412" class="m-doc">kCellModelWorldID</a> = 0x1010020,
-              <a href="#add0e6f93e18cef03280c88a6da183efba54ced988bc6c3d2719153ddb1a755040" class="m-doc">kCellForegroundEffectWorldID</a> = 0x1010031 }</span>
+            <dt id="a6846e0ec4712605412f23c4136fd8205">
+              <span class="m-doc-wrap-bumper">enum <a href="#a6846e0ec4712605412f23c4136fd8205" class="m-doc-self">WorldIDs</a> { </span><span class="m-doc-wrap"><a href="#a6846e0ec4712605412f23c4136fd8205a993f89c483bb745874a95c9215660791" class="m-doc">kCellLightingWorldID</a> = 0x4A4D97F,
+              <a href="#a6846e0ec4712605412f23c4136fd8205a53bbc05749bd80cd967d4d0d9c296502" class="m-doc">kCellPreloadedModelWorldID</a> = 0x1010050,
+              <a href="#a6846e0ec4712605412f23c4136fd8205a55c9b3b1f70f383f74802349eb183e1b" class="m-doc">kCellPreloadedEffectWorldID</a> = 0x1010051,
+              <a href="#a6846e0ec4712605412f23c4136fd8205a324a23d34716a91012b04f011432bc08" class="m-doc">kCellSkyboxEffectWorldID</a> = 0x1010000,
+              <a href="#a6846e0ec4712605412f23c4136fd8205ae18355a60769b81dbf402cddfe161d21" class="m-doc">kCellBackgroundEffectWorldID</a> = 0x1010011,
+              <a href="#a6846e0ec4712605412f23c4136fd8205ae9e615e50b9476ca0c1f133c68ac5f4f" class="m-doc">kCellBackgroundModelWorldID</a> = 0x1010010,
+              <a href="#a6846e0ec4712605412f23c4136fd8205a67619d6cfba1487ac1bcfc7f04e23e32" class="m-doc">kCellBeachEffectWorldID</a> = 0x1010016,
+              <a href="#a6846e0ec4712605412f23c4136fd8205ac766ea78df2fbf7b5ebc724fb5622507" class="m-doc">kCellBeachModelWorldID</a> = 0x1010015,
+              <a href="#a6846e0ec4712605412f23c4136fd8205ada82b8acf484847f5cf540d571647faa" class="m-doc">kCellEffectWorldID</a> = 0x1010021,
+              <a href="#a6846e0ec4712605412f23c4136fd8205a0f4ec8e55a501b0ab47cd1d7563ce412" class="m-doc">kCellModelWorldID</a> = 0x1010020,
+              <a href="#a6846e0ec4712605412f23c4136fd8205a54ced988bc6c3d2719153ddb1a755040" class="m-doc">kCellForegroundEffectWorldID</a> = 0x1010031 }</span>
             </dt>
             <dd><span></span></dd>
           </dl>

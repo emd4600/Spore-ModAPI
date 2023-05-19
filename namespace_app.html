@@ -76,13 +76,25 @@
           <h2><a href="#nested-classes">Classes</a></h2>
           <dl class="m-doc">
             <dt>
+              class <a href="class_app_1_1c_arithmetica_resource.html" class="m-doc">cArithmeticaResource</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
               class <a href="class_app_1_1c_camera_manager.html" class="m-doc">cCameraManager</a>
             </dt>
             <dd>The implementation of <a href="class_app_1_1_i_camera_manager.html" class="m-doc">ICameraManager</a>; this should only be used for extending and detouring.</dd>
             <dt>
+              class <a href="class_app_1_1c_cell_mode_strategy.html" class="m-doc">cCellModeStrategy</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
               class <a href="class_app_1_1c_cheat_manager.html" class="m-doc">cCheatManager</a>
             </dt>
             <dd>The implementation of <a href="class_app_1_1_i_cheat_manager.html" class="m-doc">ICheatManager</a>; this should only be used for extending and detouring.</dd>
+            <dt>
+              class <a href="class_app_1_1c_creature_mode_strategy.html" class="m-doc">cCreatureModeStrategy</a>
+            </dt>
+            <dd><span></span></dd>
             <dt>
               class <a href="class_app_1_1c_game_mode_manager.html" class="m-doc">cGameModeManager</a>
             </dt>
@@ -196,10 +208,6 @@
             </dt>
             <dd><span></span></dd>
             <dt>
-              class <a href="class_app_1_1_i_state_manager.html" class="m-doc">IStateManager</a>
-            </dt>
-            <dd><span></span></dd>
-            <dt>
               class <a href="class_app_1_1_i_token_translator.html" class="m-doc">ITokenTranslator</a>
             </dt>
             <dd><span></span></dd>
@@ -257,15 +265,15 @@
           <h2><a href="#enum-members">Enums</a></h2>
           <dl class="m-doc">
             <dt>
-              <span class="m-doc-wrap-bumper">enum <a href="#a4f6de8bf85a961e554a9e4e7ef7dc3ea" class="m-doc">(anonymous)</a> { </span><span class="m-doc-wrap"><a href="#a4f6de8bf85a961e554a9e4e7ef7dc3eaaab99bde69d5a451b5a8d0a9949662434" class="m-doc">kMsgAddRef</a> = 1,
-              <a href="#a4f6de8bf85a961e554a9e4e7ef7dc3eaa58f34ed3e76d5d3fcbebf4a0dbfc81ed" class="m-doc">kMsgRelease</a> = 2,
-              <a href="#a4f6de8bf85a961e554a9e4e7ef7dc3eaa3c5da5adc2e58824ebc94b284a8d6c79" class="m-doc">kMsgOnModeExit</a> = 0x212D3E7,
-              <a href="#a4f6de8bf85a961e554a9e4e7ef7dc3eaa18f6cb3fd0bdd97be603d27a75e966e4" class="m-doc">kMsgOnModeEnter</a> = 0x22D1ADC }</span>
+              <span class="m-doc-wrap-bumper">enum <a href="#a33bc13e7bf4fbe97cd50afd32b423a72" class="m-doc">GameModeManagerMessageIDs</a> { </span><span class="m-doc-wrap"><a href="#a33bc13e7bf4fbe97cd50afd32b423a72aab99bde69d5a451b5a8d0a9949662434" class="m-doc">kMsgAddRef</a> = 1,
+              <a href="#a33bc13e7bf4fbe97cd50afd32b423a72a58f34ed3e76d5d3fcbebf4a0dbfc81ed" class="m-doc">kMsgRelease</a> = 2,
+              <a href="#a33bc13e7bf4fbe97cd50afd32b423a72a3c5da5adc2e58824ebc94b284a8d6c79" class="m-doc">kMsgOnModeExit</a> = 0x212D3E7,
+              <a href="#a33bc13e7bf4fbe97cd50afd32b423a72a18f6cb3fd0bdd97be603d27a75e966e4" class="m-doc">kMsgOnModeEnter</a> = 0x22D1ADC }</span>
             </dt>
             <dd><span></span></dd>
             <dt>
-              <span class="m-doc-wrap-bumper">enum <a href="#a63d4bdaea67eeee2a8c4550b9efb2dd0" class="m-doc">(anonymous)</a> { </span><span class="m-doc-wrap"><a href="#a63d4bdaea67eeee2a8c4550b9efb2dd0a13db3a5ebf5206f71d1b99be59f90407" class="m-doc">kMsgAppInitialized</a> = 0x49790B2,
-              <a href="#a63d4bdaea67eeee2a8c4550b9efb2dd0af0127b9bab29dce33abae2b5f6fa153a" class="m-doc">kMsgAppUpdate</a> = 0x1EE100A }</span>
+              <span class="m-doc-wrap-bumper">enum <a href="#a30e9adb01a7c71bb6ba0c8de6524b3af" class="m-doc">AppMessageIDs</a> { </span><span class="m-doc-wrap"><a href="#a30e9adb01a7c71bb6ba0c8de6524b3afa13db3a5ebf5206f71d1b99be59f90407" class="m-doc">kMsgAppInitialized</a> = 0x49790B2,
+              <a href="#a30e9adb01a7c71bb6ba0c8de6524b3afaf0127b9bab29dce33abae2b5f6fa153a" class="m-doc">kMsgAppUpdate</a> = 0x1EE100A }</span>
             </dt>
             <dd><span></span></dd>
             <dt>
@@ -313,6 +321,10 @@
             </dt>
             <dd><span></span></dd>
             <dt>
+              using <a href="#a6e217869829f924b68bacc4ff90b8565" class="m-doc">cJobVoidCallback</a> = void(*)(cJob*, void*)
+            </dt>
+            <dd><span></span></dd>
+            <dt>
               using <a href="#a8e7a2854f38ce8e2b76e6f03989cc9e0" class="m-doc">CameraFactoryFunction_t</a> = <a href="class_app_1_1_i_camera.html" class="m-doc">ICamera</a>*(*)(PropertyList*pPropList)
             </dt>
             <dd>Camera types need a static function that creates the correct camera instance.</dd>
@@ -335,6 +347,11 @@
             </dt>
             <dd><span></span></dd>
             <dt>
+              <span class="m-doc-wrap-bumper"><a href="#aca78ae97b892402047997235883e6e27" class="m-doc">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_app_1_1c_arithmetica_resource.html" class="m-doc">cArithmeticaResource</a>,
+              0x94)</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
               <span class="m-doc-wrap-bumper"><a href="#a2b5fdbdbe2af26de64ed63dc4515d41a" class="m-doc">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_app_1_1c_camera_manager.html" class="m-doc">cCameraManager</a>,
               0xB4)</span>
             </dt>
@@ -344,12 +361,30 @@
             </dt>
             <dd><span></span></dd>
             <dt>
+              <span class="m-doc-wrap-bumper"><a href="#a000759a511b8d2dc7441f328d9f7679f" class="m-doc">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_app_1_1c_cell_mode_strategy.html" class="m-doc">cCellModeStrategy</a>,
+              0xC)</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a6444de55bf44eddd91a76244c39e4a20" class="m-doc">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_app_1_1c_cell_mode_strategy.html" class="m-doc">cCellModeStrategy</a>) -&gt; namespace</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
               <span class="m-doc-wrap-bumper"><a href="#a7e39b97e2056a526024d6ecd3eb36f5a" class="m-doc">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_app_1_1c_cheat_manager.html" class="m-doc">cCheatManager</a>,
               0x68)</span>
             </dt>
             <dd><span></span></dd>
             <dt>
               <span class="m-doc-wrap-bumper">auto <a href="#ad793f0191d8757171a64b3f5974a497d" class="m-doc">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_app_1_1c_cheat_manager.html" class="m-doc">cCheatManager</a>) -&gt; namespace</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper"><a href="#a764c064cbe98ebfbd3f14e1b72614a4d" class="m-doc">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_app_1_1c_creature_mode_strategy.html" class="m-doc">cCreatureModeStrategy</a>,
+              0xE8)</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a87344c7f297e71b245d08d2fa7a39bd5" class="m-doc">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_app_1_1c_creature_mode_strategy.html" class="m-doc">cCreatureModeStrategy</a>) -&gt; namespace</span>
             </dt>
             <dd><span></span></dd>
             <dt>
@@ -502,14 +537,6 @@
             <dd><span></span></dd>
             <dt>
               <span class="m-doc-wrap-bumper">auto <a href="#a5118c39d08a475ab7ba6c87bf67a717d" class="m-doc">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_app_1_1_i_prop_manager.html" class="m-doc">IPropManager</a>) -&gt; namespace</span>
-            </dt>
-            <dd><span></span></dd>
-            <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#a96a30a30d26539d507c79f5513a1eedb" class="m-doc">StateManager</a>(</span><span class="m-doc-wrap">) -&gt; <a href="class_app_1_1_i_state_manager.html" class="m-doc">IStateManager</a>*</span>
-            </dt>
-            <dd><span></span></dd>
-            <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#a1ae370a1485cc304e5ee9dcd6faa2edd" class="m-doc">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_app_1_1_i_state_manager.html" class="m-doc">IStateManager</a>) -&gt; namespace</span>
             </dt>
             <dd><span></span></dd>
             <dt>
@@ -1075,9 +1102,9 @@
         </section>
         <section>
           <h2>Enum documentation</h2>
-          <section class="m-doc-details" id="a4f6de8bf85a961e554a9e4e7ef7dc3ea"><div>
+          <section class="m-doc-details" id="a33bc13e7bf4fbe97cd50afd32b423a72"><div>
             <h3>
-              enum App::<wbr /><a href="#a4f6de8bf85a961e554a9e4e7ef7dc3ea" class="m-doc-self">(anonymous)</a>
+              enum App::<wbr /><a href="#a33bc13e7bf4fbe97cd50afd32b423a72" class="m-doc-self">GameModeManagerMessageIDs</a>
               <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_i_game_mode_manager_8h.html">&lt;Spore/App/IGameModeManager.h&gt;</a></div>
             </h3>
             <p><span></span></p>
@@ -1085,25 +1112,25 @@
               <thead><tr><th style="width: 1%">Enumerators</th><th></th></tr></thead>
               <tbody>
                 <tr>
-                  <td><a href="#a4f6de8bf85a961e554a9e4e7ef7dc3eaaab99bde69d5a451b5a8d0a9949662434" class="m-doc-self" id="a4f6de8bf85a961e554a9e4e7ef7dc3eaaab99bde69d5a451b5a8d0a9949662434">kMsgAddRef</a></td>
+                  <td><a href="#a33bc13e7bf4fbe97cd50afd32b423a72aab99bde69d5a451b5a8d0a9949662434" class="m-doc-self" id="a33bc13e7bf4fbe97cd50afd32b423a72aab99bde69d5a451b5a8d0a9949662434">kMsgAddRef</a></td>
                   <td>
                   <p><span></span></p>
                   </td>
                 </tr>
                 <tr>
-                  <td><a href="#a4f6de8bf85a961e554a9e4e7ef7dc3eaa58f34ed3e76d5d3fcbebf4a0dbfc81ed" class="m-doc-self" id="a4f6de8bf85a961e554a9e4e7ef7dc3eaa58f34ed3e76d5d3fcbebf4a0dbfc81ed">kMsgRelease</a></td>
+                  <td><a href="#a33bc13e7bf4fbe97cd50afd32b423a72a58f34ed3e76d5d3fcbebf4a0dbfc81ed" class="m-doc-self" id="a33bc13e7bf4fbe97cd50afd32b423a72a58f34ed3e76d5d3fcbebf4a0dbfc81ed">kMsgRelease</a></td>
                   <td>
                   <p><span></span></p>
                   </td>
                 </tr>
                 <tr>
-                  <td><a href="#a4f6de8bf85a961e554a9e4e7ef7dc3eaa3c5da5adc2e58824ebc94b284a8d6c79" class="m-doc-self" id="a4f6de8bf85a961e554a9e4e7ef7dc3eaa3c5da5adc2e58824ebc94b284a8d6c79">kMsgOnModeExit</a></td>
+                  <td><a href="#a33bc13e7bf4fbe97cd50afd32b423a72a3c5da5adc2e58824ebc94b284a8d6c79" class="m-doc-self" id="a33bc13e7bf4fbe97cd50afd32b423a72a3c5da5adc2e58824ebc94b284a8d6c79">kMsgOnModeExit</a></td>
                   <td>
                   <p>Called when the current mode is exited. The message data is the <a href="class_app_1_1_on_mode_exit_message.html" class="m-doc">App::<wbr />OnModeExitMessage</a> class.</p>
                   </td>
                 </tr>
                 <tr>
-                  <td><a href="#a4f6de8bf85a961e554a9e4e7ef7dc3eaa18f6cb3fd0bdd97be603d27a75e966e4" class="m-doc-self" id="a4f6de8bf85a961e554a9e4e7ef7dc3eaa18f6cb3fd0bdd97be603d27a75e966e4">kMsgOnModeEnter</a></td>
+                  <td><a href="#a33bc13e7bf4fbe97cd50afd32b423a72a18f6cb3fd0bdd97be603d27a75e966e4" class="m-doc-self" id="a33bc13e7bf4fbe97cd50afd32b423a72a18f6cb3fd0bdd97be603d27a75e966e4">kMsgOnModeEnter</a></td>
                   <td>
                   <p>Called after the current mode is entered. The message data is the <a href="class_app_1_1_on_mode_enter_message.html" class="m-doc">App::<wbr />OnModeEnterMessage</a> class.</p>
                   </td>
@@ -1111,9 +1138,9 @@
               </tbody>
             </table>
           </div></section>
-          <section class="m-doc-details" id="a63d4bdaea67eeee2a8c4550b9efb2dd0"><div>
+          <section class="m-doc-details" id="a30e9adb01a7c71bb6ba0c8de6524b3af"><div>
             <h3>
-              enum App::<wbr /><a href="#a63d4bdaea67eeee2a8c4550b9efb2dd0" class="m-doc-self">(anonymous)</a>
+              enum App::<wbr /><a href="#a30e9adb01a7c71bb6ba0c8de6524b3af" class="m-doc-self">AppMessageIDs</a>
               <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_i_message_manager_8h.html">&lt;Spore/App/IMessageManager.h&gt;</a></div>
             </h3>
             <p><span></span></p>
@@ -1121,14 +1148,14 @@
               <thead><tr><th style="width: 1%">Enumerators</th><th></th></tr></thead>
               <tbody>
                 <tr>
-                  <td><a href="#a63d4bdaea67eeee2a8c4550b9efb2dd0a13db3a5ebf5206f71d1b99be59f90407" class="m-doc-self" id="a63d4bdaea67eeee2a8c4550b9efb2dd0a13db3a5ebf5206f71d1b99be59f90407">kMsgAppInitialized</a></td>
+                  <td><a href="#a30e9adb01a7c71bb6ba0c8de6524b3afa13db3a5ebf5206f71d1b99be59f90407" class="m-doc-self" id="a30e9adb01a7c71bb6ba0c8de6524b3afa13db3a5ebf5206f71d1b99be59f90407">kMsgAppInitialized</a></td>
                   <td>
                   <p>Sent when all the systems in the game have finished initializing, except for the <a href="namespace_simulator.html" class="m-doc">Simulator</a> ones.</p>
 <p>Does not use message data.</p>
                   </td>
                 </tr>
                 <tr>
-                  <td><a href="#a63d4bdaea67eeee2a8c4550b9efb2dd0af0127b9bab29dce33abae2b5f6fa153a" class="m-doc-self" id="a63d4bdaea67eeee2a8c4550b9efb2dd0af0127b9bab29dce33abae2b5f6fa153a">kMsgAppUpdate</a></td>
+                  <td><a href="#a30e9adb01a7c71bb6ba0c8de6524b3afaf0127b9bab29dce33abae2b5f6fa153a" class="m-doc-self" id="a30e9adb01a7c71bb6ba0c8de6524b3afaf0127b9bab29dce33abae2b5f6fa153a">kMsgAppUpdate</a></td>
                   <td>
                   <p>Sent every game frame, after all other systems have been updated. Does not use message data.</p>
                   </td>
@@ -1149,6 +1176,13 @@
           <section class="m-doc-details" id="addad4105280a274626612693fc8f6623"><div>
             <h3>
               typedef bool(*App::<wbr /><a href="#addad4105280a274626612693fc8f6623" class="m-doc-self">cJobCallback</a>)(cJob*, void*)
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="c_job_8h.html">&lt;Spore/App/cJob.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="a6e217869829f924b68bacc4ff90b8565"><div>
+            <h3>
+              typedef void(*App::<wbr /><a href="#a6e217869829f924b68bacc4ff90b8565" class="m-doc-self">cJobVoidCallback</a>)(cJob*, void*)
               <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="c_job_8h.html">&lt;Spore/App/cJob.h&gt;</a></div>
             </h3>
             <p><span></span></p>
@@ -1188,6 +1222,14 @@
             </h3>
             <p><span></span></p>
           </div></section>
+          <section class="m-doc-details" id="aca78ae97b892402047997235883e6e27"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"> App::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#aca78ae97b892402047997235883e6e27" class="m-doc-self">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_app_1_1c_arithmetica_resource.html" class="m-doc">cArithmeticaResource</a>,
+              0x94)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="c_arithmetica_resource_8h.html">&lt;Spore/App/cArithmeticaResource.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
           <section class="m-doc-details" id="a2b5fdbdbe2af26de64ed63dc4515d41a"><div>
             <h3>
               <span class="m-doc-wrap-bumper"> App::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a2b5fdbdbe2af26de64ed63dc4515d41a" class="m-doc-self">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_app_1_1c_camera_manager.html" class="m-doc">cCameraManager</a>,
@@ -1203,6 +1245,21 @@
             </h3>
             <p><span></span></p>
           </div></section>
+          <section class="m-doc-details" id="a000759a511b8d2dc7441f328d9f7679f"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"> App::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a000759a511b8d2dc7441f328d9f7679f" class="m-doc-self">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_app_1_1c_cell_mode_strategy.html" class="m-doc">cCellModeStrategy</a>,
+              0xC)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="c_cell_mode_strategy_8h.html">&lt;Spore/App/cCellModeStrategy.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="a6444de55bf44eddd91a76244c39e4a20"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">namespace App::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a6444de55bf44eddd91a76244c39e4a20" class="m-doc-self">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_app_1_1c_cell_mode_strategy.html" class="m-doc">cCellModeStrategy</a>)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="c_cell_mode_strategy_8h.html">&lt;Spore/App/cCellModeStrategy.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
           <section class="m-doc-details" id="a7e39b97e2056a526024d6ecd3eb36f5a"><div>
             <h3>
               <span class="m-doc-wrap-bumper"> App::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a7e39b97e2056a526024d6ecd3eb36f5a" class="m-doc-self">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_app_1_1c_cheat_manager.html" class="m-doc">cCheatManager</a>,
@@ -1215,6 +1272,21 @@
             <h3>
               <span class="m-doc-wrap-bumper">namespace App::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ad793f0191d8757171a64b3f5974a497d" class="m-doc-self">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_app_1_1c_cheat_manager.html" class="m-doc">cCheatManager</a>)</span></span>
               <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="c_cheat_manager_8h.html">&lt;Spore/App/cCheatManager.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="a764c064cbe98ebfbd3f14e1b72614a4d"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"> App::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a764c064cbe98ebfbd3f14e1b72614a4d" class="m-doc-self">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_app_1_1c_creature_mode_strategy.html" class="m-doc">cCreatureModeStrategy</a>,
+              0xE8)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="c_creature_mode_strategy_8h.html">&lt;Spore/App/cCreatureModeStrategy.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="a87344c7f297e71b245d08d2fa7a39bd5"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">namespace App::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a87344c7f297e71b245d08d2fa7a39bd5" class="m-doc-self">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_app_1_1c_creature_mode_strategy.html" class="m-doc">cCreatureModeStrategy</a>)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="c_creature_mode_strategy_8h.html">&lt;Spore/App/cCreatureModeStrategy.h&gt;</a></div>
             </h3>
             <p><span></span></p>
           </div></section>
@@ -1577,20 +1649,6 @@
             <h3>
               <span class="m-doc-wrap-bumper">namespace App::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a5118c39d08a475ab7ba6c87bf67a717d" class="m-doc-self">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_app_1_1_i_prop_manager.html" class="m-doc">IPropManager</a>)</span></span>
               <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_i_prop_manager_8h.html">&lt;Spore/App/IPropManager.h&gt;</a></div>
-            </h3>
-            <p><span></span></p>
-          </div></section>
-          <section class="m-doc-details" id="a96a30a30d26539d507c79f5513a1eedb"><div>
-            <h3>
-              <span class="m-doc-wrap-bumper"><a href="class_app_1_1_i_state_manager.html" class="m-doc">IStateManager</a>* App::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a96a30a30d26539d507c79f5513a1eedb" class="m-doc-self">StateManager</a>(</span><span class="m-doc-wrap">)</span></span>
-              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_i_state_manager_8h.html">&lt;Spore/App/IStateManager.h&gt;</a></div>
-            </h3>
-            <p><span></span></p>
-          </div></section>
-          <section class="m-doc-details" id="a1ae370a1485cc304e5ee9dcd6faa2edd"><div>
-            <h3>
-              <span class="m-doc-wrap-bumper">namespace App::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a1ae370a1485cc304e5ee9dcd6faa2edd" class="m-doc-self">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_app_1_1_i_state_manager.html" class="m-doc">IStateManager</a>)</span></span>
-              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_i_state_manager_8h.html">&lt;Spore/App/IStateManager.h&gt;</a></div>
             </h3>
             <p><span></span></p>
           </div></section>

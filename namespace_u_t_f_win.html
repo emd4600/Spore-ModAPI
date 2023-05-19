@@ -69,10 +69,6 @@
           <dl class="m-doc">
             <dt>namespace <a href="namespace_u_t_f_win_1_1_basic_cursor_i_ds.html" class="m-doc">BasicCursorIDs</a></dt>
             <dd>The cursor IDs that are always available.</dd>
-            <dt>namespace <a href="namespace_u_t_f_win_1_1_button_flags.html" class="m-doc">ButtonFlags</a></dt>
-            <dd><span></span></dd>
-            <dt>namespace <a href="namespace_u_t_f_win_1_1_button_state_flags.html" class="m-doc">ButtonStateFlags</a></dt>
-            <dd><span></span></dd>
           </dl>
         </section>
         <section id="nested-classes">
@@ -140,6 +136,10 @@
             </dt>
             <dd>The standard <a href="class_u_t_f_win_1_1_i_drawable.html" class="m-doc">IDrawable</a> for a dialog component.</dd>
             <dt>
+              class <a href="class_u_t_f_win_1_1_effect.html" class="m-doc">Effect</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
               class <a href="class_u_t_f_win_1_1_event_property_object.html" class="m-doc">EventPropertyObject</a>
             </dt>
             <dd><span></span></dd>
@@ -167,10 +167,6 @@
               class <a href="class_u_t_f_win_1_1_graphics2_d.html" class="m-doc">Graphics2D</a>
             </dt>
             <dd>A class that can be used to draw things in the user interface.</dd>
-            <dt>
-              class <a href="class_u_t_f_win_1_1_grid_unknown.html" class="m-doc">GridUnknown</a>
-            </dt>
-            <dd><span></span></dd>
             <dt>
               class <a href="class_u_t_f_win_1_1_i_bi_state_effect.html" class="m-doc">IBiStateEffect</a>
             </dt>
@@ -457,10 +453,6 @@
             </dt>
             <dd>A drawable that completely fills the window of variable width with a graphic without a horizontal stretch.</dd>
             <dt>
-              class <a href="class_u_t_f_win_1_1_win_button.html" class="m-doc">WinButton</a>
-            </dt>
-            <dd><span></span></dd>
-            <dt>
               class <a href="class_u_t_f_win_1_1_window.html" class="m-doc">Window</a>
             </dt>
             <dd><span></span></dd>
@@ -474,10 +466,6 @@
             <dd><span></span></dd>
             <dt>
               class <a href="class_u_t_f_win_1_1_window_procedures.html" class="m-doc">WindowProcedures</a>
-            </dt>
-            <dd><span></span></dd>
-            <dt>
-              class <a href="class_u_t_f_win_1_1_win_grid.html" class="m-doc">WinGrid</a>
             </dt>
             <dd><span></span></dd>
             <dt>
@@ -647,6 +635,13 @@
             </dt>
             <dd><span></span></dd>
             <dt>
+              <span class="m-doc-wrap-bumper">enum class <a href="#a9133b2dc2dd22fe030d45162389a9cfb" class="m-doc">Sides</a> { </span><span class="m-doc-wrap"><a href="#a9133b2dc2dd22fe030d45162389a9cfba945d5e233cf7d6240f6b783b36a374ff" class="m-doc">Left</a> = 0,
+              <a href="#a9133b2dc2dd22fe030d45162389a9cfbaa4ffdcf0dc1f31b9acaf295d75b51d00" class="m-doc">Top</a> = 1,
+              <a href="#a9133b2dc2dd22fe030d45162389a9cfba92b09c7c48c520c3c55e497875da437c" class="m-doc">Right</a> = 2,
+              <a href="#a9133b2dc2dd22fe030d45162389a9cfba2ad9d63b69c4a10a5cc9cad923133bc4" class="m-doc">Bottom</a> = 3 }</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
               <span class="m-doc-wrap-bumper">enum class <a href="#abf3171126194941ce2d0f329beb88542" class="m-doc">ImageTiling</a> { </span><span class="m-doc-wrap"><a href="#abf3171126194941ce2d0f329beb88542a6adf97f83acf6453d4a6a4b1070f3754" class="m-doc">None</a> = 0,
               <a href="#abf3171126194941ce2d0f329beb88542aeb6d8ae6f20283755b339c0dc273988b" class="m-doc">Standard</a> = 1,
               <a href="#abf3171126194941ce2d0f329beb88542ae4a297a0f76119a442c2595ac040673e" class="m-doc">Edge</a> = 2 }</span>
@@ -686,9 +681,9 @@
             </dt>
             <dd><span></span></dd>
             <dt>
-              <span class="m-doc-wrap-bumper">enum <a href="#a4f496b307ff19c6209fd66e9a349404a" class="m-doc">(anonymous)</a> { </span><span class="m-doc-wrap"><a href="#a4f496b307ff19c6209fd66e9a349404aaada480c01f7ccf5b895f7ef717af05ea" class="m-doc">kStateEnabled</a> = 1,
-              <a href="#a4f496b307ff19c6209fd66e9a349404aa7cea5c16d305bbc3f513f54f9a0873f3" class="m-doc">kStateClicked</a> = 2,
-              <a href="#a4f496b307ff19c6209fd66e9a349404aa80ed5ac6e97ccee77b0743561facda7a" class="m-doc">kStateHover</a> = 8 }</span>
+              <span class="m-doc-wrap-bumper">enum <a href="#a7f7dfd1e29804b58fdf44ea6cf4b1a8d" class="m-doc">WindowStates</a> { </span><span class="m-doc-wrap"><a href="#a7f7dfd1e29804b58fdf44ea6cf4b1a8daada480c01f7ccf5b895f7ef717af05ea" class="m-doc">kStateEnabled</a> = 1,
+              <a href="#a7f7dfd1e29804b58fdf44ea6cf4b1a8da7cea5c16d305bbc3f513f54f9a0873f3" class="m-doc">kStateClicked</a> = 2,
+              <a href="#a7f7dfd1e29804b58fdf44ea6cf4b1a8da80ed5ac6e97ccee77b0743561facda7a" class="m-doc">kStateHover</a> = 8 }</span>
             </dt>
             <dd><span></span></dd>
             <dt>
@@ -743,15 +738,11 @@
           <h2><a href="#typedef-members">Typedefs</a></h2>
           <dl class="m-doc">
             <dt>
-              using <a href="#afeb5fd590387d1a493c8d425e34b427b" class="m-doc">Effect</a> = <a href="class_u_t_f_win_1_1_interactive_win_proc.html" class="m-doc">InteractiveWinProc</a>
-            </dt>
-            <dd><span></span></dd>
-            <dt>
               using <a href="#af5745831e18da8aeba38d788105dd1d2" class="m-doc">IWindowList_t</a> = eastl::intrusive_list&lt;<a href="struct_u_t_f_win_1_1_window__intrusive__list__node.html" class="m-doc">Window_<wbr />intrusive_<wbr />list_<wbr />node</a>&gt;
             </dt>
             <dd><span></span></dd>
             <dt>
-              using <a href="#aa64f060acc3c4994182857b21d47cceb" class="m-doc">HandleUILambda_t</a> = eastl::function&lt;bool(<a href="class_u_t_f_win_1_1_i_window.html" class="m-doc">IWindow</a>*, const <a href="class_u_t_f_win_1_1_message.html" class="m-doc">Message</a>&amp;)&gt;
+              using <a href="#a5dc0e5746e3e3f13a6db04cb421e4f7b" class="m-doc">HandleUILambda_t</a> = bool(*)(IWindow*, const Message&amp;)
             </dt>
             <dd><span></span></dd>
             <dt>
@@ -1089,11 +1080,6 @@
             <dd><span></span></dd>
             <dt>
               <span class="m-doc-wrap-bumper">auto <a href="#a9ffc36689da4f46b779a48515815719d" class="m-doc">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_u_t_f_win_1_1_variable_width_drawable.html" class="m-doc">VariableWidthDrawable</a>) -&gt; namespace</span>
-            </dt>
-            <dd><span></span></dd>
-            <dt>
-              <span class="m-doc-wrap-bumper"><a href="#a03d64a8ff7ac15ae98ac01da0b13731a" class="m-doc">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_u_t_f_win_1_1_win_button.html" class="m-doc">WinButton</a>,
-              0x888)</span>
             </dt>
             <dd><span></span></dd>
             <dt>
@@ -1568,6 +1554,13 @@
             </h3>
             <p><span></span></p>
           </div></section>
+          <section class="m-doc-details" id="a9133b2dc2dd22fe030d45162389a9cfb"><div>
+            <h3>
+              enum class UTFWin::<wbr /><a href="#a9133b2dc2dd22fe030d45162389a9cfb" class="m-doc-self">Sides</a>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_i_layout_element_8h.html">&lt;Spore/UTFWin/ILayoutElement.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
           <section class="m-doc-details" id="abf3171126194941ce2d0f329beb88542"><div>
             <h3>
               enum class UTFWin::<wbr /><a href="#abf3171126194941ce2d0f329beb88542" class="m-doc-self">ImageTiling</a>
@@ -1696,9 +1689,9 @@
               </tbody>
             </table>
           </div></section>
-          <section class="m-doc-details" id="a4f496b307ff19c6209fd66e9a349404a"><div>
+          <section class="m-doc-details" id="a7f7dfd1e29804b58fdf44ea6cf4b1a8d"><div>
             <h3>
-              enum UTFWin::<wbr /><a href="#a4f496b307ff19c6209fd66e9a349404a" class="m-doc-self">(anonymous)</a>
+              enum UTFWin::<wbr /><a href="#a7f7dfd1e29804b58fdf44ea6cf4b1a8d" class="m-doc-self">WindowStates</a>
               <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_i_window_8h.html">&lt;Spore/UTFWin/IWindow.h&gt;</a></div>
             </h3>
             <p><span></span></p>
@@ -1770,13 +1763,6 @@
         </section>
         <section>
           <h2>Typedef documentation</h2>
-          <section class="m-doc-details" id="afeb5fd590387d1a493c8d425e34b427b"><div>
-            <h3>
-              typedef <a href="class_u_t_f_win_1_1_interactive_win_proc.html" class="m-doc">InteractiveWinProc</a> UTFWin::<wbr /><a href="#afeb5fd590387d1a493c8d425e34b427b" class="m-doc-self">Effect</a>
-              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_effect_8h.html">&lt;Spore/UTFWin/Effect.h&gt;</a></div>
-            </h3>
-            <p><span></span></p>
-          </div></section>
           <section class="m-doc-details" id="af5745831e18da8aeba38d788105dd1d2"><div>
             <h3>
               typedef eastl::intrusive_list&lt;<a href="struct_u_t_f_win_1_1_window__intrusive__list__node.html" class="m-doc">Window_<wbr />intrusive_<wbr />list_<wbr />node</a>&gt; UTFWin::<wbr /><a href="#af5745831e18da8aeba38d788105dd1d2" class="m-doc-self">IWindowList_t</a>
@@ -1784,9 +1770,9 @@
             </h3>
             <p><span></span></p>
           </div></section>
-          <section class="m-doc-details" id="aa64f060acc3c4994182857b21d47cceb"><div>
+          <section class="m-doc-details" id="a5dc0e5746e3e3f13a6db04cb421e4f7b"><div>
             <h3>
-              typedef eastl::function&lt;bool(<a href="class_u_t_f_win_1_1_i_window.html" class="m-doc">IWindow</a>*, const <a href="class_u_t_f_win_1_1_message.html" class="m-doc">Message</a>&amp;)&gt; UTFWin::<wbr /><a href="#aa64f060acc3c4994182857b21d47cceb" class="m-doc-self">HandleUILambda_t</a>
+              typedef bool(*UTFWin::<wbr /><a href="#a5dc0e5746e3e3f13a6db04cb421e4f7b" class="m-doc-self">HandleUILambda_t</a>)(IWindow*, const Message&amp;)
               <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_i_window_8h.html">&lt;Spore/UTFWin/IWindow.h&gt;</a></div>
             </h3>
             <p><span></span></p>
@@ -2373,14 +2359,6 @@
             <h3>
               <span class="m-doc-wrap-bumper">namespace UTFWin::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a9ffc36689da4f46b779a48515815719d" class="m-doc-self">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_u_t_f_win_1_1_variable_width_drawable.html" class="m-doc">VariableWidthDrawable</a>)</span></span>
               <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_variable_width_drawable_8h.html">&lt;Spore/UTFWin/VariableWidthDrawable.h&gt;</a></div>
-            </h3>
-            <p><span></span></p>
-          </div></section>
-          <section class="m-doc-details" id="a03d64a8ff7ac15ae98ac01da0b13731a"><div>
-            <h3>
-              <span class="m-doc-wrap-bumper"> UTFWin::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a03d64a8ff7ac15ae98ac01da0b13731a" class="m-doc-self">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_u_t_f_win_1_1_win_button.html" class="m-doc">WinButton</a>,
-              0x888)</span></span>
-              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_win_button_8h.html">&lt;Spore/UTFWin/WinButton.h&gt;</a></div>
             </h3>
             <p><span></span></p>
           </div></section>

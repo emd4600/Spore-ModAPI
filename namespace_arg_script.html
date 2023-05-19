@@ -174,15 +174,11 @@
             </dt>
             <dd>A standard <a href="namespace_arg_script.html" class="m-doc">ArgScript</a> exception, which is just a eastl::string.</dd>
             <dt>
-              using <a href="#a993827080e6fc75698c572f52852564e" class="m-doc">ParseLine_t</a> = eastl::function&lt;void(const <a href="class_arg_script_1_1_line.html" class="m-doc">Line</a>&amp;, <a href="class_arg_script_1_1_format_parser.html" class="m-doc">FormatParser</a>*)&gt;
+              using <a href="#ad6c7ddd1281cea6def8d821ea616e392" class="m-doc">ParseLine_t</a> = void(*)(const Line&amp;, FormatParser*)
             </dt>
             <dd><span></span></dd>
             <dt>
-              using <a href="#aa3ad5a2493e83670d6719c3fc331154b" class="m-doc">GetDescription_t</a> = eastl::function&lt;const char*(<a href="namespace_arg_script.html#a53da580510ab25203f3146caecd17e5e" class="m-doc">DescriptionMode</a>)&gt;
-            </dt>
-            <dd><span></span></dd>
-            <dt>
-              using <a href="#ae232eefb3cd8115a0cf3e63276a2c588" class="m-doc">SetData_t</a> = eastl::function&lt;void(<a href="class_arg_script_1_1_format_parser.html" class="m-doc">FormatParser</a>*, void*)&gt;
+              using <a href="#a1dedbd5247d71f787ddd90f290358b9d" class="m-doc">SetData_t</a> = void(*)(FormatParser*, void*)
             </dt>
             <dd><span></span></dd>
             <dt>
@@ -243,6 +239,10 @@
             </dt>
             <dd><span></span></dd>
             <dt>
+              const typedef char*(* <a href="#a6fbb831f5a3aff2a3df07804cd36df59" class="m-doc">GetDescription_t</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
               const typedef char*const * <a href="#acfb143b12d0d8e525e4e7eb6372b67fd" class="m-doc">Arguments</a>
             </dt>
             <dd>An array of c-eastl::strings that are the arguments of a line or an option.</dd>
@@ -271,23 +271,16 @@
             </h3>
             <p>A standard <a href="namespace_arg_script.html" class="m-doc">ArgScript</a> exception, which is just a eastl::string.</p>
           </div></section>
-          <section class="m-doc-details" id="a993827080e6fc75698c572f52852564e"><div>
+          <section class="m-doc-details" id="ad6c7ddd1281cea6def8d821ea616e392"><div>
             <h3>
-              typedef eastl::function&lt;void(const <a href="class_arg_script_1_1_line.html" class="m-doc">Line</a>&amp;, <a href="class_arg_script_1_1_format_parser.html" class="m-doc">FormatParser</a>*)&gt; ArgScript::<wbr /><a href="#a993827080e6fc75698c572f52852564e" class="m-doc-self">ParseLine_t</a>
+              typedef void(*ArgScript::<wbr /><a href="#ad6c7ddd1281cea6def8d821ea616e392" class="m-doc-self">ParseLine_t</a>)(const Line&amp;, FormatParser*)
               <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_format_parser_8h.html">&lt;Spore/ArgScript/FormatParser.h&gt;</a></div>
             </h3>
             <p><span></span></p>
           </div></section>
-          <section class="m-doc-details" id="aa3ad5a2493e83670d6719c3fc331154b"><div>
+          <section class="m-doc-details" id="a1dedbd5247d71f787ddd90f290358b9d"><div>
             <h3>
-              typedef eastl::function&lt;const char*(<a href="namespace_arg_script.html#a53da580510ab25203f3146caecd17e5e" class="m-doc">DescriptionMode</a>)&gt; ArgScript::<wbr /><a href="#aa3ad5a2493e83670d6719c3fc331154b" class="m-doc-self">GetDescription_t</a>
-              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_format_parser_8h.html">&lt;Spore/ArgScript/FormatParser.h&gt;</a></div>
-            </h3>
-            <p><span></span></p>
-          </div></section>
-          <section class="m-doc-details" id="ae232eefb3cd8115a0cf3e63276a2c588"><div>
-            <h3>
-              typedef eastl::function&lt;void(<a href="class_arg_script_1_1_format_parser.html" class="m-doc">FormatParser</a>*, void*)&gt; ArgScript::<wbr /><a href="#ae232eefb3cd8115a0cf3e63276a2c588" class="m-doc-self">SetData_t</a>
+              typedef void(*ArgScript::<wbr /><a href="#a1dedbd5247d71f787ddd90f290358b9d" class="m-doc-self">SetData_t</a>)(FormatParser*, void*)
               <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_format_parser_8h.html">&lt;Spore/ArgScript/FormatParser.h&gt;</a></div>
             </h3>
             <p><span></span></p>
@@ -375,6 +368,13 @@
             <h3>
               const typedef char* ArgScript::<wbr /><a href="#af41cc52a6781a4b36908270912f0e1af" class="m-doc-self">LexerString</a>
               <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_a_s_declarations_8h.html">&lt;Spore/ArgScript/ASDeclarations.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="a6fbb831f5a3aff2a3df07804cd36df59"><div>
+            <h3>
+              const typedef char*(* ArgScript::<wbr /><a href="#a6fbb831f5a3aff2a3df07804cd36df59" class="m-doc-self">GetDescription_t</a>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_format_parser_8h.html">&lt;Spore/ArgScript/FormatParser.h&gt;</a></div>
             </h3>
             <p><span></span></p>
           </div></section>

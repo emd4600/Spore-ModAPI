@@ -56,6 +56,7 @@
               Reference
               <ul>
                 <li><a href="#base-classes">Base classes</a></li>
+                <li><a href="#pub-methods">Public functions</a></li>
                 <li><a href="#pub-attribs">Public variables</a></li>
               </ul>
             </li>
@@ -70,6 +71,23 @@
             <dd><span></span></dd>
           </dl>
         </section>
+        <section id="pub-methods">
+          <h2><a href="#pub-methods">Public functions</a></h2>
+          <dl class="m-doc">
+            <dt>
+              <span class="m-doc-wrap-bumper">void <a href="#a49019bcc8dfbc772f82db8ec29a2d3dc" class="m-doc">ExecutePipeline</a>(</span><span class="m-doc-wrap">)</span>
+            </dt>
+            <dd>The pipeline is executed as follows (the numbers are the stage index): 0.</dd>
+            <dt id="ac49bbaa292388c91f99a3c7b11433bef">
+              <span class="m-doc-wrap-bumper">void <a href="#ac49bbaa292388c91f99a3c7b11433bef" class="m-doc-self">PreloadTextures</a>(</span><span class="m-doc-wrap">bool)</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="ac11ab5ee2d72465056d66c0e1299bb9d">
+              <span class="m-doc-wrap-bumper">void <a href="#ac11ab5ee2d72465056d66c0e1299bb9d" class="m-doc-self">Initialize</a>(</span><span class="m-doc-wrap">)</span>
+            </dt>
+            <dd><span></span></dd>
+          </dl>
+        </section>
         <section id="pub-attribs">
           <h2><a href="#pub-attribs">Public variables</a></h2>
           <dl class="m-doc">
@@ -77,8 +95,20 @@
               eastl::fixed_vector&lt;<a href="_texture_8h.html#affea3369120131ed058702d2945a10b4" class="m-doc">TexturePtr</a>, 192&gt; <a href="#a5618dd400bb8e12f3026e823e915cbc6" class="m-doc-self">mTextures</a>
             </dt>
             <dd>A list of all textures used to render the skinpaint, including all rigblock diffuse, tintMask and specBump textures.</dd>
-            <dt id="af0831eaa754325080dc9975826b7e9b6">
-              char <a href="#af0831eaa754325080dc9975826b7e9b6" class="m-doc-self">padding_320</a>
+            <dt id="a06eaee0913a9ee6c6f09d314666d068e">
+              uint32_t <a href="#a06eaee0913a9ee6c6f09d314666d068e" class="m-doc-self">mTextureInstanceID</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a238f9f0369c2dfa172befac59ae6ba4e">
+              uint32_t <a href="#a238f9f0369c2dfa172befac59ae6ba4e" class="m-doc-self">mTextureGroupID</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="ad3ec0f2ed7867ca5998e49378da7e88a">
+              uint32_t <a href="#ad3ec0f2ed7867ca5998e49378da7e88a" class="m-doc-self">field_328</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a954c01abde2bc12c73c3a065945e1270">
+              int <a href="#a954c01abde2bc12c73c3a065945e1270" class="m-doc-self">field_32C</a>
             </dt>
             <dd><span></span></dd>
             <dt id="a37de3be78ba9685257e6679e84d449e1">
@@ -122,6 +152,16 @@
             </dt>
             <dd><span></span></dd>
           </dl>
+        </section>
+        <section>
+          <h2>Function documentation</h2>
+          <section class="m-doc-details" id="a49019bcc8dfbc772f82db8ec29a2d3dc"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">void Skinner::<wbr />cSkinPainterPipeline::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a49019bcc8dfbc772f82db8ec29a2d3dc" class="m-doc-self">ExecutePipeline</a>(</span><span class="m-doc-wrap">)</span></span>
+            </h3>
+            <p>The pipeline is executed as follows (the numbers are the stage index): 0.</p>
+<p>Nothing</p><ol><li>Nothing</li><li>Checks some values</li><li><a href="class_skinner_1_1c_skin_painter_job_apply_brushes.html" class="m-doc">cSkinPainterJobApplyBrushes</a></li><li><a href="class_skinner_1_1c_skin_painter_job_paint_parts.html" class="m-doc">cSkinPainterJobPaintParts</a></li><li>Checks some values</li><li><a href="class_skinner_1_1c_skin_painter_job_ambient_occlusion.html" class="m-doc">cSkinPainterJobAmbientOcclusion</a></li><li><a href="class_skinner_1_1c_skin_painter_job_color_dilate_repeat.html" class="m-doc">cSkinPainterJobColorDilateRepeat</a> (field_10=0, field_14=8)</li><li><a href="class_skinner_1_1c_skin_painter_job_color_dilate_repeat.html" class="m-doc">cSkinPainterJobColorDilateRepeat</a> (field_10=1, field_14=8)</li><li><a href="class_skinner_1_1c_skin_painter_job_copy_tex1_alpha_to_tex0.html" class="m-doc">cSkinPainterJobCopyTex1AlphaToTex0</a></li><li><a href="class_skinner_1_1c_skin_painter_job_copy_rigblocks_tint_mask_alpha.html" class="m-doc">cSkinPainterJobCopyRigblocksTintMaskAlpha</a></li><li><a href="class_skinner_1_1c_skin_painter_job_extract_texture.html" class="m-doc">cSkinPainterJobExtractTexture</a> (with texture 0)</li><li><a href="class_skinner_1_1c_skin_painter_job_bump_to_normal.html" class="m-doc">cSkinPainterJobBumpToNormal</a></li><li><a href="class_skinner_1_1c_skin_painter_job_extract_texture.html" class="m-doc">cSkinPainterJobExtractTexture</a> (with texture 2)</li></ol>
+          </div></section>
         </section>
       </div>
     </div>

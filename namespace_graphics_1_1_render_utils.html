@@ -81,40 +81,6 @@
             </dt>
             <dd>Returns the Direct3D Device used for all rendering operations in the game.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#a1e4199997fb2d30663d8a686414fb946" class="m-doc">GetShaderData</a>(</span><span class="m-doc-wrap">) -&gt; void**</span>
-            </dt>
-            <dd>Returns a pointer to the array that contains the values of shader data.</dd>
-            <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#a138d3ae694ba66ebb593b6cd30be0c51" class="m-doc">GetMaterialShader</a>(</span><span class="m-doc-wrap">) -&gt; <a href="class_graphics_1_1_material_shader.html" class="m-doc">MaterialShader</a>*</span>
-            </dt>
-            <dd>Returns the current <a href="class_graphics_1_1_material_shader.html" class="m-doc">MaterialShader</a> object which is being used to render.</dd>
-            <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#ae53e96c6fd71ab6061088e215686357f" class="m-doc">GetModelToWorld</a>(</span><span class="m-doc-wrap">) -&gt; D3DMATRIX*</span>
-            </dt>
-            <dd>Returns the &#x27;modelToWorld&#x27; matrix.</dd>
-            <dt>
-              <span class="m-doc-wrap-bumper">void <a href="#a253f29d0938f24b9245dd359ca32199a" class="m-doc">SetModelMatrix</a>(</span><span class="m-doc-wrap">D3DMATRIX* value)</span>
-            </dt>
-            <dd>Sets the &#x27;modelToWorld&#x27; matrix.</dd>
-            <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#a0e8afec3b9f608d435e2a0900bd83cb7" class="m-doc">GetModelToWorldTransposed</a>(</span><span class="m-doc-wrap">) -&gt; D3DMATRIX*</span>
-            </dt>
-            <dd>Returns the &#x27;modelToWorld&#x27; matrix, transposed.</dd>
-            <dt>
-              <span class="m-doc-wrap-bumper">void <a href="#ab7279f764073ed21a0835a839a806877" class="m-doc">SetModelToWorldTransposed</a>(</span><span class="m-doc-wrap">D3DMATRIX* value)</span>
-            </dt>
-            <dd>Sets the &#x27;modelToWorld&#x27; matrix, transposed.</dd>
-            <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#a6f37c8b2e6dc8da6cbd7056e313855b1" class="m-doc">GetPresentationParameters</a>(</span><span class="m-doc-wrap">) -&gt; D3DPRESENT_PARAMETERS&amp;</span>
-            </dt>
-            <dd><span></span></dd>
-            <dt>
-              <span class="m-doc-wrap-bumper">void <a href="#aad8fcd0cbfbd3ccf0dad07053359bd4c" class="m-doc">SetShaderData</a>(</span><span class="m-doc-wrap">short index,
-              void* value,
-              bool overrideIfEqual = false)</span>
-            </dt>
-            <dd><span></span></dd>
-            <dt>
               <span class="m-doc-wrap-bumper">auto <a href="#a9e0e59d1f39885f6c209b5ceabf8ebf6" class="m-doc">GetShaderDataSize</a>(</span><span class="m-doc-wrap">short index) -&gt; int</span>
             </dt>
             <dd><span></span></dd>
@@ -134,16 +100,6 @@
               <span class="m-doc-wrap-bumper">auto <a href="#ae5e85c72003ed85694f3635eaae2d524" class="m-doc">CreateDevice</a>(</span><span class="m-doc-wrap"><a href="struct_graphics_1_1_render_utils_1_1_device_parameters.html" class="m-doc">DeviceParameters</a>&amp; parameters) -&gt; int</span>
             </dt>
             <dd>Creates the Direct3D device.</dd>
-            <dt>
-              <span class="m-doc-wrap-bumper">void <a href="#a1e2275b5e8caab3e6a7ae4729e06c414" class="m-doc">SetTexture</a>(</span><span class="m-doc-wrap">int slotIndex,
-              <a href="struct_render_ware_1_1_raster.html" class="m-doc">RenderWare::<wbr />Raster</a>* raster)</span>
-            </dt>
-            <dd>Sends the given raster to the Direct3D device.</dd>
-            <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#a6015e65feb80d2468d35592946f3245e" class="m-doc">SetRenderTarget</a>(</span><span class="m-doc-wrap">int index,
-              <a href="struct_render_ware_1_1_raster.html" class="m-doc">RenderWare::<wbr />Raster</a>* raster) -&gt; HRESULT</span>
-            </dt>
-            <dd>Sets the given raster to be the active Direct3D render target for the given index.</dd>
           </dl>
         </section>
         <section>
@@ -161,88 +117,6 @@
               <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_render_utils_8h.html">&lt;Spore/Graphics/RenderUtils.h&gt;</a></div>
             </h3>
             <p>Returns the Direct3D Device used for all rendering operations in the game.</p>
-          </div></section>
-          <section class="m-doc-details" id="a1e4199997fb2d30663d8a686414fb946"><div>
-            <h3>
-              <span class="m-doc-wrap-bumper">void** Graphics::<wbr />RenderUtils::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a1e4199997fb2d30663d8a686414fb946" class="m-doc-self">GetShaderData</a>(</span><span class="m-doc-wrap">)</span></span>
-              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_render_utils_8h.html">&lt;Spore/Graphics/RenderUtils.h&gt;</a></div>
-            </h3>
-            <p>Returns a pointer to the array that contains the values of shader data.</p>
-<p>For example, you can do <a href="namespace_graphics_1_1_render_utils.html#a1e4199997fb2d30663d8a686414fb946" class="m-doc">GetShaderData()</a>[ShaderData::skinWeights];</p>
-          </div></section>
-          <section class="m-doc-details" id="a138d3ae694ba66ebb593b6cd30be0c51"><div>
-            <h3>
-              <span class="m-doc-wrap-bumper"><a href="class_graphics_1_1_material_shader.html" class="m-doc">MaterialShader</a>* Graphics::<wbr />RenderUtils::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a138d3ae694ba66ebb593b6cd30be0c51" class="m-doc-self">GetMaterialShader</a>(</span><span class="m-doc-wrap">)</span></span>
-              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_render_utils_8h.html">&lt;Spore/Graphics/RenderUtils.h&gt;</a></div>
-            </h3>
-            <p>Returns the current <a href="class_graphics_1_1_material_shader.html" class="m-doc">MaterialShader</a> object which is being used to render.</p>
-<p>This can either be a <a href="class_graphics_1_1_shader_builder.html" class="m-doc">ShaderBuilder</a> or an <a href="class_graphics_1_1_standard_shader.html" class="m-doc">StandardShader</a>.</p>
-          </div></section>
-          <section class="m-doc-details" id="ae53e96c6fd71ab6061088e215686357f"><div>
-            <h3>
-              <span class="m-doc-wrap-bumper">D3DMATRIX* Graphics::<wbr />RenderUtils::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ae53e96c6fd71ab6061088e215686357f" class="m-doc-self">GetModelToWorld</a>(</span><span class="m-doc-wrap">)</span></span>
-              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_render_utils_8h.html">&lt;Spore/Graphics/RenderUtils.h&gt;</a></div>
-            </h3>
-            <p>Returns the &#x27;modelToWorld&#x27; matrix.</p>
-          </div></section>
-          <section class="m-doc-details" id="a253f29d0938f24b9245dd359ca32199a"><div>
-            <h3>
-              <span class="m-doc-wrap-bumper">void Graphics::<wbr />RenderUtils::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a253f29d0938f24b9245dd359ca32199a" class="m-doc-self">SetModelMatrix</a>(</span><span class="m-doc-wrap">D3DMATRIX* value)</span></span>
-              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_render_utils_8h.html">&lt;Spore/Graphics/RenderUtils.h&gt;</a></div>
-            </h3>
-            <p>Sets the &#x27;modelToWorld&#x27; matrix.</p>
-            <table class="m-table m-fullwidth m-flat">
-              <thead>
-                <tr><th colspan="2">Parameters</th></tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td style="width: 1%">value</td>
-                  <td></td>
-                </tr>
-              </tbody>
-            </table>
-          </div></section>
-          <section class="m-doc-details" id="a0e8afec3b9f608d435e2a0900bd83cb7"><div>
-            <h3>
-              <span class="m-doc-wrap-bumper">D3DMATRIX* Graphics::<wbr />RenderUtils::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a0e8afec3b9f608d435e2a0900bd83cb7" class="m-doc-self">GetModelToWorldTransposed</a>(</span><span class="m-doc-wrap">)</span></span>
-              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_render_utils_8h.html">&lt;Spore/Graphics/RenderUtils.h&gt;</a></div>
-            </h3>
-            <p>Returns the &#x27;modelToWorld&#x27; matrix, transposed.</p>
-          </div></section>
-          <section class="m-doc-details" id="ab7279f764073ed21a0835a839a806877"><div>
-            <h3>
-              <span class="m-doc-wrap-bumper">void Graphics::<wbr />RenderUtils::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ab7279f764073ed21a0835a839a806877" class="m-doc-self">SetModelToWorldTransposed</a>(</span><span class="m-doc-wrap">D3DMATRIX* value)</span></span>
-              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_render_utils_8h.html">&lt;Spore/Graphics/RenderUtils.h&gt;</a></div>
-            </h3>
-            <p>Sets the &#x27;modelToWorld&#x27; matrix, transposed.</p>
-            <table class="m-table m-fullwidth m-flat">
-              <thead>
-                <tr><th colspan="2">Parameters</th></tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td style="width: 1%">value</td>
-                  <td></td>
-                </tr>
-              </tbody>
-            </table>
-          </div></section>
-          <section class="m-doc-details" id="a6f37c8b2e6dc8da6cbd7056e313855b1"><div>
-            <h3>
-              <span class="m-doc-wrap-bumper">D3DPRESENT_PARAMETERS&amp; Graphics::<wbr />RenderUtils::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a6f37c8b2e6dc8da6cbd7056e313855b1" class="m-doc-self">GetPresentationParameters</a>(</span><span class="m-doc-wrap">)</span></span>
-              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_render_utils_8h.html">&lt;Spore/Graphics/RenderUtils.h&gt;</a></div>
-            </h3>
-            <p><span></span></p>
-          </div></section>
-          <section class="m-doc-details" id="aad8fcd0cbfbd3ccf0dad07053359bd4c"><div>
-            <h3>
-              <span class="m-doc-wrap-bumper">void Graphics::<wbr />RenderUtils::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#aad8fcd0cbfbd3ccf0dad07053359bd4c" class="m-doc-self">SetShaderData</a>(</span><span class="m-doc-wrap">short index,
-              void* value,
-              bool overrideIfEqual = false)</span></span>
-              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_render_utils_8h.html">&lt;Spore/Graphics/RenderUtils.h&gt;</a></div>
-            </h3>
-            <p><span></span></p>
           </div></section>
           <section class="m-doc-details" id="a9e0e59d1f39885f6c209b5ceabf8ebf6"><div>
             <h3>
@@ -299,59 +173,6 @@
               </tbody>
             </table>
 <p>This must not be called, as it would create another device; if you need to modify this, detour this function.</p>
-          </div></section>
-          <section class="m-doc-details" id="a1e2275b5e8caab3e6a7ae4729e06c414"><div>
-            <h3>
-              <span class="m-doc-wrap-bumper">void Graphics::<wbr />RenderUtils::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a1e2275b5e8caab3e6a7ae4729e06c414" class="m-doc-self">SetTexture</a>(</span><span class="m-doc-wrap">int slotIndex,
-              <a href="struct_render_ware_1_1_raster.html" class="m-doc">RenderWare::<wbr />Raster</a>* raster)</span></span>
-              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_render_utils_8h.html">&lt;Spore/Graphics/RenderUtils.h&gt;</a></div>
-            </h3>
-            <p>Sends the given raster to the Direct3D device.</p>
-            <table class="m-table m-fullwidth m-flat">
-              <thead>
-                <tr><th colspan="2">Parameters</th></tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td style="width: 1%">slotIndex</td>
-                  <td>The slot this raster will occupy, between 0 and 15.</td>
-                </tr>
-                <tr>
-                  <td>raster</td>
-                  <td></td>
-                </tr>
-              </tbody>
-            </table>
-          </div></section>
-          <section class="m-doc-details" id="a6015e65feb80d2468d35592946f3245e"><div>
-            <h3>
-              <span class="m-doc-wrap-bumper">HRESULT Graphics::<wbr />RenderUtils::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a6015e65feb80d2468d35592946f3245e" class="m-doc-self">SetRenderTarget</a>(</span><span class="m-doc-wrap">int index,
-              <a href="struct_render_ware_1_1_raster.html" class="m-doc">RenderWare::<wbr />Raster</a>* raster)</span></span>
-              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_render_utils_8h.html">&lt;Spore/Graphics/RenderUtils.h&gt;</a></div>
-            </h3>
-            <p>Sets the given raster to be the active Direct3D render target for the given index.</p>
-            <table class="m-table m-fullwidth m-flat">
-              <thead>
-                <tr><th colspan="2">Parameters</th></tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td style="width: 1%">index</td>
-                  <td>The render target index</td>
-                </tr>
-                <tr>
-                  <td>raster</td>
-                  <td></td>
-                </tr>
-              </tbody>
-              <tfoot>
-                <tr>
-                  <th>Returns</th>
-                  <td>D3D_OK if the operation succeeded, an error code otherwise.</td>
-                </tr>
-              </tfoot>
-            </table>
-<p>Only works if the Raster is a surface.</p>
           </div></section>
         </section>
       </div>

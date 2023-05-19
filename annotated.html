@@ -68,7 +68,6 @@
               <li>class <a href="class_anim_1_1_animated_creature.html" class="m-doc">AnimatedCreature</a> <span class="m-doc"><span></span></span></li>
               <li>struct <a href="struct_anim_1_1_animation_message.html" class="m-doc">AnimationMessage</a> <span class="m-doc">Data of a message sent from an animation event.</span></li>
               <li>class <a href="class_anim_1_1c_anim_manager_impl.html" class="m-doc">cAnimManagerImpl</a> <span class="m-doc"><span></span></span></li>
-              <li>class <a href="class_anim_1_1c_anim_world.html" class="m-doc">cAnimWorld</a> <span class="m-doc"><span></span></span></li>
               <li class="m-doc-collapsible collapsed">
                 <a href="#" onclick="return toggle(this)">struct</a> <a href="struct_anim_1_1_creature_block.html" class="m-doc">CreatureBlock</a> <span class="m-doc"><span></span></span>
                 <ul class="m-doc">
@@ -95,8 +94,17 @@
             <ul class="m-doc">
               <li>namespace <a href="namespace_app_1_1_scenario_mode__addresses.html" class="m-doc">ScenarioMode_addresses</a> <span class="m-doc"><span></span></span></li>
               <li>namespace <a href="namespace_app_1_1_s_p_property_i_ds.html" class="m-doc">SPPropertyIDs</a> <span class="m-doc">This namespace only contains property IDs to be used in the AppProperties module.</span></li>
+              <li class="m-doc-collapsible collapsed">
+                <a href="#" onclick="return toggle(this)">class</a> <a href="class_app_1_1c_arithmetica_resource.html" class="m-doc">cArithmeticaResource</a> <span class="m-doc"><span></span></span>
+                <ul class="m-doc">
+                  <li>struct <a href="struct_app_1_1c_arithmetica_resource_1_1_arithmetica_state.html" class="m-doc">ArithmeticaState</a> <span class="m-doc"><span></span></span></li>
+                  <li>struct <a href="struct_app_1_1c_arithmetica_resource_1_1_operation_definition.html" class="m-doc">OperationDefinition</a> <span class="m-doc"><span></span></span></li>
+                </ul>
+              </li>
               <li>class <a href="class_app_1_1c_camera_manager.html" class="m-doc">cCameraManager</a> <span class="m-doc">The implementation of <a href="class_app_1_1_i_camera_manager.html" class="m-doc">ICameraManager</a>; this should only be used for extending and detouring.</span></li>
+              <li>class <a href="class_app_1_1c_cell_mode_strategy.html" class="m-doc">cCellModeStrategy</a> <span class="m-doc"><span></span></span></li>
               <li>class <a href="class_app_1_1c_cheat_manager.html" class="m-doc">cCheatManager</a> <span class="m-doc">The implementation of <a href="class_app_1_1_i_cheat_manager.html" class="m-doc">ICheatManager</a>; this should only be used for extending and detouring.</span></li>
+              <li>class <a href="class_app_1_1c_creature_mode_strategy.html" class="m-doc">cCreatureModeStrategy</a> <span class="m-doc"><span></span></span></li>
               <li class="m-doc-collapsible collapsed">
                 <a href="#" onclick="return toggle(this)">class</a> <a href="class_app_1_1c_game_mode_manager.html" class="m-doc">cGameModeManager</a> <span class="m-doc">The implementation of <a href="class_app_1_1_i_game_mode_manager.html" class="m-doc">IGameModeManager</a>; this should only be used for extending and detouring.</span>
                 <ul class="m-doc">
@@ -145,7 +153,6 @@
               <li>class <a href="class_app_1_1_i_message_r_c.html" class="m-doc">IMessageRC</a> <span class="m-doc"><span></span></span></li>
               <li>class <a href="class_app_1_1_i_prop_manager.html" class="m-doc">IPropManager</a> <span class="m-doc">A manager that stores all the property lists in the game, used for most configurations.</span></li>
               <li>class <a href="class_app_1_1_i_s_p_class_factory.html" class="m-doc">ISPClassFactory</a> <span class="m-doc"><span></span></span></li>
-              <li>class <a href="class_app_1_1_i_state_manager.html" class="m-doc">IStateManager</a> <span class="m-doc"><span></span></span></li>
               <li>class <a href="class_app_1_1_i_token_translator.html" class="m-doc">ITokenTranslator</a> <span class="m-doc"><span></span></span></li>
               <li>class <a href="class_app_1_1_i_unmanaged_message_listener.html" class="m-doc">IUnmanagedMessageListener</a> <span class="m-doc">Same as <a href="class_app_1_1_i_message_listener.html" class="m-doc">App::<wbr />IMessageListener</a>, but this one does not use ref-counting.</span></li>
               <li>class <a href="class_app_1_1_i_updatable.html" class="m-doc">IUpdatable</a> <span class="m-doc"><span></span></span></li>
@@ -273,6 +280,7 @@
           <li class="m-doc-collapsible">
             <a href="#" onclick="return toggle(this)">namespace</a> <a href="namespace_graphics.html" class="m-doc">Graphics</a> <span class="m-doc">All the graphics system: rendering, shaders, models, lighting, textures,...</span>
             <ul class="m-doc">
+              <li>namespace <a href="namespace_graphics_1_1_active_state.html" class="m-doc">ActiveState</a> <span class="m-doc"><span></span></span></li>
               <li>namespace <a href="namespace_graphics_1_1_global_state.html" class="m-doc">GlobalState</a> <span class="m-doc"><span></span></span></li>
               <li>namespace <a href="namespace_graphics_1_1_renderer__addresses.html" class="m-doc">Renderer_addresses</a> <span class="m-doc"><span></span></span></li>
               <li class="m-doc-collapsible collapsed">
@@ -325,7 +333,6 @@
               <li>struct <a href="struct_graphics_1_1c_m_w_transformed_hull.html" class="m-doc">cMWTransformedHull</a> <span class="m-doc"><span></span></span></li>
               <li>class <a href="class_graphics_1_1_compiled_shader.html" class="m-doc">CompiledShader</a> <span class="m-doc"><span></span></span></li>
               <li>struct <a href="struct_graphics_1_1c_render_job_info.html" class="m-doc">cRenderJobInfo</a> <span class="m-doc"><span></span></span></li>
-              <li>class <a href="class_graphics_1_1c_render_manager.html" class="m-doc">cRenderManager</a> <span class="m-doc"><span></span></span></li>
               <li class="m-doc-collapsible collapsed">
                 <a href="#" onclick="return toggle(this)">class</a> <a href="class_graphics_1_1c_render_target_manager.html" class="m-doc">cRenderTargetManager</a> <span class="m-doc"><span></span></span>
                 <ul class="m-doc">
@@ -418,7 +425,7 @@
               <li>struct <a href="struct_math_1_1_point.html" class="m-doc">Point</a> <span class="m-doc">Represents a point in the space, defined by two float coordinates (x, y).</span></li>
               <li>struct <a href="struct_math_1_1_quaternion.html" class="m-doc">Quaternion</a> <span class="m-doc">A vector of 4 float values (x, y, z, w) representing a quaternion rotation, similar to a <a href="struct_math_1_1_vector4.html" class="m-doc">Vector4</a>.</span></li>
               <li>struct <a href="struct_math_1_1_random_number_generator.html" class="m-doc">RandomNumberGenerator</a> <span class="m-doc"><span></span></span></li>
-              <li>union <a href="union_math_1_1_rectangle.html" class="m-doc">Rectangle</a> <span class="m-doc">Represents a rectangular space, defined by two points or by the four edges.</span></li>
+              <li>struct <a href="struct_math_1_1_rectangle.html" class="m-doc">Rectangle</a> <span class="m-doc">Represents a rectangular space, defined by two points or by the four edges.</span></li>
               <li>struct <a href="struct_math_1_1_vector2.html" class="m-doc">Vector2</a> <span class="m-doc">A vector of 2 float values (x, y).</span></li>
               <li>struct <a href="struct_math_1_1_vector3.html" class="m-doc">Vector3</a> <span class="m-doc">A vector of 3 float values (x, y, z).</span></li>
               <li>struct <a href="struct_math_1_1_vector4.html" class="m-doc">Vector4</a> <span class="m-doc">A vector of 4 float values (x, y, z, w).</span></li>
@@ -556,11 +563,95 @@
             <a href="#" onclick="return toggle(this)">namespace</a> <a href="namespace_simulator.html" class="m-doc">Simulator</a> <span class="m-doc"><span></span></span>
             <ul class="m-doc">
               <li class="m-doc-collapsible collapsed">
-                <a href="#" onclick="return toggle(this)">namespace</a> <a href="namespace_simulator_1_1_cell.html" class="m-doc">Cell</a> <span class="m-doc"><span></span></span>
+                <a href="#" onclick="return toggle(this)">namespace</a> <a href="namespace_simulator_1_1_a_i.html" class="m-doc">AI</a> <span class="m-doc"><span></span></span>
                 <ul class="m-doc">
-                  <li>class <a href="class_simulator_1_1_cell_1_1_cell_g_f_x.html" class="m-doc">CellGFX</a> <span class="m-doc"><span></span></span></li>
-                  <li>class <a href="class_simulator_1_1_cell_1_1_cell_u_i.html" class="m-doc">CellUI</a> <span class="m-doc"><span></span></span></li>
-                  <li>class <a href="class_simulator_1_1_cell_1_1_game_mode_cell.html" class="m-doc">GameModeCell</a> <span class="m-doc"><span></span></span></li>
+                  <li>struct <a href="struct_simulator_1_1_a_i_1_1c_behavior.html" class="m-doc">cBehavior</a> <span class="m-doc"><span></span></span></li>
+                  <li>class <a href="class_simulator_1_1_a_i_1_1c_behavior_tree_data.html" class="m-doc">cBehaviorTreeData</a> <span class="m-doc"><span></span></span></li>
+                  <li>struct <a href="struct_simulator_1_1_a_i_1_1c_decider.html" class="m-doc">cDecider</a> <span class="m-doc"><span></span></span></li>
+                </ul>
+              </li>
+              <li class="m-doc-collapsible collapsed">
+                <a href="#" onclick="return toggle(this)">namespace</a> <a href="namespace_simulator_1_1_cell.html" class="m-doc">Cell</a> <span class="m-doc"><a href="namespace_simulator_1_1_cell.html" class="m-doc">Cell</a> stage functionality.</span>
+                <ul class="m-doc">
+                  <li>class <a href="class_simulator_1_1_cell_1_1c_advect_resource.html" class="m-doc">cAdvectResource</a> <span class="m-doc"><span></span></span></li>
+                  <li class="m-doc-collapsible collapsed">
+                    <a href="#" onclick="return toggle(this)">struct</a> <a href="struct_simulator_1_1_cell_1_1c_cell_background_map_resource.html" class="m-doc">cCellBackgroundMapResource</a> <span class="m-doc"><span></span></span>
+                    <ul class="m-doc">
+                      <li>struct <a href="struct_simulator_1_1_cell_1_1c_cell_background_map_resource_1_1c_background_map_entry.html" class="m-doc">cBackgroundMapEntry</a> <span class="m-doc"><span></span></span></li>
+                    </ul>
+                  </li>
+                  <li class="m-doc-collapsible collapsed">
+                    <a href="#" onclick="return toggle(this)">struct</a> <a href="struct_simulator_1_1_cell_1_1c_cell_cell_resource.html" class="m-doc">cCellCellResource</a> <span class="m-doc"><span></span></span>
+                    <ul class="m-doc">
+                      <li>struct <a href="struct_simulator_1_1_cell_1_1c_cell_cell_resource_1_1c_a_i_data.html" class="m-doc">cAIData</a> <span class="m-doc"><span></span></span></li>
+                      <li>struct <a href="struct_simulator_1_1_cell_1_1c_cell_cell_resource_1_1c_eat_data.html" class="m-doc">cEatData</a> <span class="m-doc"><span></span></span></li>
+                      <li>struct <a href="struct_simulator_1_1_cell_1_1c_cell_cell_resource_1_1c_localized_string.html" class="m-doc">cLocalizedString</a> <span class="m-doc"><span></span></span></li>
+                    </ul>
+                  </li>
+                  <li>struct <a href="struct_simulator_1_1_cell_1_1c_cell_data_reference.html" class="m-doc">cCellDataReference</a> <span class="m-doc"><span></span></span></li>
+                  <li>struct <a href="struct_simulator_1_1_cell_1_1c_cell_data_reference__.html" class="m-doc">cCellDataReference_</a> <span class="m-doc"><span></span></span></li>
+                  <li class="m-doc-collapsible collapsed">
+                    <a href="#" onclick="return toggle(this)">struct</a> <a href="struct_simulator_1_1_cell_1_1c_cell_effect_map_resource.html" class="m-doc">cCellEffectMapResource</a> <span class="m-doc"><span></span></span>
+                    <ul class="m-doc">
+                      <li>struct <a href="struct_simulator_1_1_cell_1_1c_cell_effect_map_resource_1_1c_effect_map_entry.html" class="m-doc">cEffectMapEntry</a> <span class="m-doc"><span></span></span></li>
+                    </ul>
+                  </li>
+                  <li>class <a href="class_simulator_1_1_cell_1_1c_cell_game.html" class="m-doc">cCellGame</a> <span class="m-doc"><span></span></span></li>
+                  <li>class <a href="class_simulator_1_1_cell_1_1c_cell_g_f_x.html" class="m-doc">cCellGFX</a> <span class="m-doc"><span></span></span></li>
+                  <li>struct <a href="struct_simulator_1_1_cell_1_1c_cell_globals_resource.html" class="m-doc">cCellGlobalsResource</a> <span class="m-doc"><span></span></span></li>
+                  <li class="m-doc-collapsible collapsed">
+                    <a href="#" onclick="return toggle(this)">struct</a> <a href="struct_simulator_1_1_cell_1_1c_cell_look_algorithm_resource.html" class="m-doc">cCellLookAlgorithmResource</a> <span class="m-doc"><span></span></span>
+                    <ul class="m-doc">
+                      <li>struct <a href="struct_simulator_1_1_cell_1_1c_cell_look_algorithm_resource_1_1c_look_algorithm_entry.html" class="m-doc">cLookAlgorithmEntry</a> <span class="m-doc"><span></span></span></li>
+                    </ul>
+                  </li>
+                  <li class="m-doc-collapsible collapsed">
+                    <a href="#" onclick="return toggle(this)">struct</a> <a href="struct_simulator_1_1_cell_1_1c_cell_look_table_resource.html" class="m-doc">cCellLookTableResource</a> <span class="m-doc"><span></span></span>
+                    <ul class="m-doc">
+                      <li>struct <a href="struct_simulator_1_1_cell_1_1c_cell_look_table_resource_1_1c_look_table_entry.html" class="m-doc">cLookTableEntry</a> <span class="m-doc"><span></span></span></li>
+                    </ul>
+                  </li>
+                  <li class="m-doc-collapsible collapsed">
+                    <a href="#" onclick="return toggle(this)">struct</a> <a href="struct_simulator_1_1_cell_1_1c_cell_loot_table_resource.html" class="m-doc">cCellLootTableResource</a> <span class="m-doc"><span></span></span>
+                    <ul class="m-doc">
+                      <li>struct <a href="struct_simulator_1_1_cell_1_1c_cell_loot_table_resource_1_1c_loot_table_entry.html" class="m-doc">cLootTableEntry</a> <span class="m-doc"><span></span></span></li>
+                    </ul>
+                  </li>
+                  <li>struct <a href="struct_simulator_1_1_cell_1_1c_cell_mission.html" class="m-doc">cCellMission</a> <span class="m-doc"><span></span></span></li>
+                  <li>struct <a href="struct_simulator_1_1_cell_1_1c_cell_object_data.html" class="m-doc">cCellObjectData</a> <span class="m-doc"><span></span></span></li>
+                  <li class="m-doc-collapsible collapsed">
+                    <a href="#" onclick="return toggle(this)">struct</a> <a href="struct_simulator_1_1_cell_1_1c_cell_populate_resource.html" class="m-doc">cCellPopulateResource</a> <span class="m-doc"><span></span></span>
+                    <ul class="m-doc">
+                      <li>struct <a href="struct_simulator_1_1_cell_1_1c_cell_populate_resource_1_1c_marker.html" class="m-doc">cMarker</a> <span class="m-doc"><span></span></span></li>
+                    </ul>
+                  </li>
+                  <li>struct <a href="struct_simulator_1_1_cell_1_1c_cell_powers_resource.html" class="m-doc">cCellPowersResource</a> <span class="m-doc"><span></span></span></li>
+                  <li class="m-doc-collapsible collapsed">
+                    <a href="#" onclick="return toggle(this)">struct</a> <a href="struct_simulator_1_1_cell_1_1c_cell_random_creature_resource.html" class="m-doc">cCellRandomCreatureResource</a> <span class="m-doc"><span></span></span>
+                    <ul class="m-doc">
+                      <li>struct <a href="struct_simulator_1_1_cell_1_1c_cell_random_creature_resource_1_1c_random_creature_entry.html" class="m-doc">cRandomCreatureEntry</a> <span class="m-doc"><span></span></span></li>
+                    </ul>
+                  </li>
+                  <li>class <a href="class_simulator_1_1_cell_1_1c_cell_resource.html" class="m-doc">cCellResource</a> <span class="m-doc"><span></span></span></li>
+                  <li>struct <a href="struct_simulator_1_1_cell_1_1c_cell_scale_info.html" class="m-doc">cCellScaleInfo</a> <span class="m-doc"><span></span></span></li>
+                  <li>class <a href="class_simulator_1_1_cell_1_1c_cell_serializable_data.html" class="m-doc">cCellSerializableData</a> <span class="m-doc"><span></span></span></li>
+                  <li class="m-doc-collapsible collapsed">
+                    <a href="#" onclick="return toggle(this)">struct</a> <a href="struct_simulator_1_1_cell_1_1c_cell_structure_resource.html" class="m-doc">cCellStructureResource</a> <span class="m-doc"><span></span></span>
+                    <ul class="m-doc">
+                      <li>struct <a href="struct_simulator_1_1_cell_1_1c_cell_structure_resource_1_1c_s_p_attachment.html" class="m-doc">cSPAttachment</a> <span class="m-doc"><span></span></span></li>
+                    </ul>
+                  </li>
+                  <li>class <a href="class_simulator_1_1_cell_1_1c_cell_u_i.html" class="m-doc">cCellUI</a> <span class="m-doc"><span></span></span></li>
+                  <li>struct <a href="struct_simulator_1_1_cell_1_1c_cell_u_i_rollover.html" class="m-doc">cCellUIRollover</a> <span class="m-doc"><span></span></span></li>
+                  <li class="m-doc-collapsible collapsed">
+                    <a href="#" onclick="return toggle(this)">struct</a> <a href="struct_simulator_1_1_cell_1_1c_cell_world_resource.html" class="m-doc">cCellWorldResource</a> <span class="m-doc"><span></span></span>
+                    <ul class="m-doc">
+                      <li>struct <a href="struct_simulator_1_1_cell_1_1c_cell_world_resource_1_1c_advect_entry.html" class="m-doc">cAdvectEntry</a> <span class="m-doc"><span></span></span></li>
+                      <li>struct <a href="struct_simulator_1_1_cell_1_1c_cell_world_resource_1_1c_level_entry.html" class="m-doc">cLevelEntry</a> <span class="m-doc"><span></span></span></li>
+                    </ul>
+                  </li>
+                  <li>struct <a href="struct_simulator_1_1_cell_1_1_cell_serializer.html" class="m-doc">CellSerializer</a> <span class="m-doc"><span></span></span></li>
+                  <li>struct <a href="struct_simulator_1_1_cell_1_1_cell_serializer_field.html" class="m-doc">CellSerializerField</a> <span class="m-doc"><span></span></span></li>
                 </ul>
               </li>
               <li>namespace <a href="namespace_simulator_1_1_scenario_input_strategy.html" class="m-doc">ScenarioInputStrategy</a> <span class="m-doc"><span></span></span></li>
@@ -589,10 +680,17 @@
               <li>struct <a href="struct_simulator_1_1_attribute.html" class="m-doc">Attribute</a> <span class="m-doc"><span></span></span></li>
               <li>class <a href="class_simulator_1_1c_abduct_tool_strategy.html" class="m-doc">cAbductToolStrategy</a> <span class="m-doc"><span></span></span></li>
               <li>class <a href="class_simulator_1_1c_ability_state.html" class="m-doc">cAbilityState</a> <span class="m-doc"><span></span></span></li>
+              <li class="m-doc-collapsible collapsed">
+                <a href="#" onclick="return toggle(this)">struct</a> <a href="struct_simulator_1_1c_ability_u_i_map.html" class="m-doc">cAbilityUIMap</a> <span class="m-doc"><span></span></span>
+                <ul class="m-doc">
+                  <li>struct <a href="struct_simulator_1_1c_ability_u_i_map_1_1_entry.html" class="m-doc">Entry</a> <span class="m-doc"><span></span></span></li>
+                </ul>
+              </li>
               <li>class <a href="class_simulator_1_1c_animal_cargo_info.html" class="m-doc">cAnimalCargoInfo</a> <span class="m-doc"><span></span></span></li>
               <li>class <a href="class_simulator_1_1c_animal_species_manager.html" class="m-doc">cAnimalSpeciesManager</a> <span class="m-doc"><span></span></span></li>
               <li>class <a href="class_simulator_1_1c_artillery_weapon_strategy.html" class="m-doc">cArtilleryWeaponStrategy</a> <span class="m-doc"><span></span></span></li>
               <li>class <a href="class_simulator_1_1c_badge_manager.html" class="m-doc">cBadgeManager</a> <span class="m-doc"><span></span></span></li>
+              <li>class <a href="class_simulator_1_1c_base_display_strategy.html" class="m-doc">cBaseDisplayStrategy</a> <span class="m-doc"><span></span></span></li>
               <li>class <a href="class_simulator_1_1c_behavior_agent.html" class="m-doc">cBehaviorAgent</a> <span class="m-doc"><span></span></span></li>
               <li>class <a href="class_simulator_1_1c_behavior_base.html" class="m-doc">cBehaviorBase</a> <span class="m-doc"><span></span></span></li>
               <li class="m-doc-collapsible collapsed">
@@ -634,6 +732,8 @@
               <li>class <a href="class_simulator_1_1c_creature_animal.html" class="m-doc">cCreatureAnimal</a> <span class="m-doc"><span></span></span></li>
               <li>class <a href="class_simulator_1_1c_creature_base.html" class="m-doc">cCreatureBase</a> <span class="m-doc">The base class for all creatures in the <a href="namespace_simulator.html" class="m-doc">Simulator</a>.</span></li>
               <li>class <a href="class_simulator_1_1c_creature_citizen.html" class="m-doc">cCreatureCitizen</a> <span class="m-doc"><span></span></span></li>
+              <li>class <a href="class_simulator_1_1c_creature_display_strategy.html" class="m-doc">cCreatureDisplayStrategy</a> <span class="m-doc"><span></span></span></li>
+              <li>class <a href="class_simulator_1_1c_creature_game_data.html" class="m-doc">cCreatureGameData</a> <span class="m-doc"><span></span></span></li>
               <li>class <a href="class_simulator_1_1c_creature_item.html" class="m-doc">cCreatureItem</a> <span class="m-doc"><span></span></span></li>
               <li>class <a href="class_simulator_1_1c_crop_circles_tool_strategy.html" class="m-doc">cCropCirclesToolStrategy</a> <span class="m-doc"><span></span></span></li>
               <li>class <a href="class_simulator_1_1c_culture_set.html" class="m-doc">cCultureSet</a> <span class="m-doc">Contains the IDs of all the creation types of a specific &quot;culture&quot; or civilization/empire.</span></li>
@@ -718,6 +818,13 @@
               <li>struct <a href="struct_simulator_1_1_cnv_text.html" class="m-doc">CnvText</a> <span class="m-doc"><span></span></span></li>
               <li>struct <a href="struct_simulator_1_1_cnv_unknown.html" class="m-doc">CnvUnknown</a> <span class="m-doc"><span></span></span></li>
               <li>class <a href="class_simulator_1_1c_object_instance_inventory_item.html" class="m-doc">cObjectInstanceInventoryItem</a> <span class="m-doc"><span></span></span></li>
+              <li class="m-doc-collapsible collapsed">
+                <a href="#" onclick="return toggle(this)">class</a> <a href="class_simulator_1_1c_object_pool.html" class="m-doc">cObjectPool</a> <span class="m-doc">Stores a pool of objects whose memory can be reused efficiently, without need for heap allocations.</span>
+                <ul class="m-doc">
+                  <li>struct <a href="struct_simulator_1_1c_object_pool_1_1_iterator.html" class="m-doc">Iterator</a> <span class="m-doc"><span></span></span></li>
+                </ul>
+              </li>
+              <li>struct <a href="struct_simulator_1_1c_object_pool_class.html" class="m-doc">cObjectPoolClass</a> <span class="m-doc">Base class for all objects that are used inside a <a href="class_simulator_1_1c_object_pool.html" class="m-doc">cObjectPool</a>.</span></li>
               <li>class <a href="class_simulator_1_1_combatant_killed_message.html" class="m-doc">CombatantKilledMessage</a> <span class="m-doc">Called when a <a href="class_simulator_1_1c_combatant.html" class="m-doc">cCombatant</a> is killed.</span></li>
               <li>class <a href="class_simulator_1_1_conversation_resource.html" class="m-doc">ConversationResource</a> <span class="m-doc"><span></span></span></li>
               <li>class <a href="class_simulator_1_1c_ornament.html" class="m-doc">cOrnament</a> <span class="m-doc">Used, among other things, for adventure objects (except pickable ones)</span></li>
@@ -768,7 +875,6 @@
               <li>class <a href="class_simulator_1_1c_scenario_terraform_history_entry.html" class="m-doc">cScenarioTerraformHistoryEntry</a> <span class="m-doc">Undo/redo history entry for terraform (or planet color, etc) actions.</span></li>
               <li>class <a href="class_simulator_1_1c_scenario_terraform_mode.html" class="m-doc">cScenarioTerraformMode</a> <span class="m-doc"><span></span></span></li>
               <li>class <a href="class_simulator_1_1c_sim_planet_high_l_o_d.html" class="m-doc">cSimPlanetHighLOD</a> <span class="m-doc"><span></span></span></li>
-              <li>class <a href="class_simulator_1_1c_sim_planet_low_l_o_d.html" class="m-doc">cSimPlanetLowLOD</a> <span class="m-doc"><span></span></span></li>
               <li>class <a href="class_simulator_1_1c_sim_ticker.html" class="m-doc">cSimTicker</a> <span class="m-doc"><span></span></span></li>
               <li>class <a href="class_simulator_1_1c_simulator_player_u_f_o.html" class="m-doc">cSimulatorPlayerUFO</a> <span class="m-doc"><span></span></span></li>
               <li>class <a href="class_simulator_1_1c_simulator_space_game.html" class="m-doc">cSimulatorSpaceGame</a> <span class="m-doc"><span></span></span></li>
@@ -856,9 +962,14 @@
               <li>class <a href="class_skinner_1_1c_skinner_texture_painter.html" class="m-doc">cSkinnerTexturePainter</a> <span class="m-doc"><span></span></span></li>
               <li>class <a href="class_skinner_1_1c_skin_painter.html" class="m-doc">cSkinPainter</a> <span class="m-doc"><span></span></span></li>
               <li>class <a href="class_skinner_1_1c_skin_painter_job.html" class="m-doc">cSkinPainterJob</a> <span class="m-doc">Base class for tasks executed in the process of generating a skinpaint texture.</span></li>
-              <li>class <a href="class_skinner_1_1c_skin_painter_job_apply_parts_textures.html" class="m-doc">cSkinPainterJobApplyPartsTextures</a> <span class="m-doc">Applies the diffuse, bumpSpec and tintMask maps of all rigblocks.</span></li>
+              <li>class <a href="class_skinner_1_1c_skin_painter_job_ambient_occlusion.html" class="m-doc">cSkinPainterJobAmbientOcclusion</a> <span class="m-doc"><span></span></span></li>
+              <li>class <a href="class_skinner_1_1c_skin_painter_job_apply_brushes.html" class="m-doc">cSkinPainterJobApplyBrushes</a> <span class="m-doc"><span></span></span></li>
               <li>class <a href="class_skinner_1_1c_skin_painter_job_bump_to_normal.html" class="m-doc">cSkinPainterJobBumpToNormal</a> <span class="m-doc">Transforms a bump map in skinner texture 0 into a normal map in skinner texture 2.</span></li>
+              <li>class <a href="class_skinner_1_1c_skin_painter_job_color_dilate_repeat.html" class="m-doc">cSkinPainterJobColorDilateRepeat</a> <span class="m-doc"><span></span></span></li>
+              <li>class <a href="class_skinner_1_1c_skin_painter_job_copy_rigblocks_tint_mask_alpha.html" class="m-doc">cSkinPainterJobCopyRigblocksTintMaskAlpha</a> <span class="m-doc">Copies the alpha channel of all rigblocks tint mask texture into the alpha channel texture 0.</span></li>
               <li>class <a href="class_skinner_1_1c_skin_painter_job_copy_tex1_alpha_to_tex0.html" class="m-doc">cSkinPainterJobCopyTex1AlphaToTex0</a> <span class="m-doc">Copies the alpha channel of skinner texture 1 into the alpha channel of skinner texture 0.</span></li>
+              <li>class <a href="class_skinner_1_1c_skin_painter_job_extract_texture.html" class="m-doc">cSkinPainterJobExtractTexture</a> <span class="m-doc"><span></span></span></li>
+              <li>class <a href="class_skinner_1_1c_skin_painter_job_paint_parts.html" class="m-doc">cSkinPainterJobPaintParts</a> <span class="m-doc">Applies the diffuse, bumpSpec and tintMask maps of all rigblocks.</span></li>
               <li>class <a href="class_skinner_1_1c_skin_painter_pipeline.html" class="m-doc">cSkinPainterPipeline</a> <span class="m-doc"><span></span></span></li>
               <li>struct <a href="struct_skinner_1_1c_skinpaint_info.html" class="m-doc">cSkinpaintInfo</a> <span class="m-doc"><span></span></span></li>
               <li>struct <a href="struct_skinner_1_1_unk.html" class="m-doc">Unk</a> <span class="m-doc"><span></span></span></li>
@@ -916,7 +1027,6 @@
               </li>
               <li>class <a href="class_swarm_1_1c_component_base.html" class="m-doc">cComponentBase</a> <span class="m-doc"><span></span></span></li>
               <li>class <a href="class_swarm_1_1c_description.html" class="m-doc">cDescription</a> <span class="m-doc"><span></span></span></li>
-              <li>class <a href="class_swarm_1_1c_effect.html" class="m-doc">cEffect</a> <span class="m-doc"><span></span></span></li>
               <li>struct <a href="struct_swarm_1_1c_effect_info.html" class="m-doc">cEffectInfo</a> <span class="m-doc"><span></span></span></li>
               <li>class <a href="class_swarm_1_1c_effects_manager.html" class="m-doc">cEffectsManager</a> <span class="m-doc"><span></span></span></li>
               <li>class <a href="class_swarm_1_1c_effects_world.html" class="m-doc">cEffectsWorld</a> <span class="m-doc"><span></span></span></li>
@@ -936,6 +1046,7 @@
               <li>class <a href="class_swarm_1_1c_skinpaint_settings_description.html" class="m-doc">cSkinpaintSettingsDescription</a> <span class="m-doc"><span></span></span></li>
               <li>class <a href="class_swarm_1_1c_skinpaint_settings_effect.html" class="m-doc">cSkinpaintSettingsEffect</a> <span class="m-doc"><span></span></span></li>
               <li>struct <a href="struct_swarm_1_1c_surface_info.html" class="m-doc">cSurfaceInfo</a> <span class="m-doc"><span></span></span></li>
+              <li>class <a href="class_swarm_1_1c_visual_effect.html" class="m-doc">cVisualEffect</a> <span class="m-doc"><span></span></span></li>
               <li>struct <a href="struct_swarm_1_1c_visual_effect_description.html" class="m-doc">cVisualEffectDescription</a> <span class="m-doc"><span></span></span></li>
               <li>class <a href="class_swarm_1_1_effect_directory.html" class="m-doc">EffectDirectory</a> <span class="m-doc">An <a href="class_swarm_1_1_effect_directory.html" class="m-doc">EffectDirectory</a> is a file that contains one or multiple effect declarations.</span></li>
               <li>class <a href="class_swarm_1_1_i_component.html" class="m-doc">IComponent</a> <span class="m-doc"><span></span></span></li>
@@ -1026,8 +1137,6 @@
             <a href="#" onclick="return toggle(this)">namespace</a> <a href="namespace_u_t_f_win.html" class="m-doc">UTFWin</a> <span class="m-doc">The user interface system.</span>
             <ul class="m-doc">
               <li>namespace <a href="namespace_u_t_f_win_1_1_basic_cursor_i_ds.html" class="m-doc">BasicCursorIDs</a> <span class="m-doc">The cursor IDs that are always available.</span></li>
-              <li>namespace <a href="namespace_u_t_f_win_1_1_button_flags.html" class="m-doc">ButtonFlags</a> <span class="m-doc"><span></span></span></li>
-              <li>namespace <a href="namespace_u_t_f_win_1_1_button_state_flags.html" class="m-doc">ButtonStateFlags</a> <span class="m-doc"><span></span></span></li>
               <li>class <a href="class_u_t_f_win_1_1_behaviour_time_oscillator.html" class="m-doc">BehaviourTimeOscillator</a> <span class="m-doc"><span></span></span></li>
               <li>class <a href="class_u_t_f_win_1_1_behaviour_time_ramp.html" class="m-doc">BehaviourTimeRamp</a> <span class="m-doc"><span></span></span></li>
               <li>class <a href="class_u_t_f_win_1_1_behaviour_time_smooth_ramp.html" class="m-doc">BehaviourTimeSmoothRamp</a> <span class="m-doc"><span></span></span></li>
@@ -1043,6 +1152,7 @@
               <li>class <a href="class_u_t_f_win_1_1_default_drawable.html" class="m-doc">DefaultDrawable</a> <span class="m-doc">A class that implements all the methods of an <a href="class_u_t_f_win_1_1_i_drawable.html" class="m-doc">IDrawable</a>.</span></li>
               <li>class <a href="class_u_t_f_win_1_1_default_layout_element.html" class="m-doc">DefaultLayoutElement</a> <span class="m-doc">A default implementation of <a href="class_u_t_f_win_1_1_i_layout_element.html" class="m-doc">ILayoutElement</a>.</span></li>
               <li>class <a href="class_u_t_f_win_1_1_dialog_drawable.html" class="m-doc">DialogDrawable</a> <span class="m-doc">The standard <a href="class_u_t_f_win_1_1_i_drawable.html" class="m-doc">IDrawable</a> for a dialog component.</span></li>
+              <li>class <a href="class_u_t_f_win_1_1_effect.html" class="m-doc">Effect</a> <span class="m-doc"><span></span></span></li>
               <li>class <a href="class_u_t_f_win_1_1_event_property_object.html" class="m-doc">EventPropertyObject</a> <span class="m-doc"><span></span></span></li>
               <li>class <a href="class_u_t_f_win_1_1_event_time_function_base.html" class="m-doc">EventTimeFunctionBase</a> <span class="m-doc"><span></span></span></li>
               <li>class <a href="class_u_t_f_win_1_1_fade_effect.html" class="m-doc">FadeEffect</a> <span class="m-doc"><span></span></span></li>
@@ -1050,7 +1160,6 @@
               <li>struct <a href="struct_u_t_f_win_1_1_frame_style.html" class="m-doc">FrameStyle</a> <span class="m-doc"><span></span></span></li>
               <li>class <a href="class_u_t_f_win_1_1_glide_effect.html" class="m-doc">GlideEffect</a> <span class="m-doc"><span></span></span></li>
               <li>class <a href="class_u_t_f_win_1_1_graphics2_d.html" class="m-doc">Graphics2D</a> <span class="m-doc">A class that can be used to draw things in the user interface.</span></li>
-              <li>class <a href="class_u_t_f_win_1_1_grid_unknown.html" class="m-doc">GridUnknown</a> <span class="m-doc"><span></span></span></li>
               <li>class <a href="class_u_t_f_win_1_1_i_bi_state_effect.html" class="m-doc">IBiStateEffect</a> <span class="m-doc"><span></span></span></li>
               <li>class <a href="class_u_t_f_win_1_1_i_button.html" class="m-doc">IButton</a> <span class="m-doc">An interface that declares all the functions needed by a button component.</span></li>
               <li>class <a href="class_u_t_f_win_1_1_i_button_drawable.html" class="m-doc">IButtonDrawable</a> <span class="m-doc">This class is a type of <a href="class_u_t_f_win_1_1_i_drawable.html" class="m-doc">UTFWin::<wbr />IDrawable</a> capable of rendering an <a href="class_u_t_f_win_1_1_i_button.html" class="m-doc">UTFWin::<wbr />IButton</a>.</span></li>
@@ -1122,7 +1231,6 @@
               <li>class <a href="class_u_t_f_win_1_1_u_i_renderer.html" class="m-doc">UIRenderer</a> <span class="m-doc"><span></span></span></li>
               <li>class <a href="class_u_t_f_win_1_1_u_t_f_win_object.html" class="m-doc">UTFWinObject</a> <span class="m-doc"><span></span></span></li>
               <li>class <a href="class_u_t_f_win_1_1_variable_width_drawable.html" class="m-doc">VariableWidthDrawable</a> <span class="m-doc">A drawable that completely fills the window of variable width with a graphic without a horizontal stretch.</span></li>
-              <li>class <a href="class_u_t_f_win_1_1_win_button.html" class="m-doc">WinButton</a> <span class="m-doc"><span></span></span></li>
               <li class="m-doc-collapsible collapsed">
                 <a href="#" onclick="return toggle(this)">class</a> <a href="class_u_t_f_win_1_1_window.html" class="m-doc">Window</a> <span class="m-doc"><span></span></span>
                 <ul class="m-doc">
@@ -1132,7 +1240,6 @@
               <li>struct <a href="struct_u_t_f_win_1_1_window__intrusive__list__node.html" class="m-doc">Window_intrusive_list_node</a> <span class="m-doc"><span></span></span></li>
               <li>class <a href="class_u_t_f_win_1_1_window_children.html" class="m-doc">WindowChildren</a> <span class="m-doc"><span></span></span></li>
               <li>class <a href="class_u_t_f_win_1_1_window_procedures.html" class="m-doc">WindowProcedures</a> <span class="m-doc"><span></span></span></li>
-              <li>class <a href="class_u_t_f_win_1_1_win_grid.html" class="m-doc">WinGrid</a> <span class="m-doc"><span></span></span></li>
               <li class="m-doc-collapsible collapsed">
                 <a href="#" onclick="return toggle(this)">class</a> <a href="class_u_t_f_win_1_1_win_tree_view.html" class="m-doc">WinTreeView</a> <span class="m-doc"><span></span></span>
                 <ul class="m-doc">

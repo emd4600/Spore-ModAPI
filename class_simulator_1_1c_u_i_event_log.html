@@ -63,7 +63,7 @@
             </li>
           </ul>
         </div>
-<p>Event logs are small alerts shown on the left side of the screen, such as &quot;There&#x27;s a ecodisaster in this planet!&quot;. An example of usage of this class: <code class="m-code"><span class="n">UIEventLog</span><span class="p">.</span><span class="n">ShowEvent</span><span class="p">(</span><span class="n">id</span><span class="p">(</span><span class="s">&quot;PirateAmbush&quot;</span><span class="p">),</span><span class="w"> </span><span class="n">GroupIDs</span><span class="o">::</span><span class="n">SpacePopups</span><span class="p">);</span><span class="w"></span></code> The <a href="class_simulator_1_1c_u_i_event_log.html#a3d3c87dc1858594ef89a55a7090efab3" class="m-doc">ShowEvent()</a> method returns an ID that identifies that event log. Sometimes it&#x27;s useful to save that ID to use it in other methods. For example, you can use it to change the text of the event log:</p><pre class="m-code"><span class="kt">uint32_t</span><span class="w"> </span><span class="n">eventID</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">UIEventLog</span><span class="p">.</span><span class="n">ShowEvent</span><span class="p">(</span><span class="n">id</span><span class="p">(</span><span class="s">&quot;GenericMissionProgress&quot;</span><span class="p">),</span><span class="w"> </span><span class="n">GroupIDs</span><span class="o">::</span><span class="n">SpacePopups</span><span class="p">);</span><span class="w"></span>
+<p>Event logs are small alerts shown on the left side of the screen, such as &quot;There&#x27;s a ecodisaster in this planet!&quot;. An example of usage of this class: <code class="m-code"><span class="n">UIEventLog</span><span class="p">.</span><span class="n">ShowEvent</span><span class="p">(</span><span class="n">id</span><span class="p">(</span><span class="s">&quot;PirateAmbush&quot;</span><span class="p">),</span><span class="w"> </span><span class="n">GroupIDs</span><span class="o">::</span><span class="n">SpacePopups</span><span class="p">);</span><span class="w"></span></code> The <a href="class_simulator_1_1c_u_i_event_log.html#a85948087636c319ccc476f960c97d491" class="m-doc">ShowEvent()</a> method returns an ID that identifies that event log. Sometimes it&#x27;s useful to save that ID to use it in other methods. For example, you can use it to change the text of the event log:</p><pre class="m-code"><span class="kt">uint32_t</span><span class="w"> </span><span class="n">eventID</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">UIEventLog</span><span class="p">.</span><span class="n">ShowEvent</span><span class="p">(</span><span class="n">id</span><span class="p">(</span><span class="s">&quot;GenericMissionProgress&quot;</span><span class="p">),</span><span class="w"> </span><span class="n">GroupIDs</span><span class="o">::</span><span class="n">SpacePopups</span><span class="p">);</span><span class="w"></span>
 <span class="n">UIEventLog</span><span class="p">.</span><span class="n">SetDescription</span><span class="p">(</span><span class="n">eventID</span><span class="p">,</span><span class="w"> </span><span class="sa">u</span><span class="s">&quot;The mission is almost complete!&quot;</span><span class="p">);</span><span class="w"></span></pre>
         <section id="base-classes">
           <h2><a href="#base-classes">Base classes</a></h2>
@@ -91,10 +91,10 @@
           <h2><a href="#pub-methods">Public functions</a></h2>
           <dl class="m-doc">
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#a3d3c87dc1858594ef89a55a7090efab3" class="m-doc">ShowEvent</a>(</span><span class="m-doc-wrap">uint32_t instanceID,
+              <span class="m-doc-wrap-bumper">auto <a href="#a85948087636c319ccc476f960c97d491" class="m-doc">ShowEvent</a>(</span><span class="m-doc-wrap">uint32_t instanceID,
               uint32_t groupID,
               int = 0,
-              <a href="struct_math_1_1_vector3.html" class="m-doc">Vector3</a>* = nullptr,
+              <a href="struct_math_1_1_vector3.html" class="m-doc">Math::<wbr />Vector3</a>* = nullptr,
               bool dontAllowDuplicates = true,
               int = 0) -&gt; uint32_t</span>
             </dt>
@@ -166,12 +166,12 @@
         </section>
         <section>
           <h2>Function documentation</h2>
-          <section class="m-doc-details" id="a3d3c87dc1858594ef89a55a7090efab3"><div>
+          <section class="m-doc-details" id="a85948087636c319ccc476f960c97d491"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">uint32_t Simulator::<wbr />cUIEventLog::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a3d3c87dc1858594ef89a55a7090efab3" class="m-doc-self">ShowEvent</a>(</span><span class="m-doc-wrap">uint32_t instanceID,
+              <span class="m-doc-wrap-bumper">uint32_t Simulator::<wbr />cUIEventLog::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a85948087636c319ccc476f960c97d491" class="m-doc-self">ShowEvent</a>(</span><span class="m-doc-wrap">uint32_t instanceID,
               uint32_t groupID,
               int = 0,
-              <a href="struct_math_1_1_vector3.html" class="m-doc">Vector3</a>* = nullptr,
+              <a href="struct_math_1_1_vector3.html" class="m-doc">Math::<wbr />Vector3</a>* = nullptr,
               bool dontAllowDuplicates = true,
               int = 0)</span></span>
             </h3>
@@ -210,7 +210,7 @@
               <tbody>
                 <tr>
                   <td style="width: 1%">eventID</td>
-                  <td>The ID of the event, as returned by <a href="class_simulator_1_1c_u_i_event_log.html#a3d3c87dc1858594ef89a55a7090efab3" class="m-doc">ShowEvent()</a></td>
+                  <td>The ID of the event, as returned by <a href="class_simulator_1_1c_u_i_event_log.html#a85948087636c319ccc476f960c97d491" class="m-doc">ShowEvent()</a></td>
                 </tr>
                 <tr>
                   <td>partially</td>
@@ -233,7 +233,7 @@
               <tbody>
                 <tr>
                   <td style="width: 1%">eventID</td>
-                  <td>The ID of the event, as returned by <a href="class_simulator_1_1c_u_i_event_log.html#a3d3c87dc1858594ef89a55a7090efab3" class="m-doc">ShowEvent()</a></td>
+                  <td>The ID of the event, as returned by <a href="class_simulator_1_1c_u_i_event_log.html#a85948087636c319ccc476f960c97d491" class="m-doc">ShowEvent()</a></td>
                 </tr>
                 <tr>
                   <td>pText</td>

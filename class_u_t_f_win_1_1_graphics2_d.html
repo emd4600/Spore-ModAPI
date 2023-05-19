@@ -86,8 +86,8 @@
           <dl class="m-doc">
             <dt>
               <span class="m-doc-wrap-bumper">static void <a href="#a92fb7b01a04c5fdbceaf3913e1b93f50" class="m-doc">DrawTiledImage</a>(</span><span class="m-doc-wrap"><a href="class_u_t_f_win_1_1_graphics2_d.html" class="m-doc">Graphics2D</a>* pGraphics,
-              const <a href="union_math_1_1_rectangle.html" class="m-doc">Math::<wbr />Rectangle</a>&amp; area,
-              const <a href="union_math_1_1_rectangle.html" class="m-doc">Math::<wbr />Rectangle</a>&amp; texCoords,
+              const <a href="struct_math_1_1_rectangle.html" class="m-doc">Math::<wbr />Rectangle</a>&amp; area,
+              const <a href="struct_math_1_1_rectangle.html" class="m-doc">Math::<wbr />Rectangle</a>&amp; texCoords,
               const <a href="class_u_t_f_win_1_1_image.html" class="m-doc">Image</a>* pImage,
               float fScaleX = 1.0f,
               float fScaleY = 1.0f,
@@ -97,20 +97,20 @@
             <dd>Draws the given image into the graphics context filling the area specified.</dd>
             <dt>
               <span class="m-doc-wrap-bumper">static void <a href="#a53f47ed5712583e8f0b25d45176c3d8b" class="m-doc">DrawSlicedTiledImage</a>(</span><span class="m-doc-wrap"><a href="class_u_t_f_win_1_1_graphics2_d.html" class="m-doc">Graphics2D</a>* pGraphics,
-              const <a href="union_math_1_1_rectangle.html" class="m-doc">Math::<wbr />Rectangle</a>&amp; area,
-              const <a href="union_math_1_1_rectangle.html" class="m-doc">Math::<wbr />Rectangle</a>&amp; texCoords,
+              const <a href="struct_math_1_1_rectangle.html" class="m-doc">Math::<wbr />Rectangle</a>&amp; area,
+              const <a href="struct_math_1_1_rectangle.html" class="m-doc">Math::<wbr />Rectangle</a>&amp; texCoords,
               const <a href="class_u_t_f_win_1_1_image.html" class="m-doc">Image</a>* pImage,
-              const <a href="union_math_1_1_rectangle.html" class="m-doc">Math::<wbr />Rectangle</a>&amp; sliceProportions,
+              const <a href="struct_math_1_1_rectangle.html" class="m-doc">Math::<wbr />Rectangle</a>&amp; sliceProportions,
               float fScaleX = 1.0f,
               float fScaleY = 1.0f)</span>
             </dt>
             <dd>Draws the given image into the graphics context filling the area specified.</dd>
             <dt>
               <span class="m-doc-wrap-bumper">static void <a href="#a6cf02d18bb0b9fdddeaf918f5f808f4f" class="m-doc">DrawSlicedStretchedImage</a>(</span><span class="m-doc-wrap"><a href="class_u_t_f_win_1_1_graphics2_d.html" class="m-doc">Graphics2D</a>* pGraphics,
-              const <a href="union_math_1_1_rectangle.html" class="m-doc">Math::<wbr />Rectangle</a>&amp; area,
-              const <a href="union_math_1_1_rectangle.html" class="m-doc">Math::<wbr />Rectangle</a>&amp; texCoords,
+              const <a href="struct_math_1_1_rectangle.html" class="m-doc">Math::<wbr />Rectangle</a>&amp; area,
+              const <a href="struct_math_1_1_rectangle.html" class="m-doc">Math::<wbr />Rectangle</a>&amp; texCoords,
               const <a href="class_u_t_f_win_1_1_image.html" class="m-doc">Image</a>* pImage,
-              const <a href="union_math_1_1_rectangle.html" class="m-doc">Math::<wbr />Rectangle</a>&amp; sliceProportions,
+              const <a href="struct_math_1_1_rectangle.html" class="m-doc">Math::<wbr />Rectangle</a>&amp; sliceProportions,
               float fScaleX = 1.0f,
               float fScaleY = 1.0f)</span>
             </dt>
@@ -138,16 +138,16 @@
             </dt>
             <dd>Gets this <a href="class_u_t_f_win_1_1_graphics2_d.html" class="m-doc">Graphics2D</a> current rendering color.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#ad5b624c1ed0e27103444e1d42144a5b5" class="m-doc">GetClipArea</a>(</span><span class="m-doc-wrap"><a href="union_math_1_1_rectangle.html" class="m-doc">Math::<wbr />Rectangle</a>&amp; dst) -&gt; bool <span class="m-label m-flat m-warning">pure virtual</span></span>
+              <span class="m-doc-wrap-bumper">auto <a href="#ad5b624c1ed0e27103444e1d42144a5b5" class="m-doc">GetClipArea</a>(</span><span class="m-doc-wrap"><a href="struct_math_1_1_rectangle.html" class="m-doc">Math::<wbr />Rectangle</a>&amp; dst) -&gt; bool <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
             <dd>Gets the clip area currently used by this graphics context.</dd>
             <dt>
               <span class="m-doc-wrap-bumper">void <a href="#abb392e0d1529ebefda9ad5e9d84145a3" class="m-doc">SetClipArea</a>(</span><span class="m-doc-wrap">bool bUseClipArea,
-              const <a href="union_math_1_1_rectangle.html" class="m-doc">Math::<wbr />Rectangle</a>&amp; area) <span class="m-label m-flat m-warning">pure virtual</span></span>
+              const <a href="struct_math_1_1_rectangle.html" class="m-doc">Math::<wbr />Rectangle</a>&amp; area) <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
             <dd>Sets the clip area or disables clipping.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">void <a href="#a659839870a8bba6e5f8fd1dd87e2fc32" class="m-doc">IntersectClip</a>(</span><span class="m-doc-wrap">const <a href="union_math_1_1_rectangle.html" class="m-doc">Math::<wbr />Rectangle</a>&amp; area) <span class="m-label m-flat m-warning">pure virtual</span></span>
+              <span class="m-doc-wrap-bumper">void <a href="#a659839870a8bba6e5f8fd1dd87e2fc32" class="m-doc">IntersectClip</a>(</span><span class="m-doc-wrap">const <a href="struct_math_1_1_rectangle.html" class="m-doc">Math::<wbr />Rectangle</a>&amp; area) <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
             <dd>Intersects the current clip area with the specified rectangle and sets the clip area to the resulting intersection.</dd>
             <dt>
@@ -166,7 +166,7 @@
             </dt>
             <dd>Fills a border at the specified coordinates using the graphics context current color.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">void <a href="#a4af7347e4c0aa0276c91efd7cda6d90e" class="m-doc">DrawStringArea</a>(</span><span class="m-doc-wrap">const <a href="union_math_1_1_rectangle.html" class="m-doc">Math::<wbr />Rectangle</a>&amp; area,
+              <span class="m-doc-wrap-bumper">void <a href="#a4af7347e4c0aa0276c91efd7cda6d90e" class="m-doc">DrawStringArea</a>(</span><span class="m-doc-wrap">const <a href="struct_math_1_1_rectangle.html" class="m-doc">Math::<wbr />Rectangle</a>&amp; area,
               const char16_t* pString,
               int nLength = <a href="class_u_t_f_win_1_1_graphics2_d.html#a6246d6430ba4957e3ad87dab1e8d0be3" class="m-doc">kAutoLength</a>,
               const char16_t* pFontName = <a href="class_u_t_f_win_1_1_graphics2_d.html#aca6e03fff70ba0f780f9df9ad64ce176" class="m-doc">kDefaultFontName</a>,
@@ -228,13 +228,13 @@
             </dt>
             <dd>Fills the specified quadrilater using the current color.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">void <a href="#ab6ce1adaa1a771ced229a27889632112" class="m-doc">FillGradientHorizontal</a>(</span><span class="m-doc-wrap">const <a href="union_math_1_1_rectangle.html" class="m-doc">Math::<wbr />Rectangle</a>&amp; area,
+              <span class="m-doc-wrap-bumper">void <a href="#ab6ce1adaa1a771ced229a27889632112" class="m-doc">FillGradientHorizontal</a>(</span><span class="m-doc-wrap">const <a href="struct_math_1_1_rectangle.html" class="m-doc">Math::<wbr />Rectangle</a>&amp; area,
               <a href="struct_math_1_1_color.html" class="m-doc">Math::<wbr />Color</a> colorLeft,
               <a href="struct_math_1_1_color.html" class="m-doc">Math::<wbr />Color</a> colorRight) <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
             <dd>Fills the specified rectangle using an horizontal color gradient.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">void <a href="#a8b7b1cbc3b50c786fae405e7460e97d1" class="m-doc">FillGradientVertical</a>(</span><span class="m-doc-wrap">const <a href="union_math_1_1_rectangle.html" class="m-doc">Math::<wbr />Rectangle</a>&amp; area,
+              <span class="m-doc-wrap-bumper">void <a href="#a8b7b1cbc3b50c786fae405e7460e97d1" class="m-doc">FillGradientVertical</a>(</span><span class="m-doc-wrap">const <a href="struct_math_1_1_rectangle.html" class="m-doc">Math::<wbr />Rectangle</a>&amp; area,
               <a href="struct_math_1_1_color.html" class="m-doc">Math::<wbr />Color</a> colorTop,
               <a href="struct_math_1_1_color.html" class="m-doc">Math::<wbr />Color</a> colorBottom) <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
@@ -272,16 +272,16 @@
             </dt>
             <dd><span></span></dd>
             <dt>
-              <span class="m-doc-wrap-bumper">void <a href="#a43479745c6c6a5920b5f24c4b3cc1dbd" class="m-doc">DrawImageScaled</a>(</span><span class="m-doc-wrap">const <a href="union_math_1_1_rectangle.html" class="m-doc">Math::<wbr />Rectangle</a>&amp; area,
+              <span class="m-doc-wrap-bumper">void <a href="#a43479745c6c6a5920b5f24c4b3cc1dbd" class="m-doc">DrawImageScaled</a>(</span><span class="m-doc-wrap">const <a href="struct_math_1_1_rectangle.html" class="m-doc">Math::<wbr />Rectangle</a>&amp; area,
               const <a href="class_u_t_f_win_1_1_image.html" class="m-doc">Image</a>* pImage,
-              const <a href="union_math_1_1_rectangle.html" class="m-doc">Math::<wbr />Rectangle</a>&amp; texCoords) <span class="m-label m-flat m-warning">pure virtual</span></span>
+              const <a href="struct_math_1_1_rectangle.html" class="m-doc">Math::<wbr />Rectangle</a>&amp; texCoords) <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
             <dd>Draws the image provided, scaling it so it fills the entire area specified.</dd>
             <dt>
               <span class="m-doc-wrap-bumper">void <a href="#a195eb6cb27af52a4a004501501312bf4" class="m-doc">DrawImageWithTexCoords</a>(</span><span class="m-doc-wrap">float x,
               float y,
               const <a href="class_u_t_f_win_1_1_image.html" class="m-doc">Image</a>* pImage,
-              const <a href="union_math_1_1_rectangle.html" class="m-doc">Math::<wbr />Rectangle</a>&amp; texCoords) <span class="m-label m-flat m-warning">pure virtual</span></span>
+              const <a href="struct_math_1_1_rectangle.html" class="m-doc">Math::<wbr />Rectangle</a>&amp; texCoords) <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
             <dd>Draws the image provided at the position specified.</dd>
             <dt>
@@ -297,8 +297,8 @@
           <section class="m-doc-details" id="a92fb7b01a04c5fdbceaf3913e1b93f50"><div>
             <h3>
               <span class="m-doc-wrap-bumper">static void UTFWin::<wbr />Graphics2D::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a92fb7b01a04c5fdbceaf3913e1b93f50" class="m-doc-self">DrawTiledImage</a>(</span><span class="m-doc-wrap"><a href="class_u_t_f_win_1_1_graphics2_d.html" class="m-doc">Graphics2D</a>* pGraphics,
-              const <a href="union_math_1_1_rectangle.html" class="m-doc">Math::<wbr />Rectangle</a>&amp; area,
-              const <a href="union_math_1_1_rectangle.html" class="m-doc">Math::<wbr />Rectangle</a>&amp; texCoords,
+              const <a href="struct_math_1_1_rectangle.html" class="m-doc">Math::<wbr />Rectangle</a>&amp; area,
+              const <a href="struct_math_1_1_rectangle.html" class="m-doc">Math::<wbr />Rectangle</a>&amp; texCoords,
               const <a href="class_u_t_f_win_1_1_image.html" class="m-doc">Image</a>* pImage,
               float fScaleX = 1.0f,
               float fScaleY = 1.0f,
@@ -350,10 +350,10 @@
           <section class="m-doc-details" id="a53f47ed5712583e8f0b25d45176c3d8b"><div>
             <h3>
               <span class="m-doc-wrap-bumper">static void UTFWin::<wbr />Graphics2D::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a53f47ed5712583e8f0b25d45176c3d8b" class="m-doc-self">DrawSlicedTiledImage</a>(</span><span class="m-doc-wrap"><a href="class_u_t_f_win_1_1_graphics2_d.html" class="m-doc">Graphics2D</a>* pGraphics,
-              const <a href="union_math_1_1_rectangle.html" class="m-doc">Math::<wbr />Rectangle</a>&amp; area,
-              const <a href="union_math_1_1_rectangle.html" class="m-doc">Math::<wbr />Rectangle</a>&amp; texCoords,
+              const <a href="struct_math_1_1_rectangle.html" class="m-doc">Math::<wbr />Rectangle</a>&amp; area,
+              const <a href="struct_math_1_1_rectangle.html" class="m-doc">Math::<wbr />Rectangle</a>&amp; texCoords,
               const <a href="class_u_t_f_win_1_1_image.html" class="m-doc">Image</a>* pImage,
-              const <a href="union_math_1_1_rectangle.html" class="m-doc">Math::<wbr />Rectangle</a>&amp; sliceProportions,
+              const <a href="struct_math_1_1_rectangle.html" class="m-doc">Math::<wbr />Rectangle</a>&amp; sliceProportions,
               float fScaleX = 1.0f,
               float fScaleY = 1.0f)</span></span>
             </h3>
@@ -398,10 +398,10 @@
           <section class="m-doc-details" id="a6cf02d18bb0b9fdddeaf918f5f808f4f"><div>
             <h3>
               <span class="m-doc-wrap-bumper">static void UTFWin::<wbr />Graphics2D::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a6cf02d18bb0b9fdddeaf918f5f808f4f" class="m-doc-self">DrawSlicedStretchedImage</a>(</span><span class="m-doc-wrap"><a href="class_u_t_f_win_1_1_graphics2_d.html" class="m-doc">Graphics2D</a>* pGraphics,
-              const <a href="union_math_1_1_rectangle.html" class="m-doc">Math::<wbr />Rectangle</a>&amp; area,
-              const <a href="union_math_1_1_rectangle.html" class="m-doc">Math::<wbr />Rectangle</a>&amp; texCoords,
+              const <a href="struct_math_1_1_rectangle.html" class="m-doc">Math::<wbr />Rectangle</a>&amp; area,
+              const <a href="struct_math_1_1_rectangle.html" class="m-doc">Math::<wbr />Rectangle</a>&amp; texCoords,
               const <a href="class_u_t_f_win_1_1_image.html" class="m-doc">Image</a>* pImage,
-              const <a href="union_math_1_1_rectangle.html" class="m-doc">Math::<wbr />Rectangle</a>&amp; sliceProportions,
+              const <a href="struct_math_1_1_rectangle.html" class="m-doc">Math::<wbr />Rectangle</a>&amp; sliceProportions,
               float fScaleX = 1.0f,
               float fScaleY = 1.0f)</span></span>
             </h3>
@@ -463,7 +463,7 @@
           </div></section>
           <section class="m-doc-details" id="ad5b624c1ed0e27103444e1d42144a5b5"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">bool UTFWin::<wbr />Graphics2D::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ad5b624c1ed0e27103444e1d42144a5b5" class="m-doc-self">GetClipArea</a>(</span><span class="m-doc-wrap"><a href="union_math_1_1_rectangle.html" class="m-doc">Math::<wbr />Rectangle</a>&amp; dst) <span class="m-label m-warning">pure virtual</span></span></span>
+              <span class="m-doc-wrap-bumper">bool UTFWin::<wbr />Graphics2D::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ad5b624c1ed0e27103444e1d42144a5b5" class="m-doc-self">GetClipArea</a>(</span><span class="m-doc-wrap"><a href="struct_math_1_1_rectangle.html" class="m-doc">Math::<wbr />Rectangle</a>&amp; dst) <span class="m-label m-warning">pure virtual</span></span></span>
             </h3>
             <p>Gets the clip area currently used by this graphics context.</p>
             <table class="m-table m-fullwidth m-flat">
@@ -488,7 +488,7 @@
           <section class="m-doc-details" id="abb392e0d1529ebefda9ad5e9d84145a3"><div>
             <h3>
               <span class="m-doc-wrap-bumper">void UTFWin::<wbr />Graphics2D::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#abb392e0d1529ebefda9ad5e9d84145a3" class="m-doc-self">SetClipArea</a>(</span><span class="m-doc-wrap">bool bUseClipArea,
-              const <a href="union_math_1_1_rectangle.html" class="m-doc">Math::<wbr />Rectangle</a>&amp; area) <span class="m-label m-warning">pure virtual</span></span></span>
+              const <a href="struct_math_1_1_rectangle.html" class="m-doc">Math::<wbr />Rectangle</a>&amp; area) <span class="m-label m-warning">pure virtual</span></span></span>
             </h3>
             <p>Sets the clip area or disables clipping.</p>
             <table class="m-table m-fullwidth m-flat">
@@ -510,7 +510,7 @@
           </div></section>
           <section class="m-doc-details" id="a659839870a8bba6e5f8fd1dd87e2fc32"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">void UTFWin::<wbr />Graphics2D::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a659839870a8bba6e5f8fd1dd87e2fc32" class="m-doc-self">IntersectClip</a>(</span><span class="m-doc-wrap">const <a href="union_math_1_1_rectangle.html" class="m-doc">Math::<wbr />Rectangle</a>&amp; area) <span class="m-label m-warning">pure virtual</span></span></span>
+              <span class="m-doc-wrap-bumper">void UTFWin::<wbr />Graphics2D::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a659839870a8bba6e5f8fd1dd87e2fc32" class="m-doc-self">IntersectClip</a>(</span><span class="m-doc-wrap">const <a href="struct_math_1_1_rectangle.html" class="m-doc">Math::<wbr />Rectangle</a>&amp; area) <span class="m-label m-warning">pure virtual</span></span></span>
             </h3>
             <p>Intersects the current clip area with the specified rectangle and sets the clip area to the resulting intersection.</p>
             <table class="m-table m-fullwidth m-flat">
@@ -597,7 +597,7 @@
           </div></section>
           <section class="m-doc-details" id="a4af7347e4c0aa0276c91efd7cda6d90e"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">void UTFWin::<wbr />Graphics2D::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a4af7347e4c0aa0276c91efd7cda6d90e" class="m-doc-self">DrawStringArea</a>(</span><span class="m-doc-wrap">const <a href="union_math_1_1_rectangle.html" class="m-doc">Math::<wbr />Rectangle</a>&amp; area,
+              <span class="m-doc-wrap-bumper">void UTFWin::<wbr />Graphics2D::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a4af7347e4c0aa0276c91efd7cda6d90e" class="m-doc-self">DrawStringArea</a>(</span><span class="m-doc-wrap">const <a href="struct_math_1_1_rectangle.html" class="m-doc">Math::<wbr />Rectangle</a>&amp; area,
               const char16_t* pString,
               int nLength = <a href="class_u_t_f_win_1_1_graphics2_d.html#a6246d6430ba4957e3ad87dab1e8d0be3" class="m-doc">kAutoLength</a>,
               const char16_t* pFontName = <a href="class_u_t_f_win_1_1_graphics2_d.html#aca6e03fff70ba0f780f9df9ad64ce176" class="m-doc">kDefaultFontName</a>,
@@ -738,7 +738,7 @@
           </div></section>
           <section class="m-doc-details" id="ab6ce1adaa1a771ced229a27889632112"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">void UTFWin::<wbr />Graphics2D::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ab6ce1adaa1a771ced229a27889632112" class="m-doc-self">FillGradientHorizontal</a>(</span><span class="m-doc-wrap">const <a href="union_math_1_1_rectangle.html" class="m-doc">Math::<wbr />Rectangle</a>&amp; area,
+              <span class="m-doc-wrap-bumper">void UTFWin::<wbr />Graphics2D::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ab6ce1adaa1a771ced229a27889632112" class="m-doc-self">FillGradientHorizontal</a>(</span><span class="m-doc-wrap">const <a href="struct_math_1_1_rectangle.html" class="m-doc">Math::<wbr />Rectangle</a>&amp; area,
               <a href="struct_math_1_1_color.html" class="m-doc">Math::<wbr />Color</a> colorLeft,
               <a href="struct_math_1_1_color.html" class="m-doc">Math::<wbr />Color</a> colorRight) <span class="m-label m-warning">pure virtual</span></span></span>
             </h3>
@@ -766,7 +766,7 @@
           </div></section>
           <section class="m-doc-details" id="a8b7b1cbc3b50c786fae405e7460e97d1"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">void UTFWin::<wbr />Graphics2D::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a8b7b1cbc3b50c786fae405e7460e97d1" class="m-doc-self">FillGradientVertical</a>(</span><span class="m-doc-wrap">const <a href="union_math_1_1_rectangle.html" class="m-doc">Math::<wbr />Rectangle</a>&amp; area,
+              <span class="m-doc-wrap-bumper">void UTFWin::<wbr />Graphics2D::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a8b7b1cbc3b50c786fae405e7460e97d1" class="m-doc-self">FillGradientVertical</a>(</span><span class="m-doc-wrap">const <a href="struct_math_1_1_rectangle.html" class="m-doc">Math::<wbr />Rectangle</a>&amp; area,
               <a href="struct_math_1_1_color.html" class="m-doc">Math::<wbr />Color</a> colorTop,
               <a href="struct_math_1_1_color.html" class="m-doc">Math::<wbr />Color</a> colorBottom) <span class="m-label m-warning">pure virtual</span></span></span>
             </h3>
@@ -890,9 +890,9 @@
           </div></section>
           <section class="m-doc-details" id="a43479745c6c6a5920b5f24c4b3cc1dbd"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">void UTFWin::<wbr />Graphics2D::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a43479745c6c6a5920b5f24c4b3cc1dbd" class="m-doc-self">DrawImageScaled</a>(</span><span class="m-doc-wrap">const <a href="union_math_1_1_rectangle.html" class="m-doc">Math::<wbr />Rectangle</a>&amp; area,
+              <span class="m-doc-wrap-bumper">void UTFWin::<wbr />Graphics2D::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a43479745c6c6a5920b5f24c4b3cc1dbd" class="m-doc-self">DrawImageScaled</a>(</span><span class="m-doc-wrap">const <a href="struct_math_1_1_rectangle.html" class="m-doc">Math::<wbr />Rectangle</a>&amp; area,
               const <a href="class_u_t_f_win_1_1_image.html" class="m-doc">Image</a>* pImage,
-              const <a href="union_math_1_1_rectangle.html" class="m-doc">Math::<wbr />Rectangle</a>&amp; texCoords) <span class="m-label m-warning">pure virtual</span></span></span>
+              const <a href="struct_math_1_1_rectangle.html" class="m-doc">Math::<wbr />Rectangle</a>&amp; texCoords) <span class="m-label m-warning">pure virtual</span></span></span>
             </h3>
             <p>Draws the image provided, scaling it so it fills the entire area specified.</p>
             <table class="m-table m-fullwidth m-flat">
@@ -921,7 +921,7 @@
               <span class="m-doc-wrap-bumper">void UTFWin::<wbr />Graphics2D::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a195eb6cb27af52a4a004501501312bf4" class="m-doc-self">DrawImageWithTexCoords</a>(</span><span class="m-doc-wrap">float x,
               float y,
               const <a href="class_u_t_f_win_1_1_image.html" class="m-doc">Image</a>* pImage,
-              const <a href="union_math_1_1_rectangle.html" class="m-doc">Math::<wbr />Rectangle</a>&amp; texCoords) <span class="m-label m-warning">pure virtual</span></span></span>
+              const <a href="struct_math_1_1_rectangle.html" class="m-doc">Math::<wbr />Rectangle</a>&amp; texCoords) <span class="m-label m-warning">pure virtual</span></span></span>
             </h3>
             <p>Draws the image provided at the position specified.</p>
             <table class="m-table m-fullwidth m-flat">

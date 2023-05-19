@@ -67,6 +67,8 @@
         <section id="namespaces">
           <h2><a href="#namespaces">Namespaces</a></h2>
           <dl class="m-doc">
+            <dt>namespace <a href="namespace_graphics_1_1_active_state.html" class="m-doc">ActiveState</a></dt>
+            <dd><span></span></dd>
             <dt>namespace <a href="namespace_graphics_1_1_global_state.html" class="m-doc">GlobalState</a></dt>
             <dd><span></span></dd>
             <dt>namespace <a href="namespace_graphics_1_1_renderer__addresses.html" class="m-doc">Renderer_addresses</a></dt>
@@ -149,10 +151,6 @@
             <dd><span></span></dd>
             <dt>
               struct <a href="struct_graphics_1_1c_render_job_info.html" class="m-doc">cRenderJobInfo</a>
-            </dt>
-            <dd><span></span></dd>
-            <dt>
-              class <a href="class_graphics_1_1c_render_manager.html" class="m-doc">cRenderManager</a>
             </dt>
             <dd><span></span></dd>
             <dt>
@@ -363,10 +361,6 @@
             </dt>
             <dd><span></span></dd>
             <dt>
-              <span class="m-doc-wrap-bumper">enum <a href="#a936cca97eca11e988649742457ee4809" class="m-doc">(anonymous)</a> { </span><span class="m-doc-wrap"><a href="#a936cca97eca11e988649742457ee4809abe828be9aa9033cacef10bef145e82ef" class="m-doc">kRenderQueueMain</a> = 8 }</span>
-            </dt>
-            <dd><span></span></dd>
-            <dt>
               <span class="m-doc-wrap-bumper">enum class <a href="#a4cb0a7db6c6e82b951c0a1fe02c559f2" class="m-doc">LayerIndices</a> { </span><span class="m-doc-wrap"><a href="#a4cb0a7db6c6e82b951c0a1fe02c559f2ab02e0616af6ebbfaa74661e0c69f576b" class="m-doc">ClearScene</a> = 0,
               <a href="#a4cb0a7db6c6e82b951c0a1fe02c559f2aceb07da53c78b3c828b25dc3e41ca188" class="m-doc">Planets</a> = 7,
               <a href="#a4cb0a7db6c6e82b951c0a1fe02c559f2af691b8cea8ae8152ef2da75512368a64" class="m-doc">PlanetRings</a> = 8,
@@ -415,7 +409,7 @@
             </dt>
             <dd><span></span></dd>
             <dt>
-              <span class="m-doc-wrap-bumper">enum <a href="#aefc7522ff3825675ee3cc730ab96cb18" class="m-doc">(anonymous)</a> { </span><span class="m-doc-wrap"><a href="#aefc7522ff3825675ee3cc730ab96cb18a267476807478e8445fade7752328b309" class="m-doc">kMsgTextureExtractCompleted</a> = 0x522264D }</span>
+              <span class="m-doc-wrap-bumper">enum <a href="#a018f456f90ae0536157905064849941d" class="m-doc">TextureMessages</a> { </span><span class="m-doc-wrap"><a href="#a018f456f90ae0536157905064849941da267476807478e8445fade7752328b309" class="m-doc">kMsgTextureExtractCompleted</a> = 0x522264D }</span>
             </dt>
             <dd><span></span></dd>
             <dt>
@@ -427,15 +421,15 @@
             </dt>
             <dd><span></span></dd>
             <dt>
-              <span class="m-doc-wrap-bumper">enum <a href="#a7ef1a9f5e33705728101a1ec82822bde" class="m-doc">(anonymous)</a> { </span><span class="m-doc-wrap"><a href="#a7ef1a9f5e33705728101a1ec82822bdea67714109b28b4942dc96b13136f20ba6" class="m-doc">kModelFlagUseColor</a> = 0x2,
-              <a href="#a7ef1a9f5e33705728101a1ec82822bdeae6ee2ef9b57e55721a05bc19183167b5" class="m-doc">kModelFlagObjectTypeColor</a> = 0x8,
-              <a href="#a7ef1a9f5e33705728101a1ec82822bdea06e9414d4e29ab930191c234e525c611" class="m-doc">kModelFlagOverrideRaycastMode</a> = 0x100,
-              <a href="#a7ef1a9f5e33705728101a1ec82822bdeae8126b97a58029f99739a19522b5a19a" class="m-doc">kModelFlagHighRes</a> = 0x2000,
-              <a href="#a7ef1a9f5e33705728101a1ec82822bdea80ba571eef214e6f52eace650eab7975" class="m-doc">kModelFlagIsLoaded</a> = 0x4000,
-              <a href="#a7ef1a9f5e33705728101a1ec82822bdea712326a32a798759b2548daf75e8da43" class="m-doc">kModelFlagVisible</a> = 0x8000,
-              <a href="#a7ef1a9f5e33705728101a1ec82822bdea282f8e861168694308ecad124d903a6f" class="m-doc">kModelFlagOverrideBoundingBox</a> = 0x10000,
-              <a href="#a7ef1a9f5e33705728101a1ec82822bdea0c9e2214af3610d935ef791db7b80655" class="m-doc">kModelFlagOverrideBoundingRadius</a> = 0x20000,
-              <a href="#a7ef1a9f5e33705728101a1ec82822bdeacc48a579a9e1672f7672b554e18037cd" class="m-doc">kModelFlagNeedsBake</a> = 0x40000 }</span>
+              <span class="m-doc-wrap-bumper">enum <a href="#ab92607a07500f6c056daf422b28b515d" class="m-doc">ModelFlags</a> { </span><span class="m-doc-wrap"><a href="#ab92607a07500f6c056daf422b28b515da67714109b28b4942dc96b13136f20ba6" class="m-doc">kModelFlagUseColor</a> = 0x2,
+              <a href="#ab92607a07500f6c056daf422b28b515dae6ee2ef9b57e55721a05bc19183167b5" class="m-doc">kModelFlagObjectTypeColor</a> = 0x8,
+              <a href="#ab92607a07500f6c056daf422b28b515da06e9414d4e29ab930191c234e525c611" class="m-doc">kModelFlagOverrideRaycastMode</a> = 0x100,
+              <a href="#ab92607a07500f6c056daf422b28b515dae8126b97a58029f99739a19522b5a19a" class="m-doc">kModelFlagHighRes</a> = 0x2000,
+              <a href="#ab92607a07500f6c056daf422b28b515da80ba571eef214e6f52eace650eab7975" class="m-doc">kModelFlagIsLoaded</a> = 0x4000,
+              <a href="#ab92607a07500f6c056daf422b28b515da712326a32a798759b2548daf75e8da43" class="m-doc">kModelFlagVisible</a> = 0x8000,
+              <a href="#ab92607a07500f6c056daf422b28b515da282f8e861168694308ecad124d903a6f" class="m-doc">kModelFlagOverrideBoundingBox</a> = 0x10000,
+              <a href="#ab92607a07500f6c056daf422b28b515da0c9e2214af3610d935ef791db7b80655" class="m-doc">kModelFlagOverrideBoundingRadius</a> = 0x20000,
+              <a href="#ab92607a07500f6c056daf422b28b515dacc48a579a9e1672f7672b554e18037cd" class="m-doc">kModelFlagNeedsBake</a> = 0x40000 }</span>
             </dt>
             <dd><span></span></dd>
             <dt>
@@ -463,6 +457,10 @@
             </dt>
             <dd><span></span></dd>
             <dt>
+              using <a href="#a356ed7da27bb4b62411de0849dc42a52" class="m-doc">TextureFilterCallback_t</a> = bool(*)(Texture*)
+            </dt>
+            <dd><span></span></dd>
+            <dt>
               using <a href="#ac354d1c41dc1dd5d2c9fab246990be72" class="m-doc">ModelPredicate_t</a> = bool(*)(Model*, void*)
             </dt>
             <dd><span></span></dd>
@@ -475,6 +473,10 @@
         <section id="func-members">
           <h2><a href="#func-members">Functions</a></h2>
           <dl class="m-doc">
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a712caa69c35c158e8f1410d72074eef7" class="m-doc">Addresses</a>(</span><span class="m-doc-wrap">ActiveState) -&gt; namespace</span>
+            </dt>
+            <dd><span></span></dd>
             <dt>
               <span class="m-doc-wrap-bumper"><a href="#af88e5ada7fc6f027fc7536ed379a82a7" class="m-doc">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_graphics_1_1c_buffer_draw.html" class="m-doc">cBufferDraw</a>,
               0x1B4)</span>
@@ -737,13 +739,6 @@
             </h3>
             <p><span></span></p>
           </div></section>
-          <section class="m-doc-details" id="a936cca97eca11e988649742457ee4809"><div>
-            <h3>
-              enum Graphics::<wbr /><a href="#a936cca97eca11e988649742457ee4809" class="m-doc-self">(anonymous)</a>
-              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_i_renderer_8h.html">&lt;Spore/Graphics/IRenderer.h&gt;</a></div>
-            </h3>
-            <p><span></span></p>
-          </div></section>
           <section class="m-doc-details" id="a4cb0a7db6c6e82b951c0a1fe02c559f2"><div>
             <h3>
               enum class Graphics::<wbr /><a href="#a4cb0a7db6c6e82b951c0a1fe02c559f2" class="m-doc-self">LayerIndices</a>
@@ -920,9 +915,9 @@
               </tbody>
             </table>
           </div></section>
-          <section class="m-doc-details" id="aefc7522ff3825675ee3cc730ab96cb18"><div>
+          <section class="m-doc-details" id="a018f456f90ae0536157905064849941d"><div>
             <h3>
-              enum Graphics::<wbr /><a href="#aefc7522ff3825675ee3cc730ab96cb18" class="m-doc-self">(anonymous)</a>
+              enum Graphics::<wbr /><a href="#a018f456f90ae0536157905064849941d" class="m-doc-self">TextureMessages</a>
               <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_i_texture_manager_8h.html">&lt;Spore/Graphics/ITextureManager.h&gt;</a></div>
             </h3>
             <p><span></span></p>
@@ -969,9 +964,9 @@
               </tbody>
             </table>
           </div></section>
-          <section class="m-doc-details" id="a7ef1a9f5e33705728101a1ec82822bde"><div>
+          <section class="m-doc-details" id="ab92607a07500f6c056daf422b28b515d"><div>
             <h3>
-              enum Graphics::<wbr /><a href="#a7ef1a9f5e33705728101a1ec82822bde" class="m-doc-self">(anonymous)</a>
+              enum Graphics::<wbr /><a href="#ab92607a07500f6c056daf422b28b515d" class="m-doc-self">ModelFlags</a>
               <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_model_8h.html">&lt;Spore/Graphics/Model.h&gt;</a></div>
             </h3>
             <p><span></span></p>
@@ -1036,6 +1031,13 @@
             </h3>
             <p><span></span></p>
           </div></section>
+          <section class="m-doc-details" id="a356ed7da27bb4b62411de0849dc42a52"><div>
+            <h3>
+              typedef bool(*Graphics::<wbr /><a href="#a356ed7da27bb4b62411de0849dc42a52" class="m-doc-self">TextureFilterCallback_t</a>)(Texture*)
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_i_material_manager_8h.html">&lt;Spore/Graphics/IMaterialManager.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
           <section class="m-doc-details" id="ac354d1c41dc1dd5d2c9fab246990be72"><div>
             <h3>
               typedef bool(*Graphics::<wbr /><a href="#ac354d1c41dc1dd5d2c9fab246990be72" class="m-doc-self">ModelPredicate_t</a>)(Model*, void*)
@@ -1053,6 +1055,13 @@
         </section>
         <section>
           <h2>Function documentation</h2>
+          <section class="m-doc-details" id="a712caa69c35c158e8f1410d72074eef7"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">namespace Graphics::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a712caa69c35c158e8f1410d72074eef7" class="m-doc-self">Addresses</a>(</span><span class="m-doc-wrap">ActiveState)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_active_state_8h.html">&lt;Spore/Graphics/ActiveState.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
           <section class="m-doc-details" id="af88e5ada7fc6f027fc7536ed379a82a7"><div>
             <h3>
               <span class="m-doc-wrap-bumper"> Graphics::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#af88e5ada7fc6f027fc7536ed379a82a7" class="m-doc-self">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_graphics_1_1c_buffer_draw.html" class="m-doc">cBufferDraw</a>,

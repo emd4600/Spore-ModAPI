@@ -102,63 +102,63 @@
         <section id="pub-methods">
           <h2><a href="#pub-methods">Public functions</a></h2>
           <dl class="m-doc">
-            <dt id="a626f4aad1a5846b5400d24140c8f0aab">
-              <span class="m-doc-wrap-bumper">auto <a href="#a626f4aad1a5846b5400d24140c8f0aab" class="m-doc-self">AddRef</a>(</span><span class="m-doc-wrap">) -&gt; int <span class="m-label m-flat m-warning">virtual</span></span>
+            <dt id="a3097a2e354363d8f2b2c67655104f98c">
+              <span class="m-doc-wrap-bumper">auto <a href="#a3097a2e354363d8f2b2c67655104f98c" class="m-doc-self">AddRef</a>(</span><span class="m-doc-wrap">) -&gt; int <span class="m-label m-flat m-warning">override</span></span>
             </dt>
             <dd><span></span></dd>
-            <dt id="a4cb107ed0786e6111e6d3d6581fbf2ff">
-              <span class="m-doc-wrap-bumper">auto <a href="#a4cb107ed0786e6111e6d3d6581fbf2ff" class="m-doc-self">Release</a>(</span><span class="m-doc-wrap">) -&gt; int <span class="m-label m-flat m-warning">virtual</span></span>
+            <dt id="ac9bb629e5a53dab71c67f9982e9b1c17">
+              <span class="m-doc-wrap-bumper">auto <a href="#ac9bb629e5a53dab71c67f9982e9b1c17" class="m-doc-self">Release</a>(</span><span class="m-doc-wrap">) -&gt; int <span class="m-label m-flat m-warning">override</span></span>
             </dt>
             <dd><span></span></dd>
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#ae13563090b155099c080643db55c6565" class="m-doc">GetType</a>(</span><span class="m-doc-wrap">) const -&gt; uint32_t <span class="m-label m-flat m-warning">virtual</span></span>
+              <span class="m-doc-wrap-bumper">auto <a href="#aa66b3003c5ba13da9962264e594d4779" class="m-doc">GetType</a>(</span><span class="m-doc-wrap">) const -&gt; uint32_t <span class="m-label m-flat m-warning">override</span></span>
             </dt>
             <dd>Returns the type of the stream, which is different for each Stream subclass.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#a5c5ffac400b94f9454d970ec712e860a" class="m-doc">GetAccessFlags</a>(</span><span class="m-doc-wrap">) const -&gt; <a href="namespace_i_o.html#ab7db8d079d037a7b288d7d79b2d052db" class="m-doc">AccessFlags</a> <span class="m-label m-flat m-warning">virtual</span></span>
+              <span class="m-doc-wrap-bumper">auto <a href="#ab9d4a7e93490d1726523fae393a9335c" class="m-doc">GetAccessFlags</a>(</span><span class="m-doc-wrap">) const -&gt; <a href="namespace_i_o.html#ab7db8d079d037a7b288d7d79b2d052db" class="m-doc">AccessFlags</a> <span class="m-label m-flat m-warning">override</span></span>
             </dt>
             <dd>Returns one of enum AccessFlags.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#a48dc1e3f0f8e92ec94177f047e7adbbc" class="m-doc">GetState</a>(</span><span class="m-doc-wrap">) const -&gt; <a href="namespace_i_o.html#a5e58fc53b7c9d1ef2c2c8f0ce59d659d" class="m-doc">FileError</a> <span class="m-label m-flat m-warning">virtual</span></span>
+              <span class="m-doc-wrap-bumper">auto <a href="#a97024bc0ec7b1f7409feb604f793b55c" class="m-doc">GetState</a>(</span><span class="m-doc-wrap">) const -&gt; <a href="namespace_i_o.html#a5e58fc53b7c9d1ef2c2c8f0ce59d659d" class="m-doc">FileError</a> <span class="m-label m-flat m-warning">override</span></span>
             </dt>
             <dd>Returns the error state of the stream.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#a4cfa7962b22c7fc6ca0ead88c2e7ad49" class="m-doc">Close</a>(</span><span class="m-doc-wrap">) -&gt; bool <span class="m-label m-flat m-warning">virtual</span></span>
+              <span class="m-doc-wrap-bumper">auto <a href="#a0ccd3e3275837b51fc773fb413889581" class="m-doc">Close</a>(</span><span class="m-doc-wrap">) -&gt; bool <span class="m-label m-flat m-warning">override</span></span>
             </dt>
             <dd>Closes the stream and releases resouces associated with it.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#aeeffec125aea4cac7ee31c0529c7061c" class="m-doc">GetSize</a>(</span><span class="m-doc-wrap">) const -&gt; <a href="namespace_i_o.html#a93e482d5d18014e9184bfabe5a1a6e07" class="m-doc">size_<wbr />type</a> <span class="m-label m-flat m-warning">virtual</span></span>
+              <span class="m-doc-wrap-bumper">auto <a href="#afe9a48d54f3e703d8a874bb65cbb129a" class="m-doc">GetSize</a>(</span><span class="m-doc-wrap">) const -&gt; <a href="namespace_i_o.html#a93e482d5d18014e9184bfabe5a1a6e07" class="m-doc">size_<wbr />type</a> <span class="m-label m-flat m-warning">override</span></span>
             </dt>
             <dd>Returns the size of the stream, which is not the same as the size of bytes remaining to be read from the stream.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#a8cb263b431e865e3e85eda6dc9471e89" class="m-doc">SetSize</a>(</span><span class="m-doc-wrap"><a href="namespace_i_o.html#a93e482d5d18014e9184bfabe5a1a6e07" class="m-doc">size_<wbr />type</a> size) -&gt; bool <span class="m-label m-flat m-warning">virtual</span></span>
+              <span class="m-doc-wrap-bumper">auto <a href="#a682c308fdbac6f442883dd866047aea4" class="m-doc">SetSize</a>(</span><span class="m-doc-wrap"><a href="namespace_i_o.html#a93e482d5d18014e9184bfabe5a1a6e07" class="m-doc">size_<wbr />type</a> size) -&gt; bool <span class="m-label m-flat m-warning">override</span></span>
             </dt>
             <dd>Sets the size of the stream, if possible.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#ab8f7029e73338219356454ee87eb7de0" class="m-doc">GetPosition</a>(</span><span class="m-doc-wrap"><a href="namespace_i_o.html#a3548a9e9ef60c2653c6cdba408e817fc" class="m-doc">PositionType</a> positionType = <a href="namespace_i_o.html#a3548a9e9ef60c2653c6cdba408e817fca1a06729125544cab7cee73195fc044f0" class="m-doc">PositionType::<wbr />Begin</a>) const -&gt; int <span class="m-label m-flat m-warning">virtual</span></span>
+              <span class="m-doc-wrap-bumper">auto <a href="#ad3d007db3d2c29074d0b1fd1777d4c6f" class="m-doc">GetPosition</a>(</span><span class="m-doc-wrap"><a href="namespace_i_o.html#a3548a9e9ef60c2653c6cdba408e817fc" class="m-doc">PositionType</a> positionType = <a href="namespace_i_o.html#a3548a9e9ef60c2653c6cdba408e817fca1a06729125544cab7cee73195fc044f0" class="m-doc">PositionType::<wbr />Begin</a>) const -&gt; int <span class="m-label m-flat m-warning">override</span></span>
             </dt>
             <dd>Gets the current read/write position within the stream.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#a97b9b40a936916eb15387003d10a995e" class="m-doc">SetPosition</a>(</span><span class="m-doc-wrap">int distance,
-              <a href="namespace_i_o.html#a3548a9e9ef60c2653c6cdba408e817fc" class="m-doc">PositionType</a> positionType = <a href="namespace_i_o.html#a3548a9e9ef60c2653c6cdba408e817fca1a06729125544cab7cee73195fc044f0" class="m-doc">PositionType::<wbr />Begin</a>) -&gt; bool <span class="m-label m-flat m-warning">virtual</span></span>
+              <span class="m-doc-wrap-bumper">auto <a href="#a1fe5552d59f295e680242e783030ba81" class="m-doc">SetPosition</a>(</span><span class="m-doc-wrap">int distance,
+              <a href="namespace_i_o.html#a3548a9e9ef60c2653c6cdba408e817fc" class="m-doc">PositionType</a> positionType = <a href="namespace_i_o.html#a3548a9e9ef60c2653c6cdba408e817fca1a06729125544cab7cee73195fc044f0" class="m-doc">PositionType::<wbr />Begin</a>) -&gt; bool <span class="m-label m-flat m-warning">override</span></span>
             </dt>
             <dd>Sets the read/write position of the stream.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#afc97f0c55cc9cd14e44d126a59356fab" class="m-doc">GetAvailable</a>(</span><span class="m-doc-wrap">) const -&gt; int <span class="m-label m-flat m-warning">virtual</span></span>
+              <span class="m-doc-wrap-bumper">auto <a href="#a5d66e6cdf688ad005bea3028609ad740" class="m-doc">GetAvailable</a>(</span><span class="m-doc-wrap">) const -&gt; int <span class="m-label m-flat m-warning">override</span></span>
             </dt>
             <dd>Returns the number of bytes available for reading.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#a4d82bd26d765ea397ae30b8c1af38b94" class="m-doc">Read</a>(</span><span class="m-doc-wrap">void* pData,
-              size_t nSize) -&gt; int <span class="m-label m-flat m-warning">virtual</span></span>
+              <span class="m-doc-wrap-bumper">auto <a href="#a1426088b03dbedd89b3d548cc8ccf580" class="m-doc">Read</a>(</span><span class="m-doc-wrap">void* pData,
+              size_t nSize) -&gt; int <span class="m-label m-flat m-warning">override</span></span>
             </dt>
             <dd>Reads bytes from the stream given by the input count &#x27;nSize&#x27;.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#a51f828b256e7cab23c3edb5bb431430c" class="m-doc">Flush</a>(</span><span class="m-doc-wrap">) -&gt; bool <span class="m-label m-flat m-warning">virtual</span></span>
+              <span class="m-doc-wrap-bumper">auto <a href="#aaf27d8547578e1a98b376c3b6b980487" class="m-doc">Flush</a>(</span><span class="m-doc-wrap">) -&gt; bool <span class="m-label m-flat m-warning">override</span></span>
             </dt>
             <dd>Flush any non-empty stream write buffers.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#aaeb7b9d676909cbd6347afaeeeadf78b" class="m-doc">Write</a>(</span><span class="m-doc-wrap">const void* pData,
-              size_t nSize) -&gt; int <span class="m-label m-flat m-warning">virtual</span></span>
+              <span class="m-doc-wrap-bumper">auto <a href="#af5d624f25d9c17f63007f84dd05315ce" class="m-doc">Write</a>(</span><span class="m-doc-wrap">const void* pData,
+              size_t nSize) -&gt; int <span class="m-label m-flat m-warning">override</span></span>
             </dt>
             <dd>Writes bytes to the stream.</dd>
             <dt id="a5c2c9f9f5c8c88005f69184b568abc96">
@@ -231,44 +231,44 @@
         </section>
         <section>
           <h2>Function documentation</h2>
-          <section class="m-doc-details" id="ae13563090b155099c080643db55c6565"><div>
+          <section class="m-doc-details" id="aa66b3003c5ba13da9962264e594d4779"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">uint32_t IO::<wbr />FileStream::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ae13563090b155099c080643db55c6565" class="m-doc-self">GetType</a>(</span><span class="m-doc-wrap">) const <span class="m-label m-warning">virtual</span></span></span>
+              <span class="m-doc-wrap-bumper">uint32_t IO::<wbr />FileStream::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#aa66b3003c5ba13da9962264e594d4779" class="m-doc-self">GetType</a>(</span><span class="m-doc-wrap">) const <span class="m-label m-warning">override</span></span></span>
             </h3>
             <p>Returns the type of the stream, which is different for each Stream subclass.</p>
 <p>This function can be used for run-time type identification. A type of zero means the type is unknown or invalid.</p>
           </div></section>
-          <section class="m-doc-details" id="a5c5ffac400b94f9454d970ec712e860a"><div>
+          <section class="m-doc-details" id="ab9d4a7e93490d1726523fae393a9335c"><div>
             <h3>
-              <span class="m-doc-wrap-bumper"><a href="namespace_i_o.html#ab7db8d079d037a7b288d7d79b2d052db" class="m-doc">AccessFlags</a> IO::<wbr />FileStream::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a5c5ffac400b94f9454d970ec712e860a" class="m-doc-self">GetAccessFlags</a>(</span><span class="m-doc-wrap">) const <span class="m-label m-warning">virtual</span></span></span>
+              <span class="m-doc-wrap-bumper"><a href="namespace_i_o.html#ab7db8d079d037a7b288d7d79b2d052db" class="m-doc">AccessFlags</a> IO::<wbr />FileStream::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ab9d4a7e93490d1726523fae393a9335c" class="m-doc-self">GetAccessFlags</a>(</span><span class="m-doc-wrap">) const <span class="m-label m-warning">override</span></span></span>
             </h3>
             <p>Returns one of enum AccessFlags.</p>
 <p>This function also tells you if the stream is open, as a return value of zero means the stream is not open. It is not allowed that a stream<br />be open with no type of access.</p>
           </div></section>
-          <section class="m-doc-details" id="a48dc1e3f0f8e92ec94177f047e7adbbc"><div>
+          <section class="m-doc-details" id="a97024bc0ec7b1f7409feb604f793b55c"><div>
             <h3>
-              <span class="m-doc-wrap-bumper"><a href="namespace_i_o.html#a5e58fc53b7c9d1ef2c2c8f0ce59d659d" class="m-doc">FileError</a> IO::<wbr />FileStream::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a48dc1e3f0f8e92ec94177f047e7adbbc" class="m-doc-self">GetState</a>(</span><span class="m-doc-wrap">) const <span class="m-label m-warning">virtual</span></span></span>
+              <span class="m-doc-wrap-bumper"><a href="namespace_i_o.html#a5e58fc53b7c9d1ef2c2c8f0ce59d659d" class="m-doc">FileError</a> IO::<wbr />FileStream::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a97024bc0ec7b1f7409feb604f793b55c" class="m-doc-self">GetState</a>(</span><span class="m-doc-wrap">) const <span class="m-label m-warning">override</span></span></span>
             </h3>
             <p>Returns the error state of the stream.</p>
 <p>Returns <a href="namespace_i_o.html#a5e58fc53b7c9d1ef2c2c8f0ce59d659da505a83f220c02df2f85c3810cd9ceb38" class="m-doc">FileError::<wbr />Success</a> if OK, else an error code. This function is similar to &#x27;errno&#x27; or a &#x27;get last error&#x27; facility.</p>
           </div></section>
-          <section class="m-doc-details" id="a4cfa7962b22c7fc6ca0ead88c2e7ad49"><div>
+          <section class="m-doc-details" id="a0ccd3e3275837b51fc773fb413889581"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">bool IO::<wbr />FileStream::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a4cfa7962b22c7fc6ca0ead88c2e7ad49" class="m-doc-self">Close</a>(</span><span class="m-doc-wrap">) <span class="m-label m-warning">virtual</span></span></span>
+              <span class="m-doc-wrap-bumper">bool IO::<wbr />FileStream::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a0ccd3e3275837b51fc773fb413889581" class="m-doc-self">Close</a>(</span><span class="m-doc-wrap">) <span class="m-label m-warning">override</span></span></span>
             </h3>
             <p>Closes the stream and releases resouces associated with it.</p>
 <p>Returns true upon success, else false. If the return value is false, GetState will give the error code. If an <a href="class_i_o_1_1_i_stream.html" class="m-doc">IStream</a> encounters an error during operations on an open stream, it is guaranteed that you can safely call the Close function on the stream.</p>
           </div></section>
-          <section class="m-doc-details" id="aeeffec125aea4cac7ee31c0529c7061c"><div>
+          <section class="m-doc-details" id="afe9a48d54f3e703d8a874bb65cbb129a"><div>
             <h3>
-              <span class="m-doc-wrap-bumper"><a href="namespace_i_o.html#a93e482d5d18014e9184bfabe5a1a6e07" class="m-doc">size_<wbr />type</a> IO::<wbr />FileStream::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#aeeffec125aea4cac7ee31c0529c7061c" class="m-doc-self">GetSize</a>(</span><span class="m-doc-wrap">) const <span class="m-label m-warning">virtual</span></span></span>
+              <span class="m-doc-wrap-bumper"><a href="namespace_i_o.html#a93e482d5d18014e9184bfabe5a1a6e07" class="m-doc">size_<wbr />type</a> IO::<wbr />FileStream::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#afe9a48d54f3e703d8a874bb65cbb129a" class="m-doc-self">GetSize</a>(</span><span class="m-doc-wrap">) const <span class="m-label m-warning">override</span></span></span>
             </h3>
             <p>Returns the size of the stream, which is not the same as the size of bytes remaining to be read from the stream.</p>
 <p>Returns (size_type)-2 if the stream is of indeterminate size. Returns (size_type)-1 (a.k.a. kSizeTypeError) upon error.</p>
           </div></section>
-          <section class="m-doc-details" id="a8cb263b431e865e3e85eda6dc9471e89"><div>
+          <section class="m-doc-details" id="a682c308fdbac6f442883dd866047aea4"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">bool IO::<wbr />FileStream::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a8cb263b431e865e3e85eda6dc9471e89" class="m-doc-self">SetSize</a>(</span><span class="m-doc-wrap"><a href="namespace_i_o.html#a93e482d5d18014e9184bfabe5a1a6e07" class="m-doc">size_<wbr />type</a> size) <span class="m-label m-warning">virtual</span></span></span>
+              <span class="m-doc-wrap-bumper">bool IO::<wbr />FileStream::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a682c308fdbac6f442883dd866047aea4" class="m-doc-self">SetSize</a>(</span><span class="m-doc-wrap"><a href="namespace_i_o.html#a93e482d5d18014e9184bfabe5a1a6e07" class="m-doc">size_<wbr />type</a> size) <span class="m-label m-warning">override</span></span></span>
             </h3>
             <p>Sets the size of the stream, if possible.</p>
             <table class="m-table m-fullwidth m-flat">
@@ -284,9 +284,9 @@
             </table>
 <p>It is debatable whether this function should be present in <a href="class_i_o_1_1_i_stream.html" class="m-doc">IStream</a> or only in suclasses of StreamBase which are writable. For consistency with GetSize, we put the function here. But also consider that a SetSize function is not necessarily a data writing function, depending on the stream implementation.</p>
           </div></section>
-          <section class="m-doc-details" id="ab8f7029e73338219356454ee87eb7de0"><div>
+          <section class="m-doc-details" id="ad3d007db3d2c29074d0b1fd1777d4c6f"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">int IO::<wbr />FileStream::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ab8f7029e73338219356454ee87eb7de0" class="m-doc-self">GetPosition</a>(</span><span class="m-doc-wrap"><a href="namespace_i_o.html#a3548a9e9ef60c2653c6cdba408e817fc" class="m-doc">PositionType</a> positionType = <a href="namespace_i_o.html#a3548a9e9ef60c2653c6cdba408e817fca1a06729125544cab7cee73195fc044f0" class="m-doc">PositionType::<wbr />Begin</a>) const <span class="m-label m-warning">virtual</span></span></span>
+              <span class="m-doc-wrap-bumper">int IO::<wbr />FileStream::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ad3d007db3d2c29074d0b1fd1777d4c6f" class="m-doc-self">GetPosition</a>(</span><span class="m-doc-wrap"><a href="namespace_i_o.html#a3548a9e9ef60c2653c6cdba408e817fc" class="m-doc">PositionType</a> positionType = <a href="namespace_i_o.html#a3548a9e9ef60c2653c6cdba408e817fca1a06729125544cab7cee73195fc044f0" class="m-doc">PositionType::<wbr />Begin</a>) const <span class="m-label m-warning">override</span></span></span>
             </h3>
             <p>Gets the current read/write position within the stream.</p>
             <table class="m-table m-fullwidth m-flat">
@@ -302,10 +302,10 @@
             </table>
 <p>The read and write positions of a stream must be the same value; you cannot have a read position that is different from a write position. However, a Stream subclass can provide such functionality if needed. Returns -1 upon error.</p>
           </div></section>
-          <section class="m-doc-details" id="a97b9b40a936916eb15387003d10a995e"><div>
+          <section class="m-doc-details" id="a1fe5552d59f295e680242e783030ba81"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">bool IO::<wbr />FileStream::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a97b9b40a936916eb15387003d10a995e" class="m-doc-self">SetPosition</a>(</span><span class="m-doc-wrap">int distance,
-              <a href="namespace_i_o.html#a3548a9e9ef60c2653c6cdba408e817fc" class="m-doc">PositionType</a> positionType = <a href="namespace_i_o.html#a3548a9e9ef60c2653c6cdba408e817fca1a06729125544cab7cee73195fc044f0" class="m-doc">PositionType::<wbr />Begin</a>) <span class="m-label m-warning">virtual</span></span></span>
+              <span class="m-doc-wrap-bumper">bool IO::<wbr />FileStream::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a1fe5552d59f295e680242e783030ba81" class="m-doc-self">SetPosition</a>(</span><span class="m-doc-wrap">int distance,
+              <a href="namespace_i_o.html#a3548a9e9ef60c2653c6cdba408e817fc" class="m-doc">PositionType</a> positionType = <a href="namespace_i_o.html#a3548a9e9ef60c2653c6cdba408e817fca1a06729125544cab7cee73195fc044f0" class="m-doc">PositionType::<wbr />Begin</a>) <span class="m-label m-warning">override</span></span></span>
             </h3>
             <p>Sets the read/write position of the stream.</p>
             <table class="m-table m-fullwidth m-flat">
@@ -325,17 +325,17 @@
             </table>
 <p>If the specified position is beyond the size of a fixed stream, the position is set to the end of the stream. A writable stream subclass may provide a policy whereby setting the position beyond the end of the stream results in an increase in the stream size.</p>
           </div></section>
-          <section class="m-doc-details" id="afc97f0c55cc9cd14e44d126a59356fab"><div>
+          <section class="m-doc-details" id="a5d66e6cdf688ad005bea3028609ad740"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">int IO::<wbr />FileStream::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#afc97f0c55cc9cd14e44d126a59356fab" class="m-doc-self">GetAvailable</a>(</span><span class="m-doc-wrap">) const <span class="m-label m-warning">virtual</span></span></span>
+              <span class="m-doc-wrap-bumper">int IO::<wbr />FileStream::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a5d66e6cdf688ad005bea3028609ad740" class="m-doc-self">GetAvailable</a>(</span><span class="m-doc-wrap">) const <span class="m-label m-warning">override</span></span></span>
             </h3>
             <p>Returns the number of bytes available for reading.</p>
 <p>Returns (size_type)-1 (a.k.a. kSizeTypeError) upon error. This function is non-blocking; it should return immediately.</p>
           </div></section>
-          <section class="m-doc-details" id="a4d82bd26d765ea397ae30b8c1af38b94"><div>
+          <section class="m-doc-details" id="a1426088b03dbedd89b3d548cc8ccf580"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">int IO::<wbr />FileStream::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a4d82bd26d765ea397ae30b8c1af38b94" class="m-doc-self">Read</a>(</span><span class="m-doc-wrap">void* pData,
-              size_t nSize) <span class="m-label m-warning">virtual</span></span></span>
+              <span class="m-doc-wrap-bumper">int IO::<wbr />FileStream::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a1426088b03dbedd89b3d548cc8ccf580" class="m-doc-self">Read</a>(</span><span class="m-doc-wrap">void* pData,
+              size_t nSize) <span class="m-label m-warning">override</span></span></span>
             </h3>
             <p>Reads bytes from the stream given by the input count &#x27;nSize&#x27;.</p>
             <table class="m-table m-fullwidth m-flat">
@@ -355,17 +355,17 @@
             </table>
 <p>If less then nSize bytes are available, then those bytes will be read. Returns the number of bytes read. A return value of zero means that there were no bytes to be read or no bytes were requested to be read. A return value of zero means the end of file was reached. A return value &gt; 0 but &lt; &#x27;nSize&#x27; is possible, and it does not necessarily mean that the end of the file was reached. Returns (size_type)-1 (a.k.a. kSizeTypeError) if there was an error. You can use this return value or <a href="class_i_o_1_1_i_stream.html#aa1bcbedfc21d71aadd005d3ff42642f5" class="m-doc">IStream::<wbr />GetState</a> to determine the error. Input size values equal to (size_type)-1 (a.k.a. kSizeTypeError) are not valid input. Upon error, the stream pointer is at the position it was upon the error occurrence.</p>
           </div></section>
-          <section class="m-doc-details" id="a51f828b256e7cab23c3edb5bb431430c"><div>
+          <section class="m-doc-details" id="aaf27d8547578e1a98b376c3b6b980487"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">bool IO::<wbr />FileStream::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a51f828b256e7cab23c3edb5bb431430c" class="m-doc-self">Flush</a>(</span><span class="m-doc-wrap">) <span class="m-label m-warning">virtual</span></span></span>
+              <span class="m-doc-wrap-bumper">bool IO::<wbr />FileStream::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#aaf27d8547578e1a98b376c3b6b980487" class="m-doc-self">Flush</a>(</span><span class="m-doc-wrap">) <span class="m-label m-warning">override</span></span></span>
             </h3>
             <p>Flush any non-empty stream write buffers.</p>
 <p>If the return value is false, GetState will give the error code. This function implements the flushing as per the underlying file system. The behavior of the Flush function varies with the underlying platform.</p><p>A common use of Flush is write a file to disk immediately in order to prevent the file from being corrupted if the application crashes before the file is closed. However, on desktop platforms such as Windows this strategy is unnecesary, as the Windows OS file flush doesn&#x27;t write the file to disk as might be expected. This actually is not a problem, because the Windows OS manages files outside the process and if your process crashes the OS will take care of safely closing the files. Only if the machine power is lost or if certain kinds of kernel-level crashes occur may you lose file data.<br /></p>
           </div></section>
-          <section class="m-doc-details" id="aaeb7b9d676909cbd6347afaeeeadf78b"><div>
+          <section class="m-doc-details" id="af5d624f25d9c17f63007f84dd05315ce"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">int IO::<wbr />FileStream::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#aaeb7b9d676909cbd6347afaeeeadf78b" class="m-doc-self">Write</a>(</span><span class="m-doc-wrap">const void* pData,
-              size_t nSize) <span class="m-label m-warning">virtual</span></span></span>
+              <span class="m-doc-wrap-bumper">int IO::<wbr />FileStream::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#af5d624f25d9c17f63007f84dd05315ce" class="m-doc-self">Write</a>(</span><span class="m-doc-wrap">const void* pData,
+              size_t nSize) <span class="m-label m-warning">override</span></span></span>
             </h3>
             <p>Writes bytes to the stream.</p>
             <table class="m-table m-fullwidth m-flat">

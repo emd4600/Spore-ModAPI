@@ -81,17 +81,37 @@
             </dt>
             <dd>Base class for tasks executed in the process of generating a skinpaint texture.</dd>
             <dt>
-              class <a href="class_skinner_1_1c_skin_painter_job_apply_parts_textures.html" class="m-doc">cSkinPainterJobApplyPartsTextures</a>
+              class <a href="class_skinner_1_1c_skin_painter_job_ambient_occlusion.html" class="m-doc">cSkinPainterJobAmbientOcclusion</a>
             </dt>
-            <dd>Applies the diffuse, bumpSpec and tintMask maps of all rigblocks.</dd>
+            <dd><span></span></dd>
+            <dt>
+              class <a href="class_skinner_1_1c_skin_painter_job_apply_brushes.html" class="m-doc">cSkinPainterJobApplyBrushes</a>
+            </dt>
+            <dd><span></span></dd>
             <dt>
               class <a href="class_skinner_1_1c_skin_painter_job_bump_to_normal.html" class="m-doc">cSkinPainterJobBumpToNormal</a>
             </dt>
             <dd>Transforms a bump map in skinner texture 0 into a normal map in skinner texture 2.</dd>
             <dt>
+              class <a href="class_skinner_1_1c_skin_painter_job_color_dilate_repeat.html" class="m-doc">cSkinPainterJobColorDilateRepeat</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              class <a href="class_skinner_1_1c_skin_painter_job_copy_rigblocks_tint_mask_alpha.html" class="m-doc">cSkinPainterJobCopyRigblocksTintMaskAlpha</a>
+            </dt>
+            <dd>Copies the alpha channel of all rigblocks tint mask texture into the alpha channel texture 0.</dd>
+            <dt>
               class <a href="class_skinner_1_1c_skin_painter_job_copy_tex1_alpha_to_tex0.html" class="m-doc">cSkinPainterJobCopyTex1AlphaToTex0</a>
             </dt>
             <dd>Copies the alpha channel of skinner texture 1 into the alpha channel of skinner texture 0.</dd>
+            <dt>
+              class <a href="class_skinner_1_1c_skin_painter_job_extract_texture.html" class="m-doc">cSkinPainterJobExtractTexture</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              class <a href="class_skinner_1_1c_skin_painter_job_paint_parts.html" class="m-doc">cSkinPainterJobPaintParts</a>
+            </dt>
+            <dd>Applies the diffuse, bumpSpec and tintMask maps of all rigblocks.</dd>
             <dt>
               class <a href="class_skinner_1_1c_skin_painter_pipeline.html" class="m-doc">cSkinPainterPipeline</a>
             </dt>
@@ -113,17 +133,15 @@
               <span class="m-doc-wrap-bumper">enum class <a href="#a530ea1a787cc60dc0fe2d84de9d5a264" class="m-doc">MaterialIDs</a> { </span><span class="m-doc-wrap"> }</span>
             </dt>
             <dd><span></span></dd>
-            <dt>
-              <span class="m-doc-wrap-bumper">enum class <a href="#aa9a443533474137788b5c7534e4e4c1c" class="m-doc">PainterJobIndex</a> { </span><span class="m-doc-wrap"><a href="#aa9a443533474137788b5c7534e4e4c1ca322d2f53dca006e74758c5680673db7c" class="m-doc">CopyTex1ToTex0</a> = 9,
-              <a href="#aa9a443533474137788b5c7534e4e4c1ca201c3cc7cb445f4c2649804bbae5e9a9" class="m-doc">PaintTintMasks</a> = 10,
-              <a href="#aa9a443533474137788b5c7534e4e4c1ca94f6554ee4c252fc8cb7df98b02f26ab" class="m-doc">BumpToNormalMap</a> = 12 }</span>
-            </dt>
-            <dd><span></span></dd>
           </dl>
         </section>
         <section id="func-members">
           <h2><a href="#func-members">Functions</a></h2>
           <dl class="m-doc">
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a68e63738874f463aaf8761617d2f6fe7" class="m-doc">GetCurrentColors</a>(</span><span class="m-doc-wrap">) -&gt; <a href="struct_math_1_1_color_r_g_b.html" class="m-doc">Math::<wbr />ColorRGB</a>*</span>
+            </dt>
+            <dd><span></span></dd>
             <dt>
               <span class="m-doc-wrap-bumper"><a href="#a113402af4883e6d7eb963290f55221ef" class="m-doc">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="struct_skinner_1_1c_skinpaint_info.html" class="m-doc">cSkinpaintInfo</a>,
               0x38)</span>
@@ -166,12 +184,21 @@
             </dt>
             <dd><span></span></dd>
             <dt>
-              <span class="m-doc-wrap-bumper"><a href="#a55a0c492d467c9809674205d8579f2cb" class="m-doc">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_skinner_1_1c_skin_painter_job_apply_parts_textures.html" class="m-doc">cSkinPainterJobApplyPartsTextures</a>,
+              <span class="m-doc-wrap-bumper"><a href="#aefeee0ad31467861329e50ae9e1ba321" class="m-doc">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_skinner_1_1c_skin_painter_job_ambient_occlusion.html" class="m-doc">cSkinPainterJobAmbientOcclusion</a>,
               0x10)</span>
             </dt>
             <dd><span></span></dd>
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#ad399d2d12b3e1a7c7362d624c8185e6a" class="m-doc">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_skinner_1_1c_skin_painter_job_apply_parts_textures.html" class="m-doc">cSkinPainterJobApplyPartsTextures</a>) -&gt; namespace</span>
+              <span class="m-doc-wrap-bumper">auto <a href="#a28c8d6b16d3243e06655c0de70c4248c" class="m-doc">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_skinner_1_1c_skin_painter_job_ambient_occlusion.html" class="m-doc">cSkinPainterJobAmbientOcclusion</a>) -&gt; namespace</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper"><a href="#aecd65d8a978bcb0c693ac296e302140e" class="m-doc">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_skinner_1_1c_skin_painter_job_apply_brushes.html" class="m-doc">cSkinPainterJobApplyBrushes</a>,
+              0x30)</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a58e5f29ea277b9f84653c7b80b88975c" class="m-doc">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_skinner_1_1c_skin_painter_job_apply_brushes.html" class="m-doc">cSkinPainterJobApplyBrushes</a>) -&gt; namespace</span>
             </dt>
             <dd><span></span></dd>
             <dt>
@@ -184,12 +211,44 @@
             </dt>
             <dd><span></span></dd>
             <dt>
+              <span class="m-doc-wrap-bumper"><a href="#a35eed84e8ea2fa45feb40a75d484ddf8" class="m-doc">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_skinner_1_1c_skin_painter_job_color_dilate_repeat.html" class="m-doc">cSkinPainterJobColorDilateRepeat</a>,
+              0x1C)</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a52479e3f33a09e60a16e4979005849fd" class="m-doc">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_skinner_1_1c_skin_painter_job_color_dilate_repeat.html" class="m-doc">cSkinPainterJobColorDilateRepeat</a>) -&gt; namespace</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper"><a href="#a29e18007354cd3ddf1662eaed0c91f92" class="m-doc">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_skinner_1_1c_skin_painter_job_copy_rigblocks_tint_mask_alpha.html" class="m-doc">cSkinPainterJobCopyRigblocksTintMaskAlpha</a>,
+              0x14)</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a6fb42d6bfca6859b2a4dfefcc73d0d2b" class="m-doc">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_skinner_1_1c_skin_painter_job_copy_rigblocks_tint_mask_alpha.html" class="m-doc">cSkinPainterJobCopyRigblocksTintMaskAlpha</a>) -&gt; namespace</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
               <span class="m-doc-wrap-bumper"><a href="#a4a87bf3dc772c510829ed93f38cf05bc" class="m-doc">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_skinner_1_1c_skin_painter_job_copy_tex1_alpha_to_tex0.html" class="m-doc">cSkinPainterJobCopyTex1AlphaToTex0</a>,
               0x10)</span>
             </dt>
             <dd><span></span></dd>
             <dt>
               <span class="m-doc-wrap-bumper">auto <a href="#ab747faa9f581730141181a5ff1c1db91" class="m-doc">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_skinner_1_1c_skin_painter_job_copy_tex1_alpha_to_tex0.html" class="m-doc">cSkinPainterJobCopyTex1AlphaToTex0</a>) -&gt; namespace</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper"><a href="#ab683849ad29f351dbd4760f2649be1a7" class="m-doc">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_skinner_1_1c_skin_painter_job_extract_texture.html" class="m-doc">cSkinPainterJobExtractTexture</a>,
+              0x48)</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper"><a href="#a07aa0ad8347459d747d9cf09f7bcaff8" class="m-doc">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_skinner_1_1c_skin_painter_job_paint_parts.html" class="m-doc">cSkinPainterJobPaintParts</a>,
+              0x18)</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a61ee1a973c0fc6c0ef6ea82407add890" class="m-doc">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_skinner_1_1c_skin_painter_job_paint_parts.html" class="m-doc">cSkinPainterJobPaintParts</a>) -&gt; namespace</span>
             </dt>
             <dd><span></span></dd>
             <dt>
@@ -212,16 +271,16 @@
             </h3>
             <p><span></span></p>
           </div></section>
-          <section class="m-doc-details" id="aa9a443533474137788b5c7534e4e4c1c"><div>
-            <h3>
-              enum class Skinner::<wbr /><a href="#aa9a443533474137788b5c7534e4e4c1c" class="m-doc-self">PainterJobIndex</a>
-              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="c_skinner_texture_painter_8h.html">&lt;Spore/Skinner/cSkinnerTexturePainter.h&gt;</a></div>
-            </h3>
-            <p><span></span></p>
-          </div></section>
         </section>
         <section>
           <h2>Function documentation</h2>
+          <section class="m-doc-details" id="a68e63738874f463aaf8761617d2f6fe7"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"><a href="struct_math_1_1_color_r_g_b.html" class="m-doc">Math::<wbr />ColorRGB</a>* Skinner::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a68e63738874f463aaf8761617d2f6fe7" class="m-doc-self">GetCurrentColors</a>(</span><span class="m-doc-wrap">)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="c_paint_system_8h.html">&lt;Spore/Skinner/cPaintSystem.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
           <section class="m-doc-details" id="a113402af4883e6d7eb963290f55221ef"><div>
             <h3>
               <span class="m-doc-wrap-bumper"> Skinner::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a113402af4883e6d7eb963290f55221ef" class="m-doc-self">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="struct_skinner_1_1c_skinpaint_info.html" class="m-doc">cSkinpaintInfo</a>,
@@ -290,18 +349,33 @@
             </h3>
             <p><span></span></p>
           </div></section>
-          <section class="m-doc-details" id="a55a0c492d467c9809674205d8579f2cb"><div>
+          <section class="m-doc-details" id="aefeee0ad31467861329e50ae9e1ba321"><div>
             <h3>
-              <span class="m-doc-wrap-bumper"> Skinner::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a55a0c492d467c9809674205d8579f2cb" class="m-doc-self">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_skinner_1_1c_skin_painter_job_apply_parts_textures.html" class="m-doc">cSkinPainterJobApplyPartsTextures</a>,
+              <span class="m-doc-wrap-bumper"> Skinner::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#aefeee0ad31467861329e50ae9e1ba321" class="m-doc-self">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_skinner_1_1c_skin_painter_job_ambient_occlusion.html" class="m-doc">cSkinPainterJobAmbientOcclusion</a>,
               0x10)</span></span>
-              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="c_skin_painter_job_apply_rigblocks_textures_8h.html">&lt;Spore/Skinner/cSkinPainterJobApplyRigblocksTextures.h&gt;</a></div>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="c_skin_painter_job_ambient_occlusion_8h.html">&lt;Spore/Skinner/cSkinPainterJobAmbientOcclusion.h&gt;</a></div>
             </h3>
             <p><span></span></p>
           </div></section>
-          <section class="m-doc-details" id="ad399d2d12b3e1a7c7362d624c8185e6a"><div>
+          <section class="m-doc-details" id="a28c8d6b16d3243e06655c0de70c4248c"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">namespace Skinner::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ad399d2d12b3e1a7c7362d624c8185e6a" class="m-doc-self">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_skinner_1_1c_skin_painter_job_apply_parts_textures.html" class="m-doc">cSkinPainterJobApplyPartsTextures</a>)</span></span>
-              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="c_skin_painter_job_apply_rigblocks_textures_8h.html">&lt;Spore/Skinner/cSkinPainterJobApplyRigblocksTextures.h&gt;</a></div>
+              <span class="m-doc-wrap-bumper">namespace Skinner::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a28c8d6b16d3243e06655c0de70c4248c" class="m-doc-self">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_skinner_1_1c_skin_painter_job_ambient_occlusion.html" class="m-doc">cSkinPainterJobAmbientOcclusion</a>)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="c_skin_painter_job_ambient_occlusion_8h.html">&lt;Spore/Skinner/cSkinPainterJobAmbientOcclusion.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="aecd65d8a978bcb0c693ac296e302140e"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"> Skinner::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#aecd65d8a978bcb0c693ac296e302140e" class="m-doc-self">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_skinner_1_1c_skin_painter_job_apply_brushes.html" class="m-doc">cSkinPainterJobApplyBrushes</a>,
+              0x30)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="c_skin_painter_job_apply_brushes_8h.html">&lt;Spore/Skinner/cSkinPainterJobApplyBrushes.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="a58e5f29ea277b9f84653c7b80b88975c"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">namespace Skinner::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a58e5f29ea277b9f84653c7b80b88975c" class="m-doc-self">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_skinner_1_1c_skin_painter_job_apply_brushes.html" class="m-doc">cSkinPainterJobApplyBrushes</a>)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="c_skin_painter_job_apply_brushes_8h.html">&lt;Spore/Skinner/cSkinPainterJobApplyBrushes.h&gt;</a></div>
             </h3>
             <p><span></span></p>
           </div></section>
@@ -320,6 +394,36 @@
             </h3>
             <p><span></span></p>
           </div></section>
+          <section class="m-doc-details" id="a35eed84e8ea2fa45feb40a75d484ddf8"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"> Skinner::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a35eed84e8ea2fa45feb40a75d484ddf8" class="m-doc-self">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_skinner_1_1c_skin_painter_job_color_dilate_repeat.html" class="m-doc">cSkinPainterJobColorDilateRepeat</a>,
+              0x1C)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="c_skin_painter_job_color_dilate_repeat_8h.html">&lt;Spore/Skinner/cSkinPainterJobColorDilateRepeat.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="a52479e3f33a09e60a16e4979005849fd"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">namespace Skinner::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a52479e3f33a09e60a16e4979005849fd" class="m-doc-self">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_skinner_1_1c_skin_painter_job_color_dilate_repeat.html" class="m-doc">cSkinPainterJobColorDilateRepeat</a>)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="c_skin_painter_job_color_dilate_repeat_8h.html">&lt;Spore/Skinner/cSkinPainterJobColorDilateRepeat.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="a29e18007354cd3ddf1662eaed0c91f92"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"> Skinner::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a29e18007354cd3ddf1662eaed0c91f92" class="m-doc-self">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_skinner_1_1c_skin_painter_job_copy_rigblocks_tint_mask_alpha.html" class="m-doc">cSkinPainterJobCopyRigblocksTintMaskAlpha</a>,
+              0x14)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="c_skin_painter_job_copy_rigblocks_tint_mask_alpha_8h.html">&lt;Spore/Skinner/cSkinPainterJobCopyRigblocksTintMaskAlpha.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="a6fb42d6bfca6859b2a4dfefcc73d0d2b"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">namespace Skinner::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a6fb42d6bfca6859b2a4dfefcc73d0d2b" class="m-doc-self">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_skinner_1_1c_skin_painter_job_copy_rigblocks_tint_mask_alpha.html" class="m-doc">cSkinPainterJobCopyRigblocksTintMaskAlpha</a>)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="c_skin_painter_job_copy_rigblocks_tint_mask_alpha_8h.html">&lt;Spore/Skinner/cSkinPainterJobCopyRigblocksTintMaskAlpha.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
           <section class="m-doc-details" id="a4a87bf3dc772c510829ed93f38cf05bc"><div>
             <h3>
               <span class="m-doc-wrap-bumper"> Skinner::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a4a87bf3dc772c510829ed93f38cf05bc" class="m-doc-self">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_skinner_1_1c_skin_painter_job_copy_tex1_alpha_to_tex0.html" class="m-doc">cSkinPainterJobCopyTex1AlphaToTex0</a>,
@@ -332,6 +436,29 @@
             <h3>
               <span class="m-doc-wrap-bumper">namespace Skinner::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ab747faa9f581730141181a5ff1c1db91" class="m-doc-self">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_skinner_1_1c_skin_painter_job_copy_tex1_alpha_to_tex0.html" class="m-doc">cSkinPainterJobCopyTex1AlphaToTex0</a>)</span></span>
               <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="c_skin_painter_job_copy_tex1_alpha_to_tex0_8h.html">&lt;Spore/Skinner/cSkinPainterJobCopyTex1AlphaToTex0.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="ab683849ad29f351dbd4760f2649be1a7"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"> Skinner::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ab683849ad29f351dbd4760f2649be1a7" class="m-doc-self">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_skinner_1_1c_skin_painter_job_extract_texture.html" class="m-doc">cSkinPainterJobExtractTexture</a>,
+              0x48)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="c_skin_painter_job_extract_texture_8h.html">&lt;Spore/Skinner/cSkinPainterJobExtractTexture.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="a07aa0ad8347459d747d9cf09f7bcaff8"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"> Skinner::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a07aa0ad8347459d747d9cf09f7bcaff8" class="m-doc-self">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_skinner_1_1c_skin_painter_job_paint_parts.html" class="m-doc">cSkinPainterJobPaintParts</a>,
+              0x18)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="c_skin_painter_job_paint_parts_8h.html">&lt;Spore/Skinner/cSkinPainterJobPaintParts.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="a61ee1a973c0fc6c0ef6ea82407add890"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">namespace Skinner::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a61ee1a973c0fc6c0ef6ea82407add890" class="m-doc-self">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_skinner_1_1c_skin_painter_job_paint_parts.html" class="m-doc">cSkinPainterJobPaintParts</a>)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="c_skin_painter_job_paint_parts_8h.html">&lt;Spore/Skinner/cSkinPainterJobPaintParts.h&gt;</a></div>
             </h3>
             <p><span></span></p>
           </div></section>

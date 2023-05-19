@@ -53,7 +53,7 @@
           <ul>
             <li><a href="#SourceCode-Skinner-cSkinPainterJobBumpToNormal">Skinner::cSkinPainterJobBumpToNormal</a></li>
             <li><a href="#SourceCode-Skinner-cSkinPainterJobCopyTex1AlphaToTex0">Skinner::cSkinPainterJobCopyTex1AlphaToTex0</a></li>
-            <li><a href="#SourceCode-Skinner-cSkinPainterJobApplyPartsTextures">Skinner::cSkinPainterJobApplyPartsTextures</a></li>
+            <li><a href="#SourceCode-Skinner-cSkinPainterJobPaintParts">Skinner::cSkinPainterJobPaintParts</a></li>
           </ul>
         </div>
 <section id="SourceCode-Skinner-cSkinPainterJobBumpToNormal"><h2><a href="#SourceCode-Skinner-cSkinPainterJobBumpToNormal">Skinner::cSkinPainterJobBumpToNormal</a></h2><pre class="m-code"><span class="kt">bool</span><span class="w"> </span><span class="nf">cSkinPainterJobBumpToNormal::Execute</span><span class="p">()</span><span class="w"></span>
@@ -90,7 +90,7 @@
 <span class="w">    </span><span class="n">dstTexture</span><span class="o">-&gt;</span><span class="n">SetColorWriteEnable</span><span class="p">(</span><span class="nb">true</span><span class="p">,</span><span class="w"> </span><span class="nb">true</span><span class="p">,</span><span class="w"> </span><span class="nb">true</span><span class="p">,</span><span class="w"> </span><span class="nb">true</span><span class="p">);</span><span class="w"></span>
 <span class="w">    </span><span class="n">dstTexture</span><span class="o">-&gt;</span><span class="n">EndRender</span><span class="p">();</span><span class="w"></span>
 <span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nb">true</span><span class="p">;</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span></pre></section><section id="SourceCode-Skinner-cSkinPainterJobApplyPartsTextures"><h2><a href="#SourceCode-Skinner-cSkinPainterJobApplyPartsTextures">Skinner::cSkinPainterJobApplyPartsTextures</a></h2><pre class="m-code"><span class="kt">bool</span><span class="w"> </span><span class="nf">cSkinPainterJobApplyPartsTextures::Execute</span><span class="p">()</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span></pre></section><section id="SourceCode-Skinner-cSkinPainterJobPaintParts"><h2><a href="#SourceCode-Skinner-cSkinPainterJobPaintParts">Skinner::cSkinPainterJobPaintParts</a></h2><pre class="m-code"><span class="kt">bool</span><span class="w"> </span><span class="nf">cSkinPainterJobPaintParts::Execute</span><span class="p">()</span><span class="w"></span>
 <span class="p">{</span><span class="w"></span>
 <span class="w">    </span><span class="k">auto</span><span class="w"> </span><span class="n">texture0</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">PaintSystem</span><span class="p">.</span><span class="n">GetPainter</span><span class="p">()</span><span class="o">-&gt;</span><span class="n">mpTexture0</span><span class="p">;</span><span class="w"></span>
 <span class="w">    </span><span class="k">auto</span><span class="w"> </span><span class="n">texture1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">PaintSystem</span><span class="p">.</span><span class="n">GetPainter</span><span class="p">()</span><span class="o">-&gt;</span><span class="n">mpTexture1</span><span class="p">;</span><span class="w"></span>
