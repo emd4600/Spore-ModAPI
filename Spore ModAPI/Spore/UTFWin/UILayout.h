@@ -85,6 +85,8 @@ namespace UTFWin
 		///
 		bool SetVisible(bool value);
 
+		bool IsVisible();
+
 		///
 		/// Returns the window that contains the UI layout.
 		///
@@ -118,6 +120,7 @@ namespace UTFWin
 		DeclareAddress(SetParentWindow);
 		DeclareAddress(SetVisible);
 		DeclareAddress(GetContainerWindow);
+		DeclareAddress(IsVisible);  // 0x8106D0 0x810110
 	}
 
 	inline bool	UILayout::LoadByID(uint32_t instanceID, uint32_t groupID, uint32_t typeID, bool arg1, uint32_t arg2)

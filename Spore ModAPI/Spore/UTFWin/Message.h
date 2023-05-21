@@ -275,6 +275,15 @@ namespace UTFWin
 				/// The change of the text.
 				/* 18h */	TextChange* change;
 			} TextChanged;
+
+			///
+			/// The event arguments for the message type: UTFWin::kMsgComponentActivated
+			///
+			struct
+			{
+				/// The control ID of the activated button.
+				/* 0Ch */	uint32_t controlID;
+			} ComponentActivated;
 		};
 	};
 	ASSERT_SIZE(Message, 0x1C);  // 7 32bit ints

@@ -27,7 +27,7 @@ namespace Editors
 {
 	class cEditor;
 
-	// uses amimation ID in 62E587
+	// uses animation ID in 62E587
 
 	class PlayModeAnimations
 	{
@@ -37,7 +37,7 @@ namespace Editors
 
 		virtual bool Initialize(int, int);
 		virtual void Dispose();
-		virtual float PlayAnimation(int, uint32_t playAnimName, bool loop, int mode, int* dstAnimIndex = nullptr);
+		virtual float PlayAnimation(int actorID, uint32_t playAnimName, bool loop, int mode, int* dstAnimIndex = nullptr);
 
 	public:
 		/// Reads all the animation panels in the 0x4060E000 folder.
@@ -89,9 +89,8 @@ namespace Editors
 		/* 80h */	int field_80;
 		/* 84h */	int field_84;
 		/* 88h */	int field_88;
-		/* 8Ch */	int field_8C;  // not initialized
 	};
-	ASSERT_SIZE(PlayModeAnimations, 0x90);
+	ASSERT_SIZE(PlayModeAnimations, 0x8C);
 
 	namespace Addresses(PlayModeAnimations)
 	{

@@ -11,6 +11,8 @@
 #include <Spore\Editors\cEditorSkin.h>
 #include <Spore\Editors\TuningSpine.h>
 #include <Spore\Editors\PlayModeAnimations.h>
+#include <Spore\Editors\EditorPlayMode.h>
+#include <Spore\Editors\PlayModeUI.h>
 #include <Spore\Editors\SpeciesManager.h>
 #include <Spore\Editors\EditorCreatureController.h>
 #include <Spore\Editors\PlayModeActor.h>
@@ -75,6 +77,7 @@ namespace Editors
 		DefineAddress(SetActiveMode, SelectAddress(0x586F40, 0x587270));
 		DefineAddress(SetCreatureToNeutralPose, SelectAddress(0x573860, 0x573970));
 		DefineAddress(AddCreature, SelectAddress(0x582D00, 0x582FE0));
+		DefineAddress(PostEventToActors, SelectAddress(0x574000, 0x574110));
 
 		DefineAddress(HandleMessage, SelectAddress(0x591C80, 0x591FA0));
 	}
@@ -172,6 +175,13 @@ namespace Editors
 	{
 		DefineAddress(SwitchBackground, SelectAddress(0x62F5F0, 0x62F640));
 		DefineAddress(DisableBackground, SelectAddress(0x62F900, 0x62F950));
+		DefineAddress(Load, SelectAddress(0x62FC70, 0x62FCC0));
+		DefineAddress(LoadBackgroudFiles, SelectAddress(0x62FBA0, 0x62FBF0));
+		DefineAddress(HandleUIButton, SelectAddress(0x62F7D0, 0x62F820));
+		DefineAddress(ToggleBackgroundButtonHighlights, SelectAddress(0x62F320, 0x62F370));
+		DefineAddress(UpdatePageNumbers, SelectAddress(0x62F520, 0x62F570));
+		DefineAddress(UpdateBackgroundButtons, SelectAddress(0x62F6C0, 0x62F710));
+		DefineAddress(IsBlackBackground, SelectAddress(0x62F6A0, 0x62F6F0));
 	}
 
 	namespace Addresses(cEditorSkin)
@@ -210,6 +220,22 @@ namespace Editors
 	namespace Addresses(cEditorSkinMeshBase)
 	{
 		DefineAddress(FromRigblocks, SelectAddress(0x4C6E90, 0x4C7460));
+	}
+
+	namespace Addresses(EditorPlayMode)
+	{
+		DefineAddress(Load, SelectAddress(0x62A3F0, 0x62A400));
+		DefineAddress(Dispose, SelectAddress(0x62C930, 0x62C940));
+		DefineAddress(GetNextEnvironmentReactionAnimID, SelectAddress(0x6286C0, 0x6286D0));
+		DefineAddress(sub_628CC0, SelectAddress(0x628CC0, 0x628CD0));
+		DefineAddress(HandleUIButton, SelectAddress(0x628D70, 0x628D80));
+	}
+
+	namespace Addresses(PlayModeUI)
+	{
+		DefineAddress(HandleUIMessage, SelectAddress(0x6374B0, 0x6377B0));
+		DefineAddress(SetWindowVisible, SelectAddress(0x635450, 0x635750));
+		DefineAddress(FindWindowByID, SelectAddress(0x634AB0, 0x634DB0));
 	}
 }
 #endif

@@ -52,6 +52,8 @@ namespace UTFWin
 
 	auto_METHOD(UILayout, bool, SetVisible, Args(bool value), Args(value));
 
+	auto_METHOD_(UILayout, bool, IsVisible);
+
 	auto_METHOD_(UILayout, IWindow*, GetContainerWindow);
 
 	auto_METHOD_VOID(UILayout, Delete, Args(int a), Args(a));

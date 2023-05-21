@@ -464,6 +464,7 @@ namespace UTFWin
 		DefineAddress(SetParentWindow, SelectAddress(0x812810, 0x8122A0));
 		DefineAddress(SetVisible, SelectAddress(0x810BF0, 0x810630));
 		DefineAddress(GetContainerWindow, SelectAddress(0x810BD0, 0x810610));
+		DefineAddress(IsVisible, SelectAddress(0x8106D0, 0x810110));
 	}
 
 	namespace Addresses(UIRenderer)

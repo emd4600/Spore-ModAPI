@@ -291,8 +291,8 @@ namespace UTFWin
 	auto_METHOD_VIRTUAL(ButtonDrawableStandard, IDrawable, bool, UseCollision, Args(uint32_t type, bool& dst), Args(type, dst));
 	auto_METHOD_VIRTUAL_const(ButtonDrawableStandard, IDrawable, bool, GetTexCoords, Args(int state, Math::Rectangle& dst), Args(state, dst));
 
-	auto_METHOD_VIRTUAL_(ButtonDrawableStandard, IButtonDrawableStandard, IDrawable*, ToDrawable);
-	auto_METHOD_VIRTUAL_VOID(ButtonDrawableStandard, IButtonDrawableStandard, SetImage, Args(Image* image, bool bTileable), Args(image, bTileable));
+	auto_METHOD_VIRTUAL_(ButtonDrawableStandard, IButtonDrawable, IDrawable*, ToDrawable);
+	auto_METHOD_VIRTUAL_VOID(ButtonDrawableStandard, IButtonDrawable, SetImage, Args(Image* image, bool bTileable), Args(image, bTileable));
 
 
 	void* ButtonDrawableStandard::Cast(uint32_t type) const {
@@ -300,9 +300,9 @@ namespace UTFWin
 		{
 			return (ILayoutElement*) this;
 		}
-		else if (type == IButtonDrawableStandard::TYPE)
+		else if (type == IButtonDrawable::TYPE)
 		{
-			return (IButtonDrawableStandard*) this;
+			return (IButtonDrawable*) this;
 		}
 		else
 		{
@@ -323,8 +323,8 @@ namespace UTFWin
 	auto_METHOD_VIRTUAL(ButtonDrawableRadio, IDrawable, bool, UseCollision, Args(uint32_t type, bool& dst), Args(type, dst));
 	auto_METHOD_VIRTUAL_const(ButtonDrawableRadio, IDrawable, bool, GetTexCoords, Args(int state, Math::Rectangle& dst), Args(state, dst));
 
-	auto_METHOD_VIRTUAL_(ButtonDrawableRadio, IButtonDrawableRadio, IDrawable*, ToDrawable);
-	auto_METHOD_VIRTUAL_VOID(ButtonDrawableRadio, IButtonDrawableRadio, SetImage, Args(Image* image, bool bTileable), Args(image, bTileable));
+	auto_METHOD_VIRTUAL_(ButtonDrawableRadio, IButtonDrawable, IDrawable*, ToDrawable);
+	auto_METHOD_VIRTUAL_VOID(ButtonDrawableRadio, IButtonDrawable, SetImage, Args(Image* image, bool bTileable), Args(image, bTileable));
 
 
 	void* ButtonDrawableRadio::Cast(uint32_t type) const {
@@ -332,9 +332,9 @@ namespace UTFWin
 		{
 			return (ILayoutElement*) this;
 		}
-		else if (type == IButtonDrawableRadio::TYPE)
+		else if (type == IButtonDrawable::TYPE)
 		{
-			return (IButtonDrawableRadio*) this;
+			return (IButtonDrawable*) this;
 		}
 		else 
 		{

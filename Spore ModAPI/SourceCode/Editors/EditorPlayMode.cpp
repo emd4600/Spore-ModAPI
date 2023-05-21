@@ -99,5 +99,56 @@ namespace Editors
 	float EditorCreatureController::GetCurrentAngle() const {
 		return mCurrentAngle;
 	}
+
+
+	//// PlayModeBackgrounds ////
+
+	auto_METHOD_VOID_(PlayModeBackgrounds, SwitchBackground);
+
+	auto_METHOD_VOID_(PlayModeBackgrounds, DisableBackground);
+
+	auto_METHOD_VOID(PlayModeBackgrounds, Load,
+		Args(PlayModeUI* a1, uint32_t a2, uint32_t a3, Graphics::ILightingWorld* a4, int8_t a5),
+		Args(a1, a2, a3, a4, a5));
+
+	auto_METHOD_VOID(PlayModeBackgrounds, LoadBackgroudFiles,
+		Args(int8_t backgroundSet), Args(backgroundSet));
+
+	auto_METHOD(PlayModeBackgrounds, bool, HandleUIButton,
+		Args(uint32_t controlID), Args(controlID));
+
+	auto_METHOD_VOID(PlayModeBackgrounds, ToggleBackgroundButtonHighlights,
+		Args(uint32_t backgroundButtonID), Args(backgroundButtonID));
+
+	auto_METHOD_VOID_(PlayModeBackgrounds, UpdatePageNumbers);
+
+	auto_METHOD_VOID_(PlayModeBackgrounds, UpdateBackgroundButtons);
+
+	auto_METHOD_(PlayModeBackgrounds, bool, IsBlackBackground);
+
+
+	//// PlayModeUI ////
+
+	auto_METHOD_VIRTUAL(PlayModeUI, UTFWin::IWinProc, bool, HandleUIMessage,
+		Args(UTFWin::IWindow* pWindow, const UTFWin::Message& message),
+		Args(pWindow, message));
+
+	auto_METHOD(PlayModeUI, UTFWin::IWindow*, FindWindowByID,
+		Args(uint32_t controlID), Args(controlID));
+
+	auto_METHOD_VOID(PlayModeUI, SetWindowVisible,
+		Args(uint32_t controlID, bool visible), Args(controlID, visible));
+
+
+	//// EditorPlayMode ////
+
+	auto_METHOD_VOID(EditorPlayMode, Load,
+		Args(cEditor* editor, int8_t playModeBackgroundSet), Args(editor, playModeBackgroundSet));
+
+	auto_METHOD_VOID_(EditorPlayMode, Dispose);
+
+	auto_METHOD_(EditorPlayMode, uint32_t, GetNextEnvironmentReactionAnimID);
+
+	auto_METHOD_VOID(EditorPlayMode, sub_628CC0, Args(bool a), Args(a));
 }
 #endif

@@ -702,8 +702,8 @@ namespace Simulator
 	namespace Cell
 	{
 		/// Loads the data of a cell file reference, or returns the existing cached file.
-		/// @params reference
-		/// @params dst
+		/// @param reference
+		/// @param dst
 		template <typename T>
 		T* GetData(cCellDataReference_* reference, eastl::intrusive_ptr<cCellDataReference<T>>& dst) {
 			return STATIC_CALL(GetAddress(Cell, GetData), T*, 

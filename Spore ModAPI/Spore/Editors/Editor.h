@@ -205,6 +205,8 @@ namespace Editors
 
 		bool AddCreature(int, const ResourceKey* key = nullptr);
 
+		void PostEventToActors(uint32_t eventID, int = -1, float = 1.0f, float = 0.0f);
+
 	public:
 
 		int vftable_1C;
@@ -459,7 +461,7 @@ namespace Editors
 		/// ID used in `mpEditorAnimWorld` for the current editing creature
 		/* 364h	*/	int mCurrentCreatureID;
 		/* 368h	*/	int field_368;
-		/* 36Ch	*/	eastl::vector<int> field_36C;  //TODO vector of creatures? Check sub_629130
+		/* 36Ch	*/	eastl::vector<int> mOtherActorsIDs;  //TODO vector of creatures? Check sub_629130
 		/// Anim event that will be played on the creature on the next Update() call
 		/* 380h */	cEditorAnimEventPtr mpAnimEvent;
 		/* 384h */	bool field_384;
@@ -623,6 +625,7 @@ namespace Editors
 		DeclareAddress(SetActiveMode);  // 0x586F40 0x587270
 		DeclareAddress(SetCreatureToNeutralPose);  // 0x573860 0x573970
 		DeclareAddress(AddCreature);  // 0x582D00 0x582FE0
+		DeclareAddress(PostEventToActors);  // 0x574000 0x574110
 
 		DeclareAddress(HandleMessage);  // 0x591C80 0x591FA0
 	}

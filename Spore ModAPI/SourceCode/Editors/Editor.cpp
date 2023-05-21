@@ -180,5 +180,9 @@ namespace Editors
 
 	auto_METHOD_VOID(cEditorAnimWorld, SetTargetAngle,
 		Args(int creatureID, float angle, bool applyNow), Args(creatureID, angle, applyNow));
+
+
+	auto_METHOD_VOID(cEditor, PostEventToActors,
+		Args(uint32_t eventID, int a, float b, float c), Args(eventID, a, b, c));
 }
 #endif

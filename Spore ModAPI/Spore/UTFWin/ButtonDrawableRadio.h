@@ -21,38 +21,17 @@
 
 #include <Spore\UTFWin\ILayoutElement.h>
 #include <Spore\UTFWin\IDrawable.h>
+#include <Spore\UTFWin\IButton.h>
 #include <Spore\UTFWin\Image.h>
 
-#define IButtonDrawableRadioPtr eastl::intrusive_ptr<UTFWin::IButtonDrawableRadio>
+#define ButtonDrawableRadioPtr eastl::intrusive_ptr<UTFWin::ButtonDrawableRadio>
 
 namespace UTFWin
 {
 	///
-	/// An abstract class that has the methods that a drawable for a simple radio or checkbox button would require.
-	///
-	class IButtonDrawableRadio : public UTFWinObject
-	{
-	public:
-		///
-		/// Get the IDrawable instance that represents this class.
-		///
-		/* 10h */	virtual IDrawable* ToDrawable() = 0;
-
-		///
-		/// Set the image used by this drawable. The image must be composed of 6 different images of the same dimensions, 
-		/// that represent different states: Normal | Highlighted | Depressed | Selected | Selected Highlighted | Selected Depressed.
-		/// @param pImage The image to use in this drawable.
-		/// @param bTileable Specifies whether the image should be edge tiled.
-		///
-		/* 14h */	virtual void SetImage(Image* pImage, bool bTileable) = 0;
-
-		static const uint32_t TYPE = 0x2F02135C;
-	};
-
-	///
 	/// The standard IDrawable for a standard, simple radio or checkbox button component.
 	///
-	class ButtonDrawableRadio : public IDrawable, public DefaultLayoutElement, public IButtonDrawableRadio
+	class ButtonDrawableRadio : public IDrawable, public DefaultLayoutElement, public IButtonDrawable
 	{
 	public:
 		ButtonDrawableRadio();

@@ -21,38 +21,17 @@
 
 #include <Spore\UTFWin\ILayoutElement.h>
 #include <Spore\UTFWin\IDrawable.h>
+#include <Spore\UTFWin\IButton.h>
 #include <Spore\UTFWin\Image.h>
 
-#define IButtonDrawableStandardPtr eastl::intrusive_ptr<UTFWin::IButtonDrawableStandard>
+#define ButtonDrawableStandardPtr eastl::intrusive_ptr<UTFWin::ButtonDrawableStandard>
 
 namespace UTFWin
 {
 	///
-	/// An abstract class that has the methods that a drawable for a simple standard button would require.
-	///
-	class IButtonDrawableStandard : public UTFWinObject
-	{
-	public:
-		///
-		/// Get the IDrawable instance that represents this class.
-		///
-		/* 10h */	virtual IDrawable* ToDrawable() = 0;
-
-		///
-		/// Set the image used by this drawable. The image must be composed of 4 different images of the same dimensions, 
-		/// that represent different states: Disabled | Normal | Highlighted | Depressed.
-		/// @param pImage The image to use in this drawable.
-		/// @param bTileable Specifies whether the image should be edge tiled.
-		///
-		/* 14h */	virtual void SetImage(Image* pImage, bool bTileable) = 0;
-
-		static const uint32_t TYPE = 0x2F02135C;
-	};
-
-	///
 	/// The standard IDrawable for a standard, simple button component.
 	///
-	class ButtonDrawableStandard : public IDrawable, public DefaultLayoutElement, public IButtonDrawableStandard
+	class ButtonDrawableStandard : public IDrawable, public DefaultLayoutElement, public IButtonDrawable
 	{
 	public:
 		ButtonDrawableStandard();

@@ -45,9 +45,25 @@ namespace UTFWin
 	};
 
 	/// This class is a type of UTFWin::IDrawable capable of rendering an UTFWin::IButton.
-	class IButtonDrawable : public IDrawable
+	class IButtonDrawable : public UTFWinObject
 	{
+	public:
 		static const uint32_t TYPE = 0x2F02135C;
+
+		///
+		/// Get the IDrawable instance that represents this class.
+		///
+		/* 10h */	virtual IDrawable* ToDrawable() = 0;
+
+		///
+		/// Set the image used by this drawable. The image must be composed of 4 or 6 different images of the same dimensions, 
+		/// that represent different states.
+		/// For standard buttons: Disabled | Normal | Highlighted | Depressed.
+		/// For radio buttons: Normal | Highlighted | Depressed | Selected | Selected Highlighted | Selected Depressed.
+		/// @param pImage The image to use in this drawable.
+		/// @param bTileable Specifies whether the image should be edge tiled.
+		///
+		/* 14h */	virtual void SetImage(Image* pImage, bool bTileable) = 0;
 	};
 
 	/// An interface that declares all the functions needed by a button component. 
