@@ -56,6 +56,8 @@
               Reference
               <ul>
                 <li><a href="#base-classes">Base classes</a></li>
+                <li><a href="#pub-types">Public types</a></li>
+                <li><a href="#typeless-methods">Constructors, destructors, conversion operators</a></li>
                 <li><a href="#pub-methods">Public functions</a></li>
                 <li><a href="#pub-attribs">Public variables</a></li>
               </ul>
@@ -69,6 +71,29 @@
               class <a href="class_default_ref_counted.html" class="m-doc">DefaultRefCounted</a>
             </dt>
             <dd>The default implementation of a reference counted class.</dd>
+            <dt>
+              class <a href="class_app_1_1_i_unmanaged_message_listener.html" class="m-doc">App::IUnmanagedMessageListener</a>
+            </dt>
+            <dd>Same as <a href="class_app_1_1_i_message_listener.html" class="m-doc">App::<wbr />IMessageListener</a>, but this one does not use ref-counting.</dd>
+          </dl>
+        </section>
+        <section id="pub-types">
+          <h2><a href="#pub-types">Public types</a></h2>
+          <dl class="m-doc">
+            <dt>
+              struct <a href="struct_editors_1_1_editor_play_mode_1_1_unk_struct.html" class="m-doc">UnkStruct</a>
+            </dt>
+            <dd><span></span></dd>
+          </dl>
+        </section>
+        <section id="typeless-methods">
+          <h2><a href="#typeless-methods">Constructors, destructors, conversion operators</a></h2>
+          <dl class="m-doc">
+            <dt id="a7e6f8f4e42f087c4e93b394a8983de64">
+              <span class="m-doc-wrap-bumper"><a href="#a7e6f8f4e42f087c4e93b394a8983de64" class="m-doc-self">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="struct_editors_1_1_editor_play_mode_1_1_unk_struct.html" class="m-doc">UnkStruct</a>,
+              0x50)</span>
+            </dt>
+            <dd><span></span></dd>
           </dl>
         </section>
         <section id="pub-methods">
@@ -104,29 +129,146 @@
               int modifiers) -&gt; bool <span class="m-label m-flat m-warning">virtual</span></span>
             </dt>
             <dd><span></span></dd>
+            <dt id="a0a0252cb26ea3ac3a717a7ae492f57f5">
+              <span class="m-doc-wrap-bumper">auto <a href="#a0a0252cb26ea3ac3a717a7ae492f57f5" class="m-doc-self">HandleUIButton</a>(</span><span class="m-doc-wrap">uint32_t buttonID) -&gt; bool <span class="m-label m-flat m-warning">virtual</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a0682d5699ff64f98da45c77e0a2c2992">
+              <span class="m-doc-wrap-bumper">void <a href="#a0682d5699ff64f98da45c77e0a2c2992" class="m-doc-self">Load</a>(</span><span class="m-doc-wrap"><a href="class_editors_1_1c_editor.html" class="m-doc">cEditor</a>* editor,
+              int8_t playModeBackgroundSet)</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="aefccb7e453baa27be3e2d2c4aa78c714">
+              <span class="m-doc-wrap-bumper">void <a href="#aefccb7e453baa27be3e2d2c4aa78c714" class="m-doc-self">Dispose</a>(</span><span class="m-doc-wrap">)</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a3a896a9ee891683df7b3ede91197eff7">
+              <span class="m-doc-wrap-bumper">auto <a href="#a3a896a9ee891683df7b3ede91197eff7" class="m-doc-self">GetNextEnvironmentReactionAnimID</a>(</span><span class="m-doc-wrap">) -&gt; uint32_t</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="ab4026e61527b1dfe9e1809bdabe02ada">
+              <span class="m-doc-wrap-bumper">void <a href="#ab4026e61527b1dfe9e1809bdabe02ada" class="m-doc-self">sub_628CC0</a>(</span><span class="m-doc-wrap">bool)</span>
+            </dt>
+            <dd><span></span></dd>
           </dl>
         </section>
         <section id="pub-attribs">
           <h2><a href="#pub-attribs">Public variables</a></h2>
           <dl class="m-doc">
-            <dt id="a94eae54c0ef8fb00f0d6f994fefe4be4">
-              char <a href="#a94eae54c0ef8fb00f0d6f994fefe4be4" class="m-doc-self">padding_08</a>
+            <dt id="a668fea44ec402878a6007ac9d51d5640">
+              <a href="_play_mode_u_i_8h.html#a929ce5b60d287ee735c4b12d75dc9c60" class="m-doc">PlayModeUIPtr</a> <a href="#a668fea44ec402878a6007ac9d51d5640" class="m-doc-self">mpUI</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a0a73ec43d8cc5d0240b131a4fef3f047">
+              char <a href="#a0a73ec43d8cc5d0240b131a4fef3f047" class="m-doc-self">padding_10</a>
             </dt>
             <dd><span></span></dd>
             <dt id="ae94a9ee4d24a5b7f9abf4a8c75108100">
               <a href="class_editors_1_1_play_mode_actor.html" class="m-doc">PlayModeActor</a>** <a href="#ae94a9ee4d24a5b7f9abf4a8c75108100" class="m-doc-self">mpMainActor</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="a08f9bbbfe73c3c9011d3263468b85bdf">
-              char <a href="#a08f9bbbfe73c3c9011d3263468b85bdf" class="m-doc-self">padding_80</a>
+            <dt id="a360d4a9d5269aebc5fb974e08b0ab714">
+              char <a href="#a360d4a9d5269aebc5fb974e08b0ab714" class="m-doc-self">padding_80</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a6b64a5f1f0c9c6886751bb75876c498f">
+              <a href="class_editors_1_1_i_play_mode_module.html" class="m-doc">IPlayModeModule</a>* <a href="#a6b64a5f1f0c9c6886751bb75876c498f" class="m-doc-self">mModules</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a33b6366345bb7580fdb36e7c3747ad39">
+              char <a href="#a33b6366345bb7580fdb36e7c3747ad39" class="m-doc-self">padding_D8</a>
             </dt>
             <dd><span></span></dd>
             <dt id="a2f53d0df1fda824ea0d633bad0b03f98">
               <a href="class_editors_1_1_play_mode_animations.html" class="m-doc">PlayModeAnimations</a> <a href="#a2f53d0df1fda824ea0d633bad0b03f98" class="m-doc-self">mAnimations</a>
             </dt>
             <dd><span></span></dd>
+            <dt id="aa5d80cc1a0e32102a4bbd14b1e303d0d">
+              <a href="class_editors_1_1c_editor.html" class="m-doc">cEditor</a>* <a href="#aa5d80cc1a0e32102a4bbd14b1e303d0d" class="m-doc-self">mpEditor</a>
+            </dt>
+            <dd><span></span></dd>
             <dt id="ad458d2e2e0dc6ce16212e41562b615d2">
               <a href="class_editors_1_1_play_mode_backgrounds.html" class="m-doc">PlayModeBackgrounds</a> <a href="#ad458d2e2e0dc6ce16212e41562b615d2" class="m-doc-self">mBackgrounds</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="ae8f80b1db4eeb34396874ab443930f7f">
+              int <a href="#ae8f80b1db4eeb34396874ab443930f7f" class="m-doc-self">field_3660</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a2c73310f7cd1dbdcfcd443004c9da048">
+              uint32_t <a href="#a2c73310f7cd1dbdcfcd443004c9da048" class="m-doc-self">mCollisionBGPropertyID</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="ab54568f4c40d10a9883d2f32cd591852">
+              float <a href="#ab54568f4c40d10a9883d2f32cd591852" class="m-doc-self">field_3668</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a1238721220e0e5eaf3ee64c5518b5781">
+              eastl::vector&lt;int&gt; <a href="#a1238721220e0e5eaf3ee64c5518b5781" class="m-doc-self">field_366C</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="ad36b0e520305fa42259e222222c58330">
+              eastl::vector&lt;int&gt; <a href="#ad36b0e520305fa42259e222222c58330" class="m-doc-self">field_3680</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a2a6fb4644b10f30f69754629378c9db3">
+              eastl::vector&lt;int&gt; <a href="#a2a6fb4644b10f30f69754629378c9db3" class="m-doc-self">field_3694</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a2d9f3d5336712daa1c35caad0ecde2b1">
+              eastl::vector&lt;int&gt; <a href="#a2d9f3d5336712daa1c35caad0ecde2b1" class="m-doc-self">field_36A8</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a20768a6e238ce835fd5ef0b3b18a90b8">
+              char <a href="#a20768a6e238ce835fd5ef0b3b18a90b8" class="m-doc-self">padding_36BC</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="af2ffd3a43a1bc221a3628587a870b380">
+              int8_t <a href="#af2ffd3a43a1bc221a3628587a870b380" class="m-doc-self">field_36D0</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a55da8959d2e97492a74ee15a1cc05867">
+              uint32_t <a href="#a55da8959d2e97492a74ee15a1cc05867" class="m-doc-self">mLastEnvironmentReactionAnimID</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="adfe745de5cf504d45c060112fd472b61">
+              int <a href="#adfe745de5cf504d45c060112fd472b61" class="m-doc-self">padding_36D4</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a59e9f0c7d46a60e35fef90f9c1d5bc91">
+              uint32_t <a href="#a59e9f0c7d46a60e35fef90f9c1d5bc91" class="m-doc-self">mLookAtMeButtonID</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="abe0effafa055f457f96a400e1af019d0">
+              uint32_t <a href="#abe0effafa055f457f96a400e1af019d0" class="m-doc-self">field_36E8</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a871d45b0bc23bae7626d9686aeba77cf">
+              uint32_t <a href="#a871d45b0bc23bae7626d9686aeba77cf" class="m-doc-self">field_36EC</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a9689071584593541ed05eeecfc964cce">
+              <a href="class_clock.html" class="m-doc">Clock</a> <a href="#a9689071584593541ed05eeecfc964cce" class="m-doc-self">field_36F0</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="aee2f3dcf0c59de7b5443c15e4dd5576f">
+              int8_t <a href="#aee2f3dcf0c59de7b5443c15e4dd5576f" class="m-doc-self">field_3708</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="ab58fcdc4bee3c0b8f64cdf56d2bdb11a">
+              int8_t <a href="#ab58fcdc4bee3c0b8f64cdf56d2bdb11a" class="m-doc-self">field_3709</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a0b0b3687485d2574841c7f5ae263ada6">
+              int8_t <a href="#a0b0b3687485d2574841c7f5ae263ada6" class="m-doc-self">mPlayModeBackgroundSet</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a3cd04067d21188a923d63eb3758ef780">
+              <a href="struct_editors_1_1_editor_play_mode_1_1_unk_struct.html" class="m-doc">UnkStruct</a> <a href="#a3cd04067d21188a923d63eb3758ef780" class="m-doc-self">field_370C</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="af35566fcd037eef72de7416dfb0f346d">
+              <a href="struct_editors_1_1_editor_play_mode_1_1_unk_struct.html" class="m-doc">UnkStruct</a> <a href="#af35566fcd037eef72de7416dfb0f346d" class="m-doc-self">field_474C</a>
             </dt>
             <dd><span></span></dd>
           </dl>

@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>UTFWin::IButtonDrawableStandard class | Spore ModAPI SDK for creating C++ mods for Spore</title>
+  <title>Editors::IPlayModeModule class | Spore ModAPI SDK for creating C++ mods for Spore</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,600,600i%7CSource+Code+Pro:400,400i,600" />
   <link rel="stylesheet" href="m-dark.css" />
   <link rel="stylesheet" href="m-documentation.css" />
@@ -45,47 +45,27 @@
     <div class="m-row">
       <div class="m-col-l-10 m-push-l-1">
         <h1>
-          UTFWin::IButtonDrawableStandard <span class="m-thin">class</span>
-          <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_button_drawable_standard_8h.html">&lt;Spore/UTFWin/ButtonDrawableStandard.h&gt;</a></div>
+          <span class="m-breadcrumb"><a href="namespace_editors.html">Editors</a>::<wbr/></span>IPlayModeModule <span class="m-thin">class</span>
+          <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_i_play_mode_module_8h.html">&lt;Spore/Editors/IPlayModeModule.h&gt;</a></div>
         </h1>
-        <p>An abstract class that has the methods that a drawable for a simple standard button would require.</p>
+        <p><span></span></p>
         <div class="m-block m-default">
           <h3>Contents</h3>
           <ul>
             <li>
               Reference
               <ul>
-                <li><a href="#base-classes">Base classes</a></li>
-                <li><a href="#derived-classes">Derived classes</a></li>
-                <li><a href="#pub-static-attribs">Public static variables</a></li>
+                <li><a href="#typeless-methods">Constructors, destructors, conversion operators</a></li>
                 <li><a href="#pub-methods">Public functions</a></li>
               </ul>
             </li>
           </ul>
         </div>
-        <section id="base-classes">
-          <h2><a href="#base-classes">Base classes</a></h2>
+        <section id="typeless-methods">
+          <h2><a href="#typeless-methods">Constructors, destructors, conversion operators</a></h2>
           <dl class="m-doc">
-            <dt>
-              class <a href="class_u_t_f_win_1_1_u_t_f_win_object.html" class="m-doc">UTFWin::UTFWinObject</a>
-            </dt>
-            <dd><span></span></dd>
-          </dl>
-        </section>
-        <section id="derived-classes">
-          <h2><a href="#derived-classes">Derived classes</a></h2>
-          <dl class="m-doc">
-            <dt>
-              class <a href="class_u_t_f_win_1_1_button_drawable_standard.html" class="m-doc">UTFWin::ButtonDrawableStandard</a>
-            </dt>
-            <dd>The standard <a href="class_u_t_f_win_1_1_i_drawable.html" class="m-doc">IDrawable</a> for a standard, simple button component.</dd>
-          </dl>
-        </section>
-        <section id="pub-static-attribs">
-          <h2><a href="#pub-static-attribs">Public static variables</a></h2>
-          <dl class="m-doc">
-            <dt id="a9b82dc9abe092ba1b592c4f55067d10c">
-              static const uint32_t <a href="#a9b82dc9abe092ba1b592c4f55067d10c" class="m-doc-self">TYPE</a>
+            <dt id="ad6a79f475dc1cfd46fdaeb34cf7d506c">
+              <span class="m-doc-wrap-bumper"><a href="#ad6a79f475dc1cfd46fdaeb34cf7d506c" class="m-doc-self">~IPlayModeModule</a>(</span><span class="m-doc-wrap">) <span class="m-label m-flat m-warning">virtual</span></span>
             </dt>
             <dd><span></span></dd>
           </dl>
@@ -93,42 +73,61 @@
         <section id="pub-methods">
           <h2><a href="#pub-methods">Public functions</a></h2>
           <dl class="m-doc">
-            <dt id="ab413011eedb4fbe8f84a678810de7230">
-              <span class="m-doc-wrap-bumper">auto <a href="#ab413011eedb4fbe8f84a678810de7230" class="m-doc-self">ToDrawable</a>(</span><span class="m-doc-wrap">) -&gt; <a href="class_u_t_f_win_1_1_i_drawable.html" class="m-doc">IDrawable</a>* <span class="m-label m-flat m-warning">pure virtual</span></span>
+            <dt id="af5cf200c66719e505fa1fd064cede127">
+              <span class="m-doc-wrap-bumper">void <a href="#af5cf200c66719e505fa1fd064cede127" class="m-doc-self">Load</a>(</span><span class="m-doc-wrap">) <span class="m-label m-flat m-warning">virtual</span></span>
             </dt>
-            <dd>Get the <a href="class_u_t_f_win_1_1_i_drawable.html" class="m-doc">IDrawable</a> instance that represents this class.</dd>
-            <dt>
-              <span class="m-doc-wrap-bumper">void <a href="#ab6f010e05ad10742a67ab6781f81ebab" class="m-doc">SetImage</a>(</span><span class="m-doc-wrap"><a href="class_u_t_f_win_1_1_image.html" class="m-doc">Image</a>* pImage,
-              bool bTileable) <span class="m-label m-flat m-warning">pure virtual</span></span>
+            <dd><span></span></dd>
+            <dt id="a4e36ff41b5bf3fedd3769e5f3dca6e38">
+              <span class="m-doc-wrap-bumper">void <a href="#a4e36ff41b5bf3fedd3769e5f3dca6e38" class="m-doc-self">Dispose</a>(</span><span class="m-doc-wrap">) <span class="m-label m-flat m-warning">virtual</span></span>
             </dt>
-            <dd>Set the image used by this drawable.</dd>
+            <dd><span></span></dd>
+            <dt id="a4d7d726d9a46e791020d34fba86bd6fe">
+              <span class="m-doc-wrap-bumper">auto <a href="#a4d7d726d9a46e791020d34fba86bd6fe" class="m-doc-self">OnEnter</a>(</span><span class="m-doc-wrap">) -&gt; bool <span class="m-label m-flat m-warning">virtual</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="ab319d295fd4a8b3481c3d2579dbcf5a0">
+              <span class="m-doc-wrap-bumper">void <a href="#ab319d295fd4a8b3481c3d2579dbcf5a0" class="m-doc-self">OnExit</a>(</span><span class="m-doc-wrap">) <span class="m-label m-flat m-warning">virtual</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="acf4c394a896c7eaef1f5a535278a874e">
+              <span class="m-doc-wrap-bumper">void <a href="#acf4c394a896c7eaef1f5a535278a874e" class="m-doc-self">Update</a>(</span><span class="m-doc-wrap">int deltaTimeMS) <span class="m-label m-flat m-warning">virtual</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a065d2a3b22250023d6e763a6958fa2a7">
+              <span class="m-doc-wrap-bumper">auto <a href="#a065d2a3b22250023d6e763a6958fa2a7" class="m-doc-self">OnMouseDown</a>(</span><span class="m-doc-wrap"><a href="_input_8h.html#ac1ec3647c005eacad401b06e7e18f711" class="m-doc">MouseButton</a> mouseButton,
+              float mouseX,
+              float mouseY,
+              <a href="union_mouse_state.html" class="m-doc">MouseState</a> mouseState) -&gt; bool <span class="m-label m-flat m-warning">virtual</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a2ef7ff232a5d54cf6b7274f32dc5f452">
+              <span class="m-doc-wrap-bumper">auto <a href="#a2ef7ff232a5d54cf6b7274f32dc5f452" class="m-doc-self">OnMouseUp</a>(</span><span class="m-doc-wrap"><a href="_input_8h.html#ac1ec3647c005eacad401b06e7e18f711" class="m-doc">MouseButton</a> mouseButton,
+              float mouseX,
+              float mouseY,
+              <a href="union_mouse_state.html" class="m-doc">MouseState</a> mouseState) -&gt; bool <span class="m-label m-flat m-warning">virtual</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a6964271d65570ef87f24cb8a555a4127">
+              <span class="m-doc-wrap-bumper">auto <a href="#a6964271d65570ef87f24cb8a555a4127" class="m-doc-self">OnMouseMove</a>(</span><span class="m-doc-wrap">float mouseX,
+              float mouseY,
+              <a href="union_mouse_state.html" class="m-doc">MouseState</a> mouseState) -&gt; bool <span class="m-label m-flat m-warning">virtual</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="ac64f425c46d5e1198da86c81c75de440">
+              <span class="m-doc-wrap-bumper">auto <a href="#ac64f425c46d5e1198da86c81c75de440" class="m-doc-self">OnKeyDown</a>(</span><span class="m-doc-wrap">int virtualKey,
+              <a href="union_key_modifiers.html" class="m-doc">KeyModifiers</a> modifiers) -&gt; bool <span class="m-label m-flat m-warning">virtual</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="ada09432670b0172f33d9ef5d0595515a">
+              <span class="m-doc-wrap-bumper">auto <a href="#ada09432670b0172f33d9ef5d0595515a" class="m-doc-self">OnKeyUp</a>(</span><span class="m-doc-wrap">int virtualKey,
+              <a href="union_key_modifiers.html" class="m-doc">KeyModifiers</a> modifiers) -&gt; bool <span class="m-label m-flat m-warning">virtual</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a6514122882228bdb8e58700bff9abd49">
+              <span class="m-doc-wrap-bumper">auto <a href="#a6514122882228bdb8e58700bff9abd49" class="m-doc-self">HandleUIButton</a>(</span><span class="m-doc-wrap">uint32_t controlID) -&gt; bool <span class="m-label m-flat m-warning">virtual</span></span>
+            </dt>
+            <dd><span></span></dd>
           </dl>
-        </section>
-        <section>
-          <h2>Function documentation</h2>
-          <section class="m-doc-details" id="ab6f010e05ad10742a67ab6781f81ebab"><div>
-            <h3>
-              <span class="m-doc-wrap-bumper">void UTFWin::<wbr />IButtonDrawableStandard::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ab6f010e05ad10742a67ab6781f81ebab" class="m-doc-self">SetImage</a>(</span><span class="m-doc-wrap"><a href="class_u_t_f_win_1_1_image.html" class="m-doc">Image</a>* pImage,
-              bool bTileable) <span class="m-label m-warning">pure virtual</span></span></span>
-            </h3>
-            <p>Set the image used by this drawable.</p>
-            <table class="m-table m-fullwidth m-flat">
-              <thead>
-                <tr><th colspan="2">Parameters</th></tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td style="width: 1%">pImage</td>
-                  <td>The image to use in this drawable.</td>
-                </tr>
-                <tr>
-                  <td>bTileable</td>
-                  <td>Specifies whether the image should be edge tiled.</td>
-                </tr>
-              </tbody>
-            </table>
-<p>The image must be composed of 4 different images of the same dimensions, that represent different states: Disabled | Normal | Highlighted | Depressed.</p>
-          </div></section>
         </section>
       </div>
     </div>

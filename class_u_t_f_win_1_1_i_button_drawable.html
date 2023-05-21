@@ -49,14 +49,90 @@
           <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_i_button_8h.html">&lt;Spore/UTFWin/IButton.h&gt;</a></div>
         </h1>
         <p>This class is a type of <a href="class_u_t_f_win_1_1_i_drawable.html" class="m-doc">UTFWin::<wbr />IDrawable</a> capable of rendering an <a href="class_u_t_f_win_1_1_i_button.html" class="m-doc">UTFWin::<wbr />IButton</a>.</p>
+        <div class="m-block m-default">
+          <h3>Contents</h3>
+          <ul>
+            <li>
+              Reference
+              <ul>
+                <li><a href="#base-classes">Base classes</a></li>
+                <li><a href="#derived-classes">Derived classes</a></li>
+                <li><a href="#pub-static-attribs">Public static variables</a></li>
+                <li><a href="#pub-methods">Public functions</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
         <section id="base-classes">
           <h2><a href="#base-classes">Base classes</a></h2>
           <dl class="m-doc">
             <dt>
-              class <a href="class_u_t_f_win_1_1_i_drawable.html" class="m-doc">IDrawable</a>
+              class <a href="class_u_t_f_win_1_1_u_t_f_win_object.html" class="m-doc">UTFWinObject</a>
             </dt>
-            <dd>A class that is capable of drawing a user interface component.</dd>
+            <dd><span></span></dd>
           </dl>
+        </section>
+        <section id="derived-classes">
+          <h2><a href="#derived-classes">Derived classes</a></h2>
+          <dl class="m-doc">
+            <dt>
+              class <a href="class_u_t_f_win_1_1_button_drawable_radio.html" class="m-doc">ButtonDrawableRadio</a>
+            </dt>
+            <dd>The standard <a href="class_u_t_f_win_1_1_i_drawable.html" class="m-doc">IDrawable</a> for a standard, simple radio or checkbox button component.</dd>
+            <dt>
+              class <a href="class_u_t_f_win_1_1_button_drawable_standard.html" class="m-doc">ButtonDrawableStandard</a>
+            </dt>
+            <dd>The standard <a href="class_u_t_f_win_1_1_i_drawable.html" class="m-doc">IDrawable</a> for a standard, simple button component.</dd>
+          </dl>
+        </section>
+        <section id="pub-static-attribs">
+          <h2><a href="#pub-static-attribs">Public static variables</a></h2>
+          <dl class="m-doc">
+            <dt id="a271bcd71dae02433a41704693c682626">
+              static const uint32_t <a href="#a271bcd71dae02433a41704693c682626" class="m-doc-self">TYPE</a>
+            </dt>
+            <dd><span></span></dd>
+          </dl>
+        </section>
+        <section id="pub-methods">
+          <h2><a href="#pub-methods">Public functions</a></h2>
+          <dl class="m-doc">
+            <dt id="a3a237db8e2c78ec41febb3b7388102db">
+              <span class="m-doc-wrap-bumper">auto <a href="#a3a237db8e2c78ec41febb3b7388102db" class="m-doc-self">ToDrawable</a>(</span><span class="m-doc-wrap">) -&gt; <a href="class_u_t_f_win_1_1_i_drawable.html" class="m-doc">IDrawable</a>* <span class="m-label m-flat m-warning">pure virtual</span></span>
+            </dt>
+            <dd>Get the <a href="class_u_t_f_win_1_1_i_drawable.html" class="m-doc">IDrawable</a> instance that represents this class.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">void <a href="#ad4d82ef9f297059d30fa01b518622045" class="m-doc">SetImage</a>(</span><span class="m-doc-wrap"><a href="class_u_t_f_win_1_1_image.html" class="m-doc">Image</a>* pImage,
+              bool bTileable) <span class="m-label m-flat m-warning">pure virtual</span></span>
+            </dt>
+            <dd>Set the image used by this drawable.</dd>
+          </dl>
+        </section>
+        <section>
+          <h2>Function documentation</h2>
+          <section class="m-doc-details" id="ad4d82ef9f297059d30fa01b518622045"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">void UTFWin::<wbr />IButtonDrawable::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ad4d82ef9f297059d30fa01b518622045" class="m-doc-self">SetImage</a>(</span><span class="m-doc-wrap"><a href="class_u_t_f_win_1_1_image.html" class="m-doc">Image</a>* pImage,
+              bool bTileable) <span class="m-label m-warning">pure virtual</span></span></span>
+            </h3>
+            <p>Set the image used by this drawable.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">pImage</td>
+                  <td>The image to use in this drawable.</td>
+                </tr>
+                <tr>
+                  <td>bTileable</td>
+                  <td>Specifies whether the image should be edge tiled.</td>
+                </tr>
+              </tbody>
+            </table>
+<p>The image must be composed of 4 or 6 different images of the same dimensions, that represent different states. For standard buttons: Disabled | Normal | Highlighted | Depressed. For radio buttons: Normal | Highlighted | Depressed | Selected | Selected Highlighted | Selected Depressed.</p>
+          </div></section>
         </section>
       </div>
     </div>
