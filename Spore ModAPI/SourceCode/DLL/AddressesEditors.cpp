@@ -229,6 +229,12 @@ namespace Editors
 		DefineAddress(GetNextEnvironmentReactionAnimID, SelectAddress(0x6286C0, 0x6286D0));
 		DefineAddress(sub_628CC0, SelectAddress(0x628CC0, 0x628CD0));
 		DefineAddress(HandleUIButton, SelectAddress(0x628D70, 0x628D80));
+		DefineAddress(OnMouseDown, SelectAddress(0x62A810, 0x62A820));
+		DefineAddress(OnMouseUp, SelectAddress(0x628540, 0x628550));
+		DefineAddress(OnMouseMove, SelectAddress(0x628590, 0x6285A0));
+		DefineAddress(OnKeyDown, SelectAddress(0x628B10, 0x628B20));
+		DefineAddress(OnKeyUp, SelectAddress(0x6285E0, 0x6285F0));
+		DefineAddress(Update, SelectAddress(0x62C570, 0x62C580));
 	}
 
 	namespace Addresses(PlayModeUI)

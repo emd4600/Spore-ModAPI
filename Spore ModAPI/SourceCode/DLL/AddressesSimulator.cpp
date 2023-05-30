@@ -801,7 +801,20 @@ namespace Simulator
 		DefineAddress(GenerateRandomName, SelectAddress(0x5ECD40, 0x5ED000));
 	}
 
+#ifndef SDK_TO_GHIDRA
 	namespace Addresses(cObjectPool)
+	{
+		DefineAddress(Initialize, SelectAddress(0xB71A10, 0xB72190));
+		DefineAddress(_dtor, SelectAddress(0xB71A70, 0xB721F0));
+		DefineAddress(Get, SelectAddress(0x0B71BA0, 0xB72320));
+		DefineAddress(Clear, SelectAddress(0xB71AA0, 0xB72220));
+		DefineAddress(CreateObject, SelectAddress(0xB71AF0, 0xB72270));
+		DefineAddress(GetIfNotDeleted, SelectAddress(0xB71B60, 0xB722E0));
+		DefineAddress(DeleteObject, SelectAddress(0xB71BF0, 0xB72370));
+		DefineAddress(Iterate, SelectAddress(0xB71BC0, 0xB72340));
+	}
+#endif
+	namespace Addresses(cObjectPool_)
 	{
 		DefineAddress(Initialize, SelectAddress(0xB71A10, 0xB72190));
 		DefineAddress(_dtor, SelectAddress(0xB71A70, 0xB721F0));

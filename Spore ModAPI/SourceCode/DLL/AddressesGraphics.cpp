@@ -10,6 +10,7 @@
 #include <Spore\Graphics\IRenderer.h>
 #include <Spore\Graphics\ITextureManager.h>
 #include <Spore\Graphics\IShadowWorld.h>
+#include <Spore\Graphics\cFrustumCull.h>
 #include <Spore\Graphics\cModelWorld.h>
 #include <Spore\Graphics\RenderUtils.h>
 #include <Spore\Graphics\IRenderTargetManager.h>
@@ -232,6 +233,14 @@ namespace Graphics
 	{
 		DefineAddress(FinishBackgroundLoad, SelectAddress(0x7523E0, 0x7515D0));
 		DefineAddress(UpdateWithLODMeshes, SelectAddress(0x74B7C0, 0x74A990));
+	}
+
+	namespace Addresses(cFrustumCull)
+	{
+		DefineAddress(OffsetPlanes, SelectAddress(0x6FFFE0, 0x6FFB10));
+		DefineAddress(FrustumTestSphere, SelectAddress(0x700130, 0x6FFC60));
+		DefineAddress(FrustumTestAABB, SelectAddress(0x700680, 0x07001B0));
+		DefineAddress(UpdateFromProjectionMatrix, SelectAddress(0x700360, 0x6FFE90));
 	}
 }
 

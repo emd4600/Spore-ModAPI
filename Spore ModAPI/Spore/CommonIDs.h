@@ -138,6 +138,8 @@ namespace TypeIDs
 		/// Type for Pollinator::cAssetMetadata files
 		pollen_metadata = 0x30BDEE3,
 
+		dds = 0x17952E6C,
+
 		backgroundMap = 0x612B3191,
 		effectMap = 0x433FB70C,
 		cell = 0xDFAD9F51,

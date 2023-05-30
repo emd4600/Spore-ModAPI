@@ -28,7 +28,7 @@ namespace Simulator
 	///		
 	/// }
 	/// ```
-	class cObjectPool
+	class cObjectPool_
 	{
 	public:
 		struct Iterator
@@ -36,8 +36,8 @@ namespace Simulator
 			int index;
 		};
 
-		cObjectPool();
-		~cObjectPool();
+		cObjectPool_();
+		~cObjectPool_();
 
 		void Initialize(int objectSize, int numObjects);
 
@@ -73,9 +73,9 @@ namespace Simulator
 		/* 14h */	int mObjectSize;
 		/* 18h */	int field_18;
 	};
-	ASSERT_SIZE(cObjectPool, 0x1C);
+	ASSERT_SIZE(cObjectPool_, 0x1C);
 
-	namespace Addresses(cObjectPool)
+	namespace Addresses(cObjectPool_)
 	{
 		DeclareAddress(Initialize);  // 0xB71A10 0xB72190
 		DeclareAddress(_dtor);  // 0xB71A70 0xB721F0
@@ -86,4 +86,32 @@ namespace Simulator
 		DeclareAddress(DeleteObject);  // 0xB71BF0 0xB72370
 		DeclareAddress(Iterate);  // 0xB71BC0 0xB72340
 	}
+
+	template <typename T>
+	class cObjectPool 
+		: public cObjectPool_
+	{
+	public:
+		void Initialize(int numObjects);
+
+		/// Returns the object at the given index. This will return even if the index is not valid or the object is not alive.
+		/// @param index
+		T* Get(cObjectPoolIndex index) {
+			return (T*)cObjectPool_::Get(index);
+		}
+
+		/// Returns the object at the given index, only if it has not been deleted.
+		/// @param index
+		/// @returns The object, or nullptr if the object was deleted.
+		T* GetIfNotDeleted(cObjectPoolIndex index) {
+			return (T*)cObjectPool_::GetIfNotDeleted(index);
+		}
+
+		/// Advances the iterator and returns the next object, or nullptr if the iterator reached the end.
+		/// @param it
+		/// @eturns
+		T* Iterate(Iterator& it) const {
+			return (T*)cObjectPool_::Iterate(it);
+		}
+	};
 }

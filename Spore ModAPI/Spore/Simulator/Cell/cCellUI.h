@@ -60,7 +60,7 @@ namespace Simulator
 
 		public:
 			/* 00h */	GameInput mGameInput;
-			/* 48h */	Math::Vector3 field_48;  // not initialized
+			/* 48h */	Math::Vector3 field_48;  // not initialized, sub_E50E00
 			/* 54h */	Math::Vector3 field_54;  // not initialized
 			/* 60h */	Math::Vector3 field_60;  // not initialized
 			/* 6Ch */	Math::Vector3 field_6C;  // not initialized
@@ -73,7 +73,7 @@ namespace Simulator
 			/* 94h */	int field_94;
 			/* 98h */	int field_98;
 			/// 32 objects of type cCellUIRollover
-			/* 9Ch */	cObjectPool mRollovers;
+			/* 9Ch */	cObjectPool<cCellUIRollover> mRollovers;
 			/* B8h */	int field_B8;  // not initialized
 			/* BCh */	float field_BC;  // not initialized
 			/* C0h */	int field_C0;  // not initialized

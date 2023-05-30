@@ -103,7 +103,7 @@ namespace Simulator
 			/* 15Ch */	int field_15C;
 			/* 160h */	IVisualEffectPtr mpDoFDistortEffect;
 			/* 164h */	int field_164;
-			/* 168h */	cObjectPool field_168;
+			/* 168h */	cObjectPool_ field_168;
 			/* 184h */	eastl::fixed_vector<int, 22528> field_184;
 			/* 1619Ch */	int field_1619C;  // not initialized
 			/* 161A0h */	ILightingWorldPtr mpLightingWorld;

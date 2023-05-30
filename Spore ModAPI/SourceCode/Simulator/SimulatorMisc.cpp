@@ -38,27 +38,27 @@ namespace Simulator
 
 	//// cObjectPool ////
 
-	cObjectPool::cObjectPool()
+	cObjectPool_::cObjectPool_()
 		: mpData(nullptr)
 	{}
 
-	cObjectPool::~cObjectPool()
+	cObjectPool_::~cObjectPool_()
 	{
-		CALL(GetAddress(cObjectPool, _dtor), void, Args(cObjectPool*), Args(this));
+		CALL(GetAddress(cObjectPool_, _dtor), void, Args(cObjectPool_*), Args(this));
 	}
 
-	auto_METHOD_VOID(cObjectPool, Initialize, Args(int objectSize, int numObjects), Args(objectSize, numObjects));
+	auto_METHOD_VOID(cObjectPool_, Initialize, Args(int objectSize, int numObjects), Args(objectSize, numObjects));
 
-	auto_METHOD_VOID_(cObjectPool, Clear);
+	auto_METHOD_VOID_(cObjectPool_, Clear);
 
-	auto_METHOD(cObjectPool, cObjectPoolClass*, Get, Args(cObjectPoolIndex arg), Args(arg));
+	auto_METHOD(cObjectPool_, cObjectPoolClass*, Get, Args(cObjectPoolIndex arg), Args(arg));
 
-	auto_METHOD(cObjectPool, cObjectPoolClass*, GetIfNotDeleted, Args(cObjectPoolIndex arg), Args(arg));
+	auto_METHOD(cObjectPool_, cObjectPoolClass*, GetIfNotDeleted, Args(cObjectPoolIndex arg), Args(arg));
 
-	auto_METHOD_(cObjectPool, cObjectPoolIndex, CreateObject);
+	auto_METHOD_(cObjectPool_, cObjectPoolIndex, CreateObject);
 
-	auto_METHOD_VOID(cObjectPool, DeleteObject, Args(cObjectPoolIndex arg), Args(arg));
+	auto_METHOD_VOID(cObjectPool_, DeleteObject, Args(cObjectPoolIndex arg), Args(arg));
 
-	auto_METHOD_const(cObjectPool, cObjectPoolClass*, Iterate, Args(Iterator& arg), Args(arg));
+	auto_METHOD_const(cObjectPool_, cObjectPoolClass*, Iterate, Args(Iterator& arg), Args(arg));
 }
 #endif

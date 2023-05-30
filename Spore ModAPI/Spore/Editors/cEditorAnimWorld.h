@@ -29,7 +29,7 @@ namespace Editors
 
 	public:
 		/// `.prop` files from `editorAnims~` group (0x40606300)
-		/* 08h */	eastl::map<int, EditorCreatureControllerPtr> mCreatures;  //TODO not really EditorCreatureController? check sub_59C440
+		/* 08h */	eastl::map<int, EditorCreatureControllerPtr> mCreatures;
 		/* 24h */	eastl::vector<cEditorAnimEventPtr> field_24;
 		/* 38h */	IAnimWorldPtr mpAnimWorld;
 		/* 3Ch */	EditorAnimationsPtr mpAnimations;

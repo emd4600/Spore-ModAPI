@@ -17,6 +17,7 @@
 #include <Spore\App\IClassManager.h>
 #include <Spore\App\JobManager.h>
 #include <Spore\App\cJob.h>
+#include <Spore\App\cMouseCamera.h>
 //#include <Spore\App\IStateManager.h>
 #include <Spore\App\Property.h>
 #include <Spore\App\PropertyList.h>
@@ -464,6 +465,20 @@ namespace App
 		DefineAddress(Update, SelectAddress(0xE80F10, 0xE80980));
 
 		DefineAddress(HandleMessage, SelectAddress(0xE5CB90, 0xE62700));
+	}
+
+	namespace Addresses(cMouseCamera)
+	{
+		DefineAddress(Update, SelectAddress(0x7DAF30, 0x7DAAB0));
+		DefineAddress(OnKeyDown, SelectAddress(0x7D9890, 0x7D9410));
+		DefineAddress(OnMouseDown, SelectAddress(0x7DA110, 0x7D9C90));
+		DefineAddress(OnMouseUp, SelectAddress(0x7F5AC0, 0x5A9C70));
+		DefineAddress(OnMouseMove, SelectAddress(0x7DAD40, 0x7DA8C0));
+		DefineAddress(OnMouseWheel, SelectAddress(0x7DAE50, 0x7DA9D0));
+		DefineAddress(Initialize, SelectAddress(0x7D99A0, 0x7D9520));
+		DefineAddress(func54h, SelectAddress(0x7D9970, 0x7D94F0));
+		DefineAddress(HandleMessage, SelectAddress(0x7DA180, 0x7D9D00));
+		DefineAddress(CalculateViewTransform, SelectAddress(0x7DAB30, 0x7DA6B0));
 	}
 }
 

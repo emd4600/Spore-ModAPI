@@ -39,8 +39,6 @@ namespace Editors
 		, public App::IUnmanagedMessageListener
 	{
 	public:
-		// sub_62C570 Update
-
 		// sub_639D70 walks?
 
 		/* 10h */	virtual bool OnMouseDown(int mouseButton, float mouseX, float mouseY, int flags);
@@ -49,6 +47,8 @@ namespace Editors
 		/* 1Ch */	virtual bool OnKeyDown(int virtualKey, int modifiers);
 		/* 20h */	virtual bool OnKeyUp(int virtualKey, int modifiers);
 		/* 24h */	virtual bool HandleUIButton(uint32_t buttonID);
+
+		void Update(int deltaMS);
 
 		void Load(cEditor* editor, int8_t playModeBackgroundSet);
 		void Dispose();
@@ -107,5 +107,11 @@ namespace Editors
 		DeclareAddress(GetNextEnvironmentReactionAnimID);  // 0x6286C0 0x6286D0
 		DeclareAddress(sub_628CC0);  // 0x628CC0 0x628CD0
 		DeclareAddress(HandleUIButton);  // 0x628D70 0x628D80
+		DeclareAddress(OnMouseDown);  // 0x62A810 0x62A820
+		DeclareAddress(OnMouseUp);  // 0x628540 0x628550
+		DeclareAddress(OnMouseMove);  // 0x628590 0x6285A0
+		DeclareAddress(OnKeyDown);  // 0x628B10 0x628B20
+		DeclareAddress(OnKeyUp);  // 0x6285E0 0x6285F0
+		DeclareAddress(Update);  // 0x62C570 0x62C580
 	}
 }

@@ -67,23 +67,23 @@ namespace Simulator
 			/* 14h */	float field_14;
 			/* 18h */	float field_18;
 			/// 4096 objects of cCellObjectData
-			/* 1Ch */	cObjectPool mCells;
-			/* 38h */	cObjectPool field_38;
-			/* 54h */	cObjectPool field_54;
+			/* 1Ch */	cObjectPool<cCellObjectData> mCells;
+			/* 38h */	cObjectPool_ field_38;  // size 0x304
+			/* 54h */	cObjectPool_ field_54;
 			/* 70h */	eastl::map<int, int> field_70;
-			/* 8Ch */	cObjectPool field_8C;
-			/* A8h */	cObjectPool field_A8;
-			/* C4h */	cObjectPool field_C4;
+			/* 8Ch */	cObjectPool_ field_8C;
+			/* A8h */	cObjectPool_ field_A8;
+			/* C4h */	cObjectPool_ field_C4;
 			/* E0h */	eastl::fixed_vector<int, 4096> field_E0;
 			/* 40F8h */	void* field_40F8;
-			/* 40FCh */	void* field_40FC;
+			/* 40FCh */	void* field_40FC;  //TODO pointer to some object from a pool
 			/* 4100h */	char padding_4100[0x4114 - 0x4100];
 			/* 4114h */	cCellDataReference<cCellWorldResource>* mpCurrentWorld;
 			/* 4118h */	cCellDataReference<cCellWorldResource>* mpCurrentWorldBackground;
 			/* 411Ch */	cObjectPoolIndex mAvatarCellIndex;
 			/* 4120h */	int field_4120;
 			/* 4124h */	int field_4124;
-			/* 4128h */	eastl::fixed_vector<int, 1024> field_4128;
+			/* 4128h */	eastl::fixed_vector<int64_t, 512> field_4128;
 			/* 5140h */	char padding_5140[0x514C - 0x5140];
 			/* 514Ch */	float field_514C;
 			/* 5150h */	char padding_5150[0x5164 - 0x5150];

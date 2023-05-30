@@ -24,9 +24,20 @@
 #include <Spore\Graphics\RenderUtils.h>
 #include <Spore\Graphics\GlobalState.h>
 #include <Spore\Graphics\ActiveState.h>
+#include <Spore\Graphics\cFrustumCull.h>
 
 namespace Graphics
 {
+	auto_METHOD_VOID(cFrustumCull, OffsetPlanes, Args(float a), Args(a));
+
+	auto_METHOD(cFrustumCull, int, FrustumTestAABB,
+		Args(const Math::Vector3& lower, const Math::Vector3& upper, int flags), Args(lower, upper, flags));
+
+	auto_METHOD(cFrustumCull, int, FrustumTestSphere,
+		Args(const Math::Vector3& center, float radius), Args(center, radius));
+
+	auto_METHOD_VOID(cFrustumCull, UpdateFromProjectionMatrix, Args(const Math::Matrix4& a), Args(a));
+
 
 	auto_STATIC_METHOD_(IRenderer, IRenderer*, Get);
 
