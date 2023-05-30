@@ -83,7 +83,7 @@ namespace Simulator
 			/* 411Ch */	cObjectPoolIndex mAvatarCellIndex;
 			/* 4120h */	int field_4120;
 			/* 4124h */	int field_4124;
-			/* 4128h */	eastl::fixed_vector<int64_t, 512> field_4128;
+			/* 4128h */	eastl::fixed_vector<eastl::pair<int, int>, 512> field_4128;
 			/* 5140h */	char padding_5140[0x514C - 0x5140];
 			/* 514Ch */	float field_514C;
 			/* 5150h */	char padding_5150[0x5164 - 0x5150];

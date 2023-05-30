@@ -125,8 +125,7 @@ namespace Terrain
 		/* 64h */	float field_64;
 		/* 68h */	float field_68;
 		/* 6Ch */	bool mIsLowRes;
-		/* 70h */	Math::Vector3 field_70;  // float::max
-		/* 7Ch */	Math::Vector3 field_7C;  // float::min
+		/* 70h */	Math::BoundingBox mChunkBoundingBox;
 		/* 88h */	float field_88;
 		/* 8Ch */	float field_8C;
 		/* 90h */	bool mMustUpdateVertexBuffer;

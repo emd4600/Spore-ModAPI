@@ -28,7 +28,7 @@
 #include <Spore\Graphics\IAmbientOccluder.h>
 #include <Spore\ResourceID.h>
 #include <EASTL\vector.h>
-
+#include <Spore\Graphics\cFrustumCull.h>
 #include <Spore\Terrain\ITerrain.h>
 #include <Spore\Terrain\cTerrainStateMgr.h>
 #include <Spore\Terrain\TerrainShaderData.h>
@@ -247,7 +247,7 @@ namespace Terrain
 		/* 920h */	int field_920;  // -1
 		/* 924h */	void* mpDecalManager;  //PLACEHOLDER DecalManager
 		/* 928h */	void* mpTerrainDraw;  //PLACEHOLDER TerrainDraw
-		/* 92Ch */	char padding_92C[0xF0];
+		/* 92Ch */	Graphics::cFrustumCull mTerrainFrustum;
 		/* A1Ch */	float field_A1C;
 		/* A20h */	float field_A20;
 		/* A24h */	float field_A24;
