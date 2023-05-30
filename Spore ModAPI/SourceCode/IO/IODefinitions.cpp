@@ -509,6 +509,10 @@ namespace Resource
 		Args(SaveAreaID areaID, Resource::Database* pDatabase, void* arg), 
 		Args(areaID, pDatabase, arg));
 
+	auto_STATIC_METHOD(Paths, int, CreateTempFile,
+		Args(char16_t* a1, char16_t* a2, char16_t* a3, char16_t* a4),
+		Args(a1, a2, a3, a4));
+
 	const char16_t* Paths::GetDataDir() {
 		return GetDirFromID(PathID::Data);
 	}

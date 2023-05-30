@@ -265,6 +265,7 @@ namespace Resource
 		DefineAddress(RegisterDirectory, SelectAddress(0x688DF0, 0x688BA0));
 		DefineAddress(GetSaveArea, SelectAddress(0x6B22C0, 0x6B1F20));
 		DefineAddress(RegisterSaveArea, SelectAddress(0x6B3A90, 0x6B36F0));
+		DefineAddress(CreateTempFile, SelectAddress(0x932AC0, 0x932550));
 	};
 
 	namespace Addresses(DatabaseDirectoryFiles)

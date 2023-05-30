@@ -50,6 +50,14 @@ namespace Resource
 
 		void RegisterDirectory(PathID dirID, const char16_t* path);
 
+		/// Creates an empty temporary file.
+		/// @param[out] dstPath Buffer where the destination path will be written.
+		/// @param folderPath [Optional] Directory where the file is created, by default it uses the system temporary folder.
+		/// @param filePrefix [Optional] Prefix for the name of the file, "temp" by default.
+		/// @param fileExtension [Optional] Extension of the file, ".tmp" by default.
+		/// @returns The length of the path that has been written to the `dstPath` buffer.
+		int CreateTempFile(char16_t* dstPath, char16_t* folderPath = nullptr, char16_t* filePrefix = nullptr, char16_t* fileExtension = nullptr);
+
 		const char16_t* GetDataDir();
 		const char16_t* GetAppDir();
 		const char16_t* GetDebugDir();
@@ -72,5 +80,6 @@ namespace Resource
 		DeclareAddress(RegisterDirectory);  // 0x688DF0 0x688BA0
 		DeclareAddress(GetSaveArea);
 		DeclareAddress(RegisterSaveArea);
+		DeclareAddress(CreateTempFile);  // 0x932AC0 0x932550
 	}
 }
