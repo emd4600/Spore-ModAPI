@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Swarm::IEffectMap class | Spore ModAPI SDK for creating C++ mods for Spore</title>
+  <title>Swarm::cEffectMapBase class | Spore ModAPI SDK for creating C++ mods for Spore</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,600,600i%7CSource+Code+Pro:400,400i,600" />
   <link rel="stylesheet" href="m-dark.css" />
   <link rel="stylesheet" href="m-documentation.css" />
@@ -45,28 +45,41 @@
     <div class="m-row">
       <div class="m-col-l-10 m-push-l-1">
         <h1>
-          <span class="m-breadcrumb"><a href="namespace_swarm.html">Swarm</a>::<wbr/></span>IEffectMap <span class="m-thin">class</span>
+          <span class="m-breadcrumb"><a href="namespace_swarm.html">Swarm</a>::<wbr/></span>cEffectMapBase <span class="m-thin">class</span>
           <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_i_effect_map_8h.html">&lt;Spore/Swarm/IEffectMap.h&gt;</a></div>
         </h1>
-        <p>Effect maps are one of the way effects can react to environment information from the game.</p>
+        <p><span></span></p>
         <div class="m-block m-default">
           <h3>Contents</h3>
           <ul>
             <li>
               Reference
               <ul>
-                <li><a href="#derived-classes">Derived classes</a></li>
+                <li><a href="#base-classes">Base classes</a></li>
+                <li><a href="#typeless-methods">Constructors, destructors, conversion operators</a></li>
                 <li><a href="#pub-methods">Public functions</a></li>
               </ul>
             </li>
           </ul>
         </div>
-<p>Effect maps are used to retrieve color, height, normal, or velocity information that changes on each point in space. More information: <a href="https://github.com/emd4600/SporeModder-FX/wiki/Effect-Maps">https:/<wbr />/<wbr />github.com/<wbr />emd4600/<wbr />SporeModder-FX/<wbr />wiki/<wbr />Effect-Maps</a></p>
-        <section id="derived-classes">
-          <h2><a href="#derived-classes">Derived classes</a></h2>
+        <section id="base-classes">
+          <h2><a href="#base-classes">Base classes</a></h2>
           <dl class="m-doc">
             <dt>
-              class <a href="class_swarm_1_1c_effect_map_base.html" class="m-doc">cEffectMapBase</a>
+              class <a href="class_swarm_1_1_i_effect_map.html" class="m-doc">IEffectMap</a>
+            </dt>
+            <dd>Effect maps are one of the way effects can react to environment information from the game.</dd>
+            <dt>
+              class <a href="class_ref_count_template.html" class="m-doc">RefCountTemplate</a>
+            </dt>
+            <dd><span></span></dd>
+          </dl>
+        </section>
+        <section id="typeless-methods">
+          <h2><a href="#typeless-methods">Constructors, destructors, conversion operators</a></h2>
+          <dl class="m-doc">
+            <dt id="a9f51eaca87c79b97a9d7f526690e86f4">
+              <span class="m-doc-wrap-bumper"><a href="#a9f51eaca87c79b97a9d7f526690e86f4" class="m-doc-self">~cEffectMapBase</a>(</span><span class="m-doc-wrap">) <span class="m-label m-flat m-warning">virtual</span></span>
             </dt>
             <dd><span></span></dd>
           </dl>
@@ -74,78 +87,41 @@
         <section id="pub-methods">
           <h2><a href="#pub-methods">Public functions</a></h2>
           <dl class="m-doc">
-            <dt id="ad401659198cba370793ff0786a7b8852">
-              <span class="m-doc-wrap-bumper">auto <a href="#ad401659198cba370793ff0786a7b8852" class="m-doc-self">AddRef</a>(</span><span class="m-doc-wrap">) -&gt; int <span class="m-label m-flat m-warning">pure virtual</span></span>
+            <dt id="a869d084d08e01937793b1f5576aac0ed">
+              <span class="m-doc-wrap-bumper">void <a href="#a869d084d08e01937793b1f5576aac0ed" class="m-doc-self">Start</a>(</span><span class="m-doc-wrap">) <span class="m-label m-flat m-warning">override</span></span>
             </dt>
             <dd><span></span></dd>
-            <dt id="a9b3f56b622a684c47b7566ac94e11b0b">
-              <span class="m-doc-wrap-bumper">auto <a href="#a9b3f56b622a684c47b7566ac94e11b0b" class="m-doc-self">Release</a>(</span><span class="m-doc-wrap">) -&gt; int <span class="m-label m-flat m-warning">pure virtual</span></span>
+            <dt id="afe2971f136df4c21a95268f372b80106">
+              <span class="m-doc-wrap-bumper">void <a href="#afe2971f136df4c21a95268f372b80106" class="m-doc-self">Finish</a>(</span><span class="m-doc-wrap">) <span class="m-label m-flat m-warning">override</span></span>
             </dt>
             <dd><span></span></dd>
-            <dt id="aa206996a66222ef7d06825443f5334a9">
-              <span class="m-doc-wrap-bumper">void <a href="#aa206996a66222ef7d06825443f5334a9" class="m-doc-self">Start</a>(</span><span class="m-doc-wrap">) <span class="m-label m-flat m-warning">pure virtual</span></span>
+            <dt id="a631bb3a64ec967774d309d42f7b992a3">
+              <span class="m-doc-wrap-bumper">auto <a href="#a631bb3a64ec967774d309d42f7b992a3" class="m-doc-self">ModificationCount</a>(</span><span class="m-doc-wrap">) -&gt; int <span class="m-label m-flat m-warning">override</span></span>
             </dt>
             <dd><span></span></dd>
-            <dt id="a15f3f0602e01e02bfa495b0fb0f4ca83">
-              <span class="m-doc-wrap-bumper">void <a href="#a15f3f0602e01e02bfa495b0fb0f4ca83" class="m-doc-self">Finish</a>(</span><span class="m-doc-wrap">) <span class="m-label m-flat m-warning">pure virtual</span></span>
-            </dt>
-            <dd><span></span></dd>
-            <dt id="a0557a3bb2b9a0ae38861e42a0a39458f">
-              <span class="m-doc-wrap-bumper">auto <a href="#a0557a3bb2b9a0ae38861e42a0a39458f" class="m-doc-self">ModificationCount</a>(</span><span class="m-doc-wrap">) -&gt; int <span class="m-label m-flat m-warning">pure virtual</span></span>
-            </dt>
-            <dd><span></span></dd>
-            <dt id="a8f4c8fe71b7c08c620b7014088e67dbd">
-              <span class="m-doc-wrap-bumper">auto <a href="#a8f4c8fe71b7c08c620b7014088e67dbd" class="m-doc-self">GetBounds</a>(</span><span class="m-doc-wrap">) -&gt; <a href="struct_math_1_1_bounding_box.html" class="m-doc">Math::<wbr />BoundingBox</a> <span class="m-label m-flat m-warning">pure virtual</span></span>
-            </dt>
-            <dd>Returns the bounding box that contains the whole map.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#a4cccd6fd35f6fbddd3c7e45128a63ec6" class="m-doc">PointInMap</a>(</span><span class="m-doc-wrap">const <a href="struct_math_1_1_vector3.html" class="m-doc">Math::<wbr />Vector3</a>&amp; position) -&gt; bool <span class="m-label m-flat m-warning">pure virtual</span></span>
-            </dt>
-            <dd>Returns whether the given point is considered to be inside of the map.</dd>
-            <dt id="ace8850f404654f433d00e6e7c472f3a1">
-              <span class="m-doc-wrap-bumper">auto <a href="#ace8850f404654f433d00e6e7c472f3a1" class="m-doc-self">InWorldSpace</a>(</span><span class="m-doc-wrap">) -&gt; bool <span class="m-label m-flat m-warning">pure virtual</span></span>
-            </dt>
-            <dd>Returns whether this map is in world space or not.</dd>
-            <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#a5358a9b5b73d9e30e4a223b4b835e994" class="m-doc">Height</a>(</span><span class="m-doc-wrap">const <a href="struct_math_1_1_vector3.html" class="m-doc">Math::<wbr />Vector3</a>&amp; position) -&gt; float <span class="m-label m-flat m-warning">pure virtual</span></span>
+              <span class="m-doc-wrap-bumper">auto <a href="#a910cb5f29d57e77aaf835bba7d3f283a" class="m-doc">Height</a>(</span><span class="m-doc-wrap">const <a href="struct_math_1_1_vector3.html" class="m-doc">Math::<wbr />Vector3</a>&amp; position) -&gt; float <span class="m-label m-flat m-warning">override</span></span>
             </dt>
             <dd>Returns the height of the map at the given position.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#a5cbd31d60084426330cce795e3a34101" class="m-doc">Normal</a>(</span><span class="m-doc-wrap">const <a href="struct_math_1_1_vector3.html" class="m-doc">Math::<wbr />Vector3</a>&amp; position) -&gt; <a href="struct_math_1_1_vector3.html" class="m-doc">Math::<wbr />Vector3</a> <span class="m-label m-flat m-warning">pure virtual</span></span>
+              <span class="m-doc-wrap-bumper">auto <a href="#aadee63f887a57f3a92fd8a10e7a0daad" class="m-doc">Normal</a>(</span><span class="m-doc-wrap">const <a href="struct_math_1_1_vector3.html" class="m-doc">Math::<wbr />Vector3</a>&amp; position) -&gt; <a href="struct_math_1_1_vector3.html" class="m-doc">Math::<wbr />Vector3</a> <span class="m-label m-flat m-warning">override</span></span>
             </dt>
             <dd>Returns the normal direction of the map at the given position.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#a9c0955dfbbe40fc7741a632e1ba487af" class="m-doc">Velocity</a>(</span><span class="m-doc-wrap">const <a href="struct_math_1_1_vector3.html" class="m-doc">Math::<wbr />Vector3</a>&amp; position) -&gt; <a href="struct_math_1_1_vector3.html" class="m-doc">Math::<wbr />Vector3</a> <span class="m-label m-flat m-warning">pure virtual</span></span>
+              <span class="m-doc-wrap-bumper">auto <a href="#a6387eed003d75b5afc9b1f46b35061d2" class="m-doc">Velocity</a>(</span><span class="m-doc-wrap">const <a href="struct_math_1_1_vector3.html" class="m-doc">Math::<wbr />Vector3</a>&amp; position) -&gt; <a href="struct_math_1_1_vector3.html" class="m-doc">Math::<wbr />Vector3</a> <span class="m-label m-flat m-warning">override</span></span>
             </dt>
             <dd>Returns the velocity (i.e., speed with direction) of the map at the given position.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#a6db93aa37e18076963e95b2ef156e344" class="m-doc">ColorAlpha</a>(</span><span class="m-doc-wrap">void* unk) -&gt; <a href="struct_math_1_1_color_r_g_b_a.html" class="m-doc">Math::<wbr />ColorRGBA</a> <span class="m-label m-flat m-warning">pure virtual</span></span>
+              <span class="m-doc-wrap-bumper">auto <a href="#a006ca9671bc4c0bd768ae2ac4b10ae5e" class="m-doc">ColorAlpha</a>(</span><span class="m-doc-wrap">void* unk) -&gt; <a href="struct_math_1_1_color_r_g_b_a.html" class="m-doc">Math::<wbr />ColorRGBA</a> <span class="m-label m-flat m-warning">override</span></span>
             </dt>
             <dd>Returns the RGBA color of the map at the given position.</dd>
           </dl>
         </section>
         <section>
           <h2>Function documentation</h2>
-          <section class="m-doc-details" id="a4cccd6fd35f6fbddd3c7e45128a63ec6"><div>
+          <section class="m-doc-details" id="a910cb5f29d57e77aaf835bba7d3f283a"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">bool Swarm::<wbr />IEffectMap::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a4cccd6fd35f6fbddd3c7e45128a63ec6" class="m-doc-self">PointInMap</a>(</span><span class="m-doc-wrap">const <a href="struct_math_1_1_vector3.html" class="m-doc">Math::<wbr />Vector3</a>&amp; position) <span class="m-label m-warning">pure virtual</span></span></span>
-            </h3>
-            <p>Returns whether the given point is considered to be inside of the map.</p>
-            <table class="m-table m-fullwidth m-flat">
-              <thead>
-                <tr><th colspan="2">Parameters</th></tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td style="width: 1%">position</td>
-                  <td></td>
-                </tr>
-              </tbody>
-            </table>
-          </div></section>
-          <section class="m-doc-details" id="a5358a9b5b73d9e30e4a223b4b835e994"><div>
-            <h3>
-              <span class="m-doc-wrap-bumper">float Swarm::<wbr />IEffectMap::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a5358a9b5b73d9e30e4a223b4b835e994" class="m-doc-self">Height</a>(</span><span class="m-doc-wrap">const <a href="struct_math_1_1_vector3.html" class="m-doc">Math::<wbr />Vector3</a>&amp; position) <span class="m-label m-warning">pure virtual</span></span></span>
+              <span class="m-doc-wrap-bumper">float Swarm::<wbr />cEffectMapBase::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a910cb5f29d57e77aaf835bba7d3f283a" class="m-doc-self">Height</a>(</span><span class="m-doc-wrap">const <a href="struct_math_1_1_vector3.html" class="m-doc">Math::<wbr />Vector3</a>&amp; position) <span class="m-label m-warning">override</span></span></span>
             </h3>
             <p>Returns the height of the map at the given position.</p>
             <table class="m-table m-fullwidth m-flat">
@@ -160,9 +136,9 @@
               </tbody>
             </table>
           </div></section>
-          <section class="m-doc-details" id="a5cbd31d60084426330cce795e3a34101"><div>
+          <section class="m-doc-details" id="aadee63f887a57f3a92fd8a10e7a0daad"><div>
             <h3>
-              <span class="m-doc-wrap-bumper"><a href="struct_math_1_1_vector3.html" class="m-doc">Math::<wbr />Vector3</a> Swarm::<wbr />IEffectMap::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a5cbd31d60084426330cce795e3a34101" class="m-doc-self">Normal</a>(</span><span class="m-doc-wrap">const <a href="struct_math_1_1_vector3.html" class="m-doc">Math::<wbr />Vector3</a>&amp; position) <span class="m-label m-warning">pure virtual</span></span></span>
+              <span class="m-doc-wrap-bumper"><a href="struct_math_1_1_vector3.html" class="m-doc">Math::<wbr />Vector3</a> Swarm::<wbr />cEffectMapBase::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#aadee63f887a57f3a92fd8a10e7a0daad" class="m-doc-self">Normal</a>(</span><span class="m-doc-wrap">const <a href="struct_math_1_1_vector3.html" class="m-doc">Math::<wbr />Vector3</a>&amp; position) <span class="m-label m-warning">override</span></span></span>
             </h3>
             <p>Returns the normal direction of the map at the given position.</p>
             <table class="m-table m-fullwidth m-flat">
@@ -177,9 +153,9 @@
               </tbody>
             </table>
           </div></section>
-          <section class="m-doc-details" id="a9c0955dfbbe40fc7741a632e1ba487af"><div>
+          <section class="m-doc-details" id="a6387eed003d75b5afc9b1f46b35061d2"><div>
             <h3>
-              <span class="m-doc-wrap-bumper"><a href="struct_math_1_1_vector3.html" class="m-doc">Math::<wbr />Vector3</a> Swarm::<wbr />IEffectMap::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a9c0955dfbbe40fc7741a632e1ba487af" class="m-doc-self">Velocity</a>(</span><span class="m-doc-wrap">const <a href="struct_math_1_1_vector3.html" class="m-doc">Math::<wbr />Vector3</a>&amp; position) <span class="m-label m-warning">pure virtual</span></span></span>
+              <span class="m-doc-wrap-bumper"><a href="struct_math_1_1_vector3.html" class="m-doc">Math::<wbr />Vector3</a> Swarm::<wbr />cEffectMapBase::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a6387eed003d75b5afc9b1f46b35061d2" class="m-doc-self">Velocity</a>(</span><span class="m-doc-wrap">const <a href="struct_math_1_1_vector3.html" class="m-doc">Math::<wbr />Vector3</a>&amp; position) <span class="m-label m-warning">override</span></span></span>
             </h3>
             <p>Returns the velocity (i.e., speed with direction) of the map at the given position.</p>
             <table class="m-table m-fullwidth m-flat">
@@ -194,9 +170,9 @@
               </tbody>
             </table>
           </div></section>
-          <section class="m-doc-details" id="a6db93aa37e18076963e95b2ef156e344"><div>
+          <section class="m-doc-details" id="a006ca9671bc4c0bd768ae2ac4b10ae5e"><div>
             <h3>
-              <span class="m-doc-wrap-bumper"><a href="struct_math_1_1_color_r_g_b_a.html" class="m-doc">Math::<wbr />ColorRGBA</a> Swarm::<wbr />IEffectMap::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a6db93aa37e18076963e95b2ef156e344" class="m-doc-self">ColorAlpha</a>(</span><span class="m-doc-wrap">void* unk) <span class="m-label m-warning">pure virtual</span></span></span>
+              <span class="m-doc-wrap-bumper"><a href="struct_math_1_1_color_r_g_b_a.html" class="m-doc">Math::<wbr />ColorRGBA</a> Swarm::<wbr />cEffectMapBase::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a006ca9671bc4c0bd768ae2ac4b10ae5e" class="m-doc-self">ColorAlpha</a>(</span><span class="m-doc-wrap">void* unk) <span class="m-label m-warning">override</span></span></span>
             </h3>
             <p>Returns the RGBA color of the map at the given position.</p>
             <table class="m-table m-fullwidth m-flat">

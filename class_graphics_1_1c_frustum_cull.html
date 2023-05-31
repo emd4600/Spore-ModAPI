@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Simulator::cObjectPool::Iterator struct | Spore ModAPI SDK for creating C++ mods for Spore</title>
+  <title>Graphics::cFrustumCull class | Spore ModAPI SDK for creating C++ mods for Spore</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,600,600i%7CSource+Code+Pro:400,400i,600" />
   <link rel="stylesheet" href="m-dark.css" />
   <link rel="stylesheet" href="m-documentation.css" />
@@ -45,8 +45,8 @@
     <div class="m-row">
       <div class="m-col-l-10 m-push-l-1">
         <h1>
-          Simulator::cObjectPool::Iterator <span class="m-thin">struct</span>
-          <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="c_object_pool_8h.html">&lt;Spore/Simulator/cObjectPool.h&gt;</a></div>
+          <span class="m-breadcrumb"><a href="namespace_graphics.html">Graphics</a>::<wbr/></span>cFrustumCull <span class="m-thin">class</span>
+          <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="c_frustum_cull_8h.html">&lt;Spore/Graphics/cFrustumCull.h&gt;</a></div>
         </h1>
         <p><span></span></p>
         <div class="m-block m-default">
@@ -55,16 +55,41 @@
             <li>
               Reference
               <ul>
+                <li><a href="#pub-methods">Public functions</a></li>
                 <li><a href="#pub-attribs">Public variables</a></li>
               </ul>
             </li>
           </ul>
         </div>
+        <section id="pub-methods">
+          <h2><a href="#pub-methods">Public functions</a></h2>
+          <dl class="m-doc">
+            <dt id="a45d96fb2371caff2d54b399a622e5567">
+              <span class="m-doc-wrap-bumper">void <a href="#a45d96fb2371caff2d54b399a622e5567" class="m-doc-self">OffsetPlanes</a>(</span><span class="m-doc-wrap">float offset)</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a30a40feed644e9243d4c4fd9fd29c744">
+              <span class="m-doc-wrap-bumper">auto <a href="#a30a40feed644e9243d4c4fd9fd29c744" class="m-doc-self">FrustumTestAABB</a>(</span><span class="m-doc-wrap">const <a href="struct_math_1_1_vector3.html" class="m-doc">Math::<wbr />Vector3</a>&amp; lower,
+              const <a href="struct_math_1_1_vector3.html" class="m-doc">Math::<wbr />Vector3</a>&amp; upper,
+              int flags) -&gt; int</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a6a165bb315afc3a8dc9aac43638c27bf">
+              <span class="m-doc-wrap-bumper">auto <a href="#a6a165bb315afc3a8dc9aac43638c27bf" class="m-doc-self">FrustumTestSphere</a>(</span><span class="m-doc-wrap">const <a href="struct_math_1_1_vector3.html" class="m-doc">Math::<wbr />Vector3</a>&amp; center,
+              float radius) -&gt; int</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a20c7a2ee34ed4f4e0d8991e47ca41c2c">
+              <span class="m-doc-wrap-bumper">void <a href="#a20c7a2ee34ed4f4e0d8991e47ca41c2c" class="m-doc-self">UpdateFromProjectionMatrix</a>(</span><span class="m-doc-wrap">const <a href="struct_math_1_1_matrix4.html" class="m-doc">Math::<wbr />Matrix4</a>&amp; projectionMatrix)</span>
+            </dt>
+            <dd><span></span></dd>
+          </dl>
+        </section>
         <section id="pub-attribs">
           <h2><a href="#pub-attribs">Public variables</a></h2>
           <dl class="m-doc">
-            <dt id="a8db8ed955ffc8aed745ee1d5842956b8">
-              int <a href="#a8db8ed955ffc8aed745ee1d5842956b8" class="m-doc-self">index</a>
+            <dt id="a1b464180c252caa38a65112012f89c4b">
+              <a href="struct_graphics_1_1c_plane.html" class="m-doc">cPlane</a> <a href="#a1b464180c252caa38a65112012f89c4b" class="m-doc-self">mPlanes</a>
             </dt>
             <dd><span></span></dd>
           </dl>

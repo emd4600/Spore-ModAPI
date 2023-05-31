@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>App::cMouseCamera class | Spore ModAPI SDK for creating C++ mods for Spore</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,600,600i%7CSource+Code+Pro:400,400i,600" />
+  <link rel="stylesheet" href="m-dark.css" />
+  <link rel="stylesheet" href="m-documentation.css" />
+  <link rel="icon" href="Spore_ModAPI_Icon.png" type="image/png" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#22272e" />
+</head>
+<body>
+<header><nav id="navigation">
+  <div class="m-container">
+    <div class="m-row">
+      <a href="index.html" id="m-navbar-brand" class="m-col-t-8 m-col-m-none m-left-m"><img src="Spore_ModAPI_Icon.png" />Spore ModAPI <span class="m-thin">SDK for creating C++ mods for Spore</span></a>
+      <div class="m-col-t-4 m-hide-m m-text-right m-nopadr">
+        <a href="#search" class="m-doc-search-icon" title="Search" onclick="return showSearch()"><svg style="height: 0.9rem;" viewBox="0 0 16 16">
+          <path id="m-doc-search-icon-path" d="m6 0c-3.31 0-6 2.69-6 6 0 3.31 2.69 6 6 6 1.49 0 2.85-0.541 3.89-1.44-0.0164 0.338 0.147 0.759 0.5 1.15l3.22 3.79c0.552 0.614 1.45 0.665 2 0.115 0.55-0.55 0.499-1.45-0.115-2l-3.79-3.22c-0.392-0.353-0.812-0.515-1.15-0.5 0.895-1.05 1.44-2.41 1.44-3.89 0-3.31-2.69-6-6-6zm0 1.56a4.44 4.44 0 0 1 4.44 4.44 4.44 4.44 0 0 1-4.44 4.44 4.44 4.44 0 0 1-4.44-4.44 4.44 4.44 0 0 1 4.44-4.44z"/>
+        </svg></a>
+        <a id="m-navbar-show" href="#navigation" title="Show navigation"></a>
+        <a id="m-navbar-hide" href="#" title="Hide navigation"></a>
+      </div>
+      <div id="m-navbar-collapse" class="m-col-t-12 m-show-m m-col-m-none m-right-m">
+        <div class="m-row">
+          <ol class="m-col-t-6 m-col-m-none">
+            <li><a href="pages.html">Tutorials</a></li>
+            <li><a href="namespaces.html">Namespaces</a></li>
+          </ol>
+          <ol class="m-col-t-6 m-col-m-none" start="3">
+            <li><a href="annotated.html">Classes</a></li>
+            <li><a href="files.html">Files</a></li>
+            <li class="m-show-m"><a href="#search" class="m-doc-search-icon" title="Search" onclick="return showSearch()"><svg style="height: 0.9rem;" viewBox="0 0 16 16">
+              <use href="#m-doc-search-icon-path" />
+            </svg></a></li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav></header>
+<main><article>
+  <div class="m-container m-container-inflatable">
+    <div class="m-row">
+      <div class="m-col-l-10 m-push-l-1">
+        <h1>
+          <span class="m-breadcrumb"><a href="namespace_app.html">App</a>::<wbr/></span>cMouseCamera <span class="m-thin">class</span>
+          <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="c_mouse_camera_8h.html">&lt;Spore/App/cMouseCamera.h&gt;</a></div>
+        </h1>
+        <p><span></span></p>
+        <div class="m-block m-default">
+          <h3>Contents</h3>
+          <ul>
+            <li>
+              Reference
+              <ul>
+                <li><a href="#base-classes">Base classes</a></li>
+                <li><a href="#pub-methods">Public functions</a></li>
+                <li><a href="#pub-attribs">Public variables</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+        <section id="base-classes">
+          <h2><a href="#base-classes">Base classes</a></h2>
+          <dl class="m-doc">
+            <dt>
+              class <a href="class_app_1_1_i_camera.html" class="m-doc">ICamera</a>
+            </dt>
+            <dd>This class represents a camera in the game, capable of setting the view transformations used for rendering and receiving input events.</dd>
+            <dt>
+              class <a href="class_app_1_1_i_message_listener.html" class="m-doc">IMessageListener</a>
+            </dt>
+            <dd>An interface that can receive messages sent through the app.</dd>
+            <dt>
+              class <a href="class_i_virtual.html" class="m-doc">IVirtual</a>
+            </dt>
+            <dd>A default interface that provides a virtual destructor, it should only be used internally.</dd>
+          </dl>
+        </section>
+        <section id="pub-methods">
+          <h2><a href="#pub-methods">Public functions</a></h2>
+          <dl class="m-doc">
+            <dt id="a1571caa54586597c6b510c7fd505f02a">
+              <span class="m-doc-wrap-bumper">void <a href="#a1571caa54586597c6b510c7fd505f02a" class="m-doc-self">CalculateViewTransform</a>(</span><span class="m-doc-wrap"><a href="class_transform.html" class="m-doc">Transform</a>&amp; transform)</span>
+            </dt>
+            <dd><span></span></dd>
+          </dl>
+        </section>
+        <section id="pub-attribs">
+          <h2><a href="#pub-attribs">Public variables</a></h2>
+          <dl class="m-doc">
+            <dt id="ab3c6fcfba0ec4fe0b7c5af76432c37ad">
+              int <a href="#ab3c6fcfba0ec4fe0b7c5af76432c37ad" class="m-doc-self">mnRefCount</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a87bd29e6bbf8fec9824f87369bf7df80">
+              bool <a href="#a87bd29e6bbf8fec9824f87369bf7df80" class="m-doc-self">mCameraIsMayaStyle</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a410de6202133255769eae85f0c1df12a">
+              bool <a href="#a410de6202133255769eae85f0c1df12a" class="m-doc-self">mCameraExponential</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="aa663fadbc453ba69d9919da33e7d732f">
+              bool <a href="#aa663fadbc453ba69d9919da33e7d732f" class="m-doc-self">mCameraPanSubjectPos</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a770db20f3c5af22427bcb3042eb1b684">
+              int <a href="#a770db20f3c5af22427bcb3042eb1b684" class="m-doc-self">field_14</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="ab41d267eb74726cc03d328bb52d5ff2e">
+              int <a href="#ab41d267eb74726cc03d328bb52d5ff2e" class="m-doc-self">field_18</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a11ffae587523a588e77953bbe2d845bf">
+              int <a href="#a11ffae587523a588e77953bbe2d845bf" class="m-doc-self">field_1C</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a288a925785feab8baf67bc6d63c62802">
+              int <a href="#a288a925785feab8baf67bc6d63c62802" class="m-doc-self">field_20</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a98aa497145fd1c4279b26392abbd63b9">
+              <a href="class_app_1_1_property_list.html" class="m-doc">App::<wbr />PropertyList</a>* <a href="#a98aa497145fd1c4279b26392abbd63b9" class="m-doc-self">mpPropList</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a63894b8538d655196ec1c6999464d20f">
+              float <a href="#a63894b8538d655196ec1c6999464d20f" class="m-doc-self">mCameraZoomScale</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="adcd6bf0cee59ca0fe33cea5be8ceeb50">
+              float <a href="#adcd6bf0cee59ca0fe33cea5be8ceeb50" class="m-doc-self">mCameraWheelZoomScale</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="aafa51a8847dba5d4deaa54589f15ea23">
+              float <a href="#aafa51a8847dba5d4deaa54589f15ea23" class="m-doc-self">mCameraTranslateScale</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="ac34481a75ffd6233e16f4ea2abf59297">
+              float <a href="#ac34481a75ffd6233e16f4ea2abf59297" class="m-doc-self">mCameraExpPanScale</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a78c6d2e1e2b8d508aa418eac6b560ed8">
+              float <a href="#a78c6d2e1e2b8d508aa418eac6b560ed8" class="m-doc-self">mCameraRotateScale</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="afa36ad3b6108a4b27e68f428cb74aeab">
+              <a href="struct_math_1_1_point.html" class="m-doc">Math::<wbr />Point</a> <a href="#afa36ad3b6108a4b27e68f428cb74aeab" class="m-doc-self">mLastMouseDown</a>
+            </dt>
+            <dd>Last position of the mouse after <a href="class_app_1_1_i_camera.html#a91fe435d5a490d2ecbb0653fc76d1cd4" class="m-doc">OnMouseDown()</a></dd>
+            <dt id="a66ffd7d4516dd507faf06f2f95d28d7d">
+              bool <a href="#a66ffd7d4516dd507faf06f2f95d28d7d" class="m-doc-self">field_44</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a40a3d8958ae2d18f882997eb6230463f">
+              float <a href="#a40a3d8958ae2d18f882997eb6230463f" class="m-doc-self">mCameraHeading</a>
+            </dt>
+            <dd>Camera rotation on Z axis, also known as &#x27;yaw&#x27;.</dd>
+            <dt id="ab22dbb4e454ea117341f68d3ff4cf4ac">
+              float <a href="#ab22dbb4e454ea117341f68d3ff4cf4ac" class="m-doc-self">mCameraInitialHeading</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a27ffa053bac8af5eb3a33aefa276c998">
+              int <a href="#a27ffa053bac8af5eb3a33aefa276c998" class="m-doc-self">field_50</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a42fefe08d3b5259d2cae973d130759d8">
+              float <a href="#a42fefe08d3b5259d2cae973d130759d8" class="m-doc-self">field_54</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a989e0b8dd42029ce93bfb1a31bb9d61c">
+              float <a href="#a989e0b8dd42029ce93bfb1a31bb9d61c" class="m-doc-self">mCameraPitch</a>
+            </dt>
+            <dd>Camera rotation on X axis.</dd>
+            <dt id="adc966243e78ad6c9b14b9c03e688e159">
+              float <a href="#adc966243e78ad6c9b14b9c03e688e159" class="m-doc-self">mCameraInitialPitch</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="ac07dbf16ed5caa404f73957c49ffb312">
+              int <a href="#ac07dbf16ed5caa404f73957c49ffb312" class="m-doc-self">field_60</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a1ba757ba6dffaba42749489de71e8fe9">
+              float <a href="#a1ba757ba6dffaba42749489de71e8fe9" class="m-doc-self">field_64</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a1d2c91e97afbcbde008c965a5be4bcc5">
+              float <a href="#a1d2c91e97afbcbde008c965a5be4bcc5" class="m-doc-self">mCameraRoll</a>
+            </dt>
+            <dd>Camera rotation on Y axis.</dd>
+            <dt id="a1401bac4dbd336ad83548c4ec10e8c5e">
+              float <a href="#a1401bac4dbd336ad83548c4ec10e8c5e" class="m-doc-self">field_6C</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="ae82ca7199a09a6656040dfff731d661a">
+              int <a href="#ae82ca7199a09a6656040dfff731d661a" class="m-doc-self">field_70</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="aa20a79f27f0707de81ae6a917e6f717b">
+              float <a href="#aa20a79f27f0707de81ae6a917e6f717b" class="m-doc-self">field_74</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a0e467755241b66372e55a1bc7f5677bb">
+              <a href="struct_math_1_1_matrix3.html" class="m-doc">Math::<wbr />Matrix3</a> <a href="#a0e467755241b66372e55a1bc7f5677bb" class="m-doc-self">mBaseRotation</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a0bc2dd41e281c8492b7f811b3854911a">
+              <a href="struct_math_1_1_vector3.html" class="m-doc">Math::<wbr />Vector3</a> <a href="#a0bc2dd41e281c8492b7f811b3854911a" class="m-doc-self">mBaseOffset</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a59836a3a9759bcc92e913c4a19f9f61b">
+              <a href="struct_math_1_1_vector3.html" class="m-doc">Math::<wbr />Vector3</a> <a href="#a59836a3a9759bcc92e913c4a19f9f61b" class="m-doc-self">field_A8</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a36c3b94cb2a15d0392b43f4264f636b6">
+              int <a href="#a36c3b94cb2a15d0392b43f4264f636b6" class="m-doc-self">field_B4</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="ad238387b371fa251e9d4b0ce82e840f9">
+              float <a href="#ad238387b371fa251e9d4b0ce82e840f9" class="m-doc-self">field_B8</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="acb24c84674ea78c70c76332d01b5a88d">
+              float <a href="#acb24c84674ea78c70c76332d01b5a88d" class="m-doc-self">mCameraFOV</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="af499d298d67b99d1f801b56a00c1e6c0">
+              float <a href="#af499d298d67b99d1f801b56a00c1e6c0" class="m-doc-self">field_C0</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a2e4a72ec64e63714dcbc470948049451">
+              int <a href="#a2e4a72ec64e63714dcbc470948049451" class="m-doc-self">field_C4</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="ad937d2b151710d78048aa12b65a6ef57">
+              float <a href="#ad937d2b151710d78048aa12b65a6ef57" class="m-doc-self">field_C8</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a8c4372fbec0d4c4488e9a8770b4ff718">
+              float <a href="#a8c4372fbec0d4c4488e9a8770b4ff718" class="m-doc-self">mCameraOffsetX</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="adac6081586cec6913c2b535abb53a01f">
+              float <a href="#adac6081586cec6913c2b535abb53a01f" class="m-doc-self">mCameraOffsetY</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a0e832cee07b0977f811fa5a2d0ebc763">
+              float <a href="#a0e832cee07b0977f811fa5a2d0ebc763" class="m-doc-self">mCameraZoom</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="ab97b982216e9d44f0fc51ecdb661b1f3">
+              float <a href="#ab97b982216e9d44f0fc51ecdb661b1f3" class="m-doc-self">mCameraInitialOffsetX</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="aedbd6c92d258f3b3aa0feb4abe7fd780">
+              float <a href="#aedbd6c92d258f3b3aa0feb4abe7fd780" class="m-doc-self">mCameraInitialOffsetY</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a6d50e9f79540800b679ebf1d83d254cb">
+              float <a href="#a6d50e9f79540800b679ebf1d83d254cb" class="m-doc-self">mCameraInitialZoom</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="ad026f6f9ddf4d28c292f823859cf7491">
+              int <a href="#ad026f6f9ddf4d28c292f823859cf7491" class="m-doc-self">field_E4</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a93a68426b9ccb75ad2889c8aeb3f7b7b">
+              int <a href="#a93a68426b9ccb75ad2889c8aeb3f7b7b" class="m-doc-self">field_E8</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="aef0fabe87784aed986728376fe929acd">
+              float <a href="#aef0fabe87784aed986728376fe929acd" class="m-doc-self">field_EC</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a5d49ebb476ab06bd3f5b2c7062297c13">
+              float <a href="#a5d49ebb476ab06bd3f5b2c7062297c13" class="m-doc-self">field_F0</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a11041f0d47543a98969b17feeee26bbf">
+              float <a href="#a11041f0d47543a98969b17feeee26bbf" class="m-doc-self">field_F4</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a82aa513580b0eb15415152ac423c0b28">
+              float <a href="#a82aa513580b0eb15415152ac423c0b28" class="m-doc-self">field_F8</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a12ca95c2f63c534f8d8437a6ae922b02">
+              float <a href="#a12ca95c2f63c534f8d8437a6ae922b02" class="m-doc-self">field_FC</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="aef42ebae7ea7985e0c5f269d56bcdd27">
+              <a href="struct_math_1_1_vector3.html" class="m-doc">Math::<wbr />Vector3</a> <a href="#aef42ebae7ea7985e0c5f269d56bcdd27" class="m-doc-self">field_100</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="af0436b01c9213cdbb0a3e1670fd1a01e">
+              float <a href="#af0436b01c9213cdbb0a3e1670fd1a01e" class="m-doc-self">mCameraMinZoomDistance</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a3789e1db0171336f68f0eafe57ede204">
+              float <a href="#a3789e1db0171336f68f0eafe57ede204" class="m-doc-self">mCameraMaxZoomDistance</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a3e654fa435495e9690bf68ede6a3f3a0">
+              float <a href="#a3e654fa435495e9690bf68ede6a3f3a0" class="m-doc-self">mCameraMinPitch</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a65d4057caf7bd2b69f54c9a4c9bd20de">
+              float <a href="#a65d4057caf7bd2b69f54c9a4c9bd20de" class="m-doc-self">mCameraMaxPitch</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a1b144dbfb7b7d982144487a2863c87de">
+              float <a href="#a1b144dbfb7b7d982144487a2863c87de" class="m-doc-self">mCameraNearClip</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a07f47b3c98002267fa99f5df44bb7450">
+              float <a href="#a07f47b3c98002267fa99f5df44bb7450" class="m-doc-self">mCameraFarClip</a>
+            </dt>
+            <dd><span></span></dd>
+          </dl>
+        </section>
+      </div>
+    </div>
+  </div>
+</article></main>
+<div class="m-doc-search" id="search">
+  <a href="#!" onclick="return hideSearch()"></a>
+  <div class="m-container">
+    <div class="m-row">
+      <div class="m-col-m-8 m-push-m-2">
+        <div class="m-doc-search-header m-text m-small">
+          <div><span class="m-label m-default">Tab</span> / <span class="m-label m-default">T</span> to search, <span class="m-label m-default">Esc</span> to close</div>
+          <div id="search-symbolcount">&hellip;</div>
+        </div>
+        <div class="m-doc-search-content">
+          <form>
+            <input type="search" name="q" id="search-input" placeholder="Loading &hellip;" disabled="disabled" autofocus="autofocus" autocomplete="off" spellcheck="false" />
+          </form>
+          <noscript class="m-text m-danger m-text-center">Unlike everything else in the docs, the search functionality <em>requires</em> JavaScript.</noscript>
+          <div id="search-help" class="m-text m-dim m-text-center">
+            <p class="m-noindent">Search for symbols, directories, files, pages or
+            modules. You can omit any prefix from the symbol or file path; adding a
+            <code>:</code> or <code>/</code> suffix lists all members of given symbol or
+            directory.</p>
+            <p class="m-noindent">Use <span class="m-label m-dim">&darr;</span>
+            / <span class="m-label m-dim">&uarr;</span> to navigate through the list,
+            <span class="m-label m-dim">Enter</span> to go.
+            <span class="m-label m-dim">Tab</span> autocompletes common prefix, you can
+            copy a link to the result using <span class="m-label m-dim">⌘</span>
+            <span class="m-label m-dim">L</span> while <span class="m-label m-dim">⌘</span>
+            <span class="m-label m-dim">M</span> produces a Markdown link.</p>
+          </div>
+          <div id="search-notfound" class="m-text m-warning m-text-center">Sorry, nothing was found.</div>
+          <ul id="search-results"></ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="search-v1.js"></script>
+<script src="searchdata-v1.js" async="async"></script>
+<footer><nav>
+  <div class="m-container">
+    <div class="m-row">
+      <div class="m-col-l-10 m-push-l-1">
+        <p>Spore ModAPI SDK for creating C++ mods for Spore. Created with <a href="https://doxygen.org/">Doxygen</a> 1.8.16 and <a href="https://mcss.mosra.cz/">m.css</a>.</p>
+      </div>
+    </div>
+  </div>
+</nav></footer>
+</body>
+</html>

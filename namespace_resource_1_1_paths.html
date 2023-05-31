@@ -77,6 +77,13 @@
               const char16_t* path)</span>
             </dt>
             <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a3ba3ec4147fc7276bba8163aaa33fb67" class="m-doc">CreateTempFile</a>(</span><span class="m-doc-wrap">char16_t* dstPath,
+              char16_t* folderPath = nullptr,
+              char16_t* filePrefix = nullptr,
+              char16_t* fileExtension = nullptr) -&gt; int</span>
+            </dt>
+            <dd>Creates an empty temporary file.</dd>
             <dt id="a2804222c55df894c87782c812e260dbe">
               <span class="m-doc-wrap-bumper">auto <a href="#a2804222c55df894c87782c812e260dbe" class="m-doc-self">GetDataDir</a>(</span><span class="m-doc-wrap">) -&gt; const char16_t*</span>
             </dt>
@@ -103,6 +110,44 @@
         </section>
         <section>
           <h2>Function documentation</h2>
+          <section class="m-doc-details" id="a3ba3ec4147fc7276bba8163aaa33fb67"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">int Resource::<wbr />Paths::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a3ba3ec4147fc7276bba8163aaa33fb67" class="m-doc-self">CreateTempFile</a>(</span><span class="m-doc-wrap">char16_t* dstPath,
+              char16_t* folderPath = nullptr,
+              char16_t* filePrefix = nullptr,
+              char16_t* fileExtension = nullptr)</span></span>
+            </h3>
+            <p>Creates an empty temporary file.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">dstPath&nbsp;<span class="m-label m-flat m-warning">out</span></td>
+                  <td>Buffer where the destination path will be written.</td>
+                </tr>
+                <tr>
+                  <td>folderPath</td>
+                  <td>[Optional] Directory where the file is created, by default it uses the system temporary folder.</td>
+                </tr>
+                <tr>
+                  <td>filePrefix</td>
+                  <td>[Optional] Prefix for the name of the file, &quot;temp&quot; by default.</td>
+                </tr>
+                <tr>
+                  <td>fileExtension</td>
+                  <td>[Optional] Extension of the file, &quot;.tmp&quot; by default.</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>Returns</th>
+                  <td>The length of the path that has been written to the <code>dstPath</code> buffer.</td>
+                </tr>
+              </tfoot>
+            </table>
+          </div></section>
           <section class="m-doc-details" id="aae2762337d7457e6ab347a0d1f062152"><div>
             <h3>
               <span class="m-doc-wrap-bumper"><a href="class_resource_1_1_database.html" class="m-doc">Database</a>* Resource::<wbr />Paths::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#aae2762337d7457e6ab347a0d1f062152" class="m-doc-self">GetSaveArea</a>(</span><span class="m-doc-wrap"><a href="namespace_resource.html#ae5fc2be2c995477d7286fb634653ddd8" class="m-doc">SaveAreaID</a> areaID)</span></span>

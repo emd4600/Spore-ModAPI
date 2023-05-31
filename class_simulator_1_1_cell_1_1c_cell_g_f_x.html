@@ -57,6 +57,7 @@
               <ul>
                 <li><a href="#pub-types">Public types</a></li>
                 <li><a href="#pub-static-methods">Public static functions</a></li>
+                <li><a href="#typeless-methods">Constructors, destructors, conversion operators</a></li>
                 <li><a href="#pub-methods">Public functions</a></li>
                 <li><a href="#pub-attribs">Public variables</a></li>
               </ul>
@@ -66,6 +67,14 @@
         <section id="pub-types">
           <h2><a href="#pub-types">Public types</a></h2>
           <dl class="m-doc">
+            <dt>
+              struct <a href="struct_simulator_1_1_cell_1_1c_cell_g_f_x_1_1_cell_g_f_x_object_data.html" class="m-doc">CellGFXObjectData</a>
+            </dt>
+            <dd>The graphical representation of a cell object: its model, animated creature, etc.</dd>
+            <dt>
+              struct <a href="struct_simulator_1_1_cell_1_1c_cell_g_f_x_1_1_effect_instance.html" class="m-doc">EffectInstance</a>
+            </dt>
+            <dd><span></span></dd>
             <dt id="a8758d9646b9c4ba71c733e1fef4161be">
               <span class="m-doc-wrap-bumper">enum <a href="#a8758d9646b9c4ba71c733e1fef4161be" class="m-doc-self">WorldIDs</a> { </span><span class="m-doc-wrap"><a href="#a8758d9646b9c4ba71c733e1fef4161beabdcff4a947e34ec20098e4839a925489" class="m-doc">kCellLightingWorldID</a> = 0x4A4D97F,
               <a href="#a8758d9646b9c4ba71c733e1fef4161bea494d880d609cbf674e8cd6cd641aaf2d" class="m-doc">kCellPreloadedModelWorldID</a> = 0x1010050,
@@ -142,10 +151,38 @@
               <a href="_i_visual_effect_8h.html#af513d4705ba3d0bdec5c20e45aee71fd" class="m-doc">IVisualEffectPtr</a>&amp; dst)</span>
             </dt>
             <dd>Creates an instance of an effect; if the effect cannot be loaded, &#x27;cell_bad_effect&#x27; is loaded instead.</dd>
+            <dt id="a54e1311032a2fdeaa6a8680bda88fcd9">
+              <span class="m-doc-wrap-bumper">static auto <a href="#a54e1311032a2fdeaa6a8680bda88fcd9" class="m-doc-self">InstanceEffectOnCell</a>(</span><span class="m-doc-wrap"><a href="struct_simulator_1_1_cell_1_1c_cell_object_data.html" class="m-doc">cCellObjectData</a>* cell,
+              uint32_t effectID) -&gt; <a href="class_swarm_1_1_i_visual_effect.html" class="m-doc">Swarm::<wbr />IVisualEffect</a>*</span>
+            </dt>
+            <dd><span></span></dd>
             <dt id="a1beecd1ca8d28b6ed7dbacb9cb805a6d">
               <span class="m-doc-wrap-bumper">static void <a href="#a1beecd1ca8d28b6ed7dbacb9cb805a6d" class="m-doc-self">LoadEffectMap</a>(</span><span class="m-doc-wrap">)</span>
             </dt>
             <dd>Loads and places all the effects from the <a href="struct_simulator_1_1_cell_1_1c_cell_globals_resource.html#a78338d0c51bd545faf4e7d3aee7781bf" class="m-doc">cCellGlobalsResource::<wbr />effectMapEntry</a> effect map.</dd>
+            <dt id="a99bc63513ec4382da235d8a943363674">
+              <span class="m-doc-wrap-bumper">static auto <a href="#a99bc63513ec4382da235d8a943363674" class="m-doc-self">GetVisibleBackgroundBBox</a>(</span><span class="m-doc-wrap">) -&gt; <a href="struct_math_1_1_bounding_box.html" class="m-doc">Math::<wbr />BoundingBox</a>&amp;</span>
+            </dt>
+            <dd>Returns the bounding box for the currently visible background.</dd>
+            <dt id="aca36ce961c3733eddef0f0a45be4807c">
+              <span class="m-doc-wrap-bumper">static auto <a href="#aca36ce961c3733eddef0f0a45be4807c" class="m-doc-self">GetFrustumCull</a>(</span><span class="m-doc-wrap">) -&gt; <a href="class_graphics_1_1c_frustum_cull.html" class="m-doc">Graphics::<wbr />cFrustumCull</a>&amp;</span>
+            </dt>
+            <dd>Returns the frustum cull for the currently visible main cell level.</dd>
+          </dl>
+        </section>
+        <section id="typeless-methods">
+          <h2><a href="#typeless-methods">Constructors, destructors, conversion operators</a></h2>
+          <dl class="m-doc">
+            <dt id="ad65c961dee189f7f1f651a6ccc191417">
+              <span class="m-doc-wrap-bumper"><a href="#ad65c961dee189f7f1f651a6ccc191417" class="m-doc-self">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="struct_simulator_1_1_cell_1_1c_cell_g_f_x_1_1_effect_instance.html" class="m-doc">EffectInstance</a>,
+              0x74)</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a9bbee8500eb4839055e63ac49b7d1414">
+              <span class="m-doc-wrap-bumper"><a href="#a9bbee8500eb4839055e63ac49b7d1414" class="m-doc-self">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="struct_simulator_1_1_cell_1_1c_cell_g_f_x_1_1_cell_g_f_x_object_data.html" class="m-doc">CellGFXObjectData</a>,
+              0xC8)</span>
+            </dt>
+            <dd><span></span></dd>
           </dl>
         </section>
         <section id="pub-methods">
@@ -224,10 +261,10 @@
               int <a href="#a5de5b8ec22e5aac3a231c36351537705" class="m-doc-self">field_164</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="a424b7076a7a03742fbda763368ac4320">
-              <a href="class_simulator_1_1c_object_pool.html" class="m-doc">cObjectPool</a> <a href="#a424b7076a7a03742fbda763368ac4320" class="m-doc-self">field_168</a>
+            <dt id="a26d0a56bc2672c1a284e692212c76010">
+              <a href="class_simulator_1_1c_object_pool.html" class="m-doc">cObjectPool</a>&lt;<a href="struct_simulator_1_1_cell_1_1c_cell_g_f_x_1_1_cell_g_f_x_object_data.html" class="m-doc">CellGFXObjectData</a>&gt; <a href="#a26d0a56bc2672c1a284e692212c76010" class="m-doc-self">mCellGFXObjects</a>
             </dt>
-            <dd><span></span></dd>
+            <dd>256 objects of size 0xC8</dd>
             <dt id="a1d67a06ef306882667b21e6334fee2c2">
               eastl::fixed_vector&lt;int, 22528&gt; <a href="#a1d67a06ef306882667b21e6334fee2c2" class="m-doc-self">field_184</a>
             </dt>
@@ -296,20 +333,12 @@
               int <a href="#abf013dc66631e3bcfc9b7c8396bad333" class="m-doc-self">field_161D8</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="abbd6a90565a33f60a6a1c4169ef3d24a">
-              int <a href="#abbd6a90565a33f60a6a1c4169ef3d24a" class="m-doc-self">field_161DC</a>
+            <dt id="a35db4ebe4fa8c2567570faed80372567">
+              eastl::vector&lt;<a href="struct_simulator_1_1_cell_1_1c_cell_g_f_x_1_1_effect_instance.html" class="m-doc">EffectInstance</a>&gt; <a href="#a35db4ebe4fa8c2567570faed80372567" class="m-doc-self">mEffectInstances</a>
             </dt>
-            <dd><span></span></dd>
-            <dt id="a2ce25309b9ba0c2d2f845134eb84a1fc">
-              int <a href="#a2ce25309b9ba0c2d2f845134eb84a1fc" class="m-doc-self">field_161E0</a>
-            </dt>
-            <dd><span></span></dd>
-            <dt id="a0d2fb5e14c51972d6027045d4ded21be">
-              int <a href="#a0d2fb5e14c51972d6027045d4ded21be" class="m-doc-self">field_161E4</a>
-            </dt>
-            <dd><span></span></dd>
-            <dt id="af096252f5234777b2d4fab49f50db13d">
-              char <a href="#af096252f5234777b2d4fab49f50db13d" class="m-doc-self">padding_161E8</a>
+            <dd>Current effects.</dd>
+            <dt id="a5e4eda74370a89135ed0cee792da6940">
+              char <a href="#a5e4eda74370a89135ed0cee792da6940" class="m-doc-self">padding_161F0</a>
             </dt>
             <dd><span></span></dd>
             <dt id="a996dbb39b53c5b9ced9e4321448ede3a">

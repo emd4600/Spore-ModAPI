@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>IVirtual class | Spore ModAPI SDK for creating C++ mods for Spore</title>
+  <title>Simulator::Cell::cCellGFX::CellGFXObjectData struct | Spore ModAPI SDK for creating C++ mods for Spore</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,600,600i%7CSource+Code+Pro:400,400i,600" />
   <link rel="stylesheet" href="m-dark.css" />
   <link rel="stylesheet" href="m-documentation.css" />
@@ -45,125 +45,100 @@
     <div class="m-row">
       <div class="m-col-l-10 m-push-l-1">
         <h1>
-          IVirtual <span class="m-thin">class</span>
-          <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_object_8h.html">&lt;Spore/Object.h&gt;</a></div>
+          <span class="m-breadcrumb"><a href="namespace_simulator.html">Simulator</a>::<wbr/></span><span class="m-breadcrumb"><a href="namespace_simulator_1_1_cell.html">Cell</a>::<wbr/></span><span class="m-breadcrumb"><a href="class_simulator_1_1_cell_1_1c_cell_g_f_x.html">cCellGFX</a>::<wbr/></span>CellGFXObjectData <span class="m-thin">struct</span>
+          <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="c_cell_g_f_x_8h.html">&lt;Spore/Simulator/Cell/cCellGFX.h&gt;</a></div>
         </h1>
-        <p>A default interface that provides a virtual destructor, it should only be used internally.</p>
+        <p>The graphical representation of a cell object: its model, animated creature, etc.</p>
         <div class="m-block m-default">
           <h3>Contents</h3>
           <ul>
             <li>
               Reference
               <ul>
-                <li><a href="#derived-classes">Derived classes</a></li>
-                <li><a href="#typeless-methods">Constructors, destructors, conversion operators</a></li>
+                <li><a href="#base-classes">Base classes</a></li>
+                <li><a href="#pub-attribs">Public variables</a></li>
               </ul>
             </li>
           </ul>
         </div>
-<p>It is used in many manager implementations, but we don&#x27;t know if it&#x27;s a unique interface or one specific for each manager.</p>
-        <section id="derived-classes">
-          <h2><a href="#derived-classes">Derived classes</a></h2>
+        <section id="base-classes">
+          <h2><a href="#base-classes">Base classes</a></h2>
           <dl class="m-doc">
             <dt>
-              class <a href="class_app_1_1c_camera_manager.html" class="m-doc">App::cCameraManager</a>
+              struct <a href="struct_simulator_1_1c_object_pool_class.html" class="m-doc">Simulator::cObjectPoolClass</a>
             </dt>
-            <dd>The implementation of <a href="class_app_1_1_i_camera_manager.html" class="m-doc">ICameraManager</a>; this should only be used for extending and detouring.</dd>
-            <dt>
-              class <a href="class_app_1_1c_cheat_manager.html" class="m-doc">App::cCheatManager</a>
-            </dt>
-            <dd>The implementation of <a href="class_app_1_1_i_cheat_manager.html" class="m-doc">ICheatManager</a>; this should only be used for extending and detouring.</dd>
-            <dt>
-              class <a href="class_app_1_1c_game_mode_manager.html" class="m-doc">App::cGameModeManager</a>
-            </dt>
-            <dd>The implementation of <a href="class_app_1_1_i_game_mode_manager.html" class="m-doc">IGameModeManager</a>; this should only be used for extending and detouring.</dd>
-            <dt>
-              class <a href="class_app_1_1c_mouse_camera.html" class="m-doc">App::cMouseCamera</a>
-            </dt>
-            <dd><span></span></dd>
-            <dt>
-              class <a href="class_editors_1_1_editor_camera.html" class="m-doc">Editors::EditorCamera</a>
-            </dt>
-            <dd><span></span></dd>
-            <dt>
-              class <a href="class_editors_1_1_editor_model.html" class="m-doc">Editors::EditorModel</a>
-            </dt>
-            <dd>Represents the state of a creation in an editor.</dd>
-            <dt>
-              class <a href="class_editors_1_1_editor_request.html" class="m-doc">Editors::EditorRequest</a>
-            </dt>
-            <dd>This class is used to access the editors.</dd>
-            <dt>
-              class <a href="class_editors_1_1_play_mode_backgrounds.html" class="m-doc">Editors::PlayModeBackgrounds</a>
-            </dt>
-            <dd><span></span></dd>
-            <dt>
-              class <a href="class_graphics_1_1c_layer_group.html" class="m-doc">Graphics::cLayerGroup</a>
-            </dt>
-            <dd>An implementation of <a href="class_graphics_1_1_i_layer.html" class="m-doc">ILayer</a> that renders a sequence of layers.</dd>
-            <dt>
-              class <a href="class_graphics_1_1c_material_manager.html" class="m-doc">Graphics::cMaterialManager</a>
-            </dt>
-            <dd>The implementation of <a href="class_graphics_1_1_i_material_manager.html" class="m-doc">IMaterialManager</a>; this should only be used for extending and detouring.</dd>
-            <dt>
-              class <a href="class_graphics_1_1c_mesh_data.html" class="m-doc">Graphics::cMeshData</a>
-            </dt>
-            <dd><span></span></dd>
-            <dt>
-              class <a href="class_graphics_1_1c_model_manager.html" class="m-doc">Graphics::cModelManager</a>
-            </dt>
-            <dd>The implementation of <a href="class_graphics_1_1_i_model_manager.html" class="m-doc">IModelManager</a>; this should only be used for extending and detouring.</dd>
-            <dt>
-              class <a href="class_graphics_1_1c_texture_manager.html" class="m-doc">Graphics::cTextureManager</a>
-            </dt>
-            <dd>The implementation of <a href="class_graphics_1_1_i_texture_manager.html" class="m-doc">ITextureManager</a>; this should only be used for extending and detouring.</dd>
-            <dt>
-              class <a href="class_i_o_1_1_shared_pointer.html" class="m-doc">IO::SharedPointer</a>
-            </dt>
-            <dd>Implements a basic ref-counted pointer.</dd>
-            <dt>
-              struct <a href="struct_palettes_1_1_unk_item_frame_message.html" class="m-doc">Palettes::UnkItemFrameMessage</a>
-            </dt>
-            <dd><span></span></dd>
-            <dt>
-              class <a href="class_simulator_1_1c_comm_event.html" class="m-doc">Simulator::cCommEvent</a>
-            </dt>
-            <dd><span></span></dd>
-            <dt>
-              class <a href="class_simulator_1_1c_simulator_system.html" class="m-doc">Simulator::cSimulatorSystem</a>
-            </dt>
-            <dd><span></span></dd>
-            <dt>
-              class <a href="class_simulator_1_1c_strategy.html" class="m-doc">Simulator::cStrategy</a>
-            </dt>
-            <dd><span></span></dd>
-            <dt>
-              class <a href="class_simulator_1_1_enter_editor_message.html" class="m-doc">Simulator::EnterEditorMessage</a>
-            </dt>
-            <dd><span></span></dd>
-            <dt>
-              class <a href="class_simulator_1_1_i_simulator_serializable_ref_counted.html" class="m-doc">Simulator::ISimulatorSerializableRefCounted</a>
-            </dt>
-            <dd><span></span></dd>
-            <dt>
-              class <a href="class_swarm_1_1c_effects_manager.html" class="m-doc">Swarm::cEffectsManager</a>
-            </dt>
-            <dd><span></span></dd>
-            <dt>
-              class <a href="class_swarm_1_1c_effects_world.html" class="m-doc">Swarm::cEffectsWorld</a>
-            </dt>
-            <dd><span></span></dd>
-            <dt>
-              class <a href="class_swarm_1_1_effect_directory.html" class="m-doc">Swarm::EffectDirectory</a>
-            </dt>
-            <dd>An <a href="class_swarm_1_1_effect_directory.html" class="m-doc">EffectDirectory</a> is a file that contains one or multiple effect declarations.</dd>
+            <dd>Base class for all objects that are used inside a <a href="class_simulator_1_1c_object_pool.html" class="m-doc">cObjectPool</a>.</dd>
           </dl>
         </section>
-        <section id="typeless-methods">
-          <h2><a href="#typeless-methods">Constructors, destructors, conversion operators</a></h2>
+        <section id="pub-attribs">
+          <h2><a href="#pub-attribs">Public variables</a></h2>
           <dl class="m-doc">
-            <dt id="abd985574d8d16e2c11fd5e65ca263883">
-              <span class="m-doc-wrap-bumper"><a href="#abd985574d8d16e2c11fd5e65ca263883" class="m-doc-self">~IVirtual</a>(</span><span class="m-doc-wrap">) <span class="m-label m-flat m-warning">virtual</span></span>
+            <dt id="a96643766710ff3940d210704f19f9c79">
+              <a href="namespace_simulator.html#ab12c1aef8e3dbcd4556eb52a3460aac6" class="m-doc">cObjectPoolIndex</a> <a href="#a96643766710ff3940d210704f19f9c79" class="m-doc-self">mCellIndex</a>
+            </dt>
+            <dd>Index to the cell object in <a href="class_simulator_1_1_cell_1_1c_cell_game.html#a7a299f1a69a9fc77aa618a118234efba" class="m-doc">cCellGame::<wbr />mCells</a> that this object represents.</dd>
+            <dt id="a6da6db10c66bdb9babcf543ea4146b31">
+              int <a href="#a6da6db10c66bdb9babcf543ea4146b31" class="m-doc-self">field_10</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a700785bb091d78c617fb324652098a45">
+              <a href="struct_simulator_1_1_cell_1_1c_cell_data_reference.html" class="m-doc">cCellDataReference</a>&lt;<a href="struct_simulator_1_1_cell_1_1c_cell_structure_resource.html" class="m-doc">cCellStructureResource</a>&gt;* <a href="#a700785bb091d78c617fb324652098a45" class="m-doc-self">mpStructure</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a10754eba618c4570fa6469ca0f9e13d5">
+              <a href="class_anim_1_1_animated_creature.html" class="m-doc">Anim::<wbr />AnimatedCreature</a>* <a href="#a10754eba618c4570fa6469ca0f9e13d5" class="m-doc-self">mpAnimatedCreature</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="adad3270b6dd2b12e6e538517c28e09e6">
+              <a href="_model_8h.html#a4695930ef0d84e11d31379e623af5732" class="m-doc">ModelPtr</a> <a href="#adad3270b6dd2b12e6e538517c28e09e6" class="m-doc-self">mpModel</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="aca687536067f8d0c3840f630da86452c">
+              void* <a href="#aca687536067f8d0c3840f630da86452c" class="m-doc-self">mStructureGFXs</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="af2f5da0f8ac77b4b273a087e1664397c">
+              int <a href="#af2f5da0f8ac77b4b273a087e1664397c" class="m-doc-self">mNumStructureGFX</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="ab0fea0fba6e816350f1ced6dab298315">
+              float <a href="#ab0fea0fba6e816350f1ced6dab298315" class="m-doc-self">field_58</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="ad9933c16437f54cb495b6ead078f79bb">
+              bool <a href="#ad9933c16437f54cb495b6ead078f79bb" class="m-doc-self">field_5C</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="aaea13e5814cf4a433758090987ea0040">
+              <a href="_object_8h.html#a364c2967a9338c07ddc9a3d507389b5d" class="m-doc">ObjectPtr</a> <a href="#aaea13e5814cf4a433758090987ea0040" class="m-doc-self">field_60</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a547351dae8faedb31c5cdcc6a45e0bb2">
+              <a href="_object_8h.html#a364c2967a9338c07ddc9a3d507389b5d" class="m-doc">ObjectPtr</a> <a href="#a547351dae8faedb31c5cdcc6a45e0bb2" class="m-doc-self">field_8C</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="ae55ed43c501d7fe1414764a68f7e757d">
+              <a href="_object_8h.html#a364c2967a9338c07ddc9a3d507389b5d" class="m-doc">ObjectPtr</a> <a href="#ae55ed43c501d7fe1414764a68f7e757d" class="m-doc-self">field_98</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a57ec434fdbeed6a00c592378521a2e5d">
+              <a href="_object_8h.html#a364c2967a9338c07ddc9a3d507389b5d" class="m-doc">ObjectPtr</a> <a href="#a57ec434fdbeed6a00c592378521a2e5d" class="m-doc-self">field_9C</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a8fc9b9a7f38dd0b3a94f90d38da04f3f">
+              <a href="_object_8h.html#a364c2967a9338c07ddc9a3d507389b5d" class="m-doc">ObjectPtr</a> <a href="#a8fc9b9a7f38dd0b3a94f90d38da04f3f" class="m-doc-self">field_A0</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="aa2fb38b746a1cdcde64d68582b159971">
+              <a href="_object_8h.html#a364c2967a9338c07ddc9a3d507389b5d" class="m-doc">ObjectPtr</a> <a href="#aa2fb38b746a1cdcde64d68582b159971" class="m-doc-self">field_A4</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a763969fa0072d7d3c3a07e8cd459347b">
+              <a href="_object_8h.html#a364c2967a9338c07ddc9a3d507389b5d" class="m-doc">ObjectPtr</a> <a href="#a763969fa0072d7d3c3a07e8cd459347b" class="m-doc-self">field_A8</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="aecaec4e15c3d2faf1566eb7ebf9c340e">
+              int <a href="#aecaec4e15c3d2faf1566eb7ebf9c340e" class="m-doc-self">field_C4</a>
             </dt>
             <dd><span></span></dd>
           </dl>
