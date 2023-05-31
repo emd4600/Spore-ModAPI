@@ -30,5 +30,6 @@
 #include <Spore\App\ICameraManager.h>
 #include <Spore\App\DefaultCamera.h>
 #include <Spore\App\cViewer.h>
+#include <Spore\App\cMouseCamera.h>
 #include <Spore\Simulator\SubSystem\GameModeManager.h>
 #include <Spore\CommonIDs.h>
