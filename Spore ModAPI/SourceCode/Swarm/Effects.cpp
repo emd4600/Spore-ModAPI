@@ -19,6 +19,7 @@
 ****************************************************************************/
 
 #include <Spore\Swarm\Components\VisualEffect.h>
+#include <Spore\Swarm\IEffectMap.h>
 
 namespace Swarm
 {
@@ -45,6 +46,22 @@ namespace Swarm
 			, blockIndex(-1)
 		{
 		}
+	}
+
+
+	//// cEffectMapBase ////
+
+	cEffectMapBase::~cEffectMapBase() {}
+	void cEffectMapBase::Start() {}
+	void cEffectMapBase::Finish() {}
+	int cEffectMapBase::ModificationCount() { return 0; }
+	float cEffectMapBase::Height(const Math::Vector3&) { return 1.0f; }
+	Math::Vector3 cEffectMapBase::Normal(const Math::Vector3&) { return { 0.0f, 0.0f, 1.0f }; }
+	Math::Vector3 cEffectMapBase::Velocity(const Math::Vector3&) { return { 0.0f, 0.0f, 1.0f }; }
+
+	Math::ColorRGBA cEffectMapBase::ColorAlpha(void* unk) {
+		typedef float(__thiscall*UnkVftableFunction_t)(void*);
+		return { 1.0f, 1.0f, 1.0f, (*(*((UnkVftableFunction_t**)unk) + 8))(unk)};
 	}
 }
 #endif
