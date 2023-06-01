@@ -3,17 +3,10 @@
 #include <Spore\Simulator\Cell\cCellGFX.h>
 #include <Spore\Simulator\Cell\cCellGame.h>
 #include <Spore\Simulator\Cell\cCellUI.h>
+#include <Spore\Simulator\Cell\CellFunctions.h>
 
 namespace Simulator
 {
-	auto_STATIC_METHOD_(Cell, Cell::cCellGlobalsResource*, GetGlobalsData);
-
-	auto_STATIC_METHOD(Cell, uint32_t, GetCurrentAdvectInfo,
-		Args(CellStageScale& dst0, float& dstStrength, float& dstVariance, float& dstPeriod),
-		Args(dst0, dstStrength, dstVariance, dstPeriod));
-
-	auto_STATIC_METHOD_(Cell, uint32_t, GetNextAdvectID);
-
 	namespace Cell
 	{
 		GoalCard* GetGoalCards() {
@@ -27,6 +20,38 @@ namespace Simulator
 			mCounter--;
 		}
 
+		cCellObjectData* GetPlayerCell() {
+			return CellGame.mCells.Get(CellGame.mAvatarCellIndex);
+		}
+
+		auto_STATIC_METHOD_(Cell, Cell::cCellGlobalsResource*, GetGlobalsData);
+
+		auto_STATIC_METHOD(Cell, uint32_t, GetCurrentAdvectInfo,
+			Args(CellStageScale& dst0, float& dstStrength, float& dstVariance, float& dstPeriod),
+			Args(dst0, dstStrength, dstVariance, dstPeriod));
+
+		auto_STATIC_METHOD_(Cell, uint32_t, GetNextAdvectID);
+
+		auto_STATIC_METHOD(Cell, cObjectPoolIndex, CreateCellObject,
+			Args(cCellQueryLinkedPool* a1, const Math::Vector3& a2, float a3, cCellDataReference<cCellCellResource>* a4, CellStageScale a5, float a6, float a7, bool a8, Math::Quaternion* a9, int a10),
+			Args(a1, a2, a3, a4, a5, a6, a7, a8, a9, a10));
+
+		auto_STATIC_METHOD_VOID(Cell, MovePlayerToMousePosition,
+			Args(float a0), Args(a0));
+
+		auto_STATIC_METHOD(Cell, ScaleDifference, GetScaleDifferenceWithPlayer,
+			Args(cCellObjectData* a0), Args(a0));
+
+		auto_STATIC_METHOD(Cell, bool, ShouldNotAttack,
+			Args(cCellObjectData* a0, cCellObjectData* a1), Args(a0, a1));
+
+		auto_STATIC_METHOD(Cell, int, GetDamageAmount,
+			Args(cCellObjectData* a0, cCellObjectData* a1), Args(a0, a1));
+
+		auto_STATIC_METHOD(Cell, int, FindCellsInRadius,
+			Args(cCellQueryLinkedPool* a0, const Math::Vector3& a1, float a2, cObjectPoolIndex* a3, int a4, void* a5),
+			Args(a0, a1, a2, a3, a4, a5));
+
 		//// cCellGame ////
 
 		cCellGame* cCellGame::Get()
@@ -35,19 +60,6 @@ namespace Simulator
 		}
 
 		auto_STATIC_METHOD_VOID_(cCellGame, Initialize);
-
-		auto_STATIC_METHOD(cCellGame, cObjectPoolIndex, CreateCellObject,
-			Args(int a1, const Math::Vector3& a2, int a3, cCellDataReference<cCellCellResource>* a4, int a5, float a6, float a7, int a8, int a9, int a10),
-			Args(a1, a2, a3, a4, a5, a6, a7, a8, a9, a10));
-
-		auto_STATIC_METHOD_VOID(cCellGame, MovePlayerToMousePosition,
-			Args(float a0), Args(a0));
-
-		auto_STATIC_METHOD(cCellGame, ScaleDifference, GetScaleDifferenceWithPlayer,
-			Args(cCellObjectData* a0), Args(a0));
-
-		auto_STATIC_METHOD(cCellGame, bool, ShouldNotAttack,
-			Args(cCellObjectData* a0, cCellObjectData* a1), Args(a0, a1));
 
 
 		//// cCellGFX ////
@@ -89,6 +101,18 @@ namespace Simulator
 			Args(a1, a2, a3, a4));
 
 		auto_STATIC_METHOD_VOID_(cCellGFX, LoadEffectMap);
+
+		auto_STATIC_METHOD(cCellGFX, Swarm::IVisualEffect* , InstanceEffectOnCell,
+			Args(cCellObjectData* cell, uint32_t effectID),
+			Args(cell, effectID));
+
+		Math::BoundingBox& cCellGFX::GetVisibleBackgroundBBox() {
+			return *(Math::BoundingBox*)GetAddress(cCellGFX, sVisibleBackgroundBBox_ptr);
+		}
+
+		Graphics::cFrustumCull& cCellGFX::GetFrustumCull() {
+			return *(Graphics::cFrustumCull*)GetAddress(cCellGFX, sFrustumCull_ptr);
+		}
 
 		//// cCellUI ////
 

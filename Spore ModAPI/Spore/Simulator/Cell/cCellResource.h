@@ -257,16 +257,6 @@ namespace Simulator
 
 		struct cCellCellResource
 		{
-			enum class Medium : int
-			{
-				Null = -1,
-				None = 0,
-				Liquid = 3,
-				Rock = 1,
-				Solid = 2,
-				Air = 4
-			};
-
 			struct cAIData
 			{
 				enum class Type : int
@@ -300,6 +290,15 @@ namespace Simulator
 					CilliaJet = 6,
 					FlagellaCilliaJet = 7
 				};
+				enum class FoodType : int
+				{
+					Null = -1,
+					None = 0,
+					Liquid = 3,
+					Rock = 1,
+					Solid = 2,
+					Air = 4
+				};
 
 				/* 00h */	Type type;
 				/* 04h */	float awarenessRadius;
@@ -327,7 +326,7 @@ namespace Simulator
 				/* 5Ch */	int numArcs;
 				/* 60h */	cCellCellResource* keyTransformation;
 				/* 64h */	cCellCellResource* keyProjectile;
-				/* 68h */	Medium food;
+				/* 68h */	FoodType food;
 				/* 6Ch */	int growCount;
 				/* 70h */	int digestionCount;
 				/* 74h */	float digestionTime;
@@ -370,6 +369,17 @@ namespace Simulator
 			};
 			ASSERT_SIZE(cEatData, 12);
 
+			enum class CellType : int
+			{
+				None = 0,
+				Liquid = 3,
+				Rock = 1,
+				Solid = 2,
+				Air = 4,
+				Poison = 5,
+				Nanite = 7,
+				Unlock = 6
+			};
 			enum class Sound : int
 			{
 				None = 0,
@@ -406,7 +416,7 @@ namespace Simulator
 			/* A8h */	int hp;
 			/* ACh */	bool fixedOrientation;
 			/* B0h */	int flags;
-			/* B4h */	Medium cellType;
+			/* B4h */	CellType cellType;
 			/* B8h */	UnlockType unlockType;
 			/* BCh */	Density density;
 			/* C0h */	Sound sound;
@@ -425,7 +435,7 @@ namespace Simulator
 			/* 301h */	bool wontAttackPlayerWhenSmall;
 			/* 304h */	float size[2];
 			/* 30Ch */	cEatData eat;
-			/* 318h */	boolean triggersEscapeMission;
+			/* 318h */	bool triggersEscapeMission;
 		};
 		ASSERT_SIZE(cCellCellResource, 0x31C);
 

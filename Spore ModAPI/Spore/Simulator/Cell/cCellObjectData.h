@@ -9,12 +9,15 @@ namespace Simulator
 {
 	namespace Cell
 	{
+		struct cCellQueryLinkedPool;
+
 		struct cCellObjectData 
 			: public cObjectPoolClass
 		{
 			//TODO 224h 230h 238h are related with chaseTime; check sub_E57E90 
 
 			/* 04h */	bool mIsIdle;
+			/// Target position, changing this moves the cell towards the target
 			/* 08h */	Math::Vector3 mTargetPosition;
 			/* 14h */	Math::Quaternion mTargetOrientation;
 			/* 24h */	Math::Vector3 field_24;
@@ -23,7 +26,8 @@ namespace Simulator
 			/* 40h */	int field_40;
 			/* 44h */	float field_44;
 			/* 48h */	Transform mTransform;
-			/* 80h */	float field_80;
+			/// Elevation of the cell relative to the current level
+			/* 80h */	float mRelativeElevation;
 			/* 84h */	Math::Vector3 field_84;
 			/* 90h */	Math::Vector3 field_90;
 			/* 9Ch */	int field_9C;
@@ -32,7 +36,7 @@ namespace Simulator
 			/* A8h */	float field_A8;
 			/* ACh */	float field_AC;
 			/* B0h */	int field_B0;
-			/* B4h */	float mSize;
+			/* B4h */	float mTargetSize;
 			/* B8h */	float field_B8;
 			/* BCh */	float field_BC;
 			/* C0h */	Transform field_C0;
@@ -41,7 +45,7 @@ namespace Simulator
 			/* 108h */	cCellDataReference<cCellCellResource>* mCellResource;
 			/* 10Ch */	int field_10C;
 			/* 110h */	bool field_110;
-			/* 111h */	bool field_111;
+			/* 111h */	bool mIsInvulnerable;
 			/* 112h */	bool field_112;
 			/* 113h */	bool field_113;
 			/* 114h */	int field_114;
@@ -114,8 +118,10 @@ namespace Simulator
 			/* 238h */	int field_238;
 			/* 23Ch */	int field_23C;
 			/* 240h */	int field_240;
+			/// Current health points of the cell, the maximum is 6.
 			/* 244h */	int mHealthPoints;
-			/* 248h */	int field_248;
+			/// Index to the object in cCellGFX::mCellGFXObjects that visually represents this cell (its model, animated creature, etc.)
+			/* 248h */	cObjectPoolIndex mGFXObjectIndex;
 			/* 24Ch */	int field_24C;
 			/* 250h */	int field_250;
 			/* 254h */	int field_254;
@@ -185,7 +191,7 @@ namespace Simulator
 			/* 354h */	bool field_354;
 			/// Level of the cell, -1 for the player
 			/* 358h */	CellStageScale mScale;
-			/* 35Ch */	int field_35C;
+			/* 35Ch */	cCellQueryLinkedPool* mpQuery;
 			/* 360h */	void* field_360;
 			/* 364h */	int field_364;
 			/* 368h */	float field_368;

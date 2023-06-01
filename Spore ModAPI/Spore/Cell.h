@@ -6,6 +6,7 @@
 #include <Spore\Simulator\Cell\cCellObjectData.h>
 #include <Spore\Simulator\Cell\cCellResource.h>
 #include <Spore\Simulator\Cell\cCellSerialiazibleData.h>
+#include <Spore\Simulator\Cell\CellFunctions.h>
 
 /// @namespace Simulator::Cell
 ///
@@ -20,4 +21,55 @@
 /// Most of cell stage is defined thorugh several files: `.effectMap`, `.cell`, `.lootTable`, etc. 
 /// All these files have their representation in code as Simulator::Cell::cCellEffectMapResource, Simulator::Cell::cCellCellResource, etc
 /// The main file is `CellGame.globals`, which can be obtained in code with Simulator::Cell::GetGlobalsData()
+/// 
+/// Everything you see in the cell stage is considered a "cell", including rocks, bubbles, poison and food.
+/// Cells are represented by the Simulator::Cell::, and are stored in the Simulator::Cell::cCellGame::mCells object pool.
+/// Every cell is backed by a `.cell` file (Simulator::Cell::cCellCellResource) that defines all its properties, such as 
+/// AI configuration, model, etc.
+/// 
+/// For many of the cells actions, it is just enough to change a variable to see changes, as the cell stage update method
+/// takes care of the rest. Such values are `mTargetPosition`, `mTargetOrientation`, `mTargetOpacity`, `mTargetSize`, etc.
+/// For example, changing `mTargetPosition` and setting `mIsIdle` to false, will not teleport the cell but make it swim
+/// towards the target position instead.
+/// 
+/// ## Code examples
+/// 
+/// Moving the player cell 10 units to the right. This does not teleport it immediately, but it makes it swim towards there.
+/// ```cpp
+/// auto cell = Simulator::Cell::GetPlayerCell();
+/// cell->mTargetPosition.x += 10.0f;
+/// cell->mIsIdle = false;
+/// ```
+/// 
+/// Creating a cell next to the player:
+/// ```cpp
+/// auto player = Simulator::Cell::GetPlayerCell();
+/// auto cellIndex = Simulator::Cell::CreateCellObject(
+/// 	CellGame.mpCellQuery,
+/// 	player->mTransform.GetOffset() + Math::Vector3(4.0f, 0.0f, 0.0f),
+/// 	0.0f,
+/// 	player->mCellResource,
+/// 	player->mScale,
+/// 	1.0f,
+/// 	1.0f
+/// );
+/// ```
+/// 
+/// Finding nearby cells and enlarging them:
+/// ```cpp
+/// auto player = Simulator::Cell::GetPlayerCell();
+/// Simulator::cObjectPoolIndex cellIndices[400];
+/// int numCells = Simulator::Cell::FindCellsInRadius(
+/// 	CellGame.mpCellQuery,
+/// 	player->mTransform.GetOffset(),
+/// 	5.0,  // radius of search
+/// 	cellIndices,
+/// 	400);
+/// 
+/// for (int i = 0; i < numCells; i++)
+/// {
+/// 	auto cell = CellGame.mCells.Get(cellIndices[i]);
+/// 	cell->mTargetSize *= 2.0f;
+/// }
+/// ```
 /// 

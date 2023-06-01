@@ -21,6 +21,7 @@
 #include <Spore\Simulator\Cell\cCellObjectData.h>
 #include <Spore\Simulator\Cell\cCelLResource.h>
 #include <Spore\Simulator\Cell\cCellUI.h>
+#include <Spore\Simulator\Cell\CellFunctions.h>
 #include <Spore\Simulator\cCreatureGameData.h>
 #include <Spore\Simulator\cEmpire.h>
 #include <Spore\Simulator\cEnergyRepairToolStrategy.h>
@@ -854,6 +855,14 @@ namespace Simulator
 			DefineAddress(StartDisplay, SelectAddress(0xE55780, 0xE55120));
 			DefineAddress(CreateEffect, SelectAddress(0x628470, 0x628480));
 			DefineAddress(LoadEffectMap, SelectAddress(0xE63AF0, 0xE63560));
+			DefineAddress(InstanceEffectOnCell, SelectAddress(0xE66DE0, 0xE66840));
+#ifndef SDK_TO_GHIDRA
+			DefineAddress(sVisibleBackgroundBBox_ptr, SelectAddress(0x16B7F08, 0x16B3C88));
+			DefineAddress(sFrustumCull_ptr, SelectAddress(0x16B7F38, 0x16B3CB8));
+#else
+			DefineAddress(sVisibleBackgroundBBox, SelectAddress(0x16B7F08, 0x16B3C88));
+			DefineAddress(sFrustumCull, SelectAddress(0x16B7F38, 0x16B3CB8));
+#endif
 		}
 
 		namespace Addresses(cCellUI)
@@ -874,6 +883,12 @@ namespace Simulator
 		DefineAddress(GetGlobalsData, SelectAddress(0xE4D4A0, 0xE4CE20));
 		DefineAddress(GetCurrentAdvectInfo, SelectAddress(0xE594F0, 0xE58EF0));
 		DefineAddress(GetNextAdvectID, SelectAddress(0xE59430, 0xE58E30));
+		DefineAddress(CreateCellObject, SelectAddress(0xE74F60, 0xE74A20));
+		DefineAddress(MovePlayerToMousePosition, SelectAddress(0xE5BD90, 0xE5B790));
+		DefineAddress(GetScaleDifferenceWithPlayer, SelectAddress(0xE57940, 0xE57340));
+		DefineAddress(ShouldNotAttack, SelectAddress(0xE57A60, 0xE57460));
+		DefineAddress(GetDamageAmount, SelectAddress(0xE58F80, 0xE58980));
+		DefineAddress(FindCellsInRadius, SelectAddress(0xE876D0, 0xE87210));
 	}
 
 #ifdef SDK_TO_GHIDRA

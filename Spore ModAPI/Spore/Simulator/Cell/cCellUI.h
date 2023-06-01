@@ -24,6 +24,7 @@
 #include <Spore\LocalizedString.h>
 #include <Spore\Simulator\cObjectPool.h>
 #include <Spore\UTFWin\UILayout.h>
+#include <Spore\UI\cUINewProgressBar.h>
 #include <EASTL\string.h>
 
 #define CellUI (*Simulator::Cell::cCellUI::Get())
@@ -32,7 +33,8 @@ namespace Simulator
 {
 	namespace Cell
 	{
-		struct cCellUIRollover : public cObjectPoolClass
+		struct cCellUIRollover 
+			: public cObjectPoolClass
 		{
 			/* 04h */	cObjectPoolIndex mCellIndex;
 			/* 08h */	float field_8;
@@ -70,7 +72,7 @@ namespace Simulator
 			/* 8Ch */	int field_8C;  // not initialized
 			/// `GlobalUICell-3.spui`
 			/* 90h */	UILayoutPtr mpGlobalUILayout;
-			/* 94h */	int field_94;
+			/* 94h */	cUINewProgressBarPtr mpProgressBar;
 			/* 98h */	int field_98;
 			/// 32 objects of type cCellUIRollover
 			/* 9Ch */	cObjectPool<cCellUIRollover> mRollovers;
@@ -86,7 +88,7 @@ namespace Simulator
 			/* E4h */	bool field_E4;  // not initialized
 			/* E8h */	Math::Vector3 field_E8;  // not initialized
 			/* F4h */	int field_F4;  // not initialized
-			/* F8h */	int field_F8;  // not initialized
+			/* F8h */	float mZoom;  // not initialized
 			/* FCh */	int field_FC;  // not initialized
 			/* 100h */	char field_100[0x800];  // not initialized
 			/* 900h */	int field_900;  // not initialized
