@@ -72,32 +72,6 @@
               <span class="m-doc-wrap-bumper">static void <a href="#aaaa1fda6ff7301bbd0aef38b4fe43a31" class="m-doc-self">Initialize</a>(</span><span class="m-doc-wrap">)</span>
             </dt>
             <dd><span></span></dd>
-            <dt id="ac3bdfaf87d7ccfbea7c9f4e4166d26e5">
-              <span class="m-doc-wrap-bumper">static auto <a href="#ac3bdfaf87d7ccfbea7c9f4e4166d26e5" class="m-doc-self">CreateCellObject</a>(</span><span class="m-doc-wrap">int,
-              const <a href="struct_math_1_1_vector3.html" class="m-doc">Math::<wbr />Vector3</a>&amp; position,
-              int,
-              <a href="struct_simulator_1_1_cell_1_1c_cell_data_reference.html" class="m-doc">cCellDataReference</a>&lt;<a href="struct_simulator_1_1_cell_1_1c_cell_cell_resource.html" class="m-doc">cCellCellResource</a>&gt;*,
-              int,
-              float sizeFactor,
-              float cellSize,
-              int,
-              int,
-              int) -&gt; <a href="namespace_simulator.html#ab12c1aef8e3dbcd4556eb52a3460aac6" class="m-doc">cObjectPoolIndex</a></span>
-            </dt>
-            <dd><span></span></dd>
-            <dt id="a5198c809c58e7c36560e1f353a29c7bc">
-              <span class="m-doc-wrap-bumper">static void <a href="#a5198c809c58e7c36560e1f353a29c7bc" class="m-doc-self">MovePlayerToMousePosition</a>(</span><span class="m-doc-wrap">float deltaTime)</span>
-            </dt>
-            <dd><span></span></dd>
-            <dt>
-              <span class="m-doc-wrap-bumper">static auto <a href="#aef3d343e446e5f09efbd6645508e8a7d" class="m-doc">GetScaleDifferenceWithPlayer</a>(</span><span class="m-doc-wrap"><a href="struct_simulator_1_1_cell_1_1c_cell_object_data.html" class="m-doc">cCellObjectData</a>* otherCell) -&gt; <a href="namespace_simulator_1_1_cell.html#aadbbb8a46e30a48dd8994f517848cea8" class="m-doc">ScaleDifference</a></span>
-            </dt>
-            <dd>Returns scale difference between the given cell and the player cell, telling whether it is smaller, larger or the same scale (level).</dd>
-            <dt>
-              <span class="m-doc-wrap-bumper">static auto <a href="#a190b95a3dfab1d3a1e544256a9ddc420" class="m-doc">ShouldNotAttack</a>(</span><span class="m-doc-wrap"><a href="struct_simulator_1_1_cell_1_1c_cell_object_data.html" class="m-doc">cCellObjectData</a>* cell1,
-              <a href="struct_simulator_1_1_cell_1_1c_cell_object_data.html" class="m-doc">cCellObjectData</a>* cell2) -&gt; bool</span>
-            </dt>
-            <dd>Calculates whether the first cell will or will not attack the second cell.</dd>
           </dl>
         </section>
         <section id="pub-attribs">
@@ -167,12 +141,16 @@
               void* <a href="#a6a3730a3ca5c1b7ef09b0f2db4ba6c93" class="m-doc-self">field_40F8</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="ae6d6abd6dfec99ebc0b3eb34eedcb003">
-              void* <a href="#ae6d6abd6dfec99ebc0b3eb34eedcb003" class="m-doc-self">field_40FC</a>
+            <dt id="a5776deb7d8d7b352f8a2a10c6433e2f9">
+              <a href="struct_simulator_1_1_cell_1_1c_cell_query_linked_pool.html" class="m-doc">cCellQueryLinkedPool</a>* <a href="#a5776deb7d8d7b352f8a2a10c6433e2f9" class="m-doc-self">mpCellQuery</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="ae65fa3bce92df70112c8a1debee9630f">
-              char <a href="#ae65fa3bce92df70112c8a1debee9630f" class="m-doc-self">padding_4100</a>
+            <dt id="ad30fce357bf0202278a9e80be0152bd9">
+              <a href="struct_simulator_1_1_cell_1_1c_cell_query_linked_pool.html" class="m-doc">cCellQueryLinkedPool</a>* <a href="#ad30fce357bf0202278a9e80be0152bd9" class="m-doc-self">mpCellQueryBackground</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a8b229a8b4466937a7dcaa2a00f1a5fcf">
+              char <a href="#a8b229a8b4466937a7dcaa2a00f1a5fcf" class="m-doc-self">padding_4104</a>
             </dt>
             <dd><span></span></dd>
             <dt id="aa6db106c0fd09bf025197d961f02abb6">
@@ -235,60 +213,35 @@
               <a href="c_cell_serialiazible_data_8h.html#a9b88bc11913c5f05f0d3862e24bab890" class="m-doc">cCellSerializableDataPtr</a> <a href="#aa482ed3865c2e54e3c92da40ada8def9" class="m-doc-self">mpSerializableData</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="a5da9debb10d5d5527572b1164f52da29">
-              char <a href="#a5da9debb10d5d5527572b1164f52da29" class="m-doc-self">field_5194</a>
+            <dt id="aa1d3bfa3df81c3acedab17d11e769d1a">
+              char <a href="#aa1d3bfa3df81c3acedab17d11e769d1a" class="m-doc-self">field_5194</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a435258952b39ceefd256e5cf76e1d351">
+              float <a href="#a435258952b39ceefd256e5cf76e1d351" class="m-doc-self">mShowCallMateButtonCountdown</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="ae0e01830dce788c0fe8dee81374a97c6">
+              float <a href="#ae0e01830dce788c0fe8dee81374a97c6" class="m-doc-self">field_51D0</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a25d582fcfef09f0ccb099ac3ef3698da">
+              int <a href="#a25d582fcfef09f0ccb099ac3ef3698da" class="m-doc-self">field_51D4</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a81a28f96a0fdc29639ea2639aae3e8df">
+              int <a href="#a81a28f96a0fdc29639ea2639aae3e8df" class="m-doc-self">field_51D8</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a0f449a641b4edb89d5e6d0f5dbdf3298">
+              int <a href="#a0f449a641b4edb89d5e6d0f5dbdf3298" class="m-doc-self">field_51DC</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a616882006a75897ad3bfe1d536eae4f7">
+              int <a href="#a616882006a75897ad3bfe1d536eae4f7" class="m-doc-self">field_51E0</a>
             </dt>
             <dd><span></span></dd>
           </dl>
-        </section>
-        <section>
-          <h2>Function documentation</h2>
-          <section class="m-doc-details" id="aef3d343e446e5f09efbd6645508e8a7d"><div>
-            <h3>
-              <span class="m-doc-wrap-bumper">static <a href="namespace_simulator_1_1_cell.html#aadbbb8a46e30a48dd8994f517848cea8" class="m-doc">ScaleDifference</a> Simulator::<wbr />Cell::<wbr />cCellGame::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#aef3d343e446e5f09efbd6645508e8a7d" class="m-doc-self">GetScaleDifferenceWithPlayer</a>(</span><span class="m-doc-wrap"><a href="struct_simulator_1_1_cell_1_1c_cell_object_data.html" class="m-doc">cCellObjectData</a>* otherCell)</span></span>
-            </h3>
-            <p>Returns scale difference between the given cell and the player cell, telling whether it is smaller, larger or the same scale (level).</p>
-            <table class="m-table m-fullwidth m-flat">
-              <thead>
-                <tr><th colspan="2">Parameters</th></tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td style="width: 1%">otherCell</td>
-                  <td></td>
-                </tr>
-              </tbody>
-            </table>
-          </div></section>
-          <section class="m-doc-details" id="a190b95a3dfab1d3a1e544256a9ddc420"><div>
-            <h3>
-              <span class="m-doc-wrap-bumper">static bool Simulator::<wbr />Cell::<wbr />cCellGame::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a190b95a3dfab1d3a1e544256a9ddc420" class="m-doc-self">ShouldNotAttack</a>(</span><span class="m-doc-wrap"><a href="struct_simulator_1_1_cell_1_1c_cell_object_data.html" class="m-doc">cCellObjectData</a>* cell1,
-              <a href="struct_simulator_1_1_cell_1_1c_cell_object_data.html" class="m-doc">cCellObjectData</a>* cell2)</span></span>
-            </h3>
-            <p>Calculates whether the first cell will or will not attack the second cell.</p>
-            <table class="m-table m-fullwidth m-flat">
-              <thead>
-                <tr><th colspan="2">Parameters</th></tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td style="width: 1%">cell1</td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <td>cell2</td>
-                  <td></td>
-                </tr>
-              </tbody>
-              <tfoot>
-                <tr>
-                  <th>Returns</th>
-                  <td>True if cell 1 must not attack cell 2, false if it must attack.</td>
-                </tr>
-              </tfoot>
-            </table>
-<p>This returns false when:</p><ul><li>The two cells are the same type (the same <code>.cell</code> file)</li><li><code>field_112</code> is true for any of the cells</li><li><a href="namespace_simulator_1_1_cell.html" class="m-doc">Cell</a> 1 <code>wontAttackPlayerWhenSmall</code> is true, cell 2 is player, and the cell is smaller</li><li><a href="namespace_simulator_1_1_cell.html" class="m-doc">Cell</a> 1 <code>wontAttackPlayer</code> is true and cell 2 is player</li><li>Both cells have the same <code>friendGroup</code> and it&#x27;s not 0</li></ul>
-          </div></section>
         </section>
       </div>
     </div>

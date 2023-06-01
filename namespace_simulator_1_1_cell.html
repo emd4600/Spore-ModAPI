@@ -61,7 +61,31 @@
             </li>
           </ul>
         </div>
-<p>This namespace contains all the functionality of the <a href="namespace_simulator_1_1_cell.html" class="m-doc">Cell</a> stage. The main classes are:</p><ul><li><a href="class_simulator_1_1_cell_1_1c_cell_game.html" class="m-doc">Simulator::<wbr />Cell::<wbr />cCellGame</a>: Used to control cell gameplay. Quick access with CellGame.</li><li><a href="class_simulator_1_1_cell_1_1c_cell_g_f_x.html" class="m-doc">Simulator::<wbr />Cell::<wbr />cCellGFX</a>: Keeps track of the visuals, like models, effects, anim worlds, etc. Quick access with CellGFX.</li><li><a href="class_simulator_1_1_cell_1_1c_cell_u_i.html" class="m-doc">Simulator::<wbr />Cell::<wbr />cCellUI</a>: The user interface. Quick access with CellUI.</li><li><a href="class_app_1_1c_cell_mode_strategy.html" class="m-doc">App::<wbr />cCellModeStrategy</a>: The <a href="class_app_1_1_i_game_mode.html" class="m-doc">App::<wbr />IGameMode</a> for the cell stage. It has the functions for mouse and keyboard controls, and the <code>Update()</code> function where cell stage code is executed.</li></ul><p>Most of cell stage is defined thorugh several files: <code>.effectMap</code>, <code>.cell</code>, <code>.lootTable</code>, etc. All these files have their representation in code as <a href="struct_simulator_1_1_cell_1_1c_cell_effect_map_resource.html" class="m-doc">Simulator::<wbr />Cell::<wbr />cCellEffectMapResource</a>, <a href="struct_simulator_1_1_cell_1_1c_cell_cell_resource.html" class="m-doc">Simulator::<wbr />Cell::<wbr />cCellCellResource</a>, etc The main file is <code>CellGame.globals</code>, which can be obtained in code with <a href="namespace_simulator_1_1_cell.html#a3aec2836dfa13a40071c3db01436b586" class="m-doc">Simulator::<wbr />Cell::<wbr />GetGlobalsData()</a></p>
+<p>This namespace contains all the functionality of the <a href="namespace_simulator_1_1_cell.html" class="m-doc">Cell</a> stage. The main classes are:</p><ul><li><a href="class_simulator_1_1_cell_1_1c_cell_game.html" class="m-doc">Simulator::<wbr />Cell::<wbr />cCellGame</a>: Used to control cell gameplay. Quick access with CellGame.</li><li><a href="class_simulator_1_1_cell_1_1c_cell_g_f_x.html" class="m-doc">Simulator::<wbr />Cell::<wbr />cCellGFX</a>: Keeps track of the visuals, like models, effects, anim worlds, etc. Quick access with CellGFX.</li><li><a href="class_simulator_1_1_cell_1_1c_cell_u_i.html" class="m-doc">Simulator::<wbr />Cell::<wbr />cCellUI</a>: The user interface. Quick access with CellUI.</li><li><a href="class_app_1_1c_cell_mode_strategy.html" class="m-doc">App::<wbr />cCellModeStrategy</a>: The <a href="class_app_1_1_i_game_mode.html" class="m-doc">App::<wbr />IGameMode</a> for the cell stage. It has the functions for mouse and keyboard controls, and the <code>Update()</code> function where cell stage code is executed.</li></ul><p>Most of cell stage is defined thorugh several files: <code>.effectMap</code>, <code>.cell</code>, <code>.lootTable</code>, etc. All these files have their representation in code as <a href="struct_simulator_1_1_cell_1_1c_cell_effect_map_resource.html" class="m-doc">Simulator::<wbr />Cell::<wbr />cCellEffectMapResource</a>, <a href="struct_simulator_1_1_cell_1_1c_cell_cell_resource.html" class="m-doc">Simulator::<wbr />Cell::<wbr />cCellCellResource</a>, etc The main file is <code>CellGame.globals</code>, which can be obtained in code with <a href="namespace_simulator_1_1_cell.html#a3aec2836dfa13a40071c3db01436b586" class="m-doc">Simulator::<wbr />Cell::<wbr />GetGlobalsData()</a></p><p>Everything you see in the cell stage is considered a &quot;cell&quot;, including rocks, bubbles, poison and food. Cells are represented by the <a href="namespace_simulator_1_1_cell.html" class="m-doc">Simulator::<wbr />Cell</a>::, and are stored in the <a href="class_simulator_1_1_cell_1_1c_cell_game.html#a7a299f1a69a9fc77aa618a118234efba" class="m-doc">Simulator::<wbr />Cell::<wbr />cCellGame::<wbr />mCells</a> object pool. Every cell is backed by a <code>.cell</code> file (<a href="struct_simulator_1_1_cell_1_1c_cell_cell_resource.html" class="m-doc">Simulator::<wbr />Cell::<wbr />cCellCellResource</a>) that defines all its properties, such as <a href="namespace_simulator_1_1_a_i.html" class="m-doc">AI</a> configuration, model, etc.</p><p>For many of the cells actions, it is just enough to change a variable to see changes, as the cell stage update method takes care of the rest. Such values are <code>mTargetPosition</code>, <code>mTargetOrientation</code>, <code>mTargetOpacity</code>, <code>mTargetSize</code>, etc. For example, changing <code>mTargetPosition</code> and setting <code>mIsIdle</code> to false, will not teleport the cell but make it swim towards the target position instead.</p><h3>Code examples</h3><p>Moving the player cell 10 units to the right. This does not teleport it immediately, but it makes it swim towards there.</p><pre class="m-code"><span class="k">auto</span><span class="w"> </span><span class="n">cell</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Simulator</span><span class="o">::</span><span class="n">Cell</span><span class="o">::</span><span class="n">GetPlayerCell</span><span class="p">();</span><span class="w"></span>
+<span class="n">cell</span><span class="o">-&gt;</span><span class="n">mTargetPosition</span><span class="p">.</span><span class="n">x</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="mf">10.0f</span><span class="p">;</span><span class="w"></span>
+<span class="n">cell</span><span class="o">-&gt;</span><span class="n">mIsIdle</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">false</span><span class="p">;</span><span class="w"></span></pre><p>Creating a cell next to the player:</p><pre class="m-code"><span class="k">auto</span><span class="w"> </span><span class="n">player</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Simulator</span><span class="o">::</span><span class="n">Cell</span><span class="o">::</span><span class="n">GetPlayerCell</span><span class="p">();</span><span class="w"></span>
+<span class="k">auto</span><span class="w"> </span><span class="n">cellIndex</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Simulator</span><span class="o">::</span><span class="n">Cell</span><span class="o">::</span><span class="n">CreateCellObject</span><span class="p">(</span><span class="w"></span>
+<span class="w">    </span><span class="n">CellGame</span><span class="p">.</span><span class="n">mpCellQuery</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="n">player</span><span class="o">-&gt;</span><span class="n">mTransform</span><span class="p">.</span><span class="n">GetOffset</span><span class="p">()</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">Math</span><span class="o">::</span><span class="n">Vector3</span><span class="p">(</span><span class="mf">4.0f</span><span class="p">,</span><span class="w"> </span><span class="mf">0.0f</span><span class="p">,</span><span class="w"> </span><span class="mf">0.0f</span><span class="p">),</span><span class="w"></span>
+<span class="w">    </span><span class="mf">0.0f</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="n">player</span><span class="o">-&gt;</span><span class="n">mCellResource</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="n">player</span><span class="o">-&gt;</span><span class="n">mScale</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="mf">1.0f</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="mf">1.0f</span><span class="w"></span>
+<span class="p">);</span><span class="w"></span></pre><p>Finding nearby cells and enlarging them:</p><pre class="m-code"><span class="k">auto</span><span class="w"> </span><span class="n">player</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Simulator</span><span class="o">::</span><span class="n">Cell</span><span class="o">::</span><span class="n">GetPlayerCell</span><span class="p">();</span><span class="w"></span>
+<span class="n">Simulator</span><span class="o">::</span><span class="n">cObjectPoolIndex</span><span class="w"> </span><span class="n">cellIndices</span><span class="p">[</span><span class="mi">400</span><span class="p">];</span><span class="w"></span>
+<span class="kt">int</span><span class="w"> </span><span class="n">numCells</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Simulator</span><span class="o">::</span><span class="n">Cell</span><span class="o">::</span><span class="n">FindCellsInRadius</span><span class="p">(</span><span class="w"></span>
+<span class="w">    </span><span class="n">CellGame</span><span class="p">.</span><span class="n">mpCellQuery</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="n">player</span><span class="o">-&gt;</span><span class="n">mTransform</span><span class="p">.</span><span class="n">GetOffset</span><span class="p">(),</span><span class="w"></span>
+<span class="w">    </span><span class="mf">5.0</span><span class="p">,</span><span class="w">  </span><span class="c1">// radius of search</span>
+<span class="w">    </span><span class="n">cellIndices</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="mi">400</span><span class="p">);</span><span class="w"></span>
+
+<span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">numCells</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"></span>
+<span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="k">auto</span><span class="w"> </span><span class="n">cell</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">CellGame</span><span class="p">.</span><span class="n">mCells</span><span class="p">.</span><span class="n">Get</span><span class="p">(</span><span class="n">cellIndices</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span><span class="w"></span>
+<span class="w">    </span><span class="n">cell</span><span class="o">-&gt;</span><span class="n">mTargetSize</span><span class="w"> </span><span class="o">*=</span><span class="w"> </span><span class="mf">2.0f</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span></pre>
         <section id="nested-classes">
           <h2><a href="#nested-classes">Classes</a></h2>
           <dl class="m-doc">
@@ -128,6 +152,18 @@
             <dd><span></span></dd>
             <dt>
               struct <a href="struct_simulator_1_1_cell_1_1c_cell_powers_resource.html" class="m-doc">cCellPowersResource</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              struct <a href="struct_simulator_1_1_cell_1_1c_cell_query_entry.html" class="m-doc">cCellQueryEntry</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              struct <a href="struct_simulator_1_1_cell_1_1c_cell_query_linked_pool.html" class="m-doc">cCellQueryLinkedPool</a>
+            </dt>
+            <dd>Class used to quickly query cell positions.</dd>
+            <dt>
+              struct <a href="struct_simulator_1_1_cell_1_1c_cell_query_linked_pool_data.html" class="m-doc">cCellQueryLinkedPoolData</a>
             </dt>
             <dd><span></span></dd>
             <dt>
@@ -226,21 +262,6 @@
             </dt>
             <dd><span></span></dd>
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#a47ff9ceb57ba54db4ab661f07fea7235" class="m-doc">GetGoalCards</a>(</span><span class="m-doc-wrap">) -&gt; <a href="class_simulator_1_1_goal_card.html" class="m-doc">GoalCard</a>*</span>
-            </dt>
-            <dd><span></span></dd>
-            <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#a5d0df9b051e88d686daa3957a02a7b7e" class="m-doc">GetCurrentAdvectInfo</a>(</span><span class="m-doc-wrap"><a href="namespace_simulator_1_1_cell.html#ac0820b6ceea0935853f94be150b198fc" class="m-doc">CellStageScale</a>&amp; dst0,
-              float&amp; dstStrength,
-              float&amp; dstVariance,
-              float&amp; dstPeriod) -&gt; uint32_t</span>
-            </dt>
-            <dd>Returns the info of the cCellWorldResource::cAdvectInfo of the current world and cell scale, based on the current food progression.</dd>
-            <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#a3525822aff2a49c9cb5df71be0c038f3" class="m-doc">GetNextAdvectID</a>(</span><span class="m-doc-wrap">) -&gt; uint32_t</span>
-            </dt>
-            <dd>Returns the advect file ID for the next cell scale in the current world, based on the current food progression.</dd>
-            <dt>
               <span class="m-doc-wrap-bumper"><a href="#a1c42f178937ee03fbbbe2a583a33f8c6" class="m-doc">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1_cell_1_1c_cell_g_f_x.html" class="m-doc">cCellGFX</a>,
               0x1625C)</span>
             </dt>
@@ -252,6 +273,21 @@
             <dt>
               <span class="m-doc-wrap-bumper"><a href="#aad33406f160fc2722c2b503ba07bbaa3" class="m-doc">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="struct_simulator_1_1_cell_1_1c_cell_object_data.html" class="m-doc">cCellObjectData</a>,
               0x398)</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper"><a href="#ad2506f968a070cea545478d55e9dcd33" class="m-doc">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="struct_simulator_1_1_cell_1_1c_cell_query_entry.html" class="m-doc">cCellQueryEntry</a>,
+              0x1C)</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper"><a href="#a6399506addde224175322d01ae4a5e89" class="m-doc">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="struct_simulator_1_1_cell_1_1c_cell_query_linked_pool_data.html" class="m-doc">cCellQueryLinkedPoolData</a>,
+              0x18)</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper"><a href="#ab95edc15f213540b74c503149860e4c9" class="m-doc">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="struct_simulator_1_1_cell_1_1c_cell_query_linked_pool.html" class="m-doc">cCellQueryLinkedPool</a>,
+              16)</span>
             </dt>
             <dd><span></span></dd>
             <dt>
@@ -382,6 +418,65 @@
               <span class="m-doc-wrap-bumper">auto <a href="#ab8fa4505f9853f92ab87d7d1104970de" class="m-doc">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1_cell_1_1c_cell_u_i.html" class="m-doc">cCellUI</a>) -&gt; namespace</span>
             </dt>
             <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a47ff9ceb57ba54db4ab661f07fea7235" class="m-doc">GetGoalCards</a>(</span><span class="m-doc-wrap">) -&gt; <a href="class_simulator_1_1_goal_card.html" class="m-doc">GoalCard</a>*</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a17a78be303c26b0df2952bf0656bbe67" class="m-doc">GetPlayerCell</a>(</span><span class="m-doc-wrap">) -&gt; <a href="struct_simulator_1_1_cell_1_1c_cell_object_data.html" class="m-doc">cCellObjectData</a>*</span>
+            </dt>
+            <dd>Returns the player cell.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a5d0df9b051e88d686daa3957a02a7b7e" class="m-doc">GetCurrentAdvectInfo</a>(</span><span class="m-doc-wrap"><a href="namespace_simulator_1_1_cell.html#ac0820b6ceea0935853f94be150b198fc" class="m-doc">CellStageScale</a>&amp; dst0,
+              float&amp; dstStrength,
+              float&amp; dstVariance,
+              float&amp; dstPeriod) -&gt; uint32_t</span>
+            </dt>
+            <dd>Returns the info of the cCellWorldResource::cAdvectInfo of the current world and cell scale, based on the current food progression.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a3525822aff2a49c9cb5df71be0c038f3" class="m-doc">GetNextAdvectID</a>(</span><span class="m-doc-wrap">) -&gt; uint32_t</span>
+            </dt>
+            <dd>Returns the advect file ID for the next cell scale in the current world, based on the current food progression.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a02ff3191ca6610d91120442f6c1cb46f" class="m-doc">CreateCellObject</a>(</span><span class="m-doc-wrap"><a href="struct_simulator_1_1_cell_1_1c_cell_query_linked_pool.html" class="m-doc">cCellQueryLinkedPool</a>* query,
+              const <a href="struct_math_1_1_vector3.html" class="m-doc">Math::<wbr />Vector3</a>&amp; position,
+              float elevation,
+              <a href="struct_simulator_1_1_cell_1_1c_cell_data_reference.html" class="m-doc">cCellDataReference</a>&lt;<a href="struct_simulator_1_1_cell_1_1c_cell_cell_resource.html" class="m-doc">cCellCellResource</a>&gt;* resource,
+              <a href="namespace_simulator_1_1_cell.html#ac0820b6ceea0935853f94be150b198fc" class="m-doc">CellStageScale</a> scaleLevel,
+              float sizeFactor,
+              float cellSize,
+              bool applySize = true,
+              <a href="struct_math_1_1_quaternion.html" class="m-doc">Math::<wbr />Quaternion</a>* pTargetOrientation = nullptr,
+              int = 0) -&gt; <a href="namespace_simulator.html#ab12c1aef8e3dbcd4556eb52a3460aac6" class="m-doc">cObjectPoolIndex</a></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">void <a href="#a2781f3d7b70bcb028b30fb82fa1bfa98" class="m-doc">MovePlayerToMousePosition</a>(</span><span class="m-doc-wrap">float deltaTime)</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#abac8cc6f2fb3c6da58262c5651800eae" class="m-doc">GetScaleDifferenceWithPlayer</a>(</span><span class="m-doc-wrap"><a href="struct_simulator_1_1_cell_1_1c_cell_object_data.html" class="m-doc">cCellObjectData</a>* otherCell) -&gt; <a href="namespace_simulator_1_1_cell.html#aadbbb8a46e30a48dd8994f517848cea8" class="m-doc">ScaleDifference</a></span>
+            </dt>
+            <dd>Returns scale difference between the given cell and the player cell, telling whether it is smaller, larger or the same scale (level).</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#ab4208ec856b55f8c7beef8e5bd73260a" class="m-doc">ShouldNotAttack</a>(</span><span class="m-doc-wrap"><a href="struct_simulator_1_1_cell_1_1c_cell_object_data.html" class="m-doc">cCellObjectData</a>* cell1,
+              <a href="struct_simulator_1_1_cell_1_1c_cell_object_data.html" class="m-doc">cCellObjectData</a>* cell2) -&gt; bool</span>
+            </dt>
+            <dd>Calculates whether the first cell will or will not attack the second cell.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#ac4c6ea7e3434e082b6f0ba370f8d969f" class="m-doc">GetDamageAmount</a>(</span><span class="m-doc-wrap"><a href="struct_simulator_1_1_cell_1_1c_cell_object_data.html" class="m-doc">cCellObjectData</a>* attackerCell,
+              <a href="struct_simulator_1_1_cell_1_1c_cell_object_data.html" class="m-doc">cCellObjectData</a>* victimCell) -&gt; int</span>
+            </dt>
+            <dd>Returns how much hp damage the victim cell takes when attacked by another cell.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a0e7d2a254c5512d405a46ab3e43bf53f" class="m-doc">FindCellsInRadius</a>(</span><span class="m-doc-wrap"><a href="struct_simulator_1_1_cell_1_1c_cell_query_linked_pool.html" class="m-doc">cCellQueryLinkedPool</a>* query,
+              const <a href="struct_math_1_1_vector3.html" class="m-doc">Math::<wbr />Vector3</a>&amp; position,
+              float radius,
+              <a href="namespace_simulator.html#ab12c1aef8e3dbcd4556eb52a3460aac6" class="m-doc">cObjectPoolIndex</a>* dst,
+              int dstArraySize,
+              void* dst2 = nullptr) -&gt; int</span>
+            </dt>
+            <dd>Finds all the cells that are within a radius of a specific position.</dd>
           </dl>
         </section>
         <section>
@@ -460,59 +555,6 @@
             </h3>
             <p><span></span></p>
           </div></section>
-          <section class="m-doc-details" id="a47ff9ceb57ba54db4ab661f07fea7235"><div>
-            <h3>
-              <span class="m-doc-wrap-bumper"><a href="class_simulator_1_1_goal_card.html" class="m-doc">GoalCard</a>* Simulator::<wbr />Cell::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a47ff9ceb57ba54db4ab661f07fea7235" class="m-doc-self">GetGoalCards</a>(</span><span class="m-doc-wrap">)</span></span>
-              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="c_cell_game_8h.html">&lt;Spore/Simulator/Cell/cCellGame.h&gt;</a></div>
-            </h3>
-            <p><span></span></p>
-          </div></section>
-          <section class="m-doc-details" id="a5d0df9b051e88d686daa3957a02a7b7e"><div>
-            <h3>
-              <span class="m-doc-wrap-bumper">uint32_t Simulator::<wbr />Cell::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a5d0df9b051e88d686daa3957a02a7b7e" class="m-doc-self">GetCurrentAdvectInfo</a>(</span><span class="m-doc-wrap"><a href="namespace_simulator_1_1_cell.html#ac0820b6ceea0935853f94be150b198fc" class="m-doc">CellStageScale</a>&amp; dst0,
-              float&amp; dstStrength,
-              float&amp; dstVariance,
-              float&amp; dstPeriod)</span></span>
-              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="c_cell_game_8h.html">&lt;Spore/Simulator/Cell/cCellGame.h&gt;</a></div>
-            </h3>
-            <p>Returns the info of the cCellWorldResource::cAdvectInfo of the current world and cell scale, based on the current food progression.</p>
-            <table class="m-table m-fullwidth m-flat">
-              <thead>
-                <tr><th colspan="2">Parameters</th></tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td style="width: 1%">dst0&nbsp;<span class="m-label m-flat m-warning">out</span></td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <td>dstStrength&nbsp;<span class="m-label m-flat m-warning">out</span></td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <td>dstVariance&nbsp;<span class="m-label m-flat m-warning">out</span></td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <td>dstPeriod&nbsp;<span class="m-label m-flat m-warning">out</span></td>
-                  <td></td>
-                </tr>
-              </tbody>
-              <tfoot>
-                <tr>
-                  <th>Returns</th>
-                  <td>The advect file ID</td>
-                </tr>
-              </tfoot>
-            </table>
-          </div></section>
-          <section class="m-doc-details" id="a3525822aff2a49c9cb5df71be0c038f3"><div>
-            <h3>
-              <span class="m-doc-wrap-bumper">uint32_t Simulator::<wbr />Cell::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a3525822aff2a49c9cb5df71be0c038f3" class="m-doc-self">GetNextAdvectID</a>(</span><span class="m-doc-wrap">)</span></span>
-              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="c_cell_game_8h.html">&lt;Spore/Simulator/Cell/cCellGame.h&gt;</a></div>
-            </h3>
-            <p>Returns the advect file ID for the next cell scale in the current world, based on the current food progression.</p>
-          </div></section>
           <section class="m-doc-details" id="a1c42f178937ee03fbbbe2a583a33f8c6"><div>
             <h3>
               <span class="m-doc-wrap-bumper"> Simulator::<wbr />Cell::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a1c42f178937ee03fbbbe2a583a33f8c6" class="m-doc-self">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1_cell_1_1c_cell_g_f_x.html" class="m-doc">cCellGFX</a>,
@@ -533,6 +575,30 @@
               <span class="m-doc-wrap-bumper"> Simulator::<wbr />Cell::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#aad33406f160fc2722c2b503ba07bbaa3" class="m-doc-self">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="struct_simulator_1_1_cell_1_1c_cell_object_data.html" class="m-doc">cCellObjectData</a>,
               0x398)</span></span>
               <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="c_cell_object_data_8h.html">&lt;Spore/Simulator/Cell/cCellObjectData.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="ad2506f968a070cea545478d55e9dcd33"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"> Simulator::<wbr />Cell::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ad2506f968a070cea545478d55e9dcd33" class="m-doc-self">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="struct_simulator_1_1_cell_1_1c_cell_query_entry.html" class="m-doc">cCellQueryEntry</a>,
+              0x1C)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="c_cell_query_linked_pool_8h.html">&lt;Spore/Simulator/Cell/cCellQueryLinkedPool.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="a6399506addde224175322d01ae4a5e89"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"> Simulator::<wbr />Cell::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a6399506addde224175322d01ae4a5e89" class="m-doc-self">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="struct_simulator_1_1_cell_1_1c_cell_query_linked_pool_data.html" class="m-doc">cCellQueryLinkedPoolData</a>,
+              0x18)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="c_cell_query_linked_pool_8h.html">&lt;Spore/Simulator/Cell/cCellQueryLinkedPool.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="ab95edc15f213540b74c503149860e4c9"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"> Simulator::<wbr />Cell::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ab95edc15f213540b74c503149860e4c9" class="m-doc-self">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="struct_simulator_1_1_cell_1_1c_cell_query_linked_pool.html" class="m-doc">cCellQueryLinkedPool</a>,
+              16)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="c_cell_query_linked_pool_8h.html">&lt;Spore/Simulator/Cell/cCellQueryLinkedPool.h&gt;</a></div>
             </h3>
             <p><span></span></p>
           </div></section>
@@ -758,6 +824,182 @@
               <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="c_cell_u_i_8h.html">&lt;Spore/Simulator/Cell/cCellUI.h&gt;</a></div>
             </h3>
             <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="a47ff9ceb57ba54db4ab661f07fea7235"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"><a href="class_simulator_1_1_goal_card.html" class="m-doc">GoalCard</a>* Simulator::<wbr />Cell::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a47ff9ceb57ba54db4ab661f07fea7235" class="m-doc-self">GetGoalCards</a>(</span><span class="m-doc-wrap">)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_cell_functions_8h.html">&lt;Spore/Simulator/Cell/CellFunctions.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="a17a78be303c26b0df2952bf0656bbe67"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"><a href="struct_simulator_1_1_cell_1_1c_cell_object_data.html" class="m-doc">cCellObjectData</a>* Simulator::<wbr />Cell::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a17a78be303c26b0df2952bf0656bbe67" class="m-doc-self">GetPlayerCell</a>(</span><span class="m-doc-wrap">)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_cell_functions_8h.html">&lt;Spore/Simulator/Cell/CellFunctions.h&gt;</a></div>
+            </h3>
+            <p>Returns the player cell.</p>
+          </div></section>
+          <section class="m-doc-details" id="a5d0df9b051e88d686daa3957a02a7b7e"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">uint32_t Simulator::<wbr />Cell::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a5d0df9b051e88d686daa3957a02a7b7e" class="m-doc-self">GetCurrentAdvectInfo</a>(</span><span class="m-doc-wrap"><a href="namespace_simulator_1_1_cell.html#ac0820b6ceea0935853f94be150b198fc" class="m-doc">CellStageScale</a>&amp; dst0,
+              float&amp; dstStrength,
+              float&amp; dstVariance,
+              float&amp; dstPeriod)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_cell_functions_8h.html">&lt;Spore/Simulator/Cell/CellFunctions.h&gt;</a></div>
+            </h3>
+            <p>Returns the info of the cCellWorldResource::cAdvectInfo of the current world and cell scale, based on the current food progression.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">dst0&nbsp;<span class="m-label m-flat m-warning">out</span></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>dstStrength&nbsp;<span class="m-label m-flat m-warning">out</span></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>dstVariance&nbsp;<span class="m-label m-flat m-warning">out</span></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>dstPeriod&nbsp;<span class="m-label m-flat m-warning">out</span></td>
+                  <td></td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>Returns</th>
+                  <td>The advect file ID</td>
+                </tr>
+              </tfoot>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="a3525822aff2a49c9cb5df71be0c038f3"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">uint32_t Simulator::<wbr />Cell::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a3525822aff2a49c9cb5df71be0c038f3" class="m-doc-self">GetNextAdvectID</a>(</span><span class="m-doc-wrap">)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_cell_functions_8h.html">&lt;Spore/Simulator/Cell/CellFunctions.h&gt;</a></div>
+            </h3>
+            <p>Returns the advect file ID for the next cell scale in the current world, based on the current food progression.</p>
+          </div></section>
+          <section class="m-doc-details" id="a02ff3191ca6610d91120442f6c1cb46f"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"><a href="namespace_simulator.html#ab12c1aef8e3dbcd4556eb52a3460aac6" class="m-doc">cObjectPoolIndex</a> Simulator::<wbr />Cell::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a02ff3191ca6610d91120442f6c1cb46f" class="m-doc-self">CreateCellObject</a>(</span><span class="m-doc-wrap"><a href="struct_simulator_1_1_cell_1_1c_cell_query_linked_pool.html" class="m-doc">cCellQueryLinkedPool</a>* query,
+              const <a href="struct_math_1_1_vector3.html" class="m-doc">Math::<wbr />Vector3</a>&amp; position,
+              float elevation,
+              <a href="struct_simulator_1_1_cell_1_1c_cell_data_reference.html" class="m-doc">cCellDataReference</a>&lt;<a href="struct_simulator_1_1_cell_1_1c_cell_cell_resource.html" class="m-doc">cCellCellResource</a>&gt;* resource,
+              <a href="namespace_simulator_1_1_cell.html#ac0820b6ceea0935853f94be150b198fc" class="m-doc">CellStageScale</a> scaleLevel,
+              float sizeFactor,
+              float cellSize,
+              bool applySize = true,
+              <a href="struct_math_1_1_quaternion.html" class="m-doc">Math::<wbr />Quaternion</a>* pTargetOrientation = nullptr,
+              int = 0)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_cell_functions_8h.html">&lt;Spore/Simulator/Cell/CellFunctions.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="a2781f3d7b70bcb028b30fb82fa1bfa98"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">void Simulator::<wbr />Cell::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a2781f3d7b70bcb028b30fb82fa1bfa98" class="m-doc-self">MovePlayerToMousePosition</a>(</span><span class="m-doc-wrap">float deltaTime)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_cell_functions_8h.html">&lt;Spore/Simulator/Cell/CellFunctions.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="abac8cc6f2fb3c6da58262c5651800eae"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"><a href="namespace_simulator_1_1_cell.html#aadbbb8a46e30a48dd8994f517848cea8" class="m-doc">ScaleDifference</a> Simulator::<wbr />Cell::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#abac8cc6f2fb3c6da58262c5651800eae" class="m-doc-self">GetScaleDifferenceWithPlayer</a>(</span><span class="m-doc-wrap"><a href="struct_simulator_1_1_cell_1_1c_cell_object_data.html" class="m-doc">cCellObjectData</a>* otherCell)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_cell_functions_8h.html">&lt;Spore/Simulator/Cell/CellFunctions.h&gt;</a></div>
+            </h3>
+            <p>Returns scale difference between the given cell and the player cell, telling whether it is smaller, larger or the same scale (level).</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">otherCell</td>
+                  <td></td>
+                </tr>
+              </tbody>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="ab4208ec856b55f8c7beef8e5bd73260a"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">bool Simulator::<wbr />Cell::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ab4208ec856b55f8c7beef8e5bd73260a" class="m-doc-self">ShouldNotAttack</a>(</span><span class="m-doc-wrap"><a href="struct_simulator_1_1_cell_1_1c_cell_object_data.html" class="m-doc">cCellObjectData</a>* cell1,
+              <a href="struct_simulator_1_1_cell_1_1c_cell_object_data.html" class="m-doc">cCellObjectData</a>* cell2)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_cell_functions_8h.html">&lt;Spore/Simulator/Cell/CellFunctions.h&gt;</a></div>
+            </h3>
+            <p>Calculates whether the first cell will or will not attack the second cell.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">cell1</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>cell2</td>
+                  <td></td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>Returns</th>
+                  <td>True if cell 1 must not attack cell 2, false if it must attack.</td>
+                </tr>
+              </tfoot>
+            </table>
+<p>This returns false when:</p><ul><li>The two cells are the same type (the same <code>.cell</code> file)</li><li><code>field_112</code> is true for any of the cells</li><li><a href="namespace_simulator_1_1_cell.html" class="m-doc">Cell</a> 1 <code>wontAttackPlayerWhenSmall</code> is true, cell 2 is player, and the cell is smaller</li><li><a href="namespace_simulator_1_1_cell.html" class="m-doc">Cell</a> 1 <code>wontAttackPlayer</code> is true and cell 2 is player</li><li>Both cells have the same <code>friendGroup</code> and it&#x27;s not 0</li></ul>
+          </div></section>
+          <section class="m-doc-details" id="ac4c6ea7e3434e082b6f0ba370f8d969f"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">int Simulator::<wbr />Cell::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ac4c6ea7e3434e082b6f0ba370f8d969f" class="m-doc-self">GetDamageAmount</a>(</span><span class="m-doc-wrap"><a href="struct_simulator_1_1_cell_1_1c_cell_object_data.html" class="m-doc">cCellObjectData</a>* attackerCell,
+              <a href="struct_simulator_1_1_cell_1_1c_cell_object_data.html" class="m-doc">cCellObjectData</a>* victimCell)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_cell_functions_8h.html">&lt;Spore/Simulator/Cell/CellFunctions.h&gt;</a></div>
+            </h3>
+            <p>Returns how much hp damage the victim cell takes when attacked by another cell.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">attackerCell</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>victimCell</td>
+                  <td></td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>Returns</th>
+                  <td>The amount of HP damage.</td>
+                </tr>
+              </tfoot>
+            </table>
+<p>The maximum HP for all cells is 6.</p>
+          </div></section>
+          <section class="m-doc-details" id="a0e7d2a254c5512d405a46ab3e43bf53f"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">int Simulator::<wbr />Cell::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a0e7d2a254c5512d405a46ab3e43bf53f" class="m-doc-self">FindCellsInRadius</a>(</span><span class="m-doc-wrap"><a href="struct_simulator_1_1_cell_1_1c_cell_query_linked_pool.html" class="m-doc">cCellQueryLinkedPool</a>* query,
+              const <a href="struct_math_1_1_vector3.html" class="m-doc">Math::<wbr />Vector3</a>&amp; position,
+              float radius,
+              <a href="namespace_simulator.html#ab12c1aef8e3dbcd4556eb52a3460aac6" class="m-doc">cObjectPoolIndex</a>* dst,
+              int dstArraySize,
+              void* dst2 = nullptr)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_cell_functions_8h.html">&lt;Spore/Simulator/Cell/CellFunctions.h&gt;</a></div>
+            </h3>
+            <p>Finds all the cells that are within a radius of a specific position.</p>
+<p>The caller must provide a buffer where For example, getting all the cells 10 units from the player:</p><pre class="m-code"><span class="n">Math</span><span class="o">::</span><span class="n">Vector3</span><span class="w"> </span><span class="n">position</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Simulator</span><span class="o">::</span><span class="n">Cell</span><span class="o">::</span><span class="n">GetAvatarCell</span><span class="p">()</span><span class="o">-&gt;</span><span class="n">mTransform</span><span class="p">.</span><span class="n">GetOffset</span><span class="p">();</span><span class="w"></span>
+<span class="n">cObjectPoolIndex</span><span class="w"> </span><span class="n">buffer</span><span class="p">[</span><span class="mi">400</span><span class="p">];</span><span class="w"></span>
+<span class="kt">int</span><span class="w"> </span><span class="n">numCells</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Simulator</span><span class="o">::</span><span class="n">Cell</span><span class="o">::</span><span class="n">FindCellsInRadius</span><span class="p">(</span><span class="n">CellGame</span><span class="p">.</span><span class="n">field_40FC</span><span class="p">,</span><span class="w"> </span><span class="n">position</span><span class="p">,</span><span class="w"> </span><span class="mf">10.0f</span><span class="p">,</span><span class="w"> </span><span class="n">buffer</span><span class="p">,</span><span class="w"> </span><span class="mi">400</span><span class="p">);</span><span class="w"></span></pre>
           </div></section>
         </section>
       </div>
