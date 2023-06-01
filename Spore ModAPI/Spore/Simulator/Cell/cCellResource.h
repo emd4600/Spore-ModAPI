@@ -75,12 +75,22 @@ namespace Simulator
 
 			void AddRef();
 			void Release();
+
+			static cCellDataReference_* Create(uint32_t instanceID, CellSerializer* serializer);
 		};
 		ASSERT_SIZE(cCellDataReference_, 0x10);
+
+		namespace Addresses(cCellDataReference_) 
+		{
+			DeclareAddress(Create);  // 0xE829B0 0xE82420
+		}
 
 		template <typename T> struct cCellDataReference 
 			: public cCellDataReference_
 		{
+			static cCellDataReference<T>* Create(uint32_t instanceID) {
+				return (cCellDataReference<T>*)cCellDataReference_::Create(instanceID, T::Serializer());
+			}
 		};
 
 		enum class CellStageScale : int
@@ -110,6 +120,10 @@ namespace Simulator
 
 		struct cCellPowersResource
 		{
+			typedef cCellDataReference<cCellPowersResource> Reference;
+			static const uint32_t TYPE = 0x754BE343;
+			static CellSerializer* Serializer();
+
 			/* 00h */	int teleportCost;
 			/* 04h */	float teleportRange;
 		};
@@ -117,6 +131,10 @@ namespace Simulator
 
 		struct cCellRandomCreatureResource
 		{
+			typedef cCellDataReference<cCellRandomCreatureResource> Reference;
+			static const uint32_t TYPE = 0xF9C3D770;
+			static CellSerializer* Serializer();
+
 			struct cRandomCreatureEntry
 			{
 				enum class Type : int {
@@ -141,6 +159,10 @@ namespace Simulator
 
 		struct cCellStructureResource
 		{
+			typedef cCellDataReference<cCellStructureResource> Reference;
+			static const uint32_t TYPE = 0x4B9EF6DC;
+			static CellSerializer* Serializer();
+
 			struct cSPAttachment
 			{
 				enum class Type : int {
@@ -177,6 +199,10 @@ namespace Simulator
 		struct cCellCellResource;
 		struct cCellPopulateResource
 		{
+			typedef cCellDataReference<cCellPopulateResource> Reference;
+			static const uint32_t TYPE = 0xDA141C1B;
+			static CellSerializer* Serializer();
+
 			struct cMarker
 			{
 				enum class Type : int
@@ -227,6 +253,10 @@ namespace Simulator
 
 		struct cCellWorldResource
 		{
+			typedef cCellDataReference<cCellWorldResource> Reference;
+			static const uint32_t TYPE = 0x9B8E862F;
+			static CellSerializer* Serializer();
+
 			struct cLevelEntry
 			{
 				/* 00h */	cCellDataReference<cCellPopulateResource>* populate;
@@ -257,6 +287,10 @@ namespace Simulator
 
 		struct cCellCellResource
 		{
+			typedef cCellDataReference<cCellCellResource> Reference;
+			static const uint32_t TYPE = 0xDFAD9F51;
+			static CellSerializer* Serializer();
+
 			struct cAIData
 			{
 				enum class Type : int
@@ -441,6 +475,10 @@ namespace Simulator
 
 		struct cCellLootTableResource
 		{
+			typedef cCellDataReference<cCellLootTableResource> Reference;
+			static const uint32_t TYPE = 0xD92AF091;
+			static CellSerializer* Serializer();
+
 			struct cLootTableEntry
 			{
 				enum class Type : int
@@ -474,6 +512,10 @@ namespace Simulator
 
 		struct cCellLookTableResource
 		{
+			typedef cCellDataReference<cCellLookTableResource> Reference;
+			static const uint32_t TYPE = 0x8C042499;
+			static CellSerializer* Serializer();
+
 			struct cLookTableEntry
 			{
 				enum class Type : int
@@ -504,6 +546,10 @@ namespace Simulator
 
 		struct cCellLookAlgorithmResource
 		{
+			typedef cCellDataReference<cCellLookAlgorithmResource> Reference;
+			static const uint32_t TYPE = 0xDBA35AE2;
+			static CellSerializer* Serializer();
+
 			struct cLookAlgorithmEntry
 			{
 				enum class Type : int
@@ -538,6 +584,10 @@ namespace Simulator
 
 		struct cCellEffectMapResource
 		{
+			typedef cCellDataReference<cCellEffectMapResource> Reference;
+			static const uint32_t TYPE = 0x433FB70C;
+			static CellSerializer* Serializer();
+
 			struct cEffectMapEntry
 			{
 				enum class Type : int
@@ -567,6 +617,10 @@ namespace Simulator
 
 		struct cCellBackgroundMapResource
 		{
+			typedef cCellDataReference<cCellBackgroundMapResource> Reference;
+			static const uint32_t TYPE = 0x612B3191;
+			static CellSerializer* Serializer();
+
 			struct cBackgroundMapEntry
 			{
 				/* 00h */	Math::ColorRGB color;
@@ -581,6 +635,10 @@ namespace Simulator
 
 		struct cCellGlobalsResource
 		{
+			typedef cCellDataReference<cCellGlobalsResource> Reference;
+			static const uint32_t TYPE = 0x2A3CE5B7;
+			static CellSerializer* Serializer();
+
 			enum class GameMode : int
 			{
 				_0 = 0,
@@ -701,12 +759,39 @@ namespace Simulator
 
 
 		cCellGlobalsResource* GetGlobalsData();
+
+#ifdef SDK_TO_GHIDRA
+		CellSerializer* sSerializer__lootTable;
+		CellSerializer* sSerializer__cell;
+		CellSerializer* sSerializer__populate;
+		CellSerializer* sSerializer__world;
+		CellSerializer* sSerializer__look_table;
+		CellSerializer* sSerializer__random_creature;
+		CellSerializer* sSerializer__look_algorithm;
+		CellSerializer* sSerializer__backgroundMap;
+		CellSerializer* sSerializer__effectMap;
+		CellSerializer* sSerializer__powers;
+		CellSerializer* sSerializer__globals;
+		CellSerializer* sSerializer__structure;
+#endif
 	}
 
 	namespace Addresses(Cell)
 	{
 		DeclareAddress(GetData);  // 0xE4D2A0 0xE4CBF0
 		DeclareAddress(GetGlobalsData);  // 0xE4D4A0 0xE4CE20
+		DeclareAddress(sSerializer__lootTable);  // 0x16B52A0 0x16B1020
+		DeclareAddress(sSerializer__cell);  // 0x16B1730 0x16AD4B0
+		DeclareAddress(sSerializer__populate);  // 0x16B4D00 0x16B0A80
+		DeclareAddress(sSerializer__world);  // 0x16B1650 0x16AD3D0
+		DeclareAddress(sSerializer__look_table);  // 0x16B1624 0x16AD3A4
+		DeclareAddress(sSerializer__random_creature);  // 0x16B16A8 0x16AD428
+		DeclareAddress(sSerializer__look_algorithm);  // 0x16B52F8 0x16B1078
+		DeclareAddress(sSerializer__backgroundMap);  // 0x16B52CC 0x16B104C
+		DeclareAddress(sSerializer__effectMap);  // 0x16B5000 0x16B0D80
+		DeclareAddress(sSerializer__powers);  // 0x16B4E64 0x16B0BE4
+		DeclareAddress(sSerializer__globals);  // 0x16B4DDC 0x16B0B5C
+		DeclareAddress(sSerializer__structure);  // 0x16B16D4 0x16AD454
 	}
 
 	namespace Cell

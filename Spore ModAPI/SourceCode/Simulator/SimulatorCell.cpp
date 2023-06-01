@@ -20,8 +20,60 @@ namespace Simulator
 			mCounter--;
 		}
 
+		auto_STATIC_METHOD(cCellDataReference_, cCellDataReference_*, Create,
+			Args(uint32_t instanceID, CellSerializer* serializer), Args(instanceID, serializer));
+
+		CellSerializer* cCellLootTableResource::Serializer() {
+			return (CellSerializer*)GetAddress(Cell, sSerializer__lootTable);
+		}
+		CellSerializer* cCellCellResource::Serializer() {
+			return (CellSerializer*)GetAddress(Cell, sSerializer__cell);
+		}
+		CellSerializer* cCellPopulateResource::Serializer() {
+			return (CellSerializer*)GetAddress(Cell, sSerializer__populate);
+		}
+		CellSerializer* cCellWorldResource::Serializer() {
+			return (CellSerializer*)GetAddress(Cell, sSerializer__world);
+		}
+		CellSerializer* cCellLookTableResource::Serializer() {
+			return (CellSerializer*)GetAddress(Cell, sSerializer__look_table);
+		}
+		CellSerializer* cCellRandomCreatureResource::Serializer() {
+			return (CellSerializer*)GetAddress(Cell, sSerializer__random_creature);
+		}
+		CellSerializer* cCellLookAlgorithmResource::Serializer() {
+			return (CellSerializer*)GetAddress(Cell, sSerializer__look_algorithm);
+		}
+		CellSerializer* cCellBackgroundMapResource::Serializer() {
+			return (CellSerializer*)GetAddress(Cell, sSerializer__backgroundMap);
+		}
+		CellSerializer* cCellEffectMapResource::Serializer() {
+			return (CellSerializer*)GetAddress(Cell, sSerializer__effectMap);
+		}
+		CellSerializer* cCellPowersResource::Serializer() {
+			return (CellSerializer*)GetAddress(Cell, sSerializer__powers);
+		}
+		CellSerializer* cCellGlobalsResource::Serializer() {
+			return (CellSerializer*)GetAddress(Cell, sSerializer__globals);
+		}
+		CellSerializer* cCellStructureResource::Serializer() {
+			return (CellSerializer*)GetAddress(Cell, sSerializer__structure);
+		}
+
 		cCellObjectData* GetPlayerCell() {
 			return CellGame.mCells.Get(CellGame.mAvatarCellIndex);
+		}
+
+		bool cCellObjectData::IsCreature() {
+			return mModelKey.instanceID != 0;
+		}
+
+		bool cCellObjectData::IsPlayer() {
+			return mObjectPoolIndex == CellGame.mAvatarCellIndex;
+		}
+
+		const Math::Vector3& cCellObjectData::GetPosition() {
+			return mTransform.GetOffset();
 		}
 
 		auto_STATIC_METHOD_(Cell, Cell::cCellGlobalsResource*, GetGlobalsData);

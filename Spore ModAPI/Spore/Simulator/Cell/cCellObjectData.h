@@ -1,6 +1,7 @@
 #pragma once
 
 #include <Spore\Simulator\Cell\cCellResource.h>
+#include <Spore\Simulator\Cell\CellAnimations.h>
 #include <Spore\Simulator\cObjectPool.h>
 #include <Spore\MathUtils.h>
 #include <Spore\Transform.h>
@@ -14,6 +15,19 @@ namespace Simulator
 		struct cCellObjectData 
 			: public cObjectPoolClass
 		{
+			/// Returns true if this cell represents an actual creature,
+			/// and false for everything else (such as rocks, food, bubbles, ...)
+			/// @returns
+			bool IsCreature();
+
+			/// Returns true if this is the player cell.
+			/// @returns
+			bool IsPlayer();
+
+			/// Returns the current position of the cell.
+			/// @returns
+			const Math::Vector3& GetPosition();
+
 			//TODO 224h 230h 238h are related with chaseTime; check sub_E57E90 
 
 			/* 04h */	bool mIsIdle;
@@ -41,6 +55,7 @@ namespace Simulator
 			/* BCh */	float field_BC;
 			/* C0h */	Transform field_C0;
 			/* F8h */	int field_F8;
+			/// Key of the main model used, this is 0 for all cells that are not actual creatures.
 			/* FCh */	ResourceKey mModelKey;
 			/* 108h */	cCellDataReference<cCellCellResource>* mCellResource;
 			/* 10Ch */	int field_10C;
@@ -74,7 +89,8 @@ namespace Simulator
 			/* 180h */	int field_180;
 			/* 184h */	int field_184;
 			/* 188h */	int field_188;
-			/* 18Ch */	int field_18C;
+			//TODO requested animation? E6D9D6
+			/* 18Ch */	CellAnimations field_18C;
 			/* 190h */	int field_190;
 			/* 194h */	int field_194;
 			/* 198h */	int field_198;
@@ -83,9 +99,9 @@ namespace Simulator
 			/* 1A4h */	int field_1A4;
 			/* 1A8h */	int field_1A8;
 			/* 1ACh */	int field_1AC;
-			/* 1B0h */	int field_1B0;
-			/* 1B4h */	int field_1B4;
-			/* 1B8h */	int field_1B8;
+			/* 1B0h */	CellAnimations mCurrentAnimation;
+			/* 1B4h */	CellAnimations field_1B4;
+			/* 1B8h */	float field_1B8;
 			/* 1BCh */	int field_1BC;
 			/* 1C0h */	float field_1C0;
 			/* 1C4h */	int field_1C4;
@@ -103,19 +119,23 @@ namespace Simulator
 			/* 1F4h */	int field_1F4;
 			/* 1F8h */	int field_1F8;
 			/* 1FCh */	Math::Vector3 field_1FC;
-			/* 208h */	int field_208;
+			/* 208h */	cObjectPoolIndex field_208;
 			/* 20Ch */	int field_20C;
 			/* 210h */	int field_210;
-			/* 214h */	int field_214;
+			/* 214h */	cObjectPoolIndex field_214;
 			/* 218h */	int field_218;
-			/* 21Ch */	int field_21C;
-			/* 220h */	int field_220;
-			/* 224h */	int field_224;
+			/// How much time is remaining on the current flee from another cell
+			/* 21Ch */	float mFleeCellTime;
+			/// Index of a cell this cell is fleeing
+			/* 220h */	cObjectPoolIndex mFleeCellIndex;
+			/* 224h */	float field_224;  //TODO chase rest time? E57EF2
 			/* 228h */	int field_228;
-			/* 22Ch */	int field_22C;
-			/* 230h */	int field_230;
+			/// Index of a cell this cell is chasing
+			/* 22Ch */	cObjectPoolIndex mChaseCellIndex;
+			/// How much time is remaining on the current chase of another cell
+			/* 230h */	float mChaseCellTime;
 			/* 234h */	float mSpawnTime;
-			/* 238h */	int field_238;
+			/* 238h */	float field_238;
 			/* 23Ch */	int field_23C;
 			/* 240h */	int field_240;
 			/// Current health points of the cell, the maximum is 6.

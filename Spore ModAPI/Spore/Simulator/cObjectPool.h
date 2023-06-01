@@ -12,6 +12,10 @@ namespace Simulator
 	{
 		// Index of this objetc within the pool; for deleted objects, this is the index to the next available space.
 		cObjectPoolIndex mObjectPoolIndex;
+
+		inline cObjectPoolIndex Index() const {
+			return mObjectPoolIndex;
+		}
 	};
 
 	/// Stores a pool of objects whose memory can be reused efficiently, without need for heap allocations.
