@@ -30,6 +30,7 @@
 #include <Spore\Audio\AudioSystem.h>
 #include <Spore\Simulator\cObjectPool.h>
 #include <Spore\Simulator\Cell\cCellResource.h>
+#include <Spore\Simulator\Cell\cCellObjectData.h>
 
 #define CellGFX (*Simulator::Cell::cCellGFX::Get())
 
@@ -84,10 +85,81 @@ namespace Simulator
 			/// @param dst 
 			static void CreateEffect(Swarm::IEffectsWorld* effectsWorld, uint32_t instanceID, uint32_t groupID, IVisualEffectPtr& dst);
 
+			static Swarm::IVisualEffect* InstanceEffectOnCell(cCellObjectData* cell, uint32_t effectID);
+
 			/// Loads and places all the effects from the cCellGlobalsResource::effectMapEntry effect map.
 			static void LoadEffectMap();
 
+			/// Returns the bounding box for the currently visible background.
+			static Math::BoundingBox& GetVisibleBackgroundBBox();
+#ifdef SDK_TO_GHIDRA
+			Math::BoundingBox sVisibleBackgroundBBox;
+#endif
+
+			/// Returns the frustum cull for the currently visible main cell level.
+			static Graphics::cFrustumCull& GetFrustumCull();
+#ifdef SDK_TO_GHIDRA
+			Math::BoundingBox sFrustumCull;
+#endif
+
 		public:
+			struct EffectInstance
+			{
+				/* 00h */	Transform localTransform;
+				/* 38h */	Transform cellTransform;
+				/* 74h */	IVisualEffectPtr effect;
+			};
+			ASSERT_SIZE(EffectInstance, 0x74);
+
+			/// The graphical representation of a cell object: its model, animated creature, etc.
+			struct CellGFXObjectData
+				: public cObjectPoolClass
+			{
+				/* 04h */	int field_04;
+				/* 08h */	int field_08;
+				/// Index to the cell object in cCellGame::mCells that this object represents
+				/* 0Ch */	cObjectPoolIndex mCellIndex;
+				/* 10h */	int field_10;
+				/* 14h */	cCellDataReference<cCellStructureResource>* mpStructure;
+				/* 18h */	int field_18;
+				/* 1Ch */	int field_1C;
+				/* 20h */	int field_20;
+				/* 24h */	Anim::AnimatedCreature* mpAnimatedCreature;
+				/* 28h */	ModelPtr mpModel;
+				// Either Swarm::IVisualEffect*, Graphics::Model*, Anim::AnimatedCreature*
+				/* 2Ch */	void* mStructureGFXs[10];  //TODO how many?
+				/* 54h */	int mNumStructureGFX;
+				/* 58h */	float field_58;
+				/* 5Ch */	bool field_5C;
+				/* 60h */	ObjectPtr field_60;
+				/* 64h */	int field_64;
+				/* 68h */	int field_68;
+				/* 6Ch */	int field_6C;
+				/* 70h */	int field_70;
+				/* 74h */	int field_74;
+				/* 78h */	int field_78;
+				/* 7Ch */	int field_7C;
+				/* 80h */	int field_80;
+				/* 84h */	int field_84;
+				/* 88h */	int field_88;
+				/* 8Ch */	ObjectPtr field_8C;
+				/* 90h */	int field_90;
+				/* 94h */	int field_94;
+				/* 98h */	ObjectPtr field_98;
+				/* 9Ch */	ObjectPtr field_9C;
+				/* A0h */	ObjectPtr field_A0;
+				/* A4h */	ObjectPtr field_A4;
+				/* A8h */	ObjectPtr field_A8;
+				/* ACh */	int field_AC;
+				/* B0h */	int field_B0;
+				/* B4h */	int field_B4;
+				/* B8h */	int field_B8;
+				/* BCh */	int field_BC;
+				/* C0h */	int field_C0;
+				/* C4h */	int field_C4;
+			};
+			ASSERT_SIZE(CellGFXObjectData, 0xC8);
+
 			/* 00h */	eastl::vector<ModelPtr> mPreloadedModels;
 			/* 14h */	eastl::vector<TexturePtr> mPreloadedTextures;
 			/* 28h */	eastl::vector<Anim::AnimatedCreature*> mPreloadedCreatures;
@@ -103,7 +175,8 @@ namespace Simulator
 			/* 15Ch */	int field_15C;
 			/* 160h */	IVisualEffectPtr mpDoFDistortEffect;
 			/* 164h */	int field_164;
-			/* 168h */	cObjectPool_ field_168;
+			/// 256 objects of size 0xC8
+			/* 168h */	cObjectPool<CellGFXObjectData> mCellGFXObjects;
 			/* 184h */	eastl::fixed_vector<int, 22528> field_184;
 			/* 1619Ch */	int field_1619C;  // not initialized
 			/* 161A0h */	ILightingWorldPtr mpLightingWorld;
@@ -121,10 +194,9 @@ namespace Simulator
 			/* 161D0h */	IAnimWorldPtr mpAnimWorld;
 			/* 161D4h */	IEffectsWorldPtr mpForegroundEffectWorld;
 			/* 161D8h */	int field_161D8;
-			/* 161DCh */	int field_161DC;
-			/* 161E0h */	int field_161E0;
-			/* 161E4h */	int field_161E4;
-			/* 161E8h */	char padding_161E8[0x16208 - 0x161E8];  // not initialized
+			/// Current effects
+			/* 161DCh */	eastl::vector<EffectInstance> mEffectInstances;
+			/* 161F0h */	char padding_161F0[0x16208 - 0x161F0];  // not initialized
 			/* 16208h */	Audio::AudioTrack mCellMotionAudioTrack;  // not initialized
 			/* 1620Ch */	Audio::AudioTrack mCellgameSeedMusicAudioTrack;  // not initialized
 			/* 16210h */	Audio::AudioTrack mCellAmbAudioTrack;  // not initialized
@@ -152,6 +224,9 @@ namespace Simulator
 			DeclareAddress(StartDisplay);  // 0xE55780 0xE55120
 			DeclareAddress(CreateEffect);  // 0x628470 0x628480
 			DeclareAddress(LoadEffectMap);  // 0xE63AF0 0xE63560
+			DeclareAddress(InstanceEffectOnCell);  // 0xE66DE0 0xE66840
+			DeclareAddress(sVisibleBackgroundBBox_ptr);  // 0x16B7F08 0x16B3C88
+			DeclareAddress(sFrustumCull_ptr);  // 0x16B7F38 0x16B3CB8
 		}
 	}
 }
