@@ -7,6 +7,7 @@
 #include <Spore\Simulator\Cell\cCellResource.h>
 #include <Spore\Simulator\Cell\cCellSerialiazibleData.h>
 #include <Spore\Simulator\Cell\CellFunctions.h>
+#include <Spore\Simulator\Cell\CellAnimations.h>
 
 /// @namespace Simulator::Cell
 ///
@@ -61,15 +62,49 @@
 /// Simulator::cObjectPoolIndex cellIndices[400];
 /// int numCells = Simulator::Cell::FindCellsInRadius(
 /// 	CellGame.mpCellQuery,
-/// 	player->mTransform.GetOffset(),
-/// 	5.0,  // radius of search
-/// 	cellIndices,
-/// 	400);
+/// 	player->GetPosition(), 5.0,  // center and radius of search
+/// 	cellIndices, 400);
 /// 
 /// for (int i = 0; i < numCells; i++)
 /// {
 /// 	auto cell = CellGame.mCells.Get(cellIndices[i]);
 /// 	cell->mTargetSize *= 2.0f;
 /// }
+/// ```
+/// 
+/// Make nearby cells chase the player:
+/// ```cpp
+/// auto player = Simulator::Cell::GetPlayerCell();
+/// 
+/// Simulator::cObjectPoolIndex cellIndices[400];
+/// int numCells = Simulator::Cell::FindCellsInRadius(
+/// 	CellGame.mpCellQuery,
+/// 	player->GetPosition(), 20.0,  // center and radius of search
+/// 	cellIndices, 400);
+/// 
+/// for (int i = 0; i < numCells; i++)
+/// {
+/// 	auto cell = CellGame.mCells.Get(cellIndices[i]);
+/// 	if (cell->IsCreature()) {
+/// 		cell->mChaseCellTime = 10.0f;
+/// 		cell->mChaseCellIndex = player->Index();
+///			// If we don't disable this, fleeing cells will not chase us
+///			cell->mFleeCellTime = 0.0f;
+///			cell->mFleeCellIndex = 0;
+/// 	}
+/// }
+/// ```
+/// 
+/// Read data from a `.cell` file:
+/// ```cpp
+/// // Declare this as a static variable
+/// Simulator::Cell::cCellCellResource::Reference* sCellChomperReference;
+/// 
+/// // In the initialize method, choose which `.cell` file we are reading
+/// sCellChomperReference = Simulator::Cell::cCellCellResource::Reference::Create(id("cell_chomper"));
+/// 
+/// // To use the data
+/// cCellCellResourcePtr cellResource;
+/// auto cellData = Simulator::Cell::GetData(sCellChomperReference, cellResource);
 /// ```
 /// 

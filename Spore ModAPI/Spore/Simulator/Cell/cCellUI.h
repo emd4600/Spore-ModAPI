@@ -23,6 +23,7 @@
 #include <Spore\Input.h>
 #include <Spore\LocalizedString.h>
 #include <Spore\Simulator\cObjectPool.h>
+#include <Spore\Simulator\Cell\cCellObjectData.h>
 #include <Spore\UTFWin\UILayout.h>
 #include <Spore\UI\cUINewProgressBar.h>
 #include <EASTL\string.h>
@@ -59,6 +60,8 @@ namespace Simulator
 			static cCellUI* Get();
 
 			static void Load();
+
+			static void ShowHealthRollover(cCellObjectData* cell, int initialHealth);
 
 		public:
 			/* 00h */	GameInput mGameInput;
@@ -109,6 +112,7 @@ namespace Simulator
 		{
 			DeclareAddress(_ptr);  // 0x16B7E8C 0x16B3C0C
 			DeclareAddress(Load);  // 0xE548B0 0xE54270
+			DeclareAddress(ShowHealthRollover);  // 0xE628D0 0xE62340
 		}
 	}
 }

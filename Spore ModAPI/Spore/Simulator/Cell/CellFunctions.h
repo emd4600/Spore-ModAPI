@@ -1,6 +1,7 @@
 #pragma once
 
 #include <Spore\Simulator\Cell\cCellGame.h>
+#include <Spore\Simulator\Cell\CellAnimations.h>
 #include <Spore\Simulator\GoalCard.h>
 
 namespace Simulator
@@ -79,6 +80,23 @@ namespace Simulator
 		/// int numCells = Simulator::Cell::FindCellsInRadius(CellGame.field_40FC, position, 10.0f, buffer, 400);
 		/// ```
 		int FindCellsInRadius(cCellQueryLinkedPool* query, const Math::Vector3& position, float radius, cObjectPoolIndex* dst, int dstArraySize, void* dst2 = nullptr);
+
+		/// Makes the cell play an animation.
+		/// @param cell
+		/// @param otherCell
+		/// @param targetAnim
+		/// @param currentAnim
+		void PlayAnimation(cCellObjectData* cell, cCellObjectData* otherCell, CellAnimations targetAnim, CellAnimations currentAnim);
+
+		/// Returns the main model key that must be used for a specific cell definition.
+		/// This looks at the `structure` field of the resource, and finds the first entry that is either:
+		/// - `Creature`: returns the instance ID with `.cll` extension and group 0
+		/// - `RandomCreature`: evaluates the random creature query and returns the key
+		/// - `PlayerCreature`: returns the player model key
+		/// For all other cases, it returns 0.
+		/// @param cellResource
+		/// @returns
+		ResourceKey GetModelKeyForCellResource(cCellDataReference<cCellCellResource>* cellResource);
 	}
 
 	namespace Addresses(Cell) {
@@ -91,5 +109,7 @@ namespace Simulator
 		DeclareAddress(ShouldNotAttack);  // 0xE57A60 0xE57460
 		DeclareAddress(GetDamageAmount);  // 0xE58F80 0xE58980
 		DeclareAddress(FindCellsInRadius);  // 0xE876D0 0xE87210
+		DeclareAddress(PlayAnimation);  // 0xE6D780 0xE6D200
+		DeclareAddress(GetModelKeyForCellResource);  // 0xE65BE0 0xE65640
 	}
 }

@@ -104,6 +104,18 @@ namespace Simulator
 			Args(cCellQueryLinkedPool* a0, const Math::Vector3& a1, float a2, cObjectPoolIndex* a3, int a4, void* a5),
 			Args(a0, a1, a2, a3, a4, a5));
 
+		auto_STATIC_METHOD_VOID(Cell, PlayAnimation,
+			Args(cCellObjectData* cell, cCellObjectData* otherCell, CellAnimations targetAnim, CellAnimations currentAnim),
+			Args(cell, otherCell, targetAnim, currentAnim));
+
+		ResourceKey GetModelKeyForCellResource(cCellDataReference<cCellCellResource>* cellResource)
+		{
+			ResourceKey result;
+			STATIC_CALL(GetAddress(Cell, GetModelKeyForCellResource), void,
+				Args(ResourceKey&, cCellDataReference<cCellCellResource>*), Args(result, cellResource));
+			return result;
+		}
+
 		//// cCellGame ////
 
 		cCellGame* cCellGame::Get()
@@ -174,6 +186,9 @@ namespace Simulator
 		}
 
 		auto_STATIC_METHOD_VOID_(cCellUI, Load);
+
+		auto_STATIC_METHOD_VOID(cCellUI, ShowHealthRollover,
+			Args(cCellObjectData* cell, int initialHealth), Args(cell, initialHealth));
 	}
 }
 

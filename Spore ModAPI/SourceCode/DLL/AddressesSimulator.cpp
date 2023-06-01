@@ -869,11 +869,17 @@ namespace Simulator
 		{
 			DefineAddress(_ptr, SelectAddress(0x16B7E8C, 0x16B3C0C));
 			DefineAddress(Load, SelectAddress(0xE548B0, 0xE54270));
+			DefineAddress(ShowHealthRollover, SelectAddress(0xE628D0, 0xE62340));
 		}
 
 		namespace Addresses(cCellSerializableData)
 		{
 			DefineAddress(_ptr, SelectAddress(0x16B8060, 0x16B3DE0));
+		}
+
+		namespace Addresses(cCellDataReference_)
+		{
+			DefineAddress(Create, SelectAddress(0xE829B0, 0xE82420));
 		}
 	}
 
@@ -881,6 +887,19 @@ namespace Simulator
 	{
 		DefineAddress(GetData, SelectAddress(0xE4D2A0, 0xE4CBF0));
 		DefineAddress(GetGlobalsData, SelectAddress(0xE4D4A0, 0xE4CE20));
+		DefineAddress(sSerializer__lootTable, SelectAddress(0x16B52A0, 0x16B1020));
+		DefineAddress(sSerializer__cell, SelectAddress(0x16B1730, 0x16AD4B0));
+		DefineAddress(sSerializer__populate, SelectAddress(0x16B4D00, 0x16B0A80));
+		DefineAddress(sSerializer__world, SelectAddress(0x16B1650, 0x16AD3D0));
+		DefineAddress(sSerializer__look_table, SelectAddress(0x16B1624, 0x16AD3A4));
+		DefineAddress(sSerializer__random_creature, SelectAddress(0x16B16A8, 0x16AD428));
+		DefineAddress(sSerializer__look_algorithm, SelectAddress(0x16B52F8, 0x16B1078));
+		DefineAddress(sSerializer__backgroundMap, SelectAddress(0x16B52CC, 0x16B104C));
+		DefineAddress(sSerializer__effectMap, SelectAddress(0x16B5000, 0x16B0D80));
+		DefineAddress(sSerializer__powers, SelectAddress(0x16B4E64, 0x16B0BE4));
+		DefineAddress(sSerializer__globals, SelectAddress(0x16B4DDC, 0x16B0B5C));
+		DefineAddress(sSerializer__structure, SelectAddress(0x16B16D4, 0x16AD454));
+
 		DefineAddress(GetCurrentAdvectInfo, SelectAddress(0xE594F0, 0xE58EF0));
 		DefineAddress(GetNextAdvectID, SelectAddress(0xE59430, 0xE58E30));
 		DefineAddress(CreateCellObject, SelectAddress(0xE74F60, 0xE74A20));
@@ -889,6 +908,8 @@ namespace Simulator
 		DefineAddress(ShouldNotAttack, SelectAddress(0xE57A60, 0xE57460));
 		DefineAddress(GetDamageAmount, SelectAddress(0xE58F80, 0xE58980));
 		DefineAddress(FindCellsInRadius, SelectAddress(0xE876D0, 0xE87210));
+		DefineAddress(PlayAnimation, SelectAddress(0xE6D780, 0xE6D200));
+		DefineAddress(GetModelKeyForCellResource, SelectAddress(0xE65BE0, 0xE65640));
 	}
 
 #ifdef SDK_TO_GHIDRA

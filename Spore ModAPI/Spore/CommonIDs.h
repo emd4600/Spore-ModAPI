@@ -151,7 +151,8 @@ namespace TypeIDs
 		powers = 0x754BE343,
 		random_creature = 0xF9C3D770,
 		structure = 0x4B9EF6DC,
-		world = 0x9B8E862F
+		world = 0x9B8E862F,
+		advect = 0x04805684
 	};
 }
 
