@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Simulator::Cell::cCellWorldResource struct | Spore ModAPI SDK for creating C++ mods for Spore</title>
+  <title>Simulator::Cell::cCellQueryLinkedPool struct | Spore ModAPI SDK for creating C++ mods for Spore</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,600,600i%7CSource+Code+Pro:400,400i,600" />
   <link rel="stylesheet" href="m-dark.css" />
   <link rel="stylesheet" href="m-documentation.css" />
@@ -45,92 +45,44 @@
     <div class="m-row">
       <div class="m-col-l-10 m-push-l-1">
         <h1>
-          <span class="m-breadcrumb"><a href="namespace_simulator.html">Simulator</a>::<wbr/></span><span class="m-breadcrumb"><a href="namespace_simulator_1_1_cell.html">Cell</a>::<wbr/></span>cCellWorldResource <span class="m-thin">struct</span>
-          <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="c_cell_resource_8h.html">&lt;Spore/Simulator/Cell/cCellResource.h&gt;</a></div>
+          <span class="m-breadcrumb"><a href="namespace_simulator.html">Simulator</a>::<wbr/></span><span class="m-breadcrumb"><a href="namespace_simulator_1_1_cell.html">Cell</a>::<wbr/></span>cCellQueryLinkedPool <span class="m-thin">struct</span>
+          <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="c_cell_query_linked_pool_8h.html">&lt;Spore/Simulator/Cell/cCellQueryLinkedPool.h&gt;</a></div>
         </h1>
-        <p><span></span></p>
+        <p>Class used to quickly query cell positions.</p>
         <div class="m-block m-default">
           <h3>Contents</h3>
           <ul>
             <li>
               Reference
               <ul>
-                <li><a href="#pub-types">Public types</a></li>
-                <li><a href="#pub-static-attribs">Public static variables</a></li>
-                <li><a href="#pub-static-methods">Public static functions</a></li>
-                <li><a href="#typeless-methods">Constructors, destructors, conversion operators</a></li>
+                <li><a href="#base-classes">Base classes</a></li>
                 <li><a href="#pub-attribs">Public variables</a></li>
               </ul>
             </li>
           </ul>
         </div>
-        <section id="pub-types">
-          <h2><a href="#pub-types">Public types</a></h2>
+        <section id="base-classes">
+          <h2><a href="#base-classes">Base classes</a></h2>
           <dl class="m-doc">
             <dt>
-              struct <a href="struct_simulator_1_1_cell_1_1c_cell_world_resource_1_1c_advect_entry.html" class="m-doc">cAdvectEntry</a>
+              struct <a href="struct_simulator_1_1c_object_pool_class.html" class="m-doc">Simulator::cObjectPoolClass</a>
             </dt>
-            <dd><span></span></dd>
-            <dt>
-              struct <a href="struct_simulator_1_1_cell_1_1c_cell_world_resource_1_1c_level_entry.html" class="m-doc">cLevelEntry</a>
-            </dt>
-            <dd><span></span></dd>
-            <dt id="a3403b0145bd9e902cc5821011f6a3fbd">
-              using <a href="#a3403b0145bd9e902cc5821011f6a3fbd" class="m-doc-self">Reference</a> = <a href="struct_simulator_1_1_cell_1_1c_cell_data_reference.html" class="m-doc">cCellDataReference</a>&lt;<a href="struct_simulator_1_1_cell_1_1c_cell_world_resource.html" class="m-doc">cCellWorldResource</a>&gt;
-            </dt>
-            <dd><span></span></dd>
-          </dl>
-        </section>
-        <section id="pub-static-attribs">
-          <h2><a href="#pub-static-attribs">Public static variables</a></h2>
-          <dl class="m-doc">
-            <dt id="aa45d49ba39638300e90b98f89759ce2b">
-              static const uint32_t <a href="#aa45d49ba39638300e90b98f89759ce2b" class="m-doc-self">TYPE</a>
-            </dt>
-            <dd><span></span></dd>
-          </dl>
-        </section>
-        <section id="pub-static-methods">
-          <h2><a href="#pub-static-methods">Public static functions</a></h2>
-          <dl class="m-doc">
-            <dt id="abcf54517826a83cc8e9b0e00c91e2da7">
-              <span class="m-doc-wrap-bumper">static auto <a href="#abcf54517826a83cc8e9b0e00c91e2da7" class="m-doc-self">Serializer</a>(</span><span class="m-doc-wrap">) -&gt; <a href="struct_simulator_1_1_cell_1_1_cell_serializer.html" class="m-doc">CellSerializer</a>*</span>
-            </dt>
-            <dd><span></span></dd>
-          </dl>
-        </section>
-        <section id="typeless-methods">
-          <h2><a href="#typeless-methods">Constructors, destructors, conversion operators</a></h2>
-          <dl class="m-doc">
-            <dt id="ae75bfb644597a6e28d135a9c9c4e2f13">
-              <span class="m-doc-wrap-bumper"><a href="#ae75bfb644597a6e28d135a9c9c4e2f13" class="m-doc-self">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="struct_simulator_1_1_cell_1_1c_cell_world_resource_1_1c_level_entry.html" class="m-doc">cLevelEntry</a>,
-              12)</span>
-            </dt>
-            <dd><span></span></dd>
-            <dt id="a6a987f8c38efbb350c6fa4ab2e8fc4e5">
-              <span class="m-doc-wrap-bumper"><a href="#a6a987f8c38efbb350c6fa4ab2e8fc4e5" class="m-doc-self">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="struct_simulator_1_1_cell_1_1c_cell_world_resource_1_1c_advect_entry.html" class="m-doc">cAdvectEntry</a>,
-              24)</span>
-            </dt>
-            <dd><span></span></dd>
+            <dd>Base class for all objects that are used inside a <a href="class_simulator_1_1c_object_pool.html" class="m-doc">cObjectPool</a>.</dd>
           </dl>
         </section>
         <section id="pub-attribs">
           <h2><a href="#pub-attribs">Public variables</a></h2>
           <dl class="m-doc">
-            <dt id="aec6cea120fd2d3d047fe82ca4848193b">
-              int <a href="#aec6cea120fd2d3d047fe82ca4848193b" class="m-doc-self">numPopulate</a>
+            <dt id="a71bf5cdde3de5ff2b369be8e664e9146">
+              <a href="struct_simulator_1_1_cell_1_1c_cell_query_linked_pool_data.html" class="m-doc">cCellQueryLinkedPoolData</a>* <a href="#a71bf5cdde3de5ff2b369be8e664e9146" class="m-doc-self">mpData</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="a143db08c64f5cb6d7a6e0d4de445c21e">
-              <a href="struct_simulator_1_1_cell_1_1c_cell_world_resource_1_1c_level_entry.html" class="m-doc">cLevelEntry</a>* <a href="#a143db08c64f5cb6d7a6e0d4de445c21e" class="m-doc-self">populate</a>
+            <dt id="a71f6955b7865dc6de0abdda17909d3e7">
+              <a href="struct_simulator_1_1_cell_1_1c_cell_query_entry.html" class="m-doc">cCellQueryEntry</a>* <a href="#a71f6955b7865dc6de0abdda17909d3e7" class="m-doc-self">mpNextNode</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="a7bd7f2288cf78535ef72aa4f411da405">
-              int <a href="#a7bd7f2288cf78535ef72aa4f411da405" class="m-doc-self">numAdvect</a>
-            </dt>
-            <dd><span></span></dd>
-            <dt id="a0fa7204ec4481a1046dd4cab59ae6e99">
-              <a href="struct_simulator_1_1_cell_1_1c_cell_world_resource_1_1c_advect_entry.html" class="m-doc">cAdvectEntry</a>* <a href="#a0fa7204ec4481a1046dd4cab59ae6e99" class="m-doc-self">advect</a>
+            <dt id="a4c0c1774dbc740b018d243dca96ab478">
+              <a href="struct_simulator_1_1_cell_1_1c_cell_query_entry.html" class="m-doc">cCellQueryEntry</a>* <a href="#a4c0c1774dbc740b018d243dca96ab478" class="m-doc-self">mpToAddNextNode</a>
             </dt>
             <dd><span></span></dd>
           </dl>

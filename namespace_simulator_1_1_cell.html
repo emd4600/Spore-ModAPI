@@ -76,21 +76,49 @@
 <span class="n">Simulator</span><span class="o">::</span><span class="n">cObjectPoolIndex</span><span class="w"> </span><span class="n">cellIndices</span><span class="p">[</span><span class="mi">400</span><span class="p">];</span><span class="w"></span>
 <span class="kt">int</span><span class="w"> </span><span class="n">numCells</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Simulator</span><span class="o">::</span><span class="n">Cell</span><span class="o">::</span><span class="n">FindCellsInRadius</span><span class="p">(</span><span class="w"></span>
 <span class="w">    </span><span class="n">CellGame</span><span class="p">.</span><span class="n">mpCellQuery</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="n">player</span><span class="o">-&gt;</span><span class="n">mTransform</span><span class="p">.</span><span class="n">GetOffset</span><span class="p">(),</span><span class="w"></span>
-<span class="w">    </span><span class="mf">5.0</span><span class="p">,</span><span class="w">  </span><span class="c1">// radius of search</span>
-<span class="w">    </span><span class="n">cellIndices</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="mi">400</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">player</span><span class="o">-&gt;</span><span class="n">GetPosition</span><span class="p">(),</span><span class="w"> </span><span class="mf">5.0</span><span class="p">,</span><span class="w">  </span><span class="c1">// center and radius of search</span>
+<span class="w">    </span><span class="n">cellIndices</span><span class="p">,</span><span class="w"> </span><span class="mi">400</span><span class="p">);</span><span class="w"></span>
 
 <span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">numCells</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"></span>
 <span class="p">{</span><span class="w"></span>
 <span class="w">    </span><span class="k">auto</span><span class="w"> </span><span class="n">cell</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">CellGame</span><span class="p">.</span><span class="n">mCells</span><span class="p">.</span><span class="n">Get</span><span class="p">(</span><span class="n">cellIndices</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span><span class="w"></span>
 <span class="w">    </span><span class="n">cell</span><span class="o">-&gt;</span><span class="n">mTargetSize</span><span class="w"> </span><span class="o">*=</span><span class="w"> </span><span class="mf">2.0f</span><span class="p">;</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span></pre>
+<span class="p">}</span><span class="w"></span></pre><p>Make nearby cells chase the player:</p><pre class="m-code"><span class="k">auto</span><span class="w"> </span><span class="n">player</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Simulator</span><span class="o">::</span><span class="n">Cell</span><span class="o">::</span><span class="n">GetPlayerCell</span><span class="p">();</span><span class="w"></span>
+
+<span class="n">Simulator</span><span class="o">::</span><span class="n">cObjectPoolIndex</span><span class="w"> </span><span class="n">cellIndices</span><span class="p">[</span><span class="mi">400</span><span class="p">];</span><span class="w"></span>
+<span class="kt">int</span><span class="w"> </span><span class="n">numCells</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Simulator</span><span class="o">::</span><span class="n">Cell</span><span class="o">::</span><span class="n">FindCellsInRadius</span><span class="p">(</span><span class="w"></span>
+<span class="w">    </span><span class="n">CellGame</span><span class="p">.</span><span class="n">mpCellQuery</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="n">player</span><span class="o">-&gt;</span><span class="n">GetPosition</span><span class="p">(),</span><span class="w"> </span><span class="mf">20.0</span><span class="p">,</span><span class="w">  </span><span class="c1">// center and radius of search</span>
+<span class="w">    </span><span class="n">cellIndices</span><span class="p">,</span><span class="w"> </span><span class="mi">400</span><span class="p">);</span><span class="w"></span>
+
+<span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">numCells</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"></span>
+<span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="k">auto</span><span class="w"> </span><span class="n">cell</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">CellGame</span><span class="p">.</span><span class="n">mCells</span><span class="p">.</span><span class="n">Get</span><span class="p">(</span><span class="n">cellIndices</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span><span class="w"></span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">cell</span><span class="o">-&gt;</span><span class="n">IsCreature</span><span class="p">())</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="n">cell</span><span class="o">-&gt;</span><span class="n">mChaseCellTime</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">10.0f</span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="n">cell</span><span class="o">-&gt;</span><span class="n">mChaseCellIndex</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">player</span><span class="o">-&gt;</span><span class="n">Index</span><span class="p">();</span><span class="w"></span>
+<span class="w">        </span><span class="c1">// If we don&#39;t disable this, fleeing cells will not chase us</span>
+<span class="w">        </span><span class="n">cell</span><span class="o">-&gt;</span><span class="n">mFleeCellTime</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.0f</span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="n">cell</span><span class="o">-&gt;</span><span class="n">mFleeCellIndex</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span></pre><p>Read data from a <code>.cell</code> file:</p><pre class="m-code"><span class="c1">// Declare this as a static variable</span>
+<span class="n">Simulator</span><span class="o">::</span><span class="n">Cell</span><span class="o">::</span><span class="n">cCellCellResource</span><span class="o">::</span><span class="n">Reference</span><span class="o">*</span><span class="w"> </span><span class="n">sCellChomperReference</span><span class="p">;</span><span class="w"></span>
+
+<span class="c1">// In the initialize method, choose which `.cell` file we are reading</span>
+<span class="n">sCellChomperReference</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Simulator</span><span class="o">::</span><span class="n">Cell</span><span class="o">::</span><span class="n">cCellCellResource</span><span class="o">::</span><span class="n">Reference</span><span class="o">::</span><span class="n">Create</span><span class="p">(</span><span class="n">id</span><span class="p">(</span><span class="s">&quot;cell_chomper&quot;</span><span class="p">));</span><span class="w"></span>
+
+<span class="c1">// To use the data</span>
+<span class="n">cCellCellResourcePtr</span><span class="w"> </span><span class="n">cellResource</span><span class="p">;</span><span class="w"></span>
+<span class="k">auto</span><span class="w"> </span><span class="n">cellData</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Simulator</span><span class="o">::</span><span class="n">Cell</span><span class="o">::</span><span class="n">GetData</span><span class="p">(</span><span class="n">sCellChomperReference</span><span class="p">,</span><span class="w"> </span><span class="n">cellResource</span><span class="p">);</span><span class="w"></span></pre>
         <section id="nested-classes">
           <h2><a href="#nested-classes">Classes</a></h2>
           <dl class="m-doc">
             <dt>
               class <a href="class_simulator_1_1_cell_1_1c_advect_resource.html" class="m-doc">cAdvectResource</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              struct <a href="struct_simulator_1_1_cell_1_1c_cell_anim_definition.html" class="m-doc">cCellAnimDefinition</a>
             </dt>
             <dd><span></span></dd>
             <dt>
@@ -243,6 +271,140 @@
               <a href="#ac0820b6ceea0935853f94be150b198fca46a66baf429b6426d9ce1b133845d2a8" class="m-doc">_1M</a> = 19 }</span>
             </dt>
             <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">enum <a href="#a5f21a6ce6772ce077c91b14902eea3eb" class="m-doc">CellAnimations</a> { </span><span class="m-doc-wrap"><a href="#a5f21a6ce6772ce077c91b14902eea3ebae42c8be350da2dfe847cc333d411b819" class="m-doc">kAnimIndexCellIdle</a> = 0,
+              <a href="#a5f21a6ce6772ce077c91b14902eea3ebafa7fff1e9b7696a58535a04967285978" class="m-doc">kAnimIndexCellIdleBlink1</a> = 1,
+              <a href="#a5f21a6ce6772ce077c91b14902eea3eba873f0ba628b9d93a8c572f6e9edf9cef" class="m-doc">kAnimIndexCellIdleBlink2</a> = 2,
+              <a href="#a5f21a6ce6772ce077c91b14902eea3ebad3eee46da8edb8fef1b5d6c00e25389c" class="m-doc">kAnimIndexCellIdleBlink3</a> = 3,
+              <a href="#a5f21a6ce6772ce077c91b14902eea3eba2bd8785abb206bc9b9e38709aaf20f33" class="m-doc">kAnimIndexCellMovFlg</a> = 4,
+              <a href="#a5f21a6ce6772ce077c91b14902eea3ebaed0dff690eee619b183f3b61e9b8743c" class="m-doc">kAnimIndexCellMovFlgBlink</a> = 5,
+              <a href="#a5f21a6ce6772ce077c91b14902eea3eba5c79b550ab3579f3d7565041f751746e" class="m-doc">kAnimIndexCellEatFilter</a> = 6,
+              <a href="#a5f21a6ce6772ce077c91b14902eea3eba88008cdd22a85593f5a2d3b75f217675" class="m-doc">kAnimIndexCellDmgSolidSpike</a> = 7,
+              <a href="#a5f21a6ce6772ce077c91b14902eea3ebaa2718dc973cd82501f304d5066f33f8d" class="m-doc">kAnimIndexCellDmgSolidMand</a> = 8,
+              <a href="#a5f21a6ce6772ce077c91b14902eea3ebab90aa687ca037c3c6179a573c47e2f22" class="m-doc">kAnimIndexCellDeathAvatar</a> = 9,
+              <a href="#a5f21a6ce6772ce077c91b14902eea3eba1880495e7db350f4f432b2f9d496fc51" class="m-doc">kAnimIndexCellDeathNpc</a> = 10,
+              <a href="#a5f21a6ce6772ce077c91b14902eea3eba21bf9afd7cf43187a1467b9fddad2081" class="m-doc">kAnimIndexCellDeathNpcIdle</a> = 11,
+              <a href="#a5f21a6ce6772ce077c91b14902eea3eba68f8887543e06182ad3abc51e2a10cb2" class="m-doc">kAnimIndexCellEatFilterNpc</a> = 12,
+              <a href="#a5f21a6ce6772ce077c91b14902eea3ebaccf7f6d5aea693b99a67baad6e48fa91" class="m-doc">kAnimIndexCellEatMand</a> = 13,
+              <a href="#a5f21a6ce6772ce077c91b14902eea3ebaea26b05388538c5576ed8c7e7220e239" class="m-doc">kAnimIndexCellEatMandNpc</a> = 14,
+              <a href="#a5f21a6ce6772ce077c91b14902eea3ebac23c2fb0959aaa52bc5d9d38fadbd7ee" class="m-doc">kAnimIndexCellEatProb</a> = 15,
+              <a href="#a5f21a6ce6772ce077c91b14902eea3eba8f50c76bd9c473cd3cd7d0b1c2a4480b" class="m-doc">kAnimIndexCellTakeDmgElec</a> = 16,
+              <a href="#a5f21a6ce6772ce077c91b14902eea3eba20354608d4cc0ba4dc5f0e4e027cdfd2" class="m-doc">kAnimIndexCellTakeDmgPoison</a> = 17,
+              <a href="#a5f21a6ce6772ce077c91b14902eea3ebaade16eb727acfc8a6dce3e420dfa464d" class="m-doc">kAnimIndexCellTakeDmgStab</a> = 18,
+              <a href="#a5f21a6ce6772ce077c91b14902eea3eba73427d63dac0cd60f3828e8a5169fee7" class="m-doc">kAnimIndexCellMoveJet</a> = 19,
+              <a href="#a5f21a6ce6772ce077c91b14902eea3eba78d32ba1a698e94ecf40548adce8d783" class="m-doc">kAnimIndexCellMoveJetBlink</a> = 20,
+              <a href="#a5f21a6ce6772ce077c91b14902eea3eba1a9b9b726ccdb97e54313795a4183eb4" class="m-doc">kAnimIndexCellMovFlg2</a> = 21,
+              <a href="#a5f21a6ce6772ce077c91b14902eea3ebac17fe96a018b64a0278c95aa22768e8e" class="m-doc">kAnimIndexCellMoveNpcScared</a> = 22,
+              <a href="#a5f21a6ce6772ce077c91b14902eea3eba2ef585b0db115e17c24e26dd6dc30821" class="m-doc">kAnimIndexCellMoveNpcMad</a> = 23,
+              <a href="#a5f21a6ce6772ce077c91b14902eea3ebaa0c676e9696d425f638f8486934dfc3d" class="m-doc">kAnimIndexCellMoveNpcScared2</a> = 24,
+              <a href="#a5f21a6ce6772ce077c91b14902eea3eba4bd49f17a2a2df91339ed4789b84b66e" class="m-doc">kAnimIndexCellMoveNpcMad2</a> = 25,
+              <a href="#a5f21a6ce6772ce077c91b14902eea3eba1822ed8837b81310b168494dfb3ff7c7" class="m-doc">kAnimIndexCellMoveJet2</a> = 26,
+              <a href="#a5f21a6ce6772ce077c91b14902eea3eba8d39bbfa731f9f3a0f0ba8297ad70afb" class="m-doc">kAnimIndexCellMoveJet3</a> = 27,
+              <a href="#a5f21a6ce6772ce077c91b14902eea3ebadb5c71165bd682c25b295ede5bb4c9e5" class="m-doc">kAnimIndexCellNpcScared</a> = 28,
+              <a href="#a5f21a6ce6772ce077c91b14902eea3ebaa8dc360402b89a7b318150851ba9d347" class="m-doc">kAnimIndexCellNpcMad</a> = 29,
+              <a href="#a5f21a6ce6772ce077c91b14902eea3eba56989665676c31a95df087e0aabd1d7a" class="m-doc">kAnimIndexCellDeathNpcIdle2</a> = 30,
+              <a href="#a5f21a6ce6772ce077c91b14902eea3eba2649aa806c82e1459013e8922d5208a0" class="m-doc">kAnimIndexCellEatFilterFail</a> = 31,
+              <a href="#a5f21a6ce6772ce077c91b14902eea3ebaa1ffce5ec3f98f342d1e3588b1bc4153" class="m-doc">kAnimIndexCellEatMandFail</a> = 32,
+              <a href="#a5f21a6ce6772ce077c91b14902eea3ebada40fc8dbccbadc1edc22b07356425aa" class="m-doc">kAnimIndexCellGlanceMad</a> = 33,
+              <a href="#a5f21a6ce6772ce077c91b14902eea3ebaca30cc8fffe567932864af0afe70e44e" class="m-doc">kAnimIndexCellGlanceSpike</a> = 34,
+              <a href="#a5f21a6ce6772ce077c91b14902eea3ebaa20610e2142187ab9bf5b2d0e1392a29" class="m-doc">kAnimIndexCellPunctureSpike</a> = 35,
+              <a href="#a5f21a6ce6772ce077c91b14902eea3ebaa8e8818b0f189f58dad7c32bfed7d5bb" class="m-doc">kAnimIndexCellGrow</a> = 36,
+              <a href="#a5f21a6ce6772ce077c91b14902eea3ebaf6d5816397fce220329457fd49727fbb" class="m-doc">kAnimIndexCellDeathAvatarIdle</a> = 37,
+              <a href="#a5f21a6ce6772ce077c91b14902eea3eba864b8cfa3489a7578bb26b74315b6ead" class="m-doc">kAnimIndexCellElecRelease</a> = 38,
+              <a href="#a5f21a6ce6772ce077c91b14902eea3eba9ef11a1d277292d942d7cbbbd53dfa69" class="m-doc">kAnimIndexCellBubblePop</a> = 39,
+              <a href="#a5f21a6ce6772ce077c91b14902eea3eba9ea01c538b6cf54a2fc9dc361cca87c3" class="m-doc">kAnimIndexCellEatProbStun</a> = 40,
+              <a href="#a5f21a6ce6772ce077c91b14902eea3ebae860afad648b99ef5b4cf98b24f43d63" class="m-doc">kAnimIndexCellNpcStartled</a> = 41,
+              <a href="#a5f21a6ce6772ce077c91b14902eea3eba3bcfd2ad1865fbae46ac40184846b32d" class="m-doc">kAnimIndexCellPoked</a> = 42,
+              <a href="#a5f21a6ce6772ce077c91b14902eea3ebaadcb666721abfe878788fe13d0403387" class="m-doc">kAnimIndexCellTakeDmgElecNpc</a> = 43,
+              <a href="#a5f21a6ce6772ce077c91b14902eea3eba60d12d2f2622d27a1f2ec92ebdc9c30a" class="m-doc">kAnimIndexCellTakeDmgPoisonNpc</a> = 44,
+              <a href="#a5f21a6ce6772ce077c91b14902eea3ebadba5a0bbb66bdf99ecdb5ff685bbe06d" class="m-doc">kAnimIndexCellTakeDmgStabNpc</a> = 45,
+              <a href="#a5f21a6ce6772ce077c91b14902eea3eba246eea90b5e47e19a79b588f3140175f" class="m-doc">kAnimIndexCellGlanceSpikeOnSpike</a> = 46,
+              <a href="#a5f21a6ce6772ce077c91b14902eea3eba9c5b6310608eb90839cb7a27f57aca27" class="m-doc">kAnimIndexCellEatProbRetractTrgt</a> = 47,
+              <a href="#a5f21a6ce6772ce077c91b14902eea3eba68bc75c139d6f5030b921c248d57881e" class="m-doc">kAnimIndexCellEatProbRetract</a> = 48,
+              <a href="#a5f21a6ce6772ce077c91b14902eea3eba5da9c455c3a8be036af3d9a39910ac9f" class="m-doc">kAnimIndexCellEatMandNpcBig</a> = 49,
+              <a href="#a5f21a6ce6772ce077c91b14902eea3eba4f5c9a204f4e13edc01b5e07e33a6bc0" class="m-doc">kAnimIndexCellIdleBig</a> = 50,
+              <a href="#a5f21a6ce6772ce077c91b14902eea3eba984c5dbe4f22dcd5c075b1fc11979f74" class="m-doc">kAnimIndexCellIdleBlink1Big</a> = 51,
+              <a href="#a5f21a6ce6772ce077c91b14902eea3ebacc94632c7363bce21d0b73579e7e8252" class="m-doc">kAnimIndexCellIdleBlink2Big</a> = 52,
+              <a href="#a5f21a6ce6772ce077c91b14902eea3eba7eb95620be0e73d76b44a7b71bfe0484" class="m-doc">kAnimIndexCellIdleBlink3Big</a> = 53,
+              <a href="#a5f21a6ce6772ce077c91b14902eea3eba5d4edaf04330db338b24c5f460b2769d" class="m-doc">kAnimIndexCellMovFlgBig</a> = 54,
+              <a href="#a5f21a6ce6772ce077c91b14902eea3eba4db2d864c94f23905cae901db90fcab3" class="m-doc">kAnimIndexCellMovFlgBigBlink</a> = 55,
+              <a href="#a5f21a6ce6772ce077c91b14902eea3eba3f4fbb3bd77bee588df565eb89ff3e3a" class="m-doc">kAnimIndexCellMovFlgBigMad</a> = 56,
+              <a href="#a5f21a6ce6772ce077c91b14902eea3eba6b461b6b93a77ee36a647da0f988fee3" class="m-doc">kAnimIndexCellMovCilBig</a> = 57,
+              <a href="#a5f21a6ce6772ce077c91b14902eea3ebaed58b316014d9efba7488bec9294d997" class="m-doc">kAnimIndexCellMovCilBigBlink</a> = 58,
+              <a href="#a5f21a6ce6772ce077c91b14902eea3eba5252615b92cd0f13c2343332cc348d52" class="m-doc">kAnimIndexCellMovCilBigMad</a> = 59,
+              <a href="#a5f21a6ce6772ce077c91b14902eea3ebad7afe7c651a2e76922d9c1f7465c6dc0" class="m-doc">kAnimIndexCellMovCilBig2</a> = 60,
+              <a href="#a5f21a6ce6772ce077c91b14902eea3ebad1093538c7bcca97aa4e9215c7f8c321" class="m-doc">kAnimIndexCellMovCilBigBlink2</a> = 61,
+              <a href="#a5f21a6ce6772ce077c91b14902eea3eba0e826266ce7e334745014aa7f7fb3267" class="m-doc">kAnimIndexCellMovCilBigMad2</a> = 62,
+              <a href="#a5f21a6ce6772ce077c91b14902eea3eba5549572fd49d132f941a52f749163dfe" class="m-doc">kAnimIndexCellNpcMadBig</a> = 63,
+              <a href="#a5f21a6ce6772ce077c91b14902eea3eba174a597ba92a3899e7029dc33ace1a59" class="m-doc">kAnimIndexCellMovCil</a> = 64,
+              <a href="#a5f21a6ce6772ce077c91b14902eea3ebad7be14d19dd556c1f460af0020b731d0" class="m-doc">kAnimIndexCellMovCilBlink</a> = 65,
+              <a href="#a5f21a6ce6772ce077c91b14902eea3eba9ee66a4cdbcf823f9a46ada50041c4fa" class="m-doc">kAnimIndexCellMovPoisonRelease</a> = 66,
+              <a href="#a5f21a6ce6772ce077c91b14902eea3eba892949a240b4e329d99642a62235ba88" class="m-doc">kAnimIndexCellMovCilMad</a> = 67,
+              <a href="#a5f21a6ce6772ce077c91b14902eea3eba6ab8e5be1b931aa653f4e882c82211e2" class="m-doc">kAnimIndexCellMovCilScared</a> = 68,
+              <a href="#a5f21a6ce6772ce077c91b14902eea3eba981cb37a0892f3bfc76ad47c1e88e561" class="m-doc">kAnimIndexCellDmgSolidDeath</a> = 69,
+              <a href="#a5f21a6ce6772ce077c91b14902eea3eba1d334b8fefe2c003f5d4ce815ffc9be8" class="m-doc">kAnimIndexCellPoisonRelease</a> = 70,
+              <a href="#a5f21a6ce6772ce077c91b14902eea3eba0e45a1dce6fe2fae590cb04805f1fb03" class="m-doc">kAnimIndexCellHatchLayEgg</a> = 71,
+              <a href="#a5f21a6ce6772ce077c91b14902eea3eba6d9afd1cadc5b9ebffe577a205248418" class="m-doc">kAnimIndexCellHatchEgg</a> = 72,
+              <a href="#a5f21a6ce6772ce077c91b14902eea3ebaf12749f0f4f4b2b4ae57453e686819ca" class="m-doc">kAnimIndexCellHatchIce</a> = 73,
+              <a href="#a5f21a6ce6772ce077c91b14902eea3eba0826445dbc64ed661dd9c842a3c15fe1" class="m-doc">kAnimIndexCellGoToEditor</a> = 74,
+              <a href="#a5f21a6ce6772ce077c91b14902eea3eba0239b47c61bb634ea862adb6625f16e5" class="m-doc">kAnimIndexCellDeathEaten</a> = 75,
+              <a href="#a5f21a6ce6772ce077c91b14902eea3ebafdbf24eaaa3b38e8cd0026daa0b90a04" class="m-doc">kAnimIndexCellDeathEatenNpc</a> = 76,
+              <a href="#a5f21a6ce6772ce077c91b14902eea3eba2af8367e332591c5cb28d0d548bdab8a" class="m-doc">kAnimIndexCellTakeDmgMand</a> = 77,
+              <a href="#a5f21a6ce6772ce077c91b14902eea3ebaa17590f82eb39177baf1601c4936c707" class="m-doc">kAnimIndexCellPartDiscover</a> = 78,
+              <a href="#a5f21a6ce6772ce077c91b14902eea3eba8412e1c132099af32748dcbfdc93cf01" class="m-doc">kAnimIndexCellEatFilterChew</a> = 79,
+              <a href="#a5f21a6ce6772ce077c91b14902eea3eba617f7c50c00d5fc8d96d554808ce7176" class="m-doc">kAnimIndexCellEatMandChew</a> = 80,
+              <a href="#a5f21a6ce6772ce077c91b14902eea3eba6d59af2f1fc8fad9aa5a5efa10edac87" class="m-doc">kAnimIndexCellEatProbChew</a> = 81,
+              <a href="#a5f21a6ce6772ce077c91b14902eea3ebaaa2fe1a1870c3d87b5d6797d0a4984af" class="m-doc">kAnimIndexCellDmgSolidMandNpc</a> = 82,
+              <a href="#a5f21a6ce6772ce077c91b14902eea3eba0a1590235f624490cdd1830ace90aef2" class="m-doc">kAnimIndexCellDmgSolidDeathNpc</a> = 83,
+              <a href="#a5f21a6ce6772ce077c91b14902eea3eba297ccd774b2782098ee1476437929767" class="m-doc">kAnimIndexCellTakeDmgMandNpc</a> = 84,
+              <a href="#a5f21a6ce6772ce077c91b14902eea3ebac16f1ab64120045c764bded37fff5fe7" class="m-doc">kAnimIndexCellMovToBeach</a> = 85,
+              <a href="#a5f21a6ce6772ce077c91b14902eea3eba57f2e7125b25b47aa13a12fd0691ecf1" class="m-doc">kAnimIndexCellGlanceMad2</a> = 86,
+              <a href="#a5f21a6ce6772ce077c91b14902eea3eba7cb94cf9d418c34daecb86bdb999a242" class="m-doc">kAnimIndexCellMovFlgBigMadBlink</a> = 87,
+              <a href="#a5f21a6ce6772ce077c91b14902eea3eba1018f839993d4168ebaedf9a3727a16b" class="m-doc">kAnimIndexCellGlanceProbOnProb</a> = 88,
+              <a href="#a5f21a6ce6772ce077c91b14902eea3ebab62ca1931d4c0deafb2189db27d125ab" class="m-doc">kAnimIndexCellMovCil180</a> = 89,
+              <a href="#a5f21a6ce6772ce077c91b14902eea3eba47c4a5d500c935d55c6220302ee759e4" class="m-doc">kAnimIndexCellMovCil180v2</a> = 90,
+              <a href="#a5f21a6ce6772ce077c91b14902eea3eba5ca6382c2840011f473b44db410851e8" class="m-doc">kAnimIndexCellMovCil180v3</a> = 91,
+              <a href="#a5f21a6ce6772ce077c91b14902eea3ebac70e77b7355041872dc2d8c0d116f95b" class="m-doc">kAnimIndexCellMovCil180v4</a> = 92,
+              <a href="#a5f21a6ce6772ce077c91b14902eea3eba458ce65183977c095e415794679606f9" class="m-doc">kAnimIndexCellMovCil180v5</a> = 93,
+              <a href="#a5f21a6ce6772ce077c91b14902eea3eba94907bb5780cfe752f6900a8af4ef1c1" class="m-doc">kAnimIndexCellMovFlgStart</a> = 94,
+              <a href="#a5f21a6ce6772ce077c91b14902eea3eba57fcce6c31d82ba42fdbabfc57021a46" class="m-doc">kAnimIndexCellMovFlgStart2</a> = 95,
+              <a href="#a5f21a6ce6772ce077c91b14902eea3eba06703cff210d99acb89271400cd3a81f" class="m-doc">kAnimIndexCellMovCil2</a> = 96,
+              <a href="#a5f21a6ce6772ce077c91b14902eea3ebafae43b77b2529b16596534aec92208cf" class="m-doc">kAnimIndexCellMoveJet4</a> = 97,
+              <a href="#a5f21a6ce6772ce077c91b14902eea3ebab77acfc68bf5f8ac4f4b2b27cbb5242f" class="m-doc">kAnimIndexCellTakeDmgPoisonBig</a> = 98,
+              <a href="#a5f21a6ce6772ce077c91b14902eea3ebac19ef662c4e74992f48aee74407fbcb6" class="m-doc">kAnimIndexCellMovBankLt</a> = 99,
+              <a href="#a5f21a6ce6772ce077c91b14902eea3ebaf7ed2738a70e8ac54950527244a86fa2" class="m-doc">kAnimIndexCellMovBankRt</a> = 100,
+              <a href="#a5f21a6ce6772ce077c91b14902eea3ebacf0f2014ba65ed87f59a9e29d751c99f" class="m-doc">kAnimIndexCellBackgrndGuy</a> = 101,
+              <a href="#a5f21a6ce6772ce077c91b14902eea3eba3fe3434c99503f373b52e72116d31e20" class="m-doc">kAnimIndexCellTakeDmgElecNpcBig</a> = 102,
+              <a href="#a5f21a6ce6772ce077c91b14902eea3eba3b9bf9e196ccd887198217c146f17166" class="m-doc">kAnimIndexEpicCellEyePokeReact</a> = 103,
+              <a href="#a5f21a6ce6772ce077c91b14902eea3eba976c03eee4caca507c8175b190dc65de" class="m-doc">kAnimIndexEpicCellEyePokeClosedLF</a> = 104,
+              <a href="#a5f21a6ce6772ce077c91b14902eea3ebaa0d06f23ac072be882774a503fea728d" class="m-doc">kAnimIndexEpicCellEyePokeClosedRF</a> = 105,
+              <a href="#a5f21a6ce6772ce077c91b14902eea3eba8ca04c39317b2121f7ab3c28a405be97" class="m-doc">kAnimIndexEpicCellEyePokeClosedLC</a> = 106,
+              <a href="#a5f21a6ce6772ce077c91b14902eea3eba0be3dc3b7f69723c702796792660423e" class="m-doc">kAnimIndexEpicCellEyePokeClosedRC</a> = 107,
+              <a href="#a5f21a6ce6772ce077c91b14902eea3eba26646cc8a7a805485c8c987509ee4d71" class="m-doc">kAnimIndexEpicCellEyePokeClosedLB</a> = 108,
+              <a href="#a5f21a6ce6772ce077c91b14902eea3ebac59d9409937446045345432d51130b3a" class="m-doc">kAnimIndexEpicCellEyePokeClosedRB</a> = 109,
+              <a href="#a5f21a6ce6772ce077c91b14902eea3ebab787a2cb5fc93e42dbf7ab3c786a459b" class="m-doc">kAnimIndexEpicCellBiteRock</a> = 110,
+              <a href="#a5f21a6ce6772ce077c91b14902eea3eba80cad47bd8cb7eb2f670c7eb602ce513" class="m-doc">kAnimIndexEpicCellElectrocuted</a> = 111,
+              <a href="#a5f21a6ce6772ce077c91b14902eea3eba2a5d521aac00293dfd3576309c70db56" class="m-doc">kAnimIndexEpicCellChokes</a> = 112,
+              <a href="#a5f21a6ce6772ce077c91b14902eea3eba752967ee62603fa4d9255629e77a2b82" class="m-doc">kAnimIndexEpicCellProboscised</a> = 113,
+              <a href="#a5f21a6ce6772ce077c91b14902eea3eba43aa25aa524f76083922a3b77f7e6632" class="m-doc">kAnimIndexEpicCellDeathTurnover</a> = 114,
+              <a href="#a5f21a6ce6772ce077c91b14902eea3ebaf03131aedbedea563ab5c5e220ae34fe" class="m-doc">kAnimIndexEpicCellDeathIdle</a> = 115,
+              <a href="#a5f21a6ce6772ce077c91b14902eea3eba813c9354a72094f717c1454093cdffda" class="m-doc">kAnimIndexEpicCellEyePokeReactLt</a> = 116,
+              <a href="#a5f21a6ce6772ce077c91b14902eea3ebaf65c8eed634bedcb203598c82a027fd2" class="m-doc">kAnimIndexEpicCellEyePokeReactRt</a> = 117,
+              <a href="#a5f21a6ce6772ce077c91b14902eea3ebabcccf5668abe1a8e2867b9ef6283eef7" class="m-doc">kAnimIndexCellMate01</a> = 118,
+              <a href="#a5f21a6ce6772ce077c91b14902eea3eba9ed0f6f074b2225ba4817f8d3b94696b" class="m-doc">kAnimIndexCellMate02</a> = 119,
+              <a href="#a5f21a6ce6772ce077c91b14902eea3eba54268ab24ee5a2dd3abbb6072cf54d11" class="m-doc">kAnimIndexCellMatingCall</a> = 120,
+              <a href="#a5f21a6ce6772ce077c91b14902eea3eba0ac0ca7d12cb839c99954d32bc4c69b0" class="m-doc">kAnimIndexCellEatProbRetractTrgtNpc</a> = 121,
+              <a href="#a5f21a6ce6772ce077c91b14902eea3eba12a8c2696797348d2ab35b6f94e92daf" class="m-doc">kAnimIndexCellEatProbRetractNpc</a> = 122,
+              <a href="#a5f21a6ce6772ce077c91b14902eea3ebae5ba155a7a29a8477e57ad7d6e19188e" class="m-doc">kAnimIndexCellEatProbStunNpc</a> = 123,
+              <a href="#a5f21a6ce6772ce077c91b14902eea3ebac5e1b71541d91d1285b57c070cdd14fd" class="m-doc">kAnimIndexCellEatProbNpc</a> = 124,
+              <a href="#a5f21a6ce6772ce077c91b14902eea3ebac876143b33069bee795b997bab138505" class="m-doc">kAnimIndexCellTakeDmgStabNpcBig</a> = 125,
+              <a href="#a5f21a6ce6772ce077c91b14902eea3eba758620b52ecd03c1c8058e5649af7a2f" class="m-doc">kAnimIndexCellTakeDmgMandNpcBig</a> = 126,
+              <a href="#a5f21a6ce6772ce077c91b14902eea3eba5130251e664975f77a442c723bc43a2e" class="m-doc">kAnimIndexEpicCellPoked</a> = 127,
+              <a href="#a5f21a6ce6772ce077c91b14902eea3ebabb876e22685b1b20de33a61e21cc5868" class="m-doc">kAnimIndexEpicCellPoked2</a> = 128,
+              <a href="#a5f21a6ce6772ce077c91b14902eea3ebad41e1cf39865342392a4f5eb609aa21d" class="m-doc">kAnimIndexCellBrainUpgrade</a> = 129,
+              <a href="#a5f21a6ce6772ce077c91b14902eea3eba84d1bab70713b065bd531acb5dc22903" class="m-doc">kAnimIndexCellHatchLayEggNpc</a> = 130 }</span>
+            </dt>
+            <dd><span></span></dd>
           </dl>
         </section>
         <section id="func-members">
@@ -308,6 +470,10 @@
             <dt>
               <span class="m-doc-wrap-bumper"><a href="#aac4b2f55243d5fa86026c5be1868afd7" class="m-doc">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="struct_simulator_1_1_cell_1_1c_cell_data_reference__.html" class="m-doc">cCellDataReference_<wbr /></a>,
               0x10)</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#adbecabca3a2dd5371c993ec70ca8b9c4" class="m-doc">Addresses</a>(</span><span class="m-doc-wrap"><a href="struct_simulator_1_1_cell_1_1c_cell_data_reference__.html" class="m-doc">cCellDataReference_<wbr /></a>) -&gt; namespace</span>
             </dt>
             <dd><span></span></dd>
             <dt>
@@ -419,6 +585,11 @@
             </dt>
             <dd><span></span></dd>
             <dt>
+              <span class="m-doc-wrap-bumper"><a href="#a818b3a99c5a8755bb3c6bedf66b97ca6" class="m-doc">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="struct_simulator_1_1_cell_1_1c_cell_anim_definition.html" class="m-doc">cCellAnimDefinition</a>,
+              0x24)</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
               <span class="m-doc-wrap-bumper">auto <a href="#a47ff9ceb57ba54db4ab661f07fea7235" class="m-doc">GetGoalCards</a>(</span><span class="m-doc-wrap">) -&gt; <a href="class_simulator_1_1_goal_card.html" class="m-doc">GoalCard</a>*</span>
             </dt>
             <dd><span></span></dd>
@@ -477,6 +648,17 @@
               void* dst2 = nullptr) -&gt; int</span>
             </dt>
             <dd>Finds all the cells that are within a radius of a specific position.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">void <a href="#a38601babcf9eb0fbcaec1aa9ff1fba40" class="m-doc">PlayAnimation</a>(</span><span class="m-doc-wrap"><a href="struct_simulator_1_1_cell_1_1c_cell_object_data.html" class="m-doc">cCellObjectData</a>* cell,
+              <a href="struct_simulator_1_1_cell_1_1c_cell_object_data.html" class="m-doc">cCellObjectData</a>* otherCell,
+              <a href="namespace_simulator_1_1_cell.html#a5f21a6ce6772ce077c91b14902eea3eb" class="m-doc">CellAnimations</a> targetAnim,
+              <a href="namespace_simulator_1_1_cell.html#a5f21a6ce6772ce077c91b14902eea3eb" class="m-doc">CellAnimations</a> currentAnim)</span>
+            </dt>
+            <dd>Makes the cell play an animation.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#af33f77249f5be4a1098bdc424decdefa" class="m-doc">GetModelKeyForCellResource</a>(</span><span class="m-doc-wrap"><a href="struct_simulator_1_1_cell_1_1c_cell_data_reference.html" class="m-doc">cCellDataReference</a>&lt;<a href="struct_simulator_1_1_cell_1_1c_cell_cell_resource.html" class="m-doc">cCellCellResource</a>&gt;* cellResource) -&gt; <a href="struct_resource_key.html" class="m-doc">ResourceKey</a></span>
+            </dt>
+            <dd>Returns the main model key that must be used for a specific cell definition.</dd>
           </dl>
         </section>
         <section>
@@ -529,6 +711,804 @@
               <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="c_cell_resource_8h.html">&lt;Spore/Simulator/Cell/cCellResource.h&gt;</a></div>
             </h3>
             <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="a5f21a6ce6772ce077c91b14902eea3eb"><div>
+            <h3>
+              enum Simulator::<wbr />Cell::<wbr /><a href="#a5f21a6ce6772ce077c91b14902eea3eb" class="m-doc-self">CellAnimations</a>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_cell_animations_8h.html">&lt;Spore/Simulator/Cell/CellAnimations.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+            <table class="m-table m-fullwidth m-flat m-doc">
+              <thead><tr><th style="width: 1%">Enumerators</th><th></th></tr></thead>
+              <tbody>
+                <tr>
+                  <td><a href="#a5f21a6ce6772ce077c91b14902eea3ebae42c8be350da2dfe847cc333d411b819" class="m-doc-self" id="a5f21a6ce6772ce077c91b14902eea3ebae42c8be350da2dfe847cc333d411b819">kAnimIndexCellIdle</a></td>
+                  <td>
+                  <p>0xAAAA0015</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a5f21a6ce6772ce077c91b14902eea3ebafa7fff1e9b7696a58535a04967285978" class="m-doc-self" id="a5f21a6ce6772ce077c91b14902eea3ebafa7fff1e9b7696a58535a04967285978">kAnimIndexCellIdleBlink1</a></td>
+                  <td>
+                  <p>0xAAAA0016</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a5f21a6ce6772ce077c91b14902eea3eba873f0ba628b9d93a8c572f6e9edf9cef" class="m-doc-self" id="a5f21a6ce6772ce077c91b14902eea3eba873f0ba628b9d93a8c572f6e9edf9cef">kAnimIndexCellIdleBlink2</a></td>
+                  <td>
+                  <p>0xAAAA0017</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a5f21a6ce6772ce077c91b14902eea3ebad3eee46da8edb8fef1b5d6c00e25389c" class="m-doc-self" id="a5f21a6ce6772ce077c91b14902eea3ebad3eee46da8edb8fef1b5d6c00e25389c">kAnimIndexCellIdleBlink3</a></td>
+                  <td>
+                  <p>0xAAAA0018</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a5f21a6ce6772ce077c91b14902eea3eba2bd8785abb206bc9b9e38709aaf20f33" class="m-doc-self" id="a5f21a6ce6772ce077c91b14902eea3eba2bd8785abb206bc9b9e38709aaf20f33">kAnimIndexCellMovFlg</a></td>
+                  <td>
+                  <p>0xAAAA0019</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a5f21a6ce6772ce077c91b14902eea3ebaed0dff690eee619b183f3b61e9b8743c" class="m-doc-self" id="a5f21a6ce6772ce077c91b14902eea3ebaed0dff690eee619b183f3b61e9b8743c">kAnimIndexCellMovFlgBlink</a></td>
+                  <td>
+                  <p>0xAAAA0020</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a5f21a6ce6772ce077c91b14902eea3eba5c79b550ab3579f3d7565041f751746e" class="m-doc-self" id="a5f21a6ce6772ce077c91b14902eea3eba5c79b550ab3579f3d7565041f751746e">kAnimIndexCellEatFilter</a></td>
+                  <td>
+                  <p>0xAAAA0005</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a5f21a6ce6772ce077c91b14902eea3eba88008cdd22a85593f5a2d3b75f217675" class="m-doc-self" id="a5f21a6ce6772ce077c91b14902eea3eba88008cdd22a85593f5a2d3b75f217675">kAnimIndexCellDmgSolidSpike</a></td>
+                  <td>
+                  <p>0xAAAA0000</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a5f21a6ce6772ce077c91b14902eea3ebaa2718dc973cd82501f304d5066f33f8d" class="m-doc-self" id="a5f21a6ce6772ce077c91b14902eea3ebaa2718dc973cd82501f304d5066f33f8d">kAnimIndexCellDmgSolidMand</a></td>
+                  <td>
+                  <p>0xAAAA0001</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a5f21a6ce6772ce077c91b14902eea3ebab90aa687ca037c3c6179a573c47e2f22" class="m-doc-self" id="a5f21a6ce6772ce077c91b14902eea3ebab90aa687ca037c3c6179a573c47e2f22">kAnimIndexCellDeathAvatar</a></td>
+                  <td>
+                  <p>0xAAAA0002</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a5f21a6ce6772ce077c91b14902eea3eba1880495e7db350f4f432b2f9d496fc51" class="m-doc-self" id="a5f21a6ce6772ce077c91b14902eea3eba1880495e7db350f4f432b2f9d496fc51">kAnimIndexCellDeathNpc</a></td>
+                  <td>
+                  <p>0xAAAA0003</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a5f21a6ce6772ce077c91b14902eea3eba21bf9afd7cf43187a1467b9fddad2081" class="m-doc-self" id="a5f21a6ce6772ce077c91b14902eea3eba21bf9afd7cf43187a1467b9fddad2081">kAnimIndexCellDeathNpcIdle</a></td>
+                  <td>
+                  <p>0xAAAA0004</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a5f21a6ce6772ce077c91b14902eea3eba68f8887543e06182ad3abc51e2a10cb2" class="m-doc-self" id="a5f21a6ce6772ce077c91b14902eea3eba68f8887543e06182ad3abc51e2a10cb2">kAnimIndexCellEatFilterNpc</a></td>
+                  <td>
+                  <p>0xAAAA0006</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a5f21a6ce6772ce077c91b14902eea3ebaccf7f6d5aea693b99a67baad6e48fa91" class="m-doc-self" id="a5f21a6ce6772ce077c91b14902eea3ebaccf7f6d5aea693b99a67baad6e48fa91">kAnimIndexCellEatMand</a></td>
+                  <td>
+                  <p>0xAAAA0007</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a5f21a6ce6772ce077c91b14902eea3ebaea26b05388538c5576ed8c7e7220e239" class="m-doc-self" id="a5f21a6ce6772ce077c91b14902eea3ebaea26b05388538c5576ed8c7e7220e239">kAnimIndexCellEatMandNpc</a></td>
+                  <td>
+                  <p>0xAAAA0008</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a5f21a6ce6772ce077c91b14902eea3ebac23c2fb0959aaa52bc5d9d38fadbd7ee" class="m-doc-self" id="a5f21a6ce6772ce077c91b14902eea3ebac23c2fb0959aaa52bc5d9d38fadbd7ee">kAnimIndexCellEatProb</a></td>
+                  <td>
+                  <p>0xAAAA0009</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a5f21a6ce6772ce077c91b14902eea3eba8f50c76bd9c473cd3cd7d0b1c2a4480b" class="m-doc-self" id="a5f21a6ce6772ce077c91b14902eea3eba8f50c76bd9c473cd3cd7d0b1c2a4480b">kAnimIndexCellTakeDmgElec</a></td>
+                  <td>
+                  <p>0xAAAA0011</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a5f21a6ce6772ce077c91b14902eea3eba20354608d4cc0ba4dc5f0e4e027cdfd2" class="m-doc-self" id="a5f21a6ce6772ce077c91b14902eea3eba20354608d4cc0ba4dc5f0e4e027cdfd2">kAnimIndexCellTakeDmgPoison</a></td>
+                  <td>
+                  <p>0xAAAA0012</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a5f21a6ce6772ce077c91b14902eea3ebaade16eb727acfc8a6dce3e420dfa464d" class="m-doc-self" id="a5f21a6ce6772ce077c91b14902eea3ebaade16eb727acfc8a6dce3e420dfa464d">kAnimIndexCellTakeDmgStab</a></td>
+                  <td>
+                  <p>0xAAAA0013</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a5f21a6ce6772ce077c91b14902eea3eba73427d63dac0cd60f3828e8a5169fee7" class="m-doc-self" id="a5f21a6ce6772ce077c91b14902eea3eba73427d63dac0cd60f3828e8a5169fee7">kAnimIndexCellMoveJet</a></td>
+                  <td>
+                  <p>0xAAAA0021</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a5f21a6ce6772ce077c91b14902eea3eba78d32ba1a698e94ecf40548adce8d783" class="m-doc-self" id="a5f21a6ce6772ce077c91b14902eea3eba78d32ba1a698e94ecf40548adce8d783">kAnimIndexCellMoveJetBlink</a></td>
+                  <td>
+                  <p>0xAAAA0022</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a5f21a6ce6772ce077c91b14902eea3eba1a9b9b726ccdb97e54313795a4183eb4" class="m-doc-self" id="a5f21a6ce6772ce077c91b14902eea3eba1a9b9b726ccdb97e54313795a4183eb4">kAnimIndexCellMovFlg2</a></td>
+                  <td>
+                  <p>0xAAAA0019</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a5f21a6ce6772ce077c91b14902eea3ebac17fe96a018b64a0278c95aa22768e8e" class="m-doc-self" id="a5f21a6ce6772ce077c91b14902eea3ebac17fe96a018b64a0278c95aa22768e8e">kAnimIndexCellMoveNpcScared</a></td>
+                  <td>
+                  <p>0xAAAA0023</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a5f21a6ce6772ce077c91b14902eea3eba2ef585b0db115e17c24e26dd6dc30821" class="m-doc-self" id="a5f21a6ce6772ce077c91b14902eea3eba2ef585b0db115e17c24e26dd6dc30821">kAnimIndexCellMoveNpcMad</a></td>
+                  <td>
+                  <p>0xAAAA0024</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a5f21a6ce6772ce077c91b14902eea3ebaa0c676e9696d425f638f8486934dfc3d" class="m-doc-self" id="a5f21a6ce6772ce077c91b14902eea3ebaa0c676e9696d425f638f8486934dfc3d">kAnimIndexCellMoveNpcScared2</a></td>
+                  <td>
+                  <p>0xAAAA0023</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a5f21a6ce6772ce077c91b14902eea3eba4bd49f17a2a2df91339ed4789b84b66e" class="m-doc-self" id="a5f21a6ce6772ce077c91b14902eea3eba4bd49f17a2a2df91339ed4789b84b66e">kAnimIndexCellMoveNpcMad2</a></td>
+                  <td>
+                  <p>0xAAAA0024</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a5f21a6ce6772ce077c91b14902eea3eba1822ed8837b81310b168494dfb3ff7c7" class="m-doc-self" id="a5f21a6ce6772ce077c91b14902eea3eba1822ed8837b81310b168494dfb3ff7c7">kAnimIndexCellMoveJet2</a></td>
+                  <td>
+                  <p>0xAAAA0021</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a5f21a6ce6772ce077c91b14902eea3eba8d39bbfa731f9f3a0f0ba8297ad70afb" class="m-doc-self" id="a5f21a6ce6772ce077c91b14902eea3eba8d39bbfa731f9f3a0f0ba8297ad70afb">kAnimIndexCellMoveJet3</a></td>
+                  <td>
+                  <p>0xAAAA0021</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a5f21a6ce6772ce077c91b14902eea3ebadb5c71165bd682c25b295ede5bb4c9e5" class="m-doc-self" id="a5f21a6ce6772ce077c91b14902eea3ebadb5c71165bd682c25b295ede5bb4c9e5">kAnimIndexCellNpcScared</a></td>
+                  <td>
+                  <p>0xAAAA0025</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a5f21a6ce6772ce077c91b14902eea3ebaa8dc360402b89a7b318150851ba9d347" class="m-doc-self" id="a5f21a6ce6772ce077c91b14902eea3ebaa8dc360402b89a7b318150851ba9d347">kAnimIndexCellNpcMad</a></td>
+                  <td>
+                  <p>0xAAAA0026</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a5f21a6ce6772ce077c91b14902eea3eba56989665676c31a95df087e0aabd1d7a" class="m-doc-self" id="a5f21a6ce6772ce077c91b14902eea3eba56989665676c31a95df087e0aabd1d7a">kAnimIndexCellDeathNpcIdle2</a></td>
+                  <td>
+                  <p>0xAAAA0027</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a5f21a6ce6772ce077c91b14902eea3eba2649aa806c82e1459013e8922d5208a0" class="m-doc-self" id="a5f21a6ce6772ce077c91b14902eea3eba2649aa806c82e1459013e8922d5208a0">kAnimIndexCellEatFilterFail</a></td>
+                  <td>
+                  <p>0xAAAA0028</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a5f21a6ce6772ce077c91b14902eea3ebaa1ffce5ec3f98f342d1e3588b1bc4153" class="m-doc-self" id="a5f21a6ce6772ce077c91b14902eea3ebaa1ffce5ec3f98f342d1e3588b1bc4153">kAnimIndexCellEatMandFail</a></td>
+                  <td>
+                  <p>0xAAAA0029</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a5f21a6ce6772ce077c91b14902eea3ebada40fc8dbccbadc1edc22b07356425aa" class="m-doc-self" id="a5f21a6ce6772ce077c91b14902eea3ebada40fc8dbccbadc1edc22b07356425aa">kAnimIndexCellGlanceMad</a></td>
+                  <td>
+                  <p>0xAAAA0030</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a5f21a6ce6772ce077c91b14902eea3ebaca30cc8fffe567932864af0afe70e44e" class="m-doc-self" id="a5f21a6ce6772ce077c91b14902eea3ebaca30cc8fffe567932864af0afe70e44e">kAnimIndexCellGlanceSpike</a></td>
+                  <td>
+                  <p>0xAAAA0031</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a5f21a6ce6772ce077c91b14902eea3ebaa20610e2142187ab9bf5b2d0e1392a29" class="m-doc-self" id="a5f21a6ce6772ce077c91b14902eea3ebaa20610e2142187ab9bf5b2d0e1392a29">kAnimIndexCellPunctureSpike</a></td>
+                  <td>
+                  <p>0xAAAA0032</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a5f21a6ce6772ce077c91b14902eea3ebaa8e8818b0f189f58dad7c32bfed7d5bb" class="m-doc-self" id="a5f21a6ce6772ce077c91b14902eea3ebaa8e8818b0f189f58dad7c32bfed7d5bb">kAnimIndexCellGrow</a></td>
+                  <td>
+                  <p>0xAAAA0033</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a5f21a6ce6772ce077c91b14902eea3ebaf6d5816397fce220329457fd49727fbb" class="m-doc-self" id="a5f21a6ce6772ce077c91b14902eea3ebaf6d5816397fce220329457fd49727fbb">kAnimIndexCellDeathAvatarIdle</a></td>
+                  <td>
+                  <p>0xAAAA0036</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a5f21a6ce6772ce077c91b14902eea3eba864b8cfa3489a7578bb26b74315b6ead" class="m-doc-self" id="a5f21a6ce6772ce077c91b14902eea3eba864b8cfa3489a7578bb26b74315b6ead">kAnimIndexCellElecRelease</a></td>
+                  <td>
+                  <p>0xAAAA0037</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a5f21a6ce6772ce077c91b14902eea3eba9ef11a1d277292d942d7cbbbd53dfa69" class="m-doc-self" id="a5f21a6ce6772ce077c91b14902eea3eba9ef11a1d277292d942d7cbbbd53dfa69">kAnimIndexCellBubblePop</a></td>
+                  <td>
+                  <p>0xAAAA0038</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a5f21a6ce6772ce077c91b14902eea3eba9ea01c538b6cf54a2fc9dc361cca87c3" class="m-doc-self" id="a5f21a6ce6772ce077c91b14902eea3eba9ea01c538b6cf54a2fc9dc361cca87c3">kAnimIndexCellEatProbStun</a></td>
+                  <td>
+                  <p>0xAAAA0039</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a5f21a6ce6772ce077c91b14902eea3ebae860afad648b99ef5b4cf98b24f43d63" class="m-doc-self" id="a5f21a6ce6772ce077c91b14902eea3ebae860afad648b99ef5b4cf98b24f43d63">kAnimIndexCellNpcStartled</a></td>
+                  <td>
+                  <p>0xAAAA0040</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a5f21a6ce6772ce077c91b14902eea3eba3bcfd2ad1865fbae46ac40184846b32d" class="m-doc-self" id="a5f21a6ce6772ce077c91b14902eea3eba3bcfd2ad1865fbae46ac40184846b32d">kAnimIndexCellPoked</a></td>
+                  <td>
+                  <p>0xAAAA0041</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a5f21a6ce6772ce077c91b14902eea3ebaadcb666721abfe878788fe13d0403387" class="m-doc-self" id="a5f21a6ce6772ce077c91b14902eea3ebaadcb666721abfe878788fe13d0403387">kAnimIndexCellTakeDmgElecNpc</a></td>
+                  <td>
+                  <p>0xAAAA0042</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a5f21a6ce6772ce077c91b14902eea3eba60d12d2f2622d27a1f2ec92ebdc9c30a" class="m-doc-self" id="a5f21a6ce6772ce077c91b14902eea3eba60d12d2f2622d27a1f2ec92ebdc9c30a">kAnimIndexCellTakeDmgPoisonNpc</a></td>
+                  <td>
+                  <p>0xAAAA0043</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a5f21a6ce6772ce077c91b14902eea3ebadba5a0bbb66bdf99ecdb5ff685bbe06d" class="m-doc-self" id="a5f21a6ce6772ce077c91b14902eea3ebadba5a0bbb66bdf99ecdb5ff685bbe06d">kAnimIndexCellTakeDmgStabNpc</a></td>
+                  <td>
+                  <p>0xAAAA0044</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a5f21a6ce6772ce077c91b14902eea3eba246eea90b5e47e19a79b588f3140175f" class="m-doc-self" id="a5f21a6ce6772ce077c91b14902eea3eba246eea90b5e47e19a79b588f3140175f">kAnimIndexCellGlanceSpikeOnSpike</a></td>
+                  <td>
+                  <p>0xAAAA0045</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a5f21a6ce6772ce077c91b14902eea3eba9c5b6310608eb90839cb7a27f57aca27" class="m-doc-self" id="a5f21a6ce6772ce077c91b14902eea3eba9c5b6310608eb90839cb7a27f57aca27">kAnimIndexCellEatProbRetractTrgt</a></td>
+                  <td>
+                  <p>0xAAAA0046</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a5f21a6ce6772ce077c91b14902eea3eba68bc75c139d6f5030b921c248d57881e" class="m-doc-self" id="a5f21a6ce6772ce077c91b14902eea3eba68bc75c139d6f5030b921c248d57881e">kAnimIndexCellEatProbRetract</a></td>
+                  <td>
+                  <p>0xAAAA0047</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a5f21a6ce6772ce077c91b14902eea3eba5da9c455c3a8be036af3d9a39910ac9f" class="m-doc-self" id="a5f21a6ce6772ce077c91b14902eea3eba5da9c455c3a8be036af3d9a39910ac9f">kAnimIndexCellEatMandNpcBig</a></td>
+                  <td>
+                  <p>0xAAAA0048</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a5f21a6ce6772ce077c91b14902eea3eba4f5c9a204f4e13edc01b5e07e33a6bc0" class="m-doc-self" id="a5f21a6ce6772ce077c91b14902eea3eba4f5c9a204f4e13edc01b5e07e33a6bc0">kAnimIndexCellIdleBig</a></td>
+                  <td>
+                  <p>0xAAAA0049</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a5f21a6ce6772ce077c91b14902eea3eba984c5dbe4f22dcd5c075b1fc11979f74" class="m-doc-self" id="a5f21a6ce6772ce077c91b14902eea3eba984c5dbe4f22dcd5c075b1fc11979f74">kAnimIndexCellIdleBlink1Big</a></td>
+                  <td>
+                  <p>0xAAAA0050</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a5f21a6ce6772ce077c91b14902eea3ebacc94632c7363bce21d0b73579e7e8252" class="m-doc-self" id="a5f21a6ce6772ce077c91b14902eea3ebacc94632c7363bce21d0b73579e7e8252">kAnimIndexCellIdleBlink2Big</a></td>
+                  <td>
+                  <p>0xAAAA0051</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a5f21a6ce6772ce077c91b14902eea3eba7eb95620be0e73d76b44a7b71bfe0484" class="m-doc-self" id="a5f21a6ce6772ce077c91b14902eea3eba7eb95620be0e73d76b44a7b71bfe0484">kAnimIndexCellIdleBlink3Big</a></td>
+                  <td>
+                  <p>0xAAAA0052</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a5f21a6ce6772ce077c91b14902eea3eba5d4edaf04330db338b24c5f460b2769d" class="m-doc-self" id="a5f21a6ce6772ce077c91b14902eea3eba5d4edaf04330db338b24c5f460b2769d">kAnimIndexCellMovFlgBig</a></td>
+                  <td>
+                  <p>0xAAAA0053</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a5f21a6ce6772ce077c91b14902eea3eba4db2d864c94f23905cae901db90fcab3" class="m-doc-self" id="a5f21a6ce6772ce077c91b14902eea3eba4db2d864c94f23905cae901db90fcab3">kAnimIndexCellMovFlgBigBlink</a></td>
+                  <td>
+                  <p>0xAAAA0054</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a5f21a6ce6772ce077c91b14902eea3eba3f4fbb3bd77bee588df565eb89ff3e3a" class="m-doc-self" id="a5f21a6ce6772ce077c91b14902eea3eba3f4fbb3bd77bee588df565eb89ff3e3a">kAnimIndexCellMovFlgBigMad</a></td>
+                  <td>
+                  <p>0xAAAA0055</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a5f21a6ce6772ce077c91b14902eea3eba6b461b6b93a77ee36a647da0f988fee3" class="m-doc-self" id="a5f21a6ce6772ce077c91b14902eea3eba6b461b6b93a77ee36a647da0f988fee3">kAnimIndexCellMovCilBig</a></td>
+                  <td>
+                  <p>0xAAAA0056</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a5f21a6ce6772ce077c91b14902eea3ebaed58b316014d9efba7488bec9294d997" class="m-doc-self" id="a5f21a6ce6772ce077c91b14902eea3ebaed58b316014d9efba7488bec9294d997">kAnimIndexCellMovCilBigBlink</a></td>
+                  <td>
+                  <p>0xAAAA0057</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a5f21a6ce6772ce077c91b14902eea3eba5252615b92cd0f13c2343332cc348d52" class="m-doc-self" id="a5f21a6ce6772ce077c91b14902eea3eba5252615b92cd0f13c2343332cc348d52">kAnimIndexCellMovCilBigMad</a></td>
+                  <td>
+                  <p>0xAAAA0058</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a5f21a6ce6772ce077c91b14902eea3ebad7afe7c651a2e76922d9c1f7465c6dc0" class="m-doc-self" id="a5f21a6ce6772ce077c91b14902eea3ebad7afe7c651a2e76922d9c1f7465c6dc0">kAnimIndexCellMovCilBig2</a></td>
+                  <td>
+                  <p>0xAAAA0056</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a5f21a6ce6772ce077c91b14902eea3ebad1093538c7bcca97aa4e9215c7f8c321" class="m-doc-self" id="a5f21a6ce6772ce077c91b14902eea3ebad1093538c7bcca97aa4e9215c7f8c321">kAnimIndexCellMovCilBigBlink2</a></td>
+                  <td>
+                  <p>0xAAAA0057</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a5f21a6ce6772ce077c91b14902eea3eba0e826266ce7e334745014aa7f7fb3267" class="m-doc-self" id="a5f21a6ce6772ce077c91b14902eea3eba0e826266ce7e334745014aa7f7fb3267">kAnimIndexCellMovCilBigMad2</a></td>
+                  <td>
+                  <p>0xAAAA0058</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a5f21a6ce6772ce077c91b14902eea3eba5549572fd49d132f941a52f749163dfe" class="m-doc-self" id="a5f21a6ce6772ce077c91b14902eea3eba5549572fd49d132f941a52f749163dfe">kAnimIndexCellNpcMadBig</a></td>
+                  <td>
+                  <p>0xAAAA0059</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a5f21a6ce6772ce077c91b14902eea3eba174a597ba92a3899e7029dc33ace1a59" class="m-doc-self" id="a5f21a6ce6772ce077c91b14902eea3eba174a597ba92a3899e7029dc33ace1a59">kAnimIndexCellMovCil</a></td>
+                  <td>
+                  <p>0xAAAA0060</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a5f21a6ce6772ce077c91b14902eea3ebad7be14d19dd556c1f460af0020b731d0" class="m-doc-self" id="a5f21a6ce6772ce077c91b14902eea3ebad7be14d19dd556c1f460af0020b731d0">kAnimIndexCellMovCilBlink</a></td>
+                  <td>
+                  <p>0xAAAA0061</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a5f21a6ce6772ce077c91b14902eea3eba9ee66a4cdbcf823f9a46ada50041c4fa" class="m-doc-self" id="a5f21a6ce6772ce077c91b14902eea3eba9ee66a4cdbcf823f9a46ada50041c4fa">kAnimIndexCellMovPoisonRelease</a></td>
+                  <td>
+                  <p>0xAAAA0062</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a5f21a6ce6772ce077c91b14902eea3eba892949a240b4e329d99642a62235ba88" class="m-doc-self" id="a5f21a6ce6772ce077c91b14902eea3eba892949a240b4e329d99642a62235ba88">kAnimIndexCellMovCilMad</a></td>
+                  <td>
+                  <p>0xAAAA0063</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a5f21a6ce6772ce077c91b14902eea3eba6ab8e5be1b931aa653f4e882c82211e2" class="m-doc-self" id="a5f21a6ce6772ce077c91b14902eea3eba6ab8e5be1b931aa653f4e882c82211e2">kAnimIndexCellMovCilScared</a></td>
+                  <td>
+                  <p>0xAAAA0064</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a5f21a6ce6772ce077c91b14902eea3eba981cb37a0892f3bfc76ad47c1e88e561" class="m-doc-self" id="a5f21a6ce6772ce077c91b14902eea3eba981cb37a0892f3bfc76ad47c1e88e561">kAnimIndexCellDmgSolidDeath</a></td>
+                  <td>
+                  <p>0xAAAA0065</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a5f21a6ce6772ce077c91b14902eea3eba1d334b8fefe2c003f5d4ce815ffc9be8" class="m-doc-self" id="a5f21a6ce6772ce077c91b14902eea3eba1d334b8fefe2c003f5d4ce815ffc9be8">kAnimIndexCellPoisonRelease</a></td>
+                  <td>
+                  <p>0xAAAA0066</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a5f21a6ce6772ce077c91b14902eea3eba0e45a1dce6fe2fae590cb04805f1fb03" class="m-doc-self" id="a5f21a6ce6772ce077c91b14902eea3eba0e45a1dce6fe2fae590cb04805f1fb03">kAnimIndexCellHatchLayEgg</a></td>
+                  <td>
+                  <p>0xAAAA0067</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a5f21a6ce6772ce077c91b14902eea3eba6d9afd1cadc5b9ebffe577a205248418" class="m-doc-self" id="a5f21a6ce6772ce077c91b14902eea3eba6d9afd1cadc5b9ebffe577a205248418">kAnimIndexCellHatchEgg</a></td>
+                  <td>
+                  <p>0xAAAA0068</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a5f21a6ce6772ce077c91b14902eea3ebaf12749f0f4f4b2b4ae57453e686819ca" class="m-doc-self" id="a5f21a6ce6772ce077c91b14902eea3ebaf12749f0f4f4b2b4ae57453e686819ca">kAnimIndexCellHatchIce</a></td>
+                  <td>
+                  <p>0xAAAA0069</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a5f21a6ce6772ce077c91b14902eea3eba0826445dbc64ed661dd9c842a3c15fe1" class="m-doc-self" id="a5f21a6ce6772ce077c91b14902eea3eba0826445dbc64ed661dd9c842a3c15fe1">kAnimIndexCellGoToEditor</a></td>
+                  <td>
+                  <p>0xAAAA0070</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a5f21a6ce6772ce077c91b14902eea3eba0239b47c61bb634ea862adb6625f16e5" class="m-doc-self" id="a5f21a6ce6772ce077c91b14902eea3eba0239b47c61bb634ea862adb6625f16e5">kAnimIndexCellDeathEaten</a></td>
+                  <td>
+                  <p>0xAAAA0071</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a5f21a6ce6772ce077c91b14902eea3ebafdbf24eaaa3b38e8cd0026daa0b90a04" class="m-doc-self" id="a5f21a6ce6772ce077c91b14902eea3ebafdbf24eaaa3b38e8cd0026daa0b90a04">kAnimIndexCellDeathEatenNpc</a></td>
+                  <td>
+                  <p>0xAAAA0072</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a5f21a6ce6772ce077c91b14902eea3eba2af8367e332591c5cb28d0d548bdab8a" class="m-doc-self" id="a5f21a6ce6772ce077c91b14902eea3eba2af8367e332591c5cb28d0d548bdab8a">kAnimIndexCellTakeDmgMand</a></td>
+                  <td>
+                  <p>0xAAAA0073</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a5f21a6ce6772ce077c91b14902eea3ebaa17590f82eb39177baf1601c4936c707" class="m-doc-self" id="a5f21a6ce6772ce077c91b14902eea3ebaa17590f82eb39177baf1601c4936c707">kAnimIndexCellPartDiscover</a></td>
+                  <td>
+                  <p>0xAAAA0074</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a5f21a6ce6772ce077c91b14902eea3eba8412e1c132099af32748dcbfdc93cf01" class="m-doc-self" id="a5f21a6ce6772ce077c91b14902eea3eba8412e1c132099af32748dcbfdc93cf01">kAnimIndexCellEatFilterChew</a></td>
+                  <td>
+                  <p>0xAAAA0075</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a5f21a6ce6772ce077c91b14902eea3eba617f7c50c00d5fc8d96d554808ce7176" class="m-doc-self" id="a5f21a6ce6772ce077c91b14902eea3eba617f7c50c00d5fc8d96d554808ce7176">kAnimIndexCellEatMandChew</a></td>
+                  <td>
+                  <p>0xAAAA0076</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a5f21a6ce6772ce077c91b14902eea3eba6d59af2f1fc8fad9aa5a5efa10edac87" class="m-doc-self" id="a5f21a6ce6772ce077c91b14902eea3eba6d59af2f1fc8fad9aa5a5efa10edac87">kAnimIndexCellEatProbChew</a></td>
+                  <td>
+                  <p>0xAAAA0077</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a5f21a6ce6772ce077c91b14902eea3ebaaa2fe1a1870c3d87b5d6797d0a4984af" class="m-doc-self" id="a5f21a6ce6772ce077c91b14902eea3ebaaa2fe1a1870c3d87b5d6797d0a4984af">kAnimIndexCellDmgSolidMandNpc</a></td>
+                  <td>
+                  <p>0xAAAA0078</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a5f21a6ce6772ce077c91b14902eea3eba0a1590235f624490cdd1830ace90aef2" class="m-doc-self" id="a5f21a6ce6772ce077c91b14902eea3eba0a1590235f624490cdd1830ace90aef2">kAnimIndexCellDmgSolidDeathNpc</a></td>
+                  <td>
+                  <p>0xAAAA0079</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a5f21a6ce6772ce077c91b14902eea3eba297ccd774b2782098ee1476437929767" class="m-doc-self" id="a5f21a6ce6772ce077c91b14902eea3eba297ccd774b2782098ee1476437929767">kAnimIndexCellTakeDmgMandNpc</a></td>
+                  <td>
+                  <p>0xAAAA0080</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a5f21a6ce6772ce077c91b14902eea3ebac16f1ab64120045c764bded37fff5fe7" class="m-doc-self" id="a5f21a6ce6772ce077c91b14902eea3ebac16f1ab64120045c764bded37fff5fe7">kAnimIndexCellMovToBeach</a></td>
+                  <td>
+                  <p>0xAAAA0081</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a5f21a6ce6772ce077c91b14902eea3eba57f2e7125b25b47aa13a12fd0691ecf1" class="m-doc-self" id="a5f21a6ce6772ce077c91b14902eea3eba57f2e7125b25b47aa13a12fd0691ecf1">kAnimIndexCellGlanceMad2</a></td>
+                  <td>
+                  <p>0xAAAA0082</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a5f21a6ce6772ce077c91b14902eea3eba7cb94cf9d418c34daecb86bdb999a242" class="m-doc-self" id="a5f21a6ce6772ce077c91b14902eea3eba7cb94cf9d418c34daecb86bdb999a242">kAnimIndexCellMovFlgBigMadBlink</a></td>
+                  <td>
+                  <p>0xAAAA0083</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a5f21a6ce6772ce077c91b14902eea3eba1018f839993d4168ebaedf9a3727a16b" class="m-doc-self" id="a5f21a6ce6772ce077c91b14902eea3eba1018f839993d4168ebaedf9a3727a16b">kAnimIndexCellGlanceProbOnProb</a></td>
+                  <td>
+                  <p>0xAAAA0084</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a5f21a6ce6772ce077c91b14902eea3ebab62ca1931d4c0deafb2189db27d125ab" class="m-doc-self" id="a5f21a6ce6772ce077c91b14902eea3ebab62ca1931d4c0deafb2189db27d125ab">kAnimIndexCellMovCil180</a></td>
+                  <td>
+                  <p>0xAAAA0085</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a5f21a6ce6772ce077c91b14902eea3eba47c4a5d500c935d55c6220302ee759e4" class="m-doc-self" id="a5f21a6ce6772ce077c91b14902eea3eba47c4a5d500c935d55c6220302ee759e4">kAnimIndexCellMovCil180v2</a></td>
+                  <td>
+                  <p>0xAAAA0086</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a5f21a6ce6772ce077c91b14902eea3eba5ca6382c2840011f473b44db410851e8" class="m-doc-self" id="a5f21a6ce6772ce077c91b14902eea3eba5ca6382c2840011f473b44db410851e8">kAnimIndexCellMovCil180v3</a></td>
+                  <td>
+                  <p>0xAAAA0087</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a5f21a6ce6772ce077c91b14902eea3ebac70e77b7355041872dc2d8c0d116f95b" class="m-doc-self" id="a5f21a6ce6772ce077c91b14902eea3ebac70e77b7355041872dc2d8c0d116f95b">kAnimIndexCellMovCil180v4</a></td>
+                  <td>
+                  <p>0xAAAA0088</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a5f21a6ce6772ce077c91b14902eea3eba458ce65183977c095e415794679606f9" class="m-doc-self" id="a5f21a6ce6772ce077c91b14902eea3eba458ce65183977c095e415794679606f9">kAnimIndexCellMovCil180v5</a></td>
+                  <td>
+                  <p>0xAAAA0089</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a5f21a6ce6772ce077c91b14902eea3eba94907bb5780cfe752f6900a8af4ef1c1" class="m-doc-self" id="a5f21a6ce6772ce077c91b14902eea3eba94907bb5780cfe752f6900a8af4ef1c1">kAnimIndexCellMovFlgStart</a></td>
+                  <td>
+                  <p>0xAAAA0090</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a5f21a6ce6772ce077c91b14902eea3eba57fcce6c31d82ba42fdbabfc57021a46" class="m-doc-self" id="a5f21a6ce6772ce077c91b14902eea3eba57fcce6c31d82ba42fdbabfc57021a46">kAnimIndexCellMovFlgStart2</a></td>
+                  <td>
+                  <p>0xAAAA0090</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a5f21a6ce6772ce077c91b14902eea3eba06703cff210d99acb89271400cd3a81f" class="m-doc-self" id="a5f21a6ce6772ce077c91b14902eea3eba06703cff210d99acb89271400cd3a81f">kAnimIndexCellMovCil2</a></td>
+                  <td>
+                  <p>0xAAAA0091</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a5f21a6ce6772ce077c91b14902eea3ebafae43b77b2529b16596534aec92208cf" class="m-doc-self" id="a5f21a6ce6772ce077c91b14902eea3ebafae43b77b2529b16596534aec92208cf">kAnimIndexCellMoveJet4</a></td>
+                  <td>
+                  <p>0xAAAA0092</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a5f21a6ce6772ce077c91b14902eea3ebab77acfc68bf5f8ac4f4b2b27cbb5242f" class="m-doc-self" id="a5f21a6ce6772ce077c91b14902eea3ebab77acfc68bf5f8ac4f4b2b27cbb5242f">kAnimIndexCellTakeDmgPoisonBig</a></td>
+                  <td>
+                  <p>0xAAAA0093</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a5f21a6ce6772ce077c91b14902eea3ebac19ef662c4e74992f48aee74407fbcb6" class="m-doc-self" id="a5f21a6ce6772ce077c91b14902eea3ebac19ef662c4e74992f48aee74407fbcb6">kAnimIndexCellMovBankLt</a></td>
+                  <td>
+                  <p>0xAAAA0095</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a5f21a6ce6772ce077c91b14902eea3ebaf7ed2738a70e8ac54950527244a86fa2" class="m-doc-self" id="a5f21a6ce6772ce077c91b14902eea3ebaf7ed2738a70e8ac54950527244a86fa2">kAnimIndexCellMovBankRt</a></td>
+                  <td>
+                  <p>0xAAAA0096</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a5f21a6ce6772ce077c91b14902eea3ebacf0f2014ba65ed87f59a9e29d751c99f" class="m-doc-self" id="a5f21a6ce6772ce077c91b14902eea3ebacf0f2014ba65ed87f59a9e29d751c99f">kAnimIndexCellBackgrndGuy</a></td>
+                  <td>
+                  <p>0xAAAA0097</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a5f21a6ce6772ce077c91b14902eea3eba3fe3434c99503f373b52e72116d31e20" class="m-doc-self" id="a5f21a6ce6772ce077c91b14902eea3eba3fe3434c99503f373b52e72116d31e20">kAnimIndexCellTakeDmgElecNpcBig</a></td>
+                  <td>
+                  <p>0xAAAA0098</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a5f21a6ce6772ce077c91b14902eea3eba3b9bf9e196ccd887198217c146f17166" class="m-doc-self" id="a5f21a6ce6772ce077c91b14902eea3eba3b9bf9e196ccd887198217c146f17166">kAnimIndexEpicCellEyePokeReact</a></td>
+                  <td>
+                  <p>0xAAAA0099</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a5f21a6ce6772ce077c91b14902eea3eba976c03eee4caca507c8175b190dc65de" class="m-doc-self" id="a5f21a6ce6772ce077c91b14902eea3eba976c03eee4caca507c8175b190dc65de">kAnimIndexEpicCellEyePokeClosedLF</a></td>
+                  <td>
+                  <p>0xAAAA0100</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a5f21a6ce6772ce077c91b14902eea3ebaa0d06f23ac072be882774a503fea728d" class="m-doc-self" id="a5f21a6ce6772ce077c91b14902eea3ebaa0d06f23ac072be882774a503fea728d">kAnimIndexEpicCellEyePokeClosedRF</a></td>
+                  <td>
+                  <p>0xAAAA0101</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a5f21a6ce6772ce077c91b14902eea3eba8ca04c39317b2121f7ab3c28a405be97" class="m-doc-self" id="a5f21a6ce6772ce077c91b14902eea3eba8ca04c39317b2121f7ab3c28a405be97">kAnimIndexEpicCellEyePokeClosedLC</a></td>
+                  <td>
+                  <p>0xAAAA0102</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a5f21a6ce6772ce077c91b14902eea3eba0be3dc3b7f69723c702796792660423e" class="m-doc-self" id="a5f21a6ce6772ce077c91b14902eea3eba0be3dc3b7f69723c702796792660423e">kAnimIndexEpicCellEyePokeClosedRC</a></td>
+                  <td>
+                  <p>0xAAAA0103</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a5f21a6ce6772ce077c91b14902eea3eba26646cc8a7a805485c8c987509ee4d71" class="m-doc-self" id="a5f21a6ce6772ce077c91b14902eea3eba26646cc8a7a805485c8c987509ee4d71">kAnimIndexEpicCellEyePokeClosedLB</a></td>
+                  <td>
+                  <p>0xAAAA0104</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a5f21a6ce6772ce077c91b14902eea3ebac59d9409937446045345432d51130b3a" class="m-doc-self" id="a5f21a6ce6772ce077c91b14902eea3ebac59d9409937446045345432d51130b3a">kAnimIndexEpicCellEyePokeClosedRB</a></td>
+                  <td>
+                  <p>0xAAAA0105</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a5f21a6ce6772ce077c91b14902eea3ebab787a2cb5fc93e42dbf7ab3c786a459b" class="m-doc-self" id="a5f21a6ce6772ce077c91b14902eea3ebab787a2cb5fc93e42dbf7ab3c786a459b">kAnimIndexEpicCellBiteRock</a></td>
+                  <td>
+                  <p>0xAAAA0106</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a5f21a6ce6772ce077c91b14902eea3eba80cad47bd8cb7eb2f670c7eb602ce513" class="m-doc-self" id="a5f21a6ce6772ce077c91b14902eea3eba80cad47bd8cb7eb2f670c7eb602ce513">kAnimIndexEpicCellElectrocuted</a></td>
+                  <td>
+                  <p>0xAAAA0107</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a5f21a6ce6772ce077c91b14902eea3eba2a5d521aac00293dfd3576309c70db56" class="m-doc-self" id="a5f21a6ce6772ce077c91b14902eea3eba2a5d521aac00293dfd3576309c70db56">kAnimIndexEpicCellChokes</a></td>
+                  <td>
+                  <p>0xAAAA0108</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a5f21a6ce6772ce077c91b14902eea3eba752967ee62603fa4d9255629e77a2b82" class="m-doc-self" id="a5f21a6ce6772ce077c91b14902eea3eba752967ee62603fa4d9255629e77a2b82">kAnimIndexEpicCellProboscised</a></td>
+                  <td>
+                  <p>0xAAAA0109</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a5f21a6ce6772ce077c91b14902eea3eba43aa25aa524f76083922a3b77f7e6632" class="m-doc-self" id="a5f21a6ce6772ce077c91b14902eea3eba43aa25aa524f76083922a3b77f7e6632">kAnimIndexEpicCellDeathTurnover</a></td>
+                  <td>
+                  <p>0xAAAA0110</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a5f21a6ce6772ce077c91b14902eea3ebaf03131aedbedea563ab5c5e220ae34fe" class="m-doc-self" id="a5f21a6ce6772ce077c91b14902eea3ebaf03131aedbedea563ab5c5e220ae34fe">kAnimIndexEpicCellDeathIdle</a></td>
+                  <td>
+                  <p>0xAAAA0111</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a5f21a6ce6772ce077c91b14902eea3eba813c9354a72094f717c1454093cdffda" class="m-doc-self" id="a5f21a6ce6772ce077c91b14902eea3eba813c9354a72094f717c1454093cdffda">kAnimIndexEpicCellEyePokeReactLt</a></td>
+                  <td>
+                  <p>0xAAAA0112</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a5f21a6ce6772ce077c91b14902eea3ebaf65c8eed634bedcb203598c82a027fd2" class="m-doc-self" id="a5f21a6ce6772ce077c91b14902eea3ebaf65c8eed634bedcb203598c82a027fd2">kAnimIndexEpicCellEyePokeReactRt</a></td>
+                  <td>
+                  <p>0xAAAA0113</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a5f21a6ce6772ce077c91b14902eea3ebabcccf5668abe1a8e2867b9ef6283eef7" class="m-doc-self" id="a5f21a6ce6772ce077c91b14902eea3ebabcccf5668abe1a8e2867b9ef6283eef7">kAnimIndexCellMate01</a></td>
+                  <td>
+                  <p>0xAAAA0114</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a5f21a6ce6772ce077c91b14902eea3eba9ed0f6f074b2225ba4817f8d3b94696b" class="m-doc-self" id="a5f21a6ce6772ce077c91b14902eea3eba9ed0f6f074b2225ba4817f8d3b94696b">kAnimIndexCellMate02</a></td>
+                  <td>
+                  <p>0xAAAA0115</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a5f21a6ce6772ce077c91b14902eea3eba54268ab24ee5a2dd3abbb6072cf54d11" class="m-doc-self" id="a5f21a6ce6772ce077c91b14902eea3eba54268ab24ee5a2dd3abbb6072cf54d11">kAnimIndexCellMatingCall</a></td>
+                  <td>
+                  <p>0xAAAA0116</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a5f21a6ce6772ce077c91b14902eea3eba0ac0ca7d12cb839c99954d32bc4c69b0" class="m-doc-self" id="a5f21a6ce6772ce077c91b14902eea3eba0ac0ca7d12cb839c99954d32bc4c69b0">kAnimIndexCellEatProbRetractTrgtNpc</a></td>
+                  <td>
+                  <p>0xAAAA0117</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a5f21a6ce6772ce077c91b14902eea3eba12a8c2696797348d2ab35b6f94e92daf" class="m-doc-self" id="a5f21a6ce6772ce077c91b14902eea3eba12a8c2696797348d2ab35b6f94e92daf">kAnimIndexCellEatProbRetractNpc</a></td>
+                  <td>
+                  <p>0xAAAA0118</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a5f21a6ce6772ce077c91b14902eea3ebae5ba155a7a29a8477e57ad7d6e19188e" class="m-doc-self" id="a5f21a6ce6772ce077c91b14902eea3ebae5ba155a7a29a8477e57ad7d6e19188e">kAnimIndexCellEatProbStunNpc</a></td>
+                  <td>
+                  <p>0xAAAA0119</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a5f21a6ce6772ce077c91b14902eea3ebac5e1b71541d91d1285b57c070cdd14fd" class="m-doc-self" id="a5f21a6ce6772ce077c91b14902eea3ebac5e1b71541d91d1285b57c070cdd14fd">kAnimIndexCellEatProbNpc</a></td>
+                  <td>
+                  <p>0xAAAA0120</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a5f21a6ce6772ce077c91b14902eea3ebac876143b33069bee795b997bab138505" class="m-doc-self" id="a5f21a6ce6772ce077c91b14902eea3ebac876143b33069bee795b997bab138505">kAnimIndexCellTakeDmgStabNpcBig</a></td>
+                  <td>
+                  <p>0xAAAA0121</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a5f21a6ce6772ce077c91b14902eea3eba758620b52ecd03c1c8058e5649af7a2f" class="m-doc-self" id="a5f21a6ce6772ce077c91b14902eea3eba758620b52ecd03c1c8058e5649af7a2f">kAnimIndexCellTakeDmgMandNpcBig</a></td>
+                  <td>
+                  <p>0xAAAA0122</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a5f21a6ce6772ce077c91b14902eea3eba5130251e664975f77a442c723bc43a2e" class="m-doc-self" id="a5f21a6ce6772ce077c91b14902eea3eba5130251e664975f77a442c723bc43a2e">kAnimIndexEpicCellPoked</a></td>
+                  <td>
+                  <p>0xAAAA0123</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a5f21a6ce6772ce077c91b14902eea3ebabb876e22685b1b20de33a61e21cc5868" class="m-doc-self" id="a5f21a6ce6772ce077c91b14902eea3ebabb876e22685b1b20de33a61e21cc5868">kAnimIndexEpicCellPoked2</a></td>
+                  <td>
+                  <p>0xAAAA0123</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a5f21a6ce6772ce077c91b14902eea3ebad41e1cf39865342392a4f5eb609aa21d" class="m-doc-self" id="a5f21a6ce6772ce077c91b14902eea3ebad41e1cf39865342392a4f5eb609aa21d">kAnimIndexCellBrainUpgrade</a></td>
+                  <td>
+                  <p>0xAAAA0124</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a5f21a6ce6772ce077c91b14902eea3eba84d1bab70713b065bd531acb5dc22903" class="m-doc-self" id="a5f21a6ce6772ce077c91b14902eea3eba84d1bab70713b065bd531acb5dc22903">kAnimIndexCellHatchLayEggNpc</a></td>
+                  <td>
+                  <p>0xAAAA0125</p>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
           </div></section>
         </section>
         <section>
@@ -630,6 +1610,13 @@
             <h3>
               <span class="m-doc-wrap-bumper"> Simulator::<wbr />Cell::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#aac4b2f55243d5fa86026c5be1868afd7" class="m-doc-self">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="struct_simulator_1_1_cell_1_1c_cell_data_reference__.html" class="m-doc">cCellDataReference_<wbr /></a>,
               0x10)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="c_cell_resource_8h.html">&lt;Spore/Simulator/Cell/cCellResource.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="adbecabca3a2dd5371c993ec70ca8b9c4"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">namespace Simulator::<wbr />Cell::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#adbecabca3a2dd5371c993ec70ca8b9c4" class="m-doc-self">Addresses</a>(</span><span class="m-doc-wrap"><a href="struct_simulator_1_1_cell_1_1c_cell_data_reference__.html" class="m-doc">cCellDataReference_<wbr /></a>)</span></span>
               <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="c_cell_resource_8h.html">&lt;Spore/Simulator/Cell/cCellResource.h&gt;</a></div>
             </h3>
             <p><span></span></p>
@@ -825,6 +1812,14 @@
             </h3>
             <p><span></span></p>
           </div></section>
+          <section class="m-doc-details" id="a818b3a99c5a8755bb3c6bedf66b97ca6"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"> Simulator::<wbr />Cell::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a818b3a99c5a8755bb3c6bedf66b97ca6" class="m-doc-self">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="struct_simulator_1_1_cell_1_1c_cell_anim_definition.html" class="m-doc">cCellAnimDefinition</a>,
+              0x24)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_cell_animations_8h.html">&lt;Spore/Simulator/Cell/CellAnimations.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
           <section class="m-doc-details" id="a47ff9ceb57ba54db4ab661f07fea7235"><div>
             <h3>
               <span class="m-doc-wrap-bumper"><a href="class_simulator_1_1_goal_card.html" class="m-doc">GoalCard</a>* Simulator::<wbr />Cell::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a47ff9ceb57ba54db4ab661f07fea7235" class="m-doc-self">GetGoalCards</a>(</span><span class="m-doc-wrap">)</span></span>
@@ -1000,6 +1995,58 @@
 <p>The caller must provide a buffer where For example, getting all the cells 10 units from the player:</p><pre class="m-code"><span class="n">Math</span><span class="o">::</span><span class="n">Vector3</span><span class="w"> </span><span class="n">position</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Simulator</span><span class="o">::</span><span class="n">Cell</span><span class="o">::</span><span class="n">GetAvatarCell</span><span class="p">()</span><span class="o">-&gt;</span><span class="n">mTransform</span><span class="p">.</span><span class="n">GetOffset</span><span class="p">();</span><span class="w"></span>
 <span class="n">cObjectPoolIndex</span><span class="w"> </span><span class="n">buffer</span><span class="p">[</span><span class="mi">400</span><span class="p">];</span><span class="w"></span>
 <span class="kt">int</span><span class="w"> </span><span class="n">numCells</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Simulator</span><span class="o">::</span><span class="n">Cell</span><span class="o">::</span><span class="n">FindCellsInRadius</span><span class="p">(</span><span class="n">CellGame</span><span class="p">.</span><span class="n">field_40FC</span><span class="p">,</span><span class="w"> </span><span class="n">position</span><span class="p">,</span><span class="w"> </span><span class="mf">10.0f</span><span class="p">,</span><span class="w"> </span><span class="n">buffer</span><span class="p">,</span><span class="w"> </span><span class="mi">400</span><span class="p">);</span><span class="w"></span></pre>
+          </div></section>
+          <section class="m-doc-details" id="a38601babcf9eb0fbcaec1aa9ff1fba40"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">void Simulator::<wbr />Cell::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a38601babcf9eb0fbcaec1aa9ff1fba40" class="m-doc-self">PlayAnimation</a>(</span><span class="m-doc-wrap"><a href="struct_simulator_1_1_cell_1_1c_cell_object_data.html" class="m-doc">cCellObjectData</a>* cell,
+              <a href="struct_simulator_1_1_cell_1_1c_cell_object_data.html" class="m-doc">cCellObjectData</a>* otherCell,
+              <a href="namespace_simulator_1_1_cell.html#a5f21a6ce6772ce077c91b14902eea3eb" class="m-doc">CellAnimations</a> targetAnim,
+              <a href="namespace_simulator_1_1_cell.html#a5f21a6ce6772ce077c91b14902eea3eb" class="m-doc">CellAnimations</a> currentAnim)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_cell_functions_8h.html">&lt;Spore/Simulator/Cell/CellFunctions.h&gt;</a></div>
+            </h3>
+            <p>Makes the cell play an animation.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">cell</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>otherCell</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>targetAnim</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>currentAnim</td>
+                  <td></td>
+                </tr>
+              </tbody>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="af33f77249f5be4a1098bdc424decdefa"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"><a href="struct_resource_key.html" class="m-doc">ResourceKey</a> Simulator::<wbr />Cell::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#af33f77249f5be4a1098bdc424decdefa" class="m-doc-self">GetModelKeyForCellResource</a>(</span><span class="m-doc-wrap"><a href="struct_simulator_1_1_cell_1_1c_cell_data_reference.html" class="m-doc">cCellDataReference</a>&lt;<a href="struct_simulator_1_1_cell_1_1c_cell_cell_resource.html" class="m-doc">cCellCellResource</a>&gt;* cellResource)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_cell_functions_8h.html">&lt;Spore/Simulator/Cell/CellFunctions.h&gt;</a></div>
+            </h3>
+            <p>Returns the main model key that must be used for a specific cell definition.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">cellResource</td>
+                  <td></td>
+                </tr>
+              </tbody>
+            </table>
+<p>This looks at the <code>structure</code> field of the resource, and finds the first entry that is either:</p><ul><li><code>Creature</code>: returns the instance ID with <code>.cll</code> extension and group 0</li><li><code>RandomCreature</code>: evaluates the random creature query and returns the key</li><li><code>PlayerCreature</code>: returns the player model key For all other cases, it returns 0.</li></ul>
           </div></section>
         </section>
       </div>

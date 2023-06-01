@@ -56,6 +56,7 @@
               Reference
               <ul>
                 <li><a href="#base-classes">Base classes</a></li>
+                <li><a href="#pub-methods">Public functions</a></li>
                 <li><a href="#pub-attribs">Public variables</a></li>
               </ul>
             </li>
@@ -68,6 +69,23 @@
               struct <a href="struct_simulator_1_1c_object_pool_class.html" class="m-doc">Simulator::cObjectPoolClass</a>
             </dt>
             <dd>Base class for all objects that are used inside a <a href="class_simulator_1_1c_object_pool.html" class="m-doc">cObjectPool</a>.</dd>
+          </dl>
+        </section>
+        <section id="pub-methods">
+          <h2><a href="#pub-methods">Public functions</a></h2>
+          <dl class="m-doc">
+            <dt id="acba15c718709997197b627ed5703676f">
+              <span class="m-doc-wrap-bumper">auto <a href="#acba15c718709997197b627ed5703676f" class="m-doc-self">IsCreature</a>(</span><span class="m-doc-wrap">) -&gt; bool</span>
+            </dt>
+            <dd>Returns true if this cell represents an actual creature, and false for everything else (such as rocks, food, bubbles, ...)</dd>
+            <dt id="a6b0c920a18bf382d9086ef09c10195f9">
+              <span class="m-doc-wrap-bumper">auto <a href="#a6b0c920a18bf382d9086ef09c10195f9" class="m-doc-self">IsPlayer</a>(</span><span class="m-doc-wrap">) -&gt; bool</span>
+            </dt>
+            <dd>Returns true if this is the player cell.</dd>
+            <dt id="accaa82c8b0b1b8925097f76977c0e652">
+              <span class="m-doc-wrap-bumper">auto <a href="#accaa82c8b0b1b8925097f76977c0e652" class="m-doc-self">GetPosition</a>(</span><span class="m-doc-wrap">) -&gt; const <a href="struct_math_1_1_vector3.html" class="m-doc">Math::<wbr />Vector3</a>&amp;</span>
+            </dt>
+            <dd>Returns the current position of the cell.</dd>
           </dl>
         </section>
         <section id="pub-attribs">
@@ -168,7 +186,7 @@
             <dt id="a4df440119a5f9fef7249b65d26bb1442">
               <a href="struct_resource_key.html" class="m-doc">ResourceKey</a> <a href="#a4df440119a5f9fef7249b65d26bb1442" class="m-doc-self">mModelKey</a>
             </dt>
-            <dd><span></span></dd>
+            <dd>Key of the main model used, this is 0 for all cells that are not actual creatures.</dd>
             <dt id="a3d38a5ae8fd91908ae6a0a8c55dd9f4a">
               <a href="struct_simulator_1_1_cell_1_1c_cell_data_reference.html" class="m-doc">cCellDataReference</a>&lt;<a href="struct_simulator_1_1_cell_1_1c_cell_cell_resource.html" class="m-doc">cCellCellResource</a>&gt;* <a href="#a3d38a5ae8fd91908ae6a0a8c55dd9f4a" class="m-doc-self">mCellResource</a>
             </dt>
@@ -297,8 +315,8 @@
               int <a href="#a7901f842efff6633dd04a18775142aac" class="m-doc-self">field_188</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="a2f1eb7e887dd4951b588fe3f2cc66399">
-              int <a href="#a2f1eb7e887dd4951b588fe3f2cc66399" class="m-doc-self">field_18C</a>
+            <dt id="aa0761cc0e8959652b7e568acca14a89c">
+              <a href="namespace_simulator_1_1_cell.html#a5f21a6ce6772ce077c91b14902eea3eb" class="m-doc">CellAnimations</a> <a href="#aa0761cc0e8959652b7e568acca14a89c" class="m-doc-self">field_18C</a>
             </dt>
             <dd><span></span></dd>
             <dt id="a3f4f3ffad3d6629512e1e3f6f55ce7ad">
@@ -333,16 +351,16 @@
               int <a href="#a2015657c960f95671318aba7558d5342" class="m-doc-self">field_1AC</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="af6ea71ad58dd8f0626f7f4784329197e">
-              int <a href="#af6ea71ad58dd8f0626f7f4784329197e" class="m-doc-self">field_1B0</a>
+            <dt id="a275eddd078c8a88d1ca391bf2a547d75">
+              <a href="namespace_simulator_1_1_cell.html#a5f21a6ce6772ce077c91b14902eea3eb" class="m-doc">CellAnimations</a> <a href="#a275eddd078c8a88d1ca391bf2a547d75" class="m-doc-self">mCurrentAnimation</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="a6767b0da90396da99f646ad8841f158d">
-              int <a href="#a6767b0da90396da99f646ad8841f158d" class="m-doc-self">field_1B4</a>
+            <dt id="ad722cee7d061399d58c93c01e487014b">
+              <a href="namespace_simulator_1_1_cell.html#a5f21a6ce6772ce077c91b14902eea3eb" class="m-doc">CellAnimations</a> <a href="#ad722cee7d061399d58c93c01e487014b" class="m-doc-self">field_1B4</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="ab6b23ccd57aeed6862a8fe9a20b14837">
-              int <a href="#ab6b23ccd57aeed6862a8fe9a20b14837" class="m-doc-self">field_1B8</a>
+            <dt id="aa112cf193a96417ce1ea2eee3f75feee">
+              float <a href="#aa112cf193a96417ce1ea2eee3f75feee" class="m-doc-self">field_1B8</a>
             </dt>
             <dd><span></span></dd>
             <dt id="a3bea4a40e74c65f23f6b851f155cfc04">
@@ -413,8 +431,8 @@
               <a href="struct_math_1_1_vector3.html" class="m-doc">Math::<wbr />Vector3</a> <a href="#afd30b480c8cffb039849f18f0a17ae86" class="m-doc-self">field_1FC</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="a8731d13276942e4d56694a60fd6b9cba">
-              int <a href="#a8731d13276942e4d56694a60fd6b9cba" class="m-doc-self">field_208</a>
+            <dt id="acdf6a1646d3a4e1d8af1f480d7a07ba5">
+              <a href="namespace_simulator.html#ab12c1aef8e3dbcd4556eb52a3460aac6" class="m-doc">cObjectPoolIndex</a> <a href="#acdf6a1646d3a4e1d8af1f480d7a07ba5" class="m-doc-self">field_208</a>
             </dt>
             <dd><span></span></dd>
             <dt id="a60761f274a48e57d83518c1aeeeba358">
@@ -425,44 +443,44 @@
               int <a href="#ab8dcd6e3db4a26dd5502020fc095660e" class="m-doc-self">field_210</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="a6b434feeffe6f7e9a90f85ff986d43a4">
-              int <a href="#a6b434feeffe6f7e9a90f85ff986d43a4" class="m-doc-self">field_214</a>
+            <dt id="aeb4c9ce0651ffba9b1411134b6cf425d">
+              <a href="namespace_simulator.html#ab12c1aef8e3dbcd4556eb52a3460aac6" class="m-doc">cObjectPoolIndex</a> <a href="#aeb4c9ce0651ffba9b1411134b6cf425d" class="m-doc-self">field_214</a>
             </dt>
             <dd><span></span></dd>
             <dt id="a2acc141dcc80e1aa1f1cacc872968029">
               int <a href="#a2acc141dcc80e1aa1f1cacc872968029" class="m-doc-self">field_218</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="aff24502ef14d6c5c1dc265459516b6b0">
-              int <a href="#aff24502ef14d6c5c1dc265459516b6b0" class="m-doc-self">field_21C</a>
+            <dt id="ab5a5d72fb0eddfaf9389c92cb6b76a05">
+              float <a href="#ab5a5d72fb0eddfaf9389c92cb6b76a05" class="m-doc-self">mFleeCellTime</a>
             </dt>
-            <dd><span></span></dd>
-            <dt id="ae5626cd26f2761075f42993c6ec79c2f">
-              int <a href="#ae5626cd26f2761075f42993c6ec79c2f" class="m-doc-self">field_220</a>
+            <dd>How much time is remaining on the current flee from another cell.</dd>
+            <dt id="a087aa10cf723034ac6d995d4f3decdac">
+              <a href="namespace_simulator.html#ab12c1aef8e3dbcd4556eb52a3460aac6" class="m-doc">cObjectPoolIndex</a> <a href="#a087aa10cf723034ac6d995d4f3decdac" class="m-doc-self">mFleeCellIndex</a>
             </dt>
-            <dd><span></span></dd>
-            <dt id="a71dcea372b0864483a5ca7ca169c8215">
-              int <a href="#a71dcea372b0864483a5ca7ca169c8215" class="m-doc-self">field_224</a>
+            <dd>Index of a cell this cell is fleeing.</dd>
+            <dt id="a1f35bad65667e6ce815821894276d317">
+              float <a href="#a1f35bad65667e6ce815821894276d317" class="m-doc-self">field_224</a>
             </dt>
             <dd><span></span></dd>
             <dt id="afeabe5ab8b367ca84e90ecd44016689b">
               int <a href="#afeabe5ab8b367ca84e90ecd44016689b" class="m-doc-self">field_228</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="afe14ad0c32dd3cad084695bc65da53ad">
-              int <a href="#afe14ad0c32dd3cad084695bc65da53ad" class="m-doc-self">field_22C</a>
+            <dt id="a326e1de0a12320a2f8f4da04a7cc1981">
+              <a href="namespace_simulator.html#ab12c1aef8e3dbcd4556eb52a3460aac6" class="m-doc">cObjectPoolIndex</a> <a href="#a326e1de0a12320a2f8f4da04a7cc1981" class="m-doc-self">mChaseCellIndex</a>
             </dt>
-            <dd><span></span></dd>
-            <dt id="a413923206f7880b8889b6420dd010116">
-              int <a href="#a413923206f7880b8889b6420dd010116" class="m-doc-self">field_230</a>
+            <dd>Index of a cell this cell is chasing.</dd>
+            <dt id="a141153a45fa2dcf4515174d9fdf85811">
+              float <a href="#a141153a45fa2dcf4515174d9fdf85811" class="m-doc-self">mChaseCellTime</a>
             </dt>
-            <dd><span></span></dd>
+            <dd>How much time is remaining on the current chase of another cell.</dd>
             <dt id="aa94de2747cc1a62377708831e38c7e68">
               float <a href="#aa94de2747cc1a62377708831e38c7e68" class="m-doc-self">mSpawnTime</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="ad6b2db88c814688b2705256600dd070c">
-              int <a href="#ad6b2db88c814688b2705256600dd070c" class="m-doc-self">field_238</a>
+            <dt id="aedae5759780bb190814cc84a14db1d06">
+              float <a href="#aedae5759780bb190814cc84a14db1d06" class="m-doc-self">field_238</a>
             </dt>
             <dd><span></span></dd>
             <dt id="a8df7b403a5f9bb6c4f1cb95f95f652d8">
