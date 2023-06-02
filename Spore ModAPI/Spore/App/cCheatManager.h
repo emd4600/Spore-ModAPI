@@ -38,6 +38,7 @@ namespace App
 		: public ICheatManager
 		, public IVirtual
 	{
+	public:
 		cCheatManager();
 		virtual ~cCheatManager() {};
 

@@ -21,7 +21,7 @@ namespace App
 		/* 04h */	virtual int Release() = 0;
 		/* 08h */	virtual ~IAppSystem() = 0;
 		/* 0Ch */	virtual void SetUserDirNames(const char16_t* mySporeCreationsFolderName, const char16_t* appDataSporeFolderName) = 0;
-		/* 10h */	virtual bool PreInit(CommandLine* commandLine) = 0;
+		/* 10h */	virtual bool PreInit(CommandLine* commandLine, const char16_t* ddfListPath) = 0;
 		/* 14h */	virtual bool Init(CommandLine* commandLine) = 0;
 		/* 18h */	virtual bool InitPlugins(CommandLine* commandLine) = 0;
 		/* 1Ch */	virtual bool Configure(CommandLine* commandLine) = 0;
