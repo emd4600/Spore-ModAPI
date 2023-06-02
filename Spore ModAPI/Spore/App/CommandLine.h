@@ -4,6 +4,8 @@
 #include <EASTL\vector.h>
 #include <EASTL\string.h>
 
+#define AppCommandLine (*App::GetAppCommandLine())
+
 namespace App
 {
 	class CommandLine

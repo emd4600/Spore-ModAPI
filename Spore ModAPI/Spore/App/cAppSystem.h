@@ -6,6 +6,7 @@
 #include <Spore\Object.h>
 #include <EASTL\string.h>
 
+#define AppSystem (*App::IAppSystem::Get())
 #define IAppSystemPtr eastl::intrusive_ptr<App::IAppSystem>
 
 namespace App
