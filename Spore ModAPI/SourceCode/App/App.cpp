@@ -3,6 +3,7 @@
 #include <Spore\App\AppData.h>
 #include <Spore\App\IDGenerator.h>
 #include <Spore\App\cCreatureModeStrategy.h>
+#include <Spore\App\cSporeApp.h>
 
 namespace App
 {
@@ -24,5 +25,26 @@ namespace App
 	auto_STATIC_METHOD_(cIDGenerator, cIDGenerator*, Get);
 
 	auto_STATIC_METHOD_(cCreatureModeStrategy, cCreatureModeStrategy*, Get);
+
+
+	auto_STATIC_METHOD_(IAppSystem, IAppSystem*, Get);
+
+	auto_STATIC_METHOD(cSporeApp, int, EAMain, Args(CommandLine* commandLine), Args(commandLine));
+	auto_STATIC_METHOD(cSporeApp, bool, Init, Args(CommandLine* commandLine), Args(commandLine));
+	auto_STATIC_METHOD_VOID_(cSporeApp, Run);
+	auto_STATIC_METHOD_(cSporeApp, bool, Shutdown);
+
+
+	auto_METHOD(CommandLine, eastl::string16&, Get, Args(int i), Args(i));
+
+	auto_METHOD(CommandLine, int, FindSwitch,
+		Args(const char16_t* a1, bool a2, eastl::string16* a3, int a4),
+		Args(a1, a2, a3, a4));
+
+	CommandLine* GetAppCommandLine() {
+		return *(CommandLine**)GetAddress(App, sAppCommandLine);
+	}
+
+	auto_STATIC_METHOD_(Canvas, Canvas*, Get);
 }
 #endif

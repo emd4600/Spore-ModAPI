@@ -39,6 +39,7 @@
 #include <Spore\App\IClassManager.h>
 #include <Spore\App\FileDrop.h>
 #include <Spore\App\cLocaleManager.h>
+#include <Spore\App\cSporeApp.h>
 
 #include <Spore\Audio\AudioSystem.h>
 

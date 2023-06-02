@@ -2,6 +2,7 @@
 
 #include <Spore\Internal.h>
 #include <Spore\Resource\Database.h>
+#include <Spore\Resource\DatabaseDirectoryFiles.h>
 #include <EASTL\string.h>
 
 namespace Resource
@@ -70,7 +71,20 @@ namespace Resource
 		/// @returns
 		Database* GetSaveArea(SaveAreaID areaID);
 
-		void RegisterSaveArea(SaveAreaID areaID, Resource::Database* pDatabase, void* = nullptr);
+		/// Registers a database to be used to save specific types of data, such as saved games, creations, etc.
+		/// @param areaID
+		/// @param pDatabase
+		/// @param unk
+		void RegisterSaveArea(SaveAreaID areaID, Resource::Database* pDatabase, void* unk = nullptr);
+
+		/// Creates a DatabaseDirectoryFiles database for use as a save area.
+		/// The database path will be the one obtained through `basePath` plus `folderName`.
+		/// @param basePath
+		/// @param folderName
+		/// @param[out] dst
+		/// @param saveArea
+		/// @returns True if the operation succeeded
+		bool CreateSaveAreaDirectoryDatabase(PathID basePath, const char16_t* folderName, DatabaseDirectoryFilesPtr& dst, SaveAreaID saveArea);
 	}
 
 	namespace Addresses(Paths)
@@ -81,5 +95,6 @@ namespace Resource
 		DeclareAddress(GetSaveArea);
 		DeclareAddress(RegisterSaveArea);
 		DeclareAddress(CreateTempFile);  // 0x932AC0 0x932550
+		DeclareAddress(CreateSaveAreaDirectoryDatabase);  // 0x6B2950 0x6B25B0
 	}
 }

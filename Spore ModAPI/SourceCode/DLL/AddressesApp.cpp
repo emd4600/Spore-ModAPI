@@ -26,9 +26,12 @@
 #include <Spore\App\cLocaleManager.h>
 #include <Spore\App\AppData.h>
 #include <Spore\App\IDGenerator.h>
+#include <Spore\App\cSporeApp.h>
+#include <Spore\App\Canvas.h>
 
 namespace Addresses(App)
 {
+	DefineAddress(sAppCommandLine, SelectAddress(0x1601BA8, 0x15FD920));
 #ifndef SDK_TO_GHIDRA
 	DefineAddress(AppProperties_ptr, SelectAddress(0x1601BA0, 0x15FD918));
 #else 
@@ -479,6 +482,102 @@ namespace App
 		DefineAddress(func54h, SelectAddress(0x7D9970, 0x7D94F0));
 		DefineAddress(HandleMessage, SelectAddress(0x7DA180, 0x7D9D00));
 		DefineAddress(CalculateViewTransform, SelectAddress(0x7DAB30, 0x7DA6B0));
+	}
+
+	namespace Addresses(IAppSystem)
+	{
+		DefineAddress(Get, SelectAddress(0x67DE20, 0x67DCC0));
+	}
+
+	namespace Addresses(cAppSystem)
+	{
+		DefineAddress(Create, SelectAddress(0x7E8E10, 0x7E8A00));
+		DefineAddress(SetUserDirNames, SelectAddress(0x7E98B0, 0x7E94A0));
+		DefineAddress(PreInit, SelectAddress(0x7E9050, 0x7E8C40));
+		DefineAddress(Init, SelectAddress(0x7E6C60, 0x7E6850));
+		DefineAddress(InitPlugins, SelectAddress(0x7E97E0, 0x7E93D0));
+		DefineAddress(Configure, SelectAddress(0x7E7840, 0x7E7430));
+		DefineAddress(InitGraphics, SelectAddress(0x7EAF50, 0x7EAAE0));
+		DefineAddress(PreShutdown, SelectAddress(0x7E6940, 0x7E6520));
+		DefineAddress(Shutdown, SelectAddress(0x7E9930, 0x7E9520));
+		DefineAddress(Pause, SelectAddress(0x7E6340, 0x7E5F20));
+		DefineAddress(Unpause, SelectAddress(0x7E6350, 0x7E5F30));
+		DefineAddress(IsPaused, SelectAddress(0x7E6360, 0x7E5F40));
+		DefineAddress(SetTimeScale, SelectAddress(0x7E6370, 0x7E5F50));
+		DefineAddress(SetFixedStepping, SelectAddress(0x7E6390, 0x7E5F70));
+		DefineAddress(BoostBackgroundJobs, SelectAddress(0x7E6AA0, 0x7E6680));
+		DefineAddress(IsBoostEnabled, SelectAddress(0x7E6B00, 0x7E66E0));
+		DefineAddress(Demo, SelectAddress(0xB2FA20, 0x7E6120));
+		DefineAddress(OpenURL, SelectAddress(0x7EA1E0, 0x7E9DD0));
+		DefineAddress(func60h, SelectAddress(0x7E63A0, 0x7E5F80));
+		DefineAddress(func64h, SelectAddress(0x7E63D0, 0x7E5FB0));
+		DefineAddress(func68h, SelectAddress(0x7E6400, 0x7E5FE0));
+		DefineAddress(HookWindows, SelectAddress(0x7E64A0, 0x7E6080));
+		DefineAddress(UnhookWindows, SelectAddress(0x7E64F0, 0x7E60D0));
+		DefineAddress(SetEffectCollectionIDs, SelectAddress(0x7E6520, 0x7E6100));
+		DefineAddress(Update, SelectAddress(0x7EA290, 0x7E9E80));
+		DefineAddress(func7Ch, SelectAddress(0x7E6540, 0x7E6130));
+		DefineAddress(PostUpdate, SelectAddress(0x7E6550, 0x7E6140));
+		DefineAddress(func84h, SelectAddress(0x7E6B20, 0x7E6700));
+		DefineAddress(func88h, SelectAddress(0xA6C9F0, 0xA6C940));
+	}
+
+	namespace Addresses(cSporeApp)
+	{
+		DefineAddress(EAMain, SelectAddress(0xF48C10, 0xF48810));
+		DefineAddress(Init, SelectAddress(0xF48230, 0xF47E90));
+		DefineAddress(Run, SelectAddress(0xF47810, 0xF47420));
+		DefineAddress(Shutdown, SelectAddress(0xF47950, 0xF475A0));
+	}
+
+	namespace Addresses(CommandLine)
+	{
+		DefineAddress(FindSwitch, SelectAddress(0x92B6C0, 0x92B570));
+		DefineAddress(Get, SelectAddress(0x92B570, 0x92B420));
+	}
+
+	namespace Addresses(Canvas)
+	{
+		DefineAddress(Get, SelectAddress(0x67DE10, 0x67DCB0));
+		DefineAddress(Init, SelectAddress(0x84A3F0, 0x849BF0));
+		DefineAddress(Shutdown, SelectAddress(0x848900, 0x848100));
+		DefineAddress(func0Ch, SelectAddress(0xA134D0, 0xA13540));
+		DefineAddress(func10h, SelectAddress(0x848240, 0x847A40));
+		DefineAddress(Update, SelectAddress(0x848290, 0x847A90));
+		DefineAddress(Clear, SelectAddress(0x8482C0, 0x847AC0));
+		DefineAddress(GetStyle, SelectAddress(0x985FB0, 0xFCC1D0));
+		DefineAddress(SetStyle, SelectAddress(0x84A600, 0x849E00));
+		DefineAddress(GetOptions, SelectAddress(0x923C40, 0x93B630));
+		DefineAddress(SetOptions, SelectAddress(0x848310, 0x847B10));
+		DefineAddress(GetCaption, SelectAddress(0x804E30, 0xFF3480));
+		DefineAddress(SetCaption, SelectAddress(0x84A710, 0x849ED0));
+		DefineAddress(GetPosition, SelectAddress(0x8489E0, 0x8481E0));
+		DefineAddress(SetPosition, SelectAddress(0x848A00, 0x848200));
+		DefineAddress(GetClientArea, SelectAddress(0x848A70, 0x848270));
+		DefineAddress(SetClientArea, SelectAddress(0x8497B0, 0x848FB0));
+		DefineAddress(IsActive, SelectAddress(0x848340, 0x847B40));
+		DefineAddress(SetActive, SelectAddress(0x848360, 0x847B60));
+		DefineAddress(IsVisible, SelectAddress(0x848380, 0x847B80));
+		DefineAddress(SetVisible, SelectAddress(0x8483A0, 0x847BA0));
+		DefineAddress(IsFullscreen, SelectAddress(0x69D4C0, 0xAB2FF0));
+		DefineAddress(SetFullscreen, SelectAddress(0x8498C0, 0x8490C0));
+		DefineAddress(IsMinimized, SelectAddress(0x8483C0, 0x847BC0));
+		DefineAddress(IsMaximized, SelectAddress(0x8483E0, 0x847BE0));
+		DefineAddress(GetMessageServer, SelectAddress(0xA36470, 0xC871D0));
+		DefineAddress(SetMessageServer, SelectAddress(0xA168B0, 0xA169B0));
+		DefineAddress(func6Ch, SelectAddress(0x8487A0, 0xB18CB0));
+		DefineAddress(func70h, SelectAddress(0x8487B0, 0x847FA0));
+		DefineAddress(HasSystemCursor, SelectAddress(0xA37650, 0xB1FB30));
+		DefineAddress(SetSystemCursorVisible, SelectAddress(0x8487D0, 0x847FC0));
+		DefineAddress(func7Ch, SelectAddress(0x8487F0, 0x847FF0));
+		DefineAddress(func80h, SelectAddress(0x848820, 0x848020));
+		DefineAddress(Tick, SelectAddress(0x848AF0, 0x8482F0));
+		DefineAddress(func88h, SelectAddress(0x84A890, 0x84A050));
+		DefineAddress(func8Ch, SelectAddress(0x848400, 0x847C00));
+		DefineAddress(func90h, SelectAddress(0x95FE80, 0x1030E20));
+		DefineAddress(GetWindow, SelectAddress(0xF681A0, 0xF67D40));
+		DefineAddress(GetCanvasClass, SelectAddress(0x848410, 0x847C10));
+		DefineAddress(GetMonitor, SelectAddress(0x848420, 0x847C20));
 	}
 }
 
