@@ -100,12 +100,19 @@
               <span class="m-doc-wrap-bumper">auto <a href="#aae2762337d7457e6ab347a0d1f062152" class="m-doc">GetSaveArea</a>(</span><span class="m-doc-wrap"><a href="namespace_resource.html#ae5fc2be2c995477d7286fb634653ddd8" class="m-doc">SaveAreaID</a> areaID) -&gt; <a href="class_resource_1_1_database.html" class="m-doc">Database</a>*</span>
             </dt>
             <dd>Returns the database being used to save data of a certain kind.</dd>
-            <dt id="aa9c465e50e1b9ff582e458bdc862d9de">
-              <span class="m-doc-wrap-bumper">void <a href="#aa9c465e50e1b9ff582e458bdc862d9de" class="m-doc-self">RegisterSaveArea</a>(</span><span class="m-doc-wrap"><a href="namespace_resource.html#ae5fc2be2c995477d7286fb634653ddd8" class="m-doc">SaveAreaID</a> areaID,
+            <dt>
+              <span class="m-doc-wrap-bumper">void <a href="#a73cba3ed93dcb35d92bd4d5e6078ec0c" class="m-doc">RegisterSaveArea</a>(</span><span class="m-doc-wrap"><a href="namespace_resource.html#ae5fc2be2c995477d7286fb634653ddd8" class="m-doc">SaveAreaID</a> areaID,
               <a href="class_resource_1_1_database.html" class="m-doc">Resource::<wbr />Database</a>* pDatabase,
-              void* = nullptr)</span>
+              void* unk = nullptr)</span>
             </dt>
-            <dd><span></span></dd>
+            <dd>Registers a database to be used to save specific types of data, such as saved games, creations, etc.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a57b72c87a214d694bf1ce7d98729889a" class="m-doc">CreateSaveAreaDirectoryDatabase</a>(</span><span class="m-doc-wrap"><a href="namespace_resource.html#ad7ee32f418dfe96be02e493630ec0107" class="m-doc">PathID</a> basePath,
+              const char16_t* folderName,
+              <a href="_database_directory_files_8h.html#af64b238359039472f2e44b6c6957394b" class="m-doc">DatabaseDirectoryFilesPtr</a>&amp; dst,
+              <a href="namespace_resource.html#ae5fc2be2c995477d7286fb634653ddd8" class="m-doc">SaveAreaID</a> saveArea) -&gt; bool</span>
+            </dt>
+            <dd>Creates a <a href="class_resource_1_1_database_directory_files.html" class="m-doc">DatabaseDirectoryFiles</a> database for use as a save area.</dd>
           </dl>
         </section>
         <section>
@@ -165,6 +172,72 @@
               </tbody>
             </table>
 <p>A database can either be a <code>.package</code> file (<a href="class_resource_1_1_database_packed_file.html" class="m-doc">DatabasePackedFile</a>) or a plain folder. Generally, <code>EditorSaves.package</code> is returned for <a href="namespace_resource.html#ae5fc2be2c995477d7286fb634653ddd8a2c073c24cc5f96d33a4255268ba4b423" class="m-doc">SaveAreaID::<wbr />Creatures</a>, <a href="namespace_resource.html#ae5fc2be2c995477d7286fb634653ddd8a9fdd5aad7ea528df6738692b788cee0a" class="m-doc">SaveAreaID::<wbr />Buildings</a>, <a href="namespace_resource.html#ae5fc2be2c995477d7286fb634653ddd8a83467144e8aa33bf67ff729d1540fa81" class="m-doc">SaveAreaID::<wbr />Vehicles</a>, <a href="namespace_resource.html#ae5fc2be2c995477d7286fb634653ddd8a56284b76007b9f31cdec47174c4de6af" class="m-doc">SaveAreaID::<wbr />Cells</a>, <a href="namespace_resource.html#ae5fc2be2c995477d7286fb634653ddd8a19a35e4a92f0be75e3872dde8167b96b" class="m-doc">SaveAreaID::<wbr />UFOs</a>, <a href="namespace_resource.html#ae5fc2be2c995477d7286fb634653ddd8acc63c46eceffec53ae2c3c617b4a1fa6" class="m-doc">SaveAreaID::<wbr />Plants</a>, <a href="namespace_resource.html#ae5fc2be2c995477d7286fb634653ddd8a515a3f4a3ef00683abbd16ab9abfb94e" class="m-doc">SaveAreaID::<wbr />Adventures</a></p>
+          </div></section>
+          <section class="m-doc-details" id="a73cba3ed93dcb35d92bd4d5e6078ec0c"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">void Resource::<wbr />Paths::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a73cba3ed93dcb35d92bd4d5e6078ec0c" class="m-doc-self">RegisterSaveArea</a>(</span><span class="m-doc-wrap"><a href="namespace_resource.html#ae5fc2be2c995477d7286fb634653ddd8" class="m-doc">SaveAreaID</a> areaID,
+              <a href="class_resource_1_1_database.html" class="m-doc">Resource::<wbr />Database</a>* pDatabase,
+              void* unk = nullptr)</span></span>
+            </h3>
+            <p>Registers a database to be used to save specific types of data, such as saved games, creations, etc.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">areaID</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>pDatabase</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>unk</td>
+                  <td></td>
+                </tr>
+              </tbody>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="a57b72c87a214d694bf1ce7d98729889a"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">bool Resource::<wbr />Paths::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a57b72c87a214d694bf1ce7d98729889a" class="m-doc-self">CreateSaveAreaDirectoryDatabase</a>(</span><span class="m-doc-wrap"><a href="namespace_resource.html#ad7ee32f418dfe96be02e493630ec0107" class="m-doc">PathID</a> basePath,
+              const char16_t* folderName,
+              <a href="_database_directory_files_8h.html#af64b238359039472f2e44b6c6957394b" class="m-doc">DatabaseDirectoryFilesPtr</a>&amp; dst,
+              <a href="namespace_resource.html#ae5fc2be2c995477d7286fb634653ddd8" class="m-doc">SaveAreaID</a> saveArea)</span></span>
+            </h3>
+            <p>Creates a <a href="class_resource_1_1_database_directory_files.html" class="m-doc">DatabaseDirectoryFiles</a> database for use as a save area.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">basePath</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>folderName</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>dst&nbsp;<span class="m-label m-flat m-warning">out</span></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>saveArea</td>
+                  <td></td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>Returns</th>
+                  <td>True if the operation succeeded</td>
+                </tr>
+              </tfoot>
+            </table>
+<p>The database path will be the one obtained through <code>basePath</code> plus <code>folderName</code>.</p>
           </div></section>
         </section>
       </div>
