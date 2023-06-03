@@ -58,6 +58,8 @@ namespace ModAPI
 	eastl::fixed_vector<InitFunction, MAX_MODS> postInitFunctions;
 	eastl::fixed_vector<InitFunction, MAX_MODS> disposeFunctions;
 	eastl::fixed_map<uint32_t, ISimulatorStrategyPtr, MAX_MODS> simulatorStrategies;
+	FileStreamPtr logFile{};
+	__time64_t logFileStartTime;
 
 	uint32_t CRC_TABLE[256];
 
@@ -112,9 +114,41 @@ namespace ModAPI
 	}
 }
 
+EXTERN_C IMAGE_DOS_HEADER __ImageBase;
+
+void CreateLogFile() {
+	_time64(&ModAPI::logFileStartTime);
+
+	TCHAR DllPath[MAX_PATH] = {0};
+	GetModuleFileName(reinterpret_cast<HINSTANCE>(&__ImageBase), DllPath, _countof(DllPath));
+
+	eastl::wstring log_path = DllPath;
+	//remove the dll, and the mLibs folder.
+	log_path.resize(log_path.find_last_of('\\')); //removes the \\file.dll from the path
+	log_path.resize(log_path.find_last_of('\\')); //removes the \\mlibs from the path
+	log_path += L"\\spore_log.txt";
+
+	char LogPath[MAX_PATH] = {0};
+	size_t i;
+	wcstombs_s(&i, LogPath, MAX_PATH, log_path.c_str(), MAX_PATH);
+	ModAPI::logFile = new IO::FileStream(LogPath);
+	ModAPI::logFile->Open(IO::AccessFlags::Write, IO::CD::CreateAlways);
+}
+
+void CloseLogFile() {
+	if (ModAPI::logFile) {
+		ModAPI::logFile->Close();
+		ModAPI::logFile.reset();
+	}
+}
+
 int ModAPI::sub_7E6C60_detour::DETOUR(int arg_0)
 {
 	int result = original_function(this, arg_0);
+
+	CreateLogFile();
+	ModAPI::Log("Spore ModAPI %d.%d.%d loaded.", ModAPI::GetMajorVersion(), ModAPI::GetMinorVersion(), ModAPI::GetBuildVersion());
+	ModAPI::Log("Platform: %s", ModAPI::GetGameType() == ModAPI::GameType::Disk ? "Disk" : "March2017");
 
 	for (ModAPI::InitFunction& func : ModAPI::initFunctions) func();
 
@@ -137,6 +171,9 @@ int ModAPI::AppShutdown_detour::DETOUR()
 
 	for (auto it : ModAPI::simulatorStrategies) it.second->Dispose();
 	ModAPI::simulatorStrategies.clear();
+
+	ModAPI::Log("Shutting Down");
+	CloseLogFile();
 
 	return original_function(this);
 }

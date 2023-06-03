@@ -12,6 +12,8 @@
 #include <Spore\CommonIDs.h>
 #include <Spore\Messaging.h>
 #include <Spore\Cheats.h>
+#include <Spore\IO.h>
+#include <ctime>
 
 virtual_detour(ShaderFragments_detour, Graphics::cMaterialManager, Graphics::IMaterialManager, bool(Resource::Database*)) {};
 
@@ -23,6 +25,9 @@ namespace ModAPI
 	extern eastl::fixed_vector<InitFunction, MAX_MODS> disposeFunctions;
 
 	extern eastl::fixed_map<uint32_t, ISimulatorStrategyPtr, MAX_MODS> simulatorStrategies;
+
+	extern FileStreamPtr logFile;
+	extern __time64_t logFileStartTime;
 
 	long AttachDetour();
 	void DetachDetour();

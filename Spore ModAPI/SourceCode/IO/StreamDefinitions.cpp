@@ -60,7 +60,6 @@ namespace IO
 	/////////////////////////
 }
 
-#ifndef MODAPI_DLL_EXPORT
 namespace IO
 {
 	//////////////////////
@@ -125,7 +124,8 @@ namespace IO
 	auto_METHOD(FileStream, size_t, GetPathCString, Args(char* pPath8, size_t nPathLength), Args(pPath8, nPathLength));
 	auto_METHOD(FileStream, bool, Open, Args(AccessFlags nAccessFlags, CD nCreationDisposition, int nSharing, int nUsageHints), Args(nAccessFlags, nCreationDisposition, nSharing, nUsageHints));
 
-
+	
+#ifndef MODAPI_DLL_EXPORT
 	//////////////////////
 
 
@@ -395,5 +395,5 @@ namespace IO
 	auto_METHOD(StreamNull, int, Write, Args(const void* pData, size_t nSize), Args(pData, nSize));
 
 	//////////////////////
-}
 #endif
+}
