@@ -1,3 +1,4 @@
+
 #ifndef MODAPI_DLL_EXPORT
 #include <Spore\App\Thumbnail_cImportExport.h>
 #include <Spore\App\AppData.h>
@@ -6,9 +7,12 @@
 #include <Spore\App\cSporeApp.h>
 #include <Spore\App\cArithmeticaResource.h>
 #include <Spore\App\ConfigManager.h>
+#endif
+#include <Spore\App\CommandLine.h>
 
 namespace App
 {
+#ifndef MODAPI_DLL_EXPORT
 	auto_STATIC_METHOD_(Thumbnail_cImportExport, Thumbnail_cImportExport*, Get);
 
 	auto_METHOD(Thumbnail_cImportExport, bool, GetFolderPath,
@@ -38,6 +42,8 @@ namespace App
 	auto_STATIC_METHOD_VOID_(cSporeApp, Run);
 	auto_STATIC_METHOD_(cSporeApp, bool, Shutdown);
 
+	auto_STATIC_METHOD_(Canvas, Canvas*, Get);
+#endif
 
 	auto_METHOD(CommandLine, eastl::string16&, Get, Args(int i), Args(i));
 
@@ -90,4 +96,3 @@ namespace App
 		return *(PropertyList**)GetAddress(App, sPreferencesPropList);
 	}
 }
-#endif

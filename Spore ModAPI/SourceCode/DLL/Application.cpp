@@ -1,7 +1,9 @@
+#include "Spore/App/CommandLine.h"
 #ifdef MODAPI_DLL_EXPORT
 #include "stdafx.h"
 #include "Application.h"
 #include <Spore\ArgScript\FormatParser.h>
+#include <cuchar>
 #include <Spore\IO.h>
 
 bool ShaderFragments_detour::DETOUR(Resource::Database* pDBPF)
@@ -120,18 +122,33 @@ void CreateLogFile() {
 	_time64(&ModAPI::logFileStartTime);
 
 	TCHAR DllPath[MAX_PATH] = {0};
-	GetModuleFileName(reinterpret_cast<HINSTANCE>(&__ImageBase), DllPath, _countof(DllPath));
-
-	eastl::wstring log_path = DllPath;
-	//remove the dll, and the mLibs folder.
-	log_path.resize(log_path.find_last_of('\\')); //removes the \\file.dll from the path
-	log_path.resize(log_path.find_last_of('\\')); //removes the \\mlibs from the path
-	log_path += L"\\spore_log.txt";
-
-	char LogPath[MAX_PATH] = {0};
+	char DllPathA[MAX_PATH] = {0};
 	size_t i;
-	wcstombs_s(&i, LogPath, MAX_PATH, log_path.c_str(), MAX_PATH);
-	ModAPI::logFile = new IO::FileStream(LogPath);
+	GetModuleFileName(reinterpret_cast<HINSTANCE>(&__ImageBase), DllPath, _countof(DllPath));
+	wcstombs_s(&i, DllPathA, MAX_PATH, DllPath, MAX_PATH);
+
+	eastl::string16 log_path;
+	log_path.reserve(MAX_PATH);
+	
+	mbstate_t state{};
+	char16_t c16;
+	const char* ptr = DllPathA;
+	const char* end = DllPathA + strlen(DllPathA);
+	for (size_t rc; (rc = mbrtoc16(&c16, ptr, end - ptr + 1, &state)); ptr += rc)
+		log_path += c16;
+
+	//removes the mlibs\\file.dll from the path
+	log_path.resize(log_path.find_last_of('\\')); 
+	log_path.resize(log_path.find_last_of('\\')+1);
+
+	eastl::string16 log_file_name;
+	AppCommandLine.FindSwitch(u"logfilename", false, &log_file_name);
+	if (log_file_name.empty())
+		log_file_name = u"spore_log";
+	log_file_name += u".txt";
+	log_path.append(log_file_name);
+
+	ModAPI::logFile = new IO::FileStream(log_path.c_str());
 	ModAPI::logFile->Open(IO::AccessFlags::Write, IO::CD::CreateAlways);
 }
 
