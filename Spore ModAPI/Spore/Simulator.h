@@ -62,6 +62,7 @@
 #include <Spore\Simulator\cStarRecord.h>
 #include <Spore\Simulator\cPlanetRecord.h>
 #include <Spore\Simulator\cCelestialBody.h>
+#include <Spore\Simulator\cSimulatorUniverse.h>
 #include <Spore\Simulator\cSolarSystem.h>
 #include <Spore\Simulator\cScenarioEditHistory.h>
 #include <Spore\Simulator\SpaceConstants.h>

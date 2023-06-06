@@ -67,6 +67,7 @@
 #include <Spore\Simulator\cSolarSystem.h>
 #include <Spore\Simulator\cStar.h>
 #include <Spore\Simulator\cMissionManager.h>
+#include <Spore\Simulator\cSimulatorUniverse.h>
 #include <Spore\Simulator\Serialization.h>
 #include <Spore\Simulator\SpaceConstants.h>
 #include <Spore\Simulator\SubSystem\cRelationshipManager.h>
@@ -123,6 +124,7 @@ namespace Addresses(Simulator)
 #else
 	DefineAddress(sLightingWorld, SelectAddress(0x1682CD4, 0x167EA54));
 	DefineAddress(sPrecalculatedSolarStarRadius, SelectAddress(0x157DCF0, 0x1579D10));
+	DefineAddress(sSimulatorUniverse, SelectAddress(0x16E0A18, 0x16DC798));
 #endif
 }
 
@@ -825,6 +827,13 @@ namespace Simulator
 		DefineAddress(GetIfNotDeleted, SelectAddress(0xB71B60, 0xB722E0));
 		DefineAddress(DeleteObject, SelectAddress(0xB71BF0, 0xB72370));
 		DefineAddress(Iterate, SelectAddress(0xB71BC0, 0xB72340));
+	}
+
+	namespace Addresses(cSimulatorUniverse)
+	{
+#ifndef SDK_TO_GHIDRA
+		DefineAddress(_ptr, SelectAddress(0x16E0A18, 0x16DC798));
+#endif
 	}
 
 	namespace Cell

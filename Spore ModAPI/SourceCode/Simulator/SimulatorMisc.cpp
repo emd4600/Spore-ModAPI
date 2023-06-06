@@ -3,6 +3,7 @@
 #include <Spore\Simulator\cSpaceNames.h>
 #include <Spore\Simulator\cBadgeManager.h>
 #include <Spore\Simulator\cObjectPool.h>
+#include <Spore\Simulator\cSimulatorUniverse.h>
 
 namespace Simulator
 {
@@ -60,5 +61,13 @@ namespace Simulator
 	auto_METHOD_VOID(cObjectPool_, DeleteObject, Args(cObjectPoolIndex arg), Args(arg));
 
 	auto_METHOD_const(cObjectPool_, cObjectPoolClass*, Iterate, Args(Iterator& arg), Args(arg));
+
+
+	//// cSimulatorUniverse ////
+
+	cSimulatorUniverse* cSimulatorUniverse::Get()
+	{
+		return *(cSimulatorUniverse**)GetAddress(cSimulatorUniverse, _ptr);
+	}
 }
 #endif
