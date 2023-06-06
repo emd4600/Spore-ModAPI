@@ -57,8 +57,9 @@
               <ul>
                 <li><a href="#base-classes">Base classes</a></li>
                 <li><a href="#pub-types">Public types</a></li>
+                <li><a href="#typeless-methods">Constructors, destructors, conversion operators</a></li>
+                <li><a href="#pub-methods">Public functions</a></li>
                 <li><a href="#pub-attribs">Public variables</a></li>
-                <li><a href="#pri-methods">Private functions</a></li>
               </ul>
             </li>
           </ul>
@@ -85,42 +86,22 @@
             <dd><span></span></dd>
           </dl>
         </section>
-        <section id="pub-attribs">
-          <h2><a href="#pub-attribs">Public variables</a></h2>
+        <section id="typeless-methods">
+          <h2><a href="#typeless-methods">Constructors, destructors, conversion operators</a></h2>
           <dl class="m-doc">
-            <dt id="a00c194d719e8a3403100713e0554e555">
-              int <a href="#a00c194d719e8a3403100713e0554e555" class="m-doc-self">mnRefCount</a>
+            <dt id="a2baa8d369824cabd4b9f15c28515f0cc">
+              <span class="m-doc-wrap-bumper"><a href="#a2baa8d369824cabd4b9f15c28515f0cc" class="m-doc-self">cCheatManager</a>(</span><span class="m-doc-wrap">)</span>
             </dt>
             <dd><span></span></dd>
-            <dt id="a8d24358c53801fcc314f579ff78f946e">
-              <a href="class_app_1_1c_cheat_manager.html#a6a80f704f21dcabd203a986e2bbd1fd9" class="m-doc">CheatMap_<wbr />t</a> <a href="#a8d24358c53801fcc314f579ff78f946e" class="m-doc-self">mCheats</a>
-            </dt>
-            <dd><span></span></dd>
-            <dt id="a1114dfc2010558b47f37de931d740c33">
-              eastl::set&lt;eastl::string&gt; <a href="#a1114dfc2010558b47f37de931d740c33" class="m-doc-self">mNotifyCheats</a>
-            </dt>
-            <dd><span></span></dd>
-            <dt id="aa55e551e0a01d480fe05795a4e32a7ec">
-              <a href="class_arg_script_1_1_format_parser.html" class="m-doc">ArgScript::<wbr />FormatParser</a>* <a href="#aa55e551e0a01d480fe05795a4e32a7ec" class="m-doc-self">mpArgScript</a>
-            </dt>
-            <dd><span></span></dd>
-            <dt id="a6b2cda90562c809a7bcea84c086ca0f2">
-              eastl::set&lt;<a href="_object_8h.html#a364c2967a9338c07ddc9a3d507389b5d" class="m-doc">ObjectPtr</a>&gt; <a href="#a6b2cda90562c809a7bcea84c086ca0f2" class="m-doc-self">field_48</a>
-            </dt>
-            <dd><span></span></dd>
-            <dt id="ac58abf56f9e2a49d9a0e961a3be2cd06">
-              bool <a href="#ac58abf56f9e2a49d9a0e961a3be2cd06" class="m-doc-self">field_68</a>
+            <dt id="a9f6ed5c7996e6b00dc0e15e629d05a22">
+              <span class="m-doc-wrap-bumper"><a href="#a9f6ed5c7996e6b00dc0e15e629d05a22" class="m-doc-self">~cCheatManager</a>(</span><span class="m-doc-wrap">) <span class="m-label m-flat m-warning">virtual</span></span>
             </dt>
             <dd><span></span></dd>
           </dl>
         </section>
-        <section id="pri-methods">
-          <h2><a href="#pri-methods">Private functions</a></h2>
+        <section id="pub-methods">
+          <h2><a href="#pub-methods">Public functions</a></h2>
           <dl class="m-doc">
-            <dt id="a9f6ed5c7996e6b00dc0e15e629d05a22">
-              <span class="m-doc-wrap-bumper"><a href="#a9f6ed5c7996e6b00dc0e15e629d05a22" class="m-doc-self">~cCheatManager</a>(</span><span class="m-doc-wrap">) <span class="m-label m-flat m-danger">private</span> <span class="m-label m-flat m-warning">virtual</span></span>
-            </dt>
-            <dd><span></span></dd>
             <dt id="ae8fb27bc8ef05ecbe6621f7f27bbf2be">
               <span class="m-doc-wrap-bumper">auto <a href="#ae8fb27bc8ef05ecbe6621f7f27bbf2be" class="m-doc-self">AddRef</a>(</span><span class="m-doc-wrap">) -&gt; int <span class="m-label m-flat m-warning">override</span></span>
             </dt>
@@ -202,13 +183,42 @@
             <dd><span></span></dd>
           </dl>
         </section>
+        <section id="pub-attribs">
+          <h2><a href="#pub-attribs">Public variables</a></h2>
+          <dl class="m-doc">
+            <dt id="a00c194d719e8a3403100713e0554e555">
+              int <a href="#a00c194d719e8a3403100713e0554e555" class="m-doc-self">mnRefCount</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a8d24358c53801fcc314f579ff78f946e">
+              <a href="class_app_1_1c_cheat_manager.html#a6a80f704f21dcabd203a986e2bbd1fd9" class="m-doc">CheatMap_<wbr />t</a> <a href="#a8d24358c53801fcc314f579ff78f946e" class="m-doc-self">mCheats</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a1114dfc2010558b47f37de931d740c33">
+              eastl::set&lt;eastl::string&gt; <a href="#a1114dfc2010558b47f37de931d740c33" class="m-doc-self">mNotifyCheats</a>
+            </dt>
+            <dd>Calling these cheats disable achievements, by posting a ICheatsManager::kMsgCheatInvoked message.</dd>
+            <dt id="aa55e551e0a01d480fe05795a4e32a7ec">
+              <a href="class_arg_script_1_1_format_parser.html" class="m-doc">ArgScript::<wbr />FormatParser</a>* <a href="#aa55e551e0a01d480fe05795a4e32a7ec" class="m-doc-self">mpArgScript</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a6b2cda90562c809a7bcea84c086ca0f2">
+              eastl::set&lt;<a href="_object_8h.html#a364c2967a9338c07ddc9a3d507389b5d" class="m-doc">ObjectPtr</a>&gt; <a href="#a6b2cda90562c809a7bcea84c086ca0f2" class="m-doc-self">field_48</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="ac58abf56f9e2a49d9a0e961a3be2cd06">
+              bool <a href="#ac58abf56f9e2a49d9a0e961a3be2cd06" class="m-doc-self">field_68</a>
+            </dt>
+            <dd><span></span></dd>
+          </dl>
+        </section>
         <section>
           <h2>Function documentation</h2>
           <section class="m-doc-details" id="a622a82ae5fffd77e27344fcd79a80d5a"><div>
             <h3>
               <span class="m-doc-wrap-bumper">void App::<wbr />cCheatManager::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a622a82ae5fffd77e27344fcd79a80d5a" class="m-doc-self">AddCheat</a>(</span><span class="m-doc-wrap">const char* pString,
               <a href="class_arg_script_1_1_i_command.html" class="m-doc">ArgScript::<wbr />ICommand</a>* pParser,
-              bool bNotify) <span class="m-label m-warning">override</span> <span class="m-label m-danger">private</span></span></span>
+              bool bNotify) <span class="m-label m-warning">override</span></span></span>
             </h3>
             <p>Adds a cheat to this manager.</p>
             <table class="m-table m-fullwidth m-flat">
@@ -226,7 +236,7 @@
                 </tr>
                 <tr>
                   <td>bNotify</td>
-                  <td>[Optional] If true, a kMsgCheatInvoked message will be sent when the cheat is invoked.</td>
+                  <td>[Optional] If true, a kMsgCheatInvoked message will be sent when the cheat is invoked, which will disable achievements.</td>
                 </tr>
               </tbody>
             </table>
@@ -234,7 +244,7 @@
           </div></section>
           <section class="m-doc-details" id="a8400cc64dba5ae26b05efa44d11c0d11"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">void App::<wbr />cCheatManager::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a8400cc64dba5ae26b05efa44d11c0d11" class="m-doc-self">RemoveCheat</a>(</span><span class="m-doc-wrap">const char* pString) <span class="m-label m-warning">override</span> <span class="m-label m-danger">private</span></span></span>
+              <span class="m-doc-wrap-bumper">void App::<wbr />cCheatManager::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a8400cc64dba5ae26b05efa44d11c0d11" class="m-doc-self">RemoveCheat</a>(</span><span class="m-doc-wrap">const char* pString) <span class="m-label m-warning">override</span></span></span>
             </h3>
             <p>Removes the cheat that is invoked with the given keyword from this manager.</p>
             <table class="m-table m-fullwidth m-flat">
@@ -251,7 +261,7 @@
           </div></section>
           <section class="m-doc-details" id="afed8d223a4f9cf796475d1b8beeeb98d"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">bool App::<wbr />cCheatManager::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#afed8d223a4f9cf796475d1b8beeeb98d" class="m-doc-self">ProcessLine</a>(</span><span class="m-doc-wrap">const char* pString) <span class="m-label m-warning">override</span> <span class="m-label m-danger">private</span></span></span>
+              <span class="m-doc-wrap-bumper">bool App::<wbr />cCheatManager::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#afed8d223a4f9cf796475d1b8beeeb98d" class="m-doc-self">ProcessLine</a>(</span><span class="m-doc-wrap">const char* pString) <span class="m-label m-warning">override</span></span></span>
             </h3>
             <p>Called every time a line is submitted to the console.</p>
             <table class="m-table m-fullwidth m-flat">
@@ -274,7 +284,7 @@
           </div></section>
           <section class="m-doc-details" id="a205aa3a74e4fb4a7e0bf7bf05f09e7aa"><div>
             <h3>
-              <span class="m-doc-wrap-bumper"><a href="class_arg_script_1_1_i_command.html" class="m-doc">ArgScript::<wbr />ICommand</a>* App::<wbr />cCheatManager::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a205aa3a74e4fb4a7e0bf7bf05f09e7aa" class="m-doc-self">GetCheat</a>(</span><span class="m-doc-wrap">const char* pKeyword) <span class="m-label m-warning">override</span> <span class="m-label m-danger">private</span></span></span>
+              <span class="m-doc-wrap-bumper"><a href="class_arg_script_1_1_i_command.html" class="m-doc">ArgScript::<wbr />ICommand</a>* App::<wbr />cCheatManager::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a205aa3a74e4fb4a7e0bf7bf05f09e7aa" class="m-doc-self">GetCheat</a>(</span><span class="m-doc-wrap">const char* pKeyword) <span class="m-label m-warning">override</span></span></span>
             </h3>
             <p>Returns the <a href="class_arg_script_1_1_i_command.html" class="m-doc">ArgScript::<wbr />ICommand</a> that is operating behind the requested cheat.</p>
             <table class="m-table m-fullwidth m-flat">
@@ -292,7 +302,7 @@
           <section class="m-doc-details" id="aa7b76ba295eb6a8e5ee7351bba2e6cf7"><div>
             <h3>
               <span class="m-doc-wrap-bumper">size_t App::<wbr />cCheatManager::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#aa7b76ba295eb6a8e5ee7351bba2e6cf7" class="m-doc-self">GetKeywords</a>(</span><span class="m-doc-wrap">const char* pPattern,
-              eastl::vector&lt;const char*&gt; dst) <span class="m-label m-warning">override</span> <span class="m-label m-danger">private</span></span></span>
+              eastl::vector&lt;const char*&gt; dst) <span class="m-label m-warning">override</span></span></span>
             </h3>
             <p>Gets all the cheat keywords in this manager that match the given pattern.</p>
             <table class="m-table m-fullwidth m-flat">

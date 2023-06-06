@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Simulator::ISimulatorSerializableRefCounted class | Spore ModAPI SDK for creating C++ mods for Spore</title>
+  <title>Pollinator::cSPAchievementSerializer class | Spore ModAPI SDK for creating C++ mods for Spore</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,600,600i%7CSource+Code+Pro:400,400i,600" />
   <link rel="stylesheet" href="m-dark.css" />
   <link rel="stylesheet" href="m-documentation.css" />
@@ -45,15 +45,29 @@
     <div class="m-row">
       <div class="m-col-l-10 m-push-l-1">
         <h1>
-          <span class="m-breadcrumb"><a href="namespace_simulator.html">Simulator</a>::<wbr/></span>ISimulatorSerializableRefCounted <span class="m-thin">class</span>
-          <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_i_simulator_serializable_8h.html">&lt;Spore/Simulator/ISimulatorSerializable.h&gt;</a></div>
+          <span class="m-breadcrumb"><a href="namespace_pollinator.html">Pollinator</a>::<wbr/></span>cSPAchievementSerializer <span class="m-thin">class</span>
+          <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="c_s_p_achievement_serializer_8h.html">&lt;Spore/Pollinator/cSPAchievementSerializer.h&gt;</a></div>
         </h1>
         <p><span></span></p>
+        <div class="m-block m-default">
+          <h3>Contents</h3>
+          <ul>
+            <li>
+              Reference
+              <ul>
+                <li><a href="#base-classes">Base classes</a></li>
+                <li><a href="#pub-types">Public types</a></li>
+                <li><a href="#typeless-methods">Constructors, destructors, conversion operators</a></li>
+                <li><a href="#pub-attribs">Public variables</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
         <section id="base-classes">
           <h2><a href="#base-classes">Base classes</a></h2>
           <dl class="m-doc">
             <dt>
-              class <a href="class_simulator_1_1_i_simulator_serializable.html" class="m-doc">ISimulatorSerializable</a>
+              class <a href="class_simulator_1_1_i_simulator_serializable.html" class="m-doc">Simulator::ISimulatorSerializable</a>
             </dt>
             <dd><span></span></dd>
             <dt>
@@ -62,17 +76,44 @@
             <dd><span></span></dd>
           </dl>
         </section>
-        <section id="derived-classes">
-          <h2><a href="#derived-classes">Derived classes</a></h2>
+        <section id="pub-types">
+          <h2><a href="#pub-types">Public types</a></h2>
           <dl class="m-doc">
             <dt>
-              class <a href="class_simulator_1_1_cell_1_1c_cell_serializable_data.html" class="m-doc">cCellSerializableData</a>
+              struct <a href="struct_pollinator_1_1c_s_p_achievement_serializer_1_1_cross_game_data.html" class="m-doc">CrossGameData</a>
             </dt>
             <dd><span></span></dd>
-            <dt>
-              class <a href="class_simulator_1_1c_empire.html" class="m-doc">cEmpire</a>
+          </dl>
+        </section>
+        <section id="typeless-methods">
+          <h2><a href="#typeless-methods">Constructors, destructors, conversion operators</a></h2>
+          <dl class="m-doc">
+            <dt id="a568b07838270c2dfb8bbeb213891cf61">
+              <span class="m-doc-wrap-bumper"><a href="#a568b07838270c2dfb8bbeb213891cf61" class="m-doc-self">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="struct_pollinator_1_1c_s_p_achievement_serializer_1_1_cross_game_data.html" class="m-doc">CrossGameData</a>,
+              0x80)</span>
             </dt>
-            <dd>An empire in Space Stage.</dd>
+            <dd><span></span></dd>
+          </dl>
+        </section>
+        <section id="pub-attribs">
+          <h2><a href="#pub-attribs">Public variables</a></h2>
+          <dl class="m-doc">
+            <dt id="a64faa05d519db8535a7d838b44bf7b0e">
+              eastl::vector_map&lt;uint32_t, <a href="struct_pollinator_1_1c_achievement_definition.html" class="m-doc">cAchievementDefinition</a>&gt; <a href="#a64faa05d519db8535a7d838b44bf7b0e" class="m-doc-self">mAchievements</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="ae332c4f8fb3a7c6d5541d5fae9437baa">
+              eastl::vector&lt;int&gt; <a href="#ae332c4f8fb3a7c6d5541d5fae9437baa" class="m-doc-self">mAchievementSet</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a2f6f22fb17f67301c098ed450265b855">
+              int <a href="#a2f6f22fb17f67301c098ed450265b855" class="m-doc-self">field_38</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="abfee02c09dc6e3cc56a98e80cabc9219">
+              <a href="struct_pollinator_1_1c_s_p_achievement_serializer_1_1_cross_game_data.html" class="m-doc">CrossGameData</a> <a href="#abfee02c09dc6e3cc56a98e80cabc9219" class="m-doc-self">mCrossGameData</a>
+            </dt>
+            <dd><span></span></dd>
           </dl>
         </section>
       </div>

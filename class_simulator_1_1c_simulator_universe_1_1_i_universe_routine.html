@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Simulator::ISimulatorSerializableRefCounted class | Spore ModAPI SDK for creating C++ mods for Spore</title>
+  <title>Simulator::cSimulatorUniverse::IUniverseRoutine class | Spore ModAPI SDK for creating C++ mods for Spore</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,600,600i%7CSource+Code+Pro:400,400i,600" />
   <link rel="stylesheet" href="m-dark.css" />
   <link rel="stylesheet" href="m-documentation.css" />
@@ -45,34 +45,48 @@
     <div class="m-row">
       <div class="m-col-l-10 m-push-l-1">
         <h1>
-          <span class="m-breadcrumb"><a href="namespace_simulator.html">Simulator</a>::<wbr/></span>ISimulatorSerializableRefCounted <span class="m-thin">class</span>
-          <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_i_simulator_serializable_8h.html">&lt;Spore/Simulator/ISimulatorSerializable.h&gt;</a></div>
+          <span class="m-breadcrumb"><a href="namespace_simulator.html">Simulator</a>::<wbr/></span><span class="m-breadcrumb"><a href="class_simulator_1_1c_simulator_universe.html">cSimulatorUniverse</a>::<wbr/></span>IUniverseRoutine <span class="m-thin">class</span>
+          <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="c_simulator_universe_8h.html">&lt;Spore/Simulator/cSimulatorUniverse.h&gt;</a></div>
         </h1>
         <p><span></span></p>
-        <section id="base-classes">
-          <h2><a href="#base-classes">Base classes</a></h2>
+        <div class="m-block m-default">
+          <h3>Contents</h3>
+          <ul>
+            <li>
+              Reference
+              <ul>
+                <li><a href="#typeless-methods">Constructors, destructors, conversion operators</a></li>
+                <li><a href="#pub-methods">Public functions</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+        <section id="typeless-methods">
+          <h2><a href="#typeless-methods">Constructors, destructors, conversion operators</a></h2>
           <dl class="m-doc">
-            <dt>
-              class <a href="class_simulator_1_1_i_simulator_serializable.html" class="m-doc">ISimulatorSerializable</a>
-            </dt>
-            <dd><span></span></dd>
-            <dt>
-              class <a href="class_ref_count_template.html" class="m-doc">RefCountTemplate</a>
+            <dt id="a85e6ec906124d46d7cd5a92fea2fe68a">
+              <span class="m-doc-wrap-bumper"><a href="#a85e6ec906124d46d7cd5a92fea2fe68a" class="m-doc-self">~IUniverseRoutine</a>(</span><span class="m-doc-wrap">) <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
             <dd><span></span></dd>
           </dl>
         </section>
-        <section id="derived-classes">
-          <h2><a href="#derived-classes">Derived classes</a></h2>
+        <section id="pub-methods">
+          <h2><a href="#pub-methods">Public functions</a></h2>
           <dl class="m-doc">
-            <dt>
-              class <a href="class_simulator_1_1_cell_1_1c_cell_serializable_data.html" class="m-doc">cCellSerializableData</a>
+            <dt id="a1df6c98f90709ecbd79b54914f12f14f">
+              <span class="m-doc-wrap-bumper">auto <a href="#a1df6c98f90709ecbd79b54914f12f14f" class="m-doc-self">GetProbability</a>(</span><span class="m-doc-wrap">int deltaTimeMS,
+              int) -&gt; float <span class="m-label m-flat m-warning">pure virtual</span></span>
+            </dt>
+            <dd>Returns the probability that this routine must execute.</dd>
+            <dt id="a9c1f8f558bb4465e652b839f739be27d">
+              <span class="m-doc-wrap-bumper">void <a href="#a9c1f8f558bb4465e652b839f739be27d" class="m-doc-self">Execute</a>(</span><span class="m-doc-wrap">int,
+              eastl::vector&lt;int&gt;&amp;) <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
             <dd><span></span></dd>
-            <dt>
-              class <a href="class_simulator_1_1c_empire.html" class="m-doc">cEmpire</a>
+            <dt id="a2cabfa7956d7ae7a04e827396da0f04d">
+              <span class="m-doc-wrap-bumper">auto <a href="#a2cabfa7956d7ae7a04e827396da0f04d" class="m-doc-self">GetID</a>(</span><span class="m-doc-wrap">) -&gt; uint32_t <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
-            <dd>An empire in Space Stage.</dd>
+            <dd><span></span></dd>
           </dl>
         </section>
       </div>
