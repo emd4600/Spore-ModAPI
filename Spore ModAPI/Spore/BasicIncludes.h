@@ -32,6 +32,8 @@
 #include <Spore\Terrain.h>
 #include <Spore\Cell.h>
 
+#include <Spore\Pollinator\AchievementsManager.h>
+
 #include <Spore\Editors\Editor.h>
 #include <Spore\Editors\EditorRequest.h>
 #include <Spore\Editors\EditorMessages.h>

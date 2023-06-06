@@ -43,9 +43,7 @@ namespace Simulator
 	// Used by cEmpire
 	class ISimulatorSerializableRefCounted
 		: public ISimulatorSerializable
-		, public IVirtual
+		, public RefCountTemplate
 	{
-	protected:
-		int mnRefCount;
 	};
 }

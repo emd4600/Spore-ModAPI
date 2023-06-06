@@ -45,6 +45,7 @@ namespace App
 		enum MessageIDs
 		{
 			/// A message with no content sent when certain cheats are invoked.
+			/// This message disables achievements.
 			kMsgCheatInvoked = 0x4BEF1E3
 		};
 
@@ -62,7 +63,7 @@ namespace App
 		/// function will be called when the cheat is invoked.
 		/// @param pString The keyword that is used to invoke the cheat. This is case insensitive and it can't contain whitespaces.
 		/// @param pParser The ArgScript::ICommand that represents this cheat.		
-		/// @param bNotify [Optional] If true, a kMsgCheatInvoked message will be sent when the cheat is invoked.
+		/// @param bNotify [Optional] If true, a kMsgCheatInvoked message will be sent when the cheat is invoked, which will disable achievements.
 		///
 		/* 18h */	virtual void AddCheat(const char* pString, ArgScript::ICommand* pParser, bool bNotify = false) = 0;
 

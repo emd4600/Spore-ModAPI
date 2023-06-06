@@ -36,6 +36,7 @@ namespace Resource
 		Plants = 0x90368EA0,
 		Adventures = 0x86CA01C9,
 		CityMusic = 0x500EFC6,
+		/// Pollination.package
 		Cache = 0x11AC19C,
 		Server = 0x11AC19D,
 		Planets = 0x31389B5,
