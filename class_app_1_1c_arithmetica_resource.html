@@ -48,7 +48,7 @@
           <span class="m-breadcrumb"><a href="namespace_app.html">App</a>::<wbr/></span>cArithmeticaResource <span class="m-thin">class</span>
           <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="c_arithmetica_resource_8h.html">&lt;Spore/App/cArithmeticaResource.h&gt;</a></div>
         </h1>
-        <p><span></span></p>
+        <p>Represents an <code>.arth</code> file, which is ascripts that allows doing mathematical operations on certain values.</p>
         <div class="m-block m-default">
           <h3>Contents</h3>
           <ul>
@@ -58,12 +58,19 @@
                 <li><a href="#base-classes">Base classes</a></li>
                 <li><a href="#pub-types">Public types</a></li>
                 <li><a href="#pub-static-attribs">Public static variables</a></li>
+                <li><a href="#pub-static-methods">Public static functions</a></li>
                 <li><a href="#typeless-methods">Constructors, destructors, conversion operators</a></li>
+                <li><a href="#pub-methods">Public functions</a></li>
                 <li><a href="#pub-attribs">Public variables</a></li>
               </ul>
             </li>
           </ul>
         </div>
+<p>Example usage:</p><pre class="m-code"><span class="n">App</span><span class="o">::</span><span class="n">cArithmeticaResource</span><span class="w"> </span><span class="n">arithmetica</span><span class="p">;</span><span class="w"></span>
+<span class="n">App</span><span class="o">::</span><span class="n">cArithmeticaResource</span><span class="o">::</span><span class="n">Load</span><span class="p">(</span><span class="n">id</span><span class="p">(</span><span class="s">&quot;CustomArthTest&quot;</span><span class="p">),</span><span class="w"> </span><span class="n">GroupIDs</span><span class="o">::</span><span class="n">Scripts1</span><span class="p">,</span><span class="w"> </span><span class="n">arithmetica</span><span class="p">);</span><span class="w"></span>
+<span class="n">arithmetica</span><span class="p">.</span><span class="n">SetValue</span><span class="p">(</span><span class="s">&quot;myVariable&quot;</span><span class="p">,</span><span class="w"> </span><span class="mf">2.0f</span><span class="p">);</span><span class="w"></span>
+<span class="n">arithmetica</span><span class="p">.</span><span class="n">ComputeAll</span><span class="p">();</span><span class="w"></span>
+<span class="n">App</span><span class="o">::</span><span class="n">ConsolePrintF</span><span class="p">(</span><span class="s">&quot;%f&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">arithmetica</span><span class="p">.</span><span class="n">GetValue</span><span class="p">(</span><span class="s">&quot;output&quot;</span><span class="p">));</span><span class="w"></span></pre>
         <section id="base-classes">
           <h2><a href="#base-classes">Base classes</a></h2>
           <dl class="m-doc">
@@ -76,6 +83,10 @@
         <section id="pub-types">
           <h2><a href="#pub-types">Public types</a></h2>
           <dl class="m-doc">
+            <dt>
+              struct <a href="struct_app_1_1c_arithmetica_resource_1_1_arithmetica_function.html" class="m-doc">ArithmeticaFunction</a>
+            </dt>
+            <dd><span></span></dd>
             <dt>
               struct <a href="struct_app_1_1c_arithmetica_resource_1_1_arithmetica_state.html" class="m-doc">ArithmeticaState</a>
             </dt>
@@ -95,9 +106,28 @@
             <dd><span></span></dd>
           </dl>
         </section>
+        <section id="pub-static-methods">
+          <h2><a href="#pub-static-methods">Public static functions</a></h2>
+          <dl class="m-doc">
+            <dt>
+              <span class="m-doc-wrap-bumper">static auto <a href="#a9d12d12b528b6baf59db353df2aed441" class="m-doc">Load</a>(</span><span class="m-doc-wrap">uint32_t instanceID,
+              uint32_t groupID,
+              <a href="class_app_1_1c_arithmetica_resource.html" class="m-doc">cArithmeticaResource</a>&amp; dst) -&gt; bool</span>
+            </dt>
+            <dd>Loads an instance of arithmetica resource.</dd>
+          </dl>
+        </section>
         <section id="typeless-methods">
           <h2><a href="#typeless-methods">Constructors, destructors, conversion operators</a></h2>
           <dl class="m-doc">
+            <dt id="a62c8bbde4ffd3e1f39b7d1674376f0e3">
+              <span class="m-doc-wrap-bumper"><a href="#a62c8bbde4ffd3e1f39b7d1674376f0e3" class="m-doc-self">cArithmeticaResource</a>(</span><span class="m-doc-wrap">)</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="ad5a823b92c5e1e87a9a25496ed23baf4">
+              <span class="m-doc-wrap-bumper"><a href="#ad5a823b92c5e1e87a9a25496ed23baf4" class="m-doc-self">~cArithmeticaResource</a>(</span><span class="m-doc-wrap">) <span class="m-label m-flat m-warning">virtual</span></span>
+            </dt>
+            <dd><span></span></dd>
             <dt id="a0b42440000e76b56a0ceb711d84f67e5">
               <span class="m-doc-wrap-bumper"><a href="#a0b42440000e76b56a0ceb711d84f67e5" class="m-doc-self">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="struct_app_1_1c_arithmetica_resource_1_1_operation_definition.html" class="m-doc">OperationDefinition</a>,
               0x10)</span>
@@ -108,6 +138,37 @@
               0x28)</span>
             </dt>
             <dd><span></span></dd>
+            <dt id="aa8014cea957bf92d70298755dec762f1">
+              <span class="m-doc-wrap-bumper"><a href="#aa8014cea957bf92d70298755dec762f1" class="m-doc-self">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="struct_app_1_1c_arithmetica_resource_1_1_arithmetica_function.html" class="m-doc">ArithmeticaFunction</a>,
+              8)</span>
+            </dt>
+            <dd><span></span></dd>
+          </dl>
+        </section>
+        <section id="pub-methods">
+          <h2><a href="#pub-methods">Public functions</a></h2>
+          <dl class="m-doc">
+            <dt id="a2a9bab810fdc96881947098cf45d8f76">
+              <span class="m-doc-wrap-bumper">void <a href="#a2a9bab810fdc96881947098cf45d8f76" class="m-doc-self">func14h</a>(</span><span class="m-doc-wrap">) <span class="m-label m-flat m-warning">virtual</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">void <a href="#abe84a7ac1531a3f57dc02196d8b299c1" class="m-doc">ComputeFunction</a>(</span><span class="m-doc-wrap">const char* functionName) <span class="m-label m-flat m-warning">virtual</span></span>
+            </dt>
+            <dd>Clears all data and computes only a specific function in the file.</dd>
+            <dt id="a4f6f158e336095871ac406800bff3d22">
+              <span class="m-doc-wrap-bumper">void <a href="#a4f6f158e336095871ac406800bff3d22" class="m-doc-self">ComputeAll</a>(</span><span class="m-doc-wrap">) <span class="m-label m-flat m-warning">virtual</span></span>
+            </dt>
+            <dd>Clears all data and computes the entire arithmetic file.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#abb7d7962b7369ffe4ee028515849d092" class="m-doc">GetValue</a>(</span><span class="m-doc-wrap">const char* variableName) -&gt; float</span>
+            </dt>
+            <dd>Gets the value of a variable, the file must have been computed before calling this.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">void <a href="#a5fcbb5b9c2880a4a1384e21297df13ec" class="m-doc">SetValue</a>(</span><span class="m-doc-wrap">const char* variableName,
+              float value)</span>
+            </dt>
+            <dd>Sets the value of a variable.</dd>
           </dl>
         </section>
         <section id="pub-attribs">
@@ -133,11 +194,104 @@
               <a href="struct_app_1_1c_arithmetica_resource_1_1_arithmetica_state.html" class="m-doc">ArithmeticaState</a> <a href="#a7ec6c202a57bcef08894a94da0ec23f8" class="m-doc-self">mState</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="a66d9babac026960ee632736d590e06ea">
-              eastl::vector&lt;<a href="struct_math_1_1_vector2.html" class="m-doc">Math::<wbr />Vector2</a>&gt; <a href="#a66d9babac026960ee632736d590e06ea" class="m-doc-self">field_80</a>
+            <dt id="adf4532b781a7d9e69c71321fd631b9b7">
+              eastl::vector&lt;<a href="struct_app_1_1c_arithmetica_resource_1_1_arithmetica_function.html" class="m-doc">ArithmeticaFunction</a>&gt; <a href="#adf4532b781a7d9e69c71321fd631b9b7" class="m-doc-self">mFunctions</a>
             </dt>
             <dd><span></span></dd>
           </dl>
+        </section>
+        <section>
+          <h2>Function documentation</h2>
+          <section class="m-doc-details" id="a9d12d12b528b6baf59db353df2aed441"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">static bool App::<wbr />cArithmeticaResource::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a9d12d12b528b6baf59db353df2aed441" class="m-doc-self">Load</a>(</span><span class="m-doc-wrap">uint32_t instanceID,
+              uint32_t groupID,
+              <a href="class_app_1_1c_arithmetica_resource.html" class="m-doc">cArithmeticaResource</a>&amp; dst)</span></span>
+            </h3>
+            <p>Loads an instance of arithmetica resource.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">instanceID</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>groupID</td>
+                  <td>Usually <a href="namespace_group_i_ds.html#a7336869349c1fdce783daaa13128fc87a5b446e23df52e85b71602e3b667ba390" class="m-doc">GroupIDs::<wbr />Scripts1</a></td>
+                </tr>
+                <tr>
+                  <td>dst</td>
+                  <td></td>
+                </tr>
+              </tbody>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="abe84a7ac1531a3f57dc02196d8b299c1"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">void App::<wbr />cArithmeticaResource::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#abe84a7ac1531a3f57dc02196d8b299c1" class="m-doc-self">ComputeFunction</a>(</span><span class="m-doc-wrap">const char* functionName) <span class="m-label m-warning">virtual</span></span></span>
+            </h3>
+            <p>Clears all data and computes only a specific function in the file.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">functionName</td>
+                  <td></td>
+                </tr>
+              </tbody>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="abb7d7962b7369ffe4ee028515849d092"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">float App::<wbr />cArithmeticaResource::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#abb7d7962b7369ffe4ee028515849d092" class="m-doc-self">GetValue</a>(</span><span class="m-doc-wrap">const char* variableName)</span></span>
+            </h3>
+            <p>Gets the value of a variable, the file must have been computed before calling this.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">variableName</td>
+                  <td></td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>Returns</th>
+                  <td>The value of the variable, or 0.0 if the variable is not found</td>
+                </tr>
+              </tfoot>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="a5fcbb5b9c2880a4a1384e21297df13ec"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">void App::<wbr />cArithmeticaResource::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a5fcbb5b9c2880a4a1384e21297df13ec" class="m-doc-self">SetValue</a>(</span><span class="m-doc-wrap">const char* variableName,
+              float value)</span></span>
+            </h3>
+            <p>Sets the value of a variable.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">variableName</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>value</td>
+                  <td></td>
+                </tr>
+              </tbody>
+            </table>
+<p>It will not affect the results until the file is computed again.</p>
+          </div></section>
         </section>
       </div>
     </div>
