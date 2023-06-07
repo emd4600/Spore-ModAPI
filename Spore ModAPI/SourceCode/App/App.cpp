@@ -4,6 +4,7 @@
 #include <Spore\App\IDGenerator.h>
 #include <Spore\App\cCreatureModeStrategy.h>
 #include <Spore\App\cSporeApp.h>
+#include <Spore\App\cArithmeticaResource.h>
 
 namespace App
 {
@@ -46,5 +47,34 @@ namespace App
 	}
 
 	auto_STATIC_METHOD_(Canvas, Canvas*, Get);
+
+	//// cArithmeticaResource ////
+
+	auto_STATIC_METHOD(cArithmeticaResource, bool, Load,
+		Args(uint32_t a, uint32_t b, cArithmeticaResource& c), Args(a, b, c));
+
+	auto_METHOD_VOID(cArithmeticaResource, ComputeFunction, Args(const char* a), Args(a));
+
+	auto_METHOD_VOID_(cArithmeticaResource, ComputeAll);
+
+	auto_METHOD(cArithmeticaResource, float, GetValue, Args(const char* a), Args(a));
+
+	auto_METHOD_VOID(cArithmeticaResource, SetValue, Args(const char* a, float b), Args(a, b));
+
+	cArithmeticaResource::cArithmeticaResource()
+		: CachedResourceObject()
+		, mVariableNames()
+		, mOperators()
+		, mState()
+		, mFunctions()
+	{
+	}
+
+	cArithmeticaResource::~cArithmeticaResource()
+	{
+	}
+
+	void cArithmeticaResource::func14h() {
+	}
 }
 #endif

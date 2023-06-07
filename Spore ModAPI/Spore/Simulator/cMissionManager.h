@@ -47,8 +47,6 @@ namespace Simulator
 		, public App::IMessageListener
 	{
 	public:
-		static const uint32_t TYPE = 0xEE3F516E;
-
 		static cMissionManager* Get();
 
 		/// Creates a new mission object; the object will be a subclass of cMission,

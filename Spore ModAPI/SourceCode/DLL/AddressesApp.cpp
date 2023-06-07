@@ -1,6 +1,7 @@
 #ifdef MODAPI_DLL_EXPORT
 #include "stdafx.h"
 #include <Spore\App\SPPropertyIDs.h>
+#include <Spore\App\cArithmeticaResource.h>
 #include <Spore\App\cCameraManager.h>
 #include <Spore\App\cCheatManager.h>
 #include <Spore\App\cCreatureModeStrategy.h>
@@ -578,6 +579,15 @@ namespace App
 		DefineAddress(GetWindow, SelectAddress(0xF681A0, 0xF67D40));
 		DefineAddress(GetCanvasClass, SelectAddress(0x848410, 0x847C10));
 		DefineAddress(GetMonitor, SelectAddress(0x848420, 0x847C20));
+	}
+
+	namespace Addresses(cArithmeticaResource)
+	{
+		DefineAddress(Load, SelectAddress(0x7F2810, 0x7F2300));
+		DefineAddress(ComputeFunction, SelectAddress(0x7F26A0, 0x7F2190));
+		DefineAddress(ComputeAll, SelectAddress(0x7F2AD0, 0x7F25C0));
+		DefineAddress(GetValue, SelectAddress(0x7F2B60, 0x7F2650));
+		DefineAddress(SetValue, SelectAddress(0x7F2B90, 0x7F2680));
 	}
 }
 

@@ -140,19 +140,35 @@ namespace TypeIDs
 
 		dds = 0x17952E6C,
 
+		/// Simulator::Cell::cCellBackgroundMapResource
 		backgroundMap = 0x612B3191,
+		/// Simulator::Cell::cCellEffectMapResource
 		effectMap = 0x433FB70C,
+		/// Simulator::Cell::cCellCellResource
 		cell = 0xDFAD9F51,
+		/// Simulator::Cell::cCellGlobalsResource
 		globals = 0x2A3CE5B7,
+		/// Simulator::Cell::cCellLookAlgorithmResource
 		look_algorithm = 0xDBA35AE2,
+		/// Simulator::Cell::cCellLookTableResource
 		look_table = 0x8C042499,
+		/// Simulator::Cell::cCellLootTableResource
 		lootTable = 0xD92AF091,
+		/// Simulator::Cell::cCellPopulateResource
 		populate = 0xDA141C1B,
+		/// Simulator::Cell::cCellPowersResource
 		powers = 0x754BE343,
+		/// Simulator::Cell::cCellRandomCreatureResource
 		random_creature = 0xF9C3D770,
+		/// Simulator::Cell::cCellStructureResource
 		structure = 0x4B9EF6DC,
+		/// Simulator::Cell::cCellWorldResource
 		world = 0x9B8E862F,
-		advect = 0x04805684
+		/// Simulator::Cell::cAdvectResource
+		advect = 0x04805684,
+
+		/// App::cArithmeticaResource
+		arth = 0x0472329B
 	};
 }
 
@@ -263,5 +279,7 @@ namespace GroupIDs
 		CompiledStates = 0x40212001,
 		ShaderFragments = 0x40212002,
 		Shaders = 0x40212004,
+
+		Scripts1 = 0x24A4F5A
 	};
 }
