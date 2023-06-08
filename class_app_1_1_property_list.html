@@ -57,6 +57,7 @@
               <ul>
                 <li><a href="#base-classes">Base classes</a></li>
                 <li><a href="#derived-classes">Derived classes</a></li>
+                <li><a href="#pub-static-methods">Public static functions</a></li>
                 <li><a href="#typeless-methods">Constructors, destructors, conversion operators</a></li>
                 <li><a href="#pub-methods">Public functions</a></li>
                 <li><a href="#pro-types">Protected types</a></li>
@@ -82,6 +83,17 @@
               class <a href="class_app_1_1_direct_property_list.html" class="m-doc">DirectPropertyList</a>
             </dt>
             <dd>A special kind of <a href="class_app_1_1_property_list.html" class="m-doc">PropertyList</a> that allows to have fast-access bool/int/float properties, apart from normal properties.</dd>
+          </dl>
+        </section>
+        <section id="pub-static-methods">
+          <h2><a href="#pub-static-methods">Public static functions</a></h2>
+          <dl class="m-doc">
+            <dt>
+              <span class="m-doc-wrap-bumper">static void <a href="#ad234a30653a2eb6f96ef7dd3a95c96a1" class="m-doc">SaveToDatabase</a>(</span><span class="m-doc-wrap"><a href="class_app_1_1_property_list.html" class="m-doc">PropertyList</a>* propList,
+              <a href="class_resource_1_1_database.html" class="m-doc">Resource::<wbr />Database</a>* database,
+              bool async)</span>
+            </dt>
+            <dd>Adds the given property list to the <a href="class_app_1_1_i_prop_manager.html" class="m-doc">IPropManager</a>, and saves its contents into the given database.</dd>
           </dl>
         </section>
         <section id="typeless-methods">
@@ -193,6 +205,34 @@
         </section>
         <section>
           <h2>Function documentation</h2>
+          <section class="m-doc-details" id="ad234a30653a2eb6f96ef7dd3a95c96a1"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">static void App::<wbr />PropertyList::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ad234a30653a2eb6f96ef7dd3a95c96a1" class="m-doc-self">SaveToDatabase</a>(</span><span class="m-doc-wrap"><a href="class_app_1_1_property_list.html" class="m-doc">PropertyList</a>* propList,
+              <a href="class_resource_1_1_database.html" class="m-doc">Resource::<wbr />Database</a>* database,
+              bool async)</span></span>
+            </h3>
+            <p>Adds the given property list to the <a href="class_app_1_1_i_prop_manager.html" class="m-doc">IPropManager</a>, and saves its contents into the given database.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">propList</td>
+                  <td>The property list to save</td>
+                </tr>
+                <tr>
+                  <td>database</td>
+                  <td>The destination database</td>
+                </tr>
+                <tr>
+                  <td>async</td>
+                  <td>If true, schedule to save it asynchronously and return immediately<br /></td>
+                </tr>
+              </tbody>
+            </table>
+<p>The current resource key of the propList will be used as its file name.</p>
+          </div></section>
           <section class="m-doc-details" id="a35f3cfe8da6d2f026ec1009cea305a33"><div>
             <h3>
               <span class="m-doc-wrap-bumper">void App::<wbr />PropertyList::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a35f3cfe8da6d2f026ec1009cea305a33" class="m-doc-self">SetProperty</a>(</span><span class="m-doc-wrap">uint32_t propertyID,
