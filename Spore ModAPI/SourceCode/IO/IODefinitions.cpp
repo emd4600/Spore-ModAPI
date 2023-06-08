@@ -527,6 +527,10 @@ namespace Resource
 		return GetDirFromID(PathID::Debug);
 	}
 
+	auto_STATIC_METHOD(Resource, bool, SaveNamedResource,
+		Args(ResourceObject* resource, const char16_t* fileName, Database* database),
+		Args(resource, fileName, database));
+
 	//////////////////////
 
 	EAIOZoneObject_AMBIGOUS(DatabaseDirectoryFiles);

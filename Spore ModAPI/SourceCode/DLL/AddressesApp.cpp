@@ -8,6 +8,7 @@
 #include <Spore\App\cCellModeStrategy.h>
 #include <Spore\App\cGameModeManager.h>
 #include <Spore\App\cMessageManager.h>
+#include <Spore\App\ConfigManager.h>
 #include <Spore\App\cPropManager.h>
 #include <Spore\App\cViewer.h>
 #include <Spore\App\DirectPropertyList.h>
@@ -589,14 +590,20 @@ namespace App
 		DefineAddress(GetValue, SelectAddress(0x7F2B60, 0x7F2650));
 		DefineAddress(SetValue, SelectAddress(0x7F2B90, 0x7F2680));
 	}
+
+	namespace Addresses(IConfigManager)
+	{
+		DefineAddress(Get, SelectAddress(0x67DE50, 0x67DCF0));
+	}
 }
 
-#ifdef SDK_TO_GHIDRA
 namespace Addresses(App)
 {
+	DefineAddress(sPreferencesPropList, SelectAddress(0x1601BA4, 0x15FD91C));
+#ifdef SDK_TO_GHIDRA
 	DefineAddress(sScenarioMode, SelectAddress(0x16CBD24, 0x16C7AA4));
 	DefineAddress(sCreatureModeStrategy, SelectAddress(0x16A2514, 0x169E294));
-}
 #endif
+}
 
 #endif

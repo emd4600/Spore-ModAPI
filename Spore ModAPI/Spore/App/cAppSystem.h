@@ -3,6 +3,7 @@
 #include <Spore\App\IMessageListener.h>
 #include <Spore\App\CommandLine.h>
 #include <Spore\App\Canvas.h>
+#include <Spore\App\PropertyList.h>
 #include <Spore\Object.h>
 #include <EASTL\string.h>
 
@@ -67,7 +68,7 @@ namespace App
 	{
 	public:
 		/* 10h */	Canvas* mpCanvas;
-		// 1Ch is cResourceManager, 24h is cLocaleManager, 28h is cResourceKeyGenerator, 40h is cJobManager
+		// 1Ch is cResourceManager, 24h is cLocaleManager, 28h is cResourceKeyGenerator, 3Ch is IConfigManager, 40h is cJobManager, CCh is PropertyListPtr mpPreferencesPropList
 		/* 14h */	char padding_14[0x124];
 		/* 138h */	eastl::string16 mMySporeCreationsFolderName;
 		/* 148h */	eastl::string16 mAppDataSporeFolderName;

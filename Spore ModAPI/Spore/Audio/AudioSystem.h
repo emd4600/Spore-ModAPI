@@ -25,6 +25,11 @@ namespace Audio
 {
 	typedef int AudioTrack;
 
+	enum AudioProperties
+	{
+		kAudioVolume = 0x25DF0108
+	};
+
 	class AudioSystem
 	{
 		//PLACEHODER we might need to complete this

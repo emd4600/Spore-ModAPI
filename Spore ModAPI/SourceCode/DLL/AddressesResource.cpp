@@ -305,6 +305,7 @@ namespace Resource
 namespace Addresses(Resource)
 {
 	DefineAddress(ReadExtensionMappingsFromPropFile, SelectAddress(0x6B2440, 0x6B20A0));
+	DefineAddress(SaveNamedResource, SelectAddress(0x6B4340, 0x6B3FA0));
 }
 
 #endif

@@ -22,6 +22,7 @@
 #include <Spore\App\Property.h>
 #include <Spore\IO\IStream.h>
 #include <Spore\Resource\ResourceObject.h>
+#include <Spore\Resource\Database.h>
 #include <EASTL\vector_map.h>
 #include <EASTL\vector.h>
 
@@ -170,6 +171,13 @@ namespace App
 		///
 		void SetParent(PropertyList* pParent);
 
+		/// Adds the given property list to the IPropManager, and saves its contents into the given database.
+		/// The current resource key of the propList will be used as its file name.
+		/// @param propList The property list to save
+		/// @param database The destination database
+		/// @param async If true, schedule to save it asynchronously and return immediately 
+		static void SaveToDatabase(PropertyList* propList, Resource::Database* database, bool async);
+
 	protected:
 		typedef eastl::vector_map<uint32_t, Property> PropertyMap;
 		/* 18h */	PropertyMap		mProperties;
@@ -196,5 +204,7 @@ namespace App
 		DeclareAddress(Clear);
 
 		DeclareAddress(SetParent);
+
+		DeclareAddress(SaveToDatabase);  // 0x6B2080 TODO
 	}
 }

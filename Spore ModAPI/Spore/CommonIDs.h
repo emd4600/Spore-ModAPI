@@ -168,7 +168,9 @@ namespace TypeIDs
 		advect = 0x04805684,
 
 		/// App::cArithmeticaResource
-		arth = 0x0472329B
+		arth = 0x0472329B,
+
+		txt = 0x24A0E52
 	};
 }
 

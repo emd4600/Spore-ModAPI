@@ -37,7 +37,7 @@ namespace Editors
 		/* 1Ch */	cEditorSkinMesh* mpMeshHQ;
 		/* 20h */	char padding_20[0x48 - 0x20];
 		/* 48h */	eastl::vector<int> field_48;
-		/* 4Ch */	int field_4C;
+		/* 5Ch */	int field_5C;
 		/* 60h */	uint32_t mMaterialID;
 		/// Group ID 0x40602900, Type ID raster
 		/* 64h */	ResourceKey mTextureKey;

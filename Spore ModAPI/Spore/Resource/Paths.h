@@ -3,6 +3,7 @@
 #include <Spore\Internal.h>
 #include <Spore\Resource\Database.h>
 #include <Spore\Resource\DatabaseDirectoryFiles.h>
+#include <Spore\Resource\ResourceObject.h>
 #include <EASTL\string.h>
 
 namespace Resource
@@ -98,4 +99,11 @@ namespace Resource
 		DeclareAddress(CreateTempFile);  // 0x932AC0 0x932550
 		DeclareAddress(CreateSaveAreaDirectoryDatabase);  // 0x6B2950 0x6B25B0
 	}
+
+	bool SaveNamedResource(ResourceObject* resource, const char16_t* fileName, Database* database);
+}
+
+namespace Addresses(Resource)
+{
+	DeclareAddress(SaveNamedResource);  // 0x6B4340 0x6B3FA0
 }

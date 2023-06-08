@@ -5,6 +5,7 @@
 #include <Spore\App\cCreatureModeStrategy.h>
 #include <Spore\App\cSporeApp.h>
 #include <Spore\App\cArithmeticaResource.h>
+#include <Spore\App\ConfigManager.h>
 
 namespace App
 {
@@ -75,6 +76,16 @@ namespace App
 	}
 
 	void cArithmeticaResource::func14h() {
+	}
+
+
+	//// ConfigManager ////
+
+	auto_STATIC_METHOD_(IConfigManager, IConfigManager*, Get);
+
+	PropertyList* GetPreferences()
+	{
+		return *(PropertyList**)GetAddress(App, sPreferencesPropList);
 	}
 }
 #endif
