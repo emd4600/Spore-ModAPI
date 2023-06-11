@@ -69,15 +69,20 @@ namespace Simulator
 		/* 7Ch */	App::MessageListenerData mMessageListenerData;
 		/* 90h */	int field_90;  // not initialized, current state? fail reason?
 		/* 94h */	int field_94;  // not initialized
-		/* 98h */	Clock field_98;
+		/// The clock activates upon triggering the adventure's end. It counts up to around 2000 units (milliseconds),  after which the ending cinematic activates
+		/* 98h */	Clock mCinematicDelay;
 		/* B0h */	int field_B0;  // not initialized
 		/* B4h */	int field_B4;  // not initialized
 		/// Index of the current act (0 is first act, 1 is second, etc)
 		/* B8h */	int mCurrentActIndex;  // not initialized
 		/// Time limit of the current act, in milliseconds (negative number if no time limit)
 		/* BCh */	long mTimeLimitMS;
-		/* C0h */	int field_C0;
-		/* C4h */	int mAdventurePoints;  // not initialized
+		/// The playtime of the current adventure in milliseconds. It pauses counting when the game is paused, and it records its count to display it at the results screen. 
+		/// If the adventure is shared, it will also be sent to the adventure's high scores in the Spore servers if the player is logged in.
+		/* C0h */	int mCurrentTimeMS;
+		/// The amount of Spore points the captain is rewarded at the end of a successful adventure. 
+		/// Not initialized.
+		/* C4h */	int mAdventurePoints;
 		/* C8h */	int field_C8;  // not initialized
 		/* CCh */	int field_CC;  // not initialized
 		/* D0h */	int field_D0;  // not initialized
