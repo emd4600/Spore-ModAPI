@@ -20,9 +20,9 @@ namespace Editors
 
 		cEditorSkinMesh* GetMesh(int hq = 1);
 
-		/// Returns whether the skinpaint has finished generating.
+		/// Returns whether the skinpaint is still generating (true) or has finished (false)
 		/// @returns
-		bool HasFinishedPainting();
+		bool IsPainting();
 
 		bool PaintSkin(EditorModel* editorModel);
 
@@ -54,6 +54,7 @@ namespace Editors
 	{
 		DeclareAddress(GetMesh);  // 0x4C4280 0x4C4A50
 		DeclareAddress(HasFinishedPainting);  // 0x4C5170 0x4C5920
+		DeclareAddress(IsPainting);  // 0x4C5170 0x4C5920
 		DeclareAddress(PaintSkin);  // 0x4C4AA0 0x4C5270
 	}
 }

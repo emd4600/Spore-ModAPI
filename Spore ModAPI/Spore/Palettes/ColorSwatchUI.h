@@ -80,6 +80,8 @@ namespace Palettes
 
 		void Update(int msTime, bool);
 
+		void Hide();
+
 		void Destroy();
 
 		//// OVERRIDES ////
@@ -162,6 +164,7 @@ namespace Palettes
 		DeclareAddress(AddTooltip);
 		DeclareAddress(Update);
 		DeclareAddress(Destroy);
+		DeclareAddress(Hide);  // 0x5A4360 0x5A4620
 
 		DeclareAddress(HandleUIMessage);
 	}

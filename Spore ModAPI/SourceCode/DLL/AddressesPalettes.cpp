@@ -33,6 +33,7 @@ namespace Palettes
 		DefineAddress(AddTooltip, SelectAddress(0x5A43B0, 0x5A4670));
 		DefineAddress(Update, SelectAddress(0x5A6260, 0x5A63C0));
 		DefineAddress(Destroy, SelectAddress(0x5A5C40, 0x5A5DA0));
+		DefineAddress(Hide, SelectAddress(0x5A4360, 0x5A4620));
 
 		DefineAddress(HandleUIMessage, SelectAddress(0x5A58B0, 0x5A5B60));
 	}

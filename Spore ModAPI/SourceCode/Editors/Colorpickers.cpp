@@ -107,12 +107,14 @@ namespace Palettes
 
 	auto_METHOD_VOID(ColorSwatchUI, Update, Args(int msTime, bool arg_4), Args(msTime, arg_4));
 
+	auto_METHOD_VOID_(ColorSwatchUI, Hide);
+
 	auto_METHOD_VOID_(ColorSwatchUI, Destroy);
 
 
 
 	ColorPickerUI::ColorPickerUI()
-		: field_0C()
+		: mpSelectedColorSwatch()
 		, mpWindow(nullptr)
 		, mWidth()
 		, mHeight()

@@ -75,7 +75,7 @@ namespace Palettes
 		virtual void* Cast(uint32_t type) const override;
 
 	public:
-		/* 0Ch */	ObjectPtr field_0C;
+		/* 0Ch */	ObjectPtr mpSelectedColorSwatch;
 		/// The container window where the layout is inserted.
 		/* 10h */	UTFWin::IWindow* mpWindow;
 		/// The total width of the container window.

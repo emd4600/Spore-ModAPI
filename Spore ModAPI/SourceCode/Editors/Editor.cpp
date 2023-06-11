@@ -117,7 +117,7 @@ namespace Editors
 
 	auto_METHOD(cEditorSkin, cEditorSkinMesh*, GetMesh, Args(int hq), Args(hq));
 
-	auto_METHOD_(cEditorSkin, bool, HasFinishedPainting);
+	auto_METHOD_(cEditorSkin, bool, IsPainting);
 
 	auto_METHOD(cEditorSkin, bool, PaintSkin, Args(EditorModel* editorModel), Args(editorModel));
 

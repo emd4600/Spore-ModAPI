@@ -18,6 +18,7 @@ namespace Editors
 		inline ColorChangedMessage(Math::Color color, Object* object, uint32_t regionFilter, bool isDefaultColor, int colorIndex)
 		{
 #ifndef SDK_TO_GHIDRA
+			this->id = ID;
 			params[0].uint32 = color.value;
 			SetObject(1, object);
 			params[2].uint32 = regionFilter;

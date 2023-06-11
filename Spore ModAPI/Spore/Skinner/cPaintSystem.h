@@ -44,6 +44,12 @@ namespace Skinner
 		Editors::cEditorSkinMesh* GetSkinMesh();
 
 	public:
+		struct SkinpaintEffectSeed
+		{
+			uint32_t mSkinpaintEffectID;
+			int mSkinpaintSeed;
+		};
+
 		/* 0Ch */	cSkinPainter* mpPainter;
 		/* 10h */	int field_10;
 		/* 14h */	int mpMeshAORender;
@@ -52,12 +58,22 @@ namespace Skinner
 		/* 20h */	Editors::cEditorSkinMesh* mpSkinMesh;  // not initialized
 		/* 24h */	Math::BoundingBox field_24;
 		/* 3Ch */	eastl::vector<cSkinpaintInfo> mSkinpaintInfos;
-		/* 50h */	char padding_50[0x80 - 0x50]; //TODO 54h is RNG?  //TODO 7Dh ambient occlusion run?
+		/* 50h */	char padding_50[0x60 - 0x50]; //TODO 54h is RNG?  //TODO 7Dh ambient occlusion run?
+		/* 60h */	bool mHasPipelineExecuting;
+		/* 61h */	bool field_61;
+		/* 64h */	int field_64;
+		/* 68h */	int field_68;
+		/* 6Ch */	int field_6C;
+		/* 70h */	int field_70;
+		/* 74h */	int field_74;
+		/* 78h */	int field_78;
+		/* 7Ch */	bool field_7C;
+		/* 7Dh */	bool field_7D;
 		/* 80h */	eastl::vector<int> field_80;
-		/* 94h */	eastl::fixed_vector<int, 16> field_94;
-		/* ECh */	int field_EC;  // not initialized
-		/* F0h */	int field_F0;
-		/* F4h */	int field_F4;
+		/* 94h */	eastl::fixed_vector<SkinpaintEffectSeed, 8> field_94;
+		/* ECh */	int field_EC;  // not initialized, index to field_94
+		/* F0h */	IVisualEffectPtr mpSkinpaintEffect;
+		/* F4h */	IEffectsWorldPtr mpEffectsWorld;
 		/* F8h */	cJobPtr field_F8;
 		/* FCh */	cJobPtr mpUVUnwrapJob;
 		/* 100h */	int field_100;

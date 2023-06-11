@@ -188,6 +188,7 @@ namespace Editors
 	{
 		DefineAddress(GetMesh, SelectAddress(0x4C4280, 0x4C4A50));
 		DefineAddress(HasFinishedPainting, SelectAddress(0x4C5170, 0x4C5920));
+		DefineAddress(IsPainting, SelectAddress(0x4C5170, 0x4C5920));
 		DefineAddress(PaintSkin, SelectAddress(0x4C4AA0, 0x4C5270));
 	}
 
