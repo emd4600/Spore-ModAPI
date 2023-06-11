@@ -55,6 +55,7 @@ namespace Simulator
 		/* 04h */	int field_04;
 		/* 08h */	ResourceID field_08;
 	};
+	ASSERT_SIZE(cAbilityState, 0x10);
 	// Maybe used in other places as well?
 	class cCreatureItem  // size 24h
 	{

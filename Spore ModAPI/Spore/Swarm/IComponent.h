@@ -41,4 +41,5 @@ namespace Swarm
 		, public RefCountTemplate
 	{
 	};
+	ASSERT_SIZE(cComponentBase, 0xC);
 }

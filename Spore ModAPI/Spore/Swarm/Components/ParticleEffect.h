@@ -22,7 +22,7 @@
 #include <Spore\MathUtils.h>
 #include <Spore\Swarm\cSurfaceInfo.h>
 #include <Spore\Swarm\Components\cDescription.h>
-#include <Spore\Swarm\Components\TextureSlot.h>
+#include <Spore\Swarm\Components\cTextureSlot.h>
 #include <Spore\Swarm\Components\Wiggle.h>
 #include <Spore\Swarm\Components\RandomWalk.h>
 #include <Spore\Swarm\Components\Attractor.h>
@@ -66,7 +66,7 @@ namespace Swarm
 			/* F4h */	eastl::vector<float> alpha;
 			/* 108h */	float alphaVary;
 			/* 10Ch */	int field_10C;
-			/* 110h */	TextureSlot texture;
+			/* 110h */	cTextureSlot texture;
 			/* 130h */	char physicsType;
 			/* 131h */	char overrideSet;
 			/* 132h */	char tileCount[2];
@@ -99,7 +99,6 @@ namespace Swarm
 			/* 1D4h */	float mapRepulseKillHeight;
 			/* 1D8h */	float probabilityDeath;
 			/* 1DCh */	float altitudeRange[2];
-			/* 1E4h */	int field_1E4;
 			/* 1E8h */	ResourceID forceMapID;
 			/* 1F0h */	ResourceID emitRateMapID;
 			/* 1F8h */	ResourceID emitColorMap;

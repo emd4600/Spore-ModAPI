@@ -28,7 +28,7 @@
 /// The groupID is used when hashing and comparing, allowing this class to be used in containers such as hash_map
 /// or sorted vectors.
 ///
-class ResourceID
+class alignas(8) ResourceID
 {
 public:
 	ResourceID();
@@ -42,6 +42,7 @@ public:
 #endif
 };
 ASSERT_SIZE(ResourceID, 0x8);
+static_assert(alignof(ResourceID) == 8, "ResourceID alignment is not 8");
 
 inline ResourceID::ResourceID(uint32_t _instanceID, uint32_t _groupID)
 	: instanceID(_instanceID)

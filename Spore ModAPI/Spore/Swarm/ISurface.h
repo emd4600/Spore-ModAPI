@@ -22,6 +22,8 @@
 #include <Spore\Swarm\IVisualEffect.h>
 #include <Spore\Swarm\cSurfaceInfo.h>
 
+#define ISurfacePtr eastl::intrusive_ptr<Swarm::ISurface>
+
 namespace Swarm
 {
 	class ISurface
@@ -49,4 +51,15 @@ namespace Swarm
 		/* 2Ch */	virtual void InitParticleData(cSurfaceInfo* surfaceInfo, void* data, IVisualEffect* effect) = 0;
 		/* 30h */	virtual void ReleaseParticleData(void*) = 0;
 	};
+
+	struct cSurfaceRec
+	{
+		/* 00h */	ISurfacePtr mpSurface;
+		/* 04h */	int field_4;
+		/* 08h */	int field_8;
+		/* 0Ch */	int field_C;
+		/* 10h */	int field_10;
+		/* 14h */	int field_14;
+	};
+	ASSERT_SIZE(cSurfaceRec, 0x18);
 }

@@ -43,6 +43,7 @@
 #include <Spore\App\cLocaleManager.h>
 #include <Spore\App\cSporeApp.h>
 #include <Spore\App\cArithmeticaResource.h>
+#include <Spore\App\ConfigManager.h>
 
 #include <Spore\Audio\AudioSystem.h>
 

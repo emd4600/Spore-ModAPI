@@ -101,7 +101,6 @@ namespace Terrain
 		/* 130h */	ColorRGB mLavaCloudColor;  // 0.3, 0.1, 0.95
 		/* 13Ch */	int field_13C;  // 9
 		/* 140h */	int field_140;  // 9
-		/* 144h */	int field_144;  // not initialized
 		/* 148h */	ResourceID mCloudID;  // init functions sets to 599EC0AB, depends on weatherCloudType
 		/* 150h */	int field_150;  // 5
 		/* 154h */	int field_154;  // 5
