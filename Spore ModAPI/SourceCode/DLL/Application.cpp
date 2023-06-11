@@ -142,7 +142,7 @@ void CreateLogFile() {
 	log_path.resize(log_path.find_last_of('\\')+1);
 
 	eastl::string16 log_file_name;
-	AppCommandLine.FindSwitch(u"logfilename", false, &log_file_name);
+	AppCommandLine.FindSwitch(u"modapi-log-filename", false, &log_file_name);
 	if (log_file_name.empty())
 		log_file_name = u"spore_log";
 	log_file_name += u".txt";
