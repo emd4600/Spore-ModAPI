@@ -10,11 +10,12 @@ The documentation of the SDK is available here: https://emd4600.github.io/Spore-
 
 Instructions about download, installation and updating can be found [in this tutorial](https://emd4600.github.io/Spore-ModAPI/_installation.html).
 
-The source code can be found in this GitHub repository. It also includes the source code
-of 3 real mods made with the ModAPI SDK:
- - [EnhancedColorPicker](https://github.com/emd4600/Spore-ModAPI/tree/master/Projects/Example%20Projects/EnhancedColorPicker)
+The source code can be found in this GitHub repository. If you want to see the SDK in action, check the [list of open source mods](https://github.com/emd4600/SporeModder-FX/wiki/List-of-open-source-mods).
+This project also includes the source code of some example mods made with the ModAPI SDK:
+ - [ModCreatorKit](https://github.com/emd4600/Spore-ModAPI/tree/master/Projects/Example%20Projects/ModCreatorKit#modcreatorkit)
  - [GmdlExport](https://github.com/emd4600/Spore-ModAPI/tree/master/Projects/Example%20Projects/GmdlExport)
- - [ModCreatorKit](https://github.com/emd4600/Spore-ModAPI/tree/master/Projects/Example%20Projects/ModCreatorKit)
+ - [EditorPlayModeNoBounds](https://github.com/emd4600/Spore-ModAPI/tree/master/Projects/Example%20Projects/EditorPlayModeNoBounds)
+ - [SpaceToolCheat](https://github.com/emd4600/Spore-ModAPI/tree/master/Projects/Example%20Projects/SpaceToolCheat)
 
 To compile the core DLLs (unless you want to develop the SDK itself, you don't need to do this):
  1. Open the Visual Studio Command Prompt
