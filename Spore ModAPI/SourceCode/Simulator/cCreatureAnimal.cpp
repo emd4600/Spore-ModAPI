@@ -80,5 +80,9 @@ namespace Simulator
 	auto_METHOD(cCreatureBase, int, PlayVoice,
 		Args(const char* pName, int param2, int param3),
 		Args(pName, param2, param3));
+
+
+	auto_METHOD_VOID(cCreatureAnimal, NPCTickAI, Args(float f), Args(f));
+	auto_METHOD_VOID(cCreatureAnimal, AvatarTickAI, Args(float f), Args(f));
 }
 #endif

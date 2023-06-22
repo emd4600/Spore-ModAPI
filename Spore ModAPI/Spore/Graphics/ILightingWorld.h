@@ -43,7 +43,7 @@ namespace Graphics
 		
 		virtual ~ILightingWorld() {};
 
-		/* 0Ch */	virtual int AddLight(const Vector3& position, const ColorRGB& color, float, float) = 0;
+		/* 0Ch */	virtual int AddLight(const Vector3& position, const ColorRGB& color, float strength, float size) = 0;
 
 		/* 10h */	virtual void UpdateLightPosition(int index, const Vector3&) = 0;
 

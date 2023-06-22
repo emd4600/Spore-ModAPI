@@ -15,7 +15,7 @@ namespace Swarm
 		/* 0Ch */	virtual int SetCamera(struct ResourceID) = 0;
 		/* 10h */	virtual int GrabCamera(struct ResourceID) = 0;
 		/* 14h */	virtual void ReleaseCamera(int index) = 0;
-		/* 18h */	virtual void func18h() = 0;
+		/* 18h */	virtual void CaptureView() = 0;
 		/* 1Ch */	virtual void CaptureViewToCubemap(int16_t, Transform*) = 0;
 		/* 20h */	virtual ~ICameraManager() = 0;
 

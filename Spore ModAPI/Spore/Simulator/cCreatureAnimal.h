@@ -40,6 +40,9 @@ namespace Simulator
 
 		static cCreatureAnimal* Create(const Vector3& pPosition, cSpeciesProfile* pSpecies, int age = 1, cHerd* pHerd = nullptr, bool bIsAvatar = false, bool = false);
 
+		void NPCTickAI(float deltaTime);
+		void AvatarTickAI(float deltaTime);
+
 	public:
 		/* FC0h */	cGonzagoTimer mNoDamageTimer;
 		/* FE0h */	cGonzagoTimer mLastAvatarDamageTimer;
@@ -84,5 +87,7 @@ namespace Simulator
 
 	namespace Addresses(cCreatureAnimal) {
 		DeclareAddress(Create);
+		DeclareAddress(NPCTickAI);  // 0xC08CD0 0xC09570
+		DeclareAddress(AvatarTickAI);  // 0xC03710 0xC04020
 	}
 }

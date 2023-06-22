@@ -35,7 +35,7 @@ namespace Pollinator
 		eastl::string16 GetDescription() const;
 		eastl::string16 GetAuthor() const;
 		int64_t GetAuthorID() const;
-		const eastl::vector<eastl::string16>& GetAuthors() const;
+		const eastl::vector<eastl::string8>& GetAuthors() const;
 		const eastl::vector<eastl::string16>& GetTags() const;
 
 		const eastl::vector<uint32_t>& GetConsequenceTraits() const;
@@ -61,7 +61,7 @@ namespace Pollinator
 		/* 74h */	bool mIsShareable;  // true
 		/* 78h */	eastl::string16 mName;
 		/* 88h */	eastl::string16 mDescription;
-		/* 98h */	eastl::vector<eastl::string16> mAuthors;
+		/* 98h */	eastl::vector<eastl::string8> mAuthors;
 		/* ACh */	eastl::vector<eastl::string16> mTags;
 		/* C0h */	eastl::vector<uint32_t> mConsequenceTraits;
 	};
@@ -89,7 +89,7 @@ namespace Pollinator
 	inline eastl::string16 cAssetMetadata::GetDescription() const { return mDescription; }
 	inline eastl::string16 cAssetMetadata::GetAuthor() const { return mAuthorName; }
 	inline int64_t cAssetMetadata::GetAuthorID() const { return mAuthorID; }
-	inline const eastl::vector<eastl::string16>& cAssetMetadata::GetAuthors() const { return mAuthors; }
+	inline const eastl::vector<eastl::string8>& cAssetMetadata::GetAuthors() const { return mAuthors; }
 	inline const eastl::vector<eastl::string16>& cAssetMetadata::GetTags() const { return mTags; }
 
 	inline const eastl::vector<uint32_t>& cAssetMetadata::GetConsequenceTraits() const { return mConsequenceTraits; }

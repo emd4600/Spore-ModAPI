@@ -38,14 +38,16 @@
 namespace Graphics
 {
 	enum class CollisionMode : uint8_t {
-		/// Just intersect with the bounding box
-		BoundingBox = 0,
-		TightBoundingBox = 1,
+		/// Only use the bounding radius to intersect
+		BoundingSphere = 0,
+		/// Only use the bounding box to intersect
+		BoundingBox = 1,
 		/// Check intersection with the hull mesh
-		HullKDTree = 2,
-		/// Check intersection with the LOD0 mesh
-		Lod0KDTree = 3,
-		Unk4 = 4
+		HullTriangle = 2,
+		/// Check intersection with the LOD0 mesh, in an optimized but more imprecise way
+		MeshCluster = 3,
+		/// Check intersection with the LOD0 mesh triangle geometry, the slowest but most precise
+		MeshTriangle = 4
 	};
 
 	class IModelWorld;

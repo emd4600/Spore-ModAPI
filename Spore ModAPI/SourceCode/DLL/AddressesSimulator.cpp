@@ -159,6 +159,8 @@ namespace Simulator
 	namespace Addresses(cCreatureAnimal) 
 	{
 		DefineAddress(Create, SelectAddress(0xC092A0, 0xC09B40));
+		DefineAddress(NPCTickAI, SelectAddress(0xC08CD0, 0xC09570));
+		DefineAddress(AvatarTickAI, SelectAddress(0xC03710, 0xC04020));
 	}
 
 	namespace Addresses(cCreatureBase)

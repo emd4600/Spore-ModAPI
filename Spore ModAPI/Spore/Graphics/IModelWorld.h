@@ -92,7 +92,7 @@ namespace Graphics
 		: requiredGroupFlags()
 		, excludedGroupFlags()
 		, filterFunction(nullptr)
-		, collisionMode(CollisionMode::Lod0KDTree)
+		, collisionMode(CollisionMode::MeshCluster)
 		, flags(kUseModelCollisionMode)
 	{
 	}

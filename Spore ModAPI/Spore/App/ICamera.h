@@ -41,6 +41,13 @@ namespace App
 		: public Object
 	{
 	public:
+		enum CameraControlMessages
+		{
+			/// The data is a float*, only changes the initial zoom
+			kMsgInitialZoom = 0x101D445,
+			/// The data is a float*, sets the current and initial zoom
+			kMsgZoom = 0x101D4C7,
+		};
 
 		static const uint32_t TYPE = 0x29DA727;
 

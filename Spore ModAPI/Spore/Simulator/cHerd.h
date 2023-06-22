@@ -9,8 +9,7 @@
 
 namespace Simulator
 {
-	//TODO
-	/*enum class CreaturePersonality
+	enum class CreaturePersonality
 	{
 		None = 0,
 		EpicPredator = 1,
@@ -21,8 +20,10 @@ namespace Simulator
 		Guard = 6,
 		Pet = 7,
 		WaterPredator = 8,
-		Carcass = 9
-	};*/
+		Carcass = 9,
+		Unk10 = 10,
+		Scenario = 11
+	};
 
 	class cHerd
 		: public cGameData
@@ -76,7 +77,7 @@ namespace Simulator
 		/* 150h */	float mScaleMultiplier;
 		/* 154h */	float mHitpointOverride;
 		/* 158h */	float mDamageMultiplier;
-		/* 15Ch */	int mCreaturePersonality;  //TODO CreaturePersonality?
+		/* 15Ch */	CreaturePersonality mCreaturePersonality;
 		/* 160h */	cNestPtr mpNest;
 		/* 164h */	cCreatureAnimalPtr mpHerdMom;
 		/* 168h */	int _padding_168[10];  // this is something related with cBehaviorTreeData and "Simulator/list"
