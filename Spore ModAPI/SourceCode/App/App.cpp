@@ -22,6 +22,8 @@ namespace App
 			bool forceReplace, bool disableSteganography),
 		Args(pResource, pImage, pDBPF, forceReplace, disableSteganography));
 
+	auto_METHOD(Thumbnail_cImportExport, bool, ReadPNG,
+		Args(const char16_t* path, ResourceKey& key), Args(path, key));
 
 
 	auto_STATIC_METHOD_(cIDGenerator, cIDGenerator*, Get);
