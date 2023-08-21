@@ -67,13 +67,11 @@ namespace Simulator
 		/* 64h */	eastl::vector<cScenarioPlayModeGoal> mCurrentGoals;
 		/* 78h */	int field_78;  // not initialized
 		/* 7Ch */	App::MessageListenerData mMessageListenerData;
-		/// Current gameplay state of the adventure.
+		/// Current state of the adventure play mode.
 		/// 0 is pre-init in editor play mode, 1 is intro, 2 seems to be pre-init in quick-play, 3 is gameplay, 5 is adventure completed and 6 is adventure failed (death or failed/invalid goals)
-		/// Not initialized
-		/* 90h */	int mCurrentGameplayState;
+		/* 90h */	ScenarioPlayModeState mCurrentPlayModeState; // not initialized
 		/// Controls what state the ending cinematic of the adventure is in. Set to 0 when ending procedure begins, 1 when cinematic activates, and 2 after player leaves the cinematic sequence.
-		/// Not initialized
-		/* 94h */	int mCurrentEndCinematicState; 
+		/* 94h */	int mCurrentEndCinematicState; // not initialized
 		/// The clock activates when mCurrentEndCinematicState is set to 0. It counts up to around 2000 units (milliseconds),  after which the ending cinematic activates and mCurrentEndCinematicState is set to 1.
 		/* 98h */	Clock mCinematicDelay;
 		/* B0h */	int field_B0;  // not initialized
@@ -85,15 +83,13 @@ namespace Simulator
 		/// The playtime of the current adventure in milliseconds. It pauses counting when the game is paused, and it records its count to display it at the results screen. 
 		/// If the adventure is shared, it will also be sent to the adventure's high scores in the Spore servers if the player is logged in.
 		/* C0h */	int mCurrentTimeMS;
-		/// The amount of Spore points the captain is rewarded at the end of a successful adventure. 
-		/// Not initialized.
-		/* C4h */	int mAdventurePoints;
+		/// The amount of Spore points the captain is rewarded at the end of a successful adventure.
+		/* C4h */	int mAdventurePoints; // not initialized
 		/* C8h */	int field_C8;  // not initialized
 		/* CCh */	int field_CC;  // not initialized
 		/* D0h */	int field_D0;  // not initialized
 		/// Index of the dialog box being displayed during talk-to goal cinematic (-1 is the initial fade-in + creature greeting animation, 0 is first dialog box, 1 is second etc.)
-		/// Not initialized
-		/* D4h */	int mCurrentDialogBoxIndex;  
+		/* D4h */	int mCurrentDialogBoxIndex;  // not initialized
 		/* D8h */	int field_D8;  // not initialized
 		/// Used for move-to goals. Distance of the nearest target to the player.
 		/* DCh */	float mDistanceToClosestMoveToTarget;

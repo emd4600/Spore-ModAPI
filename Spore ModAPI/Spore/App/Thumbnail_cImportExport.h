@@ -56,7 +56,7 @@ namespace App
 		/// @param path The full path to the file being read.
 		/// @param key Resource key to the creation being read.
 		/// @returns 'true' on success, 'false' if something failed.
-		bool ReadPNG(const char16_t* path, ResourceKey& key);
+		bool ImportPNG(const char16_t* path, ResourceKey& key);
 
 		static Thumbnail_cImportExport* Get();
 
@@ -77,6 +77,6 @@ namespace App
 		DeclareAddress(GetFolderPath);
 		DeclareAddress(FolderPathFromLocale);
 		DeclareAddress(SavePNG);
-		DeclareAddress(ReadPNG);
+		DeclareAddress(ImportPNG);
 	}
 }

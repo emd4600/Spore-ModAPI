@@ -22,7 +22,7 @@ namespace App
 			bool forceReplace, bool disableSteganography),
 		Args(pResource, pImage, pDBPF, forceReplace, disableSteganography));
 
-	auto_METHOD(Thumbnail_cImportExport, bool, ReadPNG,
+	auto_METHOD(Thumbnail_cImportExport, bool, ImportPNG,
 		Args(const char16_t* path, ResourceKey& key), Args(path, key));
 
 
