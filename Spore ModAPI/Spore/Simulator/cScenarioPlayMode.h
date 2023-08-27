@@ -67,9 +67,12 @@ namespace Simulator
 		/* 64h */	eastl::vector<cScenarioPlayModeGoal> mCurrentGoals;
 		/* 78h */	int field_78;  // not initialized
 		/* 7Ch */	App::MessageListenerData mMessageListenerData;
-		/* 90h */	int field_90;  // not initialized, current state? fail reason?
-		/* 94h */	int field_94;  // not initialized
-		/// The clock activates upon triggering the adventure's end. It counts up to around 2000 units (milliseconds),  after which the ending cinematic activates
+		/// Current state of the adventure play mode.
+		/// 0 is pre-init in editor play mode, 1 is intro, 2 seems to be pre-init in quick-play, 3 is gameplay, 5 is adventure completed and 6 is adventure failed (death or failed/invalid goals)
+		/* 90h */	ScenarioPlayModeState mCurrentPlayModeState; // not initialized
+		/// Controls what state the ending cinematic of the adventure is in. Set to 0 when ending procedure begins, 1 when cinematic activates, and 2 after player leaves the cinematic sequence.
+		/* 94h */	int mCurrentEndCinematicState; // not initialized
+		/// The clock activates when mCurrentEndCinematicState is set to 0. It counts up to around 2000 units (milliseconds),  after which the ending cinematic activates and mCurrentEndCinematicState is set to 1.
 		/* 98h */	Clock mCinematicDelay;
 		/* B0h */	int field_B0;  // not initialized
 		/* B4h */	int field_B4;  // not initialized
@@ -80,22 +83,27 @@ namespace Simulator
 		/// The playtime of the current adventure in milliseconds. It pauses counting when the game is paused, and it records its count to display it at the results screen. 
 		/// If the adventure is shared, it will also be sent to the adventure's high scores in the Spore servers if the player is logged in.
 		/* C0h */	int mCurrentTimeMS;
-		/// The amount of Spore points the captain is rewarded at the end of a successful adventure. 
-		/// Not initialized.
-		/* C4h */	int mAdventurePoints;
+		/// The amount of Spore points the captain is rewarded at the end of a successful adventure.
+		/* C4h */	int mAdventurePoints; // not initialized
 		/* C8h */	int field_C8;  // not initialized
 		/* CCh */	int field_CC;  // not initialized
 		/* D0h */	int field_D0;  // not initialized
-		/* D4h */	int field_D4;  // not initialized
+		/// Index of the dialog box being displayed during talk-to goal cinematic (-1 is the initial fade-in + creature greeting animation, 0 is first dialog box, 1 is second etc.)
+		/* D4h */	int mCurrentDialogBoxIndex;  // not initialized
 		/* D8h */	int field_D8;  // not initialized
-		/* DCh */	float field_DC;
-		/* E0h */	Math::Vector3 field_E0;
+		/// Used for move-to goals. Distance of the nearest target to the player.
+		/* DCh */	float mDistanceToClosestMoveToTarget;
+		/// Coordinates of the move-to goal target's location.
+		/* E0h */	Math::Vector3 mMoveToGoalLocation;
 		/* ECh */	bool field_EC;
 		/* F0h */	Audio::AudioTrack mMusicTrack;
 		/* F4h */	uint32_t mCurrentMusicId;
-		/* F8h */	float field_F8;
-		/* FCh */	bool field_FC;
-		/* FDh */	bool field_FD;
+		/// The duration the captain fade-in effect is active during intro cutscene. Counts down to 0.
+		/* F8h */	float mIntroFadeinTimer;
+		/// Set to true when mIntroFadeinTimer begins counting. Set to false when mIntroBeamdownTimer is less than or equal to 0. 
+		/* FCh */	bool mIsIntroFadeinActive;
+		/// Initially set to false but set to true when adventure begins.
+		/* FDh */	bool mIsAdventureActive;
 		/* 100h */	int field_100;
 	};
 	ASSERT_SIZE(cScenarioPlayMode, 0x108);

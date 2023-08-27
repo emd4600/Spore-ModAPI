@@ -550,6 +550,26 @@ namespace Simulator
 		Defend = 11,
 	};
 
+	///  The different states in which an adventure can be while being played (beginning, active, completed, failed etc).
+	///  Used by Simulator::cScenarioPlayMode.
+	enum class ScenarioPlayModeState : int
+	{
+		/// When beginning adventure from the editor, it will skip the opening cinematic to immediately begin the adventure.
+		EditorStart = 0,
+		/// When the opening cinematic is running.
+		OpeningCinematic = 1,
+		/// When loading the adventure from quick play or (presumably) space stage. Opening cinematic will run.
+		MissionStart = 2,
+		/// The adventure is currently active.
+		Active = 3,
+		/// When the adventure is completed successfully, the victory cinematic will play and Spore points will be rewarded (if eligible). 
+		/// If applicable, the player captain will act joyful and perhaps dance in the results screen as Spore points are rewarded to them.
+		Completed = 5,
+		/// If the adventure wasn't successfully cleared, the failure or death cinematic will play, depending on the type of failure. 
+		/// Spore points will not be rewarded, and if applicable, the player captain will appear sad in the results screen.
+		Failed = 6
+
+	};
 	/// Possible motive (health & hunger) states for a creature; what is considered "low" and "critical" depends on the `MotiveTuning` settings
 	enum class CreatureMotive : int
 	{

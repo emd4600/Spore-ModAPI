@@ -51,6 +51,13 @@ namespace App
 		bool SavePNG(Resource::ResourceObject* pResource, RenderWare::Raster* pImage, Resource::Database* database, 
 			bool forceReplace = false, bool disableSteganography = false);
 
+		/// Reads the PNG file from the given file path, and adds the creation found within to the Sporepedia if it hasn't been added yet. 
+		/// 
+		/// @param path The full path to the file being read.
+		/// @param key Resource key to the creation being read.
+		/// @returns 'true' on success, 'false' if something failed.
+		bool ImportPNG(const char16_t* path, ResourceKey& key);
+
 		static Thumbnail_cImportExport* Get();
 
 		// Not finished yet, but it's not important
@@ -70,5 +77,6 @@ namespace App
 		DeclareAddress(GetFolderPath);
 		DeclareAddress(FolderPathFromLocale);
 		DeclareAddress(SavePNG);
+		DeclareAddress(ImportPNG);
 	}
 }
