@@ -572,30 +572,7 @@ public class ImportSporeSDK extends GhidraScript {
 	}
 
     private static String getCallingConvention(Function function, FunctionSignature signature, CompilerSpec compilerSpec) {
-        boolean preserveCallingConvention = false;
-		PrototypeModel preferredModel = null;
-		if (signature.getGenericCallingConvention() != GenericCallingConvention.unknown) {
-			preferredModel = compilerSpec.matchConvention(signature.getGenericCallingConvention());
-		}
-
-		PrototypeModel convention = function.getCallingConvention();
-		if (convention == null || !preserveCallingConvention) {
-			convention = preferredModel;
-// NOTE: This has been disable since it can cause imported signature information to be
-// ignored and overwritten by subsequent analysis
-//			if (convention == null && compilerSpec.getCallingConventions().length > 1) {
-//				// use default source for signature if convention is really unknown so that we
-//				// know dynamic storage assignment is unreliable
-//				source = SourceType.DEFAULT;
-//			}
-		}
-
-		// Calling convention is permitted to change
-		String conventionName = function.getCallingConventionName();
-		if (!preserveCallingConvention && convention != null) {
-			conventionName = convention.getName();
-		}
-		return conventionName;
+		return function.getCallingConventionName();
 	}
 
 
