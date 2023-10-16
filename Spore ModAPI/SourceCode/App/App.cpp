@@ -34,26 +34,12 @@ namespace App
 
 	auto_STATIC_METHOD_(cCreatureModeStrategy, cCreatureModeStrategy*, Get);
 
-
 	auto_STATIC_METHOD_(IAppSystem, IAppSystem*, Get);
 
 	auto_STATIC_METHOD(cSporeApp, int, EAMain, Args(CommandLine* commandLine), Args(commandLine));
 	auto_STATIC_METHOD(cSporeApp, bool, Init, Args(CommandLine* commandLine), Args(commandLine));
 	auto_STATIC_METHOD_VOID_(cSporeApp, Run);
 	auto_STATIC_METHOD_(cSporeApp, bool, Shutdown);
-
-	auto_STATIC_METHOD_(Canvas, Canvas*, Get);
-#endif
-
-	auto_METHOD(CommandLine, eastl::string16&, Get, Args(int i), Args(i));
-
-	auto_METHOD(CommandLine, int, FindSwitch,
-		Args(const char16_t* a1, bool a2, eastl::string16* a3, int a4),
-		Args(a1, a2, a3, a4));
-
-	CommandLine* GetAppCommandLine() {
-		return *(CommandLine**)GetAddress(App, sAppCommandLine);
-	}
 
 	auto_STATIC_METHOD_(Canvas, Canvas*, Get);
 
@@ -86,7 +72,6 @@ namespace App
 	void cArithmeticaResource::func14h() {
 	}
 
-
 	//// ConfigManager ////
 
 	auto_STATIC_METHOD_(IConfigManager, IConfigManager*, Get);
@@ -94,5 +79,16 @@ namespace App
 	PropertyList* GetPreferences()
 	{
 		return *(PropertyList**)GetAddress(App, sPreferencesPropList);
+	}
+#endif
+
+	auto_METHOD(CommandLine, eastl::string16&, Get, Args(int i), Args(i));
+
+	auto_METHOD(CommandLine, int, FindSwitch,
+		Args(const char16_t* a1, bool a2, eastl::string16* a3, int a4),
+		Args(a1, a2, a3, a4));
+
+	CommandLine* GetAppCommandLine() {
+		return *(CommandLine**)GetAddress(App, sAppCommandLine);
 	}
 }
