@@ -57,6 +57,9 @@ jobs:
     name: Generate documentation
     runs-on: ubuntu-latest
     steps:
+      - name: Install Doxygen
+        uses: ssciwr/doxygen-install@v1.2.0
+      
       - name: Setup Python
         uses: actions/setup-python@v4.7.1
 
