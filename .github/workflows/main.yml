@@ -63,19 +63,22 @@ jobs:
       - name: Install Python dependencies
         run: pip3 install jinja2 Pygments
 
+      - run: pwd
+
       - name: Checkout m.css repository
         uses: actions/checkout@v4
         with:
           repository: emd4600/m.css
           path: m.css
 
+      - run: pwd
       - run: cd ..
-      - run: ls && ls m.css
+      - run: pwd && ls && ls m.css
 
       - name: Checkout ModAPI repository
         uses: actions/checkout@v4
 
-      - run: ls && ls ..
+      - run: pwd && ls && ls ..
 
       - name: Run m.css
         run: python3 ../m.css/documentation/doxygen.py "Documentation/Doxygen-mcss.txt"
