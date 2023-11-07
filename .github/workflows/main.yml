@@ -57,14 +57,21 @@ jobs:
     name: Generate documentation
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
-        
       - name: Setup Python
         uses: actions/setup-python@v4.7.1
 
       - name: Install Python dependencies
         run: pip3 install jinja2 Pygments
+
+      - name: Checkout m.css repository
+        uses: actions/checkout@v4
+        with:
+          repository: https://github.com/emd4600/m.css
+
+      - run: cd ..
+
+      - name: Checkout ModAPI repository
+        uses: actions/checkout@v4
 
       - name: Run m.css
         run: python3 doxygen.py "Documentation/Doxygen-mcss.txt"
