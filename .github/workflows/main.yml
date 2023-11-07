@@ -1,0 +1,12 @@
+name: Deploy ModAPI Dlls & Update Documentation
+on:
+  workflow_dispatch:
+
+jobs:
+  compile:
+    name: "Compile ModAPI core DLLS"
+    steps:
+      - uses: ilammy/msvc-dev-cmd@v1.12.1
+        with:
+          arch: x86
+        run: msbuild "Spore ModAPI" -t:BuildDlls -p:BuildVer=177 -p:Config=Release
