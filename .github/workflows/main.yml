@@ -34,24 +34,24 @@ jobs:
     #         dll\Release\SporeModAPI.disk.dll
     #         dll\Release\SporeModAPI.lib
 
-  deploy:
-    name: Deploy ModAPI DLLs update
-    needs: compile
-    runs-on: ubuntu-latest
-    steps:
-      - name: Download compiled files
-        uses: actions/download-artifact@v2.1.1
-        with:
-          name: compiled-modapi-dlls
+  # deploy:
+  #   name: Deploy ModAPI DLLs update
+  #   needs: compile
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - name: Download compiled files
+  #       uses: actions/download-artifact@v2.1.1
+  #       with:
+  #         name: compiled-modapi-dlls
 
-      - name: Create update bundle
-        run: zip SporeModAPIdlls.zip SporeModAPI.march2017.dll SporeModAPI.disk.dll SporeModAPI.lib
+  #     - name: Create update bundle
+  #       run: zip SporeModAPIdlls.zip SporeModAPI.march2017.dll SporeModAPI.disk.dll SporeModAPI.lib
 
-      - name: Upload dlls bundle
-        uses: actions/upload-artifact@v3.1.3
-        with:
-          name: compiled-modapi-dlls-bundle
-          path: SporeModAPIdlls.zip
+  #     - name: Upload dlls bundle
+  #       uses: actions/upload-artifact@v3.1.3
+  #       with:
+  #         name: compiled-modapi-dlls-bundle
+  #         path: SporeModAPIdlls.zip
 
   documentation:
     name: Generate documentation
