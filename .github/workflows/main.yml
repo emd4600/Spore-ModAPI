@@ -3,7 +3,7 @@ on: push
 
 jobs:
   compile:
-    name: "Compile ModAPI core DLLS"
+    name: Compile ModAPI core DLLS
     runs-on: windows-latest
     steps:
       - name: Checkout repository
@@ -14,11 +14,42 @@ jobs:
       - name: Add msbuild to PATH
         uses: microsoft/setup-msbuild@v1
     
-      - uses: ilammy/msvc-dev-cmd@v1.12.1
+      - name: Set up MSVC cmd
+        uses: ilammy/msvc-dev-cmd@v1.12.1
         with:
           arch: x86
           
-      - run: |
+      - name: Compile DLLs
+        run: |
           $count = git log --oneline | wc -l
           echo "Building version $count"
           msbuild "Spore ModAPI" -t:BuildDlls -p:BuildVer=$count -p:Config=Release
+
+      - name: Upload compiled files
+        uses: actions/upload-artifact@v3.1.3
+        with:
+          name: compiled-modapi-dlls
+          path: |
+            SporeModAPI\dll\Release\SporeModAPI.march2017.dll
+            SporeModAPI\dll\Release\SporeModAPI.disk.dll
+            SporeModAPI\dll\Release\SporeModAPI.lib
+          error: Some files could not be found!
+
+  deploy:
+    name: Deploy ModAPI DLLs update
+    needs: compile
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download compiled files
+        uses: actions/download-artifact@v2.1.1
+        with:
+          name: compiled-modapi-dlls
+
+      - name: Create update bundle
+        run: zip SporeModAPIdlls.zip SporeModAPI.march2017.dll SporeModAPI.disk.dll SporeModAPI.lib
+
+      - name: Upload dlls bundle
+        uses: actions/upload-artifact@v3.1.3
+        with:
+          name: compiled-modapi-dlls-bundle
+          path: SporeModAPIdlls.zip
