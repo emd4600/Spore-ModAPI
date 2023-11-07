@@ -8,6 +8,8 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0  # Needed to count all the commits
 
       - name: Add msbuild to PATH
         uses: microsoft/setup-msbuild@v1
@@ -16,4 +18,7 @@ jobs:
         with:
           arch: x86
           
-      - run: msbuild "Spore ModAPI" -t:BuildDlls -p:BuildVer=177 -p:Config=Release
+      - run: |
+          $count = git log --oneline | wc -l
+          echo "Building version $count"
+          msbuild "Spore ModAPI" -t:BuildDlls -p:BuildVer=$count -p:Config=Release
