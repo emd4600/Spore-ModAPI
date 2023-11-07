@@ -52,3 +52,22 @@ jobs:
         with:
           name: compiled-modapi-dlls-bundle
           path: SporeModAPIdlls.zip
+
+  documentation:
+    name: Generate documentation
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        
+      - name: Setup Python
+        uses: actions/setup-python@v4.7.1
+
+      - name: Install Python dependencies
+        run: pip3 install jinja2 Pygments
+
+      - name: Run m.css
+        run: python3 doxygen.py "Documentation/Doxygen-mcss.txt"
+
+      
+      
