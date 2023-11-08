@@ -18,9 +18,16 @@ namespace Simulator
 		Args(const ResourceKey& speciesId),
 		Args(speciesId));
 
+
+	auto_METHOD_VOID(cSpaceInventoryItem, SetPropList, Args(App::PropertyList* propList), Args(propList));
+
 	auto_STATIC_METHOD_VOID(cSpaceInventoryItem, CreateMultiDeliveryObject,
-		Args(cSpaceInventoryItem& dst, const ResourceKey& itemID, uint32_t instanceID),
+		Args(cSpaceInventoryItemPtr& dst, const ResourceKey& itemID, uint32_t instanceID),
 		Args(dst, itemID, instanceID));
+
+	auto_STATIC_METHOD_VOID(cSpaceInventoryItem, CreateTradingObject,
+		Args(cSpaceInventoryItemPtr& dst, const ResourceKey& itemID, int itemCount, float itemCost),
+		Args(dst, itemID, itemCount, itemCost));
 }
 
 #endif

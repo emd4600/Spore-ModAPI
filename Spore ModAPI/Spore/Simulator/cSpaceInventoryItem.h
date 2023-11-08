@@ -76,13 +76,23 @@ namespace Simulator
 		/* 48h */	virtual bool func48h();
 		/* 4Ch */	virtual void ParseProp();
 
+		/// Assigns and reads the property list for this item. Most are stored in `spacetrading~`.
+		/// @param propList
+		void SetPropList(App::PropertyList* propList);
 
 		/// Creates an inventory item for multi-delivery mission objects. It will read a .prop file with
 		/// name `instanceID` in the folder `multiDelivery_mision_objects~` (`0x37D494E`).
 		/// @param dst
 		/// @param itemID
 		/// @param instanceIDcddc
-		static void CreateMultiDeliveryObject(cSpaceInventoryItem& dst, const ResourceKey& itemID, uint32_t instanceID);
+		static void CreateMultiDeliveryObject(cSpaceInventoryItemPtr& dst, const ResourceKey& itemID, uint32_t instanceID);
+
+		/// Creates a trading object, which is an inventory item from GroupIDs::SpaceTrading.
+		/// @param[out] dst Pointer where the new object will be written.
+		/// @param itemID Key to the item configuration in GroupIDs::SpaceTrading
+		/// @param itemCount Number of items to create
+		/// @param itemCost Cost of the object
+		static void CreateTradingObject(cSpaceInventoryItemPtr& dst, const ResourceKey& itemID, int itemCount, float itemCost);
 
 	public:
 		/* 10h */	size_t mItemCount;  // 1
@@ -113,5 +123,7 @@ namespace Simulator
 	namespace Addresses(cSpaceInventoryItem)
 	{
 		DeclareAddress(CreateMultiDeliveryObject);
+		DeclareAddress(SetPropList);  // 0xC86B20 0xC87980
+		DeclareAddress(CreateTradingObject);  // 0x103B470 0x103A490
 	}
 }
