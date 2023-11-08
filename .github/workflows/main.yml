@@ -79,9 +79,22 @@ jobs:
 
       - name: Run m.css
         run: |
-          mkdir modapi-generated-docs
           cd Spore-ModAPI
           python3 ../m.css/documentation/doxygen.py "Documentation/Doxygen-mcss.txt" --debug
+
+      - name: Upload documentation pages to GitHub
+        run: |
+          cd Spore-ModAPI
+          $count = git log --oneline | wc -l
+          cd modapi-generated-docs/html
+          git init
+          git remote add origin ${{ github.repositoryUrl }}
+          git fetch
+          git symbolic-ref HEAD refs/remotes/origin/gh-pages
+          git reset
+          git add .
+          git commit -m "Documentation update $count"
+          git push origin gh-pages
 
       
       
