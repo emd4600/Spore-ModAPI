@@ -14,7 +14,7 @@
 <header><nav id="navigation">
   <div class="m-container">
     <div class="m-row">
-      <a href="index.html" id="m-navbar-brand" class="m-col-t-8 m-col-m-none m-left-m"><img src="Spore_ModAPI_Icon.png" />Spore ModAPI <span class="m-thin">SDK for creating C++ mods for Spore</span></a>
+      <a href="index.html" id="m-navbar-brand" class="m-col-t-8 m-col-m-none m-left-m"><img src="Spore_ModAPI_Icon.png" alt="" />Spore ModAPI <span class="m-thin">SDK for creating C++ mods for Spore</span></a>
       <div class="m-col-t-4 m-hide-m m-text-right m-nopadr">
         <a href="#search" class="m-doc-search-icon" title="Search" onclick="return showSearch()"><svg style="height: 0.9rem;" viewBox="0 0 16 16">
           <path id="m-doc-search-icon-path" d="m6 0c-3.31 0-6 2.69-6 6 0 3.31 2.69 6 6 6 1.49 0 2.85-0.541 3.89-1.44-0.0164 0.338 0.147 0.759 0.5 1.15l3.22 3.79c0.552 0.614 1.45 0.665 2 0.115 0.55-0.55 0.499-1.45-0.115-2l-3.79-3.22c-0.392-0.353-0.812-0.515-1.15-0.5 0.895-1.05 1.44-2.41 1.44-3.89 0-3.31-2.69-6-6-6zm0 1.56a4.44 4.44 0 0 1 4.44 4.44 4.44 4.44 0 0 1-4.44 4.44 4.44 4.44 0 0 1-4.44-4.44 4.44 4.44 0 0 1 4.44-4.44z"/>
@@ -46,10 +46,10 @@
       <div class="m-col-l-10 m-push-l-1">
         <h1>
           <span class="m-breadcrumb"><a href="namespace_simulator.html">Simulator</a>::<wbr/></span>cGameNounManager <span class="m-thin">class</span>
-          <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_game_noun_manager_8h.html">&lt;Spore/Simulator/SubSystem/GameNounManager.h&gt;</a></div>
+          <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_game_noun_manager_8h.html">&lt;Spore ModAPI/Spore/Simulator/SubSystem/GameNounManager.h&gt;</a></div>
         </h1>
         <p>The class that manages game objects, known in Spore code as &#x27;nouns&#x27;.</p>
-        <div class="m-block m-default">
+        <nav class="m-block m-default">
           <h3>Contents</h3>
           <ul>
             <li>
@@ -62,8 +62,8 @@
               </ul>
             </li>
           </ul>
-        </div>
-<p>Use this class to create or destroy instances of <a href="namespace_simulator.html" class="m-doc">Simulator</a> classes. To create a <a href="namespace_simulator.html" class="m-doc">Simulator</a> object, use <a href="_game_noun_manager_8h.html#a89de4d194e5897b2ff6c128b3599448c" class="m-doc">simulator_<wbr />new()</a> (which calls this class). This class is also used to obtain all active instances of a certain object, using <a href="namespace_simulator.html#acd75fe99f7940d08c93b896c1e806576" class="m-doc">Simulator::<wbr />GetData()</a>. Use <code>GameNounManager.GetAvatar()</code> to obtain the player creature.</p><p>This is a singleton class, so use GameNounManager to access it.</p>
+        </nav>
+<p>Use this class to create or destroy instances of <a href="namespace_simulator.html" class="m-doc">Simulator</a> classes. To create a <a href="namespace_simulator.html" class="m-doc">Simulator</a> object, use <a href="_game_noun_manager_8h.html#aac8973e3302c7f104319f2bb771d343f" class="m-doc">simulator_<wbr />new()</a> (which calls this class). This class is also used to obtain all active instances of a certain object, using <a href="namespace_simulator.html#a43d763a3a80bc080e94cafa1d2d8b240" class="m-doc">Simulator::<wbr />GetData()</a>. Use <code>GameNounManager.GetAvatar()</code> to obtain the player creature.</p><p>This is a singleton class, so use GameNounManager to access it.</p>
         <section id="base-classes">
           <h2><a href="#base-classes">Base classes</a></h2>
           <dl class="m-doc">
@@ -80,8 +80,8 @@
         <section id="pub-static-methods">
           <h2><a href="#pub-static-methods">Public static functions</a></h2>
           <dl class="m-doc">
-            <dt id="a7123cb92a2f5cfc1214b617a79102acc">
-              <span class="m-doc-wrap-bumper">static auto <a href="#a7123cb92a2f5cfc1214b617a79102acc" class="m-doc-self">Get</a>(</span><span class="m-doc-wrap">) -&gt; <a href="class_simulator_1_1c_game_noun_manager.html" class="m-doc">cGameNounManager</a>*</span>
+            <dt id="afc9253c110e620f5c0b4c86e97b64056">
+              <span class="m-doc-wrap-bumper">static auto <a href="#afc9253c110e620f5c0b4c86e97b64056" class="m-doc-self">Get</a>(</span><span class="m-doc-wrap">) -&gt; <a href="class_simulator_1_1c_game_noun_manager.html" class="m-doc">cGameNounManager</a>*</span>
             </dt>
             <dd>Returns the active <a href="namespace_simulator.html" class="m-doc">Simulator</a> game noun manager.</dd>
           </dl>
@@ -90,36 +90,36 @@
           <h2><a href="#pub-methods">Public functions</a></h2>
           <dl class="m-doc">
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#ad096c0d55b221f237bf3c6a20f805755" class="m-doc">CreateInstance</a>(</span><span class="m-doc-wrap">uint32_t nounID) -&gt; <a href="class_simulator_1_1c_game_data.html" class="m-doc">cGameData</a>*</span>
+              <span class="m-doc-wrap-bumper">auto <a href="#a997f028850f5dd5ebdb3d4364d78cee7" class="m-doc">CreateInstance</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">uint32_<wbr />t</a> nounID) -&gt; <a href="class_simulator_1_1c_game_data.html" class="m-doc">cGameData</a>*</span>
             </dt>
             <dd>Creates an instance of a simulator object of the given type.</dd>
             <dt id="a6109fad69813855b4b4911df5e54a1be">
-              <span class="m-doc-wrap-bumper">void <a href="#a6109fad69813855b4b4911df5e54a1be" class="m-doc-self">DestroyInstance</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_game_data.html" class="m-doc">cGameData</a>* pInstance)</span>
+              <span class="m-doc-wrap-bumper">auto <a href="#a6109fad69813855b4b4911df5e54a1be" class="m-doc-self">DestroyInstance</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_game_data.html" class="m-doc">cGameData</a>* pInstance) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">void</a></span>
             </dt>
             <dd><span></span></dd>
             <dt id="a85f0ae1786fe9e3d8c7b6aa988fb91d0">
-              <span class="m-doc-wrap-bumper">void <a href="#a85f0ae1786fe9e3d8c7b6aa988fb91d0" class="m-doc-self">UpdateModels</a>(</span><span class="m-doc-wrap">)</span>
+              <span class="m-doc-wrap-bumper">auto <a href="#a85f0ae1786fe9e3d8c7b6aa988fb91d0" class="m-doc-self">UpdateModels</a>(</span><span class="m-doc-wrap">) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">void</a></span>
             </dt>
             <dd><span></span></dd>
             <dt>
-              <div class="m-doc-template">template&lt;class T&gt;</div>
-              <span class="m-doc-wrap-bumper">auto <a href="#ad6a0e2e185d9a96f7bbdc819e36b3301" class="m-doc">GetData</a>(</span><span class="m-doc-wrap"><a href="namespace_simulator.html#a148d227d09567535f5bc49badfe53952" class="m-doc">ContainerCreateCallback_<wbr />t</a>&lt;T&gt; pCreate,
-              <a href="namespace_simulator.html#a43cc722a64949c52771fade5de581d9c" class="m-doc">ContainerClearCallback_<wbr />t</a>&lt;T&gt; pClear,
-              <a href="namespace_simulator.html#a3379d5ad0d19e850df0bfd5f9d0fced9" class="m-doc">ContainerAddCallback_<wbr />t</a>&lt;T&gt; pAdd,
+              <div class="m-doc-template">template&lt;<a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">class</a> <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">T</a>&gt;</div>
+              <span class="m-doc-wrap-bumper">auto <a href="#adb30cb2da2db1d9cce55670d0fcac185" class="m-doc">GetData</a>(</span><span class="m-doc-wrap"><a href="namespace_simulator.html#a148d227d09567535f5bc49badfe53952" class="m-doc">ContainerCreateCallback_<wbr />t</a>&lt;<a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">T</a>&gt; pCreate,
+              <a href="namespace_simulator.html#a43cc722a64949c52771fade5de581d9c" class="m-doc">ContainerClearCallback_<wbr />t</a>&lt;<a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">T</a>&gt; pClear,
+              <a href="namespace_simulator.html#a3379d5ad0d19e850df0bfd5f9d0fced9" class="m-doc">ContainerAddCallback_<wbr />t</a>&lt;<a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">T</a>&gt; pAdd,
               <a href="namespace_simulator.html#af278a612258bfdd5d50ca63fd809d50f" class="m-doc">ContainerFilterCallback_<wbr />t</a> pFilter,
-              uint32_t nounID) -&gt; <a href="class_simulator_1_1t_game_data_vector_t.html" class="m-doc">tGameDataVectorT</a>&lt;T&gt;&amp;</span>
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">uint32_<wbr />t</a> nounID) -&gt; <a href="class_simulator_1_1t_game_data_vector_t.html" class="m-doc">tGameDataVectorT</a>&lt;<a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">T</a>&gt;&amp;</span>
             </dt>
             <dd>Gets all the game data objects that use the given game noun ID.</dd>
-            <dt id="aeab3dc69bafd43045a834c83e12a9d08">
-              <span class="m-doc-wrap-bumper">auto <a href="#aeab3dc69bafd43045a834c83e12a9d08" class="m-doc-self">GetAvatar</a>(</span><span class="m-doc-wrap">) -&gt; <a href="class_simulator_1_1c_creature_animal.html" class="m-doc">cCreatureAnimal</a>*</span>
+            <dt id="abb116100e35d3ddd306d30e797ef372b">
+              <span class="m-doc-wrap-bumper">auto <a href="#abb116100e35d3ddd306d30e797ef372b" class="m-doc-self">GetAvatar</a>(</span><span class="m-doc-wrap">) -&gt; <a href="class_simulator_1_1c_creature_animal.html" class="m-doc">cCreatureAnimal</a>*</span>
             </dt>
             <dd><span></span></dd>
             <dt id="a70cd6ee40c1b82a3b80f5148154c7055">
-              <span class="m-doc-wrap-bumper">void <a href="#a70cd6ee40c1b82a3b80f5148154c7055" class="m-doc-self">SetAvatar</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_creature_animal.html" class="m-doc">cCreatureAnimal</a>* pAnimal)</span>
+              <span class="m-doc-wrap-bumper">auto <a href="#a70cd6ee40c1b82a3b80f5148154c7055" class="m-doc-self">SetAvatar</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_creature_animal.html" class="m-doc">cCreatureAnimal</a>* pAnimal) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">void</a></span>
             </dt>
             <dd><span></span></dd>
-            <dt id="a25106771c41b640eb83c4da480c63d2a">
-              <span class="m-doc-wrap-bumper">auto <a href="#a25106771c41b640eb83c4da480c63d2a" class="m-doc-self">GetPlayerTribe</a>(</span><span class="m-doc-wrap">) -&gt; <a href="class_simulator_1_1c_tribe.html" class="m-doc">cTribe</a>*</span>
+            <dt id="aa305f04dde364aada8578bf88384203b">
+              <span class="m-doc-wrap-bumper">auto <a href="#aa305f04dde364aada8578bf88384203b" class="m-doc-self">GetPlayerTribe</a>(</span><span class="m-doc-wrap">) -&gt; <a href="class_simulator_1_1c_tribe.html" class="m-doc">cTribe</a>*</span>
             </dt>
             <dd><span></span></dd>
           </dl>
@@ -128,27 +128,27 @@
           <h2><a href="#pub-attribs">Public variables</a></h2>
           <dl class="m-doc">
             <dt id="ad234a9c3e854d7a961a3619a92828cd4">
-              eastl::hash_map&lt;int, int&gt; <a href="#ad234a9c3e854d7a961a3619a92828cd4" class="m-doc-self">field_20</a>
+              eastl::hash_map&lt;<a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a>, <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a>&gt; <a href="#ad234a9c3e854d7a961a3619a92828cd4" class="m-doc-self">field_20</a>
             </dt>
             <dd><span></span></dd>
             <dt id="a6e78ec5390862b14ae6c6a5274aacd84">
-              int <a href="#a6e78ec5390862b14ae6c6a5274aacd84" class="m-doc-self">field_40</a>
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> <a href="#a6e78ec5390862b14ae6c6a5274aacd84" class="m-doc-self">field_40</a>
             </dt>
             <dd><span></span></dd>
             <dt id="a8529230cf03a19e2f7482f282a477194">
-              int <a href="#a8529230cf03a19e2f7482f282a477194" class="m-doc-self">field_44</a>
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> <a href="#a8529230cf03a19e2f7482f282a477194" class="m-doc-self">field_44</a>
             </dt>
             <dd><span></span></dd>
             <dt id="aa0f0b5c38629b92c7f90b953b133ee1b">
-              int <a href="#aa0f0b5c38629b92c7f90b953b133ee1b" class="m-doc-self">field_48</a>
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> <a href="#aa0f0b5c38629b92c7f90b953b133ee1b" class="m-doc-self">field_48</a>
             </dt>
             <dd><span></span></dd>
             <dt id="a2f83dadbf3fd1a31c008acc167942c60">
-              int <a href="#a2f83dadbf3fd1a31c008acc167942c60" class="m-doc-self">field_4C</a>
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> <a href="#a2f83dadbf3fd1a31c008acc167942c60" class="m-doc-self">field_4C</a>
             </dt>
             <dd><span></span></dd>
             <dt id="ac254e709c77cf2574cbb3991576d015a">
-              int <a href="#ac254e709c77cf2574cbb3991576d015a" class="m-doc-self">field_50</a>
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> <a href="#ac254e709c77cf2574cbb3991576d015a" class="m-doc-self">field_50</a>
             </dt>
             <dd><span></span></dd>
             <dt id="a75647040fe9d35cce569bfc61e5e0c36">
@@ -180,27 +180,27 @@
             </dt>
             <dd><span></span></dd>
             <dt id="a080bb650acd15e46e263d8975572db8b">
-              int <a href="#a080bb650acd15e46e263d8975572db8b" class="m-doc-self">field_94</a>
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> <a href="#a080bb650acd15e46e263d8975572db8b" class="m-doc-self">field_94</a>
             </dt>
             <dd><span></span></dd>
             <dt id="ab3ea951234b4743144321307b10a9ad9">
-              eastl::map&lt;uint32_t, <a href="class_simulator_1_1t_game_data_vector_t.html" class="m-doc">tGameDataVectorT</a>&lt;<a href="class_simulator_1_1c_game_data.html" class="m-doc">cGameData</a>&gt;&gt; <a href="#ab3ea951234b4743144321307b10a9ad9" class="m-doc-self">mNounMap</a>
+              eastl::map&lt;<a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">uint32_<wbr />t</a>, <a href="class_simulator_1_1t_game_data_vector_t.html" class="m-doc">tGameDataVectorT</a>&lt;<a href="class_simulator_1_1c_game_data.html" class="m-doc">cGameData</a>&gt;&gt; <a href="#ab3ea951234b4743144321307b10a9ad9" class="m-doc-self">mNounMap</a>
             </dt>
             <dd><span></span></dd>
             <dt id="a19a969b061e071ff7ce339f015a0cd02">
-              eastl::map&lt;int, int&gt; <a href="#a19a969b061e071ff7ce339f015a0cd02" class="m-doc-self">mPoliticalMap</a>
+              eastl::map&lt;<a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a>, <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a>&gt; <a href="#a19a969b061e071ff7ce339f015a0cd02" class="m-doc-self">mPoliticalMap</a>
             </dt>
             <dd><span></span></dd>
             <dt id="a2aef8a1c297052e48c82d2fbb8b591eb">
-              eastl::map&lt;int, <a href="_object_8h.html#a364c2967a9338c07ddc9a3d507389b5d" class="m-doc">ObjectPtr</a>&gt; <a href="#a2aef8a1c297052e48c82d2fbb8b591eb" class="m-doc-self">field_D0</a>
+              eastl::map&lt;<a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a>, <a href="_object_8h.html#a364c2967a9338c07ddc9a3d507389b5d" class="m-doc">ObjectPtr</a>&gt; <a href="#a2aef8a1c297052e48c82d2fbb8b591eb" class="m-doc-self">field_D0</a>
             </dt>
             <dd><span></span></dd>
             <dt id="a5eeeb1653f9e4d2e491845d9a4b14994">
-              eastl::map&lt;int, <a href="_object_8h.html#a364c2967a9338c07ddc9a3d507389b5d" class="m-doc">ObjectPtr</a>&gt; <a href="#a5eeeb1653f9e4d2e491845d9a4b14994" class="m-doc-self">field_EC</a>
+              eastl::map&lt;<a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a>, <a href="_object_8h.html#a364c2967a9338c07ddc9a3d507389b5d" class="m-doc">ObjectPtr</a>&gt; <a href="#a5eeeb1653f9e4d2e491845d9a4b14994" class="m-doc-self">field_EC</a>
             </dt>
             <dd><span></span></dd>
             <dt id="a3002bf944b4ff9292b9bb7723fe82fb4">
-              int <a href="#a3002bf944b4ff9292b9bb7723fe82fb4" class="m-doc-self">field_108</a>
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> <a href="#a3002bf944b4ff9292b9bb7723fe82fb4" class="m-doc-self">field_108</a>
             </dt>
             <dd><span></span></dd>
             <dt id="a83f0e730b622b115fa1878406a278488">
@@ -208,16 +208,16 @@
             </dt>
             <dd><span></span></dd>
             <dt id="a44771b82a84069c07414bf05e6c43f90">
-              int <a href="#a44771b82a84069c07414bf05e6c43f90" class="m-doc-self">field_118</a>
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> <a href="#a44771b82a84069c07414bf05e6c43f90" class="m-doc-self">field_118</a>
             </dt>
             <dd><span></span></dd>
           </dl>
         </section>
         <section>
           <h2>Function documentation</h2>
-          <section class="m-doc-details" id="ad096c0d55b221f237bf3c6a20f805755"><div>
+          <section class="m-doc-details" id="a997f028850f5dd5ebdb3d4364d78cee7"><div>
             <h3>
-              <span class="m-doc-wrap-bumper"><a href="class_simulator_1_1c_game_data.html" class="m-doc">cGameData</a>* Simulator::<wbr />cGameNounManager::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ad096c0d55b221f237bf3c6a20f805755" class="m-doc-self">CreateInstance</a>(</span><span class="m-doc-wrap">uint32_t nounID)</span></span>
+              <span class="m-doc-wrap-bumper"><a href="class_simulator_1_1c_game_data.html" class="m-doc">cGameData</a>* Simulator::<wbr />cGameNounManager::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a997f028850f5dd5ebdb3d4364d78cee7" class="m-doc-self">CreateInstance</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">uint32_<wbr />t</a> nounID)</span></span>
             </h3>
             <p>Creates an instance of a simulator object of the given type.</p>
             <table class="m-table m-fullwidth m-flat">
@@ -239,16 +239,16 @@
             </table>
 <p>The noun ID is one of the values in the <a href="namespace_simulator.html#a00da9a155f0dfa4b01c8c5a297b0191e" class="m-doc">Simulator::<wbr />GameNounIDs</a> enum.</p>
           </div></section>
-          <section class="m-doc-details" id="ad6a0e2e185d9a96f7bbdc819e36b3301"><div>
+          <section class="m-doc-details" id="adb30cb2da2db1d9cce55670d0fcac185"><div>
             <h3>
               <div class="m-doc-template">
-                template&lt;class T&gt;
+                template&lt;<a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">class</a> <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">T</a>&gt;
               </div>
-              <span class="m-doc-wrap-bumper"><a href="class_simulator_1_1t_game_data_vector_t.html" class="m-doc">tGameDataVectorT</a>&lt;T&gt;&amp; Simulator::<wbr />cGameNounManager::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ad6a0e2e185d9a96f7bbdc819e36b3301" class="m-doc-self">GetData</a>(</span><span class="m-doc-wrap"><a href="namespace_simulator.html#a148d227d09567535f5bc49badfe53952" class="m-doc">ContainerCreateCallback_<wbr />t</a>&lt;T&gt; pCreate,
-              <a href="namespace_simulator.html#a43cc722a64949c52771fade5de581d9c" class="m-doc">ContainerClearCallback_<wbr />t</a>&lt;T&gt; pClear,
-              <a href="namespace_simulator.html#a3379d5ad0d19e850df0bfd5f9d0fced9" class="m-doc">ContainerAddCallback_<wbr />t</a>&lt;T&gt; pAdd,
+              <span class="m-doc-wrap-bumper"><a href="class_simulator_1_1t_game_data_vector_t.html" class="m-doc">tGameDataVectorT</a>&lt;<a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">T</a>&gt;&amp; Simulator::<wbr />cGameNounManager::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#adb30cb2da2db1d9cce55670d0fcac185" class="m-doc-self">GetData</a>(</span><span class="m-doc-wrap"><a href="namespace_simulator.html#a148d227d09567535f5bc49badfe53952" class="m-doc">ContainerCreateCallback_<wbr />t</a>&lt;<a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">T</a>&gt; pCreate,
+              <a href="namespace_simulator.html#a43cc722a64949c52771fade5de581d9c" class="m-doc">ContainerClearCallback_<wbr />t</a>&lt;<a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">T</a>&gt; pClear,
+              <a href="namespace_simulator.html#a3379d5ad0d19e850df0bfd5f9d0fced9" class="m-doc">ContainerAddCallback_<wbr />t</a>&lt;<a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">T</a>&gt; pAdd,
               <a href="namespace_simulator.html#af278a612258bfdd5d50ca63fd809d50f" class="m-doc">ContainerFilterCallback_<wbr />t</a> pFilter,
-              uint32_t nounID)</span></span>
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">uint32_<wbr />t</a> nounID)</span></span>
             </h3>
             <p>Gets all the game data objects that use the given game noun ID.</p>
 <p>To be more specific, first a container is created with the pCreate callback; then<br /></p>
@@ -292,13 +292,13 @@
     </div>
   </div>
 </div>
-<script src="search-v1.js"></script>
-<script src="searchdata-v1.js" async="async"></script>
+<script src="search-v2.js"></script>
+<script src="searchdata-v2.js" async="async"></script>
 <footer><nav>
   <div class="m-container">
     <div class="m-row">
       <div class="m-col-l-10 m-push-l-1">
-        <p>Spore ModAPI SDK for creating C++ mods for Spore. Created with <a href="https://doxygen.org/">Doxygen</a> 1.8.16 and <a href="https://mcss.mosra.cz/">m.css</a>.</p>
+        <p>Spore ModAPI SDK for creating C++ mods for Spore. Created with <a href="https://doxygen.org/">Doxygen</a> 1.9.8 and <a href="https://mcss.mosra.cz/">m.css</a>.</p>
       </div>
     </div>
   </div>

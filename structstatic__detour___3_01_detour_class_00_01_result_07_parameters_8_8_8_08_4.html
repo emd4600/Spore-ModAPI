@@ -14,7 +14,7 @@
 <header><nav id="navigation">
   <div class="m-container">
     <div class="m-row">
-      <a href="index.html" id="m-navbar-brand" class="m-col-t-8 m-col-m-none m-left-m"><img src="Spore_ModAPI_Icon.png" />Spore ModAPI <span class="m-thin">SDK for creating C++ mods for Spore</span></a>
+      <a href="index.html" id="m-navbar-brand" class="m-col-t-8 m-col-m-none m-left-m"><img src="Spore_ModAPI_Icon.png" alt="" />Spore ModAPI <span class="m-thin">SDK for creating C++ mods for Spore</span></a>
       <div class="m-col-t-4 m-hide-m m-text-right m-nopadr">
         <a href="#search" class="m-doc-search-icon" title="Search" onclick="return showSearch()"><svg style="height: 0.9rem;" viewBox="0 0 16 16">
           <path id="m-doc-search-icon-path" d="m6 0c-3.31 0-6 2.69-6 6 0 3.31 2.69 6 6 6 1.49 0 2.85-0.541 3.89-1.44-0.0164 0.338 0.147 0.759 0.5 1.15l3.22 3.79c0.552 0.614 1.45 0.665 2 0.115 0.55-0.55 0.499-1.45-0.115-2l-3.79-3.22c-0.392-0.353-0.812-0.515-1.15-0.5 0.895-1.05 1.44-2.41 1.44-3.89 0-3.31-2.69-6-6-6zm0 1.56a4.44 4.44 0 0 1 4.44 4.44 4.44 4.44 0 0 1-4.44 4.44 4.44 4.44 0 0 1-4.44-4.44 4.44 4.44 0 0 1 4.44-4.44z"/>
@@ -45,8 +45,8 @@
     <div class="m-row">
       <div class="m-col-l-10 m-push-l-1">
         <h1>
-          <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="_cpp_rev_eng_8h.html">&lt;Spore/CppRevEng.h&gt;</a></div>
-          <div class="m-doc-template">template&lt;typename DetourClass, typename Result, typename ... Parameters&gt;</div>
+          <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="_cpp_rev_eng_8h.html">&lt;Spore ModAPI/Spore/CppRevEng.h&gt;</a></div>
+          <div class="m-doc-template">template&lt;<a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">typename</a> <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">DetourClass</a>, <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">typename</a> <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">Result</a>, <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">typename</a> ... Parameters&gt;</div>
           static_detour_&lt;DetourClass, Result(Parameters...)&gt; <span class="m-thin">struct</span>
         </h1>
         <p>The object used for detouring static functions.</p>
@@ -56,20 +56,12 @@
           </thead>
           <tbody>
             <tr>
-              <td style="width: 1%">DetourClass</td>
-              <td>The name of the class that is extending this object and is being used to hold the detour.</td>
-            </tr>
-            <tr>
-              <td>Result</td>
-              <td>The return type of the function to detour, can be void.</td>
-            </tr>
-            <tr>
-              <td>Parameters</td>
+              <td style="width: 1%">Parameters</td>
               <td>The parameter types of the function to detour, can be empty.</td>
             </tr>
           </tbody>
         </table>
-        <div class="m-block m-default">
+        <nav class="m-block m-default">
           <h3>Contents</h3>
           <ul>
             <li>
@@ -82,17 +74,17 @@
               </ul>
             </li>
           </ul>
-        </div>
+        </nav>
 <p>This is internal, for real usage check static_detour macro.</p>
         <section id="pub-types">
           <h2><a href="#pub-types">Public types</a></h2>
           <dl class="m-doc">
             <dt id="a599989ea5410c542a2f44b0891ef8fbd">
-              using <a href="#a599989ea5410c542a2f44b0891ef8fbd" class="m-doc-self">detour_pointer</a> = Result(*)(Parameters...)
+              using <a href="#a599989ea5410c542a2f44b0891ef8fbd" class="m-doc-self">detour_pointer</a> = <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">Result</a>(*)(Parameters...)
             </dt>
             <dd>The type of function pointer used to keep track of the original function.</dd>
             <dt id="a9c6c2dc67b93191101d76fa8e6c574bf">
-              using <a href="#a9c6c2dc67b93191101d76fa8e6c574bf" class="m-doc-self">detour_object</a> = <a href="classstatic__detour__.html" class="m-doc">static_<wbr />detour_<wbr /></a>&lt;DetourClass, Result(Parameters...)&gt;
+              using <a href="#a9c6c2dc67b93191101d76fa8e6c574bf" class="m-doc-self">detour_object</a> = <a href="classstatic__detour__.html" class="m-doc">static_<wbr />detour_<wbr /></a>&lt;<a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">DetourClass</a>, <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">Result</a>(Parameters...)&gt;
             </dt>
             <dd><span></span></dd>
           </dl>
@@ -110,15 +102,15 @@
           <h2><a href="#pub-static-methods">Public static functions</a></h2>
           <dl class="m-doc">
             <dt id="ab7e1b11d41d342cd3bab680b09f621ce">
-              <span class="m-doc-wrap-bumper">static auto <a href="#ab7e1b11d41d342cd3bab680b09f621ce" class="m-doc-self">detoured_function</a>(</span><span class="m-doc-wrap">Parameters... args) -&gt; Result</span>
+              <span class="m-doc-wrap-bumper">static auto <a href="#ab7e1b11d41d342cd3bab680b09f621ce" class="m-doc-self">detoured_function</a>(</span><span class="m-doc-wrap">Parameters... args) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">Result</a></span>
             </dt>
             <dd><span></span></dd>
             <dt id="a087eb1eae0d1716c0cec944450b56f64">
-              <span class="m-doc-wrap-bumper">static auto <a href="#a087eb1eae0d1716c0cec944450b56f64" class="m-doc-self">attach</a>(</span><span class="m-doc-wrap">UINT function_address) -&gt; LONG</span>
+              <span class="m-doc-wrap-bumper">static auto <a href="#a087eb1eae0d1716c0cec944450b56f64" class="m-doc-self">attach</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">UINT</a> function_address) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">LONG</a></span>
             </dt>
             <dd><span></span></dd>
             <dt id="a15b91d6d32064f14262249c9218c58c0">
-              <span class="m-doc-wrap-bumper">static auto <a href="#a15b91d6d32064f14262249c9218c58c0" class="m-doc-self">detach</a>(</span><span class="m-doc-wrap">) -&gt; LONG</span>
+              <span class="m-doc-wrap-bumper">static auto <a href="#a15b91d6d32064f14262249c9218c58c0" class="m-doc-self">detach</a>(</span><span class="m-doc-wrap">) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">LONG</a></span>
             </dt>
             <dd><span></span></dd>
           </dl>
@@ -127,7 +119,7 @@
           <h2><a href="#pub-methods">Public functions</a></h2>
           <dl class="m-doc">
             <dt id="aa01204c45014cf4aa669225cbd07cc07">
-              <span class="m-doc-wrap-bumper">auto <a href="#aa01204c45014cf4aa669225cbd07cc07" class="m-doc-self">detoured</a>(</span><span class="m-doc-wrap">Parameters...) -&gt; Result</span>
+              <span class="m-doc-wrap-bumper">auto <a href="#aa01204c45014cf4aa669225cbd07cc07" class="m-doc-self">detoured</a>(</span><span class="m-doc-wrap">Parameters...) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">Result</a></span>
             </dt>
             <dd><span></span></dd>
           </dl>
@@ -170,13 +162,13 @@
     </div>
   </div>
 </div>
-<script src="search-v1.js"></script>
-<script src="searchdata-v1.js" async="async"></script>
+<script src="search-v2.js"></script>
+<script src="searchdata-v2.js" async="async"></script>
 <footer><nav>
   <div class="m-container">
     <div class="m-row">
       <div class="m-col-l-10 m-push-l-1">
-        <p>Spore ModAPI SDK for creating C++ mods for Spore. Created with <a href="https://doxygen.org/">Doxygen</a> 1.8.16 and <a href="https://mcss.mosra.cz/">m.css</a>.</p>
+        <p>Spore ModAPI SDK for creating C++ mods for Spore. Created with <a href="https://doxygen.org/">Doxygen</a> 1.9.8 and <a href="https://mcss.mosra.cz/">m.css</a>.</p>
       </div>
     </div>
   </div>

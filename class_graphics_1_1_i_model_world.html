@@ -14,7 +14,7 @@
 <header><nav id="navigation">
   <div class="m-container">
     <div class="m-row">
-      <a href="index.html" id="m-navbar-brand" class="m-col-t-8 m-col-m-none m-left-m"><img src="Spore_ModAPI_Icon.png" />Spore ModAPI <span class="m-thin">SDK for creating C++ mods for Spore</span></a>
+      <a href="index.html" id="m-navbar-brand" class="m-col-t-8 m-col-m-none m-left-m"><img src="Spore_ModAPI_Icon.png" alt="" />Spore ModAPI <span class="m-thin">SDK for creating C++ mods for Spore</span></a>
       <div class="m-col-t-4 m-hide-m m-text-right m-nopadr">
         <a href="#search" class="m-doc-search-icon" title="Search" onclick="return showSearch()"><svg style="height: 0.9rem;" viewBox="0 0 16 16">
           <path id="m-doc-search-icon-path" d="m6 0c-3.31 0-6 2.69-6 6 0 3.31 2.69 6 6 6 1.49 0 2.85-0.541 3.89-1.44-0.0164 0.338 0.147 0.759 0.5 1.15l3.22 3.79c0.552 0.614 1.45 0.665 2 0.115 0.55-0.55 0.499-1.45-0.115-2l-3.79-3.22c-0.392-0.353-0.812-0.515-1.15-0.5 0.895-1.05 1.44-2.41 1.44-3.89 0-3.31-2.69-6-6-6zm0 1.56a4.44 4.44 0 0 1 4.44 4.44 4.44 4.44 0 0 1-4.44 4.44 4.44 4.44 0 0 1-4.44-4.44 4.44 4.44 0 0 1 4.44-4.44z"/>
@@ -46,10 +46,10 @@
       <div class="m-col-l-10 m-push-l-1">
         <h1>
           <span class="m-breadcrumb"><a href="namespace_graphics.html">Graphics</a>::<wbr/></span>IModelWorld <span class="m-thin">class</span>
-          <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_i_model_world_8h.html">&lt;Spore/Graphics/IModelWorld.h&gt;</a></div>
+          <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_i_model_world_8h.html">&lt;Spore ModAPI/Spore/Graphics/IModelWorld.h&gt;</a></div>
         </h1>
         <p>A model world is a space where models can be rendered in the game.</p>
-        <div class="m-block m-default">
+        <nav class="m-block m-default">
           <h3>Contents</h3>
           <ul>
             <li>
@@ -63,7 +63,7 @@
               </ul>
             </li>
           </ul>
-        </div>
+        </nav>
 <p><a href="class_graphics_1_1_model.html" class="m-doc">Model</a> worlds keep track of all the models loaded in order to render them when the model world itself is rendered. A world can also contain multiple lighting worlds; for more information, check the <a href="class_graphics_1_1_i_lighting_world.html" class="m-doc">ILightingWorld</a> interface. When no lighting worlds are added a default lighting is used.</p><p>In order for the model world to render, you must add it to the render queue. This step is not necessary if the ILayer::Render() method is called directly from another renderer. For example: <code class="m-code"><span class="n">Renderer</span><span class="p">.</span><span class="n">AddLayer</span><span class="p">(</span><span class="n">modelWorld</span><span class="o">-&gt;</span><span class="n">AsLayer</span><span class="p">(),</span><span class="w"> </span><span class="mi">8</span><span class="p">);</span><span class="w"></span></code> You might use greater render layer indices, like Graphics::kRenderQueueMain + 1. An example of this would be having a model world for translucid objects, which need to be rendered last.</p>
         <section id="derived-classes">
           <h2><a href="#derived-classes">Derived classes</a></h2>
@@ -106,527 +106,527 @@
           <h2><a href="#pub-methods">Public functions</a></h2>
           <dl class="m-doc">
             <dt id="a5fa086a63f2e68835182bdaa7d3e593b">
-              <span class="m-doc-wrap-bumper">auto <a href="#a5fa086a63f2e68835182bdaa7d3e593b" class="m-doc-self">AddRef</a>(</span><span class="m-doc-wrap">) -&gt; int <span class="m-label m-flat m-warning">pure virtual</span></span>
+              <span class="m-doc-wrap-bumper">auto <a href="#a5fa086a63f2e68835182bdaa7d3e593b" class="m-doc-self">AddRef</a>(</span><span class="m-doc-wrap">) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
             <dd><span></span></dd>
             <dt id="a9bbb7d54ea073c68940e3c19b302ea60">
-              <span class="m-doc-wrap-bumper">auto <a href="#a9bbb7d54ea073c68940e3c19b302ea60" class="m-doc-self">Release</a>(</span><span class="m-doc-wrap">) -&gt; int <span class="m-label m-flat m-warning">pure virtual</span></span>
+              <span class="m-doc-wrap-bumper">auto <a href="#a9bbb7d54ea073c68940e3c19b302ea60" class="m-doc-self">Release</a>(</span><span class="m-doc-wrap">) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
             <dd><span></span></dd>
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#a6cb4c1e4b80598ae746092078d45fb4c" class="m-doc">CreateModel</a>(</span><span class="m-doc-wrap">uint32_t instanceID,
-              uint32_t groupID,
-              int arg_8 = 0) -&gt; <a href="class_graphics_1_1_model.html" class="m-doc">Model</a>* <span class="m-label m-flat m-warning">pure virtual</span></span>
+              <span class="m-doc-wrap-bumper">auto <a href="#af68eca7deadbc006f64b505bbe00ccc2" class="m-doc">CreateModel</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">uint32_<wbr />t</a> instanceID,
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">uint32_<wbr />t</a> groupID,
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> arg_8 = 0) -&gt; <a href="class_graphics_1_1_model.html" class="m-doc">Model</a>* <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
             <dd>Loads a model from the resources system with the given instance and group ID.</dd>
             <dt id="a631056b60e9964fb30685c1771d17bf4">
-              <span class="m-doc-wrap-bumper">auto <a href="#a631056b60e9964fb30685c1771d17bf4" class="m-doc-self">GetNumModelsLoading</a>(</span><span class="m-doc-wrap">) -&gt; int <span class="m-label m-flat m-warning">pure virtual</span></span>
+              <span class="m-doc-wrap-bumper">auto <a href="#a631056b60e9964fb30685c1771d17bf4" class="m-doc-self">GetNumModelsLoading</a>(</span><span class="m-doc-wrap">) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
             <dd>Return the number of models that are currently loading.</dd>
             <dt>
               <span class="m-doc-wrap-bumper">auto <a href="#a381a73c96216534758f4cf80c5fccc96" class="m-doc">CallOnLoad</a>(</span><span class="m-doc-wrap"><a href="class_graphics_1_1_model.html" class="m-doc">Model</a>* model,
               <a href="namespace_graphics.html#ac354d1c41dc1dd5d2c9fab246990be72" class="m-doc">ModelPredicate_<wbr />t</a> callback,
-              void* data) -&gt; bool <span class="m-label m-flat m-warning">pure virtual</span></span>
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">void</a>* data) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">bool</a> <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
             <dd>Calls the given function when the model finishes loading, calling it immediately if the model has already loaded.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">void <a href="#a1b0c21aa041786479b610f618477546e" class="m-doc">PreloadModels</a>(</span><span class="m-doc-wrap"><a href="class_app_1_1_property_list.html" class="m-doc">App::<wbr />PropertyList</a>* propList,
-              int preloadIndex) <span class="m-label m-flat m-warning">pure virtual</span></span>
+              <span class="m-doc-wrap-bumper">auto <a href="#a1b0c21aa041786479b610f618477546e" class="m-doc">PreloadModels</a>(</span><span class="m-doc-wrap"><a href="class_app_1_1_property_list.html" class="m-doc">App::<wbr />PropertyList</a>* propList,
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> preloadIndex) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">void</a> <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
             <dd>Reads a list of models and sets them to load.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#abcdd06fd0820414932c83e9d2302542c" class="m-doc">ModelsHavePreloaded</a>(</span><span class="m-doc-wrap">int preloadIndex) -&gt; bool <span class="m-label m-flat m-warning">pure virtual</span></span>
+              <span class="m-doc-wrap-bumper">auto <a href="#abcdd06fd0820414932c83e9d2302542c" class="m-doc">ModelsHavePreloaded</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> preloadIndex) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">bool</a> <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
             <dd>Returns whether a given model preload list has finished loading all models.</dd>
-            <dt id="a910a3678c9763594c3d059999f3eef9e">
-              <span class="m-doc-wrap-bumper">auto <a href="#a910a3678c9763594c3d059999f3eef9e" class="m-doc-self">CreateGroup</a>(</span><span class="m-doc-wrap">int,
-              void*&amp;) -&gt; void* <span class="m-label m-flat m-warning">pure virtual</span></span>
+            <dt id="a4ac95635a723c6a251677563e656b540">
+              <span class="m-doc-wrap-bumper">auto <a href="#a4ac95635a723c6a251677563e656b540" class="m-doc-self">CreateGroup</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a>,
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">void</a>*&amp;) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">void</a>* <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
             <dd><span></span></dd>
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#a38ec06ce89788f979b7f28bcd1075239" class="m-doc">FindFirstModelAlongLine</a>(</span><span class="m-doc-wrap">const <a href="struct_math_1_1_vector3.html" class="m-doc">Vector3</a>&amp; point1,
-              const <a href="struct_math_1_1_vector3.html" class="m-doc">Vector3</a>&amp; point2,
-              float* factorDst = nullptr,
-              <a href="struct_math_1_1_vector3.html" class="m-doc">Vector3</a>* dstIntersectionPoint = nullptr,
-              <a href="struct_math_1_1_vector3.html" class="m-doc">Vector3</a>* = nullptr,
+              <span class="m-doc-wrap-bumper">auto <a href="#a6ee836a8fc0a635723549345df2ef540" class="m-doc">FindFirstModelAlongLine</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">const</a> <a href="struct_math_1_1_vector3.html" class="m-doc">Vector3</a>&amp; point1,
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">const</a> <a href="struct_math_1_1_vector3.html" class="m-doc">Vector3</a>&amp; point2,
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">float</a>* factorDst = <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">nullptr</a>,
+              <a href="struct_math_1_1_vector3.html" class="m-doc">Vector3</a>* dstIntersectionPoint = <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">nullptr</a>,
+              <a href="struct_math_1_1_vector3.html" class="m-doc">Vector3</a>* = <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">nullptr</a>,
               <a href="struct_graphics_1_1_filter_settings.html" class="m-doc">FilterSettings</a>&amp; settings = <a href="struct_graphics_1_1_filter_settings.html" class="m-doc">FilterSettings</a>(),
-              int* = nullptr,
-              int* = nullptr) -&gt; <a href="class_graphics_1_1_model.html" class="m-doc">Model</a>* <span class="m-label m-flat m-warning">pure virtual</span></span>
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a>* = <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">nullptr</a>,
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a>* = <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">nullptr</a>) -&gt; <a href="class_graphics_1_1_model.html" class="m-doc">Model</a>* <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
             <dd>Gets the first model that is intersected with the segment between <code>point1</code> and <code>point2</code>.</dd>
-            <dt id="ad8cfca85c8151772ba607b57f9ee929d">
-              <span class="m-doc-wrap-bumper">auto <a href="#ad8cfca85c8151772ba607b57f9ee929d" class="m-doc-self">FindFirstModelAlongLine2</a>(</span><span class="m-doc-wrap">const <a href="struct_math_1_1_vector3.html" class="m-doc">Vector3</a>&amp; point1,
-              const <a href="struct_math_1_1_vector3.html" class="m-doc">Vector3</a>&amp; point2,
-              float* factorDst,
+            <dt id="ab7fefa01495a9a6535fc600e2318362b">
+              <span class="m-doc-wrap-bumper">auto <a href="#ab7fefa01495a9a6535fc600e2318362b" class="m-doc-self">FindFirstModelAlongLine2</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">const</a> <a href="struct_math_1_1_vector3.html" class="m-doc">Vector3</a>&amp; point1,
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">const</a> <a href="struct_math_1_1_vector3.html" class="m-doc">Vector3</a>&amp; point2,
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">float</a>* factorDst,
               <a href="struct_graphics_1_1_filter_settings.html" class="m-doc">FilterSettings</a>&amp; settings = <a href="struct_graphics_1_1_filter_settings.html" class="m-doc">FilterSettings</a>()) -&gt; <a href="class_graphics_1_1_model.html" class="m-doc">Model</a>* <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
             <dd><span></span></dd>
             <dt>
               <span class="m-doc-wrap-bumper">auto <a href="#ab2c2893aaf6915c4c44994470156218e" class="m-doc">FindModels</a>(</span><span class="m-doc-wrap">eastl::vector&lt;<a href="class_graphics_1_1_model.html" class="m-doc">Model</a>*&gt;&amp; dst,
-              <a href="struct_graphics_1_1_filter_settings.html" class="m-doc">FilterSettings</a>&amp; settings = <a href="struct_graphics_1_1_filter_settings.html" class="m-doc">FilterSettings</a>()) -&gt; bool <span class="m-label m-flat m-warning">pure virtual</span></span>
+              <a href="struct_graphics_1_1_filter_settings.html" class="m-doc">FilterSettings</a>&amp; settings = <a href="struct_graphics_1_1_filter_settings.html" class="m-doc">FilterSettings</a>()) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">bool</a> <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
             <dd>Gets all the models that fit the filter.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#a8010b218b9b920fb6e8cb566da848f4e" class="m-doc">FindModelsAlongLineOrdered</a>(</span><span class="m-doc-wrap">const <a href="struct_math_1_1_vector3.html" class="m-doc">Vector3</a>&amp; point1,
-              const <a href="struct_math_1_1_vector3.html" class="m-doc">Vector3</a>&amp; point2,
-              eastl::vector&lt;eastl::pair&lt;<a href="class_graphics_1_1_model.html" class="m-doc">Model</a>*, float&gt;&gt;&amp; result,
+              <span class="m-doc-wrap-bumper">auto <a href="#aca70976b35187d19ab3d5de64cf1036a" class="m-doc">FindModelsAlongLineOrdered</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">const</a> <a href="struct_math_1_1_vector3.html" class="m-doc">Vector3</a>&amp; point1,
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">const</a> <a href="struct_math_1_1_vector3.html" class="m-doc">Vector3</a>&amp; point2,
+              eastl::vector&lt;eastl::pair&lt;<a href="class_graphics_1_1_model.html" class="m-doc">Model</a>*, <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">float</a>&gt;&gt;&amp; result,
               <a href="struct_graphics_1_1_filter_settings.html" class="m-doc">FilterSettings</a>&amp; settings = <a href="struct_graphics_1_1_filter_settings.html" class="m-doc">FilterSettings</a>(),
-              float = 0.0) -&gt; bool <span class="m-label m-flat m-warning">pure virtual</span></span>
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">float</a> = 0.0) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">bool</a> <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
             <dd>Gets all the models that intersect with a segment.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#a91ef1cea9319b067728c66be445f8d26" class="m-doc">FindModelsAlongLine</a>(</span><span class="m-doc-wrap">const <a href="struct_math_1_1_vector3.html" class="m-doc">Vector3</a>&amp; point1,
-              const <a href="struct_math_1_1_vector3.html" class="m-doc">Vector3</a>&amp; point2,
+              <span class="m-doc-wrap-bumper">auto <a href="#a91ef1cea9319b067728c66be445f8d26" class="m-doc">FindModelsAlongLine</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">const</a> <a href="struct_math_1_1_vector3.html" class="m-doc">Vector3</a>&amp; point1,
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">const</a> <a href="struct_math_1_1_vector3.html" class="m-doc">Vector3</a>&amp; point2,
               eastl::vector&lt;<a href="class_graphics_1_1_model.html" class="m-doc">Model</a>*&gt;&amp; result,
               <a href="struct_graphics_1_1_filter_settings.html" class="m-doc">FilterSettings</a>&amp; settings = <a href="struct_graphics_1_1_filter_settings.html" class="m-doc">FilterSettings</a>(),
-              float = 0.0) -&gt; bool <span class="m-label m-flat m-warning">pure virtual</span></span>
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">float</a> = 0.0) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">bool</a> <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
             <dd>Gets all the models that intersect with a segment.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#a5fc83c8e671817ff8b606252ae73d740" class="m-doc">FindModelsInSphere</a>(</span><span class="m-doc-wrap">const <a href="struct_math_1_1_vector3.html" class="m-doc">Vector3</a>&amp; center,
-              float radius,
+              <span class="m-doc-wrap-bumper">auto <a href="#a5fc83c8e671817ff8b606252ae73d740" class="m-doc">FindModelsInSphere</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">const</a> <a href="struct_math_1_1_vector3.html" class="m-doc">Vector3</a>&amp; center,
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">float</a> radius,
               eastl::vector&lt;<a href="class_graphics_1_1_model.html" class="m-doc">Model</a>*&gt; result,
-              <a href="struct_graphics_1_1_filter_settings.html" class="m-doc">FilterSettings</a>&amp; settings = <a href="struct_graphics_1_1_filter_settings.html" class="m-doc">FilterSettings</a>()) -&gt; bool <span class="m-label m-flat m-warning">pure virtual</span></span>
+              <a href="struct_graphics_1_1_filter_settings.html" class="m-doc">FilterSettings</a>&amp; settings = <a href="struct_graphics_1_1_filter_settings.html" class="m-doc">FilterSettings</a>()) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">bool</a> <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
             <dd>Finds all the models that intersect with the sphere with <code>center</code> and <code>radius</code>.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#a8bbf2742fa88575b8dcc756acec31f5c" class="m-doc">FindModelsInBox</a>(</span><span class="m-doc-wrap">const <a href="struct_math_1_1_bounding_box.html" class="m-doc">BoundingBox</a>&amp; bbox,
+              <span class="m-doc-wrap-bumper">auto <a href="#a8bbf2742fa88575b8dcc756acec31f5c" class="m-doc">FindModelsInBox</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">const</a> <a href="struct_math_1_1_bounding_box.html" class="m-doc">BoundingBox</a>&amp; bbox,
               eastl::vector&lt;<a href="class_graphics_1_1_model.html" class="m-doc">Model</a>*&gt;&amp; result,
-              <a href="struct_graphics_1_1_filter_settings.html" class="m-doc">FilterSettings</a>&amp; settings = <a href="struct_graphics_1_1_filter_settings.html" class="m-doc">FilterSettings</a>()) -&gt; bool <span class="m-label m-flat m-warning">pure virtual</span></span>
+              <a href="struct_graphics_1_1_filter_settings.html" class="m-doc">FilterSettings</a>&amp; settings = <a href="struct_graphics_1_1_filter_settings.html" class="m-doc">FilterSettings</a>()) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">bool</a> <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
             <dd>Finds all the models that intersect with the given bounding box.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#a14950f2f460af5c10c7b46dbe3c7da0c" class="m-doc">FindModelsInFrustum</a>(</span><span class="m-doc-wrap">const <a href="class_graphics_1_1c_frustum_cull.html" class="m-doc">cFrustumCull</a>&amp; frustum,
+              <span class="m-doc-wrap-bumper">auto <a href="#a14950f2f460af5c10c7b46dbe3c7da0c" class="m-doc">FindModelsInFrustum</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">const</a> <a href="class_graphics_1_1c_frustum_cull.html" class="m-doc">cFrustumCull</a>&amp; frustum,
               eastl::vector&lt;<a href="class_graphics_1_1_model.html" class="m-doc">Model</a>*&gt; result,
-              <a href="struct_graphics_1_1_filter_settings.html" class="m-doc">FilterSettings</a>&amp; settings = <a href="struct_graphics_1_1_filter_settings.html" class="m-doc">FilterSettings</a>()) -&gt; bool <span class="m-label m-flat m-warning">pure virtual</span></span>
+              <a href="struct_graphics_1_1_filter_settings.html" class="m-doc">FilterSettings</a>&amp; settings = <a href="struct_graphics_1_1_filter_settings.html" class="m-doc">FilterSettings</a>()) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">bool</a> <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
             <dd>Finds all the models that intersect with the given frustum.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#a934b539d801dad32a2fbee8802270371" class="m-doc">PickAgainstModel</a>(</span><span class="m-doc-wrap">const <a href="struct_math_1_1_vector3.html" class="m-doc">Vector3</a>&amp; linePoint1,
-              const <a href="struct_math_1_1_vector3.html" class="m-doc">Vector3</a>&amp; linePoint2,
+              <span class="m-doc-wrap-bumper">auto <a href="#a934b539d801dad32a2fbee8802270371" class="m-doc">PickAgainstModel</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">const</a> <a href="struct_math_1_1_vector3.html" class="m-doc">Vector3</a>&amp; linePoint1,
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">const</a> <a href="struct_math_1_1_vector3.html" class="m-doc">Vector3</a>&amp; linePoint2,
               <a href="class_graphics_1_1_model.html" class="m-doc">Model</a>* model,
-              float&amp; dstFactor,
-              <a href="struct_graphics_1_1_filter_settings.html" class="m-doc">FilterSettings</a>&amp; settings = <a href="struct_graphics_1_1_filter_settings.html" class="m-doc">FilterSettings</a>()) -&gt; bool <span class="m-label m-flat m-warning">pure virtual</span></span>
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">float</a>&amp; dstFactor,
+              <a href="struct_graphics_1_1_filter_settings.html" class="m-doc">FilterSettings</a>&amp; settings = <a href="struct_graphics_1_1_filter_settings.html" class="m-doc">FilterSettings</a>()) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">bool</a> <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
             <dd>Intersects a line segment with a model, and gives the point in the segment that intersected with the model.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#addbb899fd4e26be3fea4555c5258fcc6" class="m-doc">SphereIntersectsModel</a>(</span><span class="m-doc-wrap">const <a href="struct_math_1_1_vector3.html" class="m-doc">Vector3</a>&amp; center,
-              float radius,
+              <span class="m-doc-wrap-bumper">auto <a href="#addbb899fd4e26be3fea4555c5258fcc6" class="m-doc">SphereIntersectsModel</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">const</a> <a href="struct_math_1_1_vector3.html" class="m-doc">Vector3</a>&amp; center,
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">float</a> radius,
               <a href="class_graphics_1_1_model.html" class="m-doc">Model</a>* model,
-              <a href="struct_graphics_1_1_filter_settings.html" class="m-doc">FilterSettings</a>&amp; settings = <a href="struct_graphics_1_1_filter_settings.html" class="m-doc">FilterSettings</a>()) -&gt; bool <span class="m-label m-flat m-warning">pure virtual</span></span>
+              <a href="struct_graphics_1_1_filter_settings.html" class="m-doc">FilterSettings</a>&amp; settings = <a href="struct_graphics_1_1_filter_settings.html" class="m-doc">FilterSettings</a>()) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">bool</a> <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
             <dd>Returns true if the sphere with <code>center</code> and <code>radius</code> intersects with the model.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#a40eeafaf62c1ec780580728220fa14c0" class="m-doc">BoxIntersectsModel</a>(</span><span class="m-doc-wrap">const <a href="struct_math_1_1_bounding_box.html" class="m-doc">BoundingBox</a>&amp; bbox,
+              <span class="m-doc-wrap-bumper">auto <a href="#a40eeafaf62c1ec780580728220fa14c0" class="m-doc">BoxIntersectsModel</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">const</a> <a href="struct_math_1_1_bounding_box.html" class="m-doc">BoundingBox</a>&amp; bbox,
               <a href="class_graphics_1_1_model.html" class="m-doc">Model</a>* model,
-              <a href="struct_graphics_1_1_filter_settings.html" class="m-doc">FilterSettings</a>&amp; settings = <a href="struct_graphics_1_1_filter_settings.html" class="m-doc">FilterSettings</a>()) -&gt; bool <span class="m-label m-flat m-warning">pure virtual</span></span>
+              <a href="struct_graphics_1_1_filter_settings.html" class="m-doc">FilterSettings</a>&amp; settings = <a href="struct_graphics_1_1_filter_settings.html" class="m-doc">FilterSettings</a>()) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">bool</a> <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
             <dd>Returns true if the given bounding box intersects with the model.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">void <a href="#ab2be7a75b1c0909b228dcdf5d6969c7c" class="m-doc">GetModelResourceIDs</a>(</span><span class="m-doc-wrap"><a href="class_graphics_1_1_model.html" class="m-doc">Model</a>* model,
-              uint32_t* pDstInstanceID,
-              uint32_t* pDstGroupID) <span class="m-label m-flat m-warning">pure virtual</span></span>
+              <span class="m-doc-wrap-bumper">auto <a href="#ab2be7a75b1c0909b228dcdf5d6969c7c" class="m-doc">GetModelResourceIDs</a>(</span><span class="m-doc-wrap"><a href="class_graphics_1_1_model.html" class="m-doc">Model</a>* model,
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">uint32_<wbr />t</a>* pDstInstanceID,
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">uint32_<wbr />t</a>* pDstGroupID) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">void</a> <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
             <dd>Used to get the instance and group ID of the given model.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">void <a href="#a7fada5cf36cc1e804770dd6488f37d05" class="m-doc">GetRegionList</a>(</span><span class="m-doc-wrap"><a href="class_graphics_1_1_model.html" class="m-doc">Model</a>* model,
-              eastl::vector&lt;uint32_t&gt;&amp; dst) <span class="m-label m-flat m-warning">pure virtual</span></span>
+              <span class="m-doc-wrap-bumper">auto <a href="#a7fada5cf36cc1e804770dd6488f37d05" class="m-doc">GetRegionList</a>(</span><span class="m-doc-wrap"><a href="class_graphics_1_1_model.html" class="m-doc">Model</a>* model,
+              eastl::vector&lt;<a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">uint32_<wbr />t</a>&gt;&amp; dst) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">void</a> <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
             <dd>Gets all the region codes present in this model; to be precise, it gets all the values of the &#x27;region&#x27; shader data of the materials in the model.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">void <a href="#a8e29a569db534b6ad6a5be33312b2d11" class="m-doc">StallUntilLoaded</a>(</span><span class="m-doc-wrap"><a href="class_graphics_1_1_model.html" class="m-doc">Model</a>* model) <span class="m-label m-flat m-warning">pure virtual</span></span>
+              <span class="m-doc-wrap-bumper">auto <a href="#a8e29a569db534b6ad6a5be33312b2d11" class="m-doc">StallUntilLoaded</a>(</span><span class="m-doc-wrap"><a href="class_graphics_1_1_model.html" class="m-doc">Model</a>* model) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">void</a> <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
             <dd>Ensures the given model is loaded and all its parameters are updated.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#a0925c6cbd963fb5cadb2f385d4c6b593" class="m-doc">GetBoundingRadius</a>(</span><span class="m-doc-wrap"><a href="class_graphics_1_1_model.html" class="m-doc">Model</a>* model) -&gt; float <span class="m-label m-flat m-warning">pure virtual</span></span>
+              <span class="m-doc-wrap-bumper">auto <a href="#a0925c6cbd963fb5cadb2f385d4c6b593" class="m-doc">GetBoundingRadius</a>(</span><span class="m-doc-wrap"><a href="class_graphics_1_1_model.html" class="m-doc">Model</a>* model) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">float</a> <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
             <dd>Returns the model bounding radius, calling <a href="class_graphics_1_1_i_model_world.html#a8e29a569db534b6ad6a5be33312b2d11" class="m-doc">StallUntilLoaded()</a> if the model does not have the &#x27;overrideBoundingRadius&#x27; property.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#a5164cc3aa87ec334f5f2cd9455cda16a" class="m-doc">GetBoundingBox</a>(</span><span class="m-doc-wrap"><a href="class_graphics_1_1_model.html" class="m-doc">Model</a>* model) -&gt; const <a href="struct_math_1_1_bounding_box.html" class="m-doc">BoundingBox</a>&amp; <span class="m-label m-flat m-warning">pure virtual</span></span>
+              <span class="m-doc-wrap-bumper">auto <a href="#a953ad2dd44bcc13388437e7056d76000" class="m-doc">GetBoundingBox</a>(</span><span class="m-doc-wrap"><a href="class_graphics_1_1_model.html" class="m-doc">Model</a>* model) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">const</a> <a href="struct_math_1_1_bounding_box.html" class="m-doc">BoundingBox</a>&amp; <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
             <dd>Returns the model bounding box, calling <a href="class_graphics_1_1_i_model_world.html#a8e29a569db534b6ad6a5be33312b2d11" class="m-doc">StallUntilLoaded()</a> if the model does not have the &#x27;overrideBoundingBox&#x27; property.</dd>
             <dt id="adcf022b2d84504c54522e1fda3a5f44b">
-              <span class="m-doc-wrap-bumper">auto <a href="#adcf022b2d84504c54522e1fda3a5f44b" class="m-doc-self">GetNumAnimationGroups</a>(</span><span class="m-doc-wrap">) -&gt; int <span class="m-label m-flat m-warning">pure virtual</span></span>
+              <span class="m-doc-wrap-bumper">auto <a href="#adcf022b2d84504c54522e1fda3a5f44b" class="m-doc-self">GetNumAnimationGroups</a>(</span><span class="m-doc-wrap">) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
             <dd>Returns the amount of animation groups.</dd>
             <dt>
               <span class="m-doc-wrap-bumper">auto <a href="#a02737429af8f97e0010236fbbde1bfd6" class="m-doc">GetNumAnimations</a>(</span><span class="m-doc-wrap"><a href="class_graphics_1_1_model.html" class="m-doc">Model</a>* model,
-              int animationGroup = 0) const -&gt; int <span class="m-label m-flat m-warning">pure virtual</span></span>
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> animationGroup = 0) const -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
             <dd>Returns the amount of animations contained in the model.</dd>
             <dt>
               <span class="m-doc-wrap-bumper">auto <a href="#a552c0d2689937a5614dcf4ffebe6ef54" class="m-doc">GetAnimationIDs</a>(</span><span class="m-doc-wrap"><a href="class_graphics_1_1_model.html" class="m-doc">Model</a>* model,
-              uint32_t* dst,
-              int animationGroup = 0) const -&gt; int <span class="m-label m-flat m-warning">pure virtual</span></span>
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">uint32_<wbr />t</a>* dst,
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> animationGroup = 0) const -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
             <dd>Used to get the IDs of the animations contained in the model.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">void <a href="#a6a134bcb9d6bd34856e37cba16dfb09c" class="m-doc">AnimAction</a>(</span><span class="m-doc-wrap"><a href="class_graphics_1_1_model.html" class="m-doc">Model</a>* model,
-              uint32_t animID,
-              int arg3 = 3,
-              float arg4 = 0.0,
-              int animationGroup = 0) <span class="m-label m-flat m-warning">pure virtual</span></span>
+              <span class="m-doc-wrap-bumper">auto <a href="#a6a134bcb9d6bd34856e37cba16dfb09c" class="m-doc">AnimAction</a>(</span><span class="m-doc-wrap"><a href="class_graphics_1_1_model.html" class="m-doc">Model</a>* model,
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">uint32_<wbr />t</a> animID,
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> arg3 = 3,
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">float</a> arg4 = 0.0,
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> animationGroup = 0) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">void</a> <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
             <dd>Sets the current playing animation of a model.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">void <a href="#a530e23244753233a35d9a51213f5a94d" class="m-doc">MoveToTime</a>(</span><span class="m-doc-wrap"><a href="class_graphics_1_1_model.html" class="m-doc">Model</a>* model,
-              uint32_t animID,
-              float time,
-              int animationGroup = 0) <span class="m-label m-flat m-warning">pure virtual</span></span>
+              <span class="m-doc-wrap-bumper">auto <a href="#a530e23244753233a35d9a51213f5a94d" class="m-doc">MoveToTime</a>(</span><span class="m-doc-wrap"><a href="class_graphics_1_1_model.html" class="m-doc">Model</a>* model,
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">uint32_<wbr />t</a> animID,
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">float</a> time,
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> animationGroup = 0) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">void</a> <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
             <dd>Changes the current time of an animation in the model.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">void <a href="#ac35dd84a0532ed89ac167ebaf1c21681" class="m-doc">SetWeight</a>(</span><span class="m-doc-wrap"><a href="class_graphics_1_1_model.html" class="m-doc">Model</a>* model,
-              uint32_t animID,
-              float weight,
-              int animationGroup = 0) <span class="m-label m-flat m-warning">pure virtual</span></span>
+              <span class="m-doc-wrap-bumper">auto <a href="#ac35dd84a0532ed89ac167ebaf1c21681" class="m-doc">SetWeight</a>(</span><span class="m-doc-wrap"><a href="class_graphics_1_1_model.html" class="m-doc">Model</a>* model,
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">uint32_<wbr />t</a> animID,
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">float</a> weight,
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> animationGroup = 0) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">void</a> <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
             <dd>Changes the blending weight of a model animation (that is, how much it combines/blends with other animations, default is 1.0)</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">void <a href="#a2052e7fcad084714e0d0fe90c75a979a" class="m-doc">SetTimeScale</a>(</span><span class="m-doc-wrap"><a href="class_graphics_1_1_model.html" class="m-doc">Model</a>* model,
-              float timeScale) const <span class="m-label m-flat m-warning">pure virtual</span></span>
+              <span class="m-doc-wrap-bumper">auto <a href="#a2052e7fcad084714e0d0fe90c75a979a" class="m-doc">SetTimeScale</a>(</span><span class="m-doc-wrap"><a href="class_graphics_1_1_model.html" class="m-doc">Model</a>* model,
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">float</a> timeScale) const -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">void</a> <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
             <dd>Changes the animation time scale of the model, 1.0 is the default.</dd>
             <dt>
               <span class="m-doc-wrap-bumper">auto <a href="#a0aff6675463792f49cda2cf8ccb76f49" class="m-doc">GetAnimationRange</a>(</span><span class="m-doc-wrap"><a href="class_graphics_1_1_model.html" class="m-doc">Model</a>* model,
-              uint32_t animID,
-              float&amp; dstStart,
-              float&amp; dstEnd,
-              int = 0) const -&gt; bool <span class="m-label m-flat m-warning">pure virtual</span></span>
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">uint32_<wbr />t</a> animID,
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">float</a>&amp; dstStart,
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">float</a>&amp; dstEnd,
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> = 0) const -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">bool</a> <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
             <dd>Used to get the start and end time of an animation in the model, in seconds.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#ac5439f7b04f703b3650aa59f7b9bfdde" class="m-doc">GetNumBones</a>(</span><span class="m-doc-wrap"><a href="class_graphics_1_1_model.html" class="m-doc">Model</a>* model) const -&gt; int <span class="m-label m-flat m-warning">pure virtual</span></span>
+              <span class="m-doc-wrap-bumper">auto <a href="#ac5439f7b04f703b3650aa59f7b9bfdde" class="m-doc">GetNumBones</a>(</span><span class="m-doc-wrap"><a href="class_graphics_1_1_model.html" class="m-doc">Model</a>* model) const -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
             <dd>Returns the number of animation bones in the given model.</dd>
             <dt id="afe6ff11e3bacdd97f9a23d760cfdf658">
               <span class="m-doc-wrap-bumper">auto <a href="#afe6ff11e3bacdd97f9a23d760cfdf658" class="m-doc-self">GetPoseTransforms</a>(</span><span class="m-doc-wrap"><a href="class_graphics_1_1_model.html" class="m-doc">Model</a>* model,
               <a href="struct_render_ware_1_1c_m_d_bone_transform.html" class="m-doc">RenderWare::<wbr />cMDBoneTransform</a>* dst,
-              bool original = false) const -&gt; int <span class="m-label m-flat m-warning">pure virtual</span></span>
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">bool</a> original = <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">false</a>) const -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
             <dd><span></span></dd>
             <dt id="a44f55f63b35118740bacc091395b6e63">
               <span class="m-doc-wrap-bumper">auto <a href="#a44f55f63b35118740bacc091395b6e63" class="m-doc-self">GetBoneTransforms</a>(</span><span class="m-doc-wrap"><a href="class_graphics_1_1_model.html" class="m-doc">Model</a>* model,
-              <a href="struct_render_ware_1_1c_m_d_bone_transform.html" class="m-doc">RenderWare::<wbr />cMDBoneTransform</a>* dst) -&gt; int <span class="m-label m-flat m-warning">pure virtual</span></span>
+              <a href="struct_render_ware_1_1c_m_d_bone_transform.html" class="m-doc">RenderWare::<wbr />cMDBoneTransform</a>* dst) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
             <dd><span></span></dd>
             <dt>
               <span class="m-doc-wrap-bumper">auto <a href="#ada8b76c7c315fd2b8c034cc3942bd7c4" class="m-doc">GetBoneIDs</a>(</span><span class="m-doc-wrap"><a href="class_graphics_1_1_model.html" class="m-doc">Model</a>* model,
-              uint32_t* dst) -&gt; int <span class="m-label m-flat m-warning">pure virtual</span></span>
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">uint32_<wbr />t</a>* dst) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
             <dd>Used to obtain the IDs of the animation bones in the given model.</dd>
             <dt>
               <span class="m-doc-wrap-bumper">auto <a href="#af7fea9e4e3951e7700ca2ca2cee950c7" class="m-doc">GetBoneParents</a>(</span><span class="m-doc-wrap"><a href="class_graphics_1_1_model.html" class="m-doc">Model</a>* model,
-              int* dst) -&gt; int <span class="m-label m-flat m-warning">pure virtual</span></span>
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a>* dst) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
             <dd>Used to obtain the index to the parent of each animation bone in a model (-1 means it is the root and has no parent).</dd>
             <dt id="acd637dec3ec58209269adec4d2e05025">
-              <span class="m-doc-wrap-bumper">void <a href="#acd637dec3ec58209269adec4d2e05025" class="m-doc-self">SetBoneTable</a>(</span><span class="m-doc-wrap"><a href="class_graphics_1_1_model.html" class="m-doc">Model</a>* model,
-              int arg1,
-              <a href="struct_render_ware_1_1c_m_d_bone_transform.html" class="m-doc">RenderWare::<wbr />cMDBoneTransform</a>* boneTable) <span class="m-label m-flat m-warning">pure virtual</span></span>
+              <span class="m-doc-wrap-bumper">auto <a href="#acd637dec3ec58209269adec4d2e05025" class="m-doc-self">SetBoneTable</a>(</span><span class="m-doc-wrap"><a href="class_graphics_1_1_model.html" class="m-doc">Model</a>* model,
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> arg1,
+              <a href="struct_render_ware_1_1c_m_d_bone_transform.html" class="m-doc">RenderWare::<wbr />cMDBoneTransform</a>* boneTable) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">void</a> <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
             <dd><span></span></dd>
             <dt>
               <span class="m-doc-wrap-bumper">auto <a href="#aeb6dc9f95b8ac6014b7333e054b4f08f" class="m-doc">SetBoneCallback</a>(</span><span class="m-doc-wrap"><a href="class_graphics_1_1_model.html" class="m-doc">Model</a>* model,
               <a href="namespace_graphics.html#a782e42e2e8449b0ca093efdf483a1fb6" class="m-doc">BoneCallback_<wbr />t</a> callback,
-              void* data = nullptr,
-              int boneIndex = -1,
-              int arg5 = 0) -&gt; int <span class="m-label m-flat m-warning">pure virtual</span></span>
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">void</a>* data = <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">nullptr</a>,
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> boneIndex = -1,
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> arg5 = 0) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
             <dd>Sets a function that is executed for a bone or all bones (when playing an animation?)</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">void <a href="#a8c2112dfd2f6e70dbde84647ca85f04a" class="m-doc">SetAnimationGroupTransform</a>(</span><span class="m-doc-wrap"><a href="class_graphics_1_1_model.html" class="m-doc">Model</a>* model,
-              int animationGroup,
-              const <a href="class_transform.html" class="m-doc">Transform</a>&amp; transform) <span class="m-label m-flat m-warning">pure virtual</span></span>
+              <span class="m-doc-wrap-bumper">auto <a href="#a8c2112dfd2f6e70dbde84647ca85f04a" class="m-doc">SetAnimationGroupTransform</a>(</span><span class="m-doc-wrap"><a href="class_graphics_1_1_model.html" class="m-doc">Model</a>* model,
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> animationGroup,
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">const</a> <a href="class_transform.html" class="m-doc">Transform</a>&amp; transform) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">void</a> <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
             <dd>Sets the transform of a model animation group.</dd>
             <dt id="a250f48d766d586a25cce065dd5bbe755">
-              <span class="m-doc-wrap-bumper">void <a href="#a250f48d766d586a25cce065dd5bbe755" class="m-doc-self">SetMaterialInfo</a>(</span><span class="m-doc-wrap"><a href="class_graphics_1_1_model.html" class="m-doc">Model</a>* model,
+              <span class="m-doc-wrap-bumper">auto <a href="#a250f48d766d586a25cce065dd5bbe755" class="m-doc-self">SetMaterialInfo</a>(</span><span class="m-doc-wrap"><a href="class_graphics_1_1_model.html" class="m-doc">Model</a>* model,
               <a href="class_graphics_1_1c_material_info.html" class="m-doc">cMaterialInfo</a>* pMaterialInfo,
-              int region = -1) const <span class="m-label m-flat m-warning">pure virtual</span></span>
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> region = -1) const -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">void</a> <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
             <dd><span></span></dd>
-            <dt id="afccbd9c654de6cafc7e367f7b712ec32">
-              <span class="m-doc-wrap-bumper">auto <a href="#afccbd9c654de6cafc7e367f7b712ec32" class="m-doc-self">GetMaterialInfo</a>(</span><span class="m-doc-wrap"><a href="class_graphics_1_1_model.html" class="m-doc">Model</a>* model,
-              int region = -1) const -&gt; <a href="class_graphics_1_1c_material_info.html" class="m-doc">cMaterialInfo</a>* <span class="m-label m-flat m-warning">pure virtual</span></span>
+            <dt id="a8c1360f7b109fcd61d76f47ec75f9b98">
+              <span class="m-doc-wrap-bumper">auto <a href="#a8c1360f7b109fcd61d76f47ec75f9b98" class="m-doc-self">GetMaterialInfo</a>(</span><span class="m-doc-wrap"><a href="class_graphics_1_1_model.html" class="m-doc">Model</a>* model,
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> region = -1) const -&gt; <a href="class_graphics_1_1c_material_info.html" class="m-doc">cMaterialInfo</a>* <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
             <dd><span></span></dd>
             <dt id="aa6375eb4b1327137fa8dbcf1561a985c">
-              <span class="m-doc-wrap-bumper">void <a href="#aa6375eb4b1327137fa8dbcf1561a985c" class="m-doc-self">SetDynamicDraw</a>(</span><span class="m-doc-wrap"><a href="class_graphics_1_1_model.html" class="m-doc">Model</a>* model,
-              void* pDynamicDraw,
-              bool arg3) <span class="m-label m-flat m-warning">pure virtual</span></span>
+              <span class="m-doc-wrap-bumper">auto <a href="#aa6375eb4b1327137fa8dbcf1561a985c" class="m-doc-self">SetDynamicDraw</a>(</span><span class="m-doc-wrap"><a href="class_graphics_1_1_model.html" class="m-doc">Model</a>* model,
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">void</a>* pDynamicDraw,
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">bool</a> arg3) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">void</a> <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
             <dd><span></span></dd>
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#ae5d4b6d725f8c8414b2bd9aafb75a4d4" class="m-doc">GetNumLODs</a>(</span><span class="m-doc-wrap"><a href="class_graphics_1_1_model.html" class="m-doc">Model</a>* model) const -&gt; int <span class="m-label m-flat m-warning">pure virtual</span></span>
+              <span class="m-doc-wrap-bumper">auto <a href="#ae5d4b6d725f8c8414b2bd9aafb75a4d4" class="m-doc">GetNumLODs</a>(</span><span class="m-doc-wrap"><a href="class_graphics_1_1_model.html" class="m-doc">Model</a>* model) const -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
             <dd>Returns how many mesh versions this model has, which depend on the level of detail (LOD).</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">void <a href="#a2d199c51a28987e430e75b3b5b56b585" class="m-doc">SetLOD</a>(</span><span class="m-doc-wrap"><a href="class_graphics_1_1_model.html" class="m-doc">Model</a>* model,
-              int lod) const <span class="m-label m-flat m-warning">pure virtual</span></span>
+              <span class="m-doc-wrap-bumper">auto <a href="#a2d199c51a28987e430e75b3b5b56b585" class="m-doc">SetLOD</a>(</span><span class="m-doc-wrap"><a href="class_graphics_1_1_model.html" class="m-doc">Model</a>* model,
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> lod) const -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">void</a> <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
             <dd>Forces the model to use a certain lod level, or restores it to the default (which is changing lod level depending on distance).</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">void <a href="#a8bd2c4bef3949cd22787ec6e044d123c" class="m-doc">SetEffectRange</a>(</span><span class="m-doc-wrap"><a href="class_graphics_1_1_model.html" class="m-doc">Model</a>* model,
-              double effectRange = -1.0f) const <span class="m-label m-flat m-warning">pure virtual</span></span>
+              <span class="m-doc-wrap-bumper">auto <a href="#a8bd2c4bef3949cd22787ec6e044d123c" class="m-doc">SetEffectRange</a>(</span><span class="m-doc-wrap"><a href="class_graphics_1_1_model.html" class="m-doc">Model</a>* model,
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">double</a> effectRange = -1.0f) const -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">void</a> <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
             <dd>Sets the effect range for the model.</dd>
             <dt id="a6158302cfb345401e04d5ff3a79379c0">
-              <span class="m-doc-wrap-bumper">void <a href="#a6158302cfb345401e04d5ff3a79379c0" class="m-doc-self">SetLODScale</a>(</span><span class="m-doc-wrap">float scale) <span class="m-label m-flat m-warning">pure virtual</span></span>
+              <span class="m-doc-wrap-bumper">auto <a href="#a6158302cfb345401e04d5ff3a79379c0" class="m-doc-self">SetLODScale</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">float</a> scale) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">void</a> <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
             <dd><span></span></dd>
             <dt id="ad0cc1d9e7a96af6bcf4189a7718542b3">
-              <span class="m-doc-wrap-bumper">auto <a href="#ad0cc1d9e7a96af6bcf4189a7718542b3" class="m-doc-self">GetLODScale</a>(</span><span class="m-doc-wrap">) -&gt; float <span class="m-label m-flat m-warning">pure virtual</span></span>
+              <span class="m-doc-wrap-bumper">auto <a href="#ad0cc1d9e7a96af6bcf4189a7718542b3" class="m-doc-self">GetLODScale</a>(</span><span class="m-doc-wrap">) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">float</a> <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
             <dd><span></span></dd>
             <dt>
-              <span class="m-doc-wrap-bumper">void <a href="#a934a4c6b3ad4741f736b89fe53d1caa7" class="m-doc">SetEffectsRunning</a>(</span><span class="m-doc-wrap"><a href="class_graphics_1_1_model.html" class="m-doc">Model</a>* model,
-              bool enable,
-              bool startStop,
-              uint32_t instanceID = 0) const <span class="m-label m-flat m-warning">pure virtual</span></span>
+              <span class="m-doc-wrap-bumper">auto <a href="#a934a4c6b3ad4741f736b89fe53d1caa7" class="m-doc">SetEffectsRunning</a>(</span><span class="m-doc-wrap"><a href="class_graphics_1_1_model.html" class="m-doc">Model</a>* model,
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">bool</a> enable,
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">bool</a> startStop,
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">uint32_<wbr />t</a> instanceID = 0) const -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">void</a> <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
             <dd>Enables or disables the effects in the model.</dd>
             <dt>
               <span class="m-doc-wrap-bumper">auto <a href="#a673b5874ed2fa91b1ca741df2aa75ef5" class="m-doc">SetFloatParams</a>(</span><span class="m-doc-wrap"><a href="class_graphics_1_1_model.html" class="m-doc">Model</a>* model,
               <a href="namespace_swarm.html#a60d10256ed2fabe0ec861b9c819ec4e9" class="m-doc">Swarm::<wbr />FloatParams</a> param,
-              const float* data,
-              int count,
-              uint32_t instanceID = 0) const -&gt; bool <span class="m-label m-flat m-warning">pure virtual</span></span>
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">const</a> <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">float</a>* data,
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> count,
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">uint32_<wbr />t</a> instanceID = 0) const -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">bool</a> <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
             <dd>Changes parameters of effects in a model.</dd>
             <dt>
               <span class="m-doc-wrap-bumper">auto <a href="#afb106af74d48de98a46ad1918cae33e4" class="m-doc">SetIntParams</a>(</span><span class="m-doc-wrap"><a href="class_graphics_1_1_model.html" class="m-doc">Model</a>* model,
               <a href="namespace_swarm.html#a9ac38fc69759078415264c658a4cf0d5" class="m-doc">Swarm::<wbr />IntParams</a> param,
-              const int* data,
-              int count,
-              uint32_t instanceID = 0) const -&gt; bool <span class="m-label m-flat m-warning">pure virtual</span></span>
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">const</a> <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a>* data,
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> count,
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">uint32_<wbr />t</a> instanceID = 0) const -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">bool</a> <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
             <dd>Changes parameters of effects in a model.</dd>
             <dt>
               <span class="m-doc-wrap-bumper">auto <a href="#aa747389d2424adf54c0c8b7f00aa4cf7" class="m-doc">SetUnknownParams</a>(</span><span class="m-doc-wrap"><a href="class_graphics_1_1_model.html" class="m-doc">Model</a>* model,
               <a href="namespace_swarm.html#a42540da906ab90e418c67ff88ff26535" class="m-doc">Swarm::<wbr />ObjectParams</a> param,
               <a href="class_object.html" class="m-doc">Object</a>* data,
-              uint32_t instanceID = 0) const -&gt; bool <span class="m-label m-flat m-warning">pure virtual</span></span>
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">uint32_<wbr />t</a> instanceID = 0) const -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">bool</a> <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
             <dd>Changes parameters of effects in a model.</dd>
             <dt id="a211852eb1c2ac9d67ce547583d13e758">
-              <span class="m-doc-wrap-bumper">void <a href="#a211852eb1c2ac9d67ce547583d13e758" class="m-doc-self">SetExternalEffectsTransform</a>(</span><span class="m-doc-wrap"><a href="class_graphics_1_1_model.html" class="m-doc">Model</a>* model,
-              const <a href="class_transform.html" class="m-doc">Transform</a>* pTransform = nullptr,
-              uint32_t instanceID = 0) <span class="m-label m-flat m-warning">pure virtual</span></span>
+              <span class="m-doc-wrap-bumper">auto <a href="#a211852eb1c2ac9d67ce547583d13e758" class="m-doc-self">SetExternalEffectsTransform</a>(</span><span class="m-doc-wrap"><a href="class_graphics_1_1_model.html" class="m-doc">Model</a>* model,
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">const</a> <a href="class_transform.html" class="m-doc">Transform</a>* pTransform = <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">nullptr</a>,
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">uint32_<wbr />t</a> instanceID = 0) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">void</a> <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
             <dd><span></span></dd>
             <dt id="a1dcd7472e83088d7d2e617d2a6bcbafb">
-              <span class="m-doc-wrap-bumper">void <a href="#a1dcd7472e83088d7d2e617d2a6bcbafb" class="m-doc-self">GetHull</a>(</span><span class="m-doc-wrap"><a href="class_graphics_1_1_model.html" class="m-doc">Model</a>* model,
-              <a href="struct_graphics_1_1c_m_w_hull.html" class="m-doc">cMWHull</a>&amp; hull) <span class="m-label m-flat m-warning">pure virtual</span></span>
+              <span class="m-doc-wrap-bumper">auto <a href="#a1dcd7472e83088d7d2e617d2a6bcbafb" class="m-doc-self">GetHull</a>(</span><span class="m-doc-wrap"><a href="class_graphics_1_1_model.html" class="m-doc">Model</a>* model,
+              <a href="struct_graphics_1_1c_m_w_hull.html" class="m-doc">cMWHull</a>&amp; hull) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">void</a> <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
             <dd><span></span></dd>
             <dt id="a1e19f29a34803deae52e45d5108ad1c6">
-              <span class="m-doc-wrap-bumper">void <a href="#a1e19f29a34803deae52e45d5108ad1c6" class="m-doc-self">GetTransformedHull</a>(</span><span class="m-doc-wrap"><a href="class_graphics_1_1_model.html" class="m-doc">Model</a>* model,
-              <a href="struct_graphics_1_1c_m_w_transformed_hull.html" class="m-doc">cMWTransformedHull</a>*&amp; hull) <span class="m-label m-flat m-warning">pure virtual</span></span>
+              <span class="m-doc-wrap-bumper">auto <a href="#a1e19f29a34803deae52e45d5108ad1c6" class="m-doc-self">GetTransformedHull</a>(</span><span class="m-doc-wrap"><a href="class_graphics_1_1_model.html" class="m-doc">Model</a>* model,
+              <a href="struct_graphics_1_1c_m_w_transformed_hull.html" class="m-doc">cMWTransformedHull</a>*&amp; hull) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">void</a> <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
             <dd><span></span></dd>
             <dt id="ac8b9e6bdae306788fefe4382f2abceba">
-              <span class="m-doc-wrap-bumper">void <a href="#ac8b9e6bdae306788fefe4382f2abceba" class="m-doc-self">ReleaseTransformedHull</a>(</span><span class="m-doc-wrap"><a href="class_graphics_1_1_model.html" class="m-doc">Model</a>* model,
-              <a href="struct_graphics_1_1c_m_w_transformed_hull.html" class="m-doc">cMWTransformedHull</a>*&amp; hull) <span class="m-label m-flat m-warning">pure virtual</span></span>
+              <span class="m-doc-wrap-bumper">auto <a href="#ac8b9e6bdae306788fefe4382f2abceba" class="m-doc-self">ReleaseTransformedHull</a>(</span><span class="m-doc-wrap"><a href="class_graphics_1_1_model.html" class="m-doc">Model</a>* model,
+              <a href="struct_graphics_1_1c_m_w_transformed_hull.html" class="m-doc">cMWTransformedHull</a>*&amp; hull) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">void</a> <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
             <dd><span></span></dd>
             <dt>
-              <span class="m-doc-wrap-bumper">void <a href="#a773eb99dd3200afc244bf83c2bb4001b" class="m-doc">GetHullBoundingBox</a>(</span><span class="m-doc-wrap"><a href="class_graphics_1_1_model.html" class="m-doc">Model</a>* model,
-              <a href="struct_math_1_1_bounding_box.html" class="m-doc">BoundingBox</a>&amp; dst) const <span class="m-label m-flat m-warning">pure virtual</span></span>
+              <span class="m-doc-wrap-bumper">auto <a href="#a773eb99dd3200afc244bf83c2bb4001b" class="m-doc">GetHullBoundingBox</a>(</span><span class="m-doc-wrap"><a href="class_graphics_1_1_model.html" class="m-doc">Model</a>* model,
+              <a href="struct_math_1_1_bounding_box.html" class="m-doc">BoundingBox</a>&amp; dst) const -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">void</a> <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
             <dd>Gets the bounding box of the hull (collision) model.</dd>
             <dt id="a033a853efdee54fd7ddbfa790174f11e">
               <span class="m-doc-wrap-bumper">auto <a href="#a033a853efdee54fd7ddbfa790174f11e" class="m-doc-self">GetDeformationHandles</a>(</span><span class="m-doc-wrap"><a href="class_graphics_1_1_model.html" class="m-doc">Model</a>* model,
               <a href="struct_graphics_1_1_morph_handle_info.html" class="m-doc">MorphHandleInfo</a>* dst,
-              int count) -&gt; int <span class="m-label m-flat m-warning">pure virtual</span></span>
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> count) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
             <dd><span></span></dd>
             <dt>
               <span class="m-doc-wrap-bumper">auto <a href="#ac57aee003ebd98e6ec7f66a521977839" class="m-doc">GetDeformationAnimationIDs</a>(</span><span class="m-doc-wrap"><a href="class_graphics_1_1_model.html" class="m-doc">Model</a>* model,
-              uint32_t* dst,
-              int animationGroup = 0) -&gt; int <span class="m-label m-flat m-warning">pure virtual</span></span>
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">uint32_<wbr />t</a>* dst,
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> animationGroup = 0) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
             <dd>Obtain the animation ID of all the deformation handles in the model.</dd>
             <dt id="adc6b28f4cc77ff4606e859834e1b9861">
               <span class="m-doc-wrap-bumper">auto <a href="#adc6b28f4cc77ff4606e859834e1b9861" class="m-doc-self">GetBakedMeshes</a>(</span><span class="m-doc-wrap"><a href="class_graphics_1_1_model.html" class="m-doc">Model</a>* model,
               eastl::vector&lt;<a href="c_mesh_data_8h.html#a931b1a2114788123616c06481b7c42f7" class="m-doc">cMeshDataPtr</a>&gt;&amp; dst,
-              const <a href="class_transform.html" class="m-doc">Transform</a>&amp; transform) -&gt; bool <span class="m-label m-flat m-warning">pure virtual</span></span>
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">const</a> <a href="class_transform.html" class="m-doc">Transform</a>&amp; transform) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">bool</a> <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
             <dd><span></span></dd>
             <dt id="a1a8b3c4d9ae50637a045c901e8e4bd14">
               <span class="m-doc-wrap-bumper">auto <a href="#a1a8b3c4d9ae50637a045c901e8e4bd14" class="m-doc-self">GetBakedMeshes2</a>(</span><span class="m-doc-wrap"><a href="class_graphics_1_1_model.html" class="m-doc">Model</a>* model,
-              eastl::vector&lt;<a href="c_mesh_data_8h.html#a931b1a2114788123616c06481b7c42f7" class="m-doc">cMeshDataPtr</a>&gt;&amp; dst) -&gt; bool <span class="m-label m-flat m-warning">pure virtual</span></span>
+              eastl::vector&lt;<a href="c_mesh_data_8h.html#a931b1a2114788123616c06481b7c42f7" class="m-doc">cMeshDataPtr</a>&gt;&amp; dst) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">bool</a> <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
             <dd><span></span></dd>
             <dt id="ae25bf304d79665f32ab86e7a83416019">
               <span class="m-doc-wrap-bumper">auto <a href="#ae25bf304d79665f32ab86e7a83416019" class="m-doc-self">GetMeshes</a>(</span><span class="m-doc-wrap"><a href="class_graphics_1_1_model.html" class="m-doc">Model</a>* model,
               eastl::vector&lt;<a href="c_mesh_data_8h.html#a931b1a2114788123616c06481b7c42f7" class="m-doc">cMeshDataPtr</a>&gt;&amp; dst,
-              const <a href="class_transform.html" class="m-doc">Transform</a>&amp; transform) -&gt; bool <span class="m-label m-flat m-warning">pure virtual</span></span>
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">const</a> <a href="class_transform.html" class="m-doc">Transform</a>&amp; transform) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">bool</a> <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
             <dd><span></span></dd>
             <dt id="a099d1d35f3ba3efaa3bff84edc18d624">
               <span class="m-doc-wrap-bumper">auto <a href="#a099d1d35f3ba3efaa3bff84edc18d624" class="m-doc-self">GetBakedMeshesUnscaled</a>(</span><span class="m-doc-wrap"><a href="class_graphics_1_1_model.html" class="m-doc">Model</a>* model,
               eastl::vector&lt;<a href="c_mesh_data_8h.html#a931b1a2114788123616c06481b7c42f7" class="m-doc">cMeshDataPtr</a>&gt;&amp; dst,
-              const <a href="class_transform.html" class="m-doc">Transform</a>&amp; transform) -&gt; bool <span class="m-label m-flat m-warning">pure virtual</span></span>
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">const</a> <a href="class_transform.html" class="m-doc">Transform</a>&amp; transform) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">bool</a> <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
             <dd><span></span></dd>
             <dt id="a6f6ba6c6dcd3586081b851a5b57398d9">
               <span class="m-doc-wrap-bumper">auto <a href="#a6f6ba6c6dcd3586081b851a5b57398d9" class="m-doc-self">GetRuntimeMeshes</a>(</span><span class="m-doc-wrap"><a href="class_graphics_1_1_model.html" class="m-doc">Model</a>* model,
               eastl::vector&lt;<a href="c_mesh_data_8h.html#a931b1a2114788123616c06481b7c42f7" class="m-doc">cMeshDataPtr</a>&gt;&amp; dst,
               <a href="class_render_ware_1_1_render_ware_file.html" class="m-doc">RenderWare::<wbr />RenderWareFile</a>*,
-              void*,
-              void*) -&gt; int <span class="m-label m-flat m-warning">pure virtual</span></span>
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">void</a>*,
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">void</a>*) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
             <dd><span></span></dd>
             <dt id="a12093b727125630fc6fc6f5e8a53a927">
               <span class="m-doc-wrap-bumper">auto <a href="#a12093b727125630fc6fc6f5e8a53a927" class="m-doc-self">GetRuntimeModel</a>(</span><span class="m-doc-wrap"><a href="class_graphics_1_1_model.html" class="m-doc">Model</a>* model,
-              void** dst,
-              const <a href="struct_resource_key.html" class="m-doc">ResourceKey</a>&amp; key) -&gt; int <span class="m-label m-flat m-warning">pure virtual</span></span>
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">void</a>** dst,
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">const</a> <a href="struct_resource_key.html" class="m-doc">ResourceKey</a>&amp; key) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
             <dd><span></span></dd>
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#a8a23a6e59c5f4ea002291116f9020ebd" class="m-doc">GetMeshTransform</a>(</span><span class="m-doc-wrap"><a href="class_graphics_1_1_model.html" class="m-doc">Model</a>* model) -&gt; <a href="class_transform.html" class="m-doc">Transform</a>* <span class="m-label m-flat m-warning">pure virtual</span></span>
+              <span class="m-doc-wrap-bumper">auto <a href="#aaa9de6fb16e0d2cfa3d0cc6688af27e7" class="m-doc">GetMeshTransform</a>(</span><span class="m-doc-wrap"><a href="class_graphics_1_1_model.html" class="m-doc">Model</a>* model) -&gt; <a href="class_transform.html" class="m-doc">Transform</a>* <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
             <dd>Returns default transform stored in the prop file of the model.</dd>
             <dt id="a4b6a4ba87d2aeadc19cacdabb7b40e23">
               <span class="m-doc-wrap-bumper">auto <a href="#a4b6a4ba87d2aeadc19cacdabb7b40e23" class="m-doc-self">UpdatePickMesh</a>(</span><span class="m-doc-wrap"><a href="class_graphics_1_1_model.html" class="m-doc">Model</a>* model,
-              <a href="struct_math_1_1_bounding_box.html" class="m-doc">BoundingBox</a>* dstBbox = nullptr) -&gt; bool <span class="m-label m-flat m-warning">pure virtual</span></span>
+              <a href="struct_math_1_1_bounding_box.html" class="m-doc">BoundingBox</a>* dstBbox = <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">nullptr</a>) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">bool</a> <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
             <dd><span></span></dd>
             <dt id="a4b12e45e70ad24d4e83d2976020126bd">
               <span class="m-doc-wrap-bumper">auto <a href="#a4b12e45e70ad24d4e83d2976020126bd" class="m-doc-self">UpdateHullPickMesh</a>(</span><span class="m-doc-wrap"><a href="class_graphics_1_1_model.html" class="m-doc">Model</a>* model,
-              <a href="struct_math_1_1_bounding_box.html" class="m-doc">BoundingBox</a>* dstBbox = nullptr) -&gt; bool <span class="m-label m-flat m-warning">pure virtual</span></span>
+              <a href="struct_math_1_1_bounding_box.html" class="m-doc">BoundingBox</a>* dstBbox = <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">nullptr</a>) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">bool</a> <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
             <dd><span></span></dd>
             <dt id="ae1da88d9119a1f7ffc1f1f78a86e191e">
               <span class="m-doc-wrap-bumper">auto <a href="#ae1da88d9119a1f7ffc1f1f78a86e191e" class="m-doc-self">GetPickMeshTri</a>(</span><span class="m-doc-wrap"><a href="class_graphics_1_1_model.html" class="m-doc">Model</a>* model,
-              int,
-              void** dst,
-              bool useHull) -&gt; bool <span class="m-label m-flat m-warning">pure virtual</span></span>
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a>,
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">void</a>** dst,
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">bool</a> useHull) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">bool</a> <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
             <dd><span></span></dd>
             <dt id="aeb35860f78e346f73e7f9f156f900e91">
               <span class="m-doc-wrap-bumper">auto <a href="#aeb35860f78e346f73e7f9f156f900e91" class="m-doc-self">GetPickMeshTriPositions</a>(</span><span class="m-doc-wrap"><a href="class_graphics_1_1_model.html" class="m-doc">Model</a>* model,
-              int,
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a>,
               <a href="struct_math_1_1_vector3.html" class="m-doc">Vector3</a>&amp; dst1,
               <a href="struct_math_1_1_vector3.html" class="m-doc">Vector3</a>&amp; dst2,
-              <a href="struct_math_1_1_vector3.html" class="m-doc">Vector3</a>&amp; dst3) -&gt; bool <span class="m-label m-flat m-warning">pure virtual</span></span>
+              <a href="struct_math_1_1_vector3.html" class="m-doc">Vector3</a>&amp; dst3) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">bool</a> <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
             <dd><span></span></dd>
             <dt id="a1be98cb725012b9b94b102bd3ac40a5f">
-              <span class="m-doc-wrap-bumper">void <a href="#a1be98cb725012b9b94b102bd3ac40a5f" class="m-doc-self">SetRenderGroups</a>(</span><span class="m-doc-wrap">const eastl::bitset&lt;64&gt;&amp;,
-              const eastl::bitset&lt;64&gt;&amp;) <span class="m-label m-flat m-warning">pure virtual</span></span>
+              <span class="m-doc-wrap-bumper">auto <a href="#a1be98cb725012b9b94b102bd3ac40a5f" class="m-doc-self">SetRenderGroups</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">const</a> eastl::bitset&lt;64&gt;&amp;,
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">const</a> eastl::bitset&lt;64&gt;&amp;) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">void</a> <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
             <dd><span></span></dd>
             <dt id="a66eac0712404dba1b7116d63e30e46eb">
-              <span class="m-doc-wrap-bumper">void <a href="#a66eac0712404dba1b7116d63e30e46eb" class="m-doc-self">GetRenderGroups</a>(</span><span class="m-doc-wrap">eastl::bitset&lt;64&gt;&amp; dst1,
-              eastl::bitset&lt;64&gt;&amp; dst2) <span class="m-label m-flat m-warning">pure virtual</span></span>
+              <span class="m-doc-wrap-bumper">auto <a href="#a66eac0712404dba1b7116d63e30e46eb" class="m-doc-self">GetRenderGroups</a>(</span><span class="m-doc-wrap">eastl::bitset&lt;64&gt;&amp; dst1,
+              eastl::bitset&lt;64&gt;&amp; dst2) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">void</a> <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
             <dd><span></span></dd>
             <dt id="a90a75efab29af8eccf792e14954a29dc">
-              <span class="m-doc-wrap-bumper">void <a href="#a90a75efab29af8eccf792e14954a29dc" class="m-doc-self">SetRenderSetInfo</a>(</span><span class="m-doc-wrap">int indexDrawSet,
-              int info1,
-              int info2) <span class="m-label m-flat m-warning">pure virtual</span></span>
+              <span class="m-doc-wrap-bumper">auto <a href="#a90a75efab29af8eccf792e14954a29dc" class="m-doc-self">SetRenderSetInfo</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> indexDrawSet,
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> info1,
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> info2) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">void</a> <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
             <dd><span></span></dd>
             <dt id="ac3c955ecbe62e7cc2d8d7b98e87cf76d">
-              <span class="m-doc-wrap-bumper">void <a href="#ac3c955ecbe62e7cc2d8d7b98e87cf76d" class="m-doc-self">GetRenderSetInfo</a>(</span><span class="m-doc-wrap">int indexDrawSet,
-              int* dst1,
-              int* dst2) <span class="m-label m-flat m-warning">pure virtual</span></span>
+              <span class="m-doc-wrap-bumper">auto <a href="#ac3c955ecbe62e7cc2d8d7b98e87cf76d" class="m-doc-self">GetRenderSetInfo</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> indexDrawSet,
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a>* dst1,
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a>* dst2) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">void</a> <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
             <dd><span></span></dd>
             <dt id="a4cb573ca8b94dbba33d2c052e9ed47a1">
-              <span class="m-doc-wrap-bumper">void <a href="#a4cb573ca8b94dbba33d2c052e9ed47a1" class="m-doc-self">SetWorldType</a>(</span><span class="m-doc-wrap">int worldType) <span class="m-label m-flat m-warning">pure virtual</span></span>
+              <span class="m-doc-wrap-bumper">auto <a href="#a4cb573ca8b94dbba33d2c052e9ed47a1" class="m-doc-self">SetWorldType</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> worldType) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">void</a> <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
             <dd><span></span></dd>
             <dt id="a690ad0c453c4a977a2d628d72d8cacc7">
-              <span class="m-doc-wrap-bumper">auto <a href="#a690ad0c453c4a977a2d628d72d8cacc7" class="m-doc-self">GetWorldType</a>(</span><span class="m-doc-wrap">) -&gt; int <span class="m-label m-flat m-warning">pure virtual</span></span>
+              <span class="m-doc-wrap-bumper">auto <a href="#a690ad0c453c4a977a2d628d72d8cacc7" class="m-doc-self">GetWorldType</a>(</span><span class="m-doc-wrap">) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
             <dd><span></span></dd>
             <dt id="ae14ad6fe7c93a88c6197e60c3931e017">
-              <span class="m-doc-wrap-bumper">void <a href="#ae14ad6fe7c93a88c6197e60c3931e017" class="m-doc-self">SetActive</a>(</span><span class="m-doc-wrap">bool active) <span class="m-label m-flat m-warning">pure virtual</span></span>
+              <span class="m-doc-wrap-bumper">auto <a href="#ae14ad6fe7c93a88c6197e60c3931e017" class="m-doc-self">SetActive</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">bool</a> active) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">void</a> <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
             <dd>Toggles the visibility of all the world, including the lighting and all the models contained.</dd>
             <dt id="add0fb343e0423a016c74eea12e18937b">
-              <span class="m-doc-wrap-bumper">auto <a href="#add0fb343e0423a016c74eea12e18937b" class="m-doc-self">GetActive</a>(</span><span class="m-doc-wrap">) -&gt; bool <span class="m-label m-flat m-warning">pure virtual</span></span>
+              <span class="m-doc-wrap-bumper">auto <a href="#add0fb343e0423a016c74eea12e18937b" class="m-doc-self">GetActive</a>(</span><span class="m-doc-wrap">) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">bool</a> <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
             <dd><span></span></dd>
-            <dt id="a21fe558a498c581557e512332b34c0d8">
-              <span class="m-doc-wrap-bumper">auto <a href="#a21fe558a498c581557e512332b34c0d8" class="m-doc-self">AsLayer</a>(</span><span class="m-doc-wrap">) -&gt; <a href="class_graphics_1_1_i_layer.html" class="m-doc">ILayer</a>* <span class="m-label m-flat m-warning">pure virtual</span></span>
+            <dt id="a00a1bd0d6d809d1d063b1785f6d8075d">
+              <span class="m-doc-wrap-bumper">auto <a href="#a00a1bd0d6d809d1d063b1785f6d8075d" class="m-doc-self">AsLayer</a>(</span><span class="m-doc-wrap">) -&gt; <a href="class_graphics_1_1_i_layer.html" class="m-doc">ILayer</a>* <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
             <dd>Returns the <a href="class_graphics_1_1_i_layer.html" class="m-doc">ILayer</a> object that can be used to render this model world.</dd>
             <dt id="a8215f4fa9398f66b4fda9fa2e94d2f84">
               <span class="m-doc-wrap-bumper">auto <a href="#a8215f4fa9398f66b4fda9fa2e94d2f84" class="m-doc-self">SetLightingWorld</a>(</span><span class="m-doc-wrap"><a href="class_graphics_1_1_i_lighting_world.html" class="m-doc">ILightingWorld</a>* pWorld,
-              int indexDrawSet,
-              bool drawShadows) -&gt; int <span class="m-label m-flat m-warning">pure virtual</span></span>
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> indexDrawSet,
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">bool</a> drawShadows) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
             <dd><span></span></dd>
-            <dt id="a84e80fd92f051b9814f1337f6570ab1a">
-              <span class="m-doc-wrap-bumper">auto <a href="#a84e80fd92f051b9814f1337f6570ab1a" class="m-doc-self">GetLightingWorld</a>(</span><span class="m-doc-wrap">int indexDrawSet) -&gt; <a href="class_graphics_1_1_i_lighting_world.html" class="m-doc">ILightingWorld</a>* <span class="m-label m-flat m-warning">pure virtual</span></span>
+            <dt id="a52c4ad81bb9cb3c5c7e418dcb11c59fb">
+              <span class="m-doc-wrap-bumper">auto <a href="#a52c4ad81bb9cb3c5c7e418dcb11c59fb" class="m-doc-self">GetLightingWorld</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> indexDrawSet) -&gt; <a href="class_graphics_1_1_i_lighting_world.html" class="m-doc">ILightingWorld</a>* <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
             <dd><span></span></dd>
             <dt id="aaebf5a3847c19be16a9dc11e5f07273d">
-              <span class="m-doc-wrap-bumper">auto <a href="#aaebf5a3847c19be16a9dc11e5f07273d" class="m-doc-self">SetEffectsWorld</a>(</span><span class="m-doc-wrap"><a href="class_swarm_1_1_i_effects_world.html" class="m-doc">Swarm::<wbr />IEffectsWorld</a>*) -&gt; int <span class="m-label m-flat m-warning">pure virtual</span></span>
+              <span class="m-doc-wrap-bumper">auto <a href="#aaebf5a3847c19be16a9dc11e5f07273d" class="m-doc-self">SetEffectsWorld</a>(</span><span class="m-doc-wrap"><a href="class_swarm_1_1_i_effects_world.html" class="m-doc">Swarm::<wbr />IEffectsWorld</a>*) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
             <dd><span></span></dd>
-            <dt id="a9fbb10da4031800dcb2e5564c54e7c44">
-              <span class="m-doc-wrap-bumper">auto <a href="#a9fbb10da4031800dcb2e5564c54e7c44" class="m-doc-self">GetEffectsWorld</a>(</span><span class="m-doc-wrap">) -&gt; <a href="class_swarm_1_1_i_effects_world.html" class="m-doc">Swarm::<wbr />IEffectsWorld</a>* <span class="m-label m-flat m-warning">pure virtual</span></span>
+            <dt id="ad93dcaa8d2ce7fa2525024531b8ce203">
+              <span class="m-doc-wrap-bumper">auto <a href="#ad93dcaa8d2ce7fa2525024531b8ce203" class="m-doc-self">GetEffectsWorld</a>(</span><span class="m-doc-wrap">) -&gt; <a href="class_swarm_1_1_i_effects_world.html" class="m-doc">Swarm::<wbr />IEffectsWorld</a>* <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
             <dd><span></span></dd>
             <dt id="acce5a05d6673c830108aa9a62e38b9dd">
-              <span class="m-doc-wrap-bumper">void <a href="#acce5a05d6673c830108aa9a62e38b9dd" class="m-doc-self">SetWorldBounds</a>(</span><span class="m-doc-wrap">const <a href="struct_math_1_1_bounding_box.html" class="m-doc">BoundingBox</a>&amp; bbox,
-              float,
-              float) <span class="m-label m-flat m-warning">pure virtual</span></span>
+              <span class="m-doc-wrap-bumper">auto <a href="#acce5a05d6673c830108aa9a62e38b9dd" class="m-doc-self">SetWorldBounds</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">const</a> <a href="struct_math_1_1_bounding_box.html" class="m-doc">BoundingBox</a>&amp; bbox,
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">float</a>,
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">float</a>) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">void</a> <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
             <dd><span></span></dd>
             <dt id="a2849f79158d33ff0a523ea7aa82257e1">
-              <span class="m-doc-wrap-bumper">void <a href="#a2849f79158d33ff0a523ea7aa82257e1" class="m-doc-self">SetHorizonCullFactor</a>(</span><span class="m-doc-wrap">float factor) <span class="m-label m-flat m-warning">pure virtual</span></span>
+              <span class="m-doc-wrap-bumper">auto <a href="#a2849f79158d33ff0a523ea7aa82257e1" class="m-doc-self">SetHorizonCullFactor</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">float</a> factor) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">void</a> <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
             <dd><span></span></dd>
             <dt id="aaf21efed866963c98fd992c9d83be872">
-              <span class="m-doc-wrap-bumper">auto <a href="#aaf21efed866963c98fd992c9d83be872" class="m-doc-self">AddOccluder</a>(</span><span class="m-doc-wrap">const <a href="struct_math_1_1_vector3.html" class="m-doc">Vector3</a>&amp; position,
-              float radius) -&gt; int <span class="m-label m-flat m-warning">pure virtual</span></span>
+              <span class="m-doc-wrap-bumper">auto <a href="#aaf21efed866963c98fd992c9d83be872" class="m-doc-self">AddOccluder</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">const</a> <a href="struct_math_1_1_vector3.html" class="m-doc">Vector3</a>&amp; position,
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">float</a> radius) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
             <dd><span></span></dd>
             <dt id="a31f7d7113c1d62579d2cefc5dad971d9">
-              <span class="m-doc-wrap-bumper">void <a href="#a31f7d7113c1d62579d2cefc5dad971d9" class="m-doc-self">UpdateOccluder</a>(</span><span class="m-doc-wrap">int index,
-              const <a href="struct_math_1_1_vector3.html" class="m-doc">Vector3</a>&amp; position,
-              float radius) <span class="m-label m-flat m-warning">pure virtual</span></span>
+              <span class="m-doc-wrap-bumper">auto <a href="#a31f7d7113c1d62579d2cefc5dad971d9" class="m-doc-self">UpdateOccluder</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> index,
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">const</a> <a href="struct_math_1_1_vector3.html" class="m-doc">Vector3</a>&amp; position,
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">float</a> radius) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">void</a> <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
             <dd><span></span></dd>
             <dt id="a19f22c02309979802c7f38ff8f801e16">
-              <span class="m-doc-wrap-bumper">void <a href="#a19f22c02309979802c7f38ff8f801e16" class="m-doc-self">RemoveOccluder</a>(</span><span class="m-doc-wrap">int index) <span class="m-label m-flat m-warning">pure virtual</span></span>
+              <span class="m-doc-wrap-bumper">auto <a href="#a19f22c02309979802c7f38ff8f801e16" class="m-doc-self">RemoveOccluder</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> index) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">void</a> <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
             <dd><span></span></dd>
             <dt id="ade01f25b275a242f3b9f7ad403b16926">
-              <span class="m-doc-wrap-bumper">void <a href="#ade01f25b275a242f3b9f7ad403b16926" class="m-doc-self">func164h</a>(</span><span class="m-doc-wrap">) <span class="m-label m-flat m-warning">pure virtual</span></span>
+              <span class="m-doc-wrap-bumper">auto <a href="#ade01f25b275a242f3b9f7ad403b16926" class="m-doc-self">func164h</a>(</span><span class="m-doc-wrap">) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">void</a> <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
             <dd><span></span></dd>
-            <dt id="a174715a6247d8acfac6f141f8ca2d112">
-              <span class="m-doc-wrap-bumper">auto <a href="#a174715a6247d8acfac6f141f8ca2d112" class="m-doc-self">GetArenaResource</a>(</span><span class="m-doc-wrap"><a href="class_graphics_1_1_model.html" class="m-doc">Model</a>* model) -&gt; <a href="class_render_ware_1_1_render_ware_file.html" class="m-doc">RenderWare::<wbr />RenderWareFile</a>* <span class="m-label m-flat m-warning">pure virtual</span></span>
+            <dt id="a51d81abeef5a786f047cbb9b4dfa7da3">
+              <span class="m-doc-wrap-bumper">auto <a href="#a51d81abeef5a786f047cbb9b4dfa7da3" class="m-doc-self">GetArenaResource</a>(</span><span class="m-doc-wrap"><a href="class_graphics_1_1_model.html" class="m-doc">Model</a>* model) -&gt; <a href="class_render_ware_1_1_render_ware_file.html" class="m-doc">RenderWare::<wbr />RenderWareFile</a>* <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
             <dd><span></span></dd>
             <dt>
               <span class="m-doc-wrap-bumper">auto <a href="#a9108900ebff019173d15e7f772641252" class="m-doc">SetInWorld</a>(</span><span class="m-doc-wrap"><a href="class_graphics_1_1_model.html" class="m-doc">Model</a>* model,
-              bool visible) -&gt; bool <span class="m-label m-flat m-warning">pure virtual</span></span>
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">bool</a> visible) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">bool</a> <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
             <dd>Changes the visibility of a given model inside this world.</dd>
             <dt id="a566b4634b786749c30a4e6142e6e87d0">
-              <span class="m-doc-wrap-bumper">void <a href="#a566b4634b786749c30a4e6142e6e87d0" class="m-doc-self">FinalRelease</a>(</span><span class="m-doc-wrap"><a href="class_graphics_1_1_model.html" class="m-doc">Model</a>* model,
-              bool) <span class="m-label m-flat m-warning">pure virtual</span></span>
+              <span class="m-doc-wrap-bumper">auto <a href="#a566b4634b786749c30a4e6142e6e87d0" class="m-doc-self">FinalRelease</a>(</span><span class="m-doc-wrap"><a href="class_graphics_1_1_model.html" class="m-doc">Model</a>* model,
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">bool</a>) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">void</a> <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
             <dd><span></span></dd>
             <dt id="a4a6af66076df8d6dd2958b0ba5b2363e">
-              <span class="m-doc-wrap-bumper">auto <a href="#a4a6af66076df8d6dd2958b0ba5b2363e" class="m-doc-self">Initialize</a>(</span><span class="m-doc-wrap">) -&gt; bool <span class="m-label m-flat m-warning">pure virtual</span></span>
+              <span class="m-doc-wrap-bumper">auto <a href="#a4a6af66076df8d6dd2958b0ba5b2363e" class="m-doc-self">Initialize</a>(</span><span class="m-doc-wrap">) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">bool</a> <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
             <dd><span></span></dd>
             <dt id="a5131770a045dc63fcbfb4c487e94567b">
-              <span class="m-doc-wrap-bumper">auto <a href="#a5131770a045dc63fcbfb4c487e94567b" class="m-doc-self">Dispose</a>(</span><span class="m-doc-wrap">) -&gt; bool <span class="m-label m-flat m-warning">pure virtual</span></span>
+              <span class="m-doc-wrap-bumper">auto <a href="#a5131770a045dc63fcbfb4c487e94567b" class="m-doc-self">Dispose</a>(</span><span class="m-doc-wrap">) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">bool</a> <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
             <dd><span></span></dd>
             <dt id="a17f93ede400d471103430dc024ded290">
-              <span class="m-doc-wrap-bumper">void <a href="#a17f93ede400d471103430dc024ded290" class="m-doc-self">UpdateHull</a>(</span><span class="m-doc-wrap"><a href="class_graphics_1_1_model.html" class="m-doc">Model</a>* model,
-              <a href="struct_graphics_1_1c_m_w_transformed_hull.html" class="m-doc">cMWTransformedHull</a>* hull) <span class="m-label m-flat m-warning">pure virtual</span></span>
+              <span class="m-doc-wrap-bumper">auto <a href="#a17f93ede400d471103430dc024ded290" class="m-doc-self">UpdateHull</a>(</span><span class="m-doc-wrap"><a href="class_graphics_1_1_model.html" class="m-doc">Model</a>* model,
+              <a href="struct_graphics_1_1c_m_w_transformed_hull.html" class="m-doc">cMWTransformedHull</a>* hull) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">void</a> <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
             <dd><span></span></dd>
           </dl>
@@ -635,21 +635,21 @@
           <h2><a href="#pro-methods">Protected functions</a></h2>
           <dl class="m-doc">
             <dt id="adfab8013bf87eef5f650bcb5f98350df">
-              <span class="m-doc-wrap-bumper">void <a href="#adfab8013bf87eef5f650bcb5f98350df" class="m-doc-self">LoadModelProperties</a>(</span><span class="m-doc-wrap">const <a href="class_app_1_1_property_list.html" class="m-doc">App::<wbr />PropertyList</a>* pPropList,
+              <span class="m-doc-wrap-bumper">auto <a href="#adfab8013bf87eef5f650bcb5f98350df" class="m-doc-self">LoadModelProperties</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">const</a> <a href="class_app_1_1_property_list.html" class="m-doc">App::<wbr />PropertyList</a>* pPropList,
               <a href="class_graphics_1_1c_m_w_model_internal.html" class="m-doc">cMWModelInternal</a>* pAsset,
-              int nFlags,
-              int arg_C)</span>
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> nFlags,
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> arg_C) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">void</a></span>
             </dt>
             <dd><span></span></dd>
           </dl>
         </section>
         <section>
           <h2>Function documentation</h2>
-          <section class="m-doc-details" id="a6cb4c1e4b80598ae746092078d45fb4c"><div>
+          <section class="m-doc-details" id="af68eca7deadbc006f64b505bbe00ccc2"><div>
             <h3>
-              <span class="m-doc-wrap-bumper"><a href="class_graphics_1_1_model.html" class="m-doc">Model</a>* Graphics::<wbr />IModelWorld::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a6cb4c1e4b80598ae746092078d45fb4c" class="m-doc-self">CreateModel</a>(</span><span class="m-doc-wrap">uint32_t instanceID,
-              uint32_t groupID,
-              int arg_8 = 0) <span class="m-label m-warning">pure virtual</span></span></span>
+              <span class="m-doc-wrap-bumper"><a href="class_graphics_1_1_model.html" class="m-doc">Model</a>* Graphics::<wbr />IModelWorld::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#af68eca7deadbc006f64b505bbe00ccc2" class="m-doc-self">CreateModel</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">uint32_<wbr />t</a> instanceID,
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">uint32_<wbr />t</a> groupID,
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> arg_8 = 0) <span class="m-label m-warning">pure virtual</span></span></span>
             </h3>
             <p>Loads a model from the resources system with the given instance and group ID.</p>
             <table class="m-table m-fullwidth m-flat">
@@ -675,9 +675,9 @@
           </div></section>
           <section class="m-doc-details" id="a381a73c96216534758f4cf80c5fccc96"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">bool Graphics::<wbr />IModelWorld::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a381a73c96216534758f4cf80c5fccc96" class="m-doc-self">CallOnLoad</a>(</span><span class="m-doc-wrap"><a href="class_graphics_1_1_model.html" class="m-doc">Model</a>* model,
+              <span class="m-doc-wrap-bumper"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">bool</a> Graphics::<wbr />IModelWorld::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a381a73c96216534758f4cf80c5fccc96" class="m-doc-self">CallOnLoad</a>(</span><span class="m-doc-wrap"><a href="class_graphics_1_1_model.html" class="m-doc">Model</a>* model,
               <a href="namespace_graphics.html#ac354d1c41dc1dd5d2c9fab246990be72" class="m-doc">ModelPredicate_<wbr />t</a> callback,
-              void* data) <span class="m-label m-warning">pure virtual</span></span></span>
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">void</a>* data) <span class="m-label m-warning">pure virtual</span></span></span>
             </h3>
             <p>Calls the given function when the model finishes loading, calling it immediately if the model has already loaded.</p>
             <table class="m-table m-fullwidth m-flat">
@@ -702,8 +702,8 @@
           </div></section>
           <section class="m-doc-details" id="a1b0c21aa041786479b610f618477546e"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">void Graphics::<wbr />IModelWorld::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a1b0c21aa041786479b610f618477546e" class="m-doc-self">PreloadModels</a>(</span><span class="m-doc-wrap"><a href="class_app_1_1_property_list.html" class="m-doc">App::<wbr />PropertyList</a>* propList,
-              int preloadIndex) <span class="m-label m-warning">pure virtual</span></span></span>
+              <span class="m-doc-wrap-bumper"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">void</a> Graphics::<wbr />IModelWorld::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a1b0c21aa041786479b610f618477546e" class="m-doc-self">PreloadModels</a>(</span><span class="m-doc-wrap"><a href="class_app_1_1_property_list.html" class="m-doc">App::<wbr />PropertyList</a>* propList,
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> preloadIndex) <span class="m-label m-warning">pure virtual</span></span></span>
             </h3>
             <p>Reads a list of models and sets them to load.</p>
             <table class="m-table m-fullwidth m-flat">
@@ -724,7 +724,7 @@
           </div></section>
           <section class="m-doc-details" id="abcdd06fd0820414932c83e9d2302542c"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">bool Graphics::<wbr />IModelWorld::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#abcdd06fd0820414932c83e9d2302542c" class="m-doc-self">ModelsHavePreloaded</a>(</span><span class="m-doc-wrap">int preloadIndex) <span class="m-label m-warning">pure virtual</span></span></span>
+              <span class="m-doc-wrap-bumper"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">bool</a> Graphics::<wbr />IModelWorld::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#abcdd06fd0820414932c83e9d2302542c" class="m-doc-self">ModelsHavePreloaded</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> preloadIndex) <span class="m-label m-warning">pure virtual</span></span></span>
             </h3>
             <p>Returns whether a given model preload list has finished loading all models.</p>
             <table class="m-table m-fullwidth m-flat">
@@ -739,16 +739,16 @@
               </tbody>
             </table>
           </div></section>
-          <section class="m-doc-details" id="a38ec06ce89788f979b7f28bcd1075239"><div>
+          <section class="m-doc-details" id="a6ee836a8fc0a635723549345df2ef540"><div>
             <h3>
-              <span class="m-doc-wrap-bumper"><a href="class_graphics_1_1_model.html" class="m-doc">Model</a>* Graphics::<wbr />IModelWorld::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a38ec06ce89788f979b7f28bcd1075239" class="m-doc-self">FindFirstModelAlongLine</a>(</span><span class="m-doc-wrap">const <a href="struct_math_1_1_vector3.html" class="m-doc">Vector3</a>&amp; point1,
-              const <a href="struct_math_1_1_vector3.html" class="m-doc">Vector3</a>&amp; point2,
-              float* factorDst = nullptr,
-              <a href="struct_math_1_1_vector3.html" class="m-doc">Vector3</a>* dstIntersectionPoint = nullptr,
-              <a href="struct_math_1_1_vector3.html" class="m-doc">Vector3</a>* = nullptr,
+              <span class="m-doc-wrap-bumper"><a href="class_graphics_1_1_model.html" class="m-doc">Model</a>* Graphics::<wbr />IModelWorld::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a6ee836a8fc0a635723549345df2ef540" class="m-doc-self">FindFirstModelAlongLine</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">const</a> <a href="struct_math_1_1_vector3.html" class="m-doc">Vector3</a>&amp; point1,
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">const</a> <a href="struct_math_1_1_vector3.html" class="m-doc">Vector3</a>&amp; point2,
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">float</a>* factorDst = <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">nullptr</a>,
+              <a href="struct_math_1_1_vector3.html" class="m-doc">Vector3</a>* dstIntersectionPoint = <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">nullptr</a>,
+              <a href="struct_math_1_1_vector3.html" class="m-doc">Vector3</a>* = <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">nullptr</a>,
               <a href="struct_graphics_1_1_filter_settings.html" class="m-doc">FilterSettings</a>&amp; settings = <a href="struct_graphics_1_1_filter_settings.html" class="m-doc">FilterSettings</a>(),
-              int* = nullptr,
-              int* = nullptr) <span class="m-label m-warning">pure virtual</span></span></span>
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a>* = <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">nullptr</a>,
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a>* = <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">nullptr</a>) <span class="m-label m-warning">pure virtual</span></span></span>
             </h3>
             <p>Gets the first model that is intersected with the segment between <code>point1</code> and <code>point2</code>.</p>
             <table class="m-table m-fullwidth m-flat">
@@ -762,7 +762,7 @@
           </div></section>
           <section class="m-doc-details" id="ab2c2893aaf6915c4c44994470156218e"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">bool Graphics::<wbr />IModelWorld::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ab2c2893aaf6915c4c44994470156218e" class="m-doc-self">FindModels</a>(</span><span class="m-doc-wrap">eastl::vector&lt;<a href="class_graphics_1_1_model.html" class="m-doc">Model</a>*&gt;&amp; dst,
+              <span class="m-doc-wrap-bumper"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">bool</a> Graphics::<wbr />IModelWorld::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ab2c2893aaf6915c4c44994470156218e" class="m-doc-self">FindModels</a>(</span><span class="m-doc-wrap">eastl::vector&lt;<a href="class_graphics_1_1_model.html" class="m-doc">Model</a>*&gt;&amp; dst,
               <a href="struct_graphics_1_1_filter_settings.html" class="m-doc">FilterSettings</a>&amp; settings = <a href="struct_graphics_1_1_filter_settings.html" class="m-doc">FilterSettings</a>()) <span class="m-label m-warning">pure virtual</span></span></span>
             </h3>
             <p>Gets all the models that fit the filter.</p>
@@ -789,13 +789,13 @@
             </table>
 <p>By default, the filter accepts all models.</p>
           </div></section>
-          <section class="m-doc-details" id="a8010b218b9b920fb6e8cb566da848f4e"><div>
+          <section class="m-doc-details" id="aca70976b35187d19ab3d5de64cf1036a"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">bool Graphics::<wbr />IModelWorld::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a8010b218b9b920fb6e8cb566da848f4e" class="m-doc-self">FindModelsAlongLineOrdered</a>(</span><span class="m-doc-wrap">const <a href="struct_math_1_1_vector3.html" class="m-doc">Vector3</a>&amp; point1,
-              const <a href="struct_math_1_1_vector3.html" class="m-doc">Vector3</a>&amp; point2,
-              eastl::vector&lt;eastl::pair&lt;<a href="class_graphics_1_1_model.html" class="m-doc">Model</a>*, float&gt;&gt;&amp; result,
+              <span class="m-doc-wrap-bumper"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">bool</a> Graphics::<wbr />IModelWorld::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#aca70976b35187d19ab3d5de64cf1036a" class="m-doc-self">FindModelsAlongLineOrdered</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">const</a> <a href="struct_math_1_1_vector3.html" class="m-doc">Vector3</a>&amp; point1,
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">const</a> <a href="struct_math_1_1_vector3.html" class="m-doc">Vector3</a>&amp; point2,
+              eastl::vector&lt;eastl::pair&lt;<a href="class_graphics_1_1_model.html" class="m-doc">Model</a>*, <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">float</a>&gt;&gt;&amp; result,
               <a href="struct_graphics_1_1_filter_settings.html" class="m-doc">FilterSettings</a>&amp; settings = <a href="struct_graphics_1_1_filter_settings.html" class="m-doc">FilterSettings</a>(),
-              float = 0.0) <span class="m-label m-warning">pure virtual</span></span></span>
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">float</a> = 0.0) <span class="m-label m-warning">pure virtual</span></span></span>
             </h3>
             <p>Gets all the models that intersect with a segment.</p>
             <table class="m-table m-fullwidth m-flat">
@@ -831,11 +831,11 @@
           </div></section>
           <section class="m-doc-details" id="a91ef1cea9319b067728c66be445f8d26"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">bool Graphics::<wbr />IModelWorld::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a91ef1cea9319b067728c66be445f8d26" class="m-doc-self">FindModelsAlongLine</a>(</span><span class="m-doc-wrap">const <a href="struct_math_1_1_vector3.html" class="m-doc">Vector3</a>&amp; point1,
-              const <a href="struct_math_1_1_vector3.html" class="m-doc">Vector3</a>&amp; point2,
+              <span class="m-doc-wrap-bumper"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">bool</a> Graphics::<wbr />IModelWorld::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a91ef1cea9319b067728c66be445f8d26" class="m-doc-self">FindModelsAlongLine</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">const</a> <a href="struct_math_1_1_vector3.html" class="m-doc">Vector3</a>&amp; point1,
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">const</a> <a href="struct_math_1_1_vector3.html" class="m-doc">Vector3</a>&amp; point2,
               eastl::vector&lt;<a href="class_graphics_1_1_model.html" class="m-doc">Model</a>*&gt;&amp; result,
               <a href="struct_graphics_1_1_filter_settings.html" class="m-doc">FilterSettings</a>&amp; settings = <a href="struct_graphics_1_1_filter_settings.html" class="m-doc">FilterSettings</a>(),
-              float = 0.0) <span class="m-label m-warning">pure virtual</span></span></span>
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">float</a> = 0.0) <span class="m-label m-warning">pure virtual</span></span></span>
             </h3>
             <p>Gets all the models that intersect with a segment.</p>
             <table class="m-table m-fullwidth m-flat">
@@ -870,8 +870,8 @@
           </div></section>
           <section class="m-doc-details" id="a5fc83c8e671817ff8b606252ae73d740"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">bool Graphics::<wbr />IModelWorld::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a5fc83c8e671817ff8b606252ae73d740" class="m-doc-self">FindModelsInSphere</a>(</span><span class="m-doc-wrap">const <a href="struct_math_1_1_vector3.html" class="m-doc">Vector3</a>&amp; center,
-              float radius,
+              <span class="m-doc-wrap-bumper"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">bool</a> Graphics::<wbr />IModelWorld::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a5fc83c8e671817ff8b606252ae73d740" class="m-doc-self">FindModelsInSphere</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">const</a> <a href="struct_math_1_1_vector3.html" class="m-doc">Vector3</a>&amp; center,
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">float</a> radius,
               eastl::vector&lt;<a href="class_graphics_1_1_model.html" class="m-doc">Model</a>*&gt; result,
               <a href="struct_graphics_1_1_filter_settings.html" class="m-doc">FilterSettings</a>&amp; settings = <a href="struct_graphics_1_1_filter_settings.html" class="m-doc">FilterSettings</a>()) <span class="m-label m-warning">pure virtual</span></span></span>
             </h3>
@@ -908,7 +908,7 @@
           </div></section>
           <section class="m-doc-details" id="a8bbf2742fa88575b8dcc756acec31f5c"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">bool Graphics::<wbr />IModelWorld::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a8bbf2742fa88575b8dcc756acec31f5c" class="m-doc-self">FindModelsInBox</a>(</span><span class="m-doc-wrap">const <a href="struct_math_1_1_bounding_box.html" class="m-doc">BoundingBox</a>&amp; bbox,
+              <span class="m-doc-wrap-bumper"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">bool</a> Graphics::<wbr />IModelWorld::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a8bbf2742fa88575b8dcc756acec31f5c" class="m-doc-self">FindModelsInBox</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">const</a> <a href="struct_math_1_1_bounding_box.html" class="m-doc">BoundingBox</a>&amp; bbox,
               eastl::vector&lt;<a href="class_graphics_1_1_model.html" class="m-doc">Model</a>*&gt;&amp; result,
               <a href="struct_graphics_1_1_filter_settings.html" class="m-doc">FilterSettings</a>&amp; settings = <a href="struct_graphics_1_1_filter_settings.html" class="m-doc">FilterSettings</a>()) <span class="m-label m-warning">pure virtual</span></span></span>
             </h3>
@@ -941,7 +941,7 @@
           </div></section>
           <section class="m-doc-details" id="a14950f2f460af5c10c7b46dbe3c7da0c"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">bool Graphics::<wbr />IModelWorld::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a14950f2f460af5c10c7b46dbe3c7da0c" class="m-doc-self">FindModelsInFrustum</a>(</span><span class="m-doc-wrap">const <a href="class_graphics_1_1c_frustum_cull.html" class="m-doc">cFrustumCull</a>&amp; frustum,
+              <span class="m-doc-wrap-bumper"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">bool</a> Graphics::<wbr />IModelWorld::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a14950f2f460af5c10c7b46dbe3c7da0c" class="m-doc-self">FindModelsInFrustum</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">const</a> <a href="class_graphics_1_1c_frustum_cull.html" class="m-doc">cFrustumCull</a>&amp; frustum,
               eastl::vector&lt;<a href="class_graphics_1_1_model.html" class="m-doc">Model</a>*&gt; result,
               <a href="struct_graphics_1_1_filter_settings.html" class="m-doc">FilterSettings</a>&amp; settings = <a href="struct_graphics_1_1_filter_settings.html" class="m-doc">FilterSettings</a>()) <span class="m-label m-warning">pure virtual</span></span></span>
             </h3>
@@ -974,10 +974,10 @@
           </div></section>
           <section class="m-doc-details" id="a934b539d801dad32a2fbee8802270371"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">bool Graphics::<wbr />IModelWorld::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a934b539d801dad32a2fbee8802270371" class="m-doc-self">PickAgainstModel</a>(</span><span class="m-doc-wrap">const <a href="struct_math_1_1_vector3.html" class="m-doc">Vector3</a>&amp; linePoint1,
-              const <a href="struct_math_1_1_vector3.html" class="m-doc">Vector3</a>&amp; linePoint2,
+              <span class="m-doc-wrap-bumper"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">bool</a> Graphics::<wbr />IModelWorld::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a934b539d801dad32a2fbee8802270371" class="m-doc-self">PickAgainstModel</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">const</a> <a href="struct_math_1_1_vector3.html" class="m-doc">Vector3</a>&amp; linePoint1,
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">const</a> <a href="struct_math_1_1_vector3.html" class="m-doc">Vector3</a>&amp; linePoint2,
               <a href="class_graphics_1_1_model.html" class="m-doc">Model</a>* model,
-              float&amp; dstFactor,
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">float</a>&amp; dstFactor,
               <a href="struct_graphics_1_1_filter_settings.html" class="m-doc">FilterSettings</a>&amp; settings = <a href="struct_graphics_1_1_filter_settings.html" class="m-doc">FilterSettings</a>()) <span class="m-label m-warning">pure virtual</span></span></span>
             </h3>
             <p>Intersects a line segment with a model, and gives the point in the segment that intersected with the model.</p>
@@ -1017,8 +1017,8 @@
           </div></section>
           <section class="m-doc-details" id="addbb899fd4e26be3fea4555c5258fcc6"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">bool Graphics::<wbr />IModelWorld::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#addbb899fd4e26be3fea4555c5258fcc6" class="m-doc-self">SphereIntersectsModel</a>(</span><span class="m-doc-wrap">const <a href="struct_math_1_1_vector3.html" class="m-doc">Vector3</a>&amp; center,
-              float radius,
+              <span class="m-doc-wrap-bumper"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">bool</a> Graphics::<wbr />IModelWorld::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#addbb899fd4e26be3fea4555c5258fcc6" class="m-doc-self">SphereIntersectsModel</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">const</a> <a href="struct_math_1_1_vector3.html" class="m-doc">Vector3</a>&amp; center,
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">float</a> radius,
               <a href="class_graphics_1_1_model.html" class="m-doc">Model</a>* model,
               <a href="struct_graphics_1_1_filter_settings.html" class="m-doc">FilterSettings</a>&amp; settings = <a href="struct_graphics_1_1_filter_settings.html" class="m-doc">FilterSettings</a>()) <span class="m-label m-warning">pure virtual</span></span></span>
             </h3>
@@ -1055,7 +1055,7 @@
           </div></section>
           <section class="m-doc-details" id="a40eeafaf62c1ec780580728220fa14c0"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">bool Graphics::<wbr />IModelWorld::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a40eeafaf62c1ec780580728220fa14c0" class="m-doc-self">BoxIntersectsModel</a>(</span><span class="m-doc-wrap">const <a href="struct_math_1_1_bounding_box.html" class="m-doc">BoundingBox</a>&amp; bbox,
+              <span class="m-doc-wrap-bumper"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">bool</a> Graphics::<wbr />IModelWorld::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a40eeafaf62c1ec780580728220fa14c0" class="m-doc-self">BoxIntersectsModel</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">const</a> <a href="struct_math_1_1_bounding_box.html" class="m-doc">BoundingBox</a>&amp; bbox,
               <a href="class_graphics_1_1_model.html" class="m-doc">Model</a>* model,
               <a href="struct_graphics_1_1_filter_settings.html" class="m-doc">FilterSettings</a>&amp; settings = <a href="struct_graphics_1_1_filter_settings.html" class="m-doc">FilterSettings</a>()) <span class="m-label m-warning">pure virtual</span></span></span>
             </h3>
@@ -1088,9 +1088,9 @@
           </div></section>
           <section class="m-doc-details" id="ab2be7a75b1c0909b228dcdf5d6969c7c"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">void Graphics::<wbr />IModelWorld::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ab2be7a75b1c0909b228dcdf5d6969c7c" class="m-doc-self">GetModelResourceIDs</a>(</span><span class="m-doc-wrap"><a href="class_graphics_1_1_model.html" class="m-doc">Model</a>* model,
-              uint32_t* pDstInstanceID,
-              uint32_t* pDstGroupID) <span class="m-label m-warning">pure virtual</span></span></span>
+              <span class="m-doc-wrap-bumper"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">void</a> Graphics::<wbr />IModelWorld::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ab2be7a75b1c0909b228dcdf5d6969c7c" class="m-doc-self">GetModelResourceIDs</a>(</span><span class="m-doc-wrap"><a href="class_graphics_1_1_model.html" class="m-doc">Model</a>* model,
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">uint32_<wbr />t</a>* pDstInstanceID,
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">uint32_<wbr />t</a>* pDstGroupID) <span class="m-label m-warning">pure virtual</span></span></span>
             </h3>
             <p>Used to get the instance and group ID of the given model.</p>
             <table class="m-table m-fullwidth m-flat">
@@ -1115,8 +1115,8 @@
           </div></section>
           <section class="m-doc-details" id="a7fada5cf36cc1e804770dd6488f37d05"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">void Graphics::<wbr />IModelWorld::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a7fada5cf36cc1e804770dd6488f37d05" class="m-doc-self">GetRegionList</a>(</span><span class="m-doc-wrap"><a href="class_graphics_1_1_model.html" class="m-doc">Model</a>* model,
-              eastl::vector&lt;uint32_t&gt;&amp; dst) <span class="m-label m-warning">pure virtual</span></span></span>
+              <span class="m-doc-wrap-bumper"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">void</a> Graphics::<wbr />IModelWorld::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a7fada5cf36cc1e804770dd6488f37d05" class="m-doc-self">GetRegionList</a>(</span><span class="m-doc-wrap"><a href="class_graphics_1_1_model.html" class="m-doc">Model</a>* model,
+              eastl::vector&lt;<a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">uint32_<wbr />t</a>&gt;&amp; dst) <span class="m-label m-warning">pure virtual</span></span></span>
             </h3>
             <p>Gets all the region codes present in this model; to be precise, it gets all the values of the &#x27;region&#x27; shader data of the materials in the model.</p>
             <table class="m-table m-fullwidth m-flat">
@@ -1137,7 +1137,7 @@
           </div></section>
           <section class="m-doc-details" id="a8e29a569db534b6ad6a5be33312b2d11"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">void Graphics::<wbr />IModelWorld::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a8e29a569db534b6ad6a5be33312b2d11" class="m-doc-self">StallUntilLoaded</a>(</span><span class="m-doc-wrap"><a href="class_graphics_1_1_model.html" class="m-doc">Model</a>* model) <span class="m-label m-warning">pure virtual</span></span></span>
+              <span class="m-doc-wrap-bumper"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">void</a> Graphics::<wbr />IModelWorld::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a8e29a569db534b6ad6a5be33312b2d11" class="m-doc-self">StallUntilLoaded</a>(</span><span class="m-doc-wrap"><a href="class_graphics_1_1_model.html" class="m-doc">Model</a>* model) <span class="m-label m-warning">pure virtual</span></span></span>
             </h3>
             <p>Ensures the given model is loaded and all its parameters are updated.</p>
             <table class="m-table m-fullwidth m-flat">
@@ -1154,7 +1154,7 @@
           </div></section>
           <section class="m-doc-details" id="a0925c6cbd963fb5cadb2f385d4c6b593"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">float Graphics::<wbr />IModelWorld::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a0925c6cbd963fb5cadb2f385d4c6b593" class="m-doc-self">GetBoundingRadius</a>(</span><span class="m-doc-wrap"><a href="class_graphics_1_1_model.html" class="m-doc">Model</a>* model) <span class="m-label m-warning">pure virtual</span></span></span>
+              <span class="m-doc-wrap-bumper"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">float</a> Graphics::<wbr />IModelWorld::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a0925c6cbd963fb5cadb2f385d4c6b593" class="m-doc-self">GetBoundingRadius</a>(</span><span class="m-doc-wrap"><a href="class_graphics_1_1_model.html" class="m-doc">Model</a>* model) <span class="m-label m-warning">pure virtual</span></span></span>
             </h3>
             <p>Returns the model bounding radius, calling <a href="class_graphics_1_1_i_model_world.html#a8e29a569db534b6ad6a5be33312b2d11" class="m-doc">StallUntilLoaded()</a> if the model does not have the &#x27;overrideBoundingRadius&#x27; property.</p>
             <table class="m-table m-fullwidth m-flat">
@@ -1175,9 +1175,9 @@
               </tfoot>
             </table>
           </div></section>
-          <section class="m-doc-details" id="a5164cc3aa87ec334f5f2cd9455cda16a"><div>
+          <section class="m-doc-details" id="a953ad2dd44bcc13388437e7056d76000"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">const <a href="struct_math_1_1_bounding_box.html" class="m-doc">BoundingBox</a>&amp; Graphics::<wbr />IModelWorld::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a5164cc3aa87ec334f5f2cd9455cda16a" class="m-doc-self">GetBoundingBox</a>(</span><span class="m-doc-wrap"><a href="class_graphics_1_1_model.html" class="m-doc">Model</a>* model) <span class="m-label m-warning">pure virtual</span></span></span>
+              <span class="m-doc-wrap-bumper"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">const</a> <a href="struct_math_1_1_bounding_box.html" class="m-doc">BoundingBox</a>&amp; Graphics::<wbr />IModelWorld::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a953ad2dd44bcc13388437e7056d76000" class="m-doc-self">GetBoundingBox</a>(</span><span class="m-doc-wrap"><a href="class_graphics_1_1_model.html" class="m-doc">Model</a>* model) <span class="m-label m-warning">pure virtual</span></span></span>
             </h3>
             <p>Returns the model bounding box, calling <a href="class_graphics_1_1_i_model_world.html#a8e29a569db534b6ad6a5be33312b2d11" class="m-doc">StallUntilLoaded()</a> if the model does not have the &#x27;overrideBoundingBox&#x27; property.</p>
             <table class="m-table m-fullwidth m-flat">
@@ -1200,8 +1200,8 @@
           </div></section>
           <section class="m-doc-details" id="a02737429af8f97e0010236fbbde1bfd6"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">int Graphics::<wbr />IModelWorld::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a02737429af8f97e0010236fbbde1bfd6" class="m-doc-self">GetNumAnimations</a>(</span><span class="m-doc-wrap"><a href="class_graphics_1_1_model.html" class="m-doc">Model</a>* model,
-              int animationGroup = 0) const <span class="m-label m-warning">pure virtual</span></span></span>
+              <span class="m-doc-wrap-bumper"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> Graphics::<wbr />IModelWorld::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a02737429af8f97e0010236fbbde1bfd6" class="m-doc-self">GetNumAnimations</a>(</span><span class="m-doc-wrap"><a href="class_graphics_1_1_model.html" class="m-doc">Model</a>* model,
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> animationGroup = 0) const <span class="m-label m-warning">pure virtual</span></span></span>
             </h3>
             <p>Returns the amount of animations contained in the model.</p>
             <table class="m-table m-fullwidth m-flat">
@@ -1222,9 +1222,9 @@
           </div></section>
           <section class="m-doc-details" id="a552c0d2689937a5614dcf4ffebe6ef54"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">int Graphics::<wbr />IModelWorld::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a552c0d2689937a5614dcf4ffebe6ef54" class="m-doc-self">GetAnimationIDs</a>(</span><span class="m-doc-wrap"><a href="class_graphics_1_1_model.html" class="m-doc">Model</a>* model,
-              uint32_t* dst,
-              int animationGroup = 0) const <span class="m-label m-warning">pure virtual</span></span></span>
+              <span class="m-doc-wrap-bumper"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> Graphics::<wbr />IModelWorld::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a552c0d2689937a5614dcf4ffebe6ef54" class="m-doc-self">GetAnimationIDs</a>(</span><span class="m-doc-wrap"><a href="class_graphics_1_1_model.html" class="m-doc">Model</a>* model,
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">uint32_<wbr />t</a>* dst,
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> animationGroup = 0) const <span class="m-label m-warning">pure virtual</span></span></span>
             </h3>
             <p>Used to get the IDs of the animations contained in the model.</p>
             <table class="m-table m-fullwidth m-flat">
@@ -1246,15 +1246,15 @@
                 </tr>
               </tbody>
             </table>
-<p><code>dst</code> must be an array of the size returned by GetAnimCount()</p>
+<p><code>dst</code> must be an array of the size returned by <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">GetAnimCount()</a></p>
           </div></section>
           <section class="m-doc-details" id="a6a134bcb9d6bd34856e37cba16dfb09c"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">void Graphics::<wbr />IModelWorld::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a6a134bcb9d6bd34856e37cba16dfb09c" class="m-doc-self">AnimAction</a>(</span><span class="m-doc-wrap"><a href="class_graphics_1_1_model.html" class="m-doc">Model</a>* model,
-              uint32_t animID,
-              int arg3 = 3,
-              float arg4 = 0.0,
-              int animationGroup = 0) <span class="m-label m-warning">pure virtual</span></span></span>
+              <span class="m-doc-wrap-bumper"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">void</a> Graphics::<wbr />IModelWorld::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a6a134bcb9d6bd34856e37cba16dfb09c" class="m-doc-self">AnimAction</a>(</span><span class="m-doc-wrap"><a href="class_graphics_1_1_model.html" class="m-doc">Model</a>* model,
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">uint32_<wbr />t</a> animID,
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> arg3 = 3,
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">float</a> arg4 = 0.0,
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> animationGroup = 0) <span class="m-label m-warning">pure virtual</span></span></span>
             </h3>
             <p>Sets the current playing animation of a model.</p>
             <table class="m-table m-fullwidth m-flat">
@@ -1287,10 +1287,10 @@
           </div></section>
           <section class="m-doc-details" id="a530e23244753233a35d9a51213f5a94d"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">void Graphics::<wbr />IModelWorld::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a530e23244753233a35d9a51213f5a94d" class="m-doc-self">MoveToTime</a>(</span><span class="m-doc-wrap"><a href="class_graphics_1_1_model.html" class="m-doc">Model</a>* model,
-              uint32_t animID,
-              float time,
-              int animationGroup = 0) <span class="m-label m-warning">pure virtual</span></span></span>
+              <span class="m-doc-wrap-bumper"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">void</a> Graphics::<wbr />IModelWorld::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a530e23244753233a35d9a51213f5a94d" class="m-doc-self">MoveToTime</a>(</span><span class="m-doc-wrap"><a href="class_graphics_1_1_model.html" class="m-doc">Model</a>* model,
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">uint32_<wbr />t</a> animID,
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">float</a> time,
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> animationGroup = 0) <span class="m-label m-warning">pure virtual</span></span></span>
             </h3>
             <p>Changes the current time of an animation in the model.</p>
             <table class="m-table m-fullwidth m-flat">
@@ -1320,10 +1320,10 @@
           </div></section>
           <section class="m-doc-details" id="ac35dd84a0532ed89ac167ebaf1c21681"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">void Graphics::<wbr />IModelWorld::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ac35dd84a0532ed89ac167ebaf1c21681" class="m-doc-self">SetWeight</a>(</span><span class="m-doc-wrap"><a href="class_graphics_1_1_model.html" class="m-doc">Model</a>* model,
-              uint32_t animID,
-              float weight,
-              int animationGroup = 0) <span class="m-label m-warning">pure virtual</span></span></span>
+              <span class="m-doc-wrap-bumper"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">void</a> Graphics::<wbr />IModelWorld::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ac35dd84a0532ed89ac167ebaf1c21681" class="m-doc-self">SetWeight</a>(</span><span class="m-doc-wrap"><a href="class_graphics_1_1_model.html" class="m-doc">Model</a>* model,
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">uint32_<wbr />t</a> animID,
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">float</a> weight,
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> animationGroup = 0) <span class="m-label m-warning">pure virtual</span></span></span>
             </h3>
             <p>Changes the blending weight of a model animation (that is, how much it combines/blends with other animations, default is 1.0)</p>
             <table class="m-table m-fullwidth m-flat">
@@ -1352,8 +1352,8 @@
           </div></section>
           <section class="m-doc-details" id="a2052e7fcad084714e0d0fe90c75a979a"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">void Graphics::<wbr />IModelWorld::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a2052e7fcad084714e0d0fe90c75a979a" class="m-doc-self">SetTimeScale</a>(</span><span class="m-doc-wrap"><a href="class_graphics_1_1_model.html" class="m-doc">Model</a>* model,
-              float timeScale) const <span class="m-label m-warning">pure virtual</span></span></span>
+              <span class="m-doc-wrap-bumper"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">void</a> Graphics::<wbr />IModelWorld::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a2052e7fcad084714e0d0fe90c75a979a" class="m-doc-self">SetTimeScale</a>(</span><span class="m-doc-wrap"><a href="class_graphics_1_1_model.html" class="m-doc">Model</a>* model,
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">float</a> timeScale) const <span class="m-label m-warning">pure virtual</span></span></span>
             </h3>
             <p>Changes the animation time scale of the model, 1.0 is the default.</p>
             <table class="m-table m-fullwidth m-flat">
@@ -1374,11 +1374,11 @@
           </div></section>
           <section class="m-doc-details" id="a0aff6675463792f49cda2cf8ccb76f49"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">bool Graphics::<wbr />IModelWorld::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a0aff6675463792f49cda2cf8ccb76f49" class="m-doc-self">GetAnimationRange</a>(</span><span class="m-doc-wrap"><a href="class_graphics_1_1_model.html" class="m-doc">Model</a>* model,
-              uint32_t animID,
-              float&amp; dstStart,
-              float&amp; dstEnd,
-              int = 0) const <span class="m-label m-warning">pure virtual</span></span></span>
+              <span class="m-doc-wrap-bumper"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">bool</a> Graphics::<wbr />IModelWorld::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a0aff6675463792f49cda2cf8ccb76f49" class="m-doc-self">GetAnimationRange</a>(</span><span class="m-doc-wrap"><a href="class_graphics_1_1_model.html" class="m-doc">Model</a>* model,
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">uint32_<wbr />t</a> animID,
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">float</a>&amp; dstStart,
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">float</a>&amp; dstEnd,
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> = 0) const <span class="m-label m-warning">pure virtual</span></span></span>
             </h3>
             <p>Used to get the start and end time of an animation in the model, in seconds.</p>
             <table class="m-table m-fullwidth m-flat">
@@ -1408,7 +1408,7 @@
           </div></section>
           <section class="m-doc-details" id="ac5439f7b04f703b3650aa59f7b9bfdde"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">int Graphics::<wbr />IModelWorld::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ac5439f7b04f703b3650aa59f7b9bfdde" class="m-doc-self">GetNumBones</a>(</span><span class="m-doc-wrap"><a href="class_graphics_1_1_model.html" class="m-doc">Model</a>* model) const <span class="m-label m-warning">pure virtual</span></span></span>
+              <span class="m-doc-wrap-bumper"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> Graphics::<wbr />IModelWorld::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ac5439f7b04f703b3650aa59f7b9bfdde" class="m-doc-self">GetNumBones</a>(</span><span class="m-doc-wrap"><a href="class_graphics_1_1_model.html" class="m-doc">Model</a>* model) const <span class="m-label m-warning">pure virtual</span></span></span>
             </h3>
             <p>Returns the number of animation bones in the given model.</p>
             <table class="m-table m-fullwidth m-flat">
@@ -1431,8 +1431,8 @@
           </div></section>
           <section class="m-doc-details" id="ada8b76c7c315fd2b8c034cc3942bd7c4"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">int Graphics::<wbr />IModelWorld::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ada8b76c7c315fd2b8c034cc3942bd7c4" class="m-doc-self">GetBoneIDs</a>(</span><span class="m-doc-wrap"><a href="class_graphics_1_1_model.html" class="m-doc">Model</a>* model,
-              uint32_t* dst) <span class="m-label m-warning">pure virtual</span></span></span>
+              <span class="m-doc-wrap-bumper"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> Graphics::<wbr />IModelWorld::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ada8b76c7c315fd2b8c034cc3942bd7c4" class="m-doc-self">GetBoneIDs</a>(</span><span class="m-doc-wrap"><a href="class_graphics_1_1_model.html" class="m-doc">Model</a>* model,
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">uint32_<wbr />t</a>* dst) <span class="m-label m-warning">pure virtual</span></span></span>
             </h3>
             <p>Used to obtain the IDs of the animation bones in the given model.</p>
             <table class="m-table m-fullwidth m-flat">
@@ -1459,8 +1459,8 @@
           </div></section>
           <section class="m-doc-details" id="af7fea9e4e3951e7700ca2ca2cee950c7"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">int Graphics::<wbr />IModelWorld::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#af7fea9e4e3951e7700ca2ca2cee950c7" class="m-doc-self">GetBoneParents</a>(</span><span class="m-doc-wrap"><a href="class_graphics_1_1_model.html" class="m-doc">Model</a>* model,
-              int* dst) <span class="m-label m-warning">pure virtual</span></span></span>
+              <span class="m-doc-wrap-bumper"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> Graphics::<wbr />IModelWorld::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#af7fea9e4e3951e7700ca2ca2cee950c7" class="m-doc-self">GetBoneParents</a>(</span><span class="m-doc-wrap"><a href="class_graphics_1_1_model.html" class="m-doc">Model</a>* model,
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a>* dst) <span class="m-label m-warning">pure virtual</span></span></span>
             </h3>
             <p>Used to obtain the index to the parent of each animation bone in a model (-1 means it is the root and has no parent).</p>
             <table class="m-table m-fullwidth m-flat">
@@ -1487,11 +1487,11 @@
           </div></section>
           <section class="m-doc-details" id="aeb6dc9f95b8ac6014b7333e054b4f08f"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">int Graphics::<wbr />IModelWorld::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#aeb6dc9f95b8ac6014b7333e054b4f08f" class="m-doc-self">SetBoneCallback</a>(</span><span class="m-doc-wrap"><a href="class_graphics_1_1_model.html" class="m-doc">Model</a>* model,
+              <span class="m-doc-wrap-bumper"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> Graphics::<wbr />IModelWorld::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#aeb6dc9f95b8ac6014b7333e054b4f08f" class="m-doc-self">SetBoneCallback</a>(</span><span class="m-doc-wrap"><a href="class_graphics_1_1_model.html" class="m-doc">Model</a>* model,
               <a href="namespace_graphics.html#a782e42e2e8449b0ca093efdf483a1fb6" class="m-doc">BoneCallback_<wbr />t</a> callback,
-              void* data = nullptr,
-              int boneIndex = -1,
-              int arg5 = 0) <span class="m-label m-warning">pure virtual</span></span></span>
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">void</a>* data = <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">nullptr</a>,
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> boneIndex = -1,
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> arg5 = 0) <span class="m-label m-warning">pure virtual</span></span></span>
             </h3>
             <p>Sets a function that is executed for a bone or all bones (when playing an animation?)</p>
             <table class="m-table m-fullwidth m-flat">
@@ -1524,9 +1524,9 @@
           </div></section>
           <section class="m-doc-details" id="a8c2112dfd2f6e70dbde84647ca85f04a"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">void Graphics::<wbr />IModelWorld::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a8c2112dfd2f6e70dbde84647ca85f04a" class="m-doc-self">SetAnimationGroupTransform</a>(</span><span class="m-doc-wrap"><a href="class_graphics_1_1_model.html" class="m-doc">Model</a>* model,
-              int animationGroup,
-              const <a href="class_transform.html" class="m-doc">Transform</a>&amp; transform) <span class="m-label m-warning">pure virtual</span></span></span>
+              <span class="m-doc-wrap-bumper"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">void</a> Graphics::<wbr />IModelWorld::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a8c2112dfd2f6e70dbde84647ca85f04a" class="m-doc-self">SetAnimationGroupTransform</a>(</span><span class="m-doc-wrap"><a href="class_graphics_1_1_model.html" class="m-doc">Model</a>* model,
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> animationGroup,
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">const</a> <a href="class_transform.html" class="m-doc">Transform</a>&amp; transform) <span class="m-label m-warning">pure virtual</span></span></span>
             </h3>
             <p>Sets the transform of a model animation group.</p>
             <table class="m-table m-fullwidth m-flat">
@@ -1551,7 +1551,7 @@
           </div></section>
           <section class="m-doc-details" id="ae5d4b6d725f8c8414b2bd9aafb75a4d4"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">int Graphics::<wbr />IModelWorld::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ae5d4b6d725f8c8414b2bd9aafb75a4d4" class="m-doc-self">GetNumLODs</a>(</span><span class="m-doc-wrap"><a href="class_graphics_1_1_model.html" class="m-doc">Model</a>* model) const <span class="m-label m-warning">pure virtual</span></span></span>
+              <span class="m-doc-wrap-bumper"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> Graphics::<wbr />IModelWorld::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ae5d4b6d725f8c8414b2bd9aafb75a4d4" class="m-doc-self">GetNumLODs</a>(</span><span class="m-doc-wrap"><a href="class_graphics_1_1_model.html" class="m-doc">Model</a>* model) const <span class="m-label m-warning">pure virtual</span></span></span>
             </h3>
             <p>Returns how many mesh versions this model has, which depend on the level of detail (LOD).</p>
             <table class="m-table m-fullwidth m-flat">
@@ -1568,8 +1568,8 @@
           </div></section>
           <section class="m-doc-details" id="a2d199c51a28987e430e75b3b5b56b585"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">void Graphics::<wbr />IModelWorld::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a2d199c51a28987e430e75b3b5b56b585" class="m-doc-self">SetLOD</a>(</span><span class="m-doc-wrap"><a href="class_graphics_1_1_model.html" class="m-doc">Model</a>* model,
-              int lod) const <span class="m-label m-warning">pure virtual</span></span></span>
+              <span class="m-doc-wrap-bumper"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">void</a> Graphics::<wbr />IModelWorld::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a2d199c51a28987e430e75b3b5b56b585" class="m-doc-self">SetLOD</a>(</span><span class="m-doc-wrap"><a href="class_graphics_1_1_model.html" class="m-doc">Model</a>* model,
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> lod) const <span class="m-label m-warning">pure virtual</span></span></span>
             </h3>
             <p>Forces the model to use a certain lod level, or restores it to the default (which is changing lod level depending on distance).</p>
             <table class="m-table m-fullwidth m-flat">
@@ -1590,8 +1590,8 @@
           </div></section>
           <section class="m-doc-details" id="a8bd2c4bef3949cd22787ec6e044d123c"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">void Graphics::<wbr />IModelWorld::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a8bd2c4bef3949cd22787ec6e044d123c" class="m-doc-self">SetEffectRange</a>(</span><span class="m-doc-wrap"><a href="class_graphics_1_1_model.html" class="m-doc">Model</a>* model,
-              double effectRange = -1.0f) const <span class="m-label m-warning">pure virtual</span></span></span>
+              <span class="m-doc-wrap-bumper"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">void</a> Graphics::<wbr />IModelWorld::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a8bd2c4bef3949cd22787ec6e044d123c" class="m-doc-self">SetEffectRange</a>(</span><span class="m-doc-wrap"><a href="class_graphics_1_1_model.html" class="m-doc">Model</a>* model,
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">double</a> effectRange = -1.0f) const <span class="m-label m-warning">pure virtual</span></span></span>
             </h3>
             <p>Sets the effect range for the model.</p>
             <table class="m-table m-fullwidth m-flat">
@@ -1613,10 +1613,10 @@
           </div></section>
           <section class="m-doc-details" id="a934a4c6b3ad4741f736b89fe53d1caa7"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">void Graphics::<wbr />IModelWorld::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a934a4c6b3ad4741f736b89fe53d1caa7" class="m-doc-self">SetEffectsRunning</a>(</span><span class="m-doc-wrap"><a href="class_graphics_1_1_model.html" class="m-doc">Model</a>* model,
-              bool enable,
-              bool startStop,
-              uint32_t instanceID = 0) const <span class="m-label m-warning">pure virtual</span></span></span>
+              <span class="m-doc-wrap-bumper"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">void</a> Graphics::<wbr />IModelWorld::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a934a4c6b3ad4741f736b89fe53d1caa7" class="m-doc-self">SetEffectsRunning</a>(</span><span class="m-doc-wrap"><a href="class_graphics_1_1_model.html" class="m-doc">Model</a>* model,
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">bool</a> enable,
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">bool</a> startStop,
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">uint32_<wbr />t</a> instanceID = 0) const <span class="m-label m-warning">pure virtual</span></span></span>
             </h3>
             <p>Enables or disables the effects in the model.</p>
             <table class="m-table m-fullwidth m-flat">
@@ -1646,11 +1646,11 @@
           </div></section>
           <section class="m-doc-details" id="a673b5874ed2fa91b1ca741df2aa75ef5"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">bool Graphics::<wbr />IModelWorld::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a673b5874ed2fa91b1ca741df2aa75ef5" class="m-doc-self">SetFloatParams</a>(</span><span class="m-doc-wrap"><a href="class_graphics_1_1_model.html" class="m-doc">Model</a>* model,
+              <span class="m-doc-wrap-bumper"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">bool</a> Graphics::<wbr />IModelWorld::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a673b5874ed2fa91b1ca741df2aa75ef5" class="m-doc-self">SetFloatParams</a>(</span><span class="m-doc-wrap"><a href="class_graphics_1_1_model.html" class="m-doc">Model</a>* model,
               <a href="namespace_swarm.html#a60d10256ed2fabe0ec861b9c819ec4e9" class="m-doc">Swarm::<wbr />FloatParams</a> param,
-              const float* data,
-              int count,
-              uint32_t instanceID = 0) const <span class="m-label m-warning">pure virtual</span></span></span>
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">const</a> <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">float</a>* data,
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> count,
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">uint32_<wbr />t</a> instanceID = 0) const <span class="m-label m-warning">pure virtual</span></span></span>
             </h3>
             <p>Changes parameters of effects in a model.</p>
             <table class="m-table m-fullwidth m-flat">
@@ -1689,11 +1689,11 @@
           </div></section>
           <section class="m-doc-details" id="afb106af74d48de98a46ad1918cae33e4"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">bool Graphics::<wbr />IModelWorld::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#afb106af74d48de98a46ad1918cae33e4" class="m-doc-self">SetIntParams</a>(</span><span class="m-doc-wrap"><a href="class_graphics_1_1_model.html" class="m-doc">Model</a>* model,
+              <span class="m-doc-wrap-bumper"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">bool</a> Graphics::<wbr />IModelWorld::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#afb106af74d48de98a46ad1918cae33e4" class="m-doc-self">SetIntParams</a>(</span><span class="m-doc-wrap"><a href="class_graphics_1_1_model.html" class="m-doc">Model</a>* model,
               <a href="namespace_swarm.html#a9ac38fc69759078415264c658a4cf0d5" class="m-doc">Swarm::<wbr />IntParams</a> param,
-              const int* data,
-              int count,
-              uint32_t instanceID = 0) const <span class="m-label m-warning">pure virtual</span></span></span>
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">const</a> <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a>* data,
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> count,
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">uint32_<wbr />t</a> instanceID = 0) const <span class="m-label m-warning">pure virtual</span></span></span>
             </h3>
             <p>Changes parameters of effects in a model.</p>
             <table class="m-table m-fullwidth m-flat">
@@ -1732,10 +1732,10 @@
           </div></section>
           <section class="m-doc-details" id="aa747389d2424adf54c0c8b7f00aa4cf7"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">bool Graphics::<wbr />IModelWorld::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#aa747389d2424adf54c0c8b7f00aa4cf7" class="m-doc-self">SetUnknownParams</a>(</span><span class="m-doc-wrap"><a href="class_graphics_1_1_model.html" class="m-doc">Model</a>* model,
+              <span class="m-doc-wrap-bumper"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">bool</a> Graphics::<wbr />IModelWorld::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#aa747389d2424adf54c0c8b7f00aa4cf7" class="m-doc-self">SetUnknownParams</a>(</span><span class="m-doc-wrap"><a href="class_graphics_1_1_model.html" class="m-doc">Model</a>* model,
               <a href="namespace_swarm.html#a42540da906ab90e418c67ff88ff26535" class="m-doc">Swarm::<wbr />ObjectParams</a> param,
               <a href="class_object.html" class="m-doc">Object</a>* data,
-              uint32_t instanceID = 0) const <span class="m-label m-warning">pure virtual</span></span></span>
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">uint32_<wbr />t</a> instanceID = 0) const <span class="m-label m-warning">pure virtual</span></span></span>
             </h3>
             <p>Changes parameters of effects in a model.</p>
             <table class="m-table m-fullwidth m-flat">
@@ -1770,7 +1770,7 @@
           </div></section>
           <section class="m-doc-details" id="a773eb99dd3200afc244bf83c2bb4001b"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">void Graphics::<wbr />IModelWorld::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a773eb99dd3200afc244bf83c2bb4001b" class="m-doc-self">GetHullBoundingBox</a>(</span><span class="m-doc-wrap"><a href="class_graphics_1_1_model.html" class="m-doc">Model</a>* model,
+              <span class="m-doc-wrap-bumper"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">void</a> Graphics::<wbr />IModelWorld::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a773eb99dd3200afc244bf83c2bb4001b" class="m-doc-self">GetHullBoundingBox</a>(</span><span class="m-doc-wrap"><a href="class_graphics_1_1_model.html" class="m-doc">Model</a>* model,
               <a href="struct_math_1_1_bounding_box.html" class="m-doc">BoundingBox</a>&amp; dst) const <span class="m-label m-warning">pure virtual</span></span></span>
             </h3>
             <p>Gets the bounding box of the hull (collision) model.</p>
@@ -1792,9 +1792,9 @@
           </div></section>
           <section class="m-doc-details" id="ac57aee003ebd98e6ec7f66a521977839"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">int Graphics::<wbr />IModelWorld::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ac57aee003ebd98e6ec7f66a521977839" class="m-doc-self">GetDeformationAnimationIDs</a>(</span><span class="m-doc-wrap"><a href="class_graphics_1_1_model.html" class="m-doc">Model</a>* model,
-              uint32_t* dst,
-              int animationGroup = 0) <span class="m-label m-warning">pure virtual</span></span></span>
+              <span class="m-doc-wrap-bumper"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> Graphics::<wbr />IModelWorld::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ac57aee003ebd98e6ec7f66a521977839" class="m-doc-self">GetDeformationAnimationIDs</a>(</span><span class="m-doc-wrap"><a href="class_graphics_1_1_model.html" class="m-doc">Model</a>* model,
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">uint32_<wbr />t</a>* dst,
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> animationGroup = 0) <span class="m-label m-warning">pure virtual</span></span></span>
             </h3>
             <p>Obtain the animation ID of all the deformation handles in the model.</p>
             <table class="m-table m-fullwidth m-flat">
@@ -1823,9 +1823,9 @@
               </tfoot>
             </table>
           </div></section>
-          <section class="m-doc-details" id="a8a23a6e59c5f4ea002291116f9020ebd"><div>
+          <section class="m-doc-details" id="aaa9de6fb16e0d2cfa3d0cc6688af27e7"><div>
             <h3>
-              <span class="m-doc-wrap-bumper"><a href="class_transform.html" class="m-doc">Transform</a>* Graphics::<wbr />IModelWorld::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a8a23a6e59c5f4ea002291116f9020ebd" class="m-doc-self">GetMeshTransform</a>(</span><span class="m-doc-wrap"><a href="class_graphics_1_1_model.html" class="m-doc">Model</a>* model) <span class="m-label m-warning">pure virtual</span></span></span>
+              <span class="m-doc-wrap-bumper"><a href="class_transform.html" class="m-doc">Transform</a>* Graphics::<wbr />IModelWorld::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#aaa9de6fb16e0d2cfa3d0cc6688af27e7" class="m-doc-self">GetMeshTransform</a>(</span><span class="m-doc-wrap"><a href="class_graphics_1_1_model.html" class="m-doc">Model</a>* model) <span class="m-label m-warning">pure virtual</span></span></span>
             </h3>
             <p>Returns default transform stored in the prop file of the model.</p>
             <table class="m-table m-fullwidth m-flat">
@@ -1842,8 +1842,8 @@
           </div></section>
           <section class="m-doc-details" id="a9108900ebff019173d15e7f772641252"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">bool Graphics::<wbr />IModelWorld::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a9108900ebff019173d15e7f772641252" class="m-doc-self">SetInWorld</a>(</span><span class="m-doc-wrap"><a href="class_graphics_1_1_model.html" class="m-doc">Model</a>* model,
-              bool visible) <span class="m-label m-warning">pure virtual</span></span></span>
+              <span class="m-doc-wrap-bumper"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">bool</a> Graphics::<wbr />IModelWorld::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a9108900ebff019173d15e7f772641252" class="m-doc-self">SetInWorld</a>(</span><span class="m-doc-wrap"><a href="class_graphics_1_1_model.html" class="m-doc">Model</a>* model,
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">bool</a> visible) <span class="m-label m-warning">pure virtual</span></span></span>
             </h3>
             <p>Changes the visibility of a given model inside this world.</p>
             <table class="m-table m-fullwidth m-flat">
@@ -1901,13 +1901,13 @@
     </div>
   </div>
 </div>
-<script src="search-v1.js"></script>
-<script src="searchdata-v1.js" async="async"></script>
+<script src="search-v2.js"></script>
+<script src="searchdata-v2.js" async="async"></script>
 <footer><nav>
   <div class="m-container">
     <div class="m-row">
       <div class="m-col-l-10 m-push-l-1">
-        <p>Spore ModAPI SDK for creating C++ mods for Spore. Created with <a href="https://doxygen.org/">Doxygen</a> 1.8.16 and <a href="https://mcss.mosra.cz/">m.css</a>.</p>
+        <p>Spore ModAPI SDK for creating C++ mods for Spore. Created with <a href="https://doxygen.org/">Doxygen</a> 1.9.8 and <a href="https://mcss.mosra.cz/">m.css</a>.</p>
       </div>
     </div>
   </div>

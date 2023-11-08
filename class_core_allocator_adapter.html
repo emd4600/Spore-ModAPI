@@ -14,7 +14,7 @@
 <header><nav id="navigation">
   <div class="m-container">
     <div class="m-row">
-      <a href="index.html" id="m-navbar-brand" class="m-col-t-8 m-col-m-none m-left-m"><img src="Spore_ModAPI_Icon.png" />Spore ModAPI <span class="m-thin">SDK for creating C++ mods for Spore</span></a>
+      <a href="index.html" id="m-navbar-brand" class="m-col-t-8 m-col-m-none m-left-m"><img src="Spore_ModAPI_Icon.png" alt="" />Spore ModAPI <span class="m-thin">SDK for creating C++ mods for Spore</span></a>
       <div class="m-col-t-4 m-hide-m m-text-right m-nopadr">
         <a href="#search" class="m-doc-search-icon" title="Search" onclick="return showSearch()"><svg style="height: 0.9rem;" viewBox="0 0 16 16">
           <path id="m-doc-search-icon-path" d="m6 0c-3.31 0-6 2.69-6 6 0 3.31 2.69 6 6 6 1.49 0 2.85-0.541 3.89-1.44-0.0164 0.338 0.147 0.759 0.5 1.15l3.22 3.79c0.552 0.614 1.45 0.665 2 0.115 0.55-0.55 0.499-1.45-0.115-2l-3.79-3.22c-0.392-0.353-0.812-0.515-1.15-0.5 0.895-1.05 1.44-2.41 1.44-3.89 0-3.31-2.69-6-6-6zm0 1.56a4.44 4.44 0 0 1 4.44 4.44 4.44 4.44 0 0 1-4.44 4.44 4.44 4.44 0 0 1-4.44-4.44 4.44 4.44 0 0 1 4.44-4.44z"/>
@@ -45,12 +45,12 @@
     <div class="m-row">
       <div class="m-col-l-10 m-push-l-1">
         <h1>
-          <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="_core_allocator_adapter_8h.html">&lt;Spore/CoreAllocatorAdapter.h&gt;</a></div>
-          <div class="m-doc-template">template&lt;class AllocatorType&gt;</div>
+          <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="_core_allocator_adapter_8h.html">&lt;Spore ModAPI/Spore/CoreAllocatorAdapter.h&gt;</a></div>
+          <div class="m-doc-template">template&lt;<a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">class</a> <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">AllocatorType</a>&gt;</div>
           CoreAllocatorAdapter <span class="m-thin">class</span>
         </h1>
         <p><a href="class_core_allocator_adapter.html" class="m-doc">CoreAllocatorAdapter</a>.</p>
-        <div class="m-block m-default">
+        <nav class="m-block m-default">
           <h3>Contents</h3>
           <ul>
             <li>
@@ -62,29 +62,29 @@
               </ul>
             </li>
           </ul>
-        </div>
-<p>Implements the EASTL allocator interface. Allocates memory from an instance of <a href="class_i_core_allocator.html" class="m-doc">ICoreAllocator</a> or another class with an equivalent interface. <a href="class_i_core_allocator.html" class="m-doc">ICoreAllocator</a> is a pure-virtual memory allocation interface used by a number of EA games and shared libraries. It&#x27;s completely unrelated to EASTL, but it&#x27;s prevalent enough that it&#x27;s useful for EASTL to have a built-in adapter for this interface. <a href="class_i_core_allocator.html" class="m-doc">ICoreAllocator</a> is declared in the <a href="_i_core_allocator_8h.html" class="m-doc">ICoreAllocator.h</a> header, but <a href="class_core_allocator_adapter.html" class="m-doc">CoreAllocatorAdapter</a> can work with any equivalent interface, as defined below.</p><p>Expected interface: enum AllocFlags { kFlagTempMemory = 0, kFlagPermMemory = 1 };</p><p>struct CoreAllocator { void* Alloc(size_t size, const char* name, unsigned int allocFlags); void* Alloc(size_t size, const char* name, unsigned int allocFlags, // Not required unless you are working with types that require custom alignment. unsigned int align, unsigned int alignOffset = 0); void Free(void* block, size_t size = 0); static CoreAllocator* GetDefaultAllocator(); };</p><p>Example usage: #include &lt;coreallocator/icoreallocator_interface.h&gt; typedef EA::Allocator::CoreAllocatorAdapter&lt;EASTLTestCoreAllocator&gt; Adapter; eastl::list&lt;Widget, Adapter&gt; widgetList(Adapter(&quot;UI/WidgetList&quot;, pSomeCoreAllocator)); widgetList.push_back(Widget());</p><p>Example usage: #include &lt;MyEquivalentCoreAllocatorInterface.h&gt; eastl::list&lt;Widget, CoreAllocatorAdapter&lt;MyCoreAllocatorInterface&gt; &gt; widgetList; widgetList.push_back(Widget());</p><p>Example usage: #include &lt;coreallocator/icoreallocator_interface.h&gt; typedef EA::Allocator::CoreAllocatorAdapter&lt;EASTLTestCoreAllocator&gt; Adapter; typedef eastl::list&lt;Widget, Adapter&gt; WidgetList; CoreAllocatorFixed&lt;WidgetList::node_type&gt; widgetCoreAllocator(pFixedAllocatorForWidgetListValueType); // CoreAllocatorFixed is a hypothetical implementation of the <a href="class_i_core_allocator.html" class="m-doc">ICoreAllocator</a> interface. WidgetList widgetList(Adapter(&quot;UI/WidgetList&quot;, &amp;widgetCoreAllocator)); // Note that the widgetCoreAllocator is declared before and thus destroyed after the widget list.</p>
+        </nav>
+<p>Implements the EASTL allocator interface. Allocates memory from an instance of <a href="class_i_core_allocator.html" class="m-doc">ICoreAllocator</a> or another class with an equivalent interface. <a href="class_i_core_allocator.html" class="m-doc">ICoreAllocator</a> is a pure-virtual memory allocation interface used by a number of EA games and shared libraries. It&#x27;s completely unrelated to EASTL, but it&#x27;s prevalent enough that it&#x27;s useful for EASTL to have a built-in adapter for this interface. <a href="class_i_core_allocator.html" class="m-doc">ICoreAllocator</a> is declared in the <a href="_i_core_allocator_8h.html" class="m-doc">ICoreAllocator.h</a> header, but <a href="class_core_allocator_adapter.html" class="m-doc">CoreAllocatorAdapter</a> can work with any equivalent interface, as defined below.</p><p>Expected interface: enum AllocFlags { kFlagTempMemory = 0, kFlagPermMemory = 1 };</p><p>struct CoreAllocator { void* Alloc(size_t size, const char* name, unsigned int allocFlags); void* Alloc(size_t size, const char* name, unsigned int allocFlags, // Not required unless you are working with types that require custom alignment. unsigned int align, unsigned int alignOffset = 0); void Free(void* block, size_t size = 0); static CoreAllocator* GetDefaultAllocator(); };</p><p>Example usage: <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">include</a> &lt;coreallocator/icoreallocator_interface.h&gt; typedef EA::Allocator::CoreAllocatorAdapter&lt;EASTLTestCoreAllocator&gt; Adapter; eastl::list&lt;Widget, Adapter&gt; widgetList(Adapter(&quot;UI/WidgetList&quot;, pSomeCoreAllocator)); widgetList.push_back(Widget());</p><p>Example usage: <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">include</a> &lt;MyEquivalentCoreAllocatorInterface.h&gt; eastl::list&lt;Widget, CoreAllocatorAdapter&lt;MyCoreAllocatorInterface&gt; &gt; widgetList; widgetList.push_back(Widget());</p><p>Example usage: <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">include</a> &lt;coreallocator/icoreallocator_interface.h&gt; typedef EA::Allocator::CoreAllocatorAdapter&lt;EASTLTestCoreAllocator&gt; Adapter; typedef eastl::list&lt;Widget, Adapter&gt; WidgetList; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">CoreAllocatorFixed&lt;WidgetList::<wbr />node_type&gt;</a> widgetCoreAllocator(pFixedAllocatorForWidgetListValueType); // CoreAllocatorFixed is a hypothetical implementation of the <a href="class_i_core_allocator.html" class="m-doc">ICoreAllocator</a> interface. WidgetList widgetList(Adapter(&quot;UI/WidgetList&quot;, &amp;widgetCoreAllocator)); // Note that the widgetCoreAllocator is declared before and thus destroyed after the widget list.</p>
         <section id="typeless-methods">
           <h2><a href="#typeless-methods">Constructors, destructors, conversion operators</a></h2>
           <dl class="m-doc">
             <dt id="a608aaa6a177c46aa5a30fc776dd2df3d">
-              <span class="m-doc-wrap-bumper"><a href="#a608aaa6a177c46aa5a30fc776dd2df3d" class="m-doc-self">CoreAllocatorAdapter</a>(</span><span class="m-doc-wrap">const char* pName = EASTL_NAME_VAL(EASTL_ALLOCATOR_DEFAULT_NAME),
-              AllocatorType* pAllocator = <a href="_core_allocator_adapter_8h.html#ad95275634785f3565485330be236fda1" class="m-doc">EASTL_<wbr />CORE_<wbr />ALLOCATOR_<wbr />ADAPTER_<wbr />GET_<wbr />DEFAULT_<wbr />CORE_<wbr />ALLOCATOR</a>())</span>
+              <span class="m-doc-wrap-bumper"><a href="#a608aaa6a177c46aa5a30fc776dd2df3d" class="m-doc-self">CoreAllocatorAdapter</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">const</a> <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">char</a>* pName = <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">EASTL_<wbr />NAME_<wbr />VAL</a>(<a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">EASTL_<wbr />ALLOCATOR_<wbr />DEFAULT_<wbr />NAME</a>),
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">AllocatorType</a>* pAllocator = <a href="_core_allocator_adapter_8h.html#ad95275634785f3565485330be236fda1" class="m-doc">EASTL_<wbr />CORE_<wbr />ALLOCATOR_<wbr />ADAPTER_<wbr />GET_<wbr />DEFAULT_<wbr />CORE_<wbr />ALLOCATOR</a>())</span>
             </dt>
             <dd><span></span></dd>
             <dt id="ad6787d79ff901bbfd6e5371628dae1f3">
-              <span class="m-doc-wrap-bumper"><a href="#ad6787d79ff901bbfd6e5371628dae1f3" class="m-doc-self">CoreAllocatorAdapter</a>(</span><span class="m-doc-wrap">const char* pName,
-              AllocatorType* pAllocator,
-              int flags)</span>
+              <span class="m-doc-wrap-bumper"><a href="#ad6787d79ff901bbfd6e5371628dae1f3" class="m-doc-self">CoreAllocatorAdapter</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">const</a> <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">char</a>* pName,
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">AllocatorType</a>* pAllocator,
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> flags)</span>
             </dt>
             <dd><span></span></dd>
             <dt id="a2367809006dc8f438d25b3dca35ab4ac">
-              <span class="m-doc-wrap-bumper"><a href="#a2367809006dc8f438d25b3dca35ab4ac" class="m-doc-self">CoreAllocatorAdapter</a>(</span><span class="m-doc-wrap">const <a href="class_core_allocator_adapter.html" class="m-doc">CoreAllocatorAdapter</a>&amp; x)</span>
+              <span class="m-doc-wrap-bumper"><a href="#a2367809006dc8f438d25b3dca35ab4ac" class="m-doc-self">CoreAllocatorAdapter</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">const</a> <a href="class_core_allocator_adapter.html" class="m-doc">CoreAllocatorAdapter</a>&amp; x)</span>
             </dt>
             <dd><span></span></dd>
             <dt id="a8e656c5b16d99ab2224c1f9e122e360d">
-              <span class="m-doc-wrap-bumper"><a href="#a8e656c5b16d99ab2224c1f9e122e360d" class="m-doc-self">CoreAllocatorAdapter</a>(</span><span class="m-doc-wrap">const <a href="class_core_allocator_adapter.html" class="m-doc">CoreAllocatorAdapter</a>&amp; x,
-              const char* pName)</span>
+              <span class="m-doc-wrap-bumper"><a href="#a8e656c5b16d99ab2224c1f9e122e360d" class="m-doc-self">CoreAllocatorAdapter</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">const</a> <a href="class_core_allocator_adapter.html" class="m-doc">CoreAllocatorAdapter</a>&amp; x,
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">const</a> <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">char</a>* pName)</span>
             </dt>
             <dd><span></span></dd>
           </dl>
@@ -93,48 +93,48 @@
           <h2><a href="#pub-methods">Public functions</a></h2>
           <dl class="m-doc">
             <dt id="a687e3c31c699c182e7b75c59e5f3cb5b">
-              <span class="m-doc-wrap-bumper">auto <a href="#a687e3c31c699c182e7b75c59e5f3cb5b" class="m-doc-self">operator=</a>(</span><span class="m-doc-wrap">const <a href="class_core_allocator_adapter.html" class="m-doc">CoreAllocatorAdapter</a>&amp; x) -&gt; <a href="class_core_allocator_adapter.html" class="m-doc">CoreAllocatorAdapter</a>&amp;</span>
+              <span class="m-doc-wrap-bumper">auto <a href="#a687e3c31c699c182e7b75c59e5f3cb5b" class="m-doc-self">operator=</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">const</a> <a href="class_core_allocator_adapter.html" class="m-doc">CoreAllocatorAdapter</a>&amp; x) -&gt; <a href="class_core_allocator_adapter.html" class="m-doc">CoreAllocatorAdapter</a>&amp;</span>
             </dt>
             <dd><span></span></dd>
             <dt id="ad656d714dd38d365bbb98bbfd0277c4a">
-              <span class="m-doc-wrap-bumper">auto <a href="#ad656d714dd38d365bbb98bbfd0277c4a" class="m-doc-self">allocate</a>(</span><span class="m-doc-wrap">size_t n,
-              int flags = 0) -&gt; void*</span>
+              <span class="m-doc-wrap-bumper">auto <a href="#ad656d714dd38d365bbb98bbfd0277c4a" class="m-doc-self">allocate</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">size_<wbr />t</a> n,
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> flags = 0) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">void</a>*</span>
             </dt>
             <dd><span></span></dd>
             <dt id="a4333cb0c6706eca22b19472f71ed4817">
-              <span class="m-doc-wrap-bumper">auto <a href="#a4333cb0c6706eca22b19472f71ed4817" class="m-doc-self">allocate</a>(</span><span class="m-doc-wrap">size_t n,
-              size_t alignment,
-              size_t offset,
-              int flags = 0) -&gt; void*</span>
+              <span class="m-doc-wrap-bumper">auto <a href="#a4333cb0c6706eca22b19472f71ed4817" class="m-doc-self">allocate</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">size_<wbr />t</a> n,
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">size_<wbr />t</a> alignment,
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">size_<wbr />t</a> offset,
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> flags = 0) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">void</a>*</span>
             </dt>
             <dd><span></span></dd>
             <dt id="ac610f4dd165ec2368e8eee7debf0df8a">
-              <span class="m-doc-wrap-bumper">void <a href="#ac610f4dd165ec2368e8eee7debf0df8a" class="m-doc-self">deallocate</a>(</span><span class="m-doc-wrap">void* p,
-              size_t n)</span>
+              <span class="m-doc-wrap-bumper">auto <a href="#ac610f4dd165ec2368e8eee7debf0df8a" class="m-doc-self">deallocate</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">void</a>* p,
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">size_<wbr />t</a> n) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">void</a></span>
             </dt>
             <dd><span></span></dd>
             <dt id="a16128a1700a766522aac88de464ca93d">
-              <span class="m-doc-wrap-bumper">auto <a href="#a16128a1700a766522aac88de464ca93d" class="m-doc-self">get_allocator</a>(</span><span class="m-doc-wrap">) const -&gt; AllocatorType*</span>
+              <span class="m-doc-wrap-bumper">auto <a href="#a16128a1700a766522aac88de464ca93d" class="m-doc-self">get_allocator</a>(</span><span class="m-doc-wrap">) const -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">AllocatorType</a>*</span>
             </dt>
             <dd><span></span></dd>
             <dt id="abd6f17caf3659fcce6ab76980a05ea26">
-              <span class="m-doc-wrap-bumper">void <a href="#abd6f17caf3659fcce6ab76980a05ea26" class="m-doc-self">set_allocator</a>(</span><span class="m-doc-wrap">AllocatorType* pAllocator)</span>
+              <span class="m-doc-wrap-bumper">auto <a href="#abd6f17caf3659fcce6ab76980a05ea26" class="m-doc-self">set_allocator</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">AllocatorType</a>* pAllocator) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">void</a></span>
             </dt>
             <dd><span></span></dd>
             <dt id="a2f85bcced676ad86461bbf24cf43e745">
-              <span class="m-doc-wrap-bumper">auto <a href="#a2f85bcced676ad86461bbf24cf43e745" class="m-doc-self">get_flags</a>(</span><span class="m-doc-wrap">) const -&gt; int</span>
+              <span class="m-doc-wrap-bumper">auto <a href="#a2f85bcced676ad86461bbf24cf43e745" class="m-doc-self">get_flags</a>(</span><span class="m-doc-wrap">) const -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a></span>
             </dt>
             <dd><span></span></dd>
             <dt id="ab36df0f0f5b8753ccf13c387fc78da3e">
-              <span class="m-doc-wrap-bumper">void <a href="#ab36df0f0f5b8753ccf13c387fc78da3e" class="m-doc-self">set_flags</a>(</span><span class="m-doc-wrap">int flags)</span>
+              <span class="m-doc-wrap-bumper">auto <a href="#ab36df0f0f5b8753ccf13c387fc78da3e" class="m-doc-self">set_flags</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> flags) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">void</a></span>
             </dt>
             <dd><span></span></dd>
             <dt id="a4d7da81c9fb88bcaae732826fbeed22b">
-              <span class="m-doc-wrap-bumper">auto <a href="#a4d7da81c9fb88bcaae732826fbeed22b" class="m-doc-self">get_name</a>(</span><span class="m-doc-wrap">) const -&gt; const char*</span>
+              <span class="m-doc-wrap-bumper">auto <a href="#a4d7da81c9fb88bcaae732826fbeed22b" class="m-doc-self">get_name</a>(</span><span class="m-doc-wrap">) const -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">const</a> <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">char</a>*</span>
             </dt>
             <dd><span></span></dd>
             <dt id="a00a900d34a408a96ffacb03d578f7e40">
-              <span class="m-doc-wrap-bumper">void <a href="#a00a900d34a408a96ffacb03d578f7e40" class="m-doc-self">set_name</a>(</span><span class="m-doc-wrap">const char* pName)</span>
+              <span class="m-doc-wrap-bumper">auto <a href="#a00a900d34a408a96ffacb03d578f7e40" class="m-doc-self">set_name</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">const</a> <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">char</a>* pName) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">void</a></span>
             </dt>
             <dd><span></span></dd>
           </dl>
@@ -143,11 +143,11 @@
           <h2><a href="#pub-attribs">Public variables</a></h2>
           <dl class="m-doc">
             <dt id="a436515bfdee6b1f40e60e144952bcbdc">
-              AllocatorType* <a href="#a436515bfdee6b1f40e60e144952bcbdc" class="m-doc-self">mpCoreAllocator</a>
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">AllocatorType</a>* <a href="#a436515bfdee6b1f40e60e144952bcbdc" class="m-doc-self">mpCoreAllocator</a>
             </dt>
             <dd><span></span></dd>
             <dt id="ae22cc9adf05c7f76f6cf43bbadf4b0c3">
-              int <a href="#ae22cc9adf05c7f76f6cf43bbadf4b0c3" class="m-doc-self">mnFlags</a>
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> <a href="#ae22cc9adf05c7f76f6cf43bbadf4b0c3" class="m-doc-self">mnFlags</a>
             </dt>
             <dd><span></span></dd>
           </dl>
@@ -190,13 +190,13 @@
     </div>
   </div>
 </div>
-<script src="search-v1.js"></script>
-<script src="searchdata-v1.js" async="async"></script>
+<script src="search-v2.js"></script>
+<script src="searchdata-v2.js" async="async"></script>
 <footer><nav>
   <div class="m-container">
     <div class="m-row">
       <div class="m-col-l-10 m-push-l-1">
-        <p>Spore ModAPI SDK for creating C++ mods for Spore. Created with <a href="https://doxygen.org/">Doxygen</a> 1.8.16 and <a href="https://mcss.mosra.cz/">m.css</a>.</p>
+        <p>Spore ModAPI SDK for creating C++ mods for Spore. Created with <a href="https://doxygen.org/">Doxygen</a> 1.9.8 and <a href="https://mcss.mosra.cz/">m.css</a>.</p>
       </div>
     </div>
   </div>

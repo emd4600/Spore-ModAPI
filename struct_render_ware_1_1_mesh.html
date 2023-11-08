@@ -14,7 +14,7 @@
 <header><nav id="navigation">
   <div class="m-container">
     <div class="m-row">
-      <a href="index.html" id="m-navbar-brand" class="m-col-t-8 m-col-m-none m-left-m"><img src="Spore_ModAPI_Icon.png" />Spore ModAPI <span class="m-thin">SDK for creating C++ mods for Spore</span></a>
+      <a href="index.html" id="m-navbar-brand" class="m-col-t-8 m-col-m-none m-left-m"><img src="Spore_ModAPI_Icon.png" alt="" />Spore ModAPI <span class="m-thin">SDK for creating C++ mods for Spore</span></a>
       <div class="m-col-t-4 m-hide-m m-text-right m-nopadr">
         <a href="#search" class="m-doc-search-icon" title="Search" onclick="return showSearch()"><svg style="height: 0.9rem;" viewBox="0 0 16 16">
           <path id="m-doc-search-icon-path" d="m6 0c-3.31 0-6 2.69-6 6 0 3.31 2.69 6 6 6 1.49 0 2.85-0.541 3.89-1.44-0.0164 0.338 0.147 0.759 0.5 1.15l3.22 3.79c0.552 0.614 1.45 0.665 2 0.115 0.55-0.55 0.499-1.45-0.115-2l-3.79-3.22c-0.392-0.353-0.812-0.515-1.15-0.5 0.895-1.05 1.44-2.41 1.44-3.89 0-3.31-2.69-6-6-6zm0 1.56a4.44 4.44 0 0 1 4.44 4.44 4.44 4.44 0 0 1-4.44 4.44 4.44 4.44 0 0 1-4.44-4.44 4.44 4.44 0 0 1 4.44-4.44z"/>
@@ -46,10 +46,10 @@
       <div class="m-col-l-10 m-push-l-1">
         <h1>
           <span class="m-breadcrumb"><a href="namespace_render_ware.html">RenderWare</a>::<wbr/></span>Mesh <span class="m-thin">struct</span>
-          <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_mesh_8h.html">&lt;Spore/RenderWare/Mesh.h&gt;</a></div>
+          <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_mesh_8h.html">&lt;Spore ModAPI/Spore/RenderWare/Mesh.h&gt;</a></div>
         </h1>
         <p>A structure that represents a basic mesh, made up of vertices and triangles.</p>
-        <div class="m-block m-default">
+        <nav class="m-block m-default">
           <h3>Contents</h3>
           <ul>
             <li>
@@ -63,13 +63,13 @@
               </ul>
             </li>
           </ul>
-        </div>
+        </nav>
 <p>By default it only has one vertex buffer, you can have more by using <a href="struct_render_ware_1_1_mesh__.html" class="m-doc">Mesh_<wbr /></a> . A vertex and index buffer can be shared by multiple meshes, as each mesh specifies the vertex and index count. See <a href="struct_render_ware_1_1_index_buffer.html" class="m-doc">IndexBuffer</a> and <a href="struct_render_ware_1_1_vertex_buffer.html" class="m-doc">VertexBuffer</a> for more information.</p>
         <section id="derived-classes">
           <h2><a href="#derived-classes">Derived classes</a></h2>
           <dl class="m-doc">
             <dt>
-              <div class="m-doc-template">template&lt;int numBuffers = 1&gt;</div>
+              <div class="m-doc-template">template&lt;<a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> numBuffers = 1&gt;</div>
               struct <a href="struct_render_ware_1_1_mesh__.html" class="m-doc">Mesh_</a>
             </dt>
             <dd><span></span></dd>
@@ -79,7 +79,7 @@
           <h2><a href="#pub-static-attribs">Public static variables</a></h2>
           <dl class="m-doc">
             <dt id="af79451126b1cbba0c2f5c787ab14d76e">
-              static const uint32_t <a href="#af79451126b1cbba0c2f5c787ab14d76e" class="m-doc-self">RW_TYPE</a>
+              static <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">const</a> <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">uint32_<wbr />t</a> <a href="#af79451126b1cbba0c2f5c787ab14d76e" class="m-doc-self">RW_TYPE</a>
             </dt>
             <dd><span></span></dd>
           </dl>
@@ -97,24 +97,24 @@
           <h2><a href="#pub-methods">Public functions</a></h2>
           <dl class="m-doc">
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#aa62646a7e6ab57522438994ae0b9dc77" class="m-doc">CalculateTriangleCount</a>(</span><span class="m-doc-wrap">D3DPRIMITIVETYPE primitiveType) -&gt; size_t</span>
+              <span class="m-doc-wrap-bumper">auto <a href="#aa62646a7e6ab57522438994ae0b9dc77" class="m-doc">CalculateTriangleCount</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">D3DPRIMITIVETYPE</a> primitiveType) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">size_<wbr />t</a></span>
             </dt>
             <dd>Returns the number of triangles this mesh would use if the primitive type was the one specified.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">void <a href="#a643850676df5a2ba57cc4f520ef4a8e4" class="m-doc">SetIndexBuffer</a>(</span><span class="m-doc-wrap"><a href="struct_render_ware_1_1_index_buffer.html" class="m-doc">IndexBuffer</a>* pBuffer)</span>
+              <span class="m-doc-wrap-bumper">auto <a href="#a643850676df5a2ba57cc4f520ef4a8e4" class="m-doc">SetIndexBuffer</a>(</span><span class="m-doc-wrap"><a href="struct_render_ware_1_1_index_buffer.html" class="m-doc">IndexBuffer</a>* pBuffer) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">void</a></span>
             </dt>
             <dd>Sets the <a href="struct_render_ware_1_1_index_buffer.html" class="m-doc">IndexBuffer</a> used by this mesh.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">void <a href="#adf83e98d649021ef9f28e5840f4a89c8" class="m-doc">SetIndicesCount</a>(</span><span class="m-doc-wrap">size_t nIndicesCount)</span>
+              <span class="m-doc-wrap-bumper">auto <a href="#adf83e98d649021ef9f28e5840f4a89c8" class="m-doc">SetIndicesCount</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">size_<wbr />t</a> nIndicesCount) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">void</a></span>
             </dt>
             <dd>Sets the number of indicies used in this mesh.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">void <a href="#a028abb10907e917b102ae633f462691d" class="m-doc">SetVertexBuffer</a>(</span><span class="m-doc-wrap">size_t nIndex,
-              <a href="struct_render_ware_1_1_vertex_buffer.html" class="m-doc">VertexBuffer</a>* pVertexBuffer)</span>
+              <span class="m-doc-wrap-bumper">auto <a href="#a028abb10907e917b102ae633f462691d" class="m-doc">SetVertexBuffer</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">size_<wbr />t</a> nIndex,
+              <a href="struct_render_ware_1_1_vertex_buffer.html" class="m-doc">VertexBuffer</a>* pVertexBuffer) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">void</a></span>
             </dt>
             <dd>Sets the <a href="struct_render_ware_1_1_vertex_buffer.html" class="m-doc">VertexBuffer</a> used by this mesh at the given index.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">void <a href="#aa03087a791a7745cb24e8fa3aa4c7c4f" class="m-doc">Render</a>(</span><span class="m-doc-wrap">)</span>
+              <span class="m-doc-wrap-bumper">auto <a href="#aa03087a791a7745cb24e8fa3aa4c7c4f" class="m-doc">Render</a>(</span><span class="m-doc-wrap">) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">void</a></span>
             </dt>
             <dd>Renders this mesh.</dd>
           </dl>
@@ -123,11 +123,11 @@
           <h2><a href="#pub-attribs">Public variables</a></h2>
           <dl class="m-doc">
             <dt id="a939855ecbe2c016844f122123ac6e610">
-              int <a href="#a939855ecbe2c016844f122123ac6e610" class="m-doc-self">instancedSize</a>
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> <a href="#a939855ecbe2c016844f122123ac6e610" class="m-doc-self">instancedSize</a>
             </dt>
             <dd><span></span></dd>
             <dt id="a6117b5435c5a30e615cb2097ed737bb4">
-              D3DPRIMITIVETYPE <a href="#a6117b5435c5a30e615cb2097ed737bb4" class="m-doc-self">primitiveType</a>
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">D3DPRIMITIVETYPE</a> <a href="#a6117b5435c5a30e615cb2097ed737bb4" class="m-doc-self">primitiveType</a>
             </dt>
             <dd><span></span></dd>
             <dt id="ac33fd22ac30a7c592b305830c670a40b">
@@ -135,27 +135,27 @@
             </dt>
             <dd><span></span></dd>
             <dt id="ad035603c10ef96ff042dde738c103207">
-              size_t <a href="#ad035603c10ef96ff042dde738c103207" class="m-doc-self">triangleCount</a>
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">size_<wbr />t</a> <a href="#ad035603c10ef96ff042dde738c103207" class="m-doc-self">triangleCount</a>
             </dt>
             <dd><span></span></dd>
             <dt id="a3dc92c9b6b6f7450eae330e7b5127e8c">
-              size_t <a href="#a3dc92c9b6b6f7450eae330e7b5127e8c" class="m-doc-self">vertexBuffersCount</a>
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">size_<wbr />t</a> <a href="#a3dc92c9b6b6f7450eae330e7b5127e8c" class="m-doc-self">vertexBuffersCount</a>
             </dt>
             <dd><span></span></dd>
             <dt id="af029a13fc6a5d6343076067c6b373343">
-              size_t <a href="#af029a13fc6a5d6343076067c6b373343" class="m-doc-self">firstIndex</a>
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">size_<wbr />t</a> <a href="#af029a13fc6a5d6343076067c6b373343" class="m-doc-self">firstIndex</a>
             </dt>
             <dd><span></span></dd>
             <dt id="af6a8a05b37b94c414c7f375d2eaffd65">
-              size_t <a href="#af6a8a05b37b94c414c7f375d2eaffd65" class="m-doc-self">indicesCount</a>
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">size_<wbr />t</a> <a href="#af6a8a05b37b94c414c7f375d2eaffd65" class="m-doc-self">indicesCount</a>
             </dt>
             <dd><span></span></dd>
             <dt id="ac74184cbc2cde68fc2e187fef3022e50">
-              size_t <a href="#ac74184cbc2cde68fc2e187fef3022e50" class="m-doc-self">firstVertex</a>
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">size_<wbr />t</a> <a href="#ac74184cbc2cde68fc2e187fef3022e50" class="m-doc-self">firstVertex</a>
             </dt>
             <dd><span></span></dd>
             <dt id="a25a5676cc3680ab6765b2ce884f20691">
-              size_t <a href="#a25a5676cc3680ab6765b2ce884f20691" class="m-doc-self">vertexCount</a>
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">size_<wbr />t</a> <a href="#a25a5676cc3680ab6765b2ce884f20691" class="m-doc-self">vertexCount</a>
             </dt>
             <dd><span></span></dd>
             <dt id="a6ba2d6468927f3d310dfc8046317597f">
@@ -168,7 +168,7 @@
           <h2>Function documentation</h2>
           <section class="m-doc-details" id="aa62646a7e6ab57522438994ae0b9dc77"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">size_t RenderWare::<wbr />Mesh::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#aa62646a7e6ab57522438994ae0b9dc77" class="m-doc-self">CalculateTriangleCount</a>(</span><span class="m-doc-wrap">D3DPRIMITIVETYPE primitiveType)</span></span>
+              <span class="m-doc-wrap-bumper"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">size_<wbr />t</a> RenderWare::<wbr />Mesh::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#aa62646a7e6ab57522438994ae0b9dc77" class="m-doc-self">CalculateTriangleCount</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">D3DPRIMITIVETYPE</a> primitiveType)</span></span>
             </h3>
             <p>Returns the number of triangles this mesh would use if the primitive type was the one specified.</p>
             <table class="m-table m-fullwidth m-flat">
@@ -185,7 +185,7 @@
           </div></section>
           <section class="m-doc-details" id="a643850676df5a2ba57cc4f520ef4a8e4"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">void RenderWare::<wbr />Mesh::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a643850676df5a2ba57cc4f520ef4a8e4" class="m-doc-self">SetIndexBuffer</a>(</span><span class="m-doc-wrap"><a href="struct_render_ware_1_1_index_buffer.html" class="m-doc">IndexBuffer</a>* pBuffer)</span></span>
+              <span class="m-doc-wrap-bumper"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">void</a> RenderWare::<wbr />Mesh::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a643850676df5a2ba57cc4f520ef4a8e4" class="m-doc-self">SetIndexBuffer</a>(</span><span class="m-doc-wrap"><a href="struct_render_ware_1_1_index_buffer.html" class="m-doc">IndexBuffer</a>* pBuffer)</span></span>
             </h3>
             <p>Sets the <a href="struct_render_ware_1_1_index_buffer.html" class="m-doc">IndexBuffer</a> used by this mesh.</p>
             <table class="m-table m-fullwidth m-flat">
@@ -203,7 +203,7 @@
           </div></section>
           <section class="m-doc-details" id="adf83e98d649021ef9f28e5840f4a89c8"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">void RenderWare::<wbr />Mesh::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#adf83e98d649021ef9f28e5840f4a89c8" class="m-doc-self">SetIndicesCount</a>(</span><span class="m-doc-wrap">size_t nIndicesCount)</span></span>
+              <span class="m-doc-wrap-bumper"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">void</a> RenderWare::<wbr />Mesh::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#adf83e98d649021ef9f28e5840f4a89c8" class="m-doc-self">SetIndicesCount</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">size_<wbr />t</a> nIndicesCount)</span></span>
             </h3>
             <p>Sets the number of indicies used in this mesh.</p>
             <table class="m-table m-fullwidth m-flat">
@@ -221,7 +221,7 @@
           </div></section>
           <section class="m-doc-details" id="a028abb10907e917b102ae633f462691d"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">void RenderWare::<wbr />Mesh::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a028abb10907e917b102ae633f462691d" class="m-doc-self">SetVertexBuffer</a>(</span><span class="m-doc-wrap">size_t nIndex,
+              <span class="m-doc-wrap-bumper"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">void</a> RenderWare::<wbr />Mesh::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a028abb10907e917b102ae633f462691d" class="m-doc-self">SetVertexBuffer</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">size_<wbr />t</a> nIndex,
               <a href="struct_render_ware_1_1_vertex_buffer.html" class="m-doc">VertexBuffer</a>* pVertexBuffer)</span></span>
             </h3>
             <p>Sets the <a href="struct_render_ware_1_1_vertex_buffer.html" class="m-doc">VertexBuffer</a> used by this mesh at the given index.</p>
@@ -244,7 +244,7 @@
           </div></section>
           <section class="m-doc-details" id="aa03087a791a7745cb24e8fa3aa4c7c4f"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">void RenderWare::<wbr />Mesh::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#aa03087a791a7745cb24e8fa3aa4c7c4f" class="m-doc-self">Render</a>(</span><span class="m-doc-wrap">)</span></span>
+              <span class="m-doc-wrap-bumper"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">void</a> RenderWare::<wbr />Mesh::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#aa03087a791a7745cb24e8fa3aa4c7c4f" class="m-doc-self">Render</a>(</span><span class="m-doc-wrap">)</span></span>
             </h3>
             <p>Renders this mesh.</p>
 <p>This will use the material set in the Renderer.</p>
@@ -288,13 +288,13 @@
     </div>
   </div>
 </div>
-<script src="search-v1.js"></script>
-<script src="searchdata-v1.js" async="async"></script>
+<script src="search-v2.js"></script>
+<script src="searchdata-v2.js" async="async"></script>
 <footer><nav>
   <div class="m-container">
     <div class="m-row">
       <div class="m-col-l-10 m-push-l-1">
-        <p>Spore ModAPI SDK for creating C++ mods for Spore. Created with <a href="https://doxygen.org/">Doxygen</a> 1.8.16 and <a href="https://mcss.mosra.cz/">m.css</a>.</p>
+        <p>Spore ModAPI SDK for creating C++ mods for Spore. Created with <a href="https://doxygen.org/">Doxygen</a> 1.9.8 and <a href="https://mcss.mosra.cz/">m.css</a>.</p>
       </div>
     </div>
   </div>

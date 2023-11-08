@@ -14,7 +14,7 @@
 <header><nav id="navigation">
   <div class="m-container">
     <div class="m-row">
-      <a href="index.html" id="m-navbar-brand" class="m-col-t-8 m-col-m-none m-left-m"><img src="Spore_ModAPI_Icon.png" />Spore ModAPI <span class="m-thin">SDK for creating C++ mods for Spore</span></a>
+      <a href="index.html" id="m-navbar-brand" class="m-col-t-8 m-col-m-none m-left-m"><img src="Spore_ModAPI_Icon.png" alt="" />Spore ModAPI <span class="m-thin">SDK for creating C++ mods for Spore</span></a>
       <div class="m-col-t-4 m-hide-m m-text-right m-nopadr">
         <a href="#search" class="m-doc-search-icon" title="Search" onclick="return showSearch()"><svg style="height: 0.9rem;" viewBox="0 0 16 16">
           <path id="m-doc-search-icon-path" d="m6 0c-3.31 0-6 2.69-6 6 0 3.31 2.69 6 6 6 1.49 0 2.85-0.541 3.89-1.44-0.0164 0.338 0.147 0.759 0.5 1.15l3.22 3.79c0.552 0.614 1.45 0.665 2 0.115 0.55-0.55 0.499-1.45-0.115-2l-3.79-3.22c-0.392-0.353-0.812-0.515-1.15-0.5 0.895-1.05 1.44-2.41 1.44-3.89 0-3.31-2.69-6-6-6zm0 1.56a4.44 4.44 0 0 1 4.44 4.44 4.44 4.44 0 0 1-4.44 4.44 4.44 4.44 0 0 1-4.44-4.44 4.44 4.44 0 0 1 4.44-4.44z"/>
@@ -46,10 +46,10 @@
       <div class="m-col-l-10 m-push-l-1">
         <h1>
           <span class="m-breadcrumb"><a href="namespace_simulator.html">Simulator</a>::<wbr/></span>cTimeOfDay <span class="m-thin">class</span>
-          <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="c_time_of_day_8h.html">&lt;Spore/Simulator/cTimeOfDay.h&gt;</a></div>
+          <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="c_time_of_day_8h.html">&lt;Spore ModAPI/Spore/Simulator/cTimeOfDay.h&gt;</a></div>
         </h1>
         <p>Class used to manage day duration and current time of day in planets.</p>
-        <div class="m-block m-default">
+        <nav class="m-block m-default">
           <h3>Contents</h3>
           <ul>
             <li>
@@ -63,7 +63,7 @@
               </ul>
             </li>
           </ul>
-        </div>
+        </nav>
 <p>The current time of day is not stored directly in this class, but this class can be used to change it.</p><p>This is a singleton class, so use TimeOfDay to access it. For example, <code>TimeOfDay.SetDayDuration(3600)</code>.</p>
         <section id="base-classes">
           <h2><a href="#base-classes">Base classes</a></h2>
@@ -78,7 +78,7 @@
           <h2><a href="#pub-static-attribs">Public static variables</a></h2>
           <dl class="m-doc">
             <dt id="ad41269f7be8505736e0a829d042ce850">
-              static const uint32_t <a href="#ad41269f7be8505736e0a829d042ce850" class="m-doc-self">TYPE</a>
+              static <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">const</a> <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">uint32_<wbr />t</a> <a href="#ad41269f7be8505736e0a829d042ce850" class="m-doc-self">TYPE</a>
             </dt>
             <dd><span></span></dd>
           </dl>
@@ -86,8 +86,8 @@
         <section id="pub-static-methods">
           <h2><a href="#pub-static-methods">Public static functions</a></h2>
           <dl class="m-doc">
-            <dt id="a4874512a94747e195032fcfb8e3e53e1">
-              <span class="m-doc-wrap-bumper">static auto <a href="#a4874512a94747e195032fcfb8e3e53e1" class="m-doc-self">Get</a>(</span><span class="m-doc-wrap">) -&gt; <a href="class_simulator_1_1c_time_of_day.html" class="m-doc">cTimeOfDay</a>*</span>
+            <dt id="a727a41b92ca448b6cf7519d2031981f8">
+              <span class="m-doc-wrap-bumper">static auto <a href="#a727a41b92ca448b6cf7519d2031981f8" class="m-doc-self">Get</a>(</span><span class="m-doc-wrap">) -&gt; <a href="class_simulator_1_1c_time_of_day.html" class="m-doc">cTimeOfDay</a>*</span>
             </dt>
             <dd>Returns the only <a href="class_simulator_1_1c_time_of_day.html" class="m-doc">cTimeOfDay</a> instance; this function also creates that instance the first time it is called.</dd>
           </dl>
@@ -96,21 +96,21 @@
           <h2><a href="#pub-methods">Public functions</a></h2>
           <dl class="m-doc">
             <dt>
-              <span class="m-doc-wrap-bumper">void <a href="#ac4e10b79225a13c46447d1adf071a1fc" class="m-doc">SetSpeedMultiplier</a>(</span><span class="m-doc-wrap">float multiplier)</span>
+              <span class="m-doc-wrap-bumper">auto <a href="#ac4e10b79225a13c46447d1adf071a1fc" class="m-doc">SetSpeedMultiplier</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">float</a> multiplier) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">void</a></span>
             </dt>
             <dd>Makes the day go faster (for values greater than 1) or slower (for values lower than 1).</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">void <a href="#a246033063b4dc964c49c6f61f26e9eba" class="m-doc">SetDayDuration</a>(</span><span class="m-doc-wrap">float seconds)</span>
+              <span class="m-doc-wrap-bumper">auto <a href="#a246033063b4dc964c49c6f61f26e9eba" class="m-doc">SetDayDuration</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">float</a> seconds) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">void</a></span>
             </dt>
             <dd>Sets how many seconds it takes to make a whole day, in seconds.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">void <a href="#a970455c3a07c94266cc7e2fbe66fb0e2" class="m-doc">SetTimeOfDay</a>(</span><span class="m-doc-wrap">float timeOfDay,
-              const <a href="struct_math_1_1_vector3.html" class="m-doc">Math::<wbr />Vector3</a>&amp; position)</span>
+              <span class="m-doc-wrap-bumper">auto <a href="#a970455c3a07c94266cc7e2fbe66fb0e2" class="m-doc">SetTimeOfDay</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">float</a> timeOfDay,
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">const</a> <a href="struct_math_1_1_vector3.html" class="m-doc">Math::<wbr />Vector3</a>&amp; position) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">void</a></span>
             </dt>
             <dd>Sets the time at a specific position in the planet, as a number between 0.0 and 1.0.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#a37fa1955f5a3a7a5275c9e6221e6bbab" class="m-doc">ConvertEarthTime</a>(</span><span class="m-doc-wrap">float hours,
-              float minutes) -&gt; float</span>
+              <span class="m-doc-wrap-bumper">auto <a href="#a37fa1955f5a3a7a5275c9e6221e6bbab" class="m-doc">ConvertEarthTime</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">float</a> hours,
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">float</a> minutes) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">float</a></span>
             </dt>
             <dd>Converts hours and minutes to a fraction of a day, from 0.0 to 1.0, as required by <code>SetTimeOfDay</code> (in Earth time, so a day is 24 hours and an hour 60 minutes).</dd>
           </dl>
@@ -119,11 +119,11 @@
           <h2><a href="#pub-attribs">Public variables</a></h2>
           <dl class="m-doc">
             <dt id="aed2ded7278835277ea206977b695f21c">
-              eastl::vector&lt;float&gt; <a href="#aed2ded7278835277ea206977b695f21c" class="m-doc-self">field_10</a>
+              eastl::vector&lt;<a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">float</a>&gt; <a href="#aed2ded7278835277ea206977b695f21c" class="m-doc-self">field_10</a>
             </dt>
             <dd><span></span></dd>
             <dt id="a389c11479fafcb07abf784d7f31cf13d">
-              float <a href="#a389c11479fafcb07abf784d7f31cf13d" class="m-doc-self">mDayDuration</a>
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">float</a> <a href="#a389c11479fafcb07abf784d7f31cf13d" class="m-doc-self">mDayDuration</a>
             </dt>
             <dd>How many seconds it takes to make a day, in seconds. Default value is 86400.0 (24 hours)</dd>
           </dl>
@@ -132,7 +132,7 @@
           <h2>Function documentation</h2>
           <section class="m-doc-details" id="ac4e10b79225a13c46447d1adf071a1fc"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">void Simulator::<wbr />cTimeOfDay::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ac4e10b79225a13c46447d1adf071a1fc" class="m-doc-self">SetSpeedMultiplier</a>(</span><span class="m-doc-wrap">float multiplier)</span></span>
+              <span class="m-doc-wrap-bumper"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">void</a> Simulator::<wbr />cTimeOfDay::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ac4e10b79225a13c46447d1adf071a1fc" class="m-doc-self">SetSpeedMultiplier</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">float</a> multiplier)</span></span>
             </h3>
             <p>Makes the day go faster (for values greater than 1) or slower (for values lower than 1).</p>
             <table class="m-table m-fullwidth m-flat">
@@ -150,7 +150,7 @@
           </div></section>
           <section class="m-doc-details" id="a246033063b4dc964c49c6f61f26e9eba"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">void Simulator::<wbr />cTimeOfDay::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a246033063b4dc964c49c6f61f26e9eba" class="m-doc-self">SetDayDuration</a>(</span><span class="m-doc-wrap">float seconds)</span></span>
+              <span class="m-doc-wrap-bumper"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">void</a> Simulator::<wbr />cTimeOfDay::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a246033063b4dc964c49c6f61f26e9eba" class="m-doc-self">SetDayDuration</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">float</a> seconds)</span></span>
             </h3>
             <p>Sets how many seconds it takes to make a whole day, in seconds.</p>
             <table class="m-table m-fullwidth m-flat">
@@ -167,8 +167,8 @@
           </div></section>
           <section class="m-doc-details" id="a970455c3a07c94266cc7e2fbe66fb0e2"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">void Simulator::<wbr />cTimeOfDay::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a970455c3a07c94266cc7e2fbe66fb0e2" class="m-doc-self">SetTimeOfDay</a>(</span><span class="m-doc-wrap">float timeOfDay,
-              const <a href="struct_math_1_1_vector3.html" class="m-doc">Math::<wbr />Vector3</a>&amp; position)</span></span>
+              <span class="m-doc-wrap-bumper"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">void</a> Simulator::<wbr />cTimeOfDay::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a970455c3a07c94266cc7e2fbe66fb0e2" class="m-doc-self">SetTimeOfDay</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">float</a> timeOfDay,
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">const</a> <a href="struct_math_1_1_vector3.html" class="m-doc">Math::<wbr />Vector3</a>&amp; position)</span></span>
             </h3>
             <p>Sets the time at a specific position in the planet, as a number between 0.0 and 1.0.</p>
             <table class="m-table m-fullwidth m-flat">
@@ -190,8 +190,8 @@
           </div></section>
           <section class="m-doc-details" id="a37fa1955f5a3a7a5275c9e6221e6bbab"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">float Simulator::<wbr />cTimeOfDay::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a37fa1955f5a3a7a5275c9e6221e6bbab" class="m-doc-self">ConvertEarthTime</a>(</span><span class="m-doc-wrap">float hours,
-              float minutes)</span></span>
+              <span class="m-doc-wrap-bumper"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">float</a> Simulator::<wbr />cTimeOfDay::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a37fa1955f5a3a7a5275c9e6221e6bbab" class="m-doc-self">ConvertEarthTime</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">float</a> hours,
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">float</a> minutes)</span></span>
             </h3>
             <p>Converts hours and minutes to a fraction of a day, from 0.0 to 1.0, as required by <code>SetTimeOfDay</code> (in Earth time, so a day is 24 hours and an hour 60 minutes).</p>
             <table class="m-table m-fullwidth m-flat">
@@ -250,13 +250,13 @@
     </div>
   </div>
 </div>
-<script src="search-v1.js"></script>
-<script src="searchdata-v1.js" async="async"></script>
+<script src="search-v2.js"></script>
+<script src="searchdata-v2.js" async="async"></script>
 <footer><nav>
   <div class="m-container">
     <div class="m-row">
       <div class="m-col-l-10 m-push-l-1">
-        <p>Spore ModAPI SDK for creating C++ mods for Spore. Created with <a href="https://doxygen.org/">Doxygen</a> 1.8.16 and <a href="https://mcss.mosra.cz/">m.css</a>.</p>
+        <p>Spore ModAPI SDK for creating C++ mods for Spore. Created with <a href="https://doxygen.org/">Doxygen</a> 1.9.8 and <a href="https://mcss.mosra.cz/">m.css</a>.</p>
       </div>
     </div>
   </div>
