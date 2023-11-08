@@ -82,7 +82,7 @@ jobs:
           cd Spore-ModAPI
           python3 ../m.css/documentation/doxygen.py "Documentation/Doxygen-mcss.txt" --debug
 
-      - name: Upload documentation pages to GitHub
+      - name: Commit documentation pages
         run: |
           cd Spore-ModAPI
           $count = git log --oneline | wc -l
@@ -94,7 +94,11 @@ jobs:
           git reset
           git add .
           git commit -m "Documentation update $count"
-          git push origin gh-pages
 
-      
-      
+      - name: Upload changes to GitHub
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          branch: gh-pages
+          directory: Spore-ModAPI/modapi-generated-docs/html
+        
