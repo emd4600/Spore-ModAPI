@@ -89,6 +89,11 @@ namespace Simulator
 		kMsgGalaxyGenerateBinaryGM = 0x3DFF9C1,
 		/// Message emitted by the galaxy generation effect to create binary M-M (red-red) star systems (StarType::BinaryMM).
 		kMsgGalaxyGenerateBinaryMM = 0x3DFF9C6,
+
+		/// Simulator::SpaceRareFoundMessage ; sent when a rare item is found (even if it had already been found before) in Space Stage. 
+		kMsgSpaceRareFound = 0xF46092D4,
+		/// Sent when a rare item is discovered (i.e. it had not been found before) in Space Stage. The parameter is a uint32_t* to the rare instance ID.
+		kMsgSpaceRareDiscovered = 0x6779F04,
 	};
 
 	class IMessageParameters
@@ -226,6 +231,17 @@ namespace Simulator
 
 		inline float GetAmountHealed() {
 			return params[0]._float;
+		}
+	};
+
+	/// Sent when a rare item is found (even if it had already been found before) in Space Stage. 
+	class SpaceRareFoundMessage : App::StandardMessage
+	{
+	public:
+		static const uint32_t ID = kMsgSpaceRareFound;
+
+		inline uint32_t GetRareID() {
+			return params[0].uint32;
 		}
 	};
 }

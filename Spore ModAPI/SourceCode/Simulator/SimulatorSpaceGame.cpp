@@ -18,6 +18,7 @@
 * along with this program.  If not, see <http://www.gnu.org/licenses/>.
 ****************************************************************************/
 #include <Spore\Simulator\cSimulatorSpaceGame.h>
+#include <Spore\Simulator\SubSystem\SpaceTrading.h>
 
 namespace Simulator
 {
@@ -29,5 +30,33 @@ namespace Simulator
 	auto_STATIC_METHOD_(cSimulatorSpaceGame, cSimulatorSpaceGame*, Get);
 
 	auto_METHOD_VOID(cSimPlanetHighLOD, DestroyCity, Args(cCity* pCity, uint32_t aggressorEmpireID), Args(pCity, aggressorEmpireID));
+
+	/// -- cSpaceTrading -- ///
+
+	auto_STATIC_METHOD_(cSpaceTrading, cSpaceTrading*, Get);
+
+	auto_METHOD_VOID_(cSpaceTrading, ClearNPCStores);
+
+	auto_STATIC_METHOD(cSpaceTrading, bool, IsRare, Args(const ResourceKey& key), Args(key));
+
+	auto_METHOD_VOID(cSpaceTrading, ObtainTradingObject,
+		Args(const ResourceKey& key, int amount),
+		Args(key, amount));
+
+	auto_METHOD_VOID(cSpaceTrading, AssignPlanetSpice,
+		Args(cPlanetRecord* planetRecord, bool forceReassign),
+		Args(planetRecord, forceReassign));
+
+	auto_METHOD(cSpaceTrading, int, GetRareHasBeenFound,
+		Args(const ResourceKey& key),
+		Args(key));
+
+	auto_METHOD_VOID(cSpaceTrading, SetRareAsFound,
+		Args(const ResourceKey& key, bool found),
+		Args(key, found));
+
+	auto_METHOD_VOID(cSpaceTrading, GenerateNPCStore,
+		Args(cPlanetRecord* planetRecord, LocalizedString& dstSpiceText),
+		Args(planetRecord, dstSpiceText));
 }
 #endif

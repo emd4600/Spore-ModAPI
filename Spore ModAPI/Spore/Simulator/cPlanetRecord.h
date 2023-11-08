@@ -223,6 +223,7 @@ namespace Simulator
 		/* 184h */	PlanetID mKey;
 		/* 188h */	ResourceKey field_188;
 		/* 194h */	TechLevel mTechLevel;
+		/// ID of the spice file of this planet in GroupIDs::SpaceTrading; all zeros if it hasn't been assigned yet
 		/* 198h */	ResourceKey mSpiceGen;
 		/* 1A4h */	ResourceKey mGeneratedTerrainKey;
 	};

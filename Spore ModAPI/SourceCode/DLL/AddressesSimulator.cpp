@@ -80,6 +80,7 @@
 #include <Spore\Simulator\SubSystem\PlanetModel.h>
 #include <Spore\Simulator\SubSystem\SimulatorSystem.h>
 #include <Spore\Simulator\SubSystem\SpacePlayerData.h>
+#include <Spore\Simulator\SubSystem\SpaceTrading.h>
 #include <Spore\Simulator\SubSystem\StarManager.h>
 #include <Spore\Simulator\SubSystem\TerraformingManager.h>
 #include <Spore\Simulator\SubSystem\ToolManager.h>
@@ -662,6 +663,8 @@ namespace Simulator
 	namespace Addresses(cSpaceInventoryItem)
 	{
 		DefineAddress(CreateMultiDeliveryObject, SelectAddress(0xC86C00, 0xC86C00));
+		DefineAddress(SetPropList, SelectAddress(0xC86B20, 0xC87980));
+		DefineAddress(CreateTradingObject, SelectAddress(0x103B470, 0x103A490));
 	}
 
 	namespace Addresses(cTribeArchetype)
@@ -713,12 +716,12 @@ namespace Simulator
 
 	namespace Addresses(cScenarioTerraformMode)
 	{
-		DefineAddress(StartHistoryEntry, SelectAddress(0xF33AD0, 0xF33A90));  // 0xF33AD0, 0xF33A90
-		DefineAddress(CommitHistoryEntry, SelectAddress(0xF45D50, 0xF34400));  // 0xF45D50, 0xF34400
-		DefineAddress(SetWaterColor, SelectAddress(0xF32140, 0xF31FA0));  // 0xF32140, 0xF31FA0
-		DefineAddress(SetAtmosphereColor, SelectAddress(0xF32190, 0xF31FF0));  // 0xF32190, 0xF31FF0
-		DefineAddress(SetBeachColor, SelectAddress(0xF321E0, 0xF32040));  // 0xF321E0, 0xF32040
-		DefineAddress(SetCliffColor, SelectAddress(0xF32230, 0xF32090));  // 0xF32230, 0xF32090
+		DefineAddress(StartHistoryEntry, SelectAddress(0xF33AD0, 0xF33A90));
+		DefineAddress(CommitHistoryEntry, SelectAddress(0xF45D50, 0xF34400));
+		DefineAddress(SetWaterColor, SelectAddress(0xF32140, 0xF31FA0));
+		DefineAddress(SetAtmosphereColor, SelectAddress(0xF32190, 0xF31FF0));
+		DefineAddress(SetBeachColor, SelectAddress(0xF321E0, 0xF32040));
+		DefineAddress(SetCliffColor, SelectAddress(0xF32230, 0xF32090));
 	}
 
 	namespace Addresses(cHerd)
@@ -932,6 +935,18 @@ namespace Simulator
 		DefineAddress(sCellSerializableData, SelectAddress(0x16B8060, 0x16B3DE0));
 	}
 #endif
+
+	namespace Addresses(cSpaceTrading)
+	{
+		DefineAddress(Get, SelectAddress(0xB3D330, 0xB3D4D0));
+		DefineAddress(ClearNPCStores, SelectAddress(0x103E9D0, 0x103DCD0));
+		DefineAddress(IsRare, SelectAddress(0x103B3B0, 0x103A3D0));
+		DefineAddress(ObtainTradingObject, SelectAddress(0x1040890, 0x103FC20));
+		DefineAddress(AssignPlanetSpice, SelectAddress(0x103D750, 0x103CA50));
+		DefineAddress(GetRareHasBeenFound, SelectAddress(0x103BC30, 0x103AC50));
+		DefineAddress(SetRareAsFound, SelectAddress(0x1040820, 0x103FBB0));
+		DefineAddress(GenerateNPCStore, SelectAddress(0x103F560, 0x103E8F0));
+	}
 }
 
 #ifdef SDK_TO_GHIDRA
