@@ -88,6 +88,8 @@ jobs:
           $count = git log --oneline | wc -l
           cd modapi-generated-docs/html
           git init
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
           git remote add origin https://github.com/emd4600/Spore-ModAPI.git
           git fetch
           git symbolic-ref HEAD refs/remotes/origin/gh-pages
