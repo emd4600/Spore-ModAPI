@@ -2,8 +2,7 @@ name: Deploy ModAPI Dlls & Update Documentation
 on:
   push:
     branches:
-      - emd4600-patch-1
-
+      - master
 jobs:
   compile:
     name: Compile ModAPI core DLLS
@@ -79,7 +78,7 @@ jobs:
       - name: Release to GitHub
         uses: softprops/action-gh-release@v1
         with:
-          prerelease: true
+          # prerelease: true
           name: ModAPI SDK v2.5.${{ steps.version_number.outputs.version }}
           tag_name: v2.5.${{ steps.version_number.outputs.version }}
           body: ${{ steps.commit_message.outputs.message }}
