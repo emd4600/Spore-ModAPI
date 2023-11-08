@@ -46,9 +46,9 @@ namespace Math
 	struct Color
 	{
 #ifndef SDK_TO_GHIDRA
-		union {
+		union ColorUnion {
 			uint32_t value;
-			struct
+			struct ColorRGBAValues
 			{
 				uint8_t b;
 				uint8_t g;
@@ -277,16 +277,16 @@ namespace Math
 	/// where each border is at.
 	struct Rectangle {
 #ifndef SDK_TO_GHIDRA
-		union
+		union RectangleUnion
 		{
-			struct
+			struct RectangleXY
 			{
 				float x1;
 				float y1;
 				float x2;
 				float y2;
 			};
-			struct
+			struct RectangleLeftTop
 			{
 				float left;
 				float top;
