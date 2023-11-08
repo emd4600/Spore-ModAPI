@@ -17,7 +17,7 @@ namespace Sporepedia
 
 			/* 00h */	uint32_t paramID;
 			/* 04h */	uint32_t type;
-			/* 08h */	union ParamValuesUnion {
+			/* 08h */	union UNNAMED(ParamValuesUnion) {
 				int valueInt;
 				float valueFloat;
 			};
@@ -43,12 +43,12 @@ namespace Sporepedia
 		{
 			/* 00h */	uint32_t paramID;
 			/* 04h */	uint32_t type;  // 0x2E1A7FF
-			union ParameterRangeUnion {
-				struct ParameterFloatRange {
+			union UNNAMED(ParameterRangeUnion) {
+				struct UNNAMED(ParameterFloatRange) {
 					/* 08h */	float fminValue;
 					/* 0Ch */	float fmaxValue;
 				};
-				struct ParameterIntRange {
+				struct UNNAMED(ParameterIntRange) {
 					/* 08h */	int iminValue;
 					/* 0Ch */	int imaxValue;
 				};

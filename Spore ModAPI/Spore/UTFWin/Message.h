@@ -81,7 +81,7 @@ namespace UTFWin
 			return source->GetControlID() == controlID;
 		}
 
-		union MessageUnion
+		union UNNAMED(MessageUnion)
 		{
 			///
 			/// The event arguments for the message types: UTFWin::kMsgKeyDown | UTFWin::kMsgKeyUp | UTFWin::kMsgKeyDown2

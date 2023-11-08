@@ -24,6 +24,11 @@
 #include <Windows.h>
 #include <Spore\CppRevEng.h>
 
+#ifdef DOXYGEN
+#define UNNAMED(altName) altName
+#else
+#define UNNAMED(altName)
+#endif
 
 #ifdef MODAPI_DLL_EXPORT 
 /*Enabled as "export" while compiling the dll project*/
