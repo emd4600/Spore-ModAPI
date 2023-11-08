@@ -56,15 +56,23 @@ jobs:
       #     name: compiled-modapi-dlls-bundle
       #     path: SporeModAPIdlls.zip
 
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0  # Needed to count all the commits
+          path: Spore-ModAPI
+
       - name: Get version number
         id: version_number
         run: |
+          cd Spore-ModAPI
           count=$(git log --oneline | wc -l)
           echo "version=$count" >> $GITHUB_OUTPUT
 
       - name: Get commit message
         id: commit_message
         run: |
+          cd Spore-ModAPI
           message=$(git log -1 --pretty=%B)
           echo "message=$message" >> $env:GITHUB_OUTPUT
 
