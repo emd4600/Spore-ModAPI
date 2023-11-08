@@ -22,7 +22,7 @@
 namespace GameCiv
 {
 #ifndef SDK_TO_GHIDRA
-	enum
+	enum GameCivMessageIDs
 	{
 		0x1A0219E,
 		0x164B4EB,

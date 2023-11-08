@@ -1,0 +1,141 @@
+name: Deploy ModAPI Dlls & Update Documentation
+on:
+  push:
+    branches:
+      - master
+jobs:
+  compile:
+    name: Compile ModAPI core DLLS
+    runs-on: windows-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0  # Needed to count all the commits
+
+      - name: Add msbuild to PATH
+        uses: microsoft/setup-msbuild@v1
+    
+      - name: Set up MSVC cmd
+        uses: ilammy/msvc-dev-cmd@v1.12.1
+        with:
+          arch: x86
+
+      - name: Compile DLLs
+        run: |
+          $count = git log --oneline | wc -l
+          echo "Building version $count"
+          msbuild "Spore ModAPI" -t:BuildDlls -p:BuildVer=$count -p:Config=Release
+
+      - name: Upload compiled files
+        uses: actions/upload-artifact@v3.1.3
+        with:
+          name: compiled-modapi-dlls
+          path: |
+            dll\Release\SporeModAPI.march2017.dll
+            dll\Release\SporeModAPI.disk.dll
+            dll\Release\SporeModAPI.lib
+
+  deploy:
+    name: Deploy ModAPI DLLs update
+    needs: compile
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download compiled files
+        uses: actions/download-artifact@v2.1.1
+        with:
+          name: compiled-modapi-dlls
+
+      - name: Create update bundle
+        run: zip SporeModAPIdlls.zip SporeModAPI.march2017.dll SporeModAPI.disk.dll SporeModAPI.lib
+
+      # - name: Upload dlls bundle
+      #   uses: actions/upload-artifact@v3.1.3
+      #   with:
+      #     name: compiled-modapi-dlls-bundle
+      #     path: SporeModAPIdlls.zip
+
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0  # Needed to count all the commits
+          path: Spore-ModAPI
+
+      - name: Get version number
+        id: version_number
+        run: |
+          cd Spore-ModAPI
+          count=$(git log --oneline | wc -l)
+          echo "version=$count" >> $GITHUB_OUTPUT
+
+      - name: Get commit message
+        id: commit_message
+        run: |
+          cd Spore-ModAPI
+          message=$(git log -1 --pretty=%B)
+          echo "message=$message" >> $env:GITHUB_OUTPUT
+
+      - name: Release to GitHub
+        uses: softprops/action-gh-release@v1
+        with:
+          # prerelease: true
+          name: ModAPI SDK v2.5.${{ steps.version_number.outputs.version }}
+          tag_name: v2.5.${{ steps.version_number.outputs.version }}
+          body: ${{ steps.commit_message.outputs.message }}
+          files: SporeModAPIdlls.zip
+
+  documentation:
+    name: Generate documentation
+    runs-on: ubuntu-latest
+    steps:
+      - name: Install Doxygen
+        uses: ssciwr/doxygen-install@v1.2.0
+      
+      - name: Setup Python
+        uses: actions/setup-python@v4.7.1
+
+      - name: Install Python dependencies
+        run: pip3 install jinja2 Pygments
+
+      - name: Checkout m.css repository
+        uses: actions/checkout@v4
+        with:
+          repository: emd4600/m.css
+          path: m.css
+
+      - name: Checkout ModAPI repository
+        uses: actions/checkout@v4
+        with:
+          path: Spore-ModAPI
+          fetch-depth: 0  # Needed to count all the commits
+
+      - name: Run m.css
+        run: |
+          cd Spore-ModAPI
+          python3 ../m.css/documentation/doxygen.py "Documentation/Doxygen-mcss.txt" --debug
+
+      - name: Commit documentation pages
+        run: |
+          cd Spore-ModAPI
+          count=$(git log --oneline | wc -l)
+          cd modapi-generated-docs/html
+          # Needed to ensure Jekyll is not run, as it omits certain files
+          touch .nojekyll
+          git init
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          git remote add origin https://github.com/emd4600/Spore-ModAPI.git
+          git fetch
+          git symbolic-ref HEAD refs/remotes/origin/gh-pages
+          git reset
+          git add .
+          git commit -m "Documentation update $count"
+
+      - name: Upload changes to GitHub
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          branch: gh-pages
+          directory: Spore-ModAPI/modapi-generated-docs/html
+          
+        

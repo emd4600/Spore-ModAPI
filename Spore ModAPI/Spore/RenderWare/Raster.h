@@ -92,7 +92,7 @@ namespace RenderWare
 		/* 00h */	D3DFORMAT format;
 		/* 04h */	uint16_t flags;  // the first byte chooses type
 		/* 06h */	uint16_t volumeDepth;
-		/* 08h */	union {
+		/* 08h */	union UNNAMED(RasterDirect3dData) {
 			IDirect3DSurface9* pSurface;
 			IDirect3DTexture9* pTexture;
 			IDirect3DCubeTexture9* pCubeTexture;

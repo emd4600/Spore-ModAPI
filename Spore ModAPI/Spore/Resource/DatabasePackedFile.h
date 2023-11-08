@@ -66,9 +66,6 @@ namespace Resource
 	{
 
 	public:
-		friend class PFRecordRead;
-		friend class PFRecordWrite;
-
 		static const uint32_t DATABASE_TYPE = 0x2A43BD44;  // returned by GetDatabaseType
 
 		static const uint32_t TYPE = 0x226A25B;

@@ -36,7 +36,7 @@ namespace Graphics
 {
 	class UnkMatManager
 	{
-	protected:
+	public:
 		/* 00h */	int field_00;
 		/* 04h */	int field_04;
 		/* 08h */	eastl::hash_map<int, int> field_08;
@@ -53,8 +53,6 @@ namespace Graphics
 		/* 110h */	eastl::string field_110;
 		/* 120h */	char field_120[0x1C];  // not initialized
 		/* 13Ch */	eastl::hash_map<int, int> field_13C;
-
-		friend class cMaterialManager;
 	};
 
 

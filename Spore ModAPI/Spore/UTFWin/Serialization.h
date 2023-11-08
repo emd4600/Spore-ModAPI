@@ -82,7 +82,7 @@ namespace UTFWin
 
 
 		int field_0;
-		union
+		union UNNAMED(SerializedPropertyUnion)
 		{
 			PropertyMethods* pMethods;
 			StructSerialization* pStructSerialization;

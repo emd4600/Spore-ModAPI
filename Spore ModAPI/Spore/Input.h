@@ -33,7 +33,7 @@ enum KeyModifierFlags
 union KeyModifiers
 {
 	uint32_t value;
-	struct {
+	struct UNNAMED(KeyModifiersBits) {
 		int IsShiftDown : 1;
 		int IsCtrlDown : 1;
 		int IsAltDown : 1;
@@ -54,7 +54,7 @@ enum MouseStateFlags
 union MouseState
 {
 	uint32_t value;
-	struct {
+	struct UNNAMED(MouseStateBits) {
 		int IsShiftDown : 1;
 		int IsCtrlDown : 1;
 		int IsAltDown : 1;

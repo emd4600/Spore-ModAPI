@@ -834,7 +834,7 @@ namespace App
 		void Clear(bool arg_0);
 
 	protected:
-		union
+		union UNNAMED(PropertyValues)
 		{
 
 			bool		mValueBool;
@@ -849,17 +849,17 @@ namespace App
 			//uint64_t		mValue;
 			//double			mValue;
 			float		mValueFloat;
-			struct { ResourceKey mValueKey; };
-			struct { Vector2	mValueVector2; };
-			struct { Vector3	mValueVector3; };
-			struct { Vector4	mValueVector4; };
-			struct { ColorRGB	mValueColorRGB; };
-			struct { ColorRGBA	mValueColorRGBA; };
+			struct UNNAMED(PropertyResourceKey) { ResourceKey mValueKey; };
+			struct UNNAMED(PropertyVector2) { Vector2	mValueVector2; };
+			struct UNNAMED(PropertyVector3){ Vector3	mValueVector3; };
+			struct UNNAMED(PropertyVector4) { Vector4	mValueVector4; };
+			struct UNNAMED(PropertyColorRGB) { ColorRGB	mValueColorRGB; };
+			struct UNNAMED(PropertyColorRGBA) { ColorRGBA	mValueColorRGBA; };
 
-			struct { eastl::string8	mValueString8; };
-			struct { eastl::string16	mValueString16; };
+			struct UNNAMED(PropertyString8) { eastl::string8	mValueString8; };
+			struct UNNAMED(PropertyString16) { eastl::string16	mValueString16; };
 
-			struct
+			struct UNNAMED(PropertyArray)
 			{
 				void* mpData;
 				size_t mnItemSize;
