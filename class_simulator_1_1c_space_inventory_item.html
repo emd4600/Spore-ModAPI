@@ -116,11 +116,18 @@
           <h2><a href="#pub-static-methods">Public static functions</a></h2>
           <dl class="m-doc">
             <dt>
-              <span class="m-doc-wrap-bumper">static auto <a href="#aa92864fc46a271fcf63cc86444a53108" class="m-doc">CreateMultiDeliveryObject</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_space_inventory_item.html" class="m-doc">cSpaceInventoryItem</a>&amp; dst,
+              <span class="m-doc-wrap-bumper">static auto <a href="#a38d7b350742378986fd4e98b7512d424" class="m-doc">CreateMultiDeliveryObject</a>(</span><span class="m-doc-wrap"><a href="c_space_inventory_item_8h.html#aa81d947a8a712f43f0eef7d0ee0f8ce5" class="m-doc">cSpaceInventoryItemPtr</a>&amp; dst,
               <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">const</a> <a href="struct_resource_key.html" class="m-doc">ResourceKey</a>&amp; itemID,
               <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">uint32_<wbr />t</a> instanceID) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">void</a></span>
             </dt>
             <dd>Creates an inventory item for multi-delivery mission objects.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">static auto <a href="#a36b3e72dcbd7217c525d2267e6719313" class="m-doc">CreateTradingObject</a>(</span><span class="m-doc-wrap"><a href="c_space_inventory_item_8h.html#aa81d947a8a712f43f0eef7d0ee0f8ce5" class="m-doc">cSpaceInventoryItemPtr</a>&amp; dst,
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">const</a> <a href="struct_resource_key.html" class="m-doc">ResourceKey</a>&amp; itemID,
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> itemCount,
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">float</a> itemCost) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">void</a></span>
+            </dt>
+            <dd>Creates a trading object, which is an inventory item from <a href="namespace_group_i_ds.html#a7336869349c1fdce783daaa13128fc87a81dba22b2dd3b8b8c62be901c4e50a18" class="m-doc">GroupIDs::<wbr />SpaceTrading</a>.</dd>
           </dl>
         </section>
         <section id="pub-methods">
@@ -191,6 +198,10 @@
               <span class="m-doc-wrap-bumper">auto <a href="#a90002e5f57e3817f26ea1901fa76ca8f" class="m-doc-self">ParseProp</a>(</span><span class="m-doc-wrap">) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">void</a> <span class="m-label m-flat m-warning">virtual</span></span>
             </dt>
             <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a2ba13522b77b4e64f1c1fdb4f40fd294" class="m-doc">SetPropList</a>(</span><span class="m-doc-wrap"><a href="class_app_1_1_property_list.html" class="m-doc">App::<wbr />PropertyList</a>* propList) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">void</a></span>
+            </dt>
+            <dd>Assigns and reads the property list for this item.</dd>
             <dt id="a7f83eee02844e20b59c13dfe6ef2a46a">
               <span class="m-doc-wrap-bumper">auto <a href="#a7f83eee02844e20b59c13dfe6ef2a46a" class="m-doc-self">AddRef</a>(</span><span class="m-doc-wrap">) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> <span class="m-label m-flat m-warning">virtual</span></span>
             </dt>
@@ -276,9 +287,9 @@
         </section>
         <section>
           <h2>Function documentation</h2>
-          <section class="m-doc-details" id="aa92864fc46a271fcf63cc86444a53108"><div>
+          <section class="m-doc-details" id="a38d7b350742378986fd4e98b7512d424"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">static <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">void</a> Simulator::<wbr />cSpaceInventoryItem::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#aa92864fc46a271fcf63cc86444a53108" class="m-doc-self">CreateMultiDeliveryObject</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_space_inventory_item.html" class="m-doc">cSpaceInventoryItem</a>&amp; dst,
+              <span class="m-doc-wrap-bumper">static <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">void</a> Simulator::<wbr />cSpaceInventoryItem::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a38d7b350742378986fd4e98b7512d424" class="m-doc-self">CreateMultiDeliveryObject</a>(</span><span class="m-doc-wrap"><a href="c_space_inventory_item_8h.html#aa81d947a8a712f43f0eef7d0ee0f8ce5" class="m-doc">cSpaceInventoryItemPtr</a>&amp; dst,
               <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">const</a> <a href="struct_resource_key.html" class="m-doc">ResourceKey</a>&amp; itemID,
               <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">uint32_<wbr />t</a> instanceID)</span></span>
             </h3>
@@ -303,6 +314,38 @@
               </tbody>
             </table>
 <p>It will read a .prop file with name <code>instanceID</code> in the folder <code>multiDelivery_mision_objects~</code> (<code>0x37D494E</code>).</p>
+          </div></section>
+          <section class="m-doc-details" id="a36b3e72dcbd7217c525d2267e6719313"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">static <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">void</a> Simulator::<wbr />cSpaceInventoryItem::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a36b3e72dcbd7217c525d2267e6719313" class="m-doc-self">CreateTradingObject</a>(</span><span class="m-doc-wrap"><a href="c_space_inventory_item_8h.html#aa81d947a8a712f43f0eef7d0ee0f8ce5" class="m-doc">cSpaceInventoryItemPtr</a>&amp; dst,
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">const</a> <a href="struct_resource_key.html" class="m-doc">ResourceKey</a>&amp; itemID,
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> itemCount,
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">float</a> itemCost)</span></span>
+            </h3>
+            <p>Creates a trading object, which is an inventory item from <a href="namespace_group_i_ds.html#a7336869349c1fdce783daaa13128fc87a81dba22b2dd3b8b8c62be901c4e50a18" class="m-doc">GroupIDs::<wbr />SpaceTrading</a>.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">dst&nbsp;<span class="m-label m-flat m-warning">out</span></td>
+                  <td>Pointer where the new object will be written.</td>
+                </tr>
+                <tr>
+                  <td>itemID</td>
+                  <td>Key to the item configuration in <a href="namespace_group_i_ds.html#a7336869349c1fdce783daaa13128fc87a81dba22b2dd3b8b8c62be901c4e50a18" class="m-doc">GroupIDs::<wbr />SpaceTrading</a></td>
+                </tr>
+                <tr>
+                  <td>itemCount</td>
+                  <td>Number of items to create</td>
+                </tr>
+                <tr>
+                  <td>itemCost</td>
+                  <td>Cost of the object</td>
+                </tr>
+              </tbody>
+            </table>
           </div></section>
           <section class="m-doc-details" id="ae407e891aa8925197b098d0a0ca7e8ed"><div>
             <h3>
@@ -346,6 +389,24 @@
             </h3>
             <p>Returns true if this item is available in the current planet.</p>
 <p>For example, for animal cargo this is true if the animal species is present in the planet.</p>
+          </div></section>
+          <section class="m-doc-details" id="a2ba13522b77b4e64f1c1fdb4f40fd294"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">void</a> Simulator::<wbr />cSpaceInventoryItem::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a2ba13522b77b4e64f1c1fdb4f40fd294" class="m-doc-self">SetPropList</a>(</span><span class="m-doc-wrap"><a href="class_app_1_1_property_list.html" class="m-doc">App::<wbr />PropertyList</a>* propList)</span></span>
+            </h3>
+            <p>Assigns and reads the property list for this item.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">propList</td>
+                  <td></td>
+                </tr>
+              </tbody>
+            </table>
+<p>Most are stored in <code>spacetrading~</code>.</p>
           </div></section>
         </section>
       </div>

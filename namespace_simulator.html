@@ -450,6 +450,10 @@
             </dt>
             <dd><span></span></dd>
             <dt>
+              class <a href="class_simulator_1_1c_n_p_c_store.html" class="m-doc">cNPCStore</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
               struct <a href="struct_simulator_1_1_cnv_action.html" class="m-doc">CnvAction</a>
             </dt>
             <dd><span></span></dd>
@@ -751,6 +755,10 @@
             </dt>
             <dd><span></span></dd>
             <dt>
+              class <a href="class_simulator_1_1c_space_trading.html" class="m-doc">cSpaceTrading</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
               class <a href="class_simulator_1_1c_spatial_object.html" class="m-doc">cSpatialObject</a>
             </dt>
             <dd>A 3D model in the <a href="namespace_simulator.html" class="m-doc">Simulator</a>.</dd>
@@ -970,6 +978,10 @@
               class <a href="class_simulator_1_1_space_player_data.html" class="m-doc">SpacePlayerData</a>
             </dt>
             <dd><span></span></dd>
+            <dt>
+              class <a href="class_simulator_1_1_space_rare_found_message.html" class="m-doc">SpaceRareFoundMessage</a>
+            </dt>
+            <dd>Sent when a rare item is found (even if it had already been found before) in Space Stage.</dd>
             <dt>
               class <a href="class_simulator_1_1_sporepedia.html" class="m-doc">Sporepedia</a>
             </dt>
@@ -1626,7 +1638,9 @@
               <a href="#a4b1f459203b8dbf8583312aa067c8c54ab3c28f9402c3d22ff3c156b5a35eb475" class="m-doc">kMsgGalaxyGenerateBinaryOG</a> = 0x3DFF9B1,
               <a href="#a4b1f459203b8dbf8583312aa067c8c54aff2b7fb570ccf7c4ff58c45dd6ce85c5" class="m-doc">kMsgGalaxyGenerateBinaryGG</a> = 0x3DFF9BA,
               <a href="#a4b1f459203b8dbf8583312aa067c8c54a9b254676ac8fcbda65d04eb4bcd88591" class="m-doc">kMsgGalaxyGenerateBinaryGM</a> = 0x3DFF9C1,
-              <a href="#a4b1f459203b8dbf8583312aa067c8c54acbd409657fa99ec8d030219d2026ee82" class="m-doc">kMsgGalaxyGenerateBinaryMM</a> = 0x3DFF9C6 }</span>
+              <a href="#a4b1f459203b8dbf8583312aa067c8c54acbd409657fa99ec8d030219d2026ee82" class="m-doc">kMsgGalaxyGenerateBinaryMM</a> = 0x3DFF9C6,
+              <a href="#a4b1f459203b8dbf8583312aa067c8c54a7aebd8bea2592ecf659816c4b77aa931" class="m-doc">kMsgSpaceRareFound</a> = 0xF46092D4,
+              <a href="#a4b1f459203b8dbf8583312aa067c8c54a341fd4d65e722818c6b7b2468403bfd1" class="m-doc">kMsgSpaceRareDiscovered</a> = 0x6779F04 }</span>
             </dt>
             <dd><span></span></dd>
             <dt>
@@ -2962,6 +2976,20 @@
             </dt>
             <dd><span></span></dd>
             <dt>
+              <span class="m-doc-wrap-bumper"><a href="#a5f4ac0261b05c2eca66eb1ea013bd6a8" class="m-doc">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_n_p_c_store.html" class="m-doc">cNPCStore</a>,
+              0xC0)</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper"><a href="#a1d48e30934ae085f2ba8b60f6209ccc0" class="m-doc">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_space_trading.html" class="m-doc">cSpaceTrading</a>,
+              0xF8)</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a98c957aa0ae7567899ef9ec5ee9c0aac" class="m-doc">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_space_trading.html" class="m-doc">cSpaceTrading</a>) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">namespace</a></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
               <span class="m-doc-wrap-bumper"><a href="#ad47250609fd3cc2bd86bb75b488031b4" class="m-doc">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_trade_route_data.html" class="m-doc">cTradeRouteData</a>,
               0x28)</span>
             </dt>
@@ -3937,6 +3965,18 @@
                   <td><a href="#a4b1f459203b8dbf8583312aa067c8c54acbd409657fa99ec8d030219d2026ee82" class="m-doc-self" id="a4b1f459203b8dbf8583312aa067c8c54acbd409657fa99ec8d030219d2026ee82">kMsgGalaxyGenerateBinaryMM</a></td>
                   <td>
                   <p>Message emitted by the galaxy generation effect to create binary M-M (red-red) star systems (<a href="namespace_simulator.html#abe57cfb0b8f7d0b95e69aec0cbc46497ad87d535dd336e61ebc20114d98671ff6" class="m-doc">StarType::<wbr />BinaryMM</a>).</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a4b1f459203b8dbf8583312aa067c8c54a7aebd8bea2592ecf659816c4b77aa931" class="m-doc-self" id="a4b1f459203b8dbf8583312aa067c8c54a7aebd8bea2592ecf659816c4b77aa931">kMsgSpaceRareFound</a></td>
+                  <td>
+                  <p><a href="class_simulator_1_1_space_rare_found_message.html" class="m-doc">Simulator::<wbr />SpaceRareFoundMessage</a> ; sent when a rare item is found (even if it had already been found before) in Space Stage.</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a4b1f459203b8dbf8583312aa067c8c54a341fd4d65e722818c6b7b2468403bfd1" class="m-doc-self" id="a4b1f459203b8dbf8583312aa067c8c54a341fd4d65e722818c6b7b2468403bfd1">kMsgSpaceRareDiscovered</a></td>
+                  <td>
+                  <p>Sent when a rare item is discovered (i.e. it had not been found before) in Space Stage. The parameter is a uint32_t* to the rare instance ID.</p>
                   </td>
                 </tr>
               </tbody>
@@ -6408,6 +6448,29 @@
             <h3>
               <span class="m-doc-wrap-bumper"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">namespace</a> Simulator::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a5ca9fbc2d12b6d31f3c6971d643ff67b" class="m-doc-self">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1_space_player_data.html" class="m-doc">SpacePlayerData</a>)</span></span>
               <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_space_player_data_8h.html">&lt;Spore ModAPI/Spore/Simulator/SubSystem/SpacePlayerData.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="a5f4ac0261b05c2eca66eb1ea013bd6a8"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"> Simulator::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a5f4ac0261b05c2eca66eb1ea013bd6a8" class="m-doc-self">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_n_p_c_store.html" class="m-doc">cNPCStore</a>,
+              0xC0)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_space_trading_8h.html">&lt;Spore ModAPI/Spore/Simulator/SubSystem/SpaceTrading.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="a1d48e30934ae085f2ba8b60f6209ccc0"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"> Simulator::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a1d48e30934ae085f2ba8b60f6209ccc0" class="m-doc-self">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_space_trading.html" class="m-doc">cSpaceTrading</a>,
+              0xF8)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_space_trading_8h.html">&lt;Spore ModAPI/Spore/Simulator/SubSystem/SpaceTrading.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="a98c957aa0ae7567899ef9ec5ee9c0aac"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">namespace</a> Simulator::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a98c957aa0ae7567899ef9ec5ee9c0aac" class="m-doc-self">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_space_trading.html" class="m-doc">cSpaceTrading</a>)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_space_trading_8h.html">&lt;Spore ModAPI/Spore/Simulator/SubSystem/SpaceTrading.h&gt;</a></div>
             </h3>
             <p><span></span></p>
           </div></section>

@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Swarm::ITextureParticleStreamer class | Spore ModAPI SDK for creating C++ mods for Spore</title>
+  <title>Simulator::cNPCStore class | Spore ModAPI SDK for creating C++ mods for Spore</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,600,600i%7CSource+Code+Pro:400,400i,600" />
   <link rel="stylesheet" href="m-dark.css" />
   <link rel="stylesheet" href="m-documentation.css" />
@@ -45,8 +45,8 @@
     <div class="m-row">
       <div class="m-col-l-10 m-push-l-1">
         <h1>
-          <span class="m-breadcrumb"><a href="namespace_swarm.html">Swarm</a>::<wbr/></span>ITextureParticleStreamer <span class="m-thin">class</span>
-          <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_particle_streamers_8h.html">&lt;Spore ModAPI/Spore/Swarm/ParticleStreamers.h&gt;</a></div>
+          <span class="m-breadcrumb"><a href="namespace_simulator.html">Simulator</a>::<wbr/></span>cNPCStore <span class="m-thin">class</span>
+          <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_space_trading_8h.html">&lt;Spore ModAPI/Spore/Simulator/SubSystem/SpaceTrading.h&gt;</a></div>
         </h1>
         <p><span></span></p>
         <nav class="m-block m-default">
@@ -55,26 +55,72 @@
             <li>
               Reference
               <ul>
-                <li><a href="#derived-classes">Derived classes</a></li>
-                <li><a href="#pub-methods">Public functions</a></li>
+                <li><a href="#base-classes">Base classes</a></li>
+                <li><a href="#pub-static-attribs">Public static variables</a></li>
+                <li><a href="#pub-attribs">Public variables</a></li>
               </ul>
             </li>
           </ul>
         </nav>
-        <section id="derived-classes">
-          <h2><a href="#derived-classes">Derived classes</a></h2>
+        <section id="base-classes">
+          <h2><a href="#base-classes">Base classes</a></h2>
           <dl class="m-doc">
             <dt>
-              class <a href="class_swarm_1_1c_distribute_effect.html" class="m-doc">cDistributeEffect</a>
+              class <a href="class_ref_count_template.html" class="m-doc">RefCountTemplate</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              class <a href="class_simulator_1_1_i_simulator_serializable.html" class="m-doc">ISimulatorSerializable</a>
             </dt>
             <dd><span></span></dd>
           </dl>
         </section>
-        <section id="pub-methods">
-          <h2><a href="#pub-methods">Public functions</a></h2>
+        <section id="pub-static-attribs">
+          <h2><a href="#pub-static-attribs">Public static variables</a></h2>
           <dl class="m-doc">
-            <dt id="a1c584cc1d5983e29f00f0e2679be36a8">
-              <span class="m-doc-wrap-bumper">auto <a href="#a1c584cc1d5983e29f00f0e2679be36a8" class="m-doc-self">StreamTextureParticles</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">ITextureParticleRenderer</a>* particleRenderer) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">void</a> <span class="m-label m-flat m-warning">pure virtual</span></span>
+            <dt id="aec59afdf778fd86b0ba2dd09615b4421">
+              static <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">const</a> <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">uint32_<wbr />t</a> <a href="#aec59afdf778fd86b0ba2dd09615b4421" class="m-doc-self">TYPE</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="aeffb34f0b8e427c1c8ddbc6472e5b7ef">
+              static <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">const</a> <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">uint32_<wbr />t</a> <a href="#aeffb34f0b8e427c1c8ddbc6472e5b7ef" class="m-doc-self">NOUN_ID</a>
+            </dt>
+            <dd><span></span></dd>
+          </dl>
+        </section>
+        <section id="pub-attribs">
+          <h2><a href="#pub-attribs">Public variables</a></h2>
+          <dl class="m-doc">
+            <dt id="a09e67175d1bdf4b2a9769c6f89c5a46e">
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">uint32_<wbr />t</a> <a href="#a09e67175d1bdf4b2a9769c6f89c5a46e" class="m-doc-self">planetkey</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a31ce2cc7f63fc7ca7c193ece5aefddb9">
+              <a href="class_simulator_1_1c_gonzago_timer.html" class="m-doc">cGonzagoTimer</a> <a href="#a31ce2cc7f63fc7ca7c193ece5aefddb9" class="m-doc-self">lifetime</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a8ec77395cadca99d2a736847c4f733d3">
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> <a href="#a8ec77395cadca99d2a736847c4f733d3" class="m-doc-self">spiceBought</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a0e7ee37b1324616c72515a23b98df298">
+              eastl::vector&lt;<a href="c_space_inventory_item_8h.html#aa81d947a8a712f43f0eef7d0ee0f8ce5" class="m-doc">cSpaceInventoryItemPtr</a>&gt; <a href="#a0e7ee37b1324616c72515a23b98df298" class="m-doc-self">mNPCInventory</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a9f243b443cb7be40e828c4b3a5662044">
+              eastl::vector&lt;<a href="class_simulator_1_1c_gonzago_timer.html" class="m-doc">cGonzagoTimer</a>&gt; <a href="#a9f243b443cb7be40e828c4b3a5662044" class="m-doc-self">mNPCInventoryAges</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="aa7800393855472f8c960314ca7c3107c">
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">bool</a> <a href="#aa7800393855472f8c960314ca7c3107c" class="m-doc-self">mbDirty</a>
+            </dt>
+            <dd>If true, this store is not valid anymore and must be refreshed.</dd>
+            <dt id="ac939baa77bbed9aa491ea675bbc16a0b">
+              eastl::fixed_vector&lt;<a href="struct_resource_key.html" class="m-doc">ResourceKey</a>, 3&gt; <a href="#ac939baa77bbed9aa491ea675bbc16a0b" class="m-doc-self">mSpiceID</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="ae36fc5baa27348c80e98b1e7360173ee">
+              eastl::fixed_vector&lt;<a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a>, 3&gt; <a href="#ae36fc5baa27348c80e98b1e7360173ee" class="m-doc-self">mSpiceCost</a>
             </dt>
             <dd><span></span></dd>
           </dl>
