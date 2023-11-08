@@ -55,22 +55,12 @@
             <li>
               Reference
               <ul>
-                <li><a href="#pub-types">Public types</a></li>
                 <li><a href="#pub-methods">Public functions</a></li>
                 <li><a href="#pub-attribs">Public variables</a></li>
               </ul>
             </li>
           </ul>
         </nav>
-        <section id="pub-types">
-          <h2><a href="#pub-types">Public types</a></h2>
-          <dl class="m-doc">
-            <dt>
-              union <a href="union_u_t_f_win_1_1_message_1_1_message_union.html" class="m-doc">MessageUnion</a>
-            </dt>
-            <dd><span></span></dd>
-          </dl>
-        </section>
         <section id="pub-methods">
           <h2><a href="#pub-methods">Public functions</a></h2>
           <dl class="m-doc">
@@ -86,6 +76,10 @@
               <span class="m-doc-wrap-bumper">auto <a href="#a084e8da1a37ccca850c8f5fb255375e0" class="m-doc">IsSource</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">uint32_<wbr />t</a> controlID) const -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">bool</a></span>
             </dt>
             <dd>Tells whether this control ID is the one used by the source window that generated the message.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a3471b0c89cacb4b91791d16755219ede" class="m-doc">UNNAMED</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">MessageUnion</a>) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">union</a></span>
+            </dt>
+            <dd><span></span></dd>
           </dl>
         </section>
         <section id="pub-attribs">
@@ -157,6 +151,13 @@
                 </tr>
               </tbody>
             </table>
+          </div></section>
+          <section class="m-doc-details" id="a3471b0c89cacb4b91791d16755219ede"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">union</a> UTFWin::<wbr />Message::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a3471b0c89cacb4b91791d16755219ede" class="m-doc-self">UNNAMED</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">MessageUnion</a>)</span></span>
+            </h3>
+            <p><span></span></p>
+<p>The event arguments for the message types: <a href="namespace_u_t_f_win.html#a9fa1532f8ae774ee9508fab26eea47bcaee189eb7f7c883d4a1d7fecabc42c214" class="m-doc">UTFWin::<wbr />kMsgKeyDown</a> | <a href="namespace_u_t_f_win.html#a9fa1532f8ae774ee9508fab26eea47bca3c9afc18eb3168e8fee6c64ae274a823" class="m-doc">UTFWin::<wbr />kMsgKeyUp</a> | <a href="namespace_u_t_f_win.html#a9fa1532f8ae774ee9508fab26eea47bca50fa9b47050f4e8f9c13f1ae3c78290f" class="m-doc">UTFWin::<wbr />kMsgKeyDown2</a> | <a href="namespace_u_t_f_win.html#a9fa1532f8ae774ee9508fab26eea47bca88d91e0725c049b1177b32fa7f86d97b" class="m-doc">UTFWin::<wbr />kMsgKeyUp2</a>.</p><p>The virtual key that was pressed/released. Example usage: vkey == VK_A (means the user pressed/released A).</p><p>The modifiers that were applying in the key event, from the <a href="union_key_modifiers.html" class="m-doc">KeyModifiers</a> enum.</p><p>The event arguments for the message type: <a href="namespace_u_t_f_win.html#a9fa1532f8ae774ee9508fab26eea47bca28994564e93696ac63da10300a651406" class="m-doc">UTFWin::<wbr />kMsgKeyPress</a></p><p>The virtual key that was pressed/released. Example usage: vkey == VK_A (means the user pressed/released A).</p><p>The event arguments for the message types: <a href="namespace_u_t_f_win.html#a9fa1532f8ae774ee9508fab26eea47bcac1312d2c4b139f3fd2cc233a6b861cd6" class="m-doc">UTFWin::<wbr />kMsgMouseDown</a> | <a href="namespace_u_t_f_win.html#a9fa1532f8ae774ee9508fab26eea47bca4633d5603e05894e429efbef1f54810e" class="m-doc">UTFWin::<wbr />kMsgMouseUp</a> | <a href="namespace_u_t_f_win.html#a9fa1532f8ae774ee9508fab26eea47bca3aa8b47c26334b5c06c18f95fa3fd939" class="m-doc">UTFWin::<wbr />kMsgMouseMove</a>.</p><p>The X coordinate of the mouse, relative to the window that raised the event.</p><p>The Y coordinate of the mouse, relative to the window that raised the event.</p><p>A combination of values from the MouseStateFlags enum.</p><p>Which mouse button was pressed/released. Not always available??</p><p>The event arguments for the message type: <a href="namespace_u_t_f_win.html#a9fa1532f8ae774ee9508fab26eea47bca74edac94c35585c228e8a73479dc5e90" class="m-doc">UTFWin::<wbr />kMsgMouseWheel</a></p><p>The X coordinate of the mouse, relative to the window that raised the event.</p><p>The Y coordinate of the mouse, relative to the window that raised the event.</p><p>A combination of values from the MouseStateFlags enum.</p><p>How much the mouse wheel changed, it is usually a multiple of 120.</p><p>The event arguments for the message types: <a href="namespace_u_t_f_win.html#a9fa1532f8ae774ee9508fab26eea47bca6b83c3a6f3469145fb682ce2611a920c" class="m-doc">UTFWin::<wbr />kMsgMouseLeave</a> | <a href="namespace_u_t_f_win.html#a9fa1532f8ae774ee9508fab26eea47bca869eba728e88ff7fc5c87c200ed1edd1" class="m-doc">UTFWin::<wbr />kMsgMouseEnter</a> The &#x27;window&#x27; member is the window that lost focus for <a href="namespace_u_t_f_win.html#a9fa1532f8ae774ee9508fab26eea47bca6b83c3a6f3469145fb682ce2611a920c" class="m-doc">UTFWin::<wbr />kMsgMouseLeave</a>, and the window that is getting focus for <a href="namespace_u_t_f_win.html#a9fa1532f8ae774ee9508fab26eea47bca869eba728e88ff7fc5c87c200ed1edd1" class="m-doc">UTFWin::<wbr />kMsgMouseEnter</a>.</p><p>For kMsgMouseLeave, the windows that lost focus; for kMsgMouseEnter, the window that gained focus.</p><p>The event arguments for the message type: <a href="namespace_u_t_f_win.html#a9fa1532f8ae774ee9508fab26eea47bca03399168f3d777b4d4dbb86ad22b639d" class="m-doc">UTFWin::<wbr />kMsgPaint</a></p><p>The object that can be used to paint to the <a href="namespace_u_i.html" class="m-doc">UI</a>.</p><p>The event arguments for the message type: <a href="namespace_u_t_f_win.html#a9fa1532f8ae774ee9508fab26eea47bca31db8e1cc08d482c54d7578fbae7d620" class="m-doc">UTFWin::<wbr />kMsgRefresh</a></p><p>The event arguments for the message type: <a href="namespace_u_t_f_win.html#a9fa1532f8ae774ee9508fab26eea47bca92a4e1a5a69dcee2d01428cc7fea0d4f" class="m-doc">UTFWin::<wbr />kMsgLayout</a></p><p>Pointer to the new layout area.</p><p>The event arguments for the message type: <a href="namespace_u_t_f_win.html#a9fa1532f8ae774ee9508fab26eea47bcad02b6ca45e9a4e7361c15d8dbea8afb8" class="m-doc">UTFWin::<wbr />kMsgStateChanged</a></p><p>The previous state flags of the window.</p><p>The new state flags of the window.</p><p>The event arguments for the message type: <a href="namespace_u_t_f_win.html#a9fa1532f8ae774ee9508fab26eea47bca52e412737bcc4620e206cb29c433b6a7" class="m-doc">UTFWin::<wbr />kMsgCollisionDetect</a> This message has a member called mpbIsColliding, which is a pointer to the result. For example, if you decide that the mouse position is colliding the window, use *mpbIsColliding = true;</p><p>The X coordinate where the collision check must be done.</p><p>The Y coordinate where the collision check must be done.</p><p>A combination of values from the UTFWin::MouseState enum.</p><p>This bool* holds the result, whether a collision was detected or not.</p><p>The event arguments for the message type: <a href="namespace_u_t_f_win.html#a9fa1532f8ae774ee9508fab26eea47bca8acc0370665cd3d35aa898d8515b6b86" class="m-doc">UTFWin::<wbr />kMsgTransformed</a></p><p>The transformation matrix applied.</p><p>The event arguments for the message type: <a href="namespace_u_t_f_win.html#a9fa1532f8ae774ee9508fab26eea47bca0e89eb2860b07f734dabec989d57df41" class="m-doc">UTFWin::<wbr />kMsgButtonClick</a></p><p>The command ID of the clicked button.</p><p>The event arguments for the message type: <a href="namespace_u_t_f_win.html#a9fa1532f8ae774ee9508fab26eea47bca52c347affb8f2fb7979ba0c123cf5b25" class="m-doc">UTFWin::<wbr />kMsgButtonSelect</a></p><p>The command ID of the clicked button.</p><p>Whether the button is now selected.</p><p>The event arguments for the message type: <a href="namespace_u_t_f_win.html#a9fa1532f8ae774ee9508fab26eea47bca959bc9673a87190a43042ab32e9dc396" class="m-doc">UTFWin::<wbr />kMsgTextChanged</a></p><p>The change of the text.</p><p>The event arguments for the message type: <a href="namespace_u_t_f_win.html#a9fa1532f8ae774ee9508fab26eea47bcaee57618cc8bcb6679d41681767983f83" class="m-doc">UTFWin::<wbr />kMsgComponentActivated</a></p><p>The control ID of the activated button.</p>
           </div></section>
         </section>
       </div>
