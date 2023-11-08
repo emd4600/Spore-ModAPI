@@ -59,13 +59,13 @@ jobs:
       - name: Get version number
         id: version_number
         run: |
-          count=git log --oneline | wc -l
+          count=$(git log --oneline | wc -l)
           echo "version=$count" >> $GITHUB_OUTPUT
 
       - name: Get commit message
         id: commit_message
         run: |
-          message=git log -1 --pretty=%B
+          message=$(git log -1 --pretty=%B)
           echo "message=$message" >> $env:GITHUB_OUTPUT
 
       - name: Release to GitHub
