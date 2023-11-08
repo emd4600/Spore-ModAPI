@@ -95,6 +95,8 @@ jobs:
           cd Spore-ModAPI
           count=$(git log --oneline | wc -l)
           cd modapi-generated-docs/html
+          # Needed to ensure Jekyll is not run, as it omits certain files
+          touch .nojekyll
           git init
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
