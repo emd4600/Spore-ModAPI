@@ -88,7 +88,7 @@ jobs:
           $count = git log --oneline | wc -l
           cd modapi-generated-docs/html
           git init
-          git remote add origin ${{ github.repositoryUrl }}
+          git remote add origin https://github.com/emd4600/Spore-ModAPI.git
           git fetch
           git symbolic-ref HEAD refs/remotes/origin/gh-pages
           git reset
