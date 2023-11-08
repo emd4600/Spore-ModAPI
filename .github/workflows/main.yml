@@ -85,7 +85,7 @@ jobs:
       - name: Commit documentation pages
         run: |
           cd Spore-ModAPI
-          $count = git log --oneline | wc -l
+          count=$(git log --oneline | wc -l)
           cd modapi-generated-docs/html
           git init
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
