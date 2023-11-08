@@ -14,7 +14,7 @@
 <header><nav id="navigation">
   <div class="m-container">
     <div class="m-row">
-      <a href="index.html" id="m-navbar-brand" class="m-col-t-8 m-col-m-none m-left-m"><img src="Spore_ModAPI_Icon.png" />Spore ModAPI <span class="m-thin">SDK for creating C++ mods for Spore</span></a>
+      <a href="index.html" id="m-navbar-brand" class="m-col-t-8 m-col-m-none m-left-m"><img src="Spore_ModAPI_Icon.png" alt="" />Spore ModAPI <span class="m-thin">SDK for creating C++ mods for Spore</span></a>
       <div class="m-col-t-4 m-hide-m m-text-right m-nopadr">
         <a href="#search" class="m-doc-search-icon" title="Search" onclick="return showSearch()"><svg style="height: 0.9rem;" viewBox="0 0 16 16">
           <path id="m-doc-search-icon-path" d="m6 0c-3.31 0-6 2.69-6 6 0 3.31 2.69 6 6 6 1.49 0 2.85-0.541 3.89-1.44-0.0164 0.338 0.147 0.759 0.5 1.15l3.22 3.79c0.552 0.614 1.45 0.665 2 0.115 0.55-0.55 0.499-1.45-0.115-2l-3.79-3.22c-0.392-0.353-0.812-0.515-1.15-0.5 0.895-1.05 1.44-2.41 1.44-3.89 0-3.31-2.69-6-6-6zm0 1.56a4.44 4.44 0 0 1 4.44 4.44 4.44 4.44 0 0 1-4.44 4.44 4.44 4.44 0 0 1-4.44-4.44 4.44 4.44 0 0 1 4.44-4.44z"/>
@@ -46,10 +46,10 @@
       <div class="m-col-l-10 m-push-l-1">
         <h1>
           <span class="m-breadcrumb"><a href="namespace_arg_script.html">ArgScript</a>::<wbr/></span>ISpecialBlock <span class="m-thin">class</span>
-          <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_i_special_block_8h.html">&lt;Spore/ArgScript/ISpecialBlock.h&gt;</a></div>
+          <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_i_special_block_8h.html">&lt;/home/runner/work/Spore-ModAPI/Spore-ModAPI/Spore-ModAPI/Spore ModAPI/Spore/ArgScript/ISpecialBlock.h&gt;</a></div>
         </h1>
         <p>This is a special kind of block that can process every line individually, and that uses its own end keywords.</p>
-        <div class="m-block m-default">
+        <nav class="m-block m-default">
           <h3>Contents</h3>
           <ul>
             <li>
@@ -61,7 +61,7 @@
               </ul>
             </li>
           </ul>
-        </div>
+        </nav>
 <p>Unlike <a href="class_arg_script_1_1_i_block.html" class="m-doc">IBlock</a> objects, <a href="class_arg_script_1_1_i_special_block.html" class="m-doc">ISpecialBlock</a> cannot have its own parsers. Also, <a href="class_arg_script_1_1_i_special_block.html" class="m-doc">ISpecialBlock</a> does not end when the &#x27;end&#x27; keyword is reached; instead, the end keyword must be specified in the <a href="class_arg_script_1_1_format_parser.html#a3c8f8e709cffc0ef823634c03bf8c66f" class="m-doc">FormatParser::<wbr />AddSpecialBlock()</a> method.</p><p>A good example of the use of special blocks are conditionals: in the <a href="class_arg_script_1_1_i_special_block.html#aabb0e1278dffe5952a58526379432b9b" class="m-doc">ISpecialBlock::<wbr />OnLine()</a> event, we can decide which lines get parsed and executed (the ones inside the condition met), and which don&#x27;t, as well as detect special lines (for example, &#x27;else&#x27;).</p>
         <section id="base-classes">
           <h2><a href="#base-classes">Base classes</a></h2>
@@ -85,16 +85,16 @@
           <h2><a href="#pub-methods">Public functions</a></h2>
           <dl class="m-doc">
             <dt>
-              <span class="m-doc-wrap-bumper">void <a href="#a285057f5970efb42dc12f53c42cc813c" class="m-doc">SetData</a>(</span><span class="m-doc-wrap"><a href="class_arg_script_1_1_format_parser.html" class="m-doc">FormatParser</a>* pFormatParser,
-              void* pData) <span class="m-label m-flat m-warning">override</span></span>
+              <span class="m-doc-wrap-bumper">auto <a href="#a285057f5970efb42dc12f53c42cc813c" class="m-doc">SetData</a>(</span><span class="m-doc-wrap"><a href="class_arg_script_1_1_format_parser.html" class="m-doc">FormatParser</a>* pFormatParser,
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">void</a>* pData) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">void</a> <span class="m-label m-flat m-warning">override</span></span>
             </dt>
             <dd>Sets the data and <a href="class_arg_script_1_1_format_parser.html" class="m-doc">FormatParser</a> of this parser.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#aabb0e1278dffe5952a58526379432b9b" class="m-doc">OnLine</a>(</span><span class="m-doc-wrap"><a href="namespace_arg_script.html#af41cc52a6781a4b36908270912f0e1af" class="m-doc">LexerString</a>&amp; lineText) -&gt; bool <span class="m-label m-flat m-warning">pure virtual</span></span>
+              <span class="m-doc-wrap-bumper">auto <a href="#aabb0e1278dffe5952a58526379432b9b" class="m-doc">OnLine</a>(</span><span class="m-doc-wrap"><a href="namespace_arg_script.html#ace0d8b32a86d144b35851f4d0e43d421" class="m-doc">LexerString</a>&amp; lineText) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">bool</a> <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
             <dd>A method caled every time a line is read inside this block.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">void <a href="#a1fb1bed12f6af22e125386f2db318376" class="m-doc">OnEndReached</a>(</span><span class="m-doc-wrap">int) <span class="m-label m-flat m-warning">pure virtual</span></span>
+              <span class="m-doc-wrap-bumper">auto <a href="#a1fb1bed12f6af22e125386f2db318376" class="m-doc">OnEndReached</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a>) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">void</a> <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
             <dd>Method called when an end keyword is reached.</dd>
           </dl>
@@ -103,15 +103,15 @@
           <h2>Function documentation</h2>
           <section class="m-doc-details" id="a285057f5970efb42dc12f53c42cc813c"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">void ArgScript::<wbr />ISpecialBlock::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a285057f5970efb42dc12f53c42cc813c" class="m-doc-self">SetData</a>(</span><span class="m-doc-wrap"><a href="class_arg_script_1_1_format_parser.html" class="m-doc">FormatParser</a>* pFormatParser,
-              void* pData) <span class="m-label m-warning">override</span></span></span>
+              <span class="m-doc-wrap-bumper"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">void</a> ArgScript::<wbr />ISpecialBlock::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a285057f5970efb42dc12f53c42cc813c" class="m-doc-self">SetData</a>(</span><span class="m-doc-wrap"><a href="class_arg_script_1_1_format_parser.html" class="m-doc">FormatParser</a>* pFormatParser,
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">void</a>* pData) <span class="m-label m-warning">override</span></span></span>
             </h3>
             <p>Sets the data and <a href="class_arg_script_1_1_format_parser.html" class="m-doc">FormatParser</a> of this parser.</p>
 <p>This method is called when <a href="class_arg_script_1_1_format_parser.html#abb57cbec88e7e575be0e1e9a9d2714c0" class="m-doc">FormatParser::<wbr />AddParser()</a> or <a href="class_arg_script_1_1_i_block.html#ab9611e933e02303a0d76f10c103774d1" class="m-doc">IBlock::<wbr />AddParser()</a> are used.</p>
           </div></section>
           <section class="m-doc-details" id="aabb0e1278dffe5952a58526379432b9b"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">bool ArgScript::<wbr />ISpecialBlock::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#aabb0e1278dffe5952a58526379432b9b" class="m-doc-self">OnLine</a>(</span><span class="m-doc-wrap"><a href="namespace_arg_script.html#af41cc52a6781a4b36908270912f0e1af" class="m-doc">LexerString</a>&amp; lineText) <span class="m-label m-warning">pure virtual</span></span></span>
+              <span class="m-doc-wrap-bumper"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">bool</a> ArgScript::<wbr />ISpecialBlock::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#aabb0e1278dffe5952a58526379432b9b" class="m-doc-self">OnLine</a>(</span><span class="m-doc-wrap"><a href="namespace_arg_script.html#ace0d8b32a86d144b35851f4d0e43d421" class="m-doc">LexerString</a>&amp; lineText) <span class="m-label m-warning">pure virtual</span></span></span>
             </h3>
             <p>A method caled every time a line is read inside this block.</p>
             <table class="m-table m-fullwidth m-flat">
@@ -135,7 +135,7 @@
           </div></section>
           <section class="m-doc-details" id="a1fb1bed12f6af22e125386f2db318376"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">void ArgScript::<wbr />ISpecialBlock::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a1fb1bed12f6af22e125386f2db318376" class="m-doc-self">OnEndReached</a>(</span><span class="m-doc-wrap">int) <span class="m-label m-warning">pure virtual</span></span></span>
+              <span class="m-doc-wrap-bumper"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">void</a> ArgScript::<wbr />ISpecialBlock::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a1fb1bed12f6af22e125386f2db318376" class="m-doc-self">OnEndReached</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a>) <span class="m-label m-warning">pure virtual</span></span></span>
             </h3>
             <p>Method called when an end keyword is reached.</p>
 <p>For special blocks, end keywords are not &#x27;end&#x27;; instead, they must be explictly specified using the <a href="class_arg_script_1_1_format_parser.html#a3c8f8e709cffc0ef823634c03bf8c66f" class="m-doc">FormatParser::<wbr />AddSpecialBlock()</a> method.</p>
@@ -179,13 +179,13 @@
     </div>
   </div>
 </div>
-<script src="search-v1.js"></script>
-<script src="searchdata-v1.js" async="async"></script>
+<script src="search-v2.js"></script>
+<script src="searchdata-v2.js" async="async"></script>
 <footer><nav>
   <div class="m-container">
     <div class="m-row">
       <div class="m-col-l-10 m-push-l-1">
-        <p>Spore ModAPI SDK for creating C++ mods for Spore. Created with <a href="https://doxygen.org/">Doxygen</a> 1.8.16 and <a href="https://mcss.mosra.cz/">m.css</a>.</p>
+        <p>Spore ModAPI SDK for creating C++ mods for Spore. Created with <a href="https://doxygen.org/">Doxygen</a> 1.9.8 and <a href="https://mcss.mosra.cz/">m.css</a>.</p>
       </div>
     </div>
   </div>

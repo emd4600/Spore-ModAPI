@@ -14,7 +14,7 @@
 <header><nav id="navigation">
   <div class="m-container">
     <div class="m-row">
-      <a href="index.html" id="m-navbar-brand" class="m-col-t-8 m-col-m-none m-left-m"><img src="Spore_ModAPI_Icon.png" />Spore ModAPI <span class="m-thin">SDK for creating C++ mods for Spore</span></a>
+      <a href="index.html" id="m-navbar-brand" class="m-col-t-8 m-col-m-none m-left-m"><img src="Spore_ModAPI_Icon.png" alt="" />Spore ModAPI <span class="m-thin">SDK for creating C++ mods for Spore</span></a>
       <div class="m-col-t-4 m-hide-m m-text-right m-nopadr">
         <a href="#search" class="m-doc-search-icon" title="Search" onclick="return showSearch()"><svg style="height: 0.9rem;" viewBox="0 0 16 16">
           <path id="m-doc-search-icon-path" d="m6 0c-3.31 0-6 2.69-6 6 0 3.31 2.69 6 6 6 1.49 0 2.85-0.541 3.89-1.44-0.0164 0.338 0.147 0.759 0.5 1.15l3.22 3.79c0.552 0.614 1.45 0.665 2 0.115 0.55-0.55 0.499-1.45-0.115-2l-3.79-3.22c-0.392-0.353-0.812-0.515-1.15-0.5 0.895-1.05 1.44-2.41 1.44-3.89 0-3.31-2.69-6-6-6zm0 1.56a4.44 4.44 0 0 1 4.44 4.44 4.44 4.44 0 0 1-4.44 4.44 4.44 4.44 0 0 1-4.44-4.44 4.44 4.44 0 0 1 4.44-4.44z"/>
@@ -46,10 +46,10 @@
       <div class="m-col-l-10 m-push-l-1">
         <h1>
           <span class="m-breadcrumb"><a href="namespace_simulator.html">Simulator</a>::<wbr/></span>cGameTimeManager <span class="m-thin">class</span>
-          <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_game_time_manager_8h.html">&lt;Spore/Simulator/SubSystem/GameTimeManager.h&gt;</a></div>
+          <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_game_time_manager_8h.html">&lt;/home/runner/work/Spore-ModAPI/Spore-ModAPI/Spore-ModAPI/Spore ModAPI/Spore/Simulator/SubSystem/GameTimeManager.h&gt;</a></div>
         </h1>
         <p>This class controls game time speed and pauses.</p>
-        <div class="m-block m-default">
+        <nav class="m-block m-default">
           <h3>Contents</h3>
           <ul>
             <li>
@@ -63,7 +63,7 @@
               </ul>
             </li>
           </ul>
-        </div>
+        </nav>
 <p>You can use it to pause/resume the game, and you can also use it to control the game speed.</p><p>This class is organized in different &quot;pause types&quot; that pause the game and optionally, effects and audio. Calls to <a href="class_simulator_1_1c_game_time_manager.html#a6e2fe372b4d0ff41aab5bdc529ca9b6d" class="m-doc">Pause()</a> and <a href="class_simulator_1_1c_game_time_manager.html#a889028b50776906c87ecf4da94a11bc7" class="m-doc">Resume()</a> are &quot;stacked&quot;, that is, if you call <a href="class_simulator_1_1c_game_time_manager.html#a6e2fe372b4d0ff41aab5bdc529ca9b6d" class="m-doc">Pause()</a> twice, then you have to call <a href="class_simulator_1_1c_game_time_manager.html#a889028b50776906c87ecf4da94a11bc7" class="m-doc">Resume()</a> twice in order to actually resume the game.</p><p>Example usage:</p><pre class="m-code"><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="n">GameTimeManager</span><span class="p">.</span><span class="n">IsPaused</span><span class="p">())</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="w">    </span><span class="n">GameTimeManager</span><span class="p">.</span><span class="n">Pause</span><span class="p">(</span><span class="n">TimeManagerPause</span><span class="o">::</span><span class="n">UserToggle</span><span class="p">);</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span></pre><p>This is a singleton class, so use GameTimeManager to access it.</p>
@@ -94,8 +94,8 @@
         <section id="pub-static-methods">
           <h2><a href="#pub-static-methods">Public static functions</a></h2>
           <dl class="m-doc">
-            <dt id="ad1f296889c8c8970076ee6199285f8f8">
-              <span class="m-doc-wrap-bumper">static auto <a href="#ad1f296889c8c8970076ee6199285f8f8" class="m-doc-self">Get</a>(</span><span class="m-doc-wrap">) -&gt; <a href="class_simulator_1_1c_game_time_manager.html" class="m-doc">cGameTimeManager</a>*</span>
+            <dt id="acb0b49076c53b8ecd58697eba6da7eda">
+              <span class="m-doc-wrap-bumper">static auto <a href="#acb0b49076c53b8ecd58697eba6da7eda" class="m-doc-self">Get</a>(</span><span class="m-doc-wrap">) -&gt; <a href="class_simulator_1_1c_game_time_manager.html" class="m-doc">cGameTimeManager</a>*</span>
             </dt>
             <dd><span></span></dd>
           </dl>
@@ -104,54 +104,54 @@
           <h2><a href="#pub-methods">Public functions</a></h2>
           <dl class="m-doc">
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#a6e2fe372b4d0ff41aab5bdc529ca9b6d" class="m-doc">Pause</a>(</span><span class="m-doc-wrap"><a href="namespace_simulator.html#a47f6e1218df34ba12db8ee6946791524" class="m-doc">TimeManagerPause</a> pauseType) -&gt; int</span>
+              <span class="m-doc-wrap-bumper">auto <a href="#a6e2fe372b4d0ff41aab5bdc529ca9b6d" class="m-doc">Pause</a>(</span><span class="m-doc-wrap"><a href="namespace_simulator.html#a47f6e1218df34ba12db8ee6946791524" class="m-doc">TimeManagerPause</a> pauseType) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a></span>
             </dt>
             <dd>Tries to pause the game with the given pause type (which might also pause effects or audio).</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#a889028b50776906c87ecf4da94a11bc7" class="m-doc">Resume</a>(</span><span class="m-doc-wrap"><a href="namespace_simulator.html#a47f6e1218df34ba12db8ee6946791524" class="m-doc">TimeManagerPause</a> pauseType) -&gt; int</span>
+              <span class="m-doc-wrap-bumper">auto <a href="#a889028b50776906c87ecf4da94a11bc7" class="m-doc">Resume</a>(</span><span class="m-doc-wrap"><a href="namespace_simulator.html#a47f6e1218df34ba12db8ee6946791524" class="m-doc">TimeManagerPause</a> pauseType) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a></span>
             </dt>
             <dd>Tries to resume the game by cancelling the given pause type.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#a47a82b72fdb0634bbf2ccb99ee4d7bd9" class="m-doc">Toggle</a>(</span><span class="m-doc-wrap"><a href="namespace_simulator.html#a47f6e1218df34ba12db8ee6946791524" class="m-doc">TimeManagerPause</a> pauseType) -&gt; bool</span>
+              <span class="m-doc-wrap-bumper">auto <a href="#a47a82b72fdb0634bbf2ccb99ee4d7bd9" class="m-doc">Toggle</a>(</span><span class="m-doc-wrap"><a href="namespace_simulator.html#a47f6e1218df34ba12db8ee6946791524" class="m-doc">TimeManagerPause</a> pauseType) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">bool</a></span>
             </dt>
             <dd>Pauses the given pause type if it is running, resumes it if it is paused.</dd>
             <dt id="ae6137aca3182d56483c35665e37e315f">
-              <span class="m-doc-wrap-bumper">auto <a href="#ae6137aca3182d56483c35665e37e315f" class="m-doc-self">GetPauseCount</a>(</span><span class="m-doc-wrap"><a href="namespace_simulator.html#a47f6e1218df34ba12db8ee6946791524" class="m-doc">TimeManagerPause</a> pauseType) -&gt; int</span>
+              <span class="m-doc-wrap-bumper">auto <a href="#ae6137aca3182d56483c35665e37e315f" class="m-doc-self">GetPauseCount</a>(</span><span class="m-doc-wrap"><a href="namespace_simulator.html#a47f6e1218df34ba12db8ee6946791524" class="m-doc">TimeManagerPause</a> pauseType) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a></span>
             </dt>
             <dd>Returns how many <a href="class_simulator_1_1c_game_time_manager.html#a6e2fe372b4d0ff41aab5bdc529ca9b6d" class="m-doc">Pause()</a> have been called on the given pause type; returns 0 if game is running, greather than 0 if it is paused.</dd>
             <dt id="a570d126a90a070cf5ddcf83955cec09a">
-              <span class="m-doc-wrap-bumper">auto <a href="#a570d126a90a070cf5ddcf83955cec09a" class="m-doc-self">GetTimeAtStartOfFrame</a>(</span><span class="m-doc-wrap">) -&gt; LARGE_INTEGER</span>
+              <span class="m-doc-wrap-bumper">auto <a href="#a570d126a90a070cf5ddcf83955cec09a" class="m-doc-self">GetTimeAtStartOfFrame</a>(</span><span class="m-doc-wrap">) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">LARGE_<wbr />INTEGER</a></span>
             </dt>
             <dd>Returns the time that was registered at the start of the frame.</dd>
             <dt id="a713f3ff82e9ae0d399aa891ec4442daf">
-              <span class="m-doc-wrap-bumper">auto <a href="#a713f3ff82e9ae0d399aa891ec4442daf" class="m-doc-self">IsPaused</a>(</span><span class="m-doc-wrap">) -&gt; bool</span>
+              <span class="m-doc-wrap-bumper">auto <a href="#a713f3ff82e9ae0d399aa891ec4442daf" class="m-doc-self">IsPaused</a>(</span><span class="m-doc-wrap">) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">bool</a></span>
             </dt>
             <dd>Returns true if the game is paused, false if the game is running.</dd>
             <dt id="a57041dc77c2a32add2ab8ae100c6e5db">
-              <span class="m-doc-wrap-bumper">auto <a href="#a57041dc77c2a32add2ab8ae100c6e5db" class="m-doc-self">IsPausedEffects</a>(</span><span class="m-doc-wrap">) -&gt; bool</span>
+              <span class="m-doc-wrap-bumper">auto <a href="#a57041dc77c2a32add2ab8ae100c6e5db" class="m-doc-self">IsPausedEffects</a>(</span><span class="m-doc-wrap">) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">bool</a></span>
             </dt>
             <dd>Returns true if effects are paused, false otherwise.</dd>
             <dt id="adffd724e13d64f67e63e6b750dc24c75">
-              <span class="m-doc-wrap-bumper">auto <a href="#adffd724e13d64f67e63e6b750dc24c75" class="m-doc-self">IsPausedAudio</a>(</span><span class="m-doc-wrap">) -&gt; bool</span>
+              <span class="m-doc-wrap-bumper">auto <a href="#adffd724e13d64f67e63e6b750dc24c75" class="m-doc-self">IsPausedAudio</a>(</span><span class="m-doc-wrap">) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">bool</a></span>
             </dt>
             <dd>Returns true if audio is paused, false otherwise.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#a634efc156ef0eea5cf3d294d2a0cebcb" class="m-doc">ConvertDeltaTime</a>(</span><span class="m-doc-wrap">int deltaMilliseconds) -&gt; int</span>
+              <span class="m-doc-wrap-bumper">auto <a href="#a634efc156ef0eea5cf3d294d2a0cebcb" class="m-doc">ConvertDeltaTime</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> deltaMilliseconds) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a></span>
             </dt>
             <dd>Called by the master <a href="namespace_simulator.html" class="m-doc">Simulator</a> system and <a href="namespace_simulator.html" class="m-doc">Simulator</a> game modes (creature, tribe, civ and space stage), to calculate the correct delta time.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">void <a href="#a05ab2831db983b2759e4c006439ee7ac" class="m-doc">SetSpeedFactors</a>(</span><span class="m-doc-wrap">float speed0,
-              float speed1,
-              float speed2,
-              float speed3)</span>
+              <span class="m-doc-wrap-bumper">auto <a href="#a05ab2831db983b2759e4c006439ee7ac" class="m-doc">SetSpeedFactors</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">float</a> speed0,
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">float</a> speed1,
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">float</a> speed2,
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">float</a> speed3) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">void</a></span>
             </dt>
             <dd>Sets the different possible game speeds (but does not change the current speed!).</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">void <a href="#a3b2c38cb33d2bdb91f1d7123986c277e" class="m-doc">SetSpeed</a>(</span><span class="m-doc-wrap">int speedIndex)</span>
+              <span class="m-doc-wrap-bumper">auto <a href="#a3b2c38cb33d2bdb91f1d7123986c277e" class="m-doc">SetSpeed</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> speedIndex) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">void</a></span>
             </dt>
             <dd>Changes the game speed to one of 4 possible values, which are specified by <a href="class_simulator_1_1c_game_time_manager.html#a05ab2831db983b2759e4c006439ee7ac" class="m-doc">SetSpeedFactors()</a>.</dd>
             <dt id="aec8395b8baa9339c08027815adad1499">
-              <span class="m-doc-wrap-bumper">auto <a href="#aec8395b8baa9339c08027815adad1499" class="m-doc-self">GetSpeed</a>(</span><span class="m-doc-wrap">) -&gt; float</span>
+              <span class="m-doc-wrap-bumper">auto <a href="#aec8395b8baa9339c08027815adad1499" class="m-doc-self">GetSpeed</a>(</span><span class="m-doc-wrap">) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">float</a></span>
             </dt>
             <dd>Returns the current game speed, a factor that is multiplied by the elapsed time every frame.</dd>
           </dl>
@@ -160,31 +160,31 @@
           <h2><a href="#pub-attribs">Public variables</a></h2>
           <dl class="m-doc">
             <dt id="a26db5d9a3cf568828c11c7b82962af69">
-              float <a href="#a26db5d9a3cf568828c11c7b82962af69" class="m-doc-self">mSpeedFactors</a>
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">float</a> <a href="#a26db5d9a3cf568828c11c7b82962af69" class="m-doc-self">mSpeedFactors</a>
             </dt>
             <dd>The possible speed factors, set with <a href="class_simulator_1_1c_game_time_manager.html#a05ab2831db983b2759e4c006439ee7ac" class="m-doc">SetSpeedFactors()</a></dd>
             <dt id="abf20910fc6690a6b6aaf7f33b7d04ec4">
-              LARGE_INTEGER <a href="#abf20910fc6690a6b6aaf7f33b7d04ec4" class="m-doc-self">mBaseTimeElapsed</a>
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">LARGE_<wbr />INTEGER</a> <a href="#abf20910fc6690a6b6aaf7f33b7d04ec4" class="m-doc-self">mBaseTimeElapsed</a>
             </dt>
             <dd><span></span></dd>
             <dt id="afe0ec0a47d1cbba1ca8875b3a5af8ba8">
-              LARGE_INTEGER <a href="#afe0ec0a47d1cbba1ca8875b3a5af8ba8" class="m-doc-self">mTimeAtStartOfFrame</a>
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">LARGE_<wbr />INTEGER</a> <a href="#afe0ec0a47d1cbba1ca8875b3a5af8ba8" class="m-doc-self">mTimeAtStartOfFrame</a>
             </dt>
             <dd><span></span></dd>
             <dt id="ae7567a1b199b092a4baf5ecf4f61b2a5">
-              float <a href="#ae7567a1b199b092a4baf5ecf4f61b2a5" class="m-doc-self">mCurrentSpeed</a>
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">float</a> <a href="#ae7567a1b199b092a4baf5ecf4f61b2a5" class="m-doc-self">mCurrentSpeed</a>
             </dt>
             <dd><span></span></dd>
             <dt id="a6becb5460befea8d8197e04794d1a9ab">
-              int <a href="#a6becb5460befea8d8197e04794d1a9ab" class="m-doc-self">mCurrentSpeedIndex</a>
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> <a href="#a6becb5460befea8d8197e04794d1a9ab" class="m-doc-self">mCurrentSpeedIndex</a>
             </dt>
             <dd><span></span></dd>
             <dt id="ad67f0dfe58ac72786f30fd6f9f363fa9">
-              int <a href="#ad67f0dfe58ac72786f30fd6f9f363fa9" class="m-doc-self">mFlags</a>
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> <a href="#ad67f0dfe58ac72786f30fd6f9f363fa9" class="m-doc-self">mFlags</a>
             </dt>
             <dd>A combination of current PauseFlags. If 0, game is unpaused; otherwise, use logical AND with PauseFlags.</dd>
             <dt id="a6866587f12f864e6f69edda0cb737b02">
-              eastl::map&lt;<a href="namespace_simulator.html#a47f6e1218df34ba12db8ee6946791524" class="m-doc">TimeManagerPause</a>, int&gt; <a href="#a6866587f12f864e6f69edda0cb737b02" class="m-doc-self">mPauseMaps</a>
+              eastl::map&lt;<a href="namespace_simulator.html#a47f6e1218df34ba12db8ee6946791524" class="m-doc">TimeManagerPause</a>, <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a>&gt; <a href="#a6866587f12f864e6f69edda0cb737b02" class="m-doc-self">mPauseMaps</a>
             </dt>
             <dd>Maps each TimeManagerIdentifier to its index in <code>mPauseTypes</code>.</dd>
             <dt id="a72deba721d2be82b09084a1a3c9d7db5">
@@ -229,7 +229,7 @@
           <h2>Function documentation</h2>
           <section class="m-doc-details" id="a6e2fe372b4d0ff41aab5bdc529ca9b6d"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">int Simulator::<wbr />cGameTimeManager::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a6e2fe372b4d0ff41aab5bdc529ca9b6d" class="m-doc-self">Pause</a>(</span><span class="m-doc-wrap"><a href="namespace_simulator.html#a47f6e1218df34ba12db8ee6946791524" class="m-doc">TimeManagerPause</a> pauseType)</span></span>
+              <span class="m-doc-wrap-bumper"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> Simulator::<wbr />cGameTimeManager::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a6e2fe372b4d0ff41aab5bdc529ca9b6d" class="m-doc-self">Pause</a>(</span><span class="m-doc-wrap"><a href="namespace_simulator.html#a47f6e1218df34ba12db8ee6946791524" class="m-doc">TimeManagerPause</a> pauseType)</span></span>
             </h3>
             <p>Tries to pause the game with the given pause type (which might also pause effects or audio).</p>
             <table class="m-table m-fullwidth m-flat">
@@ -253,7 +253,7 @@
           </div></section>
           <section class="m-doc-details" id="a889028b50776906c87ecf4da94a11bc7"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">int Simulator::<wbr />cGameTimeManager::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a889028b50776906c87ecf4da94a11bc7" class="m-doc-self">Resume</a>(</span><span class="m-doc-wrap"><a href="namespace_simulator.html#a47f6e1218df34ba12db8ee6946791524" class="m-doc">TimeManagerPause</a> pauseType)</span></span>
+              <span class="m-doc-wrap-bumper"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> Simulator::<wbr />cGameTimeManager::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a889028b50776906c87ecf4da94a11bc7" class="m-doc-self">Resume</a>(</span><span class="m-doc-wrap"><a href="namespace_simulator.html#a47f6e1218df34ba12db8ee6946791524" class="m-doc">TimeManagerPause</a> pauseType)</span></span>
             </h3>
             <p>Tries to resume the game by cancelling the given pause type.</p>
             <table class="m-table m-fullwidth m-flat">
@@ -277,7 +277,7 @@
           </div></section>
           <section class="m-doc-details" id="a47a82b72fdb0634bbf2ccb99ee4d7bd9"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">bool Simulator::<wbr />cGameTimeManager::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a47a82b72fdb0634bbf2ccb99ee4d7bd9" class="m-doc-self">Toggle</a>(</span><span class="m-doc-wrap"><a href="namespace_simulator.html#a47f6e1218df34ba12db8ee6946791524" class="m-doc">TimeManagerPause</a> pauseType)</span></span>
+              <span class="m-doc-wrap-bumper"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">bool</a> Simulator::<wbr />cGameTimeManager::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a47a82b72fdb0634bbf2ccb99ee4d7bd9" class="m-doc-self">Toggle</a>(</span><span class="m-doc-wrap"><a href="namespace_simulator.html#a47f6e1218df34ba12db8ee6946791524" class="m-doc">TimeManagerPause</a> pauseType)</span></span>
             </h3>
             <p>Pauses the given pause type if it is running, resumes it if it is paused.</p>
             <table class="m-table m-fullwidth m-flat">
@@ -301,7 +301,7 @@
           </div></section>
           <section class="m-doc-details" id="a634efc156ef0eea5cf3d294d2a0cebcb"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">int Simulator::<wbr />cGameTimeManager::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a634efc156ef0eea5cf3d294d2a0cebcb" class="m-doc-self">ConvertDeltaTime</a>(</span><span class="m-doc-wrap">int deltaMilliseconds)</span></span>
+              <span class="m-doc-wrap-bumper"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> Simulator::<wbr />cGameTimeManager::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a634efc156ef0eea5cf3d294d2a0cebcb" class="m-doc-self">ConvertDeltaTime</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> deltaMilliseconds)</span></span>
             </h3>
             <p>Called by the master <a href="namespace_simulator.html" class="m-doc">Simulator</a> system and <a href="namespace_simulator.html" class="m-doc">Simulator</a> game modes (creature, tribe, civ and space stage), to calculate the correct delta time.</p>
             <table class="m-table m-fullwidth m-flat">
@@ -325,10 +325,10 @@
           </div></section>
           <section class="m-doc-details" id="a05ab2831db983b2759e4c006439ee7ac"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">void Simulator::<wbr />cGameTimeManager::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a05ab2831db983b2759e4c006439ee7ac" class="m-doc-self">SetSpeedFactors</a>(</span><span class="m-doc-wrap">float speed0,
-              float speed1,
-              float speed2,
-              float speed3)</span></span>
+              <span class="m-doc-wrap-bumper"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">void</a> Simulator::<wbr />cGameTimeManager::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a05ab2831db983b2759e4c006439ee7ac" class="m-doc-self">SetSpeedFactors</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">float</a> speed0,
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">float</a> speed1,
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">float</a> speed2,
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">float</a> speed3)</span></span>
             </h3>
             <p>Sets the different possible game speeds (but does not change the current speed!).</p>
             <table class="m-table m-fullwidth m-flat">
@@ -358,7 +358,7 @@
           </div></section>
           <section class="m-doc-details" id="a3b2c38cb33d2bdb91f1d7123986c277e"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">void Simulator::<wbr />cGameTimeManager::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a3b2c38cb33d2bdb91f1d7123986c277e" class="m-doc-self">SetSpeed</a>(</span><span class="m-doc-wrap">int speedIndex)</span></span>
+              <span class="m-doc-wrap-bumper"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">void</a> Simulator::<wbr />cGameTimeManager::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a3b2c38cb33d2bdb91f1d7123986c277e" class="m-doc-self">SetSpeed</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> speedIndex)</span></span>
             </h3>
             <p>Changes the game speed to one of 4 possible values, which are specified by <a href="class_simulator_1_1c_game_time_manager.html#a05ab2831db983b2759e4c006439ee7ac" class="m-doc">SetSpeedFactors()</a>.</p>
             <table class="m-table m-fullwidth m-flat">
@@ -413,13 +413,13 @@
     </div>
   </div>
 </div>
-<script src="search-v1.js"></script>
-<script src="searchdata-v1.js" async="async"></script>
+<script src="search-v2.js"></script>
+<script src="searchdata-v2.js" async="async"></script>
 <footer><nav>
   <div class="m-container">
     <div class="m-row">
       <div class="m-col-l-10 m-push-l-1">
-        <p>Spore ModAPI SDK for creating C++ mods for Spore. Created with <a href="https://doxygen.org/">Doxygen</a> 1.8.16 and <a href="https://mcss.mosra.cz/">m.css</a>.</p>
+        <p>Spore ModAPI SDK for creating C++ mods for Spore. Created with <a href="https://doxygen.org/">Doxygen</a> 1.9.8 and <a href="https://mcss.mosra.cz/">m.css</a>.</p>
       </div>
     </div>
   </div>

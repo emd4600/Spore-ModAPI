@@ -14,7 +14,7 @@
 <header><nav id="navigation">
   <div class="m-container">
     <div class="m-row">
-      <a href="index.html" id="m-navbar-brand" class="m-col-t-8 m-col-m-none m-left-m"><img src="Spore_ModAPI_Icon.png" />Spore ModAPI <span class="m-thin">SDK for creating C++ mods for Spore</span></a>
+      <a href="index.html" id="m-navbar-brand" class="m-col-t-8 m-col-m-none m-left-m"><img src="Spore_ModAPI_Icon.png" alt="" />Spore ModAPI <span class="m-thin">SDK for creating C++ mods for Spore</span></a>
       <div class="m-col-t-4 m-hide-m m-text-right m-nopadr">
         <a href="#search" class="m-doc-search-icon" title="Search" onclick="return showSearch()"><svg style="height: 0.9rem;" viewBox="0 0 16 16">
           <path id="m-doc-search-icon-path" d="m6 0c-3.31 0-6 2.69-6 6 0 3.31 2.69 6 6 6 1.49 0 2.85-0.541 3.89-1.44-0.0164 0.338 0.147 0.759 0.5 1.15l3.22 3.79c0.552 0.614 1.45 0.665 2 0.115 0.55-0.55 0.499-1.45-0.115-2l-3.79-3.22c-0.392-0.353-0.812-0.515-1.15-0.5 0.895-1.05 1.44-2.41 1.44-3.89 0-3.31-2.69-6-6-6zm0 1.56a4.44 4.44 0 0 1 4.44 4.44 4.44 4.44 0 0 1-4.44 4.44 4.44 4.44 0 0 1-4.44-4.44 4.44 4.44 0 0 1 4.44-4.44z"/>
@@ -46,10 +46,10 @@
       <div class="m-col-l-10 m-push-l-1">
         <h1>
           <span class="m-breadcrumb"><a href="namespace_sporepedia.html">Sporepedia</a>::<wbr/></span>ShopperRequest <span class="m-thin">struct</span>
-          <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_shopper_request_8h.html">&lt;Spore/Sporepedia/ShopperRequest.h&gt;</a></div>
+          <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_shopper_request_8h.html">&lt;/home/runner/work/Spore-ModAPI/Spore-ModAPI/Spore-ModAPI/Spore ModAPI/Spore/Sporepedia/ShopperRequest.h&gt;</a></div>
         </h1>
         <p>A class used to show the <a href="namespace_sporepedia.html" class="m-doc">Sporepedia</a> to the user, asking him to select a creation.</p>
-        <div class="m-block m-default">
+        <nav class="m-block m-default">
           <h3>Contents</h3>
           <ul>
             <li>
@@ -61,7 +61,7 @@
               </ul>
             </li>
           </ul>
-        </div>
+        </nav>
 <p>A shopper request uses a configuration file in the AssetBrowserConfig folder to know what text it will show to the player, what are the available creation types, etc.</p><p>To know when the user selects a creature, you must create a class that inherits from <a href="class_sporepedia_1_1_i_shopper_listener.html" class="m-doc">IShopperListener</a></p><p>Example usage:</p><pre class="m-code"><span class="c1">// `this` can also be whatever object that inherits from IShopperListener</span>
 <span class="n">Sporepedia</span><span class="o">::</span><span class="n">ShopperRequest</span><span class="w"> </span><span class="nf">request</span><span class="p">(</span><span class="k">this</span><span class="p">);</span><span class="w"></span>
 <span class="n">request</span><span class="p">.</span><span class="n">shopperID</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">id</span><span class="p">(</span><span class="s">&quot;MilitaryAirShopper&quot;</span><span class="p">);</span><span class="w"></span></pre>
@@ -69,7 +69,7 @@
           <h2><a href="#pub-static-methods">Public static functions</a></h2>
           <dl class="m-doc">
             <dt>
-              <span class="m-doc-wrap-bumper">static void <a href="#ae541a3fd9bec94d1d3a6d5bfc23677c3" class="m-doc">Show</a>(</span><span class="m-doc-wrap"><a href="struct_sporepedia_1_1_shopper_request.html" class="m-doc">ShopperRequest</a>&amp; request)</span>
+              <span class="m-doc-wrap-bumper">static auto <a href="#ae541a3fd9bec94d1d3a6d5bfc23677c3" class="m-doc">Show</a>(</span><span class="m-doc-wrap"><a href="struct_sporepedia_1_1_shopper_request.html" class="m-doc">ShopperRequest</a>&amp; request) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">void</a></span>
             </dt>
             <dd>Executes this request, showing the <a href="namespace_sporepedia.html" class="m-doc">Sporepedia</a> to the user.</dd>
           </dl>
@@ -78,7 +78,7 @@
           <h2><a href="#typeless-methods">Constructors, destructors, conversion operators</a></h2>
           <dl class="m-doc">
             <dt id="a0d124e8d6cd934d3a9853e80ad4c772f">
-              <span class="m-doc-wrap-bumper"><a href="#a0d124e8d6cd934d3a9853e80ad4c772f" class="m-doc-self">ShopperRequest</a>(</span><span class="m-doc-wrap"><a href="class_sporepedia_1_1_i_shopper_listener.html" class="m-doc">IShopperListener</a>* listener = nullptr)</span>
+              <span class="m-doc-wrap-bumper"><a href="#a0d124e8d6cd934d3a9853e80ad4c772f" class="m-doc-self">ShopperRequest</a>(</span><span class="m-doc-wrap"><a href="class_sporepedia_1_1_i_shopper_listener.html" class="m-doc">IShopperListener</a>* listener = <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">nullptr</a>)</span>
             </dt>
             <dd><span></span></dd>
           </dl>
@@ -87,39 +87,39 @@
           <h2><a href="#pub-attribs">Public variables</a></h2>
           <dl class="m-doc">
             <dt id="a753b46febc29c8c77067d3ddf5e4735c">
-              uint32_t <a href="#a753b46febc29c8c77067d3ddf5e4735c" class="m-doc-self">shopperID</a>
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">uint32_<wbr />t</a> <a href="#a753b46febc29c8c77067d3ddf5e4735c" class="m-doc-self">shopperID</a>
             </dt>
             <dd>The ID of the file in the <code>AssetBrowserConfig</code> folder that decides what the user can choose.</dd>
             <dt id="aaf46936d8f61dbd8198de8fd4e53f020">
-              uint32_t <a href="#aaf46936d8f61dbd8198de8fd4e53f020" class="m-doc-self">gameModeID</a>
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">uint32_<wbr />t</a> <a href="#aaf46936d8f61dbd8198de8fd4e53f020" class="m-doc-self">gameModeID</a>
             </dt>
             <dd>The current game mode ID, it&#x27;s set automatically.</dd>
             <dt id="ae81842c8ee7bfe6a5f2be845c456d4a3">
-              int <a href="#ae81842c8ee7bfe6a5f2be845c456d4a3" class="m-doc-self">field_8</a>
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> <a href="#ae81842c8ee7bfe6a5f2be845c456d4a3" class="m-doc-self">field_8</a>
             </dt>
             <dd><span></span></dd>
             <dt id="ac9753ea5e140a670c86935013a707e48">
-              int <a href="#ac9753ea5e140a670c86935013a707e48" class="m-doc-self">field_C</a>
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> <a href="#ac9753ea5e140a670c86935013a707e48" class="m-doc-self">field_C</a>
             </dt>
             <dd><span></span></dd>
             <dt id="a5ca59cc52adc6e7301d2e0c38a8c5051">
-              bool <a href="#a5ca59cc52adc6e7301d2e0c38a8c5051" class="m-doc-self">field_10</a>
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">bool</a> <a href="#a5ca59cc52adc6e7301d2e0c38a8c5051" class="m-doc-self">field_10</a>
             </dt>
             <dd><span></span></dd>
             <dt id="aafd2304febb0eeae0bb27a568d963d90">
-              bool <a href="#aafd2304febb0eeae0bb27a568d963d90" class="m-doc-self">field_11</a>
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">bool</a> <a href="#aafd2304febb0eeae0bb27a568d963d90" class="m-doc-self">field_11</a>
             </dt>
             <dd><span></span></dd>
             <dt id="a2802a721a5f29c076123e20888e8b85e">
-              bool <a href="#a2802a721a5f29c076123e20888e8b85e" class="m-doc-self">field_12</a>
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">bool</a> <a href="#a2802a721a5f29c076123e20888e8b85e" class="m-doc-self">field_12</a>
             </dt>
             <dd><span></span></dd>
             <dt id="a3a30261b3b443ab741134ee704fd6faf">
-              bool <a href="#a3a30261b3b443ab741134ee704fd6faf" class="m-doc-self">field_13</a>
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">bool</a> <a href="#a3a30261b3b443ab741134ee704fd6faf" class="m-doc-self">field_13</a>
             </dt>
             <dd><span></span></dd>
             <dt id="afd806801817f9859cab101c63fb4cbc1">
-              bool <a href="#afd806801817f9859cab101c63fb4cbc1" class="m-doc-self">field_14</a>
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">bool</a> <a href="#afd806801817f9859cab101c63fb4cbc1" class="m-doc-self">field_14</a>
             </dt>
             <dd><span></span></dd>
             <dt id="adda983c7b32be407ed2ae87fce8f8161">
@@ -127,23 +127,23 @@
             </dt>
             <dd>Key to the creation that is currently selected. If not specified, nothing is selected.</dd>
             <dt id="a8c75056e778450c856c42ee176bd77c6">
-              bool <a href="#a8c75056e778450c856c42ee176bd77c6" class="m-doc-self">field_24</a>
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">bool</a> <a href="#a8c75056e778450c856c42ee176bd77c6" class="m-doc-self">field_24</a>
             </dt>
             <dd><span></span></dd>
             <dt id="a13aa883e0659ead5af3f21f8c6de37ba">
-              int <a href="#a13aa883e0659ead5af3f21f8c6de37ba" class="m-doc-self">field_28</a>
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> <a href="#a13aa883e0659ead5af3f21f8c6de37ba" class="m-doc-self">field_28</a>
             </dt>
             <dd><span></span></dd>
             <dt id="a4629893bab035e854e625668c3007529">
-              bool <a href="#a4629893bab035e854e625668c3007529" class="m-doc-self">field_2C</a>
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">bool</a> <a href="#a4629893bab035e854e625668c3007529" class="m-doc-self">field_2C</a>
             </dt>
             <dd><span></span></dd>
             <dt id="a3f93459cc7d7c4ac280d2e62eb2130d6">
-              uint32_t <a href="#a3f93459cc7d7c4ac280d2e62eb2130d6" class="m-doc-self">field_30</a>
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">uint32_<wbr />t</a> <a href="#a3f93459cc7d7c4ac280d2e62eb2130d6" class="m-doc-self">field_30</a>
             </dt>
             <dd><span></span></dd>
             <dt id="a9815074e7c991c90362dc07b9b317cc4">
-              int <a href="#a9815074e7c991c90362dc07b9b317cc4" class="m-doc-self">maxSelections</a>
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> <a href="#a9815074e7c991c90362dc07b9b317cc4" class="m-doc-self">maxSelections</a>
             </dt>
             <dd><span></span></dd>
             <dt id="a398b9f087767976430b943b5c65836c9">
@@ -168,7 +168,7 @@
           <h2>Function documentation</h2>
           <section class="m-doc-details" id="ae541a3fd9bec94d1d3a6d5bfc23677c3"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">static void Sporepedia::<wbr />ShopperRequest::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ae541a3fd9bec94d1d3a6d5bfc23677c3" class="m-doc-self">Show</a>(</span><span class="m-doc-wrap"><a href="struct_sporepedia_1_1_shopper_request.html" class="m-doc">ShopperRequest</a>&amp; request)</span></span>
+              <span class="m-doc-wrap-bumper">static <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">void</a> Sporepedia::<wbr />ShopperRequest::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ae541a3fd9bec94d1d3a6d5bfc23677c3" class="m-doc-self">Show</a>(</span><span class="m-doc-wrap"><a href="struct_sporepedia_1_1_shopper_request.html" class="m-doc">ShopperRequest</a>&amp; request)</span></span>
             </h3>
             <p>Executes this request, showing the <a href="namespace_sporepedia.html" class="m-doc">Sporepedia</a> to the user.</p>
 <p>This method returns immediately; when the user clicks the Accept button, the function specified at the constructor or at <code>pListener</code> (if any) will be executed.</p>
@@ -212,13 +212,13 @@
     </div>
   </div>
 </div>
-<script src="search-v1.js"></script>
-<script src="searchdata-v1.js" async="async"></script>
+<script src="search-v2.js"></script>
+<script src="searchdata-v2.js" async="async"></script>
 <footer><nav>
   <div class="m-container">
     <div class="m-row">
       <div class="m-col-l-10 m-push-l-1">
-        <p>Spore ModAPI SDK for creating C++ mods for Spore. Created with <a href="https://doxygen.org/">Doxygen</a> 1.8.16 and <a href="https://mcss.mosra.cz/">m.css</a>.</p>
+        <p>Spore ModAPI SDK for creating C++ mods for Spore. Created with <a href="https://doxygen.org/">Doxygen</a> 1.9.8 and <a href="https://mcss.mosra.cz/">m.css</a>.</p>
       </div>
     </div>
   </div>

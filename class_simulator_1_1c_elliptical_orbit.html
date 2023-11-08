@@ -14,7 +14,7 @@
 <header><nav id="navigation">
   <div class="m-container">
     <div class="m-row">
-      <a href="index.html" id="m-navbar-brand" class="m-col-t-8 m-col-m-none m-left-m"><img src="Spore_ModAPI_Icon.png" />Spore ModAPI <span class="m-thin">SDK for creating C++ mods for Spore</span></a>
+      <a href="index.html" id="m-navbar-brand" class="m-col-t-8 m-col-m-none m-left-m"><img src="Spore_ModAPI_Icon.png" alt="" />Spore ModAPI <span class="m-thin">SDK for creating C++ mods for Spore</span></a>
       <div class="m-col-t-4 m-hide-m m-text-right m-nopadr">
         <a href="#search" class="m-doc-search-icon" title="Search" onclick="return showSearch()"><svg style="height: 0.9rem;" viewBox="0 0 16 16">
           <path id="m-doc-search-icon-path" d="m6 0c-3.31 0-6 2.69-6 6 0 3.31 2.69 6 6 6 1.49 0 2.85-0.541 3.89-1.44-0.0164 0.338 0.147 0.759 0.5 1.15l3.22 3.79c0.552 0.614 1.45 0.665 2 0.115 0.55-0.55 0.499-1.45-0.115-2l-3.79-3.22c-0.392-0.353-0.812-0.515-1.15-0.5 0.895-1.05 1.44-2.41 1.44-3.89 0-3.31-2.69-6-6-6zm0 1.56a4.44 4.44 0 0 1 4.44 4.44 4.44 4.44 0 0 1-4.44 4.44 4.44 4.44 0 0 1-4.44-4.44 4.44 4.44 0 0 1 4.44-4.44z"/>
@@ -46,10 +46,10 @@
       <div class="m-col-l-10 m-push-l-1">
         <h1>
           <span class="m-breadcrumb"><a href="namespace_simulator.html">Simulator</a>::<wbr/></span>cEllipticalOrbit <span class="m-thin">class</span>
-          <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="c_elliptical_orbit_8h.html">&lt;Spore/Simulator/cEllipticalOrbit.h&gt;</a></div>
+          <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="c_elliptical_orbit_8h.html">&lt;/home/runner/work/Spore-ModAPI/Spore-ModAPI/Spore-ModAPI/Spore ModAPI/Spore/Simulator/cEllipticalOrbit.h&gt;</a></div>
         </h1>
         <p>Settings of the orbit of a planet or celestial body in a solar system.</p>
-        <div class="m-block m-default">
+        <nav class="m-block m-default">
           <h3>Contents</h3>
           <ul>
             <li>
@@ -62,7 +62,7 @@
               </ul>
             </li>
           </ul>
-        </div>
+        </nav>
 <p>These are all mathematical properties to define an elliptical orbit. <code>mPlaneNormal</code> describes the plane of rotation, whereas <code>mEccentricty</code> and <code>mPerihelion</code> describe the ellipse in that plane.</p><p>This class saves all its parameters except <code>mCache</code>. <code>mCache</code> is precalculated from the other parameters when the data is loaded, so if you change one of the parameters you have to calculate the cache again using <a href="class_simulator_1_1c_elliptical_orbit.html#a17add94b4849f1bffaed3261f6e4623d" class="m-doc">Precalculate()</a>.</p>
         <section id="pub-types">
           <h2><a href="#pub-types">Public types</a></h2>
@@ -86,7 +86,7 @@
           <h2><a href="#pub-methods">Public functions</a></h2>
           <dl class="m-doc">
             <dt>
-              <span class="m-doc-wrap-bumper">void <a href="#a17add94b4849f1bffaed3261f6e4623d" class="m-doc">Precalculate</a>(</span><span class="m-doc-wrap">)</span>
+              <span class="m-doc-wrap-bumper">auto <a href="#a17add94b4849f1bffaed3261f6e4623d" class="m-doc">Precalculate</a>(</span><span class="m-doc-wrap">) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">void</a></span>
             </dt>
             <dd>Calculates all the valeus in <code>mCache</code> using the rest of parameters in this class.</dd>
           </dl>
@@ -95,7 +95,7 @@
           <h2><a href="#pub-attribs">Public variables</a></h2>
           <dl class="m-doc">
             <dt id="a43da5a68447c869c3deea801bf33e5a0">
-              bool <a href="#a43da5a68447c869c3deea801bf33e5a0" class="m-doc-self">mbNullOrbit</a>
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">bool</a> <a href="#a43da5a68447c869c3deea801bf33e5a0" class="m-doc-self">mbNullOrbit</a>
             </dt>
             <dd>If true, the orbit is null (so there is no orbit at all)</dd>
             <dt id="ac35c04b835bb53692e845f7b38f34fab">
@@ -103,7 +103,7 @@
             </dt>
             <dd>Normal vector of the plane in which the planet orbits. The planet never leaves that plane.</dd>
             <dt id="a8f973e1e1c392955681e0de928149198">
-              float <a href="#a8f973e1e1c392955681e0de928149198" class="m-doc-self">mEccentricity</a>
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">float</a> <a href="#a8f973e1e1c392955681e0de928149198" class="m-doc-self">mEccentricity</a>
             </dt>
             <dd>Eccentricity of the ellipse of the orbit; 0.0 is a circular orbit.</dd>
             <dt id="a15ab0f4ae315c9d42ac35f4287db0c92">
@@ -111,7 +111,7 @@
             </dt>
             <dd>Point of the orbit in which the planet is closest to the star. Also known as periapsis.</dd>
             <dt id="af08456530976969c1f8a5f0093a06a71">
-              float <a href="#af08456530976969c1f8a5f0093a06a71" class="m-doc-self">mPeriod</a>
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">float</a> <a href="#af08456530976969c1f8a5f0093a06a71" class="m-doc-self">mPeriod</a>
             </dt>
             <dd>Time it takes, in real seconds, to complete one orbit (i.e. how long an astronomical year is)</dd>
             <dt id="a059960e3dd3f71eecd7e9ae8a87bee6b">
@@ -124,7 +124,7 @@
           <h2>Function documentation</h2>
           <section class="m-doc-details" id="a17add94b4849f1bffaed3261f6e4623d"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">void Simulator::<wbr />cEllipticalOrbit::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a17add94b4849f1bffaed3261f6e4623d" class="m-doc-self">Precalculate</a>(</span><span class="m-doc-wrap">)</span></span>
+              <span class="m-doc-wrap-bumper"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">void</a> Simulator::<wbr />cEllipticalOrbit::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a17add94b4849f1bffaed3261f6e4623d" class="m-doc-self">Precalculate</a>(</span><span class="m-doc-wrap">)</span></span>
             </h3>
             <p>Calculates all the valeus in <code>mCache</code> using the rest of parameters in this class.</p>
 <p>This must be called every time a parameter is changed.</p>
@@ -168,13 +168,13 @@
     </div>
   </div>
 </div>
-<script src="search-v1.js"></script>
-<script src="searchdata-v1.js" async="async"></script>
+<script src="search-v2.js"></script>
+<script src="searchdata-v2.js" async="async"></script>
 <footer><nav>
   <div class="m-container">
     <div class="m-row">
       <div class="m-col-l-10 m-push-l-1">
-        <p>Spore ModAPI SDK for creating C++ mods for Spore. Created with <a href="https://doxygen.org/">Doxygen</a> 1.8.16 and <a href="https://mcss.mosra.cz/">m.css</a>.</p>
+        <p>Spore ModAPI SDK for creating C++ mods for Spore. Created with <a href="https://doxygen.org/">Doxygen</a> 1.9.8 and <a href="https://mcss.mosra.cz/">m.css</a>.</p>
       </div>
     </div>
   </div>

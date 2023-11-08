@@ -14,7 +14,7 @@
 <header><nav id="navigation">
   <div class="m-container">
     <div class="m-row">
-      <a href="index.html" id="m-navbar-brand" class="m-col-t-8 m-col-m-none m-left-m"><img src="Spore_ModAPI_Icon.png" />Spore ModAPI <span class="m-thin">SDK for creating C++ mods for Spore</span></a>
+      <a href="index.html" id="m-navbar-brand" class="m-col-t-8 m-col-m-none m-left-m"><img src="Spore_ModAPI_Icon.png" alt="" />Spore ModAPI <span class="m-thin">SDK for creating C++ mods for Spore</span></a>
       <div class="m-col-t-4 m-hide-m m-text-right m-nopadr">
         <a href="#search" class="m-doc-search-icon" title="Search" onclick="return showSearch()"><svg style="height: 0.9rem;" viewBox="0 0 16 16">
           <path id="m-doc-search-icon-path" d="m6 0c-3.31 0-6 2.69-6 6 0 3.31 2.69 6 6 6 1.49 0 2.85-0.541 3.89-1.44-0.0164 0.338 0.147 0.759 0.5 1.15l3.22 3.79c0.552 0.614 1.45 0.665 2 0.115 0.55-0.55 0.499-1.45-0.115-2l-3.79-3.22c-0.392-0.353-0.812-0.515-1.15-0.5 0.895-1.05 1.44-2.41 1.44-3.89 0-3.31-2.69-6-6-6zm0 1.56a4.44 4.44 0 0 1 4.44 4.44 4.44 4.44 0 0 1-4.44 4.44 4.44 4.44 0 0 1-4.44-4.44 4.44 4.44 0 0 1 4.44-4.44z"/>
@@ -46,10 +46,10 @@
       <div class="m-col-l-10 m-push-l-1">
         <h1>
           <span class="m-breadcrumb"><a href="namespace_app.html">App</a>::<wbr/></span>PropertyList <span class="m-thin">class</span>
-          <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_property_list_8h.html">&lt;Spore/App/PropertyList.h&gt;</a></div>
+          <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_property_list_8h.html">&lt;/home/runner/work/Spore-ModAPI/Spore-ModAPI/Spore-ModAPI/Spore ModAPI/Spore/App/PropertyList.h&gt;</a></div>
         </h1>
         <p>A class that contains multiple properties.</p>
-        <div class="m-block m-default">
+        <nav class="m-block m-default">
           <h3>Contents</h3>
           <ul>
             <li>
@@ -65,7 +65,7 @@
               </ul>
             </li>
           </ul>
-        </div>
+        </nav>
 <p>This is the representation of a .prop file.</p><p>PropertyLists store properties as a map, where an uint32_t (the property ID) is the key, and a <a href="class_app_1_1_property.html" class="m-doc">Property</a> is the value. The contents of a <a href="class_app_1_1_property.html" class="m-doc">Property</a> class vary depending on the property type and flags; therefore, it is recommended that, for retrieveing values from a property list, you use the static methods defined in the <a href="class_app_1_1_property.html" class="m-doc">Property</a> class, which are adapted to get specific types of values.</p><p>PropertyLists can have a parent; in that case, properties are also searched recursively in the parents.</p><p><a href="class_app_1_1_property_list.html" class="m-doc">PropertyList</a> inherits from ResourceObject, and therefore, is uniquely identified using a <a href="struct_resource_key.html" class="m-doc">ResourceKey</a>. Use the class PropertyManager to get specific lists.</p>
         <section id="base-classes">
           <h2><a href="#base-classes">Base classes</a></h2>
@@ -89,9 +89,9 @@
           <h2><a href="#pub-static-methods">Public static functions</a></h2>
           <dl class="m-doc">
             <dt>
-              <span class="m-doc-wrap-bumper">static void <a href="#ad234a30653a2eb6f96ef7dd3a95c96a1" class="m-doc">SaveToDatabase</a>(</span><span class="m-doc-wrap"><a href="class_app_1_1_property_list.html" class="m-doc">PropertyList</a>* propList,
+              <span class="m-doc-wrap-bumper">static auto <a href="#ad234a30653a2eb6f96ef7dd3a95c96a1" class="m-doc">SaveToDatabase</a>(</span><span class="m-doc-wrap"><a href="class_app_1_1_property_list.html" class="m-doc">PropertyList</a>* propList,
               <a href="class_resource_1_1_database.html" class="m-doc">Resource::<wbr />Database</a>* database,
-              bool async)</span>
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">bool</a> async) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">void</a></span>
             </dt>
             <dd>Adds the given property list to the <a href="class_app_1_1_i_prop_manager.html" class="m-doc">IPropManager</a>, and saves its contents into the given database.</dd>
           </dl>
@@ -113,66 +113,66 @@
           <h2><a href="#pub-methods">Public functions</a></h2>
           <dl class="m-doc">
             <dt>
-              <span class="m-doc-wrap-bumper">void <a href="#a35f3cfe8da6d2f026ec1009cea305a33" class="m-doc">SetProperty</a>(</span><span class="m-doc-wrap">uint32_t propertyID,
-              const <a href="class_app_1_1_property.html" class="m-doc">Property</a>* pValue) <span class="m-label m-flat m-warning">virtual</span></span>
+              <span class="m-doc-wrap-bumper">auto <a href="#a35f3cfe8da6d2f026ec1009cea305a33" class="m-doc">SetProperty</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">uint32_<wbr />t</a> propertyID,
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">const</a> <a href="class_app_1_1_property.html" class="m-doc">Property</a>* pValue) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">void</a> <span class="m-label m-flat m-warning">virtual</span></span>
             </dt>
             <dd>Sets the value of the property with the given ID to the specified value.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#a8083713e993fd5b72049ea959063b03d" class="m-doc">RemoveProperty</a>(</span><span class="m-doc-wrap">uint32_t propertyID) -&gt; int <span class="m-label m-flat m-warning">virtual</span></span>
+              <span class="m-doc-wrap-bumper">auto <a href="#a8083713e993fd5b72049ea959063b03d" class="m-doc">RemoveProperty</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">uint32_<wbr />t</a> propertyID) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> <span class="m-label m-flat m-warning">virtual</span></span>
             </dt>
             <dd>Removes this propertyID and its value from the list.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#a3db58b2024b5e2bfa100693cd1b9c2df" class="m-doc">HasProperty</a>(</span><span class="m-doc-wrap">uint32_t propertyID) const -&gt; bool <span class="m-label m-flat m-warning">virtual</span></span>
+              <span class="m-doc-wrap-bumper">auto <a href="#a3db58b2024b5e2bfa100693cd1b9c2df" class="m-doc">HasProperty</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">uint32_<wbr />t</a> propertyID) const -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">bool</a> <span class="m-label m-flat m-warning">virtual</span></span>
             </dt>
             <dd>Tells whether a property with this propertyID is contained inside this list, or inside any of its parents.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#a5e71ffbb1d50b52b9b620a6eb09e04e5" class="m-doc">GetPropertyAlt</a>(</span><span class="m-doc-wrap">uint32_t propertyID,
-              <a href="class_app_1_1_property.html" class="m-doc">Property</a>*&amp; result) const -&gt; bool <span class="m-label m-flat m-warning">virtual</span></span>
+              <span class="m-doc-wrap-bumper">auto <a href="#a5e71ffbb1d50b52b9b620a6eb09e04e5" class="m-doc">GetPropertyAlt</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">uint32_<wbr />t</a> propertyID,
+              <a href="class_app_1_1_property.html" class="m-doc">Property</a>*&amp; result) const -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">bool</a> <span class="m-label m-flat m-warning">virtual</span></span>
             </dt>
             <dd>This does the same as GetProperty(uint32_t, Property*&amp;).</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#a27a4256421a44fdf5ededca1ea2fd129" class="m-doc">GetProperty</a>(</span><span class="m-doc-wrap">uint32_t propertyID,
-              <a href="class_app_1_1_property.html" class="m-doc">Property</a>*&amp; result) const -&gt; bool <span class="m-label m-flat m-warning">virtual</span></span>
+              <span class="m-doc-wrap-bumper">auto <a href="#a27a4256421a44fdf5ededca1ea2fd129" class="m-doc">GetProperty</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">uint32_<wbr />t</a> propertyID,
+              <a href="class_app_1_1_property.html" class="m-doc">Property</a>*&amp; result) const -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">bool</a> <span class="m-label m-flat m-warning">virtual</span></span>
             </dt>
             <dd>Gets the pointer to a <a href="class_app_1_1_property.html" class="m-doc">Property</a> with the given propertyID and assigns it to the parameter &#x27;result&#x27;.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#abd87551e1e47d8d0f2d125b4c82359c8" class="m-doc">GetPropertyObject</a>(</span><span class="m-doc-wrap">uint32_t propertyID) const -&gt; <a href="class_app_1_1_property.html" class="m-doc">Property</a>* <span class="m-label m-flat m-warning">virtual</span></span>
+              <span class="m-doc-wrap-bumper">auto <a href="#abe162e086ca4e59902ec80fc46e147c0" class="m-doc">GetPropertyObject</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">uint32_<wbr />t</a> propertyID) const -&gt; <a href="class_app_1_1_property.html" class="m-doc">Property</a>* <span class="m-label m-flat m-warning">virtual</span></span>
             </dt>
             <dd>Gets the pointer to a <a href="class_app_1_1_property.html" class="m-doc">Property</a> with the given propertyID.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">void <a href="#ae44fd47f528631cd736958800e7ed6e7" class="m-doc">CopyFrom</a>(</span><span class="m-doc-wrap">const <a href="class_app_1_1_property_list.html" class="m-doc">PropertyList</a>* pOther) <span class="m-label m-flat m-warning">virtual</span></span>
+              <span class="m-doc-wrap-bumper">auto <a href="#ae44fd47f528631cd736958800e7ed6e7" class="m-doc">CopyFrom</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">const</a> <a href="class_app_1_1_property_list.html" class="m-doc">PropertyList</a>* pOther) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">void</a> <span class="m-label m-flat m-warning">virtual</span></span>
             </dt>
             <dd>Copies the properties and parent from pOther.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">void <a href="#a7f19e81d6769da9cd1483ccb1598dba2" class="m-doc">AddPropertiesFrom</a>(</span><span class="m-doc-wrap">const <a href="class_app_1_1_property_list.html" class="m-doc">PropertyList</a>* pOther) <span class="m-label m-flat m-warning">virtual</span></span>
+              <span class="m-doc-wrap-bumper">auto <a href="#a7f19e81d6769da9cd1483ccb1598dba2" class="m-doc">AddPropertiesFrom</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">const</a> <a href="class_app_1_1_property_list.html" class="m-doc">PropertyList</a>* pOther) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">void</a> <span class="m-label m-flat m-warning">virtual</span></span>
             </dt>
             <dd>Copies all the properties from pOther to this property list.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">void <a href="#a69100f570447311483e3a9e78cdc8dab" class="m-doc">CopyAllPropertiesFrom</a>(</span><span class="m-doc-wrap">const <a href="class_app_1_1_property_list.html" class="m-doc">PropertyList</a>* pOther) <span class="m-label m-flat m-warning">virtual</span></span>
+              <span class="m-doc-wrap-bumper">auto <a href="#a69100f570447311483e3a9e78cdc8dab" class="m-doc">CopyAllPropertiesFrom</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">const</a> <a href="class_app_1_1_property_list.html" class="m-doc">PropertyList</a>* pOther) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">void</a> <span class="m-label m-flat m-warning">virtual</span></span>
             </dt>
             <dd>Copies all the properties from pOther.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">void <a href="#a29dbee6aec9ce3cfceb1df35a7c34a1b" class="m-doc">AddAllPropertiesFrom</a>(</span><span class="m-doc-wrap">const <a href="class_app_1_1_property_list.html" class="m-doc">PropertyList</a>* pOther) <span class="m-label m-flat m-warning">virtual</span></span>
+              <span class="m-doc-wrap-bumper">auto <a href="#a29dbee6aec9ce3cfceb1df35a7c34a1b" class="m-doc">AddAllPropertiesFrom</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">const</a> <a href="class_app_1_1_property_list.html" class="m-doc">PropertyList</a>* pOther) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">void</a> <span class="m-label m-flat m-warning">virtual</span></span>
             </dt>
             <dd>Similar to void CopyPropertiesFrom(PropertyList* pOther), but this copies all the properties from pOther parents as well.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#ac53a36493f2340d7c1820f12c86dada7" class="m-doc">Read</a>(</span><span class="m-doc-wrap"><a href="class_i_o_1_1_i_stream.html" class="m-doc">IO::<wbr />IStream</a>* pInputStream) -&gt; bool <span class="m-label m-flat m-warning">virtual</span></span>
+              <span class="m-doc-wrap-bumper">auto <a href="#ac53a36493f2340d7c1820f12c86dada7" class="m-doc">Read</a>(</span><span class="m-doc-wrap"><a href="class_i_o_1_1_i_stream.html" class="m-doc">IO::<wbr />IStream</a>* pInputStream) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">bool</a> <span class="m-label m-flat m-warning">virtual</span></span>
             </dt>
             <dd>Fills this <a href="class_app_1_1_property_list.html" class="m-doc">PropertyList</a> with the information contained in the given <a href="class_i_o_1_1_i_stream.html" class="m-doc">IO::<wbr />IStream</a>, according to the PROP file format.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#a0b7f67933d5bc00f4fa2813c3b168328" class="m-doc">Write</a>(</span><span class="m-doc-wrap"><a href="class_i_o_1_1_i_stream.html" class="m-doc">IO::<wbr />IStream</a>* pOutputStream) const -&gt; bool <span class="m-label m-flat m-warning">virtual</span></span>
+              <span class="m-doc-wrap-bumper">auto <a href="#a0b7f67933d5bc00f4fa2813c3b168328" class="m-doc">Write</a>(</span><span class="m-doc-wrap"><a href="class_i_o_1_1_i_stream.html" class="m-doc">IO::<wbr />IStream</a>* pOutputStream) const -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">bool</a> <span class="m-label m-flat m-warning">virtual</span></span>
             </dt>
             <dd>Writes this <a href="class_app_1_1_property_list.html" class="m-doc">PropertyList</a> into the given <a href="class_i_o_1_1_i_stream.html" class="m-doc">IO::<wbr />IStream</a>, according to the PROP file format.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">void <a href="#ad35da009240bfaefbfd7ce6c607f2b07" class="m-doc">GetPropertyIDs</a>(</span><span class="m-doc-wrap">eastl::vector&lt;uint32_t&gt;&amp; dst) const <span class="m-label m-flat m-warning">virtual</span></span>
+              <span class="m-doc-wrap-bumper">auto <a href="#ad35da009240bfaefbfd7ce6c607f2b07" class="m-doc">GetPropertyIDs</a>(</span><span class="m-doc-wrap">eastl::vector&lt;<a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">uint32_<wbr />t</a>&gt;&amp; dst) const -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">void</a> <span class="m-label m-flat m-warning">virtual</span></span>
             </dt>
             <dd>Fills the given vector with all the property IDs contained in this <a href="class_app_1_1_property_list.html" class="m-doc">PropertyList</a>.</dd>
             <dt id="a2665462938e2bb8c5e0eb4c9d06e4117">
-              <span class="m-doc-wrap-bumper">void <a href="#a2665462938e2bb8c5e0eb4c9d06e4117" class="m-doc-self">Clear</a>(</span><span class="m-doc-wrap">) <span class="m-label m-flat m-warning">virtual</span></span>
+              <span class="m-doc-wrap-bumper">auto <a href="#a2665462938e2bb8c5e0eb4c9d06e4117" class="m-doc-self">Clear</a>(</span><span class="m-doc-wrap">) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">void</a> <span class="m-label m-flat m-warning">virtual</span></span>
             </dt>
             <dd>Removes all the properties from this <a href="class_app_1_1_property_list.html" class="m-doc">PropertyList</a>.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">void <a href="#a1c03bd79a65cd418793b404d01af914b" class="m-doc">SetParent</a>(</span><span class="m-doc-wrap"><a href="class_app_1_1_property_list.html" class="m-doc">PropertyList</a>* pParent)</span>
+              <span class="m-doc-wrap-bumper">auto <a href="#a1c03bd79a65cd418793b404d01af914b" class="m-doc">SetParent</a>(</span><span class="m-doc-wrap"><a href="class_app_1_1_property_list.html" class="m-doc">PropertyList</a>* pParent) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">void</a></span>
             </dt>
             <dd>Changes the parent of this list.</dd>
           </dl>
@@ -181,7 +181,7 @@
           <h2><a href="#pro-types">Protected types</a></h2>
           <dl class="m-doc">
             <dt id="a8baf297afb15ef31958bacffca42f8f7">
-              using <a href="#a8baf297afb15ef31958bacffca42f8f7" class="m-doc-self">PropertyMap</a> = eastl::vector_map&lt;uint32_t, <a href="class_app_1_1_property.html" class="m-doc">Property</a>&gt;
+              using <a href="#a8baf297afb15ef31958bacffca42f8f7" class="m-doc-self">PropertyMap</a> = eastl::vector_map&lt;<a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">uint32_<wbr />t</a>, <a href="class_app_1_1_property.html" class="m-doc">Property</a>&gt;
             </dt>
             <dd><span></span></dd>
           </dl>
@@ -198,7 +198,7 @@
             </dt>
             <dd><span></span></dd>
             <dt id="a9ca207e32dde30355071f5eec1b49c6e">
-              int <a href="#a9ca207e32dde30355071f5eec1b49c6e" class="m-doc-self">mnOperationsDone</a>
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> <a href="#a9ca207e32dde30355071f5eec1b49c6e" class="m-doc-self">mnOperationsDone</a>
             </dt>
             <dd><span></span></dd>
           </dl>
@@ -207,9 +207,9 @@
           <h2>Function documentation</h2>
           <section class="m-doc-details" id="ad234a30653a2eb6f96ef7dd3a95c96a1"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">static void App::<wbr />PropertyList::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ad234a30653a2eb6f96ef7dd3a95c96a1" class="m-doc-self">SaveToDatabase</a>(</span><span class="m-doc-wrap"><a href="class_app_1_1_property_list.html" class="m-doc">PropertyList</a>* propList,
+              <span class="m-doc-wrap-bumper">static <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">void</a> App::<wbr />PropertyList::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ad234a30653a2eb6f96ef7dd3a95c96a1" class="m-doc-self">SaveToDatabase</a>(</span><span class="m-doc-wrap"><a href="class_app_1_1_property_list.html" class="m-doc">PropertyList</a>* propList,
               <a href="class_resource_1_1_database.html" class="m-doc">Resource::<wbr />Database</a>* database,
-              bool async)</span></span>
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">bool</a> async)</span></span>
             </h3>
             <p>Adds the given property list to the <a href="class_app_1_1_i_prop_manager.html" class="m-doc">IPropManager</a>, and saves its contents into the given database.</p>
             <table class="m-table m-fullwidth m-flat">
@@ -235,8 +235,8 @@
           </div></section>
           <section class="m-doc-details" id="a35f3cfe8da6d2f026ec1009cea305a33"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">void App::<wbr />PropertyList::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a35f3cfe8da6d2f026ec1009cea305a33" class="m-doc-self">SetProperty</a>(</span><span class="m-doc-wrap">uint32_t propertyID,
-              const <a href="class_app_1_1_property.html" class="m-doc">Property</a>* pValue) <span class="m-label m-warning">virtual</span></span></span>
+              <span class="m-doc-wrap-bumper"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">void</a> App::<wbr />PropertyList::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a35f3cfe8da6d2f026ec1009cea305a33" class="m-doc-self">SetProperty</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">uint32_<wbr />t</a> propertyID,
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">const</a> <a href="class_app_1_1_property.html" class="m-doc">Property</a>* pValue) <span class="m-label m-warning">virtual</span></span></span>
             </h3>
             <p>Sets the value of the property with the given ID to the specified value.</p>
             <table class="m-table m-fullwidth m-flat">
@@ -258,7 +258,7 @@
           </div></section>
           <section class="m-doc-details" id="a8083713e993fd5b72049ea959063b03d"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">int App::<wbr />PropertyList::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a8083713e993fd5b72049ea959063b03d" class="m-doc-self">RemoveProperty</a>(</span><span class="m-doc-wrap">uint32_t propertyID) <span class="m-label m-warning">virtual</span></span></span>
+              <span class="m-doc-wrap-bumper"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> App::<wbr />PropertyList::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a8083713e993fd5b72049ea959063b03d" class="m-doc-self">RemoveProperty</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">uint32_<wbr />t</a> propertyID) <span class="m-label m-warning">virtual</span></span></span>
             </h3>
             <p>Removes this propertyID and its value from the list.</p>
             <table class="m-table m-fullwidth m-flat">
@@ -282,7 +282,7 @@
           </div></section>
           <section class="m-doc-details" id="a3db58b2024b5e2bfa100693cd1b9c2df"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">bool App::<wbr />PropertyList::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a3db58b2024b5e2bfa100693cd1b9c2df" class="m-doc-self">HasProperty</a>(</span><span class="m-doc-wrap">uint32_t propertyID) const <span class="m-label m-warning">virtual</span></span></span>
+              <span class="m-doc-wrap-bumper"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">bool</a> App::<wbr />PropertyList::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a3db58b2024b5e2bfa100693cd1b9c2df" class="m-doc-self">HasProperty</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">uint32_<wbr />t</a> propertyID) const <span class="m-label m-warning">virtual</span></span></span>
             </h3>
             <p>Tells whether a property with this propertyID is contained inside this list, or inside any of its parents.</p>
             <table class="m-table m-fullwidth m-flat">
@@ -300,7 +300,7 @@
           </div></section>
           <section class="m-doc-details" id="a5e71ffbb1d50b52b9b620a6eb09e04e5"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">bool App::<wbr />PropertyList::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a5e71ffbb1d50b52b9b620a6eb09e04e5" class="m-doc-self">GetPropertyAlt</a>(</span><span class="m-doc-wrap">uint32_t propertyID,
+              <span class="m-doc-wrap-bumper"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">bool</a> App::<wbr />PropertyList::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a5e71ffbb1d50b52b9b620a6eb09e04e5" class="m-doc-self">GetPropertyAlt</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">uint32_<wbr />t</a> propertyID,
               <a href="class_app_1_1_property.html" class="m-doc">Property</a>*&amp; result) const <span class="m-label m-warning">virtual</span></span></span>
             </h3>
             <p>This does the same as GetProperty(uint32_t, Property*&amp;).</p>
@@ -308,7 +308,7 @@
           </div></section>
           <section class="m-doc-details" id="a27a4256421a44fdf5ededca1ea2fd129"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">bool App::<wbr />PropertyList::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a27a4256421a44fdf5ededca1ea2fd129" class="m-doc-self">GetProperty</a>(</span><span class="m-doc-wrap">uint32_t propertyID,
+              <span class="m-doc-wrap-bumper"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">bool</a> App::<wbr />PropertyList::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a27a4256421a44fdf5ededca1ea2fd129" class="m-doc-self">GetProperty</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">uint32_<wbr />t</a> propertyID,
               <a href="class_app_1_1_property.html" class="m-doc">Property</a>*&amp; result) const <span class="m-label m-warning">virtual</span></span></span>
             </h3>
             <p>Gets the pointer to a <a href="class_app_1_1_property.html" class="m-doc">Property</a> with the given propertyID and assigns it to the parameter &#x27;result&#x27;.</p>
@@ -335,9 +335,9 @@
             </table>
 <p>If no property with that ID is found, the function will return false and &#x27;result&#x27; will remain unmodified. This function will be called recursively on the <a href="class_app_1_1_property_list.html" class="m-doc">PropertyList</a>&#x27;s parents until the property is found (which returns true) or no parents are left to check (which returns false).</p>
           </div></section>
-          <section class="m-doc-details" id="abd87551e1e47d8d0f2d125b4c82359c8"><div>
+          <section class="m-doc-details" id="abe162e086ca4e59902ec80fc46e147c0"><div>
             <h3>
-              <span class="m-doc-wrap-bumper"><a href="class_app_1_1_property.html" class="m-doc">Property</a>* App::<wbr />PropertyList::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#abd87551e1e47d8d0f2d125b4c82359c8" class="m-doc-self">GetPropertyObject</a>(</span><span class="m-doc-wrap">uint32_t propertyID) const <span class="m-label m-warning">virtual</span></span></span>
+              <span class="m-doc-wrap-bumper"><a href="class_app_1_1_property.html" class="m-doc">Property</a>* App::<wbr />PropertyList::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#abe162e086ca4e59902ec80fc46e147c0" class="m-doc-self">GetPropertyObject</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">uint32_<wbr />t</a> propertyID) const <span class="m-label m-warning">virtual</span></span></span>
             </h3>
             <p>Gets the pointer to a <a href="class_app_1_1_property.html" class="m-doc">Property</a> with the given propertyID.</p>
             <table class="m-table m-fullwidth m-flat">
@@ -355,7 +355,7 @@
           </div></section>
           <section class="m-doc-details" id="ae44fd47f528631cd736958800e7ed6e7"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">void App::<wbr />PropertyList::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ae44fd47f528631cd736958800e7ed6e7" class="m-doc-self">CopyFrom</a>(</span><span class="m-doc-wrap">const <a href="class_app_1_1_property_list.html" class="m-doc">PropertyList</a>* pOther) <span class="m-label m-warning">virtual</span></span></span>
+              <span class="m-doc-wrap-bumper"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">void</a> App::<wbr />PropertyList::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ae44fd47f528631cd736958800e7ed6e7" class="m-doc-self">CopyFrom</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">const</a> <a href="class_app_1_1_property_list.html" class="m-doc">PropertyList</a>* pOther) <span class="m-label m-warning">virtual</span></span></span>
             </h3>
             <p>Copies the properties and parent from pOther.</p>
             <table class="m-table m-fullwidth m-flat">
@@ -373,7 +373,7 @@
           </div></section>
           <section class="m-doc-details" id="a7f19e81d6769da9cd1483ccb1598dba2"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">void App::<wbr />PropertyList::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a7f19e81d6769da9cd1483ccb1598dba2" class="m-doc-self">AddPropertiesFrom</a>(</span><span class="m-doc-wrap">const <a href="class_app_1_1_property_list.html" class="m-doc">PropertyList</a>* pOther) <span class="m-label m-warning">virtual</span></span></span>
+              <span class="m-doc-wrap-bumper"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">void</a> App::<wbr />PropertyList::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a7f19e81d6769da9cd1483ccb1598dba2" class="m-doc-self">AddPropertiesFrom</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">const</a> <a href="class_app_1_1_property_list.html" class="m-doc">PropertyList</a>* pOther) <span class="m-label m-warning">virtual</span></span></span>
             </h3>
             <p>Copies all the properties from pOther to this property list.</p>
             <table class="m-table m-fullwidth m-flat">
@@ -391,7 +391,7 @@
           </div></section>
           <section class="m-doc-details" id="a69100f570447311483e3a9e78cdc8dab"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">void App::<wbr />PropertyList::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a69100f570447311483e3a9e78cdc8dab" class="m-doc-self">CopyAllPropertiesFrom</a>(</span><span class="m-doc-wrap">const <a href="class_app_1_1_property_list.html" class="m-doc">PropertyList</a>* pOther) <span class="m-label m-warning">virtual</span></span></span>
+              <span class="m-doc-wrap-bumper"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">void</a> App::<wbr />PropertyList::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a69100f570447311483e3a9e78cdc8dab" class="m-doc-self">CopyAllPropertiesFrom</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">const</a> <a href="class_app_1_1_property_list.html" class="m-doc">PropertyList</a>* pOther) <span class="m-label m-warning">virtual</span></span></span>
             </h3>
             <p>Copies all the properties from pOther.</p>
             <table class="m-table m-fullwidth m-flat">
@@ -409,7 +409,7 @@
           </div></section>
           <section class="m-doc-details" id="a29dbee6aec9ce3cfceb1df35a7c34a1b"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">void App::<wbr />PropertyList::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a29dbee6aec9ce3cfceb1df35a7c34a1b" class="m-doc-self">AddAllPropertiesFrom</a>(</span><span class="m-doc-wrap">const <a href="class_app_1_1_property_list.html" class="m-doc">PropertyList</a>* pOther) <span class="m-label m-warning">virtual</span></span></span>
+              <span class="m-doc-wrap-bumper"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">void</a> App::<wbr />PropertyList::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a29dbee6aec9ce3cfceb1df35a7c34a1b" class="m-doc-self">AddAllPropertiesFrom</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">const</a> <a href="class_app_1_1_property_list.html" class="m-doc">PropertyList</a>* pOther) <span class="m-label m-warning">virtual</span></span></span>
             </h3>
             <p>Similar to void CopyPropertiesFrom(PropertyList* pOther), but this copies all the properties from pOther parents as well.</p>
             <table class="m-table m-fullwidth m-flat">
@@ -427,7 +427,7 @@
           </div></section>
           <section class="m-doc-details" id="ac53a36493f2340d7c1820f12c86dada7"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">bool App::<wbr />PropertyList::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ac53a36493f2340d7c1820f12c86dada7" class="m-doc-self">Read</a>(</span><span class="m-doc-wrap"><a href="class_i_o_1_1_i_stream.html" class="m-doc">IO::<wbr />IStream</a>* pInputStream) <span class="m-label m-warning">virtual</span></span></span>
+              <span class="m-doc-wrap-bumper"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">bool</a> App::<wbr />PropertyList::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ac53a36493f2340d7c1820f12c86dada7" class="m-doc-self">Read</a>(</span><span class="m-doc-wrap"><a href="class_i_o_1_1_i_stream.html" class="m-doc">IO::<wbr />IStream</a>* pInputStream) <span class="m-label m-warning">virtual</span></span></span>
             </h3>
             <p>Fills this <a href="class_app_1_1_property_list.html" class="m-doc">PropertyList</a> with the information contained in the given <a href="class_i_o_1_1_i_stream.html" class="m-doc">IO::<wbr />IStream</a>, according to the PROP file format.</p>
             <table class="m-table m-fullwidth m-flat">
@@ -451,7 +451,7 @@
           </div></section>
           <section class="m-doc-details" id="a0b7f67933d5bc00f4fa2813c3b168328"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">bool App::<wbr />PropertyList::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a0b7f67933d5bc00f4fa2813c3b168328" class="m-doc-self">Write</a>(</span><span class="m-doc-wrap"><a href="class_i_o_1_1_i_stream.html" class="m-doc">IO::<wbr />IStream</a>* pOutputStream) const <span class="m-label m-warning">virtual</span></span></span>
+              <span class="m-doc-wrap-bumper"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">bool</a> App::<wbr />PropertyList::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a0b7f67933d5bc00f4fa2813c3b168328" class="m-doc-self">Write</a>(</span><span class="m-doc-wrap"><a href="class_i_o_1_1_i_stream.html" class="m-doc">IO::<wbr />IStream</a>* pOutputStream) const <span class="m-label m-warning">virtual</span></span></span>
             </h3>
             <p>Writes this <a href="class_app_1_1_property_list.html" class="m-doc">PropertyList</a> into the given <a href="class_i_o_1_1_i_stream.html" class="m-doc">IO::<wbr />IStream</a>, according to the PROP file format.</p>
             <table class="m-table m-fullwidth m-flat">
@@ -475,7 +475,7 @@
           </div></section>
           <section class="m-doc-details" id="ad35da009240bfaefbfd7ce6c607f2b07"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">void App::<wbr />PropertyList::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ad35da009240bfaefbfd7ce6c607f2b07" class="m-doc-self">GetPropertyIDs</a>(</span><span class="m-doc-wrap">eastl::vector&lt;uint32_t&gt;&amp; dst) const <span class="m-label m-warning">virtual</span></span></span>
+              <span class="m-doc-wrap-bumper"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">void</a> App::<wbr />PropertyList::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ad35da009240bfaefbfd7ce6c607f2b07" class="m-doc-self">GetPropertyIDs</a>(</span><span class="m-doc-wrap">eastl::vector&lt;<a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">uint32_<wbr />t</a>&gt;&amp; dst) const <span class="m-label m-warning">virtual</span></span></span>
             </h3>
             <p>Fills the given vector with all the property IDs contained in this <a href="class_app_1_1_property_list.html" class="m-doc">PropertyList</a>.</p>
             <table class="m-table m-fullwidth m-flat">
@@ -493,7 +493,7 @@
           </div></section>
           <section class="m-doc-details" id="a1c03bd79a65cd418793b404d01af914b"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">void App::<wbr />PropertyList::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a1c03bd79a65cd418793b404d01af914b" class="m-doc-self">SetParent</a>(</span><span class="m-doc-wrap"><a href="class_app_1_1_property_list.html" class="m-doc">PropertyList</a>* pParent)</span></span>
+              <span class="m-doc-wrap-bumper"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">void</a> App::<wbr />PropertyList::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a1c03bd79a65cd418793b404d01af914b" class="m-doc-self">SetParent</a>(</span><span class="m-doc-wrap"><a href="class_app_1_1_property_list.html" class="m-doc">PropertyList</a>* pParent)</span></span>
             </h3>
             <p>Changes the parent of this list.</p>
 <p>The &#x27;parent&#x27; property will be changed accordingly.</p>
@@ -537,13 +537,13 @@
     </div>
   </div>
 </div>
-<script src="search-v1.js"></script>
-<script src="searchdata-v1.js" async="async"></script>
+<script src="search-v2.js"></script>
+<script src="searchdata-v2.js" async="async"></script>
 <footer><nav>
   <div class="m-container">
     <div class="m-row">
       <div class="m-col-l-10 m-push-l-1">
-        <p>Spore ModAPI SDK for creating C++ mods for Spore. Created with <a href="https://doxygen.org/">Doxygen</a> 1.8.16 and <a href="https://mcss.mosra.cz/">m.css</a>.</p>
+        <p>Spore ModAPI SDK for creating C++ mods for Spore. Created with <a href="https://doxygen.org/">Doxygen</a> 1.9.8 and <a href="https://mcss.mosra.cz/">m.css</a>.</p>
       </div>
     </div>
   </div>

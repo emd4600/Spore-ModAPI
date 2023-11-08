@@ -1,7 +1,8 @@
 /*
     This file is part of m.css.
 
-    Copyright © 2017, 2018, 2019 Vladimír Vondruš <mosra@centrum.cz>
+    Copyright © 2017, 2018, 2019, 2020, 2021, 2022, 2023
+              Vladimír Vondruš <mosra@centrum.cz>
 
     Permission is hereby granted, free of charge, to any person obtaining a
     copy of this software and associated documentation files (the "Software"),
@@ -112,6 +113,9 @@ mark {
   padding: 0.0625rem;
   background-color: var(--mark-background-color);
   color: var(--mark-color);
+}
+.m-link-wrap {
+  word-break: break-all;
 }
 
 /* Block/inline code */
@@ -485,8 +489,8 @@ table.m-table th.m-dim pre, table.m-table th.m-dim code {
   background-color: var(--code-note-background-color);
 }
 
-/* Image. Ensure everything is done for both <img> and <svg>. */
-img.m-image, svg.m-image {
+/* Image. Ensure everything is done for <img>, <svg> and <video> as well. */
+img.m-image, svg.m-image, video.m-image {
   display: block;
   margin-left: auto;
   margin-right: auto;
@@ -494,20 +498,23 @@ img.m-image, svg.m-image {
 div.m-image {
   text-align: center;
 }
-img.m-image, svg.m-image, div.m-image img, div.m-image svg {
+img.m-image, svg.m-image, video.m-image,
+div.m-image img, div.m-image svg, div.m-image video {
   max-width: 100%;
   border-radius: var(--border-radius);
 }
-div.m-image.m-fullwidth img, div.m-image.m-fullwidth svg {
+div.m-image.m-fullwidth img,
+div.m-image.m-fullwidth svg,
+div.m-image.m-fullwidth video {
   width: 100%;
 }
 /* Image badge. Deliberately omitting <svg> since I don't see any use for those
-   as avatars yet. */
+   as avatars yet, <video> as well. */
 img.m-image.m-badge, div.m-image.m-badge img {
   border-radius: 50%;
 }
 
-/* Figure. Ensure everything is done for both <img> and <svg>. */
+/* Figure. Ensure everything is done for <img>, <svg> and <video> as well. */
 figure.m-figure {
   max-width: 100%;
   margin-top: 0;
@@ -516,7 +523,7 @@ figure.m-figure {
   position: relative;
   display: table;
 }
-figure.m-figure:before {
+figure.m-figure::before {
   position: absolute;
   content: ' ';
   top: 0;
@@ -529,12 +536,14 @@ figure.m-figure:before {
   border-radius: var(--border-radius);
   border-color: var(--line-color);
 }
-figure.m-figure.m-flat:before {
+figure.m-figure.m-flat::before {
   border-color: transparent;
 }
 figure.m-figure > * {
   margin-left: 1rem;
   margin-right: 1rem;
+  /* So overflowing figcaption or any other content doesn't expand the figure
+     border but rather gets wrapped */
   display: table-caption;
   caption-side: bottom;
 }
@@ -547,7 +556,9 @@ figure.m-figure > *:last-child {
      priority than this */
   margin-bottom: 1rem !important;
 }
-figure.m-figure img, figure.m-figure svg {
+figure.m-figure img,
+figure.m-figure svg,
+figure.m-figure video {
   position: relative; /* so it's above the border */
   margin-left: 0;
   margin-right: 0;
@@ -556,11 +567,15 @@ figure.m-figure img, figure.m-figure svg {
   border-top-right-radius: var(--border-radius);
   max-width: 100%;
 }
-figure.m-figure.m-flat img, figure.m-figure.m-flat svg {
+figure.m-figure.m-flat img,
+figure.m-figure.m-flat svg,
+figure.m-figure.m-flat video {
   border-bottom-left-radius: var(--border-radius);
   border-bottom-right-radius: var(--border-radius);
 }
-figure.m-figure a img, figure.m-figure a svg {
+figure.m-figure a img,
+figure.m-figure a svg,
+figure.m-figure a video {
   margin-left: -1rem;
   margin-right: -1rem;
 }
@@ -572,10 +587,12 @@ figure.m-figure.m-fullwidth > *:first-child {
   /* otherwise figure with clickable image is centered differently */
   display: inline;
 }
-figure.m-figure.m-fullwidth img, figure.m-figure.m-fullwidth svg {
+figure.m-figure.m-fullwidth img,
+figure.m-figure.m-fullwidth svg,
+figure.m-figure.m-fullwidth video {
   width: 100%;
 }
-figure.m-figure.m-fullwidth:after {
+figure.m-figure.m-fullwidth::after {
   /* Specifying bottom margin on the last element works only if it is displayed
      as table caption, so I have to hack it here. */
   content: ' ';
@@ -593,7 +610,7 @@ figure.m-figure.m-fullwidth:after {
   position: relative;
   padding: 1rem;
 }
-.m-code-figure:before, .m-console-figure:before {
+.m-code-figure::before, .m-console-figure::before {
   position: absolute;
   content: ' ';
   top: 0;
@@ -605,13 +622,13 @@ figure.m-figure.m-fullwidth:after {
   border-width: 0.125rem;
   border-radius: var(--border-radius);
 }
-.m-code-figure:before {
+.m-code-figure::before {
   border-color: var(--code-background-color);
 }
-.m-console-figure:before {
+.m-console-figure::before {
   border-color: var(--console-background-color);
 }
-.m-code-figure.m-flat:before, .m-console-figure.m-flat:before {
+.m-code-figure.m-flat::before, .m-console-figure.m-flat::before {
   border-color: transparent;
 }
 .m-code-figure > pre:first-child, .m-console-figure > pre:first-child {
@@ -637,6 +654,23 @@ figure.m-figure figcaption, .m-code-figure figcaption, .m-console-figure figcapt
   margin-bottom: 0.5rem;
   font-weight: var(--heading-font-weight);
   font-size: 1.17rem; /* taken from webkit defaults for h3 */
+}
+figure.m-figure figcaption a, .m-code-figure figcaption a, .m-console-figure figcaption a {
+  text-decoration: var(--link-decoration-heading);
+}
+/* Figure description, expected to be inside <figcaption> and has all styling
+   from <figcaption> reverted. Originally this was done by adding a <span>
+   after <figcaption> but while fine in Chrome, the `display: table-caption;`
+   for everything in <figure> made Firefox render just the <figcaption>,
+   ignoring everything after that. So it has to be all inside <figcaption>. See
+   also https://github.com/mosra/m.css/issues/117 for details. */
+figure.m-figure figcaption .m-figure-description {
+  margin-top: 0.5rem;
+  font-weight: normal;
+  font-size: 1rem;
+}
+figure.m-figure figcaption .m-figure-description a {
+  text-decoration: var(--link-decoration);
 }
 
 /* Image grid */
@@ -959,7 +993,8 @@ div.m-plot svg .m-error {
   stroke-width: 1.5;
 }
 div.m-plot svg .m-label.m-dim { fill: var(--dim-color); }
-.m-graph g.m-edge path, .m-graph g.m-node.m-flat ellipse,
+.m-graph g.m-edge path, .m-graph g.m-cluster polygon,
+.m-graph g.m-node.m-flat ellipse,
 .m-graph g.m-node.m-flat polygon {
   fill: none;
 }
@@ -1030,7 +1065,7 @@ figure.m-figure:not(.m-flat) > svg.m-graph:first-child {
   color: var(--dim-link-active-color);
 }
 .m-block.m-flat { border-color: transparent; }
-.m-block.m-flat h3, .m-block.m-flat h4, .m-block.m-flat h5. .m-block.m-flat h6 {
+.m-block.m-flat h3, .m-block.m-flat h4, .m-block.m-flat h5, .m-block.m-flat h6 {
   color: var(--default-color);
 }
 
@@ -1266,19 +1301,24 @@ table.m-table tr.m-dim th a:active, table.m-table th.m-dim a:active {
 }
 
 /* Colored figure */
-figure.m-figure.m-default:before { border-color: var(--default-filled-background-color); }
+figure.m-figure.m-default::before { border-color: var(--default-filled-background-color); }
 figure.m-figure.m-default figcaption { color: var(--default-color); }
-figure.m-figure.m-primary:before { border-color: var(--primary-filled-background-color); }
+figure.m-figure.m-primary::before { border-color: var(--primary-filled-background-color); }
 figure.m-figure.m-primary figcaption { color: var(--primary-color); }
-figure.m-figure.m-success:before { border-color: var(--success-filled-background-color); }
+figure.m-figure.m-primary figcaption .m-figure-description { color: var(--default-color); }
+figure.m-figure.m-success::before { border-color: var(--success-filled-background-color); }
 figure.m-figure.m-success figcaption { color: var(--success-color); }
-figure.m-figure.m-warning:before { border-color: var(--warning-filled-background-color); }
+figure.m-figure.m-success figcaption .m-figure-description { color: var(--default-color); }
+figure.m-figure.m-warning::before { border-color: var(--warning-filled-background-color); }
 figure.m-figure.m-warning figcaption { color: var(--warning-color); }
-figure.m-figure.m-danger:before { border-color: var(--danger-filled-background-color); }
+figure.m-figure.m-warning figcaption .m-figure-description { color: var(--default-color); }
+figure.m-figure.m-danger::before { border-color: var(--danger-filled-background-color); }
 figure.m-figure.m-danger figcaption { color: var(--danger-color); }
-figure.m-figure.m-info:before { border-color: var(--info-filled-background-color); }
+figure.m-figure.m-danger figcaption .m-figure-description { color: var(--default-color); }
+figure.m-figure.m-info::before { border-color: var(--info-filled-background-color); }
 figure.m-figure.m-info figcaption { color: var(--info-color); }
-figure.m-figure.m-dim:before { border-color: var(--dim-filled-background-color); }
+figure.m-figure.m-info figcaption .m-figure-description { color: var(--default-color); }
+figure.m-figure.m-dim::before { border-color: var(--dim-filled-background-color); }
 figure.m-figure.m-dim { color: var(--dim-color); }
 figure.m-figure.m-dim a { color: var(--dim-link-color); }
 figure.m-figure.m-dim a:hover, figure.m-figure.m-dim a:focus, figure.m-figure.m-dim a:active {
@@ -1290,7 +1330,11 @@ figure.m-figure.m-dim a:hover, figure.m-figure.m-dim a:focus, figure.m-figure.m-
    can override this. Applies to either div.m-math svg or svg.m.math
    (div.m-graph svg or svg.m-graph), so using just .m-math (.m-graph). Besides
    that, using svg anywhere would make it a higher priority, breaking the
-   colors. See the math/graph plugin test pages for a visual verification. */
+   colors.
+
+   When modifying, use these test pages for a visual check & expand as needed:
+    https://mcss.mosra.cz/plugins/math-and-code/test/
+    https://mcss.mosra.cz/plugins/plots-and-graphs/test/ */
 .m-math { fill: var(--color); }
 .m-math.m-default, .m-math g.m-default, .m-math rect.m-default,
 div.m-plot svg .m-bar.m-default,
@@ -1299,11 +1343,13 @@ div.m-plot svg .m-bar.m-default,
 .m-graph g.m-node:not(.m-flat) polygon,
 .m-graph g.m-edge text,
 .m-graph g.m-node.m-flat text,
+.m-graph g.m-cluster text,
 .m-graph.m-default g.m-edge polygon,
 .m-graph.m-default g.m-node:not(.m-flat) ellipse,
 .m-graph.m-default g.m-node:not(.m-flat) polygon,
 .m-graph.m-default g.m-edge text,
-.m-graph.m-default g.m-node.m-flat text {
+.m-graph.m-default g.m-node.m-flat text,
+.m-graph.m-default g.m-cluster text {
   fill: var(--default-color);
 }
 .m-graph g.m-edge polygon,
@@ -1311,11 +1357,13 @@ div.m-plot svg .m-bar.m-default,
 .m-graph g.m-node ellipse,
 .m-graph g.m-node polygon,
 .m-graph g.m-node polyline,
+.m-graph g.m-cluster polygon,
 .m-graph.m-default g.m-edge polygon,
 .m-graph.m-default g.m-edge path,
 .m-graph.m-default g.m-node ellipse,
 .m-graph.m-default g.m-node polygon,
-.m-graph.m-default g.m-node polyline {
+.m-graph.m-default g.m-node polyline,
+.m-graph.m-default g.m-cluster polygon {
   stroke: var(--default-color);
 }
 .m-math.m-primary, .m-math g.m-primary, .m-math rect.m-primary,
@@ -1324,14 +1372,16 @@ div.m-plot svg .m-bar.m-primary,
 .m-graph.m-primary g.m-node:not(.m-flat) ellipse,
 .m-graph.m-primary g.m-node:not(.m-flat) polygon,
 .m-graph.m-primary g.m-edge text,
-.m-graph.m-primary g.m-node.m-flat text {
+.m-graph.m-primary g.m-node.m-flat text,
+.m-graph.m-primary g.m-cluster text {
   fill: var(--primary-color);
 }
 .m-graph.m-primary g.m-edge polygon,
 .m-graph.m-primary g.m-edge path,
 .m-graph.m-primary g.m-node ellipse,
 .m-graph.m-primary g.m-node polygon,
-.m-graph.m-primary g.m-node polyline {
+.m-graph.m-primary g.m-node polyline,
+.m-graph.m-primary g.m-cluster polygon {
   stroke: var(--primary-color);
 }
 .m-math.m-success, .m-math g.m-success, .m-math rect.m-success,
@@ -1340,14 +1390,16 @@ div.m-plot svg .m-bar.m-success,
 .m-graph.m-success g.m-node:not(.m-flat) ellipse,
 .m-graph.m-success g.m-node:not(.m-flat) polygon,
 .m-graph.m-success g.m-edge text,
-.m-graph.m-success g.m-node.m-flat text {
+.m-graph.m-success g.m-node.m-flat text,
+.m-graph.m-success g.m-cluster text {
   fill: var(--success-color);
 }
 .m-graph.m-success g.m-edge polygon,
 .m-graph.m-success g.m-edge path,
 .m-graph.m-success g.m-node ellipse,
 .m-graph.m-success g.m-node polygon,
-.m-graph.m-success g.m-node polyline {
+.m-graph.m-success g.m-node polyline,
+.m-graph.m-success g.m-cluster polygon {
   stroke: var(--success-color);
 }
 .m-math.m-warning, .m-math g.m-warning, .m-math rect.m-warning,
@@ -1356,14 +1408,16 @@ div.m-plot svg .m-bar.m-warning,
 .m-graph.m-warning g.m-node:not(.m-flat) ellipse,
 .m-graph.m-warning g.m-node:not(.m-flat) polygon,
 .m-graph.m-warning g.m-edge text,
-.m-graph.m-warning g.m-node.m-flat text {
+.m-graph.m-warning g.m-node.m-flat text,
+.m-graph.m-warning g.m-cluster text {
   fill: var(--warning-color);
 }
 .m-graph.m-warning g.m-edge polygon,
 .m-graph.m-warning g.m-edge path,
 .m-graph.m-warning g.m-node ellipse,
 .m-graph.m-warning g.m-node polygon,
-.m-graph.m-warning g.m-node polyline {
+.m-graph.m-warning g.m-node polyline,
+.m-graph.m-warning g.m-cluster polygon {
   stroke: var(--warning-color);
 }
 .m-math.m-danger, .m-math g.m-danger, .m-math rect.m-danger,
@@ -1372,14 +1426,16 @@ div.m-plot svg .m-bar.m-danger,
 .m-graph.m-danger g.m-node:not(.m-flat) ellipse,
 .m-graph.m-danger g.m-node:not(.m-flat) polygon,
 .m-graph.m-danger g.m-edge text,
-.m-graph.m-danger g.m-node.m-flat text {
+.m-graph.m-danger g.m-node.m-flat text,
+.m-graph.m-danger g.m-cluster text {
   fill: var(--danger-color);
 }
 .m-graph.m-danger g.m-edge polygon,
 .m-graph.m-danger g.m-edge path,
 .m-graph.m-danger g.m-node ellipse,
 .m-graph.m-danger g.m-node polygon,
-.m-graph.m-danger g.m-node polyline {
+.m-graph.m-danger g.m-node polyline,
+.m-graph.m-danger g.m-cluster polygon {
   stroke: var(--danger-color);
 }
 .m-math.m-info, .m-math g.m-info, .m-math rect.m-info,
@@ -1388,14 +1444,16 @@ div.m-plot svg .m-bar.m-info,
 .m-graph.m-info g.m-node:not(.m-flat) ellipse,
 .m-graph.m-info g.m-node:not(.m-flat) polygon,
 .m-graph.m-info g.m-edge text,
-.m-graph.m-info g.m-node.m-flat text {
+.m-graph.m-info g.m-node.m-flat text,
+.m-graph.m-info g.m-cluster text {
   fill: var(--info-color);
 }
 .m-graph.m-info g.m-edge polygon,
 .m-graph.m-info g.m-edge path,
 .m-graph.m-info g.m-node ellipse,
 .m-graph.m-info g.m-node polygon,
-.m-graph.m-info g.m-node polyline {
+.m-graph.m-info g.m-node polyline,
+.m-graph.m-info g.m-cluster polygon {
   stroke: var(--info-color);
 }
 .m-math.m-dim, .m-math g.m-dim, .m-math rect.m-dim,
@@ -1404,116 +1462,136 @@ div.m-plot svg .m-bar.m-dim,
 .m-graph.m-dim g.m-node:not(.m-flat) ellipse,
 .m-graph.m-dim g.m-node:not(.m-flat) polygon,
 .m-graph.m-dim g.m-edge text,
-.m-graph.m-dim g.m-node.m-flat text {
+.m-graph.m-dim g.m-node.m-flat text,
+.m-graph.m-dim g.m-cluster text {
   fill: var(--dim-color);
 }
 .m-graph.m-dim g.m-edge polygon,
 .m-graph.m-dim g.m-edge path,
 .m-graph.m-dim g.m-node ellipse,
 .m-graph.m-dim g.m-node polygon,
-.m-graph.m-dim g.m-node polyline {
+.m-graph.m-dim g.m-node polyline,
+.m-graph.m-dim g.m-cluster polygon {
   stroke: var(--dim-color);
 }
 
 /* Local-colored graphs. Later so it overrides global coloring. Applies to
    either div.m-graph svg or svg.m-graph, so using just .m-graph. This is not
-   needed for math, for some reason the overrides work correctly. */
+   needed for math, for some reason the overrides work correctly.
+
+   When modifying, use these test pages for a visual check & expand as needed:
+    https://mcss.mosra.cz/plugins/math-and-code/test/
+    https://mcss.mosra.cz/plugins/plots-and-graphs/test/ */
 .m-graph g.m-edge.m-default polygon,
 .m-graph g.m-node.m-default:not(.m-flat) ellipse,
 .m-graph g.m-node.m-default:not(.m-flat) polygon,
 .m-graph g.m-edge.m-default text,
-.m-graph g.m-node.m-default.m-flat text {
+.m-graph g.m-node.m-default.m-flat text,
+.m-graph g.m-cluster.m-default text {
   fill: var(--default-color);
 }
 .m-graph g.m-edge.m-default polygon,
 .m-graph g.m-edge.m-default path,
 .m-graph g.m-node.m-default ellipse,
 .m-graph g.m-node.m-default polygon,
-.m-graph g.m-node.m-default polyline {
+.m-graph g.m-node.m-default polyline,
+.m-graph g.m-cluster.m-default polygon {
   stroke: var(--default-color);
 }
 .m-graph g.m-edge.m-primary polygon,
 .m-graph g.m-node.m-primary:not(.m-flat) ellipse,
 .m-graph g.m-node.m-primary:not(.m-flat) polygon,
 .m-graph g.m-edge.m-primary text,
-.m-graph g.m-node.m-primary.m-flat text {
+.m-graph g.m-node.m-primary.m-flat text,
+.m-graph g.m-cluster.m-primary text {
   fill: var(--primary-color);
 }
 .m-graph g.m-edge.m-primary polygon,
 .m-graph g.m-edge.m-primary path,
 .m-graph g.m-node.m-primary ellipse,
 .m-graph g.m-node.m-primary polygon,
-.m-graph g.m-node.m-primary polyline {
+.m-graph g.m-node.m-primary polyline,
+.m-graph g.m-cluster.m-primary polygon {
   stroke: var(--primary-color);
 }
 .m-graph g.m-edge.m-success polygon,
 .m-graph g.m-node.m-success:not(.m-flat) ellipse,
 .m-graph g.m-node.m-success:not(.m-flat) polygon,
 .m-graph g.m-edge.m-success text,
-.m-graph g.m-node.m-success.m-flat text {
+.m-graph g.m-node.m-success.m-flat text,
+.m-graph g.m-cluster.m-success text {
   fill: var(--success-color);
 }
 .m-graph g.m-edge.m-success polygon,
 .m-graph g.m-edge.m-success path,
 .m-graph g.m-node.m-success ellipse,
 .m-graph g.m-node.m-success polygon,
-.m-graph g.m-node.m-success polyline {
+.m-graph g.m-node.m-success polyline,
+.m-graph g.m-cluster.m-success polygon {
   stroke: var(--success-color);
 }
 .m-graph g.m-edge.m-warning polygon,
 .m-graph g.m-node.m-warning:not(.m-flat) ellipse,
 .m-graph g.m-node.m-warning:not(.m-flat) polygon,
 .m-graph g.m-edge.m-warning text,
-.m-graph g.m-node.m-warning.m-flat text {
+.m-graph g.m-node.m-warning.m-flat text,
+.m-graph g.m-cluster.m-warning text {
   fill: var(--warning-color);
 }
 .m-graph g.m-edge.m-warning polygon,
 .m-graph g.m-edge.m-warning path,
 .m-graph g.m-node.m-warning ellipse,
 .m-graph g.m-node.m-warning polygon,
-.m-graph g.m-node.m-warning polyline {
+.m-graph g.m-node.m-warning polyline,
+.m-graph g.m-cluster.m-warning polygon {
   stroke: var(--warning-color);
 }
 .m-graph g.m-edge.m-danger polygon,
 .m-graph g.m-node.m-danger:not(.m-flat) ellipse,
 .m-graph g.m-node.m-danger:not(.m-flat) polygon,
 .m-graph g.m-edge.m-danger text,
-.m-graph g.m-node.m-danger.m-flat text {
+.m-graph g.m-node.m-danger.m-flat text,
+.m-graph g.m-cluster.m-danger text {
   fill: var(--danger-color);
 }
 .m-graph g.m-edge.m-danger polygon,
 .m-graph g.m-edge.m-danger path,
 .m-graph g.m-node.m-danger ellipse,
 .m-graph g.m-node.m-danger polygon,
-.m-graph g.m-node.m-danger polyline {
+.m-graph g.m-node.m-danger polyline,
+.m-graph g.m-cluster.m-danger polygon {
   stroke: var(--danger-color);
 }
 .m-graph g.m-edge.m-info polygon,
 .m-graph g.m-node.m-info:not(.m-flat) ellipse,
 .m-graph g.m-node.m-info:not(.m-flat) polygon,
 .m-graph g.m-edge.m-info text,
-.m-graph g.m-node.m-info.m-flat text {
+.m-graph g.m-node.m-info.m-flat text,
+.m-graph g.m-cluster.m-info text {
   fill: var(--info-color);
 }
 .m-graph g.m-edge.m-info polygon,
 .m-graph g.m-edge.m-info path,
 .m-graph g.m-node.m-info ellipse,
 .m-graph g.m-node.m-info polygon,
-.m-graph g.m-node.m-info polyline {
+.m-graph g.m-node.m-info polyline,
+.m-graph g.m-cluster.m-info polygon {
   stroke: var(--info-color);
 }
 .m-graph g.m-edge.m-dim polygon,
 .m-graph g.m-node.m-dim:not(.m-flat) ellipse,
 .m-graph g.m-node.m-dim:not(.m-flat) polygon,
 .m-graph g.m-edge.m-dim text,
-.m-graph g.m-node.m-dim.m-flat text {
+.m-graph g.m-node.m-dim.m-flat text,
+.m-graph g.m-cluster.m-dim text {
   fill: var(--dim-color);
 }
 .m-graph g.m-edge.m-dim polygon,
 .m-graph g.m-edge.m-dim path,
 .m-graph g.m-node.m-dim ellipse,
 .m-graph g.m-node.m-dim polygon,
-.m-graph g.m-node.m-dim polyline {
+.m-graph g.m-node.m-dim polyline,
+.m-graph g.m-cluster.m-dim polygon {
   stroke: var(--dim-color);
 }
 
