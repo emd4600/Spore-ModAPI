@@ -1,5 +1,8 @@
 name: Deploy ModAPI Dlls & Update Documentation
-on: push
+on:
+  push:
+    branches:
+      - emd4600-patch-1
 
 jobs:
   # compile:
@@ -53,6 +56,11 @@ jobs:
   #         name: compiled-modapi-dlls-bundle
   #         path: SporeModAPIdlls.zip
 
+        # - name: Release to GitHub
+        #   uses: softprops/action-gh-release@v1
+        #   with:
+        #     files: SporeModAPIdlls.zip
+
   documentation:
     name: Generate documentation
     runs-on: ubuntu-latest
@@ -103,4 +111,5 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           branch: gh-pages
           directory: Spore-ModAPI/modapi-generated-docs/html
+          
         
