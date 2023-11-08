@@ -14,7 +14,7 @@
 <header><nav id="navigation">
   <div class="m-container">
     <div class="m-row">
-      <a href="index.html" id="m-navbar-brand" class="m-col-t-8 m-col-m-none m-left-m"><img src="Spore_ModAPI_Icon.png" alt="" />Spore ModAPI <span class="m-thin">SDK for creating C++ mods for Spore</span></a>
+      <a href="index.html" id="m-navbar-brand" class="m-col-t-8 m-col-m-none m-left-m"><img src="Spore_ModAPI_Icon.png" />Spore ModAPI <span class="m-thin">SDK for creating C++ mods for Spore</span></a>
       <div class="m-col-t-4 m-hide-m m-text-right m-nopadr">
         <a href="#search" class="m-doc-search-icon" title="Search" onclick="return showSearch()"><svg style="height: 0.9rem;" viewBox="0 0 16 16">
           <path id="m-doc-search-icon-path" d="m6 0c-3.31 0-6 2.69-6 6 0 3.31 2.69 6 6 6 1.49 0 2.85-0.541 3.89-1.44-0.0164 0.338 0.147 0.759 0.5 1.15l3.22 3.79c0.552 0.614 1.45 0.665 2 0.115 0.55-0.55 0.499-1.45-0.115-2l-3.79-3.22c-0.392-0.353-0.812-0.515-1.15-0.5 0.895-1.05 1.44-2.41 1.44-3.89 0-3.31-2.69-6-6-6zm0 1.56a4.44 4.44 0 0 1 4.44 4.44 4.44 4.44 0 0 1-4.44 4.44 4.44 4.44 0 0 1-4.44-4.44 4.44 4.44 0 0 1 4.44-4.44z"/>
@@ -46,10 +46,10 @@
       <div class="m-col-l-10 m-push-l-1">
         <h1>
           <span class="m-breadcrumb"><a href="namespace_swarm.html">Swarm</a>::<wbr/></span>IEffectsManager <span class="m-thin">class</span>
-          <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_i_effects_manager_8h.html">&lt;/home/runner/work/Spore-ModAPI/Spore-ModAPI/Spore-ModAPI/Spore ModAPI/Spore/Swarm/IEffectsManager.h&gt;</a></div>
+          <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_i_effects_manager_8h.html">&lt;Spore/Swarm/IEffectsManager.h&gt;</a></div>
         </h1>
         <p>This class is the main manager of the <a href="namespace_swarm.html" class="m-doc">Swarm</a> effects system.</p>
-        <nav class="m-block m-default">
+        <div class="m-block m-default">
           <h3>Contents</h3>
           <ul>
             <li>
@@ -61,7 +61,7 @@
               </ul>
             </li>
           </ul>
-        </nav>
+        </div>
 <p>It allows to create instances of effects. The manager also can be used to create <a href="class_swarm_1_1_i_effects_world.html" class="m-doc">IEffectsWorld</a>, which are the objects that contain the effects. The manager creates instances of effects using the currently active effect world.</p>
         <section id="derived-classes">
           <h2><a href="#derived-classes">Derived classes</a></h2>
@@ -75,8 +75,8 @@
         <section id="pub-static-methods">
           <h2><a href="#pub-static-methods">Public static functions</a></h2>
           <dl class="m-doc">
-            <dt id="aba460980c651730b52d6d23b06fddc5a">
-              <span class="m-doc-wrap-bumper">static auto <a href="#aba460980c651730b52d6d23b06fddc5a" class="m-doc-self">Get</a>(</span><span class="m-doc-wrap">) -&gt; <a href="class_swarm_1_1_i_effects_manager.html" class="m-doc">IEffectsManager</a>*</span>
+            <dt id="af9da5c26e957c99bc70e67cf9170ee3e">
+              <span class="m-doc-wrap-bumper">static auto <a href="#af9da5c26e957c99bc70e67cf9170ee3e" class="m-doc-self">Get</a>(</span><span class="m-doc-wrap">) -&gt; <a href="class_swarm_1_1_i_effects_manager.html" class="m-doc">IEffectsManager</a>*</span>
             </dt>
             <dd>Gets the active manager of the <a href="namespace_swarm.html" class="m-doc">Swarm</a> system.</dd>
           </dl>
@@ -85,59 +85,59 @@
           <h2><a href="#pub-methods">Public functions</a></h2>
           <dl class="m-doc">
             <dt id="a2b7e30361519e147bdcf460c6308dd02">
-              <span class="m-doc-wrap-bumper">auto <a href="#a2b7e30361519e147bdcf460c6308dd02" class="m-doc-self">Initialize</a>(</span><span class="m-doc-wrap">) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">bool</a> <span class="m-label m-flat m-warning">pure virtual</span></span>
+              <span class="m-doc-wrap-bumper">auto <a href="#a2b7e30361519e147bdcf460c6308dd02" class="m-doc-self">Initialize</a>(</span><span class="m-doc-wrap">) -&gt; bool <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
             <dd><span></span></dd>
             <dt id="a2f01a3ba7ea24a10e6e2b88c816ba26e">
-              <span class="m-doc-wrap-bumper">auto <a href="#a2f01a3ba7ea24a10e6e2b88c816ba26e" class="m-doc-self">Dispose</a>(</span><span class="m-doc-wrap">) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">bool</a> <span class="m-label m-flat m-warning">pure virtual</span></span>
+              <span class="m-doc-wrap-bumper">auto <a href="#a2f01a3ba7ea24a10e6e2b88c816ba26e" class="m-doc-self">Dispose</a>(</span><span class="m-doc-wrap">) -&gt; bool <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
             <dd><span></span></dd>
             <dt id="aeec999568f66e690aea3a38b45d0a62f">
-              <span class="m-doc-wrap-bumper">auto <a href="#aeec999568f66e690aea3a38b45d0a62f" class="m-doc-self">AddRef</a>(</span><span class="m-doc-wrap">) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> <span class="m-label m-flat m-warning">pure virtual</span></span>
+              <span class="m-doc-wrap-bumper">auto <a href="#aeec999568f66e690aea3a38b45d0a62f" class="m-doc-self">AddRef</a>(</span><span class="m-doc-wrap">) -&gt; int <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
             <dd><span></span></dd>
             <dt id="af1e2bd3f70976ebdd70c555a77a057f1">
-              <span class="m-doc-wrap-bumper">auto <a href="#af1e2bd3f70976ebdd70c555a77a057f1" class="m-doc-self">Release</a>(</span><span class="m-doc-wrap">) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> <span class="m-label m-flat m-warning">pure virtual</span></span>
+              <span class="m-doc-wrap-bumper">auto <a href="#af1e2bd3f70976ebdd70c555a77a057f1" class="m-doc-self">Release</a>(</span><span class="m-doc-wrap">) -&gt; int <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
             <dd><span></span></dd>
             <dt id="af1878225aa1e5ee3398fec195b98322b">
-              <span class="m-doc-wrap-bumper">auto <a href="#af1878225aa1e5ee3398fec195b98322b" class="m-doc-self">SetResources</a>(</span><span class="m-doc-wrap"><a href="class_object.html" class="m-doc">Object</a>*) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">void</a> <span class="m-label m-flat m-warning">pure virtual</span></span>
+              <span class="m-doc-wrap-bumper">void <a href="#af1878225aa1e5ee3398fec195b98322b" class="m-doc-self">SetResources</a>(</span><span class="m-doc-wrap"><a href="class_object.html" class="m-doc">Object</a>*) <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
             <dd><span></span></dd>
-            <dt id="aa44474fca09bfaba83065401efa0fd90">
-              <span class="m-doc-wrap-bumper">auto <a href="#aa44474fca09bfaba83065401efa0fd90" class="m-doc-self">Resources</a>(</span><span class="m-doc-wrap">) -&gt; <a href="class_object.html" class="m-doc">Object</a>* <span class="m-label m-flat m-warning">pure virtual</span></span>
+            <dt id="a8ce04acb9c28ef0d4429be90331fd875">
+              <span class="m-doc-wrap-bumper">auto <a href="#a8ce04acb9c28ef0d4429be90331fd875" class="m-doc-self">Resources</a>(</span><span class="m-doc-wrap">) -&gt; <a href="class_object.html" class="m-doc">Object</a>* <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
             <dd><span></span></dd>
             <dt id="aeaacb63dc42cba79d72d2e8e6e70f22a">
-              <span class="m-doc-wrap-bumper">auto <a href="#aeaacb63dc42cba79d72d2e8e6e70f22a" class="m-doc-self">SetRenderer</a>(</span><span class="m-doc-wrap"><a href="class_object.html" class="m-doc">Object</a>*) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">void</a> <span class="m-label m-flat m-warning">pure virtual</span></span>
+              <span class="m-doc-wrap-bumper">void <a href="#aeaacb63dc42cba79d72d2e8e6e70f22a" class="m-doc-self">SetRenderer</a>(</span><span class="m-doc-wrap"><a href="class_object.html" class="m-doc">Object</a>*) <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
             <dd><span></span></dd>
-            <dt id="ac58eba0df667f69f9a03cec7baec8d32">
-              <span class="m-doc-wrap-bumper">auto <a href="#ac58eba0df667f69f9a03cec7baec8d32" class="m-doc-self">Renderer</a>(</span><span class="m-doc-wrap">) -&gt; <a href="class_object.html" class="m-doc">Object</a>* <span class="m-label m-flat m-warning">pure virtual</span></span>
+            <dt id="a9eb98950c11649a178b78da7c794fb79">
+              <span class="m-doc-wrap-bumper">auto <a href="#a9eb98950c11649a178b78da7c794fb79" class="m-doc-self">Renderer</a>(</span><span class="m-doc-wrap">) -&gt; <a href="class_object.html" class="m-doc">Object</a>* <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
             <dd><span></span></dd>
             <dt id="ad85ad23822d2295ed5f87595d69b4395">
-              <span class="m-doc-wrap-bumper">auto <a href="#ad85ad23822d2295ed5f87595d69b4395" class="m-doc-self">SetDecalManager</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">void</a>*,
-              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> index) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">void</a> <span class="m-label m-flat m-warning">pure virtual</span></span>
+              <span class="m-doc-wrap-bumper">void <a href="#ad85ad23822d2295ed5f87595d69b4395" class="m-doc-self">SetDecalManager</a>(</span><span class="m-doc-wrap">void*,
+              int index) <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
             <dd><span></span></dd>
-            <dt id="a1d41807b019819d22fdecc7d0e8a9f48">
-              <span class="m-doc-wrap-bumper">auto <a href="#a1d41807b019819d22fdecc7d0e8a9f48" class="m-doc-self">DecalManager</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> index) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">void</a>* <span class="m-label m-flat m-warning">pure virtual</span></span>
+            <dt id="afa521519af73aee70945571feab54fec">
+              <span class="m-doc-wrap-bumper">auto <a href="#afa521519af73aee70945571feab54fec" class="m-doc-self">DecalManager</a>(</span><span class="m-doc-wrap">int index) -&gt; void* <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
             <dd><span></span></dd>
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#a2afc7935dc351ddafe4d296f4cf61bad" class="m-doc">HasVisualEffect</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">uint32_<wbr />t</a> instanceID,
-              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">uint32_<wbr />t</a> groupID) const -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">bool</a> <span class="m-label m-flat m-warning">pure virtual</span></span>
+              <span class="m-doc-wrap-bumper">auto <a href="#a2afc7935dc351ddafe4d296f4cf61bad" class="m-doc">HasVisualEffect</a>(</span><span class="m-doc-wrap">uint32_t instanceID,
+              uint32_t groupID) const -&gt; bool <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
             <dd>Returns whether an effect with this instance and group ID exists in any of the effect directories (effdir) in the manager.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#a722e84d118b5efbcb15d8140be538b8a" class="m-doc">CreateVisualEffect</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">uint32_<wbr />t</a> instanceID,
-              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">uint32_<wbr />t</a> groupID,
-              <a href="_i_visual_effect_8h.html#af513d4705ba3d0bdec5c20e45aee71fd" class="m-doc">IVisualEffectPtr</a>&amp; dst) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">bool</a> <span class="m-label m-flat m-warning">pure virtual</span></span>
+              <span class="m-doc-wrap-bumper">auto <a href="#a722e84d118b5efbcb15d8140be538b8a" class="m-doc">CreateVisualEffect</a>(</span><span class="m-doc-wrap">uint32_t instanceID,
+              uint32_t groupID,
+              <a href="_i_visual_effect_8h.html#af513d4705ba3d0bdec5c20e45aee71fd" class="m-doc">IVisualEffectPtr</a>&amp; dst) -&gt; bool <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
             <dd>Creates an effect object with this instance and group ID in the default effect world.</dd>
             <dt id="a1a96352242cc07ac8172d6548b3612a0">
-              <span class="m-doc-wrap-bumper">auto <a href="#a1a96352242cc07ac8172d6548b3612a0" class="m-doc-self">SetState</a>(</span><span class="m-doc-wrap"><a href="namespace_swarm.html#ae16361599ce4f01e8b6d7915b5861fc5" class="m-doc">SwarmState</a> state) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">void</a> <span class="m-label m-flat m-warning">pure virtual</span></span>
+              <span class="m-doc-wrap-bumper">void <a href="#a1a96352242cc07ac8172d6548b3612a0" class="m-doc-self">SetState</a>(</span><span class="m-doc-wrap"><a href="namespace_swarm.html#ae16361599ce4f01e8b6d7915b5861fc5" class="m-doc">SwarmState</a> state) <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
             <dd><span></span></dd>
             <dt id="aa5cd2cf5dd322815d1b142acbab0ab7c">
@@ -145,170 +145,170 @@
             </dt>
             <dd><span></span></dd>
             <dt id="a493d1c8b81d62671f4e8f888779a2a16">
-              <span class="m-doc-wrap-bumper">auto <a href="#a493d1c8b81d62671f4e8f888779a2a16" class="m-doc-self">SetLOD</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">float</a> value,
-              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> = 5) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">void</a> <span class="m-label m-flat m-warning">pure virtual</span></span>
+              <span class="m-doc-wrap-bumper">void <a href="#a493d1c8b81d62671f4e8f888779a2a16" class="m-doc-self">SetLOD</a>(</span><span class="m-doc-wrap">float value,
+              int = 5) <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
             <dd><span></span></dd>
             <dt id="a7d368b7d5a9d4ccfbcde03b9d9c77f6c">
-              <span class="m-doc-wrap-bumper">auto <a href="#a7d368b7d5a9d4ccfbcde03b9d9c77f6c" class="m-doc-self">SetDefaultTimeline</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> timelineType) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">void</a> <span class="m-label m-flat m-warning">pure virtual</span></span>
+              <span class="m-doc-wrap-bumper">void <a href="#a7d368b7d5a9d4ccfbcde03b9d9c77f6c" class="m-doc-self">SetDefaultTimeline</a>(</span><span class="m-doc-wrap">int timelineType) <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
             <dd><span></span></dd>
             <dt id="ab5dec3fc25570a27f130156ff45d570d">
-              <span class="m-doc-wrap-bumper">auto <a href="#ab5dec3fc25570a27f130156ff45d570d" class="m-doc-self">DoUpdate</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">float</a>,
-              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">float</a>) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">void</a> <span class="m-label m-flat m-warning">pure virtual</span></span>
+              <span class="m-doc-wrap-bumper">void <a href="#ab5dec3fc25570a27f130156ff45d570d" class="m-doc-self">DoUpdate</a>(</span><span class="m-doc-wrap">float,
+              float) <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
             <dd><span></span></dd>
             <dt id="a0776a79b523c460867dfe0317780b155">
-              <span class="m-doc-wrap-bumper">auto <a href="#a0776a79b523c460867dfe0317780b155" class="m-doc-self">DoUpdate2</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">float</a>,
-              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">float</a>) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">void</a> <span class="m-label m-flat m-warning">pure virtual</span></span>
+              <span class="m-doc-wrap-bumper">void <a href="#a0776a79b523c460867dfe0317780b155" class="m-doc-self">DoUpdate2</a>(</span><span class="m-doc-wrap">float,
+              float) <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
             <dd><span></span></dd>
             <dt id="a0942d4885e7db83d19581a12ffda8241">
-              <span class="m-doc-wrap-bumper">auto <a href="#a0942d4885e7db83d19581a12ffda8241" class="m-doc-self">ResetState</a>(</span><span class="m-doc-wrap">) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">void</a> <span class="m-label m-flat m-warning">pure virtual</span></span>
+              <span class="m-doc-wrap-bumper">void <a href="#a0942d4885e7db83d19581a12ffda8241" class="m-doc-self">ResetState</a>(</span><span class="m-doc-wrap">) <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
             <dd><span></span></dd>
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#ae992f0f9773c158224b49d9dc5660708" class="m-doc">CreateWorld</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">uint32_<wbr />t</a> worldID,
-              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> = 0) -&gt; <a href="class_swarm_1_1_i_effects_world.html" class="m-doc">IEffectsWorld</a>* <span class="m-label m-flat m-warning">pure virtual</span></span>
+              <span class="m-doc-wrap-bumper">auto <a href="#a413c09b19b6c95071622ded2263d7984" class="m-doc">CreateWorld</a>(</span><span class="m-doc-wrap">uint32_t worldID,
+              int = 0) -&gt; <a href="class_swarm_1_1_i_effects_world.html" class="m-doc">IEffectsWorld</a>* <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
             <dd>Creates a new <a href="class_swarm_1_1_i_effects_world.html" class="m-doc">IEffectsWorld</a> mapped to the given ID.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#a462892497bdd5c93908ed6637af7a677" class="m-doc">RemoveWorld</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">uint32_<wbr />t</a> worldID) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">void</a> <span class="m-label m-flat m-warning">pure virtual</span></span>
+              <span class="m-doc-wrap-bumper">void <a href="#a462892497bdd5c93908ed6637af7a677" class="m-doc">RemoveWorld</a>(</span><span class="m-doc-wrap">uint32_t worldID) <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
             <dd>Removes the <a href="class_swarm_1_1_i_effects_world.html" class="m-doc">IEffectsWorld</a> mapped to the given ID from this manager.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#a1fe459af0a54a6a01c536eaf8a35611e" class="m-doc">World</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">uint32_<wbr />t</a> worldID) -&gt; <a href="class_swarm_1_1_i_effects_world.html" class="m-doc">IEffectsWorld</a>* <span class="m-label m-flat m-warning">pure virtual</span></span>
+              <span class="m-doc-wrap-bumper">auto <a href="#abf64e1958ab426302cac430780008a4f" class="m-doc">World</a>(</span><span class="m-doc-wrap">uint32_t worldID) -&gt; <a href="class_swarm_1_1_i_effects_world.html" class="m-doc">IEffectsWorld</a>* <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
             <dd>Returns the <a href="class_swarm_1_1_i_effects_world.html" class="m-doc">IEffectsWorld</a> mapped to the given ID, or nullptr if the ID is not mapped.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#a219ce53a1554ec4361e93fd97b825ebd" class="m-doc">SetDefaultWorld</a>(</span><span class="m-doc-wrap"><a href="class_swarm_1_1_i_effects_world.html" class="m-doc">IEffectsWorld</a>* pWorld) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">void</a> <span class="m-label m-flat m-warning">pure virtual</span></span>
+              <span class="m-doc-wrap-bumper">void <a href="#a219ce53a1554ec4361e93fd97b825ebd" class="m-doc">SetDefaultWorld</a>(</span><span class="m-doc-wrap"><a href="class_swarm_1_1_i_effects_world.html" class="m-doc">IEffectsWorld</a>* pWorld) <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
             <dd>Sets the given effect world to be the default one; it does not need to be mapped.</dd>
-            <dt id="aee099b70658dc7a4cdbb467e80cd8eef">
-              <span class="m-doc-wrap-bumper">auto <a href="#aee099b70658dc7a4cdbb467e80cd8eef" class="m-doc-self">DefaultWorld</a>(</span><span class="m-doc-wrap">) -&gt; <a href="class_swarm_1_1_i_effects_world.html" class="m-doc">IEffectsWorld</a>* <span class="m-label m-flat m-warning">pure virtual</span></span>
+            <dt id="a009618c1a2ec15235294efbcdbb371b4">
+              <span class="m-doc-wrap-bumper">auto <a href="#a009618c1a2ec15235294efbcdbb371b4" class="m-doc-self">DefaultWorld</a>(</span><span class="m-doc-wrap">) -&gt; <a href="class_swarm_1_1_i_effects_world.html" class="m-doc">IEffectsWorld</a>* <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
             <dd>Returns the active effect world.</dd>
             <dt id="adc085fd63a84480a1bfd73525b0cb24c">
-              <span class="m-doc-wrap-bumper">auto <a href="#adc085fd63a84480a1bfd73525b0cb24c" class="m-doc-self">GetWorldIDs</a>(</span><span class="m-doc-wrap">eastl::vector&lt;<a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">uint32_<wbr />t</a>&gt;&amp; dst) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">void</a> <span class="m-label m-flat m-warning">pure virtual</span></span>
+              <span class="m-doc-wrap-bumper">void <a href="#adc085fd63a84480a1bfd73525b0cb24c" class="m-doc-self">GetWorldIDs</a>(</span><span class="m-doc-wrap">eastl::vector&lt;uint32_t&gt;&amp; dst) <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
             <dd><span></span></dd>
             <dt id="a179518efc12b73ce51c90cfe6a78d7ae">
-              <span class="m-doc-wrap-bumper">auto <a href="#a179518efc12b73ce51c90cfe6a78d7ae" class="m-doc-self">AddCollection</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">void</a>*) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">bool</a> <span class="m-label m-flat m-warning">pure virtual</span></span>
+              <span class="m-doc-wrap-bumper">auto <a href="#a179518efc12b73ce51c90cfe6a78d7ae" class="m-doc-self">AddCollection</a>(</span><span class="m-doc-wrap">void*) -&gt; bool <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
             <dd><span></span></dd>
             <dt id="a5826dfe4db58c9d7719a4ee377d180ff">
-              <span class="m-doc-wrap-bumper">auto <a href="#a5826dfe4db58c9d7719a4ee377d180ff" class="m-doc-self">RemoveCollection</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">void</a>*) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">bool</a> <span class="m-label m-flat m-warning">pure virtual</span></span>
+              <span class="m-doc-wrap-bumper">auto <a href="#a5826dfe4db58c9d7719a4ee377d180ff" class="m-doc-self">RemoveCollection</a>(</span><span class="m-doc-wrap">void*) -&gt; bool <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
             <dd><span></span></dd>
-            <dt id="a0729f6777e066c4b44d22bd1ca2c1e70">
-              <span class="m-doc-wrap-bumper">auto <a href="#a0729f6777e066c4b44d22bd1ca2c1e70" class="m-doc-self">GetResources</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">uint32_<wbr />t</a> instanceID,
-              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">uint32_<wbr />t</a> groupID,
-              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a>) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">void</a>* <span class="m-label m-flat m-warning">pure virtual</span></span>
+            <dt id="af5c107d8f2d0ad6ba2083bbbfca0b4c0">
+              <span class="m-doc-wrap-bumper">auto <a href="#af5c107d8f2d0ad6ba2083bbbfca0b4c0" class="m-doc-self">GetResources</a>(</span><span class="m-doc-wrap">uint32_t instanceID,
+              uint32_t groupID,
+              int) -&gt; void* <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
             <dd><span></span></dd>
             <dt id="a660a03920459ac195733b0de72c6e10f">
-              <span class="m-doc-wrap-bumper">auto <a href="#a660a03920459ac195733b0de72c6e10f" class="m-doc-self">GetComponentDescription</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a>,
-              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a>,
-              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a>) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> <span class="m-label m-flat m-warning">pure virtual</span></span>
+              <span class="m-doc-wrap-bumper">auto <a href="#a660a03920459ac195733b0de72c6e10f" class="m-doc-self">GetComponentDescription</a>(</span><span class="m-doc-wrap">int,
+              int,
+              int) -&gt; int <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
             <dd><span></span></dd>
             <dt id="a890c4578c65068a439004de3bcec696d">
-              <span class="m-doc-wrap-bumper">auto <a href="#a890c4578c65068a439004de3bcec696d" class="m-doc-self">GetAuxiliaryDescription</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a>,
-              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a>,
-              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a>) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> <span class="m-label m-flat m-warning">pure virtual</span></span>
+              <span class="m-doc-wrap-bumper">auto <a href="#a890c4578c65068a439004de3bcec696d" class="m-doc-self">GetAuxiliaryDescription</a>(</span><span class="m-doc-wrap">int,
+              int,
+              int) -&gt; int <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
             <dd><span></span></dd>
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#a9d8d8f06a2b36f69310aaaaf325cbc4b" class="m-doc">RegisterSurface</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">class</a> <a href="class_resource_i_d.html" class="m-doc">ResourceID</a> surfaceID,
-              <a href="class_swarm_1_1_i_surface.html" class="m-doc">ISurface</a>* pSurface) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">void</a> <span class="m-label m-flat m-warning">pure virtual</span></span>
+              <span class="m-doc-wrap-bumper">void <a href="#a9d8d8f06a2b36f69310aaaaf325cbc4b" class="m-doc">RegisterSurface</a>(</span><span class="m-doc-wrap">class <a href="class_resource_i_d.html" class="m-doc">ResourceID</a> surfaceID,
+              <a href="class_swarm_1_1_i_surface.html" class="m-doc">ISurface</a>* pSurface) <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
             <dd>Maps the given <a href="class_swarm_1_1_i_surface.html" class="m-doc">ISurface</a> to the specified ID.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#a27e2bb61d0e2668d0eefe0ff9e0fde56" class="m-doc">Surface</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">class</a> <a href="class_resource_i_d.html" class="m-doc">ResourceID</a> surfaceID) -&gt; <a href="class_swarm_1_1_i_surface.html" class="m-doc">ISurface</a>* <span class="m-label m-flat m-warning">pure virtual</span></span>
+              <span class="m-doc-wrap-bumper">auto <a href="#aab7d28a088d6ce70e3e9564ad3a76db2" class="m-doc">Surface</a>(</span><span class="m-doc-wrap">class <a href="class_resource_i_d.html" class="m-doc">ResourceID</a> surfaceID) -&gt; <a href="class_swarm_1_1_i_surface.html" class="m-doc">ISurface</a>* <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
             <dd>Gets the <a href="class_swarm_1_1_i_surface.html" class="m-doc">ISurface</a> mapped to the specified ID, or nullptr if none is mapped to that ID.</dd>
             <dt id="adbfb53f441a038dddf33b8f83facb63a">
-              <span class="m-doc-wrap-bumper">auto <a href="#adbfb53f441a038dddf33b8f83facb63a" class="m-doc-self">RegisterSurfaceName</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">const</a> <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">char</a>* pName,
-              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">class</a> <a href="class_resource_i_d.html" class="m-doc">ResourceID</a> surfaceID,
-              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">void</a>* callback) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">void</a> <span class="m-label m-flat m-warning">pure virtual</span></span>
+              <span class="m-doc-wrap-bumper">void <a href="#adbfb53f441a038dddf33b8f83facb63a" class="m-doc-self">RegisterSurfaceName</a>(</span><span class="m-doc-wrap">const char* pName,
+              class <a href="class_resource_i_d.html" class="m-doc">ResourceID</a> surfaceID,
+              void* callback) <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
             <dd><span></span></dd>
             <dt id="a89230038fe6dea445bc35b8186c9b11a">
-              <span class="m-doc-wrap-bumper">auto <a href="#a89230038fe6dea445bc35b8186c9b11a" class="m-doc-self">SurfaceInfo</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">class</a> <a href="class_resource_i_d.html" class="m-doc">ResourceID</a> surfaceID,
-              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">void</a>* callback) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">bool</a> <span class="m-label m-flat m-warning">pure virtual</span></span>
+              <span class="m-doc-wrap-bumper">auto <a href="#a89230038fe6dea445bc35b8186c9b11a" class="m-doc-self">SurfaceInfo</a>(</span><span class="m-doc-wrap">class <a href="class_resource_i_d.html" class="m-doc">ResourceID</a> surfaceID,
+              void* callback) -&gt; bool <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
             <dd><span></span></dd>
             <dt id="a68c8e0b904ccbd8a245c28383c059465">
-              <span class="m-doc-wrap-bumper">auto <a href="#a68c8e0b904ccbd8a245c28383c059465" class="m-doc-self">RegisterMap</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">class</a> <a href="class_resource_i_d.html" class="m-doc">ResourceID</a> mapID,
-              <a href="class_swarm_1_1_i_effect_map.html" class="m-doc">IEffectMap</a>* pMap) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">void</a> <span class="m-label m-flat m-warning">pure virtual</span></span>
+              <span class="m-doc-wrap-bumper">void <a href="#a68c8e0b904ccbd8a245c28383c059465" class="m-doc-self">RegisterMap</a>(</span><span class="m-doc-wrap">class <a href="class_resource_i_d.html" class="m-doc">ResourceID</a> mapID,
+              <a href="class_swarm_1_1_i_effect_map.html" class="m-doc">IEffectMap</a>* pMap) <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
             <dd><span></span></dd>
-            <dt id="ab189e9757f907cb527d8f8135173ebdb">
-              <span class="m-doc-wrap-bumper">auto <a href="#ab189e9757f907cb527d8f8135173ebdb" class="m-doc-self">Map</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">class</a> <a href="class_resource_i_d.html" class="m-doc">ResourceID</a> mapID) -&gt; <a href="class_swarm_1_1_i_effect_map.html" class="m-doc">IEffectMap</a>* <span class="m-label m-flat m-warning">pure virtual</span></span>
+            <dt id="a87d6c92ec0c990acd6b7f73f4bd5548e">
+              <span class="m-doc-wrap-bumper">auto <a href="#a87d6c92ec0c990acd6b7f73f4bd5548e" class="m-doc-self">Map</a>(</span><span class="m-doc-wrap">class <a href="class_resource_i_d.html" class="m-doc">ResourceID</a> mapID) -&gt; <a href="class_swarm_1_1_i_effect_map.html" class="m-doc">IEffectMap</a>* <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
             <dd><span></span></dd>
             <dt id="a4ef622d3feb87d7d3bde3f235551b074">
-              <span class="m-doc-wrap-bumper">auto <a href="#a4ef622d3feb87d7d3bde3f235551b074" class="m-doc-self">RegisterMapName</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">const</a> <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">char</a>* pName,
-              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">class</a> <a href="class_resource_i_d.html" class="m-doc">ResourceID</a> mapID) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">void</a> <span class="m-label m-flat m-warning">pure virtual</span></span>
+              <span class="m-doc-wrap-bumper">void <a href="#a4ef622d3feb87d7d3bde3f235551b074" class="m-doc-self">RegisterMapName</a>(</span><span class="m-doc-wrap">const char* pName,
+              class <a href="class_resource_i_d.html" class="m-doc">ResourceID</a> mapID) <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
             <dd><span></span></dd>
             <dt id="a79260fca4e4709dccafe18c75e8b0f04">
-              <span class="m-doc-wrap-bumper">auto <a href="#a79260fca4e4709dccafe18c75e8b0f04" class="m-doc-self">MapID</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a>) -&gt; <a href="class_resource_i_d.html" class="m-doc">ResourceID</a> <span class="m-label m-flat m-warning">pure virtual</span></span>
+              <span class="m-doc-wrap-bumper">auto <a href="#a79260fca4e4709dccafe18c75e8b0f04" class="m-doc-self">MapID</a>(</span><span class="m-doc-wrap">int) -&gt; <a href="class_resource_i_d.html" class="m-doc">ResourceID</a> <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
             <dd><span></span></dd>
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#aa0c1c4fc761d4019a2e0229450daef6f" class="m-doc">SetAppFlag</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> flag,
-              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">bool</a> bValue) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">void</a> <span class="m-label m-flat m-warning">pure virtual</span></span>
+              <span class="m-doc-wrap-bumper">void <a href="#aa0c1c4fc761d4019a2e0229450daef6f" class="m-doc">SetAppFlag</a>(</span><span class="m-doc-wrap">int flag,
+              bool bValue) <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
             <dd>Set the given application flag.</dd>
             <dt id="ac6b675e31093d974965478ec5176d5c6">
-              <span class="m-doc-wrap-bumper">auto <a href="#ac6b675e31093d974965478ec5176d5c6" class="m-doc-self">AppFlag</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> flag) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">bool</a> <span class="m-label m-flat m-warning">pure virtual</span></span>
+              <span class="m-doc-wrap-bumper">auto <a href="#ac6b675e31093d974965478ec5176d5c6" class="m-doc-self">AppFlag</a>(</span><span class="m-doc-wrap">int flag) -&gt; bool <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
             <dd><span></span></dd>
-            <dt id="aebea016d2b3e0978e90a2152fb6253ae">
-              <span class="m-doc-wrap-bumper">auto <a href="#aebea016d2b3e0978e90a2152fb6253ae" class="m-doc-self">GlobalParams</a>(</span><span class="m-doc-wrap">) -&gt; <a href="class_swarm_1_1c_global_params.html" class="m-doc">cGlobalParams</a>&amp; <span class="m-label m-flat m-warning">pure virtual</span></span>
+            <dt id="a0cc979d2150dec70b7b57b0faedad6cd">
+              <span class="m-doc-wrap-bumper">auto <a href="#a0cc979d2150dec70b7b57b0faedad6cd" class="m-doc-self">GlobalParams</a>(</span><span class="m-doc-wrap">) -&gt; <a href="class_swarm_1_1c_global_params.html" class="m-doc">cGlobalParams</a>&amp; <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
             <dd><span></span></dd>
-            <dt id="afadcb9de3830282abf284538e3d88b41">
-              <span class="m-doc-wrap-bumper">auto <a href="#afadcb9de3830282abf284538e3d88b41" class="m-doc-self">GlobalParams2</a>(</span><span class="m-doc-wrap">) -&gt; <a href="class_swarm_1_1c_global_params.html" class="m-doc">cGlobalParams</a>&amp; <span class="m-label m-flat m-warning">pure virtual</span></span>
+            <dt id="aa6f9c6249453eec5d8378501ee3ebc3c">
+              <span class="m-doc-wrap-bumper">auto <a href="#aa6f9c6249453eec5d8378501ee3ebc3c" class="m-doc-self">GlobalParams2</a>(</span><span class="m-doc-wrap">) -&gt; <a href="class_swarm_1_1c_global_params.html" class="m-doc">cGlobalParams</a>&amp; <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
             <dd><span></span></dd>
             <dt id="a33c0a98225fe9b0b7065cbf711868692">
-              <span class="m-doc-wrap-bumper">auto <a href="#a33c0a98225fe9b0b7065cbf711868692" class="m-doc-self">UpdateProperties</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">void</a>*) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">void</a> <span class="m-label m-flat m-warning">pure virtual</span></span>
+              <span class="m-doc-wrap-bumper">void <a href="#a33c0a98225fe9b0b7065cbf711868692" class="m-doc-self">UpdateProperties</a>(</span><span class="m-doc-wrap">void*) <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
             <dd><span></span></dd>
-            <dt id="ae76749b03ef37e7ddc2d8f450a5e73ba">
-              <span class="m-doc-wrap-bumper">auto <a href="#ae76749b03ef37e7ddc2d8f450a5e73ba" class="m-doc-self">GetStatsString</a>(</span><span class="m-doc-wrap">) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">const</a> <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">char</a>* <span class="m-label m-flat m-warning">pure virtual</span></span>
+            <dt id="af60716c7bf707532316142b0b0082d6f">
+              <span class="m-doc-wrap-bumper">auto <a href="#af60716c7bf707532316142b0b0082d6f" class="m-doc-self">GetStatsString</a>(</span><span class="m-doc-wrap">) -&gt; const char* <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
             <dd><span></span></dd>
-            <dt id="a5cfb4b0abd3a48438a785a2f13144690">
-              <span class="m-doc-wrap-bumper">auto <a href="#a5cfb4b0abd3a48438a785a2f13144690" class="m-doc-self">Stats</a>(</span><span class="m-doc-wrap">) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">void</a>* <span class="m-label m-flat m-warning">pure virtual</span></span>
+            <dt id="a452e8d86c3a9be6e35ca62730934abc2">
+              <span class="m-doc-wrap-bumper">auto <a href="#a452e8d86c3a9be6e35ca62730934abc2" class="m-doc-self">Stats</a>(</span><span class="m-doc-wrap">) -&gt; void* <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
             <dd><span></span></dd>
             <dt id="a5b7b57e806d5fbd15d52730b6a6afa14">
-              <span class="m-doc-wrap-bumper">auto <a href="#a5b7b57e806d5fbd15d52730b6a6afa14" class="m-doc-self">GetActiveEffectInfo</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a>,
-              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a>,
-              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> infoLevel) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">void</a> <span class="m-label m-flat m-warning">pure virtual</span></span>
+              <span class="m-doc-wrap-bumper">void <a href="#a5b7b57e806d5fbd15d52730b6a6afa14" class="m-doc-self">GetActiveEffectInfo</a>(</span><span class="m-doc-wrap">int,
+              int,
+              int infoLevel) <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
             <dd><span></span></dd>
             <dt id="ad7295660f3b9c5ff5aaedd9afc944cdb">
               <span class="m-doc-wrap-bumper">auto <a href="#ad7295660f3b9c5ff5aaedd9afc944cdb" class="m-doc-self">GetEffectInfo</a>(</span><span class="m-doc-wrap"><a href="struct_swarm_1_1c_effect_info.html" class="m-doc">cEffectInfo</a>&amp; dst,
-              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">const</a> <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">char</a>* pName) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">bool</a> <span class="m-label m-flat m-warning">pure virtual</span></span>
+              const char* pName) -&gt; bool <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
             <dd><span></span></dd>
             <dt id="ade7fa432889ad25dc81198e9e832de07">
               <span class="m-doc-wrap-bumper">auto <a href="#ade7fa432889ad25dc81198e9e832de07" class="m-doc-self">GetEffectInfo2</a>(</span><span class="m-doc-wrap">eastl::vector&lt;<a href="struct_swarm_1_1c_effect_info.html" class="m-doc">cEffectInfo</a>&gt;&amp; dst,
-              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">const</a> <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">char</a>* pName) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">bool</a> <span class="m-label m-flat m-warning">pure virtual</span></span>
+              const char* pName) -&gt; bool <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
             <dd><span></span></dd>
             <dt id="a4df04a9f30715348bf82d5b6eeb321b8">
-              <span class="m-doc-wrap-bumper">auto <a href="#a4df04a9f30715348bf82d5b6eeb321b8" class="m-doc-self">OpenEffectFile</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">const</a> <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">char</a>* pName) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">bool</a> <span class="m-label m-flat m-warning">pure virtual</span></span>
+              <span class="m-doc-wrap-bumper">auto <a href="#a4df04a9f30715348bf82d5b6eeb321b8" class="m-doc-self">OpenEffectFile</a>(</span><span class="m-doc-wrap">const char* pName) -&gt; bool <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
             <dd><span></span></dd>
             <dt id="a9e2d42f395c90bd398355b8455f43730">
-              <span class="m-doc-wrap-bumper">auto <a href="#a9e2d42f395c90bd398355b8455f43730" class="m-doc-self">GetEffectDebugName</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">uint32_<wbr />t</a> instanceID,
-              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">uint32_<wbr />t</a> groupID,
-              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a>) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">bool</a> <span class="m-label m-flat m-warning">pure virtual</span></span>
+              <span class="m-doc-wrap-bumper">auto <a href="#a9e2d42f395c90bd398355b8455f43730" class="m-doc-self">GetEffectDebugName</a>(</span><span class="m-doc-wrap">uint32_t instanceID,
+              uint32_t groupID,
+              int) -&gt; bool <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
             <dd><span></span></dd>
           </dl>
@@ -317,8 +317,8 @@
           <h2>Function documentation</h2>
           <section class="m-doc-details" id="a2afc7935dc351ddafe4d296f4cf61bad"><div>
             <h3>
-              <span class="m-doc-wrap-bumper"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">bool</a> Swarm::<wbr />IEffectsManager::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a2afc7935dc351ddafe4d296f4cf61bad" class="m-doc-self">HasVisualEffect</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">uint32_<wbr />t</a> instanceID,
-              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">uint32_<wbr />t</a> groupID) const <span class="m-label m-warning">pure virtual</span></span></span>
+              <span class="m-doc-wrap-bumper">bool Swarm::<wbr />IEffectsManager::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a2afc7935dc351ddafe4d296f4cf61bad" class="m-doc-self">HasVisualEffect</a>(</span><span class="m-doc-wrap">uint32_t instanceID,
+              uint32_t groupID) const <span class="m-label m-warning">pure virtual</span></span></span>
             </h3>
             <p>Returns whether an effect with this instance and group ID exists in any of the effect directories (effdir) in the manager.</p>
             <table class="m-table m-fullwidth m-flat">
@@ -339,8 +339,8 @@
           </div></section>
           <section class="m-doc-details" id="a722e84d118b5efbcb15d8140be538b8a"><div>
             <h3>
-              <span class="m-doc-wrap-bumper"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">bool</a> Swarm::<wbr />IEffectsManager::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a722e84d118b5efbcb15d8140be538b8a" class="m-doc-self">CreateVisualEffect</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">uint32_<wbr />t</a> instanceID,
-              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">uint32_<wbr />t</a> groupID,
+              <span class="m-doc-wrap-bumper">bool Swarm::<wbr />IEffectsManager::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a722e84d118b5efbcb15d8140be538b8a" class="m-doc-self">CreateVisualEffect</a>(</span><span class="m-doc-wrap">uint32_t instanceID,
+              uint32_t groupID,
               <a href="_i_visual_effect_8h.html#af513d4705ba3d0bdec5c20e45aee71fd" class="m-doc">IVisualEffectPtr</a>&amp; dst) <span class="m-label m-warning">pure virtual</span></span></span>
             </h3>
             <p>Creates an effect object with this instance and group ID in the default effect world.</p>
@@ -371,10 +371,10 @@
             </table>
 <p>The destination is an uninitialized intrusive_ptr; the object must be nullptr or not be initialized, because it will be ignored.</p>
           </div></section>
-          <section class="m-doc-details" id="ae992f0f9773c158224b49d9dc5660708"><div>
+          <section class="m-doc-details" id="a413c09b19b6c95071622ded2263d7984"><div>
             <h3>
-              <span class="m-doc-wrap-bumper"><a href="class_swarm_1_1_i_effects_world.html" class="m-doc">IEffectsWorld</a>* Swarm::<wbr />IEffectsManager::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ae992f0f9773c158224b49d9dc5660708" class="m-doc-self">CreateWorld</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">uint32_<wbr />t</a> worldID,
-              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> = 0) <span class="m-label m-warning">pure virtual</span></span></span>
+              <span class="m-doc-wrap-bumper"><a href="class_swarm_1_1_i_effects_world.html" class="m-doc">IEffectsWorld</a>* Swarm::<wbr />IEffectsManager::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a413c09b19b6c95071622ded2263d7984" class="m-doc-self">CreateWorld</a>(</span><span class="m-doc-wrap">uint32_t worldID,
+              int = 0) <span class="m-label m-warning">pure virtual</span></span></span>
             </h3>
             <p>Creates a new <a href="class_swarm_1_1_i_effects_world.html" class="m-doc">IEffectsWorld</a> mapped to the given ID.</p>
             <table class="m-table m-fullwidth m-flat">
@@ -391,7 +391,7 @@
           </div></section>
           <section class="m-doc-details" id="a462892497bdd5c93908ed6637af7a677"><div>
             <h3>
-              <span class="m-doc-wrap-bumper"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">void</a> Swarm::<wbr />IEffectsManager::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a462892497bdd5c93908ed6637af7a677" class="m-doc-self">RemoveWorld</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">uint32_<wbr />t</a> worldID) <span class="m-label m-warning">pure virtual</span></span></span>
+              <span class="m-doc-wrap-bumper">void Swarm::<wbr />IEffectsManager::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a462892497bdd5c93908ed6637af7a677" class="m-doc-self">RemoveWorld</a>(</span><span class="m-doc-wrap">uint32_t worldID) <span class="m-label m-warning">pure virtual</span></span></span>
             </h3>
             <p>Removes the <a href="class_swarm_1_1_i_effects_world.html" class="m-doc">IEffectsWorld</a> mapped to the given ID from this manager.</p>
             <table class="m-table m-fullwidth m-flat">
@@ -407,9 +407,9 @@
             </table>
 <p>If the ID is not mapped, this method does nothing.</p>
           </div></section>
-          <section class="m-doc-details" id="a1fe459af0a54a6a01c536eaf8a35611e"><div>
+          <section class="m-doc-details" id="abf64e1958ab426302cac430780008a4f"><div>
             <h3>
-              <span class="m-doc-wrap-bumper"><a href="class_swarm_1_1_i_effects_world.html" class="m-doc">IEffectsWorld</a>* Swarm::<wbr />IEffectsManager::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a1fe459af0a54a6a01c536eaf8a35611e" class="m-doc-self">World</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">uint32_<wbr />t</a> worldID) <span class="m-label m-warning">pure virtual</span></span></span>
+              <span class="m-doc-wrap-bumper"><a href="class_swarm_1_1_i_effects_world.html" class="m-doc">IEffectsWorld</a>* Swarm::<wbr />IEffectsManager::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#abf64e1958ab426302cac430780008a4f" class="m-doc-self">World</a>(</span><span class="m-doc-wrap">uint32_t worldID) <span class="m-label m-warning">pure virtual</span></span></span>
             </h3>
             <p>Returns the <a href="class_swarm_1_1_i_effects_world.html" class="m-doc">IEffectsWorld</a> mapped to the given ID, or nullptr if the ID is not mapped.</p>
             <table class="m-table m-fullwidth m-flat">
@@ -427,7 +427,7 @@
           </div></section>
           <section class="m-doc-details" id="a219ce53a1554ec4361e93fd97b825ebd"><div>
             <h3>
-              <span class="m-doc-wrap-bumper"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">void</a> Swarm::<wbr />IEffectsManager::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a219ce53a1554ec4361e93fd97b825ebd" class="m-doc-self">SetDefaultWorld</a>(</span><span class="m-doc-wrap"><a href="class_swarm_1_1_i_effects_world.html" class="m-doc">IEffectsWorld</a>* pWorld) <span class="m-label m-warning">pure virtual</span></span></span>
+              <span class="m-doc-wrap-bumper">void Swarm::<wbr />IEffectsManager::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a219ce53a1554ec4361e93fd97b825ebd" class="m-doc-self">SetDefaultWorld</a>(</span><span class="m-doc-wrap"><a href="class_swarm_1_1_i_effects_world.html" class="m-doc">IEffectsWorld</a>* pWorld) <span class="m-label m-warning">pure virtual</span></span></span>
             </h3>
             <p>Sets the given effect world to be the default one; it does not need to be mapped.</p>
             <table class="m-table m-fullwidth m-flat">
@@ -445,7 +445,7 @@
           </div></section>
           <section class="m-doc-details" id="a9d8d8f06a2b36f69310aaaaf325cbc4b"><div>
             <h3>
-              <span class="m-doc-wrap-bumper"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">void</a> Swarm::<wbr />IEffectsManager::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a9d8d8f06a2b36f69310aaaaf325cbc4b" class="m-doc-self">RegisterSurface</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">class</a> <a href="class_resource_i_d.html" class="m-doc">ResourceID</a> surfaceID,
+              <span class="m-doc-wrap-bumper">void Swarm::<wbr />IEffectsManager::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a9d8d8f06a2b36f69310aaaaf325cbc4b" class="m-doc-self">RegisterSurface</a>(</span><span class="m-doc-wrap">class <a href="class_resource_i_d.html" class="m-doc">ResourceID</a> surfaceID,
               <a href="class_swarm_1_1_i_surface.html" class="m-doc">ISurface</a>* pSurface) <span class="m-label m-warning">pure virtual</span></span></span>
             </h3>
             <p>Maps the given <a href="class_swarm_1_1_i_surface.html" class="m-doc">ISurface</a> to the specified ID.</p>
@@ -465,9 +465,9 @@
               </tbody>
             </table>
           </div></section>
-          <section class="m-doc-details" id="a27e2bb61d0e2668d0eefe0ff9e0fde56"><div>
+          <section class="m-doc-details" id="aab7d28a088d6ce70e3e9564ad3a76db2"><div>
             <h3>
-              <span class="m-doc-wrap-bumper"><a href="class_swarm_1_1_i_surface.html" class="m-doc">ISurface</a>* Swarm::<wbr />IEffectsManager::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a27e2bb61d0e2668d0eefe0ff9e0fde56" class="m-doc-self">Surface</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">class</a> <a href="class_resource_i_d.html" class="m-doc">ResourceID</a> surfaceID) <span class="m-label m-warning">pure virtual</span></span></span>
+              <span class="m-doc-wrap-bumper"><a href="class_swarm_1_1_i_surface.html" class="m-doc">ISurface</a>* Swarm::<wbr />IEffectsManager::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#aab7d28a088d6ce70e3e9564ad3a76db2" class="m-doc-self">Surface</a>(</span><span class="m-doc-wrap">class <a href="class_resource_i_d.html" class="m-doc">ResourceID</a> surfaceID) <span class="m-label m-warning">pure virtual</span></span></span>
             </h3>
             <p>Gets the <a href="class_swarm_1_1_i_surface.html" class="m-doc">ISurface</a> mapped to the specified ID, or nullptr if none is mapped to that ID.</p>
             <table class="m-table m-fullwidth m-flat">
@@ -484,8 +484,8 @@
           </div></section>
           <section class="m-doc-details" id="aa0c1c4fc761d4019a2e0229450daef6f"><div>
             <h3>
-              <span class="m-doc-wrap-bumper"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">void</a> Swarm::<wbr />IEffectsManager::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#aa0c1c4fc761d4019a2e0229450daef6f" class="m-doc-self">SetAppFlag</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> flag,
-              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">bool</a> bValue) <span class="m-label m-warning">pure virtual</span></span></span>
+              <span class="m-doc-wrap-bumper">void Swarm::<wbr />IEffectsManager::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#aa0c1c4fc761d4019a2e0229450daef6f" class="m-doc-self">SetAppFlag</a>(</span><span class="m-doc-wrap">int flag,
+              bool bValue) <span class="m-label m-warning">pure virtual</span></span></span>
             </h3>
             <p>Set the given application flag.</p>
             <table class="m-table m-fullwidth m-flat">
@@ -543,13 +543,13 @@
     </div>
   </div>
 </div>
-<script src="search-v2.js"></script>
-<script src="searchdata-v2.js" async="async"></script>
+<script src="search-v1.js"></script>
+<script src="searchdata-v1.js" async="async"></script>
 <footer><nav>
   <div class="m-container">
     <div class="m-row">
       <div class="m-col-l-10 m-push-l-1">
-        <p>Spore ModAPI SDK for creating C++ mods for Spore. Created with <a href="https://doxygen.org/">Doxygen</a> 1.9.8 and <a href="https://mcss.mosra.cz/">m.css</a>.</p>
+        <p>Spore ModAPI SDK for creating C++ mods for Spore. Created with <a href="https://doxygen.org/">Doxygen</a> 1.8.16 and <a href="https://mcss.mosra.cz/">m.css</a>.</p>
       </div>
     </div>
   </div>

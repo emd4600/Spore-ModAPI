@@ -14,7 +14,7 @@
 <header><nav id="navigation">
   <div class="m-container">
     <div class="m-row">
-      <a href="index.html" id="m-navbar-brand" class="m-col-t-8 m-col-m-none m-left-m"><img src="Spore_ModAPI_Icon.png" alt="" />Spore ModAPI <span class="m-thin">SDK for creating C++ mods for Spore</span></a>
+      <a href="index.html" id="m-navbar-brand" class="m-col-t-8 m-col-m-none m-left-m"><img src="Spore_ModAPI_Icon.png" />Spore ModAPI <span class="m-thin">SDK for creating C++ mods for Spore</span></a>
       <div class="m-col-t-4 m-hide-m m-text-right m-nopadr">
         <a href="#search" class="m-doc-search-icon" title="Search" onclick="return showSearch()"><svg style="height: 0.9rem;" viewBox="0 0 16 16">
           <path id="m-doc-search-icon-path" d="m6 0c-3.31 0-6 2.69-6 6 0 3.31 2.69 6 6 6 1.49 0 2.85-0.541 3.89-1.44-0.0164 0.338 0.147 0.759 0.5 1.15l3.22 3.79c0.552 0.614 1.45 0.665 2 0.115 0.55-0.55 0.499-1.45-0.115-2l-3.79-3.22c-0.392-0.353-0.812-0.515-1.15-0.5 0.895-1.05 1.44-2.41 1.44-3.89 0-3.31-2.69-6-6-6zm0 1.56a4.44 4.44 0 0 1 4.44 4.44 4.44 4.44 0 0 1-4.44 4.44 4.44 4.44 0 0 1-4.44-4.44 4.44 4.44 0 0 1 4.44-4.44z"/>
@@ -48,106 +48,61 @@
           The cheat console
         </h1>
         <p>How to print text to the console and add new cheats.</p>
-<p>If you want to see an example of real mods that add new cheats, check the <a href="https://github.com/emd4600/Spore-ModAPI/tree/master/Projects/Example%20Projects/GmdlExport"><code>GmdlExport</code></a> and the <a href="https://github.com/emd4600/Spore-ModAPI/tree/master/Projects/Example%20Projects/ModCreatorKit"><code>ModCreatorKit</code></a></p><section id="Cheats-Console"><h2><a href="#Cheats-Console">Printing to the console</a></h2><p>You can print text to the console using the <a href="namespace_app.html#a5cfc09513c296a1468b99530df311f4f" class="m-doc">App::<wbr />ConsolePrintF()</a> method. It works like the <a href="http://www.cplusplus.com/reference/cstdio/printf/">C++ printf</a> method.</p><pre class="m-code"><span class="n">App</span><span class="o">::</span><span class="n">ConsolePrintF</span><span class="p">(</span><span class="s">&quot;Hello World!&quot;</span><span class="p">);</span><span class="w"></span></pre><p>You can use &quot;format specifiers&quot; to print the value of variables. For example, <code>d</code> can be used to print integers, and <code>f</code> to print floats:</p><pre class="m-code"><span class="n">App</span><span class="o">::</span><span class="n">ConsolePrintF</span><span class="p">(</span><span class="s">&quot;Integer: %d     Float: %f&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w"> </span><span class="mf">4.5f</span><span class="p">);</span><span class="w"></span></pre><p>That prints <code>Integer: 10 Float: 4.5</code></p></section><section id="Cheats-Creating"><h2><a href="#Cheats-Creating">Adding a new cheat</a></h2><p>Cheats use the <a href="namespace_arg_script.html" class="m-doc">ArgScript</a> scripting language, which is the same used in many Spore files (such as <code>.prop.prop_t</code>). You have more info in the <a href="https://github.com/emd4600/SporeModder-FX/wiki/ArgScript">SporeModderFX wiki</a>.</p><p>To create a new cheat we have to create a class that parses an <a href="namespace_arg_script.html" class="m-doc">ArgScript</a> command. You can use the *&quot;ModAPI Cheat* item template to create one. It
-basically creates a class like this:
+<p>If you want to see an example of real mods that add new cheats, check the <a href="https://github.com/emd4600/Spore-ModAPI/tree/master/Projects/Example%20Projects/GmdlExport"><code>GmdlExport</code></a> and the <a href="https://github.com/emd4600/Spore-ModAPI/tree/master/Projects/Example%20Projects/ModCreatorKit"><code>ModCreatorKit</code></a></p><section id="Cheats-Console"><h2><a href="#Cheats-Console">Printing to the console</a></h2><p>You can print text to the console using the <a href="namespace_app.html#a5cfc09513c296a1468b99530df311f4f" class="m-doc">App::<wbr />ConsolePrintF()</a> method. It works like the <a href="http://www.cplusplus.com/reference/cstdio/printf/">C++ printf</a> method.</p><pre class="m-code"><span class="n">App</span><span class="o">::</span><span class="n">ConsolePrintF</span><span class="p">(</span><span class="s">&quot;Hello World!&quot;</span><span class="p">);</span><span class="w"></span></pre><p>You can use &quot;format specifiers&quot; to print the value of variables. For example, <code>d</code> can be used to print integers, and <code>f</code> to print floats:</p><pre class="m-code"><span class="n">App</span><span class="o">::</span><span class="n">ConsolePrintF</span><span class="p">(</span><span class="s">&quot;Integer: %d     Float: %f&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w"> </span><span class="mf">4.5f</span><span class="p">);</span><span class="w"></span></pre><p>That prints <code>Integer: 10 Float: 4.5</code></p></section><section id="Cheats-Creating"><h2><a href="#Cheats-Creating">Adding a new cheat</a></h2><p>Cheats use the <a href="namespace_arg_script.html" class="m-doc">ArgScript</a> scripting language, which is the same used in many Spore files (such as <code>.prop.prop_t</code>). You have more info in the <a href="https://github.com/emd4600/SporeModder-FX/wiki/ArgScript">SporeModderFX wiki</a>.</p><p>To create a new cheat we have to create a class that parses an <a href="namespace_arg_script.html" class="m-doc">ArgScript</a> command. You can use the *&quot;<a href="namespace_mod_a_p_i.html" class="m-doc">ModAPI</a> Cheat* item template to create one. It basically creates a class like this:</p><pre class="m-code"><span class="k">using</span><span class="w"> </span><span class="k">namespace</span><span class="w"> </span><span class="nn">ArgScript</span><span class="p">;</span><span class="w"></span>
 
-@icode{cpp} 
-using namespace ArgScript;
+<span class="k">class</span><span class="w"> </span><span class="nc">MyCheat</span><span class="w"> </span>
+<span class="w">    </span><span class="o">:</span><span class="w"> </span><span class="k">public</span><span class="w"> </span><span class="n">ICommand</span><span class="w"></span>
+<span class="p">{</span><span class="w"></span>
+<span class="k">public</span><span class="o">:</span><span class="w"></span>
+<span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="n">ParseLine</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Line</span><span class="o">&amp;</span><span class="w"> </span><span class="n">line</span><span class="p">)</span><span class="w"> </span><span class="k">override</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="o">*</span><span class="w"> </span><span class="nf">GetDescription</span><span class="p">(</span><span class="n">DescriptionMode</span><span class="w"> </span><span class="n">mode</span><span class="p">)</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="k">override</span><span class="p">;</span><span class="w"></span>
+<span class="p">};</span><span class="w"></span></pre><p>The simplest method is <code>GetDescription()</code>; there you just have to return a description of your cheat, that is showed when executing the <code>help</code> command. Depending on the <code>mode</code> parameter you can return a more complex description which is shown when executing <code>help mycheat</code>.</p><pre class="m-code"><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="o">*</span><span class="w"> </span><span class="nf">MyCheat::GetDescription</span><span class="p">(</span><span class="n">DescriptionMode</span><span class="w"> </span><span class="n">mode</span><span class="p">)</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">mode</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">DescriptionMode</span><span class="o">::</span><span class="n">Basic</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="s">&quot;This is a basic description&quot;</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="s">&quot;MyCheat: does something like this.</span><span class="se">\n</span><span class="s">&quot;</span><span class="w"></span>
+<span class="w">                </span><span class="s">&quot;   You can include line breaks.</span><span class="se">\n</span><span class="s">&quot;</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span></pre><p><code>ParseLine()</code> is the method called when the player executes the cheat. The <code>line</code> parameter has information about the arguments and options that the player wrote.</p><p>You can add the cheat in your <code><a href="effects__example__1_8cpp.html#a98b1050f09da390896f964fb7a892391" class="m-doc">Initialize()</a></code> method. Cheat names are case-insensitive: <code class="m-code"><span class="n">CheatManager</span><span class="p">.</span><span class="n">AddCheat</span><span class="p">(</span><span class="s">&quot;myCheat&quot;</span><span class="p">,</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">MyCheat</span><span class="p">());</span><span class="w"></span></code></p></section><section id="Cheats-Processing"><h2><a href="#Cheats-Processing">Processing the cheat line</a></h2><p>Let&#x27;s see an example of how to process arguments and options typed by the player in the cheat; this is done by calling functions on the <code>line</code> parameter. Check the <a href="class_arg_script_1_1_line.html" class="m-doc">ArgScript::<wbr />Line</a> documentation. The main functions you must know are <code>GetArguments()</code> and <code>GetOption()</code>, which return a list of strings. For example, if I have the line <code>mycheat 3 water -option (0.3, 0, 1.0)</code>:</p><ul><li><code>line.GetArguments(2)</code> will return a list with &quot;3&quot;, &quot;water&quot;.</li><li><code>line.GetOption(&quot;option&quot;, 1)</code> will return a list with &quot;(0.3, 0, 1.0)&quot;.</li></ul><p>The numeric argument in those functions is how many arguments were expected; this means that if the player had only typed one argument, the first function would have raised an exception, that is shown to the user in the console. The returned list contains strings, but you can convert those elements to integers, floats, colors,... with the <code>mpFormatParser</code> member:</p><pre class="m-code"><span class="kt">void</span><span class="w"> </span><span class="nf">MyCheat::ParseLine</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Line</span><span class="o">&amp;</span><span class="w"> </span><span class="n">line</span><span class="p">)</span><span class="w"></span>
+<span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="k">auto</span><span class="w"> </span><span class="n">args</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">line</span><span class="p">.</span><span class="n">GetArguments</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">val</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">mpFormatParser</span><span class="o">-&gt;</span><span class="n">ParseInt</span><span class="p">(</span><span class="n">args</span><span class="p">[</span><span class="mi">0</span><span class="p">]);</span><span class="w"></span>
+<span class="w">    </span><span class="c1">// In the above example, val = 3 and args[1] = &quot;water&quot;</span>
 
-class MyCheat 
-    : public ICommand
-{
-public:
-    void ParseLine(const Line&amp; line) override;
-    const char* GetDescription(DescriptionMode mode) const override;
-};
-@endicode 
+<span class="w">    </span><span class="n">args</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">line</span><span class="p">.</span><span class="n">GetOption</span><span class="p">(</span><span class="s">&quot;option&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">ColorRGB</span><span class="w"> </span><span class="n">color</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">mpFormatParser</span><span class="o">-&gt;</span><span class="n">ParseColorRGB</span><span class="p">(</span><span class="n">args</span><span class="p">[</span><span class="mi">0</span><span class="p">]);</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span></pre></section><section id="Cheats-Examples"><h2><a href="#Cheats-Examples">Cheats-Examples</a></h2><section id="Example"><h3><a href="#Example">1: Planet Buster cheat</a></h3><p>This cheat gives you a planet buster bomb, only if you are in the space stage. Optionally, the player can write an argument which will be the number of bombs received. Fopr more information about <a href="namespace_simulator.html" class="m-doc">Simulator</a>, check the <a href="_simulator_basic.html">&quot;Interacting with the Simulator&quot;</a> tutorial.</p><pre class="m-code"><span class="c1">// This is in dllmain.cpp</span>
 
-The simplest method is &lt;tt&gt;GetDescription()&lt;/tt&gt;; there you just have to return a description of your cheat, that is showed when executing the &lt;tt&gt;help&lt;/tt&gt; command.
-Depending on the &lt;tt&gt;mode&lt;/tt&gt; parameter you can return a more complex description which is shown when executing &lt;tt&gt;help mycheat&lt;/tt&gt;.
+<span class="k">using</span><span class="w"> </span><span class="k">namespace</span><span class="w"> </span><span class="nn">ArgScript</span><span class="p">;</span><span class="w"></span>
 
-@icode{cpp} 
-const char* MyCheat::GetDescription(DescriptionMode mode) const {
-    if (mode == DescriptionMode::Basic) {
-        return &quot;This is a basic description&quot;;
-    } else {
-        return &quot;MyCheat: does something like this.<br />&quot;
-                &quot; You can include line breaks.<br />&quot;
-    }
-}
-@endicode 
+<span class="k">class</span><span class="w"> </span><span class="nc">PlanetBusterCheat</span><span class="w"> </span>
+<span class="w">    </span><span class="o">:</span><span class="w"> </span><span class="k">public</span><span class="w"> </span><span class="n">ICommand</span><span class="w"></span>
+<span class="p">{</span><span class="w"></span>
+<span class="k">public</span><span class="o">:</span><span class="w"></span>
+<span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="n">ParseLine</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Line</span><span class="o">&amp;</span><span class="w"> </span><span class="n">line</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">IsSpaceGame</span><span class="p">())</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">            </span><span class="n">cSpaceToolDataPtr</span><span class="w"> </span><span class="n">tool</span><span class="p">;</span><span class="w"></span>
+<span class="w">            </span><span class="n">ToolManager</span><span class="p">.</span><span class="n">LoadTool</span><span class="p">({</span><span class="n">id</span><span class="p">(</span><span class="s">&quot;PlanetBusterBomb&quot;</span><span class="p">),</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">},</span><span class="w"> </span><span class="n">tool</span><span class="p">);</span><span class="w"></span>
+<span class="w">            </span>
+<span class="w">            </span><span class="kt">size_t</span><span class="w"> </span><span class="n">numArgs</span><span class="p">;</span><span class="w"></span>
+<span class="w">            </span><span class="k">auto</span><span class="w"> </span><span class="n">args</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">line</span><span class="p">.</span><span class="n">GetArgumentsRange</span><span class="p">(</span><span class="o">&amp;</span><span class="n">numArgs</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span><span class="w"></span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">numArgs</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">                </span><span class="n">tool</span><span class="o">-&gt;</span><span class="n">mCurrentAmmoCount</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">mpFormatParser</span><span class="o">-&gt;</span><span class="n">ParseInt</span><span class="p">(</span><span class="n">args</span><span class="p">[</span><span class="mi">0</span><span class="p">]);</span><span class="w"></span>
+<span class="w">            </span><span class="p">}</span><span class="w"></span>
+<span class="w">            </span>
+<span class="w">            </span><span class="k">auto</span><span class="w"> </span><span class="n">inventory</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">SimulatorSpaceGame</span><span class="p">.</span><span class="n">GetPlayerInventory</span><span class="p">();</span><span class="w"></span>
+<span class="w">            </span><span class="n">inventory</span><span class="o">-&gt;</span><span class="n">AddItem</span><span class="p">(</span><span class="n">tool</span><span class="p">.</span><span class="n">get</span><span class="p">());</span><span class="w"></span>
+<span class="w">        </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="o">*</span><span class="w"> </span><span class="n">GetDescription</span><span class="p">(</span><span class="n">DescriptionMode</span><span class="w"> </span><span class="n">mode</span><span class="p">)</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="s">&quot;Call the cheat. Drop the bomb. BOOM!&quot;</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="p">};</span><span class="w"></span>
 
-&lt;tt&gt;ParseLine()&lt;/tt&gt; is the method called when the player executes the cheat. The &lt;tt&gt;line&lt;/tt&gt; parameter has information about the arguments and options that the player wrote.
-
-You can add the cheat in your &lt;tt&gt;Initialize()&lt;/tt&gt; method. Cheat names are case-insensitive:
-@icode{cpp} 
-CheatManager.AddCheat(&quot;myCheat&quot;, new MyCheat());
-@endicode 
-
-@section Cheats-Processing Processing the cheat line
-
-Let&#x27;s see an example of how to process arguments and options typed by the player in the cheat; this is done by calling functions on the &lt;tt&gt;line&lt;/tt&gt; parameter.
-Check the ArgScript::Line documentation. The main functions you must know are &lt;tt&gt;GetArguments()&lt;/tt&gt; and &lt;tt&gt;GetOption()&lt;/tt&gt;, which return a list of strings.
-For example, if I have the line &lt;tt&gt;mycheat 3 water -option (0.3, 0, 1.0)&lt;/tt&gt;:
- - &lt;tt&gt;line.GetArguments(2)&lt;/tt&gt; will return a list with &quot;3&quot;, &quot;water&quot;.
- - &lt;tt&gt;line.GetOption(&quot;option&quot;, 1)&lt;/tt&gt; will return a list with &quot;(0.3, 0, 1.0)&quot;.
-
-The numeric argument in those functions is how many arguments were expected; this means that if the player had only typed one argument, the first function
-would have raised an exception, that is shown to the user in the console. The returned list contains strings, but you can convert those elements to integers,
-floats, colors,... with the &lt;tt&gt;mpFormatParser&lt;/tt&gt; member:
-
-@icode{cpp} 
-void MyCheat::ParseLine(const Line&amp; line)
-{
-    auto args = line.GetArguments(2);
-    int val = mpFormatParser-&gt;ParseInt(args[0]);
-    // In the above example, val = 3 and args[1] = &quot;water&quot;
-
-    args = line.GetOption(&quot;option&quot;, 1);
-    ColorRGB color = mpFormatParser-&gt;ParseColorRGB(args[0]);
-}
-@endicode 
-
-@section Cheats-Examples
-
-@subsection Example 1: Planet Buster cheat
-
-This cheat gives you a planet buster bomb, only if you are in the space stage. Optionally, the player can write
-an argument which will be the number of bombs received. Fopr more information about Simulator, check the
-&lt;a href=&quot;_simulator_basic.html&quot; &gt;\&quot;Interacting with the Simulator\&quot;&lt;/a&gt; tutorial.
-
-@icode{cpp} 
-// This is in dllmain.cpp
-
-using namespace ArgScript;
-
-class PlanetBusterCheat 
-    : public ICommand
-{
-public:
-    void ParseLine(const Line&amp; line) {
-        if (IsSpaceGame()) {
-            cSpaceToolDataPtr tool;
-            ToolManager.LoadTool({id(&quot;PlanetBusterBomb&quot;), 0, 0}, tool);
-            
-            size_t numArgs;
-            auto args = line.GetArgumentsRange(&amp;numArgs, 0, 1);
-            if (numArgs == 1) {
-                tool-&gt;mCurrentAmmoCount = mpFormatParser-&gt;ParseInt(args[0]);
-            }
-            
-            auto inventory = SimulatorSpaceGame.GetPlayerInventory();
-            inventory-&gt;AddItem(tool.get());
-        }
-    }
-    
-    const char* GetDescription(DescriptionMode mode) const {
-        return &quot;Call the cheat. Drop the bomb. BOOM!&quot;;
-    }
-};
-
-void Initialize() {
-    CheatManager.AddCheat(&quot;planetBuster&quot;, new <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">PlanetBusterCheat()</a>); }</p></section>
+<span class="kt">void</span><span class="w"> </span><span class="nf">Initialize</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">CheatManager</span><span class="p">.</span><span class="n">AddCheat</span><span class="p">(</span><span class="s">&quot;planetBuster&quot;</span><span class="p">,</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">PlanetBusterCheat</span><span class="p">());</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span></pre></section></section>
       </div>
     </div>
   </div>
@@ -186,13 +141,13 @@ void Initialize() {
     </div>
   </div>
 </div>
-<script src="search-v2.js"></script>
-<script src="searchdata-v2.js" async="async"></script>
+<script src="search-v1.js"></script>
+<script src="searchdata-v1.js" async="async"></script>
 <footer><nav>
   <div class="m-container">
     <div class="m-row">
       <div class="m-col-l-10 m-push-l-1">
-        <p>Spore ModAPI SDK for creating C++ mods for Spore. Created with <a href="https://doxygen.org/">Doxygen</a> 1.9.8 and <a href="https://mcss.mosra.cz/">m.css</a>.</p>
+        <p>Spore ModAPI SDK for creating C++ mods for Spore. Created with <a href="https://doxygen.org/">Doxygen</a> 1.8.16 and <a href="https://mcss.mosra.cz/">m.css</a>.</p>
       </div>
     </div>
   </div>

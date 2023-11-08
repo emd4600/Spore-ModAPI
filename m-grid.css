@@ -1,8 +1,7 @@
 /*
     This file is part of m.css.
 
-    Copyright © 2017, 2018, 2019, 2020, 2021, 2022, 2023
-              Vladimír Vondruš <mosra@centrum.cz>
+    Copyright © 2017, 2018, 2019 Vladimír Vondruš <mosra@centrum.cz>
 
     Permission is hereby granted, free of charge, to any person obtaining a
     copy of this software and associated documentation files (the "Software"),
@@ -40,7 +39,7 @@ body { margin: 0; }
   margin-left: -1rem;
   margin-right: -1rem;
 }
-.m-row::after { /* avoid rows floating around each other */
+.m-row:after { /* avoid rows floating around each other */
   content: ' ';
   clear: both;
   display: table;

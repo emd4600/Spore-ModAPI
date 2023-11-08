@@ -14,7 +14,7 @@
 <header><nav id="navigation">
   <div class="m-container">
     <div class="m-row">
-      <a href="index.html" id="m-navbar-brand" class="m-col-t-8 m-col-m-none m-left-m"><img src="Spore_ModAPI_Icon.png" alt="" />Spore ModAPI <span class="m-thin">SDK for creating C++ mods for Spore</span></a>
+      <a href="index.html" id="m-navbar-brand" class="m-col-t-8 m-col-m-none m-left-m"><img src="Spore_ModAPI_Icon.png" />Spore ModAPI <span class="m-thin">SDK for creating C++ mods for Spore</span></a>
       <div class="m-col-t-4 m-hide-m m-text-right m-nopadr">
         <a href="#search" class="m-doc-search-icon" title="Search" onclick="return showSearch()"><svg style="height: 0.9rem;" viewBox="0 0 16 16">
           <path id="m-doc-search-icon-path" d="m6 0c-3.31 0-6 2.69-6 6 0 3.31 2.69 6 6 6 1.49 0 2.85-0.541 3.89-1.44-0.0164 0.338 0.147 0.759 0.5 1.15l3.22 3.79c0.552 0.614 1.45 0.665 2 0.115 0.55-0.55 0.499-1.45-0.115-2l-3.79-3.22c-0.392-0.353-0.812-0.515-1.15-0.5 0.895-1.05 1.44-2.41 1.44-3.89 0-3.31-2.69-6-6-6zm0 1.56a4.44 4.44 0 0 1 4.44 4.44 4.44 4.44 0 0 1-4.44 4.44 4.44 4.44 0 0 1-4.44-4.44 4.44 4.44 0 0 1 4.44-4.44z"/>
@@ -46,10 +46,10 @@
       <div class="m-col-l-10 m-push-l-1">
         <h1>
           <span class="m-breadcrumb"><a href="namespace_app.html">App</a>::<wbr/></span>IGameMode <span class="m-thin">class</span>
-          <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_i_game_mode_8h.html">&lt;/home/runner/work/Spore-ModAPI/Spore-ModAPI/Spore-ModAPI/Spore ModAPI/Spore/App/IGameMode.h&gt;</a></div>
+          <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_i_game_mode_8h.html">&lt;Spore/App/IGameMode.h&gt;</a></div>
         </h1>
         <p>An interface that represents a mode in the game, that can receive mouse/keyboard input and update every frame.</p>
-        <nav class="m-block m-default">
+        <div class="m-block m-default">
           <h3>Contents</h3>
           <ul>
             <li>
@@ -61,23 +61,11 @@
               </ul>
             </li>
           </ul>
-        </nav>
+        </div>
 <p>There can be only an active game mode at a time; modes are managed using the <a href="class_app_1_1_i_game_mode_manager.html" class="m-doc">IGameModeManager</a> class. When a game mode is set as active, the <a href="class_app_1_1_i_game_mode.html#a3eebb2806ff0b96a1beb14923f9f4f08" class="m-doc">OnEnter()</a> method is called; when the mode is no longer active, the <a href="class_app_1_1_i_game_mode.html#a945e0be31fb671cd8186be14fe4f760b" class="m-doc">OnExit()</a> method will be called.</p>
         <section id="derived-classes">
           <h2><a href="#derived-classes">Derived classes</a></h2>
           <dl class="m-doc">
-            <dt>
-              class <a href="class_app_1_1_default_game_mode.html" class="m-doc">DefaultGameMode</a>
-            </dt>
-            <dd>A class that provides default implementation for all the methods in a <a href="class_app_1_1_i_game_mode.html" class="m-doc">IGameMode</a>.</dd>
-            <dt>
-              class <a href="class_app_1_1_game_space.html" class="m-doc">GameSpace</a>
-            </dt>
-            <dd><span></span></dd>
-            <dt>
-              class <a href="class_app_1_1_i_game_mode_object.html" class="m-doc">IGameModeObject</a>
-            </dt>
-            <dd>Same as <a href="class_app_1_1_i_game_mode.html" class="m-doc">App::<wbr />IGameMode</a>, but this one includes a Cast method similar to the one in the <a href="class_object.html" class="m-doc">Object</a> class.</dd>
             <dt>
               class <a href="class_app_1_1c_cell_mode_strategy.html" class="m-doc">cCellModeStrategy</a>
             </dt>
@@ -90,6 +78,18 @@
               class <a href="class_app_1_1c_scenario_mode.html" class="m-doc">cScenarioMode</a>
             </dt>
             <dd><span></span></dd>
+            <dt>
+              class <a href="class_app_1_1_default_game_mode.html" class="m-doc">DefaultGameMode</a>
+            </dt>
+            <dd>A class that provides default implementation for all the methods in a <a href="class_app_1_1_i_game_mode.html" class="m-doc">IGameMode</a>.</dd>
+            <dt>
+              class <a href="class_app_1_1_game_space.html" class="m-doc">GameSpace</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              class <a href="class_app_1_1_i_game_mode_object.html" class="m-doc">IGameModeObject</a>
+            </dt>
+            <dd>Same as <a href="class_app_1_1_i_game_mode.html" class="m-doc">App::<wbr />IGameMode</a>, but this one includes a Cast method similar to the one in the <a href="class_object.html" class="m-doc">Object</a> class.</dd>
             <dt>
               class <a href="class_editors_1_1c_editor.html" class="m-doc">Editors::cEditor</a>
             </dt>
@@ -109,77 +109,77 @@
           <h2><a href="#pub-methods">Public functions</a></h2>
           <dl class="m-doc">
             <dt id="a07a71fb4d249f891e8816ba92b4c9586">
-              <span class="m-doc-wrap-bumper">auto <a href="#a07a71fb4d249f891e8816ba92b4c9586" class="m-doc-self">AddRef</a>(</span><span class="m-doc-wrap">) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> <span class="m-label m-flat m-warning">pure virtual</span></span>
+              <span class="m-doc-wrap-bumper">auto <a href="#a07a71fb4d249f891e8816ba92b4c9586" class="m-doc-self">AddRef</a>(</span><span class="m-doc-wrap">) -&gt; int <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
             <dd>Increases the reference count and returns it.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#ae74f6145040784e07336eefaea5eaef5" class="m-doc">Release</a>(</span><span class="m-doc-wrap">) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> <span class="m-label m-flat m-warning">pure virtual</span></span>
+              <span class="m-doc-wrap-bumper">auto <a href="#ae74f6145040784e07336eefaea5eaef5" class="m-doc">Release</a>(</span><span class="m-doc-wrap">) -&gt; int <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
             <dd>Decreases the reference count and returns it.</dd>
             <dt id="a36a152c5e8a5af203ede22a69660b85a">
-              <span class="m-doc-wrap-bumper">auto <a href="#a36a152c5e8a5af203ede22a69660b85a" class="m-doc-self">func0Ch</a>(</span><span class="m-doc-wrap">) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">bool</a> <span class="m-label m-flat m-warning">pure virtual</span></span>
+              <span class="m-doc-wrap-bumper">auto <a href="#a36a152c5e8a5af203ede22a69660b85a" class="m-doc-self">func0Ch</a>(</span><span class="m-doc-wrap">) -&gt; bool <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
             <dd><span></span></dd>
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#a32323e40687c385c7f70d97fe3dc4991" class="m-doc">Initialize</a>(</span><span class="m-doc-wrap"><a href="class_app_1_1_i_game_mode_manager.html" class="m-doc">IGameModeManager</a>* pManager) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">bool</a> <span class="m-label m-flat m-warning">pure virtual</span></span>
+              <span class="m-doc-wrap-bumper">auto <a href="#a32323e40687c385c7f70d97fe3dc4991" class="m-doc">Initialize</a>(</span><span class="m-doc-wrap"><a href="class_app_1_1_i_game_mode_manager.html" class="m-doc">IGameModeManager</a>* pManager) -&gt; bool <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
             <dd>This method is called once on every game mode when all modes have been added.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#a394247820bececbedcfd6da54bfe8a24" class="m-doc">Dispose</a>(</span><span class="m-doc-wrap">) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">bool</a> <span class="m-label m-flat m-warning">pure virtual</span></span>
+              <span class="m-doc-wrap-bumper">auto <a href="#a394247820bececbedcfd6da54bfe8a24" class="m-doc">Dispose</a>(</span><span class="m-doc-wrap">) -&gt; bool <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
             <dd>This method is called once on every game mode when the game closes.</dd>
             <dt id="a3eebb2806ff0b96a1beb14923f9f4f08">
-              <span class="m-doc-wrap-bumper">auto <a href="#a3eebb2806ff0b96a1beb14923f9f4f08" class="m-doc-self">OnEnter</a>(</span><span class="m-doc-wrap">) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">bool</a> <span class="m-label m-flat m-warning">pure virtual</span></span>
+              <span class="m-doc-wrap-bumper">auto <a href="#a3eebb2806ff0b96a1beb14923f9f4f08" class="m-doc-self">OnEnter</a>(</span><span class="m-doc-wrap">) -&gt; bool <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
             <dd>This method is called when the game mode is set as active, and therefore, entered.</dd>
             <dt id="a945e0be31fb671cd8186be14fe4f760b">
-              <span class="m-doc-wrap-bumper">auto <a href="#a945e0be31fb671cd8186be14fe4f760b" class="m-doc-self">OnExit</a>(</span><span class="m-doc-wrap">) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">void</a> <span class="m-label m-flat m-warning">pure virtual</span></span>
+              <span class="m-doc-wrap-bumper">void <a href="#a945e0be31fb671cd8186be14fe4f760b" class="m-doc-self">OnExit</a>(</span><span class="m-doc-wrap">) <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
             <dd>This method is called when a different game mode is set as active, and therefore, this game mode is exited (no longer active).</dd>
-            <dt id="a18dcbc35b3a5ff143345b274e9168c32">
-              <span class="m-doc-wrap-bumper">auto <a href="#a18dcbc35b3a5ff143345b274e9168c32" class="m-doc-self">func20h</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a>) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">void</a>* <span class="m-label m-flat m-warning">pure virtual</span></span>
+            <dt id="ad8eff3f2b3d6001882475f197713f87c">
+              <span class="m-doc-wrap-bumper">auto <a href="#ad8eff3f2b3d6001882475f197713f87c" class="m-doc-self">func20h</a>(</span><span class="m-doc-wrap">int) -&gt; void* <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
             <dd><span></span></dd>
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#ab92215185a315f767a7ec76c63ee04de" class="m-doc">OnKeyDown</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> virtualKey,
-              <a href="union_key_modifiers.html" class="m-doc">KeyModifiers</a> modifiers) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">bool</a> <span class="m-label m-flat m-warning">pure virtual</span></span>
+              <span class="m-doc-wrap-bumper">auto <a href="#ab92215185a315f767a7ec76c63ee04de" class="m-doc">OnKeyDown</a>(</span><span class="m-doc-wrap">int virtualKey,
+              <a href="union_key_modifiers.html" class="m-doc">KeyModifiers</a> modifiers) -&gt; bool <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
             <dd>An event listener called every time a key is pressed while this mode is active.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#aff2e1961013a9281ffdb3bc646fc83a1" class="m-doc">OnKeyUp</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> virtualKey,
-              <a href="union_key_modifiers.html" class="m-doc">KeyModifiers</a> modifiers) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">bool</a> <span class="m-label m-flat m-warning">pure virtual</span></span>
+              <span class="m-doc-wrap-bumper">auto <a href="#aff2e1961013a9281ffdb3bc646fc83a1" class="m-doc">OnKeyUp</a>(</span><span class="m-doc-wrap">int virtualKey,
+              <a href="union_key_modifiers.html" class="m-doc">KeyModifiers</a> modifiers) -&gt; bool <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
             <dd>An event listener called every time a key is released while this mode is active.</dd>
             <dt>
               <span class="m-doc-wrap-bumper">auto <a href="#a4a8150e9603e4204753989ef82a99c87" class="m-doc">OnMouseDown</a>(</span><span class="m-doc-wrap"><a href="_input_8h.html#ac1ec3647c005eacad401b06e7e18f711" class="m-doc">MouseButton</a> mouseButton,
-              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">float</a> mouseX,
-              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">float</a> mouseY,
-              <a href="union_mouse_state.html" class="m-doc">MouseState</a> mouseState) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">bool</a> <span class="m-label m-flat m-warning">pure virtual</span></span>
+              float mouseX,
+              float mouseY,
+              <a href="union_mouse_state.html" class="m-doc">MouseState</a> mouseState) -&gt; bool <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
             <dd>An event listener called every time a mouse key is pressed while this mode is active.</dd>
             <dt>
               <span class="m-doc-wrap-bumper">auto <a href="#aeafe88a46b09c8e7b1e99e94d58653d0" class="m-doc">OnMouseUp</a>(</span><span class="m-doc-wrap"><a href="_input_8h.html#ac1ec3647c005eacad401b06e7e18f711" class="m-doc">MouseButton</a> mouseButton,
-              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">float</a> mouseX,
-              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">float</a> mouseY,
-              <a href="union_mouse_state.html" class="m-doc">MouseState</a> mouseState) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">bool</a> <span class="m-label m-flat m-warning">pure virtual</span></span>
+              float mouseX,
+              float mouseY,
+              <a href="union_mouse_state.html" class="m-doc">MouseState</a> mouseState) -&gt; bool <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
             <dd>An event listener called every time a mouse key is released while this mode is active.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#af921dc4aa99766c8fa9be388e6a7e167" class="m-doc">OnMouseMove</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">float</a> mouseX,
-              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">float</a> mouseY,
-              <a href="union_mouse_state.html" class="m-doc">MouseState</a> mouseState) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">bool</a> <span class="m-label m-flat m-warning">pure virtual</span></span>
+              <span class="m-doc-wrap-bumper">auto <a href="#af921dc4aa99766c8fa9be388e6a7e167" class="m-doc">OnMouseMove</a>(</span><span class="m-doc-wrap">float mouseX,
+              float mouseY,
+              <a href="union_mouse_state.html" class="m-doc">MouseState</a> mouseState) -&gt; bool <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
             <dd>An event listener called every time the mouse is moved while this mode is active.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#acb535beccedb86d2d4831ef9d64a6b02" class="m-doc">OnMouseWheel</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> wheelDelta,
-              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">float</a> mouseX,
-              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">float</a> mouseY,
-              <a href="union_mouse_state.html" class="m-doc">MouseState</a> mouseState) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">bool</a> <span class="m-label m-flat m-warning">pure virtual</span></span>
+              <span class="m-doc-wrap-bumper">auto <a href="#acb535beccedb86d2d4831ef9d64a6b02" class="m-doc">OnMouseWheel</a>(</span><span class="m-doc-wrap">int wheelDelta,
+              float mouseX,
+              float mouseY,
+              <a href="union_mouse_state.html" class="m-doc">MouseState</a> mouseState) -&gt; bool <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
             <dd>An event listener called every time the mouse wheel is moved while this mode is active.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#aeaf8bd8f53a4c5342f4ba5c38fe6da57" class="m-doc">Update</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">float</a> delta1,
-              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">float</a> delta2) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">void</a> <span class="m-label m-flat m-warning">pure virtual</span></span>
+              <span class="m-doc-wrap-bumper">void <a href="#aeaf8bd8f53a4c5342f4ba5c38fe6da57" class="m-doc">Update</a>(</span><span class="m-doc-wrap">float delta1,
+              float delta2) <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
             <dd>An event listener called every game loop.</dd>
           </dl>
@@ -188,14 +188,14 @@
           <h2>Function documentation</h2>
           <section class="m-doc-details" id="ae74f6145040784e07336eefaea5eaef5"><div>
             <h3>
-              <span class="m-doc-wrap-bumper"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> App::<wbr />IGameMode::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ae74f6145040784e07336eefaea5eaef5" class="m-doc-self">Release</a>(</span><span class="m-doc-wrap">) <span class="m-label m-warning">pure virtual</span></span></span>
+              <span class="m-doc-wrap-bumper">int App::<wbr />IGameMode::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ae74f6145040784e07336eefaea5eaef5" class="m-doc-self">Release</a>(</span><span class="m-doc-wrap">) <span class="m-label m-warning">pure virtual</span></span></span>
             </h3>
             <p>Decreases the reference count and returns it.</p>
 <p>If the reference count reaches 0, &#x27;delete this&#x27; is called.</p>
           </div></section>
           <section class="m-doc-details" id="a32323e40687c385c7f70d97fe3dc4991"><div>
             <h3>
-              <span class="m-doc-wrap-bumper"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">bool</a> App::<wbr />IGameMode::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a32323e40687c385c7f70d97fe3dc4991" class="m-doc-self">Initialize</a>(</span><span class="m-doc-wrap"><a href="class_app_1_1_i_game_mode_manager.html" class="m-doc">IGameModeManager</a>* pManager) <span class="m-label m-warning">pure virtual</span></span></span>
+              <span class="m-doc-wrap-bumper">bool App::<wbr />IGameMode::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a32323e40687c385c7f70d97fe3dc4991" class="m-doc-self">Initialize</a>(</span><span class="m-doc-wrap"><a href="class_app_1_1_i_game_mode_manager.html" class="m-doc">IGameModeManager</a>* pManager) <span class="m-label m-warning">pure virtual</span></span></span>
             </h3>
             <p>This method is called once on every game mode when all modes have been added.</p>
             <table class="m-table m-fullwidth m-flat">
@@ -213,14 +213,14 @@
           </div></section>
           <section class="m-doc-details" id="a394247820bececbedcfd6da54bfe8a24"><div>
             <h3>
-              <span class="m-doc-wrap-bumper"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">bool</a> App::<wbr />IGameMode::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a394247820bececbedcfd6da54bfe8a24" class="m-doc-self">Dispose</a>(</span><span class="m-doc-wrap">) <span class="m-label m-warning">pure virtual</span></span></span>
+              <span class="m-doc-wrap-bumper">bool App::<wbr />IGameMode::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a394247820bececbedcfd6da54bfe8a24" class="m-doc-self">Dispose</a>(</span><span class="m-doc-wrap">) <span class="m-label m-warning">pure virtual</span></span></span>
             </h3>
             <p>This method is called once on every game mode when the game closes.</p>
 <p>This should reverse everything the Initialize method did.</p>
           </div></section>
           <section class="m-doc-details" id="ab92215185a315f767a7ec76c63ee04de"><div>
             <h3>
-              <span class="m-doc-wrap-bumper"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">bool</a> App::<wbr />IGameMode::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ab92215185a315f767a7ec76c63ee04de" class="m-doc-self">OnKeyDown</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> virtualKey,
+              <span class="m-doc-wrap-bumper">bool App::<wbr />IGameMode::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ab92215185a315f767a7ec76c63ee04de" class="m-doc-self">OnKeyDown</a>(</span><span class="m-doc-wrap">int virtualKey,
               <a href="union_key_modifiers.html" class="m-doc">KeyModifiers</a> modifiers) <span class="m-label m-warning">pure virtual</span></span></span>
             </h3>
             <p>An event listener called every time a key is pressed while this mode is active.</p>
@@ -248,7 +248,7 @@
           </div></section>
           <section class="m-doc-details" id="aff2e1961013a9281ffdb3bc646fc83a1"><div>
             <h3>
-              <span class="m-doc-wrap-bumper"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">bool</a> App::<wbr />IGameMode::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#aff2e1961013a9281ffdb3bc646fc83a1" class="m-doc-self">OnKeyUp</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> virtualKey,
+              <span class="m-doc-wrap-bumper">bool App::<wbr />IGameMode::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#aff2e1961013a9281ffdb3bc646fc83a1" class="m-doc-self">OnKeyUp</a>(</span><span class="m-doc-wrap">int virtualKey,
               <a href="union_key_modifiers.html" class="m-doc">KeyModifiers</a> modifiers) <span class="m-label m-warning">pure virtual</span></span></span>
             </h3>
             <p>An event listener called every time a key is released while this mode is active.</p>
@@ -276,9 +276,9 @@
           </div></section>
           <section class="m-doc-details" id="a4a8150e9603e4204753989ef82a99c87"><div>
             <h3>
-              <span class="m-doc-wrap-bumper"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">bool</a> App::<wbr />IGameMode::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a4a8150e9603e4204753989ef82a99c87" class="m-doc-self">OnMouseDown</a>(</span><span class="m-doc-wrap"><a href="_input_8h.html#ac1ec3647c005eacad401b06e7e18f711" class="m-doc">MouseButton</a> mouseButton,
-              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">float</a> mouseX,
-              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">float</a> mouseY,
+              <span class="m-doc-wrap-bumper">bool App::<wbr />IGameMode::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a4a8150e9603e4204753989ef82a99c87" class="m-doc-self">OnMouseDown</a>(</span><span class="m-doc-wrap"><a href="_input_8h.html#ac1ec3647c005eacad401b06e7e18f711" class="m-doc">MouseButton</a> mouseButton,
+              float mouseX,
+              float mouseY,
               <a href="union_mouse_state.html" class="m-doc">MouseState</a> mouseState) <span class="m-label m-warning">pure virtual</span></span></span>
             </h3>
             <p>An event listener called every time a mouse key is pressed while this mode is active.</p>
@@ -314,9 +314,9 @@
           </div></section>
           <section class="m-doc-details" id="aeafe88a46b09c8e7b1e99e94d58653d0"><div>
             <h3>
-              <span class="m-doc-wrap-bumper"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">bool</a> App::<wbr />IGameMode::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#aeafe88a46b09c8e7b1e99e94d58653d0" class="m-doc-self">OnMouseUp</a>(</span><span class="m-doc-wrap"><a href="_input_8h.html#ac1ec3647c005eacad401b06e7e18f711" class="m-doc">MouseButton</a> mouseButton,
-              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">float</a> mouseX,
-              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">float</a> mouseY,
+              <span class="m-doc-wrap-bumper">bool App::<wbr />IGameMode::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#aeafe88a46b09c8e7b1e99e94d58653d0" class="m-doc-self">OnMouseUp</a>(</span><span class="m-doc-wrap"><a href="_input_8h.html#ac1ec3647c005eacad401b06e7e18f711" class="m-doc">MouseButton</a> mouseButton,
+              float mouseX,
+              float mouseY,
               <a href="union_mouse_state.html" class="m-doc">MouseState</a> mouseState) <span class="m-label m-warning">pure virtual</span></span></span>
             </h3>
             <p>An event listener called every time a mouse key is released while this mode is active.</p>
@@ -352,8 +352,8 @@
           </div></section>
           <section class="m-doc-details" id="af921dc4aa99766c8fa9be388e6a7e167"><div>
             <h3>
-              <span class="m-doc-wrap-bumper"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">bool</a> App::<wbr />IGameMode::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#af921dc4aa99766c8fa9be388e6a7e167" class="m-doc-self">OnMouseMove</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">float</a> mouseX,
-              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">float</a> mouseY,
+              <span class="m-doc-wrap-bumper">bool App::<wbr />IGameMode::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#af921dc4aa99766c8fa9be388e6a7e167" class="m-doc-self">OnMouseMove</a>(</span><span class="m-doc-wrap">float mouseX,
+              float mouseY,
               <a href="union_mouse_state.html" class="m-doc">MouseState</a> mouseState) <span class="m-label m-warning">pure virtual</span></span></span>
             </h3>
             <p>An event listener called every time the mouse is moved while this mode is active.</p>
@@ -385,9 +385,9 @@
           </div></section>
           <section class="m-doc-details" id="acb535beccedb86d2d4831ef9d64a6b02"><div>
             <h3>
-              <span class="m-doc-wrap-bumper"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">bool</a> App::<wbr />IGameMode::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#acb535beccedb86d2d4831ef9d64a6b02" class="m-doc-self">OnMouseWheel</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> wheelDelta,
-              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">float</a> mouseX,
-              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">float</a> mouseY,
+              <span class="m-doc-wrap-bumper">bool App::<wbr />IGameMode::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#acb535beccedb86d2d4831ef9d64a6b02" class="m-doc-self">OnMouseWheel</a>(</span><span class="m-doc-wrap">int wheelDelta,
+              float mouseX,
+              float mouseY,
               <a href="union_mouse_state.html" class="m-doc">MouseState</a> mouseState) <span class="m-label m-warning">pure virtual</span></span></span>
             </h3>
             <p>An event listener called every time the mouse wheel is moved while this mode is active.</p>
@@ -423,8 +423,8 @@
           </div></section>
           <section class="m-doc-details" id="aeaf8bd8f53a4c5342f4ba5c38fe6da57"><div>
             <h3>
-              <span class="m-doc-wrap-bumper"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">void</a> App::<wbr />IGameMode::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#aeaf8bd8f53a4c5342f4ba5c38fe6da57" class="m-doc-self">Update</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">float</a> delta1,
-              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">float</a> delta2) <span class="m-label m-warning">pure virtual</span></span></span>
+              <span class="m-doc-wrap-bumper">void App::<wbr />IGameMode::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#aeaf8bd8f53a4c5342f4ba5c38fe6da57" class="m-doc-self">Update</a>(</span><span class="m-doc-wrap">float delta1,
+              float delta2) <span class="m-label m-warning">pure virtual</span></span></span>
             </h3>
             <p>An event listener called every game loop.</p>
             <table class="m-table m-fullwidth m-flat">
@@ -482,13 +482,13 @@
     </div>
   </div>
 </div>
-<script src="search-v2.js"></script>
-<script src="searchdata-v2.js" async="async"></script>
+<script src="search-v1.js"></script>
+<script src="searchdata-v1.js" async="async"></script>
 <footer><nav>
   <div class="m-container">
     <div class="m-row">
       <div class="m-col-l-10 m-push-l-1">
-        <p>Spore ModAPI SDK for creating C++ mods for Spore. Created with <a href="https://doxygen.org/">Doxygen</a> 1.9.8 and <a href="https://mcss.mosra.cz/">m.css</a>.</p>
+        <p>Spore ModAPI SDK for creating C++ mods for Spore. Created with <a href="https://doxygen.org/">Doxygen</a> 1.8.16 and <a href="https://mcss.mosra.cz/">m.css</a>.</p>
       </div>
     </div>
   </div>

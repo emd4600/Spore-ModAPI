@@ -14,7 +14,7 @@
 <header><nav id="navigation">
   <div class="m-container">
     <div class="m-row">
-      <a href="index.html" id="m-navbar-brand" class="m-col-t-8 m-col-m-none m-left-m"><img src="Spore_ModAPI_Icon.png" alt="" />Spore ModAPI <span class="m-thin">SDK for creating C++ mods for Spore</span></a>
+      <a href="index.html" id="m-navbar-brand" class="m-col-t-8 m-col-m-none m-left-m"><img src="Spore_ModAPI_Icon.png" />Spore ModAPI <span class="m-thin">SDK for creating C++ mods for Spore</span></a>
       <div class="m-col-t-4 m-hide-m m-text-right m-nopadr">
         <a href="#search" class="m-doc-search-icon" title="Search" onclick="return showSearch()"><svg style="height: 0.9rem;" viewBox="0 0 16 16">
           <path id="m-doc-search-icon-path" d="m6 0c-3.31 0-6 2.69-6 6 0 3.31 2.69 6 6 6 1.49 0 2.85-0.541 3.89-1.44-0.0164 0.338 0.147 0.759 0.5 1.15l3.22 3.79c0.552 0.614 1.45 0.665 2 0.115 0.55-0.55 0.499-1.45-0.115-2l-3.79-3.22c-0.392-0.353-0.812-0.515-1.15-0.5 0.895-1.05 1.44-2.41 1.44-3.89 0-3.31-2.69-6-6-6zm0 1.56a4.44 4.44 0 0 1 4.44 4.44 4.44 4.44 0 0 1-4.44 4.44 4.44 4.44 0 0 1-4.44-4.44 4.44 4.44 0 0 1 4.44-4.44z"/>
@@ -46,10 +46,10 @@
       <div class="m-col-l-10 m-push-l-1">
         <h1>
           <span class="m-breadcrumb"><a href="namespace_app.html">App</a>::<wbr/></span>ICamera <span class="m-thin">class</span>
-          <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_i_camera_8h.html">&lt;/home/runner/work/Spore-ModAPI/Spore-ModAPI/Spore-ModAPI/Spore ModAPI/Spore/App/ICamera.h&gt;</a></div>
+          <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_i_camera_8h.html">&lt;Spore/App/ICamera.h&gt;</a></div>
         </h1>
         <p>This class represents a camera in the game, capable of setting the view transformations used for rendering and receiving input events.</p>
-        <nav class="m-block m-default">
+        <div class="m-block m-default">
           <h3>Contents</h3>
           <ul>
             <li>
@@ -57,13 +57,12 @@
               <ul>
                 <li><a href="#base-classes">Base classes</a></li>
                 <li><a href="#derived-classes">Derived classes</a></li>
-                <li><a href="#pub-types">Public types</a></li>
                 <li><a href="#pub-static-attribs">Public static variables</a></li>
                 <li><a href="#pub-methods">Public functions</a></li>
               </ul>
             </li>
           </ul>
-        </nav>
+        </div>
 <p>The active camera receives user input (mouse and keyboard) before the active game mode. Every game loop, The <a href="class_app_1_1_i_camera.html#aa0769393e10528dd2b94240449f01611" class="m-doc">ICamera::<wbr />Update()</a> method is called on the active camera passing the active Viewer as the parameter, where the view transformations must be set. To have multiple cameras apart from the active one, the input events and update methods can be called manually.</p><p>The class <a href="class_app_1_1_default_camera.html" class="m-doc">DefaultCamera</a> provides default implementations for most methods in an <a href="class_app_1_1_i_camera.html" class="m-doc">ICamera</a>, allowing you to create one without much trouble.</p>
         <section id="base-classes">
           <h2><a href="#base-classes">Base classes</a></h2>
@@ -78,25 +77,15 @@
           <h2><a href="#derived-classes">Derived classes</a></h2>
           <dl class="m-doc">
             <dt>
-              class <a href="class_app_1_1_default_camera.html" class="m-doc">DefaultCamera</a>
-            </dt>
-            <dd>Defines a default implementation of <a href="class_app_1_1_i_camera.html" class="m-doc">ICamera</a>.</dd>
-            <dt>
               class <a href="class_app_1_1c_mouse_camera.html" class="m-doc">cMouseCamera</a>
             </dt>
             <dd><span></span></dd>
             <dt>
-              class <a href="class_editors_1_1_editor_camera.html" class="m-doc">Editors::EditorCamera</a>
+              class <a href="class_app_1_1_default_camera.html" class="m-doc">DefaultCamera</a>
             </dt>
-            <dd><span></span></dd>
-          </dl>
-        </section>
-        <section id="pub-types">
-          <h2><a href="#pub-types">Public types</a></h2>
-          <dl class="m-doc">
+            <dd>Defines a default implementation of <a href="class_app_1_1_i_camera.html" class="m-doc">ICamera</a>.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">enum <a href="#a39108fd178f1c2a3b1a436f77644440e" class="m-doc">CameraControlMessages</a> { </span><span class="m-doc-wrap"><a href="#a39108fd178f1c2a3b1a436f77644440ea15ac2b9345f42d8622e5c4146018b24a" class="m-doc">kMsgInitialZoom</a> = 0x101D445,
-              <a href="#a39108fd178f1c2a3b1a436f77644440eab13aa65332611e76f3152037e6244c14" class="m-doc">kMsgZoom</a> = 0x101D4C7 }</span>
+              class <a href="class_editors_1_1_editor_camera.html" class="m-doc">Editors::EditorCamera</a>
             </dt>
             <dd><span></span></dd>
           </dl>
@@ -105,7 +94,7 @@
           <h2><a href="#pub-static-attribs">Public static variables</a></h2>
           <dl class="m-doc">
             <dt id="a878b625d65bb4072d2b6062c40818768">
-              static <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">const</a> <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">uint32_<wbr />t</a> <a href="#a878b625d65bb4072d2b6062c40818768" class="m-doc-self">TYPE</a>
+              static const uint32_t <a href="#a878b625d65bb4072d2b6062c40818768" class="m-doc-self">TYPE</a>
             </dt>
             <dd><span></span></dd>
           </dl>
@@ -114,124 +103,98 @@
           <h2><a href="#pub-methods">Public functions</a></h2>
           <dl class="m-doc">
             <dt id="a4e64756f46de78c3b6bd389dca7b0af0">
-              <span class="m-doc-wrap-bumper">auto <a href="#a4e64756f46de78c3b6bd389dca7b0af0" class="m-doc-self">OnAttach</a>(</span><span class="m-doc-wrap"><a href="class_app_1_1_i_camera_manager.html" class="m-doc">ICameraManager</a>* pManager) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">bool</a> <span class="m-label m-flat m-warning">pure virtual</span></span>
+              <span class="m-doc-wrap-bumper">auto <a href="#a4e64756f46de78c3b6bd389dca7b0af0" class="m-doc-self">OnAttach</a>(</span><span class="m-doc-wrap"><a href="class_app_1_1_i_camera_manager.html" class="m-doc">ICameraManager</a>* pManager) -&gt; bool <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
             <dd>Event called when the camera is added to the camera manager.</dd>
             <dt id="a431531a0431d24f2454e5459493d449a">
-              <span class="m-doc-wrap-bumper">auto <a href="#a431531a0431d24f2454e5459493d449a" class="m-doc-self">OnDeattach</a>(</span><span class="m-doc-wrap">) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">bool</a> <span class="m-label m-flat m-warning">pure virtual</span></span>
+              <span class="m-doc-wrap-bumper">auto <a href="#a431531a0431d24f2454e5459493d449a" class="m-doc-self">OnDeattach</a>(</span><span class="m-doc-wrap">) -&gt; bool <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
             <dd>Event called when the camera is no longer in the camera manager.</dd>
             <dt id="ad39e45744ce06948cebf18e265211635">
-              <span class="m-doc-wrap-bumper">auto <a href="#ad39e45744ce06948cebf18e265211635" class="m-doc-self">OnEnter</a>(</span><span class="m-doc-wrap">) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">void</a> <span class="m-label m-flat m-warning">pure virtual</span></span>
+              <span class="m-doc-wrap-bumper">void <a href="#ad39e45744ce06948cebf18e265211635" class="m-doc-self">OnEnter</a>(</span><span class="m-doc-wrap">) <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
             <dd>Event called when the camera is set as the active camera.</dd>
             <dt id="a6dfa0fe6ab90ebf59bd9e0fdfbad14d3">
-              <span class="m-doc-wrap-bumper">auto <a href="#a6dfa0fe6ab90ebf59bd9e0fdfbad14d3" class="m-doc-self">OnExit</a>(</span><span class="m-doc-wrap">) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">void</a> <span class="m-label m-flat m-warning">pure virtual</span></span>
+              <span class="m-doc-wrap-bumper">void <a href="#a6dfa0fe6ab90ebf59bd9e0fdfbad14d3" class="m-doc-self">OnExit</a>(</span><span class="m-doc-wrap">) <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
             <dd>Event called when the camera is no longer the active camera.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#aa0769393e10528dd2b94240449f01611" class="m-doc">Update</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> deltaTime,
-              <a href="class_app_1_1c_viewer.html" class="m-doc">cViewer</a>* pViewer) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">void</a> <span class="m-label m-flat m-warning">pure virtual</span></span>
+              <span class="m-doc-wrap-bumper">void <a href="#aa0769393e10528dd2b94240449f01611" class="m-doc">Update</a>(</span><span class="m-doc-wrap">int deltaTime,
+              <a href="class_app_1_1c_viewer.html" class="m-doc">cViewer</a>* pViewer) <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
             <dd>Event called every game loop, which should set all the transformations of the camera into the given Viewer.</dd>
             <dt id="a7946d4d8d347e5dff3952d8bbd1bb018">
-              <span class="m-doc-wrap-bumper">auto <a href="#a7946d4d8d347e5dff3952d8bbd1bb018" class="m-doc-self">func24h</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">bool</a>) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">void</a> <span class="m-label m-flat m-warning">pure virtual</span></span>
+              <span class="m-doc-wrap-bumper">void <a href="#a7946d4d8d347e5dff3952d8bbd1bb018" class="m-doc-self">func24h</a>(</span><span class="m-doc-wrap">bool) <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
             <dd><span></span></dd>
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#ad2341d96e75feee8c473f9a99ab4c4df" class="m-doc">OnKeyDown</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> virtualKey,
-              <a href="union_key_modifiers.html" class="m-doc">KeyModifiers</a> modifiers) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">bool</a> <span class="m-label m-flat m-warning">pure virtual</span></span>
+              <span class="m-doc-wrap-bumper">auto <a href="#ad2341d96e75feee8c473f9a99ab4c4df" class="m-doc">OnKeyDown</a>(</span><span class="m-doc-wrap">int virtualKey,
+              <a href="union_key_modifiers.html" class="m-doc">KeyModifiers</a> modifiers) -&gt; bool <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
             <dd>An event listener called every time a key is pressed while this camera is active.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#a358dad783b119fbf63d50124a82ff1d6" class="m-doc">OnKeyUp</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> virtualKey,
-              <a href="union_key_modifiers.html" class="m-doc">KeyModifiers</a> modifiers) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">bool</a> <span class="m-label m-flat m-warning">pure virtual</span></span>
+              <span class="m-doc-wrap-bumper">auto <a href="#a358dad783b119fbf63d50124a82ff1d6" class="m-doc">OnKeyUp</a>(</span><span class="m-doc-wrap">int virtualKey,
+              <a href="union_key_modifiers.html" class="m-doc">KeyModifiers</a> modifiers) -&gt; bool <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
             <dd>An event listener called every time a key is released while this camera is active.</dd>
             <dt>
               <span class="m-doc-wrap-bumper">auto <a href="#a91fe435d5a490d2ecbb0653fc76d1cd4" class="m-doc">OnMouseDown</a>(</span><span class="m-doc-wrap"><a href="_input_8h.html#ac1ec3647c005eacad401b06e7e18f711" class="m-doc">MouseButton</a> mouseButton,
-              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">float</a> mouseX,
-              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">float</a> mouseY,
-              <a href="union_mouse_state.html" class="m-doc">MouseState</a> mouseState) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">bool</a> <span class="m-label m-flat m-warning">pure virtual</span></span>
+              float mouseX,
+              float mouseY,
+              <a href="union_mouse_state.html" class="m-doc">MouseState</a> mouseState) -&gt; bool <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
             <dd>An event listener called every time a mouse key is pressed while this camera is active.</dd>
             <dt>
               <span class="m-doc-wrap-bumper">auto <a href="#a1acff13a86f25d7399e44a1a3d7414ef" class="m-doc">OnMouseUp</a>(</span><span class="m-doc-wrap"><a href="_input_8h.html#ac1ec3647c005eacad401b06e7e18f711" class="m-doc">MouseButton</a> mouseButton,
-              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">float</a> mouseX,
-              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">float</a> mouseY,
-              <a href="union_mouse_state.html" class="m-doc">MouseState</a> mouseState) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">bool</a> <span class="m-label m-flat m-warning">pure virtual</span></span>
+              float mouseX,
+              float mouseY,
+              <a href="union_mouse_state.html" class="m-doc">MouseState</a> mouseState) -&gt; bool <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
             <dd>An event listener called every time a mouse key is released while this camera is active.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#af45876f494a2465ce4acd9b061c125e5" class="m-doc">OnMouseMove</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">float</a> mouseX,
-              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">float</a> mouseY,
-              <a href="union_mouse_state.html" class="m-doc">MouseState</a> mouseState) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">bool</a> <span class="m-label m-flat m-warning">pure virtual</span></span>
+              <span class="m-doc-wrap-bumper">auto <a href="#af45876f494a2465ce4acd9b061c125e5" class="m-doc">OnMouseMove</a>(</span><span class="m-doc-wrap">float mouseX,
+              float mouseY,
+              <a href="union_mouse_state.html" class="m-doc">MouseState</a> mouseState) -&gt; bool <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
             <dd>An event listener called every time the mouse is moved while this camera is active.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#ad1b8108131fbae4f2e6abf431f78588c" class="m-doc">OnMouseWheel</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> wheelDelta,
-              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">float</a> mouseX,
-              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">float</a> mouseY,
-              <a href="union_mouse_state.html" class="m-doc">MouseState</a> mouseState) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">bool</a> <span class="m-label m-flat m-warning">pure virtual</span></span>
+              <span class="m-doc-wrap-bumper">auto <a href="#ad1b8108131fbae4f2e6abf431f78588c" class="m-doc">OnMouseWheel</a>(</span><span class="m-doc-wrap">int wheelDelta,
+              float mouseX,
+              float mouseY,
+              <a href="union_mouse_state.html" class="m-doc">MouseState</a> mouseState) -&gt; bool <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
             <dd>An event listener called every time the mouse wheel is moved while this camera is active.</dd>
             <dt id="af3d81ddd7b37785ec47a2c771d6adc6c">
-              <span class="m-doc-wrap-bumper">auto <a href="#af3d81ddd7b37785ec47a2c771d6adc6c" class="m-doc-self">func40h</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a>) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">bool</a> <span class="m-label m-flat m-warning">pure virtual</span></span>
+              <span class="m-doc-wrap-bumper">auto <a href="#af3d81ddd7b37785ec47a2c771d6adc6c" class="m-doc-self">func40h</a>(</span><span class="m-doc-wrap">int) -&gt; bool <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
             <dd><span></span></dd>
             <dt id="a43dbc30d5315cb07b60526d426004194">
-              <span class="m-doc-wrap-bumper">auto <a href="#a43dbc30d5315cb07b60526d426004194" class="m-doc-self">func44h</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a>) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">bool</a> <span class="m-label m-flat m-warning">pure virtual</span></span>
+              <span class="m-doc-wrap-bumper">auto <a href="#a43dbc30d5315cb07b60526d426004194" class="m-doc-self">func44h</a>(</span><span class="m-doc-wrap">int) -&gt; bool <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
             <dd><span></span></dd>
             <dt id="accee6fecf0db226c047bbaa26ec2e1a3">
-              <span class="m-doc-wrap-bumper">auto <a href="#accee6fecf0db226c047bbaa26ec2e1a3" class="m-doc-self">func48h</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a>) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">bool</a> <span class="m-label m-flat m-warning">pure virtual</span></span>
+              <span class="m-doc-wrap-bumper">auto <a href="#accee6fecf0db226c047bbaa26ec2e1a3" class="m-doc-self">func48h</a>(</span><span class="m-doc-wrap">int) -&gt; bool <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
             <dd><span></span></dd>
-            <dt id="a21270837a8428f7ebc4ee1f0ff0c1fc1">
-              <span class="m-doc-wrap-bumper">auto <a href="#a21270837a8428f7ebc4ee1f0ff0c1fc1" class="m-doc-self">GetPropertyList</a>(</span><span class="m-doc-wrap">) -&gt; <a href="class_app_1_1_property_list.html" class="m-doc">PropertyList</a>* <span class="m-label m-flat m-warning">pure virtual</span></span>
+            <dt id="ad5330f689ad788f0af128b22de75c239">
+              <span class="m-doc-wrap-bumper">auto <a href="#ad5330f689ad788f0af128b22de75c239" class="m-doc-self">GetPropertyList</a>(</span><span class="m-doc-wrap">) -&gt; <a href="class_app_1_1_property_list.html" class="m-doc">PropertyList</a>* <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
             <dd>Gets the property list from which this camera was generated.</dd>
             <dt id="aa120308ea0e844dc2df5c91b600a634f">
-              <span class="m-doc-wrap-bumper">auto <a href="#aa120308ea0e844dc2df5c91b600a634f" class="m-doc-self">Initialize</a>(</span><span class="m-doc-wrap">) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">void</a> <span class="m-label m-flat m-warning">pure virtual</span></span>
+              <span class="m-doc-wrap-bumper">void <a href="#aa120308ea0e844dc2df5c91b600a634f" class="m-doc-self">Initialize</a>(</span><span class="m-doc-wrap">) <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
             <dd><span></span></dd>
             <dt id="a6dd3881280fa9158b70dc6ce2d7f8213">
-              <span class="m-doc-wrap-bumper">auto <a href="#a6dd3881280fa9158b70dc6ce2d7f8213" class="m-doc-self">func54h</a>(</span><span class="m-doc-wrap"><a href="struct_math_1_1_vector3.html" class="m-doc">Vector3</a>&amp; dst) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">void</a> <span class="m-label m-flat m-warning">pure virtual</span></span>
+              <span class="m-doc-wrap-bumper">void <a href="#a6dd3881280fa9158b70dc6ce2d7f8213" class="m-doc-self">func54h</a>(</span><span class="m-doc-wrap"><a href="struct_math_1_1_vector3.html" class="m-doc">Vector3</a>&amp; dst) <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
             <dd><span></span></dd>
           </dl>
         </section>
         <section>
-          <h2>Enum documentation</h2>
-          <section class="m-doc-details" id="a39108fd178f1c2a3b1a436f77644440e"><div>
-            <h3>
-              enum App::<wbr />ICamera::<wbr /><a href="#a39108fd178f1c2a3b1a436f77644440e" class="m-doc-self">CameraControlMessages</a>
-            </h3>
-            <p><span></span></p>
-            <table class="m-table m-fullwidth m-flat m-doc">
-              <thead><tr><th style="width: 1%">Enumerators</th><th></th></tr></thead>
-              <tbody>
-                <tr>
-                  <td><a href="#a39108fd178f1c2a3b1a436f77644440ea15ac2b9345f42d8622e5c4146018b24a" class="m-doc-self" id="a39108fd178f1c2a3b1a436f77644440ea15ac2b9345f42d8622e5c4146018b24a">kMsgInitialZoom</a></td>
-                  <td>
-                  <p>The data is a float*, only changes the initial zoom.</p>
-                  </td>
-                </tr>
-                <tr>
-                  <td><a href="#a39108fd178f1c2a3b1a436f77644440eab13aa65332611e76f3152037e6244c14" class="m-doc-self" id="a39108fd178f1c2a3b1a436f77644440eab13aa65332611e76f3152037e6244c14">kMsgZoom</a></td>
-                  <td>
-                  <p>The data is a float*, sets the current and initial zoom.</p>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-          </div></section>
-        </section>
-        <section>
           <h2>Function documentation</h2>
           <section class="m-doc-details" id="aa0769393e10528dd2b94240449f01611"><div>
             <h3>
-              <span class="m-doc-wrap-bumper"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">void</a> App::<wbr />ICamera::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#aa0769393e10528dd2b94240449f01611" class="m-doc-self">Update</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> deltaTime,
+              <span class="m-doc-wrap-bumper">void App::<wbr />ICamera::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#aa0769393e10528dd2b94240449f01611" class="m-doc-self">Update</a>(</span><span class="m-doc-wrap">int deltaTime,
               <a href="class_app_1_1c_viewer.html" class="m-doc">cViewer</a>* pViewer) <span class="m-label m-warning">pure virtual</span></span></span>
             </h3>
             <p>Event called every game loop, which should set all the transformations of the camera into the given Viewer.</p>
@@ -253,7 +216,7 @@
           </div></section>
           <section class="m-doc-details" id="ad2341d96e75feee8c473f9a99ab4c4df"><div>
             <h3>
-              <span class="m-doc-wrap-bumper"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">bool</a> App::<wbr />ICamera::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ad2341d96e75feee8c473f9a99ab4c4df" class="m-doc-self">OnKeyDown</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> virtualKey,
+              <span class="m-doc-wrap-bumper">bool App::<wbr />ICamera::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ad2341d96e75feee8c473f9a99ab4c4df" class="m-doc-self">OnKeyDown</a>(</span><span class="m-doc-wrap">int virtualKey,
               <a href="union_key_modifiers.html" class="m-doc">KeyModifiers</a> modifiers) <span class="m-label m-warning">pure virtual</span></span></span>
             </h3>
             <p>An event listener called every time a key is pressed while this camera is active.</p>
@@ -281,7 +244,7 @@
           </div></section>
           <section class="m-doc-details" id="a358dad783b119fbf63d50124a82ff1d6"><div>
             <h3>
-              <span class="m-doc-wrap-bumper"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">bool</a> App::<wbr />ICamera::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a358dad783b119fbf63d50124a82ff1d6" class="m-doc-self">OnKeyUp</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> virtualKey,
+              <span class="m-doc-wrap-bumper">bool App::<wbr />ICamera::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a358dad783b119fbf63d50124a82ff1d6" class="m-doc-self">OnKeyUp</a>(</span><span class="m-doc-wrap">int virtualKey,
               <a href="union_key_modifiers.html" class="m-doc">KeyModifiers</a> modifiers) <span class="m-label m-warning">pure virtual</span></span></span>
             </h3>
             <p>An event listener called every time a key is released while this camera is active.</p>
@@ -309,9 +272,9 @@
           </div></section>
           <section class="m-doc-details" id="a91fe435d5a490d2ecbb0653fc76d1cd4"><div>
             <h3>
-              <span class="m-doc-wrap-bumper"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">bool</a> App::<wbr />ICamera::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a91fe435d5a490d2ecbb0653fc76d1cd4" class="m-doc-self">OnMouseDown</a>(</span><span class="m-doc-wrap"><a href="_input_8h.html#ac1ec3647c005eacad401b06e7e18f711" class="m-doc">MouseButton</a> mouseButton,
-              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">float</a> mouseX,
-              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">float</a> mouseY,
+              <span class="m-doc-wrap-bumper">bool App::<wbr />ICamera::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a91fe435d5a490d2ecbb0653fc76d1cd4" class="m-doc-self">OnMouseDown</a>(</span><span class="m-doc-wrap"><a href="_input_8h.html#ac1ec3647c005eacad401b06e7e18f711" class="m-doc">MouseButton</a> mouseButton,
+              float mouseX,
+              float mouseY,
               <a href="union_mouse_state.html" class="m-doc">MouseState</a> mouseState) <span class="m-label m-warning">pure virtual</span></span></span>
             </h3>
             <p>An event listener called every time a mouse key is pressed while this camera is active.</p>
@@ -347,9 +310,9 @@
           </div></section>
           <section class="m-doc-details" id="a1acff13a86f25d7399e44a1a3d7414ef"><div>
             <h3>
-              <span class="m-doc-wrap-bumper"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">bool</a> App::<wbr />ICamera::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a1acff13a86f25d7399e44a1a3d7414ef" class="m-doc-self">OnMouseUp</a>(</span><span class="m-doc-wrap"><a href="_input_8h.html#ac1ec3647c005eacad401b06e7e18f711" class="m-doc">MouseButton</a> mouseButton,
-              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">float</a> mouseX,
-              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">float</a> mouseY,
+              <span class="m-doc-wrap-bumper">bool App::<wbr />ICamera::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a1acff13a86f25d7399e44a1a3d7414ef" class="m-doc-self">OnMouseUp</a>(</span><span class="m-doc-wrap"><a href="_input_8h.html#ac1ec3647c005eacad401b06e7e18f711" class="m-doc">MouseButton</a> mouseButton,
+              float mouseX,
+              float mouseY,
               <a href="union_mouse_state.html" class="m-doc">MouseState</a> mouseState) <span class="m-label m-warning">pure virtual</span></span></span>
             </h3>
             <p>An event listener called every time a mouse key is released while this camera is active.</p>
@@ -385,8 +348,8 @@
           </div></section>
           <section class="m-doc-details" id="af45876f494a2465ce4acd9b061c125e5"><div>
             <h3>
-              <span class="m-doc-wrap-bumper"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">bool</a> App::<wbr />ICamera::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#af45876f494a2465ce4acd9b061c125e5" class="m-doc-self">OnMouseMove</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">float</a> mouseX,
-              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">float</a> mouseY,
+              <span class="m-doc-wrap-bumper">bool App::<wbr />ICamera::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#af45876f494a2465ce4acd9b061c125e5" class="m-doc-self">OnMouseMove</a>(</span><span class="m-doc-wrap">float mouseX,
+              float mouseY,
               <a href="union_mouse_state.html" class="m-doc">MouseState</a> mouseState) <span class="m-label m-warning">pure virtual</span></span></span>
             </h3>
             <p>An event listener called every time the mouse is moved while this camera is active.</p>
@@ -418,9 +381,9 @@
           </div></section>
           <section class="m-doc-details" id="ad1b8108131fbae4f2e6abf431f78588c"><div>
             <h3>
-              <span class="m-doc-wrap-bumper"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">bool</a> App::<wbr />ICamera::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ad1b8108131fbae4f2e6abf431f78588c" class="m-doc-self">OnMouseWheel</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> wheelDelta,
-              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">float</a> mouseX,
-              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">float</a> mouseY,
+              <span class="m-doc-wrap-bumper">bool App::<wbr />ICamera::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ad1b8108131fbae4f2e6abf431f78588c" class="m-doc-self">OnMouseWheel</a>(</span><span class="m-doc-wrap">int wheelDelta,
+              float mouseX,
+              float mouseY,
               <a href="union_mouse_state.html" class="m-doc">MouseState</a> mouseState) <span class="m-label m-warning">pure virtual</span></span></span>
             </h3>
             <p>An event listener called every time the mouse wheel is moved while this camera is active.</p>
@@ -493,13 +456,13 @@
     </div>
   </div>
 </div>
-<script src="search-v2.js"></script>
-<script src="searchdata-v2.js" async="async"></script>
+<script src="search-v1.js"></script>
+<script src="searchdata-v1.js" async="async"></script>
 <footer><nav>
   <div class="m-container">
     <div class="m-row">
       <div class="m-col-l-10 m-push-l-1">
-        <p>Spore ModAPI SDK for creating C++ mods for Spore. Created with <a href="https://doxygen.org/">Doxygen</a> 1.9.8 and <a href="https://mcss.mosra.cz/">m.css</a>.</p>
+        <p>Spore ModAPI SDK for creating C++ mods for Spore. Created with <a href="https://doxygen.org/">Doxygen</a> 1.8.16 and <a href="https://mcss.mosra.cz/">m.css</a>.</p>
       </div>
     </div>
   </div>

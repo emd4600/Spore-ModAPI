@@ -14,7 +14,7 @@
 <header><nav id="navigation">
   <div class="m-container">
     <div class="m-row">
-      <a href="index.html" id="m-navbar-brand" class="m-col-t-8 m-col-m-none m-left-m"><img src="Spore_ModAPI_Icon.png" alt="" />Spore ModAPI <span class="m-thin">SDK for creating C++ mods for Spore</span></a>
+      <a href="index.html" id="m-navbar-brand" class="m-col-t-8 m-col-m-none m-left-m"><img src="Spore_ModAPI_Icon.png" />Spore ModAPI <span class="m-thin">SDK for creating C++ mods for Spore</span></a>
       <div class="m-col-t-4 m-hide-m m-text-right m-nopadr">
         <a href="#search" class="m-doc-search-icon" title="Search" onclick="return showSearch()"><svg style="height: 0.9rem;" viewBox="0 0 16 16">
           <path id="m-doc-search-icon-path" d="m6 0c-3.31 0-6 2.69-6 6 0 3.31 2.69 6 6 6 1.49 0 2.85-0.541 3.89-1.44-0.0164 0.338 0.147 0.759 0.5 1.15l3.22 3.79c0.552 0.614 1.45 0.665 2 0.115 0.55-0.55 0.499-1.45-0.115-2l-3.79-3.22c-0.392-0.353-0.812-0.515-1.15-0.5 0.895-1.05 1.44-2.41 1.44-3.89 0-3.31-2.69-6-6-6zm0 1.56a4.44 4.44 0 0 1 4.44 4.44 4.44 4.44 0 0 1-4.44 4.44 4.44 4.44 0 0 1-4.44-4.44 4.44 4.44 0 0 1 4.44-4.44z"/>
@@ -46,10 +46,10 @@
       <div class="m-col-l-10 m-push-l-1">
         <h1>
           <span class="m-breadcrumb"><a href="namespace_resource.html">Resource</a>::<wbr/></span>DatabasePackedFile <span class="m-thin">class</span>
-          <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_database_packed_file_8h.html">&lt;/home/runner/work/Spore-ModAPI/Spore-ModAPI/Spore-ModAPI/Spore ModAPI/Spore/Resource/DatabasePackedFile.h&gt;</a></div>
+          <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_database_packed_file_8h.html">&lt;Spore/Resource/DatabasePackedFile.h&gt;</a></div>
         </h1>
         <p>A <a href="class_resource_1_1_database_packed_file.html" class="m-doc">DatabasePackedFile</a> is a type of file used in Spore to store and index multiple files inside a single container (usually in the .package extension).</p>
-        <nav class="m-block m-default">
+        <div class="m-block m-default">
           <h3>Contents</h3>
           <ul>
             <li>
@@ -63,7 +63,7 @@
               </ul>
             </li>
           </ul>
-        </nav>
+        </div>
 <p>This class contains all the necessary methods for accessing files and loading/saving DBPF files.</p>
         <section id="base-classes">
           <h2><a href="#base-classes">Base classes</a></h2>
@@ -78,11 +78,11 @@
           <h2><a href="#pub-static-attribs">Public static variables</a></h2>
           <dl class="m-doc">
             <dt id="a0bfc4140bb3d17087d92dd0576b4bd62">
-              static <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">const</a> <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">uint32_<wbr />t</a> <a href="#a0bfc4140bb3d17087d92dd0576b4bd62" class="m-doc-self">DATABASE_TYPE</a>
+              static const uint32_t <a href="#a0bfc4140bb3d17087d92dd0576b4bd62" class="m-doc-self">DATABASE_TYPE</a>
             </dt>
             <dd><span></span></dd>
             <dt id="ad366521cb04b4707874a1643d7d887a5">
-              static <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">const</a> <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">uint32_<wbr />t</a> <a href="#ad366521cb04b4707874a1643d7d887a5" class="m-doc-self">TYPE</a>
+              static const uint32_t <a href="#ad366521cb04b4707874a1643d7d887a5" class="m-doc-self">TYPE</a>
             </dt>
             <dd><span></span></dd>
           </dl>
@@ -91,8 +91,8 @@
           <h2><a href="#typeless-methods">Constructors, destructors, conversion operators</a></h2>
           <dl class="m-doc">
             <dt id="a1407ac42ab8f19fd8004702225632c48">
-              <span class="m-doc-wrap-bumper"><a href="#a1407ac42ab8f19fd8004702225632c48" class="m-doc-self">DatabasePackedFile</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">const</a> <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">char16_<wbr />t</a>* location,
-              <a href="class_i_core_allocator.html" class="m-doc">ICoreAllocator</a>* allocator = <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">nullptr</a>)</span>
+              <span class="m-doc-wrap-bumper"><a href="#a1407ac42ab8f19fd8004702225632c48" class="m-doc-self">DatabasePackedFile</a>(</span><span class="m-doc-wrap">const char16_t* location,
+              <a href="class_i_core_allocator.html" class="m-doc">ICoreAllocator</a>* allocator = nullptr)</span>
             </dt>
             <dd><span></span></dd>
             <dt id="a66a378948ec83a5e63f54bfc7f185def">
@@ -104,38 +104,38 @@
         <section id="pub-methods">
           <h2><a href="#pub-methods">Public functions</a></h2>
           <dl class="m-doc">
-            <dt id="a2335d92b0ddb2862f761f3e8f931a2cc">
-              <span class="m-doc-wrap-bumper">auto <a href="#a2335d92b0ddb2862f761f3e8f931a2cc" class="m-doc-self">Cast</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">uint32_<wbr />t</a> type) const -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">void</a>* <span class="m-label m-flat m-warning">override</span></span>
+            <dt id="a0ee3939e531c9b0dc97fa1d22930c2d3">
+              <span class="m-doc-wrap-bumper">auto <a href="#a0ee3939e531c9b0dc97fa1d22930c2d3" class="m-doc-self">Cast</a>(</span><span class="m-doc-wrap">uint32_t type) const -&gt; void* <span class="m-label m-flat m-warning">override</span></span>
             </dt>
             <dd><span></span></dd>
             <dt id="a5479b52b95bf7c9cd4954d718eecab9b">
-              <span class="m-doc-wrap-bumper">auto <a href="#a5479b52b95bf7c9cd4954d718eecab9b" class="m-doc-self">Initialize</a>(</span><span class="m-doc-wrap">) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">bool</a> <span class="m-label m-flat m-warning">override</span></span>
+              <span class="m-doc-wrap-bumper">auto <a href="#a5479b52b95bf7c9cd4954d718eecab9b" class="m-doc-self">Initialize</a>(</span><span class="m-doc-wrap">) -&gt; bool <span class="m-label m-flat m-warning">override</span></span>
             </dt>
             <dd><span></span></dd>
             <dt id="a78b13d5969d0842df6b304dad6a0c1a6">
-              <span class="m-doc-wrap-bumper">auto <a href="#a78b13d5969d0842df6b304dad6a0c1a6" class="m-doc-self">Dispose</a>(</span><span class="m-doc-wrap">) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">bool</a> <span class="m-label m-flat m-warning">override</span></span>
+              <span class="m-doc-wrap-bumper">auto <a href="#a78b13d5969d0842df6b304dad6a0c1a6" class="m-doc-self">Dispose</a>(</span><span class="m-doc-wrap">) -&gt; bool <span class="m-label m-flat m-warning">override</span></span>
             </dt>
             <dd><span></span></dd>
             <dt id="a398c9af2244284fd706c1bca6db546bf">
-              <span class="m-doc-wrap-bumper">auto <a href="#a398c9af2244284fd706c1bca6db546bf" class="m-doc-self">GetDatabaseType</a>(</span><span class="m-doc-wrap">) const -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">uint32_<wbr />t</a> <span class="m-label m-flat m-warning">override</span></span>
+              <span class="m-doc-wrap-bumper">auto <a href="#a398c9af2244284fd706c1bca6db546bf" class="m-doc-self">GetDatabaseType</a>(</span><span class="m-doc-wrap">) const -&gt; uint32_t <span class="m-label m-flat m-warning">override</span></span>
             </dt>
             <dd><span></span></dd>
             <dt id="a22c6dd813a3da5e497477434825edbe2">
-              <span class="m-doc-wrap-bumper">auto <a href="#a22c6dd813a3da5e497477434825edbe2" class="m-doc-self">GetRefCount</a>(</span><span class="m-doc-wrap">) const -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> <span class="m-label m-flat m-warning">override</span></span>
+              <span class="m-doc-wrap-bumper">auto <a href="#a22c6dd813a3da5e497477434825edbe2" class="m-doc-self">GetRefCount</a>(</span><span class="m-doc-wrap">) const -&gt; int <span class="m-label m-flat m-warning">override</span></span>
             </dt>
             <dd><span></span></dd>
             <dt id="a3c158a426e856885dad16acaf6ae8f62">
-              <span class="m-doc-wrap-bumper">auto <a href="#a3c158a426e856885dad16acaf6ae8f62" class="m-doc-self">Lock</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">bool</a> lock) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">void</a> <span class="m-label m-flat m-warning">override</span></span>
+              <span class="m-doc-wrap-bumper">void <a href="#a3c158a426e856885dad16acaf6ae8f62" class="m-doc-self">Lock</a>(</span><span class="m-doc-wrap">bool lock) <span class="m-label m-flat m-warning">override</span></span>
             </dt>
             <dd><span></span></dd>
             <dt id="afd7621759a663fa68067a8226a9d1971">
               <span class="m-doc-wrap-bumper">auto <a href="#afd7621759a663fa68067a8226a9d1971" class="m-doc-self">Open</a>(</span><span class="m-doc-wrap"><a href="namespace_i_o.html#ab7db8d079d037a7b288d7d79b2d052db" class="m-doc">IO::<wbr />AccessFlags</a> desiredAccess = <a href="namespace_i_o.html#ab7db8d079d037a7b288d7d79b2d052dba7a1a5f3e79fdc91edf2f5ead9d66abb4" class="m-doc">IO::<wbr />AccessFlags::<wbr />Read</a>,
               <a href="namespace_i_o.html#abf6e95eb7addeab6fd4137b076cabbfa" class="m-doc">IO::<wbr />CD</a> createDisposition = <a href="namespace_i_o.html#abf6e95eb7addeab6fd4137b076cabbfaa7a1920d61156abc05a60135aefe8bc67" class="m-doc">IO::<wbr />CD::<wbr />Default</a>,
-              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">bool</a> arg_8 = <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">false</a>) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">bool</a> <span class="m-label m-flat m-warning">override</span></span>
+              bool arg_8 = false) -&gt; bool <span class="m-label m-flat m-warning">override</span></span>
             </dt>
             <dd><span></span></dd>
             <dt id="ae4e546fb78a038c55bafa0c564ad6a60">
-              <span class="m-doc-wrap-bumper">auto <a href="#ae4e546fb78a038c55bafa0c564ad6a60" class="m-doc-self">Close</a>(</span><span class="m-doc-wrap">) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">bool</a> <span class="m-label m-flat m-warning">override</span></span>
+              <span class="m-doc-wrap-bumper">auto <a href="#ae4e546fb78a038c55bafa0c564ad6a60" class="m-doc-self">Close</a>(</span><span class="m-doc-wrap">) -&gt; bool <span class="m-label m-flat m-warning">override</span></span>
             </dt>
             <dd><span></span></dd>
             <dt id="a65474a2015d7f32a6063b0ec7a5a58b2">
@@ -143,144 +143,144 @@
             </dt>
             <dd><span></span></dd>
             <dt id="a80c42cf685667b91b5a0c9d10938f1c7">
-              <span class="m-doc-wrap-bumper">auto <a href="#a80c42cf685667b91b5a0c9d10938f1c7" class="m-doc-self">Flush</a>(</span><span class="m-doc-wrap">) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">bool</a> <span class="m-label m-flat m-warning">override</span></span>
+              <span class="m-doc-wrap-bumper">auto <a href="#a80c42cf685667b91b5a0c9d10938f1c7" class="m-doc-self">Flush</a>(</span><span class="m-doc-wrap">) -&gt; bool <span class="m-label m-flat m-warning">override</span></span>
             </dt>
             <dd><span></span></dd>
-            <dt id="aa0a42835e4e445269fe580f2842699f4">
-              <span class="m-doc-wrap-bumper">auto <a href="#aa0a42835e4e445269fe580f2842699f4" class="m-doc-self">GetLocation</a>(</span><span class="m-doc-wrap">) const -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">const</a> <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">char16_<wbr />t</a>* <span class="m-label m-flat m-warning">override</span></span>
+            <dt id="a9cde3e5012826092d7555a4602a780c2">
+              <span class="m-doc-wrap-bumper">auto <a href="#a9cde3e5012826092d7555a4602a780c2" class="m-doc-self">GetLocation</a>(</span><span class="m-doc-wrap">) const -&gt; const char16_t* <span class="m-label m-flat m-warning">override</span></span>
             </dt>
             <dd><span></span></dd>
             <dt id="a4259be0954e30be313b2584bb544d8fe">
-              <span class="m-doc-wrap-bumper">auto <a href="#a4259be0954e30be313b2584bb544d8fe" class="m-doc-self">SetLocation</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">const</a> <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">char16_<wbr />t</a>* path) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">bool</a> <span class="m-label m-flat m-warning">override</span></span>
+              <span class="m-doc-wrap-bumper">auto <a href="#a4259be0954e30be313b2584bb544d8fe" class="m-doc-self">SetLocation</a>(</span><span class="m-doc-wrap">const char16_t* path) -&gt; bool <span class="m-label m-flat m-warning">override</span></span>
             </dt>
             <dd><span></span></dd>
             <dt id="a445643fab7add7fbaa54da0c722870d0">
               <span class="m-doc-wrap-bumper">auto <a href="#a445643fab7add7fbaa54da0c722870d0" class="m-doc-self">GetKeyList</a>(</span><span class="m-doc-wrap">eastl::vector&lt;<a href="struct_resource_key.html" class="m-doc">ResourceKey</a>&gt;&amp; dstVector,
-              <a href="class_resource_1_1_i_key_filter.html" class="m-doc">IKeyFilter</a>* filter = <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">nullptr</a>) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">size_<wbr />t</a> <span class="m-label m-flat m-warning">override</span></span>
+              <a href="class_resource_1_1_i_key_filter.html" class="m-doc">IKeyFilter</a>* filter = nullptr) -&gt; size_t <span class="m-label m-flat m-warning">override</span></span>
             </dt>
             <dd><span></span></dd>
             <dt id="add548183b68771ebd7bdfaf4f6538cf0">
-              <span class="m-doc-wrap-bumper">auto <a href="#add548183b68771ebd7bdfaf4f6538cf0" class="m-doc-self">OpenRecord</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">const</a> <a href="struct_resource_key.html" class="m-doc">ResourceKey</a>&amp; name,
+              <span class="m-doc-wrap-bumper">auto <a href="#add548183b68771ebd7bdfaf4f6538cf0" class="m-doc-self">OpenRecord</a>(</span><span class="m-doc-wrap">const <a href="struct_resource_key.html" class="m-doc">ResourceKey</a>&amp; name,
               <a href="class_resource_1_1_i_record.html" class="m-doc">IRecord</a>** ppDst,
               <a href="namespace_i_o.html#ab7db8d079d037a7b288d7d79b2d052db" class="m-doc">IO::<wbr />AccessFlags</a> desiredAccess = <a href="namespace_i_o.html#ab7db8d079d037a7b288d7d79b2d052dba7a1a5f3e79fdc91edf2f5ead9d66abb4" class="m-doc">IO::<wbr />AccessFlags::<wbr />Read</a>,
               <a href="namespace_i_o.html#abf6e95eb7addeab6fd4137b076cabbfa" class="m-doc">IO::<wbr />CD</a> createDisposition = <a href="namespace_i_o.html#abf6e95eb7addeab6fd4137b076cabbfaa7a1920d61156abc05a60135aefe8bc67" class="m-doc">IO::<wbr />CD::<wbr />Default</a>,
-              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">bool</a> arg_10 = <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">true</a>,
-              <a href="struct_resource_1_1_record_info.html" class="m-doc">RecordInfo</a>* pDstInfo = <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">nullptr</a>) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">bool</a> <span class="m-label m-flat m-warning">override</span></span>
+              bool arg_10 = true,
+              <a href="struct_resource_1_1_record_info.html" class="m-doc">RecordInfo</a>* pDstInfo = nullptr) -&gt; bool <span class="m-label m-flat m-warning">override</span></span>
             </dt>
             <dd><span></span></dd>
             <dt id="aea352d6bc326891c7b88b67a0f834a28">
-              <span class="m-doc-wrap-bumper">auto <a href="#aea352d6bc326891c7b88b67a0f834a28" class="m-doc-self">GetOpenCount</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">const</a> <a href="struct_resource_key.html" class="m-doc">ResourceKey</a>&amp; key) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> <span class="m-label m-flat m-warning">override</span></span>
+              <span class="m-doc-wrap-bumper">auto <a href="#aea352d6bc326891c7b88b67a0f834a28" class="m-doc-self">GetOpenCount</a>(</span><span class="m-doc-wrap">const <a href="struct_resource_key.html" class="m-doc">ResourceKey</a>&amp; key) -&gt; int <span class="m-label m-flat m-warning">override</span></span>
             </dt>
             <dd><span></span></dd>
             <dt id="a1ec6dbc85b19db7c4932ffe2f0f91821">
-              <span class="m-doc-wrap-bumper">auto <a href="#a1ec6dbc85b19db7c4932ffe2f0f91821" class="m-doc-self">CloseRecord</a>(</span><span class="m-doc-wrap"><a href="class_resource_1_1_i_record.html" class="m-doc">IRecord</a>* pRecord) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">bool</a> <span class="m-label m-flat m-warning">override</span></span>
+              <span class="m-doc-wrap-bumper">auto <a href="#a1ec6dbc85b19db7c4932ffe2f0f91821" class="m-doc-self">CloseRecord</a>(</span><span class="m-doc-wrap"><a href="class_resource_1_1_i_record.html" class="m-doc">IRecord</a>* pRecord) -&gt; bool <span class="m-label m-flat m-warning">override</span></span>
             </dt>
             <dd><span></span></dd>
             <dt id="aefe71dd700fe355b76b6607bd9966705">
-              <span class="m-doc-wrap-bumper">auto <a href="#aefe71dd700fe355b76b6607bd9966705" class="m-doc-self">DeleteRecord</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">const</a> <a href="struct_resource_key.html" class="m-doc">ResourceKey</a>&amp; name) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">bool</a> <span class="m-label m-flat m-warning">override</span></span>
+              <span class="m-doc-wrap-bumper">auto <a href="#aefe71dd700fe355b76b6607bd9966705" class="m-doc-self">DeleteRecord</a>(</span><span class="m-doc-wrap">const <a href="struct_resource_key.html" class="m-doc">ResourceKey</a>&amp; name) -&gt; bool <span class="m-label m-flat m-warning">override</span></span>
             </dt>
             <dd><span></span></dd>
             <dt id="a6e60182111697504c884a3015f00b15d">
-              <span class="m-doc-wrap-bumper">auto <a href="#a6e60182111697504c884a3015f00b15d" class="m-doc-self">Attach</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">bool</a>,
+              <span class="m-doc-wrap-bumper">auto <a href="#a6e60182111697504c884a3015f00b15d" class="m-doc-self">Attach</a>(</span><span class="m-doc-wrap">bool,
               <a href="class_resource_1_1_i_resource_manager.html" class="m-doc">IResourceManager</a>* pResourceMan,
-              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">bool</a>) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">bool</a> <span class="m-label m-flat m-warning">override</span></span>
+              bool) -&gt; bool <span class="m-label m-flat m-warning">override</span></span>
             </dt>
             <dd><span></span></dd>
-            <dt id="abfa0ce3f185dfe45d2bb74068ba6c850">
-              <span class="m-doc-wrap-bumper">auto <a href="#abfa0ce3f185dfe45d2bb74068ba6c850" class="m-doc-self">GetAllocator</a>(</span><span class="m-doc-wrap">) const -&gt; <a href="class_i_core_allocator.html" class="m-doc">ICoreAllocator</a>* <span class="m-label m-flat m-warning">override</span></span>
+            <dt id="af16709140f9d2a95c22859934d38c74f">
+              <span class="m-doc-wrap-bumper">auto <a href="#af16709140f9d2a95c22859934d38c74f" class="m-doc-self">GetAllocator</a>(</span><span class="m-doc-wrap">) const -&gt; <a href="class_i_core_allocator.html" class="m-doc">ICoreAllocator</a>* <span class="m-label m-flat m-warning">override</span></span>
             </dt>
             <dd><span></span></dd>
-            <dt id="a40c497da811aba2972141e2166de5f94">
-              <span class="m-doc-wrap-bumper">auto <a href="#a40c497da811aba2972141e2166de5f94" class="m-doc-self">GetStream</a>(</span><span class="m-doc-wrap">) -&gt; <a href="class_i_o_1_1_i_stream.html" class="m-doc">IO::<wbr />IStream</a>* <span class="m-label m-flat m-warning">virtual</span></span>
+            <dt id="a32a837893d2570afad4864a1d94fad02">
+              <span class="m-doc-wrap-bumper">auto <a href="#a32a837893d2570afad4864a1d94fad02" class="m-doc-self">GetStream</a>(</span><span class="m-doc-wrap">) -&gt; <a href="class_i_o_1_1_i_stream.html" class="m-doc">IO::<wbr />IStream</a>* <span class="m-label m-flat m-warning">virtual</span></span>
             </dt>
             <dd><span></span></dd>
             <dt id="a3bcc3b3124f944d666d6fc6cc27c11d3">
-              <span class="m-doc-wrap-bumper">auto <a href="#a3bcc3b3124f944d666d6fc6cc27c11d3" class="m-doc-self">SetStream</a>(</span><span class="m-doc-wrap"><a href="class_i_o_1_1_i_stream.html" class="m-doc">IO::<wbr />IStream</a>* pStream) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">bool</a> <span class="m-label m-flat m-warning">virtual</span></span>
+              <span class="m-doc-wrap-bumper">auto <a href="#a3bcc3b3124f944d666d6fc6cc27c11d3" class="m-doc-self">SetStream</a>(</span><span class="m-doc-wrap"><a href="class_i_o_1_1_i_stream.html" class="m-doc">IO::<wbr />IStream</a>* pStream) -&gt; bool <span class="m-label m-flat m-warning">virtual</span></span>
             </dt>
             <dd><span></span></dd>
-            <dt id="a3054fd22ab02389ac8d4b82350557943">
-              <span class="m-doc-wrap-bumper">auto <a href="#a3054fd22ab02389ac8d4b82350557943" class="m-doc-self">CreateRecordRead</a>(</span><span class="m-doc-wrap"><a href="namespace_i_o.html#ab7db8d079d037a7b288d7d79b2d052db" class="m-doc">IO::<wbr />AccessFlags</a> desiredAccess,
+            <dt id="a6ffcceea7614e9b21e39ee46d503796f">
+              <span class="m-doc-wrap-bumper">auto <a href="#a6ffcceea7614e9b21e39ee46d503796f" class="m-doc-self">CreateRecordRead</a>(</span><span class="m-doc-wrap"><a href="namespace_i_o.html#ab7db8d079d037a7b288d7d79b2d052db" class="m-doc">IO::<wbr />AccessFlags</a> desiredAccess,
               <a href="struct_resource_1_1_record_info.html" class="m-doc">RecordInfo</a>* info,
               <a href="struct_resource_key.html" class="m-doc">ResourceKey</a>&amp; key) -&gt; <a href="class_resource_1_1_p_f_record_read.html" class="m-doc">PFRecordRead</a>* <span class="m-label m-flat m-warning">virtual</span></span>
             </dt>
             <dd><span></span></dd>
-            <dt id="acc7844be17162643a72e633278c02e10">
-              <span class="m-doc-wrap-bumper">auto <a href="#acc7844be17162643a72e633278c02e10" class="m-doc-self">CreateRecordReadCopy</a>(</span><span class="m-doc-wrap"><a href="namespace_i_o.html#ab7db8d079d037a7b288d7d79b2d052db" class="m-doc">IO::<wbr />AccessFlags</a> desiredAccess,
+            <dt id="a6bd74bfdbac054ee17e371c03a431d85">
+              <span class="m-doc-wrap-bumper">auto <a href="#a6bd74bfdbac054ee17e371c03a431d85" class="m-doc-self">CreateRecordReadCopy</a>(</span><span class="m-doc-wrap"><a href="namespace_i_o.html#ab7db8d079d037a7b288d7d79b2d052db" class="m-doc">IO::<wbr />AccessFlags</a> desiredAccess,
               <a href="class_resource_1_1_p_f_record_read.html" class="m-doc">PFRecordRead</a>* pOther,
               <a href="struct_resource_key.html" class="m-doc">ResourceKey</a>&amp; key) -&gt; <a href="class_resource_1_1_p_f_record_read.html" class="m-doc">PFRecordRead</a>* <span class="m-label m-flat m-warning">virtual</span></span>
             </dt>
             <dd><span></span></dd>
-            <dt id="abe957a1890cc6ec2fd60c38bc9baae56">
-              <span class="m-doc-wrap-bumper">auto <a href="#abe957a1890cc6ec2fd60c38bc9baae56" class="m-doc-self">CreateRecordWriteData</a>(</span><span class="m-doc-wrap"><a href="namespace_i_o.html#ab7db8d079d037a7b288d7d79b2d052db" class="m-doc">IO::<wbr />AccessFlags</a> desiredAccess,
-              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">void</a>* pData,
-              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">size_<wbr />t</a> nSize,
+            <dt id="a64f10bae9e7860b84bc5ea11b2896dbf">
+              <span class="m-doc-wrap-bumper">auto <a href="#a64f10bae9e7860b84bc5ea11b2896dbf" class="m-doc-self">CreateRecordWriteData</a>(</span><span class="m-doc-wrap"><a href="namespace_i_o.html#ab7db8d079d037a7b288d7d79b2d052db" class="m-doc">IO::<wbr />AccessFlags</a> desiredAccess,
+              void* pData,
+              size_t nSize,
               <a href="struct_resource_key.html" class="m-doc">ResourceKey</a>&amp; key) -&gt; <a href="class_resource_1_1_p_f_record_write.html" class="m-doc">PFRecordWrite</a>* <span class="m-label m-flat m-warning">virtual</span></span>
             </dt>
             <dd><span></span></dd>
-            <dt id="a7ef285369635217eecbb0dcb1ec80b9c">
-              <span class="m-doc-wrap-bumper">auto <a href="#a7ef285369635217eecbb0dcb1ec80b9c" class="m-doc-self">CreateRecordWrite</a>(</span><span class="m-doc-wrap"><a href="namespace_i_o.html#ab7db8d079d037a7b288d7d79b2d052db" class="m-doc">IO::<wbr />AccessFlags</a> desiredAccess,
-              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">size_<wbr />t</a> nChunkOffset,
-              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">size_<wbr />t</a> nSize,
+            <dt id="adb5b270471684d12f00e3a3c39b92d86">
+              <span class="m-doc-wrap-bumper">auto <a href="#adb5b270471684d12f00e3a3c39b92d86" class="m-doc-self">CreateRecordWrite</a>(</span><span class="m-doc-wrap"><a href="namespace_i_o.html#ab7db8d079d037a7b288d7d79b2d052db" class="m-doc">IO::<wbr />AccessFlags</a> desiredAccess,
+              size_t nChunkOffset,
+              size_t nSize,
               <a href="struct_resource_key.html" class="m-doc">ResourceKey</a>&amp; key) -&gt; <a href="class_resource_1_1_p_f_record_write.html" class="m-doc">PFRecordWrite</a>* <span class="m-label m-flat m-warning">virtual</span></span>
             </dt>
             <dd><span></span></dd>
             <dt id="ad8d274d4b2e665c25106141085e44f14">
-              <span class="m-doc-wrap-bumper">auto <a href="#ad8d274d4b2e665c25106141085e44f14" class="m-doc-self">ReadHeaders</a>(</span><span class="m-doc-wrap">) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">bool</a> <span class="m-label m-flat m-warning">virtual</span></span>
+              <span class="m-doc-wrap-bumper">auto <a href="#ad8d274d4b2e665c25106141085e44f14" class="m-doc-self">ReadHeaders</a>(</span><span class="m-doc-wrap">) -&gt; bool <span class="m-label m-flat m-warning">virtual</span></span>
             </dt>
             <dd><span></span></dd>
             <dt id="ae03f8a55d78a8bcf6bc2474896cdc957">
-              <span class="m-doc-wrap-bumper">auto <a href="#ae03f8a55d78a8bcf6bc2474896cdc957" class="m-doc-self">ReadHeaderRecord</a>(</span><span class="m-doc-wrap">) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">bool</a> <span class="m-label m-flat m-warning">virtual</span></span>
+              <span class="m-doc-wrap-bumper">auto <a href="#ae03f8a55d78a8bcf6bc2474896cdc957" class="m-doc-self">ReadHeaderRecord</a>(</span><span class="m-doc-wrap">) -&gt; bool <span class="m-label m-flat m-warning">virtual</span></span>
             </dt>
             <dd><span></span></dd>
             <dt id="aacb5c5a5eae4e820f990e9410c723de6">
-              <span class="m-doc-wrap-bumper">auto <a href="#aacb5c5a5eae4e820f990e9410c723de6" class="m-doc-self">WriteEmptyHeaderRecord</a>(</span><span class="m-doc-wrap">) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">bool</a> <span class="m-label m-flat m-warning">virtual</span></span>
+              <span class="m-doc-wrap-bumper">auto <a href="#aacb5c5a5eae4e820f990e9410c723de6" class="m-doc-self">WriteEmptyHeaderRecord</a>(</span><span class="m-doc-wrap">) -&gt; bool <span class="m-label m-flat m-warning">virtual</span></span>
             </dt>
             <dd><span></span></dd>
             <dt id="a0c0cd433a6d3f61f258bc3881ed6ae22">
-              <span class="m-doc-wrap-bumper">auto <a href="#a0c0cd433a6d3f61f258bc3881ed6ae22" class="m-doc-self">WriteHeaderRecord</a>(</span><span class="m-doc-wrap">) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">bool</a> <span class="m-label m-flat m-warning">virtual</span></span>
+              <span class="m-doc-wrap-bumper">auto <a href="#a0c0cd433a6d3f61f258bc3881ed6ae22" class="m-doc-self">WriteHeaderRecord</a>(</span><span class="m-doc-wrap">) -&gt; bool <span class="m-label m-flat m-warning">virtual</span></span>
             </dt>
             <dd><span></span></dd>
             <dt id="a5b2a3408e6ec15adc5571f9972081514">
-              <span class="m-doc-wrap-bumper">auto <a href="#a5b2a3408e6ec15adc5571f9972081514" class="m-doc-self">VerifyHeaderRecordIntegrity</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">char</a>* header) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">bool</a> <span class="m-label m-flat m-warning">virtual</span></span>
+              <span class="m-doc-wrap-bumper">auto <a href="#a5b2a3408e6ec15adc5571f9972081514" class="m-doc-self">VerifyHeaderRecordIntegrity</a>(</span><span class="m-doc-wrap">char* header) -&gt; bool <span class="m-label m-flat m-warning">virtual</span></span>
             </dt>
             <dd><span></span></dd>
             <dt id="aa4afc87bfd009775fb97a96ee1d6ce37">
-              <span class="m-doc-wrap-bumper">auto <a href="#aa4afc87bfd009775fb97a96ee1d6ce37" class="m-doc-self">ReadIndexRecord</a>(</span><span class="m-doc-wrap">) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">bool</a> <span class="m-label m-flat m-warning">virtual</span></span>
+              <span class="m-doc-wrap-bumper">auto <a href="#aa4afc87bfd009775fb97a96ee1d6ce37" class="m-doc-self">ReadIndexRecord</a>(</span><span class="m-doc-wrap">) -&gt; bool <span class="m-label m-flat m-warning">virtual</span></span>
             </dt>
             <dd><span></span></dd>
             <dt id="a71663b53c433d7df09848d8f15fd272d">
-              <span class="m-doc-wrap-bumper">auto <a href="#a71663b53c433d7df09848d8f15fd272d" class="m-doc-self">WriteIndexRecord</a>(</span><span class="m-doc-wrap">) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">bool</a> <span class="m-label m-flat m-warning">virtual</span></span>
+              <span class="m-doc-wrap-bumper">auto <a href="#a71663b53c433d7df09848d8f15fd272d" class="m-doc-self">WriteIndexRecord</a>(</span><span class="m-doc-wrap">) -&gt; bool <span class="m-label m-flat m-warning">virtual</span></span>
             </dt>
             <dd><span></span></dd>
             <dt id="a606072116e18d949a3e6b43e1cd03097">
-              <span class="m-doc-wrap-bumper">auto <a href="#a606072116e18d949a3e6b43e1cd03097" class="m-doc-self">VerifyIndexRecordIntegrity</a>(</span><span class="m-doc-wrap">) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">bool</a> <span class="m-label m-flat m-warning">virtual</span></span>
+              <span class="m-doc-wrap-bumper">auto <a href="#a606072116e18d949a3e6b43e1cd03097" class="m-doc-self">VerifyIndexRecordIntegrity</a>(</span><span class="m-doc-wrap">) -&gt; bool <span class="m-label m-flat m-warning">virtual</span></span>
             </dt>
             <dd><span></span></dd>
-            <dt id="a8b11314c5be017b40c56487014610c0f">
-              <span class="m-doc-wrap-bumper">auto <a href="#a8b11314c5be017b40c56487014610c0f" class="m-doc-self">CreateIndex</a>(</span><span class="m-doc-wrap"><a href="namespace_i_o.html#ab7db8d079d037a7b288d7d79b2d052db" class="m-doc">IO::<wbr />AccessFlags</a> desiredAccess = <a href="namespace_i_o.html#ab7db8d079d037a7b288d7d79b2d052dba70a2a84088d405a2e3f1e3accaa16723" class="m-doc">IO::<wbr />AccessFlags::<wbr />ReadWrite</a>) -&gt; <a href="class_resource_1_1_p_f_index_modifiable.html" class="m-doc">PFIndexModifiable</a>* <span class="m-label m-flat m-warning">virtual</span></span>
+            <dt id="aad0226da842de86588034ebdc5e4c8ec">
+              <span class="m-doc-wrap-bumper">auto <a href="#aad0226da842de86588034ebdc5e4c8ec" class="m-doc-self">CreateIndex</a>(</span><span class="m-doc-wrap"><a href="namespace_i_o.html#ab7db8d079d037a7b288d7d79b2d052db" class="m-doc">IO::<wbr />AccessFlags</a> desiredAccess = <a href="namespace_i_o.html#ab7db8d079d037a7b288d7d79b2d052dba70a2a84088d405a2e3f1e3accaa16723" class="m-doc">IO::<wbr />AccessFlags::<wbr />ReadWrite</a>) -&gt; <a href="class_resource_1_1_p_f_index_modifiable.html" class="m-doc">PFIndexModifiable</a>* <span class="m-label m-flat m-warning">virtual</span></span>
             </dt>
             <dd><span></span></dd>
             <dt id="a1414bfffc2d0f8ffb71ba0794ee17ac3">
-              <span class="m-doc-wrap-bumper">auto <a href="#a1414bfffc2d0f8ffb71ba0794ee17ac3" class="m-doc-self">DestroyIndex</a>(</span><span class="m-doc-wrap"><a href="class_i_o_1_1_e_a_i_o_zone_object.html" class="m-doc">IO::<wbr />EAIOZoneObject</a>* pObject) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">void</a> <span class="m-label m-flat m-warning">virtual</span></span>
+              <span class="m-doc-wrap-bumper">void <a href="#a1414bfffc2d0f8ffb71ba0794ee17ac3" class="m-doc-self">DestroyIndex</a>(</span><span class="m-doc-wrap"><a href="class_i_o_1_1_e_a_i_o_zone_object.html" class="m-doc">IO::<wbr />EAIOZoneObject</a>* pObject) <span class="m-label m-flat m-warning">virtual</span></span>
             </dt>
             <dd><span></span></dd>
             <dt id="a6d834ad067c00483a4b1aee42819873c">
-              <span class="m-doc-wrap-bumper">auto <a href="#a6d834ad067c00483a4b1aee42819873c" class="m-doc-self">MakeIndexModifiable</a>(</span><span class="m-doc-wrap">) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">void</a> <span class="m-label m-flat m-warning">virtual</span></span>
+              <span class="m-doc-wrap-bumper">void <a href="#a6d834ad067c00483a4b1aee42819873c" class="m-doc-self">MakeIndexModifiable</a>(</span><span class="m-doc-wrap">) <span class="m-label m-flat m-warning">virtual</span></span>
             </dt>
             <dd><span></span></dd>
             <dt id="ac9d908002960080ac83ebe0c3e454043">
-              <span class="m-doc-wrap-bumper">auto <a href="#ac9d908002960080ac83ebe0c3e454043" class="m-doc-self">InitializeHoleTable</a>(</span><span class="m-doc-wrap">) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">bool</a> <span class="m-label m-flat m-warning">virtual</span></span>
+              <span class="m-doc-wrap-bumper">auto <a href="#ac9d908002960080ac83ebe0c3e454043" class="m-doc-self">InitializeHoleTable</a>(</span><span class="m-doc-wrap">) -&gt; bool <span class="m-label m-flat m-warning">virtual</span></span>
             </dt>
             <dd><span></span></dd>
             <dt id="a8f98c9dfbc57f4b35f4ce57587257fff">
-              <span class="m-doc-wrap-bumper">auto <a href="#a8f98c9dfbc57f4b35f4ce57587257fff" class="m-doc-self">ReadBytes</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">void</a>* pDst,
-              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">size_<wbr />t</a> nSize) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a></span>
+              <span class="m-doc-wrap-bumper">auto <a href="#a8f98c9dfbc57f4b35f4ce57587257fff" class="m-doc-self">ReadBytes</a>(</span><span class="m-doc-wrap">void* pDst,
+              size_t nSize) -&gt; int</span>
             </dt>
             <dd><span></span></dd>
             <dt id="ad0e2f568a79201e6f9dd14208d54412e">
-              <span class="m-doc-wrap-bumper">auto <a href="#ad0e2f568a79201e6f9dd14208d54412e" class="m-doc-self">ReadData</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">void</a>* pDst,
-              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">size_<wbr />t</a> nChunkOffset,
-              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">size_<wbr />t</a> nSize) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">bool</a></span>
+              <span class="m-doc-wrap-bumper">auto <a href="#ad0e2f568a79201e6f9dd14208d54412e" class="m-doc-self">ReadData</a>(</span><span class="m-doc-wrap">void* pDst,
+              size_t nChunkOffset,
+              size_t nSize) -&gt; bool</span>
             </dt>
             <dd><span></span></dd>
           </dl>
@@ -293,7 +293,7 @@
             </dt>
             <dd><span></span></dd>
             <dt id="a42ae9dae83d0d91ec98c1e7717eba0b6">
-              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">bool</a> <a href="#a42ae9dae83d0d91ec98c1e7717eba0b6" class="m-doc-self">mIsInitialized</a>
+              bool <a href="#a42ae9dae83d0d91ec98c1e7717eba0b6" class="m-doc-self">mIsInitialized</a>
             </dt>
             <dd><span></span></dd>
             <dt id="aecba1ae3f8225bc982e6a6bdcbbe8e0e">
@@ -305,15 +305,15 @@
             </dt>
             <dd><span></span></dd>
             <dt id="a1271a3c493a69098061ea22848fdc041">
-              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> <a href="#a1271a3c493a69098061ea22848fdc041" class="m-doc-self">field_18</a>
+              int <a href="#a1271a3c493a69098061ea22848fdc041" class="m-doc-self">field_18</a>
             </dt>
             <dd><span></span></dd>
             <dt id="a5b91d7530c6b533aaa5f04db329d33cb">
-              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">bool</a> <a href="#a5b91d7530c6b533aaa5f04db329d33cb" class="m-doc-self">field_1C</a>
+              bool <a href="#a5b91d7530c6b533aaa5f04db329d33cb" class="m-doc-self">field_1C</a>
             </dt>
             <dd><span></span></dd>
             <dt id="a585470bfcb1a34dbf87d12b44e1e598b">
-              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">bool</a> <a href="#a585470bfcb1a34dbf87d12b44e1e598b" class="m-doc-self">field_1D</a>
+              bool <a href="#a585470bfcb1a34dbf87d12b44e1e598b" class="m-doc-self">field_1D</a>
             </dt>
             <dd><span></span></dd>
             <dt id="adb59dc5a4acadefb4d79f83e88fe4eab">
@@ -325,7 +325,7 @@
             </dt>
             <dd><span></span></dd>
             <dt id="afbdcf4511a8a3506beae316e50f49799">
-              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">size_<wbr />t</a> <a href="#afbdcf4511a8a3506beae316e50f49799" class="m-doc-self">mFileOffset</a>
+              size_t <a href="#afbdcf4511a8a3506beae316e50f49799" class="m-doc-self">mFileOffset</a>
             </dt>
             <dd><span></span></dd>
             <dt id="a36c0c639f6339e5f1d6b574857a54ce8">
@@ -333,15 +333,15 @@
             </dt>
             <dd><span></span></dd>
             <dt id="af2b922e17a89e242c46017ef538b5adb">
-              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">char</a>* <a href="#af2b922e17a89e242c46017ef538b5adb" class="m-doc-self">mpDataBuffer</a>
+              char* <a href="#af2b922e17a89e242c46017ef538b5adb" class="m-doc-self">mpDataBuffer</a>
             </dt>
             <dd><span></span></dd>
             <dt id="ab423146aae946fb4c49ab7643d21c14f">
-              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">size_<wbr />t</a> <a href="#ab423146aae946fb4c49ab7643d21c14f" class="m-doc-self">mpBufferSize</a>
+              size_t <a href="#ab423146aae946fb4c49ab7643d21c14f" class="m-doc-self">mpBufferSize</a>
             </dt>
             <dd><span></span></dd>
             <dt id="a1d854edaefd3c63ff9a3abd4e54638f0">
-              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">size_<wbr />t</a> <a href="#a1d854edaefd3c63ff9a3abd4e54638f0" class="m-doc-self">mnBufferOffset</a>
+              size_t <a href="#a1d854edaefd3c63ff9a3abd4e54638f0" class="m-doc-self">mnBufferOffset</a>
             </dt>
             <dd><span></span></dd>
             <dt id="a7745a39598082392fed838d526335361">
@@ -357,23 +357,23 @@
             </dt>
             <dd><span></span></dd>
             <dt id="ab44397fe413eb5eed07740966e6f6d95">
-              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">bool</a> <a href="#ab44397fe413eb5eed07740966e6f6d95" class="m-doc-self">field_2D4</a>
+              bool <a href="#ab44397fe413eb5eed07740966e6f6d95" class="m-doc-self">field_2D4</a>
             </dt>
             <dd><span></span></dd>
             <dt id="a428ace3b911c8fea247e42da9360588c">
-              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> <a href="#a428ace3b911c8fea247e42da9360588c" class="m-doc-self">field_2D8</a>
+              int <a href="#a428ace3b911c8fea247e42da9360588c" class="m-doc-self">field_2D8</a>
             </dt>
             <dd><span></span></dd>
             <dt id="aceea0a0c3ade1d05d6c1bcca8184e29d">
-              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> <a href="#aceea0a0c3ade1d05d6c1bcca8184e29d" class="m-doc-self">field_2DC</a>
+              int <a href="#aceea0a0c3ade1d05d6c1bcca8184e29d" class="m-doc-self">field_2DC</a>
             </dt>
             <dd><span></span></dd>
             <dt id="adf41706cb212018df0cffbf1e58f3876">
-              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">bool</a> <a href="#adf41706cb212018df0cffbf1e58f3876" class="m-doc-self">field_2E0</a>
+              bool <a href="#adf41706cb212018df0cffbf1e58f3876" class="m-doc-self">field_2E0</a>
             </dt>
             <dd><span></span></dd>
             <dt id="ae3b8a7a32294be73d02ce488fa1f38af">
-              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">float</a> <a href="#ae3b8a7a32294be73d02ce488fa1f38af" class="m-doc-self">field_2E4</a>
+              float <a href="#ae3b8a7a32294be73d02ce488fa1f38af" class="m-doc-self">field_2E4</a>
             </dt>
             <dd><span></span></dd>
             <dt id="ab1ee529a7eb64c13acad75ea705f12a9">
@@ -381,55 +381,55 @@
             </dt>
             <dd><span></span></dd>
             <dt id="aae03f1cf5eaa0869d6f2df8707b6002b">
-              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> <a href="#aae03f1cf5eaa0869d6f2df8707b6002b" class="m-doc-self">field_308</a>
+              int <a href="#aae03f1cf5eaa0869d6f2df8707b6002b" class="m-doc-self">field_308</a>
             </dt>
             <dd><span></span></dd>
             <dt id="adb143e39458f0d42e953b011c943ff04">
-              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> <a href="#adb143e39458f0d42e953b011c943ff04" class="m-doc-self">field_30C</a>
+              int <a href="#adb143e39458f0d42e953b011c943ff04" class="m-doc-self">field_30C</a>
             </dt>
             <dd><span></span></dd>
             <dt id="aa39e5c81b3f3ad9a6ae0128b17915436">
-              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> <a href="#aa39e5c81b3f3ad9a6ae0128b17915436" class="m-doc-self">field_310</a>
+              int <a href="#aa39e5c81b3f3ad9a6ae0128b17915436" class="m-doc-self">field_310</a>
             </dt>
             <dd><span></span></dd>
             <dt id="ab63b4c2fa7171287793c6de3b1f7750a">
-              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> <a href="#ab63b4c2fa7171287793c6de3b1f7750a" class="m-doc-self">field_314</a>
+              int <a href="#ab63b4c2fa7171287793c6de3b1f7750a" class="m-doc-self">field_314</a>
             </dt>
             <dd><span></span></dd>
             <dt id="a226135e80c07d5ffff1c4e452e19f9da">
-              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> <a href="#a226135e80c07d5ffff1c4e452e19f9da" class="m-doc-self">field_318</a>
+              int <a href="#a226135e80c07d5ffff1c4e452e19f9da" class="m-doc-self">field_318</a>
             </dt>
             <dd><span></span></dd>
             <dt id="a8ab113f23692330fa56c7bed31e0bfd8">
-              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> <a href="#a8ab113f23692330fa56c7bed31e0bfd8" class="m-doc-self">field_31C</a>
+              int <a href="#a8ab113f23692330fa56c7bed31e0bfd8" class="m-doc-self">field_31C</a>
             </dt>
             <dd><span></span></dd>
             <dt id="ae76360267ac086894dd9e487eec90690">
-              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> <a href="#ae76360267ac086894dd9e487eec90690" class="m-doc-self">field_320</a>
+              int <a href="#ae76360267ac086894dd9e487eec90690" class="m-doc-self">field_320</a>
             </dt>
             <dd><span></span></dd>
             <dt id="a9da12bf8ff2c08f0cc60d4064c7354c1">
-              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">size_<wbr />t</a> <a href="#a9da12bf8ff2c08f0cc60d4064c7354c1" class="m-doc-self">mnIndexOffset</a>
+              size_t <a href="#a9da12bf8ff2c08f0cc60d4064c7354c1" class="m-doc-self">mnIndexOffset</a>
             </dt>
             <dd><span></span></dd>
             <dt id="afa0306da94dd463df1b48e07a966282a">
-              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">size_<wbr />t</a> <a href="#afa0306da94dd463df1b48e07a966282a" class="m-doc-self">mnIndexCount</a>
+              size_t <a href="#afa0306da94dd463df1b48e07a966282a" class="m-doc-self">mnIndexCount</a>
             </dt>
             <dd><span></span></dd>
             <dt id="a3e5abf8e77e83234b6d4616c39cf891f">
-              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">size_<wbr />t</a> <a href="#a3e5abf8e77e83234b6d4616c39cf891f" class="m-doc-self">mnIndexSize</a>
+              size_t <a href="#a3e5abf8e77e83234b6d4616c39cf891f" class="m-doc-self">mnIndexSize</a>
             </dt>
             <dd><span></span></dd>
             <dt id="a7c749c60334f121228c2278f794a1c98">
-              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">bool</a> <a href="#a7c749c60334f121228c2278f794a1c98" class="m-doc-self">field_330</a>
+              bool <a href="#a7c749c60334f121228c2278f794a1c98" class="m-doc-self">field_330</a>
             </dt>
             <dd><span></span></dd>
             <dt id="a5d370ed97f44f869a4a4da3fc3b0e922">
-              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> <a href="#a5d370ed97f44f869a4a4da3fc3b0e922" class="m-doc-self">field_334</a>
+              int <a href="#a5d370ed97f44f869a4a4da3fc3b0e922" class="m-doc-self">field_334</a>
             </dt>
             <dd><span></span></dd>
             <dt id="a2df349e0ec725bb53b529940b320b68f">
-              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">float</a> <a href="#a2df349e0ec725bb53b529940b320b68f" class="m-doc-self">field_338</a>
+              float <a href="#a2df349e0ec725bb53b529940b320b68f" class="m-doc-self">field_338</a>
             </dt>
             <dd><span></span></dd>
             <dt id="adeb7350b91dda5f490649db2135eb767">
@@ -441,11 +441,11 @@
             </dt>
             <dd><span></span></dd>
             <dt id="ad0f6812b442cf3bdcee3dc5c0838164b">
-              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">bool</a> <a href="#ad0f6812b442cf3bdcee3dc5c0838164b" class="m-doc-self">field_37C</a>
+              bool <a href="#ad0f6812b442cf3bdcee3dc5c0838164b" class="m-doc-self">field_37C</a>
             </dt>
             <dd><span></span></dd>
             <dt id="a028b6b8a16471c66e365cba9cbb7bb13">
-              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">bool</a> <a href="#a028b6b8a16471c66e365cba9cbb7bb13" class="m-doc-self">field_37D</a>
+              bool <a href="#a028b6b8a16471c66e365cba9cbb7bb13" class="m-doc-self">field_37D</a>
             </dt>
             <dd><span></span></dd>
             <dt id="a3c67c8db992e99f73ebec99d7b98c9f5">
@@ -453,7 +453,7 @@
             </dt>
             <dd><span></span></dd>
             <dt id="a33a38b2a77e89a291a41a7228577754d">
-              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> <a href="#a33a38b2a77e89a291a41a7228577754d" class="m-doc-self">field_384</a>
+              int <a href="#a33a38b2a77e89a291a41a7228577754d" class="m-doc-self">field_384</a>
             </dt>
             <dd><span></span></dd>
           </dl>
@@ -496,13 +496,13 @@
     </div>
   </div>
 </div>
-<script src="search-v2.js"></script>
-<script src="searchdata-v2.js" async="async"></script>
+<script src="search-v1.js"></script>
+<script src="searchdata-v1.js" async="async"></script>
 <footer><nav>
   <div class="m-container">
     <div class="m-row">
       <div class="m-col-l-10 m-push-l-1">
-        <p>Spore ModAPI SDK for creating C++ mods for Spore. Created with <a href="https://doxygen.org/">Doxygen</a> 1.9.8 and <a href="https://mcss.mosra.cz/">m.css</a>.</p>
+        <p>Spore ModAPI SDK for creating C++ mods for Spore. Created with <a href="https://doxygen.org/">Doxygen</a> 1.8.16 and <a href="https://mcss.mosra.cz/">m.css</a>.</p>
       </div>
     </div>
   </div>

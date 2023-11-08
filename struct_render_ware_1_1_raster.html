@@ -14,7 +14,7 @@
 <header><nav id="navigation">
   <div class="m-container">
     <div class="m-row">
-      <a href="index.html" id="m-navbar-brand" class="m-col-t-8 m-col-m-none m-left-m"><img src="Spore_ModAPI_Icon.png" alt="" />Spore ModAPI <span class="m-thin">SDK for creating C++ mods for Spore</span></a>
+      <a href="index.html" id="m-navbar-brand" class="m-col-t-8 m-col-m-none m-left-m"><img src="Spore_ModAPI_Icon.png" />Spore ModAPI <span class="m-thin">SDK for creating C++ mods for Spore</span></a>
       <div class="m-col-t-4 m-hide-m m-text-right m-nopadr">
         <a href="#search" class="m-doc-search-icon" title="Search" onclick="return showSearch()"><svg style="height: 0.9rem;" viewBox="0 0 16 16">
           <path id="m-doc-search-icon-path" d="m6 0c-3.31 0-6 2.69-6 6 0 3.31 2.69 6 6 6 1.49 0 2.85-0.541 3.89-1.44-0.0164 0.338 0.147 0.759 0.5 1.15l3.22 3.79c0.552 0.614 1.45 0.665 2 0.115 0.55-0.55 0.499-1.45-0.115-2l-3.79-3.22c-0.392-0.353-0.812-0.515-1.15-0.5 0.895-1.05 1.44-2.41 1.44-3.89 0-3.31-2.69-6-6-6zm0 1.56a4.44 4.44 0 0 1 4.44 4.44 4.44 4.44 0 0 1-4.44 4.44 4.44 4.44 0 0 1-4.44-4.44 4.44 4.44 0 0 1 4.44-4.44z"/>
@@ -46,10 +46,10 @@
       <div class="m-col-l-10 m-push-l-1">
         <h1>
           <span class="m-breadcrumb"><a href="namespace_render_ware.html">RenderWare</a>::<wbr/></span>Raster <span class="m-thin">struct</span>
-          <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_raster_8h.html">&lt;/home/runner/work/Spore-ModAPI/Spore-ModAPI/Spore-ModAPI/Spore ModAPI/Spore/RenderWare/Raster.h&gt;</a></div>
+          <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_raster_8h.html">&lt;Spore/RenderWare/Raster.h&gt;</a></div>
         </h1>
         <p>Low-level representation of a game texture.</p>
-        <nav class="m-block m-default">
+        <div class="m-block m-default">
           <h3>Contents</h3>
           <ul>
             <li>
@@ -64,17 +64,13 @@
               </ul>
             </li>
           </ul>
-        </nav>
+        </div>
 <p>Its high-level equivalent is <a href="class_graphics_1_1_texture.html" class="m-doc">Graphics::<wbr />Texture</a>. Rasters can be loaded into shaders and materials using the <a href="struct_render_ware_1_1_texture_slot.html" class="m-doc">TextureSlot</a> structure. For more information, check the official Direct3D 9 documentation:</p><ul><li><a href="https://msdn.microsoft.com/en-us/library/windows/desktop/bb205909.aspx">IDirect3DTexture9 interface</a></li><li><a href="https://msdn.microsoft.com/en-us/library/windows/desktop/bb174363.aspx">IDirect3DDevice9::<wbr />CreateTexture method</a></li></ul>
         <section id="pub-types">
           <h2><a href="#pub-types">Public types</a></h2>
           <dl class="m-doc">
-            <dt>
-              union <a href="union_render_ware_1_1_raster_1_1_raster_direct3d_data.html" class="m-doc">RasterDirect3dData</a>
-            </dt>
-            <dd><span></span></dd>
             <dt id="a53d4a5130246f310af2d784f462c81ed">
-              <span class="m-doc-wrap-bumper">enum <a href="#a53d4a5130246f310af2d784f462c81ed" class="m-doc-self">Flags</a>: <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">uint16_<wbr />t</a> { </span><span class="m-doc-wrap"><a href="#a53d4a5130246f310af2d784f462c81eda39db2b9754adec13f1222c358c058240" class="m-doc">kTypeDepthStencilSurface</a> = 2,
+              <span class="m-doc-wrap-bumper">enum <a href="#a53d4a5130246f310af2d784f462c81ed" class="m-doc-self">Flags</a>: uint16_t { </span><span class="m-doc-wrap"><a href="#a53d4a5130246f310af2d784f462c81eda39db2b9754adec13f1222c358c058240" class="m-doc">kTypeDepthStencilSurface</a> = 2,
               <a href="#a53d4a5130246f310af2d784f462c81eda4d23e68e53dd4c760e231fdc703e2b74" class="m-doc">kTypeTexture</a> = 8,
               <a href="#a53d4a5130246f310af2d784f462c81eda60dc6a3c2710e02b778a4006ce856979" class="m-doc">kTypeRenderTarget</a> = 9,
               <a href="#a53d4a5130246f310af2d784f462c81eda8b4574a191180f83226c7a7a9a2b8cd9" class="m-doc">kTypeDepthStencilTexture</a> = 10,
@@ -90,7 +86,7 @@
           <h2><a href="#pub-static-attribs">Public static variables</a></h2>
           <dl class="m-doc">
             <dt id="a3f37c12d43663ed05a017e223dff7a96">
-              static <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">const</a> <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">uint32_<wbr />t</a> <a href="#a3f37c12d43663ed05a017e223dff7a96" class="m-doc-self">RW_TYPE</a>
+              static const uint32_t <a href="#a3f37c12d43663ed05a017e223dff7a96" class="m-doc-self">RW_TYPE</a>
             </dt>
             <dd><span></span></dd>
           </dl>
@@ -98,13 +94,13 @@
         <section id="pub-static-methods">
           <h2><a href="#pub-static-methods">Public static functions</a></h2>
           <dl class="m-doc">
-            <dt id="a36821563867ff1aae51acb4286afca85">
-              <span class="m-doc-wrap-bumper">static auto <a href="#a36821563867ff1aae51acb4286afca85" class="m-doc-self">CreateRaster</a>(</span><span class="m-doc-wrap"><a href="struct_render_ware_1_1_raster.html" class="m-doc">Raster</a>*&amp; pDst,
-              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">uint16_<wbr />t</a> width,
-              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">uint16_<wbr />t</a> height,
-              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">uint8_<wbr />t</a> levels,
-              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> flagsDepth,
-              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">D3DFORMAT</a> format) -&gt; <a href="struct_render_ware_1_1_raster.html" class="m-doc">Raster</a>*</span>
+            <dt id="a89551b83807e726536c8f3de06e2189c">
+              <span class="m-doc-wrap-bumper">static auto <a href="#a89551b83807e726536c8f3de06e2189c" class="m-doc-self">CreateRaster</a>(</span><span class="m-doc-wrap"><a href="struct_render_ware_1_1_raster.html" class="m-doc">Raster</a>*&amp; pDst,
+              uint16_t width,
+              uint16_t height,
+              uint8_t levels,
+              int flagsDepth,
+              D3DFORMAT format) -&gt; <a href="struct_render_ware_1_1_raster.html" class="m-doc">Raster</a>*</span>
             </dt>
             <dd><span></span></dd>
           </dl>
@@ -126,38 +122,38 @@
           <h2><a href="#pub-methods">Public functions</a></h2>
           <dl class="m-doc">
             <dt id="a27b00eeab85d5d451ba697ce882cfbfb">
-              <span class="m-doc-wrap-bumper">auto <a href="#a27b00eeab85d5d451ba697ce882cfbfb" class="m-doc-self">Delete</a>(</span><span class="m-doc-wrap">) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">void</a></span>
+              <span class="m-doc-wrap-bumper">void <a href="#a27b00eeab85d5d451ba697ce882cfbfb" class="m-doc-self">Delete</a>(</span><span class="m-doc-wrap">)</span>
             </dt>
             <dd><span></span></dd>
             <dt id="ad3899e205b2c9bef31b43d543833bcf7">
-              <span class="m-doc-wrap-bumper">auto <a href="#ad3899e205b2c9bef31b43d543833bcf7" class="m-doc-self">Create</a>(</span><span class="m-doc-wrap">) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">void</a></span>
+              <span class="m-doc-wrap-bumper">void <a href="#ad3899e205b2c9bef31b43d543833bcf7" class="m-doc-self">Create</a>(</span><span class="m-doc-wrap">)</span>
             </dt>
             <dd>Creates the corresponding Direct3D object for this raster, depending on the format and flags.</dd>
             <dt id="ac7da8d7a6b85a3e81cd456321854e445">
-              <span class="m-doc-wrap-bumper">auto <a href="#ac7da8d7a6b85a3e81cd456321854e445" class="m-doc-self">CreateTexture</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">DWORD</a> usage = <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">NULL</a>,
-              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">D3DPOOL</a> pool = <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">D3DPOOL_<wbr />DEFAULT</a>) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">HRESULT</a></span>
+              <span class="m-doc-wrap-bumper">auto <a href="#ac7da8d7a6b85a3e81cd456321854e445" class="m-doc-self">CreateTexture</a>(</span><span class="m-doc-wrap">DWORD usage = NULL,
+              D3DPOOL pool = D3DPOOL_DEFAULT) -&gt; HRESULT</span>
             </dt>
             <dd><span></span></dd>
             <dt id="a4448eb4827b92d62509094b5a9a521e7">
-              <span class="m-doc-wrap-bumper">auto <a href="#a4448eb4827b92d62509094b5a9a521e7" class="m-doc-self">D3D9AddToUnmanagedList</a>(</span><span class="m-doc-wrap">) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">void</a></span>
+              <span class="m-doc-wrap-bumper">void <a href="#a4448eb4827b92d62509094b5a9a521e7" class="m-doc-self">D3D9AddToUnmanagedList</a>(</span><span class="m-doc-wrap">)</span>
             </dt>
             <dd><span></span></dd>
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#a3f6cfedbb7b80d1b78d2edd2d4e36a34" class="m-doc">D3D9GetStreamedMipLevelSize</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> mipLevel = 0) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a></span>
+              <span class="m-doc-wrap-bumper">auto <a href="#a3f6cfedbb7b80d1b78d2edd2d4e36a34" class="m-doc">D3D9GetStreamedMipLevelSize</a>(</span><span class="m-doc-wrap">int mipLevel = 0) -&gt; int</span>
             </dt>
             <dd>Returns how many bytes are needed to store one raw mip level of the raster.</dd>
             <dt id="a21acc61dd201072bc3b1bdd66a46c500">
-              <span class="m-doc-wrap-bumper">auto <a href="#a21acc61dd201072bc3b1bdd66a46c500" class="m-doc-self">CopyRaster</a>(</span><span class="m-doc-wrap"><a href="struct_render_ware_1_1_raster.html" class="m-doc">Raster</a>* other) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">bool</a></span>
+              <span class="m-doc-wrap-bumper">auto <a href="#a21acc61dd201072bc3b1bdd66a46c500" class="m-doc-self">CopyRaster</a>(</span><span class="m-doc-wrap"><a href="struct_render_ware_1_1_raster.html" class="m-doc">Raster</a>* other) -&gt; bool</span>
             </dt>
             <dd><span></span></dd>
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#a9a21e679320ad9acf16a883934f65109" class="m-doc">Fill</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int8_<wbr />t</a>* data,
-              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> mipLevel = 0) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">bool</a></span>
+              <span class="m-doc-wrap-bumper">auto <a href="#a9a21e679320ad9acf16a883934f65109" class="m-doc">Fill</a>(</span><span class="m-doc-wrap">int8_t* data,
+              int mipLevel = 0) -&gt; bool</span>
             </dt>
             <dd>Sets the raw contents of a mip level of the raster.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#ac548ec3c5cfa3b0e92a727bfbcd52359" class="m-doc">Extract</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int8_<wbr />t</a>* dstData,
-              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> mipLevel = 0) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">bool</a></span>
+              <span class="m-doc-wrap-bumper">auto <a href="#ac548ec3c5cfa3b0e92a727bfbcd52359" class="m-doc">Extract</a>(</span><span class="m-doc-wrap">int8_t* dstData,
+              int mipLevel = 0) -&gt; bool</span>
             </dt>
             <dd>Extracts the raw contents of a mip level of the raster, and saves it in a byte array.</dd>
           </dl>
@@ -166,35 +162,55 @@
           <h2><a href="#pub-attribs">Public variables</a></h2>
           <dl class="m-doc">
             <dt id="a7a00f8b56650600069a2847eb15ff538">
-              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">D3DFORMAT</a> <a href="#a7a00f8b56650600069a2847eb15ff538" class="m-doc-self">format</a>
+              D3DFORMAT <a href="#a7a00f8b56650600069a2847eb15ff538" class="m-doc-self">format</a>
             </dt>
             <dd><span></span></dd>
             <dt id="a022ebad46b7f4b5ea2d5056c4d28bf49">
-              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">uint16_<wbr />t</a> <a href="#a022ebad46b7f4b5ea2d5056c4d28bf49" class="m-doc-self">flags</a>
+              uint16_t <a href="#a022ebad46b7f4b5ea2d5056c4d28bf49" class="m-doc-self">flags</a>
             </dt>
             <dd><span></span></dd>
             <dt id="a131875a31b399cee8662b5bd34ff9412">
-              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">uint16_<wbr />t</a> <a href="#a131875a31b399cee8662b5bd34ff9412" class="m-doc-self">volumeDepth</a>
+              uint16_t <a href="#a131875a31b399cee8662b5bd34ff9412" class="m-doc-self">volumeDepth</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a66dc1445e6c81d2e62a8b46056ba14bd">
+              IDirect3DSurface9* <a href="#a66dc1445e6c81d2e62a8b46056ba14bd" class="m-doc-self">pSurface</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="af948254678cd7d5cfece758f349df23d">
+              IDirect3DTexture9* <a href="#af948254678cd7d5cfece758f349df23d" class="m-doc-self">pTexture</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a5b8670c27c428c78d247a5873d784794">
+              IDirect3DCubeTexture9* <a href="#a5b8670c27c428c78d247a5873d784794" class="m-doc-self">pCubeTexture</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a4ece4cb0d29cc5187b51547c451e6006">
+              IDirect3DVolumeTexture9* <a href="#a4ece4cb0d29cc5187b51547c451e6006" class="m-doc-self">pVolumeTexture</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="ab17bfb3d1f4b79b796161ffe5268106b">
+              union RenderWare::Raster::@35 <a href="#ab17bfb3d1f4b79b796161ffe5268106b" class="m-doc-self">@36</a>
             </dt>
             <dd><span></span></dd>
             <dt id="a28216983f09eb2795200ad303d6d1452">
-              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">uint16_<wbr />t</a> <a href="#a28216983f09eb2795200ad303d6d1452" class="m-doc-self">width</a>
+              uint16_t <a href="#a28216983f09eb2795200ad303d6d1452" class="m-doc-self">width</a>
             </dt>
             <dd><span></span></dd>
             <dt id="a0f8281d6e2d6dc8ff591d1b9ecb5f552">
-              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">uint16_<wbr />t</a> <a href="#a0f8281d6e2d6dc8ff591d1b9ecb5f552" class="m-doc-self">height</a>
+              uint16_t <a href="#a0f8281d6e2d6dc8ff591d1b9ecb5f552" class="m-doc-self">height</a>
             </dt>
             <dd><span></span></dd>
             <dt id="af874c49d2cf085f5068a0e4a915160bc">
-              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">uint8_<wbr />t</a> <a href="#af874c49d2cf085f5068a0e4a915160bc" class="m-doc-self">depth</a>
+              uint8_t <a href="#af874c49d2cf085f5068a0e4a915160bc" class="m-doc-self">depth</a>
             </dt>
             <dd><span></span></dd>
             <dt id="a12bc37e91784d0d8855735829567b035">
-              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">uint8_<wbr />t</a> <a href="#a12bc37e91784d0d8855735829567b035" class="m-doc-self">levels</a>
+              uint8_t <a href="#a12bc37e91784d0d8855735829567b035" class="m-doc-self">levels</a>
             </dt>
             <dd><span></span></dd>
             <dt id="ad4645ccf3d5c02297730086a7798fdbe">
-              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">uint16_<wbr />t</a> <a href="#ad4645ccf3d5c02297730086a7798fdbe" class="m-doc-self">cubeFaces</a>
+              uint16_t <a href="#ad4645ccf3d5c02297730086a7798fdbe" class="m-doc-self">cubeFaces</a>
             </dt>
             <dd><span></span></dd>
             <dt id="adf2432efd42a457b4633b137dec65647">
@@ -202,11 +218,11 @@
             </dt>
             <dd><span></span></dd>
             <dt id="a80b5c3c040e9c74be692edc258156faf">
-              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">void</a>* <a href="#a80b5c3c040e9c74be692edc258156faf" class="m-doc-self">pSwapChain</a>
+              void* <a href="#a80b5c3c040e9c74be692edc258156faf" class="m-doc-self">pSwapChain</a>
             </dt>
             <dd><span></span></dd>
             <dt id="afa7299c27134b9691f3dc775c39278e8">
-              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">void</a>* <a href="#afa7299c27134b9691f3dc775c39278e8" class="m-doc-self">pTextureData</a>
+              void* <a href="#afa7299c27134b9691f3dc775c39278e8" class="m-doc-self">pTextureData</a>
             </dt>
             <dd><span></span></dd>
           </dl>
@@ -215,7 +231,7 @@
           <h2>Function documentation</h2>
           <section class="m-doc-details" id="a3f6cfedbb7b80d1b78d2edd2d4e36a34"><div>
             <h3>
-              <span class="m-doc-wrap-bumper"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> RenderWare::<wbr />Raster::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a3f6cfedbb7b80d1b78d2edd2d4e36a34" class="m-doc-self">D3D9GetStreamedMipLevelSize</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> mipLevel = 0)</span></span>
+              <span class="m-doc-wrap-bumper">int RenderWare::<wbr />Raster::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a3f6cfedbb7b80d1b78d2edd2d4e36a34" class="m-doc-self">D3D9GetStreamedMipLevelSize</a>(</span><span class="m-doc-wrap">int mipLevel = 0)</span></span>
             </h3>
             <p>Returns how many bytes are needed to store one raw mip level of the raster.</p>
             <table class="m-table m-fullwidth m-flat">
@@ -232,8 +248,8 @@
           </div></section>
           <section class="m-doc-details" id="a9a21e679320ad9acf16a883934f65109"><div>
             <h3>
-              <span class="m-doc-wrap-bumper"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">bool</a> RenderWare::<wbr />Raster::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a9a21e679320ad9acf16a883934f65109" class="m-doc-self">Fill</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int8_<wbr />t</a>* data,
-              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> mipLevel = 0)</span></span>
+              <span class="m-doc-wrap-bumper">bool RenderWare::<wbr />Raster::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a9a21e679320ad9acf16a883934f65109" class="m-doc-self">Fill</a>(</span><span class="m-doc-wrap">int8_t* data,
+              int mipLevel = 0)</span></span>
             </h3>
             <p>Sets the raw contents of a mip level of the raster.</p>
             <table class="m-table m-fullwidth m-flat">
@@ -254,8 +270,8 @@
           </div></section>
           <section class="m-doc-details" id="ac548ec3c5cfa3b0e92a727bfbcd52359"><div>
             <h3>
-              <span class="m-doc-wrap-bumper"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">bool</a> RenderWare::<wbr />Raster::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ac548ec3c5cfa3b0e92a727bfbcd52359" class="m-doc-self">Extract</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int8_<wbr />t</a>* dstData,
-              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> mipLevel = 0)</span></span>
+              <span class="m-doc-wrap-bumper">bool RenderWare::<wbr />Raster::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ac548ec3c5cfa3b0e92a727bfbcd52359" class="m-doc-self">Extract</a>(</span><span class="m-doc-wrap">int8_t* dstData,
+              int mipLevel = 0)</span></span>
             </h3>
             <p>Extracts the raw contents of a mip level of the raster, and saves it in a byte array.</p>
             <table class="m-table m-fullwidth m-flat">
@@ -314,13 +330,13 @@
     </div>
   </div>
 </div>
-<script src="search-v2.js"></script>
-<script src="searchdata-v2.js" async="async"></script>
+<script src="search-v1.js"></script>
+<script src="searchdata-v1.js" async="async"></script>
 <footer><nav>
   <div class="m-container">
     <div class="m-row">
       <div class="m-col-l-10 m-push-l-1">
-        <p>Spore ModAPI SDK for creating C++ mods for Spore. Created with <a href="https://doxygen.org/">Doxygen</a> 1.9.8 and <a href="https://mcss.mosra.cz/">m.css</a>.</p>
+        <p>Spore ModAPI SDK for creating C++ mods for Spore. Created with <a href="https://doxygen.org/">Doxygen</a> 1.8.16 and <a href="https://mcss.mosra.cz/">m.css</a>.</p>
       </div>
     </div>
   </div>

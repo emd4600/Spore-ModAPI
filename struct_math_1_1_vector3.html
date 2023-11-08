@@ -14,7 +14,7 @@
 <header><nav id="navigation">
   <div class="m-container">
     <div class="m-row">
-      <a href="index.html" id="m-navbar-brand" class="m-col-t-8 m-col-m-none m-left-m"><img src="Spore_ModAPI_Icon.png" alt="" />Spore ModAPI <span class="m-thin">SDK for creating C++ mods for Spore</span></a>
+      <a href="index.html" id="m-navbar-brand" class="m-col-t-8 m-col-m-none m-left-m"><img src="Spore_ModAPI_Icon.png" />Spore ModAPI <span class="m-thin">SDK for creating C++ mods for Spore</span></a>
       <div class="m-col-t-4 m-hide-m m-text-right m-nopadr">
         <a href="#search" class="m-doc-search-icon" title="Search" onclick="return showSearch()"><svg style="height: 0.9rem;" viewBox="0 0 16 16">
           <path id="m-doc-search-icon-path" d="m6 0c-3.31 0-6 2.69-6 6 0 3.31 2.69 6 6 6 1.49 0 2.85-0.541 3.89-1.44-0.0164 0.338 0.147 0.759 0.5 1.15l3.22 3.79c0.552 0.614 1.45 0.665 2 0.115 0.55-0.55 0.499-1.45-0.115-2l-3.79-3.22c-0.392-0.353-0.812-0.515-1.15-0.5 0.895-1.05 1.44-2.41 1.44-3.89 0-3.31-2.69-6-6-6zm0 1.56a4.44 4.44 0 0 1 4.44 4.44 4.44 4.44 0 0 1-4.44 4.44 4.44 4.44 0 0 1-4.44-4.44 4.44 4.44 0 0 1 4.44-4.44z"/>
@@ -46,10 +46,10 @@
       <div class="m-col-l-10 m-push-l-1">
         <h1>
           <span class="m-breadcrumb"><a href="namespace_math.html">Math</a>::<wbr/></span>Vector3 <span class="m-thin">struct</span>
-          <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_math_utils_8h.html">&lt;/home/runner/work/Spore-ModAPI/Spore-ModAPI/Spore-ModAPI/Spore ModAPI/Spore/MathUtils.h&gt;</a></div>
+          <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_math_utils_8h.html">&lt;Spore/MathUtils.h&gt;</a></div>
         </h1>
         <p>A vector of 3 float values (x, y, z).</p>
-        <nav class="m-block m-default">
+        <div class="m-block m-default">
           <h3>Contents</h3>
           <ul>
             <li>
@@ -63,12 +63,12 @@
               </ul>
             </li>
           </ul>
-        </nav>
+        </div>
         <section id="pub-static-attribs">
           <h2><a href="#pub-static-attribs">Public static variables</a></h2>
           <dl class="m-doc">
             <dt id="a7e76b3bc78f4936d391631e07f251536">
-              static <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">const</a> <a href="struct_math_1_1_vector3.html" class="m-doc">Vector3</a> <a href="#a7e76b3bc78f4936d391631e07f251536" class="m-doc-self">ZERO</a>
+              static const <a href="struct_math_1_1_vector3.html" class="m-doc">Vector3</a> <a href="#a7e76b3bc78f4936d391631e07f251536" class="m-doc-self">ZERO</a>
             </dt>
             <dd><span></span></dd>
           </dl>
@@ -77,9 +77,9 @@
           <h2><a href="#pub-static-methods">Public static functions</a></h2>
           <dl class="m-doc">
             <dt>
-              <span class="m-doc-wrap-bumper">static auto <a href="#ac2e3514c35ced5ac322eec65d07066a6" class="m-doc">OrientedAngle</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">const</a> <a href="struct_math_1_1_vector3.html" class="m-doc">Vector3</a>&amp; v1,
-              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">const</a> <a href="struct_math_1_1_vector3.html" class="m-doc">Vector3</a>&amp; v2,
-              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">const</a> <a href="struct_math_1_1_vector3.html" class="m-doc">Vector3</a>&amp; orientationAxis) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">float</a></span>
+              <span class="m-doc-wrap-bumper">static auto <a href="#ac2e3514c35ced5ac322eec65d07066a6" class="m-doc">OrientedAngle</a>(</span><span class="m-doc-wrap">const <a href="struct_math_1_1_vector3.html" class="m-doc">Vector3</a>&amp; v1,
+              const <a href="struct_math_1_1_vector3.html" class="m-doc">Vector3</a>&amp; v2,
+              const <a href="struct_math_1_1_vector3.html" class="m-doc">Vector3</a>&amp; orientationAxis) -&gt; float</span>
             </dt>
             <dd>Returns the oriented angle between the vectors <code>v1</code> and <code>v2</code>, in the range [0, 2pi).</dd>
           </dl>
@@ -92,9 +92,9 @@
             </dt>
             <dd><span></span></dd>
             <dt id="ac7620e32edb2e7c4c0723b9721ffc23a">
-              <span class="m-doc-wrap-bumper"><a href="#ac7620e32edb2e7c4c0723b9721ffc23a" class="m-doc-self">Vector3</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">float</a> x,
-              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">float</a> y,
-              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">float</a> z)</span>
+              <span class="m-doc-wrap-bumper"><a href="#ac7620e32edb2e7c4c0723b9721ffc23a" class="m-doc-self">Vector3</a>(</span><span class="m-doc-wrap">float x,
+              float y,
+              float z)</span>
             </dt>
             <dd><span></span></dd>
           </dl>
@@ -103,11 +103,11 @@
           <h2><a href="#pub-methods">Public functions</a></h2>
           <dl class="m-doc">
             <dt id="a8c5c7e6140a72c6ae5ec07027787a270">
-              <span class="m-doc-wrap-bumper">auto <a href="#a8c5c7e6140a72c6ae5ec07027787a270" class="m-doc-self">Length</a>(</span><span class="m-doc-wrap">) const -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">float</a></span>
+              <span class="m-doc-wrap-bumper">auto <a href="#a8c5c7e6140a72c6ae5ec07027787a270" class="m-doc-self">Length</a>(</span><span class="m-doc-wrap">) const -&gt; float</span>
             </dt>
             <dd>Returns the length of the vector, computed as the square root of then sum of its components squared.</dd>
             <dt id="a7a98b1ea97696c09c906c2a3cae9a9c9">
-              <span class="m-doc-wrap-bumper">auto <a href="#a7a98b1ea97696c09c906c2a3cae9a9c9" class="m-doc-self">SquaredLength</a>(</span><span class="m-doc-wrap">) const -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">float</a></span>
+              <span class="m-doc-wrap-bumper">auto <a href="#a7a98b1ea97696c09c906c2a3cae9a9c9" class="m-doc-self">SquaredLength</a>(</span><span class="m-doc-wrap">) const -&gt; float</span>
             </dt>
             <dd>Similar to <a href="struct_math_1_1_vector3.html#a8c5c7e6140a72c6ae5ec07027787a270" class="m-doc">Length()</a>, but without applying the square root.</dd>
             <dt id="ad19127698274f10a7b4cb6f9322f476e">
@@ -115,47 +115,47 @@
             </dt>
             <dd>Returns a normalized version of this vector. Being normalized means it has a length of 1.0.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#a0191d46820fde72f88943d988468c1c1" class="m-doc">Dot</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">const</a> <a href="struct_math_1_1_vector3.html" class="m-doc">Vector3</a>&amp; other) const -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">float</a></span>
+              <span class="m-doc-wrap-bumper">auto <a href="#a0191d46820fde72f88943d988468c1c1" class="m-doc">Dot</a>(</span><span class="m-doc-wrap">const <a href="struct_math_1_1_vector3.html" class="m-doc">Vector3</a>&amp; other) const -&gt; float</span>
             </dt>
             <dd>Computes the dot product between this vector and <code>other</code>.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#a19f39302c482189c73f45840b8edc562" class="m-doc">Cross</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">const</a> <a href="struct_math_1_1_vector3.html" class="m-doc">Vector3</a>&amp; other) const -&gt; <a href="struct_math_1_1_vector3.html" class="m-doc">Vector3</a></span>
+              <span class="m-doc-wrap-bumper">auto <a href="#a19f39302c482189c73f45840b8edc562" class="m-doc">Cross</a>(</span><span class="m-doc-wrap">const <a href="struct_math_1_1_vector3.html" class="m-doc">Vector3</a>&amp; other) const -&gt; <a href="struct_math_1_1_vector3.html" class="m-doc">Vector3</a></span>
             </dt>
             <dd>Computes the cross product between this vector and <code>other</code>.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#af739e86dd14f4021a4f74c816d598d3a" class="m-doc">AngleTo</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">const</a> <a href="struct_math_1_1_vector3.html" class="m-doc">Vector3</a>&amp; other) const -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">float</a></span>
+              <span class="m-doc-wrap-bumper">auto <a href="#af739e86dd14f4021a4f74c816d598d3a" class="m-doc">AngleTo</a>(</span><span class="m-doc-wrap">const <a href="struct_math_1_1_vector3.html" class="m-doc">Vector3</a>&amp; other) const -&gt; float</span>
             </dt>
             <dd>Returns the angle between two vectors in radians, in the range [0, PI].</dd>
             <dt id="a88c77b1d6e002b0d6c463270d96a0a5e">
-              <span class="m-doc-wrap-bumper">auto <a href="#a88c77b1d6e002b0d6c463270d96a0a5e" class="m-doc-self">operator+=</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">const</a> <a href="struct_math_1_1_vector3.html" class="m-doc">Vector3</a>&amp;) -&gt; <a href="struct_math_1_1_vector3.html" class="m-doc">Vector3</a>&amp;</span>
+              <span class="m-doc-wrap-bumper">auto <a href="#a88c77b1d6e002b0d6c463270d96a0a5e" class="m-doc-self">operator+=</a>(</span><span class="m-doc-wrap">const <a href="struct_math_1_1_vector3.html" class="m-doc">Vector3</a>&amp;) -&gt; <a href="struct_math_1_1_vector3.html" class="m-doc">Vector3</a>&amp;</span>
             </dt>
             <dd>VECTOR 3.</dd>
             <dt id="a6c245d7d652817924b76a5368dd0a109">
-              <span class="m-doc-wrap-bumper">auto <a href="#a6c245d7d652817924b76a5368dd0a109" class="m-doc-self">operator+=</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">float</a>) -&gt; <a href="struct_math_1_1_vector3.html" class="m-doc">Vector3</a>&amp;</span>
+              <span class="m-doc-wrap-bumper">auto <a href="#a6c245d7d652817924b76a5368dd0a109" class="m-doc-self">operator+=</a>(</span><span class="m-doc-wrap">float) -&gt; <a href="struct_math_1_1_vector3.html" class="m-doc">Vector3</a>&amp;</span>
             </dt>
             <dd><span></span></dd>
             <dt id="a9ebf66351d71a41b660d9ae6b32c4045">
-              <span class="m-doc-wrap-bumper">auto <a href="#a9ebf66351d71a41b660d9ae6b32c4045" class="m-doc-self">operator-=</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">const</a> <a href="struct_math_1_1_vector3.html" class="m-doc">Vector3</a>&amp;) -&gt; <a href="struct_math_1_1_vector3.html" class="m-doc">Vector3</a>&amp;</span>
+              <span class="m-doc-wrap-bumper">auto <a href="#a9ebf66351d71a41b660d9ae6b32c4045" class="m-doc-self">operator-=</a>(</span><span class="m-doc-wrap">const <a href="struct_math_1_1_vector3.html" class="m-doc">Vector3</a>&amp;) -&gt; <a href="struct_math_1_1_vector3.html" class="m-doc">Vector3</a>&amp;</span>
             </dt>
             <dd><span></span></dd>
             <dt id="a145bf3a2a531f5eb885742630837f2fe">
-              <span class="m-doc-wrap-bumper">auto <a href="#a145bf3a2a531f5eb885742630837f2fe" class="m-doc-self">operator-=</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">float</a>) -&gt; <a href="struct_math_1_1_vector3.html" class="m-doc">Vector3</a>&amp;</span>
+              <span class="m-doc-wrap-bumper">auto <a href="#a145bf3a2a531f5eb885742630837f2fe" class="m-doc-self">operator-=</a>(</span><span class="m-doc-wrap">float) -&gt; <a href="struct_math_1_1_vector3.html" class="m-doc">Vector3</a>&amp;</span>
             </dt>
             <dd><span></span></dd>
             <dt id="ae0fc07ffd144a8c21c2b4b2e437b7dd8">
-              <span class="m-doc-wrap-bumper">auto <a href="#ae0fc07ffd144a8c21c2b4b2e437b7dd8" class="m-doc-self">operator*=</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">float</a>) -&gt; <a href="struct_math_1_1_vector3.html" class="m-doc">Vector3</a>&amp;</span>
+              <span class="m-doc-wrap-bumper">auto <a href="#ae0fc07ffd144a8c21c2b4b2e437b7dd8" class="m-doc-self">operator*=</a>(</span><span class="m-doc-wrap">float) -&gt; <a href="struct_math_1_1_vector3.html" class="m-doc">Vector3</a>&amp;</span>
             </dt>
             <dd><span></span></dd>
             <dt id="aba91682a3ba23e9d322ea11246bbfaaf">
-              <span class="m-doc-wrap-bumper">auto <a href="#aba91682a3ba23e9d322ea11246bbfaaf" class="m-doc-self">operator/=</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">float</a>) -&gt; <a href="struct_math_1_1_vector3.html" class="m-doc">Vector3</a>&amp;</span>
+              <span class="m-doc-wrap-bumper">auto <a href="#aba91682a3ba23e9d322ea11246bbfaaf" class="m-doc-self">operator/=</a>(</span><span class="m-doc-wrap">float) -&gt; <a href="struct_math_1_1_vector3.html" class="m-doc">Vector3</a>&amp;</span>
             </dt>
             <dd><span></span></dd>
             <dt id="a26f6351394f56747862adcc0ed6dedd1">
-              <span class="m-doc-wrap-bumper">auto <a href="#a26f6351394f56747862adcc0ed6dedd1" class="m-doc-self">operator==</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">const</a> <a href="struct_math_1_1_vector3.html" class="m-doc">Vector3</a>&amp; b) const -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">bool</a></span>
+              <span class="m-doc-wrap-bumper">auto <a href="#a26f6351394f56747862adcc0ed6dedd1" class="m-doc-self">operator==</a>(</span><span class="m-doc-wrap">const <a href="struct_math_1_1_vector3.html" class="m-doc">Vector3</a>&amp; b) const -&gt; bool</span>
             </dt>
             <dd><span></span></dd>
             <dt id="ab4542d6a5d86648e4ef72a8f49717d7f">
-              <span class="m-doc-wrap-bumper">auto <a href="#ab4542d6a5d86648e4ef72a8f49717d7f" class="m-doc-self">operator!=</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">const</a> <a href="struct_math_1_1_vector3.html" class="m-doc">Vector3</a>&amp; b) const -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">bool</a></span>
+              <span class="m-doc-wrap-bumper">auto <a href="#ab4542d6a5d86648e4ef72a8f49717d7f" class="m-doc-self">operator!=</a>(</span><span class="m-doc-wrap">const <a href="struct_math_1_1_vector3.html" class="m-doc">Vector3</a>&amp; b) const -&gt; bool</span>
             </dt>
             <dd><span></span></dd>
           </dl>
@@ -164,15 +164,15 @@
           <h2><a href="#pub-attribs">Public variables</a></h2>
           <dl class="m-doc">
             <dt id="a878843e917c48787b4e1fcffa8b4da3b">
-              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">float</a> <a href="#a878843e917c48787b4e1fcffa8b4da3b" class="m-doc-self">x</a>
+              float <a href="#a878843e917c48787b4e1fcffa8b4da3b" class="m-doc-self">x</a>
             </dt>
             <dd><span></span></dd>
             <dt id="a5d4c7c63b32834eb022f57965a1035f2">
-              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">float</a> <a href="#a5d4c7c63b32834eb022f57965a1035f2" class="m-doc-self">y</a>
+              float <a href="#a5d4c7c63b32834eb022f57965a1035f2" class="m-doc-self">y</a>
             </dt>
             <dd><span></span></dd>
             <dt id="a425203878d04e4e15de18527a4d3cd0f">
-              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">float</a> <a href="#a425203878d04e4e15de18527a4d3cd0f" class="m-doc-self">z</a>
+              float <a href="#a425203878d04e4e15de18527a4d3cd0f" class="m-doc-self">z</a>
             </dt>
             <dd><span></span></dd>
           </dl>
@@ -181,9 +181,9 @@
           <h2>Function documentation</h2>
           <section class="m-doc-details" id="ac2e3514c35ced5ac322eec65d07066a6"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">static <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">float</a> Math::<wbr />Vector3::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ac2e3514c35ced5ac322eec65d07066a6" class="m-doc-self">OrientedAngle</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">const</a> <a href="struct_math_1_1_vector3.html" class="m-doc">Vector3</a>&amp; v1,
-              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">const</a> <a href="struct_math_1_1_vector3.html" class="m-doc">Vector3</a>&amp; v2,
-              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">const</a> <a href="struct_math_1_1_vector3.html" class="m-doc">Vector3</a>&amp; orientationAxis)</span></span>
+              <span class="m-doc-wrap-bumper">static float Math::<wbr />Vector3::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ac2e3514c35ced5ac322eec65d07066a6" class="m-doc-self">OrientedAngle</a>(</span><span class="m-doc-wrap">const <a href="struct_math_1_1_vector3.html" class="m-doc">Vector3</a>&amp; v1,
+              const <a href="struct_math_1_1_vector3.html" class="m-doc">Vector3</a>&amp; v2,
+              const <a href="struct_math_1_1_vector3.html" class="m-doc">Vector3</a>&amp; orientationAxis)</span></span>
             </h3>
             <p>Returns the oriented angle between the vectors <code>v1</code> and <code>v2</code>, in the range [0, 2pi).</p>
             <table class="m-table m-fullwidth m-flat">
@@ -209,7 +209,7 @@
           </div></section>
           <section class="m-doc-details" id="a0191d46820fde72f88943d988468c1c1"><div>
             <h3>
-              <span class="m-doc-wrap-bumper"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">float</a> Math::<wbr />Vector3::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a0191d46820fde72f88943d988468c1c1" class="m-doc-self">Dot</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">const</a> <a href="struct_math_1_1_vector3.html" class="m-doc">Vector3</a>&amp; other) const</span></span>
+              <span class="m-doc-wrap-bumper">float Math::<wbr />Vector3::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a0191d46820fde72f88943d988468c1c1" class="m-doc-self">Dot</a>(</span><span class="m-doc-wrap">const <a href="struct_math_1_1_vector3.html" class="m-doc">Vector3</a>&amp; other) const</span></span>
             </h3>
             <p>Computes the dot product between this vector and <code>other</code>.</p>
             <table class="m-table m-fullwidth m-flat">
@@ -227,7 +227,7 @@
           </div></section>
           <section class="m-doc-details" id="a19f39302c482189c73f45840b8edc562"><div>
             <h3>
-              <span class="m-doc-wrap-bumper"><a href="struct_math_1_1_vector3.html" class="m-doc">Vector3</a> Math::<wbr />Vector3::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a19f39302c482189c73f45840b8edc562" class="m-doc-self">Cross</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">const</a> <a href="struct_math_1_1_vector3.html" class="m-doc">Vector3</a>&amp; other) const</span></span>
+              <span class="m-doc-wrap-bumper"><a href="struct_math_1_1_vector3.html" class="m-doc">Vector3</a> Math::<wbr />Vector3::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a19f39302c482189c73f45840b8edc562" class="m-doc-self">Cross</a>(</span><span class="m-doc-wrap">const <a href="struct_math_1_1_vector3.html" class="m-doc">Vector3</a>&amp; other) const</span></span>
             </h3>
             <p>Computes the cross product between this vector and <code>other</code>.</p>
             <table class="m-table m-fullwidth m-flat">
@@ -245,7 +245,7 @@
           </div></section>
           <section class="m-doc-details" id="af739e86dd14f4021a4f74c816d598d3a"><div>
             <h3>
-              <span class="m-doc-wrap-bumper"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">float</a> Math::<wbr />Vector3::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#af739e86dd14f4021a4f74c816d598d3a" class="m-doc-self">AngleTo</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">const</a> <a href="struct_math_1_1_vector3.html" class="m-doc">Vector3</a>&amp; other) const</span></span>
+              <span class="m-doc-wrap-bumper">float Math::<wbr />Vector3::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#af739e86dd14f4021a4f74c816d598d3a" class="m-doc-self">AngleTo</a>(</span><span class="m-doc-wrap">const <a href="struct_math_1_1_vector3.html" class="m-doc">Vector3</a>&amp; other) const</span></span>
             </h3>
             <p>Returns the angle between two vectors in radians, in the range [0, PI].</p>
             <table class="m-table m-fullwidth m-flat">
@@ -299,13 +299,13 @@
     </div>
   </div>
 </div>
-<script src="search-v2.js"></script>
-<script src="searchdata-v2.js" async="async"></script>
+<script src="search-v1.js"></script>
+<script src="searchdata-v1.js" async="async"></script>
 <footer><nav>
   <div class="m-container">
     <div class="m-row">
       <div class="m-col-l-10 m-push-l-1">
-        <p>Spore ModAPI SDK for creating C++ mods for Spore. Created with <a href="https://doxygen.org/">Doxygen</a> 1.9.8 and <a href="https://mcss.mosra.cz/">m.css</a>.</p>
+        <p>Spore ModAPI SDK for creating C++ mods for Spore. Created with <a href="https://doxygen.org/">Doxygen</a> 1.8.16 and <a href="https://mcss.mosra.cz/">m.css</a>.</p>
       </div>
     </div>
   </div>

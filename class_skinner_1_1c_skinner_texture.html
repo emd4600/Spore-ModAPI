@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Skinner::cSkinnerTexture class | Spore ModAPI SDK for creating C++ mods for Spore</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,600,600i%7CSource+Code+Pro:400,400i,600" />
+  <link rel="stylesheet" href="m-dark.css" />
+  <link rel="stylesheet" href="m-documentation.css" />
+  <link rel="icon" href="Spore_ModAPI_Icon.png" type="image/png" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#22272e" />
+</head>
+<body>
+<header><nav id="navigation">
+  <div class="m-container">
+    <div class="m-row">
+      <a href="index.html" id="m-navbar-brand" class="m-col-t-8 m-col-m-none m-left-m"><img src="Spore_ModAPI_Icon.png" />Spore ModAPI <span class="m-thin">SDK for creating C++ mods for Spore</span></a>
+      <div class="m-col-t-4 m-hide-m m-text-right m-nopadr">
+        <a href="#search" class="m-doc-search-icon" title="Search" onclick="return showSearch()"><svg style="height: 0.9rem;" viewBox="0 0 16 16">
+          <path id="m-doc-search-icon-path" d="m6 0c-3.31 0-6 2.69-6 6 0 3.31 2.69 6 6 6 1.49 0 2.85-0.541 3.89-1.44-0.0164 0.338 0.147 0.759 0.5 1.15l3.22 3.79c0.552 0.614 1.45 0.665 2 0.115 0.55-0.55 0.499-1.45-0.115-2l-3.79-3.22c-0.392-0.353-0.812-0.515-1.15-0.5 0.895-1.05 1.44-2.41 1.44-3.89 0-3.31-2.69-6-6-6zm0 1.56a4.44 4.44 0 0 1 4.44 4.44 4.44 4.44 0 0 1-4.44 4.44 4.44 4.44 0 0 1-4.44-4.44 4.44 4.44 0 0 1 4.44-4.44z"/>
+        </svg></a>
+        <a id="m-navbar-show" href="#navigation" title="Show navigation"></a>
+        <a id="m-navbar-hide" href="#" title="Hide navigation"></a>
+      </div>
+      <div id="m-navbar-collapse" class="m-col-t-12 m-show-m m-col-m-none m-right-m">
+        <div class="m-row">
+          <ol class="m-col-t-6 m-col-m-none">
+            <li><a href="pages.html">Tutorials</a></li>
+            <li><a href="namespaces.html">Namespaces</a></li>
+          </ol>
+          <ol class="m-col-t-6 m-col-m-none" start="3">
+            <li><a href="annotated.html">Classes</a></li>
+            <li><a href="files.html">Files</a></li>
+            <li class="m-show-m"><a href="#search" class="m-doc-search-icon" title="Search" onclick="return showSearch()"><svg style="height: 0.9rem;" viewBox="0 0 16 16">
+              <use href="#m-doc-search-icon-path" />
+            </svg></a></li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav></header>
+<main><article>
+  <div class="m-container m-container-inflatable">
+    <div class="m-row">
+      <div class="m-col-l-10 m-push-l-1">
+        <h1>
+          Skinner::cSkinnerTexture <span class="m-thin">class</span>
+        </h1>
+        <p><span></span></p>
+        <div class="m-block m-default">
+          <h3>Contents</h3>
+          <ul>
+            <li>
+              Reference
+              <ul>
+                <li><a href="#pub-methods">Public functions</a></li>
+                <li><a href="#pub-attribs">Public variables</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+        <section id="pub-methods">
+          <h2><a href="#pub-methods">Public functions</a></h2>
+          <dl class="m-doc">
+            <dt id="ada531b82edb4f3598032ef8a05e10d17">
+              <span class="m-doc-wrap-bumper">void <a href="#ada531b82edb4f3598032ef8a05e10d17" class="m-doc-self">StartRender</a>(</span><span class="m-doc-wrap">)</span>
+            </dt>
+            <dd>Call before doing an editing action on this texture.</dd>
+            <dt id="a3255f28575e77eeb02ce62f32c416075">
+              <span class="m-doc-wrap-bumper">void <a href="#a3255f28575e77eeb02ce62f32c416075" class="m-doc-self">EndRender</a>(</span><span class="m-doc-wrap">)</span>
+            </dt>
+            <dd>Call to finish an editing action on this texture.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">void <a href="#a97c83f57de612c424e158181c085a07f" class="m-doc">Clear</a>(</span><span class="m-doc-wrap">const <a href="struct_math_1_1_color_r_g_b.html" class="m-doc">Math::<wbr />ColorRGB</a>&amp; color,
+              float alpha)</span>
+            </dt>
+            <dd>Removes all contents of this texture and replaces them with a clear background of the specified color.</dd>
+          </dl>
+        </section>
+        <section id="pub-attribs">
+          <h2><a href="#pub-attribs">Public variables</a></h2>
+          <dl class="m-doc">
+            <dt id="a0d690b4836acdb9b416f16ffc97c6724">
+              <a href="class_app_1_1c_viewer.html" class="m-doc">App::<wbr />cViewer</a>* <a href="#a0d690b4836acdb9b416f16ffc97c6724" class="m-doc-self">mpViewer</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a0e7ace272c0b6aa5b83b23dd7f63a439">
+              uint32_t <a href="#a0e7ace272c0b6aa5b83b23dd7f63a439" class="m-doc-self">mMaterialID</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="ac009a08fda5d6fa8e7820036e680bcd9">
+              int <a href="#ac009a08fda5d6fa8e7820036e680bcd9" class="m-doc-self">mFlags</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="af4340d59ea2e3dbe8de7807d6cafb797">
+              <a href="struct_math_1_1_color_r_g_b_a.html" class="m-doc">Math::<wbr />ColorRGBA</a> <a href="#af4340d59ea2e3dbe8de7807d6cafb797" class="m-doc-self">field_C</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a796018a4603316cc8280b922a5703fa6">
+              char <a href="#a796018a4603316cc8280b922a5703fa6" class="m-doc-self">padding_1C</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a7d80569c7d5a40f71f3e49429afe8700">
+              <a href="struct_render_ware_1_1_raster.html" class="m-doc">RenderWare::<wbr />Raster</a>* <a href="#a7d80569c7d5a40f71f3e49429afe8700" class="m-doc-self">field_3C</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a491ca54ac4d72fcfef1e8e01b2fe398d">
+              char <a href="#a491ca54ac4d72fcfef1e8e01b2fe398d" class="m-doc-self">padding_40</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a3d0cc2c30e77698aa0f780f459679c61">
+              <a href="struct_graphics_1_1_render_target_i_d.html" class="m-doc">Graphics::<wbr />RenderTargetID</a> <a href="#a3d0cc2c30e77698aa0f780f459679c61" class="m-doc-self">mRenderTargetID</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a2c1344a82bd49678df39a38d8a63028e">
+              int <a href="#a2c1344a82bd49678df39a38d8a63028e" class="m-doc-self">mWidth</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="adf224ef86356b1a200e267298f8b300b">
+              int <a href="#adf224ef86356b1a200e267298f8b300b" class="m-doc-self">mHeight</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a3f42df0af37cb7bbec991b0a328b36f7">
+              <a href="struct_render_ware_1_1_raster.html" class="m-doc">RenderWare::<wbr />Raster</a>* <a href="#a3f42df0af37cb7bbec991b0a328b36f7" class="m-doc-self">mpRaster</a>
+            </dt>
+            <dd><span></span></dd>
+          </dl>
+        </section>
+        <section>
+          <h2>Function documentation</h2>
+          <section class="m-doc-details" id="a97c83f57de612c424e158181c085a07f"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">void Skinner::<wbr />cSkinnerTexture::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a97c83f57de612c424e158181c085a07f" class="m-doc-self">Clear</a>(</span><span class="m-doc-wrap">const <a href="struct_math_1_1_color_r_g_b.html" class="m-doc">Math::<wbr />ColorRGB</a>&amp; color,
+              float alpha)</span></span>
+            </h3>
+            <p>Removes all contents of this texture and replaces them with a clear background of the specified color.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">color</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>alpha</td>
+                  <td></td>
+                </tr>
+              </tbody>
+            </table>
+          </div></section>
+        </section>
+      </div>
+    </div>
+  </div>
+</article></main>
+<div class="m-doc-search" id="search">
+  <a href="#!" onclick="return hideSearch()"></a>
+  <div class="m-container">
+    <div class="m-row">
+      <div class="m-col-m-8 m-push-m-2">
+        <div class="m-doc-search-header m-text m-small">
+          <div><span class="m-label m-default">Tab</span> / <span class="m-label m-default">T</span> to search, <span class="m-label m-default">Esc</span> to close</div>
+          <div id="search-symbolcount">&hellip;</div>
+        </div>
+        <div class="m-doc-search-content">
+          <form>
+            <input type="search" name="q" id="search-input" placeholder="Loading &hellip;" disabled="disabled" autofocus="autofocus" autocomplete="off" spellcheck="false" />
+          </form>
+          <noscript class="m-text m-danger m-text-center">Unlike everything else in the docs, the search functionality <em>requires</em> JavaScript.</noscript>
+          <div id="search-help" class="m-text m-dim m-text-center">
+            <p class="m-noindent">Search for symbols, directories, files, pages or
+            modules. You can omit any prefix from the symbol or file path; adding a
+            <code>:</code> or <code>/</code> suffix lists all members of given symbol or
+            directory.</p>
+            <p class="m-noindent">Use <span class="m-label m-dim">&darr;</span>
+            / <span class="m-label m-dim">&uarr;</span> to navigate through the list,
+            <span class="m-label m-dim">Enter</span> to go.
+            <span class="m-label m-dim">Tab</span> autocompletes common prefix, you can
+            copy a link to the result using <span class="m-label m-dim">⌘</span>
+            <span class="m-label m-dim">L</span> while <span class="m-label m-dim">⌘</span>
+            <span class="m-label m-dim">M</span> produces a Markdown link.</p>
+          </div>
+          <div id="search-notfound" class="m-text m-warning m-text-center">Sorry, nothing was found.</div>
+          <ul id="search-results"></ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="search-v1.js"></script>
+<script src="searchdata-v1.js" async="async"></script>
+<footer><nav>
+  <div class="m-container">
+    <div class="m-row">
+      <div class="m-col-l-10 m-push-l-1">
+        <p>Spore ModAPI SDK for creating C++ mods for Spore. Created with <a href="https://doxygen.org/">Doxygen</a> 1.8.16 and <a href="https://mcss.mosra.cz/">m.css</a>.</p>
+      </div>
+    </div>
+  </div>
+</nav></footer>
+</body>
+</html>

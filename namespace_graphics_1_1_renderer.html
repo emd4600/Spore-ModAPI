@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Graphics::Renderer namespace | Spore ModAPI SDK for creating C++ mods for Spore</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,600,600i%7CSource+Code+Pro:400,400i,600" />
+  <link rel="stylesheet" href="m-dark.css" />
+  <link rel="stylesheet" href="m-documentation.css" />
+  <link rel="icon" href="Spore_ModAPI_Icon.png" type="image/png" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#22272e" />
+</head>
+<body>
+<header><nav id="navigation">
+  <div class="m-container">
+    <div class="m-row">
+      <a href="index.html" id="m-navbar-brand" class="m-col-t-8 m-col-m-none m-left-m"><img src="Spore_ModAPI_Icon.png" />Spore ModAPI <span class="m-thin">SDK for creating C++ mods for Spore</span></a>
+      <div class="m-col-t-4 m-hide-m m-text-right m-nopadr">
+        <a href="#search" class="m-doc-search-icon" title="Search" onclick="return showSearch()"><svg style="height: 0.9rem;" viewBox="0 0 16 16">
+          <path id="m-doc-search-icon-path" d="m6 0c-3.31 0-6 2.69-6 6 0 3.31 2.69 6 6 6 1.49 0 2.85-0.541 3.89-1.44-0.0164 0.338 0.147 0.759 0.5 1.15l3.22 3.79c0.552 0.614 1.45 0.665 2 0.115 0.55-0.55 0.499-1.45-0.115-2l-3.79-3.22c-0.392-0.353-0.812-0.515-1.15-0.5 0.895-1.05 1.44-2.41 1.44-3.89 0-3.31-2.69-6-6-6zm0 1.56a4.44 4.44 0 0 1 4.44 4.44 4.44 4.44 0 0 1-4.44 4.44 4.44 4.44 0 0 1-4.44-4.44 4.44 4.44 0 0 1 4.44-4.44z"/>
+        </svg></a>
+        <a id="m-navbar-show" href="#navigation" title="Show navigation"></a>
+        <a id="m-navbar-hide" href="#" title="Hide navigation"></a>
+      </div>
+      <div id="m-navbar-collapse" class="m-col-t-12 m-show-m m-col-m-none m-right-m">
+        <div class="m-row">
+          <ol class="m-col-t-6 m-col-m-none">
+            <li><a href="pages.html">Tutorials</a></li>
+            <li><a href="namespaces.html">Namespaces</a></li>
+          </ol>
+          <ol class="m-col-t-6 m-col-m-none" start="3">
+            <li><a href="annotated.html">Classes</a></li>
+            <li><a href="files.html">Files</a></li>
+            <li class="m-show-m"><a href="#search" class="m-doc-search-icon" title="Search" onclick="return showSearch()"><svg style="height: 0.9rem;" viewBox="0 0 16 16">
+              <use href="#m-doc-search-icon-path" />
+            </svg></a></li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav></header>
+<main><article>
+  <div class="m-container m-container-inflatable">
+    <div class="m-row">
+      <div class="m-col-l-10 m-push-l-1">
+        <h1>
+          Graphics::Renderer <span class="m-thin">namespace</span>
+        </h1>
+        <p>This namespace contains most internal stuff related with rendering, such as Direct3D Device and shaders, shader data, etc.</p>
+        <div class="m-block m-default">
+          <h3>Contents</h3>
+          <ul>
+            <li>
+              Reference
+              <ul>
+                <li><a href="#nested-classes">Classes</a></li>
+                <li><a href="#func-members">Functions</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+        <section id="nested-classes">
+          <h2><a href="#nested-classes">Classes</a></h2>
+          <dl class="m-doc">
+            <dt>
+              struct <a href="struct_graphics_1_1_renderer_1_1_device_parameters.html" class="m-doc">DeviceParameters</a>
+            </dt>
+            <dd><span></span></dd>
+          </dl>
+        </section>
+        <section id="func-members">
+          <h2><a href="#func-members">Functions</a></h2>
+          <dl class="m-doc">
+            <dt id="a8b05db9d9c75b59ae785638a32724e4e">
+              <span class="m-doc-wrap-bumper">auto <a href="#a8b05db9d9c75b59ae785638a32724e4e" class="m-doc-self">GetDirect3D</a>(</span><span class="m-doc-wrap">) -&gt; IDirect3D9*</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a3973835ef1aa212f6afe1f832708c7d0">
+              <span class="m-doc-wrap-bumper">auto <a href="#a3973835ef1aa212f6afe1f832708c7d0" class="m-doc-self">GetDevice</a>(</span><span class="m-doc-wrap">) -&gt; IDirect3DDevice9*</span>
+            </dt>
+            <dd>Returns the Direct3D Device used for all rendering operations in the game.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#af5e06d4dc7eb5faaeed212f48e438de6" class="m-doc">GetShaderData</a>(</span><span class="m-doc-wrap">) -&gt; void**</span>
+            </dt>
+            <dd>Returns a pointer to the array that contains the values of shader data.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#ade659b310a2923375dc913888a5264aa" class="m-doc">GetMaterialShader</a>(</span><span class="m-doc-wrap">) -&gt; <a href="class_graphics_1_1_material_shader.html" class="m-doc">MaterialShader</a>*</span>
+            </dt>
+            <dd>Returns the current <a href="class_graphics_1_1_material_shader.html" class="m-doc">MaterialShader</a> object which is being used to render.</dd>
+            <dt id="abc2ad123b2791d1051fa4e865591510d">
+              <span class="m-doc-wrap-bumper">auto <a href="#abc2ad123b2791d1051fa4e865591510d" class="m-doc-self">GetModelToWorld</a>(</span><span class="m-doc-wrap">) -&gt; D3DMATRIX*</span>
+            </dt>
+            <dd>Returns the &#x27;modelToWorld&#x27; matrix.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">void <a href="#a8e43abe85b13d658225d3b8d10bb97f1" class="m-doc">SetModelMatrix</a>(</span><span class="m-doc-wrap">D3DMATRIX* value)</span>
+            </dt>
+            <dd>Sets the &#x27;modelToWorld&#x27; matrix.</dd>
+            <dt id="a7bfb18375cc391301e8e9e45c6494d3b">
+              <span class="m-doc-wrap-bumper">auto <a href="#a7bfb18375cc391301e8e9e45c6494d3b" class="m-doc-self">GetModelToWorldTransposed</a>(</span><span class="m-doc-wrap">) -&gt; D3DMATRIX*</span>
+            </dt>
+            <dd>Returns the &#x27;modelToWorld&#x27; matrix, transposed.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">void <a href="#ad1248e156c2f10f5938034c7d06f6200" class="m-doc">SetModelToWorldTransposed</a>(</span><span class="m-doc-wrap">D3DMATRIX* value)</span>
+            </dt>
+            <dd>Sets the &#x27;modelToWorld&#x27; matrix, transposed.</dd>
+            <dt id="ae67ecbe222580a85189c5a52fa0cff0c">
+              <span class="m-doc-wrap-bumper">auto <a href="#ae67ecbe222580a85189c5a52fa0cff0c" class="m-doc-self">GetPresentationParameters</a>(</span><span class="m-doc-wrap">) -&gt; D3DPRESENT_PARAMETERS&amp;</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a2ee0ef85961cef87f85f87552f12e521">
+              <span class="m-doc-wrap-bumper">void <a href="#a2ee0ef85961cef87f85f87552f12e521" class="m-doc-self">SetShaderData</a>(</span><span class="m-doc-wrap">short index,
+              void* value,
+              bool overrideIfEqual = false)</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="aa23825483bf6db0bbe90ea9014959bff">
+              <span class="m-doc-wrap-bumper">auto <a href="#aa23825483bf6db0bbe90ea9014959bff" class="m-doc-self">GetShaderDataSize</a>(</span><span class="m-doc-wrap">short index) -&gt; int</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a051f5085f4d93e526e4e0e38d830c316">
+              <span class="m-doc-wrap-bumper">void <a href="#a051f5085f4d93e526e4e0e38d830c316" class="m-doc-self">RegisterShaderData</a>(</span><span class="m-doc-wrap">short id,
+              <a href="struct_graphics_1_1_shader_data_information.html#a358b4e3def263559fc7a333890a7cc9f" class="m-doc">ShaderDataInformation::<wbr />UnfixCB</a>,
+              <a href="struct_graphics_1_1_shader_data_information.html#ae1f616583fbe253181c8f8b389f6a2db" class="m-doc">ShaderDataInformation::<wbr />RefixCB</a>,
+              <a href="struct_graphics_1_1_shader_data_information.html#a3f4b6aa293f3971ebf1d9280b87a820a" class="m-doc">ShaderDataInformation::<wbr />FixupCB</a>,
+              <a href="struct_graphics_1_1_shader_data_information.html#a49758be908d25408fb2670f178a5e131" class="m-doc">ShaderDataInformation::<wbr />UploadCB</a>)</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a555d6aea46bd655fdc1cccf9dc7966ba" class="m-doc">SetPresentationParameters</a>(</span><span class="m-doc-wrap">const <a href="struct_graphics_1_1_renderer_1_1_device_parameters.html" class="m-doc">DeviceParameters</a>&amp; parameters) -&gt; int</span>
+            </dt>
+            <dd>Assigns the presentation parameters that will be used by the DirectX device.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a541a0bbb5861f3cc50bbe0bd6f5d6ad7" class="m-doc">CreateDevice</a>(</span><span class="m-doc-wrap"><a href="struct_graphics_1_1_renderer_1_1_device_parameters.html" class="m-doc">DeviceParameters</a>&amp; parameters) -&gt; int</span>
+            </dt>
+            <dd>Creates the Direct3D device.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">void <a href="#a30306f762243d68fd2886df034c818f6" class="m-doc">SetTexture</a>(</span><span class="m-doc-wrap">int slotIndex,
+              <a href="struct_render_ware_1_1_raster.html" class="m-doc">RenderWare::<wbr />Raster</a>* raster)</span>
+            </dt>
+            <dd>Sends the given raster to the Direct3D device.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a3d450d4c82c0ceafbb802a74e87d05df" class="m-doc">SetRenderTarget</a>(</span><span class="m-doc-wrap">int index,
+              <a href="struct_render_ware_1_1_raster.html" class="m-doc">RenderWare::<wbr />Raster</a>* raster) -&gt; HRESULT</span>
+            </dt>
+            <dd>Sets the given raster to be the active Direct3D render target for the given index.</dd>
+          </dl>
+        </section>
+        <section>
+          <h2>Function documentation</h2>
+          <section class="m-doc-details" id="af5e06d4dc7eb5faaeed212f48e438de6"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">void** Graphics::<wbr />Renderer::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#af5e06d4dc7eb5faaeed212f48e438de6" class="m-doc-self">GetShaderData</a>(</span><span class="m-doc-wrap">)</span></span>
+            </h3>
+            <p>Returns a pointer to the array that contains the values of shader data.</p>
+<p>For example, you can do <a href="namespace_graphics_1_1_renderer.html#af5e06d4dc7eb5faaeed212f48e438de6" class="m-doc">GetShaderData()</a>[ShaderData::skinWeights];</p>
+          </div></section>
+          <section class="m-doc-details" id="ade659b310a2923375dc913888a5264aa"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"><a href="class_graphics_1_1_material_shader.html" class="m-doc">MaterialShader</a>* Graphics::<wbr />Renderer::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ade659b310a2923375dc913888a5264aa" class="m-doc-self">GetMaterialShader</a>(</span><span class="m-doc-wrap">)</span></span>
+            </h3>
+            <p>Returns the current <a href="class_graphics_1_1_material_shader.html" class="m-doc">MaterialShader</a> object which is being used to render.</p>
+<p>This can either be a <a href="class_graphics_1_1_shader_builder.html" class="m-doc">ShaderBuilder</a> or an <a href="class_graphics_1_1_standard_shader.html" class="m-doc">StandardShader</a>.</p>
+          </div></section>
+          <section class="m-doc-details" id="a8e43abe85b13d658225d3b8d10bb97f1"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">void Graphics::<wbr />Renderer::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a8e43abe85b13d658225d3b8d10bb97f1" class="m-doc-self">SetModelMatrix</a>(</span><span class="m-doc-wrap">D3DMATRIX* value)</span></span>
+            </h3>
+            <p>Sets the &#x27;modelToWorld&#x27; matrix.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">value</td>
+                  <td></td>
+                </tr>
+              </tbody>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="ad1248e156c2f10f5938034c7d06f6200"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">void Graphics::<wbr />Renderer::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ad1248e156c2f10f5938034c7d06f6200" class="m-doc-self">SetModelToWorldTransposed</a>(</span><span class="m-doc-wrap">D3DMATRIX* value)</span></span>
+            </h3>
+            <p>Sets the &#x27;modelToWorld&#x27; matrix, transposed.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">value</td>
+                  <td></td>
+                </tr>
+              </tbody>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="a555d6aea46bd655fdc1cccf9dc7966ba"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">int Graphics::<wbr />Renderer::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a555d6aea46bd655fdc1cccf9dc7966ba" class="m-doc-self">SetPresentationParameters</a>(</span><span class="m-doc-wrap">const <a href="struct_graphics_1_1_renderer_1_1_device_parameters.html" class="m-doc">DeviceParameters</a>&amp; parameters)</span></span>
+            </h3>
+            <p>Assigns the presentation parameters that will be used by the DirectX device.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">parameters</td>
+                  <td></td>
+                </tr>
+              </tbody>
+            </table>
+<p>This must not be called, as it would create another device, but it can be detoured.</p>
+          </div></section>
+          <section class="m-doc-details" id="a541a0bbb5861f3cc50bbe0bd6f5d6ad7"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">int Graphics::<wbr />Renderer::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a541a0bbb5861f3cc50bbe0bd6f5d6ad7" class="m-doc-self">CreateDevice</a>(</span><span class="m-doc-wrap"><a href="struct_graphics_1_1_renderer_1_1_device_parameters.html" class="m-doc">DeviceParameters</a>&amp; parameters)</span></span>
+            </h3>
+            <p>Creates the Direct3D device.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">parameters</td>
+                  <td></td>
+                </tr>
+              </tbody>
+            </table>
+<p>This must not be called, as it would create another device; if you need to modify this, detour this function.</p>
+          </div></section>
+          <section class="m-doc-details" id="a30306f762243d68fd2886df034c818f6"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">void Graphics::<wbr />Renderer::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a30306f762243d68fd2886df034c818f6" class="m-doc-self">SetTexture</a>(</span><span class="m-doc-wrap">int slotIndex,
+              <a href="struct_render_ware_1_1_raster.html" class="m-doc">RenderWare::<wbr />Raster</a>* raster)</span></span>
+            </h3>
+            <p>Sends the given raster to the Direct3D device.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">slotIndex</td>
+                  <td>The slot this raster will occupy, between 0 and 15.</td>
+                </tr>
+                <tr>
+                  <td>raster</td>
+                  <td></td>
+                </tr>
+              </tbody>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="a3d450d4c82c0ceafbb802a74e87d05df"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">HRESULT Graphics::<wbr />Renderer::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a3d450d4c82c0ceafbb802a74e87d05df" class="m-doc-self">SetRenderTarget</a>(</span><span class="m-doc-wrap">int index,
+              <a href="struct_render_ware_1_1_raster.html" class="m-doc">RenderWare::<wbr />Raster</a>* raster)</span></span>
+            </h3>
+            <p>Sets the given raster to be the active Direct3D render target for the given index.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">index</td>
+                  <td>The render target index</td>
+                </tr>
+                <tr>
+                  <td>raster</td>
+                  <td></td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>Returns</th>
+                  <td>D3D_OK if the operation succeeded, an error code otherwise.</td>
+                </tr>
+              </tfoot>
+            </table>
+<p>Only works if the Raster is a surface.</p>
+          </div></section>
+        </section>
+      </div>
+    </div>
+  </div>
+</article></main>
+<div class="m-doc-search" id="search">
+  <a href="#!" onclick="return hideSearch()"></a>
+  <div class="m-container">
+    <div class="m-row">
+      <div class="m-col-m-8 m-push-m-2">
+        <div class="m-doc-search-header m-text m-small">
+          <div><span class="m-label m-default">Tab</span> / <span class="m-label m-default">T</span> to search, <span class="m-label m-default">Esc</span> to close</div>
+          <div id="search-symbolcount">&hellip;</div>
+        </div>
+        <div class="m-doc-search-content">
+          <form>
+            <input type="search" name="q" id="search-input" placeholder="Loading &hellip;" disabled="disabled" autofocus="autofocus" autocomplete="off" spellcheck="false" />
+          </form>
+          <noscript class="m-text m-danger m-text-center">Unlike everything else in the docs, the search functionality <em>requires</em> JavaScript.</noscript>
+          <div id="search-help" class="m-text m-dim m-text-center">
+            <p class="m-noindent">Search for symbols, directories, files, pages or
+            modules. You can omit any prefix from the symbol or file path; adding a
+            <code>:</code> or <code>/</code> suffix lists all members of given symbol or
+            directory.</p>
+            <p class="m-noindent">Use <span class="m-label m-dim">&darr;</span>
+            / <span class="m-label m-dim">&uarr;</span> to navigate through the list,
+            <span class="m-label m-dim">Enter</span> to go.
+            <span class="m-label m-dim">Tab</span> autocompletes common prefix, you can
+            copy a link to the result using <span class="m-label m-dim">⌘</span>
+            <span class="m-label m-dim">L</span> while <span class="m-label m-dim">⌘</span>
+            <span class="m-label m-dim">M</span> produces a Markdown link.</p>
+          </div>
+          <div id="search-notfound" class="m-text m-warning m-text-center">Sorry, nothing was found.</div>
+          <ul id="search-results"></ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="search-v1.js"></script>
+<script src="searchdata-v1.js" async="async"></script>
+<footer><nav>
+  <div class="m-container">
+    <div class="m-row">
+      <div class="m-col-l-10 m-push-l-1">
+        <p>Spore ModAPI SDK for creating C++ mods for Spore. Created with <a href="https://doxygen.org/">Doxygen</a> 1.8.16 and <a href="https://mcss.mosra.cz/">m.css</a>.</p>
+      </div>
+    </div>
+  </div>
+</nav></footer>
+</body>
+</html>

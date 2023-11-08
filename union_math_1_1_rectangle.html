@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Math::Rectangle union | Spore ModAPI SDK for creating C++ mods for Spore</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,600,600i%7CSource+Code+Pro:400,400i,600" />
+  <link rel="stylesheet" href="m-dark.css" />
+  <link rel="stylesheet" href="m-documentation.css" />
+  <link rel="icon" href="Spore_ModAPI_Icon.png" type="image/png" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#22272e" />
+</head>
+<body>
+<header><nav id="navigation">
+  <div class="m-container">
+    <div class="m-row">
+      <a href="index.html" id="m-navbar-brand" class="m-col-t-8 m-col-m-none m-left-m"><img src="Spore_ModAPI_Icon.png" />Spore ModAPI <span class="m-thin">SDK for creating C++ mods for Spore</span></a>
+      <div class="m-col-t-4 m-hide-m m-text-right m-nopadr">
+        <a href="#search" class="m-doc-search-icon" title="Search" onclick="return showSearch()"><svg style="height: 0.9rem;" viewBox="0 0 16 16">
+          <path id="m-doc-search-icon-path" d="m6 0c-3.31 0-6 2.69-6 6 0 3.31 2.69 6 6 6 1.49 0 2.85-0.541 3.89-1.44-0.0164 0.338 0.147 0.759 0.5 1.15l3.22 3.79c0.552 0.614 1.45 0.665 2 0.115 0.55-0.55 0.499-1.45-0.115-2l-3.79-3.22c-0.392-0.353-0.812-0.515-1.15-0.5 0.895-1.05 1.44-2.41 1.44-3.89 0-3.31-2.69-6-6-6zm0 1.56a4.44 4.44 0 0 1 4.44 4.44 4.44 4.44 0 0 1-4.44 4.44 4.44 4.44 0 0 1-4.44-4.44 4.44 4.44 0 0 1 4.44-4.44z"/>
+        </svg></a>
+        <a id="m-navbar-show" href="#navigation" title="Show navigation"></a>
+        <a id="m-navbar-hide" href="#" title="Hide navigation"></a>
+      </div>
+      <div id="m-navbar-collapse" class="m-col-t-12 m-show-m m-col-m-none m-right-m">
+        <div class="m-row">
+          <ol class="m-col-t-6 m-col-m-none">
+            <li><a href="pages.html">Tutorials</a></li>
+            <li><a href="namespaces.html">Namespaces</a></li>
+          </ol>
+          <ol class="m-col-t-6 m-col-m-none" start="3">
+            <li><a href="annotated.html">Classes</a></li>
+            <li><a href="files.html">Files</a></li>
+            <li class="m-show-m"><a href="#search" class="m-doc-search-icon" title="Search" onclick="return showSearch()"><svg style="height: 0.9rem;" viewBox="0 0 16 16">
+              <use href="#m-doc-search-icon-path" />
+            </svg></a></li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav></header>
+<main><article>
+  <div class="m-container m-container-inflatable">
+    <div class="m-row">
+      <div class="m-col-l-10 m-push-l-1">
+        <h1>
+          Math::Rectangle <span class="m-thin">union</span>
+          <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_math_utils_8h.html">&lt;Spore/MathUtils.h&gt;</a></div>
+        </h1>
+        <p>Represents a rectangular space, defined by two points or by the four edges.</p>
+        <div class="m-block m-default">
+          <h3>Contents</h3>
+          <ul>
+            <li>
+              Reference
+              <ul>
+                <li><a href="#typeless-methods">Constructors, destructors, conversion operators</a></li>
+                <li><a href="#pub-methods">Public functions</a></li>
+                <li><a href="#pub-attribs">Public variables</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+<p>(x1, y1) represents the point on the top-left corner; (x2, y2) represents the point on the bottom-right corner. The variables &#x27;left&#x27;, &#x27;top&#x27;, &#x27;right&#x27; and &#x27;bottom&#x27; can also be used to define the horizontal or vertical coordinates where each border is at.</p>
+        <section id="typeless-methods">
+          <h2><a href="#typeless-methods">Constructors, destructors, conversion operators</a></h2>
+          <dl class="m-doc">
+            <dt id="a13e8580bb66f360fe9245ddb71959976">
+              <span class="m-doc-wrap-bumper"><a href="#a13e8580bb66f360fe9245ddb71959976" class="m-doc-self">Rectangle</a>(</span><span class="m-doc-wrap">float x1,
+              float y1,
+              float x2,
+              float y2)</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a77b19582eaa215a94bd1679c0e91c408">
+              <span class="m-doc-wrap-bumper"><a href="#a77b19582eaa215a94bd1679c0e91c408" class="m-doc-self">Rectangle</a>(</span><span class="m-doc-wrap">)</span>
+            </dt>
+            <dd><span></span></dd>
+          </dl>
+        </section>
+        <section id="pub-methods">
+          <h2><a href="#pub-methods">Public functions</a></h2>
+          <dl class="m-doc">
+            <dt id="ad9784d4a46a95e916b2916550e27f13e">
+              <span class="m-doc-wrap-bumper">auto <a href="#ad9784d4a46a95e916b2916550e27f13e" class="m-doc-self">GetWidth</a>(</span><span class="m-doc-wrap">) const -&gt; float</span>
+            </dt>
+            <dd>Returns the width of the rectangle.</dd>
+            <dt id="a52f0324588af17ac57ad4cc0bfdad847">
+              <span class="m-doc-wrap-bumper">auto <a href="#a52f0324588af17ac57ad4cc0bfdad847" class="m-doc-self">GetHeight</a>(</span><span class="m-doc-wrap">) const -&gt; float</span>
+            </dt>
+            <dd>Returns the height of the rectangle.</dd>
+            <dt id="aa5dc9ee8d7f87530d93f552cbcb07b25">
+              <span class="m-doc-wrap-bumper">auto <a href="#aa5dc9ee8d7f87530d93f552cbcb07b25" class="m-doc-self">GetCenterX</a>(</span><span class="m-doc-wrap">) const -&gt; float</span>
+            </dt>
+            <dd>Returns the X coordinate that falls in the center of the rectangle.</dd>
+            <dt id="a072cae46e1d05181d8eb92d0bb04bd2b">
+              <span class="m-doc-wrap-bumper">auto <a href="#a072cae46e1d05181d8eb92d0bb04bd2b" class="m-doc-self">GetCenterY</a>(</span><span class="m-doc-wrap">) const -&gt; float</span>
+            </dt>
+            <dd>Returns the Y coordinate that falls in the center of the rectangle.</dd>
+            <dt id="ab3ef07c556b133d6eeafec1c09b9877f">
+              <span class="m-doc-wrap-bumper">auto <a href="#ab3ef07c556b133d6eeafec1c09b9877f" class="m-doc-self">GetCenter</a>(</span><span class="m-doc-wrap">) const -&gt; <a href="struct_math_1_1_point.html" class="m-doc">Point</a></span>
+            </dt>
+            <dd>Returns the point at the center of the rectangle.</dd>
+            <dt id="a99504a0cb9bfa74241c4119affc627cc">
+              <span class="m-doc-wrap-bumper">auto <a href="#a99504a0cb9bfa74241c4119affc627cc" class="m-doc-self">GetTopLeft</a>(</span><span class="m-doc-wrap">) const -&gt; <a href="struct_math_1_1_point.html" class="m-doc">Point</a></span>
+            </dt>
+            <dd>Returns the point at the top-left corner of the rectangle.</dd>
+            <dt id="a42f8ccf075fa7d2a0c129300b66ee46a">
+              <span class="m-doc-wrap-bumper">auto <a href="#a42f8ccf075fa7d2a0c129300b66ee46a" class="m-doc-self">GetTopRight</a>(</span><span class="m-doc-wrap">) const -&gt; <a href="struct_math_1_1_point.html" class="m-doc">Point</a></span>
+            </dt>
+            <dd>Returns the point at the top-right corner of the rectangle.</dd>
+            <dt id="aacd00d941ba99b3264a6625a8d3b99dd">
+              <span class="m-doc-wrap-bumper">auto <a href="#aacd00d941ba99b3264a6625a8d3b99dd" class="m-doc-self">GetBottomLeft</a>(</span><span class="m-doc-wrap">) const -&gt; <a href="struct_math_1_1_point.html" class="m-doc">Point</a></span>
+            </dt>
+            <dd>Returns the point at the bottom-left corner of the rectangle.</dd>
+            <dt id="ad7b94e0b1484bb1bdb79dc67f2f0ed1f">
+              <span class="m-doc-wrap-bumper">auto <a href="#ad7b94e0b1484bb1bdb79dc67f2f0ed1f" class="m-doc-self">GetBottomRight</a>(</span><span class="m-doc-wrap">) const -&gt; <a href="struct_math_1_1_point.html" class="m-doc">Point</a></span>
+            </dt>
+            <dd>Returns the point at the bottom-right corner of the rectangle.</dd>
+            <dt id="aff2301a6cfe90123f6481d935878ef28">
+              <span class="m-doc-wrap-bumper">auto <a href="#aff2301a6cfe90123f6481d935878ef28" class="m-doc-self">Contains</a>(</span><span class="m-doc-wrap">float x,
+              float y) const -&gt; bool</span>
+            </dt>
+            <dd>Returns true if the given point is contained inside this rectangle.</dd>
+            <dt id="a1c43630830fa4d856e302009f5be3aa4">
+              <span class="m-doc-wrap-bumper">auto <a href="#a1c43630830fa4d856e302009f5be3aa4" class="m-doc-self">Contains</a>(</span><span class="m-doc-wrap">const <a href="struct_math_1_1_point.html" class="m-doc">Point</a>&amp; p) const -&gt; bool</span>
+            </dt>
+            <dd>Returns true if the given point is contained inside this rectangle.</dd>
+          </dl>
+        </section>
+        <section id="pub-attribs">
+          <h2><a href="#pub-attribs">Public variables</a></h2>
+          <dl class="m-doc">
+            <dt id="a2a1292038849c730ed62a4ba43ba6146">
+              float <a href="#a2a1292038849c730ed62a4ba43ba6146" class="m-doc-self">x1</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="affef459e437f8f344d3582aad1b2c91e">
+              float <a href="#affef459e437f8f344d3582aad1b2c91e" class="m-doc-self">y1</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a9ebe19fb9bd39831136c108c39b6387c">
+              float <a href="#a9ebe19fb9bd39831136c108c39b6387c" class="m-doc-self">x2</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a28057c9dcce31e2c4891e58ea4151b89">
+              float <a href="#a28057c9dcce31e2c4891e58ea4151b89" class="m-doc-self">y2</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a496e125b63a048ddf122450d73ce001f">
+              struct Math::Rectangle::@41 <a href="#a496e125b63a048ddf122450d73ce001f" class="m-doc-self">@42</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="af6fecd02b145defa44f7ec32180d3326">
+              float <a href="#af6fecd02b145defa44f7ec32180d3326" class="m-doc-self">left</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a7c20d866d5039e55a331b150c756316d">
+              float <a href="#a7c20d866d5039e55a331b150c756316d" class="m-doc-self">top</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a51d75dc543c19b449f3a2f79fcda48aa">
+              float <a href="#a51d75dc543c19b449f3a2f79fcda48aa" class="m-doc-self">right</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="afb600a6f54a480cef3dfc13e6fa0db82">
+              float <a href="#afb600a6f54a480cef3dfc13e6fa0db82" class="m-doc-self">bottom</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a1f3d1772d5b576a8288c749a60947a70">
+              struct Math::Rectangle::@43 <a href="#a1f3d1772d5b576a8288c749a60947a70" class="m-doc-self">@44</a>
+            </dt>
+            <dd><span></span></dd>
+          </dl>
+        </section>
+      </div>
+    </div>
+  </div>
+</article></main>
+<div class="m-doc-search" id="search">
+  <a href="#!" onclick="return hideSearch()"></a>
+  <div class="m-container">
+    <div class="m-row">
+      <div class="m-col-m-8 m-push-m-2">
+        <div class="m-doc-search-header m-text m-small">
+          <div><span class="m-label m-default">Tab</span> / <span class="m-label m-default">T</span> to search, <span class="m-label m-default">Esc</span> to close</div>
+          <div id="search-symbolcount">&hellip;</div>
+        </div>
+        <div class="m-doc-search-content">
+          <form>
+            <input type="search" name="q" id="search-input" placeholder="Loading &hellip;" disabled="disabled" autofocus="autofocus" autocomplete="off" spellcheck="false" />
+          </form>
+          <noscript class="m-text m-danger m-text-center">Unlike everything else in the docs, the search functionality <em>requires</em> JavaScript.</noscript>
+          <div id="search-help" class="m-text m-dim m-text-center">
+            <p class="m-noindent">Search for symbols, directories, files, pages or
+            modules. You can omit any prefix from the symbol or file path; adding a
+            <code>:</code> or <code>/</code> suffix lists all members of given symbol or
+            directory.</p>
+            <p class="m-noindent">Use <span class="m-label m-dim">&darr;</span>
+            / <span class="m-label m-dim">&uarr;</span> to navigate through the list,
+            <span class="m-label m-dim">Enter</span> to go.
+            <span class="m-label m-dim">Tab</span> autocompletes common prefix, you can
+            copy a link to the result using <span class="m-label m-dim">⌘</span>
+            <span class="m-label m-dim">L</span> while <span class="m-label m-dim">⌘</span>
+            <span class="m-label m-dim">M</span> produces a Markdown link.</p>
+          </div>
+          <div id="search-notfound" class="m-text m-warning m-text-center">Sorry, nothing was found.</div>
+          <ul id="search-results"></ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="search-v1.js"></script>
+<script src="searchdata-v1.js" async="async"></script>
+<footer><nav>
+  <div class="m-container">
+    <div class="m-row">
+      <div class="m-col-l-10 m-push-l-1">
+        <p>Spore ModAPI SDK for creating C++ mods for Spore. Created with <a href="https://doxygen.org/">Doxygen</a> 1.8.16 and <a href="https://mcss.mosra.cz/">m.css</a>.</p>
+      </div>
+    </div>
+  </div>
+</nav></footer>
+</body>
+</html>

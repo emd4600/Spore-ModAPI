@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Swarm::ISwarmManager class | Spore ModAPI SDK for creating C++ mods for Spore</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,600,600i%7CSource+Code+Pro:400,400i,600" />
+  <link rel="stylesheet" href="m-dark.css" />
+  <link rel="stylesheet" href="m-documentation.css" />
+  <link rel="icon" href="Spore_ModAPI_Icon.png" type="image/png" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#22272e" />
+</head>
+<body>
+<header><nav id="navigation">
+  <div class="m-container">
+    <div class="m-row">
+      <a href="index.html" id="m-navbar-brand" class="m-col-t-8 m-col-m-none m-left-m"><img src="Spore_ModAPI_Icon.png" />Spore ModAPI <span class="m-thin">SDK for creating C++ mods for Spore</span></a>
+      <div class="m-col-t-4 m-hide-m m-text-right m-nopadr">
+        <a href="#search" class="m-doc-search-icon" title="Search" onclick="return showSearch()"><svg style="height: 0.9rem;" viewBox="0 0 16 16">
+          <path id="m-doc-search-icon-path" d="m6 0c-3.31 0-6 2.69-6 6 0 3.31 2.69 6 6 6 1.49 0 2.85-0.541 3.89-1.44-0.0164 0.338 0.147 0.759 0.5 1.15l3.22 3.79c0.552 0.614 1.45 0.665 2 0.115 0.55-0.55 0.499-1.45-0.115-2l-3.79-3.22c-0.392-0.353-0.812-0.515-1.15-0.5 0.895-1.05 1.44-2.41 1.44-3.89 0-3.31-2.69-6-6-6zm0 1.56a4.44 4.44 0 0 1 4.44 4.44 4.44 4.44 0 0 1-4.44 4.44 4.44 4.44 0 0 1-4.44-4.44 4.44 4.44 0 0 1 4.44-4.44z"/>
+        </svg></a>
+        <a id="m-navbar-show" href="#navigation" title="Show navigation"></a>
+        <a id="m-navbar-hide" href="#" title="Hide navigation"></a>
+      </div>
+      <div id="m-navbar-collapse" class="m-col-t-12 m-show-m m-col-m-none m-right-m">
+        <div class="m-row">
+          <ol class="m-col-t-6 m-col-m-none">
+            <li><a href="pages.html">Tutorials</a></li>
+            <li><a href="namespaces.html">Namespaces</a></li>
+          </ol>
+          <ol class="m-col-t-6 m-col-m-none" start="3">
+            <li><a href="annotated.html">Classes</a></li>
+            <li><a href="files.html">Files</a></li>
+            <li class="m-show-m"><a href="#search" class="m-doc-search-icon" title="Search" onclick="return showSearch()"><svg style="height: 0.9rem;" viewBox="0 0 16 16">
+              <use href="#m-doc-search-icon-path" />
+            </svg></a></li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav></header>
+<main><article>
+  <div class="m-container m-container-inflatable">
+    <div class="m-row">
+      <div class="m-col-l-10 m-push-l-1">
+        <h1>
+          Swarm::ISwarmManager <span class="m-thin">class</span>
+        </h1>
+        <p>This class is the main manager of the <a href="namespace_swarm.html" class="m-doc">Swarm</a> effects system.</p>
+        <div class="m-block m-default">
+          <h3>Contents</h3>
+          <ul>
+            <li>
+              Reference
+              <ul>
+                <li><a href="#derived-classes">Derived classes</a></li>
+                <li><a href="#pub-static-methods">Public static functions</a></li>
+                <li><a href="#pub-methods">Public functions</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+<p>It allows to create instances of effects. The manager also can be used to create <a href="class_swarm_1_1_i_effect_world.html" class="m-doc">IEffectWorld</a>, which are the objects that contain the effects. The manager creates instances of effects using the currently active effect world.</p>
+        <section id="derived-classes">
+          <h2><a href="#derived-classes">Derived classes</a></h2>
+          <dl class="m-doc">
+            <dt>
+              class <a href="class_swarm_1_1c_swarm_manager.html" class="m-doc">Swarm::cSwarmManager</a>
+            </dt>
+            <dd><span></span></dd>
+          </dl>
+        </section>
+        <section id="pub-static-methods">
+          <h2><a href="#pub-static-methods">Public static functions</a></h2>
+          <dl class="m-doc">
+            <dt id="a3540584ad84f37b5ffe2a2b3d284e6d7">
+              <span class="m-doc-wrap-bumper">static auto <a href="#a3540584ad84f37b5ffe2a2b3d284e6d7" class="m-doc-self">Get</a>(</span><span class="m-doc-wrap">) -&gt; <a href="class_swarm_1_1_i_swarm_manager.html" class="m-doc">ISwarmManager</a>*</span>
+            </dt>
+            <dd>Gets the active manager of the <a href="namespace_swarm.html" class="m-doc">Swarm</a> system.</dd>
+          </dl>
+        </section>
+        <section id="pub-methods">
+          <h2><a href="#pub-methods">Public functions</a></h2>
+          <dl class="m-doc">
+            <dt id="a91cf810a2f00f6cd0086b0e1755a89e9">
+              <span class="m-doc-wrap-bumper">auto <a href="#a91cf810a2f00f6cd0086b0e1755a89e9" class="m-doc-self">Initialize</a>(</span><span class="m-doc-wrap">) -&gt; bool <span class="m-label m-flat m-warning">pure virtual</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a0100fa6afc822d46843e81c9281dc6be">
+              <span class="m-doc-wrap-bumper">auto <a href="#a0100fa6afc822d46843e81c9281dc6be" class="m-doc-self">Dispose</a>(</span><span class="m-doc-wrap">) -&gt; bool <span class="m-label m-flat m-warning">pure virtual</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a235de4d06e451636b396bde561a730b7">
+              <span class="m-doc-wrap-bumper">auto <a href="#a235de4d06e451636b396bde561a730b7" class="m-doc-self">AddRef</a>(</span><span class="m-doc-wrap">) -&gt; int <span class="m-label m-flat m-warning">pure virtual</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a632c9ac7575b957257b05c769aecc0cb">
+              <span class="m-doc-wrap-bumper">auto <a href="#a632c9ac7575b957257b05c769aecc0cb" class="m-doc-self">Release</a>(</span><span class="m-doc-wrap">) -&gt; int <span class="m-label m-flat m-warning">pure virtual</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a3df8d85ee70ac39aec01ccd29b728464">
+              <span class="m-doc-wrap-bumper">void <a href="#a3df8d85ee70ac39aec01ccd29b728464" class="m-doc-self">func10h</a>(</span><span class="m-doc-wrap"><a href="class_object.html" class="m-doc">Object</a>*) <span class="m-label m-flat m-warning">pure virtual</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a139126727bcfc4fa1573c0815b7e722e">
+              <span class="m-doc-wrap-bumper">auto <a href="#a139126727bcfc4fa1573c0815b7e722e" class="m-doc-self">func14h</a>(</span><span class="m-doc-wrap">) -&gt; <a href="class_object.html" class="m-doc">Object</a>* <span class="m-label m-flat m-warning">pure virtual</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a06b2c85c4ece738dde06bf9bf36fce88">
+              <span class="m-doc-wrap-bumper">void <a href="#a06b2c85c4ece738dde06bf9bf36fce88" class="m-doc-self">func18h</a>(</span><span class="m-doc-wrap"><a href="class_object.html" class="m-doc">Object</a>*) <span class="m-label m-flat m-warning">pure virtual</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a353ec5ae48c1a36d6089ffd11b8567db">
+              <span class="m-doc-wrap-bumper">auto <a href="#a353ec5ae48c1a36d6089ffd11b8567db" class="m-doc-self">func1Ch</a>(</span><span class="m-doc-wrap">) -&gt; <a href="class_object.html" class="m-doc">Object</a>* <span class="m-label m-flat m-warning">pure virtual</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="aa7c3c637f0815f5a7b0599220312c4f7">
+              <span class="m-doc-wrap-bumper">void <a href="#aa7c3c637f0815f5a7b0599220312c4f7" class="m-doc-self">func20h</a>(</span><span class="m-doc-wrap">int,
+              int) <span class="m-label m-flat m-warning">pure virtual</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a8287859a0515a2e2d247c8b04a53701a">
+              <span class="m-doc-wrap-bumper">auto <a href="#a8287859a0515a2e2d247c8b04a53701a" class="m-doc-self">func24h</a>(</span><span class="m-doc-wrap">int) -&gt; int <span class="m-label m-flat m-warning">pure virtual</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a8c0584a5f9d0f5720733af6e2e427e37" class="m-doc">HasEffect</a>(</span><span class="m-doc-wrap">uint32_t instanceID,
+              uint32_t groupID) const -&gt; bool <span class="m-label m-flat m-warning">pure virtual</span></span>
+            </dt>
+            <dd>Returns whether an effect with this instance and group ID exists in any of the effect directories (effdir) in the manager.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#ad9d3502ca3b9b0a4037145fcb104bcb3" class="m-doc">CreateEffect</a>(</span><span class="m-doc-wrap">uint32_t instanceID,
+              uint32_t groupID,
+              intrusive_ptr&lt;<a href="class_swarm_1_1_i_effect.html" class="m-doc">IEffect</a>&gt;&amp; dst) -&gt; bool <span class="m-label m-flat m-warning">pure virtual</span></span>
+            </dt>
+            <dd>Creates an effect object with this instance and group ID in the active effect world.</dd>
+            <dt id="a788b7ed197c1a124a4ca293edb7c61ac">
+              <span class="m-doc-wrap-bumper">void <a href="#a788b7ed197c1a124a4ca293edb7c61ac" class="m-doc-self">func30h</a>(</span><span class="m-doc-wrap">int) <span class="m-label m-flat m-warning">pure virtual</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="aa6aaee6f074b16d82495e06432a2f44c">
+              <span class="m-doc-wrap-bumper">auto <a href="#aa6aaee6f074b16d82495e06432a2f44c" class="m-doc-self">func34h</a>(</span><span class="m-doc-wrap">) -&gt; int <span class="m-label m-flat m-warning">pure virtual</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a219bdfc68a9d98bfb2571607bb5e2e37">
+              <span class="m-doc-wrap-bumper">void <a href="#a219bdfc68a9d98bfb2571607bb5e2e37" class="m-doc-self">SetLOD</a>(</span><span class="m-doc-wrap">float value,
+              int = 5) <span class="m-label m-flat m-warning">pure virtual</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a444a771a2de6cbd2f2b3b42d663f6f32">
+              <span class="m-doc-wrap-bumper">void <a href="#a444a771a2de6cbd2f2b3b42d663f6f32" class="m-doc-self">func3Ch</a>(</span><span class="m-doc-wrap">int) <span class="m-label m-flat m-warning">pure virtual</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a0bb1aeebb998e5e0c7e4bf17729aee1e">
+              <span class="m-doc-wrap-bumper">void <a href="#a0bb1aeebb998e5e0c7e4bf17729aee1e" class="m-doc-self">Update</a>(</span><span class="m-doc-wrap">float,
+              float) <span class="m-label m-flat m-warning">pure virtual</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a6a52c6eb8f0128ab97ce0ec1b9e08026">
+              <span class="m-doc-wrap-bumper">void <a href="#a6a52c6eb8f0128ab97ce0ec1b9e08026" class="m-doc-self">func44h</a>(</span><span class="m-doc-wrap">float,
+              float) <span class="m-label m-flat m-warning">pure virtual</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="ae5048d754d9288e4013ff36e0e7fe3f1">
+              <span class="m-doc-wrap-bumper">void <a href="#ae5048d754d9288e4013ff36e0e7fe3f1" class="m-doc-self">func48h</a>(</span><span class="m-doc-wrap">) <span class="m-label m-flat m-warning">pure virtual</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#ad6a5e1ccb037c2fd7cc4296c81ce769b" class="m-doc">CreateWorld</a>(</span><span class="m-doc-wrap">uint32_t worldID,
+              int = 0) -&gt; <a href="class_swarm_1_1_i_effect_world.html" class="m-doc">IEffectWorld</a>* <span class="m-label m-flat m-warning">pure virtual</span></span>
+            </dt>
+            <dd>Creates a new <a href="class_swarm_1_1_i_effect_world.html" class="m-doc">IEffectWorld</a> mapped to the given ID.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">void <a href="#a43288d1c2329671229a95669288d794d" class="m-doc">RemoveWorld</a>(</span><span class="m-doc-wrap">uint32_t worldID) <span class="m-label m-flat m-warning">pure virtual</span></span>
+            </dt>
+            <dd>Removes the <a href="class_swarm_1_1_i_effect_world.html" class="m-doc">IEffectWorld</a> mapped to the given ID from this manager.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#ae1cdbc662d2cff8daf4d78685130fbe6" class="m-doc">GetWorld</a>(</span><span class="m-doc-wrap">uint32_t worldID) -&gt; <a href="class_swarm_1_1_i_effect_world.html" class="m-doc">IEffectWorld</a>* <span class="m-label m-flat m-warning">pure virtual</span></span>
+            </dt>
+            <dd>Returns the <a href="class_swarm_1_1_i_effect_world.html" class="m-doc">IEffectWorld</a> mapped to the given ID, or nullptr if the ID is not mapped.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">void <a href="#a9db4bce619827b85486ff51c1a4c4029" class="m-doc">SetActiveWorld</a>(</span><span class="m-doc-wrap"><a href="class_swarm_1_1_i_effect_world.html" class="m-doc">IEffectWorld</a>* pWorld) <span class="m-label m-flat m-warning">pure virtual</span></span>
+            </dt>
+            <dd>Sets the given effect world to be the active one; it does not need to be mapped.</dd>
+            <dt id="a6bf7c668893e2a0b7610a9f908ff538e">
+              <span class="m-doc-wrap-bumper">auto <a href="#a6bf7c668893e2a0b7610a9f908ff538e" class="m-doc-self">GetActiveWorld</a>(</span><span class="m-doc-wrap">) -&gt; <a href="class_swarm_1_1_i_effect_world.html" class="m-doc">IEffectWorld</a>* <span class="m-label m-flat m-warning">pure virtual</span></span>
+            </dt>
+            <dd>Returns the active effect world.</dd>
+            <dt id="a3647147b88d2a937833b0d17684c2f6f">
+              <span class="m-doc-wrap-bumper">void <a href="#a3647147b88d2a937833b0d17684c2f6f" class="m-doc-self">func60h</a>(</span><span class="m-doc-wrap">int) <span class="m-label m-flat m-warning">pure virtual</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="af54727f553f243ad7f4bac9c51b2a549">
+              <span class="m-doc-wrap-bumper">auto <a href="#af54727f553f243ad7f4bac9c51b2a549" class="m-doc-self">func64h</a>(</span><span class="m-doc-wrap">int) -&gt; bool <span class="m-label m-flat m-warning">pure virtual</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="ad261e122ff72daa6b7af1991dd54f16c">
+              <span class="m-doc-wrap-bumper">auto <a href="#ad261e122ff72daa6b7af1991dd54f16c" class="m-doc-self">func68h</a>(</span><span class="m-doc-wrap">int) -&gt; bool <span class="m-label m-flat m-warning">pure virtual</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="aacf421c5407baab60c3698f85d053af2">
+              <span class="m-doc-wrap-bumper">auto <a href="#aacf421c5407baab60c3698f85d053af2" class="m-doc-self">func6Ch</a>(</span><span class="m-doc-wrap">uint32_t instanceID,
+              uint32_t groupID,
+              int) -&gt; int <span class="m-label m-flat m-warning">pure virtual</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="aadba8d7676353d66fbe87369e0500fa6">
+              <span class="m-doc-wrap-bumper">auto <a href="#aadba8d7676353d66fbe87369e0500fa6" class="m-doc-self">func70h</a>(</span><span class="m-doc-wrap">int,
+              int,
+              int) -&gt; int <span class="m-label m-flat m-warning">pure virtual</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="ad68b4b3bfc12b5bbac123d8252aafb87">
+              <span class="m-doc-wrap-bumper">auto <a href="#ad68b4b3bfc12b5bbac123d8252aafb87" class="m-doc-self">func74h</a>(</span><span class="m-doc-wrap">int,
+              int,
+              int) -&gt; int <span class="m-label m-flat m-warning">pure virtual</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">void <a href="#ad17a44ff9fbb03964b1efe7bd613c9d0" class="m-doc">AddSurface</a>(</span><span class="m-doc-wrap">class <a href="class_resource_i_d.html" class="m-doc">ResourceID</a> surfaceID,
+              <a href="class_swarm_1_1_i_surface.html" class="m-doc">ISurface</a>* pSurface) <span class="m-label m-flat m-warning">pure virtual</span></span>
+            </dt>
+            <dd>Maps the given <a href="class_swarm_1_1_i_surface.html" class="m-doc">ISurface</a> to the specified ID.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a5f8ee44d90c9542c30ce719d87cfd995" class="m-doc">GetSurface</a>(</span><span class="m-doc-wrap">class <a href="class_resource_i_d.html" class="m-doc">ResourceID</a> surfaceID) -&gt; <a href="class_swarm_1_1_i_surface.html" class="m-doc">ISurface</a>* <span class="m-label m-flat m-warning">pure virtual</span></span>
+            </dt>
+            <dd>Gets the <a href="class_swarm_1_1_i_surface.html" class="m-doc">ISurface</a> mapped to the specified ID, or nullptr if none is mapped to that ID.</dd>
+            <dt id="ae97bb25f9ec49c6a184ffe2a22dbdbaa">
+              <span class="m-doc-wrap-bumper">void <a href="#ae97bb25f9ec49c6a184ffe2a22dbdbaa" class="m-doc-self">func80h</a>(</span><span class="m-doc-wrap">int,
+              int,
+              int,
+              int) <span class="m-label m-flat m-warning">pure virtual</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="af42606c76b2d8621de57ea02c16fc088">
+              <span class="m-doc-wrap-bumper">auto <a href="#af42606c76b2d8621de57ea02c16fc088" class="m-doc-self">func84h</a>(</span><span class="m-doc-wrap">int,
+              int,
+              int) -&gt; bool <span class="m-label m-flat m-warning">pure virtual</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a38675ce147dbe5b58f66baa8e0738202">
+              <span class="m-doc-wrap-bumper">void <a href="#a38675ce147dbe5b58f66baa8e0738202" class="m-doc-self">AddMapResource</a>(</span><span class="m-doc-wrap">class <a href="class_resource_i_d.html" class="m-doc">ResourceID</a>,
+              <a href="class_swarm_1_1_i_effect_map.html" class="m-doc">IEffectMap</a>*) <span class="m-label m-flat m-warning">pure virtual</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a4aa13ff62d9e4a945a44cc0882a38424">
+              <span class="m-doc-wrap-bumper">auto <a href="#a4aa13ff62d9e4a945a44cc0882a38424" class="m-doc-self">GetMapResource</a>(</span><span class="m-doc-wrap">class <a href="class_resource_i_d.html" class="m-doc">ResourceID</a>) -&gt; <a href="class_swarm_1_1_i_effect_map.html" class="m-doc">IEffectMap</a>* <span class="m-label m-flat m-warning">pure virtual</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a042526368a8d9aabde06c1c2dc02ffc8">
+              <span class="m-doc-wrap-bumper">void <a href="#a042526368a8d9aabde06c1c2dc02ffc8" class="m-doc-self">func90h</a>(</span><span class="m-doc-wrap">int,
+              int,
+              int) <span class="m-label m-flat m-warning">pure virtual</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a7a64b1088c4032ce651c3e97db9b2a2c">
+              <span class="m-doc-wrap-bumper">auto <a href="#a7a64b1088c4032ce651c3e97db9b2a2c" class="m-doc-self">func94h</a>(</span><span class="m-doc-wrap">int) -&gt; <a href="class_resource_i_d.html" class="m-doc">ResourceID</a> <span class="m-label m-flat m-warning">pure virtual</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">void <a href="#a78e870008c97a22c38e6289ff58b0904" class="m-doc">SetAppFlag</a>(</span><span class="m-doc-wrap">int flag,
+              bool bValue) <span class="m-label m-flat m-warning">pure virtual</span></span>
+            </dt>
+            <dd>Set the given application flag.</dd>
+            <dt id="a560e16a8a41a7ca70a959faa73c1f642">
+              <span class="m-doc-wrap-bumper">auto <a href="#a560e16a8a41a7ca70a959faa73c1f642" class="m-doc-self">func9Ch</a>(</span><span class="m-doc-wrap">int) -&gt; int <span class="m-label m-flat m-warning">pure virtual</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a6ef3c068d5f38f84e5a6c4cc0beab235">
+              <span class="m-doc-wrap-bumper">auto <a href="#a6ef3c068d5f38f84e5a6c4cc0beab235" class="m-doc-self">funcA0h</a>(</span><span class="m-doc-wrap">) -&gt; int <span class="m-label m-flat m-warning">pure virtual</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a37fc8c89a0a899bbf430d7b6c61767e8">
+              <span class="m-doc-wrap-bumper">auto <a href="#a37fc8c89a0a899bbf430d7b6c61767e8" class="m-doc-self">funcA4h</a>(</span><span class="m-doc-wrap">) -&gt; int <span class="m-label m-flat m-warning">pure virtual</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="acd3ce77d775c48c6a292501aeb4b638c">
+              <span class="m-doc-wrap-bumper">void <a href="#acd3ce77d775c48c6a292501aeb4b638c" class="m-doc-self">funcA8h</a>(</span><span class="m-doc-wrap">int) <span class="m-label m-flat m-warning">pure virtual</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="ac78c11b0d30718a9e8bdba7cf2e9454f">
+              <span class="m-doc-wrap-bumper">void <a href="#ac78c11b0d30718a9e8bdba7cf2e9454f" class="m-doc-self">funcACh</a>(</span><span class="m-doc-wrap">) <span class="m-label m-flat m-warning">pure virtual</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a046646e96fdecbc4d58ae54dc524191f">
+              <span class="m-doc-wrap-bumper">auto <a href="#a046646e96fdecbc4d58ae54dc524191f" class="m-doc-self">funcB0h</a>(</span><span class="m-doc-wrap">) -&gt; int <span class="m-label m-flat m-warning">pure virtual</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a429d183eaa3c6c0b6f831cf344d121df">
+              <span class="m-doc-wrap-bumper">void <a href="#a429d183eaa3c6c0b6f831cf344d121df" class="m-doc-self">funcB4h</a>(</span><span class="m-doc-wrap">int,
+              int,
+              int) <span class="m-label m-flat m-warning">pure virtual</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a7682f1ec0ed1140a0f7c2626a5417c8e">
+              <span class="m-doc-wrap-bumper">auto <a href="#a7682f1ec0ed1140a0f7c2626a5417c8e" class="m-doc-self">funcB8h</a>(</span><span class="m-doc-wrap">int,
+              const char*) -&gt; bool <span class="m-label m-flat m-warning">pure virtual</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a4baff2219e6eb101f61346d0eb5f8d4f">
+              <span class="m-doc-wrap-bumper">auto <a href="#a4baff2219e6eb101f61346d0eb5f8d4f" class="m-doc-self">funcBCh</a>(</span><span class="m-doc-wrap">int,
+              int) -&gt; int <span class="m-label m-flat m-warning">pure virtual</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a597b5222247158a443c9d2d5807a2eb6">
+              <span class="m-doc-wrap-bumper">auto <a href="#a597b5222247158a443c9d2d5807a2eb6" class="m-doc-self">funcC0h</a>(</span><span class="m-doc-wrap">int,
+              int) -&gt; int <span class="m-label m-flat m-warning">pure virtual</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="ab2ad7be238b0c71948164b6ca91c3d39">
+              <span class="m-doc-wrap-bumper">auto <a href="#ab2ad7be238b0c71948164b6ca91c3d39" class="m-doc-self">funcC4h</a>(</span><span class="m-doc-wrap">int,
+              int,
+              int) -&gt; bool <span class="m-label m-flat m-warning">pure virtual</span></span>
+            </dt>
+            <dd><span></span></dd>
+          </dl>
+        </section>
+        <section>
+          <h2>Function documentation</h2>
+          <section class="m-doc-details" id="a8c0584a5f9d0f5720733af6e2e427e37"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">bool Swarm::<wbr />ISwarmManager::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a8c0584a5f9d0f5720733af6e2e427e37" class="m-doc-self">HasEffect</a>(</span><span class="m-doc-wrap">uint32_t instanceID,
+              uint32_t groupID) const <span class="m-label m-warning">pure virtual</span></span></span>
+            </h3>
+            <p>Returns whether an effect with this instance and group ID exists in any of the effect directories (effdir) in the manager.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">instanceID</td>
+                  <td>The instance ID of the effect.</td>
+                </tr>
+                <tr>
+                  <td>groupID</td>
+                  <td>The group ID of the effect, usually 0.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="ad9d3502ca3b9b0a4037145fcb104bcb3"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">bool Swarm::<wbr />ISwarmManager::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ad9d3502ca3b9b0a4037145fcb104bcb3" class="m-doc-self">CreateEffect</a>(</span><span class="m-doc-wrap">uint32_t instanceID,
+              uint32_t groupID,
+              intrusive_ptr&lt;<a href="class_swarm_1_1_i_effect.html" class="m-doc">IEffect</a>&gt;&amp; dst) <span class="m-label m-warning">pure virtual</span></span></span>
+            </h3>
+            <p>Creates an effect object with this instance and group ID in the active effect world.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">instanceID</td>
+                  <td>The instance ID of the effect.</td>
+                </tr>
+                <tr>
+                  <td>groupID</td>
+                  <td>The group ID of the effect, usually 0.</td>
+                </tr>
+                <tr>
+                  <td>dst&nbsp;<span class="m-label m-flat m-warning">out</span></td>
+                  <td>An uninitialized intrusive_ptr&lt;IEffect&gt; where the effect will be put.</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>Returns</th>
+                  <td>True if the effect was found and returned, false otherwise.</td>
+                </tr>
+              </tfoot>
+            </table>
+<p>The destination is an uninitialized intrusive_ptr; the object must be nullptr or not be initialized, because it will be ignored.</p>
+          </div></section>
+          <section class="m-doc-details" id="ad6a5e1ccb037c2fd7cc4296c81ce769b"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"><a href="class_swarm_1_1_i_effect_world.html" class="m-doc">IEffectWorld</a>* Swarm::<wbr />ISwarmManager::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ad6a5e1ccb037c2fd7cc4296c81ce769b" class="m-doc-self">CreateWorld</a>(</span><span class="m-doc-wrap">uint32_t worldID,
+              int = 0) <span class="m-label m-warning">pure virtual</span></span></span>
+            </h3>
+            <p>Creates a new <a href="class_swarm_1_1_i_effect_world.html" class="m-doc">IEffectWorld</a> mapped to the given ID.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">worldID</td>
+                  <td>The ID the world will be mapped to.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="a43288d1c2329671229a95669288d794d"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">void Swarm::<wbr />ISwarmManager::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a43288d1c2329671229a95669288d794d" class="m-doc-self">RemoveWorld</a>(</span><span class="m-doc-wrap">uint32_t worldID) <span class="m-label m-warning">pure virtual</span></span></span>
+            </h3>
+            <p>Removes the <a href="class_swarm_1_1_i_effect_world.html" class="m-doc">IEffectWorld</a> mapped to the given ID from this manager.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">worldID</td>
+                  <td>The ID the world to remove is mapped to.</td>
+                </tr>
+              </tbody>
+            </table>
+<p>If the ID is not mapped, this method does nothing.</p>
+          </div></section>
+          <section class="m-doc-details" id="ae1cdbc662d2cff8daf4d78685130fbe6"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"><a href="class_swarm_1_1_i_effect_world.html" class="m-doc">IEffectWorld</a>* Swarm::<wbr />ISwarmManager::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ae1cdbc662d2cff8daf4d78685130fbe6" class="m-doc-self">GetWorld</a>(</span><span class="m-doc-wrap">uint32_t worldID) <span class="m-label m-warning">pure virtual</span></span></span>
+            </h3>
+            <p>Returns the <a href="class_swarm_1_1_i_effect_world.html" class="m-doc">IEffectWorld</a> mapped to the given ID, or nullptr if the ID is not mapped.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">worldID</td>
+                  <td>The ID the world is mapped to.</td>
+                </tr>
+              </tbody>
+            </table>
+<p>An ID of 0 returns the default world.</p>
+          </div></section>
+          <section class="m-doc-details" id="a9db4bce619827b85486ff51c1a4c4029"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">void Swarm::<wbr />ISwarmManager::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a9db4bce619827b85486ff51c1a4c4029" class="m-doc-self">SetActiveWorld</a>(</span><span class="m-doc-wrap"><a href="class_swarm_1_1_i_effect_world.html" class="m-doc">IEffectWorld</a>* pWorld) <span class="m-label m-warning">pure virtual</span></span></span>
+            </h3>
+            <p>Sets the given effect world to be the active one; it does not need to be mapped.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">pWorld</td>
+                  <td>The world that will be set as active, or nullptr to set the default world.</td>
+                </tr>
+              </tbody>
+            </table>
+<p>If the world is nullptr, the default world will be set as active.</p>
+          </div></section>
+          <section class="m-doc-details" id="ad17a44ff9fbb03964b1efe7bd613c9d0"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">void Swarm::<wbr />ISwarmManager::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ad17a44ff9fbb03964b1efe7bd613c9d0" class="m-doc-self">AddSurface</a>(</span><span class="m-doc-wrap">class <a href="class_resource_i_d.html" class="m-doc">ResourceID</a> surfaceID,
+              <a href="class_swarm_1_1_i_surface.html" class="m-doc">ISurface</a>* pSurface) <span class="m-label m-warning">pure virtual</span></span></span>
+            </h3>
+            <p>Maps the given <a href="class_swarm_1_1_i_surface.html" class="m-doc">ISurface</a> to the specified ID.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">surfaceID</td>
+                  <td>The ID of the surface.</td>
+                </tr>
+                <tr>
+                  <td>pSurface</td>
+                  <td></td>
+                </tr>
+              </tbody>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="a5f8ee44d90c9542c30ce719d87cfd995"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"><a href="class_swarm_1_1_i_surface.html" class="m-doc">ISurface</a>* Swarm::<wbr />ISwarmManager::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a5f8ee44d90c9542c30ce719d87cfd995" class="m-doc-self">GetSurface</a>(</span><span class="m-doc-wrap">class <a href="class_resource_i_d.html" class="m-doc">ResourceID</a> surfaceID) <span class="m-label m-warning">pure virtual</span></span></span>
+            </h3>
+            <p>Gets the <a href="class_swarm_1_1_i_surface.html" class="m-doc">ISurface</a> mapped to the specified ID, or nullptr if none is mapped to that ID.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">surfaceID</td>
+                  <td>The ID of the surface.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="a78e870008c97a22c38e6289ff58b0904"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">void Swarm::<wbr />ISwarmManager::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a78e870008c97a22c38e6289ff58b0904" class="m-doc-self">SetAppFlag</a>(</span><span class="m-doc-wrap">int flag,
+              bool bValue) <span class="m-label m-warning">pure virtual</span></span></span>
+            </h3>
+            <p>Set the given application flag.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">flag</td>
+                  <td>The flag to set.</td>
+                </tr>
+                <tr>
+                  <td>bValue</td>
+                  <td>The new value of the flag.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div></section>
+        </section>
+      </div>
+    </div>
+  </div>
+</article></main>
+<div class="m-doc-search" id="search">
+  <a href="#!" onclick="return hideSearch()"></a>
+  <div class="m-container">
+    <div class="m-row">
+      <div class="m-col-m-8 m-push-m-2">
+        <div class="m-doc-search-header m-text m-small">
+          <div><span class="m-label m-default">Tab</span> / <span class="m-label m-default">T</span> to search, <span class="m-label m-default">Esc</span> to close</div>
+          <div id="search-symbolcount">&hellip;</div>
+        </div>
+        <div class="m-doc-search-content">
+          <form>
+            <input type="search" name="q" id="search-input" placeholder="Loading &hellip;" disabled="disabled" autofocus="autofocus" autocomplete="off" spellcheck="false" />
+          </form>
+          <noscript class="m-text m-danger m-text-center">Unlike everything else in the docs, the search functionality <em>requires</em> JavaScript.</noscript>
+          <div id="search-help" class="m-text m-dim m-text-center">
+            <p class="m-noindent">Search for symbols, directories, files, pages or
+            modules. You can omit any prefix from the symbol or file path; adding a
+            <code>:</code> or <code>/</code> suffix lists all members of given symbol or
+            directory.</p>
+            <p class="m-noindent">Use <span class="m-label m-dim">&darr;</span>
+            / <span class="m-label m-dim">&uarr;</span> to navigate through the list,
+            <span class="m-label m-dim">Enter</span> to go.
+            <span class="m-label m-dim">Tab</span> autocompletes common prefix, you can
+            copy a link to the result using <span class="m-label m-dim">⌘</span>
+            <span class="m-label m-dim">L</span> while <span class="m-label m-dim">⌘</span>
+            <span class="m-label m-dim">M</span> produces a Markdown link.</p>
+          </div>
+          <div id="search-notfound" class="m-text m-warning m-text-center">Sorry, nothing was found.</div>
+          <ul id="search-results"></ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="search-v1.js"></script>
+<script src="searchdata-v1.js" async="async"></script>
+<footer><nav>
+  <div class="m-container">
+    <div class="m-row">
+      <div class="m-col-l-10 m-push-l-1">
+        <p>Spore ModAPI SDK for creating C++ mods for Spore. Created with <a href="https://doxygen.org/">Doxygen</a> 1.8.16 and <a href="https://mcss.mosra.cz/">m.css</a>.</p>
+      </div>
+    </div>
+  </div>
+</nav></footer>
+</body>
+</html>

@@ -14,7 +14,7 @@
 <header><nav id="navigation">
   <div class="m-container">
     <div class="m-row">
-      <a href="index.html" id="m-navbar-brand" class="m-col-t-8 m-col-m-none m-left-m"><img src="Spore_ModAPI_Icon.png" alt="" />Spore ModAPI <span class="m-thin">SDK for creating C++ mods for Spore</span></a>
+      <a href="index.html" id="m-navbar-brand" class="m-col-t-8 m-col-m-none m-left-m"><img src="Spore_ModAPI_Icon.png" />Spore ModAPI <span class="m-thin">SDK for creating C++ mods for Spore</span></a>
       <div class="m-col-t-4 m-hide-m m-text-right m-nopadr">
         <a href="#search" class="m-doc-search-icon" title="Search" onclick="return showSearch()"><svg style="height: 0.9rem;" viewBox="0 0 16 16">
           <path id="m-doc-search-icon-path" d="m6 0c-3.31 0-6 2.69-6 6 0 3.31 2.69 6 6 6 1.49 0 2.85-0.541 3.89-1.44-0.0164 0.338 0.147 0.759 0.5 1.15l3.22 3.79c0.552 0.614 1.45 0.665 2 0.115 0.55-0.55 0.499-1.45-0.115-2l-3.79-3.22c-0.392-0.353-0.812-0.515-1.15-0.5 0.895-1.05 1.44-2.41 1.44-3.89 0-3.31-2.69-6-6-6zm0 1.56a4.44 4.44 0 0 1 4.44 4.44 4.44 4.44 0 0 1-4.44 4.44 4.44 4.44 0 0 1-4.44-4.44 4.44 4.44 0 0 1 4.44-4.44z"/>
@@ -46,10 +46,10 @@
       <div class="m-col-l-10 m-push-l-1">
         <h1>
           <span class="m-breadcrumb"><a href="namespace_math.html">Math</a>::<wbr/></span>ColorRGB <span class="m-thin">struct</span>
-          <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_math_utils_8h.html">&lt;/home/runner/work/Spore-ModAPI/Spore-ModAPI/Spore-ModAPI/Spore ModAPI/Spore/MathUtils.h&gt;</a></div>
+          <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_math_utils_8h.html">&lt;Spore/MathUtils.h&gt;</a></div>
         </h1>
         <p>Three float values in the range [0, 1] that represent a color (the red, green and blue components).</p>
-        <nav class="m-block m-default">
+        <div class="m-block m-default">
           <h3>Contents</h3>
           <ul>
             <li>
@@ -61,14 +61,14 @@
               </ul>
             </li>
           </ul>
-        </nav>
+        </div>
         <section id="typeless-methods">
           <h2><a href="#typeless-methods">Constructors, destructors, conversion operators</a></h2>
           <dl class="m-doc">
             <dt id="a9ece1f1573fe5cc905af0f192bdf8203">
-              <span class="m-doc-wrap-bumper"><a href="#a9ece1f1573fe5cc905af0f192bdf8203" class="m-doc-self">ColorRGB</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">float</a> r,
-              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">float</a> g,
-              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">float</a> b)</span>
+              <span class="m-doc-wrap-bumper"><a href="#a9ece1f1573fe5cc905af0f192bdf8203" class="m-doc-self">ColorRGB</a>(</span><span class="m-doc-wrap">float r,
+              float g,
+              float b)</span>
             </dt>
             <dd><span></span></dd>
             <dt id="abb466a8a3123700edaff041a8cafe833">
@@ -85,9 +85,9 @@
           <h2><a href="#pub-methods">Public functions</a></h2>
           <dl class="m-doc">
             <dt id="a62402f6dcf25d713ede4e9d0d6f48eb4">
-              <span class="m-doc-wrap-bumper">auto <a href="#a62402f6dcf25d713ede4e9d0d6f48eb4" class="m-doc-self">Set</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">float</a> r,
-              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">float</a> g,
-              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">float</a> b) -&gt; <a href="struct_math_1_1_color_r_g_b.html" class="m-doc">ColorRGB</a>&amp;</span>
+              <span class="m-doc-wrap-bumper">auto <a href="#a62402f6dcf25d713ede4e9d0d6f48eb4" class="m-doc-self">Set</a>(</span><span class="m-doc-wrap">float r,
+              float g,
+              float b) -&gt; <a href="struct_math_1_1_color_r_g_b.html" class="m-doc">ColorRGB</a>&amp;</span>
             </dt>
             <dd><span></span></dd>
             <dt id="a7032bb7b6e8d8a6aff502077bf236e7c">
@@ -95,11 +95,11 @@
             </dt>
             <dd>Returns the integer representation of the given color (in the form of a <a href="struct_math_1_1_color.html" class="m-doc">Color</a> value).</dd>
             <dt id="a91d155d336f30188f088f51c62db3d05">
-              <span class="m-doc-wrap-bumper">auto <a href="#a91d155d336f30188f088f51c62db3d05" class="m-doc-self">operator==</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">const</a> <a href="struct_math_1_1_color_r_g_b.html" class="m-doc">ColorRGB</a>&amp; b) const -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">bool</a></span>
+              <span class="m-doc-wrap-bumper">auto <a href="#a91d155d336f30188f088f51c62db3d05" class="m-doc-self">operator==</a>(</span><span class="m-doc-wrap">const <a href="struct_math_1_1_color_r_g_b.html" class="m-doc">ColorRGB</a>&amp; b) const -&gt; bool</span>
             </dt>
             <dd><span></span></dd>
             <dt id="ad3a377792263894250f3846c2ae676d7">
-              <span class="m-doc-wrap-bumper">auto <a href="#ad3a377792263894250f3846c2ae676d7" class="m-doc-self">operator!=</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">const</a> <a href="struct_math_1_1_color_r_g_b.html" class="m-doc">ColorRGB</a>&amp; b) const -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">bool</a></span>
+              <span class="m-doc-wrap-bumper">auto <a href="#ad3a377792263894250f3846c2ae676d7" class="m-doc-self">operator!=</a>(</span><span class="m-doc-wrap">const <a href="struct_math_1_1_color_r_g_b.html" class="m-doc">ColorRGB</a>&amp; b) const -&gt; bool</span>
             </dt>
             <dd><span></span></dd>
           </dl>
@@ -108,15 +108,15 @@
           <h2><a href="#pub-attribs">Public variables</a></h2>
           <dl class="m-doc">
             <dt id="afd6893590f8460c9946ee4e3956b6edf">
-              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">float</a> <a href="#afd6893590f8460c9946ee4e3956b6edf" class="m-doc-self">r</a>
+              float <a href="#afd6893590f8460c9946ee4e3956b6edf" class="m-doc-self">r</a>
             </dt>
             <dd><span></span></dd>
             <dt id="ae3d355bb800e41d6eb40a9c5e31a1f19">
-              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">float</a> <a href="#ae3d355bb800e41d6eb40a9c5e31a1f19" class="m-doc-self">g</a>
+              float <a href="#ae3d355bb800e41d6eb40a9c5e31a1f19" class="m-doc-self">g</a>
             </dt>
             <dd><span></span></dd>
             <dt id="a520a829647457273856dd08b9ba6bf26">
-              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">float</a> <a href="#a520a829647457273856dd08b9ba6bf26" class="m-doc-self">b</a>
+              float <a href="#a520a829647457273856dd08b9ba6bf26" class="m-doc-self">b</a>
             </dt>
             <dd><span></span></dd>
           </dl>
@@ -159,13 +159,13 @@
     </div>
   </div>
 </div>
-<script src="search-v2.js"></script>
-<script src="searchdata-v2.js" async="async"></script>
+<script src="search-v1.js"></script>
+<script src="searchdata-v1.js" async="async"></script>
 <footer><nav>
   <div class="m-container">
     <div class="m-row">
       <div class="m-col-l-10 m-push-l-1">
-        <p>Spore ModAPI SDK for creating C++ mods for Spore. Created with <a href="https://doxygen.org/">Doxygen</a> 1.9.8 and <a href="https://mcss.mosra.cz/">m.css</a>.</p>
+        <p>Spore ModAPI SDK for creating C++ mods for Spore. Created with <a href="https://doxygen.org/">Doxygen</a> 1.8.16 and <a href="https://mcss.mosra.cz/">m.css</a>.</p>
       </div>
     </div>
   </div>

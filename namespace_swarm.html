@@ -14,7 +14,7 @@
 <header><nav id="navigation">
   <div class="m-container">
     <div class="m-row">
-      <a href="index.html" id="m-navbar-brand" class="m-col-t-8 m-col-m-none m-left-m"><img src="Spore_ModAPI_Icon.png" alt="" />Spore ModAPI <span class="m-thin">SDK for creating C++ mods for Spore</span></a>
+      <a href="index.html" id="m-navbar-brand" class="m-col-t-8 m-col-m-none m-left-m"><img src="Spore_ModAPI_Icon.png" />Spore ModAPI <span class="m-thin">SDK for creating C++ mods for Spore</span></a>
       <div class="m-col-t-4 m-hide-m m-text-right m-nopadr">
         <a href="#search" class="m-doc-search-icon" title="Search" onclick="return showSearch()"><svg style="height: 0.9rem;" viewBox="0 0 16 16">
           <path id="m-doc-search-icon-path" d="m6 0c-3.31 0-6 2.69-6 6 0 3.31 2.69 6 6 6 1.49 0 2.85-0.541 3.89-1.44-0.0164 0.338 0.147 0.759 0.5 1.15l3.22 3.79c0.552 0.614 1.45 0.665 2 0.115 0.55-0.55 0.499-1.45-0.115-2l-3.79-3.22c-0.392-0.353-0.812-0.515-1.15-0.5 0.895-1.05 1.44-2.41 1.44-3.89 0-3.31-2.69-6-6-6zm0 1.56a4.44 4.44 0 0 1 4.44 4.44 4.44 4.44 0 0 1-4.44 4.44 4.44 4.44 0 0 1-4.44-4.44 4.44 4.44 0 0 1 4.44-4.44z"/>
@@ -48,7 +48,7 @@
           Swarm <span class="m-thin">namespace</span>
         </h1>
         <p>Swarm is the effects system in Spore</p>
-        <nav class="m-block m-default">
+        <div class="m-block m-default">
           <h3>Contents</h3>
           <ul>
             <li>
@@ -62,7 +62,7 @@
               </ul>
             </li>
           </ul>
-        </nav>
+        </div>
 <p>This namespace contains all the necessary classes needed for working with the <a href="namespace_swarm.html" class="m-doc">Swarm</a> effect system. The main class is the Swarm::ISwarmManager, which is used to control everything related with the system. Swarm::IEffect classes are instances of the effects which can be sued to display and transform effects in the game.</p>
         <section id="namespaces">
           <h2><a href="#namespaces">Namespaces</a></h2>
@@ -75,23 +75,11 @@
           <h2><a href="#nested-classes">Classes</a></h2>
           <dl class="m-doc">
             <dt>
-              class <a href="class_swarm_1_1c_camera_description.html" class="m-doc">cCameraDescription</a>
-            </dt>
-            <dd><span></span></dd>
-            <dt>
-              class <a href="class_swarm_1_1c_camera_effect.html" class="m-doc">cCameraEffect</a>
-            </dt>
-            <dd><span></span></dd>
-            <dt>
               class <a href="class_swarm_1_1c_component_base.html" class="m-doc">cComponentBase</a>
             </dt>
             <dd><span></span></dd>
             <dt>
               class <a href="class_swarm_1_1c_description.html" class="m-doc">cDescription</a>
-            </dt>
-            <dd><span></span></dd>
-            <dt>
-              class <a href="class_swarm_1_1c_distribute_description.html" class="m-doc">cDistributeDescription</a>
             </dt>
             <dd><span></span></dd>
             <dt>
@@ -147,14 +135,6 @@
             </dt>
             <dd><span></span></dd>
             <dt>
-              struct <a href="struct_swarm_1_1c_surface_rec.html" class="m-doc">cSurfaceRec</a>
-            </dt>
-            <dd><span></span></dd>
-            <dt>
-              class <a href="class_swarm_1_1c_texture_slot.html" class="m-doc">cTextureSlot</a>
-            </dt>
-            <dd><span></span></dd>
-            <dt>
               class <a href="class_swarm_1_1c_visual_effect.html" class="m-doc">cVisualEffect</a>
             </dt>
             <dd><span></span></dd>
@@ -166,10 +146,6 @@
               class <a href="class_swarm_1_1_effect_directory.html" class="m-doc">EffectDirectory</a>
             </dt>
             <dd>An <a href="class_swarm_1_1_effect_directory.html" class="m-doc">EffectDirectory</a> is a file that contains one or multiple effect declarations.</dd>
-            <dt>
-              class <a href="class_swarm_1_1_i_camera_manager.html" class="m-doc">ICameraManager</a>
-            </dt>
-            <dd><span></span></dd>
             <dt>
               class <a href="class_swarm_1_1_i_component.html" class="m-doc">IComponent</a>
             </dt>
@@ -191,15 +167,7 @@
             </dt>
             <dd>An effects world is a space in the game which contains effects.</dd>
             <dt>
-              class <a href="class_swarm_1_1_i_model_particle_streamer.html" class="m-doc">IModelParticleStreamer</a>
-            </dt>
-            <dd><span></span></dd>
-            <dt>
               class <a href="class_swarm_1_1_i_surface.html" class="m-doc">ISurface</a>
-            </dt>
-            <dd><span></span></dd>
-            <dt>
-              class <a href="class_swarm_1_1_i_texture_particle_streamer.html" class="m-doc">ITextureParticleStreamer</a>
             </dt>
             <dd><span></span></dd>
             <dt>
@@ -211,27 +179,6 @@
         <section id="enum-members">
           <h2><a href="#enum-members">Enums</a></h2>
           <dl class="m-doc">
-            <dt>
-              <span class="m-doc-wrap-bumper">enum class <a href="#aacc0dc9ee5f113471fe6b6528339a61f" class="m-doc">DrawMode</a>: <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">uint8_<wbr />t</a> { </span><span class="m-doc-wrap"><a href="#aacc0dc9ee5f113471fe6b6528339a61fa19f7025884bcae0a100d41ff28b70d3d" class="m-doc">Decal</a> = 0,
-              <a href="#aacc0dc9ee5f113471fe6b6528339a61fa9d943e14d3a7318a8f3765b6a1221116" class="m-doc">DecalInvertDepth</a> = 1,
-              <a href="#aacc0dc9ee5f113471fe6b6528339a61faa94081960b753e1c7c806c435c675b68" class="m-doc">DecalIgnoreDepth</a> = 2,
-              <a href="#aacc0dc9ee5f113471fe6b6528339a61fadb27cdb0ebe4c91a0e317dc5dd01b47b" class="m-doc">DepthDecal</a> = 3,
-              <a href="#aacc0dc9ee5f113471fe6b6528339a61fa1a6d7e219d4927d69cf69f4dd3549507" class="m-doc">DecalDepth</a> = 3,
-              <a href="#aacc0dc9ee5f113471fe6b6528339a61fa3f7b3d8ee7bf0d542bd50821c083888f" class="m-doc">Additive</a> = 4,
-              <a href="#aacc0dc9ee5f113471fe6b6528339a61fa37d11980f3d46268913b296f19fb8c8c" class="m-doc">AdditiveInvertDepth</a> = 5,
-              <a href="#aacc0dc9ee5f113471fe6b6528339a61fad37b3195ada81cecbb5bda03d5a58bec" class="m-doc">AdditiveIgnoreDepth</a> = 6,
-              <a href="#aacc0dc9ee5f113471fe6b6528339a61fac870e2fca2609e8077de9470fbb9ab43" class="m-doc">Modulate</a> = 7,
-              <a href="#aacc0dc9ee5f113471fe6b6528339a61fa6b9d0d690dd35849b77d2c234ce90d90" class="m-doc">NormalMap</a> = 8,
-              <a href="#aacc0dc9ee5f113471fe6b6528339a61fa75f2dbe3a87393efa9bc9481800851ff" class="m-doc">DepthNormalMap</a> = 9,
-              <a href="#aacc0dc9ee5f113471fe6b6528339a61fa15782dd91585ecc22d502b7e1f07fceb" class="m-doc">NormalMapDepth</a> = 9,
-              <a href="#aacc0dc9ee5f113471fe6b6528339a61facdf554dc46692c82b61ea5bbe0fe1adf" class="m-doc">AlphaTestDissolve</a> = 0xA,
-              <a href="#aacc0dc9ee5f113471fe6b6528339a61fa6b908b785fdba05a6446347dae08d8c5" class="m-doc">User1</a> = 0xB,
-              <a href="#aacc0dc9ee5f113471fe6b6528339a61faa09bccf2b2963982b34dc0e08d8b582a" class="m-doc">User2</a> = 0xC,
-              <a href="#aacc0dc9ee5f113471fe6b6528339a61fae5d2ad241ec44cf155bc78ae8d11f715" class="m-doc">User3</a> = 0xD,
-              <a href="#aacc0dc9ee5f113471fe6b6528339a61fa5ad55d96abf0e50647d6de116530d6df" class="m-doc">User4</a> = 0xE,
-              <a href="#aacc0dc9ee5f113471fe6b6528339a61fa6adf97f83acf6453d4a6a4b1070f3754" class="m-doc">None</a> = 0xF }</span>
-            </dt>
-            <dd><span></span></dd>
             <dt>
               <span class="m-doc-wrap-bumper">enum <a href="#a6f7039b9e23850cb5fad894ac39263fe" class="m-doc">AppFlags</a> { </span><span class="m-doc-wrap"><a href="#a6f7039b9e23850cb5fad894ac39263fea76bcc869a5cd1e5eaf9ad1d9a1e09118" class="m-doc">kAppFlagDeepWater</a>,
               <a href="#a6f7039b9e23850cb5fad894ac39263fea3f648c6b40fc38f2bcd993bc6dfc263d" class="m-doc">kAppFlagShallowWater</a>,
@@ -354,7 +301,7 @@
           <h2><a href="#typedef-members">Typedefs</a></h2>
           <dl class="m-doc">
             <dt>
-              using <a href="#ace94634889cb77807f44b7f33780e3c4" class="m-doc">VisualEffectCallback_t</a> = <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">void</a>(*)(IVisualEffect*, void*)
+              using <a href="#ace94634889cb77807f44b7f33780e3c4" class="m-doc">VisualEffectCallback_t</a> = void(*)(IVisualEffect*, void*)
             </dt>
             <dd><span></span></dd>
           </dl>
@@ -363,21 +310,16 @@
           <h2><a href="#func-members">Functions</a></h2>
           <dl class="m-doc">
             <dt>
-              <span class="m-doc-wrap-bumper"><a href="#a2c318931914dd9a044fa803e2994b548" class="m-doc">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_swarm_1_1c_camera_effect.html" class="m-doc">cCameraEffect</a>,
-              0x6C)</span>
-            </dt>
-            <dd><span></span></dd>
-            <dt>
               <span class="m-doc-wrap-bumper"><a href="#a9afb30cf56d9640ba89cec832d33fb5e" class="m-doc">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_swarm_1_1c_effects_manager.html" class="m-doc">cEffectsManager</a>,
               0x258)</span>
             </dt>
             <dd><span></span></dd>
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#a7457d7cd4ef1fc892bc12fc134d29cc2" class="m-doc">Addresses</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">cSwarmManager</a>) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">namespace</a></span>
+              <span class="m-doc-wrap-bumper">auto <a href="#a7457d7cd4ef1fc892bc12fc134d29cc2" class="m-doc">Addresses</a>(</span><span class="m-doc-wrap">cSwarmManager) -&gt; namespace</span>
             </dt>
             <dd><span></span></dd>
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#a61fb12ab7ac71827ceb115d9e7c41826" class="m-doc">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_swarm_1_1c_effects_manager.html" class="m-doc">cEffectsManager</a>) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">namespace</a></span>
+              <span class="m-doc-wrap-bumper">auto <a href="#a61fb12ab7ac71827ceb115d9e7c41826" class="m-doc">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_swarm_1_1c_effects_manager.html" class="m-doc">cEffectsManager</a>) -&gt; namespace</span>
             </dt>
             <dd><span></span></dd>
             <dt>
@@ -393,21 +335,6 @@
             <dt>
               <span class="m-doc-wrap-bumper"><a href="#aff4e2223b81a40375b64827e76ccaeef" class="m-doc">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_swarm_1_1_collection_resource.html" class="m-doc">CollectionResource</a>,
               0x18)</span>
-            </dt>
-            <dd><span></span></dd>
-            <dt>
-              <span class="m-doc-wrap-bumper"><a href="#a89157a2c25ff21b5eaa54bd3ca9617c8" class="m-doc">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_swarm_1_1c_camera_description.html" class="m-doc">cCameraDescription</a>,
-              0xB0)</span>
-            </dt>
-            <dd><span></span></dd>
-            <dt>
-              <span class="m-doc-wrap-bumper"><a href="#a4a6ae4e1fc089b7a8e63343be3c519d2" class="m-doc">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_swarm_1_1c_distribute_description.html" class="m-doc">cDistributeDescription</a>,
-              0x180)</span>
-            </dt>
-            <dd><span></span></dd>
-            <dt>
-              <span class="m-doc-wrap-bumper"><a href="#aa532574d6ab138da4c300f225cbdfe8b" class="m-doc">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_swarm_1_1c_texture_slot.html" class="m-doc">cTextureSlot</a>,
-              0x20)</span>
             </dt>
             <dd><span></span></dd>
             <dt>
@@ -441,7 +368,7 @@
             </dt>
             <dd><span></span></dd>
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#a3b0ba7c7be7602ef875d8cdd8922c07b" class="m-doc">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_swarm_1_1c_skinpaint_settings_effect.html" class="m-doc">cSkinpaintSettingsEffect</a>) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">namespace</a></span>
+              <span class="m-doc-wrap-bumper">auto <a href="#a3b0ba7c7be7602ef875d8cdd8922c07b" class="m-doc">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_swarm_1_1c_skinpaint_settings_effect.html" class="m-doc">cSkinpaintSettingsEffect</a>) -&gt; namespace</span>
             </dt>
             <dd><span></span></dd>
             <dt>
@@ -465,21 +392,16 @@
             </dt>
             <dd><span></span></dd>
             <dt>
-              <span class="m-doc-wrap-bumper"><a href="#a4a7cf5116c2da6ccae2361db9a950664" class="m-doc">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_swarm_1_1c_component_base.html" class="m-doc">cComponentBase</a>,
-              0xC)</span>
-            </dt>
-            <dd><span></span></dd>
-            <dt>
               <span class="m-doc-wrap-bumper"><a href="#af2ebaf2fb87361ae94211ffc1c6e7e84" class="m-doc">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_swarm_1_1c_effect_map_base.html" class="m-doc">cEffectMapBase</a>,
               0xC)</span>
             </dt>
             <dd><span></span></dd>
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#a711c6a318c0d573c5be2243d72c5986c" class="m-doc">Addresses</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">ISwarmManager</a>) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">namespace</a></span>
+              <span class="m-doc-wrap-bumper">auto <a href="#a711c6a318c0d573c5be2243d72c5986c" class="m-doc">Addresses</a>(</span><span class="m-doc-wrap">ISwarmManager) -&gt; namespace</span>
             </dt>
             <dd><span></span></dd>
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#a0a147913c2a91192428725a35d335d32" class="m-doc">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_swarm_1_1_i_effects_manager.html" class="m-doc">IEffectsManager</a>) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">namespace</a></span>
+              <span class="m-doc-wrap-bumper">auto <a href="#a0a147913c2a91192428725a35d335d32" class="m-doc">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_swarm_1_1_i_effects_manager.html" class="m-doc">IEffectsManager</a>) -&gt; namespace</span>
             </dt>
             <dd><span></span></dd>
             <dt>
@@ -487,47 +409,35 @@
               0x24)</span>
             </dt>
             <dd><span></span></dd>
-            <dt>
-              <span class="m-doc-wrap-bumper"><a href="#a1e3d4743e3d16a61bf4784010f3129a8" class="m-doc">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="struct_swarm_1_1c_surface_rec.html" class="m-doc">cSurfaceRec</a>,
-              0x18)</span>
-            </dt>
-            <dd><span></span></dd>
           </dl>
         </section>
         <section>
           <h2>Enum documentation</h2>
-          <section class="m-doc-details" id="aacc0dc9ee5f113471fe6b6528339a61f"><div>
-            <h3>
-              enum class Swarm::<wbr /><a href="#aacc0dc9ee5f113471fe6b6528339a61f" class="m-doc-self">DrawMode</a>: <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">uint8_<wbr />t</a>
-              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="c_texture_slot_8h.html">&lt;/home/runner/work/Spore-ModAPI/Spore-ModAPI/Spore-ModAPI/Spore ModAPI/Spore/Swarm/Components/cTextureSlot.h&gt;</a></div>
-            </h3>
-            <p><span></span></p>
-          </div></section>
           <section class="m-doc-details" id="a6f7039b9e23850cb5fad894ac39263fe"><div>
             <h3>
               enum Swarm::<wbr /><a href="#a6f7039b9e23850cb5fad894ac39263fe" class="m-doc-self">AppFlags</a>
-              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_swarm_2_constants_8h.html">&lt;/home/runner/work/Spore-ModAPI/Spore-ModAPI/Spore-ModAPI/Spore ModAPI/Spore/Swarm/Constants.h&gt;</a></div>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_swarm_2_constants_8h.html">&lt;Spore/Swarm/Constants.h&gt;</a></div>
             </h3>
             <p><span></span></p>
           </div></section>
           <section class="m-doc-details" id="a6686de4dbe2e9a614178c5563cb4cd7f"><div>
             <h3>
               enum Swarm::<wbr /><a href="#a6686de4dbe2e9a614178c5563cb4cd7f" class="m-doc-self">EffectTypes</a>
-              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_effect_directory_8h.html">&lt;/home/runner/work/Spore-ModAPI/Spore-ModAPI/Spore-ModAPI/Spore ModAPI/Spore/Swarm/EffectDirectory.h&gt;</a></div>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_effect_directory_8h.html">&lt;Spore/Swarm/EffectDirectory.h&gt;</a></div>
             </h3>
             <p><span></span></p>
           </div></section>
           <section class="m-doc-details" id="ae16361599ce4f01e8b6d7915b5861fc5"><div>
             <h3>
               enum class Swarm::<wbr /><a href="#ae16361599ce4f01e8b6d7915b5861fc5" class="m-doc-self">SwarmState</a>
-              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_i_visual_effect_8h.html">&lt;/home/runner/work/Spore-ModAPI/Spore-ModAPI/Spore-ModAPI/Spore ModAPI/Spore/Swarm/IVisualEffect.h&gt;</a></div>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_i_visual_effect_8h.html">&lt;Spore/Swarm/IVisualEffect.h&gt;</a></div>
             </h3>
             <p>An enum to represent the current state of an effect world and the <a href="namespace_swarm.html" class="m-doc">Swarm</a> manager.</p>
           </div></section>
           <section class="m-doc-details" id="a9ac38fc69759078415264c658a4cf0d5"><div>
             <h3>
               enum Swarm::<wbr /><a href="#a9ac38fc69759078415264c658a4cf0d5" class="m-doc-self">IntParams</a>
-              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_i_visual_effect_8h.html">&lt;/home/runner/work/Spore-ModAPI/Spore-ModAPI/Spore-ModAPI/Spore ModAPI/Spore/Swarm/IVisualEffect.h&gt;</a></div>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_i_visual_effect_8h.html">&lt;Spore/Swarm/IVisualEffect.h&gt;</a></div>
             </h3>
             <p><span></span></p>
             <table class="m-table m-fullwidth m-flat m-doc">
@@ -599,7 +509,7 @@
           <section class="m-doc-details" id="a60d10256ed2fabe0ec861b9c819ec4e9"><div>
             <h3>
               enum Swarm::<wbr /><a href="#a60d10256ed2fabe0ec861b9c819ec4e9" class="m-doc-self">FloatParams</a>
-              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_i_visual_effect_8h.html">&lt;/home/runner/work/Spore-ModAPI/Spore-ModAPI/Spore-ModAPI/Spore ModAPI/Spore/Swarm/IVisualEffect.h&gt;</a></div>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_i_visual_effect_8h.html">&lt;Spore/Swarm/IVisualEffect.h&gt;</a></div>
             </h3>
             <p><span></span></p>
             <table class="m-table m-fullwidth m-flat m-doc">
@@ -761,7 +671,7 @@
           <section class="m-doc-details" id="a42540da906ab90e418c67ff88ff26535"><div>
             <h3>
               enum Swarm::<wbr /><a href="#a42540da906ab90e418c67ff88ff26535" class="m-doc-self">ObjectParams</a>
-              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_i_visual_effect_8h.html">&lt;/home/runner/work/Spore-ModAPI/Spore-ModAPI/Spore-ModAPI/Spore ModAPI/Spore/Swarm/IVisualEffect.h&gt;</a></div>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_i_visual_effect_8h.html">&lt;Spore/Swarm/IVisualEffect.h&gt;</a></div>
             </h3>
             <p><span></span></p>
           </div></section>
@@ -770,41 +680,33 @@
           <h2>Typedef documentation</h2>
           <section class="m-doc-details" id="ace94634889cb77807f44b7f33780e3c4"><div>
             <h3>
-              typedef <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">void</a>(*Swarm::<wbr /><a href="#ace94634889cb77807f44b7f33780e3c4" class="m-doc-self">VisualEffectCallback_t</a>)(IVisualEffect*, void*)
-              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_i_effects_world_8h.html">&lt;/home/runner/work/Spore-ModAPI/Spore-ModAPI/Spore-ModAPI/Spore ModAPI/Spore/Swarm/IEffectsWorld.h&gt;</a></div>
+              typedef void(*Swarm::<wbr /><a href="#ace94634889cb77807f44b7f33780e3c4" class="m-doc-self">VisualEffectCallback_t</a>)(IVisualEffect*, void*)
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_i_effects_world_8h.html">&lt;Spore/Swarm/IEffectsWorld.h&gt;</a></div>
             </h3>
             <p><span></span></p>
           </div></section>
         </section>
         <section>
           <h2>Function documentation</h2>
-          <section class="m-doc-details" id="a2c318931914dd9a044fa803e2994b548"><div>
-            <h3>
-              <span class="m-doc-wrap-bumper"> Swarm::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a2c318931914dd9a044fa803e2994b548" class="m-doc-self">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_swarm_1_1c_camera_effect.html" class="m-doc">cCameraEffect</a>,
-              0x6C)</span></span>
-              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="c_camera_effect_8h.html">&lt;/home/runner/work/Spore-ModAPI/Spore-ModAPI/Spore-ModAPI/Spore ModAPI/Spore/Swarm/cCameraEffect.h&gt;</a></div>
-            </h3>
-            <p><span></span></p>
-          </div></section>
           <section class="m-doc-details" id="a9afb30cf56d9640ba89cec832d33fb5e"><div>
             <h3>
               <span class="m-doc-wrap-bumper"> Swarm::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a9afb30cf56d9640ba89cec832d33fb5e" class="m-doc-self">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_swarm_1_1c_effects_manager.html" class="m-doc">cEffectsManager</a>,
               0x258)</span></span>
-              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="c_effects_manager_8h.html">&lt;/home/runner/work/Spore-ModAPI/Spore-ModAPI/Spore-ModAPI/Spore ModAPI/Spore/Swarm/cEffectsManager.h&gt;</a></div>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="c_effects_manager_8h.html">&lt;Spore/Swarm/cEffectsManager.h&gt;</a></div>
             </h3>
             <p><span></span></p>
           </div></section>
           <section class="m-doc-details" id="a7457d7cd4ef1fc892bc12fc134d29cc2"><div>
             <h3>
-              <span class="m-doc-wrap-bumper"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">namespace</a> Swarm::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a7457d7cd4ef1fc892bc12fc134d29cc2" class="m-doc-self">Addresses</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">cSwarmManager</a>)</span></span>
-              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="c_effects_manager_8h.html">&lt;/home/runner/work/Spore-ModAPI/Spore-ModAPI/Spore-ModAPI/Spore ModAPI/Spore/Swarm/cEffectsManager.h&gt;</a></div>
+              <span class="m-doc-wrap-bumper">namespace Swarm::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a7457d7cd4ef1fc892bc12fc134d29cc2" class="m-doc-self">Addresses</a>(</span><span class="m-doc-wrap">cSwarmManager)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="c_effects_manager_8h.html">&lt;Spore/Swarm/cEffectsManager.h&gt;</a></div>
             </h3>
             <p><span></span></p>
           </div></section>
           <section class="m-doc-details" id="a61fb12ab7ac71827ceb115d9e7c41826"><div>
             <h3>
-              <span class="m-doc-wrap-bumper"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">namespace</a> Swarm::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a61fb12ab7ac71827ceb115d9e7c41826" class="m-doc-self">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_swarm_1_1c_effects_manager.html" class="m-doc">cEffectsManager</a>)</span></span>
-              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="c_effects_manager_8h.html">&lt;/home/runner/work/Spore-ModAPI/Spore-ModAPI/Spore-ModAPI/Spore ModAPI/Spore/Swarm/cEffectsManager.h&gt;</a></div>
+              <span class="m-doc-wrap-bumper">namespace Swarm::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a61fb12ab7ac71827ceb115d9e7c41826" class="m-doc-self">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_swarm_1_1c_effects_manager.html" class="m-doc">cEffectsManager</a>)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="c_effects_manager_8h.html">&lt;Spore/Swarm/cEffectsManager.h&gt;</a></div>
             </h3>
             <p><span></span></p>
           </div></section>
@@ -812,7 +714,7 @@
             <h3>
               <span class="m-doc-wrap-bumper"> Swarm::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#adcc899aa51b0219edac8749392f9a734" class="m-doc-self">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_swarm_1_1c_effects_world.html" class="m-doc">cEffectsWorld</a>,
               0xA4)</span></span>
-              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="c_effects_world_8h.html">&lt;/home/runner/work/Spore-ModAPI/Spore-ModAPI/Spore-ModAPI/Spore ModAPI/Spore/Swarm/cEffectsWorld.h&gt;</a></div>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="c_effects_world_8h.html">&lt;Spore/Swarm/cEffectsWorld.h&gt;</a></div>
             </h3>
             <p><span></span></p>
           </div></section>
@@ -820,7 +722,7 @@
             <h3>
               <span class="m-doc-wrap-bumper"> Swarm::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a470ca465afdfcf7d0b24ebc4730a4582" class="m-doc-self">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_swarm_1_1c_global_params.html" class="m-doc">cGlobalParams</a>,
               0x120)</span></span>
-              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="c_global_params_8h.html">&lt;/home/runner/work/Spore-ModAPI/Spore-ModAPI/Spore-ModAPI/Spore ModAPI/Spore/Swarm/cGlobalParams.h&gt;</a></div>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="c_global_params_8h.html">&lt;Spore/Swarm/cGlobalParams.h&gt;</a></div>
             </h3>
             <p><span></span></p>
           </div></section>
@@ -828,31 +730,7 @@
             <h3>
               <span class="m-doc-wrap-bumper"> Swarm::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#aff4e2223b81a40375b64827e76ccaeef" class="m-doc-self">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_swarm_1_1_collection_resource.html" class="m-doc">CollectionResource</a>,
               0x18)</span></span>
-              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_collection_resource_8h.html">&lt;/home/runner/work/Spore-ModAPI/Spore-ModAPI/Spore-ModAPI/Spore ModAPI/Spore/Swarm/CollectionResource.h&gt;</a></div>
-            </h3>
-            <p><span></span></p>
-          </div></section>
-          <section class="m-doc-details" id="a89157a2c25ff21b5eaa54bd3ca9617c8"><div>
-            <h3>
-              <span class="m-doc-wrap-bumper"> Swarm::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a89157a2c25ff21b5eaa54bd3ca9617c8" class="m-doc-self">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_swarm_1_1c_camera_description.html" class="m-doc">cCameraDescription</a>,
-              0xB0)</span></span>
-              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="c_camera_description_8h.html">&lt;/home/runner/work/Spore-ModAPI/Spore-ModAPI/Spore-ModAPI/Spore ModAPI/Spore/Swarm/Components/cCameraDescription.h&gt;</a></div>
-            </h3>
-            <p><span></span></p>
-          </div></section>
-          <section class="m-doc-details" id="a4a6ae4e1fc089b7a8e63343be3c519d2"><div>
-            <h3>
-              <span class="m-doc-wrap-bumper"> Swarm::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a4a6ae4e1fc089b7a8e63343be3c519d2" class="m-doc-self">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_swarm_1_1c_distribute_description.html" class="m-doc">cDistributeDescription</a>,
-              0x180)</span></span>
-              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="c_distribute_description_8h.html">&lt;/home/runner/work/Spore-ModAPI/Spore-ModAPI/Spore-ModAPI/Spore ModAPI/Spore/Swarm/Components/cDistributeDescription.h&gt;</a></div>
-            </h3>
-            <p><span></span></p>
-          </div></section>
-          <section class="m-doc-details" id="aa532574d6ab138da4c300f225cbdfe8b"><div>
-            <h3>
-              <span class="m-doc-wrap-bumper"> Swarm::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#aa532574d6ab138da4c300f225cbdfe8b" class="m-doc-self">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_swarm_1_1c_texture_slot.html" class="m-doc">cTextureSlot</a>,
-              0x20)</span></span>
-              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="c_texture_slot_8h.html">&lt;/home/runner/work/Spore-ModAPI/Spore-ModAPI/Spore-ModAPI/Spore ModAPI/Spore/Swarm/Components/cTextureSlot.h&gt;</a></div>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_collection_resource_8h.html">&lt;Spore/Swarm/CollectionResource.h&gt;</a></div>
             </h3>
             <p><span></span></p>
           </div></section>
@@ -860,7 +738,7 @@
             <h3>
               <span class="m-doc-wrap-bumper"> Swarm::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a6d089b5c18e17a8b746e637b7373ed0f" class="m-doc-self">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_swarm_1_1c_skinpaint_distribute_description.html" class="m-doc">cSkinpaintDistributeDescription</a>,
               0x54)</span></span>
-              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_skinpaint_distribute_effect_8h.html">&lt;/home/runner/work/Spore-ModAPI/Spore-ModAPI/Spore-ModAPI/Spore ModAPI/Spore/Swarm/Components/SkinpaintDistributeEffect.h&gt;</a></div>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_skinpaint_distribute_effect_8h.html">&lt;Spore/Swarm/Components/SkinpaintDistributeEffect.h&gt;</a></div>
             </h3>
             <p><span></span></p>
           </div></section>
@@ -868,7 +746,7 @@
             <h3>
               <span class="m-doc-wrap-bumper"> Swarm::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#accdb4af1d9bfcbee804c6a7e0704a719" class="m-doc-self">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_swarm_1_1c_skinpaint_distribute_effect.html" class="m-doc">cSkinpaintDistributeEffect</a>,
               0x30)</span></span>
-              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_skinpaint_distribute_effect_8h.html">&lt;/home/runner/work/Spore-ModAPI/Spore-ModAPI/Spore-ModAPI/Spore ModAPI/Spore/Swarm/Components/SkinpaintDistributeEffect.h&gt;</a></div>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_skinpaint_distribute_effect_8h.html">&lt;Spore/Swarm/Components/SkinpaintDistributeEffect.h&gt;</a></div>
             </h3>
             <p><span></span></p>
           </div></section>
@@ -876,7 +754,7 @@
             <h3>
               <span class="m-doc-wrap-bumper"> Swarm::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#af2ed3bb834b6cc4a4dd8c65ffb473d7b" class="m-doc-self">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_swarm_1_1c_skinpaint_particle_description.html" class="m-doc">cSkinpaintParticleDescription</a>,
               0xB8)</span></span>
-              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_skinpaint_particle_effect_8h.html">&lt;/home/runner/work/Spore-ModAPI/Spore-ModAPI/Spore-ModAPI/Spore ModAPI/Spore/Swarm/Components/SkinpaintParticleEffect.h&gt;</a></div>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_skinpaint_particle_effect_8h.html">&lt;Spore/Swarm/Components/SkinpaintParticleEffect.h&gt;</a></div>
             </h3>
             <p><span></span></p>
           </div></section>
@@ -884,7 +762,7 @@
             <h3>
               <span class="m-doc-wrap-bumper"> Swarm::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a45147931538aec76e04f5fac755ccf44" class="m-doc-self">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_swarm_1_1c_skinpaint_particle_effect.html" class="m-doc">cSkinpaintParticleEffect</a>,
               0x50)</span></span>
-              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_skinpaint_particle_effect_8h.html">&lt;/home/runner/work/Spore-ModAPI/Spore-ModAPI/Spore-ModAPI/Spore ModAPI/Spore/Swarm/Components/SkinpaintParticleEffect.h&gt;</a></div>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_skinpaint_particle_effect_8h.html">&lt;Spore/Swarm/Components/SkinpaintParticleEffect.h&gt;</a></div>
             </h3>
             <p><span></span></p>
           </div></section>
@@ -892,7 +770,7 @@
             <h3>
               <span class="m-doc-wrap-bumper"> Swarm::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ae32fdbb3b37435de96528e7466fa7ecc" class="m-doc-self">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_swarm_1_1c_skinpaint_settings_description.html" class="m-doc">cSkinpaintSettingsDescription</a>,
               0x70)</span></span>
-              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_skinpaint_settings_effect_8h.html">&lt;/home/runner/work/Spore-ModAPI/Spore-ModAPI/Spore-ModAPI/Spore ModAPI/Spore/Swarm/Components/SkinpaintSettingsEffect.h&gt;</a></div>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_skinpaint_settings_effect_8h.html">&lt;Spore/Swarm/Components/SkinpaintSettingsEffect.h&gt;</a></div>
             </h3>
             <p><span></span></p>
           </div></section>
@@ -900,14 +778,14 @@
             <h3>
               <span class="m-doc-wrap-bumper"> Swarm::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#af9cbf82723ceb474fb8b66182adfe9a8" class="m-doc-self">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_swarm_1_1c_skinpaint_settings_effect.html" class="m-doc">cSkinpaintSettingsEffect</a>,
               0x14)</span></span>
-              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_skinpaint_settings_effect_8h.html">&lt;/home/runner/work/Spore-ModAPI/Spore-ModAPI/Spore-ModAPI/Spore ModAPI/Spore/Swarm/Components/SkinpaintSettingsEffect.h&gt;</a></div>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_skinpaint_settings_effect_8h.html">&lt;Spore/Swarm/Components/SkinpaintSettingsEffect.h&gt;</a></div>
             </h3>
             <p><span></span></p>
           </div></section>
           <section class="m-doc-details" id="a3b0ba7c7be7602ef875d8cdd8922c07b"><div>
             <h3>
-              <span class="m-doc-wrap-bumper"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">namespace</a> Swarm::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a3b0ba7c7be7602ef875d8cdd8922c07b" class="m-doc-self">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_swarm_1_1c_skinpaint_settings_effect.html" class="m-doc">cSkinpaintSettingsEffect</a>)</span></span>
-              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_skinpaint_settings_effect_8h.html">&lt;/home/runner/work/Spore-ModAPI/Spore-ModAPI/Spore-ModAPI/Spore ModAPI/Spore/Swarm/Components/SkinpaintSettingsEffect.h&gt;</a></div>
+              <span class="m-doc-wrap-bumper">namespace Swarm::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a3b0ba7c7be7602ef875d8cdd8922c07b" class="m-doc-self">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_swarm_1_1c_skinpaint_settings_effect.html" class="m-doc">cSkinpaintSettingsEffect</a>)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_skinpaint_settings_effect_8h.html">&lt;Spore/Swarm/Components/SkinpaintSettingsEffect.h&gt;</a></div>
             </h3>
             <p><span></span></p>
           </div></section>
@@ -915,7 +793,7 @@
             <h3>
               <span class="m-doc-wrap-bumper"> Swarm::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a1135be1bf0ac8a3eb27a025fcdf05650" class="m-doc-self">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="struct_swarm_1_1c_visual_effect_description.html" class="m-doc">cVisualEffectDescription</a>,
               0x58)</span></span>
-              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_visual_effect_8h.html">&lt;/home/runner/work/Spore-ModAPI/Spore-ModAPI/Spore-ModAPI/Spore ModAPI/Spore/Swarm/Components/VisualEffect.h&gt;</a></div>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_visual_effect_8h.html">&lt;Spore/Swarm/Components/VisualEffect.h&gt;</a></div>
             </h3>
             <p><span></span></p>
           </div></section>
@@ -923,7 +801,7 @@
             <h3>
               <span class="m-doc-wrap-bumper"> Swarm::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#aa465c832e57f0d9cb087a84f4e396990" class="m-doc-self">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="struct_swarm_1_1c_surface_info.html" class="m-doc">cSurfaceInfo</a>,
               0x58)</span></span>
-              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="c_surface_info_8h.html">&lt;/home/runner/work/Spore-ModAPI/Spore-ModAPI/Spore-ModAPI/Spore ModAPI/Spore/Swarm/cSurfaceInfo.h&gt;</a></div>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="c_surface_info_8h.html">&lt;Spore/Swarm/cSurfaceInfo.h&gt;</a></div>
             </h3>
             <p><span></span></p>
           </div></section>
@@ -931,7 +809,7 @@
             <h3>
               <span class="m-doc-wrap-bumper"> Swarm::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a8593bb3c08ed616898a118eda8ebd56f" class="m-doc-self">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_swarm_1_1c_visual_effect.html" class="m-doc">cVisualEffect</a>,
               0x188)</span></span>
-              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="c_visual_effect_8h.html">&lt;/home/runner/work/Spore-ModAPI/Spore-ModAPI/Spore-ModAPI/Spore ModAPI/Spore/Swarm/cVisualEffect.h&gt;</a></div>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="c_visual_effect_8h.html">&lt;Spore/Swarm/cVisualEffect.h&gt;</a></div>
             </h3>
             <p><span></span></p>
           </div></section>
@@ -939,15 +817,7 @@
             <h3>
               <span class="m-doc-wrap-bumper"> Swarm::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ae3415a1d5271c7aa6fd239042b0a454d" class="m-doc-self">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_swarm_1_1_effect_directory.html" class="m-doc">EffectDirectory</a>,
               0x9C)</span></span>
-              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_effect_directory_8h.html">&lt;/home/runner/work/Spore-ModAPI/Spore-ModAPI/Spore-ModAPI/Spore ModAPI/Spore/Swarm/EffectDirectory.h&gt;</a></div>
-            </h3>
-            <p><span></span></p>
-          </div></section>
-          <section class="m-doc-details" id="a4a7cf5116c2da6ccae2361db9a950664"><div>
-            <h3>
-              <span class="m-doc-wrap-bumper"> Swarm::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a4a7cf5116c2da6ccae2361db9a950664" class="m-doc-self">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_swarm_1_1c_component_base.html" class="m-doc">cComponentBase</a>,
-              0xC)</span></span>
-              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_i_component_8h.html">&lt;/home/runner/work/Spore-ModAPI/Spore-ModAPI/Spore-ModAPI/Spore ModAPI/Spore/Swarm/IComponent.h&gt;</a></div>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_effect_directory_8h.html">&lt;Spore/Swarm/EffectDirectory.h&gt;</a></div>
             </h3>
             <p><span></span></p>
           </div></section>
@@ -955,21 +825,21 @@
             <h3>
               <span class="m-doc-wrap-bumper"> Swarm::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#af2ebaf2fb87361ae94211ffc1c6e7e84" class="m-doc-self">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_swarm_1_1c_effect_map_base.html" class="m-doc">cEffectMapBase</a>,
               0xC)</span></span>
-              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_i_effect_map_8h.html">&lt;/home/runner/work/Spore-ModAPI/Spore-ModAPI/Spore-ModAPI/Spore ModAPI/Spore/Swarm/IEffectMap.h&gt;</a></div>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_i_effect_map_8h.html">&lt;Spore/Swarm/IEffectMap.h&gt;</a></div>
             </h3>
             <p><span></span></p>
           </div></section>
           <section class="m-doc-details" id="a711c6a318c0d573c5be2243d72c5986c"><div>
             <h3>
-              <span class="m-doc-wrap-bumper"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">namespace</a> Swarm::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a711c6a318c0d573c5be2243d72c5986c" class="m-doc-self">Addresses</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">ISwarmManager</a>)</span></span>
-              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_i_effects_manager_8h.html">&lt;/home/runner/work/Spore-ModAPI/Spore-ModAPI/Spore-ModAPI/Spore ModAPI/Spore/Swarm/IEffectsManager.h&gt;</a></div>
+              <span class="m-doc-wrap-bumper">namespace Swarm::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a711c6a318c0d573c5be2243d72c5986c" class="m-doc-self">Addresses</a>(</span><span class="m-doc-wrap">ISwarmManager)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_i_effects_manager_8h.html">&lt;Spore/Swarm/IEffectsManager.h&gt;</a></div>
             </h3>
             <p><span></span></p>
           </div></section>
           <section class="m-doc-details" id="a0a147913c2a91192428725a35d335d32"><div>
             <h3>
-              <span class="m-doc-wrap-bumper"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">namespace</a> Swarm::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a0a147913c2a91192428725a35d335d32" class="m-doc-self">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_swarm_1_1_i_effects_manager.html" class="m-doc">IEffectsManager</a>)</span></span>
-              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_i_effects_manager_8h.html">&lt;/home/runner/work/Spore-ModAPI/Spore-ModAPI/Spore-ModAPI/Spore ModAPI/Spore/Swarm/IEffectsManager.h&gt;</a></div>
+              <span class="m-doc-wrap-bumper">namespace Swarm::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a0a147913c2a91192428725a35d335d32" class="m-doc-self">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_swarm_1_1_i_effects_manager.html" class="m-doc">IEffectsManager</a>)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_i_effects_manager_8h.html">&lt;Spore/Swarm/IEffectsManager.h&gt;</a></div>
             </h3>
             <p><span></span></p>
           </div></section>
@@ -977,15 +847,7 @@
             <h3>
               <span class="m-doc-wrap-bumper"> Swarm::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a16ff8e96e22eaf438ea6522cdfa64667" class="m-doc-self">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="struct_swarm_1_1c_effect_info.html" class="m-doc">cEffectInfo</a>,
               0x24)</span></span>
-              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_i_effects_world_8h.html">&lt;/home/runner/work/Spore-ModAPI/Spore-ModAPI/Spore-ModAPI/Spore ModAPI/Spore/Swarm/IEffectsWorld.h&gt;</a></div>
-            </h3>
-            <p><span></span></p>
-          </div></section>
-          <section class="m-doc-details" id="a1e3d4743e3d16a61bf4784010f3129a8"><div>
-            <h3>
-              <span class="m-doc-wrap-bumper"> Swarm::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a1e3d4743e3d16a61bf4784010f3129a8" class="m-doc-self">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="struct_swarm_1_1c_surface_rec.html" class="m-doc">cSurfaceRec</a>,
-              0x18)</span></span>
-              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_i_surface_8h.html">&lt;/home/runner/work/Spore-ModAPI/Spore-ModAPI/Spore-ModAPI/Spore ModAPI/Spore/Swarm/ISurface.h&gt;</a></div>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_i_effects_world_8h.html">&lt;Spore/Swarm/IEffectsWorld.h&gt;</a></div>
             </h3>
             <p><span></span></p>
           </div></section>
@@ -1028,13 +890,13 @@
     </div>
   </div>
 </div>
-<script src="search-v2.js"></script>
-<script src="searchdata-v2.js" async="async"></script>
+<script src="search-v1.js"></script>
+<script src="searchdata-v1.js" async="async"></script>
 <footer><nav>
   <div class="m-container">
     <div class="m-row">
       <div class="m-col-l-10 m-push-l-1">
-        <p>Spore ModAPI SDK for creating C++ mods for Spore. Created with <a href="https://doxygen.org/">Doxygen</a> 1.9.8 and <a href="https://mcss.mosra.cz/">m.css</a>.</p>
+        <p>Spore ModAPI SDK for creating C++ mods for Spore. Created with <a href="https://doxygen.org/">Doxygen</a> 1.8.16 and <a href="https://mcss.mosra.cz/">m.css</a>.</p>
       </div>
     </div>
   </div>

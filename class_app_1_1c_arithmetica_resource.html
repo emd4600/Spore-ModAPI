@@ -14,7 +14,7 @@
 <header><nav id="navigation">
   <div class="m-container">
     <div class="m-row">
-      <a href="index.html" id="m-navbar-brand" class="m-col-t-8 m-col-m-none m-left-m"><img src="Spore_ModAPI_Icon.png" alt="" />Spore ModAPI <span class="m-thin">SDK for creating C++ mods for Spore</span></a>
+      <a href="index.html" id="m-navbar-brand" class="m-col-t-8 m-col-m-none m-left-m"><img src="Spore_ModAPI_Icon.png" />Spore ModAPI <span class="m-thin">SDK for creating C++ mods for Spore</span></a>
       <div class="m-col-t-4 m-hide-m m-text-right m-nopadr">
         <a href="#search" class="m-doc-search-icon" title="Search" onclick="return showSearch()"><svg style="height: 0.9rem;" viewBox="0 0 16 16">
           <path id="m-doc-search-icon-path" d="m6 0c-3.31 0-6 2.69-6 6 0 3.31 2.69 6 6 6 1.49 0 2.85-0.541 3.89-1.44-0.0164 0.338 0.147 0.759 0.5 1.15l3.22 3.79c0.552 0.614 1.45 0.665 2 0.115 0.55-0.55 0.499-1.45-0.115-2l-3.79-3.22c-0.392-0.353-0.812-0.515-1.15-0.5 0.895-1.05 1.44-2.41 1.44-3.89 0-3.31-2.69-6-6-6zm0 1.56a4.44 4.44 0 0 1 4.44 4.44 4.44 4.44 0 0 1-4.44 4.44 4.44 4.44 0 0 1-4.44-4.44 4.44 4.44 0 0 1 4.44-4.44z"/>
@@ -46,10 +46,10 @@
       <div class="m-col-l-10 m-push-l-1">
         <h1>
           <span class="m-breadcrumb"><a href="namespace_app.html">App</a>::<wbr/></span>cArithmeticaResource <span class="m-thin">class</span>
-          <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="c_arithmetica_resource_8h.html">&lt;/home/runner/work/Spore-ModAPI/Spore-ModAPI/Spore-ModAPI/Spore ModAPI/Spore/App/cArithmeticaResource.h&gt;</a></div>
+          <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="c_arithmetica_resource_8h.html">&lt;Spore/App/cArithmeticaResource.h&gt;</a></div>
         </h1>
         <p>Represents an <code>.arth</code> file, which is ascripts that allows doing mathematical operations on certain values.</p>
-        <nav class="m-block m-default">
+        <div class="m-block m-default">
           <h3>Contents</h3>
           <ul>
             <li>
@@ -65,7 +65,7 @@
               </ul>
             </li>
           </ul>
-        </nav>
+        </div>
 <p>Example usage:</p><pre class="m-code"><span class="n">App</span><span class="o">::</span><span class="n">cArithmeticaResource</span><span class="w"> </span><span class="n">arithmetica</span><span class="p">;</span><span class="w"></span>
 <span class="n">App</span><span class="o">::</span><span class="n">cArithmeticaResource</span><span class="o">::</span><span class="n">Load</span><span class="p">(</span><span class="n">id</span><span class="p">(</span><span class="s">&quot;CustomArthTest&quot;</span><span class="p">),</span><span class="w"> </span><span class="n">GroupIDs</span><span class="o">::</span><span class="n">Scripts1</span><span class="p">,</span><span class="w"> </span><span class="n">arithmetica</span><span class="p">);</span><span class="w"></span>
 <span class="n">arithmetica</span><span class="p">.</span><span class="n">SetValue</span><span class="p">(</span><span class="s">&quot;myVariable&quot;</span><span class="p">,</span><span class="w"> </span><span class="mf">2.0f</span><span class="p">);</span><span class="w"></span>
@@ -101,7 +101,7 @@
           <h2><a href="#pub-static-attribs">Public static variables</a></h2>
           <dl class="m-doc">
             <dt id="abccf50786882a329120fac88a372befa">
-              static <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">const</a> <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">uint32_<wbr />t</a> <a href="#abccf50786882a329120fac88a372befa" class="m-doc-self">TYPE</a>
+              static const uint32_t <a href="#abccf50786882a329120fac88a372befa" class="m-doc-self">TYPE</a>
             </dt>
             <dd><span></span></dd>
           </dl>
@@ -110,9 +110,9 @@
           <h2><a href="#pub-static-methods">Public static functions</a></h2>
           <dl class="m-doc">
             <dt>
-              <span class="m-doc-wrap-bumper">static auto <a href="#a9d12d12b528b6baf59db353df2aed441" class="m-doc">Load</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">uint32_<wbr />t</a> instanceID,
-              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">uint32_<wbr />t</a> groupID,
-              <a href="class_app_1_1c_arithmetica_resource.html" class="m-doc">cArithmeticaResource</a>&amp; dst) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">bool</a></span>
+              <span class="m-doc-wrap-bumper">static auto <a href="#a9d12d12b528b6baf59db353df2aed441" class="m-doc">Load</a>(</span><span class="m-doc-wrap">uint32_t instanceID,
+              uint32_t groupID,
+              <a href="class_app_1_1c_arithmetica_resource.html" class="m-doc">cArithmeticaResource</a>&amp; dst) -&gt; bool</span>
             </dt>
             <dd>Loads an instance of arithmetica resource.</dd>
           </dl>
@@ -149,24 +149,24 @@
           <h2><a href="#pub-methods">Public functions</a></h2>
           <dl class="m-doc">
             <dt id="a2a9bab810fdc96881947098cf45d8f76">
-              <span class="m-doc-wrap-bumper">auto <a href="#a2a9bab810fdc96881947098cf45d8f76" class="m-doc-self">func14h</a>(</span><span class="m-doc-wrap">) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">void</a> <span class="m-label m-flat m-warning">virtual</span></span>
+              <span class="m-doc-wrap-bumper">void <a href="#a2a9bab810fdc96881947098cf45d8f76" class="m-doc-self">func14h</a>(</span><span class="m-doc-wrap">) <span class="m-label m-flat m-warning">virtual</span></span>
             </dt>
             <dd><span></span></dd>
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#abe84a7ac1531a3f57dc02196d8b299c1" class="m-doc">ComputeFunction</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">const</a> <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">char</a>* functionName) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">void</a> <span class="m-label m-flat m-warning">virtual</span></span>
+              <span class="m-doc-wrap-bumper">void <a href="#abe84a7ac1531a3f57dc02196d8b299c1" class="m-doc">ComputeFunction</a>(</span><span class="m-doc-wrap">const char* functionName) <span class="m-label m-flat m-warning">virtual</span></span>
             </dt>
             <dd>Clears all data and computes only a specific function in the file.</dd>
             <dt id="a4f6f158e336095871ac406800bff3d22">
-              <span class="m-doc-wrap-bumper">auto <a href="#a4f6f158e336095871ac406800bff3d22" class="m-doc-self">ComputeAll</a>(</span><span class="m-doc-wrap">) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">void</a> <span class="m-label m-flat m-warning">virtual</span></span>
+              <span class="m-doc-wrap-bumper">void <a href="#a4f6f158e336095871ac406800bff3d22" class="m-doc-self">ComputeAll</a>(</span><span class="m-doc-wrap">) <span class="m-label m-flat m-warning">virtual</span></span>
             </dt>
             <dd>Clears all data and computes the entire arithmetic file.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#abb7d7962b7369ffe4ee028515849d092" class="m-doc">GetValue</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">const</a> <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">char</a>* variableName) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">float</a></span>
+              <span class="m-doc-wrap-bumper">auto <a href="#abb7d7962b7369ffe4ee028515849d092" class="m-doc">GetValue</a>(</span><span class="m-doc-wrap">const char* variableName) -&gt; float</span>
             </dt>
             <dd>Gets the value of a variable, the file must have been computed before calling this.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#a5fcbb5b9c2880a4a1384e21297df13ec" class="m-doc">SetValue</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">const</a> <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">char</a>* variableName,
-              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">float</a> value) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">void</a></span>
+              <span class="m-doc-wrap-bumper">void <a href="#a5fcbb5b9c2880a4a1384e21297df13ec" class="m-doc">SetValue</a>(</span><span class="m-doc-wrap">const char* variableName,
+              float value)</span>
             </dt>
             <dd>Sets the value of a variable.</dd>
           </dl>
@@ -179,7 +179,7 @@
             </dt>
             <dd><span></span></dd>
             <dt id="a4b098de76a6008c2745793b51af28ac8">
-              eastl::vector&lt;<a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">float</a>&gt; <a href="#a4b098de76a6008c2745793b51af28ac8" class="m-doc-self">mVariableValues</a>
+              eastl::vector&lt;float&gt; <a href="#a4b098de76a6008c2745793b51af28ac8" class="m-doc-self">mVariableValues</a>
             </dt>
             <dd><span></span></dd>
             <dt id="a9d168abb7e80c1c7af3561284422f412">
@@ -187,7 +187,7 @@
             </dt>
             <dd><span></span></dd>
             <dt id="a2db6ec38ecd082eed8c56d04198148fe">
-              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> <a href="#a2db6ec38ecd082eed8c56d04198148fe" class="m-doc-self">field_54</a>
+              int <a href="#a2db6ec38ecd082eed8c56d04198148fe" class="m-doc-self">field_54</a>
             </dt>
             <dd><span></span></dd>
             <dt id="a7ec6c202a57bcef08894a94da0ec23f8">
@@ -204,8 +204,8 @@
           <h2>Function documentation</h2>
           <section class="m-doc-details" id="a9d12d12b528b6baf59db353df2aed441"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">static <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">bool</a> App::<wbr />cArithmeticaResource::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a9d12d12b528b6baf59db353df2aed441" class="m-doc-self">Load</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">uint32_<wbr />t</a> instanceID,
-              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">uint32_<wbr />t</a> groupID,
+              <span class="m-doc-wrap-bumper">static bool App::<wbr />cArithmeticaResource::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a9d12d12b528b6baf59db353df2aed441" class="m-doc-self">Load</a>(</span><span class="m-doc-wrap">uint32_t instanceID,
+              uint32_t groupID,
               <a href="class_app_1_1c_arithmetica_resource.html" class="m-doc">cArithmeticaResource</a>&amp; dst)</span></span>
             </h3>
             <p>Loads an instance of arithmetica resource.</p>
@@ -231,7 +231,7 @@
           </div></section>
           <section class="m-doc-details" id="abe84a7ac1531a3f57dc02196d8b299c1"><div>
             <h3>
-              <span class="m-doc-wrap-bumper"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">void</a> App::<wbr />cArithmeticaResource::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#abe84a7ac1531a3f57dc02196d8b299c1" class="m-doc-self">ComputeFunction</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">const</a> <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">char</a>* functionName) <span class="m-label m-warning">virtual</span></span></span>
+              <span class="m-doc-wrap-bumper">void App::<wbr />cArithmeticaResource::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#abe84a7ac1531a3f57dc02196d8b299c1" class="m-doc-self">ComputeFunction</a>(</span><span class="m-doc-wrap">const char* functionName) <span class="m-label m-warning">virtual</span></span></span>
             </h3>
             <p>Clears all data and computes only a specific function in the file.</p>
             <table class="m-table m-fullwidth m-flat">
@@ -248,7 +248,7 @@
           </div></section>
           <section class="m-doc-details" id="abb7d7962b7369ffe4ee028515849d092"><div>
             <h3>
-              <span class="m-doc-wrap-bumper"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">float</a> App::<wbr />cArithmeticaResource::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#abb7d7962b7369ffe4ee028515849d092" class="m-doc-self">GetValue</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">const</a> <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">char</a>* variableName)</span></span>
+              <span class="m-doc-wrap-bumper">float App::<wbr />cArithmeticaResource::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#abb7d7962b7369ffe4ee028515849d092" class="m-doc-self">GetValue</a>(</span><span class="m-doc-wrap">const char* variableName)</span></span>
             </h3>
             <p>Gets the value of a variable, the file must have been computed before calling this.</p>
             <table class="m-table m-fullwidth m-flat">
@@ -271,8 +271,8 @@
           </div></section>
           <section class="m-doc-details" id="a5fcbb5b9c2880a4a1384e21297df13ec"><div>
             <h3>
-              <span class="m-doc-wrap-bumper"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">void</a> App::<wbr />cArithmeticaResource::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a5fcbb5b9c2880a4a1384e21297df13ec" class="m-doc-self">SetValue</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">const</a> <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">char</a>* variableName,
-              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">float</a> value)</span></span>
+              <span class="m-doc-wrap-bumper">void App::<wbr />cArithmeticaResource::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a5fcbb5b9c2880a4a1384e21297df13ec" class="m-doc-self">SetValue</a>(</span><span class="m-doc-wrap">const char* variableName,
+              float value)</span></span>
             </h3>
             <p>Sets the value of a variable.</p>
             <table class="m-table m-fullwidth m-flat">
@@ -331,13 +331,13 @@
     </div>
   </div>
 </div>
-<script src="search-v2.js"></script>
-<script src="searchdata-v2.js" async="async"></script>
+<script src="search-v1.js"></script>
+<script src="searchdata-v1.js" async="async"></script>
 <footer><nav>
   <div class="m-container">
     <div class="m-row">
       <div class="m-col-l-10 m-push-l-1">
-        <p>Spore ModAPI SDK for creating C++ mods for Spore. Created with <a href="https://doxygen.org/">Doxygen</a> 1.9.8 and <a href="https://mcss.mosra.cz/">m.css</a>.</p>
+        <p>Spore ModAPI SDK for creating C++ mods for Spore. Created with <a href="https://doxygen.org/">Doxygen</a> 1.8.16 and <a href="https://mcss.mosra.cz/">m.css</a>.</p>
       </div>
     </div>
   </div>

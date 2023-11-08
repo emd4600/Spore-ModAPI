@@ -14,7 +14,7 @@
 <header><nav id="navigation">
   <div class="m-container">
     <div class="m-row">
-      <a href="index.html" id="m-navbar-brand" class="m-col-t-8 m-col-m-none m-left-m"><img src="Spore_ModAPI_Icon.png" alt="" />Spore ModAPI <span class="m-thin">SDK for creating C++ mods for Spore</span></a>
+      <a href="index.html" id="m-navbar-brand" class="m-col-t-8 m-col-m-none m-left-m"><img src="Spore_ModAPI_Icon.png" />Spore ModAPI <span class="m-thin">SDK for creating C++ mods for Spore</span></a>
       <div class="m-col-t-4 m-hide-m m-text-right m-nopadr">
         <a href="#search" class="m-doc-search-icon" title="Search" onclick="return showSearch()"><svg style="height: 0.9rem;" viewBox="0 0 16 16">
           <path id="m-doc-search-icon-path" d="m6 0c-3.31 0-6 2.69-6 6 0 3.31 2.69 6 6 6 1.49 0 2.85-0.541 3.89-1.44-0.0164 0.338 0.147 0.759 0.5 1.15l3.22 3.79c0.552 0.614 1.45 0.665 2 0.115 0.55-0.55 0.499-1.45-0.115-2l-3.79-3.22c-0.392-0.353-0.812-0.515-1.15-0.5 0.895-1.05 1.44-2.41 1.44-3.89 0-3.31-2.69-6-6-6zm0 1.56a4.44 4.44 0 0 1 4.44 4.44 4.44 4.44 0 0 1-4.44 4.44 4.44 4.44 0 0 1-4.44-4.44 4.44 4.44 0 0 1 4.44-4.44z"/>
@@ -46,10 +46,10 @@
       <div class="m-col-l-10 m-push-l-1">
         <h1>
           <span class="m-breadcrumb"><a href="namespace_simulator.html">Simulator</a>::<wbr/></span>cCelestialBody <span class="m-thin">class</span>
-          <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="c_celestial_body_8h.html">&lt;/home/runner/work/Spore-ModAPI/Spore-ModAPI/Spore-ModAPI/Spore ModAPI/Spore/Simulator/cCelestialBody.h&gt;</a></div>
+          <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="c_celestial_body_8h.html">&lt;Spore/Simulator/cCelestialBody.h&gt;</a></div>
         </h1>
         <p>Represents celestial bodies in a solar system (except planets), that is, the star and the comets.</p>
-        <nav class="m-block m-default">
+        <div class="m-block m-default">
           <h3>Contents</h3>
           <ul>
             <li>
@@ -63,7 +63,7 @@
               </ul>
             </li>
           </ul>
-        </nav>
+        </div>
 <p>This is the actual graphical representation that you see in the solar system view, with the graphics itself being <code>mpEffect</code>. Celestial bodies are used by the <a href="class_simulator_1_1c_solar_system.html" class="m-doc">cSolarSystem</a> class.</p>
         <section id="base-classes">
           <h2><a href="#base-classes">Base classes</a></h2>
@@ -78,11 +78,11 @@
           <h2><a href="#pub-static-attribs">Public static variables</a></h2>
           <dl class="m-doc">
             <dt id="a78cdc782698c3a3e5a9f28b0a29df759">
-              static <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">const</a> <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">uint32_<wbr />t</a> <a href="#a78cdc782698c3a3e5a9f28b0a29df759" class="m-doc-self">TYPE</a>
+              static const uint32_t <a href="#a78cdc782698c3a3e5a9f28b0a29df759" class="m-doc-self">TYPE</a>
             </dt>
             <dd><span></span></dd>
             <dt id="ae205cb37ffddc106222118c98a035c24">
-              static <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">const</a> <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">uint32_<wbr />t</a> <a href="#ae205cb37ffddc106222118c98a035c24" class="m-doc-self">NOUN_ID</a>
+              static const uint32_t <a href="#ae205cb37ffddc106222118c98a035c24" class="m-doc-self">NOUN_ID</a>
             </dt>
             <dd><span></span></dd>
           </dl>
@@ -99,32 +99,32 @@
         <section id="pub-methods">
           <h2><a href="#pub-methods">Public functions</a></h2>
           <dl class="m-doc">
-            <dt id="a3f5ed8499a48f593e0fb0d2adf47f5df">
-              <span class="m-doc-wrap-bumper">auto <a href="#a3f5ed8499a48f593e0fb0d2adf47f5df" class="m-doc-self">Cast</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">uint32_<wbr />t</a> typeID) const -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">void</a>* <span class="m-label m-flat m-warning">override</span></span>
+            <dt id="a5283dffb8be131caafb6247d61d0ffe2">
+              <span class="m-doc-wrap-bumper">auto <a href="#a5283dffb8be131caafb6247d61d0ffe2" class="m-doc-self">Cast</a>(</span><span class="m-doc-wrap">uint32_t typeID) const -&gt; void* <span class="m-label m-flat m-warning">override</span></span>
             </dt>
             <dd><span></span></dd>
             <dt id="a0cc844b77bc289c39b0cfea638505574">
-              <span class="m-doc-wrap-bumper">auto <a href="#a0cc844b77bc289c39b0cfea638505574" class="m-doc-self">GetNounID</a>(</span><span class="m-doc-wrap">) const -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">uint32_<wbr />t</a> <span class="m-label m-flat m-warning">override</span></span>
+              <span class="m-doc-wrap-bumper">auto <a href="#a0cc844b77bc289c39b0cfea638505574" class="m-doc-self">GetNounID</a>(</span><span class="m-doc-wrap">) const -&gt; uint32_t <span class="m-label m-flat m-warning">override</span></span>
             </dt>
             <dd><span></span></dd>
             <dt id="a486268e6766547f91f1a4194eae1abd9">
-              <span class="m-doc-wrap-bumper">auto <a href="#a486268e6766547f91f1a4194eae1abd9" class="m-doc-self">Write</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1_i_serializer_stream.html" class="m-doc">ISerializerStream</a>* stream) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">bool</a> <span class="m-label m-flat m-warning">override</span></span>
+              <span class="m-doc-wrap-bumper">auto <a href="#a486268e6766547f91f1a4194eae1abd9" class="m-doc-self">Write</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1_i_serializer_stream.html" class="m-doc">ISerializerStream</a>* stream) -&gt; bool <span class="m-label m-flat m-warning">override</span></span>
             </dt>
             <dd><span></span></dd>
             <dt id="a06af43f5da897aaf7551a9a33445493f">
-              <span class="m-doc-wrap-bumper">auto <a href="#a06af43f5da897aaf7551a9a33445493f" class="m-doc-self">Read</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1_i_serializer_stream.html" class="m-doc">ISerializerStream</a>* stream) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">bool</a> <span class="m-label m-flat m-warning">override</span></span>
+              <span class="m-doc-wrap-bumper">auto <a href="#a06af43f5da897aaf7551a9a33445493f" class="m-doc-self">Read</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1_i_serializer_stream.html" class="m-doc">ISerializerStream</a>* stream) -&gt; bool <span class="m-label m-flat m-warning">override</span></span>
             </dt>
             <dd><span></span></dd>
             <dt id="ad8b113c4841a0a69fa69aad25a9a0268">
-              <span class="m-doc-wrap-bumper">auto <a href="#ad8b113c4841a0a69fa69aad25a9a0268" class="m-doc-self">WriteToXML</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1_xml_serializer.html" class="m-doc">XmlSerializer</a>*) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">bool</a> <span class="m-label m-flat m-warning">override</span></span>
+              <span class="m-doc-wrap-bumper">auto <a href="#ad8b113c4841a0a69fa69aad25a9a0268" class="m-doc-self">WriteToXML</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1_xml_serializer.html" class="m-doc">XmlSerializer</a>*) -&gt; bool <span class="m-label m-flat m-warning">override</span></span>
             </dt>
             <dd><span></span></dd>
             <dt id="adee59aa1821538db81b2ee9094f8182f">
-              <span class="m-doc-wrap-bumper">auto <a href="#adee59aa1821538db81b2ee9094f8182f" class="m-doc-self">GetCastID</a>(</span><span class="m-doc-wrap">) const -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">uint32_<wbr />t</a> <span class="m-label m-flat m-warning">override</span></span>
+              <span class="m-doc-wrap-bumper">auto <a href="#adee59aa1821538db81b2ee9094f8182f" class="m-doc-self">GetCastID</a>(</span><span class="m-doc-wrap">) const -&gt; uint32_t <span class="m-label m-flat m-warning">override</span></span>
             </dt>
             <dd>Returns the TYPE field of the class, that is used for object casting.</dd>
             <dt id="a8e1d59405b69f8a6d78cbf742e4da332">
-              <span class="m-doc-wrap-bumper">auto <a href="#a8e1d59405b69f8a6d78cbf742e4da332" class="m-doc-self">RemoveOwner</a>(</span><span class="m-doc-wrap">) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">void</a> <span class="m-label m-flat m-warning">override</span></span>
+              <span class="m-doc-wrap-bumper">void <a href="#a8e1d59405b69f8a6d78cbf742e4da332" class="m-doc-self">RemoveOwner</a>(</span><span class="m-doc-wrap">) <span class="m-label m-flat m-warning">override</span></span>
             </dt>
             <dd><span></span></dd>
           </dl>
@@ -145,7 +145,7 @@
             </dt>
             <dd><span></span></dd>
             <dt id="aee58eef99eb3070d82bd22053945e88b">
-              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">float</a> <a href="#aee58eef99eb3070d82bd22053945e88b" class="m-doc-self">mfRotationRate</a>
+              float <a href="#aee58eef99eb3070d82bd22053945e88b" class="m-doc-self">mfRotationRate</a>
             </dt>
             <dd><span></span></dd>
             <dt id="a842d95be7af5d8b6957e6d1b9bcb874e">
@@ -161,7 +161,7 @@
             </dt>
             <dd><span></span></dd>
             <dt id="a8807a0dd8ae28c38b865fb1fedf750b4">
-              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">float</a> <a href="#a8807a0dd8ae28c38b865fb1fedf750b4" class="m-doc-self">mfHitSphereSize</a>
+              float <a href="#a8807a0dd8ae28c38b865fb1fedf750b4" class="m-doc-self">mfHitSphereSize</a>
             </dt>
             <dd>Probably used to detect the mouse.</dd>
           </dl>
@@ -204,13 +204,13 @@
     </div>
   </div>
 </div>
-<script src="search-v2.js"></script>
-<script src="searchdata-v2.js" async="async"></script>
+<script src="search-v1.js"></script>
+<script src="searchdata-v1.js" async="async"></script>
 <footer><nav>
   <div class="m-container">
     <div class="m-row">
       <div class="m-col-l-10 m-push-l-1">
-        <p>Spore ModAPI SDK for creating C++ mods for Spore. Created with <a href="https://doxygen.org/">Doxygen</a> 1.9.8 and <a href="https://mcss.mosra.cz/">m.css</a>.</p>
+        <p>Spore ModAPI SDK for creating C++ mods for Spore. Created with <a href="https://doxygen.org/">Doxygen</a> 1.8.16 and <a href="https://mcss.mosra.cz/">m.css</a>.</p>
       </div>
     </div>
   </div>

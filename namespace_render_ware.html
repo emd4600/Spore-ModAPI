@@ -14,7 +14,7 @@
 <header><nav id="navigation">
   <div class="m-container">
     <div class="m-row">
-      <a href="index.html" id="m-navbar-brand" class="m-col-t-8 m-col-m-none m-left-m"><img src="Spore_ModAPI_Icon.png" alt="" />Spore ModAPI <span class="m-thin">SDK for creating C++ mods for Spore</span></a>
+      <a href="index.html" id="m-navbar-brand" class="m-col-t-8 m-col-m-none m-left-m"><img src="Spore_ModAPI_Icon.png" />Spore ModAPI <span class="m-thin">SDK for creating C++ mods for Spore</span></a>
       <div class="m-col-t-4 m-hide-m m-text-right m-nopadr">
         <a href="#search" class="m-doc-search-icon" title="Search" onclick="return showSearch()"><svg style="height: 0.9rem;" viewBox="0 0 16 16">
           <path id="m-doc-search-icon-path" d="m6 0c-3.31 0-6 2.69-6 6 0 3.31 2.69 6 6 6 1.49 0 2.85-0.541 3.89-1.44-0.0164 0.338 0.147 0.759 0.5 1.15l3.22 3.79c0.552 0.614 1.45 0.665 2 0.115 0.55-0.55 0.499-1.45-0.115-2l-3.79-3.22c-0.392-0.353-0.812-0.515-1.15-0.5 0.895-1.05 1.44-2.41 1.44-3.89 0-3.31-2.69-6-6-6zm0 1.56a4.44 4.44 0 0 1 4.44 4.44 4.44 4.44 0 0 1-4.44 4.44 4.44 4.44 0 0 1-4.44-4.44 4.44 4.44 0 0 1 4.44-4.44z"/>
@@ -48,7 +48,7 @@
           RenderWare <span class="m-thin">namespace</span>
         </h1>
         <p>The representation of <code>.rw4</code> models/textures/materials.</p>
-        <nav class="m-block m-default">
+        <div class="m-block m-default">
           <h3>Contents</h3>
           <ul>
             <li>
@@ -61,7 +61,7 @@
               </ul>
             </li>
           </ul>
-        </nav>
+        </div>
         <section id="nested-classes">
           <h2><a href="#nested-classes">Classes</a></h2>
           <dl class="m-doc">
@@ -106,7 +106,7 @@
             </dt>
             <dd>A structure that represents a basic mesh, made up of vertices and triangles.</dd>
             <dt>
-              <div class="m-doc-template">template&lt;<a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> numBuffers = 1&gt;</div>
+              <div class="m-doc-template">template&lt;int numBuffers = 1&gt;</div>
               struct <a href="struct_render_ware_1_1_mesh__.html" class="m-doc">Mesh_</a>
             </dt>
             <dd><span></span></dd>
@@ -115,7 +115,7 @@
             </dt>
             <dd>This structure links one or more compiled states (that is, materials) to a mesh.</dd>
             <dt>
-              <div class="m-doc-template">template&lt;<a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> nCompiledStates = 1&gt;</div>
+              <div class="m-doc-template">template&lt;int nCompiledStates = 1&gt;</div>
               struct <a href="struct_render_ware_1_1_mesh_compiled_state_link__.html" class="m-doc">MeshCompiledStateLink_</a>
             </dt>
             <dd><span></span></dd>
@@ -172,7 +172,7 @@
             </dt>
             <dd>A buffer that contains all the vertices data.</dd>
             <dt>
-              <div class="m-doc-template">template&lt;<a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">uint16_<wbr />t</a> nVertexElements = (<a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">uint16_<wbr />t</a>)1&gt;</div>
+              <div class="m-doc-template">template&lt;uint16_t nVertexElements = (uint16_t)1&gt;</div>
               struct <a href="struct_render_ware_1_1_vertex_description.html" class="m-doc">VertexDescription</a>
             </dt>
             <dd>A vertex declaration defines the vertex buffer layout and programs the tessellation engine.</dd>
@@ -259,11 +259,11 @@
             </dt>
             <dd><span></span></dd>
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#ae099e85abee08ae516e6e1c60f2c0ca8" class="m-doc">Addresses</a>(</span><span class="m-doc-wrap"><a href="struct_render_ware_1_1_texture_slot.html" class="m-doc">TextureSlot</a>) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">namespace</a></span>
+              <span class="m-doc-wrap-bumper">auto <a href="#ae099e85abee08ae516e6e1c60f2c0ca8" class="m-doc">Addresses</a>(</span><span class="m-doc-wrap"><a href="struct_render_ware_1_1_texture_slot.html" class="m-doc">TextureSlot</a>) -&gt; namespace</span>
             </dt>
             <dd><span></span></dd>
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#a6f7bca620b5e73abb9a242d83b2ba735" class="m-doc">Addresses</a>(</span><span class="m-doc-wrap"><a href="struct_render_ware_1_1_compiled_state.html" class="m-doc">CompiledState</a>) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">namespace</a></span>
+              <span class="m-doc-wrap-bumper">auto <a href="#a6f7bca620b5e73abb9a242d83b2ba735" class="m-doc">Addresses</a>(</span><span class="m-doc-wrap"><a href="struct_render_ware_1_1_compiled_state.html" class="m-doc">CompiledState</a>) -&gt; namespace</span>
             </dt>
             <dd><span></span></dd>
             <dt>
@@ -275,26 +275,26 @@
               <span class="m-doc-wrap-bumper"><a href="#ab5bfaab898bda5ae9c5ad664e7364d01" class="m-doc">auto_METHOD</a>(</span><span class="m-doc-wrap"><a href="struct_render_ware_1_1_compiled_state.html" class="m-doc">CompiledState</a>,
               <a href="struct_render_ware_1_1_raster.html" class="m-doc">Raster</a>*,
               GetRaster,
-              <a href="_cpp_rev_eng_base_8h.html#aff12ecf140cc31d5335c3c978808c268" class="m-doc">Args</a>(<a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">size_<wbr />t</a> slotIndex),
+              <a href="_cpp_rev_eng_base_8h.html#aff12ecf140cc31d5335c3c978808c268" class="m-doc">Args</a>(size_t slotIndex),
               <a href="_cpp_rev_eng_base_8h.html#aff12ecf140cc31d5335c3c978808c268" class="m-doc">Args</a>(slotIndex))</span>
             </dt>
             <dd><span></span></dd>
             <dt>
               <span class="m-doc-wrap-bumper"><a href="#ad6394930e7fafa9da2122f33ffe5711b" class="m-doc">auto_METHOD_VOID</a>(</span><span class="m-doc-wrap"><a href="struct_render_ware_1_1_compiled_state.html" class="m-doc">CompiledState</a>,
               SetRaster,
-              <a href="_cpp_rev_eng_base_8h.html#aff12ecf140cc31d5335c3c978808c268" class="m-doc">Args</a>(<a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">size_<wbr />t</a> slotIndex, <a href="struct_render_ware_1_1_raster.html" class="m-doc">Raster</a>*raster),
+              <a href="_cpp_rev_eng_base_8h.html#aff12ecf140cc31d5335c3c978808c268" class="m-doc">Args</a>(size_t slotIndex, <a href="struct_render_ware_1_1_raster.html" class="m-doc">Raster</a>*raster),
               <a href="_cpp_rev_eng_base_8h.html#aff12ecf140cc31d5335c3c978808c268" class="m-doc">Args</a>(slotIndex, raster))</span>
             </dt>
             <dd><span></span></dd>
             <dt>
               <span class="m-doc-wrap-bumper"><a href="#a353c7bc76fa0453face0d31ebffa19e1" class="m-doc">auto_METHOD_VOID</a>(</span><span class="m-doc-wrap"><a href="struct_render_ware_1_1_texture_slot.html" class="m-doc">TextureSlot</a>,
               SetTexture,
-              <a href="_cpp_rev_eng_base_8h.html#aff12ecf140cc31d5335c3c978808c268" class="m-doc">Args</a>(<a href="struct_render_ware_1_1_compiled_state.html" class="m-doc">CompiledState</a>*compiledState, <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> slotIndex, <a href="struct_render_ware_1_1_raster.html" class="m-doc">Raster</a>*raster),
+              <a href="_cpp_rev_eng_base_8h.html#aff12ecf140cc31d5335c3c978808c268" class="m-doc">Args</a>(<a href="struct_render_ware_1_1_compiled_state.html" class="m-doc">CompiledState</a>*compiledState, int slotIndex, <a href="struct_render_ware_1_1_raster.html" class="m-doc">Raster</a>*raster),
               <a href="_cpp_rev_eng_base_8h.html#aff12ecf140cc31d5335c3c978808c268" class="m-doc">Args</a>(compiledState, slotIndex, raster))</span>
             </dt>
             <dd><span></span></dd>
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#a40d83776c19a8e8e485e81613152ed58" class="m-doc">Addresses</a>(</span><span class="m-doc-wrap"><a href="struct_render_ware_1_1_mesh.html" class="m-doc">Mesh</a>) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">namespace</a></span>
+              <span class="m-doc-wrap-bumper">auto <a href="#a40d83776c19a8e8e485e81613152ed58" class="m-doc">Addresses</a>(</span><span class="m-doc-wrap"><a href="struct_render_ware_1_1_mesh.html" class="m-doc">Mesh</a>) -&gt; namespace</span>
             </dt>
             <dd><span></span></dd>
             <dt>
@@ -303,15 +303,15 @@
             </dt>
             <dd><span></span></dd>
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#a7d755fb68c610531df24a6fdfe0c6023" class="m-doc">Addresses</a>(</span><span class="m-doc-wrap"><a href="struct_render_ware_1_1_raster.html" class="m-doc">Raster</a>) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">namespace</a></span>
+              <span class="m-doc-wrap-bumper">auto <a href="#a7d755fb68c610531df24a6fdfe0c6023" class="m-doc">Addresses</a>(</span><span class="m-doc-wrap"><a href="struct_render_ware_1_1_raster.html" class="m-doc">Raster</a>) -&gt; namespace</span>
             </dt>
             <dd><span></span></dd>
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#a592b08e8f83e22abc01f7ae8f8b9ed62" class="m-doc">Addresses</a>(</span><span class="m-doc-wrap"><a href="struct_render_ware_1_1_r_w_header.html" class="m-doc">RWHeader</a>) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">namespace</a></span>
+              <span class="m-doc-wrap-bumper">auto <a href="#a592b08e8f83e22abc01f7ae8f8b9ed62" class="m-doc">Addresses</a>(</span><span class="m-doc-wrap"><a href="struct_render_ware_1_1_r_w_header.html" class="m-doc">RWHeader</a>) -&gt; namespace</span>
             </dt>
             <dd><span></span></dd>
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#a0f0c20eb3a8b84e430f640def0b0a0fe" class="m-doc">Addresses</a>(</span><span class="m-doc-wrap"><a href="struct_render_ware_1_1_vertex_description.html" class="m-doc">VertexDescription</a>) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">namespace</a></span>
+              <span class="m-doc-wrap-bumper">auto <a href="#a0f0c20eb3a8b84e430f640def0b0a0fe" class="m-doc">Addresses</a>(</span><span class="m-doc-wrap"><a href="struct_render_ware_1_1_vertex_description.html" class="m-doc">VertexDescription</a>) -&gt; namespace</span>
             </dt>
             <dd><span></span></dd>
           </dl>
@@ -320,7 +320,7 @@
           <h2><a href="#var-members">Variables</a></h2>
           <dl class="m-doc">
             <dt>
-              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">constexpr</a> <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">unsigned</a> <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> <a href="#afc8859c5a1d2487fbfa4b3ca892b12d4" class="m-doc">RWDECL_VERTEX2</a>
+              unsigned int <a href="#afc8859c5a1d2487fbfa4b3ca892b12d4" class="m-doc">RWDECL_VERTEX2</a> <span class="m-label m-flat m-primary">constexpr</span>
             </dt>
             <dd><span></span></dd>
           </dl>
@@ -330,21 +330,21 @@
           <section class="m-doc-details" id="a98d93254ea142eb058ae7ba32720861f"><div>
             <h3>
               enum RenderWare::<wbr /><a href="#a98d93254ea142eb058ae7ba32720861f" class="m-doc-self">RWBufferLockFlags</a>
-              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_r_w_math_8h.html">&lt;/home/runner/work/Spore-ModAPI/Spore-ModAPI/Spore-ModAPI/Spore ModAPI/Spore/RenderWare/RWMath.h&gt;</a></div>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_r_w_math_8h.html">&lt;Spore/RenderWare/RWMath.h&gt;</a></div>
             </h3>
             <p><span></span></p>
           </div></section>
           <section class="m-doc-details" id="a6690b9aed90c7f2162a98e3b127054f4"><div>
             <h3>
               enum RenderWare::<wbr /><a href="#a6690b9aed90c7f2162a98e3b127054f4" class="m-doc-self">BoneFlags</a>
-              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_skeleton_8h.html">&lt;/home/runner/work/Spore-ModAPI/Spore-ModAPI/Spore-ModAPI/Spore ModAPI/Spore/RenderWare/Skeleton.h&gt;</a></div>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_skeleton_8h.html">&lt;Spore/RenderWare/Skeleton.h&gt;</a></div>
             </h3>
             <p><span></span></p>
           </div></section>
           <section class="m-doc-details" id="a9d4b63da900c2ece761391cad9ab2ca8"><div>
             <h3>
               enum RenderWare::<wbr /><a href="#a9d4b63da900c2ece761391cad9ab2ca8" class="m-doc-self">RWElementDeclaration</a>
-              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_vertex_description_8h.html">&lt;/home/runner/work/Spore-ModAPI/Spore-ModAPI/Spore-ModAPI/Spore ModAPI/Spore/RenderWare/VertexDescription.h&gt;</a></div>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_vertex_description_8h.html">&lt;Spore/RenderWare/VertexDescription.h&gt;</a></div>
             </h3>
             <p><span></span></p>
           </div></section>
@@ -355,21 +355,21 @@
             <h3>
               <span class="m-doc-wrap-bumper"> RenderWare::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a06f5c2373e252ac93b7e2fe89178d0bf" class="m-doc-self">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="struct_render_ware_1_1_texture_slot.html" class="m-doc">TextureSlot</a>,
               0x10)</span></span>
-              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_compiled_state_8h.html">&lt;/home/runner/work/Spore-ModAPI/Spore-ModAPI/Spore-ModAPI/Spore ModAPI/Spore/RenderWare/CompiledState.h&gt;</a></div>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_compiled_state_8h.html">&lt;Spore/RenderWare/CompiledState.h&gt;</a></div>
             </h3>
             <p><span></span></p>
           </div></section>
           <section class="m-doc-details" id="ae099e85abee08ae516e6e1c60f2c0ca8"><div>
             <h3>
-              <span class="m-doc-wrap-bumper"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">namespace</a> RenderWare::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ae099e85abee08ae516e6e1c60f2c0ca8" class="m-doc-self">Addresses</a>(</span><span class="m-doc-wrap"><a href="struct_render_ware_1_1_texture_slot.html" class="m-doc">TextureSlot</a>)</span></span>
-              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_compiled_state_8h.html">&lt;/home/runner/work/Spore-ModAPI/Spore-ModAPI/Spore-ModAPI/Spore ModAPI/Spore/RenderWare/CompiledState.h&gt;</a></div>
+              <span class="m-doc-wrap-bumper">namespace RenderWare::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ae099e85abee08ae516e6e1c60f2c0ca8" class="m-doc-self">Addresses</a>(</span><span class="m-doc-wrap"><a href="struct_render_ware_1_1_texture_slot.html" class="m-doc">TextureSlot</a>)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_compiled_state_8h.html">&lt;Spore/RenderWare/CompiledState.h&gt;</a></div>
             </h3>
             <p><span></span></p>
           </div></section>
           <section class="m-doc-details" id="a6f7bca620b5e73abb9a242d83b2ba735"><div>
             <h3>
-              <span class="m-doc-wrap-bumper"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">namespace</a> RenderWare::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a6f7bca620b5e73abb9a242d83b2ba735" class="m-doc-self">Addresses</a>(</span><span class="m-doc-wrap"><a href="struct_render_ware_1_1_compiled_state.html" class="m-doc">CompiledState</a>)</span></span>
-              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_compiled_state_8h.html">&lt;/home/runner/work/Spore-ModAPI/Spore-ModAPI/Spore-ModAPI/Spore ModAPI/Spore/RenderWare/CompiledState.h&gt;</a></div>
+              <span class="m-doc-wrap-bumper">namespace RenderWare::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a6f7bca620b5e73abb9a242d83b2ba735" class="m-doc-self">Addresses</a>(</span><span class="m-doc-wrap"><a href="struct_render_ware_1_1_compiled_state.html" class="m-doc">CompiledState</a>)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_compiled_state_8h.html">&lt;Spore/RenderWare/CompiledState.h&gt;</a></div>
             </h3>
             <p><span></span></p>
           </div></section>
@@ -377,7 +377,7 @@
             <h3>
               <span class="m-doc-wrap-bumper"> RenderWare::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#aada838209fb9e93959e5b011c2c8034c" class="m-doc-self">auto_METHOD_VOID_</a>(</span><span class="m-doc-wrap"><a href="struct_render_ware_1_1_compiled_state.html" class="m-doc">CompiledState</a>,
               Load)</span></span>
-              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_compiled_state_8h.html">&lt;/home/runner/work/Spore-ModAPI/Spore-ModAPI/Spore-ModAPI/Spore ModAPI/Spore/RenderWare/CompiledState.h&gt;</a></div>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_compiled_state_8h.html">&lt;Spore/RenderWare/CompiledState.h&gt;</a></div>
             </h3>
             <p><span></span></p>
           </div></section>
@@ -386,9 +386,9 @@
               <span class="m-doc-wrap-bumper"> RenderWare::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ab5bfaab898bda5ae9c5ad664e7364d01" class="m-doc-self">auto_METHOD</a>(</span><span class="m-doc-wrap"><a href="struct_render_ware_1_1_compiled_state.html" class="m-doc">CompiledState</a>,
               <a href="struct_render_ware_1_1_raster.html" class="m-doc">Raster</a>*,
               GetRaster,
-              <a href="_cpp_rev_eng_base_8h.html#aff12ecf140cc31d5335c3c978808c268" class="m-doc">Args</a>(<a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">size_<wbr />t</a> slotIndex),
+              <a href="_cpp_rev_eng_base_8h.html#aff12ecf140cc31d5335c3c978808c268" class="m-doc">Args</a>(size_t slotIndex),
               <a href="_cpp_rev_eng_base_8h.html#aff12ecf140cc31d5335c3c978808c268" class="m-doc">Args</a>(slotIndex))</span></span>
-              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_compiled_state_8h.html">&lt;/home/runner/work/Spore-ModAPI/Spore-ModAPI/Spore-ModAPI/Spore ModAPI/Spore/RenderWare/CompiledState.h&gt;</a></div>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_compiled_state_8h.html">&lt;Spore/RenderWare/CompiledState.h&gt;</a></div>
             </h3>
             <p><span></span></p>
           </div></section>
@@ -396,9 +396,9 @@
             <h3>
               <span class="m-doc-wrap-bumper"> RenderWare::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ad6394930e7fafa9da2122f33ffe5711b" class="m-doc-self">auto_METHOD_VOID</a>(</span><span class="m-doc-wrap"><a href="struct_render_ware_1_1_compiled_state.html" class="m-doc">CompiledState</a>,
               SetRaster,
-              <a href="_cpp_rev_eng_base_8h.html#aff12ecf140cc31d5335c3c978808c268" class="m-doc">Args</a>(<a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">size_<wbr />t</a> slotIndex, <a href="struct_render_ware_1_1_raster.html" class="m-doc">Raster</a>*raster),
+              <a href="_cpp_rev_eng_base_8h.html#aff12ecf140cc31d5335c3c978808c268" class="m-doc">Args</a>(size_t slotIndex, <a href="struct_render_ware_1_1_raster.html" class="m-doc">Raster</a>*raster),
               <a href="_cpp_rev_eng_base_8h.html#aff12ecf140cc31d5335c3c978808c268" class="m-doc">Args</a>(slotIndex, raster))</span></span>
-              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_compiled_state_8h.html">&lt;/home/runner/work/Spore-ModAPI/Spore-ModAPI/Spore-ModAPI/Spore ModAPI/Spore/RenderWare/CompiledState.h&gt;</a></div>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_compiled_state_8h.html">&lt;Spore/RenderWare/CompiledState.h&gt;</a></div>
             </h3>
             <p><span></span></p>
           </div></section>
@@ -406,16 +406,16 @@
             <h3>
               <span class="m-doc-wrap-bumper"> RenderWare::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a353c7bc76fa0453face0d31ebffa19e1" class="m-doc-self">auto_METHOD_VOID</a>(</span><span class="m-doc-wrap"><a href="struct_render_ware_1_1_texture_slot.html" class="m-doc">TextureSlot</a>,
               SetTexture,
-              <a href="_cpp_rev_eng_base_8h.html#aff12ecf140cc31d5335c3c978808c268" class="m-doc">Args</a>(<a href="struct_render_ware_1_1_compiled_state.html" class="m-doc">CompiledState</a>*compiledState, <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> slotIndex, <a href="struct_render_ware_1_1_raster.html" class="m-doc">Raster</a>*raster),
+              <a href="_cpp_rev_eng_base_8h.html#aff12ecf140cc31d5335c3c978808c268" class="m-doc">Args</a>(<a href="struct_render_ware_1_1_compiled_state.html" class="m-doc">CompiledState</a>*compiledState, int slotIndex, <a href="struct_render_ware_1_1_raster.html" class="m-doc">Raster</a>*raster),
               <a href="_cpp_rev_eng_base_8h.html#aff12ecf140cc31d5335c3c978808c268" class="m-doc">Args</a>(compiledState, slotIndex, raster))</span></span>
-              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_compiled_state_8h.html">&lt;/home/runner/work/Spore-ModAPI/Spore-ModAPI/Spore-ModAPI/Spore ModAPI/Spore/RenderWare/CompiledState.h&gt;</a></div>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_compiled_state_8h.html">&lt;Spore/RenderWare/CompiledState.h&gt;</a></div>
             </h3>
             <p><span></span></p>
           </div></section>
           <section class="m-doc-details" id="a40d83776c19a8e8e485e81613152ed58"><div>
             <h3>
-              <span class="m-doc-wrap-bumper"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">namespace</a> RenderWare::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a40d83776c19a8e8e485e81613152ed58" class="m-doc-self">Addresses</a>(</span><span class="m-doc-wrap"><a href="struct_render_ware_1_1_mesh.html" class="m-doc">Mesh</a>)</span></span>
-              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_mesh_8h.html">&lt;/home/runner/work/Spore-ModAPI/Spore-ModAPI/Spore-ModAPI/Spore ModAPI/Spore/RenderWare/Mesh.h&gt;</a></div>
+              <span class="m-doc-wrap-bumper">namespace RenderWare::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a40d83776c19a8e8e485e81613152ed58" class="m-doc-self">Addresses</a>(</span><span class="m-doc-wrap"><a href="struct_render_ware_1_1_mesh.html" class="m-doc">Mesh</a>)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_mesh_8h.html">&lt;Spore/RenderWare/Mesh.h&gt;</a></div>
             </h3>
             <p><span></span></p>
           </div></section>
@@ -423,28 +423,28 @@
             <h3>
               <span class="m-doc-wrap-bumper"> RenderWare::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a588b9a3b2d7be19644ba417e6446a2af" class="m-doc-self">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="struct_render_ware_1_1_raster.html" class="m-doc">Raster</a>,
               0x20)</span></span>
-              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_raster_8h.html">&lt;/home/runner/work/Spore-ModAPI/Spore-ModAPI/Spore-ModAPI/Spore ModAPI/Spore/RenderWare/Raster.h&gt;</a></div>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_raster_8h.html">&lt;Spore/RenderWare/Raster.h&gt;</a></div>
             </h3>
             <p><span></span></p>
           </div></section>
           <section class="m-doc-details" id="a7d755fb68c610531df24a6fdfe0c6023"><div>
             <h3>
-              <span class="m-doc-wrap-bumper"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">namespace</a> RenderWare::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a7d755fb68c610531df24a6fdfe0c6023" class="m-doc-self">Addresses</a>(</span><span class="m-doc-wrap"><a href="struct_render_ware_1_1_raster.html" class="m-doc">Raster</a>)</span></span>
-              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_raster_8h.html">&lt;/home/runner/work/Spore-ModAPI/Spore-ModAPI/Spore-ModAPI/Spore ModAPI/Spore/RenderWare/Raster.h&gt;</a></div>
+              <span class="m-doc-wrap-bumper">namespace RenderWare::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a7d755fb68c610531df24a6fdfe0c6023" class="m-doc-self">Addresses</a>(</span><span class="m-doc-wrap"><a href="struct_render_ware_1_1_raster.html" class="m-doc">Raster</a>)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_raster_8h.html">&lt;Spore/RenderWare/Raster.h&gt;</a></div>
             </h3>
             <p><span></span></p>
           </div></section>
           <section class="m-doc-details" id="a592b08e8f83e22abc01f7ae8f8b9ed62"><div>
             <h3>
-              <span class="m-doc-wrap-bumper"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">namespace</a> RenderWare::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a592b08e8f83e22abc01f7ae8f8b9ed62" class="m-doc-self">Addresses</a>(</span><span class="m-doc-wrap"><a href="struct_render_ware_1_1_r_w_header.html" class="m-doc">RWHeader</a>)</span></span>
-              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_r_w_header_8h.html">&lt;/home/runner/work/Spore-ModAPI/Spore-ModAPI/Spore-ModAPI/Spore ModAPI/Spore/RenderWare/RWHeader.h&gt;</a></div>
+              <span class="m-doc-wrap-bumper">namespace RenderWare::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a592b08e8f83e22abc01f7ae8f8b9ed62" class="m-doc-self">Addresses</a>(</span><span class="m-doc-wrap"><a href="struct_render_ware_1_1_r_w_header.html" class="m-doc">RWHeader</a>)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_r_w_header_8h.html">&lt;Spore/RenderWare/RWHeader.h&gt;</a></div>
             </h3>
             <p><span></span></p>
           </div></section>
           <section class="m-doc-details" id="a0f0c20eb3a8b84e430f640def0b0a0fe"><div>
             <h3>
-              <span class="m-doc-wrap-bumper"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">namespace</a> RenderWare::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a0f0c20eb3a8b84e430f640def0b0a0fe" class="m-doc-self">Addresses</a>(</span><span class="m-doc-wrap"><a href="struct_render_ware_1_1_vertex_description.html" class="m-doc">VertexDescription</a>)</span></span>
-              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_vertex_description_8h.html">&lt;/home/runner/work/Spore-ModAPI/Spore-ModAPI/Spore-ModAPI/Spore ModAPI/Spore/RenderWare/VertexDescription.h&gt;</a></div>
+              <span class="m-doc-wrap-bumper">namespace RenderWare::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a0f0c20eb3a8b84e430f640def0b0a0fe" class="m-doc-self">Addresses</a>(</span><span class="m-doc-wrap"><a href="struct_render_ware_1_1_vertex_description.html" class="m-doc">VertexDescription</a>)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_vertex_description_8h.html">&lt;Spore/RenderWare/VertexDescription.h&gt;</a></div>
             </h3>
             <p><span></span></p>
           </div></section>
@@ -453,8 +453,8 @@
           <h2>Variable documentation</h2>
           <section class="m-doc-details" id="afc8859c5a1d2487fbfa4b3ca892b12d4"><div>
             <h3>
-              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">constexpr</a> <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">unsigned</a> <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> RenderWare::<wbr /><a href="#afc8859c5a1d2487fbfa4b3ca892b12d4" class="m-doc-self">RWDECL_VERTEX2</a>
-              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_vertex_description_8h.html">&lt;/home/runner/work/Spore-ModAPI/Spore-ModAPI/Spore-ModAPI/Spore ModAPI/Spore/RenderWare/VertexDescription.h&gt;</a></div>
+              unsigned int RenderWare::<wbr /><a href="#afc8859c5a1d2487fbfa4b3ca892b12d4" class="m-doc-self">RWDECL_VERTEX2</a> <span class="m-label m-primary">constexpr</span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_vertex_description_8h.html">&lt;Spore/RenderWare/VertexDescription.h&gt;</a></div>
             </h3>
             <p><span></span></p>
           </div></section>
@@ -497,13 +497,13 @@
     </div>
   </div>
 </div>
-<script src="search-v2.js"></script>
-<script src="searchdata-v2.js" async="async"></script>
+<script src="search-v1.js"></script>
+<script src="searchdata-v1.js" async="async"></script>
 <footer><nav>
   <div class="m-container">
     <div class="m-row">
       <div class="m-col-l-10 m-push-l-1">
-        <p>Spore ModAPI SDK for creating C++ mods for Spore. Created with <a href="https://doxygen.org/">Doxygen</a> 1.9.8 and <a href="https://mcss.mosra.cz/">m.css</a>.</p>
+        <p>Spore ModAPI SDK for creating C++ mods for Spore. Created with <a href="https://doxygen.org/">Doxygen</a> 1.8.16 and <a href="https://mcss.mosra.cz/">m.css</a>.</p>
       </div>
     </div>
   </div>

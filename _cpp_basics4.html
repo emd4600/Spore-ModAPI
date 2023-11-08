@@ -14,7 +14,7 @@
 <header><nav id="navigation">
   <div class="m-container">
     <div class="m-row">
-      <a href="index.html" id="m-navbar-brand" class="m-col-t-8 m-col-m-none m-left-m"><img src="Spore_ModAPI_Icon.png" alt="" />Spore ModAPI <span class="m-thin">SDK for creating C++ mods for Spore</span></a>
+      <a href="index.html" id="m-navbar-brand" class="m-col-t-8 m-col-m-none m-left-m"><img src="Spore_ModAPI_Icon.png" />Spore ModAPI <span class="m-thin">SDK for creating C++ mods for Spore</span></a>
       <div class="m-col-t-4 m-hide-m m-text-right m-nopadr">
         <a href="#search" class="m-doc-search-icon" title="Search" onclick="return showSearch()"><svg style="height: 0.9rem;" viewBox="0 0 16 16">
           <path id="m-doc-search-icon-path" d="m6 0c-3.31 0-6 2.69-6 6 0 3.31 2.69 6 6 6 1.49 0 2.85-0.541 3.89-1.44-0.0164 0.338 0.147 0.759 0.5 1.15l3.22 3.79c0.552 0.614 1.45 0.665 2 0.115 0.55-0.55 0.499-1.45-0.115-2l-3.79-3.22c-0.392-0.353-0.812-0.515-1.15-0.5 0.895-1.05 1.44-2.41 1.44-3.89 0-3.31-2.69-6-6-6zm0 1.56a4.44 4.44 0 0 1 4.44 4.44 4.44 4.44 0 0 1-4.44 4.44 4.44 4.44 0 0 1-4.44-4.44 4.44 4.44 0 0 1 4.44-4.44z"/>
@@ -150,7 +150,7 @@
 <span class="n">Color</span><span class="w"> </span><span class="n">color</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Color</span><span class="p">();</span><span class="w"></span>
 
 <span class="n">Color</span><span class="w"> </span><span class="nf">color</span><span class="p">(</span><span class="mi">128</span><span class="p">);</span><span class="w"></span>
-<span class="n">Color</span><span class="w"> </span><span class="n">color</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Color</span><span class="p">(</span><span class="mi">128</span><span class="p">);</span><span class="w"></span></pre><aside class="m-note m-info"><h4>Note</h4><p>If you define constructors with parameters, the <em>default constructor</em> is not created by default. If you want it, you will have to declare it explicitly.</p></aside><p>It&#x27;s also possible to execute code when an object is destroyed, using a <strong>destructor</strong>. Destructors are defined like a contructor, but prefixed with <code>~</code>: <code><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">~Color()</a></code></p></section><section id="CppBasics4-Classes-Static"><h3><a href="#CppBasics4-Classes-Static">Static members</a></h3><p>Sometimes, we will want to have members or methods in a class that don&#x27;t really belong to each instance, but to the class itself. Let&#x27;s see it with an example: imagine we want to define a variable that is the class name. That variable doesn&#x27;t belong to each instance, because all instances of the class must have the same class name. We can define such variables (and methods) using the <code>static</code> keyword.</p><pre class="m-code"><span class="k">class</span><span class="w"> </span><span class="nc">Date</span><span class="w"></span>
+<span class="n">Color</span><span class="w"> </span><span class="n">color</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Color</span><span class="p">(</span><span class="mi">128</span><span class="p">);</span><span class="w"></span></pre><aside class="m-note m-info"><h4>Note</h4><p>If you define constructors with parameters, the <em>default constructor</em> is not created by default. If you want it, you will have to declare it explicitly.</p></aside><p>It&#x27;s also possible to execute code when an object is destroyed, using a <strong>destructor</strong>. Destructors are defined like a contructor, but prefixed with <code>~</code>: <code>~Color()</code></p></section><section id="CppBasics4-Classes-Static"><h3><a href="#CppBasics4-Classes-Static">Static members</a></h3><p>Sometimes, we will want to have members or methods in a class that don&#x27;t really belong to each instance, but to the class itself. Let&#x27;s see it with an example: imagine we want to define a variable that is the class name. That variable doesn&#x27;t belong to each instance, because all instances of the class must have the same class name. We can define such variables (and methods) using the <code>static</code> keyword.</p><pre class="m-code"><span class="k">class</span><span class="w"> </span><span class="nc">Date</span><span class="w"></span>
 <span class="p">{</span><span class="w"></span>
 <span class="k">public</span><span class="o">:</span><span class="w"></span>
 <span class="w">    </span><span class="k">static</span><span class="w"> </span><span class="n">string</span><span class="w"> </span><span class="n">CLASS_NAME</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Date&quot;</span><span class="p">;</span><span class="w"></span>
@@ -279,13 +279,13 @@
     </div>
   </div>
 </div>
-<script src="search-v2.js"></script>
-<script src="searchdata-v2.js" async="async"></script>
+<script src="search-v1.js"></script>
+<script src="searchdata-v1.js" async="async"></script>
 <footer><nav>
   <div class="m-container">
     <div class="m-row">
       <div class="m-col-l-10 m-push-l-1">
-        <p>Spore ModAPI SDK for creating C++ mods for Spore. Created with <a href="https://doxygen.org/">Doxygen</a> 1.9.8 and <a href="https://mcss.mosra.cz/">m.css</a>.</p>
+        <p>Spore ModAPI SDK for creating C++ mods for Spore. Created with <a href="https://doxygen.org/">Doxygen</a> 1.8.16 and <a href="https://mcss.mosra.cz/">m.css</a>.</p>
       </div>
     </div>
   </div>

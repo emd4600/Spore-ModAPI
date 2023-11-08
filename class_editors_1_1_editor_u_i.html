@@ -14,7 +14,7 @@
 <header><nav id="navigation">
   <div class="m-container">
     <div class="m-row">
-      <a href="index.html" id="m-navbar-brand" class="m-col-t-8 m-col-m-none m-left-m"><img src="Spore_ModAPI_Icon.png" alt="" />Spore ModAPI <span class="m-thin">SDK for creating C++ mods for Spore</span></a>
+      <a href="index.html" id="m-navbar-brand" class="m-col-t-8 m-col-m-none m-left-m"><img src="Spore_ModAPI_Icon.png" />Spore ModAPI <span class="m-thin">SDK for creating C++ mods for Spore</span></a>
       <div class="m-col-t-4 m-hide-m m-text-right m-nopadr">
         <a href="#search" class="m-doc-search-icon" title="Search" onclick="return showSearch()"><svg style="height: 0.9rem;" viewBox="0 0 16 16">
           <path id="m-doc-search-icon-path" d="m6 0c-3.31 0-6 2.69-6 6 0 3.31 2.69 6 6 6 1.49 0 2.85-0.541 3.89-1.44-0.0164 0.338 0.147 0.759 0.5 1.15l3.22 3.79c0.552 0.614 1.45 0.665 2 0.115 0.55-0.55 0.499-1.45-0.115-2l-3.79-3.22c-0.392-0.353-0.812-0.515-1.15-0.5 0.895-1.05 1.44-2.41 1.44-3.89 0-3.31-2.69-6-6-6zm0 1.56a4.44 4.44 0 0 1 4.44 4.44 4.44 4.44 0 0 1-4.44 4.44 4.44 4.44 0 0 1-4.44-4.44 4.44 4.44 0 0 1 4.44-4.44z"/>
@@ -46,10 +46,10 @@
       <div class="m-col-l-10 m-push-l-1">
         <h1>
           <span class="m-breadcrumb"><a href="namespace_editors.html">Editors</a>::<wbr/></span>EditorUI <span class="m-thin">class</span>
-          <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_editor_u_i_8h.html">&lt;/home/runner/work/Spore-ModAPI/Spore-ModAPI/Spore-ModAPI/Spore ModAPI/Spore/Editors/EditorUI.h&gt;</a></div>
+          <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_editor_u_i_8h.html">&lt;Spore/Editors/EditorUI.h&gt;</a></div>
         </h1>
         <p><span></span></p>
-        <nav class="m-block m-default">
+        <div class="m-block m-default">
           <h3>Contents</h3>
           <ul>
             <li>
@@ -62,7 +62,7 @@
               </ul>
             </li>
           </ul>
-        </nav>
+        </div>
         <section id="base-classes">
           <h2><a href="#base-classes">Base classes</a></h2>
           <dl class="m-doc">
@@ -102,23 +102,23 @@
           <dl class="m-doc">
             <dt id="a2313f94eec5c77b4dab4d5031a882cc6">
               <span class="m-doc-wrap-bumper">auto <a href="#a2313f94eec5c77b4dab4d5031a882cc6" class="m-doc-self">Load</a>(</span><span class="m-doc-wrap"><a href="class_editors_1_1c_editor.html" class="m-doc">cEditor</a>* pEditor,
-              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">uint32_<wbr />t</a> instanceID,
-              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">uint32_<wbr />t</a> groupID,
-              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">bool</a> editorModelForceSaveover) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">bool</a></span>
+              uint32_t instanceID,
+              uint32_t groupID,
+              bool editorModelForceSaveover) -&gt; bool</span>
             </dt>
             <dd><span></span></dd>
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#a92c31112b37540843917e7cc38b226a5" class="m-doc">HandleMessage</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">uint32_<wbr />t</a> messageID,
-              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">void</a>* msg) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">bool</a> <span class="m-label m-flat m-warning">override</span></span>
+              <span class="m-doc-wrap-bumper">auto <a href="#a92c31112b37540843917e7cc38b226a5" class="m-doc">HandleMessage</a>(</span><span class="m-doc-wrap">uint32_t messageID,
+              void* msg) -&gt; bool <span class="m-label m-flat m-warning">override</span></span>
             </dt>
             <dd>Called every time a message is received.</dd>
             <dt>
               <span class="m-doc-wrap-bumper">auto <a href="#a2327275711ab6d0f4219a2458ec2ebfd" class="m-doc">HandleUIMessage</a>(</span><span class="m-doc-wrap"><a href="class_u_t_f_win_1_1_i_window.html" class="m-doc">UTFWin::<wbr />IWindow</a>* pWindow,
-              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">const</a> <a href="class_u_t_f_win_1_1_message.html" class="m-doc">UTFWin::<wbr />Message</a>&amp; message) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">bool</a> <span class="m-label m-flat m-warning">override</span></span>
+              const <a href="class_u_t_f_win_1_1_message.html" class="m-doc">UTFWin::<wbr />Message</a>&amp; message) -&gt; bool <span class="m-label m-flat m-warning">override</span></span>
             </dt>
             <dd>Method called every time a message is received on a window that has this IWinProc added.</dd>
             <dt id="a0a88e0188e6e9c4a54af946d14ad6fdb">
-              <span class="m-doc-wrap-bumper">auto <a href="#a0a88e0188e6e9c4a54af946d14ad6fdb" class="m-doc-self">SetActiveMode</a>(</span><span class="m-doc-wrap"><a href="namespace_editors.html#ac58a0d836dc46427d3c2128f87430edd" class="m-doc">Mode</a> mode) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">void</a></span>
+              <span class="m-doc-wrap-bumper">void <a href="#a0a88e0188e6e9c4a54af946d14ad6fdb" class="m-doc-self">SetActiveMode</a>(</span><span class="m-doc-wrap"><a href="namespace_editors.html#ac58a0d836dc46427d3c2128f87430edd" class="m-doc">Mode</a> mode)</span>
             </dt>
             <dd><span></span></dd>
           </dl>
@@ -143,7 +143,7 @@
             </dt>
             <dd><span></span></dd>
             <dt id="a9c1a0f1ed0c970382209911e3f933f71">
-              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> <a href="#a9c1a0f1ed0c970382209911e3f933f71" class="m-doc-self">field_60</a>
+              int <a href="#a9c1a0f1ed0c970382209911e3f933f71" class="m-doc-self">field_60</a>
             </dt>
             <dd><span></span></dd>
             <dt id="af5af11d2efb840169234c2dead0b9c4a">
@@ -163,7 +163,7 @@
             </dt>
             <dd><span></span></dd>
             <dt id="ae2145340043b00499fe11f8e0fca79a7">
-              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> <a href="#ae2145340043b00499fe11f8e0fca79a7" class="m-doc-self">field_74</a>
+              int <a href="#ae2145340043b00499fe11f8e0fca79a7" class="m-doc-self">field_74</a>
             </dt>
             <dd><span></span></dd>
             <dt id="adca0a0e4747a2094c33b5481bcc8aa77">
@@ -171,7 +171,7 @@
             </dt>
             <dd><span></span></dd>
             <dt id="aa0fadc8e228b48884bde05d645d4855f">
-              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> <a href="#aa0fadc8e228b48884bde05d645d4855f" class="m-doc-self">field_7C</a>
+              int <a href="#aa0fadc8e228b48884bde05d645d4855f" class="m-doc-self">field_7C</a>
             </dt>
             <dd><span></span></dd>
             <dt id="a8752dd6ad6f5a16f234c6a57cbc32799">
@@ -183,191 +183,191 @@
             </dt>
             <dd><span></span></dd>
             <dt id="af63d6c076a76356bfb168b78adf48fff">
-              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> <a href="#af63d6c076a76356bfb168b78adf48fff" class="m-doc-self">field_88</a>
+              int <a href="#af63d6c076a76356bfb168b78adf48fff" class="m-doc-self">field_88</a>
             </dt>
             <dd><span></span></dd>
             <dt id="a174bceec609b5711aa1bc5620a050253">
-              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> <a href="#a174bceec609b5711aa1bc5620a050253" class="m-doc-self">field_8C</a>
+              int <a href="#a174bceec609b5711aa1bc5620a050253" class="m-doc-self">field_8C</a>
             </dt>
             <dd><span></span></dd>
             <dt id="aec48f1fbd1228cb78b6be7a1ef96ac4d">
-              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> <a href="#aec48f1fbd1228cb78b6be7a1ef96ac4d" class="m-doc-self">field_90</a>
+              int <a href="#aec48f1fbd1228cb78b6be7a1ef96ac4d" class="m-doc-self">field_90</a>
             </dt>
             <dd><span></span></dd>
             <dt id="a6d8dba95b022439d74168c1e8d8e7ac2">
-              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> <a href="#a6d8dba95b022439d74168c1e8d8e7ac2" class="m-doc-self">field_94</a>
+              int <a href="#a6d8dba95b022439d74168c1e8d8e7ac2" class="m-doc-self">field_94</a>
             </dt>
             <dd><span></span></dd>
             <dt id="a09fbce8a8d0a5e76bf71966b4ec15c37">
-              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> <a href="#a09fbce8a8d0a5e76bf71966b4ec15c37" class="m-doc-self">field_98</a>
+              int <a href="#a09fbce8a8d0a5e76bf71966b4ec15c37" class="m-doc-self">field_98</a>
             </dt>
             <dd><span></span></dd>
             <dt id="a3278c3b26da3dabf3decd874e6dd4ef4">
-              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> <a href="#a3278c3b26da3dabf3decd874e6dd4ef4" class="m-doc-self">field_9C</a>
+              int <a href="#a3278c3b26da3dabf3decd874e6dd4ef4" class="m-doc-self">field_9C</a>
             </dt>
             <dd><span></span></dd>
             <dt id="a873f2e7128de0c7b80229c8c336d7c24">
-              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">bool</a> <a href="#a873f2e7128de0c7b80229c8c336d7c24" class="m-doc-self">mbEditorModelForceSaveover</a>
+              bool <a href="#a873f2e7128de0c7b80229c8c336d7c24" class="m-doc-self">mbEditorModelForceSaveover</a>
             </dt>
             <dd><span></span></dd>
             <dt id="a018bed139d2132311d05659f677b8f5a">
-              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">bool</a> <a href="#a018bed139d2132311d05659f677b8f5a" class="m-doc-self">field_A1</a>
+              bool <a href="#a018bed139d2132311d05659f677b8f5a" class="m-doc-self">field_A1</a>
             </dt>
             <dd><span></span></dd>
             <dt id="acaae4a9b9066c3a2841639e6ec57c478">
-              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">bool</a> <a href="#acaae4a9b9066c3a2841639e6ec57c478" class="m-doc-self">field_A2</a>
+              bool <a href="#acaae4a9b9066c3a2841639e6ec57c478" class="m-doc-self">field_A2</a>
             </dt>
             <dd><span></span></dd>
             <dt id="a020a61413db7aff29200b30d30a6519e">
-              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">char</a> <a href="#a020a61413db7aff29200b30d30a6519e" class="m-doc-self">field_A3</a>
+              char <a href="#a020a61413db7aff29200b30d30a6519e" class="m-doc-self">field_A3</a>
             </dt>
             <dd><span></span></dd>
             <dt id="a39e72bd2ab2de19778ff06ab01f7c7d8">
-              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> <a href="#a39e72bd2ab2de19778ff06ab01f7c7d8" class="m-doc-self">field_A4</a>
+              int <a href="#a39e72bd2ab2de19778ff06ab01f7c7d8" class="m-doc-self">field_A4</a>
             </dt>
             <dd><span></span></dd>
             <dt id="a0426406984f65acc394616d44231ef01">
-              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> <a href="#a0426406984f65acc394616d44231ef01" class="m-doc-self">field_A8</a>
+              int <a href="#a0426406984f65acc394616d44231ef01" class="m-doc-self">field_A8</a>
             </dt>
             <dd><span></span></dd>
             <dt id="a9b4583600fc2390e5449c59156254fa9">
-              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> <a href="#a9b4583600fc2390e5449c59156254fa9" class="m-doc-self">field_AC</a>
+              int <a href="#a9b4583600fc2390e5449c59156254fa9" class="m-doc-self">field_AC</a>
             </dt>
             <dd><span></span></dd>
             <dt id="a6f6a9550385e3f65810e9d2be3ede5f2">
-              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> <a href="#a6f6a9550385e3f65810e9d2be3ede5f2" class="m-doc-self">field_B0</a>
+              int <a href="#a6f6a9550385e3f65810e9d2be3ede5f2" class="m-doc-self">field_B0</a>
             </dt>
             <dd><span></span></dd>
             <dt id="a6933d94299500eb762d154fb5936200a">
-              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> <a href="#a6933d94299500eb762d154fb5936200a" class="m-doc-self">field_B4</a>
+              int <a href="#a6933d94299500eb762d154fb5936200a" class="m-doc-self">field_B4</a>
             </dt>
             <dd><span></span></dd>
             <dt id="ad3e947e45fd17ff6f306915d4c248b26">
-              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> <a href="#ad3e947e45fd17ff6f306915d4c248b26" class="m-doc-self">field_B8</a>
+              int <a href="#ad3e947e45fd17ff6f306915d4c248b26" class="m-doc-self">field_B8</a>
             </dt>
             <dd><span></span></dd>
             <dt id="a1a0bd359397f765d85360a8676e9636d">
-              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> <a href="#a1a0bd359397f765d85360a8676e9636d" class="m-doc-self">field_BC</a>
+              int <a href="#a1a0bd359397f765d85360a8676e9636d" class="m-doc-self">field_BC</a>
             </dt>
             <dd><span></span></dd>
             <dt id="ab43b295df51964eec92b06bc8279b101">
-              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> <a href="#ab43b295df51964eec92b06bc8279b101" class="m-doc-self">field_C0</a>
+              int <a href="#ab43b295df51964eec92b06bc8279b101" class="m-doc-self">field_C0</a>
             </dt>
             <dd><span></span></dd>
             <dt id="a53904a292b7c614ecc16ae89ec1ef971">
-              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> <a href="#a53904a292b7c614ecc16ae89ec1ef971" class="m-doc-self">field_C4</a>
+              int <a href="#a53904a292b7c614ecc16ae89ec1ef971" class="m-doc-self">field_C4</a>
             </dt>
             <dd><span></span></dd>
             <dt id="a854a09cccd3a0887556b10447de5762b">
-              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> <a href="#a854a09cccd3a0887556b10447de5762b" class="m-doc-self">field_C8</a>
+              int <a href="#a854a09cccd3a0887556b10447de5762b" class="m-doc-self">field_C8</a>
             </dt>
             <dd><span></span></dd>
             <dt id="abaa1fe646fe405e80efab79cab7df2e8">
-              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> <a href="#abaa1fe646fe405e80efab79cab7df2e8" class="m-doc-self">field_CC</a>
+              int <a href="#abaa1fe646fe405e80efab79cab7df2e8" class="m-doc-self">field_CC</a>
             </dt>
             <dd><span></span></dd>
             <dt id="a2c26b24a435a939a7319b16d777cdae3">
-              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">bool</a> <a href="#a2c26b24a435a939a7319b16d777cdae3" class="m-doc-self">field_D0</a>
+              bool <a href="#a2c26b24a435a939a7319b16d777cdae3" class="m-doc-self">field_D0</a>
             </dt>
             <dd><span></span></dd>
             <dt id="ac85d9c636413262e590cbe2c09bb985e">
-              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">bool</a> <a href="#ac85d9c636413262e590cbe2c09bb985e" class="m-doc-self">field_D1</a>
+              bool <a href="#ac85d9c636413262e590cbe2c09bb985e" class="m-doc-self">field_D1</a>
             </dt>
             <dd><span></span></dd>
             <dt id="aa8eed58854876b77fb37e7ce90c737fa">
-              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> <a href="#aa8eed58854876b77fb37e7ce90c737fa" class="m-doc-self">field_D4</a>
+              int <a href="#aa8eed58854876b77fb37e7ce90c737fa" class="m-doc-self">field_D4</a>
             </dt>
             <dd><span></span></dd>
             <dt id="ab496e0c8864ce353982718bfc990c13a">
-              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> <a href="#ab496e0c8864ce353982718bfc990c13a" class="m-doc-self">field_D8</a>
+              int <a href="#ab496e0c8864ce353982718bfc990c13a" class="m-doc-self">field_D8</a>
             </dt>
             <dd><span></span></dd>
             <dt id="aac5a674c3ee2e3c7257e9fede34324b0">
-              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> <a href="#aac5a674c3ee2e3c7257e9fede34324b0" class="m-doc-self">field_DC</a>
+              int <a href="#aac5a674c3ee2e3c7257e9fede34324b0" class="m-doc-self">field_DC</a>
             </dt>
             <dd><span></span></dd>
             <dt id="a8f992403c8843967735e8dd1f740a65e">
-              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> <a href="#a8f992403c8843967735e8dd1f740a65e" class="m-doc-self">field_E0</a>
+              int <a href="#a8f992403c8843967735e8dd1f740a65e" class="m-doc-self">field_E0</a>
             </dt>
             <dd><span></span></dd>
             <dt id="a1f07bd964560b5b6df34803fc79c0ea1">
-              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">bool</a> <a href="#a1f07bd964560b5b6df34803fc79c0ea1" class="m-doc-self">field_E4</a>
+              bool <a href="#a1f07bd964560b5b6df34803fc79c0ea1" class="m-doc-self">field_E4</a>
             </dt>
             <dd><span></span></dd>
             <dt id="a626f867cf7d87a78314812ceed6069b9">
-              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">bool</a> <a href="#a626f867cf7d87a78314812ceed6069b9" class="m-doc-self">field_E5</a>
+              bool <a href="#a626f867cf7d87a78314812ceed6069b9" class="m-doc-self">field_E5</a>
             </dt>
             <dd><span></span></dd>
             <dt id="a2e9086acfa32b01aeea6cf447f326e7d">
-              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> <a href="#a2e9086acfa32b01aeea6cf447f326e7d" class="m-doc-self">field_E8</a>
+              int <a href="#a2e9086acfa32b01aeea6cf447f326e7d" class="m-doc-self">field_E8</a>
             </dt>
             <dd><span></span></dd>
             <dt id="a5be848318d4f7ab67ae9c6f7519fa8d2">
-              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">bool</a> <a href="#a5be848318d4f7ab67ae9c6f7519fa8d2" class="m-doc-self">field_EC</a>
+              bool <a href="#a5be848318d4f7ab67ae9c6f7519fa8d2" class="m-doc-self">field_EC</a>
             </dt>
             <dd><span></span></dd>
             <dt id="a4c872c351bf3531effb2b3839a909e1a">
-              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> <a href="#a4c872c351bf3531effb2b3839a909e1a" class="m-doc-self">field_F0</a>
+              int <a href="#a4c872c351bf3531effb2b3839a909e1a" class="m-doc-self">field_F0</a>
             </dt>
             <dd><span></span></dd>
             <dt id="ad42ecaefb24b30472836a2ec0876eb4a">
-              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">bool</a> <a href="#ad42ecaefb24b30472836a2ec0876eb4a" class="m-doc-self">field_F4</a>
+              bool <a href="#ad42ecaefb24b30472836a2ec0876eb4a" class="m-doc-self">field_F4</a>
             </dt>
             <dd><span></span></dd>
             <dt id="aafb80f0477ffad2a785b3de36374f3ab">
-              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> <a href="#aafb80f0477ffad2a785b3de36374f3ab" class="m-doc-self">field_F8</a>
+              int <a href="#aafb80f0477ffad2a785b3de36374f3ab" class="m-doc-self">field_F8</a>
             </dt>
             <dd><span></span></dd>
             <dt id="a54b5b0242ad211b5e6a8ca70a4dfe108">
-              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> <a href="#a54b5b0242ad211b5e6a8ca70a4dfe108" class="m-doc-self">field_FC</a>
+              int <a href="#a54b5b0242ad211b5e6a8ca70a4dfe108" class="m-doc-self">field_FC</a>
             </dt>
             <dd><span></span></dd>
             <dt id="a183ca897513595ed93133b32d7f52dca">
-              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">bool</a> <a href="#a183ca897513595ed93133b32d7f52dca" class="m-doc-self">field_100</a>
+              bool <a href="#a183ca897513595ed93133b32d7f52dca" class="m-doc-self">field_100</a>
             </dt>
             <dd><span></span></dd>
             <dt id="a8b8ab0423b5c7f691c1f6c38ff7569e2">
-              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">bool</a> <a href="#a8b8ab0423b5c7f691c1f6c38ff7569e2" class="m-doc-self">field_101</a>
+              bool <a href="#a8b8ab0423b5c7f691c1f6c38ff7569e2" class="m-doc-self">field_101</a>
             </dt>
             <dd><span></span></dd>
             <dt id="a746658b22d0feebc8e831636a4063a1c">
-              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">bool</a> <a href="#a746658b22d0feebc8e831636a4063a1c" class="m-doc-self">field_102</a>
+              bool <a href="#a746658b22d0feebc8e831636a4063a1c" class="m-doc-self">field_102</a>
             </dt>
             <dd><span></span></dd>
             <dt id="a55dfa7387bf8f1e43918d7230c0f1ea8">
-              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">bool</a> <a href="#a55dfa7387bf8f1e43918d7230c0f1ea8" class="m-doc-self">field_103</a>
+              bool <a href="#a55dfa7387bf8f1e43918d7230c0f1ea8" class="m-doc-self">field_103</a>
             </dt>
             <dd><span></span></dd>
             <dt id="a6d56e96b20788abe053c3a8240893546">
-              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">bool</a> <a href="#a6d56e96b20788abe053c3a8240893546" class="m-doc-self">field_104</a>
+              bool <a href="#a6d56e96b20788abe053c3a8240893546" class="m-doc-self">field_104</a>
             </dt>
             <dd><span></span></dd>
             <dt id="a290dd6647cc9e329f1797d8c021e76c3">
-              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">bool</a> <a href="#a290dd6647cc9e329f1797d8c021e76c3" class="m-doc-self">field_105</a>
+              bool <a href="#a290dd6647cc9e329f1797d8c021e76c3" class="m-doc-self">field_105</a>
             </dt>
             <dd><span></span></dd>
             <dt id="a6986e85de5a8784227f7b58543ae159a">
-              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">bool</a> <a href="#a6986e85de5a8784227f7b58543ae159a" class="m-doc-self">field_106</a>
+              bool <a href="#a6986e85de5a8784227f7b58543ae159a" class="m-doc-self">field_106</a>
             </dt>
             <dd><span></span></dd>
             <dt id="a1ebbb9300464324ff73a07f99c7d82f6">
-              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">bool</a> <a href="#a1ebbb9300464324ff73a07f99c7d82f6" class="m-doc-self">field_107</a>
+              bool <a href="#a1ebbb9300464324ff73a07f99c7d82f6" class="m-doc-self">field_107</a>
             </dt>
             <dd><span></span></dd>
             <dt id="a5acdc303548ba747d7668ba59ce5c12d">
-              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> <a href="#a5acdc303548ba747d7668ba59ce5c12d" class="m-doc-self">field_108</a>
+              int <a href="#a5acdc303548ba747d7668ba59ce5c12d" class="m-doc-self">field_108</a>
             </dt>
             <dd><span></span></dd>
             <dt id="a05204154761dae915276684c896a9ff8">
-              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">bool</a> <a href="#a05204154761dae915276684c896a9ff8" class="m-doc-self">field_10C</a>
+              bool <a href="#a05204154761dae915276684c896a9ff8" class="m-doc-self">field_10C</a>
             </dt>
             <dd><span></span></dd>
             <dt id="a45efafa8857c510e61c56ca791eea0ff">
-              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> <a href="#a45efafa8857c510e61c56ca791eea0ff" class="m-doc-self">field_110</a>
+              int <a href="#a45efafa8857c510e61c56ca791eea0ff" class="m-doc-self">field_110</a>
             </dt>
             <dd><span></span></dd>
             <dt id="a1aaab23077ea8723359b007663213642">
-              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">bool</a> <a href="#a1aaab23077ea8723359b007663213642" class="m-doc-self">mbMessageListenerAdded</a>
+              bool <a href="#a1aaab23077ea8723359b007663213642" class="m-doc-self">mbMessageListenerAdded</a>
             </dt>
             <dd><span></span></dd>
             <dt id="a65159298e07ef4ddc363f9c4c90de059">
@@ -379,15 +379,15 @@
             </dt>
             <dd><span></span></dd>
             <dt id="aca08860495cb3bf434ebab7f3ef9193c">
-              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">uint32_<wbr />t</a>* <a href="#aca08860495cb3bf434ebab7f3ef9193c" class="m-doc-self">mMessageIDs</a>
+              uint32_t* <a href="#aca08860495cb3bf434ebab7f3ef9193c" class="m-doc-self">mMessageIDs</a>
             </dt>
             <dd><span></span></dd>
             <dt id="aa2df675da476c1692cce764c30f4bfa6">
-              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">size_<wbr />t</a> <a href="#aa2df675da476c1692cce764c30f4bfa6" class="m-doc-self">mNumMessageIDs</a>
+              size_t <a href="#aa2df675da476c1692cce764c30f4bfa6" class="m-doc-self">mNumMessageIDs</a>
             </dt>
             <dd><span></span></dd>
             <dt id="aa9cb3ab645f7ffc2b5b082bb15656967">
-              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> <a href="#aa9cb3ab645f7ffc2b5b082bb15656967" class="m-doc-self">field_128</a>
+              int <a href="#aa9cb3ab645f7ffc2b5b082bb15656967" class="m-doc-self">field_128</a>
             </dt>
             <dd><span></span></dd>
           </dl>
@@ -396,8 +396,8 @@
           <h2>Function documentation</h2>
           <section class="m-doc-details" id="a92c31112b37540843917e7cc38b226a5"><div>
             <h3>
-              <span class="m-doc-wrap-bumper"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">bool</a> Editors::<wbr />EditorUI::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a92c31112b37540843917e7cc38b226a5" class="m-doc-self">HandleMessage</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">uint32_<wbr />t</a> messageID,
-              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">void</a>* msg) <span class="m-label m-warning">override</span></span></span>
+              <span class="m-doc-wrap-bumper">bool Editors::<wbr />EditorUI::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a92c31112b37540843917e7cc38b226a5" class="m-doc-self">HandleMessage</a>(</span><span class="m-doc-wrap">uint32_t messageID,
+              void* msg) <span class="m-label m-warning">override</span></span></span>
             </h3>
             <p>Called every time a message is received.</p>
             <table class="m-table m-fullwidth m-flat">
@@ -425,8 +425,8 @@
           </div></section>
           <section class="m-doc-details" id="a2327275711ab6d0f4219a2458ec2ebfd"><div>
             <h3>
-              <span class="m-doc-wrap-bumper"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">bool</a> Editors::<wbr />EditorUI::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a2327275711ab6d0f4219a2458ec2ebfd" class="m-doc-self">HandleUIMessage</a>(</span><span class="m-doc-wrap"><a href="class_u_t_f_win_1_1_i_window.html" class="m-doc">UTFWin::<wbr />IWindow</a>* pWindow,
-              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">const</a> <a href="class_u_t_f_win_1_1_message.html" class="m-doc">UTFWin::<wbr />Message</a>&amp; message) <span class="m-label m-warning">override</span></span></span>
+              <span class="m-doc-wrap-bumper">bool Editors::<wbr />EditorUI::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a2327275711ab6d0f4219a2458ec2ebfd" class="m-doc-self">HandleUIMessage</a>(</span><span class="m-doc-wrap"><a href="class_u_t_f_win_1_1_i_window.html" class="m-doc">UTFWin::<wbr />IWindow</a>* pWindow,
+              const <a href="class_u_t_f_win_1_1_message.html" class="m-doc">UTFWin::<wbr />Message</a>&amp; message) <span class="m-label m-warning">override</span></span></span>
             </h3>
             <p>Method called every time a message is received on a window that has this IWinProc added.</p>
             <table class="m-table m-fullwidth m-flat">
@@ -491,13 +491,13 @@
     </div>
   </div>
 </div>
-<script src="search-v2.js"></script>
-<script src="searchdata-v2.js" async="async"></script>
+<script src="search-v1.js"></script>
+<script src="searchdata-v1.js" async="async"></script>
 <footer><nav>
   <div class="m-container">
     <div class="m-row">
       <div class="m-col-l-10 m-push-l-1">
-        <p>Spore ModAPI SDK for creating C++ mods for Spore. Created with <a href="https://doxygen.org/">Doxygen</a> 1.9.8 and <a href="https://mcss.mosra.cz/">m.css</a>.</p>
+        <p>Spore ModAPI SDK for creating C++ mods for Spore. Created with <a href="https://doxygen.org/">Doxygen</a> 1.8.16 and <a href="https://mcss.mosra.cz/">m.css</a>.</p>
       </div>
     </div>
   </div>

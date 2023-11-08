@@ -14,7 +14,7 @@
 <header><nav id="navigation">
   <div class="m-container">
     <div class="m-row">
-      <a href="index.html" id="m-navbar-brand" class="m-col-t-8 m-col-m-none m-left-m"><img src="Spore_ModAPI_Icon.png" alt="" />Spore ModAPI <span class="m-thin">SDK for creating C++ mods for Spore</span></a>
+      <a href="index.html" id="m-navbar-brand" class="m-col-t-8 m-col-m-none m-left-m"><img src="Spore_ModAPI_Icon.png" />Spore ModAPI <span class="m-thin">SDK for creating C++ mods for Spore</span></a>
       <div class="m-col-t-4 m-hide-m m-text-right m-nopadr">
         <a href="#search" class="m-doc-search-icon" title="Search" onclick="return showSearch()"><svg style="height: 0.9rem;" viewBox="0 0 16 16">
           <path id="m-doc-search-icon-path" d="m6 0c-3.31 0-6 2.69-6 6 0 3.31 2.69 6 6 6 1.49 0 2.85-0.541 3.89-1.44-0.0164 0.338 0.147 0.759 0.5 1.15l3.22 3.79c0.552 0.614 1.45 0.665 2 0.115 0.55-0.55 0.499-1.45-0.115-2l-3.79-3.22c-0.392-0.353-0.812-0.515-1.15-0.5 0.895-1.05 1.44-2.41 1.44-3.89 0-3.31-2.69-6-6-6zm0 1.56a4.44 4.44 0 0 1 4.44 4.44 4.44 4.44 0 0 1-4.44 4.44 4.44 4.44 0 0 1-4.44-4.44 4.44 4.44 0 0 1 4.44-4.44z"/>
@@ -46,10 +46,10 @@
       <div class="m-col-l-10 m-push-l-1">
         <h1>
           <span class="m-breadcrumb"><a href="namespace_graphics.html">Graphics</a>::<wbr/></span>ILightingWorld <span class="m-thin">class</span>
-          <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_i_lighting_world_8h.html">&lt;/home/runner/work/Spore-ModAPI/Spore-ModAPI/Spore-ModAPI/Spore ModAPI/Spore/Graphics/ILightingWorld.h&gt;</a></div>
+          <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_i_lighting_world_8h.html">&lt;Spore/Graphics/ILightingWorld.h&gt;</a></div>
         </h1>
         <p>A lighting world is a space with a specific lighting configuration.</p>
-        <nav class="m-block m-default">
+        <div class="m-block m-default">
           <h3>Contents</h3>
           <ul>
             <li>
@@ -60,7 +60,7 @@
               </ul>
             </li>
           </ul>
-        </nav>
+        </div>
 <p>Lighting worlds use configuration files stored in the lighting_properties~ folder, which specify information about the different lights and shadows, ambient lighting, etc.</p><p>The lighting in a world is not affected by and does not interact with other lighting worlds. For that reason, lighting worlds are usually paired with <a href="class_graphics_1_1_i_model_world.html" class="m-doc">IModelWorld</a> instances.</p>
         <section id="typeless-methods">
           <h2><a href="#typeless-methods">Constructors, destructors, conversion operators</a></h2>
@@ -75,50 +75,50 @@
           <h2><a href="#pub-methods">Public functions</a></h2>
           <dl class="m-doc">
             <dt id="a712efc5c50da0ae5c0117636a0bb9350">
-              <span class="m-doc-wrap-bumper">auto <a href="#a712efc5c50da0ae5c0117636a0bb9350" class="m-doc-self">AddRef</a>(</span><span class="m-doc-wrap">) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> <span class="m-label m-flat m-warning">pure virtual</span></span>
+              <span class="m-doc-wrap-bumper">auto <a href="#a712efc5c50da0ae5c0117636a0bb9350" class="m-doc-self">AddRef</a>(</span><span class="m-doc-wrap">) -&gt; int <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
             <dd><span></span></dd>
             <dt id="a749a09ab0799ae90d79d52912fb9b011">
-              <span class="m-doc-wrap-bumper">auto <a href="#a749a09ab0799ae90d79d52912fb9b011" class="m-doc-self">Release</a>(</span><span class="m-doc-wrap">) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> <span class="m-label m-flat m-warning">pure virtual</span></span>
+              <span class="m-doc-wrap-bumper">auto <a href="#a749a09ab0799ae90d79d52912fb9b011" class="m-doc-self">Release</a>(</span><span class="m-doc-wrap">) -&gt; int <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
             <dd><span></span></dd>
-            <dt id="a556d0a47d27b0c412cdfe8e3cf1c9e5d">
-              <span class="m-doc-wrap-bumper">auto <a href="#a556d0a47d27b0c412cdfe8e3cf1c9e5d" class="m-doc-self">AddLight</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">const</a> <a href="struct_math_1_1_vector3.html" class="m-doc">Vector3</a>&amp; position,
-              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">const</a> <a href="struct_math_1_1_color_r_g_b.html" class="m-doc">ColorRGB</a>&amp; color,
-              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">float</a> strength,
-              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">float</a> size) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> <span class="m-label m-flat m-warning">pure virtual</span></span>
+            <dt id="a446225a72f6f21a090b7b21640205283">
+              <span class="m-doc-wrap-bumper">auto <a href="#a446225a72f6f21a090b7b21640205283" class="m-doc-self">AddLight</a>(</span><span class="m-doc-wrap">const <a href="struct_math_1_1_vector3.html" class="m-doc">Vector3</a>&amp; position,
+              const <a href="struct_math_1_1_color_r_g_b.html" class="m-doc">ColorRGB</a>&amp; color,
+              float,
+              float) -&gt; int <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
             <dd><span></span></dd>
             <dt id="aef52b428c64e2ece125ebd6579175748">
-              <span class="m-doc-wrap-bumper">auto <a href="#aef52b428c64e2ece125ebd6579175748" class="m-doc-self">UpdateLightPosition</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> index,
-              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">const</a> <a href="struct_math_1_1_vector3.html" class="m-doc">Vector3</a>&amp;) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">void</a> <span class="m-label m-flat m-warning">pure virtual</span></span>
+              <span class="m-doc-wrap-bumper">void <a href="#aef52b428c64e2ece125ebd6579175748" class="m-doc-self">UpdateLightPosition</a>(</span><span class="m-doc-wrap">int index,
+              const <a href="struct_math_1_1_vector3.html" class="m-doc">Vector3</a>&amp;) <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
             <dd><span></span></dd>
             <dt id="a28e604834545ce84a6791a5d14fc6b7f">
-              <span class="m-doc-wrap-bumper">auto <a href="#a28e604834545ce84a6791a5d14fc6b7f" class="m-doc-self">RemoveLight</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> index) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">void</a> <span class="m-label m-flat m-warning">pure virtual</span></span>
+              <span class="m-doc-wrap-bumper">void <a href="#a28e604834545ce84a6791a5d14fc6b7f" class="m-doc-self">RemoveLight</a>(</span><span class="m-doc-wrap">int index) <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
             <dd><span></span></dd>
-            <dt id="a6c0f3dc5c6cf40903eea75164c46ddda">
-              <span class="m-doc-wrap-bumper">auto <a href="#a6c0f3dc5c6cf40903eea75164c46ddda" class="m-doc-self">CreateLightingInfo</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">float</a> boundingRadius,
-              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">const</a> <a href="struct_math_1_1_vector3.html" class="m-doc">Vector3</a>&amp; position) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">void</a>* <span class="m-label m-flat m-warning">pure virtual</span></span>
+            <dt id="a9051f98d05c0f4f60f66af59364fdf23">
+              <span class="m-doc-wrap-bumper">auto <a href="#a9051f98d05c0f4f60f66af59364fdf23" class="m-doc-self">CreateLightingInfo</a>(</span><span class="m-doc-wrap">float boundingRadius,
+              const <a href="struct_math_1_1_vector3.html" class="m-doc">Vector3</a>&amp; position) -&gt; void* <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
             <dd><span></span></dd>
             <dt id="ab79afc5de3662a6b78994fc4a4d2d53a">
-              <span class="m-doc-wrap-bumper">auto <a href="#ab79afc5de3662a6b78994fc4a4d2d53a" class="m-doc-self">UpdateLightingInfo</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">float</a>,
-              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">const</a> <a href="struct_math_1_1_vector3.html" class="m-doc">Vector3</a>&amp;,
-              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">void</a>* pLightingInfo) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">void</a> <span class="m-label m-flat m-warning">pure virtual</span></span>
+              <span class="m-doc-wrap-bumper">void <a href="#ab79afc5de3662a6b78994fc4a4d2d53a" class="m-doc-self">UpdateLightingInfo</a>(</span><span class="m-doc-wrap">float,
+              const <a href="struct_math_1_1_vector3.html" class="m-doc">Vector3</a>&amp;,
+              void* pLightingInfo) <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
             <dd><span></span></dd>
             <dt id="a9cb2fe3f2d5351bb5a86f9ca031d1586">
-              <span class="m-doc-wrap-bumper">auto <a href="#a9cb2fe3f2d5351bb5a86f9ca031d1586" class="m-doc-self">DestroyLightingInfo</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">void</a>* pLightingInfo) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">void</a> <span class="m-label m-flat m-warning">pure virtual</span></span>
+              <span class="m-doc-wrap-bumper">void <a href="#a9cb2fe3f2d5351bb5a86f9ca031d1586" class="m-doc-self">DestroyLightingInfo</a>(</span><span class="m-doc-wrap">void* pLightingInfo) <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
             <dd><span></span></dd>
             <dt id="a2b8269c6d28eedd572faf75455ec3df7">
-              <span class="m-doc-wrap-bumper">auto <a href="#a2b8269c6d28eedd572faf75455ec3df7" class="m-doc-self">ApplyGlobalState</a>(</span><span class="m-doc-wrap"><a href="class_app_1_1c_viewer.html" class="m-doc">App::<wbr />cViewer</a>* viewer) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">void</a> <span class="m-label m-flat m-warning">pure virtual</span></span>
+              <span class="m-doc-wrap-bumper">void <a href="#a2b8269c6d28eedd572faf75455ec3df7" class="m-doc-self">ApplyGlobalState</a>(</span><span class="m-doc-wrap"><a href="class_app_1_1c_viewer.html" class="m-doc">App::<wbr />cViewer</a>* viewer) <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
             <dd><span></span></dd>
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#a22bc149a305e59dd90d08cc54d5b6dca" class="m-doc">SetTransform</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">const</a> <a href="class_transform.html" class="m-doc">Transform</a>&amp; transform) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">void</a> <span class="m-label m-flat m-warning">pure virtual</span></span>
+              <span class="m-doc-wrap-bumper">void <a href="#a22bc149a305e59dd90d08cc54d5b6dca" class="m-doc">SetTransform</a>(</span><span class="m-doc-wrap">const <a href="class_transform.html" class="m-doc">Transform</a>&amp; transform) <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
             <dd>Sets the transform for this lighting world.</dd>
             <dt id="af6c2c6212aa810a20579707a23c68b19">
@@ -126,24 +126,24 @@
             </dt>
             <dd><span></span></dd>
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#ac4304ea5b5caa07d47981966a5b917e8" class="m-doc">SetLightingState</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">uint32_<wbr />t</a> configID) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">void</a> <span class="m-label m-flat m-warning">pure virtual</span></span>
+              <span class="m-doc-wrap-bumper">void <a href="#ac4304ea5b5caa07d47981966a5b917e8" class="m-doc">SetLightingState</a>(</span><span class="m-doc-wrap">uint32_t configID) <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
             <dd>Sets this lighting world to use the given configuration.</dd>
             <dt id="aeb10f8f46f987f3bc9bc035fca8e93e1">
-              <span class="m-doc-wrap-bumper">auto <a href="#aeb10f8f46f987f3bc9bc035fca8e93e1" class="m-doc-self">GetLightingState</a>(</span><span class="m-doc-wrap">) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">uint32_<wbr />t</a> <span class="m-label m-flat m-warning">pure virtual</span></span>
+              <span class="m-doc-wrap-bumper">auto <a href="#aeb10f8f46f987f3bc9bc035fca8e93e1" class="m-doc-self">GetLightingState</a>(</span><span class="m-doc-wrap">) -&gt; uint32_t <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
             <dd>Returns the instance ID of the configuration file used to define this lighting world.</dd>
-            <dt id="aea54867527e6b69d8b8478d6c8383c7d">
-              <span class="m-doc-wrap-bumper">auto <a href="#aea54867527e6b69d8b8478d6c8383c7d" class="m-doc-self">GetLightingStateConfig</a>(</span><span class="m-doc-wrap">) -&gt; <a href="class_app_1_1_property_list.html" class="m-doc">App::<wbr />PropertyList</a>* <span class="m-label m-flat m-warning">pure virtual</span></span>
+            <dt id="aa9d1fe25417c803718ad5a160a371fc2">
+              <span class="m-doc-wrap-bumper">auto <a href="#aa9d1fe25417c803718ad5a160a371fc2" class="m-doc-self">GetLightingStateConfig</a>(</span><span class="m-doc-wrap">) -&gt; <a href="class_app_1_1_property_list.html" class="m-doc">App::<wbr />PropertyList</a>* <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
             <dd>Returns the configuration file (as a <a href="class_app_1_1_property_list.html" class="m-doc">App::<wbr />PropertyList</a>) used to define this lighting world.</dd>
             <dt id="a263e1284408f2e36ac1d7f49cf695519">
-              <span class="m-doc-wrap-bumper">auto <a href="#a263e1284408f2e36ac1d7f49cf695519" class="m-doc-self">SetLightDecalManager</a>(</span><span class="m-doc-wrap"><a href="class_object.html" class="m-doc">Object</a>*) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">void</a> <span class="m-label m-flat m-warning">pure virtual</span></span>
+              <span class="m-doc-wrap-bumper">void <a href="#a263e1284408f2e36ac1d7f49cf695519" class="m-doc-self">SetLightDecalManager</a>(</span><span class="m-doc-wrap"><a href="class_object.html" class="m-doc">Object</a>*) <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
             <dd><span></span></dd>
             <dt id="aa4f371416322585213a4656d94b63ecd">
-              <span class="m-doc-wrap-bumper">auto <a href="#aa4f371416322585213a4656d94b63ecd" class="m-doc-self">SetWorldType</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> worldType,
-              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">const</a> <a href="struct_math_1_1_bounding_box.html" class="m-doc">BoundingBox</a>&amp; bbox) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">void</a> <span class="m-label m-flat m-warning">pure virtual</span></span>
+              <span class="m-doc-wrap-bumper">void <a href="#aa4f371416322585213a4656d94b63ecd" class="m-doc-self">SetWorldType</a>(</span><span class="m-doc-wrap">int worldType,
+              const <a href="struct_math_1_1_bounding_box.html" class="m-doc">BoundingBox</a>&amp; bbox) <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
             <dd><span></span></dd>
           </dl>
@@ -152,7 +152,7 @@
           <h2>Function documentation</h2>
           <section class="m-doc-details" id="a22bc149a305e59dd90d08cc54d5b6dca"><div>
             <h3>
-              <span class="m-doc-wrap-bumper"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">void</a> Graphics::<wbr />ILightingWorld::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a22bc149a305e59dd90d08cc54d5b6dca" class="m-doc-self">SetTransform</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">const</a> <a href="class_transform.html" class="m-doc">Transform</a>&amp; transform) <span class="m-label m-warning">pure virtual</span></span></span>
+              <span class="m-doc-wrap-bumper">void Graphics::<wbr />ILightingWorld::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a22bc149a305e59dd90d08cc54d5b6dca" class="m-doc-self">SetTransform</a>(</span><span class="m-doc-wrap">const <a href="class_transform.html" class="m-doc">Transform</a>&amp; transform) <span class="m-label m-warning">pure virtual</span></span></span>
             </h3>
             <p>Sets the transform for this lighting world.</p>
             <table class="m-table m-fullwidth m-flat">
@@ -169,7 +169,7 @@
           </div></section>
           <section class="m-doc-details" id="ac4304ea5b5caa07d47981966a5b917e8"><div>
             <h3>
-              <span class="m-doc-wrap-bumper"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">void</a> Graphics::<wbr />ILightingWorld::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ac4304ea5b5caa07d47981966a5b917e8" class="m-doc-self">SetLightingState</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">uint32_<wbr />t</a> configID) <span class="m-label m-warning">pure virtual</span></span></span>
+              <span class="m-doc-wrap-bumper">void Graphics::<wbr />ILightingWorld::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ac4304ea5b5caa07d47981966a5b917e8" class="m-doc-self">SetLightingState</a>(</span><span class="m-doc-wrap">uint32_t configID) <span class="m-label m-warning">pure virtual</span></span></span>
             </h3>
             <p>Sets this lighting world to use the given configuration.</p>
             <table class="m-table m-fullwidth m-flat">
@@ -224,13 +224,13 @@
     </div>
   </div>
 </div>
-<script src="search-v2.js"></script>
-<script src="searchdata-v2.js" async="async"></script>
+<script src="search-v1.js"></script>
+<script src="searchdata-v1.js" async="async"></script>
 <footer><nav>
   <div class="m-container">
     <div class="m-row">
       <div class="m-col-l-10 m-push-l-1">
-        <p>Spore ModAPI SDK for creating C++ mods for Spore. Created with <a href="https://doxygen.org/">Doxygen</a> 1.9.8 and <a href="https://mcss.mosra.cz/">m.css</a>.</p>
+        <p>Spore ModAPI SDK for creating C++ mods for Spore. Created with <a href="https://doxygen.org/">Doxygen</a> 1.8.16 and <a href="https://mcss.mosra.cz/">m.css</a>.</p>
       </div>
     </div>
   </div>

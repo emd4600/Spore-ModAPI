@@ -14,7 +14,7 @@
 <header><nav id="navigation">
   <div class="m-container">
     <div class="m-row">
-      <a href="index.html" id="m-navbar-brand" class="m-col-t-8 m-col-m-none m-left-m"><img src="Spore_ModAPI_Icon.png" alt="" />Spore ModAPI <span class="m-thin">SDK for creating C++ mods for Spore</span></a>
+      <a href="index.html" id="m-navbar-brand" class="m-col-t-8 m-col-m-none m-left-m"><img src="Spore_ModAPI_Icon.png" />Spore ModAPI <span class="m-thin">SDK for creating C++ mods for Spore</span></a>
       <div class="m-col-t-4 m-hide-m m-text-right m-nopadr">
         <a href="#search" class="m-doc-search-icon" title="Search" onclick="return showSearch()"><svg style="height: 0.9rem;" viewBox="0 0 16 16">
           <path id="m-doc-search-icon-path" d="m6 0c-3.31 0-6 2.69-6 6 0 3.31 2.69 6 6 6 1.49 0 2.85-0.541 3.89-1.44-0.0164 0.338 0.147 0.759 0.5 1.15l3.22 3.79c0.552 0.614 1.45 0.665 2 0.115 0.55-0.55 0.499-1.45-0.115-2l-3.79-3.22c-0.392-0.353-0.812-0.515-1.15-0.5 0.895-1.05 1.44-2.41 1.44-3.89 0-3.31-2.69-6-6-6zm0 1.56a4.44 4.44 0 0 1 4.44 4.44 4.44 4.44 0 0 1-4.44 4.44 4.44 4.44 0 0 1-4.44-4.44 4.44 4.44 0 0 1 4.44-4.44z"/>
@@ -46,10 +46,10 @@
       <div class="m-col-l-10 m-push-l-1">
         <h1>
           <span class="m-breadcrumb"><a href="namespace_simulator.html">Simulator</a>::<wbr/></span>cMissionManager <span class="m-thin">class</span>
-          <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="c_mission_manager_8h.html">&lt;/home/runner/work/Spore-ModAPI/Spore-ModAPI/Spore-ModAPI/Spore ModAPI/Spore/Simulator/cMissionManager.h&gt;</a></div>
+          <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="c_mission_manager_8h.html">&lt;Spore/Simulator/cMissionManager.h&gt;</a></div>
         </h1>
         <p>This class manages all the missions of a player in space stage.</p>
-        <nav class="m-block m-default">
+        <div class="m-block m-default">
           <h3>Contents</h3>
           <ul>
             <li>
@@ -62,7 +62,7 @@
               </ul>
             </li>
           </ul>
-        </nav>
+        </div>
 <p>Each instance is unique for each saved game (i.e. different saved games use different instances of this class). The following fields are saved:</p><ul><li>mbFirstCommunication</li><li>mbFlightSchoolFinished</li><li>mbMission201Finished</li><li>mTutorialTargetPlanetKeys</li><li>mTutorialSpeciesIDs</li><li>mTrackedMissions</li><li>mRecentNPCMissions</li><li>mRecentColonyMissions</li><li>mTutorialMissionStates</li></ul>
         <section id="base-classes">
           <h2><a href="#base-classes">Base classes</a></h2>
@@ -80,8 +80,8 @@
         <section id="pub-static-methods">
           <h2><a href="#pub-static-methods">Public static functions</a></h2>
           <dl class="m-doc">
-            <dt id="a033e87d6a56affebe645a45bb47d3a8e">
-              <span class="m-doc-wrap-bumper">static auto <a href="#a033e87d6a56affebe645a45bb47d3a8e" class="m-doc-self">Get</a>(</span><span class="m-doc-wrap">) -&gt; <a href="class_simulator_1_1c_mission_manager.html" class="m-doc">cMissionManager</a>*</span>
+            <dt id="a42e4f79cbee5a4dedd776cecf37d5d19">
+              <span class="m-doc-wrap-bumper">static auto <a href="#a42e4f79cbee5a4dedd776cecf37d5d19" class="m-doc-self">Get</a>(</span><span class="m-doc-wrap">) -&gt; <a href="class_simulator_1_1c_mission_manager.html" class="m-doc">cMissionManager</a>*</span>
             </dt>
             <dd><span></span></dd>
           </dl>
@@ -90,33 +90,33 @@
           <h2><a href="#pub-methods">Public functions</a></h2>
           <dl class="m-doc">
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#a244c1b524b78f6ba58435887f0a770ad" class="m-doc">CreateMission</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">uint32_<wbr />t</a> missionID,
+              <span class="m-doc-wrap-bumper">auto <a href="#a2332cadcf1bab65f494c6c5c56ae8b01" class="m-doc">CreateMission</a>(</span><span class="m-doc-wrap">uint32_t missionID,
               <a href="class_simulator_1_1c_planet_record.html" class="m-doc">cPlanetRecord</a>* pSourcePlanetRecord,
               <a href="class_simulator_1_1c_empire.html" class="m-doc">cEmpire</a>* pOwnerEmpire,
               <a href="class_simulator_1_1c_mission.html" class="m-doc">cMission</a>* pParentMission) -&gt; <a href="class_simulator_1_1c_mission.html" class="m-doc">cMission</a>*</span>
             </dt>
             <dd>Creates a new mission object; the object will be a subclass of <a href="class_simulator_1_1c_mission.html" class="m-doc">cMission</a>, depending on the <code>missionType</code> parameter of that mission configuration property list.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#a557bc43b4c4630335e216e1de00406d7" class="m-doc">ChooseMission</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_empire.html" class="m-doc">cEmpire</a>* pEmpire,
+              <span class="m-doc-wrap-bumper">auto <a href="#abd4c02000f4415a527aaba97edfa973d" class="m-doc">ChooseMission</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_empire.html" class="m-doc">cEmpire</a>* pEmpire,
               <a href="class_simulator_1_1c_planet_record.html" class="m-doc">cPlanetRecord</a>* pPlanetRecord) -&gt; <a href="class_simulator_1_1c_mission.html" class="m-doc">cMission</a>*</span>
             </dt>
             <dd>This function decides what mission needs to be done for the given empire.</dd>
             <dt>
               <span class="m-doc-wrap-bumper">auto <a href="#a6d200799f2dd9404622ca48b8863b878" class="m-doc">HasMissionsAvailable</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_empire.html" class="m-doc">cEmpire</a>* pEmpire,
-              <a href="class_simulator_1_1c_planet_record.html" class="m-doc">cPlanetRecord</a>* pPlanetRecord) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">bool</a></span>
+              <a href="class_simulator_1_1c_planet_record.html" class="m-doc">cPlanetRecord</a>* pPlanetRecord) -&gt; bool</span>
             </dt>
             <dd>Decdies whether new missions can be offered by the given empire at the given planet.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#a4f6a7d458534964fec69f447d17836e6" class="m-doc">GetMissionByID</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">uint32_<wbr />t</a> missionID) -&gt; <a href="class_simulator_1_1c_mission.html" class="m-doc">cMission</a>*</span>
+              <span class="m-doc-wrap-bumper">auto <a href="#a9da5f4f1461c1c9abe1ac996d53c9556" class="m-doc">GetMissionByID</a>(</span><span class="m-doc-wrap">uint32_t missionID) -&gt; <a href="class_simulator_1_1c_mission.html" class="m-doc">cMission</a>*</span>
             </dt>
             <dd>Returns the first existing mission object that has the given mission ID, or null if it does not exist.</dd>
             <dt>
               <span class="m-doc-wrap-bumper">auto <a href="#ae19d8e358432b2152410c7276cd19c93" class="m-doc">GetMissionTrackColor</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_mission.html" class="m-doc">cMission</a>* pMission,
-              <a href="struct_math_1_1_color.html" class="m-doc">Color</a>&amp; dst) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">bool</a></span>
+              <a href="struct_math_1_1_color.html" class="m-doc">Color</a>&amp; dst) -&gt; bool</span>
             </dt>
             <dd>Get the color used to track a certain mission.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#a6c47f1584d195271aee5df6e01f14e45" class="m-doc">ThereIsEventInPlanet</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_planet_record.html" class="m-doc">cPlanetRecord</a>* pPlanetRecord) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">bool</a></span>
+              <span class="m-doc-wrap-bumper">auto <a href="#a6c47f1584d195271aee5df6e01f14e45" class="m-doc">ThereIsEventInPlanet</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_planet_record.html" class="m-doc">cPlanetRecord</a>* pPlanetRecord) -&gt; bool</span>
             </dt>
             <dd>Returns true if there is an ongoing event in the given planet.</dd>
           </dl>
@@ -125,27 +125,27 @@
           <h2><a href="#pub-attribs">Public variables</a></h2>
           <dl class="m-doc">
             <dt id="a2b3053a3d5a60802231d46f6f1a325b5">
-              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">bool</a> <a href="#a2b3053a3d5a60802231d46f6f1a325b5" class="m-doc-self">mbDebugDrawMissionLines</a>
+              bool <a href="#a2b3053a3d5a60802231d46f6f1a325b5" class="m-doc-self">mbDebugDrawMissionLines</a>
             </dt>
             <dd><span></span></dd>
             <dt id="ab284fd208c9624f03d4c8bad3d25b594">
-              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">bool</a> <a href="#ab284fd208c9624f03d4c8bad3d25b594" class="m-doc-self">field_15</a>
+              bool <a href="#ab284fd208c9624f03d4c8bad3d25b594" class="m-doc-self">field_15</a>
             </dt>
             <dd><span></span></dd>
             <dt id="a404381cdc2c603adfb6a9f4815d5be0d">
-              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">bool</a> <a href="#a404381cdc2c603adfb6a9f4815d5be0d" class="m-doc-self">mbFirstCommunication</a>
+              bool <a href="#a404381cdc2c603adfb6a9f4815d5be0d" class="m-doc-self">mbFirstCommunication</a>
             </dt>
             <dd><span></span></dd>
             <dt id="a4b181a04279e1dcda20f6711a718f72e">
-              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">bool</a> <a href="#a4b181a04279e1dcda20f6711a718f72e" class="m-doc-self">mbFlightSchoolFinished</a>
+              bool <a href="#a4b181a04279e1dcda20f6711a718f72e" class="m-doc-self">mbFlightSchoolFinished</a>
             </dt>
             <dd><span></span></dd>
             <dt id="af887f36b206bc12cc08e67832f79d125">
-              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">bool</a> <a href="#af887f36b206bc12cc08e67832f79d125" class="m-doc-self">mbMission201Finished</a>
+              bool <a href="#af887f36b206bc12cc08e67832f79d125" class="m-doc-self">mbMission201Finished</a>
             </dt>
             <dd><span></span></dd>
             <dt id="a33ef3b5af0ae633245bb22ac25bd0592">
-              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">uint32_<wbr />t</a> <a href="#a33ef3b5af0ae633245bb22ac25bd0592" class="m-doc-self">mNextMissionType</a>
+              uint32_t <a href="#a33ef3b5af0ae633245bb22ac25bd0592" class="m-doc-self">mNextMissionType</a>
             </dt>
             <dd><span></span></dd>
             <dt id="ac92df42889a8f6a826ba1d82e00b2fb4">
@@ -161,7 +161,7 @@
             </dt>
             <dd><span></span></dd>
             <dt id="a4fda0a619298a9e46505bc97f5cd85aa">
-              eastl::map&lt;<a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">uint32_<wbr />t</a>, <a href="namespace_simulator.html#a6c02c45dd84113deb21949fb943de64d" class="m-doc">MissionState</a>&gt; <a href="#a4fda0a619298a9e46505bc97f5cd85aa" class="m-doc-self">mTutorialMissionStates</a>
+              eastl::map&lt;uint32_t, <a href="namespace_simulator.html#a6c02c45dd84113deb21949fb943de64d" class="m-doc">MissionState</a>&gt; <a href="#a4fda0a619298a9e46505bc97f5cd85aa" class="m-doc-self">mTutorialMissionStates</a>
             </dt>
             <dd><span></span></dd>
             <dt id="a6d4fe673f52ef6b4b445626a121b30f0">
@@ -173,11 +173,11 @@
             </dt>
             <dd><span></span></dd>
             <dt id="a1ad9f191c8a397006600ca525903df1a">
-              eastl::vector&lt;<a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">uint32_<wbr />t</a>&gt; <a href="#a1ad9f191c8a397006600ca525903df1a" class="m-doc-self">mTutorialTargetPlanetKeys</a>
+              eastl::vector&lt;uint32_t&gt; <a href="#a1ad9f191c8a397006600ca525903df1a" class="m-doc-self">mTutorialTargetPlanetKeys</a>
             </dt>
             <dd><span></span></dd>
             <dt id="ae723e4d4ed5d3371eea5a8b1e89a6ed6">
-              eastl::vector&lt;<a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">uint32_<wbr />t</a>&gt; <a href="#ae723e4d4ed5d3371eea5a8b1e89a6ed6" class="m-doc-self">mTutorialSpeciesIDs</a>
+              eastl::vector&lt;uint32_t&gt; <a href="#ae723e4d4ed5d3371eea5a8b1e89a6ed6" class="m-doc-self">mTutorialSpeciesIDs</a>
             </dt>
             <dd><span></span></dd>
             <dt id="ad2d2e62deb8a449c4b2efa1ae2a7b943">
@@ -185,7 +185,7 @@
             </dt>
             <dd><span></span></dd>
             <dt id="acae6fb38d4e83ec6db9700be537982ce">
-              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> <a href="#acae6fb38d4e83ec6db9700be537982ce" class="m-doc-self">field_BC</a>
+              int <a href="#acae6fb38d4e83ec6db9700be537982ce" class="m-doc-self">field_BC</a>
             </dt>
             <dd><span></span></dd>
             <dt id="ad6d9ca4226ccfbd4a7253a38d022d33c">
@@ -205,19 +205,19 @@
             </dt>
             <dd><span></span></dd>
             <dt id="aa27c7df6afdb0a1de6c81e8298477d7c">
-              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> <a href="#aa27c7df6afdb0a1de6c81e8298477d7c" class="m-doc-self">mMaxNumMissions</a>
+              int <a href="#aa27c7df6afdb0a1de6c81e8298477d7c" class="m-doc-self">mMaxNumMissions</a>
             </dt>
             <dd><span></span></dd>
             <dt id="afa4769d009f370a61c74e61c1e076db6">
-              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> <a href="#afa4769d009f370a61c74e61c1e076db6" class="m-doc-self">mGapBetweenNPCMissions</a>
+              int <a href="#afa4769d009f370a61c74e61c1e076db6" class="m-doc-self">mGapBetweenNPCMissions</a>
             </dt>
             <dd>In milliseconds.</dd>
             <dt id="a7921660c1247d79c4d1d9678b2c25f58">
-              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> <a href="#a7921660c1247d79c4d1d9678b2c25f58" class="m-doc-self">mGapBetweenColonyMissions</a>
+              int <a href="#a7921660c1247d79c4d1d9678b2c25f58" class="m-doc-self">mGapBetweenColonyMissions</a>
             </dt>
             <dd>In milliseconds.</dd>
             <dt id="a1b0ca34d017d860f7f7a373ce93823b5">
-              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> <a href="#a1b0ca34d017d860f7f7a373ce93823b5" class="m-doc-self">mMinEmpireSizeForArchetypeMissions</a>
+              int <a href="#a1b0ca34d017d860f7f7a373ce93823b5" class="m-doc-self">mMinEmpireSizeForArchetypeMissions</a>
             </dt>
             <dd><span></span></dd>
             <dt id="a370363d167404efa0309f864dd1312f1">
@@ -229,24 +229,24 @@
             </dt>
             <dd><span></span></dd>
             <dt id="ae77467828e9704a88d42c4da6ee803d7">
-              eastl::vector&lt;<a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">uint32_<wbr />t</a>&gt; <a href="#ae77467828e9704a88d42c4da6ee803d7" class="m-doc-self">mTeachingInteractMissions</a>
+              eastl::vector&lt;uint32_t&gt; <a href="#ae77467828e9704a88d42c4da6ee803d7" class="m-doc-self">mTeachingInteractMissions</a>
             </dt>
             <dd><span></span></dd>
             <dt id="a8c56eb4279b02bc34dd8f001191ac84b">
-              eastl::vector&lt;<a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">uint32_<wbr />t</a>&gt; <a href="#a8c56eb4279b02bc34dd8f001191ac84b" class="m-doc-self">mTeachingExpandMissions</a>
+              eastl::vector&lt;uint32_t&gt; <a href="#a8c56eb4279b02bc34dd8f001191ac84b" class="m-doc-self">mTeachingExpandMissions</a>
             </dt>
             <dd><span></span></dd>
             <dt id="ae956f57914dafb5b33936d3a501c9937">
-              eastl::vector&lt;<a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">uint32_<wbr />t</a>&gt; <a href="#ae956f57914dafb5b33936d3a501c9937" class="m-doc-self">mTeachingExploreMissions</a>
+              eastl::vector&lt;uint32_t&gt; <a href="#ae956f57914dafb5b33936d3a501c9937" class="m-doc-self">mTeachingExploreMissions</a>
             </dt>
             <dd><span></span></dd>
           </dl>
         </section>
         <section>
           <h2>Function documentation</h2>
-          <section class="m-doc-details" id="a244c1b524b78f6ba58435887f0a770ad"><div>
+          <section class="m-doc-details" id="a2332cadcf1bab65f494c6c5c56ae8b01"><div>
             <h3>
-              <span class="m-doc-wrap-bumper"><a href="class_simulator_1_1c_mission.html" class="m-doc">cMission</a>* Simulator::<wbr />cMissionManager::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a244c1b524b78f6ba58435887f0a770ad" class="m-doc-self">CreateMission</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">uint32_<wbr />t</a> missionID,
+              <span class="m-doc-wrap-bumper"><a href="class_simulator_1_1c_mission.html" class="m-doc">cMission</a>* Simulator::<wbr />cMissionManager::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a2332cadcf1bab65f494c6c5c56ae8b01" class="m-doc-self">CreateMission</a>(</span><span class="m-doc-wrap">uint32_t missionID,
               <a href="class_simulator_1_1c_planet_record.html" class="m-doc">cPlanetRecord</a>* pSourcePlanetRecord,
               <a href="class_simulator_1_1c_empire.html" class="m-doc">cEmpire</a>* pOwnerEmpire,
               <a href="class_simulator_1_1c_mission.html" class="m-doc">cMission</a>* pParentMission)</span></span>
@@ -283,9 +283,9 @@
             </table>
 <p>This method assigns the source planet, empire and planet mission to the generated mission object, and calls the <code><a href="effects__example__1_8cpp.html#a98b1050f09da390896f964fb7a892391" class="m-doc">Initialize()</a></code> method.</p>
           </div></section>
-          <section class="m-doc-details" id="a557bc43b4c4630335e216e1de00406d7"><div>
+          <section class="m-doc-details" id="abd4c02000f4415a527aaba97edfa973d"><div>
             <h3>
-              <span class="m-doc-wrap-bumper"><a href="class_simulator_1_1c_mission.html" class="m-doc">cMission</a>* Simulator::<wbr />cMissionManager::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a557bc43b4c4630335e216e1de00406d7" class="m-doc-self">ChooseMission</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_empire.html" class="m-doc">cEmpire</a>* pEmpire,
+              <span class="m-doc-wrap-bumper"><a href="class_simulator_1_1c_mission.html" class="m-doc">cMission</a>* Simulator::<wbr />cMissionManager::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#abd4c02000f4415a527aaba97edfa973d" class="m-doc-self">ChooseMission</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_empire.html" class="m-doc">cEmpire</a>* pEmpire,
               <a href="class_simulator_1_1c_planet_record.html" class="m-doc">cPlanetRecord</a>* pPlanetRecord)</span></span>
             </h3>
             <p>This function decides what mission needs to be done for the given empire.</p>
@@ -314,7 +314,7 @@
           </div></section>
           <section class="m-doc-details" id="a6d200799f2dd9404622ca48b8863b878"><div>
             <h3>
-              <span class="m-doc-wrap-bumper"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">bool</a> Simulator::<wbr />cMissionManager::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a6d200799f2dd9404622ca48b8863b878" class="m-doc-self">HasMissionsAvailable</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_empire.html" class="m-doc">cEmpire</a>* pEmpire,
+              <span class="m-doc-wrap-bumper">bool Simulator::<wbr />cMissionManager::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a6d200799f2dd9404622ca48b8863b878" class="m-doc-self">HasMissionsAvailable</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_empire.html" class="m-doc">cEmpire</a>* pEmpire,
               <a href="class_simulator_1_1c_planet_record.html" class="m-doc">cPlanetRecord</a>* pPlanetRecord)</span></span>
             </h3>
             <p>Decdies whether new missions can be offered by the given empire at the given planet.</p>
@@ -341,9 +341,9 @@
             </table>
 <p>It returns false if:</p><ul><li>You already have <code>mMaxNumMissions</code> active (event missions, such as pirate raids, do not count).</li><li>Another mission was requested recently on that planet (using fields <code>mRecentNPCMissions</code> and <code>mRecentColonyMissions</code>).</li><li>Based on the relationship you have with the empire on that planet.</li></ul>
           </div></section>
-          <section class="m-doc-details" id="a4f6a7d458534964fec69f447d17836e6"><div>
+          <section class="m-doc-details" id="a9da5f4f1461c1c9abe1ac996d53c9556"><div>
             <h3>
-              <span class="m-doc-wrap-bumper"><a href="class_simulator_1_1c_mission.html" class="m-doc">cMission</a>* Simulator::<wbr />cMissionManager::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a4f6a7d458534964fec69f447d17836e6" class="m-doc-self">GetMissionByID</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">uint32_<wbr />t</a> missionID)</span></span>
+              <span class="m-doc-wrap-bumper"><a href="class_simulator_1_1c_mission.html" class="m-doc">cMission</a>* Simulator::<wbr />cMissionManager::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a9da5f4f1461c1c9abe1ac996d53c9556" class="m-doc-self">GetMissionByID</a>(</span><span class="m-doc-wrap">uint32_t missionID)</span></span>
             </h3>
             <p>Returns the first existing mission object that has the given mission ID, or null if it does not exist.</p>
             <table class="m-table m-fullwidth m-flat">
@@ -357,11 +357,11 @@
                 </tr>
               </tbody>
             </table>
-<p>This can only looks for mission objects that have already been instantiated; to create a mission, use <code><a href="class_simulator_1_1c_mission_manager.html#a244c1b524b78f6ba58435887f0a770ad" class="m-doc">CreateMission()</a></code>.</p>
+<p>This can only looks for mission objects that have already been instantiated; to create a mission, use <code><a href="class_simulator_1_1c_mission_manager.html#a2332cadcf1bab65f494c6c5c56ae8b01" class="m-doc">CreateMission()</a></code>.</p>
           </div></section>
           <section class="m-doc-details" id="ae19d8e358432b2152410c7276cd19c93"><div>
             <h3>
-              <span class="m-doc-wrap-bumper"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">bool</a> Simulator::<wbr />cMissionManager::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ae19d8e358432b2152410c7276cd19c93" class="m-doc-self">GetMissionTrackColor</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_mission.html" class="m-doc">cMission</a>* pMission,
+              <span class="m-doc-wrap-bumper">bool Simulator::<wbr />cMissionManager::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ae19d8e358432b2152410c7276cd19c93" class="m-doc-self">GetMissionTrackColor</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_mission.html" class="m-doc">cMission</a>* pMission,
               <a href="struct_math_1_1_color.html" class="m-doc">Color</a>&amp; dst)</span></span>
             </h3>
             <p>Get the color used to track a certain mission.</p>
@@ -377,7 +377,7 @@
           </div></section>
           <section class="m-doc-details" id="a6c47f1584d195271aee5df6e01f14e45"><div>
             <h3>
-              <span class="m-doc-wrap-bumper"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">bool</a> Simulator::<wbr />cMissionManager::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a6c47f1584d195271aee5df6e01f14e45" class="m-doc-self">ThereIsEventInPlanet</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_planet_record.html" class="m-doc">cPlanetRecord</a>* pPlanetRecord)</span></span>
+              <span class="m-doc-wrap-bumper">bool Simulator::<wbr />cMissionManager::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a6c47f1584d195271aee5df6e01f14e45" class="m-doc-self">ThereIsEventInPlanet</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_planet_record.html" class="m-doc">cPlanetRecord</a>* pPlanetRecord)</span></span>
             </h3>
             <p>Returns true if there is an ongoing event in the given planet.</p>
             <table class="m-table m-fullwidth m-flat">
@@ -431,13 +431,13 @@
     </div>
   </div>
 </div>
-<script src="search-v2.js"></script>
-<script src="searchdata-v2.js" async="async"></script>
+<script src="search-v1.js"></script>
+<script src="searchdata-v1.js" async="async"></script>
 <footer><nav>
   <div class="m-container">
     <div class="m-row">
       <div class="m-col-l-10 m-push-l-1">
-        <p>Spore ModAPI SDK for creating C++ mods for Spore. Created with <a href="https://doxygen.org/">Doxygen</a> 1.9.8 and <a href="https://mcss.mosra.cz/">m.css</a>.</p>
+        <p>Spore ModAPI SDK for creating C++ mods for Spore. Created with <a href="https://doxygen.org/">Doxygen</a> 1.8.16 and <a href="https://mcss.mosra.cz/">m.css</a>.</p>
       </div>
     </div>
   </div>

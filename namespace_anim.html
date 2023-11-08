@@ -14,7 +14,7 @@
 <header><nav id="navigation">
   <div class="m-container">
     <div class="m-row">
-      <a href="index.html" id="m-navbar-brand" class="m-col-t-8 m-col-m-none m-left-m"><img src="Spore_ModAPI_Icon.png" alt="" />Spore ModAPI <span class="m-thin">SDK for creating C++ mods for Spore</span></a>
+      <a href="index.html" id="m-navbar-brand" class="m-col-t-8 m-col-m-none m-left-m"><img src="Spore_ModAPI_Icon.png" />Spore ModAPI <span class="m-thin">SDK for creating C++ mods for Spore</span></a>
       <div class="m-col-t-4 m-hide-m m-text-right m-nopadr">
         <a href="#search" class="m-doc-search-icon" title="Search" onclick="return showSearch()"><svg style="height: 0.9rem;" viewBox="0 0 16 16">
           <path id="m-doc-search-icon-path" d="m6 0c-3.31 0-6 2.69-6 6 0 3.31 2.69 6 6 6 1.49 0 2.85-0.541 3.89-1.44-0.0164 0.338 0.147 0.759 0.5 1.15l3.22 3.79c0.552 0.614 1.45 0.665 2 0.115 0.55-0.55 0.499-1.45-0.115-2l-3.79-3.22c-0.392-0.353-0.812-0.515-1.15-0.5 0.895-1.05 1.44-2.41 1.44-3.89 0-3.31-2.69-6-6-6zm0 1.56a4.44 4.44 0 0 1 4.44 4.44 4.44 4.44 0 0 1-4.44 4.44 4.44 4.44 0 0 1-4.44-4.44 4.44 4.44 0 0 1 4.44-4.44z"/>
@@ -48,7 +48,7 @@
           Anim <span class="m-thin">namespace</span>
         </h1>
         <p><span></span></p>
-        <nav class="m-block m-default">
+        <div class="m-block m-default">
           <h3>Contents</h3>
           <ul>
             <li>
@@ -60,7 +60,7 @@
               </ul>
             </li>
           </ul>
-        </nav>
+        </div>
         <section id="nested-classes">
           <h2><a href="#nested-classes">Classes</a></h2>
           <dl class="m-doc">
@@ -138,11 +138,11 @@
           <h2><a href="#typedef-members">Typedefs</a></h2>
           <dl class="m-doc">
             <dt>
-              using <a href="#a3b0f854f8c5f7ea805a07634dc180bc4" class="m-doc">AnimIndex</a> = <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a>
+              using <a href="#a3b0f854f8c5f7ea805a07634dc180bc4" class="m-doc">AnimIndex</a> = int
             </dt>
             <dd><span></span></dd>
             <dt>
-              using <a href="#a6125f5225f3f062f188b2ff4601d34f5" class="m-doc">AnimFunction</a> = <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">float</a>(*)(void*object, AnimatedCreature*creature, const Quaternion&amp;, Vector3*dstNormal, bool, bool)
+              using <a href="#a6125f5225f3f062f188b2ff4601d34f5" class="m-doc">AnimFunction</a> = float(*)(void*object, AnimatedCreature*creature, const Quaternion&amp;, Vector3*dstNormal, bool, bool)
             </dt>
             <dd><span></span></dd>
           </dl>
@@ -191,7 +191,7 @@
             </dt>
             <dd><span></span></dd>
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#ac0d986c1efad94f30355d689f45e6c58" class="m-doc">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_anim_1_1_i_anim_manager.html" class="m-doc">IAnimManager</a>) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">namespace</a></span>
+              <span class="m-doc-wrap-bumper">auto <a href="#ac0d986c1efad94f30355d689f45e6c58" class="m-doc">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_anim_1_1_i_anim_manager.html" class="m-doc">IAnimManager</a>) -&gt; namespace</span>
             </dt>
             <dd><span></span></dd>
           </dl>
@@ -200,15 +200,15 @@
           <h2>Typedef documentation</h2>
           <section class="m-doc-details" id="a3b0f854f8c5f7ea805a07634dc180bc4"><div>
             <h3>
-              typedef <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> Anim::<wbr /><a href="#a3b0f854f8c5f7ea805a07634dc180bc4" class="m-doc-self">AnimIndex</a>
-              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_animated_creature_8h.html">&lt;/home/runner/work/Spore-ModAPI/Spore-ModAPI/Spore-ModAPI/Spore ModAPI/Spore/Anim/AnimatedCreature.h&gt;</a></div>
+              typedef int Anim::<wbr /><a href="#a3b0f854f8c5f7ea805a07634dc180bc4" class="m-doc-self">AnimIndex</a>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_animated_creature_8h.html">&lt;Spore/Anim/AnimatedCreature.h&gt;</a></div>
             </h3>
             <p><span></span></p>
           </div></section>
           <section class="m-doc-details" id="a6125f5225f3f062f188b2ff4601d34f5"><div>
             <h3>
-              typedef <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">float</a>(*Anim::<wbr /><a href="#a6125f5225f3f062f188b2ff4601d34f5" class="m-doc-self">AnimFunction</a>)(void*object, AnimatedCreature*creature, const Quaternion&amp;, Vector3*dstNormal, bool, bool)
-              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_i_anim_world_8h.html">&lt;/home/runner/work/Spore-ModAPI/Spore-ModAPI/Spore-ModAPI/Spore ModAPI/Spore/Anim/IAnimWorld.h&gt;</a></div>
+              typedef float(*Anim::<wbr /><a href="#a6125f5225f3f062f188b2ff4601d34f5" class="m-doc-self">AnimFunction</a>)(void*object, AnimatedCreature*creature, const Quaternion&amp;, Vector3*dstNormal, bool, bool)
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_i_anim_world_8h.html">&lt;Spore/Anim/IAnimWorld.h&gt;</a></div>
             </h3>
             <p><span></span></p>
           </div></section>
@@ -219,7 +219,7 @@
             <h3>
               <span class="m-doc-wrap-bumper"> Anim::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#aa67b843e426edc85b02395e6c844f707" class="m-doc-self">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="struct_anim_1_1anim__block.html" class="m-doc">anim_<wbr />block</a>,
               0x2BC)</span></span>
-              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="anim__cid_8h.html">&lt;/home/runner/work/Spore-ModAPI/Spore-ModAPI/Spore-ModAPI/Spore ModAPI/Spore/Anim/anim_cid.h&gt;</a></div>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="anim__cid_8h.html">&lt;Spore/Anim/anim_cid.h&gt;</a></div>
             </h3>
             <p><span></span></p>
           </div></section>
@@ -227,7 +227,7 @@
             <h3>
               <span class="m-doc-wrap-bumper"> Anim::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a908c2c93a221239b5aff1a4828e824c2" class="m-doc-self">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="struct_anim_1_1anim__cid.html" class="m-doc">anim_<wbr />cid</a>,
               0x1930)</span></span>
-              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="anim__cid_8h.html">&lt;/home/runner/work/Spore-ModAPI/Spore-ModAPI/Spore-ModAPI/Spore ModAPI/Spore/Anim/anim_cid.h&gt;</a></div>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="anim__cid_8h.html">&lt;Spore/Anim/anim_cid.h&gt;</a></div>
             </h3>
             <p><span></span></p>
           </div></section>
@@ -235,7 +235,7 @@
             <h3>
               <span class="m-doc-wrap-bumper"> Anim::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#af6a9bfa73c525be5410dc07f090f3822" class="m-doc-self">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="struct_anim_1_1anim__csd.html" class="m-doc">anim_<wbr />csd</a>,
               0x410)</span></span>
-              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="anim__csd_8h.html">&lt;/home/runner/work/Spore-ModAPI/Spore-ModAPI/Spore-ModAPI/Spore ModAPI/Spore/Anim/anim_csd.h&gt;</a></div>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="anim__csd_8h.html">&lt;Spore/Anim/anim_csd.h&gt;</a></div>
             </h3>
             <p><span></span></p>
           </div></section>
@@ -243,7 +243,7 @@
             <h3>
               <span class="m-doc-wrap-bumper"> Anim::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#aafd648cfe0ed058fafbef482834c3335" class="m-doc-self">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_anim_1_1_animated_creature.html" class="m-doc">AnimatedCreature</a>,
               0x19C)</span></span>
-              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_animated_creature_8h.html">&lt;/home/runner/work/Spore-ModAPI/Spore-ModAPI/Spore-ModAPI/Spore ModAPI/Spore/Anim/AnimatedCreature.h&gt;</a></div>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_animated_creature_8h.html">&lt;Spore/Anim/AnimatedCreature.h&gt;</a></div>
             </h3>
             <p><span></span></p>
           </div></section>
@@ -251,7 +251,7 @@
             <h3>
               <span class="m-doc-wrap-bumper"> Anim::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a320f1b31ffc8a16798cc0c61ae25d025" class="m-doc-self">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="struct_anim_1_1anim__query.html" class="m-doc">anim_<wbr />query</a>,
               0xF0)</span></span>
-              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_animated_creature_8h.html">&lt;/home/runner/work/Spore-ModAPI/Spore-ModAPI/Spore-ModAPI/Spore ModAPI/Spore/Anim/AnimatedCreature.h&gt;</a></div>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_animated_creature_8h.html">&lt;Spore/Anim/AnimatedCreature.h&gt;</a></div>
             </h3>
             <p><span></span></p>
           </div></section>
@@ -259,7 +259,7 @@
             <h3>
               <span class="m-doc-wrap-bumper"> Anim::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ad1a2b3269d967ca25f1e659d71772220" class="m-doc-self">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="struct_anim_1_1anim__qb.html" class="m-doc">anim_<wbr />qb</a>,
               0xFD0)</span></span>
-              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_animated_creature_8h.html">&lt;/home/runner/work/Spore-ModAPI/Spore-ModAPI/Spore-ModAPI/Spore ModAPI/Spore/Anim/AnimatedCreature.h&gt;</a></div>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_animated_creature_8h.html">&lt;Spore/Anim/AnimatedCreature.h&gt;</a></div>
             </h3>
             <p><span></span></p>
           </div></section>
@@ -267,7 +267,7 @@
             <h3>
               <span class="m-doc-wrap-bumper"> Anim::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a8ee675d41918ff18da7dea0819b6d007" class="m-doc-self">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_anim_1_1c_anim_manager_impl.html" class="m-doc">cAnimManagerImpl</a>,
               0x88)</span></span>
-              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="c_anim_manager_impl_8h.html">&lt;/home/runner/work/Spore-ModAPI/Spore-ModAPI/Spore-ModAPI/Spore ModAPI/Spore/Anim/cAnimManagerImpl.h&gt;</a></div>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="c_anim_manager_impl_8h.html">&lt;Spore/Anim/cAnimManagerImpl.h&gt;</a></div>
             </h3>
             <p><span></span></p>
           </div></section>
@@ -275,14 +275,14 @@
             <h3>
               <span class="m-doc-wrap-bumper"> Anim::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a7506f2bd84e3530e45c9b8a5fd88de15" class="m-doc-self">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="struct_anim_1_1_creature_block.html" class="m-doc">CreatureBlock</a>,
               0x468)</span></span>
-              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_creature_block_8h.html">&lt;/home/runner/work/Spore-ModAPI/Spore-ModAPI/Spore-ModAPI/Spore ModAPI/Spore/Anim/CreatureBlock.h&gt;</a></div>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_creature_block_8h.html">&lt;Spore/Anim/CreatureBlock.h&gt;</a></div>
             </h3>
             <p><span></span></p>
           </div></section>
           <section class="m-doc-details" id="ac0d986c1efad94f30355d689f45e6c58"><div>
             <h3>
-              <span class="m-doc-wrap-bumper"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">namespace</a> Anim::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ac0d986c1efad94f30355d689f45e6c58" class="m-doc-self">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_anim_1_1_i_anim_manager.html" class="m-doc">IAnimManager</a>)</span></span>
-              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_i_anim_manager_8h.html">&lt;/home/runner/work/Spore-ModAPI/Spore-ModAPI/Spore-ModAPI/Spore ModAPI/Spore/Anim/IAnimManager.h&gt;</a></div>
+              <span class="m-doc-wrap-bumper">namespace Anim::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ac0d986c1efad94f30355d689f45e6c58" class="m-doc-self">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_anim_1_1_i_anim_manager.html" class="m-doc">IAnimManager</a>)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_i_anim_manager_8h.html">&lt;Spore/Anim/IAnimManager.h&gt;</a></div>
             </h3>
             <p><span></span></p>
           </div></section>
@@ -325,13 +325,13 @@
     </div>
   </div>
 </div>
-<script src="search-v2.js"></script>
-<script src="searchdata-v2.js" async="async"></script>
+<script src="search-v1.js"></script>
+<script src="searchdata-v1.js" async="async"></script>
 <footer><nav>
   <div class="m-container">
     <div class="m-row">
       <div class="m-col-l-10 m-push-l-1">
-        <p>Spore ModAPI SDK for creating C++ mods for Spore. Created with <a href="https://doxygen.org/">Doxygen</a> 1.9.8 and <a href="https://mcss.mosra.cz/">m.css</a>.</p>
+        <p>Spore ModAPI SDK for creating C++ mods for Spore. Created with <a href="https://doxygen.org/">Doxygen</a> 1.8.16 and <a href="https://mcss.mosra.cz/">m.css</a>.</p>
       </div>
     </div>
   </div>

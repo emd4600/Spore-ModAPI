@@ -14,7 +14,7 @@
 <header><nav id="navigation">
   <div class="m-container">
     <div class="m-row">
-      <a href="index.html" id="m-navbar-brand" class="m-col-t-8 m-col-m-none m-left-m"><img src="Spore_ModAPI_Icon.png" alt="" />Spore ModAPI <span class="m-thin">SDK for creating C++ mods for Spore</span></a>
+      <a href="index.html" id="m-navbar-brand" class="m-col-t-8 m-col-m-none m-left-m"><img src="Spore_ModAPI_Icon.png" />Spore ModAPI <span class="m-thin">SDK for creating C++ mods for Spore</span></a>
       <div class="m-col-t-4 m-hide-m m-text-right m-nopadr">
         <a href="#search" class="m-doc-search-icon" title="Search" onclick="return showSearch()"><svg style="height: 0.9rem;" viewBox="0 0 16 16">
           <path id="m-doc-search-icon-path" d="m6 0c-3.31 0-6 2.69-6 6 0 3.31 2.69 6 6 6 1.49 0 2.85-0.541 3.89-1.44-0.0164 0.338 0.147 0.759 0.5 1.15l3.22 3.79c0.552 0.614 1.45 0.665 2 0.115 0.55-0.55 0.499-1.45-0.115-2l-3.79-3.22c-0.392-0.353-0.812-0.515-1.15-0.5 0.895-1.05 1.44-2.41 1.44-3.89 0-3.31-2.69-6-6-6zm0 1.56a4.44 4.44 0 0 1 4.44 4.44 4.44 4.44 0 0 1-4.44 4.44 4.44 4.44 0 0 1-4.44-4.44 4.44 4.44 0 0 1 4.44-4.44z"/>
@@ -46,10 +46,10 @@
       <div class="m-col-l-10 m-push-l-1">
         <h1>
           <span class="m-breadcrumb"><a href="namespace_simulator.html">Simulator</a>::<wbr/></span>cToolManager <span class="m-thin">class</span>
-          <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_tool_manager_8h.html">&lt;/home/runner/work/Spore-ModAPI/Spore-ModAPI/Spore-ModAPI/Spore ModAPI/Spore/Simulator/SubSystem/ToolManager.h&gt;</a></div>
+          <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_tool_manager_8h.html">&lt;Spore/Simulator/SubSystem/ToolManager.h&gt;</a></div>
         </h1>
         <p><span></span></p>
-        <nav class="m-block m-default">
+        <div class="m-block m-default">
           <h3>Contents</h3>
           <ul>
             <li>
@@ -63,7 +63,7 @@
               </ul>
             </li>
           </ul>
-        </nav>
+        </div>
         <section id="base-classes">
           <h2><a href="#base-classes">Base classes</a></h2>
           <dl class="m-doc">
@@ -119,8 +119,8 @@
         <section id="pub-static-methods">
           <h2><a href="#pub-static-methods">Public static functions</a></h2>
           <dl class="m-doc">
-            <dt id="ae9445fe5e065c764fed5bb3738605ac4">
-              <span class="m-doc-wrap-bumper">static auto <a href="#ae9445fe5e065c764fed5bb3738605ac4" class="m-doc-self">Get</a>(</span><span class="m-doc-wrap">) -&gt; <a href="class_simulator_1_1c_tool_manager.html" class="m-doc">cToolManager</a>*</span>
+            <dt id="a758cc48c9033c2627ef7f7aa4b392013">
+              <span class="m-doc-wrap-bumper">static auto <a href="#a758cc48c9033c2627ef7f7aa4b392013" class="m-doc-self">Get</a>(</span><span class="m-doc-wrap">) -&gt; <a href="class_simulator_1_1c_tool_manager.html" class="m-doc">cToolManager</a>*</span>
             </dt>
             <dd>Returns the active <a href="namespace_simulator.html" class="m-doc">Simulator</a> tool manager.</dd>
           </dl>
@@ -129,33 +129,33 @@
           <h2><a href="#pub-methods">Public functions</a></h2>
           <dl class="m-doc">
             <dt id="a4a245236e6f62cec6fd928ef9f89fba9">
-              <span class="m-doc-wrap-bumper">auto <a href="#a4a245236e6f62cec6fd928ef9f89fba9" class="m-doc-self">LoadTool</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">const</a> <a href="struct_resource_key.html" class="m-doc">ResourceKey</a>&amp; id,
-              <a href="c_space_tool_data_8h.html#aa4aa3f066ce6a84a5db33b469fe1e9d6" class="m-doc">cSpaceToolDataPtr</a>&amp; dst) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">bool</a></span>
+              <span class="m-doc-wrap-bumper">auto <a href="#a4a245236e6f62cec6fd928ef9f89fba9" class="m-doc-self">LoadTool</a>(</span><span class="m-doc-wrap">const <a href="struct_resource_key.html" class="m-doc">ResourceKey</a>&amp; id,
+              <a href="c_space_tool_data_8h.html#aa4aa3f066ce6a84a5db33b469fe1e9d6" class="m-doc">cSpaceToolDataPtr</a>&amp; dst) -&gt; bool</span>
             </dt>
             <dd><span></span></dd>
-            <dt id="a8a07a29afcb2718adceb938237a739df">
-              <span class="m-doc-wrap-bumper">auto <a href="#a8a07a29afcb2718adceb938237a739df" class="m-doc-self">GetStrategy</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">uint32_<wbr />t</a> strategyID) -&gt; <a href="class_simulator_1_1c_tool_strategy.html" class="m-doc">cToolStrategy</a>*</span>
+            <dt id="a793390f3d1b630f8760502c52a68cc88">
+              <span class="m-doc-wrap-bumper">auto <a href="#a793390f3d1b630f8760502c52a68cc88" class="m-doc-self">GetStrategy</a>(</span><span class="m-doc-wrap">uint32_t strategyID) -&gt; <a href="class_simulator_1_1c_tool_strategy.html" class="m-doc">cToolStrategy</a>*</span>
             </dt>
             <dd><span></span></dd>
             <dt id="ab06dc98fc74ee9fe4b4e296efee722ce">
-              <span class="m-doc-wrap-bumper">auto <a href="#ab06dc98fc74ee9fe4b4e296efee722ce" class="m-doc-self">AddStrategy</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_tool_strategy.html" class="m-doc">cToolStrategy</a>* pStrategy,
-              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">uint32_<wbr />t</a> id) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">void</a></span>
+              <span class="m-doc-wrap-bumper">void <a href="#ab06dc98fc74ee9fe4b4e296efee722ce" class="m-doc-self">AddStrategy</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_tool_strategy.html" class="m-doc">cToolStrategy</a>* pStrategy,
+              uint32_t id)</span>
             </dt>
             <dd><span></span></dd>
-            <dt id="a511ee20eb4f8746526dd90046a3ca7aa">
-              <span class="m-doc-wrap-bumper">auto <a href="#a511ee20eb4f8746526dd90046a3ca7aa" class="m-doc-self">GetToolFailText</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_tool_manager.html#ad0d05f6f8a56bb558360b256c34a6507" class="m-doc">ToolFailText</a> index) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">const</a> <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">char16_<wbr />t</a>*</span>
+            <dt id="a8aca83c739111d8827c671d4869870ab">
+              <span class="m-doc-wrap-bumper">auto <a href="#a8aca83c739111d8827c671d4869870ab" class="m-doc-self">GetToolFailText</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_tool_manager.html#ad0d05f6f8a56bb558360b256c34a6507" class="m-doc">ToolFailText</a> index) -&gt; const char16_t*</span>
             </dt>
             <dd><span></span></dd>
             <dt id="a450ae0f168092e3313e839a942f98046">
-              <span class="m-doc-wrap-bumper">auto <a href="#a450ae0f168092e3313e839a942f98046" class="m-doc-self">ActivateTool</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_space_tool_data.html" class="m-doc">cSpaceToolData</a>* pTool) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">bool</a></span>
+              <span class="m-doc-wrap-bumper">auto <a href="#a450ae0f168092e3313e839a942f98046" class="m-doc-self">ActivateTool</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_space_tool_data.html" class="m-doc">cSpaceToolData</a>* pTool) -&gt; bool</span>
             </dt>
             <dd><span></span></dd>
             <dt id="a8507b1ce3dfbb95422cb291e52a9b6fe">
-              <span class="m-doc-wrap-bumper">auto <a href="#a8507b1ce3dfbb95422cb291e52a9b6fe" class="m-doc-self">DeactivateTool</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_space_tool_data.html" class="m-doc">cSpaceToolData</a>* pTool) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">bool</a></span>
+              <span class="m-doc-wrap-bumper">auto <a href="#a8507b1ce3dfbb95422cb291e52a9b6fe" class="m-doc-self">DeactivateTool</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_space_tool_data.html" class="m-doc">cSpaceToolData</a>* pTool) -&gt; bool</span>
             </dt>
             <dd><span></span></dd>
             <dt id="ae00f33cc087a1ca115a2670528352bbc">
-              <span class="m-doc-wrap-bumper">auto <a href="#ae00f33cc087a1ca115a2670528352bbc" class="m-doc-self">OnMouseUp</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_space_tool_data.html" class="m-doc">cSpaceToolData</a>* pTool) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">bool</a></span>
+              <span class="m-doc-wrap-bumper">auto <a href="#ae00f33cc087a1ca115a2670528352bbc" class="m-doc-self">OnMouseUp</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_space_tool_data.html" class="m-doc">cSpaceToolData</a>* pTool) -&gt; bool</span>
             </dt>
             <dd><span></span></dd>
           </dl>
@@ -164,15 +164,15 @@
           <h2><a href="#pub-attribs">Public variables</a></h2>
           <dl class="m-doc">
             <dt id="a3427ea94db369c77b6bffca9f79cbb38">
-              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> <a href="#a3427ea94db369c77b6bffca9f79cbb38" class="m-doc-self">field_20</a>
+              int <a href="#a3427ea94db369c77b6bffca9f79cbb38" class="m-doc-self">field_20</a>
             </dt>
             <dd><span></span></dd>
             <dt id="aacb8c5d4ca07c43e4e6fce9e491b35ce">
-              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> <a href="#aacb8c5d4ca07c43e4e6fce9e491b35ce" class="m-doc-self">field_24</a>
+              int <a href="#aacb8c5d4ca07c43e4e6fce9e491b35ce" class="m-doc-self">field_24</a>
             </dt>
             <dd><span></span></dd>
             <dt id="a7f30fc55965d5f1a89715ef0e0484549">
-              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> <a href="#a7f30fc55965d5f1a89715ef0e0484549" class="m-doc-self">field_28</a>
+              int <a href="#a7f30fc55965d5f1a89715ef0e0484549" class="m-doc-self">field_28</a>
             </dt>
             <dd><span></span></dd>
             <dt id="afe049a2d2ec81d9c797051d8dd5df7da">
@@ -180,11 +180,11 @@
             </dt>
             <dd><span></span></dd>
             <dt id="a0d7fd1d656a5e0830e51226e9cb44e8a">
-              eastl::hash_map&lt;<a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">uint32_<wbr />t</a>, <a href="c_tool_strategy_8h.html#a633b1cdbe7a9ddd814aac4b7799d14ed" class="m-doc">cToolStrategyPtr</a>&gt; <a href="#a0d7fd1d656a5e0830e51226e9cb44e8a" class="m-doc-self">mStrategies</a>
+              eastl::hash_map&lt;uint32_t, <a href="c_tool_strategy_8h.html#a633b1cdbe7a9ddd814aac4b7799d14ed" class="m-doc">cToolStrategyPtr</a>&gt; <a href="#a0d7fd1d656a5e0830e51226e9cb44e8a" class="m-doc-self">mStrategies</a>
             </dt>
             <dd><span></span></dd>
             <dt id="a8999342e6ae474b89ed0cd7db78bcc7e">
-              eastl::map&lt;<a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a>, <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a>&gt; <a href="#a8999342e6ae474b89ed0cd7db78bcc7e" class="m-doc-self">field_58</a>
+              eastl::map&lt;int, int&gt; <a href="#a8999342e6ae474b89ed0cd7db78bcc7e" class="m-doc-self">field_58</a>
             </dt>
             <dd><span></span></dd>
             <dt id="a88565322673892871c0116aed7bebc37">
@@ -192,23 +192,23 @@
             </dt>
             <dd><span></span></dd>
             <dt id="a9bb1220191873d364d30bc363f43ee7b">
-              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> <a href="#a9bb1220191873d364d30bc363f43ee7b" class="m-doc-self">field_27C</a>
+              int <a href="#a9bb1220191873d364d30bc363f43ee7b" class="m-doc-self">field_27C</a>
             </dt>
             <dd><span></span></dd>
             <dt id="a1a9b11820396bb36c3ab7f28a07da5b4">
-              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> <a href="#a1a9b11820396bb36c3ab7f28a07da5b4" class="m-doc-self">field_280</a>
+              int <a href="#a1a9b11820396bb36c3ab7f28a07da5b4" class="m-doc-self">field_280</a>
             </dt>
             <dd><span></span></dd>
             <dt id="a87ee287e30acf1d4f28cad08d6c7c9a5">
-              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> <a href="#a87ee287e30acf1d4f28cad08d6c7c9a5" class="m-doc-self">field_284</a>
+              int <a href="#a87ee287e30acf1d4f28cad08d6c7c9a5" class="m-doc-self">field_284</a>
             </dt>
             <dd><span></span></dd>
             <dt id="ac60b0de131715081ea22ebd7cfaac8d2">
-              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> <a href="#ac60b0de131715081ea22ebd7cfaac8d2" class="m-doc-self">field_288</a>
+              int <a href="#ac60b0de131715081ea22ebd7cfaac8d2" class="m-doc-self">field_288</a>
             </dt>
             <dd><span></span></dd>
             <dt id="a50b0a82a2a1268e799bd717d0429d368">
-              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> <a href="#a50b0a82a2a1268e799bd717d0429d368" class="m-doc-self">field_28C</a>
+              int <a href="#a50b0a82a2a1268e799bd717d0429d368" class="m-doc-self">field_28C</a>
             </dt>
             <dd><span></span></dd>
             <dt id="a3d84c0df7f617c94462dbc3885b00dd3">
@@ -255,13 +255,13 @@
     </div>
   </div>
 </div>
-<script src="search-v2.js"></script>
-<script src="searchdata-v2.js" async="async"></script>
+<script src="search-v1.js"></script>
+<script src="searchdata-v1.js" async="async"></script>
 <footer><nav>
   <div class="m-container">
     <div class="m-row">
       <div class="m-col-l-10 m-push-l-1">
-        <p>Spore ModAPI SDK for creating C++ mods for Spore. Created with <a href="https://doxygen.org/">Doxygen</a> 1.9.8 and <a href="https://mcss.mosra.cz/">m.css</a>.</p>
+        <p>Spore ModAPI SDK for creating C++ mods for Spore. Created with <a href="https://doxygen.org/">Doxygen</a> 1.8.16 and <a href="https://mcss.mosra.cz/">m.css</a>.</p>
       </div>
     </div>
   </div>

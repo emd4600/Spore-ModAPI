@@ -14,7 +14,7 @@
 <header><nav id="navigation">
   <div class="m-container">
     <div class="m-row">
-      <a href="index.html" id="m-navbar-brand" class="m-col-t-8 m-col-m-none m-left-m"><img src="Spore_ModAPI_Icon.png" alt="" />Spore ModAPI <span class="m-thin">SDK for creating C++ mods for Spore</span></a>
+      <a href="index.html" id="m-navbar-brand" class="m-col-t-8 m-col-m-none m-left-m"><img src="Spore_ModAPI_Icon.png" />Spore ModAPI <span class="m-thin">SDK for creating C++ mods for Spore</span></a>
       <div class="m-col-t-4 m-hide-m m-text-right m-nopadr">
         <a href="#search" class="m-doc-search-icon" title="Search" onclick="return showSearch()"><svg style="height: 0.9rem;" viewBox="0 0 16 16">
           <path id="m-doc-search-icon-path" d="m6 0c-3.31 0-6 2.69-6 6 0 3.31 2.69 6 6 6 1.49 0 2.85-0.541 3.89-1.44-0.0164 0.338 0.147 0.759 0.5 1.15l3.22 3.79c0.552 0.614 1.45 0.665 2 0.115 0.55-0.55 0.499-1.45-0.115-2l-3.79-3.22c-0.392-0.353-0.812-0.515-1.15-0.5 0.895-1.05 1.44-2.41 1.44-3.89 0-3.31-2.69-6-6-6zm0 1.56a4.44 4.44 0 0 1 4.44 4.44 4.44 4.44 0 0 1-4.44 4.44 4.44 4.44 0 0 1-4.44-4.44 4.44 4.44 0 0 1 4.44-4.44z"/>
@@ -46,10 +46,10 @@
       <div class="m-col-l-10 m-push-l-1">
         <h1>
           <span class="m-breadcrumb"><a href="namespace_simulator.html">Simulator</a>::<wbr/></span>cBadgeManager <span class="m-thin">class</span>
-          <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="c_badge_manager_8h.html">&lt;/home/runner/work/Spore-ModAPI/Spore-ModAPI/Spore-ModAPI/Spore ModAPI/Spore/Simulator/cBadgeManager.h&gt;</a></div>
+          <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="c_badge_manager_8h.html">&lt;Spore/Simulator/cBadgeManager.h&gt;</a></div>
         </h1>
         <p><span></span></p>
-        <nav class="m-block m-default">
+        <div class="m-block m-default">
           <h3>Contents</h3>
           <ul>
             <li>
@@ -62,7 +62,7 @@
               </ul>
             </li>
           </ul>
-        </nav>
+        </div>
         <section id="base-classes">
           <h2><a href="#base-classes">Base classes</a></h2>
           <dl class="m-doc">
@@ -76,7 +76,7 @@
           <h2><a href="#pub-static-attribs">Public static variables</a></h2>
           <dl class="m-doc">
             <dt id="a95e003c8a22b5fa245e441a51a40bc9b">
-              static <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">const</a> <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">uint32_<wbr />t</a> <a href="#a95e003c8a22b5fa245e441a51a40bc9b" class="m-doc-self">TYPE</a>
+              static const uint32_t <a href="#a95e003c8a22b5fa245e441a51a40bc9b" class="m-doc-self">TYPE</a>
             </dt>
             <dd><span></span></dd>
           </dl>
@@ -85,8 +85,8 @@
           <h2><a href="#pub-methods">Public functions</a></h2>
           <dl class="m-doc">
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#a79e6aeaafea7135bbfca161e42cb1793" class="m-doc">AddToBadgeProgress</a>(</span><span class="m-doc-wrap"><a href="namespace_simulator.html#a732e8fffbb39bbf511184fb821ad62eb" class="m-doc">BadgeManagerEvent</a> badge,
-              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> addedValue) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">void</a></span>
+              <span class="m-doc-wrap-bumper">void <a href="#a79e6aeaafea7135bbfca161e42cb1793" class="m-doc">AddToBadgeProgress</a>(</span><span class="m-doc-wrap"><a href="namespace_simulator.html#a732e8fffbb39bbf511184fb821ad62eb" class="m-doc">BadgeManagerEvent</a> badge,
+              int addedValue)</span>
             </dt>
             <dd>Changes the progress of a badge, adding <code>addedValue</code> to the existing progress of the badge.</dd>
           </dl>
@@ -95,35 +95,35 @@
           <h2><a href="#pub-attribs">Public variables</a></h2>
           <dl class="m-doc">
             <dt id="aba650f0e031e27b73cde85f2e54893f2">
-              eastl::map&lt;<a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">uint32_<wbr />t</a>, <a href="_property_list_8h.html#ae757f1639ff739ff0282dd91f3e39f0a" class="m-doc">PropertyListPtr</a>&gt; <a href="#aba650f0e031e27b73cde85f2e54893f2" class="m-doc-self">mBadges</a>
+              eastl::map&lt;uint32_t, <a href="_property_list_8h.html#ae757f1639ff739ff0282dd91f3e39f0a" class="m-doc">PropertyListPtr</a>&gt; <a href="#aba650f0e031e27b73cde85f2e54893f2" class="m-doc-self">mBadges</a>
             </dt>
             <dd>Maps the file ID to the PropertyList, for each badge in space_badges~ (0x2CB089D)</dd>
             <dt id="a7c730599531452a6997027fe33f1f9ea">
-              eastl::map&lt;<a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">uint32_<wbr />t</a>, <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a>&gt; <a href="#a7c730599531452a6997027fe33f1f9ea" class="m-doc-self">mBadgeMap</a>
+              eastl::map&lt;uint32_t, int&gt; <a href="#a7c730599531452a6997027fe33f1f9ea" class="m-doc-self">mBadgeMap</a>
             </dt>
             <dd>Tracks the state of each badge (wether its unlocked, in progress, etc)</dd>
             <dt id="a101ff1b20762b01a3635d9df0b9fc4ac">
-              eastl::map&lt;<a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a>, <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a>&gt; <a href="#a101ff1b20762b01a3635d9df0b9fc4ac" class="m-doc-self">mStageMap</a>
+              eastl::map&lt;int, int&gt; <a href="#a101ff1b20762b01a3635d9df0b9fc4ac" class="m-doc-self">mStageMap</a>
             </dt>
             <dd><span></span></dd>
             <dt id="aa221eebb3fc5825941ed303275b9b1df">
-              eastl::map&lt;<a href="namespace_simulator.html#a732e8fffbb39bbf511184fb821ad62eb" class="m-doc">BadgeManagerEvent</a>, <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a>&gt; <a href="#aa221eebb3fc5825941ed303275b9b1df" class="m-doc-self">mEventCounts</a>
+              eastl::map&lt;<a href="namespace_simulator.html#a732e8fffbb39bbf511184fb821ad62eb" class="m-doc">BadgeManagerEvent</a>, int&gt; <a href="#aa221eebb3fc5825941ed303275b9b1df" class="m-doc-self">mEventCounts</a>
             </dt>
             <dd>Counts how many events of a certain kind have happened, used to know when to give a badge.</dd>
             <dt id="a2dcb964e7dbf5e71ab53605ff07cb6e8">
-              eastl::hash_map&lt;<a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a>, <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a>&gt; <a href="#a2dcb964e7dbf5e71ab53605ff07cb6e8" class="m-doc-self">field_80</a>
+              eastl::hash_map&lt;int, int&gt; <a href="#a2dcb964e7dbf5e71ab53605ff07cb6e8" class="m-doc-self">field_80</a>
             </dt>
             <dd><span></span></dd>
             <dt id="a8cd0ebe695a351b09f19021b97dd1194">
-              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">bool</a> <a href="#a8cd0ebe695a351b09f19021b97dd1194" class="m-doc-self">field_A0</a>
+              bool <a href="#a8cd0ebe695a351b09f19021b97dd1194" class="m-doc-self">field_A0</a>
             </dt>
             <dd><span></span></dd>
             <dt id="acb78c5b0206a0ce716559fac0ff95ad0">
-              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">uint32_<wbr />t</a> <a href="#acb78c5b0206a0ce716559fac0ff95ad0" class="m-doc-self">mCurrentBadgeCard</a>
+              uint32_t <a href="#acb78c5b0206a0ce716559fac0ff95ad0" class="m-doc-self">mCurrentBadgeCard</a>
             </dt>
             <dd><span></span></dd>
             <dt id="a9a8bb8e085870e9c2c7ae389bb7629e4">
-              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> <a href="#a9a8bb8e085870e9c2c7ae389bb7629e4" class="m-doc-self">field_A8</a>
+              int <a href="#a9a8bb8e085870e9c2c7ae389bb7629e4" class="m-doc-self">field_A8</a>
             </dt>
             <dd><span></span></dd>
             <dt id="a82b377b0f364358e1e8a3fb73385a4c5">
@@ -136,8 +136,8 @@
           <h2>Function documentation</h2>
           <section class="m-doc-details" id="a79e6aeaafea7135bbfca161e42cb1793"><div>
             <h3>
-              <span class="m-doc-wrap-bumper"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">void</a> Simulator::<wbr />cBadgeManager::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a79e6aeaafea7135bbfca161e42cb1793" class="m-doc-self">AddToBadgeProgress</a>(</span><span class="m-doc-wrap"><a href="namespace_simulator.html#a732e8fffbb39bbf511184fb821ad62eb" class="m-doc">BadgeManagerEvent</a> badge,
-              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> addedValue)</span></span>
+              <span class="m-doc-wrap-bumper">void Simulator::<wbr />cBadgeManager::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a79e6aeaafea7135bbfca161e42cb1793" class="m-doc-self">AddToBadgeProgress</a>(</span><span class="m-doc-wrap"><a href="namespace_simulator.html#a732e8fffbb39bbf511184fb821ad62eb" class="m-doc">BadgeManagerEvent</a> badge,
+              int addedValue)</span></span>
             </h3>
             <p>Changes the progress of a badge, adding <code>addedValue</code> to the existing progress of the badge.</p>
             <table class="m-table m-fullwidth m-flat">
@@ -196,13 +196,13 @@
     </div>
   </div>
 </div>
-<script src="search-v2.js"></script>
-<script src="searchdata-v2.js" async="async"></script>
+<script src="search-v1.js"></script>
+<script src="searchdata-v1.js" async="async"></script>
 <footer><nav>
   <div class="m-container">
     <div class="m-row">
       <div class="m-col-l-10 m-push-l-1">
-        <p>Spore ModAPI SDK for creating C++ mods for Spore. Created with <a href="https://doxygen.org/">Doxygen</a> 1.9.8 and <a href="https://mcss.mosra.cz/">m.css</a>.</p>
+        <p>Spore ModAPI SDK for creating C++ mods for Spore. Created with <a href="https://doxygen.org/">Doxygen</a> 1.8.16 and <a href="https://mcss.mosra.cz/">m.css</a>.</p>
       </div>
     </div>
   </div>

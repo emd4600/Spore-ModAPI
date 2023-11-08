@@ -14,7 +14,7 @@
 <header><nav id="navigation">
   <div class="m-container">
     <div class="m-row">
-      <a href="index.html" id="m-navbar-brand" class="m-col-t-8 m-col-m-none m-left-m"><img src="Spore_ModAPI_Icon.png" alt="" />Spore ModAPI <span class="m-thin">SDK for creating C++ mods for Spore</span></a>
+      <a href="index.html" id="m-navbar-brand" class="m-col-t-8 m-col-m-none m-left-m"><img src="Spore_ModAPI_Icon.png" />Spore ModAPI <span class="m-thin">SDK for creating C++ mods for Spore</span></a>
       <div class="m-col-t-4 m-hide-m m-text-right m-nopadr">
         <a href="#search" class="m-doc-search-icon" title="Search" onclick="return showSearch()"><svg style="height: 0.9rem;" viewBox="0 0 16 16">
           <path id="m-doc-search-icon-path" d="m6 0c-3.31 0-6 2.69-6 6 0 3.31 2.69 6 6 6 1.49 0 2.85-0.541 3.89-1.44-0.0164 0.338 0.147 0.759 0.5 1.15l3.22 3.79c0.552 0.614 1.45 0.665 2 0.115 0.55-0.55 0.499-1.45-0.115-2l-3.79-3.22c-0.392-0.353-0.812-0.515-1.15-0.5 0.895-1.05 1.44-2.41 1.44-3.89 0-3.31-2.69-6-6-6zm0 1.56a4.44 4.44 0 0 1 4.44 4.44 4.44 4.44 0 0 1-4.44 4.44 4.44 4.44 0 0 1-4.44-4.44 4.44 4.44 0 0 1 4.44-4.44z"/>
@@ -48,7 +48,7 @@
           Interacting with the Simulator
         </h1>
         <p>An overview of the most important <a href="namespace_simulator.html" class="m-doc">Simulator</a> functions.</p>
-        <nav class="m-block m-default">
+        <div class="m-block m-default">
           <h3>Contents</h3>
           <ul>
             <li><a href="#SimulatorBasic-Player">Player data</a></li>
@@ -64,7 +64,7 @@
               </ul>
             </li>
           </ul>
-        </nav>
+        </div>
 <p>Before reading this tutorial, first read <a href="_simulator.html">&quot;Introduction to the Simulator&quot;</a> tutorial. The code in this tutorial is written assuming <code>using namespace <a href="namespace_simulator.html" class="m-doc">Simulator</a>;</code> is being used, for simplicity.</p><section id="SimulatorBasic-Player"><h2><a href="#SimulatorBasic-Player">Player data</a></h2><pre class="m-code"><span class="c1">// Gives you the active star and planet</span>
 
 <span class="n">cStar</span><span class="o">*</span><span class="w"> </span><span class="n">star</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">GetActiveStar</span><span class="p">();</span><span class="w"></span>
@@ -150,7 +150,7 @@
 <span class="n">inventory</span><span class="o">-&gt;</span><span class="n">AddItem</span><span class="p">(</span><span class="n">tool</span><span class="p">.</span><span class="n">get</span><span class="p">());</span><span class="w"></span>
 
 <span class="c1">// You can also add ammo to the tool</span>
-<span class="n">tool</span><span class="o">-&gt;</span><span class="n">AddAmmo</span><span class="p">(</span><span class="mi">10</span><span class="p">);</span><span class="w"></span></pre></section><section id="SimulatorBasic-Modes"><h2><a href="#SimulatorBasic-Modes">Game modes</a></h2><p>Calling <code>SimGameModeManager.GetActiveModeID()</code> returns the ID of the current mode, which you can compare to the IDs at the GameModeIDs enum. There are also functions that do that for you: <code>IsSpaceGame()</code>, <code>IsScenarioMode()</code>,...</p><p>You can get the difficulty tunning <code>.prop</code> of the active mode and difficulty by calling <code>GameModeManager.GetActiveDifficultyTuning()</code>.</p></section><section id="SimulatorBasic-Loading"><h2><a href="#SimulatorBasic-Loading">Loading creatures, vehicles and models</a></h2><p>Some simulator objects, such as creatures and vehicles, have specialized functions that must be used when creating them.</p><p>To create a creature, first you must get its species, then use Simulator::cCreatreAnimal::Create() to create a new instance of that species. You must also give it the initial position.</p><pre class="m-code"><span class="k">auto</span><span class="w"> </span><span class="n">species</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">SpeciesManager</span><span class="p">.</span><span class="n">GetSpeciesProfile</span><span class="p">({</span><span class="w"> </span><span class="mh">0x066B8241</span><span class="p">,</span><span class="w"> </span><span class="n">TypeIDs</span><span class="o">::</span><span class="n">crt</span><span class="p">,</span><span class="w"> </span><span class="n">GroupIDs</span><span class="o">::</span><span class="n">CreatureModels</span><span class="w"> </span><span class="p">});</span><span class="w"></span>
+<span class="n">tool</span><span class="o">-&gt;</span><span class="n">AddAmmo</span><span class="p">(</span><span class="mi">10</span><span class="p">);</span><span class="w"></span></pre></section><section id="SimulatorBasic-Modes"><h2><a href="#SimulatorBasic-Modes">Game modes</a></h2><p>Calling <code>SimGameModeManager.GetActiveModeID()</code> returns the ID of the current mode, which you can compare to the IDs at the GameModeIDs enum. There are also functions that do that for you: <code><a href="namespace_simulator.html#afaa668ce0e4f3750fad0bb12aa4778d0" class="m-doc">IsSpaceGame()</a></code>, <code><a href="namespace_simulator.html#a11c14d5540919cdac8858456d1107430" class="m-doc">IsScenarioMode()</a></code>,...</p><p>You can get the difficulty tunning <code>.prop</code> of the active mode and difficulty by calling <code>GameModeManager.GetActiveDifficultyTuning()</code>.</p></section><section id="SimulatorBasic-Loading"><h2><a href="#SimulatorBasic-Loading">Loading creatures, vehicles and models</a></h2><p>Some simulator objects, such as creatures and vehicles, have specialized functions that must be used when creating them.</p><p>To create a creature, first you must get its species, then use <a href="namespace_i_o_1_1_directory.html#a68e68bce0788b1f23a173bb7b779b8c0" class="m-doc">Simulator::<wbr />cCreatreAnimal::<wbr />Create()</a> to create a new instance of that species. You must also give it the initial position.</p><pre class="m-code"><span class="k">auto</span><span class="w"> </span><span class="n">species</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">SpeciesManager</span><span class="p">.</span><span class="n">GetSpeciesProfile</span><span class="p">({</span><span class="w"> </span><span class="mh">0x066B8241</span><span class="p">,</span><span class="w"> </span><span class="n">TypeIDs</span><span class="o">::</span><span class="n">crt</span><span class="p">,</span><span class="w"> </span><span class="n">GroupIDs</span><span class="o">::</span><span class="n">CreatureModels</span><span class="w"> </span><span class="p">});</span><span class="w"></span>
 <span class="n">cCreatureAnimalPtr</span><span class="w"> </span><span class="n">creature</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">cCreatureAnimal</span><span class="o">::</span><span class="n">Create</span><span class="p">({</span><span class="w"> </span><span class="mf">500.0</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="p">},</span><span class="w"> </span><span class="n">species</span><span class="p">);</span><span class="w"></span></pre><p>You can create a vehicle with <code>simulator_new</code>, like most other Simulator classes. You will have to call the <code>Load()</code> method to load a model and tell which kind of vehicle it is:</p><pre class="m-code"><span class="n">cVehiclePtr</span><span class="w"> </span><span class="n">vehicle</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">simulator_new</span><span class="o">&lt;</span><span class="n">cVehicle</span><span class="o">&gt;</span><span class="p">();</span><span class="w"></span>
 <span class="n">vehicle</span><span class="o">-&gt;</span><span class="n">Load</span><span class="p">(</span><span class="n">kVehicleLand</span><span class="p">,</span><span class="w"> </span><span class="n">kVehicleMilitary</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="mh">0x19A3A9AC</span><span class="p">,</span><span class="w"> </span><span class="n">TypeIDs</span><span class="o">::</span><span class="n">vcl</span><span class="p">,</span><span class="w"> </span><span class="n">GroupIDs</span><span class="o">::</span><span class="n">VehicleModels</span><span class="w"> </span><span class="p">});</span><span class="w"></span>
 
@@ -199,13 +199,13 @@
     </div>
   </div>
 </div>
-<script src="search-v2.js"></script>
-<script src="searchdata-v2.js" async="async"></script>
+<script src="search-v1.js"></script>
+<script src="searchdata-v1.js" async="async"></script>
 <footer><nav>
   <div class="m-container">
     <div class="m-row">
       <div class="m-col-l-10 m-push-l-1">
-        <p>Spore ModAPI SDK for creating C++ mods for Spore. Created with <a href="https://doxygen.org/">Doxygen</a> 1.9.8 and <a href="https://mcss.mosra.cz/">m.css</a>.</p>
+        <p>Spore ModAPI SDK for creating C++ mods for Spore. Created with <a href="https://doxygen.org/">Doxygen</a> 1.8.16 and <a href="https://mcss.mosra.cz/">m.css</a>.</p>
       </div>
     </div>
   </div>
