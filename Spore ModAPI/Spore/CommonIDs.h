@@ -213,8 +213,8 @@ namespace GroupIDs
 
 		/// Where space tools .prop files are stored
 		SpaceTools = 0x30608F0B,
-		/// Where trading configuration of space items are stored
-		SpaceTrading = 0x034D97FA,
+		/// Where trading configuration of space items are stored. Check Simulator::cSpaceTrading
+		SpaceTrading_ = 0x034D97FA,
 
 		TribalTools = 0xF37C24E6,
 		TribePlans = 0x72D02C25,
