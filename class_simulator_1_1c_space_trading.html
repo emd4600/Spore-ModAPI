@@ -48,7 +48,7 @@
           <span class="m-breadcrumb"><a href="namespace_simulator.html">Simulator</a>::<wbr/></span>cSpaceTrading <span class="m-thin">class</span>
           <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_space_trading_8h.html">&lt;Spore ModAPI/Spore/Simulator/SubSystem/SpaceTrading.h&gt;</a></div>
         </h1>
-        <p><span></span></p>
+        <p>Singleton class for everything related to space stage trading, such as obtaining tradable items or generating NPC stores.</p>
         <nav class="m-block m-default">
           <h3>Contents</h3>
           <ul>
@@ -65,6 +65,8 @@
             </li>
           </ul>
         </nav>
+<p>This class manages the objects in the <a href="namespace_group_i_ds.html#a7336869349c1fdce783daaa13128fc87a99cb37fda5c7de547eff55e2cf35d95f" class="m-doc">GroupIDs::<wbr />SpaceTrading_</a> folder. Example usage:</p><pre class="m-code"><span class="c1">// Get 3 red spice</span>
+<span class="n">SpaceTrading</span><span class="p">.</span><span class="n">ObtainTradingObject</span><span class="p">({</span><span class="w"> </span><span class="n">id</span><span class="p">(</span><span class="s">&quot;spice1&quot;</span><span class="p">),</span><span class="w"> </span><span class="n">TypeIDs</span><span class="o">::</span><span class="n">prop</span><span class="p">,</span><span class="w"> </span><span class="n">GroupIDs</span><span class="o">::</span><span class="n">SpaceTrading_</span><span class="w"> </span><span class="p">},</span><span class="w"> </span><span class="mi">3</span><span class="p">);</span><span class="w"></span></pre>
         <section id="base-classes">
           <h2><a href="#base-classes">Base classes</a></h2>
           <dl class="m-doc">
@@ -234,7 +236,7 @@
                 </tr>
               </tbody>
             </table>
-<p>The key must be a <code>.prop</code> file in <a href="namespace_group_i_ds.html#a7336869349c1fdce783daaa13128fc87a81dba22b2dd3b8b8c62be901c4e50a18" class="m-doc">GroupIDs::<wbr />SpaceTrading</a> group. If the item is a rare, it will show an event log, give a badge if necessary, and emit the <a href="namespace_simulator.html#a4b1f459203b8dbf8583312aa067c8c54a7aebd8bea2592ecf659816c4b77aa931" class="m-doc">SimulatorMessages::<wbr />kMsgSpaceRareFound</a> message.</p>
+<p>The key must be a <code>.prop</code> file in <a href="namespace_group_i_ds.html#a7336869349c1fdce783daaa13128fc87a99cb37fda5c7de547eff55e2cf35d95f" class="m-doc">GroupIDs::<wbr />SpaceTrading_</a> group. If the item is a rare, it will show an event log, give a badge if necessary, and emit the <a href="namespace_simulator.html#a4b1f459203b8dbf8583312aa067c8c54a7aebd8bea2592ecf659816c4b77aa931" class="m-doc">SimulatorMessages::<wbr />kMsgSpaceRareFound</a> message.</p>
           </div></section>
           <section class="m-doc-details" id="ae001a6644ab467cb83a3bc1db4fb0419"><div>
             <h3>
