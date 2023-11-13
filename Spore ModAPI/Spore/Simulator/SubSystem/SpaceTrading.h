@@ -9,6 +9,7 @@
 #include <EASTL\vector.h>
 #include <EASTL\fixed_vector.h>
 
+// Check Simulator::cSpaceTrading
 #define SpaceTrading (*Simulator::cSpaceTrading::Get())
 #define cNPCStorePtr eastl::intrusive_ptr<Simulator::cNPCStore>
 
@@ -35,6 +36,13 @@ namespace Simulator
 	};
 	ASSERT_SIZE(cNPCStore, 0xC0);
 
+	/// Singleton class for everything related to space stage trading, such as obtaining tradable items
+	/// or generating NPC stores. This class manages the objects in the GroupIDs::SpaceTrading_ folder.
+	/// Example usage:
+	/// ```cpp
+	/// // Get 3 red spice
+	/// SpaceTrading.ObtainTradingObject({ id("spice1"), TypeIDs::prop, GroupIDs::SpaceTrading_ }, 3);
+	/// ```
 	class cSpaceTrading
 		/* 00h */	: public cStrategy
 		/* 1Ch */	, public App::IMessageListener
@@ -51,7 +59,7 @@ namespace Simulator
 		static bool IsRare(const ResourceKey& key);
 
 		/// Gives the specified trading object to the player, adding it to its inventory. 
-		/// The key must be a `.prop` file in GroupIDs::SpaceTrading group.
+		/// The key must be a `.prop` file in GroupIDs::SpaceTrading_ group.
 		/// If the item is a rare, it will show an event log, give a badge if necessary, and emit the SimulatorMessages::kMsgSpaceRareFound message.
 		/// @param key The key of the item
 		/// @param amount Quantity to give
