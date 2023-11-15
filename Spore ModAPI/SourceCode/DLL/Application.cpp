@@ -4,6 +4,8 @@
 #include "Application.h"
 #include <Spore\ArgScript\FormatParser.h>
 #include <cuchar>
+#include <tlhelp32.h>
+#include <psapi.h>
 #include <Spore\IO.h>
 
 bool ShaderFragments_detour::DETOUR(Resource::Database* pDBPF)
@@ -116,30 +118,75 @@ namespace ModAPI
 	}
 }
 
-EXTERN_C IMAGE_DOS_HEADER __ImageBase;
-
 void CreateLogFile() {
 	_time64(&ModAPI::logFileStartTime);
 
-	TCHAR DllPath[MAX_PATH] = {0};
-	char DllPathA[MAX_PATH] = {0};
-	size_t i;
-	GetModuleFileName(reinterpret_cast<HINSTANCE>(&__ImageBase), DllPath, _countof(DllPath));
-	wcstombs_s(&i, DllPathA, MAX_PATH, DllPath, MAX_PATH);
+	wchar_t log_path_buf[MAX_PATH] = { 0 };
+
+	// try to find parent process
+	PROCESSENTRY32 processEntry = { 0 };
+	processEntry.dwSize = sizeof(PROCESSENTRY32);
+	const int pid = GetCurrentProcessId();
+	HANDLE toolHelpHandle = CreateToolhelp32Snapshot(TH32CS_SNAPPROCESS, 0);
+	bool foundParentProccess = false;
+	bool hasParentProcessPath = false;
+	DWORD parentProcessId = 0;
+
+	if (toolHelpHandle != INVALID_HANDLE_VALUE &&
+		Process32First(toolHelpHandle, &processEntry))
+	{
+		do
+		{
+			if (processEntry.th32ProcessID == pid)
+			{
+				parentProcessId = processEntry.th32ParentProcessID;
+				foundParentProccess = true;
+				break;
+			}
+		} while (Process32Next(toolHelpHandle, &processEntry));
+	}
+
+	// attempt to retrieve the module file path
+	if (foundParentProccess && parentProcessId != 0)
+	{
+		HANDLE parentProcessHandle = OpenProcess(PROCESS_QUERY_INFORMATION | PROCESS_VM_READ, FALSE, parentProcessId);
+		if (parentProcessHandle != INVALID_HANDLE_VALUE)
+		{
+			if (GetModuleFileNameExW(parentProcessHandle, 0, log_path_buf, _countof(log_path_buf)) != 0)
+			{
+				hasParentProcessPath = true;
+			}
+			CloseHandle(parentProcessHandle);
+		}
+	}
+
+	// when we've found the parent process, ensure we have an allowed filename
+	// currently, only the launcher kit & SMM are allowed
+	if (hasParentProcessPath)
+	{
+		if (wcsstr(log_path_buf, L"Spore ModAPI Launcher.exe") == nullptr &&
+			wcsstr(log_path_buf, L"Launch Spore.exe") == nullptr)
+		{
+			hasParentProcessPath = false;
+		}
+	}
+
+	// when we don't have the parent process' path,
+	// fallback to the executable path
+	if (!hasParentProcessPath)
+	{
+		GetModuleFileNameW(nullptr, log_path_buf, _countof(log_path_buf));
+	}
 
 	eastl::string16 log_path;
 	log_path.reserve(MAX_PATH);
 	
-	mbstate_t state{};
-	char16_t c16;
-	const char* ptr = DllPathA;
-	const char* end = DllPathA + strlen(DllPathA);
-	for (size_t rc; (rc = mbrtoc16(&c16, ptr, end - ptr + 1, &state)); ptr += rc)
-		log_path += c16;
+	// fill log_path with log_path_buf
+	for (size_t i = 0; i < wcslen(log_path_buf); i++)
+		log_path += log_path_buf[i];
 
-	//removes the mlibs\\file.dll from the path
-	log_path.resize(log_path.find_last_of('\\')); 
-	log_path.resize(log_path.find_last_of('\\')+1);
+	// strip the filename from the path
+	log_path.resize(log_path.find_last_of(u'\\')+1);
 
 	eastl::string16 log_file_name;
 	AppCommandLine.FindSwitch(u"modapi-log-filename", false, &log_file_name);
