@@ -20,6 +20,8 @@ namespace ModAPI
 	extern MODAPI void AddPostInitFunction(InitFunction);
 	extern MODAPI void AddDisposeFunction(InitFunction);
 
+	extern MODAPI void Log(const char* fmt, ...);
+
 	extern MODAPI bool AddSimulatorStrategy(Simulator::ISimulatorStrategy* strategy, uint32_t id);
 
 	extern MODAPI GameType GetGameType();

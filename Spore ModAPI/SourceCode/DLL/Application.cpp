@@ -1,7 +1,9 @@
+#include "Spore/App/CommandLine.h"
 #ifdef MODAPI_DLL_EXPORT
 #include "stdafx.h"
 #include "Application.h"
 #include <Spore\ArgScript\FormatParser.h>
+#include <cuchar>
 #include <Spore\IO.h>
 
 bool ShaderFragments_detour::DETOUR(Resource::Database* pDBPF)
@@ -58,6 +60,8 @@ namespace ModAPI
 	eastl::fixed_vector<InitFunction, MAX_MODS> postInitFunctions;
 	eastl::fixed_vector<InitFunction, MAX_MODS> disposeFunctions;
 	eastl::fixed_map<uint32_t, ISimulatorStrategyPtr, MAX_MODS> simulatorStrategies;
+	FileStreamPtr logFile{};
+	__time64_t logFileStartTime;
 
 	uint32_t CRC_TABLE[256];
 
@@ -112,9 +116,56 @@ namespace ModAPI
 	}
 }
 
+EXTERN_C IMAGE_DOS_HEADER __ImageBase;
+
+void CreateLogFile() {
+	_time64(&ModAPI::logFileStartTime);
+
+	TCHAR DllPath[MAX_PATH] = {0};
+	char DllPathA[MAX_PATH] = {0};
+	size_t i;
+	GetModuleFileName(reinterpret_cast<HINSTANCE>(&__ImageBase), DllPath, _countof(DllPath));
+	wcstombs_s(&i, DllPathA, MAX_PATH, DllPath, MAX_PATH);
+
+	eastl::string16 log_path;
+	log_path.reserve(MAX_PATH);
+	
+	mbstate_t state{};
+	char16_t c16;
+	const char* ptr = DllPathA;
+	const char* end = DllPathA + strlen(DllPathA);
+	for (size_t rc; (rc = mbrtoc16(&c16, ptr, end - ptr + 1, &state)); ptr += rc)
+		log_path += c16;
+
+	//removes the mlibs\\file.dll from the path
+	log_path.resize(log_path.find_last_of('\\')); 
+	log_path.resize(log_path.find_last_of('\\')+1);
+
+	eastl::string16 log_file_name;
+	AppCommandLine.FindSwitch(u"modapi-log-filename", false, &log_file_name);
+	if (log_file_name.empty())
+		log_file_name = u"spore_log";
+	log_file_name += u".txt";
+	log_path.append(log_file_name);
+
+	ModAPI::logFile = new IO::FileStream(log_path.c_str());
+	ModAPI::logFile->Open(IO::AccessFlags::Write, IO::CD::CreateAlways);
+}
+
+void CloseLogFile() {
+	if (ModAPI::logFile) {
+		ModAPI::logFile->Close();
+		ModAPI::logFile.reset();
+	}
+}
+
 int ModAPI::sub_7E6C60_detour::DETOUR(int arg_0)
 {
 	int result = original_function(this, arg_0);
+
+	CreateLogFile();
+	ModAPI::Log("Spore ModAPI %d.%d.%d loaded.", ModAPI::GetMajorVersion(), ModAPI::GetMinorVersion(), ModAPI::GetBuildVersion());
+	ModAPI::Log("Platform: %s", ModAPI::GetGameType() == ModAPI::GameType::Disk ? "Disk" : "March2017");
 
 	for (ModAPI::InitFunction& func : ModAPI::initFunctions) func();
 
@@ -137,6 +188,9 @@ int ModAPI::AppShutdown_detour::DETOUR()
 
 	for (auto it : ModAPI::simulatorStrategies) it.second->Dispose();
 	ModAPI::simulatorStrategies.clear();
+
+	ModAPI::Log("Shutting Down");
+	CloseLogFile();
 
 	return original_function(this);
 }
