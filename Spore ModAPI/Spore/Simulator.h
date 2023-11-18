@@ -34,6 +34,7 @@
 #include <Spore\Simulator\SubSystem\PlantSpeciesManager.h>
 #include <Spore\Simulator\SubSystem\AnimalSpeciesManager.h>
 #include <Spore\Simulator\SubSystem\SpaceGfx.h>
+#include <Spore\Simulator\SubSystem\SpaceTrading.h>
 
 #include <Spore\Simulator\cGameData.h>
 #include <Spore\Simulator\cGonzagoSimulator.h>

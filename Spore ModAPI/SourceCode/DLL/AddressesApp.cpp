@@ -20,7 +20,7 @@
 #include <Spore\App\JobManager.h>
 #include <Spore\App\cJob.h>
 #include <Spore\App\cMouseCamera.h>
-//#include <Spore\App\IStateManager.h>
+#include <Spore\App\IStateManager.h>
 #include <Spore\App\Property.h>
 #include <Spore\App\PropertyList.h>
 #include <Spore\App\ScenarioMode.h>
@@ -595,6 +595,10 @@ namespace App
 	namespace Addresses(IConfigManager)
 	{
 		DefineAddress(Get, SelectAddress(0x67DE50, 0x67DCF0));
+	}
+
+	namespace Addresses(IStateManager) {
+		DefineAddress(Get, SelectAddress(0x67DE40, 0x67DCE0));
 	}
 }
 
