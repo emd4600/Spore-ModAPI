@@ -21,10 +21,23 @@
 
 #include <Spore\Object.h>
 #include <cinttypes>
+#include <EASTL\string.h>
+
+#define RefCountedStringPtr eastl::intrusive_ptr<App::RefCountedString>
 
 namespace App
 {
-	class StandardMessage : public MultithreadObject
+	class RefCountedString 
+		: public DefaultRefCounted 
+	{
+	public:
+		inline RefCountedString(const char* str) : value(str) {}
+
+		eastl::string value;
+	};
+
+	class StandardMessage 
+		: public MultithreadObject
 	{
 	public:
 		union MessageParameter
@@ -42,6 +55,7 @@ namespace App
 			double		_double;
 			Object*		object;
 			void*		ptr;
+			RefCountedString* str;
 		};
 
 		StandardMessage();
@@ -53,13 +67,23 @@ namespace App
 		/* 38h */	uint32_t objectFlags;
 		/* 3Ch */	int field_3C;
 
-		void SetObject(size_t nIndex, Object* pObject);
+		void SetObject(size_t index, Object* object);
+
+		void SetString(size_t index, const char* str);
 	};
 
-	inline void StandardMessage::SetObject(size_t nIndex, Object* pObject)
+	inline void StandardMessage::SetObject(size_t index, Object* object)
 	{
-		params[nIndex].object = pObject;
-		objectFlags |= (1 << nIndex);
-		if (pObject) pObject->AddRef();
+		if ((objectFlags & (1 >> index)) && params[index].object) {
+			params[index].object->Release();
+		}
+		params[index].object = object;
+		objectFlags |= (1 << index);
+		if (object) object->AddRef();
 	}
+
+	inline void StandardMessage::SetString(size_t index, const char* str)
+	{
+		SetObject(index, (Object*)new RefCountedString(str));
+;	}
 }

@@ -7,6 +7,7 @@
 #include <Spore\App\cSporeApp.h>
 #include <Spore\App\cArithmeticaResource.h>
 #include <Spore\App\ConfigManager.h>
+#include <Spore\App\IStateManager.h>
 #endif
 #include <Spore\App\CommandLine.h>
 
@@ -80,7 +81,13 @@ namespace App
 	{
 		return *(PropertyList**)GetAddress(App, sPreferencesPropList);
 	}
+
+	//// StateManager ////
+
+	auto_STATIC_METHOD_(IStateManager, IStateManager*, Get);
+
 #endif
+
 
 	auto_METHOD(CommandLine, eastl::string16&, Get, Args(int i), Args(i));
 

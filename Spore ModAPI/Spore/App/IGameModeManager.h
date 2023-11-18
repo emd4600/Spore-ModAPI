@@ -42,7 +42,11 @@ namespace App
 		/// Called when the current mode is exited. The message data is the App::OnModeExitMessage class.
 		kMsgOnModeExit = 0x212D3E7,
 		/// Called after the current mode is entered. The message data is the App::OnModeEnterMessage class.
-		kMsgOnModeEnter = 0x22D1ADC
+		kMsgOnModeEnter = 0x22D1ADC,
+		// Changes the current game mode. The message data is the App::SetGameModeMessage class.
+		kMsgSetGameModeByName = 0xE11333,
+
+		// 0xD3C602
 	};
 
 	// not public, so user can't access the fields
@@ -75,6 +79,22 @@ namespace App
 		/// Returns the pevious mode ID before this change.
 		inline uint32_t GetPreviousModeID() {
 			return params[1].uint32;
+		}
+	};
+
+	class SetGameModeMessage : StandardMessage
+	{
+	public:
+		static const uint32_t ID = kMsgSetGameModeByName;
+
+		inline SetGameModeMessage(const char* gameModeName)
+		{
+			id = ID;
+			SetString(0, gameModeName);
+		}
+
+		inline const eastl::string& GetGameModeName() {
+			return params[0].str->value;
 		}
 	};
 
