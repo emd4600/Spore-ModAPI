@@ -245,6 +245,10 @@
             </dt>
             <dd><span></span></dd>
             <dt>
+              class <a href="class_app_1_1_i_state_manager.html" class="m-doc">IStateManager</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
               class <a href="class_app_1_1_i_token_translator.html" class="m-doc">ITokenTranslator</a>
             </dt>
             <dd><span></span></dd>
@@ -281,9 +285,17 @@
             </dt>
             <dd>A class that contains multiple properties.</dd>
             <dt>
+              class <a href="class_app_1_1_ref_counted_string.html" class="m-doc">RefCountedString</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
               class <a href="class_app_1_1_scheduled_task_listener.html" class="m-doc">ScheduledTaskListener</a>
             </dt>
             <dd>A message listener that, listening to Update messages, executes the given task after a certain time has passed and (optionally) repetaing it periodically.</dd>
+            <dt>
+              class <a href="class_app_1_1_set_game_mode_message.html" class="m-doc">SetGameModeMessage</a>
+            </dt>
+            <dd><span></span></dd>
             <dt>
               class <a href="class_app_1_1_standard_message.html" class="m-doc">StandardMessage</a>
             </dt>
@@ -305,7 +317,8 @@
               <span class="m-doc-wrap-bumper">enum <a href="#a33bc13e7bf4fbe97cd50afd32b423a72" class="m-doc">GameModeManagerMessageIDs</a> { </span><span class="m-doc-wrap"><a href="#a33bc13e7bf4fbe97cd50afd32b423a72aab99bde69d5a451b5a8d0a9949662434" class="m-doc">kMsgAddRef</a> = 1,
               <a href="#a33bc13e7bf4fbe97cd50afd32b423a72a58f34ed3e76d5d3fcbebf4a0dbfc81ed" class="m-doc">kMsgRelease</a> = 2,
               <a href="#a33bc13e7bf4fbe97cd50afd32b423a72a3c5da5adc2e58824ebc94b284a8d6c79" class="m-doc">kMsgOnModeExit</a> = 0x212D3E7,
-              <a href="#a33bc13e7bf4fbe97cd50afd32b423a72a18f6cb3fd0bdd97be603d27a75e966e4" class="m-doc">kMsgOnModeEnter</a> = 0x22D1ADC }</span>
+              <a href="#a33bc13e7bf4fbe97cd50afd32b423a72a18f6cb3fd0bdd97be603d27a75e966e4" class="m-doc">kMsgOnModeEnter</a> = 0x22D1ADC,
+              <a href="#a33bc13e7bf4fbe97cd50afd32b423a72ac5e1c44c8cb9afb7cac5396905d73653" class="m-doc">kMsgSetGameModeByName</a> = 0xE11333 }</span>
             </dt>
             <dd><span></span></dd>
             <dt>
@@ -649,6 +662,10 @@
             <dd><span></span></dd>
             <dt>
               <span class="m-doc-wrap-bumper">auto <a href="#a5118c39d08a475ab7ba6c87bf67a717d" class="m-doc">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_app_1_1_i_prop_manager.html" class="m-doc">IPropManager</a>) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">namespace</a></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a1ae370a1485cc304e5ee9dcd6faa2edd" class="m-doc">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_app_1_1_i_state_manager.html" class="m-doc">IStateManager</a>) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">namespace</a></span>
             </dt>
             <dd><span></span></dd>
             <dt>
@@ -1245,6 +1262,12 @@
                   <td><a href="#a33bc13e7bf4fbe97cd50afd32b423a72a18f6cb3fd0bdd97be603d27a75e966e4" class="m-doc-self" id="a33bc13e7bf4fbe97cd50afd32b423a72a18f6cb3fd0bdd97be603d27a75e966e4">kMsgOnModeEnter</a></td>
                   <td>
                   <p>Called after the current mode is entered. The message data is the <a href="class_app_1_1_on_mode_enter_message.html" class="m-doc">App::<wbr />OnModeEnterMessage</a> class.</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a33bc13e7bf4fbe97cd50afd32b423a72ac5e1c44c8cb9afb7cac5396905d73653" class="m-doc-self" id="a33bc13e7bf4fbe97cd50afd32b423a72ac5e1c44c8cb9afb7cac5396905d73653">kMsgSetGameModeByName</a></td>
+                  <td>
+                  <p><span></span></p>
                   </td>
                 </tr>
               </tbody>
@@ -1888,6 +1911,13 @@
             <h3>
               <span class="m-doc-wrap-bumper"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">namespace</a> App::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a5118c39d08a475ab7ba6c87bf67a717d" class="m-doc-self">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_app_1_1_i_prop_manager.html" class="m-doc">IPropManager</a>)</span></span>
               <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_i_prop_manager_8h.html">&lt;Spore ModAPI/Spore/App/IPropManager.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="a1ae370a1485cc304e5ee9dcd6faa2edd"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">namespace</a> App::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a1ae370a1485cc304e5ee9dcd6faa2edd" class="m-doc-self">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_app_1_1_i_state_manager.html" class="m-doc">IStateManager</a>)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_i_state_manager_8h.html">&lt;Spore ModAPI/Spore/App/IStateManager.h&gt;</a></div>
             </h3>
             <p><span></span></p>
           </div></section>
