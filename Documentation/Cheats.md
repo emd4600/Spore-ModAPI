@@ -25,7 +25,7 @@ That prints `Integer: 10     Float: 4.5`
 Cheats use the ArgScript scripting language, which is the same used in many Spore files (such as `.prop.prop_t`). You have more info in the 
 [SporeModderFX wiki](https://github.com/emd4600/SporeModder-FX/wiki/ArgScript).
 
-To create a new cheat we have to create a class that parses an ArgScript command. You can use the *"ModAPI Cheat* item template to create one. It
+To create a new cheat we have to create a class that parses an ArgScript command. You can use the *ModAPI Cheat* item template to create one. It
 basically creates a class like this:
 
 ~~~~{.cpp}
