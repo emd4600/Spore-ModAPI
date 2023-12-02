@@ -1,5 +1,6 @@
 #ifndef MODAPI_DLL_EXPORT
 #include <Spore\Editors\Editor.h>
+#include <Spore\Editors\EditorRigblock.h>
 #include <Spore\Editors\EditorModel.h>
 #include <Spore\Editors\TuningSpine.h>
 #include <Spore\Editors\cEditorAnimEvent.h>
@@ -184,5 +185,9 @@ namespace Editors
 
 	auto_METHOD_VOID(cEditor, PostEventToActors,
 		Args(uint32_t eventID, int a, float b, float c), Args(eventID, a, b, c));
+
+
+
+	auto_METHOD_VOID(EditorRigblock, SetShadedDisplay, Args(bool isShaded), Args(isShaded));
 }
 #endif
