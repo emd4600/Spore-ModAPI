@@ -27,6 +27,7 @@
 #include <Spore\Simulator\cCreatureAnimal.h>
 #include <Spore\Simulator\cTribe.h>
 #include <Spore\Simulator\cHerd.h>
+#include <Spore\Simulator\cPlayer.h>
 #include <Spore\App\IMessageListener.h>
 #include <EASTL\hash_map.h>
 #include <EASTL\map.h>
@@ -86,6 +87,11 @@ namespace Simulator
 
 		void UpdateModels();
 
+		cPlayer* GetPlayer();
+
+		/// If there is no cPlayer instance created, it creates one.
+		void EnsurePlayer();
+
 
 #ifndef SDK_TO_GHIDRA
 		/// Gets all the game data objects that use the given game noun ID. To be more specific, first a container is created
@@ -131,7 +137,7 @@ namespace Simulator
 		/* 58h */	cHerdPtr mpAvatarHerd;
 		/* 5Ch */	eastl::vector<cCreatureAnimalPtr> mPosseMembers;
 		/* 70h */	cTribePtr mpPlayerTribe;
-		/* 74h */	ObjectPtr mpPlayer;  // cPlayer
+		/* 74h */	cPlayerPtr mpPlayer;
 		/* 78h */	eastl::intrusive_list<cGameData> mNouns;
 		/* 80h */	eastl::vector<ObjectPtr> field_80;  // objects that haven't been updated since last call to UpdateModels?
 		/* 94h */	int field_94;
@@ -162,7 +168,7 @@ namespace Simulator
 		DeclareAddress(GetPlayerCivilization);  // 0xB25E30 0xB25F90
 		DeclareAddress(CreateHerd);
 		DeclareAddress(CreateNest);  // 0xB20C70 0xB20DD0
-	}
+		DeclareAddress(EnsurePlayer);  // 0xB20DE0 0xB20F40	}
 
 #ifndef SDK_TO_GHIDRA
 	/// Gets all the game data objects that use the given game noun ID.

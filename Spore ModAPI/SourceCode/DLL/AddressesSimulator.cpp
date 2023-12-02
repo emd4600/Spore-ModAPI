@@ -95,6 +95,7 @@
 #include <Spore\Simulator\SubSystem\UIEventLog.h>
 #include <Spore\Simulator\SubSystem\AnimalSpeciesManager.h>
 #include <Spore\Simulator\SubSystem\PlantSpeciesManager.h>
+#include <Spore\Simulator\SubSystem\GamePersistenceManager.h>
 #include <Spore\Simulator\NounClassFactories.h>
 
 namespace Addresses(Simulator)
@@ -499,6 +500,7 @@ namespace Simulator
 		DefineAddress(GetPlayerCivilization, SelectAddress(0xB25E30, 0xB25F90));
 		DefineAddress(CreateHerd, SelectAddress(0xB237C0, 0xB23920));
 		DefineAddress(CreateNest, SelectAddress(0xB20C70, 0xB20DD0));
+		DefineAddress(EnsurePlayer, SelectAddress(0xB20DE0, 0xB20F40));
 	}
 
 	namespace Addresses(cGameViewManager)
@@ -964,7 +966,11 @@ namespace Simulator
 		DefineAddress(GenerateNPCStore, SelectAddress(0x103F560, 0x103E8F0));
 	}
 
-	namespace Addresses(cCultureSet) 
+	namespace Addresses(cGamePersistenceManager) {
+		DefineAddress(Get, SelectAddress(0xB3D2A0, 0xB3D440));
+	}
+
+ 	namespace Addresses(cCultureSet) 
 	{
 		DefineAddress(PickCreation, SelectAddress(0xBF8DF0, 0xBF9840));
 	}
@@ -1001,8 +1007,7 @@ namespace Simulator
 	namespace Addresses(cSpaceDefenseMissile)
 	{
 		DefineAddress(LaunchProjectile, SelectAddress(0xCB7FD0, 0xCB88B0));
-	}
-}
+	}}
 
 #ifdef SDK_TO_GHIDRA
 namespace Addresses(Simulator)

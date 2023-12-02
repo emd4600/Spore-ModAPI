@@ -4,6 +4,7 @@
 #include <Spore\Simulator\cBadgeManager.h>
 #include <Spore\Simulator\cObjectPool.h>
 #include <Spore\Simulator\cSimulatorUniverse.h>
+#include <Spore\Simulator\SubSystem\GamePersistenceManager.h>
 #include <Spore\Simulator\cDefaultToolProjectile.h>
 #include <Spore\Simulator\cArtilleryProjectile.h>
 #include <Spore\Simulator\cCulturalProjectile.h>
@@ -71,6 +72,9 @@ namespace Simulator
 		return *(cSimulatorUniverse**)GetAddress(cSimulatorUniverse, _ptr);
 	}
 
+	//// GamePersistenceManager ////
+
+	auto_STATIC_METHOD_(cGamePersistenceManager, cGamePersistenceManager*, Get);
 
 	//// cDefaultToolProjectile ////
 

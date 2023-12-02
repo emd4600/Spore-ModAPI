@@ -47,10 +47,19 @@ namespace Simulator
 		/* 14h */	virtual void Write(void*);
 		/* 18h */	virtual void Read(void*);
 
+		/// Generates the identity name according to the color, and the names for all its entities.
+		/// @param speciesName
+		void AssignNames(const eastl::string16& speciesName);
+
 	public:
 		/* 04h */	uint32_t mIDColorID;  // 0x53DBCF1
-		/* 08h */	eastl::map<int, int> field_8;
+		/// Names for different entities such as buildings, vehicles, etc. Check `Identity.locale`
+		/* 08h */	eastl::map<int, eastl::string16> mEntityNames;
 		/* 24h */	Math::ColorRGB mCachedColor;
 	};
 	ASSERT_SIZE(cIdentityColorable, 0x30);
+
+	namespace Addresses(cIdentityColorable) {
+		DeclareAddress(AssignNames);  // 0xB6F040 TODO
+	}
 }
