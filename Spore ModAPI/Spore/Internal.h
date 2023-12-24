@@ -43,6 +43,10 @@
 		#define SelectAddress(addressDisk, addressSteamPatched) addressDisk
 	#elif EXECUTABLE_TYPE == 2
 		#define SelectAddress(addressDisk, addressSteamPatched) addressSteamPatched
+	#elif EXECUTABLE_TYPE == 10
+		// forward declaration to prevent compilation errors
+		namespace ModAPI { extern MODAPI uintptr_t ChooseAddress(uintptr_t, uintptr_t); }
+		#define SelectAddress(addressDisk, addressSteamPatched) ModAPI::ChooseAddress(addressDisk, addressSteamPatched)
 	#endif
 #endif
 

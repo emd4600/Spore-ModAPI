@@ -3,6 +3,7 @@
 #include "stdafx.h"
 #include "Application.h"
 #include <Spore\ModAPI.h>
+#include <Psapi.h>
 
 namespace ModAPI
 {
@@ -77,7 +78,48 @@ namespace ModAPI
 
 	GameType GetGameType()
 	{
-#if EXECUTABLE_TYPE == 0
+#if EXECUTABLE_TYPE == 10
+		static bool hasFoundGameType = false;
+		static GameType cachedGameType = GameType::Disk;
+
+		if (hasFoundGameType)
+		{
+			return cachedGameType;
+		}
+
+		wchar_t fileNameBuf[MAX_PATH] = { 0 };
+		GetModuleFileNameW(GetModuleHandleA(NULL), fileNameBuf, MAX_PATH);
+
+		WIN32_FILE_ATTRIBUTE_DATA fad;
+		LARGE_INTEGER size;
+
+		if (!GetFileAttributesExW(fileNameBuf, GetFileExInfoStandard, &fad))
+		{
+			MessageBoxA(NULL, "GetFileAttributesExA() Failed!", "Spore ModAPI", MB_ICONERROR | MB_OK);
+			std::terminate();
+		}
+
+		size.HighPart = fad.nFileSizeHigh;
+		size.LowPart  = fad.nFileSizeLow;
+
+		if (size.QuadPart == 24904192 || size.QuadPart == 24909584)
+		{ // disk version
+			cachedGameType = GameType::Disk;
+			hasFoundGameType = true;
+		}
+		else if (size.QuadPart == 24885248)
+		{ // steam patched version
+			cachedGameType = GameType::March2017;
+			hasFoundGameType = true;
+		}
+		else
+		{ // unknown version
+			MessageBoxA(NULL, "unsupported Spore version", "Spore ModAPI", MB_ICONERROR | MB_OK);
+			std::terminate();
+		}
+
+		return cachedGameType;
+#elif EXECUTABLE_TYPE == 0
 		return GameType::Disk;
 #else
 		return GameType::March2017;
@@ -85,7 +127,13 @@ namespace ModAPI
 	}
 
 	uintptr_t ChooseAddress(uintptr_t disk, uintptr_t march2017) {
-#if EXECUTABLE_TYPE == 0
+#if EXECUTABLE_TYPE == 10
+		if (GetGameType() == GameType::Disk) {
+			return disk;
+		} else {
+			return march2017;
+		}
+#elif EXECUTABLE_TYPE == 0
 		return disk;
 #else
 		return march2017;
