@@ -36,9 +36,6 @@ namespace Simulator
 		using Object::Release;
 		using Object::Cast;
 
-		cHerd* Create(const Vector3& position, cSpeciesProfile* pSpeciesProfile, int herdSize, 
-			bool isOwnedByAvatar, int creaturePersonality, bool createNest);
-
 		void SetEnabled(bool enabled);
 
 	public:

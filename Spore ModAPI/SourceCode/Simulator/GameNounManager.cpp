@@ -40,5 +40,13 @@ namespace Simulator
 	}
 
 	auto_METHOD_(cGameNounManager, cCivilization*, GetPlayerCivilization);
+
+	auto_METHOD(cGameNounManager, cHerd*, CreateHerd,
+		Args(const Vector3& position, cSpeciesProfile* pSpeciesProfile, int herdSize,
+			bool isOwnedByAvatar, int creaturePersonality, bool createNest),
+		Args(position, pSpeciesProfile, herdSize, isOwnedByAvatar, creaturePersonality, createNest));
+
+	auto_METHOD(cGameNounManager, cNest*, CreateNest, 
+		Args(const Vector3& position, cHerd* herd), Args(position, herd));
 }
 #endif

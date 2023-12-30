@@ -69,6 +69,9 @@ namespace Simulator
 		, public cStrategy
 	{
 	public:
+		/// Returns the active Simulator game noun manager.
+		static cGameNounManager* Get();
+
 #ifndef SDK_TO_GHIDRA
 		/// Creates an instance of a simulator object of the given type. The noun ID is one of
 		/// the values in the Simulator::GameNounIDs enum.
@@ -112,8 +115,10 @@ namespace Simulator
 
 		cCivilization* GetPlayerCivilization();
 
-		/// Returns the active Simulator game noun manager.
-		static cGameNounManager* Get();
+		cHerd* CreateHerd(const Vector3& position, cSpeciesProfile* pSpeciesProfile, int herdSize,
+			bool isOwnedByAvatar, int creaturePersonality, bool createNest);
+
+		cNest* CreateNest(const Vector3& position, cHerd* herd);
 			
 	public:
 		/* 20h */	eastl::hash_map<int, int> field_20;
@@ -155,6 +160,8 @@ namespace Simulator
 		DeclareAddress(SetAvatar);
 
 		DeclareAddress(GetPlayerCivilization);  // 0xB25E30 0xB25F90
+		DeclareAddress(CreateHerd);
+		DeclareAddress(CreateNest);  // 0xB20C70 0xB20DD0
 	}
 
 #ifndef SDK_TO_GHIDRA

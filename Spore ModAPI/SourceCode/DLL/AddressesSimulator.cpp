@@ -490,6 +490,8 @@ namespace Simulator
 		DefineAddress(SetAvatar, SelectAddress(0xB1FB90, 0xB1FCA0));
 
 		DefineAddress(GetPlayerCivilization, SelectAddress(0xB25E30, 0xB25F90));
+		DefineAddress(CreateHerd, SelectAddress(0xB237C0, 0xB23920));
+		DefineAddress(CreateNest, SelectAddress(0xB20C70, 0xB20DD0));
 	}
 
 	namespace Addresses(cGameViewManager)

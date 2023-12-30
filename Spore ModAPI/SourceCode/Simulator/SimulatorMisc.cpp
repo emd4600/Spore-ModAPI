@@ -7,11 +7,6 @@
 
 namespace Simulator
 {
-	auto_METHOD(cHerd, cHerd*, Create,
-		Args(const Vector3& position, cSpeciesProfile* pSpeciesProfile, int herdSize,
-			bool isOwnedByAvatar, int creaturePersonality, bool createNest),
-		Args(position, pSpeciesProfile, herdSize, isOwnedByAvatar, creaturePersonality, createNest));
-
 	void cHerd::SetEnabled(bool enabled)
 	{
 		mbEnabled = enabled;
