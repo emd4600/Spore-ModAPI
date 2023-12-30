@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Spore ModAPI/Spore/Simulator/cCity.h file | Spore ModAPI SDK for creating C++ mods for Spore</title>
+  <title>Simulator::cCommunityLayout struct | Spore ModAPI SDK for creating C++ mods for Spore</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,600,600i%7CSource+Code+Pro:400,400i,600" />
   <link rel="stylesheet" href="m-dark.css" />
   <link rel="stylesheet" href="m-documentation.css" />
@@ -45,55 +45,84 @@
     <div class="m-row">
       <div class="m-col-l-10 m-push-l-1">
         <h1>
-          <span class="m-breadcrumb"><a href="dir_3afcc05771c4e3f5acf081f332217ac8.html">Spore ModAPI</a>/</span><span class="m-breadcrumb"><a href="dir_c27950c697e5dfd98eb6c6418519a737.html">Spore</a>/</span><span class="m-breadcrumb"><a href="dir_0c2ed0f1c41a4f73f627d8cb2bd71031.html">Simulator</a>/</span>cCity.h <span class="m-thin">file</span>
+          <span class="m-breadcrumb"><a href="namespace_simulator.html">Simulator</a>::<wbr/></span>cCommunityLayout <span class="m-thin">struct</span>
+          <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="c_community_layout_8h.html">&lt;Spore ModAPI/Spore/Simulator/cCommunityLayout.h&gt;</a></div>
         </h1>
-        <p><span></span></p>
+        <p>Also used by Tribe, related with city layout.</p>
         <nav class="m-block m-default">
           <h3>Contents</h3>
           <ul>
             <li>
               Reference
               <ul>
-                <li><a href="#namespaces">Namespaces</a></li>
-                <li><a href="#nested-classes">Classes</a></li>
-                <li><a href="#define-members">Defines</a></li>
+                <li><a href="#pub-methods">Public functions</a></li>
+                <li><a href="#pub-attribs">Public variables</a></li>
               </ul>
             </li>
           </ul>
         </nav>
-        <section id="namespaces">
-          <h2><a href="#namespaces">Namespaces</a></h2>
+        <section id="pub-methods">
+          <h2><a href="#pub-methods">Public functions</a></h2>
           <dl class="m-doc">
-            <dt>namespace <a href="namespace_simulator.html" class="m-doc">Simulator</a></dt>
+            <dt id="a36cc347c9c7a3bbba748e7c8ca82b00d">
+              <span class="m-doc-wrap-bumper">auto <a href="#a36cc347c9c7a3bbba748e7c8ca82b00d" class="m-doc-self">SetParameters</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">const</a> <a href="struct_math_1_1_vector3.html" class="m-doc">Math::<wbr />Vector3</a>&amp; origin,
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">float</a>,
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">const</a> <a href="struct_math_1_1_vector3.html" class="m-doc">Math::<wbr />Vector3</a>&amp; direction,
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">float</a>) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">void</a></span>
+            </dt>
             <dd><span></span></dd>
+            <dt id="ac6526dc331108103d49ce0912643dc08">
+              <span class="m-doc-wrap-bumper">auto <a href="#ac6526dc331108103d49ce0912643dc08" class="m-doc-self">InitializeSlots</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">const</a> eastl::vector&lt;<a href="struct_math_1_1_vector3.html" class="m-doc">Math::<wbr />Vector3</a>&gt;&amp; positions,
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">float</a>) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">void</a></span>
+            </dt>
+            <dd>Initializes the layout with all empty slots, in the specified positions.</dd>
+            <dt id="a97198bd96bdec76820af20519af94ddd">
+              <span class="m-doc-wrap-bumper">auto <a href="#a97198bd96bdec76820af20519af94ddd" class="m-doc-self">SnapSlotsToPlanet</a>(</span><span class="m-doc-wrap">) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">void</a></span>
+            </dt>
+            <dd>Moves all existing slots to be on the surface of the planet.</dd>
           </dl>
         </section>
-        <section id="nested-classes">
-          <h2><a href="#nested-classes">Classes</a></h2>
+        <section id="pub-attribs">
+          <h2><a href="#pub-attribs">Public variables</a></h2>
           <dl class="m-doc">
-            <dt>
-              struct <a href="struct_simulator_1_1c_city_partner.html" class="m-doc">Simulator::cCityPartner</a>
+            <dt id="a62dc1896ba9269210c937dfdf536477c">
+              <a href="struct_math_1_1_vector3.html" class="m-doc">Vector3</a> <a href="#a62dc1896ba9269210c937dfdf536477c" class="m-doc-self">mDirection</a>
+            </dt>
+            <dd>Local Y axis.</dd>
+            <dt id="ac06ff925840a58268bd2222d72678188">
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">float</a> <a href="#ac06ff925840a58268bd2222d72678188" class="m-doc-self">field_C</a>
             </dt>
             <dd><span></span></dd>
-            <dt>
-              struct <a href="struct_simulator_1_1t_culture_target_info.html" class="m-doc">Simulator::tCultureTargetInfo</a>
+            <dt id="aa1ccccb325a93183f0beb06490fa2696">
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">float</a> <a href="#aa1ccccb325a93183f0beb06490fa2696" class="m-doc-self">field_10</a>
             </dt>
             <dd><span></span></dd>
-            <dt>
-              struct <a href="struct_simulator_1_1t_deferred_event.html" class="m-doc">Simulator::tDeferredEvent</a>
+            <dt id="a54bc1c24e6c78c15bea08303a9ccb571">
+              <a href="struct_math_1_1_vector3.html" class="m-doc">Vector3</a> <a href="#a54bc1c24e6c78c15bea08303a9ccb571" class="m-doc-self">mOrigin</a>
             </dt>
             <dd><span></span></dd>
-            <dt>
-              class <a href="class_simulator_1_1c_city.html" class="m-doc">Simulator::cCity</a>
+            <dt id="a0ea0caed5afe77c6a0295b69fcf4258d">
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">float</a> <a href="#a0ea0caed5afe77c6a0295b69fcf4258d" class="m-doc-self">field_20</a>
             </dt>
             <dd><span></span></dd>
-          </dl>
-        </section>
-        <section id="define-members">
-          <h2><a href="#define-members">Defines</a></h2>
-          <dl class="m-doc">
-            <dt id="ad769fae800809e8a8e0861bca84f77cf">
-              <span class="m-doc-wrap-bumper">#define <a href="#ad769fae800809e8a8e0861bca84f77cf" class="m-doc-self">cCityPtr</a></span>
+            <dt id="ac54efd12a641e038b27c0549a2f580ce">
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> <a href="#ac54efd12a641e038b27c0549a2f580ce" class="m-doc-self">field_24</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="af21e75ed63907b7f0408c23831cfe29d">
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">bool</a> <a href="#af21e75ed63907b7f0408c23831cfe29d" class="m-doc-self">field_28</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="ae7af7b2b579daecf9bfaf7870313ce5f">
+              <a href="struct_math_1_1_quaternion.html" class="m-doc">Quaternion</a> <a href="#ae7af7b2b579daecf9bfaf7870313ce5f" class="m-doc-self">field_2C</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a8f0ca073f295b7bec20d4326ce0c1141">
+              eastl::vector&lt;<a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a>&gt; <a href="#a8f0ca073f295b7bec20d4326ce0c1141" class="m-doc-self">field_3C</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a1d018faac7445d445583f47afbeae236">
+              eastl::vector&lt;<a href="struct_simulator_1_1c_layout_slot.html" class="m-doc">cLayoutSlot</a>&gt; <a href="#a1d018faac7445d445583f47afbeae236" class="m-doc-self">mSlots</a>
             </dt>
             <dd><span></span></dd>
           </dl>

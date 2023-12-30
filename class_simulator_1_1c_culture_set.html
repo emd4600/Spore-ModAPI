@@ -57,7 +57,7 @@
               <ul>
                 <li><a href="#typeless-methods">Constructors, destructors, conversion operators</a></li>
                 <li><a href="#pub-methods">Public functions</a></li>
-                <li><a href="#pro-attribs">Protected variables</a></li>
+                <li><a href="#pub-attribs">Public variables</a></li>
               </ul>
             </li>
           </ul>
@@ -88,10 +88,14 @@
               <span class="m-doc-wrap-bumper">auto <a href="#a2b3f7771818f803cdffcd1da123101c1" class="m-doc-self">GetCreation</a>(</span><span class="m-doc-wrap"><a href="_common_i_ds_8h.html#a4d54ab231bec0e26b55ea9dbb7706a48" class="m-doc">ModelTypes</a> creationType) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">const</a> <a href="struct_resource_key.html" class="m-doc">ResourceKey</a>*</span>
             </dt>
             <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#aa65676f275ce11bc79655bc858113af3" class="m-doc">PickCreation</a>(</span><span class="m-doc-wrap"><a href="_common_i_ds_8h.html#a4d54ab231bec0e26b55ea9dbb7706a48" class="m-doc">ModelTypes</a> creationType) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">const</a> <a href="struct_resource_key.html" class="m-doc">ResourceKey</a>&amp;</span>
+            </dt>
+            <dd>Returns the creation assigned to the specific type, or picks one randomly if there is no creation assigned yet.</dd>
           </dl>
         </section>
-        <section id="pro-attribs">
-          <h2><a href="#pro-attribs">Protected variables</a></h2>
+        <section id="pub-attribs">
+          <h2><a href="#pub-attribs">Public variables</a></h2>
           <dl class="m-doc">
             <dt id="a1fe0c550ceddc91e7603afa7667aa256">
               eastl::map&lt;<a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">uint32_<wbr />t</a>, <a href="struct_resource_key.html" class="m-doc">ResourceKey</a>&gt; <a href="#a1fe0c550ceddc91e7603afa7667aa256" class="m-doc-self">mModelTypeToKeyMap</a>
@@ -123,6 +127,23 @@
               </tbody>
             </table>
 <p>The available types can be found in the ModelTypes enum, such as &quot;BuildingCityHall&quot;. The <a href="struct_resource_key.html" class="m-doc">ResourceKey</a> points directly to the creation model (the .bld, .crt,... files)</p>
+          </div></section>
+          <section class="m-doc-details" id="aa65676f275ce11bc79655bc858113af3"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">const</a> <a href="struct_resource_key.html" class="m-doc">ResourceKey</a>&amp; Simulator::<wbr />cCultureSet::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#aa65676f275ce11bc79655bc858113af3" class="m-doc-self">PickCreation</a>(</span><span class="m-doc-wrap"><a href="_common_i_ds_8h.html#a4d54ab231bec0e26b55ea9dbb7706a48" class="m-doc">ModelTypes</a> creationType)</span></span>
+            </h3>
+            <p>Returns the creation assigned to the specific type, or picks one randomly if there is no creation assigned yet.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">creationType</td>
+                  <td></td>
+                </tr>
+              </tbody>
+            </table>
           </div></section>
         </section>
       </div>

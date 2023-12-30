@@ -57,6 +57,7 @@
               <ul>
                 <li><a href="#base-classes">Base classes</a></li>
                 <li><a href="#pub-static-attribs">Public static variables</a></li>
+                <li><a href="#pub-static-methods">Public static functions</a></li>
                 <li><a href="#pub-methods">Public functions</a></li>
                 <li><a href="#pub-attribs">Public variables</a></li>
               </ul>
@@ -97,6 +98,17 @@
             <dd><span></span></dd>
           </dl>
         </section>
+        <section id="pub-static-methods">
+          <h2><a href="#pub-static-methods">Public static functions</a></h2>
+          <dl class="m-doc">
+            <dt id="a592d39152cb2f4b99e1cc72d4045d8cb">
+              <span class="m-doc-wrap-bumper">static auto <a href="#a592d39152cb2f4b99e1cc72d4045d8cb" class="m-doc-self">ProcessBuildingUpdate</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_city.html" class="m-doc">cCity</a>* city,
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> = 0,
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> = 0) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">void</a></span>
+            </dt>
+            <dd><span></span></dd>
+          </dl>
+        </section>
         <section id="pub-methods">
           <h2><a href="#pub-methods">Public functions</a></h2>
           <dl class="m-doc">
@@ -117,6 +129,15 @@
               <a href="_common_i_ds_8h.html#acfbaeaaa00b3cd8433c26c44365fd3ae" class="m-doc">VehicleLocomotion</a> locomotion,
               <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">struct</a> <a href="struct_resource_key.html" class="m-doc">ResourceKey</a> key,
               <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">bool</a> isSpaceStage) -&gt; <a href="class_simulator_1_1c_vehicle.html" class="m-doc">cVehicle</a>*</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="ae06672bff1a95b17df4b7d68387475e5">
+              <span class="m-doc-wrap-bumper">auto <a href="#ae06672bff1a95b17df4b7d68387475e5" class="m-doc-self">AddBuilding</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_building.html" class="m-doc">cBuilding</a>* building,
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">bool</a> = <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">false</a>) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">void</a></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a4f696911c0fec5260502ccc8ce7f21bf">
+              <span class="m-doc-wrap-bumper">auto <a href="#a4f696911c0fec5260502ccc8ce7f21bf" class="m-doc-self">RemoveBuilding</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_building.html" class="m-doc">cBuilding</a>* building) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">bool</a></span>
             </dt>
             <dd><span></span></dd>
             <dt id="a3a9c8996c8e1adc7cfec11f8f09b51c8">
@@ -260,8 +281,8 @@
               <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> <a href="#a3d8cec2af313d4e924bea96eb9ecd71b" class="m-doc-self">field_300</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="ae164e4d06591af6678fa628d7569a0cb">
-              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> <a href="#ae164e4d06591af6678fa628d7569a0cb" class="m-doc-self">field_304</a>
+            <dt id="aadbf9dd28fcd6b202cc4df5af72d56bc">
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">float</a> <a href="#aadbf9dd28fcd6b202cc4df5af72d56bc" class="m-doc-self">field_304</a>
             </dt>
             <dd><span></span></dd>
             <dt id="aaad5e22b1deaa5e4c3befd597dd26cb9">
@@ -300,44 +321,20 @@
               eastl::vector&lt;<a href="c_building_8h.html#a51c3c76433dc7b2368592360cca361e8" class="m-doc">cBuildingPtr</a>&gt; <a href="#aa136e687cbad969edec8f45605d39689" class="m-doc-self">mBuildings</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="a1ed33b07a2cd75bc8030180d25db030f">
-              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> <a href="#a1ed33b07a2cd75bc8030180d25db030f" class="m-doc-self">mTurrets</a>
+            <dt id="a066c6041d3f35d56d9c04b3f37bd1ef7">
+              eastl::fixed_vector&lt;<a href="c_turret_8h.html#a4c2db63b7244e7210a283708be88e255" class="m-doc">cTurretPtr</a>, 32&gt; <a href="#a066c6041d3f35d56d9c04b3f37bd1ef7" class="m-doc-self">mTurrets</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="a7a9084b84f88d96475cbdc200f450e1a">
-              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> <a href="#a7a9084b84f88d96475cbdc200f450e1a" class="m-doc-self">field_358</a>
+            <dt id="a5ca63d7323b83dcf4d2f9b523dda4269">
+              <a href="struct_simulator_1_1c_community_layout.html" class="m-doc">cCommunityLayout</a> <a href="#a5ca63d7323b83dcf4d2f9b523dda4269" class="m-doc-self">mBuildingsLayout</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="a237633c2b7f3582842b646fb1b9bc497">
-              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> <a href="#a237633c2b7f3582842b646fb1b9bc497" class="m-doc-self">field_35C</a>
+            <dt id="a80f25d5b7c92726dc4ab70634b463b61">
+              <a href="struct_simulator_1_1c_community_layout.html" class="m-doc">cCommunityLayout</a> <a href="#a80f25d5b7c92726dc4ab70634b463b61" class="m-doc-self">mDecorationsLayout</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="a07ab2a50273710f449019a09b893aa20">
-              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> <a href="#a07ab2a50273710f449019a09b893aa20" class="m-doc-self">field_360</a>
-            </dt>
-            <dd><span></span></dd>
-            <dt id="a60e4ddde32bee2e1ae2425d359ac22e3">
-              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> <a href="#a60e4ddde32bee2e1ae2425d359ac22e3" class="m-doc-self">field_364</a>
-            </dt>
-            <dd><span></span></dd>
-            <dt id="a11616c851e770b4dabad9c58a0633a8e">
-              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> <a href="#a11616c851e770b4dabad9c58a0633a8e" class="m-doc-self">field_368</a>
-            </dt>
-            <dd><span></span></dd>
-            <dt id="ac2b156d68bd7cd4cffc744ac71d35b05">
-              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">char</a> <a href="#ac2b156d68bd7cd4cffc744ac71d35b05" class="m-doc-self">_field_36C</a>
-            </dt>
-            <dd><span></span></dd>
-            <dt id="aa94fba98c4ca5b80c8f88af0a6d4168d">
-              <a href="struct_simulator_1_1_unk_city_class.html" class="m-doc">UnkCityClass</a> <a href="#aa94fba98c4ca5b80c8f88af0a6d4168d" class="m-doc-self">field_3EC</a>
-            </dt>
-            <dd><span></span></dd>
-            <dt id="ab682b27a84fb1f697fe438bf489b50fb">
-              <a href="struct_simulator_1_1_unk_city_class.html" class="m-doc">UnkCityClass</a> <a href="#ab682b27a84fb1f697fe438bf489b50fb" class="m-doc-self">field_450</a>
-            </dt>
-            <dd><span></span></dd>
-            <dt id="a1e68dc5990d02ad4a5ebf3d4c6a0796a">
-              <a href="struct_simulator_1_1_unk_city_class.html" class="m-doc">UnkCityClass</a> <a href="#a1e68dc5990d02ad4a5ebf3d4c6a0796a" class="m-doc-self">field_4B4</a>
+            <dt id="a7511b188048ce4ea99742e67013ff801">
+              <a href="struct_simulator_1_1c_community_layout.html" class="m-doc">cCommunityLayout</a> <a href="#a7511b188048ce4ea99742e67013ff801" class="m-doc-self">mTurretsLayout</a>
             </dt>
             <dd><span></span></dd>
             <dt id="a1feb7e26193f9de1fd837b82b20c40e7">
@@ -424,12 +421,12 @@
               <a href="class_simulator_1_1c_gonzago_timer.html" class="m-doc">cGonzagoTimer</a> <a href="#a975ed6de54e611b0e2301257efbc1589" class="m-doc-self">field_5F8</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="af73be02b0fd3bb04f8d347318619636a">
-              eastl::vector&lt;<a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a>&gt; <a href="#af73be02b0fd3bb04f8d347318619636a" class="m-doc-self">mCultureTargetInfo</a>
+            <dt id="a027a00cf5f83f879a6f4490d2854977f">
+              eastl::vector&lt;<a href="struct_simulator_1_1t_culture_target_info.html" class="m-doc">tCultureTargetInfo</a>&gt; <a href="#a027a00cf5f83f879a6f4490d2854977f" class="m-doc-self">mCultureTargetInfo</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="a5281bb8489ecded846c65c14138aaadb">
-              eastl::vector&lt;<a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a>&gt; <a href="#a5281bb8489ecded846c65c14138aaadb" class="m-doc-self">mCulturalTargets</a>
+            <dt id="ac5d9f1e876dc338063eff99d0a25503c">
+              eastl::vector&lt;<a href="c_cultural_target_8h.html#af7434559a51d2bf5c13cc5f68eee82ab" class="m-doc">cCulturalTargetPtr</a>&gt; <a href="#ac5d9f1e876dc338063eff99d0a25503c" class="m-doc-self">mCulturalTargets</a>
             </dt>
             <dd><span></span></dd>
             <dt id="a224f937f2874446d4a69b9afdd40de43">
@@ -604,8 +601,8 @@
               <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> <a href="#afd66e49ca42c6f95dd13fe9bbae3eb80" class="m-doc-self">mNpcBuildingAlignment</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="ab37e979f31b527f00d39cb74fa6c10b0">
-              eastl::vector&lt;<a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a>&gt; <a href="#ab37e979f31b527f00d39cb74fa6c10b0" class="m-doc-self">mDeferredEvents</a>
+            <dt id="a34dde7935beabf581a4a5605af2a802e">
+              eastl::vector&lt;<a href="struct_simulator_1_1t_deferred_event.html" class="m-doc">tDeferredEvent</a>&gt; <a href="#a34dde7935beabf581a4a5605af2a802e" class="m-doc-self">mDeferredEvents</a>
             </dt>
             <dd><span></span></dd>
             <dt id="af6db82c7a44846f764c36456b018eea0">

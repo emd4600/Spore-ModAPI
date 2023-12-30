@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Spore ModAPI/Spore/Simulator/cCity.h file | Spore ModAPI SDK for creating C++ mods for Spore</title>
+  <title>Simulator::cCulturalTarget class | Spore ModAPI SDK for creating C++ mods for Spore</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,600,600i%7CSource+Code+Pro:400,400i,600" />
   <link rel="stylesheet" href="m-dark.css" />
   <link rel="stylesheet" href="m-documentation.css" />
@@ -45,7 +45,8 @@
     <div class="m-row">
       <div class="m-col-l-10 m-push-l-1">
         <h1>
-          <span class="m-breadcrumb"><a href="dir_3afcc05771c4e3f5acf081f332217ac8.html">Spore ModAPI</a>/</span><span class="m-breadcrumb"><a href="dir_c27950c697e5dfd98eb6c6418519a737.html">Spore</a>/</span><span class="m-breadcrumb"><a href="dir_0c2ed0f1c41a4f73f627d8cb2bd71031.html">Simulator</a>/</span>cCity.h <span class="m-thin">file</span>
+          <span class="m-breadcrumb"><a href="namespace_simulator.html">Simulator</a>::<wbr/></span>cCulturalTarget <span class="m-thin">class</span>
+          <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="c_cultural_target_8h.html">&lt;Spore ModAPI/Spore/Simulator/cCulturalTarget.h&gt;</a></div>
         </h1>
         <p><span></span></p>
         <nav class="m-block m-default">
@@ -54,46 +55,80 @@
             <li>
               Reference
               <ul>
-                <li><a href="#namespaces">Namespaces</a></li>
-                <li><a href="#nested-classes">Classes</a></li>
-                <li><a href="#define-members">Defines</a></li>
+                <li><a href="#base-classes">Base classes</a></li>
+                <li><a href="#pub-static-attribs">Public static variables</a></li>
+                <li><a href="#pub-attribs">Public variables</a></li>
               </ul>
             </li>
           </ul>
         </nav>
-        <section id="namespaces">
-          <h2><a href="#namespaces">Namespaces</a></h2>
+        <section id="base-classes">
+          <h2><a href="#base-classes">Base classes</a></h2>
           <dl class="m-doc">
-            <dt>namespace <a href="namespace_simulator.html" class="m-doc">Simulator</a></dt>
+            <dt>
+              class <a href="class_simulator_1_1c_game_data.html" class="m-doc">cGameData</a>
+            </dt>
+            <dd>Base class for most <a href="namespace_simulator.html" class="m-doc">Simulator</a> objects.</dd>
+            <dt>
+              class <a href="class_simulator_1_1c_combatant.html" class="m-doc">cCombatant</a>
+            </dt>
+            <dd>Any object that has hit points and can combat other units.</dd>
+            <dt>
+              class <a href="class_simulator_1_1c_spatial_object.html" class="m-doc">cSpatialObject</a>
+            </dt>
+            <dd>A 3D model in the <a href="namespace_simulator.html" class="m-doc">Simulator</a>.</dd>
+          </dl>
+        </section>
+        <section id="pub-static-attribs">
+          <h2><a href="#pub-static-attribs">Public static variables</a></h2>
+          <dl class="m-doc">
+            <dt id="a5422b730cd4563ba155a66165f432e14">
+              static <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">const</a> <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">uint32_<wbr />t</a> <a href="#a5422b730cd4563ba155a66165f432e14" class="m-doc-self">TYPE</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a1f427168254c070d65de10fa2e8f24e0">
+              static <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">const</a> <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">uint32_<wbr />t</a> <a href="#a1f427168254c070d65de10fa2e8f24e0" class="m-doc-self">NOUN_ID</a>
+            </dt>
             <dd><span></span></dd>
           </dl>
         </section>
-        <section id="nested-classes">
-          <h2><a href="#nested-classes">Classes</a></h2>
+        <section id="pub-attribs">
+          <h2><a href="#pub-attribs">Public variables</a></h2>
           <dl class="m-doc">
-            <dt>
-              struct <a href="struct_simulator_1_1c_city_partner.html" class="m-doc">Simulator::cCityPartner</a>
+            <dt id="aa0daa6b9da93d1b77f8e180ad68644b3">
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int8_<wbr />t</a> <a href="#aa0daa6b9da93d1b77f8e180ad68644b3" class="m-doc-self">mGateIndex</a>
             </dt>
             <dd><span></span></dd>
-            <dt>
-              struct <a href="struct_simulator_1_1t_culture_target_info.html" class="m-doc">Simulator::tCultureTargetInfo</a>
+            <dt id="a57ffc6e8a63e735fa5fd270a59dab20c">
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> <a href="#a57ffc6e8a63e735fa5fd270a59dab20c" class="m-doc-self">mAttackState</a>
             </dt>
             <dd><span></span></dd>
-            <dt>
-              struct <a href="struct_simulator_1_1t_deferred_event.html" class="m-doc">Simulator::tDeferredEvent</a>
+            <dt id="aec6311cec94d839357c8bb858a1c0990">
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">uint32_<wbr />t</a> <a href="#aec6311cec94d839357c8bb858a1c0990" class="m-doc-self">mAttackerPoliticalID</a>
             </dt>
             <dd><span></span></dd>
-            <dt>
-              class <a href="class_simulator_1_1c_city.html" class="m-doc">Simulator::cCity</a>
+            <dt id="a57f9996c27e2d3974c5c2aff2c8e2388">
+              eastl::vector&lt;<a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a>&gt; <a href="#a57f9996c27e2d3974c5c2aff2c8e2388" class="m-doc-self">field_1E0</a>
             </dt>
             <dd><span></span></dd>
-          </dl>
-        </section>
-        <section id="define-members">
-          <h2><a href="#define-members">Defines</a></h2>
-          <dl class="m-doc">
-            <dt id="ad769fae800809e8a8e0861bca84f77cf">
-              <span class="m-doc-wrap-bumper">#define <a href="#ad769fae800809e8a8e0861bca84f77cf" class="m-doc-self">cCityPtr</a></span>
+            <dt id="a917052dd5b26f4ec1fd5a619a6310b67">
+              eastl::vector&lt;<a href="c_vehicle_8h.html#a1ecb25ec3d651a33c81890940fb189c9" class="m-doc">cVehiclePtr</a>&gt; <a href="#a917052dd5b26f4ec1fd5a619a6310b67" class="m-doc-self">mAttackers</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a24b7c87d7a6a085699f38b9ee8bef027">
+              <a href="c_hit_sphere_8h.html#a464f6f210901432dfd9e08da7c69e5e2" class="m-doc">cHitSpherePtr</a> <a href="#a24b7c87d7a6a085699f38b9ee8bef027" class="m-doc-self">mpHitSphere</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a11513f6bb5578daabb17c2c5abdc026d">
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">float</a> <a href="#a11513f6bb5578daabb17c2c5abdc026d" class="m-doc-self">field_20C</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a4c847a77568cbe6a34e292e97afb4259">
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">float</a> <a href="#a4c847a77568cbe6a34e292e97afb4259" class="m-doc-self">field_210</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a864b48ad88603573d6ad3716b754fe0f">
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> <a href="#a864b48ad88603573d6ad3716b754fe0f" class="m-doc-self">field_214</a>
             </dt>
             <dd><span></span></dd>
           </dl>
