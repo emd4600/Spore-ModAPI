@@ -28,6 +28,8 @@ namespace Simulator
 {
 	class cCity;
 
+	constexpr int MAX_LAYOUT_SLOTS = 14;
+
 	class cCityWalls
 		/* 00h */	: public cGameData
 		/* 34h */	, public cSpatialObject
@@ -56,24 +58,39 @@ namespace Simulator
 		/* 150h */	int field_150;
 		/* 154h */	int field_154;
 		/* 158h */	int field_158;
-		/* 15Ch */	eastl::vector<int> field_15C;
-		/* 170h */	eastl::vector<int> field_170;
-		/* 184h */	eastl::vector<int> field_184;
-		/* 198h */	eastl::vector<int> field_198;
-		/* 1ACh */	eastl::vector<int> field_1AC;
-		/* 1C0h */	eastl::vector<int> field_1C0;
-		/* 1D4h */	eastl::vector<int> field_1D4;
-		/* 1E8h */	eastl::vector<int> field_1E8;
-		/* 1FCh */	eastl::vector<int> field_1FC;
-		/* 210h */	eastl::vector<int> field_210;
-		/* 224h */	Vector3 field_224[4];
+		/// From property `Turrets` 
+		/* 15Ch */	eastl::vector<Math::Vector3> mTurrets;
+		/// Positions from mTurrets transformed with the city position/rotation
+		/* 170h */	eastl::vector<Math::Vector3> mTurretsTransformed;
+		/// First is property `Main_Gate`, index 1 and 2 are property `Side_Gates`, index 3 is property `Sea_Gate`,
+		// index 4 is property `Harvest_Gate`, index 5 is `Freight_Gate`
+		/* 184h */	eastl::vector<Math::Vector3> mGates;
+		/// Positions from mGates transformed with the city position/rotation
+		/* 198h */	eastl::vector<Math::Vector3> mGatesTransformed;
+		/// First slot is `City_Hall`, the rest is `Buildings`
+		/* 1ACh */	eastl::vector<Math::Vector3> mBuildings;
+		/// Positions from mBuildings transformed with the city position/rotation
+		/* 1C0h */	eastl::vector<Math::Vector3> mBuildingsTransformed;
+		/// From property `Decorations`
+		/* 1D4h */	eastl::vector<Math::Vector3> mDecorations;
+		/// Positions from mDecorations transformed with the city position/rotation
+		/* 1E8h */	eastl::vector<Math::Vector3> mDecorationsTransformed;
+		/// From property `Plazas`
+		/* 1FCh */	eastl::vector<Math::Vector3> mPlazas;
+		/// Positions from mPlazas transformed with the city position/rotation
+		/* 210h */	eastl::vector<Math::Vector3> mPlazasTransformed;
+		/* 224h */	Vector3 mFirstBoatPos;
+		/* 230h */	Vector3 mFirstBoatPosTransformed;
+		/* 23Ch */	Vector3 mModelDocksOffset;
+		/* 248h */	Vector3 mModelDocksOffsetTransformed;
 		/* 254h */	int mWallSize;
-		/* 258h */	float field_258;  // 29
-		/* 25Ch */	float field_25C;  // 37  sphere radius?
-		/* 260h */	float field_260;
+		/* 258h */	float mInnerRadius;  // 29
+		/* 25Ch */	float mOuterRadius;  // 37  sphere radius?
+		/* 260h */	float mCityHallDiasHeight;
 		/* 264h */	eastl::intrusive_ptr<cCity> mpCity;
 		/* 268h */	Vector3 field_268;  // 1, 1, 1
-		/* 274h */	char field_274[0xC4];  // 14 booleans
+		/// A matrix teling which building slots are connected to which slots
+		/* 274h */	bool mBuildingLinks[MAX_LAYOUT_SLOTS][MAX_LAYOUT_SLOTS];
 		/* 338h */	Vector3 mCenterAxis;  // not initialized
 		/* 344h */	uint32_t mStyle;  // 0x9181A19
 		/* 348h */	int mLevel;

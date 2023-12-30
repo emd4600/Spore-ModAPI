@@ -38,5 +38,7 @@ namespace Simulator
 	cTribe* cGameNounManager::GetPlayerTribe() {
 		return mpPlayerTribe.get();
 	}
+
+	auto_METHOD_(cGameNounManager, cCivilization*, GetPlayerCivilization);
 }
 #endif

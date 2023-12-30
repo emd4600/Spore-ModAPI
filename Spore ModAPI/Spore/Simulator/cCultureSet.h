@@ -42,9 +42,19 @@ namespace Simulator
 
 		const ResourceKey* GetCreation(ModelTypes creationType);
 
+		/// Returns the creation assigned to the specific type, or picks one randomly if there is no creation assigned yet.
+		/// @param creationType
+		const ResourceKey& PickCreation(ModelTypes creationType);
+
 		//TODO other methods such as sub_BF89F0, sub_BF8DF0
 
-	protected:
+	public:
 		eastl::map<uint32_t, ResourceKey> mModelTypeToKeyMap;
 	};
+	ASSERT_SIZE(cCultureSet, 0x1C);
+
+	namespace Addresses(cCultureSet) 
+	{
+		DeclareAddress(PickCreation);  // 0xBF8DF0 0xBF9840
+	}
 }
