@@ -110,6 +110,8 @@ namespace Simulator
 
 		cTribe* GetPlayerTribe();
 
+		cCivilization* GetPlayerCivilization();
+
 		/// Returns the active Simulator game noun manager.
 		static cGameNounManager* Get();
 			
@@ -151,6 +153,8 @@ namespace Simulator
 
 		DeclareAddress(UpdateModels);
 		DeclareAddress(SetAvatar);
+
+		DeclareAddress(GetPlayerCivilization);  // 0xB25E30 0xB25F90
 	}
 
 #ifndef SDK_TO_GHIDRA

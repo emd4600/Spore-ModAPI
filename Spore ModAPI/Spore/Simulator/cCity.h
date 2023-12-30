@@ -26,7 +26,10 @@
 #include <Spore\Simulator\cOrnament.h>
 #include <Spore\Simulator\cCityTerritory.h>
 #include <Spore\Simulator\cCityWalls.h>
+#include <Spore\Simulator\cCommunityLayout.h>
 #include <Spore\Simulator\cInterCityRoad.h>
+#include <Spore\Simulator\cCulturalTarget.h>
+#include <Spore\Simulator\cTurret.h>
 #include <Spore\App\IMessageListener.h>
 #include <Spore\CommonIDs.h>
 
@@ -34,22 +37,6 @@
 
 namespace Simulator
 {
-	// Also used by Tribe
-	struct UnkCityClass
-	{
-		/* 00h */	Vector3 field_0;
-		/* 0Ch */	float field_C;  // -1.0
-		/* 10h */	float field_10;  // -1.0
-		/* 14h */	Vector3 field_14;
-		/* 20h */	float field_20;
-		/* 24h */	int field_24;  // not initialized
-		/* 28h */	bool field_28;
-		/* 2Ch */	Quaternion field_2C;
-		/* 3Ch */	eastl::vector<int> field_3C;
-		/* 50h */	eastl::vector<int> field_50;
-	};
-	ASSERT_SIZE(UnkCityClass, 0x64);
-
 	class cCity;
 
 	struct cCityPartner
@@ -59,6 +46,40 @@ namespace Simulator
 		/* 08h */	int field_08;
 	};
 	ASSERT_SIZE(cCityPartner, 0xC);
+
+	struct tCultureTargetInfo
+	{
+		/// Array index
+		static constexpr int kListening = 0;
+		/// Array index
+		static constexpr int kConverted = 1;
+
+		/* 00h */	int mBucketMaxPopulation[2];
+		/* 08h */	int mBucketPopulation[2];
+		/* 10h */	int mBucketEmigration[2];
+		/* 18h */	int mBucketImmigration[2];
+		/* 20h */	bool mClearEverything;
+		/* 24h */	float mAngryCrowdFraction;
+		/* 28h */	float mDancingCrowdFraction;
+		/* 2Ch */	float mIndifferentCrowdFraction;
+		/* 30h */	cGonzagoTimer mConvertCheckTimer;
+		/* 50h */	cGonzagoTimer mConvertedTimer;
+		/* 70h */	cSpatialObjectPtr mAttackTarget;
+		/* 74h */	bool mAttackTargetChanged;
+		/* 78h */	cSpatialObjectPtr mCultureObject;
+	};
+	ASSERT_SIZE(tCultureTargetInfo, 0x80);
+
+	struct tDeferredEvent
+	{
+		/* 00h */	uint32_t mEventGuid;
+		/* 08h */	uint64_t mTriggerTime;
+		/* 10h */	float mUserFloat1;
+		/* 14h */	float mUserFloat2;
+		/* 18h */	uint32_t mUserUint1;
+		/* 1Ch */	uint32_t mUserUint2;
+	};
+	ASSERT_SIZE(tDeferredEvent, 0x20);
 
 	class cVehicle;
 	class cCivilization;
@@ -84,6 +105,11 @@ namespace Simulator
 		Vector3 GetWallsPosition();
 
 		cVehicle* SpawnVehicle(VehiclePurpose speciality, VehicleLocomotion locomotion, struct ResourceKey key, bool isSpaceStage);
+
+		void AddBuilding(cBuilding* building, bool = false);
+		bool RemoveBuilding(cBuilding* building);
+
+		static void ProcessBuildingUpdate(cCity* city, int = 0, int = 0);
 
 	public:
 		/* 210h */	eastl::string16 field_210;
@@ -118,7 +144,7 @@ namespace Simulator
 		/* 2F8h */	int field_2F8;
 		/* 2FCh */	bool field_2FC;
 		/* 300h */	int field_300;  // not initialized
-		/* 304h */	int field_304;  // not initialized
+		/* 304h */	float field_304;  // not initialized
 		/* 308h */	eastl::vector<cOrnamentPtr> mCivicObjects;
 		/* 31Ch */	int mHousingAmount;  // not initialized
 		/* 320h */	cBuildingPtr mpCityHall;
@@ -128,16 +154,10 @@ namespace Simulator
 		/* 338h */	float mFrameRate;  // 10.0
 		/* 33Ch */	bool mbIsPlayerCity;  // not initialized
 		/* 340h */	eastl::vector<cBuildingPtr> mBuildings;
-		/* 354h */	int mTurrets;  // points to _field_36C  // eastl::vector<cTurret>
-		/* 358h */	int field_358;  // points to _field_36C
-		/* 35Ch */	int field_35C;  // points to end of _field_36C
-		/* 360h */	int field_360;  // not initialized
-		/* 364h */	int field_364;  // points to _field_36C
-		/* 368h */	int field_368;  // not initialized
-		/* 36Ch */	char _field_36C[0x80];
-		/* 3ECh */	UnkCityClass field_3EC;
-		/* 450h */	UnkCityClass field_450;
-		/* 4B4h */	UnkCityClass field_4B4;
+		/* 354h */	eastl::fixed_vector<cTurretPtr, 32> mTurrets;
+		/* 3ECh */	cCommunityLayout mBuildingsLayout;
+		/* 450h */	cCommunityLayout mDecorationsLayout;
+		/* 4B4h */	cCommunityLayout mTurretsLayout;
 		/* 518h */	bool mbSmallCity;  // true
 		/* 519h */	bool field_519;
 		/* 51Ch */	int field_51C;  // not initialized
@@ -159,8 +179,8 @@ namespace Simulator
 		/* 5BCh */	eastl::map<int, int> mAllegianceConversionDeltas;
 		/* 5D8h */	eastl::map<int, int> mAllegianceUnconversionDeltas;
 		/* 5F8h */	cGonzagoTimer field_5F8;
-		/* 618h */	eastl::vector<int> mCultureTargetInfo;  // tCultureTargetInfo
-		/* 62Ch */	eastl::vector<int> mCulturalTargets;  // cCulturalTarget
+		/* 618h */	eastl::vector<tCultureTargetInfo> mCultureTargetInfo;  // tCultureTargetInfo
+		/* 62Ch */	eastl::vector<cCulturalTargetPtr> mCulturalTargets;  // cCulturalTarget
 		/* 640h */	int field_640;  // not initialized
 		/* 644h */	int field_644;  // not initialized
 		/* 648h */	int field_648;  // not initialized
@@ -204,7 +224,7 @@ namespace Simulator
 		/* 7D8h */	char _padding_7D8[0x18];
 		/* 7F0h */	int field_7F0;
 		/* 7F4h */	int mNpcBuildingAlignment;  // not initialized
-		/* 7F8h */	eastl::vector<int> mDeferredEvents;  // tDeferredEvent
+		/* 7F8h */	eastl::vector<tDeferredEvent> mDeferredEvents;
 		/* 80Ch */	bool field_80C;
 		/* 810h */	int field_810;
 	};
@@ -214,5 +234,8 @@ namespace Simulator
 	{
 		DeclareAddress(IsAboveCity);
 		DeclareAddress(SpawnVehicle);
+		DeclareAddress(ProcessBuildingUpdate);  // 0xBE1C10 0xBE2590
+		DeclareAddress(AddBuilding);  // 0xBE16C0 0xBE2040
+		DeclareAddress(RemoveBuilding);  // 0xBE2B20 0xBE34A0
 	}
 }

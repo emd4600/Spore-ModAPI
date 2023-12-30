@@ -23,6 +23,7 @@
 #include <Spore\Simulator\Cell\cCellUI.h>
 #include <Spore\Simulator\Cell\CellFunctions.h>
 #include <Spore\Simulator\cCreatureGameData.h>
+#include <Spore\Simulator\cCommunityLayout.h>
 #include <Spore\Simulator\cEmpire.h>
 #include <Spore\Simulator\cEnergyRepairToolStrategy.h>
 #include <Spore\Simulator\cGameDataUFO.h>
@@ -56,6 +57,7 @@
 #include <Spore\Simulator\cScenarioPowerup.h>
 #include <Spore\Simulator\cScenarioSimulator.h>
 #include <Spore\Simulator\cScenarioTerraformMode.h>
+#include <Spore\Simulator\cCultureSet.h>
 #include <Spore\Simulator\SubSystem\SpaceGfx.h>
 #include <Spore\Simulator\cHerd.h>
 #include <Spore\Simulator\cToolStrategy.h>
@@ -148,6 +150,9 @@ namespace Simulator
 	{
 		DefineAddress(IsAboveCity, SelectAddress(0xBD90C0, 0xBD9D50));
 		DefineAddress(SpawnVehicle, SelectAddress(0xBDD410, 0xBDDEF0));
+		DefineAddress(ProcessBuildingUpdate, SelectAddress(0xBE1C10, 0xBE2590));
+		DefineAddress(AddBuilding, SelectAddress(0xBE16C0, 0xBE2040));
+		DefineAddress(RemoveBuilding, SelectAddress(0xBE2B20, 0xBE34A0));
 	}
 
 	namespace Addresses(cCreatureAbility)
@@ -483,6 +488,8 @@ namespace Simulator
 
 		DefineAddress(UpdateModels, SelectAddress(0xB227E0, 0xB228F0));
 		DefineAddress(SetAvatar, SelectAddress(0xB1FB90, 0xB1FCA0));
+
+		DefineAddress(GetPlayerCivilization, SelectAddress(0xB25E30, 0xB25F90));
 	}
 
 	namespace Addresses(cGameViewManager)
@@ -946,6 +953,24 @@ namespace Simulator
 		DefineAddress(GetRareHasBeenFound, SelectAddress(0x103BC30, 0x103AC50));
 		DefineAddress(SetRareAsFound, SelectAddress(0x1040820, 0x103FBB0));
 		DefineAddress(GenerateNPCStore, SelectAddress(0x103F560, 0x103E8F0));
+	}
+
+	namespace Addresses(cCultureSet) 
+	{
+		DefineAddress(PickCreation, SelectAddress(0xBF8DF0, 0xBF9840));
+	}
+
+	namespace Addresses(cCommunityLayout)
+	{
+		DefineAddress(InitializeSlots, SelectAddress(0xAFE620, 0xAFEB80));
+		DefineAddress(SnapSlotsToPlanet, SelectAddress(0xAFA690, 0xAFAE40));
+		DefineAddress(SetParameters, SelectAddress(0xAF95D0, 0xAF9C70));
+	}
+
+	namespace Addresses(cLayoutSlot)
+	{
+		DefineAddress(SetObject, SelectAddress(0xAF9890, 0xAF9FB0));
+		DefineAddress(RemoveObject, SelectAddress(0xAF9900, 0xAFA020));
 	}
 }
 

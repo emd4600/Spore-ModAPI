@@ -21,6 +21,7 @@
 #include <Spore\Simulator\cGameData.h>
 #include <Spore\Simulator\cGonzagoTimer.h>
 #include <Spore\Simulator\cCreatureCitizen.h>
+#include <Spore\Simulator\cCityWalls.h>
 #include <Spore\Editors\INameableEntity.h>
 #include <Spore\MathUtils.h>
 #include <EASTL\vector.h>
@@ -74,7 +75,7 @@ namespace Simulator
 		/* 60h */	virtual float func60h();
 		/* 64h */	virtual Vector3& func64h();
 		/* 68h */	virtual void func68h();
-		/* 6Ch */	virtual int func6Ch();  // returns 0
+		/* 6Ch */	virtual cCityWalls* GetCityWalls();  // returns 0
 		/* 70h */	virtual eastl::vector<ObjectPtr>& GetPopulation();
 		/* 74h */	virtual int GetPopulationCount();  // returns the count of vector returned by func70h
 		/* 78h */	virtual void func78h(); 

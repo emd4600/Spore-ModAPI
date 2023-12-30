@@ -44,5 +44,7 @@ namespace Simulator
 			return nullptr;
 		}
 	}
+
+	auto_METHOD(cCultureSet, const ResourceKey&, PickCreation, Args(ModelTypes creationType), Args(creationType));
 }
 #endif

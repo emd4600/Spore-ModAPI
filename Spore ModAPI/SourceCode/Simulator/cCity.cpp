@@ -30,5 +30,23 @@ namespace Simulator
 	auto_METHOD(cCity, cVehicle*, SpawnVehicle, 
 		Args(VehiclePurpose speciality, VehicleLocomotion locomotion, struct ResourceKey key, bool isSpaceStage),
 		Args(speciality, locomotion, key, isSpaceStage));
+
+
+	auto_METHOD_VOID(cCity, AddBuilding, Args(cBuilding* a0, bool a1), Args(a0, a1));
+	auto_METHOD(cCity, bool, RemoveBuilding, Args(cBuilding* a0), Args(a0));
+
+	auto_STATIC_METHOD_VOID(cCity, ProcessBuildingUpdate, Args(cCity* a0, int a1, int a2), Args(a0, a1, a2));
+
+
+
+	auto_METHOD_VOID(cCommunityLayout, SetParameters, Args(const Math::Vector3& a0, float a1, const Math::Vector3& a2, float a3), Args(a0, a1, a2, a3));
+
+	auto_METHOD_VOID(cCommunityLayout, InitializeSlots, Args(const eastl::vector<Math::Vector3>& a0, float a1), Args(a0, a1));
+
+	auto_METHOD_VOID_(cCommunityLayout, SnapSlotsToPlanet);
+
+
+	auto_METHOD_VOID(cLayoutSlot, SetObject, Args(cGameData* obj), Args(obj));
+	auto_METHOD_VOID(cLayoutSlot, RemoveObject, Args(cGameData* obj), Args(obj));
 }
 #endif
