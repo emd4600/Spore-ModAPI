@@ -67,6 +67,15 @@
 #include <Spore\Simulator\cSolarSystem.h>
 #include <Spore\Simulator\cScenarioEditHistory.h>
 #include <Spore\Simulator\SpaceConstants.h>
+#include <Spore\Simulator\cDefaultToolProjectile.h>
+#include <Spore\Simulator\cDeepSpaceProjectile.h>
+#include <Spore\Simulator\cSpaceDefenseMissile.h>
+#include <Spore\Simulator\cArtilleryProjectile.h>
+#include <Spore\Simulator\cFlakProjectile.h>
+#include <Spore\Simulator\cCulturalProjectile.h>
+#include <Spore\Simulator\cICBM.h>
+#include <Spore\Simulator\cDefaultAoEArea.h>
+#include <Spore\Simulator\cSpear.h>
 #include <Spore\App\ScenarioMode.h>
 
 #include <Spore\Simulator\SimulatorMessages.h>

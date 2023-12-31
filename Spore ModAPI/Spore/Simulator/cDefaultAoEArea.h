@@ -22,6 +22,7 @@
 #include <Spore\Simulator\cSpatialObject.h>
 #include <Spore\Simulator\cProjectile.h>
 #include <Spore\Simulator\cGonzagoTimer.h>
+#include <EASTL\intrusive_ptr.h>
 
 #define cDefaultAoEAreaPtr eastl::intrusive_ptr<Simulator::cDefaultAoEArea>
 

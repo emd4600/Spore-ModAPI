@@ -3,7 +3,7 @@
 #include <Spore\Simulator\cGameData.h>
 #include <Spore\Simulator\cLocomotiveObject.h>
 #include <Spore\Simulator\cCommodityNode.h>
-#include <Spore\Simulator\IProjectile.h>
+#include <Spore\Simulator\cProjectile.h>
 #include <Spore\Simulator\cGonzagoTimer.h>
 
 #define cResourceProjectilePtr eastl::intrusive_ptr<Simulator::cResourceProjectile>
@@ -14,7 +14,7 @@ namespace Simulator
 	class cResourceProjectile
 		/* 00h */	: public cGameData
 		/* 34h */	, public cLocomotiveObject
-		/* 504h */	, public IProjectile
+		/* 504h */	, public cProjectile
 	{
 	public:
 		static const uint32_t TYPE = 0x5776A28;
