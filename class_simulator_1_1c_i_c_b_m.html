@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Simulator::cCombatSimulator class | Spore ModAPI SDK for creating C++ mods for Spore</title>
+  <title>Simulator::cICBM class | Spore ModAPI SDK for creating C++ mods for Spore</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,600,600i%7CSource+Code+Pro:400,400i,600" />
   <link rel="stylesheet" href="m-dark.css" />
   <link rel="stylesheet" href="m-documentation.css" />
@@ -45,8 +45,8 @@
     <div class="m-row">
       <div class="m-col-l-10 m-push-l-1">
         <h1>
-          <span class="m-breadcrumb"><a href="namespace_simulator.html">Simulator</a>::<wbr/></span>cCombatSimulator <span class="m-thin">class</span>
-          <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="c_combat_simulator_8h.html">&lt;Spore ModAPI/Spore/Simulator/cCombatSimulator.h&gt;</a></div>
+          <span class="m-breadcrumb"><a href="namespace_simulator.html">Simulator</a>::<wbr/></span>cICBM <span class="m-thin">class</span>
+          <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="c_i_c_b_m_8h.html">&lt;Spore ModAPI/Spore/Simulator/cICBM.h&gt;</a></div>
         </h1>
         <p><span></span></p>
         <nav class="m-block m-default">
@@ -67,20 +67,28 @@
           <h2><a href="#base-classes">Base classes</a></h2>
           <dl class="m-doc">
             <dt>
-              class <a href="class_simulator_1_1c_gonzago_simulator.html" class="m-doc">cGonzagoSimulator</a>
+              class <a href="class_simulator_1_1c_game_data.html" class="m-doc">cGameData</a>
+            </dt>
+            <dd>Base class for most <a href="namespace_simulator.html" class="m-doc">Simulator</a> objects.</dd>
+            <dt>
+              class <a href="class_simulator_1_1c_locomotive_object.html" class="m-doc">cLocomotiveObject</a>
             </dt>
             <dd><span></span></dd>
             <dt>
-              class <a href="class_app_1_1_i_message_listener.html" class="m-doc">App::IMessageListener</a>
+              class <a href="class_simulator_1_1c_projectile.html" class="m-doc">cProjectile</a>
             </dt>
-            <dd>An interface that can receive messages sent through the app.</dd>
+            <dd><span></span></dd>
           </dl>
         </section>
         <section id="pub-static-attribs">
           <h2><a href="#pub-static-attribs">Public static variables</a></h2>
           <dl class="m-doc">
-            <dt id="a5b98d79e3716355e655a7337c9183e29">
-              static <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">const</a> <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">uint32_<wbr />t</a> <a href="#a5b98d79e3716355e655a7337c9183e29" class="m-doc-self">TYPE</a>
+            <dt id="a3459bfaffd4fe3fcb2e08ff06db69528">
+              static <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">const</a> <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">uint32_<wbr />t</a> <a href="#a3459bfaffd4fe3fcb2e08ff06db69528" class="m-doc-self">TYPE</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a0bc29eb2e515ff10bd3ac4950b441fce">
+              static <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">const</a> <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">uint32_<wbr />t</a> <a href="#a0bc29eb2e515ff10bd3ac4950b441fce" class="m-doc-self">NOUN_ID</a>
             </dt>
             <dd><span></span></dd>
           </dl>
@@ -105,22 +113,18 @@
         <section id="pub-attribs">
           <h2><a href="#pub-attribs">Public variables</a></h2>
           <dl class="m-doc">
-            <dt id="a7589a220832b2d948a2c9ab4d9ad3373">
-              eastl::vector&lt;<a href="c_projectile_8h.html#ac31210bdfb067d76c7a5732c79c24676" class="m-doc">cProjectilePtr</a>&gt; <a href="#a7589a220832b2d948a2c9ab4d9ad3373" class="m-doc-self">mProjectiles</a>
+            <dt id="ad2b3fd46bd0a6ffb871d0478f610baa7">
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> <a href="#ad2b3fd46bd0a6ffb871d0478f610baa7" class="m-doc-self">field_518</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="a70cefe8f3858e898f5804e108987e7c2">
-              eastl::vector&lt;<a href="c_projectile_8h.html#ac31210bdfb067d76c7a5732c79c24676" class="m-doc">cProjectilePtr</a>&gt; <a href="#a70cefe8f3858e898f5804e108987e7c2" class="m-doc-self">field_28</a>
+            <dt id="a5fef878c1aad6d94abf474836e1a0c28">
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> <a href="#a5fef878c1aad6d94abf474836e1a0c28" class="m-doc-self">field_51C</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="a3254cf3ca0ae0a025096a58518595dd8">
-              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">bool</a> <a href="#a3254cf3ca0ae0a025096a58518595dd8" class="m-doc-self">mIsUpdatingProjectiles</a>
+            <dt id="a7fdc58518eeb606c17cd17e41cc3cbcd">
+              <a href="c_combatant_8h.html#a26e59ec08f99a9b91658f45ce5e24b80" class="m-doc">cCombatantPtr</a> <a href="#a7fdc58518eeb606c17cd17e41cc3cbcd" class="m-doc-self">mpTarget</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="a25c7ce4693d72efddd2f52e5c4b3cc10">
-              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">bool</a> <a href="#a25c7ce4693d72efddd2f52e5c4b3cc10" class="m-doc-self">field_3D</a>
-            </dt>
-            <dd>If true, it collects all <a href="class_simulator_1_1c_projectile.html" class="m-doc">cProjectile</a> instances and adds listener for <a href="namespace_simulator.html#a4b1f459203b8dbf8583312aa067c8c54a82e0d093872451cd1001fe9f9e519a38" class="m-doc">SimulatorMessages::<wbr />kMsgGameNounStatusChanged</a>.</dd>
           </dl>
         </section>
       </div>

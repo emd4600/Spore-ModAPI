@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Simulator::IProjectile class | Spore ModAPI SDK for creating C++ mods for Spore</title>
+  <title>Simulator::cArtilleryProjectile class | Spore ModAPI SDK for creating C++ mods for Spore</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,600,600i%7CSource+Code+Pro:400,400i,600" />
   <link rel="stylesheet" href="m-dark.css" />
   <link rel="stylesheet" href="m-documentation.css" />
@@ -45,8 +45,8 @@
     <div class="m-row">
       <div class="m-col-l-10 m-push-l-1">
         <h1>
-          <span class="m-breadcrumb"><a href="namespace_simulator.html">Simulator</a>::<wbr/></span>IProjectile <span class="m-thin">class</span>
-          <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_i_projectile_8h.html">&lt;Spore ModAPI/Spore/Simulator/IProjectile.h&gt;</a></div>
+          <span class="m-breadcrumb"><a href="namespace_simulator.html">Simulator</a>::<wbr/></span>cArtilleryProjectile <span class="m-thin">class</span>
+          <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="c_artillery_projectile_8h.html">&lt;Spore ModAPI/Spore/Simulator/cArtilleryProjectile.h&gt;</a></div>
         </h1>
         <p><span></span></p>
         <nav class="m-block m-default">
@@ -55,38 +55,50 @@
             <li>
               Reference
               <ul>
+                <li><a href="#base-classes">Base classes</a></li>
                 <li><a href="#derived-classes">Derived classes</a></li>
                 <li><a href="#pub-static-attribs">Public static variables</a></li>
-                <li><a href="#typeless-methods">Constructors, destructors, conversion operators</a></li>
                 <li><a href="#pub-methods">Public functions</a></li>
                 <li><a href="#pub-attribs">Public variables</a></li>
               </ul>
             </li>
           </ul>
         </nav>
+        <section id="base-classes">
+          <h2><a href="#base-classes">Base classes</a></h2>
+          <dl class="m-doc">
+            <dt>
+              class <a href="class_simulator_1_1c_game_data.html" class="m-doc">cGameData</a>
+            </dt>
+            <dd>Base class for most <a href="namespace_simulator.html" class="m-doc">Simulator</a> objects.</dd>
+            <dt>
+              class <a href="class_simulator_1_1c_locomotive_object.html" class="m-doc">cLocomotiveObject</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              class <a href="class_simulator_1_1c_projectile.html" class="m-doc">cProjectile</a>
+            </dt>
+            <dd><span></span></dd>
+          </dl>
+        </section>
         <section id="derived-classes">
           <h2><a href="#derived-classes">Derived classes</a></h2>
           <dl class="m-doc">
             <dt>
-              class <a href="class_simulator_1_1c_resource_projectile.html" class="m-doc">cResourceProjectile</a>
+              class <a href="class_simulator_1_1c_spear.html" class="m-doc">cSpear</a>
             </dt>
-            <dd>Projectile used in civilization stage to capture spice geysers. Might be used for other things too.</dd>
+            <dd><span></span></dd>
           </dl>
         </section>
         <section id="pub-static-attribs">
           <h2><a href="#pub-static-attribs">Public static variables</a></h2>
           <dl class="m-doc">
-            <dt id="a56f371afda36a3c80827d9891f246492">
-              static <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">const</a> <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">uint32_<wbr />t</a> <a href="#a56f371afda36a3c80827d9891f246492" class="m-doc-self">TYPE</a>
+            <dt id="a18cfb404d7aafac56b03af9481e9d8a0">
+              static <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">const</a> <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">uint32_<wbr />t</a> <a href="#a18cfb404d7aafac56b03af9481e9d8a0" class="m-doc-self">TYPE</a>
             </dt>
             <dd><span></span></dd>
-          </dl>
-        </section>
-        <section id="typeless-methods">
-          <h2><a href="#typeless-methods">Constructors, destructors, conversion operators</a></h2>
-          <dl class="m-doc">
-            <dt id="aaa73af706c9eb6e924f9d2b41f24431b">
-              <span class="m-doc-wrap-bumper"><a href="#aaa73af706c9eb6e924f9d2b41f24431b" class="m-doc-self">~IProjectile</a>(</span><span class="m-doc-wrap">) <span class="m-label m-flat m-warning">virtual</span></span>
+            <dt id="ac940356cfd9474ca2716130d158c4fd3">
+              static <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">const</a> <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">uint32_<wbr />t</a> <a href="#ac940356cfd9474ca2716130d158c4fd3" class="m-doc-self">NOUN_ID</a>
             </dt>
             <dd><span></span></dd>
           </dl>
@@ -94,40 +106,16 @@
         <section id="pub-methods">
           <h2><a href="#pub-methods">Public functions</a></h2>
           <dl class="m-doc">
-            <dt id="af05f0d364414de4e5bfb9ae7a13304b4">
-              <span class="m-doc-wrap-bumper">auto <a href="#af05f0d364414de4e5bfb9ae7a13304b4" class="m-doc-self">Cast</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">uint32_<wbr />t</a> type) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">void</a>* <span class="m-label m-flat m-warning">pure virtual</span></span>
+            <dt id="a3a9c8996c8e1adc7cfec11f8f09b51c8">
+              <span class="m-doc-wrap-bumper">auto <a href="#a3a9c8996c8e1adc7cfec11f8f09b51c8" class="m-doc-self">AddRef</a>(</span><span class="m-doc-wrap">) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
             <dd><span></span></dd>
-            <dt id="abd3224f9ed9c5798045e6b8111d01133">
-              <span class="m-doc-wrap-bumper">auto <a href="#abd3224f9ed9c5798045e6b8111d01133" class="m-doc-self">Release</a>(</span><span class="m-doc-wrap">) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> <span class="m-label m-flat m-warning">pure virtual</span></span>
+            <dt id="aa036657cba582dd62f05811e455fb7d5">
+              <span class="m-doc-wrap-bumper">auto <a href="#aa036657cba582dd62f05811e455fb7d5" class="m-doc-self">Release</a>(</span><span class="m-doc-wrap">) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
             <dd><span></span></dd>
-            <dt id="a13c4e4f006150e988f688d73d49b5de1">
-              <span class="m-doc-wrap-bumper">auto <a href="#a13c4e4f006150e988f688d73d49b5de1" class="m-doc-self">AddRef</a>(</span><span class="m-doc-wrap">) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> <span class="m-label m-flat m-warning">pure virtual</span></span>
-            </dt>
-            <dd><span></span></dd>
-            <dt id="a6bb92df0801facb210fe13853749490d">
-              <span class="m-doc-wrap-bumper">auto <a href="#a6bb92df0801facb210fe13853749490d" class="m-doc-self">GetLocomotiveObject</a>(</span><span class="m-doc-wrap">) -&gt; <a href="class_simulator_1_1c_locomotive_object.html" class="m-doc">cLocomotiveObject</a>* <span class="m-label m-flat m-warning">pure virtual</span></span>
-            </dt>
-            <dd>Returns a reference to the locomotive object of this projectile (so just returns <code>this</code> as a <a href="class_simulator_1_1c_locomotive_object.html" class="m-doc">cLocomotiveObject</a>).</dd>
-            <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#a9fa9fbe1f9611d7e8cf2e07d237cf710" class="m-doc">Update</a>(</span><span class="m-doc-wrap">) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">bool</a> <span class="m-label m-flat m-warning">pure virtual</span></span>
-            </dt>
-            <dd>Called every frame by the CombatSimulator.</dd>
-            <dt id="aaa9caa46c3c73cfaa59a29f044a93538">
-              <span class="m-doc-wrap-bumper">auto <a href="#aaa9caa46c3c73cfaa59a29f044a93538" class="m-doc-self">func18h</a>(</span><span class="m-doc-wrap">) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> <span class="m-label m-flat m-warning">virtual</span></span>
-            </dt>
-            <dd><span></span></dd>
-            <dt id="aa6dd485d2c118f6e430e2419b147f191">
-              <span class="m-doc-wrap-bumper">auto <a href="#aa6dd485d2c118f6e430e2419b147f191" class="m-doc-self">func1Ch</a>(</span><span class="m-doc-wrap">) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">float</a> <span class="m-label m-flat m-warning">virtual</span></span>
-            </dt>
-            <dd><span></span></dd>
-            <dt id="a855bb960d83eb3ede2682592f293f016">
-              <span class="m-doc-wrap-bumper">auto <a href="#a855bb960d83eb3ede2682592f293f016" class="m-doc-self">func20h</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a>) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">void</a> <span class="m-label m-flat m-warning">virtual</span></span>
-            </dt>
-            <dd><span></span></dd>
-            <dt id="af70c5b336480e4f9058a640ca4c376a2">
-              <span class="m-doc-wrap-bumper">auto <a href="#af70c5b336480e4f9058a640ca4c376a2" class="m-doc-self">func24h</a>(</span><span class="m-doc-wrap">) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">bool</a> <span class="m-label m-flat m-warning">virtual</span></span>
+            <dt id="a7099c6b401939e6f27617b00069e5204">
+              <span class="m-doc-wrap-bumper">auto <a href="#a7099c6b401939e6f27617b00069e5204" class="m-doc-self">Cast</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">uint32_<wbr />t</a> typeID) const -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">void</a>* <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
             <dd><span></span></dd>
           </dl>
@@ -135,21 +123,31 @@
         <section id="pub-attribs">
           <h2><a href="#pub-attribs">Public variables</a></h2>
           <dl class="m-doc">
-            <dt id="a5277b7216b656b6bfa7293cf093f6022">
-              <a href="struct_math_1_1_vector3.html" class="m-doc">Vector3</a> <a href="#a5277b7216b656b6bfa7293cf093f6022" class="m-doc-self">projectile_field_4</a>
+            <dt id="a357dec5554702bc22e6fd747ff868fc8">
+              <a href="struct_math_1_1_vector3.html" class="m-doc">Math::<wbr />Vector3</a> <a href="#a357dec5554702bc22e6fd747ff868fc8" class="m-doc-self">mLastPosition</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a695191a1881c61100e1280465eb4c5dd">
+              <a href="c_combatant_8h.html#a26e59ec08f99a9b91658f45ce5e24b80" class="m-doc">cCombatantPtr</a> <a href="#a695191a1881c61100e1280465eb4c5dd" class="m-doc-self">mpOwner</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a72662b5126bc49141080990088460211">
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> <a href="#a72662b5126bc49141080990088460211" class="m-doc-self">mMinDamage</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a8e97d8780385e845c478f16fcd8ede27">
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> <a href="#a8e97d8780385e845c478f16fcd8ede27" class="m-doc-self">mMaxDamage</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a301ec14052eedfbec31dc3540e67a01f">
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> <a href="#a301ec14052eedfbec31dc3540e67a01f" class="m-doc-self">mDamageType</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="af778fc5716b1cd6468bbcb9e640e57d6">
+              <a href="c_space_tool_data_8h.html#aa4aa3f066ce6a84a5db33b469fe1e9d6" class="m-doc">cSpaceToolDataPtr</a> <a href="#af778fc5716b1cd6468bbcb9e640e57d6" class="m-doc-self">mTool</a>
             </dt>
             <dd><span></span></dd>
           </dl>
-        </section>
-        <section>
-          <h2>Function documentation</h2>
-          <section class="m-doc-details" id="a9fa9fbe1f9611d7e8cf2e07d237cf710"><div>
-            <h3>
-              <span class="m-doc-wrap-bumper"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">bool</a> Simulator::<wbr />IProjectile::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a9fa9fbe1f9611d7e8cf2e07d237cf710" class="m-doc-self">Update</a>(</span><span class="m-doc-wrap">) <span class="m-label m-warning">pure virtual</span></span></span>
-            </h3>
-            <p>Called every frame by the CombatSimulator.</p>
-<p>Must return true if the projectile instance is still alive, or false if it has finished and must be destroyed.</p>
-          </div></section>
         </section>
       </div>
     </div>

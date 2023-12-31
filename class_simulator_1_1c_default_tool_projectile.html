@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Simulator::cResourceProjectile class | Spore ModAPI SDK for creating C++ mods for Spore</title>
+  <title>Simulator::cDefaultToolProjectile class | Spore ModAPI SDK for creating C++ mods for Spore</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,600,600i%7CSource+Code+Pro:400,400i,600" />
   <link rel="stylesheet" href="m-dark.css" />
   <link rel="stylesheet" href="m-documentation.css" />
@@ -45,10 +45,10 @@
     <div class="m-row">
       <div class="m-col-l-10 m-push-l-1">
         <h1>
-          <span class="m-breadcrumb"><a href="namespace_simulator.html">Simulator</a>::<wbr/></span>cResourceProjectile <span class="m-thin">class</span>
-          <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="c_resource_projectile_8h.html">&lt;Spore ModAPI/Spore/Simulator/cResourceProjectile.h&gt;</a></div>
+          <span class="m-breadcrumb"><a href="namespace_simulator.html">Simulator</a>::<wbr/></span>cDefaultToolProjectile <span class="m-thin">class</span>
+          <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="c_default_tool_projectile_8h.html">&lt;Spore ModAPI/Spore/Simulator/cDefaultToolProjectile.h&gt;</a></div>
         </h1>
-        <p>Projectile used in civilization stage to capture spice geysers. Might be used for other things too.</p>
+        <p><span></span></p>
         <nav class="m-block m-default">
           <h3>Contents</h3>
           <ul>
@@ -56,6 +56,7 @@
               Reference
               <ul>
                 <li><a href="#base-classes">Base classes</a></li>
+                <li><a href="#derived-classes">Derived classes</a></li>
                 <li><a href="#pub-static-attribs">Public static variables</a></li>
                 <li><a href="#pub-methods">Public functions</a></li>
                 <li><a href="#pub-attribs">Public variables</a></li>
@@ -80,15 +81,24 @@
             <dd><span></span></dd>
           </dl>
         </section>
+        <section id="derived-classes">
+          <h2><a href="#derived-classes">Derived classes</a></h2>
+          <dl class="m-doc">
+            <dt>
+              class <a href="class_simulator_1_1c_deep_space_projectile.html" class="m-doc">cDeepSpaceProjectile</a>
+            </dt>
+            <dd><span></span></dd>
+          </dl>
+        </section>
         <section id="pub-static-attribs">
           <h2><a href="#pub-static-attribs">Public static variables</a></h2>
           <dl class="m-doc">
-            <dt id="a23c17683356f0d5ed005e54e740d1d9d">
-              static <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">const</a> <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">uint32_<wbr />t</a> <a href="#a23c17683356f0d5ed005e54e740d1d9d" class="m-doc-self">TYPE</a>
+            <dt id="aa833c2f4d460ec573d246c72c2338bd7">
+              static <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">const</a> <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">uint32_<wbr />t</a> <a href="#aa833c2f4d460ec573d246c72c2338bd7" class="m-doc-self">TYPE</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="a40928356da88012e2025c6b847f451a5">
-              static <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">const</a> <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">uint32_<wbr />t</a> <a href="#a40928356da88012e2025c6b847f451a5" class="m-doc-self">NOUN_ID</a>
+            <dt id="abe6effb7e161e664d2e43b0a12792c67">
+              static <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">const</a> <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">uint32_<wbr />t</a> <a href="#abe6effb7e161e664d2e43b0a12792c67" class="m-doc-self">NOUN_ID</a>
             </dt>
             <dd><span></span></dd>
           </dl>
@@ -113,32 +123,92 @@
         <section id="pub-attribs">
           <h2><a href="#pub-attribs">Public variables</a></h2>
           <dl class="m-doc">
-            <dt id="a4d37b7072f7829b63897975e8331d070">
-              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">bool</a> <a href="#a4d37b7072f7829b63897975e8331d070" class="m-doc-self">field_514</a>
+            <dt id="a1365ea2b6d413979433baefea030139b">
+              <a href="c_space_tool_data_8h.html#aa4aa3f066ce6a84a5db33b469fe1e9d6" class="m-doc">cSpaceToolDataPtr</a> <a href="#a1365ea2b6d413979433baefea030139b" class="m-doc-self">mTool</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="a2a4ff72c9f864d3e5a927f5d90164ca2">
-              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> <a href="#a2a4ff72c9f864d3e5a927f5d90164ca2" class="m-doc-self">field_518</a>
+            <dt id="adbbd3807852b9bd09bdf7dc011a15ff2">
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> <a href="#adbbd3807852b9bd09bdf7dc011a15ff2" class="m-doc-self">field_51C</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="a845888fcf92b55a4a03b3479ba57d972">
-              <a href="c_commodity_node_8h.html#a62fe714cd2bbea3436f4ceb3449bf84b" class="m-doc">cCommodityNodePtr</a> <a href="#a845888fcf92b55a4a03b3479ba57d972" class="m-doc-self">mpNode</a>
+            <dt id="a11b53eebf64c2024264aad01b3892386">
+              <a href="struct_math_1_1_vector3.html" class="m-doc">Math::<wbr />Vector3</a> <a href="#a11b53eebf64c2024264aad01b3892386" class="m-doc-self">mPrevPosition</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="a19b87a1ff209236c9ab7b05c4e0ddc6d">
-              <a href="struct_math_1_1_vector3.html" class="m-doc">Vector3</a> <a href="#a19b87a1ff209236c9ab7b05c4e0ddc6d" class="m-doc-self">mTargetPos</a>
+            <dt id="a878b52e4d2fadf9a0b4aacf49c4fe9b1">
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> <a href="#a878b52e4d2fadf9a0b4aacf49c4fe9b1" class="m-doc-self">mMinDamage</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="aabfe7b7d1ee8cdf251190f41c648919a">
-              <a href="class_simulator_1_1c_gonzago_timer.html" class="m-doc">cGonzagoTimer</a> <a href="#aabfe7b7d1ee8cdf251190f41c648919a" class="m-doc-self">mLifeTimer</a>
+            <dt id="a799e70234bfae4b3d3ca13b711811783">
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> <a href="#a799e70234bfae4b3d3ca13b711811783" class="m-doc-self">mMaxDamage</a>
             </dt>
-            <dd>The projectile will be destroyed after 1000 ticks of this timer.</dd>
-            <dt id="a915b2a1bda7af57f4d52fd12b40367e8">
-              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">uint32_<wbr />t</a> <a href="#a915b2a1bda7af57f4d52fd12b40367e8" class="m-doc-self">mOwner</a>
+            <dd><span></span></dd>
+            <dt id="a36ff8a04f1b36dd1ae4e239f0707421e">
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">float</a> <a href="#a36ff8a04f1b36dd1ae4e239f0707421e" class="m-doc-self">mExplosionRadius</a>
             </dt>
-            <dd>Political ID of the civilization that owns this projectile.</dd>
-            <dt id="a1e000474cd86ffd7f0d59cb56c981732">
-              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">bool</a> <a href="#a1e000474cd86ffd7f0d59cb56c981732" class="m-doc-self">field_554</a>
+            <dd><span></span></dd>
+            <dt id="a0608c2138d0a9d6210af6595b32661cb">
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> <a href="#a0608c2138d0a9d6210af6595b32661cb" class="m-doc-self">mDamageType</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a596b76f37cc3c3763ca1da75cb5967f3">
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">float</a> <a href="#a596b76f37cc3c3763ca1da75cb5967f3" class="m-doc-self">mProjectileScale</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a3637915d7b748299fcebd2cd79b17336">
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">float</a> <a href="#a3637915d7b748299fcebd2cd79b17336" class="m-doc-self">mCurrentExplosionRadius</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a05837d7b0205f4ab34114b331146e102">
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> <a href="#a05837d7b0205f4ab34114b331146e102" class="m-doc-self">mBombPhase</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a9ec66d44da8672a286dfaf3ce68e27b5">
+              <a href="class_simulator_1_1c_gonzago_timer.html" class="m-doc">cGonzagoTimer</a> <a href="#a9ec66d44da8672a286dfaf3ce68e27b5" class="m-doc-self">mPhaseTimer</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a08b4ee0cb5db8bc1f94b61cdb3420d38">
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">uint64_<wbr />t</a> <a href="#a08b4ee0cb5db8bc1f94b61cdb3420d38" class="m-doc-self">mTimeOfLastDamageCheck</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a7d5a3af2f42710538cf419201ab2fe3c">
+              eastl::set&lt;<a href="c_spatial_object_8h.html#ae656c09ec3111878660768d156088bc9" class="m-doc">cSpatialObjectPtr</a>&gt; <a href="#a7d5a3af2f42710538cf419201ab2fe3c" class="m-doc-self">mDamagedObjects</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a389032652361c997d52509cf0d2583a7">
+              <a href="struct_math_1_1_vector3.html" class="m-doc">Math::<wbr />Vector3</a> <a href="#a389032652361c997d52509cf0d2583a7" class="m-doc-self">mExplosionPoint</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a8912bd4c9e1248362ba393e7aadbe6ae">
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> <a href="#a8912bd4c9e1248362ba393e7aadbe6ae" class="m-doc-self">mTargetDamagePointId</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a67891809c9c17f0aeeaef2e8b547b773">
+              <a href="struct_math_1_1_vector3.html" class="m-doc">Math::<wbr />Vector3</a> <a href="#a67891809c9c17f0aeeaef2e8b547b773" class="m-doc-self">mTargetPoint</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a46191e6a8840c9b82c9618b9b4bb721b">
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">char</a> <a href="#a46191e6a8840c9b82c9618b9b4bb721b" class="m-doc-self">padding_5A8</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="afeec59bed6a13abbe93a692d7b78f066">
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> <a href="#afeec59bed6a13abbe93a692d7b78f066" class="m-doc-self">field_5CC</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="acfdf986846c874bca8581b6d8bd955e2">
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> <a href="#acfdf986846c874bca8581b6d8bd955e2" class="m-doc-self">mStrikeType</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a841e2dfe02b120d2c8179819630bb57c">
+              <a href="c_game_data_8h.html#a16ee71c4f398f8560845728987775f11" class="m-doc">cGameDataPtr</a> <a href="#a841e2dfe02b120d2c8179819630bb57c" class="m-doc-self">mTargetStruck</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="afed42a3b923c6ed0d27552a79fba708c">
+              <a href="c_spatial_object_8h.html#ae656c09ec3111878660768d156088bc9" class="m-doc">cSpatialObjectPtr</a> <a href="#afed42a3b923c6ed0d27552a79fba708c" class="m-doc-self">mpTarget</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="aa580037095eca0dece6d3253cd8090e8">
+              eastl::vector&lt;<a href="c_city_8h.html#ad769fae800809e8a8e0861bca84f77cf" class="m-doc">cCityPtr</a>&gt; <a href="#aa580037095eca0dece6d3253cd8090e8" class="m-doc-self">mWaveFrontTargetCities</a>
             </dt>
             <dd><span></span></dd>
           </dl>
