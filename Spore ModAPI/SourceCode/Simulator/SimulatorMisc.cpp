@@ -4,6 +4,7 @@
 #include <Spore\Simulator\cBadgeManager.h>
 #include <Spore\Simulator\cObjectPool.h>
 #include <Spore\Simulator\cSimulatorUniverse.h>
+#include <Spore\Simulator\cDefaultToolProjectile.h>
 
 namespace Simulator
 {
@@ -64,5 +65,12 @@ namespace Simulator
 	{
 		return *(cSimulatorUniverse**)GetAddress(cSimulatorUniverse, _ptr);
 	}
+
+
+	//// cDefaultToolProjectile ////
+
+	auto_STATIC_METHOD_VOID(Simulator, LaunchDefaultToolProjectile,
+		Args(cSpaceToolData* tool, cDefaultToolProjectile* projectile, const Math::Vector3& origin, const Math::Vector3& target),
+		Args(tool, projectile, origin, target));
 }
 #endif

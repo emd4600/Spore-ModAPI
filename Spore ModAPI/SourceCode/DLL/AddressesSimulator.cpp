@@ -120,6 +120,8 @@ namespace Addresses(Simulator)
 	DefineAddress(GetPlanetTemperatureType, SelectAddress(0xFC26B0, 0xFC1F90));
 	DefineAddress(IsBinaryStar, SelectAddress(0xC8A770, 0xC8B5E0));
 	DefineAddress(IsNotStarOrBinaryStar, SelectAddress(0xC8A840, 0xC8B6B0));
+
+	DefineAddress(LaunchDefaultToolProjectile, SelectAddress(0x1054F40, 0x1054390));
 	
 #ifndef SDK_TO_GHIDRA
 	DefineAddress(LightingWorld_ptr, SelectAddress(0x1682CD4, 0x167EA54));

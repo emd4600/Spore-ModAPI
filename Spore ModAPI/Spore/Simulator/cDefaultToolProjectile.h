@@ -12,6 +12,19 @@
 
 namespace Simulator
 {
+	enum class DamageType
+	{
+		Bribe = 4,
+
+		Healing = 10,
+		BlackCloud = 11,
+		_543F8E29 = 12,
+		Nuclear = 13,
+		EMP = 14,
+		IField = 15,
+		Diplomatic = 16,
+	};
+
 	class cDefaultToolProjectile
 		/* 00h */	: public cGameData
 		/* 34h */	, public cLocomotiveObject
@@ -25,6 +38,9 @@ namespace Simulator
 		using Object::Release;
 		using Object::Cast;
 
+		/* 54h */	virtual void ConfigureProjectile(cSpaceToolData* tool, int minDamage, int maxDamage, float explosionRadius, int damageType, float projectileRadius);
+		/* 58h */	virtual void OnProjetileHit(int strikeType, Object* hitObject);
+
 	public:
 		/* 518h */	cSpaceToolDataPtr mTool;
 		/* 51Ch */	int field_51C;
@@ -32,6 +48,7 @@ namespace Simulator
 		/* 52Ch */	int mMinDamage;
 		/* 530h */	int mMaxDamage;
 		/* 534h */	float mExplosionRadius;
+		/// A value in DamageType
 		/* 538h */	int mDamageType;
 		/* 53Ch */	float mProjectileScale;  // 1.0
 		/* 540h */	float mCurrentExplosionRadius;
@@ -50,4 +67,27 @@ namespace Simulator
 		/* 5DCh */	eastl::vector<cCityPtr> mWaveFrontTargetCities;
 	};
 	ASSERT_SIZE(cDefaultToolProjectile, 0x5F0);
+
+	/// Launches a projectile using the configuration of the specified tool.
+	/// Example code to shoot 200 meters in front of your UFO:
+	/// ```cpp
+	/// auto playerPosition = SimulatorPlayerUFO.GetUFO()->GetPosition();
+	/// auto target = playerPosition + 50 * SimulatorPlayerUFO.GetUFO()->GetDirection();
+	/// cSpaceToolDataPtr tool;
+	/// if (ToolManager.LoadTool({ id("AllyMissile1"), TypeIDs::prop, GroupIDs::SpaceTools }, tool)) 
+	/// {
+	///		auto projectile = simulator_new<Simulator::cDefaultToolProjectile>();
+	///		Simulator::LaunchDefaultToolProjectile(tool.get, projectile, playerPosition, target);
+	/// }
+	/// ```
+	/// @param tool Tool used to configure the projectile trajectory, damage, effect, etc
+	/// @param projectile Projectile object
+	/// @param origin Starting point of the projectile
+	/// @param target Target point of the projectile
+	void LaunchDefaultToolProjectile(cSpaceToolData* tool, cDefaultToolProjectile* projectile, const Math::Vector3& origin, const Math::Vector3& target);
+}
+
+namespace Addresses(Simulator)
+{
+	DeclareAddress(LaunchDefaultToolProjectile);  // 0x1054F40 0x1054390
 }
