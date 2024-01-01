@@ -69,7 +69,7 @@ namespace Simulator
 	ASSERT_SIZE(cDefaultToolProjectile, 0x5F0);
 
 	/// Launches a projectile using the configuration of the specified tool.
-	/// Example code to shoot 200 meters in front of your UFO:
+	/// Example code to shoot 50 meters in front of your UFO:
 	/// ```cpp
 	/// auto playerPosition = SimulatorPlayerUFO.GetUFO()->GetPosition();
 	/// auto target = playerPosition + 50 * SimulatorPlayerUFO.GetUFO()->GetDirection();

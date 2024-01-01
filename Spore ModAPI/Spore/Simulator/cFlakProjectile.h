@@ -21,9 +21,16 @@ namespace Simulator
 		using Object::Release;
 		using Object::Cast;
 
+		void LaunchProjectile(const Math::Vector3&, float);
+
 	public:
 		/* 518h */	int field_518;
 		/* 51Ch */	float field_51C;
 	};
 	ASSERT_SIZE(cFlakProjectile, 0x520);
+
+	namespace Addresses(cFlakProjectile)
+	{
+		DeclareAddress(LaunchProjectile);  // 0xCB7400 0xCB7CF0
+	}
 }

@@ -72,6 +72,11 @@
 #include <Spore\Simulator\cSimulatorUniverse.h>
 #include <Spore\Simulator\Serialization.h>
 #include <Spore\Simulator\SpaceConstants.h>
+#include <Spore\Simulator\cArtilleryProjectile.h>
+#include <Spore\Simulator\cCulturalProjectile.h>
+#include <Spore\Simulator\cFlakProjectile.h>
+#include <Spore\Simulator\cResourceProjectile.h>
+#include <Spore\Simulator\cSpaceDefenseMissile.h>
 #include <Spore\Simulator\SubSystem\cRelationshipManager.h>
 #include <Spore\Simulator\SubSystem\GameBehaviorManager.h>
 #include <Spore\Simulator\SubSystem\GameInputManager.h>
@@ -975,6 +980,27 @@ namespace Simulator
 	{
 		DefineAddress(SetObject, SelectAddress(0xAF9890, 0xAF9FB0));
 		DefineAddress(RemoveObject, SelectAddress(0xAF9900, 0xAFA020));
+	}
+
+	namespace Addresses(cArtilleryProjectile)
+	{
+		DefineAddress(LaunchProjectile, SelectAddress(0xCB68C0, 0xCB71C0));
+	}
+	namespace Addresses(cCulturalProjectile)
+	{
+		DefineAddress(LaunchProjectile, SelectAddress(0xCBD0A0, 0xCBDB90));
+	}
+	namespace Addresses(cFlakProjectile)
+	{
+		DefineAddress(LaunchProjectile, SelectAddress(0xCB7400, 0xCB7CF0));
+	}
+	namespace Addresses(cResourceProjectile)
+	{
+		DefineAddress(LaunchProjectile, SelectAddress(0xCBDCD0, 0xCBE7C0));
+	}
+	namespace Addresses(cSpaceDefenseMissile)
+	{
+		DefineAddress(LaunchProjectile, SelectAddress(0xCB7FD0, 0xCB88B0));
 	}
 }
 

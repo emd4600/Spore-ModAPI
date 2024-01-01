@@ -5,6 +5,7 @@
 #include <Spore\Simulator\cCommodityNode.h>
 #include <Spore\Simulator\cProjectile.h>
 #include <Spore\Simulator\cGonzagoTimer.h>
+#include <Spore\Simulator\cCivilization.h>
 
 #define cResourceProjectilePtr eastl::intrusive_ptr<Simulator::cResourceProjectile>
 
@@ -24,6 +25,8 @@ namespace Simulator
 		using Object::Release;
 		using Object::Cast;
 
+		void LaunchProjectile(cCivilization* civilization, cCommodityNode* commodityNode, const Math::Vector3&, float speed, bool);
+
 	public:
 		/* 514h */	bool field_514;
 		/* 518h */	int field_518;
@@ -36,4 +39,9 @@ namespace Simulator
 		/* 554h */	bool field_554;
 	};
 	ASSERT_SIZE(cResourceProjectile, 0x558);
+
+	namespace Addresses(cResourceProjectile)
+	{
+		DeclareAddress(LaunchProjectile);  // 0xCBDCD0 0xCBE7C0
+	}
 }

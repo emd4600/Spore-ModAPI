@@ -23,6 +23,8 @@ namespace Simulator
 		using Object::Release;
 		using Object::Cast;
 
+		void LaunchProjectile(cGameData* owner, cVehicle* vehicle, cSpaceToolData* tool, cCombatant* target, const Math::Vector3&, float, bool, bool spin);
+
 	public:
 		/* 518h */	int field_518;
 		/* 51Ch */	cVehiclePtr mpVehicle;
@@ -37,4 +39,9 @@ namespace Simulator
 		/* 568h */	cGonzagoTimer field_568;
 	};
 	ASSERT_SIZE(cCulturalProjectile, 0x588);
+
+	namespace Addresses(cCulturalProjectile)
+	{
+		DeclareAddress(LaunchProjectile);  // 0xCBD0A0 0xCBDB90
+	}
 }

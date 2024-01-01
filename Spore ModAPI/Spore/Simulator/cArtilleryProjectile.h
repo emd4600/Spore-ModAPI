@@ -23,6 +23,10 @@ namespace Simulator
 		using Object::Release;
 		using Object::Cast;
 
+		/// Creates a `cBallisticLocomotion` locomotion strategy to start launching this projectile.
+		/// @param target
+		void LaunchProjectile(const Math::Vector3& target);
+
 	public:
 		/* 518h */	Math::Vector3 mLastPosition;
 		/* 524h */	cCombatantPtr mpOwner;
@@ -32,4 +36,9 @@ namespace Simulator
 		/* 534h */	cSpaceToolDataPtr mTool;
 	};
 	ASSERT_SIZE(cArtilleryProjectile, 0x538);
+
+	namespace Addresses(cArtilleryProjectile)
+	{
+		DeclareAddress(LaunchProjectile);  // 0xCB68C0 0xCB71C0
+	}
 }
