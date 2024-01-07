@@ -1796,9 +1796,9 @@
             <dd>Executes a function after a certain time (measured in seconds) has passed from ths call.</dd>
             <dt>
               <div class="m-doc-template">template&lt;<a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">class</a> <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">T</a>&gt;</div>
-              <span class="m-doc-wrap-bumper">auto <a href="#a0daf36898034fa02224bb9c9e544d45f" class="m-doc">ScheduleTask</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">T</a>* object,
+              <span class="m-doc-wrap-bumper">auto <a href="#a06b447abf37b860a064aefd81623bd97" class="m-doc">ScheduleTask</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">T</a>* object,
               <a href="namespace_app.html#adf650d2c1852a6bd9fa7e8d49af6fae4" class="m-doc">App::<wbr />VoidMethod_T</a>&lt;<a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">T</a>&gt; method,
-              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">float</a> scheduleTime) -&gt; <a href="_i_message_manager_8h.html#a8398855010ed2cf21fa27d1c29cf64e9" class="m-doc">ScheduledTaskListenerPtr</a></span>
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">float</a> scheduleTime) -&gt; <a href="_i_message_manager_8h.html#a386ef1464a4a3bb2289b0844c570d9cc" class="m-doc">SimScheduledTaskListenerPtr</a></span>
             </dt>
             <dd>Executes a class method after a certain time (measured in seconds) has passed from ths call.</dd>
             <dt>
@@ -1809,14 +1809,14 @@
             <dd>Executes a function after a certain time (measured in seconds) has passed from this call, and then keeps repeating it after a certain period (defined by the repeatRate parameter) parameter.</dd>
             <dt>
               <div class="m-doc-template">template&lt;<a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">class</a> <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">T</a>&gt;</div>
-              <span class="m-doc-wrap-bumper">auto <a href="#ae8dfa3d0417c9255251b98aa431bc9de" class="m-doc">ScheduleRepeatedTask</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">T</a>* object,
+              <span class="m-doc-wrap-bumper">auto <a href="#acf16a79af82276db769c8433887f2fff" class="m-doc">ScheduleRepeatedTask</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">T</a>* object,
               <a href="namespace_app.html#adf650d2c1852a6bd9fa7e8d49af6fae4" class="m-doc">App::<wbr />VoidMethod_T</a>&lt;<a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">T</a>&gt; method,
               <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">float</a> scheduleTime,
-              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">float</a> repeatRate) -&gt; <a href="_i_message_manager_8h.html#a8398855010ed2cf21fa27d1c29cf64e9" class="m-doc">ScheduledTaskListenerPtr</a></span>
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">float</a> repeatRate) -&gt; <a href="_i_message_manager_8h.html#a386ef1464a4a3bb2289b0844c570d9cc" class="m-doc">SimScheduledTaskListenerPtr</a></span>
             </dt>
             <dd>Executes a function after a certain time (measured in seconds) has passed from this call, and then keeps repeating it after a certain period (defined by the repeatRate parameter) parameter.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#a59d2cb6ccd81c7f54f84ad804ae70ca0" class="m-doc">RemoveScheduledTask</a>(</span><span class="m-doc-wrap"><a href="_i_message_manager_8h.html#a8398855010ed2cf21fa27d1c29cf64e9" class="m-doc">ScheduledTaskListenerPtr</a>&amp; taskListener) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">bool</a></span>
+              <span class="m-doc-wrap-bumper">auto <a href="#a5a9e618a049979ea4fdf0179a4145551" class="m-doc">RemoveScheduledTask</a>(</span><span class="m-doc-wrap"><a href="_i_message_manager_8h.html#a386ef1464a4a3bb2289b0844c570d9cc" class="m-doc">SimScheduledTaskListenerPtr</a>&amp; taskListener) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">bool</a></span>
             </dt>
             <dd><span></span></dd>
             <dt>
@@ -4394,13 +4394,13 @@
             </table>
 <p>The function is executed only once, and the time starts counting since this ScheduleTask method has been called.</p><p>The method returns the object that holds the scheduled task. If you want to remove the task before it is called, you can do it by calling Simulator::RemoveScheduledTask(...) with the returned object as parameter.</p><p>Internally, this is implemented by adding a message listener that listens to the kMsgAppUpdate message. Every frame uses a <a href="class_simulator_1_1c_gonzago_timer.html" class="m-doc">cGonzagoTimer</a> object to compare the elapsed time since this task as scheduled. The listener is removed once the task has finished executing.</p>
           </div></section>
-          <section class="m-doc-details" id="a0daf36898034fa02224bb9c9e544d45f"><div>
+          <section class="m-doc-details" id="a06b447abf37b860a064aefd81623bd97"><div>
             <h3>
               <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="_i_message_manager_8h.html">&lt;Spore ModAPI/Spore/App/IMessageManager.h&gt;</a></div>
               <div class="m-doc-template">
                 template&lt;<a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">class</a> <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">T</a>&gt;
               </div>
-              <span class="m-doc-wrap-bumper"><a href="_i_message_manager_8h.html#a8398855010ed2cf21fa27d1c29cf64e9" class="m-doc">ScheduledTaskListenerPtr</a> Simulator::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a0daf36898034fa02224bb9c9e544d45f" class="m-doc-self">ScheduleTask</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">T</a>* object,
+              <span class="m-doc-wrap-bumper"><a href="_i_message_manager_8h.html#a386ef1464a4a3bb2289b0844c570d9cc" class="m-doc">SimScheduledTaskListenerPtr</a> Simulator::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a06b447abf37b860a064aefd81623bd97" class="m-doc-self">ScheduleTask</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">T</a>* object,
               <a href="namespace_app.html#adf650d2c1852a6bd9fa7e8d49af6fae4" class="m-doc">App::<wbr />VoidMethod_T</a>&lt;<a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">T</a>&gt; method,
               <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">float</a> scheduleTime)</span></span>
             </h3>
@@ -4455,13 +4455,13 @@
             </table>
 <p>The function is executed only once, and the time starts counting since this ScheduleTask method has been called.</p><p>The method returns the object that holds the scheduled task. If you want to remove the task so it does not execute anymore, you can do it by calling Simulator::RemoveScheduledTask(...) with the returned object as parameter.</p><p>Internally, this is implemented by adding a message listener that listens to the kMsgAppUpdate message. Every frame uses a <a href="class_simulator_1_1c_gonzago_timer.html" class="m-doc">cGonzagoTimer</a> object to compare the elapsed time since this task as scheduled. The listener is removed once the task has finished executing.</p>
           </div></section>
-          <section class="m-doc-details" id="ae8dfa3d0417c9255251b98aa431bc9de"><div>
+          <section class="m-doc-details" id="acf16a79af82276db769c8433887f2fff"><div>
             <h3>
               <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="_i_message_manager_8h.html">&lt;Spore ModAPI/Spore/App/IMessageManager.h&gt;</a></div>
               <div class="m-doc-template">
                 template&lt;<a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">class</a> <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">T</a>&gt;
               </div>
-              <span class="m-doc-wrap-bumper"><a href="_i_message_manager_8h.html#a8398855010ed2cf21fa27d1c29cf64e9" class="m-doc">ScheduledTaskListenerPtr</a> Simulator::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ae8dfa3d0417c9255251b98aa431bc9de" class="m-doc-self">ScheduleRepeatedTask</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">T</a>* object,
+              <span class="m-doc-wrap-bumper"><a href="_i_message_manager_8h.html#a386ef1464a4a3bb2289b0844c570d9cc" class="m-doc">SimScheduledTaskListenerPtr</a> Simulator::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#acf16a79af82276db769c8433887f2fff" class="m-doc-self">ScheduleRepeatedTask</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">T</a>* object,
               <a href="namespace_app.html#adf650d2c1852a6bd9fa7e8d49af6fae4" class="m-doc">App::<wbr />VoidMethod_T</a>&lt;<a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">T</a>&gt; method,
               <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">float</a> scheduleTime,
               <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">float</a> repeatRate)</span></span>
@@ -4492,9 +4492,9 @@
             </table>
 <p>The function is executed only once, and the time starts counting since this ScheduleTask method has been called.</p><p>The method returns the object that holds the scheduled task. If you want to remove the task so it does not execute anymore, you can do it by calling Simulator::RemoveScheduledTask(...) with the returned object as parameter.</p><p>Internally, this is implemented by adding a message listener that listens to the kMsgAppUpdate message. Every frame uses a <a href="class_simulator_1_1c_gonzago_timer.html" class="m-doc">cGonzagoTimer</a> object to compare the elapsed time since this task as scheduled. The listener is removed once the task has finished executing.</p>
           </div></section>
-          <section class="m-doc-details" id="a59d2cb6ccd81c7f54f84ad804ae70ca0"><div>
+          <section class="m-doc-details" id="a5a9e618a049979ea4fdf0179a4145551"><div>
             <h3>
-              <span class="m-doc-wrap-bumper"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">bool</a> Simulator::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a59d2cb6ccd81c7f54f84ad804ae70ca0" class="m-doc-self">RemoveScheduledTask</a>(</span><span class="m-doc-wrap"><a href="_i_message_manager_8h.html#a8398855010ed2cf21fa27d1c29cf64e9" class="m-doc">ScheduledTaskListenerPtr</a>&amp; taskListener)</span></span>
+              <span class="m-doc-wrap-bumper"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">bool</a> Simulator::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a5a9e618a049979ea4fdf0179a4145551" class="m-doc-self">RemoveScheduledTask</a>(</span><span class="m-doc-wrap"><a href="_i_message_manager_8h.html#a386ef1464a4a3bb2289b0844c570d9cc" class="m-doc">SimScheduledTaskListenerPtr</a>&amp; taskListener)</span></span>
               <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_i_message_manager_8h.html">&lt;Spore ModAPI/Spore/App/IMessageManager.h&gt;</a></div>
             </h3>
             <p><span></span></p>
