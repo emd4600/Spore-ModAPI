@@ -86,6 +86,56 @@
               <span class="m-doc-wrap-bumper">auto <a href="#a1571caa54586597c6b510c7fd505f02a" class="m-doc-self">CalculateViewTransform</a>(</span><span class="m-doc-wrap"><a href="class_transform.html" class="m-doc">Transform</a>&amp; transform) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">void</a></span>
             </dt>
             <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a689ed3fd1ff828b2844726d3a8b2c4f7" class="m-doc">Update</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> deltaTime,
+              <a href="class_app_1_1c_viewer.html" class="m-doc">cViewer</a>* pViewer) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">void</a> <span class="m-label m-flat m-warning">override</span></span>
+            </dt>
+            <dd>Event called every game loop, which should set all the transformations of the camera into the given Viewer.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a06f2361896ca50787fb5fd7db2ed2bc5" class="m-doc">OnKeyDown</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> virtualKey,
+              <a href="union_key_modifiers.html" class="m-doc">KeyModifiers</a> modifiers) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">bool</a> <span class="m-label m-flat m-warning">override</span></span>
+            </dt>
+            <dd>An event listener called every time a key is pressed while this camera is active.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#ab54a7347135fc921147b35f073af67e7" class="m-doc">OnMouseDown</a>(</span><span class="m-doc-wrap"><a href="_input_8h.html#ac1ec3647c005eacad401b06e7e18f711" class="m-doc">MouseButton</a> mouseButton,
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">float</a> mouseX,
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">float</a> mouseY,
+              <a href="union_mouse_state.html" class="m-doc">MouseState</a> mouseState) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">bool</a> <span class="m-label m-flat m-warning">override</span></span>
+            </dt>
+            <dd>An event listener called every time a mouse key is pressed while this camera is active.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a1242f559462248874411b1ee988412f2" class="m-doc">OnMouseUp</a>(</span><span class="m-doc-wrap"><a href="_input_8h.html#ac1ec3647c005eacad401b06e7e18f711" class="m-doc">MouseButton</a> mouseButton,
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">float</a> mouseX,
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">float</a> mouseY,
+              <a href="union_mouse_state.html" class="m-doc">MouseState</a> mouseState) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">bool</a> <span class="m-label m-flat m-warning">override</span></span>
+            </dt>
+            <dd>An event listener called every time a mouse key is released while this camera is active.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#af9fcee9ef7b1f65aa367037a64b2a222" class="m-doc">OnMouseMove</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">float</a> mouseX,
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">float</a> mouseY,
+              <a href="union_mouse_state.html" class="m-doc">MouseState</a> mouseState) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">bool</a> <span class="m-label m-flat m-warning">override</span></span>
+            </dt>
+            <dd>An event listener called every time the mouse is moved while this camera is active.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a91b2771873d899c9b41adb58488bd188" class="m-doc">OnMouseWheel</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> wheelDelta,
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">float</a> mouseX,
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">float</a> mouseY,
+              <a href="union_mouse_state.html" class="m-doc">MouseState</a> mouseState) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">bool</a> <span class="m-label m-flat m-warning">override</span></span>
+            </dt>
+            <dd>An event listener called every time the mouse wheel is moved while this camera is active.</dd>
+            <dt id="a374a990bc97ac4bf017ad7918e9d272a">
+              <span class="m-doc-wrap-bumper">auto <a href="#a374a990bc97ac4bf017ad7918e9d272a" class="m-doc-self">Initialize</a>(</span><span class="m-doc-wrap">) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">void</a> <span class="m-label m-flat m-warning">override</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a058aae14d70d49dfaabe5233083933c2">
+              <span class="m-doc-wrap-bumper">auto <a href="#a058aae14d70d49dfaabe5233083933c2" class="m-doc-self">func54h</a>(</span><span class="m-doc-wrap"><a href="struct_math_1_1_vector3.html" class="m-doc">Vector3</a>&amp; dst) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">void</a> <span class="m-label m-flat m-warning">override</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a41891e4b5c1cb2eb3e88b5f5eaafe176" class="m-doc">HandleMessage</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">uint32_<wbr />t</a> messageID,
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">void</a>* msg) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">bool</a> <span class="m-label m-flat m-warning">override</span></span>
+            </dt>
+            <dd>Called every time a message is received.</dd>
           </dl>
         </section>
         <section id="pub-attribs">
@@ -150,7 +200,7 @@
             <dt id="afa36ad3b6108a4b27e68f428cb74aeab">
               <a href="struct_math_1_1_point.html" class="m-doc">Math::<wbr />Point</a> <a href="#afa36ad3b6108a4b27e68f428cb74aeab" class="m-doc-self">mLastMouseDown</a>
             </dt>
-            <dd>Last position of the mouse after <a href="class_app_1_1_i_camera.html#a91fe435d5a490d2ecbb0653fc76d1cd4" class="m-doc">OnMouseDown()</a></dd>
+            <dd>Last position of the mouse after <a href="class_app_1_1c_mouse_camera.html#ab54a7347135fc921147b35f073af67e7" class="m-doc">OnMouseDown()</a></dd>
             <dt id="a66ffd7d4516dd507faf06f2f95d28d7d">
               <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">bool</a> <a href="#a66ffd7d4516dd507faf06f2f95d28d7d" class="m-doc-self">field_44</a>
             </dt>
@@ -320,6 +370,235 @@
             </dt>
             <dd><span></span></dd>
           </dl>
+        </section>
+        <section>
+          <h2>Function documentation</h2>
+          <section class="m-doc-details" id="a689ed3fd1ff828b2844726d3a8b2c4f7"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">void</a> App::<wbr />cMouseCamera::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a689ed3fd1ff828b2844726d3a8b2c4f7" class="m-doc-self">Update</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> deltaTime,
+              <a href="class_app_1_1c_viewer.html" class="m-doc">cViewer</a>* pViewer) <span class="m-label m-warning">override</span></span></span>
+            </h3>
+            <p>Event called every game loop, which should set all the transformations of the camera into the given Viewer.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">deltaTime</td>
+                  <td>The time ellapsed since the last call, in milliseconds.</td>
+                </tr>
+                <tr>
+                  <td>pViewer</td>
+                  <td>The Viewer instance where the transformations must be set.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="a06f2361896ca50787fb5fd7db2ed2bc5"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">bool</a> App::<wbr />cMouseCamera::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a06f2361896ca50787fb5fd7db2ed2bc5" class="m-doc-self">OnKeyDown</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> virtualKey,
+              <a href="union_key_modifiers.html" class="m-doc">KeyModifiers</a> modifiers) <span class="m-label m-warning">override</span></span></span>
+            </h3>
+            <p>An event listener called every time a key is pressed while this camera is active.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">virtualKey</td>
+                  <td>The VK code of the key.</td>
+                </tr>
+                <tr>
+                  <td>modifiers</td>
+                  <td>The modifiers (Ctrl, Alt and Shift) currently being pressed.</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>Returns</th>
+                  <td>Whether the event was handled or not.</td>
+                </tr>
+              </tfoot>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="ab54a7347135fc921147b35f073af67e7"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">bool</a> App::<wbr />cMouseCamera::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ab54a7347135fc921147b35f073af67e7" class="m-doc-self">OnMouseDown</a>(</span><span class="m-doc-wrap"><a href="_input_8h.html#ac1ec3647c005eacad401b06e7e18f711" class="m-doc">MouseButton</a> mouseButton,
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">float</a> mouseX,
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">float</a> mouseY,
+              <a href="union_mouse_state.html" class="m-doc">MouseState</a> mouseState) <span class="m-label m-warning">override</span></span></span>
+            </h3>
+            <p>An event listener called every time a mouse key is pressed while this camera is active.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">mouseButton</td>
+                  <td>The button that was pressed.</td>
+                </tr>
+                <tr>
+                  <td>mouseX</td>
+                  <td>The X position of the mouse.</td>
+                </tr>
+                <tr>
+                  <td>mouseY</td>
+                  <td>The Y position of the mouse.</td>
+                </tr>
+                <tr>
+                  <td>mouseState</td>
+                  <td>The state of the mouse.</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>Returns</th>
+                  <td>Whether the event was handled or not.</td>
+                </tr>
+              </tfoot>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="a1242f559462248874411b1ee988412f2"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">bool</a> App::<wbr />cMouseCamera::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a1242f559462248874411b1ee988412f2" class="m-doc-self">OnMouseUp</a>(</span><span class="m-doc-wrap"><a href="_input_8h.html#ac1ec3647c005eacad401b06e7e18f711" class="m-doc">MouseButton</a> mouseButton,
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">float</a> mouseX,
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">float</a> mouseY,
+              <a href="union_mouse_state.html" class="m-doc">MouseState</a> mouseState) <span class="m-label m-warning">override</span></span></span>
+            </h3>
+            <p>An event listener called every time a mouse key is released while this camera is active.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">mouseButton</td>
+                  <td>The button that was released.</td>
+                </tr>
+                <tr>
+                  <td>mouseX</td>
+                  <td>The X position of the mouse.</td>
+                </tr>
+                <tr>
+                  <td>mouseY</td>
+                  <td>The Y position of the mouse.</td>
+                </tr>
+                <tr>
+                  <td>mouseState</td>
+                  <td>The state of the mouse.</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>Returns</th>
+                  <td>Whether the event was handled or not.</td>
+                </tr>
+              </tfoot>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="af9fcee9ef7b1f65aa367037a64b2a222"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">bool</a> App::<wbr />cMouseCamera::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#af9fcee9ef7b1f65aa367037a64b2a222" class="m-doc-self">OnMouseMove</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">float</a> mouseX,
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">float</a> mouseY,
+              <a href="union_mouse_state.html" class="m-doc">MouseState</a> mouseState) <span class="m-label m-warning">override</span></span></span>
+            </h3>
+            <p>An event listener called every time the mouse is moved while this camera is active.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">mouseX</td>
+                  <td>The X position of the mouse.</td>
+                </tr>
+                <tr>
+                  <td>mouseY</td>
+                  <td>The Y position of the mouse.</td>
+                </tr>
+                <tr>
+                  <td>mouseState</td>
+                  <td>The state of the mouse.</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>Returns</th>
+                  <td>Whether the event was handled or not.</td>
+                </tr>
+              </tfoot>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="a91b2771873d899c9b41adb58488bd188"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">bool</a> App::<wbr />cMouseCamera::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a91b2771873d899c9b41adb58488bd188" class="m-doc-self">OnMouseWheel</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> wheelDelta,
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">float</a> mouseX,
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">float</a> mouseY,
+              <a href="union_mouse_state.html" class="m-doc">MouseState</a> mouseState) <span class="m-label m-warning">override</span></span></span>
+            </h3>
+            <p>An event listener called every time the mouse wheel is moved while this camera is active.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">wheelDelta</td>
+                  <td>The amount of units the wheel moved. This is a multiple of UTFWin::kMouseWheelDelta.</td>
+                </tr>
+                <tr>
+                  <td>mouseX</td>
+                  <td>The X position of the mouse.</td>
+                </tr>
+                <tr>
+                  <td>mouseY</td>
+                  <td>The Y position of the mouse.</td>
+                </tr>
+                <tr>
+                  <td>mouseState</td>
+                  <td>The state of the mouse.</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>Returns</th>
+                  <td>Whether the event was handled or not.</td>
+                </tr>
+              </tfoot>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="a41891e4b5c1cb2eb3e88b5f5eaafe176"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">bool</a> App::<wbr />cMouseCamera::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a41891e4b5c1cb2eb3e88b5f5eaafe176" class="m-doc-self">HandleMessage</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">uint32_<wbr />t</a> messageID,
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">void</a>* msg) <span class="m-label m-warning">override</span></span></span>
+            </h3>
+            <p>Called every time a message is received.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">messageID</td>
+                  <td>The ID of the message received.</td>
+                </tr>
+                <tr>
+                  <td>msg</td>
+                  <td>The data of the message received, it might be nullptr.</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>Returns</th>
+                  <td>Whether the message was handled or not.</td>
+                </tr>
+              </tfoot>
+            </table>
+<p>Only the messages with an ID this listener signed up for will call this event.</p>
+          </div></section>
         </section>
       </div>
     </div>
