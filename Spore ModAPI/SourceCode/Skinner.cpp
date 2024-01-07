@@ -5,10 +5,12 @@ namespace Skinner
 {
 	auto_STATIC_METHOD_(cPaintSystem, cPaintSystem*, Get);
 
+#ifndef SDK_TO_GHIDRA
 	Math::ColorRGB* GetCurrentColors()
 	{
 		return (Math::ColorRGB*)GetAddress(Skinner, GetCurrentColors);
 	}
+#endif
 
 	auto_STATIC_METHOD_VOID(cSkinPainter, CreateTextures, Args(int textureSize), Args(textureSize));
 
@@ -18,6 +20,7 @@ namespace Skinner
 	auto_METHOD_VOID(cSkinnerTexturePainter, PaintRegion, Args(const Vector2& uv0, const Vector2& uv1, int index), Args(uv0, uv1, index));
 	auto_METHOD_VOID(cSkinnerTexturePainter, SetColorWriteEnable, 
 		Args(bool a1, bool a2, bool a3, bool a4), Args(a1, a2, a3, a4));
+	auto_METHOD_(cSkinnerTexturePainter, RenderWare::CompiledState*, LoadMaterial);
 
 	void cSkinnerTexturePainter::AddCustomParams(int index, const Math::ColorRGBA& param)
 	{

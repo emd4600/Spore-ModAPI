@@ -34,6 +34,9 @@ namespace Simulator
 		/// @returns
 		static float GetEvoPointsToNextBrainLevel(int currentLevel = -1);
 
+		/// Get the current ability mode (Attack or Social)
+		static AbilityMode GetAbilityMode();
+
 		/// Changes the current ability mode (Attack or Social), optionally playing a sound.
 		/// This does not change the user interface.
 		static void SetAbilityMode(AbilityMode mode, bool playSound);

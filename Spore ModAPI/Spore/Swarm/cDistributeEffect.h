@@ -56,6 +56,7 @@ namespace Swarm
 		/* 18Ch */	float field_18C;  // 1.0
 		/* 190h */	int field_190;
 		/* 194h */	int field_194;  // 1
+		/* 198h */	int field_198;  // not initialized
 		/* 19Ch */	eastl::vector<int> field_19C;
 	};
 	ASSERT_SIZE(cDistributeEffect, 0x1B0);

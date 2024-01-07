@@ -796,6 +796,7 @@ namespace Simulator
 
 	namespace Cell
 	{
+#ifndef SDK_TO_GHIDRA
 		/// Loads the data of a cell file reference, or returns the existing cached file.
 		/// @param reference
 		/// @param dst
@@ -805,5 +806,8 @@ namespace Simulator
 				Args(cCellDataReference_*, eastl::intrusive_ptr<cCellDataReference<T>>&),
 				Args(reference, dst));
 		}
+#else
+		void* GetData(cCellDataReference_* reference, eastl::intrusive_ptr<cCellDataReference_>& dst);
+#endif
 	}
 }

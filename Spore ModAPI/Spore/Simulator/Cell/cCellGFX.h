@@ -93,13 +93,13 @@ namespace Simulator
 			/// Returns the bounding box for the currently visible background.
 			static Math::BoundingBox& GetVisibleBackgroundBBox();
 #ifdef SDK_TO_GHIDRA
-			Math::BoundingBox sVisibleBackgroundBBox;
+			static Math::BoundingBox sVisibleBackgroundBBox;
 #endif
 
 			/// Returns the frustum cull for the currently visible main cell level.
 			static Graphics::cFrustumCull& GetFrustumCull();
 #ifdef SDK_TO_GHIDRA
-			Math::BoundingBox sFrustumCull;
+			static Math::BoundingBox sFrustumCull;
 #endif
 
 		public:

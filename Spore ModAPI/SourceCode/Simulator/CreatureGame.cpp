@@ -13,6 +13,8 @@ namespace Simulator
 
 	auto_STATIC_METHOD(cCreatureGameData, float, GetEvoPointsToNextBrainLevel, Args(int a), Args(a));
 
+	auto_STATIC_METHOD_(cCreatureGameData, cCreatureGameData::AbilityMode, GetAbilityMode);
+
 	auto_STATIC_METHOD_VOID(cCreatureGameData, SetAbilityMode, Args(AbilityMode a, bool b), Args(a, b));
 
 	auto_STATIC_METHOD_VOID_(cCreatureGameData, AfterGlideFinish);

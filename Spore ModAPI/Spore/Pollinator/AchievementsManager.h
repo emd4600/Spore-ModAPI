@@ -27,6 +27,8 @@ namespace Pollinator
 
 		static cAchievementsManager* Get();
 
+		bool Init();
+
 		cAchievementDefinition* GetAchievementDefinition(uint32_t achievementID);
 
 		/// Evaluates whether the current achievement progress exceeds the trigger,

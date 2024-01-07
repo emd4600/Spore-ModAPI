@@ -96,7 +96,7 @@ struct HMONITOR{int unused;};
 struct HDC{int unused;};
 
 union LARGE_INTEGER {
-    struct {
+    struct LargeIntegerTwoParts {
         DWORD LowPart;
         LONG HighPart;
     } u;
@@ -137,4 +137,29 @@ struct POINT
 {
     LONG  x;
     LONG  y;
+};
+
+struct tagRECT
+{
+    LONG    left;
+    LONG    top;
+    LONG    right;
+    LONG    bottom;
+};
+
+struct HKL
+{
+    int unused;
+};
+
+typedef WORD                ATOM;
+
+struct HCURSOR
+{
+    int unused;
+};
+
+struct HBRUSH
+{
+    int unused;
 };

@@ -1,6 +1,7 @@
 #pragma once
 
 #include <Spore\Graphics\IRenderTargetManager.h>
+#include <Spore\RenderWare\CompiledState.h>
 #include <Spore\App\cViewer.h>
 
 namespace Skinner
@@ -56,6 +57,8 @@ namespace Skinner
 		/// Returns the underlying raster of this texture.
 		/// @returns
 		RenderWare::Raster* GetRaster();
+
+		RenderWare::CompiledState* LoadMaterial();
 
 	public:
 		/* 00h */	App::cViewer* mpViewer;

@@ -573,9 +573,9 @@ class GhidraToXmlWriter:
             elif child.kind == cindex.CursorKind.CXX_BASE_SPECIFIER:
                 # The displayname has 'class ' at the beginning
                 basename = child.displayname.split(' ')[-1]
-                base_structure = self.structures.get(basename, None)
+                base_structure, _ = try_namespace_list(self.structures, basename, namespace_list)
                 if base_structure is None:
-                    raise SyntaxError(f'Unrecognized base class {basename}')
+                    raise SyntaxError(f'Unrecognized base class {basename} for structure {fullname}')
                 
                 struct_alignment = max(struct_alignment, base_structure.alignment)
                 if base_structure.has_vftable:

@@ -31,7 +31,11 @@ namespace App
 		: public DefaultRefCounted 
 	{
 	public:
-		inline RefCountedString(const char* str) : value(str) {}
+		inline RefCountedString(const char* str)
+#ifndef SDK_TO_GHIDRA
+			: value(str) 
+#endif
+		{}
 
 		eastl::string value;
 	};

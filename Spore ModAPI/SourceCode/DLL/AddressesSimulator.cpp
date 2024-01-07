@@ -1010,7 +1010,7 @@ namespace Addresses(Simulator)
 	DefineAddress(sSpacePlayerData, SelectAddress(0x16E1D0C, 0x16DDA8C));
 	DefineAddress(sScenarioEditHistory, SelectAddress(0x160A850, 0x16065D8));
 	DefineAddress(TimeAtStartOfFrame, SelectAddress(0xB63580, 0xB63980));
-	DefineAddress(cCreatureGameData, SelectAddress(0x16A25F0, 0x169E370));
+	DefineAddress(sCreatureGameData, SelectAddress(0x16A25F0, 0x169E370));
 }
 #endif
 

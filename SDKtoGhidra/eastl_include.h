@@ -160,6 +160,22 @@ namespace eastl
     };
     static_assert(sizeof(hash_map<int,int>) == 0x20, "sizeof(hash_map<int,int>) == 0x20");
 
+    template <typename T, typename _Allocator=allocator>
+    struct hash_set
+    {
+        static allocator _DEFAULT__Allocator;
+
+        int field_0;
+        void* mpBucketArray;
+        int mnBucketCount;
+        int mnElementCount;
+        float mfMaxLoadFactor;
+        float mfGrowthFactor;
+        int mnNextResize;
+        _Allocator mAllocator;
+    };
+    static_assert(sizeof(hash_set<int>) == 0x20, "sizeof(hash_set<int>) == 0x20");
+
     struct rbtree_node_base
     {
         rbtree_node_base* mpNodeLeft;

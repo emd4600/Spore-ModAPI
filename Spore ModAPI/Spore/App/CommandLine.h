@@ -34,6 +34,10 @@ namespace App
 	/// Only available after the start of cAppSystem::PreInit().
 	/// @returns
 	CommandLine* GetAppCommandLine();
+
+#ifdef SDK_TO_GHIDRA
+	CommandLine* sAppCommandLine;
+#endif
 }
 
 namespace Addresses(App)

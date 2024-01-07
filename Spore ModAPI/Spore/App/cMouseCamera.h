@@ -13,6 +13,16 @@ namespace App
 	public:
 		void CalculateViewTransform(Transform& transform);
 
+		virtual void Update(int deltaTime, cViewer* pViewer) override;
+		virtual bool OnKeyDown(int virtualKey, KeyModifiers modifiers) override;
+		virtual bool OnMouseDown(MouseButton mouseButton, float mouseX, float mouseY, MouseState mouseState) override;
+		virtual bool OnMouseUp(MouseButton mouseButton, float mouseX, float mouseY, MouseState mouseState) override;
+		virtual bool OnMouseMove(float mouseX, float mouseY, MouseState mouseState) override;
+		virtual bool OnMouseWheel(int wheelDelta, float mouseX, float mouseY, MouseState mouseState) override;
+		virtual void Initialize() override;
+		virtual void func54h(Vector3& dst) override;
+		virtual bool HandleMessage(uint32_t messageID, void* pMessage) override;
+
 	public:
 		/* 0Ch */	int mnRefCount;
 		/* 10h */	bool mCameraIsMayaStyle;

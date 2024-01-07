@@ -82,9 +82,15 @@ ASSERT_SIZE(ResourceKey, 0xC);
 #define group_id(id) ResourceKey(0, 0, id)
 
 inline ResourceKey::ResourceKey()
+#ifndef SDK_TO_GHIDRA
 	: instanceID(0)
 	, typeID(0)
 	, groupID(0)
+#else
+	: instanceID(0)
+	, typeID((TypeIDs::Names)0)
+	, groupID((GroupIDs::Names)0)
+#endif
 {
 }
 
