@@ -29,13 +29,20 @@ namespace Simulator
 	class cSpeciesProfile
 	{
 	public:
+
+		const ResourceKey& GetSpeciesKey();
+
+		void GetSpeciesName(eastl::string16& dst);
+
+	private:
 		char padding[0xA18];
 
+		//TODO
 		//PLACEHOLDER 6D4h eastl::vector<intrusive_ptr<cCreatureAbility>>
 
 		/* 504h */	ResourceKey mSpeciesKey;  //TODO this is the main key?
 		/* 510h */	ResourceKey field_510;
-		/* 51Ch */	eastl::string16 field_51C;
+		/* 51Ch */	eastl::string16 mName;
 		/* 52Ch */	eastl::string16 field_52C;
 		/* 53Ch */	ResourceKey mProfileSeq;
 		/* 548h */	float field_548;
@@ -137,4 +144,9 @@ namespace Simulator
 	/////////////////////////////////
 
 	//PLACEHOLDER static_assert(sizeof(cSpeciesProfile) == 0xA18, "sizeof(cSpeciesProfile) != A18h");
+
+	namespace Addresses(cSpeciesProfile) 
+	{
+		DeclareAddress(GetSpeciesName);  // 0x4DA1C0 0x4DA390
+	}
 }

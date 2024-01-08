@@ -39,6 +39,12 @@ namespace Simulator
 		return mpPlayerTribe.get();
 	}
 
+	cPlayer* cGameNounManager::GetPlayer() {
+		return mpPlayer.get();
+	}
+
+	auto_METHOD_VOID_(cGameNounManager, EnsurePlayer);
+
 	auto_METHOD_(cGameNounManager, cCivilization*, GetPlayerCivilization);
 
 	auto_METHOD(cGameNounManager, cHerd*, CreateHerd,

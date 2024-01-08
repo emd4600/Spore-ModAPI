@@ -26,6 +26,7 @@
 #include <Spore\Simulator\SubSystem\GameNounManager.h>
 #include <Spore\Simulator\SubSystem\GameViewManager.h>
 #include <Spore\Simulator\SubSystem\GameTimeManager.h>
+#include <Spore\Simulator\SubSystem\GamePersistenceManager.h>
 #include <Spore\Simulator\SubSystem\StarManager.h>
 #include <Spore\Simulator\SubSystem\ToolManager.h>
 #include <Spore\Simulator\SubSystem\SpacePlayerData.h>
