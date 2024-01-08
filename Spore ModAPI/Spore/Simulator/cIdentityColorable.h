@@ -20,6 +20,7 @@
 
 #include <Spore\MathUtils.h>
 #include <EASTL\map.h>
+#include <EASTL\string.h>
 
 #define cIdentityColorablePtr eastl::intrusive_ptr<Simulator::cIdentityColorable>
 
@@ -59,7 +60,8 @@ namespace Simulator
 	};
 	ASSERT_SIZE(cIdentityColorable, 0x30);
 
-	namespace Addresses(cIdentityColorable) {
-		DeclareAddress(AssignNames);  // 0xB6F040 TODO
+	namespace Addresses(cIdentityColorable) 
+	{
+		DeclareAddress(AssignNames);  // 0xB6F040 0xB6F480
 	}
 }

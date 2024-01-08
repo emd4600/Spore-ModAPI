@@ -145,7 +145,8 @@ namespace Simulator
 
 	//PLACEHOLDER static_assert(sizeof(cSpeciesProfile) == 0xA18, "sizeof(cSpeciesProfile) != A18h");
 
-	namespace Addresses(cSpeciesProfile) {
-		DeclareAddress(GetSpeciesName);  // 0x4DA1C0 TODO
+	namespace Addresses(cSpeciesProfile) 
+	{
+		DeclareAddress(GetSpeciesName);  // 0x4DA1C0 0x4DA390
 	}
 }

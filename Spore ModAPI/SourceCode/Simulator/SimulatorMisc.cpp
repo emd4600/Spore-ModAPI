@@ -4,6 +4,8 @@
 #include <Spore\Simulator\cBadgeManager.h>
 #include <Spore\Simulator\cObjectPool.h>
 #include <Spore\Simulator\cSimulatorUniverse.h>
+#include <Spore\Simulator\cSpeciesProfile.h>
+#include <Spore\Simulator\cIdentityColorable.h>
 #include <Spore\Simulator\SubSystem\GamePersistenceManager.h>
 #include <Spore\Simulator\cDefaultToolProjectile.h>
 #include <Spore\Simulator\cArtilleryProjectile.h>
@@ -76,6 +78,16 @@ namespace Simulator
 
 	auto_STATIC_METHOD_(cGamePersistenceManager, cGamePersistenceManager*, Get);
 
+
+	//// cSpeciesProfile ////
+
+	auto_METHOD_VOID(cSpeciesProfile, GetSpeciesName, Args(eastl::string16& dst), Args(dst));
+
+
+	//// cIdentityColorable ////
+
+	auto_METHOD_VOID(cIdentityColorable, AssignNames, Args(const eastl::string16& speciesName), Args(speciesName));
+
 	//// cDefaultToolProjectile ////
 
 	auto_STATIC_METHOD_VOID(Simulator, LaunchDefaultToolProjectile,
@@ -108,6 +120,5 @@ namespace Simulator
 
 	//// cSpaceDefenseMissile ////
 
-	auto_METHOD_VOID(cSpaceDefenseMissile, LaunchProjectile, Args(const Math::Vector3& target, cCombatant* arg), Args(target, arg));
-}
+	auto_METHOD_VOID(cSpaceDefenseMissile, LaunchProjectile, Args(const Math::Vector3& target, cCombatant* arg), Args(target, arg));}
 #endif

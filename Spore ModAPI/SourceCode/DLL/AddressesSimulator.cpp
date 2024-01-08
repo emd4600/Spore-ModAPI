@@ -70,6 +70,8 @@
 #include <Spore\Simulator\cStar.h>
 #include <Spore\Simulator\cMissionManager.h>
 #include <Spore\Simulator\cSimulatorUniverse.h>
+#include <Spore\Simulator\cIdentityColorable.h>
+#include <Spore\Simulator\cSpeciesProfile.h>
 #include <Spore\Simulator\Serialization.h>
 #include <Spore\Simulator\SpaceConstants.h>
 #include <Spore\Simulator\cArtilleryProjectile.h>
@@ -966,8 +968,19 @@ namespace Simulator
 		DefineAddress(GenerateNPCStore, SelectAddress(0x103F560, 0x103E8F0));
 	}
 
-	namespace Addresses(cGamePersistenceManager) {
+	namespace Addresses(cGamePersistenceManager) 
+	{
 		DefineAddress(Get, SelectAddress(0xB3D2A0, 0xB3D440));
+	}
+	
+	namespace Addresses(cIdentityColorable)
+	{
+		DefineAddress(AssignNames, SelectAddress(0xB6F040, 0xB6F480));
+	}
+
+	namespace Addresses(cSpeciesProfile)
+	{
+		DefineAddress(GetSpeciesName, SelectAddress(0x4DA1C0, 0x4DA390));
 	}
 
  	namespace Addresses(cCultureSet) 
@@ -1007,7 +1020,8 @@ namespace Simulator
 	namespace Addresses(cSpaceDefenseMissile)
 	{
 		DefineAddress(LaunchProjectile, SelectAddress(0xCB7FD0, 0xCB88B0));
-	}}
+	}
+}
 
 #ifdef SDK_TO_GHIDRA
 namespace Addresses(Simulator)
