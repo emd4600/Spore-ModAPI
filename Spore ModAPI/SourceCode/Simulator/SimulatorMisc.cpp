@@ -120,5 +120,6 @@ namespace Simulator
 
 	//// cSpaceDefenseMissile ////
 
-	auto_METHOD_VOID(cSpaceDefenseMissile, LaunchProjectile, Args(const Math::Vector3& target, cCombatant* arg), Args(target, arg));}
+	auto_METHOD_VOID(cSpaceDefenseMissile, LaunchProjectile, Args(const Math::Vector3& target, cCombatant* arg), Args(target, arg));
+}
 #endif

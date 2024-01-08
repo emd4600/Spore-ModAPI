@@ -16,6 +16,7 @@
 * You should have received a copy of the GNU General Public License
 * along with this program.  If not, see <http://www.gnu.org/licenses/>.
 ****************************************************************************/
+#pragma once
 
 #include <Spore\App\IMessageListener.h>
 #include <Spore\Simulator\StarID.h>
@@ -38,6 +39,9 @@ namespace Simulator
 		/* 08h */	virtual bool Read(ISerializerStream* stream) = 0;
 
 	public:
+#ifdef SDK_TO_GHIDRA
+		/* 04h */	int field_4;
+#endif
 		/* 08h */	uint32_t mEnemyEmpireID;
 		/* 10h */	cGonzagoTimer mTimeSinceWarStart;
 		/* 30h */	int mPlayerStartStarsCount;
@@ -55,6 +59,9 @@ namespace Simulator
 		/* 08h */	virtual ~PlayerPlanetData() = 0;
 
 	public:
+#ifdef SDK_TO_GHIDRA
+		/* 04h */	int field_4;
+#endif
 		/* 08h */	eastl::vector_map<ResourceKey, bool> mSpeciesIsScanned;
 		/* 20h */	eastl::vector_map<ResourceKey, bool> mBuildingIsScanned;
 		/* 38h */	eastl::vector_map<ResourceKey, bool> mVehicleIsScanned;

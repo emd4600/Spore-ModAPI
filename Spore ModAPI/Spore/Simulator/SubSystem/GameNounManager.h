@@ -168,7 +168,8 @@ namespace Simulator
 		DeclareAddress(GetPlayerCivilization);  // 0xB25E30 0xB25F90
 		DeclareAddress(CreateHerd);
 		DeclareAddress(CreateNest);  // 0xB20C70 0xB20DD0
-		DeclareAddress(EnsurePlayer);  // 0xB20DE0 0xB20F40	}
+		DeclareAddress(EnsurePlayer);  // 0xB20DE0 0xB20F40	
+	}
 
 #ifndef SDK_TO_GHIDRA
 	/// Gets all the game data objects that use the given game noun ID.
