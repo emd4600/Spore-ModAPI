@@ -127,6 +127,10 @@
               <span class="m-doc-wrap-bumper">auto <a href="#a9910fd1b3d5ca8f0ecdf2f36b7ef59d4" class="m-doc-self">Read</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">void</a>*) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">void</a> <span class="m-label m-flat m-warning">virtual</span></span>
             </dt>
             <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#ab3309d93d7d58c2131688d50ef25ca64" class="m-doc">AssignNames</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">const</a> eastl::string16&amp; speciesName) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">void</a></span>
+            </dt>
+            <dd>Generates the identity name according to the color, and the names for all its entities.</dd>
           </dl>
         </section>
         <section id="pub-attribs">
@@ -136,15 +140,35 @@
               <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">uint32_<wbr />t</a> <a href="#a80e2145d6adede6c2d4053abc7402eb5" class="m-doc-self">mIDColorID</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="aa99d041c2fea594ddfffc1a28ef4138c">
-              eastl::map&lt;<a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a>, <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a>&gt; <a href="#aa99d041c2fea594ddfffc1a28ef4138c" class="m-doc-self">field_8</a>
+            <dt id="ac7ae431c19f7fdf55922ee71eef0b2f0">
+              eastl::map&lt;<a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a>, eastl::string16&gt; <a href="#ac7ae431c19f7fdf55922ee71eef0b2f0" class="m-doc-self">mEntityNames</a>
             </dt>
-            <dd><span></span></dd>
+            <dd>Names for different entities such as buildings, vehicles, etc. Check <code>Identity.locale</code></dd>
             <dt id="a131593f222daf56fd848d51964e8d13e">
               <a href="struct_math_1_1_color_r_g_b.html" class="m-doc">Math::<wbr />ColorRGB</a> <a href="#a131593f222daf56fd848d51964e8d13e" class="m-doc-self">mCachedColor</a>
             </dt>
             <dd><span></span></dd>
           </dl>
+        </section>
+        <section>
+          <h2>Function documentation</h2>
+          <section class="m-doc-details" id="ab3309d93d7d58c2131688d50ef25ca64"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">void</a> Simulator::<wbr />cIdentityColorable::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ab3309d93d7d58c2131688d50ef25ca64" class="m-doc-self">AssignNames</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">const</a> eastl::string16&amp; speciesName)</span></span>
+            </h3>
+            <p>Generates the identity name according to the color, and the names for all its entities.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">speciesName</td>
+                  <td></td>
+                </tr>
+              </tbody>
+            </table>
+          </div></section>
         </section>
       </div>
     </div>
