@@ -67,6 +67,39 @@ namespace App
 		, public RefCountTemplate
 	{
 	public:
+		static cAppSystem* Create();
+
+		virtual void SetUserDirNames(const char16_t* mySporeCreationsFolderName, const char16_t* appDataSporeFolderName) override;
+		virtual bool PreInit(CommandLine* commandLine, const char16_t* ddfListPath) override;
+		virtual bool Init(CommandLine* commandLine) override;
+		virtual bool InitPlugins(CommandLine* commandLine) override;
+		virtual bool Configure(CommandLine* commandLine) override;
+		virtual bool InitGraphics(CommandLine* commandLine) override;
+		virtual bool PreShutdown() override;
+		virtual bool Shutdown() override;
+		virtual int Pause() override;
+		virtual int Unpause() override;
+		virtual bool IsPaused() override;
+		virtual void SetTimeScale(float scale) override;
+		virtual void SetFixedStepping(int) override;
+		virtual void BoostBackgroundJobs(bool) override;
+		virtual bool IsBoostEnabled() override;
+		virtual int GetPerfWarnings() override;
+		virtual bool Demo() override;
+		virtual void OpenURL(const char16_t*) override;
+		virtual void func60h() override;  // DeactivateApp() ?
+		virtual void func64h() override;  // ToggleFullscreen() ?
+		virtual void func68h() override;  // ToggleDisplay() ?
+		virtual void HookWindows() override;
+		virtual void UnhookWindows() override;
+		virtual void SetEffectCollectionIDs(uint32_t* instanceIDs, uint32_t* groupIDs) override;
+		virtual void Update(int deltaTimeMS) override;
+		virtual void func7Ch() override;
+		virtual void PostUpdate() override;
+		virtual void func84h(int) override;
+		virtual int func88h() override;
+
+	public:
 		/* 10h */	Canvas* mpCanvas;
 		// 1Ch is cResourceManager, 24h is cLocaleManager, 28h is cResourceKeyGenerator, 3Ch is IConfigManager, 40h is cJobManager, CCh is PropertyListPtr mpPreferencesPropList
 		/* 14h */	char padding_14[0x124];

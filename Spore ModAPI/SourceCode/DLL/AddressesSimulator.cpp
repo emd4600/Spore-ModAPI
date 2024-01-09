@@ -70,6 +70,8 @@
 #include <Spore\Simulator\cStar.h>
 #include <Spore\Simulator\cMissionManager.h>
 #include <Spore\Simulator\cSimulatorUniverse.h>
+#include <Spore\Simulator\cIdentityColorable.h>
+#include <Spore\Simulator\cSpeciesProfile.h>
 #include <Spore\Simulator\Serialization.h>
 #include <Spore\Simulator\SpaceConstants.h>
 #include <Spore\Simulator\cArtilleryProjectile.h>
@@ -95,6 +97,7 @@
 #include <Spore\Simulator\SubSystem\UIEventLog.h>
 #include <Spore\Simulator\SubSystem\AnimalSpeciesManager.h>
 #include <Spore\Simulator\SubSystem\PlantSpeciesManager.h>
+#include <Spore\Simulator\SubSystem\GamePersistenceManager.h>
 #include <Spore\Simulator\NounClassFactories.h>
 
 namespace Addresses(Simulator)
@@ -499,6 +502,7 @@ namespace Simulator
 		DefineAddress(GetPlayerCivilization, SelectAddress(0xB25E30, 0xB25F90));
 		DefineAddress(CreateHerd, SelectAddress(0xB237C0, 0xB23920));
 		DefineAddress(CreateNest, SelectAddress(0xB20C70, 0xB20DD0));
+		DefineAddress(EnsurePlayer, SelectAddress(0xB20DE0, 0xB20F40));
 	}
 
 	namespace Addresses(cGameViewManager)
@@ -964,7 +968,22 @@ namespace Simulator
 		DefineAddress(GenerateNPCStore, SelectAddress(0x103F560, 0x103E8F0));
 	}
 
-	namespace Addresses(cCultureSet) 
+	namespace Addresses(cGamePersistenceManager) 
+	{
+		DefineAddress(Get, SelectAddress(0xB3D2A0, 0xB3D440));
+	}
+	
+	namespace Addresses(cIdentityColorable)
+	{
+		DefineAddress(AssignNames, SelectAddress(0xB6F040, 0xB6F480));
+	}
+
+	namespace Addresses(cSpeciesProfile)
+	{
+		DefineAddress(GetSpeciesName, SelectAddress(0x4DA1C0, 0x4DA390));
+	}
+
+ 	namespace Addresses(cCultureSet) 
 	{
 		DefineAddress(PickCreation, SelectAddress(0xBF8DF0, 0xBF9840));
 	}
@@ -1010,7 +1029,7 @@ namespace Addresses(Simulator)
 	DefineAddress(sSpacePlayerData, SelectAddress(0x16E1D0C, 0x16DDA8C));
 	DefineAddress(sScenarioEditHistory, SelectAddress(0x160A850, 0x16065D8));
 	DefineAddress(TimeAtStartOfFrame, SelectAddress(0xB63580, 0xB63980));
-	DefineAddress(cCreatureGameData, SelectAddress(0x16A25F0, 0x169E370));
+	DefineAddress(sCreatureGameData, SelectAddress(0x16A25F0, 0x169E370));
 }
 #endif
 

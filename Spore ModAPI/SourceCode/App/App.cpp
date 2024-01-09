@@ -8,6 +8,7 @@
 #include <Spore\App\cArithmeticaResource.h>
 #include <Spore\App\ConfigManager.h>
 #include <Spore\App\IStateManager.h>
+#include <Spore\App\cAppSystem.h>
 #endif
 #include <Spore\App\CommandLine.h>
 
@@ -85,6 +86,9 @@ namespace App
 	//// StateManager ////
 
 	auto_STATIC_METHOD_(IStateManager, IStateManager*, Get);
+
+
+	auto_STATIC_METHOD_(cAppSystem, cAppSystem*, Create);
 
 #endif
 

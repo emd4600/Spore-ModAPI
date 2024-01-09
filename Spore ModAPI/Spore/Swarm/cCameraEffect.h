@@ -11,7 +11,7 @@ namespace Swarm
 		: public cComponentBase
 	{
 	public:
-		/* 0Ch */	cCameraDescription mpDescription;
+		/* 0Ch */	cCameraDescription* mpDescription;
 		/* 10h */	ICameraManager* mpCameraMgr;
 		/* 14h */	bool mIsRunning;
 		/* 18h */	float mInvLifeTime;

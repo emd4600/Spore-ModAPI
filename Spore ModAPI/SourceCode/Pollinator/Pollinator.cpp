@@ -22,6 +22,8 @@ namespace Pollinator
 
 	auto_STATIC_METHOD_(cAchievementsManager, cAchievementsManager*, Get);
 
+	auto_METHOD_(cAchievementsManager, bool, Init);
+
 	auto_METHOD(cAchievementsManager, cAchievementDefinition*, GetAchievementDefinition, Args(uint32_t aID), Args(aID));
 
 	auto_METHOD(cAchievementsManager, bool, EvaluateTriggerOp, Args(uint32_t aID), Args(aID));

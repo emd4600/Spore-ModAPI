@@ -390,7 +390,7 @@ namespace Simulator
 	/// @param method A void method with no parameters, that will be executed every frame.
 	/// @param scheduleTime The time that has to pass, in seconds, since the task is scheduled for it to be executed.
 	template <class T>
-	inline ScheduledTaskListenerPtr ScheduleTask(T* object, App::VoidMethod_T<T> method, float scheduleTime) {
+	inline SimScheduledTaskListenerPtr ScheduleTask(T* object, App::VoidMethod_T<T> method, float scheduleTime) {
 		return ScheduleTask([object, method]() {
 			(object->*method)();
 		}, scheduleTime);
@@ -435,13 +435,13 @@ namespace Simulator
 	/// @param scheduleTime The time that has to pass, in seconds, since the task is scheduled for it to be executed.
 	/// @param repeatRate How many seconds have to pass between every execution of the task.
 	template <class T>
-	inline ScheduledTaskListenerPtr ScheduleRepeatedTask(T* object, App::VoidMethod_T<T> method, float scheduleTime, float repeatRate) {
+	inline SimScheduledTaskListenerPtr ScheduleRepeatedTask(T* object, App::VoidMethod_T<T> method, float scheduleTime, float repeatRate) {
 		return ScheduleRepeatedTask([object, method]() {
 			(object->*method)();
 		}, scheduleTime, repeatRate);
 	}
 
-	inline bool RemoveScheduledTask(ScheduledTaskListenerPtr& taskListener) {
+	inline bool RemoveScheduledTask(SimScheduledTaskListenerPtr& taskListener) {
 		return MessageManager.RemoveListener(taskListener.get(), App::kMsgAppUpdate);
 	}
 }

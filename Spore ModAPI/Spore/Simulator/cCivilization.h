@@ -15,10 +15,10 @@
 namespace Simulator
 {
 	class cCivilization
-		: public cGameData
-		, public Editors::INameableEntity
-		, public App::IMessageListener
-		, public cIdentityColorable
+		/* 00h */	: public cGameData
+		/* 34h */	, public Editors::INameableEntity
+		/* 38h */	, public App::IMessageListener
+		/* 3Ch */	, public cIdentityColorable
 	{
 	public:
 		static const uint32_t TYPE = 0x901F1362;

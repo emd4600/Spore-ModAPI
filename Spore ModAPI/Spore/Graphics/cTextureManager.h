@@ -29,7 +29,7 @@
 namespace Graphics
 {
 	class TextureContainer 
-		: public intrusive_list_node
+		: public eastl::intrusive_list_node
 		, public Texture
 	{
 	};

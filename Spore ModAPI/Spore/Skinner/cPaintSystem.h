@@ -99,5 +99,9 @@ namespace Skinner
 
 namespace Addresses(Skinner)
 {
+#ifdef SDK_TO_GHIDRA
+	DeclareAddress(sCurrentColors);  // 0x15E3370 0x15DF0F0
+#else
 	DeclareAddress(GetCurrentColors);  // 0x15E3370 0x15DF0F0
+#endif
 }

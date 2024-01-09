@@ -4,6 +4,9 @@
 #include <Spore\Simulator\cBadgeManager.h>
 #include <Spore\Simulator\cObjectPool.h>
 #include <Spore\Simulator\cSimulatorUniverse.h>
+#include <Spore\Simulator\cSpeciesProfile.h>
+#include <Spore\Simulator\cIdentityColorable.h>
+#include <Spore\Simulator\SubSystem\GamePersistenceManager.h>
 #include <Spore\Simulator\cDefaultToolProjectile.h>
 #include <Spore\Simulator\cArtilleryProjectile.h>
 #include <Spore\Simulator\cCulturalProjectile.h>
@@ -71,6 +74,19 @@ namespace Simulator
 		return *(cSimulatorUniverse**)GetAddress(cSimulatorUniverse, _ptr);
 	}
 
+	//// GamePersistenceManager ////
+
+	auto_STATIC_METHOD_(cGamePersistenceManager, cGamePersistenceManager*, Get);
+
+
+	//// cSpeciesProfile ////
+
+	auto_METHOD_VOID(cSpeciesProfile, GetSpeciesName, Args(eastl::string16& dst), Args(dst));
+
+
+	//// cIdentityColorable ////
+
+	auto_METHOD_VOID(cIdentityColorable, AssignNames, Args(const eastl::string16& speciesName), Args(speciesName));
 
 	//// cDefaultToolProjectile ////
 
