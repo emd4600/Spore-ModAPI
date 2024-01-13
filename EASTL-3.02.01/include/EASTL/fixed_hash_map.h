@@ -807,6 +807,23 @@ namespace eastl
 	}
 
 
+	/// Spore equivalent of fixed_list; only reading is supported, adding elements might crash.
+	template <typename Key, typename T, size_t nodeCount, size_t bucketCount = nodeCount + 1,
+			  typename Hash = eastl::hash<Key>, typename Predicate = eastl::equal_to<Key>>
+	class sp_fixed_hash_map : public hash_map<Key, T, Hash, Predicate>
+	{
+	public:
+		typedef hash_map<Key, T, Hash, Predicate>    base_type;
+		typedef typename base_type::node_type        node_type;
+		typedef typename base_type::size_type        size_type;
+
+	public:
+		/* 20h */	int mPoolAllocator[5];  // actually part of mAllocator
+		/* 34h */	node_type** mBucketBuffer[bucketCount + 1];
+		char mPoolBuffer[(nodeCount + 1) * sizeof(node_type) + (bucketCount + 1) * 4];
+	};
+
+
 
 } // namespace eastl
 

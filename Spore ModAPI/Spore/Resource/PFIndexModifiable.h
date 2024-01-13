@@ -38,7 +38,7 @@ namespace Resource
 	{
 	public:
 		
-		typedef eastl::hash_map<ResourceKey, RecordInfo, ICoreAllocatorAdapter> ItemsMap;
+		typedef eastl::hash_map<ResourceKey, RecordInfo, eastl::hash<ResourceKey>, eastl::equal_to<ResourceKey>, ICoreAllocatorAdapter> ItemsMap;
 
 		PFIndexModifiable(ICoreAllocator* pAllocator);
 		virtual ~PFIndexModifiable() {};
