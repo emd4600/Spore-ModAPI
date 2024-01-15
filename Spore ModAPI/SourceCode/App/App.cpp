@@ -34,8 +34,6 @@ namespace App
 
 	auto_STATIC_METHOD_(cIDGenerator, cIDGenerator*, Get);
 
-	auto_STATIC_METHOD_(cCreatureModeStrategy, cCreatureModeStrategy*, Get);
-
 	auto_STATIC_METHOD_(IAppSystem, IAppSystem*, Get);
 
 	auto_STATIC_METHOD(cSporeApp, int, EAMain, Args(CommandLine* commandLine), Args(commandLine));
@@ -89,6 +87,13 @@ namespace App
 
 
 	auto_STATIC_METHOD_(cAppSystem, cAppSystem*, Create);
+
+
+	//// cCreatureModeStrategy ////
+
+	auto_STATIC_METHOD_(cCreatureModeStrategy, cCreatureModeStrategy*, Get);
+
+	auto_METHOD_VOID(cCreatureModeStrategy, ExecuteAction, Args(uint32_t actionID, void* actionData), Args(actionID, actionData));
 
 #endif
 

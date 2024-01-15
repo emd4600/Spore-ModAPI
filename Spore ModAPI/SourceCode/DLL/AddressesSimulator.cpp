@@ -78,7 +78,9 @@
 #include <Spore\Simulator\cCulturalProjectile.h>
 #include <Spore\Simulator\cFlakProjectile.h>
 #include <Spore\Simulator\cResourceProjectile.h>
+#include <Spore\Simulator\cCollectableItems.h>
 #include <Spore\Simulator\cSpaceDefenseMissile.h>
+#include <Spore\Simulator\cDefaultToolProjectile.h>
 #include <Spore\Simulator\SubSystem\cRelationshipManager.h>
 #include <Spore\Simulator\SubSystem\GameBehaviorManager.h>
 #include <Spore\Simulator\SubSystem\GameInputManager.h>
@@ -1020,6 +1022,13 @@ namespace Simulator
 	namespace Addresses(cSpaceDefenseMissile)
 	{
 		DefineAddress(LaunchProjectile, SelectAddress(0xCB7FD0, 0xCB88B0));
+	}
+
+	namespace Addresses(cCollectableItems)
+	{
+		DefineAddress(LoadConfig, SelectAddress(0x599100, 0x599440));
+		DefineAddress(AddUnlockableItem, SelectAddress(0x598A70, 0x598DB0));
+		DefineAddress(AddUnlockableItemFromProp, SelectAddress(0x598B50, 0x598E90));
 	}
 }
 

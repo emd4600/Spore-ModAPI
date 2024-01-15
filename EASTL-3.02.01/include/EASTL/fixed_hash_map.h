@@ -807,7 +807,7 @@ namespace eastl
 	}
 
 
-	/// Spore equivalent of fixed_list; only reading is supported, adding elements might crash.
+	/// Spore equivalent of fixed_hash_map; only reading is supported, adding elements might crash.
 	template <typename Key, typename T, size_t nodeCount, size_t bucketCount = nodeCount + 1,
 			  typename Hash = eastl::hash<Key>, typename Predicate = eastl::equal_to<Key>>
 	class sp_fixed_hash_map : public hash_map<Key, T, Hash, Predicate>

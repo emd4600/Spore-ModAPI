@@ -13,6 +13,7 @@
 #include <Spore\Simulator\cFlakProjectile.h>
 #include <Spore\Simulator\cResourceProjectile.h>
 #include <Spore\Simulator\cSpaceDefenseMissile.h>
+#include <Spore\Simulator\cCollectableItems.h>
 
 namespace Simulator
 {
@@ -121,5 +122,20 @@ namespace Simulator
 	//// cSpaceDefenseMissile ////
 
 	auto_METHOD_VOID(cSpaceDefenseMissile, LaunchProjectile, Args(const Math::Vector3& target, cCombatant* arg), Args(target, arg));
+
+
+	//// cCollectableItems ////
+
+	auto_METHOD_VOID(cCollectableItems, LoadConfig, 
+		Args(uint32_t configGroupID, uint32_t configInstanceID, uint32_t itemsGroupID),
+		Args(configGroupID, configInstanceID, itemsGroupID));
+
+	auto_METHOD_VOID(cCollectableItems, AddUnlockableItem,
+		Args(uint32_t instanceID, uint32_t groupID, int itemUnlockLevel, uint32_t categoryID, int row, int column, int pageIndex, float itemUnlockFindPercentage, uint32_t itemUnlockEffect),
+		Args(instanceID, groupID, itemUnlockLevel, categoryID, row, column, pageIndex, itemUnlockFindPercentage, itemUnlockEffect));
+
+	auto_METHOD(cCollectableItems, bool, AddUnlockableItemFromProp,
+		Args(struct ResourceKey key, uint32_t categoryID, int row, int column, int pageIndex),
+		Args(key, categoryID, row, column, pageIndex));
 }
 #endif

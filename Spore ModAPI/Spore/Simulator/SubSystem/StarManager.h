@@ -24,6 +24,7 @@
 #include <Spore\Simulator\SubSystem\cRelationshipManager.h>
 #include <Spore\Simulator\cStarRecord.h>
 #include <Spore\Simulator\cPlanet.h>
+#include <Spore\Simulator\cCollectableItems.h>
 #include <Spore\Resource\Database.h>
 #include <Spore\Swarm\Components\DistributeEffect.h>
 #include <Spore\App\IMessageListener.h>
@@ -313,7 +314,7 @@ namespace Simulator
 		//TODO
 		/* 208h */	eastl::vector<eastl::string> mTransactionLog;
 		/* 21Ch */	bool field_21C;  // true
-		/* 220h */	ObjectPtr mpGlobalCLGItems;  //TODO cCollectableItems
+		/* 220h */	cCollectableItemsPtr mpGlobalCLGItems;
 		/// `planetRecords.pkt`
 		/* 224h */	DatabasePtr mpPlanetRecordsTempDatabase;
 		/// `planetRecords.pkp`
