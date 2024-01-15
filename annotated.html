@@ -154,6 +154,7 @@
               <li>class <a href="class_app_1_1_i_cheat_manager.html" class="m-doc">ICheatManager</a> <span class="m-doc">This manager is used to control the available cheats in the game, and the cheat console.</span></li>
               <li>class <a href="class_app_1_1_i_class_manager.html" class="m-doc">IClassManager</a> <span class="m-doc"><span></span></span></li>
               <li>class <a href="class_app_1_1_i_config_manager.html" class="m-doc">IConfigManager</a> <span class="m-doc"><span></span></span></li>
+              <li>class <a href="class_app_1_1_i_creature_mode_action_handler.html" class="m-doc">ICreatureModeActionHandler</a> <span class="m-doc"><span></span></span></li>
               <li>class <a href="class_app_1_1_i_game_mode.html" class="m-doc">IGameMode</a> <span class="m-doc">An interface that represents a mode in the game, that can receive mouse/keyboard input and update every frame.</span></li>
               <li>class <a href="class_app_1_1_i_game_mode_manager.html" class="m-doc">IGameModeManager</a> <span class="m-doc">A manager that takes care of game modes; check <a href="class_app_1_1_i_game_mode.html" class="m-doc">IGameMode</a> for more information.</span></li>
               <li>class <a href="class_app_1_1_i_game_mode_object.html" class="m-doc">IGameModeObject</a> <span class="m-doc">Same as <a href="class_app_1_1_i_game_mode.html" class="m-doc">App::<wbr />IGameMode</a>, but this one includes a Cast method similar to the one in the <a href="class_object.html" class="m-doc">Object</a> class.</span></li>
@@ -224,6 +225,7 @@
               <li>namespace <a href="namespaceeastl_1_1_internal.html" class="m-doc">Internal</a> <span class="m-doc"><span></span></span></li>
               <li>struct <a href="structeastl_1_1hash_3_01_resource_i_d_01_4.html" class="m-doc">hash&lt;ResourceID&gt;</a> <span class="m-doc">A necessary structure to be able to use <a href="class_resource_i_d.html" class="m-doc">ResourceID</a> on containers such as hash_map.</span></li>
               <li>struct <a href="structeastl_1_1hash_3_01_resource_key_01_4.html" class="m-doc">hash&lt;ResourceKey&gt;</a> <span class="m-doc">A necessary structure to be able to use <a href="struct_resource_key.html" class="m-doc">ResourceKey</a> on containers such as hash_map.</span></li>
+              <li>struct <a href="structeastl_1_1hash_3_01_simulator_1_1c_collectable_item_i_d_01_4.html" class="m-doc">hash&lt;Simulator::cCollectableItemID&gt;</a> <span class="m-doc">A necessary structure to be able to use cCollectableItemID on containers such as hash_map.</span></li>
             </ul>
           </li>
           <li class="m-doc-collapsible">
@@ -502,6 +504,7 @@
               </li>
               <li>class <a href="class_palettes_1_1_palette_info.html" class="m-doc">PaletteInfo</a> <span class="m-doc"><span></span></span></li>
               <li>class <a href="class_palettes_1_1_palette_item.html" class="m-doc">PaletteItem</a> <span class="m-doc">Represents an item inside a palette page.</span></li>
+              <li>class <a href="class_palettes_1_1_palette_iterator.html" class="m-doc">PaletteIterator</a> <span class="m-doc">Used to iterate through the items of an editors palette.</span></li>
               <li>class <a href="class_palettes_1_1_palette_main.html" class="m-doc">PaletteMain</a> <span class="m-doc">This object represents the palette of an editor.</span></li>
               <li>class <a href="class_palettes_1_1_palette_page.html" class="m-doc">PalettePage</a> <span class="m-doc">A page in an <a href="namespace_palettes.html" class="m-doc">Palettes</a> palette that contains multiple items (<a href="class_palettes_1_1_palette_item.html" class="m-doc">Palettes::<wbr />PaletteItem</a>).</span></li>
               <li>class <a href="class_palettes_1_1_palette_page_u_i.html" class="m-doc">PalettePageUI</a> <span class="m-doc">This class holds all information related with the user interface of a palette page.</span></li>
@@ -783,6 +786,13 @@
               <li>class <a href="class_simulator_1_1c_city_walls.html" class="m-doc">cCityWalls</a> <span class="m-doc"><span></span></span></li>
               <li>struct <a href="struct_simulator_1_1c_civ_data.html" class="m-doc">cCivData</a> <span class="m-doc"><span></span></span></li>
               <li>class <a href="class_simulator_1_1c_civilization.html" class="m-doc">cCivilization</a> <span class="m-doc"><span></span></span></li>
+              <li>struct <a href="struct_simulator_1_1c_collectable_item_i_d.html" class="m-doc">cCollectableItemID</a> <span class="m-doc"><span></span></span></li>
+              <li class="m-doc-collapsible collapsed">
+                <a href="#" onclick="return toggle(this)">class</a> <a href="class_simulator_1_1c_collectable_items.html" class="m-doc">cCollectableItems</a> <span class="m-doc"><span></span></span>
+                <ul class="m-doc">
+                  <li>struct <a href="struct_simulator_1_1c_collectable_items_1_1_unlockable_item.html" class="m-doc">UnlockableItem</a> <span class="m-doc"><span></span></span></li>
+                </ul>
+              </li>
               <li>class <a href="class_simulator_1_1c_combatant.html" class="m-doc">cCombatant</a> <span class="m-doc">Any object that has hit points and can combat other units.</span></li>
               <li>class <a href="class_simulator_1_1c_combat_simulator.html" class="m-doc">cCombatSimulator</a> <span class="m-doc"><span></span></span></li>
               <li>class <a href="class_simulator_1_1c_comm_event.html" class="m-doc">cCommEvent</a> <span class="m-doc"><span></span></span></li>
@@ -918,7 +928,6 @@
               <li>class <a href="class_simulator_1_1c_player_inventory.html" class="m-doc">cPlayerInventory</a> <span class="m-doc"><span></span></span></li>
               <li>class <a href="class_simulator_1_1c_projectile.html" class="m-doc">cProjectile</a> <span class="m-doc"><span></span></span></li>
               <li>class <a href="class_simulator_1_1c_rally_call_tool_strategy.html" class="m-doc">cRallyCallToolStrategy</a> <span class="m-doc"><span></span></span></li>
-              <li>class <a href="class_simulator_1_1_creature_effect_pool.html" class="m-doc">CreatureEffectPool</a> <span class="m-doc"><span></span></span></li>
               <li>class <a href="class_simulator_1_1c_relationship_data.html" class="m-doc">cRelationshipData</a> <span class="m-doc"><span></span></span></li>
               <li>class <a href="class_simulator_1_1c_relationship_manager.html" class="m-doc">cRelationshipManager</a> <span class="m-doc">Handles relationships between political entities.</span></li>
               <li>class <a href="class_simulator_1_1c_repair_a_o_e_tool_strategy.html" class="m-doc">cRepairAOEToolStrategy</a> <span class="m-doc"><span></span></span></li>
@@ -949,7 +958,12 @@
               <li>class <a href="class_simulator_1_1c_scenario_terraform_economy.html" class="m-doc">cScenarioTerraformEconomy</a> <span class="m-doc"><span></span></span></li>
               <li>class <a href="class_simulator_1_1c_scenario_terraform_history_entry.html" class="m-doc">cScenarioTerraformHistoryEntry</a> <span class="m-doc">Undo/redo history entry for terraform (or planet color, etc) actions.</span></li>
               <li>class <a href="class_simulator_1_1c_scenario_terraform_mode.html" class="m-doc">cScenarioTerraformMode</a> <span class="m-doc"><span></span></span></li>
-              <li>class <a href="class_simulator_1_1c_sim_planet_high_l_o_d.html" class="m-doc">cSimPlanetHighLOD</a> <span class="m-doc"><span></span></span></li>
+              <li class="m-doc-collapsible collapsed">
+                <a href="#" onclick="return toggle(this)">class</a> <a href="class_simulator_1_1c_sim_planet_high_l_o_d.html" class="m-doc">cSimPlanetHighLOD</a> <span class="m-doc"><span></span></span>
+                <ul class="m-doc">
+                  <li>struct <a href="struct_simulator_1_1c_sim_planet_high_l_o_d_1_1_unk_class.html" class="m-doc">UnkClass</a> <span class="m-doc"><span></span></span></li>
+                </ul>
+              </li>
               <li>class <a href="class_simulator_1_1c_sim_ticker.html" class="m-doc">cSimTicker</a> <span class="m-doc"><span></span></span></li>
               <li>class <a href="class_simulator_1_1c_simulator_player_u_f_o.html" class="m-doc">cSimulatorPlayerUFO</a> <span class="m-doc"><span></span></span></li>
               <li>class <a href="class_simulator_1_1c_simulator_space_game.html" class="m-doc">cSimulatorSpaceGame</a> <span class="m-doc"><span></span></span></li>

@@ -203,6 +203,14 @@
             </dt>
             <dd><span></span></dd>
             <dt>
+              struct <a href="struct_simulator_1_1c_collectable_item_i_d.html" class="m-doc">cCollectableItemID</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              class <a href="class_simulator_1_1c_collectable_items.html" class="m-doc">cCollectableItems</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
               class <a href="class_simulator_1_1c_combatant.html" class="m-doc">cCombatant</a>
             </dt>
             <dd>Any object that has hit points and can combat other units.</dd>
@@ -617,10 +625,6 @@
             <dd><span></span></dd>
             <dt>
               class <a href="class_simulator_1_1c_rally_call_tool_strategy.html" class="m-doc">cRallyCallToolStrategy</a>
-            </dt>
-            <dd><span></span></dd>
-            <dt>
-              class <a href="class_simulator_1_1_creature_effect_pool.html" class="m-doc">CreatureEffectPool</a>
             </dt>
             <dd><span></span></dd>
             <dt>
@@ -1109,6 +1113,10 @@
         <section id="enum-members">
           <h2><a href="#enum-members">Enums</a></h2>
           <dl class="m-doc">
+            <dt>
+              <span class="m-doc-wrap-bumper">enum class <a href="#a4d6faccfa952914f8a78789ae8fabb05" class="m-doc">CollectableItemStatusFlags</a>: <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">uint8_<wbr />t</a> { </span><span class="m-doc-wrap"><a href="#a4d6faccfa952914f8a78789ae8fabb05ac76fd517e45cc95709f4ac106efa4a94" class="m-doc">Unlocked</a> = 1 }</span>
+            </dt>
+            <dd><span></span></dd>
             <dt>
               <span class="m-doc-wrap-bumper">enum class <a href="#a42f6b61beb2e50c2418f7f72377a8077" class="m-doc">DamageType</a> { </span><span class="m-doc-wrap"><a href="#a42f6b61beb2e50c2418f7f72377a8077a696292917787c80d98b42f08245ab5df" class="m-doc">Bribe</a> = 4,
               <a href="#a42f6b61beb2e50c2418f7f72377a8077a80dd330a5c08653498c49a219a124543" class="m-doc">Healing</a> = 10,
@@ -1742,6 +1750,10 @@
           <h2><a href="#typedef-members">Typedefs</a></h2>
           <dl class="m-doc">
             <dt>
+              using <a href="#aaf416461adc448563b86aaa54d653797" class="m-doc">CreatureEffectPool</a> = eastl::sp_fixed_hash_map&lt;<a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">uint32_<wbr />t</a>, <a href="_i_visual_effect_8h.html#af513d4705ba3d0bdec5c20e45aee71fd" class="m-doc">IVisualEffectPtr</a>, 4&gt;
+            </dt>
+            <dd><span></span></dd>
+            <dt>
               using <a href="#ab12c1aef8e3dbcd4556eb52a3460aac6" class="m-doc">cObjectPoolIndex</a> = <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a>
             </dt>
             <dd>Identifies objects within a <a href="class_simulator_1_1c_object_pool.html" class="m-doc">cObjectPool</a>.</dd>
@@ -1983,6 +1995,15 @@
             </dt>
             <dd><span></span></dd>
             <dt>
+              <span class="m-doc-wrap-bumper"><a href="#ab21355361baf157261a47d749259cd66" class="m-doc">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_collectable_items.html" class="m-doc">cCollectableItems</a>,
+              0x6DAC)</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a97991906f01eb0f14e81a40cce846438" class="m-doc">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_collectable_items.html" class="m-doc">cCollectableItems</a>) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">namespace</a></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
               <span class="m-doc-wrap-bumper"><a href="#a282b673376f5f9c78ebc436ac5f02d4d" class="m-doc">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_combatant.html" class="m-doc">cCombatant</a>,
               0xC8)</span>
             </dt>
@@ -2050,6 +2071,11 @@
             <dd><span></span></dd>
             <dt>
               <span class="m-doc-wrap-bumper">auto <a href="#a39798460a2e68bc7040c3223bdd4e90e" class="m-doc">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_creature_animal.html" class="m-doc">cCreatureAnimal</a>) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">namespace</a></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper"><a href="#ae458dba4cdba5d14c8c5009bdc31814f" class="m-doc">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="namespace_simulator.html#aaf416461adc448563b86aaa54d653797" class="m-doc">CreatureEffectPool</a>,
+              0xA0)</span>
             </dt>
             <dd><span></span></dd>
             <dt>
@@ -3303,6 +3329,13 @@
         </section>
         <section>
           <h2>Enum documentation</h2>
+          <section class="m-doc-details" id="a4d6faccfa952914f8a78789ae8fabb05"><div>
+            <h3>
+              enum class Simulator::<wbr /><a href="#a4d6faccfa952914f8a78789ae8fabb05" class="m-doc-self">CollectableItemStatusFlags</a>: <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">uint8_<wbr />t</a>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="c_collectable_items_8h.html">&lt;Spore ModAPI/Spore/Simulator/cCollectableItems.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
           <section class="m-doc-details" id="a42f6b61beb2e50c2418f7f72377a8077"><div>
             <h3>
               enum class Simulator::<wbr /><a href="#a42f6b61beb2e50c2418f7f72377a8077" class="m-doc-self">DamageType</a>
@@ -4304,6 +4337,13 @@
         </section>
         <section>
           <h2>Typedef documentation</h2>
+          <section class="m-doc-details" id="aaf416461adc448563b86aaa54d653797"><div>
+            <h3>
+              typedef eastl::sp_fixed_hash_map&lt;<a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">uint32_<wbr />t</a>, <a href="_i_visual_effect_8h.html#af513d4705ba3d0bdec5c20e45aee71fd" class="m-doc">IVisualEffectPtr</a>, 4&gt; Simulator::<wbr /><a href="#aaf416461adc448563b86aaa54d653797" class="m-doc-self">CreatureEffectPool</a>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="c_creature_base_8h.html">&lt;Spore ModAPI/Spore/Simulator/cCreatureBase.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
           <section class="m-doc-details" id="ab12c1aef8e3dbcd4556eb52a3460aac6"><div>
             <h3>
               typedef <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> Simulator::<wbr /><a href="#ab12c1aef8e3dbcd4556eb52a3460aac6" class="m-doc-self">cObjectPoolIndex</a>
@@ -4789,6 +4829,21 @@
             </h3>
             <p><span></span></p>
           </div></section>
+          <section class="m-doc-details" id="ab21355361baf157261a47d749259cd66"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"> Simulator::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ab21355361baf157261a47d749259cd66" class="m-doc-self">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_collectable_items.html" class="m-doc">cCollectableItems</a>,
+              0x6DAC)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="c_collectable_items_8h.html">&lt;Spore ModAPI/Spore/Simulator/cCollectableItems.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="a97991906f01eb0f14e81a40cce846438"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">namespace</a> Simulator::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a97991906f01eb0f14e81a40cce846438" class="m-doc-self">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_collectable_items.html" class="m-doc">cCollectableItems</a>)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="c_collectable_items_8h.html">&lt;Spore ModAPI/Spore/Simulator/cCollectableItems.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
           <section class="m-doc-details" id="a282b673376f5f9c78ebc436ac5f02d4d"><div>
             <h3>
               <span class="m-doc-wrap-bumper"> Simulator::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a282b673376f5f9c78ebc436ac5f02d4d" class="m-doc-self">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_combatant.html" class="m-doc">cCombatant</a>,
@@ -4901,6 +4956,14 @@
             <h3>
               <span class="m-doc-wrap-bumper"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">namespace</a> Simulator::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a39798460a2e68bc7040c3223bdd4e90e" class="m-doc-self">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_creature_animal.html" class="m-doc">cCreatureAnimal</a>)</span></span>
               <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="c_creature_animal_8h.html">&lt;Spore ModAPI/Spore/Simulator/cCreatureAnimal.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="ae458dba4cdba5d14c8c5009bdc31814f"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"> Simulator::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ae458dba4cdba5d14c8c5009bdc31814f" class="m-doc-self">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="namespace_simulator.html#aaf416461adc448563b86aaa54d653797" class="m-doc">CreatureEffectPool</a>,
+              0xA0)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="c_creature_base_8h.html">&lt;Spore ModAPI/Spore/Simulator/cCreatureBase.h&gt;</a></div>
             </h3>
             <p><span></span></p>
           </div></section>

@@ -296,24 +296,29 @@
         <section id="pro-types">
           <h2><a href="#pro-types">Protected types</a></h2>
           <dl class="m-doc">
-            <dt id="a8bde9621b793a92bbab59dcc19a9b1f6">
-              using <a href="#a8bde9621b793a92bbab59dcc19a9b1f6" class="m-doc-self">FactoriesMap_t</a> = eastl::hash_map&lt;<a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">uint32_<wbr />t</a>, eastl::vector&lt;eastl::pair&lt;<a href="_i_resource_factory_8h.html#a0fc867f1e0528a64064b514dc646aa8e" class="m-doc">IResourceFactoryPtr</a>, <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">uint32_<wbr />t</a>&gt;&gt;, <a href="_i_core_allocator_8h.html#a752d1217e82fc75218d2c66d7fd51dc7" class="m-doc">ICoreAllocatorAdapter</a>&gt;
+            <dt id="a9c3ef0a1335269ae6bd17c7e9ee88816">
+              <div class="m-doc-template">template&lt;<a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">typename</a> Key, <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">typename</a> <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">T</a>, <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">typename</a> Allocator&gt;</div>
+              using <a href="#a9c3ef0a1335269ae6bd17c7e9ee88816" class="m-doc-self">adapter_hash_map</a> = eastl::hash_map&lt;Key, <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">T</a>, eastl::hash&lt;Key&gt;, eastl::equal_to&lt;Key&gt;, Allocator&gt;
             </dt>
             <dd><span></span></dd>
-            <dt id="a3c72548cb98f3c946f82a71d157436ad">
-              using <a href="#a3c72548cb98f3c946f82a71d157436ad" class="m-doc-self">ResourceTypeToRecordTypeMap_t</a> = eastl::hash_map&lt;<a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">uint32_<wbr />t</a>, eastl::vector&lt;<a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">uint32_<wbr />t</a>&gt;, <a href="_i_core_allocator_8h.html#a752d1217e82fc75218d2c66d7fd51dc7" class="m-doc">ICoreAllocatorAdapter</a>&gt;
+            <dt id="a9bf8a6db3f5d4a3df539512231393be1">
+              using <a href="#a9bf8a6db3f5d4a3df539512231393be1" class="m-doc-self">FactoriesMap_t</a> = <a href="class_resource_1_1c_resource_manager.html#a9c3ef0a1335269ae6bd17c7e9ee88816" class="m-doc">adapter_<wbr />hash_<wbr />map</a>&lt;<a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">uint32_<wbr />t</a>, eastl::vector&lt;eastl::pair&lt;<a href="_i_resource_factory_8h.html#a0fc867f1e0528a64064b514dc646aa8e" class="m-doc">IResourceFactoryPtr</a>, <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">uint32_<wbr />t</a>&gt;&gt;, <a href="_i_core_allocator_8h.html#a752d1217e82fc75218d2c66d7fd51dc7" class="m-doc">ICoreAllocatorAdapter</a>&gt;
             </dt>
             <dd><span></span></dd>
-            <dt id="a6d92c68362edb3d905bc35337abd6da9">
-              using <a href="#a6d92c68362edb3d905bc35337abd6da9" class="m-doc-self">RecordTypeToResourceTypeMap_t</a> = eastl::hash_map&lt;<a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">uint32_<wbr />t</a>, <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">uint32_<wbr />t</a>, <a href="_i_core_allocator_8h.html#a752d1217e82fc75218d2c66d7fd51dc7" class="m-doc">ICoreAllocatorAdapter</a>&gt;
+            <dt id="ab5b875cde97820b2fbb23827f5c9a30a">
+              using <a href="#ab5b875cde97820b2fbb23827f5c9a30a" class="m-doc-self">ResourceTypeToRecordTypeMap_t</a> = <a href="class_resource_1_1c_resource_manager.html#a9c3ef0a1335269ae6bd17c7e9ee88816" class="m-doc">adapter_<wbr />hash_<wbr />map</a>&lt;<a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">uint32_<wbr />t</a>, eastl::vector&lt;<a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">uint32_<wbr />t</a>&gt;, <a href="_i_core_allocator_8h.html#a752d1217e82fc75218d2c66d7fd51dc7" class="m-doc">ICoreAllocatorAdapter</a>&gt;
             </dt>
             <dd><span></span></dd>
-            <dt id="aa082aebe8948ece3853aa31ee12e5d0f">
-              using <a href="#aa082aebe8948ece3853aa31ee12e5d0f" class="m-doc-self">ExtensionsMap_t</a> = eastl::hash_map&lt;<a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">uint32_<wbr />t</a>, eastl::string16, <a href="_i_core_allocator_8h.html#a752d1217e82fc75218d2c66d7fd51dc7" class="m-doc">ICoreAllocatorAdapter</a>&gt;
+            <dt id="a6e66ec06ea6ea5752f5fd632e9ca144f">
+              using <a href="#a6e66ec06ea6ea5752f5fd632e9ca144f" class="m-doc-self">RecordTypeToResourceTypeMap_t</a> = <a href="class_resource_1_1c_resource_manager.html#a9c3ef0a1335269ae6bd17c7e9ee88816" class="m-doc">adapter_<wbr />hash_<wbr />map</a>&lt;<a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">uint32_<wbr />t</a>, <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">uint32_<wbr />t</a>, <a href="_i_core_allocator_8h.html#a752d1217e82fc75218d2c66d7fd51dc7" class="m-doc">ICoreAllocatorAdapter</a>&gt;
             </dt>
             <dd><span></span></dd>
-            <dt id="ae18072b15121ce7d78623e9dd6501d79">
-              using <a href="#ae18072b15121ce7d78623e9dd6501d79" class="m-doc-self">FilenamesMap_t</a> = eastl::hash_map&lt;<a href="struct_resource_key.html" class="m-doc">ResourceKey</a>, eastl::string16, <a href="_fixed_pool_allocator_8h.html#a7b86e5a8d7cf35ff35719b9455b2cbb8" class="m-doc">FixedPoolAllocatorAdapter</a>&gt;
+            <dt id="aa343dd1d18c00ad21641f3c399115fc6">
+              using <a href="#aa343dd1d18c00ad21641f3c399115fc6" class="m-doc-self">ExtensionsMap_t</a> = <a href="class_resource_1_1c_resource_manager.html#a9c3ef0a1335269ae6bd17c7e9ee88816" class="m-doc">adapter_<wbr />hash_<wbr />map</a>&lt;<a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">uint32_<wbr />t</a>, eastl::string16, <a href="_i_core_allocator_8h.html#a752d1217e82fc75218d2c66d7fd51dc7" class="m-doc">ICoreAllocatorAdapter</a>&gt;
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a4ea327eb854a085149ab2fbb37e983a7">
+              using <a href="#a4ea327eb854a085149ab2fbb37e983a7" class="m-doc-self">FilenamesMap_t</a> = <a href="class_resource_1_1c_resource_manager.html#a9c3ef0a1335269ae6bd17c7e9ee88816" class="m-doc">adapter_<wbr />hash_<wbr />map</a>&lt;<a href="struct_resource_key.html" class="m-doc">ResourceKey</a>, eastl::string16, <a href="_fixed_pool_allocator_8h.html#a7b86e5a8d7cf35ff35719b9455b2cbb8" class="m-doc">FixedPoolAllocatorAdapter</a>&gt;
             </dt>
             <dd><span></span></dd>
             <dt id="a93e8c348453dbff1205508d886d0b485">
@@ -342,15 +347,15 @@
             </dt>
             <dd><span></span></dd>
             <dt id="ae4ad9ff4b600697f51ef62c12b24d14b">
-              <a href="class_resource_1_1c_resource_manager.html#a8bde9621b793a92bbab59dcc19a9b1f6" class="m-doc">FactoriesMap_<wbr />t</a> <a href="#ae4ad9ff4b600697f51ef62c12b24d14b" class="m-doc-self">mResourceFactories</a>
+              <a href="class_resource_1_1c_resource_manager.html#a9bf8a6db3f5d4a3df539512231393be1" class="m-doc">FactoriesMap_<wbr />t</a> <a href="#ae4ad9ff4b600697f51ef62c12b24d14b" class="m-doc-self">mResourceFactories</a>
             </dt>
             <dd><span></span></dd>
             <dt id="a1cc9d3eaabcb827cb605c638bc5c9f9b">
-              <a href="class_resource_1_1c_resource_manager.html#a3c72548cb98f3c946f82a71d157436ad" class="m-doc">ResourceTypeToRecordTypeMap_<wbr />t</a> <a href="#a1cc9d3eaabcb827cb605c638bc5c9f9b" class="m-doc-self">mResourceTypeToRecordType</a>
+              <a href="class_resource_1_1c_resource_manager.html#ab5b875cde97820b2fbb23827f5c9a30a" class="m-doc">ResourceTypeToRecordTypeMap_<wbr />t</a> <a href="#a1cc9d3eaabcb827cb605c638bc5c9f9b" class="m-doc-self">mResourceTypeToRecordType</a>
             </dt>
             <dd><span></span></dd>
             <dt id="a6b4f05bb6508aa5f72d712653c7f7508">
-              <a href="class_resource_1_1c_resource_manager.html#a6d92c68362edb3d905bc35337abd6da9" class="m-doc">RecordTypeToResourceTypeMap_<wbr />t</a> <a href="#a6b4f05bb6508aa5f72d712653c7f7508" class="m-doc-self">mRecordTypeToResourceType</a>
+              <a href="class_resource_1_1c_resource_manager.html#a6e66ec06ea6ea5752f5fd632e9ca144f" class="m-doc">RecordTypeToResourceTypeMap_<wbr />t</a> <a href="#a6b4f05bb6508aa5f72d712653c7f7508" class="m-doc-self">mRecordTypeToResourceType</a>
             </dt>
             <dd><span></span></dd>
             <dt id="ab40dba14a5d5324eae52419f0ad9dc5b">
@@ -358,7 +363,7 @@
             </dt>
             <dd><span></span></dd>
             <dt id="a453b47c2fdb962435fcf0858335ac4f4">
-              <a href="class_resource_1_1c_resource_manager.html#aa082aebe8948ece3853aa31ee12e5d0f" class="m-doc">ExtensionsMap_<wbr />t</a> <a href="#a453b47c2fdb962435fcf0858335ac4f4" class="m-doc-self">mExtensionMappings</a>
+              <a href="class_resource_1_1c_resource_manager.html#aa343dd1d18c00ad21641f3c399115fc6" class="m-doc">ExtensionsMap_<wbr />t</a> <a href="#a453b47c2fdb962435fcf0858335ac4f4" class="m-doc-self">mExtensionMappings</a>
             </dt>
             <dd><span></span></dd>
             <dt id="a2342845a5aa6630cc630d056248ed16b">
@@ -366,7 +371,7 @@
             </dt>
             <dd><span></span></dd>
             <dt id="ab3f4079c8e8dc852c870d5595c506616">
-              <a href="class_resource_1_1c_resource_manager.html#ae18072b15121ce7d78623e9dd6501d79" class="m-doc">FilenamesMap_<wbr />t</a> <a href="#ab3f4079c8e8dc852c870d5595c506616" class="m-doc-self">mFilenameMapping</a>
+              <a href="class_resource_1_1c_resource_manager.html#a4ea327eb854a085149ab2fbb37e983a7" class="m-doc">FilenamesMap_<wbr />t</a> <a href="#ab3f4079c8e8dc852c870d5595c506616" class="m-doc-self">mFilenameMapping</a>
             </dt>
             <dd><span></span></dd>
             <dt id="a5f2d1c6f24fa3c4481c021dd606cfdc0">
