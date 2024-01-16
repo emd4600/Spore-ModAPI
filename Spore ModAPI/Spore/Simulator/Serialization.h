@@ -5,8 +5,15 @@
 
 namespace Simulator
 {
-	class ISerializerStream 
-		: public Object
+	class ISimulatorSerializable;
+
+	// This is a dirty workaround: it might not exist, but all existing classes and item templates use it
+	class ISerializerStream : public Object
+	{
+	};
+
+	class ISerializerReadStream 
+		: public ISerializerStream
 	{
 	public:
 		static const uint32_t TYPE = 0x179CD60;
@@ -17,13 +24,32 @@ namespace Simulator
 		/* 1Ch */	virtual bool func1Ch() = 0;
 		/* 20h */	virtual Resource::IRecord* GetRecord() const = 0;
 		/* 24h */	virtual int func24h() const = 0;
-		/* 28h */	virtual bool func28h(uint32_t nounID, int, int) = 0;
-		/* 2Ch */	virtual bool func2Ch(int, int) = 0;
+		/* 28h */	virtual bool ReadPointer(uint32_t castTypeID, eastl::intrusive_ptr<Object>& dst, int) = 0;
+		/* 2Ch */	virtual bool WritePointer(ISimulatorSerializable* pointer) = 0;
 		/* 30h */	virtual bool func30h(int) = 0;  // related with prop files?
 		/* 34h */	virtual bool func34h(int, int) = 0;
 		/* 38h */	virtual bool func38h(int, int) = 0;
 		/* 3Ch */	virtual int func3Ch() = 0;
 		/* 40h */	virtual void func40h(int) = 0;
+	};
+
+	class ISerializerWriteStream
+		: public ISerializerStream
+	{
+	public:
+		static const uint32_t TYPE = 0x179CD61;
+
+		/* 10h */	virtual bool func10h(int, int, int) = 0;
+		/* 14h */	virtual bool func14h() = 0;
+		/* 18h */	virtual int func18h() = 0;
+		/* 1Ch */	virtual bool func1Ch() = 0;
+		/* 20h */	virtual Resource::IRecord* GetRecord() const = 0;
+		/* 24h */	virtual int func24h() const = 0;
+		/* 28h */	virtual bool WriteObjectPointer(Object* object) = 0;
+		/* 2Ch */	virtual bool WritePointer(ISimulatorSerializable* pointer) = 0;
+		/* 30h */	virtual void func30h(int) = 0;
+		/* 34h */	virtual bool func34h(int, int) = 0;
+		/* 38h */	virtual bool func38h(int, int) = 0;
 	};
 
 	//class SerializerStream
@@ -41,10 +67,10 @@ namespace Simulator
 
 	/// The type of function used to read binary attribute data. 
 	/// The parameters are the data serializer and the address of memory where the data must be read.
-	typedef bool(*ReadFunction_t)(ISerializerStream*, void*);
+	typedef bool(*ReadFunction_t)(ISerializerReadStream*, void*);
 	/// The type of function used to write binary attribute data. 
 	/// The parameters are the data serializer and the address of memory where the data is.
-	typedef bool(*WriteFunction_t)(ISerializerStream*, void*);
+	typedef bool(*WriteFunction_t)(ISerializerWriteStream*, void*);
 
 	/// The type of function used to read attribute data, which is expressed in text. 
 	/// The parameters are the text eastl::string and the address of memory where the data must be read.

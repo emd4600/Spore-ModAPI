@@ -1,7 +1,13 @@
 #pragma once
 
-#include "Serialization.h"
+#include <Spore\Simulator\Serialization.h>
 #include <Spore\IO.h>
+#include <EASTL\vector.h>
+#include <EASTL\string.h>
+#include <EASTL\map.h>
+#include <EASTL\set.h>
+#include <EASTL\hash_map.h>
+#include <EASTL\hash_set.h>
 
 #ifndef SDK_TO_GHIDRA
 namespace Simulator
@@ -16,23 +22,49 @@ namespace Simulator
 		template <typename T>
 		struct SerializedType
 		{
-			static bool Read(ISerializerStream*, T*);
-			static bool Write(ISerializerStream*, T*);
+			static bool Read(ISerializerReadStream*, T*);
+			static bool Write(ISerializerWriteStream*, T*);
 			static void ReadText(const eastl::string&, T*);
 			static void WriteText(char*, T*);
+		};
+
+		template <class T>
+		struct SerializedType<eastl::intrusive_ptr<T>>
+		{
+			static bool Read(ISerializerReadStream* stream, eastl::intrusive_ptr<T>* dst) {
+				*dst = nullptr;
+				stream->ReadPointer(T::TYPE, dst, 0);
+				return true;
+			}
+
+			static bool Write(ISerializerWriteStream* stream, eastl::intrusive_ptr<T>* src) {
+				ISimulatorSerializable* pointer = nullptr;
+				if (*src) {
+					pointer = ((Object*)(*src))->Cast(T::TYPE);
+				}
+				stream->WritePointer(pointer);
+				return true;
+			}
+
+			static void ReadText(const eastl::string& str, eastl::intrusive_ptr<T>* dst) {
+			}
+
+			static void WriteText(char* buf, eastl::intrusive_ptr<T>* src) {
+				buf[0] = '\0';
+			}
 		};
 
 		template <>
 		struct SerializedType<bool>
 		{
-			static bool Read(ISerializerStream* stream, bool* dst) {
+			static bool Read(ISerializerReadStream* stream, bool* dst) {
 				bool b;
 				IO::ReadBool8(stream->GetRecord()->GetStream(), b);
 				*dst = b;
 				return true;
 			}
 
-			static bool Write(ISerializerStream* stream, bool* src) {
+			static bool Write(ISerializerWriteStream* stream, bool* src) {
 				IO::WriteBool8(stream->GetRecord()->GetStream(), src);
 				return true;
 			}
@@ -49,12 +81,12 @@ namespace Simulator
 		template <>
 		struct SerializedType<int>
 		{
-			static bool Read(ISerializerStream* stream, int* dst) {
+			static bool Read(ISerializerReadStream* stream, int* dst) {
 				IO::ReadInt32(stream->GetRecord()->GetStream(), dst);
 				return true;
 			}
 
-			static bool Write(ISerializerStream* stream, int* src) {
+			static bool Write(ISerializerWriteStream* stream, int* src) {
 				IO::WriteInt32(stream->GetRecord()->GetStream(), src);
 				return true;
 			}
@@ -71,12 +103,12 @@ namespace Simulator
 		template <>
 		struct SerializedType<uint32_t>
 		{
-			static bool Read(ISerializerStream* stream, uint32_t* dst) {
+			static bool Read(ISerializerReadStream* stream, uint32_t* dst) {
 				IO::ReadUInt32(stream->GetRecord()->GetStream(), dst);
 				return true;
 			}
 
-			static bool Write(ISerializerStream* stream, uint32_t* src) {
+			static bool Write(ISerializerWriteStream* stream, uint32_t* src) {
 				IO::WriteUInt32(stream->GetRecord()->GetStream(), src);
 				return true;
 			}
@@ -93,11 +125,11 @@ namespace Simulator
 		template <>
 		struct SerializedType<float>
 		{
-			static bool Read(ISerializerStream* stream, float* dst) {
+			static bool Read(ISerializerReadStream* stream, float* dst) {
 				IO::ReadFloat(stream->GetRecord()->GetStream(), dst);
 				return true;
 			}
-			static bool Write(ISerializerStream* stream, float* src) {
+			static bool Write(ISerializerWriteStream* stream, float* src) {
 				IO::WriteFloat(stream->GetRecord()->GetStream(), src);
 				return true;
 			}
@@ -112,7 +144,7 @@ namespace Simulator
 		template <>
 		struct SerializedType<eastl::string>
 		{
-			static bool Read(ISerializerStream* stream, eastl::string* dst) {
+			static bool Read(ISerializerReadStream* stream, eastl::string* dst) {
 				auto s = stream->GetRecord()->GetStream();
 				size_t count;
 				IO::ReadUInt32(s, &count);
@@ -124,7 +156,7 @@ namespace Simulator
 				}
 				return true;
 			}
-			static bool Write(ISerializerStream* stream, eastl::string* src) {
+			static bool Write(ISerializerWriteStream* stream, eastl::string* src) {
 				size_t count = src->size();
 				IO::WriteUInt32(stream->GetRecord()->GetStream(), &count);
 				IO::WriteUInt8(stream->GetRecord()->GetStream(), (const uint8_t*)src->data(), src->size());
@@ -141,7 +173,7 @@ namespace Simulator
 		template <>
 		struct SerializedType<eastl::string16>
 		{
-			static bool Read(ISerializerStream* stream, eastl::string16* dst) {
+			static bool Read(ISerializerReadStream* stream, eastl::string16* dst) {
 				auto s = stream->GetRecord()->GetStream();
 				size_t count;
 				IO::ReadUInt32(s, &count);
@@ -153,7 +185,7 @@ namespace Simulator
 				}
 				return true;
 			}
-			static bool Write(ISerializerStream* stream, eastl::string16* src) {
+			static bool Write(ISerializerWriteStream* stream, eastl::string16* src) {
 				size_t count = src->size();
 				IO::WriteUInt32(stream->GetRecord()->GetStream(), &count);
 				IO::WriteInt16(stream->GetRecord()->GetStream(), (const int16_t*)src->data(), src->size(), IO::Endian::Little);
@@ -170,14 +202,14 @@ namespace Simulator
 		template <>
 		struct SerializedType<ResourceKey>
 		{
-			static bool Read(ISerializerStream* stream, ResourceKey* dst) {
+			static bool Read(ISerializerReadStream* stream, ResourceKey* dst) {
 				IO::ReadUInt32(stream->GetRecord()->GetStream(), &dst->groupID);
 				IO::ReadUInt32(stream->GetRecord()->GetStream(), &dst->typeID);
 				IO::ReadUInt32(stream->GetRecord()->GetStream(), &dst->instanceID);
 				return true;
 			}
 
-			static bool Write(ISerializerStream* stream, ResourceKey* src) {
+			static bool Write(ISerializerWriteStream* stream, ResourceKey* src) {
 				IO::WriteUInt32(stream->GetRecord()->GetStream(), &src->groupID);
 				IO::WriteUInt32(stream->GetRecord()->GetStream(), &src->typeID);
 				IO::WriteUInt32(stream->GetRecord()->GetStream(), &src->instanceID);
@@ -197,7 +229,7 @@ namespace Simulator
 		template <typename T>
 		struct SerializedType<eastl::vector<T>>
 		{
-			static bool Read(ISerializerStream* stream, eastl::vector<T>* dst) {
+			static bool Read(ISerializerReadStream* stream, eastl::vector<T>* dst) {
 				int count;
 				IO::ReadInt32(stream->GetRecord()->GetStream(), &count);
 				*dst = eastl::vector<T>(count);
@@ -206,7 +238,7 @@ namespace Simulator
 				}
 				return true;
 			}
-			static bool Write(ISerializerStream* stream, eastl::vector<T>* src) {
+			static bool Write(ISerializerWriteStream* stream, eastl::vector<T>* src) {
 				int count = src->size();
 				IO::WriteInt32(stream->GetRecord()->GetStream(), &count);
 				for (int i = 0; i < count; ++i) {
@@ -221,14 +253,145 @@ namespace Simulator
 			}
 		};
 
+
+		template <typename T>
+		struct SerializedType<eastl::set<T>>
+		{
+			static bool Read(ISerializerReadStream* stream, eastl::set<T>* dst) {
+				int count;
+				IO::ReadInt32(stream->GetRecord()->GetStream(), &count);
+				*dst = eastl::set<T>();
+				for (int i = 0; i < count; ++i) {
+					T object;
+					SerializationTypes::Read<T>(stream, &object);
+					dst->insert(object);
+				}
+				return true;
+			}
+			static bool Write(ISerializerWriteStream* stream, eastl::set<T>* src) {
+				int count = src->size();
+				IO::WriteInt32(stream->GetRecord()->GetStream(), &count);
+				for (auto& object : *src) {
+					SerializationTypes::Write<T>(stream, const_cast<T*>(&object));
+				}
+				return true;
+			}
+			static void ReadText(const eastl::string& str, eastl::set<T>* dst) {
+			}
+			static void WriteText(char* buf, eastl::set<T>* src) {
+				buf[0] = '\0';
+			}
+		};
+
+
+		template <typename Key, typename Value>
+		struct SerializedType<eastl::map<Key, Value>>
+		{
+			static bool Read(ISerializerReadStream* stream, eastl::map<Key, Value>* dst) {
+				int count;
+				IO::ReadInt32(stream->GetRecord()->GetStream(), &count);
+				*dst = eastl::map<Key, Value>();
+				for (int i = 0; i < count; ++i) {
+					Key key;
+					SerializationTypes::Read<Key>(stream, &key);
+
+					Value value;
+					SerializationTypes::Read<Value>(stream, &value);
+
+					(*dst)[key] = value;
+				}
+				return true;
+			}
+			static bool Write(ISerializerWriteStream* stream, eastl::map<Key, Value>* src) {
+				int count = src->size();
+				IO::WriteInt32(stream->GetRecord()->GetStream(), &count);
+				for (auto& object : *src) {
+					SerializationTypes::Write<Key>(stream, const_cast<Key*>(&object.first));
+					SerializationTypes::Write<Value>(stream, &object.second);
+				}
+				return true;
+			}
+			static void ReadText(const eastl::string& str, eastl::map<Key, Value>* dst) {
+			}
+			static void WriteText(char* buf, eastl::map<Key, Value>* src) {
+				buf[0] = '\0';
+			}
+		};
+
+
+		template <typename T>
+		struct SerializedType<eastl::hash_set<T>>
+		{
+			static bool Read(ISerializerReadStream* stream, eastl::hash_set<T>* dst) {
+				int count;
+				IO::ReadInt32(stream->GetRecord()->GetStream(), &count);
+				*dst = eastl::hash_set<T>();
+				for (int i = 0; i < count; ++i) {
+					T object;
+					SerializationTypes::Read<T>(stream, &object);
+					dst->insert(object);
+				}
+				return true;
+			}
+			static bool Write(ISerializerWriteStream* stream, eastl::hash_set<T>* src) {
+				int count = src->size();
+				IO::WriteInt32(stream->GetRecord()->GetStream(), &count);
+				for (auto& object : *src) {
+					SerializationTypes::Write<T>(stream, const_cast<T*>(&object));
+				}
+				return true;
+			}
+			static void ReadText(const eastl::string& str, eastl::hash_set<T>* dst) {
+			}
+			static void WriteText(char* buf, eastl::hash_set<T>* src) {
+				buf[0] = '\0';
+			}
+		};
+
+
+		template <typename Key, typename Value>
+		struct SerializedType<eastl::hash_map<Key, Value>>
+		{
+			static bool Read(ISerializerReadStream* stream, eastl::hash_map<Key, Value>* dst) {
+				int count;
+				IO::ReadInt32(stream->GetRecord()->GetStream(), &count);
+				*dst = eastl::hash_map<Key, Value>();
+				for (int i = 0; i < count; ++i) {
+					Key key;
+					SerializationTypes::Read<Key>(stream, &key);
+
+					Value value;
+					SerializationTypes::Read<Value>(stream, &value);
+
+					(*dst)[key] = value;
+				}
+				return true;
+			}
+			static bool Write(ISerializerWriteStream* stream, eastl::hash_map<Key, Value>* src) {
+				int count = src->size();
+				IO::WriteInt32(stream->GetRecord()->GetStream(), &count);
+				for (auto& object : *src) {
+					SerializationTypes::Write<Key>(stream, const_cast<Key*>(&object.first));
+					SerializationTypes::Write<Value>(stream, &object.second);
+				}
+				return true;
+			}
+			static void ReadText(const eastl::string& str, eastl::hash_map<Key, Value>* dst) {
+			}
+			static void WriteText(char* buf, eastl::hash_map<Key, Value>* src) {
+				buf[0] = '\0';
+			}
+		};
+
+
 		template<typename T>
-		bool Read(ISerializerStream* stream, T* dst)
+		bool Read(ISerializerReadStream* stream, T* dst)
 		{
 			return SerializedType<T>::Read(stream, dst);
 		}
 
 		template<typename T>
-		bool Write(ISerializerStream* stream, T* src)
+		bool Write(ISerializerWriteStream* stream, T* src)
 		{
 			return SerializedType<T>::Write(stream, src);
 		}
