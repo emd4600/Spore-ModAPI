@@ -245,7 +245,7 @@ int ModAPI::AppShutdown_detour::DETOUR()
 
 namespace ModAPI
 {
-	bool ReadSubsystems(Simulator::ISerializerStream* stream, void* data)
+	bool ReadSubsystems(Simulator::ISerializerReadStream* stream, void* data)
 	{
 		auto s = stream->GetRecord()->GetStream();
 
@@ -279,7 +279,7 @@ namespace ModAPI
 		return true;
 	}
 
-	bool WriteSubsystems(Simulator::ISerializerStream* stream, void* data)
+	bool WriteSubsystems(Simulator::ISerializerWriteStream* stream, void* data)
 	{
 		auto s = stream->GetRecord()->GetStream();
 
