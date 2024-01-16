@@ -988,7 +988,15 @@
             </dt>
             <dd>A generic entry of undo/redo history in the adventure editor.</dd>
             <dt>
+              class <a href="class_simulator_1_1_i_serializer_read_stream.html" class="m-doc">ISerializerReadStream</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
               class <a href="class_simulator_1_1_i_serializer_stream.html" class="m-doc">ISerializerStream</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              class <a href="class_simulator_1_1_i_serializer_write_stream.html" class="m-doc">ISerializerWriteStream</a>
             </dt>
             <dd><span></span></dd>
             <dt>
@@ -1766,11 +1774,11 @@
             </dt>
             <dd><span></span></dd>
             <dt>
-              using <a href="#ab6d44ef5f683788f7895a0731628355e" class="m-doc">ReadFunction_t</a> = <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">bool</a>(*)(ISerializerStream*, void*)
+              using <a href="#ace4e4b30b86fd7bdf4b208ae177fe374" class="m-doc">ReadFunction_t</a> = <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">bool</a>(*)(ISerializerReadStream*, void*)
             </dt>
             <dd>The type of function used to read binary attribute data.</dd>
             <dt>
-              using <a href="#a6e0f49a2a3d72e7157c74222b4f33d36" class="m-doc">WriteFunction_t</a> = <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">bool</a>(*)(ISerializerStream*, void*)
+              using <a href="#ae024542f3a3eba4cbb266072cf4c0614" class="m-doc">WriteFunction_t</a> = <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">bool</a>(*)(ISerializerWriteStream*, void*)
             </dt>
             <dd>The type of function used to write binary attribute data.</dd>
             <dt>
@@ -4365,17 +4373,17 @@
             </h3>
             <p><span></span></p>
           </div></section>
-          <section class="m-doc-details" id="ab6d44ef5f683788f7895a0731628355e"><div>
+          <section class="m-doc-details" id="ace4e4b30b86fd7bdf4b208ae177fe374"><div>
             <h3>
-              typedef <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">bool</a>(*Simulator::<wbr /><a href="#ab6d44ef5f683788f7895a0731628355e" class="m-doc-self">ReadFunction_t</a>)(ISerializerStream*, void*)
+              typedef <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">bool</a>(*Simulator::<wbr /><a href="#ace4e4b30b86fd7bdf4b208ae177fe374" class="m-doc-self">ReadFunction_t</a>)(ISerializerReadStream*, void*)
               <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_simulator_2_serialization_8h.html">&lt;Spore ModAPI/Spore/Simulator/Serialization.h&gt;</a></div>
             </h3>
             <p>The type of function used to read binary attribute data.</p>
 <p>The parameters are the data serializer and the address of memory where the data must be read.</p>
           </div></section>
-          <section class="m-doc-details" id="a6e0f49a2a3d72e7157c74222b4f33d36"><div>
+          <section class="m-doc-details" id="ae024542f3a3eba4cbb266072cf4c0614"><div>
             <h3>
-              typedef <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">bool</a>(*Simulator::<wbr /><a href="#a6e0f49a2a3d72e7157c74222b4f33d36" class="m-doc-self">WriteFunction_t</a>)(ISerializerStream*, void*)
+              typedef <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">bool</a>(*Simulator::<wbr /><a href="#ae024542f3a3eba4cbb266072cf4c0614" class="m-doc-self">WriteFunction_t</a>)(ISerializerWriteStream*, void*)
               <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_simulator_2_serialization_8h.html">&lt;Spore ModAPI/Spore/Simulator/Serialization.h&gt;</a></div>
             </h3>
             <p>The type of function used to write binary attribute data.</p>

@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Simulator::SerializationTypes::SerializedType&lt;float&gt; struct | Spore ModAPI SDK for creating C++ mods for Spore</title>
+  <title>Simulator::SerializationTypes::SerializedType&lt;eastl::map&lt;Key, Value&gt;&gt; struct | Spore ModAPI SDK for creating C++ mods for Spore</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,600,600i%7CSource+Code+Pro:400,400i,600" />
   <link rel="stylesheet" href="m-dark.css" />
   <link rel="stylesheet" href="m-documentation.css" />
@@ -46,8 +46,8 @@
       <div class="m-col-l-10 m-push-l-1">
         <h1>
           <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="_serialization_types_8h.html">&lt;Spore ModAPI/Spore/Simulator/SerializationTypes.h&gt;</a></div>
-          <div class="m-doc-template">template&lt;&gt;</div>
-          <span class="m-breadcrumb"><a href="namespace_simulator.html">Simulator</a>::<wbr/></span><span class="m-breadcrumb"><a href="namespace_simulator_1_1_serialization_types.html">SerializationTypes</a>::<wbr/></span>SerializedType&lt;float&gt; <span class="m-thin">struct</span>
+          <div class="m-doc-template">template&lt;<a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">typename</a> Key, <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">typename</a> <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">Value</a>&gt;</div>
+          <span class="m-breadcrumb"><a href="namespace_simulator.html">Simulator</a>::<wbr/></span><span class="m-breadcrumb"><a href="namespace_simulator_1_1_serialization_types.html">SerializationTypes</a>::<wbr/></span>SerializedType&lt;eastl::map&lt;Key, Value&gt;&gt; <span class="m-thin">struct</span>
         </h1>
         <p><span></span></p>
         <nav class="m-block m-default">
@@ -64,24 +64,24 @@
         <section id="pub-static-methods">
           <h2><a href="#pub-static-methods">Public static functions</a></h2>
           <dl class="m-doc">
-            <dt id="a37447684e42ff5147bf1e0557cc7e1dd">
-              <span class="m-doc-wrap-bumper">static auto <a href="#a37447684e42ff5147bf1e0557cc7e1dd" class="m-doc-self">Read</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1_i_serializer_read_stream.html" class="m-doc">ISerializerReadStream</a>* stream,
-              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">float</a>* dst) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">bool</a></span>
+            <dt id="ad339ee7bcbda129655940f98419ef3c1">
+              <span class="m-doc-wrap-bumper">static auto <a href="#ad339ee7bcbda129655940f98419ef3c1" class="m-doc-self">Read</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1_i_serializer_read_stream.html" class="m-doc">ISerializerReadStream</a>* stream,
+              eastl::map&lt;Key, <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">Value</a>&gt;* dst) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">bool</a></span>
             </dt>
             <dd><span></span></dd>
-            <dt id="a84c0fe4ebf84131da99169aac84666cc">
-              <span class="m-doc-wrap-bumper">static auto <a href="#a84c0fe4ebf84131da99169aac84666cc" class="m-doc-self">Write</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1_i_serializer_write_stream.html" class="m-doc">ISerializerWriteStream</a>* stream,
-              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">float</a>* src) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">bool</a></span>
+            <dt id="a494aeada40f1af83e1b6e6f60f5b1f86">
+              <span class="m-doc-wrap-bumper">static auto <a href="#a494aeada40f1af83e1b6e6f60f5b1f86" class="m-doc-self">Write</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1_i_serializer_write_stream.html" class="m-doc">ISerializerWriteStream</a>* stream,
+              eastl::map&lt;Key, <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">Value</a>&gt;* src) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">bool</a></span>
             </dt>
             <dd><span></span></dd>
-            <dt id="a17d3afafffe91f55b5323b5a91e4bac0">
-              <span class="m-doc-wrap-bumper">static auto <a href="#a17d3afafffe91f55b5323b5a91e4bac0" class="m-doc-self">ReadText</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">const</a> eastl::string&amp; str,
-              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">float</a>* dst) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">void</a></span>
+            <dt id="a7ab64442b85d889f9a7a06dabb4b184d">
+              <span class="m-doc-wrap-bumper">static auto <a href="#a7ab64442b85d889f9a7a06dabb4b184d" class="m-doc-self">ReadText</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">const</a> eastl::string&amp; str,
+              eastl::map&lt;Key, <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">Value</a>&gt;* dst) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">void</a></span>
             </dt>
             <dd><span></span></dd>
-            <dt id="aa66deef51b23ade4a17d47d3b388e6db">
-              <span class="m-doc-wrap-bumper">static auto <a href="#aa66deef51b23ade4a17d47d3b388e6db" class="m-doc-self">WriteText</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">char</a>* buf,
-              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">float</a>* src) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">void</a></span>
+            <dt id="aeebbcae4af43a9d03efe38f7cb898d9f">
+              <span class="m-doc-wrap-bumper">static auto <a href="#aeebbcae4af43a9d03efe38f7cb898d9f" class="m-doc-self">WriteText</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">char</a>* buf,
+              eastl::map&lt;Key, <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">Value</a>&gt;* src) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">void</a></span>
             </dt>
             <dd><span></span></dd>
           </dl>

@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Simulator::SerializationTypes::SerializedType&lt;float&gt; struct | Spore ModAPI SDK for creating C++ mods for Spore</title>
+  <title>Simulator::SerializationTypes::SerializedType&lt;eastl::intrusive_ptr&lt;T&gt;&gt; struct | Spore ModAPI SDK for creating C++ mods for Spore</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,600,600i%7CSource+Code+Pro:400,400i,600" />
   <link rel="stylesheet" href="m-dark.css" />
   <link rel="stylesheet" href="m-documentation.css" />
@@ -46,8 +46,8 @@
       <div class="m-col-l-10 m-push-l-1">
         <h1>
           <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="_serialization_types_8h.html">&lt;Spore ModAPI/Spore/Simulator/SerializationTypes.h&gt;</a></div>
-          <div class="m-doc-template">template&lt;&gt;</div>
-          <span class="m-breadcrumb"><a href="namespace_simulator.html">Simulator</a>::<wbr/></span><span class="m-breadcrumb"><a href="namespace_simulator_1_1_serialization_types.html">SerializationTypes</a>::<wbr/></span>SerializedType&lt;float&gt; <span class="m-thin">struct</span>
+          <div class="m-doc-template">template&lt;<a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">class</a> <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">T</a>&gt;</div>
+          <span class="m-breadcrumb"><a href="namespace_simulator.html">Simulator</a>::<wbr/></span><span class="m-breadcrumb"><a href="namespace_simulator_1_1_serialization_types.html">SerializationTypes</a>::<wbr/></span>SerializedType&lt;eastl::intrusive_ptr&lt;T&gt;&gt; <span class="m-thin">struct</span>
         </h1>
         <p><span></span></p>
         <nav class="m-block m-default">
@@ -64,24 +64,24 @@
         <section id="pub-static-methods">
           <h2><a href="#pub-static-methods">Public static functions</a></h2>
           <dl class="m-doc">
-            <dt id="a37447684e42ff5147bf1e0557cc7e1dd">
-              <span class="m-doc-wrap-bumper">static auto <a href="#a37447684e42ff5147bf1e0557cc7e1dd" class="m-doc-self">Read</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1_i_serializer_read_stream.html" class="m-doc">ISerializerReadStream</a>* stream,
-              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">float</a>* dst) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">bool</a></span>
+            <dt id="ac00379f0246bcac4d7a14306318aeaca">
+              <span class="m-doc-wrap-bumper">static auto <a href="#ac00379f0246bcac4d7a14306318aeaca" class="m-doc-self">Read</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1_i_serializer_read_stream.html" class="m-doc">ISerializerReadStream</a>* stream,
+              eastl::intrusive_ptr&lt;<a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">T</a>&gt;* dst) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">bool</a></span>
             </dt>
             <dd><span></span></dd>
-            <dt id="a84c0fe4ebf84131da99169aac84666cc">
-              <span class="m-doc-wrap-bumper">static auto <a href="#a84c0fe4ebf84131da99169aac84666cc" class="m-doc-self">Write</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1_i_serializer_write_stream.html" class="m-doc">ISerializerWriteStream</a>* stream,
-              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">float</a>* src) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">bool</a></span>
+            <dt id="a78fd76a94faa497bf3b526a5bc6ea37f">
+              <span class="m-doc-wrap-bumper">static auto <a href="#a78fd76a94faa497bf3b526a5bc6ea37f" class="m-doc-self">Write</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1_i_serializer_write_stream.html" class="m-doc">ISerializerWriteStream</a>* stream,
+              eastl::intrusive_ptr&lt;<a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">T</a>&gt;* src) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">bool</a></span>
             </dt>
             <dd><span></span></dd>
-            <dt id="a17d3afafffe91f55b5323b5a91e4bac0">
-              <span class="m-doc-wrap-bumper">static auto <a href="#a17d3afafffe91f55b5323b5a91e4bac0" class="m-doc-self">ReadText</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">const</a> eastl::string&amp; str,
-              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">float</a>* dst) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">void</a></span>
+            <dt id="a28d5f67e6ae4032ca82d06a55d8e82ad">
+              <span class="m-doc-wrap-bumper">static auto <a href="#a28d5f67e6ae4032ca82d06a55d8e82ad" class="m-doc-self">ReadText</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">const</a> eastl::string&amp; str,
+              eastl::intrusive_ptr&lt;<a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">T</a>&gt;* dst) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">void</a></span>
             </dt>
             <dd><span></span></dd>
-            <dt id="aa66deef51b23ade4a17d47d3b388e6db">
-              <span class="m-doc-wrap-bumper">static auto <a href="#aa66deef51b23ade4a17d47d3b388e6db" class="m-doc-self">WriteText</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">char</a>* buf,
-              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">float</a>* src) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">void</a></span>
+            <dt id="a285071592987e50455b2e46dc5c46af3">
+              <span class="m-doc-wrap-bumper">static auto <a href="#a285071592987e50455b2e46dc5c46af3" class="m-doc-self">WriteText</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">char</a>* buf,
+              eastl::intrusive_ptr&lt;<a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">T</a>&gt;* src) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">void</a></span>
             </dt>
             <dd><span></span></dd>
           </dl>
