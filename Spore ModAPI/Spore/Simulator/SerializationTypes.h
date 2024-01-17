@@ -33,14 +33,16 @@ namespace Simulator
 		{
 			static bool Read(ISerializerReadStream* stream, eastl::intrusive_ptr<T>* dst) {
 				*dst = nullptr;
-				stream->ReadPointer(T::TYPE, dst, 0);
+				ObjectPtr ptr;
+				stream->ReadPointer(T::TYPE, ptr, 0);
+				*dst = object_cast<T>(ptr.get());
 				return true;
 			}
 
 			static bool Write(ISerializerWriteStream* stream, eastl::intrusive_ptr<T>* src) {
 				ISimulatorSerializable* pointer = nullptr;
 				if (*src) {
-					pointer = ((Object*)(*src))->Cast(T::TYPE);
+					pointer = (ISimulatorSerializable*)((Object*)src->get())->Cast(ISimulatorSerializable::TYPE);
 				}
 				stream->WritePointer(pointer);
 				return true;

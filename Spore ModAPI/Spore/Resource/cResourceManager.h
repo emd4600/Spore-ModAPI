@@ -129,8 +129,16 @@ namespace Resource
 
 
 	protected:
+#ifndef SDK_TO_GHIDRA
 		template <typename Key, typename T, typename Allocator>
 		using adapter_hash_map = eastl::hash_map<Key, T, eastl::hash<Key>, eastl::equal_to<Key>, Allocator>;
+#else
+		template <typename Key, typename T, typename Allocator>
+		struct adapter_hash_map
+		{
+			eastl::hash_map<Key, T, int, int, Allocator> _map;
+		};
+#endif
 
 		typedef adapter_hash_map<uint32_t, eastl::vector<eastl::pair<IResourceFactoryPtr, uint32_t>>, ICoreAllocatorAdapter> FactoriesMap_t;
 		typedef adapter_hash_map<uint32_t, eastl::vector<uint32_t>, ICoreAllocatorAdapter> ResourceTypeToRecordTypeMap_t;

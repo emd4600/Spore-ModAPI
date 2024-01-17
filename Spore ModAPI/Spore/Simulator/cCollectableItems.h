@@ -5,7 +5,6 @@
 #include <EASTL\vector.h>
 #include <EASTL\hash_map.h>
 #include <EASTL\list.h>
-#include <EASTL\fixed_set.h>
 #include <EASTL\fixed_hash_set.h>
 #include <EASTL\fixed_hash_map.h>
 
@@ -71,6 +70,7 @@ namespace Simulator
 		};
 		ASSERT_SIZE(UnlockableItem, 0x1C);
 		
+#ifndef SDK_TO_GHIDRA
 		/* 0Ch */	bool field_C;  // true
 		/* 10h */	char field_10[0x147C];  // some fixed_ structure of vector<pair<int, int>>?
 		/* 148Ch */	eastl::sp_fixed_hash_map<cCollectableItemID, UnlockableItem, 256> mUnlockableItems;
@@ -83,6 +83,22 @@ namespace Simulator
 		/* 6D7Ch */	float mGlobalFindPercentageMultiplier;  // 1.0
 		/* 6D80h */	eastl::list<cCollectableItemID> mUnlockedItems;
 		/* 6D8Ch */	eastl::hash_map<int, int> field_6D8C;
+#else
+		// SDKtoGHIDRA does not support sp_fixed_ structures with alignment 8
+		/* 0Ch */	bool field_C;  // true
+		/* 10h */	char field_10[0x147C];  // some fixed_ structure of vector<pair<int, int>>?
+		/* 148Ch */	eastl::hash_map<cCollectableItemID, UnlockableItem> mUnlockableItems;
+		/* 14ACh */	char _mUnlockableItems__fixed_pool[0x4D00 - 0x14AC];
+		/* 4D00h */	eastl::hash_map<cCollectableItemID, uint8_t> mItemStatusInfos;
+		/* 4D20h */	char _mItemStatusInfos__fixed_pool[0x6D5C - 0x4D20];
+		/* 6D5Ch */	eastl::vector<int> mUnlocksPerLevel;
+		/* 6D70h */	int mUnlockPoints;
+		/* 6D74h */	uint32_t mItemsGroupID;
+		/* 6D78h */	float mFindPercentageLevelMultiplier;  // 1.0
+		/* 6D7Ch */	float mGlobalFindPercentageMultiplier;  // 1.0
+		/* 6D80h */	eastl::list<cCollectableItemID> mUnlockedItems;
+		/* 6D8Ch */	eastl::hash_map<int, int> field_6D8C;
+#endif
 	};
 	ASSERT_SIZE(cCollectableItems, 0x6DAC);
 
@@ -92,4 +108,8 @@ namespace Simulator
 		DeclareAddress(AddUnlockableItem);  // 0x598A70 0x598DB0
 		DeclareAddress(AddUnlockableItemFromProp);  // 0x598B50 0x598E90
 	}
+
+
+
+	// eastl::fixed_vector<eastl::pair<>
 }

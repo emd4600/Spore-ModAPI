@@ -44,6 +44,8 @@ namespace Simulator
 	typedef eastl::sp_fixed_hash_map<uint32_t, IVisualEffectPtr, 4> CreatureEffectPool;
 	ASSERT_SIZE(CreatureEffectPool, 0xA0);
 
+	static_assert(sizeof(eastl::pair<uint32_t, IVisualEffectPtr>) + 4 == 0xC, "Incorrect size");
+
 	// Maybe used in other places as well?
 	class cAbilityState  // size 10h
 	{
