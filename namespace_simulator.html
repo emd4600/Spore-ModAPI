@@ -628,6 +628,10 @@
             </dt>
             <dd><span></span></dd>
             <dt>
+              class <a href="class_simulator_1_1_creature_game_part_unlocking.html" class="m-doc">CreatureGamePartUnlocking</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
               class <a href="class_simulator_1_1c_relationship_data.html" class="m-doc">cRelationshipData</a>
             </dt>
             <dd><span></span></dd>
@@ -1094,6 +1098,10 @@
             <dd>Called when a space tool hits a target. Called by <a href="class_simulator_1_1c_tool_strategy.html#a2561e73287e748536c5de8ae994dfec3" class="m-doc">cToolStrategy::<wbr />OnHit</a>.</dd>
             <dt>
               struct <a href="struct_simulator_1_1t_player_death_data.html" class="m-doc">tPlayerDeathData</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              struct <a href="struct_simulator_1_1_unk_hashtable_item.html" class="m-doc">UnkHashtableItem</a>
             </dt>
             <dd><span></span></dd>
             <dt>
@@ -1758,6 +1766,22 @@
           <h2><a href="#typedef-members">Typedefs</a></h2>
           <dl class="m-doc">
             <dt>
+              using <a href="#aea00aff30fca57b4c67009c525b3fc7a" class="m-doc">cCollectableItemsRowVector</a> = eastl::fixed_vector&lt;<a href="struct_simulator_1_1c_collectable_item_i_d.html" class="m-doc">cCollectableItemID</a>, 5&gt;
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              using <a href="#a4271c75107a8a76363caf0a423e18c36" class="m-doc">cCollectableItemsRowID</a> = <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">uint64_<wbr />t</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              using <a href="#aaa8d54688a5a8046665c5849ae0fc9b6" class="m-doc">UnkHastable</a> = eastl::sp_fixed_hash_map&lt;<a href="struct_simulator_1_1c_collectable_item_i_d.html" class="m-doc">Simulator::<wbr />cCollectableItemID</a>, <a href="struct_simulator_1_1_unk_hashtable_item.html" class="m-doc">UnkHashtableItem</a>, 4&gt;
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              using <a href="#a7289759f2d1d168acd2d3cf46e07ba62" class="m-doc">UnkHashMap</a> = eastl::sp_fixed_hash_map&lt;<a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a>, <a href="namespace_simulator.html#aaa8d54688a5a8046665c5849ae0fc9b6" class="m-doc">UnkHastable</a>, 8&gt;
+            </dt>
+            <dd><span></span></dd>
+            <dt>
               using <a href="#aaf416461adc448563b86aaa54d653797" class="m-doc">CreatureEffectPool</a> = eastl::sp_fixed_hash_map&lt;<a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">uint32_<wbr />t</a>, <a href="_i_visual_effect_8h.html#af513d4705ba3d0bdec5c20e45aee71fd" class="m-doc">IVisualEffectPtr</a>, 4&gt;
             </dt>
             <dd><span></span></dd>
@@ -2003,12 +2027,41 @@
             </dt>
             <dd><span></span></dd>
             <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#aeb8b5212c89817feaf7aa645b98c402a" class="m-doc">GetCollectableItemsRowID</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">uint32_<wbr />t</a> categoryID,
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> pageIndex,
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> row) -&gt; <a href="namespace_simulator.html#a4271c75107a8a76363caf0a423e18c36" class="m-doc">cCollectableItemsRowID</a></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper"><a href="#a97869b2e1afdf8d9dba11c72e78d69c9" class="m-doc">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="struct_simulator_1_1_unk_hashtable_item.html" class="m-doc">UnkHashtableItem</a>,
+              8)</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper"><a href="#aebcde3cec5e6faad6d1afb1b57fff114" class="m-doc">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="namespace_simulator.html#aaa8d54688a5a8046665c5849ae0fc9b6" class="m-doc">UnkHastable</a>,
+              0xDC)</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper"><a href="#a4c422e2862b5c4ad946ad503e31ca46a" class="m-doc">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="namespace_simulator.html#a7289759f2d1d168acd2d3cf46e07ba62" class="m-doc">UnkHashMap</a>,
+              0x888)</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
               <span class="m-doc-wrap-bumper"><a href="#ab21355361baf157261a47d749259cd66" class="m-doc">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_collectable_items.html" class="m-doc">cCollectableItems</a>,
               0x6DAC)</span>
             </dt>
             <dd><span></span></dd>
             <dt>
               <span class="m-doc-wrap-bumper">auto <a href="#a97991906f01eb0f14e81a40cce846438" class="m-doc">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_collectable_items.html" class="m-doc">cCollectableItems</a>) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">namespace</a></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#aaf0048c3a6243567aea15b93c0b19ce4" class="m-doc">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1_creature_game_part_unlocking.html" class="m-doc">CreatureGamePartUnlocking</a>) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">namespace</a></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a5bdbc2d8449ca4c2b851140f6c21f79d" class="m-doc">GetCreatureGameUnlockCategoriesCount</a>(</span><span class="m-doc-wrap">) -&gt; eastl::fixed_vector&lt;eastl::pair&lt;<a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">uint32_<wbr />t</a>, <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a>&gt;, 16&gt;&amp;</span>
             </dt>
             <dd><span></span></dd>
             <dt>
@@ -3133,6 +3186,10 @@
             </dt>
             <dd>Gets all the game data objects that can be casted to the specified type.</dd>
             <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#aff25a996914b1173e7ad6bc31eae2ef7" class="m-doc">GetPlayer</a>(</span><span class="m-doc-wrap">) -&gt; <a href="class_simulator_1_1c_player.html" class="m-doc">cPlayer</a>*</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
               <span class="m-doc-wrap-bumper"><a href="#a377f8a4f6aee27111289e96ee9fe5f36" class="m-doc">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="struct_simulator_1_1_game_load_parameters.html" class="m-doc">GameLoadParameters</a>,
               0xB4)</span>
             </dt>
@@ -3331,6 +3388,10 @@
           <dl class="m-doc">
             <dt>
               <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">constexpr</a> <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> <a href="#aa60554d449c94532010872cf410051c8" class="m-doc">MAX_LAYOUT_SLOTS</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">constexpr</a> <a href="struct_simulator_1_1c_collectable_item_i_d.html" class="m-doc">cCollectableItemID</a> <a href="#ae9c3428e2265abca7d17c1e1de5a7613" class="m-doc">COLLECTABLE_ITEM_NULL_ID</a>
             </dt>
             <dd><span></span></dd>
           </dl>
@@ -4345,6 +4406,34 @@
         </section>
         <section>
           <h2>Typedef documentation</h2>
+          <section class="m-doc-details" id="aea00aff30fca57b4c67009c525b3fc7a"><div>
+            <h3>
+              typedef eastl::fixed_vector&lt;<a href="struct_simulator_1_1c_collectable_item_i_d.html" class="m-doc">cCollectableItemID</a>, 5&gt; Simulator::<wbr /><a href="#aea00aff30fca57b4c67009c525b3fc7a" class="m-doc-self">cCollectableItemsRowVector</a>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="c_collectable_items_8h.html">&lt;Spore ModAPI/Spore/Simulator/cCollectableItems.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="a4271c75107a8a76363caf0a423e18c36"><div>
+            <h3>
+              typedef <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">uint64_<wbr />t</a> Simulator::<wbr /><a href="#a4271c75107a8a76363caf0a423e18c36" class="m-doc-self">cCollectableItemsRowID</a>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="c_collectable_items_8h.html">&lt;Spore ModAPI/Spore/Simulator/cCollectableItems.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="aaa8d54688a5a8046665c5849ae0fc9b6"><div>
+            <h3>
+              typedef eastl::sp_fixed_hash_map&lt;<a href="struct_simulator_1_1c_collectable_item_i_d.html" class="m-doc">Simulator::<wbr />cCollectableItemID</a>, <a href="struct_simulator_1_1_unk_hashtable_item.html" class="m-doc">UnkHashtableItem</a>, 4&gt; Simulator::<wbr /><a href="#aaa8d54688a5a8046665c5849ae0fc9b6" class="m-doc-self">UnkHastable</a>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="c_collectable_items_8h.html">&lt;Spore ModAPI/Spore/Simulator/cCollectableItems.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="a7289759f2d1d168acd2d3cf46e07ba62"><div>
+            <h3>
+              typedef eastl::sp_fixed_hash_map&lt;<a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a>, <a href="namespace_simulator.html#aaa8d54688a5a8046665c5849ae0fc9b6" class="m-doc">UnkHastable</a>, 8&gt; Simulator::<wbr /><a href="#a7289759f2d1d168acd2d3cf46e07ba62" class="m-doc-self">UnkHashMap</a>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="c_collectable_items_8h.html">&lt;Spore ModAPI/Spore/Simulator/cCollectableItems.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
           <section class="m-doc-details" id="aaf416461adc448563b86aaa54d653797"><div>
             <h3>
               typedef eastl::sp_fixed_hash_map&lt;<a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">uint32_<wbr />t</a>, <a href="_i_visual_effect_8h.html#af513d4705ba3d0bdec5c20e45aee71fd" class="m-doc">IVisualEffectPtr</a>, 4&gt; Simulator::<wbr /><a href="#aaf416461adc448563b86aaa54d653797" class="m-doc-self">CreatureEffectPool</a>
@@ -4837,6 +4926,39 @@
             </h3>
             <p><span></span></p>
           </div></section>
+          <section class="m-doc-details" id="aeb8b5212c89817feaf7aa645b98c402a"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"><a href="namespace_simulator.html#a4271c75107a8a76363caf0a423e18c36" class="m-doc">cCollectableItemsRowID</a> Simulator::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#aeb8b5212c89817feaf7aa645b98c402a" class="m-doc-self">GetCollectableItemsRowID</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">uint32_<wbr />t</a> categoryID,
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> pageIndex,
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> row)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="c_collectable_items_8h.html">&lt;Spore ModAPI/Spore/Simulator/cCollectableItems.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="a97869b2e1afdf8d9dba11c72e78d69c9"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"> Simulator::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a97869b2e1afdf8d9dba11c72e78d69c9" class="m-doc-self">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="struct_simulator_1_1_unk_hashtable_item.html" class="m-doc">UnkHashtableItem</a>,
+              8)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="c_collectable_items_8h.html">&lt;Spore ModAPI/Spore/Simulator/cCollectableItems.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="aebcde3cec5e6faad6d1afb1b57fff114"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"> Simulator::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#aebcde3cec5e6faad6d1afb1b57fff114" class="m-doc-self">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="namespace_simulator.html#aaa8d54688a5a8046665c5849ae0fc9b6" class="m-doc">UnkHastable</a>,
+              0xDC)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="c_collectable_items_8h.html">&lt;Spore ModAPI/Spore/Simulator/cCollectableItems.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="a4c422e2862b5c4ad946ad503e31ca46a"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"> Simulator::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a4c422e2862b5c4ad946ad503e31ca46a" class="m-doc-self">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="namespace_simulator.html#a7289759f2d1d168acd2d3cf46e07ba62" class="m-doc">UnkHashMap</a>,
+              0x888)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="c_collectable_items_8h.html">&lt;Spore ModAPI/Spore/Simulator/cCollectableItems.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
           <section class="m-doc-details" id="ab21355361baf157261a47d749259cd66"><div>
             <h3>
               <span class="m-doc-wrap-bumper"> Simulator::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ab21355361baf157261a47d749259cd66" class="m-doc-self">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_collectable_items.html" class="m-doc">cCollectableItems</a>,
@@ -4848,6 +4970,20 @@
           <section class="m-doc-details" id="a97991906f01eb0f14e81a40cce846438"><div>
             <h3>
               <span class="m-doc-wrap-bumper"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">namespace</a> Simulator::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a97991906f01eb0f14e81a40cce846438" class="m-doc-self">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_collectable_items.html" class="m-doc">cCollectableItems</a>)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="c_collectable_items_8h.html">&lt;Spore ModAPI/Spore/Simulator/cCollectableItems.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="aaf0048c3a6243567aea15b93c0b19ce4"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">namespace</a> Simulator::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#aaf0048c3a6243567aea15b93c0b19ce4" class="m-doc-self">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1_creature_game_part_unlocking.html" class="m-doc">CreatureGamePartUnlocking</a>)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="c_collectable_items_8h.html">&lt;Spore ModAPI/Spore/Simulator/cCollectableItems.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="a5bdbc2d8449ca4c2b851140f6c21f79d"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">eastl::fixed_vector&lt;eastl::pair&lt;<a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">uint32_<wbr />t</a>, <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a>&gt;, 16&gt;&amp; Simulator::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a5bdbc2d8449ca4c2b851140f6c21f79d" class="m-doc-self">GetCreatureGameUnlockCategoriesCount</a>(</span><span class="m-doc-wrap">)</span></span>
               <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="c_collectable_items_8h.html">&lt;Spore ModAPI/Spore/Simulator/cCollectableItems.h&gt;</a></div>
             </h3>
             <p><span></span></p>
@@ -6863,6 +6999,13 @@
             <p>Gets all the game data objects that can be casted to the specified type.</p>
 <p>You can use this with base classes that aren&#x27;t nouns to use all the objects of subclasses; for example you can use it with <a href="class_simulator_1_1c_combatant.html" class="m-doc">cCombatant</a> or <a href="class_simulator_1_1c_creature_base.html" class="m-doc">cCreatureBase</a>. Only classes that define a <code>TYPE</code> can be used here. All the found objects will be casted to the specified type.</p>
           </div></section>
+          <section class="m-doc-details" id="aff25a996914b1173e7ad6bc31eae2ef7"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"><a href="class_simulator_1_1c_player.html" class="m-doc">cPlayer</a>* Simulator::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#aff25a996914b1173e7ad6bc31eae2ef7" class="m-doc-self">GetPlayer</a>(</span><span class="m-doc-wrap">)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_game_noun_manager_8h.html">&lt;Spore ModAPI/Spore/Simulator/SubSystem/GameNounManager.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
           <section class="m-doc-details" id="a377f8a4f6aee27111289e96ee9fe5f36"><div>
             <h3>
               <span class="m-doc-wrap-bumper"> Simulator::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a377f8a4f6aee27111289e96ee9fe5f36" class="m-doc-self">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="struct_simulator_1_1_game_load_parameters.html" class="m-doc">GameLoadParameters</a>,
@@ -7224,6 +7367,13 @@
             <h3>
               <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">constexpr</a> <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> Simulator::<wbr /><a href="#aa60554d449c94532010872cf410051c8" class="m-doc-self">MAX_LAYOUT_SLOTS</a>
               <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="c_city_walls_8h.html">&lt;Spore ModAPI/Spore/Simulator/cCityWalls.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="ae9c3428e2265abca7d17c1e1de5a7613"><div>
+            <h3>
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">constexpr</a> <a href="struct_simulator_1_1c_collectable_item_i_d.html" class="m-doc">cCollectableItemID</a> Simulator::<wbr /><a href="#ae9c3428e2265abca7d17c1e1de5a7613" class="m-doc-self">COLLECTABLE_ITEM_NULL_ID</a>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="c_collectable_items_8h.html">&lt;Spore ModAPI/Spore/Simulator/cCollectableItems.h&gt;</a></div>
             </h3>
             <p><span></span></p>
           </div></section>
