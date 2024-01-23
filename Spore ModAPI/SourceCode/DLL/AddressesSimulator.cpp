@@ -132,6 +132,8 @@ namespace Addresses(Simulator)
 	DefineAddress(IsNotStarOrBinaryStar, SelectAddress(0xC8A840, 0xC8B6B0));
 
 	DefineAddress(LaunchDefaultToolProjectile, SelectAddress(0x1054F40, 0x1054390));
+
+	DefineAddress(sCreatureGameUnlockCategoriesCount, SelectAddress(0x1587278, 0x1583298));
 	
 #ifndef SDK_TO_GHIDRA
 	DefineAddress(LightingWorld_ptr, SelectAddress(0x1682CD4, 0x167EA54));
@@ -1029,6 +1031,13 @@ namespace Simulator
 		DefineAddress(LoadConfig, SelectAddress(0x599100, 0x599440));
 		DefineAddress(AddUnlockableItem, SelectAddress(0x598A70, 0x598DB0));
 		DefineAddress(AddUnlockableItemFromProp, SelectAddress(0x598B50, 0x598E90));
+		DefineAddress(sub_597BC0, SelectAddress(0x597BC0, 0x597F00));
+		DefineAddress(sub_597390, SelectAddress(0x597390, 0x5976D0));
+	}
+
+	namespace Addresses(CreatureGamePartUnlocking)
+	{
+		DefineAddress(sub_D3B460, , SelectAddress(0xD3B460, 0xD3BF50));
 	}
 }
 

@@ -137,5 +137,14 @@ namespace Simulator
 	auto_METHOD(cCollectableItems, bool, AddUnlockableItemFromProp,
 		Args(struct ResourceKey key, uint32_t categoryID, int row, int column, int pageIndex),
 		Args(key, categoryID, row, column, pageIndex));
+
+	auto_METHOD_VOID(cCollectableItems, sub_597390,
+		Args(eastl::vector<int>& dst, struct cCollectableItemID itemID, int unk),
+		Args(dst, itemID, unk));
+
+
+	eastl::fixed_vector<eastl::pair<uint32_t, int>, 16>& GetCreatureGameUnlockCategoriesCount() {
+		return *(eastl::fixed_vector<eastl::pair<uint32_t, int>, 16>*)(GetAddress(Simulator, sCreatureGameUnlockCategoriesCount));
+	}
 }
 #endif

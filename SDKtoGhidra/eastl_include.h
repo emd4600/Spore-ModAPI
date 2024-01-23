@@ -228,7 +228,7 @@ namespace eastl
         float mfMaxLoadFactor;
         float mfGrowthFactor;
         int mnNextResize;
-        /* 1Ch */	int mPoolAllocator[5];
+        /* 1Ch */	int mPoolAllocator[6];
         /* 34h */	void* mBucketBuffer[bucketCount + 1];
         //WARNING this does not work if T has alignment 8, because the struct will also get the alignment (but it shouldn't)
         int mPoolBuffer0[bucketCount + 1];
