@@ -64,6 +64,7 @@ namespace Addresses(LocalizedString)
 
 	DefineAddress(ctor_0, SelectAddress(0x6B5330, 0x6B4FF0));
 	DefineAddress(ctor_1, SelectAddress(0x6B5A40, 0x6B5700));
+	DefineAddress(op_equal, SelectAddress(0x6B59C0, 0x6B5680));
 	DefineAddress(dtor, SelectAddress(0x6B5510, 0x6B51D0));
 }
 
