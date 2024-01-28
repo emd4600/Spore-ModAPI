@@ -43,9 +43,13 @@ namespace eastl
 
 namespace Simulator
 {
-	typedef eastl::fixed_vector<cCollectableItemID, 5> cCollectableItemsRowVector;
+	typedef eastl::fixed_vector<cCollectableItemID, 4> cCollectableItemsRowVector;
+	ASSERT_SIZE(cCollectableItemsRowVector, 56);
 
 	typedef uint64_t cCollectableItemsRowID;
+
+	typedef eastl::map<cCollectableItemsRowID, cCollectableItemsRowVector>::node_type NodeType;
+	static_assert(sizeof(NodeType) == 0x50, "");
 
 	inline cCollectableItemsRowID GetCollectableItemsRowID(uint32_t categoryID, int pageIndex, int row) {
 		return ((uint64_t)categoryID) << 32 | (pageIndex << 16) | row;

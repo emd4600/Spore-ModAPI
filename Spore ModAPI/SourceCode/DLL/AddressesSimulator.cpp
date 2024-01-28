@@ -1037,7 +1037,7 @@ namespace Simulator
 
 	namespace Addresses(CreatureGamePartUnlocking)
 	{
-		DefineAddress(sub_D3B460, , SelectAddress(0xD3B460, 0xD3BF50));
+		DefineAddress(sub_D3B460, SelectAddress(0xD3B460, 0xD3BF50));
 	}
 }
 

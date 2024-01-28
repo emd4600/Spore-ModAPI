@@ -616,7 +616,7 @@ namespace eastl
     class sp_fixed_map : public map<Key, T>
     {
 	public:
-	    typedef hash_map<Key, T> base_type;
+	    typedef map<Key, T> base_type;
 	    typedef typename base_type::node_type node_type;
 	    typedef typename base_type::size_type size_type;
 
