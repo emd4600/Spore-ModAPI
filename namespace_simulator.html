@@ -1766,11 +1766,15 @@
           <h2><a href="#typedef-members">Typedefs</a></h2>
           <dl class="m-doc">
             <dt>
-              using <a href="#aea00aff30fca57b4c67009c525b3fc7a" class="m-doc">cCollectableItemsRowVector</a> = eastl::fixed_vector&lt;<a href="struct_simulator_1_1c_collectable_item_i_d.html" class="m-doc">cCollectableItemID</a>, 5&gt;
+              using <a href="#a7b71801e4c9776a32a6f06583808cc66" class="m-doc">cCollectableItemsRowVector</a> = eastl::fixed_vector&lt;<a href="struct_simulator_1_1c_collectable_item_i_d.html" class="m-doc">cCollectableItemID</a>, 4&gt;
             </dt>
             <dd><span></span></dd>
             <dt>
               using <a href="#a4271c75107a8a76363caf0a423e18c36" class="m-doc">cCollectableItemsRowID</a> = <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">uint64_<wbr />t</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              using <a href="#a91b6776b7ff91588fa44a4247700e9b4" class="m-doc">NodeType</a> = eastl::map&lt;<a href="namespace_simulator.html#a4271c75107a8a76363caf0a423e18c36" class="m-doc">cCollectableItemsRowID</a>, <a href="namespace_simulator.html#a7b71801e4c9776a32a6f06583808cc66" class="m-doc">cCollectableItemsRowVector</a>&gt;<a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">::<wbr />node_type</a>
             </dt>
             <dd><span></span></dd>
             <dt>
@@ -2024,6 +2028,11 @@
             <dt>
               <span class="m-doc-wrap-bumper"><a href="#a52b3aebef4d7b06c670ab34b01161194" class="m-doc">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_civilization.html" class="m-doc">cCivilization</a>,
               0x4D8)</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper"><a href="#aa0a89a7691d50d052dd9b5b5c9412fa4" class="m-doc">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="namespace_simulator.html#a7b71801e4c9776a32a6f06583808cc66" class="m-doc">cCollectableItemsRowVector</a>,
+              56)</span>
             </dt>
             <dd><span></span></dd>
             <dt>
@@ -4406,9 +4415,9 @@
         </section>
         <section>
           <h2>Typedef documentation</h2>
-          <section class="m-doc-details" id="aea00aff30fca57b4c67009c525b3fc7a"><div>
+          <section class="m-doc-details" id="a7b71801e4c9776a32a6f06583808cc66"><div>
             <h3>
-              typedef eastl::fixed_vector&lt;<a href="struct_simulator_1_1c_collectable_item_i_d.html" class="m-doc">cCollectableItemID</a>, 5&gt; Simulator::<wbr /><a href="#aea00aff30fca57b4c67009c525b3fc7a" class="m-doc-self">cCollectableItemsRowVector</a>
+              typedef eastl::fixed_vector&lt;<a href="struct_simulator_1_1c_collectable_item_i_d.html" class="m-doc">cCollectableItemID</a>, 4&gt; Simulator::<wbr /><a href="#a7b71801e4c9776a32a6f06583808cc66" class="m-doc-self">cCollectableItemsRowVector</a>
               <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="c_collectable_items_8h.html">&lt;Spore ModAPI/Spore/Simulator/cCollectableItems.h&gt;</a></div>
             </h3>
             <p><span></span></p>
@@ -4416,6 +4425,13 @@
           <section class="m-doc-details" id="a4271c75107a8a76363caf0a423e18c36"><div>
             <h3>
               typedef <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">uint64_<wbr />t</a> Simulator::<wbr /><a href="#a4271c75107a8a76363caf0a423e18c36" class="m-doc-self">cCollectableItemsRowID</a>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="c_collectable_items_8h.html">&lt;Spore ModAPI/Spore/Simulator/cCollectableItems.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="a91b6776b7ff91588fa44a4247700e9b4"><div>
+            <h3>
+              typedef eastl::map&lt;<a href="namespace_simulator.html#a4271c75107a8a76363caf0a423e18c36" class="m-doc">cCollectableItemsRowID</a>, <a href="namespace_simulator.html#a7b71801e4c9776a32a6f06583808cc66" class="m-doc">cCollectableItemsRowVector</a>&gt;<a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">::<wbr />node_type</a> Simulator::<wbr /><a href="#a91b6776b7ff91588fa44a4247700e9b4" class="m-doc-self">NodeType</a>
               <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="c_collectable_items_8h.html">&lt;Spore ModAPI/Spore/Simulator/cCollectableItems.h&gt;</a></div>
             </h3>
             <p><span></span></p>
@@ -4923,6 +4939,14 @@
               <span class="m-doc-wrap-bumper"> Simulator::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a52b3aebef4d7b06c670ab34b01161194" class="m-doc-self">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_civilization.html" class="m-doc">cCivilization</a>,
               0x4D8)</span></span>
               <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="c_civilization_8h.html">&lt;Spore ModAPI/Spore/Simulator/cCivilization.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="aa0a89a7691d50d052dd9b5b5c9412fa4"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"> Simulator::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#aa0a89a7691d50d052dd9b5b5c9412fa4" class="m-doc-self">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="namespace_simulator.html#a7b71801e4c9776a32a6f06583808cc66" class="m-doc">cCollectableItemsRowVector</a>,
+              56)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="c_collectable_items_8h.html">&lt;Spore ModAPI/Spore/Simulator/cCollectableItems.h&gt;</a></div>
             </h3>
             <p><span></span></p>
           </div></section>
