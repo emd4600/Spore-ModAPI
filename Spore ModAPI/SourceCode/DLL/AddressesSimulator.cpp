@@ -81,6 +81,7 @@
 #include <Spore\Simulator\cCollectableItems.h>
 #include <Spore\Simulator\cSpaceDefenseMissile.h>
 #include <Spore\Simulator\cDefaultToolProjectile.h>
+#include <Spore\Simulator\cPlanetaryArtifact.h>
 #include <Spore\Simulator\SubSystem\cRelationshipManager.h>
 #include <Spore\Simulator\SubSystem\GameBehaviorManager.h>
 #include <Spore\Simulator\SubSystem\GameInputManager.h>
@@ -1038,6 +1039,12 @@ namespace Simulator
 	namespace Addresses(CreatureGamePartUnlocking)
 	{
 		DefineAddress(sub_D3B460, SelectAddress(0xD3B460, 0xD3BF50));
+	}
+
+	namespace Addresses(cPlanetaryArtifact)
+	{
+		DefineAddress(SetLocomotion, SelectAddress(0xC687D0, 0xC69230));
+		DefineAddress(LoadFromItem, SelectAddress(0xC73F90, 0xC74ED0));
 	}
 }
 

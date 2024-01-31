@@ -78,6 +78,9 @@
 #include <Spore\Simulator\cDefaultAoEArea.h>
 #include <Spore\Simulator\cSpear.h>
 #include <Spore\Simulator\cCollectableItems.h>
+#include <Spore\Simulator\cMovableDestructibleOrnament.h>
+#include <Spore\Simulator\cToolObject.h>
+#include <Spore\Simulator\cPlanetaryArtifact.h>
 
 #include <Spore\Simulator\SimulatorMessages.h>
 

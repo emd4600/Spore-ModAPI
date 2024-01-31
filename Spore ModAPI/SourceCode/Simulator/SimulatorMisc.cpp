@@ -14,6 +14,7 @@
 #include <Spore\Simulator\cResourceProjectile.h>
 #include <Spore\Simulator\cSpaceDefenseMissile.h>
 #include <Spore\Simulator\cCollectableItems.h>
+#include <Spore\Simulator\cPlanetaryArtifact.h>
 
 namespace Simulator
 {
@@ -146,5 +147,14 @@ namespace Simulator
 	eastl::fixed_vector<eastl::pair<uint32_t, int>, 16>& GetCreatureGameUnlockCategoriesCount() {
 		return *(eastl::fixed_vector<eastl::pair<uint32_t, int>, 16>*)(GetAddress(Simulator, sCreatureGameUnlockCategoriesCount));
 	}
+
+
+	//// cPlanetaryArtifact ////
+
+	auto_METHOD_VOID_(cPlanetaryArtifact, SetLocomotion);
+
+	auto_METHOD_VOID(cPlanetaryArtifact, LoadFromItem, 
+		Args(SpaceInventoryItemType itemType, const ResourceKey& itemKey, int count, bool arg),
+		Args(itemType, itemKey, count, arg));
 }
 #endif
