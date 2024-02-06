@@ -674,4 +674,21 @@ namespace Simulator
 		/// Cold orbit, far from the sun
 		Cold = 2,
 	};
+
+	enum class UfoType
+	{
+		Player = 0,
+		UberTurret = 1,
+		Raider = 2,
+		Unk3 = 3,
+		Bomber = 4,
+		/// Only has weapon 'abduct'
+		Unk5 = 5,
+		Defender = 6,
+		Unk7 = 7,
+		Unk8 = 8,
+		Unk9 = 9,
+		Unk10 = 10,
+		Unk11 = 10,
+	};
 }

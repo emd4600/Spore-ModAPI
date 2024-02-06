@@ -22,5 +22,9 @@
 namespace Simulator
 {
 	auto_METHOD(cGameDataUFO, float, ChangeEnergy, Args(float delta), Args(delta));
+
+	auto_METHOD_VOID(cGameDataUFO, Initialize, Args(UfoType type, cEmpire* empire), Args(type, empire));
+
+	auto_STATIC_METHOD(Simulator, cGameDataUFO*, CreateUFO, Args(UfoType type, cEmpire* empire), Args(type, empire));
 }
 #endif

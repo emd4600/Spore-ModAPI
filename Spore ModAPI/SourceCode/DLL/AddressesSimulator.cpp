@@ -135,6 +135,8 @@ namespace Addresses(Simulator)
 	DefineAddress(LaunchDefaultToolProjectile, SelectAddress(0x1054F40, 0x1054390));
 
 	DefineAddress(sCreatureGameUnlockCategoriesCount, SelectAddress(0x1587278, 0x1583298));
+
+	DefineAddress(CreateUFO, SelectAddress(0x102BB50, 0x102AC60));
 	
 #ifndef SDK_TO_GHIDRA
 	DefineAddress(LightingWorld_ptr, SelectAddress(0x1682CD4, 0x167EA54));
@@ -310,6 +312,7 @@ namespace Simulator
 	namespace Addresses(cGameDataUFO)
 	{
 		DefineAddress(ChangeEnergy, SelectAddress(0xC382C0, 0xC38B50));
+		DefineAddress(Initialize, SelectAddress(0xC3D8D0, 0xC3E210));
 	}
 	namespace Addresses(cGameTerrainCursor)
 	{

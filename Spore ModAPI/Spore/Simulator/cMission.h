@@ -71,6 +71,9 @@ namespace Simulator
 		/// @param pEmpire
 		void SetTargetEmpire(cEmpire* pEmpire);
 
+		/* 54h */	virtual int func54h();
+		/* 58h */	virtual int func58h();
+		/* 5Ch */	virtual int func5Ch();
 		/* 60h */	virtual int GetState();
 		/* 64h */	virtual bool func64h();  // field_38.IsRunning()
 		// Called by sub_E13A70
