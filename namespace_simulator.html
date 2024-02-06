@@ -1730,6 +1730,21 @@
             </dt>
             <dd><span></span></dd>
             <dt>
+              <span class="m-doc-wrap-bumper">enum class <a href="#a275b9181c60a664d8e1d56328862cb6e" class="m-doc">UfoType</a> { </span><span class="m-doc-wrap"><a href="#a275b9181c60a664d8e1d56328862cb6ea636da1d35e805b00eae0fcd8333f9234" class="m-doc">Player</a> = 0,
+              <a href="#a275b9181c60a664d8e1d56328862cb6ea457750c31507602159b71231c8795b5b" class="m-doc">UberTurret</a> = 1,
+              <a href="#a275b9181c60a664d8e1d56328862cb6ea53ee1f6d941b631ed8148da497853787" class="m-doc">Raider</a> = 2,
+              <a href="#a275b9181c60a664d8e1d56328862cb6ea99ba20386716528ab0c0ace69a1420f5" class="m-doc">Unk3</a> = 3,
+              <a href="#a275b9181c60a664d8e1d56328862cb6ea84ac13a9696967dc4dce46369e37e3d7" class="m-doc">Bomber</a> = 4,
+              <a href="#a275b9181c60a664d8e1d56328862cb6eac0d4a5a0eb2b05fa7073761d345aa09f" class="m-doc">Unk5</a> = 5,
+              <a href="#a275b9181c60a664d8e1d56328862cb6eaee90445284a3f5eb04b08417e16ecb95" class="m-doc">Defender</a> = 6,
+              <a href="#a275b9181c60a664d8e1d56328862cb6eab59502bb9741c9cbcf22ba9cddd65cf1" class="m-doc">Unk7</a> = 7,
+              <a href="#a275b9181c60a664d8e1d56328862cb6eaa17cdfb3cf7ec46f2f87af51c01ec263" class="m-doc">Unk8</a> = 8,
+              <a href="#a275b9181c60a664d8e1d56328862cb6ea8f759fc5bc573bbfe086d3ab3ff60d8d" class="m-doc">Unk9</a> = 9,
+              <a href="#a275b9181c60a664d8e1d56328862cb6ea1ae72a4903b201d96ded206632ce7d54" class="m-doc">Unk10</a> = 10,
+              <a href="#a275b9181c60a664d8e1d56328862cb6ea5c36a398f22555e1ba0ca4693fb0b3ef" class="m-doc">Unk11</a> = 10 }</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
               <span class="m-doc-wrap-bumper">enum <a href="#a4b1f459203b8dbf8583312aa067c8c54" class="m-doc">SimulatorMessages</a> { </span><span class="m-doc-wrap"><a href="#a4b1f459203b8dbf8583312aa067c8c54afaa877c01fe00a1dad6f0eb4a78ba75f" class="m-doc">kMsgEnterEditor</a> = 0x53850BAE,
               <a href="#a4b1f459203b8dbf8583312aa067c8c54a5edeab9362d5e625c62466364e194af0" class="m-doc">kMsgSwitchGameMode</a> = 0x0212D3E7,
               <a href="#a4b1f459203b8dbf8583312aa067c8c54ae09650fb53b169697e5b7e2aea8296d5" class="m-doc">kMsgSaveGame</a> = 0x1CD20F0,
@@ -2349,6 +2364,11 @@
               <span class="m-doc-wrap-bumper">auto <a href="#a5c5737a89d86bff9860a4e5322aac2db" class="m-doc">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_game_data_u_f_o.html" class="m-doc">cGameDataUFO</a>) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">namespace</a></span>
             </dt>
             <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a064aa80a6eca0c70bd34061587dabdef" class="m-doc">CreateUFO</a>(</span><span class="m-doc-wrap"><a href="namespace_simulator.html#a275b9181c60a664d8e1d56328862cb6e" class="m-doc">UfoType</a> type,
+              <a href="class_simulator_1_1c_empire.html" class="m-doc">cEmpire</a>* empire) -&gt; <a href="class_simulator_1_1c_game_data_u_f_o.html" class="m-doc">cGameDataUFO</a>*</span>
+            </dt>
+            <dd>Creates a new UFO instance of the given type and assigned to the specified empire.</dd>
             <dt>
               <span class="m-doc-wrap-bumper"><a href="#a73919ecf722ed08a191bcf25be3534a8" class="m-doc">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_game_plant.html" class="m-doc">cGamePlant</a>,
               0x680)</span>
@@ -4197,6 +4217,90 @@
               </tbody>
             </table>
           </div></section>
+          <section class="m-doc-details" id="a275b9181c60a664d8e1d56328862cb6e"><div>
+            <h3>
+              enum class Simulator::<wbr /><a href="#a275b9181c60a664d8e1d56328862cb6e" class="m-doc-self">UfoType</a>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_simulator_enums_8h.html">&lt;Spore ModAPI/Spore/Simulator/SimulatorEnums.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+            <table class="m-table m-fullwidth m-flat m-doc">
+              <thead><tr><th style="width: 1%">Enumerators</th><th></th></tr></thead>
+              <tbody>
+                <tr>
+                  <td><a href="#a275b9181c60a664d8e1d56328862cb6ea636da1d35e805b00eae0fcd8333f9234" class="m-doc-self" id="a275b9181c60a664d8e1d56328862cb6ea636da1d35e805b00eae0fcd8333f9234">Player</a></td>
+                  <td>
+                  <p><span></span></p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a275b9181c60a664d8e1d56328862cb6ea457750c31507602159b71231c8795b5b" class="m-doc-self" id="a275b9181c60a664d8e1d56328862cb6ea457750c31507602159b71231c8795b5b">UberTurret</a></td>
+                  <td>
+                  <p><span></span></p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a275b9181c60a664d8e1d56328862cb6ea53ee1f6d941b631ed8148da497853787" class="m-doc-self" id="a275b9181c60a664d8e1d56328862cb6ea53ee1f6d941b631ed8148da497853787">Raider</a></td>
+                  <td>
+                  <p><span></span></p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a275b9181c60a664d8e1d56328862cb6ea99ba20386716528ab0c0ace69a1420f5" class="m-doc-self" id="a275b9181c60a664d8e1d56328862cb6ea99ba20386716528ab0c0ace69a1420f5">Unk3</a></td>
+                  <td>
+                  <p><span></span></p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a275b9181c60a664d8e1d56328862cb6ea84ac13a9696967dc4dce46369e37e3d7" class="m-doc-self" id="a275b9181c60a664d8e1d56328862cb6ea84ac13a9696967dc4dce46369e37e3d7">Bomber</a></td>
+                  <td>
+                  <p><span></span></p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a275b9181c60a664d8e1d56328862cb6eac0d4a5a0eb2b05fa7073761d345aa09f" class="m-doc-self" id="a275b9181c60a664d8e1d56328862cb6eac0d4a5a0eb2b05fa7073761d345aa09f">Unk5</a></td>
+                  <td>
+                  <p>Only has weapon &#x27;abduct&#x27;.</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a275b9181c60a664d8e1d56328862cb6eaee90445284a3f5eb04b08417e16ecb95" class="m-doc-self" id="a275b9181c60a664d8e1d56328862cb6eaee90445284a3f5eb04b08417e16ecb95">Defender</a></td>
+                  <td>
+                  <p><span></span></p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a275b9181c60a664d8e1d56328862cb6eab59502bb9741c9cbcf22ba9cddd65cf1" class="m-doc-self" id="a275b9181c60a664d8e1d56328862cb6eab59502bb9741c9cbcf22ba9cddd65cf1">Unk7</a></td>
+                  <td>
+                  <p><span></span></p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a275b9181c60a664d8e1d56328862cb6eaa17cdfb3cf7ec46f2f87af51c01ec263" class="m-doc-self" id="a275b9181c60a664d8e1d56328862cb6eaa17cdfb3cf7ec46f2f87af51c01ec263">Unk8</a></td>
+                  <td>
+                  <p><span></span></p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a275b9181c60a664d8e1d56328862cb6ea8f759fc5bc573bbfe086d3ab3ff60d8d" class="m-doc-self" id="a275b9181c60a664d8e1d56328862cb6ea8f759fc5bc573bbfe086d3ab3ff60d8d">Unk9</a></td>
+                  <td>
+                  <p><span></span></p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a275b9181c60a664d8e1d56328862cb6ea1ae72a4903b201d96ded206632ce7d54" class="m-doc-self" id="a275b9181c60a664d8e1d56328862cb6ea1ae72a4903b201d96ded206632ce7d54">Unk10</a></td>
+                  <td>
+                  <p><span></span></p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a275b9181c60a664d8e1d56328862cb6ea5c36a398f22555e1ba0ca4693fb0b3ef" class="m-doc-self" id="a275b9181c60a664d8e1d56328862cb6ea5c36a398f22555e1ba0ca4693fb0b3ef">Unk11</a></td>
+                  <td>
+                  <p><span></span></p>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div></section>
           <section class="m-doc-details" id="a4b1f459203b8dbf8583312aa067c8c54"><div>
             <h3>
               enum Simulator::<wbr /><a href="#a4b1f459203b8dbf8583312aa067c8c54" class="m-doc-self">SimulatorMessages</a>
@@ -5523,6 +5627,30 @@
               <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="c_game_data_u_f_o_8h.html">&lt;Spore ModAPI/Spore/Simulator/cGameDataUFO.h&gt;</a></div>
             </h3>
             <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="a064aa80a6eca0c70bd34061587dabdef"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"><a href="class_simulator_1_1c_game_data_u_f_o.html" class="m-doc">cGameDataUFO</a>* Simulator::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a064aa80a6eca0c70bd34061587dabdef" class="m-doc-self">CreateUFO</a>(</span><span class="m-doc-wrap"><a href="namespace_simulator.html#a275b9181c60a664d8e1d56328862cb6e" class="m-doc">UfoType</a> type,
+              <a href="class_simulator_1_1c_empire.html" class="m-doc">cEmpire</a>* empire)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="c_game_data_u_f_o_8h.html">&lt;Spore ModAPI/Spore/Simulator/cGameDataUFO.h&gt;</a></div>
+            </h3>
+            <p>Creates a new UFO instance of the given type and assigned to the specified empire.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">type</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>empire</td>
+                  <td></td>
+                </tr>
+              </tbody>
+            </table>
+<p>It will call <a href="class_simulator_1_1c_game_data_u_f_o.html#a506925cc91a53b6470e202996a0daacf" class="m-doc">cGameDataUFO::<wbr />Initialize()</a>, which sets up the necessary tools and <a href="namespace_simulator_1_1_a_i.html" class="m-doc">AI</a>.</p>
           </div></section>
           <section class="m-doc-details" id="a73919ecf722ed08a191bcf25be3534a8"><div>
             <h3>
