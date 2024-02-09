@@ -172,6 +172,9 @@ namespace Editors
 	auto_METHOD(cEditorAnimWorld, Anim::AnimatedCreature*, GetAnimatedCreature,
 		Args(int creatureID), Args(creatureID));
 
+	auto_METHOD(cEditor, bool, AddCreature,
+		Args(int a, const ResourceKey* key), Args(a, key));
+
 	auto_METHOD_VOID(cEditorAnimWorld, DestroyCreature,
 		Args(int creatureID), Args(creatureID));
 
