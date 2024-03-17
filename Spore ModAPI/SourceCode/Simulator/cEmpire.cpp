@@ -38,5 +38,11 @@ namespace Simulator
 			return nullptr;
 		}
 	}
+
+	Math::ColorRGB cEmpire::UpdateAndGetColor() {
+		Math::ColorRGB dst;
+		CALL(GetAddress(cEmpire, UpdateAndGetColor), void, Args(cEmpire*, Math::ColorRGB&), Args(this, dst));
+		return dst;
+	}
 }
 #endif

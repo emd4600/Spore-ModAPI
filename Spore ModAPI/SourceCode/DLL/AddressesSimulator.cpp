@@ -300,6 +300,7 @@ namespace Simulator
 		DefineAddress(SetSpeciesProfile, SelectAddress(0xC32FB0, 0xC337F0));
 		DefineAddress(sub_C32EA0, SelectAddress(0xC32EA0, 0xC336E0));
 		DefineAddress(CaptureSystem, SelectAddress(0xC8C320, 0xC8D190));
+		DefineAddress(UpdateAndGetColor, SelectAddress(0xC325F0, 0xC32E30));
 	}
 
 	namespace Addresses(cEnergyRepairToolStrategy)

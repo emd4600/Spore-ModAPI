@@ -86,7 +86,7 @@ namespace Simulator
 		/* 75h */	bool field_75;  // true
 		/* 76h */	bool field_76;
 		/* 77h */	bool field_77;
-		/* 78h */	eastl::vector<int> mNPC_UFOs;  //TODO
+		/* 78h */	eastl::vector<cGameDataUFOPtr> mNPC_UFOs;
 		/* 90h */	cGonzagoTimer mTimeSinceStartedSpaceGame;
 		/// Current star ID??
 		/* B0h */	StarID field_B0;

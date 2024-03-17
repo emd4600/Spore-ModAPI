@@ -35,6 +35,10 @@ namespace Simulator
 
 	enum StarFlags
 	{
+		kStarFlagIsOwned = 0x10,  // 1 << 4
+		
+		// 0x200 has raid?
+
 		kStarFlagHasRare = 0x1000,  // 1 << 12
 	};
 
