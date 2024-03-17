@@ -119,6 +119,10 @@
               <span class="m-doc-wrap-bumper">auto <a href="#a648f3146d2ae63cd5f99caa1ef06f87b" class="m-doc-self">SetSpeciesProfile</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_species_profile.html" class="m-doc">cSpeciesProfile</a>* pSpecies) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">void</a></span>
             </dt>
             <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a2481f04a57294f34bee802376b25ebc3" class="m-doc">UpdateAndGetColor</a>(</span><span class="m-doc-wrap">) -&gt; <a href="struct_math_1_1_color_r_g_b.html" class="m-doc">Math::<wbr />ColorRGB</a></span>
+            </dt>
+            <dd>Calculates and returns the identity color of the empire, based on the <code>mIDColorID</code> field.</dd>
             <dt id="a3a9c8996c8e1adc7cfec11f8f09b51c8">
               <span class="m-doc-wrap-bumper">auto <a href="#a3a9c8996c8e1adc7cfec11f8f09b51c8" class="m-doc-self">AddRef</a>(</span><span class="m-doc-wrap">) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
@@ -269,6 +273,13 @@
                 </tr>
               </tbody>
             </table>
+          </div></section>
+          <section class="m-doc-details" id="a2481f04a57294f34bee802376b25ebc3"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"><a href="struct_math_1_1_color_r_g_b.html" class="m-doc">Math::<wbr />ColorRGB</a> Simulator::<wbr />cEmpire::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a2481f04a57294f34bee802376b25ebc3" class="m-doc-self">UpdateAndGetColor</a>(</span><span class="m-doc-wrap">)</span></span>
+            </h3>
+            <p>Calculates and returns the identity color of the empire, based on the <code>mIDColorID</code> field.</p>
+<p>ColorIDs equal or greater than <code>0x53DBCF1</code> are cached, and <code>colorID - 0x53DBCF1</code> is an index to the real color stored in <code>animations~!ui.prop</code> in <code>IdentityColors</code> property. <code>0x53DBCF1</code> is special and uses the empire species identity color, instead of the color on the list. If the ID less than <code>0x53DBCF1</code>, the color will be recalculated, cached, and the ID will be updated.</p>
           </div></section>
         </section>
       </div>
