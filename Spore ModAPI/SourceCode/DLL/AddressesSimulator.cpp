@@ -790,6 +790,7 @@ namespace Simulator
 		DefineAddress(Initialize, SelectAddress(0xF1F450, 0xF1F060));
 		DefineAddress(SetCurrentAct, SelectAddress(0xF1F260, 0xF1EE70));
 		DefineAddress(JumpToAct, SelectAddress(0xF1F7B0, 0xF1F3C0));
+		DefineAddress(SetState, SelectAddress(0xF1ADB0, 0xF1A9C0));
 	}
 
 	namespace Addresses(cPlanetRecord)

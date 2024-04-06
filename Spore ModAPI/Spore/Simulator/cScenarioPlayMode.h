@@ -59,6 +59,8 @@ namespace Simulator
 		void Initialize();
 		void SetCurrentAct(int actIndex, bool = false);
 		void JumpToAct(int actIndex);
+		void SetState(ScenarioPlayModeState state);
+
 
 	public:
 		/* 0Ch */	cScenarioPlaySummary mSummary;
@@ -113,5 +115,6 @@ namespace Simulator
 		DeclareAddress(Initialize);		// 0xF1F450, 0xF1F060
 		DeclareAddress(SetCurrentAct);  // 0xF1F260, 0xF1EE70
 		DeclareAddress(JumpToAct);		// 0xF1F7B0, 0xF1F3C0
+		DeclareAddress(SetState);		// 0xF1ADB0, 0xF1A9C0
 	}
 }
