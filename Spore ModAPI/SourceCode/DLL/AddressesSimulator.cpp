@@ -791,6 +791,12 @@ namespace Simulator
 		DefineAddress(SetCurrentAct, SelectAddress(0xF1F260, 0xF1EE70));
 		DefineAddress(JumpToAct, SelectAddress(0xF1F7B0, 0xF1F3C0));
 		DefineAddress(SetState, SelectAddress(0xF1ADB0, 0xF1A9C0));
+		DefineAddress(UpdateGoals, SelectAddress(0xF1C780, 0xF1C390));
+		DefineAddress(Update, SelectAddress(0xF1FD50, 0xF1F960));
+		DefineAddress(CompleteAct, SelectAddress(0xF1F680, 0xF1F290));
+		DefineAddress(CheckGoalProgress, SelectAddress(0xF1F8D0, 0xF1F4E0));
+		DefineAddress(RemoveInvisibleClasses, SelectAddress(0xF1AFD0, 0xF1ABE0));
+		DefineAddress(ReadScenarioTuning, SelectAddress(0xF1E2F0, 0xF1DF00));
 	}
 
 	namespace Addresses(cPlanetRecord)

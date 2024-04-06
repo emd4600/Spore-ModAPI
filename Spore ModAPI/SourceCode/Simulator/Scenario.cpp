@@ -75,5 +75,11 @@ namespace Simulator
 	auto_METHOD_VOID(cScenarioPlayMode, JumpToAct, Args(int actIndex), Args(actIndex));
 	auto_METHOD_VOID_(cScenarioPlayMode, Initialize);
 	auto_METHOD_VOID(cScenarioPlayMode, SetState, Args(ScenarioPlayModeState state), Args(state));
+	auto_METHOD_(cScenarioPlayMode, bool, UpdateGoals);
+	auto_METHOD_VOID(cScenarioPlayMode, Update, Args(int deltaTime), Args(deltaTime));
+	auto_METHOD_VOID_(cScenarioPlayMode, CompleteAct);
+	auto_METHOD_VOID_(cScenarioPlayMode, CheckGoalProgress);
+	auto_STATIC_METHOD_VOID_(cScenarioPlayMode, RemoveInvisibleClasses);
+	auto_STATIC_METHOD_VOID_(cScenarioPlayMode, ReadScenarioTuning);
 }
 #endif
