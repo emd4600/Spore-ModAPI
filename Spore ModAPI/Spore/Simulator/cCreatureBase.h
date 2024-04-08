@@ -73,6 +73,14 @@ namespace Simulator
 
 	class cCreatureAnimal;
 
+	enum CreatureFlags
+	{
+		kCreatureFlagIsAlpha = 0x1,
+
+		kCreatureFlagIsHungry = 0x100,
+		kCreatureFlagIsPlayerAvatar = 0x200,
+	};
+
 	/// The base class for all creatures in the Simulator.
 	class cCreatureBase
 		: /* 00h */	public cGameData
@@ -243,7 +251,8 @@ namespace Simulator
 		/* B4Ch */	int field_B4C;  //TODO cBehaviorTreeData
 		/* B50h */	cCreatureBasePtr mpWhoIsInteractingWithMe;
 		/* B54h */	AnimatedCreaturePtr mpAnimatedCreature;
-		/* B58h */	int mGeneralFlags;  // 0x200 IsPlayerAvatar, 0x100 hasHunger?
+		/// CreatureFlags
+		/* B58h */	int mGeneralFlags;
 		/* B5Ch */	bool field_B5C;
 		/* B5Dh */	bool mbTeleport;
 		/* B5Eh */	bool mbDead;
