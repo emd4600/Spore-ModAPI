@@ -32,9 +32,7 @@ namespace ModAPI
 	static constexpr unsigned int SCRATCH_SIZE = 4096;
 	char logScratch[SCRATCH_SIZE];
 
-	void Log(const char* fmt, ...) {
-		unsigned int offset = 0;
-		
+	void Log(const char* fmt, ...) {		
 		__time64_t long_time;
 		_time64(&long_time);
 
@@ -47,25 +45,31 @@ namespace ModAPI
 		const int mins = long_time % 60;
 		long_time /= 60;
 		const int hours = long_time % 24;
+		
+		logFileMutex.lock();
 
-		sprintf_s(logScratch + offset, SCRATCH_SIZE - offset, format, hours,mins,secs);
-		offset += (sizeof(formatted)-1)/sizeof(formatted[0]);
+		sprintf_s(logScratch, SCRATCH_SIZE, format, hours,mins,secs);
+		unsigned int time_offset = (sizeof(formatted)-1)/sizeof(formatted[0]);
 
 		va_list argList;
 		va_start(argList, fmt);
-		vsnprintf(logScratch + offset, SCRATCH_SIZE - offset, fmt, argList);
+		vsnprintf(logScratch + time_offset, SCRATCH_SIZE - time_offset, fmt, argList);
 		va_end(argList);
 
 		// vsnprintf does not guarantee a null terminator if the formatted string exceeds the buffer size
 		logScratch[SCRATCH_SIZE - 1] = 0;
 
+		auto log_len = strlen(logScratch);
+
 		if (logFile)
 		{
-			logFile->Write(logScratch, strlen(logScratch));
+			logFile->Write(logScratch, log_len);
 			logFile->Write("\n", 1);
 			logFile->Flush();
 		}
-		App::ConsolePrintF(logScratch + offset);
+		App::ConsolePrintF(logScratch + time_offset);
+		memset(logScratch, 0, log_len);
+		logFileMutex.unlock();
 	}
 
 	bool AddSimulatorStrategy(Simulator::ISimulatorStrategy* strategy, uint32_t id) {
