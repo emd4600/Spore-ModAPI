@@ -123,6 +123,10 @@
               <span class="m-doc-wrap-bumper">auto <a href="#a2481f04a57294f34bee802376b25ebc3" class="m-doc">UpdateAndGetColor</a>(</span><span class="m-doc-wrap">) -&gt; <a href="struct_math_1_1_color_r_g_b.html" class="m-doc">Math::<wbr />ColorRGB</a></span>
             </dt>
             <dd>Calculates and returns the identity color of the empire, based on the <code>mIDColorID</code> field.</dd>
+            <dt id="a65cbf3fe6f1bea0064ea867b455fe830">
+              <span class="m-doc-wrap-bumper">auto <a href="#a65cbf3fe6f1bea0064ea867b455fe830" class="m-doc-self">AddStarOwnership</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_star_record.html" class="m-doc">cStarRecord</a>* star) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">void</a></span>
+            </dt>
+            <dd>Makes this empire the owner of the given star. It will emit a kMsgStarOwnershipChanged message.</dd>
             <dt id="a3a9c8996c8e1adc7cfec11f8f09b51c8">
               <span class="m-doc-wrap-bumper">auto <a href="#a3a9c8996c8e1adc7cfec11f8f09b51c8" class="m-doc-self">AddRef</a>(</span><span class="m-doc-wrap">) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
@@ -273,6 +277,7 @@
                 </tr>
               </tbody>
             </table>
+<p>This can only be used when the star belongs to another empire. For any kind of star, use <a href="class_simulator_1_1c_empire.html#a65cbf3fe6f1bea0064ea867b455fe830" class="m-doc">cEmpire::<wbr />AddStarOwnership</a></p>
           </div></section>
           <section class="m-doc-details" id="a2481f04a57294f34bee802376b25ebc3"><div>
             <h3>
