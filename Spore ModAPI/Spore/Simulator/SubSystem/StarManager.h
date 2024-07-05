@@ -44,6 +44,8 @@ namespace Simulator
 
 		void AddStarType(StarType type);
 		void AddTechLevel(TechLevel level);
+		void RemoveStarType(StarType type);
+		void RemoveTechLevel(TechLevel level);
 
 		/// Flags that represent accepted star types. By default, all types are accepted.
 		/// To accept specific types, first set to 0 and then call AddStarType()
@@ -52,7 +54,9 @@ namespace Simulator
 		/// To accept specific levels, first set to 0 and then call AddTechLevel()
 		/* 04h */	int techLevels;  // 0x3F
 		/* 08h */	int flags;  // 2 - has rare
+		/// Minimum distance for stars to be detected, in parsecs.
 		/* 0Ch */	float minDistance;  // -1
+		/// Maximum distance for stars to be detected, in parsecs.
 		/* 10h */	float maxDistance;  // -1
 		/* 14h */	float field_14;  // -1
 		/* 18h */	int field_18;

@@ -70,7 +70,11 @@ namespace Simulator
 		/// If the ID less than `0x53DBCF1`, the color will be recalculated, cached, and the ID will be updated.
 		Math::ColorRGB UpdateAndGetColor();
 
-		/// Captures a star system for a specific empire.
+		/// Makes this empire the owner of the given star. It will emit a kMsgStarOwnershipChanged message.
+		void AddStarOwnership(cStarRecord* star);
+
+		/// Captures a star system for a specific empire. This can only be used when the star belongs to another empire.
+		/// For any kind of star, use cEmpire::AddStarOwnership
 		/// @param pStarRecord The star system to capture.
 		/// @param empireID Political ID of the empire that will become the owner.
 		static void CaptureSystem(cStarRecord* pStarRecord, uint32_t empireID);
@@ -131,6 +135,7 @@ namespace Simulator
 		DeclareAddress(sub_C32EA0);
 		DeclareAddress(CaptureSystem);
 		DeclareAddress(UpdateAndGetColor);  // 0xC325F0 0xC32E30
+		DeclareAddress(AddStarOwnership);  // 0xC33AB0 0xC34300
 		//TODO sub_C30F90 RequireHomePlanet
 	}
 
