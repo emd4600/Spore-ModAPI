@@ -797,6 +797,11 @@ namespace Simulator
 	{
 		DefineAddress(Create, SelectAddress(0xBA5920, 0xBA6300));
 		DefineAddress(GetPerihelion, SelectAddress(0xC70190, 0xC70FC0));
+		DefineAddress(FillPlanetDataForTechLevel, SelectAddress(0xB96820, 0xB97090));
+	}
+
+	namespace Addresses(cCivData) {
+		DefineAddress(AddCityData, SelectAddress(0xFF35E0, 0xFF2B20));
 	}
 
 	namespace Addresses(cSpaceGfx)
