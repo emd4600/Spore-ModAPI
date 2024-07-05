@@ -46,5 +46,10 @@ namespace Simulator
 	auto_METHOD(cMissionManager, bool, ThereIsEventInPlanet,
 		Args(cPlanetRecord* pPlanetRecord),
 		Args(pPlanetRecord));
+
+	auto_METHOD_VOID(cMission, SetState,
+		Args(MissionState state),
+		Args(state));
+
 }
 #endif
