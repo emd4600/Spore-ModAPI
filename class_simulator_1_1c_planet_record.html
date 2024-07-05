@@ -100,6 +100,11 @@
               <a href="c_planet_record_8h.html#a682e62ad9640c48598962d9ffc2c2893" class="m-doc">cPlanetRecordPtr</a>&amp; dst) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">void</a></span>
             </dt>
             <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">static auto <a href="#acde56657cf30f9149058357c062f2f14" class="m-doc">FillPlanetDataForTechLevel</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_planet_record.html" class="m-doc">cPlanetRecord</a>* planetRecord,
+              <a href="namespace_simulator.html#a99e847b63394f8daa87d1a67318e7453" class="m-doc">TechLevel</a> techLevel) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">void</a></span>
+            </dt>
+            <dd>Generates the civilization/tribe data, including cities, for a planet record.</dd>
           </dl>
         </section>
         <section id="pub-methods">
@@ -283,6 +288,29 @@
                 </tr>
               </tbody>
             </table>
+          </div></section>
+          <section class="m-doc-details" id="acde56657cf30f9149058357c062f2f14"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">static <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">void</a> Simulator::<wbr />cPlanetRecord::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#acde56657cf30f9149058357c062f2f14" class="m-doc-self">FillPlanetDataForTechLevel</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_planet_record.html" class="m-doc">cPlanetRecord</a>* planetRecord,
+              <a href="namespace_simulator.html#a99e847b63394f8daa87d1a67318e7453" class="m-doc">TechLevel</a> techLevel)</span></span>
+            </h3>
+            <p>Generates the civilization/tribe data, including cities, for a planet record.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">planetRecord</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>techLevel</td>
+                  <td></td>
+                </tr>
+              </tbody>
+            </table>
+<p>The number and type of cities will depend on whether it is Empire or Civilization level. For Empire level, the owner star of the planet must belong to an empire.</p>
           </div></section>
         </section>
       </div>
