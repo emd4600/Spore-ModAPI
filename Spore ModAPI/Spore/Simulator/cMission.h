@@ -306,7 +306,7 @@ namespace Simulator
 
 	namespace Addresses(cMission)
 	{
-		DeclareAddress(SetState);  // 0xC47C40
+		DeclareAddress(SetState);  // 0xC47C40 0xC47E20
 		DeclareAddress(GetOwnerEmpire);  // 0xC44930
 		DeclareAddress(GetTargetEmpire);  // 0xC449F0
 		DeclareAddress(SetTargetEmpire);  // 0xC449A0

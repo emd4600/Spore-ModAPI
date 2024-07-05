@@ -659,6 +659,11 @@ namespace Simulator
 		DefineAddress(ThereIsEventInPlanet, SelectAddress(0xFEE8A0, 0xFEE020));
 	}
 
+	namespace Addresses(cMission)
+	{
+		DefineAddress(SetState, SelectAddress(0xC47C40, 0xC47E20));
+	}
+
 	namespace Addresses(cGameTimeManager)
 	{
 		DefineAddress(Get, SelectAddress(0xB3D2E0, 0xB3D480));
