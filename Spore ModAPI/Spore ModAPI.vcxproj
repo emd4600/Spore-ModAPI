@@ -1088,4 +1088,9 @@
     <Exec Command="msbuild.exe /p:Configuration=&quot;$(Config) DLL&quot; /p:Platform=Win32 /p:SDK_BUILD_VER=$(BuildVer) /p:EXECUTABLE_TYPE=0" />
     <Copy SourceFiles="../dll/$(Config)/SporeModAPI.dll" DestinationFiles="../dll/$(Config)/SporeModAPI.disk.dll" />
   </Target>
+  <Target Name="BuildCombinedDll">
+    <Message Text="Compiling $(Config) DLL, build $(BuildVer)..." />
+    <Exec Command="msbuild.exe /p:Configuration=&quot;$(Config) DLL&quot; /p:Platform=Win32 /p:SDK_BUILD_VER=$(BuildVer) /p:EXECUTABLE_TYPE=10" />
+    <Copy SourceFiles="../dll/$(Config)/SporeModAPI.dll" DestinationFiles="../dll/$(Config)/SporeModAPI.combined.dll" />
+  </Target>
 </Project>
