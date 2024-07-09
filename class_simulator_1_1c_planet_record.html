@@ -105,6 +105,11 @@
               <a href="namespace_simulator.html#a99e847b63394f8daa87d1a67318e7453" class="m-doc">TechLevel</a> techLevel) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">void</a></span>
             </dt>
             <dd>Generates the civilization/tribe data, including cities, for a planet record.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">static auto <a href="#a6a9e895077498d6e17939be0b8084e68" class="m-doc">CalculateSpiceProduction</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_planet_record.html" class="m-doc">cPlanetRecord</a>* planetRecord,
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> removeSpice = 0) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a></span>
+            </dt>
+            <dd>Calculates the current spice production of a planet, which is the sum of the production of all its cities.</dd>
           </dl>
         </section>
         <section id="pub-methods">
@@ -311,6 +316,35 @@
               </tbody>
             </table>
 <p>The number and type of cities will depend on whether it is Empire or Civilization level. For Empire level, the owner star of the planet must belong to an empire.</p>
+          </div></section>
+          <section class="m-doc-details" id="a6a9e895077498d6e17939be0b8084e68"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">static <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> Simulator::<wbr />cPlanetRecord::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a6a9e895077498d6e17939be0b8084e68" class="m-doc-self">CalculateSpiceProduction</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_planet_record.html" class="m-doc">cPlanetRecord</a>* planetRecord,
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> removeSpice = 0)</span></span>
+            </h3>
+            <p>Calculates the current spice production of a planet, which is the sum of the production of all its cities.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">planetRecord</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>removeSpice</td>
+                  <td></td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>Returns</th>
+                  <td>The total spice production of the planet.</td>
+                </tr>
+              </tfoot>
+            </table>
+<p>If &#x27;removeSpice&#x27; is not 0, that amount of spice will be removed from the planet.</p>
           </div></section>
         </section>
       </div>
