@@ -56,6 +56,7 @@
               Reference
               <ul>
                 <li><a href="#base-classes">Base classes</a></li>
+                <li><a href="#pub-static-methods">Public static functions</a></li>
                 <li><a href="#pub-methods">Public functions</a></li>
                 <li><a href="#pub-attribs">Public variables</a></li>
               </ul>
@@ -75,22 +76,55 @@
             <dd>The default implementation of a reference counted class.</dd>
           </dl>
         </section>
+        <section id="pub-static-methods">
+          <h2><a href="#pub-static-methods">Public static functions</a></h2>
+          <dl class="m-doc">
+            <dt id="aa30e333f2fd5569f62089abd336ec039">
+              <span class="m-doc-wrap-bumper">static auto <a href="#aa30e333f2fd5569f62089abd336ec039" class="m-doc-self">RemoveInvisibleClasses</a>(</span><span class="m-doc-wrap">) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">void</a></span>
+            </dt>
+            <dd>Removes objects that are supposed to be invisible during the current act.</dd>
+            <dt id="ab4cdb28dc83585b51aa9f446116e641e">
+              <span class="m-doc-wrap-bumper">static auto <a href="#ab4cdb28dc83585b51aa9f446116e641e" class="m-doc-self">ReadScenarioTuning</a>(</span><span class="m-doc-wrap">) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">void</a></span>
+            </dt>
+            <dd><span></span></dd>
+          </dl>
+        </section>
         <section id="pub-methods">
           <h2><a href="#pub-methods">Public functions</a></h2>
           <dl class="m-doc">
             <dt id="a9f20f0f46c58193581921399c939790c">
               <span class="m-doc-wrap-bumper">auto <a href="#a9f20f0f46c58193581921399c939790c" class="m-doc-self">Initialize</a>(</span><span class="m-doc-wrap">) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">void</a></span>
             </dt>
-            <dd><span></span></dd>
+            <dd>Called when starting the adventure in Play Mode.</dd>
             <dt id="a22cfd103bce44d6a817164de02ff6688">
               <span class="m-doc-wrap-bumper">auto <a href="#a22cfd103bce44d6a817164de02ff6688" class="m-doc-self">SetCurrentAct</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> actIndex,
               <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">bool</a> = <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">false</a>) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">void</a></span>
             </dt>
-            <dd><span></span></dd>
-            <dt id="aca3c33f80001d7c6ee259078718debb6">
-              <span class="m-doc-wrap-bumper">auto <a href="#aca3c33f80001d7c6ee259078718debb6" class="m-doc-self">JumpToAct</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> actIndex) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">void</a></span>
+            <dd>Sets the current act index of the active adventure.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#aca3c33f80001d7c6ee259078718debb6" class="m-doc">JumpToAct</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> actIndex) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">void</a></span>
             </dt>
-            <dd><span></span></dd>
+            <dd>Skips the adventure up to the given act index.</dd>
+            <dt id="a9fb96f6eb4e2208f9bb8b191035d44ec">
+              <span class="m-doc-wrap-bumper">auto <a href="#a9fb96f6eb4e2208f9bb8b191035d44ec" class="m-doc-self">SetState</a>(</span><span class="m-doc-wrap"><a href="namespace_simulator.html#a633f65446b053ff41ee8c6dd3cbd784a" class="m-doc">ScenarioPlayModeState</a> state) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">void</a></span>
+            </dt>
+            <dd>Sets the active state of the adventure.</dd>
+            <dt id="a5342c410737e14d6e582bf80b163d7aa">
+              <span class="m-doc-wrap-bumper">auto <a href="#a5342c410737e14d6e582bf80b163d7aa" class="m-doc-self">UpdateGoals</a>(</span><span class="m-doc-wrap">) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">bool</a></span>
+            </dt>
+            <dd>Updates the current, active goals of the adventure.</dd>
+            <dt id="a7dd359dcce920a1bee7c3674deb1854c">
+              <span class="m-doc-wrap-bumper">auto <a href="#a7dd359dcce920a1bee7c3674deb1854c" class="m-doc-self">Update</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> deltaTime) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">void</a></span>
+            </dt>
+            <dd>Update function of the adventure.</dd>
+            <dt id="a3ef9e63a68ef2aed0400ba07358f7a64">
+              <span class="m-doc-wrap-bumper">auto <a href="#a3ef9e63a68ef2aed0400ba07358f7a64" class="m-doc-self">CompleteAct</a>(</span><span class="m-doc-wrap">) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">void</a></span>
+            </dt>
+            <dd>Completes the act, then moves the adventure into the next act. If in the last act, the adventure completes.</dd>
+            <dt id="a7f1f808ee74330c9b5cf51ec81937e7f">
+              <span class="m-doc-wrap-bumper">auto <a href="#a7f1f808ee74330c9b5cf51ec81937e7f" class="m-doc-self">CheckGoalProgress</a>(</span><span class="m-doc-wrap">) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">void</a></span>
+            </dt>
+            <dd>Called by <a href="class_simulator_1_1c_scenario_play_mode.html#a7dd359dcce920a1bee7c3674deb1854c" class="m-doc">Update()</a>. Checks if the current goals are clearable or not.</dd>
           </dl>
         </section>
         <section id="pub-attribs">
@@ -209,6 +243,16 @@
             </dt>
             <dd><span></span></dd>
           </dl>
+        </section>
+        <section>
+          <h2>Function documentation</h2>
+          <section class="m-doc-details" id="aca3c33f80001d7c6ee259078718debb6"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">void</a> Simulator::<wbr />cScenarioPlayMode::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#aca3c33f80001d7c6ee259078718debb6" class="m-doc-self">JumpToAct</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> actIndex)</span></span>
+            </h3>
+            <p>Skips the adventure up to the given act index.</p>
+<p>Also works in reverse, i. e. going back to previous acts in the adventure. Using the same index as the current act will reset the adventure to the beginning of said act.</p>
+          </div></section>
         </section>
         <section>
           <h2>Variable documentation</h2>
