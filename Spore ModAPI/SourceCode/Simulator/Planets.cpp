@@ -62,5 +62,8 @@ namespace Simulator
 		Args(cPlanetRecord* planetRecord, TechLevel techLevel), Args(planetRecord, techLevel));
 
 	auto_METHOD_VOID(cCivData, AddCityData, Args(cCityData* cityData), Args(cityData));
+
+	auto_STATIC_METHOD(cPlanetRecord, int, CalculateSpiceProduction,
+		Args(cPlanetRecord* planetRecord, int removeSpice), Args(planetRecord, removeSpice));
 }
 #endif

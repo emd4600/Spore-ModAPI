@@ -199,6 +199,14 @@ namespace Simulator
 		/// @param techLevel
 		static void FillPlanetDataForTechLevel(cPlanetRecord* planetRecord, TechLevel techLevel);
 
+		/// Calculates the current spice production of a planet, which is the sum of the
+		/// production of all its cities. If 'removeSpice' is not 0, that amount of spice will be 
+		/// removed from the planet.
+		/// @param planetRecord
+		/// @param removeSpice
+		/// @returns The total spice production of the planet.
+		static int CalculateSpiceProduction(cPlanetRecord* planetRecord, int removeSpice = 0);
+
 	public:
 		/* 18h */	eastl::string16 mName;
 		/// The type of the planet, which determines whether it is a gas giant, asteroid belt, or regular rocky planet.
@@ -252,6 +260,7 @@ namespace Simulator
 		DeclareAddress(Create);  // 0xBA5920, 0xBA6300
 		DeclareAddress(GetPerihelion);  // 0xC70190 0xC70FC0
 		DeclareAddress(FillPlanetDataForTechLevel);  // 0xB96820 0xB97090
+		DeclareAddress(CalculateSpiceProduction);  // 0xC6F920 0xC70760
 	}
 
 	inline ResourceKey cPlanetRecord::GenerateTerrainKey()
