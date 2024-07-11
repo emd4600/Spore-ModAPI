@@ -35,6 +35,8 @@ namespace UTFWin
 	///
 	/// This class is a window procedure, also known as an event/message listener. IWinProc objects are added to windows;
 	/// when a message (aka event) is received or generated on the window, the window procedures receive it and handle it.
+	/// If you are making a standalone window procedure, it is recommended to inherit from DefaultWinProc instead
+	/// to get the memory management functions.
 	/// 
 	class IWinProc : public Object
 	{
@@ -98,5 +100,47 @@ namespace UTFWin
 
 	protected:
 		eastl::vector<MessageType> mTypes;
+	};
+
+	/// A helper class to simplify the creation of window procedures (IWinProc). 
+	/// Provides implementations for memory management and GetEventFlags(), so the only method
+	/// you need to implement is HandleUIMessage().
+	/// The template parameter is a combination of EventFlags flags, which determine which kind of
+	/// events it reacts to. By default, it reacts to basic keyboard/mouse input, and to advanced events.
+	/// Example usage:
+	/// ```cpp
+	/// class MyProcedure : public DefaultWinProc<>
+	/// {
+	///	public:
+	///		bool HandleUIMessage(IWindow* window, const Message& message) override;
+	/// };
+	/// 
+	/// bool MyProcedure::HandleUIMessage(IWindow* window, const Message& message) {
+	///		if (message.IsType(kMsgButtonClick)) {
+	///			App::ConsolePrintF("Button clicked!");
+	///		}
+	///		return false;
+	/// }
+	/// ```
+	template <int eventFlags = kEventFlagBasicInput | kEventFlagAdvanced>
+	class DefaultWinProc 
+		: public UTFWin::IWinProc
+		, public DefaultRefCounted
+	{
+	public:
+		virtual int AddRef() override {
+			return DefaultRefCounted::AddRef();
+		}
+		virtual int Release() override {
+			return DefaultRefCounted::Release();
+		}
+		virtual void* Cast(uint32_t type) const override {
+			CLASS_CAST(UTFWin::IWinProc);
+			CLASS_CAST(Object);
+			return nullptr;
+		}
+		virtual int GetEventFlags() const override {
+			return eventFlags;
+		}
 	};
 };
