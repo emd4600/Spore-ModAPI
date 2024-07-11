@@ -63,7 +63,7 @@
             </li>
           </ul>
         </nav>
-<p><a href="class_u_t_f_win_1_1_i_win_proc.html" class="m-doc">IWinProc</a> objects are added to windows; when a message (aka event) is received or generated on the window, the window procedures receive it and handle it.</p>
+<p><a href="class_u_t_f_win_1_1_i_win_proc.html" class="m-doc">IWinProc</a> objects are added to windows; when a message (aka event) is received or generated on the window, the window procedures receive it and handle it. If you are making a standalone window procedure, it is recommended to inherit from <a href="class_u_t_f_win_1_1_default_win_proc.html" class="m-doc">DefaultWinProc</a> instead to get the memory management functions.</p>
         <section id="base-classes">
           <h2><a href="#base-classes">Base classes</a></h2>
           <dl class="m-doc">
@@ -148,6 +148,11 @@
               class <a href="class_u_i_1_1_space_tool_panel_u_i.html" class="m-doc">UI::SpaceToolPanelUI</a>
             </dt>
             <dd>A class that represents one of the panels that contain multiple tools in the space tool palette.</dd>
+            <dt>
+              <div class="m-doc-template">template&lt;<a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> eventFlags = <a href="namespace_u_t_f_win.html#a53dcde7b7ffd3f5d6b53da77f5649044abada94b5e01bb4301d59887ff92a8719" class="m-doc">kEventFlagBasicInput</a> | <a href="namespace_u_t_f_win.html#a53dcde7b7ffd3f5d6b53da77f5649044ae00581bacda0d1a50bf5d3690367d321" class="m-doc">kEventFlagAdvanced</a>&gt;</div>
+              class <a href="class_u_t_f_win_1_1_default_win_proc.html" class="m-doc">DefaultWinProc</a>
+            </dt>
+            <dd>A helper class to simplify the creation of window procedures (<a href="class_u_t_f_win_1_1_i_win_proc.html" class="m-doc">IWinProc</a>).</dd>
             <dt>
               class <a href="class_u_t_f_win_1_1_interactive_win_proc.html" class="m-doc">InteractiveWinProc</a>
             </dt>
