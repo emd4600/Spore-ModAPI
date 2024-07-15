@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Simulator::cRaidEvent class | Spore ModAPI SDK for creating C++ mods for Spore</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,600,600i%7CSource+Code+Pro:400,400i,600" />
+  <link rel="stylesheet" href="m-dark.css" />
+  <link rel="stylesheet" href="m-documentation.css" />
+  <link rel="icon" href="Spore_ModAPI_Icon.png" type="image/png" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#22272e" />
+</head>
+<body>
+<header><nav id="navigation">
+  <div class="m-container">
+    <div class="m-row">
+      <a href="index.html" id="m-navbar-brand" class="m-col-t-8 m-col-m-none m-left-m"><img src="Spore_ModAPI_Icon.png" alt="" />Spore ModAPI <span class="m-thin">SDK for creating C++ mods for Spore</span></a>
+      <div class="m-col-t-4 m-hide-m m-text-right m-nopadr">
+        <a href="#search" class="m-doc-search-icon" title="Search" onclick="return showSearch()"><svg style="height: 0.9rem;" viewBox="0 0 16 16">
+          <path id="m-doc-search-icon-path" d="m6 0c-3.31 0-6 2.69-6 6 0 3.31 2.69 6 6 6 1.49 0 2.85-0.541 3.89-1.44-0.0164 0.338 0.147 0.759 0.5 1.15l3.22 3.79c0.552 0.614 1.45 0.665 2 0.115 0.55-0.55 0.499-1.45-0.115-2l-3.79-3.22c-0.392-0.353-0.812-0.515-1.15-0.5 0.895-1.05 1.44-2.41 1.44-3.89 0-3.31-2.69-6-6-6zm0 1.56a4.44 4.44 0 0 1 4.44 4.44 4.44 4.44 0 0 1-4.44 4.44 4.44 4.44 0 0 1-4.44-4.44 4.44 4.44 0 0 1 4.44-4.44z"/>
+        </svg></a>
+        <a id="m-navbar-show" href="#navigation" title="Show navigation"></a>
+        <a id="m-navbar-hide" href="#" title="Hide navigation"></a>
+      </div>
+      <div id="m-navbar-collapse" class="m-col-t-12 m-show-m m-col-m-none m-right-m">
+        <div class="m-row">
+          <ol class="m-col-t-6 m-col-m-none">
+            <li><a href="pages.html">Tutorials</a></li>
+            <li><a href="namespaces.html">Namespaces</a></li>
+          </ol>
+          <ol class="m-col-t-6 m-col-m-none" start="3">
+            <li><a href="annotated.html">Classes</a></li>
+            <li><a href="files.html">Files</a></li>
+            <li class="m-show-m"><a href="#search" class="m-doc-search-icon" title="Search" onclick="return showSearch()"><svg style="height: 0.9rem;" viewBox="0 0 16 16">
+              <use href="#m-doc-search-icon-path" />
+            </svg></a></li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav></header>
+<main><article>
+  <div class="m-container m-container-inflatable">
+    <div class="m-row">
+      <div class="m-col-l-10 m-push-l-1">
+        <h1>
+          <span class="m-breadcrumb"><a href="namespace_simulator.html">Simulator</a>::<wbr/></span>cRaidEvent <span class="m-thin">class</span>
+          <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="c_raid_event_8h.html">&lt;Spore ModAPI/Spore/Simulator/cRaidEvent.h&gt;</a></div>
+        </h1>
+        <p>The kind of mission for raid events.</p>
+        <nav class="m-block m-default">
+          <h3>Contents</h3>
+          <ul>
+            <li>
+              Reference
+              <ul>
+                <li><a href="#base-classes">Base classes</a></li>
+                <li><a href="#pub-static-attribs">Public static variables</a></li>
+                <li><a href="#pub-attribs">Public variables</a></li>
+              </ul>
+            </li>
+          </ul>
+        </nav>
+<p>Example usage, to raid the current planet:</p><pre class="m-code"><span class="k">using</span><span class="w"> </span><span class="k">namespace</span><span class="w"> </span><span class="nn">Simulator</span><span class="p">;</span><span class="w"></span>
+<span class="k">auto</span><span class="w"> </span><span class="n">planet</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">GetActivePlanetRecord</span><span class="p">();</span><span class="w"></span>
+<span class="k">auto</span><span class="w"> </span><span class="n">empireID</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">planet</span><span class="o">-&gt;</span><span class="n">GetStarRecord</span><span class="p">()</span><span class="o">-&gt;</span><span class="n">mEmpireID</span><span class="p">;</span><span class="w"></span>
+<span class="k">auto</span><span class="w"> </span><span class="n">empire</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">StarManager</span><span class="p">.</span><span class="n">GetEmpire</span><span class="p">(</span><span class="n">empireID</span><span class="p">);</span><span class="w"></span>
+<span class="k">auto</span><span class="w"> </span><span class="n">mission</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">MissionManager</span><span class="p">.</span><span class="n">CreateMission</span><span class="p">(</span><span class="n">id</span><span class="p">(</span><span class="s">&quot;RaidEvent&quot;</span><span class="p">),</span><span class="w"> </span><span class="n">planet</span><span class="p">,</span><span class="w"> </span><span class="n">empire</span><span class="p">);</span><span class="w"></span>
+<span class="k">auto</span><span class="w"> </span><span class="n">raidEvent</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">object_cast</span><span class="o">&lt;</span><span class="n">cRaidEvent</span><span class="o">&gt;</span><span class="p">(</span><span class="n">mission</span><span class="p">);</span><span class="w"></span>
+<span class="n">raidEvent</span><span class="o">-&gt;</span><span class="n">mpTargetPlanet</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">GetActivePlanet</span><span class="p">();</span><span class="w"></span>
+<span class="n">raidEvent</span><span class="o">-&gt;</span><span class="n">mNumBombers</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span><span class="w"></span>
+<span class="n">raidEvent</span><span class="o">-&gt;</span><span class="n">AcceptMission</span><span class="p">();</span><span class="w"></span></pre>
+        <section id="base-classes">
+          <h2><a href="#base-classes">Base classes</a></h2>
+          <dl class="m-doc">
+            <dt>
+              class <a href="class_simulator_1_1c_mission.html" class="m-doc">cMission</a>
+            </dt>
+            <dd>Base class for all missions, this class cannot be instantiated.</dd>
+          </dl>
+        </section>
+        <section id="pub-static-attribs">
+          <h2><a href="#pub-static-attribs">Public static variables</a></h2>
+          <dl class="m-doc">
+            <dt id="a59977d5ec82cf6edb0122c110ff4ea4b">
+              static <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">const</a> <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">uint32_<wbr />t</a> <a href="#a59977d5ec82cf6edb0122c110ff4ea4b" class="m-doc-self">TYPE</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="adb13f53107b51da47e824d2d563eabcf">
+              static <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">const</a> <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">uint32_<wbr />t</a> <a href="#adb13f53107b51da47e824d2d563eabcf" class="m-doc-self">NOUN_ID</a>
+            </dt>
+            <dd><span></span></dd>
+          </dl>
+        </section>
+        <section id="pub-attribs">
+          <h2><a href="#pub-attribs">Public variables</a></h2>
+          <dl class="m-doc">
+            <dt id="ae29de0a321499acbf719124fdfdcd84c">
+              <a href="c_game_data_u_f_o_8h.html#a77e5368a914efc4b250fade72e5144a7" class="m-doc">cGameDataUFOPtr</a> <a href="#ae29de0a321499acbf719124fdfdcd84c" class="m-doc-self">mGalaxyBomber</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a5885181bd29ad4b35e1b2c5cb315b935">
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> <a href="#a5885181bd29ad4b35e1b2c5cb315b935" class="m-doc-self">mOriginStarRecordID</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="acb2c5cb9dd0dbefcf83401ad76ac608c">
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> <a href="#acb2c5cb9dd0dbefcf83401ad76ac608c" class="m-doc-self">mNumBombers</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a8dc40cf98421579975bf16838290b51d">
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> <a href="#a8dc40cf98421579975bf16838290b51d" class="m-doc-self">mNumFighters</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="acfd3d4f3333aa48a0890f1d0c7d7bbd0">
+              <a href="struct_resource_key.html" class="m-doc">ResourceKey</a> <a href="#acfd3d4f3333aa48a0890f1d0c7d7bbd0" class="m-doc-self">mPendingUFOKey</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="af3ee6a295faba8a97a3e20d05bdc2e5e">
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">float</a> <a href="#af3ee6a295faba8a97a3e20d05bdc2e5e" class="m-doc-self">mDamageRemainder</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a0ced6438fbb72a1814313878b6e8b62e">
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">float</a> <a href="#a0ced6438fbb72a1814313878b6e8b62e" class="m-doc-self">mDamageRemainderUFO</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="ac3e4f53bc4c19a685aac137d197245eb">
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">bool</a> <a href="#ac3e4f53bc4c19a685aac137d197245eb" class="m-doc-self">mShouldDestroyColonyObject</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="ab4a97517dd971b3f90c714ab35ae3a4a">
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">bool</a> <a href="#ab4a97517dd971b3f90c714ab35ae3a4a" class="m-doc-self">mWaitingForRaid</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a77bb2ce2861b1ff4e25bc4633249fa9d">
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> <a href="#a77bb2ce2861b1ff4e25bc4633249fa9d" class="m-doc-self">field_218</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a1ca21ed27f35a01df47029ceb91f8343">
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">bool</a> <a href="#a1ca21ed27f35a01df47029ceb91f8343" class="m-doc-self">mUFOsLeaveOnArrival</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="af5fce5df78ed1c7dd5528a9220c153ec">
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">bool</a> <a href="#af5fce5df78ed1c7dd5528a9220c153ec" class="m-doc-self">mInitialized</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a4ad3d5b5cd0afebbe1b51dc83b7908c7">
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">bool</a> <a href="#a4ad3d5b5cd0afebbe1b51dc83b7908c7" class="m-doc-self">mShowDefaultEventLog</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a211da38963bcf0c777b6ea01f0c6eb0f">
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">uint32_<wbr />t</a> <a href="#a211da38963bcf0c777b6ea01f0c6eb0f" class="m-doc-self">mTimeOfArrivalMS</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a16892cc7bdb0bc6a6ab9bcc1bd778366">
+              <a href="struct_math_1_1_vector3.html" class="m-doc">Math::<wbr />Vector3</a> <a href="#a16892cc7bdb0bc6a6ab9bcc1bd778366" class="m-doc-self">mUFOSpawnLocation</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a236df702c7dd22accec568113e620beb">
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">uint32_<wbr />t</a> <a href="#a236df702c7dd22accec568113e620beb" class="m-doc-self">mAttackerEmpire</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="ab38345c5978ca15a15f76abcfb85f9a3">
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">bool</a> <a href="#ab38345c5978ca15a15f76abcfb85f9a3" class="m-doc-self">mIsPlayerSummoned</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="ab85cde2d97981633a204ddeae4327c62">
+              eastl::vector&lt;<a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a>&gt; <a href="#ab85cde2d97981633a204ddeae4327c62" class="m-doc-self">mBackgroundShipsList</a>
+            </dt>
+            <dd><span></span></dd>
+          </dl>
+        </section>
+      </div>
+    </div>
+  </div>
+</article></main>
+<div class="m-doc-search" id="search">
+  <a href="#!" onclick="return hideSearch()"></a>
+  <div class="m-container">
+    <div class="m-row">
+      <div class="m-col-m-8 m-push-m-2">
+        <div class="m-doc-search-header m-text m-small">
+          <div><span class="m-label m-default">Tab</span> / <span class="m-label m-default">T</span> to search, <span class="m-label m-default">Esc</span> to close</div>
+          <div id="search-symbolcount">&hellip;</div>
+        </div>
+        <div class="m-doc-search-content">
+          <form>
+            <input type="search" name="q" id="search-input" placeholder="Loading &hellip;" disabled="disabled" autofocus="autofocus" autocomplete="off" spellcheck="false" />
+          </form>
+          <noscript class="m-text m-danger m-text-center">Unlike everything else in the docs, the search functionality <em>requires</em> JavaScript.</noscript>
+          <div id="search-help" class="m-text m-dim m-text-center">
+            <p class="m-noindent">Search for symbols, directories, files, pages or
+            modules. You can omit any prefix from the symbol or file path; adding a
+            <code>:</code> or <code>/</code> suffix lists all members of given symbol or
+            directory.</p>
+            <p class="m-noindent">Use <span class="m-label m-dim">&darr;</span>
+            / <span class="m-label m-dim">&uarr;</span> to navigate through the list,
+            <span class="m-label m-dim">Enter</span> to go.
+            <span class="m-label m-dim">Tab</span> autocompletes common prefix, you can
+            copy a link to the result using <span class="m-label m-dim">⌘</span>
+            <span class="m-label m-dim">L</span> while <span class="m-label m-dim">⌘</span>
+            <span class="m-label m-dim">M</span> produces a Markdown link.</p>
+          </div>
+          <div id="search-notfound" class="m-text m-warning m-text-center">Sorry, nothing was found.</div>
+          <ul id="search-results"></ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="search-v2.js"></script>
+<script src="searchdata-v2.js" async="async"></script>
+<footer><nav>
+  <div class="m-container">
+    <div class="m-row">
+      <div class="m-col-l-10 m-push-l-1">
+        <p>Spore ModAPI SDK for creating C++ mods for Spore. Created with <a href="https://doxygen.org/">Doxygen</a> 1.9.8 and <a href="https://mcss.mosra.cz/">m.css</a>.</p>
+      </div>
+    </div>
+  </div>
+</nav></footer>
+</body>
+</html>
