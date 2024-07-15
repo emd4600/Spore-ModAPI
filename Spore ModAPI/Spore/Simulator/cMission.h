@@ -71,6 +71,13 @@ namespace Simulator
 		/// @param pEmpire
 		void SetTargetEmpire(cEmpire* pEmpire);
 
+		inline void AcceptMission() {
+			SetState(MissionState::Accepted);
+		}
+		inline void CompleteMission() {
+			SetState(MissionState::Completed);
+		}
+
 		/* 54h */	virtual int func54h();
 		/* 58h */	virtual int func58h();
 		/* 5Ch */	virtual int func5Ch();

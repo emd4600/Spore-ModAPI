@@ -58,7 +58,7 @@ namespace Simulator
 		/// @param pOwnerEmpire Empire that is assigning the mission.
 		/// @param pParentMission Parent mission, this is generally null unless you want the new mission to be part of a larger, multi-step mission.
 		/// @returns The created cMission subclass object, or nullptr.
-		cMission* CreateMission(uint32_t missionID, cPlanetRecord* pSourcePlanetRecord, cEmpire* pOwnerEmpire, cMission* pParentMission);
+		cMission* CreateMission(uint32_t missionID, cPlanetRecord* pSourcePlanetRecord, cEmpire* pOwnerEmpire, cMission* pParentMission = nullptr);
 
 		/// This function decides what mission needs to be done for the given empire.
 		/// To be precise, if you communicate with empire `pEmpire` on planet `pPlanetRecord` 
