@@ -2,21 +2,10 @@
 
 #include <Spore\Simulator\cMission.h>
 #include <Spore\Simulator\cGameDataUFO.h>
+#include <Spore\Simulator\cShipBackgroundData.h>
 
 namespace Simulator
 {
-	class cShipBackgroundData
-		: public ISimulatorSerializable
-	{
-	public:
-		/* 04h */	UfoType mUfoType;
-		/* 08h */	Math::Vector3 mPosition;
-		/* 14h */	float mHealth;
-		/* 18h */	float mMaxHealth;
-		/* 1Ch */	int mBomberIndex;
-	};
-	ASSERT_SIZE(cShipBackgroundData, 0x20);
-
 	/// The kind of mission for raid events. Example usage, to raid the current planet:
 	/// ```cpp
 	/// using namespace Simulator;
@@ -33,8 +22,8 @@ namespace Simulator
 		: public cMission
 	{
 	public:
-		static const uint32_t TYPE = 0x3960C0A;
-		static const uint32_t NOUN_ID = 0x3960C0E;
+		static const uint32_t TYPE = 0x3960C0E;
+		static const uint32_t NOUN_ID = 0x3960C0A;
 
 	public:
 		/* 1F0h */	cGameDataUFOPtr mGalaxyBomber;
