@@ -71,6 +71,13 @@ namespace Simulator
 		/// @param pEmpire
 		void SetTargetEmpire(cEmpire* pEmpire);
 
+		inline void AcceptMission() {
+			SetState(MissionState::Accepted);
+		}
+		inline void CompleteMission() {
+			SetState(MissionState::Completed);
+		}
+
 		/* 54h */	virtual int func54h();
 		/* 58h */	virtual int func58h();
 		/* 5Ch */	virtual int func5Ch();
@@ -283,7 +290,7 @@ namespace Simulator
 		/* 108h */	eastl::vector<int> field_108;
 		/* 11Ch */	eastl::vector<ResourceKey> mUnlockToolIDList;
 		/* 130h */	int mFlags;
-		/* 134h */	eastl::vector<int> field_134;
+		/* 134h */	eastl::vector<uint32_t> mAssociatedEventLogIDs;
 		/* 148h */	uint32_t mProgressEventID;  // -1
 		/* 14Ch	*/	eastl::string16 mTitle;
 		/* 15Ch	*/	eastl::string16 field_15C;
@@ -306,7 +313,7 @@ namespace Simulator
 
 	namespace Addresses(cMission)
 	{
-		DeclareAddress(SetState);  // 0xC47C40
+		DeclareAddress(SetState);  // 0xC47C40 0xC47E20
 		DeclareAddress(GetOwnerEmpire);  // 0xC44930
 		DeclareAddress(GetTargetEmpire);  // 0xC449F0
 		DeclareAddress(SetTargetEmpire);  // 0xC449A0

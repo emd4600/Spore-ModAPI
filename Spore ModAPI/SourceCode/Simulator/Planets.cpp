@@ -57,5 +57,13 @@ namespace Simulator
 		Args(cPlanetRecord* pRecord, MoonPerihelionType moonType), Args(pRecord, moonType));
 
 	auto_METHOD(cPlanet, uint32_t, GetRingEffect, Args(bool isFromPlanet), Args(isFromPlanet));
+
+	auto_STATIC_METHOD_VOID(cPlanetRecord, FillPlanetDataForTechLevel, 
+		Args(cPlanetRecord* planetRecord, TechLevel techLevel), Args(planetRecord, techLevel));
+
+	auto_METHOD_VOID(cCivData, AddCityData, Args(cCityData* cityData), Args(cityData));
+
+	auto_STATIC_METHOD(cPlanetRecord, int, CalculateSpiceProduction,
+		Args(cPlanetRecord* planetRecord, int removeSpice), Args(planetRecord, removeSpice));
 }
 #endif

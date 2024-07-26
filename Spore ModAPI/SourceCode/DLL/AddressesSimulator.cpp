@@ -301,6 +301,7 @@ namespace Simulator
 		DefineAddress(sub_C32EA0, SelectAddress(0xC32EA0, 0xC336E0));
 		DefineAddress(CaptureSystem, SelectAddress(0xC8C320, 0xC8D190));
 		DefineAddress(UpdateAndGetColor, SelectAddress(0xC325F0, 0xC32E30));
+		DefineAddress(AddStarOwnership, SelectAddress(0xC33AB0, 0xC34300));
 	}
 
 	namespace Addresses(cEnergyRepairToolStrategy)
@@ -658,6 +659,11 @@ namespace Simulator
 		DefineAddress(ThereIsEventInPlanet, SelectAddress(0xFEE8A0, 0xFEE020));
 	}
 
+	namespace Addresses(cMission)
+	{
+		DefineAddress(SetState, SelectAddress(0xC47C40, 0xC47E20));
+	}
+
 	namespace Addresses(cGameTimeManager)
 	{
 		DefineAddress(Get, SelectAddress(0xB3D2E0, 0xB3D480));
@@ -790,12 +796,25 @@ namespace Simulator
 		DefineAddress(Initialize, SelectAddress(0xF1F450, 0xF1F060));
 		DefineAddress(SetCurrentAct, SelectAddress(0xF1F260, 0xF1EE70));
 		DefineAddress(JumpToAct, SelectAddress(0xF1F7B0, 0xF1F3C0));
+		DefineAddress(SetState, SelectAddress(0xF1ADB0, 0xF1A9C0));
+		DefineAddress(UpdateGoals, SelectAddress(0xF1C780, 0xF1C390));
+		DefineAddress(Update, SelectAddress(0xF1FD50, 0xF1F960));
+		DefineAddress(CompleteAct, SelectAddress(0xF1F680, 0xF1F290));
+		DefineAddress(CheckGoalProgress, SelectAddress(0xF1F8D0, 0xF1F4E0));
+		DefineAddress(RemoveInvisibleClasses, SelectAddress(0xF1AFD0, 0xF1ABE0));
+		DefineAddress(ReadScenarioTuning, SelectAddress(0xF1E2F0, 0xF1DF00));
 	}
 
 	namespace Addresses(cPlanetRecord)
 	{
 		DefineAddress(Create, SelectAddress(0xBA5920, 0xBA6300));
 		DefineAddress(GetPerihelion, SelectAddress(0xC70190, 0xC70FC0));
+		DefineAddress(FillPlanetDataForTechLevel, SelectAddress(0xB96820, 0xB97090));
+		DefineAddress(CalculateSpiceProduction, SelectAddress(0xC6F920, 0xC70760));
+	}
+
+	namespace Addresses(cCivData) {
+		DefineAddress(AddCityData, SelectAddress(0xFF35E0, 0xFF2B20));
 	}
 
 	namespace Addresses(cSpaceGfx)

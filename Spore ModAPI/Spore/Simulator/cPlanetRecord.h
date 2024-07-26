@@ -109,8 +109,15 @@ namespace Simulator
 		/* 24h */	int mNumBuildings;
 		/* 28h */	eastl::vector<cVehicleData*> mVehicles;
 		/* 3Ch */	eastl::vector<cCityData*> mCities;
+
+		/// Adds the given city data to this civilization data, and recalculates the number of turrets and buildings.
+		/// @param cityData
+		void AddCityData(cCityData* cityData);
 	};
 	ASSERT_SIZE(cCivData, 0x50);
+	namespace Addresses(cCivData) {
+		DeclareAddress(AddCityData);  // 0xFF35E0 0xFF2B20
+	}
 
 	struct cTribeData
 	{
@@ -185,6 +192,21 @@ namespace Simulator
 
 		static void Create(PlanetID planetId, cPlanetRecordPtr& dst);
 
+		/// Generates the civilization/tribe data, including cities, for a planet record.
+		/// The number and type of cities will depend on whether it is Empire or Civilization level.
+		/// For Empire level, the owner star of the planet must belong to an empire.
+		/// @param planetRecord
+		/// @param techLevel
+		static void FillPlanetDataForTechLevel(cPlanetRecord* planetRecord, TechLevel techLevel);
+
+		/// Calculates the current spice production of a planet, which is the sum of the
+		/// production of all its cities. If 'removeSpice' is not 0, that amount of spice will be 
+		/// removed from the planet.
+		/// @param planetRecord
+		/// @param removeSpice
+		/// @returns The total spice production of the planet.
+		static int CalculateSpiceProduction(cPlanetRecord* planetRecord, int removeSpice = 0);
+
 	public:
 		/* 18h */	eastl::string16 mName;
 		/// The type of the planet, which determines whether it is a gas giant, asteroid belt, or regular rocky planet.
@@ -237,6 +259,8 @@ namespace Simulator
 	{
 		DeclareAddress(Create);  // 0xBA5920, 0xBA6300
 		DeclareAddress(GetPerihelion);  // 0xC70190 0xC70FC0
+		DeclareAddress(FillPlanetDataForTechLevel);  // 0xB96820 0xB97090
+		DeclareAddress(CalculateSpiceProduction);  // 0xC6F920 0xC70760
 	}
 
 	inline ResourceKey cPlanetRecord::GenerateTerrainKey()

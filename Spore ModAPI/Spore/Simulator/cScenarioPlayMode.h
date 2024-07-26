@@ -56,9 +56,28 @@ namespace Simulator
 	public:
 		//TODO check sub_F1EFC0
 		
+		/// Called when starting the adventure in Play Mode.
 		void Initialize();
+		/// Sets the current act index of the active adventure.
 		void SetCurrentAct(int actIndex, bool = false);
+		/// Skips the adventure up to the given act index. Also works in reverse, i. e. going back to previous acts in the adventure. 
+		/// Using the same index as the current act will reset the adventure to the beginning of said act.
 		void JumpToAct(int actIndex);
+		/// Sets the active state of the adventure.
+		void SetState(ScenarioPlayModeState state);
+		/// Updates the current, active goals of the adventure.
+		bool UpdateGoals();
+		/// Update function of the adventure.
+		void Update(int deltaTime);
+		/// Completes the act, then moves the adventure into the next act. If in the last act, the adventure completes.
+		void CompleteAct();
+		/// Called by Update(). Checks if the current goals are clearable or not. 
+		void CheckGoalProgress();  
+
+		/// Removes objects that are supposed to be invisible during the current act.
+		static void RemoveInvisibleClasses();
+		static void ReadScenarioTuning();
+
 
 	public:
 		/* 0Ch */	cScenarioPlaySummary mSummary;
@@ -111,7 +130,15 @@ namespace Simulator
 	namespace Addresses(cScenarioPlayMode)
 	{
 		DeclareAddress(Initialize);		// 0xF1F450, 0xF1F060
-		DeclareAddress(SetCurrentAct);  // 0xF1F260, 0xF1EE70
+		DeclareAddress(SetCurrentAct);	// 0xF1F260, 0xF1EE70
 		DeclareAddress(JumpToAct);		// 0xF1F7B0, 0xF1F3C0
+		DeclareAddress(SetState);		// 0xF1ADB0, 0xF1A9C0
+		DeclareAddress(UpdateGoals);	// 0xF1C780, 0xF1C390
+		DeclareAddress(Update);			// 0xF1FD50, 0xF1F960
+		DeclareAddress(CompleteAct);	// 0xF1F680, 0xF1F290
+		DeclareAddress(CheckGoalProgress);	// 0xF1F8D0, 0xF1F4E0
+
+		DeclareAddress(RemoveInvisibleClasses); // 0xF1AFD0, 0xF1ABE0
+		DeclareAddress(ReadScenarioTuning); // 0xF1E2F0, 0xF1DF00
 	}
 }

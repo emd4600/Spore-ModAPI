@@ -94,6 +94,9 @@ namespace Simulator
 		kMsgSpaceRareFound = 0xF46092D4,
 		/// Sent when a rare item is discovered (i.e. it had not been found before) in Space Stage. The parameter is a uint32_t* to the rare instance ID.
 		kMsgSpaceRareDiscovered = 0x6779F04,
+
+		/// Sent when the ownership of some star changes. No parameters.
+		kMsgStarOwnershipChanged = 0x55BD8F7,
 	};
 
 	class IMessageParameters

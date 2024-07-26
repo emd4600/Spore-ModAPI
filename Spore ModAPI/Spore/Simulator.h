@@ -81,6 +81,8 @@
 #include <Spore\Simulator\cMovableDestructibleOrnament.h>
 #include <Spore\Simulator\cToolObject.h>
 #include <Spore\Simulator\cPlanetaryArtifact.h>
+#include <Spore\Simulator\cRaidEvent.h>
+#include <Spore\Simulator\cRaidPlunderEvent.h>
 
 #include <Spore\Simulator\SimulatorMessages.h>
 

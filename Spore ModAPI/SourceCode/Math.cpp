@@ -48,8 +48,8 @@ namespace Math
 		// convert to [-PI, PI]
 		if (angle2 >= PI) angle2 = angle2 - PI2;
 
-		float minAngle = min(angle1, angle2);
-		float maxAngle = max(angle1, angle2);
+		float minAngle = eastl::min(angle1, angle2);
+		float maxAngle = eastl::max(angle1, angle2);
 
 		float result = PI2 - maxAngle + minAngle;
 		if ((maxAngle - minAngle) <= result)
@@ -520,16 +520,16 @@ namespace Math
 
 	bool BoundingBox::Intersect(const BoundingBox& other, BoundingBox& dst) const
 	{
-		dst.lower.x = max(lower.x, other.lower.x);
-		dst.upper.x = min(upper.x, other.upper.x);
+		dst.lower.x = eastl::max(lower.x, other.lower.x);
+		dst.upper.x = eastl::min(upper.x, other.upper.x);
 		if (dst.lower.x >= dst.upper.x) return false;
 
-		dst.lower.y = max(lower.y, other.lower.y);
-		dst.upper.y = min(upper.y, other.upper.y);
+		dst.lower.y = eastl::max(lower.y, other.lower.y);
+		dst.upper.y = eastl::min(upper.y, other.upper.y);
 		if (dst.lower.y >= dst.upper.y) return false;
 
-		dst.lower.z = max(lower.z, other.lower.z);
-		dst.upper.z = min(upper.z, other.upper.z);
+		dst.lower.z = eastl::max(lower.z, other.lower.z);
+		dst.upper.z = eastl::min(upper.z, other.upper.z);
 		if (dst.lower.z >= dst.upper.z) return false;
 
 		return true;
