@@ -109,7 +109,19 @@
               <span class="m-doc-wrap-bumper">static auto <a href="#a6a9e895077498d6e17939be0b8084e68" class="m-doc">CalculateSpiceProduction</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_planet_record.html" class="m-doc">cPlanetRecord</a>* planetRecord,
               <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> removeSpice = 0) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a></span>
             </dt>
-            <dd>Calculates the current spice production of a planet, which is the sum of the production of all its cities.</dd>
+            <dd>Calculates the current total spice of a planet, which is the sum of the production of all its cities.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">static auto <a href="#a79913d47ec63fc9972fa61754fec8065" class="m-doc">CalculateDeltaSpiceProduction</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">float</a> baseValue,
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">float</a> maxOutput,
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">float</a> extraFactor,
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">bool</a> isHomeWorld,
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">bool</a> useSuperpowerMultiplier,
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">bool</a> useStorageMultiplier,
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">float</a> finalFactor,
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> numCities,
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">bool</a> limitOutput) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">float</a></span>
+            </dt>
+            <dd>Method that calculates how much spice is being produced on a single planet, based on difficulty tunings and number of cities.</dd>
           </dl>
         </section>
         <section id="pub-methods">
@@ -322,7 +334,7 @@
               <span class="m-doc-wrap-bumper">static <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> Simulator::<wbr />cPlanetRecord::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a6a9e895077498d6e17939be0b8084e68" class="m-doc-self">CalculateSpiceProduction</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_planet_record.html" class="m-doc">cPlanetRecord</a>* planetRecord,
               <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> removeSpice = 0)</span></span>
             </h3>
-            <p>Calculates the current spice production of a planet, which is the sum of the production of all its cities.</p>
+            <p>Calculates the current total spice of a planet, which is the sum of the production of all its cities.</p>
             <table class="m-table m-fullwidth m-flat">
               <thead>
                 <tr><th colspan="2">Parameters</th></tr>
@@ -345,6 +357,64 @@
               </tfoot>
             </table>
 <p>If &#x27;removeSpice&#x27; is not 0, that amount of spice will be removed from the planet.</p>
+          </div></section>
+          <section class="m-doc-details" id="a79913d47ec63fc9972fa61754fec8065"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">static <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">float</a> Simulator::<wbr />cPlanetRecord::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a79913d47ec63fc9972fa61754fec8065" class="m-doc-self">CalculateDeltaSpiceProduction</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">float</a> baseValue,
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">float</a> maxOutput,
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">float</a> extraFactor,
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">bool</a> isHomeWorld,
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">bool</a> useSuperpowerMultiplier,
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">bool</a> useStorageMultiplier,
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">float</a> finalFactor,
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> numCities,
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">bool</a> limitOutput)</span></span>
+            </h3>
+            <p>Method that calculates how much spice is being produced on a single planet, based on difficulty tunings and number of cities.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">baseValue</td>
+                  <td>Base value of the computation (e.g. <a href="struct_simulator_1_1c_city_data.html#a4d692dfd6307e834f185eccaa527765e" class="m-doc">cCityData::<wbr />mSpiceProduction</a>)</td>
+                </tr>
+                <tr>
+                  <td>maxOutput</td>
+                  <td>Maximum output value, only applied if <code>limitOutput</code> is true</td>
+                </tr>
+                <tr>
+                  <td>extraFactor</td>
+                  <td>Extra multilpier for the base value</td>
+                </tr>
+                <tr>
+                  <td>isHomeWorld</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>useSuperpowerMultiplier</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>useStorageMultiplier</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>finalFactor</td>
+                  <td>Extra multiplied applied to the final output value</td>
+                </tr>
+                <tr>
+                  <td>numCities</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>limitOutput</td>
+                  <td>If true, the output value will be capped at <code>maxOutput</code></td>
+                </tr>
+              </tbody>
+            </table>
+<p>This method is called every X ticks to update the total spice held on each city.</p>
           </div></section>
         </section>
       </div>
