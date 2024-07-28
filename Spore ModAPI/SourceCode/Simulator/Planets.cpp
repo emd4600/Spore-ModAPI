@@ -65,5 +65,11 @@ namespace Simulator
 
 	auto_STATIC_METHOD(cPlanetRecord, int, CalculateSpiceProduction,
 		Args(cPlanetRecord* planetRecord, int removeSpice), Args(planetRecord, removeSpice));
+
+	auto_STATIC_METHOD(cPlanetRecord, float, CalculateDeltaSpiceProduction,
+		Args(float baseValue, float maxOutput, float extraFactor, bool isHomeWorld,
+			bool useSuperpowerMultiplier, bool useStorageMultiplier, float finalFactor, int numCities, bool limitOutput),
+		Args(baseValue, maxOutput, extraFactor, isHomeWorld, useSuperpowerMultiplier, useStorageMultiplier, finalFactor, numCities, limitOutput));
+
 }
 #endif

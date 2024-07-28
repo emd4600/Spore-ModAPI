@@ -811,6 +811,7 @@ namespace Simulator
 		DefineAddress(GetPerihelion, SelectAddress(0xC70190, 0xC70FC0));
 		DefineAddress(FillPlanetDataForTechLevel, SelectAddress(0xB96820, 0xB97090));
 		DefineAddress(CalculateSpiceProduction, SelectAddress(0xC6F920, 0xC70760));
+		DefineAddress(CalculateDeltaSpiceProduction, SelectAddress(0xC71200, 0xC720A0));
 	}
 
 	namespace Addresses(cCivData) {
