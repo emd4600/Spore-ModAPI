@@ -21,7 +21,7 @@ namespace Simulator
 		Pet = 7,
 		WaterPredator = 8,
 		Carcass = 9,
-		Unk10 = 10,
+		Rogue = 10,
 		Scenario = 11
 	};
 
