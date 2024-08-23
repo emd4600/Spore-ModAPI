@@ -115,6 +115,50 @@ namespace UTFWin
 
 			/// STD_Center-alpha09
 			StdCenterAlpha09 = 0x1023,
+
+
+			/// cursor-no-opt
+			NoOptions = 0x3a204b0,
+			
+			/// cursor-ban-mode
+			BanMode = 0x5ecbdffd,
+
+			/// cursor_skeleton2
+			UnlockSkeleton = 0x342d221f,
+
+			/// cursor-eat-fruit
+			EatFruit = 0xb14ab7b6,
+
+			/// cursor-eat-omni
+			EatFruit = 0x3febe52,
+
+			/// cursor-eat-carcass
+			EatCarn = 0x514ab7b7,
+
+			/// cursor-mate
+			Mate = 0x314ab7b1,
+
+			/// cursor-target-creature
+			TargetCreature = 0xf36a0c84,
+
+			/// cursor_atk
+			Attack = 0xb14ab7b9,
+
+			/// cursor_social
+			Socialize = 0x525ff7d,
+
+			/// cursor-trg-domesticate
+			Domesticate = 0xe382f00e,
+
+			/// cursor-fish
+			Fish = 0x3febe3f,
+			
+			/// cursor-gather
+			Gather = 0x3febe40,
+
+			/// cursor-steal
+			Steal = 0x3febe42,
+			
 		};
 	}
 }
