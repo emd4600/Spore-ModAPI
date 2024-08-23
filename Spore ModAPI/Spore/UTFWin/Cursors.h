@@ -119,6 +119,9 @@ namespace UTFWin
 
 			/// cursor-no-opt
 			NoOptions = 0x3a204b0,
+			
+			/// cursor-grab_open
+			GrabOpen = 0x648fbf1,
 
 			/// cursor-ban-mode
 			BanMode = 0x5ecbdffd,
@@ -152,6 +155,15 @@ namespace UTFWin
 
 			/// cursor-steal
 			Steal = 0x3febe42,
+
+			/// cursor_repair
+			Repair = 0x525ff0f,
+
+			/// cursor-crg-give-grn
+			Gift = 0x8b875bdc,
+
+			/// cursor-crg-give-grn-no
+			GiftDeny = 0xf59ce677,
 
 			/// cursor-fish
 			Fish = 0x3febe3f,
