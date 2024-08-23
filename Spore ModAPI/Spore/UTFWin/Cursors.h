@@ -150,14 +150,44 @@ namespace UTFWin
 			/// cursor-trg-domesticate
 			Domesticate = 0xe382f00e,
 
+			/// cursor-steal
+			Steal = 0x3febe42,
+
 			/// cursor-fish
 			Fish = 0x3febe3f,
 
 			/// cursor-gather
 			Gather = 0x3febe40,
 
-			/// cursor-steal
-			Steal = 0x3febe42,
+			/// cursor_pickup-maracas
+			PickupMaracas = 0x63fe8d4,
+
+			/// cursor_pickup-horn
+			PickupHorn = 0x63fe8d5,
+
+			/// cursor_pickup-didgeridoo
+			PickupDidgeridoo = 0x63fe8d6,
+
+			/// cursor_pickup-axe
+			PickupAxe = 0x63fe8d7,
+
+			/// cursor_pickup-spear
+			PickupSpear = 0x63fe8d8,
+
+			/// cursor_pickup-torch
+			PickupTorch = 0x63fe8d9,
+
+			/// cursor-trg-tool-pickup-fish
+			PickupFishing = 0x3febe37,
+
+			/// cursor-trg-tool-pickup-gather
+			PickupGather = 0x3febe38,
+
+			/// cursor_pickup-heal
+			PickupHealing = 0x3febe3b,
+
+			/// cursor-dance
+			Dance = 0x3febe3d,
 
 		};
 	}
