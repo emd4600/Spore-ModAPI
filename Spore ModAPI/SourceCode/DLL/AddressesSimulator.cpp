@@ -78,7 +78,10 @@
 #include <Spore\Simulator\cCulturalProjectile.h>
 #include <Spore\Simulator\cFlakProjectile.h>
 #include <Spore\Simulator\cResourceProjectile.h>
+#include <Spore\Simulator\cCollectableItems.h>
 #include <Spore\Simulator\cSpaceDefenseMissile.h>
+#include <Spore\Simulator\cDefaultToolProjectile.h>
+#include <Spore\Simulator\cPlanetaryArtifact.h>
 #include <Spore\Simulator\SubSystem\cRelationshipManager.h>
 #include <Spore\Simulator\SubSystem\GameBehaviorManager.h>
 #include <Spore\Simulator\SubSystem\GameInputManager.h>
@@ -130,6 +133,10 @@ namespace Addresses(Simulator)
 	DefineAddress(IsNotStarOrBinaryStar, SelectAddress(0xC8A840, 0xC8B6B0));
 
 	DefineAddress(LaunchDefaultToolProjectile, SelectAddress(0x1054F40, 0x1054390));
+
+	DefineAddress(sCreatureGameUnlockCategoriesCount, SelectAddress(0x1587278, 0x1583298));
+
+	DefineAddress(CreateUFO, SelectAddress(0x102BB50, 0x102AC60));
 	
 #ifndef SDK_TO_GHIDRA
 	DefineAddress(LightingWorld_ptr, SelectAddress(0x1682CD4, 0x167EA54));
@@ -293,6 +300,8 @@ namespace Simulator
 		DefineAddress(SetSpeciesProfile, SelectAddress(0xC32FB0, 0xC337F0));
 		DefineAddress(sub_C32EA0, SelectAddress(0xC32EA0, 0xC336E0));
 		DefineAddress(CaptureSystem, SelectAddress(0xC8C320, 0xC8D190));
+		DefineAddress(UpdateAndGetColor, SelectAddress(0xC325F0, 0xC32E30));
+		DefineAddress(AddStarOwnership, SelectAddress(0xC33AB0, 0xC34300));
 	}
 
 	namespace Addresses(cEnergyRepairToolStrategy)
@@ -305,6 +314,7 @@ namespace Simulator
 	namespace Addresses(cGameDataUFO)
 	{
 		DefineAddress(ChangeEnergy, SelectAddress(0xC382C0, 0xC38B50));
+		DefineAddress(Initialize, SelectAddress(0xC3D8D0, 0xC3E210));
 	}
 	namespace Addresses(cGameTerrainCursor)
 	{
@@ -649,6 +659,11 @@ namespace Simulator
 		DefineAddress(ThereIsEventInPlanet, SelectAddress(0xFEE8A0, 0xFEE020));
 	}
 
+	namespace Addresses(cMission)
+	{
+		DefineAddress(SetState, SelectAddress(0xC47C40, 0xC47E20));
+	}
+
 	namespace Addresses(cGameTimeManager)
 	{
 		DefineAddress(Get, SelectAddress(0xB3D2E0, 0xB3D480));
@@ -781,12 +796,26 @@ namespace Simulator
 		DefineAddress(Initialize, SelectAddress(0xF1F450, 0xF1F060));
 		DefineAddress(SetCurrentAct, SelectAddress(0xF1F260, 0xF1EE70));
 		DefineAddress(JumpToAct, SelectAddress(0xF1F7B0, 0xF1F3C0));
+		DefineAddress(SetState, SelectAddress(0xF1ADB0, 0xF1A9C0));
+		DefineAddress(UpdateGoals, SelectAddress(0xF1C780, 0xF1C390));
+		DefineAddress(Update, SelectAddress(0xF1FD50, 0xF1F960));
+		DefineAddress(CompleteAct, SelectAddress(0xF1F680, 0xF1F290));
+		DefineAddress(CheckGoalProgress, SelectAddress(0xF1F8D0, 0xF1F4E0));
+		DefineAddress(RemoveInvisibleClasses, SelectAddress(0xF1AFD0, 0xF1ABE0));
+		DefineAddress(ReadScenarioTuning, SelectAddress(0xF1E2F0, 0xF1DF00));
 	}
 
 	namespace Addresses(cPlanetRecord)
 	{
 		DefineAddress(Create, SelectAddress(0xBA5920, 0xBA6300));
 		DefineAddress(GetPerihelion, SelectAddress(0xC70190, 0xC70FC0));
+		DefineAddress(FillPlanetDataForTechLevel, SelectAddress(0xB96820, 0xB97090));
+		DefineAddress(CalculateSpiceProduction, SelectAddress(0xC6F920, 0xC70760));
+		DefineAddress(CalculateDeltaSpiceProduction, SelectAddress(0xC71200, 0xC720A0));
+	}
+
+	namespace Addresses(cCivData) {
+		DefineAddress(AddCityData, SelectAddress(0xFF35E0, 0xFF2B20));
 	}
 
 	namespace Addresses(cSpaceGfx)
@@ -1020,6 +1049,26 @@ namespace Simulator
 	namespace Addresses(cSpaceDefenseMissile)
 	{
 		DefineAddress(LaunchProjectile, SelectAddress(0xCB7FD0, 0xCB88B0));
+	}
+
+	namespace Addresses(cCollectableItems)
+	{
+		DefineAddress(LoadConfig, SelectAddress(0x599100, 0x599440));
+		DefineAddress(AddUnlockableItem, SelectAddress(0x598A70, 0x598DB0));
+		DefineAddress(AddUnlockableItemFromProp, SelectAddress(0x598B50, 0x598E90));
+		DefineAddress(sub_597BC0, SelectAddress(0x597BC0, 0x597F00));
+		DefineAddress(sub_597390, SelectAddress(0x597390, 0x5976D0));
+	}
+
+	namespace Addresses(CreatureGamePartUnlocking)
+	{
+		DefineAddress(sub_D3B460, SelectAddress(0xD3B460, 0xD3BF50));
+	}
+
+	namespace Addresses(cPlanetaryArtifact)
+	{
+		DefineAddress(SetLocomotion, SelectAddress(0xC687D0, 0xC69230));
+		DefineAddress(LoadFromItem, SelectAddress(0xC73F90, 0xC74ED0));
 	}
 }
 

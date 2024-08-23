@@ -33,6 +33,19 @@ LocalizedString::LocalizedString(uint32_t tableID, uint32_t instanceID, const ch
 		Args(LocalizedString*, uint32_t tableID, uint32_t instanceID, const char16_t* text),
 		Args(this, tableID, instanceID, text));
 }
+
+LocalizedString::LocalizedString(const LocalizedString& other)
+{
+	*this = other;
+}
+
+LocalizedString& LocalizedString::operator=(const LocalizedString& other)
+{
+	return CALL(GetAddress(LocalizedString, op_equal), LocalizedString&,
+		Args(LocalizedString*, const LocalizedString&),
+		Args(this, other));
+}
+
 LocalizedString::~LocalizedString()
 {
 	CALL(GetAddress(LocalizedString, dtor), void,

@@ -255,7 +255,7 @@ def main():
     #includes.clear()
     #includes.append('#include "test_file.h"\n')
     # Now create a file only with the includes, then process its structures
-    includes.insert(0, '#include <Spore\CppRevEngBase.h>\n')
+    includes.insert(0, '#include <Spore\\CppRevEngBase.h>\n')
     includes.insert(0, '#include "eastl_include.h"\n')
     includes.insert(0, '#include <wintypes.h>\n')
     with open(temp_path, 'w') as output_file:

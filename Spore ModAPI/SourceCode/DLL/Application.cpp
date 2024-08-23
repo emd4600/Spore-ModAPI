@@ -1,8 +1,9 @@
-#include "Spore/App/CommandLine.h"
 #ifdef MODAPI_DLL_EXPORT
 #include "stdafx.h"
 #include "Application.h"
 #include <Spore\ArgScript\FormatParser.h>
+#include <Spore/App/cAppSystem.h>
+#include <Spore/App/CommandLine.h>
 #include <cuchar>
 #include <tlhelp32.h>
 #include <psapi.h>
@@ -98,6 +99,7 @@ namespace ModAPI
 
 		long result = 0;
 		result |= ShaderFragments_detour::attach(GetAddress(Graphics::cMaterialManager, ReadShaderFragments));
+		result |= PreInit_detour::attach(GetAddress(App::cAppSystem, PreInit));
 		result |= sub_7E6C60_detour::attach(Address(SelectAddress(0x7E6C60, 0x7E6850)));
 		result |= AppInit_detour::attach(Address(SelectAddress(0xF48230, 0xF47E90)));
 		result |= AppShutdown_detour::attach(Address(SelectAddress(0xF47950, 0xF475A0)));
@@ -206,13 +208,20 @@ void CloseLogFile() {
 	}
 }
 
-int ModAPI::sub_7E6C60_detour::DETOUR(int arg_0)
+int ModAPI::PreInit_detour::DETOUR(int arg_0, int arg_1)
 {
-	int result = original_function(this, arg_0);
+	int result = original_function(this, arg_0, arg_1);
 
 	CreateLogFile();
 	ModAPI::Log("Spore ModAPI %d.%d.%d loaded.", ModAPI::GetMajorVersion(), ModAPI::GetMinorVersion(), ModAPI::GetBuildVersion());
 	ModAPI::Log("Platform: %s", ModAPI::GetGameType() == ModAPI::GameType::Disk ? "Disk" : "March2017");
+
+	return result;
+}
+
+int ModAPI::sub_7E6C60_detour::DETOUR(int arg_0)
+{
+	int result = original_function(this, arg_0);
 
 	for (ModAPI::InitFunction& func : ModAPI::initFunctions) func();
 
@@ -245,7 +254,7 @@ int ModAPI::AppShutdown_detour::DETOUR()
 
 namespace ModAPI
 {
-	bool ReadSubsystems(Simulator::ISerializerStream* stream, void* data)
+	bool ReadSubsystems(Simulator::ISerializerReadStream* stream, void* data)
 	{
 		auto s = stream->GetRecord()->GetStream();
 
@@ -279,7 +288,7 @@ namespace ModAPI
 		return true;
 	}
 
-	bool WriteSubsystems(Simulator::ISerializerStream* stream, void* data)
+	bool WriteSubsystems(Simulator::ISerializerWriteStream* stream, void* data)
 	{
 		auto s = stream->GetRecord()->GetStream();
 

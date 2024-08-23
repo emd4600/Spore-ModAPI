@@ -23,6 +23,10 @@ namespace Simulator
 		static const uint32_t TYPE = 0x5B82EF9;
 		static const uint32_t NOUN_ID = 0x5B82EFA;
 
+		using Object::AddRef;
+		using Object::Release;
+		using Object::Cast;
+
 	public:
 		/* 0Ch */	uint32_t planetkey;  // -1
 		/* 10h */	cGonzagoTimer lifetime;
@@ -98,6 +102,7 @@ namespace Simulator
 
 		/// List of possible spices for planets
 		/* 20h */	eastl::vector<ResourceKey> mSpices;
+		/// Apparently list of possible tools to be bought
 		/* 34h */	eastl::vector<ResourceKey> field_34;
 		/* 48h */	eastl::fixed_vector<cNPCStorePtr, 5> mNPCStore;
 		/* 74h */	eastl::vector<ObjectPtr> field_74;

@@ -608,6 +608,24 @@ namespace eastl
 	}
 
 
+
+	/// Spore equivalent of fixed_map; only reading is supported, adding elements might crash.
+    template <typename Key,
+              typename T,
+              size_t nodeCount>
+    class sp_fixed_map : public map<Key, T>
+    {
+	public:
+	    typedef map<Key, T> base_type;
+	    typedef typename base_type::node_type node_type;
+	    typedef typename base_type::size_type size_type;
+
+	public:
+	    /* 1Ch */ int mPoolAllocator[4]; // actually part of mAllocator
+	    char mPoolBuffer[(nodeCount + 1) * sizeof(node_type)];
+    };
+
+
 } // namespace eastl
 
 

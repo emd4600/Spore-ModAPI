@@ -23,6 +23,7 @@
 #include <cctype>
 #include <Windows.h>
 #include <Spore\CppRevEng.h>
+#include <EASTL\string.h>
 
 #ifdef DOXYGEN
 #define UNNAMED(altName) altName
@@ -131,6 +132,18 @@ extern MODAPI uintptr_t baseAddress;
 /// allowing you to attach the debugger to Spore and continue executing from this instruction.
 /// @returns false if there was an error.
 bool ManualBreakpoint();
+
+/// Converts an ASCII char* string to a unicode string16.
+/// @param str
+inline eastl::string16 ConvertToString16(const char* str) {
+	return eastl::string16(eastl::string16::CtorConvert(), str);
+}
+
+/// Converts an ASCII char* string to a unicode string16.
+/// @param str
+inline eastl::string16 ConvertToString16(const eastl::string& str) {
+	return eastl::string16(eastl::string16::CtorConvert(), str);
+}
 
 namespace Addresses(Internal)
 {

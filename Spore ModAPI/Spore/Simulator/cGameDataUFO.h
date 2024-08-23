@@ -31,6 +31,8 @@
 
 namespace Simulator
 {
+	class cEmpire;
+
 	class cGameDataUFO
 		/* 00h */	: public cGameData
 		/* 34h */	, public cLocomotiveObject
@@ -47,6 +49,8 @@ namespace Simulator
 		using Object::Cast;
 
 		float ChangeEnergy(float delta);
+
+		void Initialize(UfoType type, cEmpire* empire);
 
 	public:
 		/* 5ECh */	float field_5EC;
@@ -77,6 +81,7 @@ namespace Simulator
 		/* 6D0h */	cGonzagoTimer field_6D0;
 		/* 6F0h */	cGonzagoTimer field_6F0;
 		/* 710h */	int field_710;
+		/// 0 is player UFO
 		/* 714h */	int mUFOType;  // -1
 		/* 718h */	Vector3 mNextPosition;
 		/* 724h */	Vector3 mNextVelocity;
@@ -125,5 +130,18 @@ namespace Simulator
 	namespace Addresses(cGameDataUFO)
 	{
 		DeclareAddress(ChangeEnergy);
+		DeclareAddress(Initialize);  // 0xC3D8D0 0xC3E210
 	}
+
+	/// Creates a new UFO instance of the given type and assigned to the specified empire.
+	/// It will call cGameDataUFO::Initialize(), which sets up the necessary tools and AI.
+	/// @param type
+	/// @param empire
+	/// @returns
+	cGameDataUFO* CreateUFO(UfoType type, cEmpire* empire);
+}
+
+namespace Addresses(Simulator)
+{
+	DeclareAddress(CreateUFO);  // 0x102BB50 0x102AC60
 }

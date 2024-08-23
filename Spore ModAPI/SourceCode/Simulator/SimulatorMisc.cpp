@@ -13,6 +13,8 @@
 #include <Spore\Simulator\cFlakProjectile.h>
 #include <Spore\Simulator\cResourceProjectile.h>
 #include <Spore\Simulator\cSpaceDefenseMissile.h>
+#include <Spore\Simulator\cCollectableItems.h>
+#include <Spore\Simulator\cPlanetaryArtifact.h>
 
 namespace Simulator
 {
@@ -121,5 +123,38 @@ namespace Simulator
 	//// cSpaceDefenseMissile ////
 
 	auto_METHOD_VOID(cSpaceDefenseMissile, LaunchProjectile, Args(const Math::Vector3& target, cCombatant* arg), Args(target, arg));
+
+
+	//// cCollectableItems ////
+
+	auto_METHOD_VOID(cCollectableItems, LoadConfig, 
+		Args(uint32_t configGroupID, uint32_t configInstanceID, uint32_t itemsGroupID),
+		Args(configGroupID, configInstanceID, itemsGroupID));
+
+	auto_METHOD_VOID(cCollectableItems, AddUnlockableItem,
+		Args(uint32_t instanceID, uint32_t groupID, int itemUnlockLevel, uint32_t categoryID, int row, int column, int pageIndex, float itemUnlockFindPercentage, uint32_t itemUnlockEffect),
+		Args(instanceID, groupID, itemUnlockLevel, categoryID, row, column, pageIndex, itemUnlockFindPercentage, itemUnlockEffect));
+
+	auto_METHOD(cCollectableItems, bool, AddUnlockableItemFromProp,
+		Args(struct ResourceKey key, uint32_t categoryID, int row, int column, int pageIndex),
+		Args(key, categoryID, row, column, pageIndex));
+
+	auto_METHOD_VOID(cCollectableItems, sub_597390,
+		Args(eastl::vector<int>& dst, struct cCollectableItemID itemID, int unk),
+		Args(dst, itemID, unk));
+
+
+	eastl::fixed_vector<eastl::pair<uint32_t, int>, 16>& GetCreatureGameUnlockCategoriesCount() {
+		return *(eastl::fixed_vector<eastl::pair<uint32_t, int>, 16>*)(GetAddress(Simulator, sCreatureGameUnlockCategoriesCount));
+	}
+
+
+	//// cPlanetaryArtifact ////
+
+	auto_METHOD_VOID_(cPlanetaryArtifact, SetLocomotion);
+
+	auto_METHOD_VOID(cPlanetaryArtifact, LoadFromItem, 
+		Args(SpaceInventoryItemType itemType, const ResourceKey& itemKey, int count, bool arg),
+		Args(itemType, itemKey, count, arg));
 }
 #endif

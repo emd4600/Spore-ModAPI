@@ -112,6 +112,24 @@ namespace eastl
     };
 
     template <typename T>
+    struct fixedlist_node
+    {
+        void* mpNext;
+        void* mpPrev;
+        T mValue;
+    };
+
+    template <typename T, int nodeCount>
+    struct sp_fixed_list
+    {
+        void* mpPrev;
+        void* mpNext;
+        int mPoolAllocator[5];
+        //WARNING this does not work if T has alignment 8, because the struct will also get the alignment (but it shouldn't)
+        fixedlist_node<T> mPoolBuffer[nodeCount + 1];
+    };
+
+    template <typename T>
     struct deque_iterator
     {
         T* mpCurrent;
@@ -144,7 +162,7 @@ namespace eastl
         _Allocator mAllocator;
     };
 
-    template <typename Key, typename T, typename _Allocator=allocator>
+    template <typename Key, typename T, typename Hash=int, typename Compare=int, typename _Allocator=allocator>
     struct hash_map
     {
         static allocator _DEFAULT__Allocator;
@@ -160,7 +178,65 @@ namespace eastl
     };
     static_assert(sizeof(hash_map<int,int>) == 0x20, "sizeof(hash_map<int,int>) == 0x20");
 
-    template <typename T, typename _Allocator=allocator>
+    template <typename Key, typename T>
+    struct hashmap_node
+    {
+        pair<Key, T> keyValue;
+        void* next;
+    };
+
+    template <typename Key, typename T, int nodeCount, int bucketCount = nodeCount+1>
+    struct sp_fixed_hash_map
+    {
+        int field_0;
+        void* mpBucketArray;
+        int mnBucketCount;
+        int mnElementCount;
+        float mfMaxLoadFactor;
+        float mfGrowthFactor;
+        int mnNextResize;
+        /* 1Ch */	int mPoolAllocator[6];
+        /* 34h */	void* mBucketBuffer[bucketCount + 1];
+        //WARNING this does not work if Key or T have alignment 8, because the struct will also get the alignment (but it shouldn't)
+        int mPoolBuffer0[bucketCount + 1];
+        hashmap_node<Key, T> mPoolBuffer1[nodeCount + 1];
+        //char mPoolBuffer[(bucketCount + 1) * 4 + sizeof(hashmap_node<Key, T>) * (nodeCount + 1)];
+        //hashmap_node<Key, T> mPoolBuffer0[nodeCount + 1];
+        //char mPoolBuffer1[(bucketCount + 1) * 4];
+
+        ///* 34h */   void* mBucketBuffer0;
+        //// Ensure we start in an aligned position
+        ///* 38h */   hashmap_node<Key, T> mPoolBuffer0[nodeCount + 1];
+        //void* mBuffer[bucketCount];  // this is actually mBucketBuffer
+        ////char mPoolBuffer1[(bucketCount + 1) * 4];
+    };
+
+    template <typename T>
+    struct hashset_node
+    {
+        T keyValue;
+        void* next;
+    };
+
+    template <typename T, int nodeCount, int bucketCount = nodeCount + 1>
+    struct sp_fixed_hash_set
+    {
+        int field_0;
+        void* mpBucketArray;
+        int mnBucketCount;
+        int mnElementCount;
+        float mfMaxLoadFactor;
+        float mfGrowthFactor;
+        int mnNextResize;
+        /* 1Ch */	int mPoolAllocator[6];
+        /* 34h */	void* mBucketBuffer[bucketCount + 1];
+        //WARNING this does not work if T has alignment 8, because the struct will also get the alignment (but it shouldn't)
+        int mPoolBuffer0[bucketCount + 1];
+        hashset_node<T> mPoolBuffer1[nodeCount + 1];
+        //char mPoolBuffer[(nodeCount + 1) * sizeof(hashset_node<T>) + (bucketCount + 1) * 4];
+    };
+
+    template <typename T, typename _Allocator = allocator>
     struct hash_set
     {
         static allocator _DEFAULT__Allocator;

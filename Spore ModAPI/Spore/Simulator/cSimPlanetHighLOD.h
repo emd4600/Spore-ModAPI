@@ -4,6 +4,7 @@
 #include <Spore\Simulator\cGonzagoTimer.h>
 #include <Spore\Simulator\cCity.h>
 #include <Spore\MathUtils.h>
+#include <EASTL\fixed_list.h>
 
 #define cSimPlanetHighLODPtr eastl::intrusive_ptr<Simulator::cSimPlanetHighLOD>
 
@@ -22,6 +23,12 @@ namespace Simulator
 		void DestroyCity(cCity* pCity, uint32_t agressorEmpireID = -1);
 
 	public:
+		struct UnkClass
+		{
+			char field_0[16];
+		};
+		ASSERT_SIZE(UnkClass, 0x10);
+
 		/* 10h */	int field_10;  // 1
 		/* 14h */	bool field_14;
 		/* 18h */	ObjectPtr field_18;
@@ -31,7 +38,7 @@ namespace Simulator
 		/* 28h */	DefaultRefCountedPtr field_28;
 		/* 2Ch */	ObjectPtr field_2C;
 		/* 30h */	ObjectPtr field_30;
-		/* 34h */	char field_34[0x158 - 0x34];
+		/* 34h */   eastl::sp_fixed_list<UnkClass, 10> field_34;
 		/* 158h */	bool field_158;
 		/* 15Ch */	Math::Vector3 field_15C;  // X_AXIS
 		/* 168h */	int field_168;  // not initialized

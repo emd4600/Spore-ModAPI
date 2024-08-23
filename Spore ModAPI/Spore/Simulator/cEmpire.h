@@ -63,7 +63,18 @@ namespace Simulator
 
 		void SetSpeciesProfile(cSpeciesProfile* pSpecies);
 
-		/// Captures a star system for a specific empire.
+		/// Calculates and returns the identity color of the empire, based on the `mIDColorID` field.
+		/// ColorIDs equal or greater than `0x53DBCF1` are cached, and `colorID - 0x53DBCF1` is an index to
+		/// the real color stored in `animations~!ui.prop` in `IdentityColors` property.
+		/// `0x53DBCF1` is special and uses the empire species identity color, instead of the color on the list.
+		/// If the ID less than `0x53DBCF1`, the color will be recalculated, cached, and the ID will be updated.
+		Math::ColorRGB UpdateAndGetColor();
+
+		/// Makes this empire the owner of the given star. It will emit a kMsgStarOwnershipChanged message.
+		void AddStarOwnership(cStarRecord* star);
+
+		/// Captures a star system for a specific empire. This can only be used when the star belongs to another empire.
+		/// For any kind of star, use cEmpire::AddStarOwnership
 		/// @param pStarRecord The star system to capture.
 		/// @param empireID Political ID of the empire that will become the owner.
 		static void CaptureSystem(cStarRecord* pStarRecord, uint32_t empireID);
@@ -123,6 +134,8 @@ namespace Simulator
 		DeclareAddress(SetSpeciesProfile);
 		DeclareAddress(sub_C32EA0);
 		DeclareAddress(CaptureSystem);
+		DeclareAddress(UpdateAndGetColor);  // 0xC325F0 0xC32E30
+		DeclareAddress(AddStarOwnership);  // 0xC33AB0 0xC34300
 		//TODO sub_C30F90 RequireHomePlanet
 	}
 

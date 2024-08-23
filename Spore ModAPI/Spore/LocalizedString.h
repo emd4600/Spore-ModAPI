@@ -34,7 +34,9 @@ class LocalizedString
 public:
 	LocalizedString();
 	LocalizedString(uint32_t tableID, uint32_t instanceID, const char16_t* pText = nullptr);
+	LocalizedString(const LocalizedString& other);
 	~LocalizedString();
+	LocalizedString& operator=(const LocalizedString& other);
 
 	///
 	/// Gets the text that corresponds to this object according to the current locale.
@@ -66,5 +68,6 @@ namespace Addresses(LocalizedString)
 
 	DeclareAddress(ctor_0);
 	DeclareAddress(ctor_1);
+	DeclareAddress(op_equal);
 	DeclareAddress(dtor);
 }

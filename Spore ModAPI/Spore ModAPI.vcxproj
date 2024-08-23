@@ -382,6 +382,7 @@
     <ClInclude Include="Spore\Palettes\AdvancedItemViewer.h" />
     <ClInclude Include="Spore\Palettes\cSPScenarioBrushItemUI.h" />
     <ClInclude Include="Spore\Palettes\PaletteInfo.h" />
+    <ClInclude Include="Spore\Palettes\PaletteIterator.h" />
     <ClInclude Include="Spore\Palettes\PaletteSubcategoriesUI.h" />
     <ClInclude Include="Spore\Palettes\SwatchManager.h" />
     <ClInclude Include="Spore\Pollinator\AchievementsManager.h" />
@@ -401,6 +402,7 @@
     <ClInclude Include="Spore\Simulator\cBuildingCityHall.h" />
     <ClInclude Include="Spore\Simulator\cBuildingHouse.h" />
     <ClInclude Include="Spore\Simulator\cBuildingIndustry.h" />
+    <ClInclude Include="Spore\Simulator\cCollectableItems.h" />
     <ClInclude Include="Spore\Simulator\cCombatSimulator.h" />
     <ClInclude Include="Spore\Simulator\cCommodityNode.h" />
     <ClInclude Include="Spore\Simulator\cCommunityLayout.h" />
@@ -429,10 +431,14 @@
     <ClInclude Include="Spore\Simulator\cICBM.h" />
     <ClInclude Include="Spore\Simulator\cInterCityRoad.h" />
     <ClInclude Include="Spore\Simulator\cMission.h" />
+    <ClInclude Include="Spore\Simulator\cMovableDestructibleOrnament.h" />
     <ClInclude Include="Spore\Simulator\cNest.h" />
     <ClInclude Include="Spore\Simulator\cObjectInstanceInventoryItem.h" />
     <ClInclude Include="Spore\Simulator\cObjectPool.h" />
+    <ClInclude Include="Spore\Simulator\cPlanetaryArtifact.h" />
     <ClInclude Include="Spore\Simulator\cPlantCargoInfo.h" />
+    <ClInclude Include="Spore\Simulator\cRaidEvent.h" />
+    <ClInclude Include="Spore\Simulator\cRaidPlunderEvent.h" />
     <ClInclude Include="Spore\Simulator\cResourceProjectile.h" />
     <ClInclude Include="Spore\Simulator\cScenarioEditHistory.h" />
     <ClInclude Include="Spore\Simulator\cScenarioEconomy.h" />
@@ -440,6 +446,7 @@
     <ClInclude Include="Spore\Simulator\cScenarioPlayMode.h" />
     <ClInclude Include="Spore\Simulator\cScenarioSimulator.h" />
     <ClInclude Include="Spore\Simulator\cScenarioTerraformMode.h" />
+    <ClInclude Include="Spore\Simulator\cShipBackgroundData.h" />
     <ClInclude Include="Spore\Simulator\cSimPlanetHighLOD.h" />
     <ClInclude Include="Spore\Simulator\cSimulatorUniverse.h" />
     <ClInclude Include="Spore\Simulator\cSolarHitSphere.h" />
@@ -447,6 +454,7 @@
     <ClInclude Include="Spore\Simulator\cSpaceNames.h" />
     <ClInclude Include="Spore\Simulator\cSpear.h" />
     <ClInclude Include="Spore\Simulator\cTimeOfDay.h" />
+    <ClInclude Include="Spore\Simulator\cToolObject.h" />
     <ClInclude Include="Spore\Simulator\cTotemPole.h" />
     <ClInclude Include="Spore\Simulator\cTribe.h" />
     <ClInclude Include="Spore\Simulator\cTribeArchetype.h" />
@@ -1082,5 +1090,10 @@
     <Message Text="Compiling $(Config) DLLs for March2017 version, build $(BuildVer)..." />
     <Exec Command="msbuild.exe /p:Configuration=&quot;$(Config) DLL&quot; /p:Platform=Win32 /p:SDK_BUILD_VER=$(BuildVer) /p:EXECUTABLE_TYPE=0" />
     <Copy SourceFiles="../dll/$(Config)/SporeModAPI.dll" DestinationFiles="../dll/$(Config)/SporeModAPI.disk.dll" />
+  </Target>
+  <Target Name="BuildCombinedDll">
+    <Message Text="Compiling $(Config) DLL, build $(BuildVer)..." />
+    <Exec Command="msbuild.exe /p:Configuration=&quot;$(Config) DLL&quot; /p:Platform=Win32 /p:SDK_BUILD_VER=$(BuildVer) /p:EXECUTABLE_TYPE=10" />
+    <Copy SourceFiles="../dll/$(Config)/SporeModAPI.dll" DestinationFiles="../dll/$(Config)/SporeModAPI.combined.dll" />
   </Target>
 </Project>

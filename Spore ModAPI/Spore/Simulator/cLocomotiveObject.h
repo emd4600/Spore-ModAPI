@@ -124,9 +124,10 @@ namespace Simulator
 		/* 270h */	int field_270;
 		/* 274h */	bool field_274;
 		/* 278h */	eastl::fixed_vector<cSpatialObjectPtr, 128> mNeighbors;
+		// vector of functions such as sub_B4C6E0
 		/* 490h */	eastl::fixed_vector<int, 4> field_490;
 		/* 4B8h */	eastl::vector<int> field_4B8;
-		/* 4CCh */	int field_4CC;  //PLACEHOLDER important cLomotionStrategy
+		/* 4CCh */	int field_4CC;  //TODO important cLomotionStrategy
 	};
 	ASSERT_SIZE(cLocomotiveObject, 0x4D0);
 }

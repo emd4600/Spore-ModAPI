@@ -133,7 +133,7 @@ namespace eastl
 	/// A necessary structure to be able to use ResourceKey on containers such as hash_map.
 	template <> struct hash<ResourceKey>
 	{
-		size_t operator()(const ResourceKey& val) const { return static_cast<size_t>(val.groupID); }
+		size_t operator()(const ResourceKey& val) const { return static_cast<size_t>(val.instanceID ^ val.typeID); }
 	};
 }
 #endif

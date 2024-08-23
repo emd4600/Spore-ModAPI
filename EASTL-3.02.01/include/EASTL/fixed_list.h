@@ -393,6 +393,21 @@ namespace eastl
 	}
 
 
+
+
+	/// Spore equivalent of fixed_list; only reading is supported, adding elements might crash.
+	template <typename T, size_t nodeCount>
+	class sp_fixed_list : public list<T>
+	{
+	public:
+		typedef list<T> 						base_type;
+		typedef typename base_type::node_type   node_type;
+		
+	public:
+		/* 0Ch */	int mPoolAllocator[4];  // actually part of mAllocator
+		/* 1Ch */	node_type mPoolBuffer[nodeCount + 1];
+	};
+
 } // namespace eastl
 
 

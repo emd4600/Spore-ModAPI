@@ -129,11 +129,22 @@ namespace Resource
 
 
 	protected:
-		typedef eastl::hash_map<uint32_t, eastl::vector<eastl::pair<IResourceFactoryPtr, uint32_t>>, ICoreAllocatorAdapter> FactoriesMap_t;
-		typedef eastl::hash_map<uint32_t, eastl::vector<uint32_t>, ICoreAllocatorAdapter> ResourceTypeToRecordTypeMap_t;
-		typedef eastl::hash_map<uint32_t, uint32_t, ICoreAllocatorAdapter> RecordTypeToResourceTypeMap_t;
-		typedef eastl::hash_map<uint32_t, eastl::string16, ICoreAllocatorAdapter> ExtensionsMap_t;
-		typedef eastl::hash_map<ResourceKey, eastl::string16, FixedPoolAllocatorAdapter> FilenamesMap_t;
+#ifndef SDK_TO_GHIDRA
+		template <typename Key, typename T, typename Allocator>
+		using adapter_hash_map = eastl::hash_map<Key, T, eastl::hash<Key>, eastl::equal_to<Key>, Allocator>;
+#else
+		template <typename Key, typename T, typename Allocator>
+		struct adapter_hash_map
+		{
+			eastl::hash_map<Key, T, int, int, Allocator> _map;
+		};
+#endif
+
+		typedef adapter_hash_map<uint32_t, eastl::vector<eastl::pair<IResourceFactoryPtr, uint32_t>>, ICoreAllocatorAdapter> FactoriesMap_t;
+		typedef adapter_hash_map<uint32_t, eastl::vector<uint32_t>, ICoreAllocatorAdapter> ResourceTypeToRecordTypeMap_t;
+		typedef adapter_hash_map<uint32_t, uint32_t, ICoreAllocatorAdapter> RecordTypeToResourceTypeMap_t;
+		typedef adapter_hash_map<uint32_t, eastl::string16, ICoreAllocatorAdapter> ExtensionsMap_t;
+		typedef adapter_hash_map<ResourceKey, eastl::string16, FixedPoolAllocatorAdapter> FilenamesMap_t;
 		typedef eastl::vector<eastl::pair<ICache*, int>> CacheVector_t;
 
 		/* 04h */	bool mbNeedsToRelease;

@@ -8,10 +8,21 @@
 #include <Spore\Simulator\cCreatureDisplayStrategy.h>
 
 #define cCreatureModeStrategyPtr eastl::intrusive_ptr<App::cCreatureModeStrategy>
+#define ICreatureModeActionHandlerPtr eastl::intrusive_ptr<App::ICreatureModeActionHandler>
 #define CreatureModeStrategy (*App::cCreatureModeStrategy::Get())
 
 namespace App
 {
+	class ICreatureModeActionHandler
+		: public DefaultRefCounted
+	{
+	public:
+		/* 10h */	virtual bool func10h(int);
+		/* 14h */	virtual bool func14h();  // true
+		/* 18h */	virtual bool ExecuteAction(uint32_t actionID, void* actionData);
+		/* 1Ch */	virtual bool func1Ch(int);
+	};
+
 	class cCreatureModeStrategy
 		/* 00h */	: public App::IGameMode
 		/* 04h */	, public App::IMessageListener
@@ -20,7 +31,7 @@ namespace App
 	public:
 		static cCreatureModeStrategy* Get();
 
-		//TODO check sub_D38770, execute action?
+		void ExecuteAction(uint32_t actionID, void* actionData);
 
 	public:
 		/* 24h */	int field_24;
@@ -45,7 +56,7 @@ namespace App
 		/* B0h */	int field_B0;
 		/* B4h */	int field_B4;
 		/* B8h */	int field_B8;
-		/* BCh */	eastl::vector<int> field_BC;
+		/* BCh */	eastl::vector<ICreatureModeActionHandlerPtr> mActionHandlers;
 		/* D0h */	int field_D0;
 		/* D4h */	int field_D4;
 		/* D8h */	int field_D8;
@@ -62,6 +73,7 @@ namespace App
 	namespace Addresses(cCreatureModeStrategy)
 	{
 		DeclareAddress(Get);  // 0xD2D640 0xD38840
+		DeclareAddress(ExecuteAction);  // 0xD38770 0xD39360
 	}
 
 #ifdef SDK_TO_GHIDRA

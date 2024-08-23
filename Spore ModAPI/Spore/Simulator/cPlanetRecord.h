@@ -109,8 +109,15 @@ namespace Simulator
 		/* 24h */	int mNumBuildings;
 		/* 28h */	eastl::vector<cVehicleData*> mVehicles;
 		/* 3Ch */	eastl::vector<cCityData*> mCities;
+
+		/// Adds the given city data to this civilization data, and recalculates the number of turrets and buildings.
+		/// @param cityData
+		void AddCityData(cCityData* cityData);
 	};
 	ASSERT_SIZE(cCivData, 0x50);
+	namespace Addresses(cCivData) {
+		DeclareAddress(AddCityData);  // 0xFF35E0 0xFF2B20
+	}
 
 	struct cTribeData
 	{
@@ -185,6 +192,37 @@ namespace Simulator
 
 		static void Create(PlanetID planetId, cPlanetRecordPtr& dst);
 
+		/// Generates the civilization/tribe data, including cities, for a planet record.
+		/// The number and type of cities will depend on whether it is Empire or Civilization level.
+		/// For Empire level, the owner star of the planet must belong to an empire.
+		/// @param planetRecord
+		/// @param techLevel
+		static void FillPlanetDataForTechLevel(cPlanetRecord* planetRecord, TechLevel techLevel);
+
+		/// Calculates the current total spice of a planet, which is the sum of the
+		/// production of all its cities. If 'removeSpice' is not 0, that amount of spice will be 
+		/// removed from the planet.
+		/// @param planetRecord
+		/// @param removeSpice
+		/// @returns The total spice production of the planet.
+		static int CalculateSpiceProduction(cPlanetRecord* planetRecord, int removeSpice = 0);
+
+		/// Method that calculates how much spice is being produced on a single planet, based on difficulty tunings
+		/// and number of cities. This method is called every X ticks to update the total spice held on each city.
+		/// @param baseValue Base value of the computation (e.g. cCityData::mSpiceProduction)
+		/// @param maxOutput Maximum output value, only applied if `limitOutput` is true
+		/// @param extraFactor Extra multilpier for the base value
+		/// @param isHomeWorld
+		/// @param useSuperpowerMultiplier
+		/// @param useStorageMultiplier
+		/// @param finalFactor Extra multiplied applied to the final output value
+		/// @param numCities
+		/// @param limitOutput If true, the output value will be capped at `maxOutput`
+		/// @returns
+		static float CalculateDeltaSpiceProduction(
+			float baseValue, float maxOutput, float extraFactor, bool isHomeWorld, 
+			bool useSuperpowerMultiplier, bool useStorageMultiplier, float finalFactor, int numCities, bool limitOutput);
+
 	public:
 		/* 18h */	eastl::string16 mName;
 		/// The type of the planet, which determines whether it is a gas giant, asteroid belt, or regular rocky planet.
@@ -237,6 +275,9 @@ namespace Simulator
 	{
 		DeclareAddress(Create);  // 0xBA5920, 0xBA6300
 		DeclareAddress(GetPerihelion);  // 0xC70190 0xC70FC0
+		DeclareAddress(FillPlanetDataForTechLevel);  // 0xB96820 0xB97090
+		DeclareAddress(CalculateSpiceProduction);  // 0xC6F920 0xC70760
+		DeclareAddress(CalculateDeltaSpiceProduction);  // 0xC71200 0xC720A0
 	}
 
 	inline ResourceKey cPlanetRecord::GenerateTerrainKey()

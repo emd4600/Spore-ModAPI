@@ -33,6 +33,7 @@ namespace ModAPI
 	void DetachDetour();
 
 	class UnkClass {};
+	member_detour(PreInit_detour, UnkClass, int(int, int)) {};
 	member_detour(sub_7E6C60_detour, UnkClass, int(int)) {};
 	member_detour(AppInit_detour, UnkClass, int(int)) {};
 	member_detour(AppShutdown_detour, UnkClass, int()) {};

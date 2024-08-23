@@ -333,6 +333,9 @@ public class ImportSporeSDK extends GhidraScript {
             else if ("void".equals(signature.getReturnType().getName())) {
                 returnStorage = VariableStorage.VOID_STORAGE;
             }
+			else if ("float".equals(signature.getReturnType().getName())) {
+                returnStorage = new VariableStorage(currentProgram, currentProgram.getRegister("st0"));
+            }
             else {
                 returnStorage = new VariableStorage(currentProgram, currentProgram.getRegister("eax"));
             }

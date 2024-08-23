@@ -25,6 +25,7 @@
 #include <Spore\Palettes\PaletteUI.h>
 #include <Spore\Palettes\PaletteCategoryUI.h>
 #include <Spore\Palettes\PalettePageUI.h>
+#include <Spore\Palettes\PaletteIterator.h>
 #include <Spore\Palettes\ItemViewer.h>
 #include <Spore\Palettes\AdvancedItemViewer.h>
 #include <Spore\Palettes\SwatchManager.h>
@@ -673,5 +674,18 @@ namespace Palettes
 		, field_1BC()
 	{
 	}
+
+
+	auto_METHOD_VOID(PaletteIterator, Init, Args(PaletteMain* palette), Args(palette));
+
+	auto_METHOD_(PaletteIterator, bool, HasNext);
+
+	auto_METHOD(PaletteIterator, PaletteItem*, Start,
+		Args(uint32_t* dstCategoryID, int* dstColumn, int* dstRow, int* dstPageIndex),
+		Args(dstCategoryID, dstColumn, dstRow, dstPageIndex));
+
+	auto_METHOD(PaletteIterator, PaletteItem*, Next,
+		Args(uint32_t* dstCategoryID, int* dstColumn, int* dstRow, int* dstPageIndex),
+		Args(dstCategoryID, dstColumn, dstRow, dstPageIndex));
 }
 #endif

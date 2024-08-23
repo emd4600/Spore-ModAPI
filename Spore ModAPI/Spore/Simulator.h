@@ -77,7 +77,12 @@
 #include <Spore\Simulator\cICBM.h>
 #include <Spore\Simulator\cDefaultAoEArea.h>
 #include <Spore\Simulator\cSpear.h>
-#include <Spore\App\ScenarioMode.h>
+#include <Spore\Simulator\cCollectableItems.h>
+#include <Spore\Simulator\cMovableDestructibleOrnament.h>
+#include <Spore\Simulator\cToolObject.h>
+#include <Spore\Simulator\cPlanetaryArtifact.h>
+#include <Spore\Simulator\cRaidEvent.h>
+#include <Spore\Simulator\cRaidPlunderEvent.h>
 
 #include <Spore\Simulator\SimulatorMessages.h>
 
@@ -89,3 +94,7 @@
 #include <Spore\Simulator\Serialization.h>
 #include <Spore\Simulator\SerializationTypes.h>
 #include <Spore\Simulator\NounClassFactories.h>
+
+#include <Spore\App\ScenarioMode.h>
+#include <Spore\App\cCreatureModeStrategy.h>
+#include <Spore\App\cCellModeStrategy.h>

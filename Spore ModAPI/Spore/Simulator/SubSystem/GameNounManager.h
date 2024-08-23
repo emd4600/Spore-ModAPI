@@ -230,3 +230,10 @@ inline T* simulator_new()
 {
 	return object_cast<T>(GameNounManager.CreateInstance(T::NOUN_ID));
 }
+
+namespace Simulator
+{
+	inline cPlayer* GetPlayer() {
+		return GameNounManager.GetPlayer();
+	}
+}

@@ -23,9 +23,12 @@
 #include <Spore\Simulator\cGameData.h>
 #include <Spore\Simulator\cGonzagoTimer.h>
 #include <Spore\Simulator\cSpatialObject.h>
+#include <Spore\Simulator\cCollectableItems.h>
 #include <EASTL\hash_set.h>
 #include <EASTL\vector_map.h>
 #include <EASTL\map.h>
+#include <EASTL\fixed_hash_set.h>
+#include <EASTL\fixed_hash_map.h>
 
 #define cPlayerPtr eastl::intrusive_ptr<Simulator::cPlayer>
 
@@ -85,13 +88,12 @@ namespace Simulator
 		static const uint32_t TYPE = 0x3C609F8;
 
 	public:
-		/* 38h */	char mOneTimeEventFlags[0x68C - 0x38];  // some unknown data structure
+		/* 38h */	eastl::sp_fixed_hash_set<ResourceKey, 64> mOneTimeEventFlags;
 		/* 68Ch */	int field_68C;
 		/* 690h */	int field_690;
 		/* 694h */	int field_694;
-		/* 698h */	char mFlags[0x10E8 - 0x698];  // some unknown data structure
-		///* 69Ch */	ResourceKey field_69C;  // a creature key?
-		/* 10E8h */	ObjectPtr mpCRGItems;  // cCollectableItemsPtr
+		/* 698h */	eastl::sp_fixed_hash_map<int, int, 128> mFlags;
+		/* 10E8h */	cCollectableItemsPtr mpCRGItems;
 		/* 10ECh */	int field_10EC;  // not initialized
 		/* 10F0h */	float mCurrentGoalProgress;
 		/* 10F4h */	float mGoalProgressTotal;  // not initialized
@@ -130,8 +132,7 @@ namespace Simulator
 		/* 1280h */	ResourceKey mPirateUFOModelKey;
 		/* 128Ch */	unsigned int mTotalTimeInCVG;
 		/* 1290h */	ResourceKey mInitCaptainKey;
-		/* 129Ch */	eastl::vector<uint32_t> mAdventuresCompleted;
-		/* 12B0h */	char padding_12B0[0x12D8 - 0x12B0];
+		/* 129Ch */	eastl::fixed_vector<uint32_t, 9> mAdventuresCompleted;
 	};
 	ASSERT_SIZE(cPlayer, 0x12D8);
 }

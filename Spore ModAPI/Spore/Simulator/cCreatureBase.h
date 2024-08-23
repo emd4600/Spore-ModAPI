@@ -33,6 +33,7 @@
 #include <EASTL\vector.h>
 #include <EASTL\list.h>
 #include <EASTL\hash_map.h>
+#include <EASTL\fixed_hash_map.h>
 #include <EASTL\bitset.h>
 #include <EASTL\queue.h>
 
@@ -40,11 +41,10 @@
 
 namespace Simulator
 {
-	class CreatureEffectPool
-	{
-		/* 00h */	eastl::hash_map<uint32_t, IVisualEffectPtr> mEffectMap;
-		/* 20h */	char field_0[0x80];
-	};
+	typedef eastl::sp_fixed_hash_map<uint32_t, IVisualEffectPtr, 4> CreatureEffectPool;
+	ASSERT_SIZE(CreatureEffectPool, 0xA0);
+
+	static_assert(sizeof(eastl::pair<uint32_t, IVisualEffectPtr>) + 4 == 0xC, "Incorrect size");
 
 	// Maybe used in other places as well?
 	class cAbilityState  // size 10h
@@ -72,6 +72,14 @@ namespace Simulator
 	};
 
 	class cCreatureAnimal;
+
+	enum CreatureFlags
+	{
+		kCreatureFlagIsAlpha = 0x1,
+
+		kCreatureFlagIsHungry = 0x100,
+		kCreatureFlagIsPlayerAvatar = 0x200,
+	};
 
 	/// The base class for all creatures in the Simulator.
 	class cCreatureBase
@@ -243,7 +251,8 @@ namespace Simulator
 		/* B4Ch */	int field_B4C;  //TODO cBehaviorTreeData
 		/* B50h */	cCreatureBasePtr mpWhoIsInteractingWithMe;
 		/* B54h */	AnimatedCreaturePtr mpAnimatedCreature;
-		/* B58h */	int mGeneralFlags;  // 0x200 IsPlayerAvatar, 0x100 hasHunger?
+		/// CreatureFlags
+		/* B58h */	int mGeneralFlags;
 		/* B5Ch */	bool field_B5C;
 		/* B5Dh */	bool mbTeleport;
 		/* B5Eh */	bool mbDead;
