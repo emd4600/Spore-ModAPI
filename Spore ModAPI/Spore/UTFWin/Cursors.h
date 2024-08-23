@@ -115,6 +115,80 @@ namespace UTFWin
 
 			/// STD_Center-alpha09
 			StdCenterAlpha09 = 0x1023,
+
+
+			/// cursor-no-opt
+			NoOptions = 0x3a204b0,
+
+			/// cursor-ban-mode
+			BanMode = 0x5ecbdffd,
+
+			/// cursor_skeleton2
+			UnlockSkeleton = 0x342d221f,
+
+			/// cursor-eat-fruit
+			EatFruit = 0xb14ab7b6,
+
+			/// cursor-eat-omni
+			EatOmni = 0x3febe52,
+
+			/// cursor-eat-carcass
+			EatCarn = 0x514ab7b7,
+
+			/// cursor-mate
+			Mate = 0x314ab7b1,
+
+			/// cursor-target-creature
+			TargetCreature = 0xf36a0c84,
+
+			/// cursor_atk
+			Attack = 0xb14ab7b9,
+
+			/// cursor_social
+			Socialize = 0x525ff7d,
+
+			/// cursor-trg-domesticate
+			Domesticate = 0xe382f00e,
+
+			/// cursor-steal
+			Steal = 0x3febe42,
+
+			/// cursor-fish
+			Fish = 0x3febe3f,
+
+			/// cursor-gather
+			Gather = 0x3febe40,
+
+			/// cursor_pickup-maracas
+			PickupMaracas = 0x63fe8d4,
+
+			/// cursor_pickup-horn
+			PickupHorn = 0x63fe8d5,
+
+			/// cursor_pickup-didgeridoo
+			PickupDidgeridoo = 0x63fe8d6,
+
+			/// cursor_pickup-axe
+			PickupAxe = 0x63fe8d7,
+
+			/// cursor_pickup-spear
+			PickupSpear = 0x63fe8d8,
+
+			/// cursor_pickup-torch
+			PickupTorch = 0x63fe8d9,
+
+			/// cursor-trg-tool-pickup-fish
+			PickupFishing = 0x3febe37,
+
+			/// cursor-trg-tool-pickup-gather
+			PickupGather = 0x3febe38,
+
+			/// cursor_pickup-heal
+			PickupHealing = 0x3febe3b,
+
+			/// cursor-dance
+			Dance = 0x3febe3d,
+
 		};
 	}
 }
