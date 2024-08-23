@@ -65,7 +65,7 @@ namespace Simulator
 		using Object::Cast;
 
 		/// Returns the leader of this community, casted as a cCreatureCitizen.
-		/// This can ge used in cTribe to get the tribe chief.
+		/// This can be used in cTribe to get the tribe chief.
 		/// @returns
 		inline cCreatureCitizen* GetLeaderCitizen();
 
