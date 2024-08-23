@@ -83,6 +83,8 @@
 #include <Spore\Simulator\cPlanetaryArtifact.h>
 #include <Spore\Simulator\cRaidEvent.h>
 #include <Spore\Simulator\cRaidPlunderEvent.h>
+#include <Spore\Simulator\cInteractableObject.h>
+#include <Spore\Simulator\cInteractiveOrnament.h>
 
 #include <Spore\Simulator\SimulatorMessages.h>
 

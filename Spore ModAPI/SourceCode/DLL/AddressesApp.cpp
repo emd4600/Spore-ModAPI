@@ -449,7 +449,7 @@ namespace App
 
 	namespace Addresses(cCreatureModeStrategy)
 	{
-		DefineAddress(Get, SelectAddress(0xD2D640, 0xD38840));
+		DefineAddress(Get, SelectAddress(0xD37C40, 0xD38840));
 		DefineAddress(ExecuteAction, SelectAddress(0xD38770, 0xD39360));
 	}
 
