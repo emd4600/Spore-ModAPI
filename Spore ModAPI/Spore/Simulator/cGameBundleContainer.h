@@ -19,7 +19,12 @@
 #pragma once
 
 #include <Spore\Simulator\cGameData.h>
+#include <Spore\Simulator\cSpatialObject.h>
+#include <Spore\Simulator\cBehaviorList.h>
 #include <EASTL\vector.h>
+
+#define cGameBundleContainerPtr eastl::intrusive_ptr<Simulator::cGameBundleContainer>
+#define cGameBundlePtr eastl::intrusive_ptr<Simulator::cGameBundle>
 
 namespace Simulator
 {
@@ -32,14 +37,38 @@ namespace Simulator
 	class cGameBundle;  //TODO
 #endif
 
+	class cGameBundleContainer;
+
+	class cGameBundle
+		/* 00h */	: public cGameData
+		/* 34h */	, public cSpatialObject
+		/* 108h */	, public cBehaviorList
+	{
+	public:
+		static const uint32_t TYPE = 0x4FFCDEDA;
+		static const uint32_t NOUN_ID = 0x18C431C;
+
+	public:
+		/* 120h */	int field_120;
+		/* 124h */	bool mLoose;
+		/* 128h */	cGameBundleContainerPtr mpContainer;
+		/* 12Ch */	int mType;
+		/* 130h */	int mDisplayType;
+		/* 134h */	int mAmountInBundle;  // not initialized
+		/* 138h */	bool field_138;
+	};
+	ASSERT_SIZE(cGameBundle, 0x13C);
+
 	class cGameBundleContainer
 	{
 	public:
+		static const uint32_t TYPE = 0x135B1E8;
+
 		//PLACEHOLDER
 		virtual ~cGameBundleContainer();
 
 	public:
-		/* 04h */	eastl::vector<cGameBundle> mBundleList;
+		/* 04h */	eastl::vector<cGameBundlePtr> mBundleList;
 		/* 18h */	cGameDataPtr mpOwner;
 		/* 1Ch */	int mContainerCapacity;
 		/* 20h */	int mBundleCapacity;
