@@ -82,6 +82,7 @@
 #include <Spore\Simulator\cSpaceDefenseMissile.h>
 #include <Spore\Simulator\cDefaultToolProjectile.h>
 #include <Spore\Simulator\cPlanetaryArtifact.h>
+#include <Spore\Simulator\cTribe.h>
 #include <Spore\Simulator\SubSystem\cRelationshipManager.h>
 #include <Spore\Simulator\SubSystem\GameBehaviorManager.h>
 #include <Spore\Simulator\SubSystem\GameInputManager.h>
@@ -137,6 +138,8 @@ namespace Addresses(Simulator)
 	DefineAddress(sCreatureGameUnlockCategoriesCount, SelectAddress(0x1587278, 0x1583298));
 
 	DefineAddress(CreateUFO, SelectAddress(0x102BB50, 0x102AC60));
+
+	DefineAddress(SpawnNpcTribe, SelectAddress(0xC92860, 0xC932F0));
 	
 #ifndef SDK_TO_GHIDRA
 	DefineAddress(LightingWorld_ptr, SelectAddress(0x1682CD4, 0x167EA54));

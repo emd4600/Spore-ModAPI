@@ -40,6 +40,26 @@ namespace Simulator
 		using Object::Release;
 		using Object::Cast;
 
+		/// Generates the tribe food mat and tribe members
+		/* 8Ch */	virtual void SpawnTribe(const Math::Vector3& position, int numMembers, int, bool);
+		/// Returns the vector with the members of the tribe
+		/* 90h */	virtual eastl::vector<cCreatureCitizenPtr>& GetTribeMembers();
+		/// Returns a vector of all selectable members of the tribe
+		/* 94h */	virtual eastl::vector<cSpatialObjectPtr>& GetSelectableMembers();
+		/* 98h */	virtual cCreatureCitizen* SpawnMember();
+		/* 9Ch */	virtual void func9Ch(int, bool);
+		/// Calls func9Ch() with second parameter true
+		/* A0h */	virtual void funcA0h(int);
+		/* A4h */	virtual int GetTotalFood();
+		/* A8h */	virtual void funcA8h();
+		/* ACh */	virtual cTribeHut* GetHut();
+		/* B0h */	virtual cTribeHut* funcB0h();
+		/// Creates a cCreatureCitizen*
+		/* B4h */	virtual cCreatureCitizen* funcB4h(int);
+		/* B8h */	virtual void funcB8h(int);
+		/* BCh */	virtual eastl::vector<cTribeToolPtr>& GetTools();
+		/* C0h */	virtual eastl::vector<cTribeToolPtr>& funcC0h();
+
 	public:
 		/* 260h */	cTribeFoodMatPtr mpFoodMat;
 		/* 264h */	bool mbMotiveCheatOn;
@@ -138,4 +158,10 @@ namespace Simulator
 		/* 19D8h */	int mPurchasedTools;
 	};
 	ASSERT_SIZE(cTribe, 0x19E0);
+
+	cTribe* SpawnNpcTribe(const Math::Vector3& position, int tribeArchetype, int numMembers, int, bool, cSpeciesProfile* species);
+}
+
+namespace Addresses(Simulator) {
+	DeclareAddress(SpawnNpcTribe);  // 0xC92860 0xC932F0
 }
