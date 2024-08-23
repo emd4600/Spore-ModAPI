@@ -6,6 +6,7 @@
 #include <Spore\Clock.h>
 #include <Spore\Simulator\SubSystem\cStrategy.h>
 #include <Spore\Simulator\cCreatureDisplayStrategy.h>
+#include <Spore\Simulator\cCreatureBase.h>
 
 #define cCreatureModeStrategyPtr eastl::intrusive_ptr<App::cCreatureModeStrategy>
 #define ICreatureModeActionHandlerPtr eastl::intrusive_ptr<App::ICreatureModeActionHandler>
@@ -79,4 +80,23 @@ namespace App
 #ifdef SDK_TO_GHIDRA
 	cCreatureModeStrategy* sCreatureModeStrategy;
 #endif
+
+	namespace CreatureModeStrategies {
+
+		struct Interact {
+			static const uint32_t ID = 0xD3353638;
+
+			Simulator::cCreatureBase* creature;
+			Simulator::cGameData* interactableObject;
+			int count;  // ?
+		};
+
+		struct UnlockPart {
+			static const uint32_t ID = 0xD3353638;
+
+			Simulator::cCreatureBase* creature;
+			int field_4;
+			int field_8;
+		};
+	}
 }
