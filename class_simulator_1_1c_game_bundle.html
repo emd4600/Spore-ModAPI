@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Simulator::cGameBundleContainer class | Spore ModAPI SDK for creating C++ mods for Spore</title>
+  <title>Simulator::cGameBundle class | Spore ModAPI SDK for creating C++ mods for Spore</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,600,600i%7CSource+Code+Pro:400,400i,600" />
   <link rel="stylesheet" href="m-dark.css" />
   <link rel="stylesheet" href="m-documentation.css" />
@@ -45,7 +45,7 @@
     <div class="m-row">
       <div class="m-col-l-10 m-push-l-1">
         <h1>
-          <span class="m-breadcrumb"><a href="namespace_simulator.html">Simulator</a>::<wbr/></span>cGameBundleContainer <span class="m-thin">class</span>
+          <span class="m-breadcrumb"><a href="namespace_simulator.html">Simulator</a>::<wbr/></span>cGameBundle <span class="m-thin">class</span>
           <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="c_game_bundle_container_8h.html">&lt;Spore ModAPI/Spore/Simulator/cGameBundleContainer.h&gt;</a></div>
         </h1>
         <p><span></span></p>
@@ -55,41 +55,39 @@
             <li>
               Reference
               <ul>
-                <li><a href="#derived-classes">Derived classes</a></li>
+                <li><a href="#base-classes">Base classes</a></li>
                 <li><a href="#pub-static-attribs">Public static variables</a></li>
-                <li><a href="#typeless-methods">Constructors, destructors, conversion operators</a></li>
                 <li><a href="#pub-attribs">Public variables</a></li>
               </ul>
             </li>
           </ul>
         </nav>
-        <section id="derived-classes">
-          <h2><a href="#derived-classes">Derived classes</a></h2>
+        <section id="base-classes">
+          <h2><a href="#base-classes">Base classes</a></h2>
           <dl class="m-doc">
             <dt>
-              class <a href="class_simulator_1_1c_creature_base.html" class="m-doc">cCreatureBase</a>
+              class <a href="class_simulator_1_1c_game_data.html" class="m-doc">cGameData</a>
             </dt>
-            <dd>The base class for all creatures in the <a href="namespace_simulator.html" class="m-doc">Simulator</a>.</dd>
+            <dd>Base class for most <a href="namespace_simulator.html" class="m-doc">Simulator</a> objects.</dd>
             <dt>
-              class <a href="class_simulator_1_1c_tribe.html" class="m-doc">cTribe</a>
+              class <a href="class_simulator_1_1c_spatial_object.html" class="m-doc">cSpatialObject</a>
             </dt>
-            <dd>A tribe from the tribe stage.</dd>
+            <dd>A 3D model in the <a href="namespace_simulator.html" class="m-doc">Simulator</a>.</dd>
+            <dt>
+              class <a href="class_simulator_1_1c_behavior_list.html" class="m-doc">cBehaviorList</a>
+            </dt>
+            <dd><span></span></dd>
           </dl>
         </section>
         <section id="pub-static-attribs">
           <h2><a href="#pub-static-attribs">Public static variables</a></h2>
           <dl class="m-doc">
-            <dt id="a8df4907e0e8f2bd130fe64a89efc2ea8">
-              static <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">const</a> <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">uint32_<wbr />t</a> <a href="#a8df4907e0e8f2bd130fe64a89efc2ea8" class="m-doc-self">TYPE</a>
+            <dt id="abeecb4d6ea4281ad641f4514c3395ca8">
+              static <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">const</a> <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">uint32_<wbr />t</a> <a href="#abeecb4d6ea4281ad641f4514c3395ca8" class="m-doc-self">TYPE</a>
             </dt>
             <dd><span></span></dd>
-          </dl>
-        </section>
-        <section id="typeless-methods">
-          <h2><a href="#typeless-methods">Constructors, destructors, conversion operators</a></h2>
-          <dl class="m-doc">
-            <dt id="a53d77beb5803c9492cc0d4e844f3a118">
-              <span class="m-doc-wrap-bumper"><a href="#a53d77beb5803c9492cc0d4e844f3a118" class="m-doc-self">~cGameBundleContainer</a>(</span><span class="m-doc-wrap">) <span class="m-label m-flat m-warning">virtual</span></span>
+            <dt id="a443f85e0ce17235c7c05fcfba0256494">
+              static <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">const</a> <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">uint32_<wbr />t</a> <a href="#a443f85e0ce17235c7c05fcfba0256494" class="m-doc-self">NOUN_ID</a>
             </dt>
             <dd><span></span></dd>
           </dl>
@@ -97,20 +95,32 @@
         <section id="pub-attribs">
           <h2><a href="#pub-attribs">Public variables</a></h2>
           <dl class="m-doc">
-            <dt id="a6161614a349c543179333d71e318595e">
-              eastl::vector&lt;<a href="c_game_bundle_container_8h.html#a591ca3db35dc8cdd5a85f36ccf672dea" class="m-doc">cGameBundlePtr</a>&gt; <a href="#a6161614a349c543179333d71e318595e" class="m-doc-self">mBundleList</a>
+            <dt id="aacce9820803ee3f0e9946b63b931d596">
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> <a href="#aacce9820803ee3f0e9946b63b931d596" class="m-doc-self">field_120</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="a1b7cc49fca4c23cff39a2f85a4b27f93">
-              <a href="c_game_data_8h.html#a16ee71c4f398f8560845728987775f11" class="m-doc">cGameDataPtr</a> <a href="#a1b7cc49fca4c23cff39a2f85a4b27f93" class="m-doc-self">mpOwner</a>
+            <dt id="a103b924fb2707c1135dd85ec888768c4">
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">bool</a> <a href="#a103b924fb2707c1135dd85ec888768c4" class="m-doc-self">mLoose</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="aa417c68195ff42413d78d140e6e9f6d2">
-              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> <a href="#aa417c68195ff42413d78d140e6e9f6d2" class="m-doc-self">mContainerCapacity</a>
+            <dt id="a6dc3f3c5798845d2c77a74fd909e0998">
+              <a href="c_game_bundle_container_8h.html#a559b327b73715f79e6694abedc7c84c0" class="m-doc">cGameBundleContainerPtr</a> <a href="#a6dc3f3c5798845d2c77a74fd909e0998" class="m-doc-self">mpContainer</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="a5911539e2b6e5adaeb7c5baf78642567">
-              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> <a href="#a5911539e2b6e5adaeb7c5baf78642567" class="m-doc-self">mBundleCapacity</a>
+            <dt id="aea37cd824732bcb735f6d4e3d6a03a66">
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> <a href="#aea37cd824732bcb735f6d4e3d6a03a66" class="m-doc-self">mType</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="aee9bd797f551b5413176387a93e1a78d">
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> <a href="#aee9bd797f551b5413176387a93e1a78d" class="m-doc-self">mDisplayType</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="ad07a04a62a3e7a8e8c23d36c21c6878e">
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> <a href="#ad07a04a62a3e7a8e8c23d36c21c6878e" class="m-doc-self">mAmountInBundle</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a5abcf01804e9b95e28b2bcfe0a6f5bc6">
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">bool</a> <a href="#a5abcf01804e9b95e28b2bcfe0a6f5bc6" class="m-doc-self">field_138</a>
             </dt>
             <dd><span></span></dd>
           </dl>
