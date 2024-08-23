@@ -130,7 +130,7 @@ namespace UTFWin
 			EatFruit = 0xb14ab7b6,
 
 			/// cursor-eat-omni
-			EatFruit = 0x3febe52,
+			EatOmni = 0x3febe52,
 
 			/// cursor-eat-carcass
 			EatCarn = 0x514ab7b7,
