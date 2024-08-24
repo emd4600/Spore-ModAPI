@@ -26,6 +26,24 @@
 
 namespace Simulator
 {
+	enum class IdentityColors
+	{
+		Player = 0x053dbcf1,
+		Neutral = 0x053dbcf2,
+		Brown = 0x053dbcf3,
+		Pink = 0x053dbcf4,
+		Cyan = 0x053dbcf5,
+		Green = 0x053dbcf6,
+		Lavender = 0x053dbcf7,
+		Orange = 0x053dbcf8,
+		Yellow = 0x053dbcf9,
+		Red = 0x053dbcfa,
+		Blue = 0x053dbcfb,
+		Forest = 0x053dbcfc,
+		Crimson = 0x053dbcfd,
+		Purple = 0x053dbcfe,
+	};
+
 	///
 	/// A Simulator class inherited by all those classes that can have an identity color, such as 
 	/// empires, tribes, etc
