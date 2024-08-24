@@ -1075,7 +1075,7 @@ namespace Simulator
 	}
 
 	namespace Addresses(cSpatialObject) {
-		DefineAddress(cSpatialObject, SelectAddress(0xC87B30, 0xC889A0));
+		DefineAddress(SetModelKey, SelectAddress(0xC87B30, 0xC889A0));
 	}
 }
 
