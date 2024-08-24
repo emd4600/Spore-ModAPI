@@ -1073,6 +1073,10 @@ namespace Simulator
 		DefineAddress(SetLocomotion, SelectAddress(0xC687D0, 0xC69230));
 		DefineAddress(LoadFromItem, SelectAddress(0xC73F90, 0xC74ED0));
 	}
+
+	namespace Addresses(cSpatialObject) {
+		DefineAddress(cSpatialObject, SelectAddress(0xC87B30, 0xC889A0));
+	}
 }
 
 #ifdef SDK_TO_GHIDRA
