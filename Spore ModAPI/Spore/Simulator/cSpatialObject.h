@@ -165,7 +165,7 @@ namespace Simulator
 	ASSERT_SIZE(cSpatialObject, 0xD4);
 
 	namespace Addresses(cSpatialObject) {
-		DeclareAddress(cSpatialObject);  // 0xC87B30 0xC889A0
+		DeclareAddress(SetModelKey);  // 0xC87B30 0xC889A0
 	}
 
 	class cCombatant;
