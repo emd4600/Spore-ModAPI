@@ -119,6 +119,12 @@ namespace UTFWin
 
 			/// cursor-no-opt
 			NoOptions = 0x3a204b0,
+
+			/// cursor_goodie-hut
+			QuestionHut = 0x56e3a22,
+
+			// cursor-object-translate
+			Pan = 0x600cd69,
 			
 			/// cursor-grab_open
 			GrabOpen = 0x648fbf1,
@@ -200,6 +206,46 @@ namespace UTFWin
 
 			/// cursor-dance
 			Dance = 0x3febe3d,
+
+			/// cursor-claim-spicemine
+			ClaimSpice = 0x5d53800,
+
+			/// cur_ClaimNest
+			ClaimNest = 0x7542cdb5,
+
+
+			/// cursor-spg-sculpting-norm
+			SpgSculpting = 0x682102e,
+
+			/// cursor-spg-social-norm
+			SpgSocial = 0x6821016,
+
+			/// cursor-spg-sculpting-norm
+			SpgSocial = 0x682102e,
+
+			/// cursor-spg-travel-norm
+			SpgScan = 0x6821022,
+
+			/// cursor-spg-travel-on
+			SpgScanActive = 0x6821024,
+
+			/// cursor-spg-abduct-norm
+			SpgAbduct = 0x682103e,
+			
+			/// cursor-spg-abduct-on
+			SpgAbductActive = 0x6821040,
+			
+			/// cursor-spg-color-norm
+			SpgColor = 0x6821026,
+			
+			/// cursor-spg-color-on
+			SpgColorActive = 0x6821029,
+			
+			/// cursor-spg-colonize-norm
+			SpgColonize = 0x6821032,
+
+			/// cursor-spg-atmospheric-norm
+			SpgAtmosphere = 0x6821042,
 
 		};
 	}
