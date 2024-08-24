@@ -58,7 +58,7 @@ namespace Simulator
 		/* B4h */	virtual cCreatureCitizen* funcB4h(int);
 		/* B8h */	virtual void funcB8h(int);
 		/* BCh */	virtual eastl::vector<cTribeToolPtr>& GetTools();
-		/* C0h */	virtual eastl::vector<cTribeToolPtr>& funcC0h(); // GetSocialTools?
+		/* C0h */	virtual eastl::vector<cTribeToolPtr>& funcC0h();
 
 	public:
 		/* 260h */	cTribeFoodMatPtr mpFoodMat;
