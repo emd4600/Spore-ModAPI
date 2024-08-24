@@ -221,7 +221,7 @@ namespace UTFWin
 			SpgSocial = 0x6821016,
 
 			/// cursor-spg-sculpting-norm
-			SpgSocial = 0x682102e,
+			SpgSculpt = 0x682102e,
 
 			/// cursor-spg-travel-norm
 			SpgScan = 0x6821022,
