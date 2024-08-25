@@ -15,7 +15,7 @@ member_detour(ReadEffect_detour, Swarm::cEffectsManager, int(uint32_t, uint32_t)
 };
 
 void EffectLogCheat::AttachDetour() {
-	ReadEffect_detour::attach(Address(ModAPI::ChooseAddress(0x99EC00, 0x99ECA0)));
+	ReadEffect_detour::attach(GetAddress(Swarm::cEffectsManager, GetDirectoryAndEffectIndex));
 }
 
 void EffectLogCheat::ParseLine(const ArgScript::Line& line)
