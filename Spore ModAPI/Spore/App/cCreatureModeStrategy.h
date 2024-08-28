@@ -92,7 +92,7 @@ namespace App
 		};
 
 		struct UnlockPart {
-			static const uint32_t ID = 0xD3353638;
+			static const uint32_t ID = 0x5371F11;
 
 			Simulator::cCreatureBase* creature;
 			int field_4;
