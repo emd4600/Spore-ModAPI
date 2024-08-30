@@ -90,7 +90,7 @@ namespace Simulator
 		/// @param pageIndex
 		bool AddUnlockableItemFromProp(struct ResourceKey key, uint32_t categoryID, int row, int column, int pageIndex);
 
-
+		// called at the start of creature stage with an int of "1" and a nullptr speciesKey
 		void sub_597BC0(UnkHashMap& dst, int, const ResourceKey& speciesKey);
 
 		void sub_597390(eastl::vector<int>& dst, struct cCollectableItemID itemID, int);
