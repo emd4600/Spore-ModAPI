@@ -96,7 +96,7 @@ namespace App
 
 			Simulator::cCreatureBase* creature;
 			int field_4;
-			int field_8;
+			int unlockLevel;
 		};
 	}
 }

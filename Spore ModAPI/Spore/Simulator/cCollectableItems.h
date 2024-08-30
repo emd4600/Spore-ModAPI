@@ -155,7 +155,16 @@ namespace Simulator
 	class CreatureGamePartUnlocking
 	{
 	public:
-		struct cCollectableItemID sub_D3B460(UnkHashMap&, bool, int, int);
+		// Given an (unknown) hashmap (the creature parts one always is size 56),
+		// return a valid new part ID to unlock, or call this func again until it returns a valid part.
+		// 
+		// firstCall is always true ONLY on the first call of this function
+		// unlockLevel will be either a .prop unlockLevel value or -1
+		// 
+		// the cCollectableItemID return value is formatted as such:
+		// groupID: category name (eg: ce_category_mouths)
+		// instanceID: part placement in category by page index and part row (eg: a part on page 4 and row 5 would have a hex of 0x30004)
+		struct cCollectableItemID sub_D3B460(UnkHashMap& unk0, bool firstCall, int unk1, int unlockLevel);
 	};
 
 	namespace Addresses(CreatureGamePartUnlocking)
