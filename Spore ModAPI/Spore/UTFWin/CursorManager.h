@@ -13,6 +13,7 @@ namespace UTFWin
 	public:
 
 		/// Loads a cursor and assigns it to the given ID.
+		/// fileName should reference a file in cursors~, eg: u"cursor-camera-translate"
 		bool Load(uint32_t id, const char16_t* fileName, bool loadFromFile = true, int xHotspot = 0, int yHotspot = 0);
 
 		uint32_t GetActiveCursor() const;
