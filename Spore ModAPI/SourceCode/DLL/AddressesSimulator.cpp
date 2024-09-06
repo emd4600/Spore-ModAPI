@@ -206,6 +206,9 @@ namespace Simulator
 		DefineAddress(GetEffectFromPools, SelectAddress(0xC14830, 0xC14FD0));
 		DefineAddress(StopEffectFromPools, SelectAddress(0xC16CB0, 0xC174B0));
 		DefineAddress(PlayVoice, SelectAddress(0xC1CEC0, 0xC1D7A0));
+		DefineAddress(PlayAbility, SelectAddress(0xC1DCE0, 0xC1E5C0));
+		DefineAddress(DoJump, SelectAddress(0xC184A0, 0xC18CA0));
+		DefineAddress(ConsumeEnergy, SelectAddress(0xC15780, 0xC15F20));
 	}
 
 	namespace Addresses(cCropCirclesToolStrategy)

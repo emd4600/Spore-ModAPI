@@ -84,5 +84,15 @@ namespace Simulator
 
 	auto_METHOD_VOID(cCreatureAnimal, NPCTickAI, Args(float f), Args(f));
 	auto_METHOD_VOID(cCreatureAnimal, AvatarTickAI, Args(float f), Args(f));
+
+
+	auto_METHOD_VOID(cCreatureBase, PlayAbility,
+		Args(int abilityIndex, Anim::AnimIndex* dstAnimIndex), Args(abilityIndex, dstAnimIndex));
+
+	auto_METHOD(cCreatureBase, bool, DoJump,
+		Args(int energyConsumed), Args(energyConsumed));
+	
+	auto_METHOD_VOID(cCreatureBase, ConsumeEnergy,
+		Args(float energyConsumed), Args(energyConsumed));
 }
 #endif
