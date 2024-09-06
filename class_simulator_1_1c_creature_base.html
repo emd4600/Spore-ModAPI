@@ -154,6 +154,19 @@
             </dt>
             <dd><span></span></dd>
             <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a17dcf67cf26404e7a00e9934da5aace3" class="m-doc">PlayAbility</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> abilityIndex,
+              <a href="namespace_anim.html#a3b0f854f8c5f7ea805a07634dc180bc4" class="m-doc">Anim::<wbr />AnimIndex</a>* dstAnimIndex = <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">nullptr</a>) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">void</a></span>
+            </dt>
+            <dd>Makes the creature play an ability, the index can be obtained with <a href="class_simulator_1_1c_creature_base.html#a44d9667232d759c7d6e327da9a4cacc7" class="m-doc">GetAbilityIndexByType()</a>.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a3764926457fd68defcc58511799f266f" class="m-doc">DoJump</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> energyConsumed = 0) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">bool</a></span>
+            </dt>
+            <dd>If possible, causes the creature to jump, even if the creature is already in the air.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a1e0e77793a3b286bcc5105104dbece46" class="m-doc">ConsumeEnergy</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">float</a> amount) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">void</a></span>
+            </dt>
+            <dd>For scenario captains, consumes a certain amount of energy.</dd>
+            <dt>
               <span class="m-doc-wrap-bumper">auto <a href="#a44d9667232d759c7d6e327da9a4cacc7" class="m-doc">GetAbilityIndexByType</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> abilityType) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a></span>
             </dt>
             <dd>Returns the index to the first ability of the craeture that has the specified ability type.</dd>
@@ -894,6 +907,70 @@
         </section>
         <section>
           <h2>Function documentation</h2>
+          <section class="m-doc-details" id="a17dcf67cf26404e7a00e9934da5aace3"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">void</a> Simulator::<wbr />cCreatureBase::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a17dcf67cf26404e7a00e9934da5aace3" class="m-doc-self">PlayAbility</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> abilityIndex,
+              <a href="namespace_anim.html#a3b0f854f8c5f7ea805a07634dc180bc4" class="m-doc">Anim::<wbr />AnimIndex</a>* dstAnimIndex = <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">nullptr</a>)</span></span>
+            </h3>
+            <p>Makes the creature play an ability, the index can be obtained with <a href="class_simulator_1_1c_creature_base.html#a44d9667232d759c7d6e327da9a4cacc7" class="m-doc">GetAbilityIndexByType()</a>.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">abilityIndex</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>dstAnimIndex&nbsp;<span class="m-label m-flat m-warning">out</span></td>
+                  <td>[Optional]</td>
+                </tr>
+              </tbody>
+            </table>
+<p>If dstAnimIndex is specified, the index of the ability animation played will be written there. Does not work with skill abilties (glide, jump, mating call, sprint and sneak)</p>
+          </div></section>
+          <section class="m-doc-details" id="a3764926457fd68defcc58511799f266f"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">bool</a> Simulator::<wbr />cCreatureBase::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a3764926457fd68defcc58511799f266f" class="m-doc-self">DoJump</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> energyConsumed = 0)</span></span>
+            </h3>
+            <p>If possible, causes the creature to jump, even if the creature is already in the air.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">energyConsumed</td>
+                  <td>[Optional] For captains, how much energy will be consumed</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>Returns</th>
+                  <td>Whether the jump was carried out</td>
+                </tr>
+              </tfoot>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="a1e0e77793a3b286bcc5105104dbece46"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">void</a> Simulator::<wbr />cCreatureBase::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a1e0e77793a3b286bcc5105104dbece46" class="m-doc-self">ConsumeEnergy</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">float</a> amount)</span></span>
+            </h3>
+            <p>For scenario captains, consumes a certain amount of energy.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">amount</td>
+                  <td></td>
+                </tr>
+              </tbody>
+            </table>
+<p>If it&#x27;s the player, it sends a kMsgScenarioEnergyConsumed message.</p>
+          </div></section>
           <section class="m-doc-details" id="a44d9667232d759c7d6e327da9a4cacc7"><div>
             <h3>
               <span class="m-doc-wrap-bumper"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> Simulator::<wbr />cCreatureBase::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a44d9667232d759c7d6e327da9a4cacc7" class="m-doc-self">GetAbilityIndexByType</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> abilityType)</span></span>

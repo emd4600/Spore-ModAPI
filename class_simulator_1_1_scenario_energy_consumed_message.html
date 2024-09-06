@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Spore ModAPI/Spore/Simulator/SimulatorMessages.h file | Spore ModAPI SDK for creating C++ mods for Spore</title>
+  <title>Simulator::ScenarioEnergyConsumedMessage class | Spore ModAPI SDK for creating C++ mods for Spore</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,600,600i%7CSource+Code+Pro:400,400i,600" />
   <link rel="stylesheet" href="m-dark.css" />
   <link rel="stylesheet" href="m-documentation.css" />
@@ -45,79 +45,38 @@
     <div class="m-row">
       <div class="m-col-l-10 m-push-l-1">
         <h1>
-          <span class="m-breadcrumb"><a href="dir_3afcc05771c4e3f5acf081f332217ac8.html">Spore ModAPI</a>/</span><span class="m-breadcrumb"><a href="dir_c27950c697e5dfd98eb6c6418519a737.html">Spore</a>/</span><span class="m-breadcrumb"><a href="dir_0c2ed0f1c41a4f73f627d8cb2bd71031.html">Simulator</a>/</span>SimulatorMessages.h <span class="m-thin">file</span>
+          <span class="m-breadcrumb"><a href="namespace_simulator.html">Simulator</a>::<wbr/></span>ScenarioEnergyConsumedMessage <span class="m-thin">class</span>
+          <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_simulator_messages_8h.html">&lt;Spore ModAPI/Spore/Simulator/SimulatorMessages.h&gt;</a></div>
         </h1>
-        <p><span></span></p>
+        <p>Called when the player captain consumes energy in Scenario mode.</p>
         <nav class="m-block m-default">
           <h3>Contents</h3>
           <ul>
             <li>
               Reference
               <ul>
-                <li><a href="#namespaces">Namespaces</a></li>
-                <li><a href="#nested-classes">Classes</a></li>
+                <li><a href="#pub-static-attribs">Public static variables</a></li>
+                <li><a href="#pub-methods">Public functions</a></li>
               </ul>
             </li>
           </ul>
         </nav>
-        <section id="namespaces">
-          <h2><a href="#namespaces">Namespaces</a></h2>
+        <section id="pub-static-attribs">
+          <h2><a href="#pub-static-attribs">Public static variables</a></h2>
           <dl class="m-doc">
-            <dt>namespace <a href="namespace_simulator.html" class="m-doc">Simulator</a></dt>
+            <dt id="a9686e92f32dcbec53f4223007c327ada">
+              static <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">const</a> <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">uint32_<wbr />t</a> <a href="#a9686e92f32dcbec53f4223007c327ada" class="m-doc-self">ID</a>
+            </dt>
             <dd><span></span></dd>
           </dl>
         </section>
-        <section id="nested-classes">
-          <h2><a href="#nested-classes">Classes</a></h2>
+        <section id="pub-methods">
+          <h2><a href="#pub-methods">Public functions</a></h2>
           <dl class="m-doc">
-            <dt>
-              class <a href="class_simulator_1_1_i_message_parameters.html" class="m-doc">Simulator::IMessageParameters</a>
+            <dt id="a91bdcd3ce17e29b97ac9b48bf8a47268">
+              <span class="m-doc-wrap-bumper">auto <a href="#a91bdcd3ce17e29b97ac9b48bf8a47268" class="m-doc-self">GetAmountConsumed</a>(</span><span class="m-doc-wrap">) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">float</a></span>
             </dt>
             <dd><span></span></dd>
-            <dt>
-              class <a href="class_simulator_1_1_enter_mode_message.html" class="m-doc">Simulator::EnterModeMessage</a>
-            </dt>
-            <dd><span></span></dd>
-            <dt>
-              class <a href="class_simulator_1_1_enter_editor_message.html" class="m-doc">Simulator::EnterEditorMessage</a>
-            </dt>
-            <dd><span></span></dd>
-            <dt>
-              class <a href="class_simulator_1_1_mission_update_message.html" class="m-doc">Simulator::MissionUpdateMessage</a>
-            </dt>
-            <dd>Called every update of a mission, only if the mission is ongoing.</dd>
-            <dt>
-              class <a href="class_simulator_1_1_combatant_killed_message.html" class="m-doc">Simulator::CombatantKilledMessage</a>
-            </dt>
-            <dd>Called when a <a href="class_simulator_1_1c_combatant.html" class="m-doc">cCombatant</a> is killed.</dd>
-            <dt>
-              class <a href="class_simulator_1_1_player_empire_allied_message.html" class="m-doc">Simulator::PlayerEmpireAlliedMessage</a>
-            </dt>
-            <dd>Called when the player empire makes a new alliance.</dd>
-            <dt>
-              class <a href="class_simulator_1_1_player_empire_lost_alliance_message.html" class="m-doc">Simulator::PlayerEmpireLostAllianceMessage</a>
-            </dt>
-            <dd>Called when the player empire loses an alliance.</dd>
-            <dt>
-              class <a href="class_simulator_1_1_tool_on_hit_message.html" class="m-doc">Simulator::ToolOnHitMessage</a>
-            </dt>
-            <dd>Called when a space tool hits a target. Called by <a href="class_simulator_1_1c_tool_strategy.html#a2561e73287e748536c5de8ae994dfec3" class="m-doc">cToolStrategy::<wbr />OnHit</a>.</dd>
-            <dt>
-              class <a href="class_simulator_1_1_game_noun_status_changed_message.html" class="m-doc">Simulator::GameNounStatusChangedMessage</a>
-            </dt>
-            <dd><span></span></dd>
-            <dt>
-              class <a href="class_simulator_1_1_scenario_creature_healed_message.html" class="m-doc">Simulator::ScenarioCreatureHealedMessage</a>
-            </dt>
-            <dd>Called when a creature is healed (either by natural heal rate, or using a medkit) in Scenario mode.</dd>
-            <dt>
-              class <a href="class_simulator_1_1_scenario_energy_consumed_message.html" class="m-doc">Simulator::ScenarioEnergyConsumedMessage</a>
-            </dt>
-            <dd>Called when the player captain consumes energy in Scenario mode.</dd>
-            <dt>
-              class <a href="class_simulator_1_1_space_rare_found_message.html" class="m-doc">Simulator::SpaceRareFoundMessage</a>
-            </dt>
-            <dd>Sent when a rare item is found (even if it had already been found before) in Space Stage.</dd>
           </dl>
         </section>
       </div>
