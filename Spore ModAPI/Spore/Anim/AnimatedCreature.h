@@ -58,7 +58,7 @@ namespace Anim
 		/// Loads an animation to be used by this creature. It takes the ID of a TLSA group.
 		/// It returns an index that is used to identify the animation within this creature.
 		///
-		/// TLSA Animaiton groups can specify multiple animation choices with different probabilities.
+		/// TLSA Animation groups can specify multiple animation choices with different probabilities.
 		/// The `pChoice` argument can be provided to force a certain choice index; if the value is -1,
 		/// the argument will be used as an ooutput to know what choice has been selected.
 		/// @param animID The ID of the animation to play, a TLSA group.
