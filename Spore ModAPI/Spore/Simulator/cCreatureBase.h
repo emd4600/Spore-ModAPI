@@ -123,6 +123,23 @@ namespace Simulator
 
 		// sub_D48710 play ability
 
+		/// Makes the creature play an ability, the index can be obtained with GetAbilityIndexByType().
+		/// If dstAnimIndex is specified, the index of the ability animation played will be written there.
+		/// Does not work with skill abilties (glide, jump, mating call, sprint and sneak)
+		/// @param abilityIndex
+		/// @param[out] dstAnimIndex [Optional]
+		void PlayAbility(int abilityIndex, Anim::AnimIndex* dstAnimIndex = nullptr);
+
+		/// If possible, causes the creature to jump, even if the creature is already in the air.
+		/// @param energyConsumed [Optional] For captains, how much energy will be consumed
+		/// @returns Whether the jump was carried out
+		bool DoJump(int energyConsumed = 0);
+
+		/// For scenario captains, consumes a certain amount of energy. 
+		/// If it's the player, it sends a kMsgScenarioEnergyConsumed message.
+		/// @param amount
+		void ConsumeEnergy(float amount);
+
 		/// Returns the index to the first ability of the craeture that has the specified ability type.
 		/// @param abilityType
 		/// @returns Index to ability, or -1 if not found
@@ -391,5 +408,8 @@ namespace Simulator
 		DeclareAddress(GetEffectFromPools);
 		DeclareAddress(StopEffectFromPools);
 		DeclareAddress(PlayVoice);  // C1CEC0
+		DeclareAddress(PlayAbility);  // 0xC1DCE0 0xC1E5C0
+		DeclareAddress(DoJump);  // 0xC184A0 0xC18CA0
+		DeclareAddress(ConsumeEnergy);  // 0xC15780 0xC15F20
 	}
 }
