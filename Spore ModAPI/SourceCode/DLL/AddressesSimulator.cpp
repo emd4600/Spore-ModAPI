@@ -347,7 +347,7 @@ namespace Simulator
 
 	namespace Addresses(cGonzagoTimer) 
 	{
-		DefineAddress(GetSimulatorTime_ptr, SelectAddress(0xB63580, 0xB63980));
+		DefineAddress(GetSimulatorTime_ptr, SelectAddress(0xB63580, 0xB639C0));
 	}
 
 	namespace Addresses(cMindEraseToolStrategy)
