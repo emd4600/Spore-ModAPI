@@ -60,6 +60,9 @@ namespace Simulator
 		/// Simulator::ScenarioCreatureHealedMessage; called when a creature is healed (either by natural heal rate, or using a medkit) in Scenario mode
 		kMsgScenarioCreatureHealed = 0x7C789F8,
 
+		/// Simulator::ScenarioEnergyConsumedMessage; sent when the player consumes captain energy
+		kMsgScenarioEnergyConsumed = 0x7C7A52E,
+
 		/// No data, called when pressing the undo button in the scenario editor
 		kMsgScenarioUndo = 0xC9D86390,
 		/// No data, called when pressing the redo button in the scenario editor
@@ -233,6 +236,17 @@ namespace Simulator
 		static const uint32_t ID = kMsgScenarioCreatureHealed;
 
 		inline float GetAmountHealed() {
+			return params[0]._float;
+		}
+	};
+
+	/// Called when the player captain consumes energy in Scenario mode
+	class ScenarioEnergyConsumedMessage : App::StandardMessage
+	{
+	public:
+		static const uint32_t ID = kMsgScenarioEnergyConsumed;
+
+		inline float GetAmountConsumed() {
 			return params[0]._float;
 		}
 	};
