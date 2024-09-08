@@ -89,5 +89,8 @@ namespace Simulator
 		DeclareAddress(Create);
 		DeclareAddress(NPCTickAI);  // 0xC08CD0 0xC09570
 		DeclareAddress(AvatarTickAI);  // 0xC03710 0xC04020
+		DeclareAddress(OnJumpLand);  // 0xC044D0 0xC04CB0
+		DeclareAddress(OnStartSwimming);  // 0xC04610 0xC04DF0
+		DeclareAddress(Update);  // 0xC0A590 0xC0AE30
 	}
 }

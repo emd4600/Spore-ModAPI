@@ -411,5 +411,8 @@ namespace Simulator
 		DeclareAddress(PlayAbility);  // 0xC1DCE0 0xC1E5C0
 		DeclareAddress(DoJump);  // 0xC184A0 0xC18CA0
 		DeclareAddress(ConsumeEnergy);  // 0xC15780 0xC15F20
+		DeclareAddress(OnJumpLand);  // 0xC14670 0xC14E10
+		DeclareAddress(OnStartSwimming);  // 0xC147D0 0xC14F70
+		DeclareAddress(Update);  // 0xC20C50 0xC21530
 	}
 }

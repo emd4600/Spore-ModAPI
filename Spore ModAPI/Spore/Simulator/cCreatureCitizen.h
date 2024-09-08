@@ -41,4 +41,8 @@ namespace Simulator
 		/* 1030h */	cHitSpherePtr mpHitSphere;
 	};
 	ASSERT_SIZE(cCreatureCitizen, 0x1038);
+
+	namespace Addresses(cCreatureCitizen) {
+		DeclareAddress(Update);  // 0xC24210 0xC24A30
+	}
 }
