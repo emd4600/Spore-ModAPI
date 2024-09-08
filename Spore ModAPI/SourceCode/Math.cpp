@@ -88,6 +88,10 @@ namespace Math
 		}
 	}
 
+	float GetDistance(Vector3 vec1, Vector3 vec2) {
+		return abs((vec1 - vec2).Length());
+	}
+
 	Matrix3& Matrix3::SetIdentity()
 	{
 		m[0][0] = 1.0f; m[0][1] = 0.0f; m[0][2] = 0.0f;
