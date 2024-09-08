@@ -8,6 +8,7 @@
 #include <Spore\Simulator\cCelestialBody.h>
 #include <Spore\Simulator\cCreatureAbility.h>
 #include <Spore\Simulator\cCreatureAnimal.h>
+#include <Spore\Simulator\cCreatureCitizen.h>
 #include <Spore\Simulator\cCreatureBase.h>
 #include <Spore\Simulator\cCropCirclesToolStrategy.h>
 #include <Spore\Simulator\cDeepSpaceProjectileToolStrategy.h>
@@ -187,6 +188,13 @@ namespace Simulator
 		DefineAddress(Create, SelectAddress(0xC092A0, 0xC09B40));
 		DefineAddress(NPCTickAI, SelectAddress(0xC08CD0, 0xC09570));
 		DefineAddress(AvatarTickAI, SelectAddress(0xC03710, 0xC04020));
+		DefineAddress(OnJumpLand, SelectAddress(0xC044D0, 0xC04CB0));
+		DefineAddress(OnStartSwimming, SelectAddress(0xC04610, 0xC04DF0));
+		DefineAddress(Update, SelectAddress(0xC0A590, 0xC0AE30));
+	}
+
+	namespace Addresses(cCreatureCitizen) {
+		DefineAddress(Update, SelectAddress(0xC24210, 0xC24A30));
 	}
 
 	namespace Addresses(cCreatureBase)
@@ -209,6 +217,9 @@ namespace Simulator
 		DefineAddress(PlayAbility, SelectAddress(0xC1DCE0, 0xC1E5C0));
 		DefineAddress(DoJump, SelectAddress(0xC184A0, 0xC18CA0));
 		DefineAddress(ConsumeEnergy, SelectAddress(0xC15780, 0xC15F20));
+		DefineAddress(OnJumpLand, SelectAddress(0xC14670, 0xC14E10));
+		DefineAddress(OnStartSwimming, SelectAddress(0xC147D0, 0xC14F70));
+		DefineAddress(Update, SelectAddress(0xC20C50, 0xC21530));
 	}
 
 	namespace Addresses(cCropCirclesToolStrategy)
