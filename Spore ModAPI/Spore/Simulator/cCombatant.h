@@ -139,7 +139,7 @@ namespace Simulator
 		/* 6Ch */	bool field_6C;  // true, needsToLoadAimPoints?
 		/* 70h */	uint32_t field_70;  // an effect ID
 		/* 74h */	Vector3 field_74;
-		/* 80h */	bool field_80;
+		/* 80h */	bool field_80; // if true, combatant is invincible
 		/* 81h */	bool field_81;
 		/* 84h */	eastl::vector<cGonzagoTimer> field_84;
 		/* 98h */	cGonzagoTimer field_98;
