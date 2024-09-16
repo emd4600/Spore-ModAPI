@@ -241,7 +241,7 @@ namespace Simulator
 		/* ACh */	virtual bool funcACh(bool);
 		/* B0h */	virtual int GetAbilitiesCount();
 		/* B4h */	virtual cCreatureAbility* GetAbility(int index);
-		/* B8h */	virtual bool funcB8h(int, int, int);
+		/* B8h */	virtual bool funcB8h(cCombatant* target, int abilityIndex, Math::Vector3* hitPosition = nullptr);
 		/* BCh */	virtual int funcBCh();
 		/* C0h */	virtual bool funcC0h(cCreatureBase* pOtherCreature, float, float);
 		/* C4h */	virtual void funcC4h();
@@ -288,7 +288,8 @@ namespace Simulator
 		/* B70h */	int field_B70;
 		/* B74h */	int mIntentionTowardsTarget;
 		/* B78h */	float mNoAttackTimer;  // not initialized
-		/* B7Ch */	float field_B7C;  // not initialized, alpha for animatedcreature, used in stealth?
+		/// When creature is in stealth, opacity for the creature
+		/* B7Ch */	float mStealthOpacity;  // not initialized
 		/* B80h */	float mCurrentLoudness;  // not initialized
 		/* B84h */	float mFoodValue;
 		/* B88h */	int mStrengthRating;  // 5

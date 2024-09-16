@@ -78,7 +78,8 @@ namespace Simulator
 		/// Returns the weapon tool used by this combatant. This is only available for vehicles.
 		/* 14h */	virtual cSpaceToolData* GetWeapon();
 
-		/* 18h */	virtual int func18h(float damage, uint32_t attackerPoliticalID, int, const Vector3&, cCombatant* pAttacker);  // used to substract health?
+		/// Called when the combatant is attacked, takes the damage
+		/* 18h */	virtual int TakeDamage(float damage, uint32_t attackerPoliticalID, int, const Vector3&, cCombatant* pAttacker);  // used to substract health?
 
 		/* 1Ch */	virtual void AddHostileUnit(cCombatant* combatant);
 		/* 20h */	virtual Math::Vector3 func20h();

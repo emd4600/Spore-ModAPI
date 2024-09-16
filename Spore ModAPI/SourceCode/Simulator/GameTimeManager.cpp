@@ -28,6 +28,7 @@ namespace Simulator
 
 	auto_METHOD_VOID(cTimeOfDay, SetDayDuration, Args(float seconds), Args(seconds));
 	auto_METHOD_VOID(cTimeOfDay, SetSpeedMultiplier, Args(float multiplier), Args(multiplier));
+	auto_METHOD_VOID(cTimeOfDay, SetTimeOfDay, Args(float timeOfDay, const Math::Vector3& position), Args(timeOfDay, position));
 
 	auto_STATIC_METHOD_(cGameTimeManager, cGameTimeManager*, Get);
 
