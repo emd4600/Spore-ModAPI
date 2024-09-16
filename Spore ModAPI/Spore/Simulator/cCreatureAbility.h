@@ -29,7 +29,7 @@ namespace Simulator
 	class cCreatureAbility
 	{
 	public:
-		virtual ~cCreatureAbility();
+		virtual ~cCreatureAbility() {}
 
 		static bool Parse(cCreatureAbility* pAbility, App::PropertyList* pPropList);
 
