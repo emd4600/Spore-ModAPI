@@ -71,5 +71,8 @@ namespace Simulator
 			bool useSuperpowerMultiplier, bool useStorageMultiplier, float finalFactor, int numCities, bool limitOutput),
 		Args(baseValue, maxOutput, extraFactor, isHomeWorld, useSuperpowerMultiplier, useStorageMultiplier, finalFactor, numCities, limitOutput));
 
+
+	auto_METHOD_VOID_(cEllipticalOrbit, Precalculate);
+
 }
 #endif

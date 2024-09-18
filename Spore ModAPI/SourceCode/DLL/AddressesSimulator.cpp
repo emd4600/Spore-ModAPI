@@ -154,6 +154,11 @@ namespace Addresses(Simulator)
 
 namespace Simulator
 {
+	namespace Addresses(cEllipticalOrbit)
+	{
+		DefineAddress(Precalculate, SelectAddress(0xFE8C10, 0xFE82E0));
+	}
+
 	namespace Addresses(cAbductToolStrategy)
 	{
 		DefineAddress(OnHit, SelectAddress(0x105AC80, 0x105A0D0));
