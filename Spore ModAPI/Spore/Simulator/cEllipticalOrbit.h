@@ -67,7 +67,7 @@ namespace Simulator
 
 	namespace Addresses(cEllipticalOrbit)
 	{
-		DeclareAddress(Precalculate);  // 0xFE8C10
+		DeclareAddress(Precalculate);  // 0xFE8C10 0xFE82E0
 	}
 
 	inline cEllipticalOrbit::cEllipticalOrbit()
