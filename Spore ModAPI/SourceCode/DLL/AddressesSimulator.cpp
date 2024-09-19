@@ -840,6 +840,8 @@ namespace Simulator
 		DefineAddress(CalculateSpiceProduction, SelectAddress(0xC6F920, 0xC70760));
 		DefineAddress(CalculateDeltaSpiceProduction, SelectAddress(0xC71200, 0xC720A0));
 		DefineAddress(GetTerrainScriptSource, SelectAddress(0xB8D690, 0xB8DEB0));
+		DefineAddress(HasControlledCity, SelectAddress(0xC6F4B0, 0xC702F0));
+		DefineAddress(GetTypeIconKey, SelectAddress(0xE2EBE0, 0xE2EB70));
 	}
 
 	namespace Addresses(cCivData) {

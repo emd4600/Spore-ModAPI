@@ -85,5 +85,11 @@ namespace Simulator
 		STATIC_CALL(GetAddress(cPlanetRecord, GetTerrainScriptSource), void, Args(ResourceKey&), Args(key));
 		return key;
 	}
+
+	auto_STATIC_METHOD(cPlanetRecord, bool, HasControlledCity,
+		Args(cPlanetRecord* planetRecord, cEmpire* empire, bool requireMoreThanOneTurret), 
+		Args(planetRecord, empire, requireMoreThanOneTurret));
+
+	auto_METHOD_(cPlanetRecord, const ResourceKey&, GetTypeIconKey);
 }
 #endif

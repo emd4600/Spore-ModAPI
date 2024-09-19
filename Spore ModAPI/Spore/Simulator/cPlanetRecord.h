@@ -32,6 +32,7 @@
 namespace Simulator
 {
 	class cStarRecord;
+	class cEmpire;
 
 	struct cWallData
 	{
@@ -187,12 +188,16 @@ namespace Simulator
 		void SetGeneratedTerrainKey(const ResourceKey& key);
 		ResourceKey& GetGeneratedTerrainKey();
 
+		ResourceKey GetTerrainScriptSource();
+
+		/// Returns the key to the icon that is displayed in planet tooltip.
+		/// This depends on tech level, and whether it has an adventure.
+		const ResourceKey& GetTypeIconKey();
+
 		/// Generates a `.prop` file ResourceKey that is currently unused in game packages, so that 
 		/// the planet terrain can be saved there.
 		/// @returns
 		static ResourceKey GenerateTerrainKey();
-
-		ResourceKey GetTerrainScriptSource() const;
 
 		/// Returns the distance of the perihelion, which is the planet's closest point to the parent object
 		/// in its orbit (the parent object is either a sun, or another planet if this planet is a moon).
@@ -233,6 +238,14 @@ namespace Simulator
 		static float CalculateDeltaSpiceProduction(
 			float baseValue, float maxOutput, float extraFactor, bool isHomeWorld, 
 			bool useSuperpowerMultiplier, bool useStorageMultiplier, float finalFactor, int numCities, bool limitOutput);
+
+		/// Return true if the planet ahs any city controlled by the specified empire.
+		/// If 'requireMoreThanOneTurret' is true, then it will only return true if the controlled city
+		/// has more than one turret.
+		/// @param planetRecord
+		/// @param empire
+		/// @param requireMoreThanOneTurret
+		static bool HasControlledCity(cPlanetRecord* planetRecord, cEmpire* empire, bool requireMoreThanOneTurret = false);
 
 	public:
 		/* 18h */	eastl::string16 mName;
@@ -296,6 +309,8 @@ namespace Simulator
 		DeclareAddress(CalculateSpiceProduction);  // 0xC6F920 0xC70760
 		DeclareAddress(CalculateDeltaSpiceProduction);  // 0xC71200 0xC720A0
 		DeclareAddress(GetTerrainScriptSource);  // 0xB8D690 0xB8DEB0
+		DeclareAddress(HasControlledCity);  // 0xC6F4B0 0xC702F0
+		DeclareAddress(GetTypeIconKey);  // 0xE2EBE0 0xE2EB70
 	}
 
 	inline ResourceKey cPlanetRecord::GenerateTerrainKey()
