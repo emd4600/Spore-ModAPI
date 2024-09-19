@@ -142,6 +142,8 @@ namespace Addresses(Simulator)
 
 	DefineAddress(SpawnNpcTribe, SelectAddress(0xC92860, 0xC932F0));
 	
+	DefineAddress(GetMainSpeciesImageKey, SelectAddress(0x1066AF0, 0x1065F10));
+
 #ifndef SDK_TO_GHIDRA
 	DefineAddress(LightingWorld_ptr, SelectAddress(0x1682CD4, 0x167EA54));
 	DefineAddress(PrecalculatedSolarStarRadius_ptr, SelectAddress(0x157DCF0, 0x1579D10));
@@ -834,6 +836,7 @@ namespace Simulator
 		DefineAddress(FillPlanetDataForTechLevel, SelectAddress(0xB96820, 0xB97090));
 		DefineAddress(CalculateSpiceProduction, SelectAddress(0xC6F920, 0xC70760));
 		DefineAddress(CalculateDeltaSpiceProduction, SelectAddress(0xC71200, 0xC720A0));
+		DefineAddress(GetTerrainScriptSource, SelectAddress(0xB8D690, 0xB8DEB0));
 	}
 
 	namespace Addresses(cCivData) {

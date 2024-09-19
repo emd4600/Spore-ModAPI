@@ -74,5 +74,16 @@ namespace Simulator
 
 	auto_METHOD_VOID_(cEllipticalOrbit, Precalculate);
 
+	ResourceKey GetMainSpeciesImageKey(cPlanetRecord* planetRecord) {
+		ResourceKey key;
+		STATIC_CALL(GetAddress(Simulator, GetMainSpeciesImageKey), void, Args(ResourceKey&, cPlanetRecord*), Args(key, planetRecord));
+		return key;
+	}
+
+	ResourceKey cPlanetRecord::GetTerrainScriptSource() const {
+		ResourceKey key;
+		STATIC_CALL(GetAddress(cPlanetRecord, GetTerrainScriptSource), void, Args(ResourceKey&), Args(key));
+		return key;
+	}
 }
 #endif

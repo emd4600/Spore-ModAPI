@@ -146,6 +146,12 @@ namespace UTFWin
 		///
 		static IWindow* AddImageWindow(const ResourceKey& imageName, float offsetX, float offsetY, IWindow* pParentWindow);
 
+		/// If the given window has an IImageDrawable drawable, loads the 'imageName' image and sets it
+		/// as the image of the drawable.
+		/// @param window
+		/// @param imageName
+		static void SetImageForWindow(IWindow* window, const ResourceKey& imageName);
+
 		static const uint32_t TYPE = 0xEF3C47CF;
 	};
 
@@ -229,6 +235,7 @@ namespace UTFWin
 	namespace Addresses(IImageDrawable)
 	{
 		DeclareAddress(AddImageWindow);
+		DeclareAddress(SetImageForWindow);  // 0xE2F550 0xE2F590
 	}
 
 	inline ImageDrawable::ImageDrawable()

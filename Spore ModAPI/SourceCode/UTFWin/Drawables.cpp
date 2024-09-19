@@ -43,6 +43,10 @@ namespace UTFWin
 		Args(const ResourceKey& imageName, float offsetX, float offsetY, IWindow* parentWindow),
 		Args(imageName, offsetX, offsetY, parentWindow));
 
+	auto_STATIC_METHOD_VOID(IImageDrawable, SetImageForWindow,
+		Args(IWindow* window, const ResourceKey& imageName),
+		Args(window, imageName));
+
 	DEFAULT_REFCOUNT(ImageDrawable);
 
 	auto_METHOD_VIRTUAL_VOID(ImageDrawable, ILayoutElement, SetSerializer, Args(Serializer& dst), Args(dst));

@@ -153,6 +153,8 @@ namespace Simulator
 		kPlanetFlagHasRings = 0x2,  // 1 << 1
 		kPlanetFlagIsMoon = 0x4,  // 1 << 2
 
+		kPlanetFlagIsDestroyed = 0x100,  // 1 << 8
+
 		kPlanetFlagRedOrbit = 0x1000,  // 1 << 12
 		kPlanetFlagBlueOrbit = 0x2000,  // 1 << 13
 	};
@@ -175,6 +177,13 @@ namespace Simulator
 		PlanetID GetID() const;
 		TechLevel GetTechLevel() const;
 
+		inline bool IsMoon() const {
+			return (mFlags & kPlanetFlagIsMoon) != 0;
+		}
+		inline bool IsDestroyed() const {
+			return (mFlags & kPlanetFlagIsDestroyed) != 0;
+		}
+
 		void SetGeneratedTerrainKey(const ResourceKey& key);
 		ResourceKey& GetGeneratedTerrainKey();
 
@@ -182,6 +191,8 @@ namespace Simulator
 		/// the planet terrain can be saved there.
 		/// @returns
 		static ResourceKey GenerateTerrainKey();
+
+		ResourceKey GetTerrainScriptSource() const;
 
 		/// Returns the distance of the perihelion, which is the planet's closest point to the parent object
 		/// in its orbit (the parent object is either a sun, or another planet if this planet is a moon).
@@ -267,6 +278,12 @@ namespace Simulator
 	};
 	ASSERT_SIZE(cPlanetRecord, 0x1B0);
 
+	/// Returns the key to the image file that represents this planet main species,
+	/// for planets in tribe, civilization, or space tech level.
+	/// @param planetRecord
+	ResourceKey GetMainSpeciesImageKey(cPlanetRecord* planetRecord);
+
+
 	/////////////////////////////////
 	//// INTERNAL IMPLEMENTATION ////
 	/////////////////////////////////
@@ -278,6 +295,7 @@ namespace Simulator
 		DeclareAddress(FillPlanetDataForTechLevel);  // 0xB96820 0xB97090
 		DeclareAddress(CalculateSpiceProduction);  // 0xC6F920 0xC70760
 		DeclareAddress(CalculateDeltaSpiceProduction);  // 0xC71200 0xC720A0
+		DeclareAddress(GetTerrainScriptSource);  // 0xB8D690 0xB8DEB0
 	}
 
 	inline ResourceKey cPlanetRecord::GenerateTerrainKey()
@@ -295,4 +313,8 @@ namespace Simulator
 	{
 		return mGeneratedTerrainKey;
 	}
+}
+
+namespace Addresses(Simulator) {
+	DeclareAddress(GetMainSpeciesImageKey);  // 0x1066AF0 0x1065F10
 }
