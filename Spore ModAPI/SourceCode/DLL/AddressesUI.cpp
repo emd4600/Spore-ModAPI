@@ -19,6 +19,7 @@ namespace UI
 	{
 		DefineAddress(Load, SelectAddress(0x10743F0, 0x1073730));
 		DefineAddress(SetActivePalette, SelectAddress(0x106F060, 0x106E410));
+		DefineAddress(FillStarTooltipPlanetInfo, SelectAddress(0x1069520, 0x1068980));
 	}
 
 	namespace Addresses(cHintManager)

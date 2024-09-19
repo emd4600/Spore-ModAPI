@@ -142,6 +142,10 @@ namespace Addresses(Simulator)
 
 	DefineAddress(SpawnNpcTribe, SelectAddress(0xC92860, 0xC932F0));
 	
+	DefineAddress(GetMainSpeciesImageKey, SelectAddress(0x1066AF0, 0x1065F10));
+
+	DefineAddress(GetPlayerHomePlanet, SelectAddress(0x10223F0, 0x1021220));
+
 #ifndef SDK_TO_GHIDRA
 	DefineAddress(LightingWorld_ptr, SelectAddress(0x1682CD4, 0x167EA54));
 	DefineAddress(PrecalculatedSolarStarRadius_ptr, SelectAddress(0x157DCF0, 0x1579D10));
@@ -324,6 +328,7 @@ namespace Simulator
 		DefineAddress(CaptureSystem, SelectAddress(0xC8C320, 0xC8D190));
 		DefineAddress(UpdateAndGetColor, SelectAddress(0xC325F0, 0xC32E30));
 		DefineAddress(AddStarOwnership, SelectAddress(0xC33AB0, 0xC34300));
+		DefineAddress(RequireHomePlanet, SelectAddress(0xC30F90, 0xC31890));
 	}
 
 	namespace Addresses(cEnergyRepairToolStrategy)
@@ -834,6 +839,10 @@ namespace Simulator
 		DefineAddress(FillPlanetDataForTechLevel, SelectAddress(0xB96820, 0xB97090));
 		DefineAddress(CalculateSpiceProduction, SelectAddress(0xC6F920, 0xC70760));
 		DefineAddress(CalculateDeltaSpiceProduction, SelectAddress(0xC71200, 0xC720A0));
+		DefineAddress(GetTerrainScriptSource, SelectAddress(0xB8D690, 0xB8DEB0));
+		DefineAddress(HasControlledCity, SelectAddress(0xC6F4B0, 0xC702F0));
+		DefineAddress(GetTypeIconKey, SelectAddress(0xE2EBE0, 0xE2EB70));
+		DefineAddress(GetCitizenSpeciesKey, SelectAddress(0xB8D9C0, 0xB8E1E0));
 	}
 
 	namespace Addresses(cCivData) {

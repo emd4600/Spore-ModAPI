@@ -270,6 +270,9 @@ namespace GroupIDs
 		AssetBrowserSort = 0xC5296FA9,
 		AssetBrowserGraphics = 0xCA14DE92,
 
+		GameEntryImages = 0x199B485,
+		EditorPlannerImages = 0x355BA26,
+
 		Achievements = 0x05BEFD27,
 		AchievementImages = 0x260EB59C,
 

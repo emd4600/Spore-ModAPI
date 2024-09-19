@@ -239,6 +239,7 @@ namespace UTFWin
 	namespace Addresses(IImageDrawable)
 	{
 		DefineAddress(AddImageWindow, SelectAddress(0x807EC0, 0x807970));
+		DefineAddress(SetImageForWindow, SelectAddress(0xE2F550, 0xE2F590));
 	}
 
 	namespace Addresses(InflateEffect)

@@ -37,6 +37,7 @@ namespace Simulator
 	{
 		kStarFlagIsOwned = 0x10,  // 1 << 4
 		
+		// 1 << 6 has destroyed planet?
 		// 0x200 has raid?
 
 		kStarFlagHasRare = 0x1000,  // 1 << 12

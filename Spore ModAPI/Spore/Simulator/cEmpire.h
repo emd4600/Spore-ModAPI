@@ -59,6 +59,10 @@ namespace Simulator
 
 		cStarRecord* GetHomeStarRecord();
 
+		/// Returns the home planet of the empire, and if it is not available, it assigns one.
+		/// Preferrable over using `mHomePlanet`
+		cPlanetRecord* RequireHomePlanet();
+
 		cSpeciesProfile* GetSpeciesProfile();
 
 		void SetSpeciesProfile(cSpeciesProfile* pSpecies);
@@ -136,7 +140,7 @@ namespace Simulator
 		DeclareAddress(CaptureSystem);
 		DeclareAddress(UpdateAndGetColor);  // 0xC325F0 0xC32E30
 		DeclareAddress(AddStarOwnership);  // 0xC33AB0 0xC34300
-		//TODO sub_C30F90 RequireHomePlanet
+		DeclareAddress(RequireHomePlanet);  // 0xC30F90 0xC31890
 	}
 
 }

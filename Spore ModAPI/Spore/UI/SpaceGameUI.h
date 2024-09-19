@@ -19,6 +19,7 @@
 #pragma once
 
 #include <Spore\Simulator\cPlayerInventory.h>
+#include <Spore\Simulator\cPlanetRecord.h>
 
 #include <Spore\UTFWin\IWinProc.h>
 #include <Spore\UTFWin\UILayout.h>
@@ -42,7 +43,8 @@
 
 namespace UI
 {
-	/// User interface for the Space game. The main SPUI is `0x1e453b88.spui`
+	/// User interface for the Space game. The main SPUI is `0x1e453b88.spui`.
+	/// It can be accessed through cSimulatorSpaceGame::GetUI().
 	class SpaceGameUI
 		: public UTFWin::IWinProc
 		, public DefaultRefCounted
@@ -55,6 +57,12 @@ namespace UI
 		void Load();
 
 		void SetActivePalette(uint32_t paletteID);
+
+		/// Fills one planet slot in the star tooltip that appears when hovering over a star in the Galaxy view.
+		/// @param layout
+		/// @param slotIndex
+		/// @param planetRecord
+		bool FillStarTooltipPlanetInfo(UTFWin::UILayout* layout, int slotIndex, Simulator::cPlanetRecord* planetRecord);
 
 	public:
 		struct TerraformColors {
@@ -221,5 +229,6 @@ namespace UI
 	{
 		DeclareAddress(Load);
 		DeclareAddress(SetActivePalette);
+		DeclareAddress(FillStarTooltipPlanetInfo);  // 0x1069520 0x1068980
 	}
 }

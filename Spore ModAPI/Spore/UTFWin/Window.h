@@ -65,7 +65,7 @@ namespace UTFWin
 		virtual uint32_t GetCursorID() const override;
 		virtual WindowFlags GetFlags() const override;
 		virtual int GetState() const override;
-		virtual Math::Color GetShadeColor() const override;
+		virtual int GetShadeColor() const override;
 		virtual const Math::Rectangle& GetArea() const override;
 		virtual const Math::Rectangle& GetRealArea() const override;
 		virtual const char16_t* GetCaption() const override;
@@ -94,7 +94,7 @@ namespace UTFWin
 		virtual int InvalidateTransform() override;
 		virtual int func39() override;
 		virtual int func40() override;
-		virtual Color GetFillColor() const override;
+		virtual int GetFillColor() const override;
 		virtual IDrawable* GetDrawable() const override;
 		virtual void SetFillColor(Color color) override;
 		virtual void SetDrawable(IDrawable* drawable) override;

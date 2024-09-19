@@ -74,5 +74,24 @@ namespace Simulator
 
 	auto_METHOD_VOID_(cEllipticalOrbit, Precalculate);
 
+	ResourceKey GetMainSpeciesImageKey(cPlanetRecord* planetRecord) {
+		ResourceKey key;
+		STATIC_CALL(GetAddress(Simulator, GetMainSpeciesImageKey), void, Args(ResourceKey&, cPlanetRecord*), Args(key, planetRecord));
+		return key;
+	}
+
+	ResourceKey cPlanetRecord::GetTerrainScriptSource() {
+		ResourceKey key;
+		STATIC_CALL(GetAddress(cPlanetRecord, GetTerrainScriptSource), void, Args(ResourceKey&), Args(key));
+		return key;
+	}
+
+	auto_STATIC_METHOD(cPlanetRecord, bool, HasControlledCity,
+		Args(cPlanetRecord* planetRecord, cEmpire* empire, bool requireMoreThanOneTurret), 
+		Args(planetRecord, empire, requireMoreThanOneTurret));
+
+	auto_STATIC_METHOD(cPlanetRecord, const ResourceKey&, GetTypeIconKey, Args(cPlanetRecord* record), Args(record));
+
+	auto_METHOD_(cPlanetRecord, const ResourceKey&, GetCitizenSpeciesKey);
 }
 #endif

@@ -37,6 +37,8 @@ namespace Simulator
 
 	SpaceContext GetCurrentContext();
 
+	cPlanetRecord* GetPlayerHomePlanet();
+
 	class SpacePlayerData
 	{
 	public:
@@ -73,4 +75,5 @@ namespace Addresses(Simulator)
 
 	DeclareAddress(GetCurrentContext);
 
+	DeclareAddress(GetPlayerHomePlanet);  // 0x10223F0 0x1021220
 }
