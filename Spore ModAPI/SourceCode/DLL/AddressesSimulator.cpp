@@ -842,6 +842,7 @@ namespace Simulator
 		DefineAddress(GetTerrainScriptSource, SelectAddress(0xB8D690, 0xB8DEB0));
 		DefineAddress(HasControlledCity, SelectAddress(0xC6F4B0, 0xC702F0));
 		DefineAddress(GetTypeIconKey, SelectAddress(0xE2EBE0, 0xE2EB70));
+		DefineAddress(GetCitizenSpeciesKey, SelectAddress(0xB8D9C0, 0xB8E1E0));
 	}
 
 	namespace Addresses(cCivData) {

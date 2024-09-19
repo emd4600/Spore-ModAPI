@@ -140,7 +140,7 @@ namespace UTFWin
 		/// Returns the color modulation value. This color acts as a tint: after the window is painted, it gets multiplied by this color.
 		/// @returns The integer color representation of the value of the 'shadeColor' property.
 		///
-		/* 30h */	virtual Math::Color GetShadeColor() const = 0;
+		/* 30h */	virtual int GetShadeColor() const = 0;
 
 		///
 		/// Gets the rectangular extent of this window, relative to the window's parent. Note this is the 'area' property, 
@@ -305,7 +305,7 @@ namespace UTFWin
 		/// the area will be filled with the fill color and then the fill drawable will be drawn on top of it.
 		/// @returns The integer color representation of the value of the 'fillColor' property.
 		///
-		/* A4h */	virtual Math::Color GetFillColor() const = 0;
+		/* A4h */	virtual int GetFillColor() const = 0;
 		
 		///
 		/// Returns the fill drawable of this window. When rendering the window,

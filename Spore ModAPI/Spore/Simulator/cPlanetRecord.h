@@ -190,9 +190,13 @@ namespace Simulator
 
 		ResourceKey GetTerrainScriptSource();
 
+		/// Return the key of the sentient species that inhabits this planet.
+		/// Only for tribe or greater tech level.
+		const ResourceKey& GetCitizenSpeciesKey();
+
 		/// Returns the key to the icon that is displayed in planet tooltip.
 		/// This depends on tech level, and whether it has an adventure.
-		const ResourceKey& GetTypeIconKey();
+		static const ResourceKey& GetTypeIconKey(cPlanetRecord* record);
 
 		/// Generates a `.prop` file ResourceKey that is currently unused in game packages, so that 
 		/// the planet terrain can be saved there.
@@ -311,6 +315,7 @@ namespace Simulator
 		DeclareAddress(GetTerrainScriptSource);  // 0xB8D690 0xB8DEB0
 		DeclareAddress(HasControlledCity);  // 0xC6F4B0 0xC702F0
 		DeclareAddress(GetTypeIconKey);  // 0xE2EBE0 0xE2EB70
+		DeclareAddress(GetCitizenSpeciesKey);  // 0xB8D9C0 0xB8E1E0
 	}
 
 	inline ResourceKey cPlanetRecord::GenerateTerrainKey()

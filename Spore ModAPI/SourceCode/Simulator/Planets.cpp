@@ -80,7 +80,7 @@ namespace Simulator
 		return key;
 	}
 
-	ResourceKey cPlanetRecord::GetTerrainScriptSource() const {
+	ResourceKey cPlanetRecord::GetTerrainScriptSource() {
 		ResourceKey key;
 		STATIC_CALL(GetAddress(cPlanetRecord, GetTerrainScriptSource), void, Args(ResourceKey&), Args(key));
 		return key;
@@ -90,6 +90,8 @@ namespace Simulator
 		Args(cPlanetRecord* planetRecord, cEmpire* empire, bool requireMoreThanOneTurret), 
 		Args(planetRecord, empire, requireMoreThanOneTurret));
 
-	auto_METHOD_(cPlanetRecord, const ResourceKey&, GetTypeIconKey);
+	auto_STATIC_METHOD(cPlanetRecord, const ResourceKey&, GetTypeIconKey, Args(cPlanetRecord* record), Args(record));
+
+	auto_METHOD_(cPlanetRecord, const ResourceKey&, GetCitizenSpeciesKey);
 }
 #endif
