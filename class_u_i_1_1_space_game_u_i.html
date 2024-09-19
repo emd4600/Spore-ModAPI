@@ -48,7 +48,7 @@
           <span class="m-breadcrumb"><a href="namespace_u_i.html">UI</a>::<wbr/></span>SpaceGameUI <span class="m-thin">class</span>
           <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_space_game_u_i_8h.html">&lt;Spore ModAPI/Spore/UI/SpaceGameUI.h&gt;</a></div>
         </h1>
-        <p>User interface for the Space game. The main SPUI is <code>0x1e453b88.spui</code></p>
+        <p>User interface for the Space game.</p>
         <nav class="m-block m-default">
           <h3>Contents</h3>
           <ul>
@@ -64,6 +64,7 @@
             </li>
           </ul>
         </nav>
+<p>The main SPUI is <code>0x1e453b88.spui</code>. It can be accessed through cSimulatorSpaceGame::GetUI().</p>
         <section id="base-classes">
           <h2><a href="#base-classes">Base classes</a></h2>
           <dl class="m-doc">
@@ -115,6 +116,12 @@
               <span class="m-doc-wrap-bumper">auto <a href="#acab553037376753bab74a4b9d5a85b60" class="m-doc-self">SetActivePalette</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">uint32_<wbr />t</a> paletteID) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">void</a></span>
             </dt>
             <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a9e07814ef0a4920ecd4e3d7a9a2aadd3" class="m-doc">FillStarTooltipPlanetInfo</a>(</span><span class="m-doc-wrap"><a href="class_u_t_f_win_1_1_u_i_layout.html" class="m-doc">UTFWin::<wbr />UILayout</a>* layout,
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> slotIndex,
+              <a href="class_simulator_1_1c_planet_record.html" class="m-doc">Simulator::<wbr />cPlanetRecord</a>* planetRecord) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">bool</a></span>
+            </dt>
+            <dd>Fills one planet slot in the star tooltip that appears when hovering over a star in the Galaxy view.</dd>
           </dl>
         </section>
         <section id="pub-attribs">
@@ -605,6 +612,36 @@
             </dt>
             <dd><span></span></dd>
           </dl>
+        </section>
+        <section>
+          <h2>Function documentation</h2>
+          <section class="m-doc-details" id="a9e07814ef0a4920ecd4e3d7a9a2aadd3"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">bool</a> UI::<wbr />SpaceGameUI::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a9e07814ef0a4920ecd4e3d7a9a2aadd3" class="m-doc-self">FillStarTooltipPlanetInfo</a>(</span><span class="m-doc-wrap"><a href="class_u_t_f_win_1_1_u_i_layout.html" class="m-doc">UTFWin::<wbr />UILayout</a>* layout,
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> slotIndex,
+              <a href="class_simulator_1_1c_planet_record.html" class="m-doc">Simulator::<wbr />cPlanetRecord</a>* planetRecord)</span></span>
+            </h3>
+            <p>Fills one planet slot in the star tooltip that appears when hovering over a star in the Galaxy view.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">layout</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>slotIndex</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>planetRecord</td>
+                  <td></td>
+                </tr>
+              </tbody>
+            </table>
+          </div></section>
         </section>
       </div>
     </div>
