@@ -122,6 +122,12 @@
               <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">bool</a> limitOutput) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">float</a></span>
             </dt>
             <dd>Method that calculates how much spice is being produced on a single planet, based on difficulty tunings and number of cities.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">static auto <a href="#adaea73855ff4a61fc75b75e93ce75aaa" class="m-doc">HasControlledCity</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_planet_record.html" class="m-doc">cPlanetRecord</a>* planetRecord,
+              <a href="class_simulator_1_1c_empire.html" class="m-doc">cEmpire</a>* empire,
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">bool</a> requireMoreThanOneTurret = <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">false</a>) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">bool</a></span>
+            </dt>
+            <dd>Return true if the planet ahs any city controlled by the specified empire.</dd>
           </dl>
         </section>
         <section id="pub-methods">
@@ -159,10 +165,14 @@
               <span class="m-doc-wrap-bumper">auto <a href="#a844323d4b4f47a2f23a32bd63ce6d40d" class="m-doc-self">GetGeneratedTerrainKey</a>(</span><span class="m-doc-wrap">) -&gt; <a href="struct_resource_key.html" class="m-doc">ResourceKey</a>&amp;</span>
             </dt>
             <dd><span></span></dd>
-            <dt id="aae0c013496ca1a5fbfa8c35e9fcb684b">
-              <span class="m-doc-wrap-bumper">auto <a href="#aae0c013496ca1a5fbfa8c35e9fcb684b" class="m-doc-self">GetTerrainScriptSource</a>(</span><span class="m-doc-wrap">) const -&gt; <a href="struct_resource_key.html" class="m-doc">ResourceKey</a></span>
+            <dt id="aa91a9b4d2e681a2ad9278b7e742d944f">
+              <span class="m-doc-wrap-bumper">auto <a href="#aa91a9b4d2e681a2ad9278b7e742d944f" class="m-doc-self">GetTerrainScriptSource</a>(</span><span class="m-doc-wrap">) -&gt; <a href="struct_resource_key.html" class="m-doc">ResourceKey</a></span>
             </dt>
             <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a27b7b676f0552ffa864b78fd28330901" class="m-doc">GetTypeIconKey</a>(</span><span class="m-doc-wrap">) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">const</a> <a href="struct_resource_key.html" class="m-doc">ResourceKey</a>&amp;</span>
+            </dt>
+            <dd>Returns the key to the icon that is displayed in planet tooltip.</dd>
           </dl>
         </section>
         <section id="pub-attribs">
@@ -427,6 +437,41 @@
               </tbody>
             </table>
 <p>This method is called every X ticks to update the total spice held on each city.</p>
+          </div></section>
+          <section class="m-doc-details" id="adaea73855ff4a61fc75b75e93ce75aaa"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">static <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">bool</a> Simulator::<wbr />cPlanetRecord::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#adaea73855ff4a61fc75b75e93ce75aaa" class="m-doc-self">HasControlledCity</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_planet_record.html" class="m-doc">cPlanetRecord</a>* planetRecord,
+              <a href="class_simulator_1_1c_empire.html" class="m-doc">cEmpire</a>* empire,
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">bool</a> requireMoreThanOneTurret = <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">false</a>)</span></span>
+            </h3>
+            <p>Return true if the planet ahs any city controlled by the specified empire.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">planetRecord</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>empire</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>requireMoreThanOneTurret</td>
+                  <td></td>
+                </tr>
+              </tbody>
+            </table>
+<p>If &#x27;requireMoreThanOneTurret&#x27; is true, then it will only return true if the controlled city has more than one turret.</p>
+          </div></section>
+          <section class="m-doc-details" id="a27b7b676f0552ffa864b78fd28330901"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">const</a> <a href="struct_resource_key.html" class="m-doc">ResourceKey</a>&amp; Simulator::<wbr />cPlanetRecord::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a27b7b676f0552ffa864b78fd28330901" class="m-doc-self">GetTypeIconKey</a>(</span><span class="m-doc-wrap">)</span></span>
+            </h3>
+            <p>Returns the key to the icon that is displayed in planet tooltip.</p>
+<p>This depends on tech level, and whether it has an adventure.</p>
           </div></section>
         </section>
       </div>
