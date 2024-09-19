@@ -144,6 +144,8 @@ namespace Addresses(Simulator)
 	
 	DefineAddress(GetMainSpeciesImageKey, SelectAddress(0x1066AF0, 0x1065F10));
 
+	DefineAddress(GetPlayerHomePlanet, SelectAddress(0x10223F0, 0x1021220));
+
 #ifndef SDK_TO_GHIDRA
 	DefineAddress(LightingWorld_ptr, SelectAddress(0x1682CD4, 0x167EA54));
 	DefineAddress(PrecalculatedSolarStarRadius_ptr, SelectAddress(0x157DCF0, 0x1579D10));
@@ -326,6 +328,7 @@ namespace Simulator
 		DefineAddress(CaptureSystem, SelectAddress(0xC8C320, 0xC8D190));
 		DefineAddress(UpdateAndGetColor, SelectAddress(0xC325F0, 0xC32E30));
 		DefineAddress(AddStarOwnership, SelectAddress(0xC33AB0, 0xC34300));
+		DefineAddress(RequireHomePlanet, SelectAddress(0xC30F90, 0xC31890));
 	}
 
 	namespace Addresses(cEnergyRepairToolStrategy)

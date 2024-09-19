@@ -32,6 +32,8 @@ namespace Simulator
 	auto_METHOD_(cEmpire, cSpeciesProfile*, GetSpeciesProfile);
 	auto_METHOD_VOID(cEmpire, SetSpeciesProfile, Args(cSpeciesProfile* pSpecies), Args(pSpecies));
 
+	auto_METHOD_(cEmpire, cPlanetRecord*, RequireHomePlanet);
+
 	cStarRecord* cEmpire::GetHomeStarRecord() {
 		if (mHomeStar.internalValue != -1) {
 			return StarManager.GetStarRecord(mHomeStar);

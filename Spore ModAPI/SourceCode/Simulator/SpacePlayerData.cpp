@@ -44,5 +44,7 @@ namespace Simulator
 	auto_STATIC_METHOD_(Simulator, uint32_t, GetPlayerEmpireID);
 
 	auto_STATIC_METHOD_(Simulator, SpaceContext, GetCurrentContext);
+
+	auto_STATIC_METHOD_(Simulator, cPlanetRecord*, GetPlayerHomePlanet);
 }
 #endif
