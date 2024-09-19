@@ -86,6 +86,10 @@
         <section id="pub-static-methods">
           <h2><a href="#pub-static-methods">Public static functions</a></h2>
           <dl class="m-doc">
+            <dt>
+              <span class="m-doc-wrap-bumper">static auto <a href="#a2b306184882745c7b69ebdc23681b0ce" class="m-doc">GetTypeIconKey</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_planet_record.html" class="m-doc">cPlanetRecord</a>* record) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">const</a> <a href="struct_resource_key.html" class="m-doc">ResourceKey</a>&amp;</span>
+            </dt>
+            <dd>Returns the key to the icon that is displayed in planet tooltip.</dd>
             <dt id="ad202d67afbcd8948880ceaa72698882d">
               <span class="m-doc-wrap-bumper">static auto <a href="#ad202d67afbcd8948880ceaa72698882d" class="m-doc-self">GenerateTerrainKey</a>(</span><span class="m-doc-wrap">) -&gt; <a href="struct_resource_key.html" class="m-doc">ResourceKey</a></span>
             </dt>
@@ -170,9 +174,9 @@
             </dt>
             <dd><span></span></dd>
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#a27b7b676f0552ffa864b78fd28330901" class="m-doc">GetTypeIconKey</a>(</span><span class="m-doc-wrap">) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">const</a> <a href="struct_resource_key.html" class="m-doc">ResourceKey</a>&amp;</span>
+              <span class="m-doc-wrap-bumper">auto <a href="#a45d8aee317ec8e8e45df6326f5e8439f" class="m-doc">GetCitizenSpeciesKey</a>(</span><span class="m-doc-wrap">) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">const</a> <a href="struct_resource_key.html" class="m-doc">ResourceKey</a>&amp;</span>
             </dt>
-            <dd>Returns the key to the icon that is displayed in planet tooltip.</dd>
+            <dd>Return the key of the sentient species that inhabits this planet.</dd>
           </dl>
         </section>
         <section id="pub-attribs">
@@ -306,6 +310,13 @@
         </section>
         <section>
           <h2>Function documentation</h2>
+          <section class="m-doc-details" id="a2b306184882745c7b69ebdc23681b0ce"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">static <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">const</a> <a href="struct_resource_key.html" class="m-doc">ResourceKey</a>&amp; Simulator::<wbr />cPlanetRecord::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a2b306184882745c7b69ebdc23681b0ce" class="m-doc-self">GetTypeIconKey</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_planet_record.html" class="m-doc">cPlanetRecord</a>* record)</span></span>
+            </h3>
+            <p>Returns the key to the icon that is displayed in planet tooltip.</p>
+<p>This depends on tech level, and whether it has an adventure.</p>
+          </div></section>
           <section class="m-doc-details" id="aee7e926a67700bea470da20f3c341ce6"><div>
             <h3>
               <span class="m-doc-wrap-bumper">static <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">float</a> Simulator::<wbr />cPlanetRecord::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#aee7e926a67700bea470da20f3c341ce6" class="m-doc-self">GetPerihelion</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_planet_record.html" class="m-doc">cPlanetRecord</a>* pRecord,
@@ -466,12 +477,12 @@
             </table>
 <p>If &#x27;requireMoreThanOneTurret&#x27; is true, then it will only return true if the controlled city has more than one turret.</p>
           </div></section>
-          <section class="m-doc-details" id="a27b7b676f0552ffa864b78fd28330901"><div>
+          <section class="m-doc-details" id="a45d8aee317ec8e8e45df6326f5e8439f"><div>
             <h3>
-              <span class="m-doc-wrap-bumper"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">const</a> <a href="struct_resource_key.html" class="m-doc">ResourceKey</a>&amp; Simulator::<wbr />cPlanetRecord::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a27b7b676f0552ffa864b78fd28330901" class="m-doc-self">GetTypeIconKey</a>(</span><span class="m-doc-wrap">)</span></span>
+              <span class="m-doc-wrap-bumper"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">const</a> <a href="struct_resource_key.html" class="m-doc">ResourceKey</a>&amp; Simulator::<wbr />cPlanetRecord::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a45d8aee317ec8e8e45df6326f5e8439f" class="m-doc-self">GetCitizenSpeciesKey</a>(</span><span class="m-doc-wrap">)</span></span>
             </h3>
-            <p>Returns the key to the icon that is displayed in planet tooltip.</p>
-<p>This depends on tech level, and whether it has an adventure.</p>
+            <p>Return the key of the sentient species that inhabits this planet.</p>
+<p>Only for tribe or greater tech level.</p>
           </div></section>
         </section>
       </div>
