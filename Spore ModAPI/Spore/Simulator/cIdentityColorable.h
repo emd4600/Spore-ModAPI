@@ -54,7 +54,6 @@ namespace Simulator
 	///
 	class cIdentityColorable
 	{
-
 	public:
 		static const uint32_t TYPE = 0x5593A1A;
 
@@ -72,7 +71,7 @@ namespace Simulator
 		void AssignNames(const eastl::string16& speciesName);
 
 	public:
-		/* 04h */	IdentityColors mIDColorID;  // 0x53DBCF1
+		/* 04h */	uint32_t mIDColorID;  // 0x53DBCF1
 		/// Names for different entities such as buildings, vehicles, etc. Check `Identity.locale`
 		/* 08h */	eastl::map<int, eastl::string16> mEntityNames;
 		/* 24h */	Math::ColorRGB mCachedColor;
