@@ -26,5 +26,5 @@ void EffectLogCheat::ParseLine(const ArgScript::Line& line)
 
 const char* EffectLogCheat::GetDescription(ArgScript::DescriptionMode mode) const
 {
-	return "Usage: animLog on/off. If enabled, every time an animation is loaded it will print its ID.";
+	return "Usage: effectLog on/off. If enabled, every time an effect is loaded it will print its ID.";
 }

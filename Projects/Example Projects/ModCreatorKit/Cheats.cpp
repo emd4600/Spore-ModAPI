@@ -53,8 +53,7 @@ void AddCheats()
 	CheatManager.AddCheat("devPackage", new PackageCheat());
 	CheatManager.AddCheat("devLogUI", new UILogCheat());
 	CheatManager.AddCheat("devInspectUI", new UIInspectCheat());
-
-	CheatManager.AddCheat("PrintCursor", new PrintCursorCheat());
+	CheatManager.AddCheat("devPrintCursor", new PrintCursorCheat());
 
 	AddressCheat::AddCheat(Address(ModAPI::ChooseAddress(0x1498444, 0x1493E5C)), "devRaid");
 	AddressCheat::AddCheat(Address(ModAPI::ChooseAddress(0x149845C, 0x1493E74)), "devSpace");

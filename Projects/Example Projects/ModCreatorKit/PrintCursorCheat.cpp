@@ -12,6 +12,6 @@ const char* PrintCursorCheat::GetDescription(ArgScript::DescriptionMode mode) co
 		return "Prints the ID of the current cursor to the console.";
 	}
 	else {
-		return "PrintCursor: Prints the ID of the current cursor to the console.";
+		return "DevPrintCursor: Prints the ID of the current cursor to the console.";
 	}
 }
