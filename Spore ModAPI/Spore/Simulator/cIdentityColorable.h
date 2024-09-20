@@ -26,7 +26,7 @@
 
 namespace Simulator
 {
-	enum class IdentityColors
+	enum IdentityColors
 	{
 		Player = 0x053dbcf1,
 		Neutral = 0x053dbcf2,
