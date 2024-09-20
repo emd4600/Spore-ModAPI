@@ -32,7 +32,7 @@ namespace Simulator
 		/* 200h */	ResourceKey mDestructModelHi;
 		/* 20Ch */	ResourceKey mUndamagedModel;
 		/* 218h */	bool field_218; // 'true' makes the hut emit harp music
-		/* 21Ch */	int field_21C;
+		/* 21Ch */	int field_21C; // values above 0 make the hut emit a 'zzz' sleeping effect
 		/* 220h */	bool field_220;
 		/* 221h */	bool field_221;
 		/* 224h */	int field_224;  // not initialized
