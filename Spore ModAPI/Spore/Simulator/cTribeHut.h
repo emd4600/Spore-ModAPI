@@ -31,7 +31,7 @@ namespace Simulator
 		/* 1F4h */	ResourceKey mDestructModelMd;
 		/* 200h */	ResourceKey mDestructModelHi;
 		/* 20Ch */	ResourceKey mUndamagedModel;
-		/* 218h */	bool field_218;
+		/* 218h */	bool field_218; // 'true' makes the hut emit harp music
 		/* 21Ch */	int field_21C;
 		/* 220h */	bool field_220;
 		/* 221h */	bool field_221;
