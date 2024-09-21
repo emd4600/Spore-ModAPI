@@ -219,6 +219,10 @@
             </dt>
             <dd><span></span></dd>
             <dt>
+              class <a href="class_simulator_1_1c_command_parameter_set.html" class="m-doc">cCommandParameterSet</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
               class <a href="class_simulator_1_1c_comm_event.html" class="m-doc">cCommEvent</a>
             </dt>
             <dd><span></span></dd>
@@ -484,6 +488,10 @@
             <dd><span></span></dd>
             <dt>
               class <a href="class_simulator_1_1c_locomotive_object__superclass.html" class="m-doc">cLocomotiveObject_superclass</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              class <a href="class_simulator_1_1c_message_command_dispatcher.html" class="m-doc">cMessageCommandDispatcher</a>
             </dt>
             <dd><span></span></dd>
             <dt>
@@ -884,6 +892,10 @@
             </dt>
             <dd><span></span></dd>
             <dt>
+              class <a href="class_simulator_1_1c_string_command_generator.html" class="m-doc">cStringCommandGenerator</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
               class <a href="class_simulator_1_1c_terraforming_manager.html" class="m-doc">cTerraformingManager</a>
             </dt>
             <dd><span></span></dd>
@@ -1130,6 +1142,14 @@
             <dd>Called when a space tool hits a target. Called by <a href="class_simulator_1_1c_tool_strategy.html#a2561e73287e748536c5de8ae994dfec3" class="m-doc">cToolStrategy::<wbr />OnHit</a>.</dd>
             <dt>
               struct <a href="struct_simulator_1_1t_player_death_data.html" class="m-doc">tPlayerDeathData</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              struct <a href="struct_simulator_1_1_u_i_state_machine.html" class="m-doc">UIStateMachine</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              struct <a href="struct_simulator_1_1_u_i_state_machine_transition.html" class="m-doc">UIStateMachineTransition</a>
             </dt>
             <dd><span></span></dd>
             <dt>
@@ -1832,6 +1852,75 @@
               <a href="#a47f6e1218df34ba12db8ee6946791524a6288740a1cd0de37312619df3b6ddcf3" class="m-doc">Gameplay</a> = 0x4BF38A7,
               <a href="#a47f6e1218df34ba12db8ee6946791524a1699ca13f05b84ceb986f896f81b03b0" class="m-doc">UIToggle</a> = 0x4BF38A4,
               <a href="#a47f6e1218df34ba12db8ee6946791524aeabe3db9a9d8e5a9f7417e371e96d298" class="m-doc">ModalDialog</a> = 0x4BF38A9 }</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">enum class <a href="#aeab8677397a9a15b25308356b141ce38" class="m-doc">UIStateMachineEvent</a> { </span><span class="m-doc-wrap"><a href="#aeab8677397a9a15b25308356b141ce38abf90db242043990aa80fde01f233665d" class="m-doc">MouseDown</a> = 1,
+              <a href="#aeab8677397a9a15b25308356b141ce38a0745b0109e994a11eabc451db3ba43d5" class="m-doc">MouseDoubleClick</a> = 2,
+              <a href="#aeab8677397a9a15b25308356b141ce38a5c55840fe2a83a886590c780f0aa7031" class="m-doc">MouseUp</a> = 3,
+              <a href="#aeab8677397a9a15b25308356b141ce38afd060c0c157323f1e43e0704d4f3ffc8" class="m-doc">MouseMove</a> = 6,
+              <a href="#aeab8677397a9a15b25308356b141ce38a8baf62842e63132015f03f5287857048" class="m-doc">LongMouseMove</a> = 7,
+              <a href="#aeab8677397a9a15b25308356b141ce38a6924f81750ac471df87fed683bcea516" class="m-doc">MouseWheel</a> = 8,
+              <a href="#aeab8677397a9a15b25308356b141ce38acfd07bf1effd88bca04a12a087777354" class="m-doc">KeyDown</a> = 4,
+              <a href="#aeab8677397a9a15b25308356b141ce38a0f8baa14654b1f6ef00fed708c7f198a" class="m-doc">KeyUp</a> = 5,
+              <a href="#aeab8677397a9a15b25308356b141ce38ac9a123faa6ec225161d25f26796b2960" class="m-doc">MenuItem</a> = 9,
+              <a href="#aeab8677397a9a15b25308356b141ce38a2276012e0e86876dab7c05b53767b11a" class="m-doc">TriggerDown</a> = 10,
+              <a href="#aeab8677397a9a15b25308356b141ce38ac3920e256b3a50f76eae6e87c4b4ad0f" class="m-doc">TriggerUp</a> = 11 }</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">enum class <a href="#a196866ad8ecf68e57adab5b6ba2345cf" class="m-doc">UIStateMachineEventKey</a> { </span><span class="m-doc-wrap"><a href="#a196866ad8ecf68e57adab5b6ba2345cfaf684bf05fa3e81528c84d1d281d839f1" class="m-doc">TAB</a> = 9,
+              <a href="#a196866ad8ecf68e57adab5b6ba2345cfa684d325a7303f52e64011467ff5c5758" class="m-doc">LEFT</a> = 0x3E8,
+              <a href="#a196866ad8ecf68e57adab5b6ba2345cfa43eedd8685eb86592022f8da962e3474" class="m-doc">MIDDLE</a> = 0x3E9,
+              <a href="#a196866ad8ecf68e57adab5b6ba2345cfa21507b40c80068eda19865706fdc2403" class="m-doc">RIGHT</a> = 0x3EA,
+              <a href="#a196866ad8ecf68e57adab5b6ba2345cfa6f5d8e41084b4d3d47fa621c459eede1" class="m-doc">BACKSPACE</a> = 8,
+              <a href="#a196866ad8ecf68e57adab5b6ba2345cfa6506ae39fdca9845e3a6de3865183e57" class="m-doc">SPACE</a> = 0x20,
+              <a href="#a196866ad8ecf68e57adab5b6ba2345cfadaaedac409335b869929ea43fa44be5d" class="m-doc">ESCAPE</a> = 0x1B,
+              <a href="#a196866ad8ecf68e57adab5b6ba2345cfa331b3100a485d8cacff1d3df8e9b0c13" class="m-doc">ENTER</a> = 0xD,
+              <a href="#a196866ad8ecf68e57adab5b6ba2345cfabfec72bb37910c61f36b6c29a1f7ec31" class="m-doc">FORWARD</a> = 1,
+              <a href="#a196866ad8ecf68e57adab5b6ba2345cfa1dd26f1f1790f0b56d5752fb0fbecef0" class="m-doc">BACK</a> = -1,
+              <a href="#a196866ad8ecf68e57adab5b6ba2345cfa2cef59b6096dc0002990413fdce8637f" class="m-doc">PGUP</a> = 0x21,
+              <a href="#a196866ad8ecf68e57adab5b6ba2345cfa217b8a8859d2e006e59511101a3e5f71" class="m-doc">PGDOWN</a> = 0x22,
+              <a href="#a196866ad8ecf68e57adab5b6ba2345cfa9111fe64c273c42b0779fc18a6afffc5" class="m-doc">ARROWUP</a> = 0x26,
+              <a href="#a196866ad8ecf68e57adab5b6ba2345cfa429e09506ca4bedad69eca0833957297" class="m-doc">ARROWDOWN</a> = 0x28,
+              <a href="#a196866ad8ecf68e57adab5b6ba2345cfaf0908a2a2e57f7d1aa590a05e6327191" class="m-doc">ARROWLEFT</a> = 0x25,
+              <a href="#a196866ad8ecf68e57adab5b6ba2345cfa0127a2f4774068741aba26dfc3236785" class="m-doc">ARROWRIGHT</a> = 0x27,
+              <a href="#a196866ad8ecf68e57adab5b6ba2345cfa941c42b9719734fbe289f8e65d7a7574" class="m-doc">DELETE_</a> = 0x2E,
+              <a href="#a196866ad8ecf68e57adab5b6ba2345cfa710533dd879dd1202e5c73b27705bf02" class="m-doc">HOME</a> = 0x24,
+              <a href="#a196866ad8ecf68e57adab5b6ba2345cfa5493794e3117b15c0ab7a89f7d01b79e" class="m-doc">OPENBRACKET</a> = 0xDB,
+              <a href="#a196866ad8ecf68e57adab5b6ba2345cfaa270c5fbd5826fd59ccaab1eda8eb057" class="m-doc">CLOSEBRACKET</a> = 0xDD,
+              <a href="#a196866ad8ecf68e57adab5b6ba2345cfa46afff2b309b8b16a46d812172a9235c" class="m-doc">SHIFT</a> = 0x10,
+              <a href="#a196866ad8ecf68e57adab5b6ba2345cfac861cd34025f9002df5912d623326130" class="m-doc">CONTROL</a> = 0x11,
+              <a href="#a196866ad8ecf68e57adab5b6ba2345cfadfbfc9cc7a235560f04cb1a5faf1ec3e" class="m-doc">ALT</a> = 0x12,
+              <a href="#a196866ad8ecf68e57adab5b6ba2345cfae1dffc8709f31a4987c8a88334107e89" class="m-doc">F1</a> = 0x70,
+              <a href="#a196866ad8ecf68e57adab5b6ba2345cfafe5c3684dce76cdd9f7f42430868aa74" class="m-doc">F2</a> = 0x71,
+              <a href="#a196866ad8ecf68e57adab5b6ba2345cfa4b6bf4b531770872d4328ce69bef5627" class="m-doc">F3</a> = 0x72,
+              <a href="#a196866ad8ecf68e57adab5b6ba2345cfae7e0e72401a9f2718ed0f39f2861d702" class="m-doc">F4</a> = 0x73 }</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">enum class <a href="#ac2d1ed0a7b739d025b81d299ca66f361" class="m-doc">UIStateMachineKeyMod</a> { </span><span class="m-doc-wrap"><a href="#ac2d1ed0a7b739d025b81d299ca66f361a684d325a7303f52e64011467ff5c5758" class="m-doc">LEFT</a> = 8,
+              <a href="#ac2d1ed0a7b739d025b81d299ca66f361a43eedd8685eb86592022f8da962e3474" class="m-doc">MIDDLE</a> = 0x10,
+              <a href="#ac2d1ed0a7b739d025b81d299ca66f361a21507b40c80068eda19865706fdc2403" class="m-doc">RIGHT</a> = 0x20,
+              <a href="#ac2d1ed0a7b739d025b81d299ca66f361ac861cd34025f9002df5912d623326130" class="m-doc">CONTROL</a> = 2,
+              <a href="#ac2d1ed0a7b739d025b81d299ca66f361adfbfc9cc7a235560f04cb1a5faf1ec3e" class="m-doc">ALT</a> = 4,
+              <a href="#ac2d1ed0a7b739d025b81d299ca66f361a46afff2b309b8b16a46d812172a9235c" class="m-doc">SHIFT</a> = 1,
+              <a href="#ac2d1ed0a7b739d025b81d299ca66f361ab50339a10e1de285ac99d4c3990b8693" class="m-doc">NONE</a> = 0,
+              <a href="#ac2d1ed0a7b739d025b81d299ca66f361a8e1bde3c3d303163521522cf1d62f21f" class="m-doc">ANY</a> = 0x3FF,
+              <a href="#ac2d1ed0a7b739d025b81d299ca66f361a923adea24197c508ba0399d24093a4f1" class="m-doc">NOREPEAT</a> = 0x40 }</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">enum class <a href="#a01896736e761d04de9b3e2fa6527690a" class="m-doc">UIStateMachineObjectFlags</a> { </span><span class="m-doc-wrap"><a href="#a01896736e761d04de9b3e2fa6527690aa37888876e4b3a56d6431228940c9351b" class="m-doc">PlayerOwned</a> = 1,
+              <a href="#a01896736e761d04de9b3e2fa6527690aad3148ba840924da554d5de2f6b0b316d" class="m-doc">NPCOwned</a> = 2,
+              <a href="#a01896736e761d04de9b3e2fa6527690aa357e18ee09c9cd92a39a7cbee853af38" class="m-doc">IsSelected</a> = 0x10,
+              <a href="#a01896736e761d04de9b3e2fa6527690aac7e63e3bf3430f78485e4d54eaba381b" class="m-doc">IsNotSelected</a> = 0x20,
+              <a href="#a01896736e761d04de9b3e2fa6527690aade0826ebf70a944aa32ffb8594943b26" class="m-doc">SomeObjectsAreSelected</a> = 4,
+              <a href="#a01896736e761d04de9b3e2fa6527690aa1d5cfb3f45ba8fca92782c0dde160f40" class="m-doc">NoObjectsAreSelected</a> = 8,
+              <a href="#a01896736e761d04de9b3e2fa6527690aa0302fe80213785aed0c2a3adc6422f51" class="m-doc">ObjectIsShowingMenu</a> = 0x40,
+              <a href="#a01896736e761d04de9b3e2fa6527690aa34e802332d7e994ba07e8c2066681ec5" class="m-doc">ObjectIsNotShowingMenu</a> = 0x80,
+              <a href="#a01896736e761d04de9b3e2fa6527690aaeee1aab5012a850d710f8e736a5121de" class="m-doc">ObjectIsUnderWater</a> = 0x100,
+              <a href="#a01896736e761d04de9b3e2fa6527690aa2e27b2f2e33751f410a3571544bf902f" class="m-doc">ObjectIsNotUnderWater</a> = 0x200 }</span>
             </dt>
             <dd><span></span></dd>
           </dl>
@@ -3537,6 +3626,31 @@
               <span class="m-doc-wrap-bumper">auto <a href="#a51e42b1bf6a0850f8b3cef5be32b8e2a" class="m-doc">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_u_i_event_log.html" class="m-doc">cUIEventLog</a>) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">namespace</a></span>
             </dt>
             <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper"><a href="#a9a81cd87e019caa35f82d5e31d2e3ec2" class="m-doc">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="struct_simulator_1_1_u_i_state_machine_transition.html" class="m-doc">UIStateMachineTransition</a>,
+              0x38)</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper"><a href="#a63d24d4344d410398382ad329d4496f1" class="m-doc">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="struct_simulator_1_1_u_i_state_machine.html" class="m-doc">UIStateMachine</a>,
+              0x38)</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper"><a href="#a143108ebd8b985ecf34e5ab24d381561" class="m-doc">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_command_parameter_set.html" class="m-doc">cCommandParameterSet</a>,
+              0x3C)</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper"><a href="#adff151a4bac8fa19535c79e8d1679f08" class="m-doc">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_string_command_generator.html" class="m-doc">cStringCommandGenerator</a>,
+              0x24)</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper"><a href="#aa1afee21677dbb464ddcebb0af2ec53f" class="m-doc">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_message_command_dispatcher.html" class="m-doc">cMessageCommandDispatcher</a>,
+              0x48)</span>
+            </dt>
+            <dd><span></span></dd>
           </dl>
         </section>
         <section id="var-members">
@@ -4668,6 +4782,34 @@
                 </tr>
               </tbody>
             </table>
+          </div></section>
+          <section class="m-doc-details" id="aeab8677397a9a15b25308356b141ce38"><div>
+            <h3>
+              enum class Simulator::<wbr /><a href="#aeab8677397a9a15b25308356b141ce38" class="m-doc-self">UIStateMachineEvent</a>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_u_i_state_machine_8h.html">&lt;Spore ModAPI/Spore/Simulator/UIStateMachine.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="a196866ad8ecf68e57adab5b6ba2345cf"><div>
+            <h3>
+              enum class Simulator::<wbr /><a href="#a196866ad8ecf68e57adab5b6ba2345cf" class="m-doc-self">UIStateMachineEventKey</a>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_u_i_state_machine_8h.html">&lt;Spore ModAPI/Spore/Simulator/UIStateMachine.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="ac2d1ed0a7b739d025b81d299ca66f361"><div>
+            <h3>
+              enum class Simulator::<wbr /><a href="#ac2d1ed0a7b739d025b81d299ca66f361" class="m-doc-self">UIStateMachineKeyMod</a>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_u_i_state_machine_8h.html">&lt;Spore ModAPI/Spore/Simulator/UIStateMachine.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="a01896736e761d04de9b3e2fa6527690a"><div>
+            <h3>
+              enum class Simulator::<wbr /><a href="#a01896736e761d04de9b3e2fa6527690a" class="m-doc-self">UIStateMachineObjectFlags</a>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_u_i_state_machine_8h.html">&lt;Spore ModAPI/Spore/Simulator/UIStateMachine.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
           </div></section>
         </section>
         <section>
@@ -7783,6 +7925,46 @@
             <h3>
               <span class="m-doc-wrap-bumper"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">namespace</a> Simulator::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a51e42b1bf6a0850f8b3cef5be32b8e2a" class="m-doc-self">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_u_i_event_log.html" class="m-doc">cUIEventLog</a>)</span></span>
               <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_u_i_event_log_8h.html">&lt;Spore ModAPI/Spore/Simulator/SubSystem/UIEventLog.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="a9a81cd87e019caa35f82d5e31d2e3ec2"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"> Simulator::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a9a81cd87e019caa35f82d5e31d2e3ec2" class="m-doc-self">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="struct_simulator_1_1_u_i_state_machine_transition.html" class="m-doc">UIStateMachineTransition</a>,
+              0x38)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_u_i_state_machine_8h.html">&lt;Spore ModAPI/Spore/Simulator/UIStateMachine.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="a63d24d4344d410398382ad329d4496f1"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"> Simulator::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a63d24d4344d410398382ad329d4496f1" class="m-doc-self">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="struct_simulator_1_1_u_i_state_machine.html" class="m-doc">UIStateMachine</a>,
+              0x38)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_u_i_state_machine_8h.html">&lt;Spore ModAPI/Spore/Simulator/UIStateMachine.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="a143108ebd8b985ecf34e5ab24d381561"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"> Simulator::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a143108ebd8b985ecf34e5ab24d381561" class="m-doc-self">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_command_parameter_set.html" class="m-doc">cCommandParameterSet</a>,
+              0x3C)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_u_i_state_machine_8h.html">&lt;Spore ModAPI/Spore/Simulator/UIStateMachine.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="adff151a4bac8fa19535c79e8d1679f08"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"> Simulator::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#adff151a4bac8fa19535c79e8d1679f08" class="m-doc-self">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_string_command_generator.html" class="m-doc">cStringCommandGenerator</a>,
+              0x24)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_u_i_state_machine_8h.html">&lt;Spore ModAPI/Spore/Simulator/UIStateMachine.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="aa1afee21677dbb464ddcebb0af2ec53f"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"> Simulator::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#aa1afee21677dbb464ddcebb0af2ec53f" class="m-doc-self">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_message_command_dispatcher.html" class="m-doc">cMessageCommandDispatcher</a>,
+              0x48)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_u_i_state_machine_8h.html">&lt;Spore ModAPI/Spore/Simulator/UIStateMachine.h&gt;</a></div>
             </h3>
             <p><span></span></p>
           </div></section>
