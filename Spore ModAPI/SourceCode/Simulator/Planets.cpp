@@ -82,7 +82,7 @@ namespace Simulator
 
 	ResourceKey cPlanetRecord::GetTerrainScriptSource() {
 		ResourceKey key;
-		STATIC_CALL(GetAddress(cPlanetRecord, GetTerrainScriptSource), void, Args(ResourceKey&), Args(key));
+		CALL(GetAddress(cPlanetRecord, GetTerrainScriptSource), void, Args(cPlanetRecord*, ResourceKey&), Args(this, key));
 		return key;
 	}
 
