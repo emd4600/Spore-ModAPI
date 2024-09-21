@@ -22,33 +22,38 @@
 #include <Spore\Object.h>
 #include <Spore\Input.h>
 #include <Spore\Simulator\SubSystem\cStrategy.h>
+#include <Spore\Simulator\UIStateMachine.h>
 #include <EASTL\map.h>
 #include <EASTL\vector.h>
 #include <EASTL\string.h>
+#include <EASTL\set.h>
 
 #define GameInputManager (*Simulator::cGameInputManager::Get())
 
 namespace Simulator
 {
 	class cGameInputManager
-		: public DefaultRefCounted
-		, public App::IUnmanagedMessageListener
-		, public cStrategy
+		/* 00h */	: public DefaultRefCounted
+		/* 08h */	, public App::IUnmanagedMessageListener
+		/* 0Ch */	, public cStrategy
 	{
 	public:
 		/* 10h */	virtual void SetTriggerFile(const char* pFileName, int = 0, bool isMain = true);
 		/* 14h */	virtual void func14h_();
 		/* 18h */	virtual bool IsTriggered(int triggerCode);
 		/* 1Ch */	virtual void func1Ch_();
-		/* 20h */	virtual void func20h_(int, int, int);
-		/* 24h */	virtual void func24h_(int, int);
-		/* 28h */	virtual void func28h_(int);
-		/* 2Ch */	virtual bool func2Ch_(int, int, int, int, int, int, int);
-		/* 30h */	virtual bool func30h_(int, int, int, int, int, int);
+		// other arguments set field_60 and field_64
+		/* 20h */	virtual void AddUIStateMachine(UIStateMachine*, int initialState, int);
+		/* 24h */	virtual void AddUIStateMachine2(UIStateMachine*, int initialState);
+		/* 28h */	virtual void func28h_(uint32_t messageId);
+		/* 2Ch */	virtual bool ProcessTransitionForVector(const eastl::vector<UIStateMachineTransition>& transitions, UIStateMachineEvent eventType, UIStateMachineEventKey eventParam, Object* pObject, const Math::Vector3& coords, int objectFlags, int keyModFlags);
+		/// Tries to transition from the current state to the next state given the specified event. 
+		/// If the transition is succesful, it emits its corresponding message.
+		/* 30h */	virtual bool ProcessTransition(UIStateMachineEvent eventType, UIStateMachineEventKey eventParam, Object* pObject, const Math::Vector3& coords, int objectFlags, int keyModFlags);
 		/* 34h */	virtual int func34h_();
 		/* 38h */	virtual void func38h_(int);
-		/* 3Ch */	virtual void func3Ch_(const char*);  // sets UIMachine thing
-		/* 40h */	virtual void func40h_(int, const char*);
+		/* 3Ch */	virtual void LoadUIStateMachine(const char* name);
+		/* 40h */	virtual void DeclareMenu(uint32_t menuId, const char* menuName);
 		/* 44h */	virtual bool func44h_(int, int);
 		/* 48h */	virtual void func48h_(bool);
 		/* 4Ch */	virtual bool OnKeyDown(int virtualKey, KeyModifiers modifiers);
@@ -88,9 +93,8 @@ namespace Simulator
 			/* 2Ch */	bool field_2C;
 		};
 
-		/* 2Ch */	eastl::map<int, int> field_2C;
-		/* 48h */	eastl::map<int, int> field_48;
-		/* 60h */	int field_60;
+		/* 28h */	UIStateMachine mStateMachine;
+		/* 60h */	int mCurrentState;
 		/* 64h */	int field_64;
 		/* 68h */	float mMouseX;
 		/* 6Ch */	float mMouseY;
