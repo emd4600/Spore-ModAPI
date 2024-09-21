@@ -22,7 +22,9 @@
 #include "ContextCheat.h"
 #include "AddressCheat.h"
 #include "AnimLogCheat.h"
+#include "EffectLogCheat.h"
 #include "PackageCheat.h"
+#include "PrintCursorCheat.h"
 #include "UILogCheat.h"
 #include "UIInspectCheat.h"
 
@@ -47,9 +49,11 @@ void AddCheats()
 {
 	CheatManager.AddCheat("devContext", new ContextCheat());
 	CheatManager.AddCheat("devAnimLog", new AnimLogCheat());
+	CheatManager.AddCheat("devEffectLog", new EffectLogCheat());
 	CheatManager.AddCheat("devPackage", new PackageCheat());
 	CheatManager.AddCheat("devLogUI", new UILogCheat());
 	CheatManager.AddCheat("devInspectUI", new UIInspectCheat());
+	CheatManager.AddCheat("devPrintCursor", new PrintCursorCheat());
 
 	AddressCheat::AddCheat(Address(ModAPI::ChooseAddress(0x1498444, 0x1493E5C)), "devRaid");
 	AddressCheat::AddCheat(Address(ModAPI::ChooseAddress(0x149845C, 0x1493E74)), "devSpace");
