@@ -51,6 +51,8 @@
     <LocalDebuggerCommand>$(SporeLauncherPath)Spore ModAPI Launcher.exe</LocalDebuggerCommand>
     <LocalDebuggerWorkingDirectory>$(SporeLauncherPath)</LocalDebuggerWorkingDirectory>
     <DebuggerFlavor>WindowsLocalDebugger</DebuggerFlavor>
+    <PublicIncludeDirectories>
+    </PublicIncludeDirectories>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
@@ -115,8 +117,16 @@
     <ClInclude Include="DetouredSwarmManager.h" />
     <ClInclude Include="EffectEditorCheat.h" />
     <ClInclude Include="EffectEditorMode.h" />
+    <ClInclude Include="EffectLogCheat.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
     <ClInclude Include="FilePFRecord.h" />
     <ClInclude Include="PackageCheat.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
+    <ClInclude Include="PrintCursorCheat.h">
       <SubType>
       </SubType>
     </ClInclude>
@@ -155,8 +165,16 @@
     </ClCompile>
     <ClCompile Include="EffectEditorCheat.cpp" />
     <ClCompile Include="EffectEditorMode.cpp" />
+    <ClCompile Include="EffectLogCheat.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
     <ClCompile Include="FilePFRecord.cpp" />
     <ClCompile Include="PackageCheat.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="PrintCursorCheat.cpp">
       <SubType>
       </SubType>
     </ClCompile>

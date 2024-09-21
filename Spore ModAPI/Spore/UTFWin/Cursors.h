@@ -156,6 +156,9 @@ namespace UTFWin
 			/// cursor_social
 			Socialize = 0x525ff7d,
 
+			/// cursor_friend
+			Friend = 0x755c4eb5,
+
 			/// cursor-trg-domesticate
 			Domesticate = 0xe382f00e,
 
@@ -176,6 +179,15 @@ namespace UTFWin
 
 			/// cursor-gather
 			Gather = 0x3febe40,
+
+			/// cursor-crg-pickup
+			Pickup = 0x3b360dc,
+
+			/// cursor-crg-putdown
+			Putdown = 0x3b360df,
+
+			/// cursor-crg-throw
+			Throw = 0x3b360e4,
 
 			/// cursor_pickup-maracas
 			PickupMaracas = 0x63fe8d4,

@@ -157,23 +157,54 @@ void ThumbnailCaptureScript::CaptureImage() {
 void ThumbnailCaptureScript::InjectListeners() {
 	RemoveListeners();
 	for (auto catUI : GetEditor()->mpPartsPaletteUI->mCategories) {
-		for (auto pageUI : catUI->mPageUIs) {
-			for (auto itemUI : pageUI.page->mStandardItems) {
-				itemUI->field_18->AddWinProc(this);
-				mItemViewers[itemUI->field_18.get()] = itemUI->mpViewer.get();
+		auto subCatUIs = catUI->mpSubcategoriesUI;
+		if (subCatUIs) {
+			for (auto subCatUI : subCatUIs->mCategoryUIs) {
+				for (auto pageUI : catUI->mPageUIs) {
+					for (auto itemUI : pageUI.page->mStandardItems) {
+						itemUI->field_18->AddWinProc(this);
+						mItemViewers[itemUI->field_18.get()] = itemUI->mpViewer.get();
+					}
+				}
 			}
 		}
+		else {
+			for (auto pageUI : catUI->mPageUIs) {
+				for (auto itemUI : pageUI.page->mStandardItems) {
+					itemUI->field_18->AddWinProc(this);
+					mItemViewers[itemUI->field_18.get()] = itemUI->mpViewer.get();
+				}
+			}
+		}
+		
+
+		
 	}
 
 	Renderer.RegisterLayer(this, 40);
 }
 
 void ThumbnailCaptureScript::RemoveListeners() {
+
 	for (auto catUI : GetEditor()->mpPartsPaletteUI->mCategories) {
-		for (auto pageUI : catUI->mPageUIs) {
-			for (auto itemUI : pageUI.page->mStandardItems) {
-				if (itemUI && itemUI->field_18) {
-					itemUI->field_18->RemoveWinProc(this);
+		auto subCatUIs = catUI->mpSubcategoriesUI;
+		if (subCatUIs) {
+			for (auto subCatUI : subCatUIs->mCategoryUIs) {
+				for (auto pageUI : catUI->mPageUIs) {
+					for (auto itemUI : pageUI.page->mStandardItems) {
+						if (itemUI && itemUI->field_18) {
+							itemUI->field_18->RemoveWinProc(this);
+						}
+					}
+				}
+			}
+		}
+		else {
+			for (auto pageUI : catUI->mPageUIs) {
+				for (auto itemUI : pageUI.page->mStandardItems) {
+					if (itemUI && itemUI->field_18) {
+						itemUI->field_18->RemoveWinProc(this);
+					}
 				}
 			}
 		}

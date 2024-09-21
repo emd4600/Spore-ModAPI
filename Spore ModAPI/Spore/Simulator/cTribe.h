@@ -159,7 +159,7 @@ namespace Simulator
 	};
 	ASSERT_SIZE(cTribe, 0x19E0);
 
-	cTribe* SpawnNpcTribe(const Math::Vector3& position, int tribeArchetype, int numMembers, int, bool, cSpeciesProfile* species);
+	cTribe* SpawnNpcTribe(const Math::Vector3& position, int tribeArchetype, int numMembers, int foodAmount, bool, cSpeciesProfile* species);
 }
 
 namespace Addresses(Simulator) {
