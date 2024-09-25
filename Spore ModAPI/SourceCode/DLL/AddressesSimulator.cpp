@@ -200,10 +200,12 @@ namespace Simulator
 		DefineAddress(OnJumpLand, SelectAddress(0xC044D0, 0xC04CB0));
 		DefineAddress(OnStartSwimming, SelectAddress(0xC04610, 0xC04DF0));
 		DefineAddress(Update, SelectAddress(0xC0A590, 0xC0AE30));
+		DefineAddress(TakeDamage, SelectAddress(0xBFC500, 0xBFCF10));
 	}
 
 	namespace Addresses(cCreatureCitizen) {
 		DefineAddress(Update, SelectAddress(0xC24210, 0xC24A30));
+		DefineAddress(TakeDamage, SelectAddress(0xBFC500, 0xBFCF10));
 	}
 
 	namespace Addresses(cCreatureBase)
@@ -229,6 +231,12 @@ namespace Simulator
 		DefineAddress(OnJumpLand, SelectAddress(0xC14670, 0xC14E10));
 		DefineAddress(OnStartSwimming, SelectAddress(0xC147D0, 0xC14F70));
 		DefineAddress(Update, SelectAddress(0xC20C50, 0xC21530));
+		DefineAddress(TakeDamage, SelectAddress(0xBFC500, 0xBFCF10));
+	}
+
+	namespace Addresses(cCombatant)
+	{
+		DefineAddress(TakeDamage, SelectAddress(0xBFC500, 0xBFCF10));
 	}
 
 	namespace Addresses(cCropCirclesToolStrategy)
