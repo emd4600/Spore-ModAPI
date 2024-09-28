@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>eastl namespace | Spore ModAPI SDK for creating C++ mods for Spore</title>
+  <title>Simulator::cCinematicManager class | Spore ModAPI SDK for creating C++ mods for Spore</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,600,600i%7CSource+Code+Pro:400,400i,600" />
   <link rel="stylesheet" href="m-dark.css" />
   <link rel="stylesheet" href="m-documentation.css" />
@@ -45,7 +45,8 @@
     <div class="m-row">
       <div class="m-col-l-10 m-push-l-1">
         <h1>
-          eastl <span class="m-thin">namespace</span>
+          <span class="m-breadcrumb"><a href="namespace_simulator.html">Simulator</a>::<wbr/></span>cCinematicManager <span class="m-thin">class</span>
+          <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_cinematic_manager_8h.html">&lt;Spore ModAPI/Spore/Simulator/SubSystem/CinematicManager.h&gt;</a></div>
         </h1>
         <p><span></span></p>
         <nav class="m-block m-default">
@@ -54,45 +55,60 @@
             <li>
               Reference
               <ul>
-                <li><a href="#namespaces">Namespaces</a></li>
-                <li><a href="#nested-classes">Classes</a></li>
+                <li><a href="#base-classes">Base classes</a></li>
+                <li><a href="#pub-static-methods">Public static functions</a></li>
+                <li><a href="#pub-methods">Public functions</a></li>
+                <li><a href="#pub-attribs">Public variables</a></li>
               </ul>
             </li>
           </ul>
         </nav>
-        <section id="namespaces">
-          <h2><a href="#namespaces">Namespaces</a></h2>
+        <section id="base-classes">
+          <h2><a href="#base-classes">Base classes</a></h2>
           <dl class="m-doc">
-            <dt>namespace <a href="namespaceeastl_1_1_internal.html" class="m-doc">Internal</a></dt>
+            <dt>
+              class <a href="class_app_1_1_i_message_listener.html" class="m-doc">App::IMessageListener</a>
+            </dt>
+            <dd>An interface that can receive messages sent through the app.</dd>
+            <dt>
+              class <a href="class_simulator_1_1c_strategy.html" class="m-doc">cStrategy</a>
+            </dt>
             <dd><span></span></dd>
           </dl>
         </section>
-        <section id="nested-classes">
-          <h2><a href="#nested-classes">Classes</a></h2>
+        <section id="pub-static-methods">
+          <h2><a href="#pub-static-methods">Public static functions</a></h2>
           <dl class="m-doc">
-            <dt>
-              <div class="m-doc-template">template&lt;&gt;</div>
-              struct <a href="structeastl_1_1hash_3_01_resource_i_d_01_4.html" class="m-doc">hash&lt;ResourceID&gt;</a>
-            </dt>
-            <dd>A necessary structure to be able to use <a href="class_resource_i_d.html" class="m-doc">ResourceID</a> on containers such as hash_map.</dd>
-            <dt>
-              <div class="m-doc-template">template&lt;&gt;</div>
-              struct <a href="structeastl_1_1hash_3_01_resource_key_01_4.html" class="m-doc">hash&lt;ResourceKey&gt;</a>
-            </dt>
-            <dd>A necessary structure to be able to use <a href="struct_resource_key.html" class="m-doc">ResourceKey</a> on containers such as hash_map.</dd>
-            <dt>
-              <div class="m-doc-template">template&lt;&gt;</div>
-              struct <a href="structeastl_1_1hash_3_01_simulator_1_1c_collectable_item_i_d_01_4.html" class="m-doc">hash&lt;Simulator::cCollectableItemID&gt;</a>
-            </dt>
-            <dd>A necessary structure to be able to use cCollectableItemID on containers such as hash_map.</dd>
-            <dt>
-              <div class="m-doc-template">template&lt;&gt;</div>
-              struct <a href="structeastl_1_1hash_3_01_simulator_1_1_planet_i_d_01_4.html" class="m-doc">hash&lt;Simulator::PlanetID&gt;</a>
+            <dt id="acf3d74d3c0e49f7560af5e110ad825fb">
+              <span class="m-doc-wrap-bumper">static auto <a href="#acf3d74d3c0e49f7560af5e110ad825fb" class="m-doc-self">Get</a>(</span><span class="m-doc-wrap">) -&gt; <a href="class_simulator_1_1c_cinematic_manager.html" class="m-doc">cCinematicManager</a>*</span>
             </dt>
             <dd><span></span></dd>
-            <dt>
-              <div class="m-doc-template">template&lt;&gt;</div>
-              struct <a href="structeastl_1_1hash_3_01_simulator_1_1_star_i_d_01_4.html" class="m-doc">hash&lt;Simulator::StarID&gt;</a>
+          </dl>
+        </section>
+        <section id="pub-methods">
+          <h2><a href="#pub-methods">Public functions</a></h2>
+          <dl class="m-doc">
+            <dt id="ae499b85e6ae7e55b6d8662400bc035a4">
+              <span class="m-doc-wrap-bumper">auto <a href="#ae499b85e6ae7e55b6d8662400bc035a4" class="m-doc-self">AddCommand</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">const</a> <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">char</a>* commandName,
+              <a href="class_arg_script_1_1_i_command.html" class="m-doc">ArgScript::<wbr />ICommand</a>* command) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">void</a> <span class="m-label m-flat m-warning">virtual</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a5642eecceae692a55a0725e81e7e589a">
+              <span class="m-doc-wrap-bumper">auto <a href="#a5642eecceae692a55a0725e81e7e589a" class="m-doc-self">PlayCinematic</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">const</a> <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">char</a>* cinematicName,
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> arg0,
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> arg1,
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> arg2,
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> arg3,
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> arg4) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">void</a></span>
+            </dt>
+            <dd><span></span></dd>
+          </dl>
+        </section>
+        <section id="pub-attribs">
+          <h2><a href="#pub-attribs">Public variables</a></h2>
+          <dl class="m-doc">
+            <dt id="ae58b416b2f919bb4dab43dbc9995c453">
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">char</a> <a href="#ae58b416b2f919bb4dab43dbc9995c453" class="m-doc-self">padding_20</a>
             </dt>
             <dd><span></span></dd>
           </dl>

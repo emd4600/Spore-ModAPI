@@ -84,13 +84,13 @@
         <section id="pub-methods">
           <h2><a href="#pub-methods">Public functions</a></h2>
           <dl class="m-doc">
-            <dt id="afa2e9a7bfdf6cb72ca144ed3bd9fcdac">
-              <span class="m-doc-wrap-bumper">auto <a href="#afa2e9a7bfdf6cb72ca144ed3bd9fcdac" class="m-doc-self">GetPropertyList</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">const</a> <a href="struct_resource_key.html" class="m-doc">ResourceKey</a>&amp; planetKey) -&gt; <a href="class_app_1_1_property_list.html" class="m-doc">App::<wbr />PropertyList</a>* <span class="m-label m-flat m-warning">pure virtual</span></span>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#afa2e9a7bfdf6cb72ca144ed3bd9fcdac" class="m-doc">GetPropertyList</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">const</a> <a href="struct_resource_key.html" class="m-doc">ResourceKey</a>&amp; planetKey) -&gt; <a href="class_app_1_1_property_list.html" class="m-doc">App::<wbr />PropertyList</a>* <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
-            <dd><span></span></dd>
-            <dt id="a0176db6e52cc11ef2ec0976fb9e04408">
-              <span class="m-doc-wrap-bumper">auto <a href="#a0176db6e52cc11ef2ec0976fb9e04408" class="m-doc-self">func08h</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">const</a> <a href="struct_resource_key.html" class="m-doc">ResourceKey</a>&amp; key,
-              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a>* dst) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">void</a> <span class="m-label m-flat m-warning">pure virtual</span></span>
+            <dd>Returns the property list assigned to the given planet; if the planet still doesn&#x27;t have a property list, it will select one from the game available planets and copy it.</dd>
+            <dt id="a5a1afff13dacaa98e46e53902c2f4f25">
+              <span class="m-doc-wrap-bumper">auto <a href="#a5a1afff13dacaa98e46e53902c2f4f25" class="m-doc-self">LoadPlanetInfo</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">const</a> <a href="struct_resource_key.html" class="m-doc">ResourceKey</a>&amp; key,
+              eastl::tuple&lt;<a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">float</a>, <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">float</a>, <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">float</a>, <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">float</a>, <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">float</a>&gt;&amp; dst) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">void</a> <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
             <dd>returns wta and planetinfo?</dd>
             <dt id="a2fd568a6224032f21ee37921fb580d33">
@@ -176,6 +176,23 @@
         </section>
         <section>
           <h2>Function documentation</h2>
+          <section class="m-doc-details" id="afa2e9a7bfdf6cb72ca144ed3bd9fcdac"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"><a href="class_app_1_1_property_list.html" class="m-doc">App::<wbr />PropertyList</a>* Terrain::<wbr />ITerrainResourceManager::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#afa2e9a7bfdf6cb72ca144ed3bd9fcdac" class="m-doc-self">GetPropertyList</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">const</a> <a href="struct_resource_key.html" class="m-doc">ResourceKey</a>&amp; planetKey) <span class="m-label m-warning">pure virtual</span></span></span>
+            </h3>
+            <p>Returns the property list assigned to the given planet; if the planet still doesn&#x27;t have a property list, it will select one from the game available planets and copy it.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">planetKey</td>
+                  <td></td>
+                </tr>
+              </tbody>
+            </table>
+          </div></section>
           <section class="m-doc-details" id="a332f0588009df99086decedc160a5a93"><div>
             <h3>
               <span class="m-doc-wrap-bumper"><a href="class_app_1_1_property_list.html" class="m-doc">App::<wbr />PropertyList</a>* Terrain::<wbr />ITerrainResourceManager::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a332f0588009df99086decedc160a5a93" class="m-doc-self">SaveTerrain</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">const</a> <a href="struct_resource_key.html" class="m-doc">ResourceKey</a>&amp; outputKey,

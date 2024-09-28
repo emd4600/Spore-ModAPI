@@ -175,6 +175,10 @@
             </dt>
             <dd>Represents celestial bodies in a solar system (except planets), that is, the star and the comets.</dd>
             <dt>
+              class <a href="class_simulator_1_1c_cinematic_manager.html" class="m-doc">cCinematicManager</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
               class <a href="class_simulator_1_1c_city.html" class="m-doc">cCity</a>
             </dt>
             <dd><span></span></dd>
@@ -454,6 +458,18 @@
               class <a href="class_simulator_1_1c_identity_colorable.html" class="m-doc">cIdentityColorable</a>
             </dt>
             <dd>A <a href="namespace_simulator.html" class="m-doc">Simulator</a> class inherited by all those classes that can have an identity color, such as empires, tribes, etc.</dd>
+            <dt>
+              class <a href="class_simulator_1_1_cinematic_action.html" class="m-doc">CinematicAction</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              class <a href="class_simulator_1_1_cinematic_action_unk_base.html" class="m-doc">CinematicActionUnkBase</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              class <a href="class_simulator_1_1_cinematic_vignette_action.html" class="m-doc">CinematicVignetteAction</a>
+            </dt>
+            <dd><span></span></dd>
             <dt>
               class <a href="class_simulator_1_1c_interactable_object.html" class="m-doc">cInteractableObject</a>
             </dt>
@@ -995,6 +1011,10 @@
               struct <a href="struct_simulator_1_1c_wall_data.html" class="m-doc">cWallData</a>
             </dt>
             <dd><span></span></dd>
+            <dt>
+              class <a href="class_simulator_1_1_do_cinematic_action_message.html" class="m-doc">DoCinematicActionMessage</a>
+            </dt>
+            <dd>Sent to execute a single action within a cinematic stage.</dd>
             <dt>
               class <a href="class_simulator_1_1_enter_editor_message.html" class="m-doc">EnterEditorMessage</a>
             </dt>
@@ -1838,7 +1858,8 @@
               <a href="#a4b1f459203b8dbf8583312aa067c8c54acbd409657fa99ec8d030219d2026ee82" class="m-doc">kMsgGalaxyGenerateBinaryMM</a> = 0x3DFF9C6,
               <a href="#a4b1f459203b8dbf8583312aa067c8c54a7aebd8bea2592ecf659816c4b77aa931" class="m-doc">kMsgSpaceRareFound</a> = 0xF46092D4,
               <a href="#a4b1f459203b8dbf8583312aa067c8c54a341fd4d65e722818c6b7b2468403bfd1" class="m-doc">kMsgSpaceRareDiscovered</a> = 0x6779F04,
-              <a href="#a4b1f459203b8dbf8583312aa067c8c54a6e2bae54ff8bc1ca4802d9b9546f21f3" class="m-doc">kMsgStarOwnershipChanged</a> = 0x55BD8F7 }</span>
+              <a href="#a4b1f459203b8dbf8583312aa067c8c54a6e2bae54ff8bc1ca4802d9b9546f21f3" class="m-doc">kMsgStarOwnershipChanged</a> = 0x55BD8F7,
+              <a href="#a4b1f459203b8dbf8583312aa067c8c54a5e1b9764d7c071ed3859c125001d26d3" class="m-doc">kMsgDoCinematicAction</a> = 0x4470A41 }</span>
             </dt>
             <dd><span></span></dd>
             <dt>
@@ -1990,6 +2011,10 @@
             <dd><span></span></dd>
             <dt>
               using <a href="#afc542123329726628d48783fa0bb996b" class="m-doc">OffsetFunction_t</a> = <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">void</a>*(*)(Attribute*)
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              using <a href="#a11672d74a6b7271524b0856de29eff62" class="m-doc">CinematicActionFunction_t</a> = <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">bool</a>(*)(Object*actionData, bool)
             </dt>
             <dd><span></span></dd>
             <dt>
@@ -3314,6 +3339,29 @@
             <dd><span></span></dd>
             <dt>
               <span class="m-doc-wrap-bumper">auto <a href="#a53237be85f8e28d2f33195c87425c293" class="m-doc">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_animal_species_manager.html" class="m-doc">cAnimalSpeciesManager</a>) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">namespace</a></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper"><a href="#ae2092ad001a4948cbebdabb141b04bf4" class="m-doc">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1_cinematic_action.html" class="m-doc">CinematicAction</a>,
+              0x14)</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a7c18643c33572220f5a32fb1a06c8b1c" class="m-doc">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1_cinematic_action.html" class="m-doc">CinematicAction</a>) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">namespace</a></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper"><a href="#a67215dba190142711307f4ef28b67333" class="m-doc">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_cinematic_manager.html" class="m-doc">cCinematicManager</a>,
+              0x3C8)</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a83e25ac95cdc6b7e358a6865b53e80ae" class="m-doc">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_cinematic_manager.html" class="m-doc">cCinematicManager</a>) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">namespace</a></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper"><a href="#a79c75fd8e9d852854a8eb0a51560c0d9" class="m-doc">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1_cinematic_vignette_action.html" class="m-doc">CinematicVignetteAction</a>,
+              0x54)</span>
             </dt>
             <dd><span></span></dd>
             <dt>
@@ -4708,6 +4756,12 @@
                   <p>Sent when the ownership of some star changes. No parameters.</p>
                   </td>
                 </tr>
+                <tr>
+                  <td><a href="#a4b1f459203b8dbf8583312aa067c8c54a5e1b9764d7c071ed3859c125001d26d3" class="m-doc-self" id="a4b1f459203b8dbf8583312aa067c8c54a5e1b9764d7c071ed3859c125001d26d3">kMsgDoCinematicAction</a></td>
+                  <td>
+                  <p><a href="class_simulator_1_1_do_cinematic_action_message.html" class="m-doc">Simulator::<wbr />DoCinematicActionMessage</a> ; sent to execute a single action within a cinematic stage.</p>
+                  </td>
+                </tr>
               </tbody>
             </table>
           </div></section>
@@ -4927,6 +4981,13 @@
             <h3>
               typedef <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">void</a>*(*Simulator::<wbr /><a href="#afc542123329726628d48783fa0bb996b" class="m-doc-self">OffsetFunction_t</a>)(Attribute*)
               <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_simulator_2_serialization_8h.html">&lt;Spore ModAPI/Spore/Simulator/Serialization.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="a11672d74a6b7271524b0856de29eff62"><div>
+            <h3>
+              typedef <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">bool</a>(*Simulator::<wbr /><a href="#a11672d74a6b7271524b0856de29eff62" class="m-doc-self">CinematicActionFunction_t</a>)(Object*actionData, bool)
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_cinematic_manager_8h.html">&lt;Spore ModAPI/Spore/Simulator/SubSystem/CinematicManager.h&gt;</a></div>
             </h3>
             <p><span></span></p>
           </div></section>
@@ -7363,6 +7424,44 @@
             <h3>
               <span class="m-doc-wrap-bumper"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">namespace</a> Simulator::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a53237be85f8e28d2f33195c87425c293" class="m-doc-self">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_animal_species_manager.html" class="m-doc">cAnimalSpeciesManager</a>)</span></span>
               <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_animal_species_manager_8h.html">&lt;Spore ModAPI/Spore/Simulator/SubSystem/AnimalSpeciesManager.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="ae2092ad001a4948cbebdabb141b04bf4"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"> Simulator::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ae2092ad001a4948cbebdabb141b04bf4" class="m-doc-self">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1_cinematic_action.html" class="m-doc">CinematicAction</a>,
+              0x14)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_cinematic_manager_8h.html">&lt;Spore ModAPI/Spore/Simulator/SubSystem/CinematicManager.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="a7c18643c33572220f5a32fb1a06c8b1c"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">namespace</a> Simulator::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a7c18643c33572220f5a32fb1a06c8b1c" class="m-doc-self">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1_cinematic_action.html" class="m-doc">CinematicAction</a>)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_cinematic_manager_8h.html">&lt;Spore ModAPI/Spore/Simulator/SubSystem/CinematicManager.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="a67215dba190142711307f4ef28b67333"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"> Simulator::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a67215dba190142711307f4ef28b67333" class="m-doc-self">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_cinematic_manager.html" class="m-doc">cCinematicManager</a>,
+              0x3C8)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_cinematic_manager_8h.html">&lt;Spore ModAPI/Spore/Simulator/SubSystem/CinematicManager.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="a83e25ac95cdc6b7e358a6865b53e80ae"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">namespace</a> Simulator::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a83e25ac95cdc6b7e358a6865b53e80ae" class="m-doc-self">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_cinematic_manager.html" class="m-doc">cCinematicManager</a>)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_cinematic_manager_8h.html">&lt;Spore ModAPI/Spore/Simulator/SubSystem/CinematicManager.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="a79c75fd8e9d852854a8eb0a51560c0d9"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"> Simulator::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a79c75fd8e9d852854a8eb0a51560c0d9" class="m-doc-self">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1_cinematic_vignette_action.html" class="m-doc">CinematicVignetteAction</a>,
+              0x54)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_cinematic_manager_8h.html">&lt;Spore ModAPI/Spore/Simulator/SubSystem/CinematicManager.h&gt;</a></div>
             </h3>
             <p><span></span></p>
           </div></section>
