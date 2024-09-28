@@ -25,7 +25,7 @@ namespace Simulator
 		, public CinematicActionUnkBase
 	{
 	public:
-		virtual ~CinematicAction();
+		virtual ~CinematicAction() {}
 		virtual int AddRef() override;
 		virtual int Release() override;
 
@@ -66,7 +66,7 @@ namespace Simulator
 
 
 
-	class CinematicVignetteAction
+	class CinematicVignetteActionData
 		: public Object
 		, public DefaultRefCounted
 	{
@@ -98,6 +98,9 @@ namespace Simulator
 
 		static const uint32_t TYPE = 0x55113D6;
 
+		CinematicVignetteActionData();
+		virtual ~CinematicVignetteActionData() {}
+
 		virtual int AddRef() override;
 		virtual int Release() override;
 		virtual void* Cast(uint32_t type) const override;
@@ -123,5 +126,5 @@ namespace Simulator
 		/* 4Ch */	OffsetMultiplier mOffsetMultiplier;  // None
 		/* 50h */	uint32_t field_50;  // -1
 	};
-	ASSERT_SIZE(CinematicVignetteAction, 0x54);
+	ASSERT_SIZE(CinematicVignetteActionData, 0x54);
 }

@@ -169,5 +169,40 @@ namespace Simulator
 	CinematicActionFunction_t CinematicAction::GetStartVignetteFunction() {
 		return (CinematicActionFunction_t)(GetAddress(CinematicAction, StartVignetteFunction_ptr));
 	}
+
+	int CinematicVignetteActionData::AddRef() {
+		return DefaultRefCounted::AddRef();
+	}
+	int CinematicVignetteActionData::Release() {
+		return DefaultRefCounted::Release();
+	}
+	void* CinematicVignetteActionData::Cast(uint32_t type) const {
+		CLASS_CAST(CinematicVignetteActionData);
+		CLASS_CAST(Object);
+		return nullptr;
+	}
+
+	CinematicVignetteActionData::CinematicVignetteActionData()
+		: mActorId()
+		, mVignetteId()
+		, mVignetteKey()
+		, mPosition()
+		, mFacingOffset()
+		, mRelativePosType(PositionType::Unk1)
+		, mRelativePosId()
+		, mFacingType(PositionType::None)
+		, mFacingId()
+		, mNoWait()
+		, mOffsetMultiplier(OffsetMultiplier::None)
+		, field_50(-1)
+	{
+	}
+
+	int CinematicAction::AddRef() {
+		return RefCountTemplate::AddRef();
+	}
+	int CinematicAction::Release() {
+		return RefCountTemplate::Release();
+	}
 }
 #endif
