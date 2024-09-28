@@ -176,7 +176,7 @@ namespace UTFWin
 		/* 4Ch */	virtual int func19() const = 0;
 
 		///
-		/// Sets the unique ID of this object. This ID is used to identfy windows, as it is the one used by FindWindowByID().
+		/// Sets the unique ID of this object. This ID is used to identify windows, as it is the one used by FindWindowByID().
 		/// This ID can also be used on message handling, to check what window raised the message.
 		/// @param controlID The new value of the 'controlID' property.
 		///
