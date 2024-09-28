@@ -23,6 +23,7 @@
 #include <Spore\ResourceKey.h>
 #include <Spore\App\StandardMessage.h>
 #include <Spore\Simulator\cMission.h>
+#include <Spore\Simulator\SubSystem\CinematicManager.h>
 
 namespace Simulator
 {
@@ -100,6 +101,9 @@ namespace Simulator
 
 		/// Sent when the ownership of some star changes. No parameters.
 		kMsgStarOwnershipChanged = 0x55BD8F7,
+
+		/// Simulator::DoCinematicActionMessage ; sent to execute a single action within a cinematic stage
+		kMsgDoCinematicAction = 0x4470A41,
 	};
 
 	class IMessageParameters
@@ -259,6 +263,19 @@ namespace Simulator
 
 		inline uint32_t GetRareID() {
 			return params[0].uint32;
+		}
+	};
+
+	/// Sent to execute a single action within a cinematic stage
+	class DoCinematicActionMessage : App::StandardMessage
+	{
+	public:
+		static const uint32_t ID = kMsgDoCinematicAction;
+
+		DoCinematicActionMessage(CinematicAction* action);
+
+		inline CinematicAction* GetActionData() {
+			return (CinematicAction*)params[0].object;
 		}
 	};
 }

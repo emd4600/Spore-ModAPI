@@ -89,7 +89,7 @@ namespace Simulator
 		/* 24h */	int field_24;
 		/* 28h */	int field_28;
 		/* 2Ch */	bool field_2C;
-		/* 30h */	int field_30;
+		/* 30h */	TexturePtr field_30;
 		/* 34h */	int field_34;
 		/* 38h */	TexturePtr mThumbnail;
 		/* 3Ch */	TexturePtr mLargeThumbnail;

@@ -1,7 +1,9 @@
 #pragma once
 
 #include <cstdint>
+#include <EASTL\functional.h>
 #include <Spore\Internal.h>
+#include <Spore\Hash.h>
 
 namespace Simulator
 {
@@ -43,6 +45,13 @@ namespace Simulator
 		inline unsigned int GetStarIndex() const {
 			return internalValue & 0x00000FFF;
 		}
+
+#ifndef SDK_TO_GHIDRA
+		bool StarID::operator ==(const StarID& b) const;
+		bool StarID::operator !=(const StarID& b) const;
+		bool StarID::operator <(const StarID& b) const;
+		bool StarID::operator >(const StarID& b) const;
+#endif
 	};
 	ASSERT_SIZE(StarID, 4);
 
@@ -85,6 +94,63 @@ namespace Simulator
 		inline unsigned int GetPlanetIndex() const {
 			return internalValue & 0xFF000000 >> 24;
 		}
+
+#ifndef SDK_TO_GHIDRA
+		bool PlanetID::operator ==(const PlanetID& b) const;
+		bool PlanetID::operator !=(const PlanetID& b) const;
+		bool PlanetID::operator <(const PlanetID& b) const;
+		bool PlanetID::operator >(const PlanetID& b) const;
+#endif
 	};
 	ASSERT_SIZE(PlanetID, 4);
+
+#ifndef SDK_TO_GHIDRA
+	inline bool StarID::operator ==(const StarID& b) const
+	{
+		return internalValue == b.internalValue;
+	}
+	inline bool StarID::operator !=(const StarID& b) const
+	{
+		return internalValue != b.internalValue;
+	}
+	inline bool StarID::operator >(const StarID& b) const
+	{
+		return internalValue > b.internalValue;
+	}
+	inline bool StarID::operator <(const StarID& b) const
+	{
+		return internalValue < b.internalValue;
+	}
+
+	inline bool PlanetID::operator ==(const PlanetID& b) const
+	{
+		return internalValue == b.internalValue;
+	}
+	inline bool PlanetID::operator !=(const PlanetID& b) const
+	{
+		return internalValue != b.internalValue;
+	}
+	inline bool PlanetID::operator >(const PlanetID& b) const
+	{
+		return internalValue > b.internalValue;
+	}
+	inline bool PlanetID::operator <(const PlanetID& b) const
+	{
+		return internalValue < b.internalValue;
+	}
+#endif
 }
+
+#ifndef SDK_TO_GHIDRA
+namespace eastl
+{
+	template <> struct hash<Simulator::StarID>
+	{
+		size_t operator()(const Simulator::StarID& val) const { return hash<uint32_t>()(val.internalValue); }
+	};
+	template <> struct hash<Simulator::PlanetID>
+	{
+		size_t operator()(const Simulator::PlanetID& val) const { return hash<uint32_t>()(val.internalValue); }
+	};
+}
+#endif

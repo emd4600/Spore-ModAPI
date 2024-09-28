@@ -7,6 +7,7 @@
 #include <Spore\Simulator\cSpeciesProfile.h>
 #include <Spore\Simulator\cIdentityColorable.h>
 #include <Spore\Simulator\SubSystem\GamePersistenceManager.h>
+#include <Spore\Simulator\SubSystem\CinematicManager.h>
 #include <Spore\Simulator\cDefaultToolProjectile.h>
 #include <Spore\Simulator\cArtilleryProjectile.h>
 #include <Spore\Simulator\cCulturalProjectile.h>
@@ -156,5 +157,17 @@ namespace Simulator
 	auto_METHOD_VOID(cPlanetaryArtifact, LoadFromItem, 
 		Args(SpaceInventoryItemType itemType, const ResourceKey& itemKey, int count, bool arg),
 		Args(itemType, itemKey, count, arg));
+
+	//// CinematicManager ////
+
+	auto_STATIC_METHOD_(cCinematicManager, cCinematicManager*, Get);
+
+	auto_METHOD_VOID(cCinematicManager, PlayCinematic,
+		Args(const char* cinematicName, int arg0, int arg1, int arg2, int arg3, int arg4),
+		Args(cinematicName, arg0, arg1, arg2, arg3, arg4));
+
+	CinematicActionFunction_t CinematicAction::GetStartVignetteFunction() {
+		return (CinematicActionFunction_t)(GetAddress(CinematicAction, StartVignetteFunction_ptr));
+	}
 }
 #endif
