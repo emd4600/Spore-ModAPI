@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Simulator::CinematicVignetteAction class | Spore ModAPI SDK for creating C++ mods for Spore</title>
+  <title>Simulator::CinematicVignetteActionData class | Spore ModAPI SDK for creating C++ mods for Spore</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,600,600i%7CSource+Code+Pro:400,400i,600" />
   <link rel="stylesheet" href="m-dark.css" />
   <link rel="stylesheet" href="m-documentation.css" />
@@ -45,7 +45,7 @@
     <div class="m-row">
       <div class="m-col-l-10 m-push-l-1">
         <h1>
-          <span class="m-breadcrumb"><a href="namespace_simulator.html">Simulator</a>::<wbr/></span>CinematicVignetteAction <span class="m-thin">class</span>
+          <span class="m-breadcrumb"><a href="namespace_simulator.html">Simulator</a>::<wbr/></span>CinematicVignetteActionData <span class="m-thin">class</span>
           <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_cinematic_manager_8h.html">&lt;Spore ModAPI/Spore/Simulator/SubSystem/CinematicManager.h&gt;</a></div>
         </h1>
         <p><span></span></p>
@@ -58,6 +58,7 @@
                 <li><a href="#base-classes">Base classes</a></li>
                 <li><a href="#pub-types">Public types</a></li>
                 <li><a href="#pub-static-attribs">Public static variables</a></li>
+                <li><a href="#typeless-methods">Constructors, destructors, conversion operators</a></li>
                 <li><a href="#pub-methods">Public functions</a></li>
                 <li><a href="#pub-attribs">Public variables</a></li>
               </ul>
@@ -80,25 +81,25 @@
         <section id="pub-types">
           <h2><a href="#pub-types">Public types</a></h2>
           <dl class="m-doc">
-            <dt id="a772f0d3484361486c4ae7f5c4aa555fb">
-              <span class="m-doc-wrap-bumper">enum class <a href="#a772f0d3484361486c4ae7f5c4aa555fb" class="m-doc-self">PositionType</a> { </span><span class="m-doc-wrap"><a href="#a772f0d3484361486c4ae7f5c4aa555fba6adf97f83acf6453d4a6a4b1070f3754" class="m-doc">None</a> = 0,
-              <a href="#a772f0d3484361486c4ae7f5c4aa555fba0ee753d5d25d5d18a10432913ef50f57" class="m-doc">Unk1</a> = 1,
-              <a href="#a772f0d3484361486c4ae7f5c4aa555fbaa62d22910732d5343689f5117999abfa" class="m-doc">Effect</a> = 2,
-              <a href="#a772f0d3484361486c4ae7f5c4aa555fba7870810c355b333446898a0afa8e959a" class="m-doc">ActorNest</a> = 3,
-              <a href="#a772f0d3484361486c4ae7f5c4aa555fba1b5fc8edc64891d4120a74f07a15a209" class="m-doc">ActorHut</a> = 4,
-              <a href="#a772f0d3484361486c4ae7f5c4aa555fba17ae1b8b56e0eb585bbe051050bf8cf3" class="m-doc">ActorTribe</a> = 5,
-              <a href="#a772f0d3484361486c4ae7f5c4aa555fbacfbf3665a66204451e79f068ab6a9970" class="m-doc">ActorCity</a> = 6,
-              <a href="#a772f0d3484361486c4ae7f5c4aa555fba497031794414a552435f90151ac3b54b" class="m-doc">Object</a> = 7,
-              <a href="#a772f0d3484361486c4ae7f5c4aa555fba1cc84619677de81ee6e44149845270a3" class="m-doc">Actor</a> = 8,
-              <a href="#a772f0d3484361486c4ae7f5c4aa555fba5caaf8bdb2fe9bf492c439e51033144d" class="m-doc">NearestWater</a> = 9,
-              <a href="#a772f0d3484361486c4ae7f5c4aa555fba82b4befa50e012af4daf8d6109f63918" class="m-doc">NearestLand</a> = 10 }</span>
+            <dt id="aa90d474c6b776830281b15fdf0821026">
+              <span class="m-doc-wrap-bumper">enum class <a href="#aa90d474c6b776830281b15fdf0821026" class="m-doc-self">PositionType</a> { </span><span class="m-doc-wrap"><a href="#aa90d474c6b776830281b15fdf0821026a6adf97f83acf6453d4a6a4b1070f3754" class="m-doc">None</a> = 0,
+              <a href="#aa90d474c6b776830281b15fdf0821026a0ee753d5d25d5d18a10432913ef50f57" class="m-doc">Unk1</a> = 1,
+              <a href="#aa90d474c6b776830281b15fdf0821026aa62d22910732d5343689f5117999abfa" class="m-doc">Effect</a> = 2,
+              <a href="#aa90d474c6b776830281b15fdf0821026a7870810c355b333446898a0afa8e959a" class="m-doc">ActorNest</a> = 3,
+              <a href="#aa90d474c6b776830281b15fdf0821026a1b5fc8edc64891d4120a74f07a15a209" class="m-doc">ActorHut</a> = 4,
+              <a href="#aa90d474c6b776830281b15fdf0821026a17ae1b8b56e0eb585bbe051050bf8cf3" class="m-doc">ActorTribe</a> = 5,
+              <a href="#aa90d474c6b776830281b15fdf0821026acfbf3665a66204451e79f068ab6a9970" class="m-doc">ActorCity</a> = 6,
+              <a href="#aa90d474c6b776830281b15fdf0821026a497031794414a552435f90151ac3b54b" class="m-doc">Object</a> = 7,
+              <a href="#aa90d474c6b776830281b15fdf0821026a1cc84619677de81ee6e44149845270a3" class="m-doc">Actor</a> = 8,
+              <a href="#aa90d474c6b776830281b15fdf0821026a5caaf8bdb2fe9bf492c439e51033144d" class="m-doc">NearestWater</a> = 9,
+              <a href="#aa90d474c6b776830281b15fdf0821026a82b4befa50e012af4daf8d6109f63918" class="m-doc">NearestLand</a> = 10 }</span>
             </dt>
             <dd><span></span></dd>
             <dt>
-              <span class="m-doc-wrap-bumper">enum class <a href="#a962d79f0faea55251eccf60dbd9a18db" class="m-doc">OffsetMultiplier</a> { </span><span class="m-doc-wrap"><a href="#a962d79f0faea55251eccf60dbd9a18dba7842fa5cfbf1df8ad9ef5bf2e0b4404f" class="m-doc">FootprintRadius</a> = 0,
-              <a href="#a962d79f0faea55251eccf60dbd9a18dbae552f35e3139662654159bebf674e85f" class="m-doc">TargetWidth</a> = 1,
-              <a href="#a962d79f0faea55251eccf60dbd9a18dbad9f8e6a58ce73afe1645f4207fd98c7f" class="m-doc">TargetHeight</a> = 2,
-              <a href="#a962d79f0faea55251eccf60dbd9a18dba6adf97f83acf6453d4a6a4b1070f3754" class="m-doc">None</a> = 3 }</span>
+              <span class="m-doc-wrap-bumper">enum class <a href="#a1044ec60b0fbe6e97197e8a278324b2d" class="m-doc">OffsetMultiplier</a> { </span><span class="m-doc-wrap"><a href="#a1044ec60b0fbe6e97197e8a278324b2da7842fa5cfbf1df8ad9ef5bf2e0b4404f" class="m-doc">FootprintRadius</a> = 0,
+              <a href="#a1044ec60b0fbe6e97197e8a278324b2dae552f35e3139662654159bebf674e85f" class="m-doc">TargetWidth</a> = 1,
+              <a href="#a1044ec60b0fbe6e97197e8a278324b2dad9f8e6a58ce73afe1645f4207fd98c7f" class="m-doc">TargetHeight</a> = 2,
+              <a href="#a1044ec60b0fbe6e97197e8a278324b2da6adf97f83acf6453d4a6a4b1070f3754" class="m-doc">None</a> = 3 }</span>
             </dt>
             <dd><span></span></dd>
           </dl>
@@ -106,8 +107,21 @@
         <section id="pub-static-attribs">
           <h2><a href="#pub-static-attribs">Public static variables</a></h2>
           <dl class="m-doc">
-            <dt id="a95cf823481a839fac845b73b0cf4df09">
-              static <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">const</a> <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">uint32_<wbr />t</a> <a href="#a95cf823481a839fac845b73b0cf4df09" class="m-doc-self">TYPE</a>
+            <dt id="a74309242eee094f017eaf1916465c16b">
+              static <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">const</a> <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">uint32_<wbr />t</a> <a href="#a74309242eee094f017eaf1916465c16b" class="m-doc-self">TYPE</a>
+            </dt>
+            <dd><span></span></dd>
+          </dl>
+        </section>
+        <section id="typeless-methods">
+          <h2><a href="#typeless-methods">Constructors, destructors, conversion operators</a></h2>
+          <dl class="m-doc">
+            <dt id="a4d88889bef0b5771c9a7170a937e0f1a">
+              <span class="m-doc-wrap-bumper"><a href="#a4d88889bef0b5771c9a7170a937e0f1a" class="m-doc-self">CinematicVignetteActionData</a>(</span><span class="m-doc-wrap">)</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="af9ab9ecc59e244253c636be1fef06bda">
+              <span class="m-doc-wrap-bumper"><a href="#af9ab9ecc59e244253c636be1fef06bda" class="m-doc-self">~CinematicVignetteActionData</a>(</span><span class="m-doc-wrap">) <span class="m-label m-flat m-warning">virtual</span></span>
             </dt>
             <dd><span></span></dd>
           </dl>
@@ -115,16 +129,16 @@
         <section id="pub-methods">
           <h2><a href="#pub-methods">Public functions</a></h2>
           <dl class="m-doc">
-            <dt id="a083c4a4c2f3707890f60d0c6f7348cda">
-              <span class="m-doc-wrap-bumper">auto <a href="#a083c4a4c2f3707890f60d0c6f7348cda" class="m-doc-self">AddRef</a>(</span><span class="m-doc-wrap">) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> <span class="m-label m-flat m-warning">override</span></span>
+            <dt id="a259379fbc57ef6a7866cf5db86f7ffab">
+              <span class="m-doc-wrap-bumper">auto <a href="#a259379fbc57ef6a7866cf5db86f7ffab" class="m-doc-self">AddRef</a>(</span><span class="m-doc-wrap">) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> <span class="m-label m-flat m-warning">override</span></span>
             </dt>
             <dd><span></span></dd>
-            <dt id="a9d1c60d74e26ba1bea8f3913881fa6bf">
-              <span class="m-doc-wrap-bumper">auto <a href="#a9d1c60d74e26ba1bea8f3913881fa6bf" class="m-doc-self">Release</a>(</span><span class="m-doc-wrap">) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> <span class="m-label m-flat m-warning">override</span></span>
+            <dt id="a8d4335cdf6c37e090116602d1a0375e2">
+              <span class="m-doc-wrap-bumper">auto <a href="#a8d4335cdf6c37e090116602d1a0375e2" class="m-doc-self">Release</a>(</span><span class="m-doc-wrap">) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> <span class="m-label m-flat m-warning">override</span></span>
             </dt>
             <dd><span></span></dd>
-            <dt id="a2dad8e5e411261b49e8205fe7f92e00f">
-              <span class="m-doc-wrap-bumper">auto <a href="#a2dad8e5e411261b49e8205fe7f92e00f" class="m-doc-self">Cast</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">uint32_<wbr />t</a> type) const -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">void</a>* <span class="m-label m-flat m-warning">override</span></span>
+            <dt id="a3082e31b19790c91cf5a72b69342e153">
+              <span class="m-doc-wrap-bumper">auto <a href="#a3082e31b19790c91cf5a72b69342e153" class="m-doc-self">Cast</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">uint32_<wbr />t</a> type) const -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">void</a>* <span class="m-label m-flat m-warning">override</span></span>
             </dt>
             <dd><span></span></dd>
           </dl>
@@ -132,86 +146,86 @@
         <section id="pub-attribs">
           <h2><a href="#pub-attribs">Public variables</a></h2>
           <dl class="m-doc">
-            <dt id="aa2bd0c8d4240c9e29741a2fb28204cdb">
-              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">uint32_<wbr />t</a> <a href="#aa2bd0c8d4240c9e29741a2fb28204cdb" class="m-doc-self">mActorId</a>
+            <dt id="a78159ff81f97592a4a3910fe9da70a59">
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">uint32_<wbr />t</a> <a href="#a78159ff81f97592a4a3910fe9da70a59" class="m-doc-self">mActorId</a>
             </dt>
             <dd>Actor name.</dd>
-            <dt id="abf0273619b3b8770917a0cd4110e6504">
-              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">uint32_<wbr />t</a> <a href="#abf0273619b3b8770917a0cd4110e6504" class="m-doc-self">mVignetteId</a>
+            <dt id="a478d5dc60382d9037aeb90f9e52b30ed">
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">uint32_<wbr />t</a> <a href="#a478d5dc60382d9037aeb90f9e52b30ed" class="m-doc-self">mVignetteId</a>
             </dt>
             <dd>Vignette identifier.</dd>
-            <dt id="ab7cea8a87b0a54e21c008f829f10aa0b">
-              <a href="struct_resource_key.html" class="m-doc">ResourceKey</a> <a href="#ab7cea8a87b0a54e21c008f829f10aa0b" class="m-doc-self">mVignetteKey</a>
+            <dt id="a9ffc3763c4fa79b9e3b9edbea902f337">
+              <a href="struct_resource_key.html" class="m-doc">ResourceKey</a> <a href="#a9ffc3763c4fa79b9e3b9edbea902f337" class="m-doc-self">mVignetteKey</a>
             </dt>
             <dd>Vignette identifier.</dd>
-            <dt id="a6377c32888c213810ff980490e8eb5b6">
-              <a href="struct_math_1_1_vector3.html" class="m-doc">Math::<wbr />Vector3</a> <a href="#a6377c32888c213810ff980490e8eb5b6" class="m-doc-self">mPosition</a>
+            <dt id="a8b30edc50884b071f18b4e4cdd011488">
+              <a href="struct_math_1_1_vector3.html" class="m-doc">Math::<wbr />Vector3</a> <a href="#a8b30edc50884b071f18b4e4cdd011488" class="m-doc-self">mPosition</a>
             </dt>
             <dd>Relative position (if no options specified, then relative to the actor)</dd>
-            <dt id="a9c728556a3e773d5675a58a0f1dce8f1">
-              <a href="struct_math_1_1_vector3.html" class="m-doc">Math::<wbr />Vector3</a> <a href="#a9c728556a3e773d5675a58a0f1dce8f1" class="m-doc-self">mFacingOffset</a>
+            <dt id="ae93f03a019b5bdbb58d50527fcb922ec">
+              <a href="struct_math_1_1_vector3.html" class="m-doc">Math::<wbr />Vector3</a> <a href="#ae93f03a019b5bdbb58d50527fcb922ec" class="m-doc-self">mFacingOffset</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="aa0704f11f2c9b2a11166767d39e03bdc">
-              <a href="class_simulator_1_1_cinematic_vignette_action.html#a772f0d3484361486c4ae7f5c4aa555fb" class="m-doc">PositionType</a> <a href="#aa0704f11f2c9b2a11166767d39e03bdc" class="m-doc-self">mRelativePosType</a>
+            <dt id="a78a7174d224aa0ef2c7316223330db96">
+              <a href="class_simulator_1_1_cinematic_vignette_action_data.html#aa90d474c6b776830281b15fdf0821026" class="m-doc">PositionType</a> <a href="#a78a7174d224aa0ef2c7316223330db96" class="m-doc-self">mRelativePosType</a>
             </dt>
             <dd>If not None, relative to a position.</dd>
-            <dt id="aa0c5260331336fde4395b9ebcaac0bbf">
-              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">uint32_<wbr />t</a> <a href="#aa0c5260331336fde4395b9ebcaac0bbf" class="m-doc-self">mRelativePosId</a>
+            <dt id="aced612c9066f73128c712162a8436845">
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">uint32_<wbr />t</a> <a href="#aced612c9066f73128c712162a8436845" class="m-doc-self">mRelativePosId</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="a0989b435e53287ba996129116efb1e5b">
-              <a href="class_simulator_1_1_cinematic_vignette_action.html#a772f0d3484361486c4ae7f5c4aa555fb" class="m-doc">PositionType</a> <a href="#a0989b435e53287ba996129116efb1e5b" class="m-doc-self">mFacingType</a>
+            <dt id="a76502ff9d203f4e66ef6025a90c407cb">
+              <a href="class_simulator_1_1_cinematic_vignette_action_data.html#aa90d474c6b776830281b15fdf0821026" class="m-doc">PositionType</a> <a href="#a76502ff9d203f4e66ef6025a90c407cb" class="m-doc-self">mFacingType</a>
             </dt>
             <dd>If not None, face a position with an optional offset mFacingOffset.</dd>
-            <dt id="a1e1ca96d9bb33115241be5bbacca9568">
-              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">uint32_<wbr />t</a> <a href="#a1e1ca96d9bb33115241be5bbacca9568" class="m-doc-self">mFacingId</a>
+            <dt id="afddd7bfd1e85b5862e51ce2295d79ced">
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">uint32_<wbr />t</a> <a href="#afddd7bfd1e85b5862e51ce2295d79ced" class="m-doc-self">mFacingId</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="ad9591d4c8e1c607ce73bbca28e18c656">
-              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">bool</a> <a href="#ad9591d4c8e1c607ce73bbca28e18c656" class="m-doc-self">mNoWait</a>
+            <dt id="a75a67716dc86376d89dfda605fb83cef">
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">bool</a> <a href="#a75a67716dc86376d89dfda605fb83cef" class="m-doc-self">mNoWait</a>
             </dt>
             <dd>state does not wait for routing to finish</dd>
-            <dt id="a912e08713d406a790acba78b0c8e3f04">
-              <a href="class_simulator_1_1_cinematic_vignette_action.html#a962d79f0faea55251eccf60dbd9a18db" class="m-doc">OffsetMultiplier</a> <a href="#a912e08713d406a790acba78b0c8e3f04" class="m-doc-self">mOffsetMultiplier</a>
+            <dt id="a1cb87bbc30414c51365c35ba07e56dbe">
+              <a href="class_simulator_1_1_cinematic_vignette_action_data.html#a1044ec60b0fbe6e97197e8a278324b2d" class="m-doc">OffsetMultiplier</a> <a href="#a1cb87bbc30414c51365c35ba07e56dbe" class="m-doc-self">mOffsetMultiplier</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="a969deda56249be7d8c5a7b4f4969c9d0">
-              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">uint32_<wbr />t</a> <a href="#a969deda56249be7d8c5a7b4f4969c9d0" class="m-doc-self">field_50</a>
+            <dt id="a58f49ede01896020edae66bfa140c6dd">
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">uint32_<wbr />t</a> <a href="#a58f49ede01896020edae66bfa140c6dd" class="m-doc-self">field_50</a>
             </dt>
             <dd><span></span></dd>
           </dl>
         </section>
         <section>
           <h2>Enum documentation</h2>
-          <section class="m-doc-details" id="a962d79f0faea55251eccf60dbd9a18db"><div>
+          <section class="m-doc-details" id="a1044ec60b0fbe6e97197e8a278324b2d"><div>
             <h3>
-              enum class Simulator::<wbr />CinematicVignetteAction::<wbr /><a href="#a962d79f0faea55251eccf60dbd9a18db" class="m-doc-self">OffsetMultiplier</a>
+              enum class Simulator::<wbr />CinematicVignetteActionData::<wbr /><a href="#a1044ec60b0fbe6e97197e8a278324b2d" class="m-doc-self">OffsetMultiplier</a>
             </h3>
             <p><span></span></p>
             <table class="m-table m-fullwidth m-flat m-doc">
               <thead><tr><th style="width: 1%">Enumerators</th><th></th></tr></thead>
               <tbody>
                 <tr>
-                  <td><a href="#a962d79f0faea55251eccf60dbd9a18dba7842fa5cfbf1df8ad9ef5bf2e0b4404f" class="m-doc-self" id="a962d79f0faea55251eccf60dbd9a18dba7842fa5cfbf1df8ad9ef5bf2e0b4404f">FootprintRadius</a></td>
+                  <td><a href="#a1044ec60b0fbe6e97197e8a278324b2da7842fa5cfbf1df8ad9ef5bf2e0b4404f" class="m-doc-self" id="a1044ec60b0fbe6e97197e8a278324b2da7842fa5cfbf1df8ad9ef5bf2e0b4404f">FootprintRadius</a></td>
                   <td>
                   <p>Uses the foot radius of the actor as an offset multiplier.</p>
                   </td>
                 </tr>
                 <tr>
-                  <td><a href="#a962d79f0faea55251eccf60dbd9a18dbae552f35e3139662654159bebf674e85f" class="m-doc-self" id="a962d79f0faea55251eccf60dbd9a18dbae552f35e3139662654159bebf674e85f">TargetWidth</a></td>
+                  <td><a href="#a1044ec60b0fbe6e97197e8a278324b2dae552f35e3139662654159bebf674e85f" class="m-doc-self" id="a1044ec60b0fbe6e97197e8a278324b2dae552f35e3139662654159bebf674e85f">TargetWidth</a></td>
                   <td>
                   <p>Uses the max width of the target object as an offset multiplier.</p>
                   </td>
                 </tr>
                 <tr>
-                  <td><a href="#a962d79f0faea55251eccf60dbd9a18dbad9f8e6a58ce73afe1645f4207fd98c7f" class="m-doc-self" id="a962d79f0faea55251eccf60dbd9a18dbad9f8e6a58ce73afe1645f4207fd98c7f">TargetHeight</a></td>
+                  <td><a href="#a1044ec60b0fbe6e97197e8a278324b2dad9f8e6a58ce73afe1645f4207fd98c7f" class="m-doc-self" id="a1044ec60b0fbe6e97197e8a278324b2dad9f8e6a58ce73afe1645f4207fd98c7f">TargetHeight</a></td>
                   <td>
                   <p>Uses the height of the target object as an offset multiplier.</p>
                   </td>
                 </tr>
                 <tr>
-                  <td><a href="#a962d79f0faea55251eccf60dbd9a18dba6adf97f83acf6453d4a6a4b1070f3754" class="m-doc-self" id="a962d79f0faea55251eccf60dbd9a18dba6adf97f83acf6453d4a6a4b1070f3754">None</a></td>
+                  <td><a href="#a1044ec60b0fbe6e97197e8a278324b2da6adf97f83acf6453d4a6a4b1070f3754" class="m-doc-self" id="a1044ec60b0fbe6e97197e8a278324b2da6adf97f83acf6453d4a6a4b1070f3754">None</a></td>
                   <td>
                   <p><span></span></p>
                   </td>
