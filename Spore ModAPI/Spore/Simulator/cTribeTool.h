@@ -24,7 +24,7 @@ namespace Simulator
 		using Object::Cast;
 
 	public:
-		/* 1ECh */	float field_1EC;
+		/* 1ECh */	uint32_t field_1EC;
 		/* 1F0h */	int field_1F0;
 		/* 1F4h */	int field_1F4;
 		/* 1F8h */	int field_1F8;

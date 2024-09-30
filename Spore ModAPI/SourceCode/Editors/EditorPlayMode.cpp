@@ -111,7 +111,7 @@ namespace Editors
 		Args(PlayModeUI* a1, uint32_t a2, uint32_t a3, Graphics::ILightingWorld* a4, int8_t a5),
 		Args(a1, a2, a3, a4, a5));
 
-	auto_METHOD_VOID(PlayModeBackgrounds, LoadBackgroudFiles,
+	auto_METHOD_VOID(PlayModeBackgrounds, LoadBackgroundFiles,
 		Args(int8_t backgroundSet), Args(backgroundSet));
 
 	auto_METHOD(PlayModeBackgrounds, bool, HandleUIButton,
