@@ -38,7 +38,7 @@ namespace UTFWin
 		kBtnFlagFixedHeight = 0x00000004
 	};
 	
-	/// Flags relted to the state of a button that can be set to an UTFWin::IButton.
+	/// Flags related to the state of a button that can be set to an UTFWin::IButton.
 	enum ButtonStateFlags
 	{
 		kBtnStateSelected = 4
