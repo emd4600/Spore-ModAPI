@@ -94,22 +94,22 @@ namespace Simulator
 		/// Upgrades the player tribe's totem base and food mat (Cutscene only)
 		kMsgTribeUpgradeFoodMat = 0x05751170,
 		
+		/// Sent to notify the game that a new tribal totem needs to be added (Cutscene only)
+		kMsgNotifyTotemNeeded = 0x05cd5482,
+
+		/// Sent to notify the game that the tribal upgrade or totem placement has finished so that game can save (Cutscene only)
+		kMsgNotifyUpgradeDone = 0x05cd5482,
+
 		/// Restarts the tribal stage (as though tribal hut has been destroyed)
 		kMsgTribeRestart = 0x0420e32a,
-
-		/// Sent to notify the game that a new tribal totem needs to be added
-		kMsgNotifyTotemNeeded = 0x05cd5482,
-		
-		/// Sent to notify the game that the tribal upgrade or totem placement has finished so that game can save
-		kMsgNotifyUpgradeDone = 0x05cd5482,
 		
 		/// Moves the tribal camera  to point towards the center of your tribe
 		kMsgTribeMoveCameraToTribe = 0x056cf231,
 
-		/// TRG2CVG - Shows the city hall
+		/// TRG2CVG - Shows the city hall (Cutscene only)
 		kMsgCinematicTRG2CVGShowCityHall = 0x069479a8,
 
-		/// TRG2CVG - Hides the city hall
+		/// TRG2CVG - Hides the city hall (Cutscene only)
 		kMsgCinematicTRG2CVGHideCityHall = 0x0694797d,
 		
 		/////////////
