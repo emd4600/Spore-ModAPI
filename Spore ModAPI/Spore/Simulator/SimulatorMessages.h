@@ -66,7 +66,7 @@ namespace Simulator
 		/// Hatches the avatar creature's egg in creature stage
 		kMsgHatchAvatarEggs = 0x06566531,
 
-		/// Upgrades the player's nest to the current brain level(?) in creature stage
+		/// Upgrades the player's nest to the current brain level(?) in creature stage. May be cutscene only.
 		kMsgUpgradeNest = 0x06555abc,
 
 		/// Respawns the avatar creature at their nest in creature stage
@@ -85,13 +85,13 @@ namespace Simulator
 		// Tribe Stage
 		///////////////
 
-		/// Upgrades the player tribe's main hut
+		/// Upgrades the player tribe's main hut (Cutscene only)
 		kMsgTribeUpgradeHut = 0x0575116e,
 
-		/// Upgrades the player tribe's campfire and layout decal
+		/// Upgrades the player tribe's campfire and layout decal (Cutscene only)
 		kMsgTribeUpgradeCampfire = 0x0575116f,
 
-		/// Upgrades the player tribe's totem base and food mat
+		/// Upgrades the player tribe's totem base and food mat (Cutscene only)
 		kMsgTribeUpgradeFoodMat = 0x05751170,
 		
 		/// Restarts the tribal stage (as though tribal hut has been destroyed)
@@ -103,8 +103,8 @@ namespace Simulator
 		/// Sent to notify the game that the tribal upgrade or totem placement has finished so that game can save
 		kMsgNotifyUpgradeDone = 0x05cd5482,
 		
-		/// Moves the tribal camera back
-		kMsgTribeMoveCameraBack = 0x056cf231,
+		/// Moves the tribal camera  to point towards the center of your tribe
+		kMsgTribeMoveCameraToTribe = 0x056cf231,
 
 		/// TRG2CVG - Shows the city hall
 		kMsgCinematicTRG2CVGShowCityHall = 0x069479a8,
