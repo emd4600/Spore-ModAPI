@@ -31,10 +31,16 @@ namespace Simulator
 		/// Simulator::EnterEditorMessage; Enters the correct editor modifying the specified creation.
 		kMsgEnterEditor = 0x53850BAE,
 
+		// Switches the editor. Use the desired editor ID as the message data .
+		kMsgSwitchEditor = 0x0212D3E7,
+
 		kMsgSwitchGameMode = 0x0212D3E7,
 
 		/// Saves the game, pausing the game and showing a dialog on success. Use with message data `1` (as in, an integer).
 		kMsgSaveGame = 0x1CD20F0,
+
+		/// Sent when loading a saved game.
+		kMessageLoadGame = 0xf8b1a2af,
 
 		/// Simulator::GameNounStatusChangedMessage
 		kMsgGameNounStatusChanged = 0x1A0219E,
@@ -58,6 +64,9 @@ namespace Simulator
 		/// Sent when cell stage has begun
 		kMsgCellStageStart = 0x047c1d19,
 
+		/// Sent when cell stage is transitioning to creature stage
+		kMsgCellToCreatureTransition = 0x02A4f8f0,
+
 
 		//////////////////
 		// Creature Stage
@@ -79,7 +88,10 @@ namespace Simulator
 		//kCinematicCRG2TRGPreload = 0x04b719d4,
 
 		/// Transitions creature stage to tribal stage
-		kMsgCinematicTransitionToTribe = 0x0477f66c,
+		kMsgTransitionToTribe = 0x0477f66c,
+		
+		/// Sent when the avatar creature transitions from creature stage to tribal stage (what is the difference between these?)
+		kMsgCreatureToTribeTransition = 0x0477f66c,
 
 		///////////////
 		// Tribe Stage
@@ -140,6 +152,9 @@ namespace Simulator
 		///////////////
 		// Space Stage
 		///////////////
+
+		/// Sent when launching a space stage game form the main menu
+		kMsgSpaceGameFromLaunchScreen = 0x02364016,
 
 		/// Sent when the player gets new tools in a space stage cutscene (TODO: Does this also get called outside of cutscenes?)
 		kMsgCinematicSpaceGetTools = 0x06526395,
