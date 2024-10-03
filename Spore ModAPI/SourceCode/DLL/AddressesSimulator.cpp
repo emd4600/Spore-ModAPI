@@ -103,6 +103,7 @@
 #include <Spore\Simulator\SubSystem\AnimalSpeciesManager.h>
 #include <Spore\Simulator\SubSystem\PlantSpeciesManager.h>
 #include <Spore\Simulator\SubSystem\GamePersistenceManager.h>
+#include <Spore\Simulator\SubSystem\CinematicManager.h>
 #include <Spore\Simulator\NounClassFactories.h>
 
 namespace Addresses(Simulator)
@@ -1104,6 +1105,15 @@ namespace Simulator
 
 	namespace Addresses(cSpatialObject) {
 		DefineAddress(SetModelKey, SelectAddress(0xC87B30, 0xC889A0));
+	}
+
+	namespace Addresses(CinematicAction) {
+		DefineAddress(StartVignetteFunction_ptr, SelectAddress(0xAD3D50, 0xAD3EF0));
+	}
+
+	namespace Addresses(cCinematicManager) {
+		DefineAddress(Get, SelectAddress(0xB3D430, 0xB3D5D0));
+		DefineAddress(PlayCinematic, SelectAddress(0xAE0480, 0xAE08B0));
 	}
 }
 

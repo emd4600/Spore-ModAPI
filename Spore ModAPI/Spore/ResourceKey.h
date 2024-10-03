@@ -81,6 +81,8 @@ ASSERT_SIZE(ResourceKey, 0xC);
 #define type_id(id) ResourceKey(0, id, 0)
 #define group_id(id) ResourceKey(0, 0, id)
 
+#define WILDCARD_KEY ResourceKey(ResourceKey::kWildcardID, ResourceKey::kWildcardID, ResourceKey::kWildcardID)
+
 inline ResourceKey::ResourceKey()
 #ifndef SDK_TO_GHIDRA
 	: instanceID(0)
@@ -125,7 +127,7 @@ inline bool ResourceKey::operator >(const ResourceKey &b) const
 
 inline bool ResourceKey::operator <(const ResourceKey &b) const
 {
-	return groupID > b.groupID;
+	return groupID < b.groupID;
 }
 
 namespace eastl
