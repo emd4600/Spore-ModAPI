@@ -219,6 +219,47 @@ namespace Simulator
 		/// Sent when the ownership of some star changes. No parameters.
 		kMsgStarOwnershipChanged = 0x55BD8F7,
 
+		/////////////////
+		// Scenario Mode
+		/////////////////
+
+		/// Simulator::ScenarioCreatureHealedMessage; called when a creature is healed (either by natural heal rate, or using a medkit) in Scenario mode
+		kMsgScenarioCreatureHealed = 0x7C789F8,
+
+		/// Simulator::ScenarioEnergyConsumedMessage; sent when the player consumes captain energy
+		kMsgScenarioEnergyConsumed = 0x7C7A52E,
+
+		/// No data, called when pressing the undo button in the scenario editor
+		kMsgScenarioUndo = 0xC9D86390,
+		/// No data, called when pressing the redo button in the scenario editor
+		kMsgScenarioRedo = 0xC9D86391,
+
+		/// Called when the captain is finished beaming down in scenario mode
+		kMsgCinematicScenarioBeamDownComplete = 0x078eab55,
+
+		/// Removes the avatar from a scenario cutscene
+		kMsgCinematicScenarioClearAvatar = 0x07b509fe,
+
+		/// Called when the size of the talked-to creature or object is being calculated. (TODO: Seems to generate one of 3 values, how to access these?)
+		kMsgCinematicTalkToSizeSetup = 0x07d0c530,
+
+		/// Called when the greeting style of the talked-to creature is being determined. (TODO: Seems to generate one of 5 values, how to access these?)
+		kMsgCinematicTalkToGreetSetup = 0x07da0410,
+
+		/// Called when the textbox style of the talked-to creature or object is being determined. (TODO: Seems to generate one of 5 values, how to access these?)
+		kMsgCinematicTalkToTextSetup = 0x0754ae8a,
+
+		/// Called when the animation style (sentient, animal, epic) of the talked-to creature is being determined.  (TODO: Seems to generate one of 3 values, how to access these?)
+		kMsgCinematicTalkToAnimStyleSetup = 0x07688cad,
+
+		/// Called when the animation emotion of the talked-to creature is being determined.  (TODO: Seems to generate one of 5 values, how to access these?)
+		kMsgCinematicTalkToAnimEmotionSetup = 0x07688cad,
+
+		/// Called when the page waiting style (wait for next or wait for last) of the talk-to dialogue is being determined (TODO: Seems to generate one of 2 values, how to access these?)
+		kMsgCinematicTalkToPageSetup = 0x0750d732,
+
+		/// Called when the talk-to dialogue skips a blank page
+		kMsgCinematicTalkToSkipBlankPage = 0x07aaa58c,
 	};
 
 	class IMessageParameters
