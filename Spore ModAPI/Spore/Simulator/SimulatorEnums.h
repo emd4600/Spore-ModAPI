@@ -691,4 +691,28 @@ namespace Simulator
 		Unk10 = 10,
 		Unk11 = 10,
 	};
+
+	enum TribeToolType
+	{
+		kTribeToolTypeNone = 0,
+		kTribeToolTypeAttack1 = 1,
+		kTribeToolTypeAttack2 = 2,
+		kTribeToolTypeAttack3 = 3,
+		kTribeToolTypeSocial1 = 4,
+		kTribeToolTypeSocial2 = 5,
+		kTribeToolTypeSocial3 = 6,
+		kTribeToolTypeGather = 7,
+		kTribeToolTypeFish = 8,
+		kTribeToolTypeHeal = 9,
+		kTribeToolTypeFirepit = 10,
+		kTribeToolTypeChieftain = 11,
+	};
+
+	enum TribeToolClass
+	{
+		kTribeToolClassNone = 0,
+		kTribeToolClassAttack = 1,
+		kTribeToolClassSocial = 2,
+		kTribeToolClassOther = 3,
+	};
 }

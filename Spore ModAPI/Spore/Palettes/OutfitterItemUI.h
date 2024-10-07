@@ -39,6 +39,7 @@ namespace Palettes
 	class OutfitterItemUI : public DefaultItemFrameUI, public App::IMessageListener
 	{
 	public:
+		virtual void Initialize(PaletteItem* pItem, UTFWin::IWindow* pWindow, UTFWin::IWindow* pItemsPanel, PaletteInfo* pInfo) override;
 
 	public:
 		/* 24h */	IWindowPtr field_24;  // possible display of the creature
@@ -59,6 +60,10 @@ namespace Palettes
 		/* 68h */	int field_68;  // not initialized
 		/// If this palette item happens to be an editor model, this will point to the model type.
 		/* 6Ch */	uint32_t mItemModelTypeID;  // -1
+		/// `toolData_ToolType`
 		/* 70h */	uint32_t mToolTypeID;
 	};
+	namespace Addresses(OutfitterItemUI) {
+		DeclareAddress(Initialize);  // 0x5EF6E0 0x5EF8D0
+	}
 }

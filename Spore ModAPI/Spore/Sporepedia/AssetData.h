@@ -3,8 +3,12 @@
 #include <Spore\App\PropertyList.h>
 #include <Spore\Pollinator\cAssetMetadata.h>
 #include <Spore\Sporepedia\OTDBParameters.h>
+#include <Spore\Simulator\cPlanetRecord.h>
 #include <Spore\Object.h>
 #include <EASTL\fixed_vector.h>
+
+#define cSPAssetDataOTDBPtr eastl::intrusive_ptr<Sporepedia::cSPAssetDataOTDB>
+#define cSPSpaceAssetDataOTDBPtr eastl::intrusive_ptr<Sporepedia::cSPSpaceAssetDataOTDB>
 
 namespace Sporepedia
 {
@@ -193,4 +197,29 @@ namespace Sporepedia
 		DeclareAddress(ProcessSummary);
 		DeclareAddress(SetParameter);
 	}
+
+
+	class cSPSpaceAssetDataOTDB
+		: public Sporepedia::cSPAssetDataOTDB
+	{
+	public:
+		cSPSpaceAssetDataOTDB();
+
+		/* B8h */	virtual Simulator::cPlanetRecord* GetPlanetRecord();
+		/* BCh */	virtual void SetIsPlayable(bool isPlayable);
+		/* C0h */	virtual void SetSubtype(uint32_t subtype);
+		/* C4h */	virtual void funcC4h();
+
+	public:
+		/* 78h */	int field_78;
+		/* 7Ch */	int field_7C;
+		/* 80h */	Simulator::PlanetID mPlanetID;  // -1
+		/* 84h */	int field_84;
+		/* 88h */	int field_88;
+		/* 8Ch */	int field_8C;  // MAX_INT
+		/* 90h */	float field_90;  // -1.0
+		/* 94h */	int field_94;
+		/* 98h */	int field_98;
+	};
+	ASSERT_SIZE(cSPSpaceAssetDataOTDB, 0x9C);
 }

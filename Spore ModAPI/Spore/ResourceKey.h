@@ -122,12 +122,22 @@ inline bool ResourceKey::operator !=(const ResourceKey &b) const
 
 inline bool ResourceKey::operator >(const ResourceKey &b) const
 {
-	return groupID > b.groupID;
+	return b < *this;
 }
 
 inline bool ResourceKey::operator <(const ResourceKey &b) const
 {
-	return groupID < b.groupID;
+	if (instanceID == b.instanceID) {
+		if (typeID == b.typeID) {
+			return groupID < b.groupID;
+		}
+		else {
+			return typeID < b.typeID;
+		}
+	}
+	else {
+		return instanceID < b.instanceID;
+	}
 }
 
 namespace eastl
