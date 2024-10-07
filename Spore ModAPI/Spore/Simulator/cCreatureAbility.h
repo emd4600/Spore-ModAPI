@@ -24,9 +24,12 @@
 #include <EASTL\vector.h>
 #include <Spore\App\PropertyList.h>
 
+#define cCreatureAbilityPtr eastl::intrusive_ptr<Simulator::cCreatureAbility>
+
 namespace Simulator
 {
 	class cCreatureAbility
+		: public RefCountTemplate
 	{
 	public:
 		virtual ~cCreatureAbility() {}

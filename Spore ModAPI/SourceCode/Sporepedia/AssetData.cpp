@@ -2,6 +2,7 @@
 #include <Spore\Sporepedia\ObjectTemplateDB.h>
 #include <Spore\Sporepedia\AssetData.h>
 #include <Spore\Sporepedia\AssetViewManager.h>
+#include <Spore\Simulator\SubSystem\StarManager.h>
 
 namespace Sporepedia
 {
@@ -142,5 +143,39 @@ namespace Sporepedia
 	auto_METHOD_VIRTUAL_VOID(cSPAssetDataOTDB, IAssetData, SetSummary, Args(bool asyncLoad), Args(asyncLoad));
 	auto_METHOD_VIRTUAL_VOID(cSPAssetDataOTDB, IAssetData, ProcessSummary, Args(OTDB::ParameterResource* pSummary), Args(pSummary));
 	auto_METHOD_VIRTUAL_VOID(cSPAssetDataOTDB, IAssetData, SetParameter, Args(const OTDB::Parameter& parameter), Args(parameter));
+
+
+
+	Simulator::cPlanetRecord* cSPSpaceAssetDataOTDB::GetPlanetRecord() {
+		if (Simulator::cStarManager::Get() && mPlanetID.internalValue != 0) {
+			return StarManager.GetPlanetRecord(mPlanetID);
+		}
+		else {
+			return nullptr;
+		}
+	}
+	void cSPSpaceAssetDataOTDB::SetIsPlayable(bool isPlayable) {
+		mIsPlayable = isPlayable;
+	}
+	void cSPSpaceAssetDataOTDB::SetSubtype(uint32_t subtype) {
+		mSubtype = subtype;
+	}
+	void cSPSpaceAssetDataOTDB::funcC4h() {
+		CALL(Address(0xDCFB70), void, Args(cSPSpaceAssetDataOTDB*), Args(this));
+	}
+
+	cSPSpaceAssetDataOTDB::cSPSpaceAssetDataOTDB()
+		: field_78()
+		, field_7C()
+		, mPlanetID(-1)
+		, field_84()
+		, field_88()
+		, field_8C(0x7fffffff)
+		, field_90(-1.0f)
+		, field_94()
+		, field_98()
+	{
+
+	}
 }
 #endif

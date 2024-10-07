@@ -38,6 +38,7 @@
 #include <Spore\Simulator\SubSystem\SpaceTrading.h>
 #include <Spore\Simulator\SubSystem\TerraformingManager.h>
 #include <Spore\Simulator\SubSystem\CinematicManager.h>
+#include <Spore\Simulator\SubSystem\UIAssetDiscoveryManager.h>
 
 #include <Spore\Simulator\cGameData.h>
 #include <Spore\Simulator\cGonzagoSimulator.h>

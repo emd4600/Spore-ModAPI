@@ -84,6 +84,8 @@
 #include <Spore\Simulator\cDefaultToolProjectile.h>
 #include <Spore\Simulator\cPlanetaryArtifact.h>
 #include <Spore\Simulator\cTribe.h>
+#include <Spore\Simulator\cTribeTool.h>
+#include <Spore\Simulator\cTribeToolData.h>
 #include <Spore\Simulator\SubSystem\cRelationshipManager.h>
 #include <Spore\Simulator\SubSystem\GameBehaviorManager.h>
 #include <Spore\Simulator\SubSystem\GameInputManager.h>
@@ -142,10 +144,19 @@ namespace Addresses(Simulator)
 	DefineAddress(CreateUFO, SelectAddress(0x102BB50, 0x102AC60));
 
 	DefineAddress(SpawnNpcTribe, SelectAddress(0xC92860, 0xC932F0));
+	DefineAddress(sTribeFishHotSpots_ptr, SelectAddress(0x157EB90 ,0x157ABB0));
+	DefineAddress(sTribeFishTimer_ptr, SelectAddress(0x1699678 ,0x16953F8));
+	DefineAddress(sTribeFishEndTime_ptr, SelectAddress(0x16995E8 ,0x1695368));
+
+	DefineAddress(LoadTribeToolsData, SelectAddress(0xC9D7F0, 0xC9DFE0));
+	DefineAddress(sTribeToolDataArray_ptr, SelectAddress(0x169DC94 ,0x1699A14));
+	DefineAddress(GetTribeToolData, SelectAddress(0xC9C860, 0xC9D050));
+	DefineAddress(DisposeTribeToolsData, SelectAddress(0xC9DED0, 0xC9E6C0));
 	
 	DefineAddress(GetMainSpeciesImageKey, SelectAddress(0x1066AF0, 0x1065F10));
 
 	DefineAddress(GetPlayerHomePlanet, SelectAddress(0x10223F0, 0x1021220));
+
 
 #ifndef SDK_TO_GHIDRA
 	DefineAddress(LightingWorld_ptr, SelectAddress(0x1682CD4, 0x167EA54));
@@ -1114,6 +1125,15 @@ namespace Simulator
 	namespace Addresses(cCinematicManager) {
 		DefineAddress(Get, SelectAddress(0xB3D430, 0xB3D5D0));
 		DefineAddress(PlayCinematic, SelectAddress(0xAE0480, 0xAE08B0));
+	}
+
+	namespace Addresses(cTribe) {
+		DefineAddress(GetToolByType, SelectAddress(0xC8ED20, 0xC8F870));
+	}
+
+	namespace Addresses(cTribeTool) {
+		DefineAddress(GetToolClass, SelectAddress(0xC9CAB0, 0xC9D2A0));
+		DefineAddress(GetRefundMoney, SelectAddress(0xC9C970, 0xC9D160));
 	}
 }
 
