@@ -105,7 +105,7 @@ namespace Simulator
 		/* 36Ch */	eastl::vector<cTribeToolPtr> mTools;
 		/* 380h */	eastl::vector<cTribeToolPtr> mSocialTools;
 		/* 394h */	eastl::hash_map<int, cCommunityLayout> field_394;
-		/* 3B4h */	cCommunityLayout field_3B4;
+		/* 3B4h */	cCommunityLayout mTribeLayout;
 		/* 418h */	eastl::fixed_vector<int, 45> field_418;
 		/* 4E4h */	eastl::hash_map<int, eastl::deque<ObjectPtr>> field_4E4;
 		/* 504h */	int field_504;  // not initialized

@@ -24,11 +24,11 @@ namespace Simulator
 		using Object::Cast;
 
 	public:
-		/* 1ECh */	uint32_t field_1EC;
+		/* 1ECh */	uint32_t field_1EC; // value always seems to be 0x1984618, at least in player villages
 		/* 1F0h */	int field_1F0;
 		/* 1F4h */	int field_1F4;
 		/* 1F8h */	int field_1F8;
-		/* 1FCh */	int mToolType;
+		/* 1FCh */	uint32_t mToolType; // value seems usually to be 0x1b5e3868, at least in player villages
 		/* 200h */	cGonzagoTimer mCreationTimer;
 		/* 220h */	cGonzagoTimer mDestroyedTimer;
 		/* 240h */	int field_240;
