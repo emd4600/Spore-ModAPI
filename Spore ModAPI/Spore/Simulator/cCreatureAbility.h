@@ -43,7 +43,6 @@ namespace Simulator
 		/// @param
 		uint32_t GetAnimationID(int index);
 
-		/* 04h */	int field_04;
 		/* 08h */	int mType;
 		/* 0Ch */	int mCategory;
 		/* 10h */	int mSocialCategory;

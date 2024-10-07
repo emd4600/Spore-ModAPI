@@ -703,7 +703,7 @@ namespace Simulator
 		kTribeToolTypeSocial3 = 6,
 		kTribeToolTypeGather = 7,
 		kTribeToolTypeFish = 8,
-		kTribeToolTypeGather = 9,
+		kTribeToolTypeHeal = 9,
 		kTribeToolTypeFirepit = 10,
 		kTribeToolTypeChieftain = 11,
 	};
