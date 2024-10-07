@@ -177,6 +177,11 @@ namespace UTFWin
 		/// @param format
 		/* 6Ch */	virtual void SetTextOutline(OutlineFormat& format) = 0;
 
+		/// Custom method that sets if the button is pressed or not.
+		void SetButtonPressed(bool bValue);
+		/// Custom method that returns if the button is pressed or not.
+		bool IsButtonPressed();
+		
 
 		static IButton* Create();
 	};

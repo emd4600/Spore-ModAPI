@@ -116,7 +116,7 @@ namespace Simulator
 		/* 550h */	int mTribeArchetype;  //TODO
 		/* 554h */	bool field_554;
 		/* 555h */	bool field_555;
-		/* 556h */	bool field_556;
+		/* 556h */	bool mbMembersFlee; // if true, creatures run away in fear
 		/* 557h */	bool mGoodyPopped;
 		/* 558h */	char _padding_558[0x1310];
 		/* 1868h */	int field_1868;
@@ -139,7 +139,7 @@ namespace Simulator
 		/* 18A4h */	int field_18A4;  // -1
 		/* 18A8h */	bool field_18A8;
 		/* 18A9h */	bool field_18A9;
-		/* 18ACh */	int field_18AC;  // not initialized
+		/* 18ACh */	uint32_t field_18AC;  // not initialized
 		/* 18B0h */	int field_18B0;
 		/* 18B4h */	int field_18B4;
 		/* 18B8h */	int field_18B8;

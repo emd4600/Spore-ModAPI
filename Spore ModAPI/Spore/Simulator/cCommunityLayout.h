@@ -12,7 +12,7 @@ namespace Simulator
 		/* 00h */	bool mIsOccupied;
 		/// A building, turret, ornament, etc
 		/* 04h */	cGameDataPtr mpObject;
-		/* 08h */	int field_8;
+		/* 08h */	int field_8; // 0
 		/* 0Ch */	Math::Vector3 mPosition;
 	};
 	ASSERT_SIZE(cLayoutSlot, 0x18);
