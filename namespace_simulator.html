@@ -363,6 +363,14 @@
             </dt>
             <dd><span></span></dd>
             <dt>
+              struct <a href="struct_simulator_1_1c_fish_hot_spot.html" class="m-doc">cFishHotSpot</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              struct <a href="struct_simulator_1_1c_fish_hot_spot_unk.html" class="m-doc">cFishHotSpotUnk</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
               class <a href="class_simulator_1_1c_flak_projectile.html" class="m-doc">cFlakProjectile</a>
             </dt>
             <dd><span></span></dd>
@@ -980,6 +988,10 @@
             </dt>
             <dd><span></span></dd>
             <dt>
+              class <a href="class_simulator_1_1c_tribe_tool_data.html" class="m-doc">cTribeToolData</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
               class <a href="class_simulator_1_1c_turret.html" class="m-doc">cTurret</a>
             </dt>
             <dd><span></span></dd>
@@ -989,6 +1001,10 @@
             <dd><span></span></dd>
             <dt>
               class <a href="class_simulator_1_1c_turret_flak_weapon.html" class="m-doc">cTurretFlakWeapon</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              class <a href="class_simulator_1_1c_u_i_asset_discovery_manager.html" class="m-doc">cUIAssetDiscoveryManager</a>
             </dt>
             <dd><span></span></dd>
             <dt>
@@ -1827,6 +1843,28 @@
               <a href="#a275b9181c60a664d8e1d56328862cb6ea8f759fc5bc573bbfe086d3ab3ff60d8d" class="m-doc">Unk9</a> = 9,
               <a href="#a275b9181c60a664d8e1d56328862cb6ea1ae72a4903b201d96ded206632ce7d54" class="m-doc">Unk10</a> = 10,
               <a href="#a275b9181c60a664d8e1d56328862cb6ea5c36a398f22555e1ba0ca4693fb0b3ef" class="m-doc">Unk11</a> = 10 }</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">enum <a href="#ab1b0d73c73c9eedcf8560ef2f85d1b52" class="m-doc">TribeToolType</a> { </span><span class="m-doc-wrap"><a href="#ab1b0d73c73c9eedcf8560ef2f85d1b52afc5676a3fcf669528fe3e327f8944f69" class="m-doc">kTribeToolTypeNone</a> = 0,
+              <a href="#ab1b0d73c73c9eedcf8560ef2f85d1b52a11f225be648d41dde6d79b27e1df435e" class="m-doc">kTribeToolTypeAttack1</a> = 1,
+              <a href="#ab1b0d73c73c9eedcf8560ef2f85d1b52ac986a67e9c243f62e4e3cde664a48fc0" class="m-doc">kTribeToolTypeAttack2</a> = 2,
+              <a href="#ab1b0d73c73c9eedcf8560ef2f85d1b52abc19262a45d63d523ffcb61e316e7223" class="m-doc">kTribeToolTypeAttack3</a> = 3,
+              <a href="#ab1b0d73c73c9eedcf8560ef2f85d1b52a1b4e3330b1087c12eb1b7c52a0d9c84c" class="m-doc">kTribeToolTypeSocial1</a> = 4,
+              <a href="#ab1b0d73c73c9eedcf8560ef2f85d1b52ac307b39c3a92957b312025624315255e" class="m-doc">kTribeToolTypeSocial2</a> = 5,
+              <a href="#ab1b0d73c73c9eedcf8560ef2f85d1b52ae3e8f09492bee4750f732f4115d292ee" class="m-doc">kTribeToolTypeSocial3</a> = 6,
+              <a href="#ab1b0d73c73c9eedcf8560ef2f85d1b52ac66f560969f2272261054558b314c400" class="m-doc">kTribeToolTypeGather</a> = 7,
+              <a href="#ab1b0d73c73c9eedcf8560ef2f85d1b52aa2c68ba4f5a943d105f9473c0de62314" class="m-doc">kTribeToolTypeFish</a> = 8,
+              <a href="#ab1b0d73c73c9eedcf8560ef2f85d1b52ac66f560969f2272261054558b314c400" class="m-doc">kTribeToolTypeGather</a> = 7,
+              <a href="#ab1b0d73c73c9eedcf8560ef2f85d1b52aa96ec8f74c9a0b52113a2d960f8bf4b1" class="m-doc">kTribeToolTypeFirepit</a> = 10,
+              <a href="#ab1b0d73c73c9eedcf8560ef2f85d1b52ae3250320d39eb598e6e03f519fc25629" class="m-doc">kTribeToolTypeChieftain</a> = 11 }</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">enum <a href="#a5e59d37ca1036bb9fb442de46fae0c4c" class="m-doc">TribeToolClass</a> { </span><span class="m-doc-wrap"><a href="#a5e59d37ca1036bb9fb442de46fae0c4cae8c299d13a7eb23f4155e29b9f0fbd57" class="m-doc">kTribeToolClassNone</a> = 0,
+              <a href="#a5e59d37ca1036bb9fb442de46fae0c4ca5845b75bd3201f1f3c77ef70182d0694" class="m-doc">kTribeToolClassAttack</a> = 1,
+              <a href="#a5e59d37ca1036bb9fb442de46fae0c4ca08bee5909b4d7af65a01488cf705759e" class="m-doc">kTribeToolClassSocial</a> = 2,
+              <a href="#a5e59d37ca1036bb9fb442de46fae0c4ca24badb4fce8f695098eb362350b38663" class="m-doc">kTribeToolClassOther</a> = 3 }</span>
             </dt>
             <dd><span></span></dd>
             <dt>
@@ -3162,8 +3200,38 @@
             </dt>
             <dd><span></span></dd>
             <dt>
+              <span class="m-doc-wrap-bumper"><a href="#a5b1bf5754cd04ed49849225e230a38fd" class="m-doc">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="struct_simulator_1_1c_fish_hot_spot.html" class="m-doc">cFishHotSpot</a>,
+              0x40)</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper"><a href="#a21a3452821450d8a7a50d8dd79d7faf6" class="m-doc">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="struct_simulator_1_1c_fish_hot_spot_unk.html" class="m-doc">cFishHotSpotUnk</a>,
+              0x60)</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#ab4cecfc3ef229c6587e3b93025408a2c" class="m-doc">GetTribeFishHotSpots</a>(</span><span class="m-doc-wrap">) -&gt; eastl::vector&lt;<a href="struct_simulator_1_1c_fish_hot_spot_unk.html" class="m-doc">cFishHotSpotUnk</a>&gt;&amp;</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a71a0e147c37a98e7ee5355a61d78109c" class="m-doc">GetTribeFishTimer</a>(</span><span class="m-doc-wrap">) -&gt; <a href="class_simulator_1_1c_gonzago_timer.html" class="m-doc">cGonzagoTimer</a>&amp;</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a6ffabb51a18629a5ae11279a8298065e" class="m-doc">GetTribeFishEndTime</a>(</span><span class="m-doc-wrap">) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">uint64_<wbr />t</a></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a942dba1db419fe748d937187ec7c128f" class="m-doc">SetTribeFishEndTime</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">uint64_<wbr />t</a>) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">void</a></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
               <span class="m-doc-wrap-bumper"><a href="#a9ea69e84b2da4ab6b69edcbcf1b98e74" class="m-doc">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_tribe.html" class="m-doc">cTribe</a>,
               0x19E0)</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a61821d21b9be56c20c4aeee4826bfab1" class="m-doc">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_tribe.html" class="m-doc">cTribe</a>) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">namespace</a></span>
             </dt>
             <dd><span></span></dd>
             <dt>
@@ -3214,6 +3282,31 @@
               0x250)</span>
             </dt>
             <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a52effccd653e3ddebfbc87371a96b389" class="m-doc">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_tribe_tool.html" class="m-doc">cTribeTool</a>) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">namespace</a></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper"><a href="#acb2569f7961c0edc5954d885a26eadfc" class="m-doc">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_tribe_tool_data.html" class="m-doc">cTribeToolData</a>,
+              0x7C)</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a73dbc8c3dd1414b729fb7a7fb4cfcc2f" class="m-doc">LoadTribeToolsData</a>(</span><span class="m-doc-wrap">) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">void</a></span>
+            </dt>
+            <dd>Reads the .prop files in <code>tribe_tools~</code> and creates the <a href="class_simulator_1_1c_tribe_tool_data.html" class="m-doc">cTribeToolData</a> instances for them, adding them to the <a href="namespace_simulator.html#af6c4ae3a08f296153d2dbebd7ad81269" class="m-doc">GetTribeToolDataArray()</a> array.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#af6c4ae3a08f296153d2dbebd7ad81269" class="m-doc">GetTribeToolDataArray</a>(</span><span class="m-doc-wrap">) -&gt; eastl::array&lt;<a href="class_simulator_1_1c_tribe_tool_data.html" class="m-doc">cTribeToolData</a>*, 12&gt;</span>
+            </dt>
+            <dd>Returns the array with the base game tribe tools data.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#ab2a3837376c027b4473e53cb10b9bd1d" class="m-doc">GetTribeToolData</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> toolType) -&gt; <a href="class_simulator_1_1c_tribe_tool_data.html" class="m-doc">cTribeToolData</a>*</span>
+            </dt>
+            <dd>Returns the <a href="class_simulator_1_1c_tribe_tool_data.html" class="m-doc">cTribeToolData</a> for the given tool type (TribeToolType)</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a9082be62cc4916590796342a2699b2a9" class="m-doc">DisposeTribeToolsData</a>(</span><span class="m-doc-wrap">) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">void</a></span>
+            </dt>
+            <dd>Called on <a href="class_simulator_1_1c_simulator_system.html#a5e8c6aea558e45b1a254898bff462de8" class="m-doc">cSimulatorSystem::<wbr />Dispose()</a>, deletes the objects in the tribe tool data array.</dd>
             <dt>
               <span class="m-doc-wrap-bumper"><a href="#aff39dec18030888538307fd68986d010" class="m-doc">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_turret.html" class="m-doc">cTurret</a>,
               0x6D0)</span>
@@ -3658,6 +3751,11 @@
             <dd><span></span></dd>
             <dt>
               <span class="m-doc-wrap-bumper">auto <a href="#a0f73284d40a5ed6ac71c2229ec10a729" class="m-doc">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_tool_manager.html" class="m-doc">cToolManager</a>) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">namespace</a></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper"><a href="#a2d2e164f43427e09f9f8a288c23e9bfe" class="m-doc">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_u_i_asset_discovery_manager.html" class="m-doc">cUIAssetDiscoveryManager</a>,
+              0xA8)</span>
             </dt>
             <dd><span></span></dd>
             <dt>
@@ -4572,6 +4670,20 @@
                 </tr>
               </tbody>
             </table>
+          </div></section>
+          <section class="m-doc-details" id="ab1b0d73c73c9eedcf8560ef2f85d1b52"><div>
+            <h3>
+              enum Simulator::<wbr /><a href="#ab1b0d73c73c9eedcf8560ef2f85d1b52" class="m-doc-self">TribeToolType</a>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_simulator_enums_8h.html">&lt;Spore ModAPI/Spore/Simulator/SimulatorEnums.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="a5e59d37ca1036bb9fb442de46fae0c4c"><div>
+            <h3>
+              enum Simulator::<wbr /><a href="#a5e59d37ca1036bb9fb442de46fae0c4c" class="m-doc-self">TribeToolClass</a>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_simulator_enums_8h.html">&lt;Spore ModAPI/Spore/Simulator/SimulatorEnums.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
           </div></section>
           <section class="m-doc-details" id="a4b1f459203b8dbf8583312aa067c8c54"><div>
             <h3>
@@ -7027,10 +7139,61 @@
             </h3>
             <p><span></span></p>
           </div></section>
+          <section class="m-doc-details" id="a5b1bf5754cd04ed49849225e230a38fd"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"> Simulator::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a5b1bf5754cd04ed49849225e230a38fd" class="m-doc-self">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="struct_simulator_1_1c_fish_hot_spot.html" class="m-doc">cFishHotSpot</a>,
+              0x40)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="c_tribe_8h.html">&lt;Spore ModAPI/Spore/Simulator/cTribe.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="a21a3452821450d8a7a50d8dd79d7faf6"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"> Simulator::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a21a3452821450d8a7a50d8dd79d7faf6" class="m-doc-self">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="struct_simulator_1_1c_fish_hot_spot_unk.html" class="m-doc">cFishHotSpotUnk</a>,
+              0x60)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="c_tribe_8h.html">&lt;Spore ModAPI/Spore/Simulator/cTribe.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="ab4cecfc3ef229c6587e3b93025408a2c"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">eastl::vector&lt;<a href="struct_simulator_1_1c_fish_hot_spot_unk.html" class="m-doc">cFishHotSpotUnk</a>&gt;&amp; Simulator::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ab4cecfc3ef229c6587e3b93025408a2c" class="m-doc-self">GetTribeFishHotSpots</a>(</span><span class="m-doc-wrap">)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="c_tribe_8h.html">&lt;Spore ModAPI/Spore/Simulator/cTribe.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="a71a0e147c37a98e7ee5355a61d78109c"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"><a href="class_simulator_1_1c_gonzago_timer.html" class="m-doc">cGonzagoTimer</a>&amp; Simulator::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a71a0e147c37a98e7ee5355a61d78109c" class="m-doc-self">GetTribeFishTimer</a>(</span><span class="m-doc-wrap">)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="c_tribe_8h.html">&lt;Spore ModAPI/Spore/Simulator/cTribe.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="a6ffabb51a18629a5ae11279a8298065e"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">uint64_<wbr />t</a> Simulator::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a6ffabb51a18629a5ae11279a8298065e" class="m-doc-self">GetTribeFishEndTime</a>(</span><span class="m-doc-wrap">)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="c_tribe_8h.html">&lt;Spore ModAPI/Spore/Simulator/cTribe.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="a942dba1db419fe748d937187ec7c128f"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">void</a> Simulator::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a942dba1db419fe748d937187ec7c128f" class="m-doc-self">SetTribeFishEndTime</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">uint64_<wbr />t</a>)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="c_tribe_8h.html">&lt;Spore ModAPI/Spore/Simulator/cTribe.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
           <section class="m-doc-details" id="a9ea69e84b2da4ab6b69edcbcf1b98e74"><div>
             <h3>
               <span class="m-doc-wrap-bumper"> Simulator::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a9ea69e84b2da4ab6b69edcbcf1b98e74" class="m-doc-self">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_tribe.html" class="m-doc">cTribe</a>,
               0x19E0)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="c_tribe_8h.html">&lt;Spore ModAPI/Spore/Simulator/cTribe.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="a61821d21b9be56c20c4aeee4826bfab1"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">namespace</a> Simulator::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a61821d21b9be56c20c4aeee4826bfab1" class="m-doc-self">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_tribe.html" class="m-doc">cTribe</a>)</span></span>
               <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="c_tribe_8h.html">&lt;Spore ModAPI/Spore/Simulator/cTribe.h&gt;</a></div>
             </h3>
             <p><span></span></p>
@@ -7109,6 +7272,61 @@
               <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="c_tribe_tool_8h.html">&lt;Spore ModAPI/Spore/Simulator/cTribeTool.h&gt;</a></div>
             </h3>
             <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="a52effccd653e3ddebfbc87371a96b389"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">namespace</a> Simulator::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a52effccd653e3ddebfbc87371a96b389" class="m-doc-self">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_tribe_tool.html" class="m-doc">cTribeTool</a>)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="c_tribe_tool_8h.html">&lt;Spore ModAPI/Spore/Simulator/cTribeTool.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="acb2569f7961c0edc5954d885a26eadfc"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"> Simulator::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#acb2569f7961c0edc5954d885a26eadfc" class="m-doc-self">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_tribe_tool_data.html" class="m-doc">cTribeToolData</a>,
+              0x7C)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="c_tribe_tool_data_8h.html">&lt;Spore ModAPI/Spore/Simulator/cTribeToolData.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="a73dbc8c3dd1414b729fb7a7fb4cfcc2f"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">void</a> Simulator::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a73dbc8c3dd1414b729fb7a7fb4cfcc2f" class="m-doc-self">LoadTribeToolsData</a>(</span><span class="m-doc-wrap">)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="c_tribe_tool_data_8h.html">&lt;Spore ModAPI/Spore/Simulator/cTribeToolData.h&gt;</a></div>
+            </h3>
+            <p>Reads the .prop files in <code>tribe_tools~</code> and creates the <a href="class_simulator_1_1c_tribe_tool_data.html" class="m-doc">cTribeToolData</a> instances for them, adding them to the <a href="namespace_simulator.html#af6c4ae3a08f296153d2dbebd7ad81269" class="m-doc">GetTribeToolDataArray()</a> array.</p>
+          </div></section>
+          <section class="m-doc-details" id="af6c4ae3a08f296153d2dbebd7ad81269"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">eastl::array&lt;<a href="class_simulator_1_1c_tribe_tool_data.html" class="m-doc">cTribeToolData</a>*, 12&gt; Simulator::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#af6c4ae3a08f296153d2dbebd7ad81269" class="m-doc-self">GetTribeToolDataArray</a>(</span><span class="m-doc-wrap">)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="c_tribe_tool_data_8h.html">&lt;Spore ModAPI/Spore/Simulator/cTribeToolData.h&gt;</a></div>
+            </h3>
+            <p>Returns the array with the base game tribe tools data.</p>
+<p>The index for each tool is its tool type, e.g. index 0 is kTribeToolTypeNone, index 1 is kTribeToolTypeAttack1, etc</p>
+          </div></section>
+          <section class="m-doc-details" id="ab2a3837376c027b4473e53cb10b9bd1d"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"><a href="class_simulator_1_1c_tribe_tool_data.html" class="m-doc">cTribeToolData</a>* Simulator::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ab2a3837376c027b4473e53cb10b9bd1d" class="m-doc-self">GetTribeToolData</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> toolType)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="c_tribe_tool_data_8h.html">&lt;Spore ModAPI/Spore/Simulator/cTribeToolData.h&gt;</a></div>
+            </h3>
+            <p>Returns the <a href="class_simulator_1_1c_tribe_tool_data.html" class="m-doc">cTribeToolData</a> for the given tool type (TribeToolType)</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">toolType</td>
+                  <td></td>
+                </tr>
+              </tbody>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="a9082be62cc4916590796342a2699b2a9"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">void</a> Simulator::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a9082be62cc4916590796342a2699b2a9" class="m-doc-self">DisposeTribeToolsData</a>(</span><span class="m-doc-wrap">)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="c_tribe_tool_data_8h.html">&lt;Spore ModAPI/Spore/Simulator/cTribeToolData.h&gt;</a></div>
+            </h3>
+            <p>Called on <a href="class_simulator_1_1c_simulator_system.html#a5e8c6aea558e45b1a254898bff462de8" class="m-doc">cSimulatorSystem::<wbr />Dispose()</a>, deletes the objects in the tribe tool data array.</p>
           </div></section>
           <section class="m-doc-details" id="aff39dec18030888538307fd68986d010"><div>
             <h3>
@@ -8001,6 +8219,14 @@
             <h3>
               <span class="m-doc-wrap-bumper"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">namespace</a> Simulator::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a0f73284d40a5ed6ac71c2229ec10a729" class="m-doc-self">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_tool_manager.html" class="m-doc">cToolManager</a>)</span></span>
               <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_tool_manager_8h.html">&lt;Spore ModAPI/Spore/Simulator/SubSystem/ToolManager.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="a2d2e164f43427e09f9f8a288c23e9bfe"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"> Simulator::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a2d2e164f43427e09f9f8a288c23e9bfe" class="m-doc-self">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_u_i_asset_discovery_manager.html" class="m-doc">cUIAssetDiscoveryManager</a>,
+              0xA8)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_u_i_asset_discovery_manager_8h.html">&lt;Spore ModAPI/Spore/Simulator/SubSystem/UIAssetDiscoveryManager.h&gt;</a></div>
             </h3>
             <p><span></span></p>
           </div></section>

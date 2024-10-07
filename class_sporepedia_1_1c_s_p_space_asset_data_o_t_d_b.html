@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Palettes::OutfitterItemUI class | Spore ModAPI SDK for creating C++ mods for Spore</title>
+  <title>Sporepedia::cSPSpaceAssetDataOTDB class | Spore ModAPI SDK for creating C++ mods for Spore</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,600,600i%7CSource+Code+Pro:400,400i,600" />
   <link rel="stylesheet" href="m-dark.css" />
   <link rel="stylesheet" href="m-documentation.css" />
@@ -45,8 +45,8 @@
     <div class="m-row">
       <div class="m-col-l-10 m-push-l-1">
         <h1>
-          <span class="m-breadcrumb"><a href="namespace_palettes.html">Palettes</a>::<wbr/></span>OutfitterItemUI <span class="m-thin">class</span>
-          <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_outfitter_item_u_i_8h.html">&lt;Spore ModAPI/Spore/Palettes/OutfitterItemUI.h&gt;</a></div>
+          <span class="m-breadcrumb"><a href="namespace_sporepedia.html">Sporepedia</a>::<wbr/></span>cSPSpaceAssetDataOTDB <span class="m-thin">class</span>
+          <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_asset_data_8h.html">&lt;Spore ModAPI/Spore/Sporepedia/AssetData.h&gt;</a></div>
         </h1>
         <p><span></span></p>
         <nav class="m-block m-default">
@@ -56,6 +56,7 @@
               Reference
               <ul>
                 <li><a href="#base-classes">Base classes</a></li>
+                <li><a href="#typeless-methods">Constructors, destructors, conversion operators</a></li>
                 <li><a href="#pub-methods">Public functions</a></li>
                 <li><a href="#pub-attribs">Public variables</a></li>
               </ul>
@@ -66,23 +67,37 @@
           <h2><a href="#base-classes">Base classes</a></h2>
           <dl class="m-doc">
             <dt>
-              class <a href="class_palettes_1_1_default_item_frame_u_i.html" class="m-doc">DefaultItemFrameUI</a>
+              class <a href="class_sporepedia_1_1c_s_p_asset_data_o_t_d_b.html" class="m-doc">cSPAssetDataOTDB</a>
             </dt>
             <dd><span></span></dd>
-            <dt>
-              class <a href="class_app_1_1_i_message_listener.html" class="m-doc">App::IMessageListener</a>
+          </dl>
+        </section>
+        <section id="typeless-methods">
+          <h2><a href="#typeless-methods">Constructors, destructors, conversion operators</a></h2>
+          <dl class="m-doc">
+            <dt id="a68e8fad0398bff2297185d61cd7e9847">
+              <span class="m-doc-wrap-bumper"><a href="#a68e8fad0398bff2297185d61cd7e9847" class="m-doc-self">cSPSpaceAssetDataOTDB</a>(</span><span class="m-doc-wrap">)</span>
             </dt>
-            <dd>An interface that can receive messages sent through the app.</dd>
+            <dd><span></span></dd>
           </dl>
         </section>
         <section id="pub-methods">
           <h2><a href="#pub-methods">Public functions</a></h2>
           <dl class="m-doc">
-            <dt id="a8509b2705b93116760d7390c5d22e2f8">
-              <span class="m-doc-wrap-bumper">auto <a href="#a8509b2705b93116760d7390c5d22e2f8" class="m-doc-self">Initialize</a>(</span><span class="m-doc-wrap"><a href="class_palettes_1_1_palette_item.html" class="m-doc">PaletteItem</a>* pItem,
-              <a href="class_u_t_f_win_1_1_i_window.html" class="m-doc">UTFWin::<wbr />IWindow</a>* pWindow,
-              <a href="class_u_t_f_win_1_1_i_window.html" class="m-doc">UTFWin::<wbr />IWindow</a>* pItemsPanel,
-              <a href="class_palettes_1_1_palette_info.html" class="m-doc">PaletteInfo</a>* pInfo) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">void</a> <span class="m-label m-flat m-warning">override</span></span>
+            <dt id="a36288890523e3193262014d5dd9220b6">
+              <span class="m-doc-wrap-bumper">auto <a href="#a36288890523e3193262014d5dd9220b6" class="m-doc-self">GetPlanetRecord</a>(</span><span class="m-doc-wrap">) -&gt; <a href="class_simulator_1_1c_planet_record.html" class="m-doc">Simulator::<wbr />cPlanetRecord</a>* <span class="m-label m-flat m-warning">virtual</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="ad6525fd9b4df8feca9e54b91d6b6e235">
+              <span class="m-doc-wrap-bumper">auto <a href="#ad6525fd9b4df8feca9e54b91d6b6e235" class="m-doc-self">SetIsPlayable</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">bool</a> isPlayable) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">void</a> <span class="m-label m-flat m-warning">virtual</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a7adedf88fcffc7cc58664727b92dd911">
+              <span class="m-doc-wrap-bumper">auto <a href="#a7adedf88fcffc7cc58664727b92dd911" class="m-doc-self">SetSubtype</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">uint32_<wbr />t</a> subtype) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">void</a> <span class="m-label m-flat m-warning">virtual</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a24996a42e11caef2ccf6e3afe548cd06">
+              <span class="m-doc-wrap-bumper">auto <a href="#a24996a42e11caef2ccf6e3afe548cd06" class="m-doc-self">funcC4h</a>(</span><span class="m-doc-wrap">) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">void</a> <span class="m-label m-flat m-warning">virtual</span></span>
             </dt>
             <dd><span></span></dd>
           </dl>
@@ -90,78 +105,42 @@
         <section id="pub-attribs">
           <h2><a href="#pub-attribs">Public variables</a></h2>
           <dl class="m-doc">
-            <dt id="ae7fbd9fa271c7a5a3dca2621a53bab38">
-              <a href="_i_window_8h.html#a8a007ed4a799cf73a9ba71b157f9d051" class="m-doc">IWindowPtr</a> <a href="#ae7fbd9fa271c7a5a3dca2621a53bab38" class="m-doc-self">field_24</a>
+            <dt id="a2b317c9a5cfe43f58fb1708381daef78">
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> <a href="#a2b317c9a5cfe43f58fb1708381daef78" class="m-doc-self">field_78</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="a18caeb7602c08b34342f8821709baf3b">
-              <a href="_i_window_8h.html#a8a007ed4a799cf73a9ba71b157f9d051" class="m-doc">IWindowPtr</a> <a href="#a18caeb7602c08b34342f8821709baf3b" class="m-doc-self">mpMainWindow</a>
+            <dt id="a08bfa9127972e1f2ef575c2447acaa3e">
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> <a href="#a08bfa9127972e1f2ef575c2447acaa3e" class="m-doc-self">field_7C</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="ad6fd5613641fe82d03af79136769708c">
-              <a href="_i_window_8h.html#a8a007ed4a799cf73a9ba71b157f9d051" class="m-doc">IWindowPtr</a> <a href="#ad6fd5613641fe82d03af79136769708c" class="m-doc-self">field_2C</a>
+            <dt id="a252705eb9ece39945ad97b34d3b1a05b">
+              <a href="struct_simulator_1_1_planet_i_d.html" class="m-doc">Simulator::<wbr />PlanetID</a> <a href="#a252705eb9ece39945ad97b34d3b1a05b" class="m-doc-self">mPlanetID</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="a50fd0a8e76ec5b988846788523dd8782">
-              <a href="_i_window_8h.html#a8a007ed4a799cf73a9ba71b157f9d051" class="m-doc">IWindowPtr</a> <a href="#a50fd0a8e76ec5b988846788523dd8782" class="m-doc-self">field_30</a>
+            <dt id="a502391bef91b9110bd196ecc9ab5c4ad">
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> <a href="#a502391bef91b9110bd196ecc9ab5c4ad" class="m-doc-self">field_84</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="a49028837abe36f0d90e3bc85efd973c6">
-              <a href="_i_window_8h.html#a8a007ed4a799cf73a9ba71b157f9d051" class="m-doc">IWindowPtr</a> <a href="#a49028837abe36f0d90e3bc85efd973c6" class="m-doc-self">mpEditButton</a>
+            <dt id="a5971b92489391cb5f502ea021a10ffb0">
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> <a href="#a5971b92489391cb5f502ea021a10ffb0" class="m-doc-self">field_88</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="a95b2fa8e7363145fbe028a9aac648b54">
-              <a href="_u_i_layout_8h.html#aca5b38a6789bbf1eda0157d721e679d2" class="m-doc">UILayoutPtr</a> <a href="#a95b2fa8e7363145fbe028a9aac648b54" class="m-doc-self">mpLayout</a>
+            <dt id="afa4a292e2d5067a7200adeb47374fde7">
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> <a href="#afa4a292e2d5067a7200adeb47374fde7" class="m-doc-self">field_8C</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="a41f720befb2a0436c7e8a57bccf75c88">
-              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> <a href="#a41f720befb2a0436c7e8a57bccf75c88" class="m-doc-self">field_3C</a>
+            <dt id="aeb6920d53b08072ba09464a7e3b670d2">
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">float</a> <a href="#aeb6920d53b08072ba09464a7e3b670d2" class="m-doc-self">field_90</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="a7486de23f25f8a7dfd8e0ddeaf396f13">
-              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> <a href="#a7486de23f25f8a7dfd8e0ddeaf396f13" class="m-doc-self">field_40</a>
+            <dt id="a456c05e84355dac8d47a964fbd6a99c5">
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> <a href="#a456c05e84355dac8d47a964fbd6a99c5" class="m-doc-self">field_94</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="a85d0cb108b75425ac251667d197a2b46">
-              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> <a href="#a85d0cb108b75425ac251667d197a2b46" class="m-doc-self">field_44</a>
+            <dt id="a614c0d70025f938848c88ef894d828a1">
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> <a href="#a614c0d70025f938848c88ef894d828a1" class="m-doc-self">field_98</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="a427d05446be8562c90e0c82bb51c08be">
-              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> <a href="#a427d05446be8562c90e0c82bb51c08be" class="m-doc-self">field_48</a>
-            </dt>
-            <dd><span></span></dd>
-            <dt id="a6b83b281a2aa8ae2649c28422189dc4e">
-              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> <a href="#a6b83b281a2aa8ae2649c28422189dc4e" class="m-doc-self">field_4C</a>
-            </dt>
-            <dd><span></span></dd>
-            <dt id="ae5114923fe4d8f4d2932f380555270b0">
-              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> <a href="#ae5114923fe4d8f4d2932f380555270b0" class="m-doc-self">field_50</a>
-            </dt>
-            <dd><span></span></dd>
-            <dt id="a8c23d015c8cc5cca6b5db166a52ea840">
-              <a href="struct_resource_key.html" class="m-doc">ResourceKey</a> <a href="#a8c23d015c8cc5cca6b5db166a52ea840" class="m-doc-self">mCreationName</a>
-            </dt>
-            <dd><span></span></dd>
-            <dt id="a32c41d6020b7b93622abd0adb68fdf08">
-              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">uint32_<wbr />t</a> <a href="#a32c41d6020b7b93622abd0adb68fdf08" class="m-doc-self">mOutfitEditorUI</a>
-            </dt>
-            <dd><span></span></dd>
-            <dt id="af419921bf16d0812cd59a7b6f087b452">
-              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> <a href="#af419921bf16d0812cd59a7b6f087b452" class="m-doc-self">field_64</a>
-            </dt>
-            <dd><span></span></dd>
-            <dt id="aa1013f089679b19052d172c23138015e">
-              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> <a href="#aa1013f089679b19052d172c23138015e" class="m-doc-self">field_68</a>
-            </dt>
-            <dd><span></span></dd>
-            <dt id="ad1cafb896f8b0b00768e95c9795ab8b5">
-              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">uint32_<wbr />t</a> <a href="#ad1cafb896f8b0b00768e95c9795ab8b5" class="m-doc-self">mItemModelTypeID</a>
-            </dt>
-            <dd>If this palette item happens to be an editor model, this will point to the model type.</dd>
-            <dt id="aa6489f6f7155ec6061a96ea0c1e3c5a7">
-              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">uint32_<wbr />t</a> <a href="#aa6489f6f7155ec6061a96ea0c1e3c5a7" class="m-doc-self">mToolTypeID</a>
-            </dt>
-            <dd><code>toolData_ToolType</code></dd>
           </dl>
         </section>
       </div>
