@@ -73,9 +73,10 @@ namespace Simulator
 		/// Returns a vector of all selectable members of the tribe
 		/* 94h */	virtual eastl::vector<cSpatialObjectPtr>& GetSelectableMembers();
 		/* 98h */	virtual cCreatureCitizen* SpawnMember();
-		/* 9Ch */	virtual void func9Ch(int, bool);
+		/// Removes a member of the tribe. index seems to cause issues if not 0.
+		/* 9Ch */	virtual void func9Ch(int index, bool);
 		/// Calls func9Ch() with second parameter true
-		/* A0h */	virtual void funcA0h(int);
+		/* A0h */	virtual void funcA0h(int index);
 		/* A4h */	virtual int GetTotalFood();
 		/* A8h */	virtual void funcA8h();
 		/* ACh */	virtual cTribeHut* GetHut();
