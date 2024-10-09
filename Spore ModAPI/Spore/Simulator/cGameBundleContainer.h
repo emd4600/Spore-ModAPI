@@ -21,6 +21,7 @@
 #include <Spore\Simulator\cGameData.h>
 #include <Spore\Simulator\cSpatialObject.h>
 #include <Spore\Simulator\cBehaviorList.h>
+#include <Spore\Simulator\ISimulatorSerializable.h>
 #include <EASTL\vector.h>
 
 #define cGameBundleContainerPtr eastl::intrusive_ptr<Simulator::cGameBundleContainer>

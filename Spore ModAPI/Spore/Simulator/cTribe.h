@@ -72,7 +72,7 @@ namespace Simulator
 		/* 90h */	virtual eastl::vector<cCreatureCitizenPtr>& GetTribeMembers();
 		/// Returns a vector of all selectable members of the tribe
 		/* 94h */	virtual eastl::vector<cSpatialObjectPtr>& GetSelectableMembers();
-		/* 98h */	virtual cCreatureCitizen* SpawnMember();
+		/* 98h */	virtual cCreatureCitizen* SpawnMember(int);
 		/* 9Ch */	virtual void func9Ch(int, bool);
 		/// Calls func9Ch() with second parameter true
 		/* A0h */	virtual void funcA0h(int);
@@ -91,6 +91,8 @@ namespace Simulator
 		/// @param toolType
 		/// @returns
 		cTribeTool* GetToolByType(int toolType);
+
+		void UpdateFoodVisuals(float amount);
 
 	public:
 		/* 260h */	cTribeFoodMatPtr mpFoodMat;
@@ -193,6 +195,10 @@ namespace Simulator
 
 	namespace Addresses(cTribe) {
 		DeclareAddress(GetToolByType);  // 0xC8ED20 0xC8F870
+		DeclareAddress(SpawnMember);  // 0xC97BA0 0xC983C0
+		DeclareAddress(CreateTool);  // 0xC95950 0xC96170
+		DeclareAddress(RemoveTool);  // 0xC96800 0xC97020
+		DeclareAddress(UpdateFoodVisuals);  // 0xC94520 0xC94CE0
 	}
 
 	cTribe* SpawnNpcTribe(const Math::Vector3& position, int tribeArchetype, int numMembers, int foodAmount, bool, cSpeciesProfile* species);

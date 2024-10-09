@@ -106,6 +106,7 @@
 #include <Spore\Simulator\SubSystem\PlantSpeciesManager.h>
 #include <Spore\Simulator\SubSystem\GamePersistenceManager.h>
 #include <Spore\Simulator\SubSystem\CinematicManager.h>
+#include <Spore\Simulator\SubSystem\BundleManager.h>
 #include <Spore\Simulator\NounClassFactories.h>
 
 namespace Addresses(Simulator)
@@ -1129,11 +1130,20 @@ namespace Simulator
 
 	namespace Addresses(cTribe) {
 		DefineAddress(GetToolByType, SelectAddress(0xC8ED20, 0xC8F870));
+		DefineAddress(SpawnMember, SelectAddress(0xC97BA0, 0xC983C0));
+		DefineAddress(CreateTool, SelectAddress(0xC95950, 0xC96170));
+		DefineAddress(RemoveTool, SelectAddress(0xC96800, 0xC97020));
+		DefineAddress(UpdateFoodVisuals, SelectAddress(0xC94520, 0xC94CE0));
 	}
 
 	namespace Addresses(cTribeTool) {
 		DefineAddress(GetToolClass, SelectAddress(0xC9CAB0, 0xC9D2A0));
 		DefineAddress(GetRefundMoney, SelectAddress(0xC9C970, 0xC9D160));
+	}
+
+	namespace Addresses(cBundleManager) {
+		DefineAddress(Get, SelectAddress(0xB3D210, 0xB3D3B0));
+		DefineAddress(CreateBundles, SelectAddress(0xAC7810, 0xAC79F0));
 	}
 }
 

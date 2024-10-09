@@ -87,7 +87,7 @@ namespace Simulator
 		/// Generates a random index that allows to select from the existing aim points.
 		/* 24h */	virtual int GetRandomAimIndex();
 		/* 28h */	virtual Math::Vector3 func28h(int);
-		/* 2Ch */	virtual void func2Ch(bool);  // heals buildings?
+		/* 2Ch */	virtual void Heal(bool);  // heals buildings?
 		/* 30h */	virtual Math::Vector3 func30h();
 		/* 34h */	virtual uint32_t func34h();  // returns field_70, an effect ID
 		/* 38h */	virtual void func38h();  // sets lastAttacker to -1 and field_28 to nullptr

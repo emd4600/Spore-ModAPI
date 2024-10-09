@@ -715,4 +715,11 @@ namespace Simulator
 		kTribeToolClassSocial = 2,
 		kTribeToolClassOther = 3,
 	};
+
+	enum TribeBundleType
+	{
+		kTribeBundleTypeFruit = 1,
+		kTribeBundleTypeMeat = 2,
+		kTribeBundleTypeFish = 3,
+	};
 }

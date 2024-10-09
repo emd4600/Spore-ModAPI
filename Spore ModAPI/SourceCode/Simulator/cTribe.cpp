@@ -14,6 +14,8 @@ namespace Simulator
 		Args(const Math::Vector3& position, int tribeArchetype, int numMembers, int arg0, bool arg1, cSpeciesProfile* species),
 		Args(position, tribeArchetype, numMembers, arg0, arg1, species));
 
+	auto_METHOD_VOID(cTribe, UpdateFoodVisuals, Args(float a), Args(a));
+
 	auto_METHOD(cTribe, cTribeTool*, GetToolByType, Args(int toolType), Args(toolType));
 
 	eastl::vector<cFishHotSpotUnk>& GetTribeFishHotSpots() {
