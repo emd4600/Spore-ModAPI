@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>UI::SimulatorRollover class | Spore ModAPI SDK for creating C++ mods for Spore</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,600,600i%7CSource+Code+Pro:400,400i,600" />
+  <link rel="stylesheet" href="m-dark.css" />
+  <link rel="stylesheet" href="m-documentation.css" />
+  <link rel="icon" href="Spore_ModAPI_Icon.png" type="image/png" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#22272e" />
+</head>
+<body>
+<header><nav id="navigation">
+  <div class="m-container">
+    <div class="m-row">
+      <a href="index.html" id="m-navbar-brand" class="m-col-t-8 m-col-m-none m-left-m"><img src="Spore_ModAPI_Icon.png" alt="" />Spore ModAPI <span class="m-thin">SDK for creating C++ mods for Spore</span></a>
+      <div class="m-col-t-4 m-hide-m m-text-right m-nopadr">
+        <a href="#search" class="m-doc-search-icon" title="Search" onclick="return showSearch()"><svg style="height: 0.9rem;" viewBox="0 0 16 16">
+          <path id="m-doc-search-icon-path" d="m6 0c-3.31 0-6 2.69-6 6 0 3.31 2.69 6 6 6 1.49 0 2.85-0.541 3.89-1.44-0.0164 0.338 0.147 0.759 0.5 1.15l3.22 3.79c0.552 0.614 1.45 0.665 2 0.115 0.55-0.55 0.499-1.45-0.115-2l-3.79-3.22c-0.392-0.353-0.812-0.515-1.15-0.5 0.895-1.05 1.44-2.41 1.44-3.89 0-3.31-2.69-6-6-6zm0 1.56a4.44 4.44 0 0 1 4.44 4.44 4.44 4.44 0 0 1-4.44 4.44 4.44 4.44 0 0 1-4.44-4.44 4.44 4.44 0 0 1 4.44-4.44z"/>
+        </svg></a>
+        <a id="m-navbar-show" href="#navigation" title="Show navigation"></a>
+        <a id="m-navbar-hide" href="#" title="Hide navigation"></a>
+      </div>
+      <div id="m-navbar-collapse" class="m-col-t-12 m-show-m m-col-m-none m-right-m">
+        <div class="m-row">
+          <ol class="m-col-t-6 m-col-m-none">
+            <li><a href="pages.html">Tutorials</a></li>
+            <li><a href="namespaces.html">Namespaces</a></li>
+          </ol>
+          <ol class="m-col-t-6 m-col-m-none" start="3">
+            <li><a href="annotated.html">Classes</a></li>
+            <li><a href="files.html">Files</a></li>
+            <li class="m-show-m"><a href="#search" class="m-doc-search-icon" title="Search" onclick="return showSearch()"><svg style="height: 0.9rem;" viewBox="0 0 16 16">
+              <use href="#m-doc-search-icon-path" />
+            </svg></a></li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav></header>
+<main><article>
+  <div class="m-container m-container-inflatable">
+    <div class="m-row">
+      <div class="m-col-l-10 m-push-l-1">
+        <h1>
+          <span class="m-breadcrumb"><a href="namespace_u_i.html">UI</a>::<wbr/></span>SimulatorRollover <span class="m-thin">class</span>
+          <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_simulator_rollovers_8h.html">&lt;Spore ModAPI/Spore/UI/SimulatorRollovers.h&gt;</a></div>
+        </h1>
+        <p><span></span></p>
+        <nav class="m-block m-default">
+          <h3>Contents</h3>
+          <ul>
+            <li>
+              Reference
+              <ul>
+                <li><a href="#base-classes">Base classes</a></li>
+                <li><a href="#pub-static-methods">Public static functions</a></li>
+                <li><a href="#pub-attribs">Public variables</a></li>
+              </ul>
+            </li>
+          </ul>
+        </nav>
+        <section id="base-classes">
+          <h2><a href="#base-classes">Base classes</a></h2>
+          <dl class="m-doc">
+            <dt>
+              struct <a href="struct_simulator_1_1c_object_pool_class.html" class="m-doc">Simulator::cObjectPoolClass</a>
+            </dt>
+            <dd>Base class for all objects that are used inside a <a href="class_simulator_1_1c_object_pool.html" class="m-doc">cObjectPool</a>.</dd>
+          </dl>
+        </section>
+        <section id="pub-static-methods">
+          <h2><a href="#pub-static-methods">Public static functions</a></h2>
+          <dl class="m-doc">
+            <dt>
+              <span class="m-doc-wrap-bumper">static auto <a href="#a9125aed6b4b09b2d95d7739d6ea8d985" class="m-doc">GetRolloverIdForObject</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_game_data.html" class="m-doc">Simulator::<wbr />cGameData</a>* object) -&gt; <a href="namespace_u_i.html#ab2f5f0271b3d6ae75c3a119af1c7c9a0" class="m-doc">SimulatorRolloverID</a></span>
+            </dt>
+            <dd>Returns which kind of rollover must be shown for a certain <a href="namespace_simulator.html" class="m-doc">Simulator</a> object.</dd>
+            <dt id="a81b8ea670d4adae0124ed052d0586779">
+              <span class="m-doc-wrap-bumper">static auto <a href="#a81b8ea670d4adae0124ed052d0586779" class="m-doc-self">ShowRollover</a>(</span><span class="m-doc-wrap"><a href="namespace_u_i.html#ab2f5f0271b3d6ae75c3a119af1c7c9a0" class="m-doc">SimulatorRolloverID</a> rolloverId) -&gt; <a href="class_u_i_1_1_simulator_rollover.html" class="m-doc">SimulatorRollover</a>*</span>
+            </dt>
+            <dd><span></span></dd>
+          </dl>
+        </section>
+        <section id="pub-attribs">
+          <h2><a href="#pub-attribs">Public variables</a></h2>
+          <dl class="m-doc">
+            <dt id="a7871520a420ffaa5b0e16a29b8db2d51">
+              <a href="c_game_data_8h.html#a16ee71c4f398f8560845728987775f11" class="m-doc">cGameDataPtr</a> <a href="#a7871520a420ffaa5b0e16a29b8db2d51" class="m-doc-self">mpObject</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a24e9d420d2ee27179cd780bc2ff7bfdf">
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">char</a> <a href="#a24e9d420d2ee27179cd780bc2ff7bfdf" class="m-doc-self">padding_8</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a98f4ef3ba43098e0ef381a021fe5fe30">
+              <a href="_u_i_layout_8h.html#aca5b38a6789bbf1eda0157d721e679d2" class="m-doc">UILayoutPtr</a> <a href="#a98f4ef3ba43098e0ef381a021fe5fe30" class="m-doc-self">mpLayout</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a7da525765845723b914eb80b1eea34dd">
+              <a href="_i_window_8h.html#a8a007ed4a799cf73a9ba71b157f9d051" class="m-doc">IWindowPtr</a> <a href="#a7da525765845723b914eb80b1eea34dd" class="m-doc-self">mpMainWindow</a>
+            </dt>
+            <dd>Control ID 0x93310E4A.</dd>
+            <dt id="aa8d6f9faaf15cc6082692eb7196585bc">
+              <a href="_i_window_8h.html#a8a007ed4a799cf73a9ba71b157f9d051" class="m-doc">IWindowPtr</a> <a href="#aa8d6f9faaf15cc6082692eb7196585bc" class="m-doc-self">mpFrameWindow</a>
+            </dt>
+            <dd>Control ID 0x93310E4B.</dd>
+            <dt id="acd11deb4aaa3491560ba4758da70bb17">
+              <a href="_i_window_8h.html#a8a007ed4a799cf73a9ba71b157f9d051" class="m-doc">IWindowPtr</a> <a href="#acd11deb4aaa3491560ba4758da70bb17" class="m-doc-self">field_5C</a>
+            </dt>
+            <dd>Control ID 0x31E94D0.</dd>
+            <dt id="a45b9941eb787bcb5e2e7094120bcfdd3">
+              <a href="_i_window_8h.html#a8a007ed4a799cf73a9ba71b157f9d051" class="m-doc">IWindowPtr</a> <a href="#a45b9941eb787bcb5e2e7094120bcfdd3" class="m-doc-self">field_60</a>
+            </dt>
+            <dd>Control ID 0x933103EA.</dd>
+            <dt id="a23f4b0ea9d20868cf8c199ef3df69705">
+              <a href="_i_window_8h.html#a8a007ed4a799cf73a9ba71b157f9d051" class="m-doc">IWindowPtr</a> <a href="#a23f4b0ea9d20868cf8c199ef3df69705" class="m-doc-self">field_64</a>
+            </dt>
+            <dd>Control ID 0x26E0DF0.</dd>
+            <dt id="a6e8b30d8c10f46496c24e58f8c6dd3b5">
+              <a href="_i_window_8h.html#a8a007ed4a799cf73a9ba71b157f9d051" class="m-doc">IWindowPtr</a> <a href="#a6e8b30d8c10f46496c24e58f8c6dd3b5" class="m-doc-self">field_68</a>
+            </dt>
+            <dd>Control ID 0x26E0DF1.</dd>
+            <dt id="aca03d372c7677b96734ef2223f00bb59">
+              <a href="_i_window_8h.html#a8a007ed4a799cf73a9ba71b157f9d051" class="m-doc">IWindowPtr</a> <a href="#aca03d372c7677b96734ef2223f00bb59" class="m-doc-self">field_6C</a>
+            </dt>
+            <dd>Control ID 0x26E0DF2.</dd>
+            <dt id="a26088cadc0fa95f7496a9a680cf5c0c6">
+              <a href="_i_window_8h.html#a8a007ed4a799cf73a9ba71b157f9d051" class="m-doc">IWindowPtr</a> <a href="#a26088cadc0fa95f7496a9a680cf5c0c6" class="m-doc-self">field_70</a>
+            </dt>
+            <dd>Control ID 0x26E0DF3.</dd>
+            <dt id="a33a3d69abeac9f7d828ba43ea2dfc31c">
+              <a href="_i_window_8h.html#a8a007ed4a799cf73a9ba71b157f9d051" class="m-doc">IWindowPtr</a> <a href="#a33a3d69abeac9f7d828ba43ea2dfc31c" class="m-doc-self">field_74</a>
+            </dt>
+            <dd>Control ID 0x4D039A8.</dd>
+            <dt id="a4f4f64bd799bef8a7c686bd8473cbc5f">
+              <a href="_i_window_8h.html#a8a007ed4a799cf73a9ba71b157f9d051" class="m-doc">IWindowPtr</a> <a href="#a4f4f64bd799bef8a7c686bd8473cbc5f" class="m-doc-self">field_78</a>
+            </dt>
+            <dd>Control ID 0x4B47745.</dd>
+            <dt id="acf80556c25bc4e078522c9c66681b350">
+              <a href="_i_window_8h.html#a8a007ed4a799cf73a9ba71b157f9d051" class="m-doc">IWindowPtr</a> <a href="#acf80556c25bc4e078522c9c66681b350" class="m-doc-self">field_7C</a>
+            </dt>
+            <dd>Control ID 0x553E937.</dd>
+            <dt id="a61094c766c2a68c08e1280ab625893b2">
+              <a href="_object_8h.html#a364c2967a9338c07ddc9a3d507389b5d" class="m-doc">ObjectPtr</a> <a href="#a61094c766c2a68c08e1280ab625893b2" class="m-doc-self">field_80</a>
+            </dt>
+            <dd>Control ID 0x553EA66.</dd>
+            <dt id="a4a8c495b31991682abb94d91797d0ce3">
+              <a href="_i_window_8h.html#a8a007ed4a799cf73a9ba71b157f9d051" class="m-doc">IWindowPtr</a> <a href="#a4a8c495b31991682abb94d91797d0ce3" class="m-doc-self">field_84</a>
+            </dt>
+            <dd>Control ID 0x553E92B.</dd>
+            <dt id="a502b87e5c6e7fce974478a6833018317">
+              <a href="_i_window_8h.html#a8a007ed4a799cf73a9ba71b157f9d051" class="m-doc">IWindowPtr</a> <a href="#a502b87e5c6e7fce974478a6833018317" class="m-doc-self">field_88</a>
+            </dt>
+            <dd>Control ID 0x553EA6E.</dd>
+            <dt id="aac58db10dfc0d6fd65012d24a53d9c1d">
+              <a href="_i_window_8h.html#a8a007ed4a799cf73a9ba71b157f9d051" class="m-doc">IWindowPtr</a> <a href="#aac58db10dfc0d6fd65012d24a53d9c1d" class="m-doc-self">field_8C</a>
+            </dt>
+            <dd>Control ID 0x657C8F8.</dd>
+            <dt id="a69a26927bb2d4e146d70b30c68889a01">
+              <a href="_object_8h.html#a364c2967a9338c07ddc9a3d507389b5d" class="m-doc">ObjectPtr</a> <a href="#a69a26927bb2d4e146d70b30c68889a01" class="m-doc-self">field_90</a>
+            </dt>
+            <dd>Control ID 0x46ADF86.</dd>
+            <dt id="a8a9ad2797e1c61ef3d3fbdeaf65f9793">
+              <a href="_object_8h.html#a364c2967a9338c07ddc9a3d507389b5d" class="m-doc">ObjectPtr</a> <a href="#a8a9ad2797e1c61ef3d3fbdeaf65f9793" class="m-doc-self">field_94</a>
+            </dt>
+            <dd>Control ID 0x26E0001.</dd>
+            <dt id="ae49230c0f78725c6efbb603402aa75f6">
+              <a href="_object_8h.html#a364c2967a9338c07ddc9a3d507389b5d" class="m-doc">ObjectPtr</a> <a href="#ae49230c0f78725c6efbb603402aa75f6" class="m-doc-self">field_98</a>
+            </dt>
+            <dd>Control ID 0x26E0003.</dd>
+            <dt id="a4a58701da6d1bc4f03634da1574020bb">
+              <a href="_object_8h.html#a364c2967a9338c07ddc9a3d507389b5d" class="m-doc">ObjectPtr</a> <a href="#a4a58701da6d1bc4f03634da1574020bb" class="m-doc-self">field_9C</a>
+            </dt>
+            <dd>Control ID 0x26E0001.</dd>
+            <dt id="a02660f1a8c51d4c1959596076058ff8f">
+              <a href="_i_window_8h.html#a8a007ed4a799cf73a9ba71b157f9d051" class="m-doc">IWindowPtr</a> <a href="#a02660f1a8c51d4c1959596076058ff8f" class="m-doc-self">field_A0</a>
+            </dt>
+            <dd>Control ID 0x542EFB0.</dd>
+            <dt id="ae0456b18ab18a2f8d0591920460e7984">
+              <a href="_object_8h.html#a364c2967a9338c07ddc9a3d507389b5d" class="m-doc">ObjectPtr</a> <a href="#ae0456b18ab18a2f8d0591920460e7984" class="m-doc-self">field_A4</a>
+            </dt>
+            <dd>Control ID 0x542EFB0.</dd>
+            <dt id="a33a0952510ae66063db180429d7674c1">
+              <a href="_i_window_8h.html#a8a007ed4a799cf73a9ba71b157f9d051" class="m-doc">IWindowPtr</a> <a href="#a33a0952510ae66063db180429d7674c1" class="m-doc-self">field_A8</a>
+            </dt>
+            <dd>Control ID 0x199A7D2.</dd>
+            <dt id="a2d9003bc46301efa19fbe3c71475295e">
+              <a href="_i_window_8h.html#a8a007ed4a799cf73a9ba71b157f9d051" class="m-doc">IWindowPtr</a> <a href="#a2d9003bc46301efa19fbe3c71475295e" class="m-doc-self">field_AC</a>
+            </dt>
+            <dd>Control ID 0x41F852D.</dd>
+            <dt id="a49a6de48c7dbdea2586f08073930cc2d">
+              <a href="_object_8h.html#a364c2967a9338c07ddc9a3d507389b5d" class="m-doc">ObjectPtr</a> <a href="#a49a6de48c7dbdea2586f08073930cc2d" class="m-doc-self">field_B0</a>
+            </dt>
+            <dd>Control ID 0x5E62810.</dd>
+            <dt id="ade5930fd1c1158301d2ae391bd243206">
+              <a href="_object_8h.html#a364c2967a9338c07ddc9a3d507389b5d" class="m-doc">ObjectPtr</a> <a href="#ade5930fd1c1158301d2ae391bd243206" class="m-doc-self">field_B4</a>
+            </dt>
+            <dd>Control ID 0x6303998.</dd>
+            <dt id="adb7e7eb228c5025f610c3d4dca507320">
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">char</a> <a href="#adb7e7eb228c5025f610c3d4dca507320" class="m-doc-self">padding_B8</a>
+            </dt>
+            <dd><span></span></dd>
+          </dl>
+        </section>
+        <section>
+          <h2>Function documentation</h2>
+          <section class="m-doc-details" id="a9125aed6b4b09b2d95d7739d6ea8d985"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">static <a href="namespace_u_i.html#ab2f5f0271b3d6ae75c3a119af1c7c9a0" class="m-doc">SimulatorRolloverID</a> UI::<wbr />SimulatorRollover::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a9125aed6b4b09b2d95d7739d6ea8d985" class="m-doc-self">GetRolloverIdForObject</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_game_data.html" class="m-doc">Simulator::<wbr />cGameData</a>* object)</span></span>
+            </h3>
+            <p>Returns which kind of rollover must be shown for a certain <a href="namespace_simulator.html" class="m-doc">Simulator</a> object.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">object</td>
+                  <td></td>
+                </tr>
+              </tbody>
+            </table>
+          </div></section>
+        </section>
+      </div>
+    </div>
+  </div>
+</article></main>
+<div class="m-doc-search" id="search">
+  <a href="#!" onclick="return hideSearch()"></a>
+  <div class="m-container">
+    <div class="m-row">
+      <div class="m-col-m-8 m-push-m-2">
+        <div class="m-doc-search-header m-text m-small">
+          <div><span class="m-label m-default">Tab</span> / <span class="m-label m-default">T</span> to search, <span class="m-label m-default">Esc</span> to close</div>
+          <div id="search-symbolcount">&hellip;</div>
+        </div>
+        <div class="m-doc-search-content">
+          <form>
+            <input type="search" name="q" id="search-input" placeholder="Loading &hellip;" disabled="disabled" autofocus="autofocus" autocomplete="off" spellcheck="false" />
+          </form>
+          <noscript class="m-text m-danger m-text-center">Unlike everything else in the docs, the search functionality <em>requires</em> JavaScript.</noscript>
+          <div id="search-help" class="m-text m-dim m-text-center">
+            <p class="m-noindent">Search for symbols, directories, files, pages or
+            modules. You can omit any prefix from the symbol or file path; adding a
+            <code>:</code> or <code>/</code> suffix lists all members of given symbol or
+            directory.</p>
+            <p class="m-noindent">Use <span class="m-label m-dim">&darr;</span>
+            / <span class="m-label m-dim">&uarr;</span> to navigate through the list,
+            <span class="m-label m-dim">Enter</span> to go.
+            <span class="m-label m-dim">Tab</span> autocompletes common prefix, you can
+            copy a link to the result using <span class="m-label m-dim">⌘</span>
+            <span class="m-label m-dim">L</span> while <span class="m-label m-dim">⌘</span>
+            <span class="m-label m-dim">M</span> produces a Markdown link.</p>
+          </div>
+          <div id="search-notfound" class="m-text m-warning m-text-center">Sorry, nothing was found.</div>
+          <ul id="search-results"></ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="search-v2.js"></script>
+<script src="searchdata-v2.js" async="async"></script>
+<footer><nav>
+  <div class="m-container">
+    <div class="m-row">
+      <div class="m-col-l-10 m-push-l-1">
+        <p>Spore ModAPI SDK for creating C++ mods for Spore. Created with <a href="https://doxygen.org/">Doxygen</a> 1.9.8 and <a href="https://mcss.mosra.cz/">m.css</a>.</p>
+      </div>
+    </div>
+  </div>
+</nav></footer>
+</body>
+</html>
