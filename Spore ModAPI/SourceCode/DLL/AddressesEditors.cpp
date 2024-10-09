@@ -176,6 +176,7 @@ namespace Editors
 		DefineAddress(SwitchBackground, SelectAddress(0x62F5F0, 0x62F640));
 		DefineAddress(DisableBackground, SelectAddress(0x62F900, 0x62F950));
 		DefineAddress(Load, SelectAddress(0x62FC70, 0x62FCC0));
+		DefineAddress(LoadBackgroudFiles, SelectAddress(0x62FBA0, 0x62FBF0));
 		DefineAddress(LoadBackgroundFiles, SelectAddress(0x62FBA0, 0x62FBF0));
 		DefineAddress(HandleUIButton, SelectAddress(0x62F7D0, 0x62F820));
 		DefineAddress(ToggleBackgroundButtonHighlights, SelectAddress(0x62F320, 0x62F370));

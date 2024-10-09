@@ -90,10 +90,7 @@ namespace Simulator
 		/// TODO, uses data
 		//kCinematicCRG2TRGPreload = 0x04b719d4,
 
-		/// Transitions creature stage to tribal stage
-		kMsgTransitionToTribe = 0x0477f66c,
-
-		/// Sent when the avatar creature transitions from creature stage to tribal stage (what is the difference between these?)
+		/// Transitions from creature stage to tribal stage
 		kMsgCreatureToTribeTransition = 0x0477f66c,
 
 		///////////////

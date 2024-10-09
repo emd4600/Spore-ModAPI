@@ -66,6 +66,7 @@ namespace Editors
 		DeclareAddress(DisableBackground);
 		DeclareAddress(Load);  // 0x62FC70 0x62FCC0
 		DeclareAddress(LoadBackgroundFiles);  // 0x62FBA0 0x62FBF0
+		DeclareAddress(LoadBackgroudFiles);  // legacy
 		DeclareAddress(HandleUIButton);  // 0x62F7D0 0x62F820
 		DeclareAddress(ToggleBackgroundButtonHighlights);  // 0x62F320 0x62F370
 		DeclareAddress(UpdatePageNumbers);  // 0x62F520 0x62F570
