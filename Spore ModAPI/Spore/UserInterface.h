@@ -39,6 +39,10 @@
 #include <Spore\UTFWin\CursorManager.h>
 #include <Spore\UTFWin\SporeTooltipWinProc.h>
 #include <Spore\UI\cSPAssetView.h>
+#include <Spore\UI\SpaceGameUI.h>
+#include <Spore\UI\GlobalUI.h>
+#include <Spore\UI\HintManager.h>
+#include <Spore\UI\SimulatorRollovers.h>
 
 ///
 /// @namespace UTFWin

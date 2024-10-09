@@ -3,6 +3,7 @@
 #include <Spore\UI\EditorNamePanel.h>
 #include <Spore\UI\cSPAssetView.h>
 #include <Spore\UI\AssetDiscoveryCard.h>
+#include <Spore\UI\SimulatorRollovers.h>
 
 namespace UI
 {
@@ -96,5 +97,12 @@ namespace UI
 		, mAssetWindow()
 	{
 	}
+
+
+	auto_STATIC_METHOD(SimulatorRollover, SimulatorRolloverID, GetRolloverIdForObject,
+		Args(Simulator::cGameData* object), Args(object));
+
+	auto_STATIC_METHOD(SimulatorRollover, SimulatorRollover*, ShowRollover,
+		Args(SimulatorRolloverID rolloverId), Args(rolloverId));
 }
 #endif
