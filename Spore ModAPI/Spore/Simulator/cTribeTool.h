@@ -50,7 +50,6 @@ namespace Simulator
 		/* 1F0h */	int field_1F0;
 		/* 1F4h */	int field_1F4;
 		/* 1F8h */	eastl::intrusive_ptr<cTribe> mTribe;
-		/* 1FCh */	int field_1FCpadding; // temp
 		/* 1FCh */	int mToolType;
 		/* 200h */	cGonzagoTimer mCreationTimer;
 		/* 220h */	cGonzagoTimer mDestroyedTimer;
