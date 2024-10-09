@@ -5,6 +5,7 @@
 #include <Spore\Simulator\cBehaviorList.h>
 #include <Spore\Simulator\cCombatant.h>
 #include <Spore\Simulator\cTribeToolData.h>
+#include <Spore\Simulator\cPlaceableStructure.h>
 
 #define cTribeToolPtr eastl::intrusive_ptr<Simulator::cTribeTool>
 
@@ -17,6 +18,7 @@ namespace Simulator
 		/* 34h */	, public cSpatialObject
 		/* 108h */	, public cBehaviorList
 		/* 120h */	, public cCombatant
+		/* 1E8h */	, public cPlaceableStructure
 	{
 	public:
 		static const uint32_t TYPE = 0x116D858;
