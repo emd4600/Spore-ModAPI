@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Simulator::cCinematicManager class | Spore ModAPI SDK for creating C++ mods for Spore</title>
+  <title>Simulator::cBundleManager class | Spore ModAPI SDK for creating C++ mods for Spore</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,600,600i%7CSource+Code+Pro:400,400i,600" />
   <link rel="stylesheet" href="m-dark.css" />
   <link rel="stylesheet" href="m-documentation.css" />
@@ -45,8 +45,8 @@
     <div class="m-row">
       <div class="m-col-l-10 m-push-l-1">
         <h1>
-          <span class="m-breadcrumb"><a href="namespace_simulator.html">Simulator</a>::<wbr/></span>cCinematicManager <span class="m-thin">class</span>
-          <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_cinematic_manager_8h.html">&lt;Spore ModAPI/Spore/Simulator/SubSystem/CinematicManager.h&gt;</a></div>
+          <span class="m-breadcrumb"><a href="namespace_simulator.html">Simulator</a>::<wbr/></span>cBundleManager <span class="m-thin">class</span>
+          <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_bundle_manager_8h.html">&lt;Spore ModAPI/Spore/Simulator/SubSystem/BundleManager.h&gt;</a></div>
         </h1>
         <p><span></span></p>
         <nav class="m-block m-default">
@@ -67,10 +67,6 @@
           <h2><a href="#base-classes">Base classes</a></h2>
           <dl class="m-doc">
             <dt>
-              class <a href="class_app_1_1_i_message_listener.html" class="m-doc">App::IMessageListener</a>
-            </dt>
-            <dd>An interface that can receive messages sent through the app.</dd>
-            <dt>
               class <a href="class_simulator_1_1c_strategy.html" class="m-doc">cStrategy</a>
             </dt>
             <dd><span></span></dd>
@@ -79,8 +75,8 @@
         <section id="pub-static-methods">
           <h2><a href="#pub-static-methods">Public static functions</a></h2>
           <dl class="m-doc">
-            <dt id="acf3d74d3c0e49f7560af5e110ad825fb">
-              <span class="m-doc-wrap-bumper">static auto <a href="#acf3d74d3c0e49f7560af5e110ad825fb" class="m-doc-self">Get</a>(</span><span class="m-doc-wrap">) -&gt; <a href="class_simulator_1_1c_cinematic_manager.html" class="m-doc">cCinematicManager</a>*</span>
+            <dt id="a388b290c7355e351060629d9716a0721">
+              <span class="m-doc-wrap-bumper">static auto <a href="#a388b290c7355e351060629d9716a0721" class="m-doc-self">Get</a>(</span><span class="m-doc-wrap">) -&gt; <a href="class_simulator_1_1c_bundle_manager.html" class="m-doc">cBundleManager</a>*</span>
             </dt>
             <dd><span></span></dd>
           </dl>
@@ -88,46 +84,99 @@
         <section id="pub-methods">
           <h2><a href="#pub-methods">Public functions</a></h2>
           <dl class="m-doc">
-            <dt id="ae499b85e6ae7e55b6d8662400bc035a4">
-              <span class="m-doc-wrap-bumper">auto <a href="#ae499b85e6ae7e55b6d8662400bc035a4" class="m-doc-self">AddCommand</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">const</a> <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">char</a>* commandName,
-              <a href="class_arg_script_1_1_i_command.html" class="m-doc">ArgScript::<wbr />ICommand</a>* command) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">void</a> <span class="m-label m-flat m-warning">virtual</span></span>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a58d7ae663eb225e6ae5e220b79f338f0" class="m-doc">CreateBundles</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">float</a> amount,
+              <a href="class_simulator_1_1c_game_bundle_container.html" class="m-doc">cGameBundleContainer</a>* container,
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> bundleType) -&gt; <a href="class_simulator_1_1c_game_bundle.html" class="m-doc">cGameBundle</a>*</span>
             </dt>
-            <dd><span></span></dd>
-            <dt id="a5642eecceae692a55a0725e81e7e589a">
-              <span class="m-doc-wrap-bumper">auto <a href="#a5642eecceae692a55a0725e81e7e589a" class="m-doc-self">PlayCinematic</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">const</a> <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">char</a>* cinematicName,
-              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> arg0,
-              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> arg1,
-              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> arg2,
-              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> arg3,
-              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> arg4) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">void</a></span>
+            <dd>Creates one or more bundles of the given type and adds them to the container.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a7e01dd3db76b922fa45bb96a6a9e364b" class="m-doc">RemoveBundles</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">float</a> amount,
+              <a href="class_simulator_1_1c_game_bundle_container.html" class="m-doc">cGameBundleContainer</a>* container,
+              <a href="class_simulator_1_1c_game_bundle.html" class="m-doc">cGameBundle</a>* bundle = <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">nullptr</a>) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">float</a></span>
             </dt>
-            <dd><span></span></dd>
+            <dd>Removes a certain quantity from a bundle container.</dd>
           </dl>
         </section>
         <section id="pub-attribs">
           <h2><a href="#pub-attribs">Public variables</a></h2>
           <dl class="m-doc">
-            <dt id="a9bdb5e2294a430f0a5f8179d9b9bee01">
-              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> <a href="#a9bdb5e2294a430f0a5f8179d9b9bee01" class="m-doc-self">field_20</a>
-            </dt>
-            <dd><span></span></dd>
-            <dt id="a3650a207d13c60bacaabaeca6fee7243">
-              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> <a href="#a3650a207d13c60bacaabaeca6fee7243" class="m-doc-self">field_24</a>
-            </dt>
-            <dd><span></span></dd>
-            <dt id="ae7cda5b73b8e0ce4f27e408cd205365a">
-              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> <a href="#ae7cda5b73b8e0ce4f27e408cd205365a" class="m-doc-self">field_28</a>
-            </dt>
-            <dd><span></span></dd>
-            <dt id="a0991651c0c74145990fb2cf5d0041357">
-              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> <a href="#a0991651c0c74145990fb2cf5d0041357" class="m-doc-self">field_2C</a>
-            </dt>
-            <dd><span></span></dd>
-            <dt id="a3068ebc66b96f43b3d5de3db868f47b6">
-              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">char</a> <a href="#a3068ebc66b96f43b3d5de3db868f47b6" class="m-doc-self">padding_30</a>
+            <dt id="aa8ef1e29094e369aa7dc1d58c815ba24">
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">void</a>* <a href="#aa8ef1e29094e369aa7dc1d58c815ba24" class="m-doc-self">mpGroundContainer</a>
             </dt>
             <dd><span></span></dd>
           </dl>
+        </section>
+        <section>
+          <h2>Function documentation</h2>
+          <section class="m-doc-details" id="a58d7ae663eb225e6ae5e220b79f338f0"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"><a href="class_simulator_1_1c_game_bundle.html" class="m-doc">cGameBundle</a>* Simulator::<wbr />cBundleManager::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a58d7ae663eb225e6ae5e220b79f338f0" class="m-doc-self">CreateBundles</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">float</a> amount,
+              <a href="class_simulator_1_1c_game_bundle_container.html" class="m-doc">cGameBundleContainer</a>* container,
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> bundleType)</span></span>
+            </h3>
+            <p>Creates one or more bundles of the given type and adds them to the container.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">amount</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>container</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>bundleType</td>
+                  <td></td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>Returns</th>
+                  <td>The last bundle created</td>
+                </tr>
+              </tfoot>
+            </table>
+<p>The number of bundles created depends on the &#x27;amount&#x27; and how much value each bundle can contain, which depends on the container.</p>
+          </div></section>
+          <section class="m-doc-details" id="a7e01dd3db76b922fa45bb96a6a9e364b"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">float</a> Simulator::<wbr />cBundleManager::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a7e01dd3db76b922fa45bb96a6a9e364b" class="m-doc-self">RemoveBundles</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">float</a> amount,
+              <a href="class_simulator_1_1c_game_bundle_container.html" class="m-doc">cGameBundleContainer</a>* container,
+              <a href="class_simulator_1_1c_game_bundle.html" class="m-doc">cGameBundle</a>* bundle = <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">nullptr</a>)</span></span>
+            </h3>
+            <p>Removes a certain quantity from a bundle container.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">amount</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>container</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>bundle</td>
+                  <td>If not null, removes only that specific bundle</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>Returns</th>
+                  <td>The actual amount that has been removed.</td>
+                </tr>
+              </tfoot>
+            </table>
+<p>This will remove as many bundles as necessary, and change the value of the last remaining bundle. If the amount is small enough, no bundle may be deleted.</p>
+          </div></section>
         </section>
       </div>
     </div>

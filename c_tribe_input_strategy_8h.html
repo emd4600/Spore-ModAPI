@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Simulator::cCinematicManager class | Spore ModAPI SDK for creating C++ mods for Spore</title>
+  <title>Spore ModAPI/Spore/Simulator/cTribeInputStrategy.h file | Spore ModAPI SDK for creating C++ mods for Spore</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,600,600i%7CSource+Code+Pro:400,400i,600" />
   <link rel="stylesheet" href="m-dark.css" />
   <link rel="stylesheet" href="m-documentation.css" />
@@ -45,8 +45,7 @@
     <div class="m-row">
       <div class="m-col-l-10 m-push-l-1">
         <h1>
-          <span class="m-breadcrumb"><a href="namespace_simulator.html">Simulator</a>::<wbr/></span>cCinematicManager <span class="m-thin">class</span>
-          <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_cinematic_manager_8h.html">&lt;Spore ModAPI/Spore/Simulator/SubSystem/CinematicManager.h&gt;</a></div>
+          <span class="m-breadcrumb"><a href="dir_3afcc05771c4e3f5acf081f332217ac8.html">Spore ModAPI</a>/</span><span class="m-breadcrumb"><a href="dir_c27950c697e5dfd98eb6c6418519a737.html">Spore</a>/</span><span class="m-breadcrumb"><a href="dir_0c2ed0f1c41a4f73f627d8cb2bd71031.html">Simulator</a>/</span>cTribeInputStrategy.h <span class="m-thin">file</span>
         </h1>
         <p><span></span></p>
         <nav class="m-block m-default">
@@ -55,76 +54,24 @@
             <li>
               Reference
               <ul>
-                <li><a href="#base-classes">Base classes</a></li>
-                <li><a href="#pub-static-methods">Public static functions</a></li>
-                <li><a href="#pub-methods">Public functions</a></li>
-                <li><a href="#pub-attribs">Public variables</a></li>
+                <li><a href="#namespaces">Namespaces</a></li>
+                <li><a href="#nested-classes">Classes</a></li>
               </ul>
             </li>
           </ul>
         </nav>
-        <section id="base-classes">
-          <h2><a href="#base-classes">Base classes</a></h2>
+        <section id="namespaces">
+          <h2><a href="#namespaces">Namespaces</a></h2>
+          <dl class="m-doc">
+            <dt>namespace <a href="namespace_simulator.html" class="m-doc">Simulator</a></dt>
+            <dd><span></span></dd>
+          </dl>
+        </section>
+        <section id="nested-classes">
+          <h2><a href="#nested-classes">Classes</a></h2>
           <dl class="m-doc">
             <dt>
-              class <a href="class_app_1_1_i_message_listener.html" class="m-doc">App::IMessageListener</a>
-            </dt>
-            <dd>An interface that can receive messages sent through the app.</dd>
-            <dt>
-              class <a href="class_simulator_1_1c_strategy.html" class="m-doc">cStrategy</a>
-            </dt>
-            <dd><span></span></dd>
-          </dl>
-        </section>
-        <section id="pub-static-methods">
-          <h2><a href="#pub-static-methods">Public static functions</a></h2>
-          <dl class="m-doc">
-            <dt id="acf3d74d3c0e49f7560af5e110ad825fb">
-              <span class="m-doc-wrap-bumper">static auto <a href="#acf3d74d3c0e49f7560af5e110ad825fb" class="m-doc-self">Get</a>(</span><span class="m-doc-wrap">) -&gt; <a href="class_simulator_1_1c_cinematic_manager.html" class="m-doc">cCinematicManager</a>*</span>
-            </dt>
-            <dd><span></span></dd>
-          </dl>
-        </section>
-        <section id="pub-methods">
-          <h2><a href="#pub-methods">Public functions</a></h2>
-          <dl class="m-doc">
-            <dt id="ae499b85e6ae7e55b6d8662400bc035a4">
-              <span class="m-doc-wrap-bumper">auto <a href="#ae499b85e6ae7e55b6d8662400bc035a4" class="m-doc-self">AddCommand</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">const</a> <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">char</a>* commandName,
-              <a href="class_arg_script_1_1_i_command.html" class="m-doc">ArgScript::<wbr />ICommand</a>* command) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">void</a> <span class="m-label m-flat m-warning">virtual</span></span>
-            </dt>
-            <dd><span></span></dd>
-            <dt id="a5642eecceae692a55a0725e81e7e589a">
-              <span class="m-doc-wrap-bumper">auto <a href="#a5642eecceae692a55a0725e81e7e589a" class="m-doc-self">PlayCinematic</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">const</a> <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">char</a>* cinematicName,
-              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> arg0,
-              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> arg1,
-              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> arg2,
-              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> arg3,
-              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> arg4) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">void</a></span>
-            </dt>
-            <dd><span></span></dd>
-          </dl>
-        </section>
-        <section id="pub-attribs">
-          <h2><a href="#pub-attribs">Public variables</a></h2>
-          <dl class="m-doc">
-            <dt id="a9bdb5e2294a430f0a5f8179d9b9bee01">
-              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> <a href="#a9bdb5e2294a430f0a5f8179d9b9bee01" class="m-doc-self">field_20</a>
-            </dt>
-            <dd><span></span></dd>
-            <dt id="a3650a207d13c60bacaabaeca6fee7243">
-              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> <a href="#a3650a207d13c60bacaabaeca6fee7243" class="m-doc-self">field_24</a>
-            </dt>
-            <dd><span></span></dd>
-            <dt id="ae7cda5b73b8e0ce4f27e408cd205365a">
-              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> <a href="#ae7cda5b73b8e0ce4f27e408cd205365a" class="m-doc-self">field_28</a>
-            </dt>
-            <dd><span></span></dd>
-            <dt id="a0991651c0c74145990fb2cf5d0041357">
-              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> <a href="#a0991651c0c74145990fb2cf5d0041357" class="m-doc-self">field_2C</a>
-            </dt>
-            <dd><span></span></dd>
-            <dt id="a3068ebc66b96f43b3d5de3db868f47b6">
-              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">char</a> <a href="#a3068ebc66b96f43b3d5de3db868f47b6" class="m-doc-self">padding_30</a>
+              class <a href="class_simulator_1_1c_tribe_input_strategy.html" class="m-doc">Simulator::cTribeInputStrategy</a>
             </dt>
             <dd><span></span></dd>
           </dl>

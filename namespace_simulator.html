@@ -127,6 +127,10 @@
             </dt>
             <dd><span></span></dd>
             <dt>
+              class <a href="class_simulator_1_1c_base_simulator_input_strategy.html" class="m-doc">cBaseSimulatorInputStrategy</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
               class <a href="class_simulator_1_1c_behavior_agent.html" class="m-doc">cBehaviorAgent</a>
             </dt>
             <dd><span></span></dd>
@@ -168,6 +172,10 @@
             <dd><span></span></dd>
             <dt>
               class <a href="class_simulator_1_1c_building_scenario.html" class="m-doc">cBuildingScenario</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              class <a href="class_simulator_1_1c_bundle_manager.html" class="m-doc">cBundleManager</a>
             </dt>
             <dd><span></span></dd>
             <dt>
@@ -969,6 +977,10 @@
             <dd>The food mat of a tribe. Default model is <code>TribalTools!trg_sacrifice_altar1</code>, default <code>mMaterialType</code> is 2.</dd>
             <dt>
               class <a href="class_simulator_1_1c_tribe_hut.html" class="m-doc">cTribeHut</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              class <a href="class_simulator_1_1c_tribe_input_strategy.html" class="m-doc">cTribeInputStrategy</a>
             </dt>
             <dd><span></span></dd>
             <dt>
@@ -1868,6 +1880,46 @@
             </dt>
             <dd><span></span></dd>
             <dt>
+              <span class="m-doc-wrap-bumper">enum <a href="#a26eb75c2b21b60c182b6608cd35852d5" class="m-doc">TribeBundleType</a> { </span><span class="m-doc-wrap"><a href="#a26eb75c2b21b60c182b6608cd35852d5a9e8f6638955939dde44a9a8fe865503d" class="m-doc">kTribeBundleTypeFruit</a> = 1,
+              <a href="#a26eb75c2b21b60c182b6608cd35852d5aea2ea2e8dd3de12ea850f672f73b584b" class="m-doc">kTribeBundleTypeMeat</a> = 2,
+              <a href="#a26eb75c2b21b60c182b6608cd35852d5ae3ebcafb19c7e919fa722310e0fad511" class="m-doc">kTribeBundleTypeFish</a> = 3 }</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">enum <a href="#a540df894aaad7d8458ab5f4f74d09934" class="m-doc">TribeInputAction</a> { </span><span class="m-doc-wrap"><a href="#a540df894aaad7d8458ab5f4f74d09934ac7fd9d93b77c719881bc904f97b30ac5" class="m-doc">kTribeInputActionToolAttack1</a> = 19,
+              <a href="#a540df894aaad7d8458ab5f4f74d09934a490d3fd6138b45d6a22f77a0902318eb" class="m-doc">kTribeInputActionToolAttack2</a> = 20,
+              <a href="#a540df894aaad7d8458ab5f4f74d09934aa29c5a8da79ccb99d39d5eea2ead056f" class="m-doc">kTribeInputActionToolAttack3</a> = 21,
+              <a href="#a540df894aaad7d8458ab5f4f74d09934af58311c77b015bbe4678e209d3ae43fa" class="m-doc">kTribeInputActionToolSocial1</a> = 22,
+              <a href="#a540df894aaad7d8458ab5f4f74d09934a9956111e59dc02e252dc7aa4e58b4326" class="m-doc">kTribeInputActionToolSocial2</a> = 23,
+              <a href="#a540df894aaad7d8458ab5f4f74d09934a2a104e21730f18d16e2dafc4b0f77bed" class="m-doc">kTribeInputActionToolSocial3</a> = 24,
+              <a href="#a540df894aaad7d8458ab5f4f74d09934a9eab6ddcd3b4bad292daa82f8572742b" class="m-doc">kTribeInputActionToolHeal</a> = 25,
+              <a href="#a540df894aaad7d8458ab5f4f74d09934a2b57c5dd42d354a8d06f941e841261f5" class="m-doc">kTribeInputActionToolFirepit</a> = 26 }</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">enum <a href="#a3068a6e284562d7b8e1aa81aec62abbd" class="m-doc">CitizenAction</a> { </span><span class="m-doc-wrap"><a href="#a3068a6e284562d7b8e1aa81aec62abbda3cef2fe11b0dc89c19533f9a1787879c" class="m-doc">kCitizenActionEat</a> = 0,
+              <a href="#a3068a6e284562d7b8e1aa81aec62abbdaa7c64fc57aa7a52cface2e0f0c0aae48" class="m-doc">kCitizenActionFish</a> = 1,
+              <a href="#a3068a6e284562d7b8e1aa81aec62abbdaa10a5f50b189ddf9b6a32cac462af214" class="m-doc">kCitizenActionGather</a> = 2,
+              <a href="#a3068a6e284562d7b8e1aa81aec62abbdae94200d8f18d07deb570cc3b3b547f75" class="m-doc">kCitizenActionGrabTool</a> = 3,
+              <a href="#a3068a6e284562d7b8e1aa81aec62abbdadb23153e615d2cbd76f15c9b3d1ce98c" class="m-doc">kCitizenActionHeal</a> = 5,
+              <a href="#a3068a6e284562d7b8e1aa81aec62abbda27724ecdc17eb333e66b7213398bf7a2" class="m-doc">kCitizenActionAttack</a> = 7,
+              <a href="#a3068a6e284562d7b8e1aa81aec62abbda34d3cbbbea6d096734ccd2cbd043f8d7" class="m-doc">kCitizenActionRaid1</a> = 8,
+              <a href="#a3068a6e284562d7b8e1aa81aec62abbdacca69a4c98045c25c36c6dfa567dc271" class="m-doc">kCitizenActionGift1</a> = 9,
+              <a href="#a3068a6e284562d7b8e1aa81aec62abbda4a83cac544bf54df01086235006aa960" class="m-doc">kCitizenActionHunt</a> = 10,
+              <a href="#a3068a6e284562d7b8e1aa81aec62abbda126bda18775b2330d53062d107e01947" class="m-doc">kCitizenActionMate</a> = 11,
+              <a href="#a3068a6e284562d7b8e1aa81aec62abbdababa96ac9d0c44a0246fbf08f4cbea21" class="m-doc">kCitizenActionParty</a> = 12,
+              <a href="#a3068a6e284562d7b8e1aa81aec62abbda58eb67bf3edf3c2b1aa99320eb837bdc" class="m-doc">kCitizenActionCollectEgg</a> = 13,
+              <a href="#a3068a6e284562d7b8e1aa81aec62abbda7143ab3ce7f1211f07092ed08a1f11af" class="m-doc">kCitizenActionBundle</a> = 14,
+              <a href="#a3068a6e284562d7b8e1aa81aec62abbda86167886ca63cfcc90e7334c5f5424e9" class="m-doc">kCitizenActionRaid2</a> = 15,
+              <a href="#a3068a6e284562d7b8e1aa81aec62abbdab67227152dd14dcf99d1a985930ab164" class="m-doc">kCitizenActionFeedWild</a> = 20,
+              <a href="#a3068a6e284562d7b8e1aa81aec62abbdaa3c90885bd5a8b04ab0de6a6c1054dc1" class="m-doc">kCitizenActionGift2</a> = 21,
+              <a href="#a3068a6e284562d7b8e1aa81aec62abbda6537382e14c985cac59f09053db3a398" class="m-doc">kCitizenActionRepair</a> = 24,
+              <a href="#a3068a6e284562d7b8e1aa81aec62abbda77d07cc1a25ec7fbe9f3ac76b2f88f48" class="m-doc">kCitizenActionTame</a> = 25,
+              <a href="#a3068a6e284562d7b8e1aa81aec62abbda763e5f3128652565f63af6e334f03f67" class="m-doc">kCitizenActionRecruit</a> = 26,
+              <a href="#a3068a6e284562d7b8e1aa81aec62abbdadc39f28346f7de31b66210ccc0b32672" class="m-doc">kCitizenActionGatherMeat</a> = 27 }</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
               <span class="m-doc-wrap-bumper">enum <a href="#a4b1f459203b8dbf8583312aa067c8c54" class="m-doc">SimulatorMessages</a> { </span><span class="m-doc-wrap"><a href="#a4b1f459203b8dbf8583312aa067c8c54afaa877c01fe00a1dad6f0eb4a78ba75f" class="m-doc">kMsgEnterEditor</a> = 0x53850BAE,
               <a href="#a4b1f459203b8dbf8583312aa067c8c54a197b4a2cb2dc6bc85d3e116aaad8a82b" class="m-doc">kMsgSwitchEditor</a> = 0x0212D3E7,
               <a href="#a4b1f459203b8dbf8583312aa067c8c54a5edeab9362d5e625c62466364e194af0" class="m-doc">kMsgSwitchGameMode</a> = 0x0212D3E7,
@@ -2198,6 +2250,11 @@
             <dt>
               <span class="m-doc-wrap-bumper"><a href="#a7dbc0d78dcc0d31a2ad8b7ce08c8cb2d" class="m-doc">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_base_display_strategy.html" class="m-doc">cBaseDisplayStrategy</a>,
               0x38)</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper"><a href="#a18575473ad12a22513b4eb4c0350b395" class="m-doc">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_base_simulator_input_strategy.html" class="m-doc">cBaseSimulatorInputStrategy</a>,
+              0x3C)</span>
             </dt>
             <dd><span></span></dd>
             <dt>
@@ -3305,6 +3362,15 @@
             </dt>
             <dd><span></span></dd>
             <dt>
+              <span class="m-doc-wrap-bumper"><a href="#a979745dac0626ec8c7fb7383c23f1642" class="m-doc">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_tribe_input_strategy.html" class="m-doc">cTribeInputStrategy</a>,
+              0xD0)</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a41bcd3f78252e687028a58d031de4c51" class="m-doc">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_tribe_input_strategy.html" class="m-doc">cTribeInputStrategy</a>) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">namespace</a></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
               <span class="m-doc-wrap-bumper"><a href="#ae39c06882a62527570219a415c23c18c" class="m-doc">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="struct_simulator_1_1c_tribe_plan_properties.html" class="m-doc">cTribePlanProperties</a>,
               0x44)</span>
             </dt>
@@ -3474,6 +3540,15 @@
             <dd><span></span></dd>
             <dt>
               <span class="m-doc-wrap-bumper">auto <a href="#a53237be85f8e28d2f33195c87425c293" class="m-doc">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_animal_species_manager.html" class="m-doc">cAnimalSpeciesManager</a>) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">namespace</a></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper"><a href="#a4ee0a94912b4c4b9c7ae1f66ead70515" class="m-doc">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_bundle_manager.html" class="m-doc">cBundleManager</a>,
+              0x20)</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a34aa2a9dcca2774aa25df2beb4154e22" class="m-doc">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_bundle_manager.html" class="m-doc">cBundleManager</a>) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">namespace</a></span>
             </dt>
             <dd><span></span></dd>
             <dt>
@@ -4727,6 +4802,27 @@
             </h3>
             <p><span></span></p>
           </div></section>
+          <section class="m-doc-details" id="a26eb75c2b21b60c182b6608cd35852d5"><div>
+            <h3>
+              enum Simulator::<wbr /><a href="#a26eb75c2b21b60c182b6608cd35852d5" class="m-doc-self">TribeBundleType</a>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_simulator_enums_8h.html">&lt;Spore ModAPI/Spore/Simulator/SimulatorEnums.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="a540df894aaad7d8458ab5f4f74d09934"><div>
+            <h3>
+              enum Simulator::<wbr /><a href="#a540df894aaad7d8458ab5f4f74d09934" class="m-doc-self">TribeInputAction</a>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_simulator_enums_8h.html">&lt;Spore ModAPI/Spore/Simulator/SimulatorEnums.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="a3068a6e284562d7b8e1aa81aec62abbd"><div>
+            <h3>
+              enum Simulator::<wbr /><a href="#a3068a6e284562d7b8e1aa81aec62abbd" class="m-doc-self">CitizenAction</a>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_simulator_enums_8h.html">&lt;Spore ModAPI/Spore/Simulator/SimulatorEnums.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
           <section class="m-doc-details" id="a4b1f459203b8dbf8583312aa067c8c54"><div>
             <h3>
               enum Simulator::<wbr /><a href="#a4b1f459203b8dbf8583312aa067c8c54" class="m-doc-self">SimulatorMessages</a>
@@ -5648,6 +5744,14 @@
               <span class="m-doc-wrap-bumper"> Simulator::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a7dbc0d78dcc0d31a2ad8b7ce08c8cb2d" class="m-doc-self">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_base_display_strategy.html" class="m-doc">cBaseDisplayStrategy</a>,
               0x38)</span></span>
               <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="c_base_display_strategy_8h.html">&lt;Spore ModAPI/Spore/Simulator/cBaseDisplayStrategy.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="a18575473ad12a22513b4eb4c0350b395"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"> Simulator::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a18575473ad12a22513b4eb4c0350b395" class="m-doc-self">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_base_simulator_input_strategy.html" class="m-doc">cBaseSimulatorInputStrategy</a>,
+              0x3C)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="c_base_simulator_input_strategy_8h.html">&lt;Spore ModAPI/Spore/Simulator/cBaseSimulatorInputStrategy.h&gt;</a></div>
             </h3>
             <p><span></span></p>
           </div></section>
@@ -7536,6 +7640,21 @@
             </h3>
             <p><span></span></p>
           </div></section>
+          <section class="m-doc-details" id="a979745dac0626ec8c7fb7383c23f1642"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"> Simulator::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a979745dac0626ec8c7fb7383c23f1642" class="m-doc-self">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_tribe_input_strategy.html" class="m-doc">cTribeInputStrategy</a>,
+              0xD0)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="c_tribe_input_strategy_8h.html">&lt;Spore ModAPI/Spore/Simulator/cTribeInputStrategy.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="a41bcd3f78252e687028a58d031de4c51"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">namespace</a> Simulator::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a41bcd3f78252e687028a58d031de4c51" class="m-doc-self">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_tribe_input_strategy.html" class="m-doc">cTribeInputStrategy</a>)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="c_tribe_input_strategy_8h.html">&lt;Spore ModAPI/Spore/Simulator/cTribeInputStrategy.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
           <section class="m-doc-details" id="ae39c06882a62527570219a415c23c18c"><div>
             <h3>
               <span class="m-doc-wrap-bumper"> Simulator::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ae39c06882a62527570219a415c23c18c" class="m-doc-self">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="struct_simulator_1_1c_tribe_plan_properties.html" class="m-doc">cTribePlanProperties</a>,
@@ -7937,6 +8056,21 @@
             <h3>
               <span class="m-doc-wrap-bumper"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">namespace</a> Simulator::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a53237be85f8e28d2f33195c87425c293" class="m-doc-self">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_animal_species_manager.html" class="m-doc">cAnimalSpeciesManager</a>)</span></span>
               <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_animal_species_manager_8h.html">&lt;Spore ModAPI/Spore/Simulator/SubSystem/AnimalSpeciesManager.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="a4ee0a94912b4c4b9c7ae1f66ead70515"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"> Simulator::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a4ee0a94912b4c4b9c7ae1f66ead70515" class="m-doc-self">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_bundle_manager.html" class="m-doc">cBundleManager</a>,
+              0x20)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_bundle_manager_8h.html">&lt;Spore ModAPI/Spore/Simulator/SubSystem/BundleManager.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="a34aa2a9dcca2774aa25df2beb4154e22"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">namespace</a> Simulator::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a34aa2a9dcca2774aa25df2beb4154e22" class="m-doc-self">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_bundle_manager.html" class="m-doc">cBundleManager</a>)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_bundle_manager_8h.html">&lt;Spore ModAPI/Spore/Simulator/SubSystem/BundleManager.h&gt;</a></div>
             </h3>
             <p><span></span></p>
           </div></section>
