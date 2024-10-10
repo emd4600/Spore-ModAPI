@@ -1869,19 +1869,49 @@
             <dd><span></span></dd>
             <dt>
               <span class="m-doc-wrap-bumper">enum <a href="#a4b1f459203b8dbf8583312aa067c8c54" class="m-doc">SimulatorMessages</a> { </span><span class="m-doc-wrap"><a href="#a4b1f459203b8dbf8583312aa067c8c54afaa877c01fe00a1dad6f0eb4a78ba75f" class="m-doc">kMsgEnterEditor</a> = 0x53850BAE,
+              <a href="#a4b1f459203b8dbf8583312aa067c8c54a197b4a2cb2dc6bc85d3e116aaad8a82b" class="m-doc">kMsgSwitchEditor</a> = 0x0212D3E7,
               <a href="#a4b1f459203b8dbf8583312aa067c8c54a5edeab9362d5e625c62466364e194af0" class="m-doc">kMsgSwitchGameMode</a> = 0x0212D3E7,
               <a href="#a4b1f459203b8dbf8583312aa067c8c54ae09650fb53b169697e5b7e2aea8296d5" class="m-doc">kMsgSaveGame</a> = 0x1CD20F0,
+              <a href="#a4b1f459203b8dbf8583312aa067c8c54a0fba29addeaa4111f0239467b4fdb100" class="m-doc">kMessageLoadGame</a> = 0xf8b1a2af,
               <a href="#a4b1f459203b8dbf8583312aa067c8c54a82e0d093872451cd1001fe9f9e519a38" class="m-doc">kMsgGameNounStatusChanged</a> = 0x1A0219E,
               <a href="#a4b1f459203b8dbf8583312aa067c8c54a9d475d5f3146d6508a2ce1383f756292" class="m-doc">kMsgMissionUpdate</a> = 0x38CF2FD,
               <a href="#a4b1f459203b8dbf8583312aa067c8c54a839bc99988e90245304cee1eeb8c3640" class="m-doc">kMsgCombatantKilled</a> = 0x1622184,
+              <a href="#a4b1f459203b8dbf8583312aa067c8c54a37638938be80a645a1a471bfdd3b0cb5" class="m-doc">kMsgKillPersistentEffects</a> = 0x0667af52,
+              <a href="#a4b1f459203b8dbf8583312aa067c8c54a5e1b9764d7c071ed3859c125001d26d3" class="m-doc">kMsgDoCinematicAction</a> = 0x4470A41,
+              <a href="#a4b1f459203b8dbf8583312aa067c8c54a14c9c245884c625ba913a9338a45d77e" class="m-doc">kMsgCinematicGGE2CLGEnds</a> = 0x04065b23,
+              <a href="#a4b1f459203b8dbf8583312aa067c8c54a94d9b3d206b271e54129c42f8755d97a" class="m-doc">kMsgCellStageStart</a> = 0x047c1d19,
+              <a href="#a4b1f459203b8dbf8583312aa067c8c54affca447acecf9c67a0a920e48278b9d8" class="m-doc">kMsgCellToCreatureTransition</a> = 0x02A4f8f0,
+              <a href="#a4b1f459203b8dbf8583312aa067c8c54a816e773e4e793bf210d72715fdc98c18" class="m-doc">kMsgHatchAvatarEggs</a> = 0x06566531,
+              <a href="#a4b1f459203b8dbf8583312aa067c8c54a68b97db38e55f780ab4c4dcf48d91e77" class="m-doc">kMsgUpgradeNest</a> = 0x06555abc,
+              <a href="#a4b1f459203b8dbf8583312aa067c8c54a2dc15f10a47005bcf723609876188e5d" class="m-doc">kMsgRestartAtNest</a> = 0x04f60b92,
+              <a href="#a4b1f459203b8dbf8583312aa067c8c54a8d7346886f15bab24e70a8dac66d4659" class="m-doc">kEnterCreatureEditor</a> = 0x04d9686f,
+              <a href="#a4b1f459203b8dbf8583312aa067c8c54a99be2b60fa2800255467b586dc98b12e" class="m-doc">kMsgCreatureToTribeTransition</a> = 0x0477f66c,
+              <a href="#a4b1f459203b8dbf8583312aa067c8c54a8566dac413d40bd6317a378cb4751aa9" class="m-doc">kMsgTribeUpgradeHut</a> = 0x0575116e,
+              <a href="#a4b1f459203b8dbf8583312aa067c8c54a7a6bdcfa3998649436f8fa6aef8de2e7" class="m-doc">kMsgTribeUpgradeCampfire</a> = 0x0575116f,
+              <a href="#a4b1f459203b8dbf8583312aa067c8c54af7bec7a96c8737a442c5db4e7f7f9700" class="m-doc">kMsgTribeUpgradeFoodMat</a> = 0x05751170,
+              <a href="#a4b1f459203b8dbf8583312aa067c8c54a1129776bfd1479da7e4b7edc6f01f96e" class="m-doc">kMsgNotifyTotemNeeded</a> = 0x05cd5482,
+              <a href="#a4b1f459203b8dbf8583312aa067c8c54a39e56b899eb5440aa83a3d7e1746c5bf" class="m-doc">kMsgNotifyUpgradeDone</a> = 0x05cd5482,
+              <a href="#a4b1f459203b8dbf8583312aa067c8c54a53f87ba0ebdb4d7f3bef072842ba31e6" class="m-doc">kMsgTribeRestart</a> = 0x0420e32a,
+              <a href="#a4b1f459203b8dbf8583312aa067c8c54a53171c6de6681f35d6a0b4a5f9470d77" class="m-doc">kMsgTribeMoveCameraToTribe</a> = 0x056cf231,
+              <a href="#a4b1f459203b8dbf8583312aa067c8c54aa2f3153c23e6a87ed245b3eb6a44420e" class="m-doc">kMsgCinematicTRG2CVGShowCityHall</a> = 0x069479a8,
+              <a href="#a4b1f459203b8dbf8583312aa067c8c54ad3cfb3a3b039a8ca29f7cf114198b0ae" class="m-doc">kMsgCinematicTRG2CVGHideCityHall</a> = 0x0694797d,
+              <a href="#a4b1f459203b8dbf8583312aa067c8c54a8f5d9b2b677b1b2b5f5c0e71d28daad4" class="m-doc">kMsgCinematicNewCityAppears</a> = 0x05668f43,
+              <a href="#a4b1f459203b8dbf8583312aa067c8c54ae72860a65464daed0340c1b8fb0d5288" class="m-doc">kMsgCinematicCityChangeStartBuildingsEffects</a> = 0x05f4d02a,
+              <a href="#a4b1f459203b8dbf8583312aa067c8c54a92d71311de7f04f260030a24440565cd" class="m-doc">kMsgCinematicCityChangeSwapBuildings</a> = 0x05dfb77f,
+              <a href="#a4b1f459203b8dbf8583312aa067c8c54ae78f78a09e2a1771b8a7a7d5c54079ec" class="m-doc">kMsgCinematicCityChangeChangeWallColor</a> = 0x05dfb782,
+              <a href="#a4b1f459203b8dbf8583312aa067c8c54aed559e3177187ac2f2f227affba6033f" class="m-doc">kMsgCinematicCityChangeChangeCivilization</a> = 0x05dbc31e,
+              <a href="#a4b1f459203b8dbf8583312aa067c8c54a32d628bbb41c40c4912ffb5d788e205c" class="m-doc">kMsgCivTriggerSuperweapon</a> = 0x06524f8f,
+              <a href="#a4b1f459203b8dbf8583312aa067c8c54aed77801f01fefeb80730972d9cd225b6" class="m-doc">kMsgShowUFOForTransition</a> = 0x0590cd26,
+              <a href="#a4b1f459203b8dbf8583312aa067c8c54aed449f3052e6040dc3eca33cdd4e6e41" class="m-doc">kMsgSpaceGameFromLaunchScreen</a> = 0x02364016,
+              <a href="#a4b1f459203b8dbf8583312aa067c8c54a8320d35764f9e24c1185f60a8116e467" class="m-doc">kMsgCinematicSpaceGetTools</a> = 0x06526395,
+              <a href="#a4b1f459203b8dbf8583312aa067c8c54a1a6346f81977579e260ba6a54cf241f0" class="m-doc">kMsgCinematicSpaceFirstSpicePickup</a> = 0x06834927,
+              <a href="#a4b1f459203b8dbf8583312aa067c8c54a28241677099562e8140cb57cf1159ecb" class="m-doc">kMsgCinematicSpaceUFOEffect</a> = 0x0665e639,
+              <a href="#a4b1f459203b8dbf8583312aa067c8c54abe8b3141f242fb5634e602c9c6635349" class="m-doc">kMsgCinematicScreenBadgeEffect</a> = 0x0665e1ab,
+              <a href="#a4b1f459203b8dbf8583312aa067c8c54ac26007b2606923d70bf3e3ac7ce3ac8d" class="m-doc">kMsgCinematicSpaceColonyAtmosphereDomeDown</a> = 0x065e622c,
               <a href="#a4b1f459203b8dbf8583312aa067c8c54aedab9a2e20a8c2f9ee659a243ef98612" class="m-doc">kMsgPlayerEmpireAllied</a> = 0x4445D43,
               <a href="#a4b1f459203b8dbf8583312aa067c8c54ad817f59624cc553deeac36caa708318f" class="m-doc">kMsgPlayerEmpireLostAlliance</a> = 0x4445D44,
               <a href="#a4b1f459203b8dbf8583312aa067c8c54a340435c8f867ff7674dce73d4fa4aa49" class="m-doc">kMsgSculptOrColorToolHit</a> = 0xF46092DB,
               <a href="#a4b1f459203b8dbf8583312aa067c8c54a677cf886ed74c385b2cb1591e2302ed1" class="m-doc">kMsgToolOnHit</a> = 0x56690BB,
-              <a href="#a4b1f459203b8dbf8583312aa067c8c54acf8b18d73180628fe065d6745b7f81b0" class="m-doc">kMsgScenarioCreatureHealed</a> = 0x7C789F8,
-              <a href="#a4b1f459203b8dbf8583312aa067c8c54a3f06b850d19dac88bfba6a42b573b8b5" class="m-doc">kMsgScenarioEnergyConsumed</a> = 0x7C7A52E,
-              <a href="#a4b1f459203b8dbf8583312aa067c8c54a3729c0202be9a3d3725cb57955a8b84c" class="m-doc">kMsgScenarioUndo</a> = 0xC9D86390,
-              <a href="#a4b1f459203b8dbf8583312aa067c8c54ae53006e012a9861c820dbf1c344cdc6d" class="m-doc">kMsgScenarioRedo</a> = 0xC9D86391,
               <a href="#a4b1f459203b8dbf8583312aa067c8c54ac820d8c5898b2abe7c628f66c9758788" class="m-doc">kMsgGalaxyGenerateStarG</a> = 0x35B2B15,
               <a href="#a4b1f459203b8dbf8583312aa067c8c54ab25361c44972d946493182cf781ae768" class="m-doc">kMsgGalaxyGenerateStarO</a> = 0x36998AE,
               <a href="#a4b1f459203b8dbf8583312aa067c8c54a3e97122dcf1561de3bcdb07289763820" class="m-doc">kMsgGalaxyGenerateStarM</a> = 0x3757942,
@@ -1897,7 +1927,19 @@
               <a href="#a4b1f459203b8dbf8583312aa067c8c54a7aebd8bea2592ecf659816c4b77aa931" class="m-doc">kMsgSpaceRareFound</a> = 0xF46092D4,
               <a href="#a4b1f459203b8dbf8583312aa067c8c54a341fd4d65e722818c6b7b2468403bfd1" class="m-doc">kMsgSpaceRareDiscovered</a> = 0x6779F04,
               <a href="#a4b1f459203b8dbf8583312aa067c8c54a6e2bae54ff8bc1ca4802d9b9546f21f3" class="m-doc">kMsgStarOwnershipChanged</a> = 0x55BD8F7,
-              <a href="#a4b1f459203b8dbf8583312aa067c8c54a5e1b9764d7c071ed3859c125001d26d3" class="m-doc">kMsgDoCinematicAction</a> = 0x4470A41 }</span>
+              <a href="#a4b1f459203b8dbf8583312aa067c8c54acf8b18d73180628fe065d6745b7f81b0" class="m-doc">kMsgScenarioCreatureHealed</a> = 0x7C789F8,
+              <a href="#a4b1f459203b8dbf8583312aa067c8c54a3f06b850d19dac88bfba6a42b573b8b5" class="m-doc">kMsgScenarioEnergyConsumed</a> = 0x7C7A52E,
+              <a href="#a4b1f459203b8dbf8583312aa067c8c54a3729c0202be9a3d3725cb57955a8b84c" class="m-doc">kMsgScenarioUndo</a> = 0xC9D86390,
+              <a href="#a4b1f459203b8dbf8583312aa067c8c54ae53006e012a9861c820dbf1c344cdc6d" class="m-doc">kMsgScenarioRedo</a> = 0xC9D86391,
+              <a href="#a4b1f459203b8dbf8583312aa067c8c54a63f8563caa7748ba29e263a06d4182cf" class="m-doc">kMsgCinematicScenarioBeamDownComplete</a> = 0x078eab55,
+              <a href="#a4b1f459203b8dbf8583312aa067c8c54a65a7ffcf04aae138b71d97548a622407" class="m-doc">kMsgCinematicScenarioClearAvatar</a> = 0x07b509fe,
+              <a href="#a4b1f459203b8dbf8583312aa067c8c54a006aab1919ad61883cdcd7fbb8f3294f" class="m-doc">kMsgCinematicTalkToSizeSetup</a> = 0x07d0c530,
+              <a href="#a4b1f459203b8dbf8583312aa067c8c54a876c8b94c880427c514919ead99e4558" class="m-doc">kMsgCinematicTalkToGreetSetup</a> = 0x07da0410,
+              <a href="#a4b1f459203b8dbf8583312aa067c8c54a23f3e1a829e849f659ebeb649e0cc253" class="m-doc">kMsgCinematicTalkToTextSetup</a> = 0x0754ae8a,
+              <a href="#a4b1f459203b8dbf8583312aa067c8c54ab4cb0646c88fe7746755848a14b2f235" class="m-doc">kMsgCinematicTalkToAnimStyleSetup</a> = 0x07688cad,
+              <a href="#a4b1f459203b8dbf8583312aa067c8c54a11ae39930b9cab0758dcff83be8f2409" class="m-doc">kMsgCinematicTalkToAnimEmotionSetup</a> = 0x07688cad,
+              <a href="#a4b1f459203b8dbf8583312aa067c8c54ac7494eabddced69a026ef117a2d214ec" class="m-doc">kMsgCinematicTalkToPageSetup</a> = 0x0750d732,
+              <a href="#a4b1f459203b8dbf8583312aa067c8c54a22e608e6f5d85064f900dbe9dcbc247a" class="m-doc">kMsgCinematicTalkToSkipBlankPage</a> = 0x07aaa58c }</span>
             </dt>
             <dd><span></span></dd>
             <dt>
@@ -4701,6 +4743,12 @@
                   </td>
                 </tr>
                 <tr>
+                  <td><a href="#a4b1f459203b8dbf8583312aa067c8c54a197b4a2cb2dc6bc85d3e116aaad8a82b" class="m-doc-self" id="a4b1f459203b8dbf8583312aa067c8c54a197b4a2cb2dc6bc85d3e116aaad8a82b">kMsgSwitchEditor</a></td>
+                  <td>
+                  <p>Switches the editor. Use the desired editor ID as the message data .</p>
+                  </td>
+                </tr>
+                <tr>
                   <td><a href="#a4b1f459203b8dbf8583312aa067c8c54a5edeab9362d5e625c62466364e194af0" class="m-doc-self" id="a4b1f459203b8dbf8583312aa067c8c54a5edeab9362d5e625c62466364e194af0">kMsgSwitchGameMode</a></td>
                   <td>
                   <p><span></span></p>
@@ -4710,6 +4758,12 @@
                   <td><a href="#a4b1f459203b8dbf8583312aa067c8c54ae09650fb53b169697e5b7e2aea8296d5" class="m-doc-self" id="a4b1f459203b8dbf8583312aa067c8c54ae09650fb53b169697e5b7e2aea8296d5">kMsgSaveGame</a></td>
                   <td>
                   <p>Saves the game, pausing the game and showing a dialog on success. Use with message data <code>1</code> (as in, an integer).</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a4b1f459203b8dbf8583312aa067c8c54a0fba29addeaa4111f0239467b4fdb100" class="m-doc-self" id="a4b1f459203b8dbf8583312aa067c8c54a0fba29addeaa4111f0239467b4fdb100">kMessageLoadGame</a></td>
+                  <td>
+                  <p>Sent when loading a saved game.</p>
                   </td>
                 </tr>
                 <tr>
@@ -4728,6 +4782,199 @@
                   <td><a href="#a4b1f459203b8dbf8583312aa067c8c54a839bc99988e90245304cee1eeb8c3640" class="m-doc-self" id="a4b1f459203b8dbf8583312aa067c8c54a839bc99988e90245304cee1eeb8c3640">kMsgCombatantKilled</a></td>
                   <td>
                   <p><a href="class_simulator_1_1_combatant_killed_message.html" class="m-doc">Simulator::<wbr />CombatantKilledMessage</a>; called when a combatant is killed.</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a4b1f459203b8dbf8583312aa067c8c54a37638938be80a645a1a471bfdd3b0cb5" class="m-doc-self" id="a4b1f459203b8dbf8583312aa067c8c54a37638938be80a645a1a471bfdd3b0cb5">kMsgKillPersistentEffects</a></td>
+                  <td>
+                  <p>kills persistant swarm effects. Used at the end of certain stages</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a4b1f459203b8dbf8583312aa067c8c54a5e1b9764d7c071ed3859c125001d26d3" class="m-doc-self" id="a4b1f459203b8dbf8583312aa067c8c54a5e1b9764d7c071ed3859c125001d26d3">kMsgDoCinematicAction</a></td>
+                  <td>
+                  <p><a href="class_simulator_1_1_do_cinematic_action_message.html" class="m-doc">Simulator::<wbr />DoCinematicActionMessage</a> ; sent to execute a single action within a cinematic stage.</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a4b1f459203b8dbf8583312aa067c8c54a14c9c245884c625ba913a9338a45d77e" class="m-doc-self" id="a4b1f459203b8dbf8583312aa067c8c54a14c9c245884c625ba913a9338a45d77e">kMsgCinematicGGE2CLGEnds</a></td>
+                  <td>
+                  <p><span></span></p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a4b1f459203b8dbf8583312aa067c8c54a94d9b3d206b271e54129c42f8755d97a" class="m-doc-self" id="a4b1f459203b8dbf8583312aa067c8c54a94d9b3d206b271e54129c42f8755d97a">kMsgCellStageStart</a></td>
+                  <td>
+                  <p>Sent when cell stage has begun.</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a4b1f459203b8dbf8583312aa067c8c54affca447acecf9c67a0a920e48278b9d8" class="m-doc-self" id="a4b1f459203b8dbf8583312aa067c8c54affca447acecf9c67a0a920e48278b9d8">kMsgCellToCreatureTransition</a></td>
+                  <td>
+                  <p>Sent when cell stage is transitioning to creature stage.</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a4b1f459203b8dbf8583312aa067c8c54a816e773e4e793bf210d72715fdc98c18" class="m-doc-self" id="a4b1f459203b8dbf8583312aa067c8c54a816e773e4e793bf210d72715fdc98c18">kMsgHatchAvatarEggs</a></td>
+                  <td>
+                  <p>Hatches the avatar creature&#x27;s egg in creature stage.</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a4b1f459203b8dbf8583312aa067c8c54a68b97db38e55f780ab4c4dcf48d91e77" class="m-doc-self" id="a4b1f459203b8dbf8583312aa067c8c54a68b97db38e55f780ab4c4dcf48d91e77">kMsgUpgradeNest</a></td>
+                  <td>
+                  <p>Upgrades the player&#x27;s nest to the current brain level(?) in creature stage. May be cutscene only.</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a4b1f459203b8dbf8583312aa067c8c54a2dc15f10a47005bcf723609876188e5d" class="m-doc-self" id="a4b1f459203b8dbf8583312aa067c8c54a2dc15f10a47005bcf723609876188e5d">kMsgRestartAtNest</a></td>
+                  <td>
+                  <p>Respawns the avatar creature at their nest in creature stage.</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a4b1f459203b8dbf8583312aa067c8c54a8d7346886f15bab24e70a8dac66d4659" class="m-doc-self" id="a4b1f459203b8dbf8583312aa067c8c54a8d7346886f15bab24e70a8dac66d4659">kEnterCreatureEditor</a></td>
+                  <td>
+                  <p>Loads the avatar into the creature editor.</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a4b1f459203b8dbf8583312aa067c8c54a99be2b60fa2800255467b586dc98b12e" class="m-doc-self" id="a4b1f459203b8dbf8583312aa067c8c54a99be2b60fa2800255467b586dc98b12e">kMsgCreatureToTribeTransition</a></td>
+                  <td>
+                  <p>TODO, uses data.</p>
+<p>Transitions from creature stage to tribal stage</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a4b1f459203b8dbf8583312aa067c8c54a8566dac413d40bd6317a378cb4751aa9" class="m-doc-self" id="a4b1f459203b8dbf8583312aa067c8c54a8566dac413d40bd6317a378cb4751aa9">kMsgTribeUpgradeHut</a></td>
+                  <td>
+                  <p>Upgrades the player tribe&#x27;s main hut (Cutscene only)</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a4b1f459203b8dbf8583312aa067c8c54a7a6bdcfa3998649436f8fa6aef8de2e7" class="m-doc-self" id="a4b1f459203b8dbf8583312aa067c8c54a7a6bdcfa3998649436f8fa6aef8de2e7">kMsgTribeUpgradeCampfire</a></td>
+                  <td>
+                  <p>Upgrades the player tribe&#x27;s campfire and layout decal (Cutscene only)</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a4b1f459203b8dbf8583312aa067c8c54af7bec7a96c8737a442c5db4e7f7f9700" class="m-doc-self" id="a4b1f459203b8dbf8583312aa067c8c54af7bec7a96c8737a442c5db4e7f7f9700">kMsgTribeUpgradeFoodMat</a></td>
+                  <td>
+                  <p>Upgrades the player tribe&#x27;s totem base and food mat (Cutscene only)</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a4b1f459203b8dbf8583312aa067c8c54a1129776bfd1479da7e4b7edc6f01f96e" class="m-doc-self" id="a4b1f459203b8dbf8583312aa067c8c54a1129776bfd1479da7e4b7edc6f01f96e">kMsgNotifyTotemNeeded</a></td>
+                  <td>
+                  <p>Sent to notify the game that a new tribal totem needs to be added (Cutscene only)</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a4b1f459203b8dbf8583312aa067c8c54a39e56b899eb5440aa83a3d7e1746c5bf" class="m-doc-self" id="a4b1f459203b8dbf8583312aa067c8c54a39e56b899eb5440aa83a3d7e1746c5bf">kMsgNotifyUpgradeDone</a></td>
+                  <td>
+                  <p>Sent to notify the game that the tribal upgrade or totem placement has finished so that game can save (Cutscene only)</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a4b1f459203b8dbf8583312aa067c8c54a53f87ba0ebdb4d7f3bef072842ba31e6" class="m-doc-self" id="a4b1f459203b8dbf8583312aa067c8c54a53f87ba0ebdb4d7f3bef072842ba31e6">kMsgTribeRestart</a></td>
+                  <td>
+                  <p>Restarts the tribal stage (as though tribal hut has been destroyed)</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a4b1f459203b8dbf8583312aa067c8c54a53171c6de6681f35d6a0b4a5f9470d77" class="m-doc-self" id="a4b1f459203b8dbf8583312aa067c8c54a53171c6de6681f35d6a0b4a5f9470d77">kMsgTribeMoveCameraToTribe</a></td>
+                  <td>
+                  <p>Moves the tribal camera to point towards the center of your tribe.</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a4b1f459203b8dbf8583312aa067c8c54aa2f3153c23e6a87ed245b3eb6a44420e" class="m-doc-self" id="a4b1f459203b8dbf8583312aa067c8c54aa2f3153c23e6a87ed245b3eb6a44420e">kMsgCinematicTRG2CVGShowCityHall</a></td>
+                  <td>
+                  <p>TRG2CVG - Shows the city hall (Cutscene only)</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a4b1f459203b8dbf8583312aa067c8c54ad3cfb3a3b039a8ca29f7cf114198b0ae" class="m-doc-self" id="a4b1f459203b8dbf8583312aa067c8c54ad3cfb3a3b039a8ca29f7cf114198b0ae">kMsgCinematicTRG2CVGHideCityHall</a></td>
+                  <td>
+                  <p>TRG2CVG - Hides the city hall (Cutscene only)</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a4b1f459203b8dbf8583312aa067c8c54a8f5d9b2b677b1b2b5f5c0e71d28daad4" class="m-doc-self" id="a4b1f459203b8dbf8583312aa067c8c54a8f5d9b2b677b1b2b5f5c0e71d28daad4">kMsgCinematicNewCityAppears</a></td>
+                  <td>
+                  <p>Sent when the cutscene for a new city appearing plays in civ stage.</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a4b1f459203b8dbf8583312aa067c8c54ae72860a65464daed0340c1b8fb0d5288" class="m-doc-self" id="a4b1f459203b8dbf8583312aa067c8c54ae72860a65464daed0340c1b8fb0d5288">kMsgCinematicCityChangeStartBuildingsEffects</a></td>
+                  <td>
+                  <p>Sent when the captured city&#x27;s buildings restart their runtime effects in civ stage.</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a4b1f459203b8dbf8583312aa067c8c54a92d71311de7f04f260030a24440565cd" class="m-doc-self" id="a4b1f459203b8dbf8583312aa067c8c54a92d71311de7f04f260030a24440565cd">kMsgCinematicCityChangeSwapBuildings</a></td>
+                  <td>
+                  <p>Sent when the captured city&#x27;s buildings swap their models in civ stage.</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a4b1f459203b8dbf8583312aa067c8c54ae78f78a09e2a1771b8a7a7d5c54079ec" class="m-doc-self" id="a4b1f459203b8dbf8583312aa067c8c54ae78f78a09e2a1771b8a7a7d5c54079ec">kMsgCinematicCityChangeChangeWallColor</a></td>
+                  <td>
+                  <p>Sent when the captured city&#x27;s wall color changes in civ stage.</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a4b1f459203b8dbf8583312aa067c8c54aed559e3177187ac2f2f227affba6033f" class="m-doc-self" id="a4b1f459203b8dbf8583312aa067c8c54aed559e3177187ac2f2f227affba6033f">kMsgCinematicCityChangeChangeCivilization</a></td>
+                  <td>
+                  <p>Sent when the captured city&#x27;s civilization ownership changes in civ stage.</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a4b1f459203b8dbf8583312aa067c8c54a32d628bbb41c40c4912ffb5d788e205c" class="m-doc-self" id="a4b1f459203b8dbf8583312aa067c8c54a32d628bbb41c40c4912ffb5d788e205c">kMsgCivTriggerSuperweapon</a></td>
+                  <td>
+                  <p>Sent when a tier 3 superweapon cutscene begins in civ stage (?)</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a4b1f459203b8dbf8583312aa067c8c54aed77801f01fefeb80730972d9cd225b6" class="m-doc-self" id="a4b1f459203b8dbf8583312aa067c8c54aed77801f01fefeb80730972d9cd225b6">kMsgShowUFOForTransition</a></td>
+                  <td>
+                  <p>Sent when the UFO appears at the very end of civ stage.</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a4b1f459203b8dbf8583312aa067c8c54aed449f3052e6040dc3eca33cdd4e6e41" class="m-doc-self" id="a4b1f459203b8dbf8583312aa067c8c54aed449f3052e6040dc3eca33cdd4e6e41">kMsgSpaceGameFromLaunchScreen</a></td>
+                  <td>
+                  <p>Sent when launching a space stage game form the main menu.</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a4b1f459203b8dbf8583312aa067c8c54a8320d35764f9e24c1185f60a8116e467" class="m-doc-self" id="a4b1f459203b8dbf8583312aa067c8c54a8320d35764f9e24c1185f60a8116e467">kMsgCinematicSpaceGetTools</a></td>
+                  <td>
+                  <p>Sent when the player gets new tools in a space stage cutscene (TODO: Does this also get called outside of cutscenes?)</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a4b1f459203b8dbf8583312aa067c8c54a1a6346f81977579e260ba6a54cf241f0" class="m-doc-self" id="a4b1f459203b8dbf8583312aa067c8c54a1a6346f81977579e260ba6a54cf241f0">kMsgCinematicSpaceFirstSpicePickup</a></td>
+                  <td>
+                  <p>Sent from the cutscene where the player first picks up spice in space stage.</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a4b1f459203b8dbf8583312aa067c8c54a28241677099562e8140cb57cf1159ecb" class="m-doc-self" id="a4b1f459203b8dbf8583312aa067c8c54a28241677099562e8140cb57cf1159ecb">kMsgCinematicSpaceUFOEffect</a></td>
+                  <td>
+                  <p>Plays the &quot;UFO Effect&quot; of swirly lights appearing around the player&#x27;s ship in a space stage cutscene.</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a4b1f459203b8dbf8583312aa067c8c54abe8b3141f242fb5634e602c9c6635349" class="m-doc-self" id="a4b1f459203b8dbf8583312aa067c8c54abe8b3141f242fb5634e602c9c6635349">kMsgCinematicScreenBadgeEffect</a></td>
+                  <td>
+                  <p>Sent when a new badge appears on the screen in space stage.</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a4b1f459203b8dbf8583312aa067c8c54ac26007b2606923d70bf3e3ac7ce3ac8d" class="m-doc-self" id="a4b1f459203b8dbf8583312aa067c8c54ac26007b2606923d70bf3e3ac7ce3ac8d">kMsgCinematicSpaceColonyAtmosphereDomeDown</a></td>
+                  <td>
+                  <p>Sent when the atmosphere dome goes down on a space stage colony (TODO: Does this also get called outside of cutscenes?)</p>
                   </td>
                 </tr>
                 <tr>
@@ -4752,30 +4999,6 @@
                   <td><a href="#a4b1f459203b8dbf8583312aa067c8c54a677cf886ed74c385b2cb1591e2302ed1" class="m-doc-self" id="a4b1f459203b8dbf8583312aa067c8c54a677cf886ed74c385b2cb1591e2302ed1">kMsgToolOnHit</a></td>
                   <td>
                   <p><a href="class_simulator_1_1_tool_on_hit_message.html" class="m-doc">Simulator::<wbr />ToolOnHitMessage</a>; called when a space tool hits a target.</p>
-                  </td>
-                </tr>
-                <tr>
-                  <td><a href="#a4b1f459203b8dbf8583312aa067c8c54acf8b18d73180628fe065d6745b7f81b0" class="m-doc-self" id="a4b1f459203b8dbf8583312aa067c8c54acf8b18d73180628fe065d6745b7f81b0">kMsgScenarioCreatureHealed</a></td>
-                  <td>
-                  <p><a href="class_simulator_1_1_scenario_creature_healed_message.html" class="m-doc">Simulator::<wbr />ScenarioCreatureHealedMessage</a>; called when a creature is healed (either by natural heal rate, or using a medkit) in Scenario mode.</p>
-                  </td>
-                </tr>
-                <tr>
-                  <td><a href="#a4b1f459203b8dbf8583312aa067c8c54a3f06b850d19dac88bfba6a42b573b8b5" class="m-doc-self" id="a4b1f459203b8dbf8583312aa067c8c54a3f06b850d19dac88bfba6a42b573b8b5">kMsgScenarioEnergyConsumed</a></td>
-                  <td>
-                  <p><a href="class_simulator_1_1_scenario_energy_consumed_message.html" class="m-doc">Simulator::<wbr />ScenarioEnergyConsumedMessage</a>; sent when the player consumes captain energy.</p>
-                  </td>
-                </tr>
-                <tr>
-                  <td><a href="#a4b1f459203b8dbf8583312aa067c8c54a3729c0202be9a3d3725cb57955a8b84c" class="m-doc-self" id="a4b1f459203b8dbf8583312aa067c8c54a3729c0202be9a3d3725cb57955a8b84c">kMsgScenarioUndo</a></td>
-                  <td>
-                  <p>No data, called when pressing the undo button in the scenario editor.</p>
-                  </td>
-                </tr>
-                <tr>
-                  <td><a href="#a4b1f459203b8dbf8583312aa067c8c54ae53006e012a9861c820dbf1c344cdc6d" class="m-doc-self" id="a4b1f459203b8dbf8583312aa067c8c54ae53006e012a9861c820dbf1c344cdc6d">kMsgScenarioRedo</a></td>
-                  <td>
-                  <p>No data, called when pressing the redo button in the scenario editor.</p>
                   </td>
                 </tr>
                 <tr>
@@ -4869,9 +5092,81 @@
                   </td>
                 </tr>
                 <tr>
-                  <td><a href="#a4b1f459203b8dbf8583312aa067c8c54a5e1b9764d7c071ed3859c125001d26d3" class="m-doc-self" id="a4b1f459203b8dbf8583312aa067c8c54a5e1b9764d7c071ed3859c125001d26d3">kMsgDoCinematicAction</a></td>
+                  <td><a href="#a4b1f459203b8dbf8583312aa067c8c54acf8b18d73180628fe065d6745b7f81b0" class="m-doc-self" id="a4b1f459203b8dbf8583312aa067c8c54acf8b18d73180628fe065d6745b7f81b0">kMsgScenarioCreatureHealed</a></td>
                   <td>
-                  <p><a href="class_simulator_1_1_do_cinematic_action_message.html" class="m-doc">Simulator::<wbr />DoCinematicActionMessage</a> ; sent to execute a single action within a cinematic stage.</p>
+                  <p><a href="class_simulator_1_1_scenario_creature_healed_message.html" class="m-doc">Simulator::<wbr />ScenarioCreatureHealedMessage</a>; called when a creature is healed (either by natural heal rate, or using a medkit) in Scenario mode.</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a4b1f459203b8dbf8583312aa067c8c54a3f06b850d19dac88bfba6a42b573b8b5" class="m-doc-self" id="a4b1f459203b8dbf8583312aa067c8c54a3f06b850d19dac88bfba6a42b573b8b5">kMsgScenarioEnergyConsumed</a></td>
+                  <td>
+                  <p><a href="class_simulator_1_1_scenario_energy_consumed_message.html" class="m-doc">Simulator::<wbr />ScenarioEnergyConsumedMessage</a>; sent when the player consumes captain energy.</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a4b1f459203b8dbf8583312aa067c8c54a3729c0202be9a3d3725cb57955a8b84c" class="m-doc-self" id="a4b1f459203b8dbf8583312aa067c8c54a3729c0202be9a3d3725cb57955a8b84c">kMsgScenarioUndo</a></td>
+                  <td>
+                  <p>No data, called when pressing the undo button in the scenario editor.</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a4b1f459203b8dbf8583312aa067c8c54ae53006e012a9861c820dbf1c344cdc6d" class="m-doc-self" id="a4b1f459203b8dbf8583312aa067c8c54ae53006e012a9861c820dbf1c344cdc6d">kMsgScenarioRedo</a></td>
+                  <td>
+                  <p>No data, called when pressing the redo button in the scenario editor.</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a4b1f459203b8dbf8583312aa067c8c54a63f8563caa7748ba29e263a06d4182cf" class="m-doc-self" id="a4b1f459203b8dbf8583312aa067c8c54a63f8563caa7748ba29e263a06d4182cf">kMsgCinematicScenarioBeamDownComplete</a></td>
+                  <td>
+                  <p>Called when the captain is finished beaming down in scenario mode.</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a4b1f459203b8dbf8583312aa067c8c54a65a7ffcf04aae138b71d97548a622407" class="m-doc-self" id="a4b1f459203b8dbf8583312aa067c8c54a65a7ffcf04aae138b71d97548a622407">kMsgCinematicScenarioClearAvatar</a></td>
+                  <td>
+                  <p>Removes the avatar from a scenario cutscene.</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a4b1f459203b8dbf8583312aa067c8c54a006aab1919ad61883cdcd7fbb8f3294f" class="m-doc-self" id="a4b1f459203b8dbf8583312aa067c8c54a006aab1919ad61883cdcd7fbb8f3294f">kMsgCinematicTalkToSizeSetup</a></td>
+                  <td>
+                  <p>Called when the size of the talked-to creature or object is being calculated. (TODO: Seems to generate one of 3 values, how to access these?)</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a4b1f459203b8dbf8583312aa067c8c54a876c8b94c880427c514919ead99e4558" class="m-doc-self" id="a4b1f459203b8dbf8583312aa067c8c54a876c8b94c880427c514919ead99e4558">kMsgCinematicTalkToGreetSetup</a></td>
+                  <td>
+                  <p>Called when the greeting style of the talked-to creature is being determined. (TODO: Seems to generate one of 5 values, how to access these?)</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a4b1f459203b8dbf8583312aa067c8c54a23f3e1a829e849f659ebeb649e0cc253" class="m-doc-self" id="a4b1f459203b8dbf8583312aa067c8c54a23f3e1a829e849f659ebeb649e0cc253">kMsgCinematicTalkToTextSetup</a></td>
+                  <td>
+                  <p>Called when the textbox style of the talked-to creature or object is being determined. (TODO: Seems to generate one of 5 values, how to access these?)</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a4b1f459203b8dbf8583312aa067c8c54ab4cb0646c88fe7746755848a14b2f235" class="m-doc-self" id="a4b1f459203b8dbf8583312aa067c8c54ab4cb0646c88fe7746755848a14b2f235">kMsgCinematicTalkToAnimStyleSetup</a></td>
+                  <td>
+                  <p>Called when the animation style (sentient, animal, epic) of the talked-to creature is being determined. (TODO: Seems to generate one of 3 values, how to access these?)</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a4b1f459203b8dbf8583312aa067c8c54a11ae39930b9cab0758dcff83be8f2409" class="m-doc-self" id="a4b1f459203b8dbf8583312aa067c8c54a11ae39930b9cab0758dcff83be8f2409">kMsgCinematicTalkToAnimEmotionSetup</a></td>
+                  <td>
+                  <p>Called when the animation emotion of the talked-to creature is being determined. (TODO: Seems to generate one of 5 values, how to access these?)</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a4b1f459203b8dbf8583312aa067c8c54ac7494eabddced69a026ef117a2d214ec" class="m-doc-self" id="a4b1f459203b8dbf8583312aa067c8c54ac7494eabddced69a026ef117a2d214ec">kMsgCinematicTalkToPageSetup</a></td>
+                  <td>
+                  <p>Called when the page waiting style (wait for next or wait for last) of the talk-to dialogue is being determined (TODO: Seems to generate one of 2 values, how to access these?)</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a4b1f459203b8dbf8583312aa067c8c54a22e608e6f5d85064f900dbe9dcbc247a" class="m-doc-self" id="a4b1f459203b8dbf8583312aa067c8c54a22e608e6f5d85064f900dbe9dcbc247a">kMsgCinematicTalkToSkipBlankPage</a></td>
+                  <td>
+                  <p>Called when the talk-to dialogue skips a blank page.</p>
                   </td>
                 </tr>
               </tbody>

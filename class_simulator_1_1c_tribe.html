@@ -123,15 +123,15 @@
               <span class="m-doc-wrap-bumper">auto <a href="#a801353d46f7527074a7c59014fa80ebd" class="m-doc-self">SpawnMember</a>(</span><span class="m-doc-wrap">) -&gt; <a href="class_simulator_1_1c_creature_citizen.html" class="m-doc">cCreatureCitizen</a>* <span class="m-label m-flat m-warning">virtual</span></span>
             </dt>
             <dd><span></span></dd>
-            <dt id="a797c869c526bf26127240bdff0aeeda9">
-              <span class="m-doc-wrap-bumper">auto <a href="#a797c869c526bf26127240bdff0aeeda9" class="m-doc-self">func9Ch</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a>,
+            <dt id="a00c78f47e935cae5e20e32ea00b9ac77">
+              <span class="m-doc-wrap-bumper">auto <a href="#a00c78f47e935cae5e20e32ea00b9ac77" class="m-doc-self">func9Ch</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> index,
               <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">bool</a>) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">void</a> <span class="m-label m-flat m-warning">virtual</span></span>
             </dt>
-            <dd><span></span></dd>
-            <dt id="afb46e615cee541fd15e3b670a4c5c14d">
-              <span class="m-doc-wrap-bumper">auto <a href="#afb46e615cee541fd15e3b670a4c5c14d" class="m-doc-self">funcA0h</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a>) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">void</a> <span class="m-label m-flat m-warning">virtual</span></span>
+            <dd>Removes a member of the tribe. index seems to cause issues if not 0.</dd>
+            <dt id="a5b938f0a45bcf0973a5baf67d6ea415b">
+              <span class="m-doc-wrap-bumper">auto <a href="#a5b938f0a45bcf0973a5baf67d6ea415b" class="m-doc-self">funcA0h</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> index) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">void</a> <span class="m-label m-flat m-warning">virtual</span></span>
             </dt>
-            <dd>Calls <a href="class_simulator_1_1c_tribe.html#a797c869c526bf26127240bdff0aeeda9" class="m-doc">func9Ch()</a> with second parameter true.</dd>
+            <dd>Calls <a href="class_simulator_1_1c_tribe.html#a00c78f47e935cae5e20e32ea00b9ac77" class="m-doc">func9Ch()</a> with second parameter true.</dd>
             <dt id="acf3e3fc506dd7e57ea607c474a979648">
               <span class="m-doc-wrap-bumper">auto <a href="#acf3e3fc506dd7e57ea607c474a979648" class="m-doc-self">GetTotalFood</a>(</span><span class="m-doc-wrap">) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> <span class="m-label m-flat m-warning">virtual</span></span>
             </dt>
@@ -353,8 +353,8 @@
               eastl::hash_map&lt;<a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a>, <a href="struct_simulator_1_1c_community_layout.html" class="m-doc">cCommunityLayout</a>&gt; <a href="#ac86b877fb168ec4eca60e6cab04850ec" class="m-doc-self">field_394</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="a07c73975761ad2368b218ecaa744030a">
-              <a href="struct_simulator_1_1c_community_layout.html" class="m-doc">cCommunityLayout</a> <a href="#a07c73975761ad2368b218ecaa744030a" class="m-doc-self">field_3B4</a>
+            <dt id="ad7d98dc50ce500f0bf060899ec9746ac">
+              <a href="struct_simulator_1_1c_community_layout.html" class="m-doc">cCommunityLayout</a> <a href="#ad7d98dc50ce500f0bf060899ec9746ac" class="m-doc-self">mTribeLayout</a>
             </dt>
             <dd><span></span></dd>
             <dt id="aa6f41fe35f2c90e9185df156daa23ffd">
@@ -397,8 +397,8 @@
               <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">bool</a> <a href="#acff8a0b26fc2fabd15f948f3cff12457" class="m-doc-self">field_555</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="ad3d7022e4b9260f7ad2a49704828df08">
-              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">bool</a> <a href="#ad3d7022e4b9260f7ad2a49704828df08" class="m-doc-self">field_556</a>
+            <dt id="a62acbaa24337d648823fae88e32eb683">
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">bool</a> <a href="#a62acbaa24337d648823fae88e32eb683" class="m-doc-self">mbMembersFlee</a>
             </dt>
             <dd><span></span></dd>
             <dt id="a2854b8563c8ae53feea532f197f55f41">
@@ -489,8 +489,8 @@
               <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">bool</a> <a href="#acb0cd1b3425a60763f456bcbba17b281" class="m-doc-self">field_18A9</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="a43be9391b8335f5ebc6869c5727f644e">
-              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> <a href="#a43be9391b8335f5ebc6869c5727f644e" class="m-doc-self">field_18AC</a>
+            <dt id="abd8cf3c480d3e9f6fc3d35d81f805afc">
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">uint32_<wbr />t</a> <a href="#abd8cf3c480d3e9f6fc3d35d81f805afc" class="m-doc-self">field_18AC</a>
             </dt>
             <dd><span></span></dd>
             <dt id="a40aa219ad148299657954d101741921a">
