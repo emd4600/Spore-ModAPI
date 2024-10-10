@@ -94,6 +94,10 @@
               <a href="class_app_1_1_property.html" class="m-doc">App::<wbr />Property</a>* property = <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">nullptr</a>) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">void</a></span>
             </dt>
             <dd>Programs this creature behavior tree data (i.e.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#abc584c7a29e5a597f8bc33f1044ec112" class="m-doc">GetHandheldItemForTool</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> toolType) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a></span>
+            </dt>
+            <dd>For a given tribal tool from <a href="namespace_simulator.html#ab1b0d73c73c9eedcf8560ef2f85d1b52" class="m-doc">Simulator::<wbr />TribeToolType</a>, returns which item must be held by the citizen.</dd>
             <dt id="a3a9c8996c8e1adc7cfec11f8f09b51c8">
               <span class="m-doc-wrap-bumper">auto <a href="#a3a9c8996c8e1adc7cfec11f8f09b51c8" class="m-doc-self">AddRef</a>(</span><span class="m-doc-wrap">) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
@@ -210,6 +214,30 @@
               </tbody>
             </table>
 <p>its <a href="namespace_simulator_1_1_a_i.html" class="m-doc">AI</a>) to do a certain action from <a href="namespace_simulator.html#a3068a6e284562d7b8e1aa81aec62abbd" class="m-doc">Simulator::<wbr />CitizenAction</a>. The action is defined by an ID and an object to act on, for instance, <a href="namespace_simulator.html#a3068a6e284562d7b8e1aa81aec62abbdae94200d8f18d07deb570cc3b3b547f75" class="m-doc">Simulator::<wbr />kCitizenActionGrabTool</a> and the <a href="class_simulator_1_1c_tribe_tool.html" class="m-doc">cTribeTool</a> object.</p>
+          </div></section>
+          <section class="m-doc-details" id="abc584c7a29e5a597f8bc33f1044ec112"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> Simulator::<wbr />cCreatureCitizen::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#abc584c7a29e5a597f8bc33f1044ec112" class="m-doc-self">GetHandheldItemForTool</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> toolType)</span></span>
+            </h3>
+            <p>For a given tribal tool from <a href="namespace_simulator.html#ab1b0d73c73c9eedcf8560ef2f85d1b52" class="m-doc">Simulator::<wbr />TribeToolType</a>, returns which item must be held by the citizen.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">toolType</td>
+                  <td></td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>Returns</th>
+                  <td>An integer identifying the kind of item to be held</td>
+                </tr>
+              </tfoot>
+            </table>
+<p>The item is part of the <a href="namespace_simulator.html#a5ce2154d40247efb9dc0ca643b1ca084" class="m-doc">Simulator::<wbr />HandheldItem</a> enum.</p>
           </div></section>
         </section>
       </div>
