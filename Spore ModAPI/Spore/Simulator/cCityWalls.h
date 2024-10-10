@@ -89,7 +89,7 @@ namespace Simulator
 		/* 260h */	float mCityHallDiasHeight;
 		/* 264h */	eastl::intrusive_ptr<cCity> mpCity;
 		/* 268h */	Vector3 field_268;  // 1, 1, 1
-		/// A matrix teling which building slots are connected to which slots
+		/// A matrix telling which building slots are connected to which slots
 		/* 274h */	bool mBuildingLinks[MAX_LAYOUT_SLOTS][MAX_LAYOUT_SLOTS];
 		/* 338h */	Vector3 mCenterAxis;  // not initialized
 		/* 344h */	uint32_t mStyle;  // 0x9181A19

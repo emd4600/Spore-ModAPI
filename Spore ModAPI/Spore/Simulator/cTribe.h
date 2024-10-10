@@ -73,9 +73,10 @@ namespace Simulator
 		/// Returns a vector of all selectable members of the tribe
 		/* 94h */	virtual eastl::vector<cSpatialObjectPtr>& GetSelectableMembers();
 		/* 98h */	virtual cCreatureCitizen* SpawnMember(int);
-		/* 9Ch */	virtual void func9Ch(int, bool);
+		/// Removes a member of the tribe. index seems to cause issues if not 0.
+		/* 9Ch */	virtual void func9Ch(int index, bool);
 		/// Calls func9Ch() with second parameter true
-		/* A0h */	virtual void funcA0h(int);
+		/* A0h */	virtual void funcA0h(int index);
 		/* A4h */	virtual int GetTotalFood();
 		/* A8h */	virtual void funcA8h();
 		/* ACh */	virtual cTribeHut* GetHut();
@@ -139,7 +140,7 @@ namespace Simulator
 		/* 36Ch */	eastl::vector<cTribeToolPtr> mTools;
 		/* 380h */	eastl::vector<cTribeToolPtr> mSocialTools;
 		/* 394h */	eastl::hash_map<int, cCommunityLayout> field_394;
-		/* 3B4h */	cCommunityLayout field_3B4;
+		/* 3B4h */	cCommunityLayout mTribeLayout;
 		/* 418h */	eastl::fixed_vector<int, 45> field_418;
 		/* 4E4h */	eastl::hash_map<int, eastl::deque<ObjectPtr>> field_4E4;
 		/* 504h */	int field_504;  // not initialized
@@ -150,7 +151,7 @@ namespace Simulator
 		/* 550h */	int mTribeArchetype;  //TODO
 		/* 554h */	bool field_554;
 		/* 555h */	bool field_555;
-		/* 556h */	bool field_556;
+		/* 556h */	bool mbMembersFlee; // if true, creatures run away in fear
 		/* 557h */	bool mGoodyPopped;
 		/* 558h */	char _padding_558[0x1310];
 		/* 1868h */	int field_1868;
@@ -173,7 +174,7 @@ namespace Simulator
 		/* 18A4h */	int field_18A4;  // -1
 		/* 18A8h */	bool field_18A8;
 		/* 18A9h */	bool field_18A9;
-		/* 18ACh */	int field_18AC;  // not initialized
+		/* 18ACh */	uint32_t field_18AC;  // not initialized
 		/* 18B0h */	int field_18B0;
 		/* 18B4h */	int field_18B4;
 		/* 18B8h */	int field_18B8;

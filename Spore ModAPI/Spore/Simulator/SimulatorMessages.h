@@ -32,10 +32,16 @@ namespace Simulator
 		/// Simulator::EnterEditorMessage; Enters the correct editor modifying the specified creation.
 		kMsgEnterEditor = 0x53850BAE,
 
+		/// Switches the editor. Use the desired editor ID as the message data .
+		kMsgSwitchEditor = 0x0212D3E7,
+
 		kMsgSwitchGameMode = 0x0212D3E7,
 
 		/// Saves the game, pausing the game and showing a dialog on success. Use with message data `1` (as in, an integer).
 		kMsgSaveGame = 0x1CD20F0,
+
+		/// Sent when loading a saved game.
+		kMessageLoadGame = 0xf8b1a2af,
 
 		/// Simulator::GameNounStatusChangedMessage
 		kMsgGameNounStatusChanged = 0x1A0219E,
@@ -45,6 +51,125 @@ namespace Simulator
 
 		/// Simulator::CombatantKilledMessage; called when a combatant is killed 
 		kMsgCombatantKilled = 0x1622184,
+
+		/// kills persistant swarm effects. Used at the end of certain stages
+		kMsgKillPersistentEffects = 0x0667af52,
+
+		/// Simulator::DoCinematicActionMessage ; sent to execute a single action within a cinematic stage
+		kMsgDoCinematicAction = 0x4470A41,
+
+		//////////////////
+		// Cell Stage
+		//////////////////
+
+		// Sent when the cell stage intro cinematic effect ends
+		kMsgCinematicGGE2CLGEnds = 0x04065b23,
+
+		/// Sent when cell stage has begun
+		kMsgCellStageStart = 0x047c1d19,
+
+		/// Sent when cell stage is transitioning to creature stage
+		kMsgCellToCreatureTransition = 0x02A4f8f0,
+
+		//////////////////
+		// Creature Stage
+		//////////////////
+
+		/// Hatches the avatar creature's egg in creature stage
+		kMsgHatchAvatarEggs = 0x06566531,
+
+		/// Upgrades the player's nest to the current brain level(?) in creature stage. May be cutscene only.
+		kMsgUpgradeNest = 0x06555abc,
+
+		/// Respawns the avatar creature at their nest in creature stage
+		kMsgRestartAtNest = 0x04f60b92,
+
+		/// Loads the avatar into the creature editor
+		kEnterCreatureEditor = 0x04d9686f,
+
+		/// TODO, uses data
+		//kCinematicCRG2TRGPreload = 0x04b719d4,
+
+		/// Transitions from creature stage to tribal stage
+		kMsgCreatureToTribeTransition = 0x0477f66c,
+
+		///////////////
+		// Tribe Stage
+		///////////////
+
+		/// Upgrades the player tribe's main hut (Cutscene only)
+		kMsgTribeUpgradeHut = 0x0575116e,
+
+		/// Upgrades the player tribe's campfire and layout decal (Cutscene only)
+		kMsgTribeUpgradeCampfire = 0x0575116f,
+
+		/// Upgrades the player tribe's totem base and food mat (Cutscene only)
+		kMsgTribeUpgradeFoodMat = 0x05751170,
+
+		/// Sent to notify the game that a new tribal totem needs to be added (Cutscene only)
+		kMsgNotifyTotemNeeded = 0x05cd5482,
+
+		/// Sent to notify the game that the tribal upgrade or totem placement has finished so that game can save (Cutscene only)
+		kMsgNotifyUpgradeDone = 0x05cd5482,
+
+		/// Restarts the tribal stage (as though tribal hut has been destroyed)
+		kMsgTribeRestart = 0x0420e32a,
+
+		/// Moves the tribal camera  to point towards the center of your tribe
+		kMsgTribeMoveCameraToTribe = 0x056cf231,
+
+		/// TRG2CVG - Shows the city hall (Cutscene only)
+		kMsgCinematicTRG2CVGShowCityHall = 0x069479a8,
+
+		/// TRG2CVG - Hides the city hall (Cutscene only)
+		kMsgCinematicTRG2CVGHideCityHall = 0x0694797d,
+
+		/////////////
+		// Civ Stage
+		/////////////
+
+		/// Sent when the cutscene for a new city appearing plays in civ stage
+		kMsgCinematicNewCityAppears = 0x05668f43,
+
+		/// Sent when the captured city's buildings restart their runtime effects in civ stage
+		kMsgCinematicCityChangeStartBuildingsEffects = 0x05f4d02a,
+
+		/// Sent when the captured city's buildings swap their models in civ stage
+		kMsgCinematicCityChangeSwapBuildings = 0x05dfb77f,
+
+		/// Sent when the captured city's wall color changes in civ stage
+		kMsgCinematicCityChangeChangeWallColor = 0x05dfb782,
+
+		/// Sent when the captured city's civilization ownership changes in civ stage
+		kMsgCinematicCityChangeChangeCivilization = 0x05dbc31e,
+
+		/// Sent when a tier 3 superweapon cutscene begins in civ stage (?)
+		kMsgCivTriggerSuperweapon = 0x06524f8f,
+
+		/// Sent when the UFO appears at the very end of civ stage
+		kMsgShowUFOForTransition = 0x0590cd26,
+
+		///////////////
+		// Space Stage
+		///////////////
+
+		/// Sent when launching a space stage game form the main menu
+		kMsgSpaceGameFromLaunchScreen = 0x02364016,
+
+		/// Sent when the player gets new tools in a space stage cutscene (TODO: Does this also get called outside of cutscenes?)
+		kMsgCinematicSpaceGetTools = 0x06526395,
+
+		/// Sent from the cutscene where the player first picks up spice in space stage
+		kMsgCinematicSpaceFirstSpicePickup = 0x06834927,
+
+		/// Plays the "UFO Effect" of swirly lights appearing around the player's ship in a space stage cutscene
+		kMsgCinematicSpaceUFOEffect = 0x0665e639,
+
+		/// Sent when a new badge appears on the screen in space stage
+		kMsgCinematicScreenBadgeEffect = 0x0665e1ab,
+
+		/// Sent when the atmosphere dome goes down on a space stage colony (TODO: Does this also get called outside of cutscenes?)
+		kMsgCinematicSpaceColonyAtmosphereDomeDown = 0x065e622c,
 
 		/// Simulator::PlayerEmpireAlliedMessage; called when the player empire makes a new alliance
 		kMsgPlayerEmpireAllied = 0x4445D43,
@@ -57,17 +182,6 @@ namespace Simulator
 
 		/// Simulator::ToolOnHitMessage; called when a space tool hits a target
 		kMsgToolOnHit = 0x56690BB,
-
-		/// Simulator::ScenarioCreatureHealedMessage; called when a creature is healed (either by natural heal rate, or using a medkit) in Scenario mode
-		kMsgScenarioCreatureHealed = 0x7C789F8,
-
-		/// Simulator::ScenarioEnergyConsumedMessage; sent when the player consumes captain energy
-		kMsgScenarioEnergyConsumed = 0x7C7A52E,
-
-		/// No data, called when pressing the undo button in the scenario editor
-		kMsgScenarioUndo = 0xC9D86390,
-		/// No data, called when pressing the redo button in the scenario editor
-		kMsgScenarioRedo = 0xC9D86391,
 
 		/// Message emitted by the galaxy generation effect to create stars of StarType::StarG (yellow) type.
 		kMsgGalaxyGenerateStarG = 0x35B2B15,
@@ -102,8 +216,47 @@ namespace Simulator
 		/// Sent when the ownership of some star changes. No parameters.
 		kMsgStarOwnershipChanged = 0x55BD8F7,
 
-		/// Simulator::DoCinematicActionMessage ; sent to execute a single action within a cinematic stage
-		kMsgDoCinematicAction = 0x4470A41,
+		/////////////////
+		// Scenario Mode
+		/////////////////
+
+		/// Simulator::ScenarioCreatureHealedMessage; called when a creature is healed (either by natural heal rate, or using a medkit) in Scenario mode
+		kMsgScenarioCreatureHealed = 0x7C789F8,
+
+		/// Simulator::ScenarioEnergyConsumedMessage; sent when the player consumes captain energy
+		kMsgScenarioEnergyConsumed = 0x7C7A52E,
+
+		/// No data, called when pressing the undo button in the scenario editor
+		kMsgScenarioUndo = 0xC9D86390,
+		/// No data, called when pressing the redo button in the scenario editor
+		kMsgScenarioRedo = 0xC9D86391,
+
+		/// Called when the captain is finished beaming down in scenario mode
+		kMsgCinematicScenarioBeamDownComplete = 0x078eab55,
+
+		/// Removes the avatar from a scenario cutscene
+		kMsgCinematicScenarioClearAvatar = 0x07b509fe,
+
+		/// Called when the size of the talked-to creature or object is being calculated. (TODO: Seems to generate one of 3 values, how to access these?)
+		kMsgCinematicTalkToSizeSetup = 0x07d0c530,
+
+		/// Called when the greeting style of the talked-to creature is being determined. (TODO: Seems to generate one of 5 values, how to access these?)
+		kMsgCinematicTalkToGreetSetup = 0x07da0410,
+
+		/// Called when the textbox style of the talked-to creature or object is being determined. (TODO: Seems to generate one of 5 values, how to access these?)
+		kMsgCinematicTalkToTextSetup = 0x0754ae8a,
+
+		/// Called when the animation style (sentient, animal, epic) of the talked-to creature is being determined.  (TODO: Seems to generate one of 3 values, how to access these?)
+		kMsgCinematicTalkToAnimStyleSetup = 0x07688cad,
+
+		/// Called when the animation emotion of the talked-to creature is being determined.  (TODO: Seems to generate one of 5 values, how to access these?)
+		kMsgCinematicTalkToAnimEmotionSetup = 0x07688cad,
+
+		/// Called when the page waiting style (wait for next or wait for last) of the talk-to dialogue is being determined (TODO: Seems to generate one of 2 values, how to access these?)
+		kMsgCinematicTalkToPageSetup = 0x0750d732,
+
+		/// Called when the talk-to dialogue skips a blank page
+		kMsgCinematicTalkToSkipBlankPage = 0x07aaa58c,
 	};
 
 	class IMessageParameters

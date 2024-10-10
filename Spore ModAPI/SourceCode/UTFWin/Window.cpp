@@ -20,6 +20,7 @@
 #include <Spore\UTFWin\Window.h>
 #include <Spore\UTFWin\IWindowManager.h>
 #include <Spore\UTFWin\IWinProc.h>
+#include <Spore\UTFWin\IButton.h>
 #include <Spore\UTFWin\Constants.h>
 #include <Spore\UTFWin\WindowIterators.h>
 #include <EASTL\internal\thread_support.h>
@@ -435,5 +436,15 @@ namespace UTFWin
 			window->RemoveWinProc((UTFWin::IWinProc*)proc);
 			return true;
 		}, pWinProc);
+	}
+
+	// Button Funcs
+
+	void IButton::SetButtonPressed(bool bValue) {
+		this->SetButtonFlag(kBtnStateSelected, bValue);
+	}
+
+	bool IButton::IsButtonPressed() {
+		return this->GetButtonStateFlags() & kBtnStateSelected;
 	}
 }
