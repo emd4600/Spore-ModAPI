@@ -96,7 +96,11 @@ namespace Simulator
 	auto_METHOD_VOID(cCreatureBase, ConsumeEnergy,
 		Args(float energyConsumed), Args(energyConsumed));
 
+	auto_METHOD_(cCreatureBase, bool, IsHervibore);
+
 
 	auto_METHOD_VOID(cCreatureCitizen, DoAction, Args(int actionId, cGameData* actionObject, App::Property* prop), Args(actionId, actionObject, prop));
+
+	auto_METHOD(cCreatureCitizen, int, GetHandheldItemForTool, Args(int toolType), Args(toolType));
 }
 #endif
