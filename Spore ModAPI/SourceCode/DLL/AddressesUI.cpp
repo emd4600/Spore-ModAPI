@@ -57,7 +57,8 @@ namespace UI
 	namespace Addresses(SimulatorRollover)
 	{
 		DefineAddress(GetRolloverIdForObject, SelectAddress(0xB67960, 0xB67D70));
-		DefineAddress(ShowRollover, SelectAddress(0xB68790, 0xB68BA0));
+		DefineAddress(ShowRollover, SelectAddress(0xB69680, 0xB69A90));
+		DefineAddress(ShowRolloverInternal, SelectAddress(0xB68790, 0xB68BA0));
 	}
 }
 #endif

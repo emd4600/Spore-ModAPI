@@ -55,7 +55,11 @@ namespace Simulator
 		void PlayCinematic(const char* cinematicName, int arg0, int arg1, int arg2, int arg3, int arg4);
 
 	public:
-		/* 20h */	char padding_20[0x3c8 - 0x20];
+		/* 20h */	int field_20;
+		/* 24h */	int field_24;
+		/* 28h */	int field_28;
+		/* 2Ch */	int field_2C;
+		/* 30h */	char padding_30[0x3c8 - 0x30];
 	};
 	ASSERT_SIZE(cCinematicManager, 0x3C8);
 	

@@ -102,7 +102,10 @@ namespace UI
 	auto_STATIC_METHOD(SimulatorRollover, SimulatorRolloverID, GetRolloverIdForObject,
 		Args(Simulator::cGameData* object), Args(object));
 
-	auto_STATIC_METHOD(SimulatorRollover, SimulatorRollover*, ShowRollover,
-		Args(SimulatorRolloverID rolloverId), Args(rolloverId));
+	auto_STATIC_METHOD_VOID(SimulatorRollover, ShowRollover,
+		Args(Simulator::cGameData* object), Args(object));
+	
+	auto_STATIC_METHOD(SimulatorRollover, SimulatorRollover*, ShowRolloverInternal,
+		Args(Simulator::cGameData* object, SimulatorRolloverID rolloverId, float unk), Args(object, rolloverId, unk));
 }
 #endif

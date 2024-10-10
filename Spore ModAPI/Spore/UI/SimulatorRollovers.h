@@ -50,7 +50,11 @@ namespace UI
 		/// @returns
 		static SimulatorRolloverID GetRolloverIdForObject(Simulator::cGameData* object);
 
-		static SimulatorRollover* ShowRollover(SimulatorRolloverID rolloverId);
+		/// If possible, displays a rollover over the specificed Simulator object.
+		/// 
+		static void ShowRollover(Simulator::cGameData* object);
+
+		static SimulatorRollover* ShowRolloverInternal(Simulator::cGameData* object, SimulatorRolloverID rolloverId, float = -1.0f);
 
 	public:
 		/* 04h */	cGameDataPtr mpObject;
@@ -113,6 +117,7 @@ namespace UI
 	namespace Addresses(SimulatorRollover)
 	{
 		DeclareAddress(GetRolloverIdForObject);  // 0xB67960 0xB67D70
-		DeclareAddress(ShowRollover);  // 0xB68790 0xB68BA0
+		DeclareAddress(ShowRollover);  // 0xB69680 0xB69A90
+		DeclareAddress(ShowRolloverInternal);  // 0xB68790 0xB68BA0
 	}
 }
