@@ -773,15 +773,15 @@ namespace Simulator
 		/// trg_hunting_tool1
 		kHandheldItemTrgHuntingTool1 = 1,
 		/// trg_hunting_tool2
-		kHandheldItemTrgHuntingTool1 = 2,
+		kHandheldItemTrgHuntingTool2 = 2,
 		/// trg_hunting_tool3
-		kHandheldItemTrgHuntingTool1 = 3,
+		kHandheldItemTrgHuntingTool3 = 3,
 		/// trg_fishing_tool and related
 		kHandheldItemTrgFishingTool = 4,
 		/// Either trg_eating_fish or trg_fishing_tool1_fish, etc
 		kHandheldItemTrgFish = 5,
 		/// Either trg_eating_seaweed or trg_fishing_tool1_seaweed, etc
-		kHandheldItemTrgFish = 6,
+		kHandheldItemTrgSeaweed = 6,
 		/// trg_eating_fruit
 		kHandheldItemTrgEatingFruit = 7,
 		/// trg_eating_seaweed or trg_eating_fish
