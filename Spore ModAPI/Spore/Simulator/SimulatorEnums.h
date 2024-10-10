@@ -766,4 +766,55 @@ namespace Simulator
 		kCitizenActionRecruit = 26,
 		kCitizenActionGatherMeat = 27,
 	};
+
+	enum HandheldItem
+	{
+		kHandheldItemNone = 0,
+		/// trg_hunting_tool1
+		kHandheldItemTrgHuntingTool1 = 1,
+		/// trg_hunting_tool2
+		kHandheldItemTrgHuntingTool1 = 2,
+		/// trg_hunting_tool3
+		kHandheldItemTrgHuntingTool1 = 3,
+		/// trg_fishing_tool and related
+		kHandheldItemTrgFishingTool = 4,
+		/// Either trg_eating_fish or trg_fishing_tool1_fish, etc
+		kHandheldItemTrgFish = 5,
+		/// Either trg_eating_seaweed or trg_fishing_tool1_seaweed, etc
+		kHandheldItemTrgFish = 6,
+		/// trg_eating_fruit
+		kHandheldItemTrgEatingFruit = 7,
+		/// trg_eating_seaweed or trg_eating_fish
+		kHandheldItemTrgEatingSeaweedOrFish = 8,
+		/// trg_eating_meat
+		kHandheldItemTrgEatingMeat = 9,
+		/// trg_eating_seaweed
+		kHandheldItemTrgEatingSeaweed = 10,
+		/// city_protest_sign_hunger
+		kHandheldItemCityProtestSignHunger = 11,
+		/// trg_recruit_staff
+		kHandheldItemTrgRecruitStaff = 12,
+		/// trg_social_maraca
+		kHandheldItemTrgSocialMaraca = 13,
+		/// trg_social_horn
+		kHandheldItemTrgSocialHorn = 14,
+		/// trg_social_didgeridoo
+		kHandheldItemTrgSocialDidgeridoo = 15,
+		/// trg_gathering_treesmacker
+		kHandheldItemTrgGatheringTreeSmacker = 16,
+		/// trg_chieftain_staff
+		kHandheldItemTrgChieftainStaff = 17,
+		/// trg_healing_staff
+		kHandheldItemTrgHealingStaff = 18,
+		/// trg_repair_mallet
+		kHandheldItemTrgRepairMallet = 19,
+		/// trg_water_bucket
+		kHandheldItemTrgWaterBucket = 20,
+		/// 0xA8F747AE, some tribal horn
+		kHandheldItemUnk21 = 21,
+		/// trg_firebomb
+		kHandheldItemTrgFireBomb = 22,
+		/// trg_eating_egg
+		kHandheldItemTrgEatingEgg = 23,
+	};
 }

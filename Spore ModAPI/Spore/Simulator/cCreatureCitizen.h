@@ -29,6 +29,12 @@ namespace Simulator
 		/// @param property [Optional]
 		void DoAction(int actionId, cGameData* actionObject, App::Property* property = nullptr);
 
+		/// For a given tribal tool from Simulator::TribeToolType, returns which item must be held by
+		/// the citizen. The item is part of the Simulator::HandheldItem enum.
+		/// @param toolType
+		/// @returns An integer identifying the kind of item to be held
+		int GetHandheldItemForTool(int toolType);
+
 	public:
 		/* FC0h */	int field_FC0;  // 3
 		/* FC4h */	uint32_t mFavoredGrasperlikeAppendage;  // -1
@@ -53,5 +59,6 @@ namespace Simulator
 	namespace Addresses(cCreatureCitizen) {
 		DeclareAddress(Update);  // 0xC24210 0xC24A30
 		DeclareAddress(DoAction);  // 0xC26EF0 0xC27710
+		DeclareAddress(GetHandheldItemForTool);  // 0xC22E70 0xC23740
 	}
 }
