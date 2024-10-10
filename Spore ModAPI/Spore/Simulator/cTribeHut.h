@@ -26,6 +26,11 @@ namespace Simulator
 		using Object::Release;
 		using Object::Cast;
 
+		/* 54h */	virtual void SetTribe(cTribe* tribe);
+		/* 58h */	virtual cTribe* GetTribe();
+		/* 5Ch */	virtual cTribe* GetTribe2();
+		/* 60h */	virtual void func60h(int);
+
 	public:
 		/* 1E8h */	ResourceKey mDestructModelLo;
 		/* 1F4h */	ResourceKey mDestructModelMd;

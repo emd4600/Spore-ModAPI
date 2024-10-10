@@ -3,6 +3,7 @@
 #include <Spore\Simulator\cTribe.h>
 #include <Spore\Simulator\cTribeTool.h>
 #include <Spore\Simulator\cTribeToolData.h>
+#include <Spore\Simulator\cTribeInputStrategy.h>
 
 namespace Simulator
 {
@@ -13,6 +14,8 @@ namespace Simulator
 	auto_STATIC_METHOD(Simulator, cTribe*, SpawnNpcTribe,
 		Args(const Math::Vector3& position, int tribeArchetype, int numMembers, int arg0, bool arg1, cSpeciesProfile* species),
 		Args(position, tribeArchetype, numMembers, arg0, arg1, species));
+
+	auto_METHOD_VOID(cTribe, UpdateFoodVisuals, Args(float a), Args(a));
 
 	auto_METHOD(cTribe, cTribeTool*, GetToolByType, Args(int toolType), Args(toolType));
 
@@ -45,6 +48,25 @@ namespace Simulator
 	auto_STATIC_METHOD(Simulator, cTribeToolData*, GetTribeToolData, Args(int a), Args(a));
 
 	auto_STATIC_METHOD_VOID_(Simulator, DisposeTribeToolsData);
+
+
+	auto_METHOD(cTribeInputStrategy, int, ChooseInputActionID, 
+		Args(cGameData* object, int unk), Args(object, unk));
+
+	auto_METHOD(cTribeInputStrategy, bool, DoToolActionForAllSelected,
+		Args(cTribeTool* tribeTool), Args(tribeTool));
+
+	auto_METHOD_VOID(cTribeInputStrategy, DoActionForAllSelected, 
+		Args(int citizenActionId, cGameData* actionObject, int unk),
+		Args(citizenActionId, actionObject, unk));
+
+	auto_METHOD_VOID(cTribeInputStrategy, DoActionGeneric, Args(cGameData* actionObject), Args(actionObject));
+
+	auto_METHOD_VOID_(cTribeInputStrategy, SetHoverObjectCursorAndRollover);
+
+	bool cTribeInputStrategy::IsInEditor() {
+		return *(bool*)(GetAddress(cTribeInputStrategy, sIsInEditor_ptr));
+	}
 
 }
 #endif

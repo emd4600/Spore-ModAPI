@@ -715,4 +715,55 @@ namespace Simulator
 		kTribeToolClassSocial = 2,
 		kTribeToolClassOther = 3,
 	};
+
+	enum TribeBundleType
+	{
+		kTribeBundleTypeFruit = 1,
+		kTribeBundleTypeMeat = 2,
+		kTribeBundleTypeFish = 3,
+	};
+
+	enum TribeInputAction
+	{
+		//TODO there are more
+
+		kTribeInputActionToolAttack1 = 19,
+		kTribeInputActionToolAttack2 = 20,
+		kTribeInputActionToolAttack3 = 21,
+		kTribeInputActionToolSocial1 = 22,
+		kTribeInputActionToolSocial2 = 23,
+		kTribeInputActionToolSocial3 = 24,
+		kTribeInputActionToolHeal = 25,
+		kTribeInputActionToolFirepit = 26,
+	};
+
+	enum CitizenAction
+	{
+		//TODO there are more
+		kCitizenActionEat = 0,
+		kCitizenActionFish = 1,
+		kCitizenActionGather = 2,
+		kCitizenActionGrabTool = 3,
+
+		kCitizenActionHeal = 5,
+
+		kCitizenActionAttack = 7,
+		kCitizenActionRaid1 = 8,
+		kCitizenActionGift1 = 9,
+		kCitizenActionHunt = 10,
+		kCitizenActionMate = 11,
+		kCitizenActionParty = 12,
+		kCitizenActionCollectEgg = 13,
+		kCitizenActionBundle = 14,
+
+		kCitizenActionRaid2 = 15,
+
+		kCitizenActionFeedWild = 20,
+		kCitizenActionGift2 = 21,
+
+		kCitizenActionRepair = 24,
+		kCitizenActionTame = 25,
+		kCitizenActionRecruit = 26,
+		kCitizenActionGatherMeat = 27,
+	};
 }

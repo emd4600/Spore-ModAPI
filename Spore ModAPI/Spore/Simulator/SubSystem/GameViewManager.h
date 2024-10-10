@@ -70,7 +70,7 @@ namespace Simulator
 		/* 24h */	virtual void func24h_();
 		/* 28h */	virtual void func28h_();
 		/* 2Ch */	virtual void func2Ch_();
-		/* 30h */	virtual void func30h_(long nEllapsedMilliseconds);
+		/* 30h */	virtual cGameData* GetHoveredObject();
 		/* 34h */	virtual int func34h_();  // get cRotationRing?
 		/* 38h */	virtual Vector3 func38h_(int, struct Vector3);
 		/* 3Ch */	virtual Vector3 func3Ch_(int);
@@ -132,7 +132,7 @@ namespace Simulator
 		/* 24h */	eastl::intrusive_list<IGameDataView> mViews;
 		/* 2Ch */	eastl::fixed_vector<ModelPtr, 16> mGrassTrampModels;
 		/* 84h */	uint32_t mGameModeID;  // -1
-		/* 88h */	cGameDataPtr field_88;
+		/* 88h */	cGameDataPtr mHoveredObject;
 		/* 8Ch */	eastl::hash_map<int, int> field_8C;
 		/* ACh */	eastl::vector<int> field_AC;
 		/* C0h */	bool field_C0;

@@ -7,6 +7,7 @@
 #include <Spore\Simulator\cSpeciesProfile.h>
 #include <Spore\Simulator\cIdentityColorable.h>
 #include <Spore\Simulator\SubSystem\GamePersistenceManager.h>
+#include <Spore\Simulator\SubSystem\BundleManager.h>
 #include <Spore\Simulator\SubSystem\CinematicManager.h>
 #include <Spore\Simulator\cDefaultToolProjectile.h>
 #include <Spore\Simulator\cArtilleryProjectile.h>
@@ -204,5 +205,14 @@ namespace Simulator
 	int CinematicAction::Release() {
 		return RefCountTemplate::Release();
 	}
+
+	/// BundleManager ///
+
+	auto_STATIC_METHOD_(cBundleManager, cBundleManager*, Get);
+
+	auto_METHOD(cBundleManager, cGameBundle*, CreateBundles,
+		Args(float amount, cGameBundleContainer* container, int bundleType),
+		Args(amount, container, bundleType));
 }
+
 #endif

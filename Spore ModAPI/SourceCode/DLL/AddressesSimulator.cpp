@@ -86,6 +86,7 @@
 #include <Spore\Simulator\cTribe.h>
 #include <Spore\Simulator\cTribeTool.h>
 #include <Spore\Simulator\cTribeToolData.h>
+#include <Spore\Simulator\cTribeInputStrategy.h>
 #include <Spore\Simulator\SubSystem\cRelationshipManager.h>
 #include <Spore\Simulator\SubSystem\GameBehaviorManager.h>
 #include <Spore\Simulator\SubSystem\GameInputManager.h>
@@ -106,6 +107,7 @@
 #include <Spore\Simulator\SubSystem\PlantSpeciesManager.h>
 #include <Spore\Simulator\SubSystem\GamePersistenceManager.h>
 #include <Spore\Simulator\SubSystem\CinematicManager.h>
+#include <Spore\Simulator\SubSystem\BundleManager.h>
 #include <Spore\Simulator\NounClassFactories.h>
 
 namespace Addresses(Simulator)
@@ -216,6 +218,7 @@ namespace Simulator
 
 	namespace Addresses(cCreatureCitizen) {
 		DefineAddress(Update, SelectAddress(0xC24210, 0xC24A30));
+		DefineAddress(DoAction, SelectAddress(0xC26EF0, 0xC27710));
 	}
 
 	namespace Addresses(cCreatureBase)
@@ -1129,11 +1132,29 @@ namespace Simulator
 
 	namespace Addresses(cTribe) {
 		DefineAddress(GetToolByType, SelectAddress(0xC8ED20, 0xC8F870));
+		DefineAddress(SpawnMember, SelectAddress(0xC97BA0, 0xC983C0));
+		DefineAddress(CreateTool, SelectAddress(0xC95950, 0xC96170));
+		DefineAddress(RemoveTool, SelectAddress(0xC96800, 0xC97020));
+		DefineAddress(UpdateFoodVisuals, SelectAddress(0xC94520, 0xC94CE0));
 	}
 
 	namespace Addresses(cTribeTool) {
 		DefineAddress(GetToolClass, SelectAddress(0xC9CAB0, 0xC9D2A0));
 		DefineAddress(GetRefundMoney, SelectAddress(0xC9C970, 0xC9D160));
+	}
+
+	namespace Addresses(cBundleManager) {
+		DefineAddress(Get, SelectAddress(0xB3D210, 0xB3D3B0));
+		DefineAddress(CreateBundles, SelectAddress(0xAC7810, 0xAC79F0));
+	}
+
+	namespace Addresses(cTribeInputStrategy) {
+		DefineAddress(DoToolActionForAllSelected, SelectAddress(0xCCFFE0, 0xCD09B0));
+		DefineAddress(DoActionForAllSelected, SelectAddress(0xCCFF70, 0xCD0940));
+		DefineAddress(ChooseInputActionID, SelectAddress(0xCCE870, 0xCCF130));
+		DefineAddress(DoActionGeneric, SelectAddress(0xCD0250, 0xCD0250));
+		DefineAddress(SetHoverObjectCursorAndRollover, SelectAddress(0xCCF800, 0xCD00C0));
+		DefineAddress(sIsInEditor_ptr, SelectAddress(0x168AD70, 0x1686AF0));
 	}
 }
 

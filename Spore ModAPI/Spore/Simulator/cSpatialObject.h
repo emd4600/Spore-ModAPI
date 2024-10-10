@@ -79,7 +79,7 @@ namespace Simulator
 		/* 4Ch */	virtual void SetIsOnView(bool bValue);
 		/* 50h */	virtual bool IsSelected();
 		/* 54h */	virtual void SetIsSelected(bool bValue);
-		/* 58h */	virtual bool cSpatialObject_func58h();  // does nothing by default
+		/* 58h */	virtual bool IsPlayerOwned();  // does nothing by default
 
 		/// Returns the local Y axis of this spatial object
 		/// @returns
