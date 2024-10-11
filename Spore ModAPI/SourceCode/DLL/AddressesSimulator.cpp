@@ -108,6 +108,7 @@
 #include <Spore\Simulator\SubSystem\GamePersistenceManager.h>
 #include <Spore\Simulator\SubSystem\CinematicManager.h>
 #include <Spore\Simulator\SubSystem\BundleManager.h>
+#include <Spore\Simulator\SubSystem\GamePlantManager.h>
 #include <Spore\Simulator\NounClassFactories.h>
 
 namespace Addresses(Simulator)
@@ -1157,6 +1158,10 @@ namespace Simulator
 		DefineAddress(DoActionGeneric, SelectAddress(0xCD0250, 0xCD0250));
 		DefineAddress(SetHoverObjectCursorAndRollover, SelectAddress(0xCCF800, 0xCD00C0));
 		DefineAddress(sIsInEditor_ptr, SelectAddress(0x168AD70, 0x1686AF0));
+	}
+
+	namespace Addresses(cGamePlantManager) {
+		DefineAddress(Get, SelectAddress(0xB3D310, 0xB3D4B0));
 	}
 }
 
