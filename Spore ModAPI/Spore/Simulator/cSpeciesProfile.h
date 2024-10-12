@@ -18,11 +18,12 @@
 ****************************************************************************/
 #pragma once
 
-#include <EASTL/fixed_vector.h>
-#include <EASTL/vector.h>
-#include <EASTL/string.h>
 #include <Spore\ResourceKey.h>
 #include <Spore\Simulator\cCreatureAbility.h>
+#include <EASTL\fixed_vector.h>
+#include <EASTL\vector.h>
+#include <EASTL\string.h>
+#include <EASTL\fixed_hash_map.h>
 
 namespace Simulator
 {
@@ -34,12 +35,22 @@ namespace Simulator
 
 		void GetSpeciesName(eastl::string16& dst);
 
-	private:
-		char padding[0xA18];
+	public:
+		struct UnkStruct
+		{
+			int field_0;
+			int field_4;
+			int field_8;
+			int field_C;
+			int field_10;
+		};
+		ASSERT_SIZE(UnkStruct, 0x14);
 
-		//TODO
-		//PLACEHOLDER 6D4h eastl::vector<intrusive_ptr<cCreatureAbility>>
+		typedef eastl::sp_fixed_hash_map<int, UnkStruct, 32> UnkStructPool;
+		ASSERT_SIZE(UnkStructPool, 0x4E0);
 
+		/* 00h */	UnkStructPool field_0;
+		/* 4E0h */	ResourceKey field_4E0[3];
 		/* 504h */	ResourceKey mSpeciesKey;  //TODO this is the main key?
 		/* 510h */	ResourceKey field_510;
 		/* 51Ch */	eastl::string16 mName;
@@ -48,13 +59,14 @@ namespace Simulator
 		/* 548h */	float field_548;
 		/* 54Ch */	float field_54C;
 		/* 550h */	float field_550;
-
+		/* 554h */	char padding_554[0x56C - 0x554];
 		/* 56Ch */	float field_56C;  // 100.0
 		/* 570h */	float field_570;  // 200.0
 		/* 574h */	float field_574;
 		/* 578h */	bool field_578;
 		/* 57Ch */	int field_57C;
-
+		/* 580h */	int field_580;  // not initialized
+		/* 584h */	int field_584;  // not initialized
 		/* 588h */	int field_588;  // 1
 		/* 58Ch */	float field_58C;
 		/* 590h */	float field_590;
@@ -93,7 +105,7 @@ namespace Simulator
 		/* 614h */	int field_614;
 		/* 618h */	int field_618;  // not initialized
 		/* 61Ch */	int field_61C;  // flight level?
-
+		/* 620h */	char padding_620[0x640 - 0x620];
 		/* 640h */	float mEnergyRecoveryRate;
 		/* 644h */	float mMaxEnergy;
 		/* 648h */	int field_648;
@@ -138,12 +150,7 @@ namespace Simulator
 		/* 948h */	eastl::fixed_vector<int, 20> field_948;
 		/* 9B0h */	eastl::fixed_vector<int, 20> field_9B0;
 	};
-
-	/////////////////////////////////
-	//// INTERNAL IMPLEMENTATION ////
-	/////////////////////////////////
-
-	//PLACEHOLDER static_assert(sizeof(cSpeciesProfile) == 0xA18, "sizeof(cSpeciesProfile) != A18h");
+	ASSERT_SIZE(cSpeciesProfile, 0xA18);
 
 	namespace Addresses(cSpeciesProfile) 
 	{
