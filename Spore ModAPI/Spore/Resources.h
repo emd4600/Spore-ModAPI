@@ -30,6 +30,7 @@
 #include <Spore\Resource\Database.h>
 #include <Spore\Resource\Paths.h>
 #include <Spore\Resource\IRecord.h>
+#include <Spore\Resource\FakeRecord.h>
 
 /// @namespace Resource
 ///

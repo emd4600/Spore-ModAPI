@@ -18,6 +18,19 @@ namespace Pollinator
 		return nullptr;
 	}
 
+	auto_METHOD(cAssetMetadata, bool, SetAll,
+		Args(const ResourceKey& assetKey,
+			uint64_t assetId,
+			uint64_t timeCreated,
+			const char16_t* authorName,
+			uint64_t authorId,
+			const char16_t* name,
+			const char16_t* description,
+			const char16_t* tags,
+			const char* authors,
+			bool useCurrentTimeForTimeDownloaded),
+		Args(assetKey, assetId, timeCreated, authorName, authorId, name, description, tags, authors, useCurrentTimeForTimeDownloaded));
+
 	//// cAchievementsManager ////
 
 	auto_STATIC_METHOD_(cAchievementsManager, cAchievementsManager*, Get);

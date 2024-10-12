@@ -31,6 +31,10 @@ namespace App
 	auto_METHOD(Thumbnail_cImportExport, bool, ImportPNG,
 		Args(const char16_t* path, ResourceKey& key), Args(path, key));
 
+	auto_METHOD_VOID(Thumbnail_cImportExport, DecodePNG,
+		Args(IO::IStream* stream, ThumbnailDecodedMetadata& dstMetadata, IStreamPtr& dstDataStream),
+		Args(stream, dstMetadata, dstDataStream));
+
 
 	auto_STATIC_METHOD_(cIDGenerator, cIDGenerator*, Get);
 

@@ -155,5 +155,6 @@ namespace Simulator
 	namespace Addresses(cSpeciesProfile) 
 	{
 		DeclareAddress(GetSpeciesName);  // 0x4DA1C0 0x4DA390
+		DeclareAddress(GetSpeciesName);  // 0x4DA1C0 0x4DA390
 	}
 }

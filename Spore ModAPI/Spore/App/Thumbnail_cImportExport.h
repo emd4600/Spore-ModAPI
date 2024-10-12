@@ -12,6 +12,29 @@
 
 namespace App
 {
+	struct ThumbnailDecodedMetadata
+	{
+		ThumbnailDecodedMetadata() = default;
+
+		/* 00h */	int version;
+		/* 04h */	int field_4;
+		/* 08h */	int field_8;
+		/* 0Ch */	int field_C;
+		/* 10h */	uint64_t assetId;
+		/* 18h */	uint64_t parentAssetId;
+		/* 20h */	uint64_t timeCreated;
+		/* 28h */	eastl::string16 authorName;
+		/* 38h */	uint64_t authorId;
+		/* 40h */	eastl::string16 name;
+		/* 50h */	eastl::string16 description;
+		/* 60h */	eastl::string16 tagsString;
+		/* 70h */	eastl::vector<float> field_70;
+		/* 84h */	int field_84;
+		/* 88h */	int field_88;
+		/* 8Ch */	int field_8C;
+	};
+	ASSERT_SIZE(ThumbnailDecodedMetadata, 0x90);
+
 	/// A class related with the .PNG files of creations.
 	///
 	/// It can be used to get the path to the My Spore Creations folder:
@@ -44,7 +67,7 @@ namespace App
 		/// 
 		/// @param pResource The resource object to encode inside the PNG. It will be encoded using the appropriate Resource::IResourceFactory
 		/// @param pImage The raster that is written as the image
-		/// @param database The Database taht contains the pollen metadata, and where the PNG will be saved
+		/// @param database The Database that contains the pollen metadata, and where the PNG will be saved
 		/// @param forceReplace [Optional] If false (by default), if the `.png` already exists in the folder, it will try writing variants like `(1)`, `(2)`,...
 		/// @param disableSteganography [Optional] If false (by default), the data in the `.png` will be stored in a special way meant to save space.
 		/// @returns `true` on success, `false` if something failed.
@@ -57,6 +80,8 @@ namespace App
 		/// @param key Resource key to the creation being read.
 		/// @returns 'true' on success, 'false' if something failed.
 		bool ImportPNG(const char16_t* path, ResourceKey& key);
+
+		void DecodePNG(IO::IStream* stream, ThumbnailDecodedMetadata& dstMetadata, IStreamPtr& dstDataStream);
 
 		static Thumbnail_cImportExport* Get();
 
@@ -78,5 +103,6 @@ namespace App
 		DeclareAddress(FolderPathFromLocale);
 		DeclareAddress(SavePNG);
 		DeclareAddress(ImportPNG);
+		DeclareAddress(DecodePNG);  // 0x5FBA10 0x5FBB90
 	}
 }
