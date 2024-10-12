@@ -58,7 +58,7 @@ namespace Editors
 		/* 40h */	virtual void func40h();
 		/* 44h */	virtual void func44h();
 		/* 48h */	virtual void func48h();
-		/* 4Ch */	virtual void func4Ch(const ResourceKey& nameKey, const BakeParameters& params);  // bake?
+		/* 4Ch */	virtual void Bake(const ResourceKey& nameKey, const BakeParameters& params);
 
 		// 60h returns IModelWorld
 

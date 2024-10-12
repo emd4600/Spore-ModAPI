@@ -106,7 +106,7 @@ namespace Simulator
 		/* 2A8h */	eastl::vector<int> field_2A8;
 		/* 2BCh */	int field_2BC;
 		/* 2C0h */	float mEggPenFoodValue;
-		/* 2C4h */	float mInitialRelationship;
+		/* 2C4h */	float mInitialRelationship; // does not seem to change from 0
 		/* 2C8h */	float mChieftainRespawnTimer;
 		/* 2CCh */	float mGiftRelationshipDecayTimer;
 		/* 2D0h */	ObjectPtr field_2D0;
@@ -129,7 +129,7 @@ namespace Simulator
 		/* 310h */	float mClosestWaterDistance;
 		/* 314h */	eastl::vector<Vector3> mClosestForests;
 		/* 328h */	int field_328;  // not initialized
-		/* 32Ch */	int mUpgradeLevel;
+		/* 32Ch */	int mUpgradeLevel; // may be a uint32 or have errors?
 		/* 330h */	float mZoningRadius;  // 30.0
 		/* 334h */	bool mbRoboTribe;
 		/* 338h */	int mRoboPopulationCount;
@@ -151,7 +151,7 @@ namespace Simulator
 		/* 550h */	int mTribeArchetype;  //TODO
 		/* 554h */	bool field_554;
 		/* 555h */	bool field_555;
-		/* 556h */	bool mbMembersFlee; // if true, creatures run away in fear
+		/* 556h */	bool mbMembersFlee; // if true, creatures run away in fear and die
 		/* 557h */	bool mGoodyPopped;
 		/* 558h */	char _padding_558[0x1310];
 		/* 1868h */	int field_1868;
