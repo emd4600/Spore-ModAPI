@@ -6,6 +6,7 @@
 #include <Spore\Resource\Database.h>
 #include <Spore\RenderWare\Raster.h>
 #include <EASTL\hash_map.h>
+#include <EASTL\hash_set.h>
 #include <EASTL\string.h>
 
 #define ThumbnailImportExport (*App::Thumbnail_cImportExport::Get())
@@ -81,20 +82,40 @@ namespace App
 		/// @returns 'true' on success, 'false' if something failed.
 		bool ImportPNG(const char16_t* path, ResourceKey& key);
 
-		void DecodePNG(IO::IStream* stream, ThumbnailDecodedMetadata& dstMetadata, IStreamPtr& dstDataStream);
+		/// Extracts information from a PNG file. It extracts both the metadata, and the data encoded within the image.
+		/// @param[out] dstMetadata 
+		/// @param[out] dstDataStream
+		/// @returns true on success, false if something failed
+		bool DecodePNG(IO::IStream* stream, ThumbnailDecodedMetadata& dstMetadata, IStreamPtr& dstDataStream);
+
+		/// Saves the file paths information that keeps track of which PNGs have been loaded.
+		/// It saves it in file `0x473C3E6!0x473C3E6.0x473C3E6` of Resource::SaveAreaID::Server (`Pollination.package`)
+		/// @returns true on success, false if something failed
+		bool SaveFilePaths();
 
 		static Thumbnail_cImportExport* Get();
 
-		// Not finished yet, but it's not important
-	private:
-		/* 04h */	eastl::hash_map<int, int> field_04;
-		/* 24h */	eastl::hash_map<int, int> field_24;
+	public:
+		/* 04h */	eastl::hash_set<eastl::string16> mLoadedPNGs;
+		/* 24h */	eastl::hash_map<ResourceKey, eastl::string16> mPNGPathMap;
 		/* 44h */	int field_44;  // not initialized
 		/* 48h */	eastl::hash_map<int, int> field_48;
 		/* 68h */	eastl::hash_map<int, int> field_68;
-
-		// other fields are eastl::string16 with the creation paths
+		/* 88h */	char padding_88[0xF8 - 0x88];
+		/* F8h */	int field_F8;
+		/* FCh */	int field_FC;
+		/* 100h */	int field_100;
+		/* 104h */	eastl::string16 mCellsPath;
+		/* 114h */	eastl::string16 mCreaturesPath;
+		/* 124h */	eastl::string16 mBuildingsPath;
+		/* 134h */	eastl::string16 mPlantsPath;
+		/* 144h */	eastl::string16 mVehiclesPath;
+		/* 154h */	eastl::string16 mUFOsPath;
+		/* 164h */	eastl::string16 mCityMusicPath;
+		/* 174h */	eastl::string16 mScenariosPath;
+		/* 184h */	int field_184;
 	};
+	ASSERT_SIZE(Thumbnail_cImportExport, 0x188);
 
 	namespace Addresses(Thumbnail_cImportExport)
 	{
@@ -104,5 +125,6 @@ namespace App
 		DeclareAddress(SavePNG);
 		DeclareAddress(ImportPNG);
 		DeclareAddress(DecodePNG);  // 0x5FBA10 0x5FBB90
+		DeclareAddress(SaveFilePaths);  // 0x5F89C0 0x5F8B60
 	}
 }

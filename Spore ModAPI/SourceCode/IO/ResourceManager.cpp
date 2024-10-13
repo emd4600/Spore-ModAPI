@@ -74,5 +74,23 @@ namespace Resource
 			Args(this, database, stream, key, closeStreamOnClose, deleteStreamOnClose));
 	}
 
+	const ResourceKey& FakeRecord::GetKey() {
+		return mKey;
+	}
+	void FakeRecord::SetKey(const ResourceKey& key) {
+		}
+	IO::IStream* FakeRecord::GetStream() {
+		return nullptr;
+		}
+	Database* FakeRecord::GetDatabase() {
+		return nullptr;
+		}
+	bool FakeRecord::RecordOpen() {
+		return false;
+		}
+	bool FakeRecord::RecordClose() {
+		return false;
+		}
+
 #endif
 }

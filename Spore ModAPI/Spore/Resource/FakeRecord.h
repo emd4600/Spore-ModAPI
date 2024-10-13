@@ -13,6 +13,13 @@ namespace Resource
 		FakeRecord(Database* database, IO::IStream* stream, const ResourceKey& key,
 			bool closeStreamOnClose, bool deleteStreamOnClose);
 
+		virtual const ResourceKey& GetKey() override;
+		virtual void SetKey(const ResourceKey& key) override;
+		virtual IO::IStream* GetStream() override;
+		virtual Database* GetDatabase() override;
+		virtual bool RecordOpen() override;
+		virtual bool RecordClose() override;
+
 	public:
 		/* 08h */	Database* mDatabase;
 		/* 0Ch */	IO::IStream* mStream;
