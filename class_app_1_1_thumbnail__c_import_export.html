@@ -58,6 +58,7 @@
                 <li><a href="#base-classes">Base classes</a></li>
                 <li><a href="#pub-static-methods">Public static functions</a></li>
                 <li><a href="#pub-methods">Public functions</a></li>
+                <li><a href="#pub-attribs">Public variables</a></li>
               </ul>
             </li>
           </ul>
@@ -110,10 +111,91 @@
               <a href="struct_resource_key.html" class="m-doc">ResourceKey</a>&amp; key) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">bool</a></span>
             </dt>
             <dd>Reads the PNG file from the given file path, and adds the creation found within to the <a href="namespace_sporepedia.html" class="m-doc">Sporepedia</a> if it hasn&#x27;t been added yet.</dd>
-            <dt id="a499ceda601d1902b5490442f4cdda226">
-              <span class="m-doc-wrap-bumper">auto <a href="#a499ceda601d1902b5490442f4cdda226" class="m-doc-self">DecodePNG</a>(</span><span class="m-doc-wrap"><a href="class_i_o_1_1_i_stream.html" class="m-doc">IO::<wbr />IStream</a>* stream,
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a1b4d73ed81a77a7eadff2ce57210bc9a" class="m-doc">DecodePNG</a>(</span><span class="m-doc-wrap"><a href="class_i_o_1_1_i_stream.html" class="m-doc">IO::<wbr />IStream</a>* stream,
               <a href="struct_app_1_1_thumbnail_decoded_metadata.html" class="m-doc">ThumbnailDecodedMetadata</a>&amp; dstMetadata,
-              <a href="_i_stream_8h.html#a0228333674e6e89ba6fda76a2c0dff36" class="m-doc">IStreamPtr</a>&amp; dstDataStream) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">void</a></span>
+              <a href="_i_stream_8h.html#a0228333674e6e89ba6fda76a2c0dff36" class="m-doc">IStreamPtr</a>&amp; dstDataStream) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">bool</a></span>
+            </dt>
+            <dd>Extracts information from a PNG file.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#af4a9bce8bcb1becf6e5f00b244bcc81a" class="m-doc">SaveFilePaths</a>(</span><span class="m-doc-wrap">) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">bool</a></span>
+            </dt>
+            <dd>Saves the file paths information that keeps track of which PNGs have been loaded.</dd>
+          </dl>
+        </section>
+        <section id="pub-attribs">
+          <h2><a href="#pub-attribs">Public variables</a></h2>
+          <dl class="m-doc">
+            <dt id="a8fe8ef30baef3c192a9788d9a942aaf4">
+              eastl::hash_set&lt;eastl::string16&gt; <a href="#a8fe8ef30baef3c192a9788d9a942aaf4" class="m-doc-self">mLoadedPNGs</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a8557a7f94a24a6cc95c886a60365fe63">
+              eastl::hash_map&lt;<a href="struct_resource_key.html" class="m-doc">ResourceKey</a>, eastl::string16&gt; <a href="#a8557a7f94a24a6cc95c886a60365fe63" class="m-doc-self">mPNGPathMap</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="ac3925584e8c1e5819f5aa48b607392f5">
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> <a href="#ac3925584e8c1e5819f5aa48b607392f5" class="m-doc-self">field_44</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a277dbce0dc005416bec067c1261b3cdc">
+              eastl::hash_map&lt;<a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a>, <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a>&gt; <a href="#a277dbce0dc005416bec067c1261b3cdc" class="m-doc-self">field_48</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a180c31972d2137054434b35cffa7e229">
+              eastl::hash_map&lt;<a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a>, <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a>&gt; <a href="#a180c31972d2137054434b35cffa7e229" class="m-doc-self">field_68</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="ac13cafb48ca1dabf2951690633002751">
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">char</a> <a href="#ac13cafb48ca1dabf2951690633002751" class="m-doc-self">padding_88</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="af0a67c8281c4e5321620b8d8ec75636c">
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> <a href="#af0a67c8281c4e5321620b8d8ec75636c" class="m-doc-self">field_F8</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="aae492cc3e5161fe1310261223548654b">
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> <a href="#aae492cc3e5161fe1310261223548654b" class="m-doc-self">field_FC</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a75d7bde8f1f22fa58061a5fcfe5728f8">
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> <a href="#a75d7bde8f1f22fa58061a5fcfe5728f8" class="m-doc-self">field_100</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a8d0f26487757927325fa4589d34166bf">
+              eastl::string16 <a href="#a8d0f26487757927325fa4589d34166bf" class="m-doc-self">mCellsPath</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a2fa2e9553fee280f906d79d3c2531b22">
+              eastl::string16 <a href="#a2fa2e9553fee280f906d79d3c2531b22" class="m-doc-self">mCreaturesPath</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a49507688945262b48f13d36008042fb8">
+              eastl::string16 <a href="#a49507688945262b48f13d36008042fb8" class="m-doc-self">mBuildingsPath</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="aa91da24641738b75e2275c17bf1ad35b">
+              eastl::string16 <a href="#aa91da24641738b75e2275c17bf1ad35b" class="m-doc-self">mPlantsPath</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a65ae78afa88603c6d91495fb6e9094c2">
+              eastl::string16 <a href="#a65ae78afa88603c6d91495fb6e9094c2" class="m-doc-self">mVehiclesPath</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="ae543dcabe77b6cd0f677b19f4aa6d192">
+              eastl::string16 <a href="#ae543dcabe77b6cd0f677b19f4aa6d192" class="m-doc-self">mUFOsPath</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a5ad269af66a5359570e443dec00ecff3">
+              eastl::string16 <a href="#a5ad269af66a5359570e443dec00ecff3" class="m-doc-self">mCityMusicPath</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="ae6c94275d3ed0547c42ecae705c0026c">
+              eastl::string16 <a href="#ae6c94275d3ed0547c42ecae705c0026c" class="m-doc-self">mScenariosPath</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a51575095d909b68518f3811d9a84f3cf">
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> <a href="#a51575095d909b68518f3811d9a84f3cf" class="m-doc-self">field_184</a>
             </dt>
             <dd><span></span></dd>
           </dl>
@@ -213,6 +295,55 @@
                 </tr>
               </tfoot>
             </table>
+          </div></section>
+          <section class="m-doc-details" id="a1b4d73ed81a77a7eadff2ce57210bc9a"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">bool</a> App::<wbr />Thumbnail_cImportExport::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a1b4d73ed81a77a7eadff2ce57210bc9a" class="m-doc-self">DecodePNG</a>(</span><span class="m-doc-wrap"><a href="class_i_o_1_1_i_stream.html" class="m-doc">IO::<wbr />IStream</a>* stream,
+              <a href="struct_app_1_1_thumbnail_decoded_metadata.html" class="m-doc">ThumbnailDecodedMetadata</a>&amp; dstMetadata,
+              <a href="_i_stream_8h.html#a0228333674e6e89ba6fda76a2c0dff36" class="m-doc">IStreamPtr</a>&amp; dstDataStream)</span></span>
+            </h3>
+            <p>Extracts information from a PNG file.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">stream</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>dstMetadata&nbsp;<span class="m-label m-flat m-warning">out</span></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>dstDataStream&nbsp;<span class="m-label m-flat m-warning">out</span></td>
+                  <td></td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>Returns</th>
+                  <td>true on success, false if something failed</td>
+                </tr>
+              </tfoot>
+            </table>
+<p>It extracts both the metadata, and the data encoded within the image.</p>
+          </div></section>
+          <section class="m-doc-details" id="af4a9bce8bcb1becf6e5f00b244bcc81a"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">bool</a> App::<wbr />Thumbnail_cImportExport::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#af4a9bce8bcb1becf6e5f00b244bcc81a" class="m-doc-self">SaveFilePaths</a>(</span><span class="m-doc-wrap">)</span></span>
+            </h3>
+            <p>Saves the file paths information that keeps track of which PNGs have been loaded.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <tfoot>
+                <tr>
+                  <th style="width: 1%">Returns</th>
+                  <td>true on success, false if something failed</td>
+                </tr>
+              </tfoot>
+            </table>
+<p>It saves it in file <code>0x473C3E6!0x473C3E6.0x473C3E6</code> of <a href="namespace_resource.html#ae5fc2be2c995477d7286fb634653ddd8a9aa1b03934893d7134a660af4204f2a9" class="m-doc">Resource::<wbr />SaveAreaID::<wbr />Server</a> (<code>Pollination.package</code>)</p>
           </div></section>
         </section>
       </div>
