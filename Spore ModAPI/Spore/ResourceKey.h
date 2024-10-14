@@ -46,6 +46,18 @@ struct ResourceKey {
 	GroupIDs::Names groupID;
 #endif
 
+	/// Returns a copy of this key with a different instance ID.
+	/// @param instanceId
+	ResourceKey WithInstance(uint32_t instanceId);
+
+	/// Returns a copy of this key with a different type ID.
+	/// @param typeId
+	ResourceKey WithType(uint32_t typeId);
+
+	/// Returns a copy of this key with a different group ID.
+	/// @param groupId
+	ResourceKey WithGroup(uint32_t groupId);
+
 	///
 	/// Creates a ResourceKey from the given text, which is in the format "groupID!instanceID.typeID". 
 	/// The groupID and typeID can be ommited, however; if that happens, they will be replaced with the optional parameters
@@ -140,12 +152,22 @@ inline bool ResourceKey::operator <(const ResourceKey &b) const
 	}
 }
 
+inline ResourceKey ResourceKey::WithInstance(uint32_t instanceId) {
+	return { instanceId, typeID, groupID };
+}
+inline ResourceKey ResourceKey::WithType(uint32_t typeId) {
+	return { instanceID, typeId, groupID };
+}
+inline ResourceKey ResourceKey::WithGroup(uint32_t groupId) {
+	return { instanceID, typeID, groupId };
+}
+
 namespace eastl
 {
 	/// A necessary structure to be able to use ResourceKey on containers such as hash_map.
 	template <> struct hash<ResourceKey>
 	{
-		size_t operator()(const ResourceKey& val) const { return static_cast<size_t>(val.instanceID ^ val.typeID); }
+		size_t operator()(const ResourceKey& val) const { return static_cast<size_t>(val.instanceID ^ val.groupID); }
 	};
 }
 #endif

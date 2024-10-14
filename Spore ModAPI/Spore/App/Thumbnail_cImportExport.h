@@ -18,9 +18,8 @@ namespace App
 		ThumbnailDecodedMetadata() = default;
 
 		/* 00h */	int version;
-		/* 04h */	int field_4;
-		/* 08h */	int field_8;
-		/* 0Ch */	int field_C;
+		/* 04h */	uint32_t typeId;
+		/* 08h */	uint32_t groupId;
 		/* 10h */	uint64_t assetId;
 		/* 18h */	uint64_t parentAssetId;
 		/* 20h */	uint64_t timeCreated;
@@ -30,9 +29,9 @@ namespace App
 		/* 50h */	eastl::string16 description;
 		/* 60h */	eastl::string16 tagsString;
 		/* 70h */	eastl::vector<float> field_70;
-		/* 84h */	int field_84;
-		/* 88h */	int field_88;
-		/* 8Ch */	int field_8C;
+		/* 84h */	uint32_t machineId;
+		/* 88h */	uint32_t groupId2;
+		/* 8Ch */	uint32_t instanceId;
 	};
 	ASSERT_SIZE(ThumbnailDecodedMetadata, 0x90);
 
@@ -51,6 +50,7 @@ namespace App
 	{
 	public:
 		/// Gets the filepath of the folder where the .PNGs of the creation type are stored.
+		/// The path will end in a slash '/'
 		/// @param creationType One of the types in TypeIDs, such as 'crt', 'bld',...
 		/// @param[out] dst The eastl::string where the path will be written.
 		bool GetFolderPath(uint32_t creationType, eastl::string16& dst);
@@ -93,12 +93,23 @@ namespace App
 		/// @returns true on success, false if something failed
 		bool SaveFilePaths();
 
+		/// Scans a disk directory, and tries to imports all PNG creations found there that were not already in the system.
+		/// For each file path, it will check if it is aloready in mPngPathToKey (lowercase); if it isn't, it will
+		/// call ImportPNG() on it, and add its entry to mPngPathToKey and mKeyToPngPath
+		/// It uses `dstCount` to keep track of how many files have been loaded; it loads a maximum of 500
+		/// @param directoryPath The path of the directory to scan
+		/// @param[out] dstSkippedPaths A list of paths that were skipped because they were already in mPngPathToKey or too many files were loaded
+		/// @param[out] dstCount The number of PNGs that were imported is added to this value
+		/// @returns True if some PNG was loaded, false otherwise
+		bool ImportDirectoryPNGs(const eastl::string16& directoryPath, eastl::hash_set<eastl::string16>& dstSkippedPaths, int& dstCount);
+
 		static Thumbnail_cImportExport* Get();
 
 	public:
-		/* 04h */	eastl::hash_set<eastl::string16> mLoadedPNGs;
-		/* 24h */	eastl::hash_map<ResourceKey, eastl::string16> mPNGPathMap;
-		/* 44h */	int field_44;  // not initialized
+		/// lowercase
+		/* 04h */	eastl::hash_map<eastl::string16, ResourceKey> mPngPathToKey;
+		/* 24h */	eastl::hash_map<ResourceKey, eastl::string16> mKeyToPngPath;
+		/* 44h */	uint32_t mMachineId;  // not initialized
 		/* 48h */	eastl::hash_map<int, int> field_48;
 		/* 68h */	eastl::hash_map<int, int> field_68;
 		/* 88h */	char padding_88[0xF8 - 0x88];
@@ -126,5 +137,6 @@ namespace App
 		DeclareAddress(ImportPNG);
 		DeclareAddress(DecodePNG);  // 0x5FBA10 0x5FBB90
 		DeclareAddress(SaveFilePaths);  // 0x5F89C0 0x5F8B60
+		DeclareAddress(ImportDirectoryPNGs);  // 0x5FC900 0x5FCA80
 	}
 }

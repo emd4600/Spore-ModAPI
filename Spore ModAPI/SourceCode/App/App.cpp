@@ -37,6 +37,10 @@ namespace App
 
 	auto_METHOD_(Thumbnail_cImportExport, bool, SaveFilePaths);
 
+	auto_METHOD(Thumbnail_cImportExport, bool, ImportDirectoryPNGs,
+		Args(const eastl::string16& path, eastl::hash_set<eastl::string16>& dstSkippedPaths, int& dstCount),
+		Args(path, dstSkippedPaths, dstCount));
+
 
 	auto_STATIC_METHOD_(cIDGenerator, cIDGenerator*, Get);
 
