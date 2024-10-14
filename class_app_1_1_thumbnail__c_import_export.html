@@ -121,21 +121,27 @@
               <span class="m-doc-wrap-bumper">auto <a href="#af4a9bce8bcb1becf6e5f00b244bcc81a" class="m-doc">SaveFilePaths</a>(</span><span class="m-doc-wrap">) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">bool</a></span>
             </dt>
             <dd>Saves the file paths information that keeps track of which PNGs have been loaded.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a69e95867ec52c6f94196f973f8fd1955" class="m-doc">ImportDirectoryPNGs</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">const</a> eastl::string16&amp; directoryPath,
+              eastl::hash_set&lt;eastl::string16&gt;&amp; dstSkippedPaths,
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a>&amp; dstCount) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">bool</a></span>
+            </dt>
+            <dd>Scans a disk directory, and tries to imports all PNG creations found there that were not already in the system.</dd>
           </dl>
         </section>
         <section id="pub-attribs">
           <h2><a href="#pub-attribs">Public variables</a></h2>
           <dl class="m-doc">
-            <dt id="a8fe8ef30baef3c192a9788d9a942aaf4">
-              eastl::hash_set&lt;eastl::string16&gt; <a href="#a8fe8ef30baef3c192a9788d9a942aaf4" class="m-doc-self">mLoadedPNGs</a>
+            <dt id="aa02442630ffc3fa80f686c4ff5bb8c07">
+              eastl::hash_map&lt;eastl::string16, <a href="struct_resource_key.html" class="m-doc">ResourceKey</a>&gt; <a href="#aa02442630ffc3fa80f686c4ff5bb8c07" class="m-doc-self">mPngPathToKey</a>
+            </dt>
+            <dd>lowercase</dd>
+            <dt id="a207a11926c125a5c68882f56ab33eee4">
+              eastl::hash_map&lt;<a href="struct_resource_key.html" class="m-doc">ResourceKey</a>, eastl::string16&gt; <a href="#a207a11926c125a5c68882f56ab33eee4" class="m-doc-self">mKeyToPngPath</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="a8557a7f94a24a6cc95c886a60365fe63">
-              eastl::hash_map&lt;<a href="struct_resource_key.html" class="m-doc">ResourceKey</a>, eastl::string16&gt; <a href="#a8557a7f94a24a6cc95c886a60365fe63" class="m-doc-self">mPNGPathMap</a>
-            </dt>
-            <dd><span></span></dd>
-            <dt id="ac3925584e8c1e5819f5aa48b607392f5">
-              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> <a href="#ac3925584e8c1e5819f5aa48b607392f5" class="m-doc-self">field_44</a>
+            <dt id="a61e1749f8ad4f5132049d71ab21a86d1">
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">uint32_<wbr />t</a> <a href="#a61e1749f8ad4f5132049d71ab21a86d1" class="m-doc-self">mMachineId</a>
             </dt>
             <dd><span></span></dd>
             <dt id="a277dbce0dc005416bec067c1261b3cdc">
@@ -223,6 +229,7 @@
                 </tr>
               </tbody>
             </table>
+<p>The path will end in a slash &#x27;/&#x27;</p>
           </div></section>
           <section class="m-doc-details" id="af5c0d8b27b53765e6dec7766df6d8868"><div>
             <h3>
@@ -344,6 +351,40 @@
               </tfoot>
             </table>
 <p>It saves it in file <code>0x473C3E6!0x473C3E6.0x473C3E6</code> of <a href="namespace_resource.html#ae5fc2be2c995477d7286fb634653ddd8a9aa1b03934893d7134a660af4204f2a9" class="m-doc">Resource::<wbr />SaveAreaID::<wbr />Server</a> (<code>Pollination.package</code>)</p>
+          </div></section>
+          <section class="m-doc-details" id="a69e95867ec52c6f94196f973f8fd1955"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">bool</a> App::<wbr />Thumbnail_cImportExport::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a69e95867ec52c6f94196f973f8fd1955" class="m-doc-self">ImportDirectoryPNGs</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">const</a> eastl::string16&amp; directoryPath,
+              eastl::hash_set&lt;eastl::string16&gt;&amp; dstSkippedPaths,
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a>&amp; dstCount)</span></span>
+            </h3>
+            <p>Scans a disk directory, and tries to imports all PNG creations found there that were not already in the system.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">directoryPath</td>
+                  <td>The path of the directory to scan</td>
+                </tr>
+                <tr>
+                  <td>dstSkippedPaths&nbsp;<span class="m-label m-flat m-warning">out</span></td>
+                  <td>A list of paths that were skipped because they were already in mPngPathToKey or too many files were loaded</td>
+                </tr>
+                <tr>
+                  <td>dstCount&nbsp;<span class="m-label m-flat m-warning">out</span></td>
+                  <td>The number of PNGs that were imported is added to this value</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>Returns</th>
+                  <td>True if some PNG was loaded, false otherwise</td>
+                </tr>
+              </tfoot>
+            </table>
+<p>For each file path, it will check if it is aloready in mPngPathToKey (lowercase); if it isn&#x27;t, it will call <a href="class_app_1_1_thumbnail__c_import_export.html#abdabc4f2fd412063a4c83f1471badd4e" class="m-doc">ImportPNG()</a> on it, and add its entry to mPngPathToKey and mKeyToPngPath It uses <code>dstCount</code> to keep track of how many files have been loaded; it loads a maximum of 500</p>
           </div></section>
         </section>
       </div>

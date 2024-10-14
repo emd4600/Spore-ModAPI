@@ -104,6 +104,18 @@
         <section id="pub-methods">
           <h2><a href="#pub-methods">Public functions</a></h2>
           <dl class="m-doc">
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a7deca5e214c1ec2d94cbd747199c7f0c" class="m-doc">WithInstance</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">uint32_<wbr />t</a> instanceId) -&gt; <a href="struct_resource_key.html" class="m-doc">ResourceKey</a></span>
+            </dt>
+            <dd>Returns a copy of this key with a different instance ID.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a89238cc3fcb6eb5934b9dafa667a37e0" class="m-doc">WithType</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">uint32_<wbr />t</a> typeId) -&gt; <a href="struct_resource_key.html" class="m-doc">ResourceKey</a></span>
+            </dt>
+            <dd>Returns a copy of this key with a different type ID.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a8b3e4604443a3a44945eebabac7b6d28" class="m-doc">WithGroup</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">uint32_<wbr />t</a> groupId) -&gt; <a href="struct_resource_key.html" class="m-doc">ResourceKey</a></span>
+            </dt>
+            <dd>Returns a copy of this key with a different group ID.</dd>
             <dt id="abd28312df46f1909bce307e0238b3d3a">
               <span class="m-doc-wrap-bumper">auto <a href="#abd28312df46f1909bce307e0238b3d3a" class="m-doc-self">operator==</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">const</a> <a href="struct_resource_key.html" class="m-doc">ResourceKey</a>&amp; b) const -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">bool</a></span>
             </dt>
@@ -179,6 +191,57 @@
               </tfoot>
             </table>
 <p>The groupID and typeID can be ommited, however; if that happens, they will be replaced with the optional parameters nDefaultGroupID and nDefaultTypeID respectively.</p><p>The resulting uint32_ts will be the hashes of the eastl::strings separated by the &#x27;!&#x27; and &#x27;.&#x27; signs. The typeID can have a special treatment, however: before hashing it, it will check if there&#x27;s a mapping for that extension in the ResourceManager class.</p><p>Examples: Parse(dstKey, &quot;Properties.txt&quot;); // this will be in the global (0x00000000) folder, with the appropiate mapping for the .txt extension) Parse(dstKey, &quot;CreatureEditorBackground.rw4&quot;, 0, 0x40606000); // this will search in the editor_rigblocks~ (0x40606000) folder. Parse(dstKey, &quot;CreatureGame!DifficultyTunning.prop&quot;);</p>
+          </div></section>
+          <section class="m-doc-details" id="a7deca5e214c1ec2d94cbd747199c7f0c"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"><a href="struct_resource_key.html" class="m-doc">ResourceKey</a> ResourceKey::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a7deca5e214c1ec2d94cbd747199c7f0c" class="m-doc-self">WithInstance</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">uint32_<wbr />t</a> instanceId)</span></span>
+            </h3>
+            <p>Returns a copy of this key with a different instance ID.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">instanceId</td>
+                  <td></td>
+                </tr>
+              </tbody>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="a89238cc3fcb6eb5934b9dafa667a37e0"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"><a href="struct_resource_key.html" class="m-doc">ResourceKey</a> ResourceKey::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a89238cc3fcb6eb5934b9dafa667a37e0" class="m-doc-self">WithType</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">uint32_<wbr />t</a> typeId)</span></span>
+            </h3>
+            <p>Returns a copy of this key with a different type ID.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">typeId</td>
+                  <td></td>
+                </tr>
+              </tbody>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="a8b3e4604443a3a44945eebabac7b6d28"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"><a href="struct_resource_key.html" class="m-doc">ResourceKey</a> ResourceKey::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a8b3e4604443a3a44945eebabac7b6d28" class="m-doc-self">WithGroup</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">uint32_<wbr />t</a> groupId)</span></span>
+            </h3>
+            <p>Returns a copy of this key with a different group ID.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">groupId</td>
+                  <td></td>
+                </tr>
+              </tbody>
+            </table>
           </div></section>
         </section>
       </div>
