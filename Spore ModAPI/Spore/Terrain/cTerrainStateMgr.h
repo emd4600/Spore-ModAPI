@@ -260,6 +260,16 @@ namespace Terrain
 		void ParseProp(App::PropertyList* propList);
 
 		void SetUserColorEnabled(bool enabled);
+
+		void ApplyTerrainUserElevationColor(eastl::vector<float> elevations, eastl::vector<Math::Vector3> colors);
+
+		void ApplyTerrainUserWaterColor(struct Math::Vector3 color);
+
+		void ApplyTerrainUserCliffColor(struct Math::Vector3 color);
+
+		void ApplyTerrainUserBeachColor(struct Math::Vector3 color);
+
+		void ApplyTerrainUserAtmosphereColor(struct Math::Vector3 color);
 	};
 	ASSERT_SIZE(cTerrainStateMgr, 0xC40);
 
@@ -268,5 +278,10 @@ namespace Terrain
 		DeclareAddress(InitTextures);  // 0xFBE200 0xFBDAE0
 		DeclareAddress(ParseProp);  // 0xFBC820 0xFBC100
 		DeclareAddress(SetUserColorEnabled);  // 0xFBDDA0 0xFBD680
+		DeclareAddress(ApplyTerrainUserElevationColor);  // 0xFBF8B0 0xFBF190
+		DeclareAddress(ApplyTerrainUserWaterColor);  // 0xFB9930 0xFB9210
+		DeclareAddress(ApplyTerrainUserCliffColor);  // 0xFBDEA0 0xFBD780
+		DeclareAddress(ApplyTerrainUserBeachColor);  // 0xFBDDD0 0xFBD6B0
+		DeclareAddress(ApplyTerrainUserAtmosphereColor);  // 0xFB98C0 0xFB91A0
 	}
 }

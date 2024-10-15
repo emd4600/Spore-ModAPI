@@ -338,6 +338,12 @@ namespace Terrain
 	auto_METHOD_VOID(cTerrainStateMgr, ParseProp, Args(App::PropertyList* propList), Args(propList));
 
 	auto_METHOD_VOID(cTerrainStateMgr, SetUserColorEnabled, Args(bool enabled), Args(enabled));
+
+	auto_METHOD_VOID(cTerrainStateMgr, ApplyTerrainUserElevationColor, Args(eastl::vector<float> elevations, eastl::vector<Math::Vector3> colors), Args(elevations, colors));
+	auto_METHOD_VOID(cTerrainStateMgr, ApplyTerrainUserWaterColor, Args(struct Math::Vector3 color), Args(color));
+	auto_METHOD_VOID(cTerrainStateMgr, ApplyTerrainUserCliffColor, Args(struct Math::Vector3 color), Args(color));
+	auto_METHOD_VOID(cTerrainStateMgr, ApplyTerrainUserBeachColor, Args(struct Math::Vector3 color), Args(color));
+	auto_METHOD_VOID(cTerrainStateMgr, ApplyTerrainUserAtmosphereColor, Args(struct Math::Vector3 color), Args(color));
 }
 
 

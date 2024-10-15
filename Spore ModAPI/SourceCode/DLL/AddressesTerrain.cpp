@@ -63,6 +63,11 @@ namespace Terrain
 		DefineAddress(InitTextures, SelectAddress(0xFBE200, 0xFBDAE0));
 		DefineAddress(ParseProp, SelectAddress(0xFBC820, 0xFBC100));
 		DefineAddress(SetUserColorEnabled, SelectAddress(0xFBDDA0, 0xFBD680));
+		DefineAddress(ApplyTerrainUserElevationColor, SelectAddress(0xFBF8B0, 0xFBF190));
+		DefineAddress(ApplyTerrainUserWaterColor, SelectAddress(0xFB9930, 0xFB9210));
+		DefineAddress(ApplyTerrainUserCliffColor, SelectAddress(0xFBDEA0, 0xFBD780));
+		DefineAddress(ApplyTerrainUserBeachColor, SelectAddress(0xFBDDD0, 0xFBD6B0));
+		DefineAddress(ApplyTerrainUserAtmosphereColor, SelectAddress(0xFB98C0, 0xFB91A0));
 	}
 }
 namespace Addresses(Terrain)

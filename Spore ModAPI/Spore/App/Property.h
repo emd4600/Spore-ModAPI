@@ -828,6 +828,130 @@ namespace App
 		///
 		static bool GetArrayTransform(const PropertyList* pPropertyList, uint32_t propertyID, size_t& dstCount, Transform*& dst);
 
+
+		///
+		/// Gets an array of bool values from a property with the propertyID specified in the given list.
+		/// If it is not an array property, a pointer to the single value will be returned.
+		/// @param[in] pPropertyList The PropertyList where this property will be searched.
+		/// @param[in] propertyID The unique identifier of the property to find.
+		/// @param[out] dst The vector where a copy of the values will be stored
+		/// @returns True if a property of the required type and propertyID was found, false otherwise.
+		///
+		static bool GetArrayBool(const PropertyList* pPropertyList, uint32_t propertyID, eastl::vector<bool>& dst);
+
+		///
+		/// Gets an array of int32_t values from a property with the propertyID specified in the given list.
+		/// If it is not an array property, a pointer to the single value will be returned.
+		/// @param[in] pPropertyList The PropertyList where this property will be searched.
+		/// @param[in] propertyID The unique identifier of the property to find.
+		/// @param[out] dst The vector where a copy of the values will be stored
+		/// @returns True if a property of the required type and propertyID was found, false otherwise.
+		///
+		static bool GetArrayInt32(const PropertyList* pPropertyList, uint32_t propertyID, eastl::vector<int>& dst);
+
+		///
+		/// Gets an array of uint32_t values from a property with the propertyID specified in the given list.
+		/// If it is not an array property, a pointer to the single value will be returned.
+		/// @param[in] pPropertyList The PropertyList where this property will be searched.
+		/// @param[in] propertyID The unique identifier of the property to find.
+		/// @param[out] dst The vector where a copy of the values will be stored
+		/// @returns True if a property of the required type and propertyID was found, false otherwise.
+		///
+		static bool GetArrayUInt32(const PropertyList* pPropertyList, uint32_t propertyID, eastl::vector<uint32_t>& dst);
+
+		///
+		/// Gets an array of float values from a property with the propertyID specified in the given list.
+		/// If it is not an array property, a pointer to the single value will be returned.
+		/// @param[in] pPropertyList The PropertyList where this property will be searched.
+		/// @param[in] propertyID The unique identifier of the property to find.
+		/// @param[out] dst The vector where a copy of the values will be stored
+		/// @returns True if a property of the required type and propertyID was found, false otherwise.
+		///
+		static bool GetArrayFloat(const PropertyList* pPropertyList, uint32_t propertyID, eastl::vector<float>& dst);
+
+		///
+		/// Gets an array of Math::Vector2 values from a property with the propertyID specified in the given list.
+		/// If it is not an array property, a pointer to the single value will be returned.
+		/// @param[in] pPropertyList The PropertyList where this property will be searched.
+		/// @param[in] propertyID The unique identifier of the property to find.
+		/// @param[out] dst The vector where a copy of the values will be stored
+		/// @returns True if a property of the required type and propertyID was found, false otherwise.
+		///
+		static bool GetArrayVector2(const PropertyList* pPropertyList, uint32_t propertyID, eastl::vector<Vector2>& dst);
+
+		///
+		/// Gets an array of Math::Vector3 values from a property with the propertyID specified in the given list.
+		/// If it is not an array property, a pointer to the single value will be returned.
+		/// @param[in] pPropertyList The PropertyList where this property will be searched.
+		/// @param[in] propertyID The unique identifier of the property to find.
+		/// @param[out] dst The vector where a copy of the values will be stored
+		/// @returns True if a property of the required type and propertyID was found, false otherwise.
+		///
+		static bool GetArrayVector3(const PropertyList* pPropertyList, uint32_t propertyID, eastl::vector<Vector3>& dst);
+
+		///
+		/// Gets an array of Math::Vector4 values from a property with the propertyID specified in the given list.
+		/// If it is not an array property, a pointer to the single value will be returned.
+		/// @param[in] pPropertyList The PropertyList where this property will be searched.
+		/// @param[in] propertyID The unique identifier of the property to find.
+		/// @param[out] dst The vector where a copy of the values will be stored
+		/// @returns True if a property of the required type and propertyID was found, false otherwise.
+		///
+		static bool GetArrayVector4(const PropertyList* pPropertyList, uint32_t propertyID, eastl::vector<Vector4>& dst);
+
+		///
+		/// Gets an array of Math::ColorRGB values from a property with the propertyID specified in the given list.
+		/// If it is not an array property, a pointer to the single value will be returned.
+		/// @param[in] pPropertyList The PropertyList where this property will be searched.
+		/// @param[in] propertyID The unique identifier of the property to find.
+		/// @param[out] dst The vector where a copy of the values will be stored
+		/// @returns True if a property of the required type and propertyID was found, false otherwise.
+		///
+		static bool GetArrayColorRGB(const PropertyList* pPropertyList, uint32_t propertyID, eastl::vector<ColorRGB>& dst);
+
+		///
+		/// Gets an array of ResourceKey values from a property with the propertyID specified in the given list.
+		/// If it is not an array property, a pointer to the single value will be returned.
+		/// @param[in] pPropertyList The PropertyList where this property will be searched.
+		/// @param[in] propertyID The unique identifier of the property to find.
+		/// @param[out] dst The vector where a copy of the values will be stored
+		/// @returns True if a property of the required type and propertyID was found, false otherwise.
+		///
+		static bool GetArrayKey(const PropertyList* pPropertyList, uint32_t propertyID, eastl::vector<ResourceKey>& dst);
+
+		///
+		/// Gets an array of char* ('eastl::string8') values from a property with the propertyID specified in the given list.
+		/// If it is not an array property, a pointer to the single value will be returned.
+		/// @param[in] pPropertyList The PropertyList where this property will be searched.
+		/// @param[in] propertyID The unique identifier of the property to find.
+		/// @param[out] dst The vector where a copy of the values will be stored
+		/// @returns True if a property of the required type and propertyID was found, false otherwise.
+		///
+		static bool GetArrayString8(const PropertyList* pPropertyList, uint32_t propertyID, eastl::vector<eastl::string>& dst);
+
+		///
+		/// Gets an array of 'eastl::string16' values from a property with the propertyID specified in the given list.
+		/// If it is not an array property, a pointer to the single value will be returned.
+		/// @param[in] pPropertyList The PropertyList where this property will be searched.
+		/// @param[in] propertyID The unique identifier of the property to find.
+		/// @param[out] dstCount The destination size_t that will be assigned with the number of values found.
+		/// @param[out] dst The vector where a copy of the values will be stored
+		/// @returns True if a property of the required type and propertyID was found, false otherwise.
+		///
+		static bool GetArrayString16(const PropertyList* pPropertyList, uint32_t propertyID, eastl::vector<eastl::string16>& dst);
+
+		///
+		/// Gets an array of EntityTransform values from a property with the propertyID specified in the given list.
+		/// This type of property can only exist on array properties.
+		/// @param[in] pPropertyList The PropertyList where this property will be searched.
+		/// @param[in] propertyID The unique identifier of the property to find.
+		/// @param[out] dst The vector where a copy of the values will be stored
+		/// @returns True if a property of the required type and propertyID was found, false otherwise.
+		///
+		static bool GetArrayTransform(const PropertyList* pPropertyList, uint32_t propertyID, eastl::vector<Transform>& dst);
+
+
+
 		///@}
 
 	protected:
@@ -1113,6 +1237,127 @@ namespace App
 	inline Property& Property::SetArrayColorRGBA(const ColorRGBA* pValues, size_t nValueCount) {
 		Set(PropertyType::ColorRGBA, kPropertyFlagArray, (void*)pValues, sizeof(ColorRGBA), nValueCount);
 		return *this;
+	}
+
+
+	inline bool Property::GetArrayBool(const PropertyList* pPropertyList, uint32_t propertyID, eastl::vector<bool>& dst) {
+		bool* data;
+		size_t count;
+		if (GetArrayBool(pPropertyList, propertyID, count, data)) {
+			dst = eastl::vector<bool>(data, data + count);
+			return true;
+		}
+		return false;
+	}
+
+	inline bool Property::GetArrayInt32(const PropertyList* pPropertyList, uint32_t propertyID, eastl::vector<int>& dst) {
+		int* data;
+		size_t count;
+		if (GetArrayInt32(pPropertyList, propertyID, count, data)) {
+			dst = eastl::vector<int>(data, data + count);
+			return true;
+		}
+		return false;
+	}
+
+	inline bool Property::GetArrayUInt32(const PropertyList* pPropertyList, uint32_t propertyID, eastl::vector<uint32_t>& dst) {
+		uint32_t* data;
+		size_t count;
+		if (GetArrayUInt32(pPropertyList, propertyID, count, data)) {
+			dst = eastl::vector<uint32_t>(data, data + count);
+			return true;
+		}
+		return false;
+	}
+
+	inline bool Property::GetArrayFloat(const PropertyList* pPropertyList, uint32_t propertyID, eastl::vector<float>& dst) {
+		float* data;
+		size_t count;
+		if (GetArrayFloat(pPropertyList, propertyID, count, data)) {
+			dst = eastl::vector<float>(data, data + count);
+			return true;
+		}
+		return false;
+	}
+
+	inline bool Property::GetArrayVector2(const PropertyList* pPropertyList, uint32_t propertyID, eastl::vector<Vector2>& dst) {
+		Vector2* data;
+		size_t count;
+		if (GetArrayVector2(pPropertyList, propertyID, count, data)) {
+			dst = eastl::vector<Vector2>(data, data + count);
+			return true;
+		}
+		return false;
+	}
+
+	inline bool Property::GetArrayVector3(const PropertyList* pPropertyList, uint32_t propertyID, eastl::vector<Vector3>& dst) {
+		Vector3* data;
+		size_t count;
+		if (GetArrayVector3(pPropertyList, propertyID, count, data)) {
+			dst = eastl::vector<Vector3>(data, data + count);
+			return true;
+		}
+		return false;
+	}
+
+	inline bool Property::GetArrayVector4(const PropertyList* pPropertyList, uint32_t propertyID, eastl::vector<Vector4>& dst) {
+		Vector4* data;
+		size_t count;
+		if (GetArrayVector4(pPropertyList, propertyID, count, data)) {
+			dst = eastl::vector<Vector4>(data, data + count);
+			return true;
+		}
+		return false;
+	}
+
+	inline bool Property::GetArrayColorRGB(const PropertyList* pPropertyList, uint32_t propertyID, eastl::vector<ColorRGB>& dst) {
+		ColorRGB* data;
+		size_t count;
+		if (GetArrayColorRGB(pPropertyList, propertyID, count, data)) {
+			dst = eastl::vector<ColorRGB>(data, data + count);
+			return true;
+		}
+		return false;
+	}
+
+	inline bool Property::GetArrayKey(const PropertyList* pPropertyList, uint32_t propertyID, eastl::vector<ResourceKey>& dst) {
+		ResourceKey* data;
+		size_t count;
+		if (GetArrayKey(pPropertyList, propertyID, count, data)) {
+			dst = eastl::vector<ResourceKey>(data, data + count);
+			return true;
+		}
+		return false;
+	}
+
+	inline bool Property::GetArrayString8(const PropertyList* pPropertyList, uint32_t propertyID, eastl::vector<eastl::string>& dst) {
+		eastl::string* data;
+		size_t count;
+		if (GetArrayString8(pPropertyList, propertyID, count, data)) {
+			dst = eastl::vector<eastl::string>(data, data + count);
+			return true;
+		}
+		return false;
+	}
+
+	inline bool Property::GetArrayString16(const PropertyList* pPropertyList, uint32_t propertyID, eastl::vector<eastl::string16>& dst) {
+		eastl::string16* data;
+		size_t count;
+		if (GetArrayString16(pPropertyList, propertyID, count, data)) {
+			dst = eastl::vector<eastl::string16>(data, data + count);
+			return true;
+		}
+		return false;
+	}
+
+	inline bool Property::GetArrayTransform(const PropertyList* pPropertyList, uint32_t propertyID, eastl::vector<Transform>& dst) {
+		Transform* data;
+		size_t count;
+		if (GetArrayTransform(pPropertyList, propertyID, count, data)) {
+			dst = eastl::vector<Transform>(data, data + count);
+			return true;
+		}
+		return false;
 	}
 
 #endif
