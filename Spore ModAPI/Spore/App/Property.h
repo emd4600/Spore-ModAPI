@@ -20,6 +20,7 @@
 #pragma once
 
 #include <EASTL\string.h>
+#include <EASTL\vector.h>
 #include <Spore\Internal.h>
 #include <Spore\MathUtils.h>
 #include <Spore\ResourceKey.h>
