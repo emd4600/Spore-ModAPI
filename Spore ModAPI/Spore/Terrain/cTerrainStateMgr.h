@@ -83,7 +83,7 @@ namespace Terrain
 			/* 238h */	Math::Vector3 kP2Brightness;
 			/* 244h */	Math::Vector3 kP3Phase;
 			/* 250h */	Math::Vector3 kP3Brightness;
-			/* 25Ch */	bool userColorBeachEnabled;  // not initialized
+			/* 25Ch */	bool userColorEnabled;  // not initialized
 			/* 260h */	Math::ColorRGB factoredTerrainUserColorBeach;  // not initialized
 			/* 26Ch */	Math::ColorRGB factoredTerrainUserColorCliff;  // not initialized
 			/* 278h */	Math::ColorRGB factoredTerrainUserColorWater;  // not initialized
@@ -251,6 +251,22 @@ namespace Terrain
 		/* 7C0h */	char field_7C0[0x180];
 		/* 940h */	char field_940[0x180];
 		/* AC0h */	char field_AC0[0x180];
+
+
+		void Initialize(bool generateColorRamp);
+
+		void InitTextures();
+
+		void ParseProp(App::PropertyList* propList);
+
+		void SetUserColorEnabled(bool enabled);
 	};
 	ASSERT_SIZE(cTerrainStateMgr, 0xC40);
+
+	namespace Addresses(cTerrainStateMgr) {
+		DeclareAddress(Initialize);  // 0xFC0BA0 0xFC0480
+		DeclareAddress(InitTextures);  // 0xFBE200 0xFBDAE0
+		DeclareAddress(ParseProp);  // 0xFBC820 0xFBC100
+		DeclareAddress(SetUserColorEnabled);  // 0xFBDDA0 0xFBD680
+	}
 }

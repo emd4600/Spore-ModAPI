@@ -2,6 +2,7 @@
 #include <Spore\Internal.h>
 #include <Spore\Terrain\ITerrainResourceManager.h>
 #include <Spore\Terrain\cTerrainMapSet.h>
+#include <Spore\Terrain\cTerrainStateMgr.h>
 #include <Spore\Terrain\cTerrainSphere.h>
 #include <Spore\Terrain\TerrainRendering.h>
 #include <Spore\Graphics\ITextureManager.h>
@@ -328,6 +329,15 @@ namespace Terrain
 	App::cViewer* GetColorMapViewer() {
 		return (App::cViewer*)GetAddress(Terrain, TerrainColorMapViewer_ptr);
 	}
+
+
+	auto_METHOD_VOID(cTerrainStateMgr, Initialize, Args(bool a), Args(a));
+
+	auto_METHOD_VOID_(cTerrainStateMgr, InitTextures);
+
+	auto_METHOD_VOID(cTerrainStateMgr, ParseProp, Args(App::PropertyList* propList), Args(propList));
+
+	auto_METHOD_VOID(cTerrainStateMgr, SetUserColorEnabled, Args(bool enabled), Args(enabled));
 }
 
 

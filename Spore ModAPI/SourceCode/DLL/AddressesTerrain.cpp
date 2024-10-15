@@ -2,6 +2,7 @@
 #include "stdafx.h"
 #include <Spore\Terrain\cTerrainSphere.h>
 #include <Spore\Terrain\cTerrainSphereQuad.h>
+#include <Spore\Terrain\cTerrainStateMgr.h>
 #include <Spore\Terrain\ITerrainResourceManager.h>
 #include <Spore\Terrain\TerrainRendering.h>
 
@@ -55,6 +56,13 @@ namespace Terrain
 		DefineAddress(RenderDecals, SelectAddress(0xFB36C0, 0xFB3010));
 		DefineAddress(UpdateVertexBuffer, SelectAddress(0xFB6D20, 0xFB6600));
 		DefineAddress(UpdateIndexBuffer, SelectAddress(0xFB4AE0, 0xFB4380));
+	}
+
+	namespace Addresses(cTerrainStateMgr) {
+		DefineAddress(Initialize, SelectAddress(0xFC0BA0, 0xFC0480));
+		DefineAddress(InitTextures, SelectAddress(0xFBE200, 0xFBDAE0));
+		DefineAddress(ParseProp, SelectAddress(0xFBC820, 0xFBC100));
+		DefineAddress(SetUserColorEnabled, SelectAddress(0xFBDDA0, 0xFBD680));
 	}
 }
 namespace Addresses(Terrain)
