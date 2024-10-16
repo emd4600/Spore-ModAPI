@@ -151,7 +151,7 @@ namespace Simulator
 		/* 550h */	int mTribeArchetype;  //TODO
 		/* 554h */	bool field_554;
 		/* 555h */	bool field_555;
-		/* 556h */	bool mbMembersFlee; // if true, creatures run away in fear and die
+		/* 556h */	bool mbDefeated; // if true, creatures run away in fear then die.
 		/* 557h */	bool mGoodyPopped;
 		/* 558h */	char _padding_558[0x1310];
 		/* 1868h */	int field_1868;
