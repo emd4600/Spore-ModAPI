@@ -20,8 +20,11 @@ namespace UI
 		EditorNamePanel();
 		~EditorNamePanel();
 
+		/// Creates a functional renaming UI for a nameable entity (eg Tribes and Cities)
+		/// allowRename when set to false will gray-out the name field
+		/// randomNameType when set to 0x0 will hide the randomization button
 		void Initialize(Editors::INameableEntity* pEntity, UTFWin::IWindow* pContainer, uint32_t layoutID,
-			bool, uint32_t randomNameType);
+			bool allowRename = true, uint32_t randomNameType = 0x0);
 		void Dispose();
 
 		virtual void SetExtended(bool extended);
