@@ -102,5 +102,12 @@ namespace Simulator
 	auto_METHOD_VOID(cCreatureCitizen, DoAction, Args(int actionId, cGameData* actionObject, App::Property* prop), Args(actionId, actionObject, prop));
 
 	auto_METHOD(cCreatureCitizen, int, GetHandheldItemForTool, Args(int toolType), Args(toolType));
+
+	eastl::fixed_string<char16_t, 32> cCreatureCitizen::GetSpecializedName(cGameData* object) {
+		eastl::fixed_string<char16_t, 32> str;
+		CALL(GetAddress(cCreatureCitizen, GetSpecializedName), void,
+			Args(eastl::fixed_string<char16_t, 32>&, cGameData*), Args(str, object));
+		return str;
+	}
 }
 #endif

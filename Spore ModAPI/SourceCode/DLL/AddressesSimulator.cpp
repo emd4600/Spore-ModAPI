@@ -160,6 +160,8 @@ namespace Addresses(Simulator)
 
 	DefineAddress(GetPlayerHomePlanet, SelectAddress(0x10223F0, 0x1021220));
 
+	DefineAddress(GetSpecializedName, SelectAddress(0xB6B7E0, 0xB6BBF0));
+
 
 #ifndef SDK_TO_GHIDRA
 	DefineAddress(LightingWorld_ptr, SelectAddress(0x1682CD4, 0x167EA54));
@@ -221,6 +223,7 @@ namespace Simulator
 		DefineAddress(Update, SelectAddress(0xC24210, 0xC24A30));
 		DefineAddress(DoAction, SelectAddress(0xC26EF0, 0xC27710));
 		DefineAddress(GetHandheldItemForTool, SelectAddress(0xC22E70, 0xC23740));
+		DefineAddress(GetSpecializedName, SelectAddress(0xB6B500, 0xB6B910));
 	}
 
 	namespace Addresses(cCreatureBase)
