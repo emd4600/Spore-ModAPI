@@ -182,7 +182,7 @@ namespace Simulator
 				if (count > 0) {
 					*dst = eastl::string16(count, ' ');
 					for (size_t i = 0; i < count; ++i) {
-						IO::ReadInt16(s, (int16_t*)(*dst)[i], 1, IO::Endian::Little);
+						IO::ReadInt16(s, (int16_t*)(dst->c_str() + i), 1, IO::Endian::Little);
 					}
 				}
 				return true;
