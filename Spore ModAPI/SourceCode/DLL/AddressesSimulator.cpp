@@ -108,6 +108,7 @@
 #include <Spore\Simulator\SubSystem\GamePersistenceManager.h>
 #include <Spore\Simulator\SubSystem\CinematicManager.h>
 #include <Spore\Simulator\SubSystem\BundleManager.h>
+#include <Spore\Simulator\SubSystem\GamePlantManager.h>
 #include <Spore\Simulator\NounClassFactories.h>
 
 namespace Addresses(Simulator)
@@ -158,6 +159,8 @@ namespace Addresses(Simulator)
 	DefineAddress(GetMainSpeciesImageKey, SelectAddress(0x1066AF0, 0x1065F10));
 
 	DefineAddress(GetPlayerHomePlanet, SelectAddress(0x10223F0, 0x1021220));
+
+	DefineAddress(GetSpecializedName, SelectAddress(0xB6B7E0, 0xB6BBF0));
 
 
 #ifndef SDK_TO_GHIDRA
@@ -220,6 +223,7 @@ namespace Simulator
 		DefineAddress(Update, SelectAddress(0xC24210, 0xC24A30));
 		DefineAddress(DoAction, SelectAddress(0xC26EF0, 0xC27710));
 		DefineAddress(GetHandheldItemForTool, SelectAddress(0xC22E70, 0xC23740));
+		DefineAddress(GetSpecializedName, SelectAddress(0xB6B500, 0xB6B910));
 	}
 
 	namespace Addresses(cCreatureBase)
@@ -1157,6 +1161,10 @@ namespace Simulator
 		DefineAddress(DoActionGeneric, SelectAddress(0xCD0250, 0xCD0250));
 		DefineAddress(SetHoverObjectCursorAndRollover, SelectAddress(0xCCF800, 0xCD00C0));
 		DefineAddress(sIsInEditor_ptr, SelectAddress(0x168AD70, 0x1686AF0));
+	}
+
+	namespace Addresses(cGamePlantManager) {
+		DefineAddress(Get, SelectAddress(0xB3D310, 0xB3D4B0));
 	}
 }
 

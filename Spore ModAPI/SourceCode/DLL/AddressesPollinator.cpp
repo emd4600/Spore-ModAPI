@@ -7,6 +7,7 @@ namespace Pollinator
 	namespace Addresses(cAssetMetadata)
 	{
 		DefineAddress(Set, SelectAddress(0x5511D0, 0x551240));
+		DefineAddress(SetAll, SelectAddress(0x5515B0, 0x551620));
 	}
 
 	namespace Addresses(cAchievementsManager)

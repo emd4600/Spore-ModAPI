@@ -31,6 +31,16 @@ namespace App
 	auto_METHOD(Thumbnail_cImportExport, bool, ImportPNG,
 		Args(const char16_t* path, ResourceKey& key), Args(path, key));
 
+	auto_METHOD(Thumbnail_cImportExport, bool, DecodePNG,
+		Args(IO::IStream* stream, ThumbnailDecodedMetadata& dstMetadata, IStreamPtr& dstDataStream),
+		Args(stream, dstMetadata, dstDataStream));
+
+	auto_METHOD_(Thumbnail_cImportExport, bool, SaveFilePaths);
+
+	auto_METHOD(Thumbnail_cImportExport, bool, ImportDirectoryPNGs,
+		Args(const eastl::string16& path, eastl::hash_set<eastl::string16>& dstSkippedPaths, int& dstCount),
+		Args(path, dstSkippedPaths, dstCount));
+
 
 	auto_STATIC_METHOD_(cIDGenerator, cIDGenerator*, Get);
 

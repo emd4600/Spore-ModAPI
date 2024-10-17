@@ -35,6 +35,11 @@ namespace Simulator
 		/// @returns An integer identifying the kind of item to be held
 		int GetHandheldItemForTool(int toolType);
 
+		/// Returns the specialized name for a creature citizen, such as "Chieftain Whatever".
+		/// @param object
+		/// @returns
+		static eastl::fixed_string<char16_t, 32> GetSpecializedName(cGameData* object);
+
 	public:
 		/* FC0h */	int field_FC0;  // 3
 		/* FC4h */	uint32_t mFavoredGrasperlikeAppendage;  // -1
@@ -60,5 +65,6 @@ namespace Simulator
 		DeclareAddress(Update);  // 0xC24210 0xC24A30
 		DeclareAddress(DoAction);  // 0xC26EF0 0xC27710
 		DeclareAddress(GetHandheldItemForTool);  // 0xC22E70 0xC23740
+		DeclareAddress(GetSpecializedName);  // 0xB6B500 0xB6B910
 	}
 }

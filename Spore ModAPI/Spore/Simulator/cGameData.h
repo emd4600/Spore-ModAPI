@@ -25,6 +25,7 @@
 #include <Spore\Simulator\cScenarioMarker.h>
 #include <Spore\Simulator\IGameDataView.h>
 #include <EASTL\intrusive_list.h>
+#include <EASTL\fixed_string.h>
 
 #define cGameDataPtr eastl::intrusive_ptr<Simulator::cGameData>
 
@@ -113,4 +114,14 @@ namespace Simulator
 		DeclareAddress(func18h);
 		DeclareAddress(func3Ch);
 	}
+
+	static_assert(sizeof(eastl::fixed_string<char16_t, 32>) == 0x54, "");
+	/// Returns the specialized name for a game object, such as "Chieftain Whatever".
+	/// @param object
+	/// @returns
+	eastl::fixed_string<char16_t, 32> GetSpecializedName(cGameData* object);
+}
+
+namespace Addresses(Simulator) {
+	DeclareAddress(GetSpecializedName);  // 0xB6B7E0 0xB6BBF0
 }

@@ -406,6 +406,9 @@ namespace App
 		DefineAddress(FolderPathFromLocale, SelectAddress(0x5F9220, 0x5F93A0));
 		DefineAddress(SavePNG, SelectAddress(0x5FA7E0, 0x5FA960));
 		DefineAddress(ImportPNG, SelectAddress(0x5FC240, 0x5FC3C0));
+		DefineAddress(DecodePNG, SelectAddress(0x5FBA10, 0x5FBB90));
+		DefineAddress(SaveFilePaths, SelectAddress(0x5F89C0, 0x5F8B60));
+		DefineAddress(ImportDirectoryPNGs, SelectAddress(0x5FC900, 0x5FCA80));
 	}
 
 	namespace Addresses(cLocaleManager)

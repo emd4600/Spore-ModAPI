@@ -47,6 +47,18 @@ namespace Pollinator
 		bool Set(const ResourceKey& assetKey, const char16_t* pName, const char16_t* pDescription, const char16_t* pTags, 
 			const ResourceKey& parentAssetKey, bool isPollinated);
 
+		bool SetAll(
+			const ResourceKey& assetKey,
+			uint64_t assetId,
+			uint64_t timeCreated,
+			const char16_t* authorName,
+			uint64_t authorId,
+			const char16_t* name,
+			const char16_t* description,
+			const char16_t* tags,
+			const char* authors,
+			bool useCurrentTimeForTimeDownloaded);
+
 	public:
 		/* 18h */	int64_t mAssetID;  // -1
 		/* 20h */	ResourceKey mAssetKey;
@@ -110,5 +122,6 @@ namespace Pollinator
 	namespace Addresses(cAssetMetadata)
 	{
 		DeclareAddress(Set);
+		DeclareAddress(SetAll);  // 0x5515B0 0x551620
 	}
 }

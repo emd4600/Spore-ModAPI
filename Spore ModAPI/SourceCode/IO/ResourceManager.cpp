@@ -19,6 +19,7 @@
 
 #include <Spore\Resource\IResourceManager.h>
 #include <Spore\Resource\cResourceManager.h>
+#include <Spore\Resource\FakeRecord.h>
 
 namespace Resource
 {
@@ -63,5 +64,33 @@ namespace Resource
 	auto_METHOD_VIRTUAL(cResourceManager, cResourceManager, const char16_t*, GetTypenameFromType, Args(uint32_t nTypeID), Args(nTypeID));
 	auto_METHOD_VIRTUAL(cResourceManager, cResourceManager, bool, SetTypename, Args(uint32_t nTypeID, const char16_t* pExtension), Args(nTypeID, pExtension));
 	auto_METHOD_VIRTUAL(cResourceManager, cResourceManager, bool, ResetTypename, Args(uint32_t nTypeID), Args(nTypeID));
+
+
+	FakeRecord::FakeRecord(Database* database, IO::IStream* stream, const ResourceKey& key,
+		bool closeStreamOnClose, bool deleteStreamOnClose)
+	{
+		CALL(GetAddress(FakeRecord, _ctor), void,
+			Args(FakeRecord*, Database*, IO::IStream*, const ResourceKey&, bool, bool),
+			Args(this, database, stream, key, closeStreamOnClose, deleteStreamOnClose));
+	}
+
+	const ResourceKey& FakeRecord::GetKey() {
+		return mKey;
+	}
+	void FakeRecord::SetKey(const ResourceKey& key) {
+		}
+	IO::IStream* FakeRecord::GetStream() {
+		return nullptr;
+		}
+	Database* FakeRecord::GetDatabase() {
+		return nullptr;
+		}
+	bool FakeRecord::RecordOpen() {
+		return false;
+		}
+	bool FakeRecord::RecordClose() {
+		return false;
+		}
+
 #endif
 }

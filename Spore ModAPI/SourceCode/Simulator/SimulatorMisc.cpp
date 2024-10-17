@@ -9,6 +9,7 @@
 #include <Spore\Simulator\SubSystem\GamePersistenceManager.h>
 #include <Spore\Simulator\SubSystem\BundleManager.h>
 #include <Spore\Simulator\SubSystem\CinematicManager.h>
+#include <Spore\Simulator\SubSystem\GamePlantManager.h>
 #include <Spore\Simulator\cDefaultToolProjectile.h>
 #include <Spore\Simulator\cArtilleryProjectile.h>
 #include <Spore\Simulator\cCulturalProjectile.h>
@@ -213,6 +214,10 @@ namespace Simulator
 	auto_METHOD(cBundleManager, cGameBundle*, CreateBundles,
 		Args(float amount, cGameBundleContainer* container, int bundleType),
 		Args(amount, container, bundleType));
+
+	/// GamePlantManager ///
+
+	auto_STATIC_METHOD_(cGamePlantManager, cGamePlantManager*, Get);
 }
 
 #endif
