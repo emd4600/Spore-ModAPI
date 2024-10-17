@@ -57,11 +57,11 @@
               <a href="#a7336869349c1fdce783daaa13128fc87aa9306d0f414dda2d69902da31839f452" class="m-doc">CameraProperties</a> = 0x40410100,
               <a href="#a7336869349c1fdce783daaa13128fc87ab9bf37e1d38e910dca8b4bd56e906456" class="m-doc">NounDefinitions</a> = 0x02E9C426,
               <a href="#a7336869349c1fdce783daaa13128fc87a3a9fb063da17400b6aeaeaa4d01a995d" class="m-doc">EditorSetup</a> = 0x40600100,
-              <a href="#a7336869349c1fdce783daaa13128fc87a255cfc7531fc460abb9bf16435003f76" class="m-doc">EditorConfig</a> = 0x40600100,
+              <a href="#a7336869349c1fdce783daaa13128fc87a255cfc7531fc460abb9bf16435003f76" class="m-doc">EditorConfig</a> = EditorSetup,
               <a href="#a7336869349c1fdce783daaa13128fc87ace5cea98012c0286b2975bc33bfe46b6" class="m-doc">EditorRigblocks</a> = 0x40606000,
               <a href="#a7336869349c1fdce783daaa13128fc87a7075fe4b000826813fbb46ba36b38fc5" class="m-doc">GameTuning</a> = 0x02AE0C7E,
               <a href="#a7336869349c1fdce783daaa13128fc87ab858dc732d8ddd8270f11722f2f4c840" class="m-doc">Palettes</a> = 0x406B6A00,
-              <a href="#a7336869349c1fdce783daaa13128fc87a8c1f05b5538555cf8f8a12735fa909cd" class="m-doc">PaletteDefinitions</a> = 0x406B6A00,
+              <a href="#a7336869349c1fdce783daaa13128fc87a8c1f05b5538555cf8f8a12735fa909cd" class="m-doc">PaletteDefinitions</a> = Palettes,
               <a href="#a7336869349c1fdce783daaa13128fc87abe9fe4e5acdfa3eb82e4bada2091559a" class="m-doc">PaletteItems</a> = 0xD87454E6,
               <a href="#a7336869349c1fdce783daaa13128fc87ae49ef8bb15916fd0376cd480db6212d0" class="m-doc">Paints</a> = 0x406A0200,
               <a href="#a7336869349c1fdce783daaa13128fc87ac6366ef11624c33471af9b36c14b918e" class="m-doc">Physics</a> = 0x02A8CB47,
@@ -81,19 +81,40 @@
               <a href="#a7336869349c1fdce783daaa13128fc87a16a1acf2574e7317793fc7a7cb031405" class="m-doc">BuildingModels</a> = 0x40636200,
               <a href="#a7336869349c1fdce783daaa13128fc87a399efa92332fab90398c3f7518d1e86c" class="m-doc">VehicleModels</a> = 0x40646200,
               <a href="#a7336869349c1fdce783daaa13128fc87a2034754efee1acb583a8ca6f9255591f" class="m-doc">UfoModels</a> = 0x40656200,
-              <a href="#a7336869349c1fdce783daaa13128fc87a1641b9a76d6fba632ef7be4b07ed124f" class="m-doc">UFOModels</a> = 0x40656200,
+              <a href="#a7336869349c1fdce783daaa13128fc87a1641b9a76d6fba632ef7be4b07ed124f" class="m-doc">UFOModels</a> = UfoModels,
               <a href="#a7336869349c1fdce783daaa13128fc87aea5258bed2ddd54a9727184679a72e67" class="m-doc">FloraModels</a> = 0x40666200,
+              <a href="#a7336869349c1fdce783daaa13128fc87a540f05ef2e41cbf1a8d3d11ce908ec2b" class="m-doc">PaletteModels</a> = 0x406B6200,
               <a href="#a7336869349c1fdce783daaa13128fc87a944c1e1a4ca301c4eafa6ec33bb3fbde" class="m-doc">CityMusic</a> = 0x40C0C200,
+              <a href="#a7336869349c1fdce783daaa13128fc87abcd268a3a71c9ffbe453f5de78c03205" class="m-doc">Adventures</a> = 0x408A0000,
+              <a href="#a7336869349c1fdce783daaa13128fc87af59352a15ba4bb8103167d0747d9c2c1" class="m-doc">CellImages</a> = CellModels + 1,
+              <a href="#a7336869349c1fdce783daaa13128fc87a25e24fcc7c28408b968105e159ecdedd" class="m-doc">CreatureImages</a> = CreatureModels + 1,
+              <a href="#a7336869349c1fdce783daaa13128fc87a830832b74028f6a35806239f30661095" class="m-doc">BuildingImages</a> = BuildingModels + 1,
+              <a href="#a7336869349c1fdce783daaa13128fc87a0d9fc430cb53c70bfe4c656de2b79042" class="m-doc">VehicleImages</a> = VehicleModels + 1,
+              <a href="#a7336869349c1fdce783daaa13128fc87a065ab7ee456f4a62f94f67e9f67d382e" class="m-doc">UfoImages</a> = UfoModels + 1,
+              <a href="#a7336869349c1fdce783daaa13128fc87a0203b4cee0197a0b734c2c7640f1373a" class="m-doc">UFOImages</a> = UfoImages,
+              <a href="#a7336869349c1fdce783daaa13128fc87ac483a6dada17522c00affd93881c340d" class="m-doc">FloraImages</a> = FloraModels + 1,
+              <a href="#a7336869349c1fdce783daaa13128fc87abe976919cb4ad0e6ca108eb9646ea9d4" class="m-doc">AdventuresLargeCardImage1</a> = Adventures + 1,
+              <a href="#a7336869349c1fdce783daaa13128fc87a30bd2cfe0f5d189fe00c6017f62eb5a3" class="m-doc">AdventuresLargeCardImage2</a> = Adventures + 2,
+              <a href="#a7336869349c1fdce783daaa13128fc87a2dd9c3bb24290f2ea1b816e61b419d8f" class="m-doc">AdventuresLargeCardImage3</a> = Adventures + 3,
+              <a href="#a7336869349c1fdce783daaa13128fc87a59033a2005ab3efb329ea79ff94e4d22" class="m-doc">AdventuresLargeCardImage4</a> = Adventures + 4,
+              <a href="#a7336869349c1fdce783daaa13128fc87a91583ce8a786732303f9da6c18d5c1a6" class="m-doc">CellModelsConfig</a> = 0x4061E500,
+              <a href="#a7336869349c1fdce783daaa13128fc87a20dc73b1e40e0b4f9ad92fe6124ebf79" class="m-doc">CreatureModelsConfig</a> = 0x4062E500,
+              <a href="#a7336869349c1fdce783daaa13128fc87a24c2f15a7647312f96565232214aee2c" class="m-doc">BuildingModelsConfig</a> = 0x4063E500,
+              <a href="#a7336869349c1fdce783daaa13128fc87a822ba0c432cffaed9f7517780a2766d2" class="m-doc">VehicleModelsConfig</a> = 0x4064E500,
+              <a href="#a7336869349c1fdce783daaa13128fc87a6a00474536945e375c91af0efc98b273" class="m-doc">UfoModelsConfig</a> = 0x4065E500,
+              <a href="#a7336869349c1fdce783daaa13128fc87afbbedb240df55b6ffe66e2ed64ec3723" class="m-doc">UFOModelsConfig</a> = UfoModelsConfig,
+              <a href="#a7336869349c1fdce783daaa13128fc87a47bf4356f879011c4b2d46ea35b6a29b" class="m-doc">FloraModelsConfig</a> = 0x4066E500,
+              <a href="#a7336869349c1fdce783daaa13128fc87af60455cd36c584a5ea7beaf569bfa8dc" class="m-doc">PaletteModelsConfig</a> = 0x406BE500,
               <a href="#a7336869349c1fdce783daaa13128fc87a67c8a5f951a37d5bcb0511eb57d34c53" class="m-doc">CivicObjects</a> = 0x9430ADD7,
               <a href="#a7336869349c1fdce783daaa13128fc87ade8c9e3603a32b5300a8e3d1fc63a28d" class="m-doc">PlanetScripts</a> = 0x4184A100,
               <a href="#a7336869349c1fdce783daaa13128fc87a40caec3f8010fc1b7b36b61f8553a64c" class="m-doc">SpacePopups</a> = 0x131A9F54,
-              <a href="#a7336869349c1fdce783daaa13128fc87a57ad41860e9409b4f3353343bc0bd3c5" class="m-doc">SpaceEvents</a> = 0x131A9F54,
+              <a href="#a7336869349c1fdce783daaa13128fc87a57ad41860e9409b4f3353343bc0bd3c5" class="m-doc">SpaceEvents</a> = SpacePopups,
               <a href="#a7336869349c1fdce783daaa13128fc87acc2d29b6f0200c53628162f7bb9594aa" class="m-doc">CivPopups</a> = 0xAA9A8ED7,
-              <a href="#a7336869349c1fdce783daaa13128fc87a5985dc6be91fb5fc1b79573c371f320f" class="m-doc">CivEvents</a> = 0xAA9A8ED7,
+              <a href="#a7336869349c1fdce783daaa13128fc87a5985dc6be91fb5fc1b79573c371f320f" class="m-doc">CivEvents</a> = CivPopups,
               <a href="#a7336869349c1fdce783daaa13128fc87af039fe48ee218fda3aa57515311a7864" class="m-doc">TribePopups</a> = 0x182CD6CE,
-              <a href="#a7336869349c1fdce783daaa13128fc87ab8678fef19ce6b4a9fd70e690a7be24e" class="m-doc">TribeEvents</a> = 0x182CD6CE,
+              <a href="#a7336869349c1fdce783daaa13128fc87ab8678fef19ce6b4a9fd70e690a7be24e" class="m-doc">TribeEvents</a> = TribePopups,
               <a href="#a7336869349c1fdce783daaa13128fc87a5adcf660124a82db824fce5697e58dac" class="m-doc">CivicThumbs</a> = 0x65928944,
-              <a href="#a7336869349c1fdce783daaa13128fc87aab7d2f59a1f9bf160c3ad71549abe9b5" class="m-doc">PlannerThumbnails</a> = 0x65928944,
+              <a href="#a7336869349c1fdce783daaa13128fc87aab7d2f59a1f9bf160c3ad71549abe9b5" class="m-doc">PlannerThumbnails</a> = CivicThumbs,
               <a href="#a7336869349c1fdce783daaa13128fc87a37cd5df09c744a8f6066d254cb428027" class="m-doc">AssetBrowserData</a> = 0x851D4139,
               <a href="#a7336869349c1fdce783daaa13128fc87a6c5b4482c829029e65c3aa0cfe431def" class="m-doc">AssetBrowserConfig</a> = 0x9A74416B,
               <a href="#a7336869349c1fdce783daaa13128fc87a6eb5b8ab9e5b9cd67324a47858a2d9be" class="m-doc">AssetBrowserFeedLists</a> = 0x6EDC12D4,
@@ -308,9 +329,135 @@
                   </td>
                 </tr>
                 <tr>
+                  <td><a href="#a7336869349c1fdce783daaa13128fc87a540f05ef2e41cbf1a8d3d11ce908ec2b" class="m-doc-self" id="a7336869349c1fdce783daaa13128fc87a540f05ef2e41cbf1a8d3d11ce908ec2b">PaletteModels</a></td>
+                  <td>
+                  <p><span></span></p>
+                  </td>
+                </tr>
+                <tr>
                   <td><a href="#a7336869349c1fdce783daaa13128fc87a944c1e1a4ca301c4eafa6ec33bb3fbde" class="m-doc-self" id="a7336869349c1fdce783daaa13128fc87a944c1e1a4ca301c4eafa6ec33bb3fbde">CityMusic</a></td>
                   <td>
                   <p>Where city music .cmp files are stored.</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a7336869349c1fdce783daaa13128fc87abcd268a3a71c9ffbe453f5de78c03205" class="m-doc-self" id="a7336869349c1fdce783daaa13128fc87abcd268a3a71c9ffbe453f5de78c03205">Adventures</a></td>
+                  <td>
+                  <p>Where adventure .adv files are stored.</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a7336869349c1fdce783daaa13128fc87af59352a15ba4bb8103167d0747d9c2c1" class="m-doc-self" id="a7336869349c1fdce783daaa13128fc87af59352a15ba4bb8103167d0747d9c2c1">CellImages</a></td>
+                  <td>
+                  <p><span></span></p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a7336869349c1fdce783daaa13128fc87a25e24fcc7c28408b968105e159ecdedd" class="m-doc-self" id="a7336869349c1fdce783daaa13128fc87a25e24fcc7c28408b968105e159ecdedd">CreatureImages</a></td>
+                  <td>
+                  <p><span></span></p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a7336869349c1fdce783daaa13128fc87a830832b74028f6a35806239f30661095" class="m-doc-self" id="a7336869349c1fdce783daaa13128fc87a830832b74028f6a35806239f30661095">BuildingImages</a></td>
+                  <td>
+                  <p><span></span></p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a7336869349c1fdce783daaa13128fc87a0d9fc430cb53c70bfe4c656de2b79042" class="m-doc-self" id="a7336869349c1fdce783daaa13128fc87a0d9fc430cb53c70bfe4c656de2b79042">VehicleImages</a></td>
+                  <td>
+                  <p><span></span></p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a7336869349c1fdce783daaa13128fc87a065ab7ee456f4a62f94f67e9f67d382e" class="m-doc-self" id="a7336869349c1fdce783daaa13128fc87a065ab7ee456f4a62f94f67e9f67d382e">UfoImages</a></td>
+                  <td>
+                  <p><span></span></p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a7336869349c1fdce783daaa13128fc87a0203b4cee0197a0b734c2c7640f1373a" class="m-doc-self" id="a7336869349c1fdce783daaa13128fc87a0203b4cee0197a0b734c2c7640f1373a">UFOImages</a></td>
+                  <td>
+                  <p><span></span></p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a7336869349c1fdce783daaa13128fc87ac483a6dada17522c00affd93881c340d" class="m-doc-self" id="a7336869349c1fdce783daaa13128fc87ac483a6dada17522c00affd93881c340d">FloraImages</a></td>
+                  <td>
+                  <p><span></span></p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a7336869349c1fdce783daaa13128fc87abe976919cb4ad0e6ca108eb9646ea9d4" class="m-doc-self" id="a7336869349c1fdce783daaa13128fc87abe976919cb4ad0e6ca108eb9646ea9d4">AdventuresLargeCardImage1</a></td>
+                  <td>
+                  <p><span></span></p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a7336869349c1fdce783daaa13128fc87a30bd2cfe0f5d189fe00c6017f62eb5a3" class="m-doc-self" id="a7336869349c1fdce783daaa13128fc87a30bd2cfe0f5d189fe00c6017f62eb5a3">AdventuresLargeCardImage2</a></td>
+                  <td>
+                  <p><span></span></p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a7336869349c1fdce783daaa13128fc87a2dd9c3bb24290f2ea1b816e61b419d8f" class="m-doc-self" id="a7336869349c1fdce783daaa13128fc87a2dd9c3bb24290f2ea1b816e61b419d8f">AdventuresLargeCardImage3</a></td>
+                  <td>
+                  <p><span></span></p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a7336869349c1fdce783daaa13128fc87a59033a2005ab3efb329ea79ff94e4d22" class="m-doc-self" id="a7336869349c1fdce783daaa13128fc87a59033a2005ab3efb329ea79ff94e4d22">AdventuresLargeCardImage4</a></td>
+                  <td>
+                  <p><span></span></p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a7336869349c1fdce783daaa13128fc87a91583ce8a786732303f9da6c18d5c1a6" class="m-doc-self" id="a7336869349c1fdce783daaa13128fc87a91583ce8a786732303f9da6c18d5c1a6">CellModelsConfig</a></td>
+                  <td>
+                  <p><span></span></p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a7336869349c1fdce783daaa13128fc87a20dc73b1e40e0b4f9ad92fe6124ebf79" class="m-doc-self" id="a7336869349c1fdce783daaa13128fc87a20dc73b1e40e0b4f9ad92fe6124ebf79">CreatureModelsConfig</a></td>
+                  <td>
+                  <p><span></span></p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a7336869349c1fdce783daaa13128fc87a24c2f15a7647312f96565232214aee2c" class="m-doc-self" id="a7336869349c1fdce783daaa13128fc87a24c2f15a7647312f96565232214aee2c">BuildingModelsConfig</a></td>
+                  <td>
+                  <p><span></span></p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a7336869349c1fdce783daaa13128fc87a822ba0c432cffaed9f7517780a2766d2" class="m-doc-self" id="a7336869349c1fdce783daaa13128fc87a822ba0c432cffaed9f7517780a2766d2">VehicleModelsConfig</a></td>
+                  <td>
+                  <p><span></span></p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a7336869349c1fdce783daaa13128fc87a6a00474536945e375c91af0efc98b273" class="m-doc-self" id="a7336869349c1fdce783daaa13128fc87a6a00474536945e375c91af0efc98b273">UfoModelsConfig</a></td>
+                  <td>
+                  <p><span></span></p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a7336869349c1fdce783daaa13128fc87afbbedb240df55b6ffe66e2ed64ec3723" class="m-doc-self" id="a7336869349c1fdce783daaa13128fc87afbbedb240df55b6ffe66e2ed64ec3723">UFOModelsConfig</a></td>
+                  <td>
+                  <p><span></span></p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a7336869349c1fdce783daaa13128fc87a47bf4356f879011c4b2d46ea35b6a29b" class="m-doc-self" id="a7336869349c1fdce783daaa13128fc87a47bf4356f879011c4b2d46ea35b6a29b">FloraModelsConfig</a></td>
+                  <td>
+                  <p><span></span></p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a7336869349c1fdce783daaa13128fc87af60455cd36c584a5ea7beaf569bfa8dc" class="m-doc-self" id="a7336869349c1fdce783daaa13128fc87af60455cd36c584a5ea7beaf569bfa8dc">PaletteModelsConfig</a></td>
+                  <td>
+                  <p><span></span></p>
                   </td>
                 </tr>
                 <tr>
