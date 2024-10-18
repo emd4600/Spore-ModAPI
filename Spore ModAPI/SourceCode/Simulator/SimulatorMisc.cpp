@@ -93,6 +93,12 @@ namespace Simulator
 
 	auto_METHOD_VOID(cIdentityColorable, AssignNames, Args(const eastl::string16& speciesName), Args(speciesName));
 
+	auto_STATIC_METHOD(Simulator, const Math::ColorRGB&, GetCachedColorFromId, Args(uint32_t colorId), Args(colorId));
+
+	eastl::map<uint32_t, Math::ColorRGB>& GetCachedColorIdMap() {
+		return *(eastl::map<uint32_t, Math::ColorRGB>*)GetAddress(Simulator, sCachedColorIdMap__ptr);
+	}
+
 	//// cDefaultToolProjectile ////
 
 	auto_STATIC_METHOD_VOID(Simulator, LaunchDefaultToolProjectile,

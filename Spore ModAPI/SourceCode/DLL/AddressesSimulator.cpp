@@ -162,6 +162,9 @@ namespace Addresses(Simulator)
 
 	DefineAddress(GetSpecializedName, SelectAddress(0xB6B7E0, 0xB6BBF0));
 
+	DefineAddress(GetCachedColorFromId, SelectAddress(0xB6ED80, 0xB6F1C0));
+	DefineAddress(sCachedColorIdMap__ptr, SelectAddress(0x156F098, 0x156B0B8));
+
 
 #ifndef SDK_TO_GHIDRA
 	DefineAddress(LightingWorld_ptr, SelectAddress(0x1682CD4, 0x167EA54));
@@ -864,6 +867,8 @@ namespace Simulator
 		DefineAddress(HasControlledCity, SelectAddress(0xC6F4B0, 0xC702F0));
 		DefineAddress(GetTypeIconKey, SelectAddress(0xE2EBE0, 0xE2EB70));
 		DefineAddress(GetCitizenSpeciesKey, SelectAddress(0xB8D9C0, 0xB8E1E0));
+		DefineAddress(AssignTerrainT0, SelectAddress(0xBA5740, 0xBA6120));
+		DefineAddress(AssignTerrainNonT0, SelectAddress(0xBA5890, 0xBA6270));
 	}
 
 	namespace Addresses(cCivData) {
