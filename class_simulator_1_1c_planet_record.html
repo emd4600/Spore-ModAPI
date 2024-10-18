@@ -132,6 +132,14 @@
               <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">bool</a> requireMoreThanOneTurret = <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">false</a>) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">bool</a></span>
             </dt>
             <dd>Return true if the planet ahs any city controlled by the specified empire.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">static auto <a href="#abeaa3617909a5eb557ef7bf83e0642bb" class="m-doc">AssignTerrainT0</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_planet_record.html" class="m-doc">cPlanetRecord</a>* planetRecord) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">void</a></span>
+            </dt>
+            <dd>Generates a terrain file for this planet, assigning it a random source terrain file for T0 planets.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">static auto <a href="#a36e9218dd14791b0a0b41bc1a2f638a9" class="m-doc">AssignTerrainNonT0</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_planet_record.html" class="m-doc">cPlanetRecord</a>* planetRecord) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">void</a></span>
+            </dt>
+            <dd>Generates a terrain file for this planet, assigning it a random source terrain file for non-T0 planets.</dd>
           </dl>
         </section>
         <section id="pub-methods">
@@ -476,6 +484,42 @@
               </tbody>
             </table>
 <p>If &#x27;requireMoreThanOneTurret&#x27; is true, then it will only return true if the controlled city has more than one turret.</p>
+          </div></section>
+          <section class="m-doc-details" id="abeaa3617909a5eb557ef7bf83e0642bb"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">static <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">void</a> Simulator::<wbr />cPlanetRecord::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#abeaa3617909a5eb557ef7bf83e0642bb" class="m-doc-self">AssignTerrainT0</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_planet_record.html" class="m-doc">cPlanetRecord</a>* planetRecord)</span></span>
+            </h3>
+            <p>Generates a terrain file for this planet, assigning it a random source terrain file for T0 planets.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">planetRecord</td>
+                  <td></td>
+                </tr>
+              </tbody>
+            </table>
+<p>The method will generate a random ID, call <a href="class_simulator_1_1c_planet_record.html#a6ddf2525f4c12b057e2ac77916dbe136" class="m-doc">SetGeneratedTerrainKey()</a>, and call ITerrainResourceManager::LoadPlanetInfo() (which returns a random planet, based on the generated terrain key), until it finds a source terrain with temperature score lower than 0.33 or higher than 0.66. The planet record temperature and atmosphere scores will be set to the final terrain ones.</p>
+          </div></section>
+          <section class="m-doc-details" id="a36e9218dd14791b0a0b41bc1a2f638a9"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">static <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">void</a> Simulator::<wbr />cPlanetRecord::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a36e9218dd14791b0a0b41bc1a2f638a9" class="m-doc-self">AssignTerrainNonT0</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_planet_record.html" class="m-doc">cPlanetRecord</a>* planetRecord)</span></span>
+            </h3>
+            <p>Generates a terrain file for this planet, assigning it a random source terrain file for non-T0 planets.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">planetRecord</td>
+                  <td></td>
+                </tr>
+              </tbody>
+            </table>
+<p>The method will generate a random ID, call <a href="class_simulator_1_1c_planet_record.html#a6ddf2525f4c12b057e2ac77916dbe136" class="m-doc">SetGeneratedTerrainKey()</a>, and call ITerrainResourceManager::LoadPlanetInfo() (which returns a random planet, based on the generated terrain key). The planet record temperature and atmosphere scores will be set to the final terrain ones.</p>
           </div></section>
           <section class="m-doc-details" id="a45d8aee317ec8e8e45df6326f5e8439f"><div>
             <h3>
