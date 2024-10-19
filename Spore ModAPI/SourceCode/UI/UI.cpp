@@ -58,8 +58,7 @@ namespace UI
 
 
 	cSPAssetView::cSPAssetView() {
-		//CALL(GetAddress(cSPAssetView, _ctor), void, Args(cSPAssetView*), Args(this));
-		CALL(Address(0x657DA0), void, Args(cSPAssetView*), Args(this));
+		CALL(GetAddress(cSPAssetView, _ctor), void, Args(cSPAssetView*), Args(this));
 	}
 	// Leave empty implementations for everything, as these methods are never called
 	// We sue Spore's vftable by calling the original constructor
@@ -88,6 +87,8 @@ namespace UI
 	}
 	void cSPAssetView::SetVisible(bool visible) {
 	}
+
+	auto_METHOD_(cSPAssetView, bool, sub_6590A0);
 
 	AssetDiscoveryCard::AssetDiscoveryCard()
 		: mLayout()

@@ -109,6 +109,7 @@
 #include <Spore\Simulator\SubSystem\CinematicManager.h>
 #include <Spore\Simulator\SubSystem\BundleManager.h>
 #include <Spore\Simulator\SubSystem\GamePlantManager.h>
+#include <Spore\Simulator\SubSystem\UIAssetDiscoveryManager.h>
 #include <Spore\Simulator\NounClassFactories.h>
 
 namespace Addresses(Simulator)
@@ -1170,6 +1171,10 @@ namespace Simulator
 
 	namespace Addresses(cGamePlantManager) {
 		DefineAddress(Get, SelectAddress(0xB3D310, 0xB3D4B0));
+	}
+
+	namespace Addresses(cUIAssetDiscoveryManager) {
+		DefineAddress(Get, SelectAddress(0xB3D450, 0xB3D5F0));
 	}
 }
 
