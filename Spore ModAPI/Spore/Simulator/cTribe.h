@@ -6,6 +6,7 @@
 #include <Spore\Simulator\cGameBundleContainer.h>
 #include <Spore\Simulator\cIdentityColorable.h>
 #include <Spore\Simulator\cCity.h>
+#include <Spore\Simulator\cHerd.h>
 #include <Spore\Simulator\cTribeHut.h>
 #include <Spore\Simulator\cTribePlanner.h>
 #include <Spore\Simulator\cTribeTool.h>
@@ -187,7 +188,7 @@ namespace Simulator
 		/* 1904h */	eastl::fixed_vector<ResourceKey, 14> mSpeciesKeys;
 		/* 19C4h */	cOrnamentPtr mpDomesticatedAnimalsPen;
 		/* 19C8h */ cOrnamentPtr mpEggPen;
-		/* 19CCh */	cGameDataPtr mpDomesticatedAnimalsHerd;  //TODO
+		/* 19CCh */	cHerdPtr mpDomesticatedAnimalsHerd;  //TODO
 		/* 19D0h */	cTotemPolePtr mpTotemPole;
 		/* 19D4h */	uint32_t mhFootprint;
 		/* 19D8h */	int mPurchasedTools;
