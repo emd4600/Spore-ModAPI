@@ -70,7 +70,7 @@ namespace App
 		/* 1Ch */	int mpScenarioUI;  // Simulator::ScenarioModeUI ?
 		/* 20h */	GameInput mInput;
 		/* 68h */	int field_68;
-		/* 6Ch */	int field_6C;  // another UI?
+		/* 6Ch */	int mpScenarioDisplayStrategy;  // another UI?
 		/* 70h */	int field_70;
 		/* 74h */	cScenarioDataPtr mpData;
 		/* 78h */	cScenarioPlayModePtr mpPlayMode;
